@@ -27,6 +27,7 @@ import { MembersManager } from "@/components/ak1a/admin/members-manager";
 import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
 import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
 import { EkosystemPanel } from "@/components/ak1a/admin/ekosystem-panel";
+import { BeteendePanel } from "@/components/ak1a/admin/beteende-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -343,6 +344,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
             <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
             <TabsTrigger value="traffic" className="px-3 py-1.5 text-xs sm:text-sm">Statistik & SEO</TabsTrigger>
+            <TabsTrigger value="beteende" className="px-3 py-1.5 text-xs sm:text-sm">Beteende</TabsTrigger>
             <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
           </TabsList>
 
@@ -617,6 +619,11 @@ export default function AdminDashboard() {
             <Card className="p-5">
               <TrafficStatsPanel />
             </Card>
+          </TabsContent>
+
+          {/* Beteendeanalys — aggregerade elevmönster */}
+          <TabsContent value="beteende" className="mt-6">
+            <BeteendePanel />
           </TabsContent>
 
           <TabsContent value="breakdown" className="mt-6">

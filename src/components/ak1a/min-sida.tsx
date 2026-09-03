@@ -22,6 +22,7 @@ import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
 import { VeckoPlan } from "@/components/ak1a/vecko-plan";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { MorgonBriefing } from "@/components/ak1a/morgon-briefing";
+import { AssistentPanel } from "@/components/ak1a/assistent-panel";
 import { MinPortfoljKort } from "@/components/ak1a/min-portfolj-kort";
 import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
 import { DelaKort } from "@/components/ak1a/dela-kort";
@@ -299,6 +300,11 @@ export function MinSida() {
           Det första eleven ser: vågkartan, passet, kursen och elden i ett
           marin-panel-tidningskort, före hero-raden. */}
       <MorgonBriefing />
+
+      {/* DIN ASSISTENT — den högra handen (klientkontext + prediktiv motor):
+          tids-/lägesmedveten hälsning, tillstånd-badge + tidsstämpel och max
+          3 proaktiva förslag ("Jag tror du vill…" — aldrig påstridig). */}
+      <AssistentPanel />
 
       {/* (a) HERO-RAD */}
       <section className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card p-6 sm:p-8">

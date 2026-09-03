@@ -1,0 +1,1026 @@
+{
+  "slug": "made-in-america",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 168,
+  "title": "Made in America — Sam Walton: KOMPLETT",
+  "summary": "Sam Walton skrev Made in America (1992, tillsammans med John Huey) under sina sista levnadsmånader — memoarerna från mannen som 1945 tog över en enda Ben Franklin-butik i Newport, Arkansas, och fyrtiosju år senare lämnade efter sig världens största detaljhandelsbolag med närmare 2 000 butiker och omkring 44 miljarder dollar i årsförsäljning. Boken är ingen success story i vanlig mening utan en arbetsbeskrivning: kundbesatthen som operativ system,EDLP-ekonomin (varje dag lägsta pris), kultur- och vinstdelning som moat-bärare, distributionsnätet och satellit-systemet 1987 som skalbarriär, och de tio reglerna som checklista. Kursen läser boken genom AK1A:s moat-lins — V14 varumärke och kundlojalitet samt V03 intäktsdiversifiering — och tvingar fram kontroversen: Amazon och e-handeln. Är Waltons modell död, som Sears och Kmart bevisar att detaljhandels-moats kan bli, eller är Walmart — fortfarande världens största bolag på omsättning, med cirka 650 miljarder dollar och 2,1 miljoner medarbetare — beviset på att kundbesatthet kompilerar? Kursen avslutas med AK1A:s moat-dödstest: sex mätbara indikatorer för när V14 verkligen dör.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå Waltons kärntes — kunden är den ende chefen, och lågt pris är en process, inte en kampanj · Känna EDLP-ekonomin: bruttomarginal bytt mot omsättningshastighet och ROE (V07–V09) · Översätta kundbesatthet till AKM1:s moat-variabel V14 — förtroende-varumärke i stället för premium-varumärke · Se hur lönsamt delande och kultur gör moaten oberoende av grundaren (process kontra karisma) · Kartlägga logistikmoaten: distributionscentra, kluster av butiker, egen lastbilsflotta och satellitnätet 1987 · Tillämpa de tio reglerna som investeringschecklista · Läsa priskrigen mot Kmart, Target, Woolco och Sears som moat-historia — och moat-förfall · Köra Walton-modellen genom AKM1:s variabler V01–V20 · Väga kontroversen: Amazons Prime-vana mot Walmarts EDLP-vana, björnargumentet i siffror · Bedöma omnikanal-svaret — Flipkart, Walmart+, butiksomladen uppfyllelse — genom V03 diversifiering · Tillämpa AK1A:s moat-dödstest: sex mätare på när V14 dör · Granska kritiken mot Walton och bolaget med ärlighetsfiltret (Θ-organet) · Syntetisera arvet till en investeringsprocess för bolag med återkommande kundrelationer.",
+  "why": "Det här är BOKMASTER-katalogens moat-anatomi: där Quantitative Value-kursen ger strukturerad objektivitet i screening, ger Made in America obduktionen av en LEVANDE moat — hur kundbesatthet, kostnadsdisciplin och kultur kompilerar till världens största omsättning under fyrtiosju år. AKM1:s svagaste variabel hos de flesta analytiker är V14, just för att varumärke lätt blir en känsla i stället för en mätbar process; Walton visar operationen bakom ordet. Kontroverskapitlet — Amazon mot Walmart — är kursens examination, därför att Sears bevisar att detaljhandels-moats DÖR och att frågan hur man testar döden är värd mer än frågan om bolaget är älskat. V14 + V03 är linsen; dödstestet är verktyget; ärlighetsfiltret är kravet.",
+  "chapters_list": [
+    "1. Bokens kärna — kunden är den ende chefen",
+    "2. Från Newport till Rogers — Ben Franklin-läran och första Wal-Mart 1962",
+    "3. EDLP — varje dag lägsta pris som affärsmodell (V07–V09)",
+    "4. Kundbesatthet som moat — V14 Varumärke och kundlojalitet",
+    "5. Kulturen — lönsamt delande, lördagsmöten och medarbetare som delägare",
+    "6. Logistikmoaten — distributionscentra, lastbilar och satellitnätet 1987",
+    "7. De tio reglerna — Walton som checklista",
+    "8. Priskrigen — Kmart, Target, Woolco, Sears och simma uppströms",
+    "9. Walton-modellen i AKM1-tal — marginal bytt mot hastighet (V01–V20)",
+    "10. Kontroversen I — Är Waltons modell död? Björnargumentet",
+    "11. Kontroversen II — Omnikanalens svar och V03 diversifiering",
+    "12. AK1A:s moat-dödstest — hur vet man när V14 dör?",
+    "13. Ärlighetens räkenskap — kritiken och bokens egna bekännelser",
+    "14. Sammanfattning — arvet och AKM1-syntesen (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Bokens kärna — kunden är den ende chefen",
+      "intro": "Made in America publicerades 1992 och skrevs av Sam Walton tillsammans med John Huey — som med Susie Burke spelade in hans röst under de sista månaderna av hans liv. Walton dog den 5 april 1992, veckor efter bokens utgivning, som ordförande i det bolag han byggt från en enda butik. Kursen börjar där boken börjar: med en man som varförades av en enda fråga och med den tes AK1A ska pröva — är kundbesatthet en moat?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens kändaste mening, citerad öppet: det finns bara en chef — kunden. Och kunden kan avsätta vem som helst i bolaget, från styrelseordföranden och nedåt, helt enkelt genom att spendera sina pengar någon annanstans. Det är inte en sentimental瀚 retorik utan en organisationsprincip: Walton organiserade hela bolaget — prissättning, logistik, löner, lördagsmöten, flygplansturer för att hitta butikslägen — runt den enda person vars röst räknas i butikens kassa. För en fundamental analys är det här en annan definition av ägande än den som står i aktieboken: den som äger kundrelationen äger värdet, och Walton byggde ett system för att relationen aldrig skulle ägas av någon annan än kunden själv — vilket paradoxalt nog är det starkaste sättet att behålla den."
+        },
+        {
+          "type": "text",
+          "content": "Den andra kärnan är kostnadsdisciplinen. Waltons formel, upprepad genom hela boken, är enkel och brutal: håll kostnaderna lägre än alla andra — och ge hela besparingen till kunden i lägre pris, vilket ger mer volym, vilket ger mer skala, vilket sänker kostnaderna ytterligare. Det är en svänghjulsmekanism i den mening Jim Collins senare populariserade, och Walton beskriver den i praktiken ett kvarts sekel innan ordet blev management-litteratur. Värt att notera för AK1A: svänghjulet har en riktning — det snurrar bara om besparingen VERKLIGEN passas vidare. Den giriga varianten (sänk kostnaden, behåll marginalen) stannar av vid första konkurrent som prutar. Waltons kultivering av sparsamhet — billiga kontor, delade hotellrum, begagnade flygplan — var därför inte snålhet utan prissättningsstrategi."
+        },
+        {
+          "type": "text",
+          "content": "Bokens ram och kursens karta. Walton berättar kronologiskt: Ben Franklin-åren i Newport, Bentonville, det första Wal-Mart i Rogers 1962, börsnoteringen 1970, distributionsnätet, kulturen, konkurrenterna, kritiken och de tio reglerna. Kursen följer den bågen men läser den genom AK1A:s två utvalda linser, som uppdraget formulerar: moat V14 varumärke och kundlojalitet — här förstått som FÖRTROENDE-varumärke, motsatsen till premium-varumärke — och V03 intäktsdiversifiering, här förstått som format-, kategori- och geografibredd. Och från kapitel 10 vänder kursen boken mot nutiden: e-handeln, Amazon, och frågan om Waltons modell är död. Walton själv, som avled månader innan den första kommersiella webbläsaren släpptes, fick aldrig möta kontroversen — kursens uppgift är att föra samtalet han inte hann föra."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig fel på rätt sätt: kundbesatthet är inte en attityd utan en KOSTNADSSTRUKTUR. Ett bolag älskar sina kunder i den utsträckning det mekaniskt passar besparingar vidare till dem. I AKM1:s språk: V14 poängsätts inte på hur varmt ledningen talar om kunden — utan på huruvida V07–V09-ekonomin bevisar att kunden får löftet uppfyllt, varje dag, billigare än hos konkurrenten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Walton-modellen — fem pelare och deras AKM1-översättning\",\"rader\":[[\"Pelare\",\"Mekanism i boken\",\"AKM1\"],[\"Kundbesatthet\",\"ten-foot-regeln, sundown-regeln, returrätt utan diskussion\",\"V14\"],[\"Varje dag lägsta pris\",\"genomgående lägt pris i stället för kampanjvippror\",\"V07–V09 via omsättningshastighet\"],[\"Kostnadskultur\",\"billiga kontor, sparsamhet som ideologi\",\"V07, V10\"],[\"Logistik och skala\",\"distributionscentra, kluster, satellitnät 1987\",\"V14-underlag: skalbarriär\"],[\"Formatdiversifiering\",\"Sam's Club, Supercenter, sedermera e-handel\",\"V03\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör kundägar-testet på tre bolag i din bevakningslista: läs senaste årsredovisning och leta efter hur många gånger ordet kund förekommer i VD-ordet — och jämför med hur många gånger besparingar verkligen redovisas som sänkta priser (inte som ökad marginal). Bolag som talar varmt om kunden men behåller varje besparing för marginalen har en attityd, inte en strategi. Notera vilket av de tre bolagen som har en kostnadsstruktur och vilket som bara har en slogan."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Walton-citatet om vem som är bolagets ende chef?",
+          "alternativ": [
+            "Styrelsen — den representerar ägarna",
+            "Kunden — som kan avsätta alla i bolaget genom att spendera sina pengar någon annanstans",
+            "Grundaren — kulturen bärs av personen",
+            "Konkurrenterna — de sätter agendan"
+          ],
+          "ratt": 1,
+          "tips": "Vem har i praktiken rösträtt varje dag, med sina fötter och sin plånbok?"
+        },
+        {
+          "q": "Varför beskriver kursen Waltons sparsamhet som prissättningsstrategi snarare än snålhet?",
+          "alternativ": [
+            "Därför att Walton sparade in på allt utom sitt eget arvode",
+            "Därför att besparingen mekaniskt vidarebefordras till kunden som lägre pris — vilket driver volym och skala",
+            "Därför att billiga kontor ger skattefördelar",
+            "Därför att sparsamheten bara var show för media"
+          ],
+          "ratt": 1,
+          "tips": "Svänghjulets riktning: vart TAkostnadsbesparingen vägen — till marginalen eller till priset?"
+        },
+        {
+          "q": "Hur definierar kursen V14-förtroendevarumärke i Walmarts fall?",
+          "alternativ": [
+            "Förmågan att ta ut högre pris än konkurrenterna",
+            "En lyximage som lockar premiumkunder",
+            "Förtroendet om att priset är lägst varje dag — det omvända av premiumvarumärket",
+            "Ett registrerat varumärke med hög kännedom"
+          ],
+          "ratt": 2,
+          "tips": "Premium frågar: kan du ta mer? Förtroende frågar: kommer kunden oftare?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Från Newport till Rogers — Ben Franklin-läran och första Wal-Mart 1962",
+      "intro": "Bokens första tredjedel är en historia i kostnadsdisziplinens tecken: en 25-årig Walton lånar 25 000 dollar (varav 20 000 från svärfadern) och tar över ett Ben Franklin-franchise i Newport, Arkansas 1945. Kursen läser åren 1945–1962 som en läroplan i detaljhandel — och som AKM1-fallet där en moat börjar som en obsessions och en lucka i kartan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Newport-läran, citerad öppet ur boken. Walton gjorde butiken till byns mest framgångsrika Ben Franklin genom att testa allt: hyllor i gången, isskåp framför butiken, mönster från tidningar och konkurrenter han körde till i bil. Hyresvärden ville sedan ta lokalerna själv och vägrade förnya arrendet — Walton förlorade butiken och kallar det i boken en av sina hårdaste lärdomar: säkra kontrollen över mark och lokal. Till Bentonville 1950 kom han med newyorkska löften: Helen Walton satte som villkor att familjen aldrig skulle bo i en stad med mer än 10 000 invånare. Det villkoret blev, skriver Walton, en av historiens lyckligaste begränsningar — det tvingade bolaget till småstäderna som hela konkurrensläran byggdes på. För AK1A: begränsningar kan vara moatens födelseplats; fråga alltid vad bolagets OFRIVILLIGA utgångsläge tvingade det att lära sig."
+        },
+        {
+          "type": "text",
+          "content": "Prisupptäckten. Walton berättar själv hur han som franchise-tagare testade att sänka marginalerna: han fann att han kunde sälja betydligt mer genom att pruta — berömt är damstrumpe-exemplet där han köpte billigt, prissatte gång på gång under konkurrenternas nivå och sålde multum av volym. Läran formuleras i boken ungefär så:刺激 att stimulera volym genom lägre pris ger mer total vinst än hög marginal på liten volym. Det är hela EDLP-kursens genomgång i ett enda experiment (kapitel 3 utvecklar ekonomin). Notera att upptäckten var EMPIRISK — Walton testade i kassan, inte i teorin — och att den fortfarande är den mest likriktade sanningen i detaljhandel: priselasticiteten är större än de flesta inköpare tror."
+        },
+        {
+          "type": "text",
+          "content": "År 1962: fyra kedjor startar samma år — Kmart (mars, Garden City i Michigan), Target (maj, Minnesota), Woolco och Wal-Mart (2 juli, Rogers, Arkansas). Walton är öppen med att han INTE var först med diskontering och inte var billigast på kapital: Kmart var vid den tidpunkten mångdubbelt större. Skillnaden var var han öppnade: städer med 5 000–25 000 invånare som de stora kedjorna ignorerade, för att de var för små för deras volymlogik. Där fanns ingen konkurrens — och ändå tillräcklig köpkraft om priset var lågt nog för att samla hela regionens efterfrågan på en ort. Börsnoteringen kom 1970, delvis för att betala av skulder — Walton hade en djup motvilja mot skuld som AKM1:s V10 ska läsa av som en kulturell ryggradsnerv i bolaget. Vid hans död 1992: närmare 2 000 butiker och omkring 44 miljarder dollar i årsförsäljning — allt från en butik i en stad under 10 000 invånare."
+        },
+        {
+          "type": "insikt",
+          "content": "Småstadsarbitragen är kursens första moat-lektion: Waltons fördel var inte kapital eller först-möva-fördel utan GEOGRAFISK lucka — en kundgrupp som konkurrenterna räknade som för liten. När du analyserar ett bolag, fråga: vilken kundgrupp betraktar konkurrenterna som för liten eller för osmidig — och har detta bolag byggt kostnadsstrukturen för att tjäna på den gruppen?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kronologi 1945–1992 — Walton-modellen byggs\",\"rader\":[[\"År\",\"Händelse\",\"Lära för AK1A\"],[\"1945\",\"Ben Franklin i Newport, Arkansas — 25 000 dollar\",\"empiri i kassan slår teori\"],[\"1950\",\"Walton 5&10 i Bentonville; villkoret max 10 000 invånare\",\"begränsningen som strategi\"],[\"1962\",\"första Wal-Mart i Rogers 2 juli; Kmart och Target samma år\",\"småstadsarbitrage — luckan i kartan\"],[\"1970\",\"börsnotering; skuld betald\",\"V10-motviljan som kultur\"],[\"1983\",\"första Sam's Club\",\"V03: nytt format på samma kund\"],[\"1988\",\"första Supercenter; David Glass VD\",\"mat ger frekvens ger V14\"],[\"1990\",\"största detaljist i USA — förbi Sears\",\"moaten synlig i andel\"],[\"1992\",\"cirka 2 000 butiker, omkring 44 miljarder dollar\",\"47 års kompilerande\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita arbitrage-kartan för ett bolag du känner: rita upp tre kundsegment eller geografier som branschens största aktörer systematiskt ignorerar (för små, för krångla, för lokaliserade). Fråga sedan om ditt bolag tjänar pengar JUST där — och om dess kostnadsstruktur är byggd för det segmentet (låg kostnad per enhet där andra har hög). Om svaret är ja på båda: du har en Walton-lucka. Om svaret är ja på det första men nej på det andra: du har en välgörenhet."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Helen Waltons villkor som blev en strategisk begränsning?",
+          "alternativ": [
+            "Att bolaget aldrig fick sälja aktier till utomstående",
+            "Att familjen aldrig skulle bo i en stad med mer än 10 000 invånare",
+            "Att Walton aldrig fick öppna på söndagar",
+            "Att bolaget bara fick sälja amerikanska varor"
+          ],
+          "ratt": 1,
+          "tips": "Begränsningen tvingade ut bolaget på den marknad där det saknade konkurrens."
+        },
+        {
+          "q": "Vilken var Waltons nyckelupptäckt från Ben Franklin-åren?",
+          "alternativ": [
+            "Att hög marginal alltid är bäst",
+            "Att franchising är överlägsen egen drift",
+            "Att lägre pris och lägre marginal kan ge högre total vinst genom kraftigt högre volym",
+            "Att reklam var viktigare än prissättning"
+          ],
+          "ratt": 2,
+          "tips": "Priselasticitet: volymen växer snabbare än marginalen sjunker."
+        },
+        {
+          "q": "Vad skiljde Wal-Marts start från Kmart och Target 1962?",
+          "alternativ": [
+            "Wal-Mart hade mest kapital från början",
+            "Wal-Mart öppnade i småstäder som de stora kedjorna ignorerade",
+            "Wal-Mart var först med diskontering",
+            "Wal-Mart började i storstäder och flyttade utåt"
+          ],
+          "ratt": 1,
+          "tips": "Kmart var mångdubbelt större — var fanns ingen konkurrens?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "EDLP — varje dag lägsta pris som affärsmodell (V07–V09)",
+      "intro": "Waltons mest kopierade och mest missförstådda innovation är inte en butik utan en prismodell: Every Day Low Prices. Kursens tredje kapitel dissekerar ekonomin i EDLP — hur ett bolag med cirka 25 procents bruttomarginal kan skapa en av historiens bästa aktieägaravkastningar — och översätter det hela till AKM1:s V07–V09.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två prismodeller står mot varandra i detaljhandel. High-low: dra upp ordinarie priset och sänk det i kampanjer — kunderna lär sig jaga erbjudandena, lagret svämmar över vid kampanjtoppar och sinar mellan dem, reklambudgeten blir en fast kostnad. EDLP: hålla priset genomgående lägst, varje dag — kunden slippa räkna om allt, förtroendet bygger på att aldrig behöva misstänka att grannen betalade mindre. Walton formulerar det i boken som en filosofi snarare än en taktik: det handlade om att hålla priset lägre än alla andras, STÄNDIGT, inte om att vinna enskilda priskrig. För AKM1 är distinktionen avgörande: kampanjer är en kostnadspost; EDLP är en kostnadsstruktur. Den ena kan kopieras av vilken marknadschef som helst; den andra kräver att hela logistiken, kulturen och skalfrågan är byggd för det."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna bakom löftet, i AKM1:s språk. V07 bruttomarginal: låg — i bokens era runt 25 procent, långt under varuhusens nivåer. Men det som vanliga analytiker ser som svaghet är modellens kärna: V07 är låg för att priset är lågt, och priset är lågt för att volymen per butik, per kvadratmeter och per lagerkrone ska vara EXTREM. Omsättningshastigheten — varor som säljs innan de betalts, lager som vänds många gånger per år — är detaljhandelns verkliga kapitalmotor. V09 ROE blev därför hög trots tunn marginal: hastighet slår tjocklek. Det är samma logik som Costco och Southwest senare körde i egna branscher, och som AKM1 borde ställa som standardfråga till alla lågmarginalbolag: vad är omsättningshastigheten — på lager, på yta, på anställd? En tunn marginal med hög hastighet kompilerar; en tjock marginal med låg hastighet står still."
+        },
+        {
+          "type": "text",
+          "content": "EDLP:s andra, mindre omtalade sida: det är ett FÖRTROENDEKONTRAKT med kunden (V14). Walton skriver om kunder som litar på att de inte behöver jämföra — förtroendet sparar kundens tid, och sparad tid är en del av det totala prisvärdet. När ett EDLP-bolag bryter kontraktet — smygande prisökningar, urholkad sortimentkvalitet, tomma hyllor — skadas inte bara en transaktion utan själva vanan att komma. Kursens kontroverskapitel (10–11) ska visa att e-handelns verkliga attack inte var pris (Walmart vann ofta på pris) utan VANA: Amazon Prime flyttade inköpsvanan från bilfärden till soffan. EDLP försvarar priset; det försvarar inte nödvändigtvis vanan. Det är moatens öppna flank."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera marginal-hastighets-bytet: i detaljhandel är V07 en PRIS-beslut och V09 ett HASTIGHETS-beslut — och hastigheten är den som kompilerar. Bedöm aldrig ett lågmarginalbolag på marginalen ensam; fråga hur många gånger kapitalet vänder per år och vad som händer med ROE när volymen växer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"High-low mot EDLP — prismodellernas ekonomi\",\"rader\":[[\"Variabel\",\"High-low (kampanjpris)\",\"EDLP (Walton)\"],[\"Prisbild\",\"vippror mellan kampanjer\",\"genomgående lägst, varje dag\"],[\"Kundbeteende\",\"jaga erbjudanden, lagra hem\",\"förtroende: slipp jämföra och lagra\"],[\"Lager och logistik\",\"toppar och dalar\",\"jämnt flöde, planerbar påfyllnad\"],[\"Reklam\",\"stor fast post\",\"lägre — priset är budskapet\"],[\"AKM1-koppling\",\"kopierbar taktik\",\"V07 låg + hög omsättningshastighet + V14 förtroende\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör omsättningshastighets-testet: ta ett lågmarginalbolag och ett högmarginbolag i samma sektor från din bevakningslista. Leta upp lageromsättningshastigheten (omsättning delat på genomsnittligt lager) och räkna grovt på ROE (V09). Vilket bolag vänder kapitalet snabbare — och vad händer med ROE-nivån om volymen växer tio procent? Skriv en mening om vilket bolag som kompilerar bäst och varför. Om lågmarginalbolaget inte har hög hastighet är det inte en Walton-modell — det är bara ett dåligt pris."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den grundläggande skillnaden mellan high-low och EDLP?",
+          "alternativ": [
+            "EDLP betyder att man sänker priserna gradvis varje kvartal",
+            "High-low bygger på kampanjvippror; EDLP på genomgående lägst pris varje dag",
+            "High-low används bara i livsmedel; EDLP bara i elektronik",
+            "EDLP är en tillfällig reakampanjform"
+          ],
+          "ratt": 1,
+          "tips": "Den ena är en taktik per kampanj — den andra en kostnadsstruktur och ett förtroendekontrakt."
+        },
+        {
+          "q": "Hur kan ett bolag med runt 25 procents bruttomarginal skapa hög ROE (V09)?",
+          "alternativ": [
+            "Genom extremt hög skuldsättning",
+            "Genom att höja priserna i smyg",
+            "Genom extrem omsättningshastighet — tunn marginal som vänds många gånger per år",
+            "Genom statliga subventioner"
+          ],
+          "ratt": 2,
+          "tips": "Hastighet slår tjocklek — hur många gånger vänds kapitalet?"
+        },
+        {
+          "q": "Vad identifierar kursen som EDLP-modellens öppna flank mot e-handeln?",
+          "alternativ": [
+            "Att e-handel alltid har lägre priser",
+            "Att EDLP försvarar priset men inte nödvändigtvis inköpsVANAN — som Prime flyttade till soffan",
+            "Att EDLP bara fungerar i storstäder",
+            "Att kunder inte bryr sig om förtroende"
+          ],
+          "ratt": 1,
+          "tips": "Amazons attack gällde var inköpet skedde — inte bara vad det kostade."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Kundbesatthet som moat — V14 Varumärke och kundlojalitet",
+      "intro": "AKM1:s fjortonde variabel frågar: kan bolaget ta högre pris än konkurrenterna? Walmart kan inte — och har ändå en av världens starkaste kundrelationer. Kursens fjärde kapitel löser den paradoxen och ger V14 dess andra, ofta förbisedda ansikte: förtroende-varumärket.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens operativa kulturer kring kunden är legendariska och citeras öppet. Ten-foot-regeln: lova dig själv att titta var och en i ögonen, hälsa och fråga om du kan hjälpa — om någon kommer inom tre meter. Sundown-regeln: kundernas och kollegornas frågor ska ha svar innan solen går ner, samma dag. Garanti utan asterisker: nöjd eller pengarna tillbaka, utan diskussion. Butiksbesöken: Walton reste butik till butik, vecka efter vecka, och frågade mest kunder — vad saknar vi, var handlar du annars, varför. Hälsningstjänarna vid entrén föddes enligt boken ur en butikschilds idé att möta kunderna — till glädje och, som bonus, mot snatteri. Sammantaget: kundbesatthet som REPETERBARA SYSTEM, inte som värderingsdeklaration. Det är skillnaden mellan att bry sig och att bygga."
+        },
+        {
+          "type": "text",
+          "content": "Nu V14-översättningen, som är kursens kärna. AKM1:s klassiska moat-fråga (kan bolaget ta högre pris?) testar PREMIUM-moats — Apple, Hermès, ett läkemedel under patent. Waltons moat är den omvända: förmågan att hålla LÄGST pris varje dag och ändå tjäna pengar — vilket kräver kostnadsöverlägsenhet som är minst lika svår att kopiera. Förtroende-varumärket binder kunden med vana och tid: mat inköps varje vecka, den högsta frekvensen i detaljhandel, och varje besök förnyar relationen. I AKM1:s matrix motsvarar det hög V14 inte via prismakt utan via FREKVENS och förtroende — med en viktig bonus: frekvensen ger data (varje kassaköp är en kundsignal), som i sin tur ger bättre sortiment och påfyllnad, som ger fler besök. En moat som matar sig själv."
+        },
+        {
+          "type": "text",
+          "content": "Men kursen kräver ärlighet i båda riktningarna (Θ-organets filter): V14-förtroende är inte odödligt, och det är inte exklusivt. Förtroende-varumärket dör av tre saker: brutna löften (tomma hyllor, urholkad kvalitet, smygande prishöjningar), förlorad relevans (inköp vanan flyttar — kontroversen i kapitel 10), och kostnadsöverlägsenhetens erosion (när konkurrentens kostnadsstruktur blir lägre, som Amazons tidigt vägrade fysiska butikers fastighetskostnad). AKM1-analysens uppgift är därför att poängsätta V14 med TRE bevis: frekvens (kommer kunden oftare än till konkurrenten?), löfte (hålls EDLP-löftet verifierbart?) och kostnad (finns marginalutrymmet att fortsätta hålla det?). Utan alla tre är varumärket en känsla — och känslor är inte moats."
+        },
+        {
+          "type": "insikt",
+          "content": "Dubbla V14-frågan i din nästa analys: kan bolaget ta HÖGRE pris (premium) — eller kan det hålla LÄGRE pris med vinst (förtroende)? Båda är moats; de bara mäts olika. Premium mäts i marginal, förtroende i frekvens. Och bara den senare har en naturlig datamotor: varje transaktion bevisar relationen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Premium-varumärke mot förtroende-varumärke — V14:s två ansikten\",\"rader\":[[\"Aspekt\",\"Premium (ta högre pris)\",\"Förtroende (Walton: hålla lägst pris)\"],[\"V14-fråga\",\"kan höja priset utan volymförlust?\",\"får kunden att komma oftare?\"],[\"Bindning\",\"status, identitet, switch kostar Face\",\"vana, tid, förtroende, switch kostar ansträngning\"],[\"Mäts i\",\"bruttomarginal (V07)\",\"besöksfrekvens, korg, dataflöde\"],[\"Konjunkturkänsla\",\"känslig för lyxnedgång\",\"urdags-nödvändig — stabil\"],[\"Dör av\",\"imitation, trendskifte\",\"brutna löften, förlorad vana, lägre kostnadskonkurrent\"],[\"AKM1-poäng\",\"hög V14 via margin\",\"hög V14 via frekvens + V03 bredd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör V14-triangeln på en återförsäljare eller livsmedelskedja i din närhet: ett — frekvens: hur ofta handar kunden där, jämfört med konkurrenten (uppskattning räcker)? Två — löfte: är prisbilden verifierbart lägre eller likvärdig, och har löftet hållits senaste året (egna butiksbesök, prisjakt på tio varor)? Tre — kostnad: har bolaget marginal eller volym nog att fortsätta hålla löftet? Poängsätt V14 noll till fem med de tre bevisen — och skriv vilken typ av moat (premium eller förtroende) du precis betygsatte."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är ten-foot-regeln?",
+          "alternativ": [
+            "Att butiker ska ha minst tio tusen kvadratfot",
+            "Att hälsa och erbjuda hjälp till varje kund inom cirka tre meter",
+            "Att alla kunder ska betala inom tio dagar",
+            "Att butiker bara får ligga tio kvarter från varandra"
+          ],
+          "ratt": 1,
+          "tips": "Det är en operativ vana — inte en fastighetsregel."
+        },
+        {
+          "q": "Hur binder ett förtroende-varumärke (V14) kunden?",
+          "alternativ": [
+            "Genom status och lyximage",
+            "Genom patent och immateriella rättigheter",
+            "Genom vana, sparad tid och bevisat lägst pris — frekvens som bindning",
+            "Genom långa avtal och inlåsning"
+          ],
+          "ratt": 2,
+          "tips": "Mat handlas varje vecka — vad gör den frekvensen med relationen?"
+        },
+        {
+          "q": "Vilka tre bevis kräver kursen för att poängsätta V14-förtroende?",
+          "alternativ": [
+            "Frekvens, löftes-hållning och kostnadsöverlägsenhet",
+            "Antal anställda, antal butiker och bokvärde",
+            "P/E, P/B och direktavkastning",
+            "VD:ns ålder, varumärkesålder och antal följare"
+          ],
+          "ratt": 0,
+          "tips": "Kommer kunden oftare? Hålls löftet? Finns marginalen att fortsätta hålla det?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Kulturen — lönsamt delande, lördagsmöten och medarbetare som delägare",
+      "intro": "Waltons kanske djupaste insikt gällde inte kunder utan medarbetare: om moaten ska överleva grundaren behöver den bäras av tusentals människor som agerar som ägare. Kursens femte kapitel läser kulturen som ett styrsystem — och kopplar den till kurskatalogens jedis kontra clones-lära.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismerna, som boken beskriver i detalj. Medarbetarna kallas associates — partner, inte anställda — och 1971 infördes vinstdelning (profit sharing) som länkade butiksresultat till aktieägarvärde; Walton berättar stolt att programmet skapade hundratals miljonärer bland medarbetarna, särskilt de som behöll sina aktier. Lördagsmötena samlade ledningen i tidiga morgontimmar varje lördag: siffror per butik och per vara, idéer från frontlinjen, firade framgångar — och hejaropet som slutar på ett streck genom bokstaven. Information delades uppåt och nedåt; butikschefer kunde se sin egen resultaträkning och jämföra med andra butiker. Frugaliteten var systemisk: billiga kontor i Bentonville, delade hotellrum på resor, begagnade flygplan. Kulturen var Walton-märkt men medvetet byggd för att FUNGERA UTAN HONOM — han insåg, skriver han, att bolaget inte fick vara en enda mans kreation."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till kurskatalogens jedis kontra clones (Quantitative Value, kapitel 4): en moat som vilar på grundarens karisma dör med grundaren; en moat som vilar på PROCESSER och incitament överlever. Waltons kultur är processernas process: lördagsmötet är en mekanism för informationshastighet; vinstdelandet är en mekanism för intresseanpassning; hejaropet är en mekanism för identitet. När Walton avled 1992 fortsatte bolaget att dubbla försäljningen under kommande decennier under David Glass, sedan Lee Scott, sedan Mike Duke, sedan Doug McMillon — fem VD:ar, en kultur. Jämför med grundar-ledda bolag som kollapsar vid succession (kursens kapitel 8 om Sears ger ett inkörningsexempel). För AK1A är frågan vid varje moat-bedömning: finns en MEKANISM som bär beteendet, eller bara en person? V14 utan mekanism är en celebrity, inte ett varumärke."
+        },
+        {
+          "type": "text",
+          "content": "Även kulturens mörka sida måste nämnas här — kursen återkommer i kapitel 13 — men notera redan nu spänningen: Walton skriver om associates som partner samtidigt som kritiker (öppet, offentligt och dokumenterat) ifrågasatte löner, förmåner och fackföreningsmotstånd. AK1A:s ärlighetsfilter kräver att en kultur-läsanalys hanterar båda: vinstdelandet var rent av federativt för de som stannade och behöll aktier — men medianlönen mot branschens är en empirisk fråga, inte en retorisk. En moat-analys som bara citerar grundarens självbild är marknadsföring. Kursens test kommer i kapitel 12 och 13: kulturens hälsa mäts i personalomsättning, interna befordringar och om frontlinje-ideer fortfarande når ledningen — inte i hejaropets längd."
+        },
+        {
+          "type": "insikt",
+          "content": "Vid varje analys av bolag med stark grundarkultur, ställsuccessionsfrågan explicit: vilka MEKANISMER (incitament, mötesformer, informationsflöden) bärs beteendet av — och skulle de fungera imorgon om grundaren försvann? Kultur som mekanism kompilerar; kultur som karisma dör. Det är jedis kontra clones i företagsversion."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kulturens mekanismer — hur moaten bärs vidare\",\"rader\":[[\"Mekanism\",\"Vad den gör\",\"Varför den överlever grundaren\"],[\"Vinstdelning (profit sharing, 1971)\",\"medarbetare blir delägare\",\"intresseanpassning sitter i avtalet, inte personen\"],[\"Lördagsmöten\",\"siffror, idéer, firande varje vecka\",\"informationshastighet som rituellt system\"],[\"Butikens egen resultaträkning\",\"ansvar och jämförelse på butiksnivå\",\"beslut nära kassen\"],[\"Frugalitet som ideologi\",\"billiga kontor, delade rum\",\"kostnadskulturen äter sig in i priset\"],[\"Idéer underifrån (greeters m.fl.)\",\"innovation från frontlinjen\",\"moaten förnyas av dem som möter kunden\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör successions-testet på ett grundarlett bolag i din portfölj: lista tre konkreta mekanismer (incitamentprogram, mötesstruktur, informationsflöde, intern utbildning) som skulle bära kundlöftet och kostnadskulturen utan grundaren. Saknas mekanismerna: skriv ner vilket beteende som mest sannolikt försvinner — och vad det kostar i V14. Bonus: kolla personalomsättningen i årsredovisningen eller hållbarhetsrapporten — frontlinjens röst är siffran, inte storytellingen."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var syftet med vinstdelningsprogrammet 1971?",
+          "alternativ": [
+            "Att finansiera pensionsåtaganden statligt",
+            "Att göra medarbetarna till delägare och koppla butiksresultat till aktieägarvärde",
+            "Att ersätta löner med bonusar",
+            "Att locka investerare vid börsnoteringen"
+          ],
+          "ratt": 1,
+          "tips": "Associates som partner — varför kallades medarbetarna just partner?"
+        },
+        {
+          "q": "Hur kopplar kursen kulturen till jedis kontra clones-läran?",
+          "alternativ": [
+            "Kultur är samma sak som karisma och kan inte byggas",
+            "En moat på mekanismer (möten, incitament, informationsflöden) överlever grundaren; en moat på karisma gör det inte",
+            "Grundare bör aldrig lämna sina bolag",
+            "Kultur spelar ingen roll för moats"
+          ],
+          "ratt": 1,
+          "tips": "Walmart dubblerade under flera VD:ar efter Waltons död — vad bar beteendet?"
+        },
+        {
+          "q": "Vad ska en AKM1-analys enligt kursen mäta för att bedöma kulturens hälsa?",
+          "alternativ": [
+            "Hejaropets längd och kvalitet",
+            "Grundarens popularitet i media",
+            "Personalomsättning, interna befordringar och om frontlinjeideer når ledningen",
+            "Antal kulturtimmar i årsredovisningen"
+          ],
+          "ratt": 2,
+          "tips": "Kultur som mekanism lämnar spår i siffror — vilka?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Logistikmoaten — distributionscentra, lastbilar och satellitnätet 1987",
+      "intro": "Bakom lågpris löftet fanns maskineriet som gjorde det möjligt: ett distributionsnät byggt som en hjulnav-eftersläpning av butiker, en egen lastbilsflotta och — 1987 — USA:s största privata satellitnätverk. Kursens sjätte kapitel läser logistiken som moatens fysiska kropp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Principen, citerad öppet ur boken: expandera runt distributionscentret. Walton och teamet — särskiltJack Shewmaker, David Glass och logistikchefen som boken hedrar — byggde distributionscenter (DC) och öppnade butiker inom en dags lastbilstransport från navet; mättade en region innan nästa togs upp. Effekten: varje ny DC blev billigare per butik eftersom den betjänade fler och tätare butiker; varje ny butik blev billigare att betjäna eftersom den delade nav med de andra. Densitet före spridning — rakt motsatt mot hur de flesta expansionsbolag (och senare e-handlare utan butiksätt) byggt. Egen lastbilsflotta fylldes åt båda hållen: varor ut till butik, inköp tillbaka till DC — mindre tomkörning, snabbare påfyllnad, lägre kostnad per pall. Med tiden förädlades flödet med kontinuerlig påfyllnad och nära leverantörspartnerskap — boken berättar om Procter & Gambles team direkt i Bentonville, ett arrangemang som blev mallen för modern leverantörsintegrering."
+        },
+        {
+          "type": "text",
+          "content": "Satellitnätet 1987 — det som får teknikhistoriker att höja på ögonbrynen. Walton medger i boken att han var sen till datorer men överbevisad av sina datafolks resultat; när butikerna blev tusental behövdes realtidsdata från kassorna. Lösningen blev det största privata satellitnätverket i USA, lanserat 1987: röst, data och video mellan butiker, distributionscenter och huvudkontoret — kassadata per vara i realtid, påfyllnadsbeslut samma dag, butikschefens siffror på skärmen på lördagsmötet. För AK1A är detta moatens informationslager: skalbarriären är inte bara byggnader och lastbilar utan DATAFLÖDET — varje transaktion ger sortiment- och efterfrågeinsikter som konkurrenter utan motsvarande volym inte kan köpa sig till. V14-förtroendet underbyggs av V15-liknande nätverkseffekter på inköPSSsidan: mer volym ger bättre inköpsvillkor och bättre data, vilket ger lägre pris och mer volym."
+        },
+        {
+          "type": "text",
+          "content": "Och nu till kontroversens fysiska kärna, som kursen återkommer till i kapitel 10 och 11: när inköpet flyttar online blir butiks-nätet en tvetydig tillgång. Björnen säger: fyra tusen stora byggnader med fastighetskostnad och personal är en förlegad kostnadsstruktur när varorna kan skeppas från automatiserade lager. Tjuren svarar: samma butiker är de bästa uppfyllnadspunkterna som finns — cirka 90 procent av amerikanerna bor inom en engelsk mil från en Walmart (bolagets egen, flitigt citerade siffra), och varje butik kan bli ett mikrolager för online-ordrar och avhämtning. Vilken läsning som är korrekt är just det AK1A:s dödstest (kapitel 12) ska pröva — men notera redan nu att frågan är empirisk: hur mycket av butiksnätets kostnad som är belastning respektive fördel avgörs av hur ordrarytmen faktiskt fördelas mellan kanaler, inte av vad någon känner för shopping."
+        },
+        {
+          "type": "insikt",
+          "content": "Skalbarriärer är FYSISKA och INFORMATIVA samtidigt: distributionsnätet är murarna, dataflödet är vallgraven. En konkurrent kan bygga om nätet på decennier — men kan inte köpa sig till tjugo års transaktionsdata. När du bedömer skalmoats: räkna både tillgångarna och dataspåren."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Logistikmoaten — systemet Walton byggde\",\"rader\":[[\"Komponent\",\"Funktion\",\"Varför barriär\"],[\"Distributionscentra\",\"butiker inom en dags lastbilstransport\",\"täcknad mark — konkurrent måste bygga likadant\"],[\"Butikskluster\",\"mättad expansion region för region\",\"densitet ger lägre kostnad per butik\"],[\"Egen lastbilsflotta\",\"fyllda åt båda hållen\",\"mindre tomkörning, snabbare påfyllnad\"],[\"Satellitnätet 1987\",\"realtidsdata kassa till huvudkontor\",\"informationsöverlägsenhet före internet\"],[\"Leverantörspartnerskap (P&G i Bentonville)\",\"kontinuerlig påfyllnad, delad efterfrågebild\",\"relationer som tar år att bygga\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita moatens fysiska karta för en återförsäljare: markera distributionscenter (hur många? var?), butiker per region och andel butiker inom en dags transport från ett nav. Uppskatta sedan den informatoriska vallgraven: hur länge har bolaget samlat transaktionsdata, och finns tecken på att datan används (sortiment, påfyllnad, eget märke)? Skriv en mening: vad kostar det för en ny konkurrent att kopiera båda — murar OCH vallgrav?"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var expansionsprincipen runt distributionscentren?",
+          "alternativ": [
+            "Öppna i de största städerna först, logistik senare",
+            "Bygg distributionscenter och öppna butiker inom en dags lastbilstransport — mättad region för region",
+            "Låga tredjepartslogistiker för alla flöden",
+            "Vänta med distribution tills omsättningen översteg ett visst belopp"
+          ],
+          "ratt": 1,
+          "tips": "Densitet före spridning — varför blir varje ny butik billigare att betjäna?"
+        },
+        {
+          "q": "Vad var syftet med satellitnätet 1987?",
+          "alternativ": [
+            "TV-sändningar av lördagsmötena",
+            "Realtidsöverföring av röst, data och video mellan butiker, DC och huvudkontor — kassadata per vara",
+            "Att spåra konkurrenters lastbilar",
+            "Vädersatellitdata för planering"
+          ],
+          "ratt": 1,
+          "tips": "Informationsöverlägsenhet: vad ser huvudkontoret som konkurrenten inte ser?"
+        },
+        {
+          "q": "Hur beskriver kursen butiksnätets roll i e-handelsepoken?",
+          "alternativ": [
+            "Som en ren belastning som måste avvecklas",
+            "Som en tvetydig tillgång — belastning enligt björnen, bästa uppfyllnadspunkter enligt tjuren — som måste prövas empiriskt",
+            "Som orelevant för analysen",
+            "Som enbart fastighetsspekulation"
+          ],
+          "ratt": 1,
+          "tips": "Cirka 90 procent av amerikanerna inom en engelsk mil från en butik — vad kan det bli i en omnikanalvärld?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "De tio reglerna — Walton som checklista",
+      "intro": "Bokens mest citerade kapitel är det sista: Waltons tio regler för att bygga en framgångsrik verksamhet. Kursen läser dem som det de är — en checklista i AKM1:s anda — och mappar varje regel mot en investerarfråga och en AKM1-variabel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Reglerna, uppradade och citerade öppet. Ett: engagera dig helt i din verksamhet — den kräver mer av dig än någon anställning. Två: dela vinsten med alla dina medarbetare — behandla dem som partner. Tre: motivera dina partners — pengar och ägande räcker inte, utmana ständigt. Fyra: kommunicera allt du kan — de som vet mest bryr sig mest. Fem: uppskatta allt dina medarbetare gör — ett vänligt ord är gratis och värt en förmögenhet. Sex: fira dina framgångar — och lär av misslyckanden med humor. Sju: lyssna på alla i bolaget — de bästa idéerna kommer från plockarna och kassörskerna. Åtta: överträffa kundens förväntningar — förlåt misstag, gör det bra igen. Nio: kontrollera kostnaderna hårdare än konkurrenterna — det är där du får övertaget. Tio: simma uppströms — gå motsatt håll mot konventionell visdom. Walton tillägger, med karakteristisk ödmjukhet: reglerna är hur jag gjorde det — bryt dem om du har bättre."
+        },
+        {
+          "type": "text",
+          "content": "Varför kursen läser dem som checklista. En checklista fungerar inte för att punkterna är djupa utan för att de Tvingar samma frågor i samma ordning varje gång — kurskatalogens återkommande läxa (Quantitative Value, Grahams regler, AKM1:s tjugo variabler). Waltons tio regler är en företagsbyggnadschecklista; AKM1:s V01–V20 är en aktieägarschecklista; men mekaniken är identisk: det som kontrolleras mekaniskt slår det som bedöms nostalgiskt. Notera särskilt reglerna nio och tio ur investerarollen. Regel nio (kostnadskontroll) är den enda av de tio som direkt kopplar till en balansräkning — och därför den enda du som utomstående kan verifiera i siffror (V07 bruttomarginal mot konkurrenter, kostnad per soLd krona). Regel tio (simma uppströms) är kursens småstadslära generaliserad: leta bolag som går mot strömmen där strömmen är fel."
+        },
+        {
+          "type": "text",
+          "content": "Buffett-anknytningen, öppet redovisad: Warren Buffett — som genom Berkshire Hathaway ägde Walmart-aktier i över två decennier och i efterhand offentligt kallat försäljningen ett misstag — har hyllat Walton som en av detaljhandelns största. Kopplingen är lärorik för kursen: Berkshire köpte inte en berättelse utan en KOSTNADSSTRUKTUR och en moat som bar sig över chefsbyten — samma egenskaper som reglerna beskriver. Munger-skolans fråga vid alla detaljhandelsinvesteringar är därför Walton-derivat: vem älskar kunden mer — och VEM har råd att älska kunden längre? Det sista är nyckeln: kärlek utan kostnadsöverlägsenhet är en förlustaffär med känslor."
+        },
+        {
+          "type": "insikt",
+          "content": "Använd de tio reglerna som AKM1-förhör vid varje detaljhandels- eller tjänstebolag: för varje regel, ställ en mätbar fråga (delas vinsten — V20-kultur? kommuniceras siffrorna — V12-logik? överträffas kundlöftet — V14? kontrolleras kostnaderna — V07?). Bolaget som faller på tre eller fler regler har en berättelse; bolaget som klarar nio har en moat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Waltons tio regler mappade mot AKM1\",\"rader\":[[\"Regel\",\"AKM1-koppling\",\"Investerarens mätbara fråga\"],[\"1. Engagera dig helt\",\"—\",\"äger ledningen eget kapital?\"],[\"2. Dela vinsten med alla\",\"V20-kultur\",\"finns medarbetarägande?\"],[\"3. Motivera dina partners\",\"—\",\"utmanas och befordras internt?\"],[\"4. Kommunicera allt\",\"V12-logik\",\"vem ser resultaträkningen?\"],[\"5. Uppskatta medarbetarna\",\"—\",\"personalomsättning mot bransch\"],[\"6. Fira framgångarna\",\"—\",\"ritualer och gemensam identitet\"],[\"7. Lyssna på alla\",\"—\",\"kommer frontlinjeideer till ledningen?\"],[\"8. Överträffa kundens förväntningar\",\"V14\",\"hålls löftet — varje dag?\"],[\"9. Kontrollera kostnaderna\",\"V07, V10\",\"kostnad per såld krona mot konkurrent\"],[\"10. Simma uppströms\",\"V03\",\"går bolaget mot strömmen — och varför?\" ]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tio-regels-förhöret på ett bolag du äger eller bevakar: svara ja, nej eller vet-ej på varje regels mätbara fråga (tabellen ovan). Vet-ej räknas som nej — det är din kunskapslucka, inte bolagets förtjänst. Räkna poängen av tio. Skriv därefter de två viktigaste sakerna du skulle behöva ta reda på för att göra Vet-ej till ja eller nej — det är din nästa researchuppgift, och den är viktigare än poängen."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av de tio reglerna är den enda du som utomstående investerare kan verifiera direkt i siffrorna?",
+          "alternativ": [
+            "Regel fem — uppskatta medarbetarna",
+            "Regel sex — fira framgångarna",
+            "Regel nio — kontrollera kostnaderna hårdare än konkurrenterna",
+            "Regel tio — simma uppströms"
+          ],
+          "ratt": 2,
+          "tips": "Vilken regel lämnar spår i resultaträkningen — kostnad per såld krona?"
+        },
+        {
+          "q": "Vad innebär regel tio — simma uppströms — generaliserat till investering?",
+          "alternativ": [
+            "Att köpa bara när alla andra köper",
+            "Att leta bolag som går mot konventionell visdom där strömmen är fel — som Waltons småstäder",
+            "Att simma längs med momentum-aktier",
+            "Att undvika alla motsägelser"
+          ],
+          "ratt": 1,
+          "tips": "Småstadsarbitragen var just simning uppströms — mot branschens storstadskonsensus."
+        },
+        {
+          "q": "Vad är kursens Walton-derivat av Munger-skolans detaljhandelsfråga?",
+          "alternativ": [
+            "Vem har lägst P/E?",
+            "Vem älskar kunden mer — och vem har råd att älska kunden längre?",
+            "Vilken VD är mest känd?",
+            "Vilken butik har finast inredning?"
+          ],
+          "ratt": 1,
+          "tips": "Kärlek utan kostnadsöverlägsenhet är en förlustaffär med känslor."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Priskrigen — Kmart, Target, Woolco, Sears och simma uppströms",
+      "intro": "Detaljhandelns historia är en kyrkogård, och Walton själv gav guidningen: vem som helst kan sänka ett pris — frågan är vem som har råd att hålla det sänkt. Kursens åttonde kapitel läser 1962-arnas öden som moat-historia och introducerar moat-förfallet som analytiskt begrepp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångsläget, citerat öppet ur boken: när Wal-Mart öppnade i Rogers 1962 var Kmart en jätte — Walton beskriver hur Kmart kunde och skulle kunnat krossa dem genom att pruta i deras städer, och hur förvånad han var över att det inte skedde konsekvent. Harry Cunninghams Kmart (första butiken i Garden City, Michigan, mars 1962) var snabbare, större och bättre finansierat — men byggde sin modell på high-low-kampanjer och lokala priskrig. Waltons svar var systematiskt: aldrig vinna en pristvelet ad hoc — hålla EDLP-strukturen, täta butiker runt nav, lägre kostnad per krona. Boken beskriver också Target (samtidigt grundat av Dayton's) och Woolco — den senare som varuhusjättens tappade försök. År 1990 passerade Wal-Mart Sears och blev USA:s största detaljist; Walton dansade en hula på Manhattan 1991 efter ett förlorat vad med David Glass om ett vinstmarginalmål — ett av bokens mest kändaaminer."
+        },
+        {
+          "type": "text",
+          "content": "Moat-förfallet som begrepp — kursens viktigaste verktyg inför kontroversen. Sears: en gång världens största detaljist, ägare av den amerikanska postordningens infrastruktur (katalogen — bokstavligen tidens Amazon), kontantmaskin och fastighetsjätte. Katalogen dödades av internet, varuhuset av diskonteringen, och bolaget som helhet av bristande discipl: diversifierat in i finans, misskött kärna, underinvestering i logistik — konkurs 2018. Kmart: konkurs 2002 (och återigen inom koncernen som ägde Sears 2018). De gemensamma dödsorsakerna, som kursen formaliserar: kostnadsstruktur som EROTERADE mot konkurrenternas, moat som FÖRLORADE relevans när inköp vanan flyttade, och ledning som OPTIMERAde kortsiktig marginal (high-low, kampanjer, kreditkortsförsäljning) på bekostnad av kundlöftet. Det är exakt de tre mekanismer kapitel 12 ska göra om till mätare i dödstestet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsan av kriget: varför Walmart överlevde är inte EDLP som idé (Kmart kunde kopiera idén) utan EDLP som KOSTNADSSTRUKTUR — densiteten i butiksätt, nav-logistiken, satellitdatan, kulturen som höll kostnaden nere utan att bryta kundlöftet. Idéer kopieras gratis; strukturer kopieras till priset av att bygga om ett helt bolag. Därför är kursens test på moat-djup inte vad bolaget lovar utan vad konkurrenten skulle behöva KOSTA för att hålla samma löfte. När du hör ett bolag beskriva sin konkurrent som lättkopierad — fråga efter kostnadsjämförelsen per såld krona, inte efter adjektiv."
+        },
+        {
+          "type": "insikt",
+          "content": "Priskrig vinns inte av den som vågar sänka mest utan av den som har RÅD att hålla det sänkt längst. Bedöm därför varje prismotsättning som ett kapitaltest: vem har den lägsta kostnaden per enhet, det starkaste kassaflödet och den tålmodigaste ägarstrukturen? Priset är ammunitionen — kostnadsstrukturen är arsenalen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diskont-epokens öden — 1962 och dess förödelse\",\"rader\":[[\"Bolag\",\"Modell\",\"Utfall och lära\"],[\"Wal-Mart\",\"EDLP + småstäder + nav-logistik\",\"1990 störst i USA; 2026 fortfarande störst på omsättning\"],[\"Kmart\",\"high-low-kampanjer\",\"konkurs 2002 — kostnadsstrukturen räckte inte\"],[\"Target\",\"designad diskontering\",\"överlevde i nisch — differentiering som nummer två\"],[\"Woolco\",\"varuhusjättens diskontförsök\",\"nedlagt i USA 1983 — halvhjärtat format\"],[\"Sears\",\"varuhus + katalog + finans\",\"konkurs 2018 — katalogens arv övertaget av internet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en moat-förfallsobduktion: välj ett bolag i din sektor som förlorade sin ställning senaste tjugo åren (ett Sears eller Kmart i miniatyr). Lista i efterhand de tre varningssignaler som synliggjorde förfallet FÖRE slutet — kostnadsstrukturens erosion, kundvanans förflyttning, kortsiktigheten i ledningens optimering. Fråga sedan ärligt: vilka av de tre signalerna skulle traditionell fundamental analys (enbart multiplar) ha missat — och vad hade krävts för att se dem i realtid?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför vann Walmart priskrigen mot Kmart enligt kursen?",
+          "alternativ": [
+            "Därför att Kmart saknade kapital",
+            "Därför att EDLP var en idé som Kmart inte kunde förstå",
+            "Därför att EDLP var en kostnadsstruktur — densitet, nav-logistik, satellitdata — inte bara en idé, och strukturer är dyra att kopiera",
+            "Därför att Walmart hade större butiker"
+          ],
+          "ratt": 2,
+          "tips": "Idéer kopieras gratis — vad kostar det att kopiera en struktur?"
+        },
+        {
+          "q": "Vad hände med Sears enligt kursen?",
+          "alternativ": [
+            "Sears köpte upp Walmart 1990",
+            "Sears lever kvar som största amerikanska detaljist",
+            "Katalogen dödades av internet, varuhuset av diskonteringen — konkurs 2018",
+            "Sears lade ner frivilligt med vinst"
+          ],
+          "ratt": 2,
+          "tips": "Världens största detaljist med kontroll över postorderinfrastrukturen — varför räckte det inte?"
+        },
+        {
+          "q": "Vilka tre dödsorsaker identifierar kursen hos moat-förfall?",
+          "alternativ": [
+            "Hög utdelning, låg skuld och stabil marginal",
+            "Eroderande kostnadsstruktur, förlorad kundrelevans och kortsiktig optimering av marginal",
+            "För många butiker, för få anställda och för gamla VD:ar",
+            "Reglering, inflation och valutarisk"
+          ],
+          "ratt": 1,
+          "tips": "Alla tre syns i Sears- och Kmart-fallen — och alla tre blir mätare i kapitel 12."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Walton-modellen i AKM1-tal — marginal bytt mot hastighet (V01–V20)",
+      "intro": "Hur ser Walton-modellen ut genom AKM1:s tjugo variabler? Kursens nionde kapitel kör Walmart — bokversionen och den nutida — genom hela ramverket och visar hur ett bolag kan vara statistiskt mediokert på V07 och samtidigt extremt på V09.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tillväxt- och värderingsblocket. V01 försäljningstillväxt: under 1970-talet växte Wal-Marts försäljning med över 30 procent per år — småstadsbyggandet plus nya delstater plus ny butik per butiksår; en tillväxtmaskin som bara avtog när fysisk mättnad närmade sig (V01:s trend är därför i detaljhandel en funktion av återstående expansionsyta — fråga alltid hur många städer som återstår). V04 P/S: alltid låg i detaljhandel — en ensiffrig multiplar eftersom marginalerna är tunna; att jämföra detaljhandels-P/S mot teknikbolags är meningslöst, se istället till omsättningen per butik och per kvadratmeter. V05 och V06 likaså låga men stabila. Kursens poäng: i Walton-modellen är värderingsblocket inte intressant förrän MOAT-blocket är klarlagt — en billig återförsäljare utan moat är en värdefälla i slow motion (kapitel 8:s kyrkogård)."
+        },
+        {
+          "type": "text",
+          "content": "Lönsamhets-, stabilitets- och kapitalblocket. V07 bruttomarginal: låg, cirka 25 procent i bok-eran — men med högsta omsättningshastighet i branschen (se kapitel 3). V08 EBITDA-marginal: låg enkeltpost men STABIL — en av modellens styrkor: vardagsvaror är konjunkturoberoende, vilket gör V12 intäktsstabilitet hög (mat och konsumtionsvaror köps i alla väder; jmf teknikkonjunkturer). V09 ROE: hög — runt 20 procent eller bättre, tack vare hastighet. V10 skuldsättningsgrad: låg, med toppbetyg i decennier — Waltons personliga skuldkädd fick organisatorisk efterföljd (noteringen 1970 betalade av skulderna). V11 likviditet: stabil för branschen. V19 emission-risk: minimal — Walton-modellen betalade sin expansion med kassaflöde, inte nya aktier (kapitaldisiplinens underskattade sida: V19-noll i femtio år är en tyst men enorm ägarförmån). V20 återköp och utdelning: Walmart har höjt utdelningen varje år sedan 1974 — över femtio år i rad, en dividend-aristokrat."
+        },
+        {
+          "type": "text",
+          "content": "Moat- och katalysatorblocket. V13 patent: inga — detaljhandel skyddas inte av patent. V14 varumärke: FORTROENDE-typen (kapitel 4) — frekvens, förtroende, dataflöde. V15 nätverkseffekter: partial — på inköpssidan (mer volym ger bättre villkor och bättre data), inte konsumentsidan (en kunds värde ökar inte för att fler handlar — skillnaden mot Amazon-marknadsplatsen, som kontroversen ska visa). V16–V18 katalysatorer: i bok-eran Supercentern (1988 — mat under samma tak som allt annat: frekvensen tredubblad), Sam's Club (1983), Mexico (1991); i nutid e-handeln och annonsintäkterna. V03 intäktsdiversifiering: bolagets kanske mest underskattade variabel — från en enda format (diskontvaruhus) till mat, kläder, apotek, bränsle, medlemsklubb, e-handel, marknadsplats och annons — flest ben att stå på. Sammanfattningen i AKM1-termer: en extrem kompilerare byggd på hastighet + kultur + kapitaldisciplin — inte på imponerande enskilda multiplar."
+        },
+        {
+          "type": "insikt",
+          "content": "Förstå detaljhandels-AS: V07 är MEDELOCHMÅTTIGT, V09 är EXTREMT — och det är hastigheten som skiljer. När du screenar återförsäljare, sortera på lageromsättningshastighet och försäljning per kvadratmeter FÖRE du tittar på bruttomarginal — och acceptera att P/S (V04) i branschen bara är meningsfullt i jämförelse med branschens egna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Walton-modellen genom AKM1 — typvärden och kommentarer\",\"rader\":[[\"Variabel\",\"Walmart (typvärde, bok- respektive nutid)\",\"Kommentar\"],[\"V01 Försäljningstillväxt\",\"över 30 procent per år på 1970-talet\",\"funktion av återstående expansionsyta\"],[\"V04 P/S\",\"låg ensiffrig\",\"detaljhandel — jämför bara inom branschen\"],[\"V07 Bruttomarginal\",\"cirka 25 procent\",\"låg — med högsta hastigheten\"],[\"V09 ROE\",\"runt 20 procent\",\"hastighet slår marginal\"],[\"V10 Skuldsättningsgrad\",\"låg; toppkredit i decennier\",\"Waltons skuldkädd som kultur\"],[\"V12 Intäktsstabilitet\",\"hög\",\"vardagsvaror i alla konjunkturer\"],[\"V19 Emission-risk\",\"minimal\",\"expansion betald med kassaflöde\"],[\"V20 Återköp och utdelning\",\"utdelning höjd varje år sedan 1974\",\"drygt femtio års disciplin\"],[\"V03 Diversifiering\",\"från ett format till mat, apotek, klubb, e-handel, annons\",\"kursens kontrovers-variabel\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en komplett AKM1-genomgång — alla tjugo variabler — på en återförsäljare du är nyfiken på (Walmart själv, Costco, Target, eller en nordisk kedja). Två regler: för V07, notera bruttomarginalen tillsammans med lageromsättningshastigheten (inte var för sig); för V14, använd triangeln från kapitel 4 (frekvens, löfte, kostnad). Poängsätt noll till fem per variabel, summera — och skriv vilka tre variabler som stärks respektive försvagas om all försäljning flyttas online om tio år. Det är broarna till kontroverskapitlet."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är V01-försäljningstillväxtens främsta drivare i Walton-modellen?",
+          "alternativ": [
+            "Prishöjningar på befintligt sortiment",
+            "Återstående expansionsyta — antal nya städer och format som kan byggas",
+            "Valutaeffekter",
+            "Kampanjaktivitet"
+          ],
+          "ratt": 1,
+          "tips": "När fysisk mättnad närmade sig avtog tillväxten — vad säger det om drivkraften?"
+        },
+        {
+          "q": "Vad är kursens läsning av Walmart på V15 nätverkseffekter?",
+          "alternativ": [
+            "Full konsumentsidan nätverkseffekt som sociala nätverk",
+            "Inga nätverkseffekter alls i detaljhandel",
+            "Partial — på inköpssidan (volym ger bättre villkor och data), inte på konsumentsidan",
+            "Nätverkseffekter bara i apotekssegmentet"
+          ],
+          "ratt": 2,
+          "tips": "Ökar en kunds värde av att andra handlar hos Walmart? Ökar inköpsvillkorens värde av volym?"
+        },
+        {
+          "q": "Sedan vilket år har Walmart höjt sin utdelning varje år (V20)?",
+          "alternativ": [
+            "1974 — över femtio år i rad",
+            "1992 — sedan Waltons död",
+            "2008 — sedan finanskrisen",
+            "2020 — sedan Walmart+ lanserades"
+          ],
+          "ratt": 0,
+          "tips": "Kapitaldisciplinen började tidigt — och pågick i över fem decennier."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Kontroversen I — Är Waltons modell död? Björnargumentet",
+      "intro": "Sam Walton avled månader innan den första kommersiella webbläsaren släpptes; kontroversen är därför inte hans utan vår. Kursens tionde kapitel formulerar björnargumentet så starkt det går: e-handeln och Amazon har dödat Walton-modellen — småstads-tätheten är en endrörd tillgång, Prime-vanan har dödat bilfärds-vanan, och V14 har flyttat online.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det strukturella argumentet. Walton-modellen byggde på tre antaganden: att kunden måste åka till varan (butiksläget var moat), att prisjämförelse är jobbigt (EDLP som förtroende kontra konkurrenters vippror), och att fysisk densitet ger lägst kostnad per kund. E-handeln bryter alla tre: varan åker till kunden (läget blir belastning), prisjämförelse är ett klick (förtroendet avmystifieras), och automatiserade lager utan butiksyta kan i teorin betjäna efterfrågan till lägre kostnad. Showrooming blev symbolen för vändningen: kunden provade i butiken och köpte online — butiks-nätet finansierade konkurrentens order. Under 2017 års detaljhandels-apokalyps stängdes rekordmånga amerikanska butiker (offentligt dokumenterat), och Sears-fallet (kapitel 8) stod som bevis på att brick-and-mortar-moats kan dö även utan direkt konkursrisk i kassan."
+        },
+        {
+          "type": "text",
+          "content": "Amazons angrepp i siffror, öppet redovisat och hedgat (cirka-lägen, offentliga rapporter): Amazon passerade Walmart i börsvärde 2015 — en milstolpe som symboliserade att marknaden prissatte framtidens vinstpools digitalt. Prime passerade 200 miljoner medlemmar (bolaget redovisade detta 2021) — en INKÖPSVANA med förbetald avgift, vilket är den starkaste formen av V14-lojalitet e-handeln skapat: medlemmen går med förlust på att INTE handla. Amazons intäkter nådde runt 575 miljarder dollar 2023 (med AWS och annons som vintmotorer med betydligt högre marginal än detaljhandel) mot Walmarts cirka 648 miljarder för räkenskapsåret till januari 2024 — Walmart fortfarande större på omsättning, men marknaden värderade Amazons vinstpools tillväxt multiples högre (börsvärden skiljde vid skrivandet med faktor flera). Björnens slutsats i AKM1-termer: V14-flytt från butiksvana till plattformsvana, och V15 nätverkseffekter (marknadsplats, recensioner, logistik-som-tjänst) som Walton-modellen saknar på konsumentsidan."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetskravet — björnargumentets svagheter, som kursen kräver att du formulerar lika tydligt som argumentet självt. Ett: Walmart är fortfarande världens största bolag på OMSÄTTNING och världens största privata arbetsgivare — modeller som är döda producerar sällan 650-miljardersflöden. Två: mat — halva den amerikanska livsmedelsmarknadens verklighet — är den e-handelskategoria som visat sig trögast online (kyla, kostnad per kasse, önskan att välja själv), och Walmart är USA:s största livsmedelsförsäljare. Tre: bilfärds-vanan är inte bara en vana utan en SÄRSKILD vana: hela familjens veckoinköp i ett svep är tidsmässigt rationellt kvar i fysisk form för många hushåll. Björnen har rätt i att moaten är CONTESTED — men kurvan död kräver att kassaflödet sviker, och det hade det vid skrivandet inte gjort. Frågan är alltså inte död eller levande, utan: vilken del av moaten som dör först. Det är kapitel 12:s uppgift."
+        },
+        {
+          "type": "insikt",
+          "content": "Skilj på tre moat-frågor som ofta blandas ihop: ÄR OMSÄTTNINGS-moaten död? (nej — Walmart fortfarande störst på flöde). Är VINSTPOOL-moaten omkämpad? (ja — Amazons margmotorer AWS och annons växer snabbare). Är TILLVÄXT-moaten flyttad? (ja — online). En aktieägarfråga per rad — och tre olika svar, inte ett."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — björnargumentet i siffror (cirka, offentliga rapporter)\",\"rader\":[[\"Mått\",\"Amazon\",\"Walmart\"],[\"Omsättning\",\"cirka 575 miljarder dollar (2023)\",\"cirka 648 miljarder dollar (räkenskapsåret till jan 2024)\"],[\"Vinstmotor\",\"AWS, annons, Prime — blandade marginaler\",\"tunn butiksmarginal; växande annons och medlemskap\"],[\"Medlemskap\",\"Prime över 200 miljoner (2021)\",\"Walmart+ sedan 2020\"],[\"Logistik\",\"e-handel först; automatiserade lager; sedan fysiskt\",\"butiker först; cirka 90 procent av amerikaner inom 16 km\"],[\"Börsvärde\",\"passerade Walmart 2015; vid skrivandet flera gånger större\",\"—\"],[\"BJÖRNENS PÅSTÅENDE\",\"V14 flyttat online: Prime-vanan slår EDLP-vanan\",\"SVAGHET: mat är trögast online — och flödet sviker inte\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv björnmemot: formulera i max fem punkter det starkaste argumentet för att Walton-modellen är död — med en siffra per punkt (marknadsandelar online, medlemskapsantal, börsvärdesrelation, butiksavvecklingar). Tvinga dig sedan att lägga in svagheten i varje punkt (vilken del av påståendet är en trendutsträckning snarare än ett faktum?). Spara memot — du ska bekämpa det själv i nästa kapitel, och bedöma det med dödstestet i kapitel 12."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre antaganden i Walton-modellen menar björnen att e-handeln bryter?",
+          "alternativ": [
+            "Att kunden måste åka till varan, att prisjämförelse är jobbigt, att fysisk densitet ger lägst kostnad per kund",
+            "Att kunder gillar reklam, kampanjer och stora parkeringsytor",
+            "Att mat handlas en gång i månaden, i stora partier",
+            "Att löner kan hållas låga, hyror förhandlas och leverantörer pressas"
+          ],
+          "ratt": 0,
+          "tips": "Vad hände med läget, prisinformationen och kostnadsstrukturen när varan började åka till kunden?"
+        },
+        {
+          "q": "Vad är Prime-medlemskapets moat-mekaniska styrka?",
+          "alternativ": [
+            "Att det är gratis och därmed sprids snabbt",
+            "Att det är en förbetald inköpsvana — medlemmen går med förlust på att inte handla",
+            "Att det endast gäller elektronik",
+            "Att det binder kunden juridiskt i tolv månader"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en redan betald avgift med beslutet var nästa inköp ska ske?"
+        },
+        {
+          "q": "Vilken svaghet i björnargumentet betonar kursens ärlighetskrav?",
+          "alternativ": [
+            "Att Amazon aldrig gjort vinst",
+            "Att Walmart fortfarande producerar världens största omsättningsflöde och att mat visat sig trögast online",
+            "Att e-handel är olaglig i flera delstater",
+            "Att Prime-medlemsantalet är hemligt"
+          ],
+          "ratt": 1,
+          "tips": "Modeller som är döda producerar sällan 650-miljardersflöden — och vilken kategori är trögast online?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Kontroversen II — Omnikanalens svar och V03 diversifiering",
+      "intro": "Tjurens svar kom inte som en motattack på Amazons planhalva utan som en omstöpning av den egna: butikarna blev uppfyllnadspunkter, e-handeln byggdes genom förvärv, och intäktsbasen breddades till mat, marknadsplats, annons och medlemskap. Kursens elfte kapitel läser omnikanalen genom AKM1:s V03 — och erkänner misslyckandena på vägen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förvärven och bygget, öppet redovisat: Jet.com köptes 2016 för 3,3 miljarder dollar — en dyr skola i e-handelskompetens som lärde organisationen digital prissättning och leverans; plattformen lades senare ner (2020), vilket kursen noterar som ett ärligt misslyckande snarare än en framgång. Flipkart köptes 2018 för 16 miljarder dollar (77 procent) — Indiens största e-handelsplats och bolagets största satsning på nästa miljard konsumenter. Walmart+ lanserades september 2020 som svar på Prime: fri leverans från den egna butiken, bränslerabatt, Paramount-innehåll — byggd på den tillgången Amazon saknar: tiotusentals butiker inom räckhåll för nästan alla. E-handeln växte till omkring 100 miljarder dollar globalt (bolagets redovisningar, senare år) — fortfarande en bråkdel av Amazon, men bland de absolut största e-handelsflödena i världen och med tillväxttakt som regelbundet översteg tjugo procent per kvartal under omställningsåren."
+        },
+        {
+          "type": "text",
+          "content": "Det strategiska vändningen — från butiksomladen uppfyllnad till affärsmodellsdiversifiering. Butiken som mikrolager: plocka online-ordern i butikens hyllor, leverera eller låta kunden hämta vid trottoarkanten (curbside) — kostnadslogiken vänds från belastning till fördel när sista milen betjänas från tiotusentals punkter i stället för några få jättelager. Mat som draglok: avhämtning av livsmedel blev den vanan som fokuserade hushållen lärde sig under pandemin och som behölls — Walmart blev en ledande online-livsmedelsaktör i USA. Marknadsplats och annons (Walmart Connect): tredjepartssäljare och annonsintäkter på den egna trafiken är högmarginella intäkter som Amazon bevisat modellen för — V03-diversifiering IN I VINSTPPOOLER utanför butiksmarginalen. Medlemskap, apotek, bränsle, finanstjänster: varje ben ökar besöksfrekvensen (V14) och breddar intäktsbasen (V03). Doug McMillon — VD sedan 2014, som började som timanställd lastbilsavlastare i ett distributionscentrum som tonåring — är själv kulturens succession-bevis: femte VD:n efter Walton, buren av samma system."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsan av omnikanalen, med ödmjukhet. V03 intäktsdiversifiering: från ett format till mat, klubb, apotek, bränsle, e-handel, marknadsplats, annons, medlemskap — i nio länder kvarvarande efter ärliga uttåg (Tyskland och Sydkorea lämnades 2006 — bokens eftermäle om internationella misslyckanden fick sin fortsättning; kursen noterar att även moat-byggare misslyckas när kulturen inte översätts). V14: frekvensen försvaras genom att möta kunden i båda kanalerna — och datan från båda flödena återmatas i sortiment och pris (satellitnätets andliga arvtagare). V07–V09: annons- och marknadsplatsintäkternas högre marginal höjer sammansatt lönsamhet utan att bryta EDLP-löftet — margin från trafik, inte från prishöjningar. Men kursens varning står kvar från kapitel 4: omnikanalen FÖRSVARAR frekvensen — den skapar inte nödvändigtvis en ny tillväxtmoat. Det är skillnaden mellan att inte dö och att födas på nytt, och AKM1-analysen ska hålla isär de två."
+        },
+        {
+          "type": "insikt",
+          "content": "V03 är moatens FÖRSVARS-variabel, inte dess anfalls-variabel: diversifiering bredde en intäktsbas gör moaten svårare att döda — men den förnyar inte kanten. Bedöm därför omnikanal-bolag i två steg: FÖRSVARAR diversifieringen frekvensen (V14-hållbart)? och SKAPAR någon del en ny vinstpool som växer snabbare än den gamla? Walmart under McMillon: ja på det första, påbörjat på det andra — annons och marknadsplats. Det är levande, inte odödligt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svaret — omnikanalen genom V03\",\"rader\":[[\"Drag\",\"År och storlek\",\"V03-logik\"],[\"Jet.com\",\"2016 — 3,3 miljarder dollar\",\"köpt digital kompetens; nedlagt 2020 — ärligt misslyckande\"],[\"Flipkart\",\"2018 — 16 miljarder för 77 procent\",\"Indien: nästa miljard konsumenter\"],[\"Walmart+\",\"2020\",\"svar på Prime — fri leverans från egen butik\"],[\"Butiksomladen uppfyllnad och curbside\",\"pågående\",\"cirka 90 procent av amerikaner inom 16 km — butiken som mikrolager\"],[\"Marknadsplats och annons (Connect)\",\"pågående\",\"högmarginal intäkter på egen trafik\"],[\"Uttåg Tyskland och Sydkorea\",\"2006\",\"kultur översätts inte automatiskt — misslyckandena också data\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita V03-kartan för ett omstrukturerat bolag du följer: lista alla intäktsben (format, kategorier, geografier, plattformstjänster) med andel av omsättningen och ungefärlig marginal. Markera vilka ben som FÖRSVARAR frekvensen och vilka som SKAPAR ny vinstpool. Om alla ben är försvar: bolaget kan överleva länge men kompileringen avtar. Om minst ett ben är ny vinstpool med dubbelvärtdigit tillväxt: skriv upp det som katalysator (V16–V18) i din AKM1-analys — det är där kursens tumregel placerar optionen."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Jet.com, och hur läser kursen det?",
+          "alternativ": [
+            "Det blev Walmarts huvudplattform och ersatte walmart.com",
+            "Det köptes 2016 för 3,3 miljarder dollar och lades ner 2020 — ett ärligt misslyckande som ändå lärde organisationen e-handel",
+            "Det såldes med vinst till Amazon",
+            "Det bytte namn till Walmart+"
+          ],
+          "ratt": 1,
+          "tips": "Även moat-byggare misslyckas — vad är värdet av ett dyrköpt lärande?"
+        },
+        {
+          "q": "Vad är den kostnadslogiska poängen med butiksomladen uppfyllnad?",
+          "alternativ": [
+            "Att butiker kan hyras ut som lager till konkurrenter",
+            "Att sista milen betjänas från tiotusentals butiks-punkter i stället för några få jättelager — butiken vänds från belastning till fördel",
+            "Att personalen kan arbeta hemifrån",
+            "Att alla butiker måste stängas för att spara pengar"
+          ],
+          "ratt": 1,
+          "tips": "Cirka 90 procent av amerikanerna inom 16 km — vad är det värt om varje butik blir mikrolager?"
+        },
+        {
+          "q": "Hur skiljer kursen på FÖRSVAR och ANFALL i V03-diversifiering?",
+          "alternativ": [
+            "Försvar breddar intäktsbasen och gör moaten svårare att döda; anfall skapar en ny vinstpool som växer snabbare än den gamla",
+            "Försvar gäller bara utlandet; anfall bara online",
+            "Försvar är juridiskt; anfall är marknadsföring",
+            "Det är exakt samma sak"
+          ],
+          "ratt": 0,
+          "tips": "Att inte dö kontra att födas på nytt — vilka ben gör vad?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "AK1A:s moat-dödstest — hur vet man när V14 dör?",
+      "intro": "Kontroversen slutar inte med åsikt utan med metod. Kursens tolfte kapitel bygger AK1A:s moat-dödstest: sex mätbara indikatorer som avgör om en kundlojalitets-moat (V14) lever, försvagas eller dör — tillämpbara på vilket detaljhandels- eller tjänstebolag som helst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför testet behövs: moats förlångsamt-sedan-snabbt. Sears var störst 1990 och konkurs 2018 — tjugosju år från topp till grav, med varningssignaler som var tydliga i ett decennium men som inte syntes i multiplar förrän det var för sent. Ett V14-betyg är därför inte en nivå utan en HASTIGHET: frågan är inte om kunden älskar bolaget idag utan åt vilket håll frekvensen, marginalen och andelen rör sig. AKM1:s variabler är byggda för detta — V01 (tillväxt mot bransch), V07 (marginal genom cykler), V12 (stabilitet) — men de måste ställas i RELATIV och TREND-form, vilket är vad dödstestets sex mätare formaliserar. Kursen hämtar metoden från AK1A:s bredare ram (fem tidshorisonter, scenario-tänk): en moat bedöms per horisont — död på kort horizon kan vara levande på lång och omvänt."
+        },
+        {
+          "type": "text",
+          "content": "De sex mätarna, en och en. Ett — FREKVENS: kommer kunden oftare? (besök och transaktioner per kund och år; i brist därpå: organisk tillväxt uppdelad i kundtillväxt mot korgtillväxt). Två — LÖFTE: hålls prismakt? (bruttomarginalens V07-trend genom en full konjunktur- eller inflationscykel — höjde konkurrenterna priserna 2021–2023 medan bolaget inte behövde, eller tvärtom?). Tre — ANDEL: vinns marknadsandel? (försäljningstillväxt mot branschgenomsnitt, V01-relativ). Fyra — FINANSIERING: kan moaten finansieras? (kapacitetsinvesteringar per år i förhållande till konkurrenternas — den som inte har råd att investera om sin moat äger den inte längre). Fem — BREDD: intäktsbenen enligt V03 (ett ben = skört; flera ben = svårare att döda). Sex — ECHTERHET: är löftet sant? (kundmätningar och returgrad där de finns; personalomsättning som kulturens proxy — kapitel 5). Grönt kräver stigande eller stabil frekvens PLUS minst fyra av sex gröna. Rött: fallande frekvens eller tre eller fler röda."
+        },
+        {
+          "type": "text",
+          "content": "Kör testet på kontroversens båda parter, som kursens examination. Walmart (cirka 2024, offentliga rapporter): frekvens — stabil till stigande, matfokus och avhämtning driver besök; löfte — bruttomarginalen höll genom inflationen 2021–2023 och bolaget vann enligt egen redovisning marknadsandel i mat; andel — försäljningstillväxt över branschgenomsnittet; finansiering — kapacitetsinvesteringar i miljardklassen per år, bland de högsta i detaljhandel; bredd — mat, klubb, apotek, e-handel, annons, marknadsplats; äkthet — personalomsättning förbättrad enligt bolaget men lönekritiken kvarstår (kapitel 13). Dom: GRÖN-GUL — moaten lever, vinstpoolen omkämpad. Amazon: frekvens — stigande (Prime), löfte — stark (AWS-marginal), andel — vinner i e-handel och annons, finansiering — extrem, bredd — flera ben, äkthet — stark på konsentssidan, ifrågasatt på arbetsgivarsidan. Dom: GRÖN — men i en annan moat-klass (plattform snarare än EDLP). slutsatsen: Waltons modell är inte död; den är omkömpad — och skillnaden mellan orden är hela skillnaden mellan att sälja och att analysera."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera dödstestets kärna: en moat bedöms i HASTIGHET, inte i nivå — frekvens, marginal, andel, finansiering, bredd, äkthet, alla i trendform och alla i jämförelse med konkurrenten. Grönt kräver stigande frekvens plus fyra av sex. Rött vid fallande frekvens eller tre röda: moaten är då en historiebok, inte ett skydd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AK1A:s moat-dödstest — sex mätare\",\"rader\":[[\"Mätare\",\"Datapunkt\",\"Grön\",\"Röd\"],[\"1. Frekvens\",\"besök eller transaktioner per kund och år\",\"stigande\",\"fallande\"],[\"2. Löfte\",\"bruttomarginal (V07) genom en hel cykel\",\"stabil eller upp\",\"urholkad\"],[\"3. Andel\",\"tillväxt (V01) mot branschen\",\"över bransch\",\"under bransch\"],[\"4. Finansiering\",\"investeringsförmåga i moaten per år\",\"jämna eller över konkurrent\",\"under\"],[\"5. Bredd\",\"intäktsben enligt V03\",\"flera ben\",\"ett ben\"],[\"6. Äkthet\",\"kundmätningar, returgrad, personalomsättning\",\"stark\",\"svag eller okänd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör dödstestet i full utförlighet på ett detaljhandels- eller prenumerationsbolag i din bevakning: fyll tabellens sex rader med en siffra eller bedömning per rad — NOTERA källan för varje (årsredovisning, branschstatistik, egna observationer). Om två eller fler rader är OKÄNNA: det är analysens viktigaste resultat — din moat-bild vilar på gissningar. Skriv därefter dom: grön, grön-gul, gul, röd — med en mening som förklarar vilken mätare som avgjorde."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är en moat en HASTIGHET och inte en nivå?",
+          "alternativ": [
+            "Därför att moats bara finns i tillväxtbolag",
+            "Därför att moats försvinner långsamt och sedan snabbt — Sears var störst 1990 och konkurs 2018, med signaler som multiplar missade",
+            "Därför att nivåer inte går att mäta",
+            "Därför att hastighet är samma sak som volatilitet"
+          ],
+          "ratt": 1,
+          "tips": "Fråga inte om kunden älskar bolaget idag — fråga åt vilket håll det rör sig."
+        },
+        {
+          "q": "Vilken mätare i dödstestet fångar om bolaget har råd att behålla sin moat?",
+          "alternativ": [
+            "Mätare två — löftet",
+            "Mätare fyra — finansiering: investeringsförmågan i moaten per år jämfört med konkurrentens",
+            "Mätare fem — bredden",
+            "Mätare sex — äktheten"
+          ],
+          "ratt": 1,
+          "tips": "Den som inte kan investera om sin moat äger den inte längre."
+        },
+        {
+          "q": "Vad blir kursens dom på Walmart i kontroversen?",
+          "alternativ": [
+            "Röd — modellen är död",
+            "Grön — modellen är starkare än någonsin",
+            "Grön-gul — moaten lever, vinstpoolen omkämpad: omkömpad, inte död",
+            "Dom går inte att fälla utan insiderinformation"
+          ],
+          "ratt": 2,
+          "tips": "Frekvens stabil, marginal höll, andel vanns — men vinstpoolerna angrips av plattformsmodellen."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Ärlighetens räkenskap — kritiken och bokens egna bekännelser",
+      "intro": "En kurs som slutar med att hylla Walton skulle bryta mot sitt eget ärlighetsfilter. Det trettonde kapitlet läser kritiken mot mannen och bolaget, Waltons egna medgivanden i boken — och översätter hela räkenskapen till AK1A:s Θ-krav på verifierbarhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken, som är offentlig, dokumenterad och värd att tas på allvar. Mot småstäderna: att Wal-Marts priser kuvade huvudgatan — lokala handlare lagt ner, stadskärnor ihåliga. Walton svarar i boken, öppet citerat: kunderna röstade själva, med fötterna och plånboken, och han vägrade be om ursäkt för att ge människor med små inkomster tillgång till samma varor billigare. Mot medarbetarna: löner och förmåner under branschens toppnivåer, ett hårt motstånd mot fackföreningar (offentligt dokumenterat under decennier), stämningsärenden om kvinnors karriärmöjligheter (däribland det uppmärksammade Dukes-målet). Walton svarar med vinstdelning och associates-retoriken — men kursen noterar att boken inte FULLT UT besvarar lönekritiken, och att ärlighetsfiltret kräver att vi skriver det. Senare erans ledning har höjt lägslöner vid flera tillfällen (offentligt, 2015 och framåt) — vilket kan läsas både som erkännande och som moat-investering i V14-äktheten."
+        },
+        {
+          "type": "text",
+          "content": "Waltons egna bekännelser — bokens mest värdefulla sidor för en analyiker, eftersom självkritik från en grundare är den mest verifierbara information en kultur-bärare kan lämna. Han medger att han försummade familjen under byggåren (Helen Waltons röst i boken är, översatt till analystermer, den mest kompetenta granskaren i verket). Han medger misstag i format och förvärv, tveksam personal- och inköpsjakt i unga år, och han berättar själv historien om hur han tvingades betala ett förlorat vad genom att dansa hula på Manhattan 1991 — efter att bolaget nått ett vinstmarginalmål han trott omöjligt — ett bildexempel på incitament som håller (ledare som sätter offentliga mål och betalar sina förluster med värdighet). Och i sitt sista offentliga framträdande — medaljen of Freedom i mars 1992, veckor före sin död — talade han inte om sin egen bok utan om USA:s handelsunderskott: hans sista undervisning var ett makro-varning, inte en mikro-framgångssaga."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s Θ-översättning — hur granskas en grundarmemoar? Regel ett: separa EGO från DATA — Walton berättar (data) att vinstdelningen skapade miljonärer, vilket är verifierbart i bolagets handlingar; att kulturen var familjär är (ego) och ska vägas därefter. Regel två: läs medgrundare, kritiker och konkurrenter mot samma händelser — boken är en part i målet, inte domstolen. Regel tre: ägarstyrningen — familjen kontrollerar fortfarande cirka 45 procent av aktierna (offentligt känt), vilket ger stabilitet och långsiktighet men koncentrerar makt; minoritetsägarens AKM1-fråga är om kontrollen använts för att skydda moaten (troligen ja) eller för att värna fördelar (påståendet finns, bevisningen svag — notera okändheten, dölj den inte). Sammanfattningsvis för analysen: kritiken är reell, svaren partiella, moaten opåverkad i kassaflödes-mening men påverkad i ÄKTHETS-mätaren (mätare sex i dödstestet) — och det är precis så en ärlig analys ska se ut: med båda kolumnerna ifyllda."
+        },
+        {
+          "type": "insikt",
+          "content": "Behandla varje grundarmemoar som ett vittnesmål, inte som en dom: verifiera det mätbara (vinstdelning, marginalmål, medalj-tal), diskontera det känslosamma (kulturnostalgi), och leta aktivt efter granskare med motsatt intresse. En moat-analys utan en kritiker-kolumn är en bokrecension — och AKM1 förtjänar bättre än recensioner."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritiken — påstående, svar och AK1A-test\",\"rader\":[[\"Kritik\",\"Svar (boken eller senare erans bolag)\",\"AK1A:s test\"],[\"Småstadshandel kuvad\",\"kunderna röstade med plånboken\",\"orsak eller korrelation? — nätthandel dödade fler gator\"],[\"Löner och förmåner\",\"vinstdelning; sedermera höjda lägslöner (2015+)\",\"medianlön mot bransch; äkthetsmätaren\"],[\"Fackföreningsmotstånd\",\"boken svarar inte fullt ut\",\"GRANSKA — Θ-filtret kräver öppenhet\"],[\"Kvinnors karriärer (Dukes-målet)\",\"sena åtgärder; ledningsförändringar\",\"andel kvinnor i ledningen över tid\"],[\"Familjekontroll cirka 45 procent\",\"stabilitet och långsiktighet\",\"minoritetsägare och röstningsmakt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör vittnesmotsättningen: välj ett bolag du äger och leta upp grundarens (eller ledningens) egen berättelse — brev, memoarer, intervjuer. Lista fem påståenden ur berättelsen och klassa varje som DATA (mätbart, källa utanför bolaget) eller EGO (självbild). Leta därefter medvetet efter den mest kompetenta kritikern av samma bolag och notera vilka av de fem påståendena kritikern bestrider. Skriv en mening om hur din förtroende variabel (V14 eller kultur) förändrades av övningen — och om svaret är ingen alls: var skeptisk mot din egen metod."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur svarar Walton i boken på kritiken mot småstäderna?",
+          "alternativ": [
+            "Att han be om ursäkt och betalade ersättning",
+            "Att kunderna själva röstade med plånboken — och att han vägrade be om ursäkt för att erbjuda lägre priser",
+            "Att kritiken var statistiskt felaktig",
+            "Att småstäderna aldrig påverkades"
+          ],
+          "ratt": 1,
+          "tips": "Vem har sista rätten över var handeln sker — kommentatorn eller kunden?"
+        },
+        {
+          "q": "Vilken kritik anser kursen att boken INTE fullt ut besvarar?",
+          "alternativ": [
+            "Prissättningsstrategin",
+            "Logistikinvesteringarna",
+            "Lönekritiken och fackföreningsmotståndet — ärlighetsfiltret kräver att det skrivs",
+            "Satellitnätets kostnad"
+          ],
+          "ratt": 2,
+          "tips": "Associates-retoriken och vinstdelningen svarar — men räcker svaret hela vägen?"
+        },
+        {
+          "q": "Vad var Waltons sista offentliga undervisning vid medaljceremonin mars 1992?",
+          "alternativ": [
+            "En hyllning av sin egen bok",
+            "En varning om USA:s handelsunderskott — ett makro-varning, inte en mikro-framgångssaga",
+            "En presentation av ny logistik",
+            "Ett tack till konkurrenterna"
+          ],
+          "ratt": 1,
+          "tips": "Veckor före sin död valde han att tala om landets balansräkning, inte sin egen."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — arvet och AKM1-syntesen (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop allt: Walton-modellen som en AKM1-process, kontroversens dom som en metod i stället för en åsikt, och den investerarbild kursen format mot — analytikern som mäter kärlek i frekvens och pris i kostnadsstruktur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Processen i sex steg, som din egen checklista. Ett: lägesfrågan — var finns kundgruppen andra ignorerar, och har bolaget kostnadsstrukturen för den (småstadsarbitraget)? Två: prismodellen — EDLP som struktur med verifierbar kostnadsöverlägsenhet (V07 läst tillsammans med omsättningshastigheten; V09 som hastighetsbevis). Tre: kundrelationen — V14-triangeln: frekvens, löfte, kostnad; förtroende-varumärke mäts i besök, inte i image. Fyra: bärverket — kulturens mekanismer (vinstdelning, informationsflöden, succession): bär moaten beteendet utan grundaren? Fem: barriären — logistikens murar och dataflödets vallgrav; räkna båda. Sex: dödstestet — sex mätare i trendform, grönt kräver stigande frekvens plus fyra av sex; kör testet varje kvartal, inte varje decennium. Där är hela kursen — och den ryms på ett A4, vilket är hela poängen: Walton byggde världens största flöde på regler som fick plats i huvudet på en butikschefer."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen till AKM1:s alla tjugo variabler, hela vägen runt. Tillväxtblocket V01–V03: expansionsyta som V01-drivare; V02 ARR-logik i överförd bemärkelse (matens veckofrekvens är återkommande intäkt i praktiken); V03 som moatens försvarsvariabel — format, kategorier, länder, plattformstjänster. Värderingsblocket V04–V06: lågt och stabilt, men meningsfullt bara i branschjämförelse och EFTER moat-klarläggande. Lönsamhetsblocket V07–V09: kursens teckenpar — låg V07, extrem hastighet, hög V09. Stabilitetsblocket V10–V12: låg skuld, stabil likviditet, konjunkturoberoende vardagsvaror. Moat-blocket V13–V15: inga patent (V13); V14 förtroende-varumärket — kursens kärna; V15 partiell nätverkseffekt på inköPSSsidan. Katalysatorblocket V16–V18: format- och katalysatorbyggen (Supercenter, Sam's, e-handel, annons) som optioner på ny frekvens. V19: emission-disciplinens femtio år. V20: utdelning sedan 1974 och återköp — kapital som flödar tillbaka till ägarna. Kontroversen i en mening: V14 står emot V15-nätverkseffekterna hos plattformar, och V03 avgör om försvar kan bli förnyelse."
+        },
+        {
+          "type": "text",
+          "content": "Den Walton-inspirerade analytikern, porträtterad i sex drag. Ett: han eller hon mäter kärlek i frekvens — inte i hur varmt ledningen talar. Två: hon ser priset som en kostnadsstruktur — priskrig vinns av arsenalen, inte av ammunitionen. Tre: han kräver mekanismer, inte karisma — jedis kontra clones, i företags- såväl som investerarversion. Fyra: hon kör checklistor som tvingar samma frågor i samma ordning — tio regler, tjugo variabler, sex mätare. Fem: han granskar som en revisor och läser grundare som vittnen — med kritiker-kolumnen ifylld. Sex: hon vet att moats är hastigheter — och kör dödstestet varje kvartal, i ödmjukhet inför det faktum att Sears en gång var omöjligt att döda. Walton lämnade sin sista lektion i mars 1992: peka på det som är större än din egen framgång — handelsunderskottet, moatens förgänglighet, nästa konkurrent som simmar uppströms. AK1A:s svar på den lektionen är metodiskt: mät, granska, ompröva. Bygg ditt A4 i dag — och kör det varje kvartal i åratal."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första: kunden är den ende chefen — och hon avskedar bolag vars kostnadsstruktur inte längre räcker för löftet. Din uppgift som analytiker är att mäta det löftet i frekvens, marginal och hastighet, och att aldrig igen använda ordet lojal utan en siffra bredvid."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Made in America till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll\"],[\"Kundbesatthet (ten-foot, sundown, garanti)\",\"V14\",\"moat-kärna — frekvens, löfte, kostnad\"],[\"EDLP och kostnadsdisciplin\",\"V07–V09\",\"marginal bytt mot hastighet\"],[\"Distributionsnät och satellitnät 1987\",\"V14-underlag\",\"murar och dataflödets vallgrav\"],[\"Format-diversifiering (Sam's, Supercenter, e-handel, annons)\",\"V03\",\"moatens försvars- och förnyelsevariabel\"],[\"Vinstdelning och kultur-mekanismer\",\"V20-kultur\",\"moat-bärare över successionen\"],[\"De tio reglerna\",\"checklista\",\"AKM1:s metod-anda\"],[\"Priskrigen (Kmart, Woolco, Sears)\",\"moat-förfall\",\"dödstestets ursprungsdata\"],[\"E-handelskontroversen (Amazon mot Walmart)\",\"V14 mot V15\",\"examensfrågan — omkömpad, inte död\"],[\"Kritiken och bekännelserna\",\"Θ-ärlighetsfiltret\",\"vittnesmål kontra dom\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — den fullständiga Walton-analysen: välj ett återförsäljar- eller konsumentbolag (Walmart, Costco, Target, Amazon som motpol, eller en nordisk kedja) och kör: steg ett, läges- och prismodellsfrågan; steg två, V07 med omsättningshastighet och V09; steg tre, V14-triangeln; steg fyra, kulturens mekanismer och succession; steg fem, murar och vallgrav (logistik och data); steg sex, moat-dödstestets sex mätare med källor. Dokumentera allt i en AKM1-utvärdering med dom: grön, grön-gul, gul eller röd. Spara med datum — och bokmärk för omkörning om ett kvartal. Från och med nu är lojal en siffra, inte en känsla."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i kursens sexstegsprocess?",
+          "alternativ": [
+            "Värdering, story, pris, portfölj, lucka, rens",
+            "Lägesfrågan, prismodellen (EDLP-struktur), kundrelationen (V14-triangeln), bärverket (kultur), barriären (murar och vallgrav), dödstestet",
+            "Dödstest, värdering, story, köp, sälj, glöm",
+            "Kultur, logistik, kalkyl, kampanj, kontroll, kapning"
+          ],
+          "ratt": 1,
+          "tips": "Vad avgörs FÖRE multiplarna — och vad körs ALLTID sist, varje kvartal?"
+        },
+        {
+          "q": "Hur sammanfattar kursen kontroversen i en mening?",
+          "alternativ": [
+            "V14-förtroende står emot V15-nätverkseffekter hos plattformar — och V03 avgör om försvar kan bli förnyelse",
+            "Amazon och Walmart är samma bolag i olika förpackningar",
+            "Detaljhandel är död och alla analyser är meningslösa",
+            "V14 och V15 mäter samma sak"
+          ],
+          "ratt": 0,
+          "tips": "Vilken variabel försvarar Walmart — och vilken är Amazons vapen? Vad avgör utfallet?"
+        },
+        {
+          "q": "Vad är den Walton-inspirerade analytikerns förhållningssätt till ordet lojal?",
+          "alternativ": [
+            "Att det är en känsla som inte kan mätas",
+            "Att det bara gäller medarbetare",
+            "Att det alltid ska åtföljas av en siffra — frekvens, besök, transaktioner per kund och år",
+            "Att det är ett juridiskt begrepp"
+          ],
+          "ratt": 2,
+          "tips": "Kursens sista insikt: aldrig ordet lojal utan en siffra bredvid."
+        }
+      ]
+    }
+  ]
+}

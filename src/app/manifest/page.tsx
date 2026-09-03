@@ -331,9 +331,10 @@ export default function ManifestPage() {
               titel: "Fas 2 — utbildning med grundaren",
               body: (
                 <>
-                  9 999 kr, ansökan krävs, 90 dagars nöjdhetsgaranti. Samma
-                  kunskap som Fas 1 — men med en människa vid din sida. Du
-                  betalar för sällskapet, aldrig för innehållet.
+                  9 999 kr, ansökan krävs, 90 dagars nöjdhetsgaranti. Den
+                  fundamentala vägen till oberoende analytiker: 18 avancerade
+                  kurser med en människa vid din sida — och chansen att bli
+                  representant för AK1nvestor.
                 </>
               ),
             },

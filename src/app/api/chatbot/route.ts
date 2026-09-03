@@ -372,7 +372,8 @@ function fas3Svar(fraga: string) {
   return {
     svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
 • Fas 1 — hela biblioteket (324 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
-• Fas 2 — coaching, gemenskap och representant-vägen; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
+• Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: 18 avancerade fundamentala kurser (värdering, bokslut, redovisning, företagsfinans), utbildning med grundaren och chansen att bli representant för AK1nvestor. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
+• Fas 3 — allt i Fas 2 plus det dynamiska ekosystemet: AKM1 × AK1TS, Vågfundamentet, Konfluensradarn och Portföljens vågor, teknisk analys på mästarnivå, trading-psykologi samt dashboard med AI-koppling och rapporter — och rätt till alla framtida utvecklingar.
 • Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
 Kraven växer alltså ur vad du faktiskt gör här i labbet — inte ur vad du betalar.`,
     handlings: [
@@ -391,7 +392,7 @@ function proSvar(fraga: string) {
   if (!/\bpro\b|\bb2b\b|företagspaket|skollicens|företagskonto/.test(q)) return null;
   return {
     svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — 324 kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
-Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 coaching · Fas 3 snart) på medlemskapssidan.`,
+Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 den fundamentala vägen · Fas 3 ekosystemet) på medlemskapssidan.`,
     handlings: [
       { text: "AK1A Pro →", lank: "/pro", ikon: "🏢" },
       { text: "Medlemskap & faser →", lank: "/medlemskap", ikon: "💛" },

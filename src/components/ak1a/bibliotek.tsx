@@ -3,13 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Bok } from "@/lib/content";
-import { kraverFas2, harFas2Access, arAdmin } from "@/lib/kurs-access";
+import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
 
 /**
  * BIBLIOTEKET — AK1A-bokkanon mot AKM1/AK1TS (antalet redovisas dynamiskt via bocker.length).
  * Sök + filtrera på kategori/tier/nivå/AKM1-variabel. Tier 1 = full BOKMASTER.
- * Böcker vars BOKMASTER-kurs kräver Fas 2 visas med 🔒 — titel och innehåll
- * förblir synliga, klick leder till /fas2-ansok (inbjudan, aldrig ett stopp).
+ * Böcker vars BOKMASTER-kurs kräver Fas 2 eller Fas 3 (kraverFas) visas med 🔒 —
+ * titel och innehåll förblir synliga, klick leder till /fas2-ansok resp. /fas3
+ * (inbjudan, aldrig ett stopp).
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, primärknapp i marin med guldstext.
  */
@@ -32,8 +33,8 @@ const KURS_MAP: Record<string, string> = {
   "Security Analysis": "security-analysis",
   "Technical Analysis of the Financial Markets": "technical-analysis-financial-markets",
   "A Random Walk Down Wall Street": "a-random-walk-down-wall-street",
-  // Fas 2-kanon — avancerad teknisk analys, vågor och trader-psykologi
-  // (slugs matchar FAS2_KURSER i src/lib/kurs-access.ts)
+  // Fas 3-kanon — avancerad teknisk analys, vågor och trader-psykologi
+  // (slugs matchar FAS3_KURSER i src/lib/kurs-access.ts)
   "Elliott Wave Principle": "elliott-wave-principle",
   "Technical Analysis of Stock Trends": "technical-analysis-of-stock-trends",
   "Japanese Candlestick Charting Techniques": "japanese-candlestick-charting",
@@ -62,10 +63,12 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
   const [tier, setTier] = useState(0); // 0 = alla
   const [akFilter, setAkFilter] = useState("alla");
   const [fas2Access, setFas2Access] = useState(false);
+  const [fas3Access, setFas3Access] = useState(false);
 
-  // Fas 2-åtkomst avgörs lokalt efter montering (SSR renderar låst — säkrast default)
+  // Fas-åtkomst avgörs lokalt efter montering (SSR renderar låst — säkrast default)
   useEffect(() => {
     setFas2Access(harFas2Access() || arAdmin());
+    setFas3Access(harFas3Access() || arAdmin());
   }, []);
 
   const akVariabler = useMemo(() => {
@@ -117,16 +120,26 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
           dimensioner). Böcker med <span className="font-bold text-gold">◆ Tier 1</span> byggs som
           kompletta BOKMASTER-kurser — kapitel för kapitel.
         </p>
-        {/* Vad är Fas 2? — förklarar 🔒-markeringen på de avancerade kanonböckerna */}
+        {/* Vad är Fas 2 och Fas 3? — förklarar 🔒-markeringen på de avancerade kanonböckerna */}
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
           <span aria-hidden>🔒</span>
-          <span className="font-bold text-gold">Vad är Fas 2?</span>
-          <span>26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap.</span>
+          <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
+          <span>
+            Fas 2 — den fundamentala vägen till oberoende analytiker (18 kurser). Fas 3 —
+            det dynamiska ekosystemet: vågor, teknisk analys och psykologi (24 kurser).
+            Öppnas med medlemskap.
+          </span>
           <Link
             href="/fas2-ansok"
             className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
           >
-            Ansök →
+            Fas 2 →
+          </Link>
+          <Link
+            href="/fas3"
+            className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
+          >
+            Fas 3 →
           </Link>
         </p>
       </div>
@@ -191,9 +204,9 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
         {filtrerade.map((b) => {
           const k = KATEGORIER[b.kat] || { etikett: b.kat, ikon: "📕" };
           const kursSlug = b.status === "kurs" ? KURS_MAP[b.titel] : undefined;
-          // Fas 2-bok utan åtkomst: allt innehåll syns, men kurslänken blir en ansökan
-          const fas2 = kursSlug ? kraverFas2(kursSlug) : false;
-          const last = fas2 && !fas2Access;
+          // Fas-bok utan åtkomst: allt innehåll syns, men kurslänken blir en ansökan
+          const fas = kursSlug ? kraverFas(kursSlug) : 0;
+          const last = fas !== 0 && (fas === 3 ? !fas3Access : !fas2Access);
           return (
             <div
               key={b.id}
@@ -217,15 +230,21 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
                   >
                     {b.tier === 1 ? "◆ Tier 1" : `Tier ${b.tier}`}
                   </span>
-                  {/* Fas 2-markering — lås-badge på kanonböcker som öppnas med medlemskap */}
-                  {fas2 && (
+                  {/* Fas-markering — lås-badge på kanonböcker som öppnas med medlemskap (koppar = Fas 3) */}
+                  {fas !== 0 && (
                     <span
                       className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                        last ? "bg-gold/15 text-gold" : "bg-gold/10 text-gold/80"
+                        fas === 3
+                          ? last
+                            ? "bg-[#B07A3C]/20 koppar-text"
+                            : "bg-[#B07A3C]/10 koppar-text"
+                          : last
+                            ? "bg-gold/15 text-gold"
+                            : "bg-gold/10 text-gold/80"
                       }`}
-                      title="26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap"
+                      title={`Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap`}
                     >
-                      {last ? "🔒 Fas 2" : "Fas 2"}
+                      {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
                     </span>
                   )}
                 </div>
@@ -259,14 +278,14 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
               </div>
 
               <div className="mt-auto pt-3">
-                {/* Primär action — marin knapp med guldstext. Fas 2-låst: ansök, inte kursen */}
+                {/* Primär action — marin knapp med guldstext. Fas-låst: ansök, inte kursen */}
                 {kursSlug && last ? (
                   <Link
-                    href="/fas2-ansok"
+                    href={fas === 3 ? "/fas3" : "/fas2-ansok"}
                     className="inline-flex items-center gap-1 rounded-lg bg-[#0E1B2E] px-3 py-1.5 text-[11px] font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"
-                    title="26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap"
+                    title={`Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap`}
                   >
-                    🔒 Öppnas i Fas 2 — ansök →
+                    🔒 Öppnas i Fas {fas} — ansök →
                   </Link>
                 ) : kursSlug ? (
                   <Link

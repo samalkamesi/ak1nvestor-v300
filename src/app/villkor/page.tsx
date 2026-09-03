@@ -266,21 +266,24 @@ export default function VillkorPage() {
               flashcards) samt aktieanalyser och case studies i labbet.
             </>,
             <>
-              <strong className="text-foreground">Fas 2 — 9 999 kr.</strong> De 25
-              avancerade kurserna: ekosystemet (flaggskeppen AKM1, AK1TS,
-              Vågfundament och Konfluens), teknisk analys på mästarnivå och
-              trading psykologi — samt Portföljens vågor, AKM1 ×
-              AK1TS-integrationen, personlig nyhetsfeed och utbildning med
-              grundaren enligt beskrivningen på {lank("/medlemskap", "medlemskapssidan")}.
-              Fas 2 låses upp först vid nivå 25 och kräver godkänd ansökan.
+              <strong className="text-foreground">Fas 2 — 9 999 kr.</strong> Den
+              fundamentala vägen till oberoende analytiker: de 18 avancerade
+              fundamentala kurserna (värdering, bokslutsanalys, redovisning,
+              företagsfinans och värdeinvesteringens mästarverk) samt
+              representantprogrammet — chansen att få representera AK1nvestor —
+              enligt beskrivningen på {lank("/medlemskap", "medlemskapssidan")}.
+              Ingen teknisk analys och inga vågor i Fas 2; det dynamiska
+              ekosystemet ingår i Fas 3. Fas 2 låses upp först vid nivå 25 och
+              kräver godkänd ansökan.
             </>,
             <>
               <strong className="text-foreground">Fas 3 — 13 999 kr.</strong> Allt i
-              Fas 2 samt certifieringen Certifierad AK1A-Analytiker: en
-              praktikexamen med praktikportfölj (bland annat tio kompletta
-              Superanalyser, Konfluens-läsningar och rapportbyggar-rapporter),
-              etikmodul, betyg A–F och årligt vidmakthållande enligt beskrivningen
-              på {lank("/fas3", "Fas 3-sidan")}.
+              Fas 2 samt det dynamiska ekosystemet: de 24 ekosystem- och
+              fördjupningskurserna (AKM1 × AK1TS-integrationen, Vågfundamentet,
+              Konfluensradarn och Portföljens vågor), teknisk analys på
+              mästarnivå och trading psykologi — samt dashboarden med AI-koppling
+              och rapporter, och rätt till alla framtida utvecklingar enligt
+              beskrivningen på {lank("/fas3", "Fas 3-sidan")}.
             </>,
           ],
         },
@@ -361,6 +364,12 @@ export default function VillkorPage() {
               den dag åtkomsten aktiveras efter godkänd betalning. Under
               perioden tillkommer nya kurser och förbättringar inom köpt fas
               utan extra kostnad.
+            </>,
+            <>
+              <strong className="text-foreground">Fortsatt ekosystemnyttjande.</strong>{" "}
+              Efter avslutad Fas 3-utbildning kan det analytiska ekosystemet och
+              dashboarden fortsättas via månadsplan (12 månader) — villkor
+              meddelas vid anmälan.
             </>,
             <>
               <strong className="text-foreground">Förnyelse.</strong> En period förnyas

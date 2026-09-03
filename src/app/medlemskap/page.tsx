@@ -8,50 +8,100 @@ import { SocialProof } from "@/components/ak1a/social-proof";
 export const dynamic = "force-static";
 
 /**
- * Fas 2: de 26 låsta kurserna, kategorivis (4 flaggskepp + 18 teknisk analys
- * + 4 psykologi). Titlar hämtas dynamiskt ur kurskatalogen så listan aldrig
- * halkar ur synk med det faktiska innehållet.
+ * Fas 2 (nya modellen): de 18 fundamentala mästarverken, kategorivis —
+ * värdering, bokslut, företagsfinans, värdeinvestering + AKM1-superdjup.
+ * Ingen teknisk analys — det är Fas 3. Titlar hämtas dynamiskt ur
+ * kurskatalogen så listan aldrig halkar ur synk med innehållet.
+ * Spegla FAS2_KURSER i src/lib/kurs-access.ts.
  */
 const FAS2_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }> = [
   {
+    kategori: "Värderingsbiblorna",
+    pitch:
+      "Graham & Dodd, Damodaran, McKinsey, Williams, Rappaport & Mauboussin — konsten att väga ett bolag i handen.",
+    slugs: [
+      "security-analysis",
+      "investment-valuation",
+      "valuation-measuring-managing",
+      "the-theory-of-investment-value",
+      "expectations-investing",
+    ],
+  },
+  {
+    kategori: "Bokslut & redovisning",
+    pitch:
+      "Penman, Mulford & Comiskey, O'Glove, Schilit, Graham — hitta kvaliteten i vinsten och genomskåda berättelser.",
+    slugs: [
+      "financial-statement-analysis-and-security-valuation",
+      "creative-cash-flow-reporting",
+      "quality-of-earnings",
+      "financial-shenanigans",
+      "interpretation-of-financial-statements",
+    ],
+  },
+  {
+    kategori: "Företagsfinans & kapital",
+    pitch: "Higgins, Brealey, Whitman — kapitalstruktur och kassaflödesmatematik på MBA-nivå.",
+    slugs: [
+      "analysis-for-financial-management",
+      "principles-of-corporate-finance",
+      "distress-investing",
+    ],
+  },
+  {
+    kategori: "Värdeinvesteringens mästarverk + AKM1",
+    pitch: "Klarman, Greenwald, Gray & Carlisle, Einhorn — och den egna modellen AKM1 på superdjup.",
+    slugs: [
+      "margin-of-safety",
+      "value-investing-from-graham-to-buffett",
+      "quantitative-value",
+      "fooling-some-of-the-people",
+      "akm1-den-kontroversiella-modellen",
+    ],
+  },
+];
+
+/**
+ * Fas 3: det dynamiska ekosystemets 24 kurser — 3 flaggskepp + 17 kanonverk
+ * i teknisk analys + 4 trading-psykologi. Spegla FAS3_KURSER i kurs-access.ts.
+ */
+const FAS3_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }> = [
+  {
     kategori: "Ekosystem-flaggskeppen",
-    pitch: "De fyra superdjupa systemkurserna — där delarna blir en helhet.",
+    pitch: "Där fundamentalanalysen slutar vara statisk — variablerna blir tidsserier, värde möter vågor.",
     slugs: [
       "ak1ts-vaglarans-hierarki",
-      "akm1-den-kontroversiella-modellen",
       "vagfundament-variablerna-som-tidsserier",
       "konfluens-varde-moter-vagor",
     ],
   },
   {
-    kategori: "Avancerad teknisk analys",
+    kategori: "Teknisk analys på mästarnivå",
     pitch:
-      "Elliott, Fibonacci och Bollinger i fördjupningskurserna — plus mästerverken av Frost & Prechter, Bollinger, Fischer, Pring, Murphy, Torssell, DeMark, Edwards & Magee och Bulkowski.",
+      "Elliott, Murphy, Nison, Bollinger, Edwards & Magee, Bulkowski, DeMark, Pring, Elder, Torssell och trendföljarna — 17 kanonverk.",
     slugs: [
-      "ts-01-elliott-wave",
-      "ts-02-elliott-wave",
-      "ts-22-elliott-wave",
-      "ts-03-fibonacciretracements",
-      "ts-04-fibonacciextensions",
-      "ts-19-fibonaccitidszoner",
-      "ts-21-fibonaccikluster",
-      "ts-15-bollinger-bands",
       "elliott-wave-principle",
-      "bollinger-on-bollinger-bands",
-      "fibonacci-applications",
-      "martin-pring-on-market-momentum",
-      "intermarket-analysis",
-      "teknisk-analys-med-johnny-torssell",
-      "the-new-science-of-technical-analysis",
-      "technical-analysis-financial-markets",
       "technical-analysis-of-stock-trends",
+      "technical-analysis-financial-markets",
+      "japanese-candlestick-charting",
       "encyclopedia-of-chart-patterns",
+      "the-visual-investor",
+      "intermarket-analysis",
+      "martin-pring-on-market-momentum",
+      "the-master-swing-trader",
+      "fibonacci-applications",
+      "come-into-my-trading-room",
+      "teknisk-analys-med-johnny-torssell",
+      "bollinger-on-bollinger-bands",
+      "the-new-science-of-technical-analysis",
+      "way-of-the-turtle",
+      "the-complete-turtletrader",
+      "the-trend-following-bible",
     ],
   },
   {
-    kategori: "Trading psykologi",
-    pitch:
-      "Fienden sitter vid ditt eget skrivbord — Douglas, Coates, Shull och Zweig lär dig känna igen honom.",
+    kategori: "Trading-psykologi & neuroekonomi",
+    pitch: "Fienden sitter vid ditt eget skrivbord — Douglas, Coates, Shull och Zweig lär dig känna igen honom.",
     slugs: [
       "trading-in-the-zone",
       "the-hour-between-dog-and-wolf",
@@ -63,16 +113,17 @@ const FAS2_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }
 
 export const metadata: Metadata = pageMetadata({
   path: "/medlemskap",
-  title: "Fas 1 gratis för alltid — Fas 2: utbildning med grundaren | AK1A",
-  // Uppdaterad 2026-09-01: antalen räknas dynamiskt nedan (Fas 1 = totalt − 26)
+  title: "Fas 1 gratis — Fas 2 fundamental väg — Fas 3 ekosystemet | AK1A",
+  // Uppdaterad 2026-09-01: antalen räknas dynamiskt nedan (Fas 1 = totalt − Fas 2 − Fas 3)
   description:
-    "Fas 1: alla grundläggande kurser, heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: 26 avancerade kurser, Portföljens vågor, AKM1 × AK1TS-integrationen och personlig utbildning med grundaren — 90 dagars nöjdhetsgaranti, 9 999 kr. Ansökan krävs.",
+    "Fas 1: alla grundläggande kurser, heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: den snabba fundamentala vägen till oberoende analytiker — 18 mästarverk, personlig utbildning med grundaren och chansen att bli representant för AK1nvestor. Ingen teknisk analys — det är Fas 3: det dynamiska ekosystemet där fundamentalanalysen börjar röra sig. 9 999 kr / 13 999 kr, 90 dagars nöjdhetsgaranti.",
   keywords: [
     "gratis aktieutbildning",
     "fundamentalanalys gratis",
     "AKM1 medlemskap",
     "aktieanalys utbildning Sverige",
-    "teknisk analys utbildning",
+    "värdering utbildning Damodaran",
+    "teknisk analys ekosystem",
     "representant utbildning",
     "bokmaster",
   ],
@@ -81,15 +132,19 @@ export const metadata: Metadata = pageMetadata({
 export default function MedlemskapPage() {
   const kurserLista = getCourseList();
   const kurser = kurserLista.length;
-  const fas2Slugs = new Set(FAS2_KURSLISTA.flatMap((k) => k.slugs));
-  const fas2Antal = fas2Slugs.size;
-  const fas1Antal = kurser - fas2Antal;
+  const lasSlugs = new Set([
+    ...FAS2_KURSLISTA.flatMap((k) => k.slugs),
+    ...FAS3_KURSLISTA.flatMap((k) => k.slugs),
+  ]);
+  const fas2Antal = FAS2_KURSLISTA.reduce((s, k) => s + k.slugs.length, 0);
+  const fas3Antal = FAS3_KURSLISTA.reduce((s, k) => s + k.slugs.length, 0);
+  const fas1Antal = kurser - lasSlugs.size;
   const fas1Bokmaster = kurserLista.filter(
-    (c) => c.category === "BOKMASTER" && !fas2Slugs.has(c.slug)
+    (c) => c.category === "BOKMASTER" && !lasSlugs.has(c.slug)
   ).length;
   // CourseChapter-typen saknar quiz-fältet (datan har det) — därför säker cast.
   const quiz = kurserLista
-    .filter((c) => !fas2Slugs.has(c.slug))
+    .filter((c) => !lasSlugs.has(c.slug))
     .reduce(
       (s, c) =>
         s +
@@ -108,8 +163,9 @@ export default function MedlemskapPage() {
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Fundamentalanalys ska vara tillgänglig för alla människor — som luft och vatten.
         Därför är <strong>Fas 1 helt gratis, för alltid</strong>. Vi tjänar inte på
-        människor som vill lära sig. Fas 2 är för dig som vill gå längre — med
-        grundarens coaching vid din sida.
+        människor som vill lära sig. Fas 2 är den snabba fundamentala vägen
+        vidare — med grundarens coaching vid din sida — och Fas 3 är ekosystemet
+        där analysen börjar röra sig.
       </p>
 
       {/* Värde-rad — generositeten i klartext */}
@@ -118,7 +174,7 @@ export default function MedlemskapPage() {
           { tal: `${fas1Antal}`, etikett: "kurser, alla gratis — för alltid" },
           { tal: `${fas1Bokmaster}`, etikett: "heltäckta böcker, kapitel för kapitel — gratis" },
           { tal: `${quiz.toLocaleString("sv-SE")}`, etikett: "quizfrågor med +10 XP var" },
-          { tal: `${fas2Antal}`, etikett: "avancerade kurser i Fas 2 — flaggskeppen + mästerverken" },
+          { tal: `${fas2Antal}`, etikett: "fundamentala mästarverk i Fas 2 — den snabba vägen till oberoende analytiker" },
         ].map((s) => (
           <div key={s.etikett} className="rounded-xl border border-gold/30 bg-card p-4 text-center">
             <div className="font-serif text-3xl font-black text-gold">{s.tal}</div>
@@ -168,21 +224,19 @@ export default function MedlemskapPage() {
           <span className="mb-2 inline-block w-fit rounded-full border border-gold/50 px-3 py-0.5 text-xs font-semibold text-gold">
             FAS 2 · ANSÖKAN KRÄVS · 9 999 KR
           </span>
-          <h2 className="font-serif text-2xl font-bold">Utbildning med grundaren</h2>
+          <h2 className="font-serif text-2xl font-bold">Den snabba fundamentala vägen</h2>
           <p className="mt-1 text-sm italic text-muted-foreground">
-            Från att förstå delarna — till att analysera helheten.
+            Utbildning med grundaren — till ett omdöme du kan försvara.
           </p>
           <ul className="mt-5 flex-1 space-y-2.5 text-sm">
             {[
-              `${fas2Antal} avancerade kurser — ekosystem-flaggskeppen (AKM1, AK1TS, Vågfundament, Konfluens), teknisk analys på mästarnivå och trading psykologi`,
-              "Portföljens vågor — din portföljs vågprofil på mikro-, kort-, medellång-, lång- och mega-horisont (dynamisk vy efter inloggning)",
-              "AKM1 × AK1TS-integrationen — den sammansatta analysen där fundamentalstyrka möter vågor",
-              "Nyheter kopplade till dina aktier — en personlig nyhetsfeed",
-              "Personlig utbildning med grundaren av AK1A",
-              "90 dagars nöjdhetsgaranti — du betalar ingenting förrän du är nöjd",
+              `${fas2Antal} fundamentala mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslut (Penman, Schilit, O'Glove), finans (Higgins, Brealey), värdeinvestering (Klarman, Greenwald, Einhorn) + AKM1 på superdjup`,
+              "Ingen teknisk analys i Fas 2 — vågor och ekosystem är Fas 3",
+              "Personlig utbildning med grundaren av AK1A — den snabba vägen till oberoende analytiker",
               "Utbildning i grupp tillsammans med andra klienter",
-              "Mål: utbilda framtida representanter för AK1nvestor",
+              "Representant-chansen: vägen att bli representant för AK1nvestor — att representera oss med kvalitet",
               "Tips på bolag under utbildningen — testade med siffror och variabler",
+              "90 dagars nöjdhetsgaranti — du betalar ingenting förrän du är nöjd",
               "Rätt att nyttja framtida Fas 2-tjänster (utvecklas löpande)",
               "Efter utbildningen: möjlighet att arbeta med AK1nvestor.com vid stark vilja och resultat",
             ].map((f) => (
@@ -194,11 +248,11 @@ export default function MedlemskapPage() {
           </ul>
           <div className="mt-4 rounded-lg border border-gold/30 bg-paper p-3 text-xs leading-relaxed text-muted-foreground">
             <strong className="text-foreground">För vem?</strong> Du som gått djupt i Fas 1
-            (nivå 25+ är en bra signal) och vill vidare — från delarna till helheten.
-            Fas 1 gömmer ingenting grundläggande: allt vi kan finns gratis. Fas 2
-            lägger till de {fas2Antal} avancerade kurserna och de sammansatta
-            verktygen — men framför allt en människa vid din sida: coaching,
-            gemenskap och representant-vägen.
+            (nivå 25+ är en bra signal) och vill vidare — från delarna till det
+            egna fundamentala omdömet. Fas 1 gömmer ingenting grundläggande:
+            allt vi kan finns gratis. Fas 2 lägger till de {fas2Antal}
+            mästarverken och människan vid din sida — coaching, gemenskap och
+            representant-vägen.
           </div>
           <Link
             href="/fas2-ansok"
@@ -212,23 +266,104 @@ export default function MedlemskapPage() {
       {/* SOCIALT BEVIS — siffror och elevröster efter Fas 1/Fas 2-översikten */}
       <SocialProof className="mt-12" />
 
-      {/* De 26 avancerade kurserna — kategorivis */}
+      {/* FAS 3 — det dynamiska ekosystemet */}
+      <section className="marin-panel mt-8 rounded-2xl border border-gold/40 p-7 sm:p-9">
+        <span className="mb-2 inline-block w-fit rounded-full border border-[#E8C766]/50 px-3 py-0.5 text-xs font-semibold text-[#E8C766]">
+          FAS 3 · EFTER TILLÄMPNING AV FAS 2 · 13 999 KR
+        </span>
+        <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
+          Fas 3 — det dynamiska ekosystemet
+        </h2>
+        <p className="mt-1 text-sm italic text-[#E8C766]">
+          Där fundamentalanalysen börjar röra sig.
+        </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#EDE6D6]/85">
+          Fas 3 tar vid efter tillämpning av Fas 2 — först det fundamentala
+          omdömet, sedan det dynamiska. Här får du tillämpa och förstå hur
+          fundamentalanalys inte är statisk: alla indikatorer rör sig dynamiskt,
+          som tidsserier med egen rytm. Vi integrerar AKM1 med AK1TS — vågor,
+          rättare sagt.
+        </p>
+        <ul className="mt-5 grid gap-2.5 text-sm text-[#EDE6D6]/85 md:grid-cols-2">
+          {[
+            `AKM1 × AK1TS-integrationen — den sammansatta analysen där fundamentalstyrka möter vågor`,
+            "Vågfundamentet — varje fundamentalvariabel som tidsserie",
+            "Konfluensradarn — där värde garanterat möter vågor (fem dimensioner)",
+            "Portföljens vågor — vågprofilen på mikro-, kort-, medellång-, lång- och mega-horisont",
+            `Teknisk analys på mästarnivå — 17 kanonverk: Elliott, Murphy, Nison, Bollinger…`,
+            "Trading-psykologi & neuroekonomi — Douglas, Coates, Shull, Zweig",
+            `De ${fas3Antal} kurserna + praktikportfölj, kravmatris A–F och certifiering`,
+            "Dashboard, AI-koppling med högst kvalitet och rapporter — direkt kopplat till analysen av aktier och portföljer",
+            "Rätt till ALLA framtida utvecklingar inom Fas 3 — allt är under utveckling och du är med från början",
+          ].map((f) => (
+            <li key={f} className="flex gap-2">
+              <span className="text-[#E8C766]">✓</span>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        {/* Månadsplans-notisen — det ärliga priset */}
+        <div className="mt-5 rounded-xl border border-dashed border-[#E8C766]/50 bg-[#0A1422]/60 p-4 text-xs leading-relaxed text-[#EDE6D6]/80">
+          <strong className="text-[#E8C766]">Det ärliga priset, rakt ut:</strong>{" "}
+          efter avslutad utbildning kan det analytiska ekosystemet och
+          dashboarden fortsätta nyttjas genom en månadsplan (12 månader).
+          Utbildningen i sig är din för alltid.
+        </div>
+        <Link
+          href="/fas3"
+          className="mt-5 inline-block rounded-md bg-gold px-4 py-2.5 text-center text-sm font-bold text-primary-foreground hover:opacity-90"
+        >
+          Utforska Fas 3 →
+        </Link>
+      </section>
+
+      {/* De avancerade kurserna — Fas 2 och Fas 3 */}
       <section className="mt-8">
         <h2 className="font-serif text-2xl font-bold">
-          De {fas2Antal} avancerade kurserna i Fas 2
+          De avancerade kurserna — {fas2Antal} fundamentala i Fas 2, {fas3Antal} i Fas 3
         </h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          Fas 1 lär ut delarna — variabel för variabel, bok för bok. Fas 2 öppnar de
-          kurser som kräver att delarna redan sitter: ekosystem-flaggskeppen, den
-          tekniska analysens mästerverk och psykologin bakom dina egna beslut.
+          Fas 1 lär ut delarna — variabel för variabel, bok för bok. Fas 2
+          fördjupar det fundamentala hantverket till analytikernivå. Fas 3
+          öppnar det dynamiska ekosystemet: vågorna, mästarnas tekniska analys
+          och psykologin bakom dina egna beslut.
         </p>
-        <div className="mt-4 grid gap-4 lg:grid-cols-3">
+
+        <h3 className="mt-5 font-serif text-lg font-bold">
+          Fas 2 — den fundamentala vägen <span className="text-gold">· {fas2Antal} kurser</span>
+        </h3>
+        <div className="mt-3 grid gap-4 md:grid-cols-2">
           {FAS2_KURSLISTA.map((kat) => (
             <div key={kat.kategori} className="rounded-xl border border-gold/30 bg-card p-5">
-              <h3 className="text-sm font-semibold text-foreground">
+              <h4 className="text-sm font-semibold text-foreground">
                 {kat.kategori}{" "}
                 <span className="font-normal text-gold">· {kat.slugs.length} kurser</span>
-              </h3>
+              </h4>
+              <p className="mt-1 text-xs italic leading-relaxed text-muted-foreground">
+                {kat.pitch}
+              </p>
+              <ul className="mt-3 space-y-1 text-xs leading-relaxed text-muted-foreground">
+                {kat.slugs.map((s) => (
+                  <li key={s} className="flex gap-1.5">
+                    <span className="text-gold">·</span>
+                    <span>{titelFor(s)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="mt-6 font-serif text-lg font-bold">
+          Fas 3 — det dynamiska ekosystemet <span className="text-gold">· {fas3Antal} kurser</span>
+        </h3>
+        <div className="mt-3 grid gap-4 lg:grid-cols-3">
+          {FAS3_KURSLISTA.map((kat) => (
+            <div key={kat.kategori} className="rounded-xl border border-gold/30 bg-card p-5">
+              <h4 className="text-sm font-semibold text-foreground">
+                {kat.kategori}{" "}
+                <span className="font-normal text-gold">· {kat.slugs.length} kurser</span>
+              </h4>
               <p className="mt-1 text-xs italic leading-relaxed text-muted-foreground">
                 {kat.pitch}
               </p>
@@ -279,15 +414,14 @@ export default function MedlemskapPage() {
             Nytt i Fas 2
           </span>
           <h3 className="mt-2 font-serif text-xl font-bold">
-            {fas2Antal} avancerade kurser + de sammansatta verktygen
+            {fas2Antal} fundamentala mästarverk + grundaren vid din sida
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             {[
-              `De ${fas2Antal} avancerade kurserna — flaggskepp, teknisk mästarnivå och trading psykologi (listade ovan)`,
-              "Portföljens vågor — din portföljs vågprofil på alla 5 tidshorisonter",
-              "AKM1 × AK1TS-integrationen — där fundamentalstyrka möter vågor",
-              "Nyheter kopplade till dina aktier — personlig nyhetsfeed",
-              "Personlig utbildning, coaching i grupp och representant-vägen",
+              `De ${fas2Antal} fundamentala mästarverken — värdering, bokslut, finans, värdeinvestering + AKM1-superdjup (listade ovan)`,
+              "Personlig utbildning med grundaren och coaching i grupp",
+              "Representant-chansen — vägen att representera AK1nvestor med kvalitet",
+              "Ingen teknisk analys — vågor och ekosystem tillhör Fas 3",
             ].map((f) => (
               <li key={f} className="flex gap-2">
                 <span className="text-gold">✓</span>
@@ -298,22 +432,15 @@ export default function MedlemskapPage() {
           <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
             Tydlig separation: <strong className="text-foreground">Fas 1</strong> är
             de {fas1Antal} gratis kurserna och alla grundläggande verktyg.{" "}
-            <strong className="text-foreground">Fas 2</strong> är de {fas2Antal}{" "}
-            avancerade kurserna, Portföljens vågor och integrationen — med
-            grundaren vid din sida.
+            <strong className="text-foreground">Fas 2</strong> är den snabba
+            fundamentala vägen — de {fas2Antal} mästarverken med grundaren vid
+            din sida, och representant-chansen.{" "}
+            <strong className="text-foreground">Fas 3</strong> är det dynamiska
+            ekosystemet: vågor, teknisk analys på mästarnivå, psykologi,
+            dashboard och AI.
           </p>
         </div>
       </section>
-
-      {/* FAS 3 teaser */}
-      <div className="mt-6 rounded-xl border border-dashed border-gold/40 bg-paper p-6 text-center">
-        <p className="font-serif text-lg font-bold">
-          Fas 3 <span className="text-gold">· 13 999 kr</span>
-        </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Representeras snart. Fas 2-medlemmar får tillgång först — håll utkik.
-        </p>
-      </div>
 
       {/* 10x-värdebeviset */}
       <section className="mt-8 rounded-xl border border-gold/30 bg-card p-6">

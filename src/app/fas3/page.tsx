@@ -3,23 +3,112 @@ import Link from "next/link";
 import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas3Cert } from "@/components/ak1a/fas3-cert";
+import { getCourseList } from "@/lib/content";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/fas3",
-  title: "Fas 3 — Certifierad AK1A-Analytiker | AK1A",
+  title: "Fas 3 — Det Dynamiska Ekosystemet | AK1A",
   description:
-    "Fas 3 är AK1A:s praktikexamen: en certifiering där du bevisar hantverket genom tio kompletta analyser i plattformens egna verktyg — med etikmodul, betyg A–F och årlig vidmakthållande. 13 999 kr. Pedagogisk kompetensprövning — aldrig investeringsråd.",
+    "Fas 3 är där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. 13 999 kr. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.",
   keywords: [
-    "Fas 3 certifiering",
-    "certifierad aktieanalytiker",
-    "praktikportfölj aktieanalys",
-    "etik fundamentalanalys",
-    "AKM1 certifiering",
-    "analytiker utbildning Sverige",
+    "Fas 3 ekosystem",
+    "AKM1 AK1TS integration",
+    "vågfundament tidsserier",
+    "konfluens värde och vågor",
+    "teknisk analys mästarnivå",
+    "Elliott Wave utbildning",
+    "trading psykologi neuroekonomi",
+    "portföljens vågor",
   ],
 });
+
+/**
+ * Fas 3:s 24 kurser, kategorivis (3 ekosystem-flaggskepp + 17 kanonverk i
+ * teknisk analys + 4 trading-psykologi). Titlar hämtas dynamiskt ur
+ * kurskatalogen (public/deep-courses.json) så listan aldrig halkar ur synk
+ * med det faktiska innehållet. Spegla FAS3_KURSER i src/lib/kurs-access.ts.
+ */
+const FAS3_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }> = [
+  {
+    kategori: "Ekosystem-flaggskeppen",
+    pitch:
+      "Där fundamentalanalysen slutar vara statisk — variablerna blir tidsserier, värde möter vågor, och delarna blir ett ekosystem.",
+    slugs: [
+      "ak1ts-vaglarans-hierarki",
+      "vagfundament-variablerna-som-tidsserier",
+      "konfluens-varde-moter-vagor",
+    ],
+  },
+  {
+    kategori: "Teknisk analys på mästarnivå",
+    pitch:
+      "De 17 kanonverken — Elliott, Murphy, Nison, Bollinger, Edwards & Magee, Bulkowski, DeMark, Pring, Elder, Torssell och trendföljarna. I Fas 3 läses de inte som historia utan som instrument i ekosystemet.",
+    slugs: [
+      "elliott-wave-principle",
+      "technical-analysis-of-stock-trends",
+      "technical-analysis-financial-markets",
+      "japanese-candlestick-charting",
+      "encyclopedia-of-chart-patterns",
+      "the-visual-investor",
+      "intermarket-analysis",
+      "martin-pring-on-market-momentum",
+      "the-master-swing-trader",
+      "fibonacci-applications",
+      "come-into-my-trading-room",
+      "teknisk-analys-med-johnny-torssell",
+      "bollinger-on-bollinger-bands",
+      "the-new-science-of-technical-analysis",
+      "way-of-the-turtle",
+      "the-complete-turtletrader",
+      "the-trend-following-bible",
+    ],
+  },
+  {
+    kategori: "Trading-psykologi & neuroekonomi",
+    pitch:
+      "Fienden sitter vid ditt eget skrivbord — Douglas, Coates, Shull och Zweig lär dig känna igen honom.",
+    slugs: [
+      "trading-in-the-zone",
+      "the-hour-between-dog-and-wolf",
+      "market-mind-games",
+      "your-money-and-your-brain",
+    ],
+  },
+];
+
+/** Innehållspunkterna — det Fas 3 ger dig (användarens Fas-modell 2026-09). */
+const INNEHALL = [
+  {
+    rubrik: "AK1TS × AKM1-integrationen",
+    text: "Den sammansatta analysen där fundamentalstyrka möter vågor: AKM1:s variabler och AK1TS våghierarki förenas till ett enda sammanhängande svar — inte två separata bilder, utan en.",
+  },
+  {
+    rubrik: "Vågfundamentet",
+    text: "Varje fundamentalvariabel som tidsserie. P/E, marginaler, tillväxt — inget mått är en punkt på en skala; allt är en kurva med egen rytm, och här lär du dig läsa den.",
+  },
+  {
+    rubrik: "Konfluensradarn",
+    text: "Där värde garanterat möter vågor — i fem dimensioner, som måste tala samman innan en slutsats får landa. Värdegolv först, vågor sedan.",
+  },
+  {
+    rubrik: "Portföljens vågor",
+    text: "Din portföljs vågprofil på mikro-, kort-, medellång-, lång- och mega-horisont — helheten rör sig, inte bara de enskilda bolagen.",
+  },
+  {
+    rubrik: "Teknisk analys på mästarnivå",
+    text: "17 kanonverk: Elliott, Murphy, Nison, Bollinger, Edwards & Magee, Bulkowski, Torssell och fler — lästa kapitel för kapitel som levande instrument.",
+  },
+  {
+    rubrik: "Trading-psykologi & neuroekonomi",
+    text: "Douglas, Coates, Shull och Zweig — marknaden utkämpas i sinnet, och ekosystemet mäter beteende dagligen.",
+  },
+  {
+    rubrik: "Rätt till ALLA framtida utvecklingar",
+    text: "Analys av aktier och portföljer, dashboarden, AI-kopplingen med högst kvalitet, rapporter m.m. — allt är under utveckling, och du är med från början.",
+  },
+] as const;
 
 /** Kravmatrisen — sex likaviktade kriterier, vardera betyg A–F (forskning-fas3 3.7). */
 const KRAV = [
@@ -125,11 +214,19 @@ const AKU = [
 ] as const;
 
 export default function Fas3Page() {
+  const katalog = getCourseList();
+  const titelFor = (slug: string) =>
+    katalog.find((k) => k.slug === slug)?.title ?? slug;
+  const antalKurser = FAS3_KURSLISTA.reduce((s, k) => s + k.slugs.length, 0);
+
   return (
-    <SeoPageShell breadcrumb={[{ name: "Hem", href: "/" }, { name: "Fas 3 — Certifiering" }]} wide>
+    <SeoPageShell
+      breadcrumb={[{ name: "Hem", href: "/" }, { name: "Fas 3 — Ekosystemet" }]}
+      wide
+    >
       <JsonLd data={websiteJsonLd()} />
 
-      {/* ── HERO — marin panel med guld-CTA ─────────────────────────────────── */}
+      {/* ── HERO — marin panel: fundamentalanalysen börjar röra sig ──────── */}
       <section className="marin-panel relative overflow-hidden rounded-3xl border-2 border-gold/60 p-7 shadow-2xl sm:p-12">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
           <span className="font-serif text-[150px] font-black tracking-tight">FAS 3</span>
@@ -137,47 +234,161 @@ export default function Fas3Page() {
         <div className="pointer-events-none absolute inset-2 rounded-2xl border border-[#E8C766]/30" aria-hidden />
         <div className="relative max-w-3xl">
           <p className="text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
-            Praktikexamen · Fas 3 · 13 999 kr
+            Det dynamiska ekosystemet · Fas 3 · 13 999 kr
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#EDE6D6] sm:text-5xl">
-            Fas 3 — Certifierad AK1A-Analytiker
+            Fas 3 — där fundamentalanalysen börjar röra sig
           </h1>
           <p className="mt-4 font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
-            Praktikexamen: bevisa hantverket genom tio kompletta analyser.
+            Indikatorer är inte statiska — de är tidsserier med egen rytm.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-[#EDE6D6]/85 sm:text-base">
-            Fas 1 äger du kunskapen. Fas 2 slipar du den med en mästare. Fas 3{" "}
-            <strong className="text-[#EDE6D6]">bevisar</strong> du den — en
-            certifiering där det producerade arbetet själv är examinationen.
-            Granskad, betygsatt och utfärdad. Beviset som sedan talar för dig,
-            oavsett vart din resa tar vägen.
+            I Fas 2 lär du dig väga ett bolag i handen — bokslut, värde, omdöme.
+            Fas 3 tar vid när det omdömet står klart, och visar det som ingen
+            siffertabell kan visa: att fundamentalanalys <strong className="text-[#EDE6D6]">aldrig
+            är statisk</strong>. Varje indikator rör sig — intäkter, marginaler,
+            multiplar, hela tiden. Här integrerar vi AKM1 med AK1TS, vågor
+            rättare sagt, och analysen blir ett levande ekosystem.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#krav"
+              href="#innehall"
               className="rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-primary-foreground shadow-lg transition-opacity hover:opacity-90"
             >
-              Se kraven ↓
+              Se innehållet ↓
             </a>
             <Link
-              href="#portfolj"
+              href="#krav"
               className="rounded-md border border-[#E8C766]/50 px-5 py-3 text-center text-sm font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
             >
-              Vad räknas i portföljen?
+              Kravmatrisen & praktikportföljen
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── DIN PROGRESS — praktikportföljens råvara, läst lokalt ──────────── */}
+      {/* ── FÖRUTSÄTTNINGEN — Fas 3 tar vid efter tillämpning av Fas 2 ────── */}
+      <section className="gravor-ram mt-8 rounded-2xl bg-card p-6 sm:p-7">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
+          Förutsättningen — ordningen är inte förhandlingsbar
+        </p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Fas 3 tar vid efter tillämpning
+          av Fas 2</strong> — först det fundamentala omdömet, sedan det
+          dynamiska. Ekosystemet förutsätter att du redan kan läsa ett bokslut,
+          värdera ett bolag och försvara en slutsats med siffror. Har du inte
+          gått den vägen? Den börjar med en{" "}
+          <Link href="/fas2-ansok" className="underline hover:text-foreground">
+            kostnadsfri ansökan till Fas 2
+          </Link>{" "}
+          — den snabba fundamentala vägen till oberoende analytiker.
+        </p>
+      </section>
+
+      {/* ── DIN PROGRESS — praktikportföljens råvara, läst lokalt ─────────── */}
       <div className="mt-10">
         <Fas3Cert />
       </div>
 
       <div className="hjarlinje mt-10" />
 
+      {/* ── INNEHÅLLET — vad Fas 3 ger dig ─────────────────────────────────── */}
+      <section id="innehall" className="mt-10 scroll-mt-24">
+        <h2 className="font-serif text-2xl font-bold">Vad Fas 3 ger dig</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Fas 3 är möjligheten att tillämpa — och att förstå hur
+          fundamentalanalys inte är statisk. Alla indikatorer rör sig
+          dynamiskt, och här får du verktygen att röra dig med dem.
+        </p>
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {INNEHALL.map((p, i) => (
+            <div
+              key={p.rubrik}
+              className={`relative rounded-2xl border border-gold/30 bg-card p-5 ${
+                i === INNEHALL.length - 1 ? "md:col-span-2 border-gold/50" : ""
+              }`}
+            >
+              <p className="flex items-start gap-2.5 font-serif text-lg font-bold text-foreground">
+                <span className="mt-0.5 shrink-0 text-gold">✓</span>
+                {p.rubrik}
+              </p>
+              <p className="mt-1.5 pl-7 text-xs leading-relaxed text-muted-foreground">
+                {p.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── DE 24 KURSERNA — kategorivis, titlar ur katalogen ─────────────── */}
+      <section id="kurser" className="mt-12 scroll-mt-24">
+        <h2 className="font-serif text-2xl font-bold">
+          De {antalKurser} kurserna i Fas 3
+        </h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Tre ekosystem-flaggskepp, sjutton kanonverk i teknisk analys och fyra
+          i trading-psykologi — allt det som kräver ett moget fundamentalt
+          omdöme för att bli mer än kuriosa.
+        </p>
+        <div className="mt-5 grid gap-4 lg:grid-cols-3">
+          {FAS3_KURSLISTA.map((kat) => (
+            <div key={kat.kategori} className="rounded-xl border border-gold/30 bg-card p-5">
+              <h3 className="text-sm font-semibold text-foreground">
+                {kat.kategori}{" "}
+                <span className="font-normal text-gold">· {kat.slugs.length} kurser</span>
+              </h3>
+              <p className="mt-1 text-xs italic leading-relaxed text-muted-foreground">
+                {kat.pitch}
+              </p>
+              <ul className="mt-3 space-y-1 text-xs leading-relaxed text-muted-foreground">
+                {kat.slugs.map((s) => (
+                  <li key={s} className="flex gap-1.5">
+                    <span className="text-gold">·</span>
+                    <span>{titelFor(s)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── UNDER UTVECKLING — du är med från början ───────────────────────── */}
+      <section id="framtiden" className="mt-12 scroll-mt-24">
+        <div className="marin-panel rounded-2xl border border-gold/40 p-6 sm:p-8">
+          <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
+            Under utveckling — och du är med från början
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#EDE6D6]/85">
+            Fas 3 är inte en färdig produkt utan en levande plats. Som Fas
+            3-elev har du <strong className="text-[#EDE6D6]">rätt till alla
+            framtida utvecklingar</strong> inom Fas 3 — allt som byggs, bygger
+            också för dig:
+          </p>
+          <ul className="mt-4 grid gap-2.5 text-sm text-[#EDE6D6]/85 sm:grid-cols-2">
+            {[
+              "📊 Analys av aktier och portföljer — djupare, snabbare, levande",
+              "🖥️ Dashboarden — det analytiska ekosystemet samlas i en vy",
+              "🤖 Direkt koppling till AI med högst kvalitet",
+              "📄 Rapporter m.m. — automatgenererade, spårbara till källor",
+            ].map((txt) => (
+              <li key={txt} className="flex gap-2.5">
+                <span className="text-[#E8C766]">✓</span>
+                <span>{txt}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs leading-relaxed text-[#EDE6D6]/70">
+            Vi lovar inte färdiga datum — vi lovar riktningen, och att du som
+            Fas 3-elev är med från första dagen. Allt är under utveckling.
+          </p>
+        </div>
+      </section>
+
+      <div className="hjarlinje mt-12" />
+
       {/* ── KRAVMATRISEN — sex kriterier, A–F ──────────────────────────────── */}
-      <section id="krav" className="mt-10 scroll-mt-24">
+      <section id="krav" className="mt-12 scroll-mt-24">
         <h2 className="font-serif text-2xl font-bold">Kravmatrisen — sex kriterier, betyg A–F</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           Portföljen betygsätts på sex likaviktade kriterier, vardera A–F.
@@ -380,25 +591,37 @@ export default function Fas3Page() {
         </div>
       </section>
 
-      {/* ── PRISRAD ────────────────────────────────────────────────────────── */}
+      {/* ── PRIS-MODELLEN — engång + ärlig ruta om månadsplanen ────────────── */}
       <section className="mt-12 rounded-3xl border-2 border-gold bg-card p-7 text-center shadow-lg sm:p-10">
         <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-          Fas 3 · Certifiering · ÅKU-struktur
+          Fas 3 · Det dynamiska ekosystemet · Engångspris
         </p>
         <p className="mt-3 font-serif text-4xl font-black text-gold sm:text-5xl">
           13 999 kr
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Innehållet är gratis (Fas 1). Människan vid din sida är Fas 2.{" "}
-          <strong className="text-foreground">Beviset</strong> — att en
-          oberoende granskare lägger timmar på just dina analyser och intygar
-          deras kvalitet, med en behörighetsväg för dig som vill arbeta med
-          oss — är Fas 3. Ingen betalar för innehåll; alla betalar för
-          granskning, betyg och utfärdande.
+          En engångsbetalning för hela utbildningen: de {antalKurser} kurserna,
+          ekosystem-integrationen, praktikportföljen, certifieringen med
+          betyg A–F — och rätten till alla framtida utvecklingar inom Fas 3.
+          Ingen betalar för innehåll i Fas 1; i Fas 3 betalar du för ekosystemet,
+          granskningen och platsen i utvecklingen.
         </p>
+        {/* Den ärliga rutan — rakt ut om månadsplanen */}
+        <div className="mx-auto mt-5 max-w-2xl rounded-xl border border-dashed border-gold/50 bg-paper p-4 text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">
+            Det ärliga priset, rakt ut
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            Efter avslutad utbildning kan det analytiska ekosystemet och
+            dashboarden fortsätta nyttjas genom en månadsplan (12 månader).{" "}
+            <strong className="text-foreground">Utbildningen i sig är din för
+            alltid</strong> — kunskapen lämnar aldrig dig; verktygen lever och
+            utvecklas vidare.
+          </p>
+        </div>
         <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
           90 dagars nöjdhetsgaranti (Fas 2:s tradition låter gälla även här) ·
-          Fas 2-medlemmar får tillgång först · Alla verktyg förblir gratis i
+          Fas 2-medlemmar går vidare först · Alla verktyg förblir gratis i
           Fas 1, för alltid.
         </p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -406,7 +629,7 @@ export default function Fas3Page() {
             href="/fas2-ansok"
             className="rounded-md bg-gold px-5 py-3 text-sm font-bold text-primary-foreground hover:opacity-90"
           >
-            Gå Fas 2-vägen först → kostnadsfri ansökan
+            Inte klar med Fas 2? Börja där — kostnadsfri ansökan
           </Link>
           <Link
             href="/medlemskap"

@@ -9,6 +9,7 @@ import { Fas2Gate } from "@/components/ak1a/fas2-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
+import { Kallkort } from "@/components/ak1a/kallkort";
 import { RikText, SektionBryt } from "@/components/ak1a/rik-text";
 
 export const dynamic = "force-static";
@@ -218,6 +219,10 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       )}
     </KursGate>
     </Fas2Gate>
+
+    {/* Källverk — upphovsrättslig transparens: visas för alla BOKMASTER-kurser,
+        även låsta (transparensen ska inte sitta bakom betalväggen). */}
+    <Kallkort kurs={course} />
 
       {(course.lynchSection || course.grahamSection || course.ak1Section) && (
         <section className="mt-10">

@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
-import { kraverFas2, harFas2Access, arAdmin } from "@/lib/kurs-access";
+import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
 
 /**
  * Läroplanen — resan från nybörjare till oberoende aktieanalytiker.
  * 5 nivåer, varje kurs har ett syfte i resan mot självständighet.
- * Fas 2-kurser (Nivå 3-flaggskeppen + avancerad teknisk analys-kanon) visas
- * med 🔒 och "Öppnas i Fas 2"-notis — klick leder till /fas2-ansok.
+ * Fas-kurser (kraverFas: 2 = den fundamentala vägen, 3 = det dynamiska
+ * ekosystemet) visas med 🔒 och "Öppnas i Fas X"-notis — klick leder till
+ * /fas2-ansok resp. /fas3.
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, aktiv accordion får marin vänsterkant.
  */
@@ -141,12 +142,14 @@ export function Laroplan() {
   const [xp, setXp] = useState(0);
   const [oppnadNiva, setOppnadNiva] = useState<number | null>(1);
   const [fas2Access, setFas2Access] = useState(false);
+  const [fas3Access, setFas3Access] = useState(false);
 
   useEffect(() => {
     setMedlem(Boolean(lasMedlem()));
     setKlara(lasKlaraKurser());
     setXp(lasXP());
     setFas2Access(harFas2Access() || arAdmin());
+    setFas3Access(harFas3Access() || arAdmin());
   }, []);
 
   const totalKurser = NIVAER.reduce((s, n) => s + n.kurser.length, 0);
@@ -190,16 +193,26 @@ export function Laroplan() {
         )}
       </div>
 
-      {/* Vad är Fas 2? — förklarar 🔒-markeringen i nivåerna (inbjudan, aldrig stopp) */}
+      {/* Vad är Fas 2 och Fas 3? — förklarar 🔒-markeringen i nivåerna (inbjudan, aldrig stopp) */}
       <p className="mx-auto mt-3 flex max-w-xl flex-wrap items-center justify-center gap-1.5 text-center text-[11px] leading-relaxed text-muted-foreground">
         <span aria-hidden>🔒</span>
-        <span className="font-bold text-gold">Vad är Fas 2?</span>
-        <span>26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap.</span>
+        <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
+        <span>
+          Fas 2 — den fundamentala vägen till oberoende analytiker (18 kurser). Fas 3 —
+          det dynamiska ekosystemet: vågor, teknisk analys och psykologi (24 kurser).
+          Öppnas med medlemskap.
+        </span>
         <Link
           href="/fas2-ansok"
           className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
         >
-          Ansök →
+          Fas 2 →
+        </Link>
+        <Link
+          href="/fas3"
+          className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
+        >
+          Fas 3 →
         </Link>
       </p>
 
@@ -251,15 +264,15 @@ export function Laroplan() {
                 <div className="space-y-2 px-5 pb-5 pt-4">
                   {niv.kurser.map((kurs, i) => {
                     const klar = klara.includes(kurs.slug);
-                    // Fas 2-kurs (Nivå 3-flaggskeppen + avancerad teknisk analys-kanon)
-                    // utan åtkomst: syftet syns, klick blir en inbjudan till /fas2-ansok
-                    const fas2 = kraverFas2(kurs.slug);
-                    const last = fas2 && !fas2Access;
+                    // Fas-kurs utan åtkomst: syftet syns, klick blir en inbjudan
+                    // till /fas2-ansok (fas 2) resp. /fas3 (fas 3) — aldrig ett stopp
+                    const fas = kraverFas(kurs.slug);
+                    const last = fas !== 0 && (fas === 3 ? !fas3Access : !fas2Access);
                     return (
                       <Link
                         key={kurs.slug}
-                        href={last ? "/fas2-ansok" : `/kurser/${kurs.slug}`}
-                        title={last ? "Öppnas i Fas 2 — 26 avancerade kurser i teknisk analys och vågor" : undefined}
+                        href={last ? (fas === 3 ? "/fas3" : "/fas2-ansok") : `/kurser/${kurs.slug}`}
+                        title={last ? `Öppnas i Fas ${fas} — kräver Fas ${fas}-medlemskap` : undefined}
                         className={`flex items-center gap-3 rounded-xl border bg-card px-3 py-2.5 transition hover:shadow-md ${
                           klar ? "border-bull/40" : "border-gold/25 hover:border-gold/50"
                         }`}
@@ -273,12 +286,18 @@ export function Laroplan() {
                           <p className="truncate font-serif text-sm font-semibold">{kurs.syfte}</p>
                           <p className="text-[10px] tabular-nums text-muted-foreground">
                             {kurs.tid} min {kurs.xp ? `· ${kurs.xp} XP` : ""}
-                            {last ? " · 🔒 Öppnas i Fas 2" : ""}
+                            {last ? ` · 🔒 Öppnas i Fas ${fas}` : ""}
                           </p>
                         </div>
                         {last ? (
-                          <span className="shrink-0 rounded-full bg-[#0E1B2E] px-2 py-0.5 text-[10px] font-bold text-[#E8C766] dark:bg-[#16263D]">
-                            🔒 Fas 2
+                          <span
+                            className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                              fas === 3
+                                ? "bg-[#8C5A2B] text-[#F8EFE3] dark:bg-[#B07A3C] dark:text-[#081120]"
+                                : "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                            }`}
+                          >
+                            🔒 Fas {fas}
                           </span>
                         ) : (
                           <span className="text-muted-foreground">→</span>

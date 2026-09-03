@@ -9,73 +9,76 @@ import { getCourseList } from "@/lib/content";
 export const dynamic = "force-static";
 
 /**
- * Fas 2: de 26 låsta kurserna, kategorivis. Titlar hämtas dynamiskt ur
- * kurskatalogen (public/deep-courses.json) så listan aldrig halkar ur synk
- * med det faktiska innehållet. 4 flaggskepp + 18 teknisk analys + 4 psykologi.
+ * Fas 2 (nya modellen): de 18 fundamentala mästarverken, kategorivis —
+ * värdering, bokslut, företagsfinans, värdeinvestering + AKM1-superdjup.
+ * Ingen teknisk analys, inga vågor, inget ekosystem — det är Fas 3.
+ * Titlar hämtas dynamiskt ur kurskatalogen (public/deep-courses.json) så
+ * listan aldrig halkar ur synk med det faktiska innehållet. Spegla
+ * FAS2_KURSER i src/lib/kurs-access.ts.
  */
 const FAS2_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }> = [
   {
-    kategori: "Ekosystem-flaggskeppen",
-    pitch: "De fyra superdjupa systemkurserna — där delarna blir en helhet.",
+    kategori: "Värderingsbiblorna",
+    pitch:
+      "Graham & Dodd, Damodaran, McKinsey, Williams, Rappaport & Mauboussin — konsten att väga ett bolag i handen, från bokslut till värde.",
     slugs: [
-      "ak1ts-vaglarans-hierarki",
+      "security-analysis",
+      "investment-valuation",
+      "valuation-measuring-managing",
+      "the-theory-of-investment-value",
+      "expectations-investing",
+    ],
+  },
+  {
+    kategori: "Bokslut & redovisning på analytikernivå",
+    pitch:
+      "Penman, Mulford & Comiskey, O'Glove, Schilit och Graham — hitta kvaliteten i vinsten och genomskåda det som bara är en berättelse.",
+    slugs: [
+      "financial-statement-analysis-and-security-valuation",
+      "creative-cash-flow-reporting",
+      "quality-of-earnings",
+      "financial-shenanigans",
+      "interpretation-of-financial-statements",
+    ],
+  },
+  {
+    kategori: "Företagsfinans & kapital",
+    pitch:
+      "Higgins, Brealey och Whitman — kapitalstruktur, kassaflödesmatematik och nödlidande bolag på MBA-nivå.",
+    slugs: [
+      "analysis-for-financial-management",
+      "principles-of-corporate-finance",
+      "distress-investing",
+    ],
+  },
+  {
+    kategori: "Värdeinvesteringens mästarverk + AKM1-superdjup",
+    pitch:
+      "Klarman, Greenwald, Gray & Carlisle, Einhorn — och den egna modellen AKM1 (V01–V20) på riktig analysnivå.",
+    slugs: [
+      "margin-of-safety",
+      "value-investing-from-graham-to-buffett",
+      "quantitative-value",
+      "fooling-some-of-the-people",
       "akm1-den-kontroversiella-modellen",
-      "vagfundament-variablerna-som-tidsserier",
-      "konfluens-varde-moter-vagor",
-    ],
-  },
-  {
-    kategori: "Avancerad teknisk analys",
-    pitch:
-      "Elliott, Fibonacci och Bollinger i fördjupningskurserna — plus mästerverken av Frost & Prechter, Bollinger, Fischer, Pring, Murphy, Torssell, DeMark, Edwards & Magee och Bulkowski.",
-    slugs: [
-      "ts-01-elliott-wave",
-      "ts-02-elliott-wave",
-      "ts-22-elliott-wave",
-      "ts-03-fibonacciretracements",
-      "ts-04-fibonacciextensions",
-      "ts-19-fibonaccitidszoner",
-      "ts-21-fibonaccikluster",
-      "ts-15-bollinger-bands",
-      "elliott-wave-principle",
-      "bollinger-on-bollinger-bands",
-      "fibonacci-applications",
-      "martin-pring-on-market-momentum",
-      "intermarket-analysis",
-      "teknisk-analys-med-johnny-torssell",
-      "the-new-science-of-technical-analysis",
-      "technical-analysis-financial-markets",
-      "technical-analysis-of-stock-trends",
-      "encyclopedia-of-chart-patterns",
-    ],
-  },
-  {
-    kategori: "Trading psykologi",
-    pitch:
-      "Fienden sitter vid ditt eget skrivbord — Douglas, Coates, Shull och Zweig lär dig känna igen honom.",
-    slugs: [
-      "trading-in-the-zone",
-      "the-hour-between-dog-and-wolf",
-      "market-mind-games",
-      "your-money-and-your-brain",
     ],
   },
 ];
 
 export const metadata: Metadata = pageMetadata({
   path: "/fas2-ansok",
-  title: "Ansök om Fas 2 — utbildning med grundaren | AK1A",
+  title: "Ansök om Fas 2 — den fundamentala vägen | AK1A",
   description:
-    "Ansök om Fas 2: personlig utbildning med grundaren, 26 avancerade kurser, Portföljens vågor och AKM1 × AK1TS-integrationen. Ansökan är kostnadsfri och icke-bindande — 90 dagars nöjdhetsgaranti. Fas 1 förblir gratis, för alltid.",
+    "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Personlig utbildning med grundaren och chansen att bli representant för AK1nvestor. Ingen teknisk analys — det är Fas 3. 9 999 kr, 90 dagars nöjdhetsgaranti.",
   keywords: [
     "Fas 2 ansökan",
-    "utbildning aktieanalys",
     "fundamentalanalys utbildning Sverige",
-    "Elliott Wave utbildning",
-    "trading psykologi",
-    "coaching aktieanalys",
-    "AKM1 medlemskap",
-    "representant utbildning",
+    "värdering Damodaran",
+    "Penman bokslutsanalys",
+    "Klarman margin of safety",
+    "oberoende analytiker",
+    "representant AK1nvestor",
+    "utbildning aktieanalys",
   ],
 });
 
@@ -90,19 +93,51 @@ export default function Fas2AnsokPage() {
       <article className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            Fas 2 · Utbildning med grundaren
+            Fas 2 · Den snabba fundamentala vägen · 9 999 kr
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             Ansök om Fas 2
           </h1>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            Fas 1 är hela grundbiblioteket — kostnadsfritt, för alltid. Fas 2 är något
-            annat: <strong>en människa vid din sida</strong>. Personlig utbildning
-            med grundaren, coaching i grupp och en väg mot att representera
-            AK1nvestor. Vi tar emot ett begränsat antal elever i taget, därför
-            krävs ansökan.
+            Fas 1 är hela grundbiblioteket — kostnadsfritt, för alltid. Fas 2
+            är något annat: <strong>den snabba fundamentala vägen till en
+            oberoende analytiker</strong>. Du utbildar dig som analyiker på
+            ett fundamentalt sätt — värdering, bokslut, kassaflöden, värde —
+            med en människa vid din sida: personlig utbildning med grundaren
+            och coaching i grupp. Vi tar emot ett begränsat antal elever i
+            taget, därför krävs ansökan.
           </p>
         </header>
+
+        {/* TYDLIGT: ingen teknisk analys + representant-chansen — två löften */}
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="gravor-ram rounded-2xl bg-card p-5">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">
+              Våga vara tydlig: ingen teknisk analys här
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Vi utbildar <strong className="text-foreground">ingenting</strong> i
+              teknisk analys inom Fas 2. Vågor, Elliott och det dynamiska
+              ekosystemet är{" "}
+              <Link href="/fas3" className="underline hover:text-foreground">
+                Fas 3
+              </Link>{" "}
+              — Fas 2 är hantverket bakom omdömet: att läsa, värdera och
+              försvara ett bolag med siffror.
+            </p>
+          </div>
+          <div className="gravor-ram rounded-2xl bg-card p-5">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">
+              Representant-chansen
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Fas 2 öppnar vägen att <strong className="text-foreground">bli
+              representant för AK1nvestor</strong> — att representera oss med
+              kvalitet. För eleven som vill är utbildningen början på den
+              relationen, inte slutet på den.
+            </p>
+          </div>
+        </div>
 
         <Fas2Ansok />
 
@@ -115,12 +150,14 @@ export default function Fas2AnsokPage() {
             Vad ingår i Fas 2
           </p>
           <h2 className="font-serif text-2xl font-bold">
-            {antalFas2} avancerade kurser — och tre verktyg som förenar dem
+            {antalFas2} mästarverk — och en människa som förenar dem
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            I Fas 1 lär du dig delarna: variabel för variabel, bok för bok, kapitel
-            för kapitel. Fas 2 öppnar det som kräver att delarna redan sitter — de
-            djupaste kurserna och de verktyg som väver samman dem till helhet.
+            I Fas 1 lär du dig delarna: variabel för variabel, bok för bok,
+            kapitel för kapitel. Fas 2 är den snabba vägen vidare — de
+            fördjupningar som gör att du en dag står som en helt oberoende
+            analytiker, med ett omdöme som är ditt eget. Allt fundamentalt,
+            inget annat.
           </p>
 
           {/* Kurslistan, kategorivis */}
@@ -146,20 +183,20 @@ export default function Fas2AnsokPage() {
             ))}
           </div>
 
-          {/* De tre sammansatta verktygen */}
+          {/* Utbildningen utöver kurserna */}
           <div className="grid gap-3 sm:grid-cols-3">
             {[
               {
-                namn: "Portföljens vågor",
-                text: "Se din egen portföljs vågprofil på mikro-, kort-, medellång-, lång- och mega-horisont. En dynamisk vy som lever med dina innehav efter inloggning — din portfölj, dina vågor.",
+                namn: "Grundaren vid din sida",
+                text: "Personlig utbildning med grundaren av AK1A och coaching i grupp tillsammans med andra klienter — den snabba vägen, utan omvägar.",
               },
               {
-                namn: "AKM1 × AK1TS-integrationen",
-                text: "Den sammansatta analysen där fundamentalstyrka möter vågor: AKM1:s variabler och AK1TS våghierarki förenas till ett enda sammanhängande svar.",
+                namn: "Representant för AK1nvestor",
+                text: "Fas 2 öppnar vägen att förbli representant för AK1nvestor — att representera oss med kvalitet, när utbildningen bär dig dit.",
               },
               {
-                namn: "Nyheter kopplade till dina aktier",
-                text: "En personlig nyhetsfeed som vakar över dina innehav — så att du slipper leta och aldrig missar det som rör just dig.",
+                namn: "Bolag testade med siffror",
+                text: "Tips på bolag under utbildningen — prövade med AKM1:s variabler, siffror och trösklar, aldrig på känsla.",
               },
             ].map((v) => (
               <div key={v.namn} className="rounded-lg border border-gold/20 bg-paper p-4">
@@ -175,8 +212,8 @@ export default function Fas2AnsokPage() {
               Fas 1 förblir gratis — alltid.
             </strong>{" "}
             Fas 2 är för eleven som vill gå från att förstå delarna till att
-            analysera helheten. Fas 1 gömmer ingenting: allt grundläggande vi kan
-            finns gratis, och det förblir så.
+            bära ett eget fundamentalt omdöme. Fas 1 gömmer ingenting: allt
+            grundläggande vi kan finns gratis, och det förblir så.
           </p>
 
           <p className="text-xs leading-relaxed text-muted-foreground">
@@ -206,7 +243,7 @@ export default function Fas2AnsokPage() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Osäker? {" "}
             <Link href="/medlemskap" className="underline hover:text-foreground">
-              Jämför Fas 1 och Fas 2 i lugn och ro
+              Jämför Fas 1, Fas 2 och Fas 3 i lugn och ro
             </Link>
             . Fas 1 gömmer ingenting — allt grundläggande vi kan finns gratis, och det förblir så.
           </p>

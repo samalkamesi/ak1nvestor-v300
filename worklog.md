@@ -3827,3 +3827,37 @@ Work Log:
 Stage Summary:
 - 56 BOKMASTER + 2 flaggskepp · DAGENS PASS + MIN SIDA live
 - Positioneringen "DAGLIG" fullt förverkligad: nav + vana + hantverk
+
+---
+
+## VÅG 32 — MEGA-FELJAKT + KANON 100% (2026-09-01)
+
+Task ID: 132-MEGA-FELJAKT
+Agent: main + 10 subagenter parallellt
+
+### Användarens bild-fel → rotorsaker → fixar
+1. FAB-blockering (🎯💬🔔 täckte lektionspilar) → pb-28 på laroplan
+   + knappar 40px mobil (chat h-10, bell h-10) [cac976b]
+2. 404-sidan: tom yta + checkerboard-PNG → HELT omskriven:
+   marin-panel + 3 länkkort, 0 bildberoende [cac976b]
+3. P1 sticky-band (kurs-steg top-0 målar över nav) → top-[57px] [cac976b]
+4. P2 touch-targets 40px → 44px (Apple/Google) [cac976b]
+5. P3 100vw → 100% (Windows-scrollbar) [cac976b]
+
+### URL-scan (825 URL:er, innehållsvaliderad)
+- SAKNAT: sajten svarar HTTP 200 på ALLT — 28 soft-404 hittade
+- 6 kurser med åäö-slug onåbara + 22 variabelsidor
+- FIX: 5 slugar → ASCII, konfluens-dublett bort (326 kurser),
+  6×308-redirects, dynamicParams=false → hård-404 [6b5958e]
+- next build: 831/831 statiska sidor GRÖNT
+
+### KANON 101/101 (pågående — 5 agenter × 2 böcker)
+bk-003 Lynch, bk-029 Thiel, bk-030 BlueOcean, bk-032 Kahneman,
+bk-086 Bull!, bk-096 ShoeDog, bk-097 EverythingStore,
+bk-098 Kilpatrick, bk-099 Higgins, bk-100 Brealey
+
+### VÄNTAR PÅ ANVÄNDAREN
+- git push blockerad av Mimosa [medium]: kvalitet/route.ts:108,117
+  "korsfilstänk" = subprocess-stdout → publiceraOrganEvent.
+  Bedömning (main): FALSK POSITIV — kalla är intern konstant,
+  CRON-skyddad, mottagare admin. Push kräver användarens godkännande.

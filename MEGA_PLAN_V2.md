@@ -115,3 +115,14 @@ Kö (prioritetsordning, AKM1/AK1TS-anknytning):
 - DEPLOY-NOTIS: hooks stackade → kö-latens på Hobby (upp till 20-25 min).
   Pusha + EN hook + tålamod. Verifiera med KursSok-test ("Sök bland" på
   /kurser) vilken build som är live.
+
+## NYTT DIREKTIV (användaren, 2026-09-01 senare): KONTROVERSIELL ÄRLIGHET
+- AK1TS mäter vågor på Mikro/Kort/Medellång/Lång/Mega — ALLA indikatorer
+  nyttjas DETERMINISTISKT + HIERARKISKT (samma data → samma vågklass).
+- Kurserna ska öppet berätta när vi är kontroversiella och varför: redogör
+  exakt för hur motståndarna tänker (EMH, random walk, akademisk TA-kritik,
+  kvantfaktor-traditionen) — och sedan varför AK1A ändå tänker som det gör.
+- AKM1 ska förklaras SUPERDJUPT så följarna är förberedda på kontroversiell
+  information (vi anser att vi har rätt — men redovisar motståndet ärligt).
+- Kurser på väg: "AKM1 — Den Kontroversiella Modellen" + "AK1TS — Våglärans
+  Hierarki" (kategori EKOSYSTEM).

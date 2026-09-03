@@ -18,8 +18,12 @@
  *   5. Kursdata-konsistens — chapterCount === chapters.length,
  *      quiz-antal === kapitel × 3, totalMinutes === sum(chapters[].minutes).
  *   6. Sitemap-täckning — alla viktiga routes (nav + statiska sidor) finns i sitemap.ts.
- *   7. Motorvalidering — kör verktyg/validera-motorer.mjs (--kör-motorer) eller
- *      läser dess senaste rapport i data/rapporter/.
+ *   7. Motorvalidering (100%-väktaren, våg 49) — kör ALLTID
+ *      verktyg/validera-motorer.mjs som subprocess (~5–10 s, budget 120 s) och
+ *      tolkar RESULTAT-raden: FAIL>0, SKIP>0 eller fel avslutskod ⇒ sektions-FEL
+ *      (SKIP är förbjudet — "kontroller för att allt ska få 100% är obligatoriska").
+ *      Fallanvändning om subprocessen inte kan köras: senaste rapportfilens
+ *      SISTA RESULTAT/Totalt-rad (append-läge gör att första träffen kan vara gammal).
  *
  * Statusregler (dokumenterade i rapporten):
  *   RÖD  = fler än 9 fel ELLER ogiltig JSON-fil
@@ -455,10 +459,17 @@ function körMotorvaliderare() {
     const barn = spawn(process.execPath, ["verktyg/validera-motorer.mjs"], {
       cwd: REPO,
       env: { ...process.env, NO_COLOR: "1" },
-      shell: process.platform === "win32",
+      // OBS: ingen shell=true — på Windows skiljer cmd.exe på mellanslagen i
+      // "C:\Program Files\nodejs\node.exe" när argv fogas utan citattecken
+      // ("'C:\Program' is not recognized"). Utan shell hanterar CreateProcess
+      // sökvägen som ett enda argv[0].
     });
+    let ut = "";
+    let fel = "";
+    if (barn.stdout) { barn.stdout.setEncoding("utf8"); barn.stdout.on("data", (d) => { ut += d; }); }
+    if (barn.stderr) { barn.stderr.setEncoding("utf8"); barn.stderr.on("data", (d) => { fel += d; }); }
     let klar = false;
-    const stad = () => {
+    const stad = (kod) => {
       if (klar) return;
       klar = true;
       if (barn.killed || barn.exitCode === null) {
@@ -468,63 +479,105 @@ function körMotorvaliderare() {
           try { barn.kill("SIGKILL"); } catch { /* ignorera */ }
         }
       }
-      res();
+      res({ stdout: ut, stderr: fel, kod });
     };
-    const tid = setTimeout(stad, 120_000);
-    barn.on("error", () => { clearTimeout(tid); stad(); });
-    barn.on("close", () => { clearTimeout(tid); stad(); });
+    const tid = setTimeout(() => stad(-1), 120_000);
+    barn.on("error", (e) => { clearTimeout(tid); fel += "\nspawn-fel: " + e.message; stad(-2); });
+    barn.on("close", (kod) => { clearTimeout(tid); stad(kod); });
   });
+}
+
+/**
+ * Tolka stdout från validera-motorer.mjs: senaste "RESULTAT: N PASS / F FAIL /
+ * S SKIP"-raden + rader med "  FAIL [...]" / "  SKIP [...]".
+ * Returnerar null om ingen tolkbar RESULTAT-rad fanns.
+ */
+function tolkaMotorStdout(stdout) {
+  const rader = String(stdout || "").split("\n");
+  let resultat = null;
+  for (const rad of rader) {
+    const m = rad.match(/^RESULTAT:\s*(\d+)\s*PASS\s*\/\s*(\d+)\s*FAIL\s*\/\s*(\d+)\s*SKIP\b/);
+    if (m) resultat = { pass: Number(m[1]), fail: Number(m[2]), skip: Number(m[3]) };
+  }
+  if (!resultat) return null;
+  const detaljer = rader
+    .filter((r) => /^\s+(FAIL|SKIP)\s+\[/.test(r))
+    .map((r) => r.trim());
+  return { ...resultat, detaljer };
 }
 
 async function sektionMotorer() {
   const fel = [];
   const info = [];
-  if (KOR_MOTORER) {
-    info.push("kör verktyg/validera-motorer.mjs som subprocess (budget 120 s) …");
-    await körMotorvaliderare();
+  // Våg 49 (kunddirektiv "kontroller för att allt ska få 100% är obligatoriska"):
+  // sviten körs ALLTID som frisk verifiering (~5–10 s; budget 120 s) — SKIP
+  // är inte längre ett godtagbart sektionsutfall för motorvalideringen.
+  info.push("kör verktyg/validera-motorer.mjs som subprocess (100%-väktaren, budget 120 s) …");
+  const sub = await körMotorvaliderare();
+  const tolkat = tolkaMotorStdout(sub.stdout);
+
+  if (tolkat) {
+    info.push(`subprocess (exit ${sub.kod}): RESULTAT: ${tolkat.pass} PASS / ${tolkat.fail} FAIL / ${tolkat.skip} SKIP`);
+    if (tolkat.fail > 0 || tolkat.skip > 0 || sub.kod !== 0) {
+      // 100%-kravet: under 100% PASS (eller fel avslutskod) = sektions-FEL.
+      fel.push({
+        fil: "verktyg/validera-motorer.mjs",
+        plats: "RESULTAT",
+        detalj: `motorervalideringen är inte 100%: ${tolkat.pass} PASS / ${tolkat.fail} FAIL / ${tolkat.skip} SKIP (avslutskod ${sub.kod}) — SKIP är förbjudna sedan våg 49`,
+      });
+      for (const d of tolkat.detaljer) fel.push({ fil: "verktyg/validera-motorer.mjs", plats: "-", detalj: esc(d, 220) });
+    }
+    return { namn: "Motorvalidering (validera-motorer.mjs — 100%-väktaren)", fel, manuella: [], info };
   }
+
+  // Fallback: tolka SENASTE rapportfilens sista RESULTAT/Totalt-rad (append-läge
+  // gör att första träffen kan vara gammal — sök från slutet).
+  info.push(`subprocessen gav ingen RESULTAT-rad (exit ${sub.kod}) — faller tillbaka på senaste rapportfil`);
   let rapport = senasteMotorRapport();
   if (!rapport) {
-    info.push("ingen befintlig rapport — försöker köra validera-motorer.mjs en gång …");
+    info.push("ingen befintlig rapport heller — försöker köra validera-motorer.mjs en gång till …");
     await körMotorvaliderare();
     rapport = senasteMotorRapport();
   }
   if (!rapport) {
     return {
-      namn: "Motorvalidering (validera-motorer.mjs)",
-      status: "SKIP",
-      fel: [],
+      namn: "Motorvalidering (validera-motorer.mjs — 100%-väktaren)",
+      fel: [{ fil: "verktyg/validera-motorer.mjs", plats: "subprocess", detalj: `kunde inte köra eller tolka motorervalideringen (exit ${sub.kod}${sub.stderr ? "; " + esc(sub.stderr.trim().split("\n")[0], 120) : ""}) — ofullständig verifiering är ett FEL (SKIP förbjudet)` }],
       manuella: [],
-      info: [...info, "ingen motorervalideringsrapport hittades och subprocessen gav ingen ny — kör 'node verktyg/validera-motorer.mjs' manuellt"],
+      info,
     };
   }
   const src = readFileSync(rapport.abs, "utf8");
-  const m = src.match(/\|\s*\*\*Totalt\*\*\s*\|\s*\**(\d+)\**\s*\|\s*\**(\d+)\**\s*\|\s*\**(\d+)\**\s*\|/);
-  if (!m) {
+  const alla = [...src.matchAll(/\*\*RESULTAT:\s*(\d+)\s*PASS\s*\/\s*(\d+)\s*FAIL\s*\/\s*(\d+)\s*SKIP\*\*/g)];
+  const totalt = [...src.matchAll(/\|\s*\*\*Totalt\*\*\s*\|\s*\**(\d+)\**\s*\|\s*\**(\d+)\**\s*\|\s*\**(\d+)\**\s*\|/g)];
+  const senast = alla[alla.length - 1] ?? totalt[totalt.length - 1];
+  if (!senast) {
     return {
-      namn: "Motorvalidering (validera-motorer.mjs)",
-      status: "SKIP",
-      fel: [],
+      namn: "Motorvalidering (validera-motorer.mjs — 100%-väktaren)",
+      fel: [{ fil: rapport.fil, plats: "-", detalj: "kunde inte tolka RESULTAT/sammanfattning i senaste rapport — ofullständig verifiering är ett FEL (SKIP förbjudet)" }],
       manuella: [],
-      info: [...info, `kunde inte tolka sammanfattningen i ${rapport.fil}`],
+      info,
     };
   }
-  const pass = Number(m[1]);
-  const fail = Number(m[2]);
-  const skip = Number(m[3]);
+  const pass = Number(senast[1]);
+  const fail = Number(senast[2]);
+  const skip = Number(senast[3]);
   const ageDagar = Math.floor((Date.now() - statSync(rapport.abs).mtimeMs) / 86400000);
-  info.push(`${rapport.fil}: ${pass} PASS / ${fail} FAIL / ${skip} SKIP (rapporten är ${ageDagar} dagar gammal)`);
-  if (fail > 0) {
-    // lista raderna med FAIL ur rapporten
+  info.push(`${rapport.fil} (fallback): ${pass} PASS / ${fail} FAIL / ${skip} SKIP (rapporten är ${ageDagar} dagar gammal)`);
+  if (fail > 0 || skip > 0) {
+    fel.push({
+      fil: rapport.fil,
+      plats: "-",
+      detalj: `motorervalideringen är inte 100%: ${fail} FAIL / ${skip} SKIP (SKIP är förbjudna sedan våg 49)`,
+    });
     for (const rad of src.split("\n")) {
-      if (rad.includes("**FAIL**")) fel.push({ fil: rapport.fil, plats: "-", detalj: esc(rad, 200) });
+      if (rad.includes("**FAIL**") || rad.includes("**SKIP**")) fel.push({ fil: rapport.fil, plats: "-", detalj: esc(rad, 200) });
     }
-    if (fel.length === 0) fel.push({ fil: rapport.fil, plats: "-", detalj: `${fail} FAIL i motorervalideringen (se rapporten för detaljer)` });
   }
   if (ageDagar > 7) {
-    info.push(`VARNING: rapporten är ${ageDagar} dagar gammal — kör 'node verktyg/validera-motorer.mjs' eller kvalitetsvakten med --kör-motorer`);
+    info.push(`VARNING: rapporten är ${ageDagar} dagar gammal och subprocessen gav ingen färsk utdata — kör 'node verktyg/validera-motorer.mjs' manuellt och undersök varför subprocessen misslyckades`);
   }
-  return { namn: "Motorvalidering (validera-motorer.mjs)", fel, manuella: [], info };
+  return { namn: "Motorvalidering (validera-motorer.mjs — 100%-väktaren)", fel, manuella: [], info };
 }
 
 // ════════════════════════════════════════════════════════════════════════════

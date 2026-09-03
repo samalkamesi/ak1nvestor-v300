@@ -3,6 +3,7 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas2Ansok } from "@/components/ak1a/fas2-ansok";
+import { SocialProof } from "@/components/ak1a/social-proof";
 import { getCourseList } from "@/lib/content";
 
 export const dynamic = "force-static";
@@ -104,6 +105,9 @@ export default function Fas2AnsokPage() {
         </header>
 
         <Fas2Ansok />
+
+        {/* SOCIALT BEVIS — siffror och elevröster efter krav/ansökningsdelen */}
+        <SocialProof />
 
         {/* VAD INGÅR I FAS 2 */}
         <section className="space-y-5 rounded-xl border border-gold/30 bg-card p-6">

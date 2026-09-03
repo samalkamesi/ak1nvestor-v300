@@ -24,6 +24,7 @@ import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { MorgonBriefing } from "@/components/ak1a/morgon-briefing";
 import { MinPortfoljKort } from "@/components/ak1a/min-portfolj-kort";
 import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
+import { DelaKort } from "@/components/ak1a/dela-kort";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -749,6 +750,9 @@ export function MinSida() {
           ))}
         </div>
       </section>
+
+      {/* (d2) DELA-KORT — elevens frivilliga delning av nivå/streak/kurser */}
+      <DelaKort />
 
       {/* (e) TOPPLISTA-POSITION */}
       <section className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gold/30 bg-card p-6">

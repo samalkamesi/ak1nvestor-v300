@@ -6,6 +6,7 @@ import { addXP, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKurs
 import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
+import { DelaKort } from "@/components/ak1a/dela-kort";
 
 type Kapitel = {
   num: number;
@@ -63,6 +64,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
   const total = kurs.chapters.length;
   const procent = Math.round(((steg + 1) / total) * 100);
   const klaraTotalt = klaradeKap.size;
+  const kursKlar = klaraTotalt >= total;
 
   const svaraQuiz = (qi: number, val: number) => {
     if (!kap.quiz) return;
@@ -330,6 +332,20 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
               </Link>
             )}
           </div>
+
+          {/* Kursen klar — trofé/grattis under sista kapitlet, delbart kort därunder.
+              DelaKort sköter själv bild-generering, nedladdning och delning. */}
+          {steg === total - 1 && kursKlar && (
+            <div className="mt-10">
+              <div className="rounded-2xl border-2 border-gold/40 bg-gradient-to-br from-gold/10 to-gold/5 px-6 py-6 text-center">
+                <p className="font-serif text-3xl font-black text-gold">🏆 Grattis!</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Du har klarat alla {total} kapitel i "{kurs.title}" — kunskapen är nu din.
+                </p>
+              </div>
+              <DelaKort kursTitel={kurs.title} className="mt-6" />
+            </div>
+          )}
         </div>
       </div>
 

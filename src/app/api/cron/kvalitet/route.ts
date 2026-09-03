@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { promisify } from "node:util";
 import { publiceraOrganEvent } from "@/lib/organ-event";
+import { publiceraSignal } from "@/lib/signal-bus";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -109,6 +110,20 @@ export async function GET(req: NextRequest) {
     verb: "rapport",
     matt: { fel: resultat.fel, manuella: resultat.manuella, status: resultat.status, kalla },
   });
+
+  // 4) signal-bussen — RÖD status (> 9 fel) är en varning till admin: se
+  //    rapporten och rätta (fail-safe: publiceraSignal kastar aldrig).
+  if (resultat.fel > 9) {
+    await publiceraSignal({
+      kalla: "kvalitetsvakt",
+      typ: "varning",
+      rubrik: "Kvalitetsstatus RÖD",
+      text: `${resultat.fel} fel hittade — se rapport`,
+      ikon: "⚠️",
+      mottagare: "admin",
+      lank: "/admin?kvalitet=true",
+    });
+  }
 
   return NextResponse.json({
     ok: true,

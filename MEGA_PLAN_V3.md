@@ -60,4 +60,5 @@ AK1A Research Lab blir en levande organism: varje del av plattformen är ett org
 - 2026-09-02 #6 **KLART (330ca25, live):** Kvalitetsvakten (7 sektioner, daglig cron, admin-panel, 52 fel fixade) + SEO 818 URL + llms.txt för AI + integration 3 gap + 2 BOKMASTER. 320 kurser · 88/101.
 - 2026-09-02 #7 **KLART (74ec21c, live):** RADIKAL temafix (guld-på-marin) + 4 BOKMASTER. 324 kurser · 92/101 kanon.
 - 2026-09-02 #8 **KLART (2742441, live):** FAS 2-OMSTRUKTURERING — 25 kurser låsta, portfölj+nyheter, admin-knapp, 5-horisont-vågor. 324 kurser.
-- 2026-09-02 #9 (pågår): **KOMMUNIKATIONS- & MARKNADSFÖRINGSVÅG** — mejl/nyhetsbrev (morgon-briefing via mejl!), notis-system (push+PWA), signal-bus (alla tjänster skickar till varandra), branding-audit (AI-styrelsen kontrollerar alla 830+ sidor), marknadsförings-genomträngning (social proof + delnings-kort). 56 agenter idag.
+- 2026-09-02 #9 **KLART (f3dc95d, live):** KOMMUNIKATIONS-VÅG — mejl, notiser, signal-bus, branding-audit (16 fix), social proof/dela-kort BYGGDA.
+- 2026-09-02 #10 (pågår): **INTEGRATIONSVÅG** — SocialProof+DelaKort TRÅDAS på 5+ sidor (var byggda men ej integrerade!), signal-triggare kopplas till 3 crons, DelaKort på kurs-klar, startsidans marknadsföring förstärks + 2 BOKMASTER (Lowenstein Origins, Eklund Vår ekonomi SVENSK). 62 agenter idag.

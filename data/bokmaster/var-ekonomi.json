@@ -1,0 +1,1098 @@
+{
+  "slug": "var-ekonomi",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 190,
+  "title": "Vår ekonomi — Klas Eklund: KOMPLETT",
+  "summary": "Vår ekonomi är Sveriges mest sålda lärobok i ekonomi någonsin: över en halv miljon exemplar, sexton upplagor från 1987 till 2024, översatt till ryska och kinesiska. Klas Eklund — doktor i nationalekonomi, politisk sekreterare i Finansdepartementet under Kjell-Olof Feldt 1982–1990 och senare chefsekonom hos SEB — skrev den första upplagan som en argumenterande bok för en balanserad välfärdspolitik med ökade marknadsinslag; därefter växte den till en bred, konventionell introduktion till hela samhällsekonomin. Kursen följer boken i dess moderna form (2020 års femtonde upplaga, då undertiteln breddades från samhällsekonomien till världsekonomin): marknadens mekanik, marknadsmisslyckanden och statens roll, BNP och tillväxt, konjunkturer, pengar, banker, ränta, inflation, arbetsmarknad, stabiliseringspolitik, handel och valutor, finanskriser, klimat — och kontroversen där allt mynnar ut: Eklunds socialdemokratiska mittfåga mot de nyliberala och österrikiska skolorna om vad staten ska och inte ska göra. För AK1A är boken själva RAM:en — ränta, inflation och BNP är de tre skruvarna som vrider om samtliga tjugo AKM1-variabler (V01–V20) innan du ens öppnat ett bokslut.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå ekonomins grundproblem — knapphet, val och alternativkostnad — och marginaltänkandet som styr både hushåll och bolag · Läsa marknadens mekanik: utbud, efterfrågan, elasticitet och prisbildning som information · Skilja marknadsformer och översätta mikroekonomins konkurrens till moat-analys (V13–V15) · Identifiera marknadsmisslyckanden — externaliteter, kollektiva nyttigheter, informationsproblem — och vet vad staten rimligen kan rätta · Läsa BNP, konjunkturcykler och tillväxtteori som kontext för intäktssyner (V01–V03) · Förstå pengar, banker och kreditmultiplikatorn — och varför kredit torkar utjust när du behöver den (V10, V19) · Följa centralbankens räntetransmission hela vägen in i värderingsmultiplarna (V04–V06) och återköpsmatematiken (V20) · Analysera inflationens orsaker och verktyg — och dess tysta skatt på realavkastningen · Koppla arbetsmarknad och lönebildning till marginaler (V07–V08) · Väg Keynes mot Friedman och Hayek i stabiliseringspolitikens verktygslåda · Använda Ricardos komparativa fördelar och växelkurser på exportbolag (V03, V17) · Känn igen bubblor och kriser i Minskys tradition — och AK1A:s tidiga varningssignaler · Bedöma klimatets ekonomi: Stern mot Nordhaus, koldioxidskatt och regulatoriska katalysatorer (V18) · Syntetisera kontroversen stat mot marknad och använda makro som RAM för hela AKM1 — ränta, inflation, BNP in, V01–V20 ut.",
+  "why": "Aktieanalys utan makroförståelse är navigation utan kompass: du kan läsa ett bokslut perfekt och ändå köpa ett fantastiskt bolag i toppen av en kreditcykel — eller sälja ettmediokert i botten av en nedgång. Eklunds bok är den bredaste svenska entrén till hela den kontexten, skriven av en ekonom som själv suttit på båda sidor bordet: Finansdepartementets politik och SEB:s handelsgolv. Kursen bygger AK1A:s makro-RAM på bokens stomme — räntan diskonterar framtidens kassaflöden (V04–V06), inflationen äter marginaler och realavkastning (V07–V08, V12), BNP-cykeln vrider intäkts- och kreditvariablerna (V01–V03, V10, V19) — och kontroverskapitlet tar striden som kursen levats mot: vad staten ska och inte ska göra, Eklunds mittfåga mot Friedman och Hayek, nyliberal mot österrikisk skola. Utan den boken är din V-analys ett masihus utan väder; med den vet du när det blåser.",
+  "chapters_list": [
+    "1. Boken och ekonomen — sexton upplagor samhällsekonomi",
+    "2. Marknadens mekanik — utbud, efterfrågan och priset som information",
+    "3. Konkurrens och marknadsformer — mikroekonomins bro till moat (V13–V15)",
+    "4. Marknadsmisslyckanden — när marknaden inte räcker",
+    "5. BNP och tillväxt — välståndets motor och dess begränsningar (V01–V03)",
+    "6. Konjunkturer — cykeln som styr riskaptiten och tidshorisonterna",
+    "7. Pengar och banker — krediten som skapar och bryter ekonomier (V10, V19)",
+    "8. Centralbanken och räntan — transmissionen in i multiplarna (V04–V06)",
+    "9. Inflation — pengarnas tysta skatt och tvåprocentmålet (V07–V08)",
+    "10. Arbetsmarknaden — löner, sysselsättning och den svenska modellen",
+    "11. Stabiliseringspolitik — Keynes mot Friedman om statens verktygslåda",
+    "12. Handel och valutor — komparativa fördelar och globaliseringens gränser (V03)",
+    "13. Kriser — 2008, bubblor och Minsky (V10, V19)",
+    "14. Klimat och framtid — tillväxtens gränser och regulatoriska katalysatorer (V18)",
+    "15. Kontroversen och syntesen — stat mot marknad; makro som RAM (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och ekonomen — sexton upplagor samhällsekonomi",
+      "intro": "Vår ekonomi kom första gången 1987, skriven av Klas Eklund — doktorerad nationalekonom vid Stockholms universitet, politisk sekreterare i Finansdepartementet 1982–1990 under Kjell-Olof Feldt och senare chefsekonom hos SEB. Kursen bygger på boken i dess moderna form: 2020 års femtonde upplaga, 468 sidor, då undertiteln breddades från samhällsekonomien till världsekonomin. Innan innehållet kommer bokens egen historia — den är nämligen ett ekonomiskt dokument i sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens bibliografi, citerad öppet: sexton upplagor mellan 1987 och 2024, från Tidens förlag via Rabén Prisma och Norstedts till Studentlitteratur; över en halv miljon sålda exemplar; översatt till kinesiska (1989 och 1995) och ryska (1991 och 2004 — den ryska utgåvan fick undertiteln introduktion till makroekonomi). Enligt Wikipedia argumenterade den första upplagan för en balanserad välfärdspolitik med ökade marknadsinslag — alltså en bok skriven inuti den socialdemokratiska moderniseringens opinionsarbete, i Feldt-erans Sverige där inflationen skulle bekämpas och marknaderna släppas in i välfärdsstaten. Senare upplagor blev en mer konventionell lärobok, nivån mellan gymnasium och högskola, med ett relativt stort inslag av personporträtt av ekonomerna bakom teorierna — Smith, Ricardo, Marx, Keynes, Hayek, Friedman får ansikten. I 2024 års sextonde upplaga bands boken samman: 75 sidor kortare, rakare kapitelstruktur, mindre överlapp — och ett nytt avslutande, framåtblickande kapitel om framtidens ekonomiska utmaningar."
+        },
+        {
+          "type": "text",
+          "content": "Bokens arkitektur, som kursen följer kapitel för kapitel. Del ett: den enskilda marknaden — mikroekonomin med efterfrågan, utbud, prisbildning, marknadsformer och marknadens misslyckanden. Del två: samhällsekonomin i stort — makroekonomin med BNP, tillväxt, konjunkturer, arbetslöshet, pengar och inflation. Del tre: den internationella ekonomin och den ekonomiska politiken — handel, valutor, EU, globala kapitalmarknader, kriser, utveckling och klimat. Eklunds pedagogiska signum är att teorierna presenteras som svar på verkliga problem: merkantilismen växte fram ur handelsstaterna, Keynes ur trettiotalets massarbetslöshet, monetarismen ur sjuttiotalets stagflation. I nyare upplagor fick finanskrisen ett helt eget kapitel — Eklund skriver själv på sin webbplats om hur krisen tvingade fram omskrivningarna och Keynes återkomst."
+        },
+        {
+          "type": "text",
+          "content": "Och varför läser en aktieanalytiker en lärobok i samhällsekonomi? Eftersom AKM1:s tjugo variabler inte flyger fritt: de svävar i makroluft. Styrräntan är diskonteringsräntan som komprimerar eller expanderar V04–V06. Inflationen pressar eller skyddar marginalerna i V07–V08 och urholkar V12:s stabilitet. BNP-cykeln vrider efterfrågan bakom V01–V02, kredit åt V10 och emissionsrisken i V19, och klimatpolitiken skapar V18:s regulatoriska katalysatorer. Boken är därför kurskatalogens RAM: ramen som håller analysen upprätt när nyhetsflödet vrider sig — och kontroversen i kapitel femton (Eklund mot de nyliberala och österrikiska skolorna) är striden om hur den ramen ska se ut. Notera redan nu balansen: boken är skriven av en socialdemokratisk ekonom som älskar marknader — det gör den till ett ovanligt ärligt utgångsläge för en kontrovers som vanligtvis förs mellan döva öron."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kursens grundinställning innan du går vidare: mikroekonomin förklarar hur ett enskilt bolag tjänar pengar, makroekonomin förklarar hur omvärlden vrider om förutsättningarna — och AKM1 befinner sig exakt i skärningen. Boken ger dig kartan; V01–V20 är dina koordinater."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens tre delar och AK1A-mappningen\",\"rader\":[[\"Del\",\"Innehåll\",\"Nyckelfråga\",\"AK1A-roll\"],[\"1. Marknaden\",\"mikro: utbud, efterfrågan, marknadsformer, misslyckanden\",\"varför uppstår vinster?\",\"V07–V09 marginaler, V13–V15 moat\"],[\"2. Samhällsekonomin\",\"makro: BNP, konjunktur, pengar, ränta, inflation, arbete\",\"vad vrider om förutsättningarna?\",\"V01–V06, V10–V12, V19–V20\"],[\"3. Världsekonomin\",\"handel, valutor, EU, kriser, utveckling, klimat\",\"hur sprids stöten?\",\"V03 diversifiering, V17–V18 katalysatorer\"],[\"Kontroversen\",\"stat kontra marknad\",\"vad ska staten göra?\",\"RAM:en själv — tolkningen av allt ovan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din makro-utgångspunkt innan kursen börjar: skriv ner tre siffror utan att titta efter — Sveriges styrränta i dag, senaste KPI-inflationen i Sverige (eller eurozonen), och senaste årets BNP-tillväxt. Kolla sedan efter. Hur många hade du rätt på, hur många ens i rätt riktning? Resultatet är din baslinje: antalet färger du såg flimra förbi i nyhetsflödet utan att registrera — det är variablerna som redan vrider om dina tjugo V-poäng bakom ryggen på dig."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken roll hade Klas Eklund innan han blev chefsekonom hos SEB?",
+          "alternativ": [
+            "Han var politisk sekreterare i Finansdepartementet 1982–1990 under Kjell-Olof Feldt",
+            "Han var professor i nationalekonomi i Lund hela sitt liv",
+            "Han var riksbankschef",
+            "Han var journalist på Dagens Nyheter"
+          ],
+          "ratt": 0,
+          "tips": "Bokens första upplaga argumenterade för välfärdspolitik med marknadsinslag — vilken opinionsmiljö skrevs den inuti?"
+        },
+        {
+          "q": "Vad hände med undertiteln i 2020 års femtonde upplaga?",
+          "alternativ": [
+            "Den togs bort helt",
+            "Den ändrades från en introduktion till samhällsekonomien till en introduktion till världsekonomin",
+            "Den byttes till en introduktion till mikroekonomin",
+            "Den blev en introduktion till finansmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Globaliseringen och kriserna bredde ut bokens spelplan — vilket ord fångar det?"
+        },
+        {
+          "q": "Vad är den viktigaste anledningen för en aktieanalytiker att läsa en lärobok i samhällsekonomi enligt kursen?",
+          "alternativ": [
+            "För att förutsäga exakt var BNP toppar nästa kvartal",
+            "För att läroböcker alltid slår praktisk erfarenhet",
+            "För att makrovariabler som ränta, inflation och BNP vrider om förutsättningarna för samtliga AKM1-variabler — makron är RAM:en runt analysen",
+            "För att boken innehåller aktietips"
+          ],
+          "ratt": 2,
+          "tips": "Kartan förklarar inte enskilda steg — den håller dig orienterad."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Marknadens mekanik — utbud, efterfrågan och priset som information",
+      "intro": "Bokens första block bygger den enskilda marknaden: behov och knappa resurser, rationella val i marginalen, och de två kurvor som förklarar nästan allt — efterfrågan som faller med priset, utbud som stiger med det. Här läggs också grundstenen till hela kursens AK1A-koppling: priset är inte ett nummer, det är information.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är knappheten: mänskliga behov är obegränsade, resurserna är det inte — därför tvingas varje hushåll, varje bolag, varje samhälle att välja, och varje val har en alternativkostnad: det näst bästa man avstår. Eklunds andra grundsten är marginaltänkandet: beslut fattas inte mellan allt eller inget utan vid marginalen — en till enhet, en till krona, en till timme. Konsumenten köper tills nyttan av sista kronan matchar priset; bolaget producerar tills marginalintäkten matchar marginalkostnaden. Det är exakt samma logik som AKM1:s fråga om ett bolag växer lönsamt: driver V01:s försäljningstillväxt tillväxt i V08:s EBITDA-marginal — eller köper den tillväxten med rabatter som äter marginalen? En till kund till priset av lönsamhet är inte tillväxt; det är välgörenhet."
+        },
+        {
+          "type": "text",
+          "content": "Sedan de två kurvorna. Efterfrågekurvan lutar nedåt: högre pris, lägre kvantitet — och dess lutning är elasticiteten, kursens viktigaste begrepp. Elastisk efterfrågan: liten prisändring, stor volymändring — konkurrensutsatta produkter med substitut. Oelastisk: kunderna betalar ändå — insulin, hyra, reservdelar, och prenumerationsmjukvara med höga byteskostnader. Utbudskurvan lutar uppåt: högre pris lockar fram mer produktion. Där kurvorna skär varandra ligger jämviktspriset — och Eklunds genomgång av skift är poängen: vad händer när kurvorna flyttar? Skatt på säljaren, teknik som sänker kostnaden, inkomstökningar som höjer efterfrågan — marknaden hittar alltid ett nytt jämviktspris, men omfördelningen under vägen är politikens och portföljens angelägenhet."
+        },
+        {
+          "type": "text",
+          "content": "Här kursens första raka AK1A-brygga, med en vinkning åt Hayek som kontroverskapitlet återkommer till: priset är information. Priset samlar spridd kunskap om knapphet och efterfrågan som ingen enskild planerare kan sammanställa — och på aktiemarknaden är multiplarna information av samma slag: P/S (V04) talar om hur marknaden prissätter en omsättningskrona, P/B (V05) hur den prissätter bokfört kapital, EV/EBITDA (V06) hur den prissätter rörelseresultatet. När en multipl avviker från sektorns — fråga inte först om marknaden har fel, fråga vad marknaden vet som din modell missar: oelastisk efterfrågan förtjänar högre multipl än elastisk. Mikrons elasticitetslära är därför inte gymnasiematte — det är teorin bakom varför vissa bolag förtjänar sin multipl och andra inte."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga elasticitetsfrågan vid varje bolagsbedömning: om bolaget höjer priset tio procent — hur mycket volym tappar det? Om svaret är nästan ingen har du hittat prissättningsmakten som moat-analysen (V13–V15) letar efter; om svaret är många har du en råvaru-produkt där V04 aldrig ska betala premium."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Efterfrågans elasticitet — från mikro till multipl\",\"rader\":[[\"Efterfrågan\",\"Exempel\",\"Prissättningsmakt\",\"Multipl-logik\"],[\"Oelastisk\",\"insulin, reservdelar, kritisk mjukvara\",\"hög — kunden betalar ändå\",\"högre berättigad multipl — försvarad av V13–V15\"],[\"Måttligt elastisk\",\"märkesvaror, restaurangbesök\",\"medel — märket håller delen\",\"multipl följer varumärkesstyrkan (V14)\"],[\"Elastisk\",\"råvaror, standardkomponenter\",\"låg — substitut finns överallt\",\"låg multipl — köp endast på låg V04, kräv hög V08\"],[\"Perfekt elastisk\",\"identisk vara, många säljare\",\"ingen\",\"konkurrenspris — vinsten bor i kostnadsläget\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör elasticitetstestet på tre bolag i din bevakningslista: för varje bolag, skriv ner dess huvudprodukt och fråga — vad händer med volymen om priset höjs tio procent? Slå upp eller uppskatta sedan bruttomarginalen (V07). Sortera bolagen efter din elasticitetsgissning och kontrollera: stämmer sorteringen med marginalernas storleksordning? Där din gissning och marginalen går isär har du antingen ett undervärderat moat eller en värdemultipl som vilar på något du inte förstått."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är alternativkostnaden för ett val?",
+          "alternativ": [
+            "Priset i kronor på det man köper",
+            "Värdet av den bästa avstående alternativet — det man offrar",
+            "Snittkostnaden för alla alternativ tillsammans",
+            "Kostnaden man ångrar i efterhand"
+          ],
+          "ratt": 1,
+          "tips": "Knappheten tvingar fram val — vad mäter det som inte valdes?"
+        },
+        {
+          "q": "Vad kännetecknar oelastisk efterfrågan?",
+          "alternativ": [
+            "Liten prisändring ger stor volymförändring",
+            "Volymen förblir nästan oförändrad när priset ändras — kunderna betalar ändå",
+            "Efterfrågan är helt oberoende av priset i alla lägen",
+            "Utbudet styr priset ensamt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk insulin och kritisk mjukvara — vad händer med volymen när priset stiger?"
+        },
+        {
+          "q": "Hur kopplar kursen elasticitetsläran till aktievärdering?",
+          "alternativ": [
+            "Elastisk efterfrågan motiverar alltid högre multiplar",
+            "Oelastisk efterfrågan är tecken på konkursrisk",
+            "Multiplar är oberoende av efterfrågeelasticitet",
+            "Priset är information — bolag med oelastisk efterfrågan och prissättningsmakt har en mer berättigad hög multipl än bolag med elastisk"
+          ],
+          "ratt": 3,
+          "tips": "Varför betalar marknaden mer för en omsättningskrona i ett moat-bolag än i ett råvarubolag?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Konkurrens och marknadsformer — mikroekonomins bro till moat (V13–V15)",
+      "intro": "Från kurvorna till marknadsformerna: perfekt konkurrens, monopolistisk konkurrens, oligopol och monopol. Eklund går igenom hur priserna bildas när säljarna är många och varorna identiska — och vad som händer när de inte är det. För AK1A är detta kapitlet där mikroekonomin blir moat-ekonomi: marknadsformen är bokstavligen förutsättningen bakom V13–V15.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Perfekt konkurrens är mikroekonomins renrum: många köpare och säljare, homogen vara, fri entry, fullständig information. Följden är matematisk: priset pressas till marginalkostnaden och den ekonomiska vinsten — vinsten över normalavkastning — försvinner. Ingen distributör, ingen farmacéutisk tillverkare av standardkemikalier, ingen bulkrederi lever i det renrummet länge, och det är därför bokens porträtt av marknadsformerna är en karta över var vinsterna bor och inte bor. I andra änden: monopolet — en säljare, ingen nära substitut, prissättare i stället för pris tagare. Däremellan finns de två former de flesta börsbolag faktiskt lever i: monopolistisk konkurrens (många säljare, differentierade varor — restauranger, klädmärken) och oligopol (få säljare som ömsesidigt bevakar varandra — bank, telekom, livsmedel, försvar)."
+        },
+        {
+          "type": "text",
+          "content": "Nyckelbegreppet som binder samman kapitlet är barriärer mot entry. Perfect competition förutsätter fri entry; alla hållbara överskottsvinster vilar på något som stänger dörren: skal ekonomier, patent (V13), varumärken och kundlojalitet (V14), nätverkseffekter (V15), kapitalintensitet, regulatoriska licenser, ägarskap till distribution. Här infinner sig den direkta översättningen: AKM1:s moat-block är mikroekonomiska barriärer översatta till checklista. V13 frågar om de juridiska skydden, V14 om varumärkets prissättningskraft, V15 om nätverkens självförstärkning — och Eklunds varning hör hemma i varje moat-bedömning: barriärer eroderar. Teknik föråldrade patent, generationerbytare byter varumärken, plattformar flyttar nätverk. Kursens tillämpningsregel: ett moat som inte kan förklaras med en barriär mot entry är inte ett moat — det är en trend."
+        },
+        {
+          "type": "text",
+          "content": "Och nu den viktiga vändningen för värderingsarbetet: marknadsformen sätter taket för multiplarna, moat-styrkan sätter platsen inom taket. Ett bolag i perfekt konkurrens förtjänar aldrig premium på V04–V06 — dess överskottsvinster är statistiska fläckar som entry suddar ut; köp det bara när multiplarna är cykliskt deppressiva och V08 ändå bär avkastningen. Ett moat-bolag förtjänar premium — men bara så länge barriären håller, och det är därför AKM1 poängsätter moat-kvalitet separat från värdering: ett monopol på erosionsmark (patent som löper ut, V13 låg) med hög multipl är den farligaste kombinationen i hela katalogen — du betalar moat-pris för en trend."
+        },
+        {
+          "type": "insikt",
+          "content": "Formulera alltid bolagets marknadsform i en mening innan du poängsätter moat: mot vem konkurrerar det, hur differentierat är erbjudandet, och vad hindrar en välkapitaliserad utmanare att gå in i morgon? Om meningen inte går att skriva finns inget moat att poängsätta — V13–V15 behöver en marknadsform att stå på."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marknadsformer och deras AKM1-översättning\",\"rader\":[[\"Marknadsform\",\"Kännetecken\",\"Vinstnivå\",\"AKM1-fokus\"],[\"Perfekt konkurrens\",\"många säljare, homogen vara, fri entry\",\"normalavkastning — överskott suddas ut\",\"köp lågt (V04), kräv V08; aldrig premium\"],[\"Monopolistisk konkurrens\",\"differentierade varor, lätt entry\",\"små överskott som differentiering bär\",\"V14 varumärke; bevakas för kommoditisering\"],[\"Oligopol\",\"få säljare, ömsesidig beroende\",\"stora överskott om prisdisciplin håller\",\"V15 nätverk, V13 licenser; bevakas för priskrig\"],[\"Monopol\",\"en säljare, inga nära substitut\",\"störst — prissättare\",\"premium berättigad — men bara så länge barriären (V13–V15) håller\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera dina fem största innehav efter marknadsform — perfekt konkurrens, monopolistisk, oligopol eller monopol — med en motivering per bolag på max två rader. Jämför sedan med den multipl du faktiskt betalade (V04–V06): fick något bolag perfekt konkurrens-pris men oligopol-multipel, eller omvänt? Skriv upp det största mismatch-paret och vad som måste vara sant för att marknaden ska ha rätt."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför försvinner den ekonomiska överskottsvinsten under perfekt konkurrens?",
+          "alternativ": [
+            "Därför att staten förbjuder den",
+            "Därför att fri entry lockar in nya säljare tills priset pressats till marginalkostnaden",
+            "Därför att kunderna alltid byter till substitut",
+            "Därför att efterfrågan alltid är elastisk"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med utbudet när en vinst syns på avstånd — och vem kan gå in?"
+        },
+        {
+          "q": "Vad är relationen mellan entry-barriärer och AKM1:s moat-block?",
+          "alternativ": [
+            "De är helt olika företeelser",
+            "Moat gäller bara tekniktillverkare",
+            "Barriärer existerar bara i oligopol",
+            "Moat är översättningen av mikroekonomiska barriärer mot entry till checklista — patent (V13), varumärke (V14), nätverk (V15)"
+          ],
+          "ratt": 3,
+          "tips": "Vad stänger dörren för konkurrenter — och hur poängsätts det i AKM1?"
+        },
+        {
+          "q": "Vilken kombination är kursens farligaste vid värdering?",
+          "alternativ": [
+            "Oligopol med låg multipl",
+            "Perfekt konkurrens med låg multipl",
+            "Ett moat som eroderar — exempelvis utlöpande patent — prissatt med premium-multipel",
+            "Monopol med stark barriär och hög multipl"
+          ],
+          "ratt": 2,
+          "tips": "Du betalar för en vägg som håller på att riva sig själv — vilket pris är då rätt?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Marknadsmisslyckanden — när marknaden inte räcker",
+      "intro": "Marknadsekonomin är bokens motor — men Eklund ägnar ett helt block åt de fall där motorn spontant kört fel: externaliteter, kollektiva nyttigheter, informationsasymmetri, naturliga monopol och maktdistribution. Detta är statens ekonomiska motivering i boken, och grunden till hela den kommande kontroversen om vad staten ska och inte ska göra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Externaliteten är det tydligaste misslyckandet: en kostnad eller nytta som inte passerar prismekanismen. Föroreningen från fabriken betalas av grannarna, inte av köparen; vaccinets skydd når också de ovaccinerade utan att de betalar. Marknadspriset speglar då inte den verkliga samhällskostnaden — för mycket produceras av det smutsiga, för lite av det skyddande. Verktygslådan, med Pigou som upphovsman och Coase som nyanserare: skatter som internaliserar kostnaden (koldioxidskatten — Sverige var först 1991, något som återkommer i klimatkapitlet), subventioner, handelbara utsläppsrätter, eller — i Coases tradition från 1960 — klart definierade äganderätter som låter parterna förhandla om skadan själva när transaktionskostnaderna är låga. Väl äger sig den insikten in i portföljen: den som internaliserar en externalitet förändrar en hel branschs konkurrenskraft — det är V18-logik i ren form."
+        },
+        {
+          "type": "text",
+          "content": "Kollektiva nyttigheter är det andra stora fallet: försvar, rättsväsende, gatubelysning, grundforskning — varor som är icke-rivaliserande (min konsumtion tar ingen annans) och icke-uteslutande (ingen kan stängas ute). Marknaden producerar dem i för liten omfattning eftersom alla kan följa gratis med — gratisåkaren som invaderar varje privat finansieringsförsök. Informationsasymmetrin är det tredje: säljaren vet mer än köparen — Akerlofs marknaden för citroner från 1970, där used car-marknaden slutar fungera eftersom köparna inte kan skilja bra bilar från dåliga och därför bara bjuder medelpriset, vilket driver ut de bra bilarna. Följdverkningarna når rakt in i finans: kreditgivning, försäkring, läkemedel och revision är branscher vars hela regleringsstruktur är ett svar på informationsasymmetri — kom ihåg det när V18 poängsätts."
+        },
+        {
+          "type": "text",
+          "content": "Naturliga monopol till sist: nät där dubbla parallella system är orimliga — el, järnväg, vatten, fast bredband. Här gör konkurrensen faktiskt värre, inte bättre, och samhället väljer mellan ägande och prissättningsreglering. Eklunds hållning, citerad öppet, är balanserad och det är kursens nav: marknaden är en fantastisk resursfördelare — men den kräver rättsväsende, pengasystem, grundutbildning och miljöregleringar för att ens existera, och den misslyckas mätbart på externaliteter, kollektiva nyttigheter, information och naturliga monopol. Kontroversen i kapitel femton handlar om var gränsen sedan dras: om detta är de smala fallen staten ska rätta — eller ett skäl bland många att staten växer. Notera hur marknadsmisslyckandena har spegelbild i AKM1: klimatrisk är osynlig i bokslutet tills politiken internaliserar den (V18), informationsasymmetri är blankarnas råvara, och naturliga monopol är de mest moat-täta bolag som finns — regleringen är samtidigt deras skydd och deras tak."
+        },
+        {
+          "type": "insikt",
+          "content": "Marknadsmisslyckandena är inte undantag från marknadsekonomin — de är dess kantlinjer: fall där priserna ljuger om kostnaden, nyttan eller risken. För investeraren gäller samma blick mot börsen: när priset på en aktie inte internaliserar en risk (klimat, reglering, kredit) ligger felet ofta inte i aktien utan i prismekanismen — och korrigeringen, när den kommer, är inte en krasch utan en prissättning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra marknadsmisslyckanden — orsak, exempel, verktyg\",\"rader\":[[\"Misslyckande\",\"Mekanism\",\"Exempel\",\"Samhällets verktyg\"],[\"Externalitet\",\"kostnad utanför priset\",\"föroreningar; vaccin\",\"Pigou-skatt, utsläppsrätter, Coase-ägorätter\"],[\"Kollektiv nyttighet\",\"icke-rivaliserande, icke-uteslutande\",\"försvar, gatubelysning, grundforskning\",\"offentlig produktion eller upphandling\"],[\"Informationsasymmetri\",\"säljaren vet mer\",\"begagnade bilar, kredit, försäkring\",\"reglering, informationskrav, garantier, revision\"],[\"Naturligt monopol\",\"dubbla nät orimliga\",\"el, järnväg, vatten\",\"statligt ägande eller prisreglering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en marknadsmisslyckande-genomgång på ett bolag i din lista: har verksamheten en osynlig extern kostnad eller nytta som inte sitter i priset (V18-kandidat)? Bygger affären på informationsfördel — och är den hållbar eller regleringshotad? Är bolaget ett naturligt monopol — och är regleringen då dess skydd eller dess tak? Skriv tre rader: vilket misslyckande, vilket verktyg samhället kan komma att använda, och vilken V-variabel som flyttas när det sker."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en negativ externalitet?",
+          "alternativ": [
+            "En kostnad som bärs av tredje part utan att passera marknadspriset",
+            "En kostnad som alltid betalas av säljaren",
+            "En skatt som staten tar ut på varan",
+            "En förlust som uppstår vid låg efterfrågan"
+          ],
+          "ratt": 0,
+          "tips": "Vem betalar för föroreningen — köparen, säljaren eller grannen nedströms?"
+        },
+        {
+          "q": "Vad är poängen med Akerlofs marknad för citroner?",
+          "alternativ": [
+            "Att informationsasymmetri kan få en hel marknad att kollapsa eftersom köparna bara bjuder medelpris och de bra varorna drivs ut",
+            "Att begagnade bilar alltid är dåliga",
+            "Att citroner är en kollektiv nyttighet",
+            "Att säljare alltid ljuger"
+          ],
+          "ratt": 0,
+          "tips": "När köparen inte kan skilja bra från dålig — vad händer med priset de bjuder, och vem lämnar då marknaden först?"
+        },
+        {
+          "q": "Varför är naturliga monopol svåra för marknaden att hantera?",
+          "alternativ": [
+            "Därför att de alltid är statligt ägda sedan början",
+            "Därför att konkurrens om hela nätet skapar dubbla system som är orimligt dyra — samhället väljer ägande eller prisreglering i stället",
+            "Därför att de saknar efterfrågan",
+            "Därför att de alltid går med förlust"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att dra en andra parallell uppsättning rör och ledningar?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "BNP och tillväxt — välståndets motor och dess begränsningar (V01–V03)",
+      "intro": "Nu makron. Bokens andra del börjar med den stora frågan — varför är vissa länder rika och andra fattiga? — och med mätetalet som allt hänger på: bruttonationalprodukten. Eklund går igenom både motorn (tillväxtens källor) och mätlinjalens begränsningar. För AK1A är detta kapitlet där bolagets V01–V03 kopplas till världens BNP.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "BNP är marknadsvärdet av alla varor och tjänster som produceras i ett land under en period — på efterfrågesidan summan av konsumtion, investeringar, offentlig konsumtion och nettoexport (C + I + G + NX). Eklund är noggrann med begränsningarna, och listan är kursens första makro- ödmjukhet: BNP mäter inte arbete i hemmet, inte svart ekonomi, inte fritid, inte fördelning, inte miljöförstöring förrän den korrigeras retroaktivt — och den kan växa på sätt som inte gör folk lyckligare. Men som mätetal för ekonomisk aktivitet och — dividerad med befolkningen — för produktivitet och jämförelser över tid och mellan länder, är den trots allt det bästa vi har. Real BNP korrigerar för inflation; per capita för befolkning; PPP för köpkraft. Dessa tre justeringar är minimiutrustning för vem som helst som läser en makrostatistik och tänker handla på den."
+        },
+        {
+          "type": "text",
+          "content": "Tillväxtens källor är bokens svar på rikedomens fråga: arbete (befolkning, utbildning, arbetstid), kapital (maskiner, infrastruktur, humankapital) och — i Solows tradition — teknisk utveckling, resten som mätetalet inte förklarar och som på lång sikt bär nästan allt. Tillväxtteori är ränta-på-ränta i nationell skala: en procentenhets högre årlig tillväxt är över en fyrtioårsperiod skillnaden mellan att fördubbla och nästan fördubbla levnadsstandarden — compound-logik, bokstavligen. Institutionerna är den fjärde, omstridda källan: rättssäkerhet, äganderätter, korruptionsnivå — varför länder med liknande resurser divergerar. AK1A-kopplingen är enkel och strikt: V01 Försäljningstillväxt är bolagets BNP-tillväxt, V02 ARR-tillväxt dess strukturella, återkommande komponent, V03 intäktsdiversifiering dess motståndskraft mot chocker i en enda marknad. Ett bolag som växer fortare än BNP under lång tid gör det antingen genom att ta marknadsandelar eller genom att marknaden växer — vilken av delarna det är avgör hur länge tillväxten är bärkraftig."
+        },
+        {
+          "type": "text",
+          "content": "Tillämpningsreglerna för aktieanalysen: ett — länka aldrig en aktie till BNP utan att veta vilken BNP. Exportbolag hänger på världs-BNP och växelkurs, konsumentbolag på inhemsk konsumtion, kapitalvarubolag på investeringscykeln som är våldsamare än BNP själv (acceleratorn: när efterfrågan vänder ned skärs investeringarna först och hårdast — maskinbolag och bygg levererar den mekaniken om och om igen). Två — skilj konjunktur från tillväxt: det långa trendspåret är tillväxt, svängningarna kring det är konjunktur (nästa kapitel) — och att köpa ett cykliskt bolag i toppen för att dess V01 ser stark ut ut tre år är den klassiska förväxlingen. Tre — real kontra nominell: ett bolag vars intäkter bara följer inflationen växer inte i reala termer; V01 ska bedömas realt om den ska betyda något."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga vid varje bolagsbedömning: växer detta bolag för att marknaden växer, för att det tar andelar, eller för att priserna (inflationen) stiger? Tre olika svar — tre olika hållbarheter. Den verkliga tillväxten är den som driver V01 realt och V08:s marginal samtidigt; det andra är statistik."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"BNP-komponenterna och bolagens exponering\",\"rader\":[[\"Komponent\",\"Vad den driver\",\"Bolagstyp som levererar\",\"AKM1-signal\"],[\"Konsumtion (C)\",\"hushållens köp\",\"detalj, konsumentvaror, tjänster\",\"V01 sensibel för realinkomst och förtroende\"],[\"Investeringar (I)\",\"företagens kapitalinköp\",\"maskiner, bygg, konsulter\",\"V01 våldsamt cyklisk — acceleratorn\"],[\"Offentlig konsumtion (G)\",\"statskonsumtion och investeringar\",\"vård, infrastruktur, försvar\",\"V18-budgetcykler — politikstyrt\"],[\"Nettoexport (NX)\",\"export minus import\",\"exportindustri, råvaror\",\"V03 valutor och världsekonomin\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt bolags BNP-koppling: ta ett innehav och skriv ner vilken BNP-komponent dess intäkter egentligen svarar mot — konsumtion, investeringar, offentligt eller export. Uppskatta sedan hur stor del av intäkterna som är strukturell (V02 ARR-karaktär) respektive cyklisk. Avsluta med en mening: om BNP-tillväxten halveras nästa två år — vad händer med detta bolags V01 och V12? Om du inte kan svara har du inte analyserat bolaget, bara gillat det."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka komponenter summeras i BNP på efterfrågesidan?",
+          "alternativ": [
+            "Konsumtion, investeringar, offentlig konsumtion och nettoexport",
+            "Export, import och statsskuld",
+            "Löner, vinster och räntor",
+            "Konsumtion, sparande och skatter"
+          ],
+          "ratt": 0,
+          "tips": "C + I + G + NX — vilka bokstäfer ryms i förkortningen?"
+        },
+        {
+          "q": "Vad menas med att teknisk utveckling är tillväxtens viktigaste källa på lång sikt?",
+          "alternativ": [
+            "Att arbete och kapital inte spelar någon roll",
+            "Att efter att arbete och kapital räknats in återstår en produktivitetsrest som på lång sikt bär nästan hela tillväxten",
+            "Att tekniken alltid är statligt finansierad",
+            "Att BNP inte mäter teknik"
+          ],
+          "ratt": 1,
+          "tips": "Solows rest — vad återstår när insatserna är förklarade?"
+        },
+        {
+          "q": "Vad är acceleratorproblemet vid kopplingen BNP till aktier?",
+          "alternativ": [
+            "Att BNP alltid slår aktiemarknaden",
+            "Att aktiemarknaden inte reagerar på BNP",
+            "Att konsumtionen är den mest volatila komponenten",
+            "Att företagsinvesteringar svänger betydligt våldsammare än själva BNP — när efterfrågan vänder skärs investeringarna först"
+          ],
+          "ratt": 3,
+          "tips": "Vilken BNP-komponent är mest frivillig att skjuta upp när osäkerheten ökar?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Konjunkturer — cykeln som styr riskaptiten och tidshorisonterna",
+      "intro": "Kring tillväxtens trendspår svänger konjunkturerna: högkonjunktur och lågkonjunktur, uppgång och nedgång, i mönster som är regelbundna nog att känna igen och oregelbundna nog att inte förutsäga. Eklund går igenom cykelns mekanik och indikatorer — och kursen översätter hela kapitlet till AK1A:s fem tidshorisonter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konjunkturcykeln drivs av investeringar, lager och — framför allt — förväntningar. Högkonjunkturen själv bygger sitt slut: goda tider höjer löner och kostnader, kredit efterfrågas, räntor stiger, centralbanken bromsar, investeringarna skjuts upp, lagren sväller och vänder — och nedgången kommer fortare än uppgången, som Keynes fångade med iakttagelsen att marknaderna kan röra sig ned under längre tid än du kan förbli likvid. Eklund för även in den finansiella sidan: kreditcykeln förstärker realcykeln — uppgången belånas, nedgången tvingar försäljning — och kapitel tretton (kriserna) visar vad som händer när den förstärkningen löper amok. Nyckeln till analysen är skilja konjunktur (svängningen kring trenden) från tillväxt (trenden själv) — det är två klockor med två olika tick."
+        },
+        {
+          "type": "text",
+          "content": "Indikatorerna sorterar sig i tre klasser: ledande — som vänder före konjunkturen: nyorder, byggtillstånd, aktiekurser, konsumentförtroende, räntekurvan (spreaden mellan lång och kort ränta; en inverterad kurva har historiskt föregått nedgångar oftare än slumpen förtjänar); samtidiga — industriproduktion, sysselsättning, försäljning; eftersläpande — arbetslöshet, enhetsarbetskostnader, kapacitetsutnyttjande som bekräftar först i efterhand. Kursens AK1A-översättning: ledande indikatorer är DITT tidshorisont-filter. Fem horisonter kräver fem väderprognoser: på den kortaste är konjunkturen halva kursrörelsen; på den längsta är den brus kring tillväxtspåret. En AKM1-analys som inte deklarerar vilken konjunkturposition den antar är inte en analys — den är en seglats utan väderprognos."
+        },
+        {
+          "type": "text",
+          "content": "Tillämpningen på portföljen, konkret. Konjunkturpositionen vrider tre saker samtidigt: intäkterna (V01–V02 — cykliska bolag svänger dubbelt mot BNP, ARR-täta mjukvarubolag knappt alls), kreditvolatiliteten (V10 — belåningen som är ofarlig i uppgången dödar i nedgången; V19 — emissionrisken exploderar när kapitalmarknaden stänger, precis i nedslaget) och multiplarna (V04–V06 — marknaden betalar premium i euforin och accusing rabatt i paniken, vilket är varför konjunkturen är dubbelexponerad: intäkterna OCH multiplarna svänger samma håll). Det är också detta som motiverar V12 Intäktsstabilitet som självständig variabel: i nedgången är stabiliteten värd multipel-premium, i uppgången straffas den för tristess — V12 är konjunkturpositionens egen variabel."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv konjunkturpositionen överst i varje AKM1-analys, som ett datum: tidigt-sen uppgång, tidigt-sen nedgång. Två identiska bolag får nämligen olika V01-, V10- och V12-poäng i olika cykelfaser — den som inte deklarerar positionen jämför äpplen med päron och kallar det konsekvens."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konjunkturindikatorer och deras AKM1-användning\",\"rader\":[[\"Klass\",\"Exempel\",\"Vänder\",\"AKM1-användning\"],[\"Ledande\",\"nyorder, byggtillstånd, aktiekurser, konsumentförtroende, räntekurvan\",\"före konjunkturen\",\"tidshorisont-filter; cykelpositionens deklaration\"],[\"Samtidiga\",\"industriproduktion, sysselsättning, försäljning\",\"med konjunkturen\",\"validitet av V01-trender\"],[\"Eftersläpande\",\"arbetslöshet, enhetsarbetskostnader, kapacitetsutnyttjande\",\"efter konjunkturen\",\"V07–V08 marginaltryck; V12 stabilitetsbedömning\"],[\"Kredit\",\"spreadar, utlåningstillväxt, nya emissioner\",\"före — och våldsamt\",\"V10 belåning, V19 emissionsrisk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Datera cykeln: ta fram tre ledande indikatorer för Sveriges eller eurozonens ekonomi — räntekurvans form, konsumentförtroende, nyorder i industrin — och placera dem på en skala tidig uppgång till sen nedgång. Skriv sedan din cykeldeklaration i en mening och kör den mot din portfölj: hur många innehav är cykliskt exponerade (V01 dubbelexponerade mot BNP) med hög belåning (V10)? Om andelen är stor och din cykeldeklaration säger sen uppgång — du har just hittat portföljens verkliga risk, som ingen enskild AKM1-rad visar."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan konjunktur och tillväxt?",
+          "alternativ": [
+            "Tillväxt är det långa trendspåret; konjunkturen är svängningarna kring trenden — två klockor med olika tick",
+            "Ingen — samma sak",
+            "Konjunktur är långsiktig, tillväxt kortsiktig",
+            "Tillväxt mäts i aktier, konjunktur i BNP"
+          ],
+          "ratt": 0,
+          "tips": "Vilken av de två går att planera efter — och vilken går att tajma?"
+        },
+        {
+          "q": "Vad kännetecknar en ledande konjunkturindikator?",
+          "alternativ": [
+            "Den bekräftar nedgången först i efterhand",
+            "Den rör sig samtidigt som BNP",
+            "Den vänder före konjunkturen — nyorder, byggtillstånd, räntekurvan, konsumentförtroende",
+            "Den mäter arbetslöshetens topp"
+          ],
+          "ratt": 2,
+          "tips": "Ledande betyder bokstavligen att gå framför — vad går framför?"
+        },
+        {
+          "q": "Varför är konjunkturen dubbelexponerad för aktier?",
+          "alternativ": [
+            "Därför att utdelningar stiger med BNP",
+            "Därför att både intäkterna (V01) och multiplarna (V04–V06) svänger åt samma håll i cykeln",
+            "Därför att centralbanken köper aktier",
+            "Därför att räntan alltid är hög i nedgång"
+          ],
+          "ratt": 1,
+          "tips": "Två händer vrider samma skruv — vilka?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Pengar och banker — krediten som skapar och bryter ekonomier (V10, V19)",
+      "intro": "Pengar är bokens mest underskattade kapitel för investeraren: en vara utan egen användning som enbart fungerar på förtroende — och ett banksystem som skapar pengar genom att låna ut dem. Eklund går igenom pengars funktioner, bankernas roll och kreditmultiplikatorn. Kursen läser kapitlet som förutsättningen bakom V10 och V19.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pengarna har tre klassiska funktioner: bytesmedel (du slipte släpa får till marknaden), räknare (ett gemensamt mått som gör prisjämförelser möjliga) och värdeförvarare (köpkraft mellan idag och imorgon — den funktion som inflationen äter). Eklund berättar pengarnas historia — från varupengar via guldmyntfoten till dagens fiat-pengar, som fungerar enbart på det att alla andra accepterar dem — och noterar det som är kursens brygga till kontroversen: fiat-pengar kräver en central förvaltare av förtroendet. Historien om pengarna är också historien om bankerna: banken lånar ut det den just tog in — och genom det enkla faktum skapas pengar, för insättaren har fortfarande sina pengar och låntagaren har sina. Banksystemet som helhet utökar penningmängden flera gånger över baspengarna — kreditmultiplikatorn — och hela konstruktionen vilar på att inte alla tar ut samtidigt. Bankrusning är därför inte en olycka utan ett inneboende designval — motgiftet är insättningsgaranti och centralbank som långivare i sista hand."
+        },
+        {
+          "type": "text",
+          "content": "Kursens översättning till bolagsanalysen är den viktigaste i hela boken, eftersom den förklarar variablerna som dödar. Kredit är syre: bolag andas kredit — leverantörskrediter, rörelsekrediter, obligationer — och när krediten stängs dör inte bolaget för att verksamheten är dålig utan för att refinansieringen inte finns. Därav V10 Skuldsättningsgrad: hög belåning är i uppgången en hävstång och i nedgången en betalningsförbindelse med en motpart som inte förhandlar — därför poängsätts V10 efter överlevnadsförmåga i en nedgång, inte efter avkastningsoptimering i en uppgång. Därav V11 Likviditet: kvickkvoten är bolagets personliga bankrusningstest — kan det betala kortfristiga skulder utan att röra långfristig finansiering? Och därav V19 Kapitalförbränning och emission-risk: bolag som bränner kassa i en stängd kreditmarknad har bara en utväg — emission som utspäder dig, precis när aktien är som billigast för köparen och dyrast för ägaren."
+        },
+        {
+          "type": "text",
+          "content": "Eklund går också igenom penningmängdens olika mått — basepengar (M0), smal penningmängd (M1), bred (M2/M3) — och relationen mellan penningmängd, prisnivå och transaktionsvolym, kvantitetsteorins gamla skelett som monetarismen byggde på och som inflationen-kapitlet återkommer till. Notera nyanserna: pengarna skapas idag mest genom bankernas utlåning, inte genom sedelpressen — vilket gör kreditvärdigheten, inte penningmängden, till den operativa spaken. För portföljförvaltaren betyder det att den viktigaste makroövervakningen inte är något BNP-tal utan kreditmarknadens hållbarhet: spreadar, utlåningstillväxt, antal emissioner, konkursfrekvens. När krediten vänder vrider den V10, V11 och V19 samtidigt — tre variabler, en enda orsak."
+        },
+        {
+          "type": "insikt",
+          "content": "Läs varje balansräkning som en kreditcykel-berättelse: finansieringen är ett löfte som måste förnyas — på vilket datum, till vilken ränta, och vad händer om datumet infaller en månad då ingen lånar ut? V10, V11 och V19 är tre sätt att ställa samma fråga: vad händer den månaden?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Pengar, banker och AKM1:s kreditvariabler\",\"rader\":[[\"Begrepp\",\"Mekanism\",\"Koppling\",\"Fråga i AKM1\"],[\"Kreditmultiplikatorn\",\"banker skapar pengar genom utlåning\",\"—\",\"är systemet i expansions- eller kontraktionsfas?\"],[\"Bankrusning\",\"insättare kräver ut samtidigt\",\"V11\",\"kan bolaget betala kortfristigt utan ny finansiering?\"],[\"Refinansieringsrisk\",\"lån måste förnyas vid förfall\",\"V10\",\"när förfaller finansieringen — och till vilken ränta?\"],[\"Stängd kreditmarknad\",\"nyemission enda utvägen\",\"V19\",\"hur många månader kassa återstår vid noll tillväxt?\"],[\"Penningmängd (M0–M3)\",\"statistik över pengar och krediter\",\"inflation-kapitlet\",\"mått på systemets tryck — inte på enskilt bolag\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör refinansieringskartan för ett belånat innehav: ta reda på när bolagets lån förfaller (noterar i bokslutet), till vilken ränta de lånar idag och hur stor andel av skulderna är kortfristiga. Räkna sedan kassan i månader vid oförändrad förbränning (V19-logik). Skriv en mening: om kreditmarknaden stänger samma månad som det största lånet förfaller — vad händer? Om meningen är obehaglig att skriva vet du varför V10 och V11 är separata variabler och inte en not."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är pengarnas tre klassiska funktioner?",
+          "alternativ": [
+            "Bytesmedel, räknare och värdeförvarare",
+            "Spara, låna, investera",
+            "Pris, volym, värde",
+            "Guld, sedlar, konton"
+          ],
+          "ratt": 0,
+          "tips": "Vad gör pengarna på marknaden, i räkenskapen och mellan idag och imorgon?"
+        },
+        {
+          "q": "Hur skapar banker pengar enligt boken?",
+          "alternativ": [
+            "Genom att trycka sedlar i valvet",
+            "Genom att centralbanken beviljar varje lån",
+            "Genom att sälja aktier",
+            "Genom att låna ut medlen som satts in — insättaren har kvar sina pengar och låntagaren har sina, och systemet utökar penningmängden"
+          ],
+          "ratt": 3,
+          "tips": "Räkna pengarna efter utlåningen — finns de på två ställen samtidigt?"
+        },
+        {
+          "q": "Varför är V19 Kapitalförbränning och emission-risk som farligast just när kreditmarknaden stänger?",
+          "alternativ": [
+            "Därför att utdelningar tvångsutdelas då",
+            "Därför att bolag som bränner kassa då bara har nyemissionen kvar — som utspäder ägarna när aktien redan är som billigast",
+            "Därför att räntan alltid är noll då",
+            "Därför att bokslut inte läggs fram under kriser"
+          ],
+          "ratt": 1,
+          "tips": "Vad återstår att göra när ingen lånar ut och kassan sinar — och till vilket pris?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Centralbanken och räntan — transmissionen in i multiplarna (V04–V06)",
+      "intro": "Riksbanken är världens äldsta centralbank (1668) och den svenska inflationsmålsregimens fader. Eklund går igenom centralbankernas uppgifter, styrräntans väg genom ekonomin och penningpolitikens verktyg. Kursen följer räntan hela vägen in i V04–V06 — och V20.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Centralbankens tre klassiska uppgifter: prisstabilitet (inflationsmålet — i Sverige två procent, infört 1993 efter nittonhundranittiotalets fasta växelkurs-kollaps), finansiell stabilitet (tillsyn, krislånefunktion) och — historiskt först — att hantera statens skuld. Verktygen: styrräntan (reporträntan som bankerna lånar till), depositräntan (golvet), obligationsköp (kvantitativ lättnad, när styrräntan når noll och golvet), reservekrav och vägledning om framtiden — forward guidance, som i sig flyttar marknadsräntorna. Penningpolitiken är alltså räntan plus förväntningar: marknaden handlar inte vad centralbanken gör i dag utan vad den lovar i morgon. Taylor-regeln (John Taylor, 1993) sammanfattar logiken i en formel: styrräntan följer neutral ränta plus inflation plus ett avstånd från konjunkturläget — en tumregel som centralbanker sedan dess antingen följer eller förklarar varför de avviker från."
+        },
+        {
+          "type": "text",
+          "content": "Transmissionen — räntans väg genom ekonomin — är kursens kärnpassus, för den slutar aldrig hos hushållen; den slutar hos multiplarna. Styrräntan höjs: bankarnas utlåningsräntor stiger, investeringar och konsumtion på kredit dämpas, växelkursen stärks (högre avkastning lockar kapital), aktier faller — inte primärt för att vinsterna sjunker utan för att diskonteringsräntan stigit: framtida kassaflöden är värda mindre i dag. Det är den direkta mekaniken bakom V04–V06: multiplar är omvända diskonteringsmaskiner — när räntan stiger komprimeras de, när den sjunker expanderas de — och långduriga tillgångar (tillväxtbolag vars kassaflöden ligger långt fram i tiden, V01–V02 hög) reagerar härdast. Det är också mekaniken bakom V20: återköp finansieras ofta med upplåning — när räntan stiger stiger kostnaden för att köpa tillbaka aktier, och bolag som lärt sig leva på billig refinansiering får sin aktieägaravkastning dämpad."
+        },
+        {
+          "type": "text",
+          "content": "Och vad gör en aktieanalytiker med detta? Tre regler. Ett — skilj räntans nivå från räntans riktning: marknaden prissätter förändringen, inte nivån; en stabil hög ränta är ett annat läge än en stigande. Två — räkna bolagets räntkänslighet explicit: netto skuld (V10) multiplicerat med ränteändringen är en direkt vinstpost som hamnar före V08 — och refinansieringskalendern från förra kapitlet avgör hur snabbt den slår igenom. Tre — kom ihåg att penningpolitik verkar med eftersläpning på tolv till arton månader: den analys du skriver idag om räntans effekt handlar om ett bokslut som läggs fram nästa år. AKM1:s RAM-detalj: räntan är den enda makrovariabel som har en kolumn i tre block samtidigt — värderingen (V04–V06), stabiliteten (V10) och kapitalstrukturen (V20) — ingen annan variabel i hela boken har den räckvidden."
+        },
+        {
+          "type": "insikt",
+          "content": "Multiplar är omvända diskonteringsmaskiner: räntan upp, multiplar ner — och ju längre bort kassaflödena ligger, desto hårdare slår. När du poängsätter V04–V06 på ett tillväxtbolag poängsätter du samtidigt din syn på räntan — deklarera den, annars är värderingen en åsikt förklädd till aritmetik."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räntans transmission — från styrränta till AKM1\",\"rader\":[[\"Led\",\"Mekanism\",\"AKM1-effekt\"],[\"Styrränta förändras\",\"bankernas utlåningsräntor följer\",\"—\"],[\"Kredit dämpas\",\"investeringar och konsumtion växer långsammare\",\"V01–V02 intäktstryck på cykliska bolag\"],[\"Diskonteringsränta stiger\",\"framtida kassaflöden värda mindre i dag\",\"V04–V06 multiplar komprimeras — långduriga bolag hårdast\"],[\"Refinansiering fördyras\",\"ny och förlängt lån blir dyrare\",\"V10 vinsttryck; V20 återköp finansierade med skuld förlorar poäng\"],[\"Växelkurs reagerar\",\"valuta stärks vid höjning\",\"V03 exportintäkter i kronor sjunker mekaniskt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg räntkänslighetsprofilen för ditt största innehav: netto skuld från senaste bokslutet (V10-grund), räntebindningstid, och multiplarnas reaktion senaste gången styrräntan ändrades med en procentenhet (hur mycket flyttade aktien och sektorns multipl?). Skriv två rader: hur många procent av vinsten försvinner vid en höjning med en procentenhet — och hur mycket av multiplen som återstår att komprimera. Om du inte kan skriva raderna har du aldrig räknat på vad räntan gör med just det här bolaget."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Taylor-regeln?",
+          "alternativ": [
+            "En regel för aktieallokering",
+            "Riksbankens balansräkningsregel",
+            "En tumregel från 1993 där styrräntan följer neutral ränta, inflationen och konjunkturavvikelsen",
+            "En regel för handelsbalansen"
+          ],
+          "ratt": 2,
+          "tips": "Tre ingredienser: neutral ränta, inflation, konjunktur — vad väger ihop dem?"
+        },
+        {
+          "q": "Varför faller aktier när räntan stiger — även innan vinsterna sjunker?",
+          "alternativ": [
+            "Därför att aktier alltid faller när BNP växer",
+            "Därför att diskonteringsräntan stigit — framtida kassaflöden är värda mindre i dag, vilket komprimerar multiplarna",
+            "Därför att utdelningar beskattas hårdare",
+            "Därför att centralbanker säljer aktier vid höjningar"
+          ],
+          "ratt": 1,
+          "tips": "Vad är en multipl egentligen — och vad gör en höjning av avkastningskravet med den?"
+        },
+        {
+          "q": "Vilka tre AKM1-block rör räntan samtidigt enligt kursen?",
+          "alternativ": [
+            "V01, V13, V18",
+            "Värdering (V04–V06), stabilitet (V10) och kapitalstruktur (V20)",
+            "V07, V08, V09",
+            "V02, V12, V17"
+          ],
+          "ratt": 1,
+          "tips": "Tre kolumner i tre block — var sitter räntan i en balansräkning och i en värdering?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Inflation — pengarnas tysta skatt och tvåprocentmålet (V07–V08)",
+      "intro": "Inflation är den varaktiga ökningen av den allmänna prisnivån, mätt i Sverige av KPI och KPIF. Eklund går igenom orsaker, mätproblem, verktyg — och hyperinflationernas skräckexempel. Kursen läser kapitlet som marginalernas, köpkraftens och realavkastningens ABC.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Orsakerna sorteras i tre familjer. Efterfrågeinflation: för mycket köpkraft jagar för få varor — högkonjunkturens överhettning, då stimulerande politik då riskerar att bli bränsle på överhettningen. Kostnadsinflation: löner, råvaror, energi eller växelkurs driver upp kostnaderna — oljechockerna på sjuttiotalet är kanonexemplet, och stagflationen (inflation och arbetslöshet samtidigt) bröt den keynesianska ortodoxin och banade väg för monetarismen. Penningmängdsinflation: för mycket pengar jagar varorna — kvantitetsteorins arv, Friedmans berömda formulering att inflation alltid och överallt är ett penningpolitiskt fenomen, som Eklund citerar som en av penningpolitikens äldsta lärdomar: en centralbank som finansierar statens underskott skapar i förlängningen inflation. Löne-pris-spiralen är mekanismen som förvandlar en chock till ett bestående tillstånd: priser stiger, löner följer, kostnader stiger, priser stiger — och förväntningarna blir självuppfyllande. Därför heter uppdraget prisstabilitet, inte prisnivå: det är förväntningarna som ska förankras."
+        },
+        {
+          "type": "text",
+          "content": "Verktyget är penningpolitiken från förra kapitlet — och räntans relation till inflationen heter realränta: styrränta minus inflation. Negativ realränta stimulerar, positiv bromsar — det är den som är penningpolitikens egentliga spak. Historien visar vad som händer när den försummas: Weimar-Tyskland 1923, där priser fördubblades på dagar och sparande utplånades; Zimbabwe 2008, där sedeln följde nollorna tills den dog; Sveriges egendjupare erfarenhet av nittonhundranittioitalskollapsen som födde inflationsmålet. Men också motsatsen: Japan, där deflationen gjorde konsumenter till väntare och skulder tyngre i reala termer för varje år — deflation är inte gåva utan fälla för en skuldtyngd ekonomi. För investeraren innehåller kapitlet kursens tystaste skatt: inflationen äter realavkastningen. En nominell avkastning på åtta procent vid sex procents inflation är en real avkastning på två — och en direktavkastning på tre procent vid sex procents inflation är en garanterad real förlust på kassaflödet, dock ingen nödvändigtvis på aktien."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är tredelad. V07–V08: inflationen pressar marginalerna där prissättningsmakten saknas — bolag som inte kan skyffa kostnadsökningar till kunder (elastisk efterfrågan, kapitel två) får lönekostnader och insatspriser som stiger medan intäkterna fastnar; bolag med oelastisk efterfrågan blir inflationens vinnare och kan till och med bredda marginalerna. V01: inflationen blåser nominella intäkter — därför ska tillväxt bedömas realt, annars belönar modellen bolag som bara tar ut priserna. V12: inflationens volatilitet är ett stabilitetsbrott — oförutsägbar inflation gör planering, prissättning och kontraktering svårare, vilket slår mot intäktsstabiliteten. Till det en frekvent missförstånd som kursen avfärdar: aktier är inte per automatik ett inflationsskydd — de är det bara om bolaget har prissättningsmakt och låg kapitalbindning; övriga är de facto långa obligationer på verklighetens varor, med samma räntkänslighet och ingen kupong att falla tillbaka på."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna alltid realt: subtrahera inflationen från tillväxten och från avkastningen innan du jämför med något. I AKM1 är inflationen ingen V-variabel — den är skalan på samtliga tjugo: den som glömmer skalan jämför siffror från två olika världar och kallar det noggrannhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Inflationens tre orsaksfamiljer och dess verktyg\",\"rader\":[[\"Familj\",\"Mekanism\",\"Kanonexempel\",\"Portföljsignal\"],[\"Efterfråge-\",\"för mycket köpkraft jagar för få varor\",\"överhettad högkonjunktur\",\"cykliskt marginstryck; ränta kommer stiga\"],[\"Kostnads-\",\"löner, råvaror, energi, valuta driver kostnader\",\"oljechockerna på 1970-talet; stagflation\",\"V07–V08 test: prissättningsmakt eller margin squeeze\"],[\"Penningmängds-\",\"penningmängd växer snabbare än ekonomin\",\"Weimar 1923; Zimbabwe 2008\",\"fiat-förtroende; realtillgångar och prissättningsmakt premieras\"],[\"Verktyg\",\"penningpolitik — realräntan är spaken\",\"inflationsmål 2 % (Sverige 1993)\",\"multipl-normalisering; diskonteringsräntan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör inflationstestet på två bolag — ett med oelastisk efterfrågan (V14-starkt varumärke eller V15-nätverk) och ett i perfekt konkurrens (råvarubolag): slå upp deras V07-bruttomarginaler under de senaste två åren av hög inflation. Rörde sig marginalerna upp, ned eller stagnation? Skriv en mening per bolag: vidhöll prissättningsmakten i testet eller inte? Svaret — inte historien om varumärket — är vad du ska poängsätta i V13–V15."
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar kostnadsinflation?",
+          "alternativ": [
+            "För mycket pengar jagar för få varor",
+            "Löner, råvaror, energi eller växelkurs driver upp kostnaderna — oljechockerna på 1970-talet är kanonexemplet",
+            "Statens budgetunderskott trycker pengar",
+            "Deflation i importvaror"
+          ],
+          "ratt": 1,
+          "tips": "Var börjar chocken — i efterfrågan eller i kostnadspåsen?"
+        },
+        {
+          "q": "Vad är den tysta skatt som kapitlet talar om för investerare?",
+          "alternativ": [
+            "Inflationen äter realavkastningen — nominell avkastning minus inflation är det enda som spelar roll",
+            "Kapitalvinstskatten",
+            "Courtageavgiften",
+            "Utdelningsskatten"
+          ],
+          "ratt": 0,
+          "tips": "Vad är en avkastning på åtta procent värd om priserna stiger sex?"
+        },
+        {
+          "q": "När är aktier ett inflationsskydd enligt kursen?",
+          "alternativ": [
+            "Alltid — aktier stiger med priserna per automatik",
+            "Aldrig — aktier är räntepapper",
+            "Bara om bolaget har prissättningsmakt och låg kapitalbindning — övriga beter sig som långa obligationer utan kupong",
+            "Endast guldgruvebolag"
+          ],
+          "ratt": 2,
+          "tips": "Vem kan skyffa kostnadsökningen till kunden — och vad händer med de andra?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Arbetsmarknaden — löner, sysselsättning och den svenska modellen",
+      "intro": "Arbetsmarknaden är bokens levande kapitel: lönebildning, fackförbund, arbetslöshetens sorter och den svenska modellens kompromisser. För AK1A är det lönekostnadens kapitel — den enskilt största posten i de flesta bolags resultatrapport.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Arbetsmarknadens mikroekonomi: efterfrågan på arbete är härledd — den följer värdet av det som produceras, vilket gör lönen till en avvikande produkt av produktivitet och prissättningsmakt. Eklund går igenom lönebildningens mekanismer: förhandlingar, konflikträtt, medling — och den svenska modellen där fackförbund och arbetsgivarorganisationer förhandlar centraliserat med samordning som mål: löner som stiger med produktiviteten håller inflation och konkurrenskraft i balans (Rehn-Meidner-traditionens arv, solidarisk lönepolitik med förankring i internationell konkurrens). Arbetslösheten sorteras i friktionell (mellan jobb), konjunkturell (nedgången) och strukturell — mismatch mellan kompetens och efterfrågan, lagar, löner som fastnat över jämvikten. NAIRU-begreppet — arbetslöshetsnivån under vilken inflationen accelererar — är centralbankens egentliga varningsgräns: sysselsättning och prisstabilitet kan kollidera på kort sikt, och då vinner prisstabiliteten, eftersom inflationsförväntningar är svåra att bygga om."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska arbetsmarknadens institutioner — LAS, turordning, omställningsavtal, a-kassa — är politiskt omstridda och Eklund behandlar dem med bokens utmärkta egenskap: båda sidors kostnader synliggörs. Skyddet skapar trygghet som underlättar omställning och produktion; det kan också tröga upp matchningen och göra inträdet trångt för utomstående. Det är en direkt klangbotten mot kontroversens fria-marknadsläge (flexibla löner clearing-arbetsmarknaden, Friedmans argument) och Eklunds mittfåga (trygghet under omställning som produktiv investering, inte bara kostnad). Kursen tar inte sidan här — den noterar att arbetsmarknadens institutioner är en del av förklaringen till V12:s intäktsstabilitet hos svenska bolag: en förhandlad lönebildning dämpar lönechocker som i andra länder slår direkt mot V07–V08."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen: lönekostnadens kapitel. Personalkostnader är ofta den största enskilda posten i resultatrapporten — för tjänstebolag sjutti-åttio procent av omsättningen — och löneökningar över produktivitetstillväxt är en mekanisk margin squeeze som inte syns i bokslutet förrän nästa rapport. Tre indikatorer att övervaka per bolag: löneandelen av omsättningen (V07–V08:s kostnadssida), produktivitetstrenden (intäkter per anställd — den bästa sammanfattande effektivitetsmätaren i AKM1:s anda) och kompetensläckaget (hur många nyckelpersoner lämnar — moat-biten V13–V15 är ofta byggd på människor, inte patent). I makroändan: en arbetsmarknad med löne-pris-spiral är centralbankens värsta scenario — vilket gör arbetsmarknadsstatistiken till en tidig indikator för nästa räntekapitel."
+        },
+        {
+          "type": "insikt",
+          "content": "Följ intäkter per anställd som en enda rad genom flera årsredovisningar: den sammanfattar produktivitet, prissättningsmakt och kostnadskontroll i en siffra — och när den faller medan omsättningen stiger vet du att bolaget köper tillväxten med marginaler det inte har."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Arbetslöshetens sorter och deras analysvärde\",\"rader\":[[\"Sort\",\"Orsak\",\"Varaktighet\",\"Portföljsignal\"],[\"Friktionell\",\"mellan jobb\",\"kort\",\"brus — ignorera\"],[\"Konjunkturell\",\"nedgång i efterfrågan\",\"cykellängd\",\"ledande indikator — V01 och ränta vänder\"],[\"Strukturell\",\"mismatch, lagar, löner över jämvikt\",\"lång\",\"NAIRU-tryck — inflation och ränta består\"],[\"Löne-pris-spiral\",\"förväntningar självuppfyllande\",\"utan förankring\",\"centralbankens värsta scenario — multiplkomprimering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna lönekänsligheten för ett tjänstebolag i din lista: hitta personalkostnadernas andel av omsättningen (not i resultatrapporten) och intäkterna per anställd de senaste tre åren. Räkna sedan på ett scenario: löner stiger fem procent, produktivitet två — hur många procentenheter försvinner från EBITDA-marginalen (V08) om prissättningen inte följer med? Skriv svaret som en rad i din analys — det är mekaniken bakom nästa margin miss, skriven i förväg."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är strukturell arbetslöshet?",
+          "alternativ": [
+            "Arbetslöshet som uppstår mellan två jobb",
+            "Arbetslöshet orsakad av konjunkturnedgången",
+            "Långvarig arbetslöshet från mismatch mellan kompetens och efterfrågan, lagar eller löner över jämvikt",
+            "Arbetslöshet bland studerande"
+          ],
+          "ratt": 2,
+          "tips": "Vilken sort försvinner inte när konjunkturen vänder?"
+        },
+        {
+          "q": "Vad är den svenska modellens grundtanke i lönebildningen?",
+          "alternativ": [
+            "Att staten sätter alla löner",
+            "Centraliserade förhandlingar mellan fackförbund och arbetsgivarorganisationer med samordning — löner som stiger med produktiviteten",
+            "Att löner inte förhandlas alls",
+            "Att alla löner sätts individuellt utan kollektivavtal"
+          ],
+          "ratt": 1,
+          "tips": "Vem förhandlar — och mot vem — när samordning är målet?"
+        },
+        {
+          "q": "Varför är intäkter per anställd kursens utvalda löneindikator för bolagsanalys?",
+          "alternativ": [
+            "Därför att den är lätt att hitta i noterna",
+            "Därför att aktiekursen följer den mekaniskt",
+            "Därför att den ersätter V04",
+            "Därför att den sammanfattar produktivitet, prissättningsmakt och kostnadskontroll i en siffra"
+          ],
+          "ratt": 3,
+          "tips": "Vad delar man med vad — och vad fångar den kvoten egentligen?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Stabiliseringspolitik — Keynes mot Friedman om statens verktygslåda",
+      "intro": "Bokens ekonomisk-politiska kärna: ska staten mota konjunkturerna med finanspolitik, ska centralbanken sköta allt, eller ska ingen göra något? Eklund guidar genom Keynes, monetarismen, Phillipskurvan och finanskrisens omskrivning av spelplanen — kontroversens tekniska mittpunkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Keynes insikt från trettiotalets massarbetslöshet: ekonomin kan fastna i jämvikt med stor arbetslöshet, eftersom samlat sparande inte automatiskt blir investeringar — efterfrågan kan vara för svag, och då är det statens uppgift att bygga bromån med finanspolitik: spendera när den privata sektorn inte gör det. Paradoxen att det är rationellt för varje hushåll att spara men destruktivt för alla samtidigt fångar hela logiken. Monetarismens motsvar, Friedman: penningmängden styr nominella storheter på längre sikt; finanspolitiken crowdas ut eller förskjuts i tiden, och statens aktivism destabiliserar mer än den stabiliserar — regelbundna penningmängdsregler över diskretion. Phillipskurvan (A W Phillips, 1958) var slagfältet: det historiska sambandet mellan arbetslöshet och inflation som keynesianerna läste som en menymöjlighet — välj punkt på kurvan — tills Friedmans förväntningskritik visade att kurvan på längre sikt är vertikal: försök hålla arbetslösheten under sin strukturella nivå och du får bara högre inflation. Stagflationen 1970-talet gav honom rätt, och volatiliteten i debatten — vem som har rätt om vad, under vilka villkor — är bokens levande bevis på att ekonomisk politik är lärande, inte lärd."
+        },
+        {
+          "type": "text",
+          "content": "Finanskrisen 2008 skrev om spelplanen, och Eklund — som själv uppdaterade boken med ett helt kapitel om krisen — citeras öppet: Keynes återkom. Nollgränsen på styrräntan tvingade fram kvantitativ lättnad, expansionspolitik och automatiska stabilisatorer; statsskulderna växte; och debatten försköts från om staten ska stabilisera till hur, till vilken kostnad och med vilka risker. Åt ena hållet: Reinhart och Rogoffs skuldforskning (även med dess datafel öppet granskade) om att mycket hög skuld samväger med lägre tillväxt — multiplikatorn är inte oändlig. Åt andra: att åtstramning i en depression kan bli självförstörande, eftersom nedskärningar sänker BNP och därmed skuldkvoten. Bokens hållning är mittfågans: stabiliseringspolitik behövs men har gränser — automatiska stabilisatorer före diskretionära paket, penningpolitik som första handsverktyg i normala tider, finanspolitik när nollgränsen binds, och skuldkvoter som en förpliktelse att bygga buffertar i uppgången — inte bara slösa dem där."
+        },
+        {
+          "type": "text",
+          "content": "Kursens AKM1-översättning av stabiliseringspolitiken är en timingfråga: politiken vrider nästa års intäkter och multiplar. Stimulans i en nedgång: cykliska bolag (V01 dubbelexponerade) studsar hårdast när vändningen kommer — multiplerna flyttar före boksluten. Åtstramning: G-komponenten av BNP (kapitel fem) krymper och alla vars intäkter bygger på offentliga upphandlingar får sitt V18 noterat minus. Statsskuld och ränta: hög skuld gör penningpolitiken trängre — mer åtstramning för samma inflation, vilket direkt trycker V04–V06. Den mest underskattade länken är dock förtroendet: stabiliseringspolitikens effektyttrar bygger på att aktörer tror att politiken håller — och samma gäller AKM1:s analys av V18: regulatoriska katalysatorer är värda poäng i proportion till din tillit till att politiken faktiskt genomförs. Tro utan genomförande är en story — och det vet vi från kapitel tre vad det är värt."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vem som har rätt — Keynes eller Friedman — fråga vilken värld du står i: vid nollgräns och depression är multiplikanten reel-lång; vid överhettning och skuldtyngd är åtstramningens kostnad reell. RAM:en byter inställning med villkoren — precis som en AKM1-analys ska göra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två verktygslådor och deras AKM1-signaler\",\"rader\":[[\"Position\",\"Kärna\",\"Styrka\",\"Risk\",\"AKM1-signal\"],[\"Keynesiansk\",\"finanspolitik mot svag efterfrågan\",\"bryr nollgräns-lock-in\",\"skuld, timing-fel, crowding out\",\"cykliska V01-bolag studsar vid stimulans-pivot\"],[\"Monetaristisk\",\"penningmängdsregler; diskretion misstrodd\",\"förankrar förväntningar\",\"stelhet vid chocker\",\"multipl-normalisering; V04–V06\"],[\"Hybrid (Eklunds mittfåga)\",\"penningpolitik först, finans vid nollgräns, automatiska stabilisatorer\",\"flexibilitet med regelverk\",\"politisk mirakel-tro\",\"V18-poäng proportionell mot genomförande-tro\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din stabiliseringspolitiska position på tre rader — inte som partival utan som analys: tycker du penningpolitiken räcker i normala tider, och när anser du att finanspolitiken ska träda in? Motivera med en historisk händelse. Testa sedan positionen mot din portfölj: vid nästa nedgång, vilka innehav vinner på ditt scenario och vilka förlorar? Om listan är tom har du en åsikt om politik och ingen analys av portfölj — det är den ordningen kursen vill vända."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Friedmans förväntningskritik mot Phillipskurvan?",
+          "alternativ": [
+            "Att sambandet mellan arbetslöshet och inflation aldrig funnits",
+            "Att kurvan på längre sikt är vertikal — att hålla arbetslösheten under sin strukturella nivå ger bara högre inflation, inte lägre arbetslöshet",
+            "Att inflation inte kan mätas",
+            "Att arbetslöshet alltid är friktionell"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer när löne-tagarna börjar förvänta sig inflationen och bygga in den?"
+        },
+        {
+          "q": "Vad hände med stabiliseringspolitisk debatt efter finanskrisen 2008 enligt boken?",
+          "alternativ": [
+            "Keynes återkom — nollgränsen tvingade fram kvantitativ lättnad och finanspolitisk stimulans, och debatten försköts till hur och till vilken kostnad",
+            "Den avslutades med monetarismens slutgiltiga seger",
+            "All stabiliseringspolitik avskaffades",
+            "Sverige gick tillbaka till guldmyntfoten"
+          ],
+          "ratt": 0,
+          "tips": "Vad gör en centralbank när styrräntan redan är noll och ekonomin fortfarande faller?"
+        },
+        {
+          "q": "Hur ska V18-poäng för regulatoriska katalysatorer sättas enligt kursen?",
+          "alternativ": [
+            "Hög poäng så snart en politisk avsikt finns",
+            "Proportionellt mot din tillit till att politiken faktiskt genomförs — tro utan genomförande är en story",
+            "Alltid noll — politik är oväsentligt",
+            "Efter nästa val"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer en avsiktsförklaring från ett beslut med budget?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Handel och valutor — komparativa fördelar och globaliseringens gränser (V03)",
+      "intro": "Bokens tredje del öppnar världen: Ricardos tvåhundraåriga teorem, handelshinder, växelkurser och valutamarknadens mekanik. Eklund — som skrivit bokens moderna upplagor med världsekonomin i undertiteln — går från frihandelns logik till dess politiska motreaktioner.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ricardo, citerad öppet från 1817: länder vinner på handel även när ett land är bäst på allt — det som styr är inte absolut fördel utan komparativ: specialisera dig där din relativa kostnad är lägst, byt till dig resten. Effekten är som en tekniklandvinning: mer produceras av samma resurser. Sedan nyanserna, som Eklund inte sviker: vinsten är total men fördelningen är inte — de som konkurrerar med importen förlorar konkreta jobb medan vinsterna sprids tunna över alla konsumenter; det är den politiska ekonomin bakom populismens handelskritik. Handelshinder — tullar, kvoter, standardkrav — kostar konsumenter mer än de skyddar producenter, men politiken köper ibland skyddandet av strategiska skäl eller röster. WTO:s regelsystem, frihandelsavtal och EU:s inre marknad är institutionerna som håller Ricardos maskin igång — och deras erosion (handelskrig, sanktioner, friend-shoring) är en riskfaktor av typen V18, men på portföljnivå snarare än bolagsnivå."
+        },
+        {
+          "type": "text",
+          "content": "Växelkursen — priset på en valuta i en annan — bestäms på lång sikt av köpkraftsparitet (samma varukorg ska kosta samma överallt) och på kort sikt av räntedifferenser, handelsbalanser och kapitalflöden. Eklund går igenom regimerna: fasta, rörliga och något däremellan — och Sveriges egen historia som lärobok i sig: fast kurs kollapsade 1992 mot spekulativa attacker, inflationsmålet med flytande krona föddes dagen efter. Valutamarknaden är världens största med omsättning som gör aktiemarknaden liten — och den är börsens dolda motor: en försvagad krona höjer mekaniskt svenska exportbolags intäkter och vinster i kronor (V01 stiger utan att en enda enhet sålts mer), en förstärkt gör tvärtom. Det är därför valutarörelser kan förklara ett helt rapportseminar utan att verksamheten rört sig."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen: V03 Intäktsdiversifiering är handelskapitlets egen variabel. Ett bolag med intäkter i många valutor och många geografier är valutamässigt hedgat av sin egen verksamhet — svag hemvaluta kompenserar stark utlandskassaflöde; ett exportbolag med en enda marknad är en rå valutaposition med en verksamhet påslagt. Kursens tre regler: ett — skilj valuta-effekt från valuta-neutral tillväxt i varje rapport (redovisningsvaluta och organisk tillväxt, inte konsoliderad); två — läs V17 Avtal och partnerskap med geografisk blick (ett distributionsavtal i en växande valuta-zon är dubbel exponering); tre — beakta geopolitisk V18-risk hos bolag med exponering mot handelspolitiskt heta flöden — sanktioner och tullar slår snabbare än bokslut. Globaliseringens gränser — friend-shoring, exportkontroller, skatteavtal — är inte Ricardos död, men de flyttar var de komparativa fördelarna bor: det som var en fördel igår är en sanktionsrisk i morgon."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett exportbolag med en kundvaluta är inte ett bolag — det är en valutaposition med tillverkningsverksamhet vid sidan av. Fråga alltid: i vilka valutor kommer intäkterna, i vilka går kostnaderna, och vad händer med båda om hemvalutan faller tio procent? V03 är svaret på den frågan, komprimerat till en poäng."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Handel och valutor — mekanismer och AKM1-signaler\",\"rader\":[[\"Mekanism\",\"Innebörd\",\"AKM1-signal\"],[\"Komparativa fördelar\",\"specialisering efter relativ kostnad — total vinst, ojämn fördelning\",\"sektorfördelning; politisk risk mot frihandel\"],[\"Köpkraftsparitet\",\"långsiktig växelkurs-drivare via varukorgar\",\"real avkastning i hemvaluta vid avvikelse\"],[\"Räntedifferens\",\"kapital söker avkastning — kort sikt valuta-rörelse\",\"kronförsvagning vid räntenedgång: export-V01 stiger mekaniskt\"],[\"Handelshinder\",\"tullar, kvoter, sanktioner, friend-shoring\",\"V18 negativ för exponerade flöden; V17 omfördelar partnerskap\"],[\"Valutadiversifiering\",\"intäkter i många valutor\",\"V03 hög poäng — naturligt hedgad verksamhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör valutakollen för ditt största innehav: hitta intäktsfördelningen per geografi och valuta (segmentsnot i årsredovisningen) och uppskatta kostnadssidan. Simulera sedan: hemvalutan försvagas tio procent — hur många procent stiger vinsten mekaniskt, och hur mycket av rapportens tillväxt förblir organisk? Skriv ditt svar i en mening och jämför med hur bolaget självt redovisar organisk tillväxt — om skillnaden är stor har du hittat en siffra som ser bättre ut än den är."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger Ricardos teorem om komparativa fördelar?",
+          "alternativ": [
+            "Att länder ska köpa allt från det land som är absolut bäst",
+            "Att handel bara lönar sig mellan lika rika länder",
+            "Att tullar ökar välståndet",
+            "Att länder vinner på handel genom att specialisera sig där deras relativa kostnad är lägst — även ett land som är bäst på allt"
+          ],
+          "ratt": 3,
+          "tips": "Vad jämförs — absolut skicklighet eller alternativkostnad inom landet?"
+        },
+        {
+          "q": "Vad hände i Sverige 1992 som födde inflationsmålet?",
+          "alternativ": [
+            "Sverige gick med i euron",
+            "Den fasta växelkursen kollapsade mot spekulativa attacker — dagen efter föddes inflationsmålet med flytande krona",
+            "Riksbanken blev självständig från riksdagen",
+            "Guldmyntfoten återinfördes"
+          ],
+          "ratt": 1,
+          "tips": "Vilken regim dog — och vad ersatte den?"
+        },
+        {
+          "q": "Varför är V03 Intäktsdiversifiering handelskapitlets egen variabel?",
+          "alternativ": [
+            "Därför att den mäter produktkvalitet",
+            "Därför att ett bolag med intäkter i många valutor och geografier är naturligt hedgat — medan ett enfokuserat exportbolag är en rå valutaposition",
+            "Därför att EU kräver den",
+            "Därför att den ersätter V04"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med intäkterna i olika valutor när hemvalutan rör sig?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Kriser — 2008, bubblor och Minsky (V10, V19)",
+      "intro": "Finanskrisen fick i bokens nyare upplagor ett helt eget kapitel — Eklund skriver själv om hur krisen tvingade fram omskrivningarna. Kursen samlar krisläran: vad som brast 2008, vad bubblor har gemensamt och Minskys instabilitetshypotes — och den direkta länken till V10 och V19.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Krisens anatomi, som boken och kursen berättar den: amerikanska bostadslån paketerades till säkerställda obligationer som ratingbyråer fick att framstå som säkra; bolagen som tog riskerna var belånade trettio gånger över eget kapital; kreditderivaten försäkrade det hela i en kedja där ingen visste vem som bar risken. När bostadspriserna vände drog efterfrågan på papperen med sig likviditeten — och september 2008 kollapsade Lehman Brothers, kreditmarknaderna frös världen över och nedgången blev den djupaste sedan trettiotalet. Responsen blev också historiens största: räntenedslag till noll, kvantitativ lättnad, garantiprogram, bankräddningar — och skulderna flyttades från banker till statliga balansräkningar. Eklunds slutsats, som kapitel elva byggde på: systemet räddades av precis den statliga intervention som ortodoxin avfärdat i decennier — men priset var skulder vars återhämtning kom att prägla decenniet som följde."
+        },
+        {
+          "type": "text",
+          "content": "Bubblornas gemensamma anatomi — kursens checklistaliknande sammanfattning av bokens krisgenomgång och den bredare litteraturen: en nyhet som är sann (internet, bostäder, AI), lätt och billig kredit, hävstång, omfördelning av risk till dem som inte ser den, och berättelsen att det är annorlunda denna gång. Minskys instabilitetshypotes fångar dynamiken i en enda mening: stabilitet är instabil — lugna tider bjuder in till mer hävstång, mer hävstång gör systemet ömtåligare för samma chock, tills en tillräckligt stor snubbling förvandlar stabil finansiering till tvingad utförsäljning. Tre faser i Minskys språk: hedge-finansiering (kassaflödet betalar ränta och amortering), spekulativ (kassaflödet betalar bara räntan — amorteringen refinansieras), Ponzi (inte ens räntan betalas av kassaflödet — allt bygger på värdeökning). Ett helt banksystem — eller bolag — kan graderas på den skalan, och kursens påstående är att den också kan karriärera ett bokslut: V10 mäter var på Minsky-skalan ett bolags finansiering ligger."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-länken är den mest operationella i hela kursen, och den knyter samman kapitel sju (krediten) med Quantitative Value-kursens varningssystem. V10: i kris är det hävstången — inte verksamheten — som avgör vem som överlever; belåning som ser förnuftig ut i Minsky-fas hedge är dödlig i fas Ponzi, där refinansieringen är enda livlina. V19: kriser förvandlar kapitalförbränning från tålmodigt investerande till akut haveri — när kapitalmarknaden stänger blir emissionen utspädning på botten, och de bolag som behöver sälja aktier billigast är de som behöver sälja dem mest. Kursens tidiga varningssystem för nästa kris: kreditspreadar (CDS-logiken från QV-kursen), korta räntan, antalet emissioner, konkurser, nybygggnadsstart — och berättelsen: när du hör att det är annorlunda denna gång har du hört bubblans enda konstanta refräng. AK1A:s fem tidshorisonter är här avgörande: kriser är korta och våldsamma — den som måste sälja i dem har fel tidshorisont i portföljen, inte fel analys i modellen."
+        },
+        {
+          "type": "insikt",
+          "content": "Minsky-skalan är V10:s rätta gradering: hedge — kassaflödet betalar allt; spekulativ — räntan betalas, amorteringen refinansieras; Ponzi — inte ens räntan täcks. Poängsätt belåning efter fas, inte efter kvot: samma skuldsättningsgrad är tre olika risker beroende på var kassaflödet räcker."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Krisens tidiga varningssystem och dess AKM1-länkar\",\"rader\":[[\"Signal\",\"Varför den är tidig\",\"AKM1-länk\"],[\"Kreditspreadar vidgar\",\"kreditmarknaden prissätter risk före aktiemarknaden\",\"V10 omprövning; QV-kursens CDS-logik\"],[\"Kort ränta stiger\",\"blankare och lån-tagare positionerar före nedslaget\",\"V19 emissionsrisk senare\"],[\"Emissions- och konkurstoppar\",\"kapitalmarknadens fönster slår igen\",\"V19 direkt — utspädning på botten\"],[\"Nybyggnadsstart faller\",\"investeringar vänder först\",\"V01 toppmarkering hos cykliska\"],[\"Det är annorlunda denna gång\",\"bubblans enda konstanta refräng\",\"kontroll av din egen berättelse-känsla\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera tre av dina innehav på Minsky-skalan — hedge, spekulativ eller Ponzi — utifrån senaste kassaflödesanalysen: täcker operativt kassaflöde ränta och amortering, bara räntan, eller ingendera? Sortera portföljen efter fas och räkna ut andelen spekulativ-plus-Ponzi. Om andelen överstiger en fjärdedel och din tidshorisont är kort — du bär krisrisk som din AKM1-poängsumma inte visar, och det är just det som V10 och V19 finns för att synliggöra."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Minskys instabilitetshypotes?",
+          "alternativ": [
+            "Att marknader alltid är effektiva",
+            "Att stabilitet är instabil — lugna tider bjuder in till mer hävstång som gör systemet ömtåligare för samma chock",
+            "Att kriser bara beror på staten",
+            "Att BNP alltid återhämtar sig på ett år"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med riskaptiten under goda år — och vad gör det med känsligheten för nästa chock?"
+        },
+        {
+          "q": "Vad betyder Ponzi-fasen i Minskys terminologi?",
+          "alternativ": [
+            "Att inte ens räntan betalas av kassaflödet — allt bygger på värdeökning och refinansiering",
+            "Att kassaflödet betalar både ränta och amortering",
+            "Att kassaflödet betalar bara räntan",
+            "Att bolaget saknar skulder"
+          ],
+          "ratt": 0,
+          "tips": "Vilken fas har refinansieringen som enda livlina?"
+        },
+        {
+          "q": "Varför är kriser främst en fråga om tidshorisont snarare än analys?",
+          "alternativ": [
+            "Därför att analyser alltid är fel",
+            "Därför att kriser är korta och våldsamma — den som tvingas sälja i dem har fel tidshorisont i portföljen, inte fel modell",
+            "Därför att kriser aldrig återkommer",
+            "Därför att centralbanker förbjuder försäljning"
+          ],
+          "ratt": 1,
+          "tips": "Vem överlever en vinter — den med rätt kläder eller den med rätt väderprognos?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 13,
+      "title": "Klimat och framtid — tillväxtens gränser och regulatoriska katalysatorer (V18)",
+      "intro": "Bokens moderna upplagor tar sig an hållbarheten: klimatet som marknadsmisslyckandet som blev världens största, koldioxidskatten som svenskt exportpaket, och 2024 års nya avslutande kapitel om framtidens ekonomiska utmaningar. Kursen läser allt detta som V18:s fördjupning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Klimatet är kapitel fyra-kunskapen i storformat: historiens största negativa externalitet — koldioxidutsläppens kostnad bärs av alla kommande generationer och ingen av dem bjuder på auktionen. Ekonomins svar, som Eklund redogör för: internalisera priset — koldioxidskatt (Sverige införde världens första 1991), handelbara utsläppsrätter (EU:s system), subventioner till omställning, teknikneutrala upphandlingar. Skärningspunkten mellan två Nobel-pris bär debatten, citerad öppet: Nicholas Stern (Stern Review, 2006) argumenterade för en nära noll diskonteringsränta på framtida generationers välfärd — vilket gör klimatkostnadernas nuvärde enorma och motiverar omedelbar, kraftfull åtgärd; William Nordhaus (Nobel 2018) räknade med marknadsnära diskonteringsränta och fann en långsammare, gradvis stigande klimatavgift optimal. Skillnaden mellan deras slutsatser ligger inte i klimatfysiken utan i räntan på framtiden — vilket är den mest investeringsrelevanta insikten i hela boken: din syn på diskonteringsräntan bestämmer din syn på nästan allt."
+        },
+        {
+          "type": "text",
+          "content": "V18 Regulatoriska katalysatorer är klimatkapitlets direkta översättning — men kursen breddar variabeln till hela den regulatoriska ciseln: lagar, skatter, standarder och avtal som flyttar konkurrenskraft mellan bolag och sektorer. Koldioxidskatten omfördelar inom energi och transport; utsläppsrätter skapar en marknad där ren teknologi blir en intäktsström; krav på redovisning och due diligence flyttar kapitalkostnaden; exportkontroller och sanktioner (kapitel tolv) gör samma sak av geopolitik. Poängen för analysen: regulatoriska katalysatorer är inte bara risk — de är den mest förutsägbara av alla V18-typer, eftersom de skrivs i förväg i utredningar, direktiv och propositioner. Den som lägger två timmar på att läsa ett remissammanställande dokument har mer katalysator-information än den som läser hundra kursanalyser — och till skillnad från tekniska genombrott, som anländer utan förvarning, anländer regler nästan alltid med års varsel."
+        },
+        {
+          "type": "text",
+          "content": "Och framtidskapitlet — 2024 års nya avslutande, framåtblickande kapitel — sammanfattar utmaningarna som bokens sista produkt: åldrande befolkningar och arbetskraftens storlek, teknikens löndeflation och AI:s återfördelning, handelsordningens splittring, skuldernas återbetalning, klimatets fysiska och finansiella risker. Eklunds hållning är tillräckligt öppen för att att kursen kan formulera den utan att välja sida: varje utmaning är en strukturell kraft som vrider V01–V03 (vilka marknader växer), V10–V12 (vilka finansiella system som blir skörare eller stabilare) och V13–V18 (vilka moats och katalysatorer som byggs eller rivas). AKM1:s fem tidshorisonter är här särskilt relevanta: strukturella krafter rör sig långsamt men obönhörligen — de syns inte i nästa rapport, men de avgör nästa decennium, och det är på den horisonten som V18-poängen egentligen lever."
+        },
+        {
+          "type": "insikt",
+          "content": "Stern mot Nordhaus är diskonteringsräntans strid: vad är framtida generationers välfärd värd i dag? Samma fråga styr din aktieanalys — hur mycket är kassaflödet om tio år värt? Du behöver inte lösa frågan, men du måste veta att du har ett svar på den, eftersom det sitter i varenda multipl du betalar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klimatets och framtidens ekonomi i AKM1\",\"rader\":[[\"Kraft\",\"Mekanism\",\"Tidshorisont\",\"AKM1-spår\"],[\"Koldioxidprisering\",\"internaliserar externaliteten — omfördelar konkurrenskraft\",\"redan pågående\",\"V18 katalysator; V13–V14 moat hos ren teknik\"],[\"Utsläppsrätter\",\"skapar marknad — utsläppsminskning blir intäkt\",\"cykelbundet\",\"V01–V02 nya intäktsströmmar\"],[\"Åldrande\",\"arbetskraft krymper — produktivitet måste bära tillväxt\",\"decennier\",\"V01 real tillväxttak; V07 lönekostnad\"],[\"AI och teknik\",\"deflation i kostnader; omfördelning av värde\",\"år\",\"V15 nätverk; V07–V08 marginaler\"],[\"Handelns splittring\",\"friend-shoring och sanktioner flyttar flöden\",\"år\",\"V03 diversifiering; V17 partnerskap\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen framtidskrönika på fem rader — en rad per strukturell kraft från kapitlet: klimatprisering, åldrande, teknik, skulder, handel. För varje rad: vinnare och förlorare i ditt bevakningsuniversum, med V-variabel. Lägg sedan dokumentet i en mapp med dagens datum och öppna det om ett år. Det är V18-analysens väsen: inte att förutsäga, utan att deklarera vad du anser — så att verkligheten kan döma dig och du kan lära."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i striden mellan Stern och Nordhaus?",
+          "alternativ": [
+            "Oenighet om klimatfysiken",
+            "Oenighet om diskonteringsräntan på framtida generationers välfärd — vilken avgör nuvärdet av klimatkostnaderna och åtgärdernas tempo",
+            "Oenighet om BNP-mätning",
+            "Oenighet om växelkurser"
+          ],
+          "ratt": 1,
+          "tips": "Två nobel-tunga ekonomer, samma fysik — vad skiljer deras uträkningar åt?"
+        },
+        {
+          "q": "Varför är regulatoriska katalysatorer den mest förutsägbara av V18-typer?",
+          "alternativ": [
+            "Därför att de alltid är hemliga",
+            "Därför att de aldrig genomförs",
+            "Därför att de bara berör banker",
+            "Därför att de skrivs i förväg — utredningar, direktiv och propositioner ger års varsel, till skillnad från tekniska genombrott"
+          ],
+          "ratt": 3,
+          "tips": "Var finns reglerna innan de blir lagar — och hur lång tid tar den vägen?"
+        },
+        {
+          "q": "Vilken tidshorisont lever V18-poängen egentligen på?",
+          "alternativ": [
+            "Nästa kvartal",
+            "Nästa rapportseminar",
+            "Det långa loppet — strukturella krafter rör sig långsamt men avgör decennier",
+            "Intradag"
+          ],
+          "ratt": 2,
+          "tips": "Hur snabbt åldras en befolkning eller byts en handelsordning ut?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 13,
+      "title": "Kontroversen och syntesen — stat mot marknad; makro som RAM (V01–V20)",
+      "intro": "Kursens sista och viktigaste kapitel: striden om vad staten ska och inte ska göra — Eklunds socialdemokratiska mittfåga mot de nyliberala och österrikiska skolorna — och därefter AK1A:s syntes av hela boken till en enda RAM: ränta, inflation och BNP in, tjugo V-variabler ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Eklunds position, som bok och bakgrund tillsammans formulerar den: marknaden är den bästa resursfördelaren mänskligheten funnit — men den är ett verktyg, inte en religion. Staten har i bokens värld fyra legitima uppgifter: rätta marknadsmisslyckandena (kapitel fyra), stabilisera konjunkturen (kapitel elva), omfördela — välfärd, utbildning, sjukvård som både trygghet och produktiv investering — och sätta spelreglerna som marknaden behöver för att existera: rättsväsende, penningväsen, konkursrätt. Det är Feldt-erans arv i ren form: en socialdemokratisk ekonom som vill släppa in marknaderna i välfärdsstaten för att rädda båda — den första upplagans argument för balanserad välfärdspolitik med ökade marknadsinslag. Mot detta två motståndarläger, citerade öppet. De nyliberala — Friedmans Chicago: minimal stat, monetära regler, flexibla marknader; statens aktivism destabiliserar, välfärden skapar beroenden, inflationen är ett penningpolitiskt fenomen. De österrikiska — Mises och Hayek: kunskapsproblemet är det djupaste argumentet — Hayeks artikeln The Use of Knowledge in Society (1945) visade att priserna samlar spridd kunskap som ingen centralplanerare kan sammanställa, varför statens finplanering är inte bara ineffektiv utan epistemiskt omöjlig; och den österrikiska konjunkturteorin håller kreditexpansion under marknadsräntan för att skapa felinvesteringar som kräver en rensning — statens stabiliseringspolitik förlänger krisen den tror sig bota."
+        },
+        {
+          "type": "text",
+          "content": "Nu skillnaderna i praktiken, tre stridsfronter. Front ett: konjunkturer — Eklund och keynesianerna ser legitim stabilisering; österrikarna ser förhindrad rensning av felinvesteringar och ny bubbla som pris för räddningen; Friedman ser penningregel som räcker, diskretion som fara. Front två: välfärden — Eklund ser trygghet som produktiv; de nyliberala ser marginella skadedempel och beroenden; frågan är empirisk och beroende av kontext, vilket ingen av lägren gillar att medge. Front tre: pengarna — Eklund och hela huvudfåran accepterar fiat-pengar med centralbank och inflationsmål; österrikarna ser fiat-systemet självt som roten till kreditcykler och söker lösningar i hårda tillgångar eller konkurrerande valutor. Vem har rätt? Kursens svar är kursens viktigaste pedagogiska drag: frågan är fel ställd som antingen-eller. Eklunds mittfåga är själv ett hybrid-svar — marknad som motor, stat som korrektur — och dess svaghet är gränsdragningens subjektivitet (var slutar korrekturet och börjar byråkratin?), medan motståndarnas svaghet är att deras egna hemländer aldrig praktiserat vad de predikar: de mest marknadsliberala ekonomierna i historien har centralbanker, konkursrätt och offentlig grundutbildning. Platserna där alla tre lägren möts är värd att memorera: priserna är information (Hayek), institutionerna är förutsättningar (alla), och stabil statsskuld är en förpliktelse oavsett teori (botten)."
+        },
+        {
+          "type": "text",
+          "content": "Och AK1A:s syntes — hela boken som en enda RAM, tre in-gångar och tjugo ut-gångar. Räntan: komprimerar och expanderar multiplarna (V04–V06), trycker eller avlastar belåningen (V10) och återköpsmatematiken (V20), och avgör hur länge en kassa får brinna innan emissionen (V19). Inflationen: äter realavkastningen på allt, pressar marginalerna där prissättningsmakten saknas (V07–V08), blåser nominella intäkter som ska rensas för trend (V01) och rubbar intäktsstabiliteten (V12). BNP-cykeln: vrider efterfrågan (V01–V02), kreditviljan (V10–V11) och emissionsfönstret (V19), medan dess strukturella gren — handel, klimat, demografi, teknik — flyttar vilka moats och katalysatorer som alls kan byggas (V03, V13–V18). Kontroversen bestämmer tolkningen: en keynesiansk läsning skärper din bevakning av stimulans-pivots bland cykliska bolag; en österrikisk skärper din respekt för hävstång och kreditcykelns rensning — och en Eklundsk mittfåga håller båda öppna. AK1A väljer inte sida: det är RAM:ens poäng. Båda linserna pekar ut samma variabler — de skiljer sig bara åt om när och hur hårt de vrider. Den som kan båda läser cykeln som ett spektrum i stället för ett val — och det är den friheten bokens breda kunskap köper."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är också bokens: ekonomin är ett verktyg för att förstå samhällets resursfördelning — och AKM1 är ett verktyg för att förstå ett bolags förutsättningar i den ekonomin. Verktyg ska hållas skarpa och användas med dömd hand: deklarera din cykelposition, din realränta och din inflation — annars är tjugo variabler tjugo åsikter, inte en analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som RAM — makro in, V01–V20 ut\",\"rader\":[[\"Makro-ingång\",\"Mekanik\",\"V-utgångar\"],[\"Styrräntan\",\"diskonteringsränta, refinansiering, återköpsfinansiering\",\"V04–V06, V10, V19, V20\"],[\"Inflationen\",\"realavkastning, marginaltryck, nominell tillväxt-rengöring\",\"V01, V07–V08, V12\"],[\"BNP och konjunktur\",\"efterfrågecykel, kreditvilja, emissionsfönster\",\"V01–V03, V10–V11, V19\"],[\"Arbetsmarknad\",\"lönekostnad och produktivitet\",\"V07–V09, V12\"],[\"Handel och valuta\",\"komparativa fördelar, valuta-effekter\",\"V03, V17\"],[\"Kris och kreditcykel\",\"Minsky-faser, tvingad utförsäljning, utspädning\",\"V10, V11, V19\"],[\"Klimat och reglering\",\"internalisering, konkurrenskraftsförskjutning\",\"V13–V15, V18\"],[\"Kontroversen\",\"tolkning av allt ovan — keynesiansk, österrikisk eller mittfåga\",\"RAM:ens inställning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — kör RAM:en baklänges och framlänges. Baklänges: ta ditt bästa innehav och peka ut vilka makro-ingångar som driver dess tre viktigaste V-poäng — vilken ränta, vilken inflation, vilken cykelposition antar din poängsättning? Framlänges: skriv tre scenarier — högre ränta, högre inflation, djupare nedgång — och räkna portföljens sammanvägda V01, V10 och V19 i varje. Avsluta med en mening som deklarerar din kontrovers-position — Eklund, Friedman eller Hayek närmast — och vad den positionen får dig att övervaka som de andra två missar. Spara med datum. Det är boken, kursen och AK1A i en enda övning."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Hayeks kunskapsargument från 1945?",
+          "alternativ": [
+            "Att priserna samlar spridd kunskap om knapphet och efterfrågan som ingen central planerare kan sammanställa — central planering är epistemiskt omöjlig",
+            "Att priser är godtyckliga",
+            "Att staten alltid vet bäst",
+            "Att kunskap bara finns i universitet"
+          ],
+          "ratt": 0,
+          "tips": "Vad bär pris-signalen som ingen sammanställning kan fånga?"
+        },
+        {
+          "q": "Vad anser den österrikiska konjunkturteorin om kreditexpansion under marknadsräntan?",
+          "alternativ": [
+            "Att den är oskyldig om den är liten",
+            "Att den skapar felinvesteringar som kräver en rensning — och att statens stabiliseringspolitik förlänger krisen den tror sig bota",
+            "Att den alltid sänker inflationen",
+            "Att den bara påverkar bankers vinster"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med investeringsbeslut när räntan ligger under marknadens eget pris på kapital?"
+        },
+        {
+          "q": "Vad är AK1A:s slutposition i kontroversen?",
+          "alternativ": [
+            "Eklunds mittfåga är den enda rätta",
+            "De österrikiska har rätt om allt",
+            "RAM:en väljer inte sida — båda linserna pekar ut samma V-variabler och skiljer sig bara åt om när och hur hårt de vrider",
+            "Kontroversen är irrelevant för aktieanalys"
+          ],
+          "ratt": 2,
+          "tips": "Vad vinner den som kan läsa cykeln som ett spektrum i stället för ett val?"
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SocialProof } from "@/components/ak1a/social-proof";
 
 export const dynamic = "force-static";
 
@@ -207,6 +208,9 @@ export default function MedlemskapPage() {
           </Link>
         </div>
       </div>
+
+      {/* SOCIALT BEVIS — siffror och elevröster efter Fas 1/Fas 2-översikten */}
+      <SocialProof className="mt-12" />
 
       {/* De 26 avancerade kurserna — kategorivis */}
       <section className="mt-8">

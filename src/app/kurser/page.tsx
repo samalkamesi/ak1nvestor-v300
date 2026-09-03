@@ -5,6 +5,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { SocialProof } from "@/components/ak1a/social-proof";
 
 export const dynamic = "force-static";
 
@@ -59,11 +60,14 @@ export default function KurserPage() {
             minuter: c.totalMinutes || c.minutes,
             learn: c.learn,
             xp: c.xp,
-            quiz: c.chapters.reduce((s, k) => s + (k.quiz?.length || 0), 0),
+            quiz: c.chapters.reduce((s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0), 0),
           }))}
         />
         <aside className="h-fit"><FortsattPanel /></aside>
       </div>
+
+      {/* SOCIALT BEVIS — siffror och elevröster efter kursgriden */}
+      <SocialProof className="mt-12" />
         </SeoPageShell>
   );
 }

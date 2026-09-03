@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SocialProof } from "@/components/ak1a/social-proof";
 
 export const dynamic = "force-static";
 
@@ -290,6 +291,9 @@ export default function ManifestPage() {
           ))}
         </div>
       </section>
+
+      {/* ── 5b. SOCIALT BEVIS — siffror och elevröster ─────────────────────── */}
+      <SocialProof className="mt-12" />
 
       {/* ── 6. VÄGEN ────────────────────────────────────────────────────────── */}
       <section className="mt-12">

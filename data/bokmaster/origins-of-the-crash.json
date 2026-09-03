@@ -1,0 +1,1026 @@
+{
+  "slug": "origins-of-the-crash",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 168,
+  "title": "Origins of the Crash — Lowenstein: KOMPLETT",
+  "summary": "Roger Lowensteins Origins of the Crash (2004) är IT-bubblans anatomi — men inte som ännu en kraschkrönika. Där syskonkursen The Great Crash 1929 följer Galbraith genom margin-köpens mekanik och oktober dag för dag, följer Lowenstein institutionerna som gjorde bubblan möjlig: aktiekulturen som gjorde hälften av Amerika till aktieägare, Greenspans »irrational exuberance» som sades 1996 och lät bli att följas av handling, Levitts »Numbers Game»-tal om formgivna vinster, aktieoptionernas tryckpress som betalade löner utan kostnad och spädde ägarna, analytikernas hyp klädd som forskning (Blodgets interna mejl, Grubmans uppgraderingar), revisorerna som granskade sig själva (Arthur Andersen), styrelserna och bankerna som åt av samma fat — och sedan nedsläppet: Nasdaq från 5 048,62 till 1 114,11, minus 78 procent, Enron, WorldCom, och svaret: Sarbanes-Oxley och den globala förlikningen 2003. Kursens spänning hålls öppen hela vägen: Lowensteins tes att kraschen var tillverkad av korrumperade incitament mot EMH-skolan som menar att bubblor är rationella priser på osäker information — och AK1A:s egen bubbel-vakt: V12 intäktsstabilitet plus V19 emission-risk.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta 1990-talets bubbla och 2000-2002 års nedsläpp i dess rätta siffror — Nasdaq 5 048,62 den 10 mars 2000 och 1 114,11 den 9 oktober 2002 (minus 78 procent), S&P 500 1 527,46 till 776,76 (minus 49 procent), Dow-topp 11 722,98 i januari 2000, Nasdaq åter på topp först 2015, marginalskuld kring 278 miljarder dollar i mars 2000, Enrons fall från 90,56 dollar till 26 cent och WorldComs 11 miljarder dollar i förfalskningar — och förklara hur varje skede var möjligt: hur aktiekulturen skapade en publik som bara sett uppgångar, hur Fed såg övervärdering 1996 och backade, hur vinsterna formgavs (pro forma, big bath, cookie jar), hur optioner betalade en era utan att bokföras som kostnad och spädde ägarna (FASB:s kapitulation 1994, senaten 88-9), hur analytiker, revisorer, styrelser och bankers intäkter alla blev beroende av flödet, och hur upptäckten 2001-02 tvingade fram Sarbanes-Oxley och den globala förlikningen; eleven kan redogöra ärligt för kontroversen mot EMH — Famas argument att bubblor inte kan identifieras i realtid och att priser kan ha varit rationella gällande dåtidens information, mot Shillers CAPE och Ofek-Richardsons bevis på identifierbar felprisning, mot Lowensteins tredje väg: att EMH förutsätter ärlig information men inte garanterar den; eleven kan slutligen översätta allt till AK1A:s bubbel-vakt — V12 intäktsstabilitet (vilka intäkter är verkliga och återkommande när cykeln vänder?) och V19 emission-risk (när företagssektorn trycker aktier, optioner löses in och insiders säljer på rekordmultiplar är det systemets tell) — och skilja den här kursen från syskonkursen om 1929: Galbraith förklarar hävstångens mekanik, Lowenstein förklarar incitamentens korruption och varför det KAN hända igen.",
+  "why": "Alla talar om IT-bubblan; nästan ingen talar om vad den bestod av. Lowensteins bok — skriven av den journalist som dokumenterat både Buffett och LTCMs fall — flyttar förklaringen från psykologi till mekanik: bubblan var inte en sinnesstämning utan ett system av incitament där varenda väktare (analytiker, revisor, styrelse, bank, centralbank) betalades av samma kurser som de skulle övervaka. Det är den kurs som ger AK1A:s två mest försummade riskvariabler sin masterclass: V19 kapitalförbränning och emission-risk (optioner, nyemissioner, insidersälj — bubblan som tryckpress för aktier) och V12 intäktsstabilitet (dot-comernas intäkter var berättelser, inte återkommande flöden; Enrons och GEs jämnhet var designad, inte äkta). Kursen behövs också för differentieringen: syskonkursen om 1929 lär hävstångens dag-för-dag-drama, den här lär incitamentens tysta korruption — och den avslutande kontroversen mot EMH (Fama mot Shiller mot Lowenstein) ger eleven ett intellektuellt hederligt svar på frågan alla ställer: var det rationellt, och kan det hända igen? Ja — i ny förpackning — därför är bubbel-vakten ett ständigt instrument, inte ett historieämne.",
+  "chapters_list": [
+    "1. Bokens kärna — en tillverkad krasch, inte ett oväder",
+    "2. Aktiekulturen — när aktierna blev nationalföreteelse",
+    "3. Irrational exuberance — Fed som såg och lät bli",
+    "4. The Numbers Game — vinsterna blev formgivna",
+    "5. Optionerna — tryckpressen som tryckte aktier",
+    "6. Silikonvalley — att betala löner med aktier",
+    "7. Analytikerna — hypen klädd som forskning",
+    "8. Revisorerna — granskningens pris (Arthur Andersen)",
+    "9. Styrelserna och bankerna — väktare som åt av samma fat",
+    "10. Toppen — mars 2000 och vändningen",
+    "11. Nedsläppet — minus 78 procent på trettio månader",
+    "12. Ruinerna — Enron, WorldCom och bezzlet växer fram",
+    "13. Svaret — Sarbanes-Oxley, Spitzer och det som verkligen ändrades",
+    "14. KONTROVERS — var bubblor rationella? (EMH mot Lowenstein, AK1A:s bubbel-vakt)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Bokens kärna — en tillverkad krasch, inte ett oväder",
+      "intro": "Roger Lowenstein — journalist på Wall Street Journal, biograf över Warren Buffett och författare till When Genius Failed om LTCMs kollaps — publicerade Origins of the Crash 2004, med undertiteln The Great Bubble and Its Undoing. Frågan boken ställer är inte vad som hände den dagen börsen vände, utan vad som hade byggts under åratal som gjorde vändningen oundviklig och förödande. Det här är kursens karta — och dess differentiering mot syskonkursen om 1929.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tesen, framlagd i bokens inledning och genomförd kapitel för kapitel: kraschen 2000-2002 var ingen naturkatastrof och inget anonymt utbrott av girighet. Den var tillverkad — av en kultur där aktiekursen blev samhällets termometer, och där varenda institution som skulle övervaka marknaden kom att betalas av marknadens fortsatta uppgång. Analytiker betalades av investment banking, revisorer av konsultuppdrag, styrelser av optioner, banker av flöden, politiker av donationer — och Federal Reserve tog 1996 frågan om övervärdering på allvar och lät den sedan falla. Lowensteins metod är dokumentär: mejl, senatsförhör, SEC-material, revisionsrapporter. Han vill visa mekanismen, inte moralisera över den."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot syskonkursen The Great Crash 1929 är därför kursens ryggrad. Galbraiths 1929 är hävstångens berättelse: tio procent marginal, call money, hävstång på hävstång — en mekanik du översätter till V10 skuldsättningsgrad och V11 likviditet. Lowensteins 2000 är incitamentens berättelse: köparna behövde inte vara belånade till ruin — det som brast var informationskedjan som skulle säga dem vad aktierna var värda. Därför är den här kursens röda tråd V19 (emission-risk: optioner som späder, nyemissionsvågor, insidersälj) och V12 (intäktsstabilitet: vilka intäkter är verkliga och återkommande?) — plus den djupare lärdomen att varje AKM1-variabel förutsätter att bokslutet är ärligt. När bokslutet är teater blir V04-V12 astrologi."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna som kursen återkommer till, utan försköning: Nasdaq Composite toppade på 5 048,62 den 10 mars 2000 och bottnade på 1 114,11 den 9 oktober 2002 — minus 78 procent, en återhämtning som kräver plus 355 procent och som dröjde till april 2015. S&P 500 föll från 1 527,46 (24 mars 2000) till 776,76 (9 oktober 2002) — minus 49 procent. Dow hade toppat redan 14 januari 2000 på 11 722,98. Bortåt sju biljoner dollar i börsvärde försvann. Kursens båge: kapitel 2-3 bygger efterfrågan (aktiekultur och Fed), kapitel 4-6 bygger utbudet av förtroende (vinstformgivning, optioner, Silikonvalley), kapitel 7-9 visar väktarna som blundade, kapitel 10-12 är topp, nedsläpp och ruiner, kapitel 13 är reformerna — och kapitel 14 är kontroversen mot EMH och bubbel-vakten du tar med dig."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig frågan före datan: inte vem som såg bubblan (någon ser alltid), utan vilka incitament som gjorde att alla som såg den tjänade mer på att tiga. Krascher är inte väder — de är verkstad. Frågan om vem som betalar väktaren är alltid en del av analysen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"IT-bubblan och nedsläppet — grundfakta att bära med dig\",\"rader\":[[\"Mått\",\"Siffra\",\"Notering\"],[\"Nasdaq-topp 10 mars 2000\",\"5 048,62\",\"Ingen visste att det var toppen — som alltid\"],[\"Nasdaq-botten 9 oktober 2002\",\"1 114,11\",\"Minus 78 procent; åter på topp först april 2015\"],[\"S&P 500 mars 2000 till oktober 2002\",\"1 527,46 till 776,76\",\"Minus 49 procent på trettio månader\"],[\"Dow-topp 14 januari 2000\",\"11 722,98\",\"Det breda marknadsvärdet föll mest — omkring 7 biljoner USD\"],[\"Marginalskuld mars 2000\",\"cirka 278 miljarder USD\",\"NYSE; steg över 60 procent på åtta månader\"],[\"Enron-aktien 2000-2001\",\"90,56 USD till 26 cent\",\"Från storbolag till konkurs på femton månader\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du går vidare: skriv ner de tre källor du faktiskt litar på när du bedömer ett bolag — analytiker, revisor, ledningens presentationer, »adjusted EBITDA», konsensusprognoser. Ställ en fråga per källa: vem betalar för det här uttalandet, och vad händer med betalningen om uttalandet är negativt? Spara listan — kapitel 7 till 9 kommer att visa hur samma tre frågor såg ut 1999, och kapitel 14 återkommer till din egen lista."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Lowensteins huvudtes i Origins of the Crash?",
+          "alternativ": [
+            "Att kraschen orsakades av ett enskilt datorfel hos NASDAQ",
+            "Att kraschen var tillverkad av ett system där alla väktare betalades av marknadens uppgång — inte en naturkatastrof eller slump",
+            "Att terrorattentatet 11 september orsakade nedsläppet",
+            "Att bubblan aldrig fanns och att kurserna var korrekta hela tiden"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som betalade analytikern, revisorn och styrelsen — och av vad."
+        },
+        {
+          "q": "Hur differentierar sig den här kursen mot syskonkursen om The Great Crash 1929?",
+          "alternativ": [
+            "1929 handlar om hävstångens mekanik (V10, V11); 2000 handlar om incitamentens korruption och informationskedjan (V19, V12)",
+            "De två kurserna behandlar exakt samma mekanismer",
+            "1929 handlar om optionsprogram; 2000 om call money",
+            "Kursen om 2000 täcker bara själva kraschdagen"
+          ],
+          "ratt": 0,
+          "tips": "Vilken finansiell kraft var huvudaktör 1929 — och vilken institutionell kraft var det 2000?"
+        },
+        {
+          "q": "Vad innebär minus 78 procent för Nasdaq mellan mars 2000 och oktober 2002 i termer av återhämtning?",
+          "alternativ": [
+            "Att det räcker med plus 78 procent för att återta toppen",
+            "Att det krävs plus 355 procent — och att Nasdaq återtog 5 048 först 2015",
+            "Att återhämtningen skedde på ett år",
+            "Att indexet aldrig återhämtade sig"
+          ],
+          "ratt": 1,
+          "tips": "Räkna baklänges: 1 114 till 5 048 — hur många gånger måste kapitalet växa?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Aktiekulturen — när aktierna blev nationalföreteelse",
+      "intro": "Lowenstein öppnar i det som kallas aktiekulturen: USA där andelen hushåll som ägde aktier steg från omkring fyra av tio 1995 till omkring hälften vid sekelskiftet, där fonder blev fler än börsens noterade bolag och där 401(k)-kontona växte från cirka 550 miljarder dollar 1992 till bortåt 1 800 miljarder år 2000. Bubblan behövde bränsle — och folket levererade det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Underlaget var äkta, och det är poängen — precis som radion och bilen var äkta 1929 (minns syskonkursens kapitel 2). Arbetet med företags effektivitet, den låga inflationen, fallande räntor och den demografiska våg som gick i pension med pengar: allt hörde hemma i en verklig uppgång. Från början av 1980-talet till slutet av 1990-talet steg S&P 500 mer än tiofalt. Men den nya aktiekulturen förändrade också deltagarna: en generation investerare som aldrig sett en björnmarknad (den senaste riktiga var 1973-74), pensionspengar som automatiskt köpte varje månad oavsett pris (dollar-cost averaging som trosfråga), och en offentlighet där börsen blev ständigt samtalsämne på TV, i taxibilar och lunchrum. När aktiekursen blev nationaltermometern blev kritik av kursnivåer nästan opatriotiskt — marknaden var folkets rapportkort."
+        },
+        {
+          "type": "text",
+          "content": "Fondbranschen var kulturens katedral. Antalet fonder växte från omkring 3 000 år 1990 till omkring 8 000 år 2000 — fler fonder än noterade aktier på NYSE. Nettotillflödena till aktiefonder låg i slutet av decenniet på över 200 miljarder dollar vissa år, och pengarna följde prestation: de fonder som steg snabbast attraherade mest — vilka var det? Teknikfonderna, som i sin tur var tvungna att köpa teknikaktier, vilket fick dem att stiga mer. Det är samma reflexiva loop som margin-köpen 1929, men med en institutionell inklädnad: 401(k)-automaten köpte månadsvis, fonderna köpte presterande vinnare, och den siste köparen var inte en speculant med lån utan en hushållspension med automatisk överföring. Dumb money-paradoxen (minns Quantitative Value-kursens kapitel 2) hade bytt frack."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av aktiekulturen är en fråga om intäktskvalitet hos själva efterfrågan. Vad är det för kapital som köper — återkommande, kontraktsbundet, känsligt för pris? Nej: månatligt automatiskt, berättelsestyrt och prisokänsligt. V12 intäktsstabilitet är hos dot-com-bolagen den fråga ingen ställde (kapitel 6), men samma discipl kan vändas mot marknaden själv: när köparna inte längre svarar på priset har prisupptäckten pauserats. Lowensteins bidrag till den diagnosen är dokumentärt: han visar hur kulturen inte bara tillät överdrifter utan belönade dem — fondförvaltare som avvek från teknikvikter förlorade kunder, analytiker som var negativa förlorade karriärer, chefer som varnade internt blev överkörda. Konformiteten var rationell för varje individ och kollektivt förödande — Lake Wobegon på nationell nivå."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid vem som köper och varför: automatiskt pensionssparande, prestationljagande fondflöden och nybörjare som bara sett uppgång skapar en efterfrågan som är prisokänslig — och prisokänslig efterfrågan är definitionen på en marknad som slutat prissätta. Intäktsstabilitet (V12) gäller marknadsdeltagare lika mycket som bolag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Aktiekulturen i siffror — cirka 1990 till 2000\",\"rader\":[[\"Mått\",\"Cirka\",\"Notering\"],[\"Hushåll som ägde aktier\",\"40 procent 1995 till omkring hälften\",\"Direkt eller via fonder; SCF-data\"],[\"Antal fonder\",\"3 000 till 8 000\",\"Fler fonder än NYSE-noterade aktier\"],[\"401(k)-tillgångar\",\"550 miljarder USD 1992 till 1 800 miljarder USD 2000\",\"Automatiskt månadssparande — prisokänsligt\"],[\"Nettotillflöden aktiefonder\",\"över 200 miljarder USD vissa år\",\"Följde prestation — teknikfonderna växte snabbast\"],[\"S&P 500 1982-1999\",\"mer än 15x\",\"En generation utan björnmarknad\"],[\"Köparnas karaktär\",\"pension, fonder, daytraders\",\"Ingen av dem svarade normalt på pris\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en köpar-karta över en tillgång du äger: vem är den marginelle köparen idag — indexfondens automatik, preterande momentum-pengar, eller värderare som svarar på pris? Skriv ned din gissning och vilka bevis som skulle förändra den. Om du inte kan identifiera den marginelle köparen har du hittat aktiekulturens blindfläck i din egen analys — samma som 1999 års."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med andelen amerikanska hushåll som ägde aktier under 1990-talet?",
+          "alternativ": [
+            "Den sjönk kraftigt",
+            "Den var konstant på tio procent",
+            "Den steg från omkring 40 procent 1995 till omkring hälften vid sekelskiftet",
+            "Endast banker fick äga aktier"
+          ],
+          "ratt": 2,
+          "tips": "401(k), fonder och börs-TV tog in en ny halv av landet."
+        },
+        {
+          "q": "Varför jämför kursen 401(k)-automatiken med 1929 års reflexiva loop?",
+          "alternativ": [
+            "Därför att båda bygger på belåning med tio procent",
+            "Därför att månatligt automatiskt köp och prestationljagande flöden skapar prisokänslig efterfrågan — samma loop, ny förpackning",
+            "Därför att båda är olagliga",
+            "Därför att 401(k) infördes 1929"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på om köparna i respektive era svarade på priset."
+        },
+        {
+          "q": "Vad är kopplingen till fondernas antal — omkring 8 000 år 2000?",
+          "alternativ": [
+            "Antalet var färre än NYSE:s noterade bolag",
+            "Fonder blev fler än NYSE-noterade aktier — och flödena följde prestation, vilket förstärkte vinnarna",
+            "Fonder förbjöds att köpa teknik",
+            "Alla fonder var indexfonder"
+          ],
+          "ratt": 1,
+          "tips": "Vad köper en fond som just fått inflöden för att dess innehav stigit?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Irrational exuberance — Fed som såg och lät bli",
+      "intro": "Den 5 december 1996 ställde Alan Greenspan i ett tal på American Enterprise Institute den fråga som gett erans namn: »Hur vet vi när irrationell eufori har unduly eskalerat tillgångsvärden... som då blir föremål för unexpected and prolonged contractions?» Robert Shiller hade två dagar tidigare briefat Fed om just sådan data. Marknaden reagerade direkt — Tokyobörsen föll, och amerikanska futures vek sig. Och sedan? Ingenting hände. Kapitlet handlar om den som såg — och om varför inget gjordes.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sekvensen, dokumenterad i boken och i Fed-arkiven. December 1996: talet och frågan. Februari 1997: Greenspan backar i kongressförhör — det finns inget säkert sätt att identifiera en bubbla i realtid, och att agera på osäker diagnos vore farligare än att låta bli. Marknaden hade under tiden svarat på det enda sätt marknader svarar: Nasdaq steg från omkring 1 300 i december 1996 till 5 048 i mars 2000 — nästan fyrdubbling efter varningen. Det är den mest obehagliga sanningen i hela bubbellitteraturen, och kursen väjer inte för den: att ha rätt om övervärdering 1996 kostade den som agerade nästan fyra års ytterligare uppgång. En varning utan datum är inte en position — minns syskonkursens Babson-kapitel; samma lag gäller."
+        },
+        {
+          "type": "text",
+          "content": "Men Lowensteins anklagelse är grövre än epistemisk ödmjukhet: den gäller asymmetrin. Hösten 1998, när LTCM höll på att dra med sig systemet (minns syskonkursen When Genius Failed), sänkte Fed räntan tre gånger på tre månader — september till november 1998 — och medverkade till att organisera räddningen. När marknaden föll fanns alltid en put; när den steg fanns inget motgift. Slutet av 1999 pumpade Fed Y2K-likviditet i systemet för att gardera millennieskiftet — och drogs tillbaka i början av 2000, samma vår som vändningen kom. Margin-kravet (Reg T, femtio procent) rördes aldrig, men marknadens faktiska marginalskuld steg över 60 procent på åtta månader till cirka 278 miljarder dollar i mars 2000. Incitamentet som kulturen lärde sig: nedgångar är försäkrade, uppgångar är dina. Greenspan-puten var inte en policy — den var en lektion, och marknaden är en snabb elev."
+        },
+        {
+          "type": "text",
+          "content": "Den ärliga motfrågan, som kapitel 14 återkommer till fullt ut: kunde Fed veta? Produktivitetstesen hade verkliga siffror bakom sig — amerikansk produktivitetstillväxt hade faktiskt stigit; vinsterna växte; disinflationen var äkta. Shillers CAPE (cyclically adjusted P/E) steg mot historiska rekord kring 44 i december 1999 — men CAPE hade varit »för högt» i åratal utan att marknaden fallit. Fed:s val var inte mellan vetande och ignorans utan mellan osäker diagnos och åtgärd med okänt pris. Lowensteins dom är att valet ändå var fel: den som inte kan pricka bubblan kan fortfarande vägra att skriva under den — inte höja marginalkravet men heller inte sänka räntan tre gånger under en börs som stiger, inte legitimera produktivitetsmiraklet i vartenda förhör. Ansvarsfrågan är enkel: vem hade verktygen, vem använde dem, vem förklarade verktygen onödiga?"
+        },
+        {
+          "type": "insikt",
+          "content": "Skilj på diagnosen och positionen. Att en väktare inte kan datera en bubbla berättigar inte att väktaren subventionerar den — asymmetrisk räddning utan asymmetric åtgärd skapar moral hazard som är mätbar i marginalskuld. För dig privat: en varning utan datum kräver riskdesign, inte timing (V10, V11 hos dig själv) — och granskning av vem som backar din motpart."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fed och bubblan — sekvensen 1996-2000\",\"rader\":[[\"Tidpunkt\",\"Händelse\",\"Effekt\"],[\"3 december 1996\",\"Shiller briefar Fed om övervärderingsdata\",\"Dagen före — ja, före — talet\"],[\"5 december 1996\",\"»Irrational exuberance»-talet\",\"Global minikrasch; sedan: ingenting\"],[\"Februari 1997\",\"Greenspan backar i kongressförhör\",\"Bubblor kan inte identifieras i realtid — marknaden andas ut\"],[\"September-november 1998\",\"Tre räntesänkningar kring LTCM\",\"Asymmetrin blir tydbar: fall är försäkrade\"],[\"Sent 1999\",\"Y2K-likviditet\",\"Extra bränsle i toppens inlöp\"],[\"Mars 2000\",\"Marginalskuld cirka 278 miljarder USD\",\"Rekord; sedan maj: styrränta 6,5 procent\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen väktar-granskning: lista de tre institutioner som backar din portfölj — centralbank, insättningsgaranti, valutareserv eller kollektiv försäkring. Fråga per institution: när sist backade den köpare i fall, och vad kostade det? Om svaret är alltid ja och kostnaden aldrig syns i ditt prised — då bär du en osedd Greenspan-put, och den prissätts alltid till slut."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände efter Greenspans »irrational exuberance»-tal i december 1996?",
+          "alternativ": [
+            "Fed höjde marginalkraven kraftigt och bubblan stannade",
+            "Marknaden föll tillfälligt — och Nasdaq steg sedan nästan fyrdubbelt till mars 2000 medan Fed backade från diagnosen",
+            "Greenspan avgick",
+            "Shiller blev Fed-ordförande"
+          ],
+          "ratt": 1,
+          "tips": "En varning utan datum är inte en position — vad gjorde marknaden med fyra år till?"
+        },
+        {
+          "q": "Vad är Lowensteins grövsta anklagelse mot Fed under eran?",
+          "alternativ": [
+            "Att man höjde räntan för tidigt 1994",
+            "Asymmetrin: tre räntesänkningar och räddning i fall 1998, men ingen åtgärd mot uppgången — en put utan modgift",
+            "Att man förbjöd fonder",
+            "Att man aldrig höll tal om börsen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken lektion lär marknaden av att nedgångar alltid backas men uppgångar aldrig bromsas?"
+        },
+        {
+          "q": "Vad hände med den faktiska marginalskulden trots att Reg T aldrig ändrades?",
+          "alternativ": [
+            "Den försvann",
+            "Den steg över 60 procent på åtta månader till cirka 278 miljarder dollar i mars 2000",
+            "Den reglerades till noll",
+            "Den hölls konstant genom hela eraet"
+          ],
+          "ratt": 1,
+          "tips": "Formella regler och faktisk belåning är två olika serier — vilken av dem köpte aktierna?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "The Numbers Game — vinsterna blev formgivna",
+      "intro": "Den 28 september 1998 höll SEC-ordföranden Arthur Levitt sitt berömda Numbers Game-tal på NYU: »Jag fruktar att vi bevittnar en erosion i kvaliteten på vinster — och därmed i kvaliteten på den finansiella rapporteringen.» Talan räknar upp tidens teknik: big bath-omstrukturingar, cookie jar-reserver, kreativ intäktsredovisning och avskrivningar som masserades. Lowensteins kapitel om vinstformgivning är kursens kärnrum — för det var här bubblan blev osynlig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken, som syskonkurserna Financial Shenanigans och Quality of Earnings behandlar verktyg för verktyg och som den här kursen sätter i erans sammanhang. Whisper numbers: konsensussiffran räckte inte — marknaden prisade den informella viskningen, och bolagen levererade den. Mönstret blev kulturellt ikoniskt: att slå konsensus med en cent, kvartal efter kvartal, blev själva definitionen av ett välskött bolag — under Jack Welch levererade General Electric resultat i linje med eller över konsensus kvartal efter kvartal, en jämnhet som senare framstod som designad snarare än uppnådd. För att alltid kunna leverera behövdes verktyg: lagra i goda tider (cookie jar), tömma i ett stort bad (big bath) så att framtida kvartal blir rena, flytta intäkter framåt i tiden (channel stuffing, procent-av-klara-avtal) och presentera allt i egna pro forma-mått där allt obehagligt var »engångsföreteelse». Cisco redovisade kvartal efter kvartal »pro forma, exklusive förvärvskostnader» — i en era där förvärven aldrig tog slut var uteslutningarna det normala tillståndet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen är obehaglig och nödvändig: V12 intäktsstabilitet kan förfalskas. En resultaträkning som aldrig missar kan vara tecken på två motsatta ting — verkligt återkommande, kontrakterade intäkter (äkta V12) eller en resultaträkning som är formgiven (falsk V12). Skiljetecknet sitter i kassan: äkta stabilitet backas av operativt kassaflöde i linje med resultatet (accruals-logiken från Quantitative Value-kursens F-score, kontroll fyra); formgiven stabilitet producerar slät resultaträkning och gropigt kassaflöde. Lowensteins era visar därför V12:s dubbla natur: frågan är inte hur jämnt det ser ut utan vad som gör det jämnt. En andra lärdom: pro forma-mått (erans »ex items», dagens »adjusted EBITDA») är inte data utan presentation — AKM1 ska alltid poängsättas på redovisade, granskade siffror, med avvikelser som separat not."
+        },
+        {
+          "type": "text",
+          "content": "Motståndet och dess gränser. Levitts tal följdes av verkliga motdrag: SEC:s SAB 101 (1999) åtstramade intäktsredovisningen, och Levitt drev 2000 igenom en försvagad revisorsindependensregel mot Big Fives konsultintäkter (kapitel 8). Men motvindarna var strukturella: Private Securities Litigation Reform Act 1995 gav framåtblickande uttalanden safe harbor och höjde trösklarna för stämningar — kongressen hade, med båda partiernas välsignelse, gjort det lättare att lova och svårare att ställa till svars. Och bakom varenda CFO som formgav siffror stod ett optionsprogram som betalade henne i aktiekurs (kapitel 5): vinstformgivningen var inte slutpunkt i kedjan utan själva länken. När du bedömer en era eller ett bolag: fråga inte bara om siffrorna är sanna utan vem som betalas för att de ska se ut på ett visst sätt."
+        },
+        {
+          "type": "insikt",
+          "content": "V12:s hemliga test: jämnhet utan kassaflödesbackning är en varning, inte en kvalitet. Slå alltid resultatet mot det operativa kassaflödet över minst tre år — är groparna i kassan medan resultaträkningen är slät, då är jämnheten formgiven. Och översätt aldrig AKM1 till pro forma: formgiven data ger formgiven poäng."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vinstformgivning — tidens fem tekniker\",\"rader\":[[\"Teknik\",\"Mekanism\",\"AKM1-signal\"],[\"Whisper numbers och att slå med en cent\",\"leverera den informella viskningen, inte bara konsensus\",\"jämna sekvenser av små överraskningar är designmisstänkta\"],[\"Big bath\",\"samla alla dåliga nyheter i ett kvartal så framtiden blir ren\",\"engångsposter som återkommer är inte engångs\"],[\"Cookie jar\",\"överavsätt i goda tider, frigör i dåliga\",\"resultat som inte följer konjunkturen alls\"],[\"Intäktsredovisning (SAB 101-målet)\",\"boka procent av klara avtal, stoppa kanaler\",\"V01-V02-tillväxt utan kassa — klassisk accruls-varning\"],[\"Pro forma / ex items\",\"rita eget resultatmått med obehag uteslutet\",\"poängsätt ALDRIG AKM1 på pro forma — endast granskade GAAP-siffror\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör jämnhets-testet på ett av dina innehav: hämta fem års resultat och operativt kassaflöde. Rita de två serierna. Om resultaträkningen är slät medan kassaflödet gropar — eller om kassaflödet systematiskt ligger under resultatet över perioden — har du en formgen hållning att undersöka. Notera också hur många linjer i presentationen som börjar med »adjusted», »underlying» eller »ex» — räkna dem som decimaler i din enda siffra: presentationsgraden."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i Arthur Levitts Numbers Game-tal den 28 september 1998?",
+          "alternativ": [
+            "Att aktierna var för billiga",
+            "Att han fruktade en erosion i vinstkvaliteten — big bath, cookie jar och kreativ intäktsredovisning — och därmed i den finansiella rapporteringen",
+            "Att fondavgifterna var för låga",
+            "Att optioner borde subventioneras"
+          ],
+          "ratt": 1,
+          "tips": "Talet hålls på NYU och räknar upp teknikerna vid namn."
+        },
+        {
+          "q": "Hur kan V12 intäktsstabilitet förfalskas enligt kursen?",
+          "alternativ": [
+            "Genom att bolaget betalar mer utdelning",
+            "Genom formgiven resultaträkning — slät resultat utan motsvarande slät kassaflödesbackning visar design, inte stabilitet",
+            "Stabilitet kan aldrig förfalskas",
+            "Genom högre belåning"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer äkta jämnhet från formgiven — var backas den upp?"
+        },
+        {
+          "q": "Vad gjorde Private Securities Litigation Reform Act 1995 enligt kursen?",
+          "alternativ": [
+            "Införde skyldighet att periodisera optioner",
+            "Gav framåtblickande uttalanden safe harbor och gjorde det svårare att stämma bolag — motvinden mot granskningen blev strukturell",
+            "Förbjöd pro forma-redovisning helt",
+            "Nationelliserade revisionsbyråerna"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med granskningsviljan när det blir lättare att lova och svårare att stämma?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Optionerna — tryckpressen som tryckte aktier",
+      "intro": "Eran mest eleganta finansiella innovation var inte en internetstartups affärsmodell utan ett kompensationssystem: aktieoptioner som betalade en hel era utan att bokföras som kostnad — och som spädde ägarna medan de gjorde det. Kapitlet är V19:s masterclass: emission-risk som karriärsystem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken först. En aktieoption är rätten att köpa bolagets aktie till ett fast pris — ofta dagens kurs. Enligt dåvarande amerikansk praxis (APB 25, intrinsic value-metoden) kostade en option emitterad »at the money» noll kronor i resultaträkningen: kostnaden fanns, men den syns inte — förrän senare, som utspädning. FASB, den amerikanska redovisningsnämnden, försökte 1993-94 kräva att optioner periodiserades som den kostnad de är. Reaktionen är en av redovisningshistoriens mest studerade kapitulationer: teknikbranschen mobiliserade, senator Joseph Lieberman lade fram lagförslag, och senaten röstade i maj 1994 med 88 mot 9 för en icke-bindande resolution som uppmanade FASB att skrota kravet. FASB gav vika — FAS 123 (1995) krävde bara upplysning, inte kostnad. Warren Buffetts eviga fråga i Berkshire-breven sammanfattar fältet: om optioner inte är en kompensationskostnad, vad är de då? Och om kompensation inte är en kostnad, vad är den? Arthur Levitt kallade senare i sina memoarer sitt eget eftergivande för sitt största misstag — bekännelsen citeras öppet i kursen som erans kanske ärligaste mening."
+        },
+        {
+          "type": "text",
+          "content": "Nu Lowensteins vändning, bokens kärnpunkt om optionerna. Optionerna såldes som alignment — chefen och aktieägaren samma båt. Men vilken båt? Optioner värdesätter volatilitet, inte värde: de betalar explosionsartade uppgångar och struntar i nedgångar (som ju kunde repriseras — nedprisning av strike efter fall blev en branschregel: heads I win). En optionär är inte en ägare utan en innehavare av en tvångsoption på kursens topp. Konsekvenserna följde logiskt: chefer vars förmögenheter var optioner prioriterade allt som höjde kursen i deras löptid — kvartalsresultat (kapitel 4), berättelser (kapitel 6-7), förvärv (den goda will-våg som kapitel 11 visar) — och insiderförsäljning vid toppen som tidsattes av löptiderna. Den som verkligen var i samma båt som ägarna — långsiktigt, på värde — betalades inte alls så bra."
+        },
+        {
+          "type": "text",
+          "content": "Utspädningen är V19:s aritmetik. När optioner löses in emitterar bolaget aktier — aktieantalet växer. Cisco, erans flaggskepp bland teknikbolagen, nästan fördubblade sitt aktieantal på fem år i slutet av 1990-talet; optionsbehovet (overhang) på tiotals procent av aktieantalet blev normalt i teknikkonglomerat. För den gamle ägaren innebar det att vinst per aktie växte långsammare än totala vinster, och att hans ägarandel mjukt överfördes till dem som fick optionerna — skatt utan räkning, dold i mellantiden eftersom kostnaden inte bokfördes. Bubbel-vakten formuleras här i ren form: en marknad där företagssektorn är nettoutgivare av aktier — genom optionsutövande, nyemissionsvågor och insidersälj — finansierar sin eufori med sina kunders pengar. V19 frågar just detta: hur mycket kapital bränner bolaget, och vem emitterar? I mars 2000 var svaret: alla, allt, hela vägen upp."
+        },
+        {
+          "type": "insikt",
+          "content": "»Alignment» är inte en relation utan en fråga: alignerad med vad — värde eller kursens volatilitet under min löptid? Optioner alignerar med det senare. Och varje kostnad som inte bokförs dyker upp i stället som utspädning: V19 är där redovisningens samvete — fråga alltid hur många procent aktieantalet växt de senaste fem åren, och varför."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Optionernas decennium — mekanik och konsekvenser\",\"rader\":[[\"Element\",\"Innehåll\",\"AKM1-länk\"],[\"APB 25\",\"optioner till marknadskurs = noll redovisad kostnad\",\"osynlig kostnad, synlig senare som utspädning\"],[\"Senaten 1994\",\"88-9 för att stoppa FASB:s periodiseringskrav; FAS 123 blev endast upplysning\",\"politiken formade bokföringen\"],[\"Repricing\",\"nedprisning av strike efter fall — heads I win\",\"belöning av misslyckande\"],[\"Insiderförsäljning\",\"chefer sålde vid löptidsutövande i toppen\",\"V19-signal: insidersälj på rekordmultiplar\"],[\"Utspädning i praktiken\",\"Cisco fördubblade nästan aktieantalet på fem år; overhang tiotals procent\",\"V19: emissionsvolym som bubbel-mätare\"],[\"Slutet\",\"FAS 123(R) 2004-05: optioner periodiserades till slut\",\"redovisade teknikekonomier sjönk mätbart\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör V19-utspädningstestet på två bolag i ditt universum: hämta aktieantalet för fem år sedan och idag. Räkna ut den årliga tillväxten i aktieantal. Om den överstiger vinsttillväxten har din vinst per aktie sjunkit trots att bolaget »växer» — och om tillväxten drivs av optionsutövande har du sett erans mekanism på egen hand. Notera också om bolaget någonsin repriceat sina optioner; det är en kulturdiagnos."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför bokfördes aktieoptioner inte som kostnad under 1990-talet?",
+          "alternativ": [
+            "Därför att de var olagliga",
+            "APB 25:s intrinsic value-metod gav optioner emitterade till marknadskurs noll redovisad kostnad — och senatens resolution 88-9 stoppade FASB:s försök att ändra det",
+            "Därför att optioner inte har något värde",
+            "Därför att SEC förbjöd periodisering"
+          ],
+          "ratt": 1,
+          "tips": "Metoden mätte invärde vid löftesdagen — vad är invärdet på en option att köpa till dagens kurs?"
+        },
+        {
+          "q": "Vad är Lowensteins invändning mot att optioner skulle skapa alignment?",
+          "alternativ": [
+            "Att optioner alignerar med kursens volatilitet under löptiden — inte med långsiktigt värde; repricing bröt den asymmetrin helt",
+            "Att optioner alltid alignerar perfekt med ägarna",
+            "Att optioner bara användes i banker",
+            "Att alignment aldrig är ett problem"
+          ],
+          "ratt": 0,
+          "tips": "Vad betalar en option — värde eller rörelse? Och vad händer med incitamentet när strike repriceas efter fall?"
+        },
+        {
+          "q": "Hur visar sig den obokförda optionskostnaden till slut?",
+          "alternativ": [
+            "Som högre utdelning",
+            "Som utspädning — aktieantalet växer när optioner löses in, som hos Cisco som nästan fördubblade aktieantalet på fem år",
+            "Som lägre skatt",
+            "Som ökad bokförd kostnad direkt vid emissionen"
+          ],
+          "ratt": 1,
+          "tips": "Kostnaden försvann inte — den bytte adress. Vem betalade den?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Silikonvalley — att betala löner med aktier",
+      "intro": "Dot-com-bolagen applicerade samma innovation på sina egna löner: varför betala kontant när aktierna var gratis att trycka? Kapitlet följer get-big-fast-erans affärsmodell — och dess AKM1-profil, som var skrämmande läsbar redan då: massiv V01-tillväxt, negativa V07-V08, ingen V12 och en V19 som var hela affärsmodellen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Affärsmodellen hette get big fast: grabba kategorierna innan någon annan gjorde det, för vinnaren tar allt — och eftersom vinnaren tar allt är varje dollar i marknadsföring en investering. Pets.com blev ikonen: knappt sex miljoner dollar i omsättning 1999, över sextio miljoner i förlust, tolv miljoner spenderade på reklam — och en nyemission i februari 2000 som hämtade cirka 82 miljoner dollar; nio månader senare var bolaget i likvidation. Webvan: bygg futuristiska distributionscenter, samlade in omkring 800 miljoner dollar i kapital, konkurs i juli 2001. Logiken var kollektiv och inre samanhängande — om nätverkseffekter (V15) verkligen gällde i detaljhandeln var bränna pengar för att vinna kategorin rationellt — men den byggde på ett antagande som aldrig testats: att den som växte snabbast också behöll kunderna när subventionerna tog slut. Fri frakt och under självkostnad är inte en moat; det är en voucherutdelning (V14-V15 kan inte byggas på negativa bruttomarginaler)."
+        },
+        {
+          "type": "text",
+          "content": "Värderingslagret: eftersom vinster saknades blev intäkten det enda måttet — P/S (V04) på drömintäkter. Cisco handlades med P/S kring trettio; många nätbolag betydligt högre; Nasdaq-100:s rapporterade P/E passerade hundra våren 2000. Barron's publicerade den 20 mars 2000 — tio dagar efter Nasdaq-topp — omslagsartikeln Burning Up: en genomgång som visade att flera dussin av de granskade internetbolagen skulle bränna slut sin kassa inom ett år. Det är V19:s renaste formulering i media: kapitalförbränning som dödsklocka, räknad publikt, i toppen. Kursens fråga till dig: behöver man vänta på Barron's? Nej — kassan, bränntakten och refinansieringsbehovet stod i varje prospekt. Bubbel-vakten kräver ingen prognos, bara en vägran: räkna månadsförbränningen och fråga vem som köper nästa emissionsrunda."
+        },
+        {
+          "type": "text",
+          "content": "Aktien som valuta hade en andra, mindre omtalad sida: schemalagt utbud. Insidare och riskkapitalister var låsta (lockup) i 180 dagar efter nyemission — vilket innebar att en förutsägbar våg av försäljning var tidsatt att slå mot marknaden några månader efter varje IPO. Forskningen som Ofek och Richardson senare publicerade (Journal of Finance, 2003) visade att just låsningarnas utlöpande hängde samman med att internetaktierna vände: när pappersförmögenheter äntligen kunde förvandlas till kontanter gjordes det — i skala. Det är V19:s fulla format i den här eran: bolagen betalade löner och riskkapital med aktier; när realiseringen öppnade strömmade utbudet; och den andra sidan av varje sådan transaktion var 401(k)-kulturens automatiska köpare (kapitel 2). Amazon visar spegelbilden: i februari 2000 emitterade bolaget konvertibler för närmare 700 miljoner dollar — veckor innan fönstret stängdes. Överlevnadsvariabeln var inte berättelsen utan finansieringen (V11 i dess bredaste bemärkelse)."
+        },
+        {
+          "type": "insikt",
+          "content": "Dot-com-AKM1 i en mening: V01 maxad, V07-V08 negativa, V12 noll, V19 hela modellen — och V04-V06 därför meningslösa, för det fanns inget att multiplicera priset med. När multiplar ersätts av kategoriberättelser är det inte värdering som pågår utan allokering av tro. Räkna istället: månadsförbränning, kassa, nästa refinansieringsdatum — de tre siffrorna överlevde alla berättelser."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre bolag och deras AKM1-öde\",\"rader\":[[\"Bolag\",\"Vad som hände\",\"AKM1-läsning\"],[\"Pets.com\",\"IPO februari 2000 (cirka 82 miljoner USD); likvidation november 2000\",\"V01 utan V07; V19 som modell — brände 60+ miljoner på 6 i omsättning\"],[\"Webvan\",\"cirka 800 miljoner USD inhämtat; konkurs juli 2001\",\"kapitaltung infrastruktur före efterfrågan — V11/V19 i toppform\"],[\"Amazon\",\"konvertibler februari 2000 — kapital säkrat innan fönstret stängdes\",\"överlevnad via finansiering; V19 väl hanterad av ledningen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en Burning Up-övning på dagens tillväxtsegment: välj fem bolag med hög V01 men negativ V08. Räkna ut månadsförbränning (kassaflöde från verksamheten delat med tolv, med negativt tecken) och jämför med kassan. Hur många månader lever de utan nytt kapital? Notera datumet för nästa stora låsning/utspädnings-händelse i kalendern. Du har nu återskapat Barron's analysmetod — publicerad i toppen, användbar i varje topp."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Pets.com enligt kursen?",
+          "alternativ": [
+            "Det köptes av Amazon till en premie",
+            "IPO i februari 2000 som hämtade cirka 82 miljoner dollar — och likvidation nio månader senare, med knappt sex miljoner i omsättning och över sextio i förlust året innan",
+            "Det blev lönsamt 2001",
+            "Det förbjöds av SEC"
+          ],
+          "ratt": 1,
+          "tips": "Siffrorna är affärsmodellen: sex i omsättning, sextio i förlust, tolv i reklam."
+        },
+        {
+          "q": "Vad visade Barron's omslagsartikel Burning Up den 20 mars 2000?",
+          "alternativ": [
+            "Att internetbolagens vinster var undervärderade",
+            "Att flera dussin av de granskade internetbolagen skulle bränna slut kassan inom ett år — V19-kapitalförbränning som offentlig dödsklocka",
+            "Att Nasdaq skulle stiga i tio år till",
+            "Att optioner borde bokföras"
+          ],
+          "ratt": 1,
+          "tips": "Titeln är metoden: bränntakt kontra kassa — publicerad tio dagar efter toppen."
+        },
+        {
+          "q": "Vilken roll spelade lockup-utlöpena enligt Ofek och Richardson?",
+          "alternativ": [
+            "Ingen — låsningarna saknar betydelse",
+            "De tidsatte ett förutsägbart utbud av aktier (insidare och riskkapitalister som kunde sälja) som hängde samman med att internetaktierna vände",
+            "De tvingade insidarna att köpa mer",
+            "De gällde bara banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med priset när ett schemalagt utbud möter en tröttande marginal köpare?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Analytikerna — hypen klädd som forskning",
+      "intro": "Säljsidans analytiker blev erans mest synliga röster — och dess mest dokumenterade konflikt. Henry Blodget på Merrill Lynch, Jack Grubman på Salomon Smith Barney, Mary Meeker på Morgan Stanley: stjärnorna som gjorde rekommendationer till marknadsföring. Kapitlet bygger på mejlen och utredningarna — citerat öppet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konflikten var strukturell, inte personlig — Lowensteins poäng, och kursens. Research-kostnaden baras av investment banking-avdelningen; analytikern som var negativ saboterade egen intäktsbas; och inflödet av banking-affärer under IPO-vågen (över 800 nyemissioner 1999-2000 som tillsammans hämtade över hundra miljarder dollar, med genomsnittlig första-dagsuppgång på omkring 71 procent 1999 enligt Jay Ritters IPO-data) gjorde varje negativ rekommendation till ett budgetbeslut. Resultatet var måttligt: andelen köprekommendationer dominerade totalt — säljrekommendationer utgjorde under en procent av alla ratingar vid sekelskiftet. Blodgets interna mejl är dokumenterade i utredningarna: om ett bolag han offentligt rekommenderade skrev han internt att det var »a piece of junk»; om ett annat (InfoSpace) skrev han förkortningen POS — i offentligheten bar de köp. Grubman höll WorldCom som köp medan aktien föll över nittio procent, och uppgraderade AT&T i november 1999 samtidigt som banken jagade AT&T Wireless-affären — sambandet bekräftades i utredningarna som blev grund för förlikningarna. Mary Meeker, »näts drottning», skyddades aldrig juridiskt men blev symbolen för en era där research var distribution."
+        },
+        {
+          "type": "text",
+          "content": "IPO-allokeringen var konfliktens andra rum. Spinning: heta nyemissioner allokerades till chefer på bolag som kunde styra banking-affärer till banken — Frank Quattrone på CSFB blev namnet; Senate-utredningarna dokumenterade också att Salomon Smith Barney gav WorldComs Bernie Ebbers allokeringar i över tjugo heta nyemissioner, samtidigt som banken tjänade miljarder på WorldCom-affärer. Laddning: kunder som ville ha allokering kommitterades till att köpa i efterhandshandeln — det som gjorde första-dags-poppens 71 procent möjlig. Effekten för dig som AKM1-analytiker: den information du trodde var oberoende — rekommendationer, prismål, konsensus — var del av en distributionskedja. Det är inte en anklagelse om dagens analytiker; det är en permanent fråga till varje källa: vem betalar, och för vad?"
+        },
+        {
+          "type": "text",
+          "content": "Räkenskapen kom — och den är kursens första exempel på att systemet faktiskt svarade (kapitel 13 fullföljer). New Yorks justitieminister Eliot Spitzer använde delstatens Martin Act och tvingade fram Merrill-settlementen i maj 2002 (100 miljoner dollar) på mejlen; den globala förlikningen följde den 28 april 2003: tio banker, sammanlagt cirka 1,4 miljarder dollar, krav på separation mellan research och banking, förbud mot spinning, och finansiering av oberoende research. Blodget förbjöds för alltid från branschen och fick böter på fyra miljoner dollar; Grubman femton miljoner och livstids avstängning. Quattrone dömdes 2004 för hindrande av rättvisan (mejlet uppmanade personalen att »städa bland filerna» i december 2000, i samband med utredningar av IPO-praxis) — domen ogillades senare, men karriären var slut. AKM1-slutsatsen är osentimental: information är en tillgångsklass med egen agendor — din analys bör alltid bygga på primärmaterial (årsredovisningar, kassaflöden, prospekt), med analytiker som hypoteser att pröva, aldrig som belägg."
+        },
+        {
+          "type": "insikt",
+          "content": "Behandla varje extern rekommendation som en annons med byline: fråga vem som betalar för att den finns, och i vilken riktning betalningen flyter. AKM1 bygger på primärdata — börsens berättelse (V13-V18) ska du kunna motivera utan att citera en enda analytiker. Konsensus är en sentimentvariabel (V18-karaktär), aldrig ett fundament."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre analytiker och deras konflikt — dokumenterat\",\"rader\":[[\"Namn\",\"Bolag\",\"Konflikten\",\"Räkenskapen\"],[\"Henry Blodget\",\"Merrill Lynch\",\"internt »piece of junk»/POS om bolag han offentligt rekommenderade\",\"4 miljoner USD i böter; livstids avstängning 2003\"],[\"Jack Grubman\",\"Salomon Smith Barney\",\"höll WorldCom som köp genom fallet på över 90 procent; AT&T-uppgradering samtidig med bankens jakt på AT&T Wireless\",\"15 miljoner USD; livstids avstängning 2003\"],[\"Mary Meeker\",\"Morgan Stanley\",\"nätdrottningen — research som distribution av banking-flöden\",\"aldrig åtalad; symbolen för eran\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en källkritisk granskning av ditt eget informationsflöde: lista de fem källor som senast påverkade en investeringsidé. För varje: vem äger källan, vad säljer den, och betalar du eller säljer någon annan för att nå dig? Omarkera varje källa som antingen betald av dig, betald av bolaget eller betald av flödet. Om majoriteten ligger i de två senare kategorierna har du byggt din analys på 1999 års arkitektur — börja om med årsredovisningen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var säljrekommendationer under en procent av alla ratingar vid sekelskiftet?",
+          "alternativ": [
+            "Därför att alla bolag var köpvärda",
+            "Därför att research finansierades av investment banking — en negativ rekommendation saboterade bankens egen intäktsbas",
+            "Därför att sälj var förbjudet",
+            "Därför att kunderna inte ville ha analys"
+          ],
+          "ratt": 1,
+          "tips": "Följ pengarna: vilken avdelning bar kostnaden för research?"
+        },
+        {
+          "q": "Vad var IPO-spinning enligt utredningarna?",
+          "alternativ": [
+            "En teknisk rotationsstrategi för fonder",
+            "Allokering av heta nyemissioner till chefer på bolag som kunde styra banking-affärer till banken — exempelvis över tjugo allocationer till WorldComs Ebbers",
+            "En metod att beräkna låsningar",
+            "Centralbankens köp av nyemissioner"
+          ],
+          "ratt": 1,
+          "tips": "Vem fick tillgång till 71-procents-poppens vinst — och vad förväntades de ge tillbaka?"
+        },
+        {
+          "q": "Vad innehöll den globala förlikningen i april 2003?",
+          "alternativ": [
+            "Ingenting — den sköts upp",
+            "Tio banker, cirka 1,4 miljarder dollar, separation av research och banking, förbud mot spinning — och Blodget och Grubman avstängda för livet",
+            "En sänkning av marginalkraven",
+            "Krav på att optioner inte skulle bokföras"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg både pengarna, strukturkraven och personerna."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Revisorerna — granskningens pris (Arthur Andersen)",
+      "intro": "Revisorns roll är att vara den i rummet som inte behöver tro — och betalas för att inte behöva tro. När Arthur Andersen granskade Enron för 25 miljoner dollar och konsultade för 27, fanns ingen sådan person i rummet. Kapitlet följer världens största revisionsbyrå från grundandet 1913 till domen 2002 — och det som var kvar 2005.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strukturen före fallet: revisionen var en hedersbransch med strukturellt sjunkande marginaler, medan konsultsidan växte. Andersens konsultarm — sedermera Accenture efter en bitter separation — visade vägen; på andra byråer blev granskningen av ett företag en förposter för mångdubbelt större system- och strategiuppdrag. Hos Enron betalade bolaget Andersen cirka 25 miljoner dollar i revisionsarvode och omkring 27 miljoner i övriga tjänster år 2000 — den siffran, citerad i Senatsmaterialet, är kapitlets hela tes i MIN form: granskaren som också säljer har en intäktsbas som upphör om granskningen blir obekväm. Arthur Levitt försökte 2000 förbjuda kombinationen; Big Five mobiliserade kongressen; regeln som kom blev försvagad. Lowensteles notis är torr: när revisorns omdöme väl behövdes — i Enrons strukturer — fanns ingen ekonomisk grund kvar att stå på."
+        },
+        {
+          "type": "text",
+          "content": "Enron-mekaniken i tre drag, som kurserna Financial Shenanigans och Creative Cash Flow Reporting går igenom på djupet. Första: mark-to-market-redovisning på långfristiga energikontrakt (tillstånd given av SEC på tidigt nittotal) gjorde framtida antaganden till dagens vinster — uppskattning blev vinst, och uppskattning kunde justeras. Andra: special purpose entities — LJM-partnerskapen och Raptor-strukturerna, konstruerade med finanschefen Andrew Fastow som delägare, som tog tillbaka förlorande tillgångar utanför balansräkningen så att resultaträkningen förblev slät (falsk V12 igen — kapitel 4). Tredje: revisionsrådets dubbla lojalitet. När det brann: dokumentförstörelse på Andersens kontor i Houston från den 23 oktober 2001 (dagen efter att SEC-utredning blivit känd) till början av november — förstörelsen dokumenterades i mejl och lade grund för domen: den 15 juni 2002 dömdes Andersen för hindrande av rättvisan. En byrå med cirka 85 000 anställda världen över upphörde i praktiken som enhet. Högsta domstolen ogillade domen enhälligt 2005 — rättslig rehabilitering som kom för sent för allt utom principen: processen själv är straffet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen är fundamental och ödmjuk: varje variabel i modellen — V04 till V12, V19, V20 — är en läsning av dokument som någon annan har sammanställt. Revisionen är modellens substrat. När substratet är förfalskat är dina tjugo poäng en fiktion med decimaler. Praktiska konsekvenser för din analys: lägg vikt vid vem som reviderar (marknadens återstående stora fyra har egna strukturer, men koncentrationen har sin egen risk); läs noterna före resultaträkningen (SPE:s, övergångsposter, övergångsvillkor); och betrakta »granskad» som en position att granska snarare än ett bevis. I en era är revisorns story en del av bolagets story; 2001 lärde marknaden att bokföra det."
+        },
+        {
+          "type": "insikt",
+          "content": "Granskaren som också säljer är en försäljare som också granskar — betalningsriktningen avgör vad som händer när granskningen blir obekväm. 25 miljoner i arvode och 27 i konsult var inte en anknytning utan en struktur. Ditt AKM1 börjar därför inte med V04 utan med fotnoterna och namnet på revisorn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Arthur Andersen — uppgång, konflikt, fall\",\"rader\":[[\"År\",\"Händelse\",\"Notering\"],[\"1913\",\"Arthur Andersen grundar byrån\",\"»Think straight, talk straight» — hederskulturen\"],[\"1989-2000\",\"Konsultarmen växer; separationen som blev Accenture\",\"Revisionsmarginaler pressades, konsult exploderade\"],[\"2000\",\"Enron: cirka 25 MUSD arvode + 27 MUSD övrigt\",\"Granskning och försäljning i samma hand — Levitts rule förgäves\"],[\"23 oktober - november 2001\",\"Dokumentförstörelse i Houston\",\"Dagen efter att SEC-utredning blivit känd\"],[\"15 juni 2002\",\"Dömdd för hindrande av rättvisan\",\"Cirka 85 000 anställda; byrån upphör i praktiken\"],[\"2005\",\"Högsta domstolen ogillar domen enhälligt\",\"Rehabilitering efter begravningen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en revisors-granskning på ett av dina innehav: vem reviderar, hur länge, vad betalar bolaget i arvode och — om det går att hitta — i övriga tjänster till samma byrå? Läs sedan de tio första fotnoterna i senaste årsredovisning och markera varje post som kräver uppskattning (verkligt värde, övergångsintäkter, avsättningar). Räkna andel uppskattningsberoende poster — det är din känslighet för falska V12:s och formgivna V08:s."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnproblemet i Andersens Enron-relation?",
+          "alternativ": [
+            "Att byrån var för liten för uppdraget",
+            "Att granskaren också säljer — cirka 25 miljoner i arvode och 27 i övriga tjänster gjorde obekväm granskning ekonomiskt omöjlig",
+            "Att Enron inte behövde revision",
+            "Att byrån saknade utbildad personal"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med granskarens omdöme när granskningen hotar en större intäktsström?"
+        },
+        {
+          "q": "Vad dömdes Andersen för i juni 2002?",
+          "alternativ": [
+            "Insiderhandel",
+            "Hindrande av rättvisan — dokumentförstörelse som inleddes dagen efter att SEC-utredning blivit känd",
+            "Skattebrott",
+            "Marknadsmanipulation"
+          ],
+          "ratt": 1,
+          "tips": "Brottet gällde inte revisionen i sig utan vad som hände med papperen efteråt."
+        },
+        {
+          "q": "Vad är kursens AKM1-slutsats av revisorskapitlet?",
+          "alternativ": [
+            "Att AKM1 fungerar utan revisorer",
+            "Att varje AKM1-variabel är en läsning av dokument någon annan sammanställt — om bokslutet är teater blir alla tjugo variablerna astrologi; läs fotnoterna och revisorsrelationen först",
+            "Att bara kvantitativa strategier behöver bokslut",
+            "Att revision är oväsentlig om berättelsen är stark"
+          ],
+          "ratt": 1,
+          "tips": "Vad står dina data på — och vem har sammanställt underlaget?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Styrelserna och bankerna — väktare som åt av samma fat",
+      "intro": "Styrelserna skulle vara ägarnas sista försvarslinje; bankerna kapitalets skeptiker. Lowenstein visar hur båda kom att betalas — i optioner, i allokeringar, i avgifter — av samma flöde som de skulle granska. Kapitlet samlar väktarna i en enda tabell av intressen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Styrelserna. Enrons styrelse — granskad i den så kallade Powers-rapporten (februari 2002) — avsade sig etiska koder två gånger för att tillåta finanschefen Fastows dubbla roller i LJM-partnerskapen; ledamöterna var kompenserade delvis i aktier och optioner; revisionsutskottet som skulle granska strukturerna var samma människor som godkänt dem. WorldCom var råare: styrelsen godkände personliga lån till VD Bernard Ebbers som växte till över 400 miljoner dollar — bolaget blev i praktiken sin egen chefs långivare, med aktien som säkerhet, medan banken Salomon Smith Barney dessutom gav Ebbers allokeringar i över tjugo heta nyemissioner (kapitel 7). När kurserna föll blev lånen marginal-callade och Ebbers tvingades sälja — samma mekanik som 1929 års kontohavare, nu på plats i en styrelsekorridor. Att Sarbanes-Oxley senare förbjöd de flesta personliga lån till chefer (paragraf 402) är bokens ryggrad i en enda lagändring: vad som var praxis blev brottsplats."
+        },
+        {
+          "type": "text",
+          "content": "Bankerna. Utanför Enron byggde Citigroup och JPMorgan (med flera) strukturer som gjorde lån till utseende som handel: så kallade prepays, där banken betalade framåt för olja eller gas som aldrig skulle levereras — i praktiken finansiering som höll skulden utanför Enrons balansräkning; Senatens undersökning uppskattade att dessa strukturer döljde skulder i miljardklassen. Bankerna intog alltså tre roller samtidigt i samma kunderelation: långivare, rådgivare och — via analytiker (kapitel 7) — bedömare. Fee-intäkterna var i varje roll beroende av att relationen fortsatte. Lowenstein drar med avsikt parallellen till Galbraiths dom 1955 — ansvarskänslan inom finanssamhället för samhället i stort är nästan noll — men dokumenterar den för sin egen era: varje enskilt beslut var rationellt och försvarbart i protokoll; summan av dem var ett system utan enda friktion."
+        },
+        {
+          "type": "text",
+          "content": "Den systemiska läsningen, som är kapitlets och bokens: kontroll fungerar bara om kontrollören har en intäktsbas som är oberoende av det som kontrolleras. Det gäller styrelser (betalade i optioner kan inte styra mot kursen), revisorer (kapitel 8), analytiker (kapitel 7), banker (avgifter), politiker (donationer från båda partierna och PSLRA 1995 som safe harbor) — och medierna, som levererade eras berättelser med samma entusiasm eftersom läsarna var long. I AK1A:s språk är detta en fråga om V17-V18:s trovärdighet: en katalysator som berättas av någon som tjänar på den är inte en katalysator utan en kampanj. Din analys ska därför alltid innehålla en väktar-karta: vem kontrollerar, vem betalar kontrollen, och vad händer med betalningen om kontrollen säger nej?"
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroll utan oberoende intäktsbas är teater med protokoll. Enrons styrelse avsade sig sin egen etiska kod — två gånger — och WorldComs styrelse lånade ut över 400 miljoner till sin egen VD. Frågan till varje bolag är alltid: kan styrelsen säga nej utan att förlora något? Om svaret är nej finns ingen styrelse, bara en dekor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Väktarna 1999 — intäkt, beroende, konsekvens\",\"rader\":[[\"Väktare\",\"Betalades av\",\"Vad som hände\",\"Korrekt fråga idag\"],[\"Styrelse\",\"optioner och aktier\",\"Enron: etiska koden avsagd två gånger; WorldCom: 400+ MUSD lån till VD\",\"kan styrelsen säga nej utan förlust?\"],[\"Revisor\",\"arvode + konsult\",\"Andersen: 25 + 27 MUSD; dokumentförstörelse\",\"hur stor är övrig intjäning hos samma byrå?\"],[\"Analytiker\",\"banking-flöden\",\"under 1 procent sälj; Blodget- och Grubman-mejl\",\"vem finansierar källan?\"],[\"Bank\",\"avgifter i tre roller\",\"prepays som dolde skuld; IPO-allokeringar till kundernas chefer\",\"är långivaren också rådgivare och bedömare?\"],[\"Politik\",\"donationer + secure-harbor-lagstiftning\",\"PSLRA 1995; senaten 88-9 mot optionskostnad\",\"vem skrev regeln och vem betalar för den?\"],[\"Media\",\"long läsare\",\"berättelser utan motpart\",\"säljer källan njutning eller analys?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita en väktar-karta för ett bolag du äger: fyra rader — styrelse, revisor, största analytiker/bank, största ägare. Kolumnen intäktskälla per rad. Markera varje rad där intäkten ökar av att bolagets kurs stiger. Om fyra av fyra är markerade äger du ett bolag vars hela kontrollsystem är long dess eget pris — det är inte automatiskt fel, men det är 1999:s struktur, och du vet nu vad den producerar."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Powers-rapporten om Enrons styrelse?",
+          "alternativ": [
+            "Att styrelsen var helt omedveten om verksamheten",
+            "Att styrelsen avsade sig sina egna etiska koder två gånger för att tillåta Fastows dubbla roller i LJM-partnerskapen — med kompensation delvis i aktier",
+            "Att styrelsen sålde allt före kraschen",
+            "Att styrelsen bestod av banker"
+          ],
+          "ratt": 1,
+          "tips": "Rapporten granskade revisionsutskottet och etikkodernas undanröjande."
+        },
+        {
+          "q": "Vad var prepays enligt Senatens undersökningar?",
+          "alternativ": [
+            "Förskottsbetalningar från kunder som ökade intäkterna lagligt",
+            "Strukturer där banker lånade ut till Enron förklätt som handel — betalning framåt för olja och gas som aldrig skulle levereras, vilket höll skulden utanför balansräkningen",
+            "Centralbankens likviditet",
+            "En typ av aktieoption"
+          ],
+          "ratt": 1,
+          "tips": "Namnet kommer av prepayment — men vad var det som betalades i praktiken?"
+        },
+        {
+          "q": "Vilken regel i Sarbanes-Oxley svarar direkt på WorldCom-styrelsens lån till Ebbers?",
+          "alternativ": [
+            "Paragraf 404 om interna kontroller",
+            "Paragraf 402 — förbud mot de flesta personliga lån från bolaget till chefer",
+            "Paragraf 302 om certifiering",
+            "Ingen — lån förblev tillåtna"
+          ],
+          "ratt": 1,
+          "tips": "Vad var praxis 2000 blev brottsplats 2002 — vilken paragraf?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Toppen — mars 2000 och vändningen",
+      "intro": "Nasdaq Composite stängde på 5 048,62 den 10 mars 2000 — en fredag som alla andra. Cisco passerade inom kort Microsoft som världens mest värdefulla bolag, med börsvärde omkring 550 miljarder dollar. Ingen klocka ringde. Kapitlet går igenom vårens sex veckor — och mekanismerna som vände, utan att någon enda nyhet »orsakade» fallet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Toppens kronologi i miniatyr, som syskonkursen om 1929 beskrev för sin era: det fanns ingen katalysator — bara en marknad där marginalen av köpare tunnats och utbudet schemalagts. Den 20 mars 2000 publicerade Barron's Burning Up (kapitel 6) och samma dag meddelade MicroStrategy att tre års räkenskaper skulle omräknas — aktien, som toppat kring 333 dollar, föll med över nittio procent inom några månader. Den 3 april fälldes domstolsdomen i Microsoft-målet; Nasdaq föll 7,6 procent på dagen. Veckan den 10-14 april 2000 föll Nasdaq över 25 procent — värsta veckan i dess historia. I maj höjde Fed till 6,5 procent — tredje höjningen på året. Ingen av dessa händelser orsakade nedsläppet; de var grindar som ett redan rullande utbud passerade: lockup-utlöpanden, optionsutövande, insiderförsäljning (kapitel 5-6) — och på köparsidan en kultur som redan köpt allt den kunde (kapitel 2). Y2K-likviditeten drogs tillbaka i början av året; marginalskulden toppade på cirka 278 miljarder dollar; och indexprodukten QQQ noterade rekordtillflöden — allmänheten köpte toppen via automaten."
+        },
+        {
+          "type": "text",
+          "content": "Det som skiljde mars 2000 från oktober 1929 är lika viktigt som likheterna. Ingen vägg av margin calls tände kedjan — reglerad marginal, ingen call money-kultur av 1929:s slag; systemets banker stod utanför bubblan på ett sätt de inte gjorde 1929 (och inte skulle göra 2008 — minns syskonkursen The Big Short för den eran). Nedsläppet blev därför långsamt och ihållande istället för paniskt: en uttömning, inte en kollaps — trettio månader ner, minus 78 procent för Nasdaq, minus 49 för S&P 500. AKM1-lärdomen är omsättningen av syskonkursens tes: väderleken varierar — krasch, uttömning, kris — men mekanismen är alltid densamma: vem som är tvungen att sälja och vem som saknar kapital att köpa. Mars 2000:s svar: inte tvungna margin-säljare utan utmattade automatiska köpare, mötande schemalagt utbud. Dumb money-paradoxen fullbordad (minns Quantitative Value-kursen): den sista vägen av kapital kom in våren 2000 — QQQ:s rekord — och köpte det yttersta lagret av aktier från dem som tryckt dem."
+        },
+        {
+          "type": "text",
+          "content": "Toppens kännetecken, för att kunna identifiera nästa — inte för att tajma den (en varning utan datum, kapitel 3) utan för att vägra delta. Lowensteins dokumentära kännetecken för våren 2000: värderingsmått som ersatts av kategoriberättelser (P/E över hundra på Nasdaq-100; P/S på drömintäkter); emissionsvågen på rekord (över 800 IPOs på två år); utspädning som affärsmodell (kapitel 5); insiderförsäljning på rekordnivåer; marginalskuld på rekord; och en kulturell säkerhet där frågan vad som skulle få en att sluta köpa var ostraffad (syskonkursens kapitel 6 — Fishers platå har arvingar). Notera ordningen bland väktarna: alla dessa siffror var publika. Bubbel-vakten kräver inte information utan vägran — V04-V06-disciplinen att inte betala, V12 frågan om intäkterna är verkliga, V19 räkenskapen över vem som trycker aktier. Där svarar din analys — utan att behöva veta datumet."
+        },
+        {
+          "type": "insikt",
+          "content": "Mars 2000 drevs inte av en nyhet utan av en ekvation: schemalagt utbud (lockups, optioner, insidersälj) mötte en utmattad, automatisk efterfrågan som slutat fråga efter pris. Toppens diagnos är därför aldrig vad som hände den dagen — utan vad som redan fanns på båda sidor av orderboken. Din vägran (V04-V06, V12, V19) är den enda position som inte behöver datera den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Våren 2000 — sex veckor som vände\",\"rader\":[[\"Datum\",\"Händelse\",\"Notering\"],[\"10 mars\",\"Nasdaq 5 048,62\",\"En fredag som alla andra\"],[\"20 mars\",\"Barron's Burning Up; MicroStrategy omräknar tre år\",\"MSTR föll över 90 procent på månader; dödslistan publicerad\"],[\"25 mars (cirka)\",\"Cisco passerar Microsoft som världens mest värdefulla bolag\",\"Börsvärde omkring 550 miljarder USD; P/E långt över 100\"],[\"3 april\",\"Microsoft-dom fälld\",\"Nasdaq -7,6 procent på dagen\"],[\"10-14 april\",\"Nasdaq -25 procent på en vecka\",\"Värsta veckan i indexets historia\"],[\"16 maj\",\"Fed till 6,5 procent\",\"Tredje höjningen på året; marginalskulden på rekord cirka 278 miljarder USD\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen topp-checklista med sju publika siffror: (1) indexets P/E och P/S mot tioårsgenomsnitt, (2) IPO-vågens storlek, (3) emissionsvolym (bruttoutbud av aktier), (4) insiderköp/sälj-ratio, (5) aktieantalsvekst i de största bolagen, (6) margin-skuldens trend, (7) inflöden till sektor- och indexfonder. Sätt ett aktuellt värde på varje — datera dokumentet. Det är din V12+V19-bubbel-vakt, och kapitel 14 återkommer till den."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknade vändningen i mars-april 2000?",
+          "alternativ": [
+            "En enskild dramatisk nyhet fick marknaden att kollapsa på en dag",
+            "Ingen enskild katalysator — schemalagt utbud (lockups, optioner, insidersälj) mötte utmattad automatisk efterfrågan; Nasdaq föll 25 procent på en vecka i april",
+            "Centralbanken köpte aktier",
+            "Börsen stängdes i en månad"
+          ],
+          "ratt": 1,
+          "tips": "Jämför med 1929:s margin-mekanik: vilka var de tvungna respektive frivilliga på varje sida 2000?"
+        },
+        {
+          "q": "Vad hände med MicroStrategy i mars 2000?",
+          "alternativ": [
+            "Bolaget köpte Cisco",
+            "Det tvingades omräkna tre års räkenskaper — aktien föll över 90 procent inom några månader",
+            "Det emitterade nya optioner till alla anställda",
+            "Ingenting — bolaget var opåverkat"
+          ],
+          "ratt": 1,
+          "tips": "Intäktsredovisning på multiårskontrakt — samma teknik som kapitel 4 räknade upp."
+        },
+        {
+          "q": "Vilken var den avgörande skillnaden mot 1929 i hur nedsläppet utspelade sig?",
+          "alternativ": [
+            "2000 skedde nedsläppet som en lång uttömning utan 1929:s vägg av margin calls — bankerna stod utanför bubblan",
+            "2000 var snabbare och djupare än 1929",
+            "1929 saknade belåning",
+            "2000 skedde bara på bondemarknaden"
+          ],
+          "ratt": 0,
+          "tips": "Trettio månader ner, minus 78 procent — panik eller uttömning?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Nedsläppet — minus 78 procent på trettio månader",
+      "intro": "Från 5 048 i mars 2000 till 1 114 i oktober 2002: trettio månader av uttömning. Telekom förlorade omkring två biljoner dollar i börsvärde; JDS Uniphase gjorde historiens då största goodwillavskrivning; AOL Time Warner redovisade en årsförlust närmare nittioåtta miljarder dollar. Kapitlet räknar nedsläppet — och vad som skyddade den som skyddades.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förlustens geometri. Nasdaq: minus 78 procent; S&P 500: minus 49; Dow: minus 38 från 11 723 till 7 181 i september 2002 — och bottnen först den 9 oktober 2002 på 7 676 för S&P efter sommarens skandalchocker (kapitel 12). Lucent föll från omkring 84 dollar i december 1999 till 55 cent i oktober 2002; Nortel och Motorola följde; JDS Uniphase avskrev över femtio miljarder dollar i goodwill — då historiens största enskilda avskrivning; AOL Time Warner, som slagits samman i januari 2000 för 165 miljarder dollar, redovisade för 2002 en årsförlust närmare nittionio miljarder — då största årliga förlusten i amerikansk bolagshistoria. Telekomsektorn som helhet förlorade omkring två biljoner dollar i börsvärde. Redovisade vinster i S&P 500 halverades i praktiken av nedskrivningar. Återhämtningen: Nasdaq återtog 5 048 först i april 2015 — femton år; S&P återtog 1 527 2007, bara för att möta nästa kris."
+        },
+        {
+          "type": "text",
+          "content": "Loppet mellan händelser. Januari 2001: Fed:s överraskande sänkning (3 januari) och det sista stora rallyt — Nasdaq steg våren 2001 över 35 procent från lägstanivåer; mars-november 2001: recession; 11 september 2001: börsen stängd fyra dagar, sedan återhämtning; och parallellt det som till sist bröt förtroendet: Enrons kollaps december 2001 (kapitel 12), därnäst våren och sommaren 2002 — mellan mars och juli 2002 föll S&P kraftigt på skandalchockerna; veckan 15-19 juli 2002 föll Dow med över sju procent — värsta veckan sedan 1933. Mönstret är syskonkursens kapitel 9: björnmarknadens farligaste del är inte dramat utan den inledande återhämtning som lockar tillbaka kapitalet (januari-april 2001), följt av den sista tredjedelen som bryter förtroendet (sommaren 2002). Ingen björnmarknad utan en falsk vår."
+        },
+        {
+          "type": "text",
+          "content": "Vad skiljde de som klarade sig? Inte intelligens — struktur och disciplin. De som höll värderingsmått (V04-V06) förlorade mindre: billiga aktier föll mindre än dyra; värdefaktorn underpresterade bara under de sista euforiåren och revanscherade sig under nedsläppet (minns Quantitative Value-kursens kapitel 10 — Grahams enkla regler genom IT-bubblan). De som höll V12 frågan — är intäkterna verkliga och återkommande? — satt inte i dot-comer med drömintäkter. De som höll V19 — vem trycker aktier, vem bränner kassa? — undvek både utspädning och konkursrisken. Och de som höll balansräkningsdisciplin (V10-V11) — banker och bolag med låg belåning — överlevde refinansieringsfönstrets stängning. Slutsatsen är glasklar: bubbel-skydd är inte en prognos om mars 2000 — det är en portfölj som inte behöver ha rätt om datumet. Sju biljoner dollar omfördelades från dem som betalade berättelsen till dem som väntade på pris."
+        },
+        {
+          "type": "insikt",
+          "content": "Minus 78 procent betyder plus 355 för återhämtning och femton års väntan för Nasdaq — därför är överlevnad, inte avkastning, den dominerande variabeln i varje bubbel. De som skyddades skyddades inte av att de visste när — utan av att V04-V06, V12 och V19 gjorde deras portföljer ointressanta för berättelsen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nedsläppet i siffror — 2000 till 2002\",\"rader\":[[\"Mått\",\"Siffra\",\"Notering\"],[\"Nasdaq\",\"-78 procent\",\"5 048,62 till 1 114,11; åter på topp april 2015\"],[\"S&P 500\",\"-49 procent\",\"1 527,46 till 776,76; botten 9 oktober 2002\"],[\"Dow\",\"-38 procent\",\"11 722,98 till omkring 7 181 i september 2002\"],[\"Telekomsektorn\",\"omkring -2 biljoner USD i börsvärde\",\"Lucent 84 dollar till 55 cent\"],[\"JDS Uniphase\",\"över 50 miljarder USD i goodwillavskrivning\",\"Då historiens största\"],[\"AOL Time Warner 2002\",\"nära -98 miljarder USD årsresultat\",\"Sammanslagning januari 2000: 165 miljarder USD\"],[\"Juli 2002\",\"Dow -7 procent på en vecka\",\"Värsta veckan sedan 1933 — skandalernas sommar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på dina egna -78-scenarier: för ditt största innehav, vad är skillnaden i slutkapital mellan -49 och -78 procent från dagens nivå om återhämtningstiden är femton år? Räkna sedan samma ekvation för en portfölj som förlorat 25 procent (en värdeportfölj under samma period). Skillnaden mellan de två ekvationerna — det är priset på värderingsdisciplin, och det är värt att skriva på väggen."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur länge dröjde det innan Nasdaq återtog 5 048?",
+          "alternativ": [
+            "Tre år",
+            "Fem år",
+            "Femton år — först i april 2015",
+            "Aldrig"
+          ],
+          "ratt": 2,
+          "tips": "Bottnen kom oktober 2002; toppen återkom under nästa stor era — av ett helt annat slag."
+        },
+        {
+          "q": "Vad hände veckan 15-19 juli 2002?",
+          "alternativ": [
+            "Nasdaq återtog toppen",
+            "Dow föll över sju procent — värsta veckan sedan 1933, mitt i skandalernas sommar",
+            "Börsen stängdes permanent",
+            "Fed förbjöd optioner"
+          ],
+          "ratt": 1,
+          "tips": "Vilken sommar präglades av Enron, WorldCom och rädslan för fler?"
+        },
+        {
+          "q": "Vad skyddade investerare under nedsläppet enligt kursen?",
+          "alternativ": [
+            "Att de såg datumet för toppen i förväg",
+            "Struktur och disciplin: värderingsmått (V04-V06), verkliga intäkter (V12) och emission/kassa-disciplin (V19) — en portfölj som inte behöver ha rätt om tidpunkten",
+            "Att de enbart ägde teknikkonglomerat",
+            "Att de köpte på marginal"
+          ],
+          "ratt": 1,
+          "tips": "Vilka förlorade mindre — de som visste när eller de som aldrig betalade berättelsen?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Ruinerna — Enron, WorldCom och bezzlet växer fram",
+      "intro": "Galbraith myntade 1955 begreppet the bezzle — inventariet av oupptäckt förskingring som växer i goda tider och upptäcks i krascher. Åren 2001-2002 var bezzlets årsredovisning: Enron, WorldCom, Tyco, Adelphia, Global Crossing. Kapitlet räknar ruinerna och frågar varför de kom nu.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enrons höst, vecka för vecka — sekvensen kursen vill att du kan. Februari 2001: Skilling blir VD. 14 augusti: han avgår oväntat; Lay återkommer. 20 augusti: den interna varnaren Sharon Watkins, vice president för företagsutveckling, skrev i en memo till Lay om riskerna för »ett redovisningshoax». 16 oktober: tredje kvartalets förlust på över 600 miljoner dollar och en kapitalminskning på 1,2 miljarder. 22 oktober: SEC-utredning offentlig — och dokumentförstörelsen inleds på Andersen (kapitel 8). 8 november: omräkning av fem års resultat med sammanlagt drygt en halv miljard dollar lägre redovisade vinster. 28 november: Dynegy-köpet kollapsar, ratingen faller till skräp. 2 december 2001: konkurs — då USA:s största, med över 63 miljarder dollar i tillgångar. Aktien: från 90,56 dollar (augusti 2000) till 26 cent. Skilling dömdes 2006 till över 24 års fängelse (senare reducerat); Lay dömdes men dog innan straffet fastställdes; Fastow dömdes till sex år efter överenskommelse."
+        },
+        {
+          "type": "text",
+          "content": "WorldCom, sommaren 2002. Den 25 juni 2002 tillkännagav bolaget att 3,8 miljarder dollar i linjekostnader — avgifter till andra teleoperatörer — felaktigt kapitaliserats i stället för att kostnadsföras; summan växte i efterhand till omkring 11 miljarder. Upptäckten kom inifrån: Cynthia Coopers interna revision, som gick förbi CFO Scott Sullivan. Den 21 juli 2002 ansökte WorldCom om konkurs, med över 100 miljarder dollar i tillgångar, då den största i amerikansk historia. Bernie Ebbers, som fått över 400 miljoner i bolagslån (kapitel 9), dömdes mars 2005 till 25 års fängelse; Sullivan till fem. Runt dem: Dennis Kozlowski (Tyco), Rigas-familjen (Adelphia), Samuel Waksal (ImClone) — och Martha Stewart för sitt ImClone-sälj. Bezzlet hade årsredovisning. Galbraiths lag bekräftades bokstavligen: i goda tider växer det oupptäckta — för ingen gräver i en stigande marknad — och i kraschen upptäcks allt samtidigt, ty nu gräver alla."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av ruinerna: förfalskningarnas signatur var redan i siffrorna före avslöjandet — om man frågade rätt. Enron: resultaträkningens släthet (falsk V12) mot komplexa balansräkningsstrukturer och kassaflöde som aldrig motsvarade resultaten; intäktsbokning på mark-to-market-grund med långfristiga antaganden (V01-V02 som uppskattning). WorldCom: linjekostnader flyttade till investeringar — kapitaliserade kostnader uppblåste både resultat (V08) och tillgångar (ROA); det klassiska shenanigan som syskonkursen Creative Cash Flow Reporting kartlägger. Få av erans fall stod utan varningssignaler i primärdata — problemet var att varje väktare betalats för att inte titta (kapitel 7-9). Därav kursens dubbla arv: läs primärdata med accruals-lins (resultat mot kassaflöde, Quantitative Value-kursens fjärde F-score-kontroll) — och läs väktarna (V17-V18:s trovärdighet) lika noga som siffrorna."
+        },
+        {
+          "type": "insikt",
+          "content": "Bezzlets lag: bedrägerierna tillkommer i boomen men bokförs i kraschen — därför är sommarens upptäckter aldrig sommarens brott. För din del: den tid då granskning är som billigast (mitt i euforin) är exakt den tid då ingen betalar för den — inklusive du. Vägra rabatten: primärdata, accruals-lins och väktar-karta är billig försäkring när alla andra säger att försäkring är onödig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bezzlets årsredovisning 2001-2002 — de stora fallen\",\"rader\":[[\"Bolag\",\"Metod\",\"Upptäckt\",\"Dom\"],[\"Enron\",\"SPE:n (LJM, Raptor), mark-to-market, dold skuld\",\"Watkins-memo; SEC; omräkning november 2001; konkurs 2 december 2001\",\"Skilling 24+ år (reducerat); Fastow 6 år; Lay dömd, dog före straff\"],[\"WorldCom\",\"3,8 till omkring 11 miljarder USD linjekostnader kapitaliserade\",\"Intern revision (Cynthia Cooper), juni 2002\",\"Ebbers 25 år; Sullivan 5 år\"],[\"Tyco\",\"Kozlowskis personliga transaktioner via bolaget\",\"Skatteutredning\",\"Kozlowski långt fängelsestraff\"],[\"Adelphia\",\"Rigas-familjen lånade av bolaget öppet\",\"Konkurs 2002\",\"Fängelse för familjemedlemmar\"],[\"Arthur Andersen\",\"Dokumentförstörelse\",\"Egen invändning; dom juni 2002\",\"Byrån dog; domen ogillad 2005\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör accruals-linsen på två bolag i ditt universum: jämför nettoresultat med kassaflöde från verksamheten över tre år, och räkna tillväxten i nettoaktiva (balansräkningsväxlingen WorldCom använde). Om resultat växer medan kassaflödet står stilla — eller om tillgångarna sväller utan intäxtsväxt — har du en kandidat för närmare granskning. Skriv ned vad som skulle kunna förklara gapet hederligt; om du inte hittar någon förklaring har du en V19-flagga."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var WorldComs grundläggande redovisningsbedrägeri?",
+          "alternativ": [
+            "Att man bokförde utdelning som intäkt",
+            "Att linjekostnader — avgifter till andra operatörer — kapitaliserades som investeringar i stället för att kostnadsföras, först 3,8 miljarder, senare omkring 11 miljarder dollar",
+            "Att man dolde intäkter i utlandet",
+            "Att man aldrig gjorde en revision"
+          ],
+          "ratt": 1,
+          "tips": "Kostnad eller investering — var hamnade pengarna som skulle ha varit en utgift?"
+        },
+        {
+          "q": "Vad är bezzlet i Galbraiths mening — tillämpat på 2001-02?",
+          "alternativ": [
+            "Börsens samlade börsvärde",
+            "Inventariet av oupptäckt förskingring som växer i goda tider och upptäcks i kraschen — sommaren 2002 var dess årsredovisning",
+            "Marginalskuldens toppnivå",
+            "En typ av aktieoption"
+          ],
+          "ratt": 1,
+          "tips": "Brottens datum och upptäcktens datum är två olika serier — vilken av dem bokför juridiken?"
+        },
+        {
+          "q": "Hur upptäcktes WorldCom-fusket?",
+          "alternativ": [
+            "Av SEC:s rutinkontroll",
+            "Av den interna revisionen under Cynthia Cooper, som gick förbi CFO",
+            "Av en kortfond",
+            "Av analytiker på Merrill"
+          ],
+          "ratt": 1,
+          "tips": "Nätverket av väktare hade alla missat det — vem grävde faktiskt?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Svaret — Sarbanes-Oxley, Spitzer och det som verkligen ändrades",
+      "intro": "Systemet svarade — snabbare och hårdare än efter 1929. Sarbanes-Oxley undertecknades den 30 juli 2002 efter rösterna 423-3 i representanthuset och 99-0 i senaten; Spitzers förlikningar skrev om research-branschen; optionerna bokfördes till sist. Men Lowensteins epilog är skeptisk — och kursen med honom: vad fixades, och vad muterade bara vidare?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sarbanes-Oxley (30 juli 2002) — namngiven efter senator Sarbanes och representanthusledamoten Oxley, passerade nästan enhälligt i politisk panik. Innehållet, i de delar kursen vill att du kan: paragraf 302 och 906 — VD och CFO personligen certifierar rapporternas riktighet under straffrättsligt ansvar; paragraf 402 — förbud mot de flesta personliga lån till chefer (WorldCom-lektionen); paragraf 404 — extern granskning av interna kontroller, som skulle komma att kosta mest och debatteras hårdast; PCAOB — en statlig granskningsnämnd som ersatte revisorernas självreglering (Andersen-lektionen); plus krav på oberoende revisionsutskott och realtidsoffentliggörande av väsentliga förändringar. NYSE och NASD tillade börsregler om majoriteten oberoende styrelser. Effekten var mätbar: certifiering under personligt ansvar ändrade CFO-beteendet snabbare än något dokument sedan 1930-talet — att signera sitt namn under en siffra som kan visa sig vara falsk koncentrerar sinnet."
+        },
+        {
+          "type": "text",
+          "content": "Räfstens andra spår: åklagarna och redovisningen. Spitzers globala förlikning (28 april 2003; kapitel 7): tio banker, cirka 1,4 miljarder dollar, separation av research och banking, spinning-förbud. FASB fullbordade 2004-05 det senaten stoppat 1994: FAS 123(R) krävde att optioner periodiserades som kostnad — och redovisade vinster i teknikkonglomeraten sjönk mätbart när den dolda kostnaden blev synlig; en handfull bolag som Boeing hade redovisat optioner i åratal, Amazon började bland de första jättarna 2002. Hösten 2003 öppnade Spitzer fondskandalen — late trading och market timing till utvalda kunder, med Canary Capital som första namn — och fondbranschens förlikningar följde. Minnet av 1929-tiden är värt här: 1930-talets svar (Glass-Steagall, SEC, marginalregler) byggde institutioner som höll i generationer; 2000-talets svar var snabbare men smalare — det straffade de specifika felen och certifierade resten."
+        },
+        {
+          "type": "text",
+          "content": "Lowensteins epilog — och kursens — skepticiska läsning, citerad öppet: kulturen ändrar form snabbare än regelverken. SOX fixade 1990-talets fel: dokumentförstörelse, konsult-revision, personliga lån, osignerade rapporter. Det fixade inte mekanismen: incitament som betalar väktare med flödet. Efter 2002 muterade verktygen — belåningsdriven housing-bubbla med ratingbyråer som nya väktare med nya intäktskonflikter (2008; syskonkursen The Big Short), sedan SPAC-boomen 2020-21 med promotes och projections (»adjusted»-kulturens arvtagare), krypto-utgivning utan ens påstådd redovisning, och i mitten av 2020-talet AI-berättelser vars intäktskvalitet (V12) återigen är kursens fråga. Aktieoptionerna blev RSU:er och KPI-paket — kostnadsbokförda, men kortsiktigheten lever kvar där bonusar följer kvartal. Därför är kursens slutplädering inte juridisk utan analytisk: varje era trycker sina egna aktier i sin egen förpackning — och väktarnas intäktskälla är alltid den första variabeln att granska. Bubbel-vakten (V12+V19) är inte en lag som stiftats utan ett instrument du spelar själv, i varje era."
+        },
+        {
+          "type": "insikt",
+          "content": "Reformer straffar gårdagens brott; incitament uppfinnar morgondagens. SOX certifierade rapporter och förbjöd 1990-talets verktyg — men varje ny era får sina egna »optioner»: verktyg som betalar väl, bokförs dåligt och upptäcks sent. Din fråga som analytiker är därför tidslös: vad är det här decenniets motsvarighet till optionerna — betalningen som inte syns förrän den späder?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svaret 2002-2005 — vad som fixades och vad som muterade vidare\",\"rader\":[[\"Åtgärd\",\"Innehåll\",\"Fixade\",\"Muteringen\"],[\"Sarbanes-Oxley 30 juli 2002\",\"302/906-certifiering; 402 lånförbud; 404 kontroller; PCAOB\",\"osignerade rapporter; Ebbers-lån; revisorssjälvreglering\",\"kortsiktighet lever i KPI-bonusar\"],[\"Globala förlikningen 28 april 2003\",\"tio banker; 1,4 mdr USD; research-banking-separation; spinning-förbud\",\"Blodget/Grubman-erans research\",\"nya kanaler för berättelser (sociala medier, finfluencers)\"],[\"FAS 123(R) 2004-05\",\"optioner periodiseras som kostnad\",\"den obokförade tryckpressen\",\"RSU:er, KPI-paket; »adjusted»-mått blomstrar\"],[\"Spitzer fonderna hösten 2003\",\"late trading; market timing\",\"fondernas bakdörrar\",\"nya preferensstrukturer i nästa era\"],[\"Börsregler 2003\",\"majoritet oberoende styrelser\",\"den inre zirkeln\",\"beroendet avflödet kvarstår att granska per fall\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera din tids options-ekvivalent: skriv ned tre betalningsformer i dagens marknad som bokförs dåligt eller syns sent — kandidater att undersöka: aktiebaserad kompensation utöver lönen, »adjusted»-mått i rapporter, emissionsvolymer i SPAC- och pre-IPO-avtal, krypto-utgivning, garantier och promote-strukturer. Välj en och räkna dess storlek för ett konkret bolag. Du har nu börjat tillämpa epilogen istället för att bara läsa den."
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebar paragraf 302 och 906 i Sarbanes-Oxley?",
+          "alternativ": [
+            "Att optioner måste bokföras",
+            "Att VD och CFO personligen certifierar rapporternas riktighet under straffrättsligt ansvar",
+            "Att banker inte fick ge lån",
+            "Att marginalskulden reglerades"
+          ],
+          "ratt": 1,
+          "tips": "Vilken signatur står på siffrorna — och vad betyder det för signaturen om siffrorna är falska?"
+        },
+        {
+          "q": "Vad hände när FAS 123(R) tvingade fram periodisering av optioner?",
+          "alternativ": [
+            "Ingenting mätbart",
+            "Redovisade vinster i teknikkonglomeraten sjönk mätbart när den dolda kostnaden blev synlig — bolag som Boeing hade redovisat optioner länge, Amazon började 2002",
+            "Alla bolag slutade använda optioner",
+            "Optioner blev skattefria"
+          ],
+          "ratt": 1,
+          "tips": "Kostnaden fanns hela tiden — vad hände när den blev synlig i resultaträkningen?"
+        },
+        {
+          "q": "Vad är kursens skepticiska slutsats om reformerna?",
+          "alternativ": [
+            "Att SOX löste alla framtida problem",
+            "Att reformer straffar gårdagens brott medan incitamenten uppfinnar morgondagens — varje era trycker sina aktier i ny förpackning och bubbel-vakten förblir ett eget instrument",
+            "Att regulation är meningslös och borde avskaffas",
+            "Att bubblor inte kan hända igen"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände 2008, 2021 och 2025 trots SOX — samma brott eller nya förpackningar?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "KONTROVERS — var bubblor rationella? (EMH mot Lowenstein, AK1A:s bubbel-vakt)",
+      "intro": "Kursens obligatoriska kontrovers har tre sidor och alla presenteras ärligt. EMH-skolan: bubblor kan inte identifieras i realtid och 1990-talets priser kan ha varit rationella gällande dåtidens information. Beteendeskolan: CAPE och utbudsmekaniker visade identifierbar felprisning. Lowensteins tredje väg: EMH förutsätter ärlig information — men informationen var korrupt. Kapitlet slutar med AK1A:s bubbel-vakt och differentieringen mot 1929-kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "EMH:s sida, citerad öppet. Eugene Famas effektiva marknadsformulering (Journal of Finance, 1970): priser återspeglar tillgänglig information — och i sin hårda tolkning är det meningslöst att tala om felprisning utan ett modellbundet mått på rätt pris. Famas egen hållning genom decennier, sammanfattad i uttalanden som »the word bubble drives me nuts»: i efterhand ser allt uppenbart ut, men ett negativt realiserat utfall bevisar inte att priset var fel givet dåtidens information. För Internet-eran finns dessutom en rationell kärna: Pastor och Veronesi (2003) visade att hög osäkerhet om unga bolags framtida lönsamhet rationellt kan ge höga och volatila värderingar — ett lotteri med liten sannolikhet för enorm utdelning kan vara värt mycket. Greenspans backning 1997 (kapitel 3) var i det ljuset inte fegt utan epistemiskt hederligt: identifieringen i realtid är själva problemet, och den som agerat 1996 förlorade fyra års uppgång. Det är en stark position och kursen kräver att du kan den innan du vänder dig mot den."
+        },
+        {
+          "type": "text",
+          "content": "Motsidan. Robert Shiller — som briefat Fed dagen före irrational exuberance-talet — publicerade Irrational Exuberance i mars 2000, dagar efter toppen: CAPE (det cykeljusterade P/E) stod mot historiskt rekord kring 44 i december 1999, och historien visade att extrema CAPE-nivåer följts av långa perioder av låga avkastningar. Det är ett direkt mått på felprisning — och CAPE var publikt data, inte efterhandskunskap. Ofek och Richardson (DotCom Mania, Journal of Finance, 2003) gick längre: internetaktiernas överpris var identifierbart i realtid, kortsidans begränsningar (dyrt och svårt att korta dot-comer) höll skillnaden mellan åsikter uppe (Millers (1977) logik: med kortbegränsningar sätter optimisterna priset), och när lockup-utlösena öppnade utbudet kollapsade överprisningen — mekaniskt, förutsägbart, utan ny information om bolagen. Det är EMH:s svagaste punkt i fallet: prisfallet drevs inte av ny fundamental information utan av utbudsförändringar — vilket är svårt att förena med informationseffektivitet som enda förklaring."
+        },
+        {
+          "type": "text",
+          "content": "Lowensteins tredje väg — och kursens syntes. Bokens tes kring kortsiktighet, optioner och den döda »alignmenten» är inte att investerare var irrationella, utan att marknadens informationsproduktion var köpt: formgivna vinster (kapitel 4), obokförd kompensation (kapitel 5), research som distribution (kapitel 7), granskning som biprodukt (kapitel 8), väktare med optioner (kapitel 9). EMH säger att priser är ärliga gällande informationen — inte att informationen är ärlig. Effektivt bearbetad korrupt information ger effektivt fel priser: garbage in, efficient garbage out. AK1A:s hållning är därför dubbel. Mot EMH: bevara ödmjukheten — du kan inte datera en topp och realiserade utfall bevisar inte felprisning (Famas poäng står). Mot Lowenstein: antag att informationen kan vara partisk — granska väktarnas intäktskällor och läs primärdata. Och därför bubbel-vakten, kursens konkreta arv: V12 intäktsstabilitet (vilka intäkter är verkliga, återkommande och kontantbackade när cykeln vänder? — dot-comernas svar var noll, och det stod i deras rapporter) plus V19 emission-risk (när företagssektorn trycker aktier — optioner, nyemissioner, SPACs — och insiders säljer på rekordmultiplar, är det systemets tell: bubbels bränsle är emitterat papper). Differentieringen mot syskonkursen om 1929 är därmed komplett: Galbraith lär hävstångens mekanik och dagen-dag-drama (V10, V11); Lowenstein lär incitamentens korruption (V19, V12) — och varför det KAN hända igen: inte för att människor blev dummare, utan för att incitament muterar snabbare än regelverk, och nästa era alltid betalar sina väktare i det papper som stiger. Din checklista: sju publika siffror (kapitel 10:s utmaning), accruals-lins (kapitel 12), väktar-karta (kapitel 9) — och vägran som position (V04-V06)."
+        },
+        {
+          "type": "insikt",
+          "content": "EMH besvarar frågan kan du slå marknaden genom information; Lowenstein besvarar frågan kan du lita på informationen. En bubbel-vakt måste ställa båda — ödmjukhet om timing (du kan inte datera toppen), misstroende om källor (vem betalade för siffran), och vägran som enda position som inte behöver datum: värdering (V04-V06), verkliga intäkter (V12), och räkenskap över vem som trycker aktier (V19). Bubblor behöver inte vara irrationella för att vara farliga — de behöver bara att du betalar dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — tre läger och AK1A:s hållning\",\"rader\":[[\"Läger\",\"Tes\",\"Styrka\",\"Svaghet\",\"AK1A-översättning\"],[\"EMH (Fama; Pastor-Veronesi)\",\"priser återspeglar dåtidens information; bubblor kan inte identifieras i realtid; hög osäkerhet om unga bolag ger rationellt höga värderingar\",\"förklarar varför väktare backade; realiserat utfall är inte bevis\",\"prisfall drevs av utbud (lockups) — inte ny information\",\"ödmjukhet: du kan inte datera; undvik prognospositioner\"],[\"Beteende (Shiller; Ofek-Richardson)\",\"extrem CAPE förutsade långa svaga perioder; kortbegränsningar + lockup-utbud gjorde felprisningen identifierbar\",\"publik data i realtid; mekanisk förutsägbar kollaps\",\"säger inte varför informationen var fel\",\"vakta: multiplars historiska spannar; utbudsmekanik\"],[\"Lowenstein (institutionell)\",\"informationsproduktionen var köpt — vinstformgivning, optioner, research, revision; kortsiktighet och »alignment» dog\",\"förklarar mekanismen bakom felinformationen\",\"svagare på prisnivå i realtid\",\"väktar-karta; primärdata; V12+V19\"],[\"AK1A:s syntes\",\"båda frågorna ställs samtidigt\",\"operativ och tidslös\",\"kräver disciplin i varje era\",\"V12 verkliga intäkter + V19 emission-risk = bubbel-vakten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din bubbel-vakt och datera den. Steg ett: ta fram kapitel 10:s sju siffror (index-P/E och P/S mot historik, IPO-våg, emissionsvolym, insider-köp/sälj, aktieantalsvekst, margin-skuld, sektorflöden) för din marknad idag. Steg två: kör kapitel 12:s accruals-lins på de tre största berättelseaktierna du ser. Steg tre: rita kapitel 9:s väktar-karta för en av dem. Sätt ett samlat betyg ett till fem per del och skriv en mening: var i cykeln befinner vi oss — och vad är min vägran, oavsett datum? Upprepa årligen. Det är kursens arv i praktik: inte en profetia, ett instrument."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Famas invändning mot bubbelbegreppet?",
+          "alternativ": [
+            "Att bubblor alltid är lätta att se i realtid",
+            "Att ett negativt realiserat utfall inte bevisar att priset var fel givet dåtidens information — och att identifiering i realtid är själva problemet",
+            "Att alla investerare är irrationella",
+            "Att CAPE är det bästa måttet"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan man veta om framtiden i mars 2000 — och vad kan man veta i mars 2002 om mars 2000?"
+        },
+        {
+          "q": "Vad visade Ofek och Richardson om internetaktierna?",
+          "alternativ": [
+            "Att de var korrekt prissatta",
+            "Att överpriset var identifierbart i realtid: kortbegränsningar höll optimisternas pris kvar, och när lockup-utlösena öppnade utbudet kollapsade priserna utan ny fundamental information",
+            "Att kortsidan orsakade bubblan",
+            "Att CAPE var oanvändbart"
+          ],
+          "ratt": 1,
+          "tips": "Vad drev prisfallet — ny kunskap om bolagen eller mekanik på utbudssidan?"
+        },
+        {
+          "q": "Hur formuleras AK1A:s bubbel-vakt i kursen?",
+          "alternativ": [
+            "Som en prognosmodell för kraschdatum",
+            "Som V12 intäktsstabilitet plus V19 emission-risk — verkliga, återkommande, kontantbackade intäkter kombinerat med räkenskap över vem som trycker aktier och säljer — plus vägran som position via V04-V06",
+            "Som enbart teknisk analys",
+            "Som att alltid köpa dippen i teknikaktier"
+          ],
+          "ratt": 1,
+          "tips": "Vilka två variabler frågar efter det som bubblor alltid saknar — och det som bubblor alltid producerar?"
+        }
+      ]
+    }
+  ]
+}

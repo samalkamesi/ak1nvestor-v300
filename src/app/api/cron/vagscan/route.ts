@@ -1,6 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { körVagfundament, type MotorSvar } from "@/lib/vagfundament-motor";
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { publiceraVagkartaSignal } from "@/lib/signal-bus";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,7 +12,8 @@ export const maxDuration = 60;
  * AKM1-kopplat: mäter vågor i fundamentalanalytiska indikatorer (V01–V20 ×
  * 5 horisonter) för ett fast universum av 12 svenska tickers via Yahoo
  * fundamentals (primärt), med MarketStack-stöd för senaste EOD-kurs.
- * Körs av Vercel Cron; EN skrivning per körning (system_events, type=vagscan).
+ * Körs av Vercel Cron; EN vågskans-skrivning per körning (system_events,
+ * type=vagscan) + dagens vågkarta-signal på signal-bussen (publiceraVagkartaSignal).
  */
 
 // AKM1-universum — 12 tickers (motorns tak per anrop)
@@ -225,5 +227,10 @@ export async function GET(req: NextRequest) {
     } catch {}
   }
 
-  return NextResponse.json({ ...sammanstallning, supabaseSparad, disclaimer: "Pedagogisk analys — inte investeringsråd" });
+  // 5) signal-bussen — dagens vågkarta andas ut till ALLA (fail-safe: kastar
+  //    aldrig; utan Supabase-konfig är den en no-op). Skickas EFTER att
+  //    skanningen och system_events-skrivningen är klar.
+  const signalSand = await publiceraVagkartaSignal({ ...universumSammanfattning, totalBolag });
+
+  return NextResponse.json({ ...sammanstallning, supabaseSparad, signalSand, disclaimer: "Pedagogisk analys — inte investeringsråd" });
 }

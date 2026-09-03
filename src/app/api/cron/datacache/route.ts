@@ -1,10 +1,11 @@
 import { NextResponse, NextRequest } from "next/server";
 import { körVagfundament } from "@/lib/vagfundament-motor";
 import { körAnalysMotor } from "@/lib/analys-motor";
-import { skannaKonfluens, MAX_TICKER_KONFLUENS } from "@/lib/konfluens-motor";
+import { skannaKonfluens, MAX_TICKER_KONFLUENS, type KonfluensRad } from "@/lib/konfluens-motor";
 import { skannaNetnet } from "@/lib/netnet-motor";
 import { sparaCache, cacheStatistik, type CacheTyp } from "@/lib/datacache";
 import { publiceraOrganEvent } from "@/lib/organ-event";
+import { publiceraCacheFylltSignal, publiceraKonfluensSignaler } from "@/lib/signal-bus";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,7 +29,9 @@ export const maxDuration = 60;
  * Faserna körs SEKVENSIELLT (varje motor har sin egen interna parallellism —
  * sammanlagt Yahoo-vänligt tryck) och varje fas fångar sina egna fel: en
  * motor som fallerar dödar aldrig de redan sparade faserna. Efteråt loggas
- * ett OrganEvent (organ/datacache) och svaret innehåller cacheStatistik().
+ * ett OrganEvent (organ/datacache), signal-bussen får ett cache-kvitto till
+ * admin (publiceraCacheFylltSignal) och ev. konfluensträffar till fas2
+ * (publiceraKonfluensSignaler), och svaret innehåller cacheStatistik().
  */
 
 // AKM1-universum — 12 tickers (samma lista som cron/vagscan)
@@ -40,7 +43,7 @@ const UNIVERSUM = [
 const TYPER: CacheTyp[] = ["vagfundament", "analys", "netnet", "konfluens"];
 
 /** Utfall per fas: antal sparade rader + felposter (ticker → orsak). */
-type FasResultat = { sparade: number; fel: Record<string, string> };
+type FasResultat = { sparade: number; fel: Record<string, string>; konfluensRader?: KonfluensRad[] };
 
 /** Spara en rad om den inte är en motor-felrad; räkna upp antalet. */
 async function sparaRad(
@@ -101,10 +104,13 @@ async function fasNetnet(): Promise<FasResultat> {
 
 /** Fas 4: konfluensskannern — max 10 tickers/anrop → två batcher. */
 async function fasKonfluens(): Promise<FasResultat> {
-  const resultat: FasResultat = { sparade: 0, fel: {} };
+  const resultat: FasResultat = { sparade: 0, fel: {}, konfluensRader: [] };
   for (let i = 0; i < UNIVERSUM.length; i += MAX_TICKER_KONFLUENS) {
     const batch = UNIVERSUM.slice(i, i + MAX_TICKER_KONFLUENS);
     const rader = await skannaKonfluens(batch);
+    // Behåll raderna — signal-bussens konfluens-hjälpare aggregerar träffar
+    // över hela universumet (inte per batch) efter fyllningen.
+    resultat.konfluensRader?.push(...rader);
     for (const rad of rader) {
       // Konfluensrader är alltid välformade (null-dimensioner är graciösa) —
       // rader med 0 datakällor sparas inte, de bär ingen analys.
@@ -166,6 +172,19 @@ export async function GET(req: NextRequest) {
 
   // Hälsoläget efter fyllningen
   const statistik = await cacheStatistik();
+
+  // Signal-bussen — kvitto till ADMIN att dagens fyllning är klar, och ev.
+  // konfluensträffar till fas2 (fail-safe: hjälparna kastar aldrig). Körs
+  // sist så att signalerna speglar en HELT färdigfylld cache.
+  await publiceraCacheFylltSignal({
+    totaltSparade,
+    misslyckade: allaFel.length,
+    raderTotalt: statistik.rader,
+  });
+  const konfluensRader = faser.konfluens?.konfluensRader ?? [];
+  if (konfluensRader.length > 0) {
+    await publiceraKonfluensSignaler(konfluensRader);
+  }
 
   return NextResponse.json({
     genererad: new Date().toISOString(),

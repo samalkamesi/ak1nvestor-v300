@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   GraduationCap,
@@ -14,8 +15,38 @@ import {
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { Eyebrow, GoldRule, HonestyTag } from "../primitives";
 import { WaveMatrix } from "../wave-matrix";
+import { SocialProof } from "../social-proof";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+
+/* ---------- marknadsförings-data (pedagogik-ton: vi tipsar, tvingar aldrig) ---------- */
+
+const SNABBLANKAR = [
+  {
+    ikon: "⚡",
+    titel: "Testa Dagens Pass",
+    text: "5 min på riktiga marknadsdata",
+    href: "/dagens-pass",
+  },
+  {
+    ikon: "🧠",
+    titel: "Se din profil",
+    text: "Vilken analytiker är du?",
+    href: "/profil",
+  },
+  {
+    ikon: "🌊",
+    titel: "Öppna Vågfundamentet",
+    text: "20 variabler × 5 horisonter — live",
+    href: "/vagfundament",
+  },
+] as const;
+
+const ELEVCITAT = [
+  "Första gången jag FÖRSTÅR mina aktier",
+  "Quiz:en tvingar mig att tänka",
+  "Vågfundamentet förändrade allt",
+] as const;
 
 export function HomeSection() {
   const { setSection, setLevel } = useAk1aStore();
@@ -65,19 +96,99 @@ export function HomeSection() {
                 </Button>
               </div>
 
-              {/* Statist-rad — hela labbet på en rad, tabelläge, inga kort */}
-              <div className="mt-10 border-t border-[#E8C766]/20 pt-5">
-                <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm tabular-nums tracking-wide text-[#EDE6D6]/70">
-                  <span>307 kurser</span>
-                  <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
-                  <span>6 600+ quiz</span>
-                  <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
-                  <span>78 böcker</span>
-                  <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
-                  <span>100 % gratis</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────── SOCIALT BEVIS — levande statistik + elevröster ─────────────
+          Ersätter den gamla enradiga statist-rad som låg i heron: samma budskap,
+          fast med roterande räknare, sammanfattande strip och elevröster. */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+          <SocialProof />
+        </div>
+      </section>
+
+      {/* ───────────── PROVA GRATIS — tre dörrar in, utan konto ───────────── */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+          <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent" />
+            <div className="relative rounded-xl border border-[#E8C766]/20 p-8 sm:p-10">
+              <p className="font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+                Prova gratis · utan konto
+              </p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <h2 className="max-w-xl font-serif text-3xl font-bold leading-tight text-balance text-[#EDE6D6] sm:text-4xl">
+                  Känn på metoden — på riktiga data, idag.
+                </h2>
+                <p className="max-w-sm text-sm leading-relaxed text-[#EDE6D6]/70">
+                  Tre dörrar in i labbet. Ingen registrering, ingen kortuppgift
+                  — bara metoden, dig och marknaden.
                 </p>
               </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {SNABBLANKAR.map((lank) => (
+                  <Link
+                    key={lank.href}
+                    href={lank.href}
+                    className="group flex min-h-[44px] flex-col rounded-xl border border-[#E8C766]/25 bg-black/20 p-5 transition-all hover:border-[#E8C766]/60 hover:bg-black/30"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#E8C766]/30 bg-[#E8C766]/10 text-xl"
+                    >
+                      {lank.ikon}
+                    </span>
+                    <span className="mt-4 font-serif text-xl font-bold leading-snug text-[#EDE6D6]">
+                      {lank.titel}{" "}
+                      <span
+                        aria-hidden="true"
+                        className="inline-block text-[#E8C766] transition-transform group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </span>
+                    <span className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/70">
+                      {lank.text}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <p className="mt-6 text-center text-xs tracking-wide text-[#EDE6D6]/50">
+                Vi tipsar — du väljer väg. Allt öppnas direkt, inget konto
+                krävs.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────── ELEVRÖSTER — citat-band i marin ───────────── */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+          <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/30 px-6 py-8 sm:px-10 sm:py-9">
+            <div
+              className="pointer-events-none absolute inset-3 rounded-xl border border-gold/15"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-8 text-center sm:grid-cols-3 sm:gap-6">
+              {ELEVCITAT.map((citat) => (
+                <blockquote key={citat}>
+                  <p className="font-serif text-lg italic leading-snug text-[#EDE6D6] sm:text-xl">
+                    <span className="text-[#E8C766]">“</span>
+                    {citat}
+                    <span className="text-[#E8C766]">”</span>
+                  </p>
+                </blockquote>
+              ))}
+            </div>
+            <p className="relative mt-8 text-center font-serif text-sm italic tracking-wide text-[#E8C766]/80">
+              — verkliga elevers ord
+            </p>
           </div>
         </div>
       </section>

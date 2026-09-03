@@ -30,7 +30,7 @@
  * Avslutskod:  0 = GRÖN/GUL, 1 = RÖD eller ogiltigt läge.
  * Sista stdout-raden "RESULTAT_JSON={...}" är maskinläsbar (cron-rutten parsar den).
  */
-import { spawn, spawnSync } from "node:child_process";
+import { spawn, spawnSync, execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -528,6 +528,47 @@ async function sektionMotorer() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// SEKTION 8 — ÅÄÖ-degenerering i löptext ("gor"→"gör", "kopte"→"köpte")
+// Kör verktyg/aao-degen.mjs --torrt --json som subprocess.
+// ════════════════════════════════════════════════════════════════════════════
+async function sektionAaoDegen() {
+  const namn = "ÅÄÖ-degenerering i löptext (aao-degen.mjs)";
+  try {
+    const ut = execFileSync(process.execPath, ["verktyg/aao-degen.mjs", "--torrt", "--json"], {
+      cwd: REPO,
+      encoding: "utf8",
+      timeout: 60_000,
+      env: { ...process.env, NO_COLOR: "1" },
+    });
+    const rad = ut.split("\n").find((r) => r.trim().startsWith("{"));
+    const rep = JSON.parse(rad || "{}");
+    const fel = [];
+    if ((rep.nivaA ?? 0) > 0) {
+      fel.push({
+        fil: "public/deep-courses.json + data/bokmaster/",
+        plats: "NIVÅ A",
+        detalj: `${rep.nivaA} degenererade åäö-ord ("gor/nar/kopte"-mönster) — kör: node verktyg/aao-degen.mjs`,
+      });
+    }
+    if ((rep.nivaB ?? 0) > 0) {
+      fel.push({
+        fil: "public/deep-courses.json",
+        plats: "NIVÅ B",
+        detalj: `${rep.nivaB} systematiskt avstavad fil(er) — manuell svensk granskning krävs`,
+      });
+    }
+    return {
+      namn,
+      info: [`NIVÅ A: ${rep.nivaA ?? 0} · NIVÅ B: ${rep.nivaB ?? 0} (detektor: säkra degenererade former + filsignatur)`],
+      fel,
+      manuella: [],
+    };
+  } catch (e) {
+    return { namn, info: [], fel: [{ fil: "verktyg/aao-degen.mjs", plats: "subprocess", detalj: String(e?.message || e).slice(0, 120) }], manuella: [] };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // RAPPORT
 // ════════════════════════════════════════════════════════════════════════════
 function statusForSektion(s) {
@@ -588,6 +629,7 @@ async function main() {
     sektionKursdata(),
     sektionSitemap(),
     await sektionMotorer(),
+    await sektionAaoDegen(),
   ];
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);

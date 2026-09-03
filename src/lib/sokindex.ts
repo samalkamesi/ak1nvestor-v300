@@ -30,6 +30,7 @@ const STATISKA: SokPost[] = [
   { titel: "Net-net-skannern", lank: "/netnet", kategori: "Verktyg", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live", nycklar: "netnet ncav cigar butt screening graham billigt under bokvardt" },
   { titel: "Portföljbyggaren", lank: "/portfoljbyggare", kategori: "Verktyg", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live", nycklar: "portfolj bygg allokering sektor spridning koncentration risk donut" },
   { titel: "Superanalysen", lank: "/superanalys", kategori: "Verktyg", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS", nycklar: "wizard guide 24 steg analysflode" },
+  { titel: "Nyhetscentralen", lank: "/nyheter", kategori: "Verktyg", ikon: "📰", beskrivning: "Senaste nytt — intelligent rangerat + egna kanaler", nycklar: "nyheter nyhetsfeed rss flode senaste bevakning kanal paverkan rapport" },
   { titel: "Min portfölj", lank: "/min-portfolj", kategori: "Verktyg", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)", nycklar: "portfolj innehav djupanalys matris" },
   { titel: "Analyser", lank: "/analyser", kategori: "Sida", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser", nycklar: "bolag aktie rapport" },
   { titel: "AI-Diagnos", lank: "/profil", kategori: "Verktyg", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter", nycklar: "kognitiv profil bias riskaptit" },

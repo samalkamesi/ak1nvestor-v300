@@ -104,6 +104,11 @@ function navigera(fraga: string): Intent | null {
       { text: "AKM1-kalkylatorn (20 variabler)", lank: "/kalkylator", ikon: "🧮" },
       { text: "Var hittar jag siffrorna?", lank: "/kalkylator", ikon: "📖" },
     ]};
+    if (/nyhet|nyheter|rss|flöde|senaste nytt|bevakning/.test(q)) return { typ: "navigering", handlings: [
+      { text: "Nyhetscentralen 📰", lank: "/nyheter", ikon: "📰", beskrivning: "Senaste nytt — intelligent rangerat för din utbildning" },
+      { text: "Hantera dina kanaler", lank: "/nyheter", ikon: "⚙️", beskrivning: "Bevakning, ämnen och egna RSS-flöden" },
+      { text: "Din dashboard", lank: "/min-sida", ikon: "🏠", beskrivning: "Senaste nytt-kortet + analyser för dig" },
+    ]};
     if (/analys|aktie|bolag/.test(q)) return { typ: "navigering", handlings: [
       { text: "Alla analyser", lank: "/analyser", ikon: "📊" },
       { text: "Precise Biometrics", lank: "/analyser/PREC.ST", ikon: "🎯" },

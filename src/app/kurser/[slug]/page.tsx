@@ -13,6 +13,9 @@ import { RikText, SektionBryt } from "@/components/ak1a/rik-text";
 
 export const dynamic = "force-static";
 
+/** Okända slug:ar → RIKTIG 404 (annars soft-404 med HTTP 200 i produktion). */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return Object.keys(getCourses()).map((slug) => ({ slug }));
 }

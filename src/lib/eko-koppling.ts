@@ -102,7 +102,7 @@ function renTal(v: unknown, max: number): number {
 }
 
 /**
- * Kurs-slugs är "v01-forsäljningstillväxt" etc. — boundade och slug-säkra.
+ * Kurs-slugs är "v01-forsaljningstillvaxt" etc. — boundade och slug-säkra.
  * Exporterad för /api/eko:t query-tolkning (samma validering båda vägarna).
  */
 export function renSlugLista(v: unknown, max: number): string[] {
@@ -321,7 +321,7 @@ const INTRESSE_SPAR: Record<IntresseNyckel, SparInfo> = {
     namn: "fundamental analys",
     ikon: "🏛️",
     passar: (slug) => /^v\d{2}-/i.test(slug),
-    forstaKurs: "v01-forsäljningstillväxt",
+    forstaKurs: "v01-forsaljningstillvaxt",
     visningsnamn: "fundamentalanalysens tjugo variabler",
   },
   portfölj: {

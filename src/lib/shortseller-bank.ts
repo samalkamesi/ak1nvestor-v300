@@ -105,8 +105,8 @@ export const AMNEN: { id: AmneVal; namn: string; ikon: string }[] = [
 
 /** Kurstitlar för kontextuella inledningar (samma slugs som kurstips.ts V_SPÅR/flaggskepp). */
 export const KURS_TITLAR: Record<string, string> = {
-  "v01-forsäljningstillväxt": "V01 — Försäljningstillväxt",
-  "v02-arr-tillväxt": "V02 — ARR-tillväxt",
+  "v01-forsaljningstillvaxt": "V01 — Försäljningstillväxt",
+  "v02-arr-tillvaxt": "V02 — ARR-tillväxt",
   "v04-ps": "V04 — P/S",
   "v06-ev-ebitda": "V06 — EV/EBITDA",
   "v07-bruttomarginal": "V07 — Bruttomarginal",
@@ -175,7 +175,7 @@ const ATTACKER: AttackFraga[] = [
     amne: "tillvaxt",
     kategori: "logik",
     svarighet: 1,
-    kursRef: "v01-forsäljningstillväxt",
+    kursRef: "v01-forsaljningstillvaxt",
     fraga:
       "Du säger att bolaget växer 20% om året. Hur mycket av den tillväxten är organisk — och hur mycket är köpt?",
     kontext:

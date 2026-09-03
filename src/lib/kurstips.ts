@@ -43,8 +43,8 @@ const KATEGORIER = [
 type Kategori = (typeof KATEGORIER)[number];
 
 const V_SPÅR: SpårKurs[] = [
-  { slug: "v01-forsäljningstillväxt", titel: "Försäljningstillväxt", kategori: "Tillväxt", minuter: 29 },
-  { slug: "v02-arr-tillväxt", titel: "ARR-tillväxt (återkommande intäkter)", kategori: "Tillväxt", minuter: 31 },
+  { slug: "v01-forsaljningstillvaxt", titel: "Försäljningstillväxt", kategori: "Tillväxt", minuter: 29 },
+  { slug: "v02-arr-tillvaxt", titel: "ARR-tillväxt (återkommande intäkter)", kategori: "Tillväxt", minuter: 31 },
   { slug: "v03-intaktsdiversifiering", titel: "Intäktsdiversifiering", kategori: "Tillväxt", minuter: 28 },
   { slug: "v04-ps", titel: "P/S (Price-to-Sales)", kategori: "Värdering", minuter: 29 },
   { slug: "v05-pb", titel: "P/B (Price-to-Book)", kategori: "Värdering", minuter: 29 },

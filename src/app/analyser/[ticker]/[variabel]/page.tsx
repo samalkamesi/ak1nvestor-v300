@@ -7,6 +7,9 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
 export const dynamic = "force-static";
 
+/** Okända parametrar → RIKTIG 404 (annars soft-404 med HTTP 200 i produktion). */
+export const dynamicParams = false;
+
 /** Variabel-slug → tal-format för sökord (t.ex. "v09-roe" → "ROE"). */
 function variabelNamn(slug: string, courses: Record<string, { title: string }>) {
   return courses[slug]?.title || slug.toUpperCase();

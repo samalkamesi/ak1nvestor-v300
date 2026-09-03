@@ -27,8 +27,8 @@ const DAGAR = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "S
 
 /** Nivå 1-grunderna: V01–V20 ur deep-courses.json (slug + titel). */
 const V_KURSER: { slug: string; titel: string }[] = [
-  { slug: "v01-forsäljningstillväxt", titel: "Försäljningstillväxt" }, // slug exakt som i deep-courses.json
-  { slug: "v02-arr-tillväxt", titel: "ARR-tillväxt (återkommande intäkter)" },
+  { slug: "v01-forsaljningstillvaxt", titel: "Försäljningstillväxt" }, // slug exakt som i deep-courses.json
+  { slug: "v02-arr-tillvaxt", titel: "ARR-tillväxt (återkommande intäkter)" },
   { slug: "v03-intaktsdiversifiering", titel: "Intäktsdiversifiering" },
   { slug: "v04-ps", titel: "P/S (Price-to-Sales)" },
   { slug: "v05-pb", titel: "P/B (Price-to-Book)" },

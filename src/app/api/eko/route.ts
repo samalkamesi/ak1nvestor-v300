@@ -25,7 +25,7 @@ export const dynamic = "force-dynamic";
  * query-parametrar — ALDRIG råa sökvägar eller personuppgifter:
  *
  *   ?niva=7                       — nivå 1–100 (member-local)
- *   &klara=v01-forsäljningstillväxt,v02-arr-tillväxt
+ *   &klara=v01-forsaljningstillvaxt,v02-arr-tillvaxt
  *   &streak=4                     — streak-antal
  *   &aktivTid=5400                — aktiva sekunder (tracern)
  *   &toppIntresse=teknisk         — teknisk|fundamental|portfölj|beteende

@@ -1,0 +1,565 @@
+{
+  "rader": [
+    {
+      "ticker": "HEXA-B.ST",
+      "namn": "Hexagon AB",
+      "bransch": "teknik",
+      "akm1Totalt": 78,
+      "akm1PerKategori": { "tillvaxt": 76, "vardering": 62, "lonsamhet": 88, "stabilitet": 80, "moat": 84, "katalysator": 72, "risk": 66 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.08,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "ERIC-B.ST",
+      "namn": "Telefonaktiebolaget LM Ericsson",
+      "bransch": "teknik",
+      "akm1Totalt": 64,
+      "akm1PerKategori": { "tillvaxt": 58, "vardering": 70, "lonsamhet": 60, "stabilitet": 68, "moat": 72, "katalysator": 62, "risk": 54 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "basbygge" },
+      "fvagDynamik": "stabilt",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "korrigering", "lang": "basbygge", "mega": "basbygge" },
+      "golvMarginal": 0.21,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "FNOX.ST",
+      "namn": "Fortnox AB",
+      "bransch": "teknik",
+      "akm1Totalt": 82,
+      "akm1PerKategori": { "tillvaxt": 88, "vardering": 52, "lonsamhet": 90, "stabilitet": 86, "moat": 80, "katalysator": 84, "risk": 70 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": -0.35,
+      "senastKontrollerad": "2026-08-30",
+      "status": "gul"
+    },
+    {
+      "ticker": "SINCH.ST",
+      "namn": "Sinch AB",
+      "bransch": "teknik",
+      "akm1Totalt": 55,
+      "akm1PerKategori": { "tillvaxt": 50, "vardering": 58, "lonsamhet": 48, "stabilitet": 52, "moat": 60, "katalysator": 54, "risk": 46 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "basbygge", "mega": "basbygge" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "korrigering", "lang": "korrigering", "mega": "korrigering" },
+      "golvMarginal": 0.38,
+      "senastKontrollerad": "2026-08-29",
+      "status": "gul"
+    },
+    {
+      "ticker": "IAR-B.ST",
+      "namn": "IAR Systems Group AB",
+      "bransch": "teknik",
+      "akm1Totalt": 58,
+      "akm1PerKategori": { "tillvaxt": 48, "vardering": 56, "lonsamhet": 70, "stabilitet": 62, "moat": 74, "katalysator": 52, "risk": 44 },
+      "fvagPerHorisont": { "mikro": "osatt", "kort": "korrigering", "medellang": "korrigering", "lang": "basbygge", "mega": "basbygge" },
+      "fvagDynamik": "forsvamras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "basbygge", "mega": "osatt" },
+      "golvMarginal": 0.02,
+      "senastKontrollerad": "2026-08-28",
+      "status": "gul"
+    },
+    {
+      "ticker": "TOBII.ST",
+      "namn": "Tobii AB",
+      "bransch": "teknik",
+      "akm1Totalt": 47,
+      "akm1PerKategori": { "tillvaxt": 60, "vardering": 44, "lonsamhet": 30, "stabilitet": 48, "moat": 56, "katalysator": 66, "risk": 36 },
+      "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "basbygge", "mega": "osatt" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "korrigering", "mega": "osatt" },
+      "golvMarginal": -0.18,
+      "senastKontrollerad": "2026-08-27",
+      "status": "rod"
+    },
+    {
+      "ticker": "MIPS.ST",
+      "namn": "MIPS AB",
+      "bransch": "teknik",
+      "akm1Totalt": 61,
+      "akm1PerKategori": { "tillvaxt": 52, "vardering": 64, "lonsamhet": 72, "stabilitet": 58, "moat": 60, "katalysator": 56, "risk": 58 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "korrigering", "mega": "basbygge" },
+      "fvagDynamik": "forsvamras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "basbygge", "mega": "basbygge" },
+      "golvMarginal": 0.34,
+      "senastKontrollerad": "2026-08-26",
+      "status": "gul"
+    },
+    {
+      "ticker": "ATCO-A.ST",
+      "namn": "Atlas Copco AB",
+      "bransch": "industri",
+      "akm1Totalt": 84,
+      "akm1PerKategori": { "tillvaxt": 70, "vardering": 60, "lonsamhet": 92, "stabilitet": 90, "moat": 88, "katalysator": 74, "risk": 82 },
+      "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.05,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "LIFCO-B.ST",
+      "namn": "Lifco AB",
+      "bransch": "industri",
+      "akm1Totalt": 86,
+      "akm1PerKategori": { "tillvaxt": 72, "vardering": 54, "lonsamhet": 90, "stabilitet": 88, "moat": 86, "katalysator": 78, "risk": 80 },
+      "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.14,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "SAND.ST",
+      "namn": "Sandvik AB",
+      "bransch": "industri",
+      "akm1Totalt": 76,
+      "akm1PerKategori": { "tillvaxt": 66, "vardering": 64, "lonsamhet": 82, "stabilitet": 80, "moat": 78, "katalysator": 68, "risk": 74 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "stabilt",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+      "golvMarginal": 0.11,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "ALFA.ST",
+      "namn": "Alfa Laval AB",
+      "bransch": "industri",
+      "akm1Totalt": 81,
+      "akm1PerKategori": { "tillvaxt": 68, "vardering": 62, "lonsamhet": 88, "stabilitet": 84, "moat": 82, "katalysator": 72, "risk": 76 },
+      "fvagPerHorisont": { "mikro": "basbygge", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "stabilt",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.09,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gron"
+    },
+    {
+      "ticker": "INDT.ST",
+      "namn": "Indutrade AB",
+      "bransch": "industri",
+      "akm1Totalt": 72,
+      "akm1PerKategori": { "tillvaxt": 62, "vardering": 60, "lonsamhet": 78, "stabilitet": 76, "moat": 74, "katalysator": 64, "risk": 68 },
+      "fvagPerHorisont": { "mikro": "osatt", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "stabilt",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.19,
+      "senastKontrollerad": "2026-08-30",
+      "status": "gron"
+    },
+    {
+      "ticker": "SKF-B.ST",
+      "namn": "SKF AB",
+      "bransch": "industri",
+      "akm1Totalt": 68,
+      "akm1PerKategori": { "tillvaxt": 58, "vardering": 66, "lonsamhet": 72, "stabilitet": 70, "moat": 66, "katalysator": 60, "risk": 62 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": 0.26,
+      "senastKontrollerad": "2026-08-30",
+      "status": "gron"
+    },
+    {
+      "ticker": "TREL-B.ST",
+      "namn": "Trelleborg AB",
+      "bransch": "industri",
+      "akm1Totalt": 63,
+      "akm1PerKategori": { "tillvaxt": 54, "vardering": 58, "lonsamhet": 70, "stabilitet": 64, "moat": 62, "katalysator": 58, "risk": 56 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "basbygge", "mega": "basbygge" },
+      "fvagDynamik": "forsvamras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "basbygge", "mega": "osatt" },
+      "golvMarginal": 0.22,
+      "senastKontrollerad": "2026-08-29",
+      "status": "gul"
+    },
+    {
+      "ticker": "SECT-B.ST",
+      "namn": "Sectra AB",
+      "bransch": "halso",
+      "akm1Totalt": 83,
+      "akm1PerKategori": { "tillvaxt": 80, "vardering": 50, "lonsamhet": 88, "stabilitet": 86, "moat": 84, "katalysator": 82, "risk": 76 },
+      "fvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "golvMarginal": -0.42,
+      "senastKontrollerad": "2026-08-31",
+      "status": "gul"
+    },
+    {
+      "ticker": "GETI-B.ST",
+      "namn": "Getinge AB",
+      "bransch": "halso",
+      "akm1Totalt": 74,
+      "akm1PerKategori": { "tillvaxt": 62, "vardering": 70, "lonsamhet": 78, "stabilitet": 76, "moat": 72, "katalysator": 68, "risk": 66 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "basbygge", "mega": "basbygge" },
+      "golvMarginal": 0.28,
+      "senastKontrollerad": "2026-08-30",
+      "status": "gron"
+    },
+    {
+      "ticker": "SEDANA.ST",
+      "namn": "Sedana Medical AB",
+      "bransch": "halso",
+      "akm1Totalt": 66,
+      "akm1PerKategori": { "tillvaxt": 64, "vardering": 60, "lonsamhet": 62, "stabilitet": 58, "moat": 60, "katalysator": 70, "risk": 52 },
+      "fvagPerHorisont": { "mikro": "basbygge", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "osatt" },
+      "fvagDynamik": "forbattras",
+      "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "basbygge", "mega": "osatt" },
+      "golvMarginal": 0.07,
+      "senastKontrollerad": "2026-08-28",
+      "status": "gron"
+    },
+    {
+      "ticker": "EKTA-B.ST",
+      "namn": "Elekta AB",
+      "bransch": "halso",
+      "akm1Totalt": 57,
+      "akm1PerKategori": { "tillvaxt": 48, "vardering": 62, "lonsamhet": 56, "stabilitet": 58, "moat": 62, "katalysator": 54, "risk": 50 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "korrigering", "mega": "basbygge" },
+      "fvagDynamik": "forsvamras",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "korrigering", "mega": "basbygge" },
+      "golvMarginal": 0.31,
+      "senastKontrollerad": "2026-08-27",
+      "status": "gul"
+    },
+    {
+      "ticker": "ORXO.ST",
+      "namn": "Orexo AB",
+      "bransch": "halso",
+      "akm1Totalt": 44,
+      "akm1PerKategori": { "tillvaxt": 42, "vardering": 48, "lonsamhet": 38, "stabilitet": 44, "moat": 46, "katalysator": 52, "risk": 40 },
+      "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "korrigering", "mega": "korrigering" },
+      "fvagDynamik": "forsvamras",
+      "tvagPerHorisont": { "mikro": "basbygge", "kort": "korrigering", "medellang": "korrigering", "lang": "korrigering", "mega": "osatt" },
+      "golvMarginal": -0.12,
+      "senastKontrollerad": "2026-08-15",
+      "status": "rod"
+    },
+    {
+      "ticker": "BINV.ST",
+      "namn": "BioInvent International AB",
+      "bransch": "halso",
+      "akm1Totalt": 41,
+      "akm1PerKategori": { "tillvaxt": 44, "vardering": 42, "lonsamhet": 28, "stabilitet": 40, "moat": 48, "katalysator": 54, "risk": 34 },
+      "fvagPerHorisont": { "mikro": "osatt", "kort": "basbygge", "medellang": "korrigering", "lang": "basbygge", "mega": "osatt" },
+      "fvagDynamik": "osatt",
+      "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "osatt", "lang": "osatt", "mega": "osatt" },
+      "golvMarginal": -0.28,
+      "senastKontrollerad": "2026-08-10",
+      "status": "rod"
+    }
+  ],
+  "forslag": {
+    "id": "pf-demo-2026q3",
+    "skapad": "2026-03-31",
+    "riskProfil": {
+      "niva": "balanserad",
+      "takt": "stadig",
+      "horisontVikter": { "mikro": 0.05, "kort": 0.2, "medellang": 0.25, "lang": 0.3, "mega": 0.2 },
+      "maxPerAktie": 0.2,
+      "maxPerBransch": 0.4,
+      "minAKM1": 65,
+      "minGolvMarginal": 0
+    },
+    "innehav": [
+      {
+        "ticker": "ATCO-A.ST",
+        "vikt": 0.2,
+        "motiv": "AKM1 84 med stabil fundamental impulsvåg från medellång till mega; lönsamhet 92 och stabilitet 90 bär poängen. Golvet är smalt men vinnarbredd bred.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "84 poäng — 19 över minimikravet" },
+          { "namn": "Golv finnes", "status": "OK", "detalj": "Golvmarginal +5 % — ballast finns" }
+        ]
+      },
+      {
+        "ticker": "LIFCO-B.ST",
+        "vikt": 0.18,
+        "motiv": "AKM1 86 — högst i poolen. Fundamental impulsvåg från medellång och uppåt, och dynamiken förbättras sedan mars.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "86 poäng" },
+          { "namn": "Golv finnes", "status": "OK", "detalj": "Golvmarginal +14 %" }
+        ]
+      },
+      {
+        "ticker": "ALFA.ST",
+        "vikt": 0.16,
+        "motiv": "AKM1 81 med teknisk impulsvåg på alla fem horisonter — poolens mest samstämmiga vågbild just nu.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "81 poäng" },
+          { "namn": "Golv finnes", "status": "OK", "detalj": "Golvmarginal +9 %" }
+        ]
+      },
+      {
+        "ticker": "SECT-B.ST",
+        "vikt": 0.16,
+        "motiv": "AKM1 83 och fundamental impulsvåg genom hela spektrat. Värderingen är dock hög — golvmarginalen är negativ, därav varningen nedan.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "83 poäng" },
+          { "namn": "Golv finnes", "status": "VARNING", "detalj": "Golvmarginal −42 % — priset löper över beräknat golv" }
+        ]
+      },
+      {
+        "ticker": "SAND.ST",
+        "vikt": 0.15,
+        "motiv": "AKM1 76. Priset korrigerade under våren medan fundamentet höll — en levande studie i att prisvåg och fundamental våg inte alltid går i takt.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "76 poäng" },
+          { "namn": "Golv finnes", "status": "OK", "detalj": "Golvmarginal +11 %" }
+        ]
+      },
+      {
+        "ticker": "HEXA-B.ST",
+        "vikt": 0.15,
+        "motiv": "AKM1 78. Medellång horisont vände till impulsvåg efter Q2; mikrovågen korrigerar fortfarande — tålamodets pedagogik.",
+        "krav": [
+          { "namn": "AKM1 ≥ 65", "status": "OK", "detalj": "78 poäng" },
+          { "namn": "Golv finnes", "status": "OK", "detalj": "Golvmarginal +8 %" }
+        ]
+      }
+    ],
+    "ersattningar": [
+      {
+        "ersattTicker": "ORXO.ST",
+        "orsak": "AKM1 föll till 44 — under minimikravet 65 — och den fundamentala vågen är korrigering på alla fem horisonterna. Golvmarginalen är negativ (−12 %).",
+        "kandidater": [
+          {
+            "ticker": "SEDANA.ST",
+            "motiv": "AKM1 66 med fundamental impulsvåg på kort till lång horisont och positiv golvmarginal (+7 %).",
+            "skillnadMotErsatt": "+22 AKM1-poäng och vågriktning uppåt i stället för nedåt"
+          },
+          {
+            "ticker": "SINCH.ST",
+            "motiv": "Pressad värdering med tydligt golv (+38 %); basbygge på medellång till mega ger återhållsam vågbild.",
+            "skillnadMotErsatt": "Golvmarginal +38 % mot Orexos −12 % — helt annat värdeskydd"
+          }
+        ]
+      }
+    ],
+    "ak1aNot": "Förslaget vilar på sex bolag med snitt-AKM1 78 — alla med grön eller gul kravbild. Portföljens vågprofil är korrigering på mikro, basbygge på kort och impulsvåg från medellång till mega: den korta rytmen får inte styra, den längre tillväxtvågen får bära. Sektras negativa golvmarginal är medveten (varning) — impulsvågen är bred men priset löper före fundamentet. Detta är en forskningsprodukt: siffrorna visar hur metoden läser läget, inte vad någon bör köpa eller sälja.",
+    "vagprofilSammanfattning": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" }
+  },
+  "uppfoljning": {
+    "portfoljId": "pf-demo-2026q3",
+    "riskProfil": {
+      "niva": "balanserad",
+      "takt": "stadig",
+      "horisontVikter": { "mikro": 0.05, "kort": 0.2, "medellang": 0.25, "lang": 0.3, "mega": 0.2 },
+      "maxPerAktie": 0.2,
+      "maxPerBransch": 0.4,
+      "minAKM1": 65,
+      "minGolvMarginal": 0
+    },
+    "snapshots": [
+      {
+        "ticker": "ATCO-A.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 82,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 128.5,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "ATCO-A.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 83,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 121.0,
+        "forandringPris": -0.058,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "ATCO-A.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 84,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 132.4,
+        "forandringPris": 0.094,
+        "forandringAkm1": 1,
+        "notisText": "Fundamentalvågen på medellång vände till impulsvåg efter Q2-rapporten."
+      },
+      {
+        "ticker": "LIFCO-B.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 85,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 152.0,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "LIFCO-B.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 86,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 148.0,
+        "forandringPris": -0.026,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "LIFCO-B.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 86,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 158.0,
+        "forandringPris": 0.068,
+        "forandringAkm1": 0
+      },
+      {
+        "ticker": "ALFA.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 80,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 208.0,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "ALFA.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 81,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 218.5,
+        "forandringPris": 0.05,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "ALFA.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 81,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 224.0,
+        "forandringPris": 0.025,
+        "forandringAkm1": 0
+      },
+      {
+        "ticker": "SECT-B.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 81,
+        "fvagPerHorisont": { "mikro": "basbygge", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "basbygge", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 164.0,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "SECT-B.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 82,
+        "fvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 178.0,
+        "forandringPris": 0.085,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "SECT-B.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 83,
+        "fvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 186.5,
+        "forandringPris": 0.048,
+        "forandringAkm1": 1,
+        "notisText": "Impulsvåg genom hela spektrat — men värderingen är hög och golvet negativt, därav gult ljus."
+      },
+      {
+        "ticker": "SAND.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 75,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "korrigering", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 51.8,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "SAND.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 76,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "impulsvag", "medellang": "korrigering", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 49.1,
+        "forandringPris": -0.052,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "SAND.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 76,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "impulsvag", "kort": "impulsvag", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 54.6,
+        "forandringPris": 0.112,
+        "forandringAkm1": 0,
+        "notisText": "Prisvågen på kort vände uppåt i augusti — priset hämtar igen efter vårens korrigering."
+      },
+      {
+        "ticker": "HEXA-B.ST",
+        "datum": "2026-03-31",
+        "akm1Totalt": 77,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "korrigering", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 98.2,
+        "forandringPris": null,
+        "forandringAkm1": null
+      },
+      {
+        "ticker": "HEXA-B.ST",
+        "datum": "2026-06-30",
+        "akm1Totalt": 78,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "basbygge", "mega": "impulsvag" },
+        "pris": 104.6,
+        "forandringPris": 0.065,
+        "forandringAkm1": 1
+      },
+      {
+        "ticker": "HEXA-B.ST",
+        "datum": "2026-08-31",
+        "akm1Totalt": 78,
+        "fvagPerHorisont": { "mikro": "korrigering", "kort": "basbygge", "medellang": "impulsvag", "lang": "impulsvag", "mega": "impulsvag" },
+        "tvagPerHorisont": { "mikro": "korrigering", "kort": "korrigering", "medellang": "basbygge", "lang": "impulsvag", "mega": "impulsvag" },
+        "pris": 112.3,
+        "forandringPris": 0.074,
+        "forandringAkm1": 0,
+        "notisText": "Kort horisont gick från korrigering till basbygge — vågen bygger botten."
+      }
+    ],
+    "historik": [
+      {
+        "datum": "2026-03-31",
+        "text": "Portföljen sattes enligt balanserad profil med stadig takt — sex bolag ur tre branscher, snitt-AKM1 80 vid start."
+      },
+      {
+        "datum": "2026-06-30",
+        "text": "Kvartalskontroll: inga strikta krav brutna. Sandvik och Lifco korrigerade i pris medan fundamentet höll — noterat som studie i divergens."
+      },
+      {
+        "datum": "2026-08-31",
+        "text": "Orexo lyftes fram som ersättningskandidat i pool-arbetet; Sectras vågprofil stärktes på alla horisonter."
+      }
+    ]
+  }
+}

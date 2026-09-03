@@ -3956,3 +3956,23 @@ Användarens exempel: Graham-kursen "gor detta test... kopte... raknade pa varde
   aao-degen --torrt --json) — 8/8 GRÖN
 - HALVSÄKRA ("an"/"for" — svenska ELLER engelska citat): 7 filer → agent
   granskar kontextuellt. + oberoende djupkontroll 20 slumpkurser (agent).
+
+---
+
+## VÅG 36 — FAS-INVERSIONEN + PROD-LEVERANS LIVE (2026-09-03, main 35133e1)
+
+Fas 2 = fundamental väg + AK1nvestor-representant (18 verk, INGEN TA).
+Fas 3 = dynamiska ekosystemet (24 kurser: AKM1×AK1TS/vågfundament/konfluens/
+portföljens vågor + 17 TA-mästare + 4 psykologi) + dashboard/AI/rapporter +
+rätt till framtida utvecklingar + ev. månadsplan 12 mån efter utbildning.
+Leveranser: kurs-access (kraverFas 0|2|3, fas3-supermängd), tvåfas-gate
+(guld/koppar), badgar i sok/bibliotek/laroplan, /fas3+/fas2-ansok+/
+medlemskap omskrivna (4 agenter), villkor+chatbot+manifest-copy,
+månadsprenumerations-villkor. Våg 35B: åäö-halvformer svepna (köpå 872,
+frågör 438, portfolj 30, +95 NIVÅ A) — användarexempel 10/10 borta.
+DEBUG-LÄRDOM: node -e tappar backslashes i regex-konstruktor → debugga
+regex i .mjs-fil. PROD: push main 35133e1 → hook → 9 min → 10/10 H1
+200-verifierade + /terms→308 + Graham "gör detta test" LIVE +
+/api/nyheter ok. Mimosa-lärdom: tung `git add -A src/`-commit nekas —
+UPPDELA (data-commit + src-commit). Skala: 333 kurser · 8211 quiz · 843
+SSG · vakten 8/8 (GUL: torrt-falska positiva ar/pa/gor, tröskel 3).

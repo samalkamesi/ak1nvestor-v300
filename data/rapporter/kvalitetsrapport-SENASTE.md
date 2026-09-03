@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-03
 
-- **Genererad:** 2026-09-03T14:35:45.314Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-03T16:43:25.819Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 1.7 s
+- **Körtid:** 1.9 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,14 +15,14 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 159 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 5217 strängar extraherade
+- 159 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 5222 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
 
 ## 3. JSON-giltighet (data/*.json + data/bokmaster/*.json) — **PASS**
 
-- 111 filer parsade
+- 112 filer parsade
 
 Inga avvikelser hittade.
 
@@ -57,6 +57,12 @@ Inga avvikelser hittade.
 
 Inga avvikelser hittade.
 
+## 9. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) — **PASS**
+
+- guldkälla data/siffror.json (verktyg/rakna-siffror.mjs) + svep efter föråldrade tal i src
+
+Inga avvikelser hittade.
+
 ## Sammanfattning
 
 | Sektion | Status | Fel | Manuella |
@@ -69,6 +75,7 @@ Inga avvikelser hittade.
 | 6. Sitemap-täckning | **PASS** | 0 | 0 |
 | 7. Motorvalidering (validera-motorer.mjs) | **PASS** | 0 | 0 |
 | 8. ÅÄÖ-degenerering i löptext (aao-degen.mjs) | **PASS** | 0 | 0 |
+| 9. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) | **PASS** | 0 | 0 |
 
 ## ANTAL FEL: 0 | MANUELLA: 0 | STATUS: GRÖN
 

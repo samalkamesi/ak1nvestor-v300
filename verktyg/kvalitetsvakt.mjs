@@ -574,6 +574,61 @@ async function sektionAaoDegen() {
 // ════════════════════════════════════════════════════════════════════════════
 // RAPPORT
 // ════════════════════════════════════════════════════════════════════════════
+// SEKTION 9 — Sifferkonsistens (våg 46, kunddirektiv "exakt samma siffror
+// och ord överallt"): data/siffror.json är guldkällan (genereras av
+// verktyg/rakna-siffror.mjs ur deep-courses/bokkanon/kurs-access). Sektionen
+// (a) räknar om verkligheten och jämför med json-filen, (b) söker src/ efter
+// KÄNDA föråldrade tal i copy (291/307/311/324/326 kurser, 65/78/92 böcker,
+// 3 573/6 309/7 089/7 812 quiz) — träff = FAIL med rättningstips.
+function sektionSiffror() {
+  const namn = "Sifferkonsistens (rakna-siffror + föråldrade tal i copy)";
+  const fel = [];
+  try {
+    const kurser = JSON.parse(readFileSync("public/deep-courses.json", "utf8"));
+    const lista = Object.values(kurser);
+    let quiz = 0;
+    let bm = 0;
+    for (const k of lista) {
+      if (k.category === "BOKMASTER") bm++;
+      for (const ch of k.chapters ?? []) quiz += Array.isArray(ch.quiz) ? ch.quiz.length : 0;
+    }
+    const sparade = JSON.parse(readFileSync("data/siffror.json", "utf8"));
+    if (sparade.kurser !== lista.length) {
+      fel.push({ fil: "data/siffror.json", plats: "kurser", detalj: `guldkällan säger ${sparade.kurser} men verkligheten är ${lista.length} — kör: node verktyg/rakna-siffror.mjs` });
+    }
+    if (sparade.bokmaster !== bm) {
+      fel.push({ fil: "data/siffror.json", plats: "bokmaster", detalj: `guldkällan säger ${sparade.bokmaster} men verkligheten är ${bm} — kör rakna-siffror.mjs` });
+    }
+    if (sparade.quiz !== quiz) {
+      fel.push({ fil: "data/siffror.json", plats: "quiz", detalj: `guldkällan säger ${sparade.quiz} men verkligheten är ${quiz} — kör rakna-siffror.mjs` });
+    }
+
+    // Föråldrade tal i src-copy (visningstext) — undantag: siffror.ts:s egen källa
+    const FORALDRADE = [
+      [/\b(226|227|291|307|311|324|326)\s+(kurser|moduler i)\b/, "kursantal"],
+      [/\b(65|78|92)\s+(heltäckta\s+böcker|BOKMASTER-böcker|böcker kapitel|böcker täckta)\b/, "bokantal"],
+      [/\b(3[\s\u00a0]?573|6[\s\u00a0]?309|7[\s\u00a0]?089|7[\s\u00a0]?812)\s*(quiz|-)?\s*(frågor)?\b/, "quizantal"],
+    ];
+    const filer = [...hittaFiler("src/components/ak1a", ".tsx"), ...hittaFiler("src/app", ".tsx"), ...hittaFiler("src/app", ".ts"), ...hittaFiler("src/lib", ".ts")];
+    for (const fil of filer) {
+      if (fil.endsWith("siffror.ts")) continue;
+      const rader = readFileSync(fil, "utf8").split("\n");
+      rader.forEach((rad, i) => {
+        for (const [re, etikett] of FORALDRADE) {
+          const m = rad.match(re);
+          if (m) {
+            fel.push({ fil, plats: `rad ${i + 1}`, detalj: `föråldrat ${etikett}-tal "${m[0].trim()}" i copy — importera SIFFROR ur @/lib/siffror i stället` });
+          }
+        }
+      });
+    }
+  } catch (e) {
+    fel.push({ fil: "verktyg/kvalitetsvakt.mjs", plats: "sektionSiffror", detalj: String(e?.message || e).slice(0, 140) });
+  }
+  return { namn, info: ["guldkälla data/siffror.json (verktyg/rakna-siffror.mjs) + svep efter föråldrade tal i src"], fel, manuella: [] };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 function statusForSektion(s) {
   if (s.status) return s.status; // SKIP-genväg
   if ((s.fel ?? []).length > 0) return "FAIL";
@@ -633,6 +688,7 @@ async function main() {
     sektionSitemap(),
     await sektionMotorer(),
     await sektionAaoDegen(),
+    sektionSiffror(),
   ];
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);

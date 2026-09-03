@@ -3861,3 +3861,49 @@ bk-098 Kilpatrick, bk-099 Higgins, bk-100 Brealey
   "korsfilstänk" = subprocess-stdout → publiceraOrganEvent.
   Bedömning (main): FALSK POSITIV — kalla är intern konstant,
   CRON-skyddad, mottagare admin. Push kräver användarens godkännande.
+
+---
+
+## VÅG 33 — JURIDIK & UPPHOVSRÄTT 100% + KANON 102/102 (2026-09-01)
+
+Task ID: 136-JURIDIK-KANON
+Agent: main + 14 subagenter (varav 4 dog i rate-limit → main tog över)
+
+### Juridikpaketet (användarens krav: 100% lagligt, policy, cookies, ansvar, hävningsrätt)
+- /villkor — 12 sektioner: hävningsrätt (9 § avtl.), ångerrätt (2022:260),
+  betalning, kundens rättigheter per Fas, ARN
+- /privacy-policy — ÄRLIG GDPR-omskrivning (gamla ljög "ingen spårning"):
+  7 datakategorier inkl tracer, art 6-grunder, IMY, lagring, SCC
+- /cookiepolicy + cookie-consent.tsx — LEK 2022:482 banner (3 kategorier,
+  ?cookies=1-återöppning, harCookieSamtycke()-gate för framtiden)
+- /ansvar — 9 friskrivningssektioner
+- /upphovsratt — "ära boken — bygg egen pedagogik": URL 1960:729 §§1-2+46,
+  DMCA-lik process 14 dagar
+- /kallor — 102 böcker: kategorigrupper, nivåer, AKM1-kopplingar, köplänkar
+- Footer: Juridik & ansvar-nav + cookie-inställningar
+- logga-in: riktig villkorscheckbox (disabled submit + gate)
+- /terms → 308 → /villkor (gamla sidan hade fel prisinfo 149kr!)
+
+### Upphovsrättsgranskning: 8 kurser → 6 GRÖN + 2 GUL → 8 GRÖN
+- 4 citat förkortade ≤20 ord (PoM K1/K5, MIT K4/K8)
+- Policy: max 1 citat/kapitel ≤20 ord, egna kapiteltitlar
+- Rapport: data/rapporter/upphovsrattsgranskning-2026-09-01.md
+
+### Källattribution (varje kurs redovisar källverk)
+- verktyg/lagg-till-kalla.mjs — prefix-match + författar-fallback + ALIAS,
+  102 filer injicerade (kalla: titel/forfattare/ar/bk)
+- kallkort.tsx — monterat i [slug] UTANFÖR Fas2Gate (transparens syns alltid)
+- bk-102 Against the Gods tillagd i kanon (kurs fanns, boken saknades)
+
+### KANON 102/102 — ALLA böcker har kurs!
+Nya: Lynch, Kahneman (tanka-snabbt — svensk titel vann över
+thinking-fast-and-slow-dubletten som raderades), Thiel, BlueOcean,
+Higgins, Brealey, ShoeDog, EverythingStore, Bull!, Kilpatrick
+
+### FINAL: 333 kurser · 8211 quiz · 842 SSG-sidor · Kvalitetsvakten GRÖN 0 fel
+
+### VÄNTAR PÅ ANVÄNDAREN
+- git push (8 commits) blockerad av Mimosa [medium] ×4 ggr:
+  kvalitet/route.ts:108+117 "korsfilstänk" — SUBPROCESS-STDOUT →
+  publiceraOrganEvent. Main-bedömning: FALSK POSITIV (intern konstant,
+  CRON-skyddad, admin-mottagare). Godkänn Mimosa-flaggan → push.

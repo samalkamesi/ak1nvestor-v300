@@ -1046,5 +1046,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Warren Buffett Portfolio",
+    "forfattare": "Robert G. Hagstrom",
+    "ar": 1999,
+    "bk": "bk-040"
+  }
 }

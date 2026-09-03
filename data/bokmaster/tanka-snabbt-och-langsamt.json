@@ -1126,5 +1126,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Thinking, Fast and Slow",
+    "forfattare": "Daniel Kahneman",
+    "ar": 2011,
+    "bk": "bk-032"
+  }
 }

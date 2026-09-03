@@ -958,5 +958,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Quality of Earnings",
+    "forfattare": "Thornton O'Glove",
+    "ar": 1987,
+    "bk": "bk-006"
+  }
 }

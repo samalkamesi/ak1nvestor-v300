@@ -1230,5 +1230,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Snowball",
+    "forfattare": "Alice Schroeder",
+    "ar": 2008,
+    "bk": "bk-038"
+  }
 }

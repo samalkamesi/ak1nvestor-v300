@@ -950,5 +950,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Acquirer's Multiple",
+    "forfattare": "Tobias E. Carlisle",
+    "ar": 2017,
+    "bk": "bk-042"
+  }
 }

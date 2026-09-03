@@ -1106,5 +1106,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Financial Shenanigans",
+    "forfattare": "Howard M. Schilit",
+    "ar": 1993,
+    "bk": "bk-007"
+  }
 }

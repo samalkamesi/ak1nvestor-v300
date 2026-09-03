@@ -926,5 +926,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Flash Boys",
+    "forfattare": "Michael Lewis",
+    "ar": 2014,
+    "bk": "bk-089"
+  }
 }

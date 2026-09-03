@@ -1154,5 +1154,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Black Swan",
+    "forfattare": "Nassim Nicholas Taleb",
+    "ar": 2007,
+    "bk": "bk-076"
+  }
 }

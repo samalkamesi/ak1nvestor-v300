@@ -902,5 +902,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Money Game",
+    "forfattare": "Adam Smith (George J.W. Goodman)",
+    "ar": 1968,
+    "bk": "bk-091"
+  }
 }

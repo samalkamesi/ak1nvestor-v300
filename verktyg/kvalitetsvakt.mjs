@@ -367,14 +367,14 @@ function sektionKursdata() {
           detalj: `chapterCount=${String(kurs.chapterCount)} men chapters.length=${kap.length}`,
         });
       }
-      // b) quiz-antal = kapitel × 3
+      // b) quiz-antal ≥ kapitel × 3 (fler frågor är tillåtet — slutoff-quiz är kvalitetsvinster)
       const quizTotal = kap.reduce((s, k) => s + (Array.isArray(k.quiz) ? k.quiz.length : 0), 0);
       const quizVantat = kap.length * 3;
-      if (quizTotal !== quizVantat) {
+      if (quizTotal < quizVantat) {
         fel.push({
           fil: `data/bokmaster/${f}`,
           plats: "quiz",
-          detalj: `${quizTotal} quizfrågor men förväntat exakt ${quizVantat} (kap ${kap.length} × 3)`,
+          detalj: `${quizTotal} quizfrågor men minst ${quizVantat} förväntat (kap ${kap.length} × 3)`,
         });
       }
       // c) totalMinutes === sum(chapters[].minutes)

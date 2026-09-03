@@ -1094,5 +1094,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Bogleheads' Guide to Investing",
+    "forfattare": "Taylor Larimore, Mel Lindauer & Michael LeBoeuf",
+    "ar": 2006,
+    "bk": "bk-092"
+  }
 }

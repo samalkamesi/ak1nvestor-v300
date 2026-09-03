@@ -1154,5 +1154,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Devil Take the Hindmost",
+    "forfattare": "Edward Chancellor",
+    "ar": 1999,
+    "bk": "bk-084"
+  }
 }

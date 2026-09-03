@@ -1026,5 +1026,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Poor Charlie's Almanack",
+    "forfattare": "Charles T. Munger",
+    "ar": 2005,
+    "bk": "bk-028"
+  }
 }

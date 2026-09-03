@@ -1074,5 +1074,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Fooled by Randomness",
+    "forfattare": "Nassim Nicholas Taleb",
+    "ar": 2001,
+    "bk": "bk-037"
+  }
 }

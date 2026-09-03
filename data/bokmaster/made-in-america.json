@@ -1022,5 +1022,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Made in America",
+    "forfattare": "Sam Walton (med John Huey)",
+    "ar": 1992,
+    "bk": "bk-095"
+  }
 }

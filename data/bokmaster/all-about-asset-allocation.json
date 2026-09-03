@@ -12,21 +12,81 @@
   "learn": "Planens hierarki: varför allokeringen, inte aktievalet, är portföljens ödesbeslut; riskens två ansikten — kortsiktig volatilitet mot långsiktig kortfallsrisk och inflationens tysta urgröpning av 'säkra' placeringar; korrelationsmatematiken steg för steg med räkneexempel på hur två ofullständigt korrelerade tillgångar sänker portföljens standardavvikelse utan avkastningskostnad; Markowitz effektiva frontier och vad den kan och inte kan; Ferri:s urvalskriterier för en tillgångsklass (unik risk, låg korrelation, låg kostnad, investerbar via index); hela byggstenarna med historisk avkastning och korrelationer — size och style, Fama-French-premier, valuta och hemmamarknadsbias, duration och kredit och TIPS, REITs mot bostadsägande, råvarors contango och hedgefonders avgifts matte; förväntningsbygget (utdelningsavkastning + tillväxt + spekulation) och skrivandet av en Investment Policy Statement; portföljbygget för ackumulatorer och pensionärer i två svårighetsgrader; beteendets fällor och reglerbaserad återbalansering som beteendeteknologi; kostnadsaritmetiken och fiduciär-rådgivningens kriterier; samt Kontrovers-kapitlet: taktisk allokering, svansrisk-hedgning, Brinson-kritiken, korrelationskonvergensen i kriser — och AK1A:s ärliga syntes med medgivanden där motståndarna har rätt.",
   "why": "Utan Ferri kan du behärska hela AKM1 — tjugo variabler, djup granskning, värdering med marginal — och ändå bygga din förmögenhet på en gissning: att allt du inte kan analysera ska täckas av 'några fonder'. All About Asset Allocation är handboken som gör resten av portföljen lika rigorös som aktieanalysen. Ferri ger dig korrelationens matematik, urvalskriterierna och återbalanseringsdisciplinen som gör att din AKM1-satellit vilar på en ryggrad du kan förklara för vem som helst. Den som kan både Ferri:s allokering och AKM1:s variabler vet var analysen slutar och arkitekturen börjar — och varför den som saknar den gränsen förr eller senare råkar ut för sig själv.",
   "chapters_list": [
-    {"num": 1, "title": "Planen före prisjakten — Planning for Investment Success", "minutes": 10},
-    {"num": 2, "title": "Riskens två ansikten — Understanding Investment Risk", "minutes": 10},
-    {"num": 3, "title": "Allokeringen förklarad — korrelation och den fria lunchen", "minutes": 10},
-    {"num": 4, "title": "Multi-tillgångsportföljen — hur varje klass flyttar fronten", "minutes": 10},
-    {"num": 5, "title": "Urvalsramverket — vad som räknas som en tillgångsklass", "minutes": 10},
-    {"num": 6, "title": "USA-aktier — size, style och Fama-French-premierna", "minutes": 10},
-    {"num": 7, "title": "Internationella aktier — valuta, hemmamarknadsbias och stigande korrelation", "minutes": 10},
-    {"num": 8, "title": "Räntebärande placeringar — duration, kredit och inflationsskydd", "minutes": 10},
-    {"num": 9, "title": "Fastigheter — REITs och det egna huset", "minutes": 10},
-    {"num": 10, "title": "Alternativa placeringar — råvaror, guld, hedgefonder, samlarobjekt", "minutes": 10},
-    {"num": 11, "title": "Realistiska förväntningar — att sia utan att spå", "minutes": 10},
-    {"num": 12, "title": "Bygga portföljen — fyra livsfaser, två svårighetsgrader", "minutes": 10},
-    {"num": 13, "title": "Beteendet avgör — hur psyket saboterar allokeringen", "minutes": 10},
-    {"num": 14, "title": "Kostnader, rådgivning och bokens bilagor", "minutes": 10},
-    {"num": 15, "title": "Kontroversen — kritikerna, Krisen 2008 och AK1A:s syntes", "minutes": 10}
+    {
+      "num": 1,
+      "title": "Planen före prisjakten — Planning for Investment Success",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Riskens två ansikten — Understanding Investment Risk",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Allokeringen förklarad — korrelation och den fria lunchen",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Multi-tillgångsportföljen — hur varje klass flyttar fronten",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Urvalsramverket — vad som räknas som en tillgångsklass",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "USA-aktier — size, style och Fama-French-premierna",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Internationella aktier — valuta, hemmamarknadsbias och stigande korrelation",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Räntebärande placeringar — duration, kredit och inflationsskydd",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Fastigheter — REITs och det egna huset",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Alternativa placeringar — råvaror, guld, hedgefonder, samlarobjekt",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Realistiska förväntningar — att sia utan att spå",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Bygga portföljen — fyra livsfaser, två svårighetsgrader",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "Beteendet avgör — hur psyket saboterar allokeringen",
+      "minutes": 10
+    },
+    {
+      "num": 14,
+      "title": "Kostnader, rådgivning och bokens bilagor",
+      "minutes": 10
+    },
+    {
+      "num": 15,
+      "title": "Kontroversen — kritikerna, Krisen 2008 och AK1A:s syntes",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {
@@ -35,15 +95,42 @@
       "title": "Planen före prisjakten — Planning for Investment Success",
       "intro": "Ferri inleder inte med fonder eller kurser utan med något ovanligare: förnedringen. Han var själv mäklare och fick betalt för att sälja produkter, inte för att kunderna nådde sina mål. All About Asset Allocation är hans botgång i bokform — och den börjar med att skilja en sparplan från en prisjakt.",
       "blocks": [
-        {"type": "text", "content": "Bokens första kapitel bygger sin auktoritet på författarens egen bakgrund: Richard A. Ferri tjänstgjorde som officer och attackflygare i USA:s marinkår, och hamnade sedan på en mäklarbyrå där han lärde sig finansbranschens ekonomi inifrån — provisioner betalas för aktivitet, inte för utfall. År 1999 grundade han Portfolio Solutions, en rådgivare som tog arvode i promille i stället för procent, och byggde den till en av USA:s största oberoende förvaltare. När Ferri skriver att de flesta investerare förlorar mer pengar på sitt eget beteende och sina egna kostnader än på marknadens svängningar är det inte en tes han läst — det är en kundlista han minns."},
-        {"type": "text", "content": "Kapitel 1 formulerar bokens grundtes, i svensk översättning: »framgångsrik investering kommer inte från att välja rätt fonder eller tajma marknaden — den kommer från en väl genomtänkt allokering som hålls fast vid under goda och dåliga tider«. Planen, skriver Ferri, vilar på tre ben: förstå din riskprofil innan du riskerar något, bygg portföljen av breda och billiga tillgångsklasser, och underhåll den genom disciplinerad återbalansering. Allt annat i boken är utfyllnad av dessa tre steg. Det är en nästan provocerande enkel hierarki: det viktigaste beslutet fattas innan du tittat på en enda fond."},
-        {"type": "text", "content": "Här skiljer sig Ferri från kanons renodlade analysböcker — och det är precis därför han hör hemma i AK1A:s läroplan. Security Analysis lär dig granska ett bolag; All About Asset Allocation lär dig hantera det faktum att de flesta beslut i en portfölj inte är bolagsbeslut utan viktbeslut. Även en fulländad AKM1-analys av tjugo variabler — försäljningstillväxt (V01), intäktsstabilitet (V12), skuldsättningsgrad (V10) — svarar bara på frågan hur en enskild position är byggd. Frågan hur stor den ska vara, och vad resten av kapitalet gör medan positionen arbetar, är en allokeringfråga. Ferri:s poäng är att den frågan kommer först, inte sist."},
-        {"type": "text", "content": "Kapitlet introducerar också bokens återkommande ramberättelse: sparandets tre säkra variabler. Hur mycket du sparar, hur länge du sparar och vad du betalar i kostnad är de enda tal i portföljen du själv bestämmer. Avkastningen är marknadens gåva — eller straff. Därför börjar Ferri:s plan med en hushållsbudget och en tidshorisont, inte med en fondtabell. I AK1TS:s språk: han börjar på Mega-horisonten (årtionden, hela yrkeslivet) och låter alla kortare horisonter — där AK1TS:s vågor och AKM1:s katalysatorer arbetar — vara underordnade den. Ryggrad först, satellit sedan."},
-        {"type": "text", "content": "En detalj i kapitlet förtjänar att understrykas eftersom den skiljer Ferri från både mäklarkåren och en del indexevangelister: han avfärdar inte aktiv förvaltning för att den vore omöjlig i princip, utan för att den är oansenlig i praktiken — sannolikheten att råka på rätt förvaltare före faktum är försumbar, och priset för att söka är säkert. Det är samma ödmjuka argumentation Bogle och Bernstein för, men hos Ferri är den mindre filosofisk och mer operativ: han visar räkningen. Det gör boken till den mest hantverksmässiga av kanons allokeringstitlar."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Ferri:s plan — tre steg och deras fiender\",\"rader\":[[\"Steg\",\"Innehåll\",\"Vanligaste fienden\"],[\"1. Riskprofil\",\"Mät riskvilja OCH riskkapacitet innan första kronan\",\"Överskattad risktolerans efter bra år\"],[\"2. Portföljbygge\",\"Breda, billiga tillgångsklasser med låg inbördes korrelation\",\"Fondjakt och senaste årets vinnare\"],[\"3. Underhåll\",\"Mekanisk återbalansering enligt policy\",\"Ad hoc-beslut vid varje kalenderkvartal\"],[\"Styrning\",\"Investment Policy Statement, skriftligt och daterat\",\"Minnet av vem som bestämde vad\"]]}"},
-        {"type": "insikt", "content": "Det viktigaste beslutet i din portfölj fattas innan du tittar på en enda aktie eller fond — det är beslutet om hur stor del av kapitalet som ens ska utsättas för vilket slag av risk."},
-        {"type": "utmaning", "content": "Gör Ferri:s första övning på eget kapital: (1) Skriv ner vilken månadssumma du kan spara i tio år utan att bryta budgeten — det är din säkra variabel nummer ett. (2) Skriv din tidshorisont i år fram till dess du behöver pengarna. (3) uppskatta vad alla dina nuvarande avgifter kostar per år i kronor, inte procent. Spara anteckningen — kapitel 12 ska du bygga vidare på den."},
-        {"type": "visuell", "content": "skala"}
+        {
+          "type": "text",
+          "content": "Bokens första kapitel bygger sin auktoritet på författarens egen bakgrund: Richard A. Ferri tjänstgjorde som officer och attackflygare i USA:s marinkår, och hamnade sedan på en mäklarbyrå där han lärde sig finansbranschens ekonomi inifrån — provisioner betalas för aktivitet, inte för utfall. År 1999 grundade han Portfolio Solutions, en rådgivare som tog arvode i promille i stället för procent, och byggde den till en av USA:s största oberoende förvaltare. När Ferri skriver att de flesta investerare förlorar mer pengar på sitt eget beteende och sina egna kostnader än på marknadens svängningar är det inte en tes han läst — det är en kundlista han minns."
+        },
+        {
+          "type": "text",
+          "content": "Kapitel 1 formulerar bokens grundtes, i svensk översättning: »framgångsrik investering kommer inte från att välja rätt fonder eller tajma marknaden — den kommer från en väl genomtänkt allokering som hålls fast vid under goda och dåliga tider«. Planen, skriver Ferri, vilar på tre ben: förstå din riskprofil innan du riskerar något, bygg portföljen av breda och billiga tillgångsklasser, och underhåll den genom disciplinerad återbalansering. Allt annat i boken är utfyllnad av dessa tre steg. Det är en nästan provocerande enkel hierarki: det viktigaste beslutet fattas innan du tittat på en enda fond."
+        },
+        {
+          "type": "text",
+          "content": "Här skiljer sig Ferri från kanons renodlade analysböcker — och det är precis därför han hör hemma i AK1A:s läroplan. Security Analysis lär dig granska ett bolag; All About Asset Allocation lär dig hantera det faktum att de flesta beslut i en portfölj inte är bolagsbeslut utan viktbeslut. Även en fulländad AKM1-analys av tjugo variabler — försäljningstillväxt (V01), intäktsstabilitet (V12), skuldsättningsgrad (V10) — svarar bara på frågan hur en enskild position är byggd. Frågan hur stor den ska vara, och vad resten av kapitalet gör medan positionen arbetar, är en allokeringfråga. Ferri:s poäng är att den frågan kommer först, inte sist."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet introducerar också bokens återkommande ramberättelse: sparandets tre säkra variabler. Hur mycket du sparar, hur länge du sparar och vad du betalar i kostnad är de enda tal i portföljen du själv bestämmer. Avkastningen är marknadens gåva — eller straff. Därför börjar Ferri:s plan med en hushållsbudget och en tidshorisont, inte med en fondtabell. I AK1TS:s språk: han börjar på Mega-horisonten (årtionden, hela yrkeslivet) och låter alla kortare horisonter — där AK1TS:s vågor och AKM1:s katalysatorer arbetar — vara underordnade den. Ryggrad först, satellit sedan."
+        },
+        {
+          "type": "text",
+          "content": "En detalj i kapitlet förtjänar att understrykas eftersom den skiljer Ferri från både mäklarkåren och en del indexevangelister: han avfärdar inte aktiv förvaltning för att den vore omöjlig i princip, utan för att den är oansenlig i praktiken — sannolikheten att råka på rätt förvaltare före faktum är försumbar, och priset för att söka är säkert. Det är samma ödmjuka argumentation Bogle och Bernstein för, men hos Ferri är den mindre filosofisk och mer operativ: han visar räkningen. Det gör boken till den mest hantverksmässiga av kanons allokeringstitlar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ferri:s plan — tre steg och deras fiender\",\"rader\":[[\"Steg\",\"Innehåll\",\"Vanligaste fienden\"],[\"1. Riskprofil\",\"Mät riskvilja OCH riskkapacitet innan första kronan\",\"Överskattad risktolerans efter bra år\"],[\"2. Portföljbygge\",\"Breda, billiga tillgångsklasser med låg inbördes korrelation\",\"Fondjakt och senaste årets vinnare\"],[\"3. Underhåll\",\"Mekanisk återbalansering enligt policy\",\"Ad hoc-beslut vid varje kalenderkvartal\"],[\"Styrning\",\"Investment Policy Statement, skriftligt och daterat\",\"Minnet av vem som bestämde vad\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det viktigaste beslutet i din portfölj fattas innan du tittar på en enda aktie eller fond — det är beslutet om hur stor del av kapitalet som ens ska utsättas för vilket slag av risk."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Ferri:s första övning på eget kapital: (1) Skriv ner vilken månadssumma du kan spara i tio år utan att bryta budgeten — det är din säkra variabel nummer ett. (2) Skriv din tidshorisont i år fram till dess du behöver pengarna. (3) uppskatta vad alla dina nuvarande avgifter kostar per år i kronor, inte procent. Spara anteckningen — kapitel 12 ska du bygga vidare på den."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
       ],
       "quiz": [
         {
@@ -87,15 +174,42 @@
       "title": "Riskens två ansikten — Understanding Investment Risk",
       "intro": "Kapitel 2 tar det ord som alla använder och ingen definierar — risk — och ger det en anatomi. Ferri:s viktigaste drag är att skilja mellan riskens korta och långa ansikte: kurssvängningen som syns varje kvartal, och kortfallsrisken som syns först efter tjugo år. Den som blandar ihop dem köper fel produkt med fel argument.",
       "blocks": [
-        {"type": "text", "content": "Ferri definierar risk som osäkerheten i framtida avkastning och operationaliserar den som standardavvikelse — hur mycket de enskilda årens avkastning sprider sig kring genomsnittet. Men han är noga med en distinktion som hela boken vilar på: standardavvikelsen mäter risken att uppleva svängningar, inte risken att missa sina mål. En portfölj som med stor säkerhet levererar 2 procent realt per år har låg volatilitet och enorm kortfallsrisk för den som behöver 5. Risken är alltid relativ till ett åtagande — utan mål finns ingen risk att mäta, bara rörelse."},
-        {"type": "text", "content": "Det andra ansiktet tillhör inflationen. Ferri visar på Ibbotsons historik från 1926 och framåt: amerikanska statsobligationer och framför allt kassaplaceringar har haft låg volatilitet men efter inflation knappt hållit noll — medan perioder av hög inflation slog dem rejält i köpkraft. Budskapet är obekvämt för säkerhetssökaren: den 'riskfria' placeringen är bara riskfri i nominella kronor på kort sikt; på Mega-horisonten är den en garanterad liten förlust i köpkraft med osäker storlek. Omvänt blir aktiervolatiliteten ett rimligt pris för den enda tillgångsklass som historiskt systematiskt slagit inflationen över långa perioder."},
-        {"type": "text", "content": "Kapitlet går vidare genom riskens byggstenar: marknadsrisken som gäller hela aktiemarknaden, ränterisken som får obligationer att falla när avkastningskravet stiger, kreditrisken att en utgivare inte betalar, inflationsrisken, valutarisken för utlandsplacerade, likviditetsrisken i plötsligt låsta marknader och den politiska risken. Notera hur väl de översätter till AKM1:s byggstenar på bolagsnivå: skuldsättningsgraden (V10) är bolagets inbyggda ränte- och refinansieringsrisk, likviditeten (V11) är dess krisöverlevnad, intäktsstabiliteten (V12) dess motstånd mot konjunktur- och marknadsrisk. Portföljrisk och bolagsrisk är samma fysik i två skalor."},
-        {"type": "text", "content": "Ferri illustrerar också den geometriska aritmetikens grymma sida: en förlust på 50 procent kräver en vinst på 100 procent för att återställa kapitalet. Ett decennium med +40 följt av -30 ger inte +10 i genomsnitt på två år utan cirka -1 — det geometriska genomsnittet straffar varians för sig. Det är matematiken bakom hans senare regel att volatilitet inte bara är obehag utan kostnad, och det är skälet till att ruinfall måste undvikas med prioritet över avkastningsoptimering. AKM1:s kategori Risk — kapitalförbrukning och emissionsrisk (V19) — är samma princip tillämpad på bolaget: överlevnad före tes."},
-        {"type": "text", "content": "Kapitlets praktiska redskap är risktoleransens två mått. Riskvilja är psykologisk: hur du tänker att du reagerar på nedgång. Riskkapacitet är objektiv: hur stor nedgång din ekonomi och din tidshorisont faktiskt tål. Ferri:s varning är att den psykologiska måtten nästan alltid överskattas i uppgång och att den objektiva ofta underskattas. Den bindande restriktionen är den lägre av de två — en sparare med stor vilja men liten kapacitet är lika illa ute som den omvända. Kapitel 13 återkommer till hur man ärligt mäter sig själv."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Riskens källor och var de bor\",\"rader\":[[\"Risk\",\"Vad den slår mot\",\"Var i AKM1 den syns på bolagsnivå\"],[\"Marknadsrisk\",\"Hela aktiedelen samtidigt\",\"V12 intäktsstabilitet — konjunkturkänslighet\"],[\"Ränterisk\",\"Obligationspriser vid stigande avkastningskrav\",\"V10 skuldsättningsgrad — refinansieringskostnad\"],[\"Kreditrisk\",\"Utgivare betalar inte\",\"V10 och V11 — skuldbörda och likviditet\"],[\"Inflationsrisk\",\"Köpkraften i nominella anspråk\",\"V01 tillväxt som prissättningskraft\"],[\"Valutarisk\",\"Utländska innehav i hemvaluta\",\"Geografisk spridning av V12\"],[\"Likviditetsrisk\",\"Kan inte sälja till rätt pris\",\"V11 likviditet i kris\"]]}"},
-        {"type": "insikt", "content": "Frågan är aldrig hur mycket risk du vill ha — den är hur mycket risk ditt mål, din tidshorisont och din mage tål samtidigt, och det minsta av dem bestämmer."},
-        {"type": "utmaning", "content": "Räkna på inflationens ansikte: (1) Ta ditt hushålls årliga utgifter och räkna upp dem med 2 respektive 4 procent inflation i 20 år — hur stor blir skillnaden i kronor? (2) Om din kassaplacering ger 1 procent nominellt, vad blir den reala avkastningen i båda scenarierna? (3) Skriv ner vilken procentuell portföljnedgång som skulle tvinga dig att sälja — och jämför med vad din tidshorisont objektivt tål."},
-        {"type": "visuell", "content": "skala"}
+        {
+          "type": "text",
+          "content": "Ferri definierar risk som osäkerheten i framtida avkastning och operationaliserar den som standardavvikelse — hur mycket de enskilda årens avkastning sprider sig kring genomsnittet. Men han är noga med en distinktion som hela boken vilar på: standardavvikelsen mäter risken att uppleva svängningar, inte risken att missa sina mål. En portfölj som med stor säkerhet levererar 2 procent realt per år har låg volatilitet och enorm kortfallsrisk för den som behöver 5. Risken är alltid relativ till ett åtagande — utan mål finns ingen risk att mäta, bara rörelse."
+        },
+        {
+          "type": "text",
+          "content": "Det andra ansiktet tillhör inflationen. Ferri visar på Ibbotsons historik från 1926 och framåt: amerikanska statsobligationer och framför allt kassaplaceringar har haft låg volatilitet men efter inflation knappt hållit noll — medan perioder av hög inflation slog dem rejält i köpkraft. Budskapet är obekvämt för säkerhetssökaren: den 'riskfria' placeringen är bara riskfri i nominella kronor på kort sikt; på Mega-horisonten är den en garanterad liten förlust i köpkraft med osäker storlek. Omvänt blir aktiervolatiliteten ett rimligt pris för den enda tillgångsklass som historiskt systematiskt slagit inflationen över långa perioder."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet går vidare genom riskens byggstenar: marknadsrisken som gäller hela aktiemarknaden, ränterisken som får obligationer att falla när avkastningskravet stiger, kreditrisken att en utgivare inte betalar, inflationsrisken, valutarisken för utlandsplacerade, likviditetsrisken i plötsligt låsta marknader och den politiska risken. Notera hur väl de översätter till AKM1:s byggstenar på bolagsnivå: skuldsättningsgraden (V10) är bolagets inbyggda ränte- och refinansieringsrisk, likviditeten (V11) är dess krisöverlevnad, intäktsstabiliteten (V12) dess motstånd mot konjunktur- och marknadsrisk. Portföljrisk och bolagsrisk är samma fysik i två skalor."
+        },
+        {
+          "type": "text",
+          "content": "Ferri illustrerar också den geometriska aritmetikens grymma sida: en förlust på 50 procent kräver en vinst på 100 procent för att återställa kapitalet. Ett decennium med +40 följt av -30 ger inte +10 i genomsnitt på två år utan cirka -1 — det geometriska genomsnittet straffar varians för sig. Det är matematiken bakom hans senare regel att volatilitet inte bara är obehag utan kostnad, och det är skälet till att ruinfall måste undvikas med prioritet över avkastningsoptimering. AKM1:s kategori Risk — kapitalförbrukning och emissionsrisk (V19) — är samma princip tillämpad på bolaget: överlevnad före tes."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets praktiska redskap är risktoleransens två mått. Riskvilja är psykologisk: hur du tänker att du reagerar på nedgång. Riskkapacitet är objektiv: hur stor nedgång din ekonomi och din tidshorisont faktiskt tål. Ferri:s varning är att den psykologiska måtten nästan alltid överskattas i uppgång och att den objektiva ofta underskattas. Den bindande restriktionen är den lägre av de två — en sparare med stor vilja men liten kapacitet är lika illa ute som den omvända. Kapitel 13 återkommer till hur man ärligt mäter sig själv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskens källor och var de bor\",\"rader\":[[\"Risk\",\"Vad den slår mot\",\"Var i AKM1 den syns på bolagsnivå\"],[\"Marknadsrisk\",\"Hela aktiedelen samtidigt\",\"V12 intäktsstabilitet — konjunkturkänslighet\"],[\"Ränterisk\",\"Obligationspriser vid stigande avkastningskrav\",\"V10 skuldsättningsgrad — refinansieringskostnad\"],[\"Kreditrisk\",\"Utgivare betalar inte\",\"V10 och V11 — skuldbörda och likviditet\"],[\"Inflationsrisk\",\"Köpkraften i nominella anspråk\",\"V01 tillväxt som prissättningskraft\"],[\"Valutarisk\",\"Utländska innehav i hemvaluta\",\"Geografisk spridning av V12\"],[\"Likviditetsrisk\",\"Kan inte sälja till rätt pris\",\"V11 likviditet i kris\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig hur mycket risk du vill ha — den är hur mycket risk ditt mål, din tidshorisont och din mage tål samtidigt, och det minsta av dem bestämmer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på inflationens ansikte: (1) Ta ditt hushålls årliga utgifter och räkna upp dem med 2 respektive 4 procent inflation i 20 år — hur stor blir skillnaden i kronor? (2) Om din kassaplacering ger 1 procent nominellt, vad blir den reala avkastningen i båda scenarierna? (3) Skriv ner vilken procentuell portföljnedgång som skulle tvinga dig att sälja — och jämför med vad din tidshorisont objektivt tål."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
       ],
       "quiz": [
         {
@@ -127,7 +241,7 @@
             "Standardavvikelsen adderas till avkastningen",
             "Korrelationen stiger med variansen",
             "Inflationen räntas på standardavvikelsen"
-        ],
+          ],
           "ratt": 0,
           "tips": "Testa +40 och -30 procent på två år — genomsnittet är +5, men slutvärdet ligger under start."
         }
@@ -139,15 +253,42 @@
       "title": "Allokeringen förklarad — korrelation och den fria lunchen",
       "intro": "Nu kommer bokens hjärta: korrelationen. Ferri går steget från risk som enskilda tillgångars egenskap till risk som relationens egenskap. Två tillgångar som var för sig är oroliga kan tillsammans bli lugna — om de inte rycker åt samma håll. Det är finansens mest omtalade fria lunch, och kapitlet serverar den utan förenkling.",
       "blocks": [
-        {"type": "text", "content": "Korrelationskoefficienten mäter hur synkront två tillgångars avkastning rör sig, från +1 (perfekt synkron) via 0 (oberoende) till -1 (perfekt motsatt). Ferri:s poäng, med Markowitz klassiska ord — »diversifiering är finansens enda fria lunch« — är matematisk, inte moralisk: när korrelationen ligger under +1 utjämnar tillgångarnas svängningar delvis varandra, och portföljens standardavvikelse blir lägre än det viktade genomsnittet av delarnas. Man förlorar ingen förväntad avkastning för att risken sjunker — därav lunchen, och därav att den är gratis."},
-        {"type": "text", "content": "Ett räkneexempel gör det påtagligt. Antag två tillgångar med lika förväntad avkastning 8 procent och standardavvikelse 20 procent vardera, och en korrelation på 0,3. Var och en för sig: 8 procent avkastning mot 20 procent risk. en femtio-femtio-portfölj: fortfarande 8 procent förväntad avkastning — men standardavvikelsen sjunker till omkring 15 procent. Risken har minskat med en fjärdedel utan att avkastningsförväntningen rörts en enda promille. Ingen analys, ingen prognos, ingen fondavgift — bara vikterna och relationen. Det är detta kapitel 4 bygger vidare på med fler byggstenar."},
-        {"type": "text", "content": "Ferri:s tredje trick är det kontraintuitiva: en blandning kan bli mindre riskabel än sin minst riskabla beståndsdel. Lägg 25 procent aktier till en ren obligationsportfölj och den totala risken kan falla — aktiernas svängningar är delvis oberoende av räntornas och kan dra upp utan att dra med nedåt. Omvänt gäller att en liten tillsats av en riskabel men oväntat korrelerad tillgång sänker portföljens risk. Detta Exploderar intuitionen 'säkrast = mest obligationer' och är grunden för att Ferri senare inte fruktar aktietunga portföljer för unga ackumulatorer med lång Mega-horisont."},
-        {"type": "text", "content": "Kapitlet presenterar också den studie som gjort 'allokering' till ett modeord: Gary Brinson och medförfattares analyser från 1986 och 1991, som fann att över 90 procent av variabiliteten i stora pensionsportföljers avkastning förklaras av asset allocation — policyvikterna — inte av urval. Ferri använder resultatet försiktigt och korrekt: det handlar om variation över tid, inte om nivån på avkastningen. Missförståndet — att allokeringen skulle bestämma 90 procent av avkastningsnivån — blev en av branschens mest citerade myter, och Kontrovers-kapitlet återkommer till de forskare som rivit den. Ärlighet åt det hållet hör till bokens kredit."},
-        {"type": "text", "content": "För AK1A-analytikern är korrelationstanken inte abstrakt: V03 intäktsdiversifiering är samma matematik en nivå ner. Ett bolag vars intäkter kommer från många kunder, regioner och produktlinjer med ofullständigt synkrona cykler har lägre resultatvolatilitet än omsättningen antyder — bolagets interna 'portfölj' återbalanserar sig själv. När AKM1:s V03-poäng faller, köper du ett bolag vars kassaflödeskorrelationer hårdnar mot en enda cykel. Samma fysik, två skalor — och därför ska allokeringstänkandet sitta i fingrarna även i bolagsanalysen."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Korrelationens effekter — samma två tillgångar, olika relation\",\"rader\":[[\"Korrelation\",\"Portföljrisk 50/50 (sd 20+20)\",\"Kommentar\"],[\"+1,0\",\"20 procent\",\"Ingen lunch: portföljen är medelvärdet\"],[\"+0,5\",\"omkring 17 procent\",\"Måttlig utjämning\"],[\"+0,3\",\"omkring 15 procent\",\"Klassiskt aktie-obligation-läge\"],[\"0,0\",\"omkring 14 procent\",\"Oberoende svängningar\"],[\"-0,5\",\"omkring 11 procent\",\"Mycket kraftig riskreduktion\"],[\"-1,0\",\"0 procent\",\"Teoretiskt: perfekt hävstångsfri hedge\"]]}"},
-        {"type": "insikt", "content": "Diversifiering lönar sig inte för att tillgångarna är många utan för att deras svängningar är ofullständigt synkrona — antal utan korrelation är bara dyrt brus."},
-        {"type": "utmaning", "content": "Gör fria-lunch-räkningen själv: (1) Uppskatta standardavvikelsen för din nuvarande portföljs två största beståndsdelar (tidskrönologiskt: använd 3-5 års årliga utfall). (2) Uppskatta deras korrelation grovt — rörde de sig samma år? (3) Räkna portföljens teoretiska risk vid 50/50 och jämför med medelvärdet av riskerna. Hur stor blev din gratis lunch — och vad betyder det för hur många beståndsdelar du egentligen behöver?"},
-        {"type": "visuell", "content": "radar"}
+        {
+          "type": "text",
+          "content": "Korrelationskoefficienten mäter hur synkront två tillgångars avkastning rör sig, från +1 (perfekt synkron) via 0 (oberoende) till -1 (perfekt motsatt). Ferri:s poäng, med Markowitz klassiska ord — »diversifiering är finansens enda fria lunch« — är matematisk, inte moralisk: när korrelationen ligger under +1 utjämnar tillgångarnas svängningar delvis varandra, och portföljens standardavvikelse blir lägre än det viktade genomsnittet av delarnas. Man förlorar ingen förväntad avkastning för att risken sjunker — därav lunchen, och därav att den är gratis."
+        },
+        {
+          "type": "text",
+          "content": "Ett räkneexempel gör det påtagligt. Antag två tillgångar med lika förväntad avkastning 8 procent och standardavvikelse 20 procent vardera, och en korrelation på 0,3. Var och en för sig: 8 procent avkastning mot 20 procent risk. en femtio-femtio-portfölj: fortfarande 8 procent förväntad avkastning — men standardavvikelsen sjunker till omkring 15 procent. Risken har minskat med en fjärdedel utan att avkastningsförväntningen rörts en enda promille. Ingen analys, ingen prognos, ingen fondavgift — bara vikterna och relationen. Det är detta kapitel 4 bygger vidare på med fler byggstenar."
+        },
+        {
+          "type": "text",
+          "content": "Ferri:s tredje trick är det kontraintuitiva: en blandning kan bli mindre riskabel än sin minst riskabla beståndsdel. Lägg 25 procent aktier till en ren obligationsportfölj och den totala risken kan falla — aktiernas svängningar är delvis oberoende av räntornas och kan dra upp utan att dra med nedåt. Omvänt gäller att en liten tillsats av en riskabel men oväntat korrelerad tillgång sänker portföljens risk. Detta Exploderar intuitionen 'säkrast = mest obligationer' och är grunden för att Ferri senare inte fruktar aktietunga portföljer för unga ackumulatorer med lång Mega-horisont."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet presenterar också den studie som gjort 'allokering' till ett modeord: Gary Brinson och medförfattares analyser från 1986 och 1991, som fann att över 90 procent av variabiliteten i stora pensionsportföljers avkastning förklaras av asset allocation — policyvikterna — inte av urval. Ferri använder resultatet försiktigt och korrekt: det handlar om variation över tid, inte om nivån på avkastningen. Missförståndet — att allokeringen skulle bestämma 90 procent av avkastningsnivån — blev en av branschens mest citerade myter, och Kontrovers-kapitlet återkommer till de forskare som rivit den. Ärlighet åt det hållet hör till bokens kredit."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A-analytikern är korrelationstanken inte abstrakt: V03 intäktsdiversifiering är samma matematik en nivå ner. Ett bolag vars intäkter kommer från många kunder, regioner och produktlinjer med ofullständigt synkrona cykler har lägre resultatvolatilitet än omsättningen antyder — bolagets interna 'portfölj' återbalanserar sig själv. När AKM1:s V03-poäng faller, köper du ett bolag vars kassaflödeskorrelationer hårdnar mot en enda cykel. Samma fysik, två skalor — och därför ska allokeringstänkandet sitta i fingrarna även i bolagsanalysen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Korrelationens effekter — samma två tillgångar, olika relation\",\"rader\":[[\"Korrelation\",\"Portföljrisk 50/50 (sd 20+20)\",\"Kommentar\"],[\"+1,0\",\"20 procent\",\"Ingen lunch: portföljen är medelvärdet\"],[\"+0,5\",\"omkring 17 procent\",\"Måttlig utjämning\"],[\"+0,3\",\"omkring 15 procent\",\"Klassiskt aktie-obligation-läge\"],[\"0,0\",\"omkring 14 procent\",\"Oberoende svängningar\"],[\"-0,5\",\"omkring 11 procent\",\"Mycket kraftig riskreduktion\"],[\"-1,0\",\"0 procent\",\"Teoretiskt: perfekt hävstångsfri hedge\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Diversifiering lönar sig inte för att tillgångarna är många utan för att deras svängningar är ofullständigt synkrona — antal utan korrelation är bara dyrt brus."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör fria-lunch-räkningen själv: (1) Uppskatta standardavvikelsen för din nuvarande portföljs två största beståndsdelar (tidskrönologiskt: använd 3-5 års årliga utfall). (2) Uppskatta deras korrelation grovt — rörde de sig samma år? (3) Räkna portföljens teoretiska risk vid 50/50 och jämför med medelvärdet av riskerna. Hur stor blev din gratis lunch — och vad betyder det för hur många beståndsdelar du egentligen behöver?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
       ],
       "quiz": [
         {
@@ -191,15 +332,42 @@
       "title": "Multi-tillgångsportföljen — hur varje klass flyttar fronten",
       "intro": "Kapitel 4 bygger om teorin till mekanik: vad händer när portföljen har tre, fem, tio tillgångsklasser? Ferri visar hur den effektiva fronten — mängden av portföljer som ger högst förväntad avkastning per riskenhet — flyttas utåt för varje genuint ny klass som läggs till. Men också att fördelen avtar, och att vissa tillsatser bara är dyr replik av det du redan äger.",
       "blocks": [
-        {"type": "text", "content": "Ferri för in Markowitz ramverk i praktiken: den effektiva fronten är kurvan av portföljer där du inte kan öka förväntad avkastning utan att öka risk, eller sänka risk utan att ge avkastning. Att lägga en tillgångsklass med unik riskprofil och låg korrelation till de befintliga flyttar hela kurvan utåt — samma avkastning vid lägre risk, eller mer avkastning vid samma risk. Grafiken i boken är så pedagogisk att poängen fastnar: diversifiering är inte en försäkring man köper, det är en kurva man flyttar."},
-        {"type": "text", "content": "Men Ferri är lika tydlig med avtagande avkastning på diversifieringen. Den första obligationen i en ren aktieportfölj köper mycket riskreduktion; den tolfte tillgångsklassen köper nästan ingenting — och om den nya klassen i grunden är en ompackning av en befintlig (samma beta med högre avgift) köper den mindre än ingenting. Här myntar han sin praktiska regel: ett begränsat antal genuint olika klasser, vanligen i spannet fem till femton, räcker för att fånga det mesta av lunchen. Över det blir portföljen svårare att återbalansera, dyrare att äga och lättare att överge."},
-        {"type": "text", "content": "Kapitlets kärnexample bygger portföljen steg för steg: enbart USA-storbolag; lägg obligationer och fronten flyttas; lägg internationella aktier och småbolag och den flyttas igen; lägg REITs och räntor med olika löptid och kreditkvalitet och den sträcker sig ytterligare. Ferri redovisar historiska korrelationsmatriser som visar varför: ingen enskild klass är perfekt komplement, men de glider alla olika. Aktierna och de korta statsobligationerna har historiskt rört sig delvis motsatt i flyktmoment, REITs delar aktiernas risk men med annan rytm, och internationella aktier delar globala svängningar men inte nationella."},
-        {"type": "text", "content": "Här finns också bokens första allvarliga varning om korrelationens väsen: den är inte en konstant utan en historia. Ferri visar med rullande korrelationer att relationer förändras över årtionden — den amerikanska och den internationella aktiemarknaden var mindre synkrona förr än senare. Det är en av bokens mest hållbara insikter och skiljer den från äldre allokeringlitteratur som presenterar en enda korrelationskolumn som en fysisk lag. Kontrovers-kapitlet drivet detta till sin spets: 2008 konvergerade nästan allt mot 1 — just när utjämningen behövdes som mest."},
-        {"type": "text", "content": "Återbalanseringen introduceras här som multi-tillgångsportföljens motor. När klasserna glider isär i avkastning tvingar en fast regel ägaren att sälja det som stigit relativt och köpa det som fallit — mekanisk kontrarianism utan ett enda prognosbeslut. Ferri framhåller att bonusen är modest till storleken men att disciplinvärdet är enormt: regeln avpersonifierar beslutet. I AK1A:s termer: återbalansering är den enda strategin där man systematiskt köper svaghet utan att behöva avgöra om svagheten är rättvisad — på portföljnivå är frågan irrelevant, på bolagsnivå (där AKM1 arbetar) är den hela frågan."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Vad varje tillsats historiskt köpte — illustrativ mönsterportfölj\",\"rader\":[[\"Portfölj\",\"Beståndsdelar\",\"Effekt på risk\",\"Kommentar\"],[\"Enklass\",\"USA storbolag\",\"Referens\",\"Hög volatilitet, ingen utjämning\"],[\"Tvåklass\",\"+ obligationer\",\"Stor sänkning\",\"Största enskilda vinsten per tillagd klass\"],[\"Fyraklass\",\"+ internationellt + småbolag\",\"Ytterligare sänkning\",\"Olika regionella och storleksrytmer\"],[\"Sexklass\",\"+ REITs + kort ränta\",\"Mindre tillskott\",\"Fortsatt positivt, avtagande\"],[\"Tolvklass\",\"+ value + tillväxt + TIPS + m\",\"Marginellt\",\"Komplexiteten börjar kosta\"]]}"},
-        {"type": "insikt", "content": "Diversifieringens avkastande skal — de första få, genuint olika klasserna gör nästan allt jobbet; resten är administration."},
-        {"type": "utmaning", "content": "Rita din egen front: (1) Lista din nuvarande portföljs beståndsdelar och sortera dem efter vad de genuint tillför — unik riskkälla eller ombokning av aktieriskan? (2) Ta bort allt som är det senare på pappret (inte i verkligheten ännu) och räkna hur många klasser som återstår. (3) Bedöm: om din portfölj har fler än tolv beståndsdelar — vad är den tolfte till för? Skriv ner svaret till kapitel 12."},
-        {"type": "visuell", "content": "bro"}
+        {
+          "type": "text",
+          "content": "Ferri för in Markowitz ramverk i praktiken: den effektiva fronten är kurvan av portföljer där du inte kan öka förväntad avkastning utan att öka risk, eller sänka risk utan att ge avkastning. Att lägga en tillgångsklass med unik riskprofil och låg korrelation till de befintliga flyttar hela kurvan utåt — samma avkastning vid lägre risk, eller mer avkastning vid samma risk. Grafiken i boken är så pedagogisk att poängen fastnar: diversifiering är inte en försäkring man köper, det är en kurva man flyttar."
+        },
+        {
+          "type": "text",
+          "content": "Men Ferri är lika tydlig med avtagande avkastning på diversifieringen. Den första obligationen i en ren aktieportfölj köper mycket riskreduktion; den tolfte tillgångsklassen köper nästan ingenting — och om den nya klassen i grunden är en ompackning av en befintlig (samma beta med högre avgift) köper den mindre än ingenting. Här myntar han sin praktiska regel: ett begränsat antal genuint olika klasser, vanligen i spannet fem till femton, räcker för att fånga det mesta av lunchen. Över det blir portföljen svårare att återbalansera, dyrare att äga och lättare att överge."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets kärnexample bygger portföljen steg för steg: enbart USA-storbolag; lägg obligationer och fronten flyttas; lägg internationella aktier och småbolag och den flyttas igen; lägg REITs och räntor med olika löptid och kreditkvalitet och den sträcker sig ytterligare. Ferri redovisar historiska korrelationsmatriser som visar varför: ingen enskild klass är perfekt komplement, men de glider alla olika. Aktierna och de korta statsobligationerna har historiskt rört sig delvis motsatt i flyktmoment, REITs delar aktiernas risk men med annan rytm, och internationella aktier delar globala svängningar men inte nationella."
+        },
+        {
+          "type": "text",
+          "content": "Här finns också bokens första allvarliga varning om korrelationens väsen: den är inte en konstant utan en historia. Ferri visar med rullande korrelationer att relationer förändras över årtionden — den amerikanska och den internationella aktiemarknaden var mindre synkrona förr än senare. Det är en av bokens mest hållbara insikter och skiljer den från äldre allokeringlitteratur som presenterar en enda korrelationskolumn som en fysisk lag. Kontrovers-kapitlet drivet detta till sin spets: 2008 konvergerade nästan allt mot 1 — just när utjämningen behövdes som mest."
+        },
+        {
+          "type": "text",
+          "content": "Återbalanseringen introduceras här som multi-tillgångsportföljens motor. När klasserna glider isär i avkastning tvingar en fast regel ägaren att sälja det som stigit relativt och köpa det som fallit — mekanisk kontrarianism utan ett enda prognosbeslut. Ferri framhåller att bonusen är modest till storleken men att disciplinvärdet är enormt: regeln avpersonifierar beslutet. I AK1A:s termer: återbalansering är den enda strategin där man systematiskt köper svaghet utan att behöva avgöra om svagheten är rättvisad — på portföljnivå är frågan irrelevant, på bolagsnivå (där AKM1 arbetar) är den hela frågan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad varje tillsats historiskt köpte — illustrativ mönsterportfölj\",\"rader\":[[\"Portfölj\",\"Beståndsdelar\",\"Effekt på risk\",\"Kommentar\"],[\"Enklass\",\"USA storbolag\",\"Referens\",\"Hög volatilitet, ingen utjämning\"],[\"Tvåklass\",\"+ obligationer\",\"Stor sänkning\",\"Största enskilda vinsten per tillagd klass\"],[\"Fyraklass\",\"+ internationellt + småbolag\",\"Ytterligare sänkning\",\"Olika regionella och storleksrytmer\"],[\"Sexklass\",\"+ REITs + kort ränta\",\"Mindre tillskott\",\"Fortsatt positivt, avtagande\"],[\"Tolvklass\",\"+ value + tillväxt + TIPS + m\",\"Marginellt\",\"Komplexiteten börjar kosta\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Diversifieringens avkastande skal — de första få, genuint olika klasserna gör nästan allt jobbet; resten är administration."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita din egen front: (1) Lista din nuvarande portföljs beståndsdelar och sortera dem efter vad de genuint tillför — unik riskkälla eller ombokning av aktieriskan? (2) Ta bort allt som är det senare på pappret (inte i verkligheten ännu) och räkna hur många klasser som återstår. (3) Bedöm: om din portfölj har fler än tolv beståndsdelar — vad är den tolfte till för? Skriv ner svaret till kapitel 12."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
       ],
       "quiz": [
         {
@@ -243,14 +411,38 @@
       "title": "Urvalsramverket — vad som räknas som en tillgångsklass",
       "intro": "Innan boken går igenom byggstenarna enskilt stannar den upp vid en fråga de flesta aldrig ställer: vad är en tillgångsklass? Ferri:s svar är ett urvalsramverk med hårda kriterier — och det fungerar som ett filter som ställer tillverkarnas marketing på ända.",
       "blocks": [
-        {"type": "text", "content": "Ferri:s kriterier är raka. En tillgångsklass ska för det första bidra med en egen risk- och avkastningsprofil — inte vara aktieriskan i ny förpackning. För det andra ska den ha låg korrelation med det du redan äger. För det tredje ska den vara billig att äga, helst via ett brett index. För det fjärde tillgänglig och likvid — prissatt dagligen, handlarbar utan stora kostnader. Och för det femte: förståelig — du ska kunna förklara varifrån dess avkastning kommer. En produkt som inte klarar filtret är inte en tillgångsklass, oavsett vad prospektet kallar den."},
-        {"type": "text", "content": "Detta ramverk är bokens tysta mästerverk eftersom det är generellt. Tillämpat på 2005-talets produktutbud sorteras det mesta ut: hedgefonderna missar kostnadskriteriet, de flesta strukturerade produkter missar förståelighetskriteriet, temafonder missar korrelationskriteriet, och exotiska onoterade objekt missar likviditetskriteriet. Notera att ramverket inte säger att objekten är dåliga investeringar — bara att de inte är byggstenar i en allokering. Det är en subtil men avgörande skillnad: utanför portföljarkitekturen är de satsningar, och satsningar ska bedömas med verktyg som AKM1 — inte köpas som diversifiering."},
-        {"type": "text", "content": "Ferri argumenterar vidare för att varje verklig tillgångsklass har en underliggande ekonomi — en källa till avkastning som går att härleda. Aktier: vinstandel i produktiv verksamhet. Obligationer: ränta på utlånat kapital. Fastigheter: hyresintäkter. Råvaror: spotprisförändringar minus kostnader. Skillnaden är avgörande för förväntningsarbetet i kapitel 11 — endast klasser med härledbar avkastning kan värderas med hyfsad säkerhet. En 'klass' vars avkastning beror på nästa köpares entusiasm saknar fundament och hamnar automatiskt i spekulationsfacket. Det är Ferri:s version av Grahams investering/spekulation-distinktion, applicerad på portföljens block."},
-        {"type": "text", "content": "För AK1A tillför ramverket en spegelbild åt AKM1. AKM1:s tjugo variabler är ett urvalsramverk för positioner: V04 P/S, V05 P/B och V06 EV/EBITDA sätter priset mot härledd avkastning; V10-V12 stabilitet; V13-V15 moat; V16-V18 katalysator; V19-V20 kapitaldisciplin. Ferri gör samma övning en nivå upp: allokeringens 'variabler' är riskprofil, korrelation, kostnad och härledbar avkastning. Två ramverk, samma anda — inget kriterium, inget intag. Den som kan båda sorter kan berätta exakt varför varje krona i depån finns där, och den förmågan är sannolikt mer värd än ytterligare tio procents analytisk skärpa i bolagsurvalet."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Ferri:s urvalskriterier mot vanliga produkters fall\",\"rader\":[[\"Kriterium\",\"Fråga\",\"Exempel på fall\"],[\"Egen riskprofil\",\"Har den unik avkastning/korrelation?\",\"Temafonder = aktierisk igen\"],[\"Låg korrelation\",\"Tillsätter den utjämning?\",\"Tillväxtfonder bredvid storbolag\"],[\"Låg kostnad\",\"Kan den ägas billigt via index?\",\"Hedgefonder med 2 och 20\"],[\"Likviditet\",\"Kan den köpas/säljas dagligen billigt?\",\"Onoterade objekt, samlarobjekt\"],[\"Härledbar avkastning\",\"Varifrån kommer avkastningen?\",\"Guld: ingen kassaflödesgrund\"]]}"},
-        {"type": "insikt", "content": "Ett urvalskriterium är en fråga du bestämt dig för att alltid ställa före du blir förförd av svaret — utan kriterier blir varje produktbyrå en allokering."},
-        {"type": "utmaning", "content": "Kör Ferri:s filter över din egen depå: (1) Lista varje innehav och bedöm mot de fem kriterierna — klarar, klarar inte, tveksam. (2) För varje fall: är det en byggsten, eller är det en satsning som ska bedömas med AKM1-kriterier istället? (3) Räkna andelen av kapitalet i satsningar. Om den överstiger vad du är beredd att förlora medan du lär dig — du har just upptäckt din första allokeringshandling."},
-        {"type": "visuell", "content": "skala"}
+        {
+          "type": "text",
+          "content": "Ferri:s kriterier är raka. En tillgångsklass ska för det första bidra med en egen risk- och avkastningsprofil — inte vara aktieriskan i ny förpackning. För det andra ska den ha låg korrelation med det du redan äger. För det tredje ska den vara billig att äga, helst via ett brett index. För det fjärde tillgänglig och likvid — prissatt dagligen, handlarbar utan stora kostnader. Och för det femte: förståelig — du ska kunna förklara varifrån dess avkastning kommer. En produkt som inte klarar filtret är inte en tillgångsklass, oavsett vad prospektet kallar den."
+        },
+        {
+          "type": "text",
+          "content": "Detta ramverk är bokens tysta mästerverk eftersom det är generellt. Tillämpat på 2005-talets produktutbud sorteras det mesta ut: hedgefonderna missar kostnadskriteriet, de flesta strukturerade produkter missar förståelighetskriteriet, temafonder missar korrelationskriteriet, och exotiska onoterade objekt missar likviditetskriteriet. Notera att ramverket inte säger att objekten är dåliga investeringar — bara att de inte är byggstenar i en allokering. Det är en subtil men avgörande skillnad: utanför portföljarkitekturen är de satsningar, och satsningar ska bedömas med verktyg som AKM1 — inte köpas som diversifiering."
+        },
+        {
+          "type": "text",
+          "content": "Ferri argumenterar vidare för att varje verklig tillgångsklass har en underliggande ekonomi — en källa till avkastning som går att härleda. Aktier: vinstandel i produktiv verksamhet. Obligationer: ränta på utlånat kapital. Fastigheter: hyresintäkter. Råvaror: spotprisförändringar minus kostnader. Skillnaden är avgörande för förväntningsarbetet i kapitel 11 — endast klasser med härledbar avkastning kan värderas med hyfsad säkerhet. En 'klass' vars avkastning beror på nästa köpares entusiasm saknar fundament och hamnar automatiskt i spekulationsfacket. Det är Ferri:s version av Grahams investering/spekulation-distinktion, applicerad på portföljens block."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A tillför ramverket en spegelbild åt AKM1. AKM1:s tjugo variabler är ett urvalsramverk för positioner: V04 P/S, V05 P/B och V06 EV/EBITDA sätter priset mot härledd avkastning; V10-V12 stabilitet; V13-V15 moat; V16-V18 katalysator; V19-V20 kapitaldisciplin. Ferri gör samma övning en nivå upp: allokeringens 'variabler' är riskprofil, korrelation, kostnad och härledbar avkastning. Två ramverk, samma anda — inget kriterium, inget intag. Den som kan båda sorter kan berätta exakt varför varje krona i depån finns där, och den förmågan är sannolikt mer värd än ytterligare tio procents analytisk skärpa i bolagsurvalet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ferri:s urvalskriterier mot vanliga produkters fall\",\"rader\":[[\"Kriterium\",\"Fråga\",\"Exempel på fall\"],[\"Egen riskprofil\",\"Har den unik avkastning/korrelation?\",\"Temafonder = aktierisk igen\"],[\"Låg korrelation\",\"Tillsätter den utjämning?\",\"Tillväxtfonder bredvid storbolag\"],[\"Låg kostnad\",\"Kan den ägas billigt via index?\",\"Hedgefonder med 2 och 20\"],[\"Likviditet\",\"Kan den köpas/säljas dagligen billigt?\",\"Onoterade objekt, samlarobjekt\"],[\"Härledbar avkastning\",\"Varifrån kommer avkastningen?\",\"Guld: ingen kassaflödesgrund\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett urvalskriterium är en fråga du bestämt dig för att alltid ställa före du blir förförd av svaret — utan kriterier blir varje produktbyrå en allokering."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör Ferri:s filter över din egen depå: (1) Lista varje innehav och bedöm mot de fem kriterierna — klarar, klarar inte, tveksam. (2) För varje fall: är det en byggsten, eller är det en satsning som ska bedömas med AKM1-kriterier istället? (3) Räkna andelen av kapitalet i satsningar. Om den överstiger vad du är beredd att förlora medan du lär dig — du har just upptäckt din första allokeringshandling."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
       ],
       "quiz": [
         {
@@ -294,15 +486,42 @@
       "title": "USA-aktier — size, style och Fama-French-premierna",
       "intro": "Bokens första riktiga byggsten är den amerikanska aktiemarknaden — och Ferri monterar isär den som ett LEGO: stora och små bolag, value och tillväxt. Här möter läsaren Fama-French-trefaktormodellen på portföljens villkor, med historiska korrelationer istället för akademiska formler.",
       "blocks": [
-        {"type": "text", "content": "Ferri delar in USA-aktierna i en style-box: stora/blandade/små bolag på en axel, value/blended/tillväxt på den andra. Poängen är inte taxonomin utan att rutorna historiskt haft olika avkastning och olika inbördes korrelation — småbolag och value-segmentet avvek från storbolagstillväxt under långa perioder, och just avvikelserna gör dem till byggstenar snarare än dublett. Historiken han redovisar (Ibbotson och Fama-French-data) visar småbolag och value med högre långsiktig avkastning, mot högre volatilitet och långa torpperioder."},
-        {"type": "text", "content": "Bakom rutorna står Fama-French-trefaktormodellen: marknadens beta förklarar inte allt — bolagets storlek (SMB) och bokvärde-till-pris (HML) tillför systematik. Ferri översätter detta till praktisk svenska: value-premien är historiskt avkastningen för att äga det som är prissatt lågt mot bokvärde och kassaflöde, small-premien för att äga det som är litet och illikvidt. Ingen av premierna är en lag — de är ersättning för risk (kladdiga balansräkningar, konjunkturkänslighet, informationskostnader) och de kan utebli i årtionden. AKM1-läsaren känner igen HML som V05 P/B i portföljformat: hela value-faktorn är systematiserad bokvärdesdisciplin."},
-        {"type": "text", "content": "Ferri:s eget förhållningssätt är pragmatiskt: en total-marknadsfond som äger allt efter vikt är den ärliga utgångspunkten, och en strukturerad uppdelning (slice and dice) i små/value-tillsatser är ett medvetet favorisrande av riskpremier — inte ett free lunch. Han är tydlig med att den som överviktar value och småbolag måste kunna tolerera långa perioder av underpresterande mot totalmarknaden, och att flertalet privata sparare tjänar mer på enkelhet än på maximal faktorexponering. Det är en ovanligt ärlig dosering av sin egen medicin."},
-        {"type": "text", "content": "Kapitlet kopplar också samman segmentens beteende med bolagsanalysens variabler. Småbolagspremien är i AKM1:s språk delvis en likviditets- och informationsrisk (V11) som betalar ut; value-segmentets bolag bär ofta högre V10 skuldsättningsgrad och lägre V12 intäktsstabilitet — det är därför de är billiga (V05). Att förstå premien som riskersättning förklarar varför den inte kan arbitreras bort och varför den kan vara borta i precis när man behovit den. Samma varning som gäller korrelationer gäller riskpremier: de är historiska beteenden, inte garantier."},
-        {"type": "text", "content": "För den svenska läsaren är översättningen rak: en global totalmarknadsfond (plus ev. en liten tillsats småbolag/value) motsvarar Ferri:s amerikanska bas. Hans varning mot hemmamarknadsbias — att äga det man känner igen till 80 procent istället för världen till marknadsvikt — gäller dubbelt i ett litet land med en koncentrerad börs. Ferri:s svar på 'men jag förstår svenska bolag bättre' är operativt: den som menar allvar med förståelsen ska kunna formulera den som kriterier och mäta den — annars är det sentimentalitet med avgifter."},
-        {"type": "tabell", "content": "{\"rubrik\":\"USA-aktiernas byggstenar — illustrativ historik\",\"rader\":[[\"Segment\",\"Kännetecken\",\"Risk som betalar\",\"AKM1-spegling\"],[\"Stora blandade\",\"Marknadsvikt, kärnbeta\",\"Marknadsrisk\",\"V12 stabilitet i rutan\"],[\"Småbolag\",\"Illikvida, lokal förankring\",\"Likviditets- och informationsrisk\",\"V11 och V03 spridning\"],[\"Value\",\"Lågt P/B och P/E\",\"Balansräknings- och konjunkturrisk\",\"V05 P/B, V06 EV/EBITDA\"],[\"Tillväxt\",\"Höga multiplar, höga förväntningar\",\"Förväntningsrisk\",\"V01 tillväxt mot V04 P/S\"]]}"},
-        {"type": "insikt", "content": "En riskpremie är ingen avkastning du får — den är en risk du betalas för att bära, och utbetalningen kan utebli längre än du kan vara tålmodig."},
-        {"type": "utmaning", "content": "Mät din egen stilprofil: (1) Ta dina fem största aktieinnehav och sortera dem i Ferri:s rutnät storlek x stil. (2) Räkna din faktiska vikt i små/value mot totalmarknadens — har du en faktorvikting du inte vet om? (3) Kontrollera P/B (V05) och EV/EBITDA (V06) på portföljnivå mot ett brett index: betalar marknaden dig för risk du redan har, eller har du en omedveten value-satsning?"},
-        {"type": "visuell", "content": "radar"}
+        {
+          "type": "text",
+          "content": "Ferri delar in USA-aktierna i en style-box: stora/blandade/små bolag på en axel, value/blended/tillväxt på den andra. Poängen är inte taxonomin utan att rutorna historiskt haft olika avkastning och olika inbördes korrelation — småbolag och value-segmentet avvek från storbolagstillväxt under långa perioder, och just avvikelserna gör dem till byggstenar snarare än dublett. Historiken han redovisar (Ibbotson och Fama-French-data) visar småbolag och value med högre långsiktig avkastning, mot högre volatilitet och långa torpperioder."
+        },
+        {
+          "type": "text",
+          "content": "Bakom rutorna står Fama-French-trefaktormodellen: marknadens beta förklarar inte allt — bolagets storlek (SMB) och bokvärde-till-pris (HML) tillför systematik. Ferri översätter detta till praktisk svenska: value-premien är historiskt avkastningen för att äga det som är prissatt lågt mot bokvärde och kassaflöde, small-premien för att äga det som är litet och illikvidt. Ingen av premierna är en lag — de är ersättning för risk (kladdiga balansräkningar, konjunkturkänslighet, informationskostnader) och de kan utebli i årtionden. AKM1-läsaren känner igen HML som V05 P/B i portföljformat: hela value-faktorn är systematiserad bokvärdesdisciplin."
+        },
+        {
+          "type": "text",
+          "content": "Ferri:s eget förhållningssätt är pragmatiskt: en total-marknadsfond som äger allt efter vikt är den ärliga utgångspunkten, och en strukturerad uppdelning (slice and dice) i små/value-tillsatser är ett medvetet favorisrande av riskpremier — inte ett free lunch. Han är tydlig med att den som överviktar value och småbolag måste kunna tolerera långa perioder av underpresterande mot totalmarknaden, och att flertalet privata sparare tjänar mer på enkelhet än på maximal faktorexponering. Det är en ovanligt ärlig dosering av sin egen medicin."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet kopplar också samman segmentens beteende med bolagsanalysens variabler. Småbolagspremien är i AKM1:s språk delvis en likviditets- och informationsrisk (V11) som betalar ut; value-segmentets bolag bär ofta högre V10 skuldsättningsgrad och lägre V12 intäktsstabilitet — det är därför de är billiga (V05). Att förstå premien som riskersättning förklarar varför den inte kan arbitreras bort och varför den kan vara borta i precis när man behovit den. Samma varning som gäller korrelationer gäller riskpremier: de är historiska beteenden, inte garantier."
+        },
+        {
+          "type": "text",
+          "content": "För den svenska läsaren är översättningen rak: en global totalmarknadsfond (plus ev. en liten tillsats småbolag/value) motsvarar Ferri:s amerikanska bas. Hans varning mot hemmamarknadsbias — att äga det man känner igen till 80 procent istället för världen till marknadsvikt — gäller dubbelt i ett litet land med en koncentrerad börs. Ferri:s svar på 'men jag förstår svenska bolag bättre' är operativt: den som menar allvar med förståelsen ska kunna formulera den som kriterier och mäta den — annars är det sentimentalitet med avgifter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"USA-aktiernas byggstenar — illustrativ historik\",\"rader\":[[\"Segment\",\"Kännetecken\",\"Risk som betalar\",\"AKM1-spegling\"],[\"Stora blandade\",\"Marknadsvikt, kärnbeta\",\"Marknadsrisk\",\"V12 stabilitet i rutan\"],[\"Småbolag\",\"Illikvida, lokal förankring\",\"Likviditets- och informationsrisk\",\"V11 och V03 spridning\"],[\"Value\",\"Lågt P/B och P/E\",\"Balansräknings- och konjunkturrisk\",\"V05 P/B, V06 EV/EBITDA\"],[\"Tillväxt\",\"Höga multiplar, höga förväntningar\",\"Förväntningsrisk\",\"V01 tillväxt mot V04 P/S\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En riskpremie är ingen avkastning du får — den är en risk du betalas för att bära, och utbetalningen kan utebli längre än du kan vara tålmodig."
+        },
+        {
+          "type": "utmaning",
+          "content": "Mät din egen stilprofil: (1) Ta dina fem största aktieinnehav och sortera dem i Ferri:s rutnät storlek x stil. (2) Räkna din faktiska vikt i små/value mot totalmarknadens — har du en faktorvikting du inte vet om? (3) Kontrollera P/B (V05) och EV/EBITDA (V06) på portföljnivå mot ett brett index: betalar marknaden dig för risk du redan har, eller har du en omedveten value-satsning?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
       ],
       "quiz": [
         {
@@ -346,15 +565,42 @@
       "title": "Internationella aktier — valuta, hemmamarknadsbias och stigande korrelation",
       "intro": "Kapitel 7 tar portföljen ut i världen — och tar samtidigt itu med en av dess dyraste illusioner: att hemmamarknaden är säkrare än den är. Ferri:s internationella kapitel handlar lika mycket om valutans mekanik som om geopolitikens.",
       "blocks": [
-        {"type": "text", "content": "Ferri delar upp utlandsaktierna i utvecklade marknader (Europa, Japan, Storbritannien, Kanada, Australien med flera) och tillväxtmarknader (emerging markets), och redovisar deras historiska avkastning och — viktigare — deras korrelationer mot USA. Budskapet är dubbelt: de internationella marknaderna har delat den globala kapitalismens risk och därför dess långsiktiga avkastning, men deras svängningar är delvis desamma. Man köper med utlandsplaceringar framför allt nationell spridning — valuta, räntecycle, sektorsammansättning, lokal politik — inte en helt ny riskart."},
-        {"type": "text", "content": "Valutarisken får sitt eget avsnitt, och Ferri:s behandling är nykter. En svensk som äger japanska aktier äger yen-vinsterna minus kronans rörelser; valutan kan förstärka eller utplåna aktieåret. På kort sikt är valutabruset volatilitet, på lång sikt tenderar köpkraftsparitet att dra mot utjämning — men 'långsiktigt' kan vara decennier. Ferri:s praktiska hållning: international diversifiering utan valutasäkring är rimlig för den långa horisonten, eftersom säkring kostar och valutorna över tid utjämnas mellan handelspartners. Den som säkrar köper kortfristig ro — och betalar för den."},
-        {"type": "text", "content": "Kapitlets mest citerade warning gäller korrelationens trend: de amerikanska och internationella marknaderna rör sig alltmer synkront, särskilt i nedgångar, när globala kapitalflöden och multinationella bolag suddar ut nationsgränserna. Ferri visar rullande korrelationer som stiger från låga nivåer mitt på seklet till betydligt högre på bokens tid — och hans slutsats är viktig nog att upprepa: den internationella spridningens försäkringsvärde är lägre än historiska medeltal antyder, men den är inte noll, och den gäller fortfarande för det enskilda lands-politiska risken. Ärlighet åt båda hållen — en Ferri-signatur."},
-        {"type": "text", "content": "Hemmamarknadsbias behandlas som både psykologi och portföljfel: vi äger det vi ser, läser och förstår — i USA S&P 500, i Sverige en handfull industritabletter — och tror oss ha diversifierat. I AK1A:s termer är hemmamarknadsbias en korrelationsillusion: den svenska börsens sektorkoncentration (styrs av några få bolag) gör att dess V12-aggregat — samlad intäktsstabilitet — ser annorlunda ut än världens. Ferri:s motgift är viktbaserad global ägarskap: äg världen till marknadsvikt och justera medvetet, inte sentimentalt. Den som vill överviktiga hemmamarknad för valutaskäl ska säga så — och räkna på det."},
-        {"type": "text", "content": "Tillväxtmarknaderna får en egen ton: högre förväntad avkastning mot högre volatilitet, politisk risk, svagare ägarskydd, mindre likvida marknader och valutakontroller — riskerna är listade, inte bortförklarade. Ferri:s dosering är en moderat allokering, inte en satsning: tillväxtmarknader är ett tillskott i en redan global portfölj, inte en egen klass att bygga teser kring. För AKM1-analytikern är frestelsen omvänd: just i tillväxtmarknader kan bolagsgranskning (V10 skuldsättning, V19 kapitalförbrukning, V18 regulatorisk risk) ha störst marginalvärde — men det är satellitens arbete, inte ryggradens."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Internationell placering — riskerna och deras karaktär\",\"rader\":[[\"Risk\",\"Karaktär\",\"Ferri:s hantering\"],[\"Valuta\",\"Kortsiktigt brus, långsiktig utjämning\",\"Säkring onödig på Mega-horisont\"],[\"Korrelationskonvergens\",\"Synkroni stiger, särskilt i nedgång\",\"Räkna med mindre utjämning än historiken\"],[\"Politisk/regulatorisk\",\"Länder riskerar ingripanden\",\"Spridning över regioner\"],[\"Likviditet\",\"Små lokala marknader\",\"Indexprodukter, inga enskilda småbolag\"],[\"Hemmamarknadsbias\",\"Koncentration i det bekanta\",\"Global viktbas, medvetna avvikelsen\"]]}"},
-        {"type": "insikt", "content": "Internationell spridning köper dig inte en annan marknadsrisk — den köper dig skydd mot att allt du äger bor i samma land, valuta och rättsordning."},
-        {"type": "utmaning", "content": "Granska din geografi: (1) Räkna din portföljs vikt i Sverige, övriga världen och USA. (2) Jämför med global marknadsvikt (Sverige brukar ligga kring ett par procent). (3) Skriv ner skälet för din hemmaövervikt — om skälet inte går att formulera som en mätbar tes (t ex valuta-matchning av framtida utgifter), anteckna att den är sentimentalt betingad och låt den ligga till kapitel 12."},
-        {"type": "visuell", "content": "donut"}
+        {
+          "type": "text",
+          "content": "Ferri delar upp utlandsaktierna i utvecklade marknader (Europa, Japan, Storbritannien, Kanada, Australien med flera) och tillväxtmarknader (emerging markets), och redovisar deras historiska avkastning och — viktigare — deras korrelationer mot USA. Budskapet är dubbelt: de internationella marknaderna har delat den globala kapitalismens risk och därför dess långsiktiga avkastning, men deras svängningar är delvis desamma. Man köper med utlandsplaceringar framför allt nationell spridning — valuta, räntecycle, sektorsammansättning, lokal politik — inte en helt ny riskart."
+        },
+        {
+          "type": "text",
+          "content": "Valutarisken får sitt eget avsnitt, och Ferri:s behandling är nykter. En svensk som äger japanska aktier äger yen-vinsterna minus kronans rörelser; valutan kan förstärka eller utplåna aktieåret. På kort sikt är valutabruset volatilitet, på lång sikt tenderar köpkraftsparitet att dra mot utjämning — men 'långsiktigt' kan vara decennier. Ferri:s praktiska hållning: international diversifiering utan valutasäkring är rimlig för den långa horisonten, eftersom säkring kostar och valutorna över tid utjämnas mellan handelspartners. Den som säkrar köper kortfristig ro — och betalar för den."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets mest citerade warning gäller korrelationens trend: de amerikanska och internationella marknaderna rör sig alltmer synkront, särskilt i nedgångar, när globala kapitalflöden och multinationella bolag suddar ut nationsgränserna. Ferri visar rullande korrelationer som stiger från låga nivåer mitt på seklet till betydligt högre på bokens tid — och hans slutsats är viktig nog att upprepa: den internationella spridningens försäkringsvärde är lägre än historiska medeltal antyder, men den är inte noll, och den gäller fortfarande för det enskilda lands-politiska risken. Ärlighet åt båda hållen — en Ferri-signatur."
+        },
+        {
+          "type": "text",
+          "content": "Hemmamarknadsbias behandlas som både psykologi och portföljfel: vi äger det vi ser, läser och förstår — i USA S&P 500, i Sverige en handfull industritabletter — och tror oss ha diversifierat. I AK1A:s termer är hemmamarknadsbias en korrelationsillusion: den svenska börsens sektorkoncentration (styrs av några få bolag) gör att dess V12-aggregat — samlad intäktsstabilitet — ser annorlunda ut än världens. Ferri:s motgift är viktbaserad global ägarskap: äg världen till marknadsvikt och justera medvetet, inte sentimentalt. Den som vill överviktiga hemmamarknad för valutaskäl ska säga så — och räkna på det."
+        },
+        {
+          "type": "text",
+          "content": "Tillväxtmarknaderna får en egen ton: högre förväntad avkastning mot högre volatilitet, politisk risk, svagare ägarskydd, mindre likvida marknader och valutakontroller — riskerna är listade, inte bortförklarade. Ferri:s dosering är en moderat allokering, inte en satsning: tillväxtmarknader är ett tillskott i en redan global portfölj, inte en egen klass att bygga teser kring. För AKM1-analytikern är frestelsen omvänd: just i tillväxtmarknader kan bolagsgranskning (V10 skuldsättning, V19 kapitalförbrukning, V18 regulatorisk risk) ha störst marginalvärde — men det är satellitens arbete, inte ryggradens."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Internationell placering — riskerna och deras karaktär\",\"rader\":[[\"Risk\",\"Karaktär\",\"Ferri:s hantering\"],[\"Valuta\",\"Kortsiktigt brus, långsiktig utjämning\",\"Säkring onödig på Mega-horisont\"],[\"Korrelationskonvergens\",\"Synkroni stiger, särskilt i nedgång\",\"Räkna med mindre utjämning än historiken\"],[\"Politisk/regulatorisk\",\"Länder riskerar ingripanden\",\"Spridning över regioner\"],[\"Likviditet\",\"Små lokala marknader\",\"Indexprodukter, inga enskilda småbolag\"],[\"Hemmamarknadsbias\",\"Koncentration i det bekanta\",\"Global viktbas, medvetna avvikelsen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Internationell spridning köper dig inte en annan marknadsrisk — den köper dig skydd mot att allt du äger bor i samma land, valuta och rättsordning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din geografi: (1) Räkna din portföljs vikt i Sverige, övriga världen och USA. (2) Jämför med global marknadsvikt (Sverige brukar ligga kring ett par procent). (3) Skriv ner skälet för din hemmaövervikt — om skälet inte går att formulera som en mätbar tes (t ex valuta-matchning av framtida utgifter), anteckna att den är sentimentalt betingad och låt den ligga till kapitel 12."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
       ],
       "quiz": [
         {
@@ -398,15 +644,42 @@
       "title": "Räntebärande placeringar — duration, kredit och inflationsskydd",
       "intro": "Obligationskapitlet är bokens mest underskattade: Ferri behandlar räntemarknaden som ett eget universum med egna riskfaktorer — löptid, kredit, inflation — och visar att 'obligationer' lika lite är en homogen klass som 'aktier'. Den som bara äger en 'räntefond' har inte fattat vad den innehåller.",
       "blocks": [
-        {"type": "text", "content": "Ferri sorterar den amerikanska räntemarknaden i statsobligationer (Treasuries), inflationskyddade statsobligationer (TIPS), agentobligationer, investeringsgrad företagsobligationer, kommunobligationer (munis) och high yield. Två riskaxlar organiserar allt: löptidsrisken — hur mycket priset rör sig när allmänna räntenivån ändras, mätt i duration — och kreditrisken — risken att utgivaren inte fullgör betalningarna. En obligation är ingenting annat än dessa två risker plus en utbetalningsstruktur, och varje 'räntefond' är en position i båda axlarna. Att läsa en räntefond börjar med att fråga: hur lång duration och vilken kreditkvalitet?"},
-        {"type": "text", "content": "Duration får en pedagogisk genomgång: en obligation med duration fem förlorar ungefär fem procent i värde om avkastningskravet stiger en procentenhet — och tvärtom. Ferri:s tabeller visar historisk avkastning och risk per segment, och mönstret är konsekvent: längre löptid ger högre avkastning och högre volatilitet; lägre kreditkvalitet ger högre avkastning och mer korrelation med aktier — för high yield är korrelationen till aktier så hög att Ferri behandlar den som halvaktie. Inflationsskyddade obligationer (TIPS; i Sverige motsvarigheten statsobligationer med real kupong) håller real värdeutveckling och är den enda placering med statslig kreditkvalitet som explicit skyddar köpkraften — inflationsskyddet alltså."},
-        {"type": "text", "content": "Vad gör obligationerna i portföljen? Ferri:s svar är trefaldigt: de sänker den totala risken (låg korrelation med aktier i normala tider, ofta negativ i deflation och panik), de ger en kontracyklisk reserv av säkerhet och kontanter vid återbalansering efter aktiekrascher — torrt krut — och de ger en förutsägbar inkomstström. Obligationen är portföljens sätt att bära penningmarknadens risk utan aktiernas variation. I AKM1:s spegel: en obligation är ett utlåtande om V10 skuldsättningsgrad och V11 likviditet hos motparten — den som inte kan läsa en balansräkning kan inte heller välja kreditrisk."},
-        {"type": "text", "content": "Ferri varnar för frestelsen att 'förbättra' avkastningen genom att sträcka duration eller sjunka i kredit när räntorna känns låga — det är samma aktiv satsning som aktieurval, fast förklädd till ränteplacering. Hans hållning är att räntedelen ska vara tråkig med vilje: kreditchok är just den typ av risk som aktiedelen redan bär. En svensk översättning av hans norm: statliga obligationer och bolagsobligationer med högsta betyg i ISK/kapitalförsäkring där skatten inte straffar låg avkastning, reala obligationer för köpkraftsskydd, och företagsobligationer endast som medveten kreditpåhängning."},
-        {"type": "text", "content": "Kapitlet avslutas med obligationens tredje roll i det svenska perspektivet:räntan är värdemätaren för allt. Aktiens riskpremie mäts mot statsräntan; ett bolags WACC och därmed dess DCF-värde (AKM1 V10-V14-kedjan) börjar i riskfria räntan. Den som förstår duration förstår varför en räntesväng 2022 kunde halvera både obligations- och tillväxtaktievärderingar samtidigt — samma gravitationskonstant flyttade båda kurvorna. Ferri:s obligationskapitel är i det avseendet också ett värderingskapitel i förklädnad."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Räntouniversum — två axlar och deras konsekvenser\",\"rader\":[[\"Segment\",\"Duration\",\"Kredit\",\"Särdrag i portföljen\"],[\"Korta statsobligationer\",\"Låg\",\"Stat\",\"Stabilitet, liten räntekänsla\"],[\"Långa statsobligationer\",\"Hög\",\"Stat\",\"Deflationsskydd, volatila i ränteuppgång\"],[\"Reala obligationer (TIPS)\",\"Medel\",\"Stat\",\"Enda explicita inflations-skyddet\"],[\"Investeringgrade företagsobligationer\",\"Medel\",\"Hög\",\"Små kreditpåhäng, nära stats\"],[\"High yield\",\"Medel\",\"Låg\",\"Halvaktie — hög korrelation med börsen\"],[\"Kommunobligationer (munis)\",\"Medel\",\"Hög\",\"USA: skattefri — svensk motsvarighet saknas\"]]}"},
-        {"type": "insikt", "content": "Räntedelen är den enda plats i portföljen där du kan köpa förutsägbarhet — använd den inte till att i smyg fatta aktiebeslut med kredit och duration."},
-        {"type": "utmaning", "content": "Röntga din räntedel: (1) Ta din största räntefond och ta reda på duration och genomsnittlig kreditkvalitet. (2) Klassificera den i Ferri:s rutnät — vad bär du för risker egentligen? (3) Om fonden innehåller high yield: räkna om andelen och konstatera hur mycket av din 'säkra' del som i praktiken är aktieliknande. Justera medvetandet först, portföljen i kapitel 12."},
-        {"type": "visuell", "content": "skala"}
+        {
+          "type": "text",
+          "content": "Ferri sorterar den amerikanska räntemarknaden i statsobligationer (Treasuries), inflationskyddade statsobligationer (TIPS), agentobligationer, investeringsgrad företagsobligationer, kommunobligationer (munis) och high yield. Två riskaxlar organiserar allt: löptidsrisken — hur mycket priset rör sig när allmänna räntenivån ändras, mätt i duration — och kreditrisken — risken att utgivaren inte fullgör betalningarna. En obligation är ingenting annat än dessa två risker plus en utbetalningsstruktur, och varje 'räntefond' är en position i båda axlarna. Att läsa en räntefond börjar med att fråga: hur lång duration och vilken kreditkvalitet?"
+        },
+        {
+          "type": "text",
+          "content": "Duration får en pedagogisk genomgång: en obligation med duration fem förlorar ungefär fem procent i värde om avkastningskravet stiger en procentenhet — och tvärtom. Ferri:s tabeller visar historisk avkastning och risk per segment, och mönstret är konsekvent: längre löptid ger högre avkastning och högre volatilitet; lägre kreditkvalitet ger högre avkastning och mer korrelation med aktier — för high yield är korrelationen till aktier så hög att Ferri behandlar den som halvaktie. Inflationsskyddade obligationer (TIPS; i Sverige motsvarigheten statsobligationer med real kupong) håller real värdeutveckling och är den enda placering med statslig kreditkvalitet som explicit skyddar köpkraften — inflationsskyddet alltså."
+        },
+        {
+          "type": "text",
+          "content": "Vad gör obligationerna i portföljen? Ferri:s svar är trefaldigt: de sänker den totala risken (låg korrelation med aktier i normala tider, ofta negativ i deflation och panik), de ger en kontracyklisk reserv av säkerhet och kontanter vid återbalansering efter aktiekrascher — torrt krut — och de ger en förutsägbar inkomstström. Obligationen är portföljens sätt att bära penningmarknadens risk utan aktiernas variation. I AKM1:s spegel: en obligation är ett utlåtande om V10 skuldsättningsgrad och V11 likviditet hos motparten — den som inte kan läsa en balansräkning kan inte heller välja kreditrisk."
+        },
+        {
+          "type": "text",
+          "content": "Ferri varnar för frestelsen att 'förbättra' avkastningen genom att sträcka duration eller sjunka i kredit när räntorna känns låga — det är samma aktiv satsning som aktieurval, fast förklädd till ränteplacering. Hans hållning är att räntedelen ska vara tråkig med vilje: kreditchok är just den typ av risk som aktiedelen redan bär. En svensk översättning av hans norm: statliga obligationer och bolagsobligationer med högsta betyg i ISK/kapitalförsäkring där skatten inte straffar låg avkastning, reala obligationer för köpkraftsskydd, och företagsobligationer endast som medveten kreditpåhängning."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet avslutas med obligationens tredje roll i det svenska perspektivet:räntan är värdemätaren för allt. Aktiens riskpremie mäts mot statsräntan; ett bolags WACC och därmed dess DCF-värde (AKM1 V10-V14-kedjan) börjar i riskfria räntan. Den som förstår duration förstår varför en räntesväng 2022 kunde halvera både obligations- och tillväxtaktievärderingar samtidigt — samma gravitationskonstant flyttade båda kurvorna. Ferri:s obligationskapitel är i det avseendet också ett värderingskapitel i förklädnad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räntouniversum — två axlar och deras konsekvenser\",\"rader\":[[\"Segment\",\"Duration\",\"Kredit\",\"Särdrag i portföljen\"],[\"Korta statsobligationer\",\"Låg\",\"Stat\",\"Stabilitet, liten räntekänsla\"],[\"Långa statsobligationer\",\"Hög\",\"Stat\",\"Deflationsskydd, volatila i ränteuppgång\"],[\"Reala obligationer (TIPS)\",\"Medel\",\"Stat\",\"Enda explicita inflations-skyddet\"],[\"Investeringgrade företagsobligationer\",\"Medel\",\"Hög\",\"Små kreditpåhäng, nära stats\"],[\"High yield\",\"Medel\",\"Låg\",\"Halvaktie — hög korrelation med börsen\"],[\"Kommunobligationer (munis)\",\"Medel\",\"Hög\",\"USA: skattefri — svensk motsvarighet saknas\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Räntedelen är den enda plats i portföljen där du kan köpa förutsägbarhet — använd den inte till att i smyg fatta aktiebeslut med kredit och duration."
+        },
+        {
+          "type": "utmaning",
+          "content": "Röntga din räntedel: (1) Ta din största räntefond och ta reda på duration och genomsnittlig kreditkvalitet. (2) Klassificera den i Ferri:s rutnät — vad bär du för risker egentligen? (3) Om fonden innehåller high yield: räkna om andelen och konstatera hur mycket av din 'säkra' del som i praktiken är aktieliknande. Justera medvetandet först, portföljen i kapitel 12."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
       ],
       "quiz": [
         {
@@ -450,14 +723,38 @@
       "title": "Fastigheter — REITs och det egna huset",
       "intro": "Fastighetskapitlet innehåller bokens mest husnära konfrontation: skillnaden mellan att äga fastighetsaktier och att äga sitt eget hus. Ferri skiljer på fastigheten som investering och fastigheten som konsumtion med hävstång — och den distinktionen har förstorats av den svenska bolånekulturen.",
       "blocks": [
-        {"type": "text", "content": "Ferri introducerar REITs — real estate investment trusts — som börsens fastighetsbolag: de äger och förvaltar hyresfastigheter, är skyldiga att dela ut större delen av sina kassaflöden och handlas som aktier med daglig kurssättning. Deras portföljroll är dubbel: de bär fastighetsmarknadens risk — hyresnivåer, vakansgrader, kapitaliseringstak — med en rytm som delvis skiljer sig från börsens i övrigt, och deras utdelningar gör dem till en inkomstkälla. Historiskt har REITs visat avkastning i nivå med aktier, med hög volatilitet och medelstor korrelation till aktiemarknaden — en byggsten, inte ett mirakel."},
-        {"type": "text", "content": "Sedan den viktiga skillnaden: det egna hemmet är inte en REIT. Ett hus med 80 procent bolån är en högt belånad, odiversifierad, illikvid position i en enda fastighet på en enda ort — kombinerad med ett konsumtionsvärde. Ferri frågar rakt: skulle du köpa en enda fastighet, med lån, i det området, om du inte skulle bo i den? Om svaret är nej är huset bostad, inte placering — och det ska inte räknas in i portföljens fastighetsvikt när allokeringen bestäms. Den svenska läsaren, med världens högsta bolåneandel bland hushåll, har extra skäl att göra övningen ärligt."},
-        {"type": "text", "content": "I AKM1:s spegel är ett fastighetsbolag ett bolag som alla andra: V11 likviditet låg på fastighetsnivå men hög via börsen, V12 intäktsstabilitet hyresavtalens längd och vakanslogiken, V10 skuldsättningsgrad ofta hög i branschen — direkt avgörande för räntekänsligheten. Värderingen sker på kassaflöde: hyra minus driftskostnader minus ränta, kapitaliserat till ett pris — Ferri nämner FFO (funds from operations) som fastighetens motsvarighet till rörelseresultat. Den som kan läsa ett fastighetsbolags FFO-multipel mot räntenivån förstår varför sektorn faller när diskonteringsräntan stiger: samma DCF-gravitation som alla andra kassaflödesvärdepapper."},
-        {"type": "text", "content": "Ferri:s praktiska dosering av REITs är en måttlig tillsats — inte mer än en tiondel av portföljen — eftersom de delar så mycket med aktiemarknadens risk. Han är också tydlig med att sektorn är cyklisk och ibland korrelerar nära med småbolagsaktier. Ett svenskt undantag värt att nämna i marginalen: den svenska börsens fastighetsbolag har historiskt varit mer högbelåtna än amerikanska REITs — V10-disciplinen är där extra avgörande, och ränteuppgången 2022 gav laboratoriebevis: sektorns värderingar föll i takt med att diskonteringsräntan och refinansieringskostnaden steg samtidigt."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Fastighetsexponeringens två skepnader\",\"rader\":[[\"Aspekt\",\"REITs (börsen)\",\"Det egna huset\"],[\"Diversifiering\",\"Många objekt, regioner, segment\",\"Ett objekt, en ort\"],[\"Belåning\",\"Verksamhetens, rimlig\",\"Din privata, ofta hög\"],[\"Likviditet\",\"Daglig handel\",\"Månader, courtage, budprocess\"],[\"Kassaflöde\",\"Utdelning av hyresnetto\",\"Kostnad: ränta, underhåll, skatt\"],[\"Portföljroll\",\"Byggsten med egen rytm\",\"Bostad — räkna den inte som allokering\"]]}"},
-        {"type": "insikt", "content": "Ett hus är en bostad som låtsas vara en investering när marknaden stiger — allokeringen måste se genom låtsasleken."},
-        {"type": "utmaning", "content": "Skilj bostad från placering: (1) Räkna ditt hushålls totala exponering mot fastighetsmarknaden — husets marknadsvärde minus bolån, plus ev. fastighetsaktier. (2) Fråga Ferri:s testfråga: är huset en position du skulle ta utan bosättning? (3) Notera din faktiska fastighetsvikt i nettoförmögenheten och bestäm om den ska justeras ner genom kommande sparande — inte genom panikförsäljning av bostaden."},
-        {"type": "visuell", "content": "donut"}
+        {
+          "type": "text",
+          "content": "Ferri introducerar REITs — real estate investment trusts — som börsens fastighetsbolag: de äger och förvaltar hyresfastigheter, är skyldiga att dela ut större delen av sina kassaflöden och handlas som aktier med daglig kurssättning. Deras portföljroll är dubbel: de bär fastighetsmarknadens risk — hyresnivåer, vakansgrader, kapitaliseringstak — med en rytm som delvis skiljer sig från börsens i övrigt, och deras utdelningar gör dem till en inkomstkälla. Historiskt har REITs visat avkastning i nivå med aktier, med hög volatilitet och medelstor korrelation till aktiemarknaden — en byggsten, inte ett mirakel."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den viktiga skillnaden: det egna hemmet är inte en REIT. Ett hus med 80 procent bolån är en högt belånad, odiversifierad, illikvid position i en enda fastighet på en enda ort — kombinerad med ett konsumtionsvärde. Ferri frågar rakt: skulle du köpa en enda fastighet, med lån, i det området, om du inte skulle bo i den? Om svaret är nej är huset bostad, inte placering — och det ska inte räknas in i portföljens fastighetsvikt när allokeringen bestäms. Den svenska läsaren, med världens högsta bolåneandel bland hushåll, har extra skäl att göra övningen ärligt."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s spegel är ett fastighetsbolag ett bolag som alla andra: V11 likviditet låg på fastighetsnivå men hög via börsen, V12 intäktsstabilitet hyresavtalens längd och vakanslogiken, V10 skuldsättningsgrad ofta hög i branschen — direkt avgörande för räntekänsligheten. Värderingen sker på kassaflöde: hyra minus driftskostnader minus ränta, kapitaliserat till ett pris — Ferri nämner FFO (funds from operations) som fastighetens motsvarighet till rörelseresultat. Den som kan läsa ett fastighetsbolags FFO-multipel mot räntenivån förstår varför sektorn faller när diskonteringsräntan stiger: samma DCF-gravitation som alla andra kassaflödesvärdepapper."
+        },
+        {
+          "type": "text",
+          "content": "Ferri:s praktiska dosering av REITs är en måttlig tillsats — inte mer än en tiondel av portföljen — eftersom de delar så mycket med aktiemarknadens risk. Han är också tydlig med att sektorn är cyklisk och ibland korrelerar nära med småbolagsaktier. Ett svenskt undantag värt att nämna i marginalen: den svenska börsens fastighetsbolag har historiskt varit mer högbelåtna än amerikanska REITs — V10-disciplinen är där extra avgörande, och ränteuppgången 2022 gav laboratoriebevis: sektorns värderingar föll i takt med att diskonteringsräntan och refinansieringskostnaden steg samtidigt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fastighetsexponeringens två skepnader\",\"rader\":[[\"Aspekt\",\"REITs (börsen)\",\"Det egna huset\"],[\"Diversifiering\",\"Många objekt, regioner, segment\",\"Ett objekt, en ort\"],[\"Belåning\",\"Verksamhetens, rimlig\",\"Din privata, ofta hög\"],[\"Likviditet\",\"Daglig handel\",\"Månader, courtage, budprocess\"],[\"Kassaflöde\",\"Utdelning av hyresnetto\",\"Kostnad: ränta, underhåll, skatt\"],[\"Portföljroll\",\"Byggsten med egen rytm\",\"Bostad — räkna den inte som allokering\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett hus är en bostad som låtsas vara en investering när marknaden stiger — allokeringen måste se genom låtsasleken."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skilj bostad från placering: (1) Räkna ditt hushålls totala exponering mot fastighetsmarknaden — husets marknadsvärde minus bolån, plus ev. fastighetsaktier. (2) Fråga Ferri:s testfråga: är huset en position du skulle ta utan bosättning? (3) Notera din faktiska fastighetsvikt i nettoförmögenheten och bestäm om den ska justeras ner genom kommande sparande — inte genom panikförsäljning av bostaden."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
       ],
       "quiz": [
         {
@@ -501,15 +798,42 @@
       "title": "Alternativa placeringar — råvaror, guld, hedgefonder, samlarobjekt",
       "intro": "Kapitel 10 är bokens tillfälle att säga nej. Ferri granskar kategorin 'alternativa investeringar' med urvalsramverket från kapitel 5 — och det mesta klarar inte filtret. Det är samtidigt kapitlet där hans ärlighet är som störst: råvaror diversifierar faktiskt. Han avrår ändå, och anledningen är bättre än en åsikt.",
       "blocks": [
-        {"type": "text", "content": "Råvaror först. Ferri redogör korrekt för att råvaruindex historiskt haft låg korrelation med aktier och obligationer och därmed teoretisk diversifieringsvärde. Men han påpekar mekaniken i implementeringen: en råvaruindexfond äger inte råvaror utan terminer — kontrakt som löper ut och måste rullas, och rullkostnaden (contango: terminspris över spotpris) äter avkastningen strukturmässigt. Långsiktig råvaruindex-avkastning blir approximativt spotförändring minus rullkostnad minus avgift — och när marknaden är i contango är de båda förstnämnda tillsammans ofta negativa. Diversifieringen är verklig men honorerad med ett negativt kassaflöde."},
-        {"type": "text", "content": "Guld behandlas med kapitel 5:s test: varifrån kommer avkastningen? Guld har ingen kassaflödesgrund — inga utdelningar, ingen kupong, ingen hyra — dess avkastning är uteslutande nästa köpares villighet att betala mer, mot en teoretisk hänvisning till köpkraftsbekymmern. Ferri:s dom är att guld kan fungera som katastrof-försäkring i korta panikperioder men att det saknar den härledbara avkastning som gör en tillgång till en klass. I AK1TS:s språk är guld en ren sentiment- och pris-tillgång utan V-variabler: det finns inget V01-V20 att analysera — vilket är den mest fundamental invändningen en fundamentalanalytiker kan resonera kring."},
-        {"type": "text", "content": "Hedgefonder får bokens hårdaste behandling. Ferri erkänner att vissa strategier (globala makro, förvaltningsframtider) historiskt visat låg korrelation med aktier — men: avgiftsstrukturen 2 och 20 (två procent förvaltning plus tjugo procent av vinsten) gör att investeraren efter kostnader i genomsnitt fått marknadsnära avkastning med hedge-liknande risk, och de bästa fonderna har slutat för nya pengar. De som är öppna söker kapital; de som inte behöver söker sällan. Dessutom saknar kategorin transparens och likviditet. Urvalsramverkets tre kriterier faller samtidigt: kostnad, likviditet, förståelighet."},
-        {"type": "text", "content": "Samlarobjekt — konst, vintagebilar, mynt — som 'alternativ klass' behandlas kort och bestämt: noll kassaflöde, illikviditet, höga transaktionskostnader, bedömningsrisk och en avkastning som i akademiska studier till stor del förklaras av kvalitetsskevhet (det som säljs tillhör det bäst bedömda materialet — avkastningen överdrivs därför). Ferri:s hållning: köpa det för att du älskar det — aldrig som portföljens beståndsdel. Även privat equity avhandlas i marginalen: låsning i tio år mot oklara värderingar är inte en allokering, det är en option på någon annans skicklighet."},
-        {"type": "text", "content": "Kapitlets djupare lärdom för AK1A är inte förteckningen utan metoden: när ett försäljningsargument börjar med 'alla prissätter detta fel' och slutar med 'därför behöver du inte förstå det' — då har urvalsramverket redan fallit. Ferri:s hållning till alternativ är inte ideologisk utan aritmetisk: han betalar inte säker avkastning (avgifter) för osäker diversifiering. Samma test skär vem som helst: om du inte kan härleda varifrån en placering betalar dig, är du inte investeraren i rummet — du är avkastningen."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Alternativen mot Ferri:s urvalsfilter\",\"rader\":[[\"Placering\",\"Diversifieringsvärde\",\"Kostnad/mekanik\",\"Dom\"],[\"Råvaruindex\",\"Reellt låg korrelation\",\"Contango-rullkostnad äter avkastning\",\"Avstå eller minimal dos\"],[\"Guld\",\"Hedge i paniker\",\"Ingen kassaflödesgrund\",\"Inte en tillgångsklass\"],[\"Hedgefonder\",\"Vissa strategier\",\"2 och 20, låsning, oklarhet\",\"Ramverket faller\"],[\"Samlarobjekt\",\"Ingen\",\"Illikvid, bedömningsrisk\",\"Konsumtion, ej portfölj\"],[\"Privat equity\",\"Ytterst marginell\",\"Tioårig låsning\",\"Option på andra\"]]}"},
-        {"type": "insikt", "content": "Diversifiering som kostar mer i säkra avgifter än den förväntas ge i osäker avkastning är inte skydd — det är en försäkring tecknad hos en motpart som inte tänker betala skadan."},
-        {"type": "utmaning", "content": "Kör filtermetoden på en frestelse: (1) Välj en alternativ placering du övervägt (guld, råvarufond, hedgefondliknande produkt). (2) Skriv ner varifrån dess avkastning ska komma — mekanismen, inte hoppet. (3) Räkna de säkra kostnaderna per år och jämför med det historiska diversifieringsmåttet. Om du inte kan fylla i rad två har du din Ferri-dom; spara den som motståndskraft nästa gång argumentet dyker upp."},
-        {"type": "visuell", "content": "cykel"}
+        {
+          "type": "text",
+          "content": "Råvaror först. Ferri redogör korrekt för att råvaruindex historiskt haft låg korrelation med aktier och obligationer och därmed teoretisk diversifieringsvärde. Men han påpekar mekaniken i implementeringen: en råvaruindexfond äger inte råvaror utan terminer — kontrakt som löper ut och måste rullas, och rullkostnaden (contango: terminspris över spotpris) äter avkastningen strukturmässigt. Långsiktig råvaruindex-avkastning blir approximativt spotförändring minus rullkostnad minus avgift — och när marknaden är i contango är de båda förstnämnda tillsammans ofta negativa. Diversifieringen är verklig men honorerad med ett negativt kassaflöde."
+        },
+        {
+          "type": "text",
+          "content": "Guld behandlas med kapitel 5:s test: varifrån kommer avkastningen? Guld har ingen kassaflödesgrund — inga utdelningar, ingen kupong, ingen hyra — dess avkastning är uteslutande nästa köpares villighet att betala mer, mot en teoretisk hänvisning till köpkraftsbekymmern. Ferri:s dom är att guld kan fungera som katastrof-försäkring i korta panikperioder men att det saknar den härledbara avkastning som gör en tillgång till en klass. I AK1TS:s språk är guld en ren sentiment- och pris-tillgång utan V-variabler: det finns inget V01-V20 att analysera — vilket är den mest fundamental invändningen en fundamentalanalytiker kan resonera kring."
+        },
+        {
+          "type": "text",
+          "content": "Hedgefonder får bokens hårdaste behandling. Ferri erkänner att vissa strategier (globala makro, förvaltningsframtider) historiskt visat låg korrelation med aktier — men: avgiftsstrukturen 2 och 20 (två procent förvaltning plus tjugo procent av vinsten) gör att investeraren efter kostnader i genomsnitt fått marknadsnära avkastning med hedge-liknande risk, och de bästa fonderna har slutat för nya pengar. De som är öppna söker kapital; de som inte behöver söker sällan. Dessutom saknar kategorin transparens och likviditet. Urvalsramverkets tre kriterier faller samtidigt: kostnad, likviditet, förståelighet."
+        },
+        {
+          "type": "text",
+          "content": "Samlarobjekt — konst, vintagebilar, mynt — som 'alternativ klass' behandlas kort och bestämt: noll kassaflöde, illikviditet, höga transaktionskostnader, bedömningsrisk och en avkastning som i akademiska studier till stor del förklaras av kvalitetsskevhet (det som säljs tillhör det bäst bedömda materialet — avkastningen överdrivs därför). Ferri:s hållning: köpa det för att du älskar det — aldrig som portföljens beståndsdel. Även privat equity avhandlas i marginalen: låsning i tio år mot oklara värderingar är inte en allokering, det är en option på någon annans skicklighet."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets djupare lärdom för AK1A är inte förteckningen utan metoden: när ett försäljningsargument börjar med 'alla prissätter detta fel' och slutar med 'därför behöver du inte förstå det' — då har urvalsramverket redan fallit. Ferri:s hållning till alternativ är inte ideologisk utan aritmetisk: han betalar inte säker avkastning (avgifter) för osäker diversifiering. Samma test skär vem som helst: om du inte kan härleda varifrån en placering betalar dig, är du inte investeraren i rummet — du är avkastningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Alternativen mot Ferri:s urvalsfilter\",\"rader\":[[\"Placering\",\"Diversifieringsvärde\",\"Kostnad/mekanik\",\"Dom\"],[\"Råvaruindex\",\"Reellt låg korrelation\",\"Contango-rullkostnad äter avkastning\",\"Avstå eller minimal dos\"],[\"Guld\",\"Hedge i paniker\",\"Ingen kassaflödesgrund\",\"Inte en tillgångsklass\"],[\"Hedgefonder\",\"Vissa strategier\",\"2 och 20, låsning, oklarhet\",\"Ramverket faller\"],[\"Samlarobjekt\",\"Ingen\",\"Illikvid, bedömningsrisk\",\"Konsumtion, ej portfölj\"],[\"Privat equity\",\"Ytterst marginell\",\"Tioårig låsning\",\"Option på andra\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Diversifiering som kostar mer i säkra avgifter än den förväntas ge i osäker avkastning är inte skydd — det är en försäkring tecknad hos en motpart som inte tänker betala skadan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör filtermetoden på en frestelse: (1) Välj en alternativ placering du övervägt (guld, råvarufond, hedgefondliknande produkt). (2) Skriv ner varifrån dess avkastning ska komma — mekanismen, inte hoppet. (3) Räkna de säkra kostnaderna per år och jämför med det historiska diversifieringsmåttet. Om du inte kan fylla i rad två har du din Ferri-dom; spara den som motståndskraft nästa gång argumentet dyker upp."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
       ],
       "quiz": [
         {
@@ -553,15 +877,42 @@
       "title": "Realistiska förväntningar — att sia utan att spå",
       "intro": "Kapitel 11 är bokens motsvarighet till en väderprognos som erkänner sin egen osäkerhet. Ferri vägrar extrapolera gårdagen och ger i stället tre metoder att bilda rimliga förväntningar — och sedan en övning som få gör: att skriva ner dem och hålla sig till dem.",
       "blocks": [
-        {"type": "text", "content": "Ferri börjar med att döda den vanligaste prognosmetoden: extrapolation av senaste decenniets avkastning. Historien visar varför — efter 1950-talets glansår följde platta 60- och 70-tal; efter 90-talets IT-eufori följde ett förlorat decennium; efter 2000-talets reala nollavkastning följde ett starkt 2010-tal. Marknadens långa sekvenser följer inte slumpens mynt utan värderingens gravitation: höga ingångsvärderingar förutsäger låga framtida avkastningar och omvänt. Därför kan gårdagens tal inte projiceras — men gårdagens pris mot fundamenten kan användas baklänges."},
-        {"type": "text", "content": "Metod ett: den historiska genomsnittsräntan — Ibbotsons långa serier ger aktier cirka 6-7 procent realt, obligationer 2-3 — användbar som grov referens men blind för startläget. Metod två, som Ferri själv föredrar: avkastningsuppdelningen. Aktiers framtida avkastning approximeras av utdelningsavkastning plus real tillväxt i vinster och utdelningar, plus eller minus en spekulativ komponent — värderingens förskjutning. Med låga utdelningar och höga multiplar sjunker det rimliga förväntade talet av rent aritmetiska skäl; inget av det kräver spådom, bara addition. (Det är samma Gordon-logik Bernstein kör i kursens syskon — och samma som AKM1:s V01-tillväxt plus V05/V06-pris bygger DCF:s fundament.)"},
-        {"type": "text", "content": "Ferri drar den obehagliga slutsatsen som logiken ger: efter starka perioder med stigande multiplar är framtiden strukturellt sämre — och en sparplan som kalkylerar med gårdagens tal sparar för lite. Han uppmanar läsaren att räkna på tre scenarier (pessimistisk, central, optimistisk) för varje tillgångsklass och att använda det centrala i planeringen med de yttre som stress-test. Det är exakt den intervall-ärlighet som AKM1 kräver av varje värdering — Ferri tillämpar den bara på hela marknaden istället för ett bolag. Inga punktskattningar, bara intervaller med ansvar."},
-        {"type": "text", "content": "Kapitlets praktiska redskap är Investment Policy Statement, IPS: ett dokument där du skriver ner allokering, förväntade avkastningar per klass, rebalanseringsregler och — kritiskt — villkoren för när dokumentet får ändras. Inte när marknaden skrämmer dig, utan när livet ändras: inkomst, horisont, mål. IPS är Ferri:s teknologi mot det mänskliga minnet, som annars skriver om historien så att varje beslut känns rationellt i efterhand. AK1A:s Analys-portföljer har samma funktion på bolagsnivå: en skriven tes som kan fällas — Ferri ger portföljen samma bevisbördan."},
-        {"type": "text", "content": "Förväntningsarbetet får också en betydelse som Ferri inte riktigt kunde se 2005 men som hans ramverk täcker: pensionskriser uppstår inte av dåliga år utan av fel kalkylerade år. En plan byggd på 8 procents förväntning som levererar 5 procent misslyckas inte dramatiskt — den misslyckas tyst, med tio års eftersläpning som inte kan hämtas igen. Därför ska förväntningarna enligt Ferri vara konservativa och utvärderas årligen mot metodens egna antaganden — inte mot marknadens senaste årsresultat. Ödmjukt, tråkigt, livsviktigt."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Tre metoder att bilda förväntningar\",\"rader\":[[\"Metod\",\"Logik\",\"Styrka\",\"Svaghet\"],[\"Extrapolation\",\"Senaste decenniet fortsätter\",\"Enkel\",\"Blind för startläget — därför farlig\"],[\"Historiskt snitt\",\"Långt genomsnitt\",\"Robust referens\",\"Ignorerar dagens priser och utdelningar\"],[\"Avkastningsuppdelning\",\"Utdelning + tillväxt ± värderingsförskjutning\",\"Använder startläget\",\"Kräver antaganden om tillväxt\"]]}"},
-        {"type": "insikt", "content": "Du kan inte veta framtida avkastning — men du kan räkna ut vad marknadens nuvarande pris implicit lovar, och vägra planera på mer än så."},
-        {"type": "utmaning", "content": "Bygg ditt eget förväntningsunderlag: (1) Ta dagens utdelningsavkastning för din aktiedel och lägg ett rimligt realt tillväxtantagande (BNP per capita som tak). (2) Justera med värderingsläget: ligger dagens multiplar över historiskt snitt, dra ner. (3) Skriv tre scenarier för tio år och använd det centrala i din sparkalkyl. (4) Skriv ett tre rader långt IPS och datera det."},
-        {"type": "visuell", "content": "compound"}
+        {
+          "type": "text",
+          "content": "Ferri börjar med att döda den vanligaste prognosmetoden: extrapolation av senaste decenniets avkastning. Historien visar varför — efter 1950-talets glansår följde platta 60- och 70-tal; efter 90-talets IT-eufori följde ett förlorat decennium; efter 2000-talets reala nollavkastning följde ett starkt 2010-tal. Marknadens långa sekvenser följer inte slumpens mynt utan värderingens gravitation: höga ingångsvärderingar förutsäger låga framtida avkastningar och omvänt. Därför kan gårdagens tal inte projiceras — men gårdagens pris mot fundamenten kan användas baklänges."
+        },
+        {
+          "type": "text",
+          "content": "Metod ett: den historiska genomsnittsräntan — Ibbotsons långa serier ger aktier cirka 6-7 procent realt, obligationer 2-3 — användbar som grov referens men blind för startläget. Metod två, som Ferri själv föredrar: avkastningsuppdelningen. Aktiers framtida avkastning approximeras av utdelningsavkastning plus real tillväxt i vinster och utdelningar, plus eller minus en spekulativ komponent — värderingens förskjutning. Med låga utdelningar och höga multiplar sjunker det rimliga förväntade talet av rent aritmetiska skäl; inget av det kräver spådom, bara addition. (Det är samma Gordon-logik Bernstein kör i kursens syskon — och samma som AKM1:s V01-tillväxt plus V05/V06-pris bygger DCF:s fundament.)"
+        },
+        {
+          "type": "text",
+          "content": "Ferri drar den obehagliga slutsatsen som logiken ger: efter starka perioder med stigande multiplar är framtiden strukturellt sämre — och en sparplan som kalkylerar med gårdagens tal sparar för lite. Han uppmanar läsaren att räkna på tre scenarier (pessimistisk, central, optimistisk) för varje tillgångsklass och att använda det centrala i planeringen med de yttre som stress-test. Det är exakt den intervall-ärlighet som AKM1 kräver av varje värdering — Ferri tillämpar den bara på hela marknaden istället för ett bolag. Inga punktskattningar, bara intervaller med ansvar."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets praktiska redskap är Investment Policy Statement, IPS: ett dokument där du skriver ner allokering, förväntade avkastningar per klass, rebalanseringsregler och — kritiskt — villkoren för när dokumentet får ändras. Inte när marknaden skrämmer dig, utan när livet ändras: inkomst, horisont, mål. IPS är Ferri:s teknologi mot det mänskliga minnet, som annars skriver om historien så att varje beslut känns rationellt i efterhand. AK1A:s Analys-portföljer har samma funktion på bolagsnivå: en skriven tes som kan fällas — Ferri ger portföljen samma bevisbördan."
+        },
+        {
+          "type": "text",
+          "content": "Förväntningsarbetet får också en betydelse som Ferri inte riktigt kunde se 2005 men som hans ramverk täcker: pensionskriser uppstår inte av dåliga år utan av fel kalkylerade år. En plan byggd på 8 procents förväntning som levererar 5 procent misslyckas inte dramatiskt — den misslyckas tyst, med tio års eftersläpning som inte kan hämtas igen. Därför ska förväntningarna enligt Ferri vara konservativa och utvärderas årligen mot metodens egna antaganden — inte mot marknadens senaste årsresultat. Ödmjukt, tråkigt, livsviktigt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre metoder att bilda förväntningar\",\"rader\":[[\"Metod\",\"Logik\",\"Styrka\",\"Svaghet\"],[\"Extrapolation\",\"Senaste decenniet fortsätter\",\"Enkel\",\"Blind för startläget — därför farlig\"],[\"Historiskt snitt\",\"Långt genomsnitt\",\"Robust referens\",\"Ignorerar dagens priser och utdelningar\"],[\"Avkastningsuppdelning\",\"Utdelning + tillväxt ± värderingsförskjutning\",\"Använder startläget\",\"Kräver antaganden om tillväxt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte veta framtida avkastning — men du kan räkna ut vad marknadens nuvarande pris implicit lovar, och vägra planera på mer än så."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ditt eget förväntningsunderlag: (1) Ta dagens utdelningsavkastning för din aktiedel och lägg ett rimligt realt tillväxtantagande (BNP per capita som tak). (2) Justera med värderingsläget: ligger dagens multiplar över historiskt snitt, dra ner. (3) Skriv tre scenarier för tio år och använd det centrala i din sparkalkyl. (4) Skriv ett tre rader långt IPS och datera det."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
       ],
       "quiz": [
         {
@@ -605,15 +956,42 @@
       "title": "Bygga portföljen — fyra livsfaser, två svårighetsgrader",
       "intro": "Nu monteras allt. Kapitel 12 är bokens verkstad: Ferri ger portföljer för fyra livsfaser och två ambitionsnivåer — en enkel med fyra till sex breda indexfonder, en strukturerad med ett dussin. Tabellerna är bokens kärna, men reglerna bakom dem är viktigare än siffrorna.",
       "blocks": [
-        {"type": "text", "content": "Ferri organiserar byggandet kring fyra grupper: tidiga ackumulatorer (lång horisont, högt mänskligt kapital, små summor), sena ackumulatorer (toppvärde i inkomst, kortare men påtaglig horisont), tidiga pensionärer (kapitalbevarande, uttag börjar) och sena pensionärer (uttag, kortsiktighet, sekvensrisk). Till det tre riskprofiler — konservativ, moderat, aggressiv — och därmed ett rutnät av allokeringar snarare än en enda 'rätt' portfölj. Aktieandelen är den övergripande riskreglaget; övriga klasser nyanserar risken inom andelen."},
-        {"type": "text", "content": "Två byggmetoder erbjuds. Den enkla: fyra till sex totalmarknadsfonder — globala aktier, (ev. tillväxtmarknad), globala/småbolag som tillsats, statsnära obligationer, ev. REITs och reala obligationer. Den strukturerade (slice and dice): ett dussin klasser med medvetna vikter i size, style, regioner och räntesegment, byggd för den som vill maximera faktorspridning och kan bära spåren av den. Ferri:s ärlighet: den enkla portföljen fångar huvuddelen av lunchen och den strukturerade kräver mer disciplin än de flesta har — valmetod är en självkännedomsfråga, inte en intelligensfråga."},
-        {"type": "text", "content": "Bakom tabellerna står principer. Första: aktieandelen styrs av horisont och riskkapacitet, inte av utsikterna för nästa år. Andra: inom aktiedelen gäller marknadsvikt som utgångspunkt och medvetna avvikelser (små/value, regioner) som tillsatser med utsatt maxgräns. Tredje: räntedelen byggs för stabilitet och torrt krut, inte för avkastningsjakt. Fjärde: återbalansering sker enligt regel — Ferri diskuterar kalender (årligen) mot band (vid avvikelse några procentenheter från målvikt) och landar i att band är mer effektiv men kalender är mer mänskligt hanterbar — valet som fungerar i verkligheten slår det som är optimalt på pappret."},
-        {"type": "text", "content": "Här kan AK1A:s syntes formuleras rent. Ryggraden — 80-95 procent av kapitalet — byggs enligt Ferri: billiga breda index, allokering efter horisont, återbalansering enligt policy. Satelliten — 5-20 procent — är AKM1-labbet: positioner valda efter variablerna (V01 tillväxt mot V04-V06 värdering, V12 intäktsstabilitet, V13-V15 moat, V16-V18 katalysator, V19 kapitaldisciplin, V20 äkta återköp) med margin of safety och skriven tes. Satelliten återbalanseras inte mekaniskt — dess positioner fälls när tesen fälls eller marginalen försvinner. Gränsen är poängen: Ferri-styrning där exekvering är allt, AKM1-styrning där analys är allt."},
-        {"type": "text", "content": "Kapitlet hanterar också övergångarna mellan faser: sänk aktieandelen stegvis inför uttag, inte i ett språng efter första kraschen; håll 1-2 års uttag i kort ränta eller likvid medel så att en börsnedgång inte tvingar försäljning (sekvensrisk-hantering); och ompröva IPS vid livsförändringar. För svenska förhållanden tillkommer kontots roll: ISK/kapitalförsäkring för breddindex, avstämningsinnehav för direktaktier med längre horisonter, och medvetenhet om att återbalansering inom skattekonto är fri medan den utanför realiserar. Ferri:s universala råd ligger fast: allokeringen avgör, kostnaden avgör, beteendet avgör — fondvalet i sig gör det inte."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Ferri:s portföljmatris — illustrativa aktieandelar\",\"rader\":[[\"Grupp\",\"Horisontkaraktär\",\"Konservativ\",\"Moderat\",\"Aggressiv\"],[\"Tidig ackumulator\",\"30+ år\",\"40-60\",\"60-80\",\"80-100\"],[\"Sen ackumulator\",\"15-25 år\",\"35-50\",\"50-70\",\"70-85\"],[\"Tidig pensionär\",\"uttag 0-10 år\",\"25-40\",\"40-55\",\"55-70\"],[\"Sen pensionär\",\"uttag löpande\",\"15-30\",\"30-45\",\"45-60\"]]}"},
-        {"type": "insikt", "content": "Valet mellan den enkla och strukturerade portföljen är inte en intelligenstest — det är ett ärlighetstest om vilken komplexitet du faktiskt kommer underhålla i tio år."},
-        {"type": "utmaning", "content": "Bygg din ryggrad på papper: (1) Placera dig i Ferri:s livsfasmatris och välj riskprofil med kapitel 2:s dubbla mått. (2) Konstruera både en enkel (4-6 fonder) och en strukturerad version av din portfölj med konkreta procentsatser. (3) Bestäm återbalanseringsregel — datum eller band — och skriv in den i IPS från kapitel 11. (4) Avsätt satellitens storlek och skriv ner AKM1-kriterierna för vad som får plats där."},
-        {"type": "visuell", "content": "donut"}
+        {
+          "type": "text",
+          "content": "Ferri organiserar byggandet kring fyra grupper: tidiga ackumulatorer (lång horisont, högt mänskligt kapital, små summor), sena ackumulatorer (toppvärde i inkomst, kortare men påtaglig horisont), tidiga pensionärer (kapitalbevarande, uttag börjar) och sena pensionärer (uttag, kortsiktighet, sekvensrisk). Till det tre riskprofiler — konservativ, moderat, aggressiv — och därmed ett rutnät av allokeringar snarare än en enda 'rätt' portfölj. Aktieandelen är den övergripande riskreglaget; övriga klasser nyanserar risken inom andelen."
+        },
+        {
+          "type": "text",
+          "content": "Två byggmetoder erbjuds. Den enkla: fyra till sex totalmarknadsfonder — globala aktier, (ev. tillväxtmarknad), globala/småbolag som tillsats, statsnära obligationer, ev. REITs och reala obligationer. Den strukturerade (slice and dice): ett dussin klasser med medvetna vikter i size, style, regioner och räntesegment, byggd för den som vill maximera faktorspridning och kan bära spåren av den. Ferri:s ärlighet: den enkla portföljen fångar huvuddelen av lunchen och den strukturerade kräver mer disciplin än de flesta har — valmetod är en självkännedomsfråga, inte en intelligensfråga."
+        },
+        {
+          "type": "text",
+          "content": "Bakom tabellerna står principer. Första: aktieandelen styrs av horisont och riskkapacitet, inte av utsikterna för nästa år. Andra: inom aktiedelen gäller marknadsvikt som utgångspunkt och medvetna avvikelser (små/value, regioner) som tillsatser med utsatt maxgräns. Tredje: räntedelen byggs för stabilitet och torrt krut, inte för avkastningsjakt. Fjärde: återbalansering sker enligt regel — Ferri diskuterar kalender (årligen) mot band (vid avvikelse några procentenheter från målvikt) och landar i att band är mer effektiv men kalender är mer mänskligt hanterbar — valet som fungerar i verkligheten slår det som är optimalt på pappret."
+        },
+        {
+          "type": "text",
+          "content": "Här kan AK1A:s syntes formuleras rent. Ryggraden — 80-95 procent av kapitalet — byggs enligt Ferri: billiga breda index, allokering efter horisont, återbalansering enligt policy. Satelliten — 5-20 procent — är AKM1-labbet: positioner valda efter variablerna (V01 tillväxt mot V04-V06 värdering, V12 intäktsstabilitet, V13-V15 moat, V16-V18 katalysator, V19 kapitaldisciplin, V20 äkta återköp) med margin of safety och skriven tes. Satelliten återbalanseras inte mekaniskt — dess positioner fälls när tesen fälls eller marginalen försvinner. Gränsen är poängen: Ferri-styrning där exekvering är allt, AKM1-styrning där analys är allt."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet hanterar också övergångarna mellan faser: sänk aktieandelen stegvis inför uttag, inte i ett språng efter första kraschen; håll 1-2 års uttag i kort ränta eller likvid medel så att en börsnedgång inte tvingar försäljning (sekvensrisk-hantering); och ompröva IPS vid livsförändringar. För svenska förhållanden tillkommer kontots roll: ISK/kapitalförsäkring för breddindex, avstämningsinnehav för direktaktier med längre horisonter, och medvetenhet om att återbalansering inom skattekonto är fri medan den utanför realiserar. Ferri:s universala råd ligger fast: allokeringen avgör, kostnaden avgör, beteendet avgör — fondvalet i sig gör det inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ferri:s portföljmatris — illustrativa aktieandelar\",\"rader\":[[\"Grupp\",\"Horisontkaraktär\",\"Konservativ\",\"Moderat\",\"Aggressiv\"],[\"Tidig ackumulator\",\"30+ år\",\"40-60\",\"60-80\",\"80-100\"],[\"Sen ackumulator\",\"15-25 år\",\"35-50\",\"50-70\",\"70-85\"],[\"Tidig pensionär\",\"uttag 0-10 år\",\"25-40\",\"40-55\",\"55-70\"],[\"Sen pensionär\",\"uttag löpande\",\"15-30\",\"30-45\",\"45-60\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Valet mellan den enkla och strukturerade portföljen är inte en intelligenstest — det är ett ärlighetstest om vilken komplexitet du faktiskt kommer underhålla i tio år."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din ryggrad på papper: (1) Placera dig i Ferri:s livsfasmatris och välj riskprofil med kapitel 2:s dubbla mått. (2) Konstruera både en enkel (4-6 fonder) och en strukturerad version av din portfölj med konkreta procentsatser. (3) Bestäm återbalanseringsregel — datum eller band — och skriv in den i IPS från kapitel 11. (4) Avsätt satellitens storlek och skriv ner AKM1-kriterierna för vad som får plats där."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
       ],
       "quiz": [
         {
@@ -657,15 +1035,42 @@
       "title": "Beteendet avgör — hur psyket saboterar allokeringen",
       "intro": "Kapitel 13 är bokens sista försvarslinje: den mot dig själv. Ferri låter en hypotetisk portfölj genomleva 1999-2002 och visar hur investerare som svor hög risktolerans i euforin kapitulerade i botten. Biologin har inte uppdaterats sedan dess — bara kalenderåren.",
       "blocks": [
-        {"type": "text", "content": "Ferri:s fallstudie är perioden 1999-2002: en portfölj med breda aktier tappar kring hälften realt, tekniktunga portföljer 80 procent, och återhämtningen dröjer årtionden för de sämsta segmenten. Frågan han ställer är inte 'vilken allokering var bäst?' utan 'vem höll kvar sin?'. Svaret, dokumenterat i fondflöden: alltför få. Investerare köpte aktivt i toppen 1999-2000 och sålde i botten 2002 — det beteende-mässiga gapet mellan fondens och fondägarens avkastning (investor behavior gap) blev under perioden skolbildande i amerikansk data."},
-        {"type": "text", "content": "Förklaringarna är beteendefinansens klassiker, och Ferri rullar upp dem i portföljsammanhang: recencybias (senaste tre åren känns som sanningen), överkonfidens (jag klarar svängningar — tänkta i abstrakt), förlustaversion (förluster gör dubbelt så ont), ankareffekten (mitt innehav är värt vad jag betalade), mental bokföring (varje konto bedöms isolerat) och hjordbeteende (tryggheten i att alla gör likadant). Poängen är inte att diagnostisera andra — det är att inse att listan beskriver normalpsykologi under stress. Ingen är immun för att den råkar ut för sitt eget värsta jag; skillnaden ligger i huruvida ett system fångar en innan skadan."},
-        {"type": "text", "content": "Ferri:s teknologi är att flytta besluten från krisens ögonblick till planens dag. Riskprofilen mäts inte med en enkät i efterhand utan med konkreta frågor: Hur reagerade du 2008 (eller 2022)? Vad gjorde du — köpte, höll, sålde? Svaret i handling är den enda giltiga risktoleransmätningen som finns. Sedan: återbalanseringsregeln (mekanisk, utan förhandlingsutrymme), IPS:n (skriven när du är kall), automation av sparflödet och klientens regel att inte läsa portföljen oftare än regeln kräver. Beteendefällor blockeras bäst av arkitektur, inte av karaktär."},
-        {"type": "text", "content": "Här skiljer sig allokeringens psykologi från aktieanalysens, och det är en av kursens viktigaste poäng. I AKM1-labbet ska känslor ha en funktion: obehag vid en balansräkning är information värd att utreda — V08-varning, V19-kapitalbruk, V17-avtalsrisk. I ryggraden är känslor ren sabotage: det finns ingen analys att göra, bara vikter att återställa. AK1A:s konfluensprincip fungerar i våg-/pris-/tids-/brytpunkts-dimensioner på satellitens horisonter; på Mega-horisonten gäller konfluens bara i én mening — allokering, kostnad och regel måste peka samma håll. Den som blandar horisonterna använder korta horisonterns verktyg på långas beslut, och tvärtom."},
-        {"type": "text", "content": "Ferri avslutar med rådgivarens roll ur ett beteendeperspektiv: en bra rådgivares främsta värde är inte stockpicking utan att hålla klienten i spåren under de år då avvikelser kostar som mest — beteendecoachning med fiduciärplikt. Det är en ärlig och nästan ödmjuk slutsats från en man som byggt en förvaltningsbyrå på just det: om du kan vara din egen rådgivare med IPS som kontrakt, bra; om inte, köp någon som håller dig ansvarig — inte någon som lovar slagning av marknaden."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Beteendets fiender och Ferri:s motmedel\",\"rader\":[[\"Bias\",\"Yttring\",\"Motmedel (arkitektur)\"],[\"Recency\",\"Senaste åren blir sanningen\",\"Scenariokalkyl och IPS från kap 11\"],[\"Överkonfidens\",\"'Jag tål 80 aktieandel' i abstrakt\",\"Handlingsmätt risktolerans: vad gjorde du 2008/2022?\"],[\"Förlustaversion\",\"Säljer i botten, köper först i trygghet\",\"Mekanisk återbalansering med band\"],[\"Mentalt bokföring\",\"Varje konto döms isolerat\",\"Samlad portföljvy i utvärderingen\"],[\"Hjordbeteende\",\"Trygghet i att alla gör likadant\",\"Skriven policy med datering och signatur\"]]}"},
-        {"type": "insikt", "content": "Din risktolerans mäts inte i vad du svarar på en enkät — den mäts i vad du gjorde senaste gången det gjorde ont."},
-        {"type": "utmaning", "content": "Gör handlingsmätningen: (1) Minns ditt konkreta beteende under 2022 (eller senaste kraftiga nedgången): vad köpte, höll eller sålde du — och när? (2) Skriv ner det som din kalibrerade riskprofil i handling. (3) Jämför med den profil du hävdar att du har. Om de skiljer sig, anpassa allokeringen till den lägre av dem i kapitel 12:s matris."},
-        {"type": "visuell", "content": "cykel"}
+        {
+          "type": "text",
+          "content": "Ferri:s fallstudie är perioden 1999-2002: en portfölj med breda aktier tappar kring hälften realt, tekniktunga portföljer 80 procent, och återhämtningen dröjer årtionden för de sämsta segmenten. Frågan han ställer är inte 'vilken allokering var bäst?' utan 'vem höll kvar sin?'. Svaret, dokumenterat i fondflöden: alltför få. Investerare köpte aktivt i toppen 1999-2000 och sålde i botten 2002 — det beteende-mässiga gapet mellan fondens och fondägarens avkastning (investor behavior gap) blev under perioden skolbildande i amerikansk data."
+        },
+        {
+          "type": "text",
+          "content": "Förklaringarna är beteendefinansens klassiker, och Ferri rullar upp dem i portföljsammanhang: recencybias (senaste tre åren känns som sanningen), överkonfidens (jag klarar svängningar — tänkta i abstrakt), förlustaversion (förluster gör dubbelt så ont), ankareffekten (mitt innehav är värt vad jag betalade), mental bokföring (varje konto bedöms isolerat) och hjordbeteende (tryggheten i att alla gör likadant). Poängen är inte att diagnostisera andra — det är att inse att listan beskriver normalpsykologi under stress. Ingen är immun för att den råkar ut för sitt eget värsta jag; skillnaden ligger i huruvida ett system fångar en innan skadan."
+        },
+        {
+          "type": "text",
+          "content": "Ferri:s teknologi är att flytta besluten från krisens ögonblick till planens dag. Riskprofilen mäts inte med en enkät i efterhand utan med konkreta frågor: Hur reagerade du 2008 (eller 2022)? Vad gjorde du — köpte, höll, sålde? Svaret i handling är den enda giltiga risktoleransmätningen som finns. Sedan: återbalanseringsregeln (mekanisk, utan förhandlingsutrymme), IPS:n (skriven när du är kall), automation av sparflödet och klientens regel att inte läsa portföljen oftare än regeln kräver. Beteendefällor blockeras bäst av arkitektur, inte av karaktär."
+        },
+        {
+          "type": "text",
+          "content": "Här skiljer sig allokeringens psykologi från aktieanalysens, och det är en av kursens viktigaste poäng. I AKM1-labbet ska känslor ha en funktion: obehag vid en balansräkning är information värd att utreda — V08-varning, V19-kapitalbruk, V17-avtalsrisk. I ryggraden är känslor ren sabotage: det finns ingen analys att göra, bara vikter att återställa. AK1A:s konfluensprincip fungerar i våg-/pris-/tids-/brytpunkts-dimensioner på satellitens horisonter; på Mega-horisonten gäller konfluens bara i én mening — allokering, kostnad och regel måste peka samma håll. Den som blandar horisonterna använder korta horisonterns verktyg på långas beslut, och tvärtom."
+        },
+        {
+          "type": "text",
+          "content": "Ferri avslutar med rådgivarens roll ur ett beteendeperspektiv: en bra rådgivares främsta värde är inte stockpicking utan att hålla klienten i spåren under de år då avvikelser kostar som mest — beteendecoachning med fiduciärplikt. Det är en ärlig och nästan ödmjuk slutsats från en man som byggt en förvaltningsbyrå på just det: om du kan vara din egen rådgivare med IPS som kontrakt, bra; om inte, köp någon som håller dig ansvarig — inte någon som lovar slagning av marknaden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Beteendets fiender och Ferri:s motmedel\",\"rader\":[[\"Bias\",\"Yttring\",\"Motmedel (arkitektur)\"],[\"Recency\",\"Senaste åren blir sanningen\",\"Scenariokalkyl och IPS från kap 11\"],[\"Överkonfidens\",\"'Jag tål 80 aktieandel' i abstrakt\",\"Handlingsmätt risktolerans: vad gjorde du 2008/2022?\"],[\"Förlustaversion\",\"Säljer i botten, köper först i trygghet\",\"Mekanisk återbalansering med band\"],[\"Mentalt bokföring\",\"Varje konto döms isolerat\",\"Samlad portföljvy i utvärderingen\"],[\"Hjordbeteende\",\"Trygghet i att alla gör likadant\",\"Skriven policy med datering och signatur\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Din risktolerans mäts inte i vad du svarar på en enkät — den mäts i vad du gjorde senaste gången det gjorde ont."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör handlingsmätningen: (1) Minns ditt konkreta beteende under 2022 (eller senaste kraftiga nedgången): vad köpte, höll eller sålde du — och när? (2) Skriv ner det som din kalibrerade riskprofil i handling. (3) Jämför med den profil du hävdar att du har. Om de skiljer sig, anpassa allokeringen till den lägre av dem i kapitel 12:s matris."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
       ],
       "quiz": [
         {
@@ -709,14 +1114,38 @@
       "title": "Kostnader, rådgivning och bokens bilagor",
       "intro": "Bokens sista fulla kapitel ägnas åt den siffra som aldrig misslyckas: kostnaden. Ferri avslutar med avgifternas aritmetik, rådgivarens roll och tre bilagor — och lämnar läsaren med en checklista snarare än en känsla.",
       "blocks": [
-        {"type": "text", "content": "Ferri:s kostnadsaritmetik är samma obevekliga ränta-på-ränta som Bogle och Bernstein kör: en extra avgift på en procent per år under trettio år äter i storleksordningen en fjärdedel av slutkapitalet; under femtio år närmare hälften. Skillnaden mot avkastningen är att avgiften är säker — den betalas i dåliga år som bra, utan anständighet att konjunkturanpassa sig. Därför hamnar kostnaden före alla andra optimeringar i Ferri:s hierarki: först avgiften, sedan skatten, sedan allokeringens finlir. Han redovisar fondkostnadernas komponenter — förvaltningsavgift, transaktionskostnader inuti fonden, handelskostnader, avgifter till rådgivare och plattform — och uppmanar läsaren att räkna summan, inte det finansbranschen räknar."},
-        {"type": "text", "content": "Rådgivarkapitlet är skrivet av en insider som bytt sida. Ferri skiljer på provisionär — betald av produkttillverkaren för att sälja — och fiduciär, som är skyldig att agera i ditt intresse mot ett transparent arvode. Frågorna en klient ska ställa är konkreta: Hur är du betald? Vad kostar jag totalt per år i kronor? Vilka fondandelar rekommenderar du utan eget ekonomiskt intresse? Får jag det skriftligt? En rådgivare som inte svarar i kronor och skriftligt har svarat. För den som inte behöver rådgivning är Ferri:s slutsats densamma som bokens: en liten korg breda indexfonder, en skriven policy och en årlig eftermiddag klarar arbetet."},
-        {"type": "text", "content": "Bilagorna förtjänar mer än fotnotsstatus eftersom de visar bokens metod: bilaga A listar lågkostnadsfondleverantörer (för svensken: de nordiska plattformar och institutionsfonder som erbjuder index under 20 punkter), bilaga B listar forskningskällor — akademiska artiklar, Ibbotson, indexkonstruktörer — och bilaga C rekommenderar vidare läsning: Bernstein, Bogle, Ellis, Malkiel, Swedroe — samma bibliotek som AK1A:s bokkanon vilar på. Budskapet är att Ferri inte vill ha läsar tro; han vill att läsaren ska kunna kontrollera varje siffra själv och sedan bygga vidare med bättre böcker."},
-        {"type": "text", "content": "Här infinner sig kursens svenska efterspel. Ferri:s kostnadshierarki översätts: håll totala kostnader i ryggraden under 0,2 procent (globala indexfonder och statsobligationer gör det möjligt), räkna ISK/kapitalförsäkringens schablon mot faktisk skatt, undvik produkter med inbyggda avgiftslager (strukturerade, aktivt förvaltade index med förvaltningsavgift), och ställ samma fiduciärfrågor till svenska rådgivare och banker. Kontrollfrågan är alltid Ferri:s: vad kostar alltihop mig per år, i kronor? Om svaret kräver mer än två räkningar är designen medvetet dunkel."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Kostnadernas hierarki och dess svenska översättning\",\"rader\":[[\"Lager\",\"Typisk storlek\",\"Åtgärd\"],[\"Fondavgift (TER)\",\"0,05-2 procent\",\"Ryggrad under 0,2 procent\"],[\"Omsättningskostnader i fonden\",\"dolda, 0-1 procent\",\"Låg omsättning — index\"],[\"Plattform/ förvaring\",\"0-0,3 procent\",\"Förhandsla eller byta\"],[\"Rådgivningsarvode\",\"0-1 procent+\",\"Transparens i kronor, fiduciär\"],[\"Skatt\",\"schablon eller 30/25\",\"Kontots roll i allokeringen\"]]}"},
-        {"type": "insikt", "content": "Alla andra tal i portföljen är osäkra — kostnaden är den enda prognos du gör med hundraprocentig träffsäkerhet, så gör den låg."},
-        {"type": "utmaning", "content": "Räkna din totala kostnad i kronor: (1) Summera TER för alla fonder, plattformsavgifter, rådgivningsarvoden och ev. courtage under ett normalt år. (2) Multiplicera med ditt kapital — skriv summan i kronor, inte procent. (3) Jämför med vad en minimal Ferri-ryggrad hade kostat. Skillnaden, kapitaliserad trettio år framåt, är priset för det du eventuellt får — fråga dig om det är värt det."},
-        {"type": "visuell", "content": "compound"}
+        {
+          "type": "text",
+          "content": "Ferri:s kostnadsaritmetik är samma obevekliga ränta-på-ränta som Bogle och Bernstein kör: en extra avgift på en procent per år under trettio år äter i storleksordningen en fjärdedel av slutkapitalet; under femtio år närmare hälften. Skillnaden mot avkastningen är att avgiften är säker — den betalas i dåliga år som bra, utan anständighet att konjunkturanpassa sig. Därför hamnar kostnaden före alla andra optimeringar i Ferri:s hierarki: först avgiften, sedan skatten, sedan allokeringens finlir. Han redovisar fondkostnadernas komponenter — förvaltningsavgift, transaktionskostnader inuti fonden, handelskostnader, avgifter till rådgivare och plattform — och uppmanar läsaren att räkna summan, inte det finansbranschen räknar."
+        },
+        {
+          "type": "text",
+          "content": "Rådgivarkapitlet är skrivet av en insider som bytt sida. Ferri skiljer på provisionär — betald av produkttillverkaren för att sälja — och fiduciär, som är skyldig att agera i ditt intresse mot ett transparent arvode. Frågorna en klient ska ställa är konkreta: Hur är du betald? Vad kostar jag totalt per år i kronor? Vilka fondandelar rekommenderar du utan eget ekonomiskt intresse? Får jag det skriftligt? En rådgivare som inte svarar i kronor och skriftligt har svarat. För den som inte behöver rådgivning är Ferri:s slutsats densamma som bokens: en liten korg breda indexfonder, en skriven policy och en årlig eftermiddag klarar arbetet."
+        },
+        {
+          "type": "text",
+          "content": "Bilagorna förtjänar mer än fotnotsstatus eftersom de visar bokens metod: bilaga A listar lågkostnadsfondleverantörer (för svensken: de nordiska plattformar och institutionsfonder som erbjuder index under 20 punkter), bilaga B listar forskningskällor — akademiska artiklar, Ibbotson, indexkonstruktörer — och bilaga C rekommenderar vidare läsning: Bernstein, Bogle, Ellis, Malkiel, Swedroe — samma bibliotek som AK1A:s bokkanon vilar på. Budskapet är att Ferri inte vill ha läsar tro; han vill att läsaren ska kunna kontrollera varje siffra själv och sedan bygga vidare med bättre böcker."
+        },
+        {
+          "type": "text",
+          "content": "Här infinner sig kursens svenska efterspel. Ferri:s kostnadshierarki översätts: håll totala kostnader i ryggraden under 0,2 procent (globala indexfonder och statsobligationer gör det möjligt), räkna ISK/kapitalförsäkringens schablon mot faktisk skatt, undvik produkter med inbyggda avgiftslager (strukturerade, aktivt förvaltade index med förvaltningsavgift), och ställ samma fiduciärfrågor till svenska rådgivare och banker. Kontrollfrågan är alltid Ferri:s: vad kostar alltihop mig per år, i kronor? Om svaret kräver mer än två räkningar är designen medvetet dunkel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kostnadernas hierarki och dess svenska översättning\",\"rader\":[[\"Lager\",\"Typisk storlek\",\"Åtgärd\"],[\"Fondavgift (TER)\",\"0,05-2 procent\",\"Ryggrad under 0,2 procent\"],[\"Omsättningskostnader i fonden\",\"dolda, 0-1 procent\",\"Låg omsättning — index\"],[\"Plattform/ förvaring\",\"0-0,3 procent\",\"Förhandsla eller byta\"],[\"Rådgivningsarvode\",\"0-1 procent+\",\"Transparens i kronor, fiduciär\"],[\"Skatt\",\"schablon eller 30/25\",\"Kontots roll i allokeringen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Alla andra tal i portföljen är osäkra — kostnaden är den enda prognos du gör med hundraprocentig träffsäkerhet, så gör den låg."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din totala kostnad i kronor: (1) Summera TER för alla fonder, plattformsavgifter, rådgivningsarvoden och ev. courtage under ett normalt år. (2) Multiplicera med ditt kapital — skriv summan i kronor, inte procent. (3) Jämför med vad en minimal Ferri-ryggrad hade kostat. Skillnaden, kapitaliserad trettio år framåt, är priset för det du eventuellt får — fråga dig om det är värt det."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
       ],
       "quiz": [
         {
@@ -760,15 +1189,42 @@
       "title": "Kontroversen — kritikerna, Krisen 2008 och AK1A:s syntes",
       "intro": "Ferri:s bok är skriven i god tro om en idé som 2008 skulle sättas på prov: köp, håll, återbalansera. Detta kapitel redogör ärligt för hur motståndarna tänker — taktikerna, svansrisk-hedgrarna, Brinson-kritikerna och guld-evangelisterna — och var några av dem har rätt. Sedan förklarar det varför AK1A ändå landar i en Ferri-ryggrad med AKM1-satellit.",
       "blocks": [
-        {"type": "text", "content": "Motstånd ett: de taktiska allokerarna. Deras argument: strategisk allokering låser fasta vikter och köper mekaniskt det som faller — momentumforskning (trendföljning på 10-månaders medelvärde, dubbel momentum) visar historiskt bättre riskjusterad avkastning än statiska vikter, och behavioristiskt är det orimligt att alltid äga allt. De har faktiskt data: trendfilter har historiskt kapat svansarna i 1929, 1974, 2000 och 2008 till priset av långa falska signaler i sidledes marknader. Motargumentet från Ferri-lägret: datan är backtestad med alla dess fallgropar (survivorship, overfitting, kostnader, skatter), och strategin kräver att man klarar fler falska signaler än de flesta magar tål. Ärligt medgivande: på pappret slår trendföljning ofta buy-and-hold i maximal nedgång — i verkligen kapitulerar trendföljare under långa falska signaler ungefär lika ofta som köp-hållare i krascher."},
-        {"type": "text", "content": "Motstånd två: svansrisk-skolan. Taleb och Universa (med Spitznagel), liksom Bodie och Mertons livscykelteori, invänder: normalfördelad standardavvikelse är fel mått — marknader har feta svansar, och korrelationerna konvergerar mot ett i kriser, exakt när utjämningen behövs. 2008 var deras bevis: aktier, REITs, high yield, hedgefonder och till och med vissa råvaror föll tillsammans; endast statsobligationer (och guld delvis) utjämnade. De har rätt om fysiken — det är sant att korrelationer konvergerar i panik, och Ferri:s eget kapitel 4 med rullande korrelationer bekräftar det. AK1A:s medgivande: diversifiering är inte ett svängrumsskydd mot kärnvapenkrig; den är ett skydd mot vanliga årtionden. För de verkligt extrema fallen är svaret inte fler tillgångsklasser utan position sizing — aldrig låna till portföljen, håll uttagsbuffert — och i satelliten köpa margin of safety efter kraschen, när V05/V06 ligger i golvet."},
-        {"type": "text", "content": "Motstånd tre: Brinson-mytens kritiker. Jahnke ('The Asset Allocation Hoax', 1994) och senare Idzorek och Xiong med flera visade att den berömda '90 procent'-siffran gäller variation över tid mellan balanserade portföljer — inte andelen av avkastningsnivån och inte skillnaden mellan aktiv och passiv förvaltning på tvärsnitt. Xiong m fl (2010) fann att på fondnivå bidrog säkerhetsurval mer än allokering till skillnader i resultat. De har rätt i att marknadsföringen av siffran varit slarvig. AK1A:s medgivande: allokeringens andel av nivåskillnader är överdriven i branschens retorik. Men praktisk slutsats förändras marginellt: för en sparare utan dokumenterad urvalskant förblir kostnad och allokering de beslut med störst robust påverkan — siffran i procent är en akademisk fråga, hierarkin är det inte."},
-        {"type": "text", "content": "Motstånd fyra: livscykel-kritiken och mäklarkåren. Bodie hävdade att unga inte automatiskt ska äga mycket aktier — längre horisont minskar inte risken för dåliga utfall (det finns inget lagbundet återhämtande), och börsens långsiktiga premie är osäker i storlek. Mäklarkåren hävdar att index-tänkandet är medelmåttans och att allokering är individualiserad konst som kräver professionell hand. Medgivanden: Bodie har rätt att horisont inte är en garanti — sekvensrisk och permanenta förluster existerar; Ferri:s åldersregler är grova verktyg, inte lagar. Mäklarkåren har rätt i att individualisering behövs — och fel i att den kräver provisionärer; Ferri:s metod är individualiserad och går att köra själv. Guld-evangelisterna har haft rätt i perioder av monetär expansion och fel i att metallens brist på kassaflöde gör den ostatsbar på Mega-horisonten."},
-        {"type": "text", "content": "Så varför landar AK1A ändå i Ferri-ryggrad med AKM1-satellit? Tre skäl. Först robusthet: strategisk allokering kräver inga prognoser för att fungera — den misslyckas bara om ägaren överger den, vilket är en beteendefråga som IPS och regler hanterar. Odds: att slå en lågkostnads-ryggrad kräver en dokumenterad kant, och AKM1 är vårt försök att formulera en — men kant tillhör satelliten, inte hela kapitalet, och kanten ska kunna misslyckas i åratal utan att huset faller. Ansvar: Ferri:s hierarki — sparande, kostnad, allokering, beteende — förklarar mer av de flesta förmögenheter än urval; AKM1 är först då motiverat när den infrastrukturen står. Kontroversiellt? Ja, i förhållande till dagens aktiv-förvaltnings-kultur. Rätt ändå, tror vi — och nu har du hört båda sidorna."},
-        {"type": "tabell", "content": "{\"rubrik\":\"Kritikerna mot köp-håll-återbalansera — och medgivandena\",\"rader\":[[\"Kritiker\",\"Huvudargument\",\"Var de har rätt\",\"AK1A:s svar\"],[\"Taktiska allokerare\",\"Trendfilter kapar svansar\",\"Backtests visar lägre maxfall\",\"Kostnad, falska signaler, kräver mage\"],[\"Svansrisk-skolan\",\"Korrelationer konvergerar i kris\",\"Sant — 2008 bevisade det\",\"Position sizing + margin of safety i satellit\"],[\"Brinson-kritiker\",\"'90 procent' är fel uttolkat\",\"Ja — gäller variation, ej nivå\",\"Hierarkin står sig för kantlösa sparare\"],[\"Livscykel-kritiker\",\"Horisont garanterar inget\",\"Permanenta förluster finns\",\"Buffert, dosering efter kapacitet\"]]}"},
-        {"type": "insikt", "content": "Köp-håll-återbalansera är inte en lära om att marknaden är ofelbar — det är en satsning på att du är din egen största risk, och att regler slår magkänsla även när magkänslan har data på sin sida."},
-        {"type": "utmaning", "content": "Skriv din egen kontrovers-sida: (1) Formulera det starkaste argumentet MOT din nuvarande strategi från kapitlets fyra läger — så starkt att en anhängare skulle nicka. (2) Skriv därefter varför du ändå står kvar (eller vad du ändrar). (3) Datum och signatur i IPS. Den som kan motpartens bästa argument har en strategi; den som inte kan den har en åsikt."},
-        {"type": "visuell", "content": "bro"}
+        {
+          "type": "text",
+          "content": "Motstånd ett: de taktiska allokerarna. Deras argument: strategisk allokering låser fasta vikter och köper mekaniskt det som faller — momentumforskning (trendföljning på 10-månaders medelvärde, dubbel momentum) visar historiskt bättre riskjusterad avkastning än statiska vikter, och behavioristiskt är det orimligt att alltid äga allt. De har faktiskt data: trendfilter har historiskt kapat svansarna i 1929, 1974, 2000 och 2008 till priset av långa falska signaler i sidledes marknader. Motargumentet från Ferri-lägret: datan är backtestad med alla dess fallgropar (survivorship, overfitting, kostnader, skatter), och strategin kräver att man klarar fler falska signaler än de flesta magar tål. Ärligt medgivande: på pappret slår trendföljning ofta buy-and-hold i maximal nedgång — i verkligen kapitulerar trendföljare under långa falska signaler ungefär lika ofta som köp-hållare i krascher."
+        },
+        {
+          "type": "text",
+          "content": "Motstånd två: svansrisk-skolan. Taleb och Universa (med Spitznagel), liksom Bodie och Mertons livscykelteori, invänder: normalfördelad standardavvikelse är fel mått — marknader har feta svansar, och korrelationerna konvergerar mot ett i kriser, exakt när utjämningen behövs. 2008 var deras bevis: aktier, REITs, high yield, hedgefonder och till och med vissa råvaror föll tillsammans; endast statsobligationer (och guld delvis) utjämnade. De har rätt om fysiken — det är sant att korrelationer konvergerar i panik, och Ferri:s eget kapitel 4 med rullande korrelationer bekräftar det. AK1A:s medgivande: diversifiering är inte ett svängrumsskydd mot kärnvapenkrig; den är ett skydd mot vanliga årtionden. För de verkligt extrema fallen är svaret inte fler tillgångsklasser utan position sizing — aldrig låna till portföljen, håll uttagsbuffert — och i satelliten köpa margin of safety efter kraschen, när V05/V06 ligger i golvet."
+        },
+        {
+          "type": "text",
+          "content": "Motstånd tre: Brinson-mytens kritiker. Jahnke ('The Asset Allocation Hoax', 1994) och senare Idzorek och Xiong med flera visade att den berömda '90 procent'-siffran gäller variation över tid mellan balanserade portföljer — inte andelen av avkastningsnivån och inte skillnaden mellan aktiv och passiv förvaltning på tvärsnitt. Xiong m fl (2010) fann att på fondnivå bidrog säkerhetsurval mer än allokering till skillnader i resultat. De har rätt i att marknadsföringen av siffran varit slarvig. AK1A:s medgivande: allokeringens andel av nivåskillnader är överdriven i branschens retorik. Men praktisk slutsats förändras marginellt: för en sparare utan dokumenterad urvalskant förblir kostnad och allokering de beslut med störst robust påverkan — siffran i procent är en akademisk fråga, hierarkin är det inte."
+        },
+        {
+          "type": "text",
+          "content": "Motstånd fyra: livscykel-kritiken och mäklarkåren. Bodie hävdade att unga inte automatiskt ska äga mycket aktier — längre horisont minskar inte risken för dåliga utfall (det finns inget lagbundet återhämtande), och börsens långsiktiga premie är osäker i storlek. Mäklarkåren hävdar att index-tänkandet är medelmåttans och att allokering är individualiserad konst som kräver professionell hand. Medgivanden: Bodie har rätt att horisont inte är en garanti — sekvensrisk och permanenta förluster existerar; Ferri:s åldersregler är grova verktyg, inte lagar. Mäklarkåren har rätt i att individualisering behövs — och fel i att den kräver provisionärer; Ferri:s metod är individualiserad och går att köra själv. Guld-evangelisterna har haft rätt i perioder av monetär expansion och fel i att metallens brist på kassaflöde gör den ostatsbar på Mega-horisonten."
+        },
+        {
+          "type": "text",
+          "content": "Så varför landar AK1A ändå i Ferri-ryggrad med AKM1-satellit? Tre skäl. Först robusthet: strategisk allokering kräver inga prognoser för att fungera — den misslyckas bara om ägaren överger den, vilket är en beteendefråga som IPS och regler hanterar. Odds: att slå en lågkostnads-ryggrad kräver en dokumenterad kant, och AKM1 är vårt försök att formulera en — men kant tillhör satelliten, inte hela kapitalet, och kanten ska kunna misslyckas i åratal utan att huset faller. Ansvar: Ferri:s hierarki — sparande, kostnad, allokering, beteende — förklarar mer av de flesta förmögenheter än urval; AKM1 är först då motiverat när den infrastrukturen står. Kontroversiellt? Ja, i förhållande till dagens aktiv-förvaltnings-kultur. Rätt ändå, tror vi — och nu har du hört båda sidorna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritikerna mot köp-håll-återbalansera — och medgivandena\",\"rader\":[[\"Kritiker\",\"Huvudargument\",\"Var de har rätt\",\"AK1A:s svar\"],[\"Taktiska allokerare\",\"Trendfilter kapar svansar\",\"Backtests visar lägre maxfall\",\"Kostnad, falska signaler, kräver mage\"],[\"Svansrisk-skolan\",\"Korrelationer konvergerar i kris\",\"Sant — 2008 bevisade det\",\"Position sizing + margin of safety i satellit\"],[\"Brinson-kritiker\",\"'90 procent' är fel uttolkat\",\"Ja — gäller variation, ej nivå\",\"Hierarkin står sig för kantlösa sparare\"],[\"Livscykel-kritiker\",\"Horisont garanterar inget\",\"Permanenta förluster finns\",\"Buffert, dosering efter kapacitet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Köp-håll-återbalansera är inte en lära om att marknaden är ofelbar — det är en satsning på att du är din egen största risk, och att regler slår magkänsla även när magkänslan har data på sin sida."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen kontrovers-sida: (1) Formulera det starkaste argumentet MOT din nuvarande strategi från kapitlets fyra läger — så starkt att en anhängare skulle nicka. (2) Skriv därefter varför du ändå står kvar (eller vad du ändrar). (3) Datum och signatur i IPS. Den som kan motpartens bästa argument har en strategi; den som inte kan den har en åsikt."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
       ],
       "quiz": [
         {
@@ -806,5 +1262,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "All About Asset Allocation",
+    "forfattare": "Richard A. Ferri",
+    "ar": 2005,
+    "bk": "bk-055"
+  }
 }

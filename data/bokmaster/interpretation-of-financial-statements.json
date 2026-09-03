@@ -970,5 +970,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Interpretation of Financial Statements",
+    "forfattare": "Benjamin Graham",
+    "ar": 1937,
+    "bk": "bk-005"
+  }
 }

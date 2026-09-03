@@ -1038,5 +1038,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Common Sense on Mutual Funds",
+    "forfattare": "John C. Bogle",
+    "ar": 1999,
+    "bk": "bk-052"
+  }
 }

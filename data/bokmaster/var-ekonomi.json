@@ -1094,5 +1094,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Vår ekonomi: en introduktion till samhällsekonomin",
+    "forfattare": "Klas Eklund",
+    "ar": 1993,
+    "bk": "bk-088"
+  }
 }

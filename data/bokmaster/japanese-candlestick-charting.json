@@ -1250,5 +1250,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Japanese Candlestick Charting Techniques",
+    "forfattare": "Steve Nison",
+    "ar": 1991,
+    "bk": "bk-023"
+  }
 }

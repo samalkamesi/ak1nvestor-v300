@@ -1154,5 +1154,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Manias, Panics, and Crashes",
+    "forfattare": "Charles P. Kindleberger",
+    "ar": 1978,
+    "bk": "bk-079"
+  }
 }

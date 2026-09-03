@@ -982,5 +982,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Dhandho Investor",
+    "forfattare": "Mohnish Pabrai",
+    "ar": 2007,
+    "bk": "bk-013"
+  }
 }

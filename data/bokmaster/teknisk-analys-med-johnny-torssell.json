@@ -1102,5 +1102,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Teknisk analys med Johnny Torssell",
+    "forfattare": "Johnny Torssell",
+    "ar": 1996,
+    "bk": "bk-064"
+  }
 }

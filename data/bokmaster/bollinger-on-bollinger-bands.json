@@ -1082,5 +1082,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Bollinger on Bollinger Bands",
+    "forfattare": "John Bollinger",
+    "ar": 2001,
+    "bk": "bk-068"
+  }
 }

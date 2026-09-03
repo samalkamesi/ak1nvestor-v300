@@ -1054,5 +1054,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Signal and the Noise",
+    "forfattare": "Nate Silver",
+    "ar": 2012,
+    "bk": "bk-078"
+  }
 }

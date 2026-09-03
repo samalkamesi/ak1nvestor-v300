@@ -1081,5 +1081,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Principles of Corporate Finance",
+    "forfattare": "Richard A. Brealey & Stewart C. Myers",
+    "ar": 1981,
+    "bk": "bk-100"
+  }
 }

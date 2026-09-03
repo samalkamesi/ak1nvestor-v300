@@ -1081,5 +1081,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Analysis for Financial Management",
+    "forfattare": "Robert C. Higgins",
+    "ar": 1983,
+    "bk": "bk-099"
+  }
 }

@@ -1550,5 +1550,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Technical Analysis of the Financial Markets",
+    "forfattare": "John J. Murphy",
+    "ar": 1999,
+    "bk": "bk-021"
+  }
 }

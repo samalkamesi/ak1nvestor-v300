@@ -1154,5 +1154,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Innovator's Dilemma",
+    "forfattare": "Clayton M. Christensen",
+    "ar": 1997,
+    "bk": "bk-056"
+  }
 }

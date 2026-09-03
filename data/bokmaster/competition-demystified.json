@@ -1142,5 +1142,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Competition Demystified",
+    "forfattare": "Bruce C. Greenwald & Judd Kahn",
+    "ar": 2005,
+    "bk": "bk-051"
+  }
 }

@@ -841,7 +841,7 @@
         {
           "q": "Hur definierar Douglas disciplin?",
           "alternativ": [
-              "Att aldrig känna rädsla",
+            "Att aldrig känna rädsla",
             "Att minnas vad man vill — rikta uppmärksamheten mot målet när instinkten pekar mot rädslan",
             "Att följa mäklarens råd exakt",
             "Att handla varje dag oavsett läge"
@@ -1106,5 +1106,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Trading in the Zone",
+    "forfattare": "Mark Douglas",
+    "ar": 2000,
+    "bk": "bk-069"
+  }
 }

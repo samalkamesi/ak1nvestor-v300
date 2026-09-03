@@ -1,0 +1,916 @@
+{
+  "slug": "shoe-dog",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 12,
+  "totalMinutes": 156,
+  "title": "Shoe Dog — Phil Knight: KOMPLETT",
+  "summary": "Shoe Dog (2016) är Phil Knights memoar om de arton år som förvandlade en fusksäljande löpare med en uppsats i ryggen till grundaren av världens största sportbolag — från Stanford-uppsatsen om japanska skor 1962, via handslaget med tränaren Bill Bowerman 1964 och de första 300 paren Tiger, till swooshet för 35 dollar 1971, kriget mot Onitsuka, de årliga kassakriserna, tullmyndighetens krav på 25 miljoner dollar och börsnoteringen i december 1980 som över en natt gjorde Knight värd 178 miljoner dollar. Knight berättar det inte som en framgångssaga utan som en överlevnadsberättelse: bolaget står flera gånger veckor från konkurs, banken stryper krediten medan försäljningen fördubblas, och varje års tillväxt köps med nästa års kassabrist. För AK1A är boken den råaste kursen i tre risker som varje tillväxtbolagsanalys måste stå emot: kassarisk (V19 — tillväxt utan kapital är en belåning på framtiden), leverantörsrisk (den speglade V03 — att sälja någon annans varumärke är att bygga någon annans moat) och varumärkesrisk (V14 — swooshet byggdes under årtionden, inte i en kampanj). Nivå 1: memoarens råmaterial, liten teoribörda, maximal närhet till besluten.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå skillnaden mellan en framgångssaga och en överlevnadsberättelse — och varför den skillnaden avgör hur du läser grundarminnen som källor · Se kassacykeln inifrån: hur tillväxt äter kassa när inköp betalas kontant medan kunderna betalar på kredittid (V01 mot V19) · Räkna på kassabristens mekanik: månader kvar, kredittid, finansieringsgap — den vanligaste dödsorsaken bland tillväxtbolag · Analysera leverantörsrisk som speglad koncentrationsrisk: vad händer när 100 procent av inköpen kommer från en leverantör som äger varumärket (V03, V13) · Förstå varför Knight byggde ett eget varumärke i stället för att förbli agent — kontroll över distribution och kundrelation slår kontroll över produktion (V14) · Läsa produktlanseringar som tillväxtens tändvätska: Cortez, waffelsulan och det oändliga ounces-räknandet (V16) · Se hur en löparvåg och en död idol gav ett varumärke en själ — marknadstillväxt mot andelstillväxt i V01 och V12 · Känna igen en regulatorisk katalysator i verkligheten: tullmyndighetens retroaktiva 25-miljonerskrav (V18) · Värdera kontroll kontra kapital i börsbeslutet 1980 — emissionens pris är ägandet (V19, V20) · Bygga en AKM1-RAM av en memoar: händelse in, V01–V20 ut.",
+  "why": "Varje analysmodell har ett blinde fläck-test, och AKM1:s heter kassa: en modell som poängsätter tillväxt (V01) utan att samtidigt poängsätta kapitalförbränning (V19) belönar exakt de bolag som dör först. Shoe Dog är den mest konkret berättade kassakrisen i företagshistorien: Knight beskriver hur bolaget växer från 8 000 dollar till 1,3 miljoner på sju år och ligger närmare konkurs i slutet av varje år än i början — för att tillväxten kräver lager, lagret kräver betalning före inkassering, och banken ser fakturor i stället för drömmar. Samtidigt ger boken den renaste fallstudien i leverantörsrisk (Onitsuka-beroendet som höll Blue Ribbon i ett grepp) och i varumärkesbygge (ett designarbete för 35 dollar som blev en av historiens mest värdefulla symboler). Kursen översätter hela berättelsen till AKM1:s variabler — V01, V03, V13, V14, V16, V18, V19 — och avslutar med kontroversen: vad memoaren dolde, och varför nivå 1-ärligheten ändå gör den till en av katalogens mest pålitliga primärkällor. Utan den här boken är din tillväxtanalys teori; med den känner du pulsen.",
+  "chapters_list": [
+    "1. Boken och löparen — memoaren som avfördar myten om det raka lyftet",
+    "2. Credo — Stanfordestalet, kameralektionen och det inbillade bolaget (1962)",
+    "3. Blue Ribbon Sports — 50 dollar, 51 procent och 300 par skor (1964–1966)",
+    "4. Tillväxtens fälla — banken, kassan och siffrorna bakom kriserna (1965–1971)",
+    "5. Swooshet och namnet — 35 dollar och segergudinnan (1971)",
+    "6. Brödrakriget — Onitsuka, Kitami och leverantörsriskens anatomi (1968–1972)",
+    "7. Nissho och waffeln — handelshuset, fabrikerna och innovationsmaskinen (1972–1975)",
+    "8. Pre och joggingvågen — efterfrågeexplosionen och den nya marknadsföringen (1972–1975)",
+    "9. Tullkriget — 25 miljoner dollar och den regulatoriska katalysatorn (1977–1980)",
+    "10. IPO 1980 — börsen, kontrollen och de 178 miljonerna",
+    "11. Buttfaces — laget, kulturen och memoarens mänskliga räkenskap",
+    "12. Kontroversen och syntesen — blinda fläckar och AKM1:s läsning (V01–V19)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och löparen — memoaren som avfördar myten om det raka lyftet",
+      "intro": "Shoe Dog publicerades 2016, tjugosex år efter att Knight slutade skriva den — han påbörjade memoaren strax efter börsnoteringen 1980 men lät den ligga i ett skrivbordslåda i årtionden. Den täcker åren 1962–1980 plus en efterskrift, och öppnar med en av företagslitteraturens mest citerade första meningar: att Knight var uppe före alla andra, före fåglarna, före solen. Innan innehållet kommer formen — för det är formen som gör boken användbar som källa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Författaren: Philip Hampson Knight, född 1938 i Portland, Oregon, medelgångs löpare på Oregon-universitetet under tränaren Bill Bowerman, därefter Stanford MBA, auktoriserad revisor på Price Waterhouse och småningom redovisningslärare vid Portland State — alltså en man som lärt sig läsa balansräkningar till yrke innan han tvingades leva i en. Titeln är branschslang: en shoe dog är någon som ägnat hela sitt liv åt skor, en lifer, en som inte kan lämna branschen eftersom branschen inte lämnar honom. Det är Knights självironiska självbeskrivning — och bokens programförklaring: detta är inte en bok om ett geni med en plan, utan om en besatt man utan plan B."
+        },
+        {
+          "type": "text",
+          "content": "Berättarramen, som kursen återkommer till i kontroverskapitlet: Knight skriver att han önskar att han kunnat berätta historien som en triumf — men att den i stället är en berättelse om att överleva. Bolaget hotas år efter år av kassabrist, leverantörsbrott, bankmäns nej och till slut en myndighetskrav på mer än hela bolagets värde; Knight beskriver panikattacker, gråtutbrott och åratal av sömnlöshet. Den ärligheten är bokens källvärde: där de flesta grundarminnen rationaliserar i efterhand, rapporterar Knight kaoset medan det pågår. Men memoaren har också en inbyggd vinkling — en enda berättare, ett enda perspektiv, och ett slutdatum (1980) som kapar bort allt som gjorde Nike kontroversiellt senare. Kursens första läsregel lyder därför: ta känslorna som data och slutsatserna som ett anförande."
+        },
+        {
+          "type": "text",
+          "content": "Och varför läser en aktieanalytiker en grundares memoar? Därför att AKM1:s svagaste punkter sitter där boken är starkast. V19 Kapitalförbränning och emission-risk är i modellen en poängsatt rad — i boken är den en puls man känner i handen på varje sida. V03 Intäktsdiversifiering har en spegelbild som modellen inte har en egen rad för: leverantörskoncentration, och brödrakriget mot Onitsuka är dess rena lärobok. V14 Varumärke och kundlojalitet diskuteras ofta abstrakt — men swooshet för 35 dollar gör abstraktionen konkret. Nivå 1-beteckningen är alltså ingen nedgradering: det betyder att boken bär sin egen teori, och att din uppgift är att översätta upplevelse till variabler i stället för att lära dig nya modeller. Den översättningen är kursens genomgående arbete."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kursens grundläsning av Shoe Dog: en memoar är inte en bokslutsanalys utan en stressberättelse — den berättar hur beslut kändes när framtiden var okänd. Använd den därför baklänges: leta inte efter vad Knight gjorde rätt, leta efter vilka risker han överlevde och varför. Det som överlevdes är din variabelista; det som aldrig hotade är dekor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som källa — metadata och källvärde\",\"rader\":[[\"Fakta\",\"Värde\",\"Källkritisk not\"],[\"Författare\",\"Phil Knight, grundare och VD 1964–2004\",\"första person; ägarperspektiv\"],[\"Utgivning\",\"2016 (Alfred A. Knopf)\",\"skriven i omgångar sedan början av 1980-talet\"],[\"Tidsfönster\",\"1962–1980 + efterskrift\",\"90-talets fabrikskritik hamnar utanför ramen\"],[\"Genre\",\"memoar, survival story\",\"känslor som data; slutsatser som anförande\"],[\"Nivå i katalogen\",\"1 — lättare, teorisnål\",\"översätt upplevelse till V01–V19 i stället för ny teori\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör kassapulstestet innan du läser vidare: ta ett tillväxtbolag i din bevakningslista och räkna ut dess överlevnadshorisont — kassa plus outnyttjad kredit, dividerat med månadsförbränning. Skriv siffran i månader. Jämför sedan med hur många månader bolaget tror sig behöva för att nå kassapositivt. Om det andra talet är större än det första har du just mött den situation Knight beskriver kapitel efter kapitel — och då vet du varför V19 är en egen variabel och inte en not i V10."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder titeln Shoe Dog?",
+          "alternativ": [
+            "Ett skämt öknamn Knight fick i skolan",
+            "Branschslang för någon som ägnat hela livet åt skobranschen — en lifer",
+            "Namnet på Nikes första skomodell",
+            "Ett japanskt uttryck för agent"
+          ],
+          "ratt": 1,
+          "tips": "Knight kallar sig själv det — vad krävs det av en människa att stanna kvar i en bransch i femtio år?"
+        },
+        {
+          "q": "Vilket tidsfönster täcker memoarens huvudberättelse?",
+          "alternativ": [
+            "1945–1990, hela efterkrigstidens konsumentboom",
+            "1962–1980 — från Stanford-uppsatsen och Japanresan till börsnoteringen",
+            "1980–2004, Knights år som börsbolags-VD",
+            "2004–2016, åren efter VD-skapet"
+          ],
+          "ratt": 1,
+          "tips": "Boken börjar med en ung man med en uppsats och slutar med en börsnotering — vilka årtal ramar in det?"
+        },
+        {
+          "q": "Vad gjorde Knight vid sidan av skobolaget under 1960-talet?",
+          "alternativ": [
+            "Han var heltids-VD från första dagen",
+            "Han arbetade som revisor och senare som redovisningslärare vid Portland State",
+            "Han var professionell löpare",
+            "Han drev en kedja av löparbutiker"
+          ],
+          "ratt": 1,
+          "tips": "En man som läste andras balansräkningar till yrket — innan han tvingades leva i en egen."
+        },
+        {
+          "q": "Hur framställer Knight själv historien i bokens inledning?",
+          "alternativ": [
+            "Som en genomförd femårsplan",
+            "Som en triumf över tröga banker och juridik",
+            "Som en berättelse om att överleva — inte om att triumfera",
+            "Som en juridisk hävningsberättelse mot Onitsuka"
+          ],
+          "ratt": 2,
+          "tips": "Önskan han uttrycker är att få berätta det som en framgångssaga — vad säger han att det i stället är?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Credo — Stanfordestalet, kameralektionen och det inbillade bolaget (1962)",
+      "intro": "Allt börjar med en uppsats. På Stanford 1962 skriver Knight den fråga som boken återkommer till som sitt ursprung: kan japanska sportskor göra mot tyska sportskor vad japanska kameror gjorde mot tyska kameror? Två år senare står han i Onitsukas kontor i Kobe och låtsas representera ett amerikanskt bolag som inte finns. Det här kapitlet handlar om idén, bluffen och credot — och om vad en analysfråga är värd i händerna på någon som vågar testa den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Uppsatsens logik, som Knight bygger på kameralektionen: under femtiotalet hade japanska kameror — Nikon, Canon, Pentax — slagit ut den tyska dominansen (Leica, Zeiss, Contax) genom att leverera åttio procent av kvaliteten till en bråkdel av priset, på en växande japansk lönekostnad. Knights slutsats: tyska löparskor (Adidas och Puma) skulle kunna passas på samma sätt av japanska tillverkare, därför att Japans lönekostnader då låg strax över en dollar i timmen. Det är disruption-tänkande tjugo år innan ordet myntades — och notera huruvida tesen hade haft något värde utan exekveringen: uppsatsen fick ett bra betyg och lades i en byrålåda. Idén var billig; det var risken att agera på den som var dyr. I AKM1:s språk: en produktidé utan V16-exekvering (lansering, distribution, kapital) är en uppsats, inte en moat."
+        },
+        {
+          "type": "text",
+          "content": "Sedan resan. 1962, efter examen, ger sig Knight ut på en jordenruntresa som slutar i Kobe, där han tar sig in hos Onitsuka, tillverkaren av märket Tiger. Vid förhandlingen presenterar han sig som representant för Blue Ribbon Sports — ett amerikanskt bolag som i det ögonblicket existerar enbart i hans mun. Chefen Kihachiro Onitsuka nappar; provparen skickas till föräldrahemmet i Portland. Fadern — en försiktig advokat — ser med fasa på sonens dubbelliv. Och här är bokens första stora karaktärsdrag: Knight bryter regeln, medvetet, och bygger sedan sitt credo på det. Hans maximer genom livet: du blir ihågkommen för de regler du bryter. Kursen ska inte romantisera det — den ska notera att entreprenörens informationsfördel i det rummet (Onitsuka visste inte att bolaget var inbillat) är samma mekanism som informationsasymmetri alltid är: värdefull för den som har den, dyr för den som saknar den."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen av kapitlet är dubbel. För det första: kameralektionen är en analysmall värd att stjäla — frågan kan X göra mot Y vad Z gjorde mot W är en av de mest produktiva frågorna i näringslivshistorien, och den fungerar fortfarande: fråga den om mjukvara, batterier, proteiner, banktjänster. Den tvingar fram både en kostnadsjämförelse och en kvalitetsjämförelse — exakt de två skalor som V07 Bruttomarginal och V13–V15 moat handlar om. För det andra: bluffen är en påminnelse om att tidig fas inte är analysfritt — den är analysfattig. Ingen balansräkning fanns att läsa 1962; vad som fanns var en tes och en motpart. När du idag poängsätter tidiga bolag poängsätter du därför samma sak: tesens hållbarhet och motpartens incitament. Allt annat är ännu inte skrivet."
+        },
+        {
+          "type": "insikt",
+          "content": "Stjäl kameralektionen som checklista: vem är dagens Adidas (mogen, dyr, dominerande), vem är dagens Nikon (billigare, nästan lika bra, hungrigare) och vilken lönekostnadsklyfta gör passningen möjlig? Om du inte kan svara på alla tre är det inte en disruption-tes — det är en önskan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Uppsatsens ekvation — kameralektionen som analysmall\",\"rader\":[[\"Led\",\"Kamerafallet (1950-tal)\",\"Skofallet (Knights tes)\",\"AKM1-översättning\"],[\"Incidens\",\"japanska Nikon/Canon mot tyska Leica/Zeiss\",\"japanska Tiger mot tyska Adidas/Puma\",\"V13–V15: var sitter moaten hos inkumbenten?\"],[\"Kostnad\",\"låga japanska lönekostnader\",\"låga japanska lönekostnader\",\"V07: kostnadsbas och prissättningsutrymme\"],[\"Kvalitet\",\"80 % av kvaliteten till bråkdel av pris\",\"bättre passform till lägre pris\",\"differentiering som bär ett lägre pris\"],[\"Slutsats\",\"dominansen passerades\",\"möjlig — men oviss\",\"tes utan exekvering (V16) är en byrålåda\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnfrågan i Knights Stanford-uppsats?",
+          "alternativ": [
+            "Hur lönsamt är det amerikanska skomarknaden?",
+            "Kan japanska sportskor göra mot tyska sportskor vad japanska kameror gjorde mot tyska kameror?",
+            "Varför löper amerikaner sämre än européer?",
+            "Hur påverkar tullar skoimporten?"
+          ],
+          "ratt": 1,
+          "tips": "Frågan är byggd som en analogi — vad är analogin?"
+        },
+        {
+          "q": "Hur fick Knight foten inom Onitsuka 1962?",
+          "alternativ": [
+            "Han betalade en agent att förhandla",
+            "Han låtsades representera det amerikanska bolaget Blue Ribbon Sports — som inte fanns",
+            "Han vann en löpartävling sponsrad av Onitsuka",
+            "Hans far kände grundaren personligen"
+          ],
+          "ratt": 1,
+          "tips": "Bolagsnamnet han använde vid förhandlingen — existerade det i något register?"
+        },
+        {
+          "q": "Vad är kameralektionens kärna som analysverktyg?",
+          "alternativ": [
+            "Att teknik alltid vinner",
+            "Att dominanta aktörer med kostnadsnackdel kan passas av billigare utmanare med nästan lika bra kvalitet",
+            "Att reklam avgör allt",
+            "Att japanska bolag alltid är billigast"
+          ],
+          "ratt": 1,
+          "tips": "Vad gjorde Nikon mot Leica — och vad krävde det förutsättningar utöver tekniken?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Blue Ribbon Sports — 50 dollar, 51 procent och 300 par skor (1964–1966)",
+      "intro": "1964 blir bluffen ett bolag. Tränaren Bill Bowerman — mannen som coachat Knight i Eugene — kräver att få vara med, och ett handslag delar ägandet: Bowerman 51, Knight 49. Den första beställningen på 300 par Tiger betalas bland annat med ett lån från pappa på femtio dollar, och första årets försäljning blir 8 000 dollar. Kapitlet handlar om bootstrap-ekonomins mekanik: hur ett bolag växer på obefintligt kapital och varför varje tillväxtkrona återinvesteras innan den hunnit landa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avtalsstrukturen är kursens första ägarlektion. Bowerman ville inte köpa sig in med stora pengar — han ville äga majoriteten av det han hjälpte till att bygga, och handslaget gav honom 51 procent mot Knights 49; sedermera jämnades delningen ut, men startpunkten är talande: den som kontrollerar produktutvecklingen (Bowerman designade, experimenterade med sulor och skolfötter) förhandlar sig till makten över den som kontrollerar försäljningen. Kapitalet var pyttelekt: båda sköt in femhundra dollar vardera, och för att få ihop den första beställningen på 300 par Tiger lånade Knight bland annat femtio dollar av sin far — advokaten som ogillade hela projektet men skrev ändå checken. Startkapital och driftskapital är två olika droppar: det ena startar motorn, det andra håller den igång — och Blue Ribbon saknade det andra från dag ett."
+        },
+        {
+          "type": "text",
+          "content": "Försäljningsmaskinen, byggd utan affärskontor: Knight sålde skorna ur bagageluckan på friidrottstävlingar och genom brev till tränare och tävlingsarrangörer; Bowerman förorde skorna till sina egna löpare i Eugene. Första året, 1964: 8 000 dollar i försäljning. 1965 anställs den förste heltidsanställda, Jeff Johnson — en löparkollega som skrev tusentals brev till Knight, öppnade den första riktiga butiken på Pico Boulevard i Santa Monica 1966 och byggde kundkort, utskickslistor och löparklubbskontakter som en enskild persons marknadsavdelning. 1965 års försäljning: 20 000 dollar. Notera vad som egentligen byggs under de här åren: inte en fabrik, inte ett varumärke — ett distributionsnät. En växande krets av tränare, butiker och löpare som lärde sig att par beställda via postorder kom snabbt och satt bättre än tyska skor. Kanonens tredje läxa formuleras redan här: kontroll över distribution slår kontroll över produktion — äg kundrelationen, för den är det enda som är ditt när leverantören byter sida (kapitel sex)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen: bootstrap-ekonomin är V19:s naturliga biotop. Bolaget var lönsamt på pappret — marginalen på Tiger-skorna var god — men vinsten återinvesterades omedelbart i nästa större order, för det var så man växte: beställ mer, sälj mer, beställ mer. Kassan var därför strukturellt nära noll, inte för att bolaget presterade dåligt utan för att det presterade bra. Det är den subtila skillnad som V19:s poängsättning måste fånga: kapitalförbränning i jakten på en bevisad affär (kostnad för tillväxt) är inte samma sak som kapitalförbränning i jakten på en affär (kostnad för ett experiment). Blue Ribbon brände kassa för att möta efterfrågan — den farligaste och mest förlåtliga av alla bränsleanledningar, men fortfarande dödlig om banken säger nej. Det visas i nästa kapitel."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär känna bootstrap-ekonomins lag: vinst är inte kassa. Ett bolag kan vara lönsamt varje år och ändåstå med tomma fickor i december, för vinsten sitter i lagret och kundfordringarna. När du poängsätter V19, separera alltid resultat från kassaflöde — det är två olika berättelser som bara möts i en räkning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Blue Ribbons första år — siffrorna bakom myten\",\"rader\":[[\"År/Händelse\",\"Siffra (USD)\",\"Betydelse\",\"AKM1-läsning\"],[\"Handslaget 1964\",\"Bowerman 51 / Knight 49\",\"produktmakten tar majoriteten\",\"ägstruktur styr V16-utrymme\"],[\"Startkapital 1964\",\"500 + 500 (och 50 i lån från pappa)\",\"pyttelekt kapital, maximal hävstång på tid\",\"V19: ingen buffert någonstans\"],[\"Första beställningen 1964\",\"300 par Tiger\",\"låg volym, full exponering mot en leverantör\",\"speglad V03 på inköpssidan\"],[\"Försäljning 1964\",\"8 000\",\"bevisad efterfrågan på mikroskala\",\"V01:s allra första prick\"],[\"Försäljning 1965\",\"20 000 (+150 %)\",\"Johnson anställs som förste heltid\",\"tillväxt kräver människor före kassa\"],[\"Första butiken 1966\",\"Pico Blvd, Santa Monica\",\"distribution ägs, inte hyrs\",\"V14: kundrelationen byggs\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ett bootstrap-bolags balansgång: ta ett småbolag i din närhet (eller en årsredovisning för ett nyligen noterat tillväxtbolag) ochför över tre rader — kassa, lager, kundfordringar — för de två senaste åren. Räkna sedan ut hur många procent av årets vinst som återfinns i kassan vid årets slut. Om svaret är nära noll: är det för att bolaget investerar i bevisad efterfrågan (Blue Ribbon-fallet) eller för att det köper tillväxt som inte finns än? Skriv din bedömning i en mening och kontrollera den mot nästa bokslut."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur delades ägandet vid handslaget 1964?",
+          "alternativ": [
+            "50/50 från första dagen",
+            "Bowerman 51 procent, Knight 49",
+            "Knight 80 procent, Bowerman 20",
+            "Bowerman 49 procent, Knight 51"
+          ],
+          "ratt": 1,
+          "tips": "Vem bidrog med produkttänkandet — och vad krävde han för det?"
+        },
+        {
+          "q": "Ungefär hur mycket sålde Blue Ribbon första året (1964)?",
+          "alternativ": [
+            "8 000 dollar",
+            "80 000 dollar",
+            "800 000 dollar",
+            "1,3 miljoner dollar"
+          ],
+          "ratt": 0,
+          "tips": "En bagagelucka, ett år, ett brev i taget — vilken storleksordning rymmer det?"
+        },
+        {
+          "q": "Vad var Jeff Johnsons historiska roll?",
+          "alternativ": [
+            "Ordförande i styrelsen",
+            "Förste heltidsanställd; byggde kundrelationer, utskick och öppnade första butiken i Santa Monica",
+            "Finanschef som ordnade bankkrediten",
+            "Designern bakom swooshet"
+          ],
+          "ratt": 1,
+          "tips": "En person, tusentals brev, en butik — vilken funktion i bolaget fyllde han?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Tillväxtens fälla — banken, kassan och siffrorna bakom kriserna (1965–1971)",
+      "intro": "Här möter kursen bokens ekonomiska hjärta: kassakriserna. Medan försäljningen går från 20 000 dollar 1965 till 1,3 miljoner 1971, går Blue Ribbon varje år närmare konkurs — för tillväxten äter kassan snabbare än vinsten fyller den. Banken, First National, ser siffrorna och drar ned kreditten i stället för att höja den. Kapitlet översätter Knights ångest till aritmetik: kassacykel, finansieringsgap och skiljelinjen mellan tillväxt och överlevnad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen, i kallt skick. Blue Ribbon köpte skor från Onitsuka mot betalning som skulle ske i nära anslutning till leverans — ofta säkrad med remburs — medan kunderna, detaljisterna och löparna, betalade på kredittid efter det att skorna sålts. Däremellan satt bolaget med hela sitt kapital i det som är ett tillväxtbolags vackraste och farligaste balansräkningsposten: lagret. Varje order som växte krävde alltså en större förskottsinsats, och eftersom volymen fördubblades ungefär varje år fördubblades också finansieringsbehovet — förrän vinsten hunnit landa. Detta är kassacykelns gap, och det är matematiskt noggrant: tillväxt utan externt kapital finansieras antingen av kassa (som tar slut) eller av kredittider (som någon måste stå för). Blue Ribbons bank stod för gapet — tills den inte längre ville."
+        },
+        {
+          "type": "text",
+          "content": "Bankens beteende är kapitlets andra hälft: First National i Oregon drog upprepade gånger ned bolagets kredit just när omsättningen steg, med den klassiska motiveringen att bolaget växte för fort. Ur bankens perspektiv var det rationellt: säkerheten låg i lager av japanska skor som var svåra att värdera och ännu svårare att realisera; årsredovisningarna visade ett bolag som var lönsamt men permanent kassaslavt; och banktjänstemännen belönades för att undvika förluster, inte för att finansiera drömmar. Ur Knights perspektiv var det absurt: en kundkrets av lojala löpare, försäljning som steg i vertikal, och ett svar som bestod av neddragna kreditlimiter. Båda hade rätt i sitt eget räkenskapsspråk — det är därför kursen använder kapitlet som kurs i översättning: grundaren talar tillväxt, banken talar kollateral. V19-poängen mellan dem är bruttolönen hos översättaren. 1969, när omsättningen rundade 300 000 dollar, slutade Knight ändå sitt dagjobb som revisor — valet mellan två karriärer avgjordes av en ordning som hans egen pappersekonomi inte kunde bevisa."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna, som kursen vill att du minns som serie snarare än som enskild episod: 8 000 dollar 1964; 20 000 1965; 150 000 1968; 300 000 1969; 600 000 1970; 1,3 miljoner 1971. Varje steg är en fördubbling eller mer — och varje fördubbling är ett lån, ett brev till banken, en natt med mindre sömn. AKM1-kopplingen är dubbel. För det första V01 mot V19: tillväxt som inte genererar kassa är inte värdelös, men den är belånad — den står som gäldenär hos framtiden, och om framtiden dröjer dör gäldenären. För det andra V15 nätverkseffekter, som kursen nyanserar här: varje ny butik och löparklubb som sålde Tiger gjorde nästa butik mer benägen att vilja sälja Tiger — ett tidigt community-nätverk som justerar sig självt. Men nätverkseffekter accelererar behovet av kapital, de ersätter det inte: ju snabbare nätverket växer, desto större blir gapet i kassacykeln. Tillväxtens mjuka krafter och kapitalets hårda krav är inte motpoler — de är två växlar i samma växellåda, och den som bara trycker ner den mjuka kör mot varvet."
+        },
+        {
+          "type": "insikt",
+          "content": "Kassacykelns lag, att memorera: ett bolag som betalar sina leverantörer före sina kunder kommer att generera mer behov av kapital ju bättre det säljer. Fråga därför alltid inte bara hur mycket ett bolag växer, utan i vilken ordning pengarna rör sig — betalningsordningen avgör om tillväxten är självfinansierande eller bankfinansierad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtens fälla — omsättning, finansiering och kris 1964–1971\",\"rader\":[[\"År\",\"Försäljning (USD)\",\"Finansieringskälla\",\"AKM1-läsning\"],[\"1964\",\"8 000\",\"eget kapital + lån från pappa\",\"V19: från dag noll\"],[\"1965\",\"20 000\",\"återinvesterad försäljning\",\"tillväxt äter vinst\"],[\"1968\",\"150 000\",\"bankkredit First National\",\"gapet kräver extern kapital\"],[\"1969\",\"300 000\",\"bankkredit, stramt\",\"Knight slutar sitt dagjobb\"],[\"1970\",\"600 000\",\"bankkredit pressad\",\"banken drar ned — tillväxten är risken\"],[\"1971\",\"1 300 000\",\"bank + Onitsuka-kris som tvingar ny lösning\",\"V01 dubbelriktad: motor och hot\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg finansieringsgapet för ett tillväxtbolag du bevakar: plocka ur senaste bokslut kundfordringar, lager och leverantörsskulder, och räkna ut rörelsekapitalets andel av omsättningen för tre år i rad. Växer andelen snabbare än omsättningen har du hittat Blue Ribbon-fällan: tillväxten konsumerar kapital i accelererande takt. Sluta med två rader — hur många procent av årets kassaflöde står gapet för, och vem finansierar det idag? Om svaret är en bank har du också hittat den partner som kan säga upp relationen utan förvarning."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför drog banken ned Blue Ribbons kredit trots stigande försäljning?",
+          "alternativ": [
+            "Därför att försäljningen sjönk",
+            "Därför att bolaget växte för fort — tillväxten konsumerade kassa och säkerheten satt i svårvärderat lager",
+            "Därför att Knight vägrade lämna bokslut",
+            "Därför att Onitsuka krävde det"
+          ],
+          "ratt": 1,
+          "tips": "Vad ser en bank som säkerhet — drömmar, kunder eller realiserbara tillgångar?"
+        },
+        {
+          "q": "Ungefär vilken omsättning hade Blue Ribbon 1971?",
+          "alternativ": [
+            "150 000 dollar",
+            "300 000 dollar",
+            "600 000 dollar",
+            "1,3 miljoner dollar"
+          ],
+          "ratt": 3,
+          "tips": "Serien dubblas för varje år: 8 000, 20 000, 150 000, 300 000, 600 000 — och nästa steg?"
+        },
+        {
+          "q": "Vilka två AKM1-variabler fångar bäst Blue Ribbons dilemma i det här kapitlet?",
+          "alternativ": [
+            "V04 och V05 — värderingen",
+            "V01 Försäljningstillväxt och V19 Kapitalförbränning och emission-risk",
+            "V07 och V08 — marginalerna",
+            "V16 och V17 — lanseringar och avtal"
+          ],
+          "ratt": 1,
+          "tips": "En variabel för motorn, en för bränsletanken — vilka?"
+        },
+        {
+          "q": "Vad hände 1969 när omsättningen nått omkring 300 000 dollar?",
+          "alternativ": [
+            "Knight sålde bolaget till Onitsuka",
+            "Knight slutade sitt dagjobb som revisor och satsade heltid",
+            "Bolaget gjorde sin första vinst",
+            "Bowerman lämnade bolaget"
+          ],
+          "ratt": 1,
+          "tips": "Vilket principbeslut tar engrundare när försäljningen äntligen bär ett heltidslön — på pappret?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Swooshet och namnet — 35 dollar och segergudinnan (1971)",
+      "intro": "1971 köper Knight en design för 35 dollar av en grafikstudent vid Portland State — Carolyn Davidson — och är inte ens nöjd: han gillar den inte, men tror den kan växa på honom. Samma år drömmer den förste anställde Jeff Johnson om den grekiska segergudinnan Nike, och namnet slår Knights eget förslag Dimension Six. Kapitlet handlar om varumärkets födelse som motsatsen till en strategiprocess — och om vad som händer när en symbol och ett löfte växer ihop under årtionden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta i kronologi. Knight, som då undervisade i redovisning vid Portland State, möter grafikdesignstudenten Carolyn Davidson och anlitar henne för en rad småjobb. Våren 1971 lämnar hon in flera skisser på en symbol; Knight väljer den som kommit att kallas swooshet, betalar 35 dollar och konstaterar lakoniskt att han inte älskar det men att det kanske växer på honom. Namnfrågan löses inte av en byrå utan av ett drömmebrev: Jeff Johnson ringer en natt och berättar att han drömt om Nike — segergudinnan med vingar — och Knight, som egenförslaget Dimension Six envist förespråkat, ger sig dagen därpå. 1972 presenteras de första skorna med swooshet och namnet för branschen. Tolv år senare, 1983, får Davidson en ring med swooshet i diamanter — och aktier i bolaget. Transaktionen från 35 dollar till aktieägarskap är på sitt sätt den bästa beskrivning av varumärkesbyggets ekonomi som kursen känner: priset vid köpet säger ingenting om värdet, för värdet skapas av allt som görs efteråt."
+        },
+        {
+          "type": "text",
+          "content": "Förväntansfallet som kursen vill att du ser: 1971 var swooshet inte en moat — det var ett dokument. Moat blev det först genom associationerna som lades dit under årtionden: waffelsulans prestanda (kapitel sju), Pres själ (kapitel åtta), OS-guld, segern efter segern — tills symbolen till slut bar hela betydelsen själv. Det är V14 Varumärke och kundlojalitets kärna: varumärket är inte logotypen utan den sammanlagda löftesinflation som kunden förväntar sig — och den byggs under decennier av konsekvent positionering, exakt som kanonens första läxa lyder. Kursen kopplar samtidigt V13 in: ett varumärke är också en juridisk tillgång — registrerade varumärken, designskydd, och rätten att hindra andra att rida på symbolen. Davidson-symbolen + namnet + domen i brödrakriget (kapitel sex) är vad som gör att moaten blir avgränsad: känslan bygger värdet, juridiken bygger staketet runt det."
+        },
+        {
+          "type": "text",
+          "content": "Och den omvända lärjonen, lika viktig: 1971 fanns ingen möjlig KPI som motiverade 35-dollarsymbolen framför konkurrentens. Varumärkesinvesteringar kan inte alltid motiveras i en mall — de motiveras i en avsikt och en tidsplan. Det är frestande att i AKM1-sammanhang poängsätta V14 högt bara för att symbolen är känd; kursens varning är att göra som Knight faktiskt gjorde: lita inte på symbolen förrän repetitionen bevisat den. Ett varumärke börjar som en gissning om en känsla och blir en tillgång först när miljontals kunder bära den känslan — i Nikes fall bokstavligen, på fötterna. Innan dess är den en kostnadspost med optionskaraktär: liten premie, osäker utdelning, lång löptid."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna aldrig en varumärkesinvestering i dess inkomstår — räkna den över dess inkubationsår. Swooshet kostade 35 dollar 1971 men blev inte en tillgång förrän årtionden av associativt arbete lagt betydelse i den. Frågan vid V14 är därför inte hur känt varumärket är, utan hur länge och hur konsekvent bolaget varit samma sak."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varumärket byggs — från 35 dollar till tillgång\",\"rader\":[[\"År\",\"Händelse\",\"Pris/Värde\",\"AKM1-läsning\"],[\"1971\",\"Carolyn Davidson ritar swooshet\",\"35 dollar\",\"V14 startar som kostnad, inte tillgång\"],[\"1971\",\"Johnson drömmer namnet Nike\",\"0 dollar\",\"värdet skapas av allt som följer\"],[\"1972\",\"Första skorna med swooshet och namnet\",\"—\",\"V13: registrering staketerar symbolen\"],[\"1983\",\"Davidson får diamantring och aktier\",\"okänt belopp\",\"symbolisk uppskattning av det byggda\"],[\"2016\",\"Bokens utgivning; swooshet ett av världens starkaste märken\",\"miljardklass\",\"V14: årtionden av konsekvent positionering\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur mycket betalades swooshet 1971?",
+          "alternativ": [
+            "350 dollar",
+            "3 500 dollar",
+            "35 dollar",
+            "35 000 dollar"
+          ],
+          "ratt": 2,
+          "tips": "En grafikstudents arvode för ett studentjobb — vilken storleksordning?"
+        },
+        {
+          "q": "Vem föreslog namnet Nike?",
+          "alternativ": [
+            "Bill Bowerman",
+            "Jeff Johnson, efter en dröm om segergudinnan",
+            "Phil Knights fru",
+            "Ett reklambyrå i New York"
+          ],
+          "ratt": 1,
+          "tips": "Den förste heltidsanställde skickade det i ett nattligt telefonsamtal — från en dröm."
+        },
+        {
+          "q": "Hur hedrades Carolyn Davidson senare?",
+          "alternativ": [
+            "Hon fick en livslång royalty per såld sko",
+            "Hon blev marknadsdirektör",
+            "Hon fick en ring med swooshet i diamanter och aktier i bolaget",
+            "Hennes namn skrevs på sulan"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det mest symboliskt korrekta sättet att betala någon som skapat en symbol?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Brödrakriget — Onitsuka, Kitami och leverantörsriskens anatomi (1968–1972)",
+      "intro": "Relationen med Onitsuka är bokens dramatiska ryggrad: samma partner som levererat produkten blir det hot som kan radera bolaget. När Onitsuka-chefen Kitami 1971 erbjuder sig att köpa 51 procent av Blue Ribbon — samtidigt som japanerna förhandlar med andra amerikanska distributörer — förstår Knight att agenten alltid är utbytbar. Kapitlet dissekerar leverantörsriskens anatomi och det beslut som födde Nike som självständigt bolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strukturen först, för den är risken. Blue Ribbon importerade en enda produkt från en enda leverantör — Onitsuka — och ägde varken fabrik, design eller varumärke: Tiger var Onitsukas märke, och Blue Ribbon var dess agent i USA. Konkurrensfördelen bolaget byggt (nätverket av tränare, butiker, löpare) satt alltså på en tillgång som kunde tas tillbaka med ett brev. Det är den speglade koncentrationsrisken: V03 Intäktsdiversifiering handlar om att inte alla intäkter kommer från en kund — men samma logik gäller på inköpssidan, fast med omvänd skylt: om 100 procent av kostnadssidan styrs av en motpart som äger produkten, är bolagets värde i praktiken en option på att relationen håller. Bolagets egen broschyr kunde ha tryckts om det ingen vill skriva: vår moat är vår leverantörs tålamod."
+        },
+        {
+          "type": "text",
+          "content": "Sedan utvecklingen, som boken skildrar som ett ögonblicksspel. Onitsuka — eller snarare dess unge chef Kitami — suger 1971 under en middag i Japan fram förslaget att Onitsuka köper 51 procent av Blue Ribbon. Knight, instängd mellan ja och konkurs, svarar som han gör: han vinner tid. I japansk förhandlingstradition betyder ett hai inte nödvändigtvis avtal — och Knight lär sig i realtid att ordens mening beror på vem som tolkar dem. Under tiden upptäcker Onitsuka att Blue Ribbon håller på att bygga en egen produktlinje (de första egenkonstruerade skorna tillverkas i Mexiko, med tvivelaktig kvalitet — sömmarna släpper), och relationen övergår i ett krig om dokument, kontrakt och lojaliteter som avgörs i domstol fram till en förlikning 1974 som låter Blue Ribbon behålla sin frihet. Utan det här kriget finns inget Nike — bara en större eller mindre Tiger-distributör."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-lärorna, tre stycken. Ett: äg kundrelationen och det som identifierar dig hos kunden — det var därför swooshet och namnet från kapitel fem inte var dekor utan överlevnadsutrustning; när produkten byttes ut hängde identifieringen inte på Tiger utan på dem. Två: single-source-beroende är en strategi med inbyggd deadline, oavsett hur god relationen är — motpartens incitament förändras med dess egen marknadssituation, och den som är utbytbar kommer förr eller senare att bytas. Tre: kontrakt skyddar relationen men äger den inte — det som avgör kriget är vilken sida som har ett alternativ, och Blue Ribbons alternativ hette Taiwan (kapitel sju). I poängsättningsspråk: V03 lågt på inköpssidan, V13 högt på eget IP, V14 högt på egen identitet — och notera hur kapitlet därmed är kursens tydligaste exempel på att moat-variablerna ofta betyder mest i negativ riktning: det är när de saknas som deras värde syns."
+        },
+        {
+          "type": "insikt",
+          "content": "Ställ leverantörsfrågan vid varje bolagsbedömning: vad händer i morgon om den största leverantören säger upp relationen? Om svaret är att bolaget förlorar sin produkt, sitt varumärke eller sin kund — då är bolaget inte ett bolag, det är en agent med marginal. Agenter kan vara lönsamma i åratal, men de äger ingenting av sitt eget värde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Leverantörsriskens fem frågor — Blue Ribbon som fall\",\"rader\":[[\"Fråga\",\"Blue Ribbons svar 1971\",\"Konsekvens\",\"AKM1-läsning\"],[\"Andel inköp från största leverantör?\",\"100 %\",\"hela verksamheten en relation\",\"speglad V03\"],[\"Vem äger varumärket?\",\"Onitsuka (Tiger)\",\"identifieringen kan tas tillbaka\",\"V13/V14: eget IP saknas\"],[\"Finns alternativ leverantör?\",\"nej — 1971\",\"förhandlingspositionen noll\",\"dual sourcing som motgift\"],[\"Vad säger kontraktet?\",\"agentavtal, omförhandlat\",\"juridiken köper tid, inte frihet\",\"kontrakt är inte moat\"],[\"Vad är exit-strategin?\",\"eget varumärke + nya fabriker\",\"födelsen av Nike 1972\",\"V16: lansering som rymningsväg\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör leverantörstestet på ett bolag i din bevakning: ta reda på (eller uppskatta) andelen av kostnaderna som går till den största leverantören, vem som äger det IP bolaget säljer, och hur många månader en omställning till alternativ källa skulle ta. Skriv därefter en mening: om leverantören i morgon erbjuder att köpa bolaget — eller byter distributör — vad är bolaget värt då? Om meningen är obehaglig har du förstått varför Knight sov dåligt 1971, och varför speglad V03 förtjänar en egen rad i din analys."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad erbjöd Onitsuka, via Kitami, 1971?",
+          "alternativ": [
+            "Att fördubbla leveranserna",
+            "Att köpa 51 procent av Blue Ribbon",
+            "Att sänka inköpspriserna med tjugo procent",
+            "Att gemensamt utveckla en ny sko"
+          ],
+          "ratt": 1,
+          "tips": "Om agenten är utbytbar — vad är det naturliga steget för den som äger produkten?"
+        },
+        {
+          "q": "Varför var beroendet av Onitsuka extra farligt?",
+          "alternativ": [
+            "Därför att skorna var dåliga",
+            "Därför att Blue Ribbon sålde en enda leverantörs varumärke som det inte ägde själv",
+            "Därför att tullarna var för höga",
+            "Därför att Bowerman motsatte sig samarbetet"
+          ],
+          "ratt": 1,
+          "tips": "Vad ägde Blue Ribbon självt av det som kunderna betalade för?"
+        },
+        {
+          "q": "Vad blev den strategiska lösningen på leverantörsrisken?",
+          "alternativ": [
+            "Att köpa Onitsuka",
+            "Eget varumärke (Nike) och nya fabriker i Taiwan — dual sourcing",
+            "Att lägga all tillverkning i USA",
+            "Att stämma alla konkurrenter"
+          ],
+          "ratt": 1,
+          "tips": "Alternativ är den enda förhandlingsposition som inte kan tas ifrån en — var fanns det?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Nissho och waffeln — handelshuset, fabrikerna och innovationsmaskinen (1972–1975)",
+      "intro": "Efter brytningen med Onitsuka behövde Nike två saker samtidigt: kapital och fabriker. Det första löstes av det japanska handelshuset Nissho Iwai, som från 1972 blev bolagets finanspartner och importör och öppnade dörren till taiwanesiska och koreanska tillverkare. Det andra löstes av Bowerman, som hällde gummi i fruns våffjärn och skapade sulan som gjorde Nike till en produktledare. Kapitlet handlar om supply chain-finansiering och innovationsmaskin — V16:s och V19:s mötesplats.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nissho Iwai är en av bokens mest underskattade figurer — ett japanskt handelshus (sogo shosha) som gör det banker inte gör: finansierar flöden i stället för att värdera tillgångar. Nissho blev Nikes importör av record, garanterade betalningar till fabrikerna, sträckte ut krediter och tog i gengäld en andel i bolaget — en struktur som löste kassacykelns gap från kapitel fyra utan att kräva en börsemission. 1973 passerade försäljningen 4,8 miljoner dollar. Kursen drar två lärdomar. För det första: när bankarna säger nej finns det alltid andra kapitalformer — handelshus, leverantörskrediter, factoring, strategiska ägare — och var och en har sitt pris i ägande, kontroll eller ränta. För det andra: Nissho visar att V19 emission-risk inte bara handlar om att brinna eller inte brinna, utan om vad man bränner istället — Knight behöll kontrollen genom att sälja en andel till en partner i stället för att emittera aktier till okända ägare. Utspädning är alltid en förhandling; den enda frågan är med vem."
+        },
+        {
+          "type": "text",
+          "content": "Waffeln, å andra sidan, är bokens mest kända historia och samtidigt dess mest allvarliga strategilektion. Bowerman — som hela livet ägnat sig åt att skala bort gram från löparna och från deras skor; han räknade att en uns mindre i skon motsvarar drygt tjugo kilo mindre lyft under ett engelskt mil-lopp — satt vid frukostbordet och stirrade på våffjärnets mönster. Han hällde gummi i det, förstörde frun Barbaras järn, och sulan som kom ut av experimentet blev grunden för Waffle Trainer, lanserad 1974 och en av Nikes största försäljningsframgångar under decenniet. Poängen för kursen är att innovationsmaskinen inte var en avdelning utan en person med ett obegränsat experimentbudget i hemkök — men dess ekonomiska verkan var extremt strukturerad: varje gram bortschavat från sulan var en differentiering ingen konkurrent kunde kopiera utan att först göra samma experiment. Produktlanseringar (V16) är den billigaste marknadsföring som finns — om produkten bär löftet."
+        },
+        {
+          "type": "text",
+          "content": "Samtidigt byggdes den geografiska motvikten till Japan-risk: tillverkning i Taiwan och (senare) Korea, med flera fabriker parallellt — dual sourcing från kapitel sex, nu i drift. Försäljningsserien under perioden — 2 miljoner dollar 1972 till 4,8 miljoner 1973 och vidare uppåt — visar vad som händer när tre flaskhalsar löses samtidigt: kapital (Nissho), produkt (waffeln) och leverans (Taiwan). AKM1-kopplingen är kursens mest kompakta: V19-frekvensen faller när finansieringen professionaliseras, V16-lanseringarna tätar när produktutvecklingen flyttar in i huset, och V14 fördjupas för varje vinnande modell som bär swooshet. En observation värd att ta med: de tre lösningarna kom från tre olika håll — finansieringspartner, produktcoach, nya fabriker — och ingen av dem var en strategiplan i binder. De var svar på tre specifika flaskhalsar, var och en identifierad för att den just då var den som tryckte hårdast. Så ser lönsam omställning ut inifrån: inte rotation, utan flaskhals-jakt."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig Nissho-lektionen om alternativ kapitalform: när banken stänger dörren står inte bolaget utan alternativ — det står inför ett val mellan olika sorters utspädning. Emission utspäder aktieägarskapet; strategisk partner utspäder kontrollen; leverantörskredit utspäder förhandlingsmakten. V19 handlar om att välja billigast utspädning vid rätt tidpunkt — inte om att undvika utspädning till varje pris."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre flaskhalsar och tre lösningar 1972–1975\",\"rader\":[[\"Flaskhals\",\"Symptom\",\"Lösning\",\"AKM1-läsning\"],[\"Kapital\",\"kassacykelgap, banken säger nej\",\"Nissho Iwai: krediter, importör av record, ägarandel\",\"V19: utspädning utan emission\"],[\"Produkt\",\"beroende av gamla Tiger-modeller\",\"waffelsulan 1974; Bowermans ounces-räknande\",\"V16: lansering som differentierare\"],[\"Leverans\",\"single source Japan\",\"fabriker i Taiwan och Korea\",\"speglad V03: dual sourcing\"],[\"Resultat\",\"2 miljoner dollar 1972 → 4,8 miljoner 1973 → fortsatt upp\",\"tre flaskhalsar lösta parallellt\",\"V01 accelererar när trycket släpper\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör produktlanseringstestet på ett bolag du analyserar: räkna ut hur stor andel av årets försäljning som kommer från produkter eller tjänster som lanserats de senaste tre åren. Jämför andelen med bolagets V16-poäng i din modell. Om andelen är hög men V16 lågt — varför? Om andelen är låg men V16 högt — är poängen ett minne av gamla framgångar? Skriv en rad om vilket som gäller och vilken bevisning du skulle kräva av nästa rapport."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken roll spelade Nissho Iwai för Nike från 1972?",
+          "alternativ": [
+            "Det var en amerikansk bank som beviljade rullande krediter",
+            "Ett japanskt handelshus som finansierade flödena, blev importör och tog en ägarandel",
+            "Det var Nikes reklambyrå",
+            "Det var konkurrenten som köpte Onitsuka"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör ett sogo shosha — finansierar det tillgångar eller flöden?"
+        },
+        {
+          "q": "Vad inspirerade waffelsulan?",
+          "alternativ": [
+            "Bilfabrikens däckmönster",
+            "Frun Barbaras våffjärn vid frukostbordet",
+            "Ett mönster på en japansk textruta",
+            "En löpares fotspår i gruset"
+          ],
+          "ratt": 1,
+          "tips": "Vilket köksredskap offrades för sulans mönster?"
+        },
+        {
+          "q": "Ungefär hur mycket sålde bolaget 1973?",
+          "alternativ": [
+            "1,3 miljoner dollar",
+            "2 miljoner dollar",
+            "4,8 miljoner dollar",
+            "14 miljoner dollar"
+          ],
+          "ratt": 2,
+          "tips": "Serien från kapitel fyra fortsätter efter Nike-lanseringen: 2 miljoner 1972 — och sedan?"
+        },
+        {
+          "q": "Vilken princip ligger bakom Bowermans besatthet med att skalv bort vikt?",
+          "alternativ": [
+            "Vikten var en juridisk krav",
+            "En uns mindre i skon motsvarar drygt tjugo kilo mindre lyft per engelsk mil",
+            "Lättare skor var billigare att frakta",
+            "Kunderna ville ha tunnare skor av mode-skaäl"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på det: hur många steg tar en löpare på en mil — och vad väger en uns multiplicerat med dem?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Pre och joggingvågen — efterfrågeexplosionen och den nya marknadsföringen (1972–1975)",
+      "intro": "Medan Nike byggde maskinen exploderade marknaden under den. När Frank Shorter vann OS-maratonet i München 1972 utlöstes den amerikanska joggingvågen — miljoner vanliga människor började springa — och i Nikes stall fanns löparen Steve Prefontaine, som höll varenda amerikanskt rekord från 2 000 till 10 000 meter. Kapitlet handlar om att rida en våg, om vad en idrottare gör för ett varumärke — och om skillnaden mellan marknadstillväxt och andelstillväxt i V01.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Efterfrågesidan först. Shorts seger i München 1972 satte löpning på tv i primetime, och under sjuttiotalet förvandlades löpning från en tävlingsgren för unga män till en folkhälso-rörelse för alla — joggers längs varje gata, löparklubbar på varuhusens tak, tidningar och skor för en marknad som växte från entusiaster till tiotals miljoner amerikaner. Betydelsen för Nike är svår att överdriva: bolagets hela produktlinje — dess identitet, sitt sortiment, sitt känsloliv — låg exakt där vågen gick. Det är vad kursen kallar marknadsbeta i V01: tillväxt som kommer från att marknaden växer är billig, snabb och förlåtande, men den är inte bolagets förtjänst och den är inte för evigt. Vågor slutar — joggingvågen mjuknade när aerobics och andra former tog över i början av åttiotalet — och den som förväxlar våg med egen styrka poängsätter sig själv blåögt. Den korrekta läsningen är alltid dubbel: hur mycket av V01 är marknad, hur mycket är andel?"
+        },
+        {
+          "type": "text",
+          "content": "Sedan mannen som gav varumärket en själ. Steve Prefontaine — Pre — var Bowermans stjärnelev i Eugene: arrogant, charismatisk, obönhörligt tävlingsinriktad, innehavare av samtliga amerikanska rekord från 2 000 till 10 000 meter vid tjugofyra års ålder. Han blev Nikes första och renaste varumärkesbärare — bar skorna, trodde på bolaget, personifierade dess hållning — och dog i maj 1975 i en bilolycka, tjugofyra år gammal. Hans död förvandlade honom till myt och varumärket till bärare av något större än sulor: martyrskapet gav swooshet en känslomässig laddning som ingen kampanj kunde köpa. Kursen kopplar det till V14 på djupet: kundlojalitet byggs inte enbart av produktkvalitet utan av identifiering — kunden köper den han vill vara — och idrottsmarknadsföringens hela senare historia (Jordan, Woods, Kaepernick) är den mekanik Pre satte igång. Fråga däremot alltid vad som händer om maskinen vilar på en enda bärande symbol: V14-värde byggt på en persons aura bär nyckelpersonrisk, samma risk som kapitel elva tar in i huset."
+        },
+        {
+          "type": "text",
+          "content": "Och intäktsstabiliteten, V12, som kursen här ger sin V12-läsning: under vågåren var Nikes intäkter strukturellt ostabila — modellsuccéer kom och gick, försäljningen följde säsonger och mode — men marknadens sammansatta tillväxt gjorde ostabiliteten harmlös: ett år misslyckad modell kompenserades av att marknaden växt tjugofem procent. Det är i görningen en generell lag: tillväxt döljer instabilitet, stagnation avslöjar den. Bolag som verkar diversifierade och stabila under en våg visar sin verkliga V12-karaktär först när vågen planar ut — vilket är exakt det som hände Nike vid åttiotalets början när joggingvågen gick ned och konkurrensen (Reebok och aerobics-skon) kom inifrån sidan. Poängsätt därför V12 alltid under antagandet om en platt marknad, aldrig under antagandet om den marknad du just har haft."
+        },
+        {
+          "type": "insikt",
+          "content": "Dela alltid V01 i två delar: marknadstillväxt och andelstillväxt. Marknadstillväxten är väder — den kommer och går utan att bolaget förtjänar det. Andelstillväxten är segling — den kräver moat och bevisas av att bolaget växer snabbare än marknaden. Frågan vid varje rapport: vad av årets tillväxt var väder, och vad var segling?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Efterfrågans drivning — vågen, symbolen och intäktsstabiliteten\",\"rader\":[[\"Drivkraft\",\"Händelse\",\"Verkan på Nike\",\"AKM1-läsning\"],[\"Kulturell våg\",\"Shorter vinner OS-maratonet 1972\",\"miljoner börjar löpa; marknaden exploderar\",\"V01 marknadsbeta — billig men förgänglig\"],[\"Symbol\",\"Prefontaine: rekord, attityd, död 1975\",\"varumärket får en själ; lojalitet via identifiering\",\"V14 emotionell moat — med nyckelpersonrisk\"],[\"Sortiment\",\"waffeln + specialsulor för alla fötter\",\"bredare kundbas, fler återköp\",\"V12 döljs av tillväxt — testas vid platt marknad\"],[\"Position 1980\",\"omkring hälften av den amerikanska löparskomarknaden\",\"vågen + symbolen + produkten = ledarskap\",\"V01 och V14 sammanlöper\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken händelse 1972 antände den amerikanska joggingvågen?",
+          "alternativ": [
+            "Prefontaines världsrekord",
+            "Frank Shorters seger i OS-maratonet i München",
+            "Nikes första tv-reklam",
+            "Bowermans waffellansering"
+          ],
+          "ratt": 1,
+          "tips": "Vad sätter löpning i tv-soffan i hela landet — ett rekord eller en OS-medalj på rätt distans?"
+        },
+        {
+          "q": "Vilken betydelse fick Steve Prefontaine för Nike?",
+          "alternativ": [
+            "Han var VD i tre år",
+            "Han blev bolagets första varumärkesbärare — och hans död 1975 gav märket en emotionell laddning",
+            "Han designade Cortez-modellen",
+            "Han var huvudägare fram till börsnoteringen"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en idrottare som personifierar en hållning — och som dör ung — med ett ungt varumärke?"
+        },
+        {
+          "q": "Hur stor andel av den amerikanska löparskomarknaden hade Nike ungefär vid börsnoteringen 1980?",
+          "alternativ": [
+            "Omkring en tiondel",
+            "Omkring en fjärdedel",
+            "Omkring hälften",
+            "Omkring tre fjärdedelar"
+          ],
+          "ratt": 2,
+          "tips": "Vågen, symbolen och waffeln tillsammans — vilken andel bär de till börsdörren?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Tullkriget — 25 miljoner dollar och den regulatoriska katalysatorn (1977–1980)",
+      "intro": "1977 kom det hot som fick alla tidigare kriser att blekna: den amerikanska tullmyndigheten, med hänvisning till American Selling Price-principen, krävde att Nike retroaktivt skulle betala omkring 25 miljoner dollar i tull — mer än bolaget var värt. Kapitlet är kursens fallstudie i V18 Regulatoriska katalysatorer: hur en regeländring utan förvarning kan träffa en balansräkning, och hur ett bolag slår tillbaka med lobbying, PR och tålamod.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regelverket först. Tull på importerade skor beräknades enligt American Selling Price-principen (ASP): i stället för att ta ut procentsats på inköpspriset kunde myndigheten räkna på vad motsvarande amerikansk-tillverkad sko såldes för — en princip konstruerad för att skydda inhemsk produktion, men som i praktiken kunde fördubbla eller tredubbla faktisk tullkostnad för importörer av billiga skor. 1977 använde myndigheten principen retroaktivt mot Nike och räknade fram ett krav på omkring 25 miljoner dollar — en summa i storleksordningen av bolagets hela värde. Notera mekanismen, för den är generaliserbar: regulatorisk risk är som farligast när den är retroaktiv. En ny framtidig regel kan prissättas, budgeteras och prutas in i marginalerna; en retroaktiv omräkning av redan genomförda transaktioner är en bombero på historien som ingen hedging täcker. I AKM1:s V18-vokabulär: katalysatorer vars timing inte går att förutsäga, men vars existens ofta står att läsa i regelverket års dagar i förväg — om någon orkar läsa regelverket."
+        },
+        {
+          "type": "text",
+          "content": "Försvarsmekaniken, som boken skildrar som ett andra krig. Nike svarade inte med juristbrev i tysthet utan med en kombination som blivit lärobok: juridisk process, lobbying i Washington och — det mest moderna — offentlig opinion. Rob Strasser, bolagets juridiska och marknadsföringsmässiga slägga, drev fråvan politiskt; man låg tidigt fram med argumentet att ASP-principen inte skyddade amerikanska jobb utan amerikanska priser; och samma berättarmuskler som byggde varumärket användes för att berätta bolagets sak för landet. Fallet drog ut på tiden i flera år, sammanföll med förberedelserna för börsnoteringen och avgjordes 1980 i en förlikning: Nike betalade 9 miljoner dollar — tungt, men överlevbart. Kursen noterar två saker. För det första att stridssumman (25) och utfallet (9) skiljde sig nästan tre gånger — regulatoriska krav är förhandlingar, inte fakturor, och bolag som förstår det möter dem som förhandlingar. För det andra att V18-risk inte alltid är negativ: den som har resurser och berättelse att slåss med kan använda en regelstrid till att positionera sig som sitt branschlags talesman — något Nike gjorde med förkärlek."
+        },
+        {
+          "type": "text",
+          "content": "Räkenskapssidan av krisen, för kursens V19-tråd: ett retroaktivt krav på 25 miljoner dollar kan inte mötas med kassa — den fanns inte, hade aldrig funnits — utan med refinansiering, partnerresurser (Nissho) och tålamod. Det är kursens sista bild av vad kassabrist egentligen är: inte bara avståndet till nästa betalning, utan avståndet till nästa chock. Ett bolag med kassacykelgap och regulatorisk exponering bär två sidor av samma risk: den långsamma (tillväxten äter kapitalet) och den snabba (myndigheten äter historien). I AKM1-poängsättningsspråk: låg V11 och hög V18 samtidigt är en kombination som ska straffas mer än summan av delarna, för chocken landar i just den svaghet som redan finns. Rådet är därför prosaiskt: läs bolagets regulatoriska exponering ur dess inköpsgeografi och branschregelverk innan du läser dess tillväxtplan — 25-miljonerskraven skrivs inte i prospekt, de skrivs i lagtext."
+        },
+        {
+          "type": "insikt",
+          "content": "Skilj på framtidiga och retroaktiva regulatoriska risker. En framtidig regel är en kostnadspost som kan prissättas; en retroaktiv omräkning är ett återkallat lån från myndigheten. Vid V18-bedömning: fråga inte bara vilka regler som förändras, utan vilka redan genomförda transaktioner som kan räknas om."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tullkriget 1977–1980 — mekanik och försvar\",\"rader\":[[\"Fråga\",\"Svar\",\"Kommentar\"],[\"Regel\",\"American Selling Price — tull beräknad på amerikanskt pris i stället för importpris\",\"skyddskonstruktion som blev importörernas börd\"],[\"Krav 1977\",\"omkring 25 miljoner dollar, retroaktivt\",\"i storleksordningen bolagets hela värde\"],[\"Försvar\",\"juridik + lobbying (Strasser) + offentlig opinion\",\"regulatoriska krav är förhandlingar\"],[\"Utfall 1980\",\"förlikning: 9 miljoner dollar\",\"tungt men överlevbart — bolaget intakt\"],[\"AKM1-läsning\",\"V18 katalysator + V11 svaghet = förstärkt risk\",\"chocken landar i existerande svaghet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör retroaktiv-risk-testet på ett bolag i din bevakning: identifiera de tre största regulatoriska exponeringarna — valutor, tullar, skatter, sektorsregler — och ställ för varje exponerings en fråga: kan myndigheten räkna om något som redan gjorts? Om svaret ja: hur stort är det största tänkbara retroaktiva kravet i förhållande till bolagets kassa? Skriv svaret i procent. Om talet är treciffrigt har du förstått varför Knight kallade tullkriget värre än brödrakriget."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket krav ställde den amerikanska tullmyndigheten 1977?",
+          "alternativ": [
+            "Omkring 2,5 miljoner dollar i försenad moms",
+            "Omkring 25 miljoner dollar i retroaktivt omräknade tullar",
+            "Ett stopp för all skoimport från Taiwan",
+            "En tvingande återkallelse av waffle-modellen"
+          ],
+          "ratt": 1,
+          "tips": "Principen hette American Selling Price — vad blev summan av omräkningen?"
+        },
+        {
+          "q": "Vad var kärnan i American Selling Price-principen?",
+          "alternativ": [
+            "Tullen beräknades på importpriset plus frakt",
+            "Tullen beräknades på vad en motsvarande amerikansk sko såldes för — inte på inköpspriset",
+            "Tullen slopades för löparskor",
+            "Tullen bestämdes av exportören"
+          ],
+          "ratt": 1,
+          "tips": "Vilket pris lät principen myndigheten räkna på — det betalda eller det inhemska?"
+        },
+        {
+          "q": "Hur slutade tullkriget?",
+          "alternativ": [
+            "Nike förlorade och betalade hela beloppet",
+            "Nike vann och slapp betala",
+            "Förlikning 1980: Nike betalade 9 miljoner dollar",
+            "Målet pågår fortfarande"
+          ],
+          "ratt": 2,
+          "tips": "Kravet var 25 — vad blev notan efter åratal av process, lobbying och opinion?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "IPO 1980 — börsen, kontrollen och de 178 miljonerna",
+      "intro": "I december 1980 noterades Nike på börsen — en händelse Knight länge motstått, för han ville inte ge ifrån sig kontroll och inte litade på Wall Street. Över en natt var hans andel värd 178 miljoner dollar, men boken beskriver knappast eufori. Kapitlet handlar om emissionens egentliga pris, om kontroll som värde, och om vad börsen löser respektive inte löser för ett bolag som hela livet levt på kassabristens gräns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Beslutet först. Att gå till börsen var inte Knights plan — den fanns inte i hans ursprungliga dröm och kändes för honom som ett nederlag för allt bolaget byggt: egen kontroll, oberoende, bandet mellan ägare och beslut. Kapitlet beskriver hans motstånd som principiellt och emotionellt: börsen innebar främmande ägare som skulle fråga efter kvartal han inte tänkte offra sig för. Det som försköt honom var inte önskan utan nödvändighet — efter arton år av kassakriser, ett tullkrig som slitit balansräkningen, och en tillväxt som krävde fabriker, datorer och lager honom förbi, behövde bolaget kapital i en storlek som varken bank eller handelshus längre kunde eller ville stå för. Börsen är ur det perspektivet inte en seger — det är en kapitalforms sista station: efter familjen, banken och den strategiska partnern återstår allmänheten. Knight noterade bolaget, men sålde själv minimalt och behöll en dominerande andel — han tog börsens pengar och behöll kontrollen, vilket inte är gratis: det är en balansgång som återkommer i nästan varje grundarbolags historia (jämför Bezos i The Everything Store-kursen, som löste samma ekvation med samma preferens)."
+        },
+        {
+          "type": "text",
+          "content": "Dagen och siffrorna. I december 1980 börsnoterades Nike; över en natt beräknades Knights andelsvärde till 178 miljoner dollar — en summa han skriver om med en känsla av overklighet, inte av triumf. Anställda som följt honom genom kriserna såg sina optioner och aktier bli värdefulla; butikschefer och säljare i fält som aldrig tjänat något fick sitt första stapelkapital. Kursen noterar vad som faktiskt förändrades: inte verksamheten (fabrikerna, skorna, löparna var desamma i december som i november), men riskbärarna. Risken att misslyckas flyttades delvis från Knights personliga balansräkning till en börs av spridda ägare — vilket är börsens samhällsekonomiska funktion: den gör det möjligt att bära risker som ingen enskild familj ska behöva bära. Samtidigt föddes den där dagen en ny risk som inte funnits förut: kvartalsmarknadens krav på berättelser. Nike hade levt på att inte behöva berätta för någon hur det gick. Från december 1980 måste bolaget varje kvartal öppna böckerna och bemöta analytiker — en förpliktelse som format bolag sedan dess."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen, i tre rörelser. Ett — emissionens pris är dubbelt: utspädning och kontrollförlust. V19 handlar om när ett bolag behöver emittera; kapitlet här visar att hur det emitterar är minst lika viktigt: Knight behöll kontrollen genom att sälja lite och behålla mycket, och kursens fråga till varje notering du analyserar är därför densamma: vem behåller kontrollen, och vad får de övriga för den? Två — V20-speglar: ett bolag kan returnera kapital (återköp, utdelning) eller konsumera det (emission); Nike tillbringade sin första börsdecennium med att återinvestera, och först decennier senare blev återköp och utdelning en del av dess kapitalberättelse. Tre — värderingen: ett nyss noterat bolag med kassakrisar i ryggen och en joggingvåg i ryggen var svårvärderat; kursen använder det som påminnelse om att V04-V06-multiplar på unga bolag är antaganden om att vågen fortsätter — antaganden som bör skrivas ut explicit, inte bara räknas fram tyst."
+        },
+        {
+          "type": "insikt",
+          "content": "Emissionens verkliga pris är inte bara utspädningen — det är berättelseplikten. Innan börsen svarar bolaget inför dem som redan är med; efter börsen svarar det inför alla, varje kvartal, med en förväntansapparat som aldrig stängs. När du analyserar nyligen noterade bolag: läs prospektets ägaravsnitt först — kontrollstruktur berättar vem som faktiskt bär risken och vem som bara hyser den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Börsnoteringen december 1980 — fakta och läsning\",\"rader\":[[\"Fråga\",\"Fakta\",\"AKM1-läsning\"],[\"När?\",\"december 1980\",\"efter 16 år av kassakriser och tullkrig\"],[\"Varför?\",\"kapitalbehov för fabriker, lager, system — nödvändighet, inte önskan\",\"V19: emission som sista station\"],[\"Vad var Knight värd över en natt?\",\"178 miljoner dollar\",\"symbolen för arton års riskbärande\"],[\"Vad sålde Knight själv?\",\"minimalt — kontrollen behölls\",\"emissionens pris är kontroll, inte bara utspädning\"],[\"Vad förändrades i verksamheten?\",\"inget — men riskbärarna breddades\",\"börsen omfördelar riskbärande, inte risk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör kontrolltestet på två nyligen noterade bolag du känner: för varje bolag, ta reda på grundarens andel efter noteringen, röstvärdet av den andelen, och vilka förändringar som kräver grundarens godkännande. Skriv därefter en mening per bolag: vem kan säga nej till grundaren — och vem kan grundaren säga nej åt? Om den första listan är tom har du ett bolag där minoritetsaktieägarens V04 är en aktie i någons annan berättelse."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När noterades Nike på börsen?",
+          "alternativ": [
+            "December 1975",
+            "December 1980",
+            "Maj 1984",
+            "Januari 1990"
+          ],
+          "ratt": 1,
+          "tips": "Berättelsen slutar med notering — efter tullkrigets förlikning samma år."
+        },
+        {
+          "q": "Vad var Knights andel värd över en natt?",
+          "alternativ": [
+            "17,8 miljoner dollar",
+            "178 miljoner dollar",
+            "1,78 miljarder dollar",
+            "17,8 miljarder dollar"
+          ],
+          "ratt": 1,
+          "tips": "Bokens mest citerade börsdagssiffra — vilken storleksordning för en stor majoritetsandel i ett nysålt löparvarumärke 1980?"
+        },
+        {
+          "q": "Vilken inställning hade Knight till att börsnotera bolaget?",
+          "alternativ": [
+            "Han hade planerat noteringen sedan 1964",
+            "Han motstådde den länge — han ville inte ge ifrån sig kontroll — men nödvändigheten (kapitalbehovet) vann",
+            "Han tvingades av banken",
+            "Han sålde hela sitt innehav vid noteringen"
+          ],
+          "ratt": 1,
+          "tips": "Vad säger boken om hans känslor inför främmande ägare och kvartalskrav?"
+        },
+        {
+          "q": "Vad påpekar kursen att börsnoteringen faktiskt förändrade?",
+          "alternativ": [
+            "Produktutvecklingen blev snabbare",
+            "Verksamheten förändrades inte — men riskbärarna breddades och berättelseplikten varje kvartal föddes",
+            "Konkurrensen med Adidas upphörde",
+            "Kassakriserna upphörde omedelbart"
+          ],
+          "ratt": 1,
+          "tips": "Vad är oförändrat i fabriken i december jämfört med november — och vad är nytt i rapporteringen?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Buttfaces — laget, kulturen och memoarens mänskliga räkenskap",
+      "intro": "Bokens viktigaste balansräkning står inte i bilagorna: den heter Bowerman, Johnson, Strasser, Hayes och Woodell — innerkretsen som kallade sig Buttfaces och som Knight ledde genom att säga vad som skulle göras, aldrig hur. Kapitlet handlar om kulturen som gjorde omöjliga beslut möjliga, om nyckelpersonrisk — och om priset: hälsan, familjen, äktenskapet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Laget i tur och ordning. Bill Bowerman — produktgeniet, coachen, gram-skalaren, som hela livet behandlade skokonstruktion som ett experiment med löparnas kroppar som insats. Jeff Johnson — den förste anställde, brevskrivaren, butiksbyggaren, en man som kunde skriva tjugofem sidor till Knight i veckan och aldrig få svar och ändå aldrig sluta. Bob Woodell — operatören, som ledde daglig drift med kyla. Rob Strasser — advokaten och släggan som förde tullkriget och sedermera marknadsföringens stora slag. Del Hayes — vännen från Price Waterhouse-tiden som bar ekonomi och förtroende. Ingen av dem var enkel att hantera; Knight kallade dem tillsammans Buttfaces, och mötena bestod av skrik, gräl och slutsatser som ingen kunde minnas hur de kommit till — men som höll. Kursen noterar sammansättningen med analysörat: produkten, kunderna, driften, juridiken, siffrorna — fem funktioner som i ett nystartat bolag ofta sitter i en person, här fördelade på fem personer som hatade varandra halva tiden och älskade samma sak resten."
+        },
+        {
+          "type": "text",
+          "content": "Ledarskapsformen är kapitlets egentliga ämne. Knights filosofi, citerad ur bokens efterskrift med Patton som källa: säg inte människor hur de ska göra saker — säg dem vad som ska göras och låt dem överraska dig med sina resultat. Det var ingen retorik utan en överlevnadsstrategi: bolaget hade ingen tid, ingen struktur och ingen kompetens att mikrohantera, så det enda hållbara var att anställa människor som var besattare än han själv och ge dem en riktning. I AKM1-språk är detta V14-förstärkning på djupet: kulturen — hur beslut faktiskt fattas när ingen ser — är det som gör att moaten förnyas även när produkter och personer byts. Samtidigt är det kursens tydligaste exempel på nyckelpersonrisk: bolaget var Knight, och Knight var bolaget; när han sog dåligt föll beslutkvaliteten, och när hans panikattacker kom på natten fanns ingen ersättare. Familjen bar samma räkning — boken är ovanligt ärlig om vad som hände med dem som väntade hemma medan swooshet växte. En kurs som poängsätter bolag ska våga poängsätta den räkningen: bolag som drivs av en person har en V14 till priset av en V19-känslighet — starkast i världen tills personen tröttnar, blir sjuk eller dör."
+        },
+        {
+          "type": "text",
+          "content": "Och den organisatoriskaläxan, som kursen lyfter ur bruset: Buttfaces var inte ett team — det var en domstol. Funktionerna kompletterade varandra genom att de motsatte varandra: produkten mot ekonomin, juridiken mot känslan, driften mot drömmen. Där de flesta organisationer bygger konsensus byggde Nike friktion — och lät den bästa argumentationen vinna, oavsett volym. Kursen använder det som motslag till en vanlig miss i analysen: vi poängsätter organisationer efter hur harmoniska de verkar, när det som korrelerar med resultat snarare är hur väl friktionen institutionaliserats. Frågan till varje ledningsgrupp du bedömer är därför inte om de är överens — utan vem som får rätt när de inte är det, och hur snabbt den processen går. I Nikes fall var svaret: snabbare än konkurrenterna, och billigare än konsensus."
+        },
+        {
+          "type": "insikt",
+          "content": "Kultur är inte värderingar på väggen — det är vem som vinner när ledningen är oense. Vid bedömning av ledningsgrupper: byt frågan från hur bra de samarbetar till hur de fattar beslut när intressena kolliderar. Harmoni utan friktion är ofta ett tecken på att någon redan har vunnit innan mötet började."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Buttfaces — fem funktioner, fem personligheter\",\"rader\":[[\"Namn\",\"Funktion\",\"Signum\",\"AKM1-läsning\"],[\"Bill Bowerman\",\"produktutveckling\",\"waffeln, ounces-räknandet, coachögat\",\"V16 motor — differentiering\"],[\"Jeff Johnson\",\"kunder och butiker\",\"tusentals brev, första butiken\",\"V14 kundrelationens byggare\"],[\"Bob Woodell\",\"drift\",\"kylig operatör\",\"V12/V19 — executionen\"],[\"Rob Strasser\",\"juridik och marknad\",\"tullkrigets general\",\"V18 strateg — regulation som slagfält\"],[\"Del Hayes\",\"ekonomi och förtroende\",\"vännen från revisorstiden\",\"V10/V11 — finansdisciplin\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kallade Knights innerkrets sig?",
+          "alternativ": [
+            "The Swoosh Squad",
+            "Buttfaces",
+            "Team Oregon",
+            "Waffle Club"
+          ],
+          "ratt": 1,
+          "tips": "Ett ömhetsfyllt förolämpande smeknamn — vad heter det i boken?"
+        },
+        {
+          "q": "Vilket ledarskapsmotto sammanfattar Knights stil, citerat via Patton?",
+          "alternativ": [
+            "Säg människor hur de ska göra saken — sedan kontrollera varje steg",
+            "Säg människor vad som ska göras och låt dem överraska dig med sina resultat",
+            "Delegera aldrig något viktigt",
+            "Anställ billigt, lär upp snabbt"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör man med besatta människor som kan sitt yrke bättre än man själv?"
+        },
+        {
+          "q": "Vilken risk flaggar kursen i bolag där grundaren är allt?",
+          "alternativ": [
+            "Ingen — grundare är alltid bäst",
+            "Nyckelpersonrisk: bolaget är som starkast men som svagast ersatt",
+            "Risken att aktiekursen stiger för fort",
+            "Risken att bolaget betalar för mycket skatt"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med beslutskvaliteten den natt grundaren inte kan ta beslutet?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Kontroversen och syntesen — blinda fläckar och AKM1:s läsning (V01–V19)",
+      "intro": "Kursens sista kapitel gör två saker: först kontroversen — vad memoaren dolde, vinklade och inte hann — därefter syntesen, där hela berättelsen trycks ner i AKM1:s variabler: en memoar in, tjugo frågor ut. Det är här nivå 1-kursen lämnar ifrån sig sitt examensarbete: en RAM byggd av någons minne.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontroversen, i tre punkter. Ett — tidsfönstret: boken slutar 1980, och allt som gjorde Nike politiskt kontroversiellt — fabriksförhållandena i Indonesien och andra länder under nittiotalet, barnarbetsdiskussionerna, motkampanjerna — hamnar utanför ramen; efterskriften 2016 nämner episoderna i förbigående snarare än gör sig dem till äga. Det är memoarens privilegium att välja slutår, men det är läsarens plikt att notera vad valet utesluter: den kanske mest studerade V18-frågan i bolagets historia behandlas inte. Två — perspektivet: en enda berättare, och en som äger märket; Onitsukas version av brödrakriget, bankens version av kreditbesluten, de anställdas version av Buttface-kulturen saknas alla. Tre — arbetsfördelningen i hemmet: boken är ovanligt ärlig om Knights ångest men betydligt mindre utförlig om vad hans frånvaro kostade familjen — kvinnorna i berättelsen, framför allt hustrun Penny, skymtar fram som tålamodets funktionärer snarare än som personer. Kursens dom är därför dubbel: som känslodokument är boken av hög trovärdighet —Knight har inget intresse av att sminka sina kriser — men som fullständig bolagshistoria är den en av flera röster, och de andra köper du med att läsa vidare (The Everything Store-kursen visar hur journalistisk biografi väger källor mot varandra)."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen, som kursen ställer som tabell men här förkortar till tre rader. Rad ett — kassarisken: hela berättelsens motor är gapet mellan tillväxt och kassa; V01 driver V19, och alla tre räddningarna (pappa, bank, Nissho) är variationer över samma tema: att hitta någon som står gapet tills kassan hunnit ikapp. Rad två — leverantörsrisken: Onitsuka-kriget är den speglade V03; motgiften heter eget IP (V13), eget varumärke (V14) och dual sourcing — och kursen noterar att moat-variablerna i den här berättelsen aldrig var dekoration utan rymningsvägar. Rad tre — varumärket: swooshet (V14) byggdes inte 1971 utan under de följande tjugo åren av associationer — waffeln, Pre, segren — och kanonens läxa att varumärken byggs under årtionden av konsekvent positionering är här bokstavligen sann. Till det tre katalysatorer: joggingvågen (V01-marknadsbeta), tullkriget (V18) och börsnoteringen (V19/V20 — kapitalets sista station). Det är hela boken i en RAM: sju variabler, arton år, en överlevnadshistoria."
+        },
+        {
+          "type": "text",
+          "content": "Och examensfrågan, som kursen lämnar till dig med bokens egen röst som motstycke. Knights maximer — du blir ihågkommen för de regler du bryter; säg vad, inte hur; växa eller dö — är inte analysverktyg utan beslutsstöd för människor som redan bestämt sig. Din uppgift som analytiker är den omvända: att ur besluten läsa av riskerna. Därför slutar kursen med den övning som förenar boken med modellen: ta ett tillväxtbolag du faktiskt överväger att köpa, och skriv tre stycken med mätbara påståenden — ett om kassacykeln (V01 mot V19), ett om leverantörskoncentrationen (speglad V03), ett om varumärkesinvesteringarnas ålder och konsekvens (V14). Lägg dokumentet i en mapp med dagens datum. Om du om ett år kan läsa det utan att rodna har du lärt dig Shoe Dogs verkliga läxa: att berättelserna är gratis, men räkenskaperna kostar — och att den som kan båda är svår att lura."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens slutläsning av Shoe Dog: en grundares memoar är en primärkälla för känslor och beslutslogik, men en ensam källa för sanning. Läs den som du läser ett vittnesmål — med respekt för upplevelsen och krav på bevisning för påståendena. Det är exakt den dubbelheten som skiljer nivå 1:s intuition från nivå 2:s analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som RAM — händelse in, V01–V20 ut\",\"rader\":[[\"Bokhändelse\",\"År\",\"AKM1-variabel\",\"Läxa\"],[\"Stanford-uppsatsen + bluffen i Kobe\",\"1962\",\"V16 (idésprång)\",\"tes utan exekvering är byrålåda\"],[\"Handslaget 51/49 + 300 par\",\"1964\",\"ägstruktur + V19\",\"startkapital är inte driftskapital\"],[\"Omsättning 8 000 → 1,3 M dollar\",\"1964–1971\",\"V01\",\"tillväxt äter kassa\"],[\"Banken drar ned krediten\",\"1969–1971\",\"V10/V11\",\"kollateral talar, drömmar tiger\"],[\"Swooshet 35 dollar + namnet\",\"1971\",\"V14 + V13\",\"varumärke byggs efter köpet\"],[\"Brödrakriget mot Onitsuka\",\"1971–1972\",\"speglad V03\",\"agenten är alltid utbytbar\"],[\"Nissho + Taiwan + waffeln\",\"1972–1974\",\"V19 + V16\",\"alternativ kapitalform, alternativ källa\"],[\"Joggingvågen + Pre\",\"1972–1975\",\"V01 beta + V14\",\"marknadstillväxt är väder, inte förtjänst\"],[\"Tullkrav 25 M dollar\",\"1977\",\"V18\",\"retroaktiv regel är värst\"],[\"Börsnotering, Knight 178 M\",\"1980\",\"V19/V20\",\"emissionens pris är kontrollen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Examensövningen — kör bokens RAM på ett verkligt bolag: välj ett tillväxtbolag i din bevakning och skriv tre mätbara stycken: (1) kassacykeln — hur många månader överlever bolaget om banken och kapitalmarknaden stänger (V01 mot V19); (2) leverantörskoncentration — största leverantörens andel av kostnaderna och ägarskapet av IP (speglad V03, V13); (3) varumärkesålder — hur länge och hur konsekvent har bolaget betytt samma sak för samma kund (V14). Spara med dagens datum och läs om ett år. Det är Shoe Dog och AKM1 i en enda övning."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är kursens största invändning mot bokens tidsfönster?",
+          "alternativ": [
+            "Den börjar för tidigt, 1962",
+            "Den slutar 1980 — och nittiotalets fabriksförhållanden och kritiken mot asiatisk tillverkning hamnar utanför ramen",
+            "Den innehåller för många siffror",
+            "Den hoppar över börsnoteringen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken av Nikes mest omtalade kontroverser inträffade efter berättelsens slutår?"
+        },
+        {
+          "q": "Vad är kanonens läxa om kassabrist?",
+          "alternativ": [
+            "Att kassabrist bara drabbar dåligt styrda bolag",
+            "Att kassabrist är den vanligaste dödsorsaken bland tillväxtbolag — följ kapitalåtergången",
+            "Att kassabrist alltid löses med en emission",
+            "Att kassabrist är ett tecken på stark tillväxt och därmed positivt"
+          ],
+          "ratt": 1,
+          "tips": "Vad dör unga tillväxtbolag av — produkten, konkurrensen eller tomma fickor?"
+        },
+        {
+          "q": "Vilken är AK1A:s slutläsning av boken som källa?",
+          "alternativ": [
+            "En opartisk bolagshistoria utan vinkling",
+            "En officiell bolagshistoria skriven av styrelsen",
+            "En primärkälla för känslor och beslutslogik — men en enda röst bland flera, med ett slutår som utesluter det mest kontroversiella",
+            "En sekundärkälla utan värde för analys"
+          ],
+          "ratt": 2,
+          "tips": "Vad är en memoar stark på — och vad är den ensam om?"
+        }
+      ]
+    }
+  ],
+  "kalla": {
+    "titel": "Shoe Dog",
+    "forfattare": "Phil Knight",
+    "ar": 2016,
+    "bk": "bk-096"
+  }
+}

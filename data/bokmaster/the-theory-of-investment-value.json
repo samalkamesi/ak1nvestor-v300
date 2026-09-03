@@ -950,5 +950,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Theory of Investment Value",
+    "forfattare": "John Burr Williams",
+    "ar": 1938,
+    "bk": "bk-011"
+  }
 }

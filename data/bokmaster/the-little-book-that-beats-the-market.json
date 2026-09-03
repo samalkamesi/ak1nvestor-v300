@@ -770,5 +770,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Little Book That Beats the Market",
+    "forfattare": "Joel Greenblatt",
+    "ar": 2005,
+    "bk": "bk-018"
+  }
 }

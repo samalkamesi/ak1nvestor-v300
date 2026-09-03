@@ -1022,5 +1022,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "One Up on Wall Street",
+    "forfattare": "Peter Lynch",
+    "ar": 1989,
+    "bk": "bk-003"
+  }
 }

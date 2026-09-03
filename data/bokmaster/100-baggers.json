@@ -950,5 +950,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "100 Baggers",
+    "forfattare": "Christopher Mayer",
+    "ar": 2015,
+    "bk": "bk-101"
+  }
 }

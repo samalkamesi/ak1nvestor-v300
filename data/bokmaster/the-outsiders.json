@@ -1018,5 +1018,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Outsiders",
+    "forfattare": "William N. Thorndike",
+    "ar": 2012,
+    "bk": "bk-020"
+  }
 }

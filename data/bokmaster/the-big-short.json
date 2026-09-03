@@ -1070,5 +1070,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Big Short",
+    "forfattare": "Michael Lewis",
+    "ar": 2010,
+    "bk": "bk-081"
+  }
 }

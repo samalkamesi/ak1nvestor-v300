@@ -1022,5 +1022,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Origins of the Crash",
+    "forfattare": "Roger Lowenstein",
+    "ar": 2004,
+    "bk": "bk-087"
+  }
 }

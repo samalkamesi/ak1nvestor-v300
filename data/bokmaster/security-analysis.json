@@ -1390,5 +1390,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Security Analysis",
+    "forfattare": "Benjamin Graham & David Dodd",
+    "ar": 1934,
+    "bk": "bk-002"
+  }
 }

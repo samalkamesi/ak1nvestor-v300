@@ -878,5 +878,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Extraordinary Popular Delusions and the Madness of Crowds",
+    "forfattare": "Charles Mackay",
+    "ar": 1841,
+    "bk": "bk-090"
+  }
 }

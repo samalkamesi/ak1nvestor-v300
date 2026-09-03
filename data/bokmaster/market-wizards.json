@@ -978,5 +978,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Market Wizards",
+    "forfattare": "Jack D. Schwager",
+    "ar": 1989,
+    "bk": "bk-070"
+  }
 }

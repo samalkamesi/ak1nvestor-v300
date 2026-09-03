@@ -102,7 +102,7 @@ export function Sidfooter() {
               Integritetspolicy
             </Link>{" "}
             ·{" "}
-            <Link href="/terms" className="underline hover:text-[#E8C766]">
+            <Link href="/villkor" className="underline hover:text-[#E8C766]">
               Villkor
             </Link>{" "}
             ·{" "}

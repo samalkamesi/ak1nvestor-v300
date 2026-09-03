@@ -1018,5 +1018,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Zero to One",
+    "forfattare": "Peter Thiel",
+    "ar": 2014,
+    "bk": "bk-029"
+  }
 }

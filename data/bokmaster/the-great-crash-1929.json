@@ -986,5 +986,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Great Crash 1929",
+    "forfattare": "John Kenneth Galbraith",
+    "ar": 1955,
+    "bk": "bk-083"
+  }
 }

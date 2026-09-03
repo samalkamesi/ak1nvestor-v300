@@ -1262,5 +1262,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Investment Valuation",
+    "forfattare": "Aswath Damodaran",
+    "ar": 1996,
+    "bk": "bk-008"
+  }
 }

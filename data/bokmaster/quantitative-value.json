@@ -1094,5 +1094,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Quantitative Value",
+    "forfattare": "Tobias E. Carlisle & Wesley R. Gray",
+    "ar": 2012,
+    "bk": "bk-041"
+  }
 }

@@ -1038,5 +1038,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Margin of Safety",
+    "forfattare": "Seth A. Klarman",
+    "ar": 1991,
+    "bk": "bk-012"
+  }
 }

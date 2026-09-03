@@ -1034,5 +1034,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Reminiscences of a Stock Operator",
+    "forfattare": "Edwin Lefèvre",
+    "ar": 1923,
+    "bk": "bk-034"
+  }
 }

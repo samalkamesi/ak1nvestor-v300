@@ -12,20 +12,76 @@
   "learn": "Distressed investerings fulla logik från långsidan av konkursvärlden: Whitmans aggressive conservatism — kreditvärdighet och balansräkning före resultaträkning, bolaget som stående enhet och kontrollens centrala betydelse — och resource conversion, idén att värde skapas inte bara i drift utan i omstruktureringshändelser (fusioner, återköp V20, rekapitaliseringar, konkurser); de fyra dödsorsakerna (förlorad tillgång till kapitalmarknaden V19, försämrad drift V07, försämrad GAAP-redovisning, off-balance-sheet-åtaganden) med Whitmans likviditetstest som närmaste verktyg: kan bolaget betala ränta och amortering i arton till tjugofyra månader utan marknadsaccess; kapitalstrukturens hierarki — superprioritet, säkerställda borgenärer, oprioriterade, efterställda, preferensaktier, vanliga aktier — den absoluta prioritetsregeln och allt som i praktiken bryter den (DIP-finansiering, critical vendor, blocking positions på en tredjedel av en klass, new value till gammalt eget kapital); bokens fem grundregler citerade öppet: ingen kan beröva en borgenär rätten till betalning utanför Chapter 11, konkursreglerna styr alla rekonstruktioner, värdepappers substantiva karaktär slår juridisk etikett, rekonstruktioner är kostsamma för borgenärer, och borgenärer har bara avtalsrättigheter — aldrig äganderätt till driften; Chapter 11-maskinen (automatic stay, debtor in possession, exclusivity, klassröstning, cramdown, BAPCPA 2005) mot svensk företagsrekonstruktion illustrativt: rekonstruktören, verkställighetsförbudet, kortare löptid, målvärdesdiskussionen om vem systemet ska skydda; kostnadernas ekonomi — advokater, rådgivare, KERP:er och management compensation också i fall; värdering i tre världar (strict going concern med V06 EV/EBITDA och V07 marginaler, resource conversion-värde, likvidationsvärde) och återbetalningstrappan: enterprise value fördelas nerifrån och upp, form of consideration mot amount of consideration, brytpunkten på en claims pris (tidsserien Brytpunkt); trade claims (preferensrisk, setoff, tvister) och DIP-finansiering som kontrollverktyg; teknikerna — long-only kreditfonder, distressed-for-control, co-invest, plan investing och kapitaltillskott 2008–2009; fallen Home Products International (prepack i liten skala) och Kmart (plan investors ESL och Third Avenue, cirka 140 miljoner dollar kontant, cirka 33 miljoner aktier i nya Kmart Holding, utslaget eget kapital, oprioriterade borgenärers aktier som återhämtade sig från 24 till 93 procent); den gode distressed-investeraren (juridisk kompetens, tålamod, balansräkningsblik, kontrollorientering, prisdisciplin) och Whitmans reformtankar för ett idealt rekonstruktionssystem; kontroversen vultures mot effektivitetsargumentet och AK1A:s svar — V19 och distressed är samma kapitalstruktur-läxa — plus det ärliga medgivandet: illikvida marknader och enorm informationsskillnad gör facket till en plats för professionella, och kursen till pedagogik i att läsa skuld före man köper aktier.",
   "why": "Utan Whitman är din världsbild halv på ett annat sätt än utan Staley: Staley lär dig läsa skörhet hos friska berättelser — Whitman lär dig att konkursen är en fortsättning, inte ett slut, och att aktien du köper är en fordran sist i kön. De flesta investerare tänker aldrig på kapitalstrukturen förrän den exploderar: emissioner som diluerar (V19), skulder som löper ut, säkerheter som bestämmer vem som överlever rekonstruktionen. Distress Investing är den bok som gör hierarkin påtaglig — fem grundregler, en amerikansk konkursmaskin, två verkliga fall och en livslång utövares ödmjukhet inför juridiken. AK1A:s skäl att ha boken i kanon är inte att du ska köpa obeståndsfördringar: det är att förstå kapitalstrukturen FÖRE du köper något — därför att aktien är det yttersta lagret av en trappa där du står sist, och därför att V19-emissionsrisken och distressed-avkastningen är samma mekanism sedd från två ändar. Sedan kommer medgivandet, lika viktigt: det här är ett hantverk för dem med advokater, data och tid — för privatpersonen är värdet att läsa strukturen, inte att spela i den.",
   "chapters_list": [
-    { "num": 1, "title": "Whitman och spegelvärlden — boken som köper där Staley kortar", "minutes": 12 },
-    { "num": 2, "title": "Teorin: aggressive conservatism — What market? What risk?", "minutes": 12 },
-    { "num": 3, "title": "Dödsorsakerna — varför friska bolag hamnar i nöd (V19)", "minutes": 12 },
-    { "num": 4, "title": "Kapitalstrukturens trappa — kön, pant och de fem grundreglerna", "minutes": 12 },
-    { "num": 5, "title": "Chapter 11-maskinen — och svensk rekonstruktion [illustrativt]", "minutes": 12 },
-    { "num": 6, "title": "Workout-rummet — frivilliga byten, holdouts och notan", "minutes": 12 },
-    { "num": 7, "title": "Värdera krisbolaget I: tre värderingsvärldar", "minutes": 12 },
-    { "num": 8, "title": "Värdera krisbolaget II: enterprise value och återbetalningstrappan (V06)", "minutes": 12 },
-    { "num": 9, "title": "Trade claims och DIP-finansiering — att köpa fordringar i pågående fall", "minutes": 12 },
-    { "num": 10, "title": "Teknikerna — kreditfonder, co-invest, control investing", "minutes": 12 },
-    { "num": 11, "title": "Fall: Home Products International — prepack i liten skala", "minutes": 12 },
-    { "num": 12, "title": "Fall: Kmart — plan investors och aktieutdelningen ingen räknade med", "minutes": 12 },
-    { "num": 13, "title": "Den gode distressed-investeraren — och det ideala systemet", "minutes": 13 },
-    { "num": 14, "title": "Kontroversen: vultures? — och kursens sammanfattning i AKM1", "minutes": 13 }
+    {
+      "num": 1,
+      "title": "Whitman och spegelvärlden — boken som köper där Staley kortar",
+      "minutes": 12
+    },
+    {
+      "num": 2,
+      "title": "Teorin: aggressive conservatism — What market? What risk?",
+      "minutes": 12
+    },
+    {
+      "num": 3,
+      "title": "Dödsorsakerna — varför friska bolag hamnar i nöd (V19)",
+      "minutes": 12
+    },
+    {
+      "num": 4,
+      "title": "Kapitalstrukturens trappa — kön, pant och de fem grundreglerna",
+      "minutes": 12
+    },
+    {
+      "num": 5,
+      "title": "Chapter 11-maskinen — och svensk rekonstruktion [illustrativt]",
+      "minutes": 12
+    },
+    {
+      "num": 6,
+      "title": "Workout-rummet — frivilliga byten, holdouts och notan",
+      "minutes": 12
+    },
+    {
+      "num": 7,
+      "title": "Värdera krisbolaget I: tre värderingsvärldar",
+      "minutes": 12
+    },
+    {
+      "num": 8,
+      "title": "Värdera krisbolaget II: enterprise value och återbetalningstrappan (V06)",
+      "minutes": 12
+    },
+    {
+      "num": 9,
+      "title": "Trade claims och DIP-finansiering — att köpa fordringar i pågående fall",
+      "minutes": 12
+    },
+    {
+      "num": 10,
+      "title": "Teknikerna — kreditfonder, co-invest, control investing",
+      "minutes": 12
+    },
+    {
+      "num": 11,
+      "title": "Fall: Home Products International — prepack i liten skala",
+      "minutes": 12
+    },
+    {
+      "num": 12,
+      "title": "Fall: Kmart — plan investors och aktieutdelningen ingen räknade med",
+      "minutes": 12
+    },
+    {
+      "num": 13,
+      "title": "Den gode distressed-investeraren — och det ideala systemet",
+      "minutes": 13
+    },
+    {
+      "num": 14,
+      "title": "Kontroversen: vultures? — och kursens sammanfattning i AKM1",
+      "minutes": 13
+    }
   ],
   "chapters": [
     {
@@ -1058,5 +1114,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Distress Investing: Principles and Technique",
+    "forfattare": "Martin J. Whitman & Fernando Diz",
+    "ar": 2009,
+    "bk": "bk-046"
+  }
 }

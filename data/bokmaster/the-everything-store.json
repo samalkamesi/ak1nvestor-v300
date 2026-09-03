@@ -1,0 +1,973 @@
+{
+  "slug": "the-everything-store",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 169,
+  "title": "The Everything Store — Brad Stone: KOMPLETT",
+  "summary": "The Everything Store: Jeff Bezos and the Age of Amazon (2013) är den mest fullständiga journalistiska porträttboken av bolaget som omformade detaljhandeln, molnet och själva idéen om vad ett börsnoterat bolag får lov att vara. Brad Stone — Bloomberg-journalist som bevakat Amazon sedan börsnoteringens dagar — bygger berättelsen från garaget i Bellevue 1994 och listan på tjugo postorderprodukter, via aktiebubblan och kraschen 1999–2001 (från 113 dollar till strax under sex), marknadsplatsen, Prime för 79 dollar om året, Kindle, Amazon Web Services födelse ur bolagets egen infrastruktur, förvärven av Zappos och Quidsi — ända fram till 2013, då Amazon omsätter 74,5 miljarder dollar med en nettomarginal på 0,37 procent. För AK1A är boken katalogens främsta fallstudie i räkenskapsanalys av lågmarginal-högtillväxt-modellen: hur ett bolag kan växa cirka fyrtiosju procent per år i sexton år, knappt visa någon vinst — och ändå aldrig behöva göra en nyemission, därför att kassacykeln är negativ och tillväxten betalar sig själv. Nivå 2: kursen kräver att du räknar, väger källor och tar ställning i kontroversen om arbetsvillkoren — och i den större striden om huruvida en maskin som byter vinst mot tillväxt är värdeskapande eller värdeförstörande.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå skillnaden mellan memoaren och den journalistiska biografin som källor — och hur man väger en enskild berättares version mot dokument och tredje parter · Se hur en affärsidé väljs: webbens 2 300-procenttillväxt, listan på tjugo postorderprodukter och böckernas ekonomi (urval, logistik, två distributörer) · Läsa Amazons räkenskaper under bubblan och kraschen: varför aktien är inte bolaget (95 procents kursfall, noll produktiv påverkan) · Behärska kursens kärna — den negativa rörelsekassan: kunderna betalar direkt, leverantörerna väntar, och varje tillväxtprocent genererar fri kapital (V01, V11, V19) · Skilja låg marginal som sjukdom från låg marginal som strategi med hjälp av fritt kassaflöde per aktie (V07–V08) · Analysera tvåsidiga marknadsplatsers nätverkseffekter — varför Amazon Auctions misslyckades och Marketplace vann (V15) · Räkna på prenumerations- och återkommande intäkter: Prime som ARR-maskin och lojalitetslås (V02, V14) · Värdera IP som vapen: patent 5,960,411 på ett klick, e-bokspriskriget och vertikal integration via Kindle (V13, V16) · Se infrastruktur som produkt: AWS:s födelse ur interna behov och dess roll som Amazons dolda diversifieringsmotor (V03, V15, V17) · Bedöma förvärv: Zappos i aktier, Quidsi efter prisnedslag, Kiva för automation — logik, pris och integration (V03) · Knyt arbetsvillkor till marginalstruktur: hettan i Allentown, strejkerna i Tyskland och lågmarginalens pris (V18) · Kombinera det hela i AKM1:s RAM: händelse in, V01–V20 ut — med bokens egna källkritiska kontrovers som avslutning.",
+  "why": "Amazon är det bolag som Aktieanalytiker missförstod längst och oftast — och skälet är inte att modellerna var dåliga utan att modellerna frågade fel. Ett bolag med tjugo procents tillväxt och närmast noll i nettomarginal ser ut som ett misslyckande i en vinstmodell; sett genom kassacykelns lins är det en maskin som lånar räntefritt av sina leverantörer och låter kunderna finansiera expansionen. The Everything Store är den enda boken som förklarar den mekanismen från insidan — genom Bezos maxim om att din marginal är min möjlighet, flygeln som Bezos ritade på en servett 2001, och den lojalitetslogik som gör att Prime-anmälda kunder slutar handla någon annanstans. Kursen bygger AKM1:s allra viktigaste skiljelinje på boken: V07–V08 låga marginaler är inte en dom — det är ett diagnosunderlag som måste tolkas mot V11 likviditet, V19 emissionsrisk och fritt kassaflöde. Är kassan stark är låg marginal en strategi; brinner kassan är den en sjukdom. Samtidigt är boken nivå 2 därför att den tvingar dig in i kontroverserna: MacKenzies enstjärniga recension av boken som källa, arbetsvillkoren som priset för lågmarginalmodellen, och den fortsatta striden om huruvida en bolagsbildning som inte visar vinst på tjugo år skapar eller förstör värde. Utan den här boken är din plattforms- och tillväxtanalys en skärmytsling med multiplar; med den har du kassacykelns, nätverkens och skalbarhetens hela grammatik.",
+  "chapters_list": [
+    "1. Boken och journalisten — 2013, hundratals intervjuer och recensionen från hemmet",
+    "2. Från Cotulla till D.E. Shaw — 2 300 procent och listan på tjugo produkter (1964–1994)",
+    "3. Garaget i Bellevue — Cadabra, Relentless och jordens största bokhandel (1994–1997)",
+    "4. Day 1 — bubblan, Suria-rapporten och skillnaden mellan bolag och aktie (1997–2001)",
+    "5. Den negativa rörelsekassan — räkenskapsanalys av lågmarginal-högtillväxt (1997–2013)",
+    "6. Marknadsplatsen — fel auktion, rätt Marketplace och den tvåsidiga nätverkseffekten (1999–2013)",
+    "7. Prime och kundbesattheten — 79 dollar om året och lojalitetens ekonomi (2005–2013)",
+    "8. Kindle och ett klick — patent 5 960 411, e-bokskriget och vertikal integration (1997–2010)",
+    "9. AWS — när infrastrukturen blev produkten (2000–2013)",
+    "10. Zappos, Quidsi och förvärven — 1,2 miljarder i aktier och blöjkriget (2009–2012)",
+    "11. Kontroversen om arbetsvillkoren — hettan i Allentown och lågmarginalens pris",
+    "12. Bezos-systemet — flygeln, dörrborden och de obekväma sanningarna",
+    "13. Kontroversen och syntesen — värdeskapande eller värdeförstörande? AKM1:s sluträkning (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och journalisten — 2013, hundratals intervjuer och recensionen från hemmet",
+      "intro": "The Everything Store publicerades i oktober 2013, skriven av Brad Stone, journalist på Bloomberg som bevakat Amazon och Bezos sedan slutet av nittiotalet. Boken bygger på hundratals intervjuer med nuvarande och före detta anställda, konkurrenter och branschfolk — och mötte vid utgivningen sin mest uppmärksammade recension från en oväntad håll: Jeff Bezos hustru MacKenzie, som gav den en stjärna på Amazon. Kursen börjar med boken som källa, för hela kursen bygger på att hantera den spänningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Författaren och metoden. Stone följde Amazon som reporter i nästan femton år innan boken skrevs, och byggde den på över tre hundra intervjuer — med tidiga ingenjörer, logistikchefer, förläggare, konkurrenter och avhoppade ledare — plus dokument, domstolsakter och interna mejl. Bezos själv medverkade vid flera tillfällen men gav sig aldrig in i manuskriptet; boken är med andra ord inte auktoriserad. Titeln kommer från Bezos egen tidiga vision: en butik som sålde allt — the everything store — där urvalet var oändligt och priset det lägsta. Det är värt att notera vad den journalistiska formen klarar som memoaren inte: att ställa motsägande uppgifter mot varandra, att intervjua de som förlorade maktkampen, att datera påståenden. Shoe Dog-kursen (nivå 1) läste en röst inifrån; den här kursen (nivå 2) läser många röster utifrån — och skillnaden i metod är skillnaden i källkritik du måste utöva."
+        },
+        {
+          "type": "text",
+          "content": "Kontroversen vid utgivningen. I oktober 2013 publicerade MacKenzie Bezos — romanförfattare och då gift med grundaren — en recension på Amazons egen webbplats med en stjärna av fem möjliga. Hennes anklagelser var dubbla: att boken innehöll faktiska fel, och att den målade en kylig, beräknande Bezos som inte liknade personen hon kände — att den reducerade honom till en kugge i en vinstmaskin. Recensionen blev omedelbart en case study i källkritik: en primär källa med unik närhet som bemöter en sekundär källa med bred metod. Vem har rätt? Kursens svar är att frågan är fel ställd — de har olika slags rätt. MacKenzie har rätt i att ingen utomstående kan veta vad som pågår i ett äktenskap eller en människas inre; Stone har rätt i att bolagets beslut — priskrig, förvärv, arbetsvillkor — går att dokumentera oberoende av huruvida grundaren är varm eller kall i privatlivet. Lärdomen för analysen: skilj alltid karaktärsdiagnos från beslutsanalys. Den första är litteratur, den andra är investering."
+        },
+        {
+          "type": "text",
+          "content": "Och varför läser en aktieanalytiker den här boken? Därför att Amazon är det renaste fallet i börsens historia för den svåraste frågan i AKM1: hur värdera ett bolag som avsiktligt inte visar vinst? Bolaget omsatte 2013 74,5 miljarder dollar med en nettomarginal på 0,37 procent — och hade levererat en aktieavkastning som gjort det till ett av historiens mest värdefulla bolag. Den paradoxen går inte att lösa med V07–V08 ensamma; den kräver V11 (den negativa rörelsekassan), V15 (nätverkseffekterna), V02 (de återkommande intäkterna) och V19 (frågan om emissioner — som Amazon i princip aldrig behövde göra efter börsintroduktionen). Kursen bygger hela det resonemanget steg för steg, med boken som bevisning och kapitel fem som kärna. Nivå 2-beteckningen betyder inte svårare — den betyder att du räknar själv."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kursens källlära från utgivningskontroversen: en närstående primär källa kan vittna om personen, en metodisk sekundär källa kan dokumentera besluten — och de kan båda ha rätt samtidigt. Vid varje bolagsbedömning: lägg karaktären åt sidan och fråga vad dokumenten säger om besluten. Personlighet är intressant; beslut är prisade."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som källa — metadata och källvärde\",\"rader\":[[\"Fakta\",\"Värde\",\"Källkritisk not\"],[\"Författare\",\"Brad Stone, Bloomberg (bevakat Amazon sedan ca 1999)\",\"journalist, utomstående men närstående branschen\"],[\"Utgivning\",\"oktober 2013\",\"täcker 1994–2013; AWS-utbrytningen och framgångarna efter 2013 saknas\"],[\"Metod\",\"över tre hundra intervjuer + dokument + rättsakter\",\"motsättningar kan ställas mot varandra\"],[\"Kend författarroll\",\"Bezos intervjuad men utan insyn i manuskriptet\",\"inte auktoriserad biografi\"],[\"Kontrovers\",\"MacKenzie Bezos enstjärniga recension\",\"primär närhet mot sekundär metod\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem skrev The Everything Store och för vilken publikation arbetade han?",
+          "alternativ": [
+            "Walter Isaacson, anställd av Bezos",
+            "Brad Stone, journalist på Bloomberg som bevakat Amazon sedan slutet av nittiotalet",
+            "Phil Knight, tillsammans med Bezos",
+            "Jim Collins, managementkonsult"
+          ],
+          "ratt": 1,
+          "tips": "Boken skrevs av en journalist — vilken?"
+        },
+        {
+          "q": "Vad var MacKenzie Bezos huvudsakliga kritik mot boken?",
+          "alternativ": [
+            "Att den var för positiv till Amazon",
+            "Att den innehöll faktiska fel och målade en kylig, beräknande bild av hennes man",
+            "Att den saknade siffror",
+            "Att den plagierat en annan biografi"
+          ],
+          "ratt": 1,
+          "tips": "En stjärna av fem — vad anklagades texten för utöver faktafel?"
+        },
+        {
+          "q": "Vad syftar titeln The Everything Store på?",
+          "alternativ": [
+            "Amazons första varumärke",
+            "Bezos ursprungliga vision: en butik med oändligt urval som sålde allt",
+            "En konkurrent till Walmart",
+            "Amazons interna system för lagerstyrning"
+          ],
+          "ratt": 1,
+          "tips": "Vilken dröm formulerade Bezos redan på nittiotalet — och vilken butikstyp var den raka motsatsen till?"
+        },
+        {
+          "q": "Vilken huvudfråga i bolagsvärdering gör boken till obligatorisk läsning enligt kursen?",
+          "alternativ": [
+            "Hur värdera en bank i en kris",
+            "Hur värdera ett bolag som avsiktligt inte visar vinst men växer kraftigt",
+            "Hur värdera råvarubolag i cykeltopp",
+            "Hur värdera fastighetsbolag med hög utdelning"
+          ],
+          "ratt": 1,
+          "tips": "74,5 miljarder i omsättning, 0,37 procent nettomarginal — vilken fråga tvingar det fram?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Från Cotulla till D.E. Shaw — 2 300 procent och listan på tjugo produkter (1964–1994)",
+      "intro": "Jeff Bezos föddes 1964 i Albuquerque av en sjuttonårig mor, adopterades i praktiken av sin kubanske immigrantagefar och tillbringade somrarna på farfaderns ranch i Cotulla, Texas — somrar som lärde honom självförmåga och tålamod. Vid trettio års ålder satt han som en av de yngsta vice cheferna på hedgefonden D.E. Shaw i New York när han såg siffran som förändrade allt: webben växte med omkring 2 300 procent per år. Kapitlet handlar om bakgrunden, beslutsregeln och produktvalet som blev Amazon.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden, som boken använder för att förklara det senare. Bezos visade tidigt en ingenjörs blick — monterade saker, läste Sci-Fi (särskilt Star Trek och Foundation-serien), drömde om rymden; hans tal som avgångselev handlade om just rymdkolonisering. Somrarna hos farfadern Lawrence Preston Gise — en pensionerad tjänsteman som arbetat med atomenergiprogram — på ranchen i Cotulla innebar konkret arbete med händerna, vindkraft och rör: laga själv, lita till dig själv, saker tar tid.Stepfadern Mike Bezos, ingenjör på Exxon, gav familjen stabilitet och betonade utbildning. Stone skildrar det här inte som kuriosa utan som ursprunget till två senare Amazon-led: långsiktigheten (ranchen lär ut att decennier är den naturliga tidsenheten) och rationalismens arrogance (att allt kan beräknas om man bara har rätt data). Boken spårar också — en av sina mest omtalade reportageprestationer — upp Bezos biologiska far Ted Jorgensen, en man som drev en enhjulingsbutik i Arizona och inte visste att hans son blivit en av världens rikaste människor. Som analyslärdom: ursprunget förklarar inte bolaget, men det berättar vilka frågor grundaren kommer att ställa — och vilka han aldrig kommer att ställa."
+        },
+        {
+          "type": "text",
+          "content": "Beslutet 1994. På D.E. Shaw — en av de första kvantitativa hedgefonderna — fick Bezos i uppdrag att undersöka affärsmöjligheter på internet. Siffran som fångade honom var att webbanvändandet växte med omkring 2 300 procent per år: vad som än finns på en kurva som ser ut så, är det inte kurvan — det är hastigheten. Bezos gjorde sedan något som är värt att memorera i varje analys: han reste inte frågan vad ska jag sälja utan vilka produkter är bäst lämpade för mediet. Resultatet blev en lista på de tjugo största postorderkategorierna, som han gick igenom mot kriterier som urval (hur många titlar finns i hela kategorin), standardisering (är varorna identiska och enkla att skicka), logistik (kan de postas enkelt) och konkurrens (vem äger distributionen). Böckerna vann på samtliga: omkring tre miljoner titlar i tryck mot högst 150 000 i världens största fysiska bokhandel, en produkt som inte behöver provas eller måttbeställas, och två nationella grossister (Ingram och Baker & Taylor) som kunde leverera åt vem som helst. Att välja produkt efter mediet i stället för efter passion är en av de mest kopierbara analysrörelserna i modern näringshistoria."
+        },
+        {
+          "type": "text",
+          "content": "Sedan situationen som genererar myten: Bezos gick till sin chef David Shaw med slutsatsen, fick rådet att fundera i fyrtioåtta timmar — och avslutade funderingen med det han kallade regret minimization framework: den åttioårige jag kommer inte att ångra att jag försökte, bara att han aldrig försökte. Han sade upp sig, gifte sig kort dessförinnan med MacKenzie, och körde västerut mot Seattle — en plats vald för sin skattefördel, sitt tekniska kompetensförråd (Microsoft) och ett större lager hos en bokgrossist i närheten. Enligt boken skrevs affärsplanen under färdens sträckor. AK1A-läsningen: notera vad som saknas i den här bilden — nämligen allt som räknas i en börsanalys. Ingen marknadsandel, ingen marginalhistorik, inget kapitalbehov — bara en kurva, en lista och en beslutsregel. Det är därför tidiga faser inte kan analyseras med AKM1:s variabler: de kan bara analyseras med deras förutsättningar. Vad du kan göra — och gör i kapitel tre och framåt — är att se hur snabbt listan och regeln förvandlas till räkenskap."
+        },
+        {
+          "type": "insikt",
+          "content": "Stjäl produktvalslogiken: vilken produkt är bäst lämpad för mediet, inte vilken produkt tycker jag om? Kriterierna — urval, standardisering, logistik, distributörernas öppenhet — fungerar lika bra på nästa plattformsskifte som de gjorde på webben 1994. Frågan är tidlös; bara mediet byts."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Produktvalet 1994 — böckernas ekonomi mot listans kriterier\",\"rader\":[[\"Kriterium\",\"Fråga\",\"Böckernas svar\",\"Analysvärde\"],[\"Urval\",\"hur många varianter finns i kategorin?\",\"omkring 3 miljoner titlar mot högst 150 000 i en fysisk jättebutik\",\"oändligt hyllutrymme är webbens strukturövervikt\"],[\"Standardisering\",\"är varan identisk och behöver inte provas?\",\"boken är den mest standardiserade konsumtionen som finns\",\"enkelt att köpa osedd\"],[\"Logistik\",\"kan varan postas enkelt?\",\"liten, lätt, lätt förpackningsbar\",\"fraktkostnad i proportion till pris\"],[\"Distribution\",\"vem kan leverera åt vem?\",\"två nationella grossister — Ingram och Baker & Taylor\",\"ingen exklusivitet att förhandla om\"],[\"Beslutsregel\",\"vad styr själva hoppet?\",\"regret minimization framework\",\"personlig, inte finansiell — och därför omöjlig att kopiera\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken tillväxtsiffra fångade Bezos uppmärksamhet 1994?",
+          "alternativ": [
+            "Att amerikansk konsumtion växte 2,3 procent per år",
+            "Att webbanvändandet växde med omkring 2 300 procent per år",
+            "Att bokförsäljningen föll 23 procent",
+            "Att aktiemarknaden steg 230 procent"
+          ],
+          "ratt": 1,
+          "tips": "Det handlade inte om nivån utan om hastigheten — vilken hastighet?"
+        },
+        {
+          "q": "Varför vann böckerna som produktkategori?",
+          "alternativ": [
+            "De gav högst marginal",
+            "Störst urval (miljoner titlar), enkla att skicka, och två öppna nationella distributörer",
+            "Bezos älskade litteratur",
+            "De krävde ingen marknadsföring"
+          ],
+          "ratt": 1,
+          "tips": "Tre kriterier styrde valet — urval, logistik och distribution. Vilket svar matchar dem?"
+        },
+        {
+          "q": "Vad är regret minimization framework?",
+          "alternativ": [
+            "En investeringsmodell som minimerar förluster",
+            "Bezos beslutsregel: handla så att den åttioårige versionen av en själv ångrar sig minst",
+            "En kvantitativ hedgefondstrategi",
+            "En metod att skriva affärsplaner"
+          ],
+          "ratt": 1,
+          "tips": "Ramverket handlade inte om pengar — det handlade om ett långt liv betraktat baklänges."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Garaget i Bellevue — Cadabra, Relentless och jordens största bokhandel (1994–1997)",
+      "intro": "Bolaget grundades juli 1994 under namnet Cadabra — tills advokaten på telefon hörde det som cadaver. Domännamnet Relentless registrerades och omdirigerar fortfarande till Amazon. Och namnet togs från världens största flod, för att börja på A och för att låta exotiskt. Från garaget i Bellevue byggdes en bokhandel som på tre år gick från noll till börsnotering. Kapitlet handlar om starten som system: namn, kostnadskultur, tillväxt och den första juridiska konflikten om vad en bokhandel egentligen är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Startens konkreta detaljer, som boken levererar i tät följd. Grundat juli 1994 som Cadabra Inc.; namnbytet till Amazon skedde efter advokatens missuppfattning och en övning i bokstavsordning (kataloger och sökresultat listade alfabetiskt — att börja på A var fri distribution). Relentless.com köptes som reserv och lever kvar som omdirigering — ett litet stycke bolagshistoria avslöjat i själva domännamnet. Verksamheten drevs från ett hus i Bellevue: servrar byggda av billig hårdvara, kontorsskrivbord tillverkade av dörrar från byggvaruhuset — en detalj som senare blev en del av Amazons mytologi om sparsamhet (frugality): pengar ska köpa kundupplevelse, inte kontorskomfort. Den förste tekniske medarbetaren Shel Kaphan byggde grunden i koden. Site lanserades i juli 1995, och det första exemplaret som såldes var Fluid Concepts and Creative Analogies — en bok om artificiell intelligens som handlades redan under betaperioden; en klocka i garaget pingade vid varje order, och enligt boken kom beställningar inom kort från femtio delstater och fyrtiofem länder."
+        },
+        {
+          "type": "text",
+          "content": "Positioneringen och den första konflikten. Amazon kallade sig jordens största bokhandel — Earth's Biggest Bookstore — ett påstående som bokhandelskedjan Barnes & Noble 1997 tog till domstol med argumentet att Amazon överhuvudtaget inte var en bokhandel utan en bokbeställningsagent utan butiker och lager av egen betydelse. Målet avgjordes i förlikning 1998, men kursen noterar att tvisten var förebud om en fråga som följt plattformsbolag sedan dess: vad är egentligen en butik, ett hotell, en taxitjänst — och vilka regler gäller för den som äger flödet men inte tillgångarna? Det är V18:s kärnfråga i plattformsekonomins tidevarv. Parallellt byggdes den tidiga intäktsmotor som kommit att bli norm: affiliatprogrammet (juli 1996), där webbplatser fick provision för hänvisade kunder — grunden för en av internetekonomins mest kopierade tillväxtmekanismer. Börsintroduktionen kom i maj 1997: aktien prissattes till 18 dollar, bolaget fick in ungefär 54 miljoner och värderades till strax under en halv miljard — två år efter att den första boken sålts ur garaget. Och notera: redan här agerade Amazon som det senare skulle bli signum — Bezos varnade i prospektet för att bolaget sannolikt skulle rapportera förluster under överskådlig framtid."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen av starten: det som ser ut som kaos är ett system som håller på att välja sitt livsdrag. Tre drag formades 1994–1997 och kom aldrig att förhandlas om: (1) kostnadsaskesen — dörrborden, de billiga servrarna, kassan riktad mot kundupplevelse i stället för status — en kostnadskultur som direkt ger utrymme för låga priser (V07:s födelse); (2) urvalet som löfte — att vara störst var inte marknadsföring utan positionering, och det krävde att man aldrig någonsin kunde gå ur sortimentsloppet (V03 i positiv bemärkelse); (3) tillväxt som självändamål — intern slogan under de första åren lät Get Big Fast, för storlek var själva affärsidén: den som äger kundrelationen vid skalan äger marginalen. När du analyserar unga bolag: leta efter livsdragen — de tre valen som inte förhandlas om. Allt annat kan ändras; det som inte kan ändras är bolaget."
+        },
+        {
+          "type": "insikt",
+          "content": "Livsdrags-testet vid unga bolag: identifiera de tre beslut som grundaren aldrig borde kunna backa från utan att bolaget upphör vara sig självt. Hos Amazon var det kostnadsaskesen, sortimentslöftet och tillväxtens självändamål. Om du inte kan hitta tre livsdrag har du inte ett bolag — du har en projektidé med en hemsida."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Starten som system — 1994–1997 i siffror och drag\",\"rader\":[[\"Händelse\",\"Datum/Fakta\",\"Betydelse\",\"AKM1-läsning\"],[\"Grundat som Cadabra\",\"juli 1994\",\"namnbytet till Amazon kommer strax därefter\",\"—\"],[\"Domänen Relentless.com\",\"1994–1995\",\" lever kvar som omdirigering — startens självironi\",\"—\"],[\"Första försäljningen\",\"1995: Fluid Concepts and Creative Analogies\",\"bevisad efterfrågan innan lansering\",\"V01:s första prick\"],[\"Site lanserad\",\"juli 1995\",\"beställningar från 50 delstater och 45 länder inom kort\",\"urvalslöftet fungerar direkt\"],[\"Affiliatprogrammet\",\"juli 1996\",\"provision på hänvisade köp\",\"distributionens nätverk bygger ut egen\"],[\"Börsintroduktion\",\"maj 1997: 18 dollar per aktie, ca 54 miljoner till bolaget\",\"varning för kommande förluster i prospektet\",\"V19: förlustlöftet är en strategi, inte en överraskning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör livsdrags-testet på ett ungt bolag du bevakar: skriv ner de tre beslut eller avstånd bolaget aldrig kan backa från — kostnadskultur, sortiments- eller kvalitetslöfte, tillväxt- eller lönsamhetsprioritet. Kontrollera sedan mot senaste tre rapporterna: har något livsdrag brutits i tysthet (pris höjts, sortiment gallrats, tillväxt mål medvetet offrat för marginal)? Ett brutet livsdrag utan förklaring är den starkaste varningssignalen som finns i unga bolag — starkare än någon siffra."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hette bolaget när det grundades juli 1994?",
+          "alternativ": [
+            "Amazon direkt från början",
+            "Cadabra — som av en advokat hördes som cadaver",
+            "Relentless Inc.",
+            "Bookpages"
+          ],
+          "ratt": 1,
+          "tips": "Namnet kom senare; domänen Relentless är en kvarleva från processen. Vad var det första namnet?"
+        },
+        {
+          "q": "Vilken bok var det första exemplaret som såldes?",
+          "alternativ": [
+            "Den långa resan av Bill Bryson",
+            "Fluid Concepts and Creative Analogies",
+            "Da Vinci-koden",
+            "Harry Potter och de vises sten"
+          ],
+          "ratt": 1,
+          "tips": "En bok om tänkande och artificiell intelligens — passande nog för det som senare byggdes ovanpå bokhandeln."
+        },
+        {
+          "q": "Vad prissattes aktien till vid börsintroduktionen i maj 1997?",
+          "alternativ": [
+            "8 dollar",
+            "18 dollar",
+            "80 dollar",
+            "108 dollar"
+          ],
+          "ratt": 1,
+          "tips": "En tvåsiffrig summa som sedan både fördubblades och niondelades innan historien var slut."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Day 1 — bubblan, Suria-rapporten och skillnaden mellan bolag och aktie (1997–2001)",
+      "intro": "1997 års aktieägarbrev — det första och mest citerade i bolagshistorien — deklarerade att allt handlar om det långa loppet och att det förblir Day 1. Sedan kom bubblan: aktien toppade på omkring 113 dollar i december 1999 och bottnade på strax under sex dollar hösten 2001 — ett fall på cirka 95 procent — samtidigt som en kreditanalytiker på Lehman varnade för att bolaget skulle gå omkull. Kapitlet handlar om den viktigaste distinktionen i hela kursen: aktien är inte bolaget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Brevet 1997, som kursen behandlar som dokument och inte som retorik. Bezos lovade aktieägarna att Amazon skulle optimera för det långa loppet — att marknadsledarskap väger tyngre än kortsiktig vinst — och definierade framgång i mjuka mått: tillväxt i kunder, andel repetitionsköp, och antalet produkter och tjänster. Sedan slutklämmen som blivit signatur: det förblir Day 1 — en formulering som Bezos senare (i aktieägarbrev efter boken) gav sin motsats: Day 2 är stagnation, sedan irrelevans, sedan nedgång, sedan död. Som analysdokument är brevet unikt: det är en bolagsbildning som öppet deklarerar att den inte kommer att optimeras för det mått marknaden betalar för (kvartalsvinst) — och gör det till ett löfte. Den som köpte aktien 1997 köpte därför inte en vinstström utan ett antagande om att kassaflödet någon gång långt fram skulle realiseras. Det antagandet prövades brutalt de följande fyra åren — och höll — vilket är kursens tydliga exempel på att V04-multiplar på tillväxtbolag är tro på berättelse, inte aritmetik på historik."
+        },
+        {
+          "type": "text",
+          "content": "Bubblan och kraschen, i mekanik. 1998–1999 byggde Amazon i rasande fart: musik, dvd, internationella förvärv (Bookpages i Storbritannien, Telebuch i Tyskland), och framför allt ett logistikbygge från sju distributionscenter till långt över tjugo — finansierat delvis med en konvertibel skuld på 1,25 miljarder dollar emitterad i januari 1999. Aktien steg med marknadens eufori till omkring 113 dollar i december 1999. Sedan vände allt: Barron's hade redan våren 1999 frågat sig om bolaget var Amazon.bomb; juni 2000 publicerade Ravi Suria på Lehman Brothers en analys av Amazons konvertibla skuld som visade att bolagets kassaflöde inte bar lånen — en kreditvarning som fick aktien att falla ytterligare och som kursen använder som V10/V19-läxa: hävstång fungerar baklänges, och kredithälsa bedöms inte med multiplar utan med kassaflödeskalendrar. Vid botten hösten 2001 låg aktien strax under sex dollar — ned 95 procent från toppen — och januari 2001 skars 1 300 anställda, omkring 15 procent. Några av de nybyggda distributionscentren stod tomma. Vad som inte hände: kunderna försvann inte. Försäljningen växte rakt igenom kraschen — från 1,64 miljarder dollar 1999 till 2,76 miljarder 2000 och 3,12 miljarder 2001. Verksamheten och värderingen rörde sig i två olika världar."
+        },
+        {
+          "type": "text",
+          "content": "Bezos reaktion är bokens bästa lärdom. Under fallet upprepade han internt att aktien är inte bolaget och bolaget är inte aktien — en distinktion som är banal i teorin och nästan omöjlig i praktiken när ditt personliga värde rasar med 95 procent. Han använde kraschen som bränsle: kostnaderna skars, fokus skärptes, och den ökända julhandeln 1999 (där Amazon nästan drunknade i order den inte kunde leverera i tid — en nära-dödsupplevelse som la grunden till den logistiksatsning som senare blev Prime) vreds till en av bolagets viktigaste lärdomar. AK1A-läsningen: kursen ger dig här RAM:ens första hörnsten — varje analys ska skilja tre plan: rörelsen (växer kunderna?), finansieringen (bär kassaflödet skulderna?) och värderingen (vad prissätter marknaden?). En aktie kan falla 95 procent medan alla tre svarar ja, ja och förhögt — och det var exakt vad som hände."
+        },
+        {
+          "type": "insikt",
+          "content": "Aktien är inte bolaget — men den kan döda det. Ett fall på 95 procent gör inget mot verksamheten, men det kan stänga kapitalmarknaden, utlösa konvertiblers villkor och försvåra rekrytering. Bedöm därför alltid kraschexponering i två steg: vad gör fallet med affären (oftast inget) och vad gör det med finansieringen (ibland allt)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bubblan och kraschen 1999–2001 — tre plan åtskilda\",\"rader\":[[\"Händelse\",\"Siffra\",\"Plan\",\"Läsning\"],[\"Aktietopp\",\"ca 113 dollar, december 1999\",\"värdering\",\"euforins multipl\"],[\"Konvertibel emitterad\",\"1,25 miljarder dollar, januari 1999\",\"finansiering\",\"hävstång inför vändning — V10/V19\"],[\"Suria-rapporten\",\"juni 2000, Lehman\",\"finansiering\",\"kassaflödet bar inte lånen\"],[\"Aktiebotten\",\"strax under 6 dollar, hösten 2001\",\"värdering\",\"-95 procent från toppen\"],[\"Uppsägningar\",\"1 300 anställda (ca 15 procent), januari 2001\",\"rörelse\",\"kostnadsanpassning\"],[\"Försäljning under kraschen\",\"1,64 (1999) → 2,76 (2000) → 3,12 (2011 omk.) miljarder dollar\",\"rörelse\",\"kunderna stannade — verksamheten bröts inte\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör treplans-testet på ett bolag vars aktie fallit kraftigt: besvara separat (1) rörelsen — växer kunder och intäkter som förr? (2) finansieringen — bär kassaflödet skulderna, och när förfaller nästa post? (3) värderingen — mot vilket antagande är aktien prisad? Skriv tre rader och avsluta med en dom: är fallet en rörelsevarning, en finansieringsvarning eller en värderingsnormalisering? Endast det första svaret äriskt; det andra kan vara dödligt; det tredje är ett köptillfälle."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärbudskapet i 1997 års aktieägarbrev?",
+          "alternativ": [
+            "Att bolaget lovar stigande kvartalsvinster varje år",
+            "Att allt handlar om det långa loppet — marknadsledarskap väger tyngre än kortsiktig vinst — och att det förblir Day 1",
+            "Att bolaget kommer betala utdelning från år 2000",
+            "Att konkurrenterna är överlägsna"
+          ],
+          "ratt": 1,
+          "tips": "Brevet deklarerar vad bolaget inte kommer att optimera för — vad var det?"
+        },
+        {
+          "q": "Ungefär hur mycket föll Amazonaktien mellan december 1999 och hösten 2001?",
+          "alternativ": [
+            "Omkring 30 procent",
+            "Omkring 50 procent",
+            "Omkring 95 procent (från ca 113 till strax under 6 dollar)",
+            "Den steg under perioden"
+          ],
+          "ratt": 2,
+          "tips": "Från över hundra dollar till ensiffrigt — räkna baklänges."
+        },
+        {
+          "q": "Vad påpekade Ravi Surias analys på Lehman 2000?",
+          "alternativ": [
+            "Att Amazons affärsmodell var olaglig",
+            "Att Amazons kassaflöde inte bar den konvertibla skulden — en kreditvarning",
+            "Att AWS skulle bli större än detaljhandeln",
+            "Att börsnoteringen var felprissatt"
+          ],
+          "ratt": 1,
+          "tips": "Han var kreditanalytiker — vilket plan i analysen talar en sån om?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Den negativa rörelsekassan — räkenskapsanalys av lågmarginal-högtillväxt (1997–2013)",
+      "intro": "Här är kursens kärna. Amazon växte från 148 miljoner dollar i försäljning 1997 till 74,5 miljarder 2013 — i genomsnitt drygt fyrtio procent per år under sexton år — med en nettomarginal 2013 på 0,37 procent. Ändå behövde bolaget aldrig göra en nyemission av betydelse efter introduktionen. Förklaringen heter negativ rörelsekassa: kunderna betalar direkt, leverantörerna väntar. Det här kapitlet lär dig räkna mekanismen själv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sifforna först, eftersom de är kapitlets subjekt. Försäljning i miljoner respektive miljarder dollar: 1997: 148; 1999: 1,64 miljarder; 2001: 3,12; 2005: 8,49; 2009: 24,5; 2013: 74,5 — mer än en femhundrafaldig ökning på sexton år. Nettoresultatet 2013: 274 miljoner dollar — 0,37 procent av omsättningen. Rörelsens kassaflöde 2013: omkring 5,5 miljarder; investeringar i anläggningar: omkring 3,4 miljarder — kvar som fritt kassaflöde: grovt räknat 2 miljarder dollar. Jämförelse på köpet: Walmart omsatte samma år omkring 469 miljarder dollar med en nettomarginal kring 3,6 procent — den traditionella detaljhandelns fråga är lönsamhet, Amazons varje års fråga var annat: hur snabbt kan vi växa med den kassa tillväxten själv genererar. Kursens första räkneuppgift: multiplicera Amazons 2013-marginal med omsättningen och du förstår att vinsten är ett avrundningsfel — men kassaflödet är en industri. Det är inte ett bolag som inte tjänar pengar; det är ett bolag som inte låter pengarna stanna i resultatet."
+        },
+        {
+          "type": "text",
+          "content": "Sedan mekanismen som gör det möjligt: den negativa rörelsekassan. Kunden betalar Amazon i samband med köpet — kortföretaget gör upp inom dagar. Amazon betalar i sin tur sina leverantörer på kredittider som i praktiken legat kring tre månader och ofta längre. Däremellan — mellan inkassering och utbetalning — sitter bolaget på en växande summa pengar som är dess eget intäktsflödes privata lån: ju mer bolaget säljer, desto större blir det räntefria lånet från leverantörerna. Det är samma float-princip som försäkringsbolag och betalkortsnät lever på, tillämpad på detaljhandel. Följden blir den paradox som kursen vill att du kan räkna baklänges och framlänges: tillväxt genererar kassa i stället för att konsumera den — varje ny försäljningskrona lämnar ett kassaöverskott hos bolaget innan kostnaden betalas, och överskottet återinvesteras i nästa expansionssteg. Jämför med Shoe Dog-kursen, där tillväxten gjorde motsatsen (Knight betalade Onitsuka nästan direkt medan butikerna betalade på kredittid — ett gap som åt kapital). Blue Ribbon och Amazon är spegelbilder av samma kassacykel med ombytta roller — och det är därför V19 aldrig kan poängsättas utan att betalningsordningen kartlagts."
+        },
+        {
+          "type": "text",
+          "content": "Och Bezos eget ramverk, som ger kapitlet dess kriterier. I aktieägarbrevet 2004 deklarerade han att bolagets yttersta finansiella mått är fritt kassaflöde per aktie — inte resultaten per aktie — eftersom kassaflödet är det som kan återinvesteras till avkastning eller delas med ägarna. Till det maximen som boken förmedlar som bolagets själva prisfilosofi: din marginal är min möjlighet — varje branschgren där etablerade aktörer tar ut bekväma marginaler är en inbjudan till att Amazon går in och prutar dem till noll, finansierat av sin kassamodell och sin kostnadskultur. AKM1-översättningen blir kursens viktigaste beslutsregel: låg V07–V08 är inte en dom. Ställ två kompletterande frågor: är kassaflödet starkt (V11, fritt kassaflöde) och är bolaget emissionfritt (V19)? Om ja på båda är låga marginaler en strategi — priset är medvetet lågt för att köpa marknad, och varje år utan emission är ett år konkurrenterna förlorat terräng. Om nej på något — om kassan brinner och låg marginal tvingar fram nyemissioner — är det samma siffror, men en sjukdom. Samma symtom, två diagnoser: det är den kliniska blicken kursen tränar."
+        },
+        {
+          "type": "insikt",
+          "content": "Kassacykelns lag, andra versionen: ett bolag som inkasserar före det betalar växer sig likvid av att växa; ett bolag som betalar före det inkasserar växer sig illikvid av att växa. Vid varje lågmarginaligt tillväxtbolag: rita betalningsordningen innan du läser en enda multipl. Ordningen — inte marginalen — avgör om tillväxten är en pengamaskin eller en pengabrännare."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Amazon 1997–2013 — lågmarginal-högtillväxt i siffror\",\"rader\":[[\"År\",\"Omsättning\",\"Notering\",\"AKM1-läsning\"],[\"1997\",\"148 miljoner dollar\",\"börsåret\",\"V01:s startpunkt\"],[\"1999\",\"1,64 miljarder\",\"kraschens toppår\",\"multiplens eufri — V04 lösgjord från rörelsen\"],[\"2001\",\"3,12 miljarder\",\"botten på aktien, växande försäljning\",\"rörelse och värdering i skilda världar\"],[\"2005\",\"8,49 miljarder\",\"Prime lanseras\",\"V02-maskinen byggs\"],[\"2009\",\"24,5 miljarder\",\"Kindle-eran\",\"V16 driver volym\"],[\"2013\",\"74,5 miljarder; netto 274 miljoner (0,37 %)\",\"rörelsekassa ca 5,5 mdr; capex ca 3,4 mdr\",\"V07/V08 låga per strategi; V11 stark via float\"],[\"2013 (jämförelse)\",\"Walmart: ca 469 miljarder; nettomarginal ca 3,6 %\",\"traditionell detaljhandel\",\"två olika frågor om pengar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna floaten själv: ta ett detaljhandels- eller plattformsbolags senaste bokslut och beräkna kassakonversionscykeln — lagerdagar plus kundfordspecifiedrar minus leverantörsdagar (CCC = DIO + DSO − DPO). Gör det för tre år i rad. Om cykeln är negativ och blir mer negativ medan omsättningen växer har du ett Amazon-mönster: tillväxten genererar kassa. Om cykeln är positiv och växer har du ett Blue Ribbon-mönster: tillväxten konsumerar kassa. Skriv vilken modell som gäller — och vad den innebär för bolagets V11- och V19-poäng."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor var Amazons nettomarginal 2013?",
+          "alternativ": [
+            "Omkring 10 procent",
+            "Omkring 3,6 procent — som Walmart",
+            "Omkring 0,37 procent (274 miljoner på 74,5 miljarder)",
+            "Negativ tio procent"
+          ],
+          "ratt": 2,
+          "tips": "Nettoresultatet var en bråkdel av en enda procent — vilken bråkdel?"
+        },
+        {
+          "q": "Varför har Amazon i princip aldrig behövt göra nyemissioner efter börsintroduktionen?",
+          "alternativ": [
+            "Därför att bankerna alltid ställt upp",
+            "Därför att bolaget ständigt sålt nya aktier i tysthet",
+            "Därför att den negativa rörelsekassan gör att tillväxten genererar kapital — kunderna betalar före leverantörerna",
+            "Därför att det är förbjudet i bolagsordningen"
+          ],
+          "ratt": 2,
+          "tips": "Vem betalar först — kunden eller leverantören? Vad gör svaret med kassan när volymen växer?"
+        },
+        {
+          "q": "Vad deklarerade Bezos som bolagets yttersta finansiella mått i aktieägarbrevet 2004?",
+          "alternativ": [
+            "Resultat per aktie",
+            "Utdelningsandel",
+            "Fritt kassaflöde per aktie",
+            "Bruttomarginal"
+          ],
+          "ratt": 2,
+          "tips": "Vilket mått kan återinvesteras eller delas — bokförd vinst eller kassa?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Marknadsplatsen — fel auktion, rätt Marketplace och den tvåsidiga nätverkseffekten (1999–2013)",
+      "intro": "I mars 1999 lanserade Amazon sina auktioner — en direkt kopia av eBay som blev ett av bolagets största misslyckanden. I november 2000 kom i stället Marketplace, där tredjepartssäljare fick sälja på Amazons egna produktsidor. Vid bokens slut gick nästan fyra av tio sålda enheter via tredjepartssäljare. Kapitlet handlar om nätverkseffektens kalla start och om plattformens geni: att låta konkurrenterna arbeta för dig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Misslyckandet först, för det är den bästa lärdomen. Amazon Auctions byggdes som en spegelbild av eBay — samma format, samma budmekanik — och lanserades med kraft bakom sig, ändå vann det ingen marknadsandel av betydelse. Varför? Eftersom auktioner lever på nätverkseffekter och nätverkseffekter inte går att kopiera: köparna var hos eBay eftersom säljarna var där, och säljarna var hos eBay eftersom köparna var där. Amazons kunder — vana vid snabbhet, fast pris och köp med ett klick — hade dessutom ingen anledning att byta beteende till budgivning för att rädda Amazons ära. Kursen noterar den generella lagen: man kan kopiera en produkts funktioner men inte en plattforms kritiska massa. V15 Nätverkseffekter poängsätts aldrig efter liknelsens funktioner — de poängsätts efter var nätverket redan finns. Den som utmanar en nätverksaktör med nätverkets egen spelform förlorar; den som vill vinna måste byta spelform (vilket Marketplace gjorde)."
+        },
+        {
+          "type": "text",
+          "content": "Sedan det som fungerade. Marketplace (november 2000) var i princip motsatsen till auktionerna: ingen ny beteendeförändring, ingen ny spelform — tredjepartssäljare fick istället träda in på Amazons egna produktsidor och erbjuda samma vara, ofta begagnad eller överbliven, ofta billigare. Kunden slapp tänka; urvalet exploderade; och Amazon tog provisjon på varje affär — en intäktsström med betydligt högre marginal än egen detaljhandel, eftersom varken lager eller inköpskapital bands i tredjepartens försäljning. Internt var beslutet kontroversiellt — det innebar att Amazon bjöd in konkurrenter rätt in i sitt eget skyltfönster och ibland erbjöd dem lägre pris än Amazon självt (kanibalisering) — men Bezos vände resonemanget: om kunden ändå ska handla, ska hon göra det hos Amazon, oavsett vem som säljer; urvalet och relationen är Amazons, inte lagret. Med Fulfillment by Amazon (2006) fördjupades modellen: tredjepartssäljare kunde köpa logistiken av Amazon — plattformen tog betalt för att göra konkurrenterna beroende av den. Vid 2013 gick nästan fyra av tio sålda enheter via tredjepart."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen i tre lager. Ett — V15 tvåsidig nätverkseffekt: fler säljare → större urval och lägre priser → fler köpare → större anledning för nästa säljare att ansluta — en slinga som förstärker sig själv och som, till skillnad från varumärkesmoats, blir starkare av att konkurrenterna deltar. Två — V03 intäktsdiversifiering: provisjoner, FBA-avgifter och (senare) annonsering är en andra intäktmaskin ovanpå egen detaljhandel, med annan marginal och annat riskmönster; bolagets intäkter diversifierades utan att kundrelationen gjorde det — allt heter Amazon för kunden. Tre — den strategiska maximen värd att memorera från fallet: den starkaste plattformen är den där konkurrenternas vinster också är plattformens. Ett test för din egen analys: när du poängsätter V15 högt, fråga vad tredjeparten vinner på att vara med — om svaret är tillgång till kunder de annars inte når, är nätverket reellt; om svaret är ingenting särskilt, är det en distributionskanal, inte ett nätverk."
+        },
+        {
+          "type": "insikt",
+          "content": "Nätverkseffekter kan inte kopieras, bara förbigås. eBay vann auktionskriget därför att nätverket redan satt där; Amazon vann sedan genom att byta spelform — fast pris på egna produktsidor i stället för budgivning på en kopia. Frågan vid varje plattformsutmanare: byter den spelregler eller bara dräkt?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Auktioner mot Marketplace — samma bolag, två utfall\",\"rader\":[[\"Dimension\",\"Amazon Auctions (1999)\",\"Marketplace (2000–)\",\"Lärdom\"],[\"Spelform\",\"budgivning — kopierad från eBay\",\"fast pris på Amazons produktsidor\",\"kopiera inte nätverkets spel\"],[\"Nätverkseffekt\",\"kall start — köpare och säljare satt hos eBay\",\"redan igång — kunderna fanns på platsen\",\"V15 avgörs av var nätverket bor\"],[\"Kundbeteende\",\"krävde ny vana\",\"krävde ingen förändring alls\",\"beteendeförändring är dyr drift\"],[\"Intäkt\",\"auktionsprovision som aldrig växte\",\"provision + FBA-avgifter — högre marginal än egen handel\",\"V03: andra maskinen ovanpå den första\"],[\"Kanibalisering\",\"—\",\"medveten: konkurrenter i eget skyltfönster\",\"låt konkurrenterna arbeta för dig\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför misslyckades Amazon Auctions 1999?",
+          "alternativ": [
+            "Därför att tekniken inte fungerade",
+            "Därför att nätverkseffekten redan satt hos eBay — kopior utan kritisk massa förlorar",
+            "Därför att auktioner var förbjudna",
+            "Därför att kunderna ville ha dyrare varor"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan kopieras från en plattform — funktionerna eller deltagarna?"
+        },
+        {
+          "q": "Vad var den avgörande idén i Marketplace 2000?",
+          "alternativ": [
+            "Att enbart sälja egna varor billigare",
+            "Att låta tredjepartssäljare sälja på Amazons egna produktsidor — och ta provisjon",
+            "Att köpa eBay",
+            "Att stänga ute konkurrenterna helt"
+          ],
+          "ratt": 1,
+          "tips": "Vem fick träda in i Amazons skyltfönster — och vad tog Amazon för det?"
+        },
+        {
+          "q": "Ungefär hur stor andel av de sålda enheterna kom från tredjepartssäljare vid bokens slut?",
+          "alternativ": [
+            "Omkring en av tio",
+            "Omkring två av tio",
+            "Nästan fyra av tio",
+            "Alla — egen handel hade upphört"
+          ],
+          "ratt": 2,
+          "tips": "Plattformens andel växer mot hälften under 2010-talet — var stod den 2013?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Prime och kundbesattheten — 79 dollar om året och lojalitetens ekonomi (2005–2013)",
+      "intro": "I februari 2005 lanserades Amazon Prime: obegränsad tvådagarsfrakt för 79 dollar om året. Internt var motståndet starkt — rädslan var att kunderna skulle utnyttja erbjudandet tills fraktkostnaderna svalt marginalerna. Det blev i stället den mest kopierade lojalitetsmekanismen i detaljhandelns historia. Kapitlet handlar om prenumerationsintäkter, byteskostnader och det citat som samlar hela kulturen: kunden är en inbjuden gäst, och vi är värdarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ursprunget ligger i krisen från kapitel fyra. Julhandeln 1999 blev nästan bolagets fall: ordervolymen översteg kapaciteten, leveranser försenades och Amazon fick kompensera kunder — en förödmjukelse som Bezos vägrade låta upprepas. Svaret blev åratal av massiva logistikinvesteringar (distributionscenter, programvara, prognoser) — kapital som inte syntes i resultatet men som byggde en maskin kapabel att leverera snabbt till förutsägbar kostnad. Prime var sättet att ta betalt för den maskinen i förväg: kunden betalar 79 dollar per år för obegränsad tvådagarsfrakt, och därmed förvandlas frakten — en kostnad och ett friktionstillfälle — till en prenumerationsintäkt och ett lojalitetslås. Intern kritik var skarp: journalister och finansfolk pekade på att tunga Prime-kunder skulle köpa små, billiga saker ofta och att fraktkostnaden per order skulle äta marginalen. Bezos drev igenom beslutet mot internt motstånd och satte igång. Resultatet, som boken dokumenterar: Prime-kunder köpte mer, oftare, i fler kategorier — och förnyade i hög grad. Det som i klassisk räkenskap såg ut som subvention visade sig vara det billigaste kundförvärv som räknats: avgiften på 79 dollar betalades en gång, beteendeförändringen varade året ut."
+        },
+        {
+          "type": "text",
+          "content": "Kundbesattheten som system, inte slogan. Bezos maxim — vi ser våra kunder som inbjudna gäster på en fest, och vi är värdarna — är kulturens motsvarighet till Primes ekonomi: varje interaktion ses som en värdinnefunktion. Boken räknar upp mekanismerna: enkla returer, kundservice som inte göms, priset som aldrig får överträffa vad kunden själv hittar, och internt den ständiga övningen att börja från kunden och arbeta baklänges i stället för från konkurrentens erbjudande och framåt. När data och anekdoter står mot varandra, menade Bezos, är anekdoten oftast rätt — siffrorna mäter det som hänt, känslan fångar det som håller på att hända. AK1A noterar kopplingen till V14 Varumärke och kundlojalitet: Amazons varumärke byggdes inte i kampanjer utan i miljarder små transaktioner där löftet hölls — den tråkigaste och starkaste formen av varumärkesbyggande. Och Prime lade till det som varumärke ensamt inte ger: en byteskostnad i form av ett betalt medlemskap som kunden förlorar genom att byta — lojalitet med avbetalning."
+        },
+        {
+          "type": "text",
+          "content": "Räkenskapssidan, som knyter tillbaka till kapitel fem. Prime är i AKM1:s termer en V02-maskin: en återkommande, förutsägbar intäkt som förnyas — avgiften — ovanpå ett beteende (köp) som den själv accelererar. Kombinationen prenumerationsavgift + transaktionsvolym är bland de kraftfullaste intäktsarkitekturerna som finns: den första ger förutsägbarhet (V12), den andra ger marginal på volym (V07–V09), och tillsammans skapar de en kundbas som blir dyrare för konkurrenter att erövra än att betjäna. Kursens varning är samma som alltid: prenumerationsmodeller ser underbart ut i tillväxtfas och avslöjar sig i mättnadsfas — när tillströmningen av nya medlemmar avtar blir kvarvaron (churn) hela spelet. Därför ska V02 alltid poängsättas med två frågor: hur stor andel av intäkterna är återkommande, och vad händer med den andelen om nyförsäljningen stannar?"
+        },
+        {
+          "type": "insikt",
+          "content": "Prenumerationens dubbla natur: en avgift som är intäkt och samtidigt byteskostnad. Kunden betalar för förmånen och låses av samma betalning — att byta blir att kasta bort resten av året. Vid bedömning av medlemskapssystem: räkna alltid både intäkten per medlem och beteendet per medlem; om den andra växer snabbare än den första är medlemskapet en investering som förr eller senare syns i volymen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prime-ekonomin — mekanik och översättning\",\"rader\":[[\"Element\",\"Innehåll\",\"Ekonomisk verkan\",\"AKM1-läsning\"],[\"Pris\",\"79 dollar per år (februari 2005)\",\"förutbetald intäkt — kassa före leverans\",\"V02 + V11\"],[\"Förmån\",\"obegränsad tvådagarsfrakt\",\"fraktkostnad som lojalitetslås\",\"V14 byteskostnad\"],[\"Beteende\",\"större korg, högre frekvens, fler kategorier\",\"volymtillväxt på befintliga kunder\",\"V01 utan anskaffningskostnad\"],[\"Kvarvaro\",\"förnyelse i hög grad\",\"förutsägbar intäktsbas\",\"V12 intäktsstabilitet\"],[\"Risk\",\"subventionerad frakt, mättnad, churn\",\"fungerar i tillväxt, prövas i mognad\",\"V02 poängsätts alltid med churn-frågan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör prenumerations-testet på ditt bevakningsuniversum: hitta tre intäktskällor med ARR-karaktär (medlemskap, avtal, prenumeration) och uppskatt för varje: andel av totala intäkter, genomsnittlig kontraktstid och kvarvaro. Poängsätt V02 och V12 för respektive bolag. Om du inte hittar kvarvarotalen — notera det som ett eget fynd: bolag med äkta prenumerationsintäkter kommunicerar dem stolt; tystnad är data."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kostade Prime per år vid lanseringen i februari 2005?",
+          "alternativ": [
+            "7,9 dollar",
+            "79 dollar",
+            "179 dollar",
+            "790 dollar"
+          ],
+          "ratt": 1,
+          "tips": "En tvåsiffrig summa som skulle komma att bli en av detaljhandelns mest kopierade prislappar."
+        },
+        {
+          "q": "Vilken händelse låg bakom de massiva logistikinvesteringar som gjorde Prime möjligt?",
+          "alternativ": [
+            "Ett lagerbrand i Seattle",
+            "Julhandelskaoset 1999, då order volymen översteg kapaciteten",
+            "Ett krav från aktiemarknaden",
+            "Konkurrensen från Barnes & Noble"
+          ],
+          "ratt": 1,
+          "tips": "Vilken jul förvandlade Amazon från euforiskt dotcom-bolag till logistikföretag med skräckinjagande respekt för kapacitet?"
+        },
+        {
+          "q": "Vilka två AKM1-variabler fångar Prime bäst enligt kursen?",
+          "alternativ": [
+            "V02 ARR-tillväxt och V14 kundlojalitet",
+            "V04 P/S och V05 P/B",
+            "V10 skuldsättningsgrad och V11 likviditet",
+            "V18 regulatoriska katalysatorer och V20 återköp"
+          ],
+          "ratt": 0,
+          "tips": "En variabel för den återkommande intäkten, en för låsningen — vilka?"
+        },
+        {
+          "q": "Hur formulerar Bezos kundsynen i bokens mest citerade kulturcitat?",
+          "alternativ": [
+            "Kunden är alltid ett medelantal",
+            "Vi ser våra kunder som inbjudna gäster på en fest — och vi är värdarna",
+            "Kunden existerar för att optimeras",
+            "Data slår alltid kundens känsla"
+          ],
+          "ratt": 1,
+          "tips": "Vilken social roll ger han kunden — och vilken ger han sig själv?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Kindle och ett klick — patent 5 960 411, e-bokskriget och vertikal integration (1997–2010)",
+      "intro": "I september 1999 beviljades Amazon patentet 5 960 411 — beställning med ett klick. Tre månader senare stämde man Barnes & Noble för intrång; Apple licensierade senare tekniken. Åtta år därefter lanserades Kindle och sålde slut på fem och en halv timme. Och i januari 2010 bröt e-bokskriget ut med förlaget Macmillan om vem som äger prissättningen. Kapitlet handlar om IP som vapen, hårdvara som lås och prissättningsmaktens gränser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Patentet först. 1-Click — idén att en återkommande kund kan beställa utan att fylla i adress och kortuppgifter igen — ansökte Amazon i september 1997, fick patent i september 1999 och använde det omedelbart offensivt: stämningen mot Barnes & Noble i oktober 1999 ledde till en preliminär förbud som tvingade konkurrenten att införa två klick under rättsprocessen, innan parterna förlikade. Apple licensierade tekniken — ett av de tydligaste exemplen i IT-historien på ett patent som genererar licensintäkter från jättar. Kursen använder patentet som V13-läxa i båda riktningarna: som moat — under åren kring millennieskiftet var den friktionsfria beställningen ett reellt köpskäl och skyddet därför värt pengar — och som moatens gräns — patent löper ut (detta höll till 2017), kan ogiltigförklaras, och skyddar funktioner, inte kärlek. Ett patent är en tidsinställd hävstång, inte en evig mur; den som betalar premium för patent-skyddade intäkter bör räkna baklänges från löptidens slut, inte framåt från senaste årets försäljning."
+        },
+        {
+          "type": "text",
+          "content": "Sedan hårdvaran. Kindle — utvecklad i hemlighet av enheten Lab126, tillkommen 2004 — lanserades i november 2007 till 399 dollar och sålde slut på fem och en halv timme. Det intressanta är inte enheten utan valet: ett internetbolag i grunden utan elektroniktillverkning beslöt att bygga en fysisk produkt. Motivet var vertikal kontroll över upplevelsen — läsaren ska inte kräva dator, bokhandeln ska finnas i själva maskinen, och köp ska ske med ett klick (patentet, alltså, inbakat i järnet). Kindle är kursens exempel på V16 produktlansering som strategi snarare än som produkt: målet var att äga övergången från papper till skärm — den största förändringen i bokbranschen sedan tryckpressen — och den som äger läsenheten äter först. Effekten lät inte vänta på sig: inom några år var e-boken en betydande andel av bokförsäljningen i USA och Amazon den dominerande kanalen. Notera återigen mekanismen från kapitel fem: låg marginal på enheten, volym och kassaflöde på ekosystemet — och läsaren låstes in i butiken den föddes i."
+        },
+        {
+          "type": "text",
+          "content": "Och kriget om priset. I januari 2010 reste förlaget Macmillan — ett av de största — kravet på agentprissättning: förlaget sätter priset, butiken tar provision, e-boken får inte diskonteras hårt. Amazon svarade med sitt tyngsta vapen: tog bort köpknapparna på Macmillans samtliga titlar — papper och digitalt. Reaktionen blev hätsk — branschen och läsare vände sig mot butiken som straffade författare och kunder i en maktdemonstration — och inom några dagar gav Amazon med sig och accepterade villkoren. Två år senare stämde amerikanska justitiedepartementet Apple och fem storförlag för prissamverkan kring just agentmodellen; förlagen förlikades, Apple dömdes 2013 — och priserna sjönk igen. AK1A-läsningen: kraften som kan stänga av ett helt förlags försäljning över en natt är en strukturell verklighet (V17 avtal och V18 regulatorisk katalysator i samma fall), men prissättningsmakt har en politisk gräns — när den används synligt mot svagare parter bjuder den in regleringen. Kursens minnesregel: varje demonstration av makt är en ansökan om tillsyn."
+        },
+        {
+          "type": "insikt",
+          "content": "Patent är en tidsinställd hävstång och prissättningsmakt har en publik gräns. Räkna V13 alltid baklänges från löptidens slut — och räkna V17/V18 framåt från varje offentlig maktdemonstration: den som stänger av en partners försäljning en natt har samtidigt öppnat ärendet som regleraren en dag kommer att äga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"IP och produkt — patentet, läsaren och priskriget\",\"rader\":[[\"Händelse\",\"År\",\"Innehåll\",\"AKM1-läsning\"],[\"Patent 5 960 411\",\"beviljat 1999\",\"beställning med ett klick\",\"V13: funktionsskydd med löptid\"],[\"Stämning Barnes & Noble\",\"1999–2002\",\"preliminärt förbud; förlikning\",\"V13 som offensivt vapen\"],[\"Apple-licensen\",\"cirka 2000\",\"1-Click licensierat\",\"V13 licensintäkt från jättar\"],[\"Kindle\",\"november 2007, 399 dollar\",\"sålde slut på 5,5 timmar\",\"V16: lansering som strategi — äga övergången\"],[\"Macmillan-konflikten\",\"januari 2010\",\"köpknappar bort; kapitulation på dagar\",\"V17: avtalsmakt och dess publik gräns\"],[\"DOU-stämningen\",\"2012–2013\",\"Apple och fem förlag åtalade för prissamverkan\",\"V18: maktdemonstration bjuder in tillsyn\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skyddade patent 5 960 411?",
+          "alternativ": [
+            "Affiliatprogrammet",
+            "Beställning med ett klick — 1-Click",
+            "Two-pizza teams",
+            "Wishlist-funktionen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken friktionslös funktion stämde Amazon Barnes & Noble för att ha kopierat?"
+        },
+        {
+          "q": "Vad hände när Macmillan krävde agentprissättning i januari 2010?",
+          "alternativ": [
+            "Amazon accepterade omedelbart",
+            "Amazon tog bort köpknapparna på Macmillans titlar — och gav efter inom några dagar efter hård kritik",
+            "Amazon köpte Macmillan",
+            "Amazon lämnade e-boksmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Vilket vapen drogs — och hur snabbt stack demonstrationen emot sin egen avsändare?"
+        },
+        {
+          "q": "Hur snabbt sålde den första Kindlen slut vid lanseringen 2007?",
+          "alternativ": [
+            "Fem och en halv timme",
+            "Fem och en halv dag",
+            "Fem och en halv vecka",
+            "Den sålde aldrig slut"
+          ],
+          "ratt": 0,
+          "tips": "Bokens kanske mest citerade lanseringssiffra — räknad i timmar."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "AWS — när infrastrukturen blev produkten (2000–2013)",
+      "intro": "I mars 2006 lanserades S3 och i augusti samma år EC2 — de två tjänster som kom att definiera molnbranschen, byggda bland annat av ett utvecklingsteam i Kapstaden. Vid bokens utgivning 2013 vägrade Amazon redovisa AWS som eget segment; när man väl gjorde det 2015 visade sig verksamheten omsätta nästan åtta miljarder dollar med marginaler detaljhandelen aldrig sett. Kapitlet handlar om den oväntade diversifieringen — hur ett detaljhandelsbolags interna behov blev teknikbranschens viktigaste nya produkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ursprunget, som boken beskriver som en klassisk omväg. Efter 1999 års kollapser tvingades Amazon rationalisera sin egen teknikplattform — och insikten som växte fram under det arbetet var dubbel: dels att de interna systemen borde byggas som tjänster med gränssnitt (annars drunknar varje projekt i beroenden), dels att den infrastruktur bolaget byggt för sina egna toppbelastningar — julhandelns väldiga svallningar — stod outnyttjad större delen av året. Vid en strategisk sammankomst 2003 togs den berömda slutsatsen: det som är en kostnad för oss kan vara en produkt för andra. En teknisk skiss från Benjamin Black och Chris Pinkham om hur kapacitet kunde säljas per användning togs på allvar; EC2 byggdes till stor del i Kapstaden under Pinkhams ledning — en detalj kursen behåller som påminnelse om att banbrytande produkter sällan föds där huvudkontoret sitter. S3 (lagring) och EC2 (beräkningskraft) lanserades alltså 2006 med en prissättning som saknade motstycke: betala per gigabyte, per timme — som el ur vägguttaget."
+        },
+        {
+          "type": "text",
+          "content": "Mottagandet och tillväxten. Etablerade teknikleverantörer förväxlade först detaljhandelsbolagets entré med naivitet — vad kan en bokhandlare om drift av världens datorkapacitet? — men kunderna förstod affären omedelbart: en startup kunde från ett kortköp få serverkapacitet som tidigare krävt inköp, lokaler och personal, och skalas upp och ned per timme. Kritisk för trovärdigheten blev att också etablerade teknikbolag blev kunder — Netflix, Amazons hätskaste konkurrent i video, drev sin tjänst på AWS — och att hela startup-ekonomin under 2010-talet byggde sin kostnadsstruktur på modellen. Amazon vägrade under hela perioden redovisa AWS separat; uppskattningar från analytiker pekade vid bokens utgivning mot en verksamhet i flera miljarddollarsklassen, och när Amazon 2015 bröt ut AWS som segment bekräftades det: nästan 7,9 miljarder dollar i nettoförsäljning det första helåret — med en rörelsemarginal som lät detaljhandelns aktörer drömma (drygt tjugo procent mot detaljhandelns ensiffriga)."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen, i tre punkter. Ett — V03 intäktsdiversifiering i sin renaste form: samma bolag äger en lågmarginal volymmotor (detaljhandel) och en högmarginalspecialmotor (moln) med olika konjunktur-, kapital- och konkurrensmönster; korrelationen mellan motorerna är låg, vilket gör konsoliderade marginaler missvisande. Två — V07/V08-fällan i konsoliderade tal: innan segmentbrytningen såg Amazon ut som ett enfacettera lågmarginalbolag; efteråt syntes att varje AWS-krona drog upp snittet — den som analyserar konglomerat utan segmentdata analyserar en blandning han inte ser. Tre — V15/V17: molnet är ett ekosystem (verktyg, partners, certifieringar, omkostnader att flytta) och ett avtalslandskap (långsiktiga företagsavtal) — båda fördjupar moaten med varje år kunderna bygger vidare på plattformen. AWS är kursens slutgiltiga bevis för att boltiken av diversifiering inte handlar om att sprida risk utan om att para ihop motorer som inte andas synkront."
+        },
+        {
+          "type": "insikt",
+          "content": "Den dolda segmentfällan: ett bolag med två motorer av olika marginalkaraktär uppvisar i konsoliderade tal en genomsnittsmarginal som ingen av motorerna har. Om segmentdata saknas är varje V07–V08-poäng en gissning om en blandning. Kräv segment — eller räkna själv på konsoliderade kassaflöden och antaganden, med osäkerheten deklarerad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AWS — från intern kostnad till egen motor\",\"rader\":[[\"Händelse\",\"År\",\"Innehåll\",\"AKM1-läsning\"],[\"Intern ombyggnad\",\"efter 1999\",\"system som tjänster; outnyttjad kapacitet mellan toppar\",\"kostnadsinsikt föregår produkten\"],[\"Strategisk sammankomst\",\"2003\",\"slutsats: infrastruktur kan vara produkt\",\"V16-idé ur driftsbudget\"],[\"S3 + EC2\",\"mars + augusti 2006\",\"lagring och beräkningskraft per förbrukning\",\"V17 nya avtalsformer\"],[\"Skeptikerna\",\"2006–2010\",\"vad kan en bokhandlare om molnet?\",\"starka moater syns inte utifrån\"],[\"Uppskattad storlek\",\"2013\",\"flera miljarder dollar i årsfart — ej utbrutet\",\"V03 dold i konsoliderade tal\"],[\"Segmentbrytning\",\"2015\",\"nästan 7,9 miljarder dollar; rörelsemarginal drygt 20 procent\",\"två motorer, olika marginalnatur\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör segment-testet: hitta ett bolag med minst två väsensskilda verksamheter och räkna om dess konsoliderade brutto- och rörelsemarginal under antagandet att den mest lönsamma segmentet dubblerades på fem år, medan det minst lönsamma stod stilla. Hur förändras blandningen? Om svaret är att genomsnittet stiger kraftigt har du förstå varför marknaden kan betala premiummultiplar för ett bolag vars redovisade marginaler är medelmåttiga — och varför segmenttransparens är en av de viktigaste kvaliteterna i en bokslutsdisciplin."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka två AWS-tjänster lanserades 2006?",
+          "alternativ": [
+            "Alexa och Echo",
+            "S3 (mars) och EC2 (augusti) — lagring och beräkningskraft",
+            "Kindle Store och Audible",
+            "Prime Video och Twitch"
+          ],
+          "ratt": 1,
+          "tips": "En för lagring, en för beräkningskraft — vilka bokstavskombinationer?"
+        },
+        {
+          "q": "Var byggdes EC2 till stor del enligt boken?",
+          "alternativ": [
+            "I Seattle av huvudkontorets team",
+            "I Kapstaden i Sydafrika, under Chris Pinkhams ledning",
+            "I Indien av utlandskontoret",
+            "I Tyskland av ett förvärvat bolag"
+          ],
+          "ratt": 1,
+          "tips": "En detalj som påminner om var banbrytande produkter föds — långt från huvudkontoret."
+        },
+        {
+          "q": "Vad hände 2015 med AWS-redovisningen?",
+          "alternativ": [
+            "Amazon lade ner AWS",
+            "Amazon sålde AWS till Microsoft",
+            "Amazon bröt ut AWS som eget segment — nästan 7,9 miljarder dollar i nettoförsäljning det första helåret",
+            "AWS fortsatte vara outnyttjat internt"
+          ],
+          "ratt": 2,
+          "tips": "Vilken siffra bekräftade analytikernas multi-miljarduppskattningar?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Zappos, Quidsi och förvärven — 1,2 miljarder i aktier och blöjkriget (2009–2012)",
+      "intro": "Sommaren 2009 köpte Amazon Zappos för cirka 1,2 miljarder dollar, huvudsakligen i aktier. Hösten 2010 följde Quidsi, ägaren av Diapers.com, för 545 miljoner dollar — efter att Amazon först cuts priserna på blöjor tills motståndet bröt samman. Och 2012 köptes robotikbolaget Kiva Systems för 775 miljoner. Kapitlet handlar om förvärven som strategi, valuta och vapen — och om gränsen mellan konkurrens och utplåning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Zappos först — förvärvet som kulturaffär. Zappos, onlinehandeln för skor byggd runt Tony Hsiegs extrema kult- och servicefilosofi, hade lyckats där Amazons egna skosatsningar haltade: e-handel med känsla, kunder som ringde och chattade och kom tillbaka. Amazon betalade cirka 1,2 miljarder dollar, huvudsakligen i aktier — och lät kulturen leva: Zappos behöll sitt varumärke, sin ledning och sin särart. Kursen noterar valutan som analyspoäng: att betala i aktier är att betala med en tillgång vars pris dagligen sätts av marknadens humör — vid högt prisad aktie köper man konkurrenter billigt mätt i reala resurser, vid lågt pris dyrt. Förvärv finansierade med aktier är därför alltid också en värderingstransaktion (V04-flippen: sälj aktier dyr, köp bolag med dem). Zappos i AKM1: V14 i ren form — Amazon köpte inte en kundbas utan ett löfte om kärlek som tog decennier att bygga och inte kan replikeras med budget."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Quidsi — förvärvet som avslut på ett priskrig. Diapers.com (Quidsi) hade byggt en lönsam, beundrad verksamhet runt en tråkig men lojal produktkategori: blöjor, som kunderna köper ofta, planerat och med tyngd volym. Amazon svarade inte med bättre service utan med pris: genom sitt rabattprogram för föräldrar sänktes blöjpriserna till en nivå där Quidsi inte kunde följa med — finansierat av Amazons kassamodell och balansräkning. Enligt boken insåg grundarna att kriget inte gick att vinna; hösten 2010 meddelades köpet på 545 miljoner dollar i kontanter. Kursen använder fallet för kursens obekvämaste lärdom: i en kapitalstyrkeuppgörelse mellan en lågmarginal jätte med djup kassa och en smalare utmanare utan samma finansiering behöver inte den bästa verksamheten vinna — den bäst finansierade gör det. Konkurrens med pris är bara konkurrens om inte ena parten kan hålla förlusterna längre än den andra; då är det belägring. Frågan som varje analys av priskrig måste ställa: vem kan stå längst — och vad kostar det att stå näst längst?"
+        },
+        {
+          "type": "text",
+          "content": "Och automationen: Kiva Systems 2012 — robotikbolaget som byggde robotarna som bar hyllor till människorna i Amazons lager — köptes för 775 miljoner dollar i kontanter. Till skillnad från Zappos (kultur) och Quidsi (kategori) var Kiva ett kapitalförvärv med direkt marginallogik: automatisering flyttar kostnad per enhet nedåt med volymen — en investering som betalar via V07–V08 och som dessutom togs bort från konkurrenterna (Kivas robotar slutade säljas till andra). Kursen summerar kapitlet i en förvärvsmatris: köp kultur (V14) — låt leva; köp kategori (V03) — betala med aktier om din aktie är dyr; köp kapacitet (V07–V08) — integrera hårt och dra ifrån. Bakom alla tre: frågan om huruvida priskriget mot Quidsi var konkurrens eller utplåning — en fråga som inte har ett svar i bokföringen, men som reglerare (och kapitel elva) kommer att ställa igen."
+        },
+        {
+          "type": "insikt",
+          "content": "Förvärvsvalutan är alltid också en värderingstransaktion. Att betala med aktier är att sälja sin egen aktie till köparen — gör det när aktien är dyr, aldrig när den är billig. Vid varje förvärvsanalys: notera först valutan (kontant, aktie, skuld), sedan priset — i den ordningen. En dyr förvärvskalkyl kan bli billig genom rätt valuta, och tvärtom."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Förvärvsmatrisen — tre köp, tre logiker\",\"rader\":[[\"Förväv\",\"År/Pris\",\"Logik\",\"Valuta\",\"AKM1-läsning\"],[\"Zappos\",\"2009; ca 1,2 miljarder dollar\",\"kultur- och varumärkesaffär\",\"huvudsakligen aktier\",\"V14; låt leva\"],[\"Quidsi (Diapers.com)\",\"2010–2011; 545 miljoner dollar\",\"kategori efter priskrig\",\"kontanter\",\"V03; belägringens slutsats\"],[\"Woot\",\"2010; ca 110 miljoner dollar\",\"dagserbjudande-community\",\"blandat\",\"V03/V14; litet, snabbt\"],[\"Kiva Systems\",\"2012; 775 miljoner dollar\",\"automation av logistik\",\"kontanter\",\"V07–V08; integrera och dra ifrån\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör förvärvsmatrisen på ett bolag du följer: ta det senaste större förvärvet och klassificera logiken — kultur, kategori eller kapacitet. Kontrollera sedan valutan och jämför köparens V04-multipl vid tillkännagivandet mot dagens. Sist den obekväma frågan: om förvärvet var en kategori som togs efter ett priskrig — vad säger det om köparens kommande beteende mot nästa utmanare? Skriv svaret som en riskrad i din analys, inte som en åsikt."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur betalade Amazon Zappos-förvärvet 2009?",
+          "alternativ": [
+            "Helt i kontanter",
+            "Cirka 1,2 miljarder dollar, huvudsakligen i aktier",
+            "Med en licens på AWS",
+            "Genom att byta bort Kindle-verksamheten"
+          ],
+          "ratt": 1,
+          "tips": "Vilken valuta gör ett förvärv till också en värderingstransaktion?"
+        },
+        {
+          "q": "Hur vann Amazon mot Quidsi enligt boken?",
+          "alternativ": [
+            "Med bättre kundservice",
+            "Genom att sänka blöjpriserna till en nivå Quidsi inte kunde matcha — varefter Quidsi sålde sig för 545 miljoner dollar",
+            "Genom att köpa deras leverantör",
+            "Genom en patentprocess"
+          ],
+          "ratt": 1,
+          "tips": "Vilket vapen användes — och vilken resurs gjorde det möjligt att använda det längre än motståndaren?"
+        },
+        {
+          "q": "Vad var Kiva Systems och vad kostade det?",
+          "alternativ": [
+            "Ett bokförlag, 75 miljoner dollar",
+            "Ett robotikbolag för lagerautomation, 775 miljoner dollar 2012",
+            "En konkurrent i molnbranschen, 7 miljarder dollar",
+            "Ett logistikföretag, 1,1 miljarder dollar"
+          ],
+          "ratt": 1,
+          "tips": "Robotarna som bär hyllorna — vad kostade bolaget som byggde dem?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Kontroversen om arbetsvillkoren — hettan i Allentown och lågmarginalens pris",
+      "intro": "I september 2011 avslöjade tidningen Morning Call i Allentown, Pennsylvania, förhållandena i Amazons lokala distributionscenter: inomhustemperaturer över 37 grader under en värmebölja, medarbetare som fälldes på golvet och ambulanser posterade utanför. Två år senare strejkade anställda i Tyskland. Det här är kursens kontroverskapitel: kopplingen mellan 0,37 procents nettomarginal och människornas arbetsdag — och frågan om lågt pris har ett etiskt pris som inte står i bokslutet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Granskningen 2011, som boken återger i detalj. Ett fältrapportör-team vid Morning Call intervjuade nuvarande och tidigare medarbetare vid centret utanför Allentown: under sommarens värmebölja hade temperaturen på golvet stigit väl över 37 grader; medarbetare fick värmestress-symptom, vissa fördes ut med båre, och företaget hade ställt kyliga containrar och parkerat ambulanser utanför i stället för att kyla byggnaden. Produktivitetsmätningarna skärptes parallellt: raster övervakades, gångtider mellan hyllor mättes, och den som inte höll takt riskerade varsel — med låg kontraktstrygghet via bemanningsbolag. Amazons första reaktion var att ifrågasätta bildens riktighet; när trycket inte minskade vände bolaget och meddelade att man investerade över femtio miljoner dollar i luftkonditionering i sina lager. Kursen noterar mönstret, som återkommer i nästan alla företagskriser: förnekelse, sedan kapital. Åtgärden var dessutom en avslöjande analogi till Kiva-köpet ett halvår senare — samma kostnadstänkande som löste problemet med kyla löste det med arbetskraft: automatisera eller investera, aldrig subventionera."
+        },
+        {
+          "type": "text",
+          "content": "Strukturerna bakom, som kursen vill att du ser i stället för att minns enskilda detaljer. Amazons marginalfilosofi — din marginal är min möjlighet, priset ska ner, kassaflödet ska växa — genomsyrar varje beslutsnivå, och lagrets kostnadspost är arbetskraft: plock, pack, sortering mätt i sekunder per enhet. Ett bolag som strukturellt prissätter sina produkter mot noll nettomarginal har inget utrymme att även prissätta arbetsdagens komfort — den komforten måste antingen effektiviseras bort (mätning, automation) eller externaliseras (bemanning, kontrakt utan trygghet). Samtidigt började motståndet organisera sig: i Tyskland strejkade anställda vid Amazons lager våren 2013 under fackförbundet Ver.di:s flagga, med krav på kollektivavtal efter detaljhandelns villkor — en konflikt som kom att pågå i åratal och som visade att modellen som var okontroversiell i USA mötte en annan arbetsmarknadskultur i Europa. Kontroversen är därmed inte en fråga om onda eller goda människor, utan en fråga om vilka kostnader en marginalstruktur tillåter — och vilka den flyttar till någon annan."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen: hur hanterar en analysmodell det som bokföringen inte prissätter? Kursens svar är treledat. Ett — koppla arbetsvillkor till marginalstruktur (V07–V08): bolag med strukturellt pressade marginaler i arbetsintensiva led har en inbyggd mekanism som trycker mot arbetsvillkoren; om bolaget samtidigt lovar lägsta pris (V14 byggd på pris) är mekanismen dubbelt. Två — behandla arbetsvillkor som V18-katalysator med lång löptid: granskningar, fackliga konflikter och lagstiftning om gig- och lagerarbete är regelbundna, förutsägbara händelser i denna bransch — det som var överraskande 2011 var inte att förhållandena fanns utan att de var okända; från och med dess är de prissatta i opinionen och förr eller senare i regelverk. Tre — skilj analys från dom: AKM1 poängsätter risk, inte moral; men notera att opinionens dom är en riskfaktor av enkel sort — den påverkar kundval, politiska beslut och rekrytering, alltså V12, V18 och V14 i nämnd ordning. Den som tycker att etik saknar pris i en modell har inte räknat på hur snabbt opinion kan flytta en marginal."
+        },
+        {
+          "type": "insikt",
+          "content": "Lågmarginalens etiska aritmetik: ett bolag som lovar lägsta pris lovar samtidigt lägsta kostnad per enhet — och i arbetsintensiva led är den kostnaden en människas sekunder. Priset sätts inte bara mot konkurrenter; det sätts mot arbetsdagen. I analysen: läs arbetsvillkoren som en kostnadspost som ännu inte bokförts — men som någon, förr eller senare, kommer att skicka fakturan för."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen i kartläggning — händelser, svar, struktur\",\"rader\":[[\"Händelse\",\"År\",\"Innehåll\",\"AKM1-länk\"],[\"Morning Call-granskningen\",\"2011\",\"värme över 37 grader i lagret; fällda medarbetare; ambulanser utanför\",\"V18 katalysator; V12 rykte\"],[\"Amazons svar\",\"2011\",\"först ifrågasättande, sedan över 50 miljoner dollar på luftkonditionering\",\"mönster: förnekelse, sedan kapital\"],[\"Tyska strejker\",\"2013 (pågående)\",\"Ver.di kräver kollektivavtal efter detaljhandelns villkor\",\"V18 regelverk; arbetsmarknadskultur som variabel\"],[\"Strukturen\",\"löpande\",\"0,37 % nettomarginal + arbetsintensivt led = tryck mot arbetsvillkor\",\"V07–V08 direkt kopplad\"],[\"Automationsvarvet\",\"2012–\",\"Kiva-robotar; mätning per sekund\",\"kostnaden effektiviseras, externaliseras eller automatiseras\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör arbetskraftens V18-test på ett bolag i din bevakning: uppskatta andelen av kostnadsbasen som är arbetskraft, identifiera de tre största arbetsvillkorsriskerna (temp anställning, skift, fysisk belastning, algoritmisk styrning) och bedöm huruvida de är prissatta i aktien eller inte. Skriv en rad om vad som händer med bolagets V07 och V12 om en granskning force fram samma typ av kapitalinvestering som Amazons femtio miljoner i kyla. Det är så opinion blir aritmetik."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad avslöjade Morning Call-granskningen 2011?",
+          "alternativ": [
+            "Att Amazon undvek skatt i Delaware",
+            "Extrem hetta i ett lager i Pennsylvania — medarbetare fälldes, ambulanser stod posterade utanför",
+            "Att Kindle tillverkades av barn",
+            "Att AWS-serverarna läckte data"
+          ],
+          "ratt": 1,
+          "tips": "Vilken fysisk omständighet i byggnaden var nyckeln i reportrarnas vittnesmål?"
+        },
+        {
+          "q": "Vad blev Amazons konkreta åtgärd efter granskningen?",
+          "alternativ": [
+            "Bolaget lade ner lagret",
+            "En investering på över femtio miljoner dollar i luftkonditionering i lagren",
+            "All personal fick fasta anställningar",
+            "Priserna höjdes med tio procent"
+          ],
+          "ratt": 1,
+          "tips": "Förnekelse först — och sedan kapital. Vad köptes för kapitalet?"
+        },
+        {
+          "q": "Vilken strukturell koppling betonar kursen mellan marginal och arbetsvillkor?",
+          "alternativ": [
+            "Ingen — arbetsvillkor styrs enbart av lokala chefer",
+            "Ett bolag med strukturellt pressade marginaler i arbetsintensiva led har en inbyggd mekanism som trycker mot arbetsvillkoren",
+            "Höga marginaler leder alltid till sämre villkor",
+            "Arbetsvillkor påverkar bara aktiekursen vid strejker"
+          ],
+          "ratt": 1,
+          "tips": "Vad kräver ett löfte om lägsta pris av kostnaden per enhet — och vem bär den kostnaden i ett lager?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Bezos-systemet — flygeln, dörrborden och de obekväma sanningarna",
+      "intro": "Bakom de enskilda besluten finns ett system: möten som börjar i tystnad med läsmaterial, team så små att två pizzor räcker, kundmejl vidarebefordrade med ett enda frågetecken, skrivbord av dörrar och en flygel som Bezos ritade på en servett 2001. Kapitlet handlar om ledarskapet som teknikplattform — och om priset kulturen tar ut av sina medlemmar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Verktygslådan, som boken räknar upp i tät ordning. Frågetecknet: Bezos vidarebefordrar ett kundmejl med enbart ett frågetecken till ansvarig chef — ingen föreläsning, bara en förhöjd puls; ärendet ägs sedan av mottagaren tills det är löst. Två-pizza-regeln: team ska vara så små att två pizzor mättar dem — coordination kostar mer än specialisering sparar. De första minutrarna av viktiga möten är tystna läsning: memot som ska förklara problemet skrivs i prosa, inte i punktlistor, därför att fullständiga meningar kräver att tänkandet är klart. Bar raisers: rekryterare från verksamheten med veto mot kandidater — personalstandarden hålls av linjen, inte av HR. Disagree and commit: oenighet registreras, sedan åtar sig alla att genomföra beslutet fullt ut — tvisten får inte bli passivt motstånd. Dörrborden från starten lever kvar som symbol för sparsamheten: pengar ska köpa kundupplevelse, inte komfort. Och Bezos egna formuleringar: när data och anekdot divergerar, lita på anekdoten; vi är beredda att bli missförstådda under långa perioder."
+        },
+        {
+          "type": "text",
+          "content": "Flygeln, som är systemets strategiska kärna. Vid en intern konferens 2001 — med Good to Great-författaren Jim Collins som inledare — hjälptes ledningen att finna bolagets självförstärkande slinga, och Bezos ritade den på en servett: lägre priser leder till fler kunder; fler kunder leder till större volym; större volym leder till bättre kostnadsstruktur; bättre kostnadsstruktur leder till ännu lägre priser — runt igenom, med tillväxt i varje varv och med Prime, Marketplace och AWS som senare hävarmar som trampar samma hjul. Kursen lyfter flygeln som den mest lättlurade och svåraste strategiformen: lätt att rita, svår att sätta igång (kallstartsproblemet från auktionsfallet) och nästan omöjlig att stoppa när den väl snurrar — tyngden i hjulet är själva moaten (V15 i slingform snarare än i nätverksform). När du analyserar bolag: leta efter hjulet och dess två bevis — blir kostnaden per enhet faktiskt lägre med volymen, och återinvesteras skillnaden i pris? Om något av svaren är nej är flygeln en bild, inte en strategi."
+        },
+        {
+          "type": "text",
+          "content": "Och priset, som boken inte tiger om. Kulturen är prestandanarkistisk: standarderna är extrema, konflikten öppen, turnaround-tiden kort; personalomsättningen i vissa led var hög, och berättelserna om gråt på toaletterna och möten som börjar med att Bezos använder det första påhittade felet som kulhål formligen avlöser varandra. Bezos skratt — det kusligt högljudda utbrott som avslöjar mer än hans ord — går som ett bärande drag genom boken. Kursen vägrar två enkla läsningar: att kulturen är ond (den producerade världens mest kundanpassade bolag och ett arbete som miljoner sökte sig till) och att kulturen är effektiv och därmed rätt (den uteslöt människor som inte matchade ett mycket särskilt beteende, och dess kostnad i människoår finns inte i årsredovisningen). Analysläxan är densamma som i kapitel elva, flyttad in till kontoret: kultur är en resursallokering med biverkningar — och biverkningarna ska identifieras, inte förskönas. AKM1: kultur påverkar V14 (varumärket ur insidan), V12 (stabiliteten i exekveringen) — och nyckelpersonrisken, ty systemet är oerhört beroende av sin arkitekt."
+        },
+        {
+          "type": "insikt",
+          "content": "Leta efter hjulet, inte slogan. En flygels strategi har två bevis: kostnaden per enhet sjunker med volymen, och skillnaden återinvesteras i pris. Finns båda i siffrorna är moaten en rörelsemängd — svår att stoppa; saknas ena beviset är flygeln en bild på en PowerPoint och värd noll i din poängsättning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bezos-systemet — verktyg, syfte, översättning\",\"rader\":[[\"Verktyg\",\"Syfte\",\"Översättning\"],[\"Frågetecken-mejl\",\"eskalera kundproblem utan föreläsning\",\"V12 — kunden får avgöra prio\"],[\"Två-pizza-team\",\"undvika koordinationskostnad\",\"små enheter, egen resultaträkning\"],[\"Tyst läsning i möten\",\"tänkandet klart före diskussionen\",\"prosa som kräver klarhet\"],[\"Bar raisers\",\"personalstandard från linjen\",\"rekrytering som moat-vakt\"],[\"Disagree and commit\",\"beslut utan passivt motstånd\",\"exekveringshastighet\"],[\"Flygeln (2001)\",\"självförstärkande prismodell\",\"V15 i slingform; moat som rörelsemängd\"],[\"Dörrbord och sparsamhet\",\"kapital till kundupplevelse\",\"V07:s källa\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varifrån kommer flygel-idén enligt boken?",
+          "alternativ": [
+            "Från en konsultrapport 2010",
+            "Från en intern sammankomst 2001 inspirerad av Jim Collins — Bezos ritade slingan på en servett",
+            "Från Barnes & Noble",
+            "Från en aktieägarfråga 1997"
+          ],
+          "ratt": 1,
+          "tips": "Vilket år, vilken managementförfattare och vilket skrivredskap?"
+        },
+        {
+          "q": "Vad betyder två-pizza-regeln?",
+          "alternativ": [
+            "Att alla möten ska ha mat",
+            "Att team ska vara så små att två pizzor räcker till dem",
+            "Att man firar lanseringar med pizza",
+            "Att lunchrasten är trettio minuter"
+          ],
+          "ratt": 1,
+          "tips": "Vilken kostnad — mat eller koordinering — är regeln egentligen ett tak för?"
+        },
+        {
+          "q": "Vad är ett frågetecken-mejl?",
+          "alternativ": [
+            "Ett mejl där Bezos ber om mer information i punktlista",
+            "Ett kundmejl Bezos vidarebefordrar med enbart ett frågetecken — som eskalerar ärendet omedelbart",
+            "Ett internt nyhetsbrev",
+            "En årlig enkät"
+          ],
+          "ratt": 1,
+          "tips": "Ett tecken, noll ord — vad gör ett sådant mejl med mottagarens puls?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Kontroversen och syntesen — värdeskapande eller värdeförstörande? AKM1:s sluträkning (V01–V20)",
+      "intro": "Kursens sista kapitel ställer den stora striden som boken lämnar öppen: var Amazon under de här tjugo åren en värdeskapande maskin som byggde moats för framtiden — eller en värdeförstörande grävmaskin som bytte ägarnas utdelningar mot tillväxt och marknadsandelar? Därefter syntesen: hela boken tryckt in i AKM1:s variabler, med examensövningen som avslutning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Striden, i två läger. Åt ena sidan kritikerna: ett bolag som efter nästan tjugo år visade en nettomarginal på 0,37 procent kunde med skäl beskrivas som en maskin som förvandlar investerat kapital till konsumentöverskott — lägre priser till kunder, värde till leverantörer av logistik och moln — medan aktieägarna fick berättelsen; kritiker och kortföljare har genom åren sagt att sådana bolag var tvångsmatade tillväxtmaskiner utan destinationsadress. Åt andra sidan försvararna, med Bezos 2004-brev som trosbekännelse: måttet är fritt kassaflöde per aktie, inte resultatet — och det fria kassaflödet var positivt och växande, återinvesterat till högre avkastning än vad utdelning skulle gett; bolaget genererade inte vinst av oförmåga utan av val, och det valet finansierades av leverantörernas float och kundernas förskott (Prime), inte av nya emissioner. Kursens notis är att båda lägren använde samma siffror: skillnaden låg i vad som räknades som avkastning — bokförd vinst eller realiserad framtida kassa — och i tidshorizonten. Det är också hela skillnaden mellan att poängsätta V07–V08 ensamma och att poängsätta dem mot V11, V19 och V04: den som glömmer kassacykeln ser en sjukdom, den som glömmer marginalerna ser ingen kostnad alls."
+        },
+        {
+          "type": "text",
+          "content": "Bokens egen kontrovers, som avslutar källkritiken: kan en journalistisk biografi om ett bolag vars grundare vägrar auktorisera den vara rättvis? MacKenzie Bezos recension svarade nekande; Stone svarade indirekt genom metoden — över tre hundra intervjuer, dokument, tidsangivelser. Kursens tredje läsning: bokens största svaghet är inte vinklingen utan slutdatumet. 2013 är sista helåret — före AWS-utbrytningen, före annonsintäkternas och Primes fulla genombrott som redovisade segment, före Alexa, köpet av Whole Foods och den mogna maskinens marginaler. Den som läser boken som facit i Amazon-analys läser den ur ett halvfärdigt perspektiv; den som läser den som ursprungsförklaring — till kassamodellen, flygeln, nätverken, kulturen — läser den som den bästa som finns. Nivå 2:s sista källräkningsregel: en bolagsbok bör alltid dateras mot sin sista siffra, och alla slutsatser ska kontrolleras mot vad som hänt sedan."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen — hela boken som en rad i din AKM1-modell. V01: sexton år av cirka fyrtio procents tillväxt, buren av marknadsbeta (webbens tillkomst) och andelsbeta (flygeln). V02: Prime och (senare) AWS — återkommande intäkter med låg korrelation. V03: detaljhandel, marknadsplats, moln — tre motorer, en kundrelation. V04: aktien föll 95 procent med intakt rörelse — multiplens psykologi, isärkopplad från verksamheten. V07–V08: låga per strategi, motbevisade av fritt kassaflöde per aktie. V11: den negativa rörelsekassan — kunden betalar före leverantören. V13: patent 5 960 411 — hävstång med löptid. V14: kundbesatthet som varumärke — gäster på en fest. V15: tvåsidig marknadsplats och moln-ekosystem — nätverk i slingform. V16–V17: Kindle, Prime, AWS — lanseringar och avtal som strategi. V18: tull- och skattestrider, e-boks-DOJ-målet, arbetsvillkor — staten talar, regelbundet. V19: emissioner i princip aldrig behövda — kassamodellen som frikort. V20: istället för återköp återinvesterades allt — kapitalets väg valdes med hull och hår. Det är tjugo variabler ur en enda berättelse — och det är kursens examensbevis: att du kan läsa ett bolags liv som en kassaflödesmodell med människor i."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens slutformulering: samma siffror, två diagnoser. Låg marginal med brinnande kassa och emissionstvång är en sjukdom; låg marginal med negativ rörelsekassa och fritt kassaflöde är en strategi. Alla tjugo AKM1-variabler finns till för att skilja de två åt — det är hela skillnaden mellan att läsa ett bokslut och att förstå ett bolag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som RAM — händelse in, V01–V20 ut\",\"rader\":[[\"Bokhändelse\",\"År\",\"AKM1-variabel\",\"Lärdom\"],[\"Produktval: böcker ur listan\",\"1994\",\"V16 (idésprång)\",\"välj produkt efter mediet\"],[\"Börsintroduktion 18 dollar\",\"1997\",\"V04/V19\",\"förlustlöftet var en strategi\"],[\"Bubblan och kraschen -95 %\",\"1999–2001\",\"V04, V10\",\"aktien är inte bolaget\"],[\"Negativ rörelsekassa\",\"löpande\",\"V11, V19\",\"kunden betalar före leverantören\"],[\"Marketplace\",\"2000\",\"V15, V03\",\"kopiera inte nätverkets spel\"],[\"Prime 79 dollar\",\"2005\",\"V02, V14\",\"lojalitet med avbetalning\"],[\"Patent 5 960 411\",\"1999\",\"V13\",\"hävstång med löptid\"],[\"Kindle sålde slut 5,5 timmar\",\"2007\",\"V16\",\"äga övergången, inte produkten\"],[\"AWS S3/EC2\",\"2006\",\"V03, V17\",\"infrastruktur som produkt\"],[\"Zappos, Quidsi, Kiva\",\"2009–2012\",\"V14, V03, V07\",\"förvärv: kultur, kategori, kapacitet\"],[\"Allentown och strejkerna\",\"2011–2013\",\"V18\",\"marginalens etiska aritmetik\"],[\"Flygeln på servetten\",\"2001\",\"V15\",\"moat som rörelsemängd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Examensövningen — kör bokens RAM på ett verkligt plattforms- eller tillväxtbolag: poängsätt V01, V02, V03, V07, V08, V11, V13, V15 och V19, och motivera varje poäng med en verifierbar händelse eller siffra i bolagets historia (inte med en åsikt). Tvångsräknen: beräkna kassakonversionscykeln och det fria kassaflödet per aktie. Avsluta med en dom i kontroversen: är bolagets låga marginaler en strategi eller en sjukdom — och vad måste hända inom tre år för att din dom ska visa sig fel? Spara med datum. Det är boken, kursen och AKM1 i en enda övning."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den centrala striden om Amazons modell enligt kursen?",
+          "alternativ": [
+            "Om bolaget var lagligt eller olagligt",
+            "Om ett bolag med nästan noll i nettomarginal på tjugo år skapar värde — eller byter ägarnas avkastning mot tillväxt och konsumentöverskott",
+            "Om AWS skulle säljas",
+            "Om Bezos var en bra programmerare"
+          ],
+          "ratt": 1,
+          "tips": "Vilken siffra är stridens kärna — och vilka två sätt finns att tolka den?"
+        },
+        {
+          "q": "Vad svarar modellens försvarare på kritiken om de frånvarande vinster?",
+          "alternativ": [
+            "Att vinster är omöjliga i detaljhandel",
+            "Att måttet är fritt kassaflöde per aktie — positivt, växande och återinvesterat till högre avkastning än utdelning",
+            "Att bolaget betalar utdelning i hemlighet",
+            "Att kritikerna är kortföljare med fel data"
+          ],
+          "ratt": 1,
+          "tips": "Vilket mått deklarerade Bezos som det yttersta i 2004 års brev?"
+        },
+        {
+          "q": "Vilken svaghet med boken pekar kursen på utöver MacKenzies recension?",
+          "alternativ": [
+            "Att den saknar intervjuer",
+            "Att den är för positiv till konkurrenterna",
+            "Att den slutar 2013 — före AWS-utbrytningen och den mogna maskinens redovisade marginaler",
+            "Att den bara handlar om böcker"
+          ],
+          "ratt": 2,
+          "tips": "Vilken händelse i Amazon-redovisningen skedde först 2015 — alltså efter bokens sista siffra?"
+        },
+        {
+          "q": "Vad är kursens slutregel för att skilja strategisk lågmarginal från sjuk lågmarginal?",
+          "alternativ": [
+            "Kolla på aktiekursen",
+            "All lågmarginal är alltid en strategi",
+            "Låg marginal med brinnande kassa och emissionstvång är en sjukdom; låg marginal med negativ rörelsekassa och fritt kassaflöde är en strategi",
+            "Fråga grundaren om han är nöjd"
+          ],
+          "ratt": 2,
+          "tips": "Vilka två kassaflödesmått avgör om låg marginal är ett val eller en tvångströja?"
+        }
+      ]
+    }
+  ],
+  "kalla": {
+    "titel": "The Everything Store",
+    "forfattare": "Brad Stone",
+    "ar": 2013,
+    "bk": "bk-097"
+  }
+}

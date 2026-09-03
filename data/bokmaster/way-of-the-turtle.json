@@ -1086,5 +1086,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Way of the Turtle",
+    "forfattare": "Curtis M. Faith",
+    "ar": 2007,
+    "bk": "bk-065"
+  }
 }

@@ -1026,5 +1026,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Blue Ocean Strategy",
+    "forfattare": "W. Chan Kim & Renée Mauborgne",
+    "ar": 2005,
+    "bk": "bk-030"
+  }
 }

@@ -1414,5 +1414,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "A Random Walk Down Wall Street",
+    "forfattare": "Burton G. Malkiel",
+    "ar": 1973,
+    "bk": "bk-031"
+  }
 }

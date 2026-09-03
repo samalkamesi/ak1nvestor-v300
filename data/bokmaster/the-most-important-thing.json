@@ -250,7 +250,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Marks formulerar bokens kanske viktigaste mening: »Det finns ingen tillgång så bra att den inte kan bli en dålig investering om priset är för högt, och få tillgångar så dåliga att de inte kan bli bra investeringar vid ett tillräckligt lågt pris.« Kvalitet och avkastning är två olika saker; mellan dem står priset. Det är skillnaden mellan ett bra bolag och en bra affär."
+          "content": "Marks formulerar bokens kanske viktigaste mening: »Det finns ingen tillgång så bra att den inte kan bli en dålig investering om priset är för högt […]« — och, spegelvänt, få tillgångar så dåliga att de inte kan bli bra investeringar vid ett tillräckligt lågt pris. Kvalitet och avkastning är två olika saker; mellan dem står priset. Det är skillnaden mellan ett bra bolag och en bra affär."
         },
         {
           "type": "text",
@@ -534,7 +534,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Marks kulminerar kapitlet i två regler: »Regel ett: de flesta saker visar sig vara cykliska. Regel två: några av de största tillfällena att vinna — och förlora — uppstår när andra glömmer regel ett.« Cykler är inte anomalier utan normaltillståndet. Linjär extrapolering av det aktuella — att goda tider varar för evigt, att en kris aldrig tar slut — är investerarens vanligaste och dyraste misstag."
+          "content": "Marks kulminerar kapitlet i två regler: »Regel ett: de flesta saker visar sig vara cykliska.« Och regel två, som Marks omedelbart lägger till: de största tillfällena att vinna — och förlora — uppstår när andra glömmer regel ett. Cykler är inte anomalier utan normaltillståndet. Linjär extrapolering av det aktuella — att goda tider varar för evigt, att en kris aldrig tar slut — är investerarens vanligaste och dyraste misstag."
         },
         {
           "type": "text",
@@ -1102,5 +1102,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Most Important Thing",
+    "forfattare": "Howard Marks",
+    "ar": 2011,
+    "bk": "bk-036"
+  }
 }

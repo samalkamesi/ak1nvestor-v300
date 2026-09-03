@@ -1058,5 +1058,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "When Genius Failed",
+    "forfattare": "Roger Lowenstein",
+    "ar": 2000,
+    "bk": "bk-077"
+  }
 }

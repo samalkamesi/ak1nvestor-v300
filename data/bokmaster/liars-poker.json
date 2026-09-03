@@ -954,5 +954,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Liar's Poker",
+    "forfattare": "Michael Lewis",
+    "ar": 1989,
+    "bk": "bk-085"
+  }
 }

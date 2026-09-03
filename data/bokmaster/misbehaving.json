@@ -1079,5 +1079,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Misbehaving",
+    "forfattare": "Richard H. Thaler",
+    "ar": 2015,
+    "bk": "bk-074"
+  }
 }

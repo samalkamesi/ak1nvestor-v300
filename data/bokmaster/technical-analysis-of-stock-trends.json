@@ -1170,5 +1170,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "Technical Analysis of Stock Trends",
+    "forfattare": "Robert D. Edwards & John Magee",
+    "ar": 1948,
+    "bk": "bk-022"
+  }
 }

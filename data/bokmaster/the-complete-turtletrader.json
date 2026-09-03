@@ -1050,5 +1050,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Complete TurtleTrader",
+    "forfattare": "Michael W. Covel",
+    "ar": 2007,
+    "bk": "bk-066"
+  }
 }

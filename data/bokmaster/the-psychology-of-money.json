@@ -44,7 +44,7 @@
         },
         {
           "type": "text",
-          "content": "Housel formulerar tesen i bokens inledning: »doing well with money has little to do with how smart you are and a lot to do with how you behave.« Och vidare: »Financial success is not a hard science. It's a soft skill, where how you behave is more important than what you know.« Finans är det enda fältet Housel kan tänka sig där en amatör utan utbildning, träning eller bakgrund kan slå proffsen — en byggingenjör kan inte slumpa ihop en bro som håller bättre än en civilingenjörs, och en lekman kan inte operera bättre än en kirurg, men en vaktmästare kan slå en Harvard-MBA över fyrtio år. Anledningen är att finansens svåraste del inte är beräkningen utan beteendet kring den: att inte sälja i panik, inte ge efter för girighet, inte låna sig fram i en värld som belönar tålamod. Kunskapen — multiplar, kassaflöden, alla tjugo AKM1-variablerna — är nödvändig men inte tillräcklig. Beteendet avgör om kunskapen någonsin får verka."
+          "content": "Housel formulerar tesen i bokens inledning: »doing well with money has little to do with how smart you are and a lot to do with how you behave.« Han utvecklar det till en hel hållning: framgång med pengar är ingen hård vetenskap utan en mjuk färdighet, där beteendet väger tyngre än kunskapen. Finans är det enda fältet Housel kan tänka sig där en amatör utan utbildning, träning eller bakgrund kan slå proffsen — en byggingenjör kan inte slumpa ihop en bro som håller bättre än en civilingenjörs, och en lekman kan inte operera bättre än en kirurg, men en vaktmästare kan slå en Harvard-MBA över fyrtio år. Anledningen är att finansens svåraste del inte är beräkningen utan beteendet kring den: att inte sälja i panik, inte ge efter för girighet, inte låna sig fram i en värld som belönar tålamod. Kunskapen — multiplar, kassaflöden, alla tjugo AKM1-variablerna — är nödvändig men inte tillräcklig. Beteendet avgör om kunskapen någonsin får verka."
         },
         {
           "type": "text",
@@ -336,7 +336,7 @@
         },
         {
           "type": "text",
-          "content": "Housel varierar sedan budskapet med Jim Simons, grundaren av Renaissance Technologies: Simons årliga avkastning på 66 procent är den högsta som någonsin uppmätts hos en privat investerare och borde gjort honom till världens rikaste man. Det har den inte, för Simons hittade sin metod först i femtioårsåldern och har inte haft Buffetts decennier att komponera på. Hur bra du är är viktigt — hur länge du är det är viktigare. Därav essäns centrala formulering: »Good investing isn't necessarily about earning the highest returns, because the highest returns tend to be one-off hits that can't be repeated. It's about earning pretty good returns that you can stick with and which can be repeated for the longest period of time. That's when compounding runs wild.«"
+          "content": "Housel varierar sedan budskapet med Jim Simons, grundaren av Renaissance Technologies: Simons årliga avkastning på 66 procent är den högsta som någonsin uppmätts hos en privat investerare och borde gjort honom till världens rikaste man. Det har den inte, för Simons hittade sin metod först i femtioårsåldern och har inte haft Buffetts decennier att komponera på. Hur bra du är är viktigt — hur länge du är det är viktigare. Därav essäns kärna, citerat kort: »Good investing isn't necessarily about earning the highest returns […] It's about earning pretty good returns that you can stick with.« Resten av meningen — att repeterbara avkastningar under lång tid är själva ränta-på-ränta-motorn — formulerar Housel som att just där »compounding runs wild«."
         },
         {
           "type": "text",
@@ -1054,5 +1054,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "The Psychology of Money",
+    "forfattare": "Morgan Housel",
+    "ar": 2020,
+    "bk": "bk-033"
+  }
 }

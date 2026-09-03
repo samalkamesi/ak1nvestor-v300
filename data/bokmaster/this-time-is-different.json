@@ -1094,5 +1094,11 @@
         }
       ]
     }
-  ]
+  ],
+  "kalla": {
+    "titel": "This Time Is Different",
+    "forfattare": "Carmen M. Reinhart & Kenneth S. Rogoff",
+    "ar": 2009,
+    "bk": "bk-080"
+  }
 }

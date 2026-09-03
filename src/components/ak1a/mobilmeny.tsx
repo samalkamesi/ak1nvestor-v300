@@ -1,14 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { lasStreak, lasXP, niva } from "@/lib/member-local";
+import { VarumarkesLogo } from "./varumarkes-logo";
+import { cn } from "@/lib/utils";
 
 /**
  * MOBILMENY — fullskärms-drawer med samma AK1A-DNA: paper, guld, serif.
  * Hamburgerknappen syns enbart under md; drawern funkar oavsett brytpunkt.
  * Sökfältet dispatchar "ak1a:oppna-sok" (kommandopaletten lyssnar globalt).
+ *
+ * 2026-09-01 — omdesignad efter kundägarens önskan: menyn ska kännas som en
+ * premium-panel från samma designer som övriga sidor. Därför:
+ *   • Samma KORTSTIL som huvudmenyns paneler (rounded-xl + marin paneltopp
+ *     med guld-serif, cream-kort under) — inte nakna listrader.
+ *   • Länktitlar text-base (16px) + beskrivningar text-sm — alda mindre.
+ *   • Generös tryckyta (py-3.5) för tummar.
+ *   • Varumärkes-logotypen + stäng-knapp i topp; aktiv sida markeras i guld.
  */
 
 type MenyPunkt = { text: string; lank: string; ikon: string; beskrivning?: string };
@@ -36,7 +47,8 @@ const PANELER: MenyPanel[] = [
     ikon: "🔬",
     // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING — speglar huvudmenyn exakt.
     punkter: [
-      { avdelare: "Grundänkning" },
+      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangordnade efter påverkan" },
+      { avdelare: "Grundtänkande" },
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
       { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
       { avdelare: "Skannar" },
@@ -58,9 +70,10 @@ const PANELER: MenyPanel[] = [
       { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
       { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" }, // Uppdaterad 2026-09-01: 29 badges i src/lib/badges.ts
-      { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
-      { text: "Repetera", lank: "/kurser", ikon: "🃏", beskrivning: "Flashcards med SM-2 (i AI-mentorn)" },
+      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "140 flashcards med SM-2" }, // Uppdaterad 2026-09-01: 140 kort i data/spaced-repetition.json — samma länk som huvudmenyn
       { text: "Short-Seller", lank: "/kurser", ikon: "🔴", beskrivning: "Sokratisk grillning (röd widget)" },
+      { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
+      { text: "Fas 3 — Certifiering", lank: "/fas3", ikon: "🎓", beskrivning: "Certifierad AK1A-analytiker — praktikportfölj + etik" },
       { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },
       { text: "Medlemskap", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },
     ],
@@ -73,8 +86,15 @@ export function Mobilmeny() {
   const [xp, setXp] = useState(0);
   const [nivaNu, setNivaNu] = useState(1);
   const [streakAntal, setStreakAntal] = useState(0);
+  const pathname = usePathname();
 
   const stang = useCallback(() => setOppad(false), []);
+
+  /** Aktiv sida = exakt träff eller undersida (t.ex. /kurser/… under /kurser). */
+  const arAktiv = useCallback(
+    (lank: string) => pathname === lank || pathname.startsWith(lank + "/"),
+    [pathname]
+  );
 
   // Läs medlemsdata när drawern öppnas (alltid synliga, även vid 0 XP).
   useEffect(() => {
@@ -154,46 +174,42 @@ export function Mobilmeny() {
               intrad ? "translate-y-0" : "translate-y-3"
             }`}
           >
-            {/* Topprad: stäng-knapp + logotyp + guld-chips */}
-            <div className="flex flex-wrap items-center gap-3">
+            {/* Topprad: varumärket till vänster, stäng-knapp till höger */}
+            <div className="flex items-center gap-3">
+              <VarumarkesLogo href="/" onClick={stang} storlek="md" />
+
               <button
                 type="button"
                 onClick={stang}
                 aria-label="Stäng menyn"
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-gold/20 text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
+                className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gold/25 text-muted-foreground transition-colors hover:border-gold/60 hover:text-foreground"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                   <path d="M6 6l12 12M18 6L6 18" />
                 </svg>
               </button>
-
-              <Link
-                href="/"
-                onClick={stang}
-                className="font-serif text-lg font-bold tracking-tight text-foreground hover:opacity-80"
-              >
-                AK1<span className="text-gold">A</span> Research Lab
-              </Link>
-
-              <div className="ml-auto flex flex-wrap items-center gap-1.5">
-                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
-                  Nivå {nivaNu}
-                </span>
-                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
-                  {xp} XP
-                </span>
-                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
-                  🔥 {streakAntal}
-                </span>
-              </div>
             </div>
 
-            {/* Sökfält — öppnar kommandopaletten vid fokus/Enter */}
+            {/* Guld-chips: nivå · XP · streak (egen rad så logotypen får luft) */}
+            <div className="mt-3 flex flex-wrap items-center gap-1.5">
+              <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold text-gold">
+                Nivå {nivaNu}
+              </span>
+              <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold text-gold">
+                {xp} XP
+              </span>
+              <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold text-gold">
+                🔥 {streakAntal}
+              </span>
+            </div>
+
+            {/* Sökfält — öppnar kommandopaletten vid fokus/Enter.
+                text-base (16px) hindrar iOS från auto-zoom vid fokus. */}
             <div className="relative mt-5">
               <svg
                 className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground"
-                width="16"
-                height="16"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -209,23 +225,29 @@ export function Mobilmeny() {
                 placeholder="Sök kurser, verktyg, sidor…"
                 onFocus={oppnaSok}
                 onKeyDown={(e) => e.key === "Enter" && oppnaSok()}
-                className="w-full rounded-xl border border-gold/20 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
+                className="w-full rounded-xl border border-gold/20 bg-card py-3 pl-11 pr-4 text-base text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
               />
             </div>
 
-            {/* Tre sektioner — samma innehåll som huvudmenyns paneler */}
-            <div className="mt-7 space-y-8">
+            {/* Tre sektioner — KORTSTIL som huvudmenyns paneler:
+                marin paneltopp med guld-serif + cream-kort med tryckrader */}
+            <nav className="mt-6 space-y-5" aria-label="Mobilnavigation">
               {PANELER.map((p) => (
-                <section key={p.titel}>
-                  <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                <section
+                  key={p.titel}
+                  className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg"
+                >
+                  {/* Paneltopp — marin med guldtext, identisk med huvudmenyn */}
+                  <h2 className="marin-panel border-b border-gold/30 px-4 py-3 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
                     {p.ikon} {p.titel.toUpperCase()}
                   </h2>
-                  <div className="mt-2">
+
+                  <div>
                     {p.punkter.map((punkt) =>
                       "avdelare" in punkt ? (
                         <div
                           key={`avdelare-${punkt.avdelare}`}
-                          className="border-b border-gold/10 bg-gold/5 px-1 pb-1 pt-3 text-[10px] font-bold uppercase tracking-widest text-gold"
+                          className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold"
                         >
                           {punkt.avdelare}
                         </div>
@@ -234,36 +256,56 @@ export function Mobilmeny() {
                           key={punkt.lank + punkt.text}
                           href={punkt.lank}
                           onClick={stang}
-                          className="flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
+                          aria-current={arAktiv(punkt.lank) ? "page" : undefined}
+                          className={cn(
+                            "flex items-start gap-3 border-b border-gold/10 px-4 py-3.5 text-left last:border-b-0 transition-colors hover:bg-gold/5 active:bg-gold/10",
+                            arAktiv(punkt.lank) && "bg-gold/10"
+                          )}
                         >
-                          <span className="mt-0.5 text-lg">{punkt.ikon}</span>
-                          <span className="min-w-0">
-                            <span className="block text-sm font-bold text-foreground">{punkt.text}</span>
+                          <span className="mt-0.5 w-6 shrink-0 text-center text-xl" aria-hidden="true">
+                            {punkt.ikon}
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span
+                              className={cn(
+                                "block text-base font-bold",
+                                arAktiv(punkt.lank) ? "text-gold" : "text-foreground"
+                              )}
+                            >
+                              {punkt.text}
+                            </span>
                             {punkt.beskrivning && (
-                              <span className="block text-xs leading-tight text-muted-foreground">{punkt.beskrivning}</span>
+                              <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">
+                                {punkt.beskrivning}
+                              </span>
                             )}
                           </span>
+                          {arAktiv(punkt.lank) && (
+                            <span className="mt-1.5 shrink-0 text-gold" aria-hidden="true">
+                              ●
+                            </span>
+                          )}
                         </Link>
                       )
                     )}
                   </div>
                 </section>
               ))}
-            </div>
+            </nav>
 
             {/* Längst ner: guld-CTA + Fas 2-ansökan */}
             <div className="mt-auto flex gap-3 pt-8">
               <Link
                 href="/logga-in"
                 onClick={stang}
-                className="flex-1 rounded-xl bg-gold px-4 py-3 text-center text-sm font-bold text-primary-foreground shadow-xl hover:opacity-90"
+                className="flex-1 rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl hover:opacity-90"
               >
                 Logga in
               </Link>
               <Link
                 href="/fas2-ansok"
                 onClick={stang}
-                className="flex-1 rounded-xl border border-gold px-4 py-3 text-center text-sm font-bold text-gold hover:bg-gold/10"
+                className="flex-1 rounded-xl border border-gold px-4 py-3.5 text-center text-base font-bold text-gold hover:bg-gold/10"
               >
                 Fas 2-ansökan
               </Link>

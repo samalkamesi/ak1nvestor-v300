@@ -70,6 +70,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+import { Vagvisare } from "@/components/ak1a/vagvisare";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
@@ -2269,6 +2270,13 @@ export function ClientPortal() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
+      {/* DIN VÄGVISARE — omtanke-motorns varma kort överst i den inloggade
+          portalen (lokal pulsläsning <1 ms, inga nätverksanrop; poll var
+          60:e sekund). Aldrig modalt — ett kort i flödet, tyst i harmoni. */}
+      <div className="mb-6">
+        <Vagvisare />
+      </div>
+
       {/* Member header */}
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border pb-5">
         <div className="min-w-0">

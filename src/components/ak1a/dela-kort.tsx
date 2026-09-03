@@ -492,7 +492,7 @@ export function DelaKort({
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
-      toast({ title: "Kortet sparat", description: "Dela det var du vill — du bestämmer." });
+      toast({ title: "Kortet sparat", description: "Dela det där du vill — du bestämmer." });
     } catch {
       toast({
         title: "Kunde inte skapa bilden",
@@ -519,7 +519,7 @@ export function DelaKort({
         await navigator.clipboard.writeText(text);
         toast({
           title: "Kopierat till urklipp",
-          description: "Klistra in var du vill — bilden laddar du ner bredvid.",
+          description: "Klistra in där du vill — bilden laddar du ner bredvid.",
         });
       }
     } catch {

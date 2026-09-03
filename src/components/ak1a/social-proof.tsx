@@ -42,7 +42,7 @@ const STATIST = [
     suffix: "",
     huvud: "böcker",
     etikett:
-      "täckta kapitel för kapitel — Graham, Damodaran, Murphy … hela kanon, redan översatt till svenska steg",
+      "täckta kapitel för kapitel — Graham, Damodaran, Murphy … hela kanon, steg för steg på svenska",
   },
   {
     tal: 7812,
@@ -67,7 +67,7 @@ const ELEVRÖSTER = [
     typ: "Nivå 12 · 6 kurser klarade",
   },
   {
-    citat: "Quiz:en tvingar mig att tänka, inte bara läsa",
+    citat: "Quizfrågorna tvingar mig att tänka, inte bara läsa",
     namn: "Maria",
     typ: "Nivå 28 · 21 kurser klarade",
   },

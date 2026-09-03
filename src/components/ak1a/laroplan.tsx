@@ -41,14 +41,14 @@ const NIVAER = [
       { slug: "v16-produktlanseringar", syfte: "Kommande katalysatorer som kan driva intäkter", tid: 13 },
       { slug: "v17-avtal-partnerskap", syfte: "Stora avtal som förändrar bilden", tid: 12 },
       { slug: "v18-regulatoriska", syfte: "Lagändringar som kan skapa eller förstöra värde", tid: 12 },
-      { slug: "v19-kapitalforbranning", syfte: "Hur snabbt bränner bolaget pengar — emission-risk", tid: 20 },
-      { slug: "v20-aterekop-egna-aktier", syfte: "Buybacks och insider-signal — ledningens tillit", tid: 20 },
+      { slug: "v19-kapitalforbranning", syfte: "V19 Kassatäckning — nyemissionsrisk: räcker kassan?", tid: 20 },
+      { slug: "v20-aterekop-egna-aktier", syfte: "V20 Återköp av egna aktier — ledningens tillit och insidersignal", tid: 20 },
     ],
   },
   {
     id: 2,
     namn: "Fördjupning",
-    beskrivning: "Gå djupare på värdering, riskhantering och teknisk analys",
+    beskrivning: "Gå djupare på värdering och riskhantering — med grundläggande orientering i teknisk analys (ej utbildning i ämnet)",
     mal: "Du kan kombinera variabler till en helhetsbild",
     badge: "📖",
     kurser: [
@@ -198,9 +198,9 @@ export function Laroplan() {
         <span aria-hidden>🔒</span>
         <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
         <span>
-          Fas 2 — den fundamentala vägen till oberoende analytiker (18 kurser). Fas 3 —
-          det dynamiska ekosystemet: vågor, teknisk analys och psykologi (24 kurser).
-          Öppnas med medlemskap.
+          Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18
+          mästarverks-kurser). Fas 3 — det dynamiska ekosystemet: vågor, teknisk
+          analys på mästarnivå och psykologi (24 kurser). Öppnas med medlemskap.
         </span>
         <Link
           href="/fas2-ansok"

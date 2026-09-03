@@ -96,6 +96,11 @@ export function CookieConsent() {
               <Link href="/privacy-policy" className="underline hover:text-[#E8C766]">
                 integritetspolicyn
               </Link>
+              . Hela dataregistret — vad, varför, rättslig grund och dina
+              rättigheter, enligt GDPR artikel 13 — finns på{" "}
+              <Link href="/transparens" className="underline hover:text-[#E8C766]">
+                Transparens &amp; GDPR
+              </Link>
               .
             </p>
 

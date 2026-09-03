@@ -28,8 +28,8 @@ const VARIABLER: Var[] = [
   { id: "V16", name: "Produktlanseringar", category: "Katalysator", slug: "v16-produktlanseringar", weight: "6%", kalla: "Förvaltningsberättelsen: kommande lanseringar/pipeline" },
   { id: "V17", name: "Avtal & Partnerskap", category: "Katalysator", slug: "v17-avtal-partnerskap", weight: "6%", kalla: "Pressmeddelanden + förvaltningsberättelse: 'viktiga avtal'" },
   { id: "V18", name: "Regulatoriska", category: "Katalysator", slug: "v18-regulatoriska", weight: "6%", kalla: "Riskavsnittet i förvaltningsberättelsen; myndighetsbeslut" },
-  { id: "V19", name: "Kapitalförbränning", category: "Risk", slug: "v19-kapitalforbranning", weight: "KRITISK", kalla: "Kassaflödesanalysen: 'Kassaflöde från den löpande verksamheten' + Balansräkningen: Kassa" },
-  { id: "V20", name: "Återköp & insiderköp (VD/styrelse/bolag)", category: "Kapitalstruktur", slug: "v20-aterekop-egna-aktier", weight: "6%", kalla: "Aktieägar-/insiderdata (Finansinspektionen, börsen); not om återköp" },
+  { id: "V19", name: "Kassatäckning — nyemissionsrisk", category: "Risk", slug: "v19-kapitalforbranning", weight: "KRITISK", kalla: "Balansräkningen: Kassa & bank + Kassaflödesanalysen: 'Kassaflöde från den löpande verksamheten' — räcker kassan så bolaget slipper nyemission? Kontrollera även nyemissionshistorik i förvaltningsberättelsen" },
+  { id: "V20", name: "Återköp av egna aktier", category: "Kapitalstruktur", slug: "v20-aterekop-egna-aktier", weight: "6%", kalla: "Bolagets not om återköp av egna aktier (börsen/finanskalender); insiderköp (VD/styrelse, Finansinspektionen) noteras som kompletterande observation" },
 ];
 
 const KATEGORIER = ["Tillväxt", "Värdering", "Lönsamhet", "Stabilitet", "Moat", "Katalysator", "Risk", "Kapitalstruktur"];
@@ -258,7 +258,7 @@ export const RAKNARE: Raknare[] = [
   },
   {
     id: "v19",
-    namn: "V19 · Kapitalförbränning",
+    namn: "V19 · Kassatäckning — nyemissionsrisk",
     var: "V19",
     falt: [
       { key: "fkf", label: "Kassaflöde från löpande verksamheten", enhet: "MSEK (negativ = förbränning)", placeholder: "t.ex. -60 (minus = förbränning)" },
@@ -410,7 +410,7 @@ export function Akm1Calculator() {
             <p className="text-xs italic text-muted-foreground">
               Trösklarna är pedagogiska förenklingar — AK1A:s officiella analyser väger
               in bransch, trend och vågtyp. Kvalitativa variabler (moat, katalysatorer,
-              V20 återköp/insider) poängsätter du på fliken "Poängsätt manuellt".
+              V20 återköp av egna aktier) poängsätter du på fliken "Poängsätt manuellt".
             </p>
           </TabsContent>
 

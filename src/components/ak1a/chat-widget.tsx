@@ -12,6 +12,13 @@ import {
   ALLA_KORT,
   type SRKort,
 } from "@/lib/spaced-repetition";
+import {
+  sparaChatTur,
+  rensaChatMinne,
+  senasteHistorik,
+  raknaElevFragor,
+  HISTORIK_FONSTER,
+} from "@/lib/chat-minne";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -29,6 +36,11 @@ import {
  * 6. FÖLJER AKM1/AK1TS: alla svar strukturerade efter ekosystemet
  * 7. ÄR RESPONSIV: tre pulserande guldprickar medan svaret laddas, Enter skickar
  *    (Shift+Enter gör inget), smooth auto-scroll till senaste, swipe-ner-stäng på mobil
+ * 8. MINNS I DJUPET: konversationen sparas lokalt (ak1a-chat-minne-v1, max 60
+ *    turer) och de senaste 12 turerna skickas som `historik` — mentorn refererar
+ *    bakåt, korrigerar tveksamma antaganden ("Snäv men viktig korrigering") och
+ *    roterar skarpa motfrågor (klickbara chips: värdering, risk, tidshorisont,
+ *    källkritik, applikation) plus en "fördjupa"-knapp per svar
  *
  * LÄNK-KONVENTIONER i handlings-knappar:
  *   "fragor:<text>" → texten skickas som en NY fråga till mentorn (redigering)
@@ -39,7 +51,21 @@ import {
  */
 
 type Handling = { text: string; lank: string; ikon: string; beskrivning?: string };
-type Meddelande = { fran: "du" | "ai"; text: string; handlings?: Handling[]; ikon?: string };
+
+/** Mentorns motfråga (från /api/chatbot) — renderas som klickbart chip. */
+type MotfragaChip = { text: string; kategori: string };
+
+/** "Fördjupa"-länk — öppnar mest relevant kurs/verktyg för svaret. */
+type Fordjupa = { text: string; lank: string };
+
+type Meddelande = {
+  fran: "du" | "ai";
+  text: string;
+  handlings?: Handling[];
+  ikon?: string;
+  motfraga?: MotfragaChip;
+  fordjupa?: Fordjupa;
+};
 
 /** Alla sidtyper på sajten — detekteras från pathname. */
 type SidTyp =
@@ -470,16 +496,20 @@ function blandaKort(): SRKort[] {
 }
 
 /** Kontextmedveten hälsning — proaktiv meningsbyggnad per sidtyp. */
-function halsning(ctx: elevContext): string {
+function halsning(ctx: elevContext, minneAntal = 0): string {
   const timme = new Date().getHours();
   const tid = timme < 10 ? "God morgon" : timme < 13 ? "God dag" : timme < 18 ? "God eftermiddag" : "God kväll";
+  const minnesRad =
+    minneAntal > 0
+      ? `\n\n🧠 Jag minns ${minneAntal} av dina tidigare frågor — vårt samtal fortsätter där vi var.`
+      : "";
 
   if (!ctx.inloggad) {
-    return `${tid}! 👋 Jag är din AI-mentor. Jag ser att du är på ${SID_NAMN[ctx.sidTyp]} — ${sidKontextMening(ctx)} Du kan också logga in gratis (20 sek) så följer jag din progress.`;
+    return `${tid}! 👋 Jag är din AI-mentor. Jag ser att du är på ${SID_NAMN[ctx.sidTyp]} — ${sidKontextMening(ctx)} Du kan också logga in gratis (20 sek) så följer jag din progress.${minnesRad}`;
   }
 
   const nivaRad = `${tid}, Nivå ${ctx.niva}! ⭐ ${ctx.xp} XP · ${ctx.klaraKurser} kurser klarade.`;
-  return `${nivaRad}\n\n${sidKontextMening(ctx)}`;
+  return `${nivaRad}${minnesRad}\n\n${sidKontextMening(ctx)}`;
 }
 
 export function ChatWidget() {
@@ -488,6 +518,10 @@ export function ChatWidget() {
   const [fragor, setFraga] = useState("");
   const [busy, setBusy] = useState(false);
   const [hydrerad, setHydrerad] = useState(false);
+
+  // ── KONVERSATIONSMINNET "I DJUPET" (ak1a-chat-minne-v1) ──
+  // Antal elevfrågor i minnet — visas i panelen + skickas som historik
+  const [minneAntal, setMinneAntal] = useState(0);
 
   // ── SPACED REPETITION-session i chatten ──
   const [srAktiv, setSrAktiv] = useState(false);
@@ -525,6 +559,7 @@ export function ChatWidget() {
       kursTitel: kursSlug ? kursTitelFranSlug(kursSlug) : undefined,
     });
     setSrForfallna(forfallnaKort(1000).length);
+    setMinneAntal(raknaElevFragor());
     setHydrerad(true);
   }, [pathname]);
 
@@ -533,15 +568,17 @@ export function ChatWidget() {
     const ko = alla ? blandaKort() : forfallnaKort(10);
     if (ko.length === 0) {
       const st = srStatistik();
+      const text = `Inga kort förfallna idag — perfekt discipl! 🌟\n\nDin statistik: ${st.beharskade}/${st.totalt} behärskade (sitter i långt minne) · ${st.repetitionerTotalt} repetitioner totalt.\nNästa kort förfaller ${st.nastaNasta || "snart"}. Glömskekurvan jobbar för dig — kom tillbaka imorgon.`;
       setMeddelanden((p) => [...p, {
         fran: "ai",
         ikon: "🃏",
-        text: `Inga kort förfallna idag — perfekt discipl! 🌟\n\nDin statistik: ${st.beharskade}/${st.totalt} behärskade (sitter i långt minne) · ${st.repetitionerTotalt} repetitioner totalt.\nNästa kort förfaller ${st.nastaNasta || "snart"}. Glömskekurvan jobbar för dig — kom tillbaka imorgon.`,
+        text,
         handlings: [
           { text: `Blanda samtliga ${ALLA_KORT.length} kort`, lank: "sr:alla", ikon: "🎴", beskrivning: "Övning trots inga förfallna" },
           { text: "Tillbaka till lärandet", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg" },
         ],
       }]);
+      sparaChatTur("mentor", text);
       return;
     }
     setSrKo(ko);
@@ -577,15 +614,17 @@ export function ChatWidget() {
       setSrKo([]);
       const total = ny.svara + ny.bra + ny.latta;
       const st = srStatistik();
+      const text = `Repetitionssession klar! 🏆\n\n${total} kort repeterade: ${ny.latta} ⚡ lätta · ${ny.bra} ✅ bra · ${ny.svara} 🔁 svåra (kommer igen imorgon).\n+${ny.xp} XP förtjänade.\n\nTotalt: ${st.beharskade}/${st.totalt} kort i långt minne. Glömskekurvan bestämmer när nästa kort dyker upp — jag påminner dig här.`;
       setMeddelanden((p) => [...p, {
         fran: "ai",
         ikon: "🏆",
-        text: `Repetitionssession klar! 🏆\n\n${total} kort repeterade: ${ny.latta} ⚡ lätta · ${ny.bra} ✅ bra · ${ny.svara} 🔁 svåra (kommer igen imorgon).\n+${ny.xp} XP förtjänade.\n\nTotalt: ${st.beharskade}/${st.totalt} kort i långt minne. Glömskekurvan bestämmer när nästa kort dyker upp — jag påminner dig här.`,
+        text,
         handlings: [
           { text: "Fortsätt lära", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg i utbildningen" },
           { text: "Testa mig på en kurs", lank: "/kurser", ikon: "🧠", beskrivning: "Quiz: +10 XP per rätt svar" },
         ],
       }]);
+      sparaChatTur("mentor", text);
     } else {
       setSrIndex((i) => i + 1);
       setSrVisaSvar(false);
@@ -600,14 +639,14 @@ export function ChatWidget() {
     }
   }, [oppnad, srAktiv]);
 
-  // Initiera med proaktiv hälsning när chatt öppnas
+  // Initiera med proaktiv hälsning när chatt öppnas (hälsningen minns minnet)
   useEffect(() => {
     if (oppnad && meddelanden.length === 0) {
       setMeddelanden([
-        { fran: "ai", text: halsning(ctx), handlings: proaktivaForslag(ctx) }
+        { fran: "ai", text: halsning(ctx, minneAntal), handlings: proaktivaForslag(ctx) }
       ]);
     }
-  }, [oppnad, ctx]);
+  }, [oppnad, ctx, minneAntal]);
 
   // Auto-scroll till senaste meddelandet (även medan mentorn "tänker")
   useEffect(() => {
@@ -633,6 +672,11 @@ export function ChatWidget() {
     if (!q || busy) return;
     setFraga("");
 
+    // Minnet "i djupet": varje elevfråga sparas lokalt (max 60 turer, äldsta
+    // rensas) och de senaste turerna skickas som historik till API:et
+    sparaChatTur("du", q);
+    setMinneAntal(raknaElevFragor());
+
     // Intercept: repetition startas lokalt (SM-2 går via localStorage, ej API)
     if (/repeter|flashcard|minnesträning|flashkort/i.test(q)) {
       setMeddelanden((p) => [...p, { fran: "du", text: q }]);
@@ -647,9 +691,20 @@ export function ChatWidget() {
       const res = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fraga: q, sokvag: pathname }),
+        body: JSON.stringify({ fraga: q, sokvag: pathname, historik: senasteHistorik(HISTORIK_FONSTER) }),
       });
       const data = await res.json();
+
+      const mentorText: string = data.svar || "…";
+      const motfraga = data.motfraga as MotfragaChip | undefined;
+      const fordjupa = data.fordjupa as Fordjupa | undefined;
+
+      // Mentorns svar sparas i djupet — med motfråge-markören ("💬 Motfråga (…)")
+      // som serversidan läser för bakåtreferenser och rotationslogiken
+      sparaChatTur(
+        "mentor",
+        motfraga ? `${mentorText}\n\n💬 Motfråga (${motfraga.kategori}): ${motfraga.text}` : mentorText
+      );
 
       // Klarande motfråga (redigering) → visa alltid som dialog, navigera aldrig
       const arKlarande = data.typ === "klarande";
@@ -664,16 +719,20 @@ export function ChatWidget() {
         // Ett enda alternativ = navigera automatiskt
         setMeddelanden((p) => [...p, {
           fran: "ai",
-          text: data.svar || "Tar dig dit...",
+          text: mentorText,
           handlings: data.handlings,
+          motfraga,
+          fordjupa,
         }]);
         setTimeout(() => router.push(endaLank), 800);
       } else {
         setMeddelanden((p) => [...p, {
           fran: "ai",
-          text: data.svar || "…",
+          text: mentorText,
           handlings: data.handlings,
           ikon: arKlarande ? "🧭" : undefined,
+          motfraga,
+          fordjupa,
         }]);
       }
     } catch {
@@ -756,6 +815,31 @@ export function ChatWidget() {
             </div>
             {/* Guld-divider under paneltoppen */}
             <div className="mt-2.5 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" aria-hidden="true" />
+
+            {/* Minnesindikator — mentorn minns tidigare frågor (i djupet) + rensa-knapp */}
+            {hydrerad && minneAntal > 0 && (
+              <div className="mt-1.5 flex items-center justify-between gap-2">
+                <span className="truncate text-[10px] text-gold/70" title="Konversationsminnet sparas lokalt i din webbläsare — de senaste turerna styr mentorns bakåtreferenser och motfrågor">
+                  🧠 Mentorn minns {minneAntal} av dina frågor
+                </span>
+                <button
+                  onClick={() => {
+                    if (window.confirm(`Radera mentorns minne (${minneAntal} frågor)? Kan inte ångras.`)) {
+                      rensaChatMinne();
+                      setMinneAntal(0);
+                      setMeddelanden((p) => [...p, {
+                        fran: "ai",
+                        ikon: "🧠",
+                        text: "Minnet är rensat — vi börjar från ett rent blad. Vad vill du utforska nu?",
+                      }]);
+                    }
+                  }}
+                  className="shrink-0 text-[10px] font-bold text-gold/80 underline underline-offset-2 transition-colors hover:text-gold"
+                >
+                  Rensa
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Snabbkommandon — horisontellt skjutbara på mobil */}
@@ -865,6 +949,29 @@ export function ChatWidget() {
                 >
                   {m.text}
                 </div>
+                {/* Mentorns motfråga — klickbart snabbföljd-chip (skickas som ny fråga) */}
+                {m.motfraga && (
+                  <button
+                    onClick={() => skicka(m.motfraga!.text)}
+                    title={`Motfråga (${m.motfraga.kategori}) — klicka för att svara mentorn`}
+                    className="mt-1.5 flex max-w-[85%] items-start gap-2 rounded-xl border border-dashed border-gold/50 bg-gold/10 px-3 py-2 text-left text-xs text-gold transition-colors hover:bg-gold/20"
+                  >
+                    <span className="shrink-0">💬</span>
+                    <span className="min-w-0 flex-1">{m.motfraga.text}</span>
+                    <span className="shrink-0 text-gold/40" aria-hidden="true">↺</span>
+                  </button>
+                )}
+                {/* Fördjupa-knapp — öppnar mest relevant kurs/verktyg för svaret */}
+                {m.fordjupa && (
+                  <button
+                    onClick={() => router.push(m.fordjupa!.lank)}
+                    className="mt-1.5 flex max-w-[85%] items-center gap-2 rounded-xl border border-gold/30 bg-paper px-3 py-2 text-left text-xs font-semibold text-foreground transition-colors hover:border-gold/60"
+                  >
+                    <span aria-hidden="true">🔎</span>
+                    <span className="min-w-0 flex-1 truncate">Fördjupa: {m.fordjupa.text}</span>
+                    <span className="text-gold/40" aria-hidden="true">→</span>
+                  </button>
+                )}
                 {/* Handlingsknappar — svarsalternativ (fragor:) skickas som ny fråga */}
                 {m.handlings && m.handlings.length > 0 && (
                   <div className="mt-2 space-y-1.5">
@@ -910,7 +1017,7 @@ export function ChatWidget() {
                 <span className="h-2 w-2 animate-pulse rounded-full bg-gold" />
                 <span className="h-2 w-2 animate-pulse rounded-full bg-gold [animation-delay:150ms]" />
                 <span className="h-2 w-2 animate-pulse rounded-full bg-gold [animation-delay:300ms]" />
-                <span className="ml-1 text-[10px] text-muted-foreground">AI-mentorn tänker…</span>
+                <span className="ml-1 text-[10px] text-muted-foreground">Mentorn analyserar…</span>
               </div>
             )}
           </div>

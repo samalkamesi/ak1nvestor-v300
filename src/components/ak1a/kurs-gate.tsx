@@ -29,10 +29,13 @@ export function KursGate({
 
   return (
     <div className="relative">
-      <div className="pointer-events-none select-none max-h-[420px] overflow-hidden blur-[6px]">
+      {/* Textur av det låsta innehållet — suddig, urblekt, aldrig läsbar.
+          Tidigare halvtransparent gradient täckte första orden på texten
+          nedanför (kundrapport 2026-09-01); nu är ytan enhetligt ren papper. */}
+      <div aria-hidden="true" className="pointer-events-none select-none max-h-[420px] overflow-hidden blur-[6px] opacity-30">
         {children}
       </div>
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-paper via-paper/80 to-transparent p-6">
+      <div className="absolute inset-0 flex items-center justify-center bg-paper p-6">
         <div className="max-w-md rounded-2xl border-2 border-gold bg-paper p-8 text-center shadow-xl">
           <p className="text-3xl">🔒</p>
           <h3 className="mt-3 font-serif text-2xl font-bold">

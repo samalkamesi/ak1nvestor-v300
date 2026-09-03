@@ -83,8 +83,8 @@ const AKM1_VARS: Akm1Var[] = [
   { id: "V16", num: 16, name: "Produktlanseringar", category: "Katalysator" },
   { id: "V17", num: 17, name: "Avtal/Partnerskap", category: "Katalysator" },
   { id: "V18", num: 18, name: "Regulatoriska", category: "Katalysator" },
-  { id: "V19", num: 19, name: "Kapitalförbränning", category: "Risk" },
-  { id: "V20", num: 20, name: "Återköp", category: "Kapitalstruktur" },
+  { id: "V19", num: 19, name: "Kassatäckning — nyemissionsrisk", category: "Risk" },
+  { id: "V20", num: 20, name: "Återköp av egna aktier", category: "Kapitalstruktur" },
 ];
 
 const AKM1_CATEGORIES: Akm1Category[] = [

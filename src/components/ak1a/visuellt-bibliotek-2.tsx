@@ -401,7 +401,7 @@ export function RiskTermometer({ niva = 3 }: { niva?: number }) {
   const RADBAR = [
     { label: "V10 · Skuldsättningsgrad", v: v10, set: setV10, low: "skuldfri", high: "extrem hävstång" },
     { label: "V11 · Likviditet", v: v11, set: setV11, low: "proppfull kassa", high: "illikvid & låst" },
-    { label: "V19 · Kapitalförbränning", v: v19, set: setV19, low: "positivt kassaflöde", high: "brinner hårt" },
+    { label: "V19 · Kassatäckning — nyemissionsrisk", v: v19, set: setV19, low: "positivt kassaflöde", high: "brinner hårt" },
   ];
 
   return (

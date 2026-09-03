@@ -35,7 +35,7 @@ import {
 import { useTheme } from "next-themes";
 import { useAk1aStore, type SectionId } from "@/lib/ak1a-store";
 import { NAV_SECTIONS, FOOTER_NAV } from "@/lib/ak1a/data";
-import { Ak1aLogo } from "./primitives";
+import { VarumarkesLogo } from "./varumarkes-logo";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -204,7 +204,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:px-6">
-        <Ak1aLogo onClick={() => setSection("hem")} size="md" />
+        <VarumarkesLogo onClick={() => setSection("hem")} storlek="md" prioritet />
 
         {/* Desktop nav — megameny i EXAKT huvudmeny-stil: EN meny-upplevelse på hela sajten */}
         <nav
@@ -385,7 +385,7 @@ export function Header() {
                 <X className="h-4 w-4" />
               </button>
 
-              <Ak1aLogo onClick={() => valjSektion("hem")} size="sm" />
+              <VarumarkesLogo onClick={() => valjSektion("hem")} storlek="sm" />
 
               <div className="ml-auto flex flex-wrap items-center gap-1.5">
                 <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
@@ -400,7 +400,8 @@ export function Header() {
               </div>
             </div>
 
-            {/* Sökfält — öppnar kommandopaletten (global lyssnare) och stänger drawern */}
+            {/* Sökfält — öppnar kommandopaletten (global lyssnare) och stänger drawern.
+                text-base (16px) hindrar iOS från auto-zoom vid fokus. */}
             <div className="relative mt-5">
               <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
@@ -408,14 +409,14 @@ export function Header() {
                 placeholder="Sök kurser, verktyg, sidor…"
                 onFocus={oppnaSokOchStang}
                 onKeyDown={(e) => e.key === "Enter" && oppnaSokOchStang()}
-                className="w-full rounded-xl border border-gold/20 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
+                className="w-full rounded-xl border border-gold/20 bg-card py-3 pl-10 pr-4 text-base text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
               />
             </div>
 
             {/* SPA-sektionerna — stora tryckrader med ikon + beskrivning, aktiv = guld */}
             <nav className="mt-7 space-y-8" aria-label="Mobilnavigation">
               <section>
-                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
                   Sektioner
                 </h2>
                 <div className="mt-2">
@@ -427,7 +428,7 @@ export function Header() {
                       <button
                         key={s.id}
                         onClick={() => valjSektion(s.id)}
-                        className={`flex w-full items-start gap-3 border-b border-gold/10 py-3 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10 ${
+                        className={`flex w-full items-start gap-3 border-b border-gold/10 py-3.5 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10 ${
                           aktiv ? "bg-gold/5" : ""
                         }`}
                       >
@@ -438,14 +439,14 @@ export function Header() {
                         />
                         <span className="min-w-0">
                           <span
-                            className={`block text-sm font-bold ${
+                            className={`block text-base font-bold ${
                               aktiv ? "text-gold" : "text-foreground"
                             }`}
                           >
                             {s.label}
                           </span>
                           {beskrivning && (
-                            <span className="block text-xs leading-tight text-muted-foreground">
+                            <span className="block text-sm leading-snug text-muted-foreground">
                               {beskrivning}
                             </span>
                           )}
@@ -458,7 +459,7 @@ export function Header() {
 
               {/* MER — samma länkar som desktop-droppen, som mindre rader */}
               <section>
-                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
                   Mer
                 </h2>
                 <div className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
@@ -466,7 +467,7 @@ export function Header() {
                     <button
                       key={item.label}
                       onClick={() => valjSektion(item.section)}
-                      className="rounded-md px-2 py-1.5 text-left text-xs text-muted-foreground transition-colors hover:bg-gold/5 hover:text-foreground"
+                      className="rounded-md px-3 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:bg-gold/5 hover:text-foreground"
                     >
                       {item.label}
                     </button>
@@ -476,7 +477,7 @@ export function Header() {
 
               {/* FLER SIDER — riktiga routes, länkas med Link */}
               <section>
-                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
                   Fler sider
                 </h2>
                 <div className="mt-2">
@@ -485,12 +486,12 @@ export function Header() {
                       key={sida.href}
                       href={sida.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-start gap-3 border-b border-gold/10 py-3 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
+                      className="flex items-start gap-3 border-b border-gold/10 py-3.5 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
                     >
                       <sida.ikon className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
                       <span className="min-w-0">
-                        <span className="block text-sm font-bold text-foreground">{sida.text}</span>
-                        <span className="block text-xs leading-tight text-muted-foreground">
+                        <span className="block text-base font-bold text-foreground">{sida.text}</span>
+                        <span className="block text-sm leading-snug text-muted-foreground">
                           {sida.beskrivning}
                         </span>
                       </span>
@@ -504,14 +505,14 @@ export function Header() {
             <div className="mt-auto flex gap-3 pt-8">
               <button
                 onClick={() => valjSektion("portal")}
-                className="flex-1 rounded-xl bg-gold px-4 py-3 text-center text-sm font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
+                className="flex-1 rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
               >
                 Logga in / Portal
               </button>
               <Link
                 href="/fas2-ansok"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 rounded-xl border border-gold px-4 py-3 text-center text-sm font-bold text-gold transition-colors hover:bg-gold/10"
+                className="flex-1 rounded-xl border border-gold px-4 py-3.5 text-center text-base font-bold text-gold transition-colors hover:bg-gold/10"
               >
                 Fas 2-ansökan
               </Link>

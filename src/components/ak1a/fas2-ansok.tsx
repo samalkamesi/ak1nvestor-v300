@@ -235,8 +235,14 @@ export function Fas2Ansok() {
       <div className="rounded-lg border border-gold/30 bg-paper p-5 text-xs leading-relaxed text-muted-foreground">
         <p>
           <strong className="text-foreground">Ingen betalning nu.</strong> Ansökan är
-          kostnadsfri och icke-bindande. Fas 2 kostar 9 999 kr först när vi träffats
-          och du valt att gå vidare — med 90 dagars nöjdhetsgaranti.{" "}
+          kostnadsfri och icke-bindande. Fas 2 kostar 9 999 kr — men du betalar
+          inget under de första 90 dagarna: betalning sker först efter 90 dagar,
+          och bara om du förblir nöjd (90 dagars nöjd-kund-garanti, med
+          juridisk hemvist i{" "}
+          <Link href="/villkor" className="underline hover:text-foreground">
+            villkoren
+          </Link>{" "}
+          sektion 5–6).{" "}
           <strong className="text-foreground">Fas 1 gömmer ingenting</strong>: hela
           metodiken förblir gratis, för alltid. Vi behandlar dina uppgifter enligt{" "}
           <Link href="/privacy-policy" className="underline hover:text-foreground">

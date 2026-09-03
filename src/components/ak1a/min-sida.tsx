@@ -14,7 +14,9 @@ import {
 import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 import { badgeStatus, type BadgeStatus } from "@/lib/badges";
 import { lasBeteende, lasInsikter, lasToppIntresse, type Insikt } from "@/lib/tracer";
+import { harFas2Access, harFas3Access } from "@/lib/kurs-access";
 import { useToast } from "@/hooks/use-toast";
+import { Vagvisare } from "@/components/ak1a/vagvisare";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { DashFragaKort } from "@/components/ak1a/dashfraga-kort";
 import { KroppsvyKort } from "@/components/ak1a/kroppsvy-kort";
@@ -26,6 +28,7 @@ import { AssistentPanel } from "@/components/ak1a/assistent-panel";
 import { MinPortfoljKort } from "@/components/ak1a/min-portfolj-kort";
 import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
 import { DelaKort } from "@/components/ak1a/dela-kort";
+import { KunskapsFlode } from "@/components/ak1a/kunskaps-flode";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -117,6 +120,23 @@ function oppnaMentorn() {
   knapp?.click();
 }
 
+/** Personligt bemötande: hälsning efter klockan (dashboarden renderas
+ *  först efter hydrering på klienten — ingen SSR-/hydreringskollision). */
+function halsningFranKlockan(): string {
+  const timme = new Date().getHours();
+  if (timme < 12) return "Godmorgon";
+  if (timme < 17) return "Goddag";
+  return "God kväll";
+}
+
+/** Fas-etikett ur kurs-access (klient-säkra localStorage-hjälpare):
+ *  Fas 3 öppnar Fas 2 (supermängd) — därför kontrollas 3 först. */
+function fasEtikett(fas: 1 | 2 | 3): { ikon: string; text: string } {
+  if (fas === 3) return { ikon: "🎓", text: "Fas 3 · certifierad" };
+  if (fas === 2) return { ikon: "🎓", text: "Fas 2 · representant" };
+  return { ikon: "💛", text: "Fas 1 · gratis" };
+}
+
 export function MinSida() {
   const [hydrerad, setHydrerad] = useState(false);
   const [medlem, setMedlem] = useState<Medlem | null>(null);
@@ -127,6 +147,9 @@ export function MinSida() {
   const [klara, setKlara] = useState<string[]>([]);
   const [sr, setSr] = useState<SRStatistik>(SR_TOM);
   const [badges, setBadges] = useState<BadgeStatus[]>([]);
+  /** Medlemmens Fas (1 gratis / 2 representant / 3 certifierad) — läs ur
+   *  kurs-access klient-säkert efter hydrering. */
+  const [fas, setFas] = useState<1 | 2 | 3>(1);
 
   // ── Din spegel (Beteendetracern) — hydration-säkert: lasInsikter läses
   // ENDAST i useEffect (localStorage), aldrig under render. ──
@@ -149,6 +172,7 @@ export function MinSida() {
     setKlara(lasKlaraKurser());
     setSr(srStatistik());
     setBadges(badgeStatus());
+    setFas(harFas3Access() ? 3 : harFas2Access() ? 2 : 1);
     // Tracern: insikter + den sammanfattning som EVENTUELLT delas frivilligt.
     setInsikter(lasInsikter());
     const profil = lasBeteende();
@@ -247,6 +271,14 @@ export function MinSida() {
           ))}
         </div>
 
+        {/* KUNSKAPSFLÖDET — nyheterna + kunskaperna syns även för besökare
+            (kunddirektiv 2026-09-01: "jag ser ej systemet om nyheter och nya
+            kunskaper"). Topp-3 nyheter, nya kurser och "Vad är nytt" i ett
+            marin-panel-kort — fungerar utan inloggning (ämneskanaler). */}
+        <div className="relative mt-8">
+          <KunskapsFlode />
+        </div>
+
         <p className="relative mt-8 text-center text-xs text-muted-foreground">
           Vi bygger detta för dig — kostnadsfritt, för alltid. Dina framsteg
           sparas lokalt i din webbläsare.
@@ -290,6 +322,8 @@ export function MinSida() {
   const dag = new Date()
     .toLocaleDateString("sv-SE", { weekday: "long" })
     .replace(/^./, (c) => c.toUpperCase());
+  const halsning = halsningFranKlockan();
+  const fasInfo = fasEtikett(fas);
   const namn = medlem.namn || medlem.email.split("@")[0];
   const forfallnaText =
     sr.forfallna > 0 ? `${sr.forfallna} förfallna idag` : "Inga förfallna idag";
@@ -306,6 +340,12 @@ export function MinSida() {
           3 proaktiva förslag ("Jag tror du vill…" — aldrig påstridig). */}
       <AssistentPanel />
 
+      {/* KUNSKAPSFLÖDET — "Senaste nytt & nya kunskaper" (kunddirektiv
+          2026-09-01): Nyhetscentralens topp-3, teamets kursnyheter och hela
+          "Vad är nytt"-flödet — direkt överst i dashboarden så systemet för
+          nyheter och nya kunskaper är omöjligt att missa. */}
+      <KunskapsFlode />
+
       {/* (a) HERO-RAD */}
       <section className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card p-6 sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
@@ -313,8 +353,24 @@ export function MinSida() {
           <div className="min-w-0">
             <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Min Sida</p>
             <h1 className="mt-2 font-serif text-2xl font-bold tracking-tight sm:text-3xl">
-              God {dag}, {namn}
+              {halsning}, {namn}
             </h1>
+            {/* Personligt bemötande: veckodag + fas-progress ur befintlig
+                mätare (lasKlaraKurser / LAROPLAN_TOTAL) — inga nya källor. */}
+            <p className="mt-2 text-xs text-muted-foreground">
+              {dag} ·{" "}
+              {fas === 1 ? (
+                <>
+                  du är <span className="font-bold text-gold">{procent}&nbsp;%</span> genom Fas 1 —{" "}
+                  {klara.length} av {LAROPLAN_TOTAL} kurser
+                </>
+              ) : (
+                <>
+                  {klara.length} av {LAROPLAN_TOTAL} kurser ·{" "}
+                  <span className="font-bold text-gold">{procent}&nbsp;%</span> av läroplanen
+                </>
+              )}
+            </p>
             <p className="mt-4 font-serif text-4xl font-black tracking-tight text-gold sm:text-5xl">
               Nivå {elevNiva}
               <span className="mx-2 text-gold/40">·</span>
@@ -326,6 +382,12 @@ export function MinSida() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
+            <span
+              className="flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-2 text-xs font-bold text-gold"
+              title={`Din medlemsnivå — ${fasInfo.text}`}
+            >
+              {fasInfo.ikon} {fasInfo.text}
+            </span>
             <span
               className="flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-2 text-xs font-bold text-gold"
               title={`Bästa streak: ${streakBasta} dagar`}
@@ -341,6 +403,12 @@ export function MinSida() {
           </div>
         </div>
       </section>
+
+      {/* DIN VÄGVISARE — omtanke-motorns varma kort, direkt efter hälsningen.
+          Kör ekosystemPuls() lokalt (<1 ms, inga nätverksanrop) vid
+          montering + var 60:e sekund: mentorns fråga vid behov, tyst
+          puls-indikator i harmoni. Aldrig modalt — alltid i flödet. */}
+      <Vagvisare />
 
       {/* (a2) VÄLFÄRDSPANLEN — utbildning → välmående → välfärd */}
       <section className="marin-panel relative overflow-hidden rounded-2xl border border-gold/30 p-6 sm:p-8">

@@ -131,7 +131,7 @@ export function MrMarketSimulator() {
     setAgande(true);
     if (kurs < 70) { setPoang(poang + 10); setMeddelande("✓ BRA KÖP! Du köpte när Mr Market var deprimerad (+10p)"); }
     else if (kurs > 130) { setPoang(poang - 5); setMeddelande("✗ DÅLIGT KÖP! Du köpte i eufori (-5p)"); }
-    else setMeddelande("中性 Neutralt köp — varken bra eller dåligt");
+    else setMeddelande("Neutralt köp — varken bra eller dåligt");
   };
 
   const salj = () => {

@@ -39,8 +39,8 @@ const RADER: Array<{ id: string; namn: string; kategori: string }> = [
   { id: "V16", namn: "Produktlanseringar", kategori: "katalysator" },
   { id: "V17", namn: "Avtal & Partnerskap", kategori: "katalysator" },
   { id: "V18", namn: "Regulatoriska katalysatorer", kategori: "katalysator" },
-  { id: "V19", namn: "Kapitalförbrukning & Emission-risk", kategori: "risk" },
-  { id: "V20", namn: "Återköp", kategori: "risk" },
+  { id: "V19", namn: "Kassatäckning — nyemissionsrisk", kategori: "risk" },
+  { id: "V20", namn: "Återköp av egna aktier", kategori: "risk" },
 ];
 
 const KATEGORI_NAMN: Record<string, string> = {

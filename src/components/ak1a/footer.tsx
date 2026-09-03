@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowUp, Mail, Globe } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { FOOTER_NAV } from "@/lib/ak1a/data";
-import { Ak1aLogo, HonestyTag } from "./primitives";
+import { HonestyTag } from "./primitives";
+import { VarumarkesLogo } from "./varumarkes-logo";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
@@ -19,7 +20,7 @@ export function Footer() {
         {/* Manifesto block */}
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
           <div>
-            <Ak1aLogo size="md" />
+            <VarumarkesLogo storlek="md" />
             <p className="mt-4 max-w-md text-sm text-muted-foreground leading-relaxed">
               Strategiska AI-organ som autonoma team — de samlas, tänker, beslutar
               och skapar mega-visioner. År av mänskligt arbete komprimeras till
@@ -85,6 +86,12 @@ export function Footer() {
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
               Integritetspolicy
+            </Link>
+            <Link
+              href="/transparens"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Transparens &amp; GDPR
             </Link>
             <Link
               href="/cookiepolicy"

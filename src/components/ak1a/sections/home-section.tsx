@@ -4,63 +4,225 @@ import * as React from "react";
 import Link from "next/link";
 import {
   ArrowRight,
-  GraduationCap,
-  FlaskConical,
   BookOpen,
-  TrendingUp,
-  ShieldCheck,
-  Sparkles,
-  ChevronRight,
+  LibraryBig,
+  Calculator,
+  Award,
 } from "lucide-react";
-import { useAk1aStore } from "@/lib/ak1a-store";
-import { Eyebrow, GoldRule, HonestyTag } from "../primitives";
-import { WaveMatrix } from "../wave-matrix";
-import { SocialProof } from "../social-proof";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Eyebrow, HonestyTag } from "../primitives";
+import { NyhetsChips } from "../kunskaps-flode";
 
-/* ---------- marknadsförings-data (pedagogik-ton: vi tipsar, tvingar aldrig) ---------- */
+/* ────────────────────────────────────────────────────────────────────────────
+   AK1A Research Lab — startsidans hem-sektion (omskriven 2026-09-01).
 
-const SNABBLANKAR = [
+   Copyuppdrag: säljande, to the point, allt klickbart — men alltid faktabaserat.
+   Alla tal nedan är räknade direkt ur public/deep-courses.json:
+   · 333 kurser
+   · 8 211 quiz-frågor (chapters[].quiz, summerat)
+   · 103 bokkurser (kategori BOKMASTER)
+   · 8 verktyg (kalkylatorn, vågfundamentet, portföljbyggaren, net-net-skannern,
+     superanalysen, konfluensradarn, min portfölj, dagens pass)
+   · 0 kr inträde (Fas 1 gratis för alltid — se /medlemskap)
+   ──────────────────────────────────────────────────────────────────────────── */
+
+const ANTAL_KURSER = 333;
+const ANTAL_QUIZ = 8211;
+const ANTAL_BOKER = 103;
+const ANTAL_VERKTYG = 8;
+
+/* ---------- Sifferbandets mätta tal — varje stat är klickbar ---------- */
+
+const SIFFROR: {
+  tal: number;
+  suffix?: string;
+  etikett: string;
+  undertext: string;
+  href: string;
+}[] = [
   {
-    ikon: "⚡",
-    titel: "Testa Dagens Pass",
-    text: "5 min på riktiga marknadsdata",
-    href: "/dagens-pass",
+    tal: ANTAL_KURSER,
+    etikett: "kurser",
+    undertext: "Från bokföringens grunder till AK1TS våglära.",
+    href: "/kurser",
   },
   {
-    ikon: "🧠",
-    titel: "Se din profil",
-    text: "Vilken analytiker är du?",
-    href: "/profil",
+    tal: ANTAL_QUIZ,
+    etikett: "quiz-frågor",
+    undertext: "Varje kurs avslutas med quiz som prickar kunskapsluckorna.",
+    href: "/kurser",
   },
   {
-    ikon: "🌊",
-    titel: "Öppna Vågfundamentet",
-    text: "20 variabler × 5 horisonter — live",
-    href: "/vagfundament",
+    tal: ANTAL_BOKER,
+    etikett: "kanonböcker",
+    undertext: "Från Security Analysis till Poor Charlie's Almanack.",
+    href: "/kurser",
   },
-] as const;
+  {
+    tal: ANTAL_VERKTYG,
+    etikett: "verktyg",
+    undertext: "Kalkylatorn, Vågfundamentet, Konfluensradarn med flera.",
+    href: "/kalkylator",
+  },
+  {
+    tal: 0,
+    suffix: " kr",
+    etikett: "att börja",
+    undertext: "Fas 1 är gratis — för alltid. Inget kort, ingen bindningstid.",
+    href: "/medlemskap",
+  },
+];
 
-const ELEVCITAT = [
-  "Första gången jag FÖRSTÅR mina aktier",
-  "Quiz:en tvingar mig att tänka",
-  "Vågfundamentet förändrade allt",
-] as const;
+/* ---------- Varför AK1A? — fyra skäl, varje kort länkar dit det lovar ---------- */
 
-export function HomeSection() {
-  const { setSection, setLevel } = useAk1aStore();
+const SKAL: {
+  ikon: typeof BookOpen;
+  rubrik: string;
+  mening1: string;
+  mening2: string;
+  lankText: string;
+  href: string;
+}[] = [
+  {
+    ikon: BookOpen,
+    rubrik: "Fundamental analys från grunden",
+    mening1:
+      "Från Grahams marginal of safety till modern räkenskapsanalys — AKM1:s 20 variabler ger dig en struktur i stället för gissningar.",
+    mening2:
+      "Varje steg förklaras på svenska, med quiz som tvingar dig att tänka själv.",
+    lankText: "Öppna kurserna",
+    href: "/kurser",
+  },
+  {
+    ikon: LibraryBig,
+    rubrik: "Byggd på mästarnas böcker",
+    mening1:
+      "103 kanonverk — var och en en egen kurs med källkort som pekar på originalkapitlen.",
+    mening2:
+      "Du lär dig mästarnas metoder i original, inte andrahandsreferat.",
+    lankText: "Utforska bokkurserna",
+    href: "/kurser",
+  },
+  {
+    ikon: Calculator,
+    rubrik: "Verktygen ingår",
+    mening1:
+      "AKM1-kalkylatorn väger 20 fundamentalvariabler, Vågfundamentet visar dem som tidsserier och Konfluensradarn (Fas 3) låter värde möta vågor.",
+    mening2: "Samma system som kurserna lär ut — ingen extra kostnad.",
+    lankText: "Öppna kalkylatorn",
+    href: "/kalkylator",
+  },
+  {
+    ikon: Award,
+    rubrik: "Certifikat — och vägen vidare",
+    mening1:
+      "Klara kurser, samla XP och tjäna ditt certifikat på nivå A–D.",
+    mening2:
+      "I Fas 2 öppnas personlig utbildning och chansen att bli certifierad representant för AK1nvestor.",
+    lankText: "Se certifikatet",
+    href: "/certifikat",
+  },
+];
+
+/* ---------- Verktygschips i kort 3 (varje verktyg klickbart) ---------- */
+
+const VERKTYGSLANKAR: { text: string; href: string }[] = [
+  { text: "AKM1-kalkylatorn", href: "/kalkylator" },
+  { text: "Vågfundamentet", href: "/vagfundament" },
+  { text: "Konfluensradarn", href: "/konfluens" },
+];
+
+/* ---------- Stigen: Fas 1 från konto till certifikat ---------- */
+
+const STIG: { num: string; rubrik: string; undertext: string; href: string }[] = [
+  {
+    num: "1",
+    rubrik: "Skapa kontot",
+    undertext: "0 kr · en minut",
+    href: "/logga-in",
+  },
+  {
+    num: "2",
+    rubrik: "Alla kurser upplåsta",
+    undertext: "333 kurser, direkt",
+    href: "/kurser",
+  },
+  {
+    num: "3",
+    rubrik: "XP & badges",
+    undertext: "Poäng, nivåer, troféer",
+    href: "/badges",
+  },
+  {
+    num: "4",
+    rubrik: "Certifikat A–D",
+    undertext: "Bevis på kunskapen",
+    href: "/certifikat",
+  },
+];
+
+/* ---------- Animerad räknare (count-up vid scroll-in, respekterar reduced motion) ---------- */
+
+function AnimeraTal({ mal, suffix }: { mal: number; suffix?: string }) {
+  const [varde, setVarde] = React.useState(0);
+  const ref = React.useRef<HTMLSpanElement>(null);
+  const startad = React.useRef(false);
+
+  React.useEffect(() => {
+    // Nollmålet ("0 kr") behöver ingen animation — sätt direkt.
+    if (mal === 0) return;
+    // Respektera reducerad rörelse: hoppa till slutvärdet.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVarde(mal);
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+
+    const starta = () => {
+      if (startad.current) return;
+      startad.current = true;
+      const t0 = performance.now();
+      const varaktighet = 1400;
+      const steg = (nu: number) => {
+        const p = Math.min(1, (nu - t0) / varaktighet);
+        const lattad = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        setVarde(Math.round(mal * lattad));
+        if (p < 1) requestAnimationFrame(steg);
+      };
+      requestAnimationFrame(steg);
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => entries[0].isIntersecting && starta(),
+      { threshold: 0.4 }
+    );
+    obs.observe(el);
+    // Säkerhet: om elementet aldrig syns (t.ex. udda viewport) — starta ändå.
+    const failsafe = setTimeout(starta, 2500);
+    return () => {
+      obs.disconnect();
+      clearTimeout(failsafe);
+    };
+  }, [mal]);
 
   return (
+    <span ref={ref}>
+      {varde.toLocaleString("sv-SE")}
+      {suffix}
+    </span>
+  );
+}
+
+export function HomeSection() {
+  return (
     <div className="paper-texture">
-      {/* ───────────── HERO — Marin dokument-öppning (privatabanks-certifikat) ───────────── */}
+      {/* ───────────── 1 · HERO — marin certifikat-öppning med gravör-ram ───────────── */}
       <section className="relative border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-20">
-          {/* Marin panel med gravör-ram: ytterram + inre tunn ram = double-frame certifikat */}
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
           <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
             <div className="relative rounded-xl border border-[#E8C766]/20 p-8 sm:p-12">
-              {/* Överrad — bankfirmans signeringsrad, bokstavad i guld-serif */}
+              {/* Överrad — bankfirmans signeringsrad */}
               <p className="flex flex-wrap items-baseline gap-x-4 font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
                 <span>A · K · 1 · A</span>
                 <span>R E S E A R C H</span>
@@ -68,494 +230,236 @@ export function HomeSection() {
               </p>
 
               <h1 className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-[#EDE6D6] text-balance sm:text-5xl lg:text-6xl">
-                Institutionell metodik. Byggd för privatpersoner.
+                Bli analytikern som ser vad andra missar.
               </h1>
 
               <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
-                Djupare än en blogg. Tydligare än en bank. Snabbare än en
-                utbildning.
+                Lär dig läsa bolag som en analytiker — från första
+                årsredovisningen till certifikatet. {ANTAL_KURSER} kurser,{" "}
+                {ANTAL_QUIZ.toLocaleString("sv-SE")} quiz-frågor och verktygen
+                som hör till, från dag ett.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button
-                  size="lg"
-                  onClick={() => setSection("kurser")}
-                  className="bg-[#E8C766] font-bold text-[#081120] hover:bg-[#E8C766]/90"
+                <Link
+                  href="/logga-in"
+                  className="btn-guld-signatur inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
                 >
-                  Öppna läroplanen <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => {
-                    if (typeof window !== "undefined") window.location.href = "/manifest";
-                  }}
-                  className="border-[#E8C766]/50 bg-transparent text-[#E8C766] hover:bg-[#E8C766]/10 hover:text-[#E8C766] dark:bg-transparent"
+                  Bli medlem — gratis <span aria-hidden="true">→</span>
+                </Link>
+                <Link
+                  href="/kurser"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
                 >
-                  Så tänker vi
-                </Button>
+                  Utforska kurserna
+                </Link>
               </div>
 
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────── SOCIALT BEVIS — levande statistik + elevröster ─────────────
-          Ersätter den gamla enradiga statist-rad som låg i heron: samma budskap,
-          fast med roterande räknare, sammanfattande strip och elevröster. */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
-          <SocialProof />
-        </div>
-      </section>
-
-      {/* ───────────── PROVA GRATIS — tre dörrar in, utan konto ───────────── */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
-          <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent" />
-            <div className="relative rounded-xl border border-[#E8C766]/20 p-8 sm:p-10">
-              <p className="font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
-                Prova gratis · utan konto
-              </p>
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <h2 className="max-w-xl font-serif text-3xl font-bold leading-tight text-balance text-[#EDE6D6] sm:text-4xl">
-                  Känn på metoden — på riktiga data, idag.
-                </h2>
-                <p className="max-w-sm text-sm leading-relaxed text-[#EDE6D6]/70">
-                  Tre dörrar in i labbet. Ingen registrering, ingen kortuppgift
-                  — bara metoden, dig och marknaden.
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {SNABBLANKAR.map((lank) => (
-                  <Link
-                    key={lank.href}
-                    href={lank.href}
-                    className="group flex min-h-[44px] flex-col rounded-xl border border-[#E8C766]/25 bg-black/20 p-5 transition-all hover:border-[#E8C766]/60 hover:bg-black/30"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#E8C766]/30 bg-[#E8C766]/10 text-xl"
-                    >
-                      {lank.ikon}
-                    </span>
-                    <span className="mt-4 font-serif text-xl font-bold leading-snug text-[#EDE6D6]">
-                      {lank.titel}{" "}
-                      <span
-                        aria-hidden="true"
-                        className="inline-block text-[#E8C766] transition-transform group-hover:translate-x-1"
-                      >
-                        →
-                      </span>
-                    </span>
-                    <span className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/70">
-                      {lank.text}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              <p className="mt-6 text-center text-xs tracking-wide text-[#EDE6D6]/50">
-                Vi tipsar — du väljer väg. Allt öppnas direkt, inget konto
-                krävs.
+              {/* Mikrostrip — avgörande invändningar omtyglade på en rad */}
+              <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-wide text-[#EDE6D6]/70">
+                <span>
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  Fas 1 för alltid 0 kr
+                </span>
+                <span>
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  Alla kurser upplåsta direkt
+                </span>
+                <span>
+                  <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-[#E8C766] align-middle" />
+                  Inget kort krävs
+                </span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ───────────── ELEVRÖSTER — citat-band i marin ───────────── */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
-          <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/30 px-6 py-8 sm:px-10 sm:py-9">
-            <div
-              className="pointer-events-none absolute inset-3 rounded-xl border border-gold/15"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-8 text-center sm:grid-cols-3 sm:gap-6">
-              {ELEVCITAT.map((citat) => (
-                <blockquote key={citat}>
-                  <p className="font-serif text-lg italic leading-snug text-[#EDE6D6] sm:text-xl">
-                    <span className="text-[#E8C766]">“</span>
-                    {citat}
-                    <span className="text-[#E8C766]">”</span>
-                  </p>
-                </blockquote>
-              ))}
-            </div>
-            <p className="relative mt-8 text-center font-serif text-sm italic tracking-wide text-[#E8C766]/80">
-              — verkliga elevers ord
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────── AK1A I SIFFROR ───────────── */}
+      {/* ───────────── 2 · SIFFERBAND — mätta tal, räknar upp vid scroll ───────────── */}
       <section className="border-b border-border bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
-          <div className="grid gap-6 sm:grid-cols-3">
-            <NumberStat
-              value="200+"
-              label="kurser"
-              kind="matt"
-              caption="20 grundläggande AKM1 + 287 fördjupande."
-            />
-            <NumberStat
-              value="99"
-              label="sidor per analys"
-              kind="matt"
-              caption="Institutionsdjup. Varje siffra hyperlänkad till källa."
-            />
-            <NumberStat
-              value="5 / 8"
-              label="organ i drift"
-              kind="metodmal"
-              caption="Vi siktar på 8 synkrona organ. Idag är 5 live."
-            />
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Eyebrow>AK1A i siffror</Eyebrow>
+            <HonestyTag kind="matt" />
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            {SIFFROR.map((s) => (
+              <Link
+                key={s.etikett}
+                href={s.href}
+                className="group rounded-lg border border-border bg-card p-5 transition-all hover:border-gold/50 hover:shadow-md"
+              >
+                <p className="font-serif text-4xl font-bold leading-none text-foreground sm:text-5xl">
+                  <AnimeraTal mal={s.tal} suffix={s.suffix} />
+                </p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  {s.etikett}
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {s.undertext}
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold opacity-0 transition-opacity group-hover:opacity-100">
+                  Gå dit <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ───────────── BÖRJA DIN RESA ───────────── */}
+      {/* ───────────── 3 · VARFÖR AK1A? — fyra skäl, hela kortet klickbart ───────────── */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-          <Eyebrow>Börja din resa</Eyebrow>
-          <div className="mt-5 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-            <Card className="overflow-hidden border-gold/30 bg-gradient-to-br from-card to-gold/[0.03]">
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-2">
-                  <span className="font-serif text-5xl font-bold text-gold">V1</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Tillväxt · 8 %
-                  </span>
-                </div>
-                <h3 className="mt-3 font-serif text-2xl font-bold">
-                  Försäljningstillväxt
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <Eyebrow>Varför AK1A?</Eyebrow>
+          <h2 className="mt-3 max-w-2xl font-serif text-3xl font-bold text-balance">
+            En komplett utbildning i aktieanalys — inte en ström av tips.
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SKAL.map((s) => (
+              <Link
+                key={s.rubrik}
+                href={s.href}
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:shadow-lg"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-gold/30 bg-gold/10 text-gold">
+                  <s.ikon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-serif text-xl font-bold leading-snug">
+                  {s.rubrik}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Den första av 19 fundamentala variabler. Bygg din AKM1-grund
-                  steg för steg.
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {s.mening1} {s.mening2}
                 </p>
-                <div className="mt-4 flex items-center gap-2">
-                  <HonestyTag kind="matt" />
-                  <span className="text-xs text-muted-foreground">15 min · Nybörjare</span>
-                </div>
-                <Button
-                  className="mt-5 bg-gold text-background hover:bg-gold/90"
-                  onClick={() => {
-                    setLevel("nyborjare");
-                    setSection("kurser");
-                  }}
-                >
-                  Starta kurs <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </div>
-            </Card>
-
-            <div className="flex flex-col justify-center rounded-lg border border-border bg-card p-6">
-              <Eyebrow>5 minuter till insikt</Eyebrow>
-              <h3 className="mt-2 font-serif text-xl font-bold">Så här börjar du.</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Tre steg. Från att se en institutionell analys till att göra en
-                själv. Inget konto krävs för att börja.
-              </p>
-            </div>
+                <span className="mt-4 inline-flex items-center gap-1 pt-2 text-xs font-semibold uppercase tracking-wider text-gold transition-transform group-hover:translate-x-0.5">
+                  {s.lankText} <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            ))}
           </div>
 
-          {/* 3 steps */}
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <StepCard
-              num="1"
-              title="Se en analys"
-              body="En 99-sidig institutionell analys, sammanfattad på 2 minuter."
-              cta="VISA PRECIS-ANALYSEN →"
-              icon={<BookOpen className="h-5 w-5" />}
-              onClick={() => setSection("prec")}
-            />
-            <StepCard
-              num="2"
-              title="Lär dig metoden"
-              body="AKM1:s 20 variabler. Inte gissning — struktur."
-              cta="BÖRJA MED VARIABEL 1 →"
-              icon={<GraduationCap className="h-5 w-5" />}
-              onClick={() => setSection("kurser")}
-            />
-            <StepCard
-              num="3"
-              title="Gör det själv"
-              body="Öppna Labbet. Reproducera analysen. Bli analytiker."
-              cta="ÖPPNA LABBET →"
-              icon={<FlaskConical className="h-5 w-5" />}
-              onClick={() => setSection("labb")}
-            />
+          {/* Verktygen som chips — varje namn klickbart + Fas 2-vägen vidare */}
+          <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+            <span className="text-muted-foreground">Verktygen på plats idag:</span>
+            {VERKTYGSLANKAR.map((v) => (
+              <Link
+                key={v.href}
+                href={v.href}
+                className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
+              >
+                {v.text}
+              </Link>
+            ))}
+            <span className="ml-auto text-xs text-muted-foreground">
+              Fas 2:{" "}
+              <Link href="/fas2-ansok" className="font-semibold text-gold hover:underline">
+                bli certifierad representant
+              </Link>{" "}
+              ·{" "}
+              <Link href="/medlemskap" className="font-semibold text-gold hover:underline">
+                se medlemskapen
+              </Link>
+            </span>
           </div>
         </div>
       </section>
 
-      {/* ───────────── AK1T VÅG-MATRIS (signature viz) ───────────── */}
-      <WaveMatrix />
+      {/* ───────────── 3b · SENASTE NYTT & NYA KUNSKAPER — rubrik-chips för
+           besökare (kunddirektiv 2026-09-01: "jag ser ej systemet om nyheter
+           och nya kunskaper"). Endast rubriker, varje chip + CTA länkar till
+           /nyheter (respektive /kurser) — nyheterna når besökaren före
+           medlemskapet. ───────────── */}
+      <NyhetsChips />
 
-      {/* ───────────── VEM ÄR DU? ───────────── */}
+      {/* ───────────── 4 · STIGEN — Fas 1 från konto till certifikat ───────────── */}
       <section className="border-b border-border bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-          <Eyebrow>Vem är du?</Eyebrow>
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <Eyebrow>Fas 1 — vägen in</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-bold text-balance">
-            Tre vägar in i samma metodik.
+            Från gratis konto till certifikat.
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Oavsett var du börjar når du samma destination: att tänka som en
-            analytiker.
+            Fas 1 → alla kurser upplåsta · XP &amp; badges · Certifikat A–D.
+            Kontot kostar inget och kurserna låses upp i samma ögonblick du
+            skapar det.
           </p>
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            <TierCard
-              tier="TIER 2 · 3"
-              title="Ny till investering?"
-              body="Du har ingen broker. Du vill förstå innan du köper."
-              cta="GÅ TILL UTBILDNING"
-              onClick={() => {
-                setLevel("nyborjare");
-                setSection("kurser");
-              }}
-            />
-            <TierCard
-              tier="TIER 1"
-              title="Redan aktiv investerare?"
-              body="Du har Avanza/Nordnet. Du vill veta vad du äger."
-              cta="SE ANALYSERNA"
-              onClick={() => setSection("prec")}
-              highlight
-            />
-            <TierCard
-              tier="TIER 3"
-              title="Framtidens analytiker?"
-              body="Du vill tänka som Carnegie — fast på svenska, fast för dig."
-              cta="ÖPPNA LABBET"
-              onClick={() => setSection("labb")}
-            />
-          </div>
+
+          <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+            {STIG.map((steg, i) => (
+              <li key={steg.rubrik} className="relative">
+                {/* Horisontell guldlänk mellan noderna (desktop) */}
+                {i > 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 top-6 hidden h-px w-4 -translate-x-full bg-gradient-to-r from-transparent to-gold/50 lg:block"
+                  />
+                )}
+                {i < STIG.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute right-0 top-6 hidden h-px w-4 translate-x-full bg-gradient-to-l from-transparent to-gold/50 lg:block"
+                  />
+                )}
+                <Link href={steg.href} className="group block">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold/10 font-serif text-lg font-bold text-gold transition-colors group-hover:bg-gold/20">
+                    {steg.num}
+                  </span>
+                  <h3 className="mt-4 font-serif text-lg font-bold leading-snug">
+                    {steg.rubrik}
+                  </h3>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {steg.undertext}
+                  </p>
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold opacity-70 transition-opacity group-hover:opacity-100">
+                    Gå dit <ArrowRight className="h-3 w-3" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* ───────────── MANIFEST ───────────── */}
+      {/* ───────────── 5 · SLUT-CTA — marin panel med guldsignatur-knapp ───────────── */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 text-center">
-          <Eyebrow>Styrelsebeslut #1 · Manifest</Eyebrow>
-          <GoldRule className="mx-auto my-6 max-w-xs" />
-          <blockquote className="font-serif text-2xl font-medium leading-relaxed text-balance sm:text-3xl">
-            <span className="text-gold">“</span>
-            De flesta tror att privatpersoner inte kan tänka som institutionella
-            analytiker — sanningen är att med rätt metodik kan en svensk
-            retail-investerare göra analyser som överträffar sälj-sidans
-            research.
-            <span className="text-gold">”</span>
-          </blockquote>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            — AK1A Research Lab · Styrelsebeslut #1
-          </p>
-        </div>
-      </section>
-
-      {/* ───────────── ÄRLIGHET FOREVER ───────────── */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <Eyebrow>Ärlighet forever</Eyebrow>
-              <h2 className="mt-3 font-serif text-3xl font-bold">
-                Vi publicerar vad andra döljer.
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent" />
+            <div className="relative flex flex-col items-center rounded-xl border border-[#E8C766]/20 px-6 py-12 text-center sm:px-12 sm:py-16">
+              <p className="font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+                AK1A Research Lab · Fas 1
+              </p>
+              <h2 className="mt-4 max-w-2xl font-serif text-3xl font-bold leading-tight text-balance text-[#EDE6D6] sm:text-4xl">
+                Din första kurs börjar om 30 sekunder.
               </h2>
-              <p className="mt-2 max-w-2xl text-muted-foreground">
-                Varje kvantitativt påstående är märkt:{" "}
-                <HonestyTag kind="matt" /> (historiskt verifierbar) eller{" "}
-                <HonestyTag kind="metodmal" /> (vad vi siktar mot, inte vad vi
-                uppnått).
+              <p className="mt-3 max-w-xl font-serif text-base italic leading-relaxed text-[#E8C766] sm:text-lg">
+                Skapa gratis konto — alla {ANTAL_KURSER} kurser låses upp
+                direkt.
+              </p>
+              <Link
+                href="/logga-in"
+                className="btn-guld-signatur mt-8 inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
+              >
+                Bli medlem — gratis <span aria-hidden="true">→</span>
+              </Link>
+              <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs tracking-wide text-[#EDE6D6]/70">
+                <span>0 kr för alltid</span>
+                <span aria-hidden="true">·</span>
+                <span>Inget kort krävs</span>
+                <span aria-hidden="true">·</span>
+                <span>
+                  Osäker?{" "}
+                  <Link
+                    href="/kurser"
+                    className="font-semibold text-[#E8C766] hover:underline"
+                  >
+                    Titta bland kurserna först
+                  </Link>
+                </span>
               </p>
             </div>
-            <Button variant="outline" onClick={() => setSection("om-oss")}>
-              Fullständig ärlighets-dashboard <ArrowRight className="ml-1 h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <HonestyCard kind="matt" value="200+" label="KURSER PUBLICERADE" sub="20 grundläggande AKM1 + 287 fördjupande." />
-            <HonestyCard kind="matt" value="99" label="SIDOR PER ANALYS" sub="Institutionsdjup. Varje siffra hyperlänkad till källa." />
-            <HonestyCard kind="metodmal" value="5 / 8" label="AI-ORGAN I DRIFT" sub="Vi siktar på 8 synkrona organ. Idag är 5 live." />
-            <HonestyCard kind="matt" value="0" label="PUSH-NOTISER OM PRISER" sub="Pro-metod. Du bestämmer när du tittar." />
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────── GÅ VIDARE ───────────── */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-          <Eyebrow>◆ Fortsätt utforska</Eyebrow>
-          <h2 className="mt-3 font-serif text-3xl font-bold">Gå vidare</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <CtaCard
-              title="Läs PREC-analysen"
-              sub="99 sidor institutionell analys"
-              onClick={() => setSection("prec")}
-            />
-            <CtaCard
-              title="Börja med Power 20"
-              sub="19 fundamentala variabler"
-              onClick={() => setSection("kurser")}
-            />
-            <CtaCard
-              title="Öppna Labbet"
-              sub="Analys-konsolen"
-              onClick={() => setSection("labb")}
-            />
           </div>
         </div>
       </section>
     </div>
-  );
-}
-
-/* ---------- sub-components ---------- */
-
-function NumberStat({
-  value,
-  label,
-  kind,
-  caption,
-}: {
-  value: string;
-  label: string;
-  kind: "matt" | "metodmal";
-  caption: string;
-}) {
-  return (
-    <div className="text-center sm:text-left">
-      <div className="flex items-center justify-center gap-2 sm:justify-start">
-        <HonestyTag kind={kind} />
-      </div>
-      <p className="mt-2 font-serif text-5xl font-bold leading-none">{value}</p>
-      <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </p>
-      <p className="mt-2 text-xs text-muted-foreground leading-relaxed max-w-xs mx-auto sm:mx-0">
-        {caption}
-      </p>
-    </div>
-  );
-}
-
-function StepCard({
-  num,
-  title,
-  body,
-  cta,
-  icon,
-  onClick,
-}: {
-  num: string;
-  title: string;
-  body: string;
-  cta: string;
-  icon: React.ReactNode;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="group flex flex-col items-start rounded-lg border border-border bg-card p-5 text-left transition-all hover:border-gold/50 hover:shadow-md"
-    >
-      <div className="flex items-center gap-3">
-        <span className="font-serif text-3xl font-bold text-gold">{num}</span>
-        <span className="text-gold">{icon}</span>
-      </div>
-      <h3 className="mt-3 font-serif text-lg font-bold">{title}</h3>
-      <p className="mt-1 text-sm text-muted-foreground">{body}</p>
-      <span className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold group-hover:underline">
-        {cta}
-      </span>
-    </button>
-  );
-}
-
-function TierCard({
-  tier,
-  title,
-  body,
-  cta,
-  onClick,
-  highlight = false,
-}: {
-  tier: string;
-  title: string;
-  body: string;
-  cta: string;
-  onClick: () => void;
-  highlight?: boolean;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`group flex flex-col rounded-lg border p-6 text-left transition-all hover:shadow-lg ${
-        highlight
-          ? "border-gold bg-gradient-to-br from-card to-gold/[0.04]"
-          : "border-border bg-card hover:border-gold/50"
-      }`}
-    >
-      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
-        {tier}
-      </span>
-      <h3 className="mt-2 font-serif text-xl font-bold">{title}</h3>
-      <p className="mt-2 flex-1 text-sm text-muted-foreground">{body}</p>
-      <span className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold group-hover:underline">
-        {cta} →
-      </span>
-    </button>
-  );
-}
-
-function HonestyCard({
-  kind,
-  value,
-  label,
-  sub,
-}: {
-  kind: "matt" | "metodmal";
-  value: string;
-  label: string;
-  sub: string;
-}) {
-  return (
-    <div className="rounded-lg border border-border bg-card p-5">
-      <HonestyTag kind={kind} />
-      <p className="mt-3 font-serif text-4xl font-bold leading-none">{value}</p>
-      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </p>
-      <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{sub}</p>
-    </div>
-  );
-}
-
-function CtaCard({
-  title,
-  sub,
-  onClick,
-}: {
-  title: string;
-  sub: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="group flex items-center justify-between rounded-lg border border-border bg-card p-5 text-left transition-all hover:border-gold/50 hover:shadow-md"
-    >
-      <span>
-        <span className="block font-serif text-lg font-bold">{title}</span>
-        <span className="block text-xs text-muted-foreground">{sub}</span>
-      </span>
-      <ChevronRight className="h-5 w-5 text-gold transition-transform group-hover:translate-x-1" />
-    </button>
   );
 }

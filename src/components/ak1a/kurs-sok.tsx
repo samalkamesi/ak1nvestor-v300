@@ -108,9 +108,10 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
           <span aria-hidden>🔒</span>
           <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
           <span>
-            Fas 2 — den fundamentala vägen till oberoende analytiker (18 kurser). Fas 3 —
-            det dynamiska ekosystemet: vågor, teknisk analys och psykologi (24 kurser).
-            Öppnas med medlemskap.
+            Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18
+            mästarverks-kurser; ingen teknisk analys-utbildning). Fas 3 — det
+            dynamiska ekosystemet: vågor, teknisk analys på mästarnivå och
+            psykologi (24 kurser). Öppnas med medlemskap.
           </span>
           <Link href="/fas2-ansok" className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
             Fas 2 →

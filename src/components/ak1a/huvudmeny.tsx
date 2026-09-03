@@ -36,17 +36,18 @@ const PANELER: MenyPanel[] = [
     // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING (avdelare = icke-klickbara rubriker).
     // Labbar lämnar panelen (10 punkter blev för många) — finns kvar i sökindexet.
     punkter: [
-      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangerade efter påverkan" },
-      { avdelare: "Grundänkning" },
+      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangordnade efter påverkan" },
+      { avdelare: "Grundtänkande" },
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
       { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
       { avdelare: "Skannar" },
       { text: "Konfluensradarn", lank: "/konfluens", ikon: "📡", beskrivning: "Där värde möter vågor — fem källor måste tala samman" },
-      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live" },
+      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigarettfimpar — NCAV-screening live" },
       { text: "Portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live" },
       { avdelare: "Fördjupning" },
       { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
       { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
+      { text: "Portföljforskning", lank: "/portfolj-forskning", ikon: "📡", beskrivning: "Välj risknivå — motorn forskar fram en portfölj" },
       { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
       { text: "AI-Diagnos", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
     ],

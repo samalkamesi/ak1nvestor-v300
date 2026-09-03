@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor } from "@/lib/member-local";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 
 /** Certifikat — auto-genererad visuell proof på kompetens. Delbar. */
 export function Certifikat() {
@@ -63,7 +64,10 @@ export function Certifikat() {
 
         {/* Header */}
         <div className="relative text-center">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold">AK1A RESEARCH LAB</p>
+          <div className="flex justify-center">
+            <VarumarkesLogo storlek="sm" />
+          </div>
+          <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-gold">AK1A RESEARCH LAB</p>
           <div className="mx-auto mt-3 h-0.5 w-24 bg-gold/40" />
           <h1 className="mt-6 font-serif text-3xl font-bold tracking-tight">
             Intyg på Kompetens

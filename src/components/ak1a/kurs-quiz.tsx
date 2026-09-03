@@ -45,7 +45,7 @@ export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr:
   };
 
   return (
-    <div className="mt-4 rounded-xl border-2 border-gold/40 bg-paper p-4">
+    <div data-chat-anker="quiz" className="mt-4 scroll-mt-24 rounded-xl border-2 border-gold/40 bg-paper p-4">
       <div className="flex items-center justify-between">
         <p className="text-xs font-bold uppercase tracking-widest text-gold">
           🧠 Masterquiz — kapitel {kapitelNr}

@@ -288,7 +288,7 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
     case "kurslista":
       forslag.push(
         { text: "Läroplanen (5 nivåer)", lank: "/laroplan", ikon: "🗺️", beskrivning: "Din väg genom spåret" },
-        { text: "BOKMASTER (78 böcker)", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Klassikerna kapitel för kapitel" },
+        { text: `BOKMASTER (${SIFFROR.bokmaster} böcker)`, lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Klassikerna kapitel för kapitel" },
         { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "Spaced repetition" },
       );
       break;
@@ -457,7 +457,7 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
     case "blogg":
       forslag.push(
         { text: "Fortsätt lära", lank: "/laroplan", ikon: "🌱", beskrivning: "Strukturerad utbildning" },
-        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "35 artiklar" },
+        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "Hela bloggarkivet" },
       );
       break;
     case "labb":
@@ -523,6 +523,12 @@ export function ChatWidget() {
   // ── KONVERSATIONSMINNET "I DJUPET" (ak1a-chat-minne-v1) ──
   // Antal elevfrågor i minnet — visas i panelen + skickas som historik
   const [minneAntal, setMinneAntal] = useState(0);
+
+  // ── SAMMANHANGSKONTEXT — senaste ämnet (t.ex. "v09") skickas som `kontext`
+  //    så att mentorn förstår följdfrågor ("och P/E?" efter ett samtal om ROE).
+  //    Backwards-kompatibelt: serversidan klarar sig utan (faller tillbaka på
+  //    historiken). Bakåtkompatibelt även för äldre svar utan `amne`.
+  const [senasteAmne, setSenasteAmne] = useState<string | null>(null);
 
   // ── SPACED REPETITION-session i chatten ──
   const [srAktiv, setSrAktiv] = useState(false);
@@ -692,13 +698,22 @@ export function ChatWidget() {
       const res = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fraga: q, sokvag: pathname, historik: senasteHistorik(HISTORIK_FONSTER) }),
+        body: JSON.stringify({
+          fraga: q,
+          sokvag: pathname,
+          historik: senasteHistorik(HISTORIK_FONSTER),
+          kontext: senasteAmne ?? undefined, // senaste ämnet → följdfrågor
+          niva: ctx.niva || undefined,       // nivå → "nästa steg" blir personligt
+        }),
       });
       const data = await res.json();
 
       const mentorText: string = data.svar || "…";
       const motfraga = data.motfraga as MotfragaChip | undefined;
       const fordjupa = data.fordjupa as Fordjupa | undefined;
+
+      // Ämnet i svaret blir nästa frågas kontext ("och P/E?" förstås rätt)
+      if (typeof data.amne === "string" && data.amne) setSenasteAmne(data.amne);
 
       // Mentorns svar sparas i djupet — med motfråge-markören ("💬 Motfråga (…)")
       // som serversidan läser för bakåtreferenser och rotationslogiken
@@ -768,6 +783,45 @@ export function ChatWidget() {
     tryckY.current = null;
   };
 
+  /**
+   * Mjukscroll till sektion — med smarta fallbacks när ankaret saknas på den
+   * aktuella sidan: #quiz → första kapitelquiz:et (data-chat-anker), #guide →
+   * kalkylatorns rapportguide-flik (klickas fram och scrollas till), #djup →
+   * portföljens djupanalys. Finns målet inte på sidan alls navigeras eleven
+   * till rätt sida — en handlingsknapp ska aldrig vara död.
+   */
+  const gaTillAnkare = (lank: string) => {
+    const sektion = document.querySelector(lank);
+    if (sektion) {
+      sektion.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    if (lank === "#quiz") {
+      const quiz = document.querySelector('[data-chat-anker="quiz"]');
+      if (quiz) {
+        quiz.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      router.push("/kurser"); // quiz:et lever i kurserna
+      return;
+    }
+    if (lank === "#guide") {
+      const flik = document.querySelector('[data-chat-anker="guide"]') as HTMLElement | null;
+      if (flik) {
+        flik.click(); // aktiverar rapportguide-fliken (Radix-tab)
+        flik.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      router.push("/kalkylator");
+      return;
+    }
+    if (lank === "#djup") {
+      router.push("/min-portfolj");
+      return;
+    }
+    // Okänt ankare utan mål på sidan: stanna kvar (aldrig död navigation)
+  };
+
   return (
     <>
       {/* Chatt-panel — mobil: fullbredd bottom-sheet över safe-area; desktop: oförändrad hög låda */}
@@ -828,6 +882,7 @@ export function ChatWidget() {
                     if (window.confirm(`Radera mentorns minne (${minneAntal} frågor)? Kan inte ångras.`)) {
                       rensaChatMinne();
                       setMinneAntal(0);
+                      setSenasteAmne(null); // sammanhanget rensas med minnet
                       setMeddelanden((p) => [...p, {
                         fran: "ai",
                         ikon: "🧠",
@@ -989,8 +1044,8 @@ export function ChatWidget() {
                             // Konvention: "#" = starta spaced repetition i chatten
                             startaSR();
                           } else if (h.lank.startsWith("#")) {
-                            // Scroll till sektion på samma sida
-                            document.querySelector(h.lank)?.scrollIntoView({ behavior: "smooth" });
+                            // Scroll till sektion på samma sida (med fallbacks)
+                            gaTillAnkare(h.lank);
                           } else {
                             router.push(h.lank);
                           }

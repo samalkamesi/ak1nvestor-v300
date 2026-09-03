@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { SIFFROR } from "@/lib/siffror";
 import { getCourses, getBlogPosts } from "@/lib/content";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
+import { EKOSYSTEM } from "@/lib/ekosystem";
+import {
+  normaliseraFraga,
+  hamtaAmne,
+  arFoljdfraga,
+  type AmnesNyckel,
+  type NormaliseradFraga,
+} from "@/lib/chatbot-nlu";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
 export const runtime = "nodejs";
@@ -182,8 +190,9 @@ function navigera(fraga: string): Intent | null {
     ]};
   }
 
-  // UTBILDNING — eleven vill lära sig
-  if (/lär|utbild|förstå|förklara|vad är|hur fungerar|börja/.test(q)) {
+  // UTBILDNING — eleven vill lära sig (obs: bart "vad är" tas INTE här —
+  // okända ämnen ska nå ämnesmotorn → kursmatch → ärlig fallback)
+  if (/lär|utbild|förstå|förklara|hur fungerar|börja|kom igång/.test(q)) {
     return { typ: "utbildning", handlings: [
       { text: "Börja här: Läroplanen Nivå 1", lank: "/laroplan", ikon: "🌱" },
       { text: "V09: ROE (viktigaste variabeln)", lank: "/kurser/v09-roe", ikon: "📊" },
@@ -218,12 +227,12 @@ function navigera(fraga: string): Intent | null {
     ]};
   }
 
-  // SYSTEM — eleven frågar om systemet
-  if (/system|ekosystem|ai|organ|hur fungerar sidan/.test(q)) {
+  // SYSTEM — eleven frågar om systemet (\bai\b: ordet AI, inte delsträngen)
+  if (/system|ekosystem|\bai\b|organ|hur fungerar sidan/.test(q)) {
     return { typ: "system", handlings: [
-      { text: "AI-organens status", lank: "/api/autonom/status", ikon: "🤖" },
-      { text: "Styrelsens beslut", lank: "/api/styrelse/beslut", ikon: "🏛️" },
-      { text: "Ekosystem-kursen", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
+      { text: "Min sida (din dashboard) →", lank: "/min-sida", ikon: "🏠", beskrivning: "Autonom aktivitet + vågkorta" },
+      { text: "Om oss (ekosystemet) →", lank: "/om-oss", ikon: "🏛️", beskrivning: "Historien och modellerna" },
+      { text: "Ekosystem-kursen →", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
     ]};
   }
 
@@ -236,12 +245,17 @@ function navigera(fraga: string): Intent | null {
  * inga klassificeringströsklar, formler eller bekräftelseregler (de stannar i motorn).
  */
 function vagfundamentSvar(
-  fraga: string
+  fraga: string,
+  ren: string
 ): { svar: string; handlings: Array<{ text: string; lank: string; ikon: string }> } | null {
   const q = fraga.toLowerCase();
 
+  // Ren (normaliserad) sträng tillåter bart "våg"/"vågor" — men vagkarta och
+  // vågkon testas FÖRE detta lager i POST, så de stjäl aldrig frågan.
   const triggar =
     /vågfundament|fundamentalvåg|fundamental våg|variabelns våg|vågklass|vågmatris|våg-matris|divergens|20\s*[×x]\s*5/.test(q) ||
+    /vagfundament|fundamentalvag|vagklass|vagmatris|divergens|20\s*[x]\s*5/.test(ren) ||
+    /\bvag/.test(ren) ||
     (/våg/.test(q) && (/v\d{2}/.test(q) || /mikro|medellång|mega|horisont/.test(q)));
   if (!triggar) return null;
 
@@ -282,7 +296,7 @@ function vagfundamentSvar(
     ? `\nDivergens: när fundamentalvågen och prisvågen pekar olika (t.ex. fundamental ▲ men pris ▼) är det en värde-signal att studera — aldrig en köp- eller säljsignal.`
     : "";
 
-  const svar = `[VÅGFUNDAMENT] Källa: Vågfundamentet — AKM1:s 20 variabler som tidsserier (20×5-matrisen).
+  const svar = `Bra fråga — här är grunderna i Vågfundamentet (källa: AKM1:s 20 variabler som tidsserier, 20×5-matrisen).
 ${rad}
 Vågklasser (varje cell = variabel × horisont):
 • ▲ impulsvåg — fundamentalen rör sig uppåt: variabeln förbättras
@@ -302,50 +316,672 @@ Pedagogisk analys — inte investeringsråd.`;
   };
 }
 
-/** AKM1-variabel svar med handlings-knappar */
-function akm1Svar(fraga: string): { svar: string; handlings: Array<{ text: string; lank: string; ikon: string }> } | null {
-  const q = fraga.toLowerCase();
+// ── ÄMNESMOTORN: V-registret + mänsklig svarskomponist ──────────────────────
+// Varje ämne som NLU-lagret (chatbot-nlu.ts) kan känna igen har en post här.
+// Typningen Record<AmnesNyckel, VPost> garanterar vid kompilering att INGET
+// igenkänt ämne saknar svar. Tal (antal variabler, poängskala) hämtas ur
+// EKOSYSTEM (src/lib/ekosystem.ts) — kanonen — aldrig hårdkodat.
 
-  const VAR: Record<string, { svar: string; lank: string }> = {
-    "roe": { svar: "V09 ROE = resultat / snitt EK.\nPoäng: ≥20%=5, ≥15%=4, ≥10%=3, ≥5%=2.\nHur räknar du? → Kursen + kalkylatorn nedan.", lank: "/kurser/v09-roe" },
-    "bruttomarginal": { svar: "V07 Bruttomarginal = (omsättning − rörelsens kostnader) / omsättning.\n≥60%=5, ≥40%=4, ≥25%=3.\nVar hittar du den? → Resultaträkningen, rad 2.", lank: "/kurser/v07-bruttomarginal" },
-    "p/s": { svar: "V04 P/S = börsvärde / omsättning.\n<1=5, <2=4, <3=3, <5=2.\nRäkna själv → Kalkylatorn.", lank: "/kurser/v04-ps" },
-    "moat": { svar: "AKM1 Moat = V13 (patent) + V14 (varumärke) + V15 (nätverkseffekter).\nMoat = varaktig konkurrensfördel som skyddar vinster.", lank: "/kurser/v13-patent-ip" },
-    "marginal of safety": { svar: "Grahams kärnbegrepp: köp till 30-50% under beräknat värde.\nBron byggd för 30 ton, lasten 10 ton = överlev att ha fel.", lank: "/kurser/the-intelligent-investor" },
-    "mr market": { svar: "Mr Market = din partner som erbjuder pris VARJE DAG efter humör.\nEuforisk dag: köper dyrt. Deprimerad: säljer billigt.\nDu kan ignorera honom — han kommer tillbaka imorgon.", lank: "/kurser/the-intelligent-investor" },
-    "ekosystem": { svar: "AK1A Ecosystem:\n• AKM1: 20 fundamentalvariabler (V01-V20)\n• AK1TS: 5 teorier × 5 horisonter × 4 dimensioner = 100 datapunkter\n• 5×5×4 = total bild på 100 datapunkter", lank: "/kurser/portfolj-ekosystemet" },
-    "kalkylator": { svar: "AKM1-kalkylatorn: 20 variabler, tre flikar:\n1. Räkna med egna siffror (formler + auto-poäng)\n2. Poängsätt manuellt (reglage)\n3. Var hittar jag siffrorna? (rapportguide)", lank: "/kalkylator" },
-    "portfölj": { svar: "Portföljsystemet: lägg in aktier → AKM1 per aktie → vågprofil → djupanalys med Python.\nAllt på en sida.", lank: "/min-portfolj" },
-    "tillväxt": { svar: "AKM1 Tillväxt = V01 (försäljning) + V02 (ARR) + V03 (diversifiering).\nAlla tre mäter olika aspekter av tillväxtkvalitet.", lank: "/kurser/v01-forsaljningstillvaxt" },
-    "risk": { svar: "AKM1 Risk = V19 (kassatäckning — nyemissionsrisk) + V10 (skuldsättningsgrad).\nRisk = inte bara volatilitet utan permanent förlust-kapital.", lank: "/kurser/v19-kapitalforbranning" },
-  };
+type VPost = {
+  /** "V09" — saknas för koncept utanför de 20 variablerna (P/E, moat …). */
+  vId?: string;
+  namn: string;
+  kategori: string;
+  /** Kärnrader — varje sträng blir egen rad i svaret. */
+  karna: string[];
+  /** Konkret räkneexempel i SEK — påhittat men realistiskt (ärligt märkt). */
+  exempel: string;
+  /** Naturliga fortsättningsfrågor — roteras. */
+  fortfragor: string[];
+  /** Kurs-slug ("v09-roe") eller absolut sökväg ("/kalkylator"). */
+  kurs: string;
+  /** Helt egen handlingslista (ersätter standarduppsättningen). */
+  egenaHandlingar?: Handling[];
+  /** Värderingsnärt ämne → disclaimern läggs på. */
+  varde?: boolean;
+};
 
-  for (const [nyckel, data] of Object.entries(VAR)) {
-    if (q.includes(nyckel)) {
-      return {
-        svar: `[AKM1] ${data.svar}`,
-        handlings: [
-          { text: "Läs kursen →", lank: data.lank, ikon: "📚" },
-          { text: "Räkna i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
-          { text: "Se alla 20 variabler →", lank: "/kurser", ikon: "📊" },
-        ],
-      };
-    }
-  }
+const V_REGISTRET: Record<AmnesNyckel, VPost> = {
+  v01: {
+    vId: "V01", namn: "Försäljningstillväxt", kategori: "Tillväxt",
+    karna: [
+      "Formel: (Årets nettoomsättning − förra årets) ÷ förra årets × 100 %.",
+      "Poängskala: ≥30 % → 5p · ≥20 % → 4p · ≥10 % → 3p · ≥0 % → 2p · negativ tillväxt → 1p.",
+      "Var hittar du siffrorna: resultaträkningen, raden 'Nettoomsättning' — båda åren står bredvid varandra.",
+    ],
+    exempel: "Ett påhittat bolag: omsättning 1 000 Mkr förra året och 1 200 Mkr i år → (1 200 − 1 000) ÷ 1 000 = 20 % → 4 poäng.",
+    fortfragor: [
+      "Ska vi titta på V02 ARR-tillväxt också — de två mäter olika slags tillväxt?",
+      "Vill du se hela tillväxtkategorin i kalkylatorn? V01–V03 visas tillsammans.",
+    ],
+    kurs: "v01-forsaljningstillvaxt",
+  },
+  v02: {
+    vId: "V02", namn: "ARR-tillväxt", kategori: "Tillväxt",
+    karna: [
+      "Formel: (Årets ARR − förra årets ARR) ÷ förra årets ARR × 100 % — ARR är årliga återkommande intäkter (SaaS-bolag).",
+      "Så poängsätts det: kvalitativt med reglaget 0–5 i AKM1 — nivå OCH hållbarhet vägs samman.",
+      "Var hittar du siffrorna: förvaltningsberättelsen eller presentationen — sök 'ARR'.",
+    ],
+    exempel: "Ett påhittat SaaS-bolag: ARR 42 Mkr → 55 Mkr på ett år → (55 − 42) ÷ 42 ≈ 31 % ARR-tillväxt.",
+    fortfragor: [
+      "Vill du se skillnaden mot V01 — omsättning är inte samma sak som ARR?",
+      "Ska vi kolla V03 efteråt? Tillväxt utan spridning är skör.",
+    ],
+    kurs: "v02-arr-tillvaxt",
+  },
+  v03: {
+    vId: "V03", namn: "Intäktsdiversifiering", kategori: "Tillväxt",
+    karna: [
+      "Så mäts det: största kundens andel av omsättningen + spridning över segment och marknader.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5 — ju bredare spridning, desto högre.",
+      "Var hittar du siffrorna: noten om segment/intäktsfördelning + storkundsnoten.",
+    ],
+    exempel: "Ett påhittat bolag: storkunden står för 45 % av omsättningen → sårbart, låg poäng. Spridning över 40 kunder med max 8 % vardera → robust, hög poäng.",
+    fortfragor: [
+      "Vill du läsa hur en storkundsnot ser ut i en riktig årsredovisning?",
+      "Ska vi väga ihop hela tillväxtkategorin (V01–V03) i kalkylatorn?",
+    ],
+    kurs: "v03-intaktsdiversifiering",
+  },
+  v04: {
+    vId: "V04", namn: "P/S", kategori: "Värdering",
+    karna: [
+      "Formel: P/S = börsvärde ÷ nettoomsättning (helst rullande 12 månader).",
+      "Poängskala: <1 → 5p · <2 → 4p · <3 → 3p · <5 → 2p · ≥5 → 1p.",
+      "Var hittar du siffrorna: börsvärde = aktiekurs × antal aktier; omsättning = resultaträkningens första rad.",
+    ],
+    exempel: "Ett påhittat bolag: börsvärde 6 000 Mkr och omsättning 3 000 Mkr → P/S = 2,0 → 3 poäng.",
+    fortfragor: [
+      "Vill du jämföra med V05 P/B och V06 EV/EBITDA — tre multiplicerar som måste berätta samma historia?",
+      "Ska vi räkna P/S för ett bolag du följer? Kalkylatorn gör det automatiskt.",
+    ],
+    kurs: "v04-ps", varde: true,
+  },
+  v05: {
+    vId: "V05", namn: "P/B", kategori: "Värdering",
+    karna: [
+      "Formel: P/B = börsvärde ÷ eget kapital.",
+      "Poängskala: <1 → 5p · <2 → 4p · <3 → 3p · <5 → 2p · ≥5 → 1p.",
+      "Var hittar du siffrorna: balansräkningen — 'Eget kapital' (jämför gärna med 5-årigt snitt i noterna).",
+    ],
+    exempel: "Ett påhittat bolag: börsvärde 6 000 Mkr och eget kapital 4 000 Mkr → P/B = 1,5 → 4 poäng.",
+    fortfragor: [
+      "Vill du se varför P/B ensamt kan lura — ett eget kapital kan vara gammalt eller övervärderat?",
+      "Ska vi titta på Graham-nivån under det: NCAV och net-net?",
+    ],
+    kurs: "v05-pb", varde: true,
+  },
+  v06: {
+    vId: "V06", namn: "EV/EBITDA", kategori: "Värdering",
+    karna: [
+      "Formel: EV/EBITDA = (börsvärde + räntebärande skulder − kassa) ÷ EBITDA.",
+      "Poängskala: <5 → 5p · <7 → 4p · <10 → 3p · <14 → 2p · ≥14 → 1p.",
+      "Var hittar du siffrorna: skulder och kassa i balansräkningen; EBITDA = rörelseresultat + avskrivningar (kassaflödesanalysen).",
+    ],
+    exempel: "Ett påhittat bolag: EV = 6 000 + 1 500 − 500 = 7 000 Mkr mot EBITDA 1 000 Mkr → 7,0x → 2 poäng.",
+    fortfragor: [
+      "Vill du se skillnaden mot P/S — EV/EBITDA straffar skuld, P/S gör det inte?",
+      "Ska vi räkna hela värderingskategorin (V04–V06) i kalkylatorn?",
+    ],
+    kurs: "v06-ev-ebitda", varde: true,
+  },
+  v07: {
+    vId: "V07", namn: "Bruttomarginal", kategori: "Lönsamhet",
+    karna: [
+      "Formel: (nettoomsättning − rörelsens kostnader) ÷ nettoomsättning × 100 %.",
+      "Poängskala: ≥60 % → 5p · ≥40 % → 4p · ≥25 % → 3p · ≥10 % → 2p · <10 % → 1p.",
+      "Var hittar du siffrorna: resultaträkningen — vissa bolag redovisar bruttovinst direkt. OBS: jämför med 5-års historik.",
+      "Notera: bruttomarginal är markerad KRITISK i kalkylatorn — den väger extra tungt.",
+    ],
+    exempel: "Ett påhittat bolag: omsättning 1 000 Mkr och rörelsens kostnader 550 Mkr → (1 000 − 550) ÷ 1 000 = 45 % → 4 poäng.",
+    fortfragor: [
+      "Vill du se vad en stigande bruttomarginal gör med V09 ROE — mekaniken är fin att se?",
+      "Ska vi räkna bruttomarginal för ett bolag du följer? Två rader i årsredovisningen räcker.",
+    ],
+    kurs: "v07-bruttomarginal",
+  },
+  v08: {
+    vId: "V08", namn: "EBITDA-marginal", kategori: "Lönsamhet",
+    karna: [
+      "Formel: (rörelseresultat + avskrivningar) ÷ nettoomsättning × 100 %.",
+      "Poängskala: ≥25 % → 5p · ≥15 % → 4p · ≥10 % → 3p · ≥5 % → 2p · <5 % → 1p.",
+      "Var hittar du siffrorna: rörelseresultatet i resultaträkningen; avskrivningarna i kassaflödesanalysen.",
+      "Obs: 'vinstmarginal' (efter finansiella poster och skatt) är inte samma sak — men rätt variabel att börja i.",
+    ],
+    exempel: "Ett påhittat bolag: EBITDA 180 Mkr på omsättning 1 000 Mkr → 18 % → 4 poäng.",
+    fortfragor: [
+      "Vill du se hur bruttomarginal (V07) och EBITDA-marginal (V08) skiljer sig — kostnadsperspektivet är nyckeln?",
+      "Ska vi gå vidare till V09 ROE — lönsamhetens slutstation?",
+    ],
+    kurs: "v08-ebitda-marginal",
+  },
+  v09: {
+    vId: "V09", namn: "ROE", kategori: "Lönsamhet",
+    karna: [
+      "Formel: ROE = resultat efter skatt ÷ snitt eget kapital (balansräkningen, årets början + slut).",
+      "Poängskala: ≥20 % → 5p · ≥15 % → 4p · ≥10 % → 3p · ≥5 % → 2p · <5 % → 1p.",
+      "Var hittar du siffrorna: årets resultat = resultaträkningens nedersta rad; eget kapital båda tidpunkterna i balansräkningen.",
+      "Warren Buffetts favoritvariabel — han söker ROE över 15 % i längden.",
+    ],
+    exempel: "Ett påhittat bolag: årets resultat 250 Mkr, eget kapital 1 100 Mkr vid årets början och 1 400 Mkr vid slutet → snitt 1 250 Mkr → ROE = 250 ÷ 1 250 = 20 % → 5 poäng.",
+    fortfragor: [
+      "Vill du se hur ROE ser ut för ett riktigt svenskt bolag? Analysbanken visar verkliga exempel.",
+      "Ska vi räkna ROE för ett bolag du följer? Kalkylatorn gör det automatiskt.",
+    ],
+    kurs: "v09-roe",
+  },
+  v10: {
+    vId: "V10", namn: "Skuldsättningsgrad", kategori: "Stabilitet",
+    karna: [
+      "Formel: skulder och övriga förpliktelser ÷ eget kapital.",
+      "Poängskala: <0,5 → 5p · <1 → 4p · <2 → 3p · <3 → 2p · ≥3 → 1p.",
+      "Var hittar du siffrorna: balansräkningen — hela posten 'Skulder och övriga förpliktelser' (både lång- och kortfristiga).",
+    ],
+    exempel: "Ett påhittat bolag: skulder 1 500 Mkr och eget kapital 4 000 Mkr → 0,38 → 5 poäng.",
+    fortfragor: [
+      "Vill du para ihop det med V19 — skuld är en risk bara när kassan inte räcker?",
+      "Ska vi kolla hur skuldsättningsgraden påverkar hela stabilitetskategorin?",
+    ],
+    kurs: "v10-skuldsattningsgrad",
+  },
+  v11: {
+    vId: "V11", namn: "Likviditet", kategori: "Stabilitet",
+    karna: [
+      "Så mäts det: omsättningstillgångar ÷ kortfristiga skulder (kvickkvot) — båda räkenskapsåren.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5 — kan bolaget betala sina korta åtaganden, gång på gång?",
+      "Var hittar du siffrorna: balansräkningens översta och nedersta poster.",
+    ],
+    exempel: "Ett påhittat bolag: omsättningstillgångar 900 Mkr mot kortfristiga skulder 450 Mkr → kvickkvot 2,0 — kortfristiga åtaganden täcks två gånger om.",
+    fortfragor: [
+      "Vill du se skillnaden mot V19 — likviditet är läget idag, kassatäckning är hur länge det räcker?",
+      "Ska vi titta på V12 intäktsstabilitet, som gör likviditeten förutsägbar?",
+    ],
+    kurs: "v11-likviditet",
+  },
+  v12: {
+    vId: "V12", namn: "Intäktsstabilitet", kategori: "Stabilitet",
+    karna: [
+      "Så mäts det: 5 års nettoomsättning — hur jämn kurvan är.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5 — stadig kurva utan svängar ger högt.",
+      "Var hittar du siffrorna: årsredovisningens 5-årsöversikt (oftast sist i påstådda nyckeltal).",
+    ],
+    exempel: "Påhittad 5-årsserie: 800 / 850 / 870 / 910 / 950 Mkr → stadig stigning → hög poäng. Serien 400 / 900 / 300 / 1 000 / 500 Mkr → berg- och dalbana → låg.",
+    fortfragor: [
+      "Vill du se hur stabil intäkt + låg skuld tillsammans bygger moat?",
+      "Ska vi gå vidare till Moat-kategorin (V13–V15)?",
+    ],
+    kurs: "v12-intaktsstabilitet",
+  },
+  v13: {
+    vId: "V13", namn: "Patent & IP", kategori: "Moat",
+    karna: [
+      "Så mäts det: patentfamiljer, skyddstid och hur kärnan i verksamheten är skyddad.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: noten om immateriella tillgångar + förvaltningsberättelsen.",
+    ],
+    exempel: "Ett påhittat bolag: 12 patentfamiljer med i snitt 8 års kvarvarande skydd kring kärntekniken → en verklig vallgrav.",
+    fortfragor: [
+      "Vill du se hur V13 + V14 + V15 tillsammans bildar hela moat-frågan?",
+      "Ska vi kolla V14 varumärke — den mjukaste men starkaste vallgraven?",
+    ],
+    kurs: "v13-patent-ip",
+  },
+  v14: {
+    vId: "V14", namn: "Varumärke & kundlojalitet", kategori: "Moat",
+    karna: [
+      "Så mäts det: kan bolaget ta högre pris än konkurrenterna utan att tappa kunder?",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: förvaltningsberättelsen, kundnoten, marknadsandelsuppgifter.",
+    ],
+    exempel: "Ett påhittat bolag: varumärket bär 15–20 % högre prissättning än konkurrenternas — utan volymförlust. Det är en vallgrav mätt i kronor.",
+    fortfragor: [
+      "Vill du se hur varumärke syns i siffrorna — bruttomarginal (V07) är ofta spåret?",
+      "Ska vi titta på V15 nätverkseffekter, den tredje moat-halvan?",
+    ],
+    kurs: "v14-varumarke",
+  },
+  v15: {
+    vId: "V15", namn: "Nätverkseffekter", kategori: "Moat",
+    karna: [
+      "Så mäts det: blir tjänsten mer värd för varje ny användare — och syns det i kundantalet?",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: förvaltningsberättelsen; kundantal över tid.",
+    ],
+    exempel: "Ett påhittat bolag: kundbasen växte 40 → 90 tusen nästan utan marknadsföringskostnad — varje ny kund gjorde tjänsten värdefullare för alla andra.",
+    fortfragor: [
+      "Vill du se vilka svenska bolag som har nätverkseffekter — de är sällsynta?",
+      "Ska vi gå vidare till katalysatorerna (V16–V18)?",
+    ],
+    kurs: "v15-natverkseffekter",
+  },
+  v16: {
+    vId: "V16", namn: "Produktlanseringar", kategori: "Katalysator",
+    karna: [
+      "Så mäts det: kommande lanseringar i pipelinen — storlek och tidpunkt.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: förvaltningsberättelsens avsnitt om pipeline/kommande lanseringar.",
+    ],
+    exempel: "Ett påhittat bolag: pipeline med två lanseringar inom 12 månader mot en adresserbar marknad på 2 Mdr kr — en katalysator att följa, inte att förutsäga.",
+    fortfragor: [
+      "Vill du se hur en katalysator skiljer sig från en våg — sannolikhet mot rörelse?",
+      "Ska vi kolla V17 avtal & partnerskap?",
+    ],
+    kurs: "v16-produktlanseringar",
+  },
+  v17: {
+    vId: "V17", namn: "Avtal & Partnerskap", kategori: "Katalysator",
+    karna: [
+      "Så mäts det: viktiga avtal och partnerskap — värde, löptid och trovärdighet.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: pressmeddelanden + förvaltningsberättelsens 'viktiga avtal'.",
+    ],
+    exempel: "Ett påhittat bolag: ramavtal med en global distributör värt uppskattningsvis 150 Mkr per år — om det infrias syns det i V01 inom ett år.",
+    fortfragor: [
+      "Vill du lära dig läsa pressmeddelanden med källkritik — vem har intresse av formuleringen?",
+      "Ska vi titta på V18 regulatoriska katalysatorer?",
+    ],
+    kurs: "v17-avtal-partnerskap",
+  },
+  v18: {
+    vId: "V18", namn: "Regulatoriska katalysatorer", kategori: "Katalysator",
+    karna: [
+      "Så mäts det: väntande myndighetsbeslut som kan öppna eller stänga marknader.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: riskavsnittet i förvaltningsberättelsen + myndighetsbeslut.",
+    ],
+    exempel: "Ett påhittat bolag: väntande godkännande — ja öppnar en ny marknad, nej fryser pipelinen. En binär händelse: följ beslutet, spekulera aldrig i det.",
+    fortfragor: [
+      "Vill du se hur riskavsnittet i en årsredovisning ser ut — dit går nyckeln?",
+      "Ska vi ta V19 — risken som mäts i månader?",
+    ],
+    kurs: "v18-regulatoriska",
+  },
+  v19: {
+    vId: "V19", namn: "Kassatäckning — nyemissionsrisk", kategori: "Risk",
+    karna: [
+      "Formel: kassa ÷ |årlig förbränning| → antal månaders runway.",
+      "Poängskala: positivt kassaflöde → 5p · ≥60 mån → 5p · ≥36 → 4p · ≥18 → 3p · ≥12 → 2p · <12 → 1p.",
+      "Var hittar du siffrorna: kassan i balansräkningen; förbränningen = kassaflödet från den löpande verksamheten. Kontrollera nyemissionshistoriken!",
+      "Notera: markerad KRITISK i kalkylatorn — utspädningsrisken äter framtida avkastning.",
+    ],
+    exempel: "Ett påhittat bolag: kassa 240 Mkr och förbränning −60 Mkr per år → 48 månaders runway → 4 poäng.",
+    fortfragor: [
+      "Vill du se hur en nyemission späder ut ditt ägande — mekaniken är värd att känna igen?",
+      "Ska vi para ihop V19 med V10 — hela riskkategorin på en gång?",
+    ],
+    kurs: "v19-kapitalforbranning",
+  },
+  v20: {
+    vId: "V20", namn: "Återköp av egna aktier", kategori: "Kapitalstruktur",
+    karna: [
+      "Så mäts det: återköpensvolym i förhållande till börsvärdet + insiderköp (VD/styrelse) som komplement.",
+      "Så poängsätts det: kvalitativt med reglaget 0–5.",
+      "Var hittar du siffrorna: bolagets not om återköp (börsen/finanskalender); insiderköp hos Finansinspektionen.",
+    ],
+    exempel: "Ett påhittat bolag: återköp för 2 Mdr kr av ett börsvärde på 20 Mdr kr = 10 % av bolaget — ledningen röstar med sina egna kronor om att aktien är undervärderad.",
+    fortfragor: [
+      "Vill du se hur återköp skiljer sig från utdelning — samma krona, olika signal?",
+      "Ska vi gå tillbaka och väva ihop alla 20 variabler i kalkylatorn?",
+    ],
+    kurs: "v20-aterekop-egna-aktier",
+  },
+  pe: {
+    namn: "P/E", kategori: "värderingsmultipel — utanför AKM1:s 20 variabler",
+    karna: [
+      "Ärligt först: P/E är INTE en av AKM1:s 20 variabler. De närmaste är V04 P/S, V05 P/B och V06 EV/EBITDA — men P/E används i Konfluensradarns värdegolv (dimension 1) tillsammans med P/B och NCAV.",
+      "Formel: P/E = börsvärde ÷ nettoresultat (eller: aktiekurs ÷ vinst per aktie).",
+      "Så läser du det: P/E 15 betyder att du betalar 15 års nuvarande vinst — men en multipel blir bara sann tillsammans med kvaliteten (V07 marginaler, V10 skuld).",
+    ],
+    exempel: "Ett påhittat bolag: aktiekurs 120 kr och vinst per aktie 8 kr → P/E = 120 ÷ 8 = 15.",
+    fortfragor: [
+      "Ska vi titta på V04 P/S istället — AKM1:s egen sätt att väga priset mot storleken?",
+      "Vill du se hur lågt P/E kan vara ett varningstecken, inte en fyndklocka?",
+    ],
+    kurs: "/konfluens", varde: true,
+    egenaHandlingar: [
+      { text: "Konfluensradarn (värdegolvet) →", lank: "/konfluens", ikon: "🧭" },
+      { text: "Räkna V04 P/S i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+      { text: "Kursen om värdering (V04) →", lank: "/kurser/v04-ps", ikon: "📚" },
+    ],
+  },
+  moat: {
+    namn: "Moat (vallgrav)", kategori: "Moat — tre AKM1-halvor",
+    karna: [
+      "AKM1:s svar på moat-frågan: V13 (patent & IP) + V14 (varumärke & kundlojalitet) + V15 (nätverkseffekter).",
+      "Moat = varaktig konkurrensfördel som skyddar vinster — inte från en kvartalsrapport, utan i åratal.",
+      "Så poängsätts det: varje halva 0–5 på eget reglage; helheten syns i kategorisnittet.",
+    ],
+    exempel: "Påhittad räkning: en vallgrav som håller 5 extra procentenheter marginal i 10 år på 1 000 Mkr omsättning ≈ 500 Mkr skyddad vinst — därför betyder moat mer än nästa kvartal.",
+    fortfragor: [
+      "Vill du utforska de tre halvorna — V13, V14 och V15 var för sig?",
+      "Ska vi se hur moat syns i bruttomarginalen (V07)? Spåret är samma.",
+    ],
+    kurs: "v13-patent-ip",
+  },
+  sakerhetsmarginal: {
+    namn: "Marginal of safety", kategori: "Grahams kärnbegrepp",
+    karna: [
+      "Principen: köp endast med marginal mellan pris och värde — Benjamin Graham sa 30–50 % rabatt mot beräknat värde.",
+      "Varför: du KOMMER att ha fel ibland. Marginalen är det som gör felen överlevbara.",
+      "I AKM1 återkommer den i värderingskategorin (V04–V06) och i Konfluensradarns värdegolv.",
+    ],
+    exempel: "Grahams bro: byggd för 30 ton, lastad med 10 ton — du överlever att ha fel. Med siffror: inneboende värde 100 kr per aktie → köp för högst 70 kr.",
+    fortfragor: [
+      "Vill du läsa Grahams egna ord — kursen går igenom hela The Intelligent Investor?",
+      "Ska vi se hur marginalen visas i Konfluensradarns värdegolv?",
+    ],
+    kurs: "the-intelligent-investor", varde: true,
+  },
+  mrmarket: {
+    namn: "Mr Market", kategori: "Grahams metafor",
+    karna: [
+      "Mr Market är din partner som erbjuder dig ett pris VARJE DAG — efter humör.",
+      "Euforisk dag: han köper dyrt. Deprimerad dag: han säljer billigt. Du kan ignorera honom — han kommer tillbaka imorgon.",
+      "I AK1A:s värde är Mr Market skälet till att värde kommer FÖRE vågor (Konfluensradarns garanti).",
+    ],
+    exempel: "En påhittad dag: Mr Market erbjuder 84 kr på morgonen (eufori) och 71 kr på eftermiddagen (dystra rubriker) — bolaget är detsamma. Det är han som förändrats, inte verksamheten.",
+    fortfragor: [
+      "Vill du träna på att skilja bolagets rörelse från marknadens humör — Labbet har case på det?",
+      "Ska vi läsa kapitlet om Mr Market i Graham-kursen?",
+    ],
+    kurs: "the-intelligent-investor",
+  },
+  ekosystem: {
+    namn: "EKOSYSTEMET", kategori: `${EKOSYSTEM.modeller.AKM1.namn} + ${EKOSYSTEM.modeller.AK1TS.namn}`,
+    karna: [
+      `AKM1: ${EKOSYSTEM.modeller.AKM1.variabler} fundamentalvariabler (V01–V20, ${EKOSYSTEM.modeller.AKM1.poangskala}) i ${EKOSYSTEM.modeller.AKM1.kategorier.length} kategorier.`,
+      `AK1TS: ${EKOSYSTEM.modeller.AK1TS.teorier} teorier × ${EKOSYSTEM.modeller.AK1TS.horisonter} horisonter × ${EKOSYSTEM.modeller.AK1TS.dimensioner} dimensioner = 100 datapunkter.`,
+      "Principerna som bär allt: " + EKOSYSTEM.principer.slice(0, 3).join(" · ") + ".",
+    ],
+    exempel: "I praktiken: AKM1 säger VAD du tittar på (fundamentet, 0–5 per variabel), AK1TS säger HUR det rör sig (vågor per horisont) — och Konfluensradarn väger värde mot vågor.",
+    fortfragor: [
+      "Vill du börja där det gör mest nytta — V09 ROE, favoritvariabeln?",
+      "Ska vi se hela 5×5×4 i ekosystem-kursen?",
+    ],
+    kurs: "portfolj-ekosystemet",
+  },
+  kalkylator: {
+    namn: "AKM1-kalkylatorn", kategori: "sajtens räkneverk",
+    karna: [
+      `${EKOSYSTEM.modeller.AKM1.variabler} variabler, tre flikar: 1) Räkna med egna siffror (formler + auto-poäng), 2) Poängsätt manuellt (reglage), 3) Var hittar jag siffrorna? (rapportguiden).`,
+      "Dra i reglagen — rekommendationen och kategorisnitten uppdateras direkt.",
+      "Osäker på en variabel? Klicka på namnet i kalkylatorn — då landar du i kursen.",
+    ],
+    exempel: "Pröva med exempelbolagen: Precise Biometrics (38/100 i den officiella analysen) eller Volvo Cars (62/100) — knappen 'Exempel' i kalkylatorn laddar dem.",
+    fortfragor: [
+      "Vill du att jag förklarar en variabel först — säg bara 'vad är ROE' eller 'förklara V07'?",
+      "Ska vi öppna guiden 'Var hittar jag siffrorna?' — den följer med hela vägen in i årsredovisningen?",
+    ],
+    kurs: "/kalkylator",
+    egenaHandlingar: [
+      { text: "Öppna kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+      { text: "Var hittar jag siffrorna? →", lank: "#guide", ikon: "📖", beskrivning: "Rapportguiden (fliken i kalkylatorn)" },
+      { text: "Se alla 20 variabler →", lank: "/kurser", ikon: "📊" },
+    ],
+  },
+  portfolj: {
+    namn: "Portföljsystemet", kategori: "dina innehav, genomlysta",
+    karna: [
+      "Lägg in vad du äger — bolag, antal aktier, kurs. Systemet analyserar varje aktie för sig och väger samman portföljens AKM1-poäng.",
+      "Du får vågbild per tidshorisont, riskmått, koncentration och personliga tips — allt utifrån dina egna siffror.",
+      "Djupanalysen hämtar live-data och kör Python-motorn: 5×5×4 per aktie → viktad portföljbild.",
+    ],
+    exempel: "Påhittat: 5 innehav där ett bolag är 42 % av värdet → koncentrationsvarningen tänds (gränsen går vid 40 %) — då vet du var riskspridningen behöver jobbas.",
+    fortfragor: [
+      "Vill du förstå 40 %-varningen — varför just den nivån?",
+      "Ska vi kolla kursen om portfölj-ekosystemet (5×5×4) först?",
+    ],
+    kurs: "/min-portfolj",
+    egenaHandlingar: [
+      { text: "Min portfölj →", lank: "/min-portfolj", ikon: "💼" },
+      { text: "Kursen om portfölj-ekosystemet →", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
+      { text: "Portföljbyggaren (träna) →", lank: "/portfoljbyggare", ikon: "🏗️" },
+    ],
+  },
+  tillvaxt: {
+    vId: "V01–V03", namn: "Tillväxt", kategori: "Tillväxt (tre variabler)",
+    karna: [
+      "AKM1 mäter tillväxtkvalitet med tre variabler: V01 (försäljningstillväxt), V02 (ARR-tillväxt) och V03 (intäktsdiversifiering).",
+      "Alla tre mäter olika aspekter: hur mycket, hur återkommande och hur utspritt.",
+      "V01 har egen poängskala (≥30 % → 5p · ≥20 % → 4p · ≥10 % → 3p · ≥0 % → 2p); V02–V03 poängsätts kvalitativt 0–5.",
+    ],
+    exempel: "Påhittat bolag: omsättning +20 % (V01: 4p), ARR +31 % (V02: högt) men storkund på 45 % (V03: lågt) — snabb men skör tillväxt.",
+    fortfragor: [
+      "Vill du gå på djupet i V01 — formeln och var siffrorna står?",
+      "Ska vi väga ihop hela tillväxtkategorin i kalkylatorn?",
+    ],
+    kurs: "v01-forsaljningstillvaxt",
+  },
+  risk: {
+    vId: "V10 + V19", namn: "Risk", kategori: "Risk (två variabler)",
+    karna: [
+      "I AKM1 är risk inte volatilitet — det är permanent förlust av kapital. Två variabler fångar den: V10 (skuldsättningsgrad) och V19 (kassatäckning — nyemissionsrisk).",
+      "V10 poängskala: <0,5 → 5p · <1 → 4p · <2 → 3p · <3 → 2p · ≥3 → 1p. V19: positivt kassaflöde → 5p, annars månader kvar i kassan.",
+      "Prissvängningar är Mr Market som skriker — risken bor i fundamentalen.",
+    ],
+    exempel: "Påhittat bolag: skulder 1 500 Mkr mot eget kapital 4 000 Mkr (V10: 0,38 → 5p) men förbränning −60 Mkr/år med kassa 240 Mkr (V19: 48 mån → 4p) — lugnt idag, koll på klockan.",
+    fortfragor: [
+      "Vill du se hur en emission späder ut ägandet — V19 i praktiken?",
+      "Ska vi kolla V10-formeln och var skulderna gömmer sig i balansräkningen?",
+    ],
+    kurs: "v19-kapitalforbranning",
+  },
+  utdelning: {
+    namn: "Utdelning", kategori: "utanför AKM1:s 20 — bedöms via tre variabler",
+    karna: [
+      "Ärligt: utdelning är inte en egen AKM1-variabel. Hållbarheten bedömer du med V09 (ROE — genereras vinsten alls?), V10 (skuld — betalas den ut med lånade pengar?) och V19 (kassaflöde — räcker det?).",
+      "Huvudregel: hållbarhet före nivå. En utdelning som överstiger vad verksamheten genererar äter balansräkningen.",
+    ],
+    exempel: "Påhittat bolag: utdelning 6 kr per aktie på en vinst på 5 kr → utdelningsgrad 120 % — betalas ur balansräkningen, inte ur verksamheten.",
+    fortfragor: [
+      "Ska vi kolla ROE (V09) först — där föds en hållbar utdelning?",
+      "Vill du läsa Grahams syn på utdelningar i The Intelligent Investor?",
+    ],
+    kurs: "v09-roe",
+  },
+  borsen: {
+    namn: "Börsen", kategori: "startpunkten",
+    karna: [
+      "Börsen är en marknadsplats där andelar i bolag byter ägare — varje dag, till ett pris som sätts av utbud och efterfrågan.",
+      "Priset är inte samma sak som värdet. Det är hela skillnaden — och hela Grundidén bakom AKM1: köp andelar i bra bolag när priset ligger under värdet.",
+      "Din kompass: Mr Market (humöret) + marginal of safety (rabatten) + 20 variabler (kvaliteten).",
+    ],
+    exempel: "Påhittat: ett bolag som tjänar 100 Mkr per år och handlas till 10 000 Mkr kostar 100 års vinst — börsen bestämmer priset, fundamentalen hjälper dig avgöra om det är värt det.",
+    fortfragor: [
+      "Vill du börja med den viktigaste variabeln — V09 ROE?",
+      "Ska vi titta på läroplanen i stället? Nivå 1 börjar från noll.",
+    ],
+    kurs: "/laroplan",
+    egenaHandlingar: [
+      { text: "Börja här: Läroplanen →", lank: "/laroplan", ikon: "🌱" },
+      { text: "V09: ROE — viktigaste variabeln →", lank: "/kurser/v09-roe", ikon: "📊" },
+      { text: "Mr Market (Graham-kursen) →", lank: "/kurser/the-intelligent-investor", ikon: "🏛️" },
+    ],
+  },
+};
 
-  // V-nummer
-  const vMatch = q.match(/v(\d{2})/);
-  if (vMatch) {
-    const num = vMatch[1];
+/** Mänskliga frasinledningar — roteras så mentorn aldrig låter robotlik. */
+const OPPNARE: Array<(namn: string) => string> = [
+  (n) => `Bra fråga — ${n} är precis sånt som skiljer proffsanalys från gissningar.`,
+  (n) => `Kul att du frågar om ${n} — det är en av grundpelarna.`,
+  (n) => `Okej, ${n}! Då kör vi, steg för steg.`,
+  (n) => `Det där är en av mina favoritfrågor. ${n} i korthet:`,
+  (n) => `Precis rätt fråga just nu. Så här tänker du kring ${n}:`,
+  (n) => `Då reder vi ut ${n} ordentligt.`,
+];
+
+/** Övergångar för följdfrågor — "vi var inne på ROE, nu tar vi P/S". */
+const OVERGANGAR: Array<(förra: string, nya: string) => string> = [
+  (f, n) => `Vi var precis inne på ${f} — nu tar vi ${n}, de hänger ihop:`,
+  (f, n) => `Bra att du bygger vidare från ${f}. ${n} är nästa naturliga stapel:`,
+  (f, n) => `Du tänker som en analytiker — först ${f}, sedan ${n}:`,
+  (f, n) => `${f} och ${n} är grannar i modellen. Så hänger det ihop:`,
+];
+
+/** Komponera ett ämnessvar: bekräftelse → kärna → SEK-exempel → följdfråga. */
+function vSvar(nyckel: AmnesNyckel, foljdAv: AmnesNyckel | null, fro: number): Bassvar {
+  const post = V_REGISTRET[nyckel];
+  const akm = EKOSYSTEM.modeller.AKM1;
+  const oppnare = OPPNARE[fro % OPPNARE.length](post.namn);
+  const overgang =
+    foljdAv && foljdAv !== nyckel
+      ? OVERGANGAR[fro % OVERGANGAR.length](V_REGISTRET[foljdAv].namn, post.namn)
+      : "";
+
+  const rubrik = post.vId
+    ? `${post.vId} · ${post.namn} — ${post.kategori} i AKM1 (${akm.variabler} variabler, ${akm.poangskala}).`
+    : `${post.namn} — ${post.kategori}.`;
+
+  const delar = [
+    overgang ? overgang : oppnare,
+    [rubrik, ...post.karna].join("\n"),
+    `Räkneexempel (påhittat men realistiskt): ${post.exempel}`,
+    post.fortfragor[fro % post.fortfragor.length],
+  ];
+  if (post.varde) delar.push("Pedagogisk analys — inte investeringsråd.");
+
+  const handlings: Handling[] = post.egenaHandlingar ?? [
+    post.kurs.startsWith("/")
+      ? { text: `${post.namn} →`, lank: post.kurs, ikon: "📚" }
+      : { text: `Läs kursen: ${post.namn} →`, lank: `/kurser/${post.kurs}`, ikon: "📚" },
+    { text: "Räkna i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+    { text: "Se alla 20 variabler →", lank: "/kurser", ikon: "📊" },
+  ];
+
+  return { svar: delar.join("\n\n"), handlings, typ: "utbildning", kalla: "AKM1-ekosystem (deterministisk)" };
+}
+
+// ── SMALLTALK + SNABBA INTENT — mänskligt, kort, med nästa steg ──────────────
+
+/** Hälsnings-, tack-, hjälp- och navigerings-smalltalk. Null = inte smalltalk. */
+function smalltalkSvar(n: NormaliseradFraga, niva: number | null, fro: number): Bassvar | null {
+  const ren = n.ren;
+
+  // "nästa steg" / "nästa kurs" — personligt utifrån nivå (om klienten skickar den)
+  if (/nasta (steg|kurs)|vart ska jag ga nu|^vad nu$|fortsattning/.test(ren)) {
+    const redoFas2 = (niva ?? 0) >= 25;
     return {
-      svar: `[AKM1] Variabel V${num} — en av de 20 fundamentalvariablerna.\nSe alla i kursbiblioteket eller kalkylatorn.`,
+      svar: redoFas2
+        ? `Då tar vi pulsen på resan! Du ligger på nivå ${niva} — det är en stark signal. Fas 2-ansökan (kostnadsfritt, 2 minuter) är öppen för dig: coaching, 18 mästarverk och representant-vägen.\n\nVill du hellre fortsätta bygga i din egen takt? Då väntar Superanalysen eller nästa kurs i läroplanen.`
+        : `Då tar vi pulsen på resan! Börja där du står: nästa kurs i läroplanen (varje avslutad kurs ger XP och flyttar dig uppåt), eller repetera dagens flashcards — glömskekurvan jobbar åt dig.\n\nVill du ha det personligt? Berätta vad du senast lärde dig, så tipsar jag om exakt rätt kurs.`,
       handlings: [
-        { text: `Gå till V${num} →`, lank: `/kurser`, ikon: "📚" },
-        { text: "Testa i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+        { text: "Fortsätt läroplanen →", lank: "/laroplan", ikon: "🗺️" },
+        redoFas2
+          ? { text: "Ansök om Fas 2 →", lank: "/fas2-ansok", ikon: "🎓", beskrivning: "Nivå 25+ — du är redo" }
+          : { text: "Räkna på en aktie →", lank: "/kalkylator", ikon: "🧮" },
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "+5 XP per bra svar" },
       ],
+      typ: "hjälp",
+      kalla: "AI-Mentor",
     };
   }
 
+  // "testa mig" / "testa min nivå"
+  if (/testa (mig|min niva)|niva ?test|nivatest|vilken niva jag ar|hur duktig/.test(ren)) {
+    return {
+      svar: `Kul att du vill mäta dig! Två vägar, och de mäter olika saker:\n• Kognitiva profilen — ett 3-minuters scenariotest som visar hur DU tänker som analytiker (inte vad du kan).\n• Quiz i kurserna — konkreta kunskapsfrågor, +10 XP per rätt svar.\nSnabbast vägen: öppna en kurs du kan något om och kör quiz:et direkt.`,
+      handlings: [
+        { text: "Kognitiva profilen (3 min) →", lank: "/profil", ikon: "🧠" },
+        { text: "Testa dig: quiz i kurserna →", lank: "/kurser", ikon: "🎯", beskrivning: "+10 XP per rätt svar" },
+        { text: "Läroplanen (se nivån) →", lank: "/laroplan", ikon: "🗺️" },
+      ],
+      typ: "utbildning",
+      kalla: "AI-Mentor",
+    };
+  }
+
+  // "hjälp"
+  if (/^hjalp\b|behover hjalp|vad kan du|hur anvander jag|vet inte vad jag ska|^help\b/.test(ren)) {
+    return {
+      svar: `Varsågod — så här hjälper jag dig bäst:\n• Förklara alla 20 AKM1-variabler — fråga "vad är ROE?", "förklara V07" eller bara "vad är pe?"\n• Visa verktygen: kalkylatorn, portföljen, Konfluensradarn, Vågfundamentet\n• Tipsa om nästa steg — skriv "nästa steg" eller "testa min nivå"\n• Repetera — skriv "repetera" så startar flashcardsen direkt här i chatten\nFråga fritt — stavfel tål jag.`,
+      handlings: [
+        { text: "V09: ROE — börja där →", lank: "/kurser/v09-roe", ikon: "📊" },
+        { text: "Kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+        { text: "Läroplanen →", lank: "/laroplan", ikon: "🗺️" },
+      ],
+      typ: "hjälp",
+      kalla: "AI-Mentor",
+    };
+  }
+
+  // "tack" — korta, varma, roterande
+  if (/^tack|^tackar|tacksam/.test(ren) && n.tokens.length <= 4) {
+    const TACK = [
+      "Varsågod! Tack för att du investerar i dig själv — det är den mest pålitliga avkastningen som finns. Ska vi ta nästa steg?",
+      "Vad kul att det hjälpte! Då är vi redo för nästa variabel — eller ett quiz för att fästa kunskapen?",
+      "Varsågod — jag är här när du behöver mig. Kom ihåg: repetition är hur hjärnan bygger, så skriv 'repetera' när du vill friska upp minnet.",
+    ];
+    return {
+      svar: TACK[fro % TACK.length],
+      handlings: [
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏" },
+        { text: "Nästa steg →", lank: "fragor:" + encodeURIComponent("nästa steg"), ikon: "➡️" },
+        { text: "V09: ROE →", lank: "/kurser/v09-roe", ikon: "📊" },
+      ],
+      typ: "hjälp",
+      kalla: "AI-Mentor",
+    };
+  }
+
+  // Ren hälsning ("hej", "god morgon") — kort fråga-svar-situation
+  if (/^(hej|hejsan|hall|hallà|tja|yo|god morgon|godmorgon|god dag|goddag|god kvall|godkvall|hello|hi|morr)\b/.test(ren) && n.tokens.length <= 2) {
+    return {
+      svar: `Hej! Vad kul att du är här. Jag följer med dig genom hela resan — fråga om vad som helst: en variabel ("vad är ROE?"), ett verktyg eller nästa steg. Och oroa dig inte för stavfel — jag förstår ändå.`,
+      handlings: [
+        { text: "Börja här: Läroplanen →", lank: "/laroplan", ikon: "🌱" },
+        { text: "Vad är ROE? (testa mig) →", lank: "fragor:" + encodeURIComponent("vad är ROE?"), ikon: "📊" },
+      ],
+      typ: "hjälp",
+      kalla: "AI-Mentor",
+    };
+  }
+
+  return null;
+}
+
+// ── ÄRLIGHETSLAGER: live-data om verkliga bolag hittar vi ALDRIG på ─────────
+
+/** Kända bolagsnamn (förenklade) — träffar bara tillsammans med data-ord. */
+const BOLAGSNAMN = [
+  "volvo", "volcar", "ericsson", "ericson", "telia", "nordea", "swedbank",
+  "handelsbanken", "sandvik", "atlas", "investor", "industrivarden", "saab",
+  "scania", "elekta", "hexagon", "ssab", "boliden", "lifco", "addtech",
+  "nibe", "hexatronic", "kopygold", "precise", "eqt", "spiltan", "hm",
+];
+
+/** Frågor som kräver aktuell bolagsdata ("kursen just nu", "vad kostar X?"). */
+function bordataSvar(n: NormaliseradFraga): Bassvar | null {
+  // Ord-prefix-matchning ("volvos" triggar "volvo") på den normaliserade
+  // frågan — exakt token-matchning räcker inte för svenska genitiv.
+  const namn = BOLAGSNAMN.find((b) => new RegExp(`\\b${b}`).test(n.ren));
+  if (!namn) return null;
+  const live =
+    /just nu|dagens|idag|aktuell|kurs|pris|kosta|utveckling|senaste|snitt|varder(ing)? .* (nu|idag)|hur gar/.test(n.ren);
+  if (!live) return null;
+  return {
+    svar: `Det här vet jag inte säkert — jag har ingen live-data här i chatten, och om verkliga bolag hittar jag aldrig på siffror. Det är en ärlighetsfråga: en påhittad kurs är värd noll för dig.\n\nMen jag kan hjälpa dig vidare:\n• Analysbanken — färdiga analyser med riktiga, källbelagda siffror\n• Vågfundamentet — hur bolagens fundamentalvågor rör sig (20×5-matrisen)\n• Kalkylatorn — sätt in bolagets egna siffror från årsredovisningen och räkna själv`,
+    handlings: [
+      { text: "Analysbanken (färdiga analyser) →", lank: "/analyser", ikon: "📊" },
+      { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
+      { text: "Räkna själv i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+    ],
+    typ: "hjälp",
+    kalla: "AI-Mentor — ärlighetslager",
+  };
+}
+
+/** Läs konversationskontexten: klientens `kontext` (senaste ämnets nyckel)
+ *  — annars härled ur historikens senaste elevfråga. Bakåtkompatibelt. */
+function lasKontextAmne(kontextRå: unknown, historik: HistorikTur[]): AmnesNyckel | null {
+  if (typeof kontextRå === "string" && kontextRå in V_REGISTRET) {
+    return kontextRå as AmnesNyckel;
+  }
+  for (let i = historik.length - 1; i >= 0; i--) {
+    if (historik[i].roll !== "du") continue;
+    const hittad = hamtaAmne(normaliseraFraga(historik[i].text));
+    if (hittad) return hittad;
+  }
   return null;
 }
 
@@ -357,7 +993,7 @@ function vagkonSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/v[aå]gkon/.test(q)) return null;
   return {
-    svar: `[VÅGKON] Vågkonen är den deterministiska vågkonen: ur en pris- eller fundamentalhistorik (t.ex. 24 månads-slutkurser) räknas percentilband per AK1TS-horisont — ren matematik ur seriens egen standardavvikelse, ingen slump, inga gissningar.
+    svar: `Bra fråga — vågkonen är ett av sajtens mest lärorika verktyg, och helt deterministiskt: ur en pris- eller fundamentalhistorik (t.ex. 24 månads-slutkurser) räknas percentilband per AK1TS-horisont — ren matematik ur seriens egen standardavvikelse, ingen slump, inga gissningar.
 Så läser du den:
 • Ligger kursen i konens nedre band är den lågt mot sin egen historia — i övre bandet högt.
 • Konen säger INTE vart kursen ska — den visar var den är, relativt sitt eget förflutna.
@@ -378,7 +1014,7 @@ function konfluensSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/konfluens/.test(q)) return null;
   return {
-    svar: `[KONFLUENS] Radarns garanti: värde FÖRE vågor — först måste bolaget vara påstått billigt mot sina egna siffror, SEDAN letar vi vågor som vänder. Fem oberoende dimensioner måste tala samman:
+    svar: `Då reder vi ut konfluens ordentligt. Radarns garanti: värde FÖRE vågor — först måste bolaget vara påstått billigt mot sina egna siffror, SEDAN letar vi vågor som vänder. Fem oberoende dimensioner måste tala samman:
 1. Värdegolv — NCAV-kvot + P/B + P/E (net-net + analysfundament). Värdepelaren väger tyngst — utan ett värdegolv spelar vågorna ingen roll.
 2. Kvalitet — AKM1-proxy: ROE, vinstmarginal och skuldsättningsgrad.
 3. Fundamental vågstart — andel impulsvågor på mikro+kort i vågfundamentets 20×5-matris.
@@ -401,7 +1037,7 @@ function netnetSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/net[- ]?net|\bncav\b|cigar.?butt/.test(q)) return null;
   return {
-    svar: `[NET-NET] Grahams mest extrema värdegolv: en net-net är ett bolag där kursen ligger under 2/3 av Net Current Asset Value (NCAV) — omsättningstillgångar minus totala skulder. Du köper alltså hela bolaget för mindre än dess rörelsekapital och får verksamheten "gratis".
+    svar: `Kul att du frågar — det här är Grahams mest extrema värdegolv. En net-net är ett bolag där kursen ligger under 2/3 av Net Current Asset Value (NCAV) — omsättningstillgångar minus totala skulder. Du köper alltså hela bolaget för mindre än dess rörelsekapital och får verksamheten "gratis".
 Cigar-butts kallas de för: som en fimpa du plockar upp på gatan — ett återstående bloss värde. De är sällsynta idag, och skannern visar var de finns: grön NET-NET-markering när kurs/NCAV ≤ 0,667, guld NÄRA strax över.
 Pedagogiskt verktyg — aldrig investeringsråd.`,
     handlings: [
@@ -419,7 +1055,7 @@ function fas3Svar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
   return {
-    svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
+    svar: `Precis rätt fråga — här är hur faser och certifiering hänger ihop. Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
 • Fas 1 — hela biblioteket (${SIFFROR.kurser} kurser, kalkylatorn, portföljsystemet): gratis för alltid.
 • Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu analyserade och sammanvägda på rätt sätt med stöd av 18 mästarverk (värdering, bokslut, redovisning, företagsfinans), oändligt med timmar med grundaren och chansen att bli representant för AK1nvestor. 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
 • Fas 3 — allt i Fas 2 plus det dynamiska ekosystemet: AKM1 × AK1TS, Vågfundamentet, Konfluensradarn och Portföljens vågor, teknisk analys på mästarnivå, trading-psykologi samt dashboard med AI-koppling och rapporter — och rätt till alla framtida utvecklingar.
@@ -440,7 +1076,7 @@ function proSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/\bpro\b|\bb2b\b|företagspaket|skollicens|företagskonto/.test(q)) return null;
   return {
-    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — ${SIFFROR.kurser} kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
+    svar: `AK1A Pro i korthet: vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — ${SIFFROR.kurser} kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
 Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 den fundamentala vägen · Fas 3 ekosystemet) på medlemskapssidan.`,
     handlings: [
       { text: "AK1A Pro →", lank: "/pro", ikon: "🏢" },
@@ -459,7 +1095,7 @@ function rapportSvar(fraga: string) {
   // Portföljrapporten har sin egen guide (blogg) — träffa den först
   if (/portföljrapport|portfoljrapport/.test(q)) {
     return {
-      svar: `[RAPPORT] Så läser du din portföljrapport — guiden går steg för steg genom rapportens delar: AKM1-poängen per aktie, vågprofilen och riskmätningen. Verkstan där du BYGGER egna rapporter hittar du på /rapporter.`,
+      svar: `Ja, portföljrapporten har sin egen guide — den går steg för steg genom rapportens delar: AKM1-poängen per aktie, vågprofilen och riskmätningen. Verkstan där du BYGGER egna rapporter hittar du på /rapporter.`,
       handlings: [
         { text: "Läs guiden →", lank: "/blogg/sa-laser-du-din-portfoljrapport", ikon: "📖" },
         { text: "Bygg en rapport →", lank: "/rapporter", ikon: "🖨️" },
@@ -470,7 +1106,7 @@ function rapportSvar(fraga: string) {
   }
 
   return {
-    svar: `[RAPPORT] Redovisningsverkstan samlar dina analyser till en formatterad, utskriftsbar redovisningsrapport: marin omslagsband med AK1A-signering och din nivå, nyckeltal som tabellrader och metodiken bakom AKM1, AK1TS och Konfluens — med automatiska disclaimers. Allt sparas lokalt i din webbläsare. Skriv ut eller spara som PDF och dela med lärare, föräldrar eller framtida du.`,
+    svar: `Redovisningsverkstan samlar dina analyser till en formatterad, utskriftsbar redovisningsrapport: marin omslagsband med AK1A-signering och din nivå, nyckeltal som tabellrader och metodiken bakom AKM1, AK1TS och Konfluens — med automatiska disclaimers. Allt sparas lokalt i din webbläsare. Skriv ut eller spara som PDF och dela med lärare, föräldrar eller framtida du.`,
     handlings: [
       { text: "Öppna redovisningsverkstan →", lank: "/rapporter", ikon: "🖨️" },
       { text: "Välj analyser i analysbanken →", lank: "/analyser", ikon: "📊" },
@@ -486,7 +1122,7 @@ function tidshorisontSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/tidshorisont|\bkort sikt\b|\blång sikt\b|\blang sikt\b|kortsiktig|långsiktig/.test(q)) return null;
   return {
-    svar: `[TIDSHORISONT] Din tidshorisont förändrar ALLT i analysen — därför har AK1TS fem horisonter: mikro, kort, medellång, lång och mega. Samma bolag kan vara en stark impulsvåg på mikro och ett moget basbygge på lång.
+    svar: `Viktig fråga — horisonten förändrar ALLT i analysen. Därför har AK1TS fem horisonter: mikro, kort, medellång, lång och mega. Samma bolag kan vara en stark impulsvåg på mikro och ett moget basbygge på lång.
 För långsiktigt ägande (5 år+) börjar du med fundamentet: AKM1:s 20 variabler (V01–V20, 0–100 poäng) — lönsamheten (V09 ROE), moaten (V13–V15) och skulderna (V10) väger då tyngst.
 Räkna exakt i kalkylatorn — jag ger aldrig köp- eller säljrekommendationer, jag lär ut metoden.`,
     handlings: [
@@ -539,7 +1175,7 @@ async function vagkartaSvar(fraga: string) {
   const u = scan?.universumSammanfattning;
   if (!scan || scan.saknas === true || !u) {
     return {
-      svar: `[VÅGKARTA] Ingen vågkarta har sparats ännu — den autonoma mätningen körs enligt schema, och nästa mätning fyller kartan automatiskt. Du kan alltid studera vågklasserna ▲▼◼ själv i Vågfundamentets 20×5-matris.`,
+      svar: `Ärligt svar: ingen vågkarta har sparats ännu — jag hittar inte på läge. Den autonoma mätningen körs enligt schema, och nästa mätning fyller kartan automatiskt. Du kan alltid studera vågklasserna ▲▼◼ själv i Vågfundamentets 20×5-matris.`,
       handlings: [
         { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
         { text: "Min sida (kartan) →", lank: "/min-sida", ikon: "🗺️" },
@@ -558,7 +1194,7 @@ async function vagkartaSvar(fraga: string) {
   const genererad = scan.genererad ? ` (mätning: ${scan.genererad})` : "";
 
   return {
-    svar: `[VÅGKARTA] Senaste vågmätningen${genererad}: ${u.impulsvag} impulsvågor ▲, ${u.korrigering} korrigeringar ▼, ${u.basbygge} basbyggen ◼ och ${u.osatt} osatta celler i universum. ${rorelser}
+    svar: `Här är senaste vågmätningen${genererad}: ${u.impulsvag} impulsvågor ▲, ${u.korrigering} korrigeringar ▼, ${u.basbygge} basbyggen ◼ och ${u.osatt} osatta celler i universum. ${rorelser}
 Vågkartan är pedagogisk analys — inte investeringsråd.`,
     handlings: [
       { text: "Se hela vågkartan →", lank: "/min-sida", ikon: "🗺️" },
@@ -596,12 +1232,18 @@ function arTvetydig(fraga: string): boolean {
 /**
  * KLARANDE SVAR — EN motfråga om tidshorisont och mål, med klickbara
  * svarsalternativ ("fragor:" skickas tillbaka som ny fråga av widgeten).
- * Ton: pedagogik.ts — vi hjälper, vi dömer aldrig.
+ * Ton: pedagogik.ts — vi hjälper, vi dömer aldrig. Oppnaren roterar.
  */
-function klarandeSvar(fraga: string) {
+function klarandeSvar(fraga: string, fro: number) {
   const fragaKort = fraga.trim().replace(/\s+/g, " ").slice(0, 60);
+  const KLARANDE_OPPNARE = [
+    "Bra fråga — och precis här vill jag vara en riktig mentor istället för att gissa.",
+    "Klassisk analytiker-fråga — och svaret beror på vad du vill uppnå, så låt mig fråga rätt först.",
+    "Där stannar jag upp och frågar vidare — en mentor gissar aldrig, den hjälper dig fråga rätt.",
+  ];
+  const oppnare = KLARANDE_OPPNARE[fro % KLARANDE_OPPNARE.length];
   return {
-    svar: `Bra fråga — och precis här vill jag vara en riktig mentor istället för att gissa. "${fragaKort}${fraga.length > 60 ? "…" : ""}" beror helt på vad du vill uppnå: en aktie kan vara ett utmärkt långsiktigt innehav och ett dåligt korttidsläge — samtidigt.
+    svar: `${oppnare} "${fragaKort}${fraga.length > 60 ? "…" : ""}" beror helt på vad du vill uppnå: en aktie kan vara ett utmärkt långsiktigt innehav och ett dåligt korttidsläge — samtidigt.
 
 Hjälp mig förstå din tidshorisont och ditt mål, så tar jag dig exakt dit du vill:
 
@@ -636,24 +1278,22 @@ Jag ger aldrig köp- eller säljrekommendationer — jag lär ut metoden (AKM1: 
 // med bakåtreferens ur historiken, antagande-korrektion och EN roterande
 // analytiker-motfråga — se berika() nedan.
 
-/** Ämnesigenkänning i en fråga — driver naturliga bakåtreferenser. */
+/** Ämnesigenkänning i en fråga — driver naturliga bakåtreferenser.
+ *  Primärt via NLU-lagret (chatbot-nlu) + V-registret; faller tillbaka på
+ *  ämnen som andra svarslager äger (vågkarta, konfluens, redovisning …). */
 function amne(fraga: string): string | null {
-  const v = fraga.match(/v\s?(\d{2})/i);
-  if (v) return `V${v[1]}`;
+  const nlu = hamtaAmne(normaliseraFraga(fraga));
+  if (nlu) {
+    const p = V_REGISTRET[nlu];
+    return p.vId ? `${p.vId} ${p.namn}` : p.namn;
+  }
   const tabell: Array<[RegExp, string]> = [
-    [/roe|lönsamhet|avkastning på eget kapital/i, "ROE och lönsamhet"],
     [/vågfundament|fundamentalvåg|vågklass|vågmatris/i, "vågfundamentet"],
     [/vågkarta|vågmätning/i, "vågkartan"],
     [/konfluens/i, "konfluens"],
     [/net[- ]?net|ncav|cigar/i, "net-net"],
-    [/portfölj|innehav/i, "portföljen"],
-    [/värder|multipel|p\s?\/\s?[seb]/i, "värdering"],
-    [/risk|skuld|emission/i, "risk"],
     [/tidshorisont|horisont/i, "tidshorisonten"],
-    [/kalkylator/i, "kalkylatorn"],
     [/rapport|redovisn|bokslut|årsredovisning/i, "redovisning"],
-    [/utdelning/i, "utdelning"],
-    [/moat|konkurrensfördel/i, "moat"],
     [/utdel|flashcard|repeter/i, "repetition"],
   ];
   for (const [re, namn] of tabell) if (re.test(fraga)) return namn;
@@ -820,13 +1460,15 @@ function valMotfraga(q: string, historik: HistorikTur[]): { text: string; katego
  * eller GLM): bakåtreferens, antagande-korrektion, EN roterande motfråga
  * (som separat fält — widgeten renderar den som klickbart chip) och en
  * "fördjupa"-länk. Klarande svar (redan en fråga) berikas inte med motfråga.
+ * `amneKey` (topic-nyckel) skickas med i svaret — widgeten lagrar den som
+ * konversationskontext och skickar tillbaka den som `kontext` nästa fråga.
  */
-function berika(base: Bassvar, q: string, historik: HistorikTur[]) {
+function berika(base: Bassvar, q: string, historik: HistorikTur[], amneKey?: AmnesNyckel | null) {
   const arKlarande = base.typ === "klarande";
   const delar: string[] = [];
   if (!arKlarande) {
     const ref = bakåtreferens(q, historik);
-    if (ref && !base.svar.includes("Du frågade tidigare")) delar.push(ref);
+    if (ref && !base.svar.includes("Du frågade tidigare") && !base.svar.includes("Vi var precis inne på")) delar.push(ref);
     const korr = hittaAntagande(q);
     if (korr && !base.svar.includes("Snäv men viktig korrigering")) delar.push(korr);
   }
@@ -845,14 +1487,26 @@ function berika(base: Bassvar, q: string, historik: HistorikTur[]) {
     svar,
     ...(motfraga ? { motfraga } : {}),
     ...(fordjupa ? { fordjupa } : {}),
+    ...(amneKey ? { amne: amneKey } : {}),
   });
 }
 
 export async function POST(req: NextRequest) {
   try {
-    const { fraga, sokvag, historik: historikRå } = await req.json();
+    const { fraga, sokvag, historik: historikRå, kontext: kontextRå, niva: nivaRå } = await req.json();
     const q = String(fraga || "").slice(0, 300);
     const historik = rensaHistorik(historikRå);
+    const niva = typeof nivaRå === "number" && Number.isFinite(nivaRå) ? nivaRå : null;
+
+    // ── NL-LAGRET: frågan normaliseras (gemener, stavfel, åäö-varianter,
+    //    fyllnadsord, synonymer) innan någon matcher ser den ──
+    const norm = normaliseraFraga(q);
+    const amnesNyckel = hamtaAmne(norm);
+    const foljd = amnesNyckel !== null && arFoljdfraga(norm);
+    const kontextAmne = lasKontextAmne(kontextRå, historik);
+    // Rotationsfrö: deterministiskt men varierat fråga till fråga
+    const fro = historik.length + q.length;
+
     if (!q.trim()) {
       return NextResponse.json({
         svar: "Jag är din AI-mentor. Vad vill du göra?",
@@ -865,13 +1519,23 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 1) VÅGFUNDAMENT — fundamentalvågor enligt P7 (citera exakt, aldrig extrapolera)
-    const vf = vagfundamentSvar(q);
+    // 0) SMALLTALK + snabba intent ("hej", "tack", "hjälp", "nästa steg",
+    //    "testa min nivå") — korta mänskliga svar med nästa steg
+    const small = smalltalkSvar(norm, niva, fro);
+    if (small) return berika(small, q, historik, null);
+
+    // 1) VÅGKARTA — senaste autonoma mätningen (mest specifika våg-frågan
+    //    testas FÖRE vagfundamentet, annars slukar det "vågkartan")
+    const vagkarta = await vagkartaSvar(q);
+    if (vagkarta) return berika(vagkarta, q, historik);
+
+    // 2) VÅGFUNDAMENT — fundamentalvågor enligt P7 (citera exakt, aldrig extrapolera)
+    const vf = vagfundamentSvar(q, norm.ren);
     if (vf) {
       return berika({ ...vf, kalla: "Vågfundamentet — P7-protokollet", typ: "utbildning" }, q, historik);
     }
 
-    // 2) SID-DATA-INTENTS — deterministiska svar om verktygen på sajten
+    // 3) SID-DATA-INTENTS — deterministiska svar om verktygen på sajten
     const vagkon = vagkonSvar(q);
     if (vagkon) return berika(vagkon, q, historik);
 
@@ -893,18 +1557,25 @@ export async function POST(req: NextRequest) {
     const horisont = tidshorisontSvar(q);
     if (horisont) return berika(horisont, q, historik);
 
-    const vagkarta = await vagkartaSvar(q);
-    if (vagkarta) return berika(vagkarta, q, historik);
-
-    // 3) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
-    const akm1 = akm1Svar(q);
-    if (akm1) {
-      return berika({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" }, q, historik);
+    // 4) TVETYDIGHET — mentorn redigerar: EN klarliggande motfråga istället
+    //    för gissning (köp-/sälj- och "är X bra?"-frågor)
+    if (arTvetydig(q)) {
+      return berika(klarandeSvar(q, fro), q, historik, null);
     }
 
-    // 4) TVETYDIGHET — mentorn redigerar: EN klarliggande motfråga istället för gissning
-    if (arTvetydig(q)) {
-      return berika(klarandeSvar(q), q, historik);
+    // 5) ÄRLIGHET — live-data om verkliga bolag hittas aldrig på: hänvisa
+    //    vidare till verktygen (FÖRE ämnesmotorn — "vad är Volvos P/E just
+    //    nu?" är en datafråga, inte en pedagogisk)
+    const bordata = bordataSvar(norm);
+    if (bordata) return berika(bordata, q, historik, null);
+
+    // 6) ÄMNESMOTORN — alla 20 variabler + koncept: mänsklig struktur med
+    //    bekräftelse, V-nummer + formel + poängskala (ur EKOSYSTEM-kanonen),
+    //    SEK-exempel och naturlig fortsättningsfråga. Följdfrågor ("och P/E?")
+    //    kopps till kontexten och nämner förra ämnet.
+    if (amnesNyckel) {
+      const foljdAv = foljd && kontextAmne && kontextAmne !== amnesNyckel ? kontextAmne : null;
+      return berika(vSvar(amnesNyckel, foljdAv, fro), q, historik, amnesNyckel);
     }
 
     // 5) Navigering
@@ -1033,8 +1704,8 @@ ${kurserKontext}`,
       return berika(
         {
           svar: relevanta.length === 1
-            ? `[AKM1] Det låter som kursen **${relevanta[0].title}** (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}`
-            : `[AKM1] Flera kurser matchar:\n${relevanta.map((k) => `• **${k.title}** — ${k.learn?.slice(0, 80)}…`).join("\n")}`,
+            ? `Det låter som kursen "${relevanta[0].title}" (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}`
+            : `Bra ämne — flera kurser matchar:\n${relevanta.map((k) => `• ${k.title} — ${k.learn?.slice(0, 80)}…`).join("\n")}`,
           handlings: relevanta.slice(0, 3).map((k) => ({
             text: `Starta: ${k.title.slice(0, 30)}… →`,
             lank: `/kurser/${k.slug}`,
@@ -1048,21 +1719,23 @@ ${kurserKontext}`,
       );
     }
 
-    // 8) Fallback med proaktiva förslag (AKM1-struktur enligt Task 106)
+    // 8) ÄRLIG FALLBACK — mentorn erkänner vad den inte kan (hittar aldrig
+    //    på) och bjuder på tre konkreta vägar vidare (direktiv: 3 förslag)
+    const AKTIVITETER = [
+      { text: "Förklara en variabel →", lank: "fragor:" + encodeURIComponent("vad är ROE?"), ikon: "📊", beskrivning: "Alla 20 — formel, poängskala, exempel" },
+      { text: "Räkna på en aktie →", lank: "/kalkylator", ikon: "🧮", beskrivning: "AKM1: 20 variabler" },
+      { text: "Nästa steg för mig →", lank: "fragor:" + encodeURIComponent("nästa steg"), ikon: "➡️", beskrivning: "Personligt tips" },
+    ];
     return berika(
       {
-        svar: "[AKM1] Jag kan hjälpa dig med allt på sajten — fundamentet (V01–V20, 0–5 poäng per variabel, max 100), vågorna (AK1TS: 5×5×4) och portföljen. Här är nästa steg baserat på var du är:",
-        handlings: [
-          { text: "Fortsätt läroplanen →", lank: "/laroplan", ikon: "🗺️" },
-          { text: "Räkna på en aktie →", lank: "/kalkylator", ikon: "🧮" },
-          { text: "Bygg portfölj →", lank: "/min-portfolj", ikon: "💼" },
-          { text: "Testa mig (quiz) →", lank: "/kurser/the-intelligent-investor", ikon: "🧠" },
-        ],
+        svar: `Det här vet jag inte säkert — och det är bättre att jag säger det än gissar. Men jag kan hjälpa dig med:\n• Alla ${EKOSYSTEM.modeller.AKM1.variabler} AKM1-variabler — fråga "vad är ROE?", "förklara V07", "vadd är P/E?" (stavfel tål jag)\n• Verktygen: kalkylatorn, portföljen, Konfluensradarn, Vågfundamentet\n• Din resa: "nästa steg", "testa min nivå" eller "repetera"`,
+        handlings: AKTIVITETER,
         typ: "hjälp",
-        kalla: "AI-Mentor",
+        kalla: "AI-Mentor — ärlighetslager",
       },
       q,
-      historik
+      historik,
+      null
     );
   } catch {
     return NextResponse.json({ svar: "Något gick fel — försök igen." }, { status: 400 });

@@ -505,8 +505,8 @@ export function PortfolioSystem() {
             )}
           </section>
 
-          {/* DJUPANALYS */}
-          <section className="rounded-xl border border-gold/40 bg-card p-5">
+          {/* DJUPANALYS — id="djup": AI-mentorns #djup-ankare scrollar hit */}
+          <section id="djup" className="scroll-mt-24 rounded-xl border border-gold/40 bg-card p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h3 className="font-serif text-xl font-bold">Djupanalys — 5×5×4-ekosystemet</h3>

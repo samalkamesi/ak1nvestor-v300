@@ -333,6 +333,7 @@ export function Akm1Calculator() {
             </TabsTrigger>
             <TabsTrigger
               value="guide"
+              data-chat-anker="guide"
               className="h-auto w-full flex-none justify-start whitespace-normal border-l-2 border-l-transparent px-3 py-2.5 text-left data-[state=active]:border-l-gold data-[state=active]:bg-gold/15 data-[state=active]:text-foreground dark:data-[state=active]:border-l-gold dark:data-[state=active]:bg-gold/15 sm:w-auto sm:justify-center sm:whitespace-nowrap"
             >
               📖 Var hittar jag siffrorna?

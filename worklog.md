@@ -3907,3 +3907,52 @@ Higgins, Brealey, ShoeDog, EverythingStore, Bull!, Kilpatrick
   kvalitet/route.ts:108+117 "korsfilstänk" — SUBPROCESS-STDOUT →
   publiceraOrganEvent. Main-bedömning: FALSK POSITIV (intern konstant,
   CRON-skyddad, admin-mottagare). Godkänn Mimosa-flaggan → push.
+
+---
+
+## VÅG 34 — NYHETSCENTRALEN (2026-09-03)
+
+Task ID: 138-NYHETSCENTRALEN
+Agent: main + 4 parallella
+
+Användarens direktiv: "system för nyheter feed, hämta senaste viktiga info intelligent,
+kunden kan utvidga kanaler, senaste nytt, info+analyser för klienter i profil,
+tips så fort något värdefullt dyker upp"
+
+- MOTOR (nyhets-motor.ts): Yahoo ticker-RSS + query1-fallback + allmänna flöden.
+  VERIFIERADE källor (riktig fetch): SVT Ekonomi, Dagens industri, Privata
+  Affärer, Yahoo världen. Ratsade: Efn/MFN (>512KB-tak), Finansliv (död),
+  Breakit/Placera m.fl. (404). 49/49 test gröna. SSRF: https-tvång, privata
+  intervall, IPv6, numeriska värdar, redirect-regranskning, 512KB-tak.
+  Påverkanspoäng 0-100 (rapport+30, emission+35, bud+40, konkurs+50, portfölj+20)
+  + AK1A-not (max 2 V + reflekterande fråga — ALDRIG köp/sälj).
+- API: /api/nyheter (sanering, 2-leds cache) + /api/nyheter/scan (cron 08:00
+  UTC — hög-påverkans ≥70 → publiceraSignal mottagare fas2, max 5/scan,
+  OrganEvent organ/nyheter). OBS: cron-path korrigerad till /api/nyheter/scan.
+- UI: /nyheter + nyhets-central.tsx (filter, NYTT-badge, kanalhanterare:
+  bevakning max 15, 4 ämneskanaler, egna RSS max 5) + nyhetskanaler.ts.
+  Arkitektur: klienten får INTE importera motorn (datacache=fs) — speglar
+  valideringen lokalt, servern dubbelkollar.
+- MIN SIDA: "Senaste nytt — för dig" (5 nyheter via server-API, paverkan-badge,
+  collapsible tanke) + "Analyser för dig" (3 länkkort: Superanalysen/
+  Vågfundamentet/Konfluensradarn kopplade till nyhetsflödet) + notistyp 📰
+  (ak1a-nyheter-top, paverkan ≥70, max 1/dag).
+- Meny (📰 först i Analysera) + sökindex + sidfooter + chatbot-intent.
+
+## VÅG 35 — ÅÄÖ-DEGENERERING (2026-09-03)
+
+Task ID: 139-AAO-DEGEN
+Användarens exempel: Graham-kursen "gor detta test... kopte... raknade pa vardet"
+
+- ROTPROBLEM: ASCII-avstavad svenska ("gor"="gör") är GILTIGA strängar —
+  vanliga åäö-kontroller ser dem ej. Graham-kursen lever ENDAST i public/
+  (data-källa saknas!).
+- DETEKTORN verktyg/aao-degen.mjs: NIVÅ A (95+ säkra mappningar,
+  versalbevarande, token-gränser som tillåter punkt/komma men skyddar URL:er,
+  AR/PA-akronymblock) + NIVÅ B (filsignatur: ar>5 && är==0).
+- ITERATIONER: körning 1 = 107 rättningar (42 data-filer + 65 public),
+  körning 2 = 0, körning 3 = 0 ✓ KONVERGERAT
+- PERMANENT: Kvalitetsvakten sektion 8 (ÅÄÖ-degenerering, subprocess
+  aao-degen --torrt --json) — 8/8 GRÖN
+- HALVSÄKRA ("an"/"for" — svenska ELLER engelska citat): 7 filer → agent
+  granskar kontextuellt. + oberoende djupkontroll 20 slumpkurser (agent).

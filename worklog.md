@@ -4277,3 +4277,32 @@ rent papper. DOM-verifierad i dev utloggat: overlay=rgb(245,241,232),
 gradient=none på intelligent-investor; security-analysis=Fas2Gate (egen
 ren kurskortsvy, påverkas ej). Gäller ALLA gratis-kurser utloggat.
 P9-PÅGÅR: tsc + Kvalitetsvakten + uppdelade commits + deploy + prod-verify.
+
+── VÅG 44: KURSSTEG-BANDET SKAR KAPITELRUBRIKEN (2026-09-03, 32ed805) ──
+Kundbild 2 (inloggad, mobil, the-intelligent-investor): marin progress-
+bandets ("The Intelligent In… · 5% · 15 XP · 0/21 🏆") nedre kant skar
+GENOM "Kap 1 · Investering kontra spekulering"-rubriken — gäller ALLA
+kurser med quiz (hela biblioteket), inte bara BOKMASTER. TRE RÖTTER:
+(1) bandet sticky top-[57px] reserverade plats för ett sidhuvud som är
+position:relative (scrollar bort) → död 57px-remsa + fel referens;
+(2) kapitelinnehållet låg ~3px från flödespositionen under bandet — vid
+scroll sveper bandet (z-30) rakt genom bokstäverna;
+(3) naasta()/Föregående gjorde scrollTo(0) = SIDTOPPEN — kapitelstarten
+ligger 2 960 px ner (efter Kursöversikt-tabellen) → användaren såg aldrig
+kapitlet de bytte till och landade med bandkanten i texten.
+FIX (kurs-steg.tsx): band sticky top-0 + startRef; kapitelcontainer
+id="kapitel-start" pt-10 pb-8 + scroll-mt-[64px]; tillKapitelstart()
+scrollar till bandets DOKUMENTPOSITION (rect+scrollY — OBS offsetTop
+mäter bara mot närmaste positionerade förfader och gav 0!); Nästa/
+Föregående/kapitelprickar använder alla tillKapitelstart.
+DOM-verifierat i dev: sticky top=0px, padding 40px, scroll-mt 64px,
+flödesgap band→h2 = 69px, kapitelbyte Kap2→Kap3 OK, scrollmål 2 960.
+IAB-miljön låser ALL programscroll (scrollY förblir 0 även via
+scrollingElement.scrollTop) — verifiering via statiska DOM-egenskaper;
+scroollen i kundens riktiga browser är standard-API.
+Sweep andra sticky: deep-course-viewer top-14 + article py-8 (32px
+flödesmarginal, ingen scroll-bugg), stock-analysis-view top-[57px]/
+[120px] (SPA-sidor med FAST sidhuvud — korrekt), kurs-sok top-14
+(filterband, ok), superanalys scrollTo(0) (sidan börjar högt — ok),
+footer "till toppen" (ok). Endast KursSteg var trasigt.
+Kvalitetsvakten 8/8 GRÖN. Mimosa: endast kända 2 medel (organsystemet).

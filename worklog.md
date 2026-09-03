@@ -4325,3 +4325,17 @@ Verifiering: SSR-HTML svep — /prenumeration 31, /kurser 47, /medlemskap 47,
 /transparens 31, /villkor 31 förekomster av skulptur-mark (tidigare 0 på
 prenumeration!); DOM-inspektion masthead+välkomsthero img=true. tsc 43
 (0 nya). Kvalitetsvakten GRÖN.
+
+── VÅG 47: KURSÖVERSIKTEN HELT VERTIKAL PÅ MOBIL (2026-09-03) ──
+Kunddirektiv (2 mobilbilder, varav en i landskap): "gör den full vertikal
+på mobil — se allt utan problem med bäst UX/UI, oavsett hur jag håller
+telefonen". ROT: Kursöversiktstabellen (Kapitel|Fokus|Tid) på alla 333
+kurs-sidor klämde/klippte på mobil. FIX [slug]/page.tsx: mobil (<md) =
+vertikal kapat-lista (ol.space-y-2; kapitelnummer-guldbricka + titel +
+110-tecken fokus + högerställd minut-etikett, tap-yta = hela kortet,
+active-state) + totalt-rad; desktop (md+) oförändrad tabell.
+DOM-mätningar dev: porträtt 412 = 0 overflow (scrollWidth 402), mobillista
+22 kort levande + tabell dold; landskap 915×412 = 0 overflow; smalmobil
+360×780 = 0 overflow på kurs + vagfundament + portfolj-forskning +
+kalkylator. Matriserna (vagfundament/konfluens/korstabell) har redan
+mobilvyer/sticky-första-kolumn inom viewport.

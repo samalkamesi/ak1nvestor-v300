@@ -88,10 +88,42 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </section>
       )}
 
-      {/* Korstabell: kursens struktur och snabbval */}
+      {/* Kursöversikt — HELT VERTIKAL lista på mobil (krav 2026-09-03: aldrig
+          sidscroll på telefon, oavsett orientering); tabell från md och upp. */}
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold">Kursöversikt</h2>
-        <div className="mt-3 overflow-x-auto rounded-xl border border-gold/20">
+
+        {/* Mobil: vertikala kapitelkort */}
+        <ol className="mt-3 space-y-2 md:hidden">
+          {course.chapters.map((ch) => (
+            <li key={ch.num}>
+              <a
+                href={`#kap-${ch.num}`}
+                className="flex items-start gap-3 rounded-xl border border-gold/20 bg-card p-3 active:bg-gold/5"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold/10 font-serif text-sm font-bold text-gold">
+                  {ch.num}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium leading-snug">{ch.title}</span>
+                  <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
+                    {ch.intro?.slice(0, 110)}{(ch.intro?.length || 0) > 110 ? "…" : ""}
+                  </span>
+                </span>
+                <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+                  {ch.minutes || 9} min
+                </span>
+              </a>
+            </li>
+          ))}
+          <li className="flex items-center justify-between rounded-xl border border-gold/30 bg-gold/5 px-3 py-2 text-sm font-semibold">
+            <span>Totalt</span>
+            <span className="font-mono text-xs">{course.totalMinutes || course.minutes} min</span>
+          </li>
+        </ol>
+
+        {/* Desktop: tabell */}
+        <div className="mt-3 hidden overflow-x-auto rounded-xl border border-gold/20 md:block">
           <table className="w-full text-sm">
             <thead className="bg-gold/10 text-left text-xs uppercase tracking-wide text-gold">
               <tr>

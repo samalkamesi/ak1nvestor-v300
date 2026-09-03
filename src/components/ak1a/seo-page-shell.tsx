@@ -5,6 +5,7 @@ import { Mobilmeny } from "@/components/ak1a/mobilmeny";
 import { NastaSteg } from "@/components/ak1a/nasta-steg";
 import { Sidfooter } from "@/components/ak1a/sidfooter";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { InloggadKnapp } from "@/components/ak1a/inloggad-knapp";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
@@ -32,12 +33,8 @@ export function SeoPageShell({
           </div>
           <Mobilmeny />
           <div className="ml-auto flex items-center gap-2 text-sm">
-            <Link
-              href="/logga-in"
-              className="rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90"
-            >
-              Logga in
-            </Link>
+            {/* Inloggningsstatus — hälsning + utloggning när medlem, guld-CTA annars */}
+            <InloggadKnapp />
             <TemaVaxlare />
           </div>
         </div>

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { lasMedlem, loggaUt } from "@/lib/member-local";
 import {
   Search,
   Moon,
@@ -133,6 +134,16 @@ export function Header() {
   const [oppad, setOppad] = React.useState<string | null>(null); // öppen megamenu-panel
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [intrad, setIntrad] = React.useState(false); // för tonad drawer-entré
+  // Inloggningsstatus i drawerns CTA — medlem ser Portal + Logga ut
+  // (kunddirektiv 2026-09-03: aldrig "Logga in" till inloggad).
+  const [medlemNamn, setMedlemNamn] = React.useState<string | null>(null);
+  React.useEffect(() => {
+    const m = lasMedlem();
+    if (m) {
+      const f = (m.namn || m.email || "").split("@")[0].split(" ")[0];
+      setMedlemNamn(f ? f.charAt(0).toUpperCase() + f.slice(1) : "du");
+    }
+  }, []);
   React.useEffect(() => setMounted(true), []);
 
   // Megameny — hover med 180 ms fördröjning så panelerna inte flimrar
@@ -501,14 +512,27 @@ export function Header() {
               </section>
             </nav>
 
-            {/* Guld-CTA längst ner */}
+            {/* Guld-CTA längst ner — statusmedveten */}
             <div className="mt-auto flex gap-3 pt-8">
-              <button
-                onClick={() => valjSektion("portal")}
-                className="flex-1 rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
-              >
-                Logga in / Portal
-              </button>
+              <div className="flex flex-1 flex-col gap-2">
+                <button
+                  onClick={() => valjSektion("portal")}
+                  className="w-full rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
+                >
+                  {medlemNamn ? `${medlemNamn} · Portal` : "Logga in / Portal"}
+                </button>
+                {medlemNamn && (
+                  <button
+                    onClick={() => {
+                      loggaUt();
+                      setMedlemNamn(null);
+                    }}
+                    className="w-full rounded-xl border border-gold/30 px-4 py-2.5 text-center text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground"
+                  >
+                    Logga ut
+                  </button>
+                )}
+              </div>
               <Link
                 href="/fas2-ansok"
                 onClick={() => setMobileOpen(false)}

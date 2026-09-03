@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { lasStreak, lasXP, niva } from "@/lib/member-local";
 import { VarumarkesLogo } from "./varumarkes-logo";
+import { InloggadKnapp } from "./inloggad-knapp";
 import { cn } from "@/lib/utils";
 
 /**
@@ -293,15 +294,14 @@ export function Mobilmeny() {
               ))}
             </nav>
 
-            {/* Längst ner: guld-CTA + Fas 2-ansökan */}
+            {/* Längst ner: inloggningsstatus + Fas 2-ansökan.
+                Inloggad medlem ser "Min Sida"-hälsning + Logga ut (aldrig
+                "Logga in" till någon som redan är inloggad — kunddirektiv
+                2026-09-03). */}
             <div className="mt-auto flex gap-3 pt-8">
-              <Link
-                href="/logga-in"
-                onClick={stang}
-                className="flex-1 rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl hover:opacity-90"
-              >
-                Logga in
-              </Link>
+              <div className="flex-1">
+                <InloggadKnapp stor />
+              </div>
               <Link
                 href="/fas2-ansok"
                 onClick={stang}

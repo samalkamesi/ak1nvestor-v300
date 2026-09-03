@@ -2,7 +2,7 @@
  * Strategi: nätverksförst för sidor (alltid färskt innehåll), cache-först för
  * statiska assets. Offline: senast cachad sida + offline-fallback.
  */
-const VERSION = "ak1a-v1";
+const VERSION = "ak1a-v2";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
 self.addEventListener("install", (event) => {
@@ -16,6 +16,20 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((nycklar) => Promise.all(nycklar.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+      // Hygien: radera ev. felstatussvar (404/5xx) som gamla versioner cachat
+      .then(() =>
+        caches.open(VERSION).then((cache) =>
+          cache.keys().then((reqs) =>
+            Promise.all(
+              reqs.map((req) =>
+                cache.match(req).then((res) => {
+                  if (res && res.status >= 400) return cache.delete(req);
+                })
+              )
+            )
+          )
+        )
+      )
       .then(() => self.clients.claim())
   );
 });
@@ -45,12 +59,15 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Sidor: nätverksförst, cache-fallback vid offline
+  // Sidor: nätverksförst, cache-fallback vid offline.
+  // Endast lyckade svar (2xx) cachas — en 404 får aldrig fastna i cachen.
   event.respondWith(
     fetch(req)
       .then((res) => {
-        const kopia = res.clone();
-        caches.open(VERSION).then((c) => c.put(req, kopia));
+        if (res.ok) {
+          const kopia = res.clone();
+          caches.open(VERSION).then((c) => c.put(req, kopia));
+        }
         return res;
       })
       .catch(() => caches.match(req).then((cachad) => cachad || caches.match("/")))

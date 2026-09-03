@@ -35,6 +35,10 @@
     {
       "path": "/api/nyheter/scan",
       "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/portfolj-uppfoljning",
+      "schedule": "0 7 1 * *"
     }
   ]
 }

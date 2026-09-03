@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260901T121458551Z-23536-d66b536ca590",
+  "runId": "20260901T121458551Z-23536-d66b536ca590",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "918eec741a122aee6b52f8a776e06bd53bf0cb6a",
+  "diffHash": "3029169b6a0008bf46d5d241e031b6b01356acb7befc0ac76d720b2720b60616",
+  "rulesVersion": "unavailable",
+  "sessionHash": "8f45e5c254c33726b77a596621d6519b992d736ac5e8f3f643b85c6c95abfded",
+  "reportRef": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260901T121458551Z-23536-d66b536ca590.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "src/components/ak1a/kognitiv-profil.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/diagnos/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/seo-page-shell.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-01T12:14:59.232Z"
+}

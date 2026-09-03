@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260824T170049437Z-21380-6ff58934dc9b",
+  "runId": "20260824T170049437Z-21380-6ff58934dc9b",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "54e8ebbb5987b6ac0de2c4863545634db7bc6708",
+  "diffHash": "8156763a4ff35865f8ea13d28ca78c57d0c5977ae06d29b010a52addba4fbbc1",
+  "rulesVersion": "unavailable",
+  "sessionHash": "8f45e5c254c33726b77a596621d6519b992d736ac5e8f3f643b85c6c95abfded",
+  "reportRef": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260824T170049437Z-21380-6ff58934dc9b.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "src/components/ak1a/akm1-calculator.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-08-24T17:00:50.094Z"
+}

@@ -1,0 +1,765 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+AK1A Research Lab — portföljforskning, steg 1: fundamental insamling.
+
+Samla grundlagda nyckeltal för bolagsuniversumet (10 branscher × 10 bolag)
+med DUBBELA OBEROENDE KÄLLOR och full spårbarhet:
+
+  KÄLLA A — Yahoo Finance (quoteSummary med crumb-autentisering, samma mönster
+            som src/lib/analys-motor.ts): pris, värdering, lönsamhet, skuldsättning,
+            resultaträkningshistorik (4 räkenskapsår), konsenstillväxt, insiderköp.
+  KÄLLA B — MarketStack (eod/latest, batchat): oberoende slutkurs som dubbelkollar
+            prisberoende nyckeltal (pris, P/E, P/B, marknadsvärde).
+            OBS: fundamentals-endpointen är INTE tillgänglig på aktuell plan
+            (HTTP 404) — dokumenterad fallback, se manifest.json.
+
+ÄRLIGHET: varje fält som inte kan beräknas ur källorna blir null — aldrig gissat.
+Avvikelser > 15 % mellan källorna loggas i fältet `notering`.
+
+UTDATA (exakt enligt src/lib/portfolj-forskning/typer.ts, JSON-nycklar utan åäö):
+  data/cache/fundamental-{TICKER}.json   — ett BolagsNyckeltal per fil
+  data/portfolj-system/bolagsunivers.json — hela universumet (via --bygg-univers)
+
+ANVÄNDNING:
+  python verktyg/python/samla_nyckeltal.py --bransch teknik     # en bransch (10 bolag)
+  python verktyg/python/samla_nyckeltal.py --tickers MSFT,ABB.ST
+  python verktyg/python/samla_nyckeltal.py --alla               # allt (ca 5-6 min)
+  python verktyg/python/samla_nyckeltal.py --bygg-univers       # slå ihop cache → univers
+
+Detta är en forskningsplattform. ALDRIG investeringsråd — endast data.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import ipaddress
+import json
+import math
+import os
+import re
+import socket
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+
+# ── Sökvägar ─────────────────────────────────────────────────────────────────
+SKRIPT_ROT = os.path.dirname(os.path.abspath(__file__))
+REPO_ROT = os.path.dirname(os.path.dirname(SKRIPT_ROT))          # verktyg/python → repo
+CACHE_KAT = os.path.join(REPO_ROT, "data", "cache")
+SYSTEM_KAT = os.path.join(REPO_ROT, "data", "portfolj-system")
+ENV_FIL = os.path.join(REPO_ROT, ".env")
+
+# ── Universum: 10 branscher × 10 bolag ──────────────────────────────────────
+# Urvalskriterier: notoritet (etablerade listbolag), data-tillgänglighet hos
+# källorna samt fundamentalspridning (mix av kvalitetsbolag och tillväxtbolag).
+# Sverige-tyngt (OMXS) + globala jättar. Motivering per bransch finns i
+# data/portfolj-system/manifest.json.
+BRANSCH_ORDNING = [
+    "teknik", "industri", "halso", "konsument", "fastighet",
+    "finans", "material", "energi", "kommunikation", "tillvaxt",
+]
+
+UNIVERSUM: dict[str, list[str]] = {
+    "teknik": ["MSFT", "GOOGL", "AAPL", "ERIC-B.ST", "NOKIA.HE", "SAP.DE", "SINCH.ST", "ASM.AS", "LOGN.SW", "KAMBI.ST"],
+    "industri": ["ABB.ST", "ATCO-A.ST", "INDU-C.ST", "ALFA.ST", "SAND.ST", "SKF-B.ST", "ASSA-B.ST", "HEXA-B.ST", "ETN", "GE"],
+    "halso": ["AZN.ST", "NOVO-B.CO", "COLO-B.CO", "EKTA-B.ST", "GETI-B.ST", "JNJ", "LLY", "BSX", "FRE.DE", "CEVI.ST"],
+    "konsument": ["HM-B.ST", "ESSITY-B.ST", "ELUX-B.ST", "VOLCAR-B.ST", "PG", "NKE", "MCD", "MC.PA", "CARL-B.CO", "ITX.MC"],
+    "fastighet": ["CAST.ST", "FABG.ST", "WALL-B.ST", "BALD-B.ST", "HUFV-A.ST", "CATE.ST", "NP3.ST", "DIOS.ST", "WIHL.ST", "PLD"],
+    "finans": ["NDA-SE.ST", "SEB-A.ST", "SWED-A.ST", "SHB-A.ST", "INVE-B.ST", "LATO-B.ST", "ORES.ST", "JPM", "BRK-B", "GS"],
+    "material": ["BOL.ST", "SSAB-B.ST", "BILL.ST", "HOLM-B.ST", "SCA-B.ST", "STERV.HE", "UPM.HE", "NHY.OL", "YAR.OL", "NEM"],
+    "energi": ["EQNR.OL", "AKRBP.OL", "VAR.OL", "XOM", "CVX", "SHEL", "RWE.DE", "IBE.MC", "ENEL.MI", "FORTUM.HE"],
+    "kommunikation": ["TELIA.ST", "TEL2-A.ST", "VPLAY-B.ST", "MTG-B.ST", "META", "NFLX", "DIS", "VZ", "T", "WBD"],
+    "tillvaxt": ["NVDA", "TSLA", "AMD", "PLTR", "SHOP", "SE", "PCELL.ST", "TRUE-B.ST", "KINV-B.ST", "PSNY"],
+}
+
+# Börsland utifrån Yahoo-suffix (land = LISTNINGSland, inte huvudkontorets land).
+LAND_PER_SUFFIX = [
+    (".ST", "Sverige"), (".CO", "Danmark"), (".HE", "Finland"), (".OL", "Norge"),
+    (".DE", "Tyskland"), (".AS", "Nederländerna"), (".SW", "Schweiz"), (".PA", "Frankrike"),
+    (".MI", "Italien"), (".MC", "Spanien"), (".TO", "Kanada"), (".L", "Storbritannien"),
+]
+
+# MarketStack-symbolmappning (Yahoo-suffix → MarketStack-börskod).
+MARKETSTACK_SUFFIX = {
+    ".ST": ".XSTO", ".CO": ".XCPH", ".HE": ".XHEL", ".OL": ".XOSL",
+    ".DE": ".XFRA", ".AS": ".XAMS", ".SW": ".XSWX", ".PA": ".XPAR",
+    ".MI": ".XMIL", ".MC": ".XMAD",
+}
+
+YAHOO_MODULER = (
+    "price,summaryDetail,defaultKeyStatistics,financialData,"
+    "incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+)
+
+PAUS_SEKUNDER = 0.7          # mellan bolag (rategräns-respekt)
+RETRY_PPAUSER = [2, 5, 10]   # backoff vid 429/999/5xx
+MAX_FORSOK = 3
+AVVIKELSE_TRASKEL = 0.15     # 15 % → notering
+
+# ── Säkerhet: SSRF-skydd (Mimosa L2-krav) ────────────────────────────────────
+# Endast dessa värdar får anropas, endast via https. DNS kontrolleras direkt
+# före VARJE anrop (stoppar även DNS-rebinding) och privata/loopback/link-local-
+# adresser avslås — inklusive molnmetadata-adressen 169.254.169.254.
+TILLATNA_VARDAR = {
+    "query1.finance.yahoo.com",   # quoteSummary + getcrumb (Källa A)
+    "query2.finance.yahoo.com",   # reservvärd för Källa A
+    "fc.yahoo.com",               # cookie-hämtning i crumb-flödet (svarar 404 + Set-Cookie)
+    "api.marketstack.com",        # Källa B (eod/latest)
+}
+
+
+def _privat_ip(ip_str: str) -> bool:
+    """True om adressen är privat/loopback/link-local/reserverad/multicast.
+    Ogiltiga adresser avslås också (fail-closed). Täcker 10.x, 172.16–31.x,
+    192.168.x, 127.x, 169.254.x (metadata), ::1, fc00::/7 och fe80::/10."""
+    try:
+        ip = ipaddress.ip_address(ip_str)
+    except ValueError:
+        return True
+    return (
+        ip.is_private
+        or ip.is_loopback
+        or ip.is_link_local
+        or ip.is_multicast
+        or ip.is_reserved
+        or ip.is_unspecified
+    )
+
+
+def kontrollera_host(url: str) -> None:
+    """SSRF-grind: https-scheme + värdvitlista + DNS-uppslag mot ogiltiga IP.
+    Körs före varje enskilt nätanrop — även vid retries (DNS-rebinding-skydd)."""
+    delad = urllib.parse.urlsplit(url)
+    if delad.scheme != "https":
+        raise ValueError(f"blockerat schema (endast https tillåtet): {delad.scheme!r}")
+    vard = delad.hostname or ""
+    if vard not in TILLATNA_VARDAR:
+        raise ValueError(f"blockerad värd (ej i vitlistan): {vard!r}")
+    port = delad.port or 443
+    for info in socket.getaddrinfo(vard, port, proto=socket.IPPROTO_TCP):
+        ip = info[4][0]
+        if _privat_ip(ip):
+            raise ValueError(f"blockerad privat/reserverad IP för {vard}: {ip}")
+
+
+class _AvslaRedirect(urllib.request.HTTPRedirectHandler):
+    """Omdirigeringar avslås helt (mönster från analys-motorn: redirect => fel)."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # noqa: D102
+        raise urllib.error.HTTPError(newurl, code, "omdirigering blockerad", headers, fp)
+
+
+# Opener som aldrig följer 301/302 — alla anrop går via denna.
+_OPENER = urllib.request.build_opener(_AvslaRedirect)
+
+
+# ── Allmänna hjälpfunktioner ────────────────────────────────────────────────
+
+def dag_iso() -> str:
+    """Lokalt ISO-datum YYYY-MM-DD."""
+    return dt.date.today().isoformat()
+
+
+def _las_env(namn: str) -> str | None:
+    """Läs variabel ur .env utan att någonsin skriva ut värdet."""
+    if not os.path.isfile(ENV_FIL):
+        return None
+    for rad in open(ENV_FIL, encoding="utf-8"):
+        m = re.match(rf"^{namn}=(.*)$", rad.strip())
+        if m:
+            v = m.group(1).strip().strip('"').strip("'")
+            return v or None
+    return None
+
+
+def _hamta_json(url: str, rubriker: dict, timeout: int = 15) -> dict:
+    """GET → JSON med retry/backoff vid 429/999/5xx, max 3 försök.
+    SSRF-grinden kontrollera_host körs före VARJE försök (DNS-rebinding-skydd)
+    och anropet görs med en opener som aldrig följer omdirigeringar."""
+    fel_senaste: Exception | None = None
+    for forsok in range(MAX_FORSOK):
+        try:
+            kontrollera_host(url)  # vid varje försök — DNS kan ha ändrats
+            req = urllib.request.Request(url, headers=rubriker)
+            with _OPENER.open(req, timeout=timeout) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            fel_senaste = e
+            if e.code in (429, 999) or 500 <= e.code < 600:
+                paus = RETRY_PPAUSER[min(forsok, len(RETRY_PPAUSER) - 1)]
+                print(f"    HTTP {e.code} — väntar {paus} s (försök {forsok + 2}/{MAX_FORSOK})")
+                time.sleep(paus)
+                continue
+            raise  # 4xx (t.ex. 404) är inte transitivt — kasta direkt
+        except ValueError:
+            raise  # SSRF-blockering är aldrig transitiv — avbryt direkt
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            fel_senaste = e
+            paus = RETRY_PPAUSER[min(forsok, len(RETRY_PPAUSER) - 1)]
+            print(f"    Nätverksfel ({type(e).__name__}) — väntar {paus} s")
+            time.sleep(paus)
+    raise fel_senaste if fel_senaste else RuntimeError("okänt fel")
+
+
+def _tal(modul: dict, nyckel: str) -> float | None:
+    """Plocka raw-värdet ur ett Yahoo-{}-objekt {'raw': x, 'fmt': 'y'} — ärligt None."""
+    v = modul.get(nyckel) if isinstance(modul, dict) else None
+    if isinstance(v, dict):
+        r = v.get("raw")
+        return float(r) if isinstance(r, (int, float)) else None
+    return float(v) if isinstance(v, (int, float)) else None
+
+
+def _avvikelse(a: float | None, b: float | None) -> float | None:
+    """Relativ skillnad |a−b|/max(|a|,|b|) — None om ej beräkningsbar."""
+    if a is None or b is None or a == 0 or b == 0:
+        return None
+    return abs(a - b) / max(abs(a), abs(b))
+
+
+def _cagr(forrsta: float | None, sista: float | None, ar: int) -> float | None:
+    """CAGR över `ar` intervall — None om ej definierat (t.ex. negativ bas)."""
+    if forrsta is None or sista is None or ar < 1:
+        return None
+    if forrsta <= 0 or sista <= 0:
+        return None  # CAGR är odefinierat för negativa tal — ärlig null
+    if not math.isfinite(forrsta) or not math.isfinite(sista):
+        return None
+    return (sista / forrsta) ** (1.0 / ar) - 1.0
+
+
+def land_fran_ticker(ticker: str) -> str:
+    """Börsland utifrån Yahoo-suffix; USA utan suffix."""
+    for suffix, land in LAND_PER_SUFFIX:
+        if ticker.endswith(suffix):
+            return land
+    return "USA"
+
+
+def marketstack_symbol(ticker: str) -> str:
+    """Yahoo-ticker → MarketStack-symbol (USA förblir okodat)."""
+    for suffix, ms in MARKETSTACK_SUFFIX.items():
+        if ticker.endswith(suffix):
+            return ticker[: -len(suffix)] + ms
+    return ticker
+
+
+def sanera_filnamn(ticker: str) -> str:
+    """Sanera ticker till säkert filnamnsfragment (Mimosa-krav: path traversal).
+    Endast [A-Za-z0-9._-] tillåts, övriga tecken ersätts med '_'; '..' och
+    namn som börjar på '.' avvisas explicit."""
+    if not ticker or ".." in ticker:
+        raise ValueError(f"ogiltig ticker (path-traversal-misstänkt): {ticker!r}")
+    rensat = re.sub(r"[^A-Za-z0-9._-]", "_", ticker)
+    if not rensat or rensat.startswith("."):
+        raise ValueError(f"ogiltig ticker efter sanering: {ticker!r}")
+    return rensat
+
+
+def saker_sokvag(rot: str, filnamn: str) -> str:
+    """Bygg sökväg under rot och verifiera att den verkliga sökvägen inte
+    lämnar roten (realpath-kontroll stoppar symlinks och traversal)."""
+    sokvag = os.path.join(rot, filnamn)
+    verklig = os.path.realpath(sokvag)
+    rot_verklig = os.path.realpath(rot)
+    if verklig != rot_verklig and not verklig.startswith(rot_verklig + os.sep):
+        raise ValueError(f"sökväg utanför rot avvisad: {sokvag!r}")
+    return sokvag
+
+
+def cache_namn(ticker: str) -> str:
+    """Sanerat cache-filnamn: ABB.ST → fundamental-ABB_ST.json."""
+    return "fundamental-" + sanera_filnamn(ticker).replace(".", "_") + ".json"
+
+
+def spara_json(sokvag: str, data) -> None:
+    """Skriv JSON — vägrar skriva utanför repo-roten (realpath-kontroll)."""
+    rot_verklig = os.path.realpath(REPO_ROT)
+    verklig = os.path.realpath(sokvag)
+    if not verklig.startswith(rot_verklig + os.sep):
+        raise ValueError(f"sökväg utanför repo-roten avvisad: {sokvag!r}")
+    os.makedirs(os.path.dirname(sokvag), exist_ok=True)
+    with open(sokvag, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
+# ── Källa A: Yahoo Finance (crumb-mönstret ur analys-motorn) ────────────────
+
+_CRUMB_TILLSTAND: dict[str, str | None] = {"cookie": None, "crumb": None}
+
+
+def yahoo_crumb() -> tuple[str, str]:
+    """Hämta cookie (fc.yahoo.com) + crumb (getcrumb) — cacheas per process.
+    Båda anropen passerar SSRF-grinden (https + vitlista + IP-koll) och går via
+    den redirect-blockerade openern."""
+    if _CRUMB_TILLSTAND["cookie"] and _CRUMB_TILLSTAND["crumb"]:
+        return _CRUMB_TILLSTAND["cookie"], _CRUMB_TILLSTAND["crumb"]
+    cookie = ""
+    try:
+        kontrollera_host("https://fc.yahoo.com")
+        req = urllib.request.Request("https://fc.yahoo.com", headers={"User-Agent": "Mozilla/5.0 (AK1A)"})
+        try:
+            _OPENER.open(req, timeout=6)
+        except urllib.error.HTTPError as e:
+            # 404 är förväntat — cookien sitter i svaret
+            cookie = e.headers.get("Set-Cookie") or ""
+    except ValueError:
+        raise  # SSRF-blockering avbryter direkt
+    except Exception:
+        cookie = ""
+    cookie_par = cookie.split(";")[0] if cookie else ""
+    crumb_url = "https://query1.finance.yahoo.com/v1/test/getcrumb"
+    kontrollera_host(crumb_url)
+    req2 = urllib.request.Request(
+        crumb_url,
+        headers={"User-Agent": "Mozilla/5.0 (AK1A)", "Cookie": cookie_par},
+    )
+    crumb = _OPENER.open(req2, timeout=6).read().decode("utf-8").strip()
+    if not crumb:
+        raise RuntimeError("Yahoo crumb kunde inte hämtas")
+    _CRUMB_TILLSTAND["cookie"] = cookie_par
+    _CRUMB_TILLSTAND["crumb"] = crumb
+    return cookie_par, crumb
+
+
+def hamta_yahoo(ticker: str) -> dict | None:
+    """quoteSummary med alla moduler. Returnerar sammanslagen moduldict eller None."""
+    cookie, crumb = yahoo_crumb()
+    rubriker = {"User-Agent": "Mozilla/5.0 (AK1A)", "Cookie": cookie}
+    tk = urllib.parse.quote(ticker)
+    fel = None
+    for host in ("query1", "query2"):  # query2 som reservvärd
+        url = (
+            f"https://{host}.finance.yahoo.com/v10/finance/quoteSummary/{tk}"
+            f"?modules={YAHOO_MODULER}&crumb={urllib.parse.quote(crumb)}"
+        )
+        try:
+            d = _hamta_json(url, rubriker)
+            resultat = (d.get("quoteSummary") or {}).get("result") or []
+            if not resultat:
+                return None  # giltigt svar men inga data (avnoterat/okänt) — inte ett fel
+            return resultat[0]
+        except urllib.error.HTTPError as e:
+            fel = e
+            if e.code == 404:
+                continue  # pröva andra värden
+            raise
+        except Exception as e:
+            fel = e
+            continue
+    if fel:
+        raise fel
+    return None
+
+
+# ── Källa B: MarketStack (batchat eod/latest) ──────────────────────────────
+
+def hamta_marketstack_priser(tickers: list[str], nyckel: str) -> dict[str, dict]:
+    """Senaste slutkurs per MarketStack-symbol, ett batchat anrop.
+    Returnerar {yahoo-ticker: {'close': x, 'date': 'YYYY-MM-DD'}} — bara färska (≤7 dagar)."""
+    symboler = [marketstack_symbol(t) for t in tickers]
+    fran_till = {marketstack_symbol(t): t for t in tickers}
+    url = (
+        "https://api.marketstack.com/v1/eod/latest?access_key=" + nyckel
+        + "&symbols=" + urllib.parse.quote(",".join(symboler))
+    )
+    ut: dict[str, dict] = {}
+    try:
+        d = _hamta_json(url, {"User-Agent": "AK1A-Analysis/1.0"}, timeout=20)
+        if d.get("error"):
+            print(f"  MarketStack-fel: {d['error'].get('message', 'okänt')}")
+            return ut
+        for rad in d.get("data") or []:
+            sym = rad.get("symbol") or ""
+            datum = str(rad.get("date") or "")[:10]
+            close = rad.get("close")
+            if not (sym and datum and isinstance(close, (int, float))):
+                continue
+            # färskhetskrav: äldre än 7 dagar → avvisa (XSTO-data är föråldrad)
+            alder = (dt.date.today() - dt.date.fromisoformat(datum)).days
+            if alder > 7:
+                continue
+            yahoo_tk = fran_till.get(sym)
+            if yahoo_tk:
+                ut[yahoo_tk] = {"close": float(close), "date": datum}
+    except Exception as e:
+        print(f"  MarketStack-anrop misslyckades ({type(e).__name__}) — fortsätter med endast källa A")
+    return ut
+
+
+# ── Beräkningar → BolagsNyckeltal ───────────────────────────────────────────
+
+def bygg_post(ticker: str, bransch: str, y: dict, ms: dict | None) -> dict:
+    """Bygg ett BolagsNyckeltal exakt enligt typer.ts. Alla fält som saknar
+    källdata blir null — aldrig gissat. Avvikelser mellan källor → notering."""
+    price = y.get("price") or {}
+    fin = y.get("financialData") or {}
+    sd = y.get("summaryDetail") or {}
+    dks = y.get("defaultKeyStatistics") or {}
+    nspa = y.get("netSharePurchaseActivity") or {}
+
+    noteringar: list[str] = []
+    idag = dag_iso()
+
+    # – Grunduppgifter –
+    namn = price.get("longName") or price.get("shortName") or ticker
+    valuta = price.get("currency") or fin.get("financialCurrency") or ""
+    pris = _tal(fin, "currentPrice") or _tal(price, "regularMarketPrice")
+    mcap = _tal(price, "marketCap")
+
+    # – Resultaträkningshistorik (4 räkenskapsår hos källan) –
+    inc_lista = (y.get("incomeStatementHistory") or {}).get("incomeStatementHistory") or []
+    ar, omsattning, resultat, bruttomarginaler = [], [], [], []
+    senast_ebit = None
+    senast_ranta = None
+    for rad in inc_lista:
+        slut = (rad.get("endDate") or {}).get("fmt") or ""
+        rev = _tal(rad, "totalRevenue")
+        net = _tal(rad, "netIncome")
+        gp = _tal(rad, "grossProfit")
+        ebit = _tal(rad, "ebit")
+        ranta = _tal(rad, "interestExpense")
+        if slut[:4].isdigit():
+            ar.append(slut[:4])
+            omsattning.append(rev if rev is not None else 0)
+            resultat.append(net if net is not None else 0)
+            # OBS: Yahoo stoppar in stubbar (raw=0) för grossProfit/ebit — bara
+            # strikt positiva värden räknas som data, annars ärlig null.
+            if rev and gp is not None and gp > 0 and rev > 0:
+                bruttomarginaler.append(gp / rev)
+        if senast_ebit is None and ebit is not None and ebit > 0:
+            senast_ebit = ebit
+        if senast_ranta is None and ranta not in (None, 0):
+            senast_ranta = ranta
+
+    # Serierna sorteras äldsta → senaste (Yahoo levererar nyast först)
+    if ar and ar[0] > ar[-1]:
+        ar.reverse(); omsattning.reverse(); resultat.reverse(); bruttomarginaler.reverse()
+
+    antal_ar = len(ar)
+    if antal_ar == 0:
+        noteringar.append("resultaträkningshistorik saknas hos källan — serier/CAGR null")
+    elif antal_ar < 5:
+        noteringar.append(f"serier/CAGR bygger på {antal_ar} räkenskapsår (källan ger {antal_ar}, inte 5)")
+
+    oms_cagr = _cagr(omsattning[0] if omsattning else None, omsattning[-1] if omsattning else None, antal_ar - 1)
+    res_cagr = _cagr(resultat[0] if resultat else None, resultat[-1] if resultat else None, antal_ar - 1)
+    if resultat and (resultat[0] or 0) <= 0:
+        noteringar.append("resultatCAGR osatt: negativt/noll resultat basåret")
+
+    # – Tillväxt –
+    oms_tillvaxt_ttm = _tal(fin, "revenueGrowth")
+    prognos = None
+    for trend in (y.get("earningsTrend") or {}).get("trend") or []:
+        if trend.get("period") == "+1y":
+            prognos = _tal(trend, "growth")
+    if prognos is not None:
+        noteringar.append("prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend)")
+
+    # – Lönsamhet –
+    roe = _tal(fin, "returnOnEquity")
+    brutto_marg = _tal(fin, "grossMargins")
+    ebit_marg = _tal(fin, "operatingMargins")
+    netto_marg = _tal(fin, "profitMargins")
+    fcf = _tal(fin, "freeCashflow")
+    total_rev = _tal(fin, "totalRevenue")
+    fcf_marginal = (fcf / total_rev) if (fcf is not None and total_rev) else None
+
+    # ROIC-proxy: EBIT (före skatt) / (total skuld + eget kapital).
+    bokfort_ek = _tal(dks, "bookValue")
+    aktier = _tal(dks, "sharesOutstanding")
+    total_skuld = _tal(fin, "totalDebt")
+    ebit_ttm = (ebit_marg * total_rev) if (ebit_marg is not None and total_rev) else senast_ebit
+    ek_totalt = (bokfort_ek * aktier) if (bokfort_ek is not None and aktier) else None
+    roic = None
+    if bransch != "finans":  # banker/förvaltare: skulden är verksamheten — ROIC ej meningsfullt
+        if ebit_ttm and ek_totalt is not None and total_skuld is not None and (ek_totalt + total_skuld) > 0:
+            roic = ebit_ttm / (ek_totalt + total_skuld)
+            noteringar.append("roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK)")
+    else:
+        noteringar.append("finansbolag: roic/skuld-EK ej meningsfullt jämförbara — null")
+
+    # – Stabilitet –
+    de_yahoo = _tal(fin, "debtToEquity")
+    skuld_ek = de_yahoo / 100.0 if de_yahoo is not None else None  # Yahoo anger procent
+    if bransch == "finans":
+        skuld_ek = None
+
+    ranta_tackning = None
+    if senast_ebit is not None and senast_ranta not in (None, 0):
+        ranta_tackning = senast_ebit / abs(senast_ranta)
+    else:
+        noteringar.append("rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret")
+
+    # V19 — kassatäckning: endast bolag med negativt löpande kassaflöde.
+    # Banker/förvaltare undantas — deras kassaflöden är verksamheten, inte förbränning.
+    op_kassaflode = _tal(fin, "operatingCashflow")
+    kassa = _tal(fin, "totalCash")
+    burn = None
+    if bransch == "finans":
+        if op_kassaflode is not None and op_kassaflode < 0:
+            noteringar.append("finansbolag: burn-rate ej meningsfullt (kassaflödet är kärnverksamheten) — null")
+    elif op_kassaflode is not None and op_kassaflode < 0 and kassa is not None:
+        burn = kassa / (abs(op_kassaflode) / 12.0)
+    elif op_kassaflode is None and fcf is not None and fcf < 0 and kassa is not None:
+        burn = kassa / (abs(fcf) / 12.0)
+        noteringar.append("burn-rate enligt FCF (löpande kassaflöde saknades)")
+    # positiva kassaflöden → null enligt metodik (inget nyemissionsbehov)
+
+    # V19 — nyemissioner: aktieantalshistorik finns ej hos källorna → null (dokumenterat)
+    nyemissioner = None
+
+    # V20 — återköp: belopp/aktieantalsminskning saknas hos källorna → null.
+    # Insiderköp senaste 6 mån = netSharePurchaseActivity.buyInfoCount.
+    aterkop_belopp = None
+    aterkop_andel = None
+    insider_kop = _tal(nspa, "buyInfoCount")
+
+    # – Moat –
+    bm_medel = sum(bruttomarginaler) / len(bruttomarginaler) if bruttomarginaler else None
+    bm_spread = None
+    if len(bruttomarginaler) >= 2:
+        mv = sum(bruttomarginaler) / len(bruttomarginaler)
+        bm_spread = math.sqrt(sum((x - mv) ** 2 for x in bruttomarginaler) / len(bruttomarginaler))
+    if not bruttomarginaler:
+        noteringar.append("moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan")
+    roe_medel = None  # ROE-historik saknas hos källorna — ärlig null
+
+    # – Värdering –
+    pe = _tal(sd, "trailingPE") or _tal(dks, "trailingPE")
+    pb = _tal(dks, "priceToBook") or _tal(sd, "priceToBook")
+    peg = _tal(dks, "pegRatio")
+    ev = _tal(dks, "enterpriseValue")
+    ev_ebit = (ev / ebit_ttm) if (ev and ebit_ttm and ebit_ttm > 0) else None
+    fcf_yield = (fcf / mcap) if (fcf is not None and mcap) else None
+
+    # – Golv (NCAV-metodik) –
+    # NCAV = omsättningstillgångar − totala skulder (per aktie). Yahoo ger inga
+    # omsättningstillgångar via aktuella endpoints → NCAV beräknas ALDRIG här.
+    # Fastighetsbolag: bokfört EK/aktie som dokumenterad NAV-proxy ("tillgangstung").
+    golv_typ, golv_varde, golv_marginal = "osatt", None, None
+    if bransch == "fastighet" and bokfort_ek and pris:
+        golv_typ = "tillgangstung"
+        golv_varde = bokfort_ek
+        golv_marginal = (bokfort_ek - pris) / bokfort_ek
+        noteringar.append("golv = NAV-proxy: bokfört EK per aktie (NCAV-data saknas hos källorna)")
+    # övriga branscher: typ "osatt" + null — absolut ingen gissning
+
+    # – Dubbelkoll mot källa B (MarketStack) –
+    kallor = [{
+        "namn": "Yahoo Finance",
+        "hamtat": idag,
+        "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/" + ticker,
+        "paranoid": "quoteSummary-moduler: " + YAHOO_MODULER,
+    }]
+    if ms and ms.get("close"):
+        ms_pris = ms["close"]
+        eps = _tal(dks, "trailingEps")
+        ms_pe = (ms_pris / eps) if (eps and eps > 0) else None
+        ms_pb = (ms_pris / bokfort_ek) if (bokfort_ek and bokfort_ek > 0) else None
+        ms_mcap = (ms_pris * aktier) if aktier else None
+
+        for etikett, a, b in [
+            ("pris", pris, ms_pris),
+            ("P/E", pe, ms_pe),
+            ("P/B", pb, ms_pb),
+            ("marknadsvärde", (mcap / 1e9) if mcap else None, (ms_mcap / 1e9) if ms_mcap else None),
+        ]:
+            avv = _avvikelse(a, b)
+            if avv is not None and avv > AVVIKELSE_TRASKEL:
+                noteringar.append(
+                    f"AVVIKELSE>15% {etikett}: Yahoo {a:.4g} vs MarketStack {b:.4g} ({avv:.0%})"
+                )
+        kallor.append({
+            "namn": "MarketStack",
+            "hamtat": idag,
+            "url": "https://api.marketstack.com/v1/eod/latest",
+            "paranoid": f"eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs {ms['date']})",
+        })
+    else:
+        noteringar.append("källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation")
+        kallor.append({
+            "namn": "MarketStack",
+            "hamtat": idag,
+            "url": "https://api.marketstack.com/v1/eod/latest",
+            "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)",
+        })
+
+    # – Slutlig post (fältnamn exakt enligt typer.ts) –
+    post = {
+        "ticker": ticker,
+        "namn": namn,
+        "bransch": bransch,
+        "land": land_fran_ticker(ticker),
+        "valuta": valuta,
+        "kallor": kallor,
+        "hamtat": idag,
+        "pris": round(pris, 4) if pris is not None else None,
+        "marknadsKapitalMdr": round(mcap / 1e9, 3) if mcap is not None else None,
+        "tillvaxt": {
+            "omsattningCAGR5ar": round(oms_cagr, 4) if oms_cagr is not None else None,
+            "resultatCAGR5ar": round(res_cagr, 4) if res_cagr is not None else None,
+            "omsattningTillvaxtTTM": round(oms_tillvaxt_ttm, 4) if oms_tillvaxt_ttm is not None else None,
+            "prognosTillvaxt": round(prognos, 4) if prognos is not None else None,
+        },
+        "lonksamhet": {
+            "roe": round(roe, 4) if roe is not None else None,
+            "roic": round(roic, 4) if roic is not None else None,
+            "bruttoMarginal": round(brutto_marg, 4) if brutto_marg is not None else None,
+            "ebitMarginal": round(ebit_marg, 4) if ebit_marg is not None else None,
+            "nettoMarginal": round(netto_marg, 4) if netto_marg is not None else None,
+            "fcfMarginal": round(fcf_marginal, 4) if fcf_marginal is not None else None,
+        },
+        "stabilitet": {
+            "skuldEgenkapital": round(skuld_ek, 4) if skuld_ek is not None else None,
+            "rantaTackning": round(ranta_tackning, 2) if ranta_tackning is not None else None,
+            "fcfPositivaSenaste5": None,  # FCF-historik saknas hos källorna — dokumenterat i manifestet
+            "kassaManaderBurnRate": round(burn, 1) if burn is not None else None,
+            "nyemissionerSenaste5ar": nyemissioner,
+        },
+        "aterkop": {
+            "senasteArMdr": aterkop_belopp,
+            "andelUtestande": aterkop_andel,
+            "insiderkopSenaste6man": int(insider_kop) if insider_kop is not None else None,
+        },
+        "moat": {
+            "bruttoMarginalMedel5ar": round(bm_medel, 4) if bm_medel is not None else None,
+            "bruttoMarginalSpread5ar": round(bm_spread, 4) if bm_spread is not None else None,
+            "roeMedel5ar": roe_medel,
+        },
+        "vardering": {
+            "pe": round(pe, 3) if pe is not None else None,
+            "pb": round(pb, 3) if pb is not None else None,
+            "evEbit": round(ev_ebit, 3) if ev_ebit is not None else None,
+            "peg": round(peg, 3) if peg is not None else None,
+            "fcfYield": round(fcf_yield, 4) if fcf_yield is not None else None,
+            "egenKapitalMultipl": round(pb, 3) if pb is not None else None,
+        },
+        "golv": {
+            "typ": golv_typ,
+            "vardePerAktie": round(golv_varde, 2) if golv_varde is not None else None,
+            "marginal": round(golv_marginal, 4) if golv_marginal is not None else None,
+        },
+        "serier": {
+            "ar": ar,
+            "omsattning": omsattning,
+            "resultat": resultat,
+            "egetKapital": [],   # balansräkningshistorik saknas hos källorna (dokumenterat)
+            "fcf": [],           # kassaflödeshistorik saknas hos källorna (dokumenterat)
+        },
+    }
+    if noteringar:
+        post["notering"] = "; ".join(noteringar)
+    return post
+
+
+# ── Huvudflöde ──────────────────────────────────────────────────────────────
+
+def samla_batch(tickers: list[str], bransch_till: dict[str, str], ms_nyckel: str | None) -> None:
+    """Samla en batch (rekommenderat ≤ 10 st): Yahoo per bolag + ett MarketStack-anrop."""
+    print(f"─ Batch med {len(tickers)} bolag: {', '.join(tickers)}")
+    ms_priser: dict[str, dict] = {}
+    if ms_nyckel:
+        print("  MarketStack (källa B): hämtar slutkurser i ett batchat anrop …")
+        ms_priser = hamta_marketstack_priser(tickers, ms_nyckel)
+        print(f"  MarketStack: {len(ms_priser)} färska kurser ({len(tickers) - len(ms_priser)} saknade/inaktuella)")
+
+    for tk in tickers:
+        bransch = bransch_till.get(tk, "osatt")
+        try:
+            y = hamta_yahoo(tk)
+        except Exception as e:
+            print(f"  ✗ {tk}: Yahoo-fel ({type(e).__name__}: {str(e)[:80]}) — hoppar över")
+            time.sleep(PAUS_SEKUNDER)
+            continue
+        if not y:
+            print(f"  ✗ {tk}: inga quoteSummary-data (avnoterat/okänd symbol) — hoppar över")
+            time.sleep(PAUS_SEKUNDER)
+            continue
+        try:
+            post = bygg_post(tk, bransch, y, ms_priser.get(tk))
+        except Exception as e:
+            print(f"  ✗ {tk}: beräkningsfel ({type(e).__name__}: {str(e)[:80]}) — hoppar över")
+            time.sleep(PAUS_SEKUNDER)
+            continue
+        sokvag = saker_sokvag(CACHE_KAT, cache_namn(tk))
+        spara_json(sokvag, post)
+        falt = sum(
+            1 for grupp in ("tillvaxt", "lonksamhet", "stabilitet", "moat", "vardering")
+            for v in post[grupp].values() if v is not None
+        )
+        print(f"  ✓ {tk} ({post['namn'][:36]}): {falt} nyckeltal, golv={post['golv']['typ']}, sparad")
+        time.sleep(PAUS_SEKUNDER)
+
+
+def bygg_univers() -> int:
+    """Slå ihop alla cache-filer → data/portfolj-system/bolagsunivers.json,
+    sorterad per bransch enligt BRANSCH_ORDNING."""
+    ticker_till_bransch = {tk: b for b, tks in UNIVERSUM.items() for tk in tks}
+    poster = []
+    for fil in os.listdir(CACHE_KAT):
+        # Endast sanerade, förväntade filnamn läses — inget annat (path-skydd).
+        if not re.fullmatch(r"fundamental-[A-Za-z0-9._-]+\.json", fil):
+            continue
+        sokvag = saker_sokvag(CACHE_KAT, fil)
+        with open(sokvag, encoding="utf-8") as f:
+            post = json.load(f)
+        post["bransch"] = ticker_till_bransch.get(post.get("ticker", ""), post.get("bransch", "osatt"))
+        poster.append(post)
+    poster.sort(key=lambda p: (BRANSCH_ORDNING.index(p["bransch"]) if p["bransch"] in BRANSCH_ORDNING else 99, p["ticker"]))
+    sokvag = os.path.join(SYSTEM_KAT, "bolagsunivers.json")
+    spara_json(sokvag, poster)
+    print(f"bolagsunivers.json skriven: {len(poster)} poster → {sokvag}")
+    return len(poster)
+
+
+def main() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+    ap = argparse.ArgumentParser(description="AK1A — samla fundamentalnyckeltal (källa A: Yahoo, källa B: MarketStack)")
+    ap.add_argument("--bransch", choices=BRANSCH_ORDNING, help="samla hela branschen (10 bolag)")
+    ap.add_argument("--tickers", help="kommaseparerad lista, t.ex. MSFT,ABB.ST")
+    ap.add_argument("--alla", action="store_true", help="hela universumet")
+    ap.add_argument("--bygg-univers", action="store_true", help="slå ihop cache → bolagsunivers.json (inga nätanrop)")
+    args = ap.parse_args()
+
+    if args.bygg_univers:
+        bygg_univers()
+        return
+
+    tickers: list[str] = []
+    if args.bransch:
+        tickers = UNIVERSUM[args.bransch]
+    elif args.tickers:
+        tickers = [t.strip() for t in args.tickers.split(",") if t.strip()]
+    elif args.alla:
+        tickers = [tk for b in BRANSCH_ORDNING for tk in UNIVERSUM[b]]
+    else:
+        ap.print_help()
+        return
+
+    bransch_till = {tk: b for b, tks in UNIVERSUM.items() for tk in tks}
+    okanda = [t for t in tickers if t not in bransch_till]
+    for t in okanda:  # fristående tickers utanför universumet
+        bransch_till[t] = "osatt"
+
+    ms_nyckel = _las_env("MARKETSTACK_KEY")
+    if not ms_nyckel:
+        print("VARNING: MARKETSTACK_KEY saknas i .env — källa B inaktiverad, enbart Yahoo.")
+    print(f"Ak1A-insamlare startad {dag_iso()}: {len(tickers)} bolag, paus {PAUS_SEKUNDER} s mellan anrop")
+
+    # Batcher om högst 10 bolag (MarketStack-anrop + överskådlig logg)
+    for i in range(0, len(tickers), 10):
+        samla_batch(tickers[i : i + 10], bransch_till, ms_nyckel)
+
+    print("Klart. Bygg universumet med: python verktyg/python/samla_nyckeltal.py --bygg-univers")
+
+
+if __name__ == "__main__":
+    main()

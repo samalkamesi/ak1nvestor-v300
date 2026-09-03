@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260901T124208741Z-22896-a93b4c9e2643",
+  "runId": "20260901T124208741Z-22896-a93b4c9e2643",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": "tmp_quiz_gen.py",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "tmp_quiz_gen.py",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "179e250a9a436146bfb293191c0222bed348b123",
+  "diffHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "rulesVersion": "unavailable",
+  "sessionHash": "8f45e5c254c33726b77a596621d6519b992d736ac5e8f3f643b85c6c95abfded",
+  "reportRef": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260901T124208741Z-22896-a93b4c9e2643.json",
+  "events": [
+    {
+      "eventId": "hook-ebafd8a9aae9e72d903f19b7a4b604b6",
+      "findingId": "mimosa-056e2f477a238efa67979ca1",
+      "type": "finding_observed",
+      "at": "2026-09-01T12:37:32.569Z",
+      "identity": {
+        "projectRelativeFile": "tmp_quiz_gen.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "52346d2371fa7970999319692bb366f8041ec4ecd06d8172947a5f110458e44b",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 56,
+      "endLine": 56,
+      "reasonCode": "advisory",
+      "reportedToAgent": true,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "52346d2371fa7970999319692bb366f8041ec4ecd06d8172947a5f110458e44b"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-09-01T12:42:09.514Z"
+}

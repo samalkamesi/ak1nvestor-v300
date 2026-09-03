@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260901T181525282Z-23644-5d361789b97a",
+  "runId": "20260901T181525282Z-23644-5d361789b97a",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_partial",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline capture had enumeration or snapshot errors",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline_partial: baseline capture had enumeration or snapshot errors",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "e9a0ec960a579f52e915ad75aec7d2a2f1ca7ec6",
+  "diffHash": "a7707f278d8f5125550c9b1e2eb44dbb3d537665f976c6004c99d82b576593de",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260901T181525282Z-23644-5d361789b97a.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "src/components/ak1a/laroplan.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/huvudmeny.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/api/chatbot/route.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/manifest.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-01T18:15:26.015Z"
+}

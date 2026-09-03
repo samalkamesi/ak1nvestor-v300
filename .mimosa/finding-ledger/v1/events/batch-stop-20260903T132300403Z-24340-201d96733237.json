@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260903T132300403Z-24340-201d96733237",
+  "runId": "20260903T132300403Z-24340-201d96733237",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "verktyg/python/samla_nyckeltal.py",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "verktyg/python/validera_univers.py",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "verktyg/python/samla_nyckeltal.py",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "verktyg/python/validera_univers.py",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "11fd5f68cf0ca72607b4dd8d991050ff14e9023fc1c297d14f64dbab06cfd213",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T132300403Z-24340-201d96733237.json",
+  "events": [
+    {
+      "eventId": "hook-cdceb9e1c44ecaf6accdb55bd5e95ce9",
+      "findingId": "mimosa-2e12fa0065b896d2d2870a6f",
+      "type": "finding_observed",
+      "at": "2026-09-03T13:23:00.403Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/samla_nyckeltal.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "5206c06fc71aa73890e4b0b818c29debd19fe168247efad9ef79939c310b97a3",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 127,
+      "endLine": 127,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "5206c06fc71aa73890e4b0b818c29debd19fe168247efad9ef79939c310b97a3"
+      },
+      "sequence": 0
+    },
+    {
+      "eventId": "hook-38e1f7086fa49188c6b85742a49d2655",
+      "findingId": "mimosa-25bd4b0f2e0228d73ca02aaf",
+      "type": "finding_observed",
+      "at": "2026-09-03T13:23:00.403Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/samla_nyckeltal.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "b8a351ade5f7c5b21b634aac0c03c46e4849a320920493ec3537d8bacdcdd620",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 195,
+      "endLine": 195,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "b8a351ade5f7c5b21b634aac0c03c46e4849a320920493ec3537d8bacdcdd620"
+      },
+      "sequence": 1
+    },
+    {
+      "eventId": "hook-551139c9f92a7a8f3a399cad7c5bb133",
+      "findingId": "mimosa-91b34c03ad55fcd95d6ee791",
+      "type": "finding_observed",
+      "at": "2026-09-03T13:23:00.403Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/samla_nyckeltal.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "74d7d8968aed53e86eac5bb125c51cfd9c1c003a9e88cae4c71aef1d8874f586",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 213,
+      "endLine": 213,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "74d7d8968aed53e86eac5bb125c51cfd9c1c003a9e88cae4c71aef1d8874f586"
+      },
+      "sequence": 2
+    },
+    {
+      "eventId": "hook-6198f5093035a2d6f670bf97d00a19db",
+      "findingId": "mimosa-18e9fd0745cc6f49d98dd533",
+      "type": "finding_observed",
+      "at": "2026-09-03T13:23:00.403Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/samla_nyckeltal.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "583d405c81a97c4a9ef70e9eede5b9b9d9472e1a75ce37fff4b8098c06acde3f",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 224,
+      "endLine": 224,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "583d405c81a97c4a9ef70e9eede5b9b9d9472e1a75ce37fff4b8098c06acde3f"
+      },
+      "sequence": 3
+    },
+    {
+      "eventId": "hook-b491552df3fc2c05c60788c98a2ea4d4",
+      "findingId": "mimosa-278315e3f26373aa4e611ef8",
+      "type": "finding_observed",
+      "at": "2026-09-03T13:23:00.403Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/validera_univers.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "b8a351ade5f7c5b21b634aac0c03c46e4849a320920493ec3537d8bacdcdd620",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 235,
+      "endLine": 235,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "b8a351ade5f7c5b21b634aac0c03c46e4849a320920493ec3537d8bacdcdd620"
+      },
+      "sequence": 4
+    }
+  ],
+  "observedFindingIds": [
+    "mimosa-2e12fa0065b896d2d2870a6f",
+    "mimosa-25bd4b0f2e0228d73ca02aaf",
+    "mimosa-91b34c03ad55fcd95d6ee791",
+    "mimosa-18e9fd0745cc6f49d98dd533",
+    "mimosa-278315e3f26373aa4e611ef8"
+  ],
+  "verifiedFiles": [
+    {
+      "file": "src/lib/omtanke-motor.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/notiser.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/api/admin/utveckling/route.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/admin/utvecklingsradar.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "verktyg/python/samla_nyckeltal.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "verktyg/python/validera_univers.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/portfolj-forskning/riskportfolj.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/portfolj-forskning/riskval-panel.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-03T13:23:01.013Z"
+}

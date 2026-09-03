@@ -1,0 +1,72 @@
+// Verifiering: alla avsedda rattningar sitter, strukturen oforandrad, inga gamla strangar kvar i batch A
+const fs = require('fs');
+const cur = JSON.parse(fs.readFileSync('C:/Users/Workstation Z G4/.zcode/workspace/default/ak1/public/deep-courses.json', 'utf8'));
+const base = JSON.parse(fs.readFileSync('C:/Users/Workstation Z G4/.zcode/workspace/default/ak1/tmp_parts/sprak-A/baseline.json', 'utf8'));
+const ALL = Object.keys(cur).sort().slice(0, 84);
+
+// 1) struktur
+let ok = true;
+for (const s of ALL) {
+  const c = cur[s];
+  const b = base[s];
+  const now = { ch: (c.chapters || []).length, q: (c.chapters || []).reduce((a, k) => a + (k.quiz ? k.quiz.length : 0), 0), bl: (c.chapters || []).reduce((a, k) => a + (k.blocks ? k.blocks.length : 0), 0) };
+  if (now.ch !== b.ch || now.q !== b.q || now.bl !== b.b) { console.log('STRUKTURFEL', s, JSON.stringify(now), 'vs', JSON.stringify(b)); ok = false; }
+}
+console.log('Struktur (chapters/quiz/blocks) oförändrad för alla 84:', ok);
+
+// 2) gamla felaktiga strangar ska vara borta ur batch A
+const LEFTOVER_CHECKS = [
+  'vågör', 'undvita', 'AK1M1', 'AK1M-metodiken', 'Elliots ', 'Bernoulis', 'nackslag ', 'väg languaging',
+  'langsamt', 'overdriver', 'Låånga', 'motgift;', 'kognitiva bias bland', 'dessa bias är', 'systematiska bias,',
+  'hundra-baggers', 'äkte edge', 'försvarswerket', 'kategorien', 'bokfords', 'avgifts matte', 'multipl-frågan',
+  'studioli', 'skylder', 'förmågör', 'ser ett inifrån', 'kontroversiell ärlighet', 'enligt läg', 'mäklars ',
+  'overstiger det', 'dyrare sätt', 'att att rycka', 'overtygelse', 'skrulas', 'KASSAFLÖDESET', 'dörrar där',
+  'capital-knip', 'återges öppet', 'trott förluster', 'koplas', 'tre frågor 1890', 'overdrivna', 'köpa something',
+  'ochAKM1', 'på job som', 'obeståndsfördringar', 'före du köper', 'koppen nedre', 'koppen mitt', 'koppen övre',
+  'koppen form', 'en krav på', 'prognos som finns', 'priset inbakade', 'urvalselet', 'inte vågas mot', 'fiber spole',
+  'Chi-X inträde', 'köär bakom', 'PR:är', 'i i decennier', 'in i i bokens', 'för kursen visas', 'jämförelseseten',
+  'vallgrävter', 'instabilar', 'multipeler', 'vilken två frågor', 'motsvarige i priset', 'swinglägör',
+  'gör boken unika', 'own riskpremie', 'bolaget moget', "knyter till", 'värdeinvesteringens fader\'', 'bokförningsförståelse',
+  'infördes Sverige', 'en ramverk', 'inte bara dokumenterar', 'sjunk trots', 'om om företagets', 'sannolikheten for',
+  'en test av', 'Sanna mästerskap', 'Sann mästerskap', 'avdraget av', 'familjeägd,', 'retail-segmenten', 'För honn',
+  'like Spotify', 'engångsintäck', 'varna framtida', 'informationen ofta', 'som ett genererar', 'aktie verkligt',
+  'framtiga', 'aktiornas', 'Denna beta sedan', 'en bolags', 'preciserad WACC', 'en recept', 'P/E-tal på ett skuldsatt',
+  'ofte fann', 'för för enbart', 'plattformar Avanza', 'tydligare bild', 'Ytterligare nivån', 'konkurrensadvantager',
+  'Sum-of-the--parts', 'den dolda värden', 'det uppskattade värdet av dess', 'vilket ofta handlas', 'retail-investern',
+  'jämföres', 'multiplicator', 'högaktig', 'lågvolativ', 'Risk-Ajusterade', 'driven av marknadspåverkan', 'prissättningfaktor',
+  'standardavvikelse kan', 'En statistisk mått', 'kartläcka', 'korelerade', 'struktur förändring', 'ett portfölj mot',
+  'inherenta', 'Den används ofta som en benchmark', 'i den nordiska marknaden', 'Denna exemplifierar', 'genera absolut',
+  'matcherönskad', 'specifiktt', 'Shapers', 'AK1 Research Lab', "Det hjälper investerare", 'råd att förlora',
+  'der banbrytande', 'definiera exakta', 'psykologiska värdet', 'underliggande behovet', 'nivåär', 'informationsöär',
+  'privatinvesterares aktivt', "mr. Market", 'spordes', 'ofta maskeras', 'hyposen', 'vanlig misstag', 'etablerade konsensus',
+  'bekräftelseförlänger', 'en tecken på djup', 'göra det inte', 'Linjärt vs', 'att skriva ner, vilket', '1.1 standarden',
+  'goodwill dess', 'långt beyond', 'årlig nedskrivningstest', 'långsiktig företagsvärde', 'ett skuld', 'Detta särskilt',
+  'sann bild', 'förbisetot', 'strategiska syftet', 'starkast varumärke', 'missförstånd för', 'åtagendernas',
+  'en varningstecken', 'potentiellt värderingsrisk', 'Persson:s', '沃尔沃', '闭环', "Lynch's favorit", 'vikten att förhålla',
+  'tillvädd', 'tillvästtempo', 'intrinsika', 'förfondsförvaltare', "Market's'", 'ränter', 'viktig i en era',
+  'värdet uppskattningar', 'interna konsekventa', 'skulle analyserat', 'intrinsika värderingen', 'brancheffekter',
+  'asymmetrin som', 'förlustarna', 'emellertid tenderar', 'förlosten', 'maximal avkastning', 'portfäljs sårbarhet',
+  'sin fokus', 'stark kassaflöde', 'ett portfäljs', 'breda marknäsindex', 'breda marknadsindex', 'hedling', 'familjeärenden',
+  'oförutsedga', 'rad av olika', 'Den sista 5%', 'genera alpha', 'ultimativa', 'en hot', 'medvetet förståelse',
+  'marknedsindikatorer', 'even bolag', 'identifiera av detta', 'möjlister', 'investerars ', 'psykologisk fenomen',
+  'panik säljer', 'underestimera', 'ohållig '
+];
+let bad = [];
+for (const s of ALL) {
+  const t = JSON.stringify(cur[s]);
+  for (const p of LEFTOVER_CHECKS) if (p && t.includes(p)) bad.push(s + ' :: ' + p);
+}
+console.log('Kvarvarande gamla strängar i batch A:', bad.length);
+bad.forEach(x => console.log('  KVAR:', x));
+
+// 3) nya strangar finns (stickprov)
+const SPOT = [
+  ['100-baggers', '100-baggers'], ['ak1ts-vaglarans-hierarki', 'våg languaging'], ['ak1ts-vaglarans-hierarki', 'vågor'],
+  ['against-the-gods', 'Bernoullis'], ['a-random-walk-down-wall-street', 'långsamt'], ['akm1-den-kontroversiella-modellen', 'kvanter'],
+  ['bull-a-history-of-boom-and-bust', 'studior'], ['km-026-relaterade-parter', 'som Volvo och Investor'],
+  ['km-026-relaterade-parter', 'sluten loop'], ['km-036-overconfidence', 'Overconfidence'], ['km-033-tailrisk-hedging', 'familjekontor'],
+  ['flash-boys', 'fiberspole'], ['bf-02-sunk-cost', 'kognitiva biasarna'], ['km-019-bekraftelsefalla', 'hypotesen'],
+  ['km-031-var', 'förlusten'], ['distress-investing', 'obeståndsfordringar'], ['investment-valuation', 'intrinsiskt värde'],
+  ['come-into-my-trading-room', 'ser ut inifrån'], ['km-013-volatilitet-standardavvikelse', 'högvolatil']
+];
+for (const [s, p] of SPOT) console.log((JSON.stringify(cur[s]).includes(p) ? 'OK  ' : 'SAKNAS ') + s + ' :: ' + p);

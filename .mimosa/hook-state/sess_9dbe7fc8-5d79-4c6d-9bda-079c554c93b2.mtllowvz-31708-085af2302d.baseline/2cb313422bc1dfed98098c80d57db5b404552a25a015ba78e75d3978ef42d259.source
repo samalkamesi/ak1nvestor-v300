@@ -1,0 +1,345 @@
+// Sprakexpert A: kurs-scopade kirurgiska rattningar (batch A = forsta 84 alfabetiskt)
+const fs = require('fs');
+const DB = 'C:/Users/Workstation Z G4/.zcode/workspace/default/ak1/public/deep-courses.json';
+const raw0 = fs.readFileSync(DB, 'utf8');
+const d = JSON.parse(raw0);
+const ALL = Object.keys(d).sort().slice(0, 84);
+const inA = new Set(ALL);
+
+function walkReplace(obj, oldS, newS, counter) {
+  if (typeof obj === 'string') { if (obj.includes(oldS)) { counter.n += oldS === newS ? 0 : obj.split(oldS).length - 1; return obj.split(oldS).join(newS); } return obj; }
+  if (Array.isArray(obj)) return obj.map(v => walkReplace(v, oldS, newS, counter));
+  if (obj && typeof obj === 'object') { for (const k of Object.keys(obj)) obj[k] = walkReplace(obj[k], oldS, newS, counter); return obj; }
+  return obj;
+}
+
+// [slug|'*A*', gamal, ny, max]
+const FIX = [
+  // === systemfel, hela batch A ===
+  ['*A*', 'vågör', 'vågor', 140],
+  ['*A*', 'undvita', 'undvika', 12],
+  ['*A*', 'från svenska börsen', 'från den svenska börsen', 65],
+  ['*A*', 'AK1M1', 'AKM1', 6],
+  ['*A*', 'kognitiva bias bland svenska investerare', 'kognitiva biasarna bland svenska investerare', 12],
+  ['*A*', 'dessa bias är robusta', 'dessa biasar är robusta', 11],
+  ['*A*', 'för att motverka systematiska bias, men', 'för att motverka systematiska biasar, men', 11],
+  ['*A*', 'överväger köpa', 'överväger att köpa', 3],
+
+  // === 100-baggers ===
+  ['100-baggers', 'hundra-baggers', '100-baggers', 1],
+  // === a-random-walk ===
+  ['a-random-walk-down-wall-street', 'läcker langsamt ut', 'läcker långsamt ut', 1],
+  ['a-random-walk-down-wall-street', 'investerare overdriver glansbilder', 'investerare överdriver glansbilder', 1],
+  ['a-random-walk-down-wall-street', 'med konkreta motgift', 'med konkreta motgifter', 1],
+  ['a-random-walk-down-wall-street', 'Låånga horisonter', 'Långa horisonter', 1],
+  // === against-the-gods ===
+  ['against-the-gods', 'Jacob Bernoulis', 'Jacob Bernoullis', 2],
+  ['against-the-gods', 'Daniel Bernoulis', 'Daniel Bernoullis', 2],
+  ['against-the-gods', 'fick sin nackslag av krisen', 'fick sin nackslogg av krisen', 2],
+  ['against-the-gods', 'den enda fråga som spelar roll', 'den enda frågan som spelar roll', 1],
+  ['against-the-gods', 'dödar även med äkte edge', 'dödar även med äkta edge', 1],
+  // === ak1ts ===
+  ['ak1ts-vaglarans-hierarki', 'väg languaging', 'våg languaging', 3],
+  ['ak1ts-vaglarans-hierarki', 'Väg languaging', 'Våg languaging', 1],
+  ['ak1ts-vaglarans-hierarki', 'Elliots djupsinne', 'Elliotts djupsinne', 1],
+  // === akm1 ===
+  ['akm1-den-kontroversiella-modellen', 'kvantiteter och CFA:er', 'kvanter och CFA:er', 1],
+  ['akm1-den-kontroversiella-modellen', 'bygger försvarswerket', 'bygger försvarsverket', 1],
+  ['akm1-den-kontroversiella-modellen', 'inte kategorien, är atomär enhet med 5 poäng i tak', 'inte kategorin, är den atomära enheten med 5 poäng i tak', 1],
+  ['akm1-den-kontroversiella-modellen', 'inte kategorien', 'inte kategorin', 2],
+  ['akm1-den-kontroversiella-modellen', 'bokfords till fullt marknadsvärde', 'bokförs till fullt marknadsvärde', 1],
+  // === all-about-asset-allocation ===
+  ['all-about-asset-allocation', 'avgifts matte', 'avgiftsmatte', 1],
+  // === blue-ocean ===
+  ['blue-ocean-strategy', 'Vilken tre egenskaper kännetecknar', 'Vilka tre egenskaper kännetecknar', 1],
+  ['blue-ocean-strategy', 'multipl-frågan', 'multipelfrågan', 1],
+  // === bull ===
+  ['bull-a-history-of-boom-and-bust', 'CNBC:s studioli', 'CNBC:s studior', 1],
+  ['bull-a-history-of-boom-and-bust', 'i egen kött och blod', 'i eget kött och blod', 1],
+  // === charlie-munger ===
+  ['charlie-munger-complete-investor', 'den ärlighetsövning varje Munger-lärjunge skylder sig själv', 'den ärlighetsövningen varje Munger-lärjunge skyldig sig själv', 1],
+  ['charlie-munger-complete-investor', 'dina egen förmågör ligger', 'dina egna förmågor ligger', 1],
+  // === come-into ===
+  ['come-into-my-trading-room', 'ser ett inifrån', 'ser ut inifrån', 1],
+  ['come-into-my-trading-room', 'kräver den kontroversiell ärlighet', 'kräver den kontroversiella ärligheten', 1],
+  ['come-into-my-trading-room', 'enligt läg redovisa', 'enligt lag redovisa', 1],
+  ['come-into-my-trading-room', 'svenska mäklars uppgifter', 'svenska mäklares uppgifter', 1],
+  ['come-into-my-trading-room', 'drömresultat — overstiger det', 'drömresultat — överstiger det', 1],
+  // === common-stocks ===
+  ['common-stocks-uncommon-profits', 'bara en dyrare sätt att köpa', 'bara ett dyrare sätt att köpa', 1],
+  // === competition ===
+  ['competition-demystified', 'Därför att att rycka kunder', 'Därför att rycka kunder', 1],
+  // === contrarian ===
+  ['contrarian-investment-strategies', 'mest egen overtygelse', 'mest egen övertygelse', 1],
+  // === creative ===
+  ['creative-cash-flow-reporting', 'skrulas upp', 'skruvas upp', 2],
+  ['creative-cash-flow-reporting', ' Med fri kassaflödes alla definitioner', ' Fri kassaflödes alla definitioner', 1],
+  ['creative-cash-flow-reporting', 'KASSAFLÖDESET', 'KASSAFLÖDET', 1],
+  ['creative-cash-flow-reporting', 'de fem dörrar där kassaflödet', 'de fem dörrarna där kassaflödet', 1],
+  ['creative-cash-flow-reporting', 'working capital-knip', 'working capital-knep', 1],
+  ['creative-cash-flow-reporting', 'citerar och återges öppet', 'citerar och återger öppet', 1],
+  ['creative-cash-flow-reporting', 'utdelningen trott förluster', 'utdelningen trots förluster', 1],
+  ['creative-cash-flow-reporting', 'koplas till', 'kopplas till', 1],
+  // === devil ===
+  ['devil-take-the-hindmost', '— och 1717 köpa Mississippi-området', '— och att 1717 köpa Mississippi-området', 1],
+  ['devil-take-the-hindmost', 'Skriv de tre frågor 1890', 'Skriv de tre frågorna 1890', 1],
+  ['devil-take-the-hindmost', 'var overdrivna i siffrorna', 'var överdrivna i siffrorna', 1],
+  // === distress ===
+  ['distress-investing', 'obeståndsfördringar', 'obeståndsfordringar', 1],
+  ['distress-investing', 'köpa something i spillrorna', 'köpa något i spillrorna', 1],
+  ['distress-investing', 'Metod ochAKM1-koppling', 'Metod och AKM1-koppling', 1],
+  ['distress-investing', 'metod ochAKM1-koppling', 'metod och AKM1-koppling', 1],
+  ['distress-investing', 'på job som försvinner', 'på jobb som försvinner', 1],
+  ['distress-investing', 'före du köper NÅGOT', 'innan du köper NÅGOT', 1],
+  ['distress-investing', 'FÖRE du köper något', 'INNAN du köper något', 1],
+  // === encyclopedia ===
+  ['encyclopedia-of-chart-patterns', 'I koppen nedre tredjedel', 'I koppens nedre tredjedel', 1],
+  ['encyclopedia-of-chart-patterns', 'Precis i koppen mitt', 'Precis i koppens mitt', 1],
+  ['encyclopedia-of-chart-patterns', 'I koppen övre halva', 'I koppens övre halva', 1],
+  ['encyclopedia-of-chart-patterns', 'definition av koppen form', 'definition av koppens form', 1],
+  // === expectations ===
+  ['expectations-investing', 'som en krav på varaktighet', 'som ett krav på varaktighet', 1],
+  ['expectations-investing', 'informationsrika prognos som finns', 'informationsrika prognosen som finns', 1],
+  ['expectations-investing', 'läsa priset inbakade förväntningar', 'läsa prisetS inbakade förväntningar', 1],
+  // === fibonacci ===
+  ['fibonacci-applications', 'överlevnadsurvalselet', 'överlevnadsurvalet', 1],
+  ['fibonacci-applications', 'förtjänar inte vågas mot marknaden', 'förtjänar inte att vågas mot marknaden', 1],
+  // === flash-boys ===
+  ['flash-boys', 'fiber spole', 'fiberspole', 3],
+  ['flash-boys', 'Chi-X inträde i nordiska aktier', 'Chi-X:s inträde i nordiska aktier', 1],
+  ['flash-boys', 'som köär bakom', 'som köar bakom', 1],
+  // === fooling ===
+  ['fooling-some-of-the-people', 'PR:är positionen', 'PR:ar positionen', 4],
+  ['fooling-some-of-the-people', 'sorterar Elder läsaren in i i bokens', 'sorterar Elder läsaren in i bokens', 1],
+  // === foretagsvardering ===
+  ['foretagsvardering-med-fundamental-analys', 'utbildats i i decennier', 'utbildats i decennier', 1],
+  ['foretagsvardering-med-fundamental-analys', 'Värdera med data för kursen visas', 'Värdera med data före kursen visas', 1],
+  // === good-to-great ===
+  ['good-to-great', 'jämförelseseten', 'jämförelsesettet', 1],
+  ['good-to-great', 'vallgrävter kan omdefinieras', 'vallgravar kan omdefinieras', 1],
+  // === intermarket ===
+  ['intermarket-analysis', 'är instabilar', 'är instabila', 1],
+  // === investment-valuation ===
+  ['investment-valuation', 'relativa multipeler', 'relativa multipler', 1],
+  ['investment-valuation', 'vilken två frågor', 'vilka två frågor', 1],
+  ['investment-valuation', 'intrinsikt värde', 'intrinsiskt värde', 4],
+  // === japanese ===
+  ['japanese-candlestick-charting', 'sin motsvarige i priset', 'sin motsvarighet i priset', 1],
+  ['japanese-candlestick-charting', 'swinglägör', 'swinglägor', 1],
+  // === penman ===
+  ['financial-statement-analysis-and-security-valuation', 'gör boken unika', 'gör boken unik', 1],
+  ['financial-statement-analysis-and-security-valuation', 'own riskpremie', 'egen riskpremie', 1],
+  ['financial-statement-analysis-and-security-valuation', 'kärnresultatet: bolaget moget —', 'kärnresultatet: bolaget är moget —', 1],
+  // === km-001 ===
+  ['km-001-bokforingens-grunder', 'knyter till balansräkningen', 'knyter an till balansräkningen', 2],
+  ['km-001-bokforingens-grunder', "'den värdeinvesteringens fader'", "'värdeinvesteringens fader'", 1],
+  ['km-001-bokforingens-grunder', 'bokförningsförståelse', 'bokföringsförståelse', 1],
+  ['km-001-bokforingens-grunder', '1911 infördes Sverige sin första läg om bokföring', '1911 införde Sverige sin första lag om bokföring', 1],
+  // === km-002 ===
+  ['km-002-forvaltningsberattelsen', 'erbjuder en ramverk', 'erbjuder ett ramverk', 1],
+  ['km-002-forvaltningsberattelsen', 'Denna process inte bara dokumenterar', 'Denna process dokumenterar inte bara', 1],
+  // === km-003 ===
+  ['km-003-kassaflodesanalysen', 'sjunk trots', 'sjunkit trots', 1],
+  ['km-003-kassaflodesanalysen', 'uppfattning om om företagets', 'uppfattning om företagets', 1],
+  // === km-004 ===
+  ['km-004-noter', 'sannolikheten for förluster', 'sannolikheten för förluster', 1],
+  ['km-004-noter', 'som en test av en investerares', 'som ett test av en investerares', 1],
+  ['km-004-noter', 'Sanna mästerskap i aktieanalys', 'Sant mästerskap i aktieanalys', 1],
+  // === km-005 ===
+  ['km-005-eget-kapital-utdelningar', 'efter avdraget av alla dess skulder', 'efter avdrag för alla dess skulder', 1],
+  ['km-005-eget-kapital-utdelningar', 'bolag ofta var familjeägd', 'bolag ofta var familjeägda', 1],
+  ['km-005-eget-kapital-utdelningar', 'den svenska retail-segmenten', 'det svenska retail-segmentet', 1],
+  // === km-006 ===
+  ['km-006-kvartalsrapporten', 'För honn var', 'För honom var', 1],
+  ['km-006-kvartalsrapporten', 'tech-bolag like Spotify', 'tech-bolag som Spotify', 1],
+  ['km-006-kvartalsrapporten', 'engångsintäck från', 'engångsintäkt från', 1],
+  ['km-006-kvartalsrapporten', 'kan varna framtida problem', 'kan varna för framtida problem', 1],
+  ['km-006-kvartalsrapporten', 'informationen ofta döljs', 'informationen döljs ofta', 1],
+  ['km-006-kvartalsrapporten', 'kontant som ett genererar', 'kontanter som ett företag genererar', 1],
+  // === km-007 ===
+  ['km-007-dcf', 'på en aktie verkligt värde', 'på en akties verkliga värde', 1],
+  // === km-008 ===
+  ['km-008-wacc', 'framtiga avkastningskrav', 'framtida avkastningskrav', 1],
+  ['km-008-wacc', 'framtiga kapitalkostnader', 'framtida kapitalkostnader', 1],
+  ['km-008-wacc', 'aktiornas avkastningskrav', 'aktiernas avkastningskrav', 1],
+  ['km-008-wacc', "Denna beta sedan 'levereras' upp", "Denna beta 'levereras' sedan upp", 1],
+  ['km-008-wacc', 'justera en bolags beta (systematisk risk)', 'justera ett bolags beta (systematisk risk)', 1],
+  ['km-008-wacc', 'justera en bolags systematiska risk', 'justera ett bolags systematiska risk', 1],
+  ['km-008-wacc', 'mer preciserad WACC', 'mer precis WACC', 1],
+  // === km-009 ===
+  ['km-009-pe', 'var en recept för katastrof', 'var ett recept för katastrof', 1],
+  // === km-010 ===
+  ['km-010-evebit', 'en låg P/E-tal på ett skuldsatt', 'ett lågt P/E-tal på ett skuldsatt', 1],
+  ['km-010-evebit', 'han ofte fann', 'han ofta fann', 1],
+  ['km-010-evebit', 'istället för för enbart balansomslutningen', 'istället för enbart balansomslutningen', 1],
+  ['km-010-evebit', 'plattformar Avanza och Nordnet', 'plattformar som Avanza och Nordnet', 1],
+  ['km-010-evebit', 'ett tydligare bild', 'en tydligare bild', 1],
+  ['km-010-evebit', 'Sann mästerskap inom EV/EBIT', 'Sant mästerskap inom EV/EBIT', 1],
+  ['km-010-evebit', 'Ytterligare nivån av mästerskap', 'En ytterligare nivå av mästerskap', 1],
+  ['km-010-evebit', 'konkurrensadvantager', 'konkurrensfördelar', 1],
+  // === km-012 ===
+  ['km-012-sum-of-the-parts-sotp', 'Sum-of-the--parts-analys', 'Sum-of-the-parts-analys', 1],
+  ['km-012-sum-of-the-parts-sotp', 'avslöjar den dolda värden i bolag', 'avslöjar de dolda värdena i bolag', 1],
+  ['km-012-sum-of-the-parts-sotp', 'det uppskattade värdet av dess innehav', 'det uppskattade värdet av deras innehav', 1],
+  ['km-012-sum-of-the-parts-sotp', 'vilket ofta handlas med en rabatt', 'vilka ofta handlas med en rabatt', 1],
+  ['km-012-sum-of-the-parts-sotp', 'retail-investern', 'retail-investeraren', 1],
+  ['km-012-sum-of-the-parts-sotp', 'kvantifiera den dolda värden', 'kvantifiera de dolda värdena', 1],
+  ['km-012-sum-of-the-parts-sotp', 'förstå den underliggande värden', 'förstå de underliggande värdena', 1],
+  ['km-012-sum-of-the-parts-sotp', 'jämföres sedan', 'jämförs sedan', 1],
+  ['km-012-sum-of-the-parts-sotp', 'multiplicator som EV/Sales', 'multipel som EV/Sales', 1],
+  // === km-013 ===
+  ['km-013-volatilitet-standardavvikelse', 'högaktig men välskött', 'högvolatil men välskött', 1],
+  ['km-013-volatilitet-standardavvikelse', 'lågvolativ men problematisk bolag', 'lågvolatil men problematiskt bolag', 1],
+  ['km-013-volatilitet-standardavvikelse', 'inte som isolerad riskmätare, som en del av vår Risk-Ajusterade', 'inte som isolerad riskmätare utan som en del av vår Risk-Adjusterade', 1],
+  ['km-013-volatilitet-standardavvikelse', 'eller driven av marknadspåverkan', 'eller drivna av marknadspåverkan', 1],
+  ['km-013-volatilitet-standardavvikelse', 'prissättningfaktor', 'prissättningsfaktor', 1],
+  ['km-013-volatilitet-standardavvikelse', 'historiska standardavvikelse kan leda', 'historiska standardavvikelser kan leda', 1],
+  ['km-013-volatilitet-standardavvikelse', 'Korrelation: En statistisk mått', 'Korrelation: Ett statistiskt mått', 1],
+  // === km-014 ===
+  ['km-014-korrelation-diversifiering', 'kartläcka hur', 'kartlägga hur', 1],
+  ['km-014-korrelation-diversifiering', 'korelerade starkt', 'korrelerade starkt', 1],
+  ['km-014-korrelation-diversifiering', 'en struktur förändring', 'en strukturförändring', 1],
+  // === km-015 ===
+  ['km-015-beta-capm', 'bygga ett portfölj mot OMXS30', 'bygga en portfölj mot OMXS30', 1],
+  ['km-015-beta-capm', 'dess inherenta risk', 'dess inneboende risk', 1],
+  ['km-015-beta-capm', "'story' dess affärsmodell", "'story', dess affärsmodell", 1],
+  ['km-015-beta-capm', 'Den används ofta som en benchmark', 'Det används ofta som en benchmark', 1],
+  ['km-015-beta-capm', 'i den nordiska marknaden', 'på den nordiska marknaden', 1],
+  ['km-015-beta-capm', 'Denna exemplifierar', 'Detta exemplifierar', 1],
+  ['km-015-beta-capm', 'genera absolut avkastning', 'generera absolut avkastning', 1],
+  ['km-015-beta-capm', 'matcherönskad riskprofil', 'matcher önskad riskprofil', 1],
+  ['km-015-beta-capm', 'ett specifiktt index', 'ett specifikt index', 1],
+  // === km-016 ===
+  ['km-016-sharpe-kvot', 'i Shapers banbrytande', 'i Sharpes banbrytande', 1],
+  ['km-016-sharpe-kvot', 'William F. Shapers', 'William F. Sharpes', 1],
+  ['km-016-sharpe-kvot', 'AK1 Research Lab använder Sharpe-kvoten', 'AK1A Research Lab använder Sharpe-kvoten', 1],
+  ['km-016-sharpe-kvot', "Det hjälper investerare att undvika 'fårflocken'", "Den hjälper investerare att undvika 'fårflocken'", 1],
+  // === km-017 ===
+  ['km-017-position-sizing-kelly-kriteriet', 'men aldrig råd att förlora', 'men aldrig ha råd att förlora', 1],
+  // === km-018 ===
+  ['km-018-forlustaversion', 'i der banbrytande artikel', 'i deras banbrytande artikel', 1],
+  ['km-018-forlustaversion', 'på förhand definiera exakta regler', 'på förhand definierar exakta regler', 1],
+  ['km-018-forlustaversion', 'den psykologiska värdet', 'det psykologiska värdet', 1],
+  ['km-018-forlustaversion', 'den underliggande behovet', 'det underliggande behovet', 1],
+  ['km-018-forlustaversion', 'nivåär baserade', 'nivåer baserade', 1],
+  ['km-018-forlustaversion', 'informationsöär', 'informationsöar', 1],
+  // === km-019 ===
+  ['km-019-bekraftelsefalla', 'som privatinvesterares aktivt söka', 'som privatinvesterare aktivt söka', 1],
+  ['km-019-bekraftelsefalla', "'mr. Market'-felet", "'Mr. Market'-felet", 1],
+  ['km-019-bekraftelsefalla', 'spordes redan', 'spårades redan', 1],
+  ['km-019-bekraftelsefalla', 'bekräftelsefällan ofta maskeras', 'bekräftelsefällan maskeras ofta', 1],
+  ['km-019-bekraftelsefalla', 'stöder hyposen', 'stöder hypotesen', 1],
+  ['km-019-bekraftelsefalla', 'En annan vanlig misstag är', 'Ett annat vanligt misstag är', 1],
+  ['km-019-bekraftelsefalla', 'i den etablerade konsensus', 'i den etablerade konsensusen', 1],
+  ['km-019-bekraftelsefalla', 'bekräftelseförlänger sig själv', 'bekräftelse förlänger sig själv', 1],
+  ['km-019-bekraftelsefalla', 'utan som en tecken på djup', 'utan som ett tecken på djup', 1],
+  // === km-020 ===
+  ['km-020-ankareffekt', 'när det borde göra det inte', 'när det inte borde göra det', 2],
+  // === km-021 ===
+  ['km-021-avskrivningsprinciper', 'Linjärt vs degressivt avskrivning', 'Linjär vs degressiv avskrivning', 2],
+  // === km-022 ===
+  ['km-022-goodwill-och-immateriella-tillgangar', 'riskerar att skriva ner, vilket', 'riskerar att skrivas ner, vilket', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'AKM1 1.1 standarden erbjuder', 'AKM1 1.1-standarden erbjuder', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'bryta ner goodwill dess beståndsdelar', 'bryta ner goodwill i dess beståndsdelar', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'långt beyond standardiserad redovisning', 'långt bortom standardiserad redovisning', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'Sanna mästerskap ligger', 'Sant mästerskap ligger', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'på en årlig nedskrivningstest', 'på ett årligt nedskrivningstest', 1],
+  ['km-022-goodwill-och-immateriella-tillgangar', 'maximera långsiktig företagsvärde', 'maximera långsiktigt företagsvärde', 1],
+  // === km-023 ===
+  ['km-023-leasing', 'en tillgång och ett skuld', 'en tillgång och en skuld', 1],
+  ['km-023-leasing', 'värdering. Detta särskilt viktigt', 'värdering. Detta är särskilt viktigt', 1],
+  ['km-023-leasing', 'en mer sann bild', 'en sannare bild', 1],
+  // === km-024 ===
+  ['km-024-segmentrapportering', 'förbisetet inslag', 'förbisett inslag', 1],
+  ['km-024-segmentrapportering', 'och de strategiska syftet', 'och det strategiska syftet', 1],
+  ['km-024-segmentrapportering', 'och starkast varumärke', 'och det starkaste varumärket', 1],
+  // === km-025 ===
+  ['km-025-pensionsataganden', 'missförstånd för redovisningsregler', 'missförstånd kring redovisningsregler', 1],
+  ['km-025-pensionsataganden', 'pensionsåtagendernas storlek', 'pensionsåtagandenas storlek', 1],
+  // === km-026 ===
+  ['km-026-relaterade-parter', 'som en varningstecken för', 'som ett varningstecken för', 1],
+  ['km-026-relaterade-parter', 'potentiellt värderingsrisk', 'potentiell värderingsrisk', 1],
+  ['km-026-relaterade-parter', 'Persson:s transaktioner', 'Perssons transaktioner', 1],
+  ['km-026-relaterade-parter', 'som沃尔沃 och Investor', 'som Volvo och Investor', 1],
+  ['km-026-relaterade-parter', 'en闭环 (stängd loop)', 'en sluten loop (stängd loop)', 1],
+  ['km-026-relaterade-parter', 'finansiell闭环 (Operational', 'finansiell sluten loop (Operational', 1],
+  // === km-027 ===
+  ['km-027-pegratio', "Lynch's favorit", 'Lynchs favorit', 2],
+  ['km-027-pegratio', 'vikten att förhålla', 'vikten av att förhålla', 1],
+  ['km-027-pegratio', 'tillväddprognosen', 'tillväxtprognosen', 1],
+  ['km-027-pegratio', 'Tillväddprognos', 'Tillväxtprognos', 1],
+  ['km-027-pegratio', 'tillvästtempo', 'tillväxttempo', 1],
+  ['km-027-pegratio', 'deras intrinsika värde', 'deras intrinsiska värde', 1],
+  // === km-028 ===
+  ['km-028-reverse-dcf', 'förfondsförvaltare', 'fondförvaltare', 1],
+  ['km-028-reverse-dcf', "'Mr. Market's' humörsvängningar", 'Mr. Markets humörsvängningar', 1],
+  ['km-028-reverse-dcf', 'era av låga ränter', 'era av låga räntor', 1],
+  ['km-028-reverse-dcf', 'ännu viktig i en era', 'ännu viktigare i en era', 1],
+  // === km-029 ===
+  ['km-029-scenarioanalys', "'stigande ränter'", "'stigande räntor'", 1],
+  ['km-029-scenarioanalys', 'skapa värdet uppskattningar', 'skapa värdeuppskattningar', 1],
+  ['km-029-scenarioanalys', 'interna konsekventa scenarier', 'internt konsekventa scenarier', 1],
+  // === km-030 ===
+  ['km-030-margin-of-safety', 'han skulle analyserat', 'han skulle ha analyserat', 1],
+  ['km-030-margin-of-safety', 'multiplicatoranalys', 'multipelanalys', 1],
+  ['km-030-margin-of-safety', 'den intrinsika värderingen', 'den intrinsiska värderingen', 1],
+  ['km-030-margin-of-safety', 'brancheffekter', 'branscheffekter', 1],
+  // === km-031 ===
+  ['km-031-var', 'den asymmetrin som finns', 'asymmetrin som finns', 1],
+  ['km-031-var', 'stora förlustarna kan bli', 'stora förlusterna kan bli', 1],
+  ['km-031-var', 'kris emellertid tenderar korrelationerna', 'kris tenderar emellertid korrelationerna', 1],
+  ['km-031-var', 'den maximala förlosten', 'den maximala förlusten', 1],
+  ['km-031-var', 'inte bara maximal avkastning', 'inte bara maximerar avkastning', 1],
+  ['km-031-var', 'portföljs sårbarhet', 'portföljens sårbarhet', 1],
+  // === km-032 ===
+  ['km-032-stresstesting-portfoljen', 'teoretisk ramverk', 'teoretiskt ramverk', 1],
+  ['km-032-stresstesting-portfoljen', 'med sin fokus på', 'med sitt fokus på', 1],
+  ['km-032-stresstesting-portfoljen', 'en stark kassaflöde och konkurrenskraft', 'ett starkt kassaflöde och konkurrenskraft', 1],
+  ['km-032-stresstesting-portfoljen', "identifiera ett portfäljs 'margin of safety'", "identifiera en portfäljs 'margin of safety'", 1],
+  // === km-033 ===
+  ['km-033-tailrisk-hedging', 'på ett breda marknadsindex', 'på ett brett marknadsindex', 1],
+  ['km-033-tailrisk-hedging', 'tail-risk hedling', 'tail-risk hedging', 1],
+  ['km-033-tailrisk-hedging', 'och familjeärenden', 'och familjekontor', 1],
+  ['km-033-tailrisk-hedging', 'oförutsedga chocker', 'oförutsedda chocker', 1],
+  ['km-033-tailrisk-hedging', 'en rad av olika, men sannolika', 'en rad olika, men sannolika', 1],
+  // === km-034 ===
+  ['km-034-drawdownanalys', 'Den sista 5% var', 'De sista 5% var', 1],
+  ['km-034-drawdownanalys', 'genera alpha', 'generera alpha', 1],
+  ['km-034-drawdownanalys', 'Det ultimativa målet', 'Det ultimata målet', 1],
+  ['km-034-drawdownanalys', 'inte som en hot, utan', 'inte som ett hot, utan', 1],
+  ['km-034-drawdownanalys', 'där medvetet förståelse', 'där medveten förståelse', 1],
+  ['km-034-drawdownanalys', 'Sann mästerskap i riskhantering', 'Sant mästerskap i riskhantering', 1],
+  ['km-034-drawdownanalys', 'marknedsindikatorer', 'marknadsindikatorer', 1],
+  ['km-034-drawdownanalys', 'då even bolag som', 'då även bolag som', 1],
+  // === km-035 ===
+  ['km-035-flockbeteende', 'kan identifiera av detta beteende', 'kan identifieringen av detta beteende', 1],
+  ['km-035-flockbeteende', 'sanna möjlister ofta doldes', 'sanna möjligheter ofta doldes', 1],
+  ['km-035-flockbeteende', 'investerars beslut drivs', 'investerarnas beslut drivs', 1],
+  ['km-035-flockbeteende', 'investerars köp- och säljbeslut', 'investerarnas köp- och säljbeslut', 1],
+  ['km-035-flockbeteende', 'En psykologisk fenomen där', 'Ett psykologiskt fenomen där', 1],
+  ['km-035-flockbeteende', 'när panik säljer ut', 'när paniken säljer ut', 1],
+  // === km-036 ===
+  ['km-036-overconfidence', 'sanna möjlister', 'sanna möjligheter', 1],
+  ['km-036-overconfidence', 'Överconfidence', 'Overconfidence', 1],
+  // === bf-01 ===
+  ['bf-01-tillganglighetsfalla', "'Mr. Markets' humörsvängningar", 'Mr. Markets humörsvängningar', 1],
+  ['bf-01-tillganglighetsfalla', 'eller underestimera', 'eller underskatta', 1],
+  ['bf-01-tillganglighetsfalla', 'ohållig kapitalbindning', 'ohållbar kapitalbindning', 1],
+  ['bf-01-tillganglighetsfalla', 'AK1M-metodiken', 'AKM1-metodiken', 1],
+];
+
+const log = [];
+let total = 0, miss = 0, overmax = 0;
+for (const [slug, o, n, mx] of FIX) {
+  const targets = slug === '*A*' ? ALL : [slug];
+  if (slug !== '*A*' && !inA.has(slug)) { log.push('OGILTIG SLUG: ' + slug); miss++; continue; }
+  const c = { n: 0 };
+  for (const t of targets) d[t] = walkReplace(d[t], o, n, c);
+  if (c.n === 0) { log.push('MISS [' + slug + '] ' + o.slice(0, 55)); miss++; }
+  else if (c.n > mx) { log.push('FÖRMÅNGA (' + c.n + '>' + mx + ') [' + slug + '] ' + o.slice(0, 55)); overmax++; }
+  else { total += c.n; log.push('OK ' + c.n + ' [' + slug + '] ' + o.slice(0, 45) + ' → ' + n.slice(0, 45)); }
+}
+
+fs.writeFileSync(DB, JSON.stringify(d, null, 2) + '\n');
+fs.writeFileSync('C:/Users/Workstation Z G4/.zcode/workspace/default/ak1/tmp_parts/sprak-A/fixlog2.txt', log.join('\n'));
+console.log('Ersatta förekomster:', total, '| MISS:', miss, '| FÖRMÅNGA:', overmax);

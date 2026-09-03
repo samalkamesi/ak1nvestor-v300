@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-delivery-20260903T140044628Z-34000-b28167b6622d",
+  "runId": "20260903T140044628Z-34000-b28167b6622d",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "StopDelivery"
+  },
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "874bff89d9d0200d3cce863a16b2cd366adb2e5131eb4f84bcf663e9744487d4",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T140044628Z-34000-b28167b6622d.json",
+  "events": [
+    {
+      "eventId": "hook-afc9019bae4056f2749d0f123f45b407",
+      "findingId": "mimosa-00fbeea33a06685f37c647b3",
+      "type": "finding_blocked",
+      "at": "2026-09-03T14:00:45.280Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/sammanstalla_korstabell.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "cbcaf15881b894b66ae63729a88db6e5811a6fd1e388dca1db152a520a2f0293",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 186,
+      "endLine": 186,
+      "reasonCode": "stop_rewake",
+      "reportedToAgent": true,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "cbcaf15881b894b66ae63729a88db6e5811a6fd1e388dca1db152a520a2f0293"
+      },
+      "sequence": 0
+    },
+    {
+      "eventId": "hook-4bd6d025ae9e10d5ff22246a7c86ce1d",
+      "findingId": "mimosa-f06f63167ce6106928d66733",
+      "type": "finding_blocked",
+      "at": "2026-09-03T14:00:45.280Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/sammanstalla_korstabell.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "69dc99e6d915570c45f9b3bf0d73d34f3f52e12edd57db541395de6a20b960cf",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 331,
+      "endLine": 331,
+      "reasonCode": "stop_rewake",
+      "reportedToAgent": true,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "69dc99e6d915570c45f9b3bf0d73d34f3f52e12edd57db541395de6a20b960cf"
+      },
+      "sequence": 1
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-09-03T14:00:45.899Z"
+}

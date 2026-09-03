@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260901T083658918Z-5916-87207eae5199",
+  "runStatus": "inconclusive",
+  "errors": [
+    "scan:src/lib/member-local.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/kurs-gate.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/chatbot/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/chat-widget.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/layout.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/kurser/[slug]/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "7b93c0ec1e6e99e8fe4b7be31099ddaca597e938",
+  "diffHash": "7fc1a3951565f05de7fdc580d427bf3a56914f654ab429fb2f6219c99169c656",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-01T08:36:58.918Z",
+  "timing": {
+    "startedAt": "2026-09-01T08:36:55.973Z",
+    "completedAt": "2026-09-01T08:36:58.918Z",
+    "durationMs": 2945
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "scanner_failed": 6,
+      "project_check_failed": 6
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260901T083658918Z-5916-87207eae5199.json"
+}

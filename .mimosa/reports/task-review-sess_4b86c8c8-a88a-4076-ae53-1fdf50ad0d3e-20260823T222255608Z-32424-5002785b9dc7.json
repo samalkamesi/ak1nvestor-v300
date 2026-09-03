@@ -1,0 +1,211 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20260823T222255608Z-32424-5002785b9dc7",
+  "run_status": "completed",
+  "errors": [],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "complete",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 307,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 7
+    },
+    "change_tracking": {
+      "touched_observed": 7,
+      "touched_retained": 7,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 7,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 7,
+      "selected_files": 7,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 7,
+      "scanned_files": 7,
+      "skipped_files": 0,
+      "failed_files": 0,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {},
+    "reasons": [],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-08-23T22:22:55.608Z",
+  "session_id": "sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e",
+  "target": ".",
+  "revision": "570e4683cdfeb174b70df9e3abccbd0f8952a8cb",
+  "rules_version": "unavailable",
+  "diff_hash": "8f45018ab20e13059289d3e1384ef1cfcb6feb1516bbfeeadcfd6269d7131f53",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 7,
+    "changed_files": [
+      {
+        "file": "src/app/admin/page.tsx",
+        "ranges": [
+          {
+            "start": 26,
+            "end": 26
+          },
+          {
+            "start": 311,
+            "end": 311
+          },
+          {
+            "start": 410,
+            "end": 415
+          }
+        ],
+        "before_hash": "2eb116d7e6f267b379bad765202228d19566262f241031cb1a6837ae5a4d38c0",
+        "after_hash": "0738f361c69bb6f072ac47297a76373e5ab04bb632fd2979e29045944cef5865"
+      },
+      {
+        "file": "src/app/analyser/[ticker]/[variabel]/page.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 179
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "352f5aaf8d133601f99929b445804e2ec80711f75a5ffbafcef5c949260fc973"
+      },
+      {
+        "file": "src/app/api/admin/members/route.ts",
+        "ranges": [
+          {
+            "start": 44,
+            "end": 73
+          }
+        ],
+        "before_hash": "dd0daf4fd7418063a4809bf832990b13dcb02f601967212214381796b2c41d79",
+        "after_hash": "dcb3c93695edce459ae5dea32cd2cd2462480a5fc5308cb6b03af4a11b07cd13"
+      },
+      {
+        "file": "src/app/kalkylator/page.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 38
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "7e76c4da485fceb28e4c61d428c807e63c046bda5ffbcbd1f5f5d64b4d16e36f"
+      },
+      {
+        "file": "src/app/sitemap.ts",
+        "ranges": [
+          {
+            "start": 17,
+            "end": 17
+          },
+          {
+            "start": 33,
+            "end": 34
+          },
+          {
+            "start": 36,
+            "end": 36
+          },
+          {
+            "start": 43,
+            "end": 50
+          }
+        ],
+        "before_hash": "2374074190f4b0779a84f4104f7b704dd1d2ee277c53c5be88823cacc11bdc9f",
+        "after_hash": "57d188342455dab663f5ccd4a50e4572604cd640cf406df5e7f8a8c34cc21c43"
+      },
+      {
+        "file": "src/components/ak1a/admin/members-manager.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 193
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "06dba8e239a90117031babed81dd733fbf8b33ff1fb5c182e73c72fc7c43c4f2"
+      },
+      {
+        "file": "src/components/ak1a/akm1-calculator.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 180
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "9fa0c6628c3bf799286a6b5220d5c11177cfc93ffc17edba1c03a40f815b16b3"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-08-23T22:22:53.039Z",
+    "completed_at": "2026-08-23T22:22:55.608Z",
+    "duration_ms": 2569,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "complete",
+    "latencyMs": 2569,
+    "peakMemoryBytes": 129277952,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 7,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260823T222255608Z-32424-5002785b9dc7.json",
+    "latest_report": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e.json",
+    "history_summary": ".mimosa/history/run-20260823T222255608Z-32424-5002785b9dc7.json"
+  }
+}

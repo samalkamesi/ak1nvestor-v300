@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T125909708Z-32124-addef33be25d",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:tmp_parts/sprak-A/fix3.js: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:tmp_parts/sprak-A/verify.js: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "31cac38d5f8b0006725c48ecb456ba5da5f9133e6d8bc5d673d5e26b0433302a",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T12:59:09.708Z",
+  "timing": {
+    "startedAt": "2026-09-03T12:59:07.603Z",
+    "completedAt": "2026-09-03T12:59:09.708Z",
+    "durationMs": 2105
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 2,
+      "project_check_failed": 2
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T125909708Z-32124-addef33be25d.json"
+}

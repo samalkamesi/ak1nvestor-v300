@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-03T14:51:29.694Z",
+  "sessionId": "sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "src/app/api/cron/kvalitet/route.ts",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 23,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

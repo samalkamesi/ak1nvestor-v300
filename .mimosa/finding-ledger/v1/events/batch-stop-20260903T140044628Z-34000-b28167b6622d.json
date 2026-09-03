@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260903T140044628Z-34000-b28167b6622d",
+  "runId": "20260903T140044628Z-34000-b28167b6622d",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "verktyg/python/sammanstalla_korstabell.py",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/prenumeration.ts",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/akm2/typer.ts",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/akm2/vikter.ts",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/aktivera-panel.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/niva-kort.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/rabatt-band.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/prenumeration/page.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "verktyg/python/sammanstalla_korstabell.py",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/prenumeration.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/akm2/typer.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/akm2/vikter.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/aktivera-panel.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/niva-kort.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/prenumeration/rabatt-band.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/prenumeration/page.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "874bff89d9d0200d3cce863a16b2cd366adb2e5131eb4f84bcf663e9744487d4",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T140044628Z-34000-b28167b6622d.json",
+  "events": [
+    {
+      "eventId": "hook-318231a7ab5b520ae7480475b5d503c8",
+      "findingId": "mimosa-00fbeea33a06685f37c647b3",
+      "type": "finding_observed",
+      "at": "2026-09-03T14:00:44.628Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/sammanstalla_korstabell.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "cbcaf15881b894b66ae63729a88db6e5811a6fd1e388dca1db152a520a2f0293",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 186,
+      "endLine": 186,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "cbcaf15881b894b66ae63729a88db6e5811a6fd1e388dca1db152a520a2f0293"
+      },
+      "sequence": 0
+    },
+    {
+      "eventId": "hook-1ffea5aaf9ca95d4614aeedf9d58e99b",
+      "findingId": "mimosa-f06f63167ce6106928d66733",
+      "type": "finding_observed",
+      "at": "2026-09-03T14:00:44.628Z",
+      "identity": {
+        "projectRelativeFile": "verktyg/python/sammanstalla_korstabell.py",
+        "ruleId": "security",
+        "codeEvidenceHash": "69dc99e6d915570c45f9b3bf0d73d34f3f52e12edd57db541395de6a20b960cf",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 331,
+      "endLine": 331,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "69dc99e6d915570c45f9b3bf0d73d34f3f52e12edd57db541395de6a20b960cf"
+      },
+      "sequence": 1
+    }
+  ],
+  "observedFindingIds": [
+    "mimosa-00fbeea33a06685f37c647b3",
+    "mimosa-f06f63167ce6106928d66733"
+  ],
+  "verifiedFiles": [
+    {
+      "file": "src/components/ak1a/certifikat.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/not-found.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/layout.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "verktyg/python/sammanstalla_korstabell.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/prenumeration.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/sokindex.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/akm2/typer.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/akm2/vikter.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/sidfooter.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/prenumeration/aktivera-panel.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/prenumeration/niva-kort.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/prenumeration/rabatt-band.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/portfolj-forskning/bygg-portfolj-kort.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/sitemap.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/prenumeration/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-03T14:00:45.252Z"
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260823T041044171Z-12656-c3ed5ea2224c",
+  "runStatus": "inconclusive",
+  "errors": [
+    "candidate-select:tmp_patch_ssrf.py: changed_file_unreadable: observed changed file no longer exists or cannot be read",
+    "candidate-select:tmp_patch_ssrf2.py: changed_file_unreadable: observed changed file no longer exists or cannot be read",
+    "scan:src/lib/autonom/organ.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/cron/autonom/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/autonom/status/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/lib/supabase-rest.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/migrate-to-supabase/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/member/register/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/member/portfolio/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/member/analysis/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/booking/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/admin/upload-analysis/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/admin/stats/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/admin/members/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/admin/bookings/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/admin/activity/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "0939f081a16cf99c06a01b2e91566957758137c7",
+  "diffHash": "5c7a0ee4aaaf45fb49e979377524868527e3f7950a77f03fe664408cc2719f4f",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-08-23T04:10:44.171Z",
+  "timing": {
+    "startedAt": "2026-08-23T04:10:41.242Z",
+    "completedAt": "2026-08-23T04:10:44.171Z",
+    "durationMs": 2929
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "changed_file_unreadable": 2,
+      "scanner_failed": 14,
+      "project_check_failed": 16
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_4b86c8c8-a88a-4076-ae53-1fdf50ad0d3e-20260823T041044171Z-12656-c3ed5ea2224c.json"
+}

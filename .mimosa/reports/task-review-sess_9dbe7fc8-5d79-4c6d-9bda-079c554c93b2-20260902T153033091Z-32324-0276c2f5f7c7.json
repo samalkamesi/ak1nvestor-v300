@@ -1,0 +1,990 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20260902T153033091Z-32324-0276c2f5f7c7",
+  "run_status": "inconclusive",
+  "errors": [
+    {
+      "stage": "baseline-read",
+      "target": "src/lib/datacache.ts",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/fas3-cert.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/pro/csv-import.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/pro/layout.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/pro/page.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/fas3/page.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/api/pro/analys/route.ts",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/api/cron/datacache/route.ts",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/datacache.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/sokindex.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/chat-widget.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/fas3-cert.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/huvudmeny.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/konfluens-tabell.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/pro/csv-import.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/vagfundament/page.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/pro/layout.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/pro/page.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/konfluens/page.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/fas3/page.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/pro/analys/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/cron/datacache/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/chatbot/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    }
+  ],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "partial",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 316,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 7
+    },
+    "change_tracking": {
+      "touched_observed": 0,
+      "touched_retained": 0,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 15,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 15,
+      "selected_files": 15,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 15,
+      "scanned_files": 0,
+      "skipped_files": 0,
+      "failed_files": 15,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {
+      "baseline_snapshot_unreadable": 8,
+      "scanner_failed": 15,
+      "project_check_failed": 23
+    },
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/datacache.ts",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/fas3-cert.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/pro/csv-import.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/pro/layout.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/pro/page.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/fas3/page.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/api/pro/analys/route.ts",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/api/cron/datacache/route.ts",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/datacache.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/sokindex.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/chat-widget.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/fas3-cert.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/huvudmeny.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/konfluens-tabell.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/pro/csv-import.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/vagfundament/page.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/pro/layout.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/pro/page.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/konfluens/page.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/fas3/page.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/pro/analys/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/cron/datacache/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/chatbot/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/datacache.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/fas3-cert.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/pro/csv-import.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/pro/layout.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/pro/page.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/fas3/page.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/api/pro/analys/route.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/api/cron/datacache/route.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/datacache.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/sokindex.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/chat-widget.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/fas3-cert.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/huvudmeny.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/konfluens-tabell.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/pro/csv-import.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/vagfundament/page.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/pro/layout.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/pro/page.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/konfluens/page.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/fas3/page.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/pro/analys/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/cron/datacache/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/chatbot/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      }
+    ],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-09-02T15:30:33.091Z",
+  "session_id": "sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2",
+  "target": ".",
+  "revision": "844451a67e44071e2a1602c1e3baa124f3741043",
+  "rules_version": "unavailable",
+  "diff_hash": "388f2857d46ccdad25bcbc5df4600581f6e8c06a488ac965b32f45f04001f44a",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 15,
+    "changed_files": [
+      {
+        "file": "src/app/api/chatbot/route.ts",
+        "ranges": [
+          {
+            "start": 5,
+            "end": 5
+          },
+          {
+            "start": 12,
+            "end": 24
+          },
+          {
+            "start": 28,
+            "end": 28
+          },
+          {
+            "start": 32,
+            "end": 73
+          },
+          {
+            "start": 298,
+            "end": 580
+          },
+          {
+            "start": 603,
+            "end": 628
+          },
+          {
+            "start": 634,
+            "end": 639
+          },
+          {
+            "start": 650,
+            "end": 650
+          },
+          {
+            "start": 663,
+            "end": 663
+          },
+          {
+            "start": 680,
+            "end": 680
+          },
+          {
+            "start": 696,
+            "end": 696
+          },
+          {
+            "start": 698,
+            "end": 699
+          },
+          {
+            "start": 745,
+            "end": 745
+          }
+        ],
+        "before_hash": "40913a262b9080ccd11638d4656c87cb1847ecfbd0fceb8676b7d28e0a8ab554",
+        "after_hash": "998355ea08ef2bc5c4f54cac0c5b5ce0e8a24d647d0538220cc6fac66efffa52"
+      },
+      {
+        "file": "src/app/api/cron/datacache/route.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 183
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "e6b619e9dd7df169d195bbdbeafbf88b482228cbeb78a737d3823cba746a1c19"
+      },
+      {
+        "file": "src/app/api/pro/analys/route.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 184
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "8374b341c65b22859962f194dc0290b8fc662d57291b2c6ffe08f6b4dbb8ab2d"
+      },
+      {
+        "file": "src/app/fas3/page.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 431
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "b99619737a33840d5370964222cfd9286ad213abcf61c19e8abab2dcfce897cd"
+      },
+      {
+        "file": "src/app/konfluens/page.tsx",
+        "ranges": [
+          {
+            "start": 6,
+            "end": 6
+          },
+          {
+            "start": 71,
+            "end": 80
+          },
+          {
+            "start": 143,
+            "end": 153
+          }
+        ],
+        "before_hash": "a4ba69ef3b3a5cf701583f05a0abde69c9ec4607240f262d20c6a2c93c3e46f2",
+        "after_hash": "a2e85b006e7132d51ec0da6e192397f466ba9f85e97dab6115eb3ac1ba0dc466"
+      },
+      {
+        "file": "src/app/pro/layout.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 130
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "61de08a2407fbc4929f66ad25bd77ee59199e6dfdfea0a3925acb768e11a7299"
+      },
+      {
+        "file": "src/app/pro/page.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 274
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "a31805426c6b30a0b2fbc2b637802412082aa9e8a7929017a8cc6faaef05b181"
+      },
+      {
+        "file": "src/app/vagfundament/page.tsx",
+        "ranges": [
+          {
+            "start": 6,
+            "end": 6
+          },
+          {
+            "start": 23,
+            "end": 32
+          },
+          {
+            "start": 86,
+            "end": 96
+          }
+        ],
+        "before_hash": "945ca22c06bda058bd75ccd9564cd97cbb6203a291013ded83f1454cf8ce949c",
+        "after_hash": "32daaa3dfab560941d2d83522bf91ea4712698cce1c67a020026e4df6e3859e4"
+      },
+      {
+        "file": "src/components/ak1a/chat-widget.tsx",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 18,
+            "end": 18
+          },
+          {
+            "start": 20,
+            "end": 38
+          },
+          {
+            "start": 44,
+            "end": 78
+          },
+          {
+            "start": 86,
+            "end": 88
+          },
+          {
+            "start": 91,
+            "end": 92
+          },
+          {
+            "start": 95,
+            "end": 97
+          },
+          {
+            "start": 100,
+            "end": 100
+          },
+          {
+            "start": 104,
+            "end": 122
+          },
+          {
+            "start": 128,
+            "end": 249
+          },
+          {
+            "start": 261,
+            "end": 267
+          },
+          {
+            "start": 282,
+            "end": 288
+          },
+          {
+            "start": 296,
+            "end": 302
+          },
+          {
+            "start": 309,
+            "end": 422
+          },
+          {
+            "start": 433,
+            "end": 439
+          },
+          {
+            "start": 451,
+            "end": 452
+          },
+          {
+            "start": 472,
+            "end": 474
+          },
+          {
+            "start": 478,
+            "end": 478
+          },
+          {
+            "start": 481,
+            "end": 482
+          },
+          {
+            "start": 504,
+            "end": 506
+          },
+          {
+            "start": 514,
+            "end": 515
+          },
+          {
+            "start": 523,
+            "end": 525
+          },
+          {
+            "start": 554,
+            "end": 554
+          },
+          {
+            "start": 612,
+            "end": 612
+          },
+          {
+            "start": 615,
+            "end": 615
+          },
+          {
+            "start": 617,
+            "end": 617
+          },
+          {
+            "start": 619,
+            "end": 619
+          },
+          {
+            "start": 621,
+            "end": 621
+          },
+          {
+            "start": 624,
+            "end": 624
+          },
+          {
+            "start": 628,
+            "end": 628
+          },
+          {
+            "start": 654,
+            "end": 663
+          },
+          {
+            "start": 670,
+            "end": 670
+          },
+          {
+            "start": 676,
+            "end": 676
+          },
+          {
+            "start": 693,
+            "end": 693
+          },
+          {
+            "start": 699,
+            "end": 710
+          },
+          {
+            "start": 716,
+            "end": 721
+          },
+          {
+            "start": 738,
+            "end": 738
+          },
+          {
+            "start": 761,
+            "end": 762
+          },
+          {
+            "start": 767,
+            "end": 767
+          },
+          {
+            "start": 858,
+            "end": 858
+          },
+          {
+            "start": 868,
+            "end": 868
+          },
+          {
+            "start": 875,
+            "end": 878
+          },
+          {
+            "start": 899,
+            "end": 899
+          },
+          {
+            "start": 906,
+            "end": 907
+          },
+          {
+            "start": 909,
+            "end": 913
+          },
+          {
+            "start": 918,
+            "end": 918
+          },
+          {
+            "start": 923,
+            "end": 928
+          }
+        ],
+        "before_hash": "9e185cdae76eed21bc2bdd0934b282adeb91d779f78b82592f32703e1a63299e",
+        "after_hash": "52ae67f7581a69c5d7880326fbee840007f421ade161ad6e86bb8ef62e3ebe8a"
+      },
+      {
+        "file": "src/components/ak1a/fas3-cert.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 308
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "d673946f04ae123896d29d399e5f0abbac860a36ec658d5f4ac83abe0affe5e5"
+      },
+      {
+        "file": "src/components/ak1a/huvudmeny.tsx",
+        "ranges": [
+          {
+            "start": 63,
+            "end": 63
+          }
+        ],
+        "before_hash": "ade2c63d32f167e5819e6d46ee5df5aadbfaa2b6370c88d602a102c1d0f18076",
+        "after_hash": "fbc5909d45a03d862b33550c7333d681129b668acc419ad2fcca7b531b7793ba"
+      },
+      {
+        "file": "src/components/ak1a/konfluens-tabell.tsx",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          },
+          {
+            "start": 143,
+            "end": 192
+          },
+          {
+            "start": 374,
+            "end": 376
+          },
+          {
+            "start": 400,
+            "end": 401
+          },
+          {
+            "start": 449,
+            "end": 456
+          }
+        ],
+        "before_hash": "93b57b4cf8dc0b6711ca2548e4e85673e70a7d228c2cf708726ebb9232e60c82",
+        "after_hash": "bd9266f7bb079273d90a0c0309aa70d05df6b86fe097f69ce97a1ba638b2b93a"
+      },
+      {
+        "file": "src/components/ak1a/pro/csv-import.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 737
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "4420d9edeef70fc095d8b9a1c2174101d89c0b5fe10c4df9609b603c7e901045"
+      },
+      {
+        "file": "src/lib/datacache.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 245
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "0d990eed4c62babd06b260ef905ceb51de417ed050a9b3ea1b76df858fcce3e7"
+      },
+      {
+        "file": "src/lib/sokindex.ts",
+        "ranges": [
+          {
+            "start": 44,
+            "end": 44
+          }
+        ],
+        "before_hash": "9869e57bf54775027f8279b1b9ce8228d10d1780a0d1940ac5e0f7838c311289",
+        "after_hash": "d5136b0928dd69697bf1ea091ad2700debb237c2d033c090d06873d01ce9784e"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-09-02T15:30:30.340Z",
+    "completed_at": "2026-09-02T15:30:33.091Z",
+    "duration_ms": 2751,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "partial/INCONCLUSIVE",
+    "latencyMs": 2751,
+    "peakMemoryBytes": 84860928,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 0,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260902T153033091Z-32324-0276c2f5f7c7.json",
+    "latest_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2.json",
+    "history_summary": ".mimosa/history/run-20260902T153033091Z-32324-0276c2f5f7c7.json"
+  }
+}

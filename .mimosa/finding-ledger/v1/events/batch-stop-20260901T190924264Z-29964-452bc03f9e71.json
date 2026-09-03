@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260901T190924264Z-29964-452bc03f9e71",
+  "runId": "20260901T190924264Z-29964-452bc03f9e71",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "0bfd2fdee280b732dce3f33cec4c985e4f998d56",
+  "diffHash": "69e4558fd1f5c28b814f3b2ed910ccc2f0c4bb245c606abf294f384a74b9d134",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260901T190924264Z-29964-452bc03f9e71.json",
+  "events": [
+    {
+      "eventId": "hook-f1ccb59541df34dfc2fe7f451026b53c",
+      "findingId": "mimosa-5527ff3066d330c839d33f42",
+      "type": "finding_observed",
+      "at": "2026-09-01T19:09:24.264Z",
+      "identity": {
+        "projectRelativeFile": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "ruleId": "security",
+        "codeEvidenceHash": "a585cc81a430d0d16c4135152e2d10fe41d4b08e0f02b196ca1205d77840e963",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 557,
+      "endLine": 557,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "a585cc81a430d0d16c4135152e2d10fe41d4b08e0f02b196ca1205d77840e963"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [
+    "mimosa-07485049acdb1732c30714b3",
+    "mimosa-5527ff3066d330c839d33f42"
+  ],
+  "verifiedFiles": [
+    {
+      "file": "src/app/medlemskap/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/visuell-block.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/kurs-steg.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/member-local.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/chat-widget.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-01T19:09:24.949Z"
+}

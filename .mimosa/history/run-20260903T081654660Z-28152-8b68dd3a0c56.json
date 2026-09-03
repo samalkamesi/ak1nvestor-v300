@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T081654660Z-28152-8b68dd3a0c56",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:src/lib/assistent.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/eko-koppling.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/klientkontext.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/assistent-panel.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/admin/beteende-panel.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/eko/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/admin/beteende/route.ts: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "09050a8cf917667941f76fd1434d6b4fe6d265c2",
+  "diffHash": "504a620cbe8a5e98badeb06637818a1651ecb2fb4224e81076777c22235c3126",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T08:16:54.660Z",
+  "timing": {
+    "startedAt": "2026-09-03T08:16:51.944Z",
+    "completedAt": "2026-09-03T08:16:54.660Z",
+    "durationMs": 2716
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 7,
+      "project_check_failed": 7
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T081654660Z-28152-8b68dd3a0c56.json"
+}

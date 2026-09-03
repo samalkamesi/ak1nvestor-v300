@@ -1,0 +1,227 @@
+/**
+ * KORSTABELL-DATA — server-side läsning av P6:s underlag + prislistan.
+ *
+ * Källor (repo-roten, läses med fs vid build/request — aldrig klienten):
+ *  - data/portfolj-system/korstabell-grund.json  (P6 levererar; saknas än så
+ *    länge → lasKorstabellGrund returnerar finns: false — motorn gissar aldrig)
+ *  - data/portfolj-system/priser.json            (prenumerationsnivåer)
+ *
+ * Normalisering: P6:s fil kan komma med camelCase (typkontraktet) eller
+ * snake_case-nycklar samt vågklasser med å/ä ("impulsvåg") — allt mappas
+ * defensivt till KorstabbellRad enligt src/lib/portfolj-forskning/typer.ts.
+ * Ogiltiga rader stryks; en tom fil betraktas som saknad (ärlighet principen).
+ */
+
+import { existsSync, readFileSync } from "fs";
+import { join } from "path";
+import type { Bransch, Dynamik, Horisont, KorstabbellRad, VagKlass } from "./typer";
+
+const HORIZONTER: Horisont[] = ["mikro", "kort", "medellang", "lang", "mega"];
+
+const VAGKLASS_MAP: Record<string, VagKlass> = {
+  impulsvag: "impulsvag",
+  "impulsvåg": "impulsvag",
+  korrigering: "korrigering",
+  basbygge: "basbygge",
+  osatt: "osatt",
+};
+
+const DYNAMIK_MAP: Record<string, Dynamik> = {
+  forbattras: "forbattras",
+  "förbättras": "forbattras",
+  stabilt: "stabilt",
+  forsvamras: "forsvamras",
+  "försvagas": "forsvamras",
+  osatt: "osatt",
+};
+
+const BRANSCH_MAP: Record<string, Bransch> = {
+  teknik: "teknik",
+  industri: "industri",
+  halso: "halso",
+  "hälsa": "halso",
+  konsument: "konsument",
+  fastighet: "fastighet",
+  finans: "finans",
+  material: "material",
+  energi: "energi",
+  kommunikation: "kommunikation",
+  tillvaxt: "tillvaxt",
+  "tillväxt": "tillvaxt",
+};
+
+const STATUS_MAP: Record<string, KorstabbellRad["status"]> = {
+  gron: "gron",
+  "grön": "gron",
+  gul: "gul",
+  rod: "rod",
+  "röd": "rod",
+  osatt: "osatt",
+};
+
+// ── Småhjälpare (null-säkra läsningar ur okänd JSON) ────────────────────────
+
+function lasObj(rå: unknown): Record<string, unknown> {
+  return rå && typeof rå === "object" && !Array.isArray(rå) ? (rå as Record<string, unknown>) : {};
+}
+
+function lasStr(rå: unknown): string | null {
+  return typeof rå === "string" && rå.trim() !== "" ? rå.trim() : null;
+}
+
+/** Läs nyckel med camelCase- först, sedan snake_case-fallback. */
+function falt(rad: Record<string, unknown>, camel: string, snake: string): unknown {
+  return rad[camel] !== undefined ? rad[camel] : rad[snake];
+}
+
+function lasTal(rå: unknown): number | null {
+  return typeof rå === "number" && Number.isFinite(rå) ? rå : null;
+}
+
+function lasVagRecord(rå: unknown): Record<Horisont, VagKlass> {
+  const ut = {} as Record<Horisont, VagKlass>;
+  const kalla = lasObj(rå);
+  for (const hz of HORIZONTER) {
+    ut[hz] = VAGKLASS_MAP[String(kalla[hz] ?? "")] ?? "osatt";
+  }
+  return ut;
+}
+
+function lasKategoriRecord(rå: unknown): Record<string, number> {
+  const ut: Record<string, number> = {};
+  for (const [nyckel, varde] of Object.entries(lasObj(rå))) {
+    const tal = lasTal(varde);
+    if (tal !== null) ut[nyckel] = tal;
+  }
+  return ut;
+}
+
+/** Normalisera ETT rått radobjekt → KorstabbellRad, eller null om ogiltigt. */
+function normaliseraRad(råRad: unknown): KorstabbellRad | null {
+  const rad = lasObj(råRad);
+  const ticker = lasStr(falt(rad, "ticker", "ticker"));
+  if (!ticker) return null;
+
+  const bransch = BRANSCH_MAP[String(falt(rad, "bransch", "bransch") ?? "")];
+  const status = STATUS_MAP[String(falt(rad, "status", "status") ?? "")] ?? "osatt";
+  const akm1 = lasTal(falt(rad, "akm1Totalt", "akm1_totalt"));
+  const dynamik = DYNAMIK_MAP[String(falt(rad, "fvagDynamik", "fvag_dynamik") ?? "")] ?? "osatt";
+
+  return {
+    ticker,
+    namn: lasStr(falt(rad, "namn", "namn")) ?? ticker,
+    bransch: bransch ?? "teknik",
+    akm1Totalt: akm1 ?? 0,
+    akm1PerKategori: lasKategoriRecord(falt(rad, "akm1PerKategori", "akm1_per_kategori")),
+    fvagPerHorisont: lasVagRecord(falt(rad, "fvagPerHorisont", "fvag_per_horisont")),
+    fvagDynamik: dynamik,
+    tvagPerHorisont: lasVagRecord(falt(rad, "tvagPerHorisont", "tvag_per_horisont")),
+    golvMarginal: lasTal(falt(rad, "golvMarginal", "golv_marginal")),
+    senastKontrollerad: lasStr(falt(rad, "senastKontrollerad", "senast_kontrollerad")) ?? "",
+    status,
+  };
+}
+
+/** Normalisera hela filen — accepterar kalt array eller { rader: [...] } / { korstabell: [...] }. */
+function normaliseraAlla(rå: unknown): KorstabbellRad[] {
+  let lista: unknown[] = [];
+  if (Array.isArray(rå)) {
+    lista = rå;
+  } else {
+    const rot = lasObj(rå);
+    const kandidat = rot.rader ?? rot.korstabell ?? rot.raderMedVagor;
+    if (Array.isArray(kandidat)) lista = kandidat;
+  }
+  const ut: KorstabbellRad[] = [];
+  const setta = new Set<string>();
+  for (const rad of lista) {
+    const n = normaliseraRad(rad);
+    if (!n || setta.has(n.ticker)) continue;
+    setta.add(n.ticker);
+    ut.push(n);
+  }
+  return ut;
+}
+
+// ── Offentligt API ──────────────────────────────────────────────────────────
+
+export type KorstabellUnderlag = {
+  /** true endast när filen finns OCH innehåller minst en giltig rad. */
+  finns: boolean;
+  rader: KorstabbellRad[];
+};
+
+/** Läs och normalisera korstabell-grund.json (P6). Saknas/tom → finns: false. */
+export function lasKorstabellGrund(): KorstabellUnderlag {
+  const sokVag = join(process.cwd(), "data", "portfolj-system", "korstabell-grund.json");
+  if (!existsSync(sokVag)) return { finns: false, rader: [] };
+  try {
+    const rader = normaliseraAlla(JSON.parse(readFileSync(sokVag, "utf8")));
+    return rader.length > 0 ? { finns: true, rader } : { finns: false, rader: [] };
+  } catch {
+    return { finns: false, rader: [] };
+  }
+}
+
+// ── Priser (prenumerationsnivåer) ────────────────────────────────────────────
+
+export type PrisNiva = {
+  id: string;
+  namn: string;
+  prisManad: number;
+  prisAr: number;
+  beskrivning: string;
+};
+
+export type Priser = {
+  tjanst: string;
+  uppdaterad: string;
+  notering: string;
+  nivaer: PrisNiva[];
+  rabattFas: { fas2: number; fas3: number; beskrivning: string };
+  juridiskFotnot: string;
+};
+
+/** Läs priser.json — null vid saknad/ogiltig fil (sidan klarar sig utan). */
+export function lasPriser(): Priser | null {
+  const sokVag = join(process.cwd(), "data", "portfolj-system", "priser.json");
+  if (!existsSync(sokVag)) return null;
+  try {
+    const rå = lasObj(JSON.parse(readFileSync(sokVag, "utf8")));
+    const nivaer: PrisNiva[] = (Array.isArray(rå.nivaer) ? rå.nivaer : [])
+      .map((n) => {
+        const o = lasObj(n);
+        const id = lasStr(o.id);
+        const namn = lasStr(o.namn);
+        const manad = lasTal(o.prisManad);
+        const ar = lasTal(o.prisAr);
+        if (id === null || namn === null || manad === null || ar === null) return null;
+        return {
+          id,
+          namn,
+          prisManad: manad,
+          prisAr: ar,
+          beskrivning: lasStr(o.beskrivning) ?? "",
+        } satisfies PrisNiva;
+      })
+      .filter((n): n is PrisNiva => n !== null);
+    if (nivaer.length === 0) return null;
+    const rabatt = lasObj(rå.rabattFas);
+    const fas2 = lasTal(rabatt.fas2) ?? 0;
+    const fas3 = lasTal(rabatt.fas3) ?? 0;
+    return {
+      tjanst: lasStr(rå.tjanst) ?? "AK1A Portföljforskning",
+      uppdaterad: lasStr(rå.uppdaterad) ?? "",
+      notering: lasStr(rå.notering) ?? "",
+      nivaer,
+      rabattFas: {
+        fas2,
+        fas3,
+        beskrivning: lasStr(rabatt.beskrivning) ?? "",
+      },
+      juridiskFotnot: lasStr(rå.juridiskFotnot) ?? "",
+    };
+  } catch {
+    return null;
+  }
+}

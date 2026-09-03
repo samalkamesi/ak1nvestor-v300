@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260902T183402923Z-22040-4b8d0087fdc1",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:src/app/api/llms-txt/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/cron/kvalitet/route.ts: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "330ca25e7c72e4ffd481c88de236cff6ea3331c4",
+  "diffHash": "9314caa83047e17d6c6e476db74f0d73d2cc684abedf042944170bfb6dbe38a1",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-02T18:34:02.923Z",
+  "timing": {
+    "startedAt": "2026-09-02T18:34:00.230Z",
+    "completedAt": "2026-09-02T18:34:02.923Z",
+    "durationMs": 2693
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 2,
+      "project_check_failed": 2
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260902T183402923Z-22040-4b8d0087fdc1.json"
+}

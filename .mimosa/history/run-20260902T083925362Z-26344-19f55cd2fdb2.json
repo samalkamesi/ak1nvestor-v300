@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260902T083925362Z-26344-19f55cd2fdb2",
+  "runStatus": "inconclusive",
+  "errors": [
+    "candidate-select:src/app/api/cron/vagscan/route.ts: candidate_limit_exceeded: 1 changed reviewable file(s) were not scanned because the limit is 20",
+    "baseline-read:src/lib/shortseller-bank.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/vagkarta-kort.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/vagscan/senaste/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "scan:src/components/ak1a/min-sida.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/vagfundament/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/seo-page-shell.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/mobilmeny.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/huvudmeny.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/layout.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/lib/shortseller-bank.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/features/home/ui/HomeSection.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/akm1-calculator.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/dagens-pass.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/portfolio-system.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/short-seller.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/superanalys.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/vagkarta-kort.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/sections/home-section.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/om-oss/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/manifest/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/vagscan/senaste/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/shortseller/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "f7bd5c6762e8b8046fdc5870971b6958a01e63e8",
+  "diffHash": "ae7fb812e889a19d86a631d9ea1711ce9f10a9b0df657c5607516bab77504444",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-02T08:39:25.362Z",
+  "timing": {
+    "startedAt": "2026-09-02T08:39:22.565Z",
+    "completedAt": "2026-09-02T08:39:25.362Z",
+    "durationMs": 2797
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "candidate_limit_exceeded": 1,
+      "baseline_snapshot_unreadable": 3,
+      "scanner_failed": 20,
+      "project_check_failed": 24
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260902T083925362Z-26344-19f55cd2fdb2.json"
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260902T174914744Z-29060-944bba86db5a",
+  "runId": "20260902T174914744Z-29060-944bba86db5a",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/pro/admin-panel.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/admin/ekosystem-panel.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/pro/admin/page.tsx",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/api/pro/admin/route.ts",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/pro/admin-panel.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/admin/ekosystem-panel.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/pro/admin/page.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/api/pro/admin/route.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "d5835c340cd2ae75507613f6cf0a1b17b48f4342",
+  "diffHash": "a20efbce6fb6ee3606daaee0755cf9ea59dce464cdba17140b049ff30fa77372",
+  "rulesVersion": "unavailable",
+  "sessionHash": "67024fefec7c006e70f503673cb27ed4dbdb8941dd58edf390fee1c964d1016d",
+  "reportRef": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260902T174914744Z-29060-944bba86db5a.json",
+  "events": [
+    {
+      "eventId": "hook-3f76b16ef63d9eeaa41be4254ec9f1ef",
+      "findingId": "mimosa-b15e2cc7e959083ca9769847",
+      "type": "finding_observed",
+      "at": "2026-09-02T17:49:14.744Z",
+      "identity": {
+        "projectRelativeFile": "src/app/api/pro/admin/route.ts",
+        "ruleId": "security",
+        "codeEvidenceHash": "0fbd31474f0a4eb22b9849fbc6bee91459b8a7ab5d6eecdecb4ba810c90ee4f4",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 207,
+      "endLine": 207,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "0fbd31474f0a4eb22b9849fbc6bee91459b8a7ab5d6eecdecb4ba810c90ee4f4"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [
+    "mimosa-b15e2cc7e959083ca9769847"
+  ],
+  "verifiedFiles": [
+    {
+      "file": "src/components/ak1a/min-sida.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/portfoljbyggare.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/pro/admin-panel.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/components/ak1a/admin/ekosystem-panel.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/pro/admin/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/api/pro/admin/route.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-02T17:49:15.396Z"
+}

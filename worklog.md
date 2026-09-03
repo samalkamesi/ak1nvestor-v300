@@ -3976,3 +3976,304 @@ regex i .mjs-fil. PROD: push main 35133e1 → hook → 9 min → 10/10 H1
 /api/nyheter ok. Mimosa-lärdom: tung `git add -A src/`-commit nekas —
 UPPDELA (data-commit + src-commit). Skala: 333 kurser · 8211 quiz · 843
 SSG · vakten 8/8 (GUL: torrt-falska positiva ar/pa/gor, tröskel 3).
+
+── VÅG 37+38 (2026-09-03) ──
+VÅG 37 (4 kunddirektiv, alla levererade):
+1. AI-MENTORN 10x: chat-minne ak1a-chat-minne-v1 (60 turer, 12 skickas),
+   bakåtreferenser, 6 antagandekorrigeringar ("Snäv men viktig korrigering"),
+   motfrågerotation 5 kategorier (aldrig samma 2 ggr), ZAI-gren aktiv med
+   ZAI_API_KEY. Filer: chat-minne.ts (ny), api/chatbot/route.ts, chat-widget.tsx.
+2. SÄLJANDE STARTSIDA: home-section.tsx omskriven — hero "Bli analytikern som
+   ser vad andra missar." + CTA "Bli medlem — gratis" + count-up-sifferband
+   (VERKIGA tal: 333 kurser · 8211 quiz · 103 böcker · 8 verktyg · 0 kr) +
+   4 varför-kort + guld-stig + slut-CTA.
+3. LOGOTYP-STANDARD: kundens trådglasskulptur → skulptur-2 primär,
+   processad märke public/ak1a/logo/skulptur-mark.jpg (640×640, 28KB,
+   bakgrund #FDFBF7), komponent varumarkes-logo.tsx (sm/md/lg+medText) —
+   header/mobilmeny/footer/error/admin migrerade; gamla Ak1aLogo borttagen.
+   MOBILMENY: text-base 16px (förr 14), py-3.5, AK1A-kortstil (marin paneltopp
+   + guld-serif), aktiv-markering guld, sök 16px (ingen iOS-zoom).
+   skulptur-hero.jpg optimerad 1217→269KB (skarp).
+4. LAG-TRANSPARENS: /transparens (ny sida, 9 sektioner enligt GDPR art 13 —
+   dataregister 7 kategorier med vad/varför/grund/lagring/rätt, 8 rättigheter
+   med artiklar, IMY, LEK-kakor, ångerrätt, 2007:528-avgränsning, art 22).
+   FELAKTIGA LAGRUM RÄTTADE: villkor 1991:981→2007:528, 2004:297 bort,
+   ångerrätt "2022:260 2kap21§"→2005:59 2kap11§1st11p (verifierad gällande
+   via lagen.nu, senast ändrad SFS 2026:1018), ansvar "konsumenttjänstlagen
+   (2022:260)"→1985:716 + 2022:261. Länkad: footer+sitemap+sokindex+
+   privacy-policy+kakmur (art 13-länk vid samtycke!).
+VÅG 38 — MEGA-PROJEKT PORTFÖLJFORSKNING (pågår):
+   Typkontrakt src/lib/portfolj-forskning/typer.ts (ALLA agenter ärver;
+   JSON-nycklar utan åäö; mikro vikt 0.05 enligt direktiv) + MEGA_PROJEKT-
+   PORTFOLJ.md (fasplan P0-P9). 4 agenter igång: P1 Python-datainsamling
+   (Yahoo+MarketStack, 10 branscher×10, dubbelkällor), P2 fundamental-
+   vågmotor (V01-V20 vågklass+dynamik, trippelmetod-majoritetsröstning),
+   P3 riskportfölj (3×3 nivåer, strikta krav, ersättningsmotor, priser.json),
+   P4 korstabell+dashboard (10×10, då-vs-nu, riskvalspanel). Kö: P5 uppföljning
+   + notiser, P6 AKM1-bedömare, P7 integration Supabase+rutter, P8
+   prenumeration+rabatt Fas2/3 20%, P9 kvalitet+prod.
+SPRÅKEXPERTER PASS 1: A pågår, B/C/D/E KLARA. E: 356 (bokkanon/case/blogg/
+   llms/UI — MUSD-skandalen: MUSD som betydde miljarder, "sälj låg köj hög"
+   inverterad lära i llms.txt). C: 996 (84 kurser; kinesiska 潜在的, läg→lag
+   ×10+). D: 834 (vågör×54 filomfattande, 瑞典/噪音/无用-kinesiska, approach-
+   mallen ×138). B: ~940 ("vågör" I KONFLUENS-KURSENS TITEL, 鲸鱼/沃尔沃,
+   matters×110 i titlar, "premie under substansvärdet" inverterad mening).
+   PASS 2 KVAR: mönsterbank (vågör, matters, approach, läg, kinesiska) över
+   ALLA batcher + 3 obestämda garbleringar + antalssynk 318/87/102/82 böcker.
+   LÄRDOM: serialisera deep-courses.json-skrivningar (B såg C:s pretty-print
+   mitt i passet).
+── V19/V20-KANONISERING (2026-09-03, kunddirektiv) ──
+Kunden bekräftade: AKM1 = 20 analytiska indikatorer; V19 = "Kassatäckning —
+nyemissionsrisk" (kassan räcker så nyemission undviks; f.d. Kapitalförbränning),
+V20 = "Återköp av egna aktier" (f.d. Återköp & insiderköp; insiderköp kvar som
+kompletterande observation i källa). Rättat i 10 filer: akm1-calculator,
+indicators/route, vagfundament-matris, portfolio-builder, chatbot/route,
+dagens-pass/route, visuellt-bibliotek-2, shortseller-bank, superanalys,
+vagfundament-motor, regenerate-all-courses, ak1a/data, dynamic-catalog
+(RK-01-titel, slug orörd). typer.ts utökat: stabilitet.kassaManaderBurnRate +
+nyemissionerSenaste5ar + nytt block aterkop{senasteArMdr,andelUtestande,
+insiderkopSenaste6man}. P1+P2 meddelade via SendMessage. tsc: 0 fel.
+SPRÅK PASS 1 KLAR — SAMTLIGA 5 EXPERTER: A 316 + B 940 + C 996 + D 834 +
+E 356 = 3 442 rättningar. Värsta: vågör×136 (A), kinesiska 沃尔沃/闭环/鲸鱼,
+"sälj låg köj hög" (inverterad lära), MUSD=miljarder, "sasongs"-dataförlust
+(blue-ocean ch3/12, bull ch10). PASS 2-AGENT IGÅNG: filomfattande mönsterbank
++ kinesiska-svep + sasongs-platsmarkörer, exklusiv skrivrätt deep-courses.json.
+── VÅG 39: AKM2-FORSKNINGSPROGRAMMET (2026-09-03, kunddirektiv) ──
+Kund: "AKM1 till nästa nivå = AK-Model 1 (förk. AKM1) → AKM2. Maximera
+nyttan av 20 variabler — fler nyckeltal? rätt viktfördelning? mer dynamisk
+via Vågor+AK1TS — bästa matchningen? superdjup forskning, flera forskare
+parallellt, sedan system + ekosystem-koppling."
+Protokoll: data/forskning/PROTOKOLL.md (kanoniska V01-V20+vikter, AK1TS,
+vågklasser, kärbeslutet, skrivregler — forskare skriver ENBART i
+data/forskning/, ingen kodkonflikt med P1-P4).
+4 FORSKARE PÅGÅR: R1 nyckeltal (Piotroski/Beneish/Altman/Novy-Marx/Sloan/
+Magic Formula/Rule of 40/SBC/FCF-konversion → rankade V21+-kandidater,
+≥12 källor), R2 viktfördelning (evidens per variabel, kategorivikter,
+bransch-adaptiv matris, poängkurvor, backtest-protokoll), R3 AKM1×vågor-
+matching (V×teori×horisont-matris, vågfas-modulerad poängsättning med
+Mr Market-varning, konfluens-gate, variabelns hemmahorisont, Markov-
+övergångar), R4 AKM2-arkitektur (6 lager: data→AKM1-kärna→moduler→
+dynamik→viktmotor→syntes, projiceraAKM1-bakåtkompabilitet, 4-stegs
+migration, Fas-integration, Prediction Log).
+NOTERA: kundens skärmdump visade gamla V19/V20-namnen = PROD före deploy.
+Totalt aktiva agenter: 9 (P1-P4, Pass2-språk, R1-R4). Efter syntes:
+fas R2 = AKM2-bygge (flera byggagenter).
+── VÅG 40: OMTANKE-EKOSYSTEM + ADMIN-UTVECKLINGSRADAR (2026-09-03) ──
+Kunddirektiv: "super enkelt för den som ej kan analys — vi tar hand om
+klienten som ett barn, hjälper från A till Ö; systemet ska VETA vad
+klienten vill innan den tänker — mönsteranalys 24/7; chocka med HÄNSYN,
+bry oss om deras ekonomi, inte tjäna; sidan ska agera som en KROPP som
+känner på varandra, harmoniskt, behålla klienten länge. + superavancerad
+ADMIN: visa ALLT för att utföra jobbet + följa utvecklingen."
+LEVERERAT (main-agent, tsc 0):
+1. src/lib/omtanke-motor.ts (NY) — ekosystemets nervsystem: lasSignaler
+   (tracer/chat-minne/XP/streak/profil — allt befintligt, ingen ny
+   insamling) → 7 tillstånd (ny-still, fastnad, radslOro, glod, ensidig,
+   aterkomsten, harmoni=tystnad) → OmtankeAtgard (fråga+länk, ALDRIG
+   uppmaning); ekosystemPuls() = kroppens hjärtslag (systemen känner på
+   varandra); cooldown max 1/24h (ak1a-omtanje-v1). RADSLA_ORD-detektion
+   i chat-minnet → högsta prioritet.
+2. notiser.ts: typ "omtanje" 🤍 "Vi har tänkt på dig" — integrerad i
+   genereraAutomatiskaNotiser (dubbel-skyddat av dagsregistret).
+3. ADMIN UTVECKLINGSRADARN: /api/admin/utveckling (ADMIN_PASSWORD-skydd,
+   timing-safe+rate-limit enligt beteende-mönstret) + komponent
+   utvecklingsradar.tsx + flik "Utveckling 🔭" i admin/page.tsx — visar:
+   P1-P9-status (univers/cachefiler/priser/manifestdag), AKM2-forskningens
+   landningar, Kvalitetsvaktens sektionsstatus, senaste rapporter,
+   kurser+quiz-hälsa, MEGA-fasplanen.
+P3 KLAR: riskportfolj.ts — 9 riskprofiler exakta horisontvikter (mikro
+≤10%), poängformel 0,50 AKM1 + 0,35 våg + 0,15 golv, 4 kravkontroller
+OK/VARNING/BROTT, ersättningsmotor samma bransch, determinism FNV-1a,
+32/32 tester PASS. priser.json 3 nivåer (249/449/799 kr/mån platshållare).
+P4 KLAR: korstabell 22 kolumner (fryst bolagskolumn, 7 kategoripoäng,
+5 F+5 T vågceller, dynamikpilar, golv, status) + portfolj-djupvy (då vs
+nu: paper-ton vs guldram, vågrader, ersättningspanel, tidsaxel) +
+riskval-panel 2 steg + demo-wrapper + fixtures (20 rader maskinvaliderade).
+Färgsystem: impulsvåg #047857 / korrigering koppar-lys / basbygge gråblå —
+harmoniserat med konfluensradarn.
+R4 KLAR: AKM2-arkitektur (data/forskning/r4-akm2-arkitektur-2026-09-03.md,
+741 r): 6 lager (datafundament→AKM1-kärna→AKM2-plus-moduler→dynamik→
+viktmotor→syntes), PROJEKTIONSINVARIANTEN (projiceraAKM1(raknaAKM2(k,
+{moduler:[],viktp:"akm1-klassisk"})) === raknaAKM1(k) ALWAYS — AKM2
+degraderar matematiskt till AKM1), 4 migrationssteg, Prediction Log
+hash-kedjad, "öppna platser" för R1/R2/R3.
+P5 STARTAD: uppföljningsmotor (snapshot/jamforDåNu/betydelsegrad/
+notisTexter med omtanke-ton) + /api/cron/portfolj-uppfoljning (CRON_SECRET,
+manad/kvartal-intervall) + vercel.json cron 0 7 1 * *.
+AKTIVA: P1, P2, Pass2, R1, R2, R3, P5 = 7 agenter.
+── VÅG 41: 404-DIAGNOS + AKM2-BYGGET + P6/P7 (2026-09-03) ──
+404-UTREDNINGEN (kundbilder): båda = ÄKTA 404 på prod ("Sidan hittades
+inte"; stora tomma cream-ytan överst = det kunden upplevde som "texten är
+under och ej syns"). Testat: 291 prod-listade kurslänkar 200/200; ALLA 333
+lokala slugs 200; åäö-redirects 308 OK; trailing-slash 308 OK. Orsak:
+kundens bokmärke/historik/PWA-länk till EN GAMMAL/ÄNDRAD URL (ev. SW-
+cachead). FIXAT: (1) SMART 404 — not-found.tsx + kurs-forslag.tsx (NY):
+client läser pathname, om /kurser/{slug} → Levenshtein-top-3 närmaste
+kurser + "Kursen kan ha bytt namn" (fungerar med percent-encodade åäö);
+server injicerar 333 slug+titlar. (2) SW-BUGG FIXAD: sw.js cachade ALLA
+svar inkl 404 (res.ok-kontroll saknades) → VERSION ak1a-v2 + res.ok-gate
++ activate hygienradering av status≥400 ur cache. tsc 0. DEPLOY KRÄVS.
+P5 KLAR: uppfoljning.ts (skapaSnapshot/jamforDåNu: AKM1-delta≥10=stor,
+vågbyte lång/mega=stor kort/medellång=man, pris±20 %=man; raknaNotisTexter
+max 3 omtanke-ton; beslutaIntervall manad≥30/kvartal≥90) + cron-rutt
+(CRON_SECRET, GET+POST, signal-bus publiceraSignal mottagare fas2 —
+ak1a-nyheter-top är klient-only, cron kan inte nå) + vercel cron 0 7 1 * *
++ EXEMPEL.json (aktiv:false) + 50/50 test. FYND: kontraktskrock
+"impulsvåg"(motor) vs "impulsvag"(typer) — mappad i rutten. Begränsning:
+Vercel-fs read-only → snapshot-persistens till Supabase (P7/framtid).
+P2 KLAR: fundamental-vagmotor.ts (~640 r, 70/70 test): V01/V09/V12/V19
+klassbara idag (4/20 — serier saknas för övriga, tabellen tänds när data
+kommer), trippelmetod-majoritetsröstning (tecken/regression/delperiod
+med brusgrind), SKF-realistest blandat, SKF-serier=demovärden (cache-
+format teknisk motor), tomt in = allt osatt.
+P1 KLAR (tidigare): 100/100 bolag 10 branscher, 39 % null (Yahoo tömt
+balansräkningshistorik — stubbar vägras), Mimosa-säkerhet (vitlista+
+IP-kontroll+redirect-avslag+sanera_filnamn+realpath) omtestad, V19 burn-
+rate befolkad (PSNY 15,2 mån), 4 källavikelser loggade (EQNR 89 %!).
+FORSKNING SYNTES: AKM2-BESLUT.md (NY, normativt): V21-V29 enl R1 (ROIC,
+FCF-avk, accruals+Beneish, räntetäckning, utspädning, kapitalcykel,
+utdelning, EV/EBIT, insider-villkorad), viktprofil akm2-2026 (R2:
+EV/EBITDA 11 %, P/S 4 %, moat 10 %, katalysator 6 %, V19 9 %+HÅRD PORT
+kassa<12 mån→max 45; dagens vikter summerade 112 % — fixat), dynamik-
+modulen Φ-tabell (R3: ×1,20/×1,10/×1,00/×0,80/×0,90+value-appearing,
+RIKTIGHETSINVERTERING V04/V05/V06/V10/V28, tak ±10, konfluens-gate 3/5×
+4/7), 6-lager arkitektur (R4 projektionsinvarianten).
+AKM2-BYGGVÅG STARTAD (5 agenter): kärna+vikter (karna/vikter/typer),
+dynamik (Φ+invertering+konfluens), moduler (V21-V29+branschregister),
+P6 Python AKM1-bedömare (100 bolag→akm1-{T}.json+fvag-{T}.json+
+korstabell-grund.json+rapport), P7 integration (/portfolj-forskning-sida+
+API+bygg-kort+meny+sök, demo-wrapper-fallback aldrig tom).
+AKTIVA: Pass2 + 5 nya = 6. KVAR: P8 prenumerations-/prissidor, P9
+kvalitet+Kvalitetsvakten+commit+merge+push+prod-verify (inkl 404-fix+SW).
+── SPRÅKARBETET TOTALT KLART + P8 STARTAD (2026-09-03) ──
+PASS 2 KLAR (språkagent): 1 237 rättningar (192 kurser) + 8 sasongs-
+platsmarkörer (hittade 5 fler förstörda block än expert A kände till:
+origins-of-the-crash, var-ekonomi, of-permanent-value, one-up-on-wall-
+street, principles-of-corporate-finance). Grupper: vågör 60 + -ör/-är-
+familjer, matters 80, approach 86, läg→lag 113 (ALLA manuellt granskade),
+kinesiska/kyrilliska 11 (kontextunika lösningar), mallfel 826 (roa/roe-
+versaler 703, bias→biaser 77), dubbelord 1 + 23 MANUELLT verifierade som
+korrekt svenska ("det det är", "rullas om om planen"). Agenten råkade
+radera 17 309 numeriska fält (bugg) — självupptäckt, återställd med
+ratt-kontrollsumma 7380. Rapport: pass2-mönsterbank-2026-09-03.md.
+MAIN OBEROENDE VERIFIERING: 333/2916/8211/7380 + 0 mönster + 0 icke-
+latinska + 0 felslugar = GRÖNT. SPRÅKKRISEN TOTALT LÖST: pass 1 3 442 +
+pass 2 1 237 = 4 679 rättningar av 6 agenter (5 experter + pass 2).
+P8 STARTAD: /prenumeration (nivå-kort ur priser.json, Fas 2/3-rabatt
+auto-detekterad 20 %, aktiverings-flöde, juridik-block) + niva-kort.tsx
++ aktivera-panel.tsx + footer/sokindex/sitemap-kopplingar.
+MIMOSA PATH-FIX: portfolj-uppfoljning/route.ts — sakraFilnamn (vitlista)
++ sakraSokvag (resolve+rotprefix) + cacheNyckel vitlista [A-Z0-9_-]
+(äkta hål: tickers ur filinnehåll kunde bygga ../../-sökvägar) —
+verifierat: ABB.ST→ABB_ST ok, ../../evil→null. tsc 0.
+AKTIVA 6: AKM2-kärna, AKM2-dynamik, AKM2-moduler, P6, P7, P8.
+KVAR: P9 = tmp-städning + Kvalitetsvakten + commit (uppdelad) + merge
+main + push + prod-H1-verify (404-fix + SW-v2 + allt sedan våg 35!).
+── VARUMÄRKESSYSTEMET KOMPLETT (2026-09-03, kunddirektiv) ──
+"Logotypen i certet + alla sidor + spara med/utan bakgrund i egen fil/
+kategori". LEVERERAT: (1) CERTIFIKATET: VarumarkesLogo sm i cert-huvudet
+(certifikat.tsx). (2) ALLA SIDOR: header/mobilmeny/footer/error/admin
+(våg 37) + not-found.tsx uppgraderad fr text-wordmark till VarumarkesLogo
+md+medText + PWA-MANIFEST NY: public/manifest.json (name/short_name/
+theme #0E1B2E/bg #F5F1E8/lang sv-SE) med skulptur-ikoner ikon-192/512.png
+(maskable) genererade ur skulptur-mark + manifest-länk i layout-metadata —
+telefonens hemskärm + installera-app visar nu skulpturen. (3) ARKIV:
+public/ak1a/logo/README.md = varumärkesregistret (primärmärke mark MED
+platta / sekundär skulptur-utan-bakgrund.png UTAN (NY: transparent PNG
+77 kB via sharp, vit>=246→alpha 0, QA-godkänd) / hero / 3 original råa;
+regler: alltid via VarumarkesLogo-komponenten, marin yta=alltid platta).
+AKM2-MODULER KLAR: V21-V28 beräknas (V21 ROIC, V22 FCF-avk+konversion,
+V24 räntetäckning+ND-approx, V25 utspädning, V28 EV/EBIT-yield; V23/V26/
+V27/V29 ärligt osatta — saknar serier/FI-data), trösklar enl R1 exakt,
+branschregister saas/bank/cyklisk/tillgangstung/tillvaxt med vikt-
+justeringar (aldrig V01-V20-poäng), 64/64 PASS.
+AKM2-DYNAMIK KLAR: Φ-tabell (justering=clamp(Φ−1,±1), komposit tak ±10),
+INVERTERADE_V {V04,V05,V06,V10,V28} med konkret bevis (P/B-serie stigande
+→ rå impulsvåg → INVERTERAD korrigering ×0,80 = −0,20; spegel fallande →
+impulsvåg ×1,20+vardeforbattring — Mr Market-principen matematiskt
+säkrad), konfluensmatris 5 utfall (HÖG±/KONFLIKT/DIVERGENS/NEUTRAL/
+OSATT), hemmahorisont-ζ (V12:lång 0,30 vs V16:mikro 0,05 = kvot 6),
+55/55 PASS.
+P7 KLAR: /portfolj-forskning (6 sektioner, 3 nivåkort med −20 % badge,
+juridik-länkar) + API GET/POST (503 underlag saknas) + ByggPortfoljKort
+(lasMedlem-gating: inbjudande logga-in-panel) + korstabell-data.ts
+(normaliserar P6-format) + demo-fallback aldrig tom + meny/sok/sidfooter.
+Live-test: konservativ 12 innehav sum=1,0000, 6 ersättningar.
+NOTERA P9: P7-rapporttext innehöll en kinesisk karaktär (冗) — kolla
+kinesiska-svep över src i Kvalitetsvakten. akm2-register vs kärnans
+AKM2Modul-typ: adapter kan behövas i kärnans integrationssteg.
+AKTIVA 3: AKM2-kärna, P6, P8. Manifest.json NY i public/ (Kvalitets-
+vaktens URL-sektion kan behöva den i sitemap? nej — manifest utesluts).
+── P8 + P6 KLARA, MIMOSA-REDOVISNING, MOMS-FIX (2026-09-03) ──
+P8 KLAR: /prenumeration (hero, rabatt-band marin, 3 nivåkort "Mest valda",
+checklistor ur priser.json, "N månader gratis"-badge beräknad 12−ar/manad,
+juristikblock med ångerrättsruta 2005:59 + länkar, aktiveringspanel med
+mailto-info@ak1nvestor.com-förifyllt + localStorage ak1a-prenumeration-
+intention-v1 + CustomEvent-nivåval) + useFasRabatt (SSR visar ordinarie,
+hydreringssäker — elev ser överstruket+rabatt chip −20 %) + sidfooter/
+sokindex/sitemap. 0 nya tsc-fel. FLAGGA löst av main: priser.json sa
+"exklusive moms" men villkoren "inkl." → KONSUMENTRÄTT: pris till
+konsument SKA anges inkl. moms → priser.json-notering rättad till
+"inklusive 25 % moms" + rabattbeskrivning "alltid och automatiskt".
+P6 KLAR (tidigare): 100 akm1-{T}+fvag-{T}-cacher + korstabell-grund.json
+(100 rader) + rapport. Medel 39,6/100 · grön 0/gul 2/röd 98 · 1 port-
+brott (VPLAY 6,8 mån) · 11/20 beräkningsbara · STRUKTURELLT FYND: 28,9 %
+av vikten alltid osatt → max ~71 → gröna ≥70 ouppnåelig (datakvalitets-
+fynd, ej bolagsdom) → D1-AGENT STARTAD: datatackning-skalning (grön =
+≥70 % av maxMöjligt + min 60 % täckning, täckningskolumn i korstabellen,
+"poäng/max"-visning). Topp-5: INDU-C 58,1 NEM 55,1 INVE-B 54,0 NHY 53,4
+NOVO-B 52,8 (holding-artefakter dokumenterade).
+MIMOSA ×2 sammanstalla_korstabell.py:186/331 = FALSKA POSITIVA (open på
+modulnivå-KONSTANTER KORSTABELLFIL/RAPPORTFIL rad 43-44 ur __file__-rot;
+dynamiska tickrar går via saker_sokvag+sanera_filnamn rad 88) — redo-
+gjort i chatt. P7-rapportens 円-kinesiska: P9-kinesiska-svep över src.
+AKTIVA 3: AKM2-kärna, D1 täckningsskalning (+ P8 klar nu = 2 kvar? nej:
+kärna+D1).
+
+── VÅG 43 KLAR: AKM2 KOMPLETT + M1/M2/M3/D1 + BOKMASTER-FIX (2026-09-03) ──
+AKM2 HELA STACKEN BYGGD: kärna (raknaAKM1/raknaAKM2/projiceraAKM1,
+25/25 PASS, PROJEKTIONSINVARIANTEN verifierad på 5 fixturer: projicera-
+AKM1(raknaAKM2(k,{moduler:[],viktprofil:"akm1-klassisk"}))===raknaAKM1(k)
+ALLTID) + dynamik (Φ-tabell, INVERTERADE_V {V04,V05,V06,V10,V28}, tak
+±10, 55/55) + moduler V21-V29 (register saas/bank/cyklisk/tillgangstung/
+tillvaxt, 64/64) + vikter (akm1-klassisk låst uniform, akm2-2026
+blocksplit 58/42, superanalys-2026; alla summerar exakt 100). MODELL_
+VERSION AKM2.2026.09. Integration i UI köar efter deploy.
+M1 MEDLEMSKAP: /medlemskap-rewrite (20 indikatorer V01-V20, SAMMANVÄG-
+NINGEN som Fas 2-kärna, inget nytt innehåll, oändligt med timmar, krav =
+klar Fas 1 + viljan att lyckas, TA=endast orientering) + GarantiRuta
+(båda fasblocken) + "Efter utbildningen" (verktyg + /prenumeration +
+AK1nvestor.com-visioner) + bibliotekssektion + villkor sektion 5-6
+harmoniserad (90 dagrar: betalning först DAG 90 OCH endast om nöjd,
+åtkomst upphör kostnadsfritt annars, förskott +30 dagar, Stripe först
+efter garantiperiod, garanti ∥ ångerrätt 2005:59) + genomsök 12 filer
+(notiser 26→18 mästarverk, laroplan V19/V20-kanon, fas2-ansok, fas3,
+manifest, bibliotek/kurs-sok, chatbot/shortseller/agendas/add-perspectives).
+M2 KUNSKAPSFLÖDE: kunskaps-flode.tsx (3 flikar: Nyheter via /api/nyheter
+standardkanal-id:n, Nya kurser ur flödet, Vad är nytt) monterad i Min
+Sida (dashboard + välkomstläge) + NyhetsChips på startsidan (sektion 3b)
++ data/kunskapsflode.json (13 poster, alla verifierade mot worklog).
+M3 VÄGVISAREN: vagvisare.tsx (ekosystemPuls vid montering + var 60 s,
+omtankeTillaten i slaget ej i render, 3 svarsknappar, harmoni=pulsindika-
+tor, fade-in, aria-live) monterad i min-sida efter hero + client-portal
+ovanför member-header + halsningFranKlockan (Godmorgon/Goddag/God kväll)
++ Fas-badge + "{dag} · X % genom Fas 1"-rad.
+D1 DATATÄCKNING: sammanstalla_korstabell.py datatackning_ur() (Σ vikt
+icke-osatta/97, max=Σ·5·20/97=täckning·100) + status skalad efter
+maxMöjligt: FÖRE grön 0/gul 2/röd 98 → NU grön 7/gul 76/röd 17 (port-
+brott förblir röd). TackningChip i vag-stil + Täckning-kolumn (23 kol,
+min-w 1640) + Akm1Chip "41/71" + legend "straffar aldrig saknad data" +
+d1-datatackning-rapport. Formelfynd: Σ·5·(100/97) ger fel skala —
+korrekt = Σ·100/97.
+BOKMASTER-LAYOUTBUGG (kundrapport "bakgrunden blockerar första orden nedanför"):
+ROT = kurs-gate.tsx KursGate-låsvy: absolute inset-0-gradient from-paper
+via-paper/80 to-transparent ÖVER blur-[6px]-innehåll → toppen halvtrans-
+parent = första orden på kapiteltexten halvt täckta (kunden såg suddiga
+svenska ord, transkriberade som "engelska"). Enda platsen i kodbasen med
+täckande halvgradient (alla andra = 5 %-dekorationer pointer-events-none).
+FIX: blur-låda aria-hidden + opacity-30 (enbart textur), overlay bg-paper
+heltäckande enhetlig — inga halvtäckta ord längre, låskort centrerat på
+rent papper. DOM-verifierad i dev utloggat: overlay=rgb(245,241,232),
+gradient=none på intelligent-investor; security-analysis=Fas2Gate (egen
+ren kurskortsvy, påverkas ej). Gäller ALLA gratis-kurser utloggat.
+P9-PÅGÅR: tsc + Kvalitetsvakten + uppdelade commits + deploy + prod-verify.

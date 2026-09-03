@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T131132511Z-23844-61f7d3efefdb",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:src/lib/portfolj-forskning/riskportfolj.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/portfolj-forskning/demo-wrapper.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/portfolj-forskning/riskval-panel.tsx: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "82a32231d768c5420219aaeacbe4b00df96a6165c70fd0444217e078cb17979b",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T13:11:32.511Z",
+  "timing": {
+    "startedAt": "2026-09-03T13:11:30.348Z",
+    "completedAt": "2026-09-03T13:11:32.511Z",
+    "durationMs": 2163
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 3,
+      "project_check_failed": 3
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T131132511Z-23844-61f7d3efefdb.json"
+}

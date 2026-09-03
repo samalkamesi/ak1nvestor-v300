@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T105541532Z-29412-83e096ca730e",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:tmp_parts/dk-scan.js: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/nyhets-motor.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/nyhetskanaler.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/nyhets-central.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/nyheter/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/nyheter/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/nyheter/scan/route.ts: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "329c61afd28f682e859b7982efc9eccec4cdbea8",
+  "diffHash": "9db71b3ee07fd76b0f4b43790323f090df15317abd6046655687222b8d3dc47a",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T10:55:41.532Z",
+  "timing": {
+    "startedAt": "2026-09-03T10:55:38.877Z",
+    "completedAt": "2026-09-03T10:55:41.532Z",
+    "durationMs": 2655
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byStatus": {
+      "blocked": 1
+    }
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 7,
+      "project_check_failed": 7
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T105541532Z-29412-83e096ca730e.json"
+}

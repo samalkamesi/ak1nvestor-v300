@@ -1,0 +1,699 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20260903T130610168Z-32536-e5fb6e540ece",
+  "run_status": "inconclusive",
+  "errors": [
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/akm1-calculator.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/indicators/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/vagfundament-matris.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/portfolio-builder.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/portfolj-forskning/typer.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/chatbot/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/app/api/dagens-pass/route.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/shortseller-bank.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/superanalys.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/vagfundament-motor.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/ak1a/regenerate-all-courses.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/ak1a/data.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/lib/ak1a/dynamic-catalog.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    }
+  ],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "partial",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 384,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 14
+    },
+    "change_tracking": {
+      "touched_observed": 14,
+      "touched_retained": 14,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 17,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 17,
+      "selected_files": 17,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 17,
+      "scanned_files": 0,
+      "skipped_files": 0,
+      "failed_files": 17,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {
+      "baseline_snapshot_unreadable": 3,
+      "scanner_failed": 17,
+      "project_check_failed": 20
+    },
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/akm1-calculator.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/indicators/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/vagfundament-matris.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolio-builder.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/portfolj-forskning/typer.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/chatbot/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/app/api/dagens-pass/route.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/shortseller-bank.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/superanalys.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/vagfundament-motor.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/regenerate-all-courses.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/data.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/dynamic-catalog.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/akm1-calculator.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/indicators/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/vagfundament-matris.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolio-builder.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/portfolj-forskning/typer.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/chatbot/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/app/api/dagens-pass/route.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/shortseller-bank.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/superanalys.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/vagfundament-motor.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/regenerate-all-courses.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/data.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/lib/ak1a/dynamic-catalog.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      }
+    ],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-09-03T13:06:10.168Z",
+  "session_id": "sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2",
+  "target": ".",
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "rules_version": "unavailable",
+  "diff_hash": "a706b601111a5278021483540279e821b7c652de14ba90d30f804df98dec73f4",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 17,
+    "changed_files": [
+      {
+        "file": "src/app/api/chatbot/route.ts",
+        "ranges": [
+          {
+            "start": 254,
+            "end": 254
+          }
+        ],
+        "before_hash": "fdfcb7ddd0fbc4e806e0d888075c9244d695da0b244845c99f5e06c1e2c3308e",
+        "after_hash": "fcd16c57de04ba054e50764701bb5abcd9862d08ec1d899942b9d9c0571c0c38"
+      },
+      {
+        "file": "src/app/api/dagens-pass/route.ts",
+        "ranges": [
+          {
+            "start": 137,
+            "end": 137
+          }
+        ],
+        "before_hash": "b836e012a2558f0b78f8cc32707a4111ddc6ec1fc0309f14f11477dceac70c4a",
+        "after_hash": "3d87d7f80f1c7ba6484fe1f287a79659b0fc96f1b1363c21d73a0bf18a675920"
+      },
+      {
+        "file": "src/app/api/indicators/route.ts",
+        "ranges": [
+          {
+            "start": 27,
+            "end": 28
+          }
+        ],
+        "before_hash": "8b1aab72f4adb91359b248dbe99379121382b7807287db7811fe9ab67d969b94",
+        "after_hash": "a9329a7cdd2e23e454d6bb484367409a4ce7c88e08ea725406687e555bf05aeb"
+      },
+      {
+        "file": "src/components/ak1a/akm1-calculator.tsx",
+        "ranges": [
+          {
+            "start": 31,
+            "end": 32
+          },
+          {
+            "start": 261,
+            "end": 261
+          },
+          {
+            "start": 413,
+            "end": 413
+          }
+        ],
+        "before_hash": "e330a440460e8f4fd64a370f176e811c024263684322a3603c45c59093412046",
+        "after_hash": "4c2ef7e7e46c34101ca5a7d48679fedffd80a8e3b1933c851ac7818d4f754aab"
+      },
+      {
+        "file": "src/components/ak1a/portfolio-builder.tsx",
+        "ranges": [
+          {
+            "start": 86,
+            "end": 87
+          }
+        ],
+        "before_hash": "5fc37386bd02ca6d0f4c601e457025dccc899e9ca08e039f45d936da3326ae6a",
+        "after_hash": "7246a8803c5999bc5c7345bc5fcb2cb980ab8f3ef896c8e58f26d631fb9fddb2"
+      },
+      {
+        "file": "src/components/ak1a/portfolj-forskning/korstabell.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 459
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "6b6db4a40ba737b5d82817e3a00f6e3abf35146552d2016d163d0b25827be6a7"
+      },
+      {
+        "file": "src/components/ak1a/portfolj-forskning/portfolj-djupvy.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 525
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "32683a29092bc5599b4251366f7ccdc31eedd56e486af2bb1ed34209a473272d"
+      },
+      {
+        "file": "src/components/ak1a/portfolj-forskning/vag-stil.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 321
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "675fd1e47cb90c4e003acf35a329c5314bd9879c7c10161c462fe5710590d5aa"
+      },
+      {
+        "file": "src/components/ak1a/vagfundament-matris.tsx",
+        "ranges": [
+          {
+            "start": 42,
+            "end": 43
+          }
+        ],
+        "before_hash": "4f30c5b4f550a53c14c283940acb5e0f57f1c4bc2b56b4b1bf2c7b646d821bc4",
+        "after_hash": "c24409d3bdf29f2addb8e344c9e4a512746894e14b6900a74dcb56a4fd58b583"
+      },
+      {
+        "file": "src/components/ak1a/visuellt-bibliotek-2.tsx",
+        "ranges": [
+          {
+            "start": 404,
+            "end": 404
+          }
+        ],
+        "before_hash": "76426a20a78ed9f1fb1500c9df523492e826efd9476dd95e73c36ef37b7d807d",
+        "after_hash": "a1236a24c5fc0d7d0cfcf0b6301c392997a985a3c7b94c1fa35cad2c95e3e3f6"
+      },
+      {
+        "file": "src/lib/ak1a/data.ts",
+        "ranges": [
+          {
+            "start": 81,
+            "end": 81
+          }
+        ],
+        "before_hash": "95f2caec665506f5e73d0950c755c2bd49f6b330c05a3f1aa166136fe6811314",
+        "after_hash": "2aafb194328fade961ee7381284a9b7b6c7dbaa64559fdb028bbd6b5612caed9"
+      },
+      {
+        "file": "src/lib/ak1a/dynamic-catalog.ts",
+        "ranges": [
+          {
+            "start": 1426,
+            "end": 1426
+          },
+          {
+            "start": 1429,
+            "end": 1429
+          }
+        ],
+        "before_hash": "04b220ec919965520ca61ed0470a4491e15c3258dc62f83025d434fbfc573c23",
+        "after_hash": "84f54770268c002d46932840dad153c244893719efae132d322b2f77bfcb1726"
+      },
+      {
+        "file": "src/lib/ak1a/regenerate-all-courses.ts",
+        "ranges": [
+          {
+            "start": 79,
+            "end": 79
+          }
+        ],
+        "before_hash": "835b42cfdde8bf6b0a04b851758641e8a1502feae13eaf4d48993559955f63d2",
+        "after_hash": "04b8a0d0461f64720c38547d32829dab09a31d85d2b78a3329f5c8e8bc6378bc"
+      },
+      {
+        "file": "src/lib/portfolj-forskning/typer.ts",
+        "ranges": [
+          {
+            "start": 93,
+            "end": 101
+          }
+        ],
+        "before_hash": "08a33db8831a30980f8e481f6cdc36c69db7ab15047bc032c7047e5cb95c65b6",
+        "after_hash": "1f990193eb4a87b8dd5b0f1907ece07f755180a8d4d6185817caf8e3b56c8e16"
+      },
+      {
+        "file": "src/lib/shortseller-bank.ts",
+        "ranges": [
+          {
+            "start": 418,
+            "end": 418
+          }
+        ],
+        "before_hash": "b95f6d38f85e4781a54e944cb2c5806b39e98b3bdcabd401cde6d3fcad341ae5",
+        "after_hash": "e1a24c902cb2bd70ad7f6c71c202a845d348f9a199b64600e0e1a6bc2dba36df"
+      },
+      {
+        "file": "src/lib/superanalys.ts",
+        "ranges": [
+          {
+            "start": 261,
+            "end": 261
+          }
+        ],
+        "before_hash": "671a000ff18a91ac6c70be82f977dae710136ba4061c29be8647b3a2d74482f9",
+        "after_hash": "feb94e9cbcd2020cf61375780ed20ab250d66effa7391288a84eb9bd13133e75"
+      },
+      {
+        "file": "src/lib/vagfundament-motor.ts",
+        "ranges": [
+          {
+            "start": 57,
+            "end": 58
+          }
+        ],
+        "before_hash": "e07c5f48ac01a30fac225d5f2bd9d4d1da4d19235cdedb7012dc414d2334d177",
+        "after_hash": "b03add9b372e112a530fa3cc8ce61f1026b104e46382b9b7fc207ce7f0497c97"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-09-03T13:06:07.401Z",
+    "completed_at": "2026-09-03T13:06:10.168Z",
+    "duration_ms": 2767,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "partial/INCONCLUSIVE",
+    "latencyMs": 2767,
+    "peakMemoryBytes": 84647936,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 0,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T130610168Z-32536-e5fb6e540ece.json",
+    "latest_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2.json",
+    "history_summary": ".mimosa/history/run-20260903T130610168Z-32536-e5fb6e540ece.json"
+  }
+}

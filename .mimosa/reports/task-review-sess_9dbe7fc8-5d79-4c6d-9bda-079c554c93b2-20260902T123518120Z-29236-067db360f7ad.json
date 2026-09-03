@@ -1,0 +1,350 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20260902T123518120Z-29236-067db360f7ad",
+  "run_status": "inconclusive",
+  "errors": [
+    {
+      "stage": "baseline-read",
+      "target": "src/lib/konfluens-motor.ts",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/components/ak1a/konfluens-tabell.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/konfluens/page.tsx",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    },
+    {
+      "stage": "baseline-read",
+      "target": "src/app/api/konfluens/route.ts",
+      "reason": "baseline_snapshot_unreadable: file is missing from task baseline"
+    }
+  ],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "partial",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 299,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 5
+    },
+    "change_tracking": {
+      "touched_observed": 0,
+      "touched_retained": 0,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 9,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 9,
+      "selected_files": 9,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 9,
+      "scanned_files": 9,
+      "skipped_files": 0,
+      "failed_files": 0,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {
+      "baseline_snapshot_unreadable": 4,
+      "project_check_failed": 4
+    },
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/konfluens-motor.ts",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/konfluens-tabell.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/konfluens/page.tsx",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/app/api/konfluens/route.ts",
+        "detail": "file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/konfluens-motor.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/components/ak1a/konfluens-tabell.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/konfluens/page.tsx",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/app/api/konfluens/route.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affects_completion": true
+      }
+    ],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-09-02T12:35:18.120Z",
+  "session_id": "sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2",
+  "target": ".",
+  "revision": "83e551523220b81771e8a968e4808dbf80b43565",
+  "rules_version": "unavailable",
+  "diff_hash": "cf6beb81417904c27c12e7ae1acad2255103effc5bf8fe4defca707adc7b5ce5",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 9,
+    "changed_files": [
+      {
+        "file": "src/app/api/konfluens/route.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 110
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "b3f70ed678efa2ba3717505471cfd8ac03be41b885ff9f4253f34e4f5a9ee725"
+      },
+      {
+        "file": "src/app/konfluens/page.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 156
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "a4ba69ef3b3a5cf701583f05a0abde69c9ec4607240f262d20c6a2c93c3e46f2"
+      },
+      {
+        "file": "src/app/sitemap.ts",
+        "ranges": [
+          {
+            "start": 21,
+            "end": 21
+          }
+        ],
+        "before_hash": "2eafabba3aad0f38750ec62b07d98e7d676dc6950d0d5d406f43fafea0c7ba47",
+        "after_hash": "ea6ea7aaa3c10ba597161e5bead6d53454490f1a702916ccfff289dc4d6f6f5b"
+      },
+      {
+        "file": "src/components/ak1a/huvudmeny.tsx",
+        "ranges": [
+          {
+            "start": 15,
+            "end": 18
+          },
+          {
+            "start": 28,
+            "end": 28
+          },
+          {
+            "start": 36,
+            "end": 37
+          },
+          {
+            "start": 39,
+            "end": 39
+          },
+          {
+            "start": 42,
+            "end": 43
+          },
+          {
+            "start": 45,
+            "end": 46
+          },
+          {
+            "start": 131,
+            "end": 155
+          }
+        ],
+        "before_hash": "27f62c48b02d251f70fabcb2e527a8221d63e5da290e21f18a31a7c9affd958d",
+        "after_hash": "ade2c63d32f167e5819e6d46ee5df5aadbfaa2b6370c88d602a102c1d0f18076"
+      },
+      {
+        "file": "src/components/ak1a/konfluens-tabell.tsx",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 431
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "93b57b4cf8dc0b6711ca2548e4e85673e70a7d228c2cf708726ebb9232e60c82"
+      },
+      {
+        "file": "src/components/ak1a/mobilmeny.tsx",
+        "ranges": [
+          {
+            "start": 15,
+            "end": 18
+          },
+          {
+            "start": 29,
+            "end": 29
+          },
+          {
+            "start": 37,
+            "end": 37
+          },
+          {
+            "start": 39,
+            "end": 39
+          },
+          {
+            "start": 41,
+            "end": 46
+          },
+          {
+            "start": 50,
+            "end": 50
+          },
+          {
+            "start": 224,
+            "end": 248
+          }
+        ],
+        "before_hash": "2e3aaafb39c9d946fc5dbed33e68590fd0718680b6784220b01189eb121626a4",
+        "after_hash": "dfe488711487b2f07661c17e95cb0b6cf2c6e52b3920fe9b4b3754764dcfd047"
+      },
+      {
+        "file": "src/components/ak1a/sidfooter.tsx",
+        "ranges": [
+          {
+            "start": 31,
+            "end": 31
+          }
+        ],
+        "before_hash": "1551e89f0d277a9b115f13b21ef8cb1b2f659b3b011e1945e621f7e9dba54863",
+        "after_hash": "32aeafed1830f0f3a6c3fd459f7994f86e4f0955f25a88066f01246b554733e2"
+      },
+      {
+        "file": "src/lib/konfluens-motor.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 493
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "f4cb99103608600527af3b78c447e076aec6c1a9367285c632b88631a954c13b"
+      },
+      {
+        "file": "src/lib/sokindex.ts",
+        "ranges": [
+          {
+            "start": 26,
+            "end": 26
+          },
+          {
+            "start": 29,
+            "end": 29
+          },
+          {
+            "start": 31,
+            "end": 31
+          }
+        ],
+        "before_hash": "0c576dcac5630e255e580bf448a8ed367ba1f1e8bc10b5649ad468a2cbffddec",
+        "after_hash": "9869e57bf54775027f8279b1b9ce8228d10d1780a0d1940ac5e0f7838c311289"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-09-02T12:35:15.874Z",
+    "completed_at": "2026-09-02T12:35:18.120Z",
+    "duration_ms": 2246,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "partial/INCONCLUSIVE",
+    "latencyMs": 2246,
+    "peakMemoryBytes": 129925120,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 9,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260902T123518120Z-29236-067db360f7ad.json",
+    "latest_report": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2.json",
+    "history_summary": ".mimosa/history/run-20260902T123518120Z-29236-067db360f7ad.json"
+  }
+}

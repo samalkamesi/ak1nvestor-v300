@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T135021144Z-31464-dd4034a45939",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:verktyg/python/bedom_akm1.py: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/akm2/moduler/karna-moduler.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/portfolj-forskning/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "08c481f2f44a4bf4e32635ad6fc8ba360adfdd21f68b21bb63c1beda0ffa4639",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T13:50:21.144Z",
+  "timing": {
+    "startedAt": "2026-09-03T13:50:18.781Z",
+    "completedAt": "2026-09-03T13:50:21.144Z",
+    "durationMs": 2363
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byStatus": {
+      "blocked": 1
+    }
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 3,
+      "project_check_failed": 3
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T135021144Z-31464-dd4034a45939.json"
+}

@@ -1,0 +1,911 @@
+/**
+ * AKM2 — LAGER 1 + 2 + 4 + 5: KÄRNAN ("AKM1-kärnan" + syntes).
+ *
+ * Kanoniska funktioner:
+ *   raknaAKM1(k)      — V01–V20 ur BolagsNyckeltal, 0–5 p, motivering per V.
+ *                       Trösklar enligt BESLUT §4-poängkurvor (R2 §6) för
+ *                       V01/V06/V07/V09/V19; övriga rak linjär tröskel,
+ *                       dokumenterad per variabel.
+ *   raknaAKM2(k,opts) — lager 1+2+4-syntes. Dynamiklagret (lager 3) anropas
+ *                       via INJICERAD funktion så att kärnan är fri från
+ *                       import av dynamik.ts/moduler/ (byggreglerna).
+ *   projiceraAKM1(r)  — returnerar ALLTID lager1 (projektionsinvarianten).
+ *   forklaraPoang(r)  — varje variabelbidrag → kort mening + kurs-slug-länk.
+ *
+ * PROJEKTIONSINVARIANTEN (BESLUT §0): med neutrala defaults
+ * ({ moduler: [], viktprofil: "akm1-klassisk" }, ingen dynamik) gäller
+ * projiceraAKM1(raknaAKM2(k)) === raknaAKM1(k) — byte-identisk. lager1 sätts
+ * till raknaAKM1:s objekt och RÖRS ALDRIG av lager 2–4 (R4 §3).
+ *
+ * ÄRLIGHETSPRINCIPEN (P2-arvet): null in => "osatt" ut. Kärnan gissar aldrig;
+ * variabler utan underlag i BolagsNyckeltal får poäng 0 med motivering
+ * "Osatt — …". I profilen "akm2-2026" omfördelas osattas vikt (aldrig straffa
+ * saknad data, BESLUT §2); i "akm1-klassisk" behåller de sin vikt och bidrar 0
+ * (exakt kalkylatorsumman).
+ *
+ * HÅRD PORT (BESLUT §5): kassatäckning < 12 månader (V19-data) ⇒ AKM2-komposit
+ * max 45/100 oavsett övrigt — dokumenteras i forklaraPoang. Porten följer
+ * DATA (stabilitet.kassaManaderBurnRate), aldrig poängens ursprung; null-data
+ * utlöser ALDRIG porten (ingen gissning).
+ *
+ * DETERMINISM (R4 regel 7): inga klockor, inget slump — datum hämtas från
+ * k.hamtat; samma indata => JSON-identiskt resultat.
+ *
+ * Tröskelkällor: data/forskning/AKM2-BESLUT.md §4–§5 ·
+ * data/forskning/r2-vikter-2026-09-03.md §6 · kalkylatorns klassiska
+ * trösklar (src/components/ak1a/akm1-calculator.tsx RAKNARE) för linjära V.
+ *
+ * Pedagogisk forskning — ALDRIG investeringsråd (lagen 2007:528).
+ */
+
+import type {
+  AKM2Band,
+  AKM2Resultat,
+  DynamikLagerSvar,
+  Forklaring,
+  ForklaringsRad,
+  ModulAktivering,
+  OmfordelningInfo,
+  PartialtResultat,
+  RaknaAKM2Opts,
+  ViktProfil,
+} from "./typer";
+import { hamtaViktProfil } from "./vikter";
+import type { AKM1Bedomning, BolagsNyckeltal } from "../portfolj-forskning/typer";
+
+// ── Metadata: variabler, kategorier, kurs-slug, källplatser ─────────────────
+
+/** Kategorier i kanonisk ordning (kalkylatorns KATEGORIER). */
+export const KATEGORIER: string[] = [
+  "Tillväxt", "Värdering", "Lönsamhet", "Stabilitet", "Moat",
+  "Katalysator", "Risk", "Kapitalstruktur",
+];
+
+export type VariabelMeta = {
+  namn: string;
+  kategori: string;
+  /** Kurs-slug — V01–V20 exakt ur akm1-calculator.tsx; V21+ provisoriska (migrationssteg 4). */
+  kursSlug?: string;
+  /** Var i årsredovisningen siffran finns (kalkylatorns "Var hittar jag siffrorna?"). */
+  kalla?: string;
+};
+
+/**
+ * V01–V20: namn/kategori/slug/källa exakt ur akm1-calculator.tsx (publika
+ * kontraktet). V21–V29: BESLUT §1 — sluggar provisoriska enligt R4 steg 4:s
+ * mönster "v21-{ämne}" tills mikro-lektioner publiceras.
+ */
+export const VARIABEL_META: Record<string, VariabelMeta> = {
+  V01: { namn: "Försäljningstillväxt", kategori: "Tillväxt", kursSlug: "v01-forsaljningstillvaxt", kalla: "Resultaträkning: Nettoomsättning (året + föregående år)" },
+  V02: { namn: "ARR-tillväxt", kategori: "Tillväxt", kursSlug: "v02-arr-tillvaxt", kalla: "Förvaltningsberättelsen eller presentation: 'ARR' (SaaS-bolag)" },
+  V03: { namn: "Intäktsdiversifiering", kategori: "Tillväxt", kursSlug: "v03-intaktsdiversifiering", kalla: "Not om segment/intäktsfördelning + storkundsnot" },
+  V04: { namn: "P/S", kategori: "Värdering", kursSlug: "v04-ps", kalla: "Börsvärde (börsen) ÷ Nettoomsättning (resultaträkningen)" },
+  V05: { namn: "P/B", kategori: "Värdering", kursSlug: "v05-pb", kalla: "Börsvärde ÷ Eget kapital (balansräkningen)" },
+  V06: { namn: "EV/EBITDA", kategori: "Värdering", kursSlug: "v06-ev-ebitda", kalla: "(Börsvärde + Räntebärande skulder − Kassa) ÷ EBITDA" },
+  V07: { namn: "Bruttomarginal", kategori: "Lönsamhet", kursSlug: "v07-bruttomarginal", kalla: "Resultaträkning: (Nettoomsättning − Rörelsens kostnader exkl. personalkostnader)" },
+  V08: { namn: "EBITDA-marginal", kategori: "Lönsamhet", kursSlug: "v08-ebitda-marginal", kalla: "Resultaträkning: Rörelseresultat + Avskrivningar ÷ Nettoomsättning" },
+  V09: { namn: "ROE", kategori: "Lönsamhet", kursSlug: "v09-roe", kalla: "Resultat efter skatt ÷ snitt Eget kapital (balansräkning, årets början + slut)" },
+  V10: { namn: "Skuldsättningsgrad", kategori: "Stabilitet", kursSlug: "v10-skuldsattningsgrad", kalla: "Balansräkning: Skulder och övriga förpliktelser ÷ Eget kapital" },
+  V11: { namn: "Likviditet", kategori: "Stabilitet", kursSlug: "v11-likviditet", kalla: "Balansräkning: Omsättningstillgångar ÷ Kortfristiga skulder (kvick)" },
+  V12: { namn: "Intäktsstabilitet", kategori: "Stabilitet", kursSlug: "v12-intaktsstabilitet", kalla: "5 års nettoomsättning i årsredovisningen — hur jämn kurvan?" },
+  V13: { namn: "Patent & IP", kategori: "Moat", kursSlug: "v13-patent-ip", kalla: "Not om immateriella tillgångar; förvaltningsberättelsen" },
+  V14: { namn: "Varumärke", kategori: "Moat", kursSlug: "v14-varumarke", kalla: "Förvaltningsberättelsen, kundnot, marknadsandelar" },
+  V15: { namn: "Nätverkseffekter", kategori: "Moat", kursSlug: "v15-natverkseffekter", kalla: "Förvaltningsberättelsen; kundantal över tid" },
+  V16: { namn: "Produktlanseringar", kategori: "Katalysator", kursSlug: "v16-produktlanseringar", kalla: "Förvaltningsberättelsen: kommande lanseringar/pipeline" },
+  V17: { namn: "Avtal & Partnerskap", kategori: "Katalysator", kursSlug: "v17-avtal-partnerskap", kalla: "Pressmeddelanden + förvaltningsberättelse: 'viktiga avtal'" },
+  V18: { namn: "Regulatoriska", kategori: "Katalysator", kursSlug: "v18-regulatoriska", kalla: "Riskavsnittet i förvaltningsberättelsen; myndighetsbeslut" },
+  V19: { namn: "Kassatäckning — nyemissionsrisk", kategori: "Risk", kursSlug: "v19-kapitalforbranning", kalla: "Balansräkningen: Kassa & bank + kassaflödesanalysen: 'Kassaflöde från den löpande verksamheten' — räcker kassan så bolaget slipper nyemission?" },
+  V20: { namn: "Återköp av egna aktier", kategori: "Kapitalstruktur", kursSlug: "v20-aterekop-egna-aktier", kalla: "Bolagets not om återköp av egna aktier; insiderköp (VD/styrelse, Finansinspektionen) noteras som kompletterande observation" },
+  // ── V21+: BESLUT §1 (modulblocket) — sluggar provisoriska tills steg 4 ──
+  V21: { namn: "ROIC", kategori: "Lönsamhet", kursSlug: "v21-roic", kalla: "NOPAT ÷ investerat kapital (resultaträkning + balansräkning)" },
+  V22: { namn: "Fri kassaflödesavkastning", kategori: "Värdering", kursSlug: "v22-fri-kassaflodesavkastning", kalla: "FCF ÷ EV + FCF-konversion (kassaflödesanalysen)" },
+  V23: { namn: "Redovisningskvalitet", kategori: "Risk", kursSlug: "v23-redovisningskvalitet", kalla: "Sloan-accruals (NI−CFO)/TA + Beneish-M-flagga (redovisningsnoter)" },
+  V24: { namn: "Skuldbetjäningsförmåga", kategori: "Stabilitet", kursSlug: "v24-skuldbetjaningsformaga", kalla: "Räntetäckning + nettoskuld/EBITDA (resultaträkning + balansräkning)" },
+  V25: { namn: "Utspädning", kategori: "Risk", kursSlug: "v25-utsadning", kalla: "Aktieantals-CAGR + SBC/omsättning (not om aktiekapital)" },
+  V26: { namn: "Kapitalcykel", kategori: "Lönsamhet", kursSlug: "v26-kapitalcykel", kalla: "CapEx/omsättning-trend + kapitalomsättningshastighet" },
+  V27: { namn: "Utdelningskontinuitet", kategori: "Kapitalstruktur", kursSlug: "v27-utdelningskontinuitet", kalla: "År i rad med utdelning/payout ur FCF (förvaltningsberättelsen)" },
+  V28: { namn: "Earnings yield (EV/EBIT)", kategori: "Värdering", kursSlug: "v28-earnings-yield", kalla: "EBIT ÷ EV (resultaträkning + balansräkning)" },
+  V29: { namn: "Insider-ägande (villkorad)", kategori: "Katalysator", kursSlug: "v29-insider-agande", kalla: "FI:s ägarregister (manuell modul krävs)" },
+};
+
+/** Kanoniska kärnvariabler. */
+export const KARNVARIABLER: string[] = Array.from({ length: 20 }, (_, i) => `V${String(i + 1).padStart(2, "0")}`);
+
+/** Semantisk modellversion — följer med resultat + prediktionsloggen (BESLUT §8). */
+export const MODELL_VERSION = "AKM2.2026.09";
+
+/** Pedagogiska band (ärver superanalysen) — ALDRIG köp/sälj (R4 §8.3). */
+export const BAND_TEXT: Record<AKM2Band, string> = {
+  aktor: "Aktör att följa",
+  studera: "Studera vidare",
+  skjut: "Skjut inte",
+  osatt: "Osatt",
+};
+
+/** Hård port enligt BESLUT §5 / R2 P1: kassatäckning under denna gräns => komposit max 45. */
+export const KASSA_PORT_MANADER = 12;
+export const KASSA_PORT_MAX_KOMPOSIT = 45;
+
+/** Dynamiktak (R4 §3 lager 5): moduleringen får flytta kompositen högst ±10 p. */
+export const DYNAMIKTAK = 10;
+
+// ── Småhjälpare ──────────────────────────────────────────────────────────────
+
+function clampTal(x: number, min: number, max: number): number {
+  return Math.min(Math.max(x, min), max);
+}
+
+function procent(x: number): string {
+  return `${Math.round(x * 1000) / 10} %`;
+}
+
+/** En scorings värde: poäng null = osatt (ärlighet: null in => osatt ut). */
+type Scoring = { poang: number | null; varde: number | null; text: string };
+
+function satt(poang: number, varde: number | null, text: string): Scoring {
+  return { poang, varde, text };
+}
+
+function osatt(text: string): Scoring {
+  return { poang: null, varde: null, text };
+}
+
+// ── LAGER 1: variabelscorers (V01–V20) ──────────────────────────────────────
+
+/**
+ * V01 Försäljningstillväxt — R2 §6 "goldilocks"-kurva (BESLUT §4):
+ * 0: < −10 % · 1: −10–0 % · 2: 0–10 % · 3: 10–20 % ·
+ * 4: 20–30 %, 45–60 % samt > 60 % (hållbarhetsrabatt) ·
+ * 5: 30–45 % OCH bruttomarginal ≥ 30 % ("good growth", Novy-Marx).
+ * Primärvärde: tillvaxt.omsattningTillvaxtTTM; fallback omsattningCAGR5ar
+ * (5-årigt snitt, dokumenteras i motiveringen).
+ */
+function scorV01(k: BolagsNyckeltal): Scoring {
+  const ttm = k.tillvaxt.omsattningTillvaxtTTM;
+  const cagr = k.tillvaxt.omsattningCAGR5ar;
+  const t = ttm ?? cagr;
+  const kallaTxt = ttm != null ? "tillvaxt.omsattningTillvaxtTTM" : "tillvaxt.omsattningCAGR5ar (fallback — TTM saknas)";
+  if (t == null) return osatt("Osatt — försäljningstillväxt saknas i nyckeltalen (varken TTM eller 5-års-CAGR). Källa: tillvaxt.*");
+  const bm = k.lonksamhet.bruttoMarginal;
+  let p: number;
+  let kurva: string;
+  if (t < -0.1) { p = 0; kurva = "< −10 % ⇒ 0 (kraftigt krympande)"; }
+  else if (t < 0) { p = 1; kurva = "−10–0 % ⇒ 1"; }
+  else if (t < 0.1) { p = 2; kurva = "0–10 % ⇒ 2"; }
+  else if (t < 0.2) { p = 3; kurva = "10–20 % ⇒ 3"; }
+  else if (t >= 0.6) { p = 4; kurva = "> 60 % ⇒ 4 (hållbarhetsrabatt — extrem tillväxt mean-reverterar)"; }
+  else if (t >= 0.45) { p = 4; kurva = "45–60 % ⇒ 4"; }
+  else if (t >= 0.3 && bm != null && bm >= 0.3) { p = 5; kurva = `30–45 % med bruttomarginal ${procent(bm)} ≥ 30 % ⇒ 5 ("good growth")`; }
+  else if (t >= 0.3) { p = 4; kurva = "30–45 % men bruttomarginal < 30 % eller saknad ⇒ 4 (tillväxt utan marginal får inte toppbetyg)"; }
+  else { p = 4; kurva = "20–30 % ⇒ 4"; }
+  return satt(p, t, `Försäljningstillväxt ${procent(t)} — ${kurva} (R2 §6 goldilocks-kurva). Källa: ${kallaTxt}`);
+}
+
+/** V02 ARR-tillväxt — ARR/redovisad prenumerationsintäkt saknas i P1:s datakontrakt. */
+function scorV02(): Scoring {
+  return osatt("Osatt — ARR redovisas inte i P1:s datakontrakt (BolagsNyckeltal). Aktivera SaaS-modulen (lager 2) eller poängsätt manuellt i kalkylatorn. Källa: tillvaxt.* (ARR saknas)");
+}
+
+/** V03 Intäktsdiversifiering — segment-/storkundsdata saknas i datakontraktet. */
+function scorV03(): Scoring {
+  return osatt("Osatt — segment- och storkundsdata redovisas inte i P1:s datakontrakt. Poängsätt manuellt (not om segment/intäktsfördelning).");
+}
+
+/** V04 P/S — P/S och omsättningsnivå saknas i datakontraktet (endast tillväxttakter finns). */
+function scorV04(): Scoring {
+  return osatt("Osatt — P/S kan inte beräknas ur datakontraktet (börsvärde finns men inte omsättningsnivån). EV/Revenue-länken levereras av SaaS-modulen. Kalkylatorns linjära trösklar: <1 ⇒ 5, <2 ⇒ 4, <3 ⇒ 3, <5 ⇒ 2, annars 1.");
+}
+
+/**
+ * V05 P/B — linjär tröskel ur kalkylatorn: <1 ⇒ 5, <2 ⇒ 4, <3 ⇒ 3, <5 ⇒ 2,
+ * annars 1. Negativt P/B (negativt eget kapital) => osatt: måttet meningslöst.
+ */
+function scorV05(k: BolagsNyckeltal): Scoring {
+  const pb = k.vardering.pb ?? k.vardering.egenKapitalMultipl;
+  if (pb == null) return osatt("Osatt — P/B saknas (vardering.pb/egenKapitalMultipl). Kalkylatorns trösklar: <1 ⇒ 5, <2 ⇒ 4, <3 ⇒ 3, <5 ⇒ 2, annars 1.");
+  if (pb <= 0) return osatt(`Osatt — P/B ${Math.round(pb * 100) / 100} är negativt (negativt eget kapital): måttet saknar mening här.`);
+  const p = pb < 1 ? 5 : pb < 2 ? 4 : pb < 3 ? 3 : pb < 5 ? 2 : 1;
+  return satt(p, pb, `P/B ${Math.round(pb * 100) / 100}x — linjär tröskel (kalkylatorn): ${pb < 1 ? "<1 ⇒ 5" : pb < 2 ? "1–2 ⇒ 4" : pb < 3 ? "2–3 ⇒ 3" : pb < 5 ? "3–5 ⇒ 2" : "≥5 ⇒ 1"}. Källa: vardering.pb`);
+}
+
+/**
+ * V06 EV/EBITDA — R2 §6 konvex kurva med värdefalle-hål (BESLUT §4):
+ * 0: negativ EBITDA · 1: >20x · 2: 14–20x · 3: 10–14x · 4: 6–10x ·
+ * 5: 4–6x; <4x ⇒ 5 ENDAST om V19 ≥ 3 (annars max 3 — "billigt av ett skäl").
+ * OBS: P1:s datakontrakt saknar evEbitda (endast evEbit finns → se V28), så
+ * kärnan levererar idag osatt — kurvan är implementerad och aktiveras direkt
+ * när kontraktet utökas additivt (R4 §10 P1).
+ */
+export function poangEvEbitda(evEbitda: number | null, v19Poang: number | null): number | null {
+  if (evEbitda == null) return null;
+  if (evEbitda < 0) return 0; // negativ EBITDA — ingen meningsfull multipel
+  if (evEbitda < 4) return v19Poang != null && v19Poang >= 3 ? 5 : 3; // port P4: värdefalle-hålet
+  if (evEbitda < 6) return 5;
+  if (evEbitda < 10) return 4;
+  if (evEbitda < 14) return 3;
+  if (evEbitda <= 20) return 2;
+  return 1;
+}
+
+function scorV06(): Scoring {
+  return osatt("Osatt — EV/EBITDA saknas i P1:s datakontrakt (evEbitda-fält finns ej; evEbit → se V28 Earnings yield). R2 §6-kurvan är implementerad i kärnan (poangEvEbitda) och aktiveras när kontraktet utökas.");
+}
+
+/**
+ * V07 Bruttomarginal — R2 §6 konkav kurva, brutsch-ankrad (BESLUT §4).
+ * Absolut nivå används (branschmedian saknas i kontraktet — dokumenterat):
+ * <15 % ⇒ 0 · 15–25 ⇒ 1 · 25–35 ⇒ 2 · 35–50 ⇒ 3 · 50–70 ⇒ 4 ·
+ * >70 % ⇒ 5 ENDAST om 5-årigt snitt också > 70 % ("hållit 3+ år"),
+ * annars 4. Platt topp — mjukvaru-gymningen bort (Novy-Marx GP/TA-premien).
+ */
+function scorV07(k: BolagsNyckeltal): Scoring {
+  const m = k.lonksamhet.bruttoMarginal;
+  if (m == null) return osatt("Osatt — bruttomarginal saknas (lonksamhet.bruttoMarginal). R2 §6 konkav kurva: <15 % ⇒ 0 … >70 % med uthållighet ⇒ 5.");
+  const medel5 = k.moat.bruttoMarginalMedel5ar;
+  let p: number;
+  let kurva: string;
+  if (m < 0.15) { p = 0; kurva = "< 15 % ⇒ 0"; }
+  else if (m < 0.25) { p = 1; kurva = "15–25 % ⇒ 1"; }
+  else if (m < 0.35) { p = 2; kurva = "25–35 % ⇒ 2"; }
+  else if (m < 0.5) { p = 3; kurva = "35–50 % ⇒ 3"; }
+  else if (m <= 0.7) { p = 4; kurva = "50–70 % ⇒ 4"; }
+  else if (medel5 != null && medel5 > 0.7) { p = 5; kurva = `> 70 % med 5-årigt snitt ${procent(medel5)} (hållit) ⇒ 5`; }
+  else { p = 4; kurva = "> 70 % men 5-årigt snitt bevisar inte uthållighet ⇒ 4"; }
+  return satt(p, m, `Bruttomarginal ${procent(m)} — ${kurva} (R2 §6 konkav, platt topp; brutschmedian saknas i kontraktet så absolut nivå). Källa: lonksamhet.bruttoMarginal + moat.bruttoMarginalMedel5ar`);
+}
+
+/** V08 EBITDA-marginal — kontraktet har ebitMarginal (EBIT), inte EBITDA: osatt. */
+function scorV08(): Scoring {
+  return osatt("Osatt — EBITDA-marginal saknas i datakontraktet (lonksamhet.ebitMarginal är EBIT-marginal; att lägga EBIT på EBITDA-trösklar skulle systematiskt underskatta). Kalkylatorns linjära trösklar: ≥25 ⇒ 5, ≥15 ⇒ 4, ≥10 ⇒ 3, ≥5 ⇒ 2, annars 1.");
+}
+
+/**
+ * V09 ROE — R2 §6 konkav kurva med tröskel vid kapitalkostnaden (BESLUT §4):
+ * <9 % ⇒ 0 (värdeförstöring) · 9–12 ⇒ 1 · 12–18 ⇒ 2 · 18–25 ⇒ 3 ·
+ * 25–35 ⇒ 4 · >35 % ⇒ 5 ENDAST med 5-års-uthållighet (roeMedel5ar > 35 %)
+ * OCH låg hävstång (skuld/EK ≤ 2 — R2:s "V10 ≤ 2" tolkat som förhållandet,
+ * dokumenterat). Annars 4 (mean-reversion utan moat-bevis, QMJ).
+ */
+function scorV09(k: BolagsNyckeltal, v10Forhand: number | null): Scoring {
+  const r = k.lonksamhet.roe;
+  if (r == null) return osatt("Osatt — ROE saknas (lonksamhet.roe). R2 §6 konkav kurva: <9 % ⇒ 0 (värdeförstöring) … >35 % med uthållighet och låg hävstång ⇒ 5.");
+  let p: number;
+  let kurva: string;
+  if (r < 0.09) { p = 0; kurva = `${procent(r)} < kapitalkostnad ≈ 9 % ⇒ 0 (värdeförstöring oavsett nivå)`; }
+  else if (r < 0.12) { p = 1; kurva = "9–12 % ⇒ 1"; }
+  else if (r < 0.18) { p = 2; kurva = "12–18 % ⇒ 2"; }
+  else if (r < 0.25) { p = 3; kurva = "18–25 % ⇒ 3"; }
+  else if (r <= 0.35) { p = 4; kurva = "25–35 % ⇒ 4"; }
+  else {
+    const medel5 = k.moat.roeMedel5ar;
+    const seg = v10Forhand != null && v10Forhand <= 2;
+    if (medel5 != null && medel5 > 0.35 && seg) {
+      p = 5; kurva = `> 35 % med 5-årssnitt ${procent(medel5)} och skuld/EK ≤ 2 ⇒ 5 (uthållighet + safety, QMJ)`;
+    } else {
+      p = 4; kurva = "> 35 % men uthållighet (roeMedel5ar > 35 %) och låg hävstång (skuld/EK ≤ 2) kan inte båda bevisas ⇒ 4 (mean-reversionsriska)";
+    }
+  }
+  return satt(p, r, `ROE ${procent(r)} — ${kurva} (R2 §6 konkav). Källa: lonksamhet.roe + moat.roeMedel5ar + stabilitet.skuldEgenkapital`);
+}
+
+/**
+ * V10 Skuldsättningsgrad — linjär tröskel ur kalkylatorn:
+ * <0,5 ⇒ 5 · <1 ⇒ 4 · <2 ⇒ 3 · <3 ⇒ 2 · ≥3 ⇒ 1. Negativt värde (negativt
+ * EK) => osatt. Beräknas FÖR V09 (hävstångskontrollen) — därför egen funktion.
+ */
+function raknaV10(k: BolagsNyckeltal): Scoring {
+  const g = k.stabilitet.skuldEgenkapital;
+  if (g == null) return osatt("Osatt — skuldsättningsgrad saknas (stabilitet.skuldEgenkapital). Kalkylatorns trösklar: <0,5 ⇒ 5, <1 ⇒ 4, <2 ⇒ 3, <3 ⇒ 2, ≥3 ⇒ 1.");
+  if (g < 0) return osatt(`Osatt — skuldsättningsgrad ${Math.round(g * 100) / 100} är negativ (negativt eget kapital): måttet saknar mening.`);
+  const p = g < 0.5 ? 5 : g < 1 ? 4 : g < 2 ? 3 : g < 3 ? 2 : 1;
+  return satt(p, g, `Skuldsättningsgrad ${Math.round(g * 100) / 100}x — linjär tröskel (kalkylatorn): ${g < 0.5 ? "<0,5 ⇒ 5" : g < 1 ? "0,5–1 ⇒ 4" : g < 2 ? "1–2 ⇒ 3" : g < 3 ? "2–3 ⇒ 2" : "≥3 ⇒ 1"}. Källa: stabilitet.skuldEgenkapital`);
+}
+
+/** V11 Likviditet (kvickkvot) — saknas i datakontraktet: osatt. */
+function scorV11(): Scoring {
+  return osatt("Osatt — kvickkvot saknas i P1:s datakontrakt (omsättningstillgångar/kortfristiga skulder redovisas ej). Poängsätt manuellt ur balansräkningen.");
+}
+
+/**
+ * V12 Intäktsstabilitet — variationskoefficient (CV = standardavvikelse/medel)
+ * på serier.omsattning, rak linjär tröskel (dokumenterad): CV ≤ 5 % ⇒ 5 ·
+ * ≤ 10 % ⇒ 4 · ≤ 20 % ⇒ 3 · ≤ 35 % ⇒ 2 · > 35 % ⇒ 1. Kräver ≥ 3 årtal.
+ * Jämn men fallande omsättning räknas som stabil (stabilitet ≠ tillväxt).
+ */
+function scorV12(k: BolagsNyckeltal): Scoring {
+  const ser = k.serier?.omsattning;
+  if (!ser) return osatt("Osatt — inga omsättningsserier (serier.omsattning) för stabilitetsmått. Trösklar (CV): ≤5 % ⇒ 5, ≤10 % ⇒ 4, ≤20 % ⇒ 3, ≤35 % ⇒ 2, >35 % ⇒ 1.");
+  const tal = ser.filter((x) => Number.isFinite(x));
+  if (tal.length < 3) return osatt(`Osatt — endast ${tal.length} årtal i serien (minst 3 krävs för stabilitetsmått).`);
+  const medel = tal.reduce((s, x) => s + x, 0) / tal.length;
+  if (medel <= 0) return osatt("Osatt — icke-positiv medelomsättning i serien: CV meningslöst.");
+  const varians = tal.reduce((s, x) => s + (x - medel) * (x - medel), 0) / tal.length;
+  const cv = Math.sqrt(varians) / medel;
+  const p = cv <= 0.05 ? 5 : cv <= 0.1 ? 4 : cv <= 0.2 ? 3 : cv <= 0.35 ? 2 : 1;
+  return satt(p, cv, `Omsättningens variationskoefficient ${Math.round(cv * 1000) / 10} % över ${tal.length} år — rak tröskel: ${cv <= 0.05 ? "≤5 % ⇒ 5" : cv <= 0.1 ? "≤10 % ⇒ 4" : cv <= 0.2 ? "≤20 % ⇒ 3" : cv <= 0.35 ? "≤35 % ⇒ 2" : ">35 % ⇒ 1"} (dokumenterad i kärnan). Källa: serier.omsattning`);
+}
+
+/** V13–V18 — kvalitativa moat-/katalysatorvariabler: förvaltningsberättelsedata saknas i kontraktet. */
+function scorKvalitativ(v: string): Scoring {
+  const meta = VARIABEL_META[v];
+  return osatt(`Osatt — ${meta.namn} är kvalitativ och bedöms ur förvaltningsberättelsen (${meta.kalla ?? "årsredovisningen"}), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.`);
+}
+
+/**
+ * V19 Kassatäckning — R2 §6 klippkurva (BESLUT §4–§5):
+ * <12 mån ⇒ 0 (OCH hård port: komposit max 45) · 12–18 ⇒ 1 · 18–30 ⇒ 2 ·
+ * 30–48 ⇒ 3 · >48 mån ⇒ 4 · positivt kassaflöde (5 av 5 FCF-år) ⇒ 5.
+ */
+function scorV19(k: BolagsNyckeltal): Scoring {
+  const m = k.stabilitet.kassaManaderBurnRate ?? null;
+  const fcf = k.stabilitet.fcfPositivaSenaste5 ?? null;
+  if (m == null) {
+    if (fcf === 5) {
+      return satt(5, null, `Kassatäckning: kassaflödet varit positivt 5 av 5 år — själfinansierande ⇒ 5 (dokumenterad proxy för R2:s "FKF positivt"). Källa: stabilitet.fcfPositivaSenaste5`);
+    }
+    return osatt("Osatt — kassaManaderBurnRate saknas och FCF-historik bevisar inte självinansiering (5/5 krävs). R2 §6 klippkurva: <12 mån ⇒ 0 (+hård port) … >48 mån ⇒ 4.");
+  }
+  let p: number;
+  let kurva: string;
+  if (m < 12) { p = 0; kurva = `${m} mån < 12 ⇒ 0 — OCH hård port: AKM2-komposit takas till ${KASSA_PORT_MAX_KOMPOSIT}/100 (BESLUT §5)`; }
+  else if (m < 18) { p = 1; kurva = "12–18 mån ⇒ 1"; }
+  else if (m < 30) { p = 2; kurva = "18–30 mån ⇒ 2"; }
+  else if (m <= 48) { p = 3; kurva = "30–48 mån ⇒ 3"; }
+  else { p = 4; kurva = "> 48 mån ⇒ 4"; }
+  return satt(p, m, `Kassatäckning ${Math.round(m)} mån — ${kurva} (R2 §6 klippkurva). Källa: stabilitet.kassaManaderBurnRate`);
+}
+
+/**
+ * V20 Återköp — rak linjär tröskel (dokumenterad) på andelUtestande
+ * (tolkat som decimal, 0.02 = 2 % minskning/år): ≥5 % ⇒ 5 · ≥3 % ⇒ 4 ·
+ * ≥1,5 % ⇒ 3 · >0 ⇒ 2 · =0 ⇒ 1 · <0 (utspädning) ⇒ 0. Saknas andel:
+ * återköpsbelopp > 0 ⇒ 3 · insiderköp ≥ 3 ⇒ 2 · enbart nyemissioner ⇒ 0.
+ */
+function scorV20(k: BolagsNyckeltal): Scoring {
+  const a = k.aterkop?.andelUtestande ?? null;
+  const belopp = k.aterkop?.senasteArMdr ?? null;
+  const insider = k.aterkop?.insiderkopSenaste6man ?? null;
+  const nyem = k.stabilitet.nyemissionerSenaste5ar ?? null;
+  if (a != null) {
+    if (a > 1) return osatt(`Osatt — andelUtestande ${a} ligger utanför tolkningsintervall (förväntas som decimal, t.ex. 0.02 = 2 % minskning).`);
+    let p: number;
+    let kurva: string;
+    if (a >= 0.05) { p = 5; kurva = "≥5 % minskning ⇒ 5"; }
+    else if (a >= 0.03) { p = 4; kurva = "≥3 % ⇒ 4"; }
+    else if (a >= 0.015) { p = 3; kurva = "≥1,5 % ⇒ 3"; }
+    else if (a > 0) { p = 2; kurva = ">0 men <1,5 % ⇒ 2"; }
+    else if (a === 0) { p = 1; kurva = "0 % (inga återköp, ingen utspädning) ⇒ 1"; }
+    else { p = 0; kurva = `${procent(a)} (negativt = ökat aktieantal/utspädning) ⇒ 0`; }
+    return satt(p, a, `Aktieantalets förändring ${procent(a)} — ${kurva} (rak tröskel, dokumenterad). Källa: aterkop.andelUtestande`);
+  }
+  if (belopp != null && belopp > 0) return satt(3, null, `Återköp ${belopp} Mdr senaste året men andel av aktieantalet saknas ⇒ 3 (mittskikt, dokumenterat). Källa: aterkop.senasteArMdr`);
+  if (insider != null && insider >= 3) return satt(2, null, `${insider} insiderköp senaste 6 mån (VD/styrelse) utan dokumenterade återköp ⇒ 2 (kompletterande observation). Källa: aterkop.insiderkopSenaste6man`);
+  if (nyem != null && nyem > 0) return satt(0, null, `${nyem} nyemissioner senaste 5 åren och inga återköp ⇒ 0 (utspädning, Pontiff–Woodgate). Källa: stabilitet.nyemissionerSenaste5ar`);
+  return osatt("Osatt — återköpsdata saknas (aterkop.*) och utspädningshistorik bevisar inget.");
+}
+
+// ── LAGER 1: raknaAKM1 (kanonisk implementering, publika kontraktet) ────────
+
+/** Intern berikning: bedömning + osatta + råvärden (för lager 4–5). */
+export type AKM1Intern = {
+  bedomning: AKM1Bedomning;
+  /** Variabler V01–V20 utan underlag (poäng 0 = osatt, aldrig gissad). */
+  osatta: string[];
+  /** Råvärden per variabel där de finns (t.ex. V19: månader kassa). */
+  varden: Record<string, number | null>;
+};
+
+/**
+ * Klassisk AKM1 — kanonisk implementering (R4 §5). V01–V20 ur BolagsNyckeltal,
+ * 0–5 poäng, total = Σ poäng (max 100), motivering per variabel, perKategori =
+ * kategorisnitt 0–5 (som kalkylatorns "snitt X/5"; osatta räknas som 0 i
+ * snittet). Datum = k.hamtat (determinism — aldrig klocka).
+ */
+export function raknaAKM1(k: BolagsNyckeltal): AKM1Bedomning {
+  return raknaAKM1Intern(k).bedomning;
+}
+
+/** Intern kärna: samma beräkning men med osatt-/råvärdes-spår för lager 4–5. */
+export function raknaAKM1Intern(k: BolagsNyckeltal): AKM1Intern {
+  const v10 = raknaV10(k); // beräknas först — V09:s hävstångskontroll
+  const scorers: Record<string, Scoring> = {
+    V01: scorV01(k),
+    V02: scorV02(),
+    V03: scorV03(),
+    V04: scorV04(),
+    V05: scorV05(k),
+    V06: scorV06(),
+    V07: scorV07(k),
+    V08: scorV08(),
+    V09: scorV09(k, v10.varde),
+    V10: v10,
+    V11: scorV11(),
+    V12: scorV12(k),
+    V13: scorKvalitativ("V13"),
+    V14: scorKvalitativ("V14"),
+    V15: scorKvalitativ("V15"),
+    V16: scorKvalitativ("V16"),
+    V17: scorKvalitativ("V17"),
+    V18: scorKvalitativ("V18"),
+    V19: scorV19(k),
+    V20: scorV20(k),
+  };
+
+  const poang: Record<string, number> = {};
+  const motivering: Record<string, string> = {};
+  const varden: Record<string, number | null> = {};
+  const osatta: string[] = [];
+  let totalt = 0;
+  for (const v of KARNVARIABLER) {
+    const s = scorers[v];
+    if (s.poang == null) {
+      poang[v] = 0;
+      osatta.push(v);
+    } else {
+      poang[v] = s.poang;
+      totalt += s.poang;
+    }
+    motivering[v] = s.text;
+    varden[v] = s.varde;
+  }
+
+  const perKategori: Record<string, number> = {};
+  for (const kat of KATEGORIER) {
+    const vs = KARNVARIABLER.filter((v) => VARIABEL_META[v].kategori === kat);
+    const snitt = vs.reduce((s, v) => s + poang[v], 0) / vs.length;
+    perKategori[kat] = Math.round(snitt * 100) / 100;
+  }
+
+  return {
+    bedomning: {
+      ticker: k.ticker,
+      poang,
+      totalt,
+      perKategori,
+      motivering,
+      datum: k.hamtat,
+    },
+    osatta,
+    varden,
+  };
+}
+
+// ── LAGER 3: neutralt svar (dynamik.ts äger det riktiga — kärnan degraderar) ─
+
+/**
+ * Neutralt dynamiksvar när ingen funktion injicerats: alla justeringar 0,
+ * port "osatt" — degradering downward-mot-AKM1, aldrig mot gissning (R4 §4).
+ * horisontVikter = samma tal som HORIZONTER_VIKT (portfolj-forskning/typer.ts)
+ * — duplicerat här för att importregeln ("endast import type") ska hålla;
+ * om HORIZONTER_VIKT ändras måste detta värde följa (testet vaktar summan = 1).
+ */
+export function neutraltDynamikSvar(ticker: string, datum: string): DynamikLagerSvar {
+  const osattPerHorisont = { mikro: "osatt", kort: "osatt", medellang: "osatt", lang: "osatt", mega: "osatt" } as const;
+  return {
+    ticker,
+    perVariabel: {},
+    perHorisont: { ...osattPerHorisont },
+    tekniskPerHorisont: { ...osattPerHorisont },
+    konfluens: {
+      raknadeTeorier: 0,
+      sammaRiktning: 0,
+      port: "osatt",
+      text: "Dynamiklagret ej anropat — neutral degradering: lager 3 bidrar med 0 justering (ren fundamental syntes, Fas 2-läge).",
+    },
+    horisontVikter: { mikro: 0.05, kort: 0.2, medellang: 0.25, lang: 0.3, mega: 0.2 },
+    datum,
+  };
+}
+
+// ── LAGER 4: viktupplösning (normalisering + omfördelning, BESLUT §2) ───────
+
+/**
+ * Lös ut de NORMALISERADE vikterna (summa 1) som en analys faktiskt använde.
+ *
+ *  - Klassisk profil (omfordelaVidOsatt ej satt): råvikter normaliseras över
+ *    profilens alla variabler — osatta behåller sin vikt och bidrar 0 poäng
+ *    (exakt kalkylatorsumman; projektionsinvariantens villkor).
+ *  - Omfördelande platt profil (akm2-2026): osatta kärnvariabler och inaktiva
+ *    modulvariabler exkluderas; deras råvikt omfördelas proportionellt till
+ *    aktiva variabler. ALDRIG straffa saknad data.
+ *  - Kategoriprofil (superanalys-2026): kategorins vikt delas lika på aktiva
+ *    variabler i kategorin; helt osatta kategoriers vikt omfördelas
+ *    proportionellt till aktiva kategorier.
+ *
+ * Retur innehåller explicita 0-vikter för exkluderade variabler (transparens)
+ * samt omfordelningsdokumentation för resultatet.
+ */
+export function losaVikter(
+  profil: ViktProfil,
+  sattaKarnvariabler: string[],
+  modulvariablerMedPoang: string[],
+): { viktPerVariabel: Record<string, number>; omfordelning?: OmfordelningInfo } {
+  const profilvariabler = Object.keys(profil.viktPerVariabel);
+  const satta = new Set(sattaKarnvariabler);
+  const modul = new Set(modulvariablerMedPoang);
+  const vikt: Record<string, number> = {};
+
+  // Kategoriprofil (superanalys-2026): lös ut via kategorivikter om de finns.
+  if (profil.kategorivikter) {
+    const aktuella = [...sattaKarnvariabler, ...modulvariablerMedPoang].filter(
+      (v) => VARIABEL_META[v] != null,
+    );
+    for (const v of [...KARNVARIABLER, ...modulvariablerMedPoang]) vikt[v] = 0;
+    const perKat = new Map<string, string[]>();
+    for (const v of aktuella) {
+      const kat = VARIABEL_META[v].kategori;
+      if (!perKat.has(kat)) perKat.set(kat, []);
+      perKat.get(kat)!.push(v);
+    }
+    const aktivaKats = [...perKat.keys()].filter((kat) => (profil.kategorivikter![kat] ?? 0) > 0);
+    const aktivKatSum = aktivaKats.reduce((s, kat) => s + profil.kategorivikter![kat], 0);
+    if (aktivKatSum > 0) {
+      for (const kat of aktivaKats) {
+        const andel = profil.kategorivikter![kat] / aktivKatSum; // tomma kategoriers vikt omfördelas hit
+        for (const v of perKat.get(kat)!) vikt[v] = andel / perKat.get(kat)!.length;
+      }
+    } else {
+      // Inget aktivt underlag alls: uniform fallback (kompositen blir 0 ändå).
+      for (const v of KARNVARIABLER) vikt[v] = 1 / 20;
+    }
+    const exkluderade = KARNVARIABLER.filter((v) => !satta.has(v));
+    const utanKategori = modulvariablerMedPoang.filter((v) => VARIABEL_META[v] == null);
+    const text =
+      `Kategoriprofil "${profil.id}": aktiva variabler delar lika på sin kategoris vikt ` +
+      `(R2 §7.5). ${exkluderade.length ? `Osatta kärnvariabler utan vikt: ${exkluderade.join(", ")}.` : ""} ` +
+      `${utanKategori.length ? `Modulvariabler utan känd kategori väger 0: ${utanKategori.join(", ")}.` : ""} ` +
+      `Helt osatta kategoriers vikt omfördelas proportionellt till aktiva kategorier.`;
+    return { viktPerVariabel: vikt, omfordelning: { exkluderade, text } };
+  }
+
+  for (const v of profilvariabler) vikt[v] = 0;
+  for (const v of modulvariablerMedPoang) if (!(v in vikt)) vikt[v] = 0; // t.ex. V29 utan profilvikt
+
+  // Klassisk (låst) profil: rak normalisering över ALLA profilvariabler —
+  // osatta behåller vikten (bidrar 0 poäng). Ingen omfördelning.
+  if (!profil.omfordelaVidOsatt) {
+    const summa = profilvariabler.reduce((s, v) => s + profil.viktPerVariabel[v], 0);
+    for (const v of profilvariabler) vikt[v] = profil.viktPerVariabel[v] / summa;
+    // Modulvariabler väger 0 i klassisk profil (dokumenteras av anroparen).
+    return { viktPerVariabel: vikt };
+  }
+
+  // Omfördelande platt profil (akm2-2026): exkludera osatta/inaktiva.
+  const aktiva = profilvariabler.filter((v) => satta.has(v) || modul.has(v));
+  const exkluderade = profilvariabler.filter((v) => !aktiva.includes(v));
+  const aktivSum = aktiva.reduce((s, v) => s + profil.viktPerVariabel[v], 0);
+  if (aktivSum > 0) {
+    for (const v of aktiva) vikt[v] = profil.viktPerVariabel[v] / aktivSum;
+  } else {
+    for (const v of KARNVARIABLER) vikt[v] = 1 / 20; // uniform fallback (komposit 0 ändå)
+  }
+  const text =
+    `Profil "${profil.id}" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): ` +
+    `${exkluderade.length} av ${profilvariabler.length} profilvariabler saknar underlag ` +
+    `(${exkluderade.join(", ")}) och deras sammanlagda vikt har omfördelats proportionellt ` +
+    `till de ${aktiva.length} aktiva variablerna.`;
+  return { viktPerVariabel: vikt, omfordelning: { exkluderade, text } };
+}
+
+// ── LAGER 5: raknaAKM2 — syntes (R4 §3 formeln + BESLUT §5 port) ────────────
+
+/**
+ * Fullständig AKM2. Neutrala defaults (moduler [], viktprofil "akm1-klassisk",
+ * ingen dynamik) => komposit = AKM1-summan exakt, förutom att hård port
+ * (BESLUT §5) kan taka kompositen — lager1 (projektionen) påverkas ALDRIG.
+ *
+ * Formel (R4 §3 lager 5):
+ *   p̂(v) = round(clamp(p(v) + δ(v), 0, 5))   — δ = 0 om konfluensport ≠ oppen
+ *   w     = losaVikter(...)                    — normaliserad över aktiva
+ *   K     = 20 · Σ w(v)·p̂(v)                   — 0–100
+ *   K     = clamp(K, K_utanDynamik ± 10)        — dynamiktak
+ *   komposit = round( min(K, 45) om kassaport ) — hård port BESLUT §5
+ */
+export function raknaAKM2(k: BolagsNyckeltal, opts?: RaknaAKM2Opts): AKM2Resultat {
+  const moduler = opts?.moduler ?? [];
+  const modellVersion = opts?.modellVersion ?? MODELL_VERSION;
+
+  // ── Lager 1: kanonisk AKM1 (eller människans poäng — kalkylatorläge) ──
+  const intern = raknaAKM1Intern(k);
+  const lager1 = opts?.akm1Manuell ?? intern.bedomning;
+  // Manuell bedömning = fattade beslut: inga automatiska osatt-omfördelningar.
+  const osatta = opts?.akm1Manuell ? [] : intern.osatta;
+
+  // ── Lager 2: injicerade modulpoäng (V21+; kärnan importerar aldrig moduler) ──
+  const lager2poang: Record<string, number> = {};
+  const noteringar: string[] = [];
+  const aktivaModuler: ModulAktivering[] = moduler.filter((m) => m.aktiv);
+  for (const m of aktivaModuler) {
+    const poang = m.poang ?? {};
+    const nycklar = Object.keys(poang);
+    if (nycklar.length === 0) {
+      noteringar.push(`Modulen ${m.modulId} är aktiv men levererade inga poäng.`);
+      continue;
+    }
+    for (const [v, p] of Object.entries(poang)) {
+      const arModulvar = /^V(2[1-9]|30)$/.test(v);
+      if (!arModulvar) {
+        noteringar.push(`Modulen ${m.modulId} levererade ${v} — avvisat: lager 2 får ALDRIG röra V01–V20 (R4 lager 2).`);
+        continue;
+      }
+      if (!Number.isFinite(p)) {
+        noteringar.push(`Modulen ${m.modulId} levererade ogiltig poäng för ${v} — avvisat.`);
+        continue;
+      }
+      lager2poang[v] = clampTal(Math.round(p), 0, 5);
+    }
+  }
+
+  // ── Lager 3: anropa injicerad dynamik — eller degradera neutralt ──
+  const partiell: PartialtResultat = {
+    ticker: k.ticker,
+    namn: k.namn,
+    bransch: k.bransch,
+    datum: k.hamtat,
+    nyckeltal: k,
+    lager1,
+    lager2: { aktiveradeModuler: aktivaModuler, poang: lager2poang },
+  };
+  const lager3 = opts?.dynamik ? opts.dynamik(partiell) : neutraltDynamikSvar(k.ticker, k.hamtat);
+  const dynamikAktiv = !!opts?.dynamik;
+
+  // ── Lager 4: vikter ──
+  let profil: ViktProfil;
+  if (typeof opts?.viktprofil === "string") {
+    const hittad = hamtaViktProfil(opts.viktprofil);
+    if (!hittad) {
+      throw new Error(`Okänd viktprofil "${opts.viktprofil}" — tillgängliga: "akm1-klassisk", "akm2-2026", "superanalys-2026" (BESLUT §2–§3).`);
+    }
+    profil = hittad;
+  } else if (opts?.viktprofil) {
+    profil = opts.viktprofil;
+  } else {
+    profil = hamtaViktProfil("akm1-klassisk")!;
+  }
+  const satta = KARNVARIABLER.filter((v) => !osatta.includes(v));
+  const modulvar = Object.keys(lager2poang);
+  const { viktPerVariabel, omfordelning } = losaVikter(profil, satta, modulvar);
+
+  // ── Lager 5: syntes ──
+  const raps: Record<string, number> = {};
+  for (const v of KARNVARIABLER) raps[v] = lager1.poang[v] ?? 0;
+  for (const v of modulvar) raps[v] = lager2poang[v];
+
+  // δ får bara verka när konfluensporten är öppen (kärnans säkerhetsventil,
+  // R4 lager 3 — även om lager 3 självt redan nollställt vid sluten port).
+  // ÄRLIGHET: osatta variabler (poäng 0 pga null-data) kan ALDRIG lyftas av
+  // dynamik — det vore att gissa fram poäng ur vågläsning.
+  const osattaSet = new Set(osatta);
+  const delta: Record<string, number> = {};
+  if (dynamikAktiv && lager3.konfluens.port === "oppen") {
+    for (const [v, j] of Object.entries(lager3.perVariabel)) {
+      if (!(v in raps) || osattaSet.has(v)) continue;
+      const d = Number.isFinite(j.justering) ? clampTal(j.justering, -1, 1) : 0;
+      delta[v] = d;
+    }
+  }
+
+  const phatt: Record<string, number> = {};
+  let K_utan = 0;
+  let K_med = 0;
+  for (const v of Object.keys(raps)) {
+    const p = raps[v];
+    const eff = Math.round(clampTal(p + (delta[v] ?? 0), 0, 5));
+    phatt[v] = eff;
+    const w = viktPerVariabel[v] ?? 0;
+    K_utan += w * p;
+    K_med += w * eff;
+  }
+
+  // Dynamiktak ±10 (R4 §3): moduleringen får aldrig flytta kompositen mer.
+  const K_takad = clampTal(K_med, K_utan - DYNAMIKTAK, K_utan + DYNAMIKTAK);
+  let komposit = Math.round(K_takad);
+
+  // HÅRD PORT (BESLUT §5): kassa < 12 mån ⇒ komposit max 45 — följer DATA,
+  // aldrig poängens ursprung; null-data utlöser aldrig (ingen gissning).
+  const kassaManader = intern.varden["V19"];
+  const portAktiv = kassaManader != null && kassaManader < KASSA_PORT_MANADER;
+  if (portAktiv) komposit = Math.min(komposit, KASSA_PORT_MAX_KOMPOSIT);
+
+  // Band (superanalysens pedagogiska band — aldrig köp/sälj).
+  const andelOsatta = osatta.length / 20;
+  let band: AKM2Band = komposit >= 75 ? "aktor" : komposit >= 45 ? "studera" : "skjut";
+  if (andelOsatta > 0.5 || (dynamikAktiv && lager3.konfluens.port === "osatt")) band = "osatt";
+
+  // perKategori: viktat kategorisnitt × 20 (0–100) över variabler med vikt > 0.
+  const perKategori: Record<string, number> = {};
+  for (const kat of KATEGORIER) {
+    let wSum = 0;
+    let pSum = 0;
+    for (const v of Object.keys(phatt)) {
+      if (VARIABEL_META[v]?.kategori !== kat) continue;
+      const w = viktPerVariabel[v] ?? 0;
+      wSum += w;
+      pSum += w * phatt[v];
+    }
+    if (wSum > 0) perKategori[kat] = Math.round((pSum / wSum) * 20 * 10) / 10;
+  }
+
+  const noteringDelar: string[] = [...noteringar];
+  for (const v of modulvar) {
+    if ((viktPerVariabel[v] ?? 0) === 0) {
+      noteringDelar.push(`Modulvariabeln ${v} väger 0 i profilen "${profil.id}" (villkorad eller saknar profilvikt — BESLUT §1/§2).`);
+    }
+  }
+  if (portAktiv) noteringDelar.push(`HÅRD PORT aktiv: kassatäckningen ${Math.round(kassaManader!)} mån < ${KASSA_PORT_MANADER} — komposit takad till ${KASSA_PORT_MAX_KOMPOSIT}/100 (BESLUT §5).`);
+  if (!profil.omfordelaVidOsatt && modulvar.length > 0) {
+    noteringDelar.push(`Klassisk profil: modulpoäng (${modulvar.join(", ")}) redovisas men väger 0 — byt till "akm2-2026" för modulviktning.`);
+  }
+
+  const osakerhetNote =
+    `${osatta.length} av 20 kärnvariabler är osatta (andel ${Math.round(andelOsatta * 1000) / 10} %) — ` +
+    `modellen gissar aldrig: osatt ger 0 poäng${profil.omfordelaVidOsatt ? " och vikten omfördelas (BESLUT §2)" : " men behåller sin vikt (klassisk summa)"}. ` +
+    (portAktiv ? `Hård port (BESLUT §5) har takat kompositen till ${KASSA_PORT_MAX_KOMPOSIT}. ` : "") +
+    (dynamikAktiv ? `Dynamik aktiv via injicerad funktion (port: ${lager3.konfluens.port}).` : `Dynamik ej aktivt — ren fundamental syntes.`);
+
+  return {
+    ticker: k.ticker,
+    namn: k.namn,
+    bransch: k.bransch,
+    datum: k.hamtat,
+    modellVersion,
+    lager1,
+    lager2: {
+      aktiveradeModuler: aktivaModuler,
+      poang: lager2poang,
+      notering: noteringDelar.length ? noteringDelar.join(" ") : undefined,
+    },
+    lager3,
+    lager4: {
+      viktprofil: profil.id,
+      viktPerVariabel,
+      omfordelning,
+    },
+    komposit,
+    perKategori,
+    band,
+    projiceradAKM1: lager1, //projektionen ÄR lager1 — samma objekt, aldrig omräknat
+    spar: [
+      {
+        datum: k.hamtat,
+        komposit,
+        akm1: lager1.totalt,
+        notis: `Beräknad med profil "${profil.id}", ${aktivaModuler.length} aktiva moduler${dynamikAktiv ? ", dynamik aktiv" : ", utan dynamik"}.`,
+      },
+    ],
+    osakerhet: {
+      andelOsatta: Math.round(andelOsatta * 1000) / 1000,
+      andelarKallor: Math.min(1, (k.kallor?.length ?? 0) / 2),
+      note: osakerhetNote,
+    },
+  };
+}
+
+// ── Projektionen ─────────────────────────────────────────────────────────────
+
+/**
+ * AKM1-avläsningen av ett AKM2-resultat — returnerar ALLTID lager1, samma
+ * objekt som beräknades i lager 1 (byte-identisk med raknaAKM1 vid neutrala
+ * defaults). ALDRIG påverkad av lager 2–4 (projektionsinvarianten, BESLUT §0).
+ */
+export function projiceraAKM1(akm2: AKM2Resultat): AKM1Bedomning {
+  return akm2.lager1;
+}
+
+// ── Förklaringen (förstaklassmedborgare, R4 §3 lager 5) ─────────────────────
+
+/** Effektiva poäng p̂ ur ett resultat: rå poäng + gate:ad dynamik, clamprad. */
+export function effektivaPoang(akm2: AKM2Resultat): Record<string, number> {
+  const raps: Record<string, number> = {};
+  for (const v of KARNVARIABLER) raps[v] = akm2.lager1.poang[v] ?? 0;
+  for (const [v, p] of Object.entries(akm2.lager2.poang)) raps[v] = p;
+  const delta: Record<string, number> = {};
+  if (akm2.lager3.konfluens.port === "oppen" && !akm2.lager3.konfluens.text.startsWith("Dynamiklagret ej anropat")) {
+    for (const [v, j] of Object.entries(akm2.lager3.perVariabel)) {
+      if (!(v in raps)) continue;
+      // ÄRLIGHET: osatta kärnvariabler lyfts aldrig av dynamik (kontrakt:
+      // raknaAKM1:s osatt-motiveringar börjar alltid med "Osatt").
+      if (v in akm2.lager1.motivering && akm2.lager1.motivering[v].startsWith("Osatt")) continue;
+      delta[v] = Number.isFinite(j.justering) ? clampTal(j.justering, -1, 1) : 0;
+    }
+  }
+  const ut: Record<string, number> = {};
+  for (const v of Object.keys(raps)) ut[v] = Math.round(clampTal(raps[v] + (delta[v] ?? 0), 0, 5));
+  return ut;
+}
+
+/**
+ * Pedagogisk förklaring av varje poäng — varje rad pekar på variabelns
+ * kurs-slug (V01–V20 exakt ur kalkylatorn; V21+ provisoriska) och en kort
+ * motivering med siffror. Dömer aldrig, ger aldrig rådgivning.
+ */
+export function forklaraPoang(
+  akm2: AKM2Resultat,
+  _k?: BolagsNyckeltal,
+  opts?: { niva?: "nyborjare" | "avancerad"; maxRader?: number },
+): Forklaring {
+  const phatt = effektivaPoang(akm2);
+  const variabler = [...KARNVARIABLER, ...Object.keys(akm2.lager2.poang).sort()];
+
+  const rader: ForklaringsRad[] = variabler.map((v) => {
+    const meta = VARIABEL_META[v] ?? { namn: v, kategori: "Okänd" };
+    const vikt = akm2.lager4.viktPerVariabel[v] ?? 0;
+    const eff = phatt[v] ?? 0;
+    const raa = v in akm2.lager2.poang ? akm2.lager2.poang[v] : (akm2.lager1.poang[v] ?? 0);
+    let text: string;
+    if (v in akm2.lager2.poang) {
+      const modul = akm2.lager2.aktiveradeModuler.find((m) => m.poang && v in m.poang);
+      text = `Modulpoäng ${raa}/5${modul ? ` från modulen "${modul.modulId}"` : ""} (lager 2, BESLUT §1).`;
+    } else {
+      text = akm2.lager1.motivering[v] ?? `Poäng ${raa}/5.`;
+    }
+    const deltaText = eff !== raa ? ` Vågdynamiken flyttade poängen ${raa} → ${eff}.` : "";
+    return {
+      variabel: v,
+      namn: meta.namn,
+      poang: raa,
+      effektivPoang: eff,
+      vikt,
+      bidrag: vikt * eff * 20,
+      text: `${text}${deltaText}`,
+      kursSlug: meta.kursSlug,
+      kalla: meta.kalla,
+    };
+  });
+
+  rader.sort((a, b) => Math.abs(b.bidrag) - Math.abs(a.bidrag) || (a.variabel < b.variabel ? -1 : 1));
+
+  const neutralDynamik = akm2.lager3.konfluens.text.startsWith("Dynamiklagret ej anropat");
+  const dynamikText = neutralDynamik
+    ? "Våglagret (lager 3) var inte aktiverat i den här beräkningen — varje poäng är ren fundamental analys. Aktivera AKM2-full (Fas 3) för vågfas-modulering bakom konfluensporten."
+    : `Våglagret kördes med konfluensporten "${akm2.lager3.konfluens.port}" (${akm2.lager3.konfluens.text}). ${akm2.lager3.konfluens.port === "oppen" ? "Öppen port: vågfas-moduleringen fick verka (högst ±1 poäng per variabel, sammanlagt tak ±10 kompositpoäng)." : "Porten ej öppen: moduleringen är nollställd — fundamental bilden kan aldrig vändas av teknisk vågläsning (R4 designregel 5)."}`;
+
+  const modulText = akm2.lager2.aktiveradeModuler.length
+    ? `Aktiva moduler: ${akm2.lager2.aktiveradeModuler.map((m) => `${m.modulId}${m.automatisk ? " (automatisk)" : ""}${m.orsak ? ` — ${m.orsak}` : ""}`).join("; ")}. Modulpoäng: ${Object.keys(akm2.lager2.poang).join(", ") || "inga"}.`
+    : "Inga moduler var aktiva — analysen omfattar kärnans V01–V20. Moduler (V21+, BESLUT §1) aktiveras per bransch i AKM2-läget.";
+
+  const varningar: string[] = [];
+  const osatta = akm2.lager4.omfordelning?.exkluderade ?? [];
+  if (akm2.osakerhet.andelOsatta > 0) {
+    varningar.push(
+      `${Math.round(akm2.osakerhet.andelOsatta * 100)} % av kärnvariablerna är osatta (null-data ⇒ 0 poäng, aldrig gissning)${akm2.lager4.omfordelning ? " — deras vikt har omfördelats proportionellt till aktiva variabler (BESLUT §2)" : " — de behåller sin vikt i den klassiska summan"}. Osatta: ${osatta.join(", ") || "ingen"}.`,
+    );
+  }
+  if (akm2.lager2.notering?.includes("HÅRD PORT")) {
+    varningar.push(`HÅRD PORT (BESLUT §5): kassatäckningen understiger ${KASSA_PORT_MANADER} månader — kompositen är takad till max ${KASSA_PORT_MAX_KOMPOSIT}/100 oavsett övriga poäng. Nyemissionsrisken (V19) är modellens viktigaste enskilda risk (R2 P1).`);
+  }
+  if (akm2.band === "osatt") {
+    varningar.push(`Bandet är satt till "Osatt": osäkerheten är för hög (${Math.round(akm2.osakerhet.andelOsatta * 100)} % osatta kärnvariabler${neutralDynamik ? "" : " eller konfluensporten osatt"}) för ett samlat omdöme.`);
+  }
+  if (akm2.lager2.notering) {
+    for (const del of akm2.lager2.notering.split(/(?=HÅRD PORT)|(?=Klassisk profil)/)) {
+      const t = del.trim();
+      if (t && !t.includes("HÅRD PORT")) varningar.push(t);
+    }
+  }
+
+  const topp = rader.filter((r) => r.bidrag > 0).slice(0, 3).map((r) => `${r.variabel} ${r.namn} (+${Math.round(r.bidrag * 10) / 10} p)`);
+  const niva = opts?.niva ?? "nyborjare";
+  const sammanfattning =
+    niva === "nyborjare"
+      ? `Kompositen ${akm2.komposit}/100 i bandet "${BAND_TEXT[akm2.band]}" dras framför allt av ${topp.length ? topp.join(", ") : "få satta variabler"}. ${akm2.osakerhet.note}`
+      : `Komposit ${akm2.komposit}/100 = Σ(vikt × effektiv poäng × 20) över aktiva variabler${akm2.lager4.omfordelning ? " med omfördelad vikt vid osatt data" : ""}; band "${BAND_TEXT[akm2.band]}" enligt superanalysens pedagogiska trösklar (≥75/≥45). ${topp.length ? `Tyngsta bidrag: ${topp.join(", ")}.` : ""} ${akm2.osakerhet.note}`;
+
+  const utsnitt = opts?.maxRader && opts.maxRader > 0 ? rader.slice(0, opts.maxRader) : rader;
+
+  return {
+    rubrik: `Varför ${akm2.komposit}/100 — ${utsnitt.length ? `de ${Math.min(5, utsnitt.length)} tyngsta skälen` : "underlaget"}`,
+    sammanfattning,
+    rader: utsnitt,
+    dynamikText,
+    modulText,
+    varningar,
+    kallor: [
+      "data/forskning/AKM2-BESLUT.md (normativt beslutsdokument)",
+      "data/forskning/r2-vikter-2026-09-03.md (vikter, portar, poängkurvor)",
+      "data/forskning/r4-akm2-arkitektur-2026-09-03.md (lager, signaturer, invariant)",
+      "src/components/ak1a/akm1-calculator.tsx (klassiska trösklar + kurs-slug)",
+      `Modellversion ${akm2.modellVersion} — pedagogisk forskning, ALDRIG investeringsråd (lagen 2007:528).`,
+    ],
+  };
+}

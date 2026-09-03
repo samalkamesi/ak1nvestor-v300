@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260903T140044628Z-34000-b28167b6622d",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:verktyg/python/sammanstalla_korstabell.py: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/prenumeration.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/akm2/typer.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/akm2/vikter.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/prenumeration/aktivera-panel.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/prenumeration/niva-kort.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/prenumeration/rabatt-band.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/prenumeration/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline"
+  ],
+  "target": ".",
+  "revision": "049bd7ce0b15df4faa0b5372b20f24353bc1545d",
+  "diffHash": "874bff89d9d0200d3cce863a16b2cd366adb2e5131eb4f84bcf663e9744487d4",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-03T14:00:44.628Z",
+  "timing": {
+    "startedAt": "2026-09-03T14:00:41.922Z",
+    "completedAt": "2026-09-03T14:00:44.628Z",
+    "durationMs": 2706
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 2,
+    "bySeverity": {
+      "high": 2
+    },
+    "byStatus": {
+      "blocked": 2
+    }
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 8,
+      "project_check_failed": 8
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260903T140044628Z-34000-b28167b6622d.json"
+}

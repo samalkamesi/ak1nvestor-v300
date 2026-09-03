@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260901T205141536Z-28456-7dbef923241f",
+  "runStatus": "inconclusive",
+  "errors": [
+    "baseline-read:src/lib/badges.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/lib/superanalys.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/badg-panel.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/dagens-pass.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/fas2-ansok.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/min-sida.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/components/ak1a/superanalys.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/superanalys/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/min-sida/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/manifest/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/fas2-ansok/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/dagens-pass/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/badges/page.tsx: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/fas2-ansok/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "baseline-read:src/app/api/dagens-pass/route.ts: baseline_snapshot_unreadable: file is missing from task baseline",
+    "scan:src/app/medlemskap/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/sitemap.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/lib/badges.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/lib/superanalys.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/badg-panel.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/chat-widget.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/dagens-pass.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/fas2-ansok.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/huvudmeny.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/kurs-steg.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/min-sida.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/components/ak1a/superanalys.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/superanalys/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/min-sida/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/manifest/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/fas2-ansok/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/dagens-pass/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/badges/page.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/fas2-ansok/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:src/app/api/dagens-pass/route.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "ffeb837260cdbb6ab341b781e3d312c5ff46fdc0",
+  "diffHash": "f12057f85f9541650db66a3acd23b7de836b028c87076f30796a746201f9b689",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-01T20:51:41.536Z",
+  "timing": {
+    "startedAt": "2026-09-01T20:51:38.772Z",
+    "completedAt": "2026-09-01T20:51:41.536Z",
+    "durationMs": 2764
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "baseline_snapshot_unreadable": 15,
+      "scanner_failed": 20,
+      "project_check_failed": 35
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_9dbe7fc8-5d79-4c6d-9bda-079c554c93b2-20260901T205141536Z-28456-7dbef923241f.json"
+}

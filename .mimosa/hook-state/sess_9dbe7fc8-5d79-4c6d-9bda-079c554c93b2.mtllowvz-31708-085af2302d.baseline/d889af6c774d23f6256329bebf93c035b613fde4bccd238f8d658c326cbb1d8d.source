@@ -1,0 +1,742 @@
+/**
+ * BETEENDETRACERN (v2) — det tysta organsystem som lär känna eleven
+ * genom beteende. Användarens direktiv: "förstå kunden utan att kunden
+ * vet själv eller säger".
+ *
+ * Tracern lyssnar passivt på sidvisningar, verktygsanvändning och quiz —
+ * och vänder mönstret till pedagogiska insikter (lasInsikter), ALLTID
+ * uppmuntrande och aldrig dömande (se PEDAGOGIK_PRINCIPER i pedagogik.ts:
+ * inga "du borde", bara "välkommen" och "din resa").
+ *
+ * v2 utökar sina sinnen: KLOCK (närvaro-hjärtat som räknar tid per
+ * sektion), RÖRELSER (scroll-djup, musrörelse som aggregerad sträcka —
+ * ALDRIG koordinater) och all klientinteraktion (klick mönster, vägen
+ * tillbaka, externa länkar). Allt samlas för att lasBeteendeAnalys()
+ * ska kunna se intressegap, flaskhalsar och föredragna verktyg.
+ *
+ * INTEGRITET — grundlagen här:
+ * - ALLT lagras lokalt i localStorage under "ak1a-tracer-v1".
+ * - INGET skickas någonsin utan elevens aktiva val. Delning sker endast
+ *   via /api/tracer och anropas uteslutande av en frivillig knapp
+ *   (Min Sida — knappen är ännu ej byggd, spårad i MEGA_PLAN).
+ * - Inga personuppgifter samlas: sökvägar, antal och timmar — inte namn.
+ * - Musrörelse lagras ENBART som aggregerad sträcka (totalX/totalY) och
+ *   maximal rörelse inom ett sekundfönster (jitterPeak). Koordinater
+ *   lämnar aldrig minnet i tracer-mount och skrivs aldrig till disk.
+ *
+ * Server-side-säker: anrop på servern (SSR) är no-op/läser tomt.
+ */
+
+/** De fyra intressespåren tracern klassificerar beteende mot. */
+export type IntresseNyckel = "teknisk" | "fundamental" | "portfölj" | "beteende";
+
+export const INTRESSE_NYCKLAR: readonly IntresseNyckel[] = [
+  "teknisk",
+  "fundamental",
+  "portfölj",
+  "beteende",
+];
+
+/** Aggregerad musrörelse — sträcka och oro, ALDRIG koordinater. */
+export type MusRorelse = {
+  totalX: number; // summa av |Δx| sedan början (px)
+  totalY: number; // summa av |Δy| sedan början (px)
+  jitterPeak: number; // största sträcka förflyttad inom ett 1s-fönster (px)
+};
+
+export type BeteendeProfil = {
+  aktivTid: number; // total sek på plattformen
+  besoktaSidor: Record<string, number>; // sida → antal
+  verktygsAnvandning: Record<string, number>; // verktyg → antal
+  "quiz ratt": number;
+  "quiz fel": number;
+  typiskaTimmar: number[]; // vilka timmar (0-23) eleven är aktiv
+  intresseProfil: Record<string, number>; // "teknisk"|"fundamental"|"portfölj"|"beteende" → poäng
+  senastAktiv: number; // Date.now()
+  // ── v2: RÖRELSER ──
+  scrollDjup: Record<string, number>; // pathname → max scroll-% (0-100)
+  tidPerSektion: Record<string, number>; // pathname → sekunder (KLOCK)
+  musRorelse: MusRorelse; // aggregerad musrörelse, inga koordinater
+  // ── v2: KLIENTINTERAKTION ──
+  klickMönster: Record<string, number>; // "typ-element" → antal (t.ex. "quiz-svara")
+  klickPerOmrade: Record<string, number>; // område → antal klick (underlag för intresseGap)
+  viPoter: number; // antal tillbaka-navigeringar
+  externaLankar: number; // antal klick på externa länkar
+};
+
+export type Insikt = { rubrik: string; text: string; ikon: string };
+
+const NYCKEL = "ak1a-tracer-v1";
+const MAX_SIDOR = 120;
+const MAX_VERKTYG = 40;
+const MAX_KLICK_MONSTER = 120; // element-beskrivningar i klickMönster
+const MAX_OMRADEN = 120; // områden i klickPerOmrade/tid-aggregat
+const MAX_MUS = 2_000_000_000; // px-tak för aggregerad musrörelse
+/** Aktiv tid räknas bara för luckor ≤ 30 min — idle tid räknas aldrig. */
+const MAX_AKTIV_LUCKA_SEK = 1800;
+/** Dubblett-skydd: samma sida inom 15 sek räknas en gång (SPA/StrictMode). */
+const SIDVISNING_DUBBLETT_MS = 15_000;
+
+function tomProfil(): BeteendeProfil {
+  return {
+    aktivTid: 0,
+    besoktaSidor: {},
+    verktygsAnvandning: {},
+    "quiz ratt": 0,
+    "quiz fel": 0,
+    typiskaTimmar: [],
+    intresseProfil: {},
+    senastAktiv: 0,
+    scrollDjup: {},
+    tidPerSektion: {},
+    musRorelse: { totalX: 0, totalY: 0, jitterPeak: 0 },
+    klickMönster: {},
+    klickPerOmrade: {},
+    viPoter: 0,
+    externaLankar: 0,
+  };
+}
+
+function renTalfalt(v: unknown, max: number): number {
+  const n = Math.round(Number(v));
+  return Number.isFinite(n) && n >= 0 ? Math.min(n, max) : 0;
+}
+
+function renRaknare(v: unknown, maxNycklar: number): Record<string, number> {
+  const ur: Record<string, number> = {};
+  if (!v || typeof v !== "object") return ur;
+  let antal = 0;
+  for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+    if (typeof k !== "string" || k.length > 120) continue;
+    const n = renTalfalt(val, 100000);
+    if (n <= 0) continue;
+    ur[k] = n;
+    if (++antal >= maxNycklar) break;
+  }
+  return ur;
+}
+
+/** Sanera scroll-djup: pathname → procent, klamrat till 0-100. */
+function renScrollDjup(v: unknown): Record<string, number> {
+  const ur: Record<string, number> = {};
+  if (!v || typeof v !== "object") return ur;
+  let antal = 0;
+  for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+    if (typeof k !== "string" || k.length > 120) continue;
+    const n = Math.round(Number(val));
+    if (!Number.isFinite(n) || n <= 0) continue;
+    ur[k] = Math.min(n, 100);
+    if (++antal >= MAX_SIDOR) break;
+  }
+  return ur;
+}
+
+/** Sanera aggregerad musrörelse — talen är sträckor, aldrig koordinater. */
+function renMus(v: unknown): MusRorelse {
+  const r = v && typeof v === "object" ? (v as Record<string, unknown>) : {};
+  return {
+    totalX: renTalfalt(r.totalX, MAX_MUS),
+    totalY: renTalfalt(r.totalY, MAX_MUS),
+    jitterPeak: renTalfalt(r.jitterPeak, MAX_MUS),
+  };
+}
+
+/**
+ * Område ur en sökväg — den nivå lasBeteendeAnalys aggregerar på:
+ * "/kurser/v01-grund" → "/kurser/v01-grund" (varje kurs = sitt område),
+ * "/superanalys/konfluens" → "/superanalys", "/" → "/".
+ */
+export function omradeFranSida(sida: string): string {
+  const s = (sida ?? "").replace(/[?#].*$/, "");
+  if (!s.startsWith("/")) return "/";
+  const delar = s.split("/").filter(Boolean);
+  if (delar.length === 0) return "/";
+  if (delar[0] === "kurser" && delar.length > 1) return `/kurser/${delar[1]}`;
+  return `/${delar[0]}`;
+}
+
+/** Håll en räknare bantad: vid överskott faller de minsta nycklarna bort. */
+function beskar(r: Record<string, number>, max: number) {
+  const nycklar = Object.keys(r);
+  if (nycklar.length <= max) return;
+  nycklar
+    .sort((a, b) => r[a] - r[b])
+    .slice(0, nycklar.length - max)
+    .forEach((k) => delete r[k]);
+}
+
+/** Läs profilen — alltid en giltig BeteendeProfil, även i SSR-läge. */
+export function lasBeteende(): BeteendeProfil {
+  if (typeof window === "undefined") return tomProfil();
+  try {
+    const rå = window.localStorage.getItem(NYCKEL);
+    if (!rå) return tomProfil();
+    const p = JSON.parse(rå) as Partial<BeteendeProfil>;
+    const timmar = (Array.isArray(p.typiskaTimmar) ? p.typiskaTimmar : [])
+      .map((h) => renTalfalt(h, 23))
+      .filter((h, i, a) => h >= 0 && h <= 23 && a.indexOf(h) === i)
+      .sort((a, b) => a - b);
+    const intressen: Record<string, number> = {};
+    for (const nyckel of INTRESSE_NYCKLAR) {
+      const poang = renTalfalt((p.intresseProfil ?? {})[nyckel], 100000);
+      if (poang > 0) intressen[nyckel] = poang;
+    }
+    return {
+      aktivTid: renTalfalt(p.aktivTid, 40_000_000), // ~15 månaders tak
+      besoktaSidor: renRaknare(p.besoktaSidor, MAX_SIDOR),
+      verktygsAnvandning: renRaknare(p.verktygsAnvandning, MAX_VERKTYG),
+      "quiz ratt": renTalfalt(p["quiz ratt"], 100000),
+      "quiz fel": renTalfalt(p["quiz fel"], 100000),
+      typiskaTimmar: timmar,
+      intresseProfil: intressen,
+      senastAktiv: renTalfalt(p.senastAktiv, Number.MAX_SAFE_INTEGER),
+      // v2-fält — gamla profiler (v1) saknar dem och får tomma defaults.
+      scrollDjup: renScrollDjup(p.scrollDjup),
+      tidPerSektion: renRaknare(p.tidPerSektion, MAX_SIDOR),
+      musRorelse: renMus(p.musRorelse),
+      klickMönster: renRaknare(p.klickMönster, MAX_KLICK_MONSTER),
+      klickPerOmrade: renRaknare(p.klickPerOmrade, MAX_OMRADEN),
+      viPoter: renTalfalt(p.viPoter, 100000),
+      externaLankar: renTalfalt(p.externaLankar, 100000),
+    };
+  } catch {
+    return tomProfil();
+  }
+}
+
+function spara(p: BeteendeProfil) {
+  try {
+    window.localStorage.setItem(NYCKEL, JSON.stringify(p));
+  } catch {
+    /* privat läge etc. — tracern är tyst även när den inte kan minnas */
+  }
+}
+
+let senasteSidvisning = { namn: "", tid: 0 };
+
+/**
+ * KLOCKENS hjärta: notera att eleven var närvarande just nu.
+ * Aktiv tid räknas som luckan sedan förra noteringen (endast luckor
+ * ≤ 30 min). Används av ALLA rapportfunktioner så att varje signal —
+ * sidvisning, klick, scroll, hjärtslag — håller klockan igång utan
+ * att någon sekund räknas dubbelt.
+ */
+function noteraNarvaro(p: BeteendeProfil, nu: number) {
+  if (p.senastAktiv > 0) {
+    const luckaSek = (nu - p.senastAktiv) / 1000;
+    if (luckaSek > 0 && luckaSek <= MAX_AKTIV_LUCKA_SEK) {
+      p.aktivTid += luckaSek;
+    }
+  }
+  // Vilken timme på dygnet eleven är aktiv (unika timmar).
+  const timme = new Date(nu).getHours();
+  if (!p.typiskaTimmar.includes(timme)) p.typiskaTimmar.push(timme);
+  p.typiskaTimmar.sort((a, b) => a - b);
+  p.senastAktiv = nu;
+}
+
+/**
+ * Rapportera ett beteende till profilen. Sidvisningar dedupliceras
+ * inom 15 sek (SPA-navigering/StrictMode räknas en gång).
+ */
+export function rapporteraBeteende(händelse: {
+  typ: "sidvisning" | "verktyg" | "quiz" | "quizfel";
+  namn: string;
+  intresse?: string;
+}) {
+  if (typeof window === "undefined") return;
+  const namn = typeof händelse.namn === "string" ? händelse.namn.slice(0, 120) : "";
+  if (!namn) return;
+
+  const nu = Date.now();
+  if (händelse.typ === "sidvisning") {
+    if (
+      senasteSidvisning.namn === namn &&
+      nu - senasteSidvisning.tid < SIDVISNING_DUBBLETT_MS
+    ) {
+      return;
+    }
+    senasteSidvisning = { namn, tid: nu };
+  }
+
+  const p = lasBeteende();
+  noteraNarvaro(p, nu);
+
+  switch (händelse.typ) {
+    case "sidvisning":
+      p.besoktaSidor[namn] = (p.besoktaSidor[namn] ?? 0) + 1;
+      break;
+    case "verktyg":
+      p.verktygsAnvandning[namn] = (p.verktygsAnvandning[namn] ?? 0) + 1;
+      break;
+    case "quiz":
+      p["quiz ratt"] += 1;
+      break;
+    case "quizfel":
+      p["quiz fel"] += 1;
+      break;
+  }
+
+  const intresse = händelse.intresse;
+  if (typeof intresse === "string" && (INTRESSE_NYCKLAR as readonly string[]).includes(intresse)) {
+    p.intresseProfil[intresse] = (p.intresseProfil[intresse] ?? 0) + 1;
+  }
+
+  // noteraNarvaro satte redan senastAktiv — bara spara.
+  spara(p);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * v2: NYA SINNEN — scroll, klick, tid, mus, tillbaka-navigering.
+ * Allt lokal (localStorage), allt sanerat, allt no-op på servern.
+ * ─────────────────────────────────────────────────────────────────────── */
+
+/** Rensa en sökväg till ett giltigt profilnyckel-format. */
+function renSida(pathname: string): string {
+  const sida = typeof pathname === "string" ? pathname.slice(0, 120) : "";
+  return sida.startsWith("/") ? sida : "";
+}
+
+/**
+ * RÖRELSE: rapportera scroll-djup (0-100 %) för en sida. Bara nya
+ * rekord skrivs — scrollandet monotoniskt maxat per sida, vilket
+ * håller skrivfrekvensen låg under långa läsningar.
+ */
+export function rapporteraScroll(pathname: string, procent: number): void {
+  if (typeof window === "undefined") return;
+  const sida = renSida(pathname);
+  if (!sida) return;
+  const pct = Math.round(Number(procent));
+  if (!Number.isFinite(pct) || pct < 0) return;
+
+  const p = lasBeteende();
+  const nuvarande = p.scrollDjup[sida] ?? 0;
+  if (pct <= nuvarande) return; // inget nytt djup — inget att minnas
+
+  p.scrollDjup[sida] = Math.min(pct, 100);
+  beskarSorterat(p.scrollDjup, MAX_SIDOR);
+  noteraNarvaro(p, Date.now());
+  spara(p);
+}
+
+/** Håll scroll-djup-kartan begränsad men behåll de DJUPASTE sidorna. */
+function beskarSorterat(djup: Record<string, number>, max: number) {
+  const nycklar = Object.keys(djup);
+  if (nycklar.length <= max) return;
+  nycklar
+    .sort((a, b) => djup[b] - djup[a]) // djupast först
+    .slice(max)
+    .forEach((k) => delete djup[k]);
+}
+
+/**
+ * KLIENTINTERAKTION: rapportera ett klick, klassificerat som
+ * (typ, element) — t.ex. ("quiz", "svara") → klickMönster["quiz-svara"].
+ * typ "extern" räknas även på externaLankar; varje klick attribueras
+ * dessutom till sitt område (klickPerOmrade) för intresseGap-analysen.
+ */
+export function rapporteraKlick(typ: string, element: string): void {
+  if (typeof window === "undefined") return;
+  const t = (typ ?? "").toString().toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 40);
+  const e = (element ?? "")
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9/.-]/g, "")
+    .slice(0, 80);
+  if (!t || !e) return;
+
+  const p = lasBeteende();
+  const nyckel = `${t}-${e}`;
+  p.klickMönster[nyckel] = (p.klickMönster[nyckel] ?? 0) + 1;
+  beskar(p.klickMönster, MAX_KLICK_MONSTER);
+
+  if (t === "extern") p.externaLankar += 1;
+
+  const omrade = omradeFranSida(window.location.pathname);
+  p.klickPerOmrade[omrade] = (p.klickPerOmrade[omrade] ?? 0) + 1;
+  beskar(p.klickPerOmrade, MAX_OMRADEN);
+
+  noteraNarvaro(p, Date.now());
+  spara(p);
+}
+
+/**
+ * KLOCK: rapportera tillbringad tid på en sektion (sekunder).
+ * TracerMounts hjärtslag anropar var 10:e sekund — endast medan
+ * fliken är synlig — och noteraNarvaro för samma signaler håller
+ * aktivTid ärlig (luckbaserat, aldrig dubbelt räknat).
+ */
+export function rapporteraTid(pathname: string, sekunder: number): void {
+  if (typeof window === "undefined") return;
+  const sida = renSida(pathname);
+  if (!sida) return;
+  const sek = Math.round(Number(sekunder));
+  if (!Number.isFinite(sek) || sek <= 0 || sek > 3600) return;
+
+  const p = lasBeteende();
+  p.tidPerSektion[sida] = Math.min((p.tidPerSektion[sida] ?? 0) + sek, 100000);
+  beskar(p.tidPerSektion, MAX_SIDOR);
+  noteraNarvaro(p, Date.now());
+  spara(p);
+}
+
+/**
+ * RÖRELSER: spola aggregerad musrörelse sedan förra spolningen.
+ * deltaX/deltaY är absolut sträcka (px) och jitter det största
+ * avståndet förflyttat inom ett 1s-fönster. Koordinater tar vi
+ * ALDRIG emot — integriteten är grundlagen.
+ */
+export function rapporteraMus(deltaX: number, deltaY: number, jitter: number): void {
+  if (typeof window === "undefined") return;
+  const dx = Math.max(0, Math.round(Math.abs(Number(deltaX)) || 0));
+  const dy = Math.max(0, Math.round(Math.abs(Number(deltaY)) || 0));
+  const j = Math.max(0, Math.round(Math.abs(Number(jitter)) || 0));
+  if (dx === 0 && dy === 0 && j === 0) return;
+
+  const p = lasBeteende();
+  p.musRorelse.totalX = Math.min(p.musRorelse.totalX + dx, MAX_MUS);
+  p.musRorelse.totalY = Math.min(p.musRorelse.totalY + dy, MAX_MUS);
+  p.musRorelse.jitterPeak = Math.min(Math.max(p.musRorelse.jitterPeak, j), MAX_MUS);
+  spara(p);
+}
+
+/** KLIENTINTERAKTION: eleven navigerade tillbaka (history/back). */
+export function rapporteraViTillbaka(): void {
+  if (typeof window === "undefined") return;
+  const p = lasBeteende();
+  p.viPoter += 1;
+  noteraNarvaro(p, Date.now());
+  spara(p);
+}
+
+/** En områdesrad i lasBeteendeAnalys: tid och klick i balans. */
+export type OmradeStat = { omrade: string; tidSek: number; klick: number };
+
+/** Sammanställningen av de nya sinnesorganen — läsbar av Min Sida etc. */
+export type BeteendeAnalys = {
+  /** Områden som får tid men inga klick — läsläsning utan interaktion. */
+  intresseGap: OmradeStat[];
+  /** Sidan där eleven fastnar: hög tid + låg scroll (eller null). */
+  flaskhals: string | null;
+  /** Verktyg rankade på klick + tid (max 3, högst poäng först). */
+  foredradeVerktyg: string[];
+};
+
+/**
+ * Beteendeanalys ur de nya signalerna — rå materialet som lasInsikter
+ * och framtida pedagogiska ytor kan formulera AK1A-rösten kring.
+ * Server-säker: tom analys utan lokal profil.
+ */
+export function lasBeteendeAnalys(): BeteendeAnalys {
+  const p = lasBeteende();
+
+  // intresseGap: aggregera tid och klick per område.
+  const perOmrade = new Map<string, OmradeStat>();
+  for (const [sida, sek] of Object.entries(p.tidPerSektion)) {
+    const o = omradeFranSida(sida);
+    const stat = perOmrade.get(o) ?? { omrade: o, tidSek: 0, klick: 0 };
+    stat.tidSek += sek;
+    perOmrade.set(o, stat);
+  }
+  for (const [omrade, antal] of Object.entries(p.klickPerOmrade)) {
+    const stat = perOmrade.get(omrade) ?? { omrade, tidSek: 0, klick: 0 };
+    stat.klick += antal;
+    perOmrade.set(omrade, stat);
+  }
+  const intresseGap = [...perOmrade.values()]
+    .filter((s) => s.tidSek >= 60 && s.klick === 0) // tid utan ett enda klick
+    .sort((a, b) => b.tidSek - a.tidSek)
+    .slice(0, 5);
+
+  // flaskhals: sidor med minst 90 s tid och scroll under 40 %.
+  // Poäng = tid × (1 - djup/100): ju mer tid och ju mindre scroll, desto tyngre.
+  let flaskhals: string | null = null;
+  let flaskhalsPoang = 0;
+  for (const [sida, sek] of Object.entries(p.tidPerSektion)) {
+    if (sek < 90) continue;
+    const djup = p.scrollDjup[sida] ?? 0;
+    if (djup >= 40) continue;
+    const poang = sek * (1 - djup / 100);
+    if (poang > flaskhalsPoang) {
+      flaskhalsPoang = poang;
+      flaskhals = sida;
+    }
+  }
+
+  // foredradeVerktyg: poäng = verktygsanvändning + "verktyg-*"-klick + tid (i minuter)
+  // på sidor vars sökväg nämner verktyget.
+  const poang = new Map<string, number>();
+  for (const [namn, antal] of Object.entries(p.verktygsAnvandning)) {
+    poang.set(namn, antal);
+  }
+  for (const [nyckel, antal] of Object.entries(p.klickMönster)) {
+    if (!nyckel.startsWith("verktyg-")) continue;
+    const namn = nyckel.slice("verktyg-".length);
+    poang.set(namn, (poang.get(namn) ?? 0) + antal);
+  }
+  const namn = [...poang.keys()];
+  for (const [sida, sek] of Object.entries(p.tidPerSektion)) {
+    const s = sida.toLowerCase();
+    for (const v of namn) {
+      if (v && s.includes(v.toLowerCase())) {
+        poang.set(v, (poang.get(v) ?? 0) + sek / 60); // 1 min på verktyget = 1 poäng
+      }
+    }
+  }
+  const foredradeVerktyg = [...poang.entries()]
+    .filter(([v, pSumma]) => v.length > 0 && pSumma > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([v]) => v);
+
+  return { intresseGap, flaskhals, foredradeVerktyg };
+}
+
+/**
+ * Klassificera en sökväg till ett intressespår (används av TracerMount
+ * och allt som vill berika sidvisningar):
+ * - teknisk: /kurser/ts-*, AK1TS, Superanalysen, Konfluens, våg-verktygen
+ * - fundamental: /kurser/v* (v01-v20), km-, vm-, mk-, se-, pc-, ud-, sj-*
+ * - portfölj: portfölj-sidor (min-portfolj, portfoljbyggare) + kalkylatorn
+ * - beteende: /kurser/bf-*, AI-Diagnos, Kognitiv profil
+ */
+export function klassifiera(sida: string): IntresseNyckel | undefined {
+  const s = (sida ?? "").toLowerCase();
+  if (!s.startsWith("/")) return undefined;
+  if (
+    s.startsWith("/kurser/teknisk") ||
+    s.startsWith("/kurser/ts-") ||
+    s.startsWith("/kurser/ak1ts") ||
+    s.startsWith("/superanalys") ||
+    s.startsWith("/konfluens") ||
+    s.startsWith("/vagkon") ||
+    s.startsWith("/netnet")
+  ) {
+    return "teknisk";
+  }
+  if (
+    s.startsWith("/kurser/v") || // v01-v20 + vm- + vagfundament
+    s.startsWith("/kurser/km-") ||
+    s.startsWith("/kurser/mk-") ||
+    s.startsWith("/kurser/se-") ||
+    s.startsWith("/kurser/pc-") ||
+    s.startsWith("/kurser/ud-") ||
+    s.startsWith("/kurser/sj-") ||
+    s.startsWith("/kurser/the-") || // BOKMASTER-böckerna: i grunden fundamental
+    s.startsWith("/analyser")
+  ) {
+    return "fundamental";
+  }
+  if (
+    s.includes("portfolj") ||
+    s.startsWith("/kurser/pf-") ||
+    s.startsWith("/kalkylator")
+  ) {
+    return "portfölj";
+  }
+  if (
+    s.startsWith("/kurser/bf-") ||
+    s.startsWith("/kurser/km-018") ||
+    s.startsWith("/kurser/km-019") ||
+    s.startsWith("/kurser/km-020") ||
+    s.startsWith("/kurser/km-035") ||
+    s.startsWith("/kurser/km-036") ||
+    s.startsWith("/kurser/km-037") ||
+    s.startsWith("/diagnos") ||
+    s.startsWith("/profil")
+  ) {
+    return "beteende";
+  }
+  return undefined;
+}
+
+/** Toppintresset — det spår eleven visat störst nyfikenhet för. */
+export function lasToppIntresse(p: BeteendeProfil | null = null): IntresseNyckel | null {
+  const profil = p ?? lasBeteende();
+  let topp: IntresseNyckel | null = null;
+  let max = 0;
+  for (const nyckel of INTRESSE_NYCKLAR) {
+    const poang = profil.intresseProfil[nyckel] ?? 0;
+    if (poang > max) {
+      max = poang;
+      topp = nyckel;
+    }
+  }
+  return topp;
+}
+
+/** Intern helper: det mest använda verktyget. */
+function toppVerktyg(p: BeteendeProfil): { namn: string; antal: number } | null {
+  let topp: { namn: string; antal: number } | null = null;
+  for (const [namn, antal] of Object.entries(p.verktygsAnvandning)) {
+    if (!topp || antal > topp.antal) topp = { namn, antal };
+  }
+  return topp;
+}
+
+/** Intern helper: dygnsrytm ur typiskaTimmar. */
+function dagrytm(timmar: number[]): "kvall" | "morgon" | "dag" | "blandat" | "okand" {
+  if (timmar.length === 0) return "okand";
+  const kvall = timmar.filter((h) => h >= 18 || h <= 4).length;
+  const morgon = timmar.filter((h) => h >= 5 && h <= 9).length;
+  const dag = timmar.filter((h) => h >= 10 && h <= 17).length;
+  const storst = Math.max(kvall, morgon, dag);
+  if (storst === 0) return "okand";
+  if (kvall === storst && kvall > timmar.length / 2) return "kvall";
+  if (morgon === storst && morgon > timmar.length / 2) return "morgon";
+  if (dag === storst && dag > timmar.length / 2) return "dag";
+  return "blandat";
+}
+
+/** Alltid uppmuntrande text om toppintresset — aldrig bristperspektiv. */
+function intresseText(nyckel: IntresseNyckel): { rubrik: string; text: string; ikon: string } {
+  switch (nyckel) {
+    case "teknisk":
+      return {
+        rubrik: "Vågorna svarar dig",
+        text: "Din nyfikenhet söker sig till vågor, mönster och timing — AK1TS-fördjupningarna och bibliotekets tekniska BOKMASTER är skrivna för just den resan.",
+        ikon: "🌊",
+      };
+    case "fundamental":
+      return {
+        rubrik: "Värdet är din kompass",
+        text: "Du lägger tid där kärnan finns: bokföring, värdering och bolagens verkliga substans — precis grunden som de största analytikerna byggt på.",
+        ikon: "🏛️",
+      };
+    case "portfölj":
+      return {
+        rubrik: "Du ser helheten",
+        text: "Ditt intresse samlar kunskapen till något större — en portfölj som bär. Portföljkurserna och ekosystem-kursen väver trådarna ihop.",
+        ikon: "🧩",
+      };
+    case "beteende":
+      return {
+        rubrik: "Du studerar den viktigaste aktören — dig själv",
+        text: "Beteendefinans är många mästares hemliga vapen. Att förstå ditt eget sinne är den mest avkastande kursen av alla.",
+        ikon: "🧠",
+      };
+  }
+}
+
+/** Standardinsikter när profilen ännu är ung — alltid lika välkomnande. */
+const STANDARDINSIKTER: Insikt[] = [
+  {
+    rubrik: "Ditt mönster tar form",
+    text: "Tracern lyssnar tyst medan du utforskar. Efter några besök börjar den se hur du lär dig bäst — och tipsar dig vidare, alltid i din takt.",
+    ikon: "🔭",
+  },
+  {
+    rubrik: "Ett Dagens Pass väntar",
+    text: "Ett kort pass om dagen bygger mer än långa pass en gång i månaden. Välkommen att prova när helst det passar — vi sparar din plats.",
+    ikon: "☀️",
+  },
+  {
+    rubrik: "Biblioteket är öppet — alltid",
+    text: "Hela biblioteket är kostnadsfritt, för alltid. Följ din nyfikenhet dit den vill — den vet ofta bäst vart kunskapen ska bära.",
+    ikon: "📚",
+  },
+];
+
+/**
+ * 3-5 pedagogiska insikter ur beteendeprofilen — AK1A-rösten:
+ * uppmuntrande, aldrig dömande, alltid med ett "nästa steg" som känns
+ * som en välkomnande dörr (inte en brist att åtgärda).
+ */
+export function lasInsikter(): Insikt[] {
+  const p = lasBeteende();
+  const quizTotalt = p["quiz ratt"] + p["quiz fel"];
+  const andelRatt = quizTotalt > 0 ? p["quiz ratt"] / quizTotalt : 0;
+  const topp = lasToppIntresse(p);
+  const verktyg = toppVerktyg(p);
+  const rytm = dagrytm(p.typiskaTimmar);
+  const insikter: Insikt[] = [];
+
+  // 1. Mästarnivå: quiz ≥ 80 % rätt efter minst 5 svar.
+  if (quizTotalt >= 5 && andelRatt >= 0.8) {
+    if (topp === "teknisk") {
+      insikter.push({
+        rubrik: "Du behärskar teknisk analys",
+        text: "Över 80 % rätt på quiz med teknisk inriktning — djupare BOKMASTER i ämnet väntar: Elliott Wave Principle och Technical Analysis of the Financial Markets är nära naturliga steg.",
+        ikon: "📈",
+      });
+    } else if (topp === "fundamental") {
+      insikter.push({
+        rubrik: "Du behärskar fundamental analys",
+        text: "Över 80 % rätt på quiz i fundamentalämnena — djupare BOKMASTER i ämnet väntar: Security Analysis och The Intelligent Investor är nästa naturliga stapel.",
+        ikon: "🏛️",
+      });
+    } else if (topp === "portfölj") {
+      insikter.push({
+        rubrik: "Du behärskar portföljtänket",
+        text: "Över 80 % rätt på quiz med portfölijinriktning — Superanalysen och ekosystem-kursen Från aktie till portfölj väntar för att väva ihop helheten.",
+        ikon: "🧩",
+      });
+    } else {
+      insikter.push({
+        rubrik: "Din kunskap bär",
+        text: "Över 80 % rätt på quiz — glansen i dina svar syns. Tänka snabbt och långsamt är BOKMASTER som fördjupar just det du redan kan.",
+        ikon: "🧠",
+      });
+    }
+  } else if (quizTotalt >= 5 && andelRatt >= 0.5) {
+    // 2. På god väg — repetition utan bristperspektiv.
+    insikter.push({
+      rubrik: "Kunskapen håller på att sätta sig",
+      text: "Du svarar rätt oftare och oftare — glömskekurvan är normal, och repetition är inte baksteg, det är hur hjärnan bygger. Dagens Pass håller rörelsen vid liv.",
+      ikon: "🔁",
+    });
+  }
+
+  // 3. Dygnsrytm — när eleven studerar.
+  if (rytm === "kvall") {
+    insikter.push({
+      rubrik: "Din studietid är kvällar",
+      text: "Ditt mönster lyser starkast kvällstid — en fin och lugn timme för djupläsning. Ett kort Dagens Pass på morgonen kan balansera dagen och ge två tillfällen av närvaro.",
+      ikon: "🌙",
+    });
+  } else if (rytm === "morgon") {
+    insikter.push({
+      rubrik: "Du bygger i gryningsljus",
+      text: "Morgontimmar är din studietid — då sinnet är vilar och förmågan att läsa är som starkast. Dagens Pass är gjord för just din rytm.",
+      ikon: "🌅",
+    });
+  }
+
+  // 4. Praktiskt lagd — portfölj-verktyget mest använt.
+  if (verktyg && (verktyg.namn.includes("portfolj") || verktyg.namn.includes("kalkylator"))) {
+    insikter.push({
+      rubrik: "Du är praktiskt lagd",
+      text: "Verktygen är din ingång till kunskapen — du lär genom att göra. Superanalysen är din nästa utmaning: samma praktiska grepp, men med hela ekosystemet i spel.",
+      ikon: "🛠️",
+    });
+  } else if (verktyg && verktyg.namn.includes("superanalys")) {
+    insikter.push({
+      rubrik: "Du har smakat på mästarverktyget",
+      text: "Superanalysen ligger i din ryggrad — djupare BOKMASTER i värdeinvestering ger nästa nivå av underlag att analysera med.",
+      ikon: "🔬",
+    });
+  }
+
+  // 5. Toppintresset — alltid plats för nyfikenheten.
+  if (topp && !insikter.some((i) => i.ikon === intresseText(topp).ikon)) {
+    insikter.push(intresseText(topp));
+  }
+
+  // 6. Tacksamhet (tvåsidig) — aldrig skyldighet.
+  if (p.aktivTid >= 30 * 60) {
+    insikter.push({
+      rubrik: `${Math.round(p.aktivTid / 60)} minuter av närvaro`,
+      text: "Tack för att du investerar i dig själv — den tiden är din, och kunskapen som byggs kan ingen ta ifrån dig.",
+      ikon: "❤️",
+    });
+  }
+
+  // Fyll alltid upp till minst 3 — ny profil är inte en tom profil, bara en början.
+  for (const standard of STANDARDINSIKTER) {
+    if (insikter.length >= 3) break;
+    if (!insikter.some((i) => i.rubrik === standard.rubrik)) insikter.push(standard);
+  }
+
+  return insikter.slice(0, 5);
+}

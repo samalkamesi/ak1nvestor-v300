@@ -22,6 +22,8 @@ import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
 import { VeckoPlan } from "@/components/ak1a/vecko-plan";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { MorgonBriefing } from "@/components/ak1a/morgon-briefing";
+import { MinPortfoljKort } from "@/components/ak1a/min-portfolj-kort";
+import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -500,6 +502,19 @@ export function MinSida() {
             Vi är tacksamma för varje dag du väljer att lära dig — så byggs välfärd, ett beslut i taget.
           </p>
         </div>
+      </section>
+
+      {/* (a2c) DIN PORTFÖLJ — medlemmens innehav, senaste kurs och vågprofil
+          direkt i Min Sida ("kunder ska kunna se sina portföljer i hemsidan
+          efter inloggning"), med kopplade aktie-nyheter strax nedanför. */}
+      <section className="mt-6">
+        <MinPortfoljKort />
+      </section>
+
+      {/* (a2d) AKTIE-NYHETER — senaste nyheterna om samma aktier ("nyheter om
+          samma aktier ska kopplas") — läses tillsammans med Vågkartan. */}
+      <section className="mt-6">
+        <AktieNyheter />
       </section>
 
       {/* FRÅGA DIN DASHBOARD — natural-language-frågor mot elevens egna data, deterministiskt */}

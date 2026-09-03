@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
+import { kraverFas2, harFas2Access, arAdmin } from "@/lib/kurs-access";
 
 /**
  * Läroplanen — resan från nybörjare till oberoende aktieanalytiker.
  * 5 nivåer, varje kurs har ett syfte i resan mot självständighet.
+ * Fas 2-kurser (Nivå 3-flaggskeppen + avancerad teknisk analys-kanon) visas
+ * med 🔒 och "Öppnas i Fas 2"-notis — klick leder till /fas2-ansok.
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, aktiv accordion får marin vänsterkant.
  */
@@ -137,11 +140,13 @@ export function Laroplan() {
   const [klara, setKlara] = useState<string[]>([]);
   const [xp, setXp] = useState(0);
   const [oppnadNiva, setOppnadNiva] = useState<number | null>(1);
+  const [fas2Access, setFas2Access] = useState(false);
 
   useEffect(() => {
     setMedlem(Boolean(lasMedlem()));
     setKlara(lasKlaraKurser());
     setXp(lasXP());
+    setFas2Access(harFas2Access() || arAdmin());
   }, []);
 
   const totalKurser = NIVAER.reduce((s, n) => s + n.kurser.length, 0);
@@ -182,6 +187,19 @@ export function Laroplan() {
           </Link>
         )}
       </div>
+
+      {/* Vad är Fas 2? — förklarar 🔒-markeringen i nivåerna (inbjudan, aldrig stopp) */}
+      <p className="mx-auto mt-3 flex max-w-xl flex-wrap items-center justify-center gap-1.5 text-center text-[11px] leading-relaxed text-muted-foreground">
+        <span aria-hidden>🔒</span>
+        <span className="font-bold text-gold">Vad är Fas 2?</span>
+        <span>26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap.</span>
+        <Link
+          href="/fas2-ansok"
+          className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
+        >
+          Ansök →
+        </Link>
+      </p>
 
       {/* Nivåer — accordions i enhetlig kortstandard */}
       <div className="mt-10 space-y-8">
@@ -231,10 +249,15 @@ export function Laroplan() {
                 <div className="space-y-2 px-5 pb-5 pt-4">
                   {niv.kurser.map((kurs, i) => {
                     const klar = klara.includes(kurs.slug);
+                    // Fas 2-kurs (Nivå 3-flaggskeppen + avancerad teknisk analys-kanon)
+                    // utan åtkomst: syftet syns, klick blir en inbjudan till /fas2-ansok
+                    const fas2 = kraverFas2(kurs.slug);
+                    const last = fas2 && !fas2Access;
                     return (
                       <Link
                         key={kurs.slug}
-                        href={`/kurser/${kurs.slug}`}
+                        href={last ? "/fas2-ansok" : `/kurser/${kurs.slug}`}
+                        title={last ? "Öppnas i Fas 2 — 26 avancerade kurser i teknisk analys och vågor" : undefined}
                         className={`flex items-center gap-3 rounded-xl border bg-card px-3 py-2.5 transition hover:shadow-md ${
                           klar ? "border-bull/40" : "border-gold/25 hover:border-gold/50"
                         }`}
@@ -248,9 +271,16 @@ export function Laroplan() {
                           <p className="truncate font-serif text-sm font-semibold">{kurs.syfte}</p>
                           <p className="text-[10px] tabular-nums text-muted-foreground">
                             {kurs.tid} min {kurs.xp ? `· ${kurs.xp} XP` : ""}
+                            {last ? " · 🔒 Öppnas i Fas 2" : ""}
                           </p>
                         </div>
-                        <span className="text-muted-foreground">→</span>
+                        {last ? (
+                          <span className="shrink-0 rounded-full bg-[#0E1B2E] px-2 py-0.5 text-[10px] font-bold text-[#E8C766] dark:bg-[#16263D]">
+                            🔒 Fas 2
+                          </span>
+                        ) : (
+                          <span className="text-muted-foreground">→</span>
+                        )}
                       </Link>
                     );
                   })}

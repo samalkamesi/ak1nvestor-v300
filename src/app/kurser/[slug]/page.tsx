@@ -5,6 +5,7 @@ import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
+import { Fas2Gate } from "@/components/ak1a/fas2-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
@@ -64,7 +65,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
 
             `⚖ Vikt: ${course.weight || "6%"}`,
             `🏷 ${course.category}`,
-          ].filter(Boolean).map((chip: string) => (
+          ].filter((chip): chip is string => Boolean(chip)).map((chip) => (
             <span key={chip} className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-medium text-gold">
               {chip}
             </span>
@@ -116,6 +117,15 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
+      {/* Fas 2-gate — kurser i FAS2_KURSER låses bakom Fas 2-medlemskap.
+          Fas2Gate är en no-op för gratis-kurser (renderar barnen direkt). */}
+      <Fas2Gate
+        slug={slug}
+        titel={course.title}
+        kapitel={course.chapters.length}
+        xp={course.xp}
+        intro={course.chapters[0]?.intro}
+      >
       {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
       <KursGate slug={slug} titel={course.title}>
       {(course.chapters as any).some((ch: any) => ch.quiz) ? (
@@ -204,6 +214,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       </section>
       )}
     </KursGate>
+    </Fas2Gate>
 
       {(course.lynchSection || course.grahamSection || course.ak1Section) && (
         <section className="mt-10">

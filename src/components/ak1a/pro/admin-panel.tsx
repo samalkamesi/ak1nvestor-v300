@@ -11,6 +11,9 @@ import {
   ArrowUpDown,
   Building2,
   ShieldCheck,
+  Search,
+  KeyRound,
+  GraduationCap,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,6 +28,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
 // ═══════════════════════════════════════════════════════════
@@ -32,11 +44,12 @@ import { cn } from "@/lib/utils";
 //
 // Skild från den publika adminen: detta är PRO-världens egen
 // översikt — B2B-kunder, pro-analys-anrop, rapportmallar och
-// white-label. Fyra sektioner (forskning-b2b Fas D):
-//   1. B2B-översikt   — kort-grid med nyckeltal ur GET /api/pro/admin
-//   2. Kundtabellen   — members via REST, filtrering + sortering + CSV
-//   3. Rapportmallar  — tre låsta mallar + aktiv-toggle + white-label
-//   4. Analysloggen   — senaste pro-anrop: tid + tickers + konfluens
+// white-label. Fem sektioner (forskning-b2b Fas D + Fas 2-behörighet):
+//   1. B2B-översikt     — kort-grid med nyckeltal ur GET /api/pro/admin
+//   2. Kundtabellen     — members via REST, filtrering + sortering + CSV
+//   3. Fas 2-hantering  — sök free/fas2-medlemmar, ge/återkalla knappen
+//   4. Rapportmallar    — tre låsta mallar + aktiv-toggle + white-label
+//   5. Analysloggen     — senaste pro-anrop: tid + tickers + konfluens
 //
 // Utvecklingssteg: mall-/white-label-inställningar sparas i
 // localStorage "pro-admin-v1"; API-posten (POST /api/pro/admin,
@@ -184,6 +197,7 @@ function datum(iso: string | null | undefined): string {
 
 const NIVA_STIL: Record<string, string> = {
   free: "bg-muted text-muted-foreground",
+  fas2: "border border-gold/50 bg-gold/15 text-gold",
   premium: "bg-gold/20 text-gold",
   pro: "bg-gold text-primary-foreground",
 };
@@ -203,6 +217,16 @@ export function ProAdminPanel() {
   const [hydrerad, setHydrerad] = React.useState(false);
   const [publicerar, setPublicerar] = React.useState(false);
   const [publiceratMeddelande, setPubliceratMeddelande] = React.useState("");
+
+  // Fas 2-hantering (POST /api/admin/fas2-access — kräver ADMIN_PASSWORD)
+  const [sokFas2, setSokFas2] = React.useState("");
+  const [valdFas2, setValdFas2] = React.useState<ProAdminKund | null>(null);
+  const [fas2Bekrafta, setFas2Bekrafta] = React.useState(false);
+  const [adminLosenord, setAdminLosenord] = React.useState("");
+  const [fas2Sysslar, setFas2Sysslar] = React.useState(false);
+  const [fas2Fel, setFas2Fel] = React.useState("");
+
+  const { toast } = useToast();
 
   const hamta = React.useCallback(async () => {
     setLaddar(true);
@@ -320,6 +344,100 @@ export function ProAdminPanel() {
       setPubliceratMeddelande("Nätverksfel — försök igen.");
     } finally {
       setPublicerar(false);
+    }
+  };
+
+  // ── Fas 2-hantering: sökbara kandidater (free + fas2) + verkställ ──
+  const fas2Kandidater = React.useMemo(() => {
+    const lista = (data?.kunder ?? []).filter(
+      (k) => k.memberType === "free" || k.memberType === "fas2",
+    );
+    const sökning = sokFas2.trim().toLowerCase();
+    if (!sökning) return lista;
+    return lista.filter((k) =>
+      `${k.namn ?? ""} ${k.email}`.toLowerCase().includes(sökning),
+    );
+  }, [data, sokFas2]);
+
+  /** Uppdatera en medlems nivå i kundtabellen + elev-kortet (optimistiskt). */
+  const uppdateraMedlemsNiva = (medlemsId: string, memberType: string) => {
+    setData((föregående) =>
+      föregående
+        ? {
+            ...föregående,
+            kunder: föregående.kunder.map((k) =>
+              k.id === medlemsId ? { ...k, memberType } : k,
+            ),
+          }
+        : föregående,
+    );
+    setValdFas2((föregående) =>
+      föregående && föregående.id === medlemsId
+        ? { ...föregående, memberType }
+        : föregående,
+    );
+  };
+
+  /** Bekräfta nivån via GET /api/admin/fas2-access — bästa ansträngning. */
+  const bekraftaFas2Status = async (medlemsId: string) => {
+    try {
+      const res = await fetch(
+        `/api/admin/fas2-access?memberId=${encodeURIComponent(medlemsId)}`,
+        { headers: { "x-admin-password": adminLosenord } },
+      );
+      if (!res.ok) return;
+      const svar = (await res.json()) as { memberType?: string | null };
+      if (typeof svar.memberType === "string") {
+        uppdateraMedlemsNiva(medlemsId, svar.memberType);
+      }
+    } catch {
+      // tyst — den optimistiska uppdateringen räcker
+    }
+  };
+
+  /** Verkställ ge/återkalla Fas 2 → toast + OrganEvent publiceras server-side. */
+  const verkstallFas2 = async () => {
+    if (!valdFas2 || fas2Sysslar) return;
+    setFas2Sysslar(true);
+    setFas2Fel("");
+    try {
+      const res = await fetch("/api/admin/fas2-access", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": adminLosenord,
+        },
+        body: JSON.stringify({
+          memberId: valdFas2.id,
+          ge: valdFas2.memberType !== "fas2",
+        }),
+      });
+      const svar = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        memberType?: string;
+        namn?: string;
+        organEvent?: boolean;
+        error?: string;
+      };
+      if (res.ok && svar.ok) {
+        const memberType = svar.memberType ?? "free";
+        const givet = memberType === "fas2";
+        uppdateraMedlemsNiva(valdFas2.id, memberType);
+        toast({
+          title: givet ? "Fas 2-åtkomst given" : "Fas 2-åtkomst återkallad",
+          description: `${valdFas2.namn ?? valdFas2.email} · member_type ${memberType}${
+            svar.organEvent ? " · beslut loggat i AI-organets nervsystem" : ""
+          }`,
+        });
+        setFas2Bekrafta(false);
+        void bekraftaFas2Status(valdFas2.id);
+      } else {
+        setFas2Fel(svar.error ?? `Kunde inte verkställa (${res.status}).`);
+      }
+    } catch {
+      setFas2Fel("Nätverksfel — försök igen.");
+    } finally {
+      setFas2Sysslar(false);
     }
   };
 
@@ -497,11 +615,245 @@ export function ProAdminPanel() {
         </p>
       </section>
 
-      {/* ═══ 3. RAPPORTMALLAR + WHITE-LABEL ═══ */}
+      {/* ═══ 3. FAS 2-HANTERING ═══ */}
+      <section aria-labelledby="pro-admin-fas2">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-guld-djup">
+              Sektion 3 · Behörigheter
+            </p>
+            <h2 id="pro-admin-fas2" className="mt-1 font-serif text-2xl font-bold">
+              Fas 2-hantering
+            </h2>
+            <p className="mt-1 max-w-2xl text-xs text-muted-foreground">
+              Ge eller återkalla Fas 2-åtkomst (member_type &quot;fas2&quot;) — 26 låsta
+              kurser, portföljens vågor och avancerad analys. Verkställs via POST
+              /api/admin/fas2-access och loggas som OrganEvent-beslut.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_360px]">
+          {/* Sökbara kandidater — free + fas2 */}
+          <Card className="border-gold/30 p-5">
+            <div className="flex items-center gap-2">
+              <Search className="h-4 w-4 text-gold" />
+              <h3 className="font-serif text-lg font-bold">Kandidater</h3>
+              <Badge variant="outline" className="ml-auto text-[10px]">
+                {fas2Kandidater.length} st
+              </Badge>
+            </div>
+            <div className="relative mt-3">
+              <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                value={sokFas2}
+                onChange={(e) => setSokFas2(e.target.value)}
+                placeholder="Sök namn eller e-post…"
+                className="h-9 pl-8 text-xs"
+              />
+            </div>
+            <ScrollArea className="mt-3 h-[340px] pr-3">
+              <div className="space-y-1.5">
+                {fas2Kandidater.map((k) => (
+                  <button
+                    key={k.id}
+                    type="button"
+                    onClick={() => {
+                      setValdFas2(k);
+                      setFas2Fel("");
+                    }}
+                    className={cn(
+                      "flex w-full items-center justify-between gap-3 rounded-md border p-2.5 text-left text-xs transition-colors",
+                      valdFas2?.id === k.id
+                        ? "border-gold/60 bg-gold/[0.07]"
+                        : "border-border bg-card hover:bg-gold/[0.04]",
+                    )}
+                  >
+                    <span className="min-w-0">
+                      <span className="block truncate font-medium text-foreground">
+                        {k.namn ?? k.email}
+                      </span>
+                      {k.namn && (
+                        <span className="block truncate text-[11px] text-muted-foreground">
+                          {k.email}
+                        </span>
+                      )}
+                    </span>
+                    <span className="flex shrink-0 items-center gap-2">
+                      <span className="text-[11px] tabular-nums text-muted-foreground">
+                        XP {k.xp !== null ? k.xp.toLocaleString("sv-SE") : "—"}
+                      </span>
+                      <span
+                        className={cn(
+                          "rounded-full px-2 py-0.5 text-[10px] font-bold uppercase",
+                          NIVA_STIL[k.memberType] ?? NIVA_STIL.free,
+                        )}
+                      >
+                        {k.memberType}
+                      </span>
+                    </span>
+                  </button>
+                ))}
+                {!laddar && fas2Kandidater.length === 0 && (
+                  <p className="py-10 text-center text-sm text-muted-foreground">
+                    Inga medlemmar med nivå free eller fas2 matchar sökningen.
+                  </p>
+                )}
+                {laddar && (
+                  <p className="py-10 text-center text-sm text-muted-foreground">
+                    Hämtar medlemmar…
+                  </p>
+                )}
+              </div>
+            </ScrollArea>
+          </Card>
+
+          {/* Elev-kortet + admin-lösenord + verkställningsknapp */}
+          <Card className="h-fit border-gold/30 p-5">
+            <div className="flex items-center gap-2">
+              <GraduationCap className="h-4 w-4 text-gold" />
+              <h3 className="font-serif text-lg font-bold">Elev-kort</h3>
+            </div>
+
+            {!valdFas2 ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                Välj en medlem i listan för att se kortet och verkställa Fas 2.
+              </p>
+            ) : (
+              <div className="mt-4 space-y-3">
+                <div>
+                  <p className="font-serif text-lg font-bold">
+                    {valdFas2.namn ?? valdFas2.email}
+                  </p>
+                  {valdFas2.namn && (
+                    <p className="text-xs text-muted-foreground">{valdFas2.email}</p>
+                  )}
+                </div>
+                <dl className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      XP-snapshot
+                    </dt>
+                    <dd className="mt-0.5 tabular-nums">
+                      {valdFas2.xp !== null ? valdFas2.xp.toLocaleString("sv-SE") : "—"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Nivå
+                    </dt>
+                    <dd className="mt-0.5">
+                      <span
+                        className={cn(
+                          "rounded-full px-2 py-0.5 text-[10px] font-bold uppercase",
+                          NIVA_STIL[valdFas2.memberType] ?? NIVA_STIL.free,
+                        )}
+                      >
+                        {valdFas2.memberType}
+                      </span>
+                    </dd>
+                  </div>
+                </dl>
+
+                <div className="border-t border-gold/20 pt-3">
+                  <label className="block text-xs">
+                    <span className="mb-1 flex items-center gap-1 font-medium text-foreground">
+                      <KeyRound className="h-3 w-3 text-gold" /> Admin-lösenord
+                    </span>
+                    <Input
+                      type="password"
+                      value={adminLosenord}
+                      onChange={(e) => {
+                        setAdminLosenord(e.target.value);
+                        setFas2Fel("");
+                      }}
+                      placeholder="ADMIN_PASSWORD"
+                      className="h-9 text-xs"
+                      autoComplete="off"
+                    />
+                  </label>
+
+                  {valdFas2.memberType === "fas2" ? (
+                    <Button
+                      className="btn-marin mt-3 w-full min-h-[44px]"
+                      onClick={() => setFas2Bekrafta(true)}
+                      disabled={fas2Sysslar || !adminLosenord.trim()}
+                    >
+                      Återkalla
+                    </Button>
+                  ) : (
+                    <Button
+                      className="btn-guld-signatur mt-3 w-full min-h-[44px]"
+                      onClick={() => setFas2Bekrafta(true)}
+                      disabled={fas2Sysslar || !adminLosenord.trim()}
+                    >
+                      Ge Fas 2-åtkomst
+                    </Button>
+                  )}
+
+                  {!adminLosenord.trim() && (
+                    <p className="mt-2 text-[11px] text-muted-foreground">
+                      Ange admin-lösenordet (samma som inloggningen) för att låsa upp
+                      verkställningsknappen.
+                    </p>
+                  )}
+                  {fas2Fel && (
+                    <p className="mt-2 text-[11px] text-red-600 dark:text-red-400">{fas2Fel}</p>
+                  )}
+                </div>
+              </div>
+            )}
+          </Card>
+        </div>
+
+        {/* Bekräftelse-modal */}
+        <Dialog open={fas2Bekrafta} onOpenChange={setFas2Bekrafta}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle className="font-serif">
+                {valdFas2?.memberType === "fas2"
+                  ? "Återkalla Fas 2-åtkomst"
+                  : "Ge Fas 2-åtkomst"}
+              </DialogTitle>
+              <DialogDescription>
+                {valdFas2?.memberType === "fas2"
+                  ? `Återkalla Fas 2-åtkomst från ${
+                      valdFas2?.namn ?? valdFas2?.email
+                    }? De förlorar omedelbart tillgång till 26 låsta kurser, portföljens vågor och avancerad analys — nivån återgår till free.`
+                  : `Ge ${
+                      valdFas2?.namn ?? valdFas2?.email
+                    } Fas 2-åtkomst? De får omedelbart tillgång till 26 låsta kurser, portföljens vågor och avancerad analys.`}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="gap-2 sm:gap-0">
+              <Button
+                variant="outline"
+                onClick={() => setFas2Bekrafta(false)}
+                disabled={fas2Sysslar}
+              >
+                Avbryt
+              </Button>
+              <Button
+                className={valdFas2?.memberType === "fas2" ? "btn-marin" : "btn-guld-signatur"}
+                onClick={verkstallFas2}
+                disabled={fas2Sysslar}
+              >
+                {fas2Sysslar
+                  ? "Verkställer…"
+                  : valdFas2?.memberType === "fas2"
+                    ? "Återkalla"
+                    : "Ge Fas 2-åtkomst"}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </section>
+
+      {/* ═══ 4. RAPPORTMALLAR + WHITE-LABEL ═══ */}
       <section aria-labelledby="pro-admin-mallar">
         <div>
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-guld-djup">
-            Sektion 3 · Rapportbyggaren
+            Sektion 4 · Rapportbyggaren
           </p>
           <h2 id="pro-admin-mallar" className="mt-1 font-serif text-2xl font-bold">
             Rapportmallar
@@ -628,11 +980,11 @@ export function ProAdminPanel() {
         </Card>
       </section>
 
-      {/* ═══ 4. ANALYS-LOGGEN ═══ */}
+      {/* ═══ 5. ANALYS-LOGGEN ═══ */}
       <section aria-labelledby="pro-admin-logg">
         <div>
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-guld-djup">
-            Sektion 4 · Motoranrop
+            Sektion 5 · Motoranrop
           </p>
           <h2 id="pro-admin-logg" className="mt-1 font-serif text-2xl font-bold">
             Analysloggen

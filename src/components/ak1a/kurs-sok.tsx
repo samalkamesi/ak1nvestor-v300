@@ -1,11 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { kraverFas2, harFas2Access, arAdmin } from "@/lib/kurs-access";
 
 /**
  * KURSSÖK — sök + kategorifilter för kursbiblioteket (307 kurser, Uppdaterad 2026-09-01).
  * Samma DNA som övriga sajten: kategorisektioner, guldkantade kort.
+ * Fas 2-kurser visas alltid (titel + beskrivning) men låsas med 🔒 → /fas2-ansok
+ * för de som ännu inte har Fas 2-medlemskap (inbjudan vidare, aldrig ett stopp).
  */
 
 export type KursKort = {
@@ -22,6 +25,12 @@ export type KursKort = {
 export function KursSok({ kurser }: { kurser: KursKort[] }) {
   const [sok, setSok] = useState("");
   const [kat, setKat] = useState("alla");
+  const [fas2Access, setFas2Access] = useState(false);
+
+  // Fas 2-åtkomst avgörs lokalt efter montering (SSR renderar låst — säkrast default)
+  useEffect(() => {
+    setFas2Access(harFas2Access() || arAdmin());
+  }, []);
 
   const kategorier = useMemo(() => {
     const m = new Map<string, number>();
@@ -47,6 +56,9 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
     }
     return [...m.entries()];
   }, [filtrerade]);
+
+  // Visas info-raden? — bara när minst en Fas 2-kurs finns i vyn
+  const fas2Synliga = useMemo(() => filtrerade.some((c) => kraverFas2(c.slug)), [filtrerade]);
 
   return (
     <div>
@@ -87,6 +99,18 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
         </span>
       </div>
 
+      {/* Vad är Fas 2? — info-rad som förklarar lås-markeringen (inbjudan, aldrig stopp) */}
+      {fas2Synliga && (
+        <p className="mb-6 flex flex-wrap items-center gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
+          <span aria-hidden>🔒</span>
+          <span className="font-bold text-gold">Vad är Fas 2?</span>
+          <span>26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap.</span>
+          <Link href="/fas2-ansok" className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
+            Ansök →
+          </Link>
+        </p>
+      )}
+
       {/* Kategorisektioner */}
       <div className="space-y-10">
         {grupperade.map(([category, list]) => (
@@ -98,23 +122,50 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
               </span>
             </h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((c) => (
-                <li key={c.slug}>
-                  <Link
-                    href={`/kurser/${c.slug}`}
-                    className="block rounded-lg border border-gold/20 bg-card p-4 transition-all hover:border-gold/50 hover:shadow-lg"
-                  >
-                    <span className="font-serif font-semibold">{c.title}</span>
-                    {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen */}
-                    <span className="mt-1 block text-xs tabular-nums text-muted-foreground">
-                      {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
-                    </span>
-                    <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">
-                      {c.learn}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              {list.map((c) => {
+                // Fas 2-kurs utan åtkomst: kortet visas (titel + beskrivning) men
+                // klick leder till ansökan — inbjudan vidare, aldrig ett stopp.
+                const fas2 = kraverFas2(c.slug);
+                const last = fas2 && !fas2Access;
+                return (
+                  <li key={c.slug}>
+                    <Link
+                      href={last ? "/fas2-ansok" : `/kurser/${c.slug}`}
+                      title={last ? "Fas 2-kurs — öppnas med Fas 2-medlemskap" : undefined}
+                      className={`block rounded-lg border p-4 transition-all ${
+                        last
+                          ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
+                          : "border-gold/20 bg-card hover:border-gold/50 hover:shadow-lg"
+                      }`}
+                    >
+                      <span className="flex items-start justify-between gap-2">
+                        <span className="font-serif font-semibold">{c.title}</span>
+                        {fas2 && (
+                          <span
+                            className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                              last ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]" : "bg-gold/15 text-gold"
+                            }`}
+                          >
+                            {last ? "🔒 Fas 2" : "Fas 2"}
+                          </span>
+                        )}
+                      </span>
+                      {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen */}
+                      <span className="mt-1 block text-xs tabular-nums text-muted-foreground">
+                        {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
+                      </span>
+                      <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">
+                        {c.learn}
+                      </span>
+                      {last && (
+                        <span className="mt-2 block text-[10px] font-semibold text-gold">
+                          Öppnas i Fas 2 — ansök för att komma vidare →
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         ))}

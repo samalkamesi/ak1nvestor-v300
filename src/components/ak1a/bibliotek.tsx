@@ -1,12 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Bok } from "@/lib/content";
+import { kraverFas2, harFas2Access, arAdmin } from "@/lib/kurs-access";
 
 /**
  * BIBLIOTEKET — AK1A-bokkanon mot AKM1/AK1TS (antalet redovisas dynamiskt via bocker.length).
  * Sök + filtrera på kategori/tier/nivå/AKM1-variabel. Tier 1 = full BOKMASTER.
+ * Böcker vars BOKMASTER-kurs kräver Fas 2 visas med 🔒 — titel och innehåll
+ * förblir synliga, klick leder till /fas2-ansok (inbjudan, aldrig ett stopp).
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, primärknapp i marin med guldstext.
  */
@@ -23,12 +26,34 @@ const KATEGORIER: Record<string, { etikett: string; ikon: string }> = {
 // Kurser som redan levererar motsvarande bok
 const KURS_MAP: Record<string, string> = {
   "The Intelligent Investor": "the-intelligent-investor",
-  "One Up on Wall Street": "mina-basta-investeringar",
+  "One Up on Wall Street": "mina-basta-investringar",
   "Zero to One": "zero-to-one",
   "Blue Ocean Strategy": "blue-ocean-strategy",
   "Security Analysis": "security-analysis",
   "Technical Analysis of the Financial Markets": "technical-analysis-financial-markets",
   "A Random Walk Down Wall Street": "a-random-walk-down-wall-street",
+  // Fas 2-kanon — avancerad teknisk analys, vågor och trader-psykologi
+  // (slugs matchar FAS2_KURSER i src/lib/kurs-access.ts)
+  "Elliott Wave Principle": "elliott-wave-principle",
+  "Technical Analysis of Stock Trends": "technical-analysis-of-stock-trends",
+  "Japanese Candlestick Charting Techniques": "japanese-candlestick-charting",
+  "Encyclopedia of Chart Patterns": "encyclopedia-of-chart-patterns",
+  "The Visual Investor": "the-visual-investor",
+  "Intermarket Analysis": "intermarket-analysis",
+  "Martin Pring on Market Momentum": "martin-pring-on-market-momentum",
+  "The Master Swing Trader": "the-master-swing-trader",
+  "Fibonacci Applications and Strategies for Traders": "fibonacci-applications",
+  "Come Into My Trading Room": "come-into-my-trading-room",
+  "Teknisk analys med Johnny Torssell": "teknisk-analys-med-johnny-torssell",
+  "Bollinger on Bollinger Bands": "bollinger-on-bollinger-bands",
+  "The New Science of Technical Analysis": "the-new-science-of-technical-analysis",
+  "Way of the Turtle": "way-of-the-turtle",
+  "The Complete TurtleTrader": "the-complete-turtletrader",
+  "The Trend Following Bible": "the-trend-following-bible",
+  "Trading in the Zone": "trading-in-the-zone",
+  "The Hour Between Dog and Wolf": "the-hour-between-dog-and-wolf",
+  "Market Mind Games": "market-mind-games",
+  "Your Money and Your Brain": "your-money-and-your-brain",
 };
 
 export function Bibliotek({ bocker }: { bocker: Bok[] }) {
@@ -36,6 +61,12 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
   const [kat, setKat] = useState("alla");
   const [tier, setTier] = useState(0); // 0 = alla
   const [akFilter, setAkFilter] = useState("alla");
+  const [fas2Access, setFas2Access] = useState(false);
+
+  // Fas 2-åtkomst avgörs lokalt efter montering (SSR renderar låst — säkrast default)
+  useEffect(() => {
+    setFas2Access(harFas2Access() || arAdmin());
+  }, []);
 
   const akVariabler = useMemo(() => {
     const m = new Set<string>();
@@ -85,6 +116,18 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
           fundamentalvariablerna) och <strong>AK1TS</strong> (5 tidshorisonter × 5 teorier × 4
           dimensioner). Böcker med <span className="font-bold text-gold">◆ Tier 1</span> byggs som
           kompletta BOKMASTER-kurser — kapitel för kapitel.
+        </p>
+        {/* Vad är Fas 2? — förklarar 🔒-markeringen på de avancerade kanonböckerna */}
+        <p className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
+          <span aria-hidden>🔒</span>
+          <span className="font-bold text-gold">Vad är Fas 2?</span>
+          <span>26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap.</span>
+          <Link
+            href="/fas2-ansok"
+            className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
+          >
+            Ansök →
+          </Link>
         </p>
       </div>
 
@@ -148,10 +191,15 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
         {filtrerade.map((b) => {
           const k = KATEGORIER[b.kat] || { etikett: b.kat, ikon: "📕" };
           const kursSlug = b.status === "kurs" ? KURS_MAP[b.titel] : undefined;
+          // Fas 2-bok utan åtkomst: allt innehåll syns, men kurslänken blir en ansökan
+          const fas2 = kursSlug ? kraverFas2(kursSlug) : false;
+          const last = fas2 && !fas2Access;
           return (
             <div
               key={b.id}
-              className="flex flex-col rounded-xl border border-gold/25 bg-card p-5 transition hover:border-gold/50 hover:shadow-md"
+              className={`flex flex-col rounded-xl border bg-card p-5 transition hover:shadow-md ${
+                last ? "border-gold/40 hover:border-gold/60" : "border-gold/25 hover:border-gold/50"
+              }`}
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
@@ -160,14 +208,27 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
                     {b.author} · {b.year}
                   </p>
                 </div>
-                {/* Tier 1-markering — marin chip med guldstext (ej guldbakgrund) */}
-                <span
-                  className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tabular-nums ${
-                    b.tier === 1 ? "bg-[#0E1B2E] text-[#E8C766]" : "bg-secondary text-muted-foreground"
-                  }`}
-                >
-                  {b.tier === 1 ? "◆ Tier 1" : `Tier ${b.tier}`}
-                </span>
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  {/* Tier 1-markering — marin chip med guldstext (ej guldbakgrund) */}
+                  <span
+                    className={`rounded-full px-2 py-0.5 text-[10px] font-bold tabular-nums ${
+                      b.tier === 1 ? "bg-[#0E1B2E] text-[#E8C766]" : "bg-secondary text-muted-foreground"
+                    }`}
+                  >
+                    {b.tier === 1 ? "◆ Tier 1" : `Tier ${b.tier}`}
+                  </span>
+                  {/* Fas 2-markering — lås-badge på kanonböcker som öppnas med medlemskap */}
+                  {fas2 && (
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                        last ? "bg-gold/15 text-gold" : "bg-gold/10 text-gold/80"
+                      }`}
+                      title="26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap"
+                    >
+                      {last ? "🔒 Fas 2" : "Fas 2"}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <p className="mt-2 text-xs leading-relaxed text-foreground/85">{b.why}</p>
@@ -198,8 +259,16 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
               </div>
 
               <div className="mt-auto pt-3">
-                {/* Primär action — marin knapp med guldstext */}
-                {kursSlug ? (
+                {/* Primär action — marin knapp med guldstext. Fas 2-låst: ansök, inte kursen */}
+                {kursSlug && last ? (
+                  <Link
+                    href="/fas2-ansok"
+                    className="inline-flex items-center gap-1 rounded-lg bg-[#0E1B2E] px-3 py-1.5 text-[11px] font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"
+                    title="26 avancerade kurser i teknisk analys och vågor — öppnas med Fas 2-medlemskap"
+                  >
+                    🔒 Öppnas i Fas 2 — ansök →
+                  </Link>
+                ) : kursSlug ? (
                   <Link
                     href={`/kurser/${kursSlug}`}
                     className="inline-flex items-center gap-1 rounded-lg bg-[#0E1B2E] px-3 py-1.5 text-[11px] font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"

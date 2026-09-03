@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { addXP, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKursKlar } from "@/lib/member-local";
 import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
@@ -39,6 +39,19 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
   const [stjarnor, setStjarnor] = useState(0);
   const [visaQuiz, setVisaQuiz] = useState(false);
   const [nivaUpp, setNivaUpp] = useState<number | null>(null);
+  // Banner-plats i flödet — kapitelbyten scrollar hit (banner + kapitelrubrik
+  // i sikte), aldrig till sidtoppen där 3 000 px innehåll skiljer (kundrapport
+  // 2026-09-03: bannerns kant skar genom rubriktexten).
+  const startRef = useRef<HTMLDivElement>(null);
+
+  const tillKapitelstart = () => {
+    // getBoundingClientRect + scrollY = dokumentposition (offsetTop mäter bara
+    // mot närmaste positionerade förfader — wrappern — och ger fel värde här).
+    const el = startRef.current;
+    if (!el) return;
+    const dok = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: Math.max(0, dok - 4), behavior: "smooth" });
+  };
 
   // Nivå-upp-firande försvinner efter 4 s av dopamin
   useEffect(() => {
@@ -107,7 +120,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
     if (steg < total - 1) {
       setSteg(steg + 1);
       setVisaQuiz(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      tillKapitelstart();
     }
   };
 
@@ -134,8 +147,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
         </div>
       )}
       {/* Progress-topprad — institutionellt marin bandhuvud med guldtext (bank-harmoni).
-          top-[57px] = sidhuvudets 56px + 1px ram — annars målar bandet över navigationen. */}
-      <div className="marin-panel sticky top-[57px] z-30 border-b border-gold/30 shadow-md">
+          top-0: kurs-sidans sidhuvud är position:relative (scrollar bort) — bandet
+          fäster därför i kanteleläget utan död remsa ovanför (kundrapport 2026-09-03). */}
+      <div ref={startRef} className="marin-panel sticky top-0 z-30 border-b border-gold/30 shadow-md">
         <div className="mx-auto flex h-[52px] max-w-3xl items-center gap-4 px-4">
           <svg viewBox="0 0 44 44" className="h-10 w-10 shrink-0">
             <circle cx="22" cy="22" r="18" fill="none" stroke="#E8C766" strokeWidth="3" opacity="0.15" />
@@ -155,7 +169,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
               {kurs.chapters.map((ch, i) => (
                 <button
                   key={ch.num}
-                  onClick={() => { setSteg(i); setVisaQuiz(false); }}
+                  onClick={() => { setSteg(i); setVisaQuiz(false); tillKapitelstart(); }}
                   className="flex flex-1 items-center py-2.5"
                   aria-label={`Kapitel ${ch.num}`}
                   title={ch.title}
@@ -178,8 +192,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
         </div>
       </div>
 
-      {/* Aktuellt kapitel */}
-      <div className="mx-auto max-w-3xl px-4 py-8">
+      {/* Aktuellt kapitel — scroll-mt så #ankare och kapitelbyten landar med
+          hela rubriken UNDER bandet (53px + luft), aldrig bakom dess kant. */}
+      <div id="kapitel-start" className="mx-auto max-w-3xl scroll-mt-[64px] px-4 pb-8 pt-10">
         <div key={steg} className="animate-[fadeIn_0.4s_ease-out]">
           {/* Kapitel-rubrik */}
           <div className="flex items-center gap-4">
@@ -311,7 +326,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           {/* Navigation — primär signatur: guld-knapp på papper; sekundär: diskret guldkant */}
           <div className="mt-10 flex items-center justify-between">
             <button
-              onClick={() => { if (steg > 0) { setSteg(steg - 1); setVisaQuiz(false); window.scrollTo({top:0,behavior:"smooth"}); } }}
+              onClick={() => { if (steg > 0) { setSteg(steg - 1); setVisaQuiz(false); tillKapitelstart(); } }}
               disabled={steg === 0}
               className="min-h-[44px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:bg-gold/5 disabled:opacity-30"
             >

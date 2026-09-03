@@ -415,7 +415,7 @@ const ATTACKER: AttackFraga[] = [
     fraga:
       "Tre emissioner på fem år, var och en med löftet 'nu är vi framme vid lönsamhet'. Vilken siffra i rapporten avslöjar om löftet håller den här gången — och hur många gånger till tänker du finansiera resan?",
     kontext:
-      "Kapitalförbränning + upprepade emissioner = ägarna betalar för en resa utan garanterad destination.",
+      "Svag kassatäckning + upprepade emissioner = ägarna betalar för en resa utan garanterad destination.",
   },
 
   // ── Vågor & AK1TS ──────────────────────────────────────────────────────

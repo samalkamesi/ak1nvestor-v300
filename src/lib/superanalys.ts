@@ -258,7 +258,7 @@ export const AKM1_VARIABLER: Akm1Variabel[] = [
   },
   {
     id: "V19",
-    namn: "Kapitalförbränning & Emission-risk",
+    namn: "Kassatäckning — nyemissionsrisk",
     kategori: "risk",
     formel: "Kassaflöde från löpande verksamheten ÷ kassabehållning (runway)",
     hjalp:

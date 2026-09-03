@@ -58,7 +58,7 @@ const PERSPECTIVES: Record<string, { lynch: string; graham: string; ak1: string 
   V11: {
     lynch: "Lynch kontrollerade alltid likviditeten — 'Ett bolag kan vara lönsamt på papperet men dö om det inte kan betala sina räkningar.' Han föredrog kvickkvot > 1.5. Lynch varnade för bolag med kvickkvot < 1.0: 'De lever farligt nära kanten.'",
     graham: "Graham krävde kvickkvot > 1.0 för 'defensive investor'. Han menade att likviditet är den första försvarslinjen mot konkurs. Graham's regel: 'Ett bolag med kvickkvot < 0.5 är en konkurs-väntar-på-att-ske.' Han kombinerade likviditet med skuldsättning för att bedöma finansiell stabilitet.",
-    ak1: "AKM1 vikt 5%. Likviditet bedöms på två nivåer: (1) kvickkvot — kan bolaget betala kortfristiga skulder, (2) kassa-bränning — hur länge räcker kassan vid negativt kassaflöde. AKM1 kombinerar V11 med V19 (kapitalförbränning) — låg likviditet + hög bränning = runway under 12 månader = akut risk.",
+    ak1: "AKM1 vikt 5%. Likviditet bedöms på två nivåer: (1) kvickkvot — kan bolaget betala kortfristiga skulder, (2) kassa-bränning — hur länge räcker kassan vid negativt kassaflöde. AKM1 kombinerar V11 med V19 (kassatäckning — nyemissionsrisk) — låg likviditet + hög bränning = runway under 12 månader = akut risk.",
   },
   V12: {
     lynch: "Lynch älskade bolag med 'predictable earnings' — stabil intäktsbas. Han menade att förutsägbarhet är värd en premie. 'Ett bolag där du vet vad nästa kvartal ger är värt mer än ett där du gissar.' Lynch föredrog konsumentvaror och läkemedel (stabila) över cykliska (volatila).",
@@ -93,7 +93,7 @@ const PERSPECTIVES: Record<string, { lynch: string; graham: string; ak1: string 
   V18: {
     lynch: "Lynch såg regulatoriska katalysatorer som oförutsägbara. Han undvek bolag där reglering var huvudtesen. 'Du kan inte förutspå vad politiker gör — investera inte baserat på det.' Lynch föredrog bolag där reglering var en tailwind, inte en förutsättning.",
     graham: "Graham var extremt skeptisk till regulatorisk risk. Han justerade ner värdet av bolag i högreglerade branscher (banker, försäkring, telekom). Graham menade att reglering kan förstöra en affärsmodell över en natt. Han föredrog bolag i lägrereglerade branscher.",
-    ak1: "AKM1 vikt 7%. Regulatorisk risk bedöms på två axlar: (1) negativ risk — kommande reglering som kan skada (AML, konkurrensrätt, miljökrav), (2) positiv katalysator — kommande godkännanden (FDA, EMA, ESMA). AKM1 kombinerar V18 med V19 (kapitalförbränning) — regulatorisk risk + hög bränning = dubbel risk. Vi varnar för 'regulatorisk blackjack' — bolag vars värde beror på ett enda godkännande.",
+    ak1: "AKM1 vikt 7%. Regulatorisk risk bedöms på två axlar: (1) negativ risk — kommande reglering som kan skada (AML, konkurrensrätt, miljökrav), (2) positiv katalysator — kommande godkännanden (FDA, EMA, ESMA). AKM1 kombinerar V18 med V19 (kassatäckning — nyemissionsrisk) — regulatorisk risk + hög bränning = dubbel risk. Vi varnar för 'regulatorisk blackjack' — bolag vars värde beror på ett enda godkännande.",
   },
   V19: {
     lynch: "Lynch undvek bolag som brände pengar. 'Om ett bolag behöver emissionera vart tredje år, äger du inte bolaget — bolaget äger dig.' Han föredrog bolag med positivt kassaflöde som kunde finansiera sin egen tillväxt. Lynchs regel: 'Ett bolag som inte kan generera kassa från sin verksamhet är en teori, inte en investering.'",

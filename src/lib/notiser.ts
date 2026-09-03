@@ -24,6 +24,7 @@
 
 import { lasStreak, niva } from "./member-local";
 import { uppmuntran } from "./pedagogik";
+import { ekosystemPuls, omtankeTillaten } from "./omtanke-motor";
 
 // ── Typer ────────────────────────────────────────────────────────────────────
 
@@ -33,7 +34,7 @@ export type Notis = {
   rubrik: string;
   text: string;
   ikon: string;
-  typ: "streak" | "pass" | "fas2" | "vagkarta" | "nyhet" | "info";
+  typ: "streak" | "pass" | "fas2" | "vagkarta" | "nyhet" | "omtanje" | "info";
   lank?: string;
   skapad: number;
   last?: boolean;
@@ -234,7 +235,7 @@ export function raknaOlasta(): number {
  * Regler (alla med pedagogik-rösten — tips, aldrig tvingan):
  *   streak   — senaste aktivitet > 1 dag sedan → streaken väntar
  *   pass     — dagens quiz-lås olåst → Dagens Pass väntar med dagens aktie
- *   fas2     — nivå ≥ 25 → redo för Fas 2 (26 avancerade kurser)
+ *   fas2     — nivå ≥ 25 → redo för Fas 2 (18 fundamentala mästarverk)
  *   vagkarta — dagens autonom vågmätning finns → sammanfattningen är klar
  *   nyhet    — "ak1a-nyheter-top" (från Senaste nytt/Nyhetscentralen) har en
  *              nyhet från idag med paverkan ≥ 70 → "Värdefull nyhet" väntar
@@ -284,7 +285,7 @@ export function genereraAutomatiskaNotiser(underlag?: NotisUnderlag | null): Not
       typ: "fas2",
       ikon: "🎓",
       rubrik: "Nivå 25 nådd",
-      text: "Du är redo för Fas 2 — 26 avancerade kurser väntar.",
+      text: "Du är redo för Fas 2 — 18 fundamentala mästarverk väntar.",
       lank: "/fas2-ansok",
     });
   }
@@ -313,6 +314,28 @@ export function genereraAutomatiskaNotiser(underlag?: NotisUnderlag | null): Not
       text: nyhetsTopp.rubrik,
       lank: "/nyheter",
     });
+  }
+
+  // 6 · OMTANKE — ekosystemets nervsystem (omtanke-motor.ts) härleder
+  //     klientens läge FÖRE frågan: oro i chatten, fastnad, återkomst,
+  //     ny utan start. Max en per 24 h (motorns egen cooldown + dagsregistret).
+  //     Kärnan i kunddirektivet: "veta vad klienten vill innan den tänker".
+  try {
+    if (omtankeTillaten()) {
+      const puls = ekosystemPuls();
+      if (puls.omtanke) {
+        const o = puls.omtanke;
+        kandidater.push({
+          typ: "omtanje",
+          ikon: "🤍",
+          rubrik: "Vi har tänkt på dig",
+          text: o.notisText,
+          lank: o.lank,
+        });
+      }
+    }
+  } catch {
+    /* omtanke-lagret får aldrig bryta notiserna */
   }
 
   // DUBBEL-SKYDD: dags-registret + redan fästa notiser av samma typ idag.

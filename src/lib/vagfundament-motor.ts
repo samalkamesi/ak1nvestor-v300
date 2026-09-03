@@ -54,8 +54,8 @@ const VARIABLER: [string, string, string][] = [
   ["V16", "Produktlanseringar", "katalysator"],
   ["V17", "Avtal & Partnerskap", "katalysator"],
   ["V18", "Regulatoriska katalysatorer", "katalysator"],
-  ["V19", "Kapitalförbrukning & Emission-risk", "risk"],
-  ["V20", "Återköp", "risk"],
+  ["V19", "Kassatäckning — nyemissionsrisk", "risk"],
+  ["V20", "Återköp av egna aktier", "risk"],
 ];
 const V_NAMN: Record<string, string> = Object.fromEntries(VARIABLER.map((v) => [v[0], v[1]]));
 const V_KAT: Record<string, string> = Object.fromEntries(VARIABLER.map((v) => [v[0], v[2]]));

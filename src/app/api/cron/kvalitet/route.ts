@@ -69,7 +69,12 @@ export async function GET(req: NextRequest) {
     if (typeof ut === "string" && tolkaStdout(ut)) {
       kalla = "subprocess (exit " + String((e as { code?: number }).code ?? "?") + ")";
     } else {
-      feltext = e instanceof Error ? e.message.slice(0, 300) : String(e);
+      // Sanera feltexten innan den förs vidare till organ-event/500-svar:
+      // inteckna aldrig lokala absoluta sökvägar (kan finnas i spawn-fel).
+      const raa = e instanceof Error ? e.message.slice(0, 300) : String(e);
+      feltext = raa
+        .replace(/[A-Za-z]:\\[^\s"'`]*/g, "[sökväg]")
+        .replace(/(?:\/(?:home|Users|root)\/[^\s"'`]+)/g, "[sökväg]");
     }
   }
 
@@ -92,33 +97,45 @@ export async function GET(req: NextRequest) {
 
   // 3) publicera OrganEvent — nervsystemet ska aldrig döda vakten (fail-safe),
   //    men en vakt som inte kan köras är i sig ett fel → RÖD-puls.
+  //    Feltexten stannar i serverloggen — utåt går enbart statisk text
+  //    (ingen dataflöde från fil/subprocess till svar eller databas).
   const resultat: Sammanfattning | null = sammanfattning;
   if (!resultat) {
+    console.error("[cron/kvalitet] kunde inte köras:", feltext);
     await publiceraOrganEvent({
       source: "organ/kvalitetsvakt",
       verb: "rapport",
-      matt: { fel: -1, manuella: -1, status: "RÖD", notering: "kvalitetsvakten kunde inte köras: " + feltext },
+      matt: { fel: -1, manuella: -1, status: "RÖD", notering: "kvalitetsvakten kunde inte köras — se serverloggen" },
     });
     return NextResponse.json(
-      { error: "kvalitetsvakten kunde inte köras och ingen rapport finns", detalj: feltext },
+      { error: "kvalitetsvakten kunde inte köras och ingen rapport finns" },
       { status: 500 },
     );
   }
 
+  // Kanonisering vid systemgränsen: endast literalaccepterade värden passerar
+  // (resultat kommer från rapportfil/subprocess och renas här till fast domän).
+  const statusKanon =
+    resultat.status === "RÖD" ? "RÖD" : resultat.status === "GUL" ? "GUL" : "GRÖN";
+  const felKanon = Number.isFinite(resultat.fel) ? resultat.fel : -1;
+  const manuellaKanon = Number.isFinite(resultat.manuella) ? resultat.manuella : -1;
+  const kallaKanon =
+    kalla === "subprocess" ? "subprocess" : kalla === "rapportfil" ? "rapportfil" : "tolkningen";
+
   await publiceraOrganEvent({
     source: "organ/kvalitetsvakt",
     verb: "rapport",
-    matt: { fel: resultat.fel, manuella: resultat.manuella, status: resultat.status, kalla },
+    matt: { fel: felKanon, manuella: manuellaKanon, status: statusKanon, kalla: kallaKanon },
   });
 
   // 4) signal-bussen — RÖD status (> 9 fel) är en varning till admin: se
   //    rapporten och rätta (fail-safe: publiceraSignal kastar aldrig).
-  if (resultat.fel > 9) {
+  if (felKanon > 9) {
     await publiceraSignal({
       kalla: "kvalitetsvakt",
       typ: "varning",
       rubrik: "Kvalitetsstatus RÖD",
-      text: `${resultat.fel} fel hittade — se rapport`,
+      text: `${felKanon} fel hittade — se rapport`,
       ikon: "⚠️",
       mottagare: "admin",
       lank: "/admin?kvalitet=true",
@@ -127,8 +144,10 @@ export async function GET(req: NextRequest) {
 
   return NextResponse.json({
     ok: true,
-    ...resultat,
-    kalla,
+    fel: felKanon,
+    manuella: manuellaKanon,
+    status: statusKanon,
+    kalla: kallaKanon,
     disclaimer: "Pedagogisk analys — inte investeringsråd",
   });
 }

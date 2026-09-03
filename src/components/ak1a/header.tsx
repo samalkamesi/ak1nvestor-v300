@@ -66,7 +66,7 @@ const SEKTIONS_BESKRIVNINGAR: Record<string, string> = {
   prec: "PREC-analysen, sektion för sektion",
   analyser: "Fullständiga bolagsanalyser",
   aktier: "Bevakning & aktieuniversum",
-  kurser: "300+ moduler · sök & filter", // Uppdaterad 2026-09-01: 307 kurser, kurssektionen vidarebefordras till /kurser
+  kurser: "300+ moduler · sök & filter", // kurssektionen vidarebefordras till /kurser
   labb: "Case + faror + historia",
   "om-oss": "Meta-system (organ + visioner)",
   portal: "Logga in · Min portal",

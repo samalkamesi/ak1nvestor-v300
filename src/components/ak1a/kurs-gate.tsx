@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { lasMedlem, lasXP, lasStjarnor, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
+import { SIFFROR } from "@/lib/siffror";
 
 /**
  * Kursportall — kapitel 1–2 är smakprov för alla (SEO + lockbete);
@@ -43,7 +44,7 @@ export function KursGate({
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Skapa ett kostnadsfritt konto så låser du upp <strong>hela "{titel}"</strong> —
-            och alla övriga 307 kurserna, för alltid. Fundamentalanalys är en rättighet. {/* Uppdaterad 2026-09-01: 307 kurser */}
+            och alla övriga {SIFFROR.kurser} kurserna, för alltid. Fundamentalanalys är en rättighet.
           </p>
           <Link
             href="/logga-in"

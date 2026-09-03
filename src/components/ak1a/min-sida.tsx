@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SIFFROR } from "@/lib/siffror";
 import { useEffect, useState } from "react";
 import {
   lasKlaraKurser,
@@ -214,7 +215,7 @@ export function MinSida() {
   // ── VÄLKOMST-LÄGE: ej inloggad ────────────────────────────────────────────
   if (!medlem) {
     const VANTAR = [
-      { ikon: "🎓", titel: "307 kurser", text: "Från AKM1 och vågläran till hela bokkanon — kapitel för kapitel." }, // Uppdaterad 2026-09-01: 307 kurser i deep-courses.json
+      { ikon: "🎓", titel: `${SIFFROR.kurser} kurser`, text: "Från AKM1 och vågläran till hela bokkanon — kapitel för kapitel." }, // ur siffror.ts i deep-courses.json
       { ikon: "🔥", titel: "XP, nivåer och streak", text: "Varje quiz, kurs och repetition räknas. Nivå 1–100 väntar." },
       { ikon: "🃏", titel: "140 flashcards med SM-2", text: "Glömskekurvan arbetar åt dig — repetition när du behöver den." }, // Uppdaterad 2026-09-01: 140 kort
       { ikon: "🎖️", titel: "29 badges", text: "Meriter att förtjäna — från första steget till hundraguldet." }, // Uppdaterad 2026-09-01: 29 badges

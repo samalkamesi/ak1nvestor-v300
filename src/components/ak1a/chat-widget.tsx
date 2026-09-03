@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback, type TouchEvent } from "react
 import { usePathname, useRouter } from "next/navigation";
 import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP, lasStreak } from "@/lib/member-local";
 import { geBadge } from "@/lib/badges";
+import { SIFFROR } from "@/lib/siffror";
 import {
   forfallnaKort,
   bedomKort,
@@ -205,12 +206,12 @@ const SID_NAMN: Record<SidTyp, string> = {
  * vi tipsar, vi dömer aldrig).
  */
 function sidKontextMening(ctx: elevContext): string {
-  const klaraProcent = Math.round((ctx.klaraKurser / 324) * 100); // 324 kurser i deep-courses.json
+  const klaraProcent = Math.round((ctx.klaraKurser / SIFFROR.kurser) * 100); // ur guldkällan
   switch (ctx.sidTyp) {
     case "kurs":
       return `Jag ser att du läser kursen ${ctx.kursTitel ? `"${ctx.kursTitel}"` : ""} kapitel för kapitel — vill du testa dig med quiz:et (+10 XP per rätt svar) eller gå vidare till nästa steg?`;
     case "kurslista":
-      return `Jag ser att du står i kursbiblioteket (324 kurser) — vill du ha ett personligt tips på rätt kurs för just dig?`;
+      return `Jag ser att du står i kursbiblioteket (${SIFFROR.kurser} kurser) — vill du ha ett personligt tips på rätt kurs för just dig?`;
     case "analys":
       return `Jag ser att du läser en analys — vill du lära dig verifiera siffrorna själv i kalkylatorn (AKM1: 20 variabler)?`;
     case "analyslista":
@@ -254,7 +255,7 @@ function sidKontextMening(ctx: elevContext): string {
     case "manifest":
       return `Jag ser att du läser manifestet — labbets löften om ärlighet, gratis kunskap och välfärd. Vill du se löftena i praktiken?`;
     case "bibliotek":
-      return `Jag ser att du står i biblioteket — bokkanonen + 78 BOKMASTER-böcker kapitel för kapitel. Vill du ha en läsväg?`;
+      return `Jag ser att du står i biblioteket — bokkanonen + ${SIFFROR.bokmaster} BOKMASTER-böcker kapitel för kapitel. Vill du ha en läsväg?`;
     case "certifikat":
       return `Jag ser att du tittar på ditt certifikat — betyget (A–D) styrs av nivå, XP och klarade kurser, och uppdateras live. Vill du höja det?`;
     case "superanalys":
@@ -410,7 +411,7 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
       break;
     case "bibliotek":
       forslag.push(
-        { text: "BOKMASTER-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "78 böcker kapitel för kapitel" },
+        { text: "BOKMASTER-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: `${SIFFROR.bokmaster} böcker kapitel för kapitel` },
         { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Börja med grunden" },
       );
       break;

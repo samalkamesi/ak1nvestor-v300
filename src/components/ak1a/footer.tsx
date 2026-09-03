@@ -142,7 +142,7 @@ export function Footer() {
           <div>
             <span className="font-semibold text-foreground">KURSER</span>
             <br />
-            300+ moduler i 27 kategorier {/* Uppdaterad 2026-09-01: 307 kurser · 27 kategorier i deep-courses.json */}
+            300+ moduler i 27 kategorier {/* ur public/deep-courses.json via siffror.ts */}
           </div>
           <div>
             <span className="font-semibold text-foreground">ANALYSER</span>
@@ -155,7 +155,7 @@ export function Footer() {
         <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-6 text-xs">
           <div className="flex items-center gap-2">
             <HonestyTag kind="matt" />
-            <span>300+ kurser · 99 sidor per analys</span> {/* Uppdaterad 2026-09-01: 307 kurser */}
+            <span>300+ kurser · 99 sidor per analys</span>
           </div>
           <div className="flex items-center gap-2">
             <HonestyTag kind="metodmal" />

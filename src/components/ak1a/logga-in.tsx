@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { lasMedlem, sparaMedlem, loggaUt, niva, lasXP, lasStjarnor } from "@/lib/member-local";
+import { SIFFROR } from "@/lib/siffror";
 
 /** localStorage-nyckel för spårat samtycke till villkor + integritetspolicy. */
 const SAMTYCKE_NYCKEL = "ak1a-villkors-samtycke";
@@ -72,7 +73,7 @@ export function LoggaIn() {
         sparaSamtycke();
         setStatus(
           data.isNew
-            ? `Välkommen till AK1A, ${data.member.name || email}! Ditt gratis-konto är skapat — alla 307 kurser är upplåsta.` // Uppdaterad 2026-09-01: 307 kurser
+            ? `Välkommen till AK1A, ${data.member.name || email}! Ditt gratis-konto är skapat — alla ${SIFFROR.kurser} kurser är upplåsta.`
             : `Välkommen tillbaka, ${data.member.name || email}!`
         );
         setRedan(true);
@@ -124,7 +125,7 @@ export function LoggaIn() {
         <div className="rounded-2xl border-2 border-gold bg-card p-8">
           <h2 className="font-serif text-2xl font-bold">Logga in — eller skapa gratis konto</h2>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            En e-post räcker. Fundamentalanalys är en rättighet: alla 307 kurser,
+            En e-post räcker. Fundamentalanalys är en rättighet: alla {SIFFROR.kurser} kurser,
             kalkylatorn och portföljsystemet är <strong>helt gratis</strong> — för alltid.
           </p>
           <div className="mt-5 space-y-3">

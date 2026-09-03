@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { SIFFROR } from "@/lib/siffror";
 import Link from "next/link";
 import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
@@ -69,7 +70,7 @@ const NIVAER = [
   {
     id: 3,
     namn: "Bokmaster",
-    beskrivning: "Läs mästarna — 78 kompletta böckers visdom, kapitel för kapitel", // Uppdaterad 2026-09-01: 78 BOKMASTER-böcker (läroplanen listar urvalet)
+    beskrivning: `Läs mästarna — ${SIFFROR.bokmaster} kompletta böckers visdom, kapitel för kapitel`, // hela BOKMASTER-stocken ur siffror.ts
     mal: "Du har böckernas visdom integrerad i ditt eget tänkande",
     badge: "🏛️",
     kurser: [

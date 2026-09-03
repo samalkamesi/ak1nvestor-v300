@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { SIFFROR } from "@/lib/siffror";
 import { uppmuntran } from "@/lib/pedagogik";
 
 /**
@@ -32,21 +33,21 @@ function formatera(tal: number): string {
 
 const STATIST = [
   {
-    tal: 324,
+    tal: SIFFROR.kurser,
     suffix: "",
     huvud: "kurser",
     etikett:
       "från din allra första grundkurs till superdjupa systemkurser — varje kapitel ett steg på resan",
   },
   {
-    tal: 92,
+    tal: SIFFROR.bokmaster,
     suffix: "",
     huvud: "böcker",
     etikett:
       "täckta kapitel för kapitel — Graham, Damodaran, Murphy … hela kanon, steg för steg på svenska",
   },
   {
-    tal: 7812,
+    tal: SIFFROR.quiz,
     suffix: "",
     huvud: "quizfrågor",
     etikett: "som tvingar dig att tänka — inte bara läsa. Det är där kunskapen sätter sig",
@@ -177,7 +178,7 @@ export function SocialProof({ className = "" }: { className?: string }) {
 
         {/* Sammanfattande strip — hela erbjudandet på en rad */}
         <p className="mt-6 rounded-xl border border-gold/20 bg-black/20 px-4 py-3 text-center text-sm tracking-wide sm:text-base">
-          324 kurser · 92 böcker kapitel för kapitel · 7 812 quiz ·{" "}
+          {SIFFROR.kurser} kurser · {SIFFROR.bokmaster} böcker kapitel för kapitel · {SIFFROR.quiz.toLocaleString("sv-SE")} quiz ·{" "}
           <span className="font-semibold text-gold">100 % gratis i Fas 1</span>
         </p>
 

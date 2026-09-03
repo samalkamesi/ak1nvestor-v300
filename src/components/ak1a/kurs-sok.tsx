@@ -5,7 +5,7 @@ import Link from "next/link";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
 
 /**
- * KURSSÖK — sök + kategorifilter för kursbiblioteket (307 kurser, Uppdaterad 2026-09-01).
+ * KURSSÖK — sök + kategorifilter för hela kursbiblioteket.
  * Samma DNA som övriga sajten: kategorisektioner, guldkantade kort.
  * Fas-kurser (kraverFas: 2 = fundamental vägen, 3 = dynamiska ekosystemet) visas
  * alltid (titel + beskrivning) men låsas med 🔒 → /fas2-ansok resp. /fas3 för

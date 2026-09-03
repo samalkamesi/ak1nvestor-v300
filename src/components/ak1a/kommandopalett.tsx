@@ -4,11 +4,12 @@ import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { sokIIndex, type SokPost } from "@/lib/sokindex";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { SIFFROR } from "@/lib/siffror";
 import { besok, registreraBesok, titelFranSida } from "@/lib/navigationsminne";
 
 /**
  * KOMMANDOPALETT — ⌘K / Ctrl+K.
- * Söker alla sidor, verktyg och 307 kurser. Visar senast besökta
+ * Söker alla sidor, verktyg och hela kursbiblioteket. Visar senast besökta
  * när fältet är tomt. Registrerar automatiskt navigation (mönsterigenkänning).
  * Öppnas även via window-event "ak1a:oppna-sok".
  */
@@ -210,8 +211,8 @@ export function Kommandopalett() {
         <div className="flex items-center justify-between border-t border-gold/20 bg-gold/5 px-4 py-1.5 text-[10px] text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <VarumarkesLogo storlek="sm" medText={false} klass="scale-[0.6] origin-left" />
-            AK1A Research Lab · 307 kurser indexerade
-          </span> {/* Uppdaterad 2026-09-01: 307 kurser i deep-courses.json */}
+            {`AK1A Research Lab · ${SIFFROR.kurser} kurser indexerade`}
+          </span> {/* ur src/lib/siffror.ts */}
           <span className="font-mono">esc</span>
         </div>
       </div>

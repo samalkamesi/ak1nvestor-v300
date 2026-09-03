@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { SIFFROR } from "@/lib/siffror";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import {
@@ -1689,7 +1690,7 @@ function GoFurtherSection({
           <GoCard
             icon={<BookOpen className="h-5 w-5" />}
             title="Alla kurser"
-            sub="307 djupa moduler" /* Uppdaterad 2026-09-01: 307 kurser */
+            sub={`${SIFFROR.kurser} djupa moduler`} /* ur siffror.ts */
             onClick={() => setSection("kurser")}
           />
           <GoCard

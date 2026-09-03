@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { SIFFROR } from "@/lib/siffror";
 import {
   Send,
   Loader2,
@@ -48,7 +49,7 @@ const DEEP_QUESTIONS = [
   },
   {
     organ: "Θ",
-    q: "Vilka 10 nya kurser bör AK1A utveckla nästa kvartal för att komplettera de befintliga 307 kurserna? Fokusera på områden där svensk retail-investerare är svagast.", // Uppdaterad 2026-09-01: 307 kurser
+    q: `Vilka 10 nya kurser bör AK1A utveckla nästa kvartal för att komplettera de befintliga ${SIFFROR.kurser} kurserna? Fokusera på områden där svensk retail-investerare är svagast.`, // ur siffror.ts
   },
   {
     organ: "Μ",

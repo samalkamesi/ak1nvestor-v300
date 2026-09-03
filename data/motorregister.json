@@ -1,0 +1,678 @@
+{
+  "uppdaterad": "2026-09-03",
+  "uppdrag": "VÅG 49 agent 1 — motorregistret: fullständig karta över sajtens egna intelligenser (deterministiska motorer), deras montering, autonomi-kanal, testtäckning och integrationsgap.",
+  "metod": "Manuell genomgång av src/lib/*.ts, src/lib/akm2/*.ts, src/lib/portfolj-forskning/*.ts, src/lib/autonom/*.ts samt grep av importer i src/app + src/components + src/hooks, cron-schema i vercel.json, klientpulser (setInterval/useEffect), organ-event-konsumenter och testverktyg i verktyg/.",
+  "motorer": [
+    {
+      "namn": "analys-motorn",
+      "fil": "src/lib/analys-motor.ts",
+      "beskrivning": "5 horisonter x 5 teorier x 4 dimensioners teknisk analys per aktie: pris/volymdata deterministiskt till vågklass, momentum, fib-nivåer och fundamentproxyn.",
+      "monterad": [
+        "/api/cron/datacache (daglig fyllning)",
+        "/api/cron/portfolj-uppfoljning (månatlig då-vs-nu)",
+        "/api/dagens-pass",
+        "/api/member/portfolio/djupanalys",
+        "indirekt: konfluens-motorn + portfolj-vagor återanvänder körAnalysMotor"
+      ],
+      "autonomi": "cron",
+      "testad": true,
+      "testverktyg": "verktyg/validera-motorer.mjs (struktur + matematik omräknad)",
+      "gap": [
+        "Motorn når eleven bara via dagens pass (1 aktie) och portföljdjupanalys (max 10) — ingen publik sök-/listyta visar vågstatus för universumet; /topplista listar inte motorns vågklasser."
+      ]
+    },
+    {
+      "namn": "vagfundament-motorn",
+      "fil": "src/lib/vagfundament-motor.ts",
+      "beskrivning": "Fundamental vågmatris 20x5 per aktie: varje AKM1-variabels egen tidsserie klassas deterministiskt som impulsvåg/korrigering/basbygge/osatt.",
+      "monterad": [
+        "/api/cron/vagscan (daglig vågkarta till Supabase)",
+        "/api/cron/datacache",
+        "/api/vagfundament",
+        "/api/vagkon (underlag)",
+        "/api/pro/analys",
+        "komponent vagkarta-kort (/vagfundament + Min Sida)"
+      ],
+      "autonomi": "cron",
+      "testad": true,
+      "testverktyg": "verktyg/validera-motorer.mjs",
+      "gap": [
+        "Brett monterad; enda noteringen är att MEGA-horisonternas 'osatt'-andel aldrig sammanfattas pedagogiskt för eleven på /vagfundament."
+      ]
+    },
+    {
+      "namn": "konfluens-motorn",
+      "fil": "src/lib/konfluens-motor.ts",
+      "beskrivning": "Värde garanterat före vågorna: fem oberoende dimensioner (värdegolv, kvalitet, fundamental vågstart, prisvågläge, divergens) vikas samman till en deterministisk konfluenspoäng 0-100.",
+      "monterad": [
+        "/api/konfluens",
+        "/api/pro/analys",
+        "/api/cron/datacache",
+        "konfluens-tabell (/konfluens + /pro)",
+        "pro/csv-import"
+      ],
+      "autonomi": "cron",
+      "testad": true,
+      "testverktyg": "verktyg/validera-motorer.mjs (ENDAST villkorlig fältkontroll om konfluensfält finns i svaret — partiell täckning)",
+      "gap": [
+        "/api/konfluens nyttjar inte datacache (lasEllerHamta) — varje sidvisning på /konfluens kan gå ut på nätet trots att cron fyllt cachen 06:00 UTC.",
+        "Konfluenspoängen syns inte på /topplista eller /netnet där 'värdegolv + vågor' vore den naturliga sammanfattningen."
+      ]
+    },
+    {
+      "namn": "netnet-motorn",
+      "fil": "src/lib/netnet-motor.ts",
+      "beskrivning": "Grahams cigar-butts: screening där kurs jämförs mot NCAV per aktie (omsättningstillgångar minus skulder) med klassning net-net/nära/ej enligt 2/3-tröskeln.",
+      "monterad": [
+        "/api/netnet (via lasEllerHamta)",
+        "/api/cron/datacache",
+        "netnet-skanner (/netnet)"
+      ],
+      "autonomi": "cron",
+      "testad": true,
+      "testverktyg": "verktyg/validera-motorer.mjs (incl. oberoende NCAV-omräkning)",
+      "gap": [
+        "Resultatet lever bara på /netnet — när ett nytt net-net inträffar i daglig scan publiceras ingen signal och ingen notis (datacache-cronen publicerar cache- och konfluenssignaler men inte netnet-signaler)."
+      ]
+    },
+    {
+      "namn": "vagkon",
+      "fil": "src/lib/vagkon.ts",
+      "beskrivning": "Deterministisk framtidsgraf (fan chart): percentilband som breddas med roten av horisonten ur log-normala returer — ren referens utan drift, aldrig en prognospil.",
+      "monterad": [
+        "/api/vagkon",
+        "vagkon-graf (/konfluens + /vagfundament)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Saknas i Superanalysen (steg 22 vågklass-gissning kunde visa kon) och i portfoljbyggaren.",
+        "Ingen test i validera-motorer.mjs trots ren matematik som är trivial att omräkna."
+      ]
+    },
+    {
+      "namn": "portfolj-vagor",
+      "fil": "src/lib/portfolj-vagor.ts",
+      "beskrivning": "Portföljens samlade vågprofil: klassar varje aktie per horisont med analys-motorn och viktar samman till ett portföljsvar per horisont (impuls/korrigering/basbygge/osatt).",
+      "monterad": [
+        "ENDAST komponenten portfolj-vagprofil.tsx — som i sin tur inte importeras av någon page eller komponent (overifierad montering)",
+        "spegling av logiken lever i /api/member/portfolio/djupanalys (konsumeras av header, huvudmeny, mobilmeny, chat-widget, min-portfolj-kort, deep-consultation, portfolio-system, vag-skattning, min-sida)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Komponenten PortfoljVagProfil (motorns pedagogiska visualisering) är byggd men dockad ingenstans — montera på /min-portfolj.",
+        "Cron/portfolj-uppfoljning kör analys-motorn direkt i stället för att återanvända denna aggregering."
+      ]
+    },
+    {
+      "namn": "superanalys",
+      "fil": "src/lib/superanalys.ts",
+      "beskrivning": "Guidad aktieanalys i 24 steg: AKM1:s 20 variabler poängsätts 0-5, kategoriviktas (dokumenterade 15/20/20/15/15/5/10 %) till max 100 med pedagogiska rekommendationsband.",
+      "monterad": [
+        "superanalys.tsx (/superanalys, /rapporter, /fas3, /nyheter)",
+        "fas3-cert",
+        "rapportbyggare (/rapporter + /pro)",
+        "analysbank (live-import av sparade)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Sparade superanalyser matar analysbanken men når aldrig AKM2/topplistan — eleven gör 20-variablerarbete som kärnmotorn aldrig lär av.",
+        "Ingen test av poänglogiken (kategori-/totalomräkning) i validera-motorer.mjs."
+      ]
+    },
+    {
+      "namn": "analysbank",
+      "fil": "src/lib/analysbank.ts",
+      "beskrivning": "Elevens samlade verk: varje analys (superanalys, konfluens, netnet, vågfundament) landar som en rad med typ/titel/dataJson — gemensam råvara för rapportbyggaren.",
+      "monterad": [
+        "rapportbyggare (/rapporter + /pro)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Banken drivs bara i rapportverkstan — ingen 'din analyshistorik'-vy på Min Sida och fas3-cert läser superanalys direkt i stället för via banken."
+      ]
+    },
+    {
+      "namn": "nyhets-motorn",
+      "fil": "src/lib/nyhets-motor.ts",
+      "beskrivning": "Intelligent nyhetsflöde: portfölj + bevakning + ämneskanaler + egna RSS samlas, dedupliceras, rankas med påverkanspoäng 0-100 och kopplas pedagogiskt till V-variabler.",
+      "monterad": [
+        "/api/nyheter",
+        "/api/nyheter/scan (cron 08:00 UTC)",
+        "nyhets-central (/nyheter)"
+      ],
+      "autonomi": "cron",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Min Sidas aktie-nyheter-komponent gör sin EGNA Yahoo-hämtning förbi motorn — eleven ser orankade nyheter utan påverkanspoäng och AK1A-not där.",
+        "Scan-cronen skriver inte nyckeln 'ak1a-nyheter-top' som notis-motorn läser (den skrivs bara av Nyhetscentralen i klienten) — den dagliga toppnyheten når inte notisflödet automatiskt."
+      ]
+    },
+    {
+      "namn": "datacache (datacentralen)",
+      "fil": "src/lib/datacache.ts",
+      "beskrivning": "Daglig lokal cache av all motor-data: lasEllerHamta frågar cachen före nätverket så analysrouterna kan servera ur egen data.",
+      "monterad": [
+        "/api/cron/datacache (cron 06:00 UTC)",
+        "lasEllerHamta i /api/dagens-pass, /api/netnet, /api/notiser, /api/vagfundament"
+      ],
+      "autonomi": "cron",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "/api/konfluens och /api/member/portfolio/djupanalys nyttjar inte lasEllerHamta — de två tyngsta analysytorna går förbi cachen."
+      ]
+    },
+    {
+      "namn": "signal-bus",
+      "fil": "src/lib/signal-bus.ts",
+      "beskrivning": "Systemens gemensamma andning: varje organ publicerar signaler som rader i system_events (event-carried state transfer), med statisk pedagogisk fallback utan Supabase.",
+      "monterad": [
+        "skrivs i /api/cron/vagscan, /api/cron/datacache, /api/cron/kvalitet, /api/cron/portfolj-uppfoljning, /api/nyheter/scan, /api/signal",
+        "läses av /api/signal — enda komponentkonsument: prenumerationsaktivera-panelen"
+      ],
+      "autonomi": "organ",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "NotisCenter och Min Sida läser aldrig /api/signal — hela signalströmmen (vågkarta, konfluens, kvalitet, portföljuppföljning) når aldrig eleven, trots att notiser är den naturliga kanalen."
+      ]
+    },
+    {
+      "namn": "organ-event",
+      "fil": "src/lib/organ-event.ts",
+      "beskrivning": "Nervsystemets enhetliga händelsekonvention: en rad per organhändelse (rapport/beslut/delegation/halsopuls/atgard) i system_events, bounded av retention.",
+      "monterad": [
+        "skrivs i /api/admin/fas2-access, /api/cron/datacache, /api/cron/email, /api/cron/kvalitet, /api/nyheter/scan, /api/pro/admin, /api/tracer",
+        "konsumeras via /api/kropp av kroppsvy-kort (Min Sida) + admin/ekosystem-panel"
+      ],
+      "autonomi": "organ",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Kroppsvyn (motornervsystemets fönster) finns bara på Min Sida — startsidans portal andas via vagvisaren men 'känner' aldrig övriga organ."
+      ]
+    },
+    {
+      "namn": "autonom/organ",
+      "fil": "src/lib/autonom/organ.ts",
+      "beskrivning": "Bounded organ-motor: daglig hälsorond över organen med kill-switch, 500-raderstak, 30 dagars retention och en skrivning per körning.",
+      "monterad": [
+        "/api/cron/autonom (cron 00:00 UTC)",
+        "/api/autonom/status",
+        "/api/organ/runda",
+        "/api/styrelse/beslut"
+      ],
+      "autonomi": "cron",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "/api/autonom/status saknar UI-konsument — hälsoläget syns bara via /admin.",
+        "/api/organ/runda har ingen schemaläggning — extraronder körs bara vid manuellt anrop."
+      ]
+    },
+    {
+      "namn": "autonom/organ-bus",
+      "fil": "src/lib/autonom/organ-bus.ts",
+      "beskrivning": "Organsystemets meddelandeprotokoll: styrelsen orkestrerar mikro-organ via bounded meddelanden (fragor/rapport/beslut/delegation) i system_events.",
+      "monterad": [
+        "/api/organ/runda"
+      ],
+      "autonomi": "organ",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Runda-routen ligger i ingen cron — bussen andas bara när någon anropar routen manuellt."
+      ]
+    },
+    {
+      "namn": "autonom/styrelse",
+      "fil": "src/lib/autonom/styrelse.ts",
+      "beskrivning": "Autonom beslutsmotor för utvecklingsprioritering: poängsätter kandidater mot strategisk vikt, kundnytta, ansträngning och datastyrda signaler (bloggfärskhet, kursdjup, medlemsantal).",
+      "monterad": [
+        "/api/styrelse/beslut"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "StyrelseSection togs bort från publik yta 2026-09-02 (null-komponent) — besluten syns bara i /admin.",
+        "Ingen cron kör styrelsen — beslut beräknas bara vid anrop."
+      ]
+    },
+    {
+      "namn": "akm2-karna",
+      "fil": "src/lib/akm2/karna.ts",
+      "beskrivning": "AKM2-kärnan: raknaAKM1 (V01-V20 ur nyckeltal med trösklar och motivering) + lager 1+2+4+5-syntes med projektionsinvarianten projiceraAKM1(raknaAKM2(k)) === raknaAKM1(k).",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "verktyg/testa-akm2-karna.mjs (ej i validera-motorer.mjs)",
+      "gap": [
+        "HELA AKM2-stacken (kärna, dynamik, moduler, vikter) är byggd och testad men OMONTERAD — ingen route eller komponent på sajten beräknar AKM2; vare sig /api/pro/analys, Superanalysen eller /portfolj-forskning använder den."
+      ]
+    },
+    {
+      "namn": "akm2-dynamik",
+      "fil": "src/lib/akm2/dynamik.ts",
+      "beskrivning": "Lager 3: översätter fundamentalvågor (FVagAnalys) och tekniska våglägen till en Φ-justering per variabel (impuls förstärker, korrigering dämpar) med riktighetsinvertering för multipelvariabler.",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "verktyg/testa-akm2-dynamik.mjs",
+      "gap": [
+        "Omonterad — se akm2-karna; dess enda produktionstänkbara koppling (via injicerad funktion från fundamental-vagmotorn) är också omonterad."
+      ]
+    },
+    {
+      "namn": "akm2-moduler",
+      "fil": "src/lib/akm2/moduler/index.ts (+ karna-moduler.ts, insider-modul.ts)",
+      "beskrivning": "Lager 2: branschfamilj styr aktiva V21+-variabler (V21-V28 kärnmoduler + villkorade V29-insidarn); en modul får aldrig ändra V01-V20-poäng, endast vikter.",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "verktyg/testa-akm2-moduler.mjs",
+      "gap": [
+        "Omonterad — se akm2-karna. Insidermodulen (V29) väntar dessutom på manuell Finansinspektionen-data (dokumenterat inaktiv)."
+      ]
+    },
+    {
+      "namn": "akm2-vikter",
+      "fil": "src/lib/akm2/vikter.ts",
+      "beskrivning": "Lager 4: namngivna viktsamlingar (akm1-klassisk, akm2-2026, superanalys-2026) med dokumenterad 58/97- och 112 %-upplösning; råvikter summerar exakt 100.",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "indirekt via verktyg/testa-akm2-karna.mjs (viktsummevakt 100/100/100)",
+      "gap": [
+        "Omonterad — se akm2-karna."
+      ]
+    },
+    {
+      "namn": "riskportfolj",
+      "fil": "src/lib/portfolj-forskning/riskportfolj.ts",
+      "beskrivning": "Kunden väljer risknivå (konservativ/balanserad/tillväxt) och tillväxttakt (lugn/stadig/aggressiv) → motorn poängsätter korstabellkandidater (AKM1 + vågvikter + golvmarginal) och bygger en deterministisk forskningsportfölj.",
+      "monterad": [
+        "/api/portfolj-forskning",
+        "bygg-portfolj-kort + riskval-panel (/portfolj-forskning)",
+        "korstabell-data (+ /prenumeration)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "verktyg/testa-riskportfolj.mjs",
+      "gap": [
+        "Förslagsportföljen jämförs aldrig mot elevens faktiska portfölj (Min Portfölj) och matar inte nyhets-motorns bevakning.",
+        "Ingen notis när en kandidat i sparad portfölj tappar strikta krav (uppfoljningsmotorn kollar teknisk vågstatus men inte kravglidningen som kunddirektivet nämner)."
+      ]
+    },
+    {
+      "namn": "fundamental-vagmotor",
+      "fil": "src/lib/portfolj-forskning/fundamental-vagmotor.ts",
+      "beskrivning": "FVagAnalys: klassar AKM1:s 20 variabler som vågor ur bolagets egna fundamentalserier per horisont med trippelkontroll (teckenvändningsandel, linjär regression, +1) och riktning via bedomDynamik.",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "verktyg/testa-fundamental-vagmotor.mjs + verktyg/kor-fvag.mjs",
+      "gap": [
+        "INGEN produktionsyta driver motorn — den körs bara via verktyg (kor-fvag skriver data/portfolj-system) och den omonterade akm2-kedjan.",
+        "/portfolj-forskning bygger på korstabell-grund-filen i stället för live-FVag-analys."
+      ]
+    },
+    {
+      "namn": "uppfoljning (då-vs-nu)",
+      "fil": "src/lib/portfolj-forskning/uppfoljning.ts",
+      "beskrivning": "Månatlig portföljuppföljning: jämför sparad portföljsnapshot mot nuvarande analys per horisont och genererar max tre beskrivande (aldrig dömande) notistexter.",
+      "monterad": [
+        "/api/cron/portfolj-uppfoljning (cron månadens 1:a 07:00 UTC) → publiceraSignal per notistext"
+      ],
+      "autonomi": "cron",
+      "testad": false,
+      "testverktyg": "verktyg/testa-uppfoljning.mjs",
+      "gap": [
+        "Notistexterna publiceras som signaler — men eftersom NotisCenter inte läser /api/signal når 'då vs nu' aldrig eleven (dubbelgap: signal-kopplingen saknas).",
+        "Jämförelsevyn portfolj-djupvy/demo-wrapper finns som komponenter men drivs av demo-data, inte av crons snapshots."
+      ]
+    },
+    {
+      "namn": "kurstips",
+      "fil": "src/lib/kurstips.ts",
+      "beskrivning": "Rätt kurs till rätt människa: rankar nästa kurs ur läroplansspåret (V01-V20), kategoribalans, BOKMASTER vid 8+ klara kurser och tidssuggestioner — allt ur lokaldata.",
+      "monterad": [
+        "kurstips-kort (/kurser)",
+        "assistent + briefing + klientkontext (Min Sida, indirekt)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Saknas på /laroplan, /bibliotek, /badges och startsidans kurser-section.",
+        "nasta-steg (spridd via seo-page-shell på SEO-sidor) räcker med egen dubblerande logik i stället för att återanvända motorn."
+      ]
+    },
+    {
+      "namn": "veckoplan",
+      "fil": "src/lib/veckoplan.ts",
+      "beskrivning": "Superdynamiskt studieschema: veckonummer hashas till en veckosignatur som varierar texter och daglayout, med innehåll styrt av elevens XP, klara kurser och navigationsminne.",
+      "monterad": [
+        "vecko-plan → Min Sida"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Bara Min Sida — /dagens-pass kunde visa veckans rad och länka vidare.",
+        "Planen syntes inte med SR-kortens förfallodatum (spaced-repetition) trots båda bor i lokaldata."
+      ]
+    },
+    {
+      "namn": "dashfraga",
+      "fil": "src/lib/dashfraga.ts",
+      "beskrivning": "Fråga din dashboard: deterministisk intent-matchning (regex mot diakritisk-normaliserad fråga) som svarar ur elevens egna data med max två meningar + routerlänk.",
+      "monterad": [
+        "dashfraga-kort → Min Sida"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Endast Min Sida — frågelådan kunde stå på startsidans portal och i /dagens-pass.",
+        "Intents täcker streak/XP/kurs/vecka/vågkarta/badges/navigering men inte portföljens vågprofil eller konfluens trots att datakällorna finns."
+      ]
+    },
+    {
+      "namn": "briefing",
+      "fil": "src/lib/briefing.ts",
+      "beskrivning": "Morgon-briefingen: samlar nivå/XP, streak, klara kurser, nästa kurstips och veckoplanens nästa rad till ett tidningskort (vågdata fylls av komponenten via /api/vagscan/senaste).",
+      "monterad": [
+        "morgon-briefing → Min Sida + kunskaps-flode (som i sin tur bara nås via Min Sida)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Morgonupplevelsen lever bara bakom inloggad Min Sida — startsidans portal och e-postens morgonMejl (cron email) har varsin egen briefing-logik i stället för en gemensam."
+      ]
+    },
+    {
+      "namn": "assistent",
+      "fil": "src/lib/assistent.ts",
+      "beskrivning": "Den högra handen: prediktiva förslag (max 3, prioriterade), lägesmedveten hälsning, frustrationdetektering och optimal studietid — allt ur KlientKontexten, inga nätanrop.",
+      "monterad": [
+        "assistent-panel → Min Sida"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Bara Min Sida — den globala chat-widgeten (layout) återanvänder inte assistentens förslag som proaktiva välkomstrader.",
+        "Frustrationdetekteringen triggar ingen notis (kunde kopplas till omtanke-motorn)."
+      ]
+    },
+    {
+      "namn": "omtanke-motor",
+      "fil": "src/lib/omtanke-motor.ts",
+      "beskrivning": "Ekosystemets nervsystem: härleder klientens tillstånd ur redan insamlade signaler (tracer, quiz, chat, XP), agerar före frågan, max en omsorgsnotis per 24 h; lasPuls samlar alla systems tillstånd.",
+      "monterad": [
+        "vagvisare (Min Sida + client-portal → startsidans portal-section)",
+        "notiser (genereraAutomatiskaNotiser läser pulsen)"
+      ],
+      "autonomi": "puls",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Pulsen slår bara där vagvisaren renderas (startportal + Min Sida) — kurser, analyser och nyheter är 'känslolösa' ytor utan mount."
+      ]
+    },
+    {
+      "namn": "notiser",
+      "fil": "src/lib/notiser.ts",
+      "beskrivning": "Den tysta mentorn: genererar automatiska notiser ur serverunderlag (dagens pass-aktie, vågkarta) + elevens lokaldata (streak, nivå) med max en per typ per dag.",
+      "monterad": [
+        "notis-center → src/app/layout.tsx (GLOBALT)",
+        "/api/notiser (serverunderlag via datacache)"
+      ],
+      "autonomi": "puls",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Automatnotiser genereras först när notis-klockan renderas/mountas — inga push eller e-postvägar.",
+        "Läser 'ak1a-nyheter-top' som bara Nyhetscentralen (klient) skriver — se nyhets-motorns gap."
+      ]
+    },
+    {
+      "namn": "spaced-repetition",
+      "fil": "src/lib/spaced-repetition.ts",
+      "beskrivning": "SM-2 enligt Ebbinghaus glömskekurva: 100 kort i 5 kategorier schemaläggs med ease factor och intervall i lokaldata; +5 XP per kort svarat Bra/Lätt (en gång per kort och dag).",
+      "monterad": [
+        "chat-widget (globalt via layout)",
+        "dagens-pass (/dagens-pass)",
+        "Min Sida (srStatistik)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "SR-status syntes inte med kursquiz-progressen eller certifikatet — två parallella minnessystem.",
+        "Förfallna kort driver ingen notis trots att 'max en per typ per dag'-mekanismen redan finns."
+      ]
+    },
+    {
+      "namn": "badges",
+      "fil": "src/lib/badges.ts",
+      "beskrivning": "Bibliotekets meritsystem: händelsestyrd tilldelning (geBadge returnerar true endast för nya) av badges i fem kategorier, allt i lokaldata.",
+      "monterad": [
+        "badg-panel (/badges)",
+        "chat-widget, dagens-pass, kurs-steg, min-sida (globalt/central)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "/certifikat-sidan visar inte badge-status trots att intyg och meritsystem är naturliga grannar."
+      ]
+    },
+    {
+      "namn": "elevkarna",
+      "fil": "src/lib/elevkarna.ts",
+      "beskrivning": "Elevens varför: välfärdsmål, huvudmål, horisont (1-10+ år), intressen och tid per vecka — kompletterar den kognitiva profilen, alltid frivilligt.",
+      "monterad": [
+        "elevkarna-formuljar → Min Sida",
+        "klientkontext (lasElevKarna)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Elevkärnans horisont/mål styr inte riskportfoljens risknivå-förslag och inte kurstipsen — 'varför' och 'vad' lever åtskilda.",
+        "Fylls bara via Min Sida-formuläret; ingen progressiv ifyllning i kursflödet."
+      ]
+    },
+    {
+      "namn": "klientkontext",
+      "fil": "src/lib/klientkontext.ts",
+      "beskrivning": "EN källa, EN sanning: samlar medlem, XP/nivå, streak, klara kurser, elevkärnan, tracern och navigationsminnet till en enhetlig KlientKontext med härledt lästillstånd.",
+      "monterad": [
+        "assistent-panel (+ assistent-motorn)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "ENDA konsumenten är assistenten — dashfraga, briefing och kurstips läser råkällorna själva, precis den spridda-gissningar-arkitektur filen säger att den ska avlösa."
+      ]
+    },
+    {
+      "namn": "tracer",
+      "fil": "src/lib/tracer.ts",
+      "beskrivning": "Beteendetracern: passiv mönsterigenkänning av sidvisningar, verktygsanvändning, quiz, närvaro-tid, scroll och agitation → pedagogiska insikter, allt i lokaldata.",
+      "monterad": [
+        "tracer-mount → src/app/layout.tsx (GLOBAL puls)",
+        "Min Sida (insikter)",
+        "/api/eko + /api/admin/betende"
+      ],
+      "autonomi": "puls",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Insikterna (lasInsikter) konsumeras bara på Min Sida.",
+        "Den frivilliga delningsknappen till /api/tracer är 'ännu ej byggd' (dokumenterat i filen) — serverinsikterna når bara admin.",
+        "/api/eko som läser tracern har i sin tur inga komponentkonsumenter (se eko-koppling)."
+      ]
+    },
+    {
+      "namn": "navigationsminne",
+      "fil": "src/lib/navigationsminne.ts",
+      "beskrivning": "Mönsterigenkänning för var eleven varit: spårar besökta sidor/kurser (max 24) och ger personliga nästa-steg-förslag.",
+      "monterad": [
+        "fortsatt-panel (/kurser + /min-portfolj)",
+        "huvudmeny, kommandopalett (globalt via layout)",
+        "aktie-nyheter, nyhets-central, min-portfolj-kort"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "fortsatt-panelen montas bara på två sidor — /blogg, /nyheter och /bibliotek saknar 'fortsatt där du var'."
+      ]
+    },
+    {
+      "namn": "chatbot-nlu",
+      "fil": "src/lib/chatbot-nlu.ts",
+      "beskrivning": "Deterministisk naturlig-språksförståelse: frastolkning, accenter, interpunktion, fyllnadsord, synonymer och Levenshtein-stavning mappar en fråga till ett ämnesregister (V01-V20 m.m.).",
+      "monterad": [
+        "/api/chatbot"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Ämneregistret täcker V01-V20 + pe/moat/mr market/kalkylator/portfölj m.m. — men inte netnet, konfluens, vågfundament eller vagkon trots att verktygssidor och datakällor finns.",
+        "dashfraga har en parallell, enklare intent-matchare i stället för att återanvända NLU-normaliseringen."
+      ]
+    },
+    {
+      "namn": "chat-minne",
+      "fil": "src/lib/chat-minne.ts",
+      "beskrivning": "AI-Mentorns konversationsminne: kronologiska turer (max 60) i lokaldata, senaste 12 skickas som historik till /api/chatbot.",
+      "monterad": [
+        "chat-widget (globalt via layout)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Historiken skickas bara till /api/chatbot — deep-consultation och dashfraga får aldrig del av sammanhanget."
+      ]
+    },
+    {
+      "namn": "eko-koppling",
+      "fil": "src/lib/eko-koppling.ts",
+      "beskrivning": "Ekosystemets samverkansmotor: väver samman tracern + kurstips + vågkartan + portföljen + quiz + veckoplanen + signal-bussen till insikter ingen enskild källa kan forma (regler R1-R5).",
+      "monterad": [
+        "/api/eko — men INGEN komponent hämtar /api/eko (grep: noll konsumenter i src/components)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "STÖRSTA GAPET I REGISTRET: motorn är byggd för admin beteende-panel + Min Sida assistent-panel (enligt egna kommentarer) men ingen vy konsumerar den — /api/eko är en död ände och kundens kärndirektiv ('alla system DELAR sin kunskap') når inte eleven."
+      ]
+    },
+    {
+      "namn": "shortseller-bank",
+      "fil": "src/lib/shortseller-bank.ts",
+      "beskrivning": "The Short-Seller: 30 kontextuella attackfrågor över 10 ämnen med svårighetsgrader 1-3, beräkningsattacker med inbyggda räknefall, progression och försvarsbetyg ur nyckelordsanalys.",
+      "monterad": [
+        "/api/shortseller + short-seller-komponenten (globalt via layout)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Försvars-streak och nivå syntes inte till badges/streak/veckoplan — motorn är en ödesfrån övriga meritsystem.",
+        "kursRef-kopplingen (V01-V20) föreslås inte ur elevens faktiska klara kurser via klientkontext."
+      ]
+    },
+    {
+      "namn": "pedagogik",
+      "fil": "src/lib/pedagogik.ts",
+      "beskrivning": "Den gemensamma rösten: principer (hjälpa aldrig döma, tipsa inte tvinga, välfärd först, gratis för alltid) som all elevriktad text ska följa.",
+      "monterad": [
+        "assistent-panel, kognitiv-profiler, short-seller, social-proof"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Bara 4 komponenter importerar rösten formellt — kurstips, veckoplan, dashfraga, notiser m.fl. bollar tonen 'bakad' i egna strängar; ingen gemensam validering att texterna följer principerna."
+      ]
+    },
+    {
+      "namn": "sokindex",
+      "fil": "src/lib/sokindex.ts",
+      "beskrivning": "Kommandopalettens datakälla: statiska poster (sidor, verktyg, träning) plus kurser som lazy-laddas vid första sökningen.",
+      "monterad": [
+        "kommandopalett (globalt via layout)"
+      ],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "Indexet saknar bloggposter, nyhetsämnen och verktygsdjuplänkar (kalkylatorns flikar, vagkarta per aktie) trots lazy-mönstret."
+      ]
+    },
+    {
+      "namn": "dynamic-catalog (kursexpansion)",
+      "fil": "src/lib/ak1a/dynamic-catalog.ts (+ regenerate-all-courses.ts)",
+      "beskrivning": "Deterministisk kurskatalogsgenerator (2 896 rader): bygger/expanderar kursinnehåll urunderliggande data.",
+      "monterad": [],
+      "autonomi": "ingen",
+      "testad": false,
+      "testverktyg": "",
+      "gap": [
+        "cron/expand-courses (dagligen 12:00 UTC) expanderar kurser via EGEN fil-logik i routen — dynamic-catalog-modulen importeras inte av route, komponent eller skript (grep: noll träffar utanför ak1a-katalogen)."
+      ]
+    }
+  ],
+  "infrastruktur": [
+    { "fil": "src/lib/utils.ts", "notering": "Allmänna hjälpare." },
+    { "fil": "src/lib/content.ts", "notering": "Kurs/blogg/analys-innehållsläsning." },
+    { "fil": "src/lib/seo.tsx", "notering": "SEO-metadata." },
+    { "fil": "src/lib/siffror.ts", "notering": "Platshållarsiffror (SIFFROR)." },
+    { "fil": "src/lib/ak1a-store.ts", "notering": "Zustand-butik (SPA-tillstånd)." },
+    { "fil": "src/lib/db.ts / supabase.ts / supabase-rest.ts / data-access.ts / ak1a-katalogens datafiler (ak1a/data.ts, deep-courses-data.ts, course-links.ts, seed*, add-perspectives, use-activity-logger)", "notering": "Databas- och datalagring." },
+    { "fil": "src/lib/member-local.ts / kurs-access.ts / prenumeration.ts", "notering": "Lokal medlemstatstate, åtkomstkontroll, prenumerationsstatus." },
+    { "fil": "src/lib/email-mallar.ts", "notering": "E-postmallar (morgonMejl komponeras i cron email) — gränsfall." },
+    { "fil": "src/lib/nyhetskanaler.ts", "notering": "Klientside kanal-state som speglar nyhets-motorns metadata (URL:er stannar på servern) — gränsfall." },
+    { "fil": "src/lib/ekosystem.ts", "notering": "Konfigurationsauktoritet (AKM1/AK1TS-referens) — läses av chatboten men beräknar inget." },
+    { "fil": "src/lib/zai.ts", "notering": "AI-brygga (zaiChat) — extern intelligens, inte egen motor enligt kunddirektivet." },
+    { "fil": "src/lib/portfolj-forskning/typer.ts / korstabell-data.ts, src/lib/akm2/typer.ts", "notering": "Typkontrakt + underlagsnormalisering (fs-läsning utan poängsättning)." }
+  ],
+  "summering": {
+    "antalMotorer": 42,
+    "testadeIValideraMotorer": 4,
+    "testadeIVerktygTotalt": 10,
+    "utanTest": 32,
+    "autonomiCron": 8,
+    "autonomiPuls": 3,
+    "autonomiOrgan": 3,
+    "autonomiIngen": 28,
+    "omonteradeMotorer": [
+      "akm2-karna",
+      "akm2-dynamik",
+      "akm2-moduler",
+      "akm2-vikter",
+      "fundamental-vagmotor",
+      "dynamic-catalog (cron kör egen logik)",
+      "eko-koppling (API finns men noll komponentkonsumenter)"
+    ]
+  }
+}

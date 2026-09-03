@@ -81,7 +81,7 @@ export default function AnsvarPage() {
       ])}
 
       {sektion("8. Ansvarsgräns", [
-        "Så långt lagen tillåter är vårt ansvar gentemot dig begränsat till det belopp du senast erlagt i avgift till oss. Tvingande konsumentskydd — exempelvis konsumenttjänstlagen (2022:260) — urholkas aldrig av denna friskrivning.",
+        "Så långt lagen tillåter är vårt ansvar gentemot dig begränsat till det belopp du senast erlagt i avgift till oss. Tvingande konsumentskydd — exempelvis konsumenttjänstlagen (1985:716) och lagen (2022:261) om avtal om digitalt innehåll och digitala tjänster — urholkas aldrig av denna friskrivning.",
       ])}
 
       {sektion("9. Vad DU som elev ansvarar för", [

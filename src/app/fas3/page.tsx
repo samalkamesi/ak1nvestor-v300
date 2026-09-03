@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/fas3",
   title: "Fas 3 — Det Dynamiska Ekosystemet | AK1A",
   description:
-    "Fas 3 är där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. 13 999 kr. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.",
+    "Fas 3 är certifieringsfasen — praktikportfölj och tillämpning — och där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. 13 999 kr, 90 dagars nöjd-kund-garanti. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.",
   keywords: [
     "Fas 3 ekosystem",
     "AKM1 AK1TS integration",
@@ -243,9 +243,11 @@ export default function Fas3Page() {
             Indikatorer är inte statiska — de är tidsserier med egen rytm.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-[#EDE6D6]/85 sm:text-base">
-            I Fas 2 lär du dig väga ett bolag i handen — bokslut, värde, omdöme.
-            Fas 3 tar vid när det omdömet står klart, och visar det som ingen
-            siffertabell kan visa: att fundamentalanalys <strong className="text-[#EDE6D6]">aldrig
+            I Fas 2 lär du dig väga ett bolag i handen — bokslut, värde, omdöme —
+            och sammanväga de 20 analytiska indikatorerna till en helhet. Fas 3
+            är certifieringsfasen: praktikportfölj och tillämpning. Den tar vid
+            när det omdömet står klart, och visar det som ingen siffertabell
+            kan visa: att fundamentalanalys <strong className="text-[#EDE6D6]">aldrig
             är statisk</strong>. Varje indikator rör sig — intäkter, marginaler,
             multiplar, hela tiden. Här integrerar vi AKM1 med AK1TS, vågor
             rättare sagt, och analysen blir ett levande ekosystem.
@@ -620,9 +622,9 @@ export default function Fas3Page() {
           </p>
         </div>
         <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-          90 dagars nöjdhetsgaranti (Fas 2:s tradition låter gälla även här) ·
-          Fas 2-medlemmar går vidare först · Alla verktyg förblir gratis i
-          Fas 1, för alltid.
+          90 dagars nöjd-kund-garanti gäller även här — betalning sker först
+          efter 90 dagar, och bara om du förblir nöjd · Fas 2-medlemmar går
+          vidare först · Alla verktyg förblir gratis i Fas 1, för alltid.
         </p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link

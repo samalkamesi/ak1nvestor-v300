@@ -44,6 +44,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
     "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",

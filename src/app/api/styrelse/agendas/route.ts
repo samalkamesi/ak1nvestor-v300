@@ -21,7 +21,7 @@ const SUGGESTED_AGENDAS: { id: string; title: string; agenda: string; category: 
     title: "Emission-risk i portföljen",
     category: "Risk",
     agenda:
-      "Hur ska AK1A hantera bolag med hög kapitalförbränning (V19) i den rekommenderade portföljen? Ska vi varna hårdare, eller behålla spekulativa positioner med tydligare etikett?",
+      "Hur ska AK1A hantera bolag med svag kassatäckning och nyemissionsrisk (V19) i den rekommenderade portföljen? Ska vi varna hårdare, eller behålla spekulativa positioner med tydligare etikett?",
   },
   {
     id: "kunskapsmarknad",

@@ -24,8 +24,8 @@ export async function GET() {
     { id: "V16", num: 16, name: "Produktlanseringar", category: "Katalysator", weight: "6%" },
     { id: "V17", num: 17, name: "Avtal & Partnerskap", category: "Katalysator", weight: "6%" },
     { id: "V18", num: 18, name: "Regulatoriska", category: "Katalysator", weight: "6%" },
-    { id: "V19", num: 19, name: "Kapitalförbränning", category: "Risk", weight: "KRITISK" },
-    { id: "V20", num: 20, name: "Återköp", category: "Kapitalstruktur", weight: "6%" },
+    { id: "V19", num: 19, name: "Kassatäckning — nyemissionsrisk", category: "Risk", weight: "KRITISK" },
+    { id: "V20", num: 20, name: "Återköp av egna aktier", category: "Kapitalstruktur", weight: "6%" },
   ];
   return NextResponse.json({ indicators });
 }

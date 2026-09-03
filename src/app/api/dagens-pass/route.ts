@@ -134,7 +134,7 @@ const AKM1_FRAGOR: ReadonlyArray<{ fraga: string; alternativ: string[]; ratt: nu
     tips: "Moat = konkurrensskydd: immateriella rättigheter, varumärke och nätverkseffekter — ROE är ofta en produkt av moaten.",
   },
   {
-    fraga: "V19 Kapitalförbränning (KRITISK) läses fram ur…",
+    fraga: "V19 Kassatäckning — nyemissionsrisk (KRITISK) läses fram ur…",
     alternativ: [
       "Kassaflödesanalysen (löpande verksamheten) + kassabeståndet i balansräkningen",
       "Endast resultaträkningens rörelseresultat",

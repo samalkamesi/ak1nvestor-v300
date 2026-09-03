@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KursForslag } from "@/components/ak1a/kurs-forslag";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import djurKurser from "../../public/deep-courses.json";
 
 export const metadata: Metadata = {
   title: "Sidan hittades inte (404) | AK1A Research Lab",
   description: "Sidan du letade efter finns inte — gå tillbaka till AK1A Research Lab.",
   robots: { index: false },
 };
+
+/** Slug + titel per kurs — enda data 404-förslagen behöver (liten vikt). */
+const KURSER = Object.entries(
+  djurKurser as Record<string, { title?: string }>,
+).map(([slug, k]) => ({ slug, titel: k.title ?? slug }));
 
 const NAV_KORT = [
   {
@@ -28,24 +36,9 @@ const NAV_KORT = [
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Topp — ren text-wordmark (inga bilder på 404) */}
+      {/* Topp — varumärkes-logotypen (samma standard som alla sidor) */}
       <header className="flex justify-center px-4 pt-8 sm:pt-10">
-        <Link
-          href="/"
-          aria-label="AK1A Research Lab — till startsidan"
-          className="group flex flex-col items-center leading-none"
-        >
-          <span className="font-serif text-3xl font-bold tracking-tight text-ink dark:text-foreground">
-            <span className="text-gold">AK1</span>A
-          </span>
-          <span className="mt-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-            Research Lab
-          </span>
-          <span
-            aria-hidden
-            className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent"
-          />
-        </Link>
+        <VarumarkesLogo storlek="md" medText href="/" />
       </header>
 
       {/* Mitten — marin certifikat-panel med gravör-ram */}
@@ -70,6 +63,9 @@ export default function NotFound() {
             Även analytiker hamnar fel ibland — sidan du söker har flyttats eller
             har aldrig funnits. Låt oss guida dig tillbaka.
           </p>
+
+          {/* Smarta kursförslag — fuzzy-matchar en gammal/ändrad kurslänk */}
+          <KursForslag kurser={KURSER} />
 
           {/* Guld-hårlinje med mittornament */}
           <div aria-hidden className="mx-auto mt-7 flex max-w-xs items-center gap-3">

@@ -9,11 +9,12 @@ export const metadata: Metadata = pageMetadata({
   path: "/villkor",
   title: "Användarvillkor — avtal, rättigheter och ångerrätt | AK1A",
   description:
-    "AK1A Research Labs användarvillkor: avtalsslut, konton, rättigheter per fas, betalning, 14 dagars ångerrätt vid digital leverans, hävningsrätt vid överträdelser, immaterialrätt, ansvarsbegränsning och tvistlösning enligt svensk rätt.",
+    "AK1A Research Labs användarvillkor: avtalsslut, konton, rättigheter per fas, betalning, 90 dagars nöjd-kund-garanti (betalning först efter 90 dagar om du förblir nöjd), 14 dagars ångerrätt vid digital leverans, hävningsrätt vid överträdelser, immaterialrätt, ansvarsbegränsning och tvistlösning enligt svensk rätt.",
   keywords: [
     "användarvillkor",
     "köpvillkor",
     "ångerrätt",
+    "nöjd-kund-garanti",
     "hävningsrätt",
     "medlemsvillkor",
     "AK1A Research Lab",
@@ -86,9 +87,12 @@ export default function VillkorPage() {
         <strong className="text-foreground">Snabbfakta.</strong> Utgivare: AK1A
         Research Lab, org.nr [ORGANISATIONSNR] · Kontakt:
         info@ak1nvestor.com · Fas 1: kostnadsfritt · Fas 2: 9 999 kr inkl. moms
-        (12 månader) · Fas 3: 13 999 kr inkl. moms (12 månader) · Ångerrätt: 14
-        dagar enligt lag (2022:260), med undantag vid påbörjad digital leverans
-        med uttryckligt samtycke (se sektion 6) · Tillämplig lag: svensk.
+        (12 månader) · Fas 3: 13 999 kr inkl. moms (12 månader) · 90 dagars
+        nöjd-kund-garanti på Fas 2 och Fas 3: betalning sker först efter 90
+        dagar — och endast om du förblir nöjd (se sektion 5 och 6) · Ångerrätt:
+        14 dagar enligt lagen (2005:59) om distansavtal och avtal utanför
+        affärslokaler, med undantag vid påbörjad digital leverans med
+        uttryckligt samtycke (se sektion 6) · Tillämplig lag: svensk.
       </div>
 
       {sektion("1. Inledning och avtalsslut", [
@@ -117,11 +121,14 @@ export default function VillkorPage() {
               fullföljt registreringen och den bekräftats, normalt genom en
               verifiering eller välkomstbekräftelse till angiven e-postadress.
               (ii) <strong className="text-foreground">Köp av Fas 2 eller Fas 3</strong>{" "}
-              — köpavtalet sluts när din betalning godkänts och AK1A skickat en
-              orderbekräftelse till din e-postadress. Orderbekräftelsen innehåller
+              — köpavtalet sluts när du antagit AK1A:s erbjudande och AK1A skickat
+              en orderbekräftelse till din e-postadress. Orderbekräftelsen innehåller
               uppgifter om pris inklusive moms, åtkomstperiodens längd, sättet på
-              vilket det digitala innehållet tillhandahålls och en hänvisning till
-              dessa Villkor. Åtkomsten aktiveras därefter omgående.
+              vilket det digitala innehållet tillhandahålls, hur betalningen sker
+              enligt den 90 dagars långa nöjd-kund-garantin (se sektion 5) och en
+              hänvisning till dessa Villkor. Åtkomsten aktiveras därefter omgående;
+              betalning erläggs först när garantiperioden löpt ut och du förblivit
+              nöjd, om inte annat följer av sektion 5.
             </>
           ),
         },
@@ -168,8 +175,7 @@ export default function VillkorPage() {
               personliga investeringsråd eller rekommendationer om köp eller
               försäljning av finansiella instrument, bedriver ingen
               kapitalförvaltning och mottar inga uppdrag av det slag som omfattas
-              av lagen (1991:981) om värdepappersrörelse, lagen (2004:297) om
-              finansiell rådgivning till konsumenter eller
+              av lagen (2007:528) om värdepappersmarknaden eller
               marknadsmissbruksförordningen (EU) nr 596/2014 (MAR). Allt material
               — kurser, exempel, analyser och verktygsutdata — är undervisningsmaterial
               med pedagogiska syften, inte råd anpassade till dig eller någon annan.
@@ -267,14 +273,17 @@ export default function VillkorPage() {
             </>,
             <>
               <strong className="text-foreground">Fas 2 — 9 999 kr.</strong> Den
-              fundamentala vägen till oberoende analytiker: de 18 avancerade
-              fundamentala kurserna (värdering, bokslutsanalys, redovisning,
-              företagsfinans och värdeinvesteringens mästarverk) samt
+              fundamentala vägen till oberoende analytiker: de 18 fundamentala
+              mästarverks-kurserna (värdering, bokslutsanalys, redovisning,
+              företagsfinans och värdeinvesteringens mästarverk) där de 20
+              analytiska indikatorerna (V01–V20) lär ut att analyseras — och
+              sammanvägas mot varandra — på rätt sätt, samt
               representantprogrammet — chansen att få representera AK1nvestor —
               enligt beskrivningen på {lank("/medlemskap", "medlemskapssidan")}.
-              Ingen teknisk analys och inga vågor i Fas 2; det dynamiska
-              ekosystemet ingår i Fas 3. Fas 2 låses upp först vid nivå 25 och
-              kräver godkänd ansökan.
+              Ingen teknisk analys-utbildning och inga vågor i Fas 2 (endast
+              grundläggande kunskap om teknisk analys som orientering); det
+              dynamiska ekosystemet ingår i Fas 3. Fas 2 låses upp först vid
+              nivå 25 och kräver godkänd ansökan.
             </>,
             <>
               <strong className="text-foreground">Fas 3 — 13 999 kr.</strong> Allt i
@@ -353,17 +362,38 @@ export default function VillkorPage() {
               löptid.
             </>,
             <>
+              <strong className="text-foreground">90 dagars nöjd-kund-garanti —
+              betalning först efter 90 dagar.</strong>{" "}
+              För Fas 2 och Fas 3 gäller AK1A:s nöjd-kund-garanti: under de
+              första 90 dagarna (garantiperioden) från den dag åtkomsten
+              aktiveras erläggs ingen betalning. Betalning sker först i
+              samband med att garantiperioden löper ut (dag 90) — och endast om
+              du förblivit nöjd inom ramen för garantiperioden. Meddelar du
+              info@ak1nvestor.com senast på dag 90 att du inte är nöjd, blir
+              inget belopp att betala och åtkomsten upphör vid garantiperiodens
+              slut utan kostnad; har ett belopp trots allt erlagts i förskott
+              (till exempel vid frivillig tidig betalning) återbetalas det inom
+              30 dagar. Garantin är en frivillig förmån utöver lagen — den
+              inskränker aldrig dina tvingande rättigheter som konsument,
+              däribland ångerrätten enligt lagen (2005:59) (se sektion 6).
+              Garantins kundvänliga lydelse presenteras på{" "}
+              {lank("/medlemskap", "medlemskapssidan")}.
+            </>,
+            <>
               <strong className="text-foreground">Betalsätt.</strong> Betalning sker
-              med kort via extern betaltjänstleverantör (Stripe). Kortuppgifter
+              med kort via extern betaltjänstleverantör (Stripe); vid köp med
+              nöjd-kund-garanti begärs betalningen först i samband med att
+              garantiperioden löper ut, enligt punkten ovan. Kortuppgifter
               hanteras uteslutande av betalpartnern; AK1A lagrar aldrig
               kortnummer eller inloggningsuppgifter till kort.
             </>,
             <>
               <strong className="text-foreground">Period.</strong> Priset avser{" "}
               <strong className="text-foreground">12 månaders åtkomst</strong> från
-              den dag åtkomsten aktiveras efter godkänd betalning. Under
-              perioden tillkommer nya kurser och förbättringar inom köpt fas
-              utan extra kostnad.
+              den dag åtkomsten aktiveras (för köp med nöjd-kund-garanti räknas
+              garantiperiodens 90 dagar inom perioden; betalning enligt garantin
+              ovan). Under perioden tillkommer nya kurser och förbättringar inom
+              köpt fas utan extra kostnad.
             </>,
             <>
               <strong className="text-foreground">Fortsatt ekosystemnyttjande.</strong>{" "}
@@ -394,9 +424,9 @@ export default function VillkorPage() {
           p: (
             <>
               Som konsument har du i princip rätt att ånga ett distansköp inom 14
-              dagar från den dag du mottog orderbekräftelsen, enligt 2 kap. 10 §
-              lagen (2022:260) om avtal på distans och utanför handelslokaler
-              m.m. Rätten gäller även digitalt innehåll — men med ett väsentligt
+              dagar från det att avtalet ingicks, enligt 2 kap. 10 § lagen
+              (2005:59) om distansavtal och avtal utanför affärslokaler.
+              Rätten gäller även digitalt innehåll — men med ett väsentligt
               undantag som just gäller tjänster som din.
             </>
           ),
@@ -407,18 +437,23 @@ export default function VillkorPage() {
               <strong className="text-foreground">Undantaget — påbörjad digital
               leverans.</strong>{" "}
               Fas 2 och Fas 3 är digitalt innehåll som levereras omedelbart och
-              som du kan börja använda direkt. Enligt 2 kap. 21 § lagen (2022:260)
-              går ångerrätten förlorad när leveransen har påbörjats, om två
-              villkor är uppfyllda: (i) du har lämnat ditt uttryckliga samtycke
-              till att leveransen påbörjas redan under ångerrättstiden, och (ii)
-              du har bekräftat att du förstår att ångerrätten därmed upphör. Vid
-              köp i AK1A lämnar du detta samtycke aktivt och explicit: du
-              markerar en särskild kryssruta — i stil med &quot;Jag samtycker till
-              omedelbar åtkomst och förstår att ångerrätten därmed går
-              förlorad&quot; — innan betalningen kan genomföras. Samtycket och
-              bekräftelsen sparas tillsammans med orderbekräftelsen, som skickas
-              till din e-post direkt efter köpet. Så snart åtkomsten har
-              aktiverats har leveransen påbörjats och ångerrätten har upphört.
+              som du kan börja använda direkt. Enligt 2 kap. 11 § första stycket
+              11 p. lagen (2005:59) finns ingen ångerrätt för digitalt innehåll
+              som inte levereras på ett fysiskt medium när tre villkor är
+              uppfyllda: (i) tillhandahållandet har påbörjats, (ii) du har
+              uttryckligen samtyckt till att leveransen påbörjas under
+              ångerfristen och samtidigt gått med på att ångerrätten därmed
+              upphör, och (iii) du har fått bekräftelsen på avtalet enligt
+              lagen. Vid köp i AK1A lämnar du detta samtycke aktivt och
+              explicit: du markerar en särskild kryssruta — i stil med &quot;Jag
+              samtycker till omedelbar åtkomst och förstår att ångerrätten
+              därmed går förlorad&quot; — innan åtkomsten aktiveras. Eftersom
+              betalning enligt nöjd-kund-garantin sker först efter 90 dagar
+              bekräftas samtycket även skriftligt i orderbekräftelsen.
+              Samtycket och bekräftelsen sparas tillsammans med
+              orderbekräftelsen, som skickas till din e-post direkt efter köpet.
+              Så snart åtkomsten har aktiverats har leveransen påbörjats och
+              ångerrätten har upphört.
             </>
           ),
         },
@@ -437,9 +472,15 @@ export default function VillkorPage() {
         {
           p: (
             <>
-              Utöver de lagstadgade rättigheterna erbjuder AK1A en frivillig
-              nöjdhetsgaranti för Fas 2 (90 dagar) — villkoren för den beskrivs
-              på {lank("/medlemskap", "medlemskapssidan")}. Frivilliga förmåner och
+              <strong className="text-foreground">Garantin och ångerrätten — två
+              parallella skydd.</strong>{" "}
+              Utöver de lagstadgade rättigheterna erbjuder AK1A den frivilliga
+              nöjd-kund-garantin för Fas 2 och Fas 3 (90 dagar): betalning sker
+              först när garantiperioden löper ut och endast om du förblivit
+              nöjd — den fullständiga ordalydelsen med juridisk hemvist finns i
+              sektion 5 och speglas på {lank("/medlemskap", "medlemskapssidan")}.
+              Garantin ersätter inte ångerrätten enligt lagen (2005:59) — den
+              gäller där den gäller enligt lag — och frivilliga förmåner och
               garantier inskränker aldrig dina tvingande rättigheter som
               konsument.
             </>

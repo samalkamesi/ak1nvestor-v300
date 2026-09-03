@@ -21,13 +21,15 @@ import {
   Download,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
-import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { MembersManager } from "@/components/ak1a/admin/members-manager";
 import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
 import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
 import { EkosystemPanel } from "@/components/ak1a/admin/ekosystem-panel";
 import { BeteendePanel } from "@/components/ak1a/admin/beteende-panel";
+import { Utvecklingsradar } from "@/components/ak1a/admin/utvecklingsradar";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -210,7 +212,7 @@ export default function AdminDashboard() {
     return (
       <div className="paper-texture flex min-h-screen items-center justify-center px-4">
         <Card className="w-full max-w-sm border-gold/30 p-6">
-          <Ak1aLogo size="md" onClick={() => setSection("hem")} />
+          <VarumarkesLogo storlek="md" onClick={() => setSection("hem")} />
           <div className="mt-6 flex items-center gap-2">
             <Server className="h-5 w-5 text-gold" />
             <h1 className="font-serif text-xl font-bold">Admin Dashboard</h1>
@@ -255,7 +257,7 @@ export default function AdminDashboard() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <Ak1aLogo size="md" onClick={() => setSection("hem")} />
+          <VarumarkesLogo storlek="md" onClick={() => setSection("hem")} />
           <div className="flex items-center gap-2">
             <Badge className="bg-gold text-background">ADMIN</Badge>
             <Button
@@ -346,6 +348,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="traffic" className="px-3 py-1.5 text-xs sm:text-sm">Statistik & SEO</TabsTrigger>
             <TabsTrigger value="beteende" className="px-3 py-1.5 text-xs sm:text-sm">Beteende</TabsTrigger>
             <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
+            <TabsTrigger value="utveckling" className="px-3 py-1.5 text-xs sm:text-sm">Utveckling 🔭</TabsTrigger>
           </TabsList>
 
           {/* Overview */}
@@ -692,6 +695,13 @@ export default function AdminDashboard() {
 
             {/* Autonomt system — AI-organen bygger vidare kontinuerligt */}
             <AutonomOrganPanel />
+          </TabsContent>
+
+          {/* Utvecklingsradarn — allt kundägaren behöver för att följa utvecklingen */}
+          <TabsContent value="utveckling" className="mt-6">
+            <Card className="p-5">
+              <Utvecklingsradar />
+            </Card>
           </TabsContent>
         </Tabs>
 

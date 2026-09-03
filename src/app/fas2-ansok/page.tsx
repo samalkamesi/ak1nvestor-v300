@@ -69,10 +69,11 @@ export const metadata: Metadata = pageMetadata({
   path: "/fas2-ansok",
   title: "Ansök om Fas 2 — den fundamentala vägen | AK1A",
   description:
-    "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Personlig utbildning med grundaren och chansen att bli representant för AK1nvestor. Ingen teknisk analys — det är Fas 3. 9 999 kr, 90 dagars nöjdhetsgaranti.",
+    "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt med stöd av 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Oändligt med timmar med grundaren tills du är värdig titeln oberoende analytiker, och chansen att bli representant för AK1nvestor. Ingen teknisk analys-utbildning — mästarnivån är Fas 3. 9 999 kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd.",
   keywords: [
     "Fas 2 ansökan",
     "fundamentalanalys utbildning Sverige",
+    "sammanvägning fundamentala indikatorer",
     "värdering Damodaran",
     "Penman bokslutsanalys",
     "Klarman margin of safety",
@@ -101,11 +102,15 @@ export default function Fas2AnsokPage() {
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
             Fas 1 är hela grundbiblioteket — kostnadsfritt, för alltid. Fas 2
             är något annat: <strong>den snabba fundamentala vägen till en
-            oberoende analytiker</strong>. Du utbildar dig som analyiker på
-            ett fundamentalt sätt — värdering, bokslut, kassaflöden, värde —
-            med en människa vid din sida: personlig utbildning med grundaren
-            och coaching i grupp. Vi tar emot ett begränsat antal elever i
-            taget, därför krävs ansökan.
+            oberoende analytiker</strong>. Vi utbildar inte om något nytt —
+            det är samma 20 analytiska indikatorer (V01–V20) som du mött i
+            Fas 1, men nu lär du dig analysera dem på rätt sätt, och framför
+            allt: <strong>sammanväga dem med varandra</strong> till ett omdöme
+            som är ditt eget. Med en människa vid din sida — personlig
+            utbildning med grundaren och coaching i grupp — får du oändligt
+            med timmar, tills du är värdig titeln oberoende aktieanalytiker.
+            Vi tar emot ett begränsat antal elever i taget, därför krävs
+            ansökan.
           </p>
         </header>
 
@@ -150,12 +155,14 @@ export default function Fas2AnsokPage() {
             Vad ingår i Fas 2
           </p>
           <h2 className="font-serif text-2xl font-bold">
-            {antalFas2} mästarverk — och en människa som förenar dem
+            Sammanvägningen — och en människa som förenar den
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             I Fas 1 lär du dig delarna: variabel för variabel, bok för bok,
-            kapitel för kapitel. Fas 2 är den snabba vägen vidare — de
-            fördjupningar som gör att du en dag står som en helt oberoende
+            kapitel för kapitel. Fas 2 är det nästa viktiga steget: att{" "}
+            <strong>sammanväga de 20 analytiska indikatorerna med varandra</strong> —
+            de {antalFas2} mästarverken är kartan, sammanvägningen är resan.
+            Det är den snabba vägen till att en dag stå som en helt oberoende
             analytiker, med ett omdöme som är ditt eget. Allt fundamentalt,
             inget annat.
           </p>
@@ -188,7 +195,7 @@ export default function Fas2AnsokPage() {
             {[
               {
                 namn: "Grundaren vid din sida",
-                text: "Personlig utbildning med grundaren av AK1A och coaching i grupp tillsammans med andra klienter — den snabba vägen, utan omvägar.",
+                text: "Personlig utbildning med grundaren av AK1A och coaching i grupp tillsammans med andra klienter — oändligt med timmar, tills du är värdig titeln oberoende aktieanalytiker.",
               },
               {
                 namn: "Representant för AK1nvestor",
@@ -228,7 +235,9 @@ export default function Fas2AnsokPage() {
           <ol className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
             <li>
               <strong className="text-foreground">1.</strong> Vi läser din ansökan
-              personligt — tillsammans med din elevstatus i Fas 1.
+              personligt — tillsammans med din elevstatus i Fas 1. Kravet är
+              ärligt sagt: bli klar med Fas 1, och ha viljan att lyckas med
+              fundamental aktieanalys — utan vilja blir det svårt att fokusera.
             </li>
             <li>
               <strong className="text-foreground">2.</strong> Du får en inbjudan till
@@ -236,8 +245,9 @@ export default function Fas2AnsokPage() {
             </li>
             <li>
               <strong className="text-foreground">3.</strong> Bestämmer du att gå
-              vidare börjar utbildningen, och du betalar först när du är nöjd
-              (90 dagars nöjdhetsgaranti).
+              vidare börjar utbildningen direkt — och du betalar inget under
+              de första 90 dagarna. Betalning sker först efter 90 dagar, och
+              bara om du förblir nöjd (90 dagars nöjd-kund-garanti).
             </li>
           </ol>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

@@ -14,20 +14,68 @@ export const dynamic = "force-dynamic";
  *    klarliggande motfråga om tidshorisont och mål (svar-typ "klarande") —
  *    mentorn gissar aldrig, den hjälper eleven formulera vad den vill veta
  * 4. GER HANDLINGAR ("klicka här", "gör detta nu", "nästa steg")
- * 5. Följer AKM1/AK1TS-ekosystemet i ALLT
+ * 5. Följer AKM1/AK1TS-ekosystemet i ALLT (Task 106-standard: V-nummer +
+ *    formel + poäng + kurslänk där relevant)
  * 6. RÅDGIVNINGS-GRÄNS: ALDRIG köp/sälj-rekommendationer — alltid disclaimer
  *    ("pedagogisk analys — inte investeringsråd") vid värderingsnära frågor
  * 7. Proaktiv: föreslår NÄSTA STEG innan eleven frågar
+ * 8. MINNS OCH TÄNKER OBEROENDE (konversationsminne "i djupet"): POST:en
+ *    tar emot `historik` (senaste turerna ur elevens lokala chat-minne) och
+ *    varje deterministiskt/LLM-svar berikas (berika()) med:
+ *    (a) naturlig bakåtreferens — "Du frågade tidigare om V12 — nu ligger
+ *        vi rätt för nästa steg:" — när historiken gör den naturlig,
+ *    (b) "Snäv men viktig korrigering: ..." när frågan vilar på ett
+ *        ifrågasättbart antagande (fundamentalanalys som statisk, lågt P/E
+ *        som alltid billigt, teknisk analys i Fas 2, ...) — svaret på den
+ *        ursprungliga frågan försämras aldrig,
+ *    (c) EN skarp analytiker-motfråga som roterar mellan fem kategorier
+ *        (värdering, risk, tidshorisont, källkritik, applikation) och som
+ *        ALDRIG upprepar förra svarets kategori (läses ur historiken),
+ *    (d) en "fördjupa"-länk till mest relevant kurs/verktyg.
  *
  * Svars-typen "klarande" använder handlings-länkar på formen "fragor:<text>"
  * (URL-kodad) — chat-widgeten skickar texten som en NY fråga, vilket gör
- * motfrågan klickbart svarsbar.
+ * motfrågan klickbart svarsbar. Klarande-svar får INTE ny motfråga (den är
+ * redan en fråga).
  */
 
+type Handling = { text: string; lank: string; ikon: string; beskrivning?: string };
 type Intent = {
   typ: "navigering" | "utbildning" | "analys" | "portfölj" | "inspiration" | "hjälp" | "system" | "klarande";
-  handlings: Array<{ text: string; lank: string; ikon: string; beskrivning?: string }>;
+  handlings: Handling[];
 };
+
+/** Grundsvaret från varje svarslager innan intelligens-berikning. */
+type Bassvar = {
+  svar: string;
+  handlings: Handling[];
+  kalla?: string;
+  typ: string;
+  modell?: string;
+};
+
+// ── KONVERSATIONSMINNE — historik från widgetens lokala minne ────────────────
+
+type HistorikTur = { roll: "du" | "mentor"; text: string; ts: number };
+
+/** Rensa/normalisera klient-historiken: giltiga turer, max ~12, rimlig längd. */
+function rensaHistorik(rå: unknown): HistorikTur[] {
+  if (!Array.isArray(rå)) return [];
+  const turer: HistorikTur[] = [];
+  for (const t of rå) {
+    if (!t || typeof t !== "object") continue;
+    const roll = (t as { roll?: unknown }).roll;
+    const text = (t as { text?: unknown }).text;
+    const ts = (t as { ts?: unknown }).ts;
+    if (typeof text !== "string" || !text.trim()) continue;
+    turer.push({
+      roll: roll === "mentor" ? "mentor" : "du",
+      text: text.slice(0, 400),
+      ts: typeof ts === "number" && Number.isFinite(ts) ? ts : 0,
+    });
+  }
+  return turer.slice(-14); // widget skickar 12 — liten marginal
+}
 
 /** Enkelt sidnamn ur sökvägen — för GLM-promptens platssinne (server-sida). */
 function sidKontextText(sokvag: string): string {
@@ -46,7 +94,7 @@ function sidKontextText(sokvag: string): string {
     "min-portfolj": "portföljsystemet — eleven följer sina innehav",
     portfoljbyggare: "portföljbyggaren — eleven bygger en tänkt portfölj rad för rad",
     blogg: under ? `bloggartikeln "${decodeURIComponent(under)}"` : "bloggen",
-    labb: "Labbet (201 case studies)",
+    labb: "Labbet (201 case study)",
     laroplan: "läroplanen — elevens 5-nivåers resa",
     vagfundament: "Vågfundamentet — 20×5-matrisen med fundamentalvågor",
     konfluens: "Konfluensradarn — värde möter vågor",
@@ -203,7 +251,7 @@ function vagfundamentSvar(
     V10: "Skuldsättningsgrad", V11: "Likviditet", V12: "Intäktsstabilitet",
     V13: "Patent & IP", V14: "Varumärke & Kundlojalitet", V15: "Nätverkseffekter",
     V16: "Produktlanseringar", V17: "Avtal & Partnerskap", V18: "Regulatoriska katalysatorer",
-    V19: "Kapitalförbrukning & Emission-risk", V20: "Återköp",
+    V19: "Kassatäckning — nyemissionsrisk", V20: "Återköp av egna aktier",
   };
 
   const vMatch = q.match(/v(\d{2})/);
@@ -268,7 +316,7 @@ function akm1Svar(fraga: string): { svar: string; handlings: Array<{ text: strin
     "kalkylator": { svar: "AKM1-kalkylatorn: 20 variabler, tre flikar:\n1. Räkna med egna siffror (formler + auto-poäng)\n2. Poängsätt manuellt (reglage)\n3. Var hittar jag siffrorna? (rapportguide)", lank: "/kalkylator" },
     "portfölj": { svar: "Portföljsystemet: lägg in aktier → AKM1 per aktie → vågprofil → djupanalys med Python.\nAllt på en sida.", lank: "/min-portfolj" },
     "tillväxt": { svar: "AKM1 Tillväxt = V01 (försäljning) + V02 (ARR) + V03 (diversifiering).\nAlla tre mäter olika aspekter av tillväxtkvalitet.", lank: "/kurser/v01-forsaljningstillvaxt" },
-    "risk": { svar: "AKM1 Risk = V19 (kapitalförbränning) + V10 (skuldsättningsgrad).\nRisk = inte bara volatilitet utan permanent förlust-kapital.", lank: "/kurser/v19-kapitalforbranning" },
+    "risk": { svar: "AKM1 Risk = V19 (kassatäckning — nyemissionsrisk) + V10 (skuldsättningsgrad).\nRisk = inte bara volatilitet utan permanent förlust-kapital.", lank: "/kurser/v19-kapitalforbranning" },
   };
 
   for (const [nyckel, data] of Object.entries(VAR)) {
@@ -372,7 +420,7 @@ function fas3Svar(fraga: string) {
   return {
     svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
 • Fas 1 — hela biblioteket (324 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
-• Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: 18 avancerade fundamentala kurser (värdering, bokslut, redovisning, företagsfinans), utbildning med grundaren och chansen att bli representant för AK1nvestor. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
+• Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu analyserade och sammanvägda på rätt sätt med stöd av 18 mästarverk (värdering, bokslut, redovisning, företagsfinans), oändligt med timmar med grundaren och chansen att bli representant för AK1nvestor. 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
 • Fas 3 — allt i Fas 2 plus det dynamiska ekosystemet: AKM1 × AK1TS, Vågfundamentet, Konfluensradarn och Portföljens vågor, teknisk analys på mästarnivå, trading-psykologi samt dashboard med AI-koppling och rapporter — och rätt till alla framtida utvecklingar.
 • Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
 Kraven växer alltså ur vad du faktiskt gör här i labbet — inte ur vad du betalar.`,
@@ -481,8 +529,6 @@ async function hamtaSenasteVagscan(): Promise<VagscanSvar | null> {
   }
 }
 
-
-
 /** VÅGKARTA — "vad säger vågkartan?" → senaste autonoma mätningen. */
 async function vagkartaSvar(fraga: string) {
   const q = fraga.toLowerCase();
@@ -584,10 +630,228 @@ Jag ger aldrig köp- eller säljrekommendationer — jag lär ut metoden (AKM1: 
   };
 }
 
+// ── INTELLIGENSLAGER: minne, oberoende tänkande, motfråge-rotation ──────────
+// Bygger ovanpå Task 106:s deterministiska svarsmotor: varje grundsvar berikas
+// med bakåtreferens ur historiken, antagande-korrektion och EN roterande
+// analytiker-motfråga — se berika() nedan.
+
+/** Ämnesigenkänning i en fråga — driver naturliga bakåtreferenser. */
+function amne(fraga: string): string | null {
+  const v = fraga.match(/v\s?(\d{2})/i);
+  if (v) return `V${v[1]}`;
+  const tabell: Array<[RegExp, string]> = [
+    [/roe|lönsamhet|avkastning på eget kapital/i, "ROE och lönsamhet"],
+    [/vågfundament|fundamentalvåg|vågklass|vågmatris/i, "vågfundamentet"],
+    [/vågkarta|vågmätning/i, "vågkartan"],
+    [/konfluens/i, "konfluens"],
+    [/net[- ]?net|ncav|cigar/i, "net-net"],
+    [/portfölj|innehav/i, "portföljen"],
+    [/värder|multipel|p\s?\/\s?[seb]/i, "värdering"],
+    [/risk|skuld|emission/i, "risk"],
+    [/tidshorisont|horisont/i, "tidshorisonten"],
+    [/kalkylator/i, "kalkylatorn"],
+    [/rapport|redovisn|bokslut|årsredovisning/i, "redovisning"],
+    [/utdelning/i, "utdelning"],
+    [/moat|konkurrensfördel/i, "moat"],
+    [/utdel|flashcard|repeter/i, "repetition"],
+  ];
+  for (const [re, namn] of tabell) if (re.test(fraga)) return namn;
+  return null;
+}
+
+/** Fortsättningsstilar för bakåtreferensen — roteras med historikens längd
+ *  så att mentorn aldrig låter robotlik två frågor i rad. */
+const BACKREF_STILAR = [
+  "nu ligger vi rätt för nästa steg:",
+  "nu bygger vi vidare på det:",
+  "nu kan vi gå ett steg djupare:",
+  "det gör den här frågan ännu skarpare:",
+];
+
+/**
+ * Naturlig bakåtreferens ("Du frågade tidigare om V12 — nu ligger vi rätt för
+ * nästa steg:"). Refererar ENDAST när historiken gör den naturlig: senaste
+ * tidigare elevfråga har ett kännt ämne och antingen samma ämne som den
+ * aktuella frågan, eller så saknar den aktuella frågan eget ämne. Annars
+ * tvingas ingen referens fram — en analytiker citerar inte på commando.
+ */
+function bakåtreferens(q: string, historik: HistorikTur[]): string | null {
+  const tidigare = historik.filter(
+    (t) => t.roll === "du" && t.text.trim().length > 4 && t.text.trim() !== q.trim()
+  );
+  const senaste = tidigare[tidigare.length - 1];
+  if (!senaste) return null;
+  const amneSenaste = amne(senaste.text);
+  const amneNu = amne(q);
+  if (!amneSenaste) return null;
+  if (amneNu && amneNu !== amneSenaste) return null;
+  const stil = BACKREF_STILAR[historik.length % BACKREF_STILAR.length];
+  return `Du frågade tidigare om ${amneSenaste} — ${stil}`;
+}
+
+/**
+ * OBEROENDE TÄNKANDE — mönster på ifrågasättbara antaganden i elevens fråga.
+ * Korrektionen läggs FÖRE grundsvaret och försämrar aldrig själva svaret:
+ * "Snäv men viktig korrigering: ...".
+ */
+const ANTAGANDEN: Array<{ re: RegExp; korrigering: string }> = [
+  {
+    re: /(fundamentalanalys|fundamentet|fundamentaldata|fundamentala siffror)[^.]{0,80}(statisk|oföränderlig|ändras aldrig|fast och färdigt)/i,
+    korrigering:
+      "Snäv men viktig korrigering: fundamentalanalys är inte statisk. Varje AKM1-variabel (V01–V20) är en tidsserie med en egen våg per horisont — det du ser i en årsredovisning är en ögonblicksbild av en rörelse (Vågfundamentets 20×5-matris), inte en evig sanning.",
+  },
+  {
+    re: /(l[aå]gt?\s*p\s*\/\s*e)[^.]{0,60}(alltid|per definition|betyder ju|måste ju)[^.]{0,30}(billig|bra|köp|attraktiv|fördelaktig)/i,
+    korrigering:
+      "Snäv men viktig korrigering: lågt P/E är inte synonymt med billigt — sjunkande marginaler (V07) eller hög skuld (V10) kan förklara varför marknaden rabatterar kursen. En multipel blir bara sann när den läses tillsammans med kvaliteten.",
+  },
+  {
+    re: /(teknisk analys[^.]{0,60}fas\s?2)|(fas\s?2[^.]{0,60}teknisk analys)/i,
+    korrigering:
+      "Snäv men viktig korrigering: teknisk analys hör hemma i Fas 3 (AK1TS — 5 teorier × 5 horisonter × 4 dimensioner). Fas 2 är den fundamentala vägen: värdering, bokslut, redovisning och företagsfinans.",
+  },
+  {
+    re: /utdelning[^.]{0,60}(alltid|bäst|säkrast|mest trygg)/i,
+    korrigering:
+      "Snäv men viktig korrigering: hög utdelning är inte automatiskt trygghet — en utdelning som överstiger vad verksamheten genererar äter balansräkningen (V10) eller slutar i emission (V19). Hållbarhet går alltid före nivå.",
+  },
+  {
+    re: /(aktier|börsen)[^.]{0,50}(alltid|garanterat|ju alltid)[^.]{0,40}(upp|stiga|stiger|öka)/i,
+    korrigering:
+      "Snäv men viktig korrigering: längre tidshorisont sänker sannolikheten för förlust — men aldrig till noll. Risken för permanent kapitalförlust (V19) finns på alla horisonter; därför kräver Grahams marginal of safety alltid en rabatt mot beräknat värde.",
+  },
+  {
+    re: /risk\s*(är|=|betyder|mag)\s*volatilitet/i,
+    korrigering:
+      "Snäv men viktig korrigering: i AKM1 är risk inte volatilitet utan permanent förlust av kapital. Prissvängningar är Mr Market som skriker — risken bor i fundamentalen (V10 skuldsättning, V19 kapitalförbrukning).",
+  },
+];
+
+function hittaAntagande(q: string): string | null {
+  for (const a of ANTAGANDEN) if (a.re.test(q)) return a.korrigering;
+  return null;
+}
+
+/** Motfråge-kategorier — roteras så att mentorn aldrig ställer samma slag
+ *  fråga två svar i rad och aldrig upprepar en exakt frågetext i historiken. */
+type MotfragaKategori = "värdering" | "risk" | "tidshorisont" | "källkritik" | "applikation";
+
+const MOTFRAGOR: Record<MotfragaKategori, string[]> = {
+  värdering: [
+    "Vilket P/E skulle du vara beredd att betala för det här bolaget — och vilken tillväxt förutsätter det priset?",
+    "Om kursen föll 30 % imorgon utan ny information: är bolaget då billigare, eller såg du fel från början?",
+    "Vad är bolaget värt om multipeln halveras men fundamentalen är oförändrad — och vad avgör det?",
+  ],
+  risk: [
+    "Vilken enskild händelse skulle radera din tes — och finns den synlig i någon AKM1-variabel?",
+    "Var finns skulden (V10) eller kapitalförbrukningen (V19) som kan tvinga fram en emission?",
+    "Om du fick se EN variabel innan du avgör risken — vilken väljer du, och varför?",
+  ],
+  tidshorisont: [
+    "På vilken av de fem horisonterna (mikro → mega) avgör den här frågan din tes?",
+    "Skulle ditt svar förändras om horisonten vore 6 månader i stället för 6 år?",
+    "Vilken vågklass (▲ ▼ ◼) väntar du på — och på vilken horisont?",
+  ],
+  källkritik: [
+    "Var i årsredovisningen hittar du siffran som bevisar det — not, resultaträkning eller kassaflöde?",
+    "Vem har intresse av att siffran ser ut som den gör — och vad skulle en shortsäljare titta på först?",
+    "Stämmer nyckeltalet mot kassaflödet, eller är det en redovisningskonstruktion?",
+  ],
+  applikation: [
+    "Räkna V09 (ROE = resultat efter skatt / snitt eget kapital) för ett bolag du följer — vilket värde hittar du?",
+    "Öppna kalkylatorn och poängsätt bolaget (V01–V20): vilken variabel fick lägst poäng, och varför?",
+    "Vilken variabel skulle du själv vilja lägga till i AKM1 — och vad skulle den mäta?",
+  ],
+};
+
+/** Senaste motfråge-kategori ur historiken (markören "💬 Motfråga (…)" sparas
+ *  av widgeten i minnet — därför överlever rotationen sidbyte och reload). */
+function senasteMotfrageKategori(historik: HistorikTur[]): MotfragaKategori | null {
+  for (let i = historik.length - 1; i >= 0; i--) {
+    const t = historik[i];
+    if (t.roll !== "mentor") continue;
+    const m = t.text.match(/💬 Motfråga \(([^)]+)\)/);
+    if (m) return m[1] as MotfragaKategori;
+  }
+  return null;
+}
+
+/** Ämnes-förankrad preferens: motfrågan ska helst bita i frågans eget ämne. */
+function amnesPreferens(q: string): MotfragaKategori | null {
+  if (/risk|skuld|emission|fara|förlust/i.test(q)) return "risk";
+  if (/värder|multipel|p\s?\/\s?[seb]|billig|dyr|pris/i.test(q)) return "värdering";
+  if (/tidshorisont|horisont|sikt|våg|timing|lång|mikro|mega/i.test(q)) return "tidshorisont";
+  if (/källa|rapport|bokslut|redovisn|not|tillit|lita|siffra/i.test(q)) return "källkritik";
+  if (/räkna|kalkyl|öv|testa|tillämp|använd|prakt/i.test(q)) return "applikation";
+  return null;
+}
+
+/**
+ * Välj EN skarp analytiker-motfråga:
+ * 1. exkludera förra svarets kategori (ur historikmarkören) — aldrig samma
+ *    kategori två gånger i rad,
+ * 2. lyft fram kategorin som passar frågans ämne,
+ * 3. rotera inom kategorin (mentor-svars-räknaren i historiken) och hoppa
+ *    över frågetexter som redan ställts inom det synliga minnet.
+ */
+function valMotfraga(q: string, historik: HistorikTur[]): { text: string; kategori: MotfragaKategori } {
+  const sist = senasteMotfrageKategori(historik);
+  const alla = Object.keys(MOTFRAGOR) as MotfragaKategori[];
+  const kandidater = alla.filter((k) => k !== sist);
+  const preferens = amnesPreferens(q);
+  const ordning =
+    preferens && kandidater.includes(preferens)
+      ? [preferens, ...kandidater.filter((k) => k !== preferens)]
+      : kandidater.length > 0
+        ? kandidater
+        : alla;
+  const mentorSvar = historik.filter((t) => t.roll === "mentor").length;
+  const kategori = ordning[mentorSvar % ordning.length];
+  const ställda = historik.filter((t) => t.roll === "mentor").map((t) => t.text).join("\n");
+  const friska = MOTFRAGOR[kategori].filter((f) => !ställda.includes(f));
+  const pool = friska.length > 0 ? friska : MOTFRAGOR[kategori];
+  const text = pool[(q.length + mentorSvar) % pool.length];
+  return { text, kategori };
+}
+
+/**
+ * BERIKA — lägger intelligenslagren ovanpå ett grundsvar (deterministiskt
+ * eller GLM): bakåtreferens, antagande-korrektion, EN roterande motfråga
+ * (som separat fält — widgeten renderar den som klickbart chip) och en
+ * "fördjupa"-länk. Klarande svar (redan en fråga) berikas inte med motfråga.
+ */
+function berika(base: Bassvar, q: string, historik: HistorikTur[]) {
+  const arKlarande = base.typ === "klarande";
+  const delar: string[] = [];
+  if (!arKlarande) {
+    const ref = bakåtreferens(q, historik);
+    if (ref && !base.svar.includes("Du frågade tidigare")) delar.push(ref);
+    const korr = hittaAntagande(q);
+    if (korr && !base.svar.includes("Snäv men viktig korrigering")) delar.push(korr);
+  }
+  const svar = [...delar, base.svar].filter(Boolean).join("\n\n");
+
+  const motfraga = arKlarande ? undefined : valMotfraga(q, historik);
+  const fLank =
+    base.handlings.find((h) => h.lank.startsWith("/kurser/")) ||
+    base.handlings.find((h) => h.lank.startsWith("/") && !h.lank.startsWith("fragor:"));
+  const fordjupa = fLank
+    ? { text: fLank.text.replace(/\s*→\s*$/, "").trim(), lank: fLank.lank }
+    : undefined;
+
+  return NextResponse.json({
+    ...base,
+    svar,
+    ...(motfraga ? { motfraga } : {}),
+    ...(fordjupa ? { fordjupa } : {}),
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { fraga, sokvag } = await req.json();
+    const { fraga, sokvag, historik: historikRå } = await req.json();
     const q = String(fraga || "").slice(0, 300);
+    const historik = rensaHistorik(historikRå);
     if (!q.trim()) {
       return NextResponse.json({
         svar: "Jag är din AI-mentor. Vad vill du göra?",
@@ -603,67 +867,75 @@ export async function POST(req: NextRequest) {
     // 1) VÅGFUNDAMENT — fundamentalvågor enligt P7 (citera exakt, aldrig extrapolera)
     const vf = vagfundamentSvar(q);
     if (vf) {
-      return NextResponse.json({ ...vf, kalla: "Vågfundamentet — P7-protokollet", typ: "utbildning" });
+      return berika({ ...vf, kalla: "Vågfundamentet — P7-protokollet", typ: "utbildning" }, q, historik);
     }
 
     // 2) SID-DATA-INTENTS — deterministiska svar om verktygen på sajten
     const vagkon = vagkonSvar(q);
-    if (vagkon) return NextResponse.json(vagkon);
+    if (vagkon) return berika(vagkon, q, historik);
 
     const konfluens = konfluensSvar(q);
-    if (konfluens) return NextResponse.json(konfluens);
+    if (konfluens) return berika(konfluens, q, historik);
 
     const netnet = netnetSvar(q);
-    if (netnet) return NextResponse.json(netnet);
+    if (netnet) return berika(netnet, q, historik);
 
     const fas3 = fas3Svar(q);
-    if (fas3) return NextResponse.json(fas3);
+    if (fas3) return berika(fas3, q, historik);
 
     const pro = proSvar(q);
-    if (pro) return NextResponse.json(pro);
+    if (pro) return berika(pro, q, historik);
 
     const rapport = rapportSvar(q);
-    if (rapport) return NextResponse.json(rapport);
+    if (rapport) return berika(rapport, q, historik);
 
     const horisont = tidshorisontSvar(q);
-    if (horisont) return NextResponse.json(horisont);
+    if (horisont) return berika(horisont, q, historik);
 
     const vagkarta = await vagkartaSvar(q);
-    if (vagkarta) return NextResponse.json(vagkarta);
+    if (vagkarta) return berika(vagkarta, q, historik);
 
     // 3) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
     const akm1 = akm1Svar(q);
     if (akm1) {
-      return NextResponse.json({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" });
+      return berika({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" }, q, historik);
     }
 
     // 4) TVETYDIGHET — mentorn redigerar: EN klarliggande motfråga istället för gissning
     if (arTvetydig(q)) {
-      return NextResponse.json(klarandeSvar(q));
+      return berika(klarandeSvar(q), q, historik);
     }
 
     // 5) Navigering
     const nav = navigera(q);
     if (nav) {
-      return NextResponse.json({
-        svar: "Jag tar dig dit — klicka på någon av länkarna:",
-        handlings: nav.handlings,
-        typ: nav.typ,
-        kalla: "AI-Mentor",
-      });
+      return berika(
+        {
+          svar: "Jag tar dig dit — klicka på någon av länkarna:",
+          handlings: nav.handlings,
+          typ: nav.typ,
+          kalla: "AI-Mentor",
+        },
+        q,
+        historik
+      );
     }
 
     // 6) Varumärke
     if (/vem är|vad är.*(sam|ak1|alkamesi|nvestor)/i.test(q)) {
-      return NextResponse.json({
-        svar: `Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: ${Object.keys(getCourses()).length} kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.`,
-        handlings: [
-          { text: "Se medlemskap →", lank: "/medlemskap", ikon: "💛" },
-          { text: "Läs mer om oss →", lank: "/om-oss", ikon: "🏛️" },
-        ],
-        kalla: "varumärke",
-        typ: "hjälp",
-      });
+      return berika(
+        {
+          svar: `Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: ${Object.keys(getCourses()).length} kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.`,
+          handlings: [
+            { text: "Se medlemskap →", lank: "/medlemskap", ikon: "💛" },
+            { text: "Läs mer om oss →", lank: "/om-oss", ikon: "🏛️" },
+          ],
+          kalla: "varumärke",
+          typ: "hjälp",
+        },
+        q,
+        historik
+      );
     }
 
     // 7) Proaktivt nästa steg
@@ -684,10 +956,26 @@ export async function POST(req: NextRequest) {
     const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);
 
     // 7b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
+    //     + SAMTALSHISTORIK (minnet i djupet) och analytiker-persona i prompten
     if (zaiAktiv()) {
       const kurserKontext = relevanta.length > 0
         ? relevanta.map((k) => `- /kurser/${k.slug} — ${k.title}: ${(k.learn || "").slice(0, 200)}`).join("\n")
         : "Inga kursmatchningar — svara allmänt pedagogiskt.";
+
+      // Historiken som GLM-meddelanden (äldst först). Widgeten sparar den aktuella
+      // frågan sist i minnet — undvik dubblett av user-meddelandet.
+      const historikMedd = historik
+        .filter((t) => t.text.trim())
+        .map((t) => ({
+          role: t.roll === "mentor" ? ("assistant" as const) : ("user" as const),
+          content: t.text,
+        }));
+      const medd = [...historikMedd];
+      const sist = medd[medd.length - 1];
+      if (!sist || sist.role !== "user" || sist.content.trim() !== q.trim()) {
+        medd.push({ role: "user" as const, content: q });
+      }
+
       const svaret = await zaiChat(
         [
           {
@@ -702,64 +990,79 @@ REGELVERK:
 5. Eleven befinner sig nu på: ${sidKontextText(sokvag)} — anpassa svaret till platsen.
 6. VÅGFUNDAMENT (fundamentalvågor/vågklass/våg för en V-variabel): källan är "Vågfundamentet — AKM1:s 20 variabler som tidsserier" — AKM1-variabeln är en tidsserie med en egen våg per horisont (mikro, kort, medellång, lång, mega) i 20×5-matrisen. Vågklasser: impulsvåg ▲ (fundamentalen förbättras), korrigering ▼ (försvagas), basbygge ◼ (samlar kraft), osatt · (för lite historik). P7-regler att följa: (a) citera celler exakt som de redovisas i matrisen; (b) extrapolera ALDRIG utanför osatta celler — osatt betyder osatt; (c) påtala divergens mellan fundamental våg och prisvåg när båda nämns (värde-signal att studera, aldrig köp/sälj); (d) avsluta alltid med disclaimern "pedagogisk analys — inte investeringsråd" och hänvisa till /vagfundament.
 7. RÅDGIVNINGS-GRÄNS: ge ALDRIG köp- eller säljrekommendationer för enskilda aktier eller bolag — du är pedagog, inte rådgivare. När frågan rör värdering av ett bolag, avsluta med "pedagogisk analys — inte investeringsråd".
-8. TVETYDIGA FRÅGOR ("är X bra?", "ska jag köpa X?"): gissa ALDRIG — ställ EN klarliggande motfråga om eleven tidshorisont och mål ("Bra för vad — som långsiktigt ägande eller kort sikt?") innan du svarar.
+8. TVETYDIGA FRÅGOR ("är X bra?", "ska jag köpa X?"): gissa ALDRIG — ställ EN klarliggande motfråga om elevens tidshorisont och mål ("Bra för vad — som långsiktigt ägande eller kort sikt?") innan du svarar.
+9. ANALYTIKER-PERSONA — TÄNK OBEROENDE: om elevens fråga vilar på ett tveksamt antagande (att fundamentalanalys vore statisk, att lågt P/E alltid vore billigt, att teknisk analys hör till Fas 2, att hög utdelning alltid vore trygghet) — påpeka det FÖRST med raden "Snäv men viktig korrigering: ..." och svara sedan lika fullständigt på själva frågan.
+10. MINNE: du får samtalshistorik (äldst först). Referera bakåt naturligt när det hjälper eleven ("Du frågade tidigare om V12 — nu ligger vi rätt för nästa steg:") — men tvinga aldrig fram en referens som inte lyfter svaret.
+11. Ställ INTE en avslutande fråga — mentorskiktet lägger automatiskt till EN roterande analytiker-motfråga efter ditt svar.
 
 KURSMATCHNINGAR (grounding — lär dig från dessa, länka dem):
 ${kurserKontext}`,
           },
-          { role: "user", content: q },
+          ...medd,
         ],
         { temperatur: 0.6, maxTokens: 400 }
       );
       if (svaret) {
-        return NextResponse.json({
-          svar: svaret,
-          handlings: (relevanta.length > 0
-            ? relevanta.slice(0, 2).map((k) => ({
-                text: `Starta: ${k.title.slice(0, 30)}… →`,
-                lank: `/kurser/${k.slug}`,
-                ikon: "📚",
-              }))
-            : [
-                { text: "Räkna i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
-                { text: "Läroplanen →", lank: "/laroplan", ikon: "🗺️" },
-              ]
-          ).concat([{ text: "Repetera flashcards →", lank: "#", ikon: "🃏" }]),
-          kalla: "Z.ai GLM + AKM1-ekosystem",
-          typ: "utbildning",
-          modell: "GLM",
-        });
+        return berika(
+          {
+            svar: svaret,
+            handlings: (relevanta.length > 0
+              ? relevanta.slice(0, 2).map((k) => ({
+                  text: `Starta: ${k.title.slice(0, 30)}… →`,
+                  lank: `/kurser/${k.slug}`,
+                  ikon: "📚",
+                }))
+              : [
+                  { text: "Räkna i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+                  { text: "Läroplanen →", lank: "/laroplan", ikon: "🗺️" },
+                ]
+            ).concat([{ text: "Repetera flashcards →", lank: "#", ikon: "🃏" }]),
+            kalla: "Z.ai GLM + AKM1-ekosystem",
+            typ: "utbildning",
+            modell: "GLM",
+          },
+          q,
+          historik
+        );
       }
     }
 
     if (topp.length > 0) {
       const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);
-      return NextResponse.json({
-        svar: relevanta.length === 1
-          ? `[AKM1] Det låter som kursen **${relevanta[0].title}** (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}`
-          : `[AKM1] Flera kurser matchar:\n${relevanta.map((k) => `• **${k.title}** — ${k.learn?.slice(0, 80)}…`).join("\n")}`,
-        handlings: relevanta.slice(0, 3).map((k) => ({
-          text: `Starta: ${k.title.slice(0, 30)}… →`,
-          lank: `/kurser/${k.slug}`,
-          ikon: "📚",
-        })),
-        kalla: "AKM1-ekosystem",
-        typ: "utbildning",
-      });
+      return berika(
+        {
+          svar: relevanta.length === 1
+            ? `[AKM1] Det låter som kursen **${relevanta[0].title}** (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}`
+            : `[AKM1] Flera kurser matchar:\n${relevanta.map((k) => `• **${k.title}** — ${k.learn?.slice(0, 80)}…`).join("\n")}`,
+          handlings: relevanta.slice(0, 3).map((k) => ({
+            text: `Starta: ${k.title.slice(0, 30)}… →`,
+            lank: `/kurser/${k.slug}`,
+            ikon: "📚",
+          })),
+          kalla: "AKM1-ekosystem",
+          typ: "utbildning",
+        },
+        q,
+        historik
+      );
     }
 
-    // 8) Fallback med proaktiva förslag
-    return NextResponse.json({
-      svar: "Jag kan hjälpa dig med allt på sajten. Här är nästa steg baserat på var du är:",
-      handlings: [
-        { text: "Fortsätt läroplanen →", lank: "/laroplan", ikon: "🗺️" },
-        { text: "Räkna på en aktie →", lank: "/kalkylator", ikon: "🧮" },
-        { text: "Bygg portfölj →", lank: "/min-portfolj", ikon: "💼" },
-        { text: "Testa mig (quiz) →", lank: "/kurser/the-intelligent-investor", ikon: "🧠" },
-      ],
-      typ: "hjälp",
-      kalla: "AI-Mentor",
-    });
+    // 8) Fallback med proaktiva förslag (AKM1-struktur enligt Task 106)
+    return berika(
+      {
+        svar: "[AKM1] Jag kan hjälpa dig med allt på sajten — fundamentet (V01–V20, 0–5 poäng per variabel, max 100), vågorna (AK1TS: 5×5×4) och portföljen. Här är nästa steg baserat på var du är:",
+        handlings: [
+          { text: "Fortsätt läroplanen →", lank: "/laroplan", ikon: "🗺️" },
+          { text: "Räkna på en aktie →", lank: "/kalkylator", ikon: "🧮" },
+          { text: "Bygg portfölj →", lank: "/min-portfolj", ikon: "💼" },
+          { text: "Testa mig (quiz) →", lank: "/kurser/the-intelligent-investor", ikon: "🧠" },
+        ],
+        typ: "hjälp",
+        kalla: "AI-Mentor",
+      },
+      q,
+      historik
+    );
   } catch {
     return NextResponse.json({ svar: "Något gick fel — försök igen." }, { status: 400 });
   }

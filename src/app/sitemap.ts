@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/nyheter`, changeFrequency: "hourly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/portfoljbyggare`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/portfolj-forskning`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/netnet`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/superanalys`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
@@ -55,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Medlems- och företagssidor
     { url: `${BASE_URL}/pro`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/prenumeration`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas3`, changeFrequency: "monthly", priority: 0.6, lastModified: now },
     { url: `${BASE_URL}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },
@@ -64,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Om & juridik
     { url: `${BASE_URL}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
     { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    { url: `${BASE_URL}/transparens`, changeFrequency: "yearly", priority: 0.4, lastModified: now },
     { url: `${BASE_URL}/villkor`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/cookiepolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/ansvar`, changeFrequency: "yearly", priority: 0.3, lastModified: now },

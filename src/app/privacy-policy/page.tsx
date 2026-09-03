@@ -69,6 +69,14 @@ export default function PrivacyPolicy() {
             personuppgifter besvaras på samma adress. Vi har inget separat dataskyddsombud — kontakta
             oss direkt, vi svarar inom 30 dagar.
           </p>
+          <p className="mt-2 text-muted-foreground">
+            Vill du se hela dataregistret — vad, varför, rättslig grund, lagringstid
+            och dina rättigheter per kategori, precis som artikel 13 kräver — läs{" "}
+            <Link href="/transparens" className="text-gold underline">
+              Transparens &amp; GDPR
+            </Link>
+            .
+          </p>
         </section>
 
         <section>

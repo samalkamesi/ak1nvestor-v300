@@ -29,9 +29,15 @@ const JSONLAGE = process.argv.includes("--json");
 // ── NIVÅ A: degenererad → korrekt (aldrig korrekt svenska i kurslöptext) ──
 // "ar"→"är" och "pa"→"på" är fristående aldrig korrekta svenska ord; versal-
 // formen (AR/PA — t.ex. akronym) lämnas orörd av ersatt()s versalregelväg.
+// KRITISKT: JS \w räknar INTE åäö som ordtecken! Utan åäö-säkra gränser ser
+// regexen "köpa" som "kö"+"pa" och SKAPAR halvformerna ("köpå") den ska jaga.
+const BOKSTAV = "A-Za-z0-9_ÅÄÖåäö";
+
+// FARLIGA KORTORD pga åäö-grannar är BORTA ur MAPPA (pa/gor/ar/nar/dar) —
+// de får ALDRIG maskinersättas; svensk-kunniga agenter hanterar dem.
 const A_MAPPA = {
-  gor: "gör", gors: "görs", goras: "görs", gora: "göra", gorande: "görande",
-  nar: "när", dar: "där",
+  gors: "görs", goras: "görs", gora: "göra", gorande: "görande",
+  // nar/dar/ar/por pa — BORTTAGNA: \w-hålet gör dem farliga (se BOKSTAV-noten)
   kopte: "köpte", koper: "köper", kop: "köp", kopta: "köpta", kopare: "köpare",
   oppna: "öppna", oppnar: "öppnar", oppnade: "öppnade",
   laste: "läste",
@@ -68,7 +74,7 @@ const A_MAPPA = {
   forsok: "försök", forsoker: "försöker", forsoka: "försöka", forsoks: "försöks",
   forlust: "förlust", forluster: "förluster", forlorar: "förlorar", forlorat: "förlorat", forlora: "förlora",
   fordelaktig: "fördelaktig",
-  ar: "är", pa: "på",
+  // ar/pa — BORTTAGNA: \w-hålet (åäö ≠ \w) gör "köpa"→"köpå"-fällan möjlig
   // omvänd vokalkorruption (djupkontroll 2026-09-03: 1 500+ förekomster)
   kopa: "köpa", kopas: "köpas", kopades: "köptes",
   fragor: "frågor",
@@ -79,6 +85,11 @@ const A_MAPPA = {
   troskel: "tröskel", trosklar: "trösklar", troskeln: "tröskeln",
   overlevnad: "överlevnad", uthallighet: "uthållighet",
   marknar: "marknader",
+  // MASKINKORRUMPERADE VERB (trasig ar→är-applicering landat i data 2026-09-03)
+  tjänär: "tjänar", förtjänär: "förtjänar", betjänär: "betjänar",
+  belönär: "belönar", dödär: "dödar", lånär: "lånar", tränär: "tränar",
+  flödär: "flödar", utspädär: "utspäder", utplånär: "utplånar",
+  trådär: "trådar", ledtrådär: "ledtrådar", utlånär: "utlånar",
   // HALVFORMER (å bevarat, förlorat ä — djupkontrollen 2026-09-03: 1 300+)
   "köpå": "köpa", "köpås": "köpas",
   "frågör": "frågor", "frågörs": "frågors",
@@ -100,8 +111,9 @@ const VERSAL_BLOCK = new Set(["AR", "PA"]);
 
 // Ordgränser: blockera sammanslutning med bokstäver/siffra/@; tillåt punkt,
 // komma, utropstecken efter (meningsavslut). Lookbehind skyddar URL/filnamn.
+// Ordgränser MED åäö (BOKSTAV-klassen) — annars ser "köpa" ut som "kö"+"pa".
 const ERSATT_RE = new RegExp(
-  `(?<![\\w/@.\\-])(${Object.keys(MAPPA).join("|")})(?![\\w@])`,
+  `(?<![${BOKSTAV}/@.\\-])(${Object.keys(MAPPA).join("|")})(?![${BOKSTAV}@])`,
   "gi",
 );
 

@@ -62,8 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Om & juridik
     { url: `${BASE_URL}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
-    { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    { url: `${BASE_URL}/villkor`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    { url: `${BASE_URL}/cookiepolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    { url: `${BASE_URL}/ansvar`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    { url: `${BASE_URL}/upphovsratt`, changeFrequency: "yearly", priority: 0.4, lastModified: now },
+    { url: `${BASE_URL}/kallor`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
     { url: `${BASE_URL}/finansiell-policy`, changeFrequency: "yearly", priority: 0.4 },
   ];
 

@@ -1,10 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { lasMedlem, sparaMedlem, loggaUt, niva, lasXP, lasStjarnor } from "@/lib/member-local";
+
+/** localStorage-nyckel för spårat samtycke till villkor + integritetspolicy. */
+const SAMTYCKE_NYCKEL = "ak1a-villkors-samtycke";
+
+/** Sparar samtycket vid första lyckade inloggningen — skriver aldrig över ett befintligt. */
+function sparaSamtycke() {
+  if (typeof window === "undefined") return;
+  try {
+    if (window.localStorage.getItem(SAMTYCKE_NYCKEL)) return; // finns redan — blockera inte framtida besök
+    const id =
+      typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+        ? crypto.randomUUID()
+        : String(Date.now());
+    window.localStorage.setItem(
+      SAMTYCKE_NYCKEL,
+      JSON.stringify({ godkant: true, datum: new Date().toISOString(), id })
+    );
+  } catch {
+    /* localStorage otillgängligt — blockera inte inloggningen */
+  }
+}
 
 /** Inloggning med e-post — GRATIS konto: hittar eller skapar medlemmen. */
 export function LoggaIn() {
@@ -13,13 +34,29 @@ export function LoggaIn() {
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [redan, setRedan] = useState(false);
+  const [samtycke, setSamtycke] = useState(false);
 
   useState(() => {
     if (typeof window !== "undefined" && lasMedlem()) setRedan(true);
   });
 
+  // Redan sparat samtycke? Ikryssat direkt så återkommande besökare inte blockeras.
+  useEffect(() => {
+    try {
+      if (typeof window !== "undefined" && window.localStorage.getItem(SAMTYCKE_NYCKEL)) {
+        setSamtycke(true);
+      }
+    } catch {
+      /* ignorerbart */
+    }
+  }, []);
+
   const loggaIn = async () => {
     if (!email.trim()) return;
+    if (!samtycke) {
+      setStatus("Du måste godkänna villkoren.");
+      return;
+    }
     setBusy(true);
     setStatus("");
     try {
@@ -32,6 +69,7 @@ export function LoggaIn() {
       const data = await res.json();
       if (res.ok && data.member) {
         sparaMedlem({ id: data.member.id, email: data.member.email, namn: data.member.name || namn || undefined });
+        sparaSamtycke();
         setStatus(
           data.isNew
             ? `Välkommen till AK1A, ${data.member.name || email}! Ditt gratis-konto är skapat — alla 307 kurser är upplåsta.` // Uppdaterad 2026-09-01: 307 kurser
@@ -102,19 +140,44 @@ export function LoggaIn() {
               onChange={(e) => setNamn(e.target.value)}
               placeholder="Ditt namn (valfritt)"
             />
+            <label
+              htmlFor="ak1a-villkors-samtycke"
+              className="flex cursor-pointer select-none items-start gap-2.5"
+            >
+              <input
+                id="ak1a-villkors-samtycke"
+                type="checkbox"
+                checked={samtycke}
+                onChange={(e) => setSamtycke(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-gold"
+              />
+              <span className="text-xs leading-relaxed text-muted-foreground">
+                Jag godkänner{" "}
+                <Link href="/villkor" className="underline hover:text-gold">
+                  användarvillkoren
+                </Link>{" "}
+                och{" "}
+                <Link href="/privacy-policy" className="underline hover:text-gold">
+                  integritetspolicyn
+                </Link>
+                .
+              </span>
+            </label>
             <Button
               className="w-full bg-gold text-background hover:bg-gold/90"
               onClick={loggaIn}
-              disabled={busy}
+              disabled={busy || !samtycke}
             >
               {busy ? "Loggar in…" : "Logga in / Skapa konto"}
             </Button>
+            {!samtycke && (
+              <p className="text-center text-[11px] text-muted-foreground">
+                Godkänn villkoren för att fortsätta
+              </p>
+            )}
           </div>
           {status && <p className="mt-3 text-sm text-gold">{status}</p>}
           <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground">
-            Genom att fortsätta godkänner du vår{" "}
-            <Link href="/privacy-policy" className="underline">integritetspolicy</Link> och{" "}
-            <Link href="/finansiell-policy" className="underline">finansiella policy</Link>.
             Ingen betalning, inget kort, avsluta när du vill.
           </p>
         </div>

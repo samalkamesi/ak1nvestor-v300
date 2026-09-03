@@ -1,0 +1,1085 @@
+{
+  "slug": "principles-of-corporate-finance",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 215,
+  "title": "Principles of Corporate Finance — Brealey, Myers & Allen: KOMPLETT",
+  "summary": "Principles of Corporate Finance är finansens bibel: Richard Brealey och Stewart Myers första upplaga kom 1981, den fjortonde (2023) har Franklin Allen och Alex Edmans som medförfattare, och under fyra decennier har boken lärt större delen av världens finansutbildade att tänka på precis ett sätt — i nuvärde. Den berömda bågen: pengars tidsvärde och NPV-regeln; obligationer och aktier som kassaflödesmaskiner; riskens två ansikten och portföljteorin; beta och CAPM; kapitalkostnad och WACC; kapitalstruktur och MM-teoremen; utdelningspolitik och återköp; optionsteori och reella optioner; leasing; riskhantering med terminer och swappar; rörelsekapital och finansiell planering; fusioner och förvärv. Kursen är katalogens högsta boknivå (Fas 2, nivå 5) och läser bibeln som AK1A:s teoretiska grundbult i tre lager: mot AKM1 — NPV tänkandet bakom V04–V06, kapitalstrukturen bakom V10, utdelningen och återköpen bakom V20, hedging bakom V03 och V12; mot AK1TS — diskonteringen är fundamentets klocka medan vågmotorn läser prisets tid på fem horisonter, beta är volatilitetens fundamentalöversättning och konfluens förutsätter att båda läsningarna kan räknas; mot labbet — Markowitz diversifiering, Monte Carlo-tänk och optionsvärldens asymmetri är motorer AK1A bygger vidare på. Brealey-Myers är boken som gjorde svenskan i detta material — nuvärde, kassaflöde, riskpremie — till yrkesspråk; kursen lär ut språket på svenska, med Ericsson, Volvo och H&M som räkneexempel hela vägen.",
+  "minutes": 15,
+  "xp": 2000,
+  "level": "",
+  "learn": "Behärska NPV-regeln och dess filosofi: endast beslut som ökar nuvärdet skapar värde — allt annat är accounting · Diskontera som en andningsövning: nuvärde, annuitet, evighetsannuitet, tillväxtannuitet, real mot nominell (V04–V06) · Prissätta obligationer och förstå varför avkastning och pris rör sig i motsatta riktningar — och varför långa tillväxtaktier är räntepapper i förklädnad · Använda Gordons tillväxtmodell på aktier och härleda P/B = (ROE − g) / (r − g) (V05) · Välja projekt med NPV, förstå IRR:s fallgropar och använda lönsamhetsindex vid kapitalransonering · Skilja systematisk och idiosynkratisk risk — och varför diversifiering bara belönar den förstnämnda · Räkna beta, läsa CAPM: avkastningskrav = riskfri ränta + beta × riskpremie, och förstå alfa som missprissättning (AK1TS:s möte med CAPM) · Bygga WACC med marknadsvikter och divisionella avkastningskrav · Förstå MM-teoremen: irrelevans i perfekta marknader, skattesköldens värde, trångmålkostnader och pecking order — och vad det betyder för V10 · Analysera utdelningspolicy och återköpensmatematik med signalvärde och flexibilitet (V20) · Tänka optioner: payoff-asymmetri, volatilitetens paradoxala värde, aktien som köpoption på bolagets tillgångar, reella optioner (V17–V18) · Jämföra äga mot hyra med nuvärdesmatematik och se genom leasingens balansräkningsförklädnader · Hedga med terminer, swappar och optioner — och veta varför MM-argumentet mot hedging ändå förlorar i verkligheten (V03, V12) · Hantera rörelsekapitalets tre poster — kassa, kundfordringar, lager — med svenska räkneexempel (V11) · Värdera förvärv: synergi mot hubris, kontant mot aktie som betalning — och slutligen syntetisera bibeln till AK1A:s RAM: kassaflöde, risk och tid in; V01–V20 och vågorna ut.",
+  "why": "Alla vägar i modern finans slutar i Brealey-Myers. Higgins lär ut hantverket på bolagets sida; bibeln lär ut teorin som förklarar varför hantverket ser ut som det gör — och den gör det med en pedagogisk klarhet som fyra decennier av MBA-studenter vittnar om. För AK1A är boken oumbärlig på tre plan. Mot AKM1: varje poängsatt multipl är en förpackad NPV-övning (V04–V06), varje skuldsättningsbedömning en MM-övning (V10), varje återköpsbedömning en utdelningspolicy-övning (V20), varje diversifieringspoäng en portföljteori-övning (V03) — den som inte kan teorin poängsätter dess resultat. Mot AK1TS: vågmotorn mäter prisets tid på fem horisonter, diskonteringen mäter kassaflödets tid — konfluens, hela ekosystemets mötesplats där värde möter vågor, förutsätter att fundamentalets klocka kan räknas, och det är denna bok som lär ut klockan. Mot motorerna: Markowitz optimering, beta-estimering, Monte Carlo på projekt och optionsvärdering är byggstenar labbet återanvänder. Utan bibeln är finansförståelsen en samling recept; med den blir den ett språk — och kursen undervisar språket på svenska, med Ericsson, Volvo och H&M i räkneexemplen, från första kronan till sista slutvärdet.",
+  "chapters_list": [
+    "1. Boken och grundidéerna — finansens två grundbeslut",
+    "2. Nuvärdet — pengars tidsvärde och NPV-regeln",
+    "3. Tillgångsprissättning — obligationer och aktier som kassaflödesmaskiner",
+    "4. Investeringsbeslutet — NPV mot IRR, återbetalning och kapitalransonering",
+    "5. Riskens två ansikten — portföljteori och diversifiering",
+    "6. Beta och CAPM — marknadens prissättning av risk",
+    "7. Kapitalkostnaden i praktiken — WACC och divisionella avkastningskrav",
+    "8. Kapitalstruktur — MM-teoremen, skattesköldar och trångmålkostnader (V10)",
+    "9. Utdelningspolicyn — irrelevans, signaler och återköpensmatematik (V20)",
+    "10. Optionsteori — asymmetriska utdelningar och reella optioner",
+    "11. Leasing — att äga, hyra och skuldens förklädnader",
+    "12. Riskhantering — försäkring, terminer, swappar och valutasäkring (V03)",
+    "13. Finansiell planering och rörelsekapital — kassa, kreditpolicy och lager",
+    "14. Förvärv, kontroll och syntes — M&A och bibeln i AK1A"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 15,
+      "title": "Boken och grundidéerna — finansens två grundbeslut",
+      "intro": "Principles of Corporate Finance, första upplagan 1981 av Richard Brealey och Stewart Myers — med Franklin Allen och Alex Edmans i de senaste upplagorna — är världens mest använda lärobok i företagsfinansiering: finansens bibel. Kursens första kapitel presenterar bokens berömda upplägg: finanschefens två grundbeslut och de grundidéer som hela bygget vilar på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens ansats är radikal i sin enkelhet: ett bolag är en samling beslut, och finansens hela uppgift är att skilja beslut som skapar värde från beslut som bara flyttar pengar. De två grundbesluten: investeringsbeslutet — vilka projekt ska bolaget sätta kapital i? — och finansieringsbeslutet — varifrån ska kapitalet hämtas: ägare, långivare, marknad? Runt dem kretsar de två följdbesluten: utdelningspolicyn (vad som lämnar bolaget) och riskhanteringen (vad som skyddas). Finanschefen står, som boken formulerar det, mellan bolagets inre — fabriker, projekt, avtal — och kapitalmarknadens yttre, där framtida kassaflöden prissätts i dag. Räkneexempel på värdeskapande direkt ur bokens logik: ett projekt som kostar 800 i dag och vars framtida kassaflöden är värda 1 000 på marknaden skapar 200 i nuvärde — ägarna blir 200 rikare av att bolaget gör det, och ingen annan förlorar. Hela boken är den meningen uppspelad i fjorton hundra sidor."
+        },
+        {
+          "type": "text",
+          "content": "Grundidéerna som boken återkommer till genom hela bågen: nuvärdet — värdet av allt är summan av dess framtida kassaflödens pris i dag; alternativkostnaden för kapital — diskonteringsräntan är inte en parameter utan en marknadspris på tid och risk; kassaflöde före bokföringsvinst — resultaträkningen är en åsikt, kassan är sanningen (Higgins-kursens röda tråd, här som teorem); riskpremien — risk inte är ett fel att undvika utan en prisbildning att förstå; incitamenten — ägare, chefer och långivare vill olika saker, och konstruktionen av avtal styr beteendet; de effektiva marknaderna — priserna samlar information snabbare än analytikern hinner läsa den, vilket inte betyder att de alltid har rätt; och optionens asymmetri — rättigheter utan förpliktelser värderas annorlunda än allt annat. Ingen av dessa idéer är svår var för sig. Bokens bedrift är att väva dem till en enda berättelse där varje kapitel är föregångarens konsekvens."
+        },
+        {
+          "type": "text",
+          "content": "Och bibelns AK1A-roll, som kursen bygger i fjorton kapitel. Mot AKM1: NPV-tänkandet är V04–V06:s innehåll — en multipl är en diskonteringsränta och en tillväxtförväntan förpackade; kapitalstrukturens teori är V10:s; utdelnings- och återköpsläran är V20:s; portföljteorin är V03:s diversifieringslogik; riskhanteringen är V12:s stabilitetsunderlag. Mot AK1TS: vågmotorn läser prisets rörelser på fem horisonter — mikro, kort, medellång, lång, mega — och bibeln levererar fundamentalets motsvarande tidsaxel: diskonteringsräntan är pris på tid, beta är pris på risk, duration är känslighet för tid. Konfluens — mötet mellan fundamental våg och prisvåg, ekosystemets kärna — förutsätter att båda tidsserierna kan räknas. Kursens löfte, motsatt Higgins-kursens: där handboken lär ut rummet (bokslutets mekanik), lär bibeln ut tiden och risken (kassaflödets pris) — tillsammans täcker de underlaget till hela AKM1, och AK1TS möter dem i priset."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens första och sista budskap är samma mening: skilj beslut som skapar värde från beslut som flyttar pengar. Räknefrågan bakom varje rubrik — projekt, emission, utdelning, förvärv — är alltid en: ökar detta nuvärdet? Om frågan inte kan besvaras är det inte för att den är svår, utan för att den inte är ställd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fyra besluten och deras AK1A-mappning\",\"rader\":[[\"Beslut\",\"Fråga\",\"Bokens kapitelfamilj\",\"AK1A-utgång\"],[\"Investeringsbeslutet\",\"vilka projekt?\",\"NPV, IRR, riskanalys\",\"V04–V06, V17–V19\"],[\"Finansieringsbeslutet\",\"vems kapital?\",\"MM, skuld, emissioner\",\"V10, V19\"],[\"Utdelningspolicyn\",\"vad lämnar bolaget?\",\"irrelevans, signaler, återköp\",\"V20\"],[\"Riskhanteringen\",\"vad skyddas?\",\"terminer, swappar, optioner\",\"V03, V12\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Ett projekt kostar 800 i dag och dess framtida kassaflöden har ett marknadsvärde av 1 000. Vad är projektets NPV?",
+          "alternativ": [
+            "200",
+            "800",
+            "1 000",
+            "1 800"
+          ],
+          "ratt": 0,
+          "tips": "Värdet av flödena minus kostnaden — vad blir rikare ägarna?"
+        },
+        {
+          "q": "Vilka är finanschefens två grundbeslut enligt boken?",
+          "alternativ": [
+            "Budget och revision",
+            "Investeringsbeslutet — vilka projekt — och finansieringsbeslutet — vems kapital",
+            "Köp och försäljning",
+            "Prissättning och marknadsföring"
+          ],
+          "ratt": 1,
+          "tips": "Kapital in i bolaget, kapital till verksamheten — vilka två frågor?"
+        },
+        {
+          "q": "Hur förhåller sig bibeln till AK1TS enligt kursen?",
+          "alternativ": [
+            "De behandlar samma tidsserie",
+            "Bibelns diskontering är fundamentalets klocka — kassaflödets pris på tid — medan vågmotorn läser prisets tid på fem horisonter; konfluens förutsätter att båda kan räknas",
+            "AK1TS bygger på bibelns vågteori",
+            "De är oberoende system"
+          ],
+          "ratt": 1,
+          "tips": "Vad mäter diskonteringsräntan — och vad mäter momentum på fem horisonter?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 16,
+      "title": "Nuvärdet — pengars tidsvärde och NPV-regeln",
+      "intro": "Bokens maskineri och dess hjärta: en krona i dag är värd mer än en krona i morgon, för den kan arbeta. Nuvärdesformeln, diskonteringsräntan som alternativkostnad, ränta-på-ränta, real mot nominell — och NPV-regeln som finansens enda beslutsregel. Detta är V04–V06:s teori och hela DCF-värderingens grund.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: PV = C1 / (1 + r) + C2 / (1 + r)^2 + ... — varje framtida belopp divideras med sin egen tidsfaktor, och r är alternativkostnaden för kapital: den avkastning marknaden ger för placeringar med samma risk. Det är den definitionen som gör regeln till en regel och inte en preferens: ett projekt med positiv NPV slår marknadens eget erbjudande vid samma risk, och därför skapar det värde — oavsett vem som äger det, oavsett hur det känns. Räkneexempel: investera 1 000, få 400 per år i fyra år, avkastningskrav 10 procent — annuitetsfaktorn 3,1699 ger nuvärde 400 × 3,1699 = 1 268; NPV = 1 268 − 1 000 = +268. Spegelmaskinen: framtida värde — 100 som får stå två år vid 10 procent blir 100 × 1,21 = 121 — och där är ränta-på-ränta — sparandets och pensionens gemensamma motor, och skälet till att tjugo års tålamod slår nästan all aktivitet."
+        },
+        {
+          "type": "text",
+          "content": "Nominellt mot realt — bokens konsekvensregel: flöden som växer med inflationen diskonteras med nominell ränta, flöden i fasta priser med real ränta, och den som blandar får systematiskt fel. Sambandet: (1 + nominell) = (1 + real) × (1 + inflation) — vid 10 procent nominellt och 4 procent inflation är den reala räntan 1,10 / 1,04 − 1 = ca 5,8 procent. Sedan NPV-regeln mot sina rivaler, som boken avlivar en i taget: bokföringsvinstregeln (vinst är åsikt, se kapitel tre), återbetalningstiden (ignorerar allt efter gränsen och tiden före priset — kapitel fyra tar den på allvar), och vad-som-känns-rätt-regeln (vilket är de flesta besluts verkliga algoritm). NPV:s överläge är matematiskt: den mäter kronor av välstånd, adderas över projekt (värdeadditivitet — tre projekt med NPV +100, +50 och −20 är tillsammans +130, varken mer eller mindre), och skiljer storlek från avkastning. Det är också dess svaghet, ty den kräver att framtiden uppskattas — och det är där riskkapitlena börjar."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är hela värderingssidan. V04–V06: multiplarna är NPV-maskinens förkortningar — P/E 20 är ett paket av antaganden om tillväxt, risk och varaktighet som kan packas upp; EV/EBITDA 8 vid WACC 8 procent och nolltillväxt är balans; avvikelser är marknadens uttalanden om g eller r. Fem horisonter-länken: diskonteringen prissätter kassaflödets tid — en H&M-krona om tio år och en Ericsson-krona om trettio diskonteras olika djupt, och det är därför långduriga bolag reagerar våldsammast på ränta (Vår ekonomi-kursens transmission, här som aritmetik). V19: en emissionsrisk är diskonteringsmatematik på bolagets livslängd — varje månad kassan räcker flyttar värdets tyngdpunkt. Kursens träning: omvandla alltid multipl till avkastningskrav och tillbaka (P/E 20 ↔ 5 procents vinstavkastning; tillväxt 3 mot ränta 9 ger motiverad P/E långt högre) — den som kan båda riktningarna läser marknadens priser som vad de är: komprimerade NPV-övingar."
+        },
+        {
+          "type": "insikt",
+          "content": "NPV är finansens enda beslutsregel därför att den är den enda som mäter vad som mätas ska: kronor av välstånd i dag, adderbara över projekt och oberoende av vem som räknar. Alla andra kriterier — IRR, återbetalning, vinstmarginal — är den regelns översättningar, och översättningar förlorar alltid något i farten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diskonteringsmaskinen — fyra räkneexempel\",\"rader\":[[\"Övning\",\"Beräkning\",\"Svar\"],[\"NPV: 1 000 i dag, 400/år i 4 år, krav 10 %\",\"400 × 3,1699 − 1 000\",\"+268\"],[\"Framtida värde: 100 i 2 år vid 10 %\",\"100 × 1,10²\",\"121\"],[\"Real ränta vid 10 % nominell, 4 % inflation\",\"1,10 / 1,04 − 1\",\"ca 5,8 %\"],[\"Vinstavkastning bakom P/E 20\",\"1 / 20\",\"5 %\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Investera 1 000, få 400 per år i fyra år, krav 10 procent (faktor 3,1699). NPV?",
+          "alternativ": [
+            "+268",
+            "−268",
+            "+600",
+            "+1 268"
+          ],
+          "ratt": 0,
+          "tips": "400 × 3,1699 = 1 268 — dra av investeringen."
+        },
+        {
+          "q": "100 kronor i två år vid 10 procents ränta — framtida värde?",
+          "alternativ": [
+            "110",
+            "120",
+            "121",
+            "100"
+          ],
+          "ratt": 2,
+          "tips": "Ränta-på-ränta: 100 × 1,10 × 1,10."
+        },
+        {
+          "q": "Vad är den reala räntan vid 10 procent nominellt och 4 procent inflation?",
+          "alternativ": [
+            "6,0 procent",
+            "ca 5,8 procent",
+            "4,0 procent",
+            "14 procent"
+          ],
+          "ratt": 1,
+          "tips": "1,10 / 1,04 − 1 — inte en enkel subtraktion."
+        },
+        {
+          "q": "Vad menas med värdeadditivitet?",
+          "alternativ": [
+            "Att värden aldrig kan jämföras",
+            "Att NPV inte kan vara negativ",
+            "Att projektens NPV adderas rakt av — tre projekt med +100, +50 och −20 är tillsammans +130",
+            "Att aktier ska köpas i klumpar"
+          ],
+          "ratt": 2,
+          "tips": "Varför kan NPV summeras utan interaktionseffekter i bokens renrum?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 16,
+      "title": "Tillgångsprissättning — obligationer och aktier som kassaflödesmaskiner",
+      "intro": "Innan portföljteorin tar över prissätter boken de två klasserna på rent kassaflödesvis: obligationen som en köplista av kuponger och nominellt belopp, aktien som en växande utdelningsström — Gordons formel. Och en av finansens viktigaste regler: avkastning och pris rör sig i motsatta riktningar. Här föds V05:s teori.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Obligationen: priset är nuvärdet av kupongerna plus nuvärdet av det nominella beloppet vid förfall, diskonterat till marknadens avkastningskrav. Räkneexempel med ett år kvar: kupong 40, nominellt 1 000, avkastningskrav 5 procent → pris = (1 000 + 40) / 1,05 = 990. Höjs kravet till 6 procent faller priset till 1 040 / 1,06 = 981 — där är hela obligationslärans första lag: avkastning upp, pris ner. Kreditrisken är den andra axeln: högre risk, högre krav, lägre pris — spreaden mot statspapper är långivarens prislapp på konkursrisken, och i AK1TS-språk en fundamental tidsserie som kan läsas på alla fem horisonter. Duration, bokens tredje begrepp här: ju längre ut flödena ligger, desto hårdare slår en ränterörelse — en tioprocentig räntehöjning gör mer skada på en trettioårig betalning än på en tvåårig, aritmetiken rakt ur PV-formeln."
+        },
+        {
+          "type": "text",
+          "content": "Aktien som kassaflödesmaskin: Gordons tillväxtmodell P0 = D1 / (r − g) — dagens pris är nästa års utdelning dividerat med skillnaden mellan avkastningskrav och tillväxt. Räkneexempel: D1 = 6 kronor, r = 9 procent, g = 3 procent → P0 = 6 / 0,06 = 100 kronor. Modellen är ömtålig där den är älskad: när g närmar sig r exploderar priset (matematiken från Higgins-kursens kapitel nio, nu med aktier), och g kan aldrig överleva ekonomin i evighet. Men den bär två av finansens mest användbara härledningar. Den första: direktavkastning + tillväxt = totalavkastning — en aktie som delar ut 3 procent och växer 6 procent ger 9 procent förväntad avkastning, punkt. Den andra, kursens V05-maskin: P/B = (ROE − g) / (r − g) — böckvärdets berättigade multipl är rent kapital är räntan på eget kapital i jämvikt med priset. Räkneexempel: ROE 14 procent, g 6 procent, r 9 procent → P/B = 8 / 3 = 2,67. Ett bolag som värderas till 2,7 gånger boken och tjänar 14 procent på den — är det dyrt? Inte om tillväxten håller; P/B-formeln är frågan formulerad som division."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är rak. V05: P/B-formeln kopplar bokfört eget kapital till ROE, tillväxt och avkastningskrav — H&M:s och Ericssons historiskt mycket olika P/B-nivåer är olika kombinationer av de tre, inte olika mod. V04–V06: obligationslagarna (avkastning upp, pris ner; längre duration, hårdare reaktion) är orsaken till att tillväxtaktier — vars kassaflöden ligger långt fram — faller hårdare än värdeaktier när räntan stiger; den som poängsätter multiplar på långa bolag utan en ränteåsikt poängsätter utan underlag. V12 och V10-länken: obligationsanalytikerns spridningsmått och förfallostruktur är samma disciplin som bolagets räntebärare — Ericssons och Volvos obligationsuppsättningar är deras V10 i marknadens språk. Och pålägget från kursen: kreditspreaden är den fundamentala variabel som snabbast möter vågmotorns prisserie — en vidgande spread och en basbyggande aktiekurs är två serier som berättar samma historia om samma bolag, tills en av dem får rätt."
+        },
+        {
+          "type": "insikt",
+          "content": "Avkastning och pris rör sig i motsatta riktningar — juridiken i en enda mening som förklarar räntemarknadens hela dramaturgi och tillväxtaktiernas hela känslighet. Varje gång du hör avkastningskrav, spread eller diskonteringsränta nämnd som stigande, översätt omedelbart: priserna på allt med framtida flöden faller."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prissättningens fyra räkneexempel\",\"rader\":[[\"Tillgång\",\"Formel\",\"Exempel\",\"Pris\"],[\"Obligation, 1 år kvar\",\"(nominal + kupong) / (1 + r)\",\"(1 000 + 40) / 1,05\",\"990\"],[\"Samma vid 6 % krav\",\"1 040 / 1,06\",\"—\",\"981\"],[\"Aktie enligt Gordon\",\"D1 / (r − g)\",\"6 / (0,09 − 0,03)\",\"100\"],[\"P/B ur Gordon\",\"(ROE − g) / (r − g)\",\"(14 − 6) / (9 − 6)\",\"2,67\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Prissätt tre värdepapper för hand. Ett: en aktie med nästa års utdelning 6 kronor, avkastningskrav 9 procent, evig tillväxt 3 procent — pris? Lösning: 6 / (0,09 − 0,03) = 100 kronor. Två: en ettårig obligation med kupong 40 och nominellt 1 000, avkastningskrav 5 procent — och vad händer om kravet stiger en procentenhet? Lösning: 1 040 / 1,05 = 990; vid 6 procent: 1 040 / 1,06 = 981 — priset faller nio kronor av en procentenhets ränta, lagen i miniatyr. Tre: ett bolag med ROE 14 procent, evig tillväxt 6 procent och avkastningskrav 9 procent — motiverad P/B? Lösning: (0,14 − 0,06) / (0,09 − 0,06) = 0,08 / 0,03 = 2,67. Uppföljning: vad händer med P/B om ROE faller till 10 procent? Lösning: (0,10 − 0,06) / 0,03 = 1,33 — multiplen förlorar hälften av en ROE-förlust på fyra procentenheter; V05:s hävstång, nu synlig. Tre rätt — och du kan prissätta det mesta med penna och pappersservett."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Nästa års utdelning 6 kronor, avkastningskrav 9 procent, evig tillväxt 3 procent — vad är aktien värd enligt Gordon?",
+          "alternativ": [
+            "67 kronor",
+            "100 kronor",
+            "200 kronor",
+            "150 kronor"
+          ],
+          "ratt": 1,
+          "tips": "D1 / (r − g) = 6 / 0,06."
+        },
+        {
+          "q": "En obligation med kupong 40 och nominellt 1 000 förfaller om ett år; avkastningskravet är 5 procent. Pris?",
+          "alternativ": [
+            "1 000",
+            "990",
+            "1 040",
+            "962"
+          ],
+          "ratt": 1,
+          "tips": "(1 000 + 40) / 1,05."
+        },
+        {
+          "q": "ROE 14 procent, evig tillväxt 6 procent, avkastningskrav 9 procent — motiverad P/B?",
+          "alternativ": [
+            "1,33",
+            "2,00",
+            "2,67",
+            "4,00"
+          ],
+          "ratt": 2,
+          "tips": "(ROE − g) / (r − g) = 8 / 3."
+        },
+        {
+          "q": "Varför faller tillväxtaktier hårdare än värdeaktier när räntan stiger?",
+          "alternativ": [
+            "Därför att de har högre beta alltid",
+            "Därför att deras kassaflöden ligger långt fram i tiden — längre duration, hårdare diskonteringseffekt",
+            "Därför att de saknar utdelning för alltid",
+            "Därför att centralbanker säljer dem"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en högre nämnare med flöden som ligger tio–trettio år bort jämfört med två–tre år?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 15,
+      "title": "Investeringsbeslutet — NPV mot IRR, återbetalning och kapitalransonering",
+      "intro": "Med prissättningsverktygen i handen går boken igenom hur projekt faktiskt bedöms: den inkrementella kassaflödesanalysen, IRR:s charm och fallgropar, återbetalningstidens överlevnadslogik, lönsamhetsindex vid kapitalransonering och ekvivalent årlig kostnad för olika livslängder. Kapitlet är Higgins investeringskapitel mött av teorin som förklarar det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Inkrementella kassaflöden — vad som räknas och inte. Med: alternativkostnader (den fabriksmark som annars kunde hyras ut räknas som kostnad även om ingen kronan lämnar bolaget), sidoeffekter (en ny produkt som kanibaliserar en gammals försäljning bidrar med nettot), och arbetskapitalförändringar. Inte med: sjunkna kostnader (de 50 miljoner som redan spenderats på en misslyckad pilot är borta oavsett beslutet — historik är inte kassaflöde) och finansieringskostnader (räntan sitter redan i diskonteringsräntan; att räkna den igen är dubbelbokföring av risk). Dessa två uteslutningar — sjunkna kostnader och finansieringsflöden — är de vanligaste praktikerfelen i projektmodeller, och boken drillar dem hårt. Räkneexempel på hel kedja: maskin kostar 2 000, ger 700 per år i fyra år, krav 8 procent → faktor 3,3127 → nuvärde 2 319 → NPV +319: köp."
+        },
+        {
+          "type": "text",
+          "content": "IRR — internräntan, den ränta som ger NPV noll — är praktikernas favorit och teoretikernas huvudvärk. Exempel: −100 i dag, +120 om ett år → IRR = 20 procent. Charmen: en ränta talar till styrelser; NPV:talar bara kronor. Fallgroparna: skala och ömsesidighet (ett litet projekt med IRR 30 och NPV 50 möter ett stort med IRR 15 och NPV 300 — välj NPV, ty det stora skapar mer välstånd); teckenväxlingar ger flera IRR:er eller ingen; och återinvesteringsantagandet — IRR:s tysta påstående att mellanhänderna växer till just IRR. Vid kapitalransonering — när budgeten tar slut före bra projekten — tar lönsamhetsindex (PI = nuvärde av flöden / investering) över som sorteringskriterium: PI 1,14 betyder 1,14 kronors nuvärde per satsad krona. Och för projekt med olika livslängd — maskin A i fyra år mot B i sju — är verktyget ekvivalent årlig kostnad: omräkningen av varje alternativ till en jämförbar årsränta. Återbetalningstiden avslutar truppen — ingen värdemätare, men en överlevnadsmätare — Higgins-kursens V19-logik, teoretiskt renodlad: likviditetsbegränsade bolag kan inte betala NPV med kassa de inte har."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-länken i tre led. V17 avtal och partnerskap: avtalet är ett projekt — dess NPV-anatomi består av exklusivitet (varaktighet av flödena), volym (storlek) och exit-klausuler (avgränsning av risken); poängsätt avtal efter vad som kan räknas, inte efter pressreleasens adjektiv. V18: gröna infrastrukturprojekt — Ericssons nätutbyggnad, Volvos el-lastbilsutveckling — är NPV-projekt vars flöden delvis är politiska subventioner och krav; de ska scenario-viktas, inte hoppas på. V04–V06 i omvänd blick: marknadens multiplar är aggregaten av tusentals företags projektbeslut — en sektor med historiskt hög multipl är en sektor som fått rätt i sina NPV:er nyligen, och därför är sektorns nästa projektbeslut farligare än det förra (ack på optimism). Kursens diagnosfråga för varje capex-program, hämtad från båda böckerna: vilken avkastningskrav använder ledningen — och är den divisionsspecifik? Ett bolag som räknar allt till åtta procent har inte en kapitalbudget utan en trosbekännelse."
+        },
+        {
+          "type": "insikt",
+          "content": "Två uteslutningar skiljer proffsen från amatörerna i projektmodeller: sjunkna kostnader är aldrig kassaflöde, och finansieringskostnader sitter redan i diskonteringsräntan. Den som minns båda klarar de flesta modellfelen; den som glömmer dem bygger vackra kalkyler som dubbelräknar det förflutna och risken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kriterierna på ett projekt — 2 000 i dag, 700/år i 4 år, krav 8 %\",\"rader\":[[\"Kriterium\",\"Beräkning\",\"Resultat\",\"Dom\"],[\"NPV\",\"700 × 3,3127 − 2 000\",\"+319\",\"skapar värde — kungen\"],[\"IRR\",\"NPV = 0-räntan\",\"ca 15 %\",\"rimlig — men fallgropar\"],[\"Lönsamhetsindex\",\"2 319 / 2 000\",\"1,16\",\"sortering vid ransonering\"],[\"Återbetalningstid\",\"2 000 / 700\",\"2,9 år\",\"överlevnadsskärm — ej värde\"],[\"Ekvivalent årsränta\",\"NPV / annuitetsfaktor\",\"+319 / 3,3127 = 96/år\",\"jämför olika livslängder\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "−100 i dag och +120 om ett år — vad är IRR?",
+          "alternativ": [
+            "10 procent",
+            "20 procent",
+            "120 procent",
+            "12 procent"
+          ],
+          "ratt": 1,
+          "tips": "Vilken ränta förvandlar 100 till 120 på ett år?"
+        },
+        {
+          "q": "Vilket påstående om sjunkna kostnader är korrekt?",
+          "alternativ": [
+            "De ska alltid tas med som kostnad i NPV-modellen",
+            "De är redan spenderade och påverkar inte framtida kassaflöden — historik är inte kassaflöde och ska uteslutas",
+            "De ska kapitaliseras och skrivas av",
+            "De reducerar diskonteringsräntan"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan ett framtida beslut ändra — det förflutna eller det kommande?"
+        },
+        {
+          "q": "Ett litet projekt med IRR 30 procent och NPV 50 möter ett stort med IRR 15 procent och NPV 300. Vilket väljer du?",
+          "alternativ": [
+            "Det lilla — högst IRR",
+            "Det stora — högsta NPV skapar mest välstånd",
+            "Båda lika",
+            "Inget — IRR-villkoret gäller"
+          ],
+          "ratt": 1,
+          "tips": "Vilket kriterium mäter kronor av välstånd — och vilket mäter bara procent?"
+        },
+        {
+          "q": "Vad är lönsamhetsindex på ett projekt med nuvärde av flöden 2 319 och investering 2 000?",
+          "alternativ": [
+            "0,86",
+            "1,16",
+            "319",
+            "2,3"
+          ],
+          "ratt": 1,
+          "tips": "Nuvärde per satsad krona — division, inte subtraktion."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 15,
+      "title": "Riskens två ansikten — portföljteori och diversifiering",
+      "intro": "Harry Markowitz, 1952: risk är inte en egenskap hos en enskild tillgång utan hos en portfölj, och hela marknadens gratislunch heter diversifiering. Boken ägnar riskens två ansikten — det diversifierbara och det systematiska — sina viktigaste kapitel, och kursen läser dem som V03:s och hela AK1A:s portföljtänkandes grundval.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Instrumentet: spridningen (standardavvikelsen) mäter hur en akties avkastning svänger kring sitt medel — bred kurva, stor risk. Men Markowitz insats var relationen: två aktier som inte rör sig i takt har en portfölj med lägre spridning än bådas genomsnitt — korrelationen under ett är diversifieringens motor, och den enda gratislunch finans känner. Räkneexempel på avkastningssidan: sextio procent aktier med förväntad avkastning 10 procent och fyrtio procent obligationer med 4 procent → portföljens förväntade avkastning = 0,6 × 10 + 0,4 × 4 = 7,6 procent — vägt genomsnitt, alltid. Risksidan däremot är inte ett vägt genomsnitt förrän korrelationen är exakt ett: vid korrelation under ett blir portföljens spridning lägre än de viktade spridningarna, och vid låg korrelation mycket lägre. Effektivaste fronten: mängden av portföljer som ger högst förväntad avkastning per riskenhet — och ingen rationell placering ligger under den."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den stora uppdelningen, som hela prissättningen bygger på: idiosynkratisk risk — den som är bolagsspecifik (en produktåterkallelse, en VD som avgår, en fabriksbrand) och som försvinner ut ur portföljen när tillgångarna blir många och olika; och systematisk risk — den som delas av hela marknaden (konjunktur, ränta, geopolitik) och som ingen mängd tillgångar tar bort. Statistiken bakom: med trettio slumpvis utvalda aktier är kvarvarande diversifierbar risk försumbar — marknaden betalar därför inte för den, ty den kan elimineras gratis. Det är riskens lag: bara den risk som inte kan diversifieras bort förtjänar riskpremie. Konsekvensen, som vänder på intuitionen: en enskild aktiavs risk inte är dess spridning utan dess bidrag till portföljens risk — en volatil aktie som rör sig mot resten av portföljen kan minska helhetens risk, och en stilla aktie som rör sig med allt annat kan öka den. H&M och Ericsson i samma portfölj är inte två risker — de är en relation."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen i tre lager. V03 intäktsdiversifiering är portföljteorin tillämpad inuti bolaget: intäkter som inte korrelerar (olika geografier, kundsegment, valutor) ger en jämnare sammanlagd intäktsström — bolagets interna efficient frontier. V12 intäktsstabilitet är i grunden ett korrelationsmått: stabila intäkter är intäkter med låg betavikten mot konjunkturen. Och mot AK1TS: vågmotorn läser 25 celler per aktie — men konfluensregeln läser dem över informationfamiljer, inte som oberoende röster, ty celler som mäter samma familj korrelerar och ska inte räknas som bekräftelser av varandra; det är Markowitz poäng om korrelation, översatt från priser till informationsstruktur. Momentum är dessutom den mest dokumenterade anomalin i finansforskningen (AK1TS-kursens eget erkännande) — och anomalier är precis vad portföljteorin förutsätter kan finnas: prissättningssystem som fungerar bra men inte perfekt, kapitaliserbara av den som mäter i stället för att känna. Slutpoängen, bokens egen: diversifiering är gratis, men inte okänd — den som bär onödig koncentration betalar risken utan att få preminen."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig hur risk en aktie är — fråga vad den tillför portföljen. Spridningen är en ensamakties egenskap; bidraget till helheten är dess relation till allt annat du äger. Detsamma gäller dina arguments celler i AK1TS: korrelerade röster är en röst."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskens två ansikten och deras konsekvenser\",\"rader\":[[\"Anlete\",\"Exempel\",\"Kan diversifieras bort?\",\"Får riskpremie?\",\"AK1A-länk\"],[\"Idiosynkratisk\",\"produktåterkallelse, VD-byte, fabrikshändelse\",\"ja — ca 30 aktier räcker\",\"nej — gratis att ta bort\",\"V13–V15 bolagsspecifikt\"],[\"Systematisk\",\"konjunktur, ränta, geopolitik\",\"nej\",\"ja —CAPM prissätter den\",\"V10–V12, kapitel sex\"],[\"Sambandet\",\"aktiavs risk = bidraget till portföljen\",\"—\",\"beta mäter bidraget\",\"hela portföljtänkandet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Sextio procent aktier med förväntad avkastning 10 procent och fyrtio procent obligationer med 4 procent — portföljens förväntade avkastning?",
+          "alternativ": [
+            "7,6 procent",
+            "7,0 procent",
+            "6,4 procent",
+            "10 procent"
+          ],
+          "ratt": 0,
+          "tips": "Vägt genomsnitt: 0,6 × 10 + 0,4 × 4."
+        },
+        {
+          "q": "Vilken risk kan diversifieras bort?",
+          "alternativ": [
+            "Systematisk risk",
+            "Idiosynkratisk risk — den bolagsspecifika, som i stort försvinner med ca trettio olika aktier",
+            "Ingen risk",
+            "Bara valutarisken"
+          ],
+          "ratt": 1,
+          "tips": "Vilken av de två delar hela marknaden — och vilken är din egen?"
+        },
+        {
+          "q": "Varför betalar marknaden ingen riskpremie för diversifierbar risk?",
+          "alternativ": [
+            "Därför att den är liten",
+            "Därför att den är sällsynt",
+            "Därför att den kan elimineras gratis genom diversifiering — ingen betalar för det som kostar inget att undvika",
+            "Därför att regleringen förbjuder det"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med priset på något alla kan få bort utan kostnad?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 16,
+      "title": "Beta och CAPM — marknadens prissättning av risk",
+      "intro": "Från Markowitz relationer till en enda ekvation: CAPM, kapitalprismodellen, som 1960-talet gav världen — och som fortfarande, med alla sina ärr, är industrins sätt att sätta avkastningskrav. Beta som riskmått, värdepapperslinjen, alfa som missprissättning — och mötet med AK1TS, där beta och momentum mäter samma marknad på olika klockor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Beta är aktiens känslighet mot marknaden: kovariansen mellan aktien och marknadsportföljen delad med marknadens varians. I praktiken: beta 1,2 betyder att aktien i genomsnitt rör sig tolv procent när marknaden rör sig tio — både upp och ner. Beta 1 är marknaden själv; beta under 1 dämpar (livsmedel, infrastruktur); beta över 2 förstärker (halvledare, bygg, småbolag). CAPM: förväntad avkastning = riskfri ränta + beta × riskpremie — marknadens pris för just det systematiska risk bidraget. Räkneexempel: riskfri ränta 2 procent, marknadens riskpremie 5 procent, beta 1,2 → krav = 2 + 1,2 × 5 = 8 procent. Portföljbeta är vägt genomsnitt: hälften H&M med beta 0,9 och hälften Volvo med 1,3 → 0,5 × 0,9 + 0,5 × 1,3 = 1,1 — en portföljs risk är enklare än sina delar, ty den är additiv i beta medan den inte är det i spridning."
+        },
+        {
+          "type": "text",
+          "content": "Värdepapperslinjen (SML) är modellen som graf: varje tillgång ska ligga på linjen krav = rf + beta × premie; det som ligger över linjen ger för mycket avkastning för sin beta (underpris — positivt alfa), det under linjen för lite (överpris). Alfa är alltså missprissättningarnas namn — och hela den aktiva förvaltningens jobb beskrivet i en kolumnsubtraktion. Sedan ärren, som boken är ärlig med: beta estimeras bakåt och är instabilt (kapitlet om estimering rekommenderar justeringar mot ett, ty beta har en inbyggd återgång); marknadsportföljen kan inte observeras (Roll-kritiken: vi testar modellen mot ett surrogat och kan därför aldrig veta om den är falsk); och riskpremien är omstridd i nivå. Ändå lever CAPM — inte för att det är sant utan för att det är gemensamt: det är branschens koordinatsystem för risk, den tumregel alla kan ifrågasätta men alla förstår. Boken lägger till APT och faktormodeller (Fama-French) som generaliseringar: risk kan ha flera faktorer — värde, storlek, momentum — och momentum är en av dem, vilket är finansforskningens eget erkännande av AK1TS:s favoritanomali."
+        },
+        {
+          "type": "text",
+          "content": "Mötet med AK1TS, kursens synteskapitel: beta och momentum mäter samma marknad på olika klockor. Beta är den långsamma mätningen — hur aktien svarar på marknadens svängningar över år av data; momentum är den snabba — fem dagar till hela fönstret, fem horisonter som var för sig klassar vågen som impulsvåg, korrigering eller basbygge. De tvistar sällan: en aktie med hög beta i en teknisk korrigering är bara sin egen natur, inte en ny berättelse. Men när de möts — hög beta och samtidigt basbygge på flera horisonter — är det konfluens mellan riskmått och prismönster, och det är ett av ekosystemets starkaste lägen: fundamentalets känslighet och prisets struktur säger samma sak. AKM1-länken: V04–V06 igen — avkastningskravet som CAPM levererar är multiplensnämnarens innehåll; högre beta, högre krav, lägre motiverad multipl, och därför ska ett betatungt bolags V04-poäng aldrig läsas utan dess beta. V10/V12: bolag med hög belåning har mekaniskt högre aktiebeta — skulden förstärker svängningarna i det egna kapitalet (kapitel åtta förklarar mekaniken), och det är en av flera vägar från balansräkning till kurva."
+        },
+        {
+          "type": "insikt",
+          "content": "Beta är inte volatilitet — det är känslighet för marknaden. En aktie som svänger vilt för sig men inte med marknaden har hög spridning och låg beta, och marknaden betalar inte för den förstnämnda. Att skilja de två är att skilja det som belönas från det som bara känns."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAPM i siffror — tre räkneexempel\",\"rader\":[[\"Övning\",\"Beräkning\",\"Svar\"],[\"Krav vid beta 1,2, rf 2 %, premie 5 %\",\"2 + 1,2 × 5\",\"8,0 %\"],[\"Portföljbeta: 50 % H&M (0,9) och 50 % Volvo (1,3)\",\"0,5 × 0,9 + 0,5 × 1,3\",\"1,1\"],[\"Krav för portföljen\",\"2 + 1,1 × 5\",\"7,5 %\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg avkastningskrav för tre divisioner. Antag: riskfri ränta 2 procent, marknadens riskpremie 5 procent. Ett: Volvo-liknande lastbilsdivision med cykelbeta 1,3 — krav? Lösning: 2 + 1,3 × 5 = 8,5 procent. Två: H&M-liknande detaljhandelsdivision med konsumentbeta 0,9 — krav? Lösning: 2 + 0,9 × 5 = 6,5 procent. Tre: Ericsson-liknande nätverksdivision med telekombeta 1,1 — krav? Lösning: 2 + 1,1 × 5 = 7,5 procent. Uppföljning ett: vad kostar det att använda koncernsnittet 7,5 procent för alla tre? Lösning: detaljhandeln avvisas felaktigt (6,5 mot 7,5 — bra projekt dödas), lastbilarna godkänns felaktigt (8,5 mot 7,5 — dåliga projekt lever) — kapitalfördelningen förvrängs systematiskt mot risk. Uppföljning två: vad är alfa om detaljhandelsdivisionen i år avkastar 9 procent? Lösning: 9 − 6,5 = +2,5 procentenheter — överpremie mot sitt riskjusterade krav; positivt alfa är missprissättning eller tur, och första frågan är alltid vilken av dem. Fyra svar — och CAPM är ditt yrkesspråk."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Riskfri ränta 2 procent, riskpremie 5 procent, beta 1,2 — vad är CAPM-avkastningskravet?",
+          "alternativ": [
+            "6,0 procent",
+            "7,2 procent",
+            "8,0 procent",
+            "12,0 procent"
+          ],
+          "ratt": 2,
+          "tips": "2 + 1,2 × 5 = 2 + 6."
+        },
+        {
+          "q": "Portfölj med 50 procent beta 0,9 och 50 procent beta 1,3 — portföljbeta?",
+          "alternativ": [
+            "1,1",
+            "1,0",
+            "1,2",
+            "2,2"
+          ],
+          "ratt": 0,
+          "tips": "Viktat genomsnitt — beta är additivt."
+        },
+        {
+          "q": "Vad är alfa i CAPM-språk?",
+          "alternativ": [
+            "Aktiens totala avkastning",
+            "Avkastningen över det riskjusterade kravet — missprissättning eller tur",
+            "Samma som beta",
+            "Riskpremien"
+          ],
+          "ratt": 1,
+          "tips": "Vad återstår när kravet subtraherats — och vad kallas det som ligger över linjen?"
+        },
+        {
+          "q": "Vad är relationen mellan beta och AK1TS enligt kursen?",
+          "alternativ": [
+            "De mäter motsatsen: beta fundament, momentum irrelevant",
+            "De mäter samma marknad på olika klockor — beta långsamt över år, momentum snabbt över fem horisonter; när båda säger samma sak är det konfluens",
+            "AK1TS använder beta som enda tecken",
+            "Beta är en vågteori"
+          ],
+          "ratt": 1,
+          "tips": "Vad är gemensamt — och vad skiljer deras klockor åt?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 15,
+      "title": "Kapitalkostnaden i praktiken — WACC och divisionella avkastningskrav",
+      "intro": "CAPM gav avkastningskravet för eget kapital; nu komponerar boken bolagets sammanvägda kapitalkostnad — WACC — och dess praktik: marknadsvikter, skuld efter skatt, divisionsspecifika krav, och fallgroparna som gör att de flesta bolags interna räntekrav är fel. Kapitlet är Higgins WACC-kapitel mött av teorin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: WACC = (E / V) × rE + (D / V) × rD × (1 − t) — andelarna eget kapital och skuld i marknadsvärden, rE från CAPM (föregående kapitel), rD från marknadens krav på bolagets ny låneskuld, skatteavdraget som sköld. Räkneexempel: sjuttio procent eget kapital med krav 11 procent, trettio procent skuld till 4 procent, skattesats 21 procent (svensk bolagsskatt ligger nära) → WACC = 0,70 × 11 + 0,30 × 4 × 0,79 = 7,7 + 0,948 = ca 8,6 procent. Notera vad som är och inte är svårt: rE är den svåra posten — den kommer från beta och premie och bär alla deras osäkerheter; rD är avläsning; vikterna är aritmetik men bara om de tas från marknaden. Bokens varning, Higgins-kursens igen: bokförda vikter är historiska priser och ger systematiskt fel kapitalkostnad i båda riktningarna."
+        },
+        {
+          "type": "text",
+          "content": "Divisionella avkastningskrav är teorins viktigaste praktiska konsekvens: ett konglomerat med detaljhandel (beta 0,9), lastbilar (1,3) och finansiella tjänster (1,5) har tre kapitalkostnader, och koncernens genomsnitt är en siffra som inte passar någon av dem. Använd den för allt och systematiken blir: säkra divisioners bra projekt avvisas (deras verkliga krav är lägre än koncernsnittet), riskabla divisioners dåliga projekt godkänns (deras verkliga krav är högre) — kapitalet flyter mot risken, men fel väg. Det är förklaringen till varför konglomerat historiskt handlas med rabatt och varför fokuserade bolag kapitaliserar sin tydlighet: marknaden betalar för att förstå vilken risk den köper. Svenska exempel, försiktigt formulerade: Volvo-koncernens olika verksamheter — lastbilar, finansiella tjänster — bär olika beta och bör bära olika krav; Ericssons nätverksaffär mot dess tidigare chipsettillverkning skilde sig i risk mer än i redovisning."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-länken, framåt och bakåt. Framåt: WACC är hinderbanan — men också grammatiken bakom V04–V06:s hela struktur: multiplens motiverade nivå är en funktion av avkastningskrav och tillväxt, och avkastningskravet är WACC:s kostnadssida. Den som kan räkna om en multipl till dess WACC-innehåll — och tvärtom — läser priset som information i stället för känsla. Bakåt: emissionskostnader och transaktionskostnader gör kapitalet trögt — boken noterar att dessa kostnader oftast är små och sällan motiverar stora avvikelser från den raka WACC-regeln, en nyans som chefer som ogillar ett projekts utseende gärna glömmer. V10-länken slutligen: vikterna E/V och D/V är skuldsättningsgraden själv — WACC-formeln är den ränta där V10:s beslut visar sitt pris, och när balansräkningen vrider sig omprövas hinderbanan för varenda projekt i bolaget samtidigt. Det är kapitalstrukturens nästa kapitel: inte om WACC ska vara låg, utan vad som händer med rE när D stiger — MM har svaret, och det är inte det svaret chefer hoppas på."
+        },
+        {
+          "type": "insikt",
+          "content": "En enda koncern-WACC är en trosbekännelse, inte en kapitalkostnad: den passar ingen division precis och vrider kapitalet mot risken — fel väg. Fråga alltid vilken risk projektet bär, inte vilket bolag som äger det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"WACC med svenska posten — räkneexempel\",\"rader\":[[\"Rad\",\"Källa\",\"Värde\"],[\"E / V\",\"marknadsvikter\",\"0,70\"],[\"rE\",\"CAPM: 2 + 1,8 × 5\",\"11,0 %\"],[\"D / V\",\"marknadsvikter\",\"0,30\"],[\"rD\",\"marknadskrav ny skuld\",\"4,0 %\"],[\"Efter skatt, t = 21 %\",\"4,0 × 0,79\",\"3,16 %\"],[\"WACC\",\"0,70 × 11 + 0,30 × 3,16\",\"ca 8,6 %\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "E/V 0,70 med rE 11 procent, D/V 0,30 med rD 4 procent, skatt 21 procent. WACC?",
+          "alternativ": [
+            "9,7 procent",
+            "8,6 procent",
+            "7,7 procent",
+            "11,0 procent"
+          ],
+          "ratt": 1,
+          "tips": "0,70 × 11 + 0,30 × 4 × 0,79 = 7,7 + 0,95."
+        },
+        {
+          "q": "Varför är koncerngemensam WACC farlig i ett konglomerat?",
+          "alternativ": [
+            "Den är alltid för hög",
+            "Den är alltid för låg",
+            "Den passar ingen division — säkra divisioners bra projekt avvisas och riskabla divisioners dåliga godkänns, kapitalet flyter mot risken fel väg",
+            "Den kan inte beräknas utan bokslut"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer när ett medelvärde sätts som gräns för delar som ligger på båda sidor?"
+        },
+        {
+          "q": "Varifrån ska WACC-vikterna hämtas?",
+          "alternativ": [
+            "Bokfört eget kapital och bokförd skuld",
+            "Marknadsvärden — bokförda vikter är historiska priser",
+            "Föregående års budget",
+            "Ägarens preferenser"
+          ],
+          "ratt": 1,
+          "tips": "Vilka vikter speglar kapitalets kostnad i dag?"
+        },
+        {
+          "q": "Vad säger boken om emissions- och transaktionskostnader vid kapitalanskaffning?",
+          "alternativ": [
+            "Att de är stora och alltid ska läggas på WACC",
+            "Att de oftast är små och sällan motiverar stora avvikelser från den raka WACC-regeln",
+            "Att de är skattefria",
+            "Att de ersätter beta-estimeringen"
+          ],
+          "ratt": 1,
+          "tips": "Vad är den vanliga storleksordningen — och vad används de ofta som ursäkt för?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 16,
+      "title": "Kapitalstruktur — MM-teoremen, skattesköldar och trångmålkostnader (V10)",
+      "intro": "1958 publicerade Modigliani och Miller beviset som chockade finansvärlden: i perfekta marknader är kapitalstrukturen irrelevant — pajens storlek avgörs av tillgångarna, inte av hur den skärs. Sedan lades skatten, konkursträngmålet och informationsasymmetrin till, och moderna V10 föddes. Kursens teoretiskt tyngsta kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "MM I (1958): i en värld utan skatter, utan konkurskostnader och med fullständig information är bolagets värde oberoende av finansieringen — ägarna kan själva låna eller låna ut, så bolagets hävstång tillför inget de inte kan skapa i eget kök. Pajmetaforen: värdet är pajen, skuld och eget kapital är skärningen — ingen skärning gör pajen större. MM II: spegelbegreppet — när skulden växer stiger avkastningskravet på det egna kapitalet, exakt så mycket att WACC hålls konstant: rE = rA + (rA − rD) × D / E, där rA är det oberoende avkastningskravet på tillgångarna. Räkneexempel: rA 10 procent, rD 5 procent, D/E 0,5 → rE = 10 + 5 × 0,5 = 12,5 procent. Den billiga skulden finansieras av dyrare eget kapital — punkt. Det är finansens mest kontraintuitiva teorem: det tvingar varje fördel med skuld att motiveras utanför de perfekta marknaderna, och allt som följer — sköldar, trångmål, ordning — är den motiveringen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan världen som den är. Skatten (MM 1963): räntan är avdragsgill, utdelningen inte — skulden bär en skattesköld värd t × D i nuvärde. Räkneexempel: ovärdet 1 000, skattesats 21 procent, permanent skuld 400 → värdet med sköld = 1 000 + 0,21 × 400 = 1 084. I en värld med bara skatter skulle alla bolag vara maximalt belånade — de är inte, och det är trångmålkostnadernas förtjänst: konkurs och finansiellt trångmål kostar (advokater, avbrott, kunder som flyr, investeringar som skjuts upp, leverantörer som kräver förskott), och kostnaden växer accelererande med belåningen — avvägningsmodellen: optimal struktur där sköldens gränsnytta möter trångmålets gränskostnad. Myers pecking order tillägger informationslagren: internt kapital först (inget signalvärde), skuld därefter (mild signal), emission sist (stark signal om överpris — därför faller kurserna på emissioner och stiger på återköp). Resultatet är inte en optimal punkt utan en ordning — och den förklarar varför lönsamma bolag har låg belåning (de behöver ingen) medan det ser ut som konservatism."
+        },
+        {
+          "type": "text",
+          "content": "V10-läsningen, kursens hårdaste koppling: skuldsättningsgrad poängsätts inte efter lågt utan efter lämpligt — branschens karaktär (stabila kassaflöden bär mer skuld: fastigheter, infrastruktur; cykliska bär mindre: bygg, teknik), cykelpositionen (Minsky-läran: belåning som är rationell i uppgången är tvångsförsäljning i nedgången), och flexibilitetens option (outnyttjad lånekapacitet har värde — det är en försäkring, och kapitel tio förklarar varför försäkring är värd sitt pris även när den verkar dyr). Svenska exempel: H&M:s historiskt låga belåning och stora kassa är pecking order i praktik — lönsam verksamhet, inget behov, flexibilitet som filosofi; Volvos finansiella tjänster å andra sidan bär skuld som en del av affären (kundfinansiering) och ska läsas därefter — V10 är inte en moral utan en läskonst. MM:s arv till AK1A, sammanfattat i en mening: varje gång du tror att en finansieringsövning skapar värde utan att röra kassaflödena, skatten eller risken — repetera 1958."
+        },
+        {
+          "type": "insikt",
+          "content": "MM:s gåva är en fråga, inte ett svar: varför skulle detta skapa värde? Skulden kan svara — skölden är verklig. Men svaret kostar — trångmålet växer accelererande. V10 är balansen mellan de två, läst med cykeln och branschen som glasögon, och aldrig som en dygd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kapitalstrukturens fyra lager\",\"rader\":[[\"Lager\",\"Påstående\",\"Räkneexempel\",\"Konsekvens\"],[\"MM I — irrelevans\",\"pajen oberoende av skärning\",\"—\",\"fördelar måste sökas utanför perfekta marknader\"],[\"MM II — rE stiger\",\"rE = rA + (rA − rD) × D/E\",\"10 + 5 × 0,5 = 12,5 %\",\"billig skuld, dyrt eget — netto noll\"],[\"Skatt (MM 1963)\",\"V = VU + t × D\",\"1 000 + 0,21 × 400 = 1 084\",\"skölden motiverar skuld\"],[\"Trångmål + pecking order\",\"kostnader växer accelererande; internt först\",\"—\",\"optimum eller ordning — cykeln avgör\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "rA 10 procent, rD 5 procent, D/E 0,5 — vad är det belånade avkastningskravet rE enligt MM II?",
+          "alternativ": [
+            "10,0 procent",
+            "12,5 procent",
+            "7,5 procent",
+            "15,0 procent"
+          ],
+          "ratt": 1,
+          "tips": "10 + (10 − 5) × 0,5."
+        },
+        {
+          "q": "Ovärdet 1 000, skattesats 21 procent, permanent skuld 400 — värdet med skattesköld?",
+          "alternativ": [
+            "1 000",
+            "1 084",
+            "1 400",
+            "916"
+          ],
+          "ratt": 1,
+          "tips": "VU + t × D = 1 000 + 0,21 × 400."
+        },
+        {
+          "q": "Vad är Myers pecking order?",
+          "alternativ": [
+            "En optimal skuldkvot som alla bolag eftersträvar",
+            "Att alltid maximera skulden",
+            "Finansieringsordningen internt kapital — skuld — emission, driven av informationsasymmetri: emissionen signalerar överpris",
+            "Att utdelning kommer före investeringar"
+          ],
+          "ratt": 2,
+          "tips": "Vilken kapitalkälla signalerar minst — och vilken signalerar mest?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 15,
+      "title": "Utdelningspolicyn — irrelevans, signaler och återköpensmatematik (V20)",
+      "intro": "MM igen, 1961: i perfekta marknader är utdelningspolicyn irrelevant — pengar som lämnar bolaget är borta från kurserna, krona för krona. Sedan kommer verkligheten: skatter, signaler, klientel, och återköpensmaskineriet. Detta är V20:s teorikapitel — och kapitlet där Higgins hållbara tillväxttakt får sin teoretiska motpart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Irrelevansen: bolaget som delar ut hundra miljoner har kurser som ligger hundra miljoner lägre — värdet flyttas, skapas inte. Utdelningen är alltså inte en gåva utan en omflyttning, och frågan är aldrig om bolaget ska dela ut utan vad som händer runt omkring. Tre verkliga effekter. Signalen (Lintner): utdelningar är tröga — ledningar skär dem motvilligt och höjer dem först när de är säkra, ty en nedskärning är en bekännelse — därför bär förändringen information om ledningens privata syn på framtiden, och aktier stiger på höjningar mer än utdelningen själv motiverar. Klientelet: vissa ägare vill ha utdelning (fonder, inkomstsparare), andra inte — politiken attraherar sin ägartyp, och byten kostar skatt. Skatterna: historiskt har utdelning beskattats hårdare än kapitalvinst i många jurisdiktioner, vilket borde gynna återköp — Sverige är ett motexempel med sina kapitalvinster på aktier, vilket är en pärla av kursens poäng: policyns värde är jurisdiktionsberoende, inte universell."
+        },
+        {
+          "type": "text",
+          "content": "Återköpensmatematiken — V20:s kärna. Ett återköp är en utdelning koncentrerad till de som säljer, med tre skillnader: den är frivillig (säljaren väljer), flexibel (kan pausas utan signalbomb) och mekaniskt kursdrivande per kvarvarande aktie. Räkneexempel: bolag med vinst 50, tio aktier, kurs 10 — vinst per aktie 5. Köper bolaget tillbaka aktier för 10 (en aktie) finansierat med kassa utan avkastning kvarstår vinsten 50 på nio aktier → EPS = 5,56. Vid oförändrad P/E-multipel (10) landar kursen på 55,6 — inte för att bolaget blivit bättre, utan för att kakan delas på färre tallrikar. Därav den klassiska illusionen: återköp höjer EPS mekaniskt, och EPS-tillväxt som kommer från återköp är inte tillväxt — det är aritmetik. Rätt fråga, kursens: till vilket pris köper bolaget tillbaka? Återköp över inneboende värde överför värde från kvarvarande ägare till säljarna; återköp under inneboende värde gynnar de som stannar — V20 ska poängsättas efter pris, finansiering och cykelposition, aldrig efter storlek."
+        },
+        {
+          "type": "text",
+          "content": "Och kopplingen till Higgins hållbara tillväxttakt, som kursen vävt hela vägen: SGR = ROE × kvarhållningsgrad — utdelningspolicyn är den ena av tillväxtens fyra spakar, och valet mellan utdelning och återinvestering är därför inte en välgörenhetsfråga utan en avkastningsfråga: behåll vinsten om ROE överstiger avkastningskravet (varje krona växer till mer än en krona i värde), dela ut om den inte gör det (kassan är värd mer i ägarnas fickor än i bolagets). MM:s och Higgins gemensamma budskap: utdelning är resten efter att alla värdeskapande investeringar gjorts — inte en tävling, inte en moral. AKM1-länken samlas i V20: återköpens kvalitet = pris (V04–V06) × finansiering (V10: återköp på lån i toppcykeln är Minsky-logik) × timing (cykelposition), och utdelningens kvalitet = hållbarhet (V12) × täckning (FCF, kapitel tre i Higgins-kursen) × ledningens historiska konsistens. Bolag som delar ut mer än sitt fria kassaflöde lånar för att hålla ett löfte — och löften är dyra att bryta, ty signalvärde är inte en teori utan en prislista."
+        },
+        {
+          "type": "insikt",
+          "content": "EPS-tillväxt från återköp är aritmetik, inte tillväxt — och aritmetik ska alltid frågas om pris. Återköp under inneboende värde gynnar de som stannar; över det straffar dem. V20 heter inte återköp — V20 heter återköp till rätt pris, med rätt finansiering, vid rätt tid."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utdelning mot återköp — mekanik och signaler\",\"rader\":[[\"Dimension\",\"Utdelning\",\"Återköp\"],[\"Frivillighet\",\"alla ägare\",\"endast säljare\"],[\"Flexibilitet\",\"låg — nedskärning är signalbomb\",\"hög — kan pausas tyst\"],[\"EPS-mekanik\",\"neutral\",\"höjer — 50/10 = 5,0 → 50/9 = 5,56\"],[\"Signal\",\"höjning = ledningens förtroende\",\"storlek + pris = värdesyn\"],[\"Skatt\",\"jurisdiktionsberoende\",\"jurisdiktionsberoende — ofta gynnsammare\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör återköpsmatematiken för hand. Bolag: vinst 100, femtio aktier, kurs 20 (P/E 10, börsvärde 1 000). Alternativ A: dela ut 50 — en krona per aktie. Alternativ B: återköp för 50 — hur många aktier och ny EPS? Lösning: 50 / 20 = 2,5 aktier tillbaka → 47,5 kvar; ny EPS = 100 / 47,5 = 2,11 kronor (mot 2,00 före); vid oförändrad P/E 10 landar kursen på 21,05 kronor. Följdfråga ett: vad händer om återköpet görs till 25 i stället — med samma 50? Lösning: bara två aktier köps tillbaka; 48 kvar; EPS = 100 / 48 = 2,08; kurs vid P/E 10 = 20,8 — samma pengar, mindre effekt, ty priset betyder allt. Följdfråga två: vad säger MM om hela övningen? Lösning: i perfekta marknader är A och B likvärdiga — värde flyttas, skapas inte; skillnaderna bor i skatt, signal och pris. Följdfråga tre: när är B bättre än A för den som stannar? Lösning: när aktien handlas under inneboende värde — återköpet köper värde åt kvarvarande ägare; vid överpris är det omvänd. Fyra svar — och V20 har sin grammatik."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vinst 50, tio aktier, kurs 10. Bolaget köper tillbaka en aktie för 10 med kassa utan avkastning. Ny EPS?",
+          "alternativ": [
+            "5,00",
+            "5,56",
+            "4,50",
+            "6,00"
+          ],
+          "ratt": 1,
+          "tips": "50 delat på nio kvarvarande aktier."
+        },
+        {
+          "q": "Vad är Lintners iakttagelse om utdelningar?",
+          "alternativ": [
+            "Att de följer vinsten exakt kvartal för kvartal",
+            "Att de är tröga — ledningar skär motvilligt och höjer försiktigt, varför förändringen bär information om ledningens syn",
+            "Att de är slumpmässiga",
+            "Att de alltid är skattefria"
+          ],
+          "ratt": 1,
+          "tips": "Varför skulle en utsättning vara värre än en utebliven höjning?"
+        },
+        {
+          "q": "Varför är EPS-tillväxt från återköp inte verklig tillväxt?",
+          "alternativ": [
+            "Därför att EPS inte spelar roll",
+            "Därför att den är aritmetik — samma kaka på färre tallrikar — inte en större kaka; frågan är om återköpet görs över eller under inneboende värde",
+            "Därför att återköp är förbjudna",
+            "Därför att kassan alltid är gratis"
+          ],
+          "ratt": 1,
+          "tips": "Vad förändrades i bolaget — verksamheten eller täljaren och nämnaren?"
+        },
+        {
+          "q": "När är återköp bättre än utdelning för den som behåller sina aktier?",
+          "alternativ": [
+            "Alltid",
+            "Aldrig",
+            "När aktien handlas under inneboende värde — återköpet köper värde åt kvarvarande ägare",
+            "Bara när räntan är noll"
+          ],
+          "ratt": 2,
+          "tips": "Vem får skillnaden mellan pris och värde — säljaren eller den som stannar?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 15,
+      "title": "Optionsteori — asymmetriska utdelningar och reella optioner",
+      "intro": "Finansens mest oväntade kapitel: rättigheter utan förpliktelser. Köp- och säljoptioners payoff, Black-Scholes-intuitionen — volatilitet ökar värdet, motsägelsefullt men sant — och de reella optionerna: att vänta, expandera, överge. Kursen läser kapitlet som V17–V18:s och hela AK1A:s options tänkandes grund.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Payoffen först. Köpoption (call): rätten att köpa en tillgång till strikepriset. Lösenpris 100, premie 5 — stiger underlaget till 120 är optionen värd 20 och köparens vinst 20 − 5 = 15; faller den till 80 är förlusten hela 5 och aldrig mer. Säljoption (put): rätten att sälja till strike — försäkring på en aktieportfölj med premie som pris och nedsidan trunkerad. Asymmetrin är hela poängen: optionens fördelning är avkapad på ena sidan — och därför är dess värde inte linjärt i underlaget. Black-Scholes (1973, Nobel 1997) gav den exakta prisformeln, men kursen nöjer oss med intuitionens fem räkenskapsvariabler: underlagets pris, lösenpris, tid, riskfri ränta — och volatilitet. Den sistnämnda är den berömda: mer svängning gör optionen mer värd, ty den klipper förlustsidan men behåller vinstsidan — mer rörelse ger mer av det som behålls. Det är finansens mest kontraintuitiva kausala samband för analytiker: volatilitet är gott — för optionsinnehavaren, i exakt den mätning som ägarskapet är asymmetriskt."
+        },
+        {
+          "type": "text",
+          "content": "De reella optionerna är teorins bidrag till projektvärlden: ett projekt är sällan ett engångsbeslut utan en sekvens av val — att vänta (skörda information innan marken binds), att expandera (bygga litet, skala vid efterfrågan), att överge (stänga vid bifall av misstag), att växa i etapper. Traditionell NPV underskattar sådana projekt, ty den diskonterar en enda väg; optionsvärderingen prissätter flexibiliteten. Exempel, svenskt: en gruva som kan öppnas vid högt pris och pausas vid lågt är en portfölj av optioner på råvaran — dess värde överstiger den enkla NPV av genomsnittspriset. Och den djupaste av alla tillämpningar: aktien är en köpoption på bolagets tillgångar — ägarna kan, efter att långivarna fått sitt, välja att betala skulden och behålla resten; det egna kapitalet i ett högt belånat bolag är en option med lågt underlag och hög volatilitet, vilket förklarar varför djupt belånade aktier svänger våldsamt (hög optionsgamma) utan att verksamheten rört sig. Där är kapitel åttas MM II i optionskläder: samma mekanik, två språk."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen i tre lager. V17 avtal och partnerskap: ett avtal med option att utöka — volymoptioner, förnyelseklausuler, exits — är mer värt än samma avtal utan, och skillnaden är mätbar i optionslogik: längre löptid, mer osäkerhet, lägre aktiveringskostnad = högre optionvärde. Poängsätt avtalens flexibilitet, inte bara deras basflöden. V18: regulatoriska katalysatorer är optioner på politik — osäkra, tidsbundna, med aktiveringskostnader; scenariovikterna från Higgins-kursen är deras primitiva prissättning. Och mot AK1TS: vågklassen basbygge är prismarknadens sätt att visa en option som inte är aktiverad ännu — ackumulation under ytan med avkapad nedsida; impulsvågen är aktiveringen. Momentum och volatilitet är för övrigt syskon i forskningen (båda de mest dokumenterade strukturerna i prisdata), och det för optionsperspektivet nära vågläran: den som mäter volatilitet och den som klassar vågor läser samma underlag — rörelsens form — från olika håll. Kursens samlingspoäng: NPV räknar vägar, optioner räknar valmöjligheter, och den som bara kan det förra undervärderar systematiskt allt som är värt att vänta på."
+        },
+        {
+          "type": "insikt",
+          "content": "Volatilitet ökar optionsvärdet — det motsägelsefulla samband som förklarar halva finansvärlden: dyr försäkring i oroliga tider, höga premieintäkter för den som säljer, och det egna kapitalet i belånade bolag som optionsbok med hög gamma. Lär dig se asymmetrin — rättigheter utan förpliktelser — och du ser den överallt: i avtal, i projekt, i balansräkningar, i vågklasser."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Optionens fem värdedrivare och deras riktning\",\"rader\":[[\"Drivare\",\"Köpoption\",\"Säljoption\",\"Not\"],[\"Underlagets pris\",\"upp\",\"ner\",\"i pengen = lönsam\"],[\"Lösenpris\",\"ner\",\"upp\",\"avtalad nivå\"],[\"Tid kvar\",\"upp\",\"upp\",\"mer tid = mer chans\"],[\"Riskfri ränta\",\"upp\",\"ner\",\"diskonteringsmekanik\"],[\"Volatilitet\",\"upp\",\"upp\",\"asymmetrins värde — det berömda sambandet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Köpoption med lösenpris 100 och premie 5; underlaget stiger till 120. Köparens vinst?",
+          "alternativ": [
+            "20",
+            "15",
+            "5",
+            "25"
+          ],
+          "ratt": 1,
+          "tips": "Inneboende värde 20 minus premien 5."
+        },
+        {
+          "q": "Vad händer med optionsvärdet när volatiliteten stiger?",
+          "alternativ": [
+            "Faller — mer risk är alltid dåligt",
+            "Oförändrat",
+            "Stiger — förlustsidan är avkapad, så mer rörelse ger mer av det som behålls",
+            "Beror enbart på räntan"
+          ],
+          "ratt": 2,
+          "tips": "Asymmetrin: vad har köparen av uppsidan och nedsidan?"
+        },
+        {
+          "q": "Vad menas med att aktien är en köpoption på bolagets tillgångar?",
+          "alternativ": [
+            "Att aktier är samma sak som terminer",
+            "Att ägarna efter långivarna kan välja att lösa skulden och behålla resten — därför uppför sig högt belånat eget kapital som en option med hög volatilitet",
+            "Att börsen är en optionsbörs",
+            "Att utdelningar är optioner"
+          ],
+          "ratt": 1,
+          "tips": "Vad väljer ägarna när allt är betalt — och hur uppför sig det valet vid hög belåning?"
+        },
+        {
+          "q": "Varför underskattar traditionell NPV projekt med reella optioner?",
+          "alternativ": [
+            "Därför att NPV alltid är fel",
+            "Därför att NPV diskonterar en enda väg — den prissätter inte flexibiliteten att vänta, expandera eller överge",
+            "Därför att optioner inte har kassaflöden",
+            "Därför att IRR är bättre"
+          ],
+          "ratt": 1,
+          "tips": "Vad innehåller en sekvens av beslut som en enkel väg inte fångar?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 15,
+      "title": "Leasing — att äga, hyra och skuldens förklädnader",
+      "intro": "Bokens leasingkapitel är finansens påminnelse om att ägande är ett val, inte en naturlag: hyra mot köpa, finansiering eller operations frågar, och — sedan IFRS 16 — balansräkningens sista förklädnader bort. Kursen går igenom lease-or-buy-matematiken med svenska exempel och V10–V11-länkar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frågan är äldre än den ser ut: att leasa är att låna pengar bundna i en tillgång — leasinggivaren köper maskinen och hyr ut den, och hyran innehåller avbetalning på kapital, ränta och en premie för risk och service. Därför är beslutet i grunden en nuvärdesövning, inte en fråga om känsla: jämför nuvärdet av hyrbetalningarna med kostnaden att köpa — vid samma avkastningskrav och samma skatt. Räkneexempel: en maskin kan köpas för 100 eller leasingas fem år till 25 per år; med krav 8 procent är leasingens nuvärde 25 × 3,9927 = 99,8 — billigare än köpet med 0,2, alltså marginellt, och beslutet avgörs därför av det boken alltid lyfter till slut: skattemarginaler, restvärdesrisk, serviceansvar och flexibilitet vid tidig avslut. Notera att räkningen är känslig för räntan — vid högre krav växer leasingens fördel ty restvärdet diskonteras djupare; i sjunkande räntelägen vänder förhållandet."
+        },
+        {
+          "type": "text",
+          "content": "Där skapas värdet, när leasing över huvud taget gör det: överföringen av skattesköldar mellan parter med olika marginaler (en leasinggivare med högt resultat utnyttjar avskrivningarna bättre än ett nystartat bolag utan vinst att skatta — vinsten delas i lägre hyra); överföringen av restvärdesrisk till den som bäst kan bedöma den (tillverkaren som känner andrahandsmarknaden); och service- och expertisbuntar där drift inte är kärnverksamhet. Allt annat — i synnerhet balansräkningskosmetik — är historik: före IFRS 16 kunde operativa leasingavtal hållas utanför balansräkningen, och bolag kunde skuldsätta sig i förklädnad; redovisningsstandarden stängde dörren genom att lyfta in nyttjanderätten på balansräkningen med matchande skuld. Lärdomen lever kvar i analysen: läsvillkoret är alltid detsamma — följ betalningsförpliktelsen, inte etiketten. Ett bolag med stora åtaganden i noterna motsvarar skuld, vad rubriken än säger, och V10 som ignorerar leasingåtaganden är en halv variabel."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-länken. V10: efter IFRS 16 ingår leasing i skuldbilden — men granskningen ska gå längre: långa åtagandekartor i noterna avslöjar bindningar som balansräkningen komprimerar; Ericsson-liknande tjänstebolag med fordon- och fastighetsleasing och Volvo-liknande tillverkare med anläggningsleasing har olika karaktär på samma post. V11: leasingavtalets löptid och uppsägningsregler är likviditetsfrågor — ett kontrakt som inte kan pausas i nedgång är en fast kostnad vars flexibilitet är köpt, inte given. V19: bolag som leasar kapitaltätt har förbrukat del av framtida lånekapacitet — kassakonsumtionen ligger i hyrorna, och pro forma-prognosen som glömmer leasingförlängelser underskattar gapet. Och optionskopplingen från kapitel tio: uppsägningsrätten i ett flexibelt avtal är en put — den har värde, och värdet syns i priset på hyran: den som kräver flexibilitet betalar premie, den som ger bort den subventionerar motparten. Kursens tumregel: varje gång ett bolag berömmer sig av att inte äga sina tillgångar — fråga vad det betalar för rätten att låna dem, och vem som bär risken när de sjunker i värde."
+        },
+        {
+          "type": "insikt",
+          "content": "Leasing är skuld med serviceavtal — följer du betalningsförpliktelsen genom noterna spelar etiketten ingen roll. Nuvärdet av hyrorna mot kostnaden att äga, plus frågan om vem som bäst bär restvärdesrisken, är hela beslutet; kosmetiken togs bort av IFRS 16, men analytikerns skyldighet att gräva stod kvar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Lease-or-buy — räkneexempel och beslutsvariabler\",\"rader\":[[\"Post\",\"Värde\",\"Not\"],[\"Köpeskilling\",\"100\",\"alternativ A\"],[\"Hyra, 5 år\",\"25/år\",\"alternativ B\"],[\"Nuvärde leasing vid 8 %\",\"25 × 3,9927 = 99,8\",\"marginellt billigare\"],[\"Beslutet avgörs av\",\"skattemarginaler, restvärde, service, flexibilitet\",\"—\"],[\"Balansräkning\",\"IFRS 16: på balansräkningen\",\"etiketten är död, flödet lever\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Köp för 100 eller leasing fem år à 25 vid 8 procents krav (faktor 3,9927) — vad är leasingens nuvärde och slutsatsen?",
+          "alternativ": [
+            "125 — köp är billigare",
+            "99,8 — leasing marginellt billigare, avgörs av skatt, restvärde och service",
+            "75 — leasing klart billigare",
+            "100 — likvärdigt exakt"
+          ],
+          "ratt": 1,
+          "tips": "25 × 3,9927 — hur nära 100 landar det?"
+        },
+        {
+          "q": "Vad är den klassiska värdemekanismen när leasing skapar verkligt värde?",
+          "alternativ": [
+            "Balansräkningskosmetik",
+            "Överföring av skattesköldar och restvärdesrisk mellan parter som bära dem olika bra — vinsten delas i lägre hyra",
+            "Att hyra alltid är billigast",
+            "Att leasinggivare är välgörare"
+          ],
+          "ratt": 1,
+          "tips": "Vem kan använda avskrivningarna — och vem kan bedöma andrahandsvärdet?"
+        },
+        {
+          "q": "Vad ändrade IFRS 16?",
+          "alternativ": [
+            "Ingenting alls",
+            "Förbjöd leasing",
+            "Operativa leasingavtal togs in på balansräkningen som nyttjanderätt med matchande skuld — balansräkningsförklädnaden stängdes",
+            "Räntan på leasing avskaffades"
+          ],
+          "ratt": 2,
+          "tips": "Vad hände med den post som tidigare hölls utanför balansräkningen?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 16,
+      "title": "Riskhantering — försäkring, terminer, swappar och valutasäkring (V03)",
+      "intro": "Om MM har rätt och finansieringen inte skapar värde — varför hedga? Bokens svar bygger en hel verktygslåda: försäkring när trångmålkostnader finns, terminer och swappar när exponeringen är känd, optioner när osäkerheten är tvåsidig. Kursens kapitel om V03:s och V12:s kusiner — med Volvo som exportör och H&M som valutaköpare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Argumentet mot hedging är MM:s: ägarna kan själva diversifiera, och bolaget som hedgar skapar ingen värde som portföljen inte redan skapat. Argumenten för är verklighetens: konkursträngmål och trasiga krediter gör kassaflödessvängningar dyra i sig (kapitel åtta); intern finansiering är billigare än extern (pecking order igen — det är bättre att jämna ut och finansiera projekten inifrån än att emissionera i vågdalen); och koordinerad riskhantering är billigare på bolagsnivå än på tusen ägares. När logiken står klar, verktygen: försäkring — premie mot katastrofal nedsida, optionen i klädnad från kapitel tio; terminen — ett avtal att köpa eller sälja till fast pris vid framtida datum, skyldighet för båda parter, ingen premie; swappen — ett utbyte av flöden, fast mot rörlig ränta eller valuta mot valuta, bankernas mellanhand; optionen — rätten utan förpliktelsen, premiebetalad, för osäkerhet som är tvåsidig. Valet av verktyg följer exponeringens natur: känd och säker — termin eller swap; osäker i båda riktningar — option; katastrofal och sällsynt — försäkring."
+        },
+        {
+          "type": "text",
+          "content": "Valutasäkring, det svenska exemplet. Volvo-liknande exportör: intäkter i dollar och euro, kostnader i kronor — en försvagad krona blåser vinsten, en förstärkt pressar den. Ericsson-liknande global tjänsteexportör med produktion spridd över valutor: delvis naturligt hedgad — intäktsvalutor och kostnadsvalutor delvis tar ut varandra, och det är V03:s logik i balansräkningen. H&M-liknande detaljhandlare med produktion i dollarområdet och försäljning i kronor och euro: spegelvänd exponering. Räkneexempel: en kontrakterad dollarintäkt om ett år med dagens värde 100 mdr kronor; terminsäkring kostar 1,5 procent i prisskillnad mot spot — 1,5 mdr. Stärks kronan tio procent är den osäkrade intäkten värd 90: förlusten tio mot säkringskostnaden 1,5. Försvagas kronan till 110 är den osäkrade vinnaren tio rikare — och det är hela poängen: hedging är inte en vinstmaskin utan en variansreducerare; den kostar det den kostar och köper det den köper — förutsägbarhet. Kursens hårdaste regel: hedga kontrakterade flöden, inte prognostiserade — att säkra en prognos är att skapa en ny exponering (om volymen uteblir sitter bolaget med en termin på intäkter som aldrig kommer), och överhedgning är inte säkring utan spekulation i förklädnad."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V03 intäktsdiversifiering är den naturliga hedgingen — bolag vars intäkter och kostnader sprids över valutor och geografier bär inbyggd motståndskraft som inget derivat behöver betala för; poängsätt den före den syntetiska. V12 intäktsstabilitet mäter samma egenskap över tid: ett bolag vars valutasäkringspolicy är dokumenterad och konsekvent har lägre volatilitet i rapporterna än dess råexponering — och skillnaden är ledningens riskhantering, synlig för den som läser noterna. V10-länken: swappar i ränta förvandlar rörlig kostnad till fast — för ett belånat bolag är det samma skydd som en försäkring, och dess pris en del av kapitalstrukturens verkliga kostnad. V18: politisk risk — sanktioner, exportkontroller, tullar — är den exponering som är svårast att hedga med instrument och enklast att hantera med geografisk spridning; där möter V03 och V18 varandra i praktiken. Och mot AK1TS: en hedgad kassaflödesström är en vågfundamentsserie med mindre amplitud — stabiliteten som hedgingen köper är samma egenskap som gör de fundamentala tidsserierna mer läsbara och konfluensen med prismönstren renare; volatilitet du tar bort fundamentalt behöver inte vågmotorn gissa om."
+        },
+        {
+          "type": "insikt",
+          "content": "Hedging köper inte vinst — den köper förutsägbarhet, och priset är premien. Frågan är aldrig om bolaget ska hedga utan vilka flöden som är kontrakterade, vilka som är prognoser, och om ledningen vet skillnaden — ty att säkra en prognos är att bygga en ny exponering av den gamlas osäkerhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Instrumenten och deras passform\",\"rader\":[[\"Instrument\",\"Förpliktelse\",\"Pris\",\"Passform\",\"Exempel\"],[\"Termin\",\"bindande båda parter\",\"ingen premie\",\"kända, kontrakterade flöden\",\"Volvo säljer USD-intäkt framåt\"],[\"Swap\",\"utbyte av flöden\",\"inbyggt i spreaden\",\"löpande, återkommande\",\"fast mot rörlig ränta på obligationsstock\"],[\"Option\",\"rätt, ej skyldighet\",\"premie\",\"tvåsidig osäkerhet\",\"säkra bud utan att binda\"],[\"Försäkring\",\"premie mot katastrof\",\"premie\",\"sällsynt, devastarande\",\"egendom, produktansvar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Besluta om valutasäkring för en Volvo-liknande exportör. Läge: kontrakterad dollarintäkt om tolv månader, dagens värde 100 mdr kronor; terminspriset ligger 1,5 procent under spot — säkringskostnad 1,5 mdr. Ett: kronan stärks tio procent — vad är den osäkrade intäkten värd? Lösning: 100 × 0,90 = 90 mdr — en förlust på tio mot dagens värde, mot säkringskostnaden 1,5. Två: kronan försvagas tio procent? Lösning: 110 mdr — vinst tio, och den som säkrade avstår från den; det är inte en kostnad utan det pris förutsägbarheten köps för. Tre: vilka flöden ska säkras enligt kursens hårda regel? Lösning: de kontrakterade — att säkra prognostiserade volymer skapar terminspositioner på intäkter som kan utebli, alltså ny exponering. Fyra: när är det rationellt att avstå från säkring trots känd exponering? Lösning: när den naturliga hedgen är stark (kostnader i samma valuta — V03 hög), när trångmålsrisken är försumbar (låg belåning, god likviditet), eller när premien prissätter risken orimligt dyrt — alla tre kräver att svaret kan formuleras i siffror, inte i att man tror på svag krona. Fyra svar — och riskhanteringen är ett beslut, inte en känsla."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "En kontrakterad USD-intäkt värd 100 mdr kronor; kronan stärks tio procent. Vad är den osäkrade intäkten värd?",
+          "alternativ": [
+            "110 mdr",
+            "100 mdr",
+            "90 mdr",
+            "101,5 mdr"
+          ],
+          "ratt": 2,
+          "tips": "Starkare krona — varje dollar ger färre kronor."
+        },
+        {
+          "q": "Vad skiljer en termin från en option?",
+          "alternativ": [
+            "Ingenting",
+            "Terminen är bindande för båda parter utan premie; optionen är en rätt utan förpliktelse och kostar premie",
+            "Optioner är alltid billigare",
+            "Terminer är förbjudna för exportörer"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer om marknaden rör sig emot dig — och vad kostar skyddet för det?"
+        },
+        {
+          "q": "Varför är överhedgning farligt?",
+          "alternativ": [
+            "Det är aldrig farligt",
+            "Därför att premierna är höga",
+            "Därför att den som säkrar prognostiserade volymer sitter med terminspositioner på intäkter som kan utebli — en ny exponering, dvs spekulation i förklädnad",
+            "Därför att bankerna inte tillåter det"
+          ],
+          "ratt": 2,
+          "tips": "Vad äger bolaget om volymen inte materialiseras — och vad heter en position på något man inte har?"
+        },
+        {
+          "q": "Vad är kursens starkaste skäl till att hedga trots MM:s irrelevans?",
+          "alternativ": [
+            "Att hedging ökar vinsten",
+            "Att trångmålkostnader och trasiga krediter gör svängningar dyra, och intern finansiering är billigare än extern — kapitel åttas verklighet",
+            "Att ägare inte kan diversifiera",
+            "Att derivat är gratis"
+          ],
+          "ratt": 1,
+          "tips": "Vilka av MM:s antaganden bryter — och vad kostar det när de gör det?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 15,
+      "title": "Finansiell planering och rörelsekapital — kassa, kreditpolicy och lager",
+      "intro": "Bokens sista praktikblock: den korta sidan av balansräkningen. Kassahantering, marknadspapper, kreditpolicy och kundfordringar, lagerstyrning — och den finansiella planering som binder ihop allt. Higgins-kursens rörelsekapitelskapitel mött av teorin; V11:s och V19:s sista puzzelbitar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kundfordringarna är den största och mest underskattade posten: en kreditpolicy är en prislista på försäljning — förlängd kredit säljer mer men binder kassa och ökar kreditförlusterna, och optimalpunkten är där marginalintäkten av mer försäljning möter marginalkostnaden av bindning plus förlust. Räkneexempel, rakt ur Higgins-traditionen: årsförsäljning 730 mdr och kunder som betalar på 60 dagar binder 730 × 60 / 365 = 120 mdr i fordringar; vid 5 procents kapitalkostnad kostar varje tio dagar extra kredittid 20 mdr × 5 procent = 1 mdr per år i ren bindning — före en enda krona förlust. Åldringsanalysen är diagnostiken: en fordringsstock som sväller i de äldsta bucketarna är en framtida kreditförlust som väntar på att hitta sitt bokslut. Lagerstyrningen är syskonfrågan: varje enhet i lager bär bindning, förvaring och föråldring — H&M:s bransch är skolboken, där en kollektion som inte säljs ut på åtta veckor rabatteras och därmed äter hela säsongens marginal; den snabba rotationen är inte estetik utan kapitalränta."
+        },
+        {
+          "type": "text",
+          "content": "Kassahanteringens gamla fråga — hur mycket kassa ska bolaget hålla? — har bokens elegantaste svar i Baumol-modellen (trädet från lageroptimering, omplanterat): kassan dras ner i jämna uttag mot en räntebärande placeringspool, och den optimala transaktionsstorleken väger transaktionskostnad mot bindningsränta — praktiken: kassan hålls i nivåer, från driftskassa via daglig likviditet till obrukad reserv. Den moderna praktiken: återköps- och utdelnings-policy är kassans utlopp, och den outnyttjade kreditlinjen är likviditetens sista försvarslinje (Higgins-kursens V11-läsning). Finansiell planering binder ihop allt: kassabudget på månadsnivå, pro forma på årsnivå (procent-försäljningsmetoden), och scenarier över konjunktur — boken betonar att planen är processen, inte dokumentet: planeringens värde är att tvångsvalet emission-belåning-broms inte behöver fattas i paniken utan kan förberedas i lugn. Det är Higgins-kursens femte kapitel igen, nu med brevet från teorin: pro forma är inte bara prognos utan option — att veta i förväg var gapet öppnar är rätten att agera innan marknaden prissätter tvånget."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-länken samlas. V11: likviditeten är kassa plus outnyttjade ramar, och kreditpolicyn är dess framtida belastning — en fordringsstock som åldras är en V11-försämring som ännu inte rapporterats. V19: kassabudgeten är förbränningens mikroskop, och bolag med säsongsbetonad försäljning (H&M:s höstsäsong, Volvos lastbilsleveranser) ska bedömas på årscykelns värsta månad, inte dess bästa kvartal. V12: kreditpolicyn är en del av intäktsstabiliteten — villkor som stramas åt i nedgång kan rädda kassan men döda volymen; tvärtom i uppgång; policyn är en cykelvariabel och ska läsas cykliskt. V09: fordrings- och lagerrotation är kassaflödets kvalitet — EBITDA som inte blir kassa för att det sitter i gamla fordringar är V09:s klassiska fall. Och kursens sista praktikregel, bokens anda: den korta sidan av balansräkningen förvaltas i kronor per dag — de små beslutet om tio dagars kredittid, den lilla lagernivån, det lilla buffertbeloppet — men summerat avgör de om vinsten på papperet blir kassa i banken, och därmed om allt det andra kursen räknat är teori eller pengar."
+        },
+        {
+          "type": "insikt",
+          "content": "Rörelsekapitalet förvaltas i kronor per dag: tio dagars extra kredittid på 730 mdr årsförsäljning binder 20 mdr och kostar en miljon om året i ren ränta — före en enda förlust. Ingen styrelsediskussion handlar om det; alla balansräkningar visar det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rörelsekapitalets tre poster — frågor och räkneexempel\",\"rader\":[[\"Post\",\"Fråga\",\"Räkneexempel\",\"AKM1\"],[\"Kundfordringar\",\"hur länge betalar kunderna?\",\"730 × 60/365 = 120 mdr bundet\",\"V11, V09, V12\"],[\"Lager\",\"hur länge ligger varan?\",\"snabb rotation = kapitalränta\",\"V07, V09\"],[\"Kassa och ramar\",\"vad klarar värsta månaden?\",\"kassa + outnyttjad ram\",\"V11, V19\"],[\"Kassabudget\",\"när öppnas gapet?\",\"månadsnivå, scenarier\",\"V19, V01\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Årsförsäljning 730 mdr, kunderna betalar på 60 dagar. Hur mycket binds i kundfordringar?",
+          "alternativ": [
+            "60 mdr",
+            "100 mdr",
+            "120 mdr",
+            "240 mdr"
+          ],
+          "ratt": 2,
+          "tips": "Daglig försäljning 2 mdr gånger sextio dagar."
+        },
+        {
+          "q": "Vad är Baumol-modellens poäng?",
+          "alternativ": [
+            "Att kassan alltid ska vara maximal",
+            "Att den optimala kassnivån väger transaktionskostnad mot bindningsränta — kassan förvaltas i uttag mot en räntebärande pool",
+            "Att kassa är samma som vinst",
+            "Att kassabudgeter är onödiga"
+          ],
+          "ratt": 1,
+          "tips": "Vilka två kostnader står mot varandra när kassan fylls och töms?"
+        },
+        {
+          "q": "Varför ska säsongsbolag bedömas på årscykelns värsta månad?",
+          "alternativ": [
+            "Därför att bästa kvartalet är irrelevant",
+            "Därför att V11 och V19 mäter betalningsberedskap och förbränning — och de testas i botten, inte i toppen",
+            "Därför att bokslut läggs i december",
+            "Därför att riksbanken gör det"
+          ],
+          "ratt": 1,
+          "tips": "När betalar verkligheten besöket — när kassan rinner som mest eller som minst?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 15,
+      "title": "Förvärv, kontroll och syntes — M&A och bibeln i AK1A",
+      "intro": "Bokens sista stora block: fusioner och förvärv — synergier mot hubris, kontant mot aktie som betalning, kontrollmarknaderna och deras mekanismer. Därefter kursens syntes: hela bibeln som AK1A:s teoretiska grundval — kassaflöde, risk och tid in; V01–V20 och vågorna ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förvärvets matematik är hård: köparens värdeskapande = (säljarens fristående värde + synergier) − köpeskillingen. Räkneexempel: köpare värderad 2 000, mål 500 fristående, synergier 150 → kombinerat värde 2 650; betalas 600 (en premie på 100 över fristående värde) återstår 2 650 − 2 000 − 600 = +50 till köparens ägare — förvärvet skapar värde, men mesta delen av vinsten (100 av 150) gick till säljarens ägare i preminen. Det är synergikampens eviga facit: premien är priset på kontrollen, och den som betalar hela synergian i premie har köpt ett projekt utan NPV. Synergiernas källor är färre än presentationsdiagrammen: intäktssynergi (korsförsäljning — svårast att realisera), kostnadssynergi (skal i produktion, administration — enklare, blodigare), skattepositioner och finansiella effektiviseringar. Mot dem står hubris: studie efter studie visar att köparägare i genomsnitt inte tjänar på förvärv och att säljare gör det — och förklaringen är beteendeaktuel: segrare i budauktioner är per definition de som värderade högst (vinnarens förbannelse, finansupplagan)."
+        },
+        {
+          "type": "text",
+          "content": "Betalningen bär signalen: kontant är ett neutralt uttalande, aktier betalas med egna papper — och teorin (plus fyra decennier av data) säger att köpare som betalar med aktier i genomsnitt signalerar att de anser dem övervärderade, varför aktiebetalda förvärv möts av skepsis. Kontrollmarknaden är bokens bredare tema: hotet om förvärv är disciplinens sista instans — en dålig ledning kan köpas bort, och kommittéer, gift pills (försvarsklausuler) och röstvärdeskillnader är bolagens försvar, i regel mot ägarna. LBO-eran — köp med skuld, ägarskap tätt, utförsäljning — är kapitel åtta i praktik: hög belåning som disciplinär anordning, ty skulden lämnar ingen slush för dåliga projekt; dess historik är ett praktiskt bevis på att trångmål kan skärpa beslutsfattandet, när den inte dödar bolaget. Svensk not: den svenska offentliga marknadens fientliga bud är sällsyntare än den anglosaxiska — kontroll disciplineras mer av stora ägare och institutioner; V17-läsningen av partnerskap och ägarstruktur är därför mer av vägledning här än i USA-kontexten."
+        },
+        {
+          "type": "text",
+          "content": "Och syntesen — bibeln som AK1A:s grundval, kapitel för kapitel sammanfattad. Nuvärdet (kapitel två): V04–V06:s innehåll och hela värderingens grammatik. Prissättningen (tre): obligationers lagar bakom räntkänsligheten, Gordons formel bakom V05 och V20:s källflöde. Investeringskriterierna (fyra): V17–V18:s projektlogik. Portföljteorin (fem): V03:s diversifiering, cellernas korrelationsläsning i AK1TS. CAPM och beta (sex–sju): avkastningskravet bakom varje multipl, WACC:s rE. Kapitalstrukturen (åtta): V10:s teori — sköld mot trångmål, läst med cykel och bransch. Utdelning och återköp (nio): V20:s grammatik, SGR-länken till Higgins. Optionerna (tio): asymmetrin bakom avtal, projekt och vågklassen basbygge. Leasing (elva): skuldens förklädnader och V10:s noter. Riskhanteringen (tolv): V03:s naturliga hedgning, V12:s stabilitetsunderlag. Rörelsekapitalet (tretton): V11:s och V09:s sista bitar. Förvärven (fjorton): V17:s största avtalsform och hubris-varningen. Och över allt: NPV:s enda fråga — ökar detta nuvärdet? — som förenar bibeln med Higgins handbok och skiljer båda från känslans finans. AK1TS möter dem i priset: fem horisonter, 25 celler, vågklasser och momentum — fundamentalets klocka och prismarknadens klockor, lästa tillsammans, är konfluens; och konfluens är hela ekosystemets namn på: räknat på båda sidor, dömt med öppna ögon. Bibeln lämnas med den meningen — och med påminnelsen om att alla formler i kursen kan försummas utom en: en krona i dag är värd mer än en krona i morgon, ty den kan arbeta. Allt annat är kommentar."
+        },
+        {
+          "type": "insikt",
+          "content": "Förvärvets facit skrivs i preminen: köparen tjänar bara det som betalas under fristående värde plus synergier — och auktionens segrare är per definition den som trodde högst. Fråga vid varje bud: vad kostar kontrollen, vad är synergin värd, och vem av de två som dikterar — då är hubris statistik och inte öde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bibeln som AK1A-grundval — syntestabellen\",\"rader\":[[\"Kapitel\",\"Teori\",\"AK1A-utgång\"],[\"2 — Nuvärdet\",\"NPV-regeln\",\"V04–V06, all värdering\"],[\"3 — Prissättning\",\"obligationslagar, Gordon, P/B-formeln\",\"V05, räntkänslighet, V20-källa\"],[\"5–7 — Risk och CAPM\",\"Markowitz, beta, WACC\",\"V03, multiplarnas nämnare\"],[\"8 — Kapitalstruktur\",\"MM, sköld, trångmål\",\"V10\"],[\"9 — Utdelningspolicy\",\"irrelevans, signaler, återköp\",\"V20\"],[\"10 — Optioner\",\"asymmetri, reella optioner\",\"V17–V18, basbygge\"],[\"11–12 — Leasing och hedging\",\"skuldens förklädnader, terminer, swappar\",\"V10, V11, V03, V12\"],[\"13 — Rörelsekapital\",\"kassa, fordringar, lager\",\"V09, V11, V19\"],[\"14 — Förvärv\",\"synergi mot hubris\",\"V17, kontroll och premie\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Köpare värderad 2 000, målet 500 fristående, synergier 150 — kombinerat värde? Betalas 600, vad tjänar köparens ägare?",
+          "alternativ": [
+            "2 650 och +50",
+            "2 650 och +150",
+            "2 600 och +100",
+            "2 500 och −100"
+          ],
+          "ratt": 0,
+          "tips": "2 000 + 500 + 150 = 2 650; sedan 2 650 − 2 000 − 600."
+        },
+        {
+          "q": "Vad är vinnarens förbannelse i budauktioner?",
+          "alternativ": [
+            "Att bud alltid är för låga",
+            "Att segraren per definition är den som värderade målet högst — systematisk överbetaling",
+            "Att auktioner är olagliga",
+            "Att integrationen alltid lyckas"
+          ],
+          "ratt": 1,
+          "tips": "Vem är kvar när budet slagits ut — och vad säger det om dennes uppskattning?"
+        },
+        {
+          "q": "Varför tolkas aktiebetald förvärvskompensation ofta negativt?",
+          "alternativ": [
+            "Aktier är alltid värdefulla",
+            "Därför att köpare som betalar med egna aktier i genomsnitt signalerar att de anser dem övervärderade",
+            "Aktier kan inte överföras",
+            "Kontant är alltid dyrare"
+          ],
+          "ratt": 1,
+          "tips": "Vilken valuta väljer den som tror att sin egen vara är dyr — och vad förstår marknaden av valet?"
+        },
+        {
+          "q": "Vad är kursens slutmening om bibelns plats i AK1A?",
+          "alternativ": [
+            "Att bibeln ersätter Higgins helt",
+            "Att bibeln är teorin bakom råvaran till AKM1 och fundamentalets klocka mot AK1TS:s prisklockor — konfluens är båda, räknade",
+            "Att bibeln motsäger AK1TS",
+            "Att bibeln bara gäller amerikanska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad levererar bibeln som handboken inte gör — och var möts de?"
+        }
+      ]
+    }
+  ]
+}

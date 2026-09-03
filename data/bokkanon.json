@@ -2425,6 +2425,28 @@
       ],
       "tier": 1,
       "status": "kurs"
+    },
+    {
+      "id": "bk-102",
+      "titel": "Against the Gods: The Remarkable Story of Risk",
+      "author": "Peter L. Bernstein",
+      "year": 1996,
+      "kat": "risk",
+      "niva": 3,
+      "why": "Riskhistorien från tärningsspel till optioner: hur sannolikhetstänkandet föddes och formade modern finans.",
+      "ak": [
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Risk är inte osäkerhet — att skilja dem är finansens viktigaste grund",
+        "Sannolikhetstänkandet var en mental revolution, inte en upptäckt",
+        "Varje riskmått är en modell av det okända — ödmjukhet krävs"
+      ],
+      "tier": 1,
+      "status": "kurs"
     }
   ]
 }

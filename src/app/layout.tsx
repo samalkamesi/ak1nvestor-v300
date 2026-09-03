@@ -11,6 +11,7 @@ import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
 import { TracerMount } from "@/components/ak1a/tracer-mount";
 import { Kommandopalett } from "@/components/ak1a/kommandopalett";
 import { NotisCenter } from "@/components/ak1a/notis-center";
+import { CookieConsent } from "@/components/ak1a/cookie-consent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -177,6 +178,7 @@ export default function RootLayout({
             <TracerMount />
             <Kommandopalett />
             <NotisCenter />
+            <CookieConsent />
           </Ak1aStoreProvider>
         </ThemeProvider>
       </body>

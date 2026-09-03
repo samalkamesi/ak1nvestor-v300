@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ArrowUp, Mail, Globe } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { FOOTER_NAV } from "@/lib/ak1a/data";
@@ -16,7 +17,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-border bg-muted/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
         {/* Manifesto block */}
-        <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1.2fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
           <div>
             <Ak1aLogo size="md" />
             <p className="mt-4 max-w-md text-sm text-muted-foreground leading-relaxed">
@@ -66,6 +67,61 @@ export function Footer() {
                 {item.label}
               </button>
             ))}
+          </nav>
+
+          {/* Juridik & ansvar */}
+          <nav aria-label="Juridik och ansvar" className="grid grid-cols-2 gap-x-4 gap-y-1">
+            <h4 className="col-span-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Juridik &amp; ansvar
+            </h4>
+            <Link
+              href="/villkor"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Användarvillkor
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Integritetspolicy
+            </Link>
+            <Link
+              href="/cookiepolicy"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Cookiepolicy
+            </Link>
+            <Link
+              href="/ansvar"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Ansvar &amp; friskrivning
+            </Link>
+            <Link
+              href="/upphovsratt"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Upphovsrätt &amp; källor
+            </Link>
+            <Link
+              href="/kallor"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Alla 101 källor
+            </Link>
+            <Link
+              href="/finansiell-policy"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Finansiell policy
+            </Link>
+            <Link
+              href="/?cookies=1"
+              className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+            >
+              Cookie-inställningar
+            </Link>
           </nav>
         </div>
 

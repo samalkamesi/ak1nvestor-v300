@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/mina-analyser", destination: "/min-sida", permanent: true },
       { source: "/diagnos", destination: "/profil", permanent: true },
+      // Gamla ytliga villkorssidan → komplett /villkor (2026-09-01).
+      { source: "/terms", destination: "/villkor", permanent: true },
       // Gamla å/ä/ö-kursslugar → ASCII-slug:arna (url-scan-2026-09-03).
       // Källorna är percent-encodade (ö=%C3%B6 ä=%C3%A4 å=%C3%A5) eftersom
       // produktion/Next URL-encodar diakriterna i inkommande begäran.

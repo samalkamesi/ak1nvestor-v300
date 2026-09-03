@@ -1,0 +1,1022 @@
+{
+  "slug": "zero-to-one",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 184,
+  "title": "Zero to One — Peter Thiel: KOMPLETT",
+  "summary": "Zero to One: Notes on Startups, or How to Build the Future (2014) är börsens mest kompakta teori om var exponentiellt värde skapas. Peter Thiel — filosof och jurist från Stanford, grundare av PayPal (sålt till eBay för 1,5 miljarder dollar 2002), medgrundare av Palantir, första externa investerare i Facebook (500 000 dollar för drygt tio procent 2004) och partner i Founders Fund — skrev boken tillsammans med Blake Masters på basis av föreläsningsanteckningar från hans Stanford-kurs CS183 Startup våren 2012. Tesen är radikal i sin enkelhet: verklig utveckling är att gå från 0 till 1 — skapa något helt nytt — medan globalisering och skalning bara kopierar det som redan finns, från 1 till n. Konkurrens utplånar vinster; monopol — byggda på proprietär teknik, nätverkseffekter, skalfördelar och varumärke — skapar dem. Framtiden tillhör den som planerar den: bestämd optimism, potenslagens logik och hemligheter ingen annan jagar. Kursen, katalogkod bk-029, översätter bokens fjorton kapitel till investerarens språk: hur AKM1:s tillväxtvariabler (V01–V02), marginaler (V07–V08), stabilitet (V12) och moat-block (V13–V15) ska läsas som en enda 0-till-1-fråga — och hur potenslagen ska styra positionernas storlek i AK1A:s fem tidshorisonter.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Skilja vertikal utveckling (0 till 1: ny teknologi, nya marknader) från horisontell (1 till n: kopiering, globalisering, andelskamper) och översätta skillnaden till V01-tillväxt och multipl-berättigande (V04–V06) · Förstå varför ekonomisk konkurrens pressar vinster mot noll och varför värdeskapande utan värdefångande är enbart synd — flygbranschens 37 cent per passagerare mot Googles 21 procent · Se igenom monopolens maskerad: hur monopolbolag underskattar sin ställning och konkurrensutsatta bolag överdriver sin unikhet — och hur du skriver en ärlig monopol-mening för varje innehav · Behärska monopolens fyra kännetecken — 10x-proprietär teknik, nätverkseffekter, skalbarhet, varumärke — som operativ checklista för V13–V15 · Använda last mover advantage: diskontera tio till femton år framåt och låta hållbarheten (V12), inte årets tillväxtax, sätta värderingshorisonten · Skilja bestämd från obestämd optimism och förstå varför finansieringens, iterationens och diversifieringens ideologier är obestämdhetens symtom · Tillämpa potenslagen på kapitalförvaltning: koncentration, Kelly-logik, svansarnas dominans och urvalets verkliga arbete · Jaga hemligheter i stället för konsensus: formulera en falsifierbar tes om vad marknaden missförstår · Läsa grundvall, incitament och insiderägande som prognosvariabler (V17) · Rasera myten om att produkten säljer sig själv: distribution, CAC mot LTV och dess koppling till kapitalförbränning (V19) · Bedöma människa-maskin-komplementaritet i AI-tiden — substitut eller förstärkare av bolagets värde · Köra Thiels sju frågor (teknik, timing, monopol, folk, distribution, hållbarhet, hemlighet) som en komplett AKM1-mini på vilket tillväxtbolag som helst · Syntetisera kursen: betala moat-pris bara för bolag som flyttat faktorerna — och veta skillnaden på en 0-till-1-monopolist och en 1-till-n-trendridare.",
+  "why": "De flesta börsaktiers avkastning drivs av ett litet antal exceptionella bolag — Bessembinders forskning visar att knappt fem procent av alla amerikanska bolag sedan 1926 står för hela nettovärdesskapandet; resten är i stort sett brus. Zero to One är den mest kompakta teorin om vad de fem procenten har gemensamt: de skapade något som saknade substitut, planerade sin framtid och byggde monopol som konkurrensen inte kunde äta. För AK1A är boken därför inte en entreprenörsmanual utan en urvalsfilosofi: den ger dig testerna (10x-regeln, last-mover-frågan, sju-fråge-checklistan) som skiljer äkta moat-tillväxt från cyklisk medvind, och potenslagens logik som motiverar koncentration när tesen är stark. Utan den läser du V01 som en trendlinje; med den läser du V01 som en fråga om vem som äger morgondagens marknad.",
+  "chapters_list": [
+    "1. Boken och mannen — från Stanford-föreläsning till strategiteori",
+    "2. Noll till ett — vertikal mot horisontell utveckling (V01)",
+    "3. Festen var 1999 — dot-com-kraschens fyra falska lärdomar",
+    "4. Konkurrens är för förlorare — värde skapat mot värde fångat",
+    "5. Monopolens fyra kännetecken — teknik, nätverk, skala, varumärke (V13–V15)",
+    "6. Last mover advantage — hållbarheten som värderingshorisont (V12)",
+    "7. Du är ingen lottsedel — bestämd optimism och planeringens överlägsenhet",
+    "8. Följ pengarna — potenslagen, koncentration och svansarnas dominans",
+    "9. Hemligheter — varje stor position är en tes om vad marknaden missförstår",
+    "10. Grundvallen — ägarskap, styrelse och incitament som prognos (V17)",
+    "11. Maffians mekanik — kultur, talangnätverk och insidersignaler",
+    "12. Bygger du det, kommer de då? — distribution, CAC mot LTV (V19)",
+    "13. Människa och maskin — komplement, substitut och AI-tidens moat-fråga",
+    "14. Att se grönt och syntesen — sju frågor, Tesla och 0-till-1-investeraren"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och mannen — från Stanford-föreläsning till strategiteori",
+      "intro": "Zero to One började inte som en bok utan som en föreläsningskurs: CS183 Startup vid Stanford, våren 2012, hållen av Peter Thiel och nedtecknad av jurystudenten Blake Masters. Anteckningarna spreds på nätet, omarbetades under två år och publicerades i september 2014 — en omedelbar bästsäljare som översatts till över tjugo språk. Innan innehållet kommer mannen bakom den, eftersom bokens auktoritet är erfarenhetens, inte akademiens.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Peter Thiel, född i Frankfurt 1967 och uppvuxen i Kalifornien, studerade filosofi och sedan juridik vid Stanford — en bildning som märks i bokens kantiga, aforistiska stil: varje kapitel är ett argument, inte en lista. Efter examen arbetade han som värdepappersjurist på Sullivan & Cromwell och som derivathandlare hos Credit Suisse innan han lämnade finansens mekanik för att bygga dess subjekt. 1998 var han med och grundade PayPal; som dess verkställande direktör ledde han bolaget till försäljningen till eBay 2002 för 1,5 miljarder dollar — mitt under dot-com-öknen. Därefter Clarium Capital (2002), medgrundande av Palantir (2003), första externa investeringen i Facebook (2004: 500 000 dollar för drygt tio procent — en av världshistoriens lönsammaste startkapitalplaceringar) och grundandet av Founders Fund (2005). Boken är alltså skriven av någon som gjort alla tre jobben: grundat 0-till-1-bolag, finansierat dem och suttit i deras styrelser."
+        },
+        {
+          "type": "text",
+          "content": "Bokens ursprung förklarar dess form. Föreläsningsanteckningarna var inte en företagshandbok utan en sammanhängande tes om framtidens logik: att vertikal utveckling — nya saker — är både svårare och lönsammare än horisontell — fler av samma sak. De fjorton kapitlen spänner från konkurrensteori och potenslagar över hemligheter, grundvallar och distribution till cleantech-kollapsen och grundarens paradox, och avslutas med frågan om mänsklighetens fyra möjliga framtider. kursen behåller bokens ordning men byter läsare: där Thiel talar till grundare talar den här kursen till dig som ska prissätta deras bolag. Det är en avgörande översättning, för bokens råd till grundare (välj monopol, undvik konkurrens, planera) är investerarens urvalskriterier i omvänd belysning — du ska inte bygga monopolen, du ska känna igen dem i tid och vägra betala monopolpris för trendridare."
+        },
+        {
+          "type": "text",
+          "content": "Och varför hör boken hemma i AK1A:s katalog vid sidan av läroböcker i nationalekonomi och värdering? Därför att den levererar mikroekonomins djupaste fråga — var bor vinsterna? — med ett konkretare svar än någon lärobok: i monopol som flyttat marknadens faktorer, inte i konkurrens som pressar dem mot noll. Kopplingen till AKM1 är rakt igenom: V01–V02 tillväxtens art (skapad marknad eller erövrad andel), V07–V08 marginalernas skalbarhet, V12 hållbarheten över en konjunktur, V13–V15 moat:ets fyra väggar, V17–V18 katalysatorerna och V19 distributionens maskineri. Läs boken en gång som grundare och en gång som ägare; kursen sköter den andra läsningen."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens första mening bär hela kursen: varje ögonblick i näringslivet sker bara en gång. Nästa Bill Gates bygger inte ett operativsystem och nästa Larry Page bygger inte en sökmotor — den som kopierar en vinnande formel kopierar också dess konkurrens. För investeraren: historien upprepar sig i mönstret, aldrig i innehållet — leta efter mönstret, misstro innehållet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens fjorton kapitel i fem block — och AK1A-mappningen\",\"rader\":[[\"Block\",\"Kapitel\",\"Kärna\",\"AKM1-koppling\"],[\"Diagnos\",\"1–3\",\"0-till-1 mot 1-till-n; dot-com-lärdomar\",\"V01 art av tillväxt; sentimentrensning\"],[\"Monopol\",\"4–5\",\"konkurrens utplånar vinster; fyra moat-väggar\",\"V07–V08 marginaler; V13–V15 moat\"],[\"Tid och kapital\",\"6–8\",\"hållbarhet; planering; potenslagen\",\"V12 stabilitet; positionstorlek; V04–V06 horisont\"],[\"Organisation\",\"9–12\",\"hemligheter; grundvall; kultur; distribution\",\"tes och alpha; V17 incitament; V19 kapitalförbränning\"],[\"Framtid\",\"13–14\",\"komplementaritet; sju frågor; syntes\",\"AI-katalys (V18); komplett bolagskoll\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner tre bolag i din bevakningslista som du hört kallas banbrytande. Formulera för varje bolag i en mening vad som faktiskt var nytt när det grundades — inte vad som var bra, utan vad som inte funnits förut. Om meningen inte går att skriva har du med största sannolikhet en 1-till-n-bolag med skicklig kommunikation — notera det, för det är kursens första urvalsskärande och det kommer igen i varje kapitel."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket är ursprunget till boken Zero to One?",
+          "alternativ": [
+            "En doktorsavhandling i nationalekonomi vid Stanford",
+            "Föreläsningsanteckningar från Thiels Stanford-kurs CS183 Startup 2012, nedtecknade av Blake Masters",
+            "En samling kolumner från Wall Street Journal",
+            "Internt utbildningsmaterial hos Founders Fund"
+          ],
+          "ratt": 1,
+          "tips": "Bokens undertitel lyder Notes on Startups — vilket slags anteckningar?"
+        },
+        {
+          "q": "Vad gjorde Thiel med PayPal innan han grundade Palantir och Founders Fund?",
+          "alternativ": [
+            "Han börsintroducerade det på Nasdaq och stannade som vd i tio år",
+            "Han lämnade det i konkurs",
+            "Han ledde det som verkställande direktör till försäljningen till eBay 2002 för 1,5 miljarder dollar",
+            "Han sålde det till Microsoft"
+          ],
+          "ratt": 2,
+          "tips": "Vilken köpare betalade 1,5 miljarder dollar 2002?"
+        },
+        {
+          "q": "Hur ska kursen läsas enligt intro-kapitlet?",
+          "alternativ": [
+            "Som en grundarmanual att följa steg för steg",
+            "Som en akademisk historia om siliciondalens kulturer",
+            "Som en teori om börsens psykologi",
+            "Som en översättning av grundarlogik till investerarens urvalskriterier — känna igen monopolen i tid och vägra betala monopolpris för trendridare"
+          ],
+          "ratt": 3,
+          "tips": "Vem är bokens läsare och vem är kursens?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Noll till ett — vertikal mot horisontell utveckling (V01)",
+      "intro": "Bokens titelbegrepp är dess viktigaste verktyg: utveckling kommer i två former. Horisontell, extensiv utveckling — att gå från 1 till n — är att kopiera saker som fungerar: globalisering, skalning, fler av samma sak. Vertikal, intensiv utveckling — att gå från 0 till 1 — är att göra något nytt. Distinktionen är inte akademisk; den är skillnaden mellan två helt olika ekonomiska mekanik och två helt olika berättigade multiplar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Thiels exempel är Kina: landets dramatiska uppsving är i grunden en tjugoårig 1-till-n-övning — kopiera det som fungerar, från fabriker till järnvägar, från institutioner till städer — och den strategin är rationell för en ekonomi som springer ifatt. Men kopiering förändrar inte vad som är möjligt; den förändrar bara var det sker. Teknologi i Thiels mening är däremot vertikal: nya sätt att göra saker som inte fanns — skrivmaskinen, bilen, datorn, nätbetalningen. Den som går från 0 till 1 skapar inte konkurrens om en befintlig marknad; den skapar en marknad som inte hade en försörjande leverantör innan. Notera att teknologi här inte betyder IT: en ny affärsmodell, en ny distribution eller en ny kombination kan vara lika vertikal som en ny kretsdesign."
+        },
+        {
+          "type": "text",
+          "content": "De två utvecklingsformerna har olika ekonomi. 1-till-n-utveckling är lätt att kopiera — det är dess poäng — och det som är lätt att kopiera får konkurrens som trycker priser och marginaler mot branschgenomsnittet; global rullout av en beprövad modell är volym, inte prissättningsmakt. 0-till-1-utveckling är svår att kopiera just för att den saknar facit: konkurrenterna vet inte ens att marknaden finns förrän den är skapad, och den som skapat den hinner bygga väggarna — nätverk, varumärke, skala — innan imitationen blir möjlig. Det är därför som nya marknader nästan alltid domineras av sin skapare under lång tid, medan öppna marknader domineras av den som skalar billigast."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är kursens första stora brygga. V01 Försäljningstillväxt ska inte bara mätas i procent utan klassas i art: är tillväxten 0-till-1 (en marknad som växer för att den är ny, med bolaget som definierande leverantör) eller 1-till-1-n (en modell som rullas ut på marknader där samma modell redan finns)? Den första arten förtjänar premium i V04–V06 eftersom tillväxten är strukturell och svår att konkurrera bort; den andra är i grunden cyklisk medvind och ska köpas cykliskt billigt. Kombinationen att leta: 0-till-1-marknad plus återkommande intäkter (V02) — en skapad marknad där kunden betalar varje månad är den starkaste V01-karaktär som finns i hela modellen."
+        },
+        {
+          "type": "insikt",
+          "content": "Substituttestet: om detta bolag försvann imorgon — vad skulle kunderna ersätta det med? Om svaret är inget nära substitut, bara besvär och improvisation, sitter du på en 0-till-1-karaktär med moat. Om svaret är tre konkurrenter med samma produkt till lägre pris har du en 1-till-n-skala — och då ska multiplen vara cyklisk, aldrig strukturell."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"0 till 1 mot 1 till n — två ekonomier, två multiplar\",\"rader\":[[\"Dimension\",\"0 till 1 (vertikal)\",\"1 till n (horisontell)\"],[\"Vad som sker\",\"nytt skapas: produkt, marknad, modell\",\"befintligt kopieras: skalning, globalisering\"],[\"Konkurrens\",\"frånvarande tills marknaden är skapad\",\"omedelbar — formeln är känd\"],[\"Marginaler\",\"stigande med skala (V07–V08)\",\"pressade mot genomsnitt\"],[\"V01-karaktär\",\"strukturell, marknadsskapande\",\"cyklisk, andels- och volymburen\"],[\"Multipl-logik\",\"premium berättigat (V04–V06)\",\"köp cykliskt billigt; aldrig premium\"],[\"Exempel\",\"nya kategorier med definierande leverantör\",\"global rullout av beprövad modell\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera fem innehav efter utvecklingsart: skriv för varje bolag om dess tillväxt de senaste fem åren kom från en skapad marknad (0 till 1), en erövrad andel på befintlig marknad (1 till n) eller allmän marknadstillväxt (n växer). Jämför sedan med bolagets nuvarande multipl mot sektorn. Matchar multiplen tillväxtens art? Det största mismatch-paret — trendridare med monopolmultipel — är kursens första säljkandidat och kapitel fyra förklarar varför."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär horisontell utveckling — att gå från 1 till n?",
+          "alternativ": [
+            "Att uppfinna helt ny teknologi",
+            "Att kopiera saker som redan fungerar — globalisering, skalning, fler av samma sak",
+            "Att minska kostnaderna med en procent i taget",
+            "Att expandera vertikalt i värdekedjan"
+          ],
+          "ratt": 1,
+          "tips": "Kina används som bokens exempel — vad gjorde landet i tjugo år?"
+        },
+        {
+          "q": "Varför får 1-till-n-tillväxt sällan bära en strukturell premiummultipl?",
+          "alternativ": [
+            "Därför att global tillväxt är omöjlig att mäta",
+            "Därför att modellen är känd och därmed lätt att kopiera — konkurrensen trycker priser och marginaler mot genomsnittet",
+            "Därför att den inte räknas som intäkter",
+            "Därför att centralbanker motverkar den"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en formel som alla har tillgång till?"
+        },
+        {
+          "q": "Vilken V01-karaktär beskriver kursen som den starkaste i hela AKM1?",
+          "alternativ": [
+            "Cyklisk volymtillväxt medrabatter",
+            "Ren prisökning i linje med inflationen",
+            "Förvärvsdriven omsättningsökning",
+            "0-till-1-marknadskapande kombinerat med återkommande intäkter (V02)"
+          ],
+          "ratt": 3,
+          "tips": "Ny marknad plus månatlig fakturering — var sitter den kombinationen?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Festen var 1999 — dot-com-kraschens fyra falska lärdomar",
+      "intro": "Bokens tredje kapitel är en utbildning i kontrafaktiskt tänkande: efter kraschen 2000 drog näringslivet fyra lärdomar ur askan — och Thiel menar att alla fyra var fel, att branschen lärde sig att ducka i stället för att gå. Kapitlet är kursens sentiment-rening: hur eufori och panik systematiskt vrider tolkningen av V01 och multiplar, och hur man skiljer ett fel som upprepats från ett som överkorrigerats.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontexten först: 1999 var året då allt tycktes fungera — riskkapital rann, affärsplaner utan intäkter börsintroducerades, och trettioåringar blev paper-miljardärer. Kraschen 2000 till 2002 utplånade biljonvärden, och entrepreneursvärlden drog sina slutsatser. De fyra lärdomarna blev en ny ortodoxi: gör inkrementella förbättringar i stället för radikala nya saker; var smal och flexibel och iterera i stället för att planera; förbättra det konkurrenterna redan gör i stället för att söka nya marknader; och fokusera på produkten i stället för försäljningen. Thiels motargument är empiriskt: de bolag som byggde det följande decenniets största värden gjorde i stort sett motsatsen på varje punkt — de gjorde djärva hopp, planerade, sökte nya marknader och byggde distribution från dag ett."
+        },
+        {
+          "type": "text",
+          "content": "Thiels djupare poäng är symmetrin: nittioalets fel var att tro att allt fungerar; tvåtusentalets fel blev att tro att inget fungerar. Sanningen är att det aldrig är lika bra eller lika dåligt som det ser ut — euforin och paniken är båda dåliga rådgivare, för båda ersätter frågan är detta verkligt? med frågan vad känns det som?. Det är också en humörcykelns ekonomi: i euforin prissätts 1-till-n-skaldningar (globala kopior) som om de vore 0-till-1-monopol (skapade marknader), och i paniken prissätts 0-till-1-monopol som om de vore modeflugor. Båda felen är köp- och säljtillfällen för den som kan skilja arten från humöret."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A blir kapitlet en metodregel i tre steg. Ett — rensa V01 för sentiment: tillväxtprognoser skrivna i euforins toppår ska diskonteras, och tillväxtvärderingar i panikens botten ska granskas för kassarika överlevare snarare än värda tillgångar. Två — leta efter den överkorrigerade lärdomen: varje krasch lämnar en ortodoxi som förbjuder något som faktiskt fungerar (efter 2000: att planera, att nischa, att sälja) — den som identifierar förbudet kan köpa det förbjudna billigt. Tre — var paranoid på rätt sätt: paranoia är ett dåligt planeringsverktyg men ett bra riskverktyg; fråga inte hur undviker jag att bli lurad igen, utan vad är sant oavsett humöret — det är frågan som driver både bra bolag och bra analyser."
+        },
+        {
+          "type": "insikt",
+          "content": "Den som köper i paniken exakt det han sålde i euforin har ingen tes — bara ett humör med transaktionshistorik. Rensa varje beslut för humör: vad trodde jag för arton månader sedan som jag bara trodde för att alla trodde det, och vad vägrar jag tro idag av samma skäl?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra falska lärdomar efter 2000 — och Thiels motsvarigheter\",\"rader\":[[\"Lära (fel)\",\"Thiels motsvarighet\",\"AKM1-tillämpning\"],[\"Gör inkrementella förbättringar\",\"Djärva språng är bättre än trivialitet\",\"sök V01 som hoppar, inte kryper\"],[\"Var smal och flexibel, iterera\",\"En dålig plan slår ingen plan\",\"struktur förutsägbarhet i V02, V12\"],[\"Förbättra det konkurrenterna gör\",\"Konkurrensmarknader förstör vinster\",\"undvik andelskamper; se V13–V15\"],[\"Fokusera på produkt inte försäljning\",\"Distribution är hälften av affären\",\"granska S&M-motor och V19\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera dagens motsvarighet till 1999: vilken sektor prissätts just nu som om allt fungerar? Skriv ner den och tre argument varför det denna gång är annorlunda — utför sedan det otäcka testet: läs argumenten igen med 1999 års ögon. Notera också omvändningen: vilken sektor prissätts som om inget fungerar? Mellan dessa två svar finns kursens första asymmetri — och troligen din bästa kontraindikerade position."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken var den första av de fyra lärdomar Thiel anser var fel efter dot-com-kraschen?",
+          "alternativ": [
+            "Att göra inkrementella förbättringar i stället för djärva nya sätt",
+            "Att aldrig anställa fler än tio personer",
+            "Att alltid ta venturekapital",
+            "Att börsintroducera sig så snart som möjligt"
+          ],
+          "ratt": 0,
+          "tips": "Vilken lära gör bolaget mindre beroende av en unik tes?"
+        },
+        {
+          "q": "Vad är Thiels syn på relationen mellan eufori och panik?",
+          "alternativ": [
+            "Euforin är rationell men paniken inte",
+            "Paniken är rationell men euforin inte",
+            "Det är aldrig lika bra eller illa som det ser ut — båda humörena är dåliga rådgivare",
+            "Humör spelar ingen roll för värdering"
+          ],
+          "ratt": 2,
+          "tips": "Vilken fråga ersätter humöret med verklighetsprövning?"
+        },
+        {
+          "q": "Hur använder kursen den överkorrigerade lärdomen praktiskt?",
+          "alternativ": [
+            "Genom att alltid göra motsatsen mot marknadens konsensus",
+            "Genom att identifiera vad en krasch förbjudit — som faktiskt fungerar — och köpa det förbjudna billigt",
+            "Genom att undvika alla sektorer som kraschat",
+            "Genom att bara investera i statsobligationer efter en krasch"
+          ],
+          "ratt": 1,
+          "tips": "Vad lämnar varje krasch efter sig i form av en ortodoxi?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 14,
+      "title": "Konkurrens är för förlorare — värde skapat mot värde fångat",
+      "intro": "Kursens kärnkapitel: Thiels mikroekonomi. Under perfekt konkurrens pressas vinster mot noll — det är lärobokens mekanik — men Thiel för den ett steg längre med distinktionen mellan att skapa värde och att fånga värde. Amerikanska flygbolag skapar hundratals miljarder i värde för miljontals resenärer och fångar nästan ingenting; Google skapar mindre och fångar massvis. Kapitlet slutar i kursens mest citerade mening: konkurrens är för förlorare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna Thiel lägger på bordet (2012): det amerikanska flygbolaget tog i snitt 178 dollar per passagerarresa och behöll 37 cent i vinst — branschens hela historia är i princip en lång utplåning av kapital via priskrig och överkapacitet. Google behöll samma år ungefär 21 cent av varje intäktsdollar i vinst. Flygbranschen skapar enormt värde för världen och fångar obetydligt av det; Google skapar mindre värde mätt i räddade timmar men fångar en multipel av flygbranschens sammanlagda vinster. Lärdomen är dubbel: värdeskapande är inte detsamma som värdefångande, och marknadsstrukturen — inte produktkvalitén ensam — avgör skillnaden. Ett medelmåttigt bolag i en monopolstruktur slår ett utmärkt bolag i en konkurrensstruktur, nästan varje gång."
+        },
+        {
+          "type": "text",
+          "content": "Sedan maskeraden, som är kapitlets analytiskt viktigaste bidrag. Monopolbolag döljer sin ställning — Google beskriver sig gärna som annonsbolag och kan då säga att det bara har några få procent av den globala annonsmarknaden, när det i sökreklam — där besluten faktiskt fattas — kontrollerar runt två tredjedelar. Omstruktureringen gömmer monopolet från antitrustmyndigheter och från egen skam: i Amerikas konkurrensreligion är det fult att vara monopol. Omvänt döljer svaga bolag sin konkurrens: restaurangen som kallar sig den enda brittiska restaurangen i Palo Alto har inte en nisch — den har en plats, och gäster som kan gå var som helst. Översättningen till din analys: bolagets egen marknadsdefinition är alltid ett intressestyrt dokument; din uppgift är att definiera marknaden efter köparens faktiska substitut, inte efter säljarens bekväma ramar."
+        },
+        {
+          "type": "text",
+          "content": "Och konkurrensens psykologi, som Thiel beskriver som en ideologi: skolan poängsätter oss på samma prov, akademin gör tävlandet till en karriär, och näringslivets metaforer är militära. Konkurrens kan driva prestanda — men den vrider fokus från att skapa värde till att slå motståndaren, och i ett kapplöpningstillstånd försvinner vinsten hos kunderna. Historien han ger är sin egen: PayPal mot X.com (Elon Musks betaltjänst) brände 1999–2000 kapital i ett pris- och bonuskrig ingen kunde vinna — tills bolagen slogs samman i en femtio-femtio-fusion och konkurrensen upphörde. Hans parafras av Tolstoj är kursens minnesregel: alla lyckliga bolag är olika — var och ett har löst ett unikt problem och nått monopol; alla misslyckade bolag är lika — de undkom inte konkurrensen. För AKM1: innan du poängsätter V13–V15, skriv tioårsmeningen — vilket unikt problem löser bolaget, och vad är det närmaste substitutet? Saknas svaret finns inget moat att poängsätta, bara en andelskamp att prissätta."
+        },
+        {
+          "type": "insikt",
+          "content": "Monopol-testet i en mening: definiera marknaden som kunden definierar den — vilka alternativ överväger köparen faktiskt? — och bedöm sedan bolagets andel av den marknaden. Om bolaget själv måste smalna av marknadsdefinitionen för att verka unikt har du en konkurrent i förklädnad; om en bred definition ändå ger bolaget dominans har du ett monopol i förklädnad — och det senare är köpbart, det förra är inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konkurrens mot monopol — två marknadsstrukturer i siffror\",\"rader\":[[\"Mått\",\"Konkurrens (flyg 2012)\",\"Monopol (Google 2012)\"],[\"Pris per enhet\",\"178 dollar per passagerarresa\",\"annonsintäkter per klick\"],[\"Vinstmarginal\",\"37 cent per resa — i princip noll\",\"cirka 21 procent av intäkterna\"],[\"Värde skapat\",\"enormt för miljontals resenärer\",\"stort men smalare\"],[\"Värde fångat\",\"obetydligt\",\"dominerande\"],[\"AKM1-läsning\",\"V07–V08 pressade; V04 låg\",\"V07–V08 starka; V04 premium\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör monopol-testet på ditt största innehav: skriv marknadsdefinitionen ur kundens perspektiv — vilka faktiska alternativ finns, inklusive att inte köpa alls? — uppskatta bolagets andel av den marknaden och det närmaste substitutets prisskillnad. Slutsatsen i två rader: undkommer bolaget konkurrensen, och vad händer med V07–V08 om tre välkapitaliserade utmanare går in imorgon? Om svaret känns obehagligt har testet gjort sitt jobb — det är nämligen samma fråga marknaden ställer nästa nedgång."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den amerikanska flygbranschens vinst per passagerarresa 2012 enligt Thiel?",
+          "alternativ": [
+            "37 dollar",
+            "178 dollar",
+            "3,70 dollar",
+            "37 cent"
+          ],
+          "ratt": 3,
+          "tips": "Värdet skapades — men hur mycket behölls?"
+        },
+        {
+          "q": "Varför beskriver sig monopolbolag gärna som aktörer på mycket större marknader än de egentligen dominierar?",
+          "alternativ": [
+            "Därför att de inte vet vilken marknad de verkar på",
+            "För att dölja monopolställningen från antitrustmyndigheter och från den konkurrensreligiösa omvärlden — Google kallar sig annonsbolag",
+            "Därför att bokföringsreglerna kräver det",
+            "Därför att investerare straffar monopolbolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad vinner ett monopol på att låta som en liten fisk i en stor damm?"
+        },
+        {
+          "q": "Vad är Thiels parafras på Tolstojs Anna Karenina?",
+          "alternativ": [
+            "Alla lyckliga bolag är lika, alla misslyckade är olika",
+            "Bolag lyckas genom hårt arbete",
+            "Alla lyckliga bolag är olika — var och ett har löst ett unikt problem och nått monopol; alla misslyckade är lika — de undkom inte konkurrensen",
+            "Familjen är bolagets viktigaste resurs"
+          ],
+          "ratt": 2,
+          "tips": "Vad skiljer vinnarna åt — och vad har förlorarna gemensamt?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 14,
+      "title": "Monopolens fyra kännetecken — teknik, nätverk, skala, varumärke (V13–V15)",
+      "intro": "Om kapitel fyra förklarar varför monopol är målet, förklarar kapitel fem vad ett verkligt monopol är gjort av: fyra väggar som kan byggas in i ett bolag — proprietär teknik, nätverkseffekter, skalfördelar och varumärke. För AKM1 är detta kapitlet där bokens teori blir checklista: de fyra väggarna är V13–V15:s operativa definition.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vägg ett: proprietär teknik — och Thiels tumregel är skoningslös: produkten måste vara minst tio gånger bättre än närmaste alternativ på något som kunden bryr sig om. Tio procent bättre är hanterbart för konkurrenter och osynligt för kunder; tio gånger bättre ändrar beteendet. Amazons bokurval vid lanseringen var en storordning större än varje bokhandelns; PayPal gjorde nätbetalningar oändligt mycket snabbare än checkar. Notera att 10x-testet gäller det som kunden faktiskt värdesätter — en tio gånger bättre databas som kunden aldrig märker är ingen vägg. Vägg två: nätverkseffekter — produkten blir mer värdefull per ny användare, och nätverk kan bara starta små: Facebook började med Harvard-studenter, inte med hela världen. Ett nätverk som tänder i en sammanhållen grupp är nästintill omöjligt att attackera utifrån."
+        },
+        {
+          "type": "text",
+          "content": "Vägg tre: skalfördelar — mjukvarubolagets kostnad för den tusende kunden är nära noll, och tjänstebolagets är detsamma som för den första; därför kan en restaurang aldrig bli ett monopol och en plattform kan. Skalfördelen visar sig i bokslutet som operativ hävstång: intäkter växer tjugo procent med kostnader som växer tio. Vägg fyra: varumärke — ett starkt varumärke ger prissättningsmakt, men Thiel varnar för modeflugan: varumärke utan underliggande substans — teknik, nätverk eller skala — är en tom skal som konkurrensen spricker. Väggen ligger i substansen, inte i logotypen. Tillsammans ger de fyra byggmetoden: börja med att monopolisera en liten, konkret marknad (Amazon började med böcker; PayPal ignorerade alla utom de cirka tjugo tusen så kallade PowerSellers som drev handel på eBay — en grupp liten nog att dominera och tydlig nog att förstå), och skala sedan uppåt i koncentriska cirklar: böcker blev allt, e-bay-säljare blev alla nätbetalningar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är direkt och kursen gör den till regel. V13 patent och proprietär teknik poängsätts efter 10x-testet: finns en produkt-, data- eller kostnadsfördel som är en storordning, inte en marginal? V15 nätverk poängsätts efter tändnings- och retention-logik: växer användarbasen organiskt, stannar kunderna, och blir produkten bättre per användare? V14 varumärke poängsätts efter substansen: prissättningsmakt som visar sig i V07–V08, inte i slogans. Och skalfördelen är länken till V08: marginaler som breddas med volymen är den kvantitativa signaturen på hela monopolkomplexet. Kursens slutregel: fyra av fyra väggar är ett moat-monopol; två av fyra är sannolikt en ledande aktör med försprång; en av fyra är en trend — och trends ska inte betala moat-pris. Komplettera alltid med frågan från kapitel fyra: började bolaget litet? Ett bolag som lanserats rakt in i en massmarknad har sannolikt aldrig monopoliserat något."
+        },
+        {
+          "type": "insikt",
+          "content": "10x-testet är kursens snabbaste moat-mätare: fråga inte är produkten bättre, utan vad exakt är en storordning bättre — och för vem? Om svaret är en teknisk specification ingen kund betalar för är väggen byggd av ppt-bilder; om svaret är ett beteende kunden har ändrat är väggen byggd av betalningsvilja."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Monopolens fyra väggar — test, exempel och AKM1-variabel\",\"rader\":[[\"Vägg\",\"Test-fråga\",\"Exempel\",\"AKM1\"],[\"Proprietär teknik\",\"är produkten 10x bättre på något kunden värdesätter?\",\"Amazon bokurval; PayPal snabbhet\",\"V13\"],[\"Nätverkseffekter\",\"blir produkten bättre per användare — och tänder den i en liten grupp?\",\"Facebook: Harvard först\",\"V15\"],[\"Skalfördelar\",\"faller styckkostnaden mot noll med volym?\",\"mjukvara mot restauranger\",\"V08 operativ hävstång\"],[\"Varumärke\",\"finns prissättningsmakt ovanpå substans?\",\"starka konsumentmärken\",\"V14 (med V07–V08 som bevis)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Poängsätt ditt bästa tillväxtinnehav vägg för vägg: för var och en av de fyra — proprietär teknik, nätverk, skala, varumärke — skriv vad som är sant med ett konkret bevis (siffra, beteende eller kundvittne), inte en adjektivlista. Summera: fyra, tre, två eller en vägg? Jämför med den multipl du betalar. Fyra väggar med sektormultipl är en kandidat att öka; en vägg med monopolmultipl är en kandidat att förstå varför du äger den alls."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Thiels tumregel för proprietär teknik som konkurrensfördel?",
+          "alternativ": [
+            "Produkten måste vara minst tio procent billigare",
+            "Produkten måste vara minst tio gånger bättre än närmaste alternativ på något kunden värdesätter",
+            "Produkten måste ha tio patent",
+            "Produkten måste lanseras i tio länder samtidigt"
+          ],
+          "ratt": 1,
+          "tips": "Vilken förbättringsstorlek ändrar kundens beteende i stället för att bara imponera?"
+        },
+        {
+          "q": "Varför måste nätverksprodukter börja i små marknader?",
+          "alternativ": [
+            "Därför att stora marknader är olagliga",
+            "Därför att nätverk tänds i sammanhållna grupper där alla känner alla — sedan växer ringen",
+            "Därför att investerare kräver det",
+            "Därför att nätverk inte kan skalas"
+          ],
+          "ratt": 1,
+          "tips": "Vilken grupp använde Facebook först — och vad hade hänt om det startat med hela världen?"
+        },
+        {
+          "q": "Hur visar sig skalfördelen kvantitativt i bokslutet?",
+          "alternativ": [
+            "Som operativ hävstång — intäkter som växer fortare än kostnaderna, det vill säga V08-marginaler som breddas med volymen",
+            "Som stigande råvarukostnader",
+            "Som ökande personalomsättning",
+            "Som fallande researchkostnader"
+          ],
+          "ratt": 0,
+          "tips": "Vad händer med marginalen när styckkostnaden faller med volymen?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Last mover advantage — hållbarheten som värderingshorisont (V12)",
+      "intro": "Kapitel sex vänder på den populära first mover-terminologin: det är bättre att vara den siste som gör något avgörande än den förste som gör det överhuvudtaget. Ett bolags värde är summan av sina framtida kassaflöden — och för ett tillväxtbolag ligger majoriteten av värdet tio till femton år fram i tiden. Kursen översätter det till V12 och diskonteringshorisonten i V04–V06.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Thiels räkneexempel är talande: vid skrivandet värderades Twitter till omkring 24 miljarder dollar och hela New York Times-koncernen till strax över två — trots att tidningen tjänade pengar och Twitter inte alls gjorde det. Marknaden betalade inte för årets resultat; den betalade för kassaflöden långt fram i tiden — och bedömde att Twitter skulle fånga värde år 2020 som tidningsindustrin aldrig skulle se igen. Det är diskonteringens logik i ren form: tillväxt är lätt att mäta, hållbarhet är svår — och hållbarheten är den som bär majoriteten av värdet. En modell som rabatterar fem års prognos och ignorerar år sex till femton värderar systematiskt fel — fel åt båda håll: den underskattar monopol och överskattar modeflugor."
+        },
+        {
+          "type": "text",
+          "content": "Därav last mover advantage. Att vara först är ingen fördel i sig — Friendster och Myspace var först och förlorade mot Facebook, som kom senare men byggde varaktigare väggar; den förste betalar upptäcktens kostnader och lär omvärlden vad som fungerar, den siste tar hem marknaden när den är bevisad och bygger den djupaste vallgraven. Thiel formulerar testet: kommer detta bolag fortfarande att finnas om tio år? — och menar att de flesta företag i de flesta branscher ärligt besvarat är nog nej: restauranger, konsultbyråer, hålleverantörer konkurrerar i strukturer där ingen varar. Frågan till dig som investerare är densamma men skärpt: vad är det som gör att bolaget varar — och vem kan ta det ifrån dem under de tio åren?"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är rak. V12 intäktsstabilitet är last-mover-variabeln: bolag som äger sin marknad har stabila intäkter över konjunkturer eftersom kunderna saknar substitut och switch-kostnaderna bär; bolag i andelskamper har V12-läsningar som svänger med reklambudgetar och rabatter. Värderingshorisonten: ett bolag som kan argumenteras hålla i tio år förtjänar lång duration i V04–V06 — dess kassaflöden ligger i framtiden och multiplarna får bära dem; ett bolag med oklar hållbarhet ska värderas på nuet (uti-delningar, fri kassa, tillgångar) och aldrig på avlägsna prognoser. Och i AK1A:s fem tidshorisonter är last-mover-frågan meningsfull först på de längsta: på de kortaste är hållbarhet brus kring momentum; den som hävdar tioårshållbarhet som köpargument på en tremånadershorisont blandar ihop sina klockor."
+        },
+        {
+          "type": "insikt",
+          "content": "Tioårstestet: skriv en mening — varför existerar detta bolag om tio år? Tre godtagbara svar: det äger en distribution ingen kan kopiera, ett nätverk ingen kan tända, eller en kostnads- eller datafördel som växer med volymen. Saknas samtliga tre är resten av din analys dekoration kring en hyrd marknadsposition."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"First mover mot last mover — logik, risk och AKM1-konsekvens\",\"rader\":[[\"Dimension\",\"First mover\",\"Last mover\"],[\"Vad som betalas\",\"upptäcktens kostnad\",\"vallgraven på en bevisad marknad\"],[\"Exempel\",\"Friendster, Myspace\",\"Facebook — senare men varaktigare\"],[\"Kassflödesprofil\",\"nära i tiden, osäkra\",\"avlägsna men hållbara — bär majoriteten av värdet\"],[\"V12-läsning\",\"svängande — konkurrerar om varje kund\",\"stabil — kunden saknar substitut\"],[\"Multipl-logik\",\"värdera på nuet\",\"lång duration berättigad (V04–V06)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tioårstestet på ditt bästa innehav: skriv varför bolaget finns kvar 2036 — tre konkreta skäl av typen distribution, nätverk, kostnads- eller datafördel — och den enskilt största risken som röjer tesen. Jämför sedan med den multipl du betalar: är den byggd på fem års prognos eller femton? Om dina skäl är svagare än din horisont har du just hittat analyens längsta ben — och dess svagaste."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför värderades Twitter högre än New York Times vid boktillfället trots att tidningen var lönsam?",
+          "alternativ": [
+            "Därför att Twitter betalade högre utdelning",
+            "Därför att marknaden betalade för kassaflöden långt fram i tiden — Twitter förväntades fånga framtidens värde medan tidningens förväntades fasas ut",
+            "Därför att tidningen hade högre skulder",
+            "Därför att Twitter hade fler anställda"
+          ],
+          "ratt": 1,
+          "tips": "Var i tiden ligger majoriteten av ett tillväxtbolags värde?"
+        },
+        {
+          "q": "Vad menar Thiel med last mover advantage?",
+          "alternativ": [
+            "Att man ska vänta tills en marknad är mättad innan man går in",
+            "Att den förste alltid vinner",
+            "Att det är bättre att vara den siste som gör något avgörande på en marknad — med de varaktigaste vallgravarna — än den förste som sedan slås ut",
+            "Att man ska köpa aktier i mogna bolag"
+          ],
+          "ratt": 2,
+          "tips": "Vad hände med Friendster och Myspace — och vem byggde den djupaste vallgraven?"
+        },
+        {
+          "q": "Hur relaterar last-mover-frågan till AK1A:s fem tidshorisonter?",
+          "alternativ": [
+            "Den är lika viktig på alla fem horisonter",
+            "Den är meningsfull först på de längsta horisonterna — på de kortaste är hållbarhet brus kring momentum",
+            "Den gäller endast dagshandel",
+            "Horisonter är irrelevant för fundamental analys"
+          ],
+          "ratt": 1,
+          "tips": "Vilken klocka mäter tio år — och vilken mäter tre månader?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 14,
+      "title": "Du är ingen lottsedel — bestämd optimism och planeringens överlägsenhet",
+      "intro": "Kapitel sju är bokens mest filosofiska och, för kursen, mest personliga: de fyra synsätten på framtiden — bestämd och obestämd optimism, bestämd och obestämd pessimism — och Thiels anklagelse mot vår egen tid: vi är de obestämt optimistiska, vi hoppas framtiden blir bra men vägrar planera den. Kapitlet översätts till analysens praktik: skillnaden mellan en tes och en åsikt är en plan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Matrisen. Bestämd optimism: Amerika från efterkriget till sextiotalet, då ingenjörerna och planerarna ritade motorvägar, satte människor på månen och byggde kärnkraftverk med tioårshorisonter — framtiden antogs vara formbar och formades. Obestämd optimism: Amerika från 1982 och framåt — framtiden antas bli bättre men ingen vet hur den ser ut, så strategin blir alternativ: optioner, diversifiering, flexibilitet; finansernas och juristernas decennier, där ingenjörskonsten sjönk i status. Bestämd pessimism: Thiel ser dagens Kina — framtiden är känd och den är färre tillgångar, så strategin är att kopiera snabbt och spara hårt. Obestämd pessimism: Europa sedan sjuttiotalet — ingen plan och inget hopp; reaktion i stället för handling, väntan på att valfriheten ska minska långsamt. Etiketten spelar roll: den avgör om en kultur — eller en investerare — bygger, satsar, kopierar eller trampar vatten."
+        },
+        {
+          "type": "text",
+          "content": "Obestämdhetens kostnader är kapitlets andra halva. När framtiden är obestämd flyttas smartaste personerna från att bygga saker till att hantera dem — banken, rådgivningen, juridiken; process ersätter substans, optionstänkande ersätter mål, och i företagsvärlden blir lean-startup-ideologin — iterera, pivotera, testa dig fram utan tes — obestämdhetens dygdiga kläder. Thiels motsägelse är empirisk: de största byggena var planerare. Steve Jobs är hans exempel: iPhone designades mot en bestämd bild av framtiden, inte A/B-testad fram ur fokusgrupper; att ha rätt om framtiden slog att ha flexibel. Hans formuleringsregel är kursens: en dålig plan är bättre än ingen plan alls — ty planen kan korrigeras, medan frånvaron av plan bara kan improviseras."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A blir matrisen en analysdisciplin. En AKM1-analys är i Thiels mening ett bestämt optimistiskt dokument: den deklarerar vilka antaganden som driver vilka poäng — vilken tillväxtart (V01), vilka marginaler (V07–V08), vilka moat-väggar (V13–V15), vilka katalysatorer (V17–V18) — och därmed vad som måste vara sant för att positionen ska fungera. Obestämd analys känns igen på formuleringarna: det beror på, allt kan hända, jag är diversifierad. Problemet är inte osäkerheten — den är given — utan vägran att binda sig vid vad som skulle förändra slutsatsen. AK1A:s scenarioverktyg och Monte Carlo-simuleringar är just bestämd planering under osäkerhet: man planerar inte för att vissa framtiden, man planerar för att veta i förväg vad som förändrar beslutet. Det är skillnaden mellan att äga en tes och att hyra en åsikt."
+        },
+        {
+          "type": "insikt",
+          "content": "Testa varje position: kan du skriva ner de tre antaganden som bär den — och vad som måste hända för att du ska ändra dig? Om svaret är nej är positionen obestämd: den är en lottsedel med bra berättelse. Den som inte kan säga vad som gör honom fel kan inte heller veta när han blev det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra synsätt på framtiden — och deras investerarbeteenden\",\"rader\":[[\"Synsätt\",\"Exempel\",\"Strategi\",\"Investerarbeteende\"],[\"Bestämd optimism\",\"USA 1950–60-tal\",\"planera och bygga\",\"teser, koncentration, lång duration\"],[\"Obestämd optimism\",\"USA sedan 1982\",\"optioner, diversifiera\",\"index, spread, ingen plan — hoppas\"],[\"Bestämd pessimism\",\"dagens Kina enl. Thiel\",\"kopiera och spara\",\"hårdvalutor, export av överskott\"],[\"Obestämd pessimism\",\"Europa sedan 1970-tal\",\"reagera och vänta\",\"försvara, konsumera avkastning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din bestämt optimistiska plan: tre siffror du tror på fem år framåt — för ett innehav eller din portfölj — med respektive beviskrav: vad måste hända per siffra för att du ska ha rätt, och när i tiden ska det hända? Jämför sedan med hur du faktiskt agerar: köper du optioner på framtiden (obestämt) eller bygger du positioner mot en bild (bestämt)? Skillnaden mellan svaren är din karakteristiska strategi-typ — och troligen din största utvecklingsuppgift."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar obestämd optimism enligt Thiel?",
+          "alternativ": [
+            "Framtiden antas bli sämre och man sparar",
+            "Framtiden antas bli bättre men ingen vet hur den ser ut — därför samlar man optioner och diversifierar i stället för att planera",
+            "Man planerar framtiden i detalj och bygger den",
+            "Man vägrar tänka på framtiden alls"
+          ],
+          "ratt": 1,
+          "tips": "Amerika sedan 1982 — vilket finansiellt tänkande blev tidens dygd?"
+        },
+        {
+          "q": "Vad är Thiels invändning mot lean-startup-ideologin?",
+          "alternativ": [
+            "Att den är för dyr",
+            "Att iteration utan tes är obestämdhetens dygd — de största byggena var planerare med en bestämd bild, som Jobs och iPhone",
+            "Att den bara fungerar i tjänstesektorn",
+            "Att den förbjuder venturekapital"
+          ],
+          "ratt": 1,
+          "tips": "Vad styrs iterationen av när ingen bild av målet finns?"
+        },
+        {
+          "q": "Hur formulerar kursen skillnaden mellan att äga en tes och att hyra en åsikt?",
+          "alternativ": [
+            "En tes är alltid billigare",
+            "En åsikt kräver mer research",
+            "En tes deklarerar vilka antaganden som bär den och vad som måste hända för att den ska överges — en åsikt har ingen sådan bindning",
+            "Det är exakt samma sak"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan korrigeras — och vad kan bara improviseras?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Följ pengarna — potenslagen, koncentration och svansarnas dominans",
+      "intro": "Venturekapitalets största hemlighet, skriver Thiel, är att den bästa investeringen i en framgångsrik fond överträffar eller matchar resten av fonden sammanlagt. Det är potenslagen — och den gäller inte bara riskkapital utan hela kapitalförvaltningens logik. Kapitlet översätts till AK1A:s positionstorlek: koncentration är inte våghets, det är matematik när tesen är stark.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Potenslagen, i Pareto-traditionen, betyder att en liten minoritet av händelserna står för majoriteten av utfallet — storleksordningar som inte ryms i normalfördelningens värld. I riskkapital: bland de bolag en fond äger kommer en eller två att stå för i princip hela avkastningen, några kommer vara mediokra och de flesta dö — och fondens avkastning bestäms därför av dess exponering mot svansen, inte av dess träffprocent. Därav branschens regel som Thiel formulerar den: investera bara i bolag som kan återbetala hela fonden — ty en portfölj av små, säkra men begränsade vinster är en statistisk förlust efter kostnader och döda positioner."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest osentimentala konsekvens gäller urvalet: den som förstår potenslagen slutar leta efter bra bolag och börjar leta efter bolag som kan bli kategorins definierande monopol — ty endast de har svansarnas form. Senare forskning har bekräftat strukturen på börsen: Bessembinders studie av amerikanska aktier sedan 1926 fann att knappt fem procent av bolagen står för hela nettovärdesskapandet över statsobligationer — att index fungerar beror alltså inte på att de flesta bolag är bra, utan på att genomsnittet innehåller en svans av exceptionella bolag. Det är samma fenomen Thiel beskriver från riskkapitalbordet, flyttat till börsens alla aktörer — och det är därför AKM1:s moat-frågor är hela katalogens kärna: de är svansjägarens urvalskriterier."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-tillämpningen i tre lager. Ett — horisonternas statistik: på korta tidshorisonter är normalfördelningen en användbar approximation (bruset dominerar, dagar och veckor ser gaussiska ut), men på långa dominerar potenslagen (svansarna bär); den som positionerar mot fem år måste tänka Pareto, den som positionerar mot fem dagar kan tänka varians. Två — positionstorlek: Kelly-logiken i AK1A:s ekosystem är potenslagens matematik tillämpad på sannolikhet och utfall — satsa i proportion till kant, aldrig efter bekvämlighet; när AKM1-poängen är hög och moat-väggarna fyra, är den diversifierade positionen inte försiktighet utan okunnighet fördelad över fler namn. Tre — egen prognos: granska din historik — hur mycket av din avkastning kom från ditt bästa innehav? Om svaret är majoriteten har du en svansportfölj och bör odla urvalet; om svaret är inget särskilt har du en indeximitation med avgifter och bör välja medvetet."
+        },
+        {
+          "type": "insikt",
+          "content": "Potenslagens portföljregel: tvivel ska sänka storleken — inte spridas ut på fler halvhjärtade namn. Diversifiering är skydd mot okunnighet; koncentration är uttryck för kunskap. Fråga per position: skulle jag öka här om jag fick mer kapital — och om inte, varför äger jag den alls?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Normalfördelning mot potenslag — två världar, två strategier\",\"rader\":[[\"Dimension\",\"Normalfördelning\",\"Potenslag\"],[\"Utfall\",\"symmetriska kring medelvärde\",\"små antal bär nästan allt\"],[\"Var den gäller\",\"korta horisonter, brus\",\"långa horisonter, värdeskapande\"],[\"Strategi\",\"variaskontroll, bredd\",\"svansjakt, urval, koncentration\"],[\"Misslyckande\",\"underskatta sannolika svängar\",\"köpa medelvärden till svanspriser\"],[\"AK1A-översättning\",\"kortsiktig risk (vinkelhastighet)\",\"AKM1 moat + V01 art + Kelly-storlek\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Potenslagstestet på egen portfölj: räkna ut hur stor andel av din totala avkastning de senaste fem åren som kom från det enskilt bästa innehavet — och från de tre bästa tillsammans. Jämför därefter deras AKM1-poäng vid köpet med portföljens genomsnitt: kom avkastningen från där poängen var högst? Om ja: lita på modellen och öka koncentrationen vid nästa tillfälle. Om nej: problemet är inte potenslagen — det är urvalet, och kapitel nio tar det."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är venturekapitalets största hemlighet enligt Thiel?",
+          "alternativ": [
+            "Att de flesta investeringarna är lönsamma",
+            "Att den bästa investeringen i en framgångsrik fond överträffar eller matchar resten av fonden sammanlagt",
+            "Att avkastningen är jämnt fördelad",
+            "Att diversifiering inom fonden garanterar avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Vad bär fondens retur — genomsnittet eller svansen?"
+        },
+        {
+          "q": "Vad fann Bessembinders forskning om amerikanska aktier sedan 1926?",
+          "alternativ": [
+            "Att de flesta bolag slår statsobligationer",
+            "Att knappt fem procent av bolagen står för hela nettovärdesskapandet över statsobligationer",
+            "Att avkastningen är normalfördelad",
+            "Att utdelningar står för all avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Varför fungerar index — de flesta bolagen, eller ett fåtal?"
+        },
+        {
+          "q": "Hur hanterar AK1A skillnaden mellan normalfördelning och potenslag?",
+          "alternativ": [
+            "Genom att alltid antaga normalfördelning",
+            "Genom att alltid antaga potenslag",
+            "Genom att uteslutande handla optioner",
+            "Horisontuppdelat: varians och bredd på korta horisonter, svansjakt med AKM1-urval och Kelly-storlek på långa"
+          ],
+          "ratt": 3,
+          "tips": "Vilken statistik styr fem dagar — och vilken styr fem år?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Hemligheter — varje stor position är en tes om vad marknaden missförstår",
+      "intro": "Kapitel nio handlar om vad som finns kvar att upptäcka. Thiels tes: varje stort bolag är byggt runt en hemlighet — en viktig sanning som få ser och ingen handlar på. Världen slutade tro på hemligheter av fyra sociala skäl, alla fel — och utan tro på hemligheter finns ingen anledning att grunda bolag eller göra annat än index. Kursen översätter: utan hemlighetshypotes finns ingen alpha.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad är en hemlighet? Något sant, viktigt och inte allmänt känt — i motsats till det triviala (känt av alla) och det omöjliga (inte känt av någon). Thiels marknadstest är investeringens kärna formulerad som grundarfråga: vilket värdefullt bolag byggs av ingen? Facebook byggdes på hemligheten att en digital identitet kopplad till verkliga namn var den sakna infrastrukturen för socialt liv online; att den var omstridd var poängen — om alla trott på den hade den byggts. Fyra trender har övertygat västvärlden om att hemlighetarna är slut: inkrementalismen (skolan belönar rätta små steg, inte uppoppade frågor), riskaversionen (att tro på en omstridd sanning är socialt riskfyllt), självgodheten (elitens barn har mjuka liv och litet incitament att gräva) och den platta världen (någon smartare hade redan hittat det — uttalandet är sant bara om marknader vore perfekta, och det är de inte)."
+        },
+        {
+          "type": "text",
+          "content": "Hemlighetens väg till bolag och position. Hos grundaren: hemligheten formuleras som tes, bolaget bygger den som produkt, och väggen (kapitel fem) skyddar den medan världen kommer ikapp insikten — då är moatet moget. Hos investeraren: hemligheten är aldrig insiderinformation — den är en bättre tolkning av offentliga fakta, det som branschen kallar variant perception. Bra exempel på hemlighetslöshet är stora organisationer som tappat tron: Thiel pekar på HP, som efter år 2000 slutade tro att det fanns nya saker att bygga och i stället förvaltade — och förvaltning av det kända är i konkurrensens värld en långsam likvidering. Kursernas kärndistinktion blir densamma som i kapitel sju: en position utan hemlighet är index i förklädnad — den kan stiga, men den stiger av beta, inte av insikt, och den förtjänar inte premium."
+        },
+        {
+          "type": "insikt",
+          "content": "Formulera varje positions hemlighet i en mening: marknaden tror X, sanningen är Y, och beviset kommer av Z inom tjugofyra månader. Om meningen inte går att skriva — om sanningen är densamma som marknadens — är positionen en åsikt utan kant, och kanten är allt du betalas för."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra trender mot hemligheter — och motargumenten\",\"rader\":[[\"Trend\",\"Mekanism\",\"Motargument\",\"AK1A-tillämpning\"],[\"Inkrementalism\",\"skolan belönar små korrekta steg\",\"alla stora hopp började i en omstridd fråga\",\"sök teser som låter falska men mätbara\"],[\"Riskaversion\",\"att tro på det omstridda är socialt kostsamt\",\"konsensus betalar inget premium\",\"acceptera att bra teser känns obekväma\"],[\"Självgodhet\",\"elitens barn har mjuka liv\",\"mjukhet är inte kunskap\",\"gräv där ingen gräver gratis\"],[\"Platt värld\",\"någon smartare hade hittat det\",\"endast sant om marknader vore perfekta\",\"börser prissätter inte framtida monopol väl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv hemlighetsmeningen för ett innehav — marknaden tror X, sanningen är Y, beviset Z inom tjugofyra månader — och definiera sedan falsifieringen: exakt vilka händelser eller siffror som visar att du har fel. Skriv upp dem med datum. En hemlighet utan falsifiering är en önskan; med den har du en tidsatt tes — och när Z eller dess motsats inträffar vet du om du ska dubbla eller avveckla."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en hemlighet i Thiels mening?",
+          "alternativ": [
+            "Information som bara en person känner till enligt lagen",
+            "Något sant, viktigt och inte allmänt känt — i motsats till det triviala och det omöjliga",
+            "En statistisk anomali i kurser",
+            "Ett rykte bland analytiker"
+          ],
+          "ratt": 1,
+          "tips": "Tre villkor: sant, viktigt — och hur känt?"
+        },
+        {
+          "q": "Vilken av följande är en av de fyra trender som Thiel menar dödade tron på hemligheter?",
+          "alternativ": [
+            "Den platta världen — uppfattningen att någon smartare redan hade hittat allt",
+            "Höga räntor",
+            "Regleringen av värdepappersmarknaden",
+            "Brist på utbildning i statistik"
+          ],
+          "ratt": 0,
+          "tips": "Vilken tanke gör att man slutar leta?"
+        },
+        {
+          "q": "Hur definierar kursen en positions hemlighet för investeraren?",
+          "alternativ": [
+            "En bättre tolkning av offentliga fakta — variant perception — aldrig insiderinformation",
+            "Ett tips från en vän i branschen",
+            "Kvantitativ momentum-modell",
+            "Konsensusprognoser med längre horisont"
+          ],
+          "ratt": 0,
+          "tips": "Vad får man betalt för att veta som ingen annan tolkar — och vad är olagligt?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Grundvallen — ägarskap, styrelse och incitament som prognos (V17)",
+      "intro": "Thiels lag, kapitlets första mening: ett bolag som är felbyggt i sin grund kan aldrig lagas. Grundläggningen handlar om tre maktformer — ägarskap, kontroll och faktiskt styre — om styrelsens storlek och om hur kompensationen formar beteendet. Kursen läser kapitlet som en V17-manual: ägarstruktur och incitament är prognosvariabler, inte dekoration.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De tre maktformerna: ownership — vem som lagligt äger bolaget och dess aktier; possession — vem som faktiskt driver det dagligen; control — vem som formellt vägleder det, styrelse och bolagsstämma. I unga bolag kan tre personer (grundare, investerare, vd) innebära tre olika fördelningar av de tre formerna, och varje felmatchning — styrelse som äger lite men kontrollerar mycket, vd som styr men inte äger — är en framtida konflikt inbyggd i boltet. Grundare måste välja varandras incitament med samma omsorg som produkten; den mest missförstådda regeln är att jämlikhet bland grundare ser rättvist ut men skapar dödläge — beslut behöver en ägare."
+        },
+        {
+          "type": "text",
+          "content": "Styrelsen och kompensationen. Styrelse: liten slår stor — tre är perfekt, fem hanterbart, och varje ledamot som inte tillför värde kostar inte bara ett rum utan beslutsamhet; stora styrelser mister kontroll åt management, och en styrelse som inte förstår verksamheten kan varken vägleda eller säga nej. Kompensation: hög kontantlön belönar nuet och lockar dem som vill ha säkerhet; equity belönar framtiden och lockar dem som tror på den. Thiels iakttagelse är brutalt enkel: i nystartade bolag är högre vd-kontantlön korrelerad med sämre utfall — dels för att signalen om riskbenägenhet, dels för att varje krona betald i kontant lön är en krona som inte delar ödet med aktieägarna. Kursen noterar att samma logik, väsentligen, gäller på börsen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V17-komplexet (katalysatorer och ledning) handlar om händelser som vrider värderingen — och ägarstruktur är den långsammaste, kraftfullaste katalysatorn: bolag med tung, långsiktig ägarskap (grundare, familjer, institutioner med hållbarhetsmandat) kan investera mot tioårsbilden; bolag med utspritt ägarskap och korta incitament optimerar nästa rapport. Läs incitamenten i prospekt och årsredovisning: options- och aktieprograms löptider och KPI:er (volym-KPI:er bygger volym, kvalitets-KPI:er bygger kvalitet — incitament är prognoser i miniatyr), vd:ns andel av ersättningen som är variabel och kopplad till aktievärdet, och största ägarnas tidshorisonter. Bevakningslistan: grundare som köper, insiderägande som växer, styrelser som småningom förnyas — och omvänt: tunga utförsäljningar, omsättning i nyckelroller, kompensation som sticker ut mot sektorn. Grundvalls-frågan att ställa per innehav: är incitamenten byggda för samma framtid som min investeringshorisont?"
+        },
+        {
+          "type": "insikt",
+          "content": "Incitament är prognosvariabler: människor gör inte vad du hoppas, de gör vad de betalas för. Läs ett bolags kompensationsprogram som dess verkliga strategi — och om programmet belönar något annat än den strategi ledningen deklarerar, tro programmet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre maktformer och deras AKM1-frågor\",\"rader\":[[\"Form\",\"Vad den är\",\"Fråga i ungt bolag\",\"Fråga i listbolag (V17)\"],[\"Ownership\",\"lagligt ägande av aktier\",\"äger grundarna tillräckligt för att vilja?\",\"vem är största ägare och vilken horisont har den?\"],[\"Possession\",\"faktiskt dagligt styre\",\"vem fattar besluten i verkligheten?\",\"är vd:n grundare eller hyrd? insiderägande?\"],[\"Control\",\"formell styrning — styrelse, stämma\",\"är styrelsen liten och kompetent?\",\"förnyas styrelsen? KPI:er i programmen?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska ett innehavs grundvall: största tre ägarna och deras genomsnittliga horisont, vd:ns ersättningsstruktur (fast mot variabel, KPI:er, löptid), och styrelsens storlek och förändring de senaste tre åren. Slutsats i två rader: är incitamenten byggda för samma framtid som din? Om svaret är nej — ledningen belönas för korta volymer medan du äger en tioårstes — har du en grundvallskonflikt som ingen V01-prognos kan rätta till."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Thiels lag?",
+          "alternativ": [
+            "Att alla bolag går att vända med rätt ledning",
+            "Att ett bolag som är felbyggt i sin grund — ägarskap, incitament, styre — aldrig kan lagas",
+            "Att tekniken avgör alla utfall",
+            "Att konkurrens alltid ökar med tiden"
+          ],
+          "ratt": 1,
+          "tips": "Vilka fel går att reparera under resans gång — och vilka sitter i betongen?"
+        },
+        {
+          "q": "Vilka är de tre maktformerna i grundvallen?",
+          "alternativ": [
+            "Ownership, possession och control — lagligt ägande, faktiskt styre och formell styrning",
+            "Produkt, pris och distribution",
+            " Styrelse, vd och revisor",
+            "Kapital, kompetens och kultur"
+          ],
+          "ratt": 0,
+          "tips": "Vem äger, vem driver, vem styr formellt?"
+        },
+        {
+          "q": "Vad observerar Thiel om sambandet mellan vd:ns kontantlön och bolagets utfall?",
+          "alternativ": [
+            "Inget samband alls",
+            "Högre kontantlön korrelerar med bättre utfall",
+            "Högre kontantlön korrelerar med sämre utfall — hög lön belönar nuet, equity belönar tron på framtiden",
+            "Att kontantlön är irrelevant om styrelsen är stark"
+          ],
+          "ratt": 2,
+          "tips": "Vad signalerar valet mellan kassa i handen och aktier i framtiden?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Maffians mekanik — kultur, talangnätverk och insidersignaler",
+      "intro": "Kapitel elva handlar om det som får ett ungt bolag att överleva sig självt: kulturen. Thiel ogillar ordet professionell — de bästa bolagen är inte familjer eller fotbollslag utan sammanhållna gäng, sammanknutna av en mission och av att varje person äger ett ansvarsområde. Kapitlet slutar i historiens bevis: PayPal-maffian, som efter försäljningen grundade nästa generation amerikanska teknikbolag — tillsammans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kultur enligt Thiel är inte perks, pingisbord eller slogans — kultur är designad samhörighet. Rekryteringen är kulturens verktyg: anställ inte för att fylla roller utan för att samla människor som brinner för samma mission och gillar varandra; utan den gemensamma missionen blir arbetsplatsen en transaktion, och transaktioner slutar när ett bättre bud dyker upp. Hans formulering är kursens minnesregel: utifrån ska alla i bolaget vara olika på samma sätt — olika talanger och bakgrunder, men delad fanatisk övertygelse om vad bolaget gör och varför det spelar roll. Ansvarsfördelning hör till kulturen: varje person ska äga ett område helt — tydligt ägande eliminerar interna gränsdragningskrig, som är den dolda kostnad som får unga bolag att förblöda sig själva."
+        },
+        {
+          "type": "text",
+          "content": "Och beviset: PayPal-maffian. När bolaget såldes 2002 gick inte teamet isär — det gick vidare, tillsammans och var för sig, in i nästa generation: Elon Musk grundade Tesla och SpaceX; Reid Hoffman grundade LinkedIn; Chad Hurley, Steve Chen och Jawed Karim grundade YouTube; Jeremy Stoppelman och Russel Simmons grundade Yelp; David Sacks grundade Yammer; Thiel själv medgrundade Palantir. Ingen annan organisation i Silicon Valley-historien har producerat en liknande koncentration av nya bolag — och Thiels förklaring är inte tur, utan relationer och mission: människor som arbetat intensivt tillsammans under press vet vem som kan vad, litar på varandra och ringer varandra när nästa projekt dyker upp. Kultur är alltså inte mjukfråga — den är en tillverkningsprocess för framtida bolag."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen — kulturen utläst utifrån. Kultur kan inte intervjuas från en bunk, men proxisarna finns: personalomsättningen (speciellt bland nyckelpersoner — de som lämnar först vet mest), insiderhandelns riktning (grundare och tidiga anställda som stannar och köper är den starkaste inside-konfidenssignalen; klumpar av utförsäljningar den svagaste — notera dock att diversifiering av förmögenhet är legitim, mönstret är väsentligare än den enskilda transaktionen), och rekryteringens spår (var kommer nyckelpersoner ifrån — ett bolag som drar till sig talang från starka miljöer bygger nätverk; se V15-logiken: talangnätverk är nätverk). I AKM1 är detta V17-materiel: ledningens och organisationens förmåga att leverera de katalysatorer som motiverar värderingen — och V12-materiel: kulturen som behåller kunder börjar med en kultur som behåller folk."
+        },
+        {
+          "type": "insikt",
+          "content": "Maffiatestet: var arbetade ledningen innan — och vart går folk när de lämnar? Ett bolag som är en talangcentral (folk stannar länge, lämnar för att grunda, återkommer som styrelseledamöter eller kunder) har en osynlig tillgång som aldrig syns i balansräkningen men alltid i kassaflödet på sikt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"PayPal-maffian — vad teamet blev och vad det visar\",\"rader\":[[\"Person\",\"Nästa bolag\",\"Läran\"],[\"Elon Musk\",\"Tesla, SpaceX\",\"mission kan bära flera bolag\"],[\"Reid Hoffman\",\"LinkedIn\",\"nätverkstänk i nästa generation\"],[\"Hurley, Chen, Karim\",\"YouTube\",\"distribution och produkt tillsammans\"],[\"Stoppelman, Simmons\",\"Yelp\",\"lokal nisch, nätverkseffekter\"],[\"David Sacks\",\"Yammer\",\"entreprenöriell kedja fortsätter\"],[\"Peter Thiel\",\"Palantir\",\"djup teknik och långsiktigt kapital\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett kulturellt fotavtryck för ett innehav: personalomsättning i ledande befattningar (tre senaste åren), de fem tydligaste insidertransaktionerna (vem, riktning, storlek i förhållande till innehav), och varifrån de tre senaste nyckelrekryteringarna kom. Slutsats i tre rader: är bolaget en talangcentral eller en transitstation, och vad säger det om V17 och V12? Komplettera med frågan: skulle du rekrytera dess ledning om du fick grunda imorgon?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Thiel med att alla i bolaget utifrån ska vara olika på samma sätt?",
+          "alternativ": [
+            "Att alla ska ha samma bakgrund",
+            "Olika talanger och bakgrunder men delad fanatisk övertygelse om missionen — designad samhörighet",
+            "Att bolag ska rekrytera likadana människor",
+            "Att klädkoden ska vara enhetlig"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mot professionell kultur — vad förenar människor som är olika?"
+        },
+        {
+          "q": "Vad är PayPal-maffian?",
+          "alternativ": [
+            "En kriminell organisation i Silicon Valley",
+            "Gruppen tidigare PayPal-anställda som efter försäljningen 2002 grundade nästa generation teknikbolag — Tesla, SpaceX, LinkedIn, YouTube, Yelp, Yammer, Palantir",
+            "PayPals interna säkerhetsteam",
+            "En investerarklubb på Wall Street"
+          ],
+          "ratt": 1,
+          "tips": "Vilka bolag dök upp ur samma team efter 2002?"
+        },
+        {
+          "q": "Vilken insidersignal är den starkaste konfidenssignalen enligt kursen?",
+          "alternativ": [
+            "Att ledningen säljer för att diversifiera",
+            "Att styrelsen håller tyst",
+            "Att grundare och tidiga anställda stannar och köper — medan klumpvis utförsäljning är den svagaste signalen",
+            "Att analytiker uppgraderar aktien"
+          ],
+          "ratt": 2,
+          "tips": "Vem vet mest om bolagets framtid — och vad gör de med sina pengar?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Bygger du det, kommer de då? — distribution, CAC mot LTV (V19)",
+      "intro": "Kapitel tolv attackerar teknikvärldens mest dyrbara självbedrägeri: att produkten säljer sig själv. Distribution är hälften av affären, skriver Thiel — och den hälften som ingen vill prata om. Kursen läser kapitlet som V01:s motor och V19:s brandvägg: hur kunder anskaffas, vad de kostar och vad de är värda — CAC mot LTV — är skillnaden mellan tillväxt och kapitalförbränning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tesens kärna: om du har uppfunnit något nytt men inte uppfunnit ett effektivt sätt att sälja det, har du ett dåligt bolag — oavsett hur bra produkten är. Skillnaden mellan produktfolk och säljfolk är en utbildningsbiastos: ingen drömmer om försäljning, alla drömmer om produkt — men kunder föds inte av drömmar. Säljare är inte ohederliga manipulatörer och produkter inte självförsörjande; försäljning fungerar bäst när den är osynlig: den bästa säljaren märks inte, kunden tror att köpet var hans egen idé. Följdfrågan är kapitlets ekonomiska kärna: kundens livstidsvärde (LTV) måste vida överstiga kostnaden för att anskaffa kunden (CAC) — annars finansierar varje ny kund sin egen förlust, och tillväxten är bara en hastighetsmätare på väg mot botten av kassan."
+        },
+        {
+          "type": "text",
+          "content": "Distributionens skalor, efter prismässigt nivå. Komplex försäljning: avtal i miljonklassen säljs av bolagets egen toppchefer, ansikte mot ansikte, under månader (rymdindustrin, stora enterprise-system); en eller två affärer om året kan bära ett helt bolag. Personlig försäljning: mellanklassavtal som kräver ett säljteam men inte en vd — moderna SaaS-bolags motor. Distributionsdödens zon: produkter för billiga för att motivera säljare men för dyra för ren reklam — här dör de flesta småföretagsprodukter. Reklam och varumärke: konsumentskala — stora volymer, liten interaktion. Viral tillväxt: produkten bär sin egen distribution — PayPals exempel är kanoniskt: tio dollar i registreringsbonus och tio dollar till den som värvade, en anskaffningskostnad på ungefär tjugo dollar per kund, daglig tillväxt i nivå sju till tio procent under expansionen — produkten spreds genom att användningen var användningens egen belöning. Och varje nivå har sin regel: bolag som behärskar en kanal vinner; bolag som halvbehärskar flera förlorar mot båda specialisterna."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V01: fråga alltid vilken motor som driver tillväxten — virala och nätverksbaserade motorer ger organisk tillväxt (S&M-kostnad per krona intäkt faller över tid); PR- och rabattdrivna motorer ger hyrd tillväxt (motorn stannar när betalningen slutar). V08: S&M-marginalens utveckling är distributionens hävstång — läsfallen är bruttomarginal minus CAC per kund, skrivet som payback-tid: hur många månaders bruttovinst tar det att betala tillbaka anskaffningen? V19: bolag vars LTV inte täcker CAC bränner kassa i takt med sin egen framgång — expansionen accelererar förlusten, och när kreditmarknaden stänger finns bara emissionen kvar, exakt som Vår ekonomi-kursens kreditkapitel beskrev. Bevakningsfrågan per rapport: vad händer med CAC — och är orsaken struktur (skala, nätverk) eller konkurrens (auktionspriser på uppmärksamhet)?"
+        },
+        {
+          "type": "insikt",
+          "content": "Divisionstestet, grovt men ärligt: dividera periodens försäljnings- och marknadskostnader med antalet nya kunder — det är din CAC-uppskattning; dividera sedan genomsnittlig bruttovinst per kund per månad med åtta (rimlig payback-tid) — är CAC högre, köper bolaget tillväxt som det inte har råd med. Motorernas kvalitet avslöjas alltid i den divisionen förr eller senare."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Distributionens fem nivåer — mekanik och AKM1-fråga\",\"rader\":[[\"Nivå\",\"Prisklass\",\"Mekanism\",\"AKM1-fråga\"],[\"Komplex försäljning\",\"miljonklass\",\"vd:n säljer själv, få avtal\",\"bär 1–2 avtal hela intäktsbasen? (V12)\"],[\"Personlig försäljning\",\"mellanklass\",\"säljteam, SaaS-motor\",\"payback-tid på CAC? (V08)\"],[\"Döda zonen\",\"låg\",\"för dyr för säljare, för liten för reklam\",\"varför klarar bolaget zonen? (V19)\"],[\"Reklam och varumärke\",\"konsumentskala\",\"volym, liten interaktion\",\"CAC stabilt vid skalning? (V01)\"],[\"Viral tillväxt\",\"nätpris\",\"produkten distribuerar sig själv\",\"organisk andel av tillväxten? (V01, V15)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör divisionstestet på ett prenumerationsbolag i din bevakning: hämta S&M-kostnaden och ökningen i aktiva kunder från de två senaste rapporterna, beräkna CAC, och jämför med bruttovinsten per kund per månad. Skriv payback-tiden i månader och utvecklingen mot föregående period. Slutsatsen matar direkt V08 och V19 — och om payback-tiden slår mot två år medan bolaget berättar om acceleration, har du hittat mekaniken bakom nästa emission."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är tesen i kapitlet om distribution?",
+          "alternativ": [
+            "Att bra produkter inte behöver säljas",
+            "Att om du uppfunnit något nytt men inte ett effektivt sätt att sälja det, har du ett dåligt bolag — oavsett produktens kvalitet",
+            "Att försäljning bara behövs i konsumentledet",
+            "Att distribution är billigare än produktutveckling"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med uppfinningen om ingen hittar den?"
+        },
+        {
+          "q": "Hur växte PayPal enligt boken?",
+          "alternativ": [
+            "Genom tv-reklam i primetime",
+            "Genom butiksdistribution",
+            "Genom viral tillväxt med tio dollars registreringsbonus och tio dollars värvningsbonus — ungefär tjugo dollar per kund, med daglig tillväxt på sju till tio procent under expansionen",
+            "Genom kallt parallellförsäljning till banker"
+          ],
+          "ratt": 2,
+          "tips": "Produkten var sin egen distributionskanal — vad belönade den?"
+        },
+        {
+          "q": "Vad är distributionsdödens zon?",
+          "alternativ": [
+            "Marknader där staten förbjuder försäljning",
+            "Produkter för dyra för reklam men för billiga för säljare — ingen kanal bär dem",
+            "Marknader med endast en köpare",
+            "Segment där kunderna redan har leverantör"
+          ],
+          "ratt": 1,
+          "tips": "Vilken prisklass lämnas mellan reklam och personlig försäljning?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Människa och maskin — komplement, substitut och AI-tidens moat-fråga",
+      "intro": "Kapitel tretton tar tänkandet om automation på allvar: datorer är mäktiga på exakt det människor är svaga på — och omvänt. De är komplement, inte substitut. I en tid då AI står i varje prospekt är kapitlet kursens verktyg för att skilja bolag som använder maskiner för att förstärka sin moat från bolag som bygger på att maskiner snart gör dem onödiga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tjugohundratalets substitutionsskräck har nittonhundratalets föregångare: Ludditerna, som krossade vävstolar, och deras intellektuella arvtagare, som förutsåg att datoriseringen skulle utplåna arbete. Thiels svar är en distinktion: datorer är bättre än människor på bearbetning av enorma datamängder efter explicita regler; människor är bättre på att formulera problem, förstå sammanhang och fatta omdömesbeslut i ofullständig information. Eftersom styrkorna är olika är utbytet inte substitution utan komplementaritet: den mest värdefulla kombinationen är människan som sätter målet och bedömer utfallet, maskinen som skalar bearbetningen. Deep Blues seger över Kasparov 1997 bevisade maskinens kraft i en sluten domän med kända regler — inte dess förmåga att avgöra vilka frågor som är värda att ställa."
+        },
+        {
+          "type": "text",
+          "content": "Bokens exempel är båda Thiels egna. PayPal:s bedrägeribekämpning: den rena algoritmen kunde inte skilja det misstänkta från det ovanliga, den rena människan kunde inte bearbeta miljontals transaktioner — lösningen var hybrid, där maskinen flaggade och människor avgjorde gråzonen, och systemet blev bättre än båda delarna. Palantir byggde samma komplementaritet mot terrorfinansiering och underrättelse: programvaran samlade och strukturerade, analytikern såg mönstret och drog slutsatsen. Tesen om framtiden följer: de stora nya bolagen byggs inte av dem som bygger maskinsubstitut för mänskligt omdöme, utan av dem som hittar de nya komplementariterna — där maskinens skalning möter människans bedömning på ett sätt som skapar data- och inlärningsfördelar konkurrenterna inte kan kopiera."
+        },
+        {
+          "type": "text",
+          "content": "AK1A i AI-tiden — frågan per bolag är dubbel. Ett: kompletterar eller substituerar maskinen bolagets värde? Ett bolag vars produkt ökar kundens omdömesförmåga eller produktivitet (komplement till kunden) har prissättningsmakt och datafördelar; en produkt som är ett tunt skal ovanpå en allmänt tillgänglig modell — utan eget 10x, utan eget nätverk, utan egen data — är 1-till-n med AI-etikett och ska poängsättas därefter i V13–V15. Två: är bolagets eget arbete substituerbart? Distribution (kapitel tolv), kreativt arbete och bedömning påverkas olika; bolag vars kärnverksamhet är repetitiv bearbetning står inför verklig substitution — ett V18-klassat strukturskifte med regulatoriska och konkurrensmässiga följder. Kursens minnesregel: fråga inte vad AI kan göra — fråga vem som äger dataflödet och nätverket kring det, ty det är där komplementaritetens värde samlas, och det är dit V13–V15 pekar."
+        },
+        {
+          "type": "insikt",
+          "content": "Komplementaritetstestet: beskriv bolagets produkt som en mening som börjar med maskinan gör X och människan avgör Y. Om Y inte finns — om allt avgörs av modellen — är bolaget ett skal på någon annans teknik; om Y är djup och domänspecifik, bygger bolag en datafördel som växer per användning — V13 och V15 i samma rörelse."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Substitut mot komplement — och AKM1-konsekvensen\",\"rader\":[[\"Fråga\",\"Substitut\",\"Komplement\"],[\"Mekanik\",\"maskinen ersätter människan i samma uppgift\",\"maskinen skalar det människan avgör\"],[\"Exempel\",\"tunt skal på generell modell\",\"PayPal-bedrägeri; Palantir-analys\"],[\"Moat\",\"inget eget — lätt att kopiera\",\"data- och inlärningsfördel per användning\"],[\"AKM1\",\"V13–V15 lågt trots AI-etikett\",\"V13, V15 högt; V08 växer med volym\"],[\"Riskbild\",\"V18: plötsligt marginellt\",\"uthållig differentiering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör komplementaritetstestet på ett AI-exponerat innehav: skriv maskinan gör X och människan avgör Y — finns Y, och är den domänspecifik? Granska sedan ägandet av dataflödet: vems data tränar vems modell, och vem behåller kundrelationen? Poängsätt V13 och V15 enligt svaret — och jämför med marknadens AI-premium på aktien. Om premien betalar substitut och du hittar komplement, har du en tes; i omvänd ordning har du en kortkandidat."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Thiels huvudtes om människa och maskin?",
+          "alternativ": [
+            "Att datorer snart ersätter allt mänskligt arbete",
+            "Att människor alltid slår datorer",
+            "Att datorer är komplement, inte substitut — deras styrkor är olika människors, och värdefulla kombinationer förenar dem",
+            "Att automation är omöjlig att tämja"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör maskinen bäst — och vad gör människan bäst — och vad händer när de kombineras?"
+        },
+        {
+          "q": "Hur löste PayPal bedrägerierna?",
+          "alternativ": [
+            "Med en fullt automatiserad algoritm",
+            "Genom att anställa fler jurister",
+            "Med hybrid: maskinen flaggade misstänkta transaktioner och människor avgjorde gråzonen",
+            "Genom att stänga av alla utom vita listor"
+          ],
+          "ratt": 2,
+          "tips": "Vem flaggar — och vem dömer?"
+        },
+        {
+          "q": "Hur ska ett tunt skal ovanpå en allmän modell poängsättas enligt kursen?",
+          "alternativ": [
+            "Som 0-till-1-monopol med premium",
+            "Som 1-till-n med låga V13–V15 — substitutbar teknik utan eget nätverk eller egen data",
+            "Som en naturlig monopolist",
+            "Som en obligationsersättare"
+          ],
+          "ratt": 1,
+          "tips": "Vad äger skalet självt — teknik, data eller nätverk?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 14,
+      "title": "Att se grönt och syntesen — sju frågor, Tesla och 0-till-1-investeraren",
+      "intro": "Bokens näst sista kapitel obdukerar 2000-talets cleantech-kollaps — mer än femtio miljarder dollar i riskkapital som brann upp — och plockar fram verktyget som kursen sparade till sist: de sju frågor varje bolag måste besvara. Testcasen är Tesla, det gröna bolag som besvarade alla sju. Kapitlet avslutar med syntesen: vad 0-till-1-tänkandet betyder för dig som poängsätter bolag i AKM1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cleantech-ebulan, i Thiels version: mellan 2005 och 2009 investerade riskkapitalister mer än femtio miljarder dollar i gröna bolag, drivna av socialt tryck — klimatet, energioberoendet, den goda sakens glans. De flesta brann. Solyndra, solcells­tillverkaren med miljardgaranti från den amerikanska staten, gick i konkurs 2011 och blev symbolen. Thiels diagnos är inte att miljöfrågan var fel — utan att entreprenörerna svarade på en social trend i stället för på affärsfrågorna: de byggde bolag vars produkter inte var mycket bättre, vars timing inte hade ett skäl, vars marknader var stora och konkurrensutsatta i stället för små och dominerbara, och vars grundare och investerare var mer intresserade av att verka goda än att bygga monopol. Grön var en modefärg — och mode ersätter strategi lika dåligt i energi som i kläder."
+        },
+        {
+          "type": "text",
+          "content": "De sju frågorna varje bolag måste besvara — kursens checklist-koncentrat. Ett, teknik: är produkten minst tio gånger bättre än närmaste substitut? Två, timing: varför är detta rätt ögonblick — vad har förändrats? Tre, monopol: börjar bolaget i en liten marknad det kan dominera? Fyra, folk: har teamet rätt kompetens — ingenjörer för en ingenjörsuppgift, inte försäljare med en story? Fem, distribution: finns en genomtänkt väg till kunden? Sex, hållbarhet: kommer positionen att försvara sig om tio till tjugo år? Sju, hemlighet: vad ser detta bolag som andra inte ser? Tesla är provet: teknik — integrerad elbil hela vägen ned i plattformen, inte en bensinare med batteri; timing — elbilens genombrott sammanföll med batterikostnadens fall och en statlig kreditt på 465 miljoner dollar 2010; monopol — började i den lilla nischen lyxbilar och ägde den, innan nedstigningen mot massmarknaden; folk — ingenjörer med produkten i centrum; distribution — egna butiker utan återförsäljarled; hållbarhet — försprånget och takten; hemlighet — att grönt var en statusfråga: bilen som gjorde ägaren cool, inte asketisk. Svar på sju av sju — och bolaget överlevde en bransch som inte gjorde det."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen — 0-till-1-investeraren. Bokens fjorton kapitel är en enda fråga uttryckt i fjorton vinklar: äger detta bolaget något som saknar substitut, byggt på en plan och en hemlighet, med distribution och grundvall i ordning? Översatt till AKM1: V01–V02 tillväxtens art (skapad marknad med återkommande intäkter), V07–V08 marginaler som breddas med volym, V12 hållbarheten på tioårsfrågan, V13–V15 de fyra väggarna, V17–V18 incitament och katalysatorer, V19 en distribution som inte förbränner kassan, V04–V06 multiplar som får bära allt detta — plus potenslagen för storleken på positionen och bestämd optimism för formuleringen av tesen. Bokens avslutning värd att minnas: framtiden har fyra möjliga former — återkommande kollaps, platå, utdöende eller uppsving — och vilken det blir avgörs av vad som byggs. Framtiden är inte något som händer; den är något någon gör. Aktiemarknaden är sekundärmarknaden för den byggprocessen — och den som förstår 0-till-1-tänkandet vet varifrån nästa svans kommer."
+        },
+        {
+          "type": "insikt",
+          "content": "Sju-fråge-testet är AKM1 i miniatyr och går på tio minuter: teknik, timing, monopol, folk, distribution, hållbarhet, hemlighet. Ett bolag med sex-sju ja kan bära premiummultipl och stor position; ett bolag med tre-fyra ja är en andelskampare som ska köpas cykliskt billigt — och det med sex ja men nej på hemligheten är det farligaste: allting stämmer, och alla vet det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De sju frågorna — med Tesla som facit och AKM1 som översättning\",\"rader\":[[\"Fråga\",\"Test\",\"Tesla\",\"AKM1\"],[\"Teknik\",\"10x bättre?\",\"integrerad elbil\",\"V13\"],[\"Timing\",\"varför nu?\",\"batterikostnad + statlig kredit 2010\",\"V17–V18\"],[\"Monopol\",\"liten startmarknad?\",\"lyxbilsnischen först\",\"V13–V15, V04\"],[\"Folk\",\"rätt team?\",\"ingenjörer\",\"V17\"],[\"Distribution\",\"väg till kund?\",\"egna butiker\",\"V01, V19\"],[\"Hållbarhet\",\"försvar i 10–20 år?\",\"försprång + takt\",\"V12\"],[\"Hemlighet\",\"vad ser vi andra inte?\",\"grönt som status\",\"tesen — kursens kapitel 9\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet: kör de sju frågorna på ditt bästa tillväxtinnehav — ett ja eller nej per fråga med en rad motivering och en källa. Summera och jämför med aktiens multipl mot sektorn: bär poängen premien, eller bär historien den? Skriv därefter 0-till-1-meningen: detta bolag äger X, byggt på Y, skyddat av Z — och om meningen inte går att skriva har bokens hela budskap landat: du äger då en 1-till-n-position, och den ska behandlas därefter, hur bra storyn än är."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur mycket riskkapital investerades i cleantech enligt Thiel?",
+          "alternativ": [
+            "Mer än femtio miljarder dollar mellan 2005 och 2009",
+            "Cirka fem miljarder dollar totalt",
+            "Mindre än en miljard dollar",
+            "Endast statliga medel, inget riskkapital"
+          ],
+          "ratt": 0,
+          "tips": "Vilken storleksordning gjorde kollapsen till en av historiens dyraste bubblor?"
+        },
+        {
+          "q": "Vilken av de sju frågorna handlar om varför just nu är rätt tidpunkt?",
+          "alternativ": [
+            "Frågan om teknik",
+            "Frågan om timing",
+            "Frågan om folk",
+            "Frågan om hemlighet"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste ha förändrats för att affären ska vara möjlig idag och inte för tio år sedan?"
+        },
+        {
+          "q": "Vilken hemlighet hade Tesla enligt Thiel?",
+          "alternativ": [
+            "Att batterier var omöjliga att tillverka lönsamt",
+            "Att grönt var en statusfråga — bilen som gjorde ägaren cool i stället för asketisk",
+            "Att bensinpriset aldrig skulle stiga",
+            "Att solenergi var billigare än kol"
+          ],
+          "ratt": 1,
+          "tips": "Vad såg Tesla om köparna som cleantech-branschen missade?"
+        }
+      ]
+    }
+  ]
+}

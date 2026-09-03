@@ -1,0 +1,1085 @@
+{
+  "slug": "analysis-for-financial-management",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 214,
+  "title": "Analysis for Financial Management — Robert C. Higgins: KOMPLETT",
+  "summary": "Analysis for Financial Management är Robert C. Higgins MBA-handbok från University of Washington — en bok som finns för att de flesta chefer, som Higgins själv konstaterar, efter några år i karriären använder en bråkdel av den finansutbildning de en gång fick. Budskapet är att finansförvaltning är hantverk, inte kärnfysik: diagnostisera bolagets finansiella hälsa i bokslut och kassaflöde, spå framtiden i pro forma-prognoser, hantera tillväxtens finansiering — och fatta investerings- och finansieringsbeslut med tidsvärdet och kapitalkostnaden som måttstock. Kursen bygger bokens båda halvor som AK1A-nivå 4 (Fas 2-djup): diagnostiken — resultaträkning och balansräkning, kassaflödesanalys, nyckeltal och DuPont-dekomponering, procent-försäljningsprognos, tillväxthantering med bokens signaturformel hållbar tillväxttakt = ROE × kvarhållningsgrad — och besluten — rörelsekapital och kassakonverteringscykel, kortfristig finansiering, diskonteringsmatematik, NPV mot IRR, riskanalys, WACC och bolagsvärdering. Varje kapitel kopplas direkt till AKM1:s variabler: V07–V09 marginaler ur resultaträkningens trappa, V10–V11 struktur ur balansräkningen, V19 ur pro forma-prognosens finansieringsgap, V01–V02 ur tillväxtens matematik, V04–V06 ur diskonteringsmaskinen Higgins bygger i bokens andra halva. Higgins är i praktiken AKM1:s metodologiska anfader på MBA-nivå — den här kursen läser honom som sådan.",
+  "minutes": 15,
+  "xp": 2000,
+  "level": "",
+  "learn": "Läsa resultaträkning och balansräkning som en sammanhängande berättelse — och skilja bokförd vinst från ekonomisk vinst · Bygga det fria kassaflödet steg för steg: EBIT × (1 − skattesats) + avskrivningar − capex − förändring i rörelsekapital (V09, V19) · Dekomponera ROE med DuPont: nettomarginal × omsättningshastighet × kapitalmultiplikator — tre drivrutiner, tre olika risker (V07–V10) · Konkurrera på rätt nyckeltal: Volvo vinner på marginal, H&M på hastighet, Ericsson på kapitalstruktur · Bygga pro forma-prognos med procent-försäljningsmetoden och räkna externt finansieringsbehov i förväg (V01, V19) · Hantera tillväxten med Higgins signaturformel: hållbar tillväxttakt = ROE × kvarhållningsgrad — och de fyra spakarna marginal, retention, hastighet och hävstång när faktisk tillväxt springer ifrån hållbar (V01, V08, V10, V20) · Mäta rörelsekapital med kassakonverteringscykeln: lagerdagar + kunddagar − leverantörsdagar (V11) · Prissätta leverantörskreditens tycks-frihet: 2/10 net 30 är en årsränta på ca 37 procent · Diskontera alla flöden: nuvärde, annuitet, evighetsannuitet och tillväxtannuitet (V04–V06) · Välja investeringar med NPV-regeln — och veta varför IRR, återbetalningstid och lönsamhetsindex antingen hjälper eller lurar (V17–V19) · Analysera risk med känslighetsanalys, scenarier och Monte Carlo-simulering — rakt in i AK1A:s motor · Bygga WACC: eget kapital, skuld efter skatt, marknadsvikter — och använda den som hinderbana och multiplens spegelvända bild (V04–V06, V10) · Värdera bolaget med diskonterat fritt kassaflöde och slutvärde — och syntetisera hela Higgins till AKM1:s RAM.",
+  "why": "AKM1 poängsätter tjugo variabler — Higgins förklarar mekaniken bakom varenda en. Utan hans kassaflödesanalys är V09 en gissning; utan DuPont vet du inte om ett högt ROE är marginalkonst eller belåning; utan procent-försäljningsmetoden ser du inte V19:s emissionsrisk förrän prospekten ligger på bordet; utan hållbar tillväxttakt förväxlar du lönsam tillväxt med tillväxt som bara konsumerar kapital — det dyraste misstaget i tillväxtbolagsanalys, nuvillkorat och historiskt. Kursen är katalogens MBA-nivå på precis detta: boken som lär ut det moderna företagsfinansierings-hantverket på minimal plats, skriven för praktiker som behöver räkna rätt i morgon bitti, inte för akademiker som behöver publicera i kvartal. När du klarat kursen kan du ta ett godtyckligt svenskt börsbolags rapport — Ericsson, Volvo, H&M — och på en timme producera kassaflödesanalys, DuPont, pro forma-prognos, hållbar tillväxttakt och en WACC-baserad värdering: det är maskineriet som producerar råvaran till hela AKM1.",
+  "chapters_list": [
+    "1. Boken och finansförvaltarens jobb — från bokslut till beslut",
+    "2. Bokslutets två ansikten — resultaträkning och balansräkning",
+    "3. Kassaflödesanalysen — från bokförd vinst till fritt kassaflöde",
+    "4. Nyckeltalens anatomi — DuPont och ROE:s tre drivrutiner",
+    "5. Finansiell prognos — procent-försäljningsmetoden och pro forma",
+    "6. Tillväxthantering — hållbar tillväxttakt och tillväxtens fyra spakar",
+    "7. Rörelsekapital och likviditet — kassakonverteringscykeln",
+    "8. Kortfristig finansiering — kassabudget och finansieringsbeslutet",
+    "9. Tidsvärdet på pengar — diskonteringsmaskinen",
+    "10. Investeringskriterier — NPV, IRR och återbetalningstiden",
+    "11. Risk i investeringsbeslut — känslighet, scenarier och simulering",
+    "12. Kapitalkostnaden — WACC och avkastningskravets bygge",
+    "13. Finansieringsinstrument och marknader — aktier, skuld och hybrider",
+    "14. Bolagsvärdering och syntes — från Higgins handbok till AKM1"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 15,
+      "title": "Boken och finansförvaltarens jobb — från bokslut till beslut",
+      "intro": "Robert C. Higgins, professor vid University of Washingtons Foster School of Business, skrev Analysis for Financial Management som en komprimerad MBA-kurs i företagsfinansiering för chefer och analytiker — boken som förklarar sambandet mellan bokslut, kassaflöde och beslut utan att kräva att läsaren blir teoretiker. Kursens första kapitel etablerar bokens upplägg och dess AK1A-roll: Higgins är metodologin bakom råvaran till AKM1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens existensberättigande, som Higgins formulerar den: de flesta chefer kommer från ingenjörsvetenskap, juridik eller försäljning — finansutbildningen de en gång fick har hunnit glida långt ifrån det de gör varje dag, och kvar blir en intuitiv känsla för siffror som fungerar tills den inte gör det. Hans svar är en handbok byggd på finansens minsta gemensamma nämnare: bokslutet är språket, kassaflödet är sanningen, och alla beslut — investera, finansiera, växa, dela ut — kan och bör räknas. Fyra decennier av upplagor har hållit premissen intakt: detta är ingen encyklopedi (det är Brealey-Myers, nästa kurs) utan en verkstadshandbok. Som Higgins resonerar: finans är inte svårt för att matematiken är svår — den är aritmetik — utan för att disciplinen att skilja kassa från åsikt är svår."
+        },
+        {
+          "type": "text",
+          "content": "Arkitekturen, som kursen följer kapitel för kapitel. Rörelse ett: diagnostiken. Lär dig läsa resultaträkning och balansräkning, bygg kassaflödesanalysen, dekomponera nyckeltalen med DuPont, spå framtiden med pro forma-prognos — och hantera det centrala problem som prognosen avslöjar: tillväxtens finansiering, med hållbar tillväxttakt som mått. Rörelse två: besluten. Rörelsekapital och kortfristig finansiering (likviditet är en fråga om överlevnad, inte bekvämlighet), sedan tidsvärdet på pengar — maskineriet — och investeringskriterierna NPV och IRR som applicerar det, riskanalysen som nyanserar det och kapitalkostnaden som kalibrerar det. Rörelse tre: finansieringen och värderingen — instrument och marknader, sedan hela bolaget som ett kassaflöde med ett pris. Den röda tråden genom allt: vinst är en åsikt, kassa är ett faktum."
+        },
+        {
+          "type": "text",
+          "content": "Och varför är detta AK1A-nivå 4? Eftersom Higgins bok i praktiken är AKM1:s metodologiska anfader på MBA-nivå. V07–V09 (bruttomarginal, EBITDA-marginal, kassaflödesgrad) är resultaträkningens trappa ur hans kapitel två. V10–V11 (skuldsättning, likviditet) är balansräkningens struktur ur samma kapitel. V19 (kapitalförbränning och emissionsrisk) är exakt det pro forma-prognosens finansieringsgap visar — månader innan marknaden får syn på det. V01–V02 (tillväxt) är tillväxthanteringens råmaterial. V04–V06 (multiplarna) är diskonteringsmaskinen och WACC spegelvänt: en multipl är bara en diskonteringsränta och en tillväxttakt förpackade i en division. Den som behärskar Higgins kan reproducera AKM1:s underlag från grunden; den som inte kan det poängsätter facit."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens arbetsordning innan du går vidare: först historiken (vad hände — bokslut, kassaflöde, nyckeltal), sedan framtiden (vad kommer att hända — pro forma, tillväxttakt, kassabudget), till sist besluten (vad ska vi göra — investera, finansiera, växa, dela ut). AKM1 är en stillbild av den ordningen; Higgins lär ut själva kameran."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Higgins arkitektur och AKM1-mappningen\",\"rader\":[[\"Rörelse\",\"Kapitel\",\"Kärna\",\"AKM1-utgång\"],[\"1. Diagnostik\",\"bokslut, kassaflöde, nyckeltal, prognos, tillväxt\",\"hälsokontrollen\",\"V07–V12, V01–V02, V19\"],[\"2. Beslut\",\"rörelsekapital, tidsvärde, NPV/IRR, risk, kapitalkostnad\",\"verktygslådan\",\"V04–V06, V09, V17–V19\"],[\"3. Finansiering och värdering\",\"instrument, marknader, DCF-värdering\",\"kapitalets sida\",\"V10, V19–V20, V05–V06\"],[\"Röda tråden\",\"kassaflödet\",\"vinst är åsikt, kassa är faktum\",\"hela modellens epistemologi\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Higgins eget argument för varför boken behövs?",
+          "alternativ": [
+            "Att finansutbildningen chefer en gång fick ruttnar bort i karriären — kvar blir intuition, och handboken ska återställa hantverket",
+            "Att ekonomer inte kan räkna",
+            "Att akademisk finans är överlägsen praktisk erfarenhet",
+            "Att bokslut ska avskaffas"
+          ],
+          "ratt": 0,
+          "tips": "Vem är boken skriven för — och vad har hänt med deras utbildning?"
+        },
+        {
+          "q": "Vilken är bokens genomgående röda tråd?",
+          "alternativ": [
+            "Att aktiemarknaden är effektiv",
+            "Att kassaflödet är sanningen och bokförd vinst en åsikt — alla beslut räknas i kassa",
+            "Att skuld alltid är farligt",
+            "Att tillväxt alltid är bra"
+          ],
+          "ratt": 1,
+          "tips": "Vad återkommer i vartenda kapitel — språket eller sanningen?"
+        },
+        {
+          "q": "Vilken AKM1-variabel är pro forma-prognosens mest direkta utgång?",
+          "alternativ": [
+            "V13 patent",
+            "V17 avtal",
+            "V19 kapitalförbränning och emissionsrisk — prognosens finansieringsgap visar emissionsbehovet i förväg",
+            "V14 varumärke"
+          ],
+          "ratt": 2,
+          "tips": "Vad avslöjar prognosen månader före marknaden — och vilken variabel mäter just det?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 15,
+      "title": "Bokslutets två ansikten — resultaträkning och balansräkning",
+      "intro": "Boken börjar där alla börjar men få klarar: bokslutet. Resultaträkningen är en flödesbild — vad som hänt under en period — och balansräkningen en ställningsbild — vad som finns på ett datum. Higgins poäng är att de två tillsammans är en sammanhängande berättelse, och att den som läser dem var för sig läser halva boken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundekvationerna. Balansräkningen: tillgångar = skulder + eget kapital — det egna kapitalet är en restpost, vad som återstår när fordringsägarna fått sitt, och därför den enda post som tillhör ägarna. Resultaträkningen bygger på periodisering: intäkt redovisas när den intjänas, kostnad när den uppkommer — inte när pengarna rör sig. Det är rationellt (verkliga prestationer ska mätas) men det är också sprickan mellan vinst och kassa: en försäljning kan bokföras i januari och betalas i april, en maskin kan skrivas av över tio år medan kassaflödet lämnade bolaget dag ett. Avskrivningar är därför bokslutets viktigaste hybrid: en riktig kostnad i resultaträkningen, ingen kassa alls i kassaflödet. Hela kassaflödesanalysen i nästa kapitel bygger på den skillnaden."
+        },
+        {
+          "type": "text",
+          "content": "Sedan skillnaden som gör analysen: bokförd vinst är inte ekonomisk vinst. Redovisningen ger utrymme — avskrivningstider, aktivering av utvecklingskostnader, nedskrivningstiming, pensionsantaganden — och utrymmet används. Ett år är därför en åsikt; fem till tio år i följd är ett mönster. Här korsar kursen Quality of Earnings och Financial Shenanigans från katalogen: Higgins ger det fredliga normalfallet (hur posterna hänger ihop), de böckerna ger fallen där sambanden manipulerats. För ett konkret svenskt exempel, ta H&M:s resultaträkning i tankarna: omsättning, varukostnad, bruttoresultat, driftskostnader — lokaler, personal, logistik — ner till rörelseresultatet. Varje trappsteg är en AKM1-variabel: bruttovinsten är V07, driftskostnadernas disciplin är V08:s underlag, och rörelseresultatet är V09:s utgångspunkt."
+        },
+        {
+          "type": "text",
+          "content": "Balansräkningens AK1A-läsning är lika direkt. Struktur: hur stor del av tillgångarna är bunden i lager och kundfordringar (rörelsekapital — kapitel sju), hur stor del är långa investeringar (Volvos fabriker, Ericssons utveckling), hur finansieras det hela — skuldsättningsgraden V10 — och hur står det till med den korta sidan: betalningsberedskapen V11. Kvartalsrapporterna är tidsenheten: Ericsson rapporterar kvartalsvis, och varje rapport flyttar underlaget för V01–V12 en notch. Kursens tumregel från boken: läs alltid resultaträkning och balansräkning tillsammans — en resultaträkning utan balansräkning säger hur det gick men inte om bolaget överlever nästa år, och en balansräkning utan resultaträkning tvärtom."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokförd vinst är en åsikt, kassa är ett faktum — och balansräkningen är den enda av de tre som inte kan ljuga om datum. När resultaträkning, kassaflöde och balansräkning berättar samma historia kan du lita på underlaget; när de gör det inte har du hittat nästa analysuppgift innan du hunnit söka den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Resultaträkningens trappa — H&M-stil med räkneexempel\",\"rader\":[[\"Rad\",\"Exempel (index)\",\"AKM1-läsning\"],[\"Omsättning\",\"100\",\"V01 tillväxt, V03 fördelning\"],[\"− Varukostnad\",\"−55\",\"inköpsdisciplin, valutasidan\"],[\"= Bruttoresultat\",\"45 → V07 = 45 %\",\"V07 bruttomarginal\"],[\"− Driftskostnader\",\"−25\",\"lokaler, personal, logistik\"],[\"= EBIT\",\"20 → 20 % på omsättningen\",\"V09-källa; +avskrivningar → EBITDA V08\"],[\"− Finansiella nettokostnader\",\"−2\",\"V10:s pris i resultaträkningen\"],[\"= Resultat före skatt\",\"18\",\"—\"],[\"− Skatt 25 %\",\"−4,5\",\"—\"],[\"= Nettoresultat\",\"13,5 → 13,5 % nettomarginal\",\"DuPont-startpunkt, V20-källa\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär periodiseringprincipen?",
+          "alternativ": [
+            "Att intäkter och kostnader redovisas när de intjänas och uppkommer — inte när pengarna rör sig",
+            "Att allt bokförs när fakturan betalas",
+            "Att bokslut bara läggs fram vart femte år",
+            "Att skatter betalas i efterskott"
+          ],
+          "ratt": 0,
+          "tips": "Vad är sprickan mellan vinst och kassa — och vilken princip skapar den?"
+        },
+        {
+          "q": "H&M-profilen i kapitlets tabell: omsättning 100, varukostnad 55. Vad blir bruttomarginalen (V07)?",
+          "alternativ": [
+            "35 %",
+            "45 %",
+            "55 %",
+            "20 %"
+          ],
+          "ratt": 1,
+          "tips": "Bruttoresultat delat på omsättningen — vad är kvar efter varukostnaden?"
+        },
+        {
+          "q": "Varför adderas avskrivningar tillbaka i kassaflödesanalysen?",
+          "alternativ": [
+            "Därför att avskrivningar är skattefria",
+            "Därför att de är en riktig kostnad i resultaträkningen men ingen kassaflödespost — pengarna lämnade bolaget när maskinen köptes",
+            "Därför att de är en reserv",
+            "Därför att bolaget vill visa högre vinst"
+          ],
+          "ratt": 1,
+          "tips": "När lämnade kassan bolaget — vid köpet eller vid avskrivningen?"
+        },
+        {
+          "q": "Hur länge ska V12 intäktsstabilitet läsas enligt kursens tumregel?",
+          "alternativ": [
+            "Ett kvartal",
+            "Ett år",
+            "Fem till tio år — ett år är en åsikt, ett mönster är ett mönster",
+            "Tio år av kvartalsrapporter minimum"
+          ],
+          "ratt": 2,
+          "tips": "Vad krävs för att skilja strukturell stabilitet från tur?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 16,
+      "title": "Kassaflödesanalysen — från bokförd vinst till fritt kassaflöde",
+      "intro": "Bokens första verkligt Higgins-ögonblick: nämnaren som alla beslut ska räknas i är inte nettovinsten utan det fria kassaflödet — kassan som är kvar efter att verksamheten återinvesterat det den måste för att behålla sin position. Detta kapitel bygger maskinen steg för steg, med räkneexempel hela vägen, och kopplar den till V09 och V19.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygget, steg för steg. Steg ett: operativt kassaflöde före rörelsekapital = EBIT × (1 − skattesats) + avskrivningar. Vi börjar på EBIT — inte nettoresultatet — därför att räntekostnaden är en finansieringsfråga, inte en driftsfråga, och kassaflödet ska mäta verksamheten oberoende av hur den råkar vara finansierad; skatten räknas på EBIT som approximation. Avskrivningarna läggs tillbaka för att de inte är kassa. Exempel med kapitlets siffror: EBIT 200, avskrivningar 50, skattesats 25 procent — operativt kassaflöde = 200 × 0,75 + 50 = 150 + 50 = 200. Steg två: frihetskostnaderna. Capex — nyinvesteringar i maskiner, utveckling, fabriker — dras ifrån därför att bolaget måste investera för att behålla positionen. Steg tre: förändringen i rörelsekapital — växer kundfordringar och lager snabbare än leverantörsskulderna binds kassa i verksamheten. Kvar står det fria kassaflödet: FCF = EBIT × (1 − t) + avskrivningar − capex − förändring i rörelsekapital. Med capex 80 och rörelsekapitalökning 20: FCF = 200 − 80 − 20 = 100."
+        },
+        {
+          "type": "text",
+          "content": "Vad är det fritt för? Svaret definierar begreppet: FCF är kassan som står till långivares och ägares förfogande — ränta, amortering, utdelning, återköp — efter att verksamheten fått det den behöver. Det är därför V09 i AKM1 ska läsas som kassaflödesgrad snarare än ren EBIT-marginal: ett bolag kan rapportera stark EBIT och samtidigt producera obefintligtt FCF för att allt äts av capex och svällande lager — Ericsson under expansionsår och Volvo i lastbilscykelns topp levererar båda mönstren om och om igen. I andra änden ligger kassakon som rapporterar trist EBIT men pyser FCF: mogna, kapitalsnåla verksamheter. Bokföringsvinst och frihet är alltså två olikadimensioner — och värderingen (kapitel fjorton) köper den senare, inte den förra."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V09: gradera bolaget på FCF, inte på EBIT — förhållandet FCF/EBITDA är en av modellens renaste kvalitetsmätare: ligger det stabilt över tiden är verksamheten kapitaldisciplinerad; sjunker det medan EBITDA växer köper tillväxten kapital ingen ser. V19: kassaflödesanalysen är kapitalförbränningens räkenskap — för ett bolag med negativt FCF är frågan hur många månader kassan räcker vid förbränningstakt, och när emissionen tvingas fram; pro forma-prognosen (kapitel fem) gör samma sak i framtid. V10–V11: FCF är källan som betalar skulden och bygger likviditeten — ett bolag vars FCF inte täcker ränta och amortering lånar för att betala ränta, och det är Ponzi-fasen ur Vår ekonomi-kursens Minsky-skala, nu i Higgins aritmetik."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna alltid förhållandet FCF/EBITDA som en enda rad genom fem års rapporter: det är bolagets kapitaldisciplin komprimerad till en siffra. EBITDA kan skryta; FCF kan inte — någon har alltid redan använt kassan innan den hittar till ägarna, och raden visar vem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från EBIT till fritt kassaflöde — räkneexempel\",\"rader\":[[\"Rad\",\"Belopp\",\"Kommentar\"],[\"EBIT\",\"200\",\"driftens resultat före finansiering\"],[\"− skatt (25 % av EBIT)\",\"−50\",\"approximation på EBIT\"],[\"= NOPAT\",\"150\",\"efter skatt, före kassajustering\"],[\"+ avskrivningar\",\"+50\",\"icke-kassa\"],[\"= operativt kassaflöde\",\"200\",\"före investeringar\"],[\"− capex\",\"−80\",\"nödvändig återinvestering\"],[\"− ökning rörelsekapital\",\"−20\",\"bunden kassa i lager/fordringar\"],[\"= Fritt kassaflöde\",\"100\",\"till långivare och ägare\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna med siffrorna från tabellen och besvara tre frågor. Ett: EBIT 200, avskrivningar 50, skattesats 25 procent, capex 80, rörelsekapitalökning 20 — vad är FCF? Lösning: 200 × 0,75 = 150; + 50 = 200 operativt kassaflöde; − 80 − 20 = FCF 100. Två: bolagets årsförsäljning är 1 460 mdr och kunderna börjar betala tio dagar långsammare — hur mycket mer kassa binds? Lösning: 1 460 / 365 = 4 mdr per dag; 10 dagar = 40 mdr mer bundna — FCF faller från 100 till 60 utan att resultaträkningen rört sig en krona. Tre: vad betyder det för V09 och V19? Lösning: V09 slås ner (kvaliteten på EBITDA är sämre än den ser ut) och V19-flaggan hissas — förbränningen har ökat mekaniskt. Sitter du tre av tre är kassaflödesanalysen din; missar du fråga två har du precis lärt dig varför rörelsekapitalskapitel finns (kapitel sju)."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "EBIT 200, avskrivningar 50, skattesats 25 procent. Vad är det operativa kassaflödet före capex och rörelsekapital?",
+          "alternativ": [
+            "150",
+            "200",
+            "250",
+            "187,5"
+          ],
+          "ratt": 1,
+          "tips": "200 × 0,75 = 150 — vad läggs sedan tillbaka?"
+        },
+        {
+          "q": "Med capex 80 och rörelsekapitalökning 20 — vad blir det fria kassaflödet?",
+          "alternativ": [
+            "120",
+            "100",
+            "80",
+            "60"
+          ],
+          "ratt": 1,
+          "tips": "200 − 80 − 20 — frihet är vad som återstår efter nödvändigheten."
+        },
+        {
+          "q": "Vem har anspråk på det fria kassaflödet?",
+          "alternativ": [
+            "Bara aktieägarna",
+            "Bara banken",
+            "Långivare och ägare tillsammans — ränta, amortering, utdelning och återköp",
+            "Statliga infrastrukturfonder"
+          ],
+          "ratt": 2,
+          "tips": "Frihet är ett anspråk — och det finns två ägarfamiljer till balansräkningens kapital."
+        },
+        {
+          "q": "Varför är förhållandet FCF/EBITDA kursens renaste kvalitetsmätare?",
+          "alternativ": [
+            "Därför att EBITDA är irrelevant",
+            "Därför att det visar hur mycket av rapporterad rörelsevinst som verkligen blir kassa — kapitaldisciplinen komprimerad",
+            "Därför att det ersätter P/E",
+            "Därför att det alltid är 1,0 för bra bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad äter av EBITDA på vägen till frihet — och vem ser det inte om han bara tittar på EBITDA?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 15,
+      "title": "Nyckeltalens anatomi — DuPont och ROE:s tre drivrutiner",
+      "intro": "Ett nyckeltal är en fråga, inte ett svar — och Higgins poäng är att de flesta nyckeltal är varandras omformningar. Kursens centrum är DuPont-identiteten: ROE = nettomarginal × omsättningshastighet × kapitalmultiplikator. Tre drivrutiner, tre olika bolagstyper, tre olika risker — och hela vägen in i AKM1:s V07–V10.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Identiteten: ROE = (nettoresultat / omsättning) × (omsättning / totala tillgångar) × (totala tillgångar / eget kapital). Marginalen är driftens lönsamhet per omsättningskrona — V07–V08:s område. Omsättningshastigheten är kapitalets produktivitet — hur många omsättningskronor varje tillgångskrona genererar per år: detaljhandelsklassikern, där H&M med sin snabba varuomsättning tjänar sina pengar på hastighet snarare än marginal. Kapitalmultiplikatorn är hävstången — hur mycket av tillgångsmassan som finansierats med främmande kapital, rakt av V10: multipeln 2 betyder lika mycket skuld som eget kapital i förhållande till tillgångarna. Räkneexempel: nettomarginal 8 procent, omsättningshastighet 1,5, kapitalmultiplikator 2 → ROE = 0,08 × 1,5 × 2 = 24 procent. Samma ROE kan alltså byggas på tre olika sätt — och riskerna är helt olika: marginalen kan eroderas av konkurrens, hastigheten av överinvestering, hävstången av en nedgång."
+        },
+        {
+          "type": "text",
+          "content": "Sektorernas dialekt. Volvo-liknande industrier: kapitaltunga fabriker ger låg omsättningshastighet (under 1 är normalt) — lönsamheten måste köpas med marginal, och marginalen köps med prissättning på lastbilar och konstruktionseffektivitet. H&M-liknande detaljhandel: tunn marginal (några få procent netto) men hög hastighet — lönsamheten bor i varuomsättning, butiksproduktivitet och lagrets rotation. Ericsson-liknande teknik: medelhöga marginaler, lågt kapitalbehov i tillverkning men tung forskning — multiplikatorn blir den spak ledningen väljer. Higgins slående illustration, som kursen gör svensk: de tre bolagen kan alla nå ROE kring 18–19 procent — och ändå är de tre helt olika riskprofiler, tre olika konjunkturkänsligheter och tre olika AKM1-poäng. Nyckeltalets nivå är därför mer dum än nyckeltalets komposition: ROE 18 köpt med multiplikator 2,5 är ett annat bolag än ROE 18 köpt med marginal 12."
+        },
+        {
+          "type": "text",
+          "content": "Resterande nyckeltal sorterar sig kring identiteten. Likviditet (balanslikviditet, kvickkvot) — kapitel sju. Skuld (skuldsättningsgrad, räntetäckningsgrad) — kapitel tolv och tretton. Väsentligt för AKM1: V07 (brutto) och V08 (EBITDA) är marginalernas variabler, V09 kassaflödesgraden deras kassa-sanning, V10 är multiplikatorn översatt till riskpoäng och V11 likviditetens. Kursens varning, rak från Higgins: jämför aldrig nyckeltal över sektorer utan att kontrollera identiteten — en marginal som ser låg ut i detaljhandel kan vara precis rätt, en multiplikator som ser hög ut i banker är sektorns natur (banker är per definition högt belåningade, det är deras affär). Och ROE-läran: ett ROE som överträffar branschens år efter år är antingen konkurrenskraft (moat — V13–V15) eller hävstång (V10) — DuPont är verktyget som skiljer dem åt."
+        },
+        {
+          "type": "insikt",
+          "content": "Dekomponera alltid ROE innan du imponeras: marginal × hastighet × hävstång. Hög marginal är moat-kapital, hög hastighet är operationskapital, hög multiplikator är lånat kapital — endast de två första skapar värde som överlever en räntehöjning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre profiler, nästan samma ROE — DuPont i Sverige\",\"rader\":[[\"Profil\",\"Nettomarginal\",\"Omsättningshastighet\",\"Kapitalmultiplikator\",\"ROE\",\"Källa till risk\"],[\"H&M-liknande detaljhandel\",\"6 %\",\"1,8\",\"1,8\",\"19,4 %\",\"marginalpress, valutor, lager\"],[\"Volvo-liknande industri\",\"9 %\",\"0,9\",\"2,2\",\"17,8 %\",\"cykel, kapitalbindning, belåning\"],[\"Ericsson-liknande teknik\",\"7 %\",\"0,7\",\"1,5\",\"7,4 %\",\"konjunktur i telekom, FoU-avkastning\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Nettomarginal 8 procent, omsättningshastighet 1,5, kapitalmultiplikator 2 — vad blir ROE?",
+          "alternativ": [
+            "10,5 procent",
+            "24 procent",
+            "12 procent",
+            "16 procent"
+          ],
+          "ratt": 1,
+          "tips": "Multiplicera de tre — 0,08 × 1,5 × 2."
+        },
+        {
+          "q": "Vilken DuPont-drivrutin motsvarar AKM1:s V10 skuldsättningsgrad?",
+          "alternativ": [
+            "Nettomarginalen",
+            "Omsättningshastigheten",
+            "Kapitalmultiplikatorn — tillgångar dividerat med eget kapital",
+            "Ingen — DuPont handlar bara om lönsamhet"
+          ],
+          "ratt": 2,
+          "tips": "Vilken av de tre mäter hur mycket av kapitalet som är lånat?"
+        },
+        {
+          "q": "H&M-profilen i tabellen: 6 % × 1,8 × 1,8 — vad blir ROE?",
+          "alternativ": [
+            "10,8 procent",
+            "19,4 procent",
+            "16,2 procent",
+            "12,0 procent"
+          ],
+          "ratt": 1,
+          "tips": "0,06 × 1,8 = 10,8 procent på tillgångarna — vad ger multiplikatorn sedan?"
+        },
+        {
+          "q": "Vad är kursens varning vid nyckeltalsjämförelser mellan sektorer?",
+          "alternativ": [
+            "Att ROE alltid är jämförbart mellan sektorer",
+            "Att detaljhandel alltid är bäst",
+            "Att banker ska ha lägst belåning",
+            "Att kompositionen skiljer sig — samma ROE kan vara marginalkonst i en sektor och hävstång i en annan"
+          ],
+          "ratt": 3,
+          "tips": "Vad köper varje sektor sitt ROE med — och är priset samma?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 15,
+      "title": "Finansiell prognos — procent-försäljningsmetoden och pro forma",
+      "intro": "Nu vrider Higgins tiden framåt: pro forma — bokslut som inte har hänt än. Metoden är förvånansvärt enkel (de flesta balansposter växer med försäljningen), mekaniken är tre steg, och utdelningen är en enda formel: externt finansieringsbehov. Detta är V19:s födelsekapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden: procent-försäljning. Antagandet är att de flesta balansposter skalar linjärt med försäljningen — kundfordringar, lager, liknande skulder — medan vissa står utanför (räntebärande skuld och eget kapital bestäms av finansieringsbeslut, inte av omsättningen). Steg ett: prognostisera försäljningen (V01:s konjunkturarbete — det är här kvartalens orderstock och makro-RAM:en från Vår ekonomi-kursen kommer in). Steg två: räkna fram nästa års resultaträkning och balansräkning med antagandena. Steg tre: plåstret mellan dem — när tillgångssidan växer snabbare än den spontana finansieringen och det inre kapitalet uppstår ett gap, och gapet är externt finansieringsbehov: bank, obligation eller emission. Räkneexempel som kursen bygger vidare: tillgångar/försäljning = 0,8; försäljningen växer från 1 000 till 1 200 → tillgångar måste växa från 800 till 960, det vill säga 160 i nytt kapitalbehov."
+        },
+        {
+          "type": "text",
+          "content": "Formeln som allt sammanfattar: externt finansieringsbehov = (tillgångar/försäljning) × Δförsäljning − (spontana skulder/försäljning) × Δförsäljning − nettomarginal × prognostiserad försäljning × kvarhållningsgrad. Det tredje ledet är den inre kraften: vinsten som blir kvar och binder i bolaget. Fortsättning på exemplet: spontana skulder 0,1 × 200 = 20; vinst 8 procent × 1 200 = 96, varav kvarhållen 60 procent = 57,6. Externt behov = 160 − 20 − 57,6 = 82,4. Prognosens budskap är alltså bokstavligen: nästa år behöver bolaget 82,4 i ny finansiering utöver det egna. Finansiera det med skuld → V10 stiger; med emission → utspädning; hitta det inte → V19 är inte längre en risk utan en kalenderpost. Higgins ger sedan kassabudgeten som månadsnivån av samma logik — prognos på årsnivå, kassabudget på månadsnivå, samma regler."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är den mest direkta i hela boken. V01: försäljningsprognosen är modellens första variabel — och pro forma tvingar dig att deklarera den siffra din V01-poäng vilar på. V02: för återkommande intäkter (ARR-modeller) är procent-försäljning ännu starkare — basen är kontrakterad, prognosen gäller tillväxten på basen. V12: kör prognosen i tre scenarier (bas, optimism, pessimism) så får du variabelns känslighet gratis — Higgins kapitel om riskanalys (vårt kapitel elva) är nästa steg. V19: som sagt — finansieringsgappet är emissionsrisken mätt i kronor, månader i förväg. Kursens tillämpningsregel: en AKM1-analys utan en pro forma-rad är en stillbild med påståenden; en med pro forma är en analys med en spårad framtid — och skillnaden syns först den dag marknaden får samma syn och du hunnit dit först."
+        },
+        {
+          "type": "insikt",
+          "content": "Prognosens värde ligger inte i att den blir rätt — den blir fel — utan i att den tvingar antagandena ut i dagsljuset: vilken tillväxt, vilken marginal, vilken kvarhållningsgrad, vilket finansieringsbehov. När verkligheten sedan avviker vet du exakt vilken av dina fyra övertygel som var fel, och det är den snabbaste inlärningsloop en analytiker kan bygga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Pro forma i tre steg — räkneexempel\",\"rader\":[[\"Steg\",\"Beräkning\",\"Resultat\"],[\"Nytt kapitalbehov\",\"0,8 × (1 200 − 1 000)\",\"160\"],[\"Spontan finansiering\",\"0,1 × 200\",\"20\"],[\"Inre finansiering\",\"0,08 × 1 200 × 0,60\",\"57,6\"],[\"Externt finansieringsbehov\",\"160 − 20 − 57,6\",\"82,4\"],[\"AKM1-läsning\",\"gap → skuld (V10) eller emission (V19)\",\"V19 = kalenderpost i kronor\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är huvudantagandet i procent-försäljningsmetoden?",
+          "alternativ": [
+            "Att alla balansposter bestäms av räntan",
+            "Att de flesta balansposter skalar linjärt med försäljningen",
+            "Att vinsten är konstant i kronor",
+            "Att skulderna aldrig förändras"
+          ],
+          "ratt": 1,
+          "tips": "Vad är den gemensamma drivrutinen för lager, fordringar och liknande skulder?"
+        },
+        {
+          "q": "Tillgångar/försäljning = 0,8 och försäljningen växer från 1 000 till 1 200. Vad är det brutna kapitalbehovet?",
+          "alternativ": [
+            "120",
+            "160",
+            "80",
+            "200"
+          ],
+          "ratt": 1,
+          "tips": "0,8 × 200 — vad kräver tillgångssidan för att bära tillväxten?"
+        },
+        {
+          "q": "Vad gör det tredje ledet i formeln för externt finansieringsbehov — nettomarginal × prognostiserad försäljning × kvarhållningsgrad?",
+          "alternativ": [
+            "Räknar ut skatten",
+            "Mäter den inre finansieringen — vinsten som stannar kvar och binder i bolaget",
+            "Räknar ut utdelningen",
+            "Prognostiserar räntan"
+          ],
+          "ratt": 1,
+          "tips": "Vad växer inifrån — och vilken andel av vinsten blir kvar?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 16,
+      "title": "Tillväxthantering — hållbar tillväxttakt och tillväxtens fyra spakar",
+      "intro": "Bokens signaturkapitel och den ekvation kursen lovar i titeln: hållbar tillväxttakt = ROE × kvarhållningsgrad. Higgins vendetta är myten att tillväxt alltid är bra — tillväxt som inte kan finansieras internt är inte tillväxt utan kapitalkonsumtion. Här möts V01, V08, V10, V19 och V20 i en enda formel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen: hållbar tillväxttakt (SGR) är den försäljningstillväxt ett bolag kan bära utan att ta in nytt eget kapital, vid oförändrad lönsamhet, oförändrad kapitalstruktur och oförändrad utdelningspolitik — med andra ord utan att byta sin natur. Formeln: SGR = ROE × kvarhållningsgrad, där kvarhållningsgraden är 1 minus utdelningskvoten. Räkneexempel: ROE 12 procent, utdelningskvot 40 procent → kvarhållning 60 procent → SGR = 0,12 × 0,60 = 7,2 procent om året. Kombinera med DuPont och du får PRAT-varianten: SGR = nettomarginal (P) × kvarhållningsgrad (R) × omsättningshastighet (A) × kapitalmultiplikator (T) — tillväxtens fyra spakar i en multiplikation: 8 % × 0,7 × 1,2 × 1,5 = 10,08, alltså ca 10,1 procent. Varje spak är en strategisk hävarm: marginalen (V08 — prissättning, kostnadsdisciplin), kvarhållningen (utdelningspolicyn — V20:s omvända sida), hastigheten (rörelsekapitalets effektivitet — kapitel sju) och hävstången (V10 — den farligaste, ty den köper tillväxt med överlevnadsrisk)."
+        },
+        {
+          "type": "text",
+          "content": "Diagnosen: jämför faktisk tillväxt med hållbar. Faktisk 20, hållbar 7,2 — bolaget springer snabbare än sina egna muskler. Gapet måste finansieras: nyemission (utspädning — V19), mer skuld (V10 stiger, cykelkänsligheten med den), sämre betalningsvillkor hos leverantörer (kassakonverteringscykeln sträcker sig — kapitel sju igen), eller så bitas intäkterna: försäljningen bromsas medvetet, order avvisas, priser höjs. Higgins poäng, som kursen gjorde svensk med tillväxtbolagens era: snabb tillväxt hos ett bolag med svag lönsamhet är inte framgång utan accelererande kapitalkonsumtion — bolaget blöder hårdare ju bättre det säljer. Omvänt: faktisk tillväxt 3, hållbar 9 — kassakon. Överskottet borde delas ut, återköpas (V20!) eller förvärvas, för bundet kapital utan tillväxtvärdig användning är värdeförstöring i slow motion. Kursens diagnoshörna: läs SGR-tätheten över fem år — ett bolag som konsekvent växt över SGR utan att multiplikatorn rört sig har ett finansieringskonto någonstans som någon till slut kommer att presentera."
+        },
+        {
+          "type": "text",
+          "content": "Och den djupaste varningen, som förenar Higgins med Brealey (nästa kurs): tillväxt skapar bara värde om avkastningen på det nya kapitalet överstiger kapitalkostnaden. Ett bolag kan växa i linje med SGR för all evighet — och ändå förstöra värde om ROE ligger under WACC, ty SGR-formeln mäter kassans tillväxt, inte värdegemenskapen mellan kassaflödets nivå och dess pris. Därför ska V01 aldrig poängsättas isolerat: tillväxt + V08 (marginal) + V10 (hur den finansieras) + V04–V06 (vad marknaden betalar för den) är det minsta sammanhang en tillväxtbedömning kan göras i. Higgins summering, värd att citera i varje pitch: det finns inget som är finansiellt farligare än ett snabbväxande bolag med dålig lönsamhet — det farliga är inte att det misslyckas med att växa, utan att det lyckas."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna alltid båda: faktisk tillväxt och hållbar tillväxttakt. Skillnaden är bolagets finansiella agenda i siffra — positivt gap betyder emission, belåning eller broms; negativt gap betyder utdelning, återköp eller förvärv. En femårig serie av gapet säger mer om ledningens framtida tvång än vad ledningen själv säger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtens fyra spakar — PRAT med räkneexempel\",\"rader\":[[\"Spak\",\"Formelbesök\",\"Exempel\",\"AKM1-länk\"],[\"P — nettomarginal\",\"vinst per omsättningskrona\",\"8 %\",\"V07–V08\"],[\"R — kvarhållningsgrad\",\"1 − utdelningskvot\",\"0,70\",\"V20:s omvända sida\"],[\"A — omsättningshastighet\",\"omsättning per tillgångskrona\",\"1,2\",\"rörelsekapital, kapitel 7\"],[\"T — kapitalmultiplikator\",\"tillgångar per eget kapital\",\"1,5\",\"V10 — farligaste spaken\"],[\"SGR = P × R × A × T\",\"0,08 × 0,70 × 1,2 × 1,5\",\"10,1 %\",\"V01:s hållbarhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Diagnostisera tre bolag med PRAT. Ett: nettomarginal 8 procent, hastighet 1,2, multiplikator 1,5, kvarhållning 70 procent — SGR? Lösning: 0,08 × 0,70 = 0,056; × 1,2 = 0,0672; × 1,5 = 0,1008, alltså ca 10,1 procent. Två: samma bolag växer 15 procent — hur stort är gapet och vilka är de fyra vägarna? Lösning: gapet är 4,9 procentenheter per år; vägarna är emission (V19-utspädning), belåning (V10), marginallyft (V08) eller tillväxtbroms (orderavvisning, prishöjning) — notera att två av fyra spakar är desamma som i PRAT och två är finansiella. Tre: bolaget sänker utdelningskvoten från 30 till 10 procent — ny SGR? Lösning: kvarhållningen stiger från 0,70 till 0,90 → SGR = 0,08 × 0,90 × 1,2 × 1,5 = 12,96, alltså ca 13 procent — men minskad utdelning är också en signal, och i ett bolag med ROE under WACC behåller den bara kassa som borde ha fått lämna. Fyra rätt — och du har Higgins signaturkapitel i handen."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "ROE 12 procent, utdelningskvot 40 procent — vad är den hållbara tillväxttakten?",
+          "alternativ": [
+            "4,8 procent",
+            "7,2 procent",
+            "12 procent",
+            "5,2 procent"
+          ],
+          "ratt": 1,
+          "tips": "Kvarhållningen är 60 procent — multiplicera med ROE."
+        },
+        {
+          "q": "Ett bolag växer 20 procent om året med SGR 7,2 procent. Vad är kursens diagnos?",
+          "alternativ": [
+            "Bolaget är friskt — tillväxt är alltid bra",
+            "Bolaget konsumerar kapital — det måste välja: nyemission, mer skuld, bättre marginaler eller medvetet långsammare tillväxt",
+            "Bolaget borde höja utdelningen omedelbart",
+            "SGR är irrelevant för snabbväxare"
+          ],
+          "ratt": 1,
+          "tips": "Vad fyller gapet mellan vad musklerna bär och vad benen springer?"
+        },
+        {
+          "q": "Nettomarginal 8 procent, kvarhållning 70 procent, hastighet 1,2, multiplikator 1,5 — SGR enligt PRAT?",
+          "alternativ": [
+            "ca 8,0 procent",
+            "ca 10,1 procent",
+            "ca 14,4 procent",
+            "ca 6,3 procent"
+          ],
+          "ratt": 1,
+          "tips": "Fyra faktorer: 0,08 × 0,70 × 1,2 × 1,5."
+        },
+        {
+          "q": "När förstår tillväxt värde enligt Higgins?",
+          "alternativ": [
+            "Alltid — försäljningstillväxt är värde",
+            "Bara när den är hållbar enligt SGR",
+            "Bara när avkastningen på nytt kapital överstiger kapitalkostnaden — annars är det kapitalkonsumtion i fint papper",
+            "Bara vid låg belåning"
+          ],
+          "ratt": 2,
+          "tips": "SGR mäter kassaflödets tillväxt — vad mäter inte den formeln?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 15,
+      "title": "Rörelsekapital och likviditet — kassakonverteringscykeln",
+      "intro": "Mellan vinst och kassa står rörelsekapitalet: lager, kundfordringar, leverantörsskulder. Higgins verktyg är kassakonverteringscykeln — antalet dagar mellan att bolaget betalar sina leverantörer och får betalt av sina kunder — och kapitlet är V11:s räknebok.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cykeln: kassakonverteringstiden = lagerdagar (DIO) + kundfordringsdagar (DSO) − leverantörsdagar (DPO). Lagerdagarna: hur länge varan ligger hos bolag (H&M:s helvetesfråga — varje kollektion som hänger är kapital som varken växer eller delar ut). Kundfordringsdagarna: hur länge kunderna får kredit (Volvo-liknande B2B: ofta 60–90 dagar; Ericsson på teleoperatörer: långa projekt, långa fordringar). Leverantörsdagarna: hur länge leverantörerna ger kredit — minus, ty det är deras kapital som arbetar för bolaget, inte omvänt. Räkneexempel: lager 60 dagar, kunder 45 dagar, leverantörer 40 dagar → 60 + 45 − 40 = 65 dagar. Varje dag cykeln kortas frigör kassa utan en enda ny såld enhet; varje dag den sträcks binder kassa utan att resultaträkningen märker något — mekaniken från kapitel tre, nu i dagar i stället för kronor."
+        },
+        {
+          "type": "text",
+          "content": "Kvantiteten på det bundna kapitalet är aritmetik värd att kunna utantill: bundet kapital = daglig försäljning (eller kostnad) × antal dagar. Försäljning 730 mdr per år = 2 mdr per dag; en cykel på 65 dagar binder alltså 130 mdr. Räntan gör resten: vid 5 procents kapitalkostnad kostar varje onödig cykeldag 0,1 mdr per år i detta exempel — inte nog för att döda, men nog för att skilja en välstyrd verksamhet från en slarvig. Sektorernas kontraster är läran: detaljhandel pressar lagerdagarna med snabb rotation (snabbkollektionens logik: från design till butiksgolv på veckor), industri pressar kundfordringarna genom förskott och skeppningsvillkor (Volvo-lastbilarnas kontrakt), och alla trycker leverantörsdagarna uppåt — tills leverantörerna svarar med priser som innehåller finansieringen, varvid kapitel åtta tar vid: leverantörskrediten har ett pris, även när det är osynligt."
+        },
+        {
+          "type": "text",
+          "content": "Likviditetsnyckeltalen är V11:s instrument: balanslikviditeten (omsättningstillgångar / kortfristiga skulder) och kvickkvoten (som exkluderar lagret — ty i en kris är lagret det som säljs sist och billigast). Higgins varning: likviditet har ett pris — för mycket kassa är V20:s och V04:s problem (kassa som inte arbetar, multipl som straffar det), för lite är V11:s och V19:s (bankens bud kommer med nästa rapport). Kursens AKM1-länk: V11 poängsätts efter betalningsberedskap i en nedgång — kvickkvoten och kassans månader vid förbränningstakt (kapitel tre) tillsammans; rörelsenedgång + lång kassacykel + hög belåning är den klassiska svenska småindustri-sviten som V11 och V19 tillsammans fångar, ett par kvartal före kurserna."
+        },
+        {
+          "type": "insikt",
+          "content": "Kassakonverteringscykeln är den enda nyckeltalsserien där lägre alltid är bättre, oavsett sektor: mätt i dagar är den direkt jämförbar mellan H&M och Volvo på ett sätt som marginaler aldrig är. Följ den som trend, inte som nivå — en cykel som sträcker sig år från år är en kassaflödesläcka som resultaträkningen kommer att upptäcka sist."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kassakonverteringscykeln — räkneexempel och sektorskontrast\",\"rader\":[[\"Komponent\",\"Fråga\",\"Exempel\",\"Sektorslogik\"],[\"Lagerdagar (DIO)\",\"hur länge ligger varan?\",\"60\",\"detaljhandel pressar hårt; industri tungt\"],[\"Kundfordringsdagar (DSO)\",\"hur länge väntar betalningen?\",\"45\",\"B2B lång; konsument kort\"],[\"Leverantörsdagar (DPO)\",\"hur länge får bolaget kredit?\",\"40\",\"stora köpare trycker uppåt\"],[\"Cykel = DIO + DSO − DPO\",\"dagar mellan utbetalt och inkommet\",\"65\",\"lägre är alltid bättre\"],[\"Bundet kapital\",\"dagens försäljning × cykel\",\"2 mdr/dag × 65 = 130 mdr\",\"räntekostnad = cykelns pris\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Lagerdagar 60, kundfordringsdagar 45, leverantörsdagar 40 — hur lång är kassakonverteringscykeln?",
+          "alternativ": [
+            "145 dagar",
+            "65 dagar",
+            "55 dagar",
+            "95 dagar"
+          ],
+          "ratt": 1,
+          "tips": "60 + 45 − 40 — leverantörskrediten dras ifrån."
+        },
+        {
+          "q": "Försäljning 730 mdr per år och en cykel på 65 dagar — hur mycket kapital binds i rörelsen?",
+          "alternativ": [
+            "65 mdr",
+            "100 mdr",
+            "130 mdr",
+            "260 mdr"
+          ],
+          "ratt": 2,
+          "tips": "730 / 365 = 2 mdr per dag — gånger cykeln."
+        },
+        {
+          "q": "Leverantörsdagarna ökar från 40 till 55, övriga oförändrade. Vad händer?",
+          "alternativ": [
+            "Cykeln förlängs med 15 dagar",
+            "Cykeln förkortas med 15 dagar — leverantörens kapital arbetar längre för bolaget",
+            "Ingenting — DPO påverkar inte cykeln",
+            "Likviditeten försämras"
+          ],
+          "ratt": 1,
+          "tips": "DPO står med minus i formeln."
+        },
+        {
+          "q": "Varför exkluderar kvickkvoten lagret?",
+          "alternativ": [
+            "Därför att lager inte tillhör omsättningstillgångarna",
+            "Därför att lagret är den tillgång som i en kris säljs sist och billigast — bankmänniskan vill se vad som blir kassa snabbt",
+            "Därför att lager alltid är värdelöst",
+            "Därför att IFRS förbjuder det"
+          ],
+          "ratt": 1,
+          "tips": "Vem är kvotens mottagare och vad vill den veta — och till vilket pris säljs en kriskollektion?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 15,
+      "title": "Kortfristig finansiering — kassabudget och finansieringsbeslutet",
+      "intro": "Prognosens gap måste fyllas av något, i tid. Higgins går igenom källorna: leverantörskredit, bankkredit, säljbara skuldebrev, factoring — och matchningsprincipen som avgör vad som ska finansieras kort och vad långt. Kapitlet levererar också finansens mest patokiska dolda ränta: leverantörsrabattens pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Matchningsprincipen först: finansiera permanenta tillgångar — fabriker, baslager, kärnrörelse — med långfristig finansiering, och säsongens svängningar med kort. Logiken är överlevnad, inte kostnad: en kort kredit som måste rullas varje kvartal fungerar tills den en kvartal inte rullas — och då säljs den tillgång den finansierade, i värsta fall på auktion. Kassabudgeten är verktyget: månadsvis kassa in och ut, periodvis underskott och överskott, och ur den läsningen framgår finansieringsbehovets karaktär — spik eller våg. Kursens AKM1-länk: kassabudgeten är V19:s mikroskop — förbränningstakten mätt i månader är per definition en kassabudgets fråga, och bolagets refinansieringskalender (när förfaller vad) är dess kalenderblad."
+        },
+        {
+          "type": "text",
+          "content": "Sedan källorna och deras priser. Leverantörskrediten ser gratis ut — den är det sällan. Kanonexemplet rakt ur Higgins: betalningsvillkor 2/10 net 30 betyder 2 procent rabatt om betalning sker inom tio dagar, annars fullt pris dag 30. Att avstå rabatten kostar alltså 2 procent av varans pris för tjugo dagars ytterligare kredit — 2/98 = 2,04 procent per period, och året rymmer 365/20 = 18,25 perioder: en effektiv årsränta på ungefär 37 procent. Ingen bank i Sverige lånar ut bolaget pengar till 37 procent frivilligt — bolaget gör det självt, varje dag, genom att inte klicka på rabattknappen. Räkna alltid om villkoren till årsränta; sedan jämför källorna sig själva: checkkredit (flexibel, dyr på marginalen), säljbara skuldebrev (kräver rating och storlek), factoring (säljer kundfordringarna, dyr men frigör kassa omedelbart)."
+        },
+        {
+          "type": "text",
+          "content": "Finansieringsbeslutet i praktik, med Svenssonbolagets logik: säsongstoppen i höst, dallåg våren — finansierat med en checkkredit som drar max i oktober och återbetalas i april; kombinerat med en långfristig obligationsfinansierad bas för fabriken. V10-läsningen: den korta krediten syns i balansräkningen som kortfristig skuld — under cykeltoppen ser skuldsättningen farligare ut än den är, och under botten farligare fel — V10 ska alltid bedömas cykelmedvetet. V11-läsningen: likviditetsreserven är inte kassan utan de outnyttjade krediterna plus kassan — ett bolag med tom kassa men outnyttjad checkkredit är likvidare än det ser ut. Kursens samlingsregel från Higgins: kort finansiering är verktyget för korta behov; däremot att finansiera permanent tillväxt med rullande krediter är att bygga ett hus på repetition — verksamheten står still och finansieringen rör sig, och en dag möts de."
+        },
+        {
+          "type": "insikt",
+          "content": "Omvandla alltid betalningsvillkoren till årsränta innan du avgör om leverantörskrediten är billig: formeln är (rabatt / (1 − rabatt)) × (365 / (villkorsdag − rabattdag)). 2/10 net 30 ger ca 37 procent — plötsligt är banken billig och rabattknappen dyr att ignorera."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kortfristiga källor — pris och passform\",\"rader\":[[\"Källa\",\"Pris\",\"Passform\",\"AKM1-not\"],[\"Leverantörskredit 2/10 net 30\",\"ca 37 % effektiv årsränta om rabatten avstås\",\"daglig operation\",\"dold ränta — räkna om!\"],[\"Checkkredit\",\"procentsats + förhöjningsprovision\",\"säsongsvängningar\",\"outnyttjad ram = V11-reserv\"],[\"Säljbara skuldebrev\",\"marknadsränta, kräver storlek och rating\",\"större bolag\",\"V10-kvalitet: spridning av förfall\"],[\"Factoring\",\"avgift + ränta, frigör kassa omedelbart\",\"tillväxtförsäljning\",\"säljer V11:s underlag, inte löser V19\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Betalningsvillkor 2/10 net 30 — vad är den effektiva årsräntan för att avstå rabatten?",
+          "alternativ": [
+            "cirka 2 procent",
+            "cirka 10 procent",
+            "cirka 37 procent",
+            "cirka 20 procent"
+          ],
+          "ratt": 2,
+          "tips": "2/98 per period, 365/20 perioder per år — multiplicera."
+        },
+        {
+          "q": "Vad säger matchningsprincipen?",
+          "alternativ": [
+            "Att all finansiering ska vara kort för flexibilitetens skull",
+            "Att permanenta tillgångar ska finansieras långfristigt och säsongens svängningar kort — krediter som måste rullas är en överlevnadsrisk",
+            "Att skuld och tillgångar ska ha samma ränta",
+            "Att checkkrediter är förbjudna"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer den kvartal som krediten inte rullas — och vilken tillgång finansierade den?"
+        },
+        {
+          "q": "Varför är outnyttjade checkkreditramer en del av V11-läsningen?",
+          "alternativ": [
+            "Därför att ramen räknas som likvida medel",
+            "Därför att likviditetsreserven är kassan plus outnyttjade krediter — bolaget är likvidare än balansräkningen visar",
+            "Därför att banker alltid utökar ramar i nedgångar",
+            "Därför att ramen är skattefri"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan bolaget hämta imorgon bitti utan att fråga någon?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 16,
+      "title": "Tidsvärdet på pengar — diskonteringsmaskinen",
+      "intro": "Bokens andra halva öppnar med maskineriet: en krona i dag är värd mer än en krona i morgon, därför att den kan arbeta. Nuvärde, annuitet, evighetsannuitet, tillväxtannuitet — fyra formler som tillsammans bygger allt från V04 till V06 till hela DCF-värderingen i kapitel fjorton.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundmaskinen: nuvärde = framtida belopp / (1 + r)^t, där r är diskonteringsräntan — alternativkostnaden för kapital, det bästa du annars kunde göra med pengarna vid samma risk. Spegelvänt: framtida värde = nuvärde × (1 + r)^t; 100 kronor som får stå i två år vid 10 procent blir 100 × 1,21 = 121 — ränta-på-ränta, finansens första mirakel och Vår ekonomi-kursens BNP-skalade version. Diskonteringsräntan är sedan hela kursens stridstämning: den innehåller riskfri ränta, riskpremie och inflation — och varje multipl du någonsin betalar är en förpackad uppsättning antaganden om den. Konsistensregeln som Higgins bankar in: nominella flöden diskonteras med nominell ränta, reala med real — att blanda dem är den vanligaste grodan i praktiker-DCF:er (och, lägg märke till, i självpresenterande bolagskalkyler)."
+        },
+        {
+          "type": "text",
+          "content": "De tre förpackningarna. Evighetsannuiteten: PV = C / r — en jämn betalning i all evighet; 8 mdr per år vid 8 procents krav är värt 8 / 0,08 = 100 mdr i dag. Tillväxtannuiteten (Gordons formel, som väntar i full prakt i nästa kurs): PV = C1 / (r − g), där C1 är nästa års betalning; växer flödet 3 procent per år och kravet är 9 blir 6 mdr nästa år värt 6 / 0,06 = 100 mdr — lägg märke till känsligheten: hade g varit 4 procent hade värdet varit 6 / 0,05 = 120 mdr, och vid 5 procents tillväxt är det 6 / 0,04 = 150 mdr. När g närmar sig r exploderar värdet; när de möts är det oändligt; om g passerar r är modellen meningslös — det är DCF:ens känsligaste grammatik, och anledningen till att tillväxtantaganden granskas hårdare än alla andra. Annuiteten: PV = årligt belopp × annuitetsfaktor; fyra år vid 8 procent ger faktorn 3,3127 — 500 mdr per år är alltså värt 500 × 3,3127 = 1 656 mdr, vilket slår ett engångserbjudande på 1 500. Det är hela beslutet mellan en strukturerad och en klumpsumma: packa om båda till nuvärde och jämför — det finns inga andra jämförelser i finans."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V04–V06 är diskonteringsmaskinens spegelbilder: en P/E på 20 är ett påstående att äga 20 år av vinsten, ett avkastningskrav på 5 procent (ett delat på tjugo), en tillväxtförväntan — alla tre på en gång, okänd fördelning. EV/EBITDA på 8 vid WACC 8 procent och evig nolltillväxt är exakt balans (EBITDA/WACC = värdet); multipeln över eller under är marknadens tillväxt- eller riskjustering. Därför kursens hard rule: den som poängsätter multiplar utan att kunna räkna deras diskonteringsinnehåll poängsätter prydnadsföremål. Och V19: en kassa som brinner är en negativ annuitet — dess nuvärde är bolagets tidsbudget, och tidsbudgeten är den enda budget ett brinnande bolag har. Kapitlets fyra formler är därför inte matematikens förberedelse — de är AKM1:s värderingssida och AK1TS:s fundamentala motpol: vågorna läser priset över tiden, nuvärdet läser flödena genom tiden, och konfluens möts bara om båda kan räknas."
+        },
+        {
+          "type": "insikt",
+          "content": "Allt är nuvärde: multipeln, värderingen, kassabudgeten, emissionen. När du står mellan två siffror — aktier eller pengar, klumpsumma eller flöde, köp eller leasing — packa om båda till nuvärde vid samma ränta och jämför. Finans har bara en jämförelsevaluta, och den heter nu."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diskonteringsmaskinens fyra verktyg — med räkneexempel\",\"rader\":[[\"Verktyg\",\"Formel\",\"Exempel\",\"Värde\"],[\"Nuvärde\",\"PV = C / (1+r)^t\",\"100 mdr om 2 år, r = 10 %\",\"100/1,21 = 82,6\"],[\"Evighetsannuitet\",\"PV = C / r\",\"8 mdr/år, r = 8 %\",\"100\"],[\"Tillväxtannuitet\",\"PV = C1 / (r − g)\",\"6 mdr nästa år, r 9 %, g 3 %\",\"100\"],[\"Annuitet, 4 år\",\"PV = C × faktor\",\"500 mdr/år, 8 % → 3,3127\",\"1 656\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Diskontera tre erbjudanden och välj. Ett: evighetsannuitet 8 mdr per år vid 8 procents avkastningskrav — värde? Lösning: 8 / 0,08 = 100. Två: samma flöde men växande 3 procent per år från 6 mdr nästa år, krav 9 procent — värde? Lösning: 6 / (0,09 − 0,03) = 100. Tre: fyra års betalning 500 mdr per år vid 8 procent eller klumpsumma 1 500 i dag — vilket? Lösning: 500 × 3,3127 = 1 656 > 1 500 → annuiteten. Följdfråga: vad händer med val tre om räntan stiger till 12 procent? Lösning: faktorn för fyra år vid 12 procent är 3,0373 → 500 × 3,0373 = 1 519 — marginalen nästan borta; vid 13 procent väljs klumpsumman. Sitter du med på varför en räntehöjning vinner över långa kontrakt har du förstått både detta kapitel och halva V04–V06."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "En evighetsannuitet på 8 mdr per år vid 8 procents avkastningskrav — vad är den värd i dag?",
+          "alternativ": [
+            "64 mdr",
+            "100 mdr",
+            "80 mdr",
+            "160 mdr"
+          ],
+          "ratt": 1,
+          "tips": "C / r — åtta delat på åtta procent."
+        },
+        {
+          "q": "Nästa års betalning 6 mdr, tillväxt 3 procent, krav 9 procent — nuvärdet av den växande evighetsannuiteten?",
+          "alternativ": [
+            "100 mdr",
+            "67 mdr",
+            "200 mdr",
+            "150 mdr"
+          ],
+          "ratt": 0,
+          "tips": "C1 / (r − g) = 6 / 0,06."
+        },
+        {
+          "q": "Fyra år a 500 mdr vid 8 procent (faktor 3,3127) eller 1 500 i klumpsumma i dag — vad väljer du?",
+          "alternativ": [
+            "Klumpsumman — den är säker",
+            "Annuiteten — 500 × 3,3127 = 1 656 > 1 500",
+            "Ingen skillnad",
+            "Beror på inflationen enbart"
+          ],
+          "ratt": 1,
+          "tips": "Packa om båda till nuvärde — vilken väger mer?"
+        },
+        {
+          "q": "Vad är diskonteringsräntan konceptuellt?",
+          "alternativ": [
+            "Bankens listränta",
+            "Alternativkostnaden för kapital — det bästa du annars kunde göra med pengarna vid samma risk",
+            "Inflationstakten",
+            "Aktiens utdelningsavkastning"
+          ],
+          "ratt": 1,
+          "tips": "Vad jämför du mot när pengarna inte tas emot nu?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 15,
+      "title": "Investeringskriterier — NPV, IRR och återbetalningstiden",
+      "intro": "Med maskineriet från kapitel nio applicerar Higgins investeringskriterierna: nettonuvärde, internränta, återbetalningstid, lönsamhetsindex. NPV är kungen — de övriga är tjänare med varsamma bruksanvisningar. Kapitlet är kapitalbudgetens ABC och V17–V19:s räknekärna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "NPV-regeln: summera alla framtida kassaflödens nuvärden och dra av investeringen; positivt netto skapar värde, negativt förstör det — oavsett hur projektet känns, oavsett vad koncernchefen säger, oavsett hur strategiskt det låter. Räkneexemplet: investera 1 000, få 300 per år i fem år, avkastningskrav 10 procent — annuitetsfaktorn 3,7908 ger nuvärde 300 × 3,7908 = 1 137; NPV = 1 137 − 1 000 = +137. Köp. Lönsamhetsindex (PI) är samma information i kvotform: 1 137 / 1 000 = 1,14 — fjorton procent värdeskapande per satsad krona, vilket blir det rätta kriteriet när kapitalet är ransonerat (kvartalsbudgeten tar slut innan bra projekt gör det) och projekten måste sorteras per krona."
+        },
+        {
+          "type": "text",
+          "content": "Internräntan (IRR) är den ränta som ger NPV = noll — projektets egen ränta. Exemplet: −100 i dag, +120 om ett år → IRR = 20 procent. Lockbetet är dess ton: tjugo procent säger mer för ett styrelserum än hundratrettiosju i netto. Fallgroparna, som Higgins är hänsynslös mot: skala (ett litet projekt med 30 procents IRR skapar mindre värde än ett stort med 15 — välj alltid högsta NPV vid konflikt); flera IRR:er när kassaflödet växlar tecken (gruvor med avslutningskostnader, projekt med efterföljande miljöåtaganden); återinvesteringsantagandet (IRR förutsätter att mellanflödena återinvesteras till IRR själv, sällan rationellt). Regel: IRR får lov att berätta historier — NPV fattar beslut. Återbetalningstiden till sist: hur många år tills investeringen återbetals — 1 000 / 300 = 3,3 år i exemplet — inget värde-mått alls (allt efter återbetalning ignoreras, penningvärdet av tiden ignoreras), men en usel liten likviditetsmätare: för ett bolag med ansträngd kassa (V19-flagg hissad) kan kort återbetalningstid vara överlevnadslogik, inte värdeskapande."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen. V17 avtal och partnerskap: ett partnerskap är i grunden ett investeringsbeslut — dess värde är dess NPV, och avtalsstrukturen (exklusivitet, löptid, utträde) bestämmer kassaflödenas storlek, varaktighet och risk; poängsätt avtal efter deras NPV-anatomi, inte efter pressrelease-ytan. V18 regulatoriska katalysatorer: infrastruktur- och omställningsprojekt (nät, laddning, ren teknik) är NPV-projekt där hela värdet kan ligga i politiken — riskjusterat, med scenarievikter (kapitel elva), annars är de önskedrömmar med siffror. V19: återbetalningstidens roll som överlevnadsskärm — bolag som bränner kassa har inte råd att investera i evighetsprojekt, ty ägarna existerar på kortare tid än värderingen. Och Volvo-exemplet sammanfattar allt: en lastbilsplattform är en nittonårig NPV-maskin med IRR som låter blygsamt — och den som väljer den med högsta NPV, inte högsta IRR, bygger bolaget; den som gör tvärtom bygger en samling imponerande räntor."
+        },
+        {
+          "type": "insikt",
+          "content": "IRR är en berättelse, NPV är ett beslut. När de tvistar — olika projektstorlek, olika livslängd, teckenväxlande flöden — vinner alltid NPV, ty det enda som mäter värdeskapande är kronor i nuvärde, och kronor har inget behov av att låta imponerande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra kriterier på samma projekt — 1 000 i dag, 300/år i 5 år, krav 10 %\",\"rader\":[[\"Kriterium\",\"Beräkning\",\"Resultat\",\"Dom\"],[\"NPV\",\"300 × 3,7908 − 1 000\",\"+137\",\"skapar värde — kungen\"],[\"Lönsamhetsindex\",\"1 137 / 1 000\",\"1,14\",\"rätt sortering vid kapitalransonering\"],[\"IRR\",\"räntan som ger NPV = 0\",\"ca 15 %\",\"rimligt — men lyssna på skala-fallgropen\"],[\"Återbetalningstid\",\"1 000 / 300\",\"3,3 år\",\"likviditetsskärm — inte värde\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Investera 1 000, få 300 per år i fem år, krav 10 procent (faktor 3,7908). NPV?",
+          "alternativ": [
+            "−137",
+            "+137",
+            "+300",
+            "+1 137"
+          ],
+          "ratt": 1,
+          "tips": "300 × 3,7908 = 1 137 — dra sedan av investeringen."
+        },
+        {
+          "q": "Samma projekt — återbetalningstiden?",
+          "alternativ": [
+            "5,0 år",
+            "3,3 år",
+            "2,0 år",
+            "4,2 år"
+          ],
+          "ratt": 1,
+          "tips": "1 000 / 300 — när är investeringen tillbaka, okounterat?"
+        },
+        {
+          "q": "Vad är den klassiska IRR-fallgropen vid jämförelse av två projekt?",
+          "alternativ": [
+            "Att IRR alltid överdriver risk",
+            "Skalproblemet — ett litet projekt med hög IRR kan skapa mindre värde än ett stort med lägre; vid konflikt vinner högsta NPV",
+            "Att IRR inte kan beräknas utan dator",
+            "Att IRR ignorerar skatten"
+          ],
+          "ratt": 1,
+          "tips": "Tjugoprocent av litet eller femton av stort — vad mäter värdeskapande?"
+        },
+        {
+          "q": "När är lönsamhetsindex (PI) rätt kriterium?",
+          "alternativ": [
+            "Vid kapitalransonering — när budgeten tar slut före bra projekten och de måste sorteras per satsad krona",
+            "Vid obegränsad kapitalåtkomst",
+            "När IRR inte kan beräknas",
+            "Vid finansiell trångmål enbart"
+          ],
+          "ratt": 0,
+          "tips": "PI är NPV per krona — när spelar per-krona-roll?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 15,
+      "title": "Risk i investeringsbeslut — känslighet, scenarier och simulering",
+      "intro": "En NPV är en siffra; verkligheten är en fördelning. Higgins tre verktyg — känslighetsanalys, scenarieanalys, Monte Carlo-simulering — plus beslutsträd flyttar analysen från punktskattning till osäkerhetsredovisning. För AK1A är detta kapitlet där Higgins handskakar labbet: det är bokstavligen vår motors metodlära.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Verktyg ett: känslighetsanalysen — vrider en variabel i taget (volym tio procent ner, marginal två enheter upp, ränta en procentenhet högre) och ser hur NPV svarar. Resultatet är en ranking av vilka antaganden projektet verkligen vilar på — och en förödmjukelse av den som trodde att det var volymen när det var valutan. Verktyg två: scenarieanalysen — hela paket samtidigt, sammanhängande: basfallet (det sannolika), optimistfallet (allt rätt), pessimistfallet (allt fel på ett samordnat sätt, ty i verkligheten gör misstag sällskap). Räkneexempel: bas NPV 100 med sannolikhet 50 procent, optimism 50 med 30 procent, pessimism −20 med 20 procent → förväntat värde = 0,5 × 100 + 0,3 × 50 + 0,2 × (−20) = 50 + 15 − 4 = 61. Notera lärdomen: förväntat värdet ligger inte mitt emellan bra och dåligt — sannolikhetsvikterna är halva analysen, och pessimismens vikt är där preferenserna gömmer sig."
+        },
+        {
+          "type": "text",
+          "content": "Verktyg tre: Monte Carlo-simuleringen — ge varje osäker variabel en fördelning (volymen normal, priset triangel, valutan historisk), låt slumpen dra tiotusen kombinationer och läs NPV som en hel fördelning: medel, spridning, sannolikhet för negativt värde. Poängen är inte precisionen — det är att osäkerheten blir sedd som form, inte som skam: ett projekt med medel-NPV +137 men tjugoprocentig sannolikhet för djupt negativt värde är ett annat beslut än ett med +120 och fem procents svans. Higgins tillägger beslutträden för sekventiella beslut: investera pilotsteg, lär, expandera eller överge — värdet av att vänta och se är ibland hela projektet. Kursens anmärkning: detta är rakt in i AK1A:s motor — Monte Carlo, scenarier, bayesiansk omviktning är labbets hjärta, och Higgins beskriver 1980-talets version av samma disciplin: osäkerhet kvantifieras inte för att försvinna utan för att hanteras med öppna ögon."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är tredelad. V18: regulatoriska katalysatorer ska riskjusteras — ett projekt vars NPV beror av politiskt stöd ska köras i scenarier med vikter på genomförandet, inte i ett enda hoppfullt basfall. V19: hela variabeln är en riskanalys av kapitalet — förbränningstakten i tre scenarier ger månaderna-till-emission som en fördelning, och fördelningens svans är det bolaget behöver hedga eller kapitalisera emot. V12: intäktsstabilitet är i praktiken ett scenariospridningsmått — intäkter vars scenario-spridning är smal är stabila oavsett vilken nivå de ligger på. Och i den andra riktningen: den som matar AKM1:s poäng in i en portfölj-DCF gör känslighetsanalys på sina egna poäng — vilka V-antaganden bär värderingen? Svaret är alltid tre eller färre variabler; resten är dekoration. Det är samma förödmjukelse som verktyg ett levererar, nu på analytikerns eget arbete."
+        },
+        {
+          "type": "insikt",
+          "content": "En NPV utan osäkerhetsredovisning är en åsikt med decimaler. Fråga alltid: vilka tre antaganden bär den här siffran — och vad händer om vart och ett av dem bryter? Sedan är analysen på riktigt väg hem, för den har börjat mäta det den inte vet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Osäkerhetens fyra verktyg — mekanik och AK1A-länk\",\"rader\":[[\"Verktyg\",\"Mekanik\",\"Styrka\",\"AK1A-länk\"],[\"Känslighetsanalys\",\"en variabel i taget\",\"hittar bärande antaganden\",\"vilka V-poäng bär värderingen?\"],[\"Scenarieanalys\",\"sammanhängande paket med vikter\",\"förväntat värde + spridning\",\"V12, V18 genomförandevikter\"],[\"Monte Carlo\",\"fördelningar, tiotusen dragningar\",\"hela NPV-fördelningen\",\"labbets motor — sannolikhet negativt värde\"],[\"Beslutträd\",\"sekventiella beslut, väntandets värde\",\"optionellt tänkande\",\"pilot-steg, V17-struktur\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bas NPV 100 (sannolikhet 50 %), optimism 50 (30 %), pessimism −20 (20 %). Vad är förväntat värde?",
+          "alternativ": [
+            "43",
+            "61",
+            "65",
+            "50"
+          ],
+          "ratt": 1,
+          "tips": "0,5 × 100 + 0,3 × 50 + 0,2 × (−20) = 50 + 15 − 4."
+        },
+        {
+          "q": "Vad skiljer scenarieanalys från känslighetsanalys?",
+          "alternativ": [
+            "Ingenting — samma verktyg",
+            "Känslighetsanalys vrider en variabel i taget; scenarier vrider sammanhängande paket — verklighetens misstag sällar sig",
+            "Scenarier använder bara historisk data",
+            "Känslighet kräver dator"
+          ],
+          "ratt": 1,
+          "tips": "Faller verklighetens variabler oberoende av varandra — eller tillsammans?"
+        },
+        {
+          "q": "Vad är Monte Carlo-simuleringens egentliga poäng?",
+          "alternativ": [
+            "Att eliminera osäkerheten",
+            "Att ge en exakt NPV-siffra",
+            "Att visa osäkerheten som form — en hel fördelning med medel, spridning och sannolikhet för negativt värde",
+            "Att ersätta scenarieanalys helt"
+          ],
+          "ratt": 2,
+          "tips": "Vad vinner du när tiotusen slumpdragningar får rita svaret i stället för en punkt?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 16,
+      "title": "Kapitalkostnaden — WACC och avkastningskravets bygge",
+      "intro": "Diskonteringsräntan ska inte gissas — den ska byggas. Higgins komponerar den viktade genomsnittskapitalkostnaden: eget kapitals krav, skuldens pris efter skatt, vikter från marknadsvärden. WACC är hinderbanan för varje investering och spegelbilden av varje multipl — kapitlet som stänger cirkeln V04–V10.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygget: WACC = (E / V) × rE + (D / V) × rD × (1 − t), där E och D är marknadsvärdet på eget kapital och skuld, V deras summa, rE avkastningskravet på eget kapital, rD skuldens ränta och t skattesatsen. Skulden är billigare av två skäl — långivare står före aktieägarna i kön, och räntan är avdragsgill: efter skatt kostar en ränta på 5 procent vid 25 procents skatt bara 5 × 0,75 = 3,75 procent, medan utdelningen beskattas i bolaget utan sköld. Räkneexempel som kursen bär med sig: sextio procent eget kapital med 10 procents krav, fyrtio procent skuld till 5 procent vid 25 procents skatt → WACC = 0,60 × 10 + 0,40 × 5 × 0,75 = 6,0 + 1,5 = 7,5 procent. Det är siffran varje investering i bolaget måste slå — och notera mekaniken: mer skuld sänker WACC (skölden växer) tills riskpremien på det egna kapitalet svarar — kapitel tretton och nästa kurs tar den dynamiken på allvar."
+        },
+        {
+          "type": "text",
+          "content": "Fallgroparna, som Higgins rabblar och kursen Svenskar: vikter från bokförda värden i stället för marknadsvärdet (balansräkningens E och D är historiska priser — att värdera framtiden med gårdagens kostnadsmått är att blanda skalor); kupongräntan som ränta i stället för dagens marknadskrav på ny skuld (gamla lån speglar gamla räntor); ett enda bolagsövergripande WACC för divisioner med olika risk (Volvo-lastbilar och Volvofinans har inte samma risk — att använda koncernens snitt gör säkra divisioner hemlösa och farliga billiga: de farliga projekten klarar hindret som de aldrig borde klarat); och den omvända synden — att lägga på säkerhetsmarginaler lager på lager tills avkastningskravet är en vägg i stället för ett mått. Om hänsyn till osäkerhet behövs gör den det i scenarierna (kapitel elva), inte i räntan: en uppblåst diskonteringsränta straffar långa projekt i förhand och kallar det försiktighet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är dubbel. Framåt: WACC är hinderbanan — bolag som återinvesterar under WACC förstör värde även när de växer (SGR-kapitlets varning, nu med siffra på gränsen: tillväxt + ROE mot WACC, aldrig tillväxt ensam). Bakåt: multiplarna är WACC spegelvänt — EV/EBITDA på 8 vid WACC 8 procent och nolltillväxt är balans, på 12 är den marknadens uttalande om tillväxt eller låg risk, på 5 om det omvända; P/E på 20 är ett avkastningskrav på 5 procent fördelat över tjugo år. V04–V06 poängsätts därför bäst av den som kan räkna deras WACC-innehåll: multiplen är inte rätt eller fel — den är en förpackning av antaganden som ska packas upp och granskas. V10-länken till sist: WACC-formeln är skuldsättningsgradens prislista — belåningens kortfristiga lock är ränteskillnaden multiplicerad med skölden, och dess långsiktiga kostnad bor i rE som stiger med kön och cykeln."
+        },
+        {
+          "type": "insikt",
+          "content": "WACC är finansens vattenmått: alla projekt simmas i samma bassäng men olika divisioner har olika djup. Bygg den en gång per risknivå, håll den konsekvent mellan projekt — och kom ihåg att varje multipl du poängsätter är någon annans WACC i förklädnad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"WACC-steg med räkneexempel\",\"rader\":[[\"Rad\",\"Beräkning\",\"Resultat\"],[\"E / V (marknadsvärden)\",\"—\",\"0,60\"],[\"D / V (marknadsvärden)\",\"—\",\"0,40\"],[\"rE — avkastningskrav eget kapital\",\"CAPM-estimat (nästa kurs)\",\"10,0 %\"],[\"rD — ny skulds ränta\",\"—\",\"5,0 %\"],[\"Efter skatt: rD × (1 − 0,25)\",\"5,0 × 0,75\",\"3,75 %\"],[\"WACC = 0,60 × 10 + 0,40 × 3,75\",\"6,0 + 1,5\",\"7,5 %\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg WACC och låt den döma ett projekt. Ett: E/V 0,60, rE 10 procent, D/V 0,40, rD 5 procent, skatt 25 procent — WACC? Lösning: 0,60 × 10 = 6,0; 0,40 × 5 × 0,75 = 1,5; WACC = 7,5 procent. Två: projektet kostar 1 000 i dag och ger 100 per år i evighet — värt det? Lösning: PV = 100 / 0,075 = 1 333; NPV = 1 333 − 1 000 = +333 — ja, med god marginal. Tre: koncernen sänker D/V till 0,20 och rE faller därför till 9 procent — ny WACC och ny NPV? Lösning: 0,80 × 9 + 0,20 × 5 × 0,75 = 7,2 + 0,75 = 7,95 procent; PV = 100 / 0,0795 = 1 258; NPV = +258 — mindre sköld, dyrt eget, lägre värde: belåningens båda sidor syns i en enda omräkning. Fyra: vad ska du svara ledning som föreslår att man lägger på fem procents säkerhetsmarginal på räntan? Lösning: nej — osäkerheten hör hemma i scenarier och vikter (kapitel elva); en uppblåst ränta straffar långa projekt i förhand och kallas felaktigt försiktighet."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "E/V 0,60 med rE 10 procent, D/V 0,40 med rD 5 procent, skatt 25 procent. WACC?",
+          "alternativ": [
+            "7,5 procent",
+            "8,0 procent",
+            "6,0 procent",
+            "9,5 procent"
+          ],
+          "ratt": 0,
+          "tips": "0,60 × 10 + 0,40 × 5 × 0,75 = 6,0 + 1,5."
+        },
+        {
+          "q": "Vad är den efter-skat-kostnaden för skuld på 5 procent vid 25 procents skattesats?",
+          "alternativ": [
+            "5,0 procent",
+            "4,5 procent",
+            "3,75 procent",
+            "6,25 procent"
+          ],
+          "ratt": 2,
+          "tips": "Ränteavdraget — vad återstår av räntan efter att skatten subtraherat sin andel?"
+        },
+        {
+          "q": "Varför ska WACC-vikterna tas från marknadsvärden?",
+          "alternativ": [
+            "Därför att bokförda värden är historiska kostnadsmått — att värdera framtida flöden med gårdagens priser blandar skalor",
+            "Därför att marknadsvärden alltid är lägre",
+            "Därför att IFRS kräver det",
+            "Därför att bokförda värden inte finns för skuld"
+          ],
+          "ratt": 0,
+          "tips": "Vilka vikter speglar vad kapital kostar i dag?"
+        },
+        {
+          "q": "Vad är sambandet mellan WACC och multiplarna enligt kursen?",
+          "alternativ": [
+            "Inget — multiplar är ren teknisk analys",
+            "EV/EBITDA 8 vid WACC 8 procent och nolltillväxt är balans — multipeln är WACC och tillväxt spegelvänt förpackade",
+            "Högre WACC ger alltid högre multipl",
+            "Multiplar gäller bara banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad är ett slags omvänd ränta på evighetsflödet?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 15,
+      "title": "Finansieringsinstrument och marknader — aktier, skuld och hybrider",
+      "intro": "Kapital samlas inte i abstraktum utan i instrument: aktier, preferensaktier, obligationer, konvertibler — och på marknader från riskkapital till börs. Higgins går igenom byggstenarna och var de kostar vad. Kursen läser kapitlet som V19 och V20:s källmaterial.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Instrumentets biologiska systematik: vems anspråk, hur säkert, hur rörligt. Vanliga aktier: sista kön, hela upside, hela risken — priset sätts av kassaflödets förväntningar, inte av anspråkets storlek. Preferensaktier: fix utdelning före de vanliga aktierna, efter skulden — en hybrid: obligationens fasta anspråk och aktiens kapitalnivå. Räkneexempel: en preferensaktie med 5 kronors fast utdelning köps med 8 procents avkastningskrav → pris = 5 / 0,08 = 62,50 kronor — priset på ett jämnt anspråk är en ren evighetsannuitet (kapitel nio tjänstgör igen). Obligationer: ränta, förfall, säkerhet i fallande grad — säkerställda mot pant, företagsobligationer mot namnet. Konvertibler: obligation med rätt att bytas till aktier — lånet som tar betalt av framtida hopp, hybriden som köper optionens asymmetri (nästa kurs kapitel tio och elva)."
+        },
+        {
+          "type": "text",
+          "content": "Marknaderna är instrumentens kretslopp: riskkapital och ägarledda placeringar i början (första finansieringen är den dyraste — ägarna tar mest risk och kräver mest avkastning), börsintroduktion när mognaden kräver bredare kapital, därefter riktade nyemissioner och företrädesemissioner för tillväxt, obligationer när storlek och rating räcker, återköp och förvärv när kassan växer ur händerna. Det svenska exempelraden: från Chalmers-forskning via riskkapitalrundor till börs — varje steg ett instrument, varje instrument ett pris. Kursens AKM1-länk är V19 och V20 rakt av: V19 mäter kapitalmarknadens nästa dörr — bolag vars förbränning kräver ny emission när fönstret är stängt betalar med utspädning (Minsky-kursens läsning, Higgins verktyg); V20 mäter den omvända rörelsen — återköp är instrumentet som skickar kapital tillbaka, och dess kvalitet avgörs av pris (V04–V06), finansiering (V10) och cykelposition. V18 noterar slutligen att marknaderna själva är reglerade: emissionsregler, prospektkrav, aktieägarlag — kapitalmarknadens dörrar har grindvakten politik."
+        },
+        {
+          "type": "text",
+          "content": "Instrumentens prisordning är kapitlets sammanfattande tanke: kapitalet kostar i omvänd ordning mot dess säkerhet — skuld billigast (kö-plats och sköld), preferens därefter, eget kapital dyrast (sista i kön, ingen tak på kravet). Men — och det är här nästa kurs tar vid — den synliga prisordningen är inte hela historien: att byta ut dyrt eget kapital mot billig skuld förändrar riskfördelningen, och resten av systemet prissätter om. Higgins ställer på hyllan vad Brealey-Myers lossar med båda händerna: MM-teoremen, kapitalstrukturens optimum, sköldens gränser. Här nöjer vi oss med dess praktiska konsekvens, formulerad som kursens tumregel: instrumentvalet är inte en kostnadsjakt — det är en balansgång mellan pris, risk och flexibilitet, där flexibiliteten (outnyttjade krediter, obrända lånelöften) är den post som först försvinner när balansräkningen är som vackrast."
+        },
+        {
+          "type": "insikt",
+          "content": "Läs varje finansieringsrörelse som en signal i Higgins system: emission säger förbränning eller tillväxt, obligation säger mognad, konvertibel säger osäkerhet om priset på framtiden, återköp säger överskott — och förmågan att läsa styrelsens instrumentval är den tysta hälften av V19 och V20."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Instrumentstege — anspråk, exempel, AKM1-länk\",\"rader\":[[\"Instrument\",\"Anspråk och exempel\",\"Prislogik\",\"AKM1-länk\"],[\"Vanlig aktie\",\"sista kön, hela upsiden\",\"dyrast — osäkrast\",\"V19 utspädning, V20 återköp\"],[\"Preferensaktie\",\"fast utdelning 5 kr, krav 8 % → 62,50 kr\",\"hybrid\",\"stresstest av V10-kvalitet\"],[\"Obligation\",\"kupong, förfall, säkerhet\",\"billigast — kön och sköld\",\"V10, V11 via förfallostruktur\"],[\"Konvertibel\",\"lån med byte-rätt\",\"optionens asymmetri\",\"V19-emission med broms\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "En preferensaktie med fast utdelning 5 kronor och 8 procents avkastningskrav — vad är den värd?",
+          "alternativ": [
+            "40 kronor",
+            "50 kronor",
+            "62,50 kronor",
+            "80 kronor"
+          ],
+          "ratt": 2,
+          "tips": "Evighetsannuitet: 5 / 0,08."
+        },
+        {
+          "q": "Varför är första riskkapitalrundan den dyraste finansieringen?",
+          "alternativ": [
+            "Därför att riskkapitalister alltid kräver majoritet",
+            "Därför att grundarnas arbete är gratis",
+            "Därför att ägarna då tar störst risk och kräver högst avkastning — kapitalets pris följer dess säkerhet",
+            "Därför att banken inte får låna ut till nystartade"
+          ],
+          "ratt": 2,
+          "tips": "Vem står först i kön — och vad kostar att stå sist utan säkerhet?"
+        },
+        {
+          "q": "Vilka två AKM1-variabler läser kursen ur instrumentvalet?",
+          "alternativ": [
+            "V13 och V14",
+            "V19 och V20 — emission/utspädning och återköp/kapitalåterföring",
+            "V04 och V05",
+            "V16 och V17"
+          ],
+          "ratt": 1,
+          "tips": "Vilka variabler mäter kapitalets rörelse in i och ut ur bolaget?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 15,
+      "title": "Bolagsvärdering och syntes — från Higgins handbok till AKM1",
+      "intro": "Bokens slutövning och kursens: hela bolaget som ett kassaflöde med ett pris. Fri kassaflödesmodell, slutvärde, jämförelse med marknaden — och därefter syntesen, där hela Higgins mappas mot AKM1:s tjugo variabler: handboken som blivit modell.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Värderingen i fem steg. Ett: prognostisera det fria kassaflödet fem till tio år (kapitel fem:s pro forma — samma verktyg, nu i värderingens tjänst). Två: uppskatta WACC (kapitel tolv). Tre: sätt slutvärdet — allt efter prognoshorisonten samlas i en tillväxtannuitet: slutvärde = FCF nästa år / (WACC − g), där g är den eviga tillväxten, rimligt satt kring inflation eller under den — ty inget bolag växer över ekonomin för alltid. Räkneexempel: FCF 80 mdr nästa år, WACC 8 procent, g 3 procent → slutvärde = 80 / 0,05 = 1 600 mdr. Fyra: diskontera allt till i dag och summera — företagsvärdet. Fem: dra ifrån nettoskulden → det egna kapitalets värde; i exemplet: 1 600 − 300 = 1 300 mdr. Sedan jämförelsen: vad säger börsen (V04–V06), och om skillnaden är stor — vilka antaganden måste vara sanna för att marknaden ska ha rätt? Det är hela värderingens hantverk, och det består bara av kapitlen tre, fem, nio och tolv i en kedja."
+        },
+        {
+          "type": "text",
+          "content": "Känsligheten är värderingens andra sida: slutvärdet bär nästan alltid merparten av värdet (i exemplet är det allt, ty modellen är ren evighet — i en tioårsmodell bär det ofta 60–80 procent), och dess två variabler, WACC och g, är de känsligaste i hela bygget: en halv procents förändring i vardera flyttar värdet dubbelsiffrigt. Därför hör sensitivityanalysen (kapitel elva) till värderingen som besiktningen till husköp — och därför är värderingar angivelser av intervall och förutsättningar, inte prismäningar. Kursens korscheckar mot multiplarna är därför obligatoriska: vad implicerar mitt DCF-värde i EV/EBITDA och P/E — och ligger det i sektorns spektrum? En DCF som landar på hälften av sektorns multipl pekar på en antagandesskillnad som ska kunna formuleras i en mening — annars är den ett tekniskt fel klätt i aritmetik."
+        },
+        {
+          "type": "text",
+          "content": "Och syntesen — hela Higgins som AKM1-mappning. Diagnostikblocken: resultaträkningens trappa (V07–V09), balansräkningens struktur (V10–V11), stabilitet över tid (V12). Prognos- och tillväxtblocken: försäljningsprognos (V01), återkommande intäkter (V02), pro formas finansieringsgap (V19), hållbar tillväxttakt och dess fyra spakar (V01 mot V08, V10, V20). Besluts- och värderingsblocken: diskonteringsmaskinen och WACC (V04–V06:s innehåll), riskanalysen (V12, V18:s vikter), instrumenten (V19–V20), värderingen (V05:s korscheck). Moat- och katalysatorblocken (V13–V18) står Higgins närmast via ROE-uthålligheten: ett ROE över branschens år efter år är antingen barriär eller belåning — DuPont är hans moat-test. AK1A:s tillägg är sedan tiden och priset: Higgins skänker rummet (bokslutets mekanik), vågfundamentet och AK1TS skänker tidsserierna, och konfluens möts först när båda läsningarna finns. Bokens sista mening, kursen citerar: finansförvaltning är hantverk — diagnos, prognos, beslut — och hantverk känns igen på att det kan göras om, av någon annan, med samma underlag och samma svar. Det är också den standard AKM1 sätter för sig själv: en modell är hantverk först när den är reproducerbar."
+        },
+        {
+          "type": "insikt",
+          "content": "Värderingens fråga är aldrig vad bolaget är värt — den är vilka antaganden som måste vara sanna för att dagens pris ska vara rätt. Formulera svaret i en mening per kärnvariabel (tillväxt, marginal, WACC, g) — och du har en mening per sätt verkligheten kan döma dig. Det är margin of safety, svenska som andraspråk."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Higgins som AKM1-mappning — hela handboken i en tabell\",\"rader\":[[\"Higgins\",\"Innehåll\",\"AKM1\"],[\"Resultaträkningens trappa\",\"brutto → EBIT → netto\",\"V07, V08, V09\"],[\"Balansräkningens struktur\",\"skuld, likviditet, kapitalbindning\",\"V10, V11\"],[\"Femårig läsning\",\"stabilitet, kvalitet\",\"V12\"],[\"Pro forma + finansieringsgap\",\"emissionsbehov i kronor\",\"V19, V01\"],[\"Hållbar tillväxttakt PRAT\",\"tillväxtens fyra spakar\",\"V01 mot V08, V10, V20\"],[\"DuPont-dekomponering\",\"ROE-uthållighet = barriär eller belåning\",\"V13–V15 möter V10\"],[\"WACC + diskontering\",\"multiplarnas innehåll\",\"V04–V06\"],[\"Riskanalys\",\"scenarier och vikter\",\"V12, V18\"],[\"Instrument och marknader\",\"kapitalets rörelser\",\"V19, V20, V18\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "FCF nästa år 80 mdr, WACC 8 procent, evig tillväxt 3 procent — vad är slutvärdet?",
+          "alternativ": [
+            "1 000 mdr",
+            "1 600 mdr",
+            "2 667 mdr",
+            "640 mdr"
+          ],
+          "ratt": 1,
+          "tips": "80 / (0,08 − 0,03) = 80 / 0,05."
+        },
+        {
+          "q": "Företagsvärde 1 600 mdr och nettoskuld 300 mdr — vad är det egna kapitalet värt?",
+          "alternativ": [
+            "1 900 mdr",
+            "1 300 mdr",
+            "1 600 mdr",
+            "1 450 mdr"
+          ],
+          "ratt": 1,
+          "tips": "Drag ifrån skulden — ägarna får resten."
+        },
+        {
+          "q": "Varför är korschecken mot multiplar obligatorisk i en DCF?",
+          "alternativ": [
+            "Därför att multiplar alltid är rätt",
+            "Därför att DCF är förbjuden i Sverige",
+            "Därför att en DCF som landar långt från sektorns multipl pekar på en antagandesskillnad — som ska kunna formuleras i en mening, annars är det ett fel",
+            "Därför att multiplar ignorerar tillväxt"
+          ],
+          "ratt": 2,
+          "tips": "Vad visar avståndet mellan din aritmetik och marknadens?"
+        },
+        {
+          "q": "Vad är kursens slutformulering av Higgins bidrag till AK1A?",
+          "alternativ": [
+            "Att Higgins ersätter teknisk analys",
+            "Att Higgins skänker rummet — bokslutets mekanik och värderingens aritmetik — medan AK1TS skänker tidsserierna och konfluens möts när båda läsningarna finns",
+            "Att Higgins bevisar att multiplar är värdelösa",
+            "Att AKM1 är Higgins uppfunnen"
+          ],
+          "ratt": 1,
+          "tips": "Vad äger handboken — och vad måste läggas till för att rummet ska få tid?"
+        }
+      ]
+    }
+  ]
+}

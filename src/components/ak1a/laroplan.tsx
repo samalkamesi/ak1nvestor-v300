@@ -5,6 +5,7 @@ import { SIFFROR } from "@/lib/siffror";
 import Link from "next/link";
 import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
+import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 
 /**
  * Läroplanen — resan från nybörjare till oberoende aktieanalytiker.
@@ -216,6 +217,18 @@ export function Laroplan() {
           Fas 3 →
         </Link>
       </p>
+
+      {/* DINA NÄSTA KURSER — kurstips-motorn (lib/kurstips.ts) ovanför
+          nivåblocken: samma rankning som på /kurser (läroplansspåret V01–V20,
+          kategoribalans, BOKMASTER, tidssuggestioner) återanvänds här så
+          läroplanen öppnar med elevens egna nästa steg. Endast för inloggade —
+          gäster ser den klassiska nivåstrukturen oreducerad. Komponenten är
+          hydration-säker och tyst om den inte hittar tips. */}
+      {medlem && (
+        <div className="mt-8">
+          <KurstipsKort antal={3} rubrik="Dina nästa kurser i läroplanen" />
+        </div>
+      )}
 
       {/* Nivåer — accordions i enhetlig kortstandard */}
       <div className="mt-10 space-y-8">

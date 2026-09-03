@@ -3,6 +3,7 @@ import { promises as fsp } from "fs";
 import path from "path";
 import { körAnalysMotor, type TickerAnalys } from "@/lib/analys-motor";
 import { publiceraSignal } from "@/lib/signal-bus";
+import { publiceraOrganEvent } from "@/lib/organ-event";
 import {
   beslutaIntervall,
   jamforDåNu,
@@ -49,6 +50,8 @@ export const maxDuration = 60;
  *  5. Filen skrivs tillbaka med nya snapshots + historikrad. Skrivningen kan
  *     misslyckas på read-only filsystem ( Vercel ) — då publiceras notiserna
  *     ändå och felet redovisas ärligt i svaret ( se begränsning i rapporten ).
+ *  6. publiceraOrganEvent ( organ/portfolj, verb rapport ) — den månadsvisa
+ *     kroppspulsen ( /api/kropp ), grova tal utan tickers/namn ( P8 ).
  *
  * SKYDD: samma CRON_SECRET-mönster som /api/nyheter/scan ( ?secret= eller
  * Authorization: Bearer; utan satt secret är rutten öppen i dev ).
@@ -458,6 +461,21 @@ async function koraUppfoljning(): Promise<NextResponse> {
       });
     }
   }
+
+  // 5) OrganEvent — den månadsvisa pulsen (AUTONOMI-ARKITEKTUR: varje autonom
+  //    kanal andas ut ett organ-event, även en rond utan förfallna portföljer
+  //    är en LEVANDE signal). Grova tal only (P8): inga tickers/namn läcker.
+  await publiceraOrganEvent({
+    source: "organ/portfolj",
+    verb: "rapport",
+    matt: {
+      aktiva,
+      bearbetade: bearbetade.length,
+      notiser: bearbetade.reduce((s, r) => s + (r.notiser ?? 0), 0),
+      hoppade: hoppade.length,
+      fel: fel.length,
+    },
+  });
 
   return NextResponse.json({ ok: true, datum: idag, aktiva, bearbetade, hoppade, fel });
 }

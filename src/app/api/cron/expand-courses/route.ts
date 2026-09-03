@@ -1,21 +1,40 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
+import { publiceraOrganEvent } from "@/lib/organ-event";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 /**
- * GET /api/cron/expand-courses
+ * GET /api/cron/expand-courses — Tillväxt-ronden (daglig 12:00 UTC, se
+ * vercel.json — Hobby-regeln: max EN körning/dag; tidigare "var 12:e timme"
+ * i gamla planer gäller INTE).
  *
- * Autonom kurs-expansion — hittar grundaste kursen och expanderar den.
- * Körs av Vercel Cron var 12:e timme.
+ * Autonom kurs-expansion — hittar grundaste kapitlet och expanderar det med
+ * deterministiska mallar (INGEN AI — template-generering, funkar på Vercel).
  *
- * Strategy: expandera 1 kurs per körning (undviker timeout)
+ * AUTONOMI-ARKITEKTUR (data/forskning/AUTONOMI-ARKITEKTUR.md): varje autonom
+ * kanal andas ut ett OrganEvent (organ/kurser) så kroppsvyn ser pulsen — även
+ * "alla kurser djupa" och "kunde ej spara (read-only fs)" är pulser, det
+ * senare med status-redovisning i matt (grovt, P8).
+ *
+ * Skydd: CRON_SECRET (om satt) via ?secret= eller Authorization: Bearer —
+ * samma mönster som övriga cron-rutter; utan satt secret är rutten öppen (dev).
  */
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // samma skydd som cron/vagscan + cron/datacache
+  const secret = process.env.CRON_SECRET;
+  if (secret) {
+    const qs = req.nextUrl.searchParams.get("secret");
+    const auth = req.headers.get("authorization");
+    if (qs !== secret && auth !== `Bearer ${secret}`) {
+      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    }
+  }
+
   try {
     const filePath = path.join(process.cwd(), "public/deep-courses.json");
     const raw = readFileSync(filePath, "utf-8");
@@ -41,6 +60,11 @@ export async function GET() {
     }
 
     if (!targetSlug) {
+      await publiceraOrganEvent({
+        source: "organ/kurser",
+        verb: "rapport",
+        matt: { status: "KLARA", kapitelKvarstaende: 0 },
+      });
       return NextResponse.json({
         success: true,
         message: "All courses are already expanded!",
@@ -70,6 +94,18 @@ export async function GET() {
         }
       }
 
+      // Tillväxt-puls — grova tal (P8: inga slug-namn ut i kroppsvyn)
+      await publiceraOrganEvent({
+        source: "organ/kurser",
+        verb: "atgard",
+        matt: {
+          status: "EXPANDERAT",
+          kapitelKvarstaende: remaining,
+          teckenFore: currentContent.length,
+          teckenEfter: expandedContent.length,
+        },
+      });
+
       return NextResponse.json({
         success: true,
         expanded: targetSlug,
@@ -80,13 +116,26 @@ export async function GET() {
       });
     }
 
+    await publiceraOrganEvent({
+      source: "organ/kurser",
+      verb: "rapport",
+      matt: { status: "INGEN_VINST", kapitelKvarstaende: -1 },
+    });
+
     return NextResponse.json({
       success: false,
       message: "Expansion produced shorter content",
       slug: targetSlug,
     });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    // read-only fs (Vercel) → sparningen fallerar; pulsen redovisar det grovt
+    await publiceraOrganEvent({
+      source: "organ/kurser",
+      verb: "rapport",
+      matt: { status: "FEL", notering: "expansionen kunde inte slås fast — se serverloggen" },
+    });
+    console.error("[cron/expand-courses] misslyckades:", e instanceof Error ? e.message : String(e));
+    return NextResponse.json({ error: "expand-courses misslyckades" }, { status: 500 });
   }
 }
 

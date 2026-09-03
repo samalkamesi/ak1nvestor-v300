@@ -13,9 +13,12 @@ export const dynamic = "force-dynamic";
  * arkitektur.md §3.3: "loggen ÄR pulsen — inga nya endpoints per organ"):
  *
  * (a) Levande organ: senaste system_events-raden per organ-typ — styrelse-beslut
- *     (organ_msg, företrädesvis typ beslut/delegation), vagscan, autonom-rapport
- *     och xp_sync — läst via getSupabaseRest i ÉN fråga (order desc, limit 120),
- *     grupperat på typ med senaste raden + timestamp per typ.
+ *     (organ_msg, företrädesvis typ beslut/delegation), vagscan, autonom-rapport,
+ *     xp_sync samt OrganEvent-v1-källorna (organ/datacache, organ/kvalitetsvakt,
+ *     organ/nyheter, organ/email, organ/portfolj, organ/seo, organ/kurser —
+ *     register: ORGAN_KALLA_TILL_TYP) — läst via getSupabaseRest i ÉN fråga
+ *     (order desc, limit 500 = retentionstakets hela fönster, så även månads-
+ *     organet ryms), grupperat på typ med senaste raden + timestamp per typ.
  * (b) Statiska organ-statusar: motorerna ("live") med senaste valideringsstatus
  *     ur data/rapporter/motorervalidering-*.md (readFileSync — de sista radernas
  *     Totalt-rad: PASS/FAIL/SKIP).
@@ -46,12 +49,38 @@ type EventRad = {
   created_at?: string | null;
 };
 
-/** Puls-fönster per organ (2× kadens): cron-organen går 1×/dag, xp_sync vid besök. */
+/**
+ * Puls-fönster per organ (2× kadens): dagliga cron-organen = 48 h, mejl/seo/
+ * kurser/datacache/nyheter dagligen = 48 h, portföljronen månadsvis ≈ 62 dagar,
+ * styrelsen ronderas dagligen men får marginal, xp_sync vid besök (7 d).
+ */
 const KADENS_TIM: Record<string, number> = {
   styrelse: 48,
   vagscan: 48,
   autonom: 48,
   xp_sync: 168,
+  matsmaltningen: 48,
+  oronen: 48,
+  andningen: 48,
+  huden: 48,
+  tillvaxten: 48,
+  ryggraden: 1488,
+};
+
+/**
+ * OrganEvent-källor (source "organ/<id>") → kroppsyta. AUTONOMI-ARKITEKTUR:
+ * varje autonom kanal andas ut sin puls via publiceraOrganEvent — den här
+ * tabellen är kroppsvyns register över vilka källor som FINNS. Nya organ-
+ * källor läggs här (annars är de osynliga för pulsen).
+ */
+const ORGAN_KALLA_TILL_TYP: Record<string, string> = {
+  "organ/datacache": "matsmaltningen",
+  "organ/kvalitetsvakt": "immunforsvaret",
+  "organ/nyheter": "oronen",
+  "organ/email": "andningen",
+  "organ/portfolj": "ryggraden",
+  "organ/seo": "huden",
+  "organ/kurser": "tillvaxten",
 };
 
 const ORGAN_EVENT_TYPER = "organ_msg,vagscan,autonom_report,xp_sync,organ";
@@ -63,11 +92,13 @@ function typNyckel(rad: EventRad): string | null {
   if (rad.type === "xp_sync") return "xp_sync";
   if (rad.type === "organ_msg") return "styrelse";
   if (rad.type === "organ") {
-    // OrganEvent v1: beslut/delegation → styrelsen; motor/vagscan → vågkartan.
+    // OrganEvent v1: beslut/delegation → styrelsen (rondens slut); annars
+    // mappas källan via ORGAN_KALLA_TILL_TYP, motor/vagscan → vågkartan.
     const detaljer = rad.details ?? {};
     const verb = String(detaljer.verb ?? "");
     const kalla = String(detaljer.source ?? rad.source ?? "");
     if (verb === "beslut" || verb === "delegation") return "styrelse";
+    if (ORGAN_KALLA_TILL_TYP[kalla]) return ORGAN_KALLA_TILL_TYP[kalla];
     if (kalla.startsWith("motor/vagscan")) return "vagscan";
   }
   return null;
@@ -133,9 +164,37 @@ function sammanfattaStyrelse(rad: EventRad | undefined): string {
   const typ = String(rad.details?.typ ?? "");
   if (typ === "delegation") return "Senaste rond klar: beslut fattade och nästa åtgärd delegerad.";
   if (typ === "beslut") return "Senaste rond klar: beslut loggade.";
-  if (typ === "fragor") return "Rond pågår: rapportering initierad.";
+  if (typ === "fragar") return "Rond pågår: rapportering initierad.";
   if (typ === "rapport") return "Rond pågår: organrapporter mottagna.";
   return "Styrelsens ronder loggas i system_events.";
+}
+
+/** Immunförsvarets grova sammanfattning — kvalitetsstatus RÖD/GUL/GRÖN eller hälsorapport. */
+function sammanfattaImmun(rad: EventRad | undefined): string {
+  if (!rad) return "Hälsoronden körs enligt cron-schema.";
+  const matt = (rad.details as { matt?: Record<string, unknown> } | null)?.matt;
+  const status = String(matt?.status ?? "");
+  if (status === "RÖD" || status === "GUL" || status === "GRÖN") {
+    return `Kvalitetsvakten senast: ${status} (${mattTal(rad, "fel") ?? "?"} fel).`;
+  }
+  if (rad.type === "autonom_report") {
+    return rad.message?.trim() || "Organrapporten mottagen.";
+  }
+  return "Hälsoronden andas — senaste signal mottagen.";
+}
+
+/** Senaste av två rader (null-säkert) — immunförsvaret andas via två kanaler. */
+function senasteAv(a: EventRad | undefined, b: EventRad | undefined): EventRad | undefined {
+  if (!a) return b;
+  if (!b) return a;
+  return String(b.created_at ?? "") > String(a.created_at ?? "") ? b : a;
+}
+
+/** OrganEvent-matt som tal — undefined när fältet saknas/ogiltigt (P8: grovt). */
+function mattTal(rad: EventRad | undefined, nyckel: string): number | undefined {
+  const matt = (rad?.details as { matt?: Record<string, unknown> } | null)?.matt;
+  const v = matt?.[nyckel];
+  return typeof v === "number" && Number.isFinite(v) ? v : undefined;
 }
 
 export async function GET() {
@@ -148,7 +207,7 @@ export async function GET() {
     try {
       const res = await fetch(
         `${rest.origin}/rest/v1/system_events?type=in.(${ORGAN_EVENT_TYPER})` +
-          `&select=type,severity,message,source,details,created_at&order=created_at.desc&limit=120`,
+          `&select=type,severity,message,source,details,created_at&order=created_at.desc&limit=500`,
         { headers: rest.headers, cache: "no-store", signal: AbortSignal.timeout(8000) }
       );
       if (res.ok) {
@@ -168,6 +227,23 @@ export async function GET() {
   const vagscanRad = senaste.get("vagscan");
   const autonomRad = senaste.get("autonom");
   const xpRad = senaste.get("xp_sync");
+  const datacacheRad = senaste.get("matsmaltningen");
+  const nyheterRad = senaste.get("oronen");
+  const emailRad = senaste.get("andningen");
+  const portfoljRad = senaste.get("ryggraden");
+  const seoRad = senaste.get("huden");
+  const kurserRad = senaste.get("tillvaxten");
+  // Immunförsvaret andas via två kanaler: autonom hälsorapport + kvalitetsvakten.
+  const immunRad = senasteAv(autonomRad, senaste.get("immunforsvaret"));
+
+  // Sammanfattningar för de nya ytorna — ALWAYS grova tal ur matt (P8).
+  const dataSparade = mattTal(datacacheRad, "sparadeRader");
+  const nyhetAntal = mattTal(nyheterRad, "antal");
+  const nyhetHoga = mattTal(nyheterRad, "hogPaverkan");
+  const emailSkickade = mattTal(emailRad, "skickade");
+  const portfoljBearbetade = mattTal(portfoljRad, "bearbetade");
+  const seoUrl = mattTal(seoRad, "crawlbaraUrl");
+  const kurserKvar = mattTal(kurserRad, "kapitelKvarstaende");
 
   const organ: KroppsOrgan[] = [
     {
@@ -200,9 +276,9 @@ export async function GET() {
       id: "immunforsvaret",
       namn: "Immunförsvaret",
       ikon: "🛡️",
-      status: pulsStatus("autonom", autonomRad?.created_at ?? null),
-      senast: autonomRad?.created_at ?? null,
-      sammanfattning: autonomRad?.message?.trim() || "Organrapporten körs enligt cron-schema.",
+      status: pulsStatus("autonom", immunRad?.created_at ?? null),
+      senast: immunRad?.created_at ?? null,
+      sammanfattning: sammanfattaImmun(immunRad),
     },
     {
       id: "minnet",
@@ -214,6 +290,74 @@ export async function GET() {
       sammanfattning: xpRad
         ? "Elevkärnan aktiv — senaste XP-synk till topplistan mottagen."
         : "Ingen XP-synk loggad ännu — synkar sker när elever besöker topplistan.",
+    },
+    {
+      id: "matsmaltningen",
+      namn: "Matsmältningen",
+      ikon: "🍽️",
+      status: pulsStatus("matsmaltningen", datacacheRad?.created_at ?? null),
+      senast: datacacheRad?.created_at ?? null,
+      sammanfattning:
+        dataSparade !== undefined
+          ? `Datacentralen fyllde cachen — ${dataSparade} mätningar sparade senaste ronden.`
+          : "Datacentralen förfyller cachen dagligen (06:00 UTC).",
+    },
+    {
+      id: "oronen",
+      namn: "Öronen",
+      ikon: "👂",
+      status: pulsStatus("oronen", nyheterRad?.created_at ?? null),
+      senast: nyheterRad?.created_at ?? null,
+      sammanfattning:
+        nyhetAntal !== undefined
+          ? `Nyhetscentralen möter morgonen — ${nyhetAntal} nyheter${nyhetHoga !== undefined ? `, ${nyhetHoga} med hög påverkan` : ""}.`
+          : "Nyhetscentralen skannar universumet varje morgon (08:00 UTC).",
+    },
+    {
+      id: "andningen",
+      namn: "Andningen",
+      ikon: "🌬️",
+      status: pulsStatus("andningen", emailRad?.created_at ?? null),
+      senast: emailRad?.created_at ?? null,
+      sammanfattning:
+        emailSkickade !== undefined
+          ? `Morgonbriefingen andades ut — ${emailSkickade} brev köade.`
+          : "Mejl-rondan köar morgonbriefingen dagligen (06:30 UTC).",
+    },
+    {
+      id: "ryggraden",
+      namn: "Ryggraden",
+      ikon: "🦴",
+      status: pulsStatus("ryggraden", portfoljRad?.created_at ?? null),
+      senast: portfoljRad?.created_at ?? null,
+      sammanfattning:
+        portfoljBearbetade !== undefined
+          ? `Portföljronen klar — ${portfoljBearbetade} portföljer omanalyserade (då mot nu).`
+          : "Portföljronerna mäter då-mot-nu varje månad/kvartal.",
+    },
+    {
+      id: "huden",
+      namn: "Huden",
+      ikon: "✨",
+      status: pulsStatus("huden", seoRad?.created_at ?? null),
+      senast: seoRad?.created_at ?? null,
+      sammanfattning:
+        seoUrl !== undefined
+          ? `Sökbart ytplan — ${seoUrl} crawlbara URL:er i senaste sitemap-hälsan.`
+          : "SEO-ronden räknar sajtens crawlbara ytplan dagligen.",
+    },
+    {
+      id: "tillvaxten",
+      namn: "Tillväxten",
+      ikon: "🌱",
+      status: pulsStatus("tillvaxten", kurserRad?.created_at ?? null),
+      senast: kurserRad?.created_at ?? null,
+      sammanfattning:
+        kurserKvar !== undefined
+          ? kurserKvar === 0
+            ? "Alla kurskapitel är fördjupade — tillväxten i balans."
+            : `Kursinnehållet växer — ${kurserKvar} kapitel återstår att fördjupa.`
+          : "Kursexpansionen fördjupar ett kapitel per dag (deterministiska mallar).",
     },
   ];
 

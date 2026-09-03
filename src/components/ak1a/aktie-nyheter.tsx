@@ -40,8 +40,16 @@ const MAX_NYHETER = 5;
 const MAX_TICKERS = 6;
 const HOG_PAVERKAN = 70;
 
-/** 1–2 ämnen till /api/nyheter — servern cachar + rankar per ämne. */
-const AMNEN = ["rapporter", "analys"];
+/**
+ * Ämneskanaler till /api/nyheter — id:n ur nyhets-motorns STANDARD_AMNESKANALER
+ * (verifierade RSS-flöden; "rapporter"/"analys" var ogiltiga id:n som motorn
+ * tyställde — nu bär vi svenska ekonomikanaler som påfyllnad när portföljen
+ * är tyst). Servern cachar + rankar per kanal.
+ */
+const AMNEN = ["di", "svt-ekonomi"];
+/** Reservkälla: om det personliga flödet faller hämtas motorns allmänna
+ *  kanaler — ALDRIG tyst: UI:t märker flödet "Reservkälla". */
+const RESERV_AMNEN = ["svt-ekonomi"];
 
 /** localStorage: senaste besök (epoch ms) — nyheter nyare än detta → "NYTT". */
 const NYCKEL_SENASTE = "ak1a-nyheter-senaste";
@@ -141,28 +149,58 @@ function renNyhet(rå: unknown): RenNyhet | null {
   };
 }
 
-/** ETT anrop till /api/nyheter med elevens tickers + ämnen. Servern cachar
- *  och rangordnar — svaret tas som det är (bäst först). Tyst vid motstånd. */
-async function hamtaFlode(tickers: string[]): Promise<RenNyhet[]> {
+/** Resultat av flödishämtningen — reservkalla=true när det personliga
+ *  flödet föll och motorns allmänna kanaler fick bära (märt i UI:t). */
+type FlodeResultat = { nyheter: RenNyhet[]; reservkalla: boolean };
+
+/** ETT anrop till /api/nyheter med given query — returnerar råa rader. */
+async function anropaNyhetsApi(query: string): Promise<unknown[]> {
+  const kontroll = new AbortController();
+  const tidtagning = setTimeout(() => kontroll.abort(), TIMEOUT_MS);
   try {
-    const kontroll = new AbortController();
-    const tidtagning = setTimeout(() => kontroll.abort(), TIMEOUT_MS);
-    const res = await fetch(
-      `/api/nyheter?tickers=${tickers.map(encodeURIComponent).join(",")}&amnen=${AMNEN.map(encodeURIComponent).join(",")}`,
-      { signal: kontroll.signal, headers: { Accept: "application/json" } }
-    );
-    clearTimeout(tidtagning);
+    const res = await fetch(`/api/nyheter${query}`, {
+      signal: kontroll.signal,
+      headers: { Accept: "application/json" },
+    });
     if (!res.ok) return [];
     const data = (await res.json()) as { nyheter?: unknown };
-    if (!Array.isArray(data?.nyheter)) return [];
+    return Array.isArray(data?.nyheter) ? data.nyheter : [];
+  } finally {
+    clearTimeout(tidtagning);
+  }
+}
+
+/** Hämta flödet via NYHETS-MOTORN (/api/nyheter): först med elevens tickers +
+ *  ämneskanaler (servern cachar och rangordnar), och ENDAST om det anropet
+ *  misslyckas (nät/timeout/!ok) motorns allmänna kanaler som märkt reserv-
+ *  källa — aldrig en tyst ersättare. Tyst vid totalt motstånd (viloläge). */
+async function hamtaFlode(tickers: string[]): Promise<FlodeResultat> {
+  const rensa = (rader: unknown[]): RenNyhet[] => {
     const ut: RenNyhet[] = [];
-    for (const rå of data.nyheter) {
+    for (const rå of rader) {
       const n = renNyhet(rå);
       if (n) ut.push(n);
     }
     return ut;
+  };
+
+  try {
+    const query =
+      `?tickers=${tickers.map(encodeURIComponent).join(",")}` +
+      `&amnen=${AMNEN.map(encodeURIComponent).join(",")}`;
+    const rader = await anropaNyhetsApi(query);
+    return { nyheter: rensa(rader), reservkalla: false };
   } catch {
-    return []; // API:bort/timeout — viloläget får tala
+    /* det personliga flödet nådde inte fram — reservkällan får bära, märkt */
+  }
+
+  try {
+    const rader = await anropaNyhetsApi(
+      `?amnen=${RESERV_AMNEN.map(encodeURIComponent).join(",")}`,
+    );
+    return { nyheter: rensa(rader), reservkalla: true };
+  } catch {
+    return { nyheter: [], reservkalla: false }; // motor + reserv tysta — viloläge
   }
 }
 
@@ -208,6 +246,7 @@ export function AktieNyheter() {
   const [medlem, setMedlem] = useState<Medlem | null>(null);
   const [nyheter, setNyheter] = useState<RenNyhet[]>([]);
   const [hamtar, setHamtar] = useState(true);
+  const [reserv, setReserv] = useState(false);
   const [senasteBesok, setSenasteBesok] = useState(0); // 0 = aldrig sett → inga NYTT-märken
   const [oppnadeTankar, setOppnadeTankar] = useState<string[]>([]);
 
@@ -264,16 +303,18 @@ export function AktieNyheter() {
         return;
       }
 
-      // 2) ETT anrop till Nyhetscentralen — servern cachar + rankar
+      // 2) ETT anrop till Nyhetscentralen — servern cachar + rankar; faller
+      //    det hämtas motorns allmänna kanaler som MÄRKT reservkälla.
       const flode = await hamtaFlode(tickers);
       if (!aktiv) return;
-      setNyheter(flode.slice(0, MAX_NYHETER));
+      setNyheter(flode.nyheter.slice(0, MAX_NYHETER));
+      setReserv(flode.reservkalla && flode.nyheter.length > 0);
       setHamtar(false);
 
       // 3) Spara dagens tyngsta nyhet (senaste dygnet) åt notiserna (typ "nyhet")
       const nu = Date.now();
       let topp: RenNyhet | null = null;
-      for (const n of flode) {
+      for (const n of flode.nyheter) {
         if (n.tidMs === null || nu - n.tidMs > 86_400_000) continue;
         if (!topp || n.paverkan > topp.paverkan) topp = n;
       }
@@ -327,9 +368,21 @@ export function AktieNyheter() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
       <div className="relative">
         <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Ditt nyhetsflöde</p>
-        <h2 className="mt-2 font-serif text-xl font-bold tracking-tight text-gold-soft sm:text-2xl">
-          Senaste nytt — för dig
-        </h2>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <h2 className="font-serif text-xl font-bold tracking-tight text-gold-soft sm:text-2xl">
+            Senaste nytt — för dig
+          </h2>
+          {/* Reservkälla — ALDRIG tyst degradering: märks synligt när det
+              personliga flödet föll och motorns allmänna kanaler bär */}
+          {reserv && (
+            <span
+              className="inline-flex items-center rounded-full border border-gold/50 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-gold"
+              title="Ditt personliga flöde nådde inte fram just nu — nyhetsmotorn serverar sitt allmänna rankade flöde i stället."
+            >
+              Reservkälla — allmänt flöde
+            </span>
+          )}
+        </div>
         <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/70">
           {medlem
             ? "Flödet följer aktierna i din portfölj — rangordnat efter påverkan, färdigt att läsas tillsammans med din Vågkarta."

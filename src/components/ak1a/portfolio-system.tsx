@@ -14,6 +14,7 @@ import {
 import { RefreshCw, Plus, Trash2 } from "lucide-react";
 import { VagSkattning } from "@/components/ak1a/vag-skattning";
 import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
+import { PortfoljVagProfil } from "@/components/ak1a/portfolj-vagprofil";
 
 type Medlem = { id: string; email: string; name: string | null; member_type: string };
 type Portfolj = { id: string; name: string; total_value: number; cash_position: number; holdings: any[] };
@@ -420,6 +421,14 @@ export function PortfolioSystem() {
               ))}
             </div>
           </section>
+
+          {/* PORTFÖLJENS VÅGOR — analys-motorns aggregerade vågprofil (lib/
+              portfolj-vagor.ts) direkt under innehavstabellen: fem horisonter,
+              per-aktie-matris och motorns sammanfattande vågbild i text.
+              Komponenten sköter själv Fas 2-lås/preview (utan Fas 2: fem låsta
+              horisont-ikoner + inbjudan) och hämtar via djupanalys-routen med
+              den aktiva portföljens id. */}
+          <PortfoljVagProfil portfolioId={aktiv?.id} />
 
           {/* Vågprofil */}
           <section className="rounded-xl border border-gold/20 bg-card p-5">

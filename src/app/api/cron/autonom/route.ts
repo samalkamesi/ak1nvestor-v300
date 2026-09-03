@@ -13,11 +13,13 @@ export const maxDuration = 60;
  * kill-switch, 500-raderstak, 30-dagars retention, EN skrivning per körning.
  */
 export async function GET(req: NextRequest) {
-  // Vercel cron skickar Authorization: Bearer CRON_SECRET (om satt)
+  // Vercel cron skickar Authorization: Bearer CRON_SECRET (om satt);
+  // ?secret= stöds för lokal/manuell körning — samma mönster som cron/vagscan.
   const secret = process.env.CRON_SECRET;
   if (secret) {
+    const qs = req.nextUrl.searchParams.get("secret");
     const auth = req.headers.get("authorization");
-    if (auth !== `Bearer ${secret}`) {
+    if (qs !== secret && auth !== `Bearer ${secret}`) {
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
   }

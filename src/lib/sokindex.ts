@@ -4,6 +4,8 @@
  * lazy-laddas från /deep-courses.json vid första sökningen.
  */
 
+import { SIFFROR } from "@/lib/siffror";
+
 export type SokKategori = "Sida" | "Verktyg" | "Kurs" | "Träning";
 
 export type SokPost = {
@@ -20,7 +22,7 @@ const STATISKA: SokPost[] = [
   // — LÄR —
   { titel: "Manifestet", lank: "/manifest", kategori: "Sida", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning", nycklar: "vision filosofi varför kontroversiell" },
   { titel: "Läroplanen", lank: "/laroplan", kategori: "Sida", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker", nycklar: "nivåer struktur gang studiemedel" },
-  { titel: "Alla kurser", lank: "/kurser", kategori: "Sida", ikon: "📚", beskrivning: "Hela biblioteket med quiz", nycklar: "bibliotek 324 kurser" },
+  { titel: "Alla kurser", lank: "/kurser", kategori: "Sida", ikon: "📚", beskrivning: "Hela biblioteket med quiz", nycklar: `bibliotek ${SIFFROR.kurser} kurser` },
   { titel: "Biblioteket — bokkanon", lank: "/bibliotek", kategori: "Sida", ikon: "📖", beskrivning: "100 böcker mappade mot AKM1/AK1TS", nycklar: "bokkanon bocker lasning" },
   { titel: "Certifikat", lank: "/certifikat", kategori: "Sida", ikon: "🏅", beskrivning: "Ditt intyg på kompetens", nycklar: "intyg betyg diplom" },
   { titel: "Transparens & GDPR", lank: "/transparens", kategori: "Sida", ikon: "🛡️", beskrivning: "Din data, dina rättigheter — enligt lagen", nycklar: "gdpr personuppgifter data integritet rattigheter imy kakor cookie transparens angerratt aterratta lag" },

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { SIFFROR } from "@/lib/siffror";
 import { getCourses, getBlogPosts } from "@/lib/content";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
 
@@ -86,7 +87,7 @@ function sidKontextText(sokvag: string): string {
   const kart: Record<string, string> = {
     kurser: under
       ? `kurs-sidan /kurser/${under} — eleven läser just nu denna kurs kapitel för kapitel`
-      : "kursbiblioteket (324 kurser)",
+      : "kursbiblioteket (" + SIFFROR.kurser + " kurser)",
     analyser: under
       ? `analysen av ${decodeURIComponent(under).toUpperCase()} — eleven fördjupar sig i ett enskilt bolag`
       : "analysbanken — eleven bläddrar bland analyser",
@@ -123,7 +124,7 @@ function sidKontextText(sokvag: string): string {
 
 function navigera(fraga: string): Intent | null {
   const q = fraga.toLowerCase();
-  // Levande tal — Uppdaterad 2026-09-01: 324 kurser · 78 BOKMASTER-böcker · 35 blogginlägg
+  // Levande tal — ur src/lib/siffror.ts (guldkällan): 
   const antalKurser = Object.keys(getCourses()).length;
   const antalBokmaster = Object.values(getCourses()).filter((c) => c.category === "BOKMASTER").length;
   const antalBlogg = getBlogPosts().length;
@@ -419,7 +420,7 @@ function fas3Svar(fraga: string) {
   if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
   return {
     svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
-• Fas 1 — hela biblioteket (324 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
+• Fas 1 — hela biblioteket (${SIFFROR.kurser} kurser, kalkylatorn, portföljsystemet): gratis för alltid.
 • Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu analyserade och sammanvägda på rätt sätt med stöd av 18 mästarverk (värdering, bokslut, redovisning, företagsfinans), oändligt med timmar med grundaren och chansen att bli representant för AK1nvestor. 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
 • Fas 3 — allt i Fas 2 plus det dynamiska ekosystemet: AKM1 × AK1TS, Vågfundamentet, Konfluensradarn och Portföljens vågor, teknisk analys på mästarnivå, trading-psykologi samt dashboard med AI-koppling och rapporter — och rätt till alla framtida utvecklingar.
 • Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
@@ -439,7 +440,7 @@ function proSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/\bpro\b|\bb2b\b|företagspaket|skollicens|företagskonto/.test(q)) return null;
   return {
-    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — 324 kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
+    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — ${SIFFROR.kurser} kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
 Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 den fundamentala vägen · Fas 3 ekosystemet) på medlemskapssidan.`,
     handlings: [
       { text: "AK1A Pro →", lank: "/pro", ikon: "🏢" },

@@ -1,0 +1,1037 @@
+{
+  "slug": "bull-a-history-of-boom-and-bust",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 186,
+  "title": "Bull! — Maggie Mahar: KOMPLETT",
+  "summary": "Bull! A History of the Boom and Bust, 1982–2004 (2004) är finansjournalisten Maggie Mahars krönika över den största bölvågen i amerikansk historia — från augusti 1982, då Dow Jones bottnade på 777 och Paul Volcker just hade krossat inflationen, via Svarta måndagen 1987, fondindustrins guldålder och CNBC:s studioli, till Greenspans tal om irrational exuberance 1996, LTCM-kollapsen 1998, dot-com-euforin som kulminerade när Nasdaq nådde 5 048 den 10 mars 2000 — och sedan nedförsbacken: Nasdaq minus 78 procent, Enron, WorldCom, Sarbanes-Oxley och fondskandalerna 2003. Mahar, som skrivit för Barron's och Institutional Investor, bygger berättelsen på intervjuer med fondförvaltare, analytiker och centralbanksveteraner, och hennes fråga är inte bara vad som hände utan varför så många skickliga människor stod kvar på dansgolvet. För AK1A är boken kurskatalogens fullständiga cykellaboratorium: arton års uppgång och två års rensning är en Lång- och Mega-cykel i AK1TS:s mening — och varenda vändpunkt på vägen lämnar mätbara kontraindikatorer, från rekordfondinflöden till IPO-popar på sexhundra procent, som kursen destillerar till en checklista.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå den fulla bågen 1982–2004: hur en bölvåg föds ur knäckt inflation och fallande diskonteringsränta (V04–V06) · Läsa Volckers seger och augusti 1982 som cykelbottnens facit: maximal pessimism, ensiffig P/E, rekordavkastning därefter · Känna igen tekniska kaskader — portföljförsäkring 1987 — som AK1TS:s Mikro-horisont i ren form · Kartlägga den stora migrationen: 401(k)-pengar, fondindustrins tillväxt och hur mekaniska inflöden blev börsens fundamentala köpare · Analysera medier som väggförstärkare: CNBC-epoken och cover stories som kontraindikator · Värdera moral hazard: Greenspans irrational exuberance-tal 1996, räddningarna 1998 och Greenspan-puten som cykelbränsle · Identifiera analytiker-konflikterna: Blodget, Meeker, Grubman, bankaffärernas avgifter och Global Settlement 2003 · Känna igen IPO-galenskapens mekanik: theGlobe.com +606 procent, VA Linux +698 procent, låsperioder och insideröverföringen · Bedöma fondindustrins bubbelpåverkan: closet indexing, prestationens diktatur, skandalerna 2003 · Datera en topp: bredddivergens, marginalbelåning, fondinflöden och värdepuritanernas kapitulation våren 2000 · Känna igen kapitulationens markörer 2002 — och vad Sarbanes-Oxley och uppgörelserna faktiskt ändrade · Fördela ansvaret för en bubbla: Fed, analytiker, fonder, medier, revisorer och sparare själva · Bygga AK1A:s kontraindikatorlexikon mappat mot AK1TS:s fem tidshorisonter · Syntetisera cykeln som RAM: multiplar (V04–V06), emissionsfönster (V19) och stabilitetspremie (V12) är alla cykelvariabler.",
+  "why": "Den som bara läste om bubblan i efterhandens sammanfattningar känner till slutet men inte mekaniken — och mekaniken är det enda som går att känna igen nästa gång. Mahars bok är den mest kompletta svenska-tillgängliga berättelsen om hur en hel marknads kultur byggdes om, decennium för decennium: hur pensionsreformen 1978 skapade mekaniska köpare, hur centralbankens räddningar 1987 och 1998 omprogrammerade riskaptiten, hur analytiker blev säljare och tv-studior blev tickers. AK1A läser boken på två plan samtidigt: som AK1TS-cykel — arton års Lång våg med en Mega-ressättning som till sist slog igenom — och som kontraindikatorbibliotek, där varje kapitel lämnar en mätbar signal som fortfarande fungerar: fondflöden, IPO-popar, P/E-percentiler, mediebrus, kapitulation hos de som hade rätt för tidigt. Utan boken är kontraindikatorerna teori; med boken har du sett dem fungera, i sekvens, på världens största marknad — och vet att de sällan ropar samtidigt förrän det är för sent.",
+  "chapters_list": [
+    "1. Boken och krönikören — Maggie Mahar och arton års bölvåg",
+    "2. Volckers seger — inflationen knäcks och bören föds i augusti 1982",
+    "3. Oktober 1987 — portföljförsäkringens svarta måndag och Feds första läxa",
+    "4. Den stora migrationen — 401(k), fondindustrin och pengarna som aldrig slutade komma",
+    "5. CNBC-epoken — medierna som bubblans väggförstärkare",
+    "6. Irrational exuberance — Greenspan 1996, LTCM 1998 och moral hazard",
+    "7. Analytikerkonflikten — Blodget, Meeker, Grubman och forskningens fall",
+    "8. IPO-galenskapen — theGlobe.com, VA Linux och vägen till Nasdaq 5 048",
+    "9. Fondernas fångenskap — inflöden, closet indexing och 2003 års skandal",
+    "10. Toppens anatomi — våren 2000: bredd, belåning och kapitulation hos de rättfärdiga",
+    "11. Kollapsen 2000–2002 — dot-com-döden, Enron, WorldCom och Sarbanes-Oxley",
+    "12. Skuldfrågan — vem bar ansvaret för bubblan? Mahars politiska ekonomi",
+    "13. Kontraindikatorernas lexikon — från 1990-talet till AK1TS:s cykel-dimension",
+    "14. Efter kraschen — uppgörelser, reformer och frågan Mahar lämnar öppen; syntes med AKM1"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och krönikören — Maggie Mahar och arton års bölvåg",
+      "intro": "Maggie Mahar skrev för Barron's, Institutional Investor och New York Times innan hon 2004 gav ut Bull! A History of the Boom and Bust, 1982–2004. Detta kapitel presenterar boken, dess metod — nutidshistoria byggd på intervjuer med dem som var där — och kursens dubbla läsning: en AK1TS-cykel och ett kontraindikatorbibliotek.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens ram är kronologisk och obeveklig: den börjar i augusti 1982, när Dow Jones stängde på 776,92 och USA:s arbetslöshet var i dubbelkrita, och slutar tjugoett år senare, efter en börs där index gått upp femtonfaldigt, en krasch som raderade fem biljoner dollar i börsvärde och en långsam, tveksam återhämtning. Mahar tillhör den journalistiska skola som inte förklarar bubblor med dumhet utan med struktur: hennes intervjuade fondförvaltare, analytiker och Fed-veteraner var varken blinda eller ointelligenta — de agerade rationellt inside ett belöningssystem som betalade för att förbli kvar på dansgolvet. Det är därför boken för AK1A inte är anekdotmaterial utan mekanik: belöningssystemet är det som återkommer, i varje cykel, i varje marknad."
+        },
+        {
+          "type": "text",
+          "content": "Bokens struktur, som kursen följer. Första delen: födelsen 1982 — Volckers kamp mot inflationen, startskottet och vad som följde. Andra delen: 1987 — den första kraschen och räddningen som formade nästa decenniums riskaptit. Tredje delen: nittiotalets institutionella revolution — fonderna, 401(k)-pengarna, CNBC, analytikerkulturen. Fjärde delen: euforin 1998–2000 — LTCM, räntesänkningarna, IPO-maskinen, Nasdaq 5 048. Femte delen: kollapsen och efterräkningen — Enron, WorldCom, Sarbanes-Oxley, fondskandalerna 2003. Mahar växlar mellan porträtt (Blodget, Greenspan, fed-veteraner och fondpersonligheter) och statistik, och hennes fråga återkommer som ett omkväde: om så många såg det — och det finns brev, tal och memoarer som visar att de gjorde det — varför stannade alla kvar? Svaret, som kursen återkommer till i kapitel tolv, är att bubblor inte är ett informationsfel utan ett incitamentsfel."
+        },
+        {
+          "type": "text",
+          "content": "Kursens dubbla läsning. Ett: boken är en komplett Lång-cykel i AK1TS:s mening — arton år av primär trend med kraftiga korrigeringar (1987, 1990, 1998) som aldrig bröt Mega-trenden, förrän den gjorde det 2000–2002. Att läsa 1982–2004 som en enda våg tränar den mest försummade färdigheten i teknisk analys: att skilja en korrigering inom trenden från en vändning av trenden. Två: varje fas lämnar mätbara kontraindikatorer — P/E från sju till trettiotre, fondflöden från ström till flod, analytikerköp från analytiska till skräddarsydda för bankaffärer — och kapitel tretton samlar dem till en checklista mappad mot AK1TS:s fem horisonter. Boken är med andra ord kurskatalogens cykellaboratorium: en fullständig båge med början, mitt och slut, där varje verktyg i AK1A:s låda kan testas mot verkliga data."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens grundläggande påstående innan du går vidare: bubblor drivs inte av brist på information utan av belöningssystem som betalar deltagarna så länge musiken spelar. Din uppgift som analytiker är därför aldrig att förstå musiken bättre än andra — utan att veta vilka som betalar för att du ska dansa, och när de slutar göra det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens fem delar och AK1A-mappningen\",\"rader\":[[\"Del\",\"Period\",\"Kärnhändelse\",\"AK1A-läsning\"],[\"Födelsen\",\"1982\",\"Volcker, Dow 777, startskottet\",\"cykelbotten: kontraindikatorer inverterade\"],[\"Första provet\",\"1987\",\"Svarta måndagen −22,6 %\",\"Mikro-kaskad; Fed sätter likviditetsgolvet\"],[\"Institutionella revolutionen\",\"1982–1999\",\"401(k), fonder, CNBC, analytiker\",\"mekaniska köpare + väggförstärkare\"],[\"Euforin\",\"1998–2000\",\"LTCM, rate cuts, Nasdaq 5 048\",\"moral hazard + IPO-maskin; toppkonvergens\"],[\"Efterräkningen\",\"2000–2004\",\"−78 % Nasdaq, Enron, WorldCom, SOX\",\"rensning; kapitulationens markörer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan kapitel två: skriv ner din egen cykelhistoria utan att slå upp något — vilket år bottnade amerikanska börsen efter det sjuttiotalet, vilket år inträffade Svarta måndagen, vilket år nådde Nasdaq sin topp och på vilken nivå? Kolla sedan efter. Felmarginalen är inte pinsam — den är mätningen av hur mycket av cykeln som finns i huvudet på dig, och därmed hur lätt nästa topp kommer att smita förbi samma huvud."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mahars grundläggande förklaring till varför så många skickliga människor stannade kvar i bubblan?",
+          "alternativ": [
+            "De saknade information om värderingarna",
+            "De var ointelligenta och förstod inte tekniken",
+            "De agerade rationellt inside ett belöningssystem som betalade för deltagande så länge musiken spelade — bubblor är ett incitamentsfel, inte ett informationsfel",
+            "Centralbanken tvingade dem att köpa"
+          ],
+          "ratt": 2,
+          "tips": "Bokens intervjuade var varken blinda eller dumma — vad betalade systemet dem för?"
+        },
+        {
+          "q": "På vilken nivå stängde Dow Jones i augusti 1982, i början av bölvågen?",
+          "alternativ": [
+            "776,92",
+            "2 722",
+            "5 048",
+            "11 722"
+          ],
+          "ratt": 0,
+          "tips": "Bottnen låg under åttahundra — index var prisvärt nog att femtonfaldigas därefter."
+        },
+        {
+          "q": "Hur läser kursen boken som AK1TS-material?",
+          "alternativ": [
+            "Som en Mikro-horisontens momentumstudie",
+            "Som en komplett Lång- och Mega-cykel med mätbara kontraindikatorer i varje fas",
+            "Som ett argument mot all teknisk analys",
+            "Som en fundamental sektorstudie av IT-bolag"
+          ],
+          "ratt": 1,
+          "tips": "Arton år upp, två år ner — vilka horisonter i hierarkin fångar den bågen?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Volckers seger — inflationen knäcks och bören föds i augusti 1982",
+      "intro": "Bölvågen 1982–2000 föddes ur en deflation av förväntningarna: Paul Volcker höjde styrräntan tills inflationen bröt. Detta kapitel går igenom bottnens mekanik — Vad köper man när ingen vill äga aktier? — och översätter fallande räntor till stigande multiplar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen Mahar målar upp är maximal pessimism, ordagrant. Inflationen hade toppat på nästan femton procent 1980; Volckers Fed hade pressat upp styrräntan mot tjugo procent och körde ekonomin i diket — rekordarbetslöshet, konkursvåg i jordbruks- och stålstaterna, och aktier som ingen ville äga: Dow bottnade på 776,92 den 12 augusti 1982, samma vecka som Mexiko förklarade betalningsstillestånd på sin utlandsskuld. P/E på den breda amerikanska börsen låg kring sju; direktavkastningen översteg långräntan. Bara en marknad där priserna sade: inget kommer någonsin att bli bättre. Det är cykelbottens facit i sin renaste form, och det är därför AK1A börjar här: varje kontraindikator i kapitel tretton har en spegelbild, och den här gången var samtliga inverterade."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken i vändningen, som kursen behöver konkret. När inflationen knäcks faller inte bara priserna på varor — nominella avkastningskrav faller på allt, och det är en mekanisk multiplfråga: samma kassaflöde blir värt mer när diskonteringsräntan sjunker från fjorton till åtta procent. Sedan 1982 års bottenvändning — drygt trettioåtta indexpunkter på en enda dag i augusti, då den berömda rekordstigningen kom på Feds vink om lättnader — började en kedja: fallande inflation, fallende räntor, stigande multiplar, och under allt: företags marginaler som återhämtade sig när löne- och insatskostnadsspiralen bröts. Mahar noterar ironin som AK1A ska minnas: den största bölvågen startade inte i eufori utan i aska. Köparna 1982 betalade sju gånger vinsten för bolag som alla andra avskydde; köparna 2000 betalade trettiotre gånger vinsten för bolag alla andra älskade. Samma marknad, arton år, två motsatta världar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är kursens första multipllektion. V04–V06 är inte konstanter — de är cykelvariabler som andas med räntan och riskaptiten. En P/E på sju 1982 var inte billigare fundamentalt än en P/E på trettiotre 2000 var dyrare fundamentalt — det var samma bolagstyp som prissattes av två olika ränt- och förtroenderegimer. Därav kursens tumregel, som hela boken kommer att illustrera: innan du dömer en multipl, deklarera cykelpositionen. En aktie köpt med V04 i botten av en förtroendekanal kräver ingenting av dig; samma aktie köpt i toppen av kanalen kräver att allt går rätt. Skillnaden mellan 1982 och 2000 är skillnaden mellan att ha vinden i ryggen och att cykla uppför i motvind — börsen straffar inte dumhet, den straffar fel tajming i förhållande till cykeln."
+        },
+        {
+          "type": "insikt",
+          "content": "Fallande inflation är den mest underskattade multiplmotorn i historien: 1982–2000 skedde en stor del av avkastningen inte i vinsterna utan i multiplarnas expansion från sju till trettiotre. När du poängsätter V04–V06 idag, fråga: hur mycket av dagens multipl är förtjänad av bolaget — och hur mycket är en räntefrétsprodukt som kan vända?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bottnen 1982 mot toppen 2000 — spegelvärlden\",\"rader\":[[\"Mått\",\"Augusti 1982\",\"Mars 2000\",\"Cykelläsning\"],[\"Dow Jones\",\"776,92\",\"11 722 (jan 2000)\",\"femtonfaldig på drygt 17 år\"],[\"P/E bred börs\",\"ca 7\",\"ca 33\",\"multiplexpansion driver mer än vinster\"],[\"Sentiment\",\"maximal pessimism; betalningsstillestånd i Mexico\",\"maximal eufori; rekordfondinflöden\",\"kontraindikatorer helt inverterade\"],[\"Ränteregime\",\"Dubbelkrita styrränta efter Volckers kamp\",\"förväntan på evig tillväxt utan inflation\",\"diskonteringsräntan vrider V04–V06\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna multiplmekaniken själv: ta ett bolag med hundralappens låtsasvinst och diskontera en evig, oförändrad vinstström vid fjorton procents avkastningskrav och vid sju. Dividera sedan de två värdena med varandra. Det tal du får — runt två — är hela 1980-talets börsberättelse i en multiplikation: ingenting behövde förbättras i ekonomin för att aktier skulle dubblas, räntan räckte. Skriv ner slutsatsen i din marginal: multiplförändringar är räntberättelser."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken händelse sammanföll med Dow Jones-bottnen den 12 augusti 1982?",
+          "alternativ": [
+            "Att USA gick in i en boometta",
+            "Att Mexiko förklarade betalningsstillestånd på sin utlandsskuld — maximal pessimism",
+            "Att Nasdaq lanserades",
+            "Att Volcker sänkte styrräntan till noll"
+          ],
+          "ratt": 1,
+          "tips": "Bottnar läggs där den sista dåliga nyheten redan är prissatt — vilken var den sista som sommaren?"
+        },
+        {
+          "q": "Varför blev fallande inflation en multiplmotor 1982–2000?",
+          "alternativ": [
+            "Därför att företagens vinster föll med inflationen",
+            "Därför att centralbanken köpte aktier",
+            "Därför att nominella avkastningskrav föll — samma kassaflöde blev värt mer när diskonteringsräntan sjönk, vilket expanderade multiplarna från ca 7 till ca 33",
+            "Därför att utdelningarna höjdes med inflationen"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör en lägre diskonteringsränta med värdet av framtida kassaflöden?"
+        },
+        {
+          "q": "Vad är kursens tumregel från 1982 års bottenvändning?",
+          "alternativ": [
+            "Köp alltid när P/E är ensiffig",
+            "Innan du dömer en multipl (V04–V06), deklarera cykelpositionen — samma multipl är billig i en förtroendekannels botten och dyr i dess topp",
+            "Sälj alltid när inflationen faller",
+            "Multiplar är oberoende av räntor"
+          ],
+          "ratt": 1,
+          "tips": "1982 och 2000 var samma bolagstyp prissatt i två olika ränt- och förtroenderegimer."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Oktober 1987 — portföljförsäkringens svarta måndag och Feds första läxa",
+      "intro": "Den 19 oktober 1987 föll Dow med 508 punkter — 22,6 procent på en dag, värre än 1929. Mahar ägnar kraschen ett centralt kapitel: mekaniken i portföljförsäkringen, Feds enmeningars pressmeddelande — och den moral hazard-frö som växte i räddningens kölvatten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fem år in i bölvågen kom det första stressprovet, och Mahar berättar det som en driftsmekanisk olycka snarare än en fundamental. Dow hade stigit över fyrtio procent på åtta månader 1987; diskonteringsräntan höjdes i september; dollarpolitiken fastnade i ett offentligt bråk med Tyskland om valutakursen. Men det som förvandlade en korrigering till en krasch var en finansiell teknik: portföljförsäkring — en strategi som lovade institutionella ägare att sälja indexfutures i takt med att marknaden föll, dynamiskt, för att garantera ett golv. Problemet var aritmetiskt: när marknaden föll sålde försäkringarna, när försäkringarna sålde föll marknaden, som fick försäkringarna att sälja mer. Den nittonde oktober bröt loopen inte för att den var färdig utan för att den hann tömma marknaden på köpare innan dagen var slut: minus 22,6 procent, medan terminsmarknaden handlades under index — en mekanisk kollaps, ingen fundamental nyhet på sexton timmar kunde motivera den."
+        },
+        {
+          "type": "text",
+          "content": "Och sedan räddningen som kom att forma allt följande decennium. Tisdagen den tjugonde oktober publicerade Fed ett uttalande på en enda mening — att centralbanken stod redo att fungera som likviditetskälla — och backade upp det med att pumpa reservpengar i banksystemet. Det fungerade: betalsystemet höll, ingen 1929-upprepning, och Dow hade återhämtat kraschen inom två år. Men Mahar — och kursen med henne — noterar priset: marknaderna lärde sig lektionen om ett asymmetriskt Fed. När krascher möts av likviditet och uppgångar lämnas åt sig själva, förskjuts riskgränsen nedåt för varje cykel: om systemet försäkrar nedförsbacken vågar deltagarna åka snabbare. Det är moral hazard-begreppets ursprung i modern form, och det återkommer i kapitel sex som den direkta bränsleledningen till nittiotalets eufori: portföljförsäkringen dog 1987, men tanken att någon annan bär risken överlevde och förfinades."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-läsningen är kursens första horisontlektion. Svarta måndagen var en Mikro-händelse — en kaskad mätt i dagar, driven av mekanisk orderflödesdynamik, inte av information — inuti en Medellång- och Lång-trend som aldrig bröts: index återvann förlusten på under två år och bölvågen fortsatte i tolv år till. Det är den viktigaste distinktionen i hela hierarkin: en Mikro-kollaps i en intakt Lång trend är ett volatilitetsfenomen; samma kollaps i en bruten Mega-trend är ett regimeskifte. Kursens handregel från 1987: innan du tolkar en våldsam rörelse, deklarera vilken trend du står i och vilken du observerar. Den som 1987 trodde att Mikro-fallet betydde Mega-vändning — och det fanns många som sålde i botten — gjorde det klassiska felet att förväxla tidsskalorna, exakt det AK1TS:s fem-nivåstruktur finns för att förhindra."
+        },
+        {
+          "type": "insikt",
+          "content": "Portföljförsäkringen lär oss att krascher inte kräver dåliga nyheter — de kräver bara mekaniska försäljare som måste sälja när priset faller, och köpare som inte måste köpa. Fråga vid varje marknadsläge: vilka är de tvingade parterna på varje sida? Svaret definierar din Mikro-risk, oavsett vad fundamenta säger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svarta måndagen — mekanik och efterverkningar\",\"rader\":[[\"Element\",\"1987\",\"Cykelläsning\"],[\"Dagens fall\",\"−508 punkter = −22,6 %\",\"värre än någon dag 1929\"],[\"Utlösande teknik\",\"portföljförsäkringens dynamiska försäljning av futures\",\"Mikro-kaskad: säljande som driver pris som driver säljande\"],[\"Feds svar\",\"en mening: beredskap som likviditetskälla + reservpengar\",\"asymmetriskt Fed — moral hazard-fröet\"],[\"Återhämtning\",\"förlusten återvunnen inom ca 2 år\",\"Lång trend intakt — Mikro var brus i den\"],[\"Långsiktig effekt\",\"riskgränsen försköts nedåt i varje cykel\",\"direkt bränsle till 1990-talets eufori\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera dagens portföljförsäkring: skriv ner tre mekanismer i dagens marknad som kan tvinga fram försäljning när priserna faller — tänk hävstång, riskparitetsmodeller, volatilitetsmål, täckning av korta positioner, marginalkrav, strukturerade produkters hedgar. Ranka dem efter tvingningsgrad: vem måste sälja först, vem sist? Den rankade listan är din Mikro-kollapskarta — exakt den karta portföljförsäkringens offer saknade i oktober 1987."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den drivande mekaniken bakom minus 22,6 procent den 19 oktober 1987?",
+          "alternativ": [
+            "En statskris i Europa",
+            "Portföljförsäkringens dynamiska försäljning av indexfutures — försäljning drev prisfallet som drev mer försäljning",
+            "En oväntad varningseffekt från IT-bolag",
+            "Oljepriset föll med hälften över en natt"
+          ],
+          "ratt": 1,
+          "tips": "Vilken strategi lovade ett golv men byggde en spiral av tvingad försäljning?"
+        },
+        {
+          "q": "Vad hände med den Långa trenden efter kraschen 1987?",
+          "alternativ": [
+            "Den bröts — inledningen på ett årtionde av nollavkastning",
+            "Den förblev intakt — förlusten var återvunnen inom runt två år och bölvågen fortsatte till 2000",
+            "Feds räddning misslyckades och börsen stängde i en månad",
+            "Ingen skillnad mot 1929 års mönster"
+          ],
+          "ratt": 1,
+          "tips": "Mikro-kollaps i intakt Lång trend — vad är brus och vad är signal?"
+        },
+        {
+          "q": "Vad menas med att Fed agerade asymmetriskt efter 1987?",
+          "alternativ": [
+            "Att man höjde räntan under kraschen",
+            "Att man varken höjde eller sänkte någonting",
+            "Att krascher möts av likviditet medan uppgångar lämnas åt sig själva — vilket försköt riskgränserna och blev moral hazard-fröet",
+            "Att man förbjöd portföljförsäkring permanent"
+          ],
+          "ratt": 2,
+          "tips": "Vem bär risken om någon annan alltid ställer upp som köpare i fallet?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 14,
+      "title": "Den stora migrationen — 401(k), fondindustrin och pengarna som aldrig slutade komma",
+      "intro": "Under nittiotalet förvandlades den amerikanska aktiemarknaden från en arena för en minoritet till en folksport. Mahar kallar det den stora migrationen: pensionspengar som varje månad skulle in i marknaden vad som än hände — och en fondindustri som växte till att bli börsens största enda köpare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna bakom kulturen. Andelen amerikanska hushåll som ägde aktier — direkt eller via fonder — steg från knappa tjugo procent i början av åttiotalet till omkring hälften vid sekelskiftet. Motorerna var institutionella: 401(k)-planen, skapad i skattelagstiftningen 1978, gjorde lönbesparande till aktieköp via automatiska månadsvillkor, och fondindustrin växte explosionsartat — vid sekelskiftet fanns flera tusen aktiefonder, fler än börsens noterade bolag. Mahar betonar vad detta gjorde med marknadens mikrostruktur: för varje löneutbetalning anlände ett nytt mekaniskt inköpsflöde som inte reagerade på värdering, nyheter eller cykel — spararna köpte för att kalendern sade månadsskiftet, inte för att de bedömt värderingarna. När den köparen blir systemets största, förändras systemet: uppgångar blir självförstärkande på ett sätt som tidigare generationer inte sett."
+        },
+        {
+          "type": "text",
+          "content": "Fondindustrins eget incitamentssystem var den andra halvan av maskineriet, och Mahar går igenom det utan omsvep. Förvaltarna betalades för förvaltningsavgifter på tillgångar — inte för avkastning — vilket gör varje nytt inflöde till vinst oavsett vad det gör med portföljens kvalitet. Prestationsjämförelserna var kvartalsvisa och benchmarken var index: den som avvek från index och fick fel blev av med jobbet, den som höll sig nära index och följde med i bubblan var trygg — closet indexing, förvaltning som låtsas vara aktiv. Resultatet blev en bransch som formellt fanns för att skilja sig från mängden men belönades för att vara mängden: när tekniktillgångar svällde i index köpte fonderna teknik — inte för att de trodde på multiplarna, utan för att de inte kunde riskera att inte äga det som drev index. Kursens formulering: fonderna var inte bubblans skapare, de var dess skal — en bransch strukturerad så att den inte kunde säga nej."
+        },
+        {
+          "type": "text",
+          "content": "Och mitt i decenniet kom varningarna som ingen hejdade. 1994 höjde Fed räntan sju gånger; obligationsmarknaden kraschade, Wall Streets förluster blev kännbara och Kaliforniens Orange County gick i konkurs på belånade derivat. Det var en generalrepetition — en kreditchock i miniatyr — och marknaden återhämtade sig på månader, vilket Mahar pekar på som det ödesdigra pedagogiska ögonblicket: en hel generation lärde sig att köpa varje nedgång, alltid, eftersom nedgångar hittills alltid betalat. Buy the dip blev inte en strategi utan en trossats. För AK1A är det här AKM1-mötet: V12 intäktsstabilitet och V04 multiplar bedömdes av en publik vars livserfarenhet bara innehöll en cykelhalva. När basräntan i en hel kulturs huvud är att nedgång är köpläge, krävs inga nya argument för eufori — bara tid."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid vem som är den marginelle köparen och vad som driver honom: 1982 var det kontrarianer med kontanter, 1999 var det löneutbetalningar som mekaniskt måste in i fonder oavsett pris. När den marginelle köparen inte längre tittar på priset har priset slutat bära information — och då bär det i stället förväntan, vilken är bränslet i varje bubbla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Migrationen i siffror — 1982 mot 2000\",\"rader\":[[\"Mått\",\"Tidigt 1980-tal\",\"Vid sekelskiftet\",\"Betydelse\"],[\"Hushåll med aktieägande\",\"under 20 %\",\"ca 50 %\",\"aktier blev medborgarplikt\"],[\"Motor\",\"besparing på eget initiativ\",\"401(k) och automatiska månadsinköp\",\"mekaniska köpare som reagerar på kalender, inte pris\"],[\"Antal aktiefonder\",\"några hundra\",\"flera tusen — fler än noterade bolag\",\"fondbranschen blev systemets största köpare\"],[\"Förvaltarnas incitament\",\"förvaltningsavgift på tillgångar\",\"detsamma — plus benchmarkdisiplin\",\"closet indexing: kunde inte säga nej till bubblan\"],[\"Generalrepetition\",\"1987 (återhämtad)\",\"1994 obligationkrasch (återhämtad)\",\"buy the dip blev trossats\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör den marginelle köparen-kollen på din egen marknad idag: identifiera de tre största källorna till nytt aktiesparande — automatiska pensionsupplägg, månadssparande, omplacerade räntepengar som söker avkastning, återköp? Skatta hur stor andel av det flödet som är priskänsligt. Skriv en mening: om aktierna faller tjugo procent, ökar, minskar eller förblir flödet oförändrat? Där svaret är oförändrat eller ökar sitter mekaniken från 1999 — och den är cykelns viktigaste input."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde 401(k)-systemet med marknadens köpsida?",
+          "alternativ": [
+            "Gjorde köpen priskänsliga genom rådgivning",
+            "Skapade mekaniska månadsinköp som inte reagerade på värdering, nyheter eller cykel",
+            "Minskade hushållens aktieägande",
+            "Flyttade köpen till obligationsmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Vad avgör när en löneutbetalning hamnar i en 401(k)? Kalendern — eller priset?"
+        },
+        {
+          "q": "Vad menas med closet indexing i Mahars beskrivning av fondbranschen?",
+          "alternativ": [
+            "Fonder som hemligen köper indexfonder",
+            "Aktiv förvaltning som låtsas skilja sig från mängden men håller sig nära benchmark — eftersom avvikelse med fel blir karriärdöd",
+            "Fonder som enbart investerar utomlands",
+            "Fonder som kopierar Buffetts portfölj"
+          ],
+          "ratt": 1,
+          "tips": "Vilken risk springer en förvaltare när index domineras av något han inte tror på — och vad kostar det att vara avvikande med rätt?"
+        },
+        {
+          "q": "Varför blev 1994 års obligationskrasch ett ödesdigert pedagogiskt ögonblick?",
+          "alternativ": [
+            "Därför att den varade i ett decennium",
+            "Därför att den lärde en generation att nedgångar alltid återhämtas snabbt — buy the dip blev trossats snarare än strategi",
+            "Därför att den bevisade att aktier var farliga",
+            "Därför att Fed misslyckades med räddningen"
+          ],
+          "ratt": 1,
+          "tips": "Vad lär dig en generalrepetition som alltid slutar bra?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "CNBC-epoken — medierna som bubblans väggförstärkare",
+      "intro": "Mahar ägnar mediekulturen ett eget kapitel: CNBC, som startade 1989, blev under nittiotalets slut bubblans torg — räntebevakning, fondstjärnor och analytiker med kultstatus. Kursen läser det som kontraindikatorns moderna form: när prisrörelser blir underhållning har informationen bytt funktion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fenomenet är svårt att överdriva i efterhand. CNBC fanns i gymmen, på flygplatserna, i barberstolarna; tickerbandet rullade som sportresultat och programledarna blev celebrities — Maria Bartiromo kallades Money Honey, och analytiker som Mary Meeker hyllades som nättets drottning i magasin. Mahar citerar tittarsiffror som steg i takt med index, och hennes poäng är strukturell, inte moralisk: televisionen visar det som rör sig, och ingenting rör sig som en börs i eufori — mediebolagens incitament och marknadens eufori blev samstämmiga. Nyhetsekonomins lag: det som kan berättas som en story får lufttid, och en aktie som stiger tjugofem procent på en månad är en bättre historia än en som står stilla. Resultatet blev en självförstärkande slinga: stigande kurser drog tittare, tittare drog sponsorer och nyheter om kurser, nyheterna drog nya köpare, köparna drog upp kurserna."
+        },
+        {
+          "type": "text",
+          "content": "Mahar är noga med ansvarsfördelningen, och kursen ansluter: medierna skapade inte bubblan — de förstärkte den. Skillnaden är avgörande för hur du använder mediebrus som kontraindikator. En tidning på omslaget är inte en försäljningssignal i sig själv; den är en signal om att en viss berättelse har nått den breda kulturen, vilket mäter penetration — hur djupt in i medvetandet en berättelse hunnit. Och penetration är det enda som en topp behöver ligga på: euforins kännetecken är inte att berättelsen är ny utan att den är färdigberättad, utan återstående köpare att övertyga. Kursens tumregel från CNBC-epoken: när din nyhetskälla slutade fråga om och började fråga vilka — vilka aktier, vilken fond, vilken profil — då är berättelsens penetration total och det finns historiskt inget köpläge kvar för den breda publiken. Mediebrus är alltså inte bulligt eller bearigt — det är en mätare på hur många som redan är inne."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-kopplingen: mediebrus tillhör inte Mikro eller Kort — det tillhör Lång- och Mega-lagret, för penetration byggs över år och mättar över år. Det gör det till den långsammaste av kontraindikatorerna och därför den som oftast fryser ut otåliga observatörer: en tätningsmätnings signaler kan komma många kvartal före vändningen, som Buffett-liknande värdeaktieägares hån 1999 visade (kapitel elva). Kursens praktiska användning är därför dubbel: mät mediebruset som trend (riktning, inte nivå) och tolka det bara i konvergens — tätningsmätning plus fondflöden plus multiplpercentil tillsammans är signal; ensam är det stoj. Det är också därför Mahar sparar mediepärlorna till bokens mitt och inte dess topp: tv-epoken nådde sin fulla blom 1998–2000 — när den breda penetreringen var ett faktum, inte ett hot."
+        },
+        {
+          "type": "insikt",
+          "content": "Media mäter inte marknaden — det mäter hur många som redan tagit del av berättelsen. Använd därför mediebrus som penetrationsmätare: när frågan i skvallerledet skiftar från om aktier är en bra idé till vilka aktier som är en bra idé, är berättelsens sista kunder redan på väg in — och du, om du köper då, är deras motpart."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mediekulturens förstärkarslinga och mätningen\",\"rader\":[[\"Länk\",\"Mekanism\",\"Mätbar proxy\"],[\"Kurser stiger\",\"prisrörelser blir underhållning\",\"tittarsiffror, dejtingsonområde för börs\"],[\"Tittare kommer\",\"sponsorer och format följer\",\"antal börsprogram, fondtidningar, pods\"],[\"Berättelser tätnar\",\"analytiker och profiler blir kändisar\",\"omslag, kultstatus, referenser i populärkultur\"],[\"Nya köpare\",\"berättelsen nått den breda kulturen\",\"hushållsandel med aktieägande\"],[\"Kurser stiger mer\",\"slingan stängs och snurrar\",\"konvergens med flöden och multiplpercentil — toppnära\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen penetrationsindex: en vecka, notera varje gång börs eller en specifik berättelse dyker upp utanför finansiella sammanhang — middagsbord, lokalpress, gym, familjegrupp i chatten, underhållningsprogram. Ge en poäng per omnämnande och klassificera: frågar de om, eller vilka? Upprepa månadsvis. Du bygger en trendserie av den långsammaste kontraindikatorn som finns — och trenden i den, inte en enskild veckas nivå, är signalen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mahars strukturella poäng om mediernas roll i bubblan?",
+          "alternativ": [
+            "Medierna skapade bubblan genom att ljuga om bolagen",
+            "Medierna förstärkte men skapade inte bubblan — deras incitament och euforin blev samstämmiga, eftersom det som rör sig får lufttid",
+            "Medierna saknade all betydelse",
+            "Endast tryckt press ansvarade för euforin"
+          ],
+          "ratt": 1,
+          "tips": "Vad visar television helst — och vad rör sig mest i en bubbla?"
+        },
+        {
+          "q": "Hur ska mediebrus användas som kontraindikator enligt kursen?",
+          "alternativ": [
+            "Som en exakt försäljningssignal på Mikro-horisonten",
+            "Som en köpsignal när bruset är som högst",
+            "Som en långsam penetrationsmätare på Lång/Mega-lagret — tolkad som trend och endast i konvergens med flöden och multiplpercentil",
+            "Mediebrus är oanvändbart och ska ignoreras helt"
+          ],
+          "ratt": 2,
+          "tips": "Vad mäter brus i grunden — marknadens nästa steg, eller hur många som redan tagit del av berättelsen?"
+        },
+        {
+          "q": "Vilken fråga signalerar att en berättelse nått sin breda penetration?",
+          "alternativ": [
+            "Om aktier är en bra idé alls",
+            "Varför aktier faller",
+            "Vad en P/E är för något",
+            "Frågan har skiftat från om till vilka — vilka aktier, vilken fond, vilken profil"
+          ],
+          "ratt": 3,
+          "tips": "När väl om-frågan försvunnit, vad återstår för den siste nyinflyttade att fråga?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Irrational exuberance — Greenspan 1996, LTCM 1998 och moral hazard",
+      "intro": "Den 5 december 1996 ställde Alan Greenspan frågan som gett en era sitt namn: hur vet vi när irrational exuberance har överdrivit tillgångspriser? Han agerade aldrig på svaret. Detta kapitel följer Fed genom 1997–1998 — Asien, Ryssland, LTCM — och den moral hazard som räddningarna byggde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Talet i sig var en retorisk fråga i en middagsförklädnad: Greenspan framförde den för American Enterprise Institute med marknadsreaktioner som lät som en fjärrkontroll — Tokyo och London föll nästa dag. Mahar berättar ironin noga: mannen som myntade varningen kom att presidera över de fyra mest euforiska åren i marknadshistorien. Varför? Kursens läsning, i linje med boken: Greenspan hade ingen operationaliserbar definition av bubbla och inget mandat att agera på en — inflationsmålet gällde varor och tjänster, inte tillgångar. Utan ett mått blir en varning en åsikt, och utan en regel blir en åsikt ett tal som citeras och glöms. Det är kursens första centralbankslektion: fråga alltid vad den som varar har mätetal och mandat att agera på — ord utan mandat är brus, oavsett hur berömt de blir."
+        },
+        {
+          "type": "text",
+          "content": "Sedan de två åren som omprogrammerade systemet. Asienkrisen 1997: valutor och aktiemarknader i Ostasien kollapsade; Rysslands statsbankrutt i augusti 1998; och i september den mest symboliska händelsen — Long-Term Capital Management, fonden med nobelpristagare i ledningen och hävstång som gjorde en förlust på några få baspunkter till en konkurs som hotade motpartskedjan. Fed samlade fjorton banker till en frivillig kapitalisering på 3,6 miljarder dollar — ingen skattemedarbetsinsats, men en organisering som signalerade att systemet inte fick falla. Däremed sänktes räntan tre gånger på hösten, varav en mellan mötena. Effekten på marknadspsyket var elektrifierande: från augusti 1998 till mars 2000 steg Nasdaq med omkring tvåhundra procent på knappt arton månader. Greenspan-puten — övertygelsen att Fed skyddar nedförsbacken — blev nittiotalets viktigaste enskilda prisbildare: risken var inte borta, den var omplacerad till statsmakten."
+        },
+        {
+          "type": "text",
+          "content": "Och den sista bränsleledningen: Y2K. Hösten 1999 pumpade Fed reservpengar i systemet för att gardera millennieskiftets teknikrisk — en likviditetspuls som sammanföll med Nasdaqs bästa år någonsin, plus åttiosex procent 1999. Mahar listar sekvensen utan att behöva kommentera den: varning 1996, räddning 1998, stimulans 1999, topp mars 2000. Kursens AK1A-översättning: moral hazard är inte en moralisk term utan en multiplterm — varje implicit garant sänker det avkastningskrav köparna kräver, vilket mekaniskt höjer multiplarna (V04–V06) utan att ett enda bolag blivit bättre. Därför hör centralbankens reaktionsfunktion hemma i varje AKM1-analys som en deklarerad förutsättning: din V04 i dag innehåller en implicit syn på vad Fed gör i nära nedgång — skriv ner den, annars vet du inte vad du betalat för."
+        },
+        {
+          "type": "insikt",
+          "content": "En implicit garanti är en subvention på risk: när någon annan försäkrar nedförsbacken sjunker kravet på avkastning och multiplarna stiger mekaniskt — utan att ett enda kassaflöde förbättrats. Fråga i varje cykel: vem försäkrar vem, och till vilket pris? Svaret är en dold variabel i varenda multipl du betalar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Feds sekvens 1996–2000 — varning, räddning, stimulans, topp\",\"rader\":[[\"Datum\",\"Händelse\",\"Marknadseffekt\"],[\"5 dec 1996\",\"irrational exuberance-frågan\",\"dagars fall globalt — sedan ingenting: ord utan mandat\"],[\"juli 1997\",\"Asienkrisen börjar\",\"en säsong av kreditchocker; USA-kurser stiger vidare\"],[\"aug 1998\",\"Rysslands statsbankrutt\",\"kreditpreads exploderar\"],[\"sep 1998\",\"LTCM: 14 banker, 3,6 mdr USD\",\"systemet skyddas — Greenspan-puten föds\"],[\"hösten 1998\",\"tre räntesänkningar, en mellan mötena\",\"Nasdaq cirka +200 % fram till mars 2000\"],[\"hösten 1999\",\"Y2K-likviditet\",\"Nasdaq +88 % under 1999 — bästa året någonsin\"],[\"mars 2000\",\"topp 5 048\",\"sekvensen sluten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen reaktionsfunktionsdeklaration: tre rader om vad du tror att dagens centralbank gör vid tio respektive trettio procents börsfall — och vad det gör med multiplerna du betalar idag (V04–V06). Rakna sedan baklänges: vilken Greenspan-put är prissatt i din bevakningslista just nu? Om du inte kan formulera den har du en odokumenterad förutsättning i varje köp du gjort — den sortens förutsättningar är det krascher lever av."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför agerade Greenspan inte på sin egen varning om irrational exuberance?",
+          "alternativ": [
+            "Han hade ingen operationaliserbar definition av bubbla och inget mandat att agera på tillgångspriser — målet gällde varor och tjänster",
+            "Han glömde talet direkt",
+            "Kongressen förbjöd honom",
+            "Marknaden hade redan fallit trettio procent"
+          ],
+          "ratt": 0,
+          "tips": "Utan ett mått är en varning en åsikt — och utan mandat?"
+        },
+        {
+          "q": "Vad hände med Nasdaq efter LTCM-räddningen och höstens räntesänkningarna 1998?",
+          "alternativ": [
+            "Den stagnerade i två år",
+            "Den föll ytterligare femtio procent",
+            "Den steg omkring tvåhundra procent fram till toppen i mars 2000",
+            "Den avnoterades"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör en garanti på nedförsbacken med riskaptiten på en uppförsbacke?"
+        },
+        {
+          "q": "Hur översätter kursen moral hazard till AKM1?",
+          "alternativ": [
+            "Som en variabel som mäter bolagens skulder",
+            "Som en moralisk kritik av investerare",
+            "Som något som bara påverkar obligationsmarknaden",
+            "Som en multiplterm — en implicit garanti sänker avkastningskravet och höjer V04–V06 mekaniskt utan att kassaflödena förbättrats"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med priset på risk när någon annan bär den?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 14,
+      "title": "Analytikerkonflikten — Blodget, Meeker, Grubman och forskningens fall",
+      "intro": "Nittiotalets sell-side-forskning var formellt oberoende och faktiskt en bankavdelning: analytiker betalades av emissionsintäkterna de hjälpte till att vinna. Mahar följer Henry Blodget, Mary Meeker och Jack Grubman från stjärnstatus till domslut — och Eliot Spitzer som tände ljuset.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet Henry Blodget är bokens mest instruktiva, därför att han inte var en slump utan en branschlogik. I december 1998 satte han ett tolvmånadersmål på fyrahundra dollar för Amazon — aktien nådde det inom några veckor, och Blodget blev Merrill Lynchs internetstjärna. Vad som framkom senare, i Spitzers utredning, var breven: internt kallade han bolag han rekommenderade köp på för skräp och kruttunnor, medan den publika rekommendationen var köp — eftersom köp var det enda som fick emissionskunderna att återvända. Mary Meeker på Morgan Stanley kallades nättets drottning och förde bolag efter bolag till börsen; Jack Grubman på Salomon var telekomsektorns orakel medan hans hus samlade rådgivararved från samma bolags emissioner. Den gemensamma nämnaren var inte individuell girighet — den var affärsmodellen: forskningen var en kostnadspost som betalade sig genom att vinna bankuppdrag, och emissionskalendern var moralen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan redovisningen. New Yorks delstatsåklagare Eliot Spitzer öppnade 2001–2002 med Merrills interna brev i handen; utredningarna växte till den globala uppgörelsen i april 2003, där tio investmentbanker tillsammans betalade 1,4 miljarder dollar och tvingades skilja forskning från bankverksamhet — oberoende forskning skulle köpas in och publiceras, spärrar byggdes mellan avdelningarna. Grubman förbjöds livstid och betalade femton miljoner; Blodget förbjöds livstid och betalade fyra. Mahar använder uppgörelsen till bokens viktigaste informationsfråga: vem talar du med, och vem betalar för deras mun? Sell-side-forskningens fall är det renaste moderna exemplet på informationsasymmetri i AKM1:s värld — säljaren visste mer, men viktigare: säljarens incitament var osynliga för köparen, vilket är definitionen av en citronmarknad. När utvärderare rankade rekommendationer utan att se emissionskopplingen var marknaden för analys själv en citronmarknad."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-kopplingen är dubbel. För det första V19: en emissionsmaskin behöver köpare, och forskningens funktion under bubblan var att leverera detaljköpare till primärmarknaden — den som förstår att rekommendationer var distribution kan läsa en börsintroduktionstid som en kontraindikator i sig: när forskningen är som mest entusiastisk är den som mest kommersiell. För det andra din egen informationsdiet: kursens tumregel är att varje källa klassificeras efter betalningsflöde — vem betalar, vad får de ut av din uppmärksamhet, och vad hade de att vinna på emissioner och flöden? Det är inte cynism, det är bokslutsdisciplin tillämpad på information: en källa utan synligt betalningsflöde är inte oberoende — den är outredd. Mahar lämnar analytikerkulturen med en fråga kursen låter stå: efter 2003 års spärrar byggdes nya kanaler — tv, nyhetsbrev, sociala nätverk — med samma gamla incitament. Verktyget du behöver är därför inte en lista över förbjudna källor utan en metod: följ pengarna, alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "Klassificera varje källa efter betalningsflödet innan du väger dess budskap: vem betalar, och vad köper de för pengarna — uppmärksamhet, flöden, emissioner, konsultuppdrag? Forskning som är gratis för dig är inte oberoende; den är finansierad av någon med ett intresse, och det intresset är den viktigaste raden i analysen du någonsin kommer att få om källan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Analytikerkonfliktens mekanik och uppgörelsen\",\"rader\":[[\"Element\",\"Beskrivning\",\"Nyckeltal/datum\"],[\"Affärsmodell\",\"forskning som kostnadspost — betalad av emissionsintäkter\",\"emissionskalender = rekommendationsmoral\"],[\"Stjärnorna\",\"Blodget (internet), Meeker (nättets drottning), Grubman (telekom)\",\"köp-rek på bolag som internt kallades skräp\"],[\"Utlösande\",\"Spitzers utredning av Merrills interna e-post\",\"2001–2002\"],[\"Global Settlement\",\"tio banker, separation av forskning och bank\",\"april 2003; 1,4 mdr USD\"],[\"Personerna\",\"Blodget och Grubman förbjöds livstid\",\"4 respektive 15 miljoner USD i böter\"],[\"AK1A-läsning\",\"rekommendationer som distribution till primärmarknaden\",\"V19-emissionsfönster som kontraindikator\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör betalningsflödesrevisionen på din egen informationskost: lista dina fem vanligaste källor — nyhetsbrev, tv, poddar, forum, bankanalyser — och skriv för varje en rad: vem finansierar den, och vad säljer den vidare (uppmärksamhet, flöden, emissioner, finansiella produkter)? Markera de källor där flödet är osynligt. Oftast är det exakt de osynliga du litar mest på — och 1999 års sparare lita också, på brev de aldrig fick se."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den gemensamma nämnaren i Blodgets, Meekers och Grubmans situation?",
+          "alternativ": [
+            "Personlig girighet utan strukturell orsak",
+            "Affärsmodellen: forskningen betalades av emissionsintäkterna — rekommendationer blev distribution till primärmarknaden",
+            "De saknade utbildning i värdering",
+            "De följde centralbankens direktiv"
+          ],
+          "ratt": 1,
+          "tips": "Vad betalade forskningsavdelningens lönekostnader — läsningen av börsen, eller emissionskalendern?"
+        },
+        {
+          "q": "Vad innehöll den globala uppgörelsen i april 2003?",
+          "alternativ": [
+            "Att tio banker tillsammans betalade 1,4 miljarder dollar och tvingades skilja forskning från bankverksamhet",
+            "Att alla analytiker förbjöds arbeta",
+            "Att fonderna avskaffades",
+            "Att CNBC stängdes"
+          ],
+          "ratt": 0,
+          "tips": "Tio hus, en miljardfyra — och en spärr mellan två avdelningar."
+        },
+        {
+          "q": "Hur kopplar kursen analytiker-konflikten till AKM1:s V19?",
+          "alternativ": [
+            "Emissionsmaskinen behöver detaljköpare — och forskningens funktion under bubblan var att leverera dem, vilket gör entusiastisk forskningstid till en kontraindikator i sig",
+            "Analytiker styr bolagens utdelningar",
+            "V19 mäter analytikernas träffsäkerhet",
+            "Det finns ingen koppling alls"
+          ],
+          "ratt": 0,
+          "tips": "Vem behöver köpare allra mest — och vem levererar dem mot betalning?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "IPO-galenskapen — theGlobe.com, VA Linux och vägen till Nasdaq 5 048",
+      "intro": "November 1998: theGlobe.com stiger sexhundra sex procent första handelsdagen. December 1999: VA Linux slår rekordet med sexhundra nittioåtta. Detta kapitel går igenom emissionsmaskinens mekanik — prissättning, låsperioder, spins — och vad den gjorde med V04, V19 och riskdefinitionen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna definierar eran. theGlobe.com, ett community-bolag utan vinst, prissattes till nio dollar i november 1998 och stängde sin första dag på sextioen och en halv — en förstagångsuppgång på över sexhundra procent, då ett rekord. Tretton månader senare slog VA Linux rekordet med nästan sjuhundra procent. Under 1999 noterades flera hundra bolag och den genomsnittliga förstagångspoppen översteg sjuttio procent — mot ett historiskt snitt kring tio procent. Mahar går igenom mekaniken bakom poppen: emissionsinstituten prissatte medvetet lågt, institutionerna fördelade andelar till goda kunder, första dagens hopp blev marknadsföring — och media rapporterade poppen som en nyhetsnyckel, inte som en överföring från köpare till säljare. För det var vad den var: varje procentenhet över emissionspriset var kapital som bolaget lämnade på bordet och som insider- och institutionsinnehavare samlade in på detaljens bekostnad."
+        },
+        {
+          "type": "text",
+          "content": "Maskinens baksida var kapitalförbränningen. Mahar pekar på att många av 1999 års bolag inte var företag i värderingens mening utan förbränningskammare med ticker: vägen från introduktion till nedläggelse kunde vara kort — Pets.com noterades i februari 2000 och lades ner innan året var slut. Värderingsmätrarna ersattes av surrogat: ögonbollar, unika besökare, intäktsmultiplar på drömmar — V04 P/S på bolag vars S var en projektion och vars väg till positiv marginal (V07–V08) krävde att alla antaganden samtidigt slog in. AKM1:s V19 Kapitalförbränning och emission-risk är i princip skrivet för den här mekaniken: ett bolag utan finansieringsväg utöver börsen är en option på emissionsfönstret, och när fönstret stängs — mars 2000 — försvinner bolaget oavsett produktkvalitet. Det är också därför kursen insisterar på att läsa bränningsgraden i månader, inte i kvartal: Pets.com hade en affärsmodell; det saknade var finansieringens livslängd."
+        },
+        {
+          "type": "text",
+          "content": "Och topplasret. Nasdaq nådde 5 048,62 den tionde mars 2000 — en fredag som i efterhand ser ut som vilken handelsdag som helst, vilket är hela poängen: toppar annonserar inte sig själva. Mahar låter samtiden tala: veckan efter kom Barrons med en beräkning av hur många internetbolag som skulle rinna torra inom ett år — ingen hemlighet, bara offentliga kassaflöden sammanräknade. Därpå föll allt. Kursens AK1TS-läsning av IPO-maskinen: den är den mest renodlade kontraindikatorn i hela hierarkin eftersom den mäter primärmarknadens aptit — när emissionsvolymen och förstagångspopparna båda slår rekord står detta för att varje köpare som vill vara med redan är med, och de som vill sälja (insiders, via låsperioder som löper ut) står i kö. Primärmarknadens rekord är detaljmarknadens tak — historiskt har varje emissionsrekord föregått varje större topp, och 1999–2000 är kanonexemplet."
+        },
+        {
+          "type": "insikt",
+          "content": "Emissionsvolym och förstagångspoppar mäter primärmarknadens aptit — inte värde. När båda slår rekord samtidigt är alla som vill vara med redan med, och utbudet som redan står i kö hos dem som redan är inne. Rekord på nyemissioner är därför en av de mest pålitliga toppmarkörerna som finns: det är den mekanism Barrons räknade på och Pets.com betalade för."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"IPO-maskinen 1998–2000 i nyckeltal\",\"rader\":[[\"Händelse\",\"Datum/datumperiod\",\"Tal\"],[\"theGlobe.com första dagen\",\"nov 1998\",\"+606 % (prissatt 9 USD, stängde 63,50)\"],[\"VA Linux första dagen\",\"dec 1999\",\"+698 % — fortfarande rekord\"],[\"Förstagångspopp, genomsnitt 1999\",\"året som helhet\",\"över 70 % mot historiskt lågt enciffrigt\"],[\"Nasdaq-topp\",\"10 mars 2000\",\"5 048,62\"],[\"Pets.com\",\"feb–nov 2000\",\"noterat i februari, nedlagt före årsskiftet\"],[\"Kursens läsning\",\"—\",\"primärmarknadens rekord = toppmarkör; V19-livslängd i månader, inte kvartal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en V19-brandkarta: ta tre bolag i din bevakningslista som går med förlust och räkna ut månader kvar vid nuvarande förbränning (kassa dividerad med kvartalsvis brännning), utan och med emittering. Lägg sedan till en rad: vad händer om emissionsfönstret stänger i tolv månader? Bolaget som inte överlever tolv månader utan börsen är ingen aktie — det är en option på emissionsfönstret, och det ska prissättas som en."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var rekordet för en förstagångsuppgång under eran — och vilket bolag satte det?",
+          "alternativ": [
+            "theGlobe.com med +606 % i november 1998",
+            "VA Linux med nästan +698 % i december 1999 — fortfarande rekord",
+            "Pets.com med +300 % i februari 2000",
+            "Amazon med +100 % 1997"
+          ],
+          "ratt": 1,
+          "tips": "theGlobe.com höll rekordet i drygt ett år — vem slog det allra sista decembern 1999?"
+        },
+        {
+          "q": "Vad var i praktiken förstagångspoppen enligt Mahar?",
+          "alternativ": [
+            "Ett bevis på att bolagen var undervärderade",
+            "En marknadsföringsmekanik — medvetet låg prissättning där varje procent över emissionspriset var kapital bolaget lämnade och som fördelades till insiders och institutioner på detaljens bekostnad",
+            "Ett resultat av slarvig matematik",
+            "Ett tecken på att börsvärdet var irrelevant"
+          ],
+          "ratt": 1,
+          "tips": "Vem tjänar på att dagen ett stiger sjuttio procent — bolaget, eller den som fick andelar till emissionspris?"
+        },
+        {
+          "q": "Varför är Pets.com-fallet en ren V19-lektion?",
+          "alternativ": [
+            "Därför att bolaget saknade produkt",
+            "Därför att bolaget hade för hög utdelning",
+            "Därför att det noterades i februari 2000 och lades ner innan året slut — utan finansieringsväg utöver emissionsfönstret är ett bolag en option på fönstret, inte ett företag",
+            "Därför att konkurrensen var reglerad"
+          ],
+          "ratt": 2,
+          "tips": "Vad fanns kvar som finansieringskälla när börsfönstret stängde?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Fondernas fångenskap — inflöden, closet indexing och 2003 års skandal",
+      "intro": "Fondbranschens bubblapåverkan var inte bara en fråga om övertalade sparare — det var en fråga om vad flödena tvingade förvaltarna att göra. Detta kapitel läser fondindustrin som systemspelare och tar den fram till skandalen 2003: sen handel och market timing på spararnas bekostnad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken som Mahar beskriver den är värd att ta på allvar, för den förklarar hur en hel bransch kunde köpa toppen i perfekt formation. Prestationsjämförelserna var korta och indexbaserade; inflödena följde senaste kvartalets vinnare; och vinnarna var per definition de som ägde det som just stigit — under 1999 alltså teknik. En förvaltare som trodde att tekniktillgångarna var övervärderade hade två val: avvika och underprestera, vilket i en flödesbransch betyder att förlora förvaltat kapital och jobb, eller följa med och behålla både flöden och anställning. Medan hans omdöme sade sälj sade hans balansräkning köp — och balansräkningen skriver lönen. Resultatet blev den stora ironi Mahar dokumenterar: branschens bästana förvaltare blev bubblans mest disciplinerade köpare, inte för att de trodde på priserna utan för att deras kunder trodde på dem. Det är också kursens generellassystemlektion: vid varje topp finns det alltid en kategori tvingade köpare — identifiera dem i förväg, för de definierar hur länge euforin kan leverera."
+        },
+        {
+          "type": "text",
+          "content": "Sedan branschens eget efterräkningskapitel. Hösten 2003 avslöjade New Yorks justitieminister — återigen Spitzer — att vissa fondhus gett utvalda hedgefonder och preferenskunder rätt till market timing och i förekommande fall sen handel: att handela i fondandelar till gårdagens kurs, efter stängningsklockan, vilket är att plocka pengar ur fondens korg från de övriga andelsägarna. Förlorarna var långsiktiga sparare — samma 401(k)-generation som trott att fonden var den trygga delen. Böter i miljardklassen utdömdes, chefer avgick, branschens image — redan sargad av kraschen — slogs sönder. Mahar använder skandalen till bokens viktigaste institutionsfråga: förvaltarskap. En fond är inte en vara utan ett förtroende — och när förtroendets asymmetri (förvaltaren vet mer än spararen) kombineras med ett incitament att exploatera den, är skandalen inte en överraskning utan en struktur. Det är samma analys som kapitel sju, tillämpad på fondsidan: följ pengarna, alltid, även när pengarna heter förvaltningsavgift."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är dubbel och gäller även utanför fonder. Ett: institutionell fångenskap är en styrka att identifiera hos bolag — kunder, distributörer eller ägare som av incitamentsskäl måste stanna kvar oavsett pris är en form av stabil efterfrågan, men en falsk sådan: den försvinner exakt när cykeln vänder, eftersom den aldrig var en preferens utan en constraint. V12 Intäktsstabilitet som är byggd på tvingade kunder ska alltså diskonteras, inte bonuspoängteras. Två: för din egen portfölj gäller samma fångenskapstest: vilka av dina innehav äger du för att du utvärderat dem — och vilka äger du för att index, avgifter eller skammen att sälja en förlust kräver det? Den som kan svara ärligt på den frågan har tillämpat Mahar på sig själv, vilket är bokens mest obehagliga och mest givande övning: fångenskapen är aldrig bara de andras."
+        },
+        {
+          "type": "insikt",
+          "content": "Vid varje topp finns en kategori tvingade köpare — 1999 var det prestationsjagande fondförvaltare som måste äga det som stigit för att behålla flödena. Identifiera tidigt vem som är tvingad att köpa i dagens marknad: den som köper av constraint köper på lånad övertygelse, och när cykeln vänder lämnar den kategorin utbudet samtidigt — det är mekaniken som gör toppar branta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fondindustrins fångenskap och skandalen\",\"rader\":[[\"Element\",\"Mekanism\",\"Effekt\"],[\"Kvartalslig jämförelse\",\"avvikelse med fel = förlorade flöden och jobb\",\"closet indexing; omdöme underordnat balansräkning\"],[\"Flöden följde vinnare\",\"senaste kvartalets stigare fick kapital\",\"teknikfonderna svällde mot toppen\"],[\"Tvingade köpare\",\"förvaltare som måste äga det som stigit\",\"bubblans mest disciplinerade köpare — av constraint\"],[\"Skandalen 2003\",\"market timing och sen handel mot preferens\",\"böter i miljardklassen; förtroendet krossades\"],[\"AKM1-läsning\",\"stabilitet byggd på tvingade kunder\",\"V12 diskonteras — constraint är ingen preferens\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör fångenskapstestet på dig själv: gå igenom dina innehav och märk varje position med en bokstav — U för utvärderad köp, F för fången (index, avgift, avsaknad av alternativ, skam att sälja förlust). Andel F är din personliga closet-indexinggrad. Skriv därefter en mening: när nästa topp kommer, vilka av dina F-positioner kommer du då att behöva äga — och vad betyder det för riskprofilen? Mahar skrev boken för att den frågan skulle vara obekväm."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev de bästa fondförvaltarna bubblans mest disciplinerade köpare?",
+          "alternativ": [
+            "Därför att de trodde mest på teknikbolagen",
+            "Därför att de saknade information om värderingen",
+            "Därför att prestationjämförelser och flöden straffade avvikelse — de köpte av constraint, medan deras omdöme sade annat",
+            "Därför att lagen krävde teknikinnehav"
+          ],
+          "ratt": 2,
+          "tips": "Vad hände med den som underpresterade index som drevs av teknik — och vad skriver lönen?"
+        },
+        {
+          "q": "Vad gick skandalen 2003 ut på?",
+          "alternativ": [
+            "Fonder som lånade ut kassan till hedgefonder",
+            "Utvalda kunder fick rätt till market timing och i förekommande fall sen handel — att handela till gårdagens kurs, på de övriga andelsägarnas bekostnad",
+            "Fonder som köpte optioner i stället för aktier",
+            "Centralbanken tvingade fonderna att köpa obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Vad betyder att handla efter stängningsklockan till en kurs som redan är gammal — och vems korg töms?"
+        },
+        {
+          "q": "Hur ska V12 Intäktsstabilitet bedömas hos bolag vars kunder är tvingade, enligt kursen?",
+          "alternativ": [
+            "Bonuspoäng — tvingade kunder är de mest stabila",
+            "Diskonteras — constraint är ingen preferens och försvinner när cykeln vänder",
+            "V12 gäller bara konsumentbolag",
+            "Frågan är irrelevant för AKM1"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en efterfrågan som vilar på tvång när tvånget upphör?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Toppens anatomi — våren 2000: bredd, belåning och kapitulation hos de rättfärdiga",
+      "intro": "Toppar annonserar inte sig själva — men de lämnar mönster. Detta kapitel samlar våren 2000:s markörer: bredddivergens sedan 1998, rekord i marginalbelåning och fondinflöden, emissionskalenderns maximala aptit — och den mest paradoxala signalen av alla: när de som hade rätt gav upp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Början på slutet var synlig i bredden långt före indexen. Antalet stigande aktier mot fallande — advance-decline-linjen — hade kulminerat redan 1998, medan de tunga teknikbolagen fortsatte dra index uppat: marknaden smalnade av, färre och färre aktier bar allt mer av rörelsen. Det är den klassiska toppens inre anatomi: indexet är ett genomsnitt som kan hållas uppe av en minoritet jättar medan majoriteten redan vänder — och AK1TS:s Medellång-horisont fångar det som konvergens-divergens mellan pris och bredd. Samtidigt nådde de kortsiktigaste drivkrafterna sina respektive rekord: marginalbelåningen — lånade pengar i depån — fördubblades på drygt ett år till nivåer kring tvåhundraåttio miljarder dollar våren 2000; fondinflödena slog månatliga rekord i februari 2000; och emissionskalendern var fullfjädrad medan förstagångspopparna tog rekord. Varje enskilt rekord var mätbart, publicerat och tillgängligt för varje aktör — inget av det var dolt. Det är kursens poäng med toppar: informationen är alltid där; det som saknas är struktur att väga den."
+        },
+        {
+          "type": "text",
+          "content": "Den mest paradoxala markören kom från de som haft rätt längst. Julian Robertsons Tiger Fund, som under decennier slagit index med värdeinvestering, stängde i mars 2000 — efter år av underpresterande i en teknikkörd marknad — med en avskedsförklaring som i princip förutsade kollapsen: det fanns inget rationellt sätt att värdera det som pågick, och utan rationell värdering kunde inte värdeinvestering tillämpas. Veckor senare hade även andra värdeförvaltare kapitulerat eller tvingats ut — och någonstans mellan deras uppgivna fälttåg och Nasdaq-toppens 5 048 låg en mekanisk sanning: när de sista skeptikerna antingen gett upp eller förlorat sina mandate är köpsidan slutrekryterad. Kursen kallar det kapitulation hos de rättfärdiga och ger det kontraindikatorstatus: det är det sista beviset på full penetration — marknadsaktörer som frågat om i arton år slutligen frågar vilka. Få signaler är mer tillförlitliga och få är svårare att handla på, för att de kommer när du själv mest pressats att konvertera."
+        },
+        {
+          "type": "text",
+          "content": "Och miljön kring själva toppen. Fed hade höjt sex gånger mellan juni 1999 och maj 2000, från knappa fem till sex och en halv procent — penningpolitikens broms var påslagen medan euforin accelererade, vilket historiskt är toppars standardsignatur: politiken stramar åt först när euforin redan ätit av sig själv. Barrons berömda genomräkning av internetbolagens kassaburnin kom den tjugonde mars 2000 — samma dag som MicroStrategys ombookföringskollaps och tio dagar efter indexets topp. Ingen av dessa händelser orsakade fallet; de var gnistor i en skog som redan var torr. Kursens slutbild av toppens anatomi är därför en lista som kapitel tretton formaliserar: bredddivergens (sedan 1998), belåningsrekord, flödesrekord, emissionsrekord, penningpolitisk åtstramning, kapitulation hos de rättfärdiga — sex oberoende mätare, alla i rött, samtidigt. Konvergensen — inte något enskilt tal — var signalen. Och den är alltid en konstruktion: du måste bygga den själv, för ingen bygger den åt dig."
+        },
+        {
+          "type": "insikt",
+          "content": "En topp är en konvergens av oberoende mätare, inte ett enskilt tal: bredd som smalnar av medan index stiger, belåning och flöden i rekord, emissionskalendern full, politiken åtstramad och de rättfärdiga kapitulerade. Varje mätare för sig kan missleda — konvergensen, när du byggt den själv, är det närmaste en toppsignal som historia erbjuder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Våren 2000 — sex markörer i konvergens\",\"rader\":[[\"Markör\",\"Observation\",\"Horisont i AK1TS\"],[\"Bredddivergens\",\"advance-decline toppad 1998 medan index steg\",\"Medellång/Lång\"],[\"Marginalbelåning\",\"rekord ca 280 mdr USD; fördubblad på drygt ett år\",\"Kort/Medellång\"],[\"Fondinflöden\",\"månatliga rekord feb 2000\",\"Kort\"],[\"Emissionskalender\",\"rekordvolymer och rekordpoppar\",\"Lång\"],[\"Penningpolitik\",\"sex höjningar jun 1999–maj 2000: 4,75 → 6,50 %\",\"Medellång\"],[\"Kapitulation hos de rättfärdiga\",\"Tiger Fund stängde mars 2000; värdeförvaltare ut\",\"Lång/Mega\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din konvergenspanel: välj sex mätare som finns publicerade för din marknad idag — bredd, marginalbelåning, fondflöden, emissionsvolym, styrräntans riktning, andelen skeptiker som gett upp — och sätt varje månad en grön eller röd prick per mätare. Kravet på dig själv: mätarna ska vara oberoende av varandra (inte sex varianter av samma pris). Panelen är färdig när du kan förklara för en utomstående varför varje prick sitter där den sitter — det är den förklaringen som är analysen."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bredddivergens och vad signalerade den före mars 2000?",
+          "alternativ": [
+            "Att aktierna steg jämnt över hela marknaden",
+            "Att advance-decline-linjen toppat redan 1998 medan tunga teknikjättar höll index uppe — marknaden smalnade av, färre aktier bar rörelsen",
+            "Att obligationsmarknaden steg snabbare än aktiemarknaden",
+            "Att utdelningarna steg snabbare än kurserna"
+          ],
+          "ratt": 1,
+          "tips": "Index är ett genomsnitt — vad händer när genomsnittet hålls uppe av en krympande minoritet?"
+        },
+        {
+          "q": "Vad menar kursen med kapitulation hos de rättfärdiga?",
+          "alternativ": [
+            "Att daghandlare slutade handla",
+            "Att centralbanken gav upp sin inflationsjakt",
+            "Att de som haft rätt längst — som Tiger Fund, som stängde mars 2000 efter år av underpresterande — gav upp eller förlorade sina mandate, vilket är det sista beviset på full penetration",
+            "Att börsen stängdes en vecka"
+          ],
+          "ratt": 3,
+          "tips": "Vem saknas på köpsidan när även de gamla skeptikerna konverterat eller stängt?"
+        },
+        {
+          "q": "Vad kännetecknar den penningpolitiska miljön kring en topp enligt kapitlet?",
+          "alternativ": [
+            "Centralbanken sänker aggressivt",
+            "Politiken är neutral och passiv",
+            "Politiken stramar åt — sex höjningar från juni 1999 till maj 2000 — medan euforin accelererar",
+            "Räntan är noll och förblir noll"
+          ],
+          "ratt": 3,
+          "tips": "När sätts bromsen på — före eller efter det att farten redan bygts?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 14,
+      "title": "Kollapsen 2000–2002 — dot-com-döden, Enron, WorldCom och Sarbanes-Oxley",
+      "intro": "Från april 2000 till oktober 2002 raderades omkring fem biljoner dollar i börsvärde; Nasdaq föll sjuttioåtta procent. Detta kapitel följer kollapsens förlopp och de bokföringsskandaler som följde — och översätter kapitulationens markörer till köpsignaler i spegelbild.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet kom i vågor, inte i ett fall. April 2000: Nasdqs värsta vecka med minus tjugofem procent, inledd av aprilveckans nio-procentiga dag. 2001: recessionen mars till november, och den elfte september, då marknaderna stängde i nästan en vecka och öppnade med Dow minus sju procent på en dag. December 2001: Enrons konkurs — sextiotre miljarder dollar i tillgångar, från att ha varit USA:s sjunde största bolag till arkivet på femton månader, med revisionsbyrån Arthur Andersen som medbrottsling och offer på en gång. Juni 2002: WorldCom erkände bokföringsmanipulation på först 3,8, senare elva miljarder dollar och begärde sig själv konkurs i juli — hundra sju miljarder i tillgångar, den största konkursen i historien vid den tidpunkten. Juli 2002: Dow hade sin värsta vecka sedan trettiotalet. Och den nionde oktober 2002, precis arton år efter 1982 års bottnen, stängde S&P 500 på 776,76 — fyrtionio procent under toppen, Nasdaq sjuttioåtta procent under sin."
+        },
+        {
+          "type": "text",
+          "content": "Politikens svar följde i två spår. Sarbanes-Oxley-lagen, undertecknad den trettionde juli 2002, var det formella: verkställande direktörer och finanschefer intygar personligen redovisningen, revisorer granskas av en ny myndighet, straffskärpningar för värdepappersbrott. Och uppgörelserna: den globala analytikerkollens 1,4 miljarder i april 2003 (kapitel sju) och fondbranschens böter efter 2003 års timing-skandal (kapitel nio). Mahar låter efterräkningen bära två frågor som kursen behåller: hur många av brotten var nya — och hur många var gamla strukturer som bara fick större belopp att arbeta med? Hennes svar är att skandalerna var bubblans logik fullföljd till sin slutstation: när tillväxten måste fortsätta för att berättelsen ska överleva, blir bokföringen den sista tillväxtposten. Det är en mening som tål att återanvändas på alla kommande cykler, i alla marknader — och det är därför AKM1 poängsätter kapitalförbränning (V19) och intäktskvalitet separat: den senare mäter just benägenheten att låta bokföringen ta över när verkligheten sviker."
+        },
+        {
+          "type": "text",
+          "content": "Kapitulationens markörer — bottnens spegelbild av toppens. Sommaren och hösten 2002: put-call-kvoter och volatilitetsmätare på nivåer som saknats sedan kraschhösten 1987; fondutflöden som slagit rekord i flera månader; emissionsmarknaden helt stängd — inte långsam, stängd; och den kulturella termometern: aktier som ord blev förknippat med förlust, skandal och lögn i en grad som 1999 års tittare inte skulle ha trott. Kursen noterar symmetrin med kapitel två: 1982 köpte ingen eftersom inget kunde bli bättre; i oktober 2002 ville ingen äga eftersom inget kunde bli värre — och båda gångerna var det maximala pessimism-läget den bästa köppunkten på en generation. Det är inte en uppmaning att bottom-ticka: det är en kalibrering av vad kontraindikatorer kan — och inte kan. De kan identifiera klimat; de kan inte tajma vädret. För tajmingen behövs AK1TS:s kortare horisonter; för klimatet behövs den här boken."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokföringsskandaler är inte avvikelser i en topp — de är dess slutstation: när tillväxten måste fortsätta för att berättelsen ska överleva blir bokföringen den sista tillväxtposten. Bevaka därför intäktskvaliteten (V19, V12) hårdast just när tillväxtsiffrorna ser minst ifrågasättande ut: det är där sanningen försvinner först."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kollapsen 2000–2002 i milstolpar\",\"rader\":[[\"Tidpunkt\",\"Händelse\",\"Mått\"],[\"april 2000\",\"Nasdaq värsta veckan\",\"−25 % på en vecka\"],[\"11 sep 2001\",\"terrorattentat; börsen stängd nästan en vecka\",\"Dow −7 % vid återöppningen\"],[\"dec 2001\",\"Enrons konkurs\",\"63 mdr USD i tillgångar; Arthur Andersen faller\"],[\"juni–juli 2002\",\"WorldCom\",\"först 3,8, senare 11 mdr USD; konkurs 107 mdr — störst hittills\"],[\"juli 2002\",\"Dows värsta vecka sedan 1930-talet; SOX undertecknad 30 juli\",\"botten närmar sig\"],[\"9 okt 2002\",\"S&P 776,76; Nasdaq 1 114\",\"−49 % respektive −78 % från topparna\"],[\"Summa\",\"börsvärde raderat mars 2000–okt 2002\",\"ca 5 biljoner USD\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg spegeltabellen: ta topp-markörerna från kapitel tio — bredd, belåning, flöden, emissioner, policy, kapitulation — och formulera varje markörs botten-version (utflöden? emissionsmarknad stängd? volatilitetsrekord? kulturell avsky?). Sätt därefter en grön eller röd prick för varje på din nuvarande marknad. Det är samma konvergenspanel, spegelvänd — för kontraindikatorer är inga köp- eller säljsignaler i sig; de är termometrar, och termometern ska läsas från rätt ände beroende på var du är i cykeln."
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur djup var S&P 500:s fall från topp i mars 2000 till botten den 9 oktober 2002?",
+          "alternativ": [
+            "Cirka 25 procent",
+            "Cirka 78 procent",
+            "Cirka 49 procent — från 1 527 till 776,76",
+            "Cirka 90 procent"
+          ],
+          "ratt": 2,
+          "tips": "Sjuhundrasjuttiosex kom tillbaka — inte som Nasdaq, som föll sjuttioåtta procent."
+        },
+        {
+          "q": "Vad är kursens läsning av bokföringsskandalerna Enron och WorldCom?",
+          "alternativ": [
+            "Isolerade brott av enskilda dåliga aktörer",
+            "Ett resultat av för hård reglering",
+            "Bubblans logik fullföljd till sin slutstation — när tillväxten måste fortsätta för att berättelsen ska överleva blir bokföringen den sista tillväxtposten",
+            "Ett resultat av för hög ränta"
+          ],
+          "ratt": 3,
+          "tips": "Vad återstår att justera när verkligheten inte levererar men berättelsen måste hållas vid liv?"
+        },
+        {
+          "q": "Vad är den viktigaste begränsningen hos kontraindikatorer enligt kursens avslutning?",
+          "alternativ": [
+            "De fungerar bara på amerikanska marknader",
+            "De kan identifiera klimat — men inte tajma vädret; för tajming behövs kortare horisonter, för klimatet den här typen av cykelkunskap",
+            "De är olagliga att använda",
+            "De fungerar bara på råvarumarknader"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan att veta att vintern kommer och att veta vilken dag snön faller?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Skuldfrågan — vem bar ansvaret för bubblan? Mahars politiska ekonomi",
+      "intro": "I bokens efterräkningsdel fördelar Mahar ansvaret utan att låta någon spelare gå fri: Fed, analytiker, fondbransch, medier, revisorer och spararna själva. Detta kapitel går igenom fördelningen — och vad den lär om hur ansvar fördelas i incitamentssystem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mahars storstilade drag är att hon vägrar både den bekväma syndabocksberättelsen och den ursäktande alla-var-dumma-berättelsen. Hennes lista är strukturell och graderad. Fed: asymmetrin — räddning i nedgång, passivity i uppgång — försköt riskgränserna och tog bort systemets varningsfunktion. Analytiker och banker: forskning som distribution, medvetet, dokumenterat i interna brev. Fondbranschen: closet indexing och prestationens diktatur, som gjorde branschen till teknikköpare mot eget omdöme. Medierna: förstärkning utan urskiljning, eftersom rörelse säljer. Revisorerna: avgifter från rådgivning som gjorde granskningen till kund till den den skulle granska. Och spararna: de ville tro — de köpte berättelser de aldrig försökte prissätta, och många skrev under på risker de inte förstod. Ingen av dessa var bubblans orsak ensam; var och en var en nödvändig del av ett maskineri där alla följde sitt eget rationella incitament tills summen blev systemisk irrationalitet."
+        },
+        {
+          "type": "text",
+          "content": "Kursen översätter Mahars fördelning till den typologi AK1A använder för alla system: följ incitamentstrukturen, inte aktörernas karaktär. Ett system där varje del fungerar som designad kan ändå producera en katastrof som ingen designat — det är definitionen av en emergent bubbla, och det är därför individuell skuld är en dålig analysenhet: den pekar bakåt och på personer, medan incitamentkartan pekar framåt och på strukturer som kommer tillbaka. Frågan kursen ställer till varje cykel är därför inte vem som var girig utan vilka spärrar som saknades: information som inte nådde köparna (analytiker-konflikten), risk som inte prissattes (Greenspan-puten), ansvar som inte bars av beslutfattarna (förvaltarnas mandat), och kunskap som inte inhämtades (spararnas underlåtenhet). Varje saknad spärr är en mätbar brist — och därmed en förbättringsområde som överlever personerna: separering av forskning och bank, oberoende revision, längre förvaltarmandat, och för din del: en skriven metod som tvingar dig att prissätta det du köper."
+        },
+        {
+          "type": "text",
+          "content": "Och till sist den mest obehagliga raden i Mahars fördelning: spararna själva. Hon dokumenterar att informationen fanns — värderingsmultiplar, bränningsgrader, riskdefinitioner var publicerade och gratis — men att efterfrågan gick till berättelser, inte till siffror: folk ville veta vilka aktier som skulle dubblas, inte vilka bolag som skulle överleva. Kursen vägrar moralisera och vägrar ursäkta: för AK1A är detta den viktigaste av alla empirier i boken — kunskapen var tillgänglig och användes inte. Skillnaden mellan den som förlorade sjuttio procent och den som behöll sitt kapital 2000–2002 var inte information, tur eller kontakter; det var metod. En checklista som kräver multiplmotiv (V04–V06), bränningsgrad (V19) och intäktskvalitet (V12) före köp hade räddat vem som helst från Pets.com — inte för att checklistan är klok, utan för att den tvingar frågorna före checkningen. Mahars bok är i slutänden ett argument för precis den sortens tvång: struktur framför karaktär, i brist på bättre."
+        },
+        {
+          "type": "insikt",
+          "content": "Följ incitamentstrukturen, inte aktörernas karaktär: en bubbla är summan av rationellt följda incitament som ingen designat. Och när kunskapen var gratis men oanvänd — som 1999 — är slutsatsen inte att folk var dumma utan att de saknade struktur: en checklista som tvingar multiplmotiv, bränningsgrad och intäktskvalitet före köp är den billigaste strukturen som finns."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ansvaret fördelat — Mahars lista i systemöversättning\",\"rader\":[[\"Spelare\",\"Handling\",\"Saknad spärr\"],[\"Fed\",\"asymmetriska räddningar\",\"risk som prissattes fel — Greenspan-puten\"],[\"Analytiker/banker\",\"forskning som distribution\",\"information som nådde köparna okammad\"],[\"Fondbranschen\",\"closet indexing\",\"förvaltarmandat utan ansvar för avvikelse\"],[\"Medierna\",\"förstärkning utan urskiljning\",\"penetrationsmätning som kontraindikator\"],[\"Revisorerna\",\"rådgivningsavgifter från de granskade\",\"oberoende granskning\"],[\"Spararna\",\"köpte berättelser utan prissättning\",\"egen metod — struktur framför karaktär\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen skuldfördelning för en förlust du burit: en hälften till omständigheterna (vilka incitament, vilka saknade spärrar?), en hälften till dig (vilken information fanns tillgänglig som du inte använde?). Poängen är inte rättvisa utan arkitektur: varje rad i kolumnen omständigheter ska ge en spärr du kan bygga — och varje rad i kolumnen dig ska ge en checkfråga i din metod. Det är så ett misslyckande blir en struktur i stället för ett minne."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mahars grundhållning i skuldfrågan?",
+          "alternativ": [
+            "En enskild syndabock — Fed-ordföranden",
+            "Alla var dumma och inget ansvar kan utkrävas",
+            "En strukturell, graderad fördelning där ingen spelare går fri — varje del följde sitt rationella incitament tills summen blev systemisk irrationalitet",
+            "Bara spararna bär ansvar"
+          ],
+          "ratt": 2,
+          "tips": "Vad blir kvar när varken syndabocken eller ursäkten räcker som förklaring?"
+        },
+        {
+          "q": "Varför är individuell skuld en dålig analysenhet enligt kursen?",
+          "alternativ": [
+            "Därför att ingen någonsin gjort fel medvetet",
+            "Därför att den pekar bakåt och på personer, medan incitamentkartan pekar framåt och på strukturer som kommer tillbaka",
+            "Därför att juridiskt sett ingen dömdes",
+            "Därför att skuld inte kan mätas"
+          ],
+          "ratt": 1,
+          "tips": "Vad hjälper dig i nästa cykel — att veta vem som failade, eller vilken spärr som saknades?"
+        },
+        {
+          "q": "Vad var den viktigaste empirin i Mahars rad om spararna, enligt kursen?",
+          "alternativ": [
+            "Att informationen fanns tillgänglig och gratis men inte användes — skillnaden var inte information utan metod, struktur som tvingar frågorna före köpet",
+            "Att spararna saknade internetuppkoppling",
+            "Att spararna lurades av olagliga manipulationer i samtliga fall",
+            "Att spararna hade för lite kapital"
+          ],
+          "ratt": 0,
+          "tips": "Multiplar, bränningsgrader och riskdefinitioner var publicerade — vad saknades hos läsaren?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Kontraindikatorernas lexikon — från 1990-talet till AK1TS:s cykel-dimension",
+      "intro": "Kursens synteskapitel: allt boken lärt oss, destillerat till en checklista av mätbara kontraindikatorer — och mappat mot AK1TS:s fem tidshorisonter, eftersom en signal som tolkas på fel horisont är värre än ingen signal alls.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lexikonet bygger på en enda princip: en kontraindikator mäter penetration — hur djupt en berättelse trängt in i kapitalet och medvetandet — och därför är dess information alltid om nivåer, aldrig om tidpunkter. Från boken kursen nyss läst finns sju mätare med 1999–2002-kalibrering. Ett: emissionsvolym och förstagångspoppar (rekord 1999; botten: marknaden stängd 2002). Två: fondflöden (rekordinflöden februari 2000; rekordutflöden hösten 2002). Tre: P/E-percentil (S&P runt trettiotre mot historisk median runt femton; botten sju). Fyra: marginalbelåning (rekord våren 2000). Fem: analytikarköpens andel och entusiasm (köp dominerade helt; andelen sälj försumbar — distributionens höjdpunkt). Sex: mediepenetration (tittarsiffror och kulturell närvaro i rekord — frågan om hade blivit vilka). Sju: de rättfärdigas kapitulation (värdeförvaltare utslagna eller konverterade våren 2000). Notera att ingen av dem mäter priset — de mäter strukturerna runt priset. Det är hela poängen: priset finns i varje diagram; dessa sju finns bara i marknadens sociologi, och det är därför de tillför information diagrammet saknar."
+        },
+        {
+          "type": "text",
+          "content": "Sedan mappningen mot AK1TS:s fem tidshorisonter — som är det som gör lexikonet användbart i stället för dekorativt. Mikro (fem dagar) och Kort (63 dagar): inga av de sju mätarna hör hemma här; de är alla för långsamma, och den som handlar dem på kort horisont straffas inte av fel analys utan av för tidighet. Medellång (252 dagar): fondflöden, marginalbelåning och bredd rör sig på denna skala och kan användas som bekräftelse på en cykelvändning inom arenavågen. Lång (150 veckor): emissionsvolym, P/E-percentil och de rättfärdigas kapitulation hör hemma här — de byggdes och mättade över år och signalerar klimat, inte kvartal. Mega (hela historiken): P/E-percentilens långa band och den kulturella penetrationens totala nivå — hur vanligt aktieägande och aktieprat är i samhället — som rör sig i generationer. Kursens handregel är därför tvingande: innan du agerar på en kontraindikator, deklarera vilken horisont den tillhör och vilken du handlar på — en Lång-mätare som används som Kort-signal är det vanligaste sättet att ha rätt och ändå gå konkurs, vilket Tiger Fund 1999 är det renaste historiska exemplet på."
+        },
+        {
+          "type": "text",
+          "content": "Och tillämpningen, som alltid hos AK1A: panelen, inte singeln. Kontraindikatorer ska aldrig tolkas var för sig, för var och en har sina falska signaler — fondflöden kan vara rekord i en strukturell omfördelning utan topp; belåning kan vara hög i en ekonomi med annan kreditstruktur. Signalen uppstår i konvergensen: minst fyra av sju på extrema nivåer samtidigt, plus en deklarerad horisont. Kursen kräver dessutom en tredje komponent från verktygslådan: ett stopp-villkor — vad ska få dig att lämna positionen om konvergensen visar sig fel? Kontraindikatorer utan stopp-villkor är åsikter med histogram. Den som bygger panelen, deklarerar horisonten och skriver stopp-villkoret har gjort det kursen betraktar som den svåraste övningen i hela katalogen: att omvandla sociologi till positioner utan att låta den bli till tro. Boken levererar råvaran; lexikonet levererar strukturen; och det är kombinationen — inte var och en enskild — som är AK1A:s arv från arton års amerikansk böshistoria."
+        },
+        {
+          "type": "insikt",
+          "content": "En kontraindikator mäter penetration — hur djupt en berättelse trängt in i kapitalet och medvetandet — och dess information gäller nivåer, aldrig tidpunkter. Deklarera därför alltid horisonten innan du agerar: en Lång-mätare använd som Kort-signal är det vanligaste sättet att ha rätt och ändå gå konkurs — Tiger Fund är beviset."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontraindikatorlexikonet — sju mätare, två kalibreringar, fem horisonter\",\"rader\":[[\"Mätare\",\"Topp-kalibrering 1999–2000\",\"Botten-kalibrering 2002\",\"AK1TS-horisont\"],[\"Emissionsvolym/pop\",\"rekord; pop +698 %\",\"marknaden stängd\",\"Lång\"],[\"Fondflöden\",\"rekordinflöden feb 2000\",\"rekordutflöden\",\"Medellång\"],[\"P/E-percentil\",\"ca 33 mot median ca 15\",\"ca 7\",\"Lång/Mega\"],[\"Marginalbelåning\",\"rekord ca 280 mdr USD\",\"kraftigt lägre\",\"Medellång\"],[\"Analytikarentusiasm\",\"köp dominerar; sälj försumbart\",\"sälj-rek breddas\",\"Kort/Medellång\"],[\"Mediepenetration\",\"frågan om blev vilka\",\"aktier = avsky\",\"Mega\"],[\"De rättfärdigas kapitulation\",\"värdeförvaltare utslagna våren 2000\",\"kontrarianer hyllade\",\"Lång/Mega\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg lexikonet live: välj din marknad och fyll i tabellen ovan med dagens läsning per mätare — extremt, högt, neutralt, lågt eller extremt — och skriv Kalibreringens datum i rubriken. Krav: minst en källa per mätare, och en rad om vilken AK1TS-horisont du skulle handla på om konvergens uppstår. Spara filen och uppdatera kvartalsvis. Om du gör detta i två år har du byggt det viktigaste som finns för nästa cykel: ett eget kalibrerat bibliotek, inte en annan persons minne."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäter en kontraindikator i grunden?",
+          "alternativ": [
+            "Prisets nästa rörelse",
+            "Penetration — hur djupt en berättelse trängt in i kapitalet och medvetandet; informationen gäller nivåer, aldrig tidpunkter",
+            "Centralbankens kommande beslut",
+            "Tillväxten i BNP"
+          ],
+          "ratt": 1,
+          "tips": "Varför kan en kontraindikator peka rätt månader eller år för tidigt?"
+        },
+        {
+          "q": "Varför måste en kontraindikator kopplas till en AK1TS-horisont?",
+          "alternativ": [
+            "Därför att alla mätare gäller Mikro-nivån",
+            "Därför att en Lång-mätare som används som Kort-signal är det vanligaste sättet att ha rätt och ändå gå konkurs",
+            "Horisonter spelar ingen roll om signalen är stark",
+            "Därför att AK1TS förbjuder kontraindikatorer"
+          ],
+          "ratt": 1,
+          "tips": "Tiger Fund hade rätt om värderingen i åratal — vad hände ändå?"
+        },
+        {
+          "q": "Vad är kursens krav för att en kontraindikatorpanel ska få bli en position?",
+          "alternativ": [
+            "En enskild mätare på extrem nivå räcker",
+            "Ingen mätare behövs om trenden är stark",
+            "Konvergens av minst fyra av sju på extrema nivåer, en deklarerad horisont och ett skrivet stopp-villkor",
+            "Ett godkännande från en analytiker"
+          ],
+          "ratt": 2,
+          "tips": "Vad skiljer en panel med disciplin från en åsikt med histogram?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 14,
+      "title": "Efter kraschen — uppgörelser, reformer och frågan Mahar lämnar öppen; syntes med AKM1",
+      "intro": "Bokens sista del följer 2003–2004: en marknad på våldsam återhämtning, reformer på plats — och hennes avslutande fråga: kommer lärdomarna att bestå? Kursens sista kapitel knyter ihop cykeln med AKM1 och lämnar den egna deklarationen som svar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Boken slutar inte i askan utan i vår. 2003 steg S&P med drygt tjugofem procent och Nasdaq med omkring femtio; utflyttat sparkapital började våga tillbaka; fondbranschens skandaluppgörelser och den globala analytikeruppgörelsen var på plats, Sarbanes-Oxley arbetade sig in i bolagens processer, och diskussionen om dess kostnader och effekter hade redan börjat. Mahar avslutar med att konstatera att mekanismerna som byggde bubblan — mekaniska köpare, benchmarkfångade förvaltare, en asymmetrisk centralbank, medier som förstärker rörelse, sparare som söker berättelser — alla fanns kvar 2004, oförändrade i struktur. Hennes avslutande fråga är därför öppen och obekväm: när nästa generation tillträder marknaden utan eget minne av 2000–2002, vilka av spärrarna kommer att stå emot — och vilka kommer att ha monterats ner för att de är irriterande i en uppgång? Historien sedan — 2008, och vad som följt — hör inte boken till, men hör till din läsning av den: frågan är ställd till läsaren, inte till historien."
+        },
+        {
+          "type": "text",
+          "content": "Kursens syntes av boken i AKM1:s variabler är sista byggstenen. Värderingsblocket V04–V06 är i ljuset av 1982–2004 inte bolagsfakta utan cykelvariabler: multiplarnas expansion från sju till trettiotre och tillbaka till ensiffriga nivåer berättade hela berättelsen utan att ett enda bolag bytt fundament. V19 Kapitalförbränning och emission-risk är emissionsfönstrets variabel: fönstret öppnas i euforin och stängs i kapitulationen, och bolagets överlevnad i ett stängt fönster är den enda stress som betyder något. V12 Intäktsstabilitet är stabilitet genom cykeln — inte bakåtblickande volatilitet utan frågan om efterfrågan är preferens eller constraint (kapitel nio). V18 regulatoriska katalysatorer är efterräkningens variabel: SOX och uppgörelserna ändrade spelplanen för hela generationer av bolag. Och däromkring RAM:en: cykelposition, räntregim och penetration är de tre omvärldsingångar som vrider samtliga tjugo — och som måste deklareras i varje analys, för annars poängsätter du bolag i ett klimat du aldrig definierat."
+        },
+        {
+          "type": "text",
+          "content": "Slutövningen, som kursen betraktar som bokens hela behållning komprimerad: skriv den kortaste möjliga cykeljournalen för din egen marknad — tre rader. Rad ett, läget: vilken fas av förtroendekanalen befinner vi oss i, och vilka tre kontraindikatorer stödjer läsningen? Rad två, omvärlden: vilken räntregim och vilken reaktionsfunktion är prissatt i multiplarna? Rad tre, du själv: vilka positioner är utvärderade (U) och vilka är fångna (F) — och vad heter ditt stopp-villkor om cykelläsningen visar sig fel? Tre rader, daterade och sparade. Det är Mahars arton år översatta till praktik: en hel bölvåg, en hel kollaps och en hel efterräkning, allt som krävs för att nästa cykel ska mötas av struktur i stället för förvåning. Kursen avslutar där boken avslutar — med frågan, men nu beväpnad: kommer du att minnas? Med en journal, ett lexikon och en panel är svaret inte en känsla. Det är en rutin."
+        },
+        {
+          "type": "insikt",
+          "content": "Mahars fråga — kommer lärdomarna att bestå? — är fel ställd till historien och rätt ställd till dig. Generationer byts ut och minnen raderas; strukturer består bara om de underhålls. Dina tre verktyg från boken är journalen (läget), lexikonet (mätarna) och panelen (konvergensen) — tillsammans är de svaret på hennes fråga, daterat och signerat av dig, varje kvartal."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som RAM — cykeln in, AKM1 ut\",\"rader\":[[\"Cykel-ingång\",\"Mekanik\",\"V-utgångar\"],[\"Multiplcykeln\",\"P/E 7 → 33 → ensiffrigt; diskonteringsränta och riskaptit\",\"V04–V06 är cykelvariabler, inte bolagsfakta\"],[\"Emissionsfönstret\",\"öppet i euforin, stängt i kapitulationen\",\"V19 — överlevnad i stängt fönster är den enda stress som räknas\"],[\"Efterfrågans karaktär\",\"preferens eller constraint hos kunder och ägare\",\"V12 — stabilitet genom cykeln diskonteras om constraint\"],[\"Efterräkningen\",\"SOX, uppgörelser, branschregler\",\"V18 — regulatoriska katalysatorer som generationsvärden\"],[\"Penetration\",\"fondflöden, media, de rättfärdigas kapitulation\",\"RAM-ingång som vrider samtliga tjugo — deklareras i varje analys\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din cykeljournal nu — tre rader: läge (fas plus tre stödjande mätare), omvärld (räntregim och prissatt reaktionsfunktion) och du själv (U/F-andel samt stopp-villkor). Datera och spara. Schemalägg en kvartalsvis återläsning. Det är kursens sista och enda obligatoriska leverans: utan journalen är arton års historiebok; med den är den utrustning."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad konstaterar Mahar om mekanismerna bakom bubblan i bokens slut?",
+          "alternativ": [
+            "Att de alla var avvecklade 2004",
+            "Att de fanns kvar 2004, oförändrade i struktur — och att hennes fråga är vilka spärrar som står emot när en ny generation utan eget minne tillträder",
+            "Att bara mediebranschen kvarstod som problem",
+            "Att marknaden blivit helt säker genom reformer"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med minnet när de som bar det lämnar marknaden?"
+        },
+        {
+          "q": "Hur ska V04–V06 läsas i ljuset av 1982–2004 enligt kursen?",
+          "alternativ": [
+            "Som bolagsspecifika konstanter",
+            "Som cykelvariabler — multiplarnas expansion från sju till trettiotre och tillbaka berättade hela berättelsen utan att ett enda bolag bytt fundament",
+            "Som irrelevanta under en bubbla",
+            "Som enbart beroende av utdelningar"
+          ],
+          "ratt": 1,
+          "tips": "Vad förändrades mest mellan 1982 och 2000 — bolagens kassaflöden, eller priserna på dem?"
+        },
+        {
+          "q": "Varför är V19 Kapitalförbränning och emission-risk emissionsfönstrets variabel?",
+          "alternativ": [
+            "Därför att fönstret öppnas i euforin och stängs i kapitulationen — bolagets överlevnad i ett stängt fönster är den enda stress som betyder något",
+            "Därför att V19 mäter utdelningar",
+            "Därför att emissionskalendern styrs av centralbanken",
+            "Därför att alla bolag alltid kan emittera"
+          ],
+          "ratt": 0,
+          "tips": "Vad hände med bolag vars enda finansieringsväg var börsen när fönstret stängdes 2000?"
+        },
+        {
+          "q": "Vad är kursens svar på Mahars avslutande fråga — kommer lärdomarna att bestå?",
+          "alternativ": [
+            "Ja, reformerna 2002–2003 garanterar det",
+            "Nej, historien upprepar sig alltid identiskt",
+            "Frågan är fel ställd till historien och rätt ställd till läsaren — struktur består bara om den underhålls: journal, lexikon och panel är svaret, daterat varje kvartal",
+            "Framtiden avgörs enbart av centralbanken"
+          ],
+          "ratt": 2,
+          "tips": "Vad är kvar av en läxa när minnena byts ut — och vad kan du bygga som överlever dig själv?"
+        }
+      ]
+    }
+  ]
+}

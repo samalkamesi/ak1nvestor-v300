@@ -1,0 +1,1037 @@
+{
+  "slug": "of-permanent-value",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 187,
+  "title": "Of Permanent Value — Andrew Kilpatrick: KOMPLETT",
+  "summary": "Of Permanent Value: The Story of Warren Buffett är journalisten Andrew Kilpatricks episodkrönika över vår tids mest dokumenterade investerare. Kilpatrick, i decennier verksam vid Birmingham News i Alabama, gav ut den första upplagan 1992 och lät den därefter växa upplaga för upplaga — till över hundra kapitel och mer än tusen sidor i de sista, utökade utgåvorna fram till 2004. Boken är inte en avhandling utan ett arkiv: korta, DATERADE episoder som tillsammans bildar den fullständiga Buffett-kronologin — pojken i Omaha som räknade compound i huvudet, Graham-eran och GEICO-besöket 1951, partnerskapen 1957–1969, Berkshire-köpet 1965, float-maskinen National Indemnity 1967, See's Candies 1972 — köpet som lärde honom moat — Washington Post 1973, Coca-Cola 1988, Salomon-krisen 1991, GenRe 1998 och nittiotalets disciplin att stå utanför en bubbel. Denna kurs destillerar de hundra-plus-kapitlen till de fjorton viktigaste episoderna och läser var och en mot AKM1:s kvalitetsvariabler och moat-block: See's är V14 i ren form, Coca-Cola prissättningsmakten som V07–V09-maskin, float är V10–V11 med omvitt tecken, Apple — som Kilpatricks upplagor inte hann, men kursen sluter cirkeln med — är V15 och V20. Titeln är bokens tes: det permanenta värdet sitter inte i enskilda aktier utan i tid, förtroende och moat — och kronologin är beviset.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå Kilpatricks metod: hundra-plus episodkapitel som tillsammans bildar en kronologi — och varför destillation är nödvändig · Läsa Omahas compound-intuition: tid, återinvesteringsränta och Mega-horisontens födelse · Känna Graham-arvet: Mr Market, säkerhetsmarginal och vad Buffett behöll respektive lämnade · Strukturera partnerskapsmodellen 1957–1969 — incitament, utflykten 1969 och cykeldisciplinen i praktik · Analysera Berkshire-köpet 1965: döende textil som kapitalanskaffare och kapitalfördelarens övertag · Förstå float (National Indemnity 1967, GEICO 1976/1996, Ajit Jain): skuld utan förfallodag som V10–V11 med omvänt tecken · Destillera See's Candies 1972: V14 varumärke, prissättningsmakt, kapitalsnål tillväxt och moatens ekonomi · Praktisera säkerhetsmarginal genom Washington Post 1973: att köpa i blodet och hålla i trettio år · Kvalitetsläsningen av Coca-Cola 1988: konsumentmonopol, V07–V09, V12 och evighetsaktiens matte · Bedöma rykte och risk genom Salomon 1991: förvaltarskap som balansräkningspost · Förstå nittiotalets disciplin: kompetenscirkeln, att bli hånad av en bubbla — och AK1TS:s vändning 2000 · Känna igen GenRe 1998: betala med övervärderade aktier, reserveringskultur och riskens pris även för mästare · Läsa Apple-hemligheten 2016: ekosystem (V15), återköp (V20) och att kompetenscirkeln kan vidgas när variablerna passar · Syntetisera systemet Buffett: float + moat + tålamod + ärlighet mappat mot AKM1 — och vad som är permanent.",
+  "why": "Det finns hundratals Buffett-böcker, men Kilpatricks är den enda som fungerar som primärmaterial: en journalistentjänst som samlade episoderna i kronologisk ordning och lät mönstret tala för sig själv. För AK1A är det mönstret — inte berättelserna — som är behålningen: samma köpare som betalade tre gånger bokvärdet för en godovarufabrik 1972 vägrade köpa tekniktillgångar till vilket pris som helst 1999, och samma organisation som betalade 22 miljarder dollar i aktier för GenRe 1998 (för dyrt, erkändes det) byggde Apple-posten 2016 i tysthet och rätt. Kursen använder kronologin för att lära det som värderingsmodeller inte kan: att moat (V13–V15) är en ekonomi, inte en etikett; att marginaler (V07–V08) och stabilitet (V12) är moatens bokslutsavtryck; att kapitalstruktur (V10–V11, V19–V20) är en designfråga; och att tidshorisonten — AK1TS:s Mega-plan — är den variabel som gör allt ovan aritmetik i stället för retorik. Den som kan de fjorton episoderna kan skilja kvalitet från kvalitetsstory — och det är hela skillnaden mellan att betala för en moat och att betala för en berättelse om en moat.",
+  "chapters_list": [
+    "1. Boken och kompilatorn — Kilpatrick, Birmingham News och krönikan med hundra-plus kapitel",
+    "2. Omaha 1930 — pojken som räknade: compound, tid och Mega-horisontens födelse",
+    "3. Graham-eran — Columbia 1951, GEICO-besöket och säkerhetsmarginalens ABC",
+    "4. Partnerskapen 1957–1969 — Dempster, Sanborn och utflykten före go-go-topp",
+    "5. Berkshire-köpet 1965 — textilmöllan som blev kapitalmaskinen",
+    "6. Float — National Indemnity 1967, GEICO 1976/1996 och Ajit Jain (V10–V11)",
+    "7. See's Candies 1972 — moatens genombrott: V14, prissättningsmakt och kapitalsnålhet",
+    "8. Washington Post 1973 — att köpa i blodet: säkerhetsmarginal praktiserad",
+    "9. Coca-Cola 1988 — konsumentmonopolet, Goizueta och evighetsaktiens matte",
+    "10. Salomon 1991 — ryktet som balansräkningspost och förvaltarskapet i kris",
+    "11. Nittiotalets disciplin — att hoppa över en bubbla och bli hånad för det",
+    "12. GenRe 1998 — riskens pris: när tjugotvå miljarder köptes på fel sätt",
+    "13. Apple-hemligheten 2016 — ekosystem, återköp och kompetenscirkeln som vidgas (V15, V20)",
+    "14. Systemet Buffett — AKM1-mappning, candor och det permanenta värdet; syntes"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och kompilatorn — Kilpatrick, Birmingham News och krönikan med hundra-plus kapitel",
+      "intro": "Andrew Kilpatrick tillbringade decennier som journalist vid Birmingham News i Alabama innan han gav ut Of Permanent Value: The Story of Warren Buffett, första gången 1992. Detta kapitel presenterar bokens egen historia — upplaga för upplaga — och kursens metod: att destillera hundra-plus episoder till fjorton lärdomar mappade mot AKM1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens bibliografi är i sig ett dokument. Upplaga ett kom 1992 — tunn, lokal, nästan ett fanzine i format — och därefter växte verket i takt med att dess huvudperson gjorde nya ting: utökade upplagor genom nittiotalet, med de sista, massivt expanderade utgåvorna fram till 2004, med över hundra kapitel och mer än tusen sidor. Kilpatrick sålde den till stor del i egen distribution, och bokens struktur är journalistens och samlarens snarare än essäistens: korta kapitel, tät kronologi, hundratals daterade episoder — från affärer och brev till anekdoter om frisyrer och köpsedlar. Inget annat verk i Buffett-litteraturen är lika komplett på detaljnivån, och det är därför kursen använder det som primärmaterial: där andra böcker förklarar Buffett destillerar Kilpatrick honom, och destillatet kan sedan läsas mot vilken modell som helst — i vårt fall AKM1:s tjugo variabler."
+        },
+        {
+          "type": "text",
+          "content": "Vad innehåller då de hundra kapitlen, grovt sorterade? En barndom och ungdom i Omaha och Washington: tidningsrundor, golfbollar, pinballautomater, den första aktien vid elva års ålder. En utbildningsväg: Wharton, Nebraska, Columbia och Benjamin Graham. Ett partnerskap: tolv år, omkring trettio procents årlig avkastning, upplöst 1969 på grund av brist på idéer — i en börs som bara steg. En omvandling: textilmöllan Berkshire Hathaway som skepp för kapital som inte längre behövde återinvesteras i textil. En byggnad: försäkring (National Indemnity, GEICO), godis (See's), medier (Buffalo News), energi, och den långa raden moat-köp som kom att definiera kvalitetsinvestering: Washington Post, Coca-Cola, och kriserna han kallades in i — Salomon 1991. Och genom allt: breven, ägarmannaboken, candorn — Kilpatrick citerar dem frikostigt, för breven är där filosofin bor."
+        },
+        {
+          "type": "text",
+          "content": "Kursens upplägg och dubbla verktyg. För det första destillationen: hundra-plus kapitel blir fjorton episoder, valda efter principen vilken lärdom som är mappbar mot AKM1 — Omaha och tiden (Mega-horisonten), Graham (säkerhetsmarginal och V05), partnerskapen (incitament och cykeltajming), Berkshire och float (kapitalstruktur, V10–V11), See's och Coca-Cola (moat och marginaler, V07–V09, V12, V14), Washington Post (säkerhetsmarginal i praktik), Salomon (rykte, V18-dimensionen), nittiotalet (kontraindikatorn omvänt), GenRe (risk och pris), Apple (V15 och V20) och syntesen. För det andra ärligheten: Buffett är inte en helgonlegend, och bokens episoder innehåller även misstagen — Dexter, GenRe, USAir, missade bolag, tjugo år av hån — och kursen håller dem kvar, eftersom felet är den mest undervisande delen av varje system. AK1A:s inställning till hela katalogens Buffett-material är densamma: kopiera inte mannen, lär dig variablerna hans beslut avspeglar — för männen dör, men variablerna är permanenta värden."
+        },
+        {
+          "type": "insikt",
+          "content": "Kilpatricks bidrag är inte analys utan arkitektur: en komplett, daterad episodsekvens som låter mönstret tala. Kompletta kronologier är nämligen det enda botemedlet mot survivor bias — med bara vinsterna blir Buffett en legend, med både segrar och missar blir han en checklista. Läs därför boken som du läser ett bokslut: balansräkningen duger bara om den innehåller skulderna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens arkitektur och kursens destillation\",\"rader\":[[\"Block i Kilpatrick\",\"Ungefärlig period\",\"Nyckelepisoder\",\"Kursens kapitel\",\"AKM1-fokus\"],[\"Uppväxt och utbildning\",\"1930–1956\",\"Omaha, Columbia, Graham\",\"2–3\",\"Mega-horisont, V05, säkerhetsmarginal\"],[\"Partnerskapen\",\"1957–1969\",\"Dempster, Sanborn, upplösning\",\"4\",\"incitament, cykeltajming\"],[\"Ombyggnaden\",\"1965–1976\",\"Berkshire, National Indemnity, GEICO\",\"5–6\",\"V10–V11, float\"],[\"Moat-åren\",\"1972–1989\",\"See's, Washington Post, Coca-Cola\",\"7–9\",\"V07–V09, V12, V14\"],[\"Kriser och disciplin\",\"1991–2004\",\"Salomon, nittiotal, GenRe\",\"10–12\",\"rykte, V18, risk\"],[\"Arvet och syntesen\",\"efter 2004\",\"Apple 2016, systemet\",\"13–14\",\"V15, V20, syntes\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan kapitel två: skriv ner din nuvarande Buffett-bild i tre rader — en rad för vad du tror han köper, en för hur du tror att han resonerar om pris, en för vad du tror hans största misstag är. Spara pappret till kapitel fjorton. Mätningen är poängen: den som kan beskriva både köpen och misstagen har en modell; den som bara kan köpen har en berättelse — och den skillnaden är hela kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utmärker Kilpatricks bok strukturellt?",
+          "alternativ": [
+            "En tät argumenterande avhandling i tio långa kapitel",
+            "En episodkrönika med över hundra korta, daterade kapitel som växte upplaga för upplaga fram till 2004",
+            "En samling tekniska analysdiagram",
+            "En utgivningsmässigt misslyckad bok som aldrig uppdaterades"
+          ],
+          "ratt": 1,
+          "tips": "Journalisten från Birmingham News lät verket växa i takt med huvudpersonen — hur bäst beskriva hundra små daterade bitar?"
+        },
+        {
+          "q": "Varför använder kursen boken som primärmaterial snarare än de många tolkande Buffett-böckerna?",
+          "alternativ": [
+            "Därför att Kilpatrick förutsäger kurser",
+            "Därför att den destillerar i stället för förklarar — en komplett episodsekvens kan läsas mot vilken modell som helst, här AKM1, utan tolkarens filter",
+            "Därför att den är kortast",
+            "Därför att Buffett skrev den själv"
+          ],
+          "ratt": 1,
+          "tips": "Vad vinner du om att själv få råmaterialet i kronologisk ordning?"
+        },
+        {
+          "q": "Vilket är AK1A:s grundinställning till Buffett-materialet i katalogen?",
+          "alternativ": [
+            "Kopiera mannens portfölj",
+            "Behandla honon som en helgonlegend utan misslyckanden",
+            "Kopiera inte mannen — lär dig variablerna hans beslut avspeglar, för männen dör men variablerna är permanenta",
+            "Ignorera Buffett eftersom hans resultat inte går att upprepa"
+          ],
+          "ratt": 2,
+          "tips": "Vad överlever bättre i ett ramverk — en persons minne, eller variablerna som fanns i hans beslut?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Omaha 1930 — pojken som räknade: compound, tid och Mega-horisontens födelse",
+      "intro": "Warren Buffett föddes i Omaha den 30 augusti 1930, mitt i depressionen, son till en börsmäklare. Innan han var tjugo hade han drivit tidningsrundor, sålt golfbollar, placerat pinballautomater och köpt en gård. Detta kapitel läser uppväxtåren som det de var: en intuitionsbyggnad för compound och tid — AK1TS:s Mega-plan i miniformat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kilpatricks tidiga kapitel är en katalog över ett barn som behandlar tid som ränta. Vid elva köpte han sina första aktier — tre preferensaktier i Cities Service — såg dem stiga och sålde med liten vinst, för att sedan se dem mångfaldigas; läxan om att tålamod är en position skrevs tidigt. Vid tretton lämnade han sin första deklaration och drack av cykeln som avdragsgill arbetsutrustning. Tidningsrundorna — han kom att rida flera rutter samtidigt och systematiserade dem som ett logistikföretag — gav månatlig kontantström som återinvesterades. Tillsammans med en kamrat köpte han använda pinballautomater och placerade dem i frisersalonger: kapital, distribution och marginal på samma mini-skala. Vid fjorton hade han sparat tillräckligt för att köpa fyrtio tunnland jordbruksmark i Nebraska och hyra ut den. Poängen som kursen lyfter är inte att pojken var begåvad — utan att han redan som barn räknade baklänges från vad kassaflödet producerar per år, per månad, per dag, snarare än framåt mot vad som kunde hända i nästa kvartal."
+        },
+        {
+          "type": "text",
+          "content": "Och det är här AK1TS:s Mega-plan får sin mänskliga födelse. Compound är inget trick — det är en tidspreferens. Den som räknar i femtioårsperioder och börjar vid tjugo har en mekanik som den som börjar räkna vid femtio aldrig kan komma ifatt, och Buffetts berömda observation att han visste att han skulle bli rik — det var bara en fråga om när — var ingen arrogans utan aritmetik: tillräckligt hög återinvesteringsränta multiplicerat med tillräckligt många år är en exponentialkurva som bara bärs av tid. Kursen använder uppväxtåren för att skärpa en enda distinktion: horisont är inte en åsikt utan en variabel. Samma bolag är olika investeringar på fem och femtio år, eftersom volatiliteten — som dominerar kort sikt — krymper till brus på lång sikt medan den återinvesterade räntan växer till huvudposten. AK1TS:s fem nivåer är byggda exakt för att hålla den distinktionen levande: Mikro handlar om orderflöde, Mega om compound — och Buffett är historiens renaste exempel på en investerare som medvetet aldrig lämnade Mega-planet, inte ens när börsen skrek att han var förlegad."
+        },
+        {
+          "type": "text",
+          "content": "Tillämpningen på ditt eget arbete, konkret. Ett: räkna ditt eget compoundtal — vad är din avkastning hittills, och vad betyder tio år till vid samma tal? Poängen är ödmjukhet: de flesta upptäcker att deras korta horisont hittills bestraffat dem med transaktionskostnader och skatt utan motsvarande avkastning. Två: identifiera vilka av dina beslut som fattades på Mega-planet (bolagets kassaflödesmaskin, moat, kapitalanskaffning) och vilka som fattades på lägre plan (kvartalsrapporter, diagramrytm) — och vilka som var mest lönsamma. Tre: notera vad uppväxtåren inte innehöll: ingen shortcut, ingen hävstång, ingen timing. Pojken som räknade blev rik genom att behålla räntan i spel och tiden i sin tjänst — den enklaste strategi som finns och den svåraste att hålla, eftersom den konkurrerar med allt i kulturen omkring dig som betalar för hastighet."
+        },
+        {
+          "type": "insikt",
+          "content": "Horisont är en variabel, inte en åsikt: på AK1TS:s Mega-plan är volatiliteten brus och återinvesteringsräntan huvudpost — och compound är en tidspreferens, inte en trick. Den som börjar räkna i decennier vid tjugo äger en exponentialkurva; den som börjar vid femtio äger ett horizonproblem som ingen avkastning kan köpa tillbaka."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Uppväxtens compound-maskin — kapital i miniatyr\",\"rader\":[[\"Episod\",\"Ålder (ca)\",\"Verksamhet\",\"Lärdom för AK1A\"],[\"Första aktien\",\"11\",\"tre aktier Cities Service\",\"sålde för tidigt — tålamod är en position\"],[\"Första deklarationen\",\"13\",\"cykeln som avdrag\",\"kassaflödesfokus redan i skatteplansklass\"],[\"Tidningsrundor\",\"13–15\",\"flera rutter, systematisering\",\"återkommande intäkt (V12-karaktär) som återinvesteras\"],[\"Pinball\",\"17\",\"automater i frisersalonger\",\"kapital + distribution + margin på miniskala\"],[\"Gården\",\"14\",\"40 tunnland jordbruk\",\"tillgång som betalar hyra — kassaflöde före kurs\"],[\"Mönstret\",\"—\",\"allt återinvesterat\",\"Mega-planet: räntan i spel, tiden i sin tjänst\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt compoundtal: ta din totalavkastning hittills (uppskattning duger) och annualisera den; multiplicera därefter med tio år till vid samma tal. Skriv två rader: vad tiotårssiffran blir — och hur många av dina transaktioner det senaste året som alls påverkade den positiva delen. Den transaktionslista som mest var kosmetik är din tidshorisonts spegelbild, och den visar oftast Mega-ambition på Mikro-beteende — pojken i Omaha hade motsatt ordning."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kursens läsning av Buffetts uppväxtår?",
+          "alternativ": [
+            "En ovanlig barnslig girighet utan lärdom",
+            "En intuitionsbyggnad för compound och tid — han räknade baklänges från kassaflödet per dag och år, inte framåt mot nästa kvartal",
+            "Ett bevis på att arv är allt",
+            "Enbart en välvillig myt utan belägg"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör ett barn som köper en gård vid fjorton och placerar pinballautomater — spekulerar, eller räknar kassaflöde?"
+        },
+        {
+          "q": "Vad menas med att horisont är en variabel, inte en åsikt?",
+          "alternativ": [
+            "Att alla måste investera på femtio år",
+            "Att horisonten saknar betydelse för resultatet",
+            "Att kort sikt domineras av volatilitet medan återinvesteringsräntan växer till huvudpost på lång sikt — samma bolag är olika investeringar på olika plan i AK1TS:s hierarki",
+            "Att Mega-planet är enda tillåtna plan"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med brus och signal när tidfönstret sträcks?"
+        },
+        {
+          "q": "Vad innehöll uppväxtårens strategi enligt kapitlet?",
+          "alternativ": [
+            "Hävstång och timing",
+            "Kortsiktiga derivat",
+            "Ingen genväg, ingen hävstång, ingen timing — räntan hölls i spel och tiden i sin tjänst",
+            "Enbart arv från föräldrarna"
+          ],
+          "ratt": 2,
+          "tips": "Vilka verktyg använde den unge Buffett inte — och vad betyder deras frånvaro?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 14,
+      "title": "Graham-eran — Columbia 1951, GEICO-besöket och säkerhetsmarginalens ABC",
+      "intro": "Ett avslag från Harvard förde Buffett till Columbia och Benjamin Graham, världsinvesteringens upphovsman. Detta kapitel går igenom Grahams tre verktyg — Mr Market, säkerhetsmarginal, netto-nät-värdering — GEICO-besöket en lördag i januari 1951, och vad Buffett behöll respektive lämnade av arvet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Graham är kursens nästa steg därför att han gav intuitionen ett språk. Tre verktyg bär arvet. För det första Mr Market: föreställ dig marknaden som en manisk affärspartner som varje dag erbjuder dig att köpa eller sälja din andel — han är obligatorisk att lyssna på och fullständigt valbar att lyda. Priset är alltså inte information om värde utan ett erbjudande, och ibland ett absurd sådant. För det andra säkerhetsmarginalen: köp med marginal mellan pris och värde så stor att även dina egna misstag inte kan skada dig — värdet är en uppskattning, margeln är erkännandet av att den är det. För det tredje den statistiska värderingen: netto-nät — bolag som handlas under två tredjedelar av likvidationsvärdet på balansräkningen, cigarrbrott som ännu har ett drag kvar. Graham hittade dem med räknearbete, inte med story, och hans metod var i grunden en aktuarisk: många små marginaler, spridda, som tillsammans slår slumpen."
+        },
+        {
+          "type": "text",
+          "content": "GEICO-episoden är Kronologins första tändgnista och förtjänar sin plats i destillatet. januari 1951: Buffett, då Grahams student, upptäcker att Grahams bolag GEICO — en försäkrare som sålt direkt utan mäklare, med låga kostnader som kunde läggas i lägre premier — är undervärderad i kursen. En lördag tar han tåget till Washington, bankerar på huvudkontorets dörr och får fyra timmar med en tjänstgörande chef — Lorimer Davidson — som förklarar branschens ekonomi. Buffett köper aktier för en betydande del av sin dåvarande förmögenhet, sälja dem för måttlig vinst något år senare — ett misstag han själv listat: aktien kom att mångfaldigas många gånger om. Lärdomarna är två och de bär hela kursen: för det första att förstå branschens ekonomi — kostnadsmoaten — väger tyngre än alla multiplar; för det andra att tid, inte pris, är den dyra dimensionen vid köp av verklig kvalitet. Graham lärde honom säkerhetsmarginalen; GEICO lärde honom vad den skulle tillämpas på."
+        },
+        {
+          "type": "text",
+          "content": "Och sedan arvskiftet — vad behölls, vad lämnades. Buffett behöll ramverket i dess helhet: Mr Market, säkerhetsmarginal, prisskillnadens psykologi, och Grahams nyckeltal för balansräkningsvärde (i AKM1:s värld: V05 P/B som kompass för djupt värde). Vad han lämnade — och det skulle dröja till See's 1972 innan det var fullbordat — var cigarrbrottet som huvudfångst: netto-nät-metoden levererade små, säkra vinster men tvingade ständigt omläggning, och den tvingade honom att äga medelmåttiga bolag för att deras tillgångar var värda mer än kursen. Munger skulle senare formulera omslagsvändningen: det är bättre att köpa ett utmärkt bolag till rimligt pris än ett rimligt bolag till utmärkt pris — vilket i AKM1:s språk är att flytta fokus från V05 ensam till V07–V09 och V13–V15 tillsammans. Kursen noterar att arvet därför är tvåstegs: först disciplinen (Graham), sedan vad disciplinen ska köpa (Kilpatricks resten av kronologin). Den som bara kan det första blir en bra netto-nät-jägare; den som bara kan det andra blir en dyrbars kvalitetsromantiker."
+        },
+        {
+          "type": "insikt",
+          "content": "Grahams tre verktyg är ett språk, inte en strategi: Mr Market gör priset till ett erbjudande, säkerhetsmarginalen gör din egen felbarhet till en variabel, netto-nät gör balansräkningen till ett golv. Behåll språket livet ut — men notera redan nu att Buffett behöll verktygen och bytte fångstmetod: från cigarrbrott till moat-bolag. Språket är permanent; strategin är situationsspecifik."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Graham-arvet — tre verktyg, ett besök och ett arvskifte\",\"rader\":[[\"Element\",\"Innehåll\",\"AKM1-översättning\"],[\"Mr Market\",\"priset är ett erbjudande, ingen information om värde\",\"V04–V06 som erbjudanden att jämföra med eget värde\"],[\"Säkerhetsmarginal\",\"köp med marginal mellan pris och värde\",\"uppskattningens felbarhet inbyggd i beslutet\"],[\"Netto-nät\",\"kurs under ca 2/3 av likvidationsvärdet\",\"V05 P/B som golv — statistisk värdering\"],[\"GEICO 1951\",\"direktförsäkringens kostnadsmoat; lördagsbesöket\",\"branschekonomi väger tyngre än multiplar\"],[\"Arvskiftet\",\"kvar: ramverket; lämnat: cigarrbrottet som huvudfångst\",\"från V05 ensam till V07–V09 + V13–V15\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ett GEICO-test på din bevakningslista: välj ett bolag och skriv en halvsida om branschens ekonomi — vem betalar, vem tar betalt, varifrån kostnadsfördelen eller prissättningsmakten kommer, och vad som händer med den om fem år. Utan att nämna en enda multipl. Om sidan inte går att skriva har du ingen åsikt om bolaget — bara om kursen — och då är nästa steg inte värdering utan research, exakt som för studenten som tog tåget till Washington en lördag i januari."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mr Market i Grahams föreställningsvärld?",
+          "alternativ": [
+            "En regulator som sätter rättvisa priser",
+            "En obligatorisk motpart vars priser alltid är information om värde",
+            "En manisk affärspartner som dagligen erbjuder köp och sälj — obligatorisk att lyssna på, fullständigt valbar att lyda",
+            "En teknisk indikator i AK1TS"
+          ],
+          "ratt": 2,
+          "tips": "Vad blir priset om det inte är information om värde — utan ett erbjudande från någon som ibland är oresonlig?"
+        },
+        {
+          "q": "Vad lärde GEICO-episoden 1951 enligt kursen?",
+          "alternativ": [
+            "Att billigare alltid är bättre",
+            "Att branschens ekonomi — kostnadsmoaten — väger tyngre än multiplar, och att tid är den dyra dimensionen vid köp av verklig kvalitet",
+            "Att man ska sälja så snart vinsten når tjugoprocent",
+            "Att försäkringsbolag alltid är dåliga investeringar"
+          ],
+          "ratt": 1,
+          "tips": "Han sålde för måttlig vinst och såg aktien mångfaldigas — vilka två läxor finns i det felet?"
+        },
+        {
+          "q": "Hur beskrivs arvskiftet från Graham i AKM1:s språk?",
+          "alternativ": [
+            "Buffett övergav Grahams ramverk helt",
+            "Buffett behöll verktygen men bytte fångstmetod — fokus flyttades från V05 ensam till V07–V09 och V13–V15 tillsammans",
+            "Graham övertalade honom att stanna vid netto-nät",
+            "Arvskiftet skedde aldrig"
+          ],
+          "ratt": 1,
+          "tips": "Bättre att köpa ett utmärkt bolag till rimligt pris än ett rimligt bolag till utmärkt pris — vilka variabler väger upp?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Partnerskapen 1957–1969 — Dempster, Sanborn och utflykten före go-go-topp",
+      "intro": "I maj 1957 startade Buffett ett investeringspartnerskap i Omaha med sju partners och 105 100 dollar — hundra av dem hans egna. Tolv år senare löste han upp det, på toppen av go-go-erans eufori, med motiveringen att han inte längre hittade köpobjekt. Detta kapitel läser partnerskapen som en lärobok i incitament och cykeldisciplin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strukturen förtjänar sin egen läsning, för den är kursens första kapitalstrukturexempel. Partnerskapen — de blev med tiden flera, sammanslagna till ett — hade en avgiftsmodell där partnerna garanterades en minimiavkastning och Buffett tog andel av överskottet över den: han blev rik först när de blev rika, och fattig — relativt — när de inte gjorde det. Hans eget kapital var inlagt, hans arvode var resultatbundet, och breven till partnerna var candorn på topp: han deklarerade vad han inte förstod, vad han väntade sig och — viktigast — när han inte hittade något att köpa. Resultatet är en av historiens bäst dokumenterade förvaltningar: under partnerskapsåren i genomsnitt omkring trettio procent årligen mot Dow på runt nio, utan hävstång och utan att lämna sin kompetenscirkel. Kursen noterar mekaniken för framtida kapitel: struktur är beteende. Den som får betalt för aktivitet köper aktivitet; den som får betalt för resultat kan ha utdelningen tålamod."
+        },
+        {
+          "type": "text",
+          "content": "Fångstmetoderna var ren Graham, med två episoder som förtjänar plats i destillatet. Dempster Mill, en tillverkare av vindmöllor och pumpar i Nebraska: Buffett köpte upp aktierna billigt mot balansräkningsvärde, kunde inte få verksamheten att svänga — och hyrde in en hård operatör, Harry Bottle, som förvandrade lager och utrustning till kassa. Lärdomen var dubbel: djupt rabatterade tillgångar kan realiseras, men det kräver kontroll och kamp — arbetsamt kapital. Sanborn Map, en katalogproducent vars värdepappersportfölj var värd mer än hela börsvärdet: Buffett byggde en betydande ägarpost och lät bolaget skifta ut portföljen till aktieägarna. Samma logik: värde som fastnar i fel struktur frigörs genom aktieägaraktivism — kursens första V20-vrå: kapital som inte återinvesteras till hög ränta ska returneras, inte förvaras. Och American Express 1964, efter salladsoljekrisen: ett kvalitetsbolag vars kurs kollapsat på en skandal som inte rörde kärnverksamheten — första gången balansräkningen fick vika för berättelsens temperatur, och en tredje metod föddes: köp kvalitet i tillfällig kris."
+        },
+        {
+          "type": "text",
+          "content": "Sedan upplösningen — kronologins första rena cykeltillfälle. 1969 var go-go-erans höjdpunkt: konglomeratbyggen rests på redovisningstrick, fondivinnare som steg för att de stigit, och en marknad där Buffett — med egna ord i partnarbrevet — inte längre förstod prissättningen och därmed inte hittade köpobjekt som uppfyllde hans krav. Han stängde. Inte gradvis, inte med hedge: han likviderade, distribuerade kontantmedel samt — skatteeffektivt — de två innehav som blev kvar — Berkshire Hathaway och Diversified Retailing — och bad partnerna förstå att han hellre slutade än jagade marknaden. Kursen kopplar till Bull!-kursens kontrahistoria: trettio år senare stod en annan generation fundförvaltare i samma situation och gjorde motsatt val — de blev kvar därför att incitamentet straffade utflyttning. Buffetts struktur — minimigaranti plus överskottsandele, eget kapital inlagt — gjorde utflyttning möjlig; deras benchmarkkarriär gjorde den omöjlig. Incitament är alltså inte en detalj i förvaltningen — det är cykelbeteendets styrsystem, och kapitel nio och elva i den här kursen, liksom hela Bull!-kursen, är bevissamlingen."
+        },
+        {
+          "type": "insikt",
+          "content": "Struktur är beteende: den som får betalt för aktivitet köper aktivitet, den som får betalt för resultat kan unna sig tålamod. Fråga vid varje förvaltning — även din egen för dig själv — vad avgiften betalar, när den betalar och vad som händer med den som vägrar dansa när musiken blir dum. Buffetts utflyttning 1969 var möjlig för att hans struktur tillät den; de flesta strukturerna tillåter den inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Partnerskapen i tre episoder och en upplösning\",\"rader\":[[\"Episod\",\"Årtal\",\"Metod\",\"AKM1-lärdom\"],[\"Strukturen\",\"1957\",\"minimigaranti + överskottsandele; eget kapital inlagt\",\"incitament som cykelstyrning\"],[\"Dempster Mill\",\"1961–1963\",\"kontroll; Harry Bottle frigör kapital\",\"djupt rabatt kräver kamp — arbetsamt kapital\"],[\"Sanborn Map\",\"1958–1960\",\"aktivism; portföljen skiftas ut\",\"V20-logik: icke-återinvesterat kapital returneras\"],[\"American Express\",\"1964\",\"kvalitet i tillfällig kris\",\"köp moat när berättelsen blöder, inte bolaget\"],[\"Upplösningen\",\"1969\",\"går ur när han inte hittar köpobjekt\",\"cykeldisciplin möjliggjord av struktur\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget partnarbrev: en sida till dig själv (eller din familj) med tre rubriker — vad du får betalt för (dina incitament), vad du inte förstår (din kompetenscirkel i klartext), och under vilka villkor du lämnar marknaden helt. Signera och datera. Utflyttning 1969 var inte ett modbeslut utan ett kontraktsbeslut: förutsättningarna fanns nedskrivna i förväg. Ett brev skrivet i förväg är skillnaden mellan disciplin och improvisation."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur såg partnerskapets avgiftsstruktur ut?",
+          "alternativ": [
+            "Fast arvode oavsett resultat",
+            "Ren andel av förvaltat kapital som på en modern fond",
+            "Partnerna garanterades en minimiavkastning och Buffett tog andel av överskottet över den — med eget kapital inlagt",
+            "Han tog femtio procent av all vinst utan garanti"
+          ],
+          "ratt": 2,
+          "tips": "När blev han rik — när partnerna gjorde det, eller oavsett?"
+        },
+        {
+          "q": "Vad var poängen med Sanborn Map-episoden i AKM1:s översättning?",
+          "alternativ": [
+            "Att konglomerat är bäst",
+            "Att kartor är en moat",
+            "Att teknisk analys avslöjar dolda värden",
+            "Att kapital som inte kan återinvesteras till hög ränta ska returneras till ägarna — V20-logik genom aktieägaraktivism"
+          ],
+          "ratt": 3,
+          "tips": "Vad gör man med en värdepappersportfölj som är värd mer än hela bolaget — förvarar den, eller skiftar ut den?"
+        },
+        {
+          "q": "Varför kunde Buffett lämna marknaden 1969 när fondförvaltare 1999 inte kunde?",
+          "alternativ": [
+            "Därför att han visste exakt när börsen skulle falla",
+            "Därför att 1969 var en lugnare marknad",
+            "Därför att hans struktur — minimigaranti, överskottsandele, eget kapital — tillät utflyttning, medan benchmarkkarriärer straffar den",
+            "Därför att hans partners tvingade honom"
+          ],
+          "ratt": 2,
+          "tips": "Vad kostar det att stå utanför en stigande marknad — och vem bår kostnaden i respektive struktur?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Berkshire-köpet 1965 — textilmöllan som blev kapitalmaskinen",
+      "intro": "Berkshire Hathaway var en döende textiltillverkare i New Bedford, Massachusetts. Buffett köpte in sig från 1962, tog kontrollen 1965 — och byggde sedan, under tjugotalet år, världshistoriens mest framgångsrika holdingbolag på dess skepp. Detta kapitel analyserar köpet som det var: ett misstag som blev en maskin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historien är känd men vägs sällan. Buffett köpte Berkshire-aktier från december 1962 kring sju komma sextio dollar per aktie — mot betydligt högre värden i balansräkningen — drivet av samma netto-nät-logik som i partnerskapens övriga fångst. Styrelseordföranden erbjöd att inlösa en post till elva femtio; budet sänktes med tretton cent i sista brevet, och Buffett — stött av de tretton centen — svarade med att köpa kontrollen istället, till ett genomsnittspris omkring fjorton komma åttiosex dollar per aktie. Han fick alltså sin kontroll i vrede, inte i strategi; och målet han kontrollerade var en textilmölla i en bransch som låglöneländer och ny teknik höll på att avveckla. Berkshire var — med Buffetts egen senare titulering — ett misstag: pengar som kunde ha samlats direkt i försäkring sattes i en bransch med strukturellt sjunkande avkastning, och skillnaden mellan de två alternativen beräknade han i efterhand till hundratals miljarder utebliven avkastning. Textilrörelsen hölls vid liv i tjugo år innan den lades ner helt 1985."
+        },
+        {
+          "type": "text",
+          "content": "Men ur misstaget byggdes maskinen, och mekanismen är kursens andra kapitalstrukturlektion. Textilverksamheten genererade kassa — inte mycket, men kontinuerlig — och istället för att återinvesterad den i mer textil riktades den ut: 1967 köptes försäkringsbolaget National Indemnity för knappa nio miljoner dollar, och från det ögonblicket var Berkshire inte ett textilbolag utan en kapitalanskaffningsapparat med en döende rörelse som biopera. Kursen kallar det kapitalfördelarens övertag: den som äger en kassaström och kan rikta den vart avkastningen är högst — i stället för att vara tvungen att återinvestera i sin egen, föränderliga bransch — äger en option som ingen enskild verksamhet kan ge. Det är också därför holdingstrukturen är försummad som form av den som bara ser mångfaldigering — och förstådd av den som diskonterar framtida allokering: Berkshire-köpet 1965 var i grunden köpet av ett skal med skattemässig kontinuitet och en påtvingad kassaström — och Buffetts bidrag var att inse att skalets värde inte låg i textilen utan i rätten att rikta om dess kassa."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen och varningen. Översättningen: AKM1:s V01–V02 frågar om tillväxt och återkommande intäkter — Berkshire-episoden tillför att frågan vid hållningsbolagsnivå blir riktningsfrågan: återinvesteras kassan i bransch medfall eller i moat? Bolag som återinvesterar i sin egen döende bransch har bra V01 och dålig framtid; holdingbolaget som flyttar kassan till högre räntor kan ha fadd V01 och ändå skapa värdet. Varningen är destillatet av kapitlet: misstaget blev en maskin genom tjugo år av aktiv omdirigering — inte genom tålamod med textilen. Buffett har själv formulerat läxan: han borde ha lagt ner textilen tidigare och insett att billigt inte är köp om branschen motarbetar dig. Turnaround i en strukturellt avvecklingsbransch är sällan turnaround — den som köper V05-lågt i en bransch utan moat har köpt ett netto-nät utan botten — hoppet om förbättring är vad V12:s låga poäng döljer. Kursen använder därför Berkshire 1965 som en lärokurs i två delar: maskinen är beundransvärd, misstaget är läran — och den som kopierar det ena utan det andra har inte förstått något av delarna."
+        },
+        {
+          "type": "insikt",
+          "content": "Kapitalfördelarens övertag: den som äger en kassaström och kan rikta den vart avkastningen är högst — i stället för att tvingas återinvestera i sin egen bransch — äger en option ingen enskild verksamhet ger. Och varningen i samma köp: billigt är inte köp om branschen motarbetar dig; turnaround i en avvecklingsbransch är sällan turnaround."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Berkshire 1965 — misstaget och maskinen\",\"rader\":[[\"Element\",\"Innehåll\",\"Lärdom\"],[\"Köpet\",\"från 1962 kring 7,60 dollar; kontroll 1965 kring 14,86\",\"netto-nät i en avvecklingsbransch\"],[\"Utlösaren\",\"inlösen erbjuden 11,50, ändrad till 11,375\",\"kontrollen togs i vrede, inte i strategi\"],[\"Misstaget\",\"kapital i textil i stället för direkt i försäkring\",\"senare kallat ett av hans dyraste fel\"],[\"Omvändningen\",\"textilkassan riktades ut: National Indemnity 1967\",\"holdingform = rätten att rikta om kapital\"],[\"Slutet för textil\",\"nedlagd 1985\",\"turnaround kom aldrig — branschens logik vann\"],[\"AKM1\",\"V01–V02 som riktningsfråga på hållningsnivå\",\"kassans destination väger tyngre än dess hemvist\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör riktningsprovet på ett holding- eller konglomerat i din bevakning: ta fram de senaste tre årens kassaflödesanalys och lista vart det operativa kassaflödet tog vägen — återinvesterat i vilken bransch? Förvärv i vilken bransch? Återköp, utdelning? Sätt en poäng per krona: varje destination granskas mot frågan vilken avkastning det köpte. Om merparten av kassan återinvesteras i en bransch med sjunkande marginaler (V07–V08) har du ett textilscenario — och textilscenarier slutar som textilen."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kom Buffett att ta kontrollen över Berkshire 1965?",
+          "alternativ": [
+            "Genom en strategisk plan från början",
+            "Genom en fientlig uppköpsoffensiv finansierad med skuld",
+            "Erbjudandet om inlösen sänktes i sista brevet med tretton cent — varpå han i vrede köpte kontrollen istället, i genomsnitt kring 14,86 dollar per aktie",
+            "Han ärvde aktierna från sin far"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan förvandla en netto-nät-post till en kontrollpost — logik eller stoltSYS?"
+        },
+        {
+          "q": "Vad är kapitalfördelarens övertag enligt kursen?",
+          "alternativ": [
+            "Att stora bolag alltid kan låna billigare",
+            "Att en kassaström som kan riktas vart avkastningen är högst är en option ingen enskild verksamhet ger — holdingformen är rätten att flytta kapital mellan branscher",
+            "Att holdingbolag inte betalar skatt",
+            "Att diversifiering alltid slår koncentration"
+          ],
+          "ratt": 1,
+          "tips": "Varför var skalet värt mer än textilen — vad var det han egentligen köpte rätten till?"
+        },
+        {
+          "q": "Vad är kursens huvudvarning från Berkshire-episoden?",
+          "alternativ": [
+            "Att holdingbolag alltid är bättre än renodlade bolag",
+            "Att man aldrig ska köpa aktier under bokvärdet",
+            "Att textilbranschen återkommer cykliskt",
+            "Att billigt inte är köp om branschen motarbetar dig — turnaround i en strukturellt avvecklingsbransch är sällan turnaround"
+          ],
+          "ratt": 3,
+          "tips": "Vad hände med textilen trott tjugo års försök — och vad kallade Buffett själv köpet?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 14,
+      "title": "Float — National Indemnity 1967, GEICO 1976/1996 och Ajit Jain (V10–V11)",
+      "intro": "Försäkring är Berkshires motor, och float är dess bränsle: premier som betalas idag och betalas ut som skador först i morgon. Detta kapitel förklarar float-ekonomin, de tre byggnadsstegarna — National Indemnity 1967, GEICO-räddningen 1976 och utköpet 1996, Ajit Jain från 1986 — och översätter den till AKM1:s V10–V11 med omvänt tecken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken först, för den är kursens viktigaste balansräkningsomvändning. En försäkrare tar emot premier innan skadorna betalas: mellan inbetalning och utbetalning ligger en växande pengabuffert — floaten — som försäkraren får förvara och investera. Om försäkringen prissätts rätt kostar bufferten ingenting: premieintäkterna täcker skador och kostnader över tid, och investeringsavkastningen på floaten blir ren vinst. Om underwriting är riktigt god — premierna mer än täcker — betalas försäkraren för att få förvara främmandes pengar. Buffett köpte National Indemnity 1967 för knappt nio miljoner dollar med just denna ekonomi: en bransch där han, till skillnad från i textil, förstod kostnadsmoaten och där kapitalflödet var förutsägbart nog att räkna på. GEICO var densamma ekonomi i renare form — direktförsäljning utan mäklare, lägre kostnader, lägre premier, lojalare kunder — och därför är kronologins första och kanske viktigaste mönster att Buffetts två största konstruktioner (GEICO-episoden 1951, National Indemnity 1967) är samma idé på två skalor: köp kostnadsmoaten där kassan anländer före kostnaden."
+        },
+        {
+          "type": "text",
+          "content": "GEICO:s andra akt är en av kronologins renaste krisinvesteringar. Mitt på sjuttiotalet hade expansiv prispolitik och otillräckliga reserver fört bolaget till ruinens kant — aktien föll från höga nivåer till låga ensiffriga dollar. Jack Byrne tillkallades för att rädda, och Buffett — som visste exakt vad kostnadsmoaten var värd om prissättningen sanerades — byggde 1976–1980 en ägarpost på omkring en tredjedel av bolaget för sammanlagt knappa femtio miljoner dollar. Rättning genomfördes, moaten bestod, och tjugo år senare köpte Berkshire ut de återstående ägarna för 2,3 miljarder dollar. Från besöket 1951 till helägandet 1996 löper en linje som kursen kallar episoden med två slut: samma bolag, två priser, fyrtiofem år — och skillnaden mellan dem är hela avkastningen. Ajit Jain, som kom till Berkshire 1986, tillhör samma kapitel därför att han visade att floatmaskinen kan byggas i storlek utan att tappa disciplin: hans återförsäkringsbok växte till jättedimensioner under en enda princip — skriv aldrig affär som inte är rationellt prissatt bara för att växa, för float som kostar mer än pengarna är bara ett dyrare lån."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är kursens omvända balansräkningslektion och därför värd formulering i exakta termer. V10 Skuldsättningsgrad mäter hävstång som risk — men float är en skuld med tre egenskaper som vanlig räntebörande skuld saknar: den har ingen förfallodag som kan tvinga refinansiering i en stängd kreditmarknad (V19-logikens motsats), den växer med verksamheten i stället för att amortereras, och dess kostnad avgörs inte av en marknad utan av bolagets egen underwriting-disciplin. Ett försäkringsbolag med god underwriting har alltså hög V10 och låg faktisk finansiell risk — balansräkningens enskildhet ljuger om ekonomien. Kursens tumregel: poängsätt aldrig V10–V11 utan att klassificera skuldens art — räntebärande med förfallodag, driftsbetingad utan förfallodag (float, leverantörskrediter, förskott), och kapitalstrukturposteringar. Om klassificeringen saknas blir skuldsättningsgraden ett mått på bokföring, inte på risk — och buffertens kvalitet (V11 likviditet, i försäkringsfall reserveringens kvalitet) är den sanning som avgör om hävstången är en motor eller en bomb."
+        },
+        {
+          "type": "insikt",
+          "content": "Klassificera alltid skuldens art innan du poängsätter V10–V11: räntebärande med förfallodag är en motor i uppgång och en bomb i nedgång; driftsbetingad skuld utan förfallodag — float, förskott, leverantörskrediter — är hävstång utan bägare, och dess kostnad avgörs av operativ disciplin, inte av marknaden. Balansräkningen ensam ljuger om skillnaden; underwriting-resultatet talar sanning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Float-maskinen i tre steg och en omvänd balansräkning\",\"rader\":[[\"Steg\",\"Årtal\",\"Innehåll\",\"Tal\"],[\"National Indemnity\",\"1967\",\"första float-källan; Ringwalt; kostnadsmoat\",\"8,6 miljoner USD\"],[\"GEICO-räddningen\",\"1976–1980\",\" Byrne sanerar; Buffett bygger post\",\"ca 1/3 av bolaget för knappa 50 miljoner USD\"],[\"GEICO helägande\",\"1996\",\"utköp av resterande andel\",\"2,3 miljarder USD\"],[\"Ajit Jain\",\"från 1986\",\"återförsäkring i jätt skala under disciplin\",\"princip: aldrig irrationell prissättning för att växa\"],[\"AKM1\",\"—\",\"float = skuld utan förfallodag med egen kostnadsstyrning\",\"V10 hög, risk låg — om underwriting bär\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör skuldklassificeringen på ett bolag i din bevakning: ta balansräkningen och sortera hela skuldposten i tre lådor — räntebärande med förfallodag, driftsbetingad utan förfallodag, och övrigt. Beräkna V10 på nytt enbart på låda ett. Fråga därefter: hur styrs kostnaden för låda två — av marknaden eller av bolagets egen prissättningsdisciplin? Om svaret är disciplin har du hittat float-logik i miniformat, och det är en av de mest underskattade kapitalstrukturerna i hela AKM1."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är float i försäkringsekonomi?",
+          "alternativ": [
+            "Värdet av bolagets aktier på börsen",
+            "En skuld till banken med rörlig ränta",
+            "Premier som betalas in före skadorna betalas ut — en buffert försäkraren får förvara och investera, kostnadsfri om prissättningen bär",
+            "En teknisk indikator för försäkringsaktier"
+          ],
+          "ratt": 2,
+          "tips": "Vad ligger mellan inbetalning och utbetalning — och vem får förvara det under tiden?"
+        },
+        {
+          "q": "Hur byggde Buffett GEICO-posten på sjuttiotalet?",
+          "alternativ": [
+            "Han köpte allt i en enda transaktion till toppris",
+            "Han undvek bolaget eftersom det var i kris",
+            "Han köpte aktier i konkursprocessen utan att förstå verksamheten",
+            "Efter krisen 1976 — aktien i låga ensiffror — byggde han 1976–1980 en tredjedels post för knappa femtio miljoner dollar, och 1996 köpte han ut resterande för 2,3 miljarder"
+          ],
+          "ratt": 3,
+          "tips": "Kostnadsmoaten visste han värdet av sedan 1951 — vad gör en kris med priset på en intakt moat?"
+        },
+        {
+          "q": "Varför är float en omvänd balansräkning i AKM1:s mening?",
+          "alternativ": [
+            "Därför att den aldrig behöver redovisas",
+            "Därför att den är en skuld utan förfallodag, växande med verksamheten, vars kostnad styrs av bolagets egen disciplin — hög V10 men låg finansiell risk vid god underwriting",
+            "Därför att den räknas som eget kapital",
+            "Därför att den bara finns i bankers balansräkningar"
+          ],
+          "ratt": 1,
+          "tips": "Vilka tre egenskaper skiljer den från räntebärande skuld — förfallodag, tillväxt, kostnadsstyrning?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "See's Candies 1972 — moatens genombrott: V14, prissättningsmakt och kapitalsnålhet",
+      "intro": "År 1972 köpte Buffetts bolag Blue Chip Stamps godisföretaget See's Candies i Kalifornien för tjugofem miljoner dollar — trots att ägarfamiljen ville ha trettio och trots att Buffett tvekade. Det blev köpet som lärde honom moat: kvalitetens ekonomi, prissättningsmakten och det kapitalsnåla undret.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna är kanoniserade därför att de är renaste möjliga undervisning. See's omsättning 1972: drygt trettioen miljoner dollar; rörelseresultat före skatt: knappa fyra och en halv. Ägarfamiljen See bad trettio miljoner; Munger och Buffett landade på tjugofem — omkring tre gånger bokvärdet, ett pris som den gamle Graham-skolade Buffett nästan vägrade. Vad som hände därefter förvandlade hans tänkande: See's varumärke — askarnas utformning, butikernas renhet, kvalitetens orubblighet i kaliforniska säsongshögtider — gav bolaget rätt att höja priser år efter år utan volymförlust. Försäljningen mångdubblades inte; vinsten gjorde det: över de följande trettiofem åren genererade See's mer än 1,3 miljarder dollar i rörelseresultat — på sammanlagt drygt trettioen miljoner dollar i ytterligare kapitaltillskott. Ett bolag som behöver en krona kapital för att producera fyrtio kronor resultatränta är inte en godisbutik; det är en moat med en kassaapparat."
+        },
+        {
+          "type": "text",
+          "content": "Och det är här AKM1:s V14 — varumärke och kundlojalitet — får sin kärnfulla definition: varumärke är inte kännedom utan prissättningsmakt. Kursen använder See's som operationaliseringen: ett varumärke är värt den årliga prisökning volymen tål utan att byta beteende — mätt, inte känt. See's kunder köpte godis till jul och påsk av sentimentala skäl, gav bort den som gåva där priset är en kvalitetsgaranti snarare än ett motargument: närmast oelastisk efterfrågan i gåvokontexten. Och kapitalsnålheten är moatens andra hälft: ett varumärke som kräver massiva investeringar för att behålla sin makt är en dyr seglats (som detaljhandelskapital), medan ett som bärs av produktens identitet och säsongens vana är en moat utan underhållskostnad. Buffetts sammanfattning i breven: See's lärde honom att köpa kvalitet till rimligt pris — köpet han nästan vägrade blev skolningen i varför Munger hade rätt, och kursen läser det som AKM1:s viktigaste enskilda händelse: modellen för vad V14 hög faktiskt köper."
+        },
+        {
+          "type": "text",
+          "content": "Tillämpningen — prissättningsmaktstestet som kursen kräver att du kan köra på alla bolag med påstådda varumärke. Fråga ett: om bolaget höjer priserna tio procent imorgon, hur många kunder försvinner? Om svaret är nästan ingen — av de skäl See's kunder inte försvann: byteskostnad, gåvokontext, kvalitetsgaranti — då finns V14 i mätbar form. Fråga två: vad kostar det att behålla maktet — annonsbudgetar, butiksetableringar, rabatter? Kapitalåtgången per prisökning är moatens underhållsräkning; See's var nära noll. Fråga tre: var kommer nästa prisökning ifrån — inflationen eller förbättrad upplevd kvalitet? Den förra är skydd, den senare är tillväxt. Ett bolag som klarar alla tre frågorna förtjänar premium på V04–V06; ett som missar dem har en varumärkesstory och ska värderas som en sådan. Det är hela skillnaden mellan See's och de flesta varumärkesköp som görs på berättelsen ensam."
+        },
+        {
+          "type": "insikt",
+          "content": "Varumärke är inte kännedom utan prissättningsmakt, och moatens ekonomi är tvådelad: vad prisökningen volymlåter (V14) och vad maktet kostar att behålla (kapitalåtgång per intjänad krona). See's fyrtio resultatkronor per kapitalkrona är måttstocken — de flesta varumärkesbolag är den inte i närheten av, och skillnaden ska synas i multiplarna, inte i stories."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"See's Candies 1972 — moatens bokslutsavtryck\",\"rader\":[[\"Mått\",\"1972\",\"Därfter ca 35 år\",\"Lärdom\"],[\"Pris\",\"25 miljoner USD (begärt 30)\",\"—\",\"cirka 3x bokvärdet — tveksamt för Graham-skolan\"],[\"Omsättning\",\"ca 31 miljoner USD\",\"måttlig tillväxt\",\"volym är inte poängen\"],[\"Rörelseresultat före skatt\",\"ca 4,2 miljoner USD\",\"sammanlagt över 1,3 miljarder USD\",\"prisökningar utan volymförlust = V14 i ren form\"],[\"Kapitaltillskott\",\"—\",\"sammanlagt ca 32 miljoner USD\",\"kapitalsnålhet: moat utan underhållskostnad\"],[\"AKM1\",\"V14 operationaliserad\",\"V07–V09 bär resultatet\",\"premium berättigad bara om prissättningstestet klaras\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör See's-testet på ett varumärkesbolag i din bevakning: uppskatta hur mycket av omsättningstillväxten de senaste fem åren som kom från pris och hur mycket från volym (slå upp årsredovisningarna; om bolaget inte redovisar split — notera det som en varning i sig). Räkna därefter kapitaltillskottet per krona nytt rörelseresultat. Jämför med måttstocken fyrtio kronor resultat per kapitalkrona. Om bolaget ligger på fyra har det en god affär; om det ligger på ett och prissättningen dessutom vilar på rabatter har du en varumärkesstory — och den ska prissättas som en story."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betalade Blue Chip Stamps för See's 1972?",
+          "alternativ": [
+            "Tio miljoner dollar under bokvärdet",
+            "Trettio miljoner dollar — ägarfamiljens begäran",
+            "Tjugofem miljoner dollar — omkring tre gånger bokvärdet, efter att familjen begärt trettio",
+            "Hundra miljoner dollar i aktier"
+          ],
+          "ratt": 2,
+          "tips": "Munger förhandlade ned från trettio — till vilket pris, och till hur många gånger bokvärdet?"
+        },
+        {
+          "q": "Vad är kursens definition av varumärke i AKM1:s mening?",
+          "alternativ": [
+            "Kännedom — hur många som känner till märket",
+            "Antal följare i sociala medier",
+            "Reklambudgetens storlek",
+            "Prissättningsmakt — varumärket är värt den årliga prisökning volymen tål utan att kunderna byter beteende, mätt och inte känt"
+          ],
+          "ratt": 3,
+          "tips": "Vad bevisar See's fyrtioåriga prisuddragning utan volymförlust?"
+        },
+        {
+          "q": "Vad är moatens andra hälft enligt kapitlet?",
+          "alternativ": [
+            "Tillverkningens storlek",
+            "Antal anställda",
+            "Kapitalsnålheten — vad maktet kostar att behålla; See's producerade enormt resultat på drygt trettio miljoner i ytterligare kapital",
+            "Exportandelens storlek"
+          ],
+          "ratt": 2,
+          "tips": "Vad kostar det att behålla prissättningsmakten — och vad producerade den hos See's per kapitalkrona?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Washington Post 1973 — att köpa i blodet: säkerhetsmarginal praktiserad",
+      "intro": "I björnmarknaden 1973–74, när S&P föll mot fyrtio procents nedgång och Watergate sköljde över Washington, köpte Buffett omkring tio procent av Washington Post för knappt elva miljoner dollar. Detta kapitel läser köpet som säkerhetsmarginalens praktikprov — och hållandet i över trettio år som dess andra hälft.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontexten är kursens cykelkarta i miniatyr. Nittonhundrasjuttiotalets början var nifty fifty-erans upplösning: de femtio älskade tillväxtbolag som burit fleråriga premiummultiplar föll som stenar när oljechock, inflation och recession anlände samtidigt; mellan toppen i januari sjuttiotre och botten i december sjuttiofyra föll den breda amerikanska börsen mot femtio procent. I det blodet köpte Buffett Washington Post: fyrahundrasextiosju tusen aktier — omkring tiondelen av bolaget — för knappt elva miljoner dollar. Hans egen värdering i breven: bolaget värderat till mellan fyra och fem hundra miljoner dollar mot ett börsvärde kring hundra. Marginalen var inte en finjustering; det var köp av dollarsedlar för tjugofem cent — av ett regionalt monopol med regulatoriskt skydd, köpt i ett läge där berättelsen (en tidning i en skandalbransch i en fallande marknad) hade fått priset att totalt lösgöra sig från kassaflödet."
+        },
+        {
+          "type": "text",
+          "content": "Och den andra hälften av episoden — hållandet — är destillatet som kursen värnar mest om. Buffett behöll posten i över trettio år, aldrig såld, trots att börsen värderade den högre ganska snart. Utdelningsströmmen från ett moat-starkt monopol har en egenskap som kursen kopplar till V12 och Mega-planet: den återkommer och växer, och därför blir rätt köp med tiden självfinansierande — vid slutet av innehavet betalade utdelningen ensam tillbaka inköpspriset många gånger om. Köpet illustrerar också det som kursen kallar dubbelmarginalen: marginalen vid köpet (pris mot värde) och marginalen i tiden (kassaflödets hållbarhet). Den som bara har den första — köp billigt av ett bräckligt kassaflöde — har ett netto-nät med hållbarhetproblem; den som bara har den andra — moat utan prismarginal — har See's till trettioprocent för högt pris. Buffett på sjuttiotalet visade att den bästa konstruktionen är båda, och hans berömda sjuttiotalskommentar — att han kände sig som en översexad man i ett harem — kom från just detta: en marknad full av dubbelmarginaler och ingen med kontanter att köpa dem med."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen i två punkter. För det första kontraindikatorn inverterad: nittiotalets Bull!-kurs visade att maximal eufori ger rekordflöden, rekordbelåning, rekordemissioner; sjuttiotalet är spegelbilden — maximal avsky, noll emissioner, och priser som matematiskt exkluderar rimliga antaganden. Kursens tumregel från episoderna: de bästa köpen i en analytikerkarriär ligger sällan i nyhetsflödet; de ligger i de tillfällen då marknaden tvingas sälja det den inte vill sälja, och den som har kontanter och en färdig checklista är motparten. För det andra V03–V05-blocket: Washington Post var koncentrerat ägande av en enda tillgång i en enda geografi — AKM1:s V03-intäktsdiversifiering hade gett låga poäng — och ändå var risken låg, eftersom tillgångens monopol och prissättningsmakt vägde mer än diversifieringens trygghet. Kursens slutnotis: diversifiering är ett substitut för förståelse; den som förstår en tillgångs moat äger ett riskskydd som ingen bredd kan köpa — och det är därför koncentrationsgrad aldrig ska poängsättas utanför frågan om vad det är koncentrerat i."
+        },
+        {
+          "type": "insikt",
+          "content": "Dubbelmarginalen är konstruktionen bakom karriärens bästa köp: prismarginal mot värde vid köpet och kassaflödesmarginal i tiden — dollar för tjugofem cent i ett kassaflöde som återkommer och växer. Och spegelvänd kontraindikator: när marknaden tvingas sälja det den inte vill sälja och emissionerna är noll, ligger dubbelmarginalerna i katalogen — inte i nyhetsflödet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Washington Post 1973 — köpet och konstruktionen\",\"rader\":[[\"Element\",\"Innehåll\",\"Siffra\"],[\"Kontext\",\"nifty fifty-kollaps; Watergate; S&P mot −48 %\",\"botten dec 1974\"],[\"Köpet\",\"ca 10 % av bolaget\",\"467 000 aktier för knappt 11 miljoner USD\"],[\"Värdering\",\"egna delar värderade 400–500 miljoner USD\",\"börsvärde kring 100 miljoner USD\"],[\"Marginal\",\"dollar för runt 25 cent\",\"säkerhetsmarginal i ren form\"],[\"Hållandet\",\"över 30 år, aldrig sålt\",\"utdelningen betalade tillbaka inköpet många gånger\"],[\"AKM1\",\"V03 låg men moat väger tyngre\",\"diversifiering ersätter inte förståelse\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din dubbelmarginalslista: identifiera tre tillgångar i din bevakning där du kan argumentera för båda marginalerna — priset mot en försiktig värdering (skriv siffrorna: värdeintervall, dagens kurs) och kassaflödets hållbarhet (V12-motivering). Kravet: minst en av de tre ska vara en tillgång som är ogillad just nu — negativ berättelse, men intakt moat. Om listan blir tom är det inte en brist på tillfällen utan en brist på beredskap: kontanter och checklista finns bara om de byggts före blodet."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var marginalen i Washington Post-köpet 1973?",
+          "alternativ": [
+            "Kursen var tio procent under konsensusmål",
+            "Bolaget värderades internt till mellan fyra och fem hundra miljoner dollar mot ett börsvärde kring hundra miljoner — dollar för omkring tjugofem cent",
+            "Kursen låg på historiskt låg P/E men värderingen var osäker",
+            "Marginalen var minimal — köpet var ett känsloköp"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en fyra-till-en-skillnad mellan värde och pris med begreppet säkerhetsmarginal?"
+        },
+        {
+          "q": "Vad kallar kursen dubbelmarginalen?",
+          "alternativ": [
+            "Marginal i vinsten och marginal i omsättningen",
+            "Marginal mot låneräntan och marginal mot inflationen",
+            "Prismarginal mot värde vid köpet och kassaflödesmarginal i tiden — båda behövs för karriärens bästa konstruktioner",
+            "Marginal i riktkurs och marginal i tidslinje"
+          ],
+          "ratt": 2,
+          "tips": "Vilka två marginaler förenades i Post-köpet — och vad saknas om bara den ena finns?"
+        },
+        {
+          "q": "Vad är kursens notis om diversifiering (V03) från episoden?",
+          "alternativ": [
+            "V03 ska alltid ha högsta poäng",
+            "Koncentrerat ägande är alltid farligt",
+            "Diversifiering är ett substitut för förståelse — koncentrationsgrad ska aldrig poängsättas utanför frågan vad det är koncentrerat i",
+            "V03 mäter bolagets vinstmarginal"
+          ],
+          "ratt": 2,
+          "tips": "Posten var en enda tillgång i en enda stad — varför var risken ändå låg?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 14,
+      "title": "Coca-Cola 1988 — konsumentmonopolet, Goizueta och evighetsaktiens matte",
+      "intro": "Efter kraschen 1987 började Buffett köpa Coca-Cola — 1988 och 1989 byggde han en post för sammanlagt cirka 1,3 miljarder dollar. Detta kapitel analyserar köpet som konsumentmonopolets lärobok: varumärket som moat, prissättningsmakten som marginalmaskin, och evighetsaktiens matematik i AKM1:s variabler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Själva affären är enkel att redovisa. Buffett köpte 1988–1989 in omkring sex procent av Coca-Cola för sammanlagt cirka 1,3 miljarder dollar, i ett läge där aktien återhämtat sig sedan kraschen 1987 men långt ifrån var euforisk: han betalade för ett bolag som under Roberto Goizueta — VD från 1981 — visat exakt vad kursen i kursen är: fokusering på kärnmärket, koncentratanläggningarnas skalekonomi, aggressivt varumärkesbyggande och en kapitalallokering som stängde sidospår och returnerade överskott. Buffetts motivering var den klassiska som han förtjänar citeras i minnet: ge honom hundra miljarder dollar och världens bästa ledningsgrupp, och han kan ändå inte ersätta Coca-Colas position — merkets kärna är inte anläggningarna utan den plats märket intar i miljarder människors huvud och vana, och den platsen kan inte köpas för pengar, bara byggas i generationer. Ett varumärke som konkurrenterna inte kan reproducera ens med obegränsat kapital är konsumentmonopolets definition — och därmed kursens V14-fullpoängsfall."
+        },
+        {
+          "type": "text",
+          "content": "Evighetsaktiens matte — kursens operationalisering. Ett konsumentmonopol med global distribution har tre ekonomiska egenskaper som tillsammans bygger evighetsmatematiken: prissättningsmakt ovanpå inflationen (varje år lite dyrare, varje år lika köpt — V07–V09 expanderar i stället för att eroderas), kapitalsnålhet (sirap och varumärke, inte stålverk — avkastningen på inkrementellt kapital förblir hög), och repetition (samma produkt köps om vecka efter vecka, decennium efter decennium — V12 intäktsstabilitet i sin mest extrema form). Konsekvensen är att värdet av bolaget är en funktion av prisökningstakten upphöjt till tiden: en procentenhets högre årlig prisökning i ett oelastiskt varumärke komponerar till enorma skillnader över trettio år — compound-logik från Mega-kapitlet, nu i marginalernas värld. Buffetts hållning sedan köpet — aldrig sålt en aktie på annat än symboliska undantag, genom börsens topp 1998 då Coca-Cola handlades på femtiotalet P/E och föll halva vägen därefter — är kursens ärlighetspunkt: evighetshållningen betyder att han inte toppatade, och kritiken under tvåtusentalets början var hård; hans svar var att ett rött köp bärs av kassaflödet och att Handel inte är hans uppgift. AK1A noterar utan omdöme: V14-fullpoäng förenas här med en medveten avstånd från timing — Mega-planets kompromiss."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-mappningen i dess helhet, för detta är kursens kvalitetskapitel. V14: varumärket — prissättningsmakten är total och global. V07–V08: brutto- och rörelsemarginaler som inte eroderas utan expanderar med skal och pris — den rara kombinationen av volymtillväxt och marginaltillväxt. V09 ROE: kapitalsnålheten gör avkastningen på eget kapital strukturellt hög. V12: repetitionsefterfrågan — den mest stabila intäktsbas en konsumentprodukt kan ha. V03: global geografisk spridning — intäktsdiversifiering i världsskala. Och V20: Goizuetas utdelnings- och återköpsdisciplin — överskott som verksamheten inte kan återinvestera till hög ränta returnerades till ägarna. Sedan den ödmjuka raden: Berkshire äger fortfarande posten, och genom Coca-Colas egna återköpp har ägarandelen vuxit utan att ett enda ny aktie köpts — ett V20-fenomen kursen återkommer till i Apple-kapitlet, där det är renare. Sammanhanget att behålla: alla sex variablerna i topp samtidigt är en händelse, inte en checklista — och den som letar efter sex-toppbolag varje vecka kommer att hitta fem-toppbolag och betala sex-topp-pris."
+        },
+        {
+          "type": "insikt",
+          "content": "Evighetsmatematiken är tre egenskaper komponerade: prissättningsmakt ovanpå inflationen, kapitalsnålhet och repetitionsefterfrågan — V14, V07–V09 och V12 i samma bolag. Förväxla inte: alla variabler i topp samtidigt är en händelse, inte en checklista. Den som betalar sex-toppspris för fem-toppskvalitet har inte hittat nästa Coca-Cola — bara betalat för idén om den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Coca-Cola 1988 — evighetsaktien i AKM1:s variabler\",\"rader\":[[\"Dimension\",\"Innehåll\",\"AKM1\"],[\"Köpet\",\"1988–1989; ca 6 % för sammanlagt ca 1,3 miljarder USD\",\"pris efter kraschår, ej eufori\"],[\"Varumärket\",\"icke reproducerbart ens med obegränsat kapital\",\"V14 fullpoäng\"],[\"Marginalmaskinen\",\"priser ovanpå inflationen + skala\",\"V07–V08 expanderande\"],[\"Avkastning\",\"kapitalsnålhet — sirap, ej stålverk\",\"V09 strukturellt hög\"],[\"Stabilitet\",\"repetition, vecka efter vecka, generation efter generation\",\"V12 extrem\"],[\"Spridning\",\"global distribution\",\"V03 världsskala\"],[\"Utdelning/återköp\",\"Goizuetas disciplin\",\"V20 — och ägarandelen växer av egen kraft\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör evighetstestet på ett konsumentbolag i din bevakning: poängsätt V14 (prissättningsmakt — finns det dokumenterade prishöjningar utan volymförlust?), V07–V09 (marginaltrend över tio år — expanderande, platt eller eroderande?) och V12 (repetitionsfrekvens — köps produkten dagligen, säsongvis eller en gång per generation?). Räkna sedan antal toppoäng. Om fler än en variabel saknar dokumentation har du en berättelse med potential — och den ska värderas som potential, inte som evighetsaktie. Notera slutligen P/E:t du skulle vara beredd att betala för sex av sex — och jämför med dagens."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur motiverade Buffett köpet av Coca-Cola enligt kapitlet?",
+          "alternativ": [
+            "Att aktien hade låg P/E i absoluta termer",
+            "Att utdelningen var hög just det året",
+            "Att bolaget var billigt mot bokvärdet",
+            "Att varumärket inte kan reproduceras ens med obegränsat kapital — ge honom hundra miljarder dollar och han kan ändå inte ersätta märkets position i miljarder människors vanor"
+          ],
+          "ratt": 3,
+          "tips": "Vad är det ingen summa pengar kan köpa — anläggningarna eller platsen i huvudet på konsumenten?"
+        },
+        {
+          "q": "Vilka tre egenskaper bygger evighetsmatematiken?",
+          "alternativ": [
+            "Hög utdelning, låg skuld och billig värdering",
+            "Prissättningsmakt ovanpå inflationen, kapitalsnålhet och repetitionsefterfrågan",
+            "Storleksfördelar, exportandel och låga löner",
+            "Teknikpatent, nätverkseffekter och regulatoriskt skydd"
+          ],
+          "ratt": 1,
+          "tips": "V14 + V07–V09 + V12 — vilka ekonomiska egenskaper är det i klartext?"
+        },
+        {
+          "q": "Vad är kursens ärlighetspunkt om evighetshållningen?",
+          "alternativ": [
+            "Att Buffett sålde allt i toppen 1998",
+            "Att han aldrig ägt Coca-Cola",
+            "Att han toppadade perfekt genom teknisk analys",
+            "Att evighetshållningen betydde att han inte toppade — aktien föll halva vären efter 1998 och kritiken var hård; hans svar var att ett rätt köp bärs av kassaflödet, inte av timing"
+          ],
+          "ratt": 3,
+          "tips": "Vad kostar det att vägra tajma — och vad är motiveringen för den kostnaden?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Salomon 1991 — ryktet som balansräkningspost och förvaltarskapet i kris",
+      "intro": "I augusti 1991 ryckte Buffett in som tillförordnad ordförande för Salomon Brothers, investmentbanken där Berkshire året före satsat sju hundra miljoner dollar i konvertibelt förlagslån. Utlösaren var en skandal i statsobligationsauktionerna. Detta kapitel läser krisen som en lärobok i rykte, risk och förvaltarskap.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden: 1987, strax före kraschens oktober, köpte Berkshire ett konvertibelt förlagslån i Salomon på sju hundra miljoner dollar — fasta kuponger, konverteringsrätt, en välgjord säkerhetspost hos en institution vars affärsvolym Buffett förstod. Fyra år senare avslöjades att en arbetsledare på bolagets statsobligationsbord upprepade gånger lämnat falska bud i amerikanska statsauktioner för att hålla sig med volym — och att ledningen brustit i att eskalera. Hotet var inte böter utan existensen: bankens tillstånd, dess motparter, dess förtroende. Buffett kallades in, tog ordförandeklubban under en augustivecka som marknaden följde minut för minut, och framträdde i kongressen med den formulering som blivit kursens ryktes-citat: den som förlorar pengar åt bolaget ska möta förståelse; den som tappar en skymt av bolagets rykte ska möta hänsynslöshet. Han stannade i omkring fjorton månader, bytte ut ledningen, behöll de affärer som var värda att behålla, och banken överlevde; Berkshires utlåning återbetalades senare med vinst när Salomon såldes i slutet av decenniet."
+        },
+        {
+          "type": "text",
+          "content": "Vad är lärdomen i AKM1:s språk? Kursen lyfter tre. För det första: rykte är en balansräkningspost som inte står i balansräkningen. Ett finansinstituts tillgångar är förtroende: motpartsrader, finansiering, tillstånd — allt är optioner på att andra litar på dig. Skandalen visade att en enda persons rutinbrott kunde hota hela posten; Buffetts insats visade att posten kan räddas av trovärdigt förvaltarskap till rätt pris — kapital och karaktär i samma rörelse. Kursen kopplar till V18 (regulatoriska katalysatorer): i regelstyrda branscher är myndighetens förtroende den högsta av alla moats — och dess förlust den snabbaste av alla risker. För det andra: counterparty- och beteenderisk skalar annorlunda än marknadsrisk. En felaktig position kan stängas; en felaktig kultur fortsätter producera positioner. V12 och V19-poängsättning i finansiella bolag ska därför alltid innehålla en rad om kontrollmiljö — den som inte kan bedöma den ska hålla sig till bolag där den inte är huvudrisken. För det tredje: Buffetts personliga engagemang — sitt eget namn som kapital — är en form av kapitalstrukturens design; den ägare som kan och vågar ställa upp med trovärdighet äger en option som ingen passiv ägare har."
+        },
+        {
+          "type": "text",
+          "content": "Och den praktiska överföringen till ditt arbete, i tre frågor per finansiellt innehav. Ett: vem bär institutionens ryktesrisk — finns en identifikationsbar person eller kultur, och vad har hänt historiskt när den risken realiserats? Två: hur styrs beteendet — bonusstruktur, eskalationsvägar, tidigare sanktioner; finns dokumentation? Tre: vad är din egen exponerings karaktär — är du ägare till verksamheten (då bär du ryktesrisken) eller innehavare av en post (då bär du den också, fast med mindre kontroll)? Kursen noterar kopplingen tillbaka till Bull!-kursens analytikerkapitel: Salomon hörde hemma i samma branschkultur som Grubmans telekomhus — kulturfrågan och konfliktfrågan är samma fråga. Den som läser kurskatalogen i ordning har nu sett båda sidorna: hur ryktet byggdes under en kris och hur det såldes ut under en bubbla — och skillnaden mellan dess två priser är den bästa utbildning i vad rykte är värt som finns."
+        },
+        {
+          "type": "insikt",
+          "content": "Rykte är en balansräkningspost som inte står i balansräkningen: i regelstyrda branscher är myndighetens och motpartens förtroende den högsta av moats — och dess förlust den snabbaste av risker. Fråga alltid vem som bär den posten, hur beteendet styrs, och om din egen roll gör dig till dess försäkringsgivare."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Salomon 1991 — krisen och lärdomarna\",\"rader\":[[\"Element\",\"Innehåll\",\"Lärdom\"],[\"Engagemanget 1987\",\"konvertibelt förlagslån, 700 miljoner USD\",\"struktur med marginal och option\"],[\"Skandalen 1991\",\"falska bud i statsauktioner; brusten eskalering\",\"en persons rutinbrott hotade hela institutionen\"],[\"Insatsen\",\"Buffett tillförordnad ordförande; kongressframträdande\",\"pengar kan förstås — rykte möter hänsynslöshet\"],[\"Utfallet\",\"banken överlevde; lånet återbetalt med vinst\",\"kapital och karaktär i samma rörelse\"],[\"AKM1\",\"V18 + V12 + V19 i finansiella bolag\",\"kontrollmiljön är en rad i varje analys — annars är huvudrisken obestämd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ryktesrisksanalysen på ett finansiellt bolag i din bevakning: tre rader — vem bär institutionens förtroendepost (namn eller kultur), hur styrs beteendet (bonusstruktur, eskalation, sanktioner i historiken), och vad som händer med finansieringen om förtroendet faller en vecka. Om du inte hittar underlag för någon av raderna, notera det som analysens viktigaste resultat: huvudrisken är då obestämd — och en obestämd huvudrisk ska diskonteras som en bestämd."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utlöste Salomon-krisen 1991?",
+          "alternativ": [
+            "En finansiell krasch på börsen",
+            "Förluster i råvaruhandel",
+            "En IT-bluff i redovisningen",
+            "Falska bud i amerikanska statsobligationsauktioner — med brustna eskalationsvägar i ledningen"
+          ],
+          "ratt": 3,
+          "tips": "Vilken marknad handlade det om — och vad var regelbrottet?"
+        },
+        {
+          "q": "Vad är kursens kärnlärdom av Buffetts insats?",
+          "alternativ": [
+            "Att konvertibla lån alltid är säkra",
+            "Att rykte är en balansräkningspost som inte står i balansräkningen — i regelstyrda branscher är förtroendet högsta moaten och dess förlust snabbaste risken",
+            "Att investmentbanker inte ska regleras",
+            "Att kriser alltid löser sig själva"
+          ],
+          "ratt": 1,
+          "tips": "Vad hotades egentligen — kvartalets resultat eller hela tillståndet att verka?"
+        },
+        {
+          "q": "Vilka tre frågor ska alltid ställas om finansiella bolag enligt kapitlet?",
+          "alternativ": [
+            "P/E, P/B och direktavkastning",
+            "Vem bär ryktesrisken, hur styrs beteendet, och vad händer med finansieringen om förtroendet faller",
+            "Tillväxt, marginal och utdelning",
+            "Antal kontor, anställda och länder"
+          ],
+          "ratt": 1,
+          "tips": "Vad var det Salomon-skandalen visade att en analys utan de frågorna missade?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Nittiotalets disciplin — att hoppa över en bubbla och bli hånad för det",
+      "intro": "Under dot-com-åren 1998–2000 underpresterade Berkshire grovt: aktien föll medan Nasdaq steg mot skyn, och finanspressen förhörde sig om världens mest framgångsrika investerare blivit förlegad. Detta kapitel läser förödmjukelsens år som en cykelstudie i AK1TS:s vård — och som kurskatalogens renaste kontraindikator omvänt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna förödmjukelsen. Berkshire-aktien, som stigit i årtionden, föll under nittiotalets slutår: 1999 blev ett av få negativa år — totalavkastning runt minus tjugo procent medan S&P steg över tjugo och Nasdaq nästan fördubblades — och från toppen 1998 till botten i mars 2000 halverades i princip aktiens kurs. Finanspressen ägnade förundran åt misslyckandet: omslag med frågan vad som hänt med Warren, kolumner om att världen passerat honom, och den klassiska formuleringen att värdeinvesteringen var död. Buffett kommenterade med den självironi och det lugn som Kilpatrick dokumenterar rikligt: han förstod inte bolagen, och det var hans problem — men han vägrade köpa det han inte förstod, vad än priset gjorde. I takt med att hånet växte, handlade han det han alltid handlat: säkra, förståeliga, moat-starka bolag till rimliga priser, och väntade."
+        },
+        {
+          "type": "text",
+          "content": "Sedan vändningen, och den är kursens cykelstudie. Mars 2000: Nasdaq toppar och faller sjuttioåtta procent; 2000–2002, när euforins portföljer brann, levererade Berkshire positiv totalavkastning varje år — och eftersläpningen mot index under bubbelåren betalades tillbaka med ränta på ränta. Kursen kopplar direkt till AK1TS:s hierarki: Buffetts underprestanda 1998–2000 var ett Mega-beteende i en Kort-eufori — hans process diskonterade femtio års kassaflöde medan marknaden diskonterade sex månaders berättelse, och på Kort-horisonten förlorar Mega-processen alltid i en stark trend. Det är inte ett fel i processen; det är dess pris. Kursens handregel: varje strategi har en horisont där den ser ut som ett misstag — den som inte vet vilken horisont sin strategi hör hemma på kommer att överge den exakt när den kräver mest tilltro, det vill säga i euforin, vilket är den dyraste av alla tidpunkter. Och kontraindikatorn omvänt: när en tids mest dokumenterade investerare förklarats förlegad av en marknad som bara stiger, är penetrationen total — Buffett-hånet 1999 är samma signal som Tiger Funds nedläggning i Bull!-kursen: de rättfärdigas kapitulation är euforins sista bevis."
+        },
+        {
+          "type": "text",
+          "content": "Och disciplinens innehåll — för kursen är det viktigt att förstå vad Buffett faktiskt gjorde under åren han hånades, inte bara vad han inte gjorde. Han köpte inte teknik — men han arbetade: han slutförde GEICO-förvärvet 1996, byggde vidare på floatmaskinen, gjorde tyngre affärer i förståeliga branscher (MidAmerican Energy 2000, Benjamin Moore, Johns Manville, MiTek), och han skrev sina mest citerade varningsstycken om att avkastningen från dåtidens multiplar måste falla — berömt i samarbetsartikeln i Fortune 1999. När börsen sedan föll var han inte passiv: han köpte det som blev billigt och slöt sina tyngsta affärer i nedgången. Lärdomen är alltså inte att stå stilla med händerna i fickan — det är att strategins identitet (kompetenscirkel, moat, marginal) är en fast identitet: du vet exakt vad du väntar på, och därför kan agera när läget kommer, i stället för att ha spenderat väntetiden på att bygga positioner i det du inte förstod. Kursens formulering: disciplin är inte frånvaro av aktivitet — det är aktivitet reserverad för tillfällen som matchar identiteten."
+        },
+        {
+          "type": "insikt",
+          "content": "Varje strategi har en horisont där den ser ut som ett misstag: en Mega-process förlorar alltid mot en Kort-eufori just under euforin — det är processens pris, inte dess fel. Den som känner sin strategis horisont kan stå ut med priset; den som inte gör det överger strategin vid dess dyraste tidpunkt. Och när en epokens mest dokumenterade investerare förklarats förlegad av en stigande marknad är penetrationen total — kontraindikatorn omvänt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nittiotalets disciplin — hånandet och återbetalningen\",\"rader\":[[\"Mått\",\"1998–2000 (euforin)\",\"2000–2002 (kollapsen)\",\"Läsning\"],[\"Berkshire\",\"aktien halverad i princip från topp; 1999 ca −20 %\",\"positiv totalavkastning varje år\",\"Mega-processens pris och återbetalning\"],[\"Nasdaq\",\"nästan fördubblad 1999; topp mars 2000\",\"−78 % till okt 2002\",\"Kort-euforins båda halvor\"],[\"Finanspressen\",\"omslag: vad har hänt med Warren? värdeinvesteringen död?\",\"tystnad\",\"kontraindikatorn omvänt — total penetration\"],[\"Buffetts aktivitet\",\"vägrade köpa det han inte förstod; köpte det som var rimligt\",\"köpte det som blev billigt; tyngre affärer\",\"disciplin = aktivitet reserverad för identitetsmatch\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din strategis horisontdeklaration: en halvsida med tre rubriker — vilken AK1TS-horisont din process hör hemma på, under vilka marknadsförhållanden den kommer att se ut som ett misstag (var konkret: vilken typ av trend, hur många kvartal), och vad som ska få dig att avbryta strategin (kriterier, inte känslor). Buffett 1999 kunde hånas i tjugo månader därför att deklarationen fanns skriven decennier tidigare. Halvsidan du skriver nu är skillnaden mellan att stå ut och att kapitulera — och kapitulationen sker alltid vid den dyraste tidpunkten."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur gick det för Berkshire under euforiåren 1998–2000?",
+          "alternativ": [
+            "Den följde Nasdaq upp och ned",
+            "Den slog index varje år",
+            "Aktien halverades i princip från toppen 1998; 1999 blev runt minus tjugo procent medan Nasdaq nästan fördubblades — och finanspressen förklarade honom förlegad",
+            "Berkshire var private och onoterad"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör en Mega-process i en Kort-eufori — och vad skrev omslagen?"
+        },
+        {
+          "q": "Vad är kursens handregel från episoderna?",
+          "alternativ": [
+            "Byt strategi när den underpresterar två kvartal",
+            "Varje strategi har en horisont där den ser ut som ett misstag — den som inte känner den horisonten överger strategin vid dess dyraste tidpunkt",
+            "Alltid maximera avkastningen oavsett horisont",
+            "Strategier ska aldrig utvärderas"
+          ],
+          "ratt": 1,
+          "tips": "När överger flesta sin process — i nedgången eller i euforin?"
+        },
+        {
+          "q": "Vad är disciplin enligt kursens formulering?",
+          "alternativ": [
+            "Frånvaro av all aktivitet",
+            "Att följa index exakt",
+            "Att handla så ofta som möjligt inom cirkeln",
+            "Aktivitet reserverad för tillfällen som matchar strategins identitet — inte frånvaro av aktivitet"
+          ],
+          "ratt": 3,
+          "tips": "Vad gjorde Buffett under hånåren — ingenting, eller rätt saker?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 14,
+      "title": "GenRe 1998 — riskens pris: när tjugotvå miljarder köptes på fel sätt",
+      "intro": "Sommaren 1998 slutförde Berkshire förvärvet av återförsäkringsjätten General Re — ett aktiebyte värderat till omkring tjugotvå miljarder dollar. Det var Buffetts största affär, och den han själv kom att kalla ett av sina värsta misstag. Detta kapitel dissekerar fejlen: betalningssättet, reserveringskulturen och derivatboken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Affären såg perfekt ut på pappret: General Re var branschens tyngsta namn, affären passade float-strategin i perfekt skala, och priset betalades i Berkshire-aktier. Två fel gömde sig i den formuleringen. Det första var betalningssättet: att betala med egna aktier är att sälja en andel av sin egen maskin, och Buffett hade vid det laget själv skrivit att Berkshire-aktien inte var billig — att ändå använda den som valuta betydde att han sålde undervärderade aktier för att köpa, vilket i efterhand beräknades kosta mångdubbelt mer än affärens nominella värde. Han hade gjort samma misstag fem år tidigare med skotillverkaren Dexter — betalat med aktier som senare växte till en multipel av vad hela förvärvet var värt — och han listar båda i breven som varningar: antalet aktier du gett bort är den verkliga prislappen. Det andra felet var kulturen: GenRe:s underwriting-disciplin hade urholkats; reserverna — de uppskattade framtida skadeutgifterna — var systematiskt underdimensionerade, vilket i försäkring betyder att den vinst som rapporterats redan är spenderad; och bolaget bar en derivatbok som ingen riktigt kunde värdera."
+        },
+        {
+          "type": "text",
+          "content": "Efterräkningen tog år och redovisas i breven med en uppriktighet som är kursens särskilda studie. Reserveringens brister måste stärkas med miljarder; Gen Re Securities derivatportfölj avvecklades i förlust, och erfarenheten av den blev bakgrunden till Buffetts hårdaste formulering om derivat som finansiella massförstörelsevapen — skrivet 2002, alltså efter att han själv suttit med en derivatbok han inte kunde värdera. Terrorattentaten 2001 belastade återförsäkringsboken hårt, och först under nya ledningar under 2000-talets början återställdes underwriting-disciplinen. Buffetts sammanfattning av felet är kursens renaste läxa i due diligence: affären var för stor, för snabbt bedömd, och betald på fel sätt — han köpte en institution vars kärnkompetens han trodde sig förstå och upptäckte att han inte förstått dess reserveringskultur. Att en mästare kan göra det felet är den viktigaste informationen om felet: due diligence handlar inte om att läsa mer papper utan om att förstå var siffrorna ifrån kommer — i försäkring: vem, hur och med vilken historik reserverar skadorna."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen i fyra punkter. Ett — betalningsvalutans paritet: vid värdering av förvärv (V16–V17-katalysatorer i bolagsriktning, men principen är densamma vid din egen portföljförvaltning) är priset inte summan utan summan dividerat med vad du gett bort; aktier som du själv anser undervärderade är den dyraste valutan du äger. Två — V10–V11 i försäkring åter: reserveringens kvalitet är själva sanningshalten i balansräkningen; en försäkrares V11-poäng utan reserveringsgranskning är en dekoration. Tre — V12:s djupare mening: stabilitet som inte är förankrad i kultur och process är statistik, inte stabilitet; GenRe:s historik såg stabil ut ända till den inte var det. Fyra — candorn som system: det som gör Berkshire-kronologin unik är att misstagen dokumenteras av den som gjorde dem, med siffror, i årsbrev, decennium efter decennium. Kursen kopplar tillbaka till kapitel ett: en komplett kronologi med missar är en checklista; en utan missar är en prospectus. Den som vill lära sig risk betalar först med andras erfarenheter — Kilpatricks arkiv av erkända misstag är det billigaste biblioteket i branschen som finns."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset på ett förvärv är inte summan du betalar utan summan dividerat med vad du ger bort — undervärderade egna aktier är den dyraste valutan du äger. Och i försäkring är reserveringens kvalitet själva sanningshalten i balansräkningen: V11 utan reserveringsgranskning är en dekoration, inte en analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"GenRe 1998 — felet i delar\",\"rader\":[[\"Del\",\"Innehåll\",\"Lärdom\"],[\"Affären\",\"aktiebyte ca 22 miljarder USD; slutförd 1998\",\"passade float-strategin i teorin\"],[\"Betalningssättet\",\"egna, enligt honom själv undervärderade aktier\",\"Dexter 1993 samma mönster — aktieantalet är prislappen\"],[\"Reserveringen\",\"systematiskt underdimensionerade reserver\",\"rapporterad vinst redan spenderad — V11 utan granskning är dekoration\"],[\"Derivatboken\",\"ovärderbar; avvecklad i förlust\",\"bakgrund till massförstörelsevapen-formuleringen 2002\"],[\"Efterräkningen\",\"miljarder i förstärkning; ny ledning; 11 september 2001 som belastning\",\"kulturen var felet, inte affärsidén\"],[\"AKM1\",\"V10–V11, V12, betalningsvaluta\",\"due diligence = förstå var siffrorna kommer ifrån\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör reserveringsgranskningen på ett försäkrings- eller kreditbolag i din bevakning: tre rader — vem reserverar (namn, erfarenhet), hur (metodik, antaganden, förändringar år för år), och med vilken historik (har reserverna reviderats bakåt, och hur mycket?). Jämför sedan bolagets combined ratio över en konjunkturcykel mot branschens. Om du inte hittar underlag för raderna har du hittat analysens slutsats: ägandet vilar på siffror vars producent du inte kan granska — Buffett med tjugotvå miljarder i skinnet gjorde samma upptäckt, efteråt."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var felet i betalningssättet vid GenRe?",
+          "alternativ": [
+            "Han betalade för mycket i kontanter",
+            "Han lånade till för hög ränta",
+            "Han betalade med egna aktier som han själv ansåg undervärderade — att ge bort undervärderade aktier gör priset mångdubbelt högre än nominellt",
+            "Han betalade med optioner i GenRe"
+          ],
+          "ratt": 2,
+          "tips": "Vad är den verkliga prislappen när valutan är dina egna aktier — och vilket tidigare förvärv hade samma mönster?"
+        },
+        {
+          "q": "Varför är underdimensionerade reserver så allvarligt i försäkring?",
+          "alternativ": [
+            "Därför att de påverkar utdelningen direkt",
+            "Därför att de bara är en bokföringsdetalj",
+            "Därför att reserver bara finns i återförsäkring",
+            "Därför att den rapporterade vinsten redan är spenderad — vinsten har bokförts på skador som kostar mer än man trott"
+          ],
+          "ratt": 3,
+          "tips": "Vad betyder det att uppskattade framtida utgifter är för låga — vad har hänt med den vinst som redan rapporterats?"
+        },
+        {
+          "q": "Vad blev erfarenheten av GenRes derivatbok?",
+          "alternativ": [
+            "Den såldes med vinst omedelbart",
+            "Den växte till bolagets största tillgång",
+            "Den avvecklades i förlust och blev bakgrunden till Buffetts formulering om derivat som finansiella massförstörelsevapen 2002",
+            "Den påverkade aldrig Berkshire"
+          ],
+          "ratt": 2,
+          "tips": "Vad lär man sig om instrument man inte kan värdera — och vad skrevs i brevet 2002?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Apple-hemligheten 2016 — ekosystem, återköp och kompetenscirkeln som vidgas (V15, V20)",
+      "intro": "Kilpatricks sista upplagor slutar 2004 — men kursen sluter kronologins cirkel med affären som överraskade alla: 2016 byggde Berkshire i tysthet en post i Apple. Detta kapitel läser Apple-köpet mot V15 nätverksekosystem, V20 återköp och frågan om hur en kompetenscirkel får vidgas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta först. Första kvartalet 2016 visade Berkshires inköpsrapport att man köpt Apple-aktier för omkring en miljard dollar — en post så liten att den troligen initierats av en av de två förvaltarlöjtnanterna, Todd Combs eller Ted Weschler, innan Buffett själv expanderade den. Vad som följde blev historiens tyngsta position: fram till 2018 byggdes posten till en kostnad på omkring trettioen miljarder dollar — omkring fem procent av bolaget — och den kom att växa till ett värde flera gånger kostnaden. Och här kommer V20-lektionen som kursen värdesätter högst: utan att Berkshire köpte en enda ytterligare aktie växde ägarandelen därefter, år för år, därför att Apple återköpte egna aktier i enorm skala — Berkshire-köpet 2016 var alltså inte bara ett bolagsköp utan ett köp av en återköpsmaskin, där varje återköpsrunda mekaniskt flyttar större andel av bolagets framtida kassaflöde till den som redan äger. Det är AKM1:s V20 i sin renaste form: återköp som osynlig ackumulation — köp utan köp."
+        },
+        {
+          "type": "text",
+          "content": "Och motiveringen — varför köpte teknikmotståndaren teknik? Kursens läsning: han köpte inte teknik; han köpte ett konsumtionsekosystem. Apples moat i AKM1:s språk är V15 nätverk och byteskostnader: appar, tjänster, familjens enheter och vanan bygger en byteskostnad som gör att kunderna stannar och betalar mer år efter år — prissättningsmakt (V14) och repetitionsefterfrågan (V12) ovanpå nätverket (V15), hela kvalitetspyramiden från Coca-Cola-kapitlet fast med en ekosystemdel som drygar ut. Samtidigt var bolaget kapitalsnålt med bruttomarginaler och ränta på inkrementellt kapital som få konsumentbolag matchar. Buffett har själv formulerat det i termer av produktens nytta snarare än teknik: telefonen är ett verktyg som miljarder människor använder timmar varje dag, och nyttan är prissatt långt under sitt värde för användaren — en konsumentprodukt med varumärkes- och vanekaraktär, inte ett halvledarbolag. Munger summerade generationens lärdom: han lärde sig — kompetenscirkeln är inte ett fängelse, den är ett museum: samlingen får växa, men bara genom samma curatoriska princip som allt annat — förståelse först, pris sedan."
+        },
+        {
+          "type": "text",
+          "content": "Och ärlighetsraden, för kursen kräver den: Apple-posten är också en påminnelse om att tidsgränserna gäller åt båda håll. Berkshire köpte 2016, expanderade till 2018 — och under 2020 såldes en mindre del, och från 2024 reducerades posten kraftigt, av skäl Buffett förklarat med skatt, koncentration och ränteläge snarare än tvekan om moaten. Kursen noterar utan att döma: evighetsaktien från kapitel nio hölls i trettiofem år; Apple-posten byggdes och förändrades inom ett decennium. Skillnaden är inte inkonsekvens utan dynamik: den statiska bilden av Buffett som aldrig säljer är en karikatyr av breven, som visar en förvaltare som både håller i generationer (Coca-Cola) och realiserar när kapitalstrukturen, skatten eller storleken talar för det (Apple, senare år). Din egen takeaway ska inte vara antingen-eller utan V20-aritmetiken: återköpsmaskiner ska värderas på den mekanik som driver ägarandelens tillväxt — och när positionen växt så stor att dess vikt äter portföljens riskprofil, är själva framgången ett säljkriterium som måste deklarerats i förväg."
+        },
+        {
+          "type": "insikt",
+          "content": "V20 i ren form: återköp är köp utan köp — varje återköpsrunda flyttar mekaniskt större andel av bolagets framtida kassaflöde till den som redan äger, utan att en enda ny aktie köps. Räkna därför ägarandelens tillväxttakt separat från kursens: en post i en återköpsmaskin växer på två sätt, och det tysta är ofta det starkaste."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Apple 2016 — affären och variablerna\",\"rader\":[[\"Element\",\"Innehåll\",\"AKM1\"],[\"Hemligheten\",\"första posten Q1 2016 ca 1 miljard USD; troligen löjtnant-initierad\",\"start i tysthet, expansion av huvudägaren\"],[\"Expansion\",\"fram till 2018; kostnad ca 31 miljarder USD för ca 5 %\",\"historiens tyngsta Berkshire-position\"],[\"Ekosystemet\",\"byteskostnader, appar, tjänster, vana\",\"V15 nätverk + V14 + V12\"],[\"Kapitalstrukturen\",\"massiva återköpp; ägarandelen växer utan köp\",\"V20 — köp utan köp\"],[\"Ärlighetsraden\",\"reduktioner från 2024 — skatt, koncentration, ränteläge\",\"framgångens vikt är ett säljkriterium att deklarera i förväg\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna återköpsaritmetiken själv: ta ett bolag i din bevakning som återköper aktier och uppskatta — från senaste årsredovisning — hur många procent av aktierna som försvinner per år vid nuvarande takt. Beräkna sedan din ägarandels tillväxt om fem år om du inte köper mer. Jämför slutligen den tysta tillväxten med bolagets vinsttillväxt: vilken driver din framtida andel av kassaflödet mest? Om svaret är återköppen har du en V20-maskin — och om kursutvecklingen dessutom lutar på den mekaniken vet du varför positionen är mer än en aktie."
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur började Apple-engagemanget 2016?",
+          "alternativ": [
+            "Med ett offentligt bud på hela bolaget",
+            "Med en miljarddollarpot i första kvartalet 2016 — sannolikt initierad av en av löjtnanterna — som Buffett sedan expanderade till omkring trettioen miljarder fram till 2018",
+            "Med ett stort derivatkontrakt",
+            "Genom ett bytesbyte med en annan investerare"
+          ],
+          "ratt": 1,
+          "tips": "Vad visade inköpsrapporten för första kvartalet 2016 — och vem tros ha tryckt på köpknappen först?"
+        },
+        {
+          "q": "Vad menas med att återköp är köp utan köp?",
+          "alternativ": [
+            "Att återköp är samma sak som utdelning",
+            "Att bolaget köper konkurrenter utan att betala",
+            "Att återköp bara gynnar styrelsen",
+            "Att varje återköpsrunda mekaniskt flyttar större andel av bolagets framtida kassaflöde till befintliga ägare — ägarandelen växer utan att en ny aktie köps"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med din andel av kassaflödet när antalet aktier minskar och dina inte gör det?"
+        },
+        {
+          "q": "Hur lär kursen läsa att Buffett, som vägrade teknik 1999, köpte Apple 2016?",
+          "alternativ": [
+            "Som ett trendbyte utan grund",
+            "Som att han övergav kompetenscirkeln helt",
+            "Som att Apple aldrig var ett tekniktillfälle",
+            "Som att han köpte ett konsumtionsekosystem — byteskostnader, vana och prissättningsmakt (V15 med V14 och V12) — och att cirkeln fick växa genom förståelse först och pris sedan"
+          ],
+          "ratt": 3,
+          "tips": "Vad var det han köpte — halvledarteknik, eller en konsumentprodukts ekosystem?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 14,
+      "title": "Systemet Buffett — AKM1-mappning, candor och det permanenta värdet; syntes",
+      "intro": "Kursens sista kapitel samlar de fjorton episoderna till ett system — float, moat, incitament, tålamod och ärlighet — mappar det mot AKM1:s tjugo variabler och läser Kilpatricks titel som en tes: vad är egentligen av permanent värde?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systemet i en mening: en kapitalmaskin som anskaffar kapital billigare än marknaden (float), investerar det i moat-starka kassaflöden (See's, Coca-Cola, Apple), äger dem genom strukturer som inte tvingar försäljning (holdingform, eget kapital), styrs av incitament som belönar långsiktighet (partnerskapets arv, ägarnas brev), och rapporterar med en uppriktighet som gör felet till en del av systemet (Dexter, GenRe). Resultatet är den bäst dokumenterade avkastningen i modern finanshistoria: från Berkshires övertagande 1965 en genomsnittlig tillväxt i marknadsvärde per aktie på omkring tjugo procent per år under nästan sextio år — mot index omkring tio — vilket sammanlagt är över fyra miljoner procent mot index drygt trettio tusen procent. Och kursen noterar vad som saknas i meningen: ingen hemlig formel, ingen informationsovertag, ingen timing. Det som återstår när allt hemligt avlägsnats är arkitektur — och arkitektur är kopierbar — men bara på det svåra sättet: den kräver att man bygger den själv, bit för bit, i egen struktur."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-mappningen, tabell för tabell. Tillväxt (V01–V03): Buffetts köp var måttliga tillväxtköp — Post, See's, Coke hade alla V12 och moat som huvudpoäng, inte V01; hans V03-logik var koncentrerad förståelse framför spridd medelmåtta. Värdering (V04–V06): multiplarna varierade — en bråkdel av värdet på Post var köpet, tre gånger bokvärdet accepterades på See's, Apple betalades på marknadspris — men marginalen fanns alltid: antingen mot eget värde (Post) eller mot kassaflödets hållbarhet (See's, Apple). Lönsamhet (V07–V09): moatens bokslutsavtryck — marginaler som inte eroderar, avkastning på inkrementellt kapital som förblir hög; See's fyrtio kronor per kapitalkrona är måttstocken. Stabilitet (V12): repetitionsefterfrågan — köp det som köps om. Moat (V13–V15): patent var han nästan likgiltig inför — hans moats var varumärke och kostnadsstruktur, inte juridik; V13 poängsattes lågt, V14 högt, V15 kom sent i livet (Apple). Katalysatorer (V16–V18): hans katalysator var tiden — V16–V18 spelade underordnade roller, utom i kriser (Salomon, GEICO) där just krisen var ingången. Kapital (V19–V20): float gjorde V19 till icke-fråga — emissionsrisken var noll av konstruktion — och V20 blev med Apple renodlad till återköpsmaskinens aritmetik. Mönstret i mappningen är kursens avslutande poäng: han byggde inte en modell med tjugo variabler — han byggde en maskin där ett fåtal variabler (V12, V14, V07–V09, V10–V11 med omvänt tecken, V20) gjorde det grova jobbet, och resten var villkor. Din AKM1 ska användas likadant: modellen är ett instrument, inte ett betygsdokument — poäng utan destillation är administration."
+        },
+        {
+          "type": "text",
+          "content": "Och titeln — vad är av permanent värde? Kilpatricks tusen sidor visar att svaret inte är enskilda aktier: Post såldes till slut, Apple reducerades, textilen dog, till och med See's och Coca-Cola är värdepapper i en portfölj, inte mål i sig. Det permanenta är de fyra som överlevt varje episod i arkivet: tid, för den komponerar allt; moat, för den skyddar kassaflödet mot konkurrensens entropi; förtroende — ryktet som Salomon-kapitlet visade är en balansräkningspost värd allt och intet; och candorn, breven som gör misstag mätbara och därmed systemet förbättringsbart. Kursen avslutar med den personliga överföringen: skriv dina egna brev. En sida per kvartal — vad du köpt, vad du väntat på, vad du fått fel, vilken moat-bedömning som ändrats. Det är Kilpatricks verkliga gåva: han bevisade att en komplett, DATERAD kronologi av ett investerarliv är möjlig — och därmed att din också är det. Det permanenta värdet är inte Warren Buffett; det är att någon skrev ner allt, och att mönstret därför kan läras av dig — om du skriver. Boken slutar 2004; din kronologi börjar idag."
+        },
+        {
+          "type": "insikt",
+          "content": "Titelns tes, destillerad: det permanenta är inte aktierna utan de fyra som överlevt varje episod — tid, moat, förtroende och candor. AKM1 ska användas som Buffett använde sina få variabler: som instrument där ett fåtal (V12, V14, V07–V09, float-logikens V10–V11, V20) gör det grova jobbet och resten är villkor. Poäng utan destillation är administration, inte analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Systemet Buffett som RAM — episoderna mot AKM1\",\"rader\":[[\"Maskindel\",\"Episod\",\"AKM1-variabler\",\"Lärdom\"],[\"Tid\",\"Omaha, hela kronologin\",\"Mega-plan\",\"compound är tidspreferens\"],[\"Säkerhetsmarginal\",\"Graham, Washington Post\",\"V04–V06 + V05\",\"dollar för tjugofem cent — eller kassaflödesmarginal\"],[\"Float\",\"National Indemnity, GEICO\",\"V10–V11 omvänt\",\"skuld utan förfallodag, kostnadsstyrd\"],[\"Moat\",\"See's, Coca-Cola\",\"V14, V07–V09, V12\",\"prissättningsmakt + kapitalsnålhet + repetition\"],[\"Rykte\",\"Salomon\",\"V18 + kontrollmiljö\",\"förtroendet är högsta moaten i reglerade branscher\"],[\"Disciplin\",\"Nittiotalet\",\"horisontdeklaration\",\"varje strategi har en horisont där den ser fel ut\"],[\"Kapital\",\"Apple\",\"V15, V20\",\"återköp = köp utan köp\"],[\"Candor\",\"breven, Dexter, GenRe\",\"—\",\"felet i systemet är systemets förbättring\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din egen krönika och din egen RAM: del ett, skriv de fjorton episodernas motsvarigheter i ditt eget liv (när köpte du i blodet? när stod du utanför en bubbel? när betalade du för en story?); del två, välj dina tre huvudvariabler i AKM1 — de som får göra det grova jobbet i din process — och motivera varför just de; del tre, påbörja det kvartalsbrev Kilpatrick bevisade är möjligt: en sida, daterad, med köp, väntan, fel och moatflytt. Spara. Om du upprepar det i tio år har du inte bara en portfölj — du har ett arkiv, och arkivet är det enda som gör erfarenhet överförbar. Det permanenta värdet börjar där."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är systemet Buffett i en mening enligt kursen?",
+          "alternativ": [
+            "En hemlig formel för aktieval",
+            "Ett informationsovertag mot marknaden",
+            "En kapitalmaskin: float som anskaffar kapital billigt, moat-starka kassaflöden som investerar det, strukturer som inte tvingar försäljning, incitament för långsiktighet och candor i rapporteringen",
+            "En avancerad teknisk modell för timing"
+          ],
+          "ratt": 2,
+          "tips": "Vad återstår när allt hemligt avlägsnats ur sextio års dokumentation?"
+        },
+        {
+          "q": "Hur ska AKM1 användas enligt kursens avslutning?",
+          "alternativ": [
+            "Som ett betygsdokument där alla tjugo variabler vägs lika",
+            "Som ett instrument där ett fåtal variabler gör det grova jobbet och resten är villkor — poäng utan destillation är administration",
+            "Som en ersättning för eget omdöme",
+            "Enbart för tekniktillgångar"
+          ],
+          "ratt": 1,
+          "tips": "Hur använde Buffett sina variabler — alla lika, eller några som bar och resten som villkor?"
+        },
+        {
+          "q": "Vad är av permanent värde enligt titelns tes, destillerad av kursen?",
+          "alternativ": [
+            "Enskilda aktier som Coca-Cola och Apple",
+            "Berkshire Hathaway som bolag",
+            "Kilpatricks bok som objekt",
+            "Tid, moat, förtroende och candor — det som överlevt varje episod i arkivet, inte värdepapperen"
+          ],
+          "ratt": 3,
+          "tips": "Vad fanns kvar i varje kapitel — från Omaha till Apple — oavsett vilka aktier som köptes och såldes?"
+        },
+        {
+          "q": "Vad är Kilpatricks verkliga gåva enligt kursens avslutning?",
+          "alternativ": [
+            "Att han förutsade Buffetts alla framtida affärer",
+            "Att han skrev den kortaste Buffett-boken",
+            "Att han gav ut boken utan redaktör",
+            "Att han bevisade att en komplett, daterad kronologi av ett investerarliv är möjlig — och därmed att din också är det, om du skriver den"
+          ],
+          "ratt": 3,
+          "tips": "Boken slutar 2004 — vad börjar då, enligt kursens sista mening?"
+        }
+      ]
+    }
+  ]
+}

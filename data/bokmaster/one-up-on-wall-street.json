@@ -1,0 +1,1026 @@
+{
+  "slug": "one-up-on-wall-street",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 188,
+  "title": "One Up on Wall Street — Peter Lynch: KOMPLETT",
+  "summary": "One Up on Wall Street (1989), skriven av Peter Lynch tillsammans med John Rothchild, är världens mest lästa bok om hur vanliga människor hittar aktier — och dess tes är ovanligt respektlös mot proffskåren: amatören har en verklig fördel, inte snabbare nyheter utan närmare vardagen. Lynch är själv levande bevis: som förvaltare av Fidelity Magellan från 1977 till 1990 växte fonden från cirka 18 miljoner dollar till 14 miljarder vid en genomsnittlig årlig avkastning omkring 29 procent — och han hävdade att de bästa idéerna kom från parkeringsplatser, köpcentrum och familjelivet, inte från analytikertelegram. Kursen följer boken kronologiskt: amatörens edge och dess gränser, de sex bolagskategorierna (med vändarna — turnaround-bolagen — som sin egen konst), det perfekta tråkiga bolaget, tillväxtens anatomi och marginalerna, P/E mot tillväxttakten (PEG), balansräkningen som överlevnadstest, insider- och återköpssignalerna, tenbaggerns compound-matematik, de klassiska misstagen ordnade längs en investerings livscykel, säljkonsten — och kontroversen mot den effektiva marknads-hypotesen. Varje steg översätts till AKM1:s språk: V01 försäljningstillväxt dekomponerad i sina källor, V07 bruttomarginal som kompass, PEG som komplement till V04–V06, balansräkningen som V10–V11–V19, signalerna som V20 — och misstagen som beteendedisciplin. För AK1A är boken grunden för katalysatortänket: hypoteser från vardagen, verifierade i bokslut, prissatta med räntekontext, sålda när storyn faller — aldrig när känslan gör det.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå amatörens verkliga informationsfördel — närhet till vardagen före närhet till nyhetsflödet — och varför institutionella begränsningar öppnar fönster · Skilja produktkärlek från bolagskunskap och använda tvåminutersdrillen som story-test · Behärska bokens sex kategorier — tröga växare, stabila, snabbväxare, cykliska, vändare, tillgångsbolag — och deras olika exit-logik · Dekomponera V01 försäljningstillväxt i pris, volym, andelar, nya marknader och förvärv — och bedöma hållbarheten hos varje källa · Läsa V07 bruttomarginalen som prissättningsmakt och räkna marginalhävstången ner till EBIT · Tillämpa P/E mot tillväxttakt (PEG) med direktavkastning — och veta när formeln är ogiltig, som hos cykliska bolag · Köra balansräkningschecken: kassa per aktie, skuldstruktur, månader av överlevnad (V10, V11, V19) · Läsa insiderköp, återköp och aktieantal som V20-signaler — och räkna på utspädningens tjuvari · Räkna tenbagger-matematiken: compound-takten mot tidsåtgången och volatilitetens pris · Känna igen de kronologiska misstagen — från if only-vinande till break-even-fällan — och vilken AKM1-variabel som fångar varje fel · Sälja på storyn och kategorin, inte på kursen — med dokumenterade exit-kriterier · Väga Lynch mot EMH och index-fonderna och formulera den smala edge som återstår för den som gör läxan.",
+  "why": "De flesta aktieböcker lär dig tänka som en institution; Lynch lär dig använda det enda institutionen inte kan köpa — ditt eget liv. Bagaren ser brödpriserna ändras före statistiken, säljaren hör orderflödet vända, föräldern märker leksaksboomen i vardagsrummet — men ingen av dem vet hur man översätter observationen till ett beslut, och det är där boken börjar: med räkenskapsläxa, kategorilära, värdering och disciplin. Utan den andra halvan är vardagskunskap bara en dyrare form av tycke; med den blir den ett system. Kursen bygger AK1A:s katalysatortänk på bokens stomme — V01 dekomponerad i sina källor, V07 som kompass, PEG som prismätare, balansräkningen som överlevnadstest, V20:s signaler, misstagen som beteendehierarki — och avslutar i kontroversen mot effektiva marknaden, där kursen håller Lynchs ärlighet mot honom: edgen finns, men den är smal, och den betalas i timmar. Den som klarar den slanten har världens roligaste jobb beskrivet av världens roligaste förvaltare — och en komplett checklista för nästa gång köpcentrumet visar något som bokslutet ännu inte vet.",
+  "chapters_list": [
+    "1. Boken och caddien — Magellans tretton år, 18 miljoner till 14 miljarder",
+    "2. Amatörens fördel — investera i det du känner: bagaren, klassrummet och cocktailpartyt",
+    "3. Kunskapens gränser — från produkt till aktie och tvåminutersdrillen",
+    "4. Sex kategorier — snabbväxare, cykliska och vändarna (V01, V12)",
+    "5. Det perfekta bolaget — tråkigt, trist och institutionellt obegripligt",
+    "6. Tillväxtens anatomi — V01 försäljningstillväxt och dess källor",
+    "7. Marginalen talar — V07 bruttomarginal som kompass och hävstång",
+    "8. P/E mot tillväxt — PEG och värderingens hjärta (V04–V06)",
+    "9. Balansräkningen först — kassa, skuld och konkursavstånd (V10, V11, V19)",
+    "10. Signalerna — insiderköp, återköp och det sjunkande aktieantalet (V20)",
+    "11. Tenbaggern och tiden — compound-matematik och stoppade öron",
+    "12. De kronologiska misstagen — från if only till break-even",
+    "13. Konsten att sälja — storyn, kategorin och dokumentationen",
+    "14. Kontroversen och syntesen — Lynch mot EMH; boken som AKM1-modul"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och caddien — Magellans tretton år, 18 miljoner till 14 miljarder",
+      "intro": "One Up on Wall Street publicerades 1989 av Simon & Schuster, skriven av Peter Lynch tillsammans med finansjournalisten John Rothchild. Innan innehållet kommer mannen och fonden — för bokens trovärdighet vilar på en trettonårig prestation som fortfarande är en av förvaltningshistoriens främsta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Peter Lynch, född 1944 i Boston, arbetade som caddie på Brae Burn golfklubb i tonåren — och det var där, bland de Fidelity-anställda golfarna som caddien lärde känna, som dörren öppnades: praktik på Fidelity 1966, aktieanalytiker 1969, forskningschef 1974 — och i maj 1977, vid 33 års ålder, förvaltare av fonden Magellan. Tretton år senare, i maj 1990, lämnade han fonden som en av världens största: förvaltat kapital hade vuxit från cirka 18 miljoner dollar till 14 miljarder, den genomsnittliga årliga avkastningen landade kring 29 procent, och innehavsräckan passerade som mest tusen aktier. Han skrev sedan boken om att du — caddien, bagaren, sjuksköterskan — kan göra samma sak, följt av Beating the Street (1993) och Learn to Earn (1995)."
+        },
+        {
+          "type": "text",
+          "content": "Bokens arkitektur, som kursen följer kronologiskt. Del ett: amatörens fördel — varför Wall Streets proffs har strukturella nackdelar och vardagsmänniskan en osedvanlig edge. Del två: förberedelserna — att läsa en aktie som en bolagsbeskrivning: intäkter, vinst, kassaflöde, balansräkning. Del tre: bolagstyperna — de sex kategorierna och deras olika spelregler. Därefter värderingen (P/E mot tillväxt), det perfekta bolagets egenskaper, insiders och återköp, den berömda check-listan, säljkonsten — och bokens giftigaste kapitel om misstagen, som kursen ägnar ett helt eget kapitel åt, ordnat kronologiskt längs en investerings livscykel. Lynchs pedagogiska signum är vardagsspråket: skämtsam i tonen, men under huven driver boken samma analys som en institution — bara utan kostymens telegrafer."
+        },
+        {
+          "type": "text",
+          "content": "Och varför ska en AK1A-student läsa en bok från 1989? Därför att bokens system fortfarande är kurskatalogens bästa beskrivning av hur en katalysator föds: en observation från verkligheten (Vardagsedgen) som översätts till en fundamental hypotes (växer försäljningen? håller marginalen? V01, V07) och prissätts (PEG, multiplar, V04–V06) innan pengarna rör sig. Bokkanonens länkar för bk-003 är V01, V12 och V16 — försäljningstillväxt, intäktsstabilitet och katalysatortänket — och kursen lägger till V07, V10–V11, V19 och V20 på vägen. Boken är med andra ord inte en kuriosa från fondens guldålder: den är AKM1:s föregångare skriven på folkets språk, och den som kan båda talar två dialekter om samma sanning."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens paradox redan nu: historiens mest framgångsrika aktieförvaltare skrev en bok om att amatören kan slå proffsen — inte för att han var artig, utan för att hans egen edge var amatörens: observationen av vardagen före den institutionella upptäckten. Det är kursens grundtes och dess hårdaste krav: edgen finns bara för den som sedan gör läxan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Magellan och boken i siffror\",\"rader\":[[\"Fakta\",\"Värde\"],[\"Förvaltningstid\",\"maj 1977 – maj 1990 (13 år)\"],[\"Förvaltat kapital\",\"cirka 18 miljoner dollar till 14 miljarder\"],[\"Genomsnittlig årlig avkastning\",\"cirka 29 procent\"],[\"Innehav som mest\",\"över 1 000 aktier\"],[\"Bokens medförfattare\",\"John Rothchild\"],[\"Uppföljare\",\"Beating the Street (1993), Learn to Earn (1995)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din vardagslista innan kursen fortsätter: skriv ner fem bolag vars produkter eller tjänster du själv använder varje vecka — på jobbet, hemma, i butiken. Skriv en rad per bolag om vad du har observerat (prisförändringar, köer, ny kompetens, nytt sortiment). Kolla sedan hur aktierna utvecklats de senaste tre åren. Resultatet är din baslinje för kapitel två: hur många observationer hade du — och hur många använde du? Skillnaden är din outnyttjade edge."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kom Peter Lynch in i finansbranschen?",
+          "alternativ": [
+            "Han arbetade som caddie på en golfklubb och fick via golfkontakter praktik på Fidelity",
+            "Han doktorerade i finans på Harvard och rekryterades direkt",
+            "Han ärvde en aktiemäklarfirma i Boston",
+            "Han började som journalist på Wall Street Journal"
+          ],
+          "ratt": 0,
+          "tips": "Bokens första lärdom lever i hans egen biografi — var började karriären?"
+        },
+        {
+          "q": "Vad hände Magellan under Lynchs tid som förvaltare?",
+          "alternativ": [
+            "Fonden gick från 18 miljarder till 14 miljoner dollar",
+            "Fonden hölls konstant på 100 miljoner dollar",
+            "Fonden växte från cirka 18 miljoner dollar till 14 miljarder vid omkring 29 procent årlig avkastning",
+            "Fonden lades ned efter tre år på grund av dåliga resultat"
+          ],
+          "ratt": 2,
+          "tips": "Tretton år, trettioprocentstakt — vad blir det i slutänden av små belopp?"
+        },
+        {
+          "q": "Vad är bokens grundtes om amatören?",
+          "alternativ": [
+            "Att amatören alltid ska köpa index eftersom proffsen vinner",
+            "Att amatören har en verklig fördel genom närhet till vardagen — men bara om hen sedan gör analysarbetet",
+            "Att amatören bör handla oftare eftersom proffsen är långsamma",
+            "Att amatören ska följa fondernas köp listor"
+          ],
+          "ratt": 1,
+          "tips": "Lynches respektlöshet riktas mot proffskåren — men vad kräver han av amatören i gengäld?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 14,
+      "title": "Amatörens fördel — investera i det du känner: bagaren, klassrummet och cocktailpartyt",
+      "intro": "Bokens första och mest citerade tes: investera i det du känner. Bagaren på hörnet vet hur mjölet prissätts, säljaren hör orderflödet vända, barnen märker leksaksboomen innan analytikern gör det. Kapitlet går igenom varför den edgen finns — och vad den kräver för att bli pengar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lynches argument är strukturellt, inte sentimentalt. Proffsen har snabbare nyhetsflöden — men också strukturella handikapp: fondernas mandat, positionsstorlekar som kräver stora ochhandelbara bolag, kvartalsvärderingen av förvaltarens egen karriär (att köpa IBM kan aldrig bli ett personligt fel — att köpa ett okänt småbolag kan det alltid). Amatören saknar dessa tvång och kan därför äga det proffsen inte får, inte hinner eller inte vågar — särskilt de tråkiga små bolag som ingen analytiker täcker. Där sitter bagaren på hörnet med en informationsposition som ingen terminal säljer: hen ser kundflödet, prissättningen och konkurrenternas dörrar varje dag. Lynch själv hämtade idéer från parkeringsplatser och köpcentrum — och underströk att hans kollegor ofta handlade på samma nyheter som alla andra, medan kassörskan på Dunkin Donuts visste att kaffet sålde bättre i år än i fjol."
+        },
+        {
+          "type": "text",
+          "content": "Bokens berömda bevis är skolklassrummet: sjundeklassare på St Agnes-skolan byggde en portfölj av bolag de kände — kläder, mat, leksaker, snabbmat — och slog index över två år med bred marginal (i boken redovisat som omkring sjuttio procents avkastning mot index tjugosex). Poängen är inte att barn är begåvade stockpickare utan att urvalet följdes av enkel disciplin: de köpte bolag de förstod och behöll dem. Mot detta ställer Lynch cocktailpartyteorin — marknadscykeln sedd genom ett privathushålls sällskapsliv: i steg ett frågar ingen om aktier (botten), i steg två frågar de entusiastiska, i steg tre frågar alla vad man ska köpa, och i steg fyra ger alla tips och förklarar en dåre (topp). Sentimentet är en kompass som pekar baklänges mot folkmassan."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är dubbel. För det första: vardagsedgen är en katalysator-generator — den producerar hypoteser om att något fundamentalt rör sig (V01-vändningar, nya produkter, marginalförbättringar) innan det syns i konsensus. För det andra — och detta är kapitel tre:s varning — är vardagskunskap ett sökfilter och aldrig en köporder: hypotesen måste verifieras i räkenskaperna och prissättas innan den blir ett beslut. Lynch formulerar det som bokens mest citerade regel: know what you own, and know why you own it — vet vad du äger, och varför du äger det. Notera ordet varför: det finns ingen motsvarighet till varför i en produktupplevelse, bara i en analys."
+        },
+        {
+          "type": "insikt",
+          "content": "Vardagskunskap är ett sökfilter, inte en köporder: den genererar frågan varför växer detta? — och svaret ska sökas i bokslutet, inte i butikslokalen. Om ordningen vänds blir bagarens entusiasm en dyr känsla: Lynch köpte aldrig en aktie för att kaffet var gott, utan för att siffrorna bekräftade det kassörskan redan visste."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cocktailpartyteorin — sentimentet i fyra steg\",\"rader\":[[\"Steg\",\"Symptom på festen\",\"Marknadsläge\",\"Amatörens läge\"],[\"1\",\"Ingen vill prata aktier med dig\",\"möjlig botten\",\"bäst jaktläge — ingen konkurrerar\"],[\"2\",\"De entusiastiska frågar artigt\",\"tidig uppgång\",\"fortfarande bra priser\"],[\"3\",\"Alla frågar vad man ska köpa\",\"sent i uppgången\",\"aktsamhet — upptäckterna är gjorda\"],[\"4\",\"Alla ger dig tips och förklarar dig en dåre\",\"möjlig topp\",\"jaga ingenting; dokumentera exit-planer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör bagar-testet: välj en bransch du känner från insidan — ditt jobb, din hobby, din familjs konsumtion. Skriv tre observationsfrågor du kan svara på som en utomstående analytiker inte kan (orderflöde, kundbeteende, personalomsättning, leveranstider, prissättning). Besvara dem ärligt. Slå sedan upp branschens senaste rapporter: bekräftar de dina observationer? Om ja har du en Lynch-hypotes; om nej har du lärt dig varför boken kräver bokslutet som domare."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var poängen med St Agnes-skolans portfölj i boken?",
+          "alternativ": [
+            "Att barn hade tillgång till bättre analyser än proffsen",
+            "Att enkla bolag valda på bekantskap och behållna med disciplin slog index — vardagskunskap plus tålamod räcker långt",
+            "Att man ska låta barn sköta sina föräldrars aktieaffärer",
+            "Att slumpen alltid slår system"
+          ],
+          "ratt": 1,
+          "tips": "Vad valde barnen — och vad gjorde de sedan med innehaven?"
+        },
+        {
+          "q": "Vad innebär steg ett i cocktailpartyteorin?",
+          "alternativ": [
+            "Alla pratar aktier och ger tips",
+            "Ingen vill prata aktier med dig — ofta ett tecken på en möjlig botten",
+            "Aktier är huvudämnet på varje fest",
+            "Folkmassan har somnat"
+          ],
+          "ratt": 1,
+          "tips": "När är jaktkonkurrensen som lägst — och vad betyder det för priserna?"
+        },
+        {
+          "q": "Varför har institutionella förvaltare strukturella nackdelar mot amatören enligt Lynch?",
+          "alternativ": [
+            "Därför att de saknar utbildning",
+            "Därför att de har långsammare nyhetsflöden",
+            "Därför att mandat, positionsstorlekar och karriärrisk tvingar dem mot stora, välkända bolag — de får inte, hinner inte eller vågar inte äga det okända",
+            "Därför att de är för få"
+          ],
+          "ratt": 2,
+          "tips": "Vilket köp kan aldrig bli ett personligt fel — och vad gör den logiken mot småbolagen?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Kunskapens gränser — från produkt till aktie och tvåminutersdrillen",
+      "intro": "Bokens andra sida av myntet: det du känner som konsument är bara en tiondel av det du måste veta som ägare. Här introducerar Lynch tvåminutersdrillen — storyn som måste kunna berättas på två minuter — och kursen lägger till AK1A:s krav på siffror bakom varje berättelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den vanligaste amatörsynden är att älska en produkt och tro att kärleken är en analys: restaurangkedjan vars burgare är godast, teknikbolaget vars app är snyggast, bryggeriet vars öl står på varje bord. Problemet är inte observationen — den kan vara helt korrekt — utan att den svarar på fel fråga. Produkten säger inget om hur stor andel av bolagets intäkter den utgör, vilken marginal den bär, hur konkurrensen ser ut eller vad multiplen redan prissätter. Ett bolag kan ha världens bästa produkt i en division som står för tio procent av omsättningen och drunknar i koncernens kostnader. Halv kunskap är farligare än ingen: den ger känslan av edge utan dess innehåll — och Lynch ägnar hela bokavsnitt åt att skilja den som gillar butiken från den som förstår bolaget."
+        },
+        {
+          "type": "text",
+          "content": "Lynchs verktyg är tvåminutersdrillen: innan du köper ska du kunna berätta bolagets story på två minuter — för grannen, för partnern, för dig själv. Storyn ska innehålla varför bolaget växer (nya butiker? nya marknader? prisökningar? återvunna andelar?), vad som driver vinsten framåt, och vilket hinder som måste undanröjas. Det fina med drillen är att den är ett test, inte en konst: den som inte kan fylla två minuter med innehåll vet för lite, och den som behöver tio minuter vet för mycket på fel ställe — detaljer utan riktning. I AK1A:s språk är storyn katalysator-formuleringen: den talar om vilka V-variabler som ska flytta sig, i vilken riktning, och ungefär hur snart."
+        },
+        {
+          "type": "text",
+          "content": "Och så den kompletterande kontrollen — siffrorna som gör storyn till beslutsunderlag: hur stor är affärsområdet som storyn gäller (andel av intäkterna), växer det (V01), bär det marginal (V07), och vad betalar du för det (multiplarna, PEG — kapitel åtta)? En story utan intäktsandel är en katalogbeskrivning; en story utan marginal är en hobby; en story utan pris är en gåta. Lynchs ordning är därför alltid densamma: observation, story, siffror, pris — och först då beslut. Kursen behåller ordningen genom resten av boken, för den är också AKM1:s ordning: katalysator, variabel, värdering."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan som skiljer konsumenten från investeraren är tvådelad: vad tjänar bolaget på mig — och vem annars har noterat det? Om det första svaret är en margin och det andra är ingen har du ett Lynch-läge; om det andra svaret är alla har du ett sentiment-läge — och då prissätts din observation redan av marknaden, oavsett hur rätt den är."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från produkt till aktie — kontrollen\",\"rader\":[[\"Observation\",\"Fråga att besvara\",\"AKM1-länk\"],[\"Produkten används ofta\",\"hur stor andel av intäkterna — och återköpsfrekvens?\",\"V01, V12\"],[\"Kunderna är nöjda\",\"finns prissättningsmakt — syns den i marginalen?\",\"V07, V13–V15\"],[\"Expansion pågår\",\"vem finansierar den — internt eller emission?\",\"V19\"],[\"Storyn finns i media\",\"vem vet redan — vad prissätter multiplen?\",\"V04–V06\"],[\"Storyn är din egen\",\"kan den berättas på två minuter med siffror?\",\"tvåminutersdrillen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tvåminutersdrillen på ett bolag du gillar som kund: spela in dig själv i två minuter — varför växer bolaget, vad driver vinsten, vilket hinder finns. Lyssna sedan och räkna: hur många påståenden hade en siffra bakom sig? Varje påstående utan siffra är en hypotes att kontrollera i bokslutet innan den får kallas skäl."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är tvåminutersdrillen?",
+          "alternativ": [
+            "En teknisk analysmetod på tvåminutersgrafen",
+            "Kravet att kunna berätta bolagets story på två minuter — varför det växer, vad som driver vinsten, vilket hinder som finns",
+            "En regel om att aldrig fatta beslut snabbare än två minuter",
+            "Ett sätt att snabbläsa en årsredovisning"
+          ],
+          "ratt": 1,
+          "tips": "Det är ett berättelsetest — vad måste storyn innehålla?"
+        },
+        {
+          "q": "Varför är produktkärlek en farlig grund för ett aktieköp?",
+          "alternativ": [
+            "Därför att bra produkter aldrig säljer",
+            "Därför att produkten inte svarar på intäktsandel, marginal, konkurrens eller vad multiplen prissätter — känslan av edge utan innehåll",
+            "Därför att konsumenter alltid har fel",
+            "Därför att bra produkter alltid är dyra"
+          ],
+          "ratt": 1,
+          "tips": "Vilka frågor besvarar en produktupplevelse — och vilka besvarar den inte?"
+        },
+        {
+          "q": "Vad är den rätta ordningen enligt kursens läsning av Lynch?",
+          "alternativ": [
+            "Pris först, sedan observation, sedan story",
+            "Story först, sedan pris, observationen sist",
+            "Observation, story, siffror, pris — och först därefter beslut",
+            "Beslut först, story efteråt"
+          ],
+          "ratt": 2,
+          "tips": "Bokens ordning speglar AKM1:s: katalysator, variabel, värdering."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 14,
+      "title": "Sex kategorier — snabbväxare, cykliska och vändarna (V01, V12)",
+      "intro": "Bokens mest praktiska uppfinning: indelningen av alla bolag i sex kategorier — tröga växare, stabila, snabbväxare, cykliska, vändare och tillgångsbolag. Kategorin avgör vilka förväntningar du ska ha, vilka variabler som väger tungt — och när det är dags att sälja. Vändarna, turnaround-bolagen, får sitt eget ljus i kapitlet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De sex kategorierna. Tröga växare: mogna jättar som växer två till fyra procent om året och betalar ut större delen av vinsten — utdelningsaktier där direktavkastningen är avkastningen. Stabila medelstora: tio till tolv procents tillväxt, solida börsjättar som kan ge dubblingar men sällan tiodubblingar. Snabbväxare: små till medelstora bolag med tjugo till tjugofem procents tillväxt — tenbaggerns hemvist och samtidigt dess fallgrop, för när tillväxten mattas komprimeras multiplen hårt. Cykliska: papper, stål, kemikalier, olja, banker, flyg — bolag vars vinst svänger med konjunkturen och vars signaler är inverterade (lägst P/E ofta i toppen). Vändare: krisbolag — Chrysler 1982 är bokens exempel — där hela investeringen vilar på att ett enda villkor förändras: skulden omförhandlas, divisionen säljs, cykeln vänder. Tillgångsbolag: bolag vars dolda tillgångar — mark, patent, media, liknande — är värda mer än aktien, om bara en katalysator frigör dem."
+        },
+        {
+          "type": "text",
+          "content": "Vändarna förtjänar sin egen genomlysning, för de är kategorin med störst belöning och störst dödlighet. Lynchs krav är strikta: verksamheten måste vara intakt (produkten efterfrågas fortfarande), balansräkningen måste överleva vägen till vändningen (kapitel nio), och det finns ett identifierbart hinder som håller på att undanröjas. Chrysler köptes av Magellan 1982 när marknaden såg konkurs och kurserna var obefintliga — bolaget vände och mångdubblade. Men bokens varning står kvar: basfrekvensen för lyckade vändare är låg, de flesta krisbolag förblir krisbolag — därför är vändare en kategori för den som kan läsa en balansräkning i sömnen, inte för den som gillar storyn. I AKM1:s språk: V10 och V11 är inte viktade variabler i kategorin vändare — de är hela spelet."
+        },
+        {
+          "type": "text",
+          "content": "Och kategorin avgör variabelvikten. Snabbväxare: V01 hållbarhet, V19 emissionsrisk (tillväxten måste inte köpas med ny aktie), V07 marginalutveckling. Cykliska: V12 intäktsstabilitet är definitionsmässigt låg — istället är konjunkturpositionen och marginalens läge i cykeln bärande, och multiplens inverterade signal (låg P/E i topp) är kategoriens egen fälla. Tröga växare: direktavkastning och utdelningsutveckling, V12 hög. Tillgångsbolag: V05 P/B och katalysatorn (V17) som frigör värdet. Farligast av allt är kategoribytet: när en snabbväxare mognar till en stabil blir den samma bolag med en annan multipl — kursen kan halvera utan att något fundamentalt gått sönder. Lynchs regel: sälj när storyn ändras — och storyn är alltid kategoribunden."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv bolagets kategori överst i varje analys och dess exit-story bredvid: en position utan definierad kategori är en känsla med kursgraf. Kategorin avgör vilka av de tjugo variablerna som är bärande och vilka som är brus — och exit-storyn avgör vad som ska hända innan du ens börjar argumentera med dig själv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex kategorier och deras AKM1-profil\",\"rader\":[[\"Kategori\",\"Tillväxt\",\"Bärande AKM1-variabler\",\"Kategoriens fälla\"],[\"Trög växare\",\"2–4 %\",\"V12, direktavkastning, V20\",\"köpa utdelning till vilken multipl som helst\"],[\"Stabil medelstor\",\"10–12 %\",\"V01, V12, V14\",\"tro att den är en snabbväxare\"],[\"Snabbväxare\",\"20–25 %\",\"V01, V07, V19\",\"multiplkomprimering när tillväxten mattas\"],[\"Cyklisk\",\"svänger\",\"konjunkturposition, V07 i cykeln, V12 låg\",\"lägsta P/E köpas i toppen — inverterad signal\"],[\"Vändare\",\"från kris\",\"V10, V11, V19 — balansräkningen\",\"låg basfrekvens: de flesta förblir krisbolag\"],[\"Tillgångsbolag\",\"—\",\"V05, katalysator (V17)\",\"värdet frigörs aldrig utan katalysator\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kategorisera alla dina innehav: en kategori per bolag med en rad motivering, och en exit-story per innehav (vad ska hända för att du ska sälja?). Markera sedan det innehav där kategorin är svårast att bestämma — det är din doldaste risk, för där vet du inte vilka variabler som bär. Om något innehav bytt kategori sedan köpet: har du uppdaterat exit-storyn — eller argumenterar du fortfarande för en snabbväxare som redan mognat?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är låg P/E ofta en dålig köpsignal för cykliska bolag?",
+          "alternativ": [
+            "Därför att cykliska bolag aldrig är billiga",
+            "Därför att vinsterna är som högst i cykeltoppen — låg P/E speglar toppvinter som inte återkommer, och multiplen stiger när vinsten faller",
+            "Därför att cykliska bolag inte har P/E-tal",
+            "Därför att låg P/E alltid betyder konkursrisk"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med nämnaren i P/E när konjunkturen vänder?"
+        },
+        {
+          "q": "Vad är Lynchs exempel på en lyckad vändare?",
+          "alternativ": [
+            "Chrysler 1982 — krisbolag som vände och mångdubblade när marknaden prissatte konkurs",
+            "IBM på sjuttiotalet",
+            "En slumpmässig teknikaktie på börsens topp",
+            "En obligation"
+          ],
+          "ratt": 0,
+          "tips": "Vilket amerikanskt bilbolag var nära stupet i början av åttiotalet?"
+        },
+        {
+          "q": "Varför är V10 och V11 hela spelet i kategorin vändare?",
+          "alternativ": [
+            "Därför att vändare alltid har högst marginal",
+            "Därför att tillväxten är given i kategorin",
+            "Därför att vändningen dör på vägen om balansräkningen inte överlever — skulden kan döda bolaget innan produkten hinner rädda det",
+            "Därför att vändare saknar intäkter"
+          ],
+          "ratt": 2,
+          "tips": "Vad krävs för att en story ska hinna hända — tid eller pengar?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Det perfekta bolaget — tråkigt, trist och institutionellt obegripligt",
+      "intro": "Lynches motgift mot modeaktier: det perfekta bolaget är tråkigt — tråkig bransch, tråkigt namn, repetitiva produkter, ingen institutionell ägare, ingen analytiker. Här finns multipl-utrymmet, för upptäckten är en händelse som väntar på att inträffa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens katalog över det perfekta bolagets egenskaper är en av dess mest älskade listor: bolaget gör något tråkigt (burgtillverkaren Crown Cork and Seal), har ett tråkigt eller till och med löjligt namn (bildelarna Pep Boys — Manny, Moe and Jack), verkar i en bransch utan tillväxtprestige som ingen konkurrent vill gå in i, tillverkar något disagreeable som ingen vill prata om på fester (avfallsbolag, begravningsbyråer — bokens exempel inkluderar begravningskedjan som blev en av fondens fina vinnare), har en nisch med lokalt monopol, säljer produkter som kunderna återkommer till (rakblad, mat, dryck, förbrukningsmaterial), och är teknikens användare snarare än dess uppfinnare — det vinner på tekniken utan att betala forskningsracet. Varje egenskap pekar samma håll: mot frånvaron av upptäcktsglädje — och därmed mot ett pris som inte innehåller någon annans entusiasm."
+        },
+        {
+          "type": "text",
+          "content": "Den andra halvan av listan är institutionell: ingen analytiker täcker bolaget, ingen fond äger det, ingen tidning skriver om det — och gärna ett negativt stigma (rykten om miljöböter, trista industrislag, obegriplig verksamhet) som håller sentimentet nere medan siffrorna går åt andra hållet. Spinoffs — bolag som knoppats av från en större koncern — är en klassiker: modern är inte intresserad, aktien hamnar i fel händer och säljs ned, medan verksamheten är densamma. Poängen är mekanisk: när institutionerna upptäcker bolaget — och de gör det när det växt sig nog stort eller nog snyggt — köper de in sig i volym som bara ett litet bolag kan möta med stigande kurs. Upptäckten är själva katalysatorn; din uppgift är att sitta där innan den sker, med argument som står i bokslutet."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen har två ben. Det första är prislogiken: tråkighet är en kostnadspost som saknas i multiplen — du betalar inte för andra människors berättelser, utan bara för kassaflödet (V04–V06 på lägre nivå än sektorns teoretiska berättigade). Det andra är kvalitetslogiken: repeat purchase är V12 intäktsstabilitet i ren form; nischen med lokalt monopol är V13–V15 moat i miniatyr — smal men verklig; teknikens användare har kapitallätt skalning som gynnar V08. Kursens varning är densamma som bokens: tråkigt är en prisfråga, aldrig en ursäkt för slopad analys — det tråkigaste bolaget måste fortfarande klara balansräkningschecken, marginalkompassen och PEG-mätet innan det får en krona."
+        },
+        {
+          "type": "insikt",
+          "content": "Tråkighet är en prisbetingelse: ju tråkigare bolaget är, desto mindre betalar du för andra människors upptäcktsglädje. Entusiasm är en dold kostnadspost i varje multipl — och den enda kostnadspost som aldrig syns i bokslutet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Det perfekta bolagets egenskaper och AK1A-översättningen\",\"rader\":[[\"Egenskap\",\"Exempel från boken\",\"AK1A-översättning\"],[\"Tråkig verksamhet\",\"burgtillverkning (Crown Cork and Seal)\",\"låg upptäcktsgrad — multipl-utrymme\"],[\"Löjligt namn\",\"Pep Boys — Manny, Moe and Jack\",\"samma — namnets snobbfaktor\"],[\"Disagreeable bransch\",\"avfall, begravningsbyråer\",\"negativt stigma håller sentimentet nere\"],[\"Nisch med lokalt monopol\",\"små regionala ledare\",\"V13–V15 moat i miniatyr\"],[\"Repeat purchase\",\"rakblad, mat, förbrukningsmaterial\",\"V12 intäktsstabilitet\"],[\"Institutionell fromvaro\",\"ingen fond, ingen analytiker\",\"katalysator: upptäckten själv\"],[\"Spinoff\",\"avknoppat bolag i fel händer\",\"tvingad försäljning — prisdiskretion\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tråkighetsjakten: välj tio bolag från en nordisk småbolagslista eller din bevakning och poängsätt varje på fyra axlar — namnets glamour, branschens prestige, institutionell ägarandel, analytikertäckning. Ta fram de två tråkigaste och läs deras senaste rapporter: finns någon där V12, V07 och V13–V15 står emot ett lågt pris? Skriv en tvåminutersstory för det bästa."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför värdesatte Lynch bolag i tråkiga branscher?",
+          "alternativ": [
+            "Därför att tråkiga branscher alltid är lönsamma",
+            "Därför att tråkigheten håller konkurrenter och upptäcktsintresse borta — vilket håller multiplerna låga tills verksamheten växt",
+            "Därför att han ogillade teknik",
+            "Därför att tråkiga bolag aldrig konkurserar"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar entusiasm i en multipl — och vem betalar den?"
+        },
+        {
+          "q": "Vad är poängen med repeat purchase-produkter (rakblad, mat, förbrukningsmaterial)?",
+          "alternativ": [
+            "De kräver ingen marknadsföring",
+            "De är alltid billiga",
+            "De ger återkommande intäkter — intäktsstabilitet i ren form (V12)",
+            "De saknar konkurrenter"
+          ],
+          "ratt": 2,
+          "tips": "Vad betyder det för intäkterns förutsägbarhet att kunden kommer tillbaka?"
+        },
+        {
+          "q": "Varför är spinoffs en klassisk Lynch-situation?",
+          "alternativ": [
+            "Därför att avknoppade bolag alltid är billiga per definition",
+            "Därför att modret alltid köper tillbaka dem",
+            "Därför att de saknar produkter",
+            "Därför att aktien ofta hamnar i händer som inte vill äga den och säljer ned den — medan verksamheten är intakt"
+          ],
+          "ratt": 3,
+          "tips": "Vem äger aktierna direkt efter en avknoppning — och vad vill de göra med dem?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 14,
+      "title": "Tillväxtens anatomi — V01 försäljningstillväxt och dess källor",
+      "intro": "Från kategorier till motorrummet: vad driver egentligen försäljningstillväxten? Lynch dekomponerar tillväxten i sina källor — volym, pris, nya produkter, nya marknader, andelar, förvärv — och kursen kopplar varje källa till dess hållbarhet och till AKM1:s V01.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Försäljningstillväxt är inte en siffra utan en sammansatt vektor, och källorna har mycket olika livslängd. Volym via kapacitet: fler butiker, fler anläggningar, mer produktion — kraftfull men takbelagd (antalet butiker som kan byggas är ändligt, och enhetskostnaden per ny butik stiger när de bästa lägena är tagna). Prisökningar: den renaste formen av prissättningsmakt — men också den som snabbast möter substitution och som måste renrensas från inflation för att betyda något. Nya produkter: motor med begränsad bränsletank — varje produkt mognar. Nya marknader och geografisk expansion: bland de mest hållbara källorna, för taket ligger långt borta. Marknadsandelar: att växa på konkurrenternas bekostnad — hållbart om moat bär det (V13–V15), kostsamt om det köps med rabatter som äter V07. Och förvärv: den farligaste källan att betala multipl för."
+        },
+        {
+          "type": "text",
+          "content": "Förvärvstillväxt får Lynches egna ord: diworsification — diversifiering som försämras — den seriella förvärvaren som köper sig till tillväxt i främmande branscher med belånade pengar och betalar synergi-priser som aldrig infrias. Skillnaden mellan en bra och en dålig förvärvare är skillnaden mellan kapitalallokering och empire building: köper bolaget tillgångar det förstår bättre än säljaren (Lynch gillar sådana köpare), eller köper det bara tillväxten som saknas i egen verksamhet? I AKM1:s logik: organisk tillväxt (V01 driven av volym, pris, andelar) är strukturell, medan förvärvad tillväxt är finansiell ingenjörskonst som ska diskonteras — och V02, den strukturella återkommande komponenten, är just försöket att isolera det organiska. Den som blandar dem betalar för en tillväxt som slutar den dagen förvärvspengarna tar slut."
+        },
+        {
+          "type": "text",
+          "content": "Och hållbarhetsfrågan — hur länge kan det pågå? — är kapitlets egentliga fråga, för en snabbväxares multipl bärs av antagandet att takten håller. Följ därför ledande indikatorer istället för efterföljande: jämförbara försäljning (samma butiker — same store sales) som visar om gamla enheter växer eller bara nya byggs; orderstock och pipeline för bolag med projekt; kapacitetsutnyttjande; kundavi substanser. Kom ihåg Vår ekonomi-kursens varning: räkna realt — ett bolag vars tillväxt bara är inflation är ett obligationsliknande skal, ingen snabbväxare. Och notera hur källorna kan kombinera: andel + repeat purchase + geografisk expansion är den klassiska tenbagger-kombinationen — tre motorer som inte slutar samtidigt."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig bara hur fort bolaget växer — fråga vad tillväxten drivs av och hur länge källan räcker: volym har tak, priser har gränser, andelar har konkurrenter — bara nya marknader och repeat purchase förlänger kurvan på egen hand. Dekompositionen av V01 är därför viktigare än dess storlek."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtens källor — hållbarhet och signal\",\"rader\":[[\"Källa\",\"Mekanik\",\"Hållbarhet\",\"AKM1-signal\"],[\"Kapacitet/volymer\",\"fler butiker, anläggningar\",\"medel — tak när de bästa lägena tagits\",\"V01 + enhetsutveckling\"],[\"Prisökningar\",\"prissättningsmakt\",\"låg-medel — substitution\",\"V07 marginal; rensa inflation\"],[\"Nya produkter\",\"produktcykler\",\"medel — produkter mognar\",\"V01 volatilitet\"],[\"Nya marknader\",\"geografisk expansion\",\"hög — tak långt borta\",\"V01, V03 diversifiering\"],[\"Marknadsandelar\",\"tar från konkurrenter\",\"hög endast med moat\",\"V13–V15, V07\"],[\"Förvärv\",\"köper tillväxt\",\"låg — diworsification-risk\",\"diskontera; skilj från V02\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dekomponera V01 för ett av dina innehav: leta i senaste rapporten (eller segmentdata) efter pris-/volymeffekt, organisk vs förvärvad tillväxt, och valutaeffekt. Skriv procentsatser per källa. Fråga sedan: vilken källa dominerar, vad är dess tak, och vad händer med tillväxten kvartalet efter att källan tar slut? Om du inte hittar dekompositionen i rapporten är det i sig ett fynd — bolaget vill inte att du ska se den."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Lynch med diworsification?",
+          "alternativ": [
+            "Att diversifiera mellan många bra bolag",
+            "Att köpa index",
+            "Att den seriella förvärvaren köper sig till tillväxt i främmande branscher till synergi-priser som aldrig infrias — diversifiering som försämras",
+            "Att sålda dåliga bolag"
+          ],
+          "ratt": 2,
+          "tips": "Ordvitsen sitter i worsen — vad förvärras?"
+        },
+        {
+          "q": "Vilka tillväxtkällor bedöms som mest hållbara i kursen?",
+          "alternativ": [
+            "Prisökningar och kapacitetsutbyggnad",
+            "Nya marknar/geografisk expansion och repeat purchase-kunder",
+            "Engångsförsäljningar",
+            "Valutaeffekter"
+          ],
+          "ratt": 1,
+          "tips": "Vilka motorer har tak långt borta — och vilka slutar när produkten eller läget är förbrukat?"
+        },
+        {
+          "q": "Vad visar jämförbar försäljning (samma butiker) som total försäljning inte gör?",
+          "alternativ": [
+            "Inget — samma sak",
+            "Hur mycket av tillväxten som är inflation",
+            "Om de befintliga enheterna växer — eller om tillväxten bara kommer från att nya enheter byggs",
+            "Vad aktien är värd"
+          ],
+          "ratt": 2,
+          "tips": "Vad kallas tillväxt som bara finns så länge bygget pågår?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Marginalen talar — V07 bruttomarginal som kompass och hävstång",
+      "intro": "Bruttomarginalen är bolagets sanningsserum: varje story om varumärke, nisch eller nätverk måste antingen synas i V07 över tid — eller förbli en berättelse. Kapitlet går igenom marginalen som kompass, dess relation till prissättningsmakten, och räknar marginalhävstången i klartext.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför börja i brutto? Därför att bruttomarginalen är renast — den mäter priset på bolagets varumärke och nisch minus kostnaden att producera, innan alla koncernens kostnader och engångsposter begravt signalen. En stigande V07 över flera perioder betyder att prishöjningar fastnar eller att kostnadsläget förbättras — prissättningsmakt i aktion, moat som syns (V13–V15 bekräftade). En fallande V07 under hög tillväxt betyder subventionerad tillväxt: volymen köps med rabatter, vilket är världens dyraste marknadsföring. Jämför alltid med branschens snitt och med bolagets egen historia över en hel cykel — en marginal som är hög bara i toppen av konjunkturen är cykel, inte strukturoch ska bedömas efter cykelmedel."
+        },
+        {
+          "type": "text",
+          "content": "Sedan hävstången — marginalens andra ansikte. Eftersom en stor del av rörelsekostnaderna är fasta, ger varje procentenhet i bruttomarginal en förstärkt effekt på EBIT och netto. Räkneexempel i klartext: ett bolag med 1 000 i intäkt och 40 procents bruttomarginal har 400 i bruttovinst; med fasta rörelsekostnader på 300 blir EBIT 100. Stiger bruttomarginalen fem procentenheter till 45 — av prissättningsmakt eller bättre mix — blir bruttovinsten 450 och EBIT 150: EBIT har ökat femtio procent på fem procentenheters bruttoförbättring. Omvänd gäller med samma våldsamhet: fem procentenheter nedåt halverar EBIT. Det är därför Lynch älskade tråkiga bolag med tyst marginalförbättring i kombination med återköp: två mekanismer som multiplicerar vinst per aktie utan att storyn behöver bli spännande — tenbaggerns tystaste motor."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-placeringen: V07 är den variabel som testar alla kvalitetsstorys — varumärke (V14), nisch och patent (V13), nätverk (V15) — och skickar resultaten vidare till V08 (EBITDA-marginal, där rörelsekostnadernas disciplin syns) och V09. I marginalarbete är tre frågor minimum: ligger nivån över branschens medel (struktur)? är trenden stabil eller stigande över cykeln (prissättningsmakt)? och är kostnadsbasen fix eller rörlig (hävstångens storlek — både upp och ned)? En fjärde från förra kapitlet: om tillväxten är prisdriven — fastnar priserna i V07 eller drunknar de i volymrabatter? Det är skillnaden mellan makt och desperat volymjakt."
+        },
+        {
+          "type": "insikt",
+          "content": "Bruttomarginalen är bolagets sanningsserum: varje story om varumärke, nisch eller nätverk ska antingen synas i V07 över tid — eller är den en berättelse utan kassaflöde. Fråga alltid: varför är marginalen vad den är, och vad måste vara sant för att den ska hålla?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marginalhävstången i klartext\",\"rader\":[[\"Rak\",\"Nivå 1 (V07 40 %)\",\"Nivå 2 (V07 45 %)\"],[\"Intäkt\",\"1 000\",\"1 000\"],[\"Råvaror och direkt kostnad\",\"600\",\"550\"],[\"Bruttovinst\",\"400\",\"450\"],[\"Fasta rörelsekostnader\",\"300\",\"300\"],[\"EBIT\",\"100\",\"150\"],[\"Förändring\",\"—\",\"+5 pp brutto ger +50 % EBIT\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna marginalhävstången för ett innehav: hämta V07 för fyra år, uppskatta andelen fasta kostnader, och räkna vad tre procentenheters bruttoförbättring gör med EBIT — och med vinst per aktie om aktieantalet samtidigt sjunker två procent per år. Skriv sedan omvändingen: vad gör tre procentenheter nedåt? Om du inte gillar symmetrin vet du varför V07 vägs tungt i AKM1."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är bruttomarginalen ett renare mått på prissättningsmakt än nettomarginalen?",
+          "alternativ": [
+            "Därför att brutto alltid är högre",
+            "Därför att den mäter pris minus produktionskostnad innan koncernkostnader och engångsposter begravt signalen",
+            "Därför att netto innehåller skatt som är irrelevant",
+            "Därför att bruttomarginal aldrig kan manipuleras"
+          ],
+          "ratt": 1,
+          "tips": "Vad saknas i bruttoledet som kan skräpa ner nettoledet?"
+        },
+        {
+          "q": "I exempeltabellen: vad gör +5 procentenheter bruttomarginal med EBIT?",
+          "alternativ": [
+            "Ökar EBIT med 5 procent",
+            "Ökar EBIT med 50 procent — från 100 till 150",
+            "Minskar EBIT",
+            "Ingen förändring alls"
+          ],
+          "ratt": 1,
+          "tips": "Fasta kostnader står still — vart tar den extra bruttovinsten vägen?"
+        },
+        {
+          "q": "Vad betyder fallande bruttomarginal under perioder med hög försäljningstillväxt?",
+          "alternativ": [
+            "Att bolaget mognar",
+            "Att inflationen är hög",
+            "Subventionerad tillväxt — volymen köps med rabatter som äter marginalen",
+            "Att bokföringen är konservativ"
+          ],
+          "ratt": 2,
+          "tips": "Vad kallas tillväxt som betalas med lönsamhet — och vad är det värt?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 14,
+      "title": "P/E mot tillväxt — PEG och värderingens hjärta (V04–V06)",
+      "intro": "Bokens värderingskapitel handlar om en enda relation: priset mot tillväxten. Lynchs tumregel — rätt prissatt när P/E motsvarar tillväxttakten — och PEG-formeln med direktavkastning är kursens centrum, tillsammans med en ärlig genomgång av när formeln är ogiltig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundregeln: P/E ska jämföras med två referenser — bolagets egen historia och branschens nivå — och med tillväxttakten. Lynchs formulering: ett rätt prissatt bolag har P/E ungefär lika med sin tillväxttakt; betalar du hälften av tillväxttakten i P/E är det attraktivt, betalar du dubbelt är det dyrt. Sedan gör han formeln tydligare genom att räkna in direktavkastningen: (tillväxttakt i procent plus direktavkastning i procent) delat med P/E — ett tal över ett är attraktivt, under ett allt dyrare, och under ett halvt extremt. Räkneexempel i bokens anda: ett bolag med femton procents tillväxt och tre procents direktavkastning till P/E 15 ger (15 + 3) / 15 = 1,2 — attraktivt; samma bolag till P/E 30 ger 0,6 — dyrt. Poängen med att räkna in utdelningen är att en trög växare med hög direktavkastning inte ska straffas av en ren tillväxtformel."
+        },
+        {
+          "type": "text",
+          "content": "Och begränsningarna — för formeln är ett verktyg med ansvarsområde. Cykliska bolag: ogiltig, eftersom vinsten i nämnaren svänger med konjunkturen och P/E är lägst när det är som farligast att köpa (kapitel fyra). Förlustbolag och vändare i kris: ogiltig, ingen meningsfull E att prissätta — där gäller balansräkningen och sum-of-parts. Engångsposter: P/E på justerad, normaliserad vinst — boken varnar för att jämföra en engångsfärgad E med en ren multipl. Räntekontexten (Vår ekonomi-kapitel åtta): multiplar är omvända diskonteringsmaskiner — vid hög ränta komprimeras alla berättigade multiplar, vid låg expanderar de; en PEG på ett år säger inget utan att deklarera räntläget. Och tillväxtens kvalitet (förra kapitlet): formeln straffar inte diworsification — förvärvad tillväxt ska diskonteras innan den får plats i täljaren."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-placeringen: PEG är inte en ersättning för V04 (P/S), V05 (P/B) och V06 (EV/EBITDA) — det är det fjärde måttet som binds ihop med dem i värderingsblocket, med en tydlig arbetsfördelning: P/S fångar bolag utan vinst, P/B balansräkningsvärden, EV/EBITDA kapitalstruktur-neutral lönsamhet, PEG tillväxtens pris. Kursens användningsregel: räkna alla fyra, och lita bara på det som minst tre av dem säger samma sak — en ensam multipl som avviker är antingen fyndet eller fällan, och skillnaden avgörs av variablerna runt omkring. Lynchs egen varning mot långslag gäller här: betala aldrig en multipl som kräver perfekt exekvering i tio år — tjugo procents tillväxt i ett decennium är en tiodubbling, och den som betalar för den i förskott har ingen marginal för mänsklighet."
+        },
+        {
+          "type": "insikt",
+          "content": "PEG fungerar som prismätare för snabbväxare — men nämnarens tillväxt är en prognos: en PEG på ett halvt med en tillväxt som halveras är inte billigt, det är en value trap med decimaler. Deklarera alltid vad tillväxtantagandet vilar på (källorna i kapitel sex) innan du litar på kvoten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"PEG i praktiken — fyra situationer\",\"rader\":[[\"Bolag\",\"P/E\",\"Tillväxt (+ direktavkastning)\",\"PEG-rå\",\"Dom\"],[\"A\",\"15\",\"20 % (0)\",\"1,33\",\"attraktivt — betalar under tillväxttakten\"],[\"B\",\"15\",\"15 % + 3 % utdelning\",\"1,2\",\"attraktivt — utdelningen räknad\"],[\"C\",\"40\",\"15 % (0)\",\"0,38\",\"dyrt — kräver perfekt exekvering\"],[\"D (cykliskt)\",\"8\",\"4 % i cykeltopp\",\"ogiltig\",\"formeln felsatt — vinsten svänger med cykeln\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna PEG (med direktavkastning) för tre snabbväxare i din bevakning — och markera tydligt vilka som är cykliska eller förvärvsdrivna, där formeln är ogiltig eller täljaren ska diskonteras. För det bästa bolaget: skriv vad tillväxtantagandet vilar på för källa (kapitel sex) och hur många procent av berättigad multipl som räntan ätit (Vår ekonomi-kursen verktyg). Spara med datum — det är din första dokumenterade värdering i Lynch-tradition."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Lynchs tumregel för rätt prissatt P/E?",
+          "alternativ": [
+            "P/E ska alltid vara under tio",
+            "P/E ska ungefär motsvara bolagets tillväxttakt",
+            "P/E ska vara lika med direktavkastningen",
+            "P/E spelar ingen roll om bolaget växer"
+          ],
+          "ratt": 1,
+          "tips": "Vilken två storheter balanserar formeln mot varandra?"
+        },
+        {
+          "q": "Hur räknas PEG med direktavkastning enligt kursen?",
+          "alternativ": [
+            "(tillväxttakt + direktavkastning) / P/E — över 1 är attraktivt",
+            "P/E × tillväxttakt",
+            "direktavkastning / P/E",
+            "(P/E + tillväxt) / direktavkastning"
+          ],
+          "ratt": 0,
+          "tips": "Exemplet i texten: (15 + 3) / 15 = 1,2 — hur var den uppbyggd?"
+        },
+        {
+          "q": "Varför är PEG ogiltig för cykliska bolag?",
+          "alternativ": [
+            "Därför att cykliska bolag inte har någon aktiekurs",
+            "Därför att deras tillväxt alltid är noll",
+            "Därför att vinsten i nämnaren svänger med cykeln — P/E ser lägst ut i toppen när vinsten är som högst och nästa rörelse är nedåt",
+            "Därför att utdelningen saknas"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med E i P/E när konjunkturen vänder — och var står multiplen då?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Balansräkningen först — kassa, skuld och konkursavstånd (V10, V11, V19)",
+      "intro": "Ingen story är värd något om bolaget inte överlever vägen till den. Lynchs ordning är rak: kassa, skuld, bokvärde, kassaflöde — konkursavstånd före optik. Kursen översätter hela checken till V10, V11 och V19, med vändarna som skarpaste testfall.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens hårdaste regel har blivit en av AKM1:s grundbultar: ett bolag utan skuld kan inte gå i konkurs. Med skuld är allt annat möjligt — även den bästa produkten, den vackraste vändningen, den mest logiska storyn. Lynchs check börjar därför i kassapositionen: hur mycket kontanter per aktie står i balansräkningen, och hur stor del av börsvärdet är täckt av ren kassa? Sedan skuldstrukturen — och här skiljer han på slag: bankgäld som kan sägas upp på anfordran är farligare än obligationer med löptid, för banken kräver tillbaka precis när det passar sämst (kreditcykel-logiken från Vår ekonomi-kapitel sju). Därefter bokvärdet som grovt golv, och kassaflödet: ett bolag som genererar fri kassa kan betala, återköpa och växa sig ur problem; ett bolag som bränner kassa har klockan emot sig."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AKM1:s kreditblock är rak. V10 skuldsättningsgrad: poängsatt efter överlevnadsförmåga i en nedgång, inte avkastningsoptimering i en uppgång — samma princip som i Vår ekonomi-kursen. V11 likviditet: kvickkvoten som personligt bankrusningstest — kan bolaget betala kortfristiga förbindelser utan att röra långfristig finansiering? V19 kapitalförbränning och emissionsrisk: hur många månader kassa återstår vid noll EBITDA — och vad händer när fönstret tar slut i en stängd kreditmarknad? Svaret står i boken från 1989 som i går: emission, utförd när aktien är som billigast för köparen och dyrast för ägaren. Balansräkningschecken är därför inte konservatism — den är tidsmatematik: storyn måste hända innan kassan tar slut, och enda sättet att veta om det är möjligt är att räkna."
+        },
+        {
+          "type": "text",
+          "content": "Och för vändarna — kategorin från kapitel fyra — är checken hela investeringen. Lynchs krav på en spelbar vändare: verksamheten intakt (produkten efterfrågas), ett identifierbart hinder på väg att undanröjas, och en balansräkning som överlever resan. Två av tre räcker inte: den bästa vändningsstoryn dör om skulden förfaller före vändningen. Kursens praktiska övning för alla kategorier är densamma: räkna månader av överlevnad — kassa plus outnyttjad kredit, dividerat med bränntakt vid noll intäktstillväxt — och läs noter tillräckligt noggrant för att veta när lån förfaller. En finansiell kalender är den mest underskattade sidan i en årsredovisning."
+        },
+        {
+          "type": "insikt",
+          "content": "Ingen vändare har misslyckats med stark balansräkning och intakt produkt — Lynchs regel att skuldlösa bolag inte kan gå omkull är kursens överlevnadsaxiom. V10 och V11 poängsätts före allt estetiskt: storyn kan vänta, förfallodatumet kan inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Balansräkningschecken — Lynch till AKM1\",\"rader\":[[\"Post\",\"Vad Lynch letar efter\",\"AKM1-variabel\",\"Fråga\"],[\"Kassa per aktie\",\"täcker den en del av kursen?\",\"V11, V19\",\"hur många månader räcker kassan?\"],[\"Skuldstruktur\",\"obligation med löptid hellre än bankgäld på anfordran\",\"V10\",\"när förfaller finansieringen — till vilken ränta?\"],[\"Räntebärande skuld / EBITDA\",\"hur många års lönsamhet är skulden?\",\"V10\",\"kan bolaget betala av sig ur drift?\"],[\"Kvickkvot\",\"kortfristiga tillgångar mot kortfristiga skulder\",\"V11\",\"klaras nästa kvartal utan ny finansiering?\"],[\"Fritt kassaflöde\",\"genereras eller förbrukas?\",\"V19, V20\",\"finansierar bolaget sig självt — eller aktieägarna det?\"],[\"Noter om lån\",\"löptider och villkor\",\"V10, V19\",\"vad händer den månad då inget förfaller bra?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör balansräkningschecken på din mest skuldsatta position: räntebärande skuld, kassa, kvickkvot — och räkna kassan i månader vid noll EBITDA (V19-logik). Slå upp när det största lånet förfaller. Skriv en mening: om kreditmarknaden stänger samma månad som förfallodatumet — vad händer? Om meningen är obehaglig att skriva vet du varför Lynch börjar i balansräkningen och varför AKM1 har tre variabler för samma fråga."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Lynchs regel om skuld och konkurs?",
+          "alternativ": [
+            "Att alla bolag kan gå i konkurs",
+            "Att ett bolag utan skuld inte kan gå i konkurs — därför börjar analysen i balansräkningen",
+            "Att skuld alltid är bra för avkastningen",
+            "Att konkurs bara drabbrar banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs juridiskt för att tvinga ett bolag i konkurs?"
+        },
+        {
+          "q": "Varför är bankgäld farligare än obligationer enligt boken?",
+          "alternativ": [
+            "Bankgäld har alltid högre ränta",
+            "Bankgäld kan sägas upp på anfordran — banken kräver tillbaka precis när det passar sämst",
+            "Obligationer behöver aldrig betalas tillbaka",
+            "Bankgäld syns inte i bokslutet"
+          ],
+          "ratt": 1,
+          "tips": "Vad betyder på anfordran i praktiken mitt i en kris?"
+        },
+        {
+          "q": "Vad mäter V19-frågan i kursens balansräkningscheck?",
+          "alternativ": [
+            "Hur många månader kassa som återstår vid oförändrad förbränning — tid till tvångsemission",
+            "Aktiens utdelning",
+            "Bruttomarginalens nivå",
+            "Antalet analytiker"
+          ],
+          "ratt": 0,
+          "tips": "Vad är den ende som kan sänka räkneuret — och vad händer när det når noll?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Signalerna — insiderköp, återköp och det sjunkande aktieantalet (V20)",
+      "intro": "Ord är billiga; kapital är information. Lynch värderar högst de signaler som kostar pengar att sända: insiderköp, återköp och en disciplinerad utdelning. Kursen samlar dem under V20 — kapitalstrukturens signalfrekvens.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Insiderköp är bokens tyngsta positiva signal — men med precision: ett köp kan vara en förmån i optionsprogram, klungan är informationen. Flera insiders som köper för verkliga pengar samtidigt, utan att optionsplanen tvingar dem, är en samlad satsning på egen plånbok — och ingen berättelse är mer trovärdig än pengar på bordet. Insiderförsäljning däremot är svag information: människor säljer av tusen skäl (hus, skilsmässa, skatt, diversifiering) men köper aktier i sitt eget bolag i huvudsak av ett. Sedan återköpen: ett bolag som köper tillbaka egna aktier när kursen ligger under det egna värdet sänder samma signal — och skapar dessutom mekaniken: färre aktier betyder större andel av vinsten per kvarvarande aktie."
+        },
+        {
+          "type": "text",
+          "content": "Den mekaniska sidan är kursens AKM1-kärna: räkna aktier, inte bara kronor. En tenbagger kräver att vinsten per aktie tiodubblas — och mellan bolagets vinst och din andel står emissioner, optioner och återköp som multiplikatorer i båda riktningar. Ett bolag som växer vinsten tolv procent om året men späder ut aktieantalet med fyra procent levererar åtta till dig; ett bolag som växer åtta och köper tillbaka fyra levererar också tolv — men det förra har bett marknaden om kapital, det senare har gett tillbaka. V20 fångar skillnaden: kapitalstrukturens intellekt. Detsamma gäller utdelningen: en disciplinerad, växande utdelning är både en signal (styrelsen litar på kassaflödet) och en begränsning (kapital som lämnar bolaget kan inte växa det — rimligt för tröga växare, tveksamt för snabbväxare som behöver bränsle)."
+        },
+        {
+          "type": "text",
+          "content": "Och varningens sida: utspädning är den tysta tjuven i varje tenbagger-beräkning. Optionsprogram, riktade emissioner, garantilåningar — alla har legitima användningar och alla kostar dig procent per år om de är frikopplade från värdeskapande. Kursens checklista för signal-blocket: klunga av insiderköp (ja/nej), återköp till kurs under inre värde eller över (mekaniskt köp är värre än inget), aktieantalets utveckling fem år tillbaka (stiger, faller, stilla), utdelningens andel av fritt kassaflöde (hållbar?). Fyra frågor, två minuter i en årsredovisning — och en grov uppskattning av hur många procent per år som läcker mellan vinst och aktieägare."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna aktier, inte bara kronor: mellan bolagets vinst och din förmögenhet står emissioner, optioner och återköp. V20 är tenbaggerns tysta multiplikator — eller dess tysta tjuv — och aktieantalets femårskurva avslöjar vilken av de två du äger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Signalerna och deras tyngd\",\"rader\":[[\"Signal\",\"Tyngd\",\"Tolkning\",\"Vanligaste felet\"],[\"Klunga av insiderköp\",\"hög\",\"flra insiders köper för verkliga pengar samtidigt\",\"läsa enstaka optionsutlösen som köp\"],[\"Enstaka insiderköp\",\"låg\",\"kan vara många privata skäl\",\"övervikt en transaktion\"],[\"Insiderförsäljning\",\"svag\",\"tusen skäl att sälja, ett att köpa\",\"tolka som dom på verksamheten\"],[\"Återköp under inre värde\",\"hög\",\"signal plus mekanik — färre aktier\",\"acceptera mekaniskt köp i toppen\"],[\"Aktieantalets utveckling\",\"hög över tid\",\"utspädning eller koncentration\",\"aldrig räkna antalet aktier\"],[\"Växande utdelning\",\"medel\",\"disciplin och förtroende för kassaflödet\",\"kräv utdelning av snabbväxare som behöver bränsle\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör aktieantals-mätet på dina tre största innehav: hur många aktier fanns för fem år sedan, hur många i dag — och vad heter skillnaden i procent per år? Räkna sedan för varje bolag: om vinsten växer tio procent om året och antalsutvecklingen fortsätter som den gjort — vad växer vinsten per aktie? Om någon av siffrorna överraskar dig negativt har du just mött V20:s tjuv."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är insiderförsäljning en svagare signal än insiderköp?",
+          "alternativ": [
+            "Därför att insiders inte får sälja",
+            "Därför att försäljning alltid sker på inSIDER-information",
+            "Därför att det finns tusen privata skäl att sälja (hus, skatt, skilsmässa) men i huvudsak ett skäl att köpa sitt eget bolag",
+            "Därför att försäljning aldrig påverkar kursen"
+          ],
+          "ratt": 2,
+          "tips": "Räkne upp skälen bakom varje riktning — vilken lista är längst?"
+        },
+        {
+          "q": "Ett bolag växer sin totala vinst tolv procent om året men aktieantalet växer fyra procent. Vad växer vinsten per aktie?",
+          "alternativ": [
+            "Tolv procent",
+            "Ungefär åtta procent",
+            "Sexton procent",
+            "Noll procent"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör utspädningen med din andel av kakan?"
+        },
+        {
+          "q": "Vad är kursens dom om mekaniska återköp genomförda till överpris?",
+          "alternativ": [
+            "De är alltid bättre än inget återköp",
+            "De är värre än inget — bolaget förstör värde som skulle ha fungerat bättre kvar i verksamheten eller som utdelning",
+            "De påverkar inte aktieägarna alls",
+            "De är olagliga"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att köpa tillbaka något för mer än det är värt — och vem betalar?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 14,
+      "title": "Tenbaggern och tiden — compound-matematik och stoppade öron",
+      "intro": "Tenbagger — aktien som tiodubblas — är bokens bidrag till investeringsordlistan, lånat från basebollen. Kapitlet räknar compound-matematiken, priset i volatilitet på vägen, och den mentala utrustning som krävs för att sitta kvar genom båda.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ordet kommer från basebollens two-bagger — en dubbel — och en tenbagger är en aktie som ger tio gånger insatsen. Matematiken bakom är compound vid sitt renaste: vid femton procents årlig tillväxt i vinst per aktie tar en tiodubbling omkring sexton år; vid tjugo procent omkring tretton; vid tjugofem procent omkring tio; vid trettio procent omkring nio. Snabbare än så existerar inte över längre tid — det är kurvans eget tak. Men notera vad som driver ekvationen: inte kursens svängningar utan vinst per aktie, kontinuerligt återinvesterad och inte utspädd (kapitel tio). En tenbagger är därför inte en aktie utan en tidsperiod som går i sällskap med en fundamental utveckling — och tiden är komponenten som kursgrafens missbrukare ständigt underskattar."
+        },
+        {
+          "type": "text",
+          "content": "Priset på vägen är volatiliteten. Äten de bästa vinnarna — de som tiodubblades — sjönk med trettio till femtio procent gång på gång under resan; utan magen för retracements finns ingen matematik som hjälper, för positionen säljs i första svackan av en ägare som trodde att trenden var en raketslagning. Lynchs motgift är dokumentationen: skriv ner storyn vid köpet (tvåminutersdrillen från kapitel tre), omvärdera när fundamentala nyheter kommer — inte när kursen rör sig — och skilj på brus (kurs, makro-steg, analytikerjusteringar) och signal (orderstock, marginaler, kundflöde, balansräkning). Bokens formulering är klassisk: om du inte kan föreställa dig att äga en aktie tjugo år, ska du inte äga den tjugo minuter — inte för att alla ska hålla tjugo år, utan för att beslutet ska fattas med en horisont som är längre än känslans halveringstid."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-placeringen går rakt in i tidshorisonterna. Tenbaggern lever på de långa horisonterna — Lång (konjunkturvågen) och Mega (den sekulära) i AK1TS:s språk — medan Mikro (fem dagar) och Kort är brus med hög underhållningsvärde och noll informationsvärde om storyn. Vågfundamentet ger den kompletterande läsningen: V01 och V08 som tidsserier — om impulsvågen i försäljning och marginal är intakt finns ingen fundamentalt grundad anledning att lämna; när den bryts finns ingen känslomässig anledning att stanna. Positionens storlek är sista pusselbiten: den ska vara så liten att en femtioprocentig retracement inte kan skrämma dig ur storyn — och så stor att tiodubblingen spelar roll. Den som får storleken fel har inte ett volatilitetsproblem; hen har ett koncentrationsproblem utklädd till ett modproblem."
+        },
+        {
+          "type": "insikt",
+          "content": "Tenbaggern är inte en aktie utan en tidsperiod: matte säger att tjugofem procents tillväxt i tio år är tiofalt — psyket säger att ingen orkar dit utan en skriven story. Dokumentationen är det som låter dig sälja på fakta i stället för på känsla, och positionsstorleken är det som låter dig överleva vägen dit."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Compound-matematiken — tid till multiplar\",\"rader\":[[\"Årlig tillväxt i vinst/aktie\",\"År till fördubbling\",\"År till tiodubbling\"],[\"15 %\",\"cirka 5\",\"cirka 16\"],[\"20 %\",\"cirka 4\",\"cirka 13\"],[\"25 %\",\"cirka 3\",\"cirka 10\"],[\"30 %\",\"cirka 3\",\"cirka 9\"],[\"Notera\",\"compound kräver ingen perfekthet — men kontinuitet\",\"trettio procent under decennier är historiskt extremt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen tenbagger-matte: välj ditt mest övertygade långa innehav och uppskatta realistisk årlig tillväxt i vinst per aktie (tillväxt + marginalutveckling − utspädning). Hur många år till fördubbling — till tiodubbling? Skriv sedan riskraden: hur stor retracement tål din position storleksmässigt utan att du säljer? Om svaret är mindre än fyrtio procent har du inte ett bolagsproblem — du har en positionsstorleksprofil som gör storyn omöjlig att genomleva."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varifrån kommer uttrycket tenbagger?",
+          "alternativ": [
+            "Från golf — tio slag under par",
+            "Från basebollens two-bagger — en tiodubbling i aktievärde",
+            "Från poker — tio marker",
+            "Från bagarn i bokens första kapitel"
+          ],
+          "ratt": 1,
+          "tips": "Vilken sport räknar bases i bags?"
+        },
+        {
+          "q": "Vad kräver en tiodubbling enligt compound-matematiken?",
+          "alternativ": [
+            "En engångskursexplosion",
+            "Omkring 25 procents årlig tillväxt i vinst per aktie i tio år — eller lägre takt under längre tid",
+            "Tio procent i ett år",
+            "Bara lycka"
+          ],
+          "ratt": 1,
+          "tips": "Titta i tabellen — vilken kombination av takt och tid ger 10x?"
+        },
+        {
+          "q": "Vad är Lynchs motgift mot att sälja vinnaren i första retracement?",
+          "alternativ": [
+            "Att aldrig läsa kursgrafer",
+            "Dokumentationen — en skriven story vid köpet som omvärderas på fundamentala nyheter, inte på kursrörelser",
+            "Att använda hävstång",
+            "Att sälja en tredjedel direkt efter köp"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska ersätta kursens plats som beslutsunderlag?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "De kronologiska misstagen — från if only till break-even",
+      "intro": "Bokens bittraste och roligaste kapitel: misstagen. Kursen ordnar dem kronologiskt längs en investerings livscykel — köp, håll, sälj — och kopplar varje misstag till den AKM1-variabel som hade fångat det. Listan är en checklista, läst baklänges.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Misstag i köpskedet. Det första är if only-vinandet: att grubbla över de missade vinnarna (om bara jag köpt då...) och sedan jaga det förflutna genom att köpa nästa liknande story utan analys — försummelsen av det ena blir orsaken till det andra. Det andra: antagandet att det som gått upp måste komma ner (och omvänt) — fysikens lagar tillämpade på pris, där det enda som faktiskt är bundet av gravitation är multiplar utan fundament. Det tredje: att köpa på tips utan läxor — grannens kusins säkra sak, som aldrig haft en läxa kopplad till sig. Det fjärde: storybolag utan intäkter — att betala för en framtid som ännu inte har en intäktsrad. Det femte: att behandla långslag och optioner som investeringar — lotter med vacker terminologi, där tidsläckaget äter premien medan storyn ska hända."
+        },
+        {
+          "type": "text",
+          "content": "Misstag i hållfasen. Att tro att denna gången är det annorlunda i toppen — frasen som alltid fått sällskap av historia just där bullargs-argumenten tar slut. Att älska produkten utan att kolla multipeln (kapitel tre). Att ignorera balansräkningen för att storyn är snygg (kapitel nio). Och det mest mänskliga av alla: att vattna ogräset och klippa blommorna — att sälja vinnarna i förtid för att låsa in en behaglig vinst, och behålla förlorarna i hopp om att få tillbaka inköpspriset. Det är dispositionseffekten i Lynchs trädgårdsmetafor, och den förtjänar kursens längsta studium: den driver både för tidiga vinster och för länge hållna förlorare — exakt de två beteenden som Kahneman-kursen senare visar är prospektteorins renaste produkter. Till det: att tro att proffsen alltid har rätt och därför köpa det konsensus redan prissatt — amatörens edge (kapitel två) bortkastad på att kopiera motståndaren."
+        },
+        {
+          "type": "text",
+          "content": "Misstag i säljskedet. Att sälja på paniknyheter i botten — när rubriken är som svartast och priset redan har rationellt eller orationellt svarat. Att vänta på break-even — den mentala redovisning där inköpspriset är en del av bolagets fundamenta, vilket det aldrig har varit för någon annan än ägaren. Att diversifiera in i det man inte förstår — diworsification på portföljnivå: att späda en kompetent koncentration med en ovidkommande samling. Och det tystaste: att inte ha någon dokumenterad story att sälja mot (kapitel tre och elva) — utan dokument blir varje beslut en ny förhandling med känslan. Sammanhanget är kursens poäng: misstagen kommer i kronologisk ordning längs investeringens livscykel, varje fas har sina karakteristiska fel, och varje fel har en variabel som fångar det — balansräkningen hade stoppat tipset, PEG hade stoppat storyn, dokumentationen hade stoppat paniken."
+        },
+        {
+          "type": "insikt",
+          "content": "Misstagen är inte slumpade utan kronologiska: de kommer i faserna köp, håll, sälj — och varje fel har en AKM1-variabel som fångar det. Därför är misstaglistan en checklista, läst baklänges: frågan är aldrig varför gjorde jag så, utan vilken variabel hade stoppat mig — och varför mätte jag inte den?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De kronologiska misstagen och deras motgift\",\"rader\":[[\"Fas\",\"Misstag\",\"Motgift (AKM1)\"],[\"Köp\",\"if only-vinande; jaga det förflutna\",\"ny hypotes måste klara hela kedjan — ingen arvsanalys\"],[\"Köp\",\"det som gått upp måste komma ner\",\"PEG och multiplens berättigande — inte gravitation\"],[\"Köp\",\"tips utan läxor\",\"tvåminutersdrillen med siffror\"],[\"Köp\",\"story utan intäkter\",\"V01 måste finnas — eller balansräkningen bära (V10, V11)\"],[\"Köp\",\"långslag och optioner som investeringar\",\"klassa som lotter — tidsvärdets matematik\"],[\"Håll\",\"denna gången är det annorlunda\",\"historisk multipl-spann; V12 och cykelposition\"],[\"Håll\",\"älska produkten, inte multipeln\",\"V04–V06 emot V01\"],[\"Håll\",\"ignorera balansräkningen\",\"V10, V11, V19 — kapitel nio\"],[\"Håll\",\"vattna ogräs, klippa blommor\",\"dokumenterad story; dispositionens psykologi (Kahneman)\"],[\"Sälj\",\"panikförsäljning i botten\",\"exit-story skriven i lugn (kapitel tretton)\"],[\"Sälj\",\"vänta på break-even\",\"inköpspriset är ingen fundamental — referenspunktens fälla\"],[\"Sälj\",\"diversifiera in i det okända\",\"diworsification — kompetens före bredd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din syndalista: gå igenom senaste årets affärer och notera varje beslut som strider mot din egen process — ett datum, en rad, en klassificering per fas (köp, håll, sälj). Räkna distributionen: vilken fas dominerar? För varje synd: skriv vilken variabel eller vilket dokument som hade stoppat den. Vid nästa kursrunda är listan din personliga misstagsprofil — den viktigaste riskmätning du äger."
+        },
+        {
+          "type": "visuell",
+          "content": "sasongs"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder att vattna ogräset och klippa blommorna?",
+          "alternativ": [
+            "Att glömt beskära sin trädgård",
+            "Att sälja vinnare för tidigt och behålla förlorare för länge — dispositionseffekten i Lynchs metafor",
+            "Att diversifiera fel",
+            "Att köpa jordbruksaktier"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en trädgårdsmästare som tar hand om det som inte blommar och röjer det som gör det?"
+        },
+        {
+          "q": "Varför är if only-vinandet farligt enligt boken?",
+          "alternativ": [
+            "Därför att det är oartigt",
+            "Därför att det leder till att man jagar det förflutna — köper nästa liknande story utan analys för att kompensera den missade",
+            "Därför att det alltid leder till förlust",
+            "Därför att det bryter mot skattelagstiftningen"
+          ],
+          "ratt": 1,
+          "tips": "Vad blir den missade vinnarens direkta konsekvens för nästa beslut?"
+        },
+        {
+          "q": "Vad är kursens dom om att vänta på break-even med en förlorare?",
+          "alternativ": [
+            "En rimlig strategi eftersom kursen oftast kommer tillbaka",
+            "Ett tidsvärdesproblem",
+            "En mental redovisningsfälla — inköpspriset är en del av ägarens psykologi, aldrig av bolagets fundamenta",
+            "Oftast rätt om bolaget är stort"
+          ],
+          "ratt": 2,
+          "tips": "Vem i hela världen känner till ditt inköpspris — och vilken variabel påverkas av det?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Konsten att sälja — storyn, kategorin och dokumentationen",
+      "intro": "Bokens sista hantverkskapitel handlar om den svåraste konsten: att sälja. Svaret är inte tajming utan kriterier — storyn och kategorin avgör, dokumentationen tvingar. Kursen samlar exit-signaler per kategori och listan över vad som aldrig är en säljsignal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundregeln: sälj när storyn förändras fundamentalt — inte när priset rör sig. En kurs som stigit mycket är ingen anledning att sälja om storyn står fast (multiplar kan expandera av goda skäl, och en tenbagger som säljs på vägen till tjugo är inte en vinst utan ett avbrott); en kurs som fallit är ingen anledning att stanna om storyn brutit. Frågan är alltid densamma: gäller fortfarande skälet till köpet — kategorin, katalysatorn, tillväxtkällan, marginalen? Däröver lägger boken de operativa varningstecknen: kundfordringar som växer snabbare än försäljningen (kunderna betalar sämre — eller försäljningen pressas ut i kanalen), lager som sväller, marginaler som viker trots tillväxt, insiderklungor som säljer, institutionell ägande- och analytikertäckning som stiger kraftigt (upptäckten är gjord — kapitel fem), P/E som växt ifrån tillväxttakten utan ny grund."
+        },
+        {
+          "type": "text",
+          "content": "Och kategorin ger exit-logiken. Snabbväxare: sälj när tillväxten mattas mot medel — multiplen komprimeras före vinsten, och den som väntar på bekräftelse i siffrorna väntar på det sämsta priset. Stabila: sälj när multiplen blivit extrem mot egen historia — eller när bolaget börjar jaga tillväxt med kapital som borde delats ut. Cykliska: sälj när kapacitet byggs ut i branschen, marginalerna ligger på cykeltopp och P/E ser lägst ut — signalerna är inverterade, kapitel fyra. Vändare: sälj när vändningen är gjord — bolaget är då inte längre en vändare utan ett vanligt bolag med vanlig multipl, och den bästa exponeringen för kategorin är vägen upp, inte topen efteråt. Tillgångsbolag: sälj när katalysatorn frigjort värdet — eller efter alltför många år utan en sådan. Tröga växare: sälj när utdelningen skärs eller växttakten bryts — det är hela storyn."
+        },
+        {
+          "type": "text",
+          "content": "Och listan över vad som aldrig är en säljsignal, som kursen vill nagla fast vid väggen: kursen har stigit (storyn kan ha längre att gå); kursen har fallit (samma); ett kvartalsmiss mot konsensus utan organisk förändring; makrobrus som inte rör bolagets variabler; att du är uttråkad. Dokumentationsdisciplinen är det som håller listan levande: exit-storyn skriven vid köpet (kapitel fyra), omvärderad kvartalsvis mot V-variablerna den utpekade. I AK1A:s konfluens-anda kan kursen lägga till en struktur: låt säljbeslutet kräva samma bevisbörda som köpet — flera oberoende variabler som pekar samma håll, dokumenterade före känslan. Den som säljer på ett enda intryck har aldrig lämnat kapitel tolv:s misstaglista."
+        },
+        {
+          "type": "insikt",
+          "content": "Beslutet att sälja ska kunna hänvisas till samma dokument som beslutet att köpa: storyn. Om storyn står fast är kursrörelsen en åsikt; om storyn fallit är kursrörelsen ovidkommande. Exit-storyn skriven i lugn är den enda panikförsäkring som fungerar — därför att den skrevs av den version av dig som inte var rädd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Exit-signaler per kategori\",\"rader\":[[\"Kategori\",\"Normal exit-signal\",\"AKM1-variabler\"],[\"Trög växare\",\"utdelningsskäring eller bruten växttakt\",\"V20, V01\"],[\"Stabil\",\"extrem multipl mot egen historia; kapitaljakt\",\"V04–V06, V20\"],[\"Snabbväxare\",\"tillväxten mattas mot medel — multiplen faller först\",\"V01, V19 (emissionsrisk när tillväxten kräver kapital)\"],[\"Cyklisk\",\"kapacitetsutbyggnad, marginaler på topp, låg P/E\",\"V07 i cykeltopp, V12 låg, konjunkturposition\"],[\"Vändare\",\"vändningen är gjord — bolaget har blivit normalt\",\"V10 återställd, V01 normaliserad\"],[\"Tillgångsbolag\",\"katalysatorn har frigjort värdet — eller uteblir\",\"V05, katalysator (V17)\"],[\"Alla\",\"kundfordringar och lager växer snabbare än försäljningen\",\"V07, V12, V19\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv exit-story för varje innehav i dag — inte vid nästa panik: en mening per bolag om vad som fundamentalt ska hända för att du ska sälja, med minst en variabel per story. Utvärdera sedan din senaste försäljning med dokumentation i stället för minne: stod den i linje med exit-kriterierna du faktiskt hade — eller var det kurs, rubrik eller känsla? Skillnaden mellan svaren är din säljdisciplins räckvidd."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den normala exit-signalen för en snabbväxare enligt kursen?",
+          "alternativ": [
+            "Att aktien stigit hundra procent",
+            "Att tillväxten mattas mot medel — multiplen komprimeras före vinsten, och den som väntar på full bekräftelse väntar på det sämsta priset",
+            "Att en analytiker sänker sin rekommendation",
+            "Att utdelningen skärs"
+          ],
+          "ratt": 1,
+          "tips": "Vad bär en snabbväxares multipl — och vad händer med den när det som bär den mattas?"
+        },
+        {
+          "q": "Vilket av följande är enligt kursen aldrig en säljsignal?",
+          "alternativ": [
+            "Kundfordringar som växer snabbare än försäljningen",
+            "Att kursen har stigit mycket medan storyn står fast",
+            "Insiderklunga som säljer kraftigt",
+            "Marginaler som viker trots tillväxt"
+          ],
+          "ratt": 1,
+          "tips": "Vilket av alternativen säger något om bolaget — och vilket säger något bara om priset?"
+        },
+        {
+          "q": "Varför säljer Lynch vändaren när vändningen är gjord?",
+          "alternativ": [
+            "Därför att vändare alltid går i konkurs efteråt",
+            "Därför att bolaget då inte längre är en vändare — kategorins multipl-logik är vägen upp, och topen efteråt är ett vanligt bolag med vanlig multipl",
+            "Därför att utdelningen alltid skärs",
+            "Därför att insiders alltid säljer då"
+          ],
+          "ratt": 1,
+          "tips": "Vad återstår av storyn när hindret är undanröjt — och vilken kategori är bolaget då?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 14,
+      "title": "Kontroversen och syntesen — Lynch mot EMH; boken som AKM1-modul",
+      "intro": "Kursens sista kapitel tar striden som boken indirekt för: kan amatören slå marknaden — och vad återstår av Lynch när effektiva marknads-hypotesen och indexfonderna får sina bästa argument? Därefter syntesen: hela boken som en AKM1-modul, variabel för variabel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontroversen står mellan bokens tes och EMH-lägret (se kursen om A Random Walk Down Wall Street): marknader är tillräckligt effektiva för att aktiva beslut i snitt ska underprestera efter kostnader, och amatören bör köpa index. Lynchs motargument är empiriskt och strukturellt: marknadens effektivitet är ojämnt fördelad — de stora, bevakade bolagen prissätts nästan perfekt, medan små, tråkiga och oupptäckta bolag kan handlas på fel information i åratal; amatörens edge (kapitel två) bor exakt i gliporna. Men kursen håller Lynch mot hans egen ärlighet: han sade själv vid upprepade tillfällen att de flesta sparare gör bäst i index — för hans metod förutsätter timmar av research per bolag, och den som inte betalar det priset har ingen edge, bara aktivitet. Domslutet blir en spalt: index är en utmärkt standard, och Lynch är en utmärkt hobby för den som lägger arbetet — felet är att tro att aktiviteten utan arbetet ger Lynchs resultat."
+        },
+        {
+          "type": "text",
+          "content": "Och vad säger historien? Magellans trettio procent under tretton år är en av förvaltningens ytterligheter — men också en som var svår att replikera även för Lynch själv, och som kulminerade i hans eget val att sluta vid fyrtiosex med hänvisning till tiden arbetet tog. Kursen drar två slutsatser. För det första: edge är verklig men smal, kräver ovanlig information eller ovanligt tålamod — vardagsedgen är den mest tillgängliga av dess källor, och den enda som inte kräver kapital. För det andra: processen är den verkliga prestationen — Magellan var tusen små Lynch-analyser, inte trettio procents magi; den som kopierar processen kan vänta sig rimliga utfall, den som kopierar utfallet kan vänta sig ingenting. Det är samma skiljelinje som AK1A:s processtänk mot utfallstänk — och den för kursen rakt in i Kahneman-världen, där nästa bokmästare väntar."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen — boken som AKM1-modul. Vardagsobservationen: katalysator-generatorn (V16-andan) — hypoteser från verkligheten, verifierade i data. Kategoriläran: variabelvikten per bolagstyp (V01, V12 med flera). Tillväxtens anatomi: V01 dekomponerad i pris, volym, andelar, nya marknader, förvärv — med V02 som det organiska filtret. Marginalkompassen: V07 som test av alla kvalitetsstorys (V13–V15), med hävstången räknad till V08. Värderingen: PEG som fjärde multipl bredvid V04–V06, i räntekontext. Balansräkningen: V10, V11, V19 — överlevnad före optik, vändarens hela spel. Signalerna: V20 — insiderköp, återköp, aktieantalets femårskurva. Tenbagger-matematiken: tidshorisonter och positionsstorlek. Misstaglistan: beteendedisciplinen — kronologin från if only till break-even. Fem principer återstår att bära med sig: äg det du kan verifiera; kategorisera innan du värderar; räkna multiplar i räntekontext; balansräkningen före storyn; sälj storyn, aldrig kursen."
+        },
+        {
+          "type": "insikt",
+          "content": "Lynch och AKM1 är samma idé i två dialekter: hans checklista är tjugo frågor på vardagssvenska — vet vad du äger, räkna innan du betalar, stå ut längre än känslan — och AKM1 är samma frågor på variabelspråk. Den som kan båda talar om samma bolag med två röster, och när de två rösterna är oense är det just där analysen börjar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som AKM1-modul — teman till variabler\",\"rader\":[[\"Bokens tema\",\"Innehåll\",\"AKM1-översättning\"],[\"Amatörens edge\",\"vardagen som informationskälla\",\"katalysator-generator (V16-andan)\"],[\"Sex kategorier\",\"olika bolag, olika spel\",\"variabelviktning per typ (V01, V12)\"],[\"Tillväxtens anatomi\",\"pris, volym, andelar, marknader, förvärv\",\"V01 dekomponerad; V02 organiskt filter\"],[\"Marginalkompassen\",\"bruttomarginal som sanningsserum\",\"V07 → V08; test av V13–V15\"],[\"PEG\",\"P/E mot tillväxt med utdelning\",\"fjärde multipl bredvid V04–V06\"],[\"Balansräkningen\",\"kassa, skuld, konkursavstånd\",\"V10, V11, V19\"],[\"Signalerna\",\"insiderköp, återköp, utdelning\",\"V20\"],[\"Tenbaggern\",\"compound-matematik och tid\",\"tidshorisonter; positionsstorlek\"],[\"Misstaglistan\",\"kronologiska fel\",\"beteendedisciplin — bron till Kahneman\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — en komplett Lynch-analys i AKM1-form: välj ett bolag du observerat i vardagen (kapitel två) och kör hela kedjan: tvåminutersstory, kategori med exit-story, V01-dekomposition, V07 med hävstångsräkning, PEG med räntkontext-deklaration, balansräkningscheck med månader kassa, signalcheck med aktieantalets utveckling, och slutligen positionsstorlek mot tioårig tenbagger-matte. Spara med datum. Det är boken, kursen och AKM1 i en enda övning — och den bästa repetition du kan ge dig själv innan nästa bokmästare tar vid."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Lynchs huvudargument mot en strikt effektivitetsläsning av marknaden?",
+          "alternativ": [
+            "Att aktiemarknaden alltid är helt ineffektiv",
+            "Att effektiviteten är ojämnt fördelad — stora bevakade bolag prissätts nästan perfekt, medan små, tråkiga och oupptäckta bolag kan handlas fel länge",
+            "Att indexfonder är en bluff",
+            "Att teknisk analys slår fundament"
+          ],
+          "ratt": 1,
+          "tips": "Var i storleksskalan bor amatörens glipa?"
+        },
+        {
+          "q": "Vad sade Lynch själv om de flesta småsparare och index?",
+          "alternativ": [
+            "Att alla borde vara aktiva",
+            "Att index är för fegt",
+            "Att de flesta sparare gör bäst i index — hans metod förutsätter timmar av research per bolag som få är beredda att lägga",
+            "Att index endast passar pensionärer"
+          ],
+          "ratt": 2,
+          "tips": "Vad kostar Lynch-processen i tid — och vem betalar det priset?"
+        },
+        {
+          "q": "Vilka fem principer sammanfattar kursen boken med?",
+          "alternativ": [
+            "Köp billigt, sälj dyrt, ha tålamod",
+            "Äg det du kan verifiera; kategorisera innan du värderar; räkna multiplar i räntekontext; balansräkningen före storyn; sälj storyn, aldrig kursen",
+            "Följ proffsen, handla ofta, använd hävstång",
+            "Teknik först, diversifiera brett, ignorera bokslut"
+          ],
+          "ratt": 1,
+          "tips": "Räkne upp kapitlen i huvudet: vardagsedgen, kategorierna, PEG, balansräkningen, exit-storyn."
+        }
+      ]
+    }
+  ]
+}

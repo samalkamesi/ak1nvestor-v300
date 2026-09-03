@@ -38,7 +38,7 @@ function sidKontextText(sokvag: string): string {
   const kart: Record<string, string> = {
     kurser: under
       ? `kurs-sidan /kurser/${under} — eleven läser just nu denna kurs kapitel för kapitel`
-      : "kursbiblioteket (307 kurser)",
+      : "kursbiblioteket (324 kurser)",
     analyser: under
       ? `analysen av ${decodeURIComponent(under).toUpperCase()} — eleven fördjupar sig i ett enskilt bolag`
       : "analysbanken — eleven bläddrar bland analyser",
@@ -75,7 +75,7 @@ function sidKontextText(sokvag: string): string {
 
 function navigera(fraga: string): Intent | null {
   const q = fraga.toLowerCase();
-  // Levande tal — Uppdaterad 2026-09-01: 307 kurser · 78 BOKMASTER-böcker · 35 blogginlägg
+  // Levande tal — Uppdaterad 2026-09-01: 324 kurser · 78 BOKMASTER-böcker · 35 blogginlägg
   const antalKurser = Object.keys(getCourses()).length;
   const antalBokmaster = Object.values(getCourses()).filter((c) => c.category === "BOKMASTER").length;
   const antalBlogg = getBlogPosts().length;
@@ -366,7 +366,7 @@ function fas3Svar(fraga: string) {
   if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
   return {
     svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
-• Fas 1 — hela biblioteket (307 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
+• Fas 1 — hela biblioteket (324 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
 • Fas 2 — coaching, gemenskap och representant-vägen; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
 • Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
 Kraven växer alltså ur vad du faktiskt gör här i labbet — inte ur vad du betalar.`,
@@ -385,7 +385,7 @@ function proSvar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/\bpro\b|\bb2b\b|företagspaket|skollicens|företagskonto/.test(q)) return null;
   return {
-    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — 307 kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
+    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — 324 kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
 Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 coaching · Fas 3 snart) på medlemskapssidan.`,
     handlings: [
       { text: "AK1A Pro →", lank: "/pro", ikon: "🏢" },

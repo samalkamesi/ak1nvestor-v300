@@ -10,10 +10,10 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
-  // Uppdaterad 2026-09-01: 307 kurser i public/deep-courses.json (antalet räknas dynamiskt i sidkroppen)
-  title: "Kurser i institutionell aktieanalys — 307 kurser | AK1A",
+  // Uppdaterad 2026-09-01: 324 kurser i public/deep-courses.json (antalet räknas dynamiskt i sidkroppen)
+  title: "Kurser i institutionell aktieanalys — 324 kurser | AK1A",
   description:
-    "Lär dig institutionell aktieanalys steg för steg. 307 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
+    "Lär dig institutionell aktieanalys steg för steg. 324 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
   keywords: [
     "aktieanalys kurser",
     "AKM1",

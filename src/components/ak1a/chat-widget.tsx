@@ -179,12 +179,12 @@ const SID_NAMN: Record<SidTyp, string> = {
  * vi tipsar, vi dömer aldrig).
  */
 function sidKontextMening(ctx: elevContext): string {
-  const klaraProcent = Math.round((ctx.klaraKurser / 307) * 100); // 307 kurser i deep-courses.json
+  const klaraProcent = Math.round((ctx.klaraKurser / 324) * 100); // 324 kurser i deep-courses.json
   switch (ctx.sidTyp) {
     case "kurs":
       return `Jag ser att du läser kursen ${ctx.kursTitel ? `"${ctx.kursTitel}"` : ""} kapitel för kapitel — vill du testa dig med quiz:et (+10 XP per rätt svar) eller gå vidare till nästa steg?`;
     case "kurslista":
-      return `Jag ser att du står i kursbiblioteket (307 kurser) — vill du ha ett personligt tips på rätt kurs för just dig?`;
+      return `Jag ser att du står i kursbiblioteket (324 kurser) — vill du ha ett personligt tips på rätt kurs för just dig?`;
     case "analys":
       return `Jag ser att du läser en analys — vill du lära dig verifiera siffrorna själv i kalkylatorn (AKM1: 20 variabler)?`;
     case "analyslista":

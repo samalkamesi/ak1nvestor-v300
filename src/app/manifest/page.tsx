@@ -9,9 +9,9 @@ export const dynamic = "force-static";
 export const metadata: Metadata = pageMetadata({
   path: "/manifest",
   title: "Manifestet — världens bästa finansutbildning | AK1A Research Lab",
-  // Uppdaterad 2026-09-01: 307 kurser · 78 BOKMASTER · 7 089 quizfrågor (siffrorna nedan räknas dynamiskt)
+  // Uppdaterad 2026-09-01: 324 kurser · 78 BOKMASTER · 7 089 quizfrågor (siffrorna nedan räknas dynamiskt)
   description:
-    "Vårt manifest: vi bygger världens bästa finansutbildning — 307 kurser, 78 böcker kapitel för kapitel och över 7 000 quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.",
+    "Vårt manifest: vi bygger världens bästa finansutbildning — 324 kurser, 78 böcker kapitel för kapitel och över 7 000 quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.",
   keywords: [
     "finansutbildning",
     "manifest",
@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 export default function ManifestPage() {
   // Levande tal — räknas från innehållslager vid build. Statisk fallback om datan saknas.
   const kurserLista = getCourseList();
-  const kurser = kurserLista.length || 307;
+  const kurser = kurserLista.length || 324;
   const bokmaster =
     kurserLista.filter((c) => c.category === "BOKMASTER").length || 78;
   const quiz =

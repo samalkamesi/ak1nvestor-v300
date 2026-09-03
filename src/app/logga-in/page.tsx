@@ -8,9 +8,9 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = pageMetadata({
   path: "/logga-in",
   title: "Logga in — gratis konto, alla kurser upplåsta | AK1A",
-  // Uppdaterad 2026-09-01: 307 kurser i public/deep-courses.json
+  // Uppdaterad 2026-09-01: 324 kurser i public/deep-courses.json
   description:
-    "Logga in med e-post eller skapa gratis konto: alla 307 kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.",
+    "Logga in med e-post eller skapa gratis konto: alla 324 kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.",
   keywords: ["logga in", "gratis konto", "aktieutbildning gratis", "AK1A"],
 });
 

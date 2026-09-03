@@ -4,6 +4,7 @@ import { getCourseList } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
+import { SIFFROR, tal } from "@/lib/siffror";
 
 export const dynamic = "force-static";
 
@@ -205,10 +206,10 @@ export default function MedlemskapPage() {
       {/* Värde-rad — generositeten i klartext */}
       <div className="mt-6 grid gap-3 sm:grid-cols-4">
         {[
-          { tal: `${fas1Antal}`, etikett: "kurser, alla gratis — för alltid" },
-          { tal: `${fas1Bokmaster}`, etikett: "heltäckta böcker, kapitel för kapitel — gratis" },
-          { tal: `${quiz.toLocaleString("sv-SE")}`, etikett: "quizfrågor med +10 XP var" },
-          { tal: `${fas2Antal}`, etikett: "fundamentala mästarverk i Fas 2 — den snabba vägen till oberoende analytiker" },
+          { tal: `${tal(SIFFROR.kurser)}`, etikett: "kurser i biblioteket — Fas 1 gratis för alltid" },
+          { tal: `${tal(SIFFROR.bokmaster)}`, etikett: "heltäckta böcker, kapitel för kapitel" },
+          { tal: `${tal(SIFFROR.quiz)}`, etikett: "quizfrågor med +10 XP var" },
+          { tal: `${fas2Antal}`, etikett: "fundamentala mästarverk i Fas 2 — värdering, bokslut, finans och värdeinvestering: hela vägen till oberoende analytiker" },
         ].map((s) => (
           <div key={s.etikett} className="rounded-xl border border-gold/30 bg-card p-4 text-center">
             <div className="font-serif text-3xl font-black text-gold">{s.tal}</div>
@@ -229,8 +230,8 @@ export default function MedlemskapPage() {
           </p>
           <ul className="mt-5 flex-1 space-y-2.5 text-sm">
             {[
-              `Alla ${fas1Antal} gratis kurser — hela grundläggande AKM1-metodiken (V01–V20)`,
-              `${fas1Bokmaster} BOKMASTER-böcker kapitel för kapitel — Graham, Buffett, Marks, Damodaran, Murphy, Soros, Kahneman…`,
+              `Hela grundläggande AKM1-metodiken (V01–V20) — ${tal(fas1Antal)} kurser direkt öppna, gratis`,
+              `${tal(fas1Bokmaster)} BOKMASTER-böcker kapitel för kapitel — Graham, Buffett, Marks, Damodaran, Murphy, Soros, Kahneman…`,
               "Alla grundläggande verktyg: AI-Mentorn som känner dig + Short-Sellern som grillar dina teser",
               "140 flashcards med spaced repetition (Ebbinghaus/SM-2)",
               "AKM1-kalkylatorn + portföljsystemet med fundamentaldata per innehav",

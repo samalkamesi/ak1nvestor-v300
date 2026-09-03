@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { LoggaIn } from "@/components/ak1a/logga-in";
+import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = pageMetadata({
   path: "/logga-in",
   title: "Logga in — gratis konto, alla kurser upplåsta | AK1A",
-  // Uppdaterad 2026-09-01: 324 kurser i public/deep-courses.json
+  // Antal ur src/lib/siffror.ts (guldkällan)
   description:
-    "Logga in med e-post eller skapa gratis konto: alla 324 kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.",
+    `Logga in med e-post eller skapa gratis konto: alla ${SIFFROR.kurser} kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.`,
   keywords: ["logga in", "gratis konto", "aktieutbildning gratis", "AK1A"],
 });
 

@@ -4,15 +4,16 @@ import { getCourseList } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
+import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/manifest",
   title: "Manifestet — världens bästa finansutbildning | AK1A Research Lab",
-  // Uppdaterad 2026-09-01: 324 kurser · 78 BOKMASTER · 7 089 quizfrågor (siffrorna nedan räknas dynamiskt)
+  // Siffror ur src/lib/siffror.ts (guldkällan) — kroppen räknar dynamiskt
   description:
-    "Vårt manifest: vi bygger världens bästa finansutbildning — 324 kurser, 78 böcker kapitel för kapitel och över 7 000 quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.",
+    `Vårt manifest: vi bygger världens bästa finansutbildning — ${SIFFROR.kurser} kurser, ${SIFFROR.bokmaster} böcker kapitel för kapitel och ${SIFFROR.quiz.toLocaleString("sv-SE")} quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.`,
   keywords: [
     "finansutbildning",
     "manifest",
@@ -39,7 +40,7 @@ export default function ManifestPage() {
           0
         ),
       0
-    ) || 7089;
+    ) || SIFFROR.quiz;
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Manifestet" }]} wide>

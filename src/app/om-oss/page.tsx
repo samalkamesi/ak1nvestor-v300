@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function OmOssPage() {
   // Levande tal — räknas från innehållslaget vid build
   const kurserLista = getCourseList();
-  const antalKurser = kurserLista.length; // Uppdaterad 2026-09-01: 307 kurser
+  const antalKurser = kurserLista.length; // ur public/deep-courses.json (dynamiskt)
   const antalBokmaster = kurserLista.filter((c) => c.category === "BOKMASTER").length; // 78 böcker
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Om oss" }]}>

@@ -36,6 +36,7 @@ const PANELER: MenyPanel[] = [
     // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING (avdelare = icke-klickbara rubriker).
     // Labbar lämnar panelen (10 punkter blev för många) — finns kvar i sökindexet.
     punkter: [
+      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangerade efter påverkan" },
       { avdelare: "Grundänkning" },
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
       { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },

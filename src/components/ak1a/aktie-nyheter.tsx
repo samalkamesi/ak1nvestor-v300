@@ -7,14 +7,24 @@ import { lasMedlem, type Medlem } from "@/lib/member-local";
 import { besok } from "@/lib/navigationsminne";
 
 /**
- * AKTIE-NYHETER — nyheter om medlemmens EGNA aktier, direkt i Min Sida.
+ * SENASTE NYTT — "Senaste nytt — för dig"-kortet i Min Sida.
+ * (Filnamn + export-namn "AktieNyheter" behålls för backwards-compat.)
  *
- * Användarens direktiv: "nyheter om samma aktier ska kopplas". Komponenten
- * hämtar medlemmens tickers ur portföljen (/api/member/portfolio — fallback:
- * senast besökta aktieanalyser i navigationsminnet) och hämtar senaste
- * nyheterna per ticker via Yahoos search-news-API
- * (v1/finance/search?q=TICKER&newsCount=3 — allow-list query1/query2, 6 s
- * timeout, User-Agent "Mozilla/5.0 (AK1A)"), max 6 nyheter visas.
+ * Användarens direktiv: "nyheter om samma aktier ska kopplas" + "info för
+ * klienter". Komponenten hämtar medlemmens tickers ur portföljen
+ * (/api/member/portfolio — fallback: senast besökta aktieanalyser i
+ * navigationsminnet) och gör ETT anrop till /api/nyheter med tickers + 1–2
+ * ämnen. Servern cachar källor, filtrerar ämnen och rangordnar påverkan —
+ * här slipper vi CORS/allow-list-logiken helt.
+ *
+ * Visar 5 nyheter: rubrik, källa + relativ tid, påverkans-badge (≥ 70 =
+ * "Hög påverkan" i guld), ticker-chips och AK1A:ts fundering (1 rad —
+ * expanderas vid klick). "NYTT"-märket jämförs mot localStorage-nyckeln
+ * "ak1a-nyheter-senaste" (senaste besökets tid) och stämpeln flyttas fram
+ * först EFTER det att flödet renderats.
+ *
+ * Vid hämtning sparas dagens tyngsta nyhet (högst paverkan, senaste dygnet)
+ * i "ak1a-nyheter-top" — notiser.ts bygger därifrån auto-notis-typ "nyhet".
  *
  * Hydration-säkert: localStorage + nät händer ENDAST i useEffect — första
  * passt är ett deterministiskt skelett. Alltid graceful: utan nyheter visar
@@ -23,21 +33,49 @@ import { besok } from "@/lib/navigationsminne";
  * Vågkartan. Information — inte investeringsråd.
  */
 
-// ── Nyhets-API: allow-listade värdar + gränser ──────────────────────────────
+// ── Gränser + nycklar ───────────────────────────────────────────────────────
 
-const NEWS_VARDAR = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"] as const;
-const TIMEOUT_MS = 6000;
-const MAX_NYHETER = 6;
+const TIMEOUT_MS = 8000;
+const MAX_NYHETER = 5;
 const MAX_TICKERS = 6;
+const HOG_PAVERKAN = 70;
+
+/** 1–2 ämnen till /api/nyheter — servern cachar + rankar per ämne. */
+const AMNEN = ["rapporter", "analys"];
+
+/** localStorage: senaste besök (epoch ms) — nyheter nyare än detta → "NYTT". */
+const NYCKEL_SENASTE = "ak1a-nyheter-senaste";
+/** localStorage: dagens högsta påverkannyhet — läs av notiser.ts (typ "nyhet"). */
+const NYCKEL_TOPP = "ak1a-nyheter-top";
 
 const TICKER_RE = /^[A-Za-z0-9.\-]{1,12}$/;
 
-type Nyhet = {
-  ticker: string;
+// ── Typer ───────────────────────────────────────────────────────────────────
+
+/** Rå nyhet från /api/nyheter — allt unknown, städas i renNyhet(). */
+type ApiNyhet = {
+  id?: unknown;
+  rubrik?: unknown;
+  kalla?: unknown;
+  lank?: unknown;
+  tid?: unknown;
+  tickers?: unknown;
+  kanal?: unknown;
+  paverkan?: unknown;
+  ak1aNot?: unknown;
+};
+
+/** Rensad nyhet för visning. */
+type RenNyhet = {
+  id: string;
   rubrik: string;
   kalla: string | null;
   lank: string | null;
-  tidSec: number | null;
+  tidMs: number | null;
+  tickers: string[];
+  paverkan: number;
+  tanke: string | null;
+  vVariabler: string[];
 };
 
 /** client_holdings-rad ur GET /api/member/portfolio. */
@@ -50,6 +88,82 @@ type RåInnehav = {
 
 function arTal(v: unknown): v is number {
   return typeof v === "number" && Number.isFinite(v);
+}
+
+// ── Städning av serverns svar ───────────────────────────────────────────────
+
+/** Tid från API:et → epoch ms. Tal = sekunder (eller ms om redan stort),
+ *  sträng = ISO-8601. Ogiltigt → null (tiden visas helt enkelt inte). */
+function tidTillMs(t: unknown): number | null {
+  if (arTal(t)) return t > 1e12 ? t : t * 1000;
+  if (typeof t === "string" && t) {
+    const ms = Date.parse(t);
+    return Number.isNaN(ms) ? null : ms;
+  }
+  return null;
+}
+
+/** Okänd JSON → RenNyhet (eller null när rubriken saknas — tyst, graceful). */
+function renNyhet(rå: unknown): RenNyhet | null {
+  if (!rå || typeof rå !== "object") return null;
+  const n = rå as ApiNyhet;
+  if (typeof n.rubrik !== "string" || !n.rubrik.trim()) return null;
+
+  const tickers = Array.isArray(n.tickers)
+    ? n.tickers
+        .filter((t): t is string => typeof t === "string" && TICKER_RE.test(t))
+        .slice(0, MAX_TICKERS)
+    : [];
+
+  const ak1aNot =
+    n.ak1aNot && typeof n.ak1aNot === "object"
+      ? (n.ak1aNot as { vVariables?: unknown; tanke?: unknown })
+      : null;
+  const tanke =
+    typeof ak1aNot?.tanke === "string" && ak1aNot.tanke.trim() ? ak1aNot.tanke.trim() : null;
+  const vVariabler = Array.isArray(ak1aNot?.vVariables)
+    ? ak1aNot.vVariables
+        .filter((v): v is string => typeof v === "string" && !!v.trim())
+        .map((v) => v.trim())
+        .slice(0, 4)
+    : [];
+
+  return {
+    id: typeof n.id === "string" && n.id ? n.id : `${n.rubrik}-${tickers[0] ?? ""}`,
+    rubrik: n.rubrik.trim(),
+    kalla: typeof n.kalla === "string" && n.kalla ? n.kalla : null,
+    lank: typeof n.lank === "string" && /^https:\/\//.test(n.lank) ? n.lank : null,
+    tidMs: tidTillMs(n.tid),
+    tickers,
+    paverkan: arTal(n.paverkan) ? Math.min(100, Math.max(0, Math.round(n.paverkan))) : 0,
+    tanke,
+    vVariabler,
+  };
+}
+
+/** ETT anrop till /api/nyheter med elevens tickers + ämnen. Servern cachar
+ *  och rangordnar — svaret tas som det är (bäst först). Tyst vid motstånd. */
+async function hamtaFlode(tickers: string[]): Promise<RenNyhet[]> {
+  try {
+    const kontroll = new AbortController();
+    const tidtagning = setTimeout(() => kontroll.abort(), TIMEOUT_MS);
+    const res = await fetch(
+      `/api/nyheter?tickers=${tickers.map(encodeURIComponent).join(",")}&amnen=${AMNEN.map(encodeURIComponent).join(",")}`,
+      { signal: kontroll.signal, headers: { Accept: "application/json" } }
+    );
+    clearTimeout(tidtagning);
+    if (!res.ok) return [];
+    const data = (await res.json()) as { nyheter?: unknown };
+    if (!Array.isArray(data?.nyheter)) return [];
+    const ut: RenNyhet[] = [];
+    for (const rå of data.nyheter) {
+      const n = renNyhet(rå);
+      if (n) ut.push(n);
+    }
+    return ut;
+  } catch {
+    return []; // API:bort/timeout — viloläget får tala
+  }
 }
 
 /** Senast besökta aktieanalyser → tickers (fallback när portföljen är tom). */
@@ -76,59 +190,15 @@ function lasLokalaTickers(): string[] {
   return ut;
 }
 
-/**
- * Hämta senaste nyheterna för EN ticker — query1 först, query2 som reserv,
- * 6 s timeout per försök. Ogiltigt/saknat svar → tom lista (tyst, graceful).
- * Obs: User-Agent sätts för proxade/server-side-anrop; webbläsare ignorerar
- * rubriken av säkerhetsskäl (fetchen fungerar ändå där CORS tillåter).
- */
-async function hamtaNyheter(ticker: string): Promise<Nyhet[]> {
-  for (const vard of NEWS_VARDAR) {
-    try {
-      const kontroll = new AbortController();
-      const tidtagning = setTimeout(() => kontroll.abort(), TIMEOUT_MS);
-      const res = await fetch(
-        `https://${vard}/v1/finance/search?q=${encodeURIComponent(ticker)}&newsCount=3`,
-        {
-          signal: kontroll.signal,
-          headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (AK1A)" },
-        }
-      );
-      clearTimeout(tidtagning);
-      if (!res.ok) continue;
-      const json = (await res.json()) as { news?: Array<Record<string, unknown>> };
-      const lista = Array.isArray(json?.news) ? json.news : [];
-      const ut: Nyhet[] = [];
-      for (const n of lista) {
-        if (typeof n?.title !== "string" || !n.title) continue;
-        ut.push({
-          ticker,
-          rubrik: n.title,
-          kalla: typeof n.publisher === "string" && n.publisher ? n.publisher : null,
-          lank: typeof n.link === "string" && /^https:\/\//.test(n.link) ? n.link : null,
-          tidSec: arTal(n.providerPublishTime) ? n.providerPublishTime : null,
-        });
-        if (ut.length >= 3) break;
-      }
-      if (ut.length > 0) return ut;
-    } catch {
-      /* nästa värd — och till sist ett tyst viloläge */
-    }
-  }
-  return [];
-}
-
 /** Kort, vänlig svensk tidsangivelse — körs klient-side efter hydrering. */
-function tidText(tidSec: number | null): string {
-  if (tidSec === null) return "";
-  const millis = tidSec * 1000;
-  if (Number.isNaN(millis)) return "";
-  const deltaMin = Math.round((Date.now() - millis) / 60000);
+function tidText(tidMs: number | null): string {
+  if (tidMs === null) return "";
+  const deltaMin = Math.round((Date.now() - tidMs) / 60000);
   if (deltaMin < 1) return "just nu";
   if (deltaMin < 60) return `för ${deltaMin} min sedan`;
   const deltaTim = Math.round(deltaMin / 60);
   if (deltaTim < 24) return `för ${deltaTim} tim sedan`;
-  return new Intl.DateTimeFormat("sv-SE", { day: "numeric", month: "short" }).format(new Date(millis));
+  return new Intl.DateTimeFormat("sv-SE", { day: "numeric", month: "short" }).format(new Date(tidMs));
 }
 
 // ── Komponenten ─────────────────────────────────────────────────────────────
@@ -136,13 +206,24 @@ function tidText(tidSec: number | null): string {
 export function AktieNyheter() {
   const [hydrerad, setHydrerad] = useState(false);
   const [medlem, setMedlem] = useState<Medlem | null>(null);
-  const [nyheter, setNyheter] = useState<Nyhet[]>([]);
+  const [nyheter, setNyheter] = useState<RenNyhet[]>([]);
   const [hamtar, setHamtar] = useState(true);
+  const [senasteBesok, setSenasteBesok] = useState(0); // 0 = aldrig sett → inga NYTT-märken
+  const [oppnadeTankar, setOppnadeTankar] = useState<string[]>([]);
 
   useEffect(() => {
     const m = lasMedlem();
     setMedlem(m);
     setHydrerad(true);
+
+    // Senaste besöks-stämpeln → "NYTT"-jämförelsen (finns ej = lugnt första gången)
+    try {
+      const rå = localStorage.getItem(NYCKEL_SENASTE);
+      const tal = rå ? Number(rå) : NaN;
+      if (Number.isFinite(tal) && tal > 0) setSenasteBesok(tal);
+    } catch {
+      /* privat läge etc. */
+    }
 
     let aktiv = true;
 
@@ -183,16 +264,32 @@ export function AktieNyheter() {
         return;
       }
 
-      // 2) Nyheter per ticker — i omgångar om 3, tyst vid motstånd
-      const alla: Nyhet[] = [];
-      for (let i = 0; i < tickers.length; i += 3) {
-        const grupp = await Promise.all(tickers.slice(i, i + 3).map((t) => hamtaNyheter(t)));
-        for (const lista of grupp) alla.push(...lista);
+      // 2) ETT anrop till Nyhetscentralen — servern cachar + rankar
+      const flode = await hamtaFlode(tickers);
+      if (!aktiv) return;
+      setNyheter(flode.slice(0, MAX_NYHETER));
+      setHamtar(false);
+
+      // 3) Spara dagens tyngsta nyhet (senaste dygnet) åt notiserna (typ "nyhet")
+      const nu = Date.now();
+      let topp: RenNyhet | null = null;
+      for (const n of flode) {
+        if (n.tidMs === null || nu - n.tidMs > 86_400_000) continue;
+        if (!topp || n.paverkan > topp.paverkan) topp = n;
       }
-      alla.sort((a, b) => (b.tidSec ?? 0) - (a.tidSec ?? 0));
-      if (aktiv) {
-        setNyheter(alla.slice(0, MAX_NYHETER));
-        setHamtar(false);
+      if (topp) {
+        try {
+          localStorage.setItem(
+            NYCKEL_TOPP,
+            JSON.stringify({
+              dag: new Date().toISOString().slice(0, 10), // samma UTC-konvention som notiser.ts
+              rubrik: topp.rubrik.slice(0, 200),
+              paverkan: topp.paverkan,
+            })
+          );
+        } catch {
+          /* privat läge — notisen får vänta */
+        }
       }
     })();
 
@@ -200,6 +297,20 @@ export function AktieNyheter() {
       aktiv = false;
     };
   }, []);
+
+  // Först NÄR flödet renderats: flytta fram "sedan senast"-stämpeln, så märks
+  // nästa besök enbart av det som kommit efter detta.
+  useEffect(() => {
+    if (!hydrerad || hamtar) return;
+    try {
+      localStorage.setItem(NYCKEL_SENASTE, String(Date.now()));
+    } catch {
+      /* privat läge etc. */
+    }
+  }, [hydrerad, hamtar]);
+
+  const vaxlaTanke = (id: string) =>
+    setOppnadeTankar((nu) => (nu.includes(id) ? nu.filter((x) => x !== id) : [...nu, id]));
 
   // ── Skelett under hydrering (deterministiskt på server + klient) ──
   if (!hydrerad) {
@@ -215,14 +326,14 @@ export function AktieNyheter() {
     <section className="marin-panel relative overflow-hidden rounded-2xl border border-gold/30 p-6 sm:p-8">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
       <div className="relative">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Nyheter om dina aktier</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Ditt nyhetsflöde</p>
         <h2 className="mt-2 font-serif text-xl font-bold tracking-tight text-gold-soft sm:text-2xl">
-          Vad marknaden Just skriver — om just dina bolag
+          Senaste nytt — för dig
         </h2>
         <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/70">
           {medlem
-            ? "Senaste nyheterna hämtas för varje aktie i din portfölj — samma bolag, samma verklighet, ett steg."
-            : "Logga in gratis så kopplas nyheterna till aktierna i din portfölj — tills dess visar vi viloläget."}
+            ? "Flödet följer aktierna i din portfölj — rangordnat efter påverkan, färdigt att läsas tillsammans med din Vågkarta."
+            : "Logga in gratis så följer flödet aktierna i din portfölj — tills dess visar vi viloläget."}
         </p>
 
         {hamtar ? (
@@ -248,34 +359,112 @@ export function AktieNyheter() {
           </div>
         ) : (
           <ul className="mt-5 divide-y divide-gold/10">
-            {nyheter.map((n) => (
-              <li key={`${n.ticker}-${n.rubrik}`}>
-                <a
-                  href={n.lank ?? undefined}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex min-h-[44px] items-center gap-3 py-3"
-                  {...(n.lank ? {} : { "aria-disabled": "true" })}
-                >
-                  <span className="inline-flex min-h-[28px] shrink-0 items-center rounded-full border border-gold/40 bg-gold/10 px-3 text-[10px] font-bold tracking-wider text-gold">
-                    {n.ticker}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold leading-snug text-[#EDE6D6] group-hover:text-gold-soft group-hover:underline">
-                      {n.rubrik}
-                    </span>
-                    <span className="mt-0.5 block text-[11px] text-[#EDE6D6]/60">
-                      {[n.kalla, tidText(n.tidSec)].filter(Boolean).join(" · ")}
-                    </span>
-                  </span>
-                </a>
-              </li>
-            ))}
+            {nyheter.map((n) => {
+              const arNy = senasteBesok > 0 && n.tidMs !== null && n.tidMs > senasteBesok;
+              const hogPaverkan = n.paverkan >= HOG_PAVERKAN;
+              const oppnad = oppnadeTankar.includes(n.id);
+              return (
+                <li key={n.id} className="py-3">
+                  <div className="flex items-start gap-3">
+                    {n.tickers.length > 0 && (
+                      <span className="flex shrink-0 flex-col items-start gap-1 pt-0.5">
+                        {n.tickers.slice(0, 3).map((t) => (
+                          <span
+                            key={t}
+                            className="inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-gold"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <a
+                        href={n.lank ?? undefined}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block"
+                        {...(n.lank ? {} : { "aria-disabled": "true" })}
+                      >
+                        <span className="block truncate text-sm font-semibold leading-snug text-[#EDE6D6] group-hover:text-gold-soft group-hover:underline">
+                          {n.rubrik}
+                        </span>
+                      </a>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
+                        <span className="text-[11px] text-[#EDE6D6]/60">
+                          {[n.kalla, tidText(n.tidMs)].filter(Boolean).join(" · ") || "Nyhetscentralen"}
+                        </span>
+                        {hogPaverkan ? (
+                          <span className="inline-flex items-center rounded-full border border-gold/60 bg-gold/20 px-2 py-0.5 text-[10px] font-bold tracking-wide text-gold">
+                            Hög påverkan
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center rounded-full border border-gold/20 bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-[#EDE6D6]/60">
+                            Påverkan {n.paverkan}
+                          </span>
+                        )}
+                        {arNy && (
+                          <span className="inline-flex items-center rounded-full bg-gold px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#0E1B2E]">
+                            Nytt
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* AK1A:ts fundering — en rad, vecklas ut vid klick */}
+                  {n.tanke && (
+                    <button
+                      type="button"
+                      onClick={() => vaxlaTanke(n.id)}
+                      aria-expanded={oppnad}
+                      className="mt-2 block w-full rounded-lg border border-gold/15 bg-gold/5 px-3 py-1.5 text-left transition-colors hover:border-gold/40"
+                    >
+                      <span className="flex w-full items-start gap-2">
+                        <span className="mt-px shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] text-gold-soft">
+                          AK1A
+                        </span>
+                        <span
+                          className={`min-w-0 flex-1 text-xs leading-relaxed text-[#EDE6D6]/75 ${oppnad ? "" : "truncate"}`}
+                        >
+                          {n.tanke}
+                        </span>
+                        <span aria-hidden="true" className="shrink-0 self-center text-[10px] text-gold-soft">
+                          {oppnad ? "▲" : "▼"}
+                        </span>
+                      </span>
+                      {oppnad && n.vVariabler.length > 0 && (
+                        <span className="mt-1.5 flex flex-wrap gap-1 border-t border-gold/10 pt-1.5">
+                          {n.vVariabler.map((v) => (
+                            <span
+                              key={v}
+                              className="rounded border border-gold/25 px-1.5 py-0.5 text-[10px] font-semibold text-gold-soft/90"
+                            >
+                              {v}
+                            </span>
+                          ))}
+                        </span>
+                      )}
+                    </button>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
 
+        {/* Footer: hela Nyhetscentralen + kanalhantering */}
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-gold/10 pt-4">
+          <Link href="/nyheter" className="text-xs font-semibold text-gold-soft hover:underline">
+            Visa alla i Nyhetscentralen →
+          </Link>
+          <Link href="/nyheter#kanaler" className="text-xs font-semibold text-gold-soft/80 hover:underline">
+            Hantera kanaler →
+          </Link>
+        </div>
+
         {/* Pedagogisk notering + disclaimer */}
-        <div className="mt-5 border-t border-gold/10 pt-4">
+        <div className="mt-4">
           <p className="text-xs italic leading-relaxed text-[#EDE6D6]/80">
             Nyheter förändrar vågor — läs dem tillsammans med din{" "}
             <Link href="/vagfundament" className="font-semibold text-gold-soft hover:underline">
@@ -284,7 +473,7 @@ export function AktieNyheter() {
             .
           </p>
           <p className="mt-1.5 text-[11px] leading-snug text-[#EDE6D6]/50">
-            Källa: Yahoo Finance (via det publika search-news-API:et).
+            Källa: Nyhetscentralen (server-side hämtning — cachad och rangordnad).
             Fördröjda och ofullständiga nyhetsflöden kan förekomma — information,
             inte investeringsråd.
           </p>

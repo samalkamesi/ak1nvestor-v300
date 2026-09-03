@@ -10,6 +10,8 @@
  *   - ak1a-notiser-v1     → Notis[] (senaste först)
  *   - ak1a-notiser-dag-v1 → { [typ]: "YYYY-MM-DD" } — daglig avstängning:
  *                           max EN automatisk notis per typ per dag.
+ *   - ak1a-nyheter-top    → LÄSES av typ "nyhet" (skrivs av Senaste nytt/
+ *                           Nyhetscentralen): dagens högsta påverkannyhet.
  *
  * ARKITEKTUR: servern (GET /api/notiser) levererar levande underlag (dagens
  * pass-aktie + vågkartans sammanfattning — saker som bara servern kan läsa);
@@ -31,7 +33,7 @@ export type Notis = {
   rubrik: string;
   text: string;
   ikon: string;
-  typ: "streak" | "pass" | "fas2" | "vagkarta" | "info";
+  typ: "streak" | "pass" | "fas2" | "vagkarta" | "nyhet" | "info";
   lank?: string;
   skapad: number;
   last?: boolean;
@@ -113,6 +115,35 @@ function lasLock(nyckel: string): boolean {
     return localStorage.getItem(nyckel) === "1";
   } catch {
     return false;
+  }
+}
+
+/** "ak1a-nyheter-top" (skrivs av Senaste nytt-kortet och Nyhetscentralen):
+ *  dagens högsta påverkannyhet → { dag: "YYYY-MM-DD", rubrik, paverkan }.
+ *  Lib:et är klientside och kan inte hämta flödet självt — notis-typ "nyhet"
+ *  byggs enbart ur detta minne. Defensive: ogiltig/gammal data → null. */
+const NYHETER_TOPP_NYCKEL = "ak1a-nyheter-top";
+const NYHET_TROSKEL_PAVERKAN = 70;
+
+type NyhetsTopp = { dag: string; rubrik: string; paverkan: number };
+
+function lasNyhetsTopp(): NyhetsTopp | null {
+  try {
+    const rå = localStorage.getItem(NYHETER_TOPP_NYCKEL);
+    if (!rå) return null;
+    const t = JSON.parse(rå) as Record<string, unknown>;
+    const rubrik = typeof t.rubrik === "string" ? t.rubrik.trim() : "";
+    const paverkan =
+      typeof t.paverkan === "number" && Number.isFinite(t.paverkan) ? Math.round(t.paverkan) : 0;
+    // dag som "YYYY-MM-DD" — accepterar även datum/tid-fält från framtida skrivare
+    let dag = typeof t.dag === "string" ? t.dag : typeof t.datum === "string" ? t.datum : "";
+    if (!dag && typeof t.tid === "number" && Number.isFinite(t.tid)) {
+      dag = new Date(t.tid).toISOString().slice(0, 10);
+    }
+    if (!dag || !rubrik || !/^\d{4}-\d{2}-\d{2}$/.test(dag)) return null;
+    return { dag, rubrik, paverkan };
+  } catch {
+    return null;
   }
 }
 
@@ -205,6 +236,8 @@ export function raknaOlasta(): number {
  *   pass     — dagens quiz-lås olåst → Dagens Pass väntar med dagens aktie
  *   fas2     — nivå ≥ 25 → redo för Fas 2 (26 avancerade kurser)
  *   vagkarta — dagens autonom vågmätning finns → sammanfattningen är klar
+ *   nyhet    — "ak1a-nyheter-top" (från Senaste nytt/Nyhetscentralen) har en
+ *              nyhet från idag med paverkan ≥ 70 → "Värdefull nyhet" väntar
  *
  * DUBBEL-SKYDD mot spam: max en per typ per dag, vaktat av BOTH dags-registret
  * AND en genomskanning av redan fästa notiser skapade idag.
@@ -265,6 +298,20 @@ export function genereraAutomatiskaNotiser(underlag?: NotisUnderlag | null): Not
       rubrik: "Dagens vågkarta",
       text: `Dagens vågmätning är klar: ${u.vagkarta.sammanfattning}.`,
       lank: "/vagfundament",
+    });
+  }
+
+  // 5 · NYHET — Senaste nytt/Nyhetscentralen sparar dagens tyngsta nyhet i
+  //     localStorage ("ak1a-nyheter-top"); lib:et kan inte hämta flödet själv
+  //     (klientside), så notisen byggs ur minnet. Bara från idag + paverkan ≥ 70.
+  const nyhetsTopp = lasNyhetsTopp();
+  if (nyhetsTopp && nyhetsTopp.dag === idag && nyhetsTopp.paverkan >= NYHET_TROSKEL_PAVERKAN) {
+    kandidater.push({
+      typ: "nyhet",
+      ikon: "📰",
+      rubrik: "Värdefull nyhet",
+      text: nyhetsTopp.rubrik,
+      lank: "/nyheter",
     });
   }
 

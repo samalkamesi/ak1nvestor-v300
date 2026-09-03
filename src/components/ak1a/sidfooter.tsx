@@ -25,6 +25,7 @@ const KOLUMNER: FooterKolumn[] = [
     titel: "ANALYSERA",
     ikon: "🔬",
     punkter: [
+      { text: "Nyhetscentralen", lank: "/nyheter" },
       { text: "AKM1-kalkylatorn", lank: "/kalkylator" },
       { text: "Vågfundamentet", lank: "/vagfundament" },
       { text: "Portföljbyggaren", lank: "/portfoljbyggare" },

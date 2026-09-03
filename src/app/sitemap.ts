@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/dagens-pass`, changeFrequency: "daily", priority: 0.9, lastModified: now },
 
     // Alla verktygssidor
+    { url: `${BASE_URL}/nyheter`, changeFrequency: "hourly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/portfoljbyggare`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/netnet`, changeFrequency: "monthly", priority: 0.8, lastModified: now },

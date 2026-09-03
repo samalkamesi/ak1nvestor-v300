@@ -524,6 +524,74 @@ export function MinSida() {
         <AktieNyheter />
       </section>
 
+      {/* (a2e) ANALYSER FÖR DIG — när något värdefullt dyker upp i Senaste
+          nytt: tre pedagogiska dörrar från nyheten till elevens eget omdöme. */}
+      <section className="marin-panel mt-6 rounded-2xl border border-gold/30 p-6 sm:p-8">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Analyser för dig</p>
+        <h2 className="mt-2 font-serif text-xl font-bold tracking-tight text-gold sm:text-2xl">
+          Från nyhet till eget omdöme
+        </h2>
+        <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/70">
+          Något värdefullt i flödet ovan? Då är det rätt tillfälle att sätta
+          tänderna i bolaget själv — tre dörrar står öppna, en för varje sorts
+          fråga.
+        </p>
+
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <Link
+            href="/superanalys"
+            className="group rounded-xl border border-gold/25 bg-card/60 p-4 transition-colors hover:border-gold/60 hover:bg-gold/5"
+          >
+            <span className="text-xl" aria-hidden="true">
+              🏅
+            </span>
+            <span className="mt-2 block text-[10px] uppercase tracking-[0.25em] text-gold-soft/80">
+              Superanalysen
+            </span>
+            <span className="mt-1 block text-sm font-bold text-[#EDE6D6] group-hover:text-gold-soft">
+              Öva på ditt bolag →
+            </span>
+            <span className="mt-1 block text-[11px] leading-snug text-[#EDE6D6]/65">
+              När den passar: efter en rapport — uppdatera din analys.
+            </span>
+          </Link>
+          <Link
+            href="/vagfundament"
+            className="group rounded-xl border border-gold/25 bg-card/60 p-4 transition-colors hover:border-gold/60 hover:bg-gold/5"
+          >
+            <span className="text-xl" aria-hidden="true">
+              🌊
+            </span>
+            <span className="mt-2 block text-[10px] uppercase tracking-[0.25em] text-gold-soft/80">
+              Vågfundamentet
+            </span>
+            <span className="mt-1 block text-sm font-bold text-[#EDE6D6] group-hover:text-gold-soft">
+              Hur bolaget mår →
+            </span>
+            <span className="mt-1 block text-[11px] leading-snug text-[#EDE6D6]/65">
+              När den passar: när en nyhet rör marknadens humör — läs vågen under ytan.
+            </span>
+          </Link>
+          <Link
+            href="/konfluens"
+            className="group rounded-xl border border-gold/25 bg-card/60 p-4 transition-colors hover:border-gold/60 hover:bg-gold/5"
+          >
+            <span className="text-xl" aria-hidden="true">
+              📡
+            </span>
+            <span className="mt-2 block text-[10px] uppercase tracking-[0.25em] text-gold-soft/80">
+              Konfluensradarn
+            </span>
+            <span className="mt-1 block text-sm font-bold text-[#EDE6D6] group-hover:text-gold-soft">
+              Värde möter vågor →
+            </span>
+            <span className="mt-1 block text-[11px] leading-snug text-[#EDE6D6]/65">
+              När den passar: när nyheten flyttar priset — se var värde och vågor möts.
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* FRÅGA DIN DASHBOARD — natural-language-frågor mot elevens egna data, deterministiskt */}
       <section className="mt-6">
         <DashFragaKort />

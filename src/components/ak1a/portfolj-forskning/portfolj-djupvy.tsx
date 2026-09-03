@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type {
   Horisont,
   InnehavForslag,
@@ -12,6 +12,7 @@ import type {
   UppfoljningSnapshot,
   VagKlass,
 } from "@/lib/portfolj-forskning/typer";
+import { VagkurvaGraf } from "../vagkurva-graf";
 import {
   Akm1Chip,
   BRANSCH_NAMN,
@@ -265,6 +266,56 @@ function InnehavKort({
   );
 }
 
+// ── Vågkurvor per horisont (VÅG 48) — expanderbar Elliott-sektion ────────────
+
+/**
+ * Expanderbar sektion: Elliott-vågläget per horisont för portföljförslagets
+ * fem första innehav. VagkurvaGraf hämtar själv /api/vagfundament per ticker
+ * (lazy — inget anrop förrän sektionen vecklats ut), och dess interna
+ * ticker-väljare vandrar mellan innehaven. Max fem kurvor så sidan förblir
+ * lätt; pedagogisk visualisering — aldrig investeringsråd.
+ */
+function VagkurvorSektion({ innehav }: { innehav: InnehavForslag[] }) {
+  const [oppnad, setOppnad] = useState(false);
+  const tickers = useMemo(
+    () => (innehav ?? []).map((i) => i?.ticker).filter((t): t is string => typeof t === "string" && t.trim() !== "").slice(0, 5),
+    [innehav]
+  );
+
+  if (tickers.length === 0) return null;
+
+  return (
+    <div className="rounded-xl border border-gold/30 bg-paper p-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+            Vågkurvor per horisont
+          </p>
+          <p className="mt-1 max-w-xl text-[11px] italic leading-relaxed text-muted-foreground">
+            Elliott-vågläget för de {tickers.length} största innehaven — fundamentala
+            vågklasser från vågmotorn, ritade som pedagogiska Elliott-strukturer på
+            fem tidshorisonter.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setOppnad((o) => !o)}
+          aria-expanded={oppnad}
+          className="btn-marin min-h-[44px] shrink-0 px-4 py-2 text-xs"
+        >
+          {oppnad ? "Dölj vågkurvor" : `Visa vågkurvor (${tickers.length})`}
+        </button>
+      </div>
+
+      {oppnad ? (
+        <div className="mt-4">
+          <VagkurvaGraf ticker={tickers[0]} alternativ={tickers} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 // ── Portföljens vågprofil (5 horisonter) ────────────────────────────────────
 
 function vagprofilMening(profil: Record<Horisont, VagKlass>): string {
@@ -462,6 +513,9 @@ export function PortfoljDjupvy({
               })}
             </div>
           </div>
+
+          {/* Vågkurvor per horisont — expanderbar Elliott-vy (VÅG 48) */}
+          <VagkurvorSektion innehav={forslag.innehav ?? []} />
 
           {/* Ersättnings-panelen — ersatta aktier och kandidater med motiv */}
           {(forslag.ersattningar ?? []).length > 0 && (

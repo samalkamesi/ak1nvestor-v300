@@ -4,6 +4,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
+import { VagkurvaGraf, VAGKURVA_STANDARD_TICKERS } from "@/components/ak1a/vagkurva-graf";
 
 export const metadata: Metadata = pageMetadata({
   path: "/vagfundament",
@@ -81,6 +82,22 @@ export default function VagfundamentPage() {
 
       <div className="mt-10">
         <VagfundamentMatris ticker="VOLV-B.ST" />
+      </div>
+
+      {/* Elliott-vågkurvor — vågläget per tidshorisont, ritat ur vågmotorns klass */}
+      <div className="mt-10">
+        <h2 className="font-serif text-2xl font-bold">Elliott-vågkurvor per horisont</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Fem tidshorisonter — mikro, kort, medellång, lång och Mega — var och en
+          med sin vågkurva. Klass, styrka och lutning läses ur vågmotorn ovan;
+          kurvformerna är Elliott-strukturer som synliggör läget: en impulsvåg
+          ritas som den klassiska femvågssekvensen, en korrigering som ett
+          A-B-C-zickzack och ett basbygge som en platt kanal. Välj bolag bland
+          de tolv standard-tickrarna och jämför med matrisen.
+        </p>
+        <div className="mt-4">
+          <VagkurvaGraf ticker="VOLV-B.ST" alternativ={VAGKURVA_STANDARD_TICKERS} />
+        </div>
       </div>
 
       {/* Vågkon — scenariot som växer ur historikens egen volatilitet (Fas C) */}

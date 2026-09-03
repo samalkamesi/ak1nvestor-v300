@@ -4339,3 +4339,85 @@ DOM-mätningar dev: porträtt 412 = 0 overflow (scrollWidth 402), mobillista
 360×780 = 0 overflow på kurs + vagfundament + portfolj-forskning +
 kalkylator. Matriserna (vagfundament/konfluens/korstabell) har redan
 mobilvyer/sticky-första-kolumn inom viewport.
+
+## VÅG 48 agent B: vågkurve-graf (2026-09-01)
+
+Kunddirektiv: "grafen att följa Elliott waves på mikro/kort/medellång/lång/Mega".
+
+- **Ny:** `src/components/ak1a/vagkurva-graf.tsx` — `VagkurvaGraf({ticker, alternativ?})`, "use client".
+  Hämtar POST /api/vagfundament (AbortController, 8 s timeout, retry). Ritar 5 mini-SVG:er
+  (grid-cols-2 mobil → 5 desktop), en per horisont, där FORMEN drivs av motorns klass via
+  total-tal per horisont (samma ±0,50-trösklar som vagfundament-motorns _klassFranTal):
+  impulsvåg = klassisk 5-vågssekvens (våg 3 = 1,55× våg 1, retracement 2: 50–61,8 %, 4:
+  30–38,2 % — Elliott-reglerna hålls matematiskt), korrigering = A-B-C-zickzack (B 50–62 % av
+  A, C 1,0–1,3× A, ny extrempunkt, riktning ur tecknet), basbygge = platt kanal med små
+  svängningar + prickade gränser, osatt = streckad nästan-platt linje. Stighastighet/modgångar
+  moduleras deterministiskt av |total| (styrka 0–1, visas i %) + medel-|momentum| över V01–V20.
+  Vågetiketter 1–5/A-C i 8 px SVG-text (färgblint: form+etiketter bär info). Klass-chips
+  ▲▼◼· i projektets DNA; marin panel + guld. Källa-rad: VAGKURVA_KALLA_TEXT (exakt
+  formulering, enda platsen med det ordade ordet). Exporterar VAGKURVA_STANDARD_TICKERS
+  (12 st, samma rotation som dagens-pass).
+- **/vagfundament** (page.tsx): ny sektion "Elliott-vågkurvor per horisont" under matrisen —
+  VagkurvaGraf för VOLV-B.ST med 12-tickersväljare (matrisen har ingen delad state).
+- **/portfolj-forskning** (portfolj-djupvy.tsx): expanderbar "Vågkurvor per horisont" efter
+  innehavsgriden — VagkurvaGraf för de 5 första innehaven med intern väljare; täcker både
+  live-flödet (ByggPortfoljKort) och demon (demo-wrapper) via PortfoljDjupvy. Lazy: inga
+  API-anrop förrän utfälld.
+- **Test:** tsc 43 fel = samma som baseline, 0 nya. Dev :3462 — /vagfundament 200 (SSR visar
+  laddar-skelett + panelrubrik), POST /api/vagfundament VOLV-B.ST 200 ur cache:
+  total {mikro 0,542 · kort 0,167 · medellang 0,25 · lang null · mega 0,25} → impuls+3
+  basbyggen+osatt renderas; /portfolj-forskning 200; inga runtime-fel i loggen. Server dödad.
+- Ingenting committat. Ej investeringsråd — pedagogisk visualisering.
+
+## VÅG 48 agent A: AI-Mentorn — 10x intelligentare + trasiga taggar fixade
+
+**Kunddirektiv:** "AI mentor orden som är taggar därinne ej fungerar 100% ... gör dem till 10x ännu mer intelligent ... den behöver lära sig att tänka eller svara som en människa."
+
+### Trasiga saker hittade + rättade (chips/handlings)
+- **Döda scroll-ankare**: `#quiz` (kurs-sidor), `#guide` (kalkylatorn), `#djup` (portföljen) pekade på id:n som aldrig existerade → knappen gjorde ingenting. Fix: `data-chat-anker="quiz"` på KursQuiz-roten, `data-chat-anker="guide"` på kalkylatorns guide-TabsTrigger (klickas fram + scrollas), `id="djup"` + scroll-mt på djupanalys-sektionen, samt `gaTillAnkare()` i chat-widgeten med navigerings-fallbacks (aldrig död knapp).
+- **API-endpoint som knapp**: "AI-organens status" → /api/autonom/status och "Styrelsens beslut" → /api/styrelse/beslut navigerade användaren till rå JSON. Fix: riktiga sidor (/min-sida, /om-oss). även `\bai\b` fix i system-grenen (fångade delsträngen "ai" överallt).
+- **Hårdkodat bokantal**: "BOKMASTER (78 böcker)" i widgeten (verkligheten: 103 ur SIFFROR) → `${SIFFROR.bokmaster}`. "35 artiklar" → räknades bort.
+- **Pipeline-ordning**: vagkarta testas nu FÖRE vagfundamentet ( annars slukade lösa våg-triggern "vad säger vågkartan?"); bar "våg/vågor" triggar nu vagfundament.
+- Alla 7 snabbkommandon verifierade: Börja lära/Räkna/Portfölj/Testa mig/Repetera (klient-intercept)/Vågkarta/Nästa steg — samtliga ger rätt svar.
+
+### Motor 10x (deterministiskt — ZAI_API_KEY saknas)
+- **Ny lib `src/lib/chatbot-nlu.ts`**: normalisering (gemener, interpunktion, åäö→aao), frastolkning ("va e"/"vadä"/"vadd"→vad är, p/e→pe, mr market), fyllnadsord ("hur mycket", "man kan ju", "ju", "liksom", "typ"...), synonymer med svensk genitiv-stam ("brasken"→börsen, "vallgrav"→moat), Levenshtein ≤1 på nyckelord ≥4 tecken + suffix-stamning ("brutomarginalen"→V07).
+- **V_REGISTRET i route.ts**: alla 20 V-variabler + P/E, moat, marginal of safety, Mr Market, ekosystem, kalkylator, portfölj, tillväxt, risk, utdelning, börsen — Record-typ garanterar att inget igenkänt ämne saknar svar. Formler/poängtrösklar grounded i kalkylatorns RAKNARE; antal variabler/poängskala importeras ur EKOSYSTEM-kanonen (ekosystem.ts).
+- **Mänsklig svarsstruktur**: roterande bekräftelse (6 varianter) → V-nummer+formel+poängskala+var-i-årsredovisningen → konkret SEK-räkneexempel (märkt "påhittat men realistiskt") → naturlig fortsättningsfråga (roterande) → disclaimer vid värderingsämnen. Alla robotlika [VÅGKARTA]/[AKM1]-prefix bort.
+- **Minne/kontext**: widgeten sparar senaste ämnets nyckel (`amne` i svaret) och skickar som `kontext` (+ `niva`) — bakåtkompatibelt; servern härleder kontext ur historiken om fältet saknas. "och P/E?" efter ROE → "Vi var precis inne på ROE — nu tar vi P/E...".
+- **Ärlighet**: live-data-frågor om verkliga bolag ("vad är Volvos P/E just nu?") → "Det här vet jag inte säkert" + klickbara hänvisningar till /analyser, /vagfundament, /kalkylator. Okända frågor → ärlig fallback med 3 förslag. Smalltalk: hej/tack/hjälp/nästa steg (nivåanpassat: nivå 25+ → Fas 2-tips)/testa min nivå.
+
+### Verifiering
+- `npx tsc --noEmit`: **43 fel = baseline, 0 nya** (chatbot-nlu/route/chat-widget/kurs-quiz/akm1-calculator/portfolio-system rena).
+- API-test via node fetch (dev på :3461, dödad efteråt): 17 frågor — däribland kundens 8: "vad är roe"→V09, "vadd är P/E?"→P/E, "hur räknar man bruttomarginal"→V07, "och ps?"(kontext v09)→V04+övergång, "ÄR VOLVO BRA??"→klarande, "hjälp"→hjälpmeny, "tack"→varierat tack, "vågor"→vågfundament. Bonus: stavfel/synonymer, ärlighetslager, "vad är en option"→kursmatch (options-kurser).
+
+**Filer:** src/lib/chatbot-nlu.ts (ny), src/app/api/chatbot/route.ts, src/components/ak1a/{chat-widget,kurs-quiz,akm1-calculator,portfolio-system}.tsx. Inget committat.
+
+── VÅG 48 KLAR: INLOGGNINGSSTATUS + AI-MENTORN 10x + ELLIOTT-VÅGKURVOR (2026-09-03) ──
+Kunddirektiv ×3. (1) INLOGGAD-KNAPP (main): nya inloggad-knapp.tsx (klient,
+hydreringssäker, variant små+stor) i SeoPageShell-header (ersatte statisk
+Logga in-länk på ALLA SEO-sidor), mobilmenyns botten-CTA + SPA-headerns
+"Logga in / Portal" (statusmedveten: "{Namn} · Portal" + Logga ut).
+Verifierad i dev DOM: utloggad → guld Logga in; inloggad → "Sam · Min Sida"
++ Logga ut; Logga in borta. REGEL: aldrig visa Logga in till inloggad.
+(2) AI-MENTORN 10x (agent A): döda knappar fixade (#quiz/#guide/#djup-
+ankare med data-chat-anker + gaTillAnkare fallback; /api/autonom-status +
+/api/styrelse/beslut → riktiga sidor; 78 böcker → SIFFROR; vågkarta-pipeline-
+ordning; alla 7 snabbkommandon verifierade). NY chatbot-nlu.ts (normalisering,
+fras-/fyllnads-/synonym-tolkning, Levenshtein ≤1, svensk stamning) + V_REGISTRET
+(typsäkert, alla 20 V + P/E/moat/Mr Market osv., grounded i ekosystem.ts +
+kalkylatorns RAKNARE) + mänsklig svarsstruktur (roterande bekräftelser →
+V+formel+skala → SEK-exempel → fortsättningsfråga) + kontext ("och ps?" efter
+ROE → övergång) + ärlighetslager (aldrig gissa på live-bolag) + smalltalk.
+17 testfrågor PASS (stavfel/konversation/synonymer). Main stickprov ×5 ✓.
+(3) ELLIOTT-VÅGKURVE-GRAF (agent B): vagkurva-graf.tsx — 5 SVG:er (mikro/
+kort/medellång/lång/mega) ritade ur VERIFIERADE vågmotorns svar (POST /api/
+vagfundament; klass = motorns egna trösklar; styrka modulerar geometrin):
+impulsvåg = 5-vågssekvens med Elliott-reglerna (v3=1,55×v1, v2 50-61,8 %,
+v4 30-38,2 %, v5> v3-topp), korrigering = ABC-zickzack (C 1,0-1,3×A),
+basbygge = sidkanal, osatt = streckad + etikett — ALDRIG påhittad form.
+Källa-rad "trippelröstning, ej kursprognos". Monterad /vagfundament (under
+matrisen, 12-tickersväljare) + portfolj-djupvy (expanderbar per innehav).
+Oberoende verifiering: 9 SVG:er live ur motorsvar (VOLV mikro 0,542 →
+impulsform), 0 mobil-overflow.
+tsc 43 (0 nya) · Kvalitetsvakten 9/9 GRÖN.

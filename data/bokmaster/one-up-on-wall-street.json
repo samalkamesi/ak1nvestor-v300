@@ -190,7 +190,7 @@
         },
         {
           "type": "insikt",
-          "content": "Frågan som skiljer konsumenten från investeraren är tvådelad: vad tjänar bolaget på mig — och vem annars har noterat det? Om det första svaret är en margin och det andra är ingen har du ett Lynch-läge; om det andra svaret är alla har du ett sentiment-läge — och då prissätts din observation redan av marknaden, oavsett hur rätt den är."
+          "content": "Frågan som skiljer konsumenten från investeraren är tvådelad: vad tjänär bolaget på mig — och vem annars har noterat det? Om det första svaret är en margin och det andra är ingen har du ett Lynch-läge; om det andra svaret är alla har du ett sentiment-läge — och då prissätts din observation redan av marknaden, oavsett hur rätt den är."
         },
         {
           "type": "tabell",
@@ -253,7 +253,7 @@
         },
         {
           "type": "text",
-          "content": "Vändarna förtjänar sin egen genomlysning, för de är kategorin med störst belöning och störst dödlighet. Lynchs krav är strikta: verksamheten måste vara intakt (produkten efterfrågas fortfarande), balansräkningen måste överleva vägen till vändningen (kapitel nio), och det finns ett identifierbart hinder som håller på att undanröjas. Chrysler köptes av Magellan 1982 när marknaden såg konkurs och kurserna var obefintliga — bolaget vände och mångdubblade. Men bokens varning står kvar: basfrekvensen för lyckade vändare är låg, de flesta krisbolag förblir krisbolag — därför är vändare en kategori för den som kan läsa en balansräkning i sömnen, inte för den som gillar storyn. I AKM1:s språk: V10 och V11 är inte viktade variabler i kategorin vändare — de är hela spelet."
+          "content": "Vändarna förtjänär sin egen genomlysning, för de är kategorin med störst belöning och störst dödlighet. Lynchs krav är strikta: verksamheten måste vara intakt (produkten efterfrågas fortfarande), balansräkningen måste överleva vägen till vändningen (kapitel nio), och det finns ett identifierbart hinder som håller på att undanröjas. Chrysler köptes av Magellan 1982 när marknaden såg konkurs och kurserna var obefintliga — bolaget vände och mångdubblade. Men bokens varning står kvar: basfrekvensen för lyckade vändare är låg, de flesta krisbolag förblir krisbolag — därför är vändare en kategori för den som kan läsa en balansräkning i sömnen, inte för den som gillar storyn. I AKM1:s språk: V10 och V11 är inte viktade variabler i kategorin vändare — de är hela spelet."
         },
         {
           "type": "text",
@@ -434,7 +434,7 @@
           "q": "Vilka tillväxtkällor bedöms som mest hållbara i kursen?",
           "alternativ": [
             "Prisökningar och kapacitetsutbyggnad",
-            "Nya marknar/geografisk expansion och repeat purchase-kunder",
+            "Nya marknader/geografisk expansion och repeat purchase-kunder",
             "Engångsförsäljningar",
             "Valutaeffekter"
           ],
@@ -499,7 +499,7 @@
             "Därför att bruttomarginal aldrig kan manipuleras"
           ],
           "ratt": 1,
-          "tips": "Vad saknas i bruttoledet som kan skräpa ner nettoledet?"
+          "tips": "Vad saknas i bruttoledet som kan skräpå ner nettoledet?"
         },
         {
           "q": "I exempeltabellen: vad gör +5 procentenheter bruttomarginal med EBIT?",
@@ -537,7 +537,7 @@
         },
         {
           "type": "text",
-          "content": "Och begränsningarna — för formeln är ett verktyg med ansvarsområde. Cykliska bolag: ogiltig, eftersom vinsten i nämnaren svänger med konjunkturen och P/E är lägst när det är som farligast att köpa (kapitel fyra). Förlustbolag och vändare i kris: ogiltig, ingen meningsfull E att prissätta — där gäller balansräkningen och sum-of-parts. Engångsposter: P/E på justerad, normaliserad vinst — boken varnar för att jämföra en engångsfärgad E med en ren multipl. Räntekontexten (Vår ekonomi-kapitel åtta): multiplar är omvända diskonteringsmaskiner — vid hög ränta komprimeras alla berättigade multiplar, vid låg expanderar de; en PEG på ett år säger inget utan att deklarera räntläget. Och tillväxtens kvalitet (förra kapitlet): formeln straffar inte diworsification — förvärvad tillväxt ska diskonteras innan den får plats i täljaren."
+          "content": "Och begränsningarna — för formeln är ett verktyg med ansvarsområde. Cykliska bolag: ogiltig, eftersom vinsten i nämnaren svänger med konjunkturen och P/E är lägst när det är som farligast att köpa (kapitel fyra). Förlustbolag och vändare i kris: ogiltig, ingen meningsfull E att prissätta — där gäller balansräkningen och sum-of-parts. Engångsposter: P/E på justerad, normaliserad vinst — boken varnar för att jämföra en engångsfärgad E med en ren multipl. Räntekontexten (Vår ekonomi-kapitel åtta): multiplar är omvända diskonteringsmaskiner — vid hög ränta komprimeras alla berättigade multiplar, vid låg expanderar de; en PEG på ett år säger inget utan att deklarera ränteläget. Och tillväxtens kvalitet (förra kapitlet): formeln straffar inte diworsification — förvärvad tillväxt ska diskonteras innan den får plats i täljaren."
         },
         {
           "type": "text",
@@ -663,7 +663,7 @@
             "Antalet analytiker"
           ],
           "ratt": 0,
-          "tips": "Vad är den ende som kan sänka räkneuret — och vad händer när det når noll?"
+          "tips": "Vad är den ende som kan sänka räkneverket — och vad händer när det når noll?"
         }
       ]
     },
@@ -821,7 +821,7 @@
         },
         {
           "type": "text",
-          "content": "Misstag i hållfasen. Att tro att denna gången är det annorlunda i toppen — frasen som alltid fått sällskap av historia just där bullargs-argumenten tar slut. Att älska produkten utan att kolla multipeln (kapitel tre). Att ignorera balansräkningen för att storyn är snygg (kapitel nio). Och det mest mänskliga av alla: att vattna ogräset och klippa blommorna — att sälja vinnarna i förtid för att låsa in en behaglig vinst, och behålla förlorarna i hopp om att få tillbaka inköpspriset. Det är dispositionseffekten i Lynchs trädgårdsmetafor, och den förtjänar kursens längsta studium: den driver både för tidiga vinster och för länge hållna förlorare — exakt de två beteenden som Kahneman-kursen senare visar är prospektteorins renaste produkter. Till det: att tro att proffsen alltid har rätt och därför köpa det konsensus redan prissatt — amatörens edge (kapitel två) bortkastad på att kopiera motståndaren."
+          "content": "Misstag i hållfasen. Att tro att denna gången är det annorlunda i toppen — frasen som alltid fått sällskap av historia just där bullargs-argumenten tar slut. Att älska produkten utan att kolla multipeln (kapitel tre). Att ignorera balansräkningen för att storyn är snygg (kapitel nio). Och det mest mänskliga av alla: att vattna ogräset och klippa blommorna — att sälja vinnarna i förtid för att låsa in en behaglig vinst, och behålla förlorarna i hopp om att få tillbaka inköpspriset. Det är dispositionseffekten i Lynchs trädgårdsmetafor, och den förtjänär kursens längsta studium: den driver både för tidiga vinster och för länge hållna förlorare — exakt de två beteenden som Kahneman-kursen senare visar är prospektteorins renaste produkter. Till det: att tro att proffsen alltid har rätt och därför köpa det konsensus redan prissatt — amatörens edge (kapitel två) bortkastad på att kopiera motståndaren."
         },
         {
           "type": "text",

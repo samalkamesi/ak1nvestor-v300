@@ -174,7 +174,7 @@
       "num": 3,
       "minutes": 13,
       "title": "Oktober 1987 — portföljförsäkringens svarta måndag och Feds första läxa",
-      "intro": "Den 19 oktober 1987 föll Dow med 508 punkter — 22,6 procent på en dag, värre än 1929. Mahar ägnar kraschen ett centralt kapitel: mekaniken i portföljförsäkringen, Feds enmeningars pressmeddelande — och den moral hazard-frö som växte i räddningens kölvatten.",
+      "intro": "Den 19 oktober 1987 föll Dow med 508 punkter — 22,6 procent på en dag, värre än 1929. Mahar ägnar kraschen ett centralt kapitel: mekaniken i portföljförsäkringen, Feds pressmeddelande på en enda mening — och den moral hazard-frö som växte i räddningens kölvatten.",
       "blocks": [
         {
           "type": "text",
@@ -320,7 +320,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Fenomenet är svårt att överdriva i efterhand. CNBC fanns i gymmen, på flygplatserna, i barberstolarna; tickerbandet rullade som sportresultat och programledarna blev celebrities — Maria Bartiromo kallades Money Honey, och analytiker som Mary Meeker hyllades som nättets drottning i magasin. Mahar citerar tittarsiffror som steg i takt med index, och hennes poäng är strukturell, inte moralisk: televisionen visar det som rör sig, och ingenting rör sig som en börs i eufori — mediebolagens incitament och marknadens eufori blev samstämmiga. Nyhetsekonomins lag: det som kan berättas som en story får lufttid, och en aktie som stiger tjugofem procent på en månad är en bättre historia än en som står stilla. Resultatet blev en självförstärkande slinga: stigande kurser drog tittare, tittare drog sponsorer och nyheter om kurser, nyheterna drog nya köpare, köparna drog upp kurserna."
+          "content": "Fenomenet är svårt att överdriva i efterhand. CNBC fanns i gymmen, på flygplatserna, i barberstolarna; tickerbandet rullade som sportresultat och programledarna blev kändisar — Maria Bartiromo kallades Money Honey, och analytiker som Mary Meeker hyllades som nättets drottning i magasin. Mahar citerar tittarsiffror som steg i takt med index, och hennes poäng är strukturell, inte moralisk: televisionen visar det som rör sig, och ingenting rör sig som en börs i eufori — mediebolagens incitament och marknadens eufori blev samstämmiga. Nyhetsekonomins lag: det som kan berättas som en story får lufttid, och en aktie som stiger tjugofem procent på en månad är en bättre historia än en som står stilla. Resultatet blev en självförstärkande slinga: stigande kurser drog tittare, tittare drog sponsorer och nyheter om kurser, nyheterna drog nya köpare, köparna drog upp kurserna."
         },
         {
           "type": "text",
@@ -817,7 +817,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Mahars storstilade drag är att hon vägrar både den bekväma syndabocksberättelsen och den ursäktande alla-var-dumma-berättelsen. Hennes lista är strukturell och graderad. Fed: asymmetrin — räddning i nedgång, passivity i uppgång — försköt riskgränserna och tog bort systemets varningsfunktion. Analytiker och banker: forskning som distribution, medvetet, dokumenterat i interna brev. Fondbranschen: closet indexing och prestationens diktatur, som gjorde branschen till teknikköpare mot eget omdöme. Medierna: förstärkning utan urskiljning, eftersom rörelse säljer. Revisorerna: avgifter från rådgivning som gjorde granskningen till kund till den den skulle granska. Och spararna: de ville tro — de köpte berättelser de aldrig försökte prissätta, och många skrev under på risker de inte förstod. Ingen av dessa var bubblans orsak ensam; var och en var en nödvändig del av ett maskineri där alla följde sitt eget rationella incitament tills summen blev systemisk irrationalitet."
+          "content": "Mahars storstilade drag är att hon vägrar både den bekväma syndabocksberättelsen och den ursäktande alla-var-dumma-berättelsen. Hennes lista är strukturell och graderad. Fed: asymmetrin — räddning i nedgång, passivitet i uppgång — försköt riskgränserna och tog bort systemets varningsfunktion. Analytiker och banker: forskning som distribution, medvetet, dokumenterat i interna brev. Fondbranschen: closet indexing och prestationens diktatur, som gjorde branschen till teknikköpare mot eget omdöme. Medierna: förstärkning utan urskiljning, eftersom rörelse säljer. Revisorerna: avgifter från rådgivning som gjorde granskningen till kund till den den skulle granska. Och spararna: de ville tro — de köpte berättelser de aldrig försökte prissätta, och många skrev under på risker de inte förstod. Ingen av dessa var bubblans orsak ensam; var och en var en nödvändig del av ett maskineri där alla följde sitt eget rationella incitament tills summen blev systemisk irrationalitet."
         },
         {
           "type": "text",

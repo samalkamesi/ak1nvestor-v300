@@ -113,7 +113,7 @@
         },
         {
           "type": "text",
-          "content": "Andra halvan av C-testet är kvaliteten på vinsten. O'Neil vill se att försäljningen i samma kvartal också växer, minst +20–25 % eller i accelerating takt — en vinstboom utan intäktsboom kan komma från engångsposter, nedskrivningar som vänder, eller besparingar, och sådana vinster håller inte. Han vill också gärna se stigande marginaler, alltså att bolaget inte enbart växer på volym utan också tjänar mer per såld krona. I AKM1:s språk är detta exakt V01 Försäljningstillväxt: kvartalsvinster utan försäljningsunderlag får låga poäng, och kalkylatorn straffar dem. Det är värt att minnas O'Neils varning: undvik att extrapolera en enda kvartalsbomb — leta efter det mönster som håller."
+          "content": "Andra halvan av C-testet är kvaliteten på vinsten. O'Neil vill se att försäljningen i samma kvartal också växer, minst +20–25 % eller i accelerating takt — en vinstboom utan intäktsboom kan komma från engångsposter, nedskrivningar som vänder, eller besparingar, och sådana vinster håller inte. Han vill också gärna se stigande marginaler, alltså att bolaget inte enbart växer på volym utan också tjänär mer per såld krona. I AKM1:s språk är detta exakt V01 Försäljningstillväxt: kvartalsvinster utan försäljningsunderlag får låga poäng, och kalkylatorn straffar dem. Det är värt att minnas O'Neils varning: undvik att extrapolera en enda kvartalsbomb — leta efter det mönster som håller."
         },
         {
           "type": "text",
@@ -220,7 +220,7 @@
             "Eftersom hög ROE garanterar att kursen stiger"
           ],
           "ratt": 1,
-          "tips": "Tänk på kopplingspunkten mellan A och S: bolag som inte tjänar tillräckligt på eget kapital behöver hämta kapital på annat håll — vad gör det med antalet aktier?"
+          "tips": "Tänk på kopplingspunkten mellan A och S: bolag som inte tjänär tillräckligt på eget kapital behöver hämta kapital på annat håll — vad gör det med antalet aktier?"
         },
         {
           "q": "Vad gör du enligt O'Neil med ett ungt bolag utan treårig vinsthistorik?",
@@ -318,7 +318,7 @@
         },
         {
           "type": "text",
-          "content": "Kopplingen till V06 EV/EBITDA kan sammanfattas så: S handlar om att prissätta utbudet i relation till det bolaget faktiskt tjänar. EV/EBITDA normerar bolagets värde — inklusive skuld — mot rörelseresultatet, vilket gör att du kan jämföra två bolag med olika aktieantal, skuldsättning och kapitalstruktur. O'Neil är dessutom tydlig med skuld: vinnare hade ofta låg skuldsättning, eftersom hög skuld både begränsar utrymmet för återköp och ökar känsligheten för räntor och konjunktur. Två S-varningar från boken att memorera: stora eller upprepade aktiesplit sent i en lång rusning är ofta en toppsignal (marknaden firar), och enorm emission 'för tillväxt' i ett bolag med svag ROE är mekaniskt värdeförstöring för dig som äger före emissionen."
+          "content": "Kopplingen till V06 EV/EBITDA kan sammanfattas så: S handlar om att prissätta utbudet i relation till det bolaget faktiskt tjänär. EV/EBITDA normerar bolagets värde — inklusive skuld — mot rörelseresultatet, vilket gör att du kan jämföra två bolag med olika aktieantal, skuldsättning och kapitalstruktur. O'Neil är dessutom tydlig med skuld: vinnare hade ofta låg skuldsättning, eftersom hög skuld både begränsar utrymmet för återköp och ökar känsligheten för räntor och konjunktur. Två S-varningar från boken att memorera: stora eller upprepade aktiesplit sent i en lång rusning är ofta en toppsignal (marknaden firar), och enorm emission 'för tillväxt' i ett bolag med svag ROE är mekaniskt värdeförstöring för dig som äger före emissionen."
         },
         {
           "type": "tabell",
@@ -724,11 +724,11 @@
         },
         {
           "type": "text",
-          "content": "Volymkravet är beviset. Ett utbrott utan volym är som ett åskväder utan regn: kurser kan drivas uppåt av tunn handel — någon semesterdag, brist på säljare — men institutionellt kapital, det kapital som driver de stora trendrallyna, efterlämnar alltid fotavtryck i omsättningsstatistiken. Volymen är därför AK1TS Volymteorins bidrag till AKM1:s fundamentala bild: fundamentala data säger 'detta bolag förtjänar uppmärksamhet', volymen vid pivot säger 'kapitalet har börjat röra sig'. Utan det senare är den fundamentala bilden bara en åsikt som marknaden ännu inte delar. Falska utbrott — kursen passerar pivot, stiger någon procent och rullar tillbaka in i basen — är också information: de inträffar oftast i svaga marknadslägen (M!), och O'Neils råd är att ett utbrott som faller tillbaka in i basen och bryter dess låga ska säljas utan tvekan."
+          "content": "Volymkravet är beviset. Ett utbrott utan volym är som ett åskväder utan regn: kurser kan drivas uppåt av tunn handel — någon semesterdag, brist på säljare — men institutionellt kapital, det kapital som driver de stora trendrallyna, efterlämnar alltid fotavtryck i omsättningsstatistiken. Volymen är därför AK1TS Volymteorins bidrag till AKM1:s fundamentala bild: fundamentala data säger 'detta bolag förtjänär uppmärksamhet', volymen vid pivot säger 'kapitalet har börjat röra sig'. Utan det senare är den fundamentala bilden bara en åsikt som marknaden ännu inte delar. Falska utbrott — kursen passerar pivot, stiger någon procent och rullar tillbaka in i basen — är också information: de inträffar oftast i svaga marknadslägen (M!), och O'Neils råd är att ett utbrott som faller tillbaka in i basen och bryter dess låga ska säljas utan tvekan."
         },
         {
           "type": "text",
-          "content": "Praktiska detaljer som skiljer rutin från hobby. Använd veckografer för att hitta och mäta baser (dagsgrafens brus förstorar formationer som inte finns), men övervaka själva utbrottet i dagsgraf med volym per halvtimme. Lägg inte köpet som en marknadsorder före marknadsöppning — gap upp över pivot på öppningsvolym är bättre bekräftat än att 'fiska' i öppningens kaos. Notera overhead supply en sista gång: om det finns en äldre, djupare bas ovanför nuvarande formation har kursen ett tak nära; de bästa utbrotten sker när vägen ovanför är fri (nya höjder — N). Och tränar du på exempel i efterhand, tvinga dig att bara använda information fram till varje tidpunkt: det är skillnaden mellan att studera systemet och att bli blåst av efterklokhetens säkerhet."
+          "content": "Praktiska detaljer som skiljer rutin från hobby. Använd veckografer för att hitta och mäta baser (dagsgrafens brus förstorar formationer som inte finns), men övervaka själva utbrottet i dagsgraf med volym per halvtimme. Lägg inte köpet som en marknadsorder före marknadsöppning — gap upp över pivot på öppningsvolym är bättre bekräftat än att 'fiska' i öppningens kaos. Notera overhead supply en sista gång: om det finns en äldre, djupare bas ovanför nuvarande formation har kursen ett tak nära; de bästa utbrotten sker när vägen ovanför är fri (nya höjder — N). Och tränär du på exempel i efterhand, tvinga dig att bara använda information fram till varje tidpunkt: det är skillnaden mellan att studera systemet och att bli blåst av efterklokhetens säkerhet."
         },
         {
           "type": "insikt",
@@ -970,7 +970,7 @@
         {
           "q": "Hur kan en short-seller använda O'Neils signaler?",
           "alternativ": [
-            "Kortköpa varje utbrott ur en cup with handle",
+            "Kortköpå varje utbrott ur en cup with handle",
             "Läsa toppkatalogn baklänges — distribution, climax, exhaustion gaps, RS-fall hos ledare — som tecken på att utbud växer mot efterfrågan",
             "Korta aktier med lägst P/E",
             "Använda Grahams net-nets som kortkandidater"
@@ -1088,7 +1088,7 @@
             "+40 %: vinsterna fördelas jämt över affärerna"
           ],
           "ratt": 1,
-          "tips": "Räkna grovt: -40 % summerat på fem fel, +110 % summerat på fem rätt. Vad blir nettot — och vad händer om några vinnare fått löpa längre?"
+          "tips": "Räkna grovt: -40 % summerat på fem fel, +110 % summerat på fem rätt. Vad blir nettot — och vad händer om några vinnare fått löpå längre?"
         },
         {
           "q": "Vad var O'Neils databasernas roll i metodens tillkomst?",

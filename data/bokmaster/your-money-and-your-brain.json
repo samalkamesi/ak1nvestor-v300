@@ -107,11 +107,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Forskningen, citerad öppet. Brian Knutson (Stanford) visade i studier från 2001 att förväntan på ökande monetär belöning selektivt aktiverar nucleus accumbens — hjärnans motor för förväntan. Greg Berns (Emory), som Zweig refererar, drog slutsatsen att pengar triggas av samma kretslopp som droger: inte metaforiskt utan bokstavligt — belöningssystemet som kokain och amfetamin utnyttjar är det som aktiveras av siffror som stiger. Det avgörande är ordningen: accumbens tänds starkast i FÖRVÄNTAN på vinsten, inte i mottagandet av den. Hjärnan belönar jakten mer än bytet — vilket i en finansiell kontext betyder att känslan av att den här aktien kommer gå upp är starkare, och mer beroendeframkallande, än själva uppgången någonsin blir."
+          "content": "Forskningen, citerad öppet. Brian Knutson (Stanford) visade i studier från 2001 att förväntan på ökande monetär belöning selektivt aktiverar nucleus accumbens — hjärnans motor för förväntan. Greg Berns (Emory), som Zweig refererar, drog slutsatsen att pengar triggas av samma kretslopp som droger: inte metaforiskt utan bokstavligt — belöningssystemet som kokain och amfetamin utnyttjar är det som aktiveras av siffror som stiger. Det avgörande är ordningen: accumbens tänds starkast i FÖRVÄNTAN på vinsten, inte i mottagandet av den. Hjärnan belönär jakten mer än bytet — vilket i en finansiell kontext betyder att känslan av att den här aktien kommer gå upp är starkare, och mer beroendeframkallande, än själva uppgången någonsin blir."
         },
         {
           "type": "text",
-          "content": "På marknaden får detta ett pris. Om accumbens köper berättelsen, inte kassaflödet, kommer berättelseaktien att prissättas högre än sina kassaflöden motiverar — förväntansdopaminet blir en del av multipeln. Zweigs eget exempel är Dow 36 000: Kevin Hassett och James Glassman förutsåg 1999 att Dow Jones skulle tredubblas eftersom aktier egentligen inte var riskigare än obligationer — boken kom ut månader innan IT-bubblan sprack. Det är girighet som kollektivt tillstånd: en marknad där förväntan matar förväntan. (Kursen korsrefererar Irrational Exuberance-kursen för bubblans mekanik — här är poängen den kemiska: bubblor är inte möjliga trots att hjärnan belönar förväntan; de är möjliga därför att den gör det.)"
+          "content": "På marknaden får detta ett pris. Om accumbens köper berättelsen, inte kassaflödet, kommer berättelseaktien att prissättas högre än sina kassaflöden motiverar — förväntansdopaminet blir en del av multipeln. Zweigs eget exempel är Dow 36 000: Kevin Hassett och James Glassman förutsåg 1999 att Dow Jones skulle tredubblas eftersom aktier egentligen inte var riskigare än obligationer — boken kom ut månader innan IT-bubblan sprack. Det är girighet som kollektivt tillstånd: en marknad där förväntan matar förväntan. (Kursen korsrefererar Irrational Exuberance-kursen för bubblans mekanik — här är poängen den kemiska: bubblor är inte möjliga trots att hjärnan belönär förväntan; de är möjliga därför att den gör det.)"
         },
         {
           "type": "text",
@@ -174,7 +174,7 @@
       "num": 3,
       "minutes": 12,
       "title": "Förutsägelseberoendet — dopaminets prediktionsfel",
-      "intro": "Girighetens motor har en ännu farligare funktion: den lär sig. Wolfram Schultz apexperiment vid Cambridge visade att dopaminneuroner inte signalerar belöning utan PREDIKTIONSFEL — skillnaden mellan vad som hände och vad som väntades. Det gör hjärnan till en förutsägelsemaskin som belönar sig själv för att gissa rätt. Zweig kallar fenomenet förutsägelseberoende — och förklarar varför prognoser känns så bra även när de är fel.",
+      "intro": "Girighetens motor har en ännu farligare funktion: den lär sig. Wolfram Schultz apexperiment vid Cambridge visade att dopaminneuroner inte signalerar belöning utan PREDIKTIONSFEL — skillnaden mellan vad som hände och vad som väntades. Det gör hjärnan till en förutsägelsemaskin som belönär sig själv för att gissa rätt. Zweig kallar fenomenet förutsägelseberoende — och förklarar varför prognoser känns så bra även när de är fel.",
       "blocks": [
         {
           "type": "text",
@@ -182,7 +182,7 @@
         },
         {
           "type": "text",
-          "content": "Här ligger förutsägelseberoendet. Eftersom dopaminet belönar TRÄFFEN — att ha gissat rätt — blir själva prognosakten stimulerande, oberoende av om prognoserna är tillförlitliga i stort. På en brusig marknad, där utfallet till största delen styrs av slump (kursen i Fooled by Randomness-kursen och svansarna i The Black Swan-kursen), kan träffsäkerheten inte bli hög — men belöningen för träffarna kommer ändå, och det räcker för att beroendet ska sättas igång. Det förklarar televisionens prognosformat: experter som gissar åt oss levererar dopaminträffar åt oss. Kursen differentierar mot Coates-kursen, som visade dopaminets vinstcykel i kroppen — här är samma systems roll för själva förutsägandena: vi blir inte bara euforiska av vinster; vi blir beroende av att gissa."
+          "content": "Här ligger förutsägelseberoendet. Eftersom dopaminet belönär TRÄFFEN — att ha gissat rätt — blir själva prognosakten stimulerande, oberoende av om prognoserna är tillförlitliga i stort. På en brusig marknad, där utfallet till största delen styrs av slump (kursen i Fooled by Randomness-kursen och svansarna i The Black Swan-kursen), kan träffsäkerheten inte bli hög — men belöningen för träffarna kommer ändå, och det räcker för att beroendet ska sättas igång. Det förklarar televisionens prognosformat: experter som gissar åt oss levererar dopaminträffar åt oss. Kursen differentierar mot Coates-kursen, som visade dopaminets vinstcykel i kroppen — här är samma systems roll för själva förutsägandena: vi blir inte bara euforiska av vinster; vi blir beroende av att gissa."
         },
         {
           "type": "text",
@@ -220,7 +220,7 @@
         {
           "q": "Varför kallar Zweig fenomenet förutsägelseberoende?",
           "alternativ": [
-            "Därför att dopaminet belönar träffen — prognosakten känns bra även när prognoserna i stort inte är tillförlitliga",
+            "Därför att dopaminet belönär träffen — prognosakten känns bra även när prognoserna i stort inte är tillförlitliga",
             "Därför att alla prognoser alltid slår in",
             "Därför att marknaden följer prognoserna mekaniskt",
             "Därför att internet skapat tillgång till prognoser"
@@ -683,7 +683,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A:s syntes, kursens kärnregel för magen. Intuition är komprimerad erfarenhet från en regelbunden miljö med snabb återkoppling — Kahneman-kursens brandmän och schackspelare; finansens återkoppling är långsam och brusig, DÄRFÖR är magen där en varningsradar, inte en prognos (Coates-kursens formulering). Men Shiv-experimentet visar att en helt känslobefriad analys också är fattig — känslan av att NÅGOT är fel i en årsredovisning (V19-kapitalförbränning, V12-intäktskvalitet) är ofta snabbare än medvetandet och förtjänar en lyssning. Arbetsordningen som kursen fastställer: ett — kör AKM1-checklistan FÖRST, utan mage; två — läs sedan av magen och skriv ned den; tre — om magen avviker från checklistan ska avvikelsen FORMULERAS SKRIFTLIGEN (vad vet den som siffrorna inte visar?) innan den får röra en enda poäng. Magen är rådgivare med en röst — aldrig verkställande direktör."
+          "content": "AK1A:s syntes, kursens kärnregel för magen. Intuition är komprimerad erfarenhet från en regelbunden miljö med snabb återkoppling — Kahneman-kursens brandmän och schackspelare; finansens återkoppling är långsam och brusig, DÄRFÖR är magen där en varningsradar, inte en prognos (Coates-kursens formulering). Men Shiv-experimentet visar att en helt känslobefriad analys också är fattig — känslan av att NÅGOT är fel i en årsredovisning (V19-kapitalförbränning, V12-intäktskvalitet) är ofta snabbare än medvetandet och förtjänär en lyssning. Arbetsordningen som kursen fastställer: ett — kör AKM1-checklistan FÖRST, utan mage; två — läs sedan av magen och skriv ned den; tre — om magen avviker från checklistan ska avvikelsen FORMULERAS SKRIFTLIGEN (vad vet den som siffrorna inte visar?) innan den får röra en enda poäng. Magen är rådgivare med en röst — aldrig verkställande direktör."
         },
         {
           "type": "insikt",
@@ -825,7 +825,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A:s hållning, kursens pedagogiska kärna: det är inte ditt fel att hjärnan är byggd som den är — men det är ditt ansvar att bygga systemet runt den. Det finns ett verkligt vetenskapligt stöd för att träning förändrar hjärnan: Eleanor Maguire (2000) fann att Londons taxiförare — som memorerat stadens gatuflätning i åratal — hade förstorad posterior hippocampus relativt till kontrollgrupper; expertis är en strukturell förändring. Men ärligheten kräver begränsningen: övertygad evidens för att SKRÄDDARSYDDA hjärnträningar (appar och spel) överförs till verkliga beslut saknas — Lumosity fick 2016 betala viten i USA för överdrivna påståenden om prestationshöjningar. AK1A:s träning är därför procedurmässig, inte neurologiskt mirakel: repetitiv AKM1-poängsättning (samma hål varje gång), beslutsjournal i /profil (återkoppling på processen), kalibreringsloggen från kapitel 3 (konfidens mot utfall), post-mortems och dessa quiz. Det är medvetenhet om biaserna genom träning — pilotens modell: piloter tränar inte för att slutar känna rädsla i turbulens; de tränar checklistor tills checklistan flyger planet när rädslan finns. Medvetandet gör inte dig immun — det gör dig i stånd att träna rätt saker."
+          "content": "AK1A:s hållning, kursens pedagogiska kärna: det är inte ditt fel att hjärnan är byggd som den är — men det är ditt ansvar att bygga systemet runt den. Det finns ett verkligt vetenskapligt stöd för att träning förändrar hjärnan: Eleanor Maguire (2000) fann att Londons taxiförare — som memorerat stadens gatuflätning i åratal — hade förstorad posterior hippocampus relativt till kontrollgrupper; expertis är en strukturell förändring. Men ärligheten kräver begränsningen: övertygad evidens för att SKRÄDDARSYDDA hjärnträningar (appar och spel) överförs till verkliga beslut saknas — Lumosity fick 2016 betala viten i USA för överdrivna påståenden om prestationshöjningar. AK1A:s träning är därför procedurmässig, inte neurologiskt mirakel: repetitiv AKM1-poängsättning (samma hål varje gång), beslutsjournal i /profil (återkoppling på processen), kalibreringsloggen från kapitel 3 (konfidens mot utfall), post-mortems och dessa quiz. Det är medvetenhet om biaserna genom träning — pilotens modell: piloter tränär inte för att slutar känna rädsla i turbulens; de tränär checklistor tills checklistan flyger planet när rädslan finns. Medvetandet gör inte dig immun — det gör dig i stånd att träna rätt saker."
         },
         {
           "type": "insikt",
@@ -967,7 +967,7 @@
         },
         {
           "type": "text",
-          "content": "Porträttet av den medvetne investeraren, i sex drag. Ett: han känner sina system vid namn — när förväntan kickar, när rädslan hinner först, när ångern fryser — och kallar dem vad de är: data, inte orden. Två: hon fattar inga beslut i känslans ögonblick — tidpunkten ägs av regeln, vilan eller kalendern. Tre: han tränar procedurmässigt och mäter process per kvartal — aldrig självbild, aldrig enskilda utfall. Fyra: hennes portfölj är byggd för den hjärna hon har — breddad, automatiserad, rensad från koncentrerade ångerfällor. Fem: han läser neuroanspråk med tre-skikts-testet — mekanism, data, regel — och behåller vördnaden utan helgonförklaring (kapitel 11). Sex: hon har gjort fred med konstruktionen — det är inte hjärnans fel att den är som den är, men det är hennes ansvar att bygga systemet runt den (kapitel 12). Det är hela personen: inte en annan hjärna — ett annat avtal med den. Zweigs bok, läst på AK1A:s sätt, är avtalets manual; träningsslingan från kapitel 12 är dess signatur. Skriv under i dag — kalibreringsloggen från kapitel 3 väntar på sitt första datum."
+          "content": "Porträttet av den medvetne investeraren, i sex drag. Ett: han känner sina system vid namn — när förväntan kickar, när rädslan hinner först, när ångern fryser — och kallar dem vad de är: data, inte orden. Två: hon fattar inga beslut i känslans ögonblick — tidpunkten ägs av regeln, vilan eller kalendern. Tre: han tränär procedurmässigt och mäter process per kvartal — aldrig självbild, aldrig enskilda utfall. Fyra: hennes portfölj är byggd för den hjärna hon har — breddad, automatiserad, rensad från koncentrerade ångerfällor. Fem: han läser neuroanspråk med tre-skikts-testet — mekanism, data, regel — och behåller vördnaden utan helgonförklaring (kapitel 11). Sex: hon har gjort fred med konstruktionen — det är inte hjärnans fel att den är som den är, men det är hennes ansvar att bygga systemet runt den (kapitel 12). Det är hela personen: inte en annan hjärna — ett annat avtal med den. Zweigs bok, läst på AK1A:s sätt, är avtalets manual; träningsslingan från kapitel 12 är dess signatur. Skriv under i dag — kalibreringsloggen från kapitel 3 väntar på sitt första datum."
         },
         {
           "type": "insikt",

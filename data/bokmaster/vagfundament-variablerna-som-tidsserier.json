@@ -5,12 +5,12 @@
   "chapterCount": 12,
   "totalMinutes": 144,
   "title": "Vågfundament — Variablerna som Tidsserier",
-  "summary": "Vågfundamentet är ekosystemets tredje ben: där AKM1 poängsätter tjugo fundamentalvariabler och AK1TS läser prisets vågor, behandlar denna kurs varje variabel som vad den verkligen är — en tidsserie med egen riktning, egen fart och egen rytm, läsbar på fem tidshorisonter från mikro till mega. Resultatet är en matris med tjugo rader och fem kolumner där varje cell bär en av fyra vågklasser: impulsvåg, korrigering, basbygge — eller osatt, den hederliga utdata som säger att underlaget inte räcker och att motorn hellre tiger än gissar. Kursen lär ut hierarkin cell till variabel till kategori till helhet, konsten att läsa mönster och kluster i matrisen, divergensen mellan fundamental våg och prisvåg (AK1TS-korsningen), portföljaggregering som idé, AI-protokollet som tvingar vår AI att citera celler exakt — och ett helt kapitel åt motståndaren som hävdar att fundamental data inte kan ha vågor alls. Motorns exakta klassificeringsregler är labbets interna know-how; det denna kurs lär ut är det som kan och ska läras ut: hur du läser och tolkar vågklasserna.",
+  "summary": "Vågfundamentet är ekosystemets tredje ben: där AKM1 poängsätter tjugo fundamentalvariabler och AK1TS läser prisets vågör, behandlar denna kurs varje variabel som vad den verkligen är — en tidsserie med egen riktning, egen fart och egen rytm, läsbar på fem tidshorisonter från mikro till mega. Resultatet är en matris med tjugo rader och fem kolumner där varje cell bär en av fyra vågklasser: impulsvåg, korrigering, basbygge — eller osatt, den hederliga utdata som säger att underlaget inte räcker och att motorn hellre tiger än gissar. Kursen lär ut hierarkin cell till variabel till kategori till helhet, konsten att läsa mönster och kluster i matrisen, divergensen mellan fundamental våg och prisvåg (AK1TS-korsningen), portföljaggregering som idé, AI-protokollet som tvingar vår AI att citera celler exakt — och ett helt kapitel åt motståndaren som hävdar att fundamental data inte kan ha vågör alls. Motorns exakta klassificeringsregler är labbets interna know-how; det denna kurs lär ut är det som kan och ska läras ut: hur du läser och tolkar vågklasserna.",
   "minutes": 12,
   "xp": 2500,
   "level": "",
   "learn": "Efter kursen kan du: förklara varför en poängsatt variabel är en stillbild och vad tidsserietänket tillför; använda de fem horisontnamnen mikro, kort, medellång, lång och mega som begrepp — perspektiv från det närmaste nuet till hela tillgängliga historiken — utan att förväxla dem med kalenderrutor; skilja vågklasserna impulsvåg, korrigering och basbygge åt, känna deras psykologi och översätta en klass till mening per variabel (en impulsvåg i skulden är inte goda nyheter, en korrigering i värderingen är inte dåliga); behandla osatt som en styrka och en arbetsmarkering i stället för ett fel; läsa matrisen hierarkiskt — cell, variabel, kategori, helhet — och känna igen kluster, kontraster, väntrum och tomma fläckar; formulera divergensen mellan fundamental våg och prisvåg som en studieinbjudan, aldrig en signal; tänka portföljaggregering som viktad cellvis sammanläggning; redogöra för motståndarens argument — fundamental analys är nivåer, kvartalsdata är brusig, leverantörshistoriken är kort — tillsammans med våra medgivanden; granska AI:s cellciteringar mot protokollet; och köra ett komplett arbetsflöde på /vagfundament med journal och månadsrytm.",
-  "why": "Efter AKM1 (den kontroversiella modellen) och AK1TS (våglärans hierarki) återstod en strukturell lucka i ekosystemet: fundamentals behandlades som ögonblicksbilder medan priset fick historia. Men en ROE på tjugo procent är bara ett tal — banan dit, med bruttomarginalen som breddar och skuldsättningen som smalnar, är en berättelse. Vågfundamentet bygger den berättelsen deterministiskt: samma data ger alltid samma vågklasser, och när data inte räcker visas osatt i stället för en gissning. Kursen behövs eftersom läsning av en matris med hundra celler är ett hantverk — hierarki, mönster, kontraster, divergens — och eftersom ärligheten kräver att motståndarens starkaste invändning (fundamental data kan inte ha vågor) formuleras bättre här än hos motståndaren själv. Konkret reglering: motorns exakta klassificeringsregler är intern know-how och nämns därför aldrig i kursen; det vi lär ut är hur man läser och tolkar vågklasserna.",
+  "why": "Efter AKM1 (den kontroversiella modellen) och AK1TS (våglärans hierarki) återstod en strukturell lucka i ekosystemet: fundamentals behandlades som ögonblicksbilder medan priset fick historia. Men en ROE på tjugo procent är bara ett tal — banan dit, med bruttomarginalen som breddar och skuldsättningen som smalnar, är en berättelse. Vågfundamentet bygger den berättelsen deterministiskt: samma data ger alltid samma vågklasser, och när data inte räcker visas osatt i stället för en gissning. Kursen behövs eftersom läsning av en matris med hundra celler är ett hantverk — hierarki, mönster, kontraster, divergens — och eftersom ärligheten kräver att motståndarens starkaste invändning (fundamental data kan inte ha vågör) formuleras bättre här än hos motståndaren själv. Konkret reglering: motorns exakta klassificeringsregler är intern know-how och nämns därför aldrig i kursen; det vi lär ut är hur man läser och tolkar vågklasserna.",
   "chapters_list": [
     {
       "num": 1,
@@ -59,7 +59,7 @@
     },
     {
       "num": 10,
-      "title": "Kontroversen — fundamental data kan inte ha vågor",
+      "title": "Kontroversen — fundamental data kan inte ha vågör",
       "minutes": 12
     },
     {
@@ -220,7 +220,7 @@
       "num": 3,
       "minutes": 12,
       "title": "De fem horisonterna — från mikro till mega, som begrepp",
-      "intro": "En serie kan läsas på många avstånd, och avståndet avgör vad man ser. Vågfundamentet ger varje variabel fem namngivna perspektiv: mikro, kort, medellång, lång och mega. I denna kurs behandlas de som begrepp — namn på frågor, inte kalenderrutor att memorera. Det är medvetet: det du behöver bära med dig är skillnaden i synvinkel, inte en tabell över fönster.",
+      "intro": "En serie kan läsas på många avstånd, och avståndet avgör vad man ser. Vågfundamentet ger varje variabel fem namngivna perspektiv: mikro, kort, medellång, lång och mega. I denna kurs behandlas de som begrepp — namn på frågör, inte kalenderrutor att memorera. Det är medvetet: det du behöver bära med dig är skillnaden i synvinkel, inte en tabell över fönster.",
       "blocks": [
         {
           "type": "text",
@@ -232,7 +232,7 @@
         },
         {
           "type": "text",
-          "content": "Ett varnande ord, lärt av erfarenhet: blanda inte ihop horisont med svårighet. Mikro är inte enklast och mega inte svårast — de svarar på olika frågor och kräver olika tålamod av underlaget. Ju längre horisont, desto mer historik krävs för att kunna säga något alls; ett ungt bolag kan ha ett tydligt mikro-läge och ett helt tyst mega-läge, och det är inte ett fel i matrisen utan en egenskap hos verkligheten. Där historiken inte räcker finns bara ett ärligt svar — och det svaret har ett eget kapitel i denna kurs."
+          "content": "Ett varnande ord, lärt av erfarenhet: blanda inte ihop horisont med svårighet. Mikro är inte enklast och mega inte svårast — de svarar på olika frågör och kräver olika tålamod av underlaget. Ju längre horisont, desto mer historik krävs för att kunna säga något alls; ett ungt bolag kan ha ett tydligt mikro-läge och ett helt tyst mega-läge, och det är inte ett fel i matrisen utan en egenskap hos verkligheten. Där historiken inte räcker finns bara ett ärligt svar — och det svaret har ett eget kapitel i denna kurs."
         },
         {
           "type": "insikt",
@@ -244,7 +244,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fem horisonter — fem frågor till samma serie\",\"rader\":[[\"Horisont\",\"Frågan\",\"Var läget lever\"],[\"Mikro\",\"Vad gör variabeln just nu?\",\"Det närmaste nuet i rapportströmmen\"],[\"Kort\",\"Vad har hänt på senare tid?\",\"Den färskare årsrytmen\"],[\"Medellång\",\"Börjar det bli en trend?\",\"Årsdata som samlar tyngd\"],[\"Lång\",\"Vad säger konjunktursvängningen?\",\"Hela upp- och nedgångar\"],[\"Mega\",\"Vad säger hela historiken?\",\"Allt tillgängligt underlag\"]]}"
+          "content": "{\"rubrik\":\"Fem horisonter — fem frågör till samma serie\",\"rader\":[[\"Horisont\",\"Frågan\",\"Var läget lever\"],[\"Mikro\",\"Vad gör variabeln just nu?\",\"Det närmaste nuet i rapportströmmen\"],[\"Kort\",\"Vad har hänt på senare tid?\",\"Den färskare årsrytmen\"],[\"Medellång\",\"Börjar det bli en trend?\",\"Årsdata som samlar tyngd\"],[\"Lång\",\"Vad säger konjunktursvängningen?\",\"Hela upp- och nedgångar\"],[\"Mega\",\"Vad säger hela historiken?\",\"Allt tillgängligt underlag\"]]}"
         },
         {
           "type": "visuell",
@@ -433,7 +433,7 @@
       "num": 6,
       "minutes": 12,
       "title": "Hierarkin — cell, variabel, kategori, helhet",
-      "intro": "Tjugo variabler gånger fem horisonter är hundra celler — för många för huvudet, precis lagå för en matris. Lösningen är en hierarki i fyra steg: cellen, variabeln, kategorin, helheten. Detta kapitel lär ut hur matrisen byggs uppåt och hur den ska läsas nedåt — och hur den håller kontakten med AKM1:s vikter.",
+      "intro": "Tjugo variabler gånger fem horisonter är hundra celler — för många för huvudet, precis lägå för en matris. Lösningen är en hierarki i fyra steg: cellen, variabeln, kategorin, helheten. Detta kapitel lär ut hur matrisen byggs uppåt och hur den ska läsas nedåt — och hur den håller kontakten med AKM1:s vikter.",
       "blocks": [
         {
           "type": "text",
@@ -445,7 +445,7 @@
         },
         {
           "type": "text",
-          "content": "Så läsningen — som ska ske i omvänd ordning mot bygget. Börja med helhetsraden: vad säger den viktade fundamentala bilden per horisont? Zooma sedan in i den kategori som pekar längst ifrån de andra, eller den som förvånar dig. Gå därefter till variabelraderna i den kategorin och leta upp vilka rader som driver. Landa sist i cellerna — de enskilda observationer som förklarar resten. Fyra steg, från karta till gata. Det är inte en ceremoni utan en attentionsekonomi: hundra celler är oöverblickbara, en helhetsrad med sju kategorital är det inte. Hierarkins jobb är att se till att ditt öga börjar där informationen är tätast — och slutar där den är minst."
+          "content": "Så läsningen — som ska ske i omvänd ordning mot bygget. Börja med helhetsraden: vad säger den viktade fundamentala bilden per horisont? Zooma sedan in i den kategori som pekar längst ifrån de andra, eller den som förvånär dig. Gå därefter till variabelraderna i den kategorin och leta upp vilka rader som driver. Landa sist i cellerna — de enskilda observationer som förklarar resten. Fyra steg, från karta till gata. Det är inte en ceremoni utan en attentionsekonomi: hundra celler är oöverblickbara, en helhetsrad med sju kategorital är det inte. Hierarkins jobb är att se till att ditt öga börjar där informationen är tätast — och slutar där den är minst."
         },
         {
           "type": "insikt",
@@ -504,7 +504,7 @@
       "num": 7,
       "minutes": 12,
       "title": "Att läsa matrisen — mönster, kluster, tomma fläckar",
-      "intro": "En ifylld matris är inte en checklista att bocka av utan en väderkarta för bolagets fundamentals. Kartan ska inte läsas cell för cell utan system för system: kluster som bildar klimat, kontraster som ställer frågor, väntrum som samlar kraft och tomma fläckar som pekar ut arbete. Detta kapitel är läskonsten.",
+      "intro": "En ifylld matris är inte en checklista att bocka av utan en väderkarta för bolagets fundamentals. Kartan ska inte läsas cell för cell utan system för system: kluster som bildar klimat, kontraster som ställer frågör, väntrum som samlar kraft och tomma fläckar som pekar ut arbete. Detta kapitel är läskonsten.",
       "blocks": [
         {
           "type": "text",
@@ -512,7 +512,7 @@
         },
         {
           "type": "text",
-          "content": "Läs sedan kolumner och kluster. En kolumn är bolagets fundamentals på ett avstånd: en hel kolumn i impulsvåg är samordnad förbättring — sällsynt, och ofta tidigt i en bolagscykel; en kolumn i korrigering är samordnad försämring, och den vill du se tidigt. Ännu mer informationsbärande är kontrasterna, eftersom de ställer frågor åt dig: är lönsamheten i impulsvåg medan värderingen korrigera? Bygger stabiliteten bas medan tillväxten växer? Sådana kombinationer — rakt ur labbets egen presentationslogik — är inbjudningar att fråga varför, inte slutsatser att handla på. Klustret slår cellen: en ensam grön ruta är en anekdot, en grön kategori är ett klimat."
+          "content": "Läs sedan kolumner och kluster. En kolumn är bolagets fundamentals på ett avstånd: en hel kolumn i impulsvåg är samordnad förbättring — sällsynt, och ofta tidigt i en bolagscykel; en kolumn i korrigering är samordnad försämring, och den vill du se tidigt. Ännu mer informationsbärande är kontrasterna, eftersom de ställer frågör åt dig: är lönsamheten i impulsvåg medan värderingen korrigera? Bygger stabiliteten bas medan tillväxten växer? Sådana kombinationer — rakt ur labbets egen presentationslogik — är inbjudningar att fråga varför, inte slutsatser att handla på. Klustret slår cellen: en ensam grön ruta är en anekdot, en grön kategori är ett klimat."
         },
         {
           "type": "text",
@@ -575,7 +575,7 @@
       "num": 8,
       "minutes": 12,
       "title": "Divergens — fundamental våg möter prisvåg",
-      "intro": "Här möts ekosystemets två vågvärldar: AK1TS läser prisets vågor, Vågfundamentet läser variablernas. Ofta säger de samma sak — och det är tråkigt nog det minst intressanta fallet. Kursens klimax är ögonblicket då de skiljer sig åt, för då blir den verkligt viktiga frågan synlig: vem håller på att ha fel, och vad krävs för att de ska mötas igen?",
+      "intro": "Här möts ekosystemets två vågvärldar: AK1TS läser prisets vågör, Vågfundamentet läser variablernas. Ofta säger de samma sak — och det är tråkigt nog det minst intressanta fallet. Kursens klimax är ögonblicket då de skiljer sig åt, för då blir den verkligt viktiga frågan synlig: vem håller på att ha fel, och vad krävs för att de ska mötas igen?",
       "blocks": [
         {
           "type": "text",
@@ -587,7 +587,7 @@
         },
         {
           "type": "text",
-          "content": "Konvergensen är alltså inte alltid lycka och divergensen inte alltid larm — de fyra rutorna i pris gånger fundamental innehåller fyra olika studiefrågor, och nyansen ligger i hur frågorna formuleras. En gemensam uppgång förtjänar frågan vad som kan knäcka samstämmigheten; en gemensam nedgång förtjänar frågan hur mycket som redan är prissatt. Och en praktisk iakttagelse från läsning av många matriser: ju kortare horisont, desto oftare bråkar pris och fundament — och desto mindre bör det väga i dina slutsatser. Långsamma divergenser är de som betyder något; snabba är oftare bara brus i två serier som pulserar olika. Så härled hierarkin även här: läs korsningen uppifrån och ner, från långsamt till snabbt — aldrig tvärtom."
+          "content": "Konvergensen är alltså inte alltid lycka och divergensen inte alltid larm — de fyra rutorna i pris gånger fundamental innehåller fyra olika studiefrågör, och nyansen ligger i hur frågorna formuleras. En gemensam uppgång förtjänär frågan vad som kan knäcka samstämmigheten; en gemensam nedgång förtjänär frågan hur mycket som redan är prissatt. Och en praktisk iakttagelse från läsning av många matriser: ju kortare horisont, desto oftare bråkar pris och fundament — och desto mindre bör det väga i dina slutsatser. Långsamma divergenser är de som betyder något; snabba är oftare bara brus i två serier som pulserar olika. Så härled hierarkin även här: läs korsningen uppifrån och ner, från långsamt till snabbt — aldrig tvärtom."
         },
         {
           "type": "insikt",
@@ -646,15 +646,15 @@
       "num": 9,
       "minutes": 12,
       "title": "Portföljen — från varje aktie för sig till helheten",
-      "intro": "En matris per aktie besvarar frågor om aktien. Men du äger inte aktier — du äger en portfölj, och portföljen har egenskaper som inget enskilt innehav avslöjar. Detta kapitel behandlar portföljaggregeringen som idé: vad som händer när cellerna viktsammanläggs över alla innehav, och vilka frågor som bara den sammanlagda bilden besvarar.",
+      "intro": "En matris per aktie besvarar frågör om aktien. Men du äger inte aktier — du äger en portfölj, och portföljen har egenskaper som inget enskilt innehav avslöjar. Detta kapitel behandlar portföljaggregeringen som idé: vad som händer när cellerna viktsammanläggs över alla innehav, och vilka frågör som bara den sammanlagda bilden besvarar.",
       "blocks": [
         {
           "type": "text",
-          "content": "Idén är lika enkel som konsekvenserna är djupa: varje innehav bidrar med sina celler, viktade med innehavets storlek, och portföljen får därmed sin egen matrisbild — rad för rad, horisont för horisont. En liten position påverkar bilden lite; en dominant position sätter bilden. Det är inte en svaghet utan en sanning om ägande: din portföljs fundamentala vågor är i praktiken dina största innehavs vågor, och den viktade bilden visar det utan att dölja det bakom en jämlikhet som inte finns. Aggregeringen är alltså hederlig på samma villkor som allt annat i ekosystemet — den visar vad som gäller, inte vad man önskar gällde."
+          "content": "Idén är lika enkel som konsekvenserna är djupa: varje innehav bidrar med sina celler, viktade med innehavets storlek, och portföljen får därmed sin egen matrisbild — rad för rad, horisont för horisont. En liten position påverkar bilden lite; en dominant position sätter bilden. Det är inte en svaghet utan en sanning om ägande: din portföljs fundamentala vågör är i praktiken dina största innehavs vågör, och den viktade bilden visar det utan att dölja det bakom en jämlikhet som inte finns. Aggregeringen är alltså hederlig på samma villkor som allt annat i ekosystemet — den visar vad som gäller, inte vad man önskar gällde."
         },
         {
           "type": "text",
-          "content": "Vad avslöjar den sammanlagda bilden som enskilda bilder inte gör? Framför allt gemensamma faktorer. Om hela portföljens värderingskategori korregerar samtidigt äger du inte fem separata problem — du äger ett gemensamt: en exponering mot samma slags risk, travad i flera innehav som ser olika ut på ytan. Om lönsamhetskategorin samlar impulser över i princip alla innehav rider portföljen en gemensam våg av marginalförbättring — och då är den också sårbar för vad som vänder den. Frågan växlar alltså från vilka aktier äger jag? till vilka vågor äger jag? — och det är en betydligt farligare fråga, i bemärkelsen att den når det som faktiskt kan skada dig."
+          "content": "Vad avslöjar den sammanlagda bilden som enskilda bilder inte gör? Framför allt gemensamma faktorer. Om hela portföljens värderingskategori korregerar samtidigt äger du inte fem separata problem — du äger ett gemensamt: en exponering mot samma slags risk, travad i flera innehav som ser olika ut på ytan. Om lönsamhetskategorin samlar impulser över i princip alla innehav rider portföljen en gemensam våg av marginalförbättring — och då är den också sårbar för vad som vänder den. Frågan växlar alltså från vilka aktier äger jag? till vilka vågör äger jag? — och det är en betydligt farligare fråga, i bemärkelsen att den når det som faktiskt kan skada dig."
         },
         {
           "type": "text",
@@ -662,7 +662,7 @@
         },
         {
           "type": "insikt",
-          "content": "Du är din viktnings vågor. Portföljaggregeringen flyttar frågan från vilka aktier äger jag till vilka vågor äger jag — och svaret på den senare frågan är nästan alltid mer oväntat, eftersom få aktiesparare någonsin har sett sitt ägande som ett klimat."
+          "content": "Du är din viktnings vågor. Portföljaggregeringen flyttar frågan från vilka aktier äger jag till vilka vågör äger jag — och svaret på den senare frågan är nästan alltid mer oväntat, eftersom få aktiesparare någonsin har sett sitt ägande som ett klimat."
         },
         {
           "type": "utmaning",
@@ -670,7 +670,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Frågor som bara portföljvyn besvarar\",\"rader\":[[\"Fråga\",\"Var svaret syns\",\"Vad det inte är\"],[\"Vilka vågor dominerar mitt ägande?\",\"Helhetsraden per horisont\",\"Inte en köp- eller säljplan\"],[\"Är en risk gemensam för flera innehav?\",\"Kluster i aggregerade kategorier\",\"Inte en korrelationsberäkning\"],[\"Drar ett enskilt innehav åt allt?\",\"Viktingens effekt på raderna\",\"Inte en uppmaning att rebalansera\"],[\"Var saknar jag underlag?\",\"Osatta kluster i portföljen\",\"Inte ett fel i motorn\"]]}"
+          "content": "{\"rubrik\":\"Frågör som bara portföljvyn besvarar\",\"rader\":[[\"Fråga\",\"Var svaret syns\",\"Vad det inte är\"],[\"Vilka vågör dominerar mitt ägande?\",\"Helhetsraden per horisont\",\"Inte en köp- eller säljplan\"],[\"Är en risk gemensam för flera innehav?\",\"Kluster i aggregerade kategorier\",\"Inte en korrelationsberäkning\"],[\"Drar ett enskilt innehav åt allt?\",\"Viktingens effekt på raderna\",\"Inte en uppmaning att rebalansera\"],[\"Var saknar jag underlag?\",\"Osatta kluster i portföljen\",\"Inte ett fel i motorn\"]]}"
         },
         {
           "type": "visuell",
@@ -716,12 +716,12 @@
     {
       "num": 10,
       "minutes": 12,
-      "title": "Kontroversen — fundamental data kan inte ha vågor",
+      "title": "Kontroversen — fundamental data kan inte ha vågör",
       "intro": "Vågfundamentets starkaste motståndare finns inte hos chartisterna utan mitt i den mainstream som kursen vill nå: fundamental analys, heter det, är studiet av nivåer — och nivåer har inga vågor. Detta kapitel låter motståndaren tala färdigt i bästa form, redogör för varför AK1A ändå tänker som det gör — och listar medgivandena utan försköning. Det är kursens tyngsta kapitel, avsiktligt.",
       "blocks": [
         {
           "type": "text",
-          "content": "Motståndarens argument, formulerat så starkt det går. Fundamental analys handlar om nivåer: ett P/E är ett förhållande, en marginal är en andel, en balansräkning är ett läge vid en tidpunkt. Vågor hör prisvärlden till — där finns kontinuerlig handel, tusentals observationer per dag, en serie mjuk nog att böjas. Fundamental data däremot anländer i diskreta paket per rapport, revideras i efterhand, påverkas av räkenskapsval och säsong, och beskriver ett förflutet som redan hänt. Att lägga vågor på sådan data är att klä prisanalys i bokföringskläder — snyggt att se på, dålig fysik. Och datahistoriken? Kort, hos de flesta leverantörer påfallande kort, särskilt utanför de största börserna. Moat och katalysatorer är dessutom bedömningar, inte serier — det finns ingen våg att läsa i en uppskattning."
+          "content": "Motståndarens argument, formulerat så starkt det går. Fundamental analys handlar om nivåer: ett P/E är ett förhållande, en marginal är en andel, en balansräkning är ett läge vid en tidpunkt. Vågör hör prisvärlden till — där finns kontinuerlig handel, tusentals observationer per dag, en serie mjuk nog att böjas. Fundamental data däremot anländer i diskreta paket per rapport, revideras i efterhand, påverkas av räkenskapsval och säsong, och beskriver ett förflutet som redan hänt. Att lägga vågör på sådan data är att klä prisanalys i bokföringskläder — snyggt att se på, dålig fysik. Och datahistoriken? Kort, hos de flesta leverantörer påfallande kort, särskilt utanför de största börserna. Moat och katalysatorer är dessutom bedömningar, inte serier — det finns ingen våg att läsa i en uppskattning."
         },
         {
           "type": "text",
@@ -729,11 +729,11 @@
         },
         {
           "type": "text",
-          "content": "Medgivandena, i klartext, så att de aldrig glöms bort i marknadsföringen. Ett: kvartalsdata är brusig — enskilda rapporter innehåller engångsposter, säsongseffekter och revideringar, och en enstaka cells klass kan därför vara brusets verk, inte verklighetens. Två: historiken hos dataleverantörerna är kort — långa horisonter blir ofta glesa eller osatta, och ju yngre bolag, desto tystare matris. Tre: vissa variabler blir aldrig vågor — moat och katalysatorer förblir i praktiken manuella AKM1-bedömningar, och matrisen säger det genom streck och punkter i stället för att låtsas. Fyra: klassificeringsreglerna är valda kontrakt, internt know-how — inte naturkonstanter, och de ska inte förväxlas med sanningar. Fem: ingen vågklass i matrisen bär prediktiv garanti — verktyget strukturerar observationer, det profeterar inte. Den som läser detta och ändå finner verktyget värdefullt har förstått det rätt; den som finner det meningslöst har åtminstone avfärdat det på rätt grunder — och det är också en seger för ärligheten."
+          "content": "Medgivandena, i klartext, så att de aldrig glöms bort i marknadsföringen. Ett: kvartalsdata är brusig — enskilda rapporter innehåller engångsposter, säsongseffekter och revideringar, och en enstaka cells klass kan därför vara brusets verk, inte verklighetens. Två: historiken hos dataleverantörerna är kort — långa horisonter blir ofta glesa eller osatta, och ju yngre bolag, desto tystare matris. Tre: vissa variabler blir aldrig vågör — moat och katalysatorer förblir i praktiken manuella AKM1-bedömningar, och matrisen säger det genom streck och punkter i stället för att låtsas. Fyra: klassificeringsreglerna är valda kontrakt, internt know-how — inte naturkonstanter, och de ska inte förväxlas med sanningar. Fem: ingen vågklass i matrisen bär prediktiv garanti — verktyget strukturerar observationer, det profeterar inte. Den som läser detta och ändå finner verktyget värdefullt har förstått det rätt; den som finner det meningslöst har åtminstone avfärdat det på rätt grunder — och det är också en seger för ärligheten."
         },
         {
           "type": "insikt",
-          "content": "Motståndarens starkaste vapen är medgivandena — så vi förekommer dem. En matris som säger osatt när data tryter, streck när nivå inte kan beräknas, och inga prognoser någonsin, är svårare att angripa än en som lovar vågor den inte kan bevisa. Ärligheten är inte försvaret — den är produkten."
+          "content": "Motståndarens starkaste vapen är medgivandena — så vi förekommer dem. En matris som säger osatt när data tryter, streck när nivå inte kan beräknas, och inga prognoser någonsin, är svårare att angripa än en som lovar vågör den inte kan bevisa. Ärligheten är inte försvaret — den är produkten."
         },
         {
           "type": "utmaning",
@@ -741,7 +741,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kontroversen — argument, svar, medgivanden\",\"rader\":[[\"Motståndarens argument\",\"Vårt svar\",\"Vårt medgivande\"],[\"Fundamental analys handlar om nivåer\",\"Varje nivå som observeras upprepade gånger är en serie — rörelsen kan namnges med disciplin\",\"Många förblir nivåer i praktiken\"],[\"Kvartalsdata är brusig och revideras\",\"Därför kräver klassningen determinism — och tystnad när underlaget är tunt\",\"Bruset är verkligt; osatta celler är dess pris\"],[\"Dataleverantörernas historik är kort\",\"Motorn säger osatt i stället för att sträcka serien\",\"Långa horisonter blir ofta glesa\"],[\"Moat och katalysatorer är bedömningar\",\"De hanteras som nivåer och manuella poäng — inte påtvingade vågor\",\"Vissa rader blir aldrig vågor\"],[\"Vågor lovar för mycket\",\"Ingen vågklass bär prediktiv garanti — verktyget strukturerar\",\"Vi kan inte bevisa prognosförmåga\"]]}"
+          "content": "{\"rubrik\":\"Kontroversen — argument, svar, medgivanden\",\"rader\":[[\"Motståndarens argument\",\"Vårt svar\",\"Vårt medgivande\"],[\"Fundamental analys handlar om nivåer\",\"Varje nivå som observeras upprepade gånger är en serie — rörelsen kan namnges med disciplin\",\"Många förblir nivåer i praktiken\"],[\"Kvartalsdata är brusig och revideras\",\"Därför kräver klassningen determinism — och tystnad när underlaget är tunt\",\"Bruset är verkligt; osatta celler är dess pris\"],[\"Dataleverantörernas historik är kort\",\"Motorn säger osatt i stället för att sträcka serien\",\"Långa horisonter blir ofta glesa\"],[\"Moat och katalysatorer är bedömningar\",\"De hanteras som nivåer och manuella poäng — inte påtvingade vågör\",\"Vissa rader blir aldrig vågör\"],[\"Vågör lovar för mycket\",\"Ingen vågklass bär prediktiv garanti — verktyget strukturerar\",\"Vi kan inte bevisa prognosförmåga\"]]}"
         },
         {
           "type": "visuell",
@@ -753,9 +753,9 @@
           "q": "Vad är motståndarens kärnpåstående?",
           "alternativ": [
             "Att fundamental analys är bättre än teknisk",
-            "Att fundamental data är nivåer — diskret, reviderad, brusig — och därför inte kan bära vågor",
+            "Att fundamental data är nivåer — diskret, reviderad, brusig — och därför inte kan bära vågör",
             "Att AKM1 har för många variabler",
-            "Att vågor bara finns i valutor"
+            "Att vågör bara finns i valutor"
           ],
           "ratt": 1,
           "tips": "Vad skiljer en rapportpunkts karaktär från en handlad prissäries?"
@@ -766,7 +766,7 @@
             "Att motståndaren aldrig läst kursen",
             "Att en variabel som observeras upprepade gånger är en serie — och att frågan är om rörelsen namnges med disciplin eller ignoreras",
             "Att fundamental data är kontinuerlig egentligen",
-            "Att alla kritiker har fel om prisvågor med"
+            "Att alla kritiker har fel om prisvågör med"
           ],
           "ratt": 1,
           "tips": "Argumentet bevisar för mycket — vad följer av att även diskreta observationer bildar serier?"
@@ -800,7 +800,7 @@
         },
         {
           "type": "text",
-          "content": "Hur använder du det här? Be om celler, inte om domar: vad säger V10 på lång? Vilka variabler är osatta på mega, och vad beror det på? Visa mig kontrasten mellan lönsamhet och värdering på medellång. Sådana frågor spelar protokollet i händerna — och du kan alltid granska svaret mot matrisen, vilket är hela poängen med en citerande AI: kontrollen är byggd in. I labbets interna numrering av principer kallas principen P7 — AI:en citerar celler exakt — men du behöver inte minnas någon kod; du behöver bara skilja när ett AI-svar är en citering och när det är en skapelse. Den färdigheten håller längre än vilken modellversion som helst, och den fungerar lika bra mot alla andra system som lovar att läsa data åt dig."
+          "content": "Hur använder du det här? Be om celler, inte om domar: vad säger V10 på lång? Vilka variabler är osatta på mega, och vad beror det på? Visa mig kontrasten mellan lönsamhet och värdering på medellång. Sådana frågör spelar protokollet i händerna — och du kan alltid granska svaret mot matrisen, vilket är hela poängen med en citerande AI: kontrollen är byggd in. I labbets interna numrering av principer kallas principen P7 — AI:en citerar celler exakt — men du behöver inte minnas någon kod; du behöver bara skilja när ett AI-svar är en citering och när det är en skapelse. Den färdigheten håller längre än vilken modellversion som helst, och den fungerar lika bra mot alla andra system som lovar att läsa data åt dig."
         },
         {
           "type": "insikt",
@@ -812,7 +812,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"AI-protokollet — gör och gör aldrig\",\"rader\":[[\"AI:n gör\",\"AI:n gör aldrig\"],[\"Citerar celler exakt med variabel och horisont\",\"Parafraserar impulsvåg till starkt köpläge\"],[\"Säger osatt när cellen är osatt\",\"Fyller tomma celler med sannolika värden\"],[\"Hänvisar till matrisen som källa\",\"Extrapolerar bortom vad cellerna säger\"],[\"Formulerar studiefrågor\",\"Omvandlar divergenser till råd\"]]}"
+          "content": "{\"rubrik\":\"AI-protokollet — gör och gör aldrig\",\"rader\":[[\"AI:n gör\",\"AI:n gör aldrig\"],[\"Citerar celler exakt med variabel och horisont\",\"Parafraserar impulsvåg till starkt köpläge\"],[\"Säger osatt när cellen är osatt\",\"Fyller tomma celler med sannolika värden\"],[\"Hänvisar till matrisen som källa\",\"Extrapolerar bortom vad cellerna säger\"],[\"Formulerar studiefrågör\",\"Omvandlar divergenser till råd\"]]}"
         },
         {
           "type": "visuell",
@@ -859,15 +859,15 @@
       "num": 12,
       "minutes": 12,
       "title": "Praktiken — använd Vågfundamentet och portföljsektionen",
-      "intro": "Sista kapitlet lämnar läsningen och går till verktyget: arbetsflödet från demomatris till egen journal. Här samlas kursens trådar till en vana — och till kursens eget slutmål, som inte är en analys utan en reflex: att fråga sedan när? om varje siffra du möter.",
+      "intro": "Sista kapitlet lämnar läsningen och går till verktyget: arbetsflödet från demomatris till egen journal. Här samlas kursens trådär till en vana — och till kursens eget slutmål, som inte är en analys utan en reflex: att fråga sedan när? om varje siffra du möter.",
       "blocks": [
         {
           "type": "text",
-          "content": "Börja offentligt och utan konto: sidan /vagfundament visar demomatrisen med dess exempelaktie, och där kan du träna hela kursen gratis. Arbetsordningen är den tränade hierarkin: läs först sammanfattningen — antalet impulsvågor, korrigeringar, basbyggen och osatta celler ihela matrisen — för att få klimatet på en rad. Gå sedan till helhetsraden och kategoritalen per horisont, välj ut den kategori som pekar längst ifrån de andra, och följ dess variabelrader ner till de celler som driver. Hovra över celler för att få detaljer om underlaget. Fem minuter, en genomläsning — och du har övat allt sedan kapitel tre."
+          "content": "Börja offentligt och utan konto: sidan /vagfundament visar demomatrisen med dess exempelaktie, och där kan du träna hela kursen gratis. Arbetsordningen är den tränade hierarkin: läs först sammanfattningen — antalet impulsvågör, korrigeringar, basbyggen och osatta celler ihela matrisen — för att få klimatet på en rad. Gå sedan till helhetsraden och kategoritalen per horisont, välj ut den kategori som pekar längst ifrån de andra, och följ dess variabelrader ner till de celler som driver. Hovra över celler för att få detaljer om underlaget. Fem minuter, en genomläsning — och du har övat allt sedan kapitel tre."
         },
         {
           "type": "text",
-          "content": "När formen sitter: kör egna innehav. Medlemmar kan köra matrisen för sina aktier och se portföljen samlad i Min portfölj — och där gäller samma läsordning som för en aktie, fast med den viktade bilden och dess egna frågor från kapitel nio. Bygg en liten kalibreringsritual i varje genomgång: gissa först, kör sedan. Skriv ned — innan du tittar — vad du tror om en variabels vågprofil och om helhetsradens drag. Jämför. Skillnaderna är dina blinda fläckar, namngivna och daterade, och de är den mest personliga utbytet kursen kan lämna: en karta över var ditt ögonmått behöver motorn mest."
+          "content": "När formen sitter: kör egna innehav. Medlemmar kan köra matrisen för sina aktier och se portföljen samlad i Min portfölj — och där gäller samma läsordning som för en aktie, fast med den viktade bilden och dess egna frågör från kapitel nio. Bygg en liten kalibreringsritual i varje genomgång: gissa först, kör sedan. Skriv ned — innan du tittar — vad du tror om en variabels vågprofil och om helhetsradens drag. Jämför. Skillnaderna är dina blinda fläckar, namngivna och daterade, och de är den mest personliga utbytet kursen kan lämna: en karta över var ditt ögonmått behöver motorn mest."
         },
         {
           "type": "text",

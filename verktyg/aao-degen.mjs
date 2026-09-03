@@ -69,7 +69,22 @@ const A_MAPPA = {
   forlust: "förlust", forluster: "förluster", forlorar: "förlorar", forlorat: "förlorat", forlora: "förlora",
   fordelaktig: "fördelaktig",
   ar: "är", pa: "på",
-  // obs: "ar"→"är" — engelskan saknar ordet "ar"; versalformen AR blockeras nedan
+  // omvänd vokalkorruption (djupkontroll 2026-09-03: 1 500+ förekomster)
+  kopa: "köpa", kopas: "köpas", kopades: "köptes",
+  fragor: "frågor",
+  portfolj: "portfölj", portfoljen: "portföljen", portfoljer: "portföljer", portfoljbyggaren: "portföljbyggaren", portfoljanalys: "portföljanalys", portfoljteori: "portföljteori",
+  rod: "röd", roda: "röda", rott: "rött",
+  eftegerskrift: "efterskrift",
+  secundara: "sekundära", secundar: "sekundär",
+  troskel: "tröskel", trosklar: "trösklar", troskeln: "tröskeln",
+  overlevnad: "överlevnad", uthallighet: "uthållighet",
+  marknar: "marknader",
+  // HALVFORMER (å bevarat, förlorat ä — djupkontrollen 2026-09-03: 1 300+)
+  "köpå": "köpa", "köpås": "köpas",
+  "frågör": "frågor", "frågörs": "frågors",
+  portfolj: "portfölj", portfoljen: "portföljen", portfoljer: "portföljer",
+  portfoljbyggaren: "portföljbyggaren", portfoljanalys: "portföljanalys",
+  portfoljteori: "portföljteori", portfoljens: "portföljens",
 };
 
 // Rensa bort identity-mappningar
@@ -102,7 +117,13 @@ function ersatt(text) {
     }
     if (ord[0] === ord[0].toUpperCase()) return ratt[0].toUpperCase() + ratt.slice(1);
     return ratt;
-  });
+  })
+  // Sammansatta former som ord-gränsregexet inte når: "återköpå aktier",
+  // "antitrust-frågör" (bindestreck), "transaktionsfrågör" (sammansatt).
+  .replace(/återköpå/g, "återköpa")
+  .replace(/Återköpå/g, "Återköpa")
+  .replace(/frågör(?![\w@])/g, "frågor")
+  .replace(/Frågör(?![\w@])/g, "Frågor");
 }
 
 // ── Fält som är text (allt utom dessa nycklar hoppas) ──
@@ -199,6 +220,11 @@ for (const slug of Object.keys(djup)) {
   if (sig.systematisk) pubB++;
 }
 if (!TORRT && pubFix > 0) writeFileSync(PUB, JSON.stringify(djup));
+if (!TORRT) {
+  // DEBUG: verifiera i samma process att skrivningen tog
+  const efter = readFileSync(PUB, "utf8");
+  console.log(`DEBUG skrivit: pubFix=${pubFix} · köpå kvar i fil=${efter.split("köpå").length - 1}`);
+}
 totalFix += pubFix;
 totalB += pubB;
 

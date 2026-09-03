@@ -10,7 +10,7 @@
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan du: förklara Murphys tes — priset är den viktigaste informationen och diagrammet är dess naturliga språk — och skilja den här boken från hans lärobok · läsa vilket diagram som helst med de tre första frågorna: riktning, nivå, bränsle · identifiera trender (högre toppar och lågpunkter), stöd- och motståndszoner och trendlinjer — och veta varför de håller (minne, ankraj, inlåsta positioner) · använda 200-dagarsmedelvärdet som kungslinje och veta exakt var AK1TS-motorn använder MA50 och MA200 i vågklassificeringen · läsa volym och OBV som trendens bränsle och skilja ackumulering från distribution · tolka momentum, RSI och framför allt divergensen — prisets tidigaste varning, kopplad till Vågfundamentets fundamentalvåg · använda candlesticks för timing inom ramen för den större bilden · läsa marknadsbredd, advance/decline-linjen och värmekartor · rotera sektorer med relativa styrka-linjer kopplade till konjunkturcykeln · läsa intermarket-kedjan obligationer–dollar–rävaror–aktier och koppla räntan till V10 och inputpriser till V07 · köra Murphys fulla checklista top-down på egna innehav med grafen som AK1TS-tola · och redogöra för EMH-kritiken, Lo:s medling och AK1A:s determinismkrav — ögat pekar, motorn räknar.",
-  "why": "Bokkanon-post bk-058 kallar boken Murphys mjukaste introduktion till chartläsning — visuell analys för den som inte ska bli trader men vill förstå prisbeteende — och det är exakt den roll hon spelar i ekosystemet: den tillgängliga dörren in till AK1TS för fundamentalanalytikern. Labbets Murphy-lärobokskurs (Technical Analysis of the Financial Markets, 20 kapitel) är encyklopedin; den här kursen är bron — färre verktyg, men de två kapitel som gör boken unik bland introböcker: sektorsrotation och intermarket-analys, som är väderprognosen till varje AKM1-analys. Dessutom är kopplingen till motorn konkret som få: analys-motorn klassificerar vågor med MA50 (Mikro/Kort) och MA200 (Medellång/Lång/Mega), mäter volymtrend med 20/90 dagar och momentum med 5/63/252 — Murphys kungslinje är bokstavligen en rad i labbets kod. Och kontroverskapitlet tar teknikens äldsta angreppspunkt — att mönster är illusioner i brus — på fullt allvar, med Fama, Malkiel och Lo, och landar i den slutsats som gör AK1TS ärligt: samma data ska alltid ge samma celler, och när underlaget inte räcker skrivs osatt — aldrig gissning.",
+  "why": "Bokkanon-post bk-058 kallar boken Murphys mjukaste introduktion till chartläsning — visuell analys för den som inte ska bli trader men vill förstå prisbeteende — och det är exakt den roll hon spelar i ekosystemet: den tillgängliga dörren in till AK1TS för fundamentalanalytikern. Labbets Murphy-lärobokskurs (Technical Analysis of the Financial Markets, 20 kapitel) är encyklopedin; den här kursen är bron — färre verktyg, men de två kapitel som gör boken unik bland introböcker: sektorsrotation och intermarket-analys, som är väderprognosen till varje AKM1-analys. Dessutom är kopplingen till motorn konkret som få: analys-motorn klassificerar vågör med MA50 (Mikro/Kort) och MA200 (Medellång/Lång/Mega), mäter volymtrend med 20/90 dagar och momentum med 5/63/252 — Murphys kungslinje är bokstavligen en rad i labbets kod. Och kontroverskapitlet tar teknikens äldsta angreppspunkt — att mönster är illusioner i brus — på fullt allvar, med Fama, Malkiel och Lo, och landar i den slutsats som gör AK1TS ärligt: samma data ska alltid ge samma celler, och när underlaget inte räcker skrivs osatt — aldrig gissning.",
   "chapters_list": [
     "1. Boken och idén — grafer före formler, priset först",
     "2. Trenden — den första frågan till varje diagram",
@@ -203,7 +203,7 @@
         },
         {
           "type": "insikt",
-          "content": "Stöd och motstånd är prisets minne: nivåer där marknaden tidigare ångrade sig. De är zoner, inte linjer; de förtjänar respekt först när stängning OCH volym bekräftar brottet — och de är som starkast när en fundamental nivå ligger i samma zon."
+          "content": "Stöd och motstånd är prisets minne: nivåer där marknaden tidigare ångrade sig. De är zoner, inte linjer; de förtjänär respekt först när stängning OCH volym bekräftar brottet — och de är som starkast när en fundamental nivå ligger i samma zon."
         },
         {
           "type": "tabell",
@@ -728,11 +728,11 @@
         },
         {
           "type": "insikt",
-          "content": "Fråga inte vad din aktie gör — fråga vad marknaden gör, vad sektorn gör och vad aktien gör MED dem. Tre frågor, i den ordningen: det är hela top-down-traditionen i Murphy-utförande, och A/D-linjen är indexets samvete."
+          "content": "Fråga inte vad din aktie gör — fråga vad marknaden gör, vad sektorn gör och vad aktien gör MED dem. Tre frågör, i den ordningen: det är hela top-down-traditionen i Murphy-utförande, och A/D-linjen är indexets samvete."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Top-down — tre nivåer, tre frågor, tre verktyg\",\"rader\":[[\"Nivå\",\"Fråga\",\"Verktyg\"],[\"Marknaden\",\"trend? pris mot MA200? deltar bredden?\",\"index + A/D-linje + nya toppar/bottnar\"],[\"Sektorn\",\"slår sektorn indexet?\",\"relativ styrka-linje + värmekarta (kapitel 11)\"],[\"Aktien\",\"trend, stöd, volym, momentum?\",\"kapitel 2–9:s verktyg + RS mot sektorn\"]]}"
+          "content": "{\"rubrik\":\"Top-down — tre nivåer, tre frågör, tre verktyg\",\"rader\":[[\"Nivå\",\"Fråga\",\"Verktyg\"],[\"Marknaden\",\"trend? pris mot MA200? deltar bredden?\",\"index + A/D-linje + nya toppar/bottnar\"],[\"Sektorn\",\"slår sektorn indexet?\",\"relativ styrka-linje + värmekarta (kapitel 11)\"],[\"Aktien\",\"trend, stöd, volym, momentum?\",\"kapitel 2–9:s verktyg + RS mot sektorn\"]]}"
         },
         {
           "type": "utmaning",
@@ -933,7 +933,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Tola-bilden, formulerad för labbet: en tola är en tullstation — ett port genom vilket allt måste passera och betala sin tull i form av svar. Grafen är aktieanalysens tola: varje affärsidé, varje AKM1-beräkning, varje katalysatorhypotes ska passera diagrammet och svara på sju frågor innan den blir en position. Murphys egen checklista (från bokens avslutande kapitel) i AK1A-översättning: ett — trendriktning på veckograf (kapitel 2). Två — pris mot 200-dagarskungslinjen: regim (kapitel 6). Tre — närmaste stöd- och motståndszoner (kapitel 3). Fyra — volymkaraktär: bekräftar eller dementerar (kapitel 7). Fem — momentum och divergens (kapitel 8). Sex — relativ styrka mot sektor och index (kapitel 11). Sju — intermarket-vädret (kapitel 12). Svar JA på de tre första är MINIMUM för en lång position; de fyra sista graderar och varnar."
+          "content": "Tola-bilden, formulerad för labbet: en tola är en tullstation — ett port genom vilket allt måste passera och betala sin tull i form av svar. Grafen är aktieanalysens tola: varje affärsidé, varje AKM1-beräkning, varje katalysatorhypotes ska passera diagrammet och svara på sju frågör innan den blir en position. Murphys egen checklista (från bokens avslutande kapitel) i AK1A-översättning: ett — trendriktning på veckograf (kapitel 2). Två — pris mot 200-dagarskungslinjen: regim (kapitel 6). Tre — närmaste stöd- och motståndszoner (kapitel 3). Fyra — volymkaraktär: bekräftar eller dementerar (kapitel 7). Fem — momentum och divergens (kapitel 8). Sex — relativ styrka mot sektor och index (kapitel 11). Sju — intermarket-vädret (kapitel 12). Svar JA på de tre första är MINIMUM för en lång position; de fyra sista graderar och varnar."
         },
         {
           "type": "text",
@@ -953,7 +953,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Den visuella checklistan — sju frågor före varje affär\",\"rader\":[[\"Nr\",\"Fråga\",\"Verktyg\",\"Kapitel\"],[\"1\",\"Vilken riktning på veckografen?\",\"trend — högre toppar/lågpunkter\",\"2\"],[\"2\",\"Pris över stigande 200-dagars?\",\"kungslinjen (motorn: MA200)\",\"6\"],[\"3\",\"Var är närmaste stöd- och motståndszon?\",\"nivåkarta\",\"3\"],[\"4\",\"Bekräftar volymen bilden?\",\"OBV, vol20/vol90\",\"7\"],[\"5\",\"Finns momentum-divergens?\",\"RSI mot toppar\",\"8\"],[\"6\",\"Slår aktien sin sektor? Slår sektorn indexet?\",\"RS-linjer\",\"11\"],[\"7\",\"Vad säger intermarket-vädret?\",\"dollar, räntor, råvaror\",\"12\"]]}"
+          "content": "{\"rubrik\":\"Den visuella checklistan — sju frågör före varje affär\",\"rader\":[[\"Nr\",\"Fråga\",\"Verktyg\",\"Kapitel\"],[\"1\",\"Vilken riktning på veckografen?\",\"trend — högre toppar/lågpunkter\",\"2\"],[\"2\",\"Pris över stigande 200-dagars?\",\"kungslinjen (motorn: MA200)\",\"6\"],[\"3\",\"Var är närmaste stöd- och motståndszon?\",\"nivåkarta\",\"3\"],[\"4\",\"Bekräftar volymen bilden?\",\"OBV, vol20/vol90\",\"7\"],[\"5\",\"Finns momentum-divergens?\",\"RSI mot toppar\",\"8\"],[\"6\",\"Slår aktien sin sektor? Slår sektorn indexet?\",\"RS-linjer\",\"11\"],[\"7\",\"Vad säger intermarket-vädret?\",\"dollar, räntor, råvaror\",\"12\"]]}"
         },
         {
           "type": "utmaning",
@@ -969,7 +969,7 @@
           "q": "Vad betyder bilden grafen som tola?",
           "alternativ": [
             "Att grafen ska förutsäga kursen",
-            "Att varje affärsidé måste passera diagrammet och svara på checklistans frågor innan den blir en position",
+            "Att varje affärsidé måste passera diagrammet och svara på checklistans frågör innan den blir en position",
             "Att AKM1 ska ersättas av diagram",
             "Att tolan är en indikator"
           ],
@@ -1020,7 +1020,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A:s syntes — med medgivandena först, utan krumbukter. Medgivande ett: mönsterläsning UTAN regler är subjektiv — två chartister, två formationer, och ögat ser vad det förväntas se (pareidolia; kapitel 5:s experiment). Medgivande två: det mesta av teknikens litteratur är anekdoter utan kontrollgrupper, och enskilda mönster i enskilda grafer är precis den typ av bevisning EMH-kritiken avfärdar med rätta. Därför syntesen, kursens kärna: vi mäter DETERMINISTISKT. AK1TS-motorn räknar samma data till samma celler varje gång — MA50/MA200, momentum 5/63/252, volymtrend 20/90, fib-zoner, Lucas-fönster — och när underlaget inte räcker skrivs OSA TT, aldrig gissning. Grafen är en DATAYTA — marknadens komprimerade historik — inte en spådom. Vi använder det visuella där det är starkt (regim, riktning, relativ styrka, nivåer, varningar) och vägrar det där det är svagast (frihandsformationer som profetia). Ögat pekar; motorn räknar; AKM1 dömer. Det är den treled som gör Murphys bok läsvärd i ett EMH-århundrade. AKM1-BRYGGAN · ingen enskild variabel — men alla tjugo tjänar på att priset läses deterministiskt. AK1TS-RAD: determinismkravet självt — motorns konstitution: samma in, samma ut; osatt hellre än gissat."
+          "content": "AK1A:s syntes — med medgivandena först, utan krumbukter. Medgivande ett: mönsterläsning UTAN regler är subjektiv — två chartister, två formationer, och ögat ser vad det förväntas se (pareidolia; kapitel 5:s experiment). Medgivande två: det mesta av teknikens litteratur är anekdoter utan kontrollgrupper, och enskilda mönster i enskilda grafer är precis den typ av bevisning EMH-kritiken avfärdar med rätta. Därför syntesen, kursens kärna: vi mäter DETERMINISTISKT. AK1TS-motorn räknar samma data till samma celler varje gång — MA50/MA200, momentum 5/63/252, volymtrend 20/90, fib-zoner, Lucas-fönster — och när underlaget inte räcker skrivs OSA TT, aldrig gissning. Grafen är en DATAYTA — marknadens komprimerade historik — inte en spådom. Vi använder det visuella där det är starkt (regim, riktning, relativ styrka, nivåer, varningar) och vägrar det där det är svagast (frihandsformationer som profetia). Ögat pekar; motorn räknar; AKM1 dömer. Det är den treled som gör Murphys bok läsvärd i ett EMH-århundrade. AKM1-BRYGGAN · ingen enskild variabel — men alla tjugo tjänär på att priset läses deterministiskt. AK1TS-RAD: determinismkravet självt — motorns konstitution: samma in, samma ut; osatt hellre än gissat."
         },
         {
           "type": "insikt",
@@ -1095,7 +1095,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V01–V20 — hela modellen: grafen är täljarens historia (V04–V06), volymens golv (V11, V20) och riskens pris (V10, V19 via ränta och emission); de fundamentala variablerna är det innehåll grafen kommenterar. AK1TS-RAD: hela matrisen — fem horisonter, fem teorier, fyra dimensioner; Murphy-kolumnen är Trend (momentum, MA), Pris (nivåer, fib), Tid (Lucas-fönster, linjers längd) och Brytpunkt (linje- och nivåbrott) — bokens fyra frågor är motorns fyra dimensioner. Sista raden, kursens: grafen är tolan, motorn är måttbandet, AKM1 är domen."
+          "content": "AKM1-BRYGGAN · V01–V20 — hela modellen: grafen är täljarens historia (V04–V06), volymens golv (V11, V20) och riskens pris (V10, V19 via ränta och emission); de fundamentala variablerna är det innehåll grafen kommenterar. AK1TS-RAD: hela matrisen — fem horisonter, fem teorier, fyra dimensioner; Murphy-kolumnen är Trend (momentum, MA), Pris (nivåer, fib), Tid (Lucas-fönster, linjers längd) och Brytpunkt (linje- och nivåbrott) — bokens fyra frågör är motorns fyra dimensioner. Sista raden, kursens: grafen är tolan, motorn är måttbandet, AKM1 är domen."
         },
         {
           "type": "insikt",

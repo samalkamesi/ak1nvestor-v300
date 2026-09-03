@@ -42,7 +42,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Security Analysis föddes ur en kris. Graham & Dodd hade sett hur en hel generation investerare förlorade allt när 1920-talets eufori slog om i depression. Deras slutsats var att marknaden inte saknade information — den saknade metod. Bokens första del, Survey and Approach, lägger därför grunden: analys är en systematisk undersökning av fakta — tillgångar, intäkter, utdelningar och bestämda framtidsutsikter — utförd enligt etablerade principer, inte en konstnärlig känsla för berättelser.\n\nEnligt Graham & Dodd har analysen tre huvudfunktioner. Den beskrivande funktionen ordnar fakta: vad bolaget äger, tjänar och betalar ut. Den kritiskt värderande funktionen granskar om uppgifterna är korrekta, relevanta och fullständiga — är resultatet målat, är balansräkningen skriven ner eller upp? Den selektiva funktionen slutligen jämför värdepapperet mot andra och mot sitt eget pris, och avgör om det förtjänar en plats i portföljen."
+          "content": "Security Analysis föddes ur en kris. Graham & Dodd hade sett hur en hel generation investerare förlorade allt när 1920-talets eufori slog om i depression. Deras slutsats var att marknaden inte saknade information — den saknade metod. Bokens första del, Survey and Approach, lägger därför grunden: analys är en systematisk undersökning av fakta — tillgångar, intäkter, utdelningar och bestämda framtidsutsikter — utförd enligt etablerade principer, inte en konstnärlig känsla för berättelser.\n\nEnligt Graham & Dodd har analysen tre huvudfunktioner. Den beskrivande funktionen ordnar fakta: vad bolaget äger, tjänär och betalar ut. Den kritiskt värderande funktionen granskar om uppgifterna är korrekta, relevanta och fullständiga — är resultatet målat, är balansräkningen skriven ner eller upp? Den selektiva funktionen slutligen jämför värdepapperet mot andra och mot sitt eget pris, och avgör om det förtjänär en plats i portföljen."
         },
         {
           "type": "text",
@@ -62,7 +62,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Analysens tre funktioner enligt Graham & Dodd\",\"rader\":[[\"Funktion\",\"Fråga\",\"Modern AKM1-motsvarighet\"],[\"Beskrivande\",\"Vad äger, tjänar och betalar bolaget?\",\"Faktagrid: V07, V08, V09\"],[\"Kritiskt värderande\",\"Stämmer siffrorna, och hur har de skapats?\",\"Rapportkvalitet: källkritik (V12 som stöd)\"],[\"Selektiv\",\"Är priset lägre än värdet med marginal?\",\"Värdering och marginal: V04–V06 + marginalprövning\"]]}"
+          "content": "{\"rubrik\":\"Analysens tre funktioner enligt Graham & Dodd\",\"rader\":[[\"Funktion\",\"Fråga\",\"Modern AKM1-motsvarighet\"],[\"Beskrivande\",\"Vad äger, tjänär och betalar bolaget?\",\"Faktagrid: V07, V08, V09\"],[\"Kritiskt värderande\",\"Stämmer siffrorna, och hur har de skapats?\",\"Rapportkvalitet: källkritik (V12 som stöd)\"],[\"Selektiv\",\"Är priset lägre än värdet med marginal?\",\"Värdering och marginal: V04–V06 + marginalprövning\"]]}"
         }
       ],
       "quiz": [
@@ -444,7 +444,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Två byggstenar återkommer i bokens kreditanalys: storlek och tillgångsvärde. Storlek är inte status utan statistik — större företag har diversifierade intäktskällor, ordning i finansieringen och överlevnadsförmåga i kriser; enligt Graham & Dodd var en vanlig orsak till falliment att bolaget var för litet för sin bransch. Tillgångsvärdet, å andra sidan, varnade de för som huvudskydd: tillgångar är värda vad de tjänar. En fabrik eller en fastighet utan intäktsström har i en kris endast skrotvärde och en bråkdel av bokfört belopp."
+          "content": "Två byggstenar återkommer i bokens kreditanalys: storlek och tillgångsvärde. Storlek är inte status utan statistik — större företag har diversifierade intäktskällor, ordning i finansieringen och överlevnadsförmåga i kriser; enligt Graham & Dodd var en vanlig orsak till falliment att bolaget var för litet för sin bransch. Tillgångsvärdet, å andra sidan, varnade de för som huvudskydd: tillgångar är värda vad de tjänär. En fabrik eller en fastighet utan intäktsström har i en kris endast skrotvärde och en bråkdel av bokfört belopp."
         },
         {
           "type": "text",
@@ -487,7 +487,7 @@
           "q": "Hur värderar Graham & Dodd tillgångar som säkerhet för obligationer?",
           "alternativ": [
             "Tillgångar är alltid bäst skydd eftersom de kan säljas",
-            "Tillgångar är värda vad de tjänar — utan intäktsström har de i kris bara skrotvärde",
+            "Tillgångar är värda vad de tjänär — utan intäktsström har de i kris bara skrotvärde",
             "Tillgångar ska ignoreras helt",
             "Bokfört värde är detsamma som marknadsvärde"
           ],
@@ -515,7 +515,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Preferensaktien intar en kluven plats i Security Analysis. Formellt är den ett senior claim: utdelningen står före de vanliga aktiernas. Men enligt Graham & Dodd saknar den allt det som gör obligationen hanterbar: det finns inget förfallodag då kapitalet återbetalas, ingen amorteringsplan, och ingen del i bolagets tillväxt. En i praktiken oändlig obligation utan återbetalning — det är den ogillande beskrivningen. Följden: en preferensaktie är bara en fast värde-placering om den bakomliggande säkerheten är större än vad som krävs för en obligation hos samma bolag — högre täckning av utdelningen än räntetäckningen, och helst rätt till inlösen."
+          "content": "Preferensaktien intar en kluven plats i Security Analysis. Formellt är den ett senior claim: utdelningen står före de vanliga aktiernas. Men enligt Graham & Dodd saknar den allt det som gör obligationen hanterbar: det finns ingen förfallodag då kapitalet återbetalas, ingen amorteringsplan, och ingen del i bolagets tillväxt. En i praktiken oändlig obligation utan återbetalning — det är den ogillande beskrivningen. Följden: en preferensaktie är bara en fast värde-placering om den bakomliggande säkerheten är större än vad som krävs för en obligation hos samma bolag — högre täckning av utdelningen än räntetäckningen, och helst rätt till inlösen."
         },
         {
           "type": "text",
@@ -609,7 +609,7 @@
         {
           "q": "När är en konvertibel obligation mest attraktiv enligt Graham & Dodd?",
           "alternativ": [
-            "När aktien ligger långt över lösenkursen och konverteringen redan lönar sig",
+            "När aktien ligger långt över lösenkursen och konverteringen redan lönär sig",
             "När kursen ligger nära det rena obligationsvärdet så att aktieoptionen köps nästan gratis",
             "När kupongen är lägst",
             "När bolaget är svagast"
@@ -637,7 +637,7 @@
             "Att räntorna är höga"
           ],
           "ratt": 1,
-          "tips": "Säljaren av optioner tjänar mest när optionen är dyr — för vem?"
+          "tips": "Säljaren av optioner tjänär mest när optionen är dyr — för vem?"
         }
       ]
     },
@@ -653,7 +653,7 @@
         },
         {
           "type": "text",
-          "content": "Mekanismen förtjänar att ses i flera steg. Ett företag köper ett annat och betalar med långlöpande warrants. Säljaren accepterar eftersom optionen kan bli värd mycket. Köparen har inte spädat ut sina aktier i dag — men överhängande utbud av framtida aktieemission vilar över kursen i åratal. När warranterna slutligen utnyttjas, ofta efter en marknadsuppgång, säljs aktierna vidare och pressar kursen. Effekten: vinsten tas ur framtiden, kostnaden förskjuts till osynliga fotnoter. Enligt Graham & Dodd är detta att kapitalisera framtiden utan att redovisa priset — och de visade med aritmetik hur warrant-massor från 1928–1929 års emissioner kom att överleva och belasta aktieägarleden långt efter kraschen."
+          "content": "Mekanismen förtjänär att ses i flera steg. Ett företag köper ett annat och betalar med långlöpande warrants. Säljaren accepterar eftersom optionen kan bli värd mycket. Köparen har inte spädat ut sina aktier i dag — men överhängande utbud av framtida aktieemission vilar över kursen i åratal. När warranterna slutligen utnyttjas, ofta efter en marknadsuppgång, säljs aktierna vidare och pressar kursen. Effekten: vinsten tas ur framtiden, kostnaden förskjuts till osynliga fotnoter. Enligt Graham & Dodd är detta att kapitalisera framtiden utan att redovisa priset — och de visade med aritmetik hur warrant-massor från 1928–1929 års emissioner kom att överleva och belasta aktieägarleden långt efter kraschen."
         },
         {
           "type": "text",
@@ -1201,7 +1201,7 @@
         },
         {
           "type": "text",
-          "content": "Här knyts bokens trådar ihop: intäktsanalysen (del V) kan bara bedömas mot bakgrund av balansräkningen (del VI), och tvärtom. Resultatets kvalitet avgörs av hur tillgångarna värderats; tillgångarnas trovärdighet avgörs av vad de faktiskt tjänar. I AKM1 är detta därför en enda variabelkedja: V09 (ROE) blir meningsfullt först när täljaren är normaliserad och nämnaren — kapitalbasen — inte är godtyckligt skriven. Priset på en aktie ska stå i förhållande till denna rensade helhet (V04–V06), med säkerhetsmarginal."
+          "content": "Här knyts bokens trådär ihop: intäktsanalysen (del V) kan bara bedömas mot bakgrund av balansräkningen (del VI), och tvärtom. Resultatets kvalitet avgörs av hur tillgångarna värderats; tillgångarnas trovärdighet avgörs av vad de faktiskt tjänär. I AKM1 är detta därför en enda variabelkedja: V09 (ROE) blir meningsfullt först när täljaren är normaliserad och nämnaren — kapitalbasen — inte är godtyckligt skriven. Priset på en aktie ska stå i förhållande till denna rensade helhet (V04–V06), med säkerhetsmarginal."
         },
         {
           "type": "insikt",
@@ -1335,7 +1335,7 @@
         },
         {
           "type": "text",
-          "content": "Därmed är cirkeln sluten, och det är värt att skriva ut kedjan explicit: undersökning (del I) — fast värde-täckning (del II–III) — intäkts- och balansanalys (del V–VI) — margin of safety och situationer (del VII). Det är inte en historikuriosa utan en arbetsorder som AKM1 operationaliserar variabel för variabel: V07 bruttomarginalens stabilitet är bokens krav på dokumenterad intjäningskraft; kassaflödesanalysen dess genomskåda av icke-kontanta vinster; V09 ROE på rensad kapitalbas dess earning power; moat-variablerna (V13–V15) dess varning för att kvalitet utan marginal bara är dyrt; värderingsvariablerna (V04–V06) dess förbud mot trendens förlängning; rapportkvaliteten dess hela katalog av fallgropar; och margin of safety (Grahams princip) själva slutstenen. Bokens lärdom att fakta slår känslor på sikt är därför inte trosarförklaring utan metod — och den metoden är testad i hundra år av marknader sedan dess."
+          "content": "Därmed är cirkeln sluten, och det är värt att skriva ut kedjan explicit: undersökning (del I) — fast värde-täckning (del II–III) — intäkts- och balansanalys (del V–VI) — margin of safety och situationer (del VII). Det är inte en historiekuriosa utan en arbetsorder som AKM1 operationaliserar variabel för variabel: V07 bruttomarginalens stabilitet är bokens krav på dokumenterad intjäningskraft; kassaflödesanalysen dess genomskådning av icke-kontanta vinster; V09 ROE på rensad kapitalbas dess earning power; moat-variablerna (V13–V15) dess varning för att kvalitet utan marginal bara är dyrt; värderingsvariablerna (V04–V06) dess förbud mot trendens förlängning; rapportkvaliteten dess hela katalog av fallgropar; och margin of safety (Grahams princip) själva slutstenen. Bokens lärdom att fakta slår känslor på sikt är därför inte trosarförklaring utan metod — och den metoden är testad i hundra år av marknader sedan dess."
         },
         {
           "type": "text",
@@ -1381,7 +1381,7 @@
           "q": "Vad är den sista frågan enligt bokens metod när du står inför ett köp?",
           "alternativ": [
             "Vad kommer kursen att vara i morgon?",
-            "Vad säger fakta att pappret är värda, hur säkert är det värdet konstruerat, och hur stor är marginalen mot priset?",
+            "Vad säger fakta att pappret är värt, hur säkert är det värdet konstruerat, och hur stor är marginalen mot priset?",
             "Vad tycker analytikerkonsensus?",
             "Hur har kursen rört sig senaste månaden?"
           ],

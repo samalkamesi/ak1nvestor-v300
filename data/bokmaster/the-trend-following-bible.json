@@ -5,7 +5,7 @@
   "chapterCount": 14,
   "totalMinutes": 168,
   "title": "The Trend Following Bible — Abraham: KOMPLETT",
-  "summary": "Andrew Abraham — råvaru-CTA, grundare av Abraham Investment Management och handlare för eget och klients räkning sedan mitten av 1990-talet — skrev The Trend Following Bible (Wiley Trading, utgiven i slutet av 2012, med förord av trendföljarkollegan David Druz) som den praktiska manualen i hur en privathandlare kör en CTA-strategi: handla alla marknader likadant, köp styrka via utbrott och rankning, riskera en halv till en och en kvarts procent av kärnekviteten per affär, tak per sektor och riktning — och överlev de fleråriga svackor som är metodens andning. Kursen går igenom metoden systematiskt: vad trendföljning är (köp högt, sälj högre — rakt mot intuitionen), varför marknader trendar (herding och anchoring — mänsklig natur, inte mystik), de stora namnen och deras track records (Dennis, Dunn, Campbell, Mulvaney — med deras krascher), absolut mot relativ momentum, positionsstorleks-matematiken med kärnekvitet i svenska kronor, breakout- och retratement-planerna med MACD-filter och 39-ATR-trailing, riskhanteringens tak-hierarki, drawdown-psykologin (där tålamodet när det går DÅLIGT är det verkliga testet), diversifiering över sex marknadsgrupper, den specifika översättningen till aktier (IBD50-universum, 200-dagars EMA-regim, prisklassfilter) — och kontroversen trendföljning mot mean-reversion, där AK1A:s syntes står sist: AK1TS mäter vågor deterministiskt — impulsvåg-trend på kort horisont plus basbygge-värde på lång = Konfluens förenar skolorna.",
+  "summary": "Andrew Abraham — råvaru-CTA, grundare av Abraham Investment Management och handlare för eget och klients räkning sedan mitten av 1990-talet — skrev The Trend Following Bible (Wiley Trading, utgiven i slutet av 2012, med förord av trendföljarkollegan David Druz) som den praktiska manualen i hur en privathandlare kör en CTA-strategi: handla alla marknader likadant, köp styrka via utbrott och rankning, riskera en halv till en och en kvarts procent av kärnekviteten per affär, tak per sektor och riktning — och överlev de fleråriga svackor som är metodens andning. Kursen går igenom metoden systematiskt: vad trendföljning är (köp högt, sälj högre — rakt mot intuitionen), varför marknader trendar (herding och anchoring — mänsklig natur, inte mystik), de stora namnen och deras track records (Dennis, Dunn, Campbell, Mulvaney — med deras krascher), absolut mot relativ momentum, positionsstorleks-matematiken med kärnekvitet i svenska kronor, breakout- och retratement-planerna med MACD-filter och 39-ATR-trailing, riskhanteringens tak-hierarki, drawdown-psykologin (där tålamodet när det går DÅLIGT är det verkliga testet), diversifiering över sex marknadsgrupper, den specifika översättningen till aktier (IBD50-universum, 200-dagars EMA-regim, prisklassfilter) — och kontroversen trendföljning mot mean-reversion, där AK1A:s syntes står sist: AK1TS mäter vågör deterministiskt — impulsvåg-trend på kort horisont plus basbygge-värde på lång = Konfluens förenar skolorna.",
   "minutes": 12,
   "xp": 2000,
   "level": "",
@@ -289,7 +289,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-brygga — galleriet är bokens version av V19 Kapitalförbränning & Emission-risk: varje hus som överlevt decennier har gjort det genom att aldrig låta en enskild position eller sektor kunna tvinga fram en kapitalbränning. AK1TS Tid-dimensionen ställer samma fråga till varje våg: hur länge förtjänar den ditt tålamod — och vilket pris i väntan kostar det? Track record-frågan är alltid densamma, fundamental som teknisk: överlevde utövaren sitt eget systems värsta år?"
+          "content": "AKM1-brygga — galleriet är bokens version av V19 Kapitalförbränning & Emission-risk: varje hus som överlevt decennier har gjort det genom att aldrig låta en enskild position eller sektor kunna tvinga fram en kapitalbränning. AK1TS Tid-dimensionen ställer samma fråga till varje våg: hur länge förtjänär den ditt tålamod — och vilket pris i väntan kostar det? Track record-frågan är alltid densamma, fundamental som teknisk: överlevde utövaren sitt eget systems värsta år?"
         }
       ],
       "quiz": [
@@ -469,7 +469,7 @@
           "q": "Varför dimensioneras positionen efter stoppavståndet — inte som fast antal aktier?",
           "alternativ": [
             "För att courtage blir lägre vid små positioner",
-            "För att divisionen gör positionen volatilitetsjusterad — dubbel andning halverar enheten automatiskt",
+            "För att divisionen gör positionen volatilitetsjusterad — dubbel åndning halverar enheten automatiskt",
             "För att börsen kräver det i regelverket",
             "För att det ger högre träffkvot"
           ],
@@ -494,15 +494,15 @@
         },
         {
           "type": "text",
-          "content": "Exiten — och här båda planerna gemensamt: inga vinstmål, någonsin. Det initiala stoppet hanterar FELET; därefter tar ett TRAILING-stopp över: bokens standard är ett 39-perioders ATR-baserat stopp som följer priset på avstånd — brett nog att överleva normal andning, snävt nog att värsta fall per position förblir definierat (kapitel 6). Filosofin är E-värdets från Turtle-kursen: lönsamheten bor i de få extremvinnare som får löpa, och ett vinstmål kapar exakt dem. Nu den öppna kritiken, som kursen lovar i kapitel 1: boken FÖRSÄKRAR att läsaren får den exakta planen — inget dolt — men recensioner har med rätta påpekat att centrala parametrar (X och Y i antal dagar, MACD:s inställningar, oscillator-val) lämnas som exempel snarare än bestämda mått. Kursens hantering: det är en svaghet i löftet, inte i metoden. Välj kalibrering själv — Donchian 20/10 eller 55/20 som beprövade standarder — backtesta, skriv ner den, håll den. Manualens poäng är strukturen; skruvarna får du själv sätta och själv äga."
+          "content": "Exiten — och här båda planerna gemensamt: inga vinstmål, någonsin. Det initiala stoppet hanterar FELET; därefter tar ett TRAILING-stopp över: bokens standard är ett 39-perioders ATR-baserat stopp som följer priset på avstånd — brett nog att överleva normal åndning, snävt nog att värsta fall per position förblir definierat (kapitel 6). Filosofin är E-värdets från Turtle-kursen: lönsamheten bor i de få extremvinnare som får löpå, och ett vinstmål kapar exakt dem. Nu den öppna kritiken, som kursen lovar i kapitel 1: boken FÖRSÄKRAR att läsaren får den exakta planen — inget dolt — men recensioner har med rätta påpekat att centrala parametrar (X och Y i antal dagar, MACD:s inställningar, oscillator-val) lämnas som exempel snarare än bestämda mått. Kursens hantering: det är en svaghet i löftet, inte i metoden. Välj kalibrering själv — Donchian 20/10 eller 55/20 som beprövade standarder — backtesta, skriv ner den, håll den. Manualens poäng är strukturen; skruvarna får du själv sätta och själv äga."
         },
         {
           "type": "insikt",
-          "content": "Två planer, en filosofi: köp aldrig utan bevis — breakouten Är beviset, retracementens återtagning är beviset, veckans riktning är beviset. Och avsluta aldrig på mål — bara på dementi. Entry avgör när du börjar; EXIT avgör om du tjänar."
+          "content": "Två planer, en filosofi: köp aldrig utan bevis — breakouten Är beviset, retracementens återtagning är beviset, veckans riktning är beviset. Och avsluta aldrig på mål — bara på dementi. Entry avgör när du börjar; EXIT avgör om du tjänär."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"De två planerna — checklista sida vid sida\",\"rader\":[[\"Komponent\",\"Breakout-planen\",\"Retracement-planen\"],[\"Urval\",\"rankat universum — starkaste köps, svagaste kortas\",\"samma universum\"],[\"Riktningstyrning\",\"MACD-kurvan (ej histogrammet) över noll och stigande — lång; under noll och fallande — kort\",\"vecko-MACD (eller 20-EMA veckovis) definierar tillåten riktning\"],[\"Trigger\",\"brott över X-dagars högsta (ex. 20 dagar); kort spegelvänt\",\"daglig pullback: oscillator (ex. Force Index) under noll; köp-stopp en tick över två staplars högsta\"],[\"Initial stopp\",\"Y-dagars motbrott (ex. 10 dagar)\",\"en tick under de två staplarnas lägsta\"],[\"Trailing\",\"39-perioders ATR-stopp\",\"39-perioders ATR-stopp\"],[\"Personlighet\",\"köper styrka öppet — sen in, tydligt\",\"köper reaktion i bevisad trend — tidigare in, mer tålmodig\"],[\"Gemensam lag\",\"inga vinstmål — exiten är regel, aldrig känsla\",\"inga vinstmål — trailingen låter vinnarna springa\"]]}"
+          "content": "{\"rubrik\":\"De två planerna — checklista sida vid sida\",\"rader\":[[\"Komponent\",\"Breakout-planen\",\"Retracement-planen\"],[\"Urval\",\"rankat universum — starkaste köps, svagaste kortas\",\"samma universum\"],[\"Riktningstyrning\",\"MACD-kurvan (ej histogrammet) över noll och stigande — lång; under noll och fallande — kort\",\"vecko-MACD (eller 20-EMA veckovis) definierar tillåten riktning\"],[\"Trigger\",\"brott över X-dagars högsta (ex. 20 dagar); kort spegelvänt\",\"daglig pullback: oscillator (ex. Force Index) under noll; köp-stopp en tick över två staplars högsta\"],[\"Initial stopp\",\"Y-dagars motbrott (ex. 10 dagar)\",\"en tick under de två staplarnas lägsta\"],[\"Trailing\",\"39-perioders ATR-stopp\",\"39-perioders ATR-stopp\"],[\"Personlighet\",\"köper styrka öppet — sen in, tydligt\",\"köper reaktion i bevisad trend — tidigare in, mer tålmodig\"],[\"Gemensam läg\",\"inga vinstmål — exiten är regel, aldrig känsla\",\"inga vinstmål — trailingen låter vinnarna springa\"]]}"
         },
         {
           "type": "utmaning",
@@ -557,7 +557,7 @@
       "num": 8,
       "minutes": 12,
       "title": "Riskhanteringens tak — sektor, exponering, marginal, riktning",
-      "intro": "Risk per affär skyddar mot den enskilda positionen. Tak-hierarkin skyddar mot det som faktiskt dödar: korrelerade positioner som stoppas SAMTIDIGT. Kapitlet samlar Abrahams tak — sektor, öppen exponering, marginal, riktning — och översätter dem till en aktieportföljs språk.",
+      "intro": "Risk per affär skyddar mot den enskilda positionen. Tak-hierarkin skyddar mot det som faktiskt dödär: korrelerade positioner som stoppas SAMTIDIGT. Kapitlet samlar Abrahams tak — sektor, öppen exponering, marginal, riktning — och översätter dem till en aktieportföljs språk.",
       "blocks": [
         {
           "type": "text",
@@ -565,7 +565,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens viktigaste riskobservation är inte en regel utan en mönster-varning: de största drawdowns tenderar att följa de största uppgångarna — biggest drawdowns tend to follow the biggest run-ups. Mekanismen är korrelationens grymma ironi: i en het trendresa korrelerar allt — de positioner som en efter en byggts under uppgången rör sig som EN position just när svängen kommer. Den privata investerarens version känner alla: efter ett starkt år är portföljen full, tät och samtidigt utsatt; efter ett svagt år är den tom och defensiv — maximal risk när vi mår som bäst, minimal när marknaden som bäst. Därför sitter taken på den ÖPPNA exponeringen — inte bara på varje enskild affär: systemet frågar aldrig hur många instrument du äger, utan hur mycket risk du bär och hur mycket av den som rör sig tillsammans. Det är portföljens andning man begränsar, inte antalet andetag."
+          "content": "Bokens viktigaste riskobservation är inte en regel utan en mönster-varning: de största drawdowns tenderar att följa de största uppgångarna — biggest drawdowns tend to follow the biggest run-ups. Mekanismen är korrelationens grymma ironi: i en het trendresa korrelerar allt — de positioner som en efter en byggts under uppgången rör sig som EN position just när svängen kommer. Den privata investerarens version känner alla: efter ett starkt år är portföljen full, tät och samtidigt utsatt; efter ett svagt år är den tom och defensiv — maximal risk när vi mår som bäst, minimal när marknaden som bäst. Därför sitter taken på den ÖPPNA exponeringen — inte bara på varje enskild affär: systemet frågar aldrig hur många instrument du äger, utan hur mycket risk du bär och hur mycket av den som rör sig tillsammans. Det är portföljens åndning man begränsar, inte antalet andetag."
         },
         {
           "type": "text",
@@ -589,7 +589,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-brygga — V03 Intäktsdiversifiering är sektortakets fundamentala spegel: bolagets intäkter spridda över kunder, produkter och marknader är bolagets sätt att inte vara ETT bets — portföljtaket är ditt. V10 Skuldsättningsgrad är marginaltaket i balansräkningsformat: bolag som är tätt belånat likvideras av sina kreditorer precis som konton av sina marginal-krav. AK1TS aggregerar vågor till portföljnivå av samma skäl: tio samtidiga impulsvågor är EN våg."
+          "content": "AKM1-brygga — V03 Intäktsdiversifiering är sektortakets fundamentala spegel: bolagets intäkter spridda över kunder, produkter och marknader är bolagets sätt att inte vara ETT bets — portföljtaket är ditt. V10 Skuldsättningsgrad är marginaltaket i balansräkningsformat: bolag som är tätt belånat likvideras av sina kreditorer precis som konton av sina marginal-krav. AK1TS aggregerar vågör till portföljnivå av samma skäl: tio samtidiga impulsvågör är EN våg."
         }
       ],
       "quiz": [
@@ -640,7 +640,7 @@
         },
         {
           "type": "text",
-          "content": "Och Abraham själv — bokens viktigaste bevis, för det är FÖRFATTARENS eget konto: hans redovisade resultat omfattar de fleråriga svaga åren 2009–2011, då strategin gick sideways-till-negativt medan aktiemarknaden återhämtade sig kraftigt. Att publicera det — i boken vars syfte är att övertyga om metoden — är manualens trovärdigaste drag. Abraham gör dessutom ruinmatematiken explicit genom ruinformeln: sannolikheten att förlora en standardavvikelse av ekviteten är proportionell mot e upphöjt till minus två gånger den genomsnittliga avkastningen delat med volatiliteten. Uppgiftens kärna i klartext: positiv förväntan och rimligt låg volatilitet gör ruin exponentiellt osannolik — men formelen förutsätter att man fortfarande ÄR kvar i spelet när den statistiska fördelen får verka. Drawdownen är därför inte systemets fel — den är systemets andning: Turtle-kursens kapitel 9 visade att en enda +9R-affär kan bära ett helt år; den mekanismen KOSTAR motsvarande tålmod i svackor."
+          "content": "Och Abraham själv — bokens viktigaste bevis, för det är FÖRFATTARENS eget konto: hans redovisade resultat omfattar de fleråriga svaga åren 2009–2011, då strategin gick sideways-till-negativt medan aktiemarknaden återhämtade sig kraftigt. Att publicera det — i boken vars syfte är att övertyga om metoden — är manualens trovärdigaste drag. Abraham gör dessutom ruinmatematiken explicit genom ruinformeln: sannolikheten att förlora en standardavvikelse av ekviteten är proportionell mot e upphöjt till minus två gånger den genomsnittliga avkastningen delat med volatiliteten. Uppgiftens kärna i klartext: positiv förväntan och rimligt låg volatilitet gör ruin exponentiellt osannolik — men formelen förutsätter att man fortfarande ÄR kvar i spelet när den statistiska fördelen får verka. Drawdownen är därför inte systemets fel — den är systemets åndning: Turtle-kursens kapitel 9 visade att en enda +9R-affär kan bära ett helt år; den mekanismen KOSTAR motsvarande tålmod i svackor."
         },
         {
           "type": "text",
@@ -664,7 +664,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-brygga — V19 Kapitalförbränning är återigen förbindelsen: bolagets drawdown-tålmodhet bestäms av kassan — bränner den kapital försvinner tålamodet strukturellt, emissionen tvingas fram och återhämtningen utspädar ägaren. AK1TS Tid-dimensionen formaliserar ditt: varje våg-läsning tillhör en horisont och utvärderas vid daterat datum — inte i svackans mitt. Köp trendföljare i drawdown och bolag med V19-grönt: samma tro på process framför kurva."
+          "content": "AKM1-brygga — V19 Kapitalförbränning är återigen förbindelsen: bolagets drawdown-tålmodhet bestäms av kassan — bränner den kapital försvinner tålamodet strukturellt, emissionen tvingas fram och återhämtningen utspädär ägaren. AK1TS Tid-dimensionen formaliserar ditt: varje våg-läsning tillhör en horisont och utvärderas vid daterat datum — inte i svackans mitt. Köp trendföljare i drawdown och bolag med V19-grönt: samma tro på process framför kurva."
         }
       ],
       "quiz": [
@@ -711,11 +711,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Universum, som boken disponerar det: VALUTOR (dollar mot yen, euro, franc med flera), SPANNMÅL och BOSKAP (majs, vete, sojabönor, nöt och svin), METALLER (guld, silver, koppar), ENERGI (råolja, bensin, naturgas), AKTIEINDEX (S&P 500, Nasdaq) och RÄNTEPRODUKTER (amerikanska statsobligationer och växlar). Sex grupper med delvis olika drivkrafter — och därmed delvis olika trendkalendrar: när spannmålen vischar kan energin trenda; när aktierna faller tenderar obligationer och dollar att röra sig. Bokens bevekelsegrund, citerat i egen anda: den som specialiserar sig på EN marknad bedriver självbedräri — marknader går igenom döda perioder och perioder av överdriven volatilitet; en diversifierad korg handlas därför för att man ALDRIG kan veta vilken marknad som ska röra sig. Det är inte en åsikt om råvaror eller valutor — det är ett erkännande av okunnighet, organiserat."
+          "content": "Universum, som boken disponerar det: VALUTOR (dollar mot yen, euro, franc med flera), SPANNMÅL och BOSKAP (majs, vete, sojabönor, nöt och svin), METALLER (guld, silver, koppar), ENERGI (råolja, bensin, naturgas), AKTIEINDEX (S&P 500, Nasdaq) och RÄNTEPRODUKTER (amerikanska statsobligationer och växlar). Sex grupper med delvis olika drivkrafter — och därmed delvis olika trendkalendrar: när spannmålen vischar kan energin trenda; när aktierna faller tenderar obligationer och dollar att röra sig. Bokens bevekelsegrund, citerat i egen ända: den som specialiserar sig på EN marknad bedriver självbedräri — marknader går igenom döda perioder och perioder av överdriven volatilitet; en diversifierad korg handlas därför för att man ALDRIG kan veta vilken marknad som ska röra sig. Det är inte en åsikt om råvaror eller valutor — det är ett erkännande av okunnighet, organiserat."
         },
         {
           "type": "text",
-          "content": "Mekaniken, för den som vill förstå VARFÖR spridningen fungerar: trendföljarens år består av ett fåtal stora vinster och många små förluster (kapitel 2) — men de stora trenderna kommer ojämnt fördelade mellan grupper och mellan år. Energikrisens år är inte jordbruksårets; valutornas decennier är inte indexens. Genom att alltid VARA med i sex oberoende chansflöden per år omvandlas lagen om stora tal från teori till praktik: varje enskild marknad levererar brus — portföljen av marknader levererar trendernas samlade, glesa men återkommande bidrag. Det är också den tredje kanonlärdomens innersta, citerad ur bk-067: jämn ekvitetsutveckling kräver spridning över marknader och tid — spridning över MARKNADER eftersom trenderna kommer olika håll, spridning över TID eftersom de kommer olika år. Den jämna kurvan är inte tur; den är arkitektur. Urvalsmekaniken är enkel och hålls enkel: 52-veckors-höjder och tidshöjderlistor identifierar var styrman finns just nu (kapitel 5) — universumet bestämmer VAR man kan söka, rankningen visar VAR det just nu lönar sig."
+          "content": "Mekaniken, för den som vill förstå VARFÖR spridningen fungerar: trendföljarens år består av ett fåtal stora vinster och många små förluster (kapitel 2) — men de stora trenderna kommer ojämnt fördelade mellan grupper och mellan år. Energikrisens år är inte jordbruksårets; valutornas decennier är inte indexens. Genom att alltid VARA med i sex oberoende chansflöden per år omvandlas lagen om stora tal från teori till praktik: varje enskild marknad levererar brus — portföljen av marknader levererar trendernas samlade, glesa men återkommande bidrag. Det är också den tredje kanonlärdomens innersta, citerad ur bk-067: jämn ekvitetsutveckling kräver spridning över marknader och tid — spridning över MARKNADER eftersom trenderna kommer olika håll, spridning över TID eftersom de kommer olika år. Den jämna kurvan är inte tur; den är arkitektur. Urvalsmekaniken är enkel och hålls enkel: 52-veckors-höjder och tidshöjderlistor identifierar var styrman finns just nu (kapitel 5) — universumet bestämmer VAR man kan söka, rankningen visar VAR det just nu lönär sig."
         },
         {
           "type": "text",
@@ -739,7 +739,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-brygga — V03 Intäktsdiversifiering och V11 Likviditet är kapitlets fundamental tvillingar: bolagets intäktsbas är bolagets marknadskorg — en kund, en produkt, en valuta är en-chansflödes-bolaget, medan V11 avgör om du själv kan delta i och lämna flödet. AK1TS aggregerar vågor till portföljnivå efter samma arkitektur: en jämn vågbild byggs av oberoende horisonter och marknader — inte av många namn i samma våg."
+          "content": "AKM1-brygga — V03 Intäktsdiversifiering och V11 Likviditet är kapitlets fundamental tvillingar: bolagets intäktsbas är bolagets marknadskorg — en kund, en produkt, en valuta är en-chansflödes-bolaget, medan V11 avgör om du själv kan delta i och lämna flödet. AK1TS aggregerar vågör till portföljnivå efter samma arkitektur: en jämn vågbild byggs av oberoende horisonter och marknader — inte av många namn i samma våg."
         }
       ],
       "quiz": [
@@ -794,7 +794,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A-översättningen, som kursen gör till sin egen: aktieöversättningen är i praktiken ANALYSMOTORNNS rader, klädda i CTA-språk. 200-dagars EMA-regimen är MA200-klassificeraren — bolagets eller indexets regim — som avgör om impulsvågor ens får räknas som köpsignaler; momentum-raderna (5, 63, 252 dagar) är samma styrkerankning som bokens ROC-snitt; och 52-veckorslistan är Pris-dimensionens råmaterial. Skillnaden i AK1A är att grundplåten är fundamental: där Abraham bara läser priset, poängsätter eleven först AKM1:s tjugo variabler (V19 som KRITISK grind) — och använder sedan trendverktyget som TIMING och REGIM, inte som analys. Det är kursens arbetsfördelning i en mening: AKM1 avgör VAD som är vägt att äga; Abraham (och AK1TS) avgör NÄR och I VILKEN MARKNADSRIKTNING. Varken priset ensamt eller bokslutet ensamt — båda, med olika roller."
+          "content": "AK1A-översättningen, som kursen gör till sin egen: aktieöversättningen är i praktiken ANALYSMOTORNNS rader, klädda i CTA-språk. 200-dagars EMA-regimen är MA200-klassificeraren — bolagets eller indexets regim — som avgör om impulsvågör ens får räknas som köpsignaler; momentum-raderna (5, 63, 252 dagar) är samma styrkerankning som bokens ROC-snitt; och 52-veckorslistan är Pris-dimensionens råmaterial. Skillnaden i AK1A är att grundplåten är fundamental: där Abraham bara läser priset, poängsätter eleven först AKM1:s tjugo variabler (V19 som KRITISK grind) — och använder sedan trendverktyget som TIMING och REGIM, inte som analys. Det är kursens arbetsfördelning i en mening: AKM1 avgör VAD som är vägt att äga; Abraham (och AK1TS) avgör NÄR och I VILKEN MARKNADSRIKTNING. Varken priset ensamt eller bokslutet ensamt — båda, med olika roller."
         },
         {
           "type": "insikt",
@@ -869,7 +869,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A:s syntes, kursens kärnformulering och uppgiftens direktiv: AK1TS mäter vågor DETERMINISTISKT — samma data ger alltid samma vågklass — och därmed blir skolornas förenande inte kompromiss utan metod. IMPULSVÅG-TREND PÅ KORT HORISONT: en bevisad impulsvåg i momentum 5/63 är trendföljningens territorium — köp styrka, trailing-stopp, ingen berättelse behövs; BASBYGGE-VÄRDE PÅ LÅNG HORIZONT: en aktie som i årsformat bygger bas (ackumuleras, V19-grönt, värderingskompositen låg enligt V04–V06) är värdeskolans territorium — margin of safety i tid. Vår KONFLUENS förenar skolorna: när den korta impulsvågen inträffar I ett fundamentalt grönt, basbyggande bolag — trend som bekräftar värde — är det den starkaste konfiguration AK1A känner; när impulsvågen uppträder i ett V19-rött, dyrt bolag är den en momentum-handel med stopp, inte en investering. Trenden ger timing och bevis; bokslutet ger vad och ryggrad. Skolornas krig är en fråga om tidshorisont — och tidshorisont är exakt det AK1TS har fem av."
+          "content": "AK1A:s syntes, kursens kärnformulering och uppgiftens direktiv: AK1TS mäter vågör DETERMINISTISKT — samma data ger alltid samma vågklass — och därmed blir skolornas förenande inte kompromiss utan metod. IMPULSVÅG-TREND PÅ KORT HORISONT: en bevisad impulsvåg i momentum 5/63 är trendföljningens territorium — köp styrka, trailing-stopp, ingen berättelse behövs; BASBYGGE-VÄRDE PÅ LÅNG HORIZONT: en aktie som i årsformat bygger bas (ackumuleras, V19-grönt, värderingskompositen låg enligt V04–V06) är värdeskolans territorium — margin of safety i tid. Vår KONFLUENS förenar skolorna: när den korta impulsvågen inträffar I ett fundamentalt grönt, basbyggande bolag — trend som bekräftar värde — är det den starkaste konfiguration AK1A känner; när impulsvågen uppträder i ett V19-rött, dyrt bolag är den en momentum-handel med stopp, inte en investering. Trenden ger timing och bevis; bokslutet ger vad och ryggrad. Skolornas krig är en fråga om tidshorisont — och tidshorisont är exakt det AK1TS har fem av."
         },
         {
           "type": "insikt",
@@ -889,7 +889,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-brygga — Konfluens i en rad: AKM1 avgör om bolaget är värt att äga (V01–V20, V19 som grind); AK1TS avgör när vågen ger bevis (impulsvåg, momentum 5/63) och när basbygget förtjänar tålamod (lång horisont). Skolornas krig slutar inte med att en vinner — det slutar med att varje horisont får sin skola."
+          "content": "AKM1-brygga — Konfluens i en rad: AKM1 avgör om bolaget är värt att äga (V01–V20, V19 som grind); AK1TS avgör när vågen ger bevis (impulsvåg, momentum 5/63) och när basbygget förtjänär tålamod (lång horisont). Skolornas krig slutar inte med att en vinner — det slutar med att varje horisont får sin skola."
         }
       ],
       "quiz": [
@@ -919,7 +919,7 @@
           "q": "Hur löser AK1A:s Konfluens skolstriden?",
           "alternativ": [
             "Genom att förklara trendföljning förkastligt och värde rätt",
-            "Genom att mäta vågor deterministiskt: impulsvåg-trend på kort horisont och basbygge-värde på lång — olika horisonter får olika skola i samma aktie",
+            "Genom att mäta vågör deterministiskt: impulsvåg-trend på kort horisont och basbygge-värde på lång — olika horisonter får olika skola i samma aktie",
             "Genom att blanda båda slumpmässigt per affär",
             "Genom att undvika aktier och bara handla terminer"
           ],
@@ -940,19 +940,19 @@
         },
         {
           "type": "text",
-          "content": "AK1TS-länken, kursens släktträd i en mening: Abrahams manual är Turtle-tänket i CTA-format, och AK1TS är Turtle-tänket för vågor — pedagogiskt. Determinismen är samma: X-dagarsbrottet ger samma signal varje dag för samma data, som vågmotorns division-subtraktion-jämförelse ger samma vågklass. Regimen är samma: MACD-filtret och 200-EMA-regimen är horisontens riktning — impulsvågar räknas bara som signal i linje med sin horisont. Riskmatematiken är samma: storlek från stoppavstånd, tak på korrelerad exponering. Och differentieringen mot AKM1: AKM1 är strukturerad SUBJEKTIVITET (tjugo variabler poängsatta av en människa, V19 som kritisk grind); Abrahams plan och AK1TS är strukturerad OBJEKTIVITET (samma data, samma svar). Way of the Turtle-kursens triangel gäller alltjämt: avståndet mellan struktur och resultat heter disciplin — och Abraham visar LIVSSTILEN som håller ihop dem: plan, risk, tålamod, dokument."
+          "content": "AK1TS-länken, kursens släktträd i en mening: Abrahams manual är Turtle-tänket i CTA-format, och AK1TS är Turtle-tänket för vågör — pedagogiskt. Determinismen är samma: X-dagarsbrottet ger samma signal varje dag för samma data, som vågmotorns division-subtraktion-jämförelse ger samma vågklass. Regimen är samma: MACD-filtret och 200-EMA-regimen är horisontens riktning — impulsvågar räknas bara som signal i linje med sin horisont. Riskmatematiken är samma: storlek från stoppavstånd, tak på korrelerad exponering. Och differentieringen mot AKM1: AKM1 är strukturerad SUBJEKTIVITET (tjugo variabler poängsatta av en människa, V19 som kritisk grind); Abrahams plan och AK1TS är strukturerad OBJEKTIVITET (samma data, samma svar). Way of the Turtle-kursens triangel gäller alltjämt: avståndet mellan struktur och resultat heter disciplin — och Abraham visar LIVSSTILEN som håller ihop dem: plan, risk, tålamod, dokument."
         },
         {
           "type": "text",
-          "content": "Och medgivandet, oförkortat, för det är syntesens andra hälft och Turtle-kursens arv: AK1TS är PEDAGOGIK — ett studieobjekt och en besluts-hygien för att läsa struktur i priser, aldrig ett trading-system. De flesta som försöker mekanisk trading underpresterar — inte för att reglerna är hemliga utan för att disciplinen är sällsynt; Abraham, Dunn och Mulvaney är yrkesmänniskor vars HELA arbetsdag är miljön som reglerna kräver. För eleven är därför den här kursens utbyte inte en strategi att kopiera utan en karaktär att bygga: skriv stoppet, räkna enheten, datera utvärderingen, håll taken — och låt Konfluens avgöra vilken horisont som får trendens regler och vilken som får värdets. Själva Abraham (via bokens löfte): här är planen, inget dolt. AK1A lägger till det boken inte kan ge: verkstaden — AKM1:s variabler, AK1TS:s vågor, journalen och datumet. Manualen och verkstaden tillsammans: det är den kompletta trendföljaren som livsstil — och det är kursens slutbild."
+          "content": "Och medgivandet, oförkortat, för det är syntesens andra hälft och Turtle-kursens arv: AK1TS är PEDAGOGIK — ett studieobjekt och en besluts-hygien för att läsa struktur i priser, aldrig ett trading-system. De flesta som försöker mekanisk trading underpresterar — inte för att reglerna är hemliga utan för att disciplinen är sällsynt; Abraham, Dunn och Mulvaney är yrkesmänniskor vars HELA arbetsdag är miljön som reglerna kräver. För eleven är därför den här kursens utbyte inte en strategi att kopiera utan en karaktär att bygga: skriv stoppet, räkna enheten, datera utvärderingen, håll taken — och låt Konfluens avgöra vilken horisont som får trendens regler och vilken som får värdets. Själva Abraham (via bokens löfte): här är planen, inget dolt. AK1A lägger till det boken inte kan ge: verkstaden — AKM1:s variabler, AK1TS:s vågör, journalen och datumet. Manualen och verkstaden tillsammans: det är den kompletta trendföljaren som livsstil — och det är kursens slutbild."
         },
         {
           "type": "insikt",
-          "content": "Abraham gav planen, risken och tålamodet. AK1A lägger verkstaden: fundamental ryggrad (AKM1), deterministiska vågor (AK1TS) och Konfluens — trend på kort horisont, värde på lång. Manualen räcker inte; verkstaden räcker inte; tillsammans bildar de livsstilen."
+          "content": "Abraham gav planen, risken och tålamodet. AK1A lägger verkstaden: fundamental ryggrad (AKM1), deterministiska vågör (AK1TS) och Konfluens — trend på kort horisont, värde på lång. Manualen räcker inte; verkstaden räcker inte; tillsammans bildar de livsstilen."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Abraham till AK1A — översättningstabellen\",\"rader\":[[\"Abrahams bygge\",\"AKM1\",\"AK1TS\",\"Läxa\"],[\"Universum: sex marknadsgrupper, likvida\",\"V11 Likviditet\",\"Våg — får tesen en chans?\",\"genomförbarhet och bredd före signal\"],[\"Rankning: snittat ROC + 52-veckorslistor\",\"V01 tillväxt som fundamental rang\",\"momentum-raderna 5/63/252\",\"starkaste först — relativt urval\"],[\"Entry: utbrott + MACD/200-EMA-regim\",\"V16–V18 katalysatorer som fundamental timing\",\"impulsvåg i linje med horisonten\",\"köp bevis, aldrig önskan\"],[\"Risk: 0,75–1,25 % av kärnekviteten\",\"V19 KRITISK — kapitalförbränning & emission\",\"Brytpunkt → storlek\",\"storlek är division, inte mod\"],[\"Tak: sektor 5 %, riktning 10/10\",\"V03 + V10\",\"portfölj-aggregerade vågor\",\"räkna bets, inte positioner\"],[\"Trailing: 39 ATR\",\"säljregler skrivna i förväg\",\"Tid — utvärdera vid daterat datum\",\"exit är regel, aldrig känsla\"],[\"Drawdown-plan\",\"tålamod med V19-gröna bolag\",\"Tid + dokument\",\"utvärdera aldrig i svackans mitt\"],[\"Skolstrid\",\"—\",\"impulsvåg kort + basbygge lång\",\"KONFLUENS förenar trend och värde\"]]}"
+          "content": "{\"rubrik\":\"Abraham till AK1A — översättningstabellen\",\"rader\":[[\"Abrahams bygge\",\"AKM1\",\"AK1TS\",\"Läxa\"],[\"Universum: sex marknadsgrupper, likvida\",\"V11 Likviditet\",\"Våg — får tesen en chans?\",\"genomförbarhet och bredd före signal\"],[\"Rankning: snittat ROC + 52-veckorslistor\",\"V01 tillväxt som fundamental rang\",\"momentum-raderna 5/63/252\",\"starkaste först — relativt urval\"],[\"Entry: utbrott + MACD/200-EMA-regim\",\"V16–V18 katalysatorer som fundamental timing\",\"impulsvåg i linje med horisonten\",\"köp bevis, aldrig önskan\"],[\"Risk: 0,75–1,25 % av kärnekviteten\",\"V19 KRITISK — kapitalförbränning & emission\",\"Brytpunkt → storlek\",\"storlek är division, inte mod\"],[\"Tak: sektor 5 %, riktning 10/10\",\"V03 + V10\",\"portfölj-aggregerade vågör\",\"räkna bets, inte positioner\"],[\"Trailing: 39 ATR\",\"säljregler skrivna i förväg\",\"Tid — utvärdera vid daterat datum\",\"exit är regel, aldrig känsla\"],[\"Drawdown-plan\",\"tålamod med V19-gröna bolag\",\"Tid + dokument\",\"utvärdera aldrig i svackans mitt\"],[\"Skolstrid\",\"—\",\"impulsvåg kort + basbygge lång\",\"KONFLUENS förenar trend och värde\"]]}"
         },
         {
           "type": "utmaning",
@@ -983,12 +983,12 @@
           "q": "Vad är AK1TS:s förhållande till Abrahams plan?",
           "alternativ": [
             "AK1TS är en förbättrad kommersiell version av planen",
-            "AK1TS är samma tänk — determinism, regim, risk i enheter — men för vågor, pedagogiskt och aldrig som trading-system",
+            "AK1TS är samma tänk — determinism, regim, risk i enheter — men för vågör, pedagogiskt och aldrig som trading-system",
             "AK1TS motsäger planen helt",
             "AK1TS ersätter behovet av riskhantering"
           ],
           "ratt": 1,
-          "tips": "Turtle-tänk för vågor — vad är gränsen kursen sätter?"
+          "tips": "Turtle-tänk för vågör — vad är gränsen kursen sätter?"
         },
         {
           "q": "Vad är Konfluens i syntesens formulering?",

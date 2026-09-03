@@ -183,7 +183,7 @@
         },
         {
           "type": "text",
-          "content": "I AKM1:s språk binder dollartestet samman flera variabler. Ett bolag med hög avkastning på investerat kapital och låg kapitalförbrukning (V19) klarar testet med råge — återinvestering till hög marginal är precis vad testet belönar. Ett bolag som i stället måste emissionera nytt kapital för att finansiera sin tillväxt gör testets motsats: det tar in ägarnas pengar i stället för att ge tillbaka dem, och varje emission ska prövas mot samma måttstock. Och återköp (V20) är den direkta inversen till emissionen: en ledning som köper tillbaka egna aktier under inneboende värde skapar en dollar av värde för kvarvarande ägare för mindre än en dollar — medan ett återköp över inneboende värde är värdeneutralt. Dollartestet är därför kursens första riktiga verktyg: det gör kapitalallokeringen mätbar."
+          "content": "I AKM1:s språk binder dollartestet samman flera variabler. Ett bolag med hög avkastning på investerat kapital och låg kapitalförbrukning (V19) klarar testet med råge — återinvestering till hög marginal är precis vad testet belönär. Ett bolag som i stället måste emissionera nytt kapital för att finansiera sin tillväxt gör testets motsats: det tar in ägarnas pengar i stället för att ge tillbaka dem, och varje emission ska prövas mot samma måttstock. Och återköp (V20) är den direkta inversen till emissionen: en ledning som köper tillbaka egna aktier under inneboende värde skapar en dollar av värde för kvarvarande ägare för mindre än en dollar — medan ett återköp över inneboende värde är värdeneutralt. Dollartestet är därför kursens första riktiga verktyg: det gör kapitalallokeringen mätbar."
         },
         {
           "type": "tabell",
@@ -204,7 +204,7 @@
       ],
       "quiz": [
         {
-          "q": "Vad säger Buffett om relationen mellan operativ skicklighet och kapitalallokering hos många VD:ar?",
+          "q": "Vad säger Buffett om relationen mellan operativ skicklighet och kapitalallokering hos många VD:är?",
           "alternativ": [
             "Många förstklassiga operatörer blir tredjeklassiga kapitalfördelare när vinsterna ska placeras",
             "De hänger samman: en bra operatör är alltid en bra allokator",
@@ -333,7 +333,7 @@
         },
         {
           "type": "insikt",
-          "content": "Inflationen straffar inte alla bolag lika: den äter kapitalintensiva verksamheter inifrån och belönar dem vars viktigaste tillgång — varumärket, kostnadsstrukturen — inte behöver bytas ut mot dyrare maskiner."
+          "content": "Inflationen straffar inte alla bolag lika: den äter kapitalintensiva verksamheter inifrån och belönär dem vars viktigaste tillgång — varumärket, kostnadsstrukturen — inte behöver bytas ut mot dyrare maskiner."
         },
         {
           "type": "utmaning",
@@ -463,7 +463,7 @@
         },
         {
           "type": "text",
-          "content": "För en AKM1-analys är övervakningens objekt specificerade i variablerna: intäktsstabilitet (V12) — om intäkterna återkommer genom cykeln, med avtal (V17) och nätverkseffekter (V15) som håller dem kvar; marginaler (V07, V08) — hur brutto- och EBITDA-marginalen utvecklas mot konkurrenternas; kapitalbehov (V19); samt kapitalallokeringen (V20, dollartestet i kapitel 3). Notera vad som saknas i listan: ränteprognoser, BNP-utsikter, valutor, teknisk analys. Buffetts hållning är att den som kan beskriva en verksamhet i termer av volym, marginal och kapitalbehov under ett decennium inte behöver veta något om börsens riktning — Mr Market kommer förr eller senare att erbjuda ett pris som belönar den kunskapen."
+          "content": "För en AKM1-analys är övervakningens objekt specificerade i variablerna: intäktsstabilitet (V12) — om intäkterna återkommer genom cykeln, med avtal (V17) och nätverkseffekter (V15) som håller dem kvar; marginaler (V07, V08) — hur brutto- och EBITDA-marginalen utvecklas mot konkurrenternas; kapitalbehov (V19); samt kapitalallokeringen (V20, dollartestet i kapitel 3). Notera vad som saknas i listan: ränteprognoser, BNP-utsikter, valutor, teknisk analys. Buffetts hållning är att den som kan beskriva en verksamhet i termer av volym, marginal och kapitalbehov under ett decennium inte behöver veta något om börsens riktning — Mr Market kommer förr eller senare att erbjuda ett pris som belönär den kunskapen."
         },
         {
           "type": "tabell",
@@ -530,7 +530,7 @@
         },
         {
           "type": "text",
-          "content": "För analytikern är imperativet en checklista. Fråga om den senaste stora satsningen drevs av bolagsspecifik logik eller av branschens våg (lag fyra). Fråga om kassan användes för att den hade ett bättre hem (lag två) eller för att den fanns. Fråga om styrelsens underlag var oberoende av VD:ns önskan (lag tre). I M&A-kapitlet (kapitel 9) återkommer imperativet i sin renaste form: förvärvsvågor där betalningsviljan drivs av rädsla att hamna utanför snarare än av kalkyl. En ledning som öppet kan säga att bolagets bästa alternativ är att inte göra något — och som returnerar kapital i stället för att investera det (V20) — är imperativets motsats och därför i sig en ägarkulturell signal."
+          "content": "För analytikern är imperativet en checklista. Fråga om den senaste stora satsningen drevs av bolagsspecifik logik eller av branschens våg (lag fyra). Fråga om kassan användes för att den hade ett bättre hem (lag två) eller för att den fanns. Fråga om styrelsens underlag var oberoende av VD:ns önskan (lag tre). I M&A-kapitlet (kapitel 9) återkommer imperativet i sin renaste form: förvärvsvågör där betalningsviljan drivs av rädsla att hamna utanför snarare än av kalkyl. En ledning som öppet kan säga att bolagets bästa alternativ är att inte göra något — och som returnerar kapital i stället för att investera det (V20) — är imperativets motsats och därför i sig en ägarkulturell signal."
         },
         {
           "type": "tabell",
@@ -794,7 +794,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Problemet look-through-vinsten löser är redovisningens halvsanning. Äger du tio procent av ett bolag som tjänar hundra men bara delar ut fyrtio, visar din kontolista fyra i utdelning — men din andel av verksamhetens verkliga resultat är tio. De sex som behålls i bolaget är inte borta: de återinvesteras och tillhör, i form av framtida vinster och värde, dig. Buffett definierar i breven look-through-vinsten i tre steg: din andel av driftöverskottet i bolag du äger (helt eller delvis), plus din andel av de behållna vinsterna i icke-kontrollerade innehav, minus den extra skatt som skulle ha belastat dig om vinsten betalats ut som utdelning. Summan är ditt ekonomiska resultat — inte det kontanta."
+          "content": "Problemet look-through-vinsten löser är redovisningens halvsanning. Äger du tio procent av ett bolag som tjänär hundra men bara delar ut fyrtio, visar din kontolista fyra i utdelning — men din andel av verksamhetens verkliga resultat är tio. De sex som behålls i bolaget är inte borta: de återinvesteras och tillhör, i form av framtida vinster och värde, dig. Buffett definierar i breven look-through-vinsten i tre steg: din andel av driftöverskottet i bolag du äger (helt eller delvis), plus din andel av de behållna vinsterna i icke-kontrollerade innehav, minus den extra skatt som skulle ha belastat dig om vinsten betalats ut som utdelning. Summan är ditt ekonomiska resultat — inte det kontanta."
         },
         {
           "type": "text",
@@ -865,7 +865,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Formeln från 1986 års brev, citerad i sin helhet i översättning: »Owner earnings är redovisad vinst plus avskrivningar, utarmning, amorteringar och vissa andra icke-kontanta poster, minus det genomsnittliga årliga beloppet av kapitaliserade utgifter för anläggningar, maskiner m.m. som bolaget kräver för att fullt ut bibehålla sin långsiktiga konkurrensposition och sin volym. (Kräver verksamheten ytterligare rörelsekapital för att bibehålla sin konkurrensposition och volym, ska även denna ökning räknas in i det kapitaliserade beloppet.)« I förenklad svensk form: owner earnings = nettovinst + D&A − capex − medelökningen av rörelsekapital. Poängen är att frågan aldrig är hur mycket bolaget tjänar, utan hur mycket som kan tas ut av verksamheten utan att den förlorar sin konkurrenskraft."
+          "content": "Formeln från 1986 års brev, citerad i sin helhet i översättning: »Owner earnings är redovisad vinst plus avskrivningar, utarmning, amorteringar och vissa andra icke-kontanta poster, minus det genomsnittliga årliga beloppet av kapitaliserade utgifter för anläggningar, maskiner m.m. som bolaget kräver för att fullt ut bibehålla sin långsiktiga konkurrensposition och sin volym. (Kräver verksamheten ytterligare rörelsekapital för att bibehålla sin konkurrensposition och volym, ska även denna ökning räknas in i det kapitaliserade beloppet.)« I förenklad svensk form: owner earnings = nettovinst + D&A − capex − medelökningen av rörelsekapital. Poängen är att frågan aldrig är hur mycket bolaget tjänär, utan hur mycket som kan tas ut av verksamheten utan att den förlorar sin konkurrenskraft."
         },
         {
           "type": "text",
@@ -885,7 +885,7 @@
         },
         {
           "type": "insikt",
-          "content": "EBITDA svarar på frågan hur mycket bolaget tjänar före de kostnader som gör att det fortsätter finnas — owner earnings svarar på den enda fråga en ägare betalar för: vad kan tas ut utan att affären försvagas."
+          "content": "EBITDA svarar på frågan hur mycket bolaget tjänär före de kostnader som gör att det fortsätter finnas — owner earnings svarar på den enda fråga en ägare betalar för: vad kan tas ut utan att affären försvagas."
         },
         {
           "type": "utmaning",
@@ -944,7 +944,7 @@
         },
         {
           "type": "text",
-          "content": "Kortismen — börsens fixering vid nästa kvartal — är enligt Buffett en följd av samma brist på ägarperspektiv. Graham formulerade botemedlet: »På kort sikt är börsen en röstmaskin, på lång sikt en vågmaskin.« Berkshire ger ingen kvartalsguidance och Buffett varnar för bolag som bygger sin berättelse på att slå estimat — det är nämligen hur VD-löner och optioner ofta är konstruerade, inte hur värde skapas. För ägaren blir den praktiska regeln: värdera utdelning, återköp (V20) och retention som tre prövade kapitalbeslut, bedömda på samma sätt — pris, avkastning och tid — oberoende av vad kvartalskulturen belönar. Ett återköp till överpris skapar inget värde alls; en utdelning som lånas för att hållas är lika mycket värdeförstörelse som ett dåligt förvärv."
+          "content": "Kortismen — börsens fixering vid nästa kvartal — är enligt Buffett en följd av samma brist på ägarperspektiv. Graham formulerade botemedlet: »På kort sikt är börsen en röstmaskin, på lång sikt en vågmaskin.« Berkshire ger ingen kvartalsguidance och Buffett varnar för bolag som bygger sin berättelse på att slå estimat — det är nämligen hur VD-löner och optioner ofta är konstruerade, inte hur värde skapas. För ägaren blir den praktiska regeln: värdera utdelning, återköp (V20) och retention som tre prövade kapitalbeslut, bedömda på samma sätt — pris, avkastning och tid — oberoende av vad kvartalskulturen belönär. Ett återköp till överpris skapar inget värde alls; en utdelning som lånas för att hållas är lika mycket värdeförstörelse som ett dåligt förvärv."
         },
         {
           "type": "tabell",

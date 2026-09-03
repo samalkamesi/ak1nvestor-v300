@@ -338,7 +338,7 @@
         },
         {
           "type": "text",
-          "content": "Bygget är boken som infrastruktur-drama: från att övertyga kapital, markrättigheter genom delstater, arbetslag som grävde dygnet runt och rivaler som försökte lista ut rutten och köpa mark före dem. Lewis berättar det med en blandning av beundran och fasa — beundran för ingenjörskonsten, fasa för vad den användes till. Affärsmodellen var enkel: hyr ut kapacitet till handelsfirmor som betalade mycket per månad för snabbare priser. Poängen för kursen: detta är ren kapitalförbrukning i AKM1:s V19 — kapital bundet i en tillgång vars värde är en tidsfördel som tekniken ständigt äter. Redan innan linjen var färdig planerade konkurrenter mikrovåglänkar — för radiovågor färdas genom luft nästan i vakuumhastighet och slår glas. Fördelen var hårdvaru-real, men föränderlig."
+          "content": "Bygget är boken som infrastruktur-drama: från att övertyga kapital, markrättigheter genom delstater, arbetslag som grävde dygnet runt och rivaler som försökte lista ut rutten och köpa mark före dem. Lewis berättar det med en blandning av beundran och fasa — beundran för ingenjörskonsten, fasa för vad den användes till. Affärsmodellen var enkel: hyr ut kapacitet till handelsfirmor som betalade mycket per månad för snabbare priser. Poängen för kursen: detta är ren kapitalförbrukning i AKM1:s V19 — kapital bundet i en tillgång vars värde är en tidsfördel som tekniken ständigt äter. Redan innan linjen var färdig planerade konkurrenter mikrovåglänkar — för radiovågör färdas genom luft nästan i vakuumhastighet och slår glas. Fördelen var hårdvaru-real, men föränderlig."
         },
         {
           "type": "text",
@@ -354,7 +354,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Hastighetstrappan — från människa till mikrosekund\",\"rader\":[[\"Nivå\",\"Aktör eller teknik\",\"Typisk reaktionstid\"],[\"Mänsklig manuell\",\"Handlare som läser en skärm\",\"cirka 1 sekund = 1 000 ms\"],[\"Äldre fiber\",\"Befintliga nät Chicago–New Jersey\",\"flera ms enkel väg\"],[\"Spread Networks\",\"835 mil rak fiber genom bergen\",\"cirka 13 ms tur och retur\"],[\"Mikrovåg och laser\",\"Radiolänkar genom luften\",\"nästan vakuumhastighet — slår glas\"],[\"Kolocerad algoritm\",\"Server bredvid börsens motor\",\"mikrosekunder\"],[\"DJupbeställning\",\"Ordertyper med plats i kön\",\"före alla som köar bakom\"]]}"
+          "content": "{\"rubrik\":\"Hastighetstrappan — från människa till mikrosekund\",\"rader\":[[\"Nivå\",\"Aktör eller teknik\",\"Typisk reaktionstid\"],[\"Mänsklig manuell\",\"Handlare som läser en skärm\",\"cirka 1 sekund = 1 000 ms\"],[\"Äldre fiber\",\"Befintliga nät Chicago–New Jersey\",\"flera ms enkel väg\"],[\"Spread Networks\",\"835 mil rak fiber genom bergen\",\"cirka 13 ms tur och retur\"],[\"Mikrovåg och laser\",\"Radiolänkar genom luften\",\"nästan vakuumhastighet — slår glas\"],[\"Kolocerad algoritm\",\"Server bredvid börsens motor\",\"mikrosekunder\"],[\"DJupbeställning\",\"Ordertyper med plats i kön\",\"före alla som köär bakom\"]]}"
         },
         {
           "type": "insikt",
@@ -380,7 +380,7 @@
         {
           "q": "Varför hotade mikrovåglänkar Spread-affärsmodellen?",
           "alternativ": [
-            "Radiovågor färdas genom luft nästan i vakuumhastighet och är snabbare än ljus i glas",
+            "Radiovågör färdas genom luft nästan i vakuumhastighet och är snabbare än ljus i glas",
             "De var billigare att hyra för småsparare",
             "De var förbjudna i Pennsylvania",
             "De fungerade bara i mörker"
@@ -417,7 +417,7 @@
         },
         {
           "type": "text",
-          "content": "Dark pools förtjänar sin egen genomlysning. Ett dark pool är en privat handelsplats där order inte visas publikt — tanken var ursprungligen legitim: institutionella investerare skulle kunna handla stora poster utan att marknaden jagade priset före dem. Men i fragmenteringens värld blev dark pools ytterligare led i ekonomin: banker ägde dem, sålde tillgång till dem och matchade kundorder inifrån sitt eget flöde — med informationen om kundernas intentioner nära egen handel. I bokens kartläggning av den amerikanska marknaden fanns dessutom internmatcharna: banker som tog motsidan på kundens order själva. Ingen av dessa konstruktioner var olaglig; alla var incitament byggda ovanpå en struktur där slutkundens order var den värdefulla råvaran. V15 nätverkseffekter slår här i båda riktningarna: en handelsplats blir värdefull när likviditeten samlas där — men en struktur av många svaga platser med säljbara snabbhetsfördelar skapar värde för dem som kan navigera mellan dem snabbast."
+          "content": "Dark pools förtjänär sin egen genomlysning. Ett dark pool är en privat handelsplats där order inte visas publikt — tanken var ursprungligen legitim: institutionella investerare skulle kunna handla stora poster utan att marknaden jagade priset före dem. Men i fragmenteringens värld blev dark pools ytterligare led i ekonomin: banker ägde dem, sålde tillgång till dem och matchade kundorder inifrån sitt eget flöde — med informationen om kundernas intentioner nära egen handel. I bokens kartläggning av den amerikanska marknaden fanns dessutom internmatcharna: banker som tog motsidan på kundens order själva. Ingen av dessa konstruktioner var olaglig; alla var incitament byggda ovanpå en struktur där slutkundens order var den värdefulla råvaran. V15 nätverkseffekter slår här i båda riktningarna: en handelsplats blir värdefull när likviditeten samlas där — men en struktur av många svaga platser med säljbara snabbhetsfördelar skapar värde för dem som kan navigera mellan dem snabbast."
         },
         {
           "type": "text",
@@ -541,7 +541,7 @@
         {
           "q": "Vad är den stora kontrasten Lewis lyfter genom fallet?",
           "alternativ": [
-            "Att programmerare tjänar mer än handlare",
+            "Att programmerare tjänär mer än handlare",
             "Att Goldman saknade brandvägg mot internet",
             "Att koden beskrevs som verktyg för orättvis manipulation — medan systemet den verkade i var lagligt",
             "Att Tyskland vägrade utlämning"
@@ -567,7 +567,7 @@
         },
         {
           "type": "text",
-          "content": "Men Thorn innehöll också grunden till nästa kapitel i berättelsen. Ju fler som använde verktyget, desto mindre var problemet — men verktyget botade ett symptom, inte strukturen. Marknaden var fortfarande fragmenterad, börserna sålde fortfarande hastighet, och robotarna sökte fortfarande ledtrådar i varje orders ekon. Teamet insåg paradoxen: den bästa lösningen vore inte en mjukvaruprodukt hos en bank, utan en handelsplats där mekaniken inte kunde utnyttjas alls — en börs designad från grunden för att inte gå att jaga på. Samtidigt väckte Thorn en obehaglig fråga inom RBC: banken tjänade på att kunderna fick bättre exekvering, men branschen som helhet — mäklare, banker med dark pools, börser med rebater — tjänade på att problemet fanns kvar. Incitamentstrukturen gick emot lösningen. Det är V17 avtal och partnerskap i sin mest cyniska variant: partnerskapen bevarade problemet, eftersom problemet var intäktsströmmen."
+          "content": "Men Thorn innehöll också grunden till nästa kapitel i berättelsen. Ju fler som använde verktyget, desto mindre var problemet — men verktyget botade ett symptom, inte strukturen. Marknaden var fortfarande fragmenterad, börserna sålde fortfarande hastighet, och robotarna sökte fortfarande ledtrådär i varje orders ekon. Teamet insåg paradoxen: den bästa lösningen vore inte en mjukvaruprodukt hos en bank, utan en handelsplats där mekaniken inte kunde utnyttjas alls — en börs designad från grunden för att inte gå att jaga på. Samtidigt väckte Thorn en obehaglig fråga inom RBC: banken tjänade på att kunderna fick bättre exekvering, men branschen som helhet — mäklare, banker med dark pools, börser med rebater — tjänade på att problemet fanns kvar. Incitamentstrukturen gick emot lösningen. Det är V17 avtal och partnerskap i sin mest cyniska variant: partnerskapen bevarade problemet, eftersom problemet var intäktsströmmen."
         },
         {
           "type": "text",
@@ -583,7 +583,7 @@
         },
         {
           "type": "insikt",
-          "content": "Girighet är konstant; mekaniken är variabeln. När strukturen belönar ett beteende uppträder det — och när strukturen slutar belöna det försvinner det samma dag. Förklara marknadsfenomen med mekanism först, karaktär senast."
+          "content": "Girighet är konstant; mekaniken är variabeln. När strukturen belönär ett beteende uppträder det — och när strukturen slutar belöna det försvinner det samma dag. Förklara marknadsfenomen med mekanism först, karaktär senast."
         },
         {
           "type": "utmaning",
@@ -634,7 +634,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Försvaret, såsom det formulerades när boken kom i mars 2014 — och det förtjänar att framställas starkt. För det första: högfrekvenshandlare ger likviditet. De står redo som motpart i miljontals affärer och gör det möjligt att köpa och sälja nästan alltid, i nästan vilken storlek som helst, till att börja med. För det andra: spreadarna. Före decimaliseringen 2001 var den minsta rörelsen på en amerikansk aktie en åttondels dollar — 12,5 cent; efter fragmenteringen och HFT-kapplöpningen var typiska spreadar en cent eller mindre. Säg det igen, sa branschen: en cent. För det tredje: den enskilda investerarens totala kostnad för att handla en aktie — spread, provision, impact — är lägre idag än på decennier; du betalar mindre än på 1980-talet. Det är ett faktum i spreadstatistiken och det ska kursen stå för. För det fjärde: Lewis retorik om riggade marknader möttes av påpekandet att inget av det beskrivna var olagligt — och att FBI:s granskning av högfrekvenshandel, påbörjad efter bokens utgivning, avslutades utan åtal."
+          "content": "Försvaret, såsom det formulerades när boken kom i mars 2014 — och det förtjänär att framställas starkt. För det första: högfrekvenshandlare ger likviditet. De står redo som motpart i miljontals affärer och gör det möjligt att köpa och sälja nästan alltid, i nästan vilken storlek som helst, till att börja med. För det andra: spreadarna. Före decimaliseringen 2001 var den minsta rörelsen på en amerikansk aktie en åttondels dollar — 12,5 cent; efter fragmenteringen och HFT-kapplöpningen var typiska spreadar en cent eller mindre. Säg det igen, sa branschen: en cent. För det tredje: den enskilda investerarens totala kostnad för att handla en aktie — spread, provision, impact — är lägre idag än på decennier; du betalar mindre än på 1980-talet. Det är ett faktum i spreadstatistiken och det ska kursen stå för. För det fjärde: Lewis retorik om riggade marknader möttes av påpekandet att inget av det beskrivna var olagligt — och att FBI:s granskning av högfrekvenshandel, påbörjad efter bokens utgivning, avslutades utan åtal."
         },
         {
           "type": "text",
@@ -721,7 +721,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-lärdomen att ta med: i infrastrukturbranscher är förtroende en real tillgång och nätverkseffekter en försenad belöning. V15 säger att vinnaren tar mest — men också att ingen är vinnare förrän kritisk massa nås, och att kapitalförbrukningen (V19) under mellantiden är det som dödar de flesta utmanare. IEX överlevde för att kostnaderna var låga, tesen var sann och kunderna hade ett mätbart intresse av sanningen. Överför till aktieanalys: när du bedömer en utmanare mot ett nätverk — en ny börs, en ny betalplattform, en ny marknadsplats — fråga tre saker: vad är den kvantifierbara fördelen för kunden (IEX: bättre exekvering, mätbar i cent per order), hur länge räcker kapitalet (V19), och vilken etablerad aktör har mest att förlora på att adoptera (Goldman hade dark pools — men också kunder som frågade). Där finns svaret om huruvida nätverkseffekten slår in."
+          "content": "AKM1-lärdomen att ta med: i infrastrukturbranscher är förtroende en real tillgång och nätverkseffekter en försenad belöning. V15 säger att vinnaren tar mest — men också att ingen är vinnare förrän kritisk massa nås, och att kapitalförbrukningen (V19) under mellantiden är det som dödär de flesta utmanare. IEX överlevde för att kostnaderna var låga, tesen var sann och kunderna hade ett mätbart intresse av sanningen. Överför till aktieanalys: när du bedömer en utmanare mot ett nätverk — en ny börs, en ny betalplattform, en ny marknadsplats — fråga tre saker: vad är den kvantifierbara fördelen för kunden (IEX: bättre exekvering, mätbar i cent per order), hur länge räcker kapitalet (V19), och vilken etablerad aktör har mest att förlora på att adoptera (Goldman hade dark pools — men också kunder som frågade). Där finns svaret om huruvida nätverkseffekten slår in."
         },
         {
           "type": "visuell",
@@ -792,7 +792,7 @@
         },
         {
           "type": "text",
-          "content": "Den svenska kopplingen djupast bakåt: transaktionsskatten 1984-1991. Sverige beskattade aktiehandel med 0,5 procent 1984, höjde till 1 procent 1986 och utökade till obligationer och derivat i slutet av decenniet. Resultatet blev en av finanshistoriens renaste naturliga experiment: handeln flyttade. Mer än hälften av volymen i svenska aktier migrerade till London, obligationsvolymen kollapsade — med omkring 85 procent på kort tid — och terminshandeln sjönk dramatiskt, medan priserna på handeln med svenska värdepapper inte blev märkbart mer effektiva. Skatten avskaffades i början av 1990-talet. Lärdomen är bokens egen mekanik spegelvänd: marknadsbeteende följer incitament och struktur med noggrannhet. Beskatta ett beteende och det flyttar sig — inte för att deltagarna är illojala utan för att mekaniken belönar den som går där kostnaden är lägst. I AKM1:s språk: V18 regulatoriska katalysatorer är inte åsikter utan positionsförändringar — de flyttar volym, spread och vinnare med marknadens fulla logik."
+          "content": "Den svenska kopplingen djupast bakåt: transaktionsskatten 1984-1991. Sverige beskattade aktiehandel med 0,5 procent 1984, höjde till 1 procent 1986 och utökade till obligationer och derivat i slutet av decenniet. Resultatet blev en av finanshistoriens renaste naturliga experiment: handeln flyttade. Mer än hälften av volymen i svenska aktier migrerade till London, obligationsvolymen kollapsade — med omkring 85 procent på kort tid — och terminshandeln sjönk dramatiskt, medan priserna på handeln med svenska värdepapper inte blev märkbart mer effektiva. Skatten avskaffades i början av 1990-talet. Lärdomen är bokens egen mekanik spegelvänd: marknadsbeteende följer incitament och struktur med noggrannhet. Beskatta ett beteende och det flyttar sig — inte för att deltagarna är illojala utan för att mekaniken belönär den som går där kostnaden är lägst. I AKM1:s språk: V18 regulatoriska katalysatorer är inte åsikter utan positionsförändringar — de flyttar volym, spread och vinnare med marknadens fulla logik."
         },
         {
           "type": "text",

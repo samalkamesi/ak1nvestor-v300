@@ -10,9 +10,9 @@
   "xp": 2000,
   "level": "",
   "learn": "Förstå den fina ledarskapets paradox — varför välskötta bolag dör av god management · Behärska kärndistinktionen sustaining mot disruptive innovation · Se hur value networks låser in kostnadsstruktur och marginalkrav · Tillämpa Resource Dependence-teorin — resurser allokeras i praktiken av kunderna · Räkna diskarnas kapacitets- och prisbanor generation för generation (14-8-5,25-3,5 tum) · Analysera stål, grävmaskiner och detaljhandel som disruptionens mekano · Förstå varför inkubatorer och interna satsningar misslyckas · Koppla moat-erosion till V13-V15 och V12 intäktsstabilitet som disruption-falsifikator — stabil omsättning kan vara låsning ELLER dödsdom · Känna igen aktieägarfällan: billig plus stabil plus tyst katalysatorblock · Bedöma motgiften: autonoma enheter, spin-outs, separat P&L · Mäta innovation med katalysatorblocket V16-V18 — lanseringar, avtal, regulatorik · Väg akademikernas ex post-kritik och Thiels 0-till-1-kontrast mot Christensens svar · Syntetisera disruption-radar med AKM1:s tjugo variabler",
-  "why": "Det här är katalysatorblockets (V16-V18) teoretiska grund och moatblockets (V13-V15) mörka spegel. Christensen förklarar mekanismen bakom varför innovativa, kundnära, välskötta bolag kan ha sina moats omdefinierade bort under fötterna — och varför de samtidigt ser billiga ut (V04-V06) och stabila ut (V12) ända ned i graven. Utan den här boken är AKM1:s moat- och katalysatorvariabler dekor; med den blir de en falsifierbar disruption-radar. Kontroverskapitlet — akademikernas prediktionskritik och Thiels vertikala motstånd — ger den intellektuella ärligheten: teorin är en lins, inte en lag, och disruptions-tajmingen är omöjlig att pricka. Precis därför poängsätter AKM1 innovation MÄTBART (lanseringsfrekvens, avtal, regulatorik) utan att förutsäga vinnare.",
+  "why": "Det här är katalysatorblockets (V16-V18) teoretiska grund och moatblockets (V13-V15) mörka spegel. Christensen förklarar mekanismen bakom varför innovativa, kundnära, välskötta bolag kan ha sina moats omdefinierade bort under fötterna — och varför de samtidigt ser billiga ut (V04-V06) och stabila ut (V12) ända ned i graven. Utan den här boken är AKM1:s moat- och katalysatorvariabler dekor; med den blir de en falsifierbar disruption-radar. Kontroverskapitlet — akademikernas prediktionskritik och Thiels vertikala motstånd — ger den intellektuella ärligheten: teorin är en lins, inte en läg, och disruptions-tajmingen är omöjlig att pricka. Precis därför poängsätter AKM1 innovation MÄTBART (lanseringsfrekvens, avtal, regulatorik) utan att förutsäga vinnare.",
   "chapters_list": [
-    "1. Det fina ledarskapets paradox — god management dödar",
+    "1. Det fina ledarskapets paradox — god management dödär",
     "2. Kärndistinktionen — sustaining mot disruptive innovation",
     "3. Value networks — kostnadsstrukturens fängelse",
     "4. Resursallokeringens tyranni — Resource Dependence",
@@ -32,12 +32,12 @@
     {
       "num": 1,
       "minutes": 12,
-      "title": "Det fina ledarskapets paradox — god management dödar",
+      "title": "Det fina ledarskapets paradox — god management dödär",
       "intro": "Clayton Christensen, professor vid Harvard Business School, publicerade 1997 en av näringslivshistoriens mest citerade böcker: The Innovator's Dilemma — When New Technologies Cause Great Firms to Fail. Tesen är djupt obehaglig för varje managementutbildning: de bolag som misslyckas med ny teknik misslyckas inte för att de är dåligt skötta. De misslyckas för att de är BRA skötta. Kursen börjar med paradoxen i dess renaste form.",
       "blocks": [
         {
           "type": "text",
-          "content": "Dilemmats kärna, som Christensen formulerar det: det är GENOM att lyssna på sina bästa kunder, GENOM att investera där marginalerna är högst och GENOM att rikta sig mot de största och mest lönsamma marknaderna som välskötta bolag hamnar i bakvatten när en disruptive technology dyker upp. Var och en av dessa principer är kärnan i god management — det är exakt det man lär ut på handelshögskolor och belönar i styrelserum. Och ändå, visar boken, är summan av dessa riktigt bra beslut att bolaget ger bort framtiden. Det är detta som är ett DILEMMA och inte ett misstag: ett misstag straffar felaktiga beslut, ett dilemma straffar korrekta."
+          "content": "Dilemmats kärna, som Christensen formulerar det: det är GENOM att lyssna på sina bästa kunder, GENOM att investera där marginalerna är högst och GENOM att rikta sig mot de största och mest lönsamma marknaderna som välskötta bolag hamnar i bakvatten när en disruptive technology dyker upp. Var och en av dessa principer är kärnan i god management — det är exakt det man lär ut på handelshögskolor och belönär i styrelserum. Och ändå, visar boken, är summan av dessa riktigt bra beslut att bolaget ger bort framtiden. Det är detta som är ett DILEMMA och inte ett misstag: ett misstag straffar felaktiga beslut, ett dilemma straffar korrekta."
         },
         {
           "type": "text",
@@ -53,11 +53,11 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fem rationella beslut och deras konsekvens i bokens fall\",\"rader\":[[\"Rationellt beslut\",\"Ledningens logik\",\"Konsekvens i bokens fall\"],[\"Lyssna på sina bästa kunder\",\"kundorientering är managementlärans kärna\",\"kunderna ville inte ha den nya tekniken — förslagen dog i säljstyrkan\"],[\"Investera där marginalen är högst\",\"kapital ska till högavkastande projekt\",\"lågmarginalformaten överläts åt nykomlingar utan kamp\"],[\"Sikta på större marknader\",\"tillväxt kräver stora marknader\",\"nya marknader var för små för att ens räknas\"],[\"Bygg bättre produkter åt befintliga kunder\",\"sustaining-vinster är verkliga och mätbara\",\"radikal sustaining vanns — arkitekturskiftena förlorades\"],[\"Visa stabila intäkter\",\"marknaden belönar förutsägbarhet\",\"stabiliteten bevisade nätverkets grepp — ända till fallet\"]]}"
+          "content": "{\"rubrik\":\"Fem rationella beslut och deras konsekvens i bokens fall\",\"rader\":[[\"Rationellt beslut\",\"Ledningens logik\",\"Konsekvens i bokens fall\"],[\"Lyssna på sina bästa kunder\",\"kundorientering är managementlärans kärna\",\"kunderna ville inte ha den nya tekniken — förslagen dog i säljstyrkan\"],[\"Investera där marginalen är högst\",\"kapital ska till högavkastande projekt\",\"lågmarginalformaten överläts åt nykomlingar utan kamp\"],[\"Sikta på större marknader\",\"tillväxt kräver stora marknader\",\"nya marknader var för små för att ens räknas\"],[\"Bygg bättre produkter åt befintliga kunder\",\"sustaining-vinster är verkliga och mätbara\",\"radikal sustaining vanns — arkitekturskiftena förlorades\"],[\"Visa stabila intäkter\",\"marknaden belönär förutsägbarhet\",\"stabiliteten bevisade nätverkets grepp — ända till fallet\"]]}"
         },
         {
           "type": "utmaning",
-          "content": "Gör dilemmatestet på din egen portfölj: välj tre innehav som du anser bäst skötta (nöjda kunder, starka marginaler, tydlig strategi). Skriv för varje bolag: vilka är de tre viktigaste kunderna, och vilka produktattribut belönar dessa kunder? Fråga sedan: finns det någon — i eller utanför branschen — som idag erbjuder något SÄMRE på dessa attribut men enklare, billigare eller bekvämare, till en kundgrupp bolaget inte bryr sig om? Skriv ned namnet. Det är din disruption-bevakningslista för resten av kursen."
+          "content": "Gör dilemmatestet på din egen portfölj: välj tre innehav som du anser bäst skötta (nöjda kunder, starka marginaler, tydlig strategi). Skriv för varje bolag: vilka är de tre viktigaste kunderna, och vilka produktattribut belönär dessa kunder? Fråga sedan: finns det någon — i eller utanför branschen — som idag erbjuder något SÄMRE på dessa attribut men enklare, billigare eller bekvämare, till en kundgrupp bolaget inte bryr sig om? Skriv ned namnet. Det är din disruption-bevakningslista för resten av kursen."
         },
         {
           "type": "visuell",
@@ -132,7 +132,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Sorteringsträningen: skriv ned sex innovationer du hört kallas disruptiva under det senaste året (nyheter, prospekt, säljmaterial). Sortera varje på tre frågor: ett — var produkten sämre än mainstream-alternativet vid lansering på kundernas huvudattribut? två — fanns förstagångskunder som inte var kunder innan? tre — var affärsmekaniken strukturellt lägrekostnad? Endast tre ja gör den disruptiv enligt boken. Räkna hur många av dina sex som överlever — och notera vad de andra egentligen var (sustaining, modeord eller ren marknadsföring)."
+          "content": "Sorteringsträningen: skriv ned sex innovationer du hört kallas disruptiva under det senaste året (nyheter, prospekt, säljmaterial). Sortera varje på tre frågör: ett — var produkten sämre än mainstream-alternativet vid lansering på kundernas huvudattribut? två — fanns förstagångskunder som inte var kunder innan? tre — var affärsmekaniken strukturellt lägrekostnad? Endast tre ja gör den disruptiv enligt boken. Räkna hur många av dina sex som överlever — och notera vad de andra egentligen var (sustaining, modeord eller ren marknadsföring)."
         },
         {
           "type": "visuell",
@@ -499,7 +499,7 @@
         },
         {
           "type": "insikt",
-          "content": "Retirerandets paradox: en lågmarginalaffär som överlämnas utan kamp är inte bara förlorad intäkt — den är fiendens finansiering. Fråga vid varje bolag du äger: vilka segment lämnar vi idag för att de inte lönar sig? Varje sådant beslut är samtidigt ett svar på frågan vem som kommer att ha råd att angripa oss imorgon."
+          "content": "Retirerandets paradox: en lågmarginalaffär som överlämnas utan kamp är inte bara förlorad intäkt — den är fiendens finansiering. Fråga vid varje bolag du äger: vilka segment lämnar vi idag för att de inte lönär sig? Varje sådant beslut är samtidigt ett svar på frågan vem som kommer att ha råd att angripa oss imorgon."
         },
         {
           "type": "tabell",
@@ -582,7 +582,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Fjärdedelskubik-övningen: välj din bransch och identifiera dess huvudmetric — den siffra alla använder för att rangordna produkter (kapacitet, hastighet, precision, effekt). Sök sedan efter produkter som är klart sämre på den metricken men som betjänar kunder som ditt bolags produktionsavdelning aldrig pratat om. Skriv ned: huvudmetric-nivå hos inkumbent och angripare, uppskattad tillväxttakt hos angriparen, och korsningsår med samma logik som i kapitel 5. Du har nu letat rätt på din bransches hydraulik — eller konstaterat att den inte finns, vilket också är ett analysresultat."
+          "content": "Fjärdedelskubik-övningen: välj din bransch och identifiera dess huvudmetric — den siffra alla använder för att rangordna produkter (kapacitet, hastighet, precision, effekt). Sök sedan efter produkter som är klart sämre på den metricken men som betjänär kunder som ditt bolags produktionsavdelning aldrig pratat om. Skriv ned: huvudmetric-nivå hos inkumbent och angripare, uppskattad tillväxttakt hos angriparen, och korsningsår med samma logik som i kapitel 5. Du har nu letat rätt på din bransches hydraulik — eller konstaterat att den inte finns, vilket också är ett analysresultat."
         },
         {
           "type": "visuell",
@@ -645,7 +645,7 @@
         },
         {
           "type": "text",
-          "content": "Investeringspoängen, som boken driver med detaljhandeln som bevis: margin är en KOSTNADSSTRUKTUR, inte en prestation. En aktör som visar fyrtio procents bruttomarginal är inte bättre än en som visar tjugo — den är dyrare, och sårbar för varje angripare som hittar en formel för att leverera acceptabel kvalitet under den andres kostnadskurva. Rabattkedjans diskontering var INTE en prissättningsstrategi — det var en annan fabriks ekonomi. Varje gång du ser en bransch där aktörerna tjänar på olika bruttomarginal-nivåer ser du ett värdenätverksskifte i realtid — och den lågmarginalaktören är strukturellt på rätt sida av historien, segment för segment uppför ståltrappan (varuhusens mjuka handel blev diskonternas hårda handel; diskonternas sortiment blev e-handelns nästa trappa)."
+          "content": "Investeringspoängen, som boken driver med detaljhandeln som bevis: margin är en KOSTNADSSTRUKTUR, inte en prestation. En aktör som visar fyrtio procents bruttomarginal är inte bättre än en som visar tjugo — den är dyrare, och sårbar för varje angripare som hittar en formel för att leverera acceptabel kvalitet under den andres kostnadskurva. Rabattkedjans diskontering var INTE en prissättningsstrategi — det var en annan fabriks ekonomi. Varje gång du ser en bransch där aktörerna tjänär på olika bruttomarginal-nivåer ser du ett värdenätverksskifte i realtid — och den lågmarginalaktören är strukturellt på rätt sida av historien, segment för segment uppför ståltrappan (varuhusens mjuka handel blev diskonternas hårda handel; diskonternas sortiment blev e-handelns nästa trappa)."
         },
         {
           "type": "insikt",
@@ -708,7 +708,7 @@
       "num": 10,
       "minutes": 12,
       "title": "Inkubatorernas misslyckande — varför interna satsningar dör",
-      "intro": "Om dilemmat vore bara tekniskt vore det löst: etablerade bolag HADE resurserna — kapital, talang, varumärke, teknik — att bygga nästa generation. Christensens svar på varför de ändå misslyckas med interna satsningar och inkubatorer är bokens mest praktiska kapitel: det som dödar den interna satsningen är inte resursbristen utan att den nya verksamheten tvingas leva under moderbolagets processer och värderingar.",
+      "intro": "Om dilemmat vore bara tekniskt vore det löst: etablerade bolag HADE resurserna — kapital, talang, varumärke, teknik — att bygga nästa generation. Christensens svar på varför de ändå misslyckas med interna satsningar och inkubatorer är bokens mest praktiska kapitel: det som dödär den interna satsningen är inte resursbristen utan att den nya verksamheten tvingas leva under moderbolagets processer och värderingar.",
       "blocks": [
         {
           "type": "text",
@@ -716,7 +716,7 @@
         },
         {
           "type": "text",
-          "content": "Andra till femte dödsorsakerna. Två: RESURSBEROENDE INOM HUSET — satsningen ges till den befintliga säljorganisationen, som (rationellt) riktar den mot befintliga kunder, där den förlorar. Tre: MAINSTREAM-MÄTETAL — den nya enheten bedöms på bruttomarginal, intäktstillväxt och avkastning, mått som får en uppstartsverksamhet att se ut som ett misslyckande vid varje budgetrunda; Christensen menar att tidiga disruption-satsningar ska mätas på hur fort de lär sig marknaden, inte på hur väl de möter prognoser som ändå inte kan vara rätt. Fyra: VUXNA PROCESSER — budgetcykler, prognosprocesser och riskstyrning förutsätter kända marknader; nya marknader kan inte prognostiseras utan bara utforskas (en insikt Christensen senare satte som kapiteltitel i uppföljaren The Innovator's Solution, 2003: marknader som inte finns kan inte analyseras; där ansluter han till upptäcktsdriven planering i Rita Gunther McGrath och Ian MacMillans anda). Fem: SAMMA BYGGNAD — inkubatorer som ligger fysiskt och organisatoriskt inne i moderbolaget får dess värderingar på näthinnan; separation måste vara på riktigt."
+          "content": "Andra till femte dödsorsakerna. Två: RESURSBEROENDE INOM HUSET — satsningen ges till den befintliga säljorganisationen, som (rationellt) riktar den mot befintliga kunder, där den förlorar. Tre: MAINSTREAM-MÄTETAL — den nya enheten bedöms på bruttomarginal, intäktstillväxt och avkastning, mått som får en uppstartsverksamhet att se ut som ett misslyckande vid varje budgetrunda; Christensen menar att tidiga disruption-satsningar ska mätas på hur fort de lär sig marknaden, inte på hur väl de möter prognoser som ändå inte kan vara rätt. Fyra: VUXNA PROCESSER — budgetcykler, prognosprocesser och riskstyrning förutsätter kända marknader; nya marknader kan inte prognostiseras utan bara utforskas (en insikt Christensen senare satte som kapiteltitel i uppföljaren The Innovator's Solution, 2003: marknader som inte finns kan inte analyseras; där ansluter han till upptäcktsdriven planering i Rita Gunther McGrath och Ian MacMillans ända). Fem: SAMMA BYGGNAD — inkubatorer som ligger fysiskt och organisatoriskt inne i moderbolaget får dess värderingar på näthinnan; separation måste vara på riktigt."
         },
         {
           "type": "text",
@@ -874,7 +874,7 @@
         },
         {
           "type": "insikt",
-          "content": "Investerarens tre kontrollfrågor till varje bolag som möter disruption: (1) har den nya satsningen EGNA kunder — eller lånar den moderns? (2) har den egen resultaträkning och egna mätetal? (3) tillåts den tjäna pengar på att kanibalisera kärnan? Tre ja är möjligt nog börsens sällsyntaste management-prestation — och ett av de starkaste köpskälen som finns, för det visar att bolaget förstår sitt eget dilemma."
+          "content": "Investerarens tre kontrollfrågör till varje bolag som möter disruption: (1) har den nya satsningen EGNA kunder — eller lånär den moderns? (2) har den egen resultaträkning och egna mätetal? (3) tillåts den tjäna pengar på att kanibalisera kärnan? Tre ja är möjligt nog börsens sällsyntaste management-prestation — och ett av de starkaste köpskälen som finns, för det visar att bolaget förstår sitt eget dilemma."
         },
         {
           "type": "tabell",
@@ -1016,7 +1016,7 @@
         },
         {
           "type": "text",
-          "content": "Christensens försvar, så ärligt kursen kan framföra det. För det första: teorin är en LINS på en mekanism — resursberoende och värdenätverk är dokumenterade i fallen, och mekanismen hjälper att förklara VARFÖR goda bolag misslyckas, inte att förutsäga VILKA som gör det. För det andra: fallen valdes för att studera mekanismen i dess renaste form — det är legitimt för teoribyggnad men ger överdriven träffsäkerhet i presentationen. För det tredje: Seagate-fallet bevisar inte teorin fel — den säger att skälen till senhet är systematiska och att fönstret är begränsat, inte att senhet automatiskt dödar; Seagate hann ifatt under ett långsamt formatbyte och hade viljan att kanibalisera sig själv. Och för det fjärde, det ärligaste försvaret: Christensen medger själv att teorin är en generalisering av ett mönster, inte en lag — den som använder den som checklista snarare än som lins förtjänar sina förluster."
+          "content": "Christensens försvar, så ärligt kursen kan framföra det. För det första: teorin är en LINS på en mekanism — resursberoende och värdenätverk är dokumenterade i fallen, och mekanismen hjälper att förklara VARFÖR goda bolag misslyckas, inte att förutsäga VILKA som gör det. För det andra: fallen valdes för att studera mekanismen i dess renaste form — det är legitimt för teoribyggnad men ger överdriven träffsäkerhet i presentationen. För det tredje: Seagate-fallet bevisar inte teorin fel — den säger att skälen till senhet är systematiska och att fönstret är begränsat, inte att senhet automatiskt dödär; Seagate hann ifatt under ett långsamt formatbyte och hade viljan att kanibalisera sig själv. Och för det fjärde, det ärligaste försvaret: Christensen medger själv att teorin är en generalisering av ett mönster, inte en läg — den som använder den som checklista snarare än som lins förtjänär sina förluster."
         },
         {
           "type": "text",
@@ -1032,7 +1032,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Kör kritiken som test på din egen analyshistoria: ta fram en tidigare investeringsidé där du använde ordet disruption (eller där en säljare gjorde det). Tre frågor: (1) fanns en dokumenterad mekanism (resursberoende, marginalflykt, korsningsräkning) — eller bara en berättelse? (2) fanns mätbara spår (V16-V18) — lanseringar, avtal, regulatorik — eller bara diagnos? (3) dimensionerade du exponeringen som om tajmingen var osäker — eller som om du visste året? Skriv ned svaret i tre rader, datera, och behåll som ditt personliga bevisföring i nästa disruption-debatt — med dig själv."
+          "content": "Kör kritiken som test på din egen analyshistoria: ta fram en tidigare investeringsidé där du använde ordet disruption (eller där en säljare gjorde det). Tre frågör: (1) fanns en dokumenterad mekanism (resursberoende, marginalflykt, korsningsräkning) — eller bara en berättelse? (2) fanns mätbara spår (V16-V18) — lanseringar, avtal, regulatorik — eller bara diagnos? (3) dimensionerade du exponeringen som om tajmingen var osäker — eller som om du visste året? Skriv ned svaret i tre rader, datera, och behåll som ditt personliga bevisföring i nästa disruption-debatt — med dig själv."
         },
         {
           "type": "visuell",
@@ -1083,7 +1083,7 @@
       "num": 15,
       "minutes": 12,
       "title": "Sammanfattning — den disruptionsmedvetne investeraren (V01–V20)",
-      "intro": "Sista kapitlet sätter ihop hela boken till en enda AKM1-process: från god management paradox via banräkning och värdenätverk till radarn och dimensioneringen — och portätterar den investerare kursen har formats mot: den disruptionsmedvetne, som äger frågor i stället för prognoser.",
+      "intro": "Sista kapitlet sätter ihop hela boken till en enda AKM1-process: från god management paradox via banräkning och värdenätverk till radarn och dimensioneringen — och portätterar den investerare kursen har formats mot: den disruptionsmedvetne, som äger frågör i stället för prognoser.",
       "blocks": [
         {
           "type": "text",
@@ -1107,7 +1107,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Slutprojektet — bygg din disruptionsmedvetna analys för ett innehav: steg ett, klassa bolagets tre senaste produktlanseringar som sustaining eller disruptive (V16). Steg två, kartlägg värdenätverket (kunder, kanaler, marginalkrav — V07 som fingeravtryck). Steg tre, räkna korsningen för den tydligaste angripande arkitekturen (kapitel 5:s metod). Steg fyra, läs V12 som falsifikator och skriv domen: låsning eller dödsdom — med katalysatorblocket som belägg. Steg fem, kontrollera organisationen (kapitel 12:s tre frågor) och V20 (återköp under erosion?). Steg sex, dimensionera: vad är din position om tajmingen kommer om fem år i stället för två? Spara dokumentet daterat — och uppdatera radarn kvartalsvis. Från och med nu äger du frågorna, inte bara aktien."
+          "content": "Slutprojektet — bygg din disruptionsmedvetna analys för ett innehav: steg ett, klassa bolagets tre senaste produktlanseringar som sustaining eller disruptive (V16). Steg två, kartlägg värdenätverket (kunder, kanaler, marginalkrav — V07 som fingeravtryck). Steg tre, räkna korsningen för den tydligaste angripande arkitekturen (kapitel 5:s metod). Steg fyra, läs V12 som falsifikator och skriv domen: låsning eller dödsdom — med katalysatorblocket som belägg. Steg fem, kontrollera organisationen (kapitel 12:s tre frågör) och V20 (återköp under erosion?). Steg sex, dimensionera: vad är din position om tajmingen kommer om fem år i stället för två? Spara dokumentet daterat — och uppdatera radarn kvartalsvis. Från och med nu äger du frågorna, inte bara aktien."
         },
         {
           "type": "visuell",

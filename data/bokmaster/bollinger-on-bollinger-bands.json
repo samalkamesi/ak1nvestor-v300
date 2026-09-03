@@ -9,7 +9,7 @@
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan du: berätta historien om varför adaptiva band behövde uppfinnas — och exakt varför fasta procentsband felar · konstruera banden från grunden: 20-dagars enkelt medelvärde ± 2 standardavvikelser, med population mot urvalsvarianten och ett fullständigt räkneexempel du kan köra i kalkylblad · redogöra för föregångarna — procentsband, Hurst envelopes, Keltner, Donchian — och deras respektive svaghet · förklara den relativa definitionen av högt och lågt och dess släktskap med z-score och normaliserade mått · beräkna och läsa %b — indikatorn i indikatorn — inklusive att lägga band på andra indikatorer · beräkna BandWidth och använda den som volatilitetens ekg: Squeeze och Bulge · känna igen The Squeeze och dess livscykel — och koppla den till AK1TS Brytpunkt-dimensionen (fib38/fib62-zoner, stängningsbaserade utbrott) · skilja walking the bands från överextension — och veta varför en bandtagg aldrig är en signal · läsa W-bottnar och M-toppar i %b-språk, inklusive three pushes to a high · använda Intraday Intensity och Accumulation Distribution som volymröst — II% och AD% med 21-dagars normalisering · bygga system enligt Bollingers regler: checklistan och de två testersystemen med inträde, bekräftelse, exit och stopp · redogöra för kontroversen — ±2σ:s pseudovetenskap, Malkiels arbitrering, overfitting — och för Bollingers plattå-svar · och syntetisera: bandens idé i AK1TS-motorn, bandens andning i AKM1:s variabler — volatilitet är en variabel, inte en konstant.",
+  "learn": "Efter kursen kan du: berätta historien om varför adaptiva band behövde uppfinnas — och exakt varför fasta procentsband felar · konstruera banden från grunden: 20-dagars enkelt medelvärde ± 2 standardavvikelser, med population mot urvalsvarianten och ett fullständigt räkneexempel du kan köra i kalkylblad · redogöra för föregångarna — procentsband, Hurst envelopes, Keltner, Donchian — och deras respektive svaghet · förklara den relativa definitionen av högt och lågt och dess släktskap med z-score och normaliserade mått · beräkna och läsa %b — indikatorn i indikatorn — inklusive att lägga band på andra indikatorer · beräkna BandWidth och använda den som volatilitetens ekg: Squeeze och Bulge · känna igen The Squeeze och dess livscykel — och koppla den till AK1TS Brytpunkt-dimensionen (fib38/fib62-zoner, stängningsbaserade utbrott) · skilja walking the bands från överextension — och veta varför en bandtagg aldrig är en signal · läsa W-bottnar och M-toppar i %b-språk, inklusive three pushes to a high · använda Intraday Intensity och Accumulation Distribution som volymröst — II% och AD% med 21-dagars normalisering · bygga system enligt Bollingers regler: checklistan och de två testersystemen med inträde, bekräftelse, exit och stopp · redogöra för kontroversen — ±2σ:s pseudovetenskap, Malkiels arbitrering, overfitting — och för Bollingers plattå-svar · och syntetisera: bandens idé i AK1TS-motorn, bandens åndning i AKM1:s variabler — volatilitet är en variabel, inte en konstant.",
   "why": "Det här är volatilitetskursen i katalogen: där Murphys kurser lär ut att LÄSA diagrammet lär den här boken ut att MÄTA det — volatiliteten som variabel, kompression som förelöpare till rörelse, och normalisering som princip för alla jämförelser. Tre skäl gör den KRITISK för ekosystemet. Ett: bandens kärnidé — kompression föder brytning — är bokstavligen logiken i AK1TS Brytpunkt-dimension (fib38/fib62-zoner ur 52-veckorsspannet, stängningsbaserade utbrott); kursen är den teoretiska biografin till en rad i analys-motorn. Två: boken är metodologiskt hederlig på ett sätt få tekniktitlar är — skaparen själv varnar för statistiskt missbruk av hans eget verktyg, visar parametrarnas platå i stället för toppar och dokumenterar sina exempelsystem öppet; det är samma intellektuella ärlighet som QV-kursens backtest-metodik. Tre: kontroverskapitlet tar teknikens närmaste grannämne — överoptimering — på fullt allvar och landar i motorns konstitution: få parametrar, determinism, osatt hellre än gissat. Volatilitet är den variabel den döda skolan glömde; banden gjorde den synlig, motorn gör den mätbar, AKM1 gör den begriplig.",
   "chapters_list": [
     "1. Boken och mannen — varför adaptiva band behövde uppfinnas",
@@ -48,7 +48,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — volatilitet finns i fundamentet också: bolag med stabila, förutsägbara intäkter har i regel lugnare kursvolatilitet än bolag med svängande intäkter; bandens andning är delvis V12:s skugga i priset. AK1TS-RAD: Brytpunkt-dimensionen — kursens räls: bandens grundidé, kompression föder brytning, lever i motorn som zoner och utbrott, och den kopplingen byggs ut ordentligt i kapitel 7 och 13."
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — volatilitet finns i fundamentet också: bolag med stabila, förutsägbara intäkter har i regel lugnare kursvolatilitet än bolag med svängande intäkter; bandens åndning är delvis V12:s skugga i priset. AK1TS-RAD: Brytpunkt-dimensionen — kursens räls: bandens grundidé, kompression föder brytning, lever i motorn som zoner och utbrott, och den kopplingen byggs ut ordentligt i kapitel 7 och 13."
         },
         {
           "type": "insikt",
@@ -119,11 +119,11 @@
         },
         {
           "type": "text",
-          "content": "Räkneexemplet, komplett och kontrollerbart — med fem dagar i stället för tjugo, ty aritmetiken är identisk och bara längre. Stängningar: 100, 102, 101, 103, 104. Medelvärde: 510 / 5 = 102. Avvikelser: −2, 0, −1, +1, +2. Kvadrater: 4, 0, 1, 1, 4 — summa 10. Varians (population): 10 / 5 = 2. Standardavvikelse: roten ur 2 ≈ 1,41. Övre band: 102 + 2 × 1,41 = 104,83. Nedre band: 102 − 2 × 1,41 = 99,17. Med urvalsvarianten hade variansen blivit 10 / 4 = 2,5 och σ ≈ 1,58 — banden 105,17 och 98,83: synlig men liten skillnad. På riktigt, med tjugo dagar, görs exakt samma fem steg — tabellen nedan är hela konstruktionen i miniatyr. Parametrarna: 20 och 2 är DEFAULT, inte magi, och boken ger sina enda rekommenderade alternativ: kortare medelvärde kräver lägre multiplikator — 10 dagar med 1,9 σ; längre kräver högre — 50 dagar med 2,1 σ. Och Bollingers egen varning, citerad ordagrant i anda: gör INTE statistiska antaganden från beräkningen — pris är inte normalfördelat, och banden är inga konfidensintervall (kontroversen återkommer i kapitel 12)."
+          "content": "Räkneexemplet, komplett och kontrollerbart — med fem dagar i stället för tjugo, ty aritmetiken är identisk och bara längre. Stängningar: 100, 102, 101, 103, 104. Medelvärde: 510 / 5 = 102. Avvikelser: −2, 0, −1, +1, +2. Kvadrater: 4, 0, 1, 1, 4 — summa 10. Varians (population): 10 / 5 = 2. Standardavvikelse: roten ur 2 ≈ 1,41. Övre band: 102 + 2 × 1,41 = 104,83. Nedre band: 102 − 2 × 1,41 = 99,17. Med urvalsvarianten hade variansen blivit 10 / 4 = 2,5 och σ ≈ 1,58 — banden 105,17 och 98,83: synlig men liten skillnad. På riktigt, med tjugo dagar, görs exakt samma fem steg — tabellen nedan är hela konstruktionen i miniatyr. Parametrarna: 20 och 2 är DEFAULT, inte magi, och boken ger sina enda rekommenderade alternativ: kortare medelvärde kräver lägre multiplikator — 10 dagar med 1,9 σ; längre kräver högre — 50 dagar med 2,1 σ. Och Bollingers egen varning, citerad ordagrant i ända: gör INTE statistiska antaganden från beräkningen — pris är inte normalfördelat, och banden är inga konfidensintervall (kontroversen återkommer i kapitel 12)."
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V04 P/S, V05 P/B, V06 EV/EBITDA — multiplarna är också eftersläpande medelvärden i förklädnad: ett P/B under sitt eget femårsgenomsnitt är %b-tänk tillämpat på värderingen — var i sitt band handlar multipeln? Vågfundamentet ställer den frågan per variabel. AK1TS-RAD: Trend-dimensionen — MA50 och MA200 i motorn är samma verktygsfamilj som mittbandet; motorn klassificerar vågor (impulsvåg, korrigering, basbygge) medan banden mäter avståndet till medelvärdet. Konstruktionen är släkt, användningen skild."
+          "content": "AKM1-BRYGGAN · V04 P/S, V05 P/B, V06 EV/EBITDA — multiplarna är också eftersläpande medelvärden i förklädnad: ett P/B under sitt eget femårsgenomsnitt är %b-tänk tillämpat på värderingen — var i sitt band handlar multipeln? Vågfundamentet ställer den frågan per variabel. AK1TS-RAD: Trend-dimensionen — MA50 och MA200 i motorn är samma verktygsfamilj som mittbandet; motorn klassificerar vågör (impulsvåg, korrigering, basbygge) medan banden mäter avståndet till medelvärdet. Konstruktionen är släkt, användningen skild."
         },
         {
           "type": "insikt",
@@ -348,7 +348,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V09 ROE — %b på V09: var i sitt eget femårsband ligger lönsamheten? ROE femton procent nära toppen av sitt band är en annan mening än femton procent på botten — nivån ensam ljuger, läget talar. Vågfundamentet gör denna läsningen per variabel, automatiskt. AK1TS-RAD: momentum-raderna (5/63/252 dagar) — samma idé: läget i spannet, inte den absoluta nivån; plus Brytpunkt-dimensionen när %b korsar noll eller ett (bandbrott som deterministisk händelse i motorns anda: stängningsbaserat)."
+          "content": "AKM1-BRYGGAN · V09 ROE — %b på V09: var i sitt eget femårsband ligger lönsamheten? ROE femton procent nära toppen av sitt band är en annan mening än femton procent på botten — nivån ensam ljuger, läget talar. Vågfundamentet gör denna läsningen per variabel, automatiskt. AK1TS-RAD: momentum-raderna (5/63/252 dagar) — samma idé: läget i spannet, inte den absoluta nivån; plus Brytpunkt-dimensionen när %b korsar noll eller ett (bandbrott som deterministisk händelse i motorns ända: stängningsbaserat)."
         },
         {
           "type": "insikt",
@@ -411,11 +411,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Formeln: BandWidth = (övre bandet − nedre bandet) / mittbandet × 100. Räkneexempel, för hand: övre 105, nedre 99, mitt 102 → (105 − 99) / 102 ≈ 5,9 — banden är knappt sex procent av priset breda. Det är samma information som avståndet mellan banden i en graph, men uttryckt som ETT tal: jämförbart över tid (har aktien varit smalare än så förr?), mellan instrument (är indexet spändare än sektorn?) och mot historiken (var står dagens bredd mot ett år av bredder?). BandWidth är volatilitetens ekg — en linje som visar marknadens andning: fallande bredd = inandning (kontraktion), stigande = utandning (expansion)."
+          "content": "Formeln: BandWidth = (övre bandet − nedre bandet) / mittbandet × 100. Räkneexempel, för hand: övre 105, nedre 99, mitt 102 → (105 − 99) / 102 ≈ 5,9 — banden är knappt sex procent av priset breda. Det är samma information som avståndet mellan banden i en graph, men uttryckt som ETT tal: jämförbart över tid (har aktien varit smalare än så förr?), mellan instrument (är indexet spändare än sektorn?) och mot historiken (var står dagens bredd mot ett år av bredder?). BandWidth är volatilitetens ekg — en linje som visar marknadens åndning: fallande bredd = inandning (kontraktion), stigande = utandning (expansion)."
         },
         {
           "type": "text",
-          "content": "Volatilitetens två lagar, i bokens anda citerade öppet. Första: volatilitet är mean-reverting — extrema nivåer återgår; evig storm finns inte, evigt lugn heller inte. Andra — och den som ger bokens berömdaste mönster dess logik: låg volatilitet FÖREGÅR hög volatilitet. När banden pressas samman kokar marknaden ihop sig — The Squeeze, kapitel 7 — och när utbrottet kommer exploderar bredden. Spegelbilden är The Bulge: extremt HÖG BandWidth, ofta efter en lång rörelse, när utmattningen trycker ut den sista volatiliteten — en trend som brinner av. Notera precisionen i vad dessa mönster säger: Squeeze lovar ATT något ska hända (inte vad), Bulge varnar för ATT en rörelse mattas (inte när den vänder). BandWidth är prognosens förvandling till meteorologi — tryck, inte väderprognos."
+          "content": "Volatilitetens två lagar, i bokens ända citerade öppet. Första: volatilitet är mean-reverting — extrema nivåer återgår; evig storm finns inte, evigt lugn heller inte. Andra — och den som ger bokens berömdaste mönster dess logik: låg volatilitet FÖREGÅR hög volatilitet. När banden pressas samman kokar marknaden ihop sig — The Squeeze, kapitel 7 — och när utbrottet kommer exploderar bredden. Spegelbilden är The Bulge: extremt HÖG BandWidth, ofta efter en lång rörelse, när utmattningen trycker ut den sista volatiliteten — en trend som brinner av. Notera precisionen i vad dessa mönster säger: Squeeze lovar ATT något ska hända (inte vad), Bulge varnar för ATT en rörelse mattas (inte när den vänder). BandWidth är prognosens förvandling till meteorologi — tryck, inte väderprognos."
         },
         {
           "type": "text",
@@ -455,7 +455,7 @@
           "tips": "Bredd som andel av mittbandet — procent av priset, inte av spannet."
         },
         {
-          "q": "Vad är volatilitetens andra lag enligt boken?",
+          "q": "Vad är volatilitetens andra läg enligt boken?",
           "alternativ": [
             "Att hög volatilitet varar för alltid",
             "Att låg volatilitet föregår hög volatilitet — kompression föder expansion",
@@ -794,7 +794,7 @@
         },
         {
           "type": "text",
-          "content": "Backtest-metodiken i bokens anda, tre huvudregler. Testa utanför optimeringsperioden: parametrar valda på en datamängd ska prövas på en annan — platån är det du letar efter, inte toppen. Räkna med verkligheten: transaktionskostnader, glidmedel (slippage) och survivorship — en backtest som bara lever på perfekt exekvering är en teckning. Och dimensionera risken ex ante: stoppet definieras vid inträdet (bokens system gör det — innanför bandet, under botten), positionens storlek efter hur mycket stoppet får kosta. AK1A lägger till sitt eget krav, samma som QV-kursens: varje justering av en regel efter att du sett resultatet är en ny frihetsgrad — notera den som skuld, inte som förbättring."
+          "content": "Backtest-metodiken i bokens ända, tre huvudregler. Testa utanför optimeringsperioden: parametrar valda på en datamängd ska prövas på en annan — platån är det du letar efter, inte toppen. Räkna med verkligheten: transaktionskostnader, glidmedel (slippage) och survivorship — en backtest som bara lever på perfekt exekvering är en teckning. Och dimensionera risken ex ante: stoppet definieras vid inträdet (bokens system gör det — innanför bandet, under botten), positionens storlek efter hur mycket stoppet får kosta. AK1A lägger till sitt eget krav, samma som QV-kursens: varje justering av en regel efter att du sett resultatet är en ny frihetsgrad — notera den som skuld, inte som förbättring."
         },
         {
           "type": "text",
@@ -861,7 +861,7 @@
       "num": 12,
       "minutes": 12,
       "title": "Kontroversen — är ±2σ magi? Malkiel, overfitting och svaret",
-      "intro": "Varför skulle 20 dagar och två standardavvikelser vara magiskt? Frågan förtjänar sitt eget kapitel — och Bollinger är ovanligt nog sin egen bästa kritiker. Kursen låter anklagelserna tala fritt, hämtar Malkiel från Random Walk-kursen, lägger overfitting-anklagelsen bredvid — och landar i AK1A:s determinism.",
+      "intro": "Varför skulle 20 dagar och två standardavvikelser vara magiskt? Frågan förtjänär sitt eget kapitel — och Bollinger är ovanligt nog sin egen bästa kritiker. Kursen låter anklagelserna tala fritt, hämtar Malkiel från Random Walk-kursen, lägger overfitting-anklagelsen bredvid — och landar i AK1A:s determinism.",
       "blocks": [
         {
           "type": "text",
@@ -952,7 +952,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V01–V20 — alla tjugo tjänar på relativ läsning: var i SITT band rör sig variabeln (Vågfundamentets impulsvåg, korrigering, basbygge per V); V16–V18 ger squeeze:n sin fjäder; V10 och V19 dimensionerar vad en head fake får kosta; V11 och V20 är volymrösternas fundamentala släkt. Banden är pulsen, AKM1 är domen. AK1TS-RAD: Brytpunkt-dimensionen × fem horisonter — kursens emblem: bandens barn bor i Brytpunkt-raden, med Trend-raden som walking-översättning och Volym-teorin som II%-översättning."
+          "content": "AKM1-BRYGGAN · V01–V20 — alla tjugo tjänär på relativ läsning: var i SITT band rör sig variabeln (Vågfundamentets impulsvåg, korrigering, basbygge per V); V16–V18 ger squeeze:n sin fjäder; V10 och V19 dimensionerar vad en head fake får kosta; V11 och V20 är volymrösternas fundamentala släkt. Banden är pulsen, AKM1 är domen. AK1TS-RAD: Brytpunkt-dimensionen × fem horisonter — kursens emblem: bandens barn bor i Brytpunkt-raden, med Trend-raden som walking-översättning och Volym-teorin som II%-översättning."
         },
         {
           "type": "insikt",
@@ -1023,11 +1023,11 @@
         },
         {
           "type": "text",
-          "content": "Spåret vidare i katalogen, redigerat: Murphy-kurserna (The Visual Investor och läroboken) för chartläsningens hela ram; Bulkowski för mönsterstatistiken; Elliott- och Fibonacci-kurserna för proportionernas teori; Random Walk-kursen för motståndaren som förtjänar sitt eget kapitel; Quantitative Value för backtest-metodik och datamining-vakt; AKM1- och AK1TS-kurserna och Vågfundamentet för motorn och syntesen. Bollingers plats bland dem är särskild av ett skäl: det är den enda boken i hyllan där verktygets SKAPARE själv förklarar konstruktionen, varnar för missbruket och visar parametrarnas platå — en lärobok i HEDERLIGHET lika mycket som i volatilitet. Därför är den BOKMASTER-värdig trots att den är tunnare än grannarna: den lär ut inte bara hur man använder ett verktyg, utan hur man tänker om alla verktyg."
+          "content": "Spåret vidare i katalogen, redigerat: Murphy-kurserna (The Visual Investor och läroboken) för chartläsningens hela ram; Bulkowski för mönsterstatistiken; Elliott- och Fibonacci-kurserna för proportionernas teori; Random Walk-kursen för motståndaren som förtjänär sitt eget kapitel; Quantitative Value för backtest-metodik och datamining-vakt; AKM1- och AK1TS-kurserna och Vågfundamentet för motorn och syntesen. Bollingers plats bland dem är särskild av ett skäl: det är den enda boken i hyllan där verktygets SKAPARE själv förklarar konstruktionen, varnar för missbruket och visar parametrarnas platå — en lärobok i HEDERLIGHET lika mycket som i volatilitet. Därför är den BOKMASTER-värdig trots att den är tunnare än grannarna: den lär ut inte bara hur man använder ett verktyg, utan hur man tänker om alla verktyg."
         },
         {
           "type": "text",
-          "content": "AKM1-BRYGGAN · V01–V20 — finalraden: banden är täljarens andning (V04–V06: var handlar multipeln i sitt band?), marginalernas ekg (V07–V09), katalysatorns ur (V16–V18) och riskens mått (V10, V19); AKM1 är domen, banden är pulsen. AK1TS-RAD: hela matrisen — Trend, Pris, Brytpunkt och Tid × Mikro till Mega; Bollinger-kolumnen är framför allt BRYTPUNKT: kompression föder brytning, determinerat. Sista formuleringen, värd att skriva i verkstaden: volatiliteten är variabeln som den döda skolan glömde — banden gjorde den synlig, motorn gör den mätbar, AKM1 gör den begriplig."
+          "content": "AKM1-BRYGGAN · V01–V20 — finalraden: banden är täljarens åndning (V04–V06: var handlar multipeln i sitt band?), marginalernas ekg (V07–V09), katalysatorns ur (V16–V18) och riskens mått (V10, V19); AKM1 är domen, banden är pulsen. AK1TS-RAD: hela matrisen — Trend, Pris, Brytpunkt och Tid × Mikro till Mega; Bollinger-kolumnen är framför allt BRYTPUNKT: kompression föder brytning, determinerat. Sista formuleringen, värd att skriva i verkstaden: volatiliteten är variabeln som den döda skolan glömde — banden gjorde den synlig, motorn gör den mätbar, AKM1 gör den begriplig."
         },
         {
           "type": "insikt",

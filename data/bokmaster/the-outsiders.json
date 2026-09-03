@@ -5,7 +5,7 @@
   "chapterCount": 14,
   "totalMinutes": 140,
   "title": "The Outsiders — Thorndike: KOMPLETT",
-  "summary": "The Outsiders (2012) är William Thorndikes studie av åtta VD:ar som slog S&P 500 med mer än tjugo gånger — inte genom imperiumsbyggande utan genom kapitalallokering. Kursen går igenom de fem gemensamma principerna, allokeringsverktygen (återköp, förvärv, utdelning, skuld och att göra ingenting) och alla åtta fallen: Murphy, Singleton, Anders, Malone, Graham, Stiritz, Simmons och Buffett. V20 — återköp av egna aktier — är bokens djupaste och mest användbara kapitel för AKM1-ekosystemet.",
+  "summary": "The Outsiders (2012) är William Thorndikes studie av åtta VD:är som slog S&P 500 med mer än tjugo gånger — inte genom imperiumsbyggande utan genom kapitalallokering. Kursen går igenom de fem gemensamma principerna, allokeringsverktygen (återköp, förvärv, utdelning, skuld och att göra ingenting) och alla åtta fallen: Murphy, Singleton, Anders, Malone, Graham, Stiritz, Simmons och Buffett. V20 — återköp av egna aktier — är bokens djupaste och mest användbara kapitel för AKM1-ekosystemet.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
@@ -32,7 +32,7 @@
       "num": 1,
       "minutes": 10,
       "title": "Utanförarna — tesen och de åtta VD:arna",
-      "intro": "William N. Thorndike Jr., riskkapitalist och grundare av Housatonic Partners, gav 2012 ut The Outsiders — åtta okonventionella VD:ar och deras radikalt rationella recept för framgång. Hans metod var enkel: mät VD:ars avkastning per aktie över lång tid, leta efter extremvärdena och fråga vad de gjorde annorlunda. Svaret blev en bok som snabbt blev standardverket om kapitalallokering — och som avslöjar att de bästa VD:arna i amerikansk börs i grunden var investerare.",
+      "intro": "William N. Thorndike Jr., riskkapitalist och grundare av Housatonic Partners, gav 2012 ut The Outsiders — åtta okonventionella VD:är och deras radikalt rationella recept för framgång. Hans metod var enkel: mät VD:ars avkastning per aktie över lång tid, leta efter extremvärdena och fråga vad de gjorde annorlunda. Svaret blev en bok som snabbt blev standardverket om kapitalallokering — och som avslöjar att de bästa VD:arna i amerikansk börs i grunden var investerare.",
       "blocks": [
         {
           "type": "text",
@@ -65,7 +65,7 @@
       ],
       "quiz": [
         {
-          "q": "Hur stor var de åtta utanförarnas sammanlagda överprestanda mot S&P 500 under deras tid som VD:ar?",
+          "q": "Hur stor var de åtta utanförarnas sammanlagda överprestanda mot S&P 500 under deras tid som VD:är?",
           "alternativ": [
             "Ungefär dubbla indexavkastningen",
             "Omkring fem gånger bättre än index",
@@ -160,7 +160,7 @@
         {
           "q": "Varför blir små skillnader i allokeringskvalitet så avgörande över tid?",
           "alternativ": [
-            "Eftersom börsen belönar aktivitet och frekventa affärer",
+            "Eftersom börsen belönär aktivitet och frekventa affärer",
             "Eftersom regelverket kräver årlig omallokering av kapitalet",
             "Eftersom kompoundering gör att några procents skillnad per år växer till enorma skillnader över decennier",
             "Eftersom konkurrenter annars kopierar strategin inom ett år"
@@ -367,7 +367,7 @@
           "q": "Vilket villkor formulerade Buffett för att ett återköp ska skapa värde?",
           "alternativ": [
             "Att aktiekursen stiger minst tjugo procent efteråt",
-            "Att bolaget lånar pengar till återköpet",
+            "Att bolaget lånär pengar till återköpet",
             "Att vinsten per aktie stiger minst tio procent",
             "Att aktien köps tillbaka med minst tjugo procents rabatt mot konservativt beräknat inre värde"
           ],
@@ -395,7 +395,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Grundmekanismen är symmetrisk och obönhörlig. Köper bolaget tillbaka aktier under inre värde överförs värde från säljarna till de aktieägare som stannar — deras andel av bolagets framtida kassaflöden växer mer än vad bolaget betalade. Köper bolaget tillbaka aktier över inre värde sker det omvända: de som säljer tjänar på de som stannar. Därför är frågan aldrig hur stort återköpsprogrammet är utan vilket pris det köper till. Thorndike noterar att Singleton höll igen medan aktien steg och köpte när utbredd pessimism pressade kursen — medan genomsnittsbolaget, enligt forskning Thorndike och andra hänvisar till, gör det mesta av sina återköp när börsen och den egna aktien är dyr."
+          "content": "Grundmekanismen är symmetrisk och obönhörlig. Köper bolaget tillbaka aktier under inre värde överförs värde från säljarna till de aktieägare som stannar — deras andel av bolagets framtida kassaflöden växer mer än vad bolaget betalade. Köper bolaget tillbaka aktier över inre värde sker det omvända: de som säljer tjänär på de som stannar. Därför är frågan aldrig hur stort återköpsprogrammet är utan vilket pris det köper till. Thorndike noterar att Singleton höll igen medan aktien steg och köpte när utbredd pessimism pressade kursen — medan genomsnittsbolaget, enligt forskning Thorndike och andra hänvisar till, gör det mesta av sina återköp när börsen och den egna aktien är dyr."
         },
         {
           "type": "text",
@@ -533,7 +533,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Kabelens ekonomi i en mening: enorma fasta kostnader för att bygga nätet, sedan nästan ren marginalinkomst per extra abonnemang. En gång grävd kabel betjänar tusen hushåll lika enkelt som femhundra, och abonnenterna betalade varje månad, i goda som dåliga tider — Thorndike framhåller intäktsstabiliteten (V12) som branschens dolda kapital. Malone insåg tidigt att ett system som köptes för omkring fem gånger sitt kassaflöde, finansierat med skuld vars ränta låg under avkastningen på inköpt kapital, var en komponderande maskin: varje förvärv tillförde abonnenter vars kassaflöde växte med prisökningar och nya kanaler, medan inflationen urholkade skuldens reala värde."
+          "content": "Kabelens ekonomi i en mening: enorma fasta kostnader för att bygga nätet, sedan nästan ren marginalinkomst per extra abonnemang. En gång grävd kabel betjänär tusen hushåll lika enkelt som femhundra, och abonnenterna betalade varje månad, i goda som dåliga tider — Thorndike framhåller intäktsstabiliteten (V12) som branschens dolda kapital. Malone insåg tidigt att ett system som köptes för omkring fem gånger sitt kassaflöde, finansierat med skuld vars ränta låg under avkastningen på inköpt kapital, var en komponderande maskin: varje förvärv tillförde abonnenter vars kassaflöde växte med prisökningar och nya kanaler, medan inflationen urholkade skuldens reala värde."
         },
         {
           "type": "text",
@@ -549,7 +549,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kabelmatematiken — Malones aritmetik\",\"rader\":[[\"Steg\",\"Mekanik\",\"Effekt per aktie\"],[\"Köp system\",\"≈5x kassaflöde från lokala monopol\",\"Abonnenter förvärvas under ersättningsvärde\"],[\"Finansiera\",\"Skuld (V10) vars ränta understiger avkastningen på inköpt kapital\",\"Hävstång på avkastningen utan utspäddning\"],[\"Växt\",\"Prisökningar, penetration, nya kanaler — kassaflöde växer år från år\",\"Rörelsen betjänar skulden allt lättare (V12)\"],[\"Skatt\",\"Avskrivningar, räntor och återinvestering håller redovisad vinst nära noll\",\"Ingen kassaflödesskatt — kapitalet får bo kvar\"],[\"Exit\",\"Sälj vidare till högre multipl (≈10x) när branschen värderas upp\",\"Kapitalvinst på hela inköpsbasen — TCI till AT&T 1998\"],[\"Resultat\",\"CAGR ≈30 % under Malones era\",\"Högst av de åtta utanförarna\"]]}"
+          "content": "{\"rubrik\":\"Kabelmatematiken — Malones aritmetik\",\"rader\":[[\"Steg\",\"Mekanik\",\"Effekt per aktie\"],[\"Köp system\",\"≈5x kassaflöde från lokala monopol\",\"Abonnenter förvärvas under ersättningsvärde\"],[\"Finansiera\",\"Skuld (V10) vars ränta understiger avkastningen på inköpt kapital\",\"Hävstång på avkastningen utan utspäddning\"],[\"Växt\",\"Prisökningar, penetration, nya kanaler — kassaflöde växer år från år\",\"Rörelsen betjänär skulden allt lättare (V12)\"],[\"Skatt\",\"Avskrivningar, räntor och återinvestering håller redovisad vinst nära noll\",\"Ingen kassaflödesskatt — kapitalet får bo kvar\"],[\"Exit\",\"Sälj vidare till högre multipl (≈10x) när branschen värderas upp\",\"Kapitalvinst på hela inköpsbasen — TCI till AT&T 1998\"],[\"Resultat\",\"CAGR ≈30 % under Malones era\",\"Högst av de åtta utanförarna\"]]}"
         },
         {
           "type": "insikt",
@@ -659,7 +659,7 @@
           "alternativ": [
             "Att bolag alltid blir mer värda när de blir större",
             "Att omsättning och anställda är de bästa VD-måtten",
-            "Att storlek inte är ett mål — minska bolaget till de delar som tjänar mest per aktie och returnera överskottet till ägarna",
+            "Att storlek inte är ett mål — minska bolaget till de delar som tjänär mest per aktie och returnera överskottet till ägarna",
             "Att uppsägningar alltid sänker aktiekursen"
           ],
           "ratt": 2,
@@ -671,7 +671,7 @@
       "num": 10,
       "minutes": 10,
       "title": "Graham, Stiritz och Simmons — tre tålmodiga allokatorer",
-      "intro": "Tre av de åtta förtjänar samlade kapitel: Katharine Graham, som tog över Washington Post vid börsnoteringen 1971 och byggde ett medie- och utbildningsbolag; Bill Stiritz, som renodlade Ralston Purina kring varumärkesstark kärna och köpte tillbaka i storleksordningen sextio procent av aktierna; och Dick Simmons, som förvandlade en biografkedja till ett holdingbolag via Pepsi-flaskning och förlagsköp. Deras gemensamma nämnare: ingen glamour, mycket prisdisciplin och avkastningar kring tjugo procent per år under decennier.",
+      "intro": "Tre av de åtta förtjänär samlade kapitel: Katharine Graham, som tog över Washington Post vid börsnoteringen 1971 och byggde ett medie- och utbildningsbolag; Bill Stiritz, som renodlade Ralston Purina kring varumärkesstark kärna och köpte tillbaka i storleksordningen sextio procent av aktierna; och Dick Simmons, som förvandlade en biografkedja till ett holdingbolag via Pepsi-flaskning och förlagsköp. Deras gemensamma nämnare: ingen glamour, mycket prisdisciplin och avkastningar kring tjugo procent per år under decennier.",
       "blocks": [
         {
           "type": "text",
@@ -817,7 +817,7 @@
         },
         {
           "type": "text",
-          "content": "Det femte verktyget är att göra ingenting — och Thorndike menar det bokstavligt. Singleton gick åratal utan en enda stor allokering; Murphy väntade ut mediemarknaden innan ABC; Buffett lät kassan byggas upp när inget var billigt, under tålamodets paroll att inget måste hända. Att inte agera är i den här skolan ett aktivt beslut: varje affär som inte görs till fel pris frigör kapital och uppmärksamhet för det tillfälle som faktiskt lönar sig. Det är också den svåraste delen att praktisera — aktiemarknaden premierar aktivitet och VD:er premieras för handkraft — men det är precis därför nerv att gå emot strömmen är en av de fem principerna. Tålamod är en position."
+          "content": "Det femte verktyget är att göra ingenting — och Thorndike menar det bokstavligt. Singleton gick åratal utan en enda stor allokering; Murphy väntade ut mediemarknaden innan ABC; Buffett lät kassan byggas upp när inget var billigt, under tålamodets paroll att inget måste hända. Att inte agera är i den här skolan ett aktivt beslut: varje affär som inte görs till fel pris frigör kapital och uppmärksamhet för det tillfälle som faktiskt lönär sig. Det är också den svåraste delen att praktisera — aktiemarknaden premierar aktivitet och VD:er premieras för handkraft — men det är precis därför nerv att gå emot strömmen är en av de fem principerna. Tålamod är en position."
         },
         {
           "type": "text",
@@ -864,7 +864,7 @@
           "alternativ": [
             "Att VD:n undviker ansvar för utfallet",
             "Att inte betala någon utdelning på tio år",
-            "Att tålamod är en aktiv allokering — att avstå från affärer till fel pris frigör kapital och uppmärksamhet för de tillfällen som faktiskt lönar sig",
+            "Att tålamod är en aktiv allokering — att avstå från affärer till fel pris frigör kapital och uppmärksamhet för de tillfällen som faktiskt lönär sig",
             "Att aldrig röra kassan förrän hela bolaget säljs"
           ],
           "ratt": 2,

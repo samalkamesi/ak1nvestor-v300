@@ -9,7 +9,7 @@
   "minutes": 10,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan du: redogöra för Ralph Nelson Elliotts liv, upptäckt och förhållande till Dow-teorin; rita grundmönstret 5-3 med fem impulsvågor och en a-b-c-korrigering och förklara varför formen alltid återkommer; navigera den fraktala strukturen med våggrader från Grand Supercycle till Subminuette och nästla grader i varandra; tillämpa de tre hårda reglerna exakt — våg 2 återgår aldrig under våg 1:s start, våg 3 är aldrig kortast av vågorna 1-3-5, våg 4 överlappar aldrig våg 1:s pristerräng i cash-marknaden; känna igen vågpersonligheterna från våg 1:s tvivel till våg 5:s eufori och B-vågens falska hopp; skilja på zigzag (5-3-5), flat (3-3-5), triangel (a-b-c-d-e) och kombinationer (W-X-Y) samt tillämpa alternation-principen; räkna med Fibonacci-retracements på 38,2, 50 och 61,8 procent och extensions som våg 3 = 1,618 × våg 1 och våg 5 = våg 1; läsa volym och divergens som bränslemätare och varningsklocka; förklara socionomics — att masspsykologin driver vågorna, inte omvänt; samt redogöra rättvist för Malkiels och akademins kritik och förklara varför AK1TS behåller vågbegreppet genom deterministiska proxy-mått, struktur som beskrivningsram och hård riskhantering.",
+  "learn": "Efter kursen kan du: redogöra för Ralph Nelson Elliotts liv, upptäckt och förhållande till Dow-teorin; rita grundmönstret 5-3 med fem impulsvågör och en a-b-c-korrigering och förklara varför formen alltid återkommer; navigera den fraktala strukturen med våggrader från Grand Supercycle till Subminuette och nästla grader i varandra; tillämpa de tre hårda reglerna exakt — våg 2 återgår aldrig under våg 1:s start, våg 3 är aldrig kortast av vågorna 1-3-5, våg 4 överlappar aldrig våg 1:s pristerräng i cash-marknaden; känna igen vågpersonligheterna från våg 1:s tvivel till våg 5:s eufori och B-vågens falska hopp; skilja på zigzag (5-3-5), flat (3-3-5), triangel (a-b-c-d-e) och kombinationer (W-X-Y) samt tillämpa alternation-principen; räkna med Fibonacci-retracements på 38,2, 50 och 61,8 procent och extensions som våg 3 = 1,618 × våg 1 och våg 5 = våg 1; läsa volym och divergens som bränslemätare och varningsklocka; förklara socionomics — att masspsykologin driver vågorna, inte omvänt; samt redogöra rättvist för Malkiels och akademins kritik och förklara varför AK1TS behåller vågbegreppet genom deterministiska proxy-mått, struktur som beskrivningsram och hård riskhantering.",
   "why": "Frost & Prechters \"Elliott Wave Principle\" (1978) är DEN kanoniska Elliott-texten — det verk som förvandlade en sjuk pensionsålders revisors 1930-talsupptäckt till hela den moderna våganalysens grund. För AK1TS är boken den viktigaste enskilda teorikällan: hela Våg-dimensionens tankevärld — fem steg i trendriktningen, tre tillbaka, fraktal hierarki och objektiva invalidregler — kommer härifrån, och dimensionerna Pris, Tid och Brytpunkt bygger vidare på samma skelett. Samtidigt är teorin bland det mest kritiserade i finans, vilket kursen behandlar med full ärlighet: vi behåller strukturen som beskrivningsram och måttstock, men ersätter den subjektiva räkningen med deterministiska proxy-mått. Den fulla brytningen förklaras i vårt flaggskepp \"AK1TS — Våglärans Hierarki\".",
   "chapters_list": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "num": 3,
-      "title": "Grundmönstret — fem vågor i trend, tre i korrigering",
+      "title": "Grundmönstret — fem vågör i trend, tre i korrigering",
       "minutes": 15
     },
     {
@@ -122,7 +122,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Öppna en månadschart på ett långtgående index med så lång historik du kan hitta — gärna flera decennier. Rita med ögonen (eller ett ritverktyg) de största topparna och botten du ser. Försök ännu inte räkna vågor; bara markera vändpunkterna och notera hur långa de stigande och fallande sviterna är. Denna samling vändpunkter är råmaterialet för hela kursen — Elliott började exakt här."
+          "content": "Öppna en månadschart på ett långtgående index med så lång historik du kan hitta — gärna flera decennier. Rita med ögonen (eller ett ritverktyg) de största topparna och botten du ser. Försök ännu inte räkna vågör; bara markera vändpunkterna och notera hur långa de stigande och fallande sviterna är. Denna samling vändpunkter är råmaterialet för hela kursen — Elliott började exakt här."
         },
         {
           "type": "tabell",
@@ -181,7 +181,7 @@
         },
         {
           "type": "text",
-          "content": "Dow beskrev också en börs som rör sig i tre faser upp och tre faser ner — en kvalitativ skiss av ackumulation, deltagande och eufori. Frost & Prechter påpekar i bokens första kapitel att Elliott, som studerade Dows efterföljares arbeten noggrant, ställde sig en enkel fråga: om marknaden har svall och tidvatten, vilken exakt form har svallen? När Elliott räknade i sitt datamaterial fann han svaret: fem vågor i primärrörelsens riktning, tre emot. Dows tre faser blev Elliotts fem vågor; Dows korrigeringar fick en fast anatomi. Dows intuitioner om att korrigeringar ofta återtar ungefär en tredjedel till två tredjedelar av föregående svall föregrep också de Fibonacci-mått Elliott senare-systematiserade i kapitel efter kapitel."
+          "content": "Dow beskrev också en börs som rör sig i tre faser upp och tre faser ner — en kvalitativ skiss av ackumulation, deltagande och eufori. Frost & Prechter påpekar i bokens första kapitel att Elliott, som studerade Dows efterföljares arbeten noggrant, ställde sig en enkel fråga: om marknaden har svall och tidvatten, vilken exakt form har svallen? När Elliott räknade i sitt datamaterial fann han svaret: fem vågör i primärrörelsens riktning, tre emot. Dows tre faser blev Elliotts fem vågör; Dows korrigeringar fick en fast anatomi. Dows intuitioner om att korrigeringar ofta återtar ungefär en tredjedel till två tredjedelar av föregående svall föregrep också de Fibonacci-mått Elliott senare-systematiserade i kapitel efter kapitel."
         },
         {
           "type": "text",
@@ -189,7 +189,7 @@
         },
         {
           "type": "text",
-          "content": "För AK1TS är arvet efter Dow och Elliott gemensamt: hierarkin. Dows tidvatten, svall och krusning lever vidare som principen att korta sviter betjänar långa, och att du alltid måste veta vilken grad du handlar och vilken grad som ger sammanhanget. När du senare i kursen lär dig våggraderna från Grand Supercycle till Subminuette, ser du Dows tre rörelser utvidgade till ett helt telescopeoretiskt system — det är denna hierarki som är kärnan i flaggskeppet \"AK1TS — Våglärans Hierarki\", där varje horisont från Mikro till Mega har sin egen våg."
+          "content": "För AK1TS är arvet efter Dow och Elliott gemensamt: hierarkin. Dows tidvatten, svall och krusning lever vidare som principen att korta sviter betjänär långa, och att du alltid måste veta vilken grad du handlar och vilken grad som ger sammanhanget. När du senare i kursen lär dig våggraderna från Grand Supercycle till Subminuette, ser du Dows tre rörelser utvidgade till ett helt telescopeoretiskt system — det är denna hierarki som är kärnan i flaggskeppet \"AK1TS — Våglärans Hierarki\", där varje horisont från Mikro till Mega har sin egen våg."
         },
         {
           "type": "insikt",
@@ -201,7 +201,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Dow-teorin mot Elliotts vågprincip\",\"rader\":[[\"Aspekt\",\"Dow-teorin\",\"Elliotts vågprincip\"],[\"Grundbild\",\"Tidvatten, svall, krusning\",\"Fem vågor i trend, tre i korrigering, på alla grader\"],[\"Fasbeskrivning\",\"Tre faser upp och ner (kvalitativ)\",\"Precis form och delning per våg (formell)\"],[\"Mått på korrigering\",\"Ungefär 1/3 till 2/3 av svaret\",\"Fibonacci-kvoter: 38,2 / 50 / 61,8 procent\"],[\"Tillämpningsområde\",\"Bekräftelse mellan index\",\"Alla fritt handlade, likvida tillgångar\"],[\"Orsak till rörelsen\",\"Kollektiv psykologi diskonterad i pris\",\"Samma — men formaliserad som vågform\"]]}"
+          "content": "{\"rubrik\":\"Dow-teorin mot Elliotts vågprincip\",\"rader\":[[\"Aspekt\",\"Dow-teorin\",\"Elliotts vågprincip\"],[\"Grundbild\",\"Tidvatten, svall, krusning\",\"Fem vågör i trend, tre i korrigering, på alla grader\"],[\"Fasbeskrivning\",\"Tre faser upp och ner (kvalitativ)\",\"Precis form och delning per våg (formell)\"],[\"Mått på korrigering\",\"Ungefär 1/3 till 2/3 av svaret\",\"Fibonacci-kvoter: 38,2 / 50 / 61,8 procent\"],[\"Tillämpningsområde\",\"Bekräftelse mellan index\",\"Alla fritt handlade, likvida tillgångar\"],[\"Orsak till rörelsen\",\"Kollektiv psykologi diskonterad i pris\",\"Samma — men formaliserad som vågform\"]]}"
         },
         {
           "type": "visuell",
@@ -226,7 +226,7 @@
             "Idén att marknaden diskonterar all information",
             "Kravet på volymbekräftelse av trender",
             "Att index måste bekräfta varandra",
-            "En precis form — fem vågor i trendriktningen och tre i korrigering — med proportioner och nästling"
+            "En precis form — fem vågör i trendriktningen och tre i korrigering — med proportioner och nästling"
           ],
           "ratt": 3,
           "tips": "Dow gav prosan om faser; Elliott gav mallen som kan räknas och ritas."
@@ -247,20 +247,20 @@
     {
       "num": 3,
       "minutes": 15,
-      "title": "Grundmönstret — fem vågor i trend, tre i korrigering",
-      "intro": "Här är kursens hjärta: det mönster Elliott såg upprepas genom hela prishistoriken. Fem vågor bär en trend framåt, tre vågar för den tillbaka — alltid, på alla tidshorisonter, i varje fritt handlad tillgång. Ta dig tid att läsa detta kapitel långsamt och rita medan du läser; mönstret är enkelt att se och svårt att bemästra.",
+      "title": "Grundmönstret — fem vågör i trend, tre i korrigering",
+      "intro": "Här är kursens hjärta: det mönster Elliott såg upprepas genom hela prishistoriken. Fem vågör bär en trend framåt, tre vågar för den tillbaka — alltid, på alla tidshorisonter, i varje fritt handlad tillgång. Ta dig tid att läsa detta kapitel långsamt och rita medan du läser; mönstret är enkelt att se och svårt att bemästra.",
       "blocks": [
         {
           "type": "text",
-          "content": "Rita med. Börja på en botten som du kallar 0. Priset stiger i en första våg — kalla den våg 1 — som följs av ett fall, våg 2, som inte går under startpunkten 0. Därefter kommer rörelsens motor: våg 3, kraftigare och oftast längre än våg 1. Efter våg 3 följer en ny nedgång, våg 4, som — och detta är avgörande — inte sjunker så djupt att den nuddar våg 1:s högsta pris. Till sist en femte våg upp, våg 5, som ofta slår ny topp men med mattare inre kraft. Fem vågor uppåt: 1-2-3-4-5. Detta är impulssekvensen, marknadens sätt att förflytta sig i en riktning."
+          "content": "Rita med. Börja på en botten som du kallar 0. Priset stiger i en första våg — kalla den våg 1 — som följs av ett fall, våg 2, som inte går under startpunkten 0. Därefter kommer rörelsens motor: våg 3, kraftigare och oftast längre än våg 1. Efter våg 3 följer en ny nedgång, våg 4, som — och detta är avgörande — inte sjunker så djupt att den nuddar våg 1:s högsta pris. Till sist en femte våg upp, våg 5, som ofta slår ny topp men med mattare inre kraft. Fem vågör uppåt: 1-2-3-4-5. Detta är impulssekvensen, marknadens sätt att förflytta sig i en riktning."
         },
         {
           "type": "text",
-          "content": "Efter de fem vågorna följer korrigeringen, bokstavsmärkt a-b-c. Våg a faller, våg b stiger svagt — men inte upp till våg 5:s topp — och våg c faller djupt, ofta förbi våg a:s botten. Tre vågor emot trendriktningen. Sedan är cykeln hel: åtta vågor totalt, fem i rörelsens riktning och tre bakåt. Frost & Prechter beskriver detta somhandlingens och reaktionens lag i prisernas form: framsteg sker inte i en rak linje utan i fem steg framåt och tre tillbaka, därför att optimistisk framtidstro byggs och prövas i omgångar, medan tvilet återkommer i tre vågor. När a-b-c är slut är inte historien över — då börjar en ny femvågssekvens i samma riktning som den föregående femman, på en högre nivå."
+          "content": "Efter de fem vågorna följer korrigeringen, bokstavsmärkt a-b-c. Våg a faller, våg b stiger svagt — men inte upp till våg 5:s topp — och våg c faller djupt, ofta förbi våg a:s botten. Tre vågör emot trendriktningen. Sedan är cykeln hel: åtta vågör totalt, fem i rörelsens riktning och tre bakåt. Frost & Prechter beskriver detta somhandlingens och reaktionens läg i prisernas form: framsteg sker inte i en rak linje utan i fem steg framåt och tre tillbaka, därför att optimistisk framtidstro byggs och prövas i omgångar, medan tvilet återkommer i tre vågor. När a-b-c är slut är inte historien över — då börjar en ny femvågssekvens i samma riktning som den föregående femman, på en högre nivå."
         },
         {
           "type": "text",
-          "content": "Nu kommer det geniella: delningen. Vågorna 1, 3 och 5 — de som går med överordnad trend — består själva av fem mindre vågor. Vågorna 2 och 4 — de som går emot — består av tre mindre vågor. I korrigeringen består a av fem mindre vågor, b av tre och c av fem. Detta är varje vågs inre struktur, och det är nyckeln till nästa kapitels fraktaler. En våg som går med strömmen delar sig i fem; en våg som simmar mot den delar sig i tre. Frost & Prechter kallar de femdelade vågorna drivvågor och de tredelade korrigerande vågor. Du kan kontrollräkna: en hel cykel på åtta vågor innehåller 5+3+5+3+5 = 21 små vågor i drivdelen och 5+3+5 = 13 i korrigeringen — tal ur Fibonacci-följden, något vi återkommer till i kapitel 10."
+          "content": "Nu kommer det geniella: delningen. Vågorna 1, 3 och 5 — de som går med överordnad trend — består själva av fem mindre vågor. Vågorna 2 och 4 — de som går emot — består av tre mindre vågor. I korrigeringen består a av fem mindre vågör, b av tre och c av fem. Detta är varje vågs inre struktur, och det är nyckeln till nästa kapitels fraktaler. En våg som går med strömmen delar sig i fem; en våg som simmar mot den delar sig i tre. Frost & Prechter kallar de femdelade vågorna drivvågör och de tredelade korrigerande vågor. Du kan kontrollräkna: en hel cykel på åtta vågör innehåller 5+3+5+3+5 = 21 små vågör i drivdelen och 5+3+5 = 13 i korrigeringen — tal ur Fibonacci-följden, något vi återkommer till i kapitel 10."
         },
         {
           "type": "text",
@@ -268,7 +268,7 @@
         },
         {
           "type": "text",
-          "content": "Frost & Prechter formulerar bokens kärna i en enda mening: vågprincipen är en katalog över hur massorna rör sig från extrem pessimism till extrem optimism och tillbaka igen — och 5-3-formen är den form denna resa alltid tar. Fem vågor bygger hoppet, tre vågar prövar det. När du ser en stadig uppgång med tydliga rekyler, och kan rita 1-2-3-4-5 i den, har du inte bara ett mönster — du har en berättelse om kollektivt humör som följer en fast dramaturgi."
+          "content": "Frost & Prechter formulerar bokens kärna i en enda mening: vågprincipen är en katalog över hur massorna rör sig från extrem pessimism till extrem optimism och tillbaka igen — och 5-3-formen är den form denna resa alltid tar. Fem vågör bygger hoppet, tre vågar prövar det. När du ser en stadig uppgång med tydliga rekyler, och kan rita 1-2-3-4-5 i den, har du inte bara ett mönster — du har en berättelse om kollektivt humör som följer en fast dramaturgi."
         },
         {
           "type": "insikt",
@@ -276,11 +276,11 @@
         },
         {
           "type": "utmaning",
-          "content": "Öppna en dagschart på en aktie som haft en kraftig och tydlig trend det senaste året. Ta papper och penna och rita av prislinjens största svängningar. Prova att märka 1-2-3-4-5 på den dominerande uppgången och a-b-c på nedgången efteråt. Kontrollera delningen: består dina vågor 1, 3 och 5 av fem mindre steg? Spara ritningen — du kommer att förbättra den i vartenda kommande kapitel, särskilt efter de tre hårda reglerna."
+          "content": "Öppna en dagschart på en aktie som haft en kraftig och tydlig trend det senaste året. Ta papper och penna och rita av prislinjens största svängningar. Prova att märka 1-2-3-4-5 på den dominerande uppgången och a-b-c på nedgången efteråt. Kontrollera delningen: består dina vågör 1, 3 och 5 av fem mindre steg? Spara ritningen — du kommer att förbättra den i vartenda kommande kapitel, särskilt efter de tre hårda reglerna."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Cykelns åtta vågor — riktning, karaktär och inre delning\",\"rader\":[[\"Våg\",\"Riktning\",\"Inre delning\",\"Karaktär i korthet\"],[\"1\",\"Med trenden\",\"Fem\",\"Första försiktiga uppgången från en botten; få tror på den\"],[\"2\",\"Mot trenden\",\"Tre\",\"Djup rekyl som testar våg 1; håller över dess start\"],[\"3\",\"Med trenden\",\"Fem\",\"Motorvågen — kraftigast, ofta längst, volym och bredd ökar\"],[\"4\",\"Mot trenden\",\"Tre\",\"Trög, sidledes och ofta komplex korrigering\"],[\"5\",\"Med trenden\",\"Fem\",\"Sista stötet — eufori utanför, mattare kraft inom\"],[\"a\",\"Mot trenden\",\"Fem\",\"Nedgång som många misstar för vanlig rekyl\"],[\"b\",\"Mot trenden (uppåt i en bear-korrigering)\",\"Tre\",\"Svag falsk rally; snäv och volymfattig\"],[\"c\",\"Mot trenden\",\"Fem\",\"Förödande slutvåg som slår nya bottnar\"]]}"
+          "content": "{\"rubrik\":\"Cykelns åtta vågör — riktning, karaktär och inre delning\",\"rader\":[[\"Våg\",\"Riktning\",\"Inre delning\",\"Karaktär i korthet\"],[\"1\",\"Med trenden\",\"Fem\",\"Första försiktiga uppgången från en botten; få tror på den\"],[\"2\",\"Mot trenden\",\"Tre\",\"Djup rekyl som testar våg 1; håller över dess start\"],[\"3\",\"Med trenden\",\"Fem\",\"Motorvågen — kraftigast, ofta längst, volym och bredd ökar\"],[\"4\",\"Mot trenden\",\"Tre\",\"Trög, sidledes och ofta komplex korrigering\"],[\"5\",\"Med trenden\",\"Fem\",\"Sista stötet — eufori utanför, mattare kraft inom\"],[\"a\",\"Mot trenden\",\"Fem\",\"Nedgång som många misstar för vanlig rekyl\"],[\"b\",\"Mot trenden (uppåt i en bear-korrigering)\",\"Tre\",\"Svag falsk rally; snäv och volymfattig\"],[\"c\",\"Mot trenden\",\"Fem\",\"Förödande slutvåg som slår nya bottnar\"]]}"
         },
         {
           "type": "visuell",
@@ -291,9 +291,9 @@
         {
           "q": "Hur delar sig en våg som rör sig i samma riktning som trenden en grad högre upp?",
           "alternativ": [
-            "I fem mindre vågor",
-            "I tre mindre vågor",
-            "I åtta mindre vågor",
+            "I fem mindre vågör",
+            "I tre mindre vågör",
+            "I åtta mindre vågör",
             "Det beror på volymen"
           ],
           "ratt": 0,
@@ -302,10 +302,10 @@
         {
           "q": "Vad utgör en komplett cykel enligt vågprincipen?",
           "alternativ": [
-            "Fem vågor totalt",
-            "Tio vågor — fem upp och fem ner",
-            "Tretton vågor enligt Fibonacci",
-            "Åtta vågor — fem i trendriktningen och tre i korrigeringen (a-b-c)"
+            "Fem vågör totalt",
+            "Tio vågör — fem upp och fem ner",
+            "Tretton vågör enligt Fibonacci",
+            "Åtta vågör — fem i trendriktningen och tre i korrigeringen (a-b-c)"
           ],
           "ratt": 3,
           "tips": "Räkna ihop drivdelen och korrigeringen från beskrivningen du just läste."
@@ -315,7 +315,7 @@
           "alternativ": [
             "Den är alltid den kortaste vågen",
             "Den innehåller alltid en triangel",
-            "Den består alltid av åtta delvågor",
+            "Den består alltid av åtta delvågör",
             "Inifrån ser den ut som en ren nedgång, fast den bara är del av en större uppgång"
           ],
           "ratt": 3,
@@ -327,15 +327,15 @@
       "num": 4,
       "minutes": 10,
       "title": "Fraktalvärlden — våggrader från Grand Supercycle till Subminuette",
-      "intro": "Elliotts djärvaste påstående är att 5-3-formen upprepas i sig själv, i oändlighet neråt och uppåt i skala. En våg är aldrig bara en våg — den är alltid också ett kapitel av mindre vågor, och alltid samtidigt en del av något större. Detta kapitel ger dig navigationssystemet: våggraderna.",
+      "intro": "Elliotts djärvaste påstående är att 5-3-formen upprepas i sig själv, i oändlighet neråt och uppåt i skala. En våg är aldrig bara en våg — den är alltid också ett kapitel av mindre vågör, och alltid samtidigt en del av något större. Detta kapitel ger dig navigationssystemet: våggraderna.",
       "blocks": [
         {
           "type": "text",
-          "content": "För att kunna tala om vågor behövde Elliott namn på nivåerna. Frost & Prechter presenterar nio våggrader, från störst till minst: Grand Supercycle, Supercycle, Cycle, Primary, Intermediate, Minor, Minute, Minuette och Subminuette. En Grand Supercycle kan spänna över århundraden; en Subminuette varar minuter. Märkningen skiljer graderna åt: stora romerska siffror (I, II, III, IV, V) för högre grader, inringade och hakparentesrutiner för mellangrader, små siffror och bokstäver för de lägsta. Exakta symboler är konvention — poängen är hierarkin: varje våg av en grad är uppbyggd av vågor av närmaste lägre grad, och är själv en delvåg i närmaste högre."
+          "content": "För att kunna tala om vågör behövde Elliott namn på nivåerna. Frost & Prechter presenterar nio våggrader, från störst till minst: Grand Supercycle, Supercycle, Cycle, Primary, Intermediate, Minor, Minute, Minuette och Subminuette. En Grand Supercycle kan spänna över århundraden; en Subminuette varar minuter. Märkningen skiljer graderna åt: stora romerska siffror (I, II, III, IV, V) för högre grader, inringade och hakparentesrutiner för mellangrader, små siffror och bokstäver för de lägsta. Exakta symboler är konvention — poängen är hierarkin: varje våg av en grad är uppbyggd av vågör av närmaste lägre grad, och är själv en delvåg i närmaste högre."
         },
         {
           "type": "text",
-          "content": "Bygg det inre och yttre med ett exempel. En hel uppgång på Cycle-grad består av fem vågor på Primary-grad: P1 till P5. Våg P3 består i sin tur av fem vågor på Intermediate-grad. Varje sådan Intermediate-våg består av fem eller tre Minor-vågor — fem om den går med Cycle-trenden, tre om den går emot. Och så vidare neråt, till Minuette och Subminuette. Uppåt gäller samma: hela din Cycle-uppgång är kanske bara våg (i) av en våg i på Supercycle-grad. Frost & Prechter illustrerar detta med diagram där samma form återkommer på varje förstoringsgrad — marknadens självlikformighet, det vi idag kallar fraktalstruktur."
+          "content": "Bygg det inre och yttre med ett exempel. En hel uppgång på Cycle-grad består av fem vågör på Primary-grad: P1 till P5. Våg P3 består i sin tur av fem vågör på Intermediate-grad. Varje sådan Intermediate-våg består av fem eller tre Minor-vågör — fem om den går med Cycle-trenden, tre om den går emot. Och så vidare neråt, till Minuette och Subminuette. Uppåt gäller samma: hela din Cycle-uppgång är kanske bara våg (i) av en våg i på Supercycle-grad. Frost & Prechter illustrerar detta med diagram där samma form återkommer på varje förstoringsgrad — marknadens självlikformighet, det vi idag kallar fraktalstruktur."
         },
         {
           "type": "text",
@@ -377,10 +377,10 @@
         {
           "q": "Vad består en våg av en viss grad av, enligt vågprincipen?",
           "alternativ": [
-            "Exakt åtta vågor av närmaste högre grad",
-            "Slumpmässigt antal delvågor utan fast struktur",
+            "Exakt åtta vågör av närmaste högre grad",
+            "Slumpmässigt antal delvågör utan fast struktur",
             "Alltid samma antal som sin modervåg",
-            "Vågor av närmaste lägre grad — fem om den går med överordnad trend, tre om den går emot"
+            "Vågör av närmaste lägre grad — fem om den går med överordnad trend, tre om den går emot"
           ],
           "ratt": 3,
           "tips": "Självsimulerande struktur: riktningen mot eller med högre grad avgör delningen."
@@ -410,7 +410,7 @@
         },
         {
           "type": "text",
-          "content": "Regel två: våg 3 är aldrig den kortaste av vågorna 1, 3 och 5. Observera formuleringen exakt — våg 3 kan mycket väl vara kortare än våg 1, men endast om våg 5 är kortare än våg 3, så att trean ändå inte är den minsta. I praktiken är våg 3 oftast den längsta och kraftigaste vågen, och den mest benägna att extensioneras — att rusa iväg i en lång, nästan obruten rörelse. Konsekvensen: om din räkning ger en pyttesmal våg 3 medan 1 och 5 är långa, är den misstänkt. Ofta visar sig sanningen vara att det du märkt som 3-4 i själva verket är delar av en enda lång våg 3 vars inre delvågor ännu inte är synliga, eller att hela din placering av sekvensen är förskjuten ett steg."
+          "content": "Regel två: våg 3 är aldrig den kortaste av vågorna 1, 3 och 5. Observera formuleringen exakt — våg 3 kan mycket väl vara kortare än våg 1, men endast om våg 5 är kortare än våg 3, så att trean ändå inte är den minsta. I praktiken är våg 3 oftast den längsta och kraftigaste vågen, och den mest benägna att extensioneras — att rusa iväg i en lång, nästan obruten rörelse. Konsekvensen: om din räkning ger en pyttesmal våg 3 medan 1 och 5 är långa, är den misstänkt. Ofta visar sig sanningen vara att det du märkt som 3-4 i själva verket är delar av en enda lång våg 3 vars inre delvågör ännu inte är synliga, eller att hela din placering av sekvensen är förskjuten ett steg."
         },
         {
           "type": "text",
@@ -434,7 +434,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"De tre hårda reglerna — lydelse, kontroll och konsekvens\",\"rader\":[[\"Regel\",\"Exakt lydelse\",\"Om den bryts\"],[\"Regel 1\",\"Våg 2 återgår aldrig under våg 1:s start\",\"Räkningen är ogiltig — kalla inte strukturen impuls; märk om som korrigering\"],[\"Regel 2\",\"Våg 3 är aldrig den kortaste av vågorna 1, 3 och 5\",\"Misstänk förskjuten räkning — ofta är en längre våg 3 på väg att visa sina delvågor\"],[\"Regel 3\",\"Våg 4 överlappar aldrig våg 1:s pristerräng (i cash-marknaden; undantag: diagonaler i våg 5-/C-position, samt korta utstick på terminsmarknader)\",\"Impulstes är död — tolka om strukturen som korrigerande eller som del av motsatt trend\"]]}"
+          "content": "{\"rubrik\":\"De tre hårda reglerna — lydelse, kontroll och konsekvens\",\"rader\":[[\"Regel\",\"Exakt lydelse\",\"Om den bryts\"],[\"Regel 1\",\"Våg 2 återgår aldrig under våg 1:s start\",\"Räkningen är ogiltig — kalla inte strukturen impuls; märk om som korrigering\"],[\"Regel 2\",\"Våg 3 är aldrig den kortaste av vågorna 1, 3 och 5\",\"Misstänk förskjuten räkning — ofta är en längre våg 3 på väg att visa sina delvågör\"],[\"Regel 3\",\"Våg 4 överlappar aldrig våg 1:s pristerräng (i cash-marknaden; undantag: diagonaler i våg 5-/C-position, samt korta utstick på terminsmarknader)\",\"Impulstes är död — tolka om strukturen som korrigerande eller som del av motsatt trend\"]]}"
         },
         {
           "type": "visuell",
@@ -448,7 +448,7 @@
             "Den återgår aldrig under våg 1:s startpunkt",
             "Den får aldrig bli längre än våg 4 i tid",
             "Den måste retracera minst 61,8 procent av våg 1",
-            "Den måste bestå av exakt fem delvågor"
+            "Den måste bestå av exakt fem delvågör"
           ],
           "ratt": 0,
           "tips": "Regeln handlar om pris, inte om tid eller andel — sträck ut linjalens startpunkt."
@@ -493,7 +493,7 @@
         },
         {
           "type": "text",
-          "content": "Våg 5 är finalen. Utåt är den härligast — nya rekord, euforiska rubriker, alla känner någon som blivit rik på aktier. Men inuti är hon svagare: volymen når sällan våg 3:s nivå, bredden smalnar av till färre och färre ledande aktier, och momentummätare börjar visa divergens — pris upp, kraft ned. Sedan kommer a-b-c. Våg a faller och bemöts av förklaringen att det bara är en rekyl — de flesta missar att delningen är fem vågor, en varning. Våg b är marknadens mest förrädiska fas: en smal, volymlös uppgång som återtar mycket av a och får alla att tro att trenden är tillbaka — en klassisk bull trap. Våg c är straffet: en tredje-vågsliknande nedgång som fördriver hoppet och ofta slutar i ren desperation. Frost & Prechter noterar att C-vågor är psykologiskt förvillande lika impulser — de är det, fast i motsatt riktning."
+          "content": "Våg 5 är finalen. Utåt är den härligast — nya rekord, euforiska rubriker, alla känner någon som blivit rik på aktier. Men inuti är hon svagare: volymen når sällan våg 3:s nivå, bredden smalnar av till färre och färre ledande aktier, och momentummätare börjar visa divergens — pris upp, kraft ned. Sedan kommer a-b-c. Våg a faller och bemöts av förklaringen att det bara är en rekyl — de flesta missar att delningen är fem vågör, en varning. Våg b är marknadens mest förrädiska fas: en smal, volymlös uppgång som återtar mycket av a och får alla att tro att trenden är tillbaka — en klassisk bull trap. Våg c är straffet: en tredje-vågsliknande nedgång som fördriver hoppet och ofta slutar i ren desperation. Frost & Prechter noterar att C-vågör är psykologiskt förvillande lika impulser — de är det, fast i motsatt riktning."
         },
         {
           "type": "text",
@@ -556,15 +556,15 @@
       "num": 7,
       "minutes": 10,
       "title": "Korrigeringar I — zigzag och flat",
-      "intro": "Impulserna är enkla: fem vågor, tydlig riktning. Korrigeringarna är våglärans riktiga prov — ett myller av mönster som alla har tre ben men mycket olika karaktär. Vi börjar med de två viktigaste familjerna: det skarpa zigzaget och den platta formationen.",
+      "intro": "Impulserna är enkla: fem vågör, tydlig riktning. Korrigeringarna är våglärans riktiga prov — ett myller av mönster som alla har tre ben men mycket olika karaktär. Vi börjar med de två viktigaste familjerna: det skarpa zigzaget och den platta formationen.",
       "blocks": [
         {
           "type": "text",
-          "content": "Zigzaget är korrigeringens kanonform: en skarp, tydlig A-B-C-nedgång med strukturen 5-3-5. Våg a består av fem delvågor — det är priset som faller med syfte — våg b är en svag tredelad uppgång som återtar högst omkring sextio procent av a, och våg c är ytterligare en femvågsnedgång som nästan alltid slår a:s botten. Frost & Prechter noterar att c ofta blir ungefär lika lång som a, eller förhåller sig till den som 1,618 till 1. Zigzag känns igen på sin vinkel: korrigeringen går utför i tydliga stötar och snabba rekylerna emellan, som bokstaven Z utdragen i pris. En regelrätt Z-zigzag är marknadens sätt att snabbt rensa ut övervärdering."
+          "content": "Zigzaget är korrigeringens kanonform: en skarp, tydlig A-B-C-nedgång med strukturen 5-3-5. Våg a består av fem delvågör — det är priset som faller med syfte — våg b är en svag tredelad uppgång som återtar högst omkring sextio procent av a, och våg c är ytterligare en femvågsnedgång som nästan alltid slår a:s botten. Frost & Prechter noterar att c ofta blir ungefär lika lång som a, eller förhåller sig till den som 1,618 till 1. Zigzag känns igen på sin vinkel: korrigeringen går utför i tydliga stötar och snabba rekylerna emellan, som bokstaven Z utdragen i pris. En regelrätt Z-zigzag är marknadens sätt att snabbt rensa ut övervärdering."
         },
         {
           "type": "text",
-          "content": "Flatten har strukturen 3-3-5 och ser helt annorlunda ut. Våg a är svag — tre delvågor, inte fem — för att säljarna inte har kraft nog att driva en impuls. Våg b är desto starkare: den stiger tillbaka till våg a:s startpunkt eller en aning förbi den. Våg c faller sedan i fem vågor, ungefär lika lång som a, och stannar i nivå med a:s botten. Resultatet är en sideways-formation: en platt rektangel där botten testas två gånger. Frost & Prechter beskriver flattens budskap: korrigeringen är inte ett prisfenomen utan ett tidsfenomen — marknaden straffar de otåliga med väntan i stället för med fall. Notera nyckeln till skiljandet: a:s inre delning. Fem delvågor i a betyder zigzag; tre betyder flat."
+          "content": "Flatten har strukturen 3-3-5 och ser helt annorlunda ut. Våg a är svag — tre delvågör, inte fem — för att säljarna inte har kraft nog att driva en impuls. Våg b är desto starkare: den stiger tillbaka till våg a:s startpunkt eller en aning förbi den. Våg c faller sedan i fem vågör, ungefär lika lång som a, och stannar i nivå med a:s botten. Resultatet är en sideways-formation: en platt rektangel där botten testas två gånger. Frost & Prechter beskriver flattens budskap: korrigeringen är inte ett prisfenomen utan ett tidsfenomen — marknaden straffar de otåliga med väntan i stället för med fall. Notera nyckeln till skiljandet: a:s inre delning. Fem delvågör i a betyder zigzag; tre betyder flat."
         },
         {
           "type": "text",
@@ -572,7 +572,7 @@
         },
         {
           "type": "text",
-          "content": "Praktisk checklista för korrigeringar i realtid: räkna delningarna. Har första benet fem vågor väntar sannolikt ett zigzag (föreställ dig ett skarpt A och en lika skarp C). Har det tre väntar en flatfamilj (förbered dig på sideways eller en expanderad variant). Mät sedan retracements med Fibonacci — våg b mot våg a, våg c mot våg a — och lägg märke till var flera mättnivåer klustrar. AK1TS tillägger en deterministisk kontroll: volymen skall sjunka genom hela korrigeringen och momentum skall ligga neutralt mot negativt. En 'korrigering' på stigande volym med starkt positivt momentum är misstänkt — då är den ingen korrigering utan början på något annat."
+          "content": "Praktisk checklista för korrigeringar i realtid: räkna delningarna. Har första benet fem vågör väntar sannolikt ett zigzag (föreställ dig ett skarpt A och en lika skarp C). Har det tre väntar en flatfamilj (förbered dig på sideways eller en expanderad variant). Mät sedan retracements med Fibonacci — våg b mot våg a, våg c mot våg a — och lägg märke till var flera mättnivåer klustrar. AK1TS tillägger en deterministisk kontroll: volymen skall sjunka genom hela korrigeringen och momentum skall ligga neutralt mot negativt. En 'korrigering' på stigande volym med starkt positivt momentum är misstänkt — då är den ingen korrigering utan början på något annat."
         },
         {
           "type": "insikt",
@@ -606,9 +606,9 @@
         {
           "q": "Vad skiljer en flat från ett zigzag rent strukturellt?",
           "alternativ": [
-            "Flatten har sju vågor, zigzaget åtta",
+            "Flatten har sju vågör, zigzaget åtta",
             "Flatten innehåller alltid en triangel",
-            "Flattens våg a består av tre vågor i stället för fem, och hela formationen blir sidledes",
+            "Flattens våg a består av tre vågör i stället för fem, och hela formationen blir sidledes",
             "Zigzagets våg c når aldrig ny botten"
           ],
           "ratt": 2,
@@ -619,7 +619,7 @@
           "alternativ": [
             "Den blir ofta 1,618 gånger våg a och slår djupt under a:s botten",
             "Den blir alltid kortare än våg a",
-            "Den delar sig i tre vågor",
+            "Den delar sig i tre vågör",
             "Den slutar alltid exakt vid a:s botten"
           ],
           "ratt": 0,
@@ -635,7 +635,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Triangeln är en korrigering med fem ben — a, b, c, d och e — där varje ben delar sig i tre vågor: strukturen är 3-3-3-3-3. Rita två konvergerande linjer: en ovanför topparna av a, c och e, en under bottnarna av b och d. Priset vandrar inuti ett allt trängre rör. Den kontraherande triangeln är den i särklass vanligaste formen; den expanderande, där linjerna divergerar och formationen blir bredare och bredare, är sällsynt men våldsam. Frost & Prechter anger triangels sanna kännetecken utöver formen: volymen och volatiliteten avtar genom formationen, som en våg som drar sig samman innan den bryter."
+          "content": "Triangeln är en korrigering med fem ben — a, b, c, d och e — där varje ben delar sig i tre vågör: strukturen är 3-3-3-3-3. Rita två konvergerande linjer: en ovanför topparna av a, c och e, en under bottnarna av b och d. Priset vandrar inuti ett allt trängre rör. Den kontraherande triangeln är den i särklass vanligaste formen; den expanderande, där linjerna divergerar och formationen blir bredare och bredare, är sällsynt men våldsam. Frost & Prechter anger triangels sanna kännetecken utöver formen: volymen och volatiliteten avtar genom formationen, som en våg som drar sig samman innan den bryter."
         },
         {
           "type": "text",
@@ -672,7 +672,7 @@
           "alternativ": [
             "5-3-5",
             "3-3-5",
-            "3-3-3-3-3 — tre vågor i vart och ett av de fem benen",
+            "3-3-3-3-3 — tre vågör i vart och ett av de fem benen",
             "5-5-5-5-5"
           ],
           "ratt": 2,
@@ -706,7 +706,7 @@
       "num": 9,
       "minutes": 10,
       "title": "Alternation och korrigeringarnas djup",
-      "intro": "En enda princip ordnar myllret av korrigeringar till något nästan förutsägbart: alternationen. Om en korrigering var skarp blir nästa trög; var den snabb blir nästan den långsam. Frost & Prechter kallar alternation för en lag om variation — marknadens vägran att upprepa sig.",
+      "intro": "En enda princip ordnar myllret av korrigeringar till något nästan förutsägbart: alternationen. Om en korrigering var skarp blir nästa trög; var den snabb blir nästan den långsam. Frost & Prechter kallar alternation för en läg om variation — marknadens vägran att upprepa sig.",
       "blocks": [
         {
           "type": "text",
@@ -718,11 +718,11 @@
         },
         {
           "type": "text",
-          "content": "Observera noggrant statusen: alternation och djupmått är riktlinjer — guidelines — inte hårda regler. Frost & Prechter är själva angelägna om skillnaden: de tre reglerna från kapitel 5 kan aldrig brytas; riktlinjerna träffar ofta men inte alltid. Att blanda ihop dessa två kategorier är vågräknarens vanligaste misstag — att behandla en tumregel som lag och tvångsmärka om en perfekt impuls bara för att våg 4 blev grundare än väntat. I AK1TS:s översättning blir distinktionen enkel: reglerna blir invalidring, riktlinjerna blir förväntan och scenarievikt. En riktlinje som inte infrias flyttar probability, aldrig stopp."
+          "content": "Observera noggrant statusen: alternation och djupmått är riktlinjer — guidelines — inte hårda regler. Frost & Prechter är själva angelägna om skillnaden: de tre reglerna från kapitel 5 kan aldrig brytas; riktlinjerna träffar ofta men inte alltid. Att blanda ihop dessa två kategorier är vågräknarens vanligaste misstag — att behandla en tumregel som läg och tvångsmärka om en perfekt impuls bara för att våg 4 blev grundare än väntat. I AK1TS:s översättning blir distinktionen enkel: reglerna blir invalidring, riktlinjerna blir förväntan och scenarievikt. En riktlinje som inte infrias flyttar probability, aldrig stopp."
         },
         {
           "type": "text",
-          "content": "Praktisk användning av alternation är att göra dig beredd i förväg. Har du räknat en djup, skarp våg 2 — förbered dig inte för en ny panik i våg 4 utan för ett utdraget, tråkigt sidledes: välj strategi därefter (tålamod, tidsstopp, inga shorts i formationen). Har våg 2 varit platt — håll utkik efter en oväntat hänsynslös våg 4 innan finalvågen. Frost & Prechter beskriver alternation som marknadens anda av omväxling; AK1TS formulerar samma sak i risktermer: den korrigering du inte förväntar dig är den som kostar mest, och alternation är systematikens sätt att vägra anta att nästa gång blir som senast."
+          "content": "Praktisk användning av alternation är att göra dig beredd i förväg. Har du räknat en djup, skarp våg 2 — förbered dig inte för en ny panik i våg 4 utan för ett utdraget, tråkigt sidledes: välj strategi därefter (tålamod, tidsstopp, inga shorts i formationen). Har våg 2 varit platt — håll utkik efter en oväntat hänsynslös våg 4 innan finalvågen. Frost & Prechter beskriver alternation som marknadens ända av omväxling; AK1TS formulerar samma sak i risktermer: den korrigering du inte förväntar dig är den som kostar mest, och alternation är systematikens sätt att vägra anta att nästa gång blir som senast."
         },
         {
           "type": "insikt",
@@ -730,7 +730,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Hitta tre färdiga impulssekvenser på valfria charts — gärna olika tillgångar och tidsramar. För varje sekvens: karaktärisera våg 2 (skarp eller trög? djup i procent av våg 1?) och våg 4 (samma frågor). Hur många av de tre följde alternation? Mät också hur nära korrigeringarna landade i zonen för föregående fjärde våg av lägre grad. Spara siffrorna — de är dina egna första statistiska test av bokens riktlinjer."
+          "content": "Hitta tre färdiga impulssekvenser på valfria charts — gärna olika tillgångar och tidsramar. För varje sekvens: karaktärisera våg 2 (skarp eller trög? djup i procent av våg 1?) och våg 4 (samma frågör). Hur många av de tre följde alternation? Mät också hur nära korrigeringarna landade i zonen för föregående fjärde våg av lägre grad. Spara siffrorna — de är dina egna första statistiska test av bokens riktlinjer."
         },
         {
           "type": "tabell",
@@ -781,15 +781,15 @@
       "num": 10,
       "minutes": 10,
       "title": "Fibonacci — den matematiska ryggraden",
-      "intro": "Elliott skrev att Fibonacci-talföljden genomsyrar vågprincipen, och Frost & Prechter ägnar bokens matematiska kapitel åt att visa hur: antal vågor, retracements och extensioner förhåller sig som 1,618 och dess invers 0,618. Detta kapitel ger dig talen — och den skepsis mot sifferdyrkan som AK1TS anser obligatorisk.",
+      "intro": "Elliott skrev att Fibonacci-talföljden genomsyrar vågprincipen, och Frost & Prechter ägnar bokens matematiska kapitel åt att visa hur: antal vågör, retracements och extensioner förhåller sig som 1,618 och dess invers 0,618. Detta kapitel ger dig talen — och den skepsis mot sifferdyrkan som AK1TS anser obligatorisk.",
       "blocks": [
         {
           "type": "text",
-          "content": "Fibonacci-följden är enkel att bygga: börja med 1 och 1, och låt varje tal vara summan av de två föregående — 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, och så vidare i all oändlighet. Dividera ett tal med nästa och kvoten går mot 0,618; dividera med föregående och den går mot 1,618 — det gyllene snittet, känt sedan antiken och återfunnet i solrosors fröhallar, snäckskal, paradoxalt nog också i Elliotts vågantal: en hel cykel innehåller 21 små vågor i drivdelen och 13 i korrigeringen, tal ur följdens hjärta. Frost & Prechter citerar Elliotts egen slutsats: att talföljden inte är en tillfällighet utan uttryck för samma tillväxtprocess som styr alla naturliga system — inklusive mänskliga massors humörsvängningar."
+          "content": "Fibonacci-följden är enkel att bygga: börja med 1 och 1, och låt varje tal vara summan av de två föregående — 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, och så vidare i all oändlighet. Dividera ett tal med nästa och kvoten går mot 0,618; dividera med föregående och den går mot 1,618 — det gyllene snittet, känt sedan antiken och återfunnet i solrosors fröhallar, snäckskal, paradoxalt nog också i Elliotts vågantal: en hel cykel innehåller 21 små vågör i drivdelen och 13 i korrigeringen, tal ur följdens hjärta. Frost & Prechter citerar Elliotts egen slutsats: att talföljden inte är en tillfällighet utan uttryck för samma tillväxtprocess som styr alla naturliga system — inklusive mänskliga massors humörsvängningar."
         },
         {
           "type": "text",
-          "content": "För praktiken är det tre tal som betyder något. 61,8 procent — det gyllene förhållandet baklänges — är den klassiska retracementen: våg 2 mot våg 1, våg c mot föregående uppgång. 38,2 procent är 0,618 i kvadrat och är den grundare nivån: typisk för våg 4, typisk för rekyl i starka trender. 50 procent är, som Frost & Prechter ärligt konstaterar, inte ett Fibonaccital alls — det är Dows gamla tumregel att korrigeringer återtar omkring hälften — men det förtjänar sin plats för att marknaden respekterar det så ofta. Dessa tre nivåer räcker för att göra en chart mätbar: drag ett svings lägsta till högsta, och du har en skala där reaktioner tenderar att stanna."
+          "content": "För praktiken är det tre tal som betyder något. 61,8 procent — det gyllene förhållandet baklänges — är den klassiska retracementen: våg 2 mot våg 1, våg c mot föregående uppgång. 38,2 procent är 0,618 i kvadrat och är den grundare nivån: typisk för våg 4, typisk för rekyl i starka trender. 50 procent är, som Frost & Prechter ärligt konstaterar, inte ett Fibonaccital alls — det är Dows gamla tumregel att korrigeringer återtar omkring hälften — men det förtjänär sin plats för att marknaden respekterar det så ofta. Dessa tre nivåer räcker för att göra en chart mätbar: drag ett svings lägsta till högsta, och du har en skala där reaktioner tenderar att stanna."
         },
         {
           "type": "text",
@@ -809,7 +809,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fibonacci-talen i praktisk användning\",\"rader\":[[\"Kvot\",\"Värde\",\"Vanlig användning\"],[\"0,618\",\"61,8 procent\",\"Klassisk retracement för våg 2; stöd i trend\"],[\"0,500\",\"50 procent\",\"Dows arv; psykologisk mittpunkt; ofta respekterad\"],[\"0,382\",\"38,2 procent\",\"Grund retracement för våg 4; rekyl i stark trend\"],[\"1,618\",\"161,8 procent\",\"Extension: våg 3 mot våg 1; våg c mot våg a\"],[\"2,618\",\"261,8 procent\",\"Förlängd extension i exceptionella våg 3:or\"],[\"1, 1, 2, 3, 5, 8...\",\"Talföljden\",\"Antal vågor i strukturer; tidsmått mellan vändpunkter\"]]}"
+          "content": "{\"rubrik\":\"Fibonacci-talen i praktisk användning\",\"rader\":[[\"Kvot\",\"Värde\",\"Vanlig användning\"],[\"0,618\",\"61,8 procent\",\"Klassisk retracement för våg 2; stöd i trend\"],[\"0,500\",\"50 procent\",\"Dows arv; psykologisk mittpunkt; ofta respekterad\"],[\"0,382\",\"38,2 procent\",\"Grund retracement för våg 4; rekyl i stark trend\"],[\"1,618\",\"161,8 procent\",\"Extension: våg 3 mot våg 1; våg c mot våg a\"],[\"2,618\",\"261,8 procent\",\"Förlängd extension i exceptionella våg 3:or\"],[\"1, 1, 2, 3, 5, 8...\",\"Talföljden\",\"Antal vågör i strukturer; tidsmått mellan vändpunkter\"]]}"
         },
         {
           "type": "visuell",
@@ -856,7 +856,7 @@
       "num": 11,
       "minutes": 10,
       "title": "Vågornas proportioner — retracements och extensions",
-      "intro": "Nu sätter vi samman två av kursens trådar: vågstruktur och Fibonacci-matematik. Frost & Prechter ger en katalog över hur vågorna förhåller sig till varandra i längd — vilka multiplar våg 3 tenderar att vara av våg 1, när våg 5 blir lika lång som våg 1. Detta är våglärans kartmatematik: du mäter det som hänt för att projicera det som väntar.",
+      "intro": "Nu sätter vi samman två av kursens trådär: vågstruktur och Fibonacci-matematik. Frost & Prechter ger en katalog över hur vågorna förhåller sig till varandra i längd — vilka multiplar våg 3 tenderar att vara av våg 1, när våg 5 blir lika lång som våg 1. Detta är våglärans kartmatematik: du mäter det som hänt för att projicera det som väntar.",
       "blocks": [
         {
           "type": "text",
@@ -876,7 +876,7 @@
         },
         {
           "type": "insikt",
-          "content": "Proportionsanalys förvandlar en chart från teckning till koordinatsystem: det som hänt innehåller mått på det som väntar. Men kom ihåg rangordningen — strukturen bestämmer formen, proportionerna bestämmer storleken. Räkna aldrig baklänges: formeln tjänar räkningen, inte tvärtom."
+          "content": "Proportionsanalys förvandlar en chart från teckning till koordinatsystem: det som hänt innehåller mått på det som väntar. Men kom ihåg rangordningen — strukturen bestämmer formen, proportionerna bestämmer storleken. Räkna aldrig baklänges: formeln tjänär räkningen, inte tvärtom."
         },
         {
           "type": "utmaning",
@@ -919,7 +919,7 @@
           "alternativ": [
             "En felmätning som skall korrigeras",
             "När två eller flera oberoende projektioner landar i samma priszon",
-            "En metod att räkna vågor i flera grader samtidigt",
+            "En metod att räkna vågör i flera grader samtidigt",
             "Volymmätning över flera tidsramar"
           ],
           "ratt": 1,
@@ -939,7 +939,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens egen varning förtjänar att citeras i sin anda: Frost & Prechter placerar tidsförhållanden bland de minst tillförlitliga av vågprincipens verktyg. Tidsmått inträffar ofta i närheten av viktiga vändpunkter — men sällan nog för att handlas på egen hand. En månadskillnad kan vara 13 eller 14 eller 15 beroende på var exakt du räknar start och slut, och med tillräckligt många tal och tillräckligt många vändpunkter blir alla avstånd Fibonacci på något sätt. Det är samma data-mining-fälla som kritiker ilsket påpekat om hela teorin — här är den som störst."
+          "content": "Bokens egen varning förtjänär att citeras i sin ända: Frost & Prechter placerar tidsförhållanden bland de minst tillförlitliga av vågprincipens verktyg. Tidsmått inträffar ofta i närheten av viktiga vändpunkter — men sällan nog för att handlas på egen hand. En månadskillnad kan vara 13 eller 14 eller 15 beroende på var exakt du räknar start och slut, och med tillräckligt många tal och tillräckligt många vändpunkter blir alla avstånd Fibonacci på något sätt. Det är samma data-mining-fälla som kritiker ilsket påpekat om hela teorin — här är den som störst."
         },
         {
           "type": "text",
@@ -947,7 +947,7 @@
         },
         {
           "type": "text",
-          "content": "En praktisk metod för den som vill utforska tidsaxeln utan att falla i fällan: samla ett större antal vändpunkter — minst tjugo — på en lång chart. Mät alla inbördes avstånd. Beräkna andelen som ligger inom en eller två handelsdagar från ett Fibonaccital. Om andelen inte är påfallande högre än slumpens — och den är ofta det inte — har du personligt reproducerat kritikernas experiment och vet varför AK1TS behandlar tiden som bihang. Detsamma gäller tidsförhållanden mellan vågor: testa dem, men låt dem aldrig åsidosätta form och pris. Frost & Prechter själva rangordnar: form, sedan pris, sedan tid."
+          "content": "En praktisk metod för den som vill utforska tidsaxeln utan att falla i fällan: samla ett större antal vändpunkter — minst tjugo — på en lång chart. Mät alla inbördes avstånd. Beräkna andelen som ligger inom en eller två handelsdagar från ett Fibonaccital. Om andelen inte är påfallande högre än slumpens — och den är ofta det inte — har du personligt reproducerat kritikernas experiment och vet varför AK1TS behandlar tiden som bihang. Detsamma gäller tidsförhållanden mellan vågör: testa dem, men låt dem aldrig åsidosätta form och pris. Frost & Prechter själva rangordnar: form, sedan pris, sedan tid."
         },
         {
           "type": "insikt",
@@ -959,7 +959,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tidsanalysens verktyg och deras tillförlitlighet\",\"rader\":[[\"Verktyg\",\"Beskrivning\",\"Tillförlitlighet enligt boken\"],[\"Fibonacci-avstånd\",\"Dagar eller veckor mellan vändpunkter ur talföljden\",\"Låg till medel — inträffar ofta närheten men sällan exakt\"],[\"Tidsförhållanden\",\"Varaktighetskvoter mellan vågor, ofta 1,618\",\"Låg — känslig för var gränser dras\"],[\"Års-cyklar och årstider\",\"Wiederkehrande säsongsmönster\",\"Utöver kärnan; svagt stöd\"],[\"Fasta horisonter (AK1TS)\",\"Definierade tidsfönster per grad, Mikro till Mega\",\"Deterministisk — oberoende av subjektiv räkning\"],[\"Arbetsregeln\",\"Tid öppnar fönster; pris, volym och struktur avgör handling\",\"Grundprincip i hela AK1TS\"]]}"
+          "content": "{\"rubrik\":\"Tidsanalysens verktyg och deras tillförlitlighet\",\"rader\":[[\"Verktyg\",\"Beskrivning\",\"Tillförlitlighet enligt boken\"],[\"Fibonacci-avstånd\",\"Dagar eller veckor mellan vändpunkter ur talföljden\",\"Låg till medel — inträffar ofta närheten men sällan exakt\"],[\"Tidsförhållanden\",\"Varaktighetskvoter mellan vågör, ofta 1,618\",\"Låg — känslig för var gränser dras\"],[\"Års-cyklar och årstider\",\"Wiederkehrande säsongsmönster\",\"Utöver kärnan; svagt stöd\"],[\"Fasta horisonter (AK1TS)\",\"Definierade tidsfönster per grad, Mikro till Mega\",\"Deterministisk — oberoende av subjektiv räkning\"],[\"Arbetsregeln\",\"Tid öppnar fönster; pris, volym och struktur avgör handling\",\"Grundprincip i hela AK1TS\"]]}"
         },
         {
           "type": "visuell",
@@ -1018,11 +1018,11 @@
         },
         {
           "type": "text",
-          "content": "Divergensen är varningsklockan. Bokens verktyg är i modern tappning momentummätare — oscillatorer som mäter förändringstakt snarare än nivå. Klassiska mönstret: under våg 3 når momentummätaren sin högsta nivå i takt med priset; vid våg 5:s topp noterar priset ny topp men mätaren en tydligt lägre topp — pris upp, kraft ned. Frost & Prechter visar hur dessa divergenser vid femte vågen av hög grad kan byggas upp under månader och till och med år, och hur multipla oscillator-divergenser (mätaren slår ny topp på lägre nivå flera svitgnågor i rad) är bland de starkaste varningarna hela metoden kan ge. OBS viktig begränsning som boken också understryker: divergens är ett tillstånd, inte en signal — den talar om att kraften mattas, inte att vändningen sker idag."
+          "content": "Divergensen är varningsklockan. Bokens verktyg är i modern tappning momentummätare — oscillatorer som mäter förändringstakt snarare än nivå. Klassiska mönstret: under våg 3 når momentummätaren sin högsta nivå i takt med priset; vid våg 5:s topp noterar priset ny topp men mätaren en tydligt lägre topp — pris upp, kraft ned. Frost & Prechter visar hur dessa divergenser vid femte vågen av hög grad kan byggas upp under månader och till och med år, och hur multipla oscillator-divergenser (mätaren slår ny topp på lägre nivå flera svitgnågör i rad) är bland de starkaste varningarna hela metoden kan ge. OBS viktig begränsning som boken också understryker: divergens är ett tillstånd, inte en signal — den talar om att kraften mattas, inte att vändningen sker idag."
         },
         {
           "type": "text",
-          "content": "AK1TS:s deterministiska översättning är rak. Vågpositionens subjektiva fråga 'är detta våg 5?' ersätts av mätbara förhållanden: volymkonfluens — hur förhåller sig kort volym (20 dagar) till lång (90 dagar)? Momentumtecken — hur många sammanhängande perioder med positiv resp. negativ förändringstakt? Medelvärldens lutning — pekar glidande medelvärden på Mikro, Kort och Medellång i samma riktning? När en prissekvens gjort nya toppar medan dessa mått har mattats har vi en AK1TS-divergens — oavsett om någon räknat vågor eller inte. Detta är kärnan i vår brytning med den klassiska skolan: vi behåller bokens fenomenologi men byter ut tolkningen mot mätning. I flaggskeppet \"AK1TS — Våglärans Hierarki\" är volymkapitlet (kapitel 11) just denna översättning, fullt genomförd."
+          "content": "AK1TS:s deterministiska översättning är rak. Vågpositionens subjektiva fråga 'är detta våg 5?' ersätts av mätbara förhållanden: volymkonfluens — hur förhåller sig kort volym (20 dagar) till lång (90 dagar)? Momentumtecken — hur många sammanhängande perioder med positiv resp. negativ förändringstakt? Medelvärldens lutning — pekar glidande medelvärden på Mikro, Kort och Medellång i samma riktning? När en prissekvens gjort nya toppar medan dessa mått har mattats har vi en AK1TS-divergens — oavsett om någon räknat vågör eller inte. Detta är kärnan i vår brytning med den klassiska skolan: vi behåller bokens fenomenologi men byter ut tolkningen mot mätning. I flaggskeppet \"AK1TS — Våglärans Hierarki\" är volymkapitlet (kapitel 11) just denna översättning, fullt genomförd."
         },
         {
           "type": "insikt",
@@ -1160,7 +1160,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Burton Malkiels attack i 'A Random Walk Down Wall Street' är den mest kända och den bitrandeaste. Hans huvudpunkter: vågräkning är vag — samma chart ger olika räkningar beroende på vem som räknar och när; tolkningen sker i efterhand, när mönstret redan är klart, och prognosvärdet i realtid är eländigt; och det finns ingen dokumenterad, oberoende testad förmåga hos vågräknare att slå marknaden. Malkiel driver hem poängen med ett experiment av typen myntkast: han lät ett slumptal generera en prisserie som var omöjlig att skilja från en riktig aktiechart — komplett med trendlinjer, stöd, motstånd och vågliknande mönster. Slutsatsen: vad vågräknare ser är projektioner i brus. Hans mest-rynka-på-näsan formulering — att olika Elliott-analytiker vid samma tidpunkt hänför marknaden till olika vågpositioner och ändå alla kallar metoden vetenskap — har aldrig bemötts på ett övertygande sätt."
+          "content": "Burton Malkiels attack i 'A Random Walk Down Wall Street' är den mest kända och den bitrandeaste. Hans huvudpunkter: vågräkning är väg — samma chart ger olika räkningar beroende på vem som räknar och när; tolkningen sker i efterhand, när mönstret redan är klart, och prognosvärdet i realtid är eländigt; och det finns ingen dokumenterad, oberoende testad förmåga hos vågräknare att slå marknaden. Malkiel driver hem poängen med ett experiment av typen myntkast: han lät ett slumptal generera en prisserie som var omöjlig att skilja från en riktig aktiechart — komplett med trendlinjer, stöd, motstånd och vågliknande mönster. Slutsatsen: vad vågräknare ser är projektioner i brus. Hans mest-rynka-på-näsan formulering — att olika Elliott-analytiker vid samma tidpunkt hänför marknaden till olika vågpositioner och ändå alla kallar metoden vetenskap — har aldrig bemötts på ett övertygande sätt."
         },
         {
           "type": "text",
@@ -1176,7 +1176,7 @@
         },
         {
           "type": "text",
-          "content": "Sammanfatta ärligheten i en tabell i huvudet. Vad kritikerna har rätt om: räkningens subjektivitet, efterhands-klokheten, ofalsifierbarheten i klassisk praktik, prognosmisslyckandena, akademins brist på stöd. Vad AK1TS ändå behåller: vågformens beskrivningsvärde (fem steg framåt, tre tillbaka är den mest välanvända sanningen om hur trender rör sig), hierarki-idén (korta sviter betjänar långa), Fibonacci som mätsticka för zoner, volymens och divergensens fenomenologi, och de tre reglerna som riskgrammatik. Vad vi kastar: alla anspråk på förutsägelse, exakta tidsmål, dogmatisk märkning och tron att struktur förutsäger. Hållningen är densamma som genom hela AK1TS: vi är kontroversiella genom att säga vad vi inte tror på — och vi bygger bara på det som kan mätas, backas och dö."
+          "content": "Sammanfatta ärligheten i en tabell i huvudet. Vad kritikerna har rätt om: räkningens subjektivitet, efterhands-klokheten, ofalsifierbarheten i klassisk praktik, prognosmisslyckandena, akademins brist på stöd. Vad AK1TS ändå behåller: vågformens beskrivningsvärde (fem steg framåt, tre tillbaka är den mest välanvända sanningen om hur trender rör sig), hierarki-idén (korta sviter betjänär långa), Fibonacci som mätsticka för zoner, volymens och divergensens fenomenologi, och de tre reglerna som riskgrammatik. Vad vi kastar: alla anspråk på förutsägelse, exakta tidsmål, dogmatisk märkning och tron att struktur förutsäger. Hållningen är densamma som genom hela AK1TS: vi är kontroversiella genom att säga vad vi inte tror på — och vi bygger bara på det som kan mätas, backas och dö."
         },
         {
           "type": "insikt",
@@ -1188,7 +1188,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kritik mot AK1TS:s svar — brytningen punkt för punkt\",\"rader\":[[\"Kritik\",\"Vad kritiken träffar\",\"AK1TS:s svar\"],[\"Räkningen är vag och subjektiv\",\"Kärnan i Malkiels anklagelse\",\"Subjektiv räkning ersätts av deterministiska proxy-mått: momentum, medelvärld, volymkonfluens\"],[\"Olika räknare ger olika svar\",\"Dokumenterat och sant\",\"AK1TS:s mått ger samma svar för oberoende användare\"],[\"Myntkast ser ut som vågor\",\"Mönster projiceras i brus\",\"Struktur används som beskrivningsram, inte som signalkälla\"],[\"Teorin är ofalsifierbar\",\"'Principen har aldrig fel' är ett problem\",\"Endast falsifierbara delar behålls: de tre hårda reglerna som invalidring\"],[\"Prechters prognosmisslyckanden\",\"Sanna för 1990-talet\",\"AK1TS gör inga prognosanspråk — endast scenarier med vikter och stopp\"],[\"Akademiskt stöd saknas\",\"Få peer-granskade belägg\",\"Vi kräver inte tro — vi kräver att varje verktyg kan backtestas och dö\"]]}"
+          "content": "{\"rubrik\":\"Kritik mot AK1TS:s svar — brytningen punkt för punkt\",\"rader\":[[\"Kritik\",\"Vad kritiken träffar\",\"AK1TS:s svar\"],[\"Räkningen är väg och subjektiv\",\"Kärnan i Malkiels anklagelse\",\"Subjektiv räkning ersätts av deterministiska proxy-mått: momentum, medelvärld, volymkonfluens\"],[\"Olika räknare ger olika svar\",\"Dokumenterat och sant\",\"AK1TS:s mått ger samma svar för oberoende användare\"],[\"Myntkast ser ut som vågör\",\"Mönster projiceras i brus\",\"Struktur används som beskrivningsram, inte som signalkälla\"],[\"Teorin är ofalsifierbar\",\"'Principen har aldrig fel' är ett problem\",\"Endast falsifierbara delar behålls: de tre hårda reglerna som invalidring\"],[\"Prechters prognosmisslyckanden\",\"Sanna för 1990-talet\",\"AK1TS gör inga prognosanspråk — endast scenarier med vikter och stopp\"],[\"Akademiskt stöd saknas\",\"Få peer-granskade belägg\",\"Vi kräver inte tro — vi kräver att varje verktyg kan backtestas och dö\"]]}"
         },
         {
           "type": "visuell",
@@ -1200,7 +1200,7 @@
           "q": "Vad är kärnan i Malkiels kritik mot Elliott-vågteorin?",
           "alternativ": [
             "Att Fibonacci-tal inte existerar i naturen",
-            "Att vågräkning är vag och subjektiv — tolkas i efterhand, ger olika räknare olika svar och saknar bevisad prognosförmåga",
+            "Att vågräkning är väg och subjektiv — tolkas i efterhand, ger olika räknare olika svar och saknar bevisad prognosförmåga",
             "Att Elliott stal idén från Dow",
             "Att teknisk analys är för dyr att tillämpa"
           ],
@@ -1235,11 +1235,11 @@
       "num": 16,
       "minutes": 10,
       "title": "Från bok till AK1TS — vågbegreppet i praktiken",
-      "intro": "Sista kapitlet knyter ihop allt: hur en 1978-bok om vågor blir ett fungerande, deterministiskt analysramverk i AK1TS. Här är översättningstabellen från Frost & Prechters begrepp till våra mått — och den avslutande arbetsordningen du kan använda på vilken chart som helst, imorgon.",
+      "intro": "Sista kapitlet knyter ihop allt: hur en 1978-bok om vågör blir ett fungerande, deterministiskt analysramverk i AK1TS. Här är översättningstabellen från Frost & Prechters begrepp till våra mått — och den avslutande arbetsordningen du kan använda på vilken chart som helst, imorgon.",
       "blocks": [
         {
           "type": "text",
-          "content": "Översättningen börjar i hierarkin. Frost & Prechters våggrader — från Grand Supercycle till Subminuette — blir i AK1TS fem bestämda horisonter: Mikro (dagar), Kort (kvartal), Medellång (arenaåret), Lång (konjunkturen) och Mega (hela historiken). Skillnaden är avgörande: en AK1TS-grad definieras av sin datalängd, aldrig av en räknares bedömning. Frågan 'vilken våg av vilken grad?' ersätts av 'vilken horisont handlar jag på, och vad säger högre horisonters momentum?' Den överordnade trenden, som hos Elliott bestämmer hur allt annat skall tolkas, läses av som medelvärldens och momentumtecknens samstämmighet uppåt i horisonterna — den berömda hierarkiläran: korta vågor betjänar de långa."
+          "content": "Översättningen börjar i hierarkin. Frost & Prechters våggrader — från Grand Supercycle till Subminuette — blir i AK1TS fem bestämda horisonter: Mikro (dagar), Kort (kvartal), Medellång (arenaåret), Lång (konjunkturen) och Mega (hela historiken). Skillnaden är avgörande: en AK1TS-grad definieras av sin datalängd, aldrig av en räknares bedömning. Frågan 'vilken våg av vilken grad?' ersätts av 'vilken horisont handlar jag på, och vad säger högre horisonters momentum?' Den överordnade trenden, som hos Elliott bestämmer hur allt annat skall tolkas, läses av som medelvärldens och momentumtecknens samstämmighet uppåt i horisonterna — den berömda hierarkiläran: korta vågör betjänär de långa."
         },
         {
           "type": "text",
@@ -1263,7 +1263,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Översättningstabellen — från vågbegrepp till AK1TS-mått\",\"rader\":[[\"Bokens begrepp\",\"AK1TS:s deterministiska översättning\"],[\"Våggrader, Grand Supercycle till Subminuette\",\"Fem fasta horisonter: Mikro, Kort, Medellång, Lång, Mega\"],[\"Impuls (fem vågor)\",\"Samfällt momentumtecken, expandande volym på sin horisont\"],[\"Korrigering (tre vågor)\",\"Neutralt momentum, sinande volym, sidledes struktur\"],[\"Våg 5-divergens\",\"Priset nya toppar medan momentum och volym mattas — mätbar avvikelse\"],[\"De tre hårda reglerna\",\"Invalidnivåer och stopp: våg 1:s start och topp definierar risken\"],[\"Fibonacci-retracements och extensions\",\"Konfluens-zoner att bevaka — aldrig inträde utan bekräftelse\"],[\"Tidsmått\",\"Fasta tidsfönster per horisont; bekräftelse krävs i Pris och Volym\"],[\"Alternation\",\"Förväntan om att nästa korrigering skiljer sig från den senaste — scenarievikt, inte stopp\"]]}"
+          "content": "{\"rubrik\":\"Översättningstabellen — från vågbegrepp till AK1TS-mått\",\"rader\":[[\"Bokens begrepp\",\"AK1TS:s deterministiska översättning\"],[\"Våggrader, Grand Supercycle till Subminuette\",\"Fem fasta horisonter: Mikro, Kort, Medellång, Lång, Mega\"],[\"Impuls (fem vågör)\",\"Samfällt momentumtecken, expandande volym på sin horisont\"],[\"Korrigering (tre vågör)\",\"Neutralt momentum, sinande volym, sidledes struktur\"],[\"Våg 5-divergens\",\"Priset nya toppar medan momentum och volym mattas — mätbar avvikelse\"],[\"De tre hårda reglerna\",\"Invalidnivåer och stopp: våg 1:s start och topp definierar risken\"],[\"Fibonacci-retracements och extensions\",\"Konfluens-zoner att bevaka — aldrig inträde utan bekräftelse\"],[\"Tidsmått\",\"Fasta tidsfönster per horisont; bekräftelse krävs i Pris och Volym\"],[\"Alternation\",\"Förväntan om att nästa korrigering skiljer sig från den senaste — scenarievikt, inte stopp\"]]}"
         },
         {
           "type": "visuell",
@@ -1296,7 +1296,7 @@
         {
           "q": "Vad är det första steget i kursens avslutande arbetsordning?",
           "alternativ": [
-            "Räkna vågor på lägsta graden",
+            "Räkna vågör på lägsta graden",
             "Köpa en optionsposition för hedgning",
             "Beräkna Fibonacci-mål",
             "Välja horisont — den du faktiskt handlar på"

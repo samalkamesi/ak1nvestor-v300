@@ -5,12 +5,12 @@
   "chapterCount": 20,
   "totalMinutes": 220,
   "title": "Technical Analysis of the Financial Markets — Murphy: KOMPLETT",
-  "summary": "John J. Murphys 'Technical Analysis of the Financial Markets' (1999) är teknisk analysens bibel — en komplett genomgång av allt från Dow-teorin och chartkonstruktion till Elliott-vågor, Fibonacci, cykler och intermarket-analys. Denna BOKMASTER-kurs täcker hela boken i 20 kapitel och knyter varje verktyg till AK1TS-ekosystemet: fem tidshorisonter, fem teorier och fyra dimensioner. Efter kursen läser du vilken chart som helst med Murphys systematik — från Mikro till Mega.",
+  "summary": "John J. Murphys 'Technical Analysis of the Financial Markets' (1999) är teknisk analysens bibel — en komplett genomgång av allt från Dow-teorin och chartkonstruktion till Elliott-vågör, Fibonacci, cykler och intermarket-analys. Denna BOKMASTER-kurs täcker hela boken i 20 kapitel och knyter varje verktyg till AK1TS-ekosystemet: fem tidshorisonter, fem teorier och fyra dimensioner. Efter kursen läser du vilken chart som helst med Murphys systematik — från Mikro till Mega.",
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan du: konstruera och läsa stång- och candlestickdiagram med rätt skala per tidshorisont; identifiera trender, stöd/motstånd samt reversal- och fortsättningsmönster med mått och bekräftelsekrav; använda RSI, stokastik, MACD och ADX i rätt marknadsregim; räkna Elliott-vågor enligt de tre reglerna och arbeta med Fibonacci-retracements, extensions och tidszoner; läsa intermarket-kedjan dollar–råvaror–räntor–aktier, följa sektorsrotation och tolka OBV; samt bygga ett handelssystem med Murphy-klassad pengarhantering — allt mappat mot AK1TS fem horisonter, fem teorier och fyra dimensioner.",
-  "why": "Murphys bok är den mest sammankopplade källan till hela AK1TS-ekosystemet: Elliott, Fibonacci, cykler och volym är bokstavligen fyra av de fem AK1TS-teorierna, och bokens genomgående trådar — trend, pris, tid och brytpunkt — är de fyra dimensionernas ursprung. Ingen annan bok täcker så många av matrisens 25 celler i ett enda verk, och ingen författare förklarar tydligare varför samma principer gäller från intradag till decennier.",
+  "learn": "Efter kursen kan du: konstruera och läsa stång- och candlestickdiagram med rätt skala per tidshorisont; identifiera trender, stöd/motstånd samt reversal- och fortsättningsmönster med mått och bekräftelsekrav; använda RSI, stokastik, MACD och ADX i rätt marknadsregim; räkna Elliott-vågör enligt de tre reglerna och arbeta med Fibonacci-retracements, extensions och tidszoner; läsa intermarket-kedjan dollar–råvaror–räntor–aktier, följa sektorsrotation och tolka OBV; samt bygga ett handelssystem med Murphy-klassad pengarhantering — allt mappat mot AK1TS fem horisonter, fem teorier och fyra dimensioner.",
+  "why": "Murphys bok är den mest sammankopplade källan till hela AK1TS-ekosystemet: Elliott, Fibonacci, cykler och volym är bokstavligen fyra av de fem AK1TS-teorierna, och bokens genomgående trådär — trend, pris, tid och brytpunkt — är de fyra dimensionernas ursprung. Ingen annan bok täcker så många av matrisens 25 celler i ett enda verk, och ingen författare förklarar tydligare varför samma principer gäller från intradag till decennier.",
   "chapters_list": [
     {
       "num": 1,
@@ -84,7 +84,7 @@
     },
     {
       "num": 15,
-      "title": "Elliott-vågläran — fem vågor framåt, tre tillbaka",
+      "title": "Elliott-vågläran — fem vågör framåt, tre tillbaka",
       "minutes": 11
     },
     {
@@ -392,7 +392,7 @@
         {
           "q": "Varför fungerar runga tal ofta som stöd eller motstånd?",
           "alternativ": [
-            "De är programmerade i börssystemen enligt lag",
+            "De är programmerade i börssystemen enligt läg",
             "Murphy avråder från att använda dem",
             "De motsvarar alltid fundamentalt värde",
             "De fungerar som psykologiska mål och samlingspunkter för beslut"
@@ -1002,7 +1002,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Verktyg efter marknadsregim\",\"rader\":[[\"Regime\",\"ADX\",\"Verktyg som gynnas\"],[\"Stark trend\",\"Över 25 och stigande\",\"MA, brytpunkter, Elliott-vågor\"],[\"Övergång\",\"20–25\",\"Kombinera med bekräftelse\"],[\"Sidledes\",\"Under 20 och fallande\",\"RSI, stokastik, Fibonacci-retracement\"],[\"Trendbrott\",\"Fallande från hög nivå\",\"Divergens plus mönster\"]]}"
+          "content": "{\"rubrik\":\"Verktyg efter marknadsregim\",\"rader\":[[\"Regime\",\"ADX\",\"Verktyg som gynnas\"],[\"Stark trend\",\"Över 25 och stigande\",\"MA, brytpunkter, Elliott-vågör\"],[\"Övergång\",\"20–25\",\"Kombinera med bekräftelse\"],[\"Sidledes\",\"Under 20 och fallande\",\"RSI, stokastik, Fibonacci-retracement\"],[\"Trendbrott\",\"Fallande från hög nivå\",\"Divergens plus mönster\"]]}"
         }
       ],
       "quiz": [
@@ -1045,7 +1045,7 @@
       "num": 14,
       "minutes": 11,
       "title": "Cykler — marknadens hjärtslag",
-      "intro": "Murphy ägnar ett helt part åt tiden själv: marknader rör sig i rytmiska mönster, från decennielånga Kondratieff-vågor ner till fyra veckors handelscykler. Detta är Tid-dimensionens födelsekapitel i AK1TS — och mötesplatsen mellan Lucas-talserien, GANN-cykler och Fibonacci-tid.",
+      "intro": "Murphy ägnar ett helt part åt tiden själv: marknader rör sig i rytmiska mönster, från decennielånga Kondratieff-vågör ner till fyra veckors handelscykler. Detta är Tid-dimensionens födelsekapitel i AK1TS — och mötesplatsen mellan Lucas-talserien, GANN-cykler och Fibonacci-tid.",
       "blocks": [
         {
           "type": "text",
@@ -1115,12 +1115,12 @@
     {
       "num": 15,
       "minutes": 11,
-      "title": "Elliott-vågläran — fem vågor framåt, tre tillbaka",
-      "intro": "Ralph Nelson Elliott tog Dows trendtänkande ett steg längre: marknaden rör sig inte bara i trender utan i vågor med inbyggd grammatik. Fem vågor i trendens riktning, tre tillbaka — samma mönster i alla skalor, för alltid. För AK1TS är detta Våg-dimensionens fundament och en av ekosystemets fem teorier i ren form.",
+      "title": "Elliott-vågläran — fem vågör framåt, tre tillbaka",
+      "intro": "Ralph Nelson Elliott tog Dows trendtänkande ett steg längre: marknaden rör sig inte bara i trender utan i vågör med inbyggd grammatik. Fem vågör i trendens riktning, tre tillbaka — samma mönster i alla skalor, för alltid. För AK1TS är detta Våg-dimensionens fundament och en av ekosystemets fem teorier i ren form.",
       "blocks": [
         {
           "type": "text",
-          "content": "Elliott publicerade på 1930-talet sin upptäckt att marknaden rör sig i en femvågsstruktur i huvudtrendens riktning (våg 1, 3 och 5 med trenden; våg 2 och 4 mot), följd av en trevågskorrigering (a-b-c) mot samma trend. Det revolutionära var fraktaliteten: varje våg består av mindre vågor av samma form, från Grand Supercycle över sekler ner till minutnivåer. I AK1TS-ekosystemet motsvarar våggraderna exakt horisonterna — en Mikro-vågsräkning lever inuti en Mega-vågsräkning, och Murphy betonar att samma principer gäller i alla skalor."
+          "content": "Elliott publicerade på 1930-talet sin upptäckt att marknaden rör sig i en femvågsstruktur i huvudtrendens riktning (våg 1, 3 och 5 med trenden; våg 2 och 4 mot), följd av en trevågskorrigering (a-b-c) mot samma trend. Det revolutionära var fraktaliteten: varje våg består av mindre vågör av samma form, från Grand Supercycle över sekler ner till minutnivåer. I AK1TS-ekosystemet motsvarar våggraderna exakt horisonterna — en Mikro-vågsräkning lever inuti en Mega-vågsräkning, och Murphy betonar att samma principer gäller i alla skalor."
         },
         {
           "type": "text",
@@ -1128,7 +1128,7 @@
         },
         {
           "type": "text",
-          "content": "Vågorna har personligheter. Våg 1 är den skeptiska starten ur en botten; våg 2 den djupa retrace som övertygar alla om att nedtrenden är tillbaka (ofta till 50–61,8 procent); våg 3 den kraftfulla och breda rörelsen där allmänheten kliver in — volymen är som störst här, Volym-teorins bekräftelse; våg 4 den tråkiga sidledes konsolideringen (ofta triangel, kapitel 8); våg 5 momentumets sista stöt — ofta med RSI-divergens (kapitel 12). I korrigeringen är b-vågen fällan som väcker hopp, och c-vågen den destruktiva som städar ut."
+          "content": "Vågorna har personligheter. Våg 1 är den skeptiska starten ur en botten; våg 2 den djupa retrace som övertygar alla om att nedtrenden är tillbaka (ofta till 50–61,8 procent); våg 3 den kraftfulla och breda rörelsen där allmänheten kliver in — volymen är som störst här, Volym-teorins bekräftelse; våg 4 den tråkiga sidledes konsolideringen (ofta triangel, kapitel 8); våg 5 momentumets sista stöt — ofta med RSI-divergens (kapitel 12). I korrigeringen är b-vågen fällan som väcker hopp, och c-vågen den destruktiva som städär ut."
         },
         {
           "type": "text",
@@ -1155,10 +1155,10 @@
         {
           "q": "Vad är den grundläggande Elliott-strukturen?",
           "alternativ": [
-            "Tre vågor upp, fem ner",
-            "Fem vågor i trendens riktning följd av en trevågskorrigering (a-b-c)",
-            "Sju vågor i cykler om åtta",
-            "Fyra vågor följt av en triangel"
+            "Tre vågör upp, fem ner",
+            "Fem vågör i trendens riktning följd av en trevågskorrigering (a-b-c)",
+            "Sju vågör i cykler om åtta",
+            "Fyra vågör följt av en triangel"
           ],
           "ratt": 1,
           "tips": "Räkna impulsen först, sedan återhämtningen — hur många av varje?"
@@ -1169,7 +1169,7 @@
             "Våg 2 retracerar aldrig hela våg 1",
             "Våg 4 får aldrig överlappa våg 1",
             "Våg 3 är aldrig den kortaste av impulsvågorna",
-            "Korrigeringen har alltid tre vågor"
+            "Korrigeringen har alltid tre vågör"
           ],
           "ratt": 2,
           "tips": "Reglerna skyddar det mest karakteristiska draget vid varje våg — vilken våg är känd för att bära störst kraft?"
@@ -1178,7 +1178,7 @@
           "q": "Vad innebär riktlinjen alternation?",
           "alternativ": [
             "Att våg 2 och våg 4 tenderar att växla i form — är den ena djup blir den andra platt",
-            "Att alla vågor är lika långa",
+            "Att alla vågör är lika långa",
             "Att korrigeringar alltid är snabbare än impulser",
             "Att våg 5 alltid divergerar"
           ],
@@ -1191,7 +1191,7 @@
       "num": 16,
       "minutes": 11,
       "title": "Fibonacci — marknadens dolda matematik",
-      "intro": "Ur Elliotts vågor växer siffrorna: 38,2, 50 och 61,8 procent är teknikens mest citerade nivåer. Murphy ägnar Fibonacci ett eget kapitel — retracements, extensions, fans och tidszoner — och förklarar varför de fungerar. Detta är Fibonacci-teorins och Lucas-talseriens hem i AK1TS: Pris och Tid i samma verktygslåda.",
+      "intro": "Ur Elliotts vågör växer siffrorna: 38,2, 50 och 61,8 procent är teknikens mest citerade nivåer. Murphy ägnar Fibonacci ett eget kapitel — retracements, extensions, fans och tidszoner — och förklarar varför de fungerar. Detta är Fibonacci-teorins och Lucas-talseriens hem i AK1TS: Pris och Tid i samma verktygslåda.",
       "blocks": [
         {
           "type": "text",

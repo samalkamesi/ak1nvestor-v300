@@ -9,7 +9,7 @@
   "minutes": 10,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven redogöra för Minsky–Kindleberger-cykeln i dess fem faser — displacement, boom, eufori, vinsttagning och panik — och förklara varför krediten är bubblans gemensamma nämnare i AKM1:s språk: V10 skuldsättningsgrad som bränsle, V11 likviditet som panikfasens överlevnadsvariabel och V19 kapitalförbränning & emission-risk som testet av vem som klarar kraschen; berätta de tolv kronologiska fallen i deras rätta siffror och årtal — från Semper Augustus för cirka 5 000 floriner och South Sea-aktien från 128 pund i januari 1720 till nära 1 000 pund i juni, 1825 års 70-tal fallna banker och guldet från Banque de France, Jay Cookes fall i september 1873, Dow från 381,17 till 41,22, Mexiko augusti 1982, Nikkeis topp 38 916 den 29 december 1989, bahtens float 2 juli 1997, Nasdaq från 5 048,62 till 1 114, Lehman den 15 september 2008 och Islands banker med tillgångar kring tiofalt BNP — och identifiera hur »this time is different«-syndromet, Shillers eufori-psykologi och insiders tysta vinsttagning återkommer i vartenda fall; förklara Bagehots doktrin för lender of last resort, hur Bernanke 2008 tillämpade — och bröt — den, och vad moral hazard kostar i verkliga pengar (S&L: omkring 124 miljarder skattemedel); och avgöra, i kontroverskapitlet, skillnaden mellan historisk lag och historisk tendens: rational expectations-motståndet, Reinhart-Rogoff-kritiken (Herndon-Ash-Pollin 2013) och risken för apofeni — samt ändå formulera 400-årssvaret som en testbar tendens snarare än en spådom, med marginal of safety som princip utan siffra.",
+  "learn": "Efter kursen kan eleven redogöra för Minsky–Kindleberger-cykeln i dess fem faser — displacement, boom, eufori, vinsttagning och panik — och förklara varför krediten är bubblans gemensamma nämnare i AKM1:s språk: V10 skuldsättningsgrad som bränsle, V11 likviditet som panikfasens överlevnadsvariabel och V19 kapitalförbränning & emission-risk som testet av vem som klarar kraschen; berätta de tolv kronologiska fallen i deras rätta siffror och årtal — från Semper Augustus för cirka 5 000 floriner och South Sea-aktien från 128 pund i januari 1720 till nära 1 000 pund i juni, 1825 års 70-tal fallna banker och guldet från Banque de France, Jay Cookes fall i september 1873, Dow från 381,17 till 41,22, Mexiko augusti 1982, Nikkeis topp 38 916 den 29 december 1989, bahtens float 2 juli 1997, Nasdaq från 5 048,62 till 1 114, Lehman den 15 september 2008 och Islands banker med tillgångar kring tiofalt BNP — och identifiera hur »this time is different«-syndromet, Shillers eufori-psykologi och insiders tysta vinsttagning återkommer i vartenda fall; förklara Bagehots doktrin för lender of last resort, hur Bernanke 2008 tillämpade — och bröt — den, och vad moral hazard kostar i verkliga pengar (S&L: omkring 124 miljarder skattemedel); och avgöra, i kontroverskapitlet, skillnaden mellan historisk läg och historisk tendens: rational expectations-motståndet, Reinhart-Rogoff-kritiken (Herndon-Ash-Pollin 2013) och risken för apofeni — samt ändå formulera 400-årssvaret som en testbar tendens snarare än en spådom, med marginal of safety som princip utan siffra.",
   "why": "Ingen annan bok gör det Kindleberger gör: han sorterar fyra hundra års panikhistoria i en enda rimlig sekvens och vågar dra slutsatsen att kriser inte är olyckshändelser utan systemets normala utveckling. Påståendet stör — Minskys instabilitetshypotes utmanar hela jämviktsekonomin — och därför finns ett helt kapitel om motståndet: Famas effektiva marknader, Lucas rationella förväntningar, klientens »den gången är annorlunda« och Reinhart-Rogoffs metodikproblem. Kursen behövs eftersom varje generation möter sin egen bubbla övertygad om sin egen unikitet: den som känner igen cykelns fem faser — och vet att krediten (V10), inte objektet, är det farliga — har ett försprång som varken aktiemäklare 1929 eller isländska sparare 2008 hade. Och för att varje AKM1-analytiker förr eller senare möter frågan som boken egentligen handlar om: när alla andra blir rika på ett mönster du inte tror på — vad gör du då?",
   "chapters_list": [
     "1. Boken, mannen och modellen — varför 400 år av kriser",
@@ -41,7 +41,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens ryggrad lånar Kindleberger öppet från ekonomen Hyman Minsky (1919–1996) och dennes finansiella instabilitetshypotes. Minskys kända paradox — »stability is destabilizing« — säger att lugna tider inte är systemets viloläge utan dess lömskaste tillstånd: under stabilitet vågar aktörerna mer skuld, bankerna mer kredit och reglerna mjukas upp, tills systemet är så skuldsatt att en liten stördning får det att välta. Minsky skilde på tre finansieringstillstånd — hedge (kassaflödet täcker ränta och amortering), speculative (bara räntan) och Ponzi (inte ens räntan; skulden betalas med nya lån i hoppet om stigande priser). Kindlebergers bidrag var att lägga 400 år av kriser ovanpå skelettet och visa att sekvensen återkommer: displacement, boom, eufori, vinsttagning, panik."
+          "content": "Bokens ryggrad lånär Kindleberger öppet från ekonomen Hyman Minsky (1919–1996) och dennes finansiella instabilitetshypotes. Minskys kända paradox — »stability is destabilizing« — säger att lugna tider inte är systemets viloläge utan dess lömskaste tillstånd: under stabilitet vågar aktörerna mer skuld, bankerna mer kredit och reglerna mjukas upp, tills systemet är så skuldsatt att en liten stördning får det att välta. Minsky skilde på tre finansieringstillstånd — hedge (kassaflödet täcker ränta och amortering), speculative (bara räntan) och Ponzi (inte ens räntan; skulden betalas med nya lån i hoppet om stigande priser). Kindlebergers bidrag var att lägga 400 år av kriser ovanpå skelettet och visa att sekvensen återkommer: displacement, boom, eufori, vinsttagning, panik."
         },
         {
           "type": "text",
@@ -49,7 +49,7 @@
         },
         {
           "type": "text",
-          "content": "Kursens gång följer bokens logik. Kapitel 2–6 går igenom de fem faserna mekaniskt, som en tekniker går igenom en motor. Kapitel 7–13 provkör motorn på historiens största kollapser i kronologisk ordning — från Haarlem i februari 1637 till Reykjavik i oktober 2008. Kapitel 14 tar bokens politiska slutsats: lender of last resort, Bagehots doktrin och Bernankes 2008. Kapitel 15 tar den debatt boken aldrig slutade föra: om Minsky-mönstret är vetenskap, historieberättande eller apofeni — och varför skillnaden mellan historisk lag och historisk tendens är hela skillnaden mellan att spå och att förbereda sig. Marginal of safety förekommer genom hela kursen som princip, aldrig som siffra."
+          "content": "Kursens gång följer bokens logik. Kapitel 2–6 går igenom de fem faserna mekaniskt, som en tekniker går igenom en motor. Kapitel 7–13 provkör motorn på historiens största kollapser i kronologisk ordning — från Haarlem i februari 1637 till Reykjavik i oktober 2008. Kapitel 14 tar bokens politiska slutsats: lender of last resort, Bagehots doktrin och Bernankes 2008. Kapitel 15 tar den debatt boken aldrig slutade föra: om Minsky-mönstret är vetenskap, historieberättande eller apofeni — och varför skillnaden mellan historisk läg och historisk tendens är hela skillnaden mellan att spå och att förbereda sig. Marginal of safety förekommer genom hela kursen som princip, aldrig som siffra."
         },
         {
           "type": "visuell",
@@ -78,7 +78,7 @@
             "Fishers kvantitetsteori för pengar"
           ],
           "ratt": 2,
-          "tips": "Kindleberger lånar skelettet från en samtida teoretiker som ansåg att stabiliteten själv är farlig."
+          "tips": "Kindleberger lånär skelettet från en samtida teoretiker som ansåg att stabiliteten själv är farlig."
         },
         {
           "q": "Vilken roll tog Robert Z. Aliber över efter 2003?",
@@ -274,7 +274,7 @@
         },
         {
           "type": "text",
-          "content": "Euforins viktigaste kännetecken är kanske inte optimismen utan att risken prissätts till noll. Volatiliteten är låg (både 1929 och 2007 hade sina lugnaste perioder nära toppen), kreditspreadarna är som trängast och stop-loss-planer ersätts av köp-på-dip-reflexer. Galbraith påpekade att benägenheten att lura växer parallellt med benägenheten att spekulera — bedrägerierna är euforins ekonomiska biotop (Poyais 1825, Keating på 1980-talet, WorldCom 2002, Madoff efter 2008). För AKM1 är fas tre den plats där disciplinen testas: marknaden belönar berättelsen länge nog att även fundamentalsinvesterare börjar tvivla på sina egna siffror."
+          "content": "Euforins viktigaste kännetecken är kanske inte optimismen utan att risken prissätts till noll. Volatiliteten är låg (både 1929 och 2007 hade sina lugnaste perioder nära toppen), kreditspreadarna är som trängast och stop-loss-planer ersätts av köp-på-dip-reflexer. Galbraith påpekade att benägenheten att lura växer parallellt med benägenheten att spekulera — bedrägerierna är euforins ekonomiska biotop (Poyais 1825, Keating på 1980-talet, WorldCom 2002, Madoff efter 2008). För AKM1 är fas tre den plats där disciplinen testas: marknaden belönär berättelsen länge nog att även fundamentalsinvesterare börjar tvivla på sina egna siffror."
         },
         {
           "type": "visuell",
@@ -507,7 +507,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"South Sea-aktien 1720 — priset och mekaniken\",\"rader\":[[\"Tid\",\"Händelse\",\"Pris (cirka)\"],[\"Januari 1720\",\"Konvertibelt statslån öppnar; euforin börjar\",\"£128\"],[\"April–augusti\",\"Tre stora teckningar; bolaget lånar ut till köpare\",\"£300 → £950\"],[\"Juni 1720\",\"Bubble Act — konkurrenter förbjuds\",\"Toppnivå nära £1 000 i juni–augusti\"],[\"September–december\",\"Kollaps; Sword Blade Bank faller\",\"£150–£200\"],[\"Eftermäle\",\"Walpoles omförhandling; Newton förlorar cirka £20 000\",\"Berättelsen dör, statsskulden lever\"]]}"
+          "content": "{\"rubrik\":\"South Sea-aktien 1720 — priset och mekaniken\",\"rader\":[[\"Tid\",\"Händelse\",\"Pris (cirka)\"],[\"Januari 1720\",\"Konvertibelt statslån öppnar; euforin börjar\",\"£128\"],[\"April–augusti\",\"Tre stora teckningar; bolaget lånär ut till köpare\",\"£300 → £950\"],[\"Juni 1720\",\"Bubble Act — konkurrenter förbjuds\",\"Toppnivå nära £1 000 i juni–augusti\"],[\"September–december\",\"Kollaps; Sword Blade Bank faller\",\"£150–£200\"],[\"Eftermäle\",\"Walpoles omförhandling; Newton förlorar cirka £20 000\",\"Berättelsen dör, statsskulden lever\"]]}"
         },
         {
           "type": "insikt",
@@ -574,7 +574,7 @@
         },
         {
           "type": "text",
-          "content": "Galbraiths iakttagelse — att benägenheten att lura växer parallellt med benägenheten att spekulera — fick sitt 1800-talsbevis i Poyais, och den återkommer i varje sekel: Keatings Lincoln Savings på 1980-talet, WorldCom 2002, Madoffs Ponzi-system som avslöjades 2008. För den som vill ha en tidlös checklista från detta kapitel: (1) Vilket är objektet och vem är emitteraren? (2) Finns det en verifierbar kassaflödeskälla (V12), eller är det en berättelse om någon annan som ska betala nästa gång? (3) Vem trycker nytt papper, och hur snabbt (V19)? (4) Om priset föll hälften — vem tvingas sälja först (V10, V11)? Det är samma fyra frågor i Haarlem 1637 som i London 1825."
+          "content": "Galbraiths iakttagelse — att benägenheten att lura växer parallellt med benägenheten att spekulera — fick sitt 1800-talsbevis i Poyais, och den återkommer i varje sekel: Keatings Lincoln Savings på 1980-talet, WorldCom 2002, Madoffs Ponzi-system som avslöjades 2008. För den som vill ha en tidlös checklista från detta kapitel: (1) Vilket är objektet och vem är emitteraren? (2) Finns det en verifierbar kassaflödeskälla (V12), eller är det en berättelse om någon annan som ska betala nästa gång? (3) Vem trycker nytt papper, och hur snabbt (V19)? (4) Om priset föll hälften — vem tvingas sälja först (V10, V11)? Det är samma fyra frågör i Haarlem 1637 som i London 1825."
         },
         {
           "type": "visuell",
@@ -740,7 +740,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Identifiera två nutida mekanismer med samma struktur som S&L: garanterad finansiering eller implicit statligt skydd, kombinerat med fri risktagning hos den som inte bär förlusten. Ledtrådar: insättningsgarantier, implicita too-big-to-fail-garantier, statligt backade kreditmarknader. Vad skulle V18-katalogen säga om dem?"
+          "content": "Identifiera två nutida mekanismer med samma struktur som S&L: garanterad finansiering eller implicit statligt skydd, kombinerat med fri risktagning hos den som inte bär förlusten. Ledtrådär: insättningsgarantier, implicita too-big-to-fail-garantier, statligt backade kreditmarknader. Vad skulle V18-katalogen säga om dem?"
         }
       ],
       "quiz": [
@@ -748,7 +748,7 @@
           "q": "Vad utlöste Latinamerikas skuldkris 1982?",
           "alternativ": [
             "En jordbävning i Mexiko City",
-            "En ny lag i USA:s kongress",
+            "En ny läg i USA:s kongress",
             "Volckerräntan, fallande råvarupriser och stark dollar mot flytande dollarkrediter — Mexiko meddelade i augusti att skulden inte kunde betjänas",
             "Brady-planen"
           ],
@@ -874,7 +874,7 @@
         },
         {
           "type": "text",
-          "content": "Skillnaden mellan lögn och bubbelfinansiering var V19 kapitalförbränning & emission-risk. De bolag som överlevde hade antingen kassaflöden, kassa eller tillgång till kapital när emissionsfönstret stängdes 2000–2002; de som levde på att sälja nytt papper till euforiska köpare försvann på månader när fönstret stängdes. WorldComs redovisningsbedrägeri (11 miljarder dollar i felaktiga poster, konkurs 2002) visade att Galbraiths lag — bedrägeriet växer med spekulationen — gällde också här. För AKM1 är IT-fallet en balansgång: displacementen var äkta (V13 patent & IP och V15 nätverkseffekter byggde verkliga bolag — Amazons och Googles bästa decennier kom efter kraschen), men investeraren som betalade euforins pris deltog i ett lotteri där vinnarna fanns men priset var fel. Tekniken överlevde; portföljerna gjorde inte alltid det."
+          "content": "Skillnaden mellan lögn och bubbelfinansiering var V19 kapitalförbränning & emission-risk. De bolag som överlevde hade antingen kassaflöden, kassa eller tillgång till kapital när emissionsfönstret stängdes 2000–2002; de som levde på att sälja nytt papper till euforiska köpare försvann på månader när fönstret stängdes. WorldComs redovisningsbedrägeri (11 miljarder dollar i felaktiga poster, konkurs 2002) visade att Galbraiths läg — bedrägeriet växer med spekulationen — gällde också här. För AKM1 är IT-fallet en balansgång: displacementen var äkta (V13 patent & IP och V15 nätverkseffekter byggde verkliga bolag — Amazons och Googles bästa decennier kom efter kraschen), men investeraren som betalade euforins pris deltog i ett lotteri där vinnarna fanns men priset var fel. Tekniken överlevde; portföljerna gjorde inte alltid det."
         },
         {
           "type": "visuell",
@@ -941,7 +941,7 @@
         },
         {
           "type": "text",
-          "content": "Tidslinjen förtjänar att läsas som en kalender. Den 9 augusti 2007 frös BNP Paribas tre fonder (fordringar i amerikanska bostadslån gick inte att värdera) och penningmarknadens uttorkning inleddes. Den 14 september 2007 stod köerna utanför Northern Rock — Storbritanniens första bankrushning sedan 1866. I mars 2008 räddades Bear Stearns genom förmedling. Den 7 september 2008 togs Fannie Mae och Freddie Mac i konservatorskap. Den 15 september fick Lehman Brothers gå i konkurs — den största i USA:s historia — och inom tio dagar hade AIG räddats (initialt 85 miljarder dollar), Reserve Primary Fund brutit dollarn (broke the buck), Washington Mutual fallit som USA:s största bankkollaps och TARP (700 miljarder dollar) skrivits under i lag. Case-Shillers nationella index föll cirka 27 procent från 2006 till botten; i de värsta regionerna betydligt mer. Den som vill veta hur en fas fem ser ut på systemnivå behöver bara läsa september 2008 i kalendern."
+          "content": "Tidslinjen förtjänär att läsas som en kalender. Den 9 augusti 2007 frös BNP Paribas tre fonder (fordringar i amerikanska bostadslån gick inte att värdera) och penningmarknadens uttorkning inleddes. Den 14 september 2007 stod köerna utanför Northern Rock — Storbritanniens första bankrushning sedan 1866. I mars 2008 räddades Bear Stearns genom förmedling. Den 7 september 2008 togs Fannie Mae och Freddie Mac i konservatorskap. Den 15 september fick Lehman Brothers gå i konkurs — den största i USA:s historia — och inom tio dagar hade AIG räddats (initialt 85 miljarder dollar), Reserve Primary Fund brutit dollarn (broke the buck), Washington Mutual fallit som USA:s största bankkollaps och TARP (700 miljarder dollar) skrivits under i lag. Case-Shillers nationella index föll cirka 27 procent från 2006 till botten; i de värsta regionerna betydligt mer. Den som vill veta hur en fas fem ser ut på systemnivå behöver bara läsa september 2008 i kalendern."
         },
         {
           "type": "text",
@@ -1012,7 +1012,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Walter Bagehot skrev Lombard Street (1873) efter krisen 1866, då bankfirman Overend Gurney föll och Bank of England först tvekade — varpå paniken blev värre — innan den slutade diskontera fritt och krisen lade sig. Bagehots doktrin, sedan dess finanshistoriens viktigaste regelverk: i en panik ska centralbanken låna ut fritt (generöst till alla som är solventa), snabbt, mot god säkerhet — och till avstraffande ränta. Poängen är inte räntan utan trovärdigheten: paniken slutar när marknaden tror att någon obegränsat kan och vill köpa. Kindleberger strukturerar sitt policykapitel som frågor: Vem är lender of last resort? När ska den ingripa? Hur mycket? Till vem? Och — hans egen tvekan — till vilket pris i form av moral hazard, eftersom varje räddning lär marknaden att nästa gång också bli räddad?"
+          "content": "Walter Bagehot skrev Lombard Street (1873) efter krisen 1866, då bankfirman Overend Gurney föll och Bank of England först tvekade — varpå paniken blev värre — innan den slutade diskontera fritt och krisen lade sig. Bagehots doktrin, sedan dess finanshistoriens viktigaste regelverk: i en panik ska centralbanken låna ut fritt (generöst till alla som är solventa), snabbt, mot god säkerhet — och till avstraffande ränta. Poängen är inte räntan utan trovärdigheten: paniken slutar när marknaden tror att någon obegränsat kan och vill köpa. Kindleberger strukturerar sitt policykapitel som frågör: Vem är lender of last resort? När ska den ingripa? Hur mycket? Till vem? Och — hans egen tvekan — till vilket pris i form av moral hazard, eftersom varje räddning lär marknaden att nästa gång också bli räddad?"
         },
         {
           "type": "text",
@@ -1083,7 +1083,7 @@
       "num": 15,
       "minutes": 10,
       "title": "Kontroversen — Minsky mot jämvikten, apofenien och 400 år av mönster",
-      "intro": "Bokens ramverk utmanar nationalekonomins mainstream: om marknader systematiskt skapar sina egna kriser duger inte jämviktsmodellerna. Det här kapitlet redovisar motståndet på allvar — rational expectations, klientens invändningar, Reinhart-Rogoff-kritiken — och riskerar det viktigaste av allt: att mönsterigenkänning i historien kan vara apofeni. Skillnaden mellan historisk lag och historisk tendens avgör hela kursens värde.",
+      "intro": "Bokens ramverk utmanar nationalekonomins mainstream: om marknader systematiskt skapar sina egna kriser duger inte jämviktsmodellerna. Det här kapitlet redovisar motståndet på allvar — rational expectations, klientens invändningar, Reinhart-Rogoff-kritiken — och riskerar det viktigaste av allt: att mönsterigenkänning i historien kan vara apofeni. Skillnaden mellan historisk läg och historisk tendens avgör hela kursens värde.",
       "blocks": [
         {
           "type": "text",
@@ -1099,7 +1099,7 @@
         },
         {
           "type": "text",
-          "content": "Nu det ärligaste i hela kursen: mönsterigenkänning i historien kan vara apofeni — tendensen att se mönster i brus. Med dussintals kriser och en fri berättarkonst går det att hitta strukturer i nästan vad som helst; Kindlebergers egen metod är narrativ och delvis selektiv, och historien minns kriser bättre än de tysta decennierna då disciplinen segrade. Skillnaden mellan historisk lag och historisk tendens är därför kursens sista examination: en lag förutsäger — samma indata, samma utdata, samma tidsplan; en tendens återkommer — sannolikt, mekaniskt förklarbar via kredit (V10) och incitament, men utan tidtabell och utan garanterad fullständighet. Kindleberger presenterade själv faserna som typiska, inte som en lagbok: faserna överlappar, ordningen varierar, och många uppgångar dör utan panik (1987 var panik utan föregående mani). Svaret på apofeni-anklagelsen är 400 år och många regimer: tulpaner till Island spänner över guldstandard och fiat, reglering och avreglering, teknologier och valutor — och konstanten är inte ett mönster i prisserier utan en mekanism: kreditexpansion som möter kollektiv övertro och sedan reverseras. Det är en testbar tendens — varje ny kris har hittills fått den att passa — och den räcker för riskhantering. Man behöver inte veta när. Man behöver veta att hävstångscyklar återkommer, och att marginal of safety — principen utan siffra — är det enda verkliga skyddet."
+          "content": "Nu det ärligaste i hela kursen: mönsterigenkänning i historien kan vara apofeni — tendensen att se mönster i brus. Med dussintals kriser och en fri berättarkonst går det att hitta strukturer i nästan vad som helst; Kindlebergers egen metod är narrativ och delvis selektiv, och historien minns kriser bättre än de tysta decennierna då disciplinen segrade. Skillnaden mellan historisk läg och historisk tendens är därför kursens sista examination: en läg förutsäger — samma indata, samma utdata, samma tidsplan; en tendens återkommer — sannolikt, mekaniskt förklarbar via kredit (V10) och incitament, men utan tidtabell och utan garanterad fullständighet. Kindleberger presenterade själv faserna som typiska, inte som en lagbok: faserna överlappar, ordningen varierar, och många uppgångar dör utan panik (1987 var panik utan föregående mani). Svaret på apofeni-anklagelsen är 400 år och många regimer: tulpaner till Island spänner över guldstandard och fiat, reglering och avreglering, teknologier och valutor — och konstanten är inte ett mönster i prisserier utan en mekanism: kreditexpansion som möter kollektiv övertro och sedan reverseras. Det är en testbar tendens — varje ny kris har hittills fått den att passa — och den räcker för riskhantering. Man behöver inte veta när. Man behöver veta att hävstångscyklar återkommer, och att marginal of safety — principen utan siffra — är det enda verkliga skyddet."
         },
         {
           "type": "visuell",
@@ -1111,7 +1111,7 @@
         },
         {
           "type": "insikt",
-          "content": "Skillnaden mellan lag och tendens är skillnaden mellan att spå och att förbereda sig. Kindlebergers lag finns inte — hans tendens räcker: den som accepterar att hävstångscyklar återkommer utan tidtabell slipar inte spåkulan utan bygger balansräkningar, checklistor och tålamod. Det är mindre spännande — och det är hela skillnaden mellan underhållning och överlevnad."
+          "content": "Skillnaden mellan läg och tendens är skillnaden mellan att spå och att förbereda sig. Kindlebergers läg finns inte — hans tendens räcker: den som accepterar att hävstångscyklar återkommer utan tidtabell slipar inte spåkulan utan bygger balansräkningar, checklistor och tålamod. Det är mindre spännande — och det är hela skillnaden mellan underhållning och överlevnad."
         },
         {
           "type": "utmaning",
@@ -1142,10 +1142,10 @@
           "tips": "En doktorands replikationsuppgift blev ekonomihistoriens mest kända kalkylbladsfel."
         },
         {
-          "q": "Vad är skillnaden mellan historisk lag och historisk tendens?",
+          "q": "Vad är skillnaden mellan historisk läg och historisk tendens?",
           "alternativ": [
             "Ingen — det är samma sak",
-            "En lag förutsäger med determinism; en tendens återkommer sannolikt, med mekanism men utan tidtabell",
+            "En läg förutsäger med determinism; en tendens återkommer sannolikt, med mekanism men utan tidtabell",
             "En tendens är alltid falsk",
             "Lagar gäller bara fysiken, inte ekonomin"
           ],

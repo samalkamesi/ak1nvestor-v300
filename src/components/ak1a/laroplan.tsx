@@ -154,7 +154,9 @@ export function Laroplan() {
   const procent = Math.round((klaraKurser / totalKurser) * 100);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    // pb-28 sm:pb-24 — luft undertill så sista kurs-korten kan scrollas förbi
+    // de flytande knapparna (Short-Seller/AI-Mentor höger, Notiser vänster)
+    <div className="mx-auto max-w-4xl pb-28 sm:pb-24">
       {/* Sidhuvud — marin axel-rad som institutionell signatur ovanför rubriken */}
       <div className="text-center">
         <div className="mx-auto h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />

@@ -258,14 +258,15 @@ export function NotisCenter() {
           </div>
         )}
 
-        {/* Klock-knappen — marin med guld, chatt-bubblans DNA (vänster sida) */}
+        {/* Klock-knappen — marin med guld, chatt-bubblans DNA (vänster sida).
+            Mobil: h-10 w-10 (mindre fotavtryck — täcker ej innehåll); desktop: h-12 w-12. */}
         <button
           onClick={vexla}
           aria-label={olasta > 0 ? `Notiser — ${olasta} olästa` : "Notiser"}
           aria-expanded={oppen}
-          className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-gold shadow-xl transition-transform hover:scale-105"
+          className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-gold shadow-xl transition-transform hover:scale-105 sm:h-12 sm:w-12"
         >
-          <Bell className="h-5 w-5" />
+          <Bell className="h-4 w-4 sm:h-5 sm:w-5" />
           {olasta > 0 && (
             <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full border border-card bg-red-600 px-1 text-[10px] font-bold leading-none text-white">
               {olasta > 9 ? "9+" : olasta}

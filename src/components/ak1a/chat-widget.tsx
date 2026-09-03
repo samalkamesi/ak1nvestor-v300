@@ -940,10 +940,11 @@ export function ChatWidget() {
         </div>
       )}
 
-      {/* Trigger-knapp — nedre hörnet med safe-area (Short-Seller staplas ovanpå med gap-3), marin-guldidentitet */}
+      {/* Trigger-knapp — nedre hörnet med safe-area (Short-Seller staplas ovanpå med gap-3), marin-guldidentitet.
+          Mobil: h-10 w-10 (mindre fotavtryck — täcker ej kortens →-pilar); desktop: h-14 w-14. */}
       <button
         onClick={() => setOppnad(!oppnad)}
-        className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-2xl text-gold shadow-xl transition-transform hover:scale-105"
+        className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl"
         aria-label="AI-Mentor"
         title="AI-Mentor — din personliga guide"
       >

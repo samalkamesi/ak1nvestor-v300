@@ -133,8 +133,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           </div>
         </div>
       )}
-      {/* Progress-topprad — institutionellt marin bandhuvud med guldtext (bank-harmoni) */}
-      <div className="marin-panel sticky top-0 z-30 border-b border-gold/30 shadow-md">
+      {/* Progress-topprad — institutionellt marin bandhuvud med guldtext (bank-harmoni).
+          top-[57px] = sidhuvudets 56px + 1px ram — annars målar bandet över navigationen. */}
+      <div className="marin-panel sticky top-[57px] z-30 border-b border-gold/30 shadow-md">
         <div className="mx-auto flex h-[52px] max-w-3xl items-center gap-4 px-4">
           <svg viewBox="0 0 44 44" className="h-10 w-10 shrink-0">
             <circle cx="22" cy="22" r="18" fill="none" stroke="#E8C766" strokeWidth="3" opacity="0.15" />

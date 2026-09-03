@@ -20,6 +20,7 @@ import { AKM1_VARIABLES, NAV_SECTIONS, ORGANS } from "@/lib/ak1a/data";
 import { HonestyTag, SignalPill } from "./primitives";
 import { Search, Share2, Link2, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { Button } from "@/components/ui/button";
 
 /** Global ⌘K search modal. Searches sections, AKM1 variables, organs, cases. */
@@ -114,7 +115,10 @@ export function SummaryDrawer() {
     <Sheet open={summaryOpen} onOpenChange={setSummaryOpen}>
       <SheetContent side="right" className="w-full sm:max-w-md overflow-y-auto">
         <SheetHeader>
-          <SheetTitle className="font-serif">Sammanfattning</SheetTitle>
+          <div className="flex justify-center">
+            <VarumarkesLogo storlek="sm" medText={false} />
+          </div>
+          <SheetTitle className="mt-2 font-serif">Sammanfattning</SheetTitle>
           <SheetDescription>
             AK1A Research Lab i korthet — håll know-how, redovisa generöst.
           </SheetDescription>

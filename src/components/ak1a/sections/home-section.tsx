@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Eyebrow, HonestyTag } from "../primitives";
 import { NyhetsChips } from "../kunskaps-flode";
+import { VarumarkesLogo } from "../varumarkes-logo";
 
 /* ────────────────────────────────────────────────────────────────────────────
    AK1A Research Lab — startsidans hem-sektion (omskriven 2026-09-01).
@@ -222,12 +223,15 @@ export function HomeSection() {
           <div className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40 p-2 sm:p-3">
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
             <div className="relative rounded-xl border border-[#E8C766]/20 p-8 sm:p-12">
-              {/* Överrad — bankfirmans signeringsrad */}
-              <p className="flex flex-wrap items-baseline gap-x-4 font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
-                <span>A · K · 1 · A</span>
-                <span>R E S E A R C H</span>
-                <span>L A B</span>
-              </p>
+              {/* Överrad — emblem + bankfirmans signeringsrad */}
+              <div className="flex items-center gap-3">
+                <VarumarkesLogo storlek="sm" medText={false} />
+                <p className="flex flex-wrap items-baseline gap-x-4 font-serif text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+                  <span>A · K · 1 · A</span>
+                  <span>R E S E A R C H</span>
+                  <span>L A B</span>
+                </p>
+              </div>
 
               <h1 className="mt-6 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-[#EDE6D6] text-balance sm:text-5xl lg:text-6xl">
                 Bli analytikern som ser vad andra missar.

@@ -4,6 +4,7 @@ import { Huvudmeny } from "@/components/ak1a/huvudmeny";
 import { Mobilmeny } from "@/components/ak1a/mobilmeny";
 import { NastaSteg } from "@/components/ak1a/nasta-steg";
 import { Sidfooter } from "@/components/ak1a/sidfooter";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
@@ -23,12 +24,9 @@ export function SeoPageShell({
     <div className="paper-texture min-h-screen">
       <header className="sticky top-0 z-30 w-full border-b border-gold/20 bg-background/95 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
-          <Link
-            href="/"
-            className="font-serif text-base font-bold tracking-tight text-foreground hover:opacity-80"
-          >
-            AK1<span className="text-gold">A</span> Research Lab
-          </Link>
+          {/* Skulptur-emblemet + ordmärke — kundens varumärkesstandard på
+              samtliga SEO-sidor (ersatte den gamla textlänken 2026-09-03). */}
+          <VarumarkesLogo href="/" storlek="sm" prioritet klass="ml-1" />
           <div className="hidden lg:flex">
             <Huvudmeny />
           </div>

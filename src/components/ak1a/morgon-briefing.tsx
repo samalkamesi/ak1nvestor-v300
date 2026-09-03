@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import {
   halsningFranTimme,
   morgonMening,
@@ -85,7 +86,10 @@ export function MorgonBriefing() {
     return (
       <section className="marin-panel relative overflow-hidden rounded-2xl border border-gold/40" aria-hidden="true">
         <div className="p-5 sm:p-7">
-          <p className="text-center text-[10px] uppercase tracking-[0.35em] text-[#E8C766]/80">
+          <div className="flex justify-center">
+            <VarumarkesLogo storlek="sm" medText={false} />
+          </div>
+          <p className="mt-2 text-center text-[10px] uppercase tracking-[0.35em] text-[#E8C766]/80">
             AK1A Research Lab
           </p>
           <div className="mx-auto mt-2 h-7 w-64 animate-pulse rounded bg-gold/10" />
@@ -124,7 +128,10 @@ export function MorgonBriefing() {
       <div className="relative p-5 sm:p-7">
         {/* ── Masthead — morgonposten från en privatbank ── */}
         <header className="text-center">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-[#E8C766]/80">
+          <div className="flex justify-center">
+            <VarumarkesLogo storlek="sm" medText={false} />
+          </div>
+          <p className="mt-2 text-[10px] uppercase tracking-[0.35em] text-[#E8C766]/80">
             AK1A Research Lab
           </p>
           <h2

@@ -9,6 +9,7 @@ import { SearchModal } from "@/components/ak1a/overlays";
 import { HomeSection } from "@/components/ak1a/sections/home-section";
 import { PrecSection } from "@/components/ak1a/sections/prec-section";
 import { AktierSection } from "@/components/ak1a/sections/aktier-section";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { PortalSection } from "@/components/ak1a/sections/portal-section";
 
 // ── M3 SPA-avveckling (2026-09-02) ─────────────────────────────────────────
@@ -71,7 +72,10 @@ function SektionVidarebefodran({ sektion }: { sektion: SectionId }) {
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-4 py-16">
       <div className="marin-panel w-full rounded-2xl border border-gold/30 p-8 text-center shadow-xl sm:p-12">
-        <p className="font-serif text-xs font-bold uppercase tracking-widest text-[#E8C766]">
+        <div className="flex justify-center">
+          <VarumarkesLogo storlek="sm" medText={false} />
+        </div>
+        <p className="mt-2 font-serif text-xs font-bold uppercase tracking-widest text-[#E8C766]">
           AK1A Research Lab
         </p>
         <h1 className="mt-3 font-serif text-2xl font-bold sm:text-3xl">

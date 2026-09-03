@@ -4306,3 +4306,22 @@ flödesmarginal, ingen scroll-bugg), stock-analysis-view top-[57px]/
 (filterband, ok), superanalys scrollTo(0) (sidan börjar högt — ok),
 footer "till toppen" (ok). Endast KursSteg var trasigt.
 Kvalitetsvakten 8/8 GRÖN. Mimosa: endast kända 2 medel (organsystemet).
+
+── VÅG 45: SKULPTUR-EMBLEMET PÅ VARJE MÄRKESYTA (2026-09-03) ──
+Kunddirektiv: "logotypen bör finnas ISTÄLLET för 'AK1A Research Lab'-text
+— i varje sida, utan ord eller med, med bra harmoni". STORSTÖT: SeoPageShell-
+headern (ALLA SEO-sidor: kurser/medlemskap/prenumeration/villkor/transparens
+m.fl.) använde en REN TEXTLÄNK — bytt till VarumarkesLogo href="/" (emblem+
+ordmärke). Dessutom monterat på 8 ytor till: startsidans hero (signerings-
+raden A·K·1·A R E S E A R C H L A B + emblem), Min Sida välkomsthero,
+morgonbriefingens masthead ×2 (skelett + riktig), SPA-redirect-panelen,
+SocialProof-eyebrow (inline scale-75), aktieanalysens metadatarad,
+kommandopalettens bottentrad (scale-60), om-oss-sheet. Certifikatet hade
+redan emblem+text. Lämnat medvetet: DelaKort-SVG (delningsbild — textword-
+mark där, canvas-risk), löptext-nämnanden i meningar (källkort/rapporter —
+inte märkesytor), mejl-mallar (leverantör saknas). Emblem = skulptur-mark.jpg
+i avgränsad gräddvit ruta (funkar cream+marin, våg 37-standard).
+Verifiering: SSR-HTML svep — /prenumeration 31, /kurser 47, /medlemskap 47,
+/transparens 31, /villkor 31 förekomster av skulptur-mark (tidigare 0 på
+prenumeration!); DOM-inspektion masthead+välkomsthero img=true. tsc 43
+(0 nya). Kvalitetsvakten GRÖN.

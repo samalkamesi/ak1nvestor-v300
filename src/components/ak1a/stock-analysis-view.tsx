@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import {
   ArrowLeft,
   ArrowRight,
@@ -585,6 +586,7 @@ function CoverSection({
         <Eyebrow>{c.eyebrow}</Eyebrow>
 
         <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          <VarumarkesLogo storlek="sm" medText={false} klass="scale-75 origin-left" />
           <span className="text-gold">AK1A Research Lab</span>
           <span className="text-border">·</span>
           <span> {data.analysisDate}</span>

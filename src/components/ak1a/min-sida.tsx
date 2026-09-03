@@ -28,6 +28,7 @@ import { AssistentPanel } from "@/components/ak1a/assistent-panel";
 import { MinPortfoljKort } from "@/components/ak1a/min-portfolj-kort";
 import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
 import { DelaKort } from "@/components/ak1a/dela-kort";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { KunskapsFlode } from "@/components/ak1a/kunskaps-flode";
 
 /**
@@ -229,7 +230,10 @@ export function MinSida() {
         </div>
 
         <div className="relative text-center">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold">AK1A RESEARCH LAB</p>
+          <div className="flex justify-center">
+            <VarumarkesLogo storlek="sm" medText={false} />
+          </div>
+          <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-gold">AK1A RESEARCH LAB</p>
           <div className="mx-auto mt-3 h-0.5 w-24 bg-gold/40" />
           <h1 className="mt-6 font-serif text-4xl font-bold tracking-tight sm:text-5xl">
             Din utbildning — på ett ställe

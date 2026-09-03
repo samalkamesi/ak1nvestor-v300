@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { uppmuntran } from "@/lib/pedagogik";
 
 /**
@@ -130,9 +131,12 @@ export function SocialProof({ className = "" }: { className?: string }) {
       </div>
 
       <div className="relative">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-gold">
-          AK1A Research Lab · i siffror och elevröster
-        </p>
+        <div className="flex items-center gap-2">
+          <VarumarkesLogo storlek="sm" medText={false} klass="scale-75 origin-left" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-gold">
+            AK1A Research Lab · i siffror och elevröster
+          </p>
+        </div>
         <h2
           id="social-proof-rubrik"
           className="mt-3 max-w-2xl font-serif text-3xl font-bold leading-tight sm:text-4xl"

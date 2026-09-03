@@ -1,0 +1,91 @@
+{
+  "ticker": "XOM",
+  "namn": "ExxonMobil Holdings Corporation",
+  "bransch": "energi",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/XOM",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 164.15,
+  "marknadsKapitalMdr": 674.97,
+  "tillvaxt": {
+    "omsattningCAGR5ar": -0.0705,
+    "resultatCAGR5ar": -0.1972,
+    "omsattningTillvaxtTTM": 0.441,
+    "prognosTillvaxt": -0.0839
+  },
+  "lonksamhet": {
+    "roe": 0.1258,
+    "roic": 0.1898,
+    "bruttoMarginal": 0.2977,
+    "ebitMarginal": 0.1586,
+    "nettoMarginal": 0.0907,
+    "fcfMarginal": 0.0573
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.1592,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 251
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 21.153,
+    "pb": 2.602,
+    "evEbit": 12.46,
+    "peg": 1.41,
+    "fcfYield": 0.0306,
+    "egenKapitalMultipl": 2.602
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      413680000000.0,
+      344582000000.0,
+      349585000000.0,
+      332238000000.0
+    ],
+    "resultat": [
+      55740000000.0,
+      36010000000.0,
+      33680000000.0,
+      28844000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

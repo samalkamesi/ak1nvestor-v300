@@ -1,0 +1,2922 @@
+{
+ "skapad": "2026-09-03",
+ "projekt": "AK1A portföljforskning — steg 3: korstabell-grund (AKM1 + FVag, utan teknisk våg)",
+ "kalla": {
+  "univers": "data/portfolj-system/bolagsunivers.json (pass 1)",
+  "akm1": "data/cache/akm1-{TICKER}.json (verktyg/python/bedom_akm1.py)",
+  "fvag": "data/cache/fvag-{TICKER}.json (verktyg/kor-fvag.mjs → fundamental-vagmotor.ts)"
+ },
+ "formel": "totalt = Σ(vikt_norm(Vxx) × poäng(Vxx)) × 20 med vikt_norm = vikt/97 från akm2-2026 (AKM2-BESLUT §2, V01–V20-tabellen summerar 97 % och normaliseras till Σ1); osatt variabel ⇒ 0 poäng; HÅRD PORT: känd kassatäckning < 12 mån ⇒ totalt max 45 (BESLUT §5)",
+ "datatackningRegler": {
+  "datatackning": "Σ vikt över beräkningsbara (icke-osatta) variabler / 97 — andel av modellens vikt med dataunderlag (D1 2026-09-03)",
+  "akm1MaxMojligt": "Σ vikt över beräkningsbara × 5 × (20/97) = datatackning × 100 — teoretiskt poängtak när alla beräkningsbara variabler håller 5 poäng (osatt ⇒ alltid 0 poäng)",
+  "kalla": "data/rapporter/d1-datatackning-2026-09-03.md"
+ },
+ "statusRegler": {
+  "gron": "AKM1 ≥ 70 % av akm1MaxMojligt OCH datatackning ≥ 60 % OCH inget port-brott (D1-skalning — låg täckning kan aldrig bli grön)",
+  "gul": "AKM1 50–70 % av akm1MaxMojligt OCH inget port-brott",
+  "rod": "AKM1 < 50 % av akm1MaxMojligt ELLER port-brott (V19 < 12 mån)"
+ },
+ "rader": [
+  {
+   "ticker": "AAPL",
+   "namn": "Apple Inc.",
+   "bransch": "teknik",
+   "akm1Totalt": 41.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 4.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ASM.AS",
+   "namn": "ASM International NV",
+   "bransch": "teknik",
+   "akm1Totalt": 44.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ERIC-B.ST",
+   "namn": "Telefonaktiebolaget LM Ericsson (publ)",
+   "bransch": "teknik",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "GOOGL",
+   "namn": "Alphabet Inc.",
+   "bransch": "teknik",
+   "akm1Totalt": 47.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 0.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "KAMBI.ST",
+   "namn": "Kambi Group plc",
+   "bransch": "teknik",
+   "akm1Totalt": 37.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "LOGN.SW",
+   "namn": "Logitech International S.A.",
+   "bransch": "teknik",
+   "akm1Totalt": 50.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "MSFT",
+   "namn": "Microsoft Corporation",
+   "bransch": "teknik",
+   "akm1Totalt": 46.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NOKIA.HE",
+   "namn": "Nokia Oyj",
+   "bransch": "teknik",
+   "akm1Totalt": 36.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.33,
+    "lonsamhet": 1.67,
+    "stabilitet": 3.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SAP.DE",
+   "namn": "SAP SE",
+   "bransch": "teknik",
+   "akm1Totalt": 48.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 4.0,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SINCH.ST",
+   "namn": "Sinch AB (publ)",
+   "bransch": "teknik",
+   "akm1Totalt": 31.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.0,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ABB.ST",
+   "namn": "ABB Ltd",
+   "bransch": "industri",
+   "akm1Totalt": 40.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.0,
+    "lonsamhet": 3.33,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ALFA.ST",
+   "namn": "Alfa Laval AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 41.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 1.67,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ASSA-B.ST",
+   "namn": "ASSA ABLOY AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ATCO-A.ST",
+   "namn": "Atlas Copco AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 39.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ETN",
+   "namn": "Eaton Corporation plc",
+   "bransch": "industri",
+   "akm1Totalt": 38.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "GE",
+   "namn": "GE Aerospace",
+   "bransch": "industri",
+   "akm1Totalt": 37.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 0.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "HEXA-B.ST",
+   "namn": "Hexagon AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 46.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 4.0,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "INDU-C.ST",
+   "namn": "AB Industrivärden (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 58.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 3.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SAND.ST",
+   "namn": "Sandvik AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SKF-B.ST",
+   "namn": "AB SKF (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 35.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.0,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "AZN.ST",
+   "namn": "AstraZeneca PLC",
+   "bransch": "halso",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.0,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "BSX",
+   "namn": "Boston Scientific Corporation",
+   "bransch": "halso",
+   "akm1Totalt": 49.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 2.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "CEVI.ST",
+   "namn": "CellaVision AB (publ)",
+   "bransch": "halso",
+   "akm1Totalt": 43.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "COLO-B.CO",
+   "namn": "Coloplast A/S",
+   "bransch": "halso",
+   "akm1Totalt": 46.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 4.0,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "EKTA-B.ST",
+   "namn": "Elekta AB (publ)",
+   "bransch": "halso",
+   "akm1Totalt": 34.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "FRE.DE",
+   "namn": "Fresenius SE & Co. KGaA",
+   "bransch": "halso",
+   "akm1Totalt": 33.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 3.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "GETI-B.ST",
+   "namn": "Getinge AB (publ)",
+   "bransch": "halso",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.0,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "JNJ",
+   "namn": "Johnson & Johnson",
+   "bransch": "halso",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.0,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "LLY",
+   "namn": "Eli Lilly and Company",
+   "bransch": "halso",
+   "akm1Totalt": 45.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NOVO-B.CO",
+   "namn": "Novo Nordisk A/S",
+   "bransch": "halso",
+   "akm1Totalt": 52.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 2.0,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "CARL-B.CO",
+   "namn": "Carlsberg A/S",
+   "bransch": "konsument",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ELUX-B.ST",
+   "namn": "AB Electrolux (publ)",
+   "bransch": "konsument",
+   "akm1Totalt": 17.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.33,
+    "lonsamhet": 0.0,
+    "stabilitet": 2.0,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 2.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5567,
+   "akm1MaxMojligt": 55.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ESSITY-B.ST",
+   "namn": "Essity AB (publ)",
+   "bransch": "konsument",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "HM-B.ST",
+   "namn": "H & M Hennes & Mauritz AB (publ)",
+   "bransch": "konsument",
+   "akm1Totalt": 46.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ITX.MC",
+   "namn": "Industria de Diseño Textil, S.A.",
+   "bransch": "konsument",
+   "akm1Totalt": 31.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.0,
+    "lonsamhet": 4.0,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "MC.PA",
+   "namn": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+   "bransch": "konsument",
+   "akm1Totalt": 49.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.0,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "MCD",
+   "namn": "McDonald's Corporation",
+   "bransch": "konsument",
+   "akm1Totalt": 39.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.567,
+   "akm1MaxMojligt": 56.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NKE",
+   "namn": "NIKE, Inc.",
+   "bransch": "konsument",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "PG",
+   "namn": "The Procter & Gamble Company",
+   "bransch": "konsument",
+   "akm1Totalt": 47.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 4.0,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "VOLCAR-B.ST",
+   "namn": "Volvo Car AB (publ.)",
+   "bransch": "konsument",
+   "akm1Totalt": 24.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 0.67,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "BALD-B.ST",
+   "namn": "Fastighets AB Balder (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.3225,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "CAST.ST",
+   "namn": "Castellum AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 37.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.0,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": 0.0753,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "CATE.ST",
+   "namn": "Catena AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 2.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.0545,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "DIOS.ST",
+   "namn": "Diös Fastigheter AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 37.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.2567,
+   "portV19": false,
+   "datatackning": 0.5567,
+   "akm1MaxMojligt": 55.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "FABG.ST",
+   "namn": "Fabege AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.3859,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "HUFV-A.ST",
+   "namn": "Hufvudstaden AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.1695,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NP3.ST",
+   "namn": "NP3 Fastigheter AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 48.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": -0.4217,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "PLD",
+   "namn": "Prologis, Inc.",
+   "bransch": "fastighet",
+   "akm1Totalt": 39.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 1.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": -1.3749,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "WALL-B.ST",
+   "namn": "Wallenstam AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.2019,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "WIHL.ST",
+   "namn": "Wihlborgs Fastigheter AB (publ)",
+   "bransch": "fastighet",
+   "akm1Totalt": 45.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": -0.0126,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "BRK-B",
+   "namn": "Berkshire Hathaway Inc.",
+   "bransch": "finans",
+   "akm1Totalt": 37.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.0,
+    "stabilitet": 1.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5567,
+   "akm1MaxMojligt": 55.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "GS",
+   "namn": "The Goldman Sachs Group, Inc.",
+   "bransch": "finans",
+   "akm1Totalt": 38.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 0.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5361,
+   "akm1MaxMojligt": 53.6,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "INVE-B.ST",
+   "namn": "Investor AB (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 54.0,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 3.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 0.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6289,
+   "akm1MaxMojligt": 62.9,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "JPM",
+   "namn": "JPMorgan Chase & Co.",
+   "bransch": "finans",
+   "akm1Totalt": 28.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 2.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 0.0,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "osatt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5361,
+   "akm1MaxMojligt": 53.6,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "LATO-B.ST",
+   "namn": "Investment AB Latour (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 37.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.0,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NDA-SE.ST",
+   "namn": "Nordea Bank Abp",
+   "bransch": "finans",
+   "akm1Totalt": 19.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.33,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ORES.ST",
+   "namn": "Investment AB Öresund (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 41.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 0.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6289,
+   "akm1MaxMojligt": 62.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SEB-A.ST",
+   "namn": "Skandinaviska Enskilda Banken AB (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 23.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.0,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SHB-A.ST",
+   "namn": "Svenska Handelsbanken AB (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 21.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.0,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.0,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SWED-A.ST",
+   "namn": "Swedbank AB (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 19.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 0.67,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "BILL.ST",
+   "namn": "Billerud AB (publ)",
+   "bransch": "material",
+   "akm1Totalt": 28.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.67,
+    "lonsamhet": 1.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5567,
+   "akm1MaxMojligt": 55.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "BOL.ST",
+   "namn": "Boliden AB (publ)",
+   "bransch": "material",
+   "akm1Totalt": 42.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.0,
+    "stabilitet": 3.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "HOLM-B.ST",
+   "namn": "Holmen AB (publ)",
+   "bransch": "material",
+   "akm1Totalt": 38.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.0,
+    "lonsamhet": 1.67,
+    "stabilitet": 3.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NEM",
+   "namn": "Newmont Corporation",
+   "bransch": "material",
+   "akm1Totalt": 55.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 2.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NHY.OL",
+   "namn": "Norsk Hydro ASA",
+   "bransch": "material",
+   "akm1Totalt": 53.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.67,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SCA-B.ST",
+   "namn": "Svenska Cellulosa Aktiebolaget SCA (publ)",
+   "bransch": "material",
+   "akm1Totalt": 37.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SSAB-B.ST",
+   "namn": "SSAB AB (publ)",
+   "bransch": "material",
+   "akm1Totalt": 28.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4.0,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.33,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "STERV.HE",
+   "namn": "Stora Enso Oyj",
+   "bransch": "material",
+   "akm1Totalt": 32.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 0.67,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "UPM.HE",
+   "namn": "UPM-Kymmene Oyj",
+   "bransch": "material",
+   "akm1Totalt": 32.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.0,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "YAR.OL",
+   "namn": "Yara International ASA",
+   "bransch": "material",
+   "akm1Totalt": 36.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 3.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "AKRBP.OL",
+   "namn": "Aker BP ASA",
+   "bransch": "energi",
+   "akm1Totalt": 33.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "CVX",
+   "namn": "Chevron Corporation",
+   "bransch": "energi",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "ENEL.MI",
+   "namn": "Enel SpA",
+   "bransch": "energi",
+   "akm1Totalt": 39.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 3.0,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "EQNR.OL",
+   "namn": "Equinor ASA",
+   "bransch": "energi",
+   "akm1Totalt": 41.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 3.0,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "FORTUM.HE",
+   "namn": "Fortum Oyj",
+   "bransch": "energi",
+   "akm1Totalt": 35.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 2.33,
+    "lonsamhet": 2.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "IBE.MC",
+   "namn": "Iberdrola, S.A.",
+   "bransch": "energi",
+   "akm1Totalt": 42.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.33,
+    "lonsamhet": 3.0,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "RWE.DE",
+   "namn": "RWE Aktiengesellschaft",
+   "bransch": "energi",
+   "akm1Totalt": 23.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 2.67,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SHEL",
+   "namn": "Shell plc",
+   "bransch": "energi",
+   "akm1Totalt": 44.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.0,
+    "vardering": 4.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "VAR.OL",
+   "namn": "Vår Energi ASA",
+   "bransch": "energi",
+   "akm1Totalt": 40.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "XOM",
+   "namn": "ExxonMobil Holdings Corporation",
+   "bransch": "energi",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "DIS",
+   "namn": "The Walt Disney Company",
+   "bransch": "kommunikation",
+   "akm1Totalt": 46.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "META",
+   "namn": "Meta Platforms, Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 49.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 1.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 3.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "MTG-B.ST",
+   "namn": "Modern Times Group MTG AB",
+   "bransch": "kommunikation",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 3.33,
+    "lonsamhet": 2.0,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NFLX",
+   "namn": "Netflix, Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 0.67,
+    "lonsamhet": 4.0,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "T",
+   "namn": "AT&T Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 52.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "TEL2-A.ST",
+   "namn": "Tele2 AB (publ)",
+   "bransch": "kommunikation",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "TELIA.ST",
+   "namn": "Telia Company AB (publ)",
+   "bransch": "kommunikation",
+   "akm1Totalt": 41.0,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "VPLAY-B.ST",
+   "namn": "Viaplay Group AB (publ)",
+   "bransch": "kommunikation",
+   "akm1Totalt": 18.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.0,
+    "lonsamhet": 0.33,
+    "stabilitet": 1.67,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": true,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "VZ",
+   "namn": "Verizon Communications Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 49.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "WBD",
+   "namn": "Warner Bros. Discovery, Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 31.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67.0,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "AMD",
+   "namn": "Advanced Micro Devices, Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 37.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 0.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "KINV-B.ST",
+   "namn": "Kinnevik AB",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 29.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 1.67,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 2.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5155,
+   "akm1MaxMojligt": 51.5,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "NVDA",
+   "namn": "NVIDIA Corporation",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 44.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.0,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "PCELL.ST",
+   "namn": "PowerCell Sweden AB (publ)",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 21.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1.0,
+    "vardering": 0.67,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.0,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 0.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5567,
+   "akm1MaxMojligt": 55.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "PLTR",
+   "namn": "Palantir Technologies Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 47.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "PSNY",
+   "namn": "Polestar Automotive Holding UK PLC",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 6.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.0,
+    "lonsamhet": 0.0,
+    "stabilitet": 0.33,
+    "moat": 0.33,
+    "katalysator": 0.0,
+    "risk": 0.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4124,
+   "akm1MaxMojligt": 41.2,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SE",
+   "namn": "Sea Limited",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 38.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "SHOP",
+   "namn": "Shopify Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 40.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 0.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3.33,
+    "moat": 1.0,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "TRUE-B.ST",
+   "namn": "Truecaller AB (publ)",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 47.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03"
+  },
+  {
+   "ticker": "TSLA",
+   "namn": "Tesla, Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 26.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.0,
+    "moat": 0.67,
+    "katalysator": 0.0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03"
+  }
+ ]
+}

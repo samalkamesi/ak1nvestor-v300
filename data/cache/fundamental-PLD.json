@@ -1,0 +1,76 @@
+{
+  "ticker": "PLD",
+  "namn": "Prologis, Inc.",
+  "bransch": "fastighet",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/PLD",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 136.59,
+  "marknadsKapitalMdr": 132.778,
+  "tillvaxt": {
+    "omsattningCAGR5ar": null,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 0.123,
+    "prognosTillvaxt": 0.0225
+  },
+  "lonksamhet": {
+    "roe": 0.0775,
+    "roic": 0.0453,
+    "bruttoMarginal": 0.7555,
+    "ebitMarginal": 0.4303,
+    "nettoMarginal": 0.4358,
+    "fcfMarginal": 0.5599
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.6382,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 11
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 30.421,
+    "pb": 2.375,
+    "evEbit": 40.242,
+    "peg": 121.59,
+    "fcfYield": 0.0407,
+    "egenKapitalMultipl": 2.375
+  },
+  "golv": {
+    "typ": "tillgangstung",
+    "vardePerAktie": 57.52,
+    "marginal": -1.3749
+  },
+  "serier": {
+    "ar": [],
+    "omsattning": [],
+    "resultat": [],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "resultaträkningshistorik saknas hos källan — serier/CAGR null; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; golv = NAV-proxy: bokfört EK per aktie (NCAV-data saknas hos källorna)"
+}

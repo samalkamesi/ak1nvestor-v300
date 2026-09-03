@@ -1,0 +1,91 @@
+{
+  "ticker": "NP3.ST",
+  "namn": "NP3 Fastigheter AB (publ)",
+  "bransch": "fastighet",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/NP3.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 260.0,
+  "marknadsKapitalMdr": 16.025,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.136,
+    "resultatCAGR5ar": 0.014,
+    "omsattningTillvaxtTTM": 0.101,
+    "prognosTillvaxt": -0.057
+  },
+  "lonksamhet": {
+    "roe": 0.1453,
+    "roic": 0.0655,
+    "bruttoMarginal": 0.7594,
+    "ebitMarginal": 0.7488,
+    "nettoMarginal": 0.6404,
+    "fcfMarginal": 0.3139
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 1.4152,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 11.374,
+    "pb": 1.422,
+    "evEbit": 17.505,
+    "peg": null,
+    "fcfYield": 0.0467,
+    "egenKapitalMultipl": 1.422
+  },
+  "golv": {
+    "typ": "tillgangstung",
+    "vardePerAktie": 182.88,
+    "marginal": -0.4217
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      1551000000.0,
+      1797000000.0,
+      1992000000.0,
+      2274000000.0
+    ],
+    "resultat": [
+      1224000000.0,
+      -62000000.0,
+      914000000.0,
+      1276000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; golv = NAV-proxy: bokfört EK per aktie (NCAV-data saknas hos källorna); källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

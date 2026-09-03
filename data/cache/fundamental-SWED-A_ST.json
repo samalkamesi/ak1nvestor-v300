@@ -1,0 +1,91 @@
+{
+  "ticker": "SWED-A.ST",
+  "namn": "Swedbank AB (publ)",
+  "bransch": "finans",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/SWED-A.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 380.6,
+  "marknadsKapitalMdr": 427.686,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.089,
+    "resultatCAGR5ar": 0.1441,
+    "omsattningTillvaxtTTM": 0.058,
+    "prognosTillvaxt": 0.0876
+  },
+  "lonksamhet": {
+    "roe": 0.1502,
+    "roic": null,
+    "bruttoMarginal": 0.0,
+    "ebitMarginal": 0.5144,
+    "nettoMarginal": 0.4512,
+    "fcfMarginal": null
+  },
+  "stabilitet": {
+    "skuldEgenkapital": null,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 13.79,
+    "pb": 2.066,
+    "evEbit": 35.289,
+    "peg": 6.99,
+    "fcfYield": null,
+    "egenKapitalMultipl": 2.066
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      53221000000.0,
+      73057000000.0,
+      74104000000.0,
+      68736000000.0
+    ],
+    "resultat": [
+      21877000000.0,
+      34128000000.0,
+      34869000000.0,
+      32759000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); finansbolag: roic/skuld-EK ej meningsfullt jämförbara — null; rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; finansbolag: burn-rate ej meningsfullt (kassaflödet är kärnverksamheten) — null; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

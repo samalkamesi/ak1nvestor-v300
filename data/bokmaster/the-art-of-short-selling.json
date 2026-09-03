@@ -5,12 +5,12 @@
   "chapterCount": 13,
   "totalMinutes": 130,
   "title": "The Art of Short Selling — Staley: KOMPLETT",
-  "summary": "Kathryn F. Staley skrev 1996 den bok som fortfarande räknas som standardverket i kortförsäljningens hantverk — mekanik, checklista och fallstudier från Crazy Eddie till 1990-talets bankkris och Comstock-erans manipulation. Kursen bygger Staleys varningssystem (V12 intäktskvalitet, V19 kapitalförbränning, V10 skuldsättning), tar hatet mot shorts på fullt allvar — och slutar i riskens asymmetri: squeezar dödär även rätt shorts. Detta är pedagogik i att LÄSA risk, inte en uppmaning att korta.",
+  "summary": "Kathryn F. Staley skrev 1996 den bok som fortfarande räknas som standardverket i kortförsäljningens hantverk — mekanik, checklista och fallstudier från Crazy Eddie till 1990-talets bankkris och Comstock-erans manipulation. Kursen bygger Staleys varningssystem (V12 intäktskvalitet, V19 kapitalförbränning, V10 skuldsättning), tar hatet mot shorts på fullt allvar — och slutar i riskens asymmetri: squeezar dödar även rätt shorts. Detta är pedagogik i att LÄSA risk, inte en uppmaning att korta.",
   "minutes": 10,
   "xp": 1800,
   "level": "",
   "learn": "Kortförsäljningens fulla mekanik: låna, sälja, täcka — borrow-fee, utdelningsskyldighet, recall och buy-in, short squeeze och days to cover; vem som faktiskt kortar (research-drivna fundamental shorts, hedgar, market makers, momentum-shorts) och varför majoriteten av alla kortade aktier stiger — timing och katalysator är allt; Staleys checklista för short-kandidater: redovisningskvalitet med V12 intäktsstabilitet som närmaste AKM1-variabel (onormal fordrings- och lagertillväxt, återkommande engångsposter, kapitaliserade kostnader, V07-marginaler utan förklaring), finansieringsrisk (V19 kapitalförbränning och emission-risk, V10 tung skuld, V11 likviditet, bygg-och-impairment-mönstret, V05 P/B som nedskrivningsfälla) och de mjuka signalerna (lockprepositioner, insiderförsäljning, äkta mot kosmetiska återköp V20, ”kan inte misslyckas”-kulturen); fallstudierna: Crazy Eddie med påhittat lager och familjekultur, detaljhandeln som expanderar sig till döds (Balbek och de försvunna kedjorna), bankkrisen 1990 med tomma see-through-byggnader och kapitaliserad ränta, samt Comstock-erans corners och bear raids; den kontroversiella ärligheten: motståndarnas argument (bear raids, bolagsförstörande, obegränsad förlust, un-Swedish) och svaret — shorts som marknadens kvalitetskontroll, de gör läxan ingen annan gör; riskhanteringens asymmetri: stop-loss på shorts är annorlunda, positionstorlek som verkligt skydd, ”marknaden kan förbli irrationell längre än du kan förbli solvent”; kopplingen till Schilit och den kombinerade detektorn med fotnoter-först-läsordning; samt integrationen i AK1A där Short-Seller-agenten ger ALDRIG tips — bara motfrågor — och marginal of safety på kortsidan är process, inte pris.",
-  "why": "Utan Staley är din analys halv: du kan poängsätta kvalitet (AKM1:s V01–V20) men inte skörhet — och varje gång du köper en berättelse betalar du priset för att någon annan gjorde det arbete du struntade i. Staley lär dig att läsa en rapport som en anklagad skriver den: fordringar, lager, engångsposter, emissioner, insiderhänder och kultur avslöjar vad resultaträkningen vill dölja. Hon tvingar dig också till vuxen riskförståelse: förlusten på en short är obegränsad, squeezar dödär rätt shorts, och därför är detta kursen i att LÄSA risk — inte en uppmaning att korta. Den som kan kortförsäljarens läxa väljer bättre aktier på långsidan — och vägrar vara den som betalar för nästa Crazy Eddie.",
+  "why": "Utan Staley är din analys halv: du kan poängsätta kvalitet (AKM1:s V01–V20) men inte skörhet — och varje gång du köper en berättelse betalar du priset för att någon annan gjorde det arbete du struntade i. Staley lär dig att läsa en rapport som en anklagad skriver den: fordringar, lager, engångsposter, emissioner, insiderhänder och kultur avslöjar vad resultaträkningen vill dölja. Hon tvingar dig också till vuxen riskförståelse: förlusten på en short är obegränsad, squeezar dödar rätt shorts, och därför är detta kursen i att LÄSA risk — inte en uppmaning att korta. Den som kan kortförsäljarens läxa väljer bättre aktier på långsidan — och vägrar vara den som betalar för nästa Crazy Eddie.",
   "chapters_list": [
     {
       "num": 1,
@@ -158,7 +158,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Loopen: först lokaliseras aktier att låna — de kommer från utlåningspooler hos pensionsfonder, förvaltare och custodians som tjänär avgift på utlåningen. Sedan säljs aktierna på marknaden som vilka andra som helst. Under väntan betalar shorten en låneränta (borrow-fee) på positionens värde, ersätter eventuella utdelningar till utlånaren och lever med risken att aktierna kallas tillbaka (recall). När tesen är färdig köps aktierna tillbaka — täckning — och lämnas tillbaka till utlånaren. Vinsten är försäljningssumman minus återköpspris minus alla kostnader. Maximal vinst är hundra procent (aktien till noll); förlusten är öppen uppåt — teoretiskt obegränsad. Det är denna asymmetri som gör allt annat i kursen nödvändigt. Två nyckeltal hör till hantverket: short interest (andel av free float som är kortad) och days to cover (short interest dividerat med genomsnittlig daglig volym — hur många dagars handel som krävs för att alla ska kunna täcka)."
+          "content": "Loopen: först lokaliseras aktier att låna — de kommer från utlåningspooler hos pensionsfonder, förvaltare och custodians som tjänar avgift på utlåningen. Sedan säljs aktierna på marknaden som vilka andra som helst. Under väntan betalar shorten en låneränta (borrow-fee) på positionens värde, ersätter eventuella utdelningar till utlånaren och lever med risken att aktierna kallas tillbaka (recall). När tesen är färdig köps aktierna tillbaka — täckning — och lämnas tillbaka till utlånaren. Vinsten är försäljningssumman minus återköpspris minus alla kostnader. Maximal vinst är hundra procent (aktien till noll); förlusten är öppen uppåt — teoretiskt obegränsad. Det är denna asymmetri som gör allt annat i kursen nödvändigt. Två nyckeltal hör till hantverket: short interest (andel av free float som är kortad) och days to cover (short interest dividerat med genomsnittlig daglig volym — hur många dagars handel som krävs för att alla ska kunna täcka)."
         },
         {
           "type": "text",
@@ -170,7 +170,7 @@
         },
         {
           "type": "text",
-          "content": "Mekanikens praktiska implikationer, som kursen återkommer till i kapitel 11: låneläge (locate) kontrolleras före entry, aldrig efter; positionens storlek sätts efter hur länge den får kosta, inte efter övertygelsen; och squeez-känsligheten räknas in från början — en tes i ett trångt papper med hög kort ränta kräver mindre position och hårdare klocka. Staley beskriver kortförsäljning som ett lån på tre sätt samtidigt: du lånär aktierna, du lånär motpartens tro på berättelsen och du lånär tid. Alla tre tar ränta."
+          "content": "Mekanikens praktiska implikationer, som kursen återkommer till i kapitel 11: låneläge (locate) kontrolleras före entry, aldrig efter; positionens storlek sätts efter hur länge den får kosta, inte efter övertygelsen; och squeez-känsligheten räknas in från början — en tes i ett trångt papper med hög kort ränta kräver mindre position och hårdare klocka. Staley beskriver kortförsäljning som ett lån på tre sätt samtidigt: du lånar aktierna, du lånar motpartens tro på berättelsen och du lånar tid. Alla tre tar ränta."
         },
         {
           "type": "insikt",
@@ -178,7 +178,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Mekanikens kostnader och risker — signal → mekanism → fråga\",\"rader\":[[\"Moment\",\"Mekanism\",\"Fråga att ställa\"],[\"Lånekostnad\",\"Avgift per år på positionens värde\",\"Är katalysatorn snabbare än räntan?\"],[\"Utdelning\",\"Shorten ersätter utdelningen till utlånaren\",\"Vad kostar utdelningen under tesens horisont?\"],[\"Recall\",\"Utlånaren kräver aktierna — tvångsåterköp\",\"Vem lånär jag av, och vad händer när de säljer?\"],[\"Squeeze\",\"Tvänga återköp driver kursen uppöver fundamentalt värde\",\"Hur stor är kort ränta och days to cover?\"],[\"Täckning\",\"Likviditeten sinar i botten av en krasch\",\"Kan jag köpå tillbaka det jag sålt, när det gäller?\"]]}"
+          "content": "{\"rubrik\":\"Mekanikens kostnader och risker — signal → mekanism → fråga\",\"rader\":[[\"Moment\",\"Mekanism\",\"Fråga att ställa\"],[\"Lånekostnad\",\"Avgift per år på positionens värde\",\"Är katalysatorn snabbare än räntan?\"],[\"Utdelning\",\"Shorten ersätter utdelningen till utlånaren\",\"Vad kostar utdelningen under tesens horisont?\"],[\"Recall\",\"Utlånaren kräver aktierna — tvångsåterköp\",\"Vem lånar jag av, och vad händer när de säljer?\"],[\"Squeeze\",\"Tvänga återköp driver kursen uppöver fundamentalt värde\",\"Hur stor är kort ränta och days to cover?\"],[\"Täckning\",\"Likviditeten sinar i botten av en krasch\",\"Kan jag köpa tillbaka det jag sålt, när det gäller?\"]]}"
         },
         {
           "type": "visuell",
@@ -245,7 +245,7 @@
         },
         {
           "type": "text",
-          "content": "Och varför behövs research-shorts alls? Staley svarar med marknadens struktur: säljsidans analytiker är nästan alltid köprekommendationer (emissionsbanker, IR-avdelningar och medier älskar uppgångsberättelser — ingen tjänär på att gräva i fotnoter), bolaget själv kommunicerar naturligt nog sitt bästa fall, och reglerare saknar resurser att läsa allt. Någon måste göra det negativa hemarbetet — inte av illvilja utan därför att prisbildningen behöver fel-sökare. Därför formuleringen kursen lånär av Staley och AK1A:s pedagogik: kortförsäljare gör läxan ingen annan gör. Kapitel 10 återkommer till detta som marknadens kvalitetskontroll — med motståndarnas argument fullt redovisade."
+          "content": "Och varför behövs research-shorts alls? Staley svarar med marknadens struktur: säljsidans analytiker är nästan alltid köprekommendationer (emissionsbanker, IR-avdelningar och medier älskar uppgångsberättelser — ingen tjänar på att gräva i fotnoter), bolaget själv kommunicerar naturligt nog sitt bästa fall, och reglerare saknar resurser att läsa allt. Någon måste göra det negativa hemarbetet — inte av illvilja utan därför att prisbildningen behöver fel-sökare. Därför formuleringen kursen lånar av Staley och AK1A:s pedagogik: kortförsäljare gör läxan ingen annan gör. Kapitel 10 återkommer till detta som marknadens kvalitetskontroll — med motståndarnas argument fullt redovisade."
         },
         {
           "type": "insikt",
@@ -312,7 +312,7 @@
         },
         {
           "type": "text",
-          "content": "Signal två: lager som växer snabbare än försäljningen. Mekanismen: fel produkter, fel priser eller fel prognos — lagret byggs upp, marginalerna ser fina ut så länge nedskrivningen dröjer, och en dag tvingas bolaget erkänna att tillgången inte är värd bokfört värde. Crazy Eddie (kapitel 7) är extremexemplet: påhittat lager räknades som tillgång för att möta börsens förväntningar. Lageromsättning som faller medan bruttomarginalen (V07) stiger är en kombination som förtjänär motfrågor — någon av de två siffrorna ljuger. Signal tre: engångsposter som återkommer. En engångskostnad ska komma en gång. När ”omstrukturering”, ”engångsförlust” och ”avknoppningseffekt” återkommer varje år är bolagets ”kärnrörelse” en konstruktion — och skillnaden mellan redovisad vinst och bolagets egen justerade EBITDA (V08) blir ett mått på hur mycket berättelse som måste hittas på för att siffrorna ska se ut som marknaden vill."
+          "content": "Signal två: lager som växer snabbare än försäljningen. Mekanismen: fel produkter, fel priser eller fel prognos — lagret byggs upp, marginalerna ser fina ut så länge nedskrivningen dröjer, och en dag tvingas bolaget erkänna att tillgången inte är värd bokfört värde. Crazy Eddie (kapitel 7) är extremexemplet: påhittat lager räknades som tillgång för att möta börsens förväntningar. Lageromsättning som faller medan bruttomarginalen (V07) stiger är en kombination som förtjänar motfrågor — någon av de två siffrorna ljuger. Signal tre: engångsposter som återkommer. En engångskostnad ska komma en gång. När ”omstrukturering”, ”engångsförlust” och ”avknoppningseffekt” återkommer varje år är bolagets ”kärnrörelse” en konstruktion — och skillnaden mellan redovisad vinst och bolagets egen justerade EBITDA (V08) blir ett mått på hur mycket berättelse som måste hittas på för att siffrorna ska se ut som marknaden vill."
         },
         {
           "type": "text",
@@ -387,7 +387,7 @@
         },
         {
           "type": "text",
-          "content": "V10 skuldsättningsgrad. Skuld är hävstång i båda riktningar: den förstorar avkastningen när det går bra och gör driftsproblem till solvensproblem när det går dåligt. Staley läsning av balansräkningen frågar efter tre saker: nivån (skuldsättningsgrad, räntetäckning), strukturen (när löper skulden — refinansieringsväggen) och villkoren (covenants som utlöses just när läget blir svårt). Det gamla ordspråket att banken lånär ut ett paraply och vill ha tillbaka det när det börjar regna är balansräkningsanalys i en mening: motpartens beteende förvärras korrelerat med ditt läge. Bankkrisen 1990 (kapitel 9) är mönstret i historisk skala — låneböcker som såg bra ut tills fastigheterna inte gjorde det."
+          "content": "V10 skuldsättningsgrad. Skuld är hävstång i båda riktningar: den förstorar avkastningen när det går bra och gör driftsproblem till solvensproblem när det går dåligt. Staley läsning av balansräkningen frågar efter tre saker: nivån (skuldsättningsgrad, räntetäckning), strukturen (när löper skulden — refinansieringsväggen) och villkoren (covenants som utlöses just när läget blir svårt). Det gamla ordspråket att banken lånar ut ett paraply och vill ha tillbaka det när det börjar regna är balansräkningsanalys i en mening: motpartens beteende förvärras korrelerat med ditt läge. Bankkrisen 1990 (kapitel 9) är mönstret i historisk skala — låneböcker som såg bra ut tills fastigheterna inte gjorde det."
         },
         {
           "type": "text",
@@ -458,7 +458,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Lockprepositioner — come-ons, som Staley kallar dem — är berättelser konstruerade för att köpå, inte analyserade för att förstå. I sin klassiska form: gratisaktier och telefonförsäljning i pennystock-eran; i sin moderna: kända namn i styrelsen utan operativ roll, sponsorad forskning som inte tål granskning, en ”världsunik” teknik utan patentförteckning (V13), oändliga TAM-siffror som multiplicerar en odefinierad marknad, och roadshow-språk där varje risk är ”hanterad” och varje konkurrent ”underlägsen”. Staley tumregel: när promotionen är skarpare än produkten är det en signal. I AK11-termer låser detta mot berättelse-variablerna: V16 produktlanseringar och V17 avtal och partnerskap ska granskas på om de syns i intäktsraden — avtal utan köpare och lanseringar utan intäkt är retorik. Frågan till varje berättelse är densamma: vad av detta är verifierbart av någon som inte tjänär på att det är sant?"
+          "content": "Lockprepositioner — come-ons, som Staley kallar dem — är berättelser konstruerade för att köpa, inte analyserade för att förstå. I sin klassiska form: gratisaktier och telefonförsäljning i pennystock-eran; i sin moderna: kända namn i styrelsen utan operativ roll, sponsorad forskning som inte tål granskning, en ”världsunik” teknik utan patentförteckning (V13), oändliga TAM-siffror som multiplicerar en odefinierad marknad, och roadshow-språk där varje risk är ”hanterad” och varje konkurrent ”underlägsen”. Staley tumregel: när promotionen är skarpare än produkten är det en signal. I AK11-termer låser detta mot berättelse-variablerna: V16 produktlanseringar och V17 avtal och partnerskap ska granskas på om de syns i intäktsraden — avtal utan köpare och lanseringar utan intäkt är retorik. Frågan till varje berättelse är densamma: vad av detta är verifierbart av någon som inte tjänar på att det är sant?"
         },
         {
           "type": "text",
@@ -683,11 +683,11 @@
         },
         {
           "type": "text",
-          "content": "Lärkan om timing: bankaktier föll inte för att de var dyra — många handlades till låga multiplar och lågt P/B (V05) länge före fallit. De föll för att tillgångarna var värda mindre än bokfört. Det är den speglade versionen av värdeinvesteringens äldsta misstag: att köpå ”billigt” utan att fråga om bokfört värde är verkligt värde. Kortförsäljare som förstod detta kunde fortfarande förlora pengar — bankaktier kan stiga på recovery-berättelser medan kreditförlusterna fortfarande är dolda — men katalysatorn fanns i systemet: kvartalsrapporternas kreditförlustprovisioner och de kommande nedskrivningarna. Staleys bredare poäng med erans fall: de bästa shorts har aldrig handlat om värdering — de har handlat om att tillgångarna inte existerar i den form bokföringen påstår. 1990 var fastighetsvärdena en åsikt; 2008 blev bolåneprodukterna samma åsikt; konjunkturen är 2022-talets version. Mönstret upprepas, checklistan är evig."
+          "content": "Lärkan om timing: bankaktier föll inte för att de var dyra — många handlades till låga multiplar och lågt P/B (V05) länge före fallit. De föll för att tillgångarna var värda mindre än bokfört. Det är den speglade versionen av värdeinvesteringens äldsta misstag: att köpa ”billigt” utan att fråga om bokfört värde är verkligt värde. Kortförsäljare som förstod detta kunde fortfarande förlora pengar — bankaktier kan stiga på recovery-berättelser medan kreditförlusterna fortfarande är dolda — men katalysatorn fanns i systemet: kvartalsrapporternas kreditförlustprovisioner och de kommande nedskrivningarna. Staleys bredare poäng med erans fall: de bästa shorts har aldrig handlat om värdering — de har handlat om att tillgångarna inte existerar i den form bokföringen påstår. 1990 var fastighetsvärdena en åsikt; 2008 blev bolåneprodukterna samma åsikt; konjunkturen är 2022-talets version. Mönstret upprepas, checklistan är evig."
         },
         {
           "type": "text",
-          "content": "Comstock-eran. Staley går tillbaka till 1870-talets San Francisco, där silvret från Comstock Lode i Nevada hade skapat en av historiens vildaste börskulturer. Aktierna i gruvbolag handlades häftigt, och manipulativa operationer hörde till vardagen: corners (att samla hela det fria utbudet och tvinga shorts att köpå tillbaka till vilka priser som helst) och bear raids (samordnad försäljning spridd med rykten för att krossa kurser) genomfördes öppet av epokens operatörer — bonanza-kungarna kring Fair, Flood, Mackay och O'Brien är de namnhistoria minns. Poängen med historien i kursen är dubbel. Dels förklarar den hatet: manipulationen var på riktigt, offren var verkliga, och ryktet fastnade på hela facket i generationer — härifrån kommer förbuden (Holland 1610, Britannien 1734) och den kulturella skuld kortförsäljare bär än idag. Dels pekar den på hantverkets svar: en bear raid utan dokument förlorar pengar när positionen ska täckas, därför att en frisk aktie köps tillbaka av andra — en tes på fakta däremot är granskning. Skillnaden mellan manipulatören och analytikern är metod, inte riktning. Kapitel 10 bygger vidare på exakt den skillnaden."
+          "content": "Comstock-eran. Staley går tillbaka till 1870-talets San Francisco, där silvret från Comstock Lode i Nevada hade skapat en av historiens vildaste börskulturer. Aktierna i gruvbolag handlades häftigt, och manipulativa operationer hörde till vardagen: corners (att samla hela det fria utbudet och tvinga shorts att köpa tillbaka till vilka priser som helst) och bear raids (samordnad försäljning spridd med rykten för att krossa kurser) genomfördes öppet av epokens operatörer — bonanza-kungarna kring Fair, Flood, Mackay och O'Brien är de namnhistoria minns. Poängen med historien i kursen är dubbel. Dels förklarar den hatet: manipulationen var på riktigt, offren var verkliga, och ryktet fastnade på hela facket i generationer — härifrån kommer förbuden (Holland 1610, Britannien 1734) och den kulturella skuld kortförsäljare bär än idag. Dels pekar den på hantverkets svar: en bear raid utan dokument förlorar pengar när positionen ska täckas, därför att en frisk aktie köps tillbaka av andra — en tes på fakta däremot är granskning. Skillnaden mellan manipulatören och analytikern är metod, inte riktning. Kapitel 10 bygger vidare på exakt den skillnaden."
         },
         {
           "type": "text",
@@ -770,7 +770,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Anklagelse → mekanism → svar\",\"rader\":[[\"Anklagelse\",\"Mekanism\",\"Svar\"],[\"Bear raids\",\"Rykte plus samordnad försäljning krossar kurser\",\"Raider utan fakta måste täckas dyrare — de förlorar pengar på friska aktier\"],[\"Bolagsförstörande\",\"Pressad kurs dödär refinansiering och förtroende\",\"Friska bolag tål sitt pris; sjuka dolde problem som fanns före shorten\"],[\"Vinst på andras olycka\",\"Känslan av att sparka på den som fallit\",\"Prisbildningen skyddar även de som lurats — inklusive pensions-sparare\"],[\"Obegränsad förlust\",\"Uppsidan är öppen — hasard\",\"Därför kräver hantverket sizing, katalysator och exit — kapitel 11\"],[\"Un-Swedish\",\"Kultur som bygger tillsammans\",\"Att förstå kortens läxa är inte att korta — det är att läsa risk\"]]}"
+          "content": "{\"rubrik\":\"Anklagelse → mekanism → svar\",\"rader\":[[\"Anklagelse\",\"Mekanism\",\"Svar\"],[\"Bear raids\",\"Rykte plus samordnad försäljning krossar kurser\",\"Raider utan fakta måste täckas dyrare — de förlorar pengar på friska aktier\"],[\"Bolagsförstörande\",\"Pressad kurs dödar refinansiering och förtroende\",\"Friska bolag tål sitt pris; sjuka dolde problem som fanns före shorten\"],[\"Vinst på andras olycka\",\"Känslan av att sparka på den som fallit\",\"Prisbildningen skyddar även de som lurats — inklusive pensions-sparare\"],[\"Obegränsad förlust\",\"Uppsidan är öppen — hasard\",\"Därför kräver hantverket sizing, katalysator och exit — kapitel 11\"],[\"Un-Swedish\",\"Kultur som bygger tillsammans\",\"Att förstå kortens läxa är inte att korta — det är att läsa risk\"]]}"
         },
         {
           "type": "utmaning",
@@ -794,7 +794,7 @@
           "alternativ": [
             "Därför att varje kort position måste avslutas med ett återköp — en köporder",
             "Därför att de alltid köper index till slut",
-            "Därför att reglerna tvingar dem att köpå",
+            "Därför att reglerna tvingar dem att köpa",
             "Därför att de enbart investerar i optioner"
           ],
           "ratt": 0,
@@ -817,7 +817,7 @@
       "num": 11,
       "minutes": 10,
       "title": "Riskhanteringens asymmetri — stop-loss på shorts är annorlunda",
-      "intro": "Kapitel 10 medgav det som hela boken medger: kortförsäljning är farligare än långsidesinvestering av en strukturell anledning — förlusten är obegränsad. Detta kapitel bygger riskarbetet: asymmetrin, varför stop-loss fungerar annorlunda, positionstorleken som verkligt skydd och regeln om att squeezar dödär även rätt shorts.",
+      "intro": "Kapitel 10 medgav det som hela boken medger: kortförsäljning är farligare än långsidesinvestering av en strukturell anledning — förlusten är obegränsad. Detta kapitel bygger riskarbetet: asymmetrin, varför stop-loss fungerar annorlunda, positionstorleken som verkligt skydd och regeln om att squeezar dödar även rätt shorts.",
       "blocks": [
         {
           "type": "text",
@@ -829,7 +829,7 @@
         },
         {
           "type": "text",
-          "content": "Den tillskrivna Keynes-regeln — marknaden kan förbli irrationell längre än du kan förbli solvent — är kortförsäljningens första bud. Squeezar dödär rätt shorts också: en tes med fullt rätt i fundamentalt kan krossas av en mekanik (trång float, kort ränta, tvångsåterköp) som inte bryr sig om att bolaget är värdelöst. Praktiska tekniker från boken och från AK1A:s tillämpning: täck i svaghet, inte i panik (likviditeten sinar i botten — vänta inte till kraschen för att köpå tillbaka det ingen annan vill ha); planera exit före entry med både nivåer och tidsgräns (”om katalysatorn inte infaller inom X kvartal avslutar jag”); undvik folksamma shorts (hög kort ränta betyder att någon annan redan gjort ditt arbete — och att bränslet för squeeze är som störst); övervaka lånesituationen (när borrow-feen rusar är det dags att fråga sig om positionen är kvar därför att den är right eller därför att den är svår att lämma); och notera att marginal of safety-konceptet här byter skepnad — på kortsidan finns ingen köpeskillnad som skyddar dig, därför att priset inte är skyddet. Säkerheten är processen: storlek, katalysator, klocka, exit-plan. Överlevnad är kortets säkerhetsmarginal."
+          "content": "Den tillskrivna Keynes-regeln — marknaden kan förbli irrationell längre än du kan förbli solvent — är kortförsäljningens första bud. Squeezar dödar rätt shorts också: en tes med fullt rätt i fundamentalt kan krossas av en mekanik (trång float, kort ränta, tvångsåterköp) som inte bryr sig om att bolaget är värdelöst. Praktiska tekniker från boken och från AK1A:s tillämpning: täck i svaghet, inte i panik (likviditeten sinar i botten — vänta inte till kraschen för att köpa tillbaka det ingen annan vill ha); planera exit före entry med både nivåer och tidsgräns (”om katalysatorn inte infaller inom X kvartal avslutar jag”); undvik folksamma shorts (hög kort ränta betyder att någon annan redan gjort ditt arbete — och att bränslet för squeeze är som störst); övervaka lånesituationen (när borrow-feen rusar är det dags att fråga sig om positionen är kvar därför att den är right eller därför att den är svår att lämma); och notera att marginal of safety-konceptet här byter skepnad — på kortsidan finns ingen köpeskillnad som skyddar dig, därför att priset inte är skyddet. Säkerheten är processen: storlek, katalysator, klocka, exit-plan. Överlevnad är kortets säkerhetsmarginal."
         },
         {
           "type": "text",
@@ -904,7 +904,7 @@
         },
         {
           "type": "text",
-          "content": "Läsordningen — protokollet som gör detektorn praktisk. Ta senaste årsredovisningen och vänd den baklänges: börja med revisorsutlåtandet och noterna (redovisningsprinciper, åtaganden, närståendehandel, ägarskiften i optionsprogram) — det som ledningen måste men ogärna berättar bor där. Gå sedan till kassaflödesanalysen och ställ den mot resultaträkningen. Fortsätt till balansräkningen med frågan: vilka av dessa tillgångar är yngre än tre år och vilka är arv från en tidigare epok av optimism? Läs sedan insider- och optionsdata. Läs därefter — och först nu — VD-ordet och marknadsföringsmaterialet: nu läser du det med källkritik, som en anklagads självförsvar snarare än som information. Smell-testet genom hela läsningen: siffror som är för bra utan en förklaringsmekanism, marginalledarskap (V07) utan dokumenterad moat, tillväxt som alltid landar en aning över förväntningarna. Ingen enskild signal bevisar något — men varje signal förtjänär en skriven motfråga i analysen, därför att det är motfrågorna som gör AKM1-poängen ärliga."
+          "content": "Läsordningen — protokollet som gör detektorn praktisk. Ta senaste årsredovisningen och vänd den baklänges: börja med revisorsutlåtandet och noterna (redovisningsprinciper, åtaganden, närståendehandel, ägarskiften i optionsprogram) — det som ledningen måste men ogärna berättar bor där. Gå sedan till kassaflödesanalysen och ställ den mot resultaträkningen. Fortsätt till balansräkningen med frågan: vilka av dessa tillgångar är yngre än tre år och vilka är arv från en tidigare epok av optimism? Läs sedan insider- och optionsdata. Läs därefter — och först nu — VD-ordet och marknadsföringsmaterialet: nu läser du det med källkritik, som en anklagads självförsvar snarare än som information. Smell-testet genom hela läsningen: siffror som är för bra utan en förklaringsmekanism, marginalledarskap (V07) utan dokumenterad moat, tillväxt som alltid landar en aning över förväntningarna. Ingen enskild signal bevisar något — men varje signal förtjänar en skriven motfråga i analysen, därför att det är motfrågorna som gör AKM1-poängen ärliga."
         },
         {
           "type": "text",
@@ -952,7 +952,7 @@
             "Den fungerar bara på amerikanska bolag",
             "Den gäller bara för banker och fastighetsbolag",
             "Den kräver revisorsutbildning för att användas",
-            "En varningssignal är inte ett bevis — de flesta bolag med en signal är inte bedrägerier; checklistan förtjänär motfrågor, inte auto-short"
+            "En varningssignal är inte ett bevis — de flesta bolag med en signal är inte bedrägerier; checklistan förtjänar motfrågor, inte auto-short"
           ],
           "ratt": 3,
           "tips": "Vad är bas-raten för extrema förklaringar — och vad krävs för att gå vidare från misstanke till tes?"
@@ -1005,7 +1005,7 @@
             "Agenten ger korta tips när AKM1-poängen är låg",
             "Agenten ger ALDRIG tips — den attackerar elevens tes med motfrågor om matematik, antaganden, risk, historia och logik",
             "Agenten shortsar automatiskt bolag med svag score",
-            "Agenten belönär eleven för att korta positioner"
+            "Agenten belönar eleven för att korta positioner"
           ],
           "ratt": 1,
           "tips": "Vad skulle hända med en agent som ger tips — och vad väcks hos eleven som i stället får frågor?"

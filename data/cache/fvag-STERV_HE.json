@@ -1,0 +1,114 @@
+{
+ "ticker": "STERV.HE",
+ "perVariabel": {
+  "V01": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Försäljningstillväxt: källa: omsättningens tillväxttakt (yoy) ur serier.omsattning (3 punkter) · hallbarVoting: mikro:impulsvåg[I,I,O] kort:osatt[O,O,O] medellang:osatt[O,O,O] lang:osatt[O,O,O] mega:osatt[O,O,O]; slutklass osatt · dynamik osatt · årsdata: mikro/kort är närmaste-periods-proxy · AKM1 1/5 p · \"Försäljningstillväxt -7,2 % [5-års CAGR (4-årsbas): -7,2 %] → goldilocks-kurva 1/5\""
+  },
+  "V02": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "ARR (årliga återkommande intäkter) redovisas inte i BolagsNyckeltal — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V02: 0/5 p."
+  },
+  "V03": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Intäktsdiversifiering (segment/kundspridning) ingår inte i BolagsNyckeltal — kvalitativ AKM1-granskning. AKM1 V03: 0/5 p."
+  },
+  "V04": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Värderingens våg kräver en pris-/multiplerserie över tid — sådan finns inte i BolagsNyckeltal. Nuvärden som kontext: P/E 14,1, EV/EBIT 28. AKM1 V04: 5/5 p."
+  },
+  "V05": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "P/B som tidsserie saknas; nuvärde P/B 0,7 (Grahams ≥1,5-varning gäller egenkapitalmultipln). Vågklass kräver historik. AKM1 V05: 5/5 p."
+  },
+  "V06": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "EV/EBITDA-serie saknas; nuvärde 28, PEG 41,2, FCF-avkastning 9,4 % — vågklass kräver tidsserie. AKM1 V06: 1/5 p."
+  },
+  "V07": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Bruttovinst per år ingår inte i serier (fält finns ej) — nuvärde bruttomarginal 24,7 %; moat-fältens 5-årsdata: medel saknas %, spread saknas %. AKM1 V07: 1/5 p."
+  },
+  "V08": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "EBIT/EBITDA per år ingår inte i serier — nuvärde EBIT-marginal 4 %. Vågklass kräver tidsserie. AKM1 V08: 1/5 p."
+  },
+  "V09": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen resultat-/egenkapitalserie att härleda ROE-bana ur; nuvärde ROE 5,4 %, 5-årsmedel saknas % — vågklass kräver tidsserie. AKM1 V09: 0/5 p."
+  },
+  "V10": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Skuld per år ingår inte i serier — nuvärde skuld/eget kapital 0,36, räntetäckning saknas. Vågklass kräver tidsserie. AKM1 V10: 4/5 p."
+  },
+  "V11": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Omsättningstillgångar/kortfristiga skulder ingår inte i BolagsNyckeltal — klassas i AKM1:s manuella granskning. AKM1 V11: 0/5 p."
+  },
+  "V12": {
+   "klass": "korrigering",
+   "dynamik": "forsvamras",
+   "anteckning": "Intäktsstabilitet: källa: omsättningsnivåer ur serier.omsattning (sidledes = stabilt basbygge) (4 punkter) · hallbarVoting: mikro:basbygge[B,B,O] kort:korrigering[B,K,K] medellang:osatt[O,O,O] lang:osatt[O,O,O] mega:osatt[O,O,O]; slutklass korrigering · dynamik forsvamras · årsdata: mikro/kort är närmaste-periods-proxy · AKM1 4/5 p · \"Intäktsvolatilitet σ(yoy) 9,5 % → stabilitetsband 4/5 (4-årig serie — kort underlag, noteras)\""
+  },
+  "V13": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Patent & IP är kvalitativ och händelsebaserad — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V13: 0/5 p."
+  },
+  "V14": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Moat-fälten är 5-årsaggregat utan årsserie: bruttomarginalmedel saknas % med spread saknas % (låg spread = stadig vallgrav) — vågklass kräver tidsserie. AKM1 V14: 2/5 p."
+  },
+  "V15": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Nätverkseffekter är kvalitativa — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V15: 0/5 p."
+  },
+  "V16": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Produktlanseringar är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V16: 0/5 p."
+  },
+  "V17": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Avtal & partnerskap är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V17: 0/5 p."
+  },
+  "V18": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Regulatoriska katalysatorer är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V18: 0/5 p."
+  },
+  "V19": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen FCF-serie att läsa förbränningstakt ur; kontext: kassa räcker saknas månader vid förbränning, nyemissioner senaste 5 åren saknas st, FCF-pos perioder av 5: saknas — vågklass kräver tidsserie. AKM1 V19: 5/5 p."
+  },
+  "V20": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Återköpsblocket redovisar nuvärden utan årsserie: senaste året saknas mdr, minskning av aktieantalet saknas %, insiderköp senaste 6 mån 0 st — vågklass kräver aktieantalsserie över tid. AKM1 V20: 0/5 p."
+  }
+ },
+ "perHorisont": {
+  "mikro": "osatt",
+  "kort": "osatt",
+  "medellang": "osatt",
+  "lang": "osatt",
+  "mega": "osatt"
+ },
+ "totalText": "Stora Enso Oyj: den fundamentala utvecklingen rör sig i osatt på mikronivån, osatt på kort sikt, osatt på medellång sikt, osatt på lång sikt samt osatt på meganivån. Sammanvägt med horisontvikterna (mikro lägst enligt direktiv) ligger bilden blandad — olika vågor rör sig olika håll, vilket i sig är en studie i rytm. Var vi är på väg just nu — senare halvan mot tidigare, medianvis: 0 variabler förbättras, 0 är stabila, 1 försvagas (övriga osatta). 1 av 20 AKM1-variabler har tidsserier att läsa — resten redovisas osatta med anledning snarare än gissade. Vågorna beskriver bolagets fundamental rytm, en bild att studera och lära av — inte en uppmaning att agera.",
+ "datum": "2026-09-03"
+}

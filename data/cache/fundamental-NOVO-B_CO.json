@@ -1,0 +1,91 @@
+{
+  "ticker": "NOVO-B.CO",
+  "namn": "Novo Nordisk A/S",
+  "bransch": "halso",
+  "land": "Danmark",
+  "valuta": "DKK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/NOVO-B.CO",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 309.5,
+  "marknadsKapitalMdr": 1368.309,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.2043,
+    "resultatCAGR5ar": 0.2265,
+    "omsattningTillvaxtTTM": 0.021,
+    "prognosTillvaxt": 0.0231
+  },
+  "lonksamhet": {
+    "roe": 0.5981,
+    "roic": 0.456,
+    "bruttoMarginal": 0.8199,
+    "ebitMarginal": 0.4254,
+    "nettoMarginal": 0.3535,
+    "fcfMarginal": 0.1144
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.6333,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 11.795,
+    "pb": 6.193,
+    "evEbit": 10.21,
+    "peg": 3.22,
+    "fcfYield": 0.0275,
+    "egenKapitalMultipl": 6.193
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      176954000000.0,
+      232261000000.0,
+      290403000000.0,
+      309064000000.0
+    ],
+    "resultat": [
+      55525000000.0,
+      83683000000.0,
+      100988000000.0,
+      102434000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

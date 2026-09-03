@@ -1,0 +1,91 @@
+{
+  "ticker": "PSNY",
+  "namn": "Polestar Automotive Holding UK PLC",
+  "bransch": "tillvaxt",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/PSNY",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 11.99,
+  "marknadsKapitalMdr": 1.737,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.075,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 0.454,
+    "prognosTillvaxt": 0.353
+  },
+  "lonksamhet": {
+    "roe": null,
+    "roic": null,
+    "bruttoMarginal": -0.0111,
+    "ebitMarginal": -0.3234,
+    "nettoMarginal": -0.7708,
+    "fcfMarginal": -0.3084
+  },
+  "stabilitet": {
+    "skuldEgenkapital": null,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": 15.2,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 15
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": null,
+    "pb": null,
+    "evEbit": null,
+    "peg": null,
+    "fcfYield": -0.5428,
+    "egenKapitalMultipl": null
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      2461897000.0,
+      2377662000.0,
+      2034261000.0,
+      3058000000.0
+    ],
+    "resultat": [
+      -465789000.0,
+      -1173286000.0,
+      -2049897000.0,
+      -2357000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); resultatCAGR osatt: negativt/noll resultat basåret; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

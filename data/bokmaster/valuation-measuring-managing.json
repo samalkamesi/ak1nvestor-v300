@@ -5,12 +5,12 @@
   "chapterCount": 16,
   "totalMinutes": 175,
   "title": "Valuation — McKinsey (Koller m.fl.): KOMPLETT",
-  "summary": "Valuation: Measuring and Managing the Value of Companies av Koller, Goedhart och Wessels är konsultvärderingens bibel — den enterprise value-baserade modell som dominerar institutionell värdering och AKM1:s värdeträd vilar på. Kursen går igenom hela systematiken: DCF-kärnan, NOPLAT och ROIC, justerade redovisningen, value driver-trädet, prognoser, WACC, terminal value, EV-multipeler, empirin om supervalörer, värdeskapande mot värdeutdelning — och den kontroversiella frågan om vem värdeskapandet egentligen tjänär.",
+  "summary": "Valuation: Measuring and Managing the Value of Companies av Koller, Goedhart och Wessels är konsultvärderingens bibel — den enterprise value-baserade modell som dominerar institutionell värdering och AKM1:s värdeträd vilar på. Kursen går igenom hela systematiken: DCF-kärnan, NOPLAT och ROIC, justerade redovisningen, value driver-trädet, prognoser, WACC, terminal value, EV-multipeler, empirin om supervalörer, värdeskapande mot värdeutdelning — och den kontroversiella frågan om vem värdeskapandet egentligen tjänar.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan eleven beräkna enterprise value och bygga bryggan till aktievärde, härleda NOPLAT och investerat kapital ur råa rapporter, tillämpa ROIC-formeln och value driver-formeln V = NOPLAT × (1 − g/ROIC)/(WACC − g), justera IFRS-rapporter för goodwill, pension, leasing och provisions, bygga kompletta prognoser och target-förhållanden mot ekonomisk jämvikt, skatta WACC med CAPM, Hamada och landsrisk, sätta terminal value med perpetuitetsformeln, använda EV-multipler utan att falla i P/E-fällorna, skilja värdeskapande från värdeutdelning vid förvärv, återköp och utdelning samt mappa hela boken mot AKM1:s V01–V20 med marginal of safety.",
-  "why": "McKinsey-modellen är det dominerande språket i institutionell värdering — vilket lysande investerare, bolagsstyrelser och konsulter än tycker om den. Utan Koller/Goedhart/Wessels systematik blir EV, ROIC, WACC och terminal value tomma etiketter istället för ett sammanhängande värdeträd. Samtidigt är boken ideologiskt laddad: den bygger på aktieägarvärdemaximering och skrivs av ett bolag som tjänär på värderingsuppdrag. AKM1 kräver båda halvorna — hantverket och kritiken.",
+  "why": "McKinsey-modellen är det dominerande språket i institutionell värdering — vilket lysande investerare, bolagsstyrelser och konsulter än tycker om den. Utan Koller/Goedhart/Wessels systematik blir EV, ROIC, WACC och terminal value tomma etiketter istället för ett sammanhängande värdeträd. Samtidigt är boken ideologiskt laddad: den bygger på aktieägarvärdemaximering och skrivs av ett bolag som tjänar på värderingsuppdrag. AKM1 kräver båda halvorna — hantverket och kritiken.",
   "chapters_list": [
     "1. Värderarens världsbild — EV och DCF-grunden",
     "2. Enterprise value-bryggan — från EV till aktievärde",
@@ -101,7 +101,7 @@
             "Att varje multipel vilar på dolda antaganden om tillväxt, spread och risk som egentligen är en DCF"
           ],
           "ratt": 3,
-          "tips": "Försök förklara varför ett bolag förtjänär 12x medan ett annat förtjänär 6x — du hamnar automatiskt i kassaflödesresonemang."
+          "tips": "Försök förklara varför ett bolag förtjänar 12x medan ett annat förtjänar 6x — du hamnar automatiskt i kassaflödesresonemang."
         }
       ]
     },
@@ -180,7 +180,7 @@
       "num": 3,
       "minutes": 10,
       "title": "NOPLAT, investerat kapital och ROIC-maskinen",
-      "intro": "För att mäta om en verksamhet skapar värde behövs två tal: vad verksamheten tjänär efter skatt på sitt kärnarbete, och hur mycket kapital den binder för att göra det. Detta kapitel bygger McKinsey-modulerna NOPLAT och investerat kapital, ochäller dem till ROIC — formeln som hela boken kretsar kring.",
+      "intro": "För att mäta om en verksamhet skapar värde behövs två tal: vad verksamheten tjänar efter skatt på sitt kärnarbete, och hur mycket kapital den binder för att göra det. Detta kapitel bygger McKinsey-modulerna NOPLAT och investerat kapital, ochäller dem till ROIC — formeln som hela boken kretsar kring.",
       "blocks": [
         {
           "type": "text",
@@ -188,7 +188,7 @@
         },
         {
           "type": "text",
-          "content": "Investerat kapital är allt kapital som verksamheten binder: arbetande kapital (kundfordringar + lager − leverantörsskulder) plus nettofasta operativa tillgångar (fastigheter, maskiner, immateriella rättigheter som kapitaliserats). Räkneexempel: kundfordringar 180, lager 120, leverantörsskulder 50, nettofasta tillgångar 500. Investerat kapital = (180 + 120 − 50) + 500 = 750 mn. Boken skiljer medvetet på investerat kapital exklusive goodwill (som mäter den underliggande verksamhetens kapitalproduktivitet) och inklusive goodwill (som mäter om bolaget faktiskt fick ut värde av det som betalades vid förvärv). Två olika frågör, två olika nämnare."
+          "content": "Investerat kapital är allt kapital som verksamheten binder: arbetande kapital (kundfordringar + lager − leverantörsskulder) plus nettofasta operativa tillgångar (fastigheter, maskiner, immateriella rättigheter som kapitaliserats). Räkneexempel: kundfordringar 180, lager 120, leverantörsskulder 50, nettofasta tillgångar 500. Investerat kapital = (180 + 120 − 50) + 500 = 750 mn. Boken skiljer medvetet på investerat kapital exklusive goodwill (som mäter den underliggande verksamhetens kapitalproduktivitet) och inklusive goodwill (som mäter om bolaget faktiskt fick ut värde av det som betalades vid förvärv). Två olika frågor, två olika nämnare."
         },
         {
           "type": "text",
@@ -334,7 +334,7 @@
         },
         {
           "type": "text",
-          "content": "Matematiskt kärna är value driver-formeln, som bygger på att fritt kassaflöde kan skrivas som FCF = NOPLAT × (1 − g/ROIC): tillväxten g kräver återinvestering i proportionen g/ROIC (varje krona nytt investerat kapital ger ROIC kronor i NOPLAT), och det som återstår är fritt. Satt in i en evighetsvärdering: V = NOPLAT × (1 − g/ROIC) / (WACC − g). Räkneexempel 1 — värdeskapande tillväxt: NOPLAT 100 mn, ROIC 20 procent, WACC 10 procent, g 4 procent. FCF = 100 × (1 − 0,04/0,20) = 100 × 0,8 = 80 mn. V = 80 / (0,10 − 0,04) = 80 / 0,06 = 1 333 mn. Jämför med nolltillväxt: 100 / 0,10 = 1 000 mn. Tillväxten skapade 333 mn värde. Räkneexempel 2 — värdeförstörande tillväxt: samma bolag men ROIC 8 procent. FCF = 100 × (1 − 0,04/0,08) = 50 mn. V = 50 / 0,06 = 833 mn — under nolltillväxtsvärdet 1 000 mn. Samma tillväxt, samma marknad, 167 mn förstörda, eftersom varje återinvesterad krona tjänär 8 procent medan kapitalet kostar 10."
+          "content": "Matematiskt kärna är value driver-formeln, som bygger på att fritt kassaflöde kan skrivas som FCF = NOPLAT × (1 − g/ROIC): tillväxten g kräver återinvestering i proportionen g/ROIC (varje krona nytt investerat kapital ger ROIC kronor i NOPLAT), och det som återstår är fritt. Satt in i en evighetsvärdering: V = NOPLAT × (1 − g/ROIC) / (WACC − g). Räkneexempel 1 — värdeskapande tillväxt: NOPLAT 100 mn, ROIC 20 procent, WACC 10 procent, g 4 procent. FCF = 100 × (1 − 0,04/0,20) = 100 × 0,8 = 80 mn. V = 80 / (0,10 − 0,04) = 80 / 0,06 = 1 333 mn. Jämför med nolltillväxt: 100 / 0,10 = 1 000 mn. Tillväxten skapade 333 mn värde. Räkneexempel 2 — värdeförstörande tillväxt: samma bolag men ROIC 8 procent. FCF = 100 × (1 − 0,04/0,08) = 50 mn. V = 50 / 0,06 = 833 mn — under nolltillväxtsvärdet 1 000 mn. Samma tillväxt, samma marknad, 167 mn förstörda, eftersom varje återinvesterad krona tjänar 8 procent medan kapitalet kostar 10."
         },
         {
           "type": "text",
@@ -547,7 +547,7 @@
       "num": 8,
       "minutes": 10,
       "title": "Terminal value — perpetuiteten som styr allt",
-      "intro": "I de flesta DCF-modeller ligger majoriteten av värdet efter prognosperioden. Detta kapitel behandlar terminal value med den respekt formeln förtjänär: perpetuitetslogiken, tillväxtgränsen mot BNP och de antaganden som avgör om din DCF är vetenskap eller science fiction.",
+      "intro": "I de flesta DCF-modeller ligger majoriteten av värdet efter prognosperioden. Detta kapitel behandlar terminal value med den respekt formeln förtjänar: perpetuitetslogiken, tillväxtgränsen mot BNP och de antaganden som avgör om din DCF är vetenskap eller science fiction.",
       "blocks": [
         {
           "type": "text",
@@ -659,7 +659,7 @@
             "EV-multipler tar hänsyn till utdelningen"
           ],
           "ratt": 1,
-          "tips": "Vad händer med P/E om bolaget lånär för att återköpå aktier — förändras verksamheten?"
+          "tips": "Vad händer med P/E om bolaget lånar för att återköpa aktier — förändras verksamheten?"
         },
         {
           "q": "ROE 15 procent, k_e 10 procent, g 3 procent. Vad är rättvis P/B?",
@@ -693,7 +693,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Bokens empiriska kärna brukar sammanfattas i en värdekarta: EV/investerat kapital ligger i tydligt samband med ROIC-spridningen över WACC. Bolag med ROIC nära eller under WACC handlas nära bytesvärdet på sitt kapital (EV/investerat kapital kring 1x) — marknaden betalar inte för maskiner som inte tjänär sin kapitalkostnad. Bolag med varaktig spread handlas vida över investerat kapital (mångfaldigt högre). Illustriativa nivåer ur McKinsey-typdata: en stabil spread på +5 till +10 procentenheter kombineras ofta med EV/investerat kapital kring 2–4x, medan toppkvartilar med både hög ROIC och lång varaktighet handlas vida högre. Exakta nivåer rör sig mellan konjunkturcykler — poängen är sambandets riktning och styrka: marknaden värderar spridning, inte tillväxt i sig."
+          "content": "Bokens empiriska kärna brukar sammanfattas i en värdekarta: EV/investerat kapital ligger i tydligt samband med ROIC-spridningen över WACC. Bolag med ROIC nära eller under WACC handlas nära bytesvärdet på sitt kapital (EV/investerat kapital kring 1x) — marknaden betalar inte för maskiner som inte tjänar sin kapitalkostnad. Bolag med varaktig spread handlas vida över investerat kapital (mångfaldigt högre). Illustriativa nivåer ur McKinsey-typdata: en stabil spread på +5 till +10 procentenheter kombineras ofta med EV/investerat kapital kring 2–4x, medan toppkvartilar med både hög ROIC och lång varaktighet handlas vida högre. Exakta nivåer rör sig mellan konjunkturcykler — poängen är sambandets riktning och styrka: marknaden värderar spridning, inte tillväxt i sig."
         },
         {
           "type": "text",
@@ -709,7 +709,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Värdekartans logik — observation, förklaring, AKM1-länk\",\"rader\":[[\"Observation i empirin\",\"Ekonomisk förklaring\",\"AKM1-länk\"],[\"EV/investerat kapital följer ROIC-spridningen\",\"Marknaden betalar för kapital som tjänär mer än det kostar\",\"V09 ROE, V10 skuldsättningsgrad (justerat)\"],[\"Tillväxt mean-reverterar snabbt\",\"Konkurrens, bas Effekter, mättnad\",\"V01/V02 tillväxt — episodisk, strukturellt begränsad\"],[\"Hög ROIC är trögrörlig hos moat-bolag\",\"Strukturella skydd håller spridningen uppe\",\"V13 patent, V14 varumärke, V15 nätverkseffekter, V17 avtal\"],[\"Snabbväxare utan spread handlas lågt\",\"Tillväxt under WACC-nivå förstör värde\",\"V19 kapitalförbrukning, V08 EBITDA-marginal\"],[\"Index svåra att slå\",\"Marknaden prissätter konsensus bra\",\"AKM1:s bayesianska omviktning mot rimlighetsprövning\"]]}"
+          "content": "{\"rubrik\":\"Värdekartans logik — observation, förklaring, AKM1-länk\",\"rader\":[[\"Observation i empirin\",\"Ekonomisk förklaring\",\"AKM1-länk\"],[\"EV/investerat kapital följer ROIC-spridningen\",\"Marknaden betalar för kapital som tjänar mer än det kostar\",\"V09 ROE, V10 skuldsättningsgrad (justerat)\"],[\"Tillväxt mean-reverterar snabbt\",\"Konkurrens, bas Effekter, mättnad\",\"V01/V02 tillväxt — episodisk, strukturellt begränsad\"],[\"Hög ROIC är trögrörlig hos moat-bolag\",\"Strukturella skydd håller spridningen uppe\",\"V13 patent, V14 varumärke, V15 nätverkseffekter, V17 avtal\"],[\"Snabbväxare utan spread handlas lågt\",\"Tillväxt under WACC-nivå förstör värde\",\"V19 kapitalförbrukning, V08 EBITDA-marginal\"],[\"Index svåra att slå\",\"Marknaden prissätter konsensus bra\",\"AKM1:s bayesianska omviktning mot rimlighetsprövning\"]]}"
         },
         {
           "type": "visuell",
@@ -730,7 +730,7 @@
             "Senaste årets stora tillväxtsprint"
           ],
           "ratt": 1,
-          "tips": "Vad är det marknaden betalar multipeln på — tillväxten i sig eller att kapitalet tjänär mer än det kostar, länge?"
+          "tips": "Vad är det marknaden betalar multipeln på — tillväxten i sig eller att kapitalet tjänar mer än det kostar, länge?"
         },
         {
           "q": "Vad gäller för tillväxt respektive ROIC enligt empirin?",
@@ -772,7 +772,7 @@
         },
         {
           "type": "text",
-          "content": "Förvärv är värdeskapandets högriskgren. Den som betalar en kontrollpremie — historiskt ofta 30–40 procent över börskursen på noterade mål — måste realisera synergier vars nuvärde överstiger premien. Räkneexempel: mål med EV 1 000 mn, köparen betalar 30 procent premium = 1 300 mn. Nu värdet av synergier (kostnadsbesparingar, intäktssynergier) är 400 mn. Nettovinsten för köparens aktieägare = 1 000 + 400 − 1 300 = +100 mn, medan säljarna fick 300 mn av synergivärdet. Sjunker det realiserade synergivärdet till 250 mn blir affären värdeförstörande med 50 mn. Bokens empiriska varning är därför sträng: stora diversifierande förvärv (de som inte ligger i kärnverksamheten och saknar strategisk logik utöver storlek) tenderar att förstöra värde — medan förvärv av konkurrenter eller i värdekedjan med konkreta synergier har bättre statistik. ESOP-incitamen tas i boken som ett kapitalstrukturverktyg i samma familj: de kan stärka värdeskapandet om de knyter ledningens beslut till långsiktiga kassaflöden — eller bli ren värdeutdelning om de belönär kursrörelser."
+          "content": "Förvärv är värdeskapandets högriskgren. Den som betalar en kontrollpremie — historiskt ofta 30–40 procent över börskursen på noterade mål — måste realisera synergier vars nuvärde överstiger premien. Räkneexempel: mål med EV 1 000 mn, köparen betalar 30 procent premium = 1 300 mn. Nu värdet av synergier (kostnadsbesparingar, intäktssynergier) är 400 mn. Nettovinsten för köparens aktieägare = 1 000 + 400 − 1 300 = +100 mn, medan säljarna fick 300 mn av synergivärdet. Sjunker det realiserade synergivärdet till 250 mn blir affären värdeförstörande med 50 mn. Bokens empiriska varning är därför sträng: stora diversifierande förvärv (de som inte ligger i kärnverksamheten och saknar strategisk logik utöver storlek) tenderar att förstöra värde — medan förvärv av konkurrenter eller i värdekedjan med konkreta synergier har bättre statistik. ESOP-incitamen tas i boken som ett kapitalstrukturverktyg i samma familj: de kan stärka värdeskapandet om de knyter ledningens beslut till långsiktiga kassaflöden — eller bli ren värdeutdelning om de belönar kursrörelser."
         },
         {
           "type": "insikt",
@@ -989,7 +989,7 @@
         },
         {
           "type": "insikt",
-          "content": "Memorera kartan genom tre frågör istället för tjugo etiketter: Hur mycket växer kassaflödet (V01/V02/V16)? Hur stort är överskottet och hur länge håller det (V07/V08/V09 med moat-familjen V13–V15/V17/V18)? Vad kostar kapitalet och vad får aktieägaren kvar (V10/V11/V19/V20, multipelfamiljen)? Allt annat är detaljer i dessa tre."
+          "content": "Memorera kartan genom tre frågor istället för tjugo etiketter: Hur mycket växer kassaflödet (V01/V02/V16)? Hur stort är överskottet och hur länge håller det (V07/V08/V09 med moat-familjen V13–V15/V17/V18)? Vad kostar kapitalet och vad får aktieägaren kvar (V10/V11/V19/V20, multipelfamiljen)? Allt annat är detaljer i dessa tre."
         },
         {
           "type": "tabell",
@@ -1052,7 +1052,7 @@
         },
         {
           "type": "text",
-          "content": "Specialfall ett: banker. Ett banks väsentliga skuld är inte finansiering utan råvara — insättare lånär och banker lånär ut som kärnverksamhet. FCFF/WACC-logiken bryter samman: investerat kapital blir svårbestämt och skulden gigantisk. Bokens väg är att värdera banker på ekvitetsnivå: dividendmodeller eller excess return-modellen (värde = eget kapital + nuvärde av framtida överavkastning på eget kapital), med fokus på ROE mot k_e (V09/V05-länken). Specialfall två: unga bolag. Innan kassaflödena är positiva är DCF möjlig men osäker — scenariorummet är själva analysen, och variablerna V02 (ARR), V19 (kapitalförbrukning) och V15 (nätverkseffekter) får bära tolkningen. Regel: för unga bolag är sannolikhetsviktade scenarier med brutal avkastningkrav ärligare än en enda punktskattning med små decimaler."
+          "content": "Specialfall ett: banker. Ett banks väsentliga skuld är inte finansiering utan råvara — insättare lånar och banker lånar ut som kärnverksamhet. FCFF/WACC-logiken bryter samman: investerat kapital blir svårbestämt och skulden gigantisk. Bokens väg är att värdera banker på ekvitetsnivå: dividendmodeller eller excess return-modellen (värde = eget kapital + nuvärde av framtida överavkastning på eget kapital), med fokus på ROE mot k_e (V09/V05-länken). Specialfall två: unga bolag. Innan kassaflödena är positiva är DCF möjlig men osäker — scenariorummet är själva analysen, och variablerna V02 (ARR), V19 (kapitalförbrukning) och V15 (nätverkseffekter) får bära tolkningen. Regel: för unga bolag är sannolikhetsviktade scenarier med brutal avkastningkrav ärligare än en enda punktskattning med små decimaler."
         },
         {
           "type": "text",

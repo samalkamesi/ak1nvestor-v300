@@ -1,0 +1,114 @@
+{
+ "ticker": "ERIC-B.ST",
+ "perVariabel": {
+  "V01": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen omsättningsserie i underlaget (serier.omsattning saknas); nuvärden: 5-års CAGR saknas %, TTM -6,1 % — vågklass kräver tidsserie. AKM1 V01: 1/5 p."
+  },
+  "V02": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "ARR (årliga återkommande intäkter) redovisas inte i BolagsNyckeltal — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V02: 0/5 p."
+  },
+  "V03": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Intäktsdiversifiering (segment/kundspridning) ingår inte i BolagsNyckeltal — kvalitativ AKM1-granskning. AKM1 V03: 0/5 p."
+  },
+  "V04": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Värderingens våg kräver en pris-/multiplerserie över tid — sådan finns inte i BolagsNyckeltal. Nuvärden som kontext: P/E 13,2, EV/EBIT 10,8. AKM1 V04: 4/5 p."
+  },
+  "V05": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "P/B som tidsserie saknas; nuvärde P/B 3,1 (Grahams ≥1,5-varning gäller egenkapitalmultipln). Vågklass kräver historik. AKM1 V05: 3/5 p."
+  },
+  "V06": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "EV/EBITDA-serie saknas; nuvärde 10,8, PEG 1,9, FCF-avkastning 9,7 % — vågklass kräver tidsserie. AKM1 V06: 3/5 p."
+  },
+  "V07": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Bruttovinst per år ingår inte i serier (fält finns ej) — nuvärde bruttomarginal 48,1 %; moat-fältens 5-årsdata: medel saknas %, spread saknas %. AKM1 V07: 3/5 p."
+  },
+  "V08": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "EBIT/EBITDA per år ingår inte i serier — nuvärde EBIT-marginal 12,5 %. Vågklass kräver tidsserie. AKM1 V08: 3/5 p."
+  },
+  "V09": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen resultat-/egenkapitalserie att härleda ROE-bana ur; nuvärde ROE 26,1 %, 5-årsmedel saknas % — vågklass kräver tidsserie. AKM1 V09: 4/5 p."
+  },
+  "V10": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Skuld per år ingår inte i serier — nuvärde skuld/eget kapital 0,38, räntetäckning saknas. Vågklass kräver tidsserie. AKM1 V10: 4/5 p."
+  },
+  "V11": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Omsättningstillgångar/kortfristiga skulder ingår inte i BolagsNyckeltal — klassas i AKM1:s manuella granskning. AKM1 V11: 0/5 p."
+  },
+  "V12": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen omsättningsserie; FCF-poskvartal/-år av 5: saknas — vågklass kräver tidsserie. AKM1 V12: 0/5 p."
+  },
+  "V13": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Patent & IP är kvalitativ och händelsebaserad — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V13: 0/5 p."
+  },
+  "V14": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Moat-fälten är 5-årsaggregat utan årsserie: bruttomarginalmedel saknas % med spread saknas % (låg spread = stadig vallgrav) — vågklass kräver tidsserie. AKM1 V14: 3/5 p."
+  },
+  "V15": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Nätverkseffekter är kvalitativa — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V15: 0/5 p."
+  },
+  "V16": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Produktlanseringar är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V16: 0/5 p."
+  },
+  "V17": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Avtal & partnerskap är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V17: 0/5 p."
+  },
+  "V18": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Regulatoriska katalysatorer är händelsebaserade — klassas i AKM1:s manuella granskning, inte ur tidsserier. AKM1 V18: 0/5 p."
+  },
+  "V19": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Ingen FCF-serie att läsa förbränningstakt ur; kontext: kassa räcker saknas månader vid förbränning, nyemissioner senaste 5 åren saknas st, FCF-pos perioder av 5: saknas — vågklass kräver tidsserie. AKM1 V19: 5/5 p."
+  },
+  "V20": {
+   "klass": "osatt",
+   "dynamik": "osatt",
+   "anteckning": "Återköpsblocket redovisar nuvärden utan årsserie: senaste året saknas mdr, minskning av aktieantalet saknas %, insiderköp senaste 6 mån 0 st — vågklass kräver aktieantalsserie över tid. AKM1 V20: 0/5 p."
+  }
+ },
+ "perHorisont": {
+  "mikro": "osatt",
+  "kort": "osatt",
+  "medellang": "osatt",
+  "lang": "osatt",
+  "mega": "osatt"
+ },
+ "totalText": "Telefonaktiebolaget LM Ericsson (publ): den fundamentala vågbilden är än så länge osatt — underlaget saknar tidsserier att läsa. Motorn gissar aldrig; med årsserier för omsättning, resultat, eget kapital och fritt kassaflöde växer vågrörelsen fram. En bild att komplettera med AKM1:s manuella granskning — inte en uppmaning att agera.",
+ "datum": "2026-09-03"
+}

@@ -1,0 +1,101 @@
+{
+  "skapad": "2026-09-03",
+  "projekt": "AK1A portföljforskning — steg 1: fundamental insamling (pass 1)",
+  "kontrakt": "src/lib/portfolj-forskning/typer.ts (BolagsNyckeltal)",
+  "insamlare": "verktyg/python/samla_nyckeltal.py",
+  "validerare": "verktyg/python/validera_univers.py",
+  "utdata": {
+    "univers": "data/portfolj-system/bolagsunivers.json",
+    "cacheMapp": "data/cache/ (fundamental-{TICKER}.json per bolag)",
+    "rapport": "data/rapporter/validera-univers-2026-09-03.md"
+  },
+  "branscher": [
+    {
+      "bransch": "teknik",
+      "bolag": ["MSFT", "GOOGL", "AAPL", "ERIC-B.ST", "NOKIA.HE", "SAP.DE", "SINCH.ST", "ASM.AS", "LOGN.SW", "KAMBI.ST"],
+      "urvalsmotivering": "Globala kvalitetsjättar (MSFT, GOOGL, AAPL) som moat-bas + nordisk telco/utrustning (Ericsson, Nokia) + europeisk mjukvara/halvledare (SAP, ASM) + svenska tillväxtbolag (Sinch, Kambi) för fundamentalspridning."
+    },
+    {
+      "bransch": "industri",
+      "bolag": ["ABB.ST", "ATCO-A.ST", "INDU-C.ST", "ALFA.ST", "SAND.ST", "SKF-B.ST", "ASSA-B.ST", "HEXA-B.ST", "ETN", "GE"],
+      "urvalsmotivering": "Sverigetyngt: OMXS-industrins kärna (ABB, Atlas Copco, Indutrade, Alfa Laval, Sandvik, SKF, Assa Abloy, Hexagon) + två USA-jättar (Eaton, GE) för djup dubbelkoll av källorna."
+    },
+    {
+      "bransch": "halso",
+      "bolag": ["AZN.ST", "NOVO-B.CO", "COLO-B.CO", "EKTA-B.ST", "GETI-B.ST", "JNJ", "LLY", "BSX", "FRE.DE", "CEVI.ST"],
+      "urvalsmotivering": "Nordisk life science-ryggrad (AstraZeneca, Novo Nordisk, Coloplast, Elekta, Getinge, CellaVision) + USA-storbolag (J&J, Lilly, Boston Scientific) + Fresenius. Mix av mega-cap-moat och svenska mellanstor."
+    },
+    {
+      "bransch": "konsument",
+      "bolag": ["HM-B.ST", "ESSITY-B.ST", "ELUX-B.ST", "VOLCAR-B.ST", "PG", "NKE", "MCD", "MC.PA", "CARL-B.CO", "ITX.MC"],
+      "urvalsmotivering": "Svensk detaljhandel/hemelektronik/bilar (H&M, Essity, Electrolux, Volvo Cars) + globala varumärkesjättar (P&G, Nike, McDonald's, LVMH, Carlsberg, Inditex) — cykliskt bredd spektrum."
+    },
+    {
+      "bransch": "fastighet",
+      "bolag": ["CAST.ST", "FABG.ST", "WALL-B.ST", "BALD-B.ST", "HUFV-A.ST", "CATE.ST", "NP3.ST", "DIOS.ST", "WIHL.ST", "PLD"],
+      "urvalsmotivering": "Nio OMXS-fastighetsbolag över segment (kontor, bostad, logistik, regionalt: Castellum, Fabege, Wallenstam, Balder, Hufvudstaden, Catena, NP3, Diös, Wihlborgs) + global logistik-REIT (Prologis). Navigering med NAV-proxy möjlig via bokfört EK."
+    },
+    {
+      "bransch": "finans",
+      "bolag": ["NDA-SE.ST", "SEB-A.ST", "SWED-A.ST", "SHB-A.ST", "INVE-B.ST", "LATO-B.ST", "ORES.ST", "JPM", "BRK-B", "GS"],
+      "urvalsmotivering": "De fyra stora nordiska bankerna + svenska investmentbolag (Investor, Latour, Öresund) med annan nyckeltalslogik + USA-finans (JPM, Berkshire, Goldman). OBS: skuld/EK och ROIC sätts till null för branschen (metodiskt motiverat)."
+    },
+    {
+      "bransch": "material",
+      "bolag": ["BOL.ST", "SSAB-B.ST", "BILL.ST", "HOLM-B.ST", "SCA-B.ST", "STERV.HE", "UPM.HE", "NHY.OL", "YAR.OL", "NEM"],
+      "urvalsmotivering": "Nordisk gruv- och skogsindustri (Boliden, SSAB, Billerud, Holmen, SCA, Stora Enso, UPM, Hydro, Yara) + världens största guldproducent (Newmont) — råvarucykel-representation."
+    },
+    {
+      "bransch": "energi",
+      "bolag": ["EQNR.OL", "AKRBP.OL", "VAR.OL", "XOM", "CVX", "SHEL", "RWE.DE", "IBE.MC", "ENEL.MI", "FORTUM.HE"],
+      "urvalsmotivering": "Nordisk olja/gas (Equinor, Aker BP, Vår Energi) + supermajors (Exxon, Chevron, Shell) + europeiska el-/förnyelsebolag (RWE, Iberdrola, Enel, Fortum) för spridning fossilt vs reglerat."
+    },
+    {
+      "bransch": "kommunikation",
+      "bolag": ["TELIA.ST", "TEL2-A.ST", "VPLAY-B.ST", "MTG-B.ST", "META", "NFLX", "DIS", "VZ", "T", "WBD"],
+      "urvalsmotivering": "Nordisk telekom/media med fundamentalspridning (stabila Telia/Tele2 vs omstrukturerade Viaplay/MTG) + USA-mediejättar (Meta, Netflix, Disney, Verizon, AT&T, WBD)."
+    },
+    {
+      "bransch": "tillvaxt",
+      "bolag": ["NVDA", "TSLA", "AMD", "PLTR", "SHOP", "SE", "PCELL.ST", "TRUE-B.ST", "KINV-B.ST", "PSNY"],
+      "urvalsmotivering": "Högtillväxtsegmentet (Nvidia, Tesla, AMD, Palantir, Shopify, Sea) + svensk tillväxt (PowerCell, Truecaller, Kinnevik) + Polestar som förbränningsfall — maximal lönsamhetsspridning för V19-test av brännrate."
+    }
+  ],
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "roll": "Källa A — primär fundamentaldata",
+      "endpoint": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/{ticker} (crumb-autentisering enligt analys-motorn)",
+      "moduler": "price, summaryDetail, defaultKeyStatistics, financialData, incomeStatementHistory, earningsTrend, netSharePurchaseActivity",
+      "ger": "pris, marknadsvärde, värderingsmultipar, marginaler, ROE, skuld/EK, kassa/skuld, konsenstillväxt, 4 räkenskapsårs omsättning/resultat, insiderköp (6 mån)"
+    },
+    {
+      "namn": "MarketStack",
+      "roll": "Källa B — oberoende dubbelkoll av prisberoende nyckeltal",
+      "endpoint": "https://api.marketstack.com/v1/eod/latest (batchat, enbart kurser ≤7 dagar gamla)",
+      "ger": "slutkurser som korsvaliderar pris, P/E, P/B och marknadsvärde; avvikelse >15 % loggas i postens notering",
+      "begransning": "fundamentals-endpointen (v1/fundamentals) svarar HTTP 404 på aktuell plan — dokumenterad fallback, ingen fundamental dubbelkoll från källa B"
+    }
+  ],
+  "kandaBegransningar": [
+    "Yahoo ger endast 4 räkenskapsårs resultaträkningshistorik (ej 5) — CAGR/serier bygger på 4 år och det noteras per post.",
+    "Yahoo har tömt balansräknings- och kassaflödeshistoriken (tomma poster även för USA-bolag) — därför blir NCAV, FCF-serier, fcfPositivaSenaste5, ROE-medel 5 år, bruttomarginal-medel 5 år och räntetäckning null (Yahoo stoppar stubbar med raw=0 som inte räknas som data).",
+    "Sju bolag saknar även resultaträkningshistorik hos Yahoo (ERIC-B.ST, GE, GS, INVE-B.ST, ITX.MC, JPM, PLD) — deras serier/CAGR är null; ersättning eller manuell komplettering är nästa steg.",
+    "MarketStack fundamentals kräver högre plan (404) — dubbelkollen täcker bara pris/PE/PB/marknadsvärde.",
+    "MarketStack saknar färska kurser (≤7 dagar) för de flesta icke-USA-börser — XSTO/XHEL/XOSL-data är från 2023 och avvisas av färskhetskravet; dubbelkollen gäller främst USA-bolag.",
+    "Återköpsbelopp (aterkop.senasteArMdr) och aktieantalshistorik (andelUtestande, nyemissionerSenaste5ar) finns hos ingen av källorna — null i pass 1; insiderkopSenaste6man däremot befolkad (Yahoo netSharePurchaseActivity.buyInfoCount, 0 = inga registrerade köp).",
+    "Golv: NCAV kan aldrig beräknas (omsättningstillgångar saknas) — golv är 'osatt' för alla utom fastighetsbranschen som får 'tillgangstung' med bokfört EK/aktie som dokumenterad NAV-proxy.",
+    "ROIC är en dokumenterad approximation (EBIT före skatt / (skuld + bokfört EK)) och sätts till null för finansbranschen där måttet är meningslöst.",
+    "Kända källavvikelser >15 % (logga, ej löst): EQNR.OL 89 % (misstanke: MarketStack XOSL-kurs i USD vs Yahoo NOK — overifierad hypotes), GOOGL 52 %, BRK-B 34 %, NKE 19 % (alla marknadsvärde — sannolikt olika aktieantalsunderlag mellan källorna).",
+    "Tickerförändringar vid insamlingstillfället: ELLI.ST→EKTA-B.ST, GETI.ST→GETI-B.ST, CVIS.ST→CEVI.ST, TEL2.ST→TEL2-A.ST, TRUEC.ST→TRUE-B.ST (Yahoo sök-endpoint användes för att hitta gällande symboler).",
+    "Land = börsens listningsland (AZN.ST → Sverige trots brittiskt huvudkontor); valuta = handelsvaluta på börsen."
+  ],
+  "sakerhet": {
+    "krav": "Mimosa L2-granskning — SSRF- och path-traversal-försvar (blockerande)",
+    "ssrf": "Alla nätanrop passerar kontrollera_host(): endast https, värdvitlista (query1/query2.finance.yahoo.com, fc.yahoo.com, api.marketstack.com), DNS-uppslag via socket.getaddrinfo FÖRE varje enskilt anrop (även retries — stoppar DNS-rebinding) där privata/loopback/link-local/reserverade/multicast-adresser avvisas (10.x, 172.16-31.x, 192.168.x, 127.x, 169.254.x inkl. 169.254.169.254, ::1, fc00::/7, fe80::/10).",
+    "redirect": "Egen opener (_AvslaRedirect) avslår alla 301/302-omdirigeringar — ingen Location följds någonsin.",
+    "pathTraversal": "Ticker saneras till [A-Za-z0-9._-] innan filnamn byggs ('..' och punktprefix avvisas explicit, övriga tecken ersätts med '_'); alla skrivningar/läsningar verifieras med os.path.realpath mot repo-rot/cache-rot. Samma kontroll i validera_univers.py.",
+    "omtest": "Avvisade: http-schema, ftp-schema, icke-vitlistad värd, tickers med '../'-traversal och dolda punktnamn. Godkända: vitlistade https-värdar med publika IP, sanerade filnamn. Live-omtest MSFT genom hela pipelinen: OK."
+  },
+  "policy": "AK1A Research Lab — forskningsbaserad finansutbildning. Allt ovan är data och dokumentation. ALDRIG investeringsråd."
+}

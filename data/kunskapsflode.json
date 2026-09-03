@@ -1,0 +1,97 @@
+{
+  "_kommentar": "Kunskapsflödet — uppdateras av teamet vid varje större release. Poster sorterade senaste datum först; max 15 poster. kategori: system | forskning | kurs | verktyg. lank = intern sökväg (börjar med /). Läs av src/components/ak1a/kunskaps-flode.tsx (importeras direkt — resolveJsonModule).",
+  "uppdaterad": "2026-09-03",
+  "poster": [
+    {
+      "datum": "2026-09-03",
+      "rubrik": "Nyhetscentralen är öppen — ditt nyhetsrum",
+      "text": "Alla nyheter samlade i ett rum: dina aktier, bevakningslistan, ämneskanaler och egna RSS-flöden — intelligellt rangordnade efter påverkan med pedagogiska AK1A-noteringar.",
+      "lank": "/nyheter",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "AI-Mentorn har nu minne",
+      "text": "Mentorn minns era senaste samtal (60 turer sparas, 12 skickas med) — frågorna kan bygga vidare på det ni redan talat om, som en riktig handledare.",
+      "lank": "/min-sida",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "Transparens-sidan — din data, redovisad enligt lagen",
+      "text": "Hela personuppgiftsbehandlingen redovisad enligt dataskyddsförordningens artikel 13: vad vi samlar in, varför, hur länge och dina åtta rättigheter.",
+      "lank": "/transparens",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "Portföljforskningen + korstabellen",
+      "text": "Välj risknivå — konservativ, balanserad eller tillväxt — så forskar motorn fram en portfölj. Korstabellen visar 22 kolumner: kategoripoäng, vågceller, dynamikpilar och golv.",
+      "lank": "/portfolj-forskning",
+      "kategori": "verktyg"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "AKM2-forskningen pågår",
+      "text": "Nio nya variabler (V21–V29: ROIC, FCF-avkastning, räntetäckning med flera), dynamikmodulens Φ-tabell och projektionsinvarianten — AKM2 degraderar matematiskt till AKM1. 100 bolag redan bedömda.",
+      "lank": "/portfolj-forskning",
+      "kategori": "forskning"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "4 679 språkrättningar — hela biblioteket genomgånget",
+      "text": "Sex agenter gick igenom alla 333 kurser, 2 916 kapitel och 8 211 quiz-frågor: vågö, mallfel och dubbelord rättade — och en oberoende huvudverifiering gav grönt ljus.",
+      "lank": "/kurser",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-03",
+      "rubrik": "Prenumerationssidan publicerad",
+      "text": "Tre nivåer med priser inklusive moms, Fas 2/3-rabatten dras automatiskt — och den juridiska biten med ångerrätt på plats.",
+      "lank": "/prenumeration",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "Morgon-briefingen — kommandocentralens första kaffe",
+      "text": "Ett personligt tidningskort överst på Min Sida: vågkartan, dagens pass, nästa kurs och streak-elden — utskriftsvänligt, direkt på morgonen.",
+      "lank": "/min-sida",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "Certifikat A–D — ditt intyg på kompetens",
+      "text": "Klara kurser, samla XP och tjäna certifikatet — betyget sätts efter din nivå och logotypen pryder intyget.",
+      "lank": "/certifikat",
+      "kategori": "system"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "333 kurser och 8 211 quiz-frågor i biblioteket",
+      "text": "Från bokföringens grunder till AK1TS våglära — varje kurs avslutas med quiz som prickar kunskapsluckorna.",
+      "lank": "/kurser",
+      "kategori": "kurs"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "103 Bokmaster-kurser — mästarna i original",
+      "text": "Från The Intelligent Investor till Poor Charlie's Almanack: hela bokkanon som kurser, kapitel för kapitel.",
+      "lank": "/kurser",
+      "kategori": "kurs"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "Vågfundamentet — 20×5-matrisen per aktie",
+      "text": "Se kalkylatorns 20 fundamentalvariabler som tidsserier med egen riktning — fundamentalvågor per aktie och portfölj.",
+      "lank": "/vagfundament",
+      "kategori": "verktyg"
+    },
+    {
+      "datum": "2026-09-01",
+      "rubrik": "Repetera — 140 flashcards med SM-2",
+      "text": "Glömskekurvan arbetar åt dig: korten återkommer precis när du behöver dem, i AI-mentorn.",
+      "lank": "/min-sida",
+      "kategori": "system"
+    }
+  ]
+}

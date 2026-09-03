@@ -1,0 +1,76 @@
+{
+  "ticker": "INVE-B.ST",
+  "namn": "Investor AB (publ)",
+  "bransch": "finans",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/INVE-B.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 410.75,
+  "marknadsKapitalMdr": null,
+  "tillvaxt": {
+    "omsattningCAGR5ar": null,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 1.17,
+    "prognosTillvaxt": null
+  },
+  "lonksamhet": {
+    "roe": 0.2725,
+    "roic": null,
+    "bruttoMarginal": 0.8944,
+    "ebitMarginal": 0.887,
+    "nettoMarginal": 0.8007,
+    "fcfMarginal": 0.5061
+  },
+  "stabilitet": {
+    "skuldEgenkapital": null,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 4.792,
+    "pb": 1.159,
+    "evEbit": 4.644,
+    "peg": 5.08,
+    "fcfYield": null,
+    "egenKapitalMultipl": 1.159
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [],
+    "omsattning": [],
+    "resultat": [],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "resultaträkningshistorik saknas hos källan — serier/CAGR null; finansbolag: roic/skuld-EK ej meningsfullt jämförbara — null; rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

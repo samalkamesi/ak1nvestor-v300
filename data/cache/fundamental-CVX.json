@@ -1,0 +1,91 @@
+{
+  "ticker": "CVX",
+  "namn": "Chevron Corporation",
+  "bransch": "energi",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/CVX",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 211.78,
+  "marknadsKapitalMdr": 415.428,
+  "tillvaxt": {
+    "omsattningCAGR5ar": -0.0844,
+    "resultatCAGR5ar": -0.2974,
+    "omsattningTillvaxtTTM": 0.535,
+    "prognosTillvaxt": -0.1691
+  },
+  "lonksamhet": {
+    "roe": 0.1223,
+    "roic": 0.2017,
+    "bruttoMarginal": 0.4427,
+    "ebitMarginal": 0.2187,
+    "nettoMarginal": 0.0983,
+    "fcfMarginal": 0.1048
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.1896,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 23
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 20.363,
+    "pb": 2.188,
+    "evEbit": 9.821,
+    "peg": 0.93,
+    "fcfYield": 0.0528,
+    "egenKapitalMultipl": 2.188
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      246252000000.0,
+      200949000000.0,
+      202792000000.0,
+      189031000000.0
+    ],
+    "resultat": [
+      35465000000.0,
+      21369000000.0,
+      17661000000.0,
+      12299000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

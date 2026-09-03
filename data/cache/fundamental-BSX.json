@@ -1,0 +1,91 @@
+{
+  "ticker": "BSX",
+  "namn": "Boston Scientific Corporation",
+  "bransch": "halso",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/BSX",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 48.37,
+  "marknadsKapitalMdr": 70.099,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.1654,
+    "resultatCAGR5ar": 0.6527,
+    "omsattningTillvaxtTTM": 0.075,
+    "prognosTillvaxt": 0.0392
+  },
+  "lonksamhet": {
+    "roe": 0.1534,
+    "roic": 0.1279,
+    "bruttoMarginal": 0.6919,
+    "ebitMarginal": 0.229,
+    "nettoMarginal": 0.175,
+    "fcfMarginal": 0.1168
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.5015,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 19.426,
+    "pb": 2.807,
+    "evEbit": 17.146,
+    "peg": 0.67,
+    "fcfYield": 0.035,
+    "egenKapitalMultipl": 2.807
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      12682000000.0,
+      14240000000.0,
+      16747000000.0,
+      20074000000.0
+    ],
+    "resultat": [
+      642000000.0,
+      1570000000.0,
+      1853000000.0,
+      2898000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

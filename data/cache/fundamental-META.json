@@ -1,0 +1,91 @@
+{
+  "ticker": "META",
+  "namn": "Meta Platforms, Inc.",
+  "bransch": "kommunikation",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/META",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 592.85,
+  "marknadsKapitalMdr": 1510.289,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.1989,
+    "resultatCAGR5ar": 0.3761,
+    "omsattningTillvaxtTTM": 0.28,
+    "prognosTillvaxt": 0.122
+  },
+  "lonksamhet": {
+    "roe": 0.2985,
+    "roic": 0.2349,
+    "bruttoMarginal": 0.8175,
+    "ebitMarginal": 0.3483,
+    "nettoMarginal": 0.2983,
+    "fcfMarginal": 0.0944
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.43,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 34
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 21.788,
+    "pb": 5.783,
+    "evEbit": 19.277,
+    "peg": 0.77,
+    "fcfYield": 0.0143,
+    "egenKapitalMultipl": 5.783
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      116609000000.0,
+      134902000000.0,
+      164501000000.0,
+      200966000000.0
+    ],
+    "resultat": [
+      23200000000.0,
+      39098000000.0,
+      62360000000.0,
+      60458000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

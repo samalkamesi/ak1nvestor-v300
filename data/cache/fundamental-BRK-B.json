@@ -1,0 +1,91 @@
+{
+  "ticker": "BRK-B",
+  "namn": "Berkshire Hathaway Inc.",
+  "bransch": "finans",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/BRK-B",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 505.24,
+  "marknadsKapitalMdr": 1081.572,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.0713,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 0.1,
+    "prognosTillvaxt": -0.0027
+  },
+  "lonksamhet": {
+    "roe": 0.1212,
+    "roic": null,
+    "bruttoMarginal": 0.3033,
+    "ebitMarginal": 0.3256,
+    "nettoMarginal": 0.223,
+    "fcfMarginal": 0.1871
+  },
+  "stabilitet": {
+    "skuldEgenkapital": null,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 12.625,
+    "pb": 0.001,
+    "evEbit": -1.868,
+    "peg": 10.06,
+    "fcfYield": 0.0665,
+    "egenKapitalMultipl": 0.001
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      302089000000.0,
+      364482000000.0,
+      371433000000.0,
+      371444000000.0
+    ],
+    "resultat": [
+      -22819000000.0,
+      96223000000.0,
+      88995000000.0,
+      66968000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); resultatCAGR osatt: negativt/noll resultat basåret; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); finansbolag: roic/skuld-EK ej meningsfullt jämförbara — null; rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; AVVIKELSE>15% marknadsvärde: Yahoo 1082 vs MarketStack 711.4 (34%)"
+}

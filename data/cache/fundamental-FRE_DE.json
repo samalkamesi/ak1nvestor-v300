@@ -1,0 +1,91 @@
+{
+  "ticker": "FRE.DE",
+  "namn": "Fresenius SE & Co. KGaA",
+  "bransch": "halso",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/FRE.DE",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 45.04,
+  "marknadsKapitalMdr": null,
+  "tillvaxt": {
+    "omsattningCAGR5ar": -0.1757,
+    "resultatCAGR5ar": -0.027,
+    "omsattningTillvaxtTTM": 0.052,
+    "prognosTillvaxt": 0.0652
+  },
+  "lonksamhet": {
+    "roe": 0.0829,
+    "roic": null,
+    "bruttoMarginal": 0.2535,
+    "ebitMarginal": 0.1063,
+    "nettoMarginal": 0.0654,
+    "fcfMarginal": 0.0735
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.5598,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 16.26,
+    "pb": 1.288,
+    "evEbit": 14.553,
+    "peg": 0.79,
+    "fcfYield": null,
+    "egenKapitalMultipl": 1.288
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      40840000000.0,
+      22299000000.0,
+      21833000000.0,
+      22873000000.0
+    ],
+    "resultat": [
+      1372000000.0,
+      -594000000.0,
+      471000000.0,
+      1264000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

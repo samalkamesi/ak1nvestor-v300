@@ -5,7 +5,7 @@
   "chapterCount": 14,
   "totalMinutes": 184,
   "title": "Zero to One — Peter Thiel: KOMPLETT",
-  "summary": "Zero to One: Notes on Startups, or How to Build the Future (2014) är börsens mest kompakta teori om var exponentiellt värde skapas. Peter Thiel — filosof och jurist från Stanford, grundare av PayPal (sålt till eBay för 1,5 miljarder dollar 2002), medgrundare av Palantir, första externa investerare i Facebook (500 000 dollar för drygt tio procent 2004) och partner i Founders Fund — skrev boken tillsammans med Blake Masters på basis av föreläsningsanteckningar från hans Stanford-kurs CS183 Startup våren 2012. Tesen är radikal i sin enkelhet: verklig utveckling är att gå från 0 till 1 — skapa något helt nytt — medan globalisering och skalning bara kopierar det som redan finns, från 1 till n. Konkurrens utplånär vinster; monopol — byggda på proprietär teknik, nätverkseffekter, skalfördelar och varumärke — skapar dem. Framtiden tillhör den som planerar den: bestämd optimism, potenslagens logik och hemligheter ingen annan jagar. Kursen, katalogkod bk-029, översätter bokens fjorton kapitel till investerarens språk: hur AKM1:s tillväxtvariabler (V01–V02), marginaler (V07–V08), stabilitet (V12) och moat-block (V13–V15) ska läsas som en enda 0-till-1-fråga — och hur potenslagen ska styra positionernas storlek i AK1A:s fem tidshorisonter.",
+  "summary": "Zero to One: Notes on Startups, or How to Build the Future (2014) är börsens mest kompakta teori om var exponentiellt värde skapas. Peter Thiel — filosof och jurist från Stanford, grundare av PayPal (sålt till eBay för 1,5 miljarder dollar 2002), medgrundare av Palantir, första externa investerare i Facebook (500 000 dollar för drygt tio procent 2004) och partner i Founders Fund — skrev boken tillsammans med Blake Masters på basis av föreläsningsanteckningar från hans Stanford-kurs CS183 Startup våren 2012. Tesen är radikal i sin enkelhet: verklig utveckling är att gå från 0 till 1 — skapa något helt nytt — medan globalisering och skalning bara kopierar det som redan finns, från 1 till n. Konkurrens utplånar vinster; monopol — byggda på proprietär teknik, nätverkseffekter, skalfördelar och varumärke — skapar dem. Framtiden tillhör den som planerar den: bestämd optimism, potenslagens logik och hemligheter ingen annan jagar. Kursen, katalogkod bk-029, översätter bokens fjorton kapitel till investerarens språk: hur AKM1:s tillväxtvariabler (V01–V02), marginaler (V07–V08), stabilitet (V12) och moat-block (V13–V15) ska läsas som en enda 0-till-1-fråga — och hur potenslagen ska styra positionernas storlek i AK1A:s fem tidshorisonter.",
   "minutes": 13,
   "xp": 2000,
   "level": "",
@@ -52,7 +52,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Bokens fjorton kapitel i fem block — och AK1A-mappningen\",\"rader\":[[\"Block\",\"Kapitel\",\"Kärna\",\"AKM1-koppling\"],[\"Diagnos\",\"1–3\",\"0-till-1 mot 1-till-n; dot-com-lärdomar\",\"V01 art av tillväxt; sentimentrensning\"],[\"Monopol\",\"4–5\",\"konkurrens utplånär vinster; fyra moat-väggar\",\"V07–V08 marginaler; V13–V15 moat\"],[\"Tid och kapital\",\"6–8\",\"hållbarhet; planering; potenslagen\",\"V12 stabilitet; positionstorlek; V04–V06 horisont\"],[\"Organisation\",\"9–12\",\"hemligheter; grundvall; kultur; distribution\",\"tes och alpha; V17 incitament; V19 kapitalförbränning\"],[\"Framtid\",\"13–14\",\"komplementaritet; sju frågor; syntes\",\"AI-katalys (V18); komplett bolagskoll\"]]}"
+          "content": "{\"rubrik\":\"Bokens fjorton kapitel i fem block — och AK1A-mappningen\",\"rader\":[[\"Block\",\"Kapitel\",\"Kärna\",\"AKM1-koppling\"],[\"Diagnos\",\"1–3\",\"0-till-1 mot 1-till-n; dot-com-lärdomar\",\"V01 art av tillväxt; sentimentrensning\"],[\"Monopol\",\"4–5\",\"konkurrens utplånar vinster; fyra moat-väggar\",\"V07–V08 marginaler; V13–V15 moat\"],[\"Tid och kapital\",\"6–8\",\"hållbarhet; planering; potenslagen\",\"V12 stabilitet; positionstorlek; V04–V06 horisont\"],[\"Organisation\",\"9–12\",\"hemligheter; grundvall; kultur; distribution\",\"tes och alpha; V17 incitament; V19 kapitalförbränning\"],[\"Framtid\",\"13–14\",\"komplementaritet; sju frågor; syntes\",\"AI-katalys (V18); komplett bolagskoll\"]]}"
         },
         {
           "type": "utmaning",
@@ -115,7 +115,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-översättningen är kursens första stora brygga. V01 Försäljningstillväxt ska inte bara mätas i procent utan klassas i art: är tillväxten 0-till-1 (en marknad som växer för att den är ny, med bolaget som definierande leverantör) eller 1-till-1-n (en modell som rullas ut på marknader där samma modell redan finns)? Den första arten förtjänär premium i V04–V06 eftersom tillväxten är strukturell och svår att konkurrera bort; den andra är i grunden cyklisk medvind och ska köpas cykliskt billigt. Kombinationen att leta: 0-till-1-marknad plus återkommande intäkter (V02) — en skapad marknad där kunden betalar varje månad är den starkaste V01-karaktär som finns i hela modellen."
+          "content": "AKM1-översättningen är kursens första stora brygga. V01 Försäljningstillväxt ska inte bara mätas i procent utan klassas i art: är tillväxten 0-till-1 (en marknad som växer för att den är ny, med bolaget som definierande leverantör) eller 1-till-1-n (en modell som rullas ut på marknader där samma modell redan finns)? Den första arten förtjänar premium i V04–V06 eftersom tillväxten är strukturell och svår att konkurrera bort; den andra är i grunden cyklisk medvind och ska köpas cykliskt billigt. Kombinationen att leta: 0-till-1-marknad plus återkommande intäkter (V02) — en skapad marknad där kunden betalar varje månad är den starkaste V01-karaktär som finns i hela modellen."
         },
         {
           "type": "insikt",
@@ -186,7 +186,7 @@
         },
         {
           "type": "text",
-          "content": "För AK1A blir kapitlet en metodregel i tre steg. Ett — rensa V01 för sentiment: tillväxtprognoser skrivna i euforins toppår ska diskonteras, och tillväxtvärderingar i panikens botten ska granskas för kassarika överlevare snarare än värda tillgångar. Två — leta efter den överkorrigerade lärdomen: varje krasch lämnar en ortodoxi som förbjuder något som faktiskt fungerar (efter 2000: att planera, att nischa, att sälja) — den som identifierar förbudet kan köpå det förbjudna billigt. Tre — var paranoid på rätt sätt: paranoia är ett dåligt planeringsverktyg men ett bra riskverktyg; fråga inte hur undviker jag att bli lurad igen, utan vad är sant oavsett humöret — det är frågan som driver både bra bolag och bra analyser."
+          "content": "För AK1A blir kapitlet en metodregel i tre steg. Ett — rensa V01 för sentiment: tillväxtprognoser skrivna i euforins toppår ska diskonteras, och tillväxtvärderingar i panikens botten ska granskas för kassarika överlevare snarare än värda tillgångar. Två — leta efter den överkorrigerade lärdomen: varje krasch lämnar en ortodoxi som förbjuder något som faktiskt fungerar (efter 2000: att planera, att nischa, att sälja) — den som identifierar förbudet kan köpa det förbjudna billigt. Tre — var paranoid på rätt sätt: paranoia är ett dåligt planeringsverktyg men ett bra riskverktyg; fråga inte hur undviker jag att bli lurad igen, utan vad är sant oavsett humöret — det är frågan som driver både bra bolag och bra analyser."
         },
         {
           "type": "insikt",
@@ -232,7 +232,7 @@
           "q": "Hur använder kursen den överkorrigerade lärdomen praktiskt?",
           "alternativ": [
             "Genom att alltid göra motsatsen mot marknadens konsensus",
-            "Genom att identifiera vad en krasch förbjudit — som faktiskt fungerar — och köpå det förbjudna billigt",
+            "Genom att identifiera vad en krasch förbjudit — som faktiskt fungerar — och köpa det förbjudna billigt",
             "Genom att undvika alla sektorer som kraschat",
             "Genom att bara investera i statsobligationer efter en krasch"
           ],
@@ -269,7 +269,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Kör monopol-testet på ditt största innehav: skriv marknadsdefinitionen ur kundens perspektiv — vilka faktiska alternativ finns, inklusive att inte köpå alls? — uppskatta bolagets andel av den marknaden och det närmaste substitutets prisskillnad. Slutsatsen i två rader: undkommer bolaget konkurrensen, och vad händer med V07–V08 om tre välkapitaliserade utmanare går in imorgon? Om svaret känns obehagligt har testet gjort sitt jobb — det är nämligen samma fråga marknaden ställer nästa nedgång."
+          "content": "Kör monopol-testet på ditt största innehav: skriv marknadsdefinitionen ur kundens perspektiv — vilka faktiska alternativ finns, inklusive att inte köpa alls? — uppskatta bolagets andel av den marknaden och det närmaste substitutets prisskillnad. Slutsatsen i två rader: undkommer bolaget konkurrensen, och vad händer med V07–V08 om tre välkapitaliserade utmanare går in imorgon? Om svaret känns obehagligt har testet gjort sitt jobb — det är nämligen samma fråga marknaden ställer nästa nedgång."
         },
         {
           "type": "visuell",
@@ -399,7 +399,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-översättningen är rak. V12 intäktsstabilitet är last-mover-variabeln: bolag som äger sin marknad har stabila intäkter över konjunkturer eftersom kunderna saknar substitut och switch-kostnaderna bär; bolag i andelskamper har V12-läsningar som svänger med reklambudgetar och rabatter. Värderingshorisonten: ett bolag som kan argumenteras hålla i tio år förtjänär lång duration i V04–V06 — dess kassaflöden ligger i framtiden och multiplarna får bära dem; ett bolag med oklar hållbarhet ska värderas på nuet (uti-delningar, fri kassa, tillgångar) och aldrig på avlägsna prognoser. Och i AK1A:s fem tidshorisonter är last-mover-frågan meningsfull först på de längsta: på de kortaste är hållbarhet brus kring momentum; den som hävdar tioårshållbarhet som köpargument på en tremånadershorisont blandar ihop sina klockor."
+          "content": "AKM1-översättningen är rak. V12 intäktsstabilitet är last-mover-variabeln: bolag som äger sin marknad har stabila intäkter över konjunkturer eftersom kunderna saknar substitut och switch-kostnaderna bär; bolag i andelskamper har V12-läsningar som svänger med reklambudgetar och rabatter. Värderingshorisonten: ett bolag som kan argumenteras hålla i tio år förtjänar lång duration i V04–V06 — dess kassaflöden ligger i framtiden och multiplarna får bära dem; ett bolag med oklar hållbarhet ska värderas på nuet (uti-delningar, fri kassa, tillgångar) och aldrig på avlägsna prognoser. Och i AK1A:s fem tidshorisonter är last-mover-frågan meningsfull först på de längsta: på de kortaste är hållbarhet brus kring momentum; den som hävdar tioårshållbarhet som köpargument på en tremånadershorisont blandar ihop sina klockor."
         },
         {
           "type": "insikt",
@@ -436,7 +436,7 @@
             "Att man ska vänta tills en marknad är mättad innan man går in",
             "Att den förste alltid vinner",
             "Att det är bättre att vara den siste som gör något avgörande på en marknad — med de varaktigaste vallgravarna — än den förste som sedan slås ut",
-            "Att man ska köpå aktier i mogna bolag"
+            "Att man ska köpa aktier i mogna bolag"
           ],
           "ratt": 2,
           "tips": "Vad hände med Friendster och Myspace — och vem byggde den djupaste vallgraven?"
@@ -537,7 +537,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens mest osentimentala konsekvens gäller urvalet: den som förstår potenslagen slutar leta efter bra bolag och börjar leta efter bolag som kan bli kategorins definierande monopol — ty endast de har svansarnas form. Senare forskning har bekräftat strukturen på börsen: Bessembinders studie av amerikanska aktier sedan 1926 fann att knappt fem procent av bolagen står för hela nettovärdesskapandet över statsobligationer — att index fungerar beror alltså inte på att de flesta bolag är bra, utan på att genomsnittet innehåller en svans av exceptionella bolag. Det är samma fenomen Thiel beskriver från riskkapitalbordet, flyttat till börsens alla aktörer — och det är därför AKM1:s moat-frågör är hela katalogens kärna: de är svansjägarens urvalskriterier."
+          "content": "Bokens mest osentimentala konsekvens gäller urvalet: den som förstår potenslagen slutar leta efter bra bolag och börjar leta efter bolag som kan bli kategorins definierande monopol — ty endast de har svansarnas form. Senare forskning har bekräftat strukturen på börsen: Bessembinders studie av amerikanska aktier sedan 1926 fann att knappt fem procent av bolagen står för hela nettovärdesskapandet över statsobligationer — att index fungerar beror alltså inte på att de flesta bolag är bra, utan på att genomsnittet innehåller en svans av exceptionella bolag. Det är samma fenomen Thiel beskriver från riskkapitalbordet, flyttat till börsens alla aktörer — och det är därför AKM1:s moat-frågor är hela katalogens kärna: de är svansjägarens urvalskriterier."
         },
         {
           "type": "text",
@@ -549,7 +549,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Normalfördelning mot potenslag — två världar, två strategier\",\"rader\":[[\"Dimension\",\"Normalfördelning\",\"Potenslag\"],[\"Utfall\",\"symmetriska kring medelvärde\",\"små antal bär nästan allt\"],[\"Var den gäller\",\"korta horisonter, brus\",\"långa horisonter, värdeskapande\"],[\"Strategi\",\"variaskontroll, bredd\",\"svansjakt, urval, koncentration\"],[\"Misslyckande\",\"underskatta sannolika svängar\",\"köpå medelvärden till svanspriser\"],[\"AK1A-översättning\",\"kortsiktig risk (vinkelhastighet)\",\"AKM1 moat + V01 art + Kelly-storlek\"]]}"
+          "content": "{\"rubrik\":\"Normalfördelning mot potenslag — två världar, två strategier\",\"rader\":[[\"Dimension\",\"Normalfördelning\",\"Potenslag\"],[\"Utfall\",\"symmetriska kring medelvärde\",\"små antal bär nästan allt\"],[\"Var den gäller\",\"korta horisonter, brus\",\"långa horisonter, värdeskapande\"],[\"Strategi\",\"variaskontroll, bredd\",\"svansjakt, urval, koncentration\"],[\"Misslyckande\",\"underskatta sannolika svängar\",\"köpa medelvärden till svanspriser\"],[\"AK1A-översättning\",\"kortsiktig risk (vinkelhastighet)\",\"AKM1 moat + V01 art + Kelly-storlek\"]]}"
         },
         {
           "type": "utmaning",
@@ -604,11 +604,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Vad är en hemlighet? Något sant, viktigt och inte allmänt känt — i motsats till det triviala (känt av alla) och det omöjliga (inte känt av någon). Thiels marknadstest är investeringens kärna formulerad som grundarfråga: vilket värdefullt bolag byggs av ingen? Facebook byggdes på hemligheten att en digital identitet kopplad till verkliga namn var den sakna infrastrukturen för socialt liv online; att den var omstridd var poängen — om alla trott på den hade den byggts. Fyra trender har övertygat västvärlden om att hemlighetarna är slut: inkrementalismen (skolan belönär rätta små steg, inte uppoppade frågor), riskaversionen (att tro på en omstridd sanning är socialt riskfyllt), självgodheten (elitens barn har mjuka liv och litet incitament att gräva) och den platta världen (någon smartare hade redan hittat det — uttalandet är sant bara om marknader vore perfekta, och det är de inte)."
+          "content": "Vad är en hemlighet? Något sant, viktigt och inte allmänt känt — i motsats till det triviala (känt av alla) och det omöjliga (inte känt av någon). Thiels marknadstest är investeringens kärna formulerad som grundarfråga: vilket värdefullt bolag byggs av ingen? Facebook byggdes på hemligheten att en digital identitet kopplad till verkliga namn var den sakna infrastrukturen för socialt liv online; att den var omstridd var poängen — om alla trott på den hade den byggts. Fyra trender har övertygat västvärlden om att hemlighetarna är slut: inkrementalismen (skolan belönar rätta små steg, inte uppoppade frågor), riskaversionen (att tro på en omstridd sanning är socialt riskfyllt), självgodheten (elitens barn har mjuka liv och litet incitament att gräva) och den platta världen (någon smartare hade redan hittat det — uttalandet är sant bara om marknader vore perfekta, och det är de inte)."
         },
         {
           "type": "text",
-          "content": "Hemlighetens väg till bolag och position. Hos grundaren: hemligheten formuleras som tes, bolaget bygger den som produkt, och väggen (kapitel fem) skyddar den medan världen kommer ikapp insikten — då är moatet moget. Hos investeraren: hemligheten är aldrig insiderinformation — den är en bättre tolkning av offentliga fakta, det som branschen kallar variant perception. Bra exempel på hemlighetslöshet är stora organisationer som tappat tron: Thiel pekar på HP, som efter år 2000 slutade tro att det fanns nya saker att bygga och i stället förvaltade — och förvaltning av det kända är i konkurrensens värld en långsam likvidering. Kursernas kärndistinktion blir densamma som i kapitel sju: en position utan hemlighet är index i förklädnad — den kan stiga, men den stiger av beta, inte av insikt, och den förtjänär inte premium."
+          "content": "Hemlighetens väg till bolag och position. Hos grundaren: hemligheten formuleras som tes, bolaget bygger den som produkt, och väggen (kapitel fem) skyddar den medan världen kommer ikapp insikten — då är moatet moget. Hos investeraren: hemligheten är aldrig insiderinformation — den är en bättre tolkning av offentliga fakta, det som branschen kallar variant perception. Bra exempel på hemlighetslöshet är stora organisationer som tappat tron: Thiel pekar på HP, som efter år 2000 slutade tro att det fanns nya saker att bygga och i stället förvaltade — och förvaltning av det kända är i konkurrensens värld en långsam likvidering. Kursernas kärndistinktion blir densamma som i kapitel sju: en position utan hemlighet är index i förklädnad — den kan stiga, men den stiger av beta, inte av insikt, och den förtjänar inte premium."
         },
         {
           "type": "insikt",
@@ -616,7 +616,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fyra trender mot hemligheter — och motargumenten\",\"rader\":[[\"Trend\",\"Mekanism\",\"Motargument\",\"AK1A-tillämpning\"],[\"Inkrementalism\",\"skolan belönär små korrekta steg\",\"alla stora hopp började i en omstridd fråga\",\"sök teser som låter falska men mätbara\"],[\"Riskaversion\",\"att tro på det omstridda är socialt kostsamt\",\"konsensus betalar inget premium\",\"acceptera att bra teser känns obekväma\"],[\"Självgodhet\",\"elitens barn har mjuka liv\",\"mjukhet är inte kunskap\",\"gräv där ingen gräver gratis\"],[\"Platt värld\",\"någon smartare hade hittat det\",\"endast sant om marknader vore perfekta\",\"börser prissätter inte framtida monopol väl\"]]}"
+          "content": "{\"rubrik\":\"Fyra trender mot hemligheter — och motargumenten\",\"rader\":[[\"Trend\",\"Mekanism\",\"Motargument\",\"AK1A-tillämpning\"],[\"Inkrementalism\",\"skolan belönar små korrekta steg\",\"alla stora hopp började i en omstridd fråga\",\"sök teser som låter falska men mätbara\"],[\"Riskaversion\",\"att tro på det omstridda är socialt kostsamt\",\"konsensus betalar inget premium\",\"acceptera att bra teser känns obekväma\"],[\"Självgodhet\",\"elitens barn har mjuka liv\",\"mjukhet är inte kunskap\",\"gräv där ingen gräver gratis\"],[\"Platt värld\",\"någon smartare hade hittat det\",\"endast sant om marknader vore perfekta\",\"börser prissätter inte framtida monopol väl\"]]}"
         },
         {
           "type": "utmaning",
@@ -675,7 +675,7 @@
         },
         {
           "type": "text",
-          "content": "Styrelsen och kompensationen. Styrelse: liten slår stor — tre är perfekt, fem hanterbart, och varje ledamot som inte tillför värde kostar inte bara ett rum utan beslutsamhet; stora styrelser mister kontroll åt management, och en styrelse som inte förstår verksamheten kan varken vägleda eller säga nej. Kompensation: hög kontantlön belönär nuet och lockar dem som vill ha säkerhet; equity belönär framtiden och lockar dem som tror på den. Thiels iakttagelse är brutalt enkel: i nystartade bolag är högre vd-kontantlön korrelerad med sämre utfall — dels för att signalen om riskbenägenhet, dels för att varje krona betald i kontant lön är en krona som inte delar ödet med aktieägarna. Kursen noterar att samma logik, väsentligen, gäller på börsen."
+          "content": "Styrelsen och kompensationen. Styrelse: liten slår stor — tre är perfekt, fem hanterbart, och varje ledamot som inte tillför värde kostar inte bara ett rum utan beslutsamhet; stora styrelser mister kontroll åt management, och en styrelse som inte förstår verksamheten kan varken vägleda eller säga nej. Kompensation: hög kontantlön belönar nuet och lockar dem som vill ha säkerhet; equity belönar framtiden och lockar dem som tror på den. Thiels iakttagelse är brutalt enkel: i nystartade bolag är högre vd-kontantlön korrelerad med sämre utfall — dels för att signalen om riskbenägenhet, dels för att varje krona betald i kontant lön är en krona som inte delar ödet med aktieägarna. Kursen noterar att samma logik, väsentligen, gäller på börsen."
         },
         {
           "type": "text",
@@ -683,11 +683,11 @@
         },
         {
           "type": "insikt",
-          "content": "Incitament är prognosvariabler: människor gör inte vad du hoppas, de gör vad de betalas för. Läs ett bolags kompensationsprogram som dess verkliga strategi — och om programmet belönär något annat än den strategi ledningen deklarerar, tro programmet."
+          "content": "Incitament är prognosvariabler: människor gör inte vad du hoppas, de gör vad de betalas för. Läs ett bolags kompensationsprogram som dess verkliga strategi — och om programmet belönar något annat än den strategi ledningen deklarerar, tro programmet."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tre maktformer och deras AKM1-frågör\",\"rader\":[[\"Form\",\"Vad den är\",\"Fråga i ungt bolag\",\"Fråga i listbolag (V17)\"],[\"Ownership\",\"lagligt ägande av aktier\",\"äger grundarna tillräckligt för att vilja?\",\"vem är största ägare och vilken horisont har den?\"],[\"Possession\",\"faktiskt dagligt styre\",\"vem fattar besluten i verkligheten?\",\"är vd:n grundare eller hyrd? insiderägande?\"],[\"Control\",\"formell styrning — styrelse, stämma\",\"är styrelsen liten och kompetent?\",\"förnyas styrelsen? KPI:er i programmen?\"]]}"
+          "content": "{\"rubrik\":\"Tre maktformer och deras AKM1-frågor\",\"rader\":[[\"Form\",\"Vad den är\",\"Fråga i ungt bolag\",\"Fråga i listbolag (V17)\"],[\"Ownership\",\"lagligt ägande av aktier\",\"äger grundarna tillräckligt för att vilja?\",\"vem är största ägare och vilken horisont har den?\"],[\"Possession\",\"faktiskt dagligt styre\",\"vem fattar besluten i verkligheten?\",\"är vd:n grundare eller hyrd? insiderägande?\"],[\"Control\",\"formell styrning — styrelse, stämma\",\"är styrelsen liten och kompetent?\",\"förnyas styrelsen? KPI:er i programmen?\"]]}"
         },
         {
           "type": "utmaning",
@@ -726,7 +726,7 @@
           "alternativ": [
             "Inget samband alls",
             "Högre kontantlön korrelerar med bättre utfall",
-            "Högre kontantlön korrelerar med sämre utfall — hög lön belönär nuet, equity belönär tron på framtiden",
+            "Högre kontantlön korrelerar med sämre utfall — hög lön belönar nuet, equity belönar tron på framtiden",
             "Att kontantlön är irrelevant om styrelsen är stark"
           ],
           "ratt": 2,
@@ -904,7 +904,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Kör komplementaritetstestet på ett AI-exponerat innehav: skriv maskinan gör X och människan avgör Y — finns Y, och är den domänspecifik? Granska sedan ägandet av dataflödet: vems data tränär vems modell, och vem behåller kundrelationen? Poängsätt V13 och V15 enligt svaret — och jämför med marknadens AI-premium på aktien. Om premien betalar substitut och du hittar komplement, har du en tes; i omvänd ordning har du en kortkandidat."
+          "content": "Kör komplementaritetstestet på ett AI-exponerat innehav: skriv maskinan gör X och människan avgör Y — finns Y, och är den domänspecifik? Granska sedan ägandet av dataflödet: vems data tränar vems modell, och vem behåller kundrelationen? Poängsätt V13 och V15 enligt svaret — och jämför med marknadens AI-premium på aktien. Om premien betalar substitut och du hittar komplement, har du en tes; i omvänd ordning har du en kortkandidat."
         },
         {
           "type": "visuell",

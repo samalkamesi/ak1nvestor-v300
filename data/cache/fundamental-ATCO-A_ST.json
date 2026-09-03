@@ -1,0 +1,91 @@
+{
+  "ticker": "ATCO-A.ST",
+  "namn": "Atlas Copco AB (publ)",
+  "bransch": "industri",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/ATCO-A.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 201.7,
+  "marknadsKapitalMdr": 984.018,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.06,
+    "resultatCAGR5ar": 0.0402,
+    "omsattningTillvaxtTTM": 0.091,
+    "prognosTillvaxt": 0.1902
+  },
+  "lonksamhet": {
+    "roe": 0.257,
+    "roic": 0.3231,
+    "bruttoMarginal": 0.4219,
+    "ebitMarginal": 0.2056,
+    "nettoMarginal": 0.1567,
+    "fcfMarginal": 0.1529
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.3367,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 36.874,
+    "pb": 9.257,
+    "evEbit": 28.346,
+    "peg": 2.19,
+    "fcfYield": 0.0264,
+    "egenKapitalMultipl": 9.257
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      141325000000.0,
+      172664000000.0,
+      176771000000.0,
+      168343000000.0
+    ],
+    "resultat": [
+      23477000000.0,
+      28040000000.0,
+      29782000000.0,
+      26420000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

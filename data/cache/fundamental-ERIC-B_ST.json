@@ -1,0 +1,76 @@
+{
+  "ticker": "ERIC-B.ST",
+  "namn": "Telefonaktiebolaget LM Ericsson (publ)",
+  "bransch": "teknik",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/ERIC-B.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 97.14,
+  "marknadsKapitalMdr": 317.505,
+  "tillvaxt": {
+    "omsattningCAGR5ar": null,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": -0.061,
+    "prognosTillvaxt": 0.0796
+  },
+  "lonksamhet": {
+    "roe": 0.2608,
+    "roic": 0.2118,
+    "bruttoMarginal": 0.4813,
+    "ebitMarginal": 0.1248,
+    "nettoMarginal": 0.1083,
+    "fcfMarginal": 0.1349
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.3768,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 13.163,
+    "pb": 3.087,
+    "evEbit": 10.759,
+    "peg": 1.93,
+    "fcfYield": 0.0967,
+    "egenKapitalMultipl": 3.087
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [],
+    "omsattning": [],
+    "resultat": [],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "resultaträkningshistorik saknas hos källan — serier/CAGR null; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

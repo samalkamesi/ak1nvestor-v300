@@ -21,7 +21,7 @@
         "Pris"
       ],
       "lessons": [
-        "Mr Market erbjuder dig ett pris varje dag men bara du bestämmer när det är värt att lyssna på",
+        "Mr Market erbjuder dig ett pris varje dag, men bara du bestämmer när det är värt att lyssna på",
         "Köp alltid med marginal of safety: skillnaden mellan värde och pris är ditt skydd mot egna misstag",
         "Vet skillnaden mellan investering (analys och marginal) och spekulation (gissning om prisrörelse)"
       ],
@@ -46,7 +46,7 @@
         "Pris"
       ],
       "lessons": [
-        "Bokfört värde är utgångspunkt inte sanning: justera för vad tillgångarna faktiskt är värda i en kris",
+        "Bokfört värde är utgångspunkt, inte sanning: justera för vad tillgångarna faktiskt är värda i en kris",
         "Ett stabilt överskott i rörelsekapital skyddar aktieägaren när konjunkturen vänder",
         "Analysens slutsats är alltid ett intervall, aldrig ett exakt tal"
       ],
@@ -220,7 +220,7 @@
         "Pris"
       ],
       "lessons": [
-        "Värde skapas bara när avkastning på investerat kapital överstiger kapitalkostnaden: tillväxt utan räntemarginal förstör värde",
+        "Värde skapas bara när avkastning på investerat kapital överstiger kapitalkostnaden: tillväxt utan avkastningsmarginal förstör värde",
         "Räkna på fritt kassaflöde och ekonomiskt kapital, inte redovisad vinst",
         "Värdeskapande sker i verksamheten, inte i finansiell ingenjörskonst"
       ],
@@ -295,7 +295,7 @@
       ],
       "lessons": [
         "Kapitalbevarande först och avkastning sedan: en förlust slår alltid en lika stor vinst",
-        "Särskilda situationer som spinnoffs, nyemissioner och kriser skapar felprisning som går att räkna på",
+        "Särskilda situationer som spinoffs, nyemissioner och kriser skapar felprisning som går att räkna på",
         "Om marginalen saknas i priset är kassan rätt: att inte handla är ett aktivt beslut"
       ],
       "tier": 1,
@@ -407,7 +407,7 @@
       "year": 1997,
       "kat": "fundamental",
       "niva": 3,
-      "why": "Specialsituationernas handbok: spinnoffs, fusioner och rekonstruktioner — nischer där privatinvesterare har strukturella fördelar mot institutioner.",
+      "why": "Specialsituationernas handbok: spinoffs, fusioner och rekonstruktioner — nischer där privatinvesterare har strukturella fördelar mot institutioner.",
       "ak": [
         "V12",
         "V14",
@@ -419,7 +419,7 @@
       ],
       "lessons": [
         "Läs officiella dokument: informationen är offentlig men nästan ingen läser den",
-        "Spinnoffs skapar tvångsförsäljning och därmed felprisning: räkna på nyckeltalen före marknaden",
+        "Spinoffs skapar tvångsförsäljning och därmed felprisning: räkna på nyckeltalen före marknaden",
         "Definiera katalysator och tidshorisont innan du går in i en specialsituation"
       ],
       "tier": 1,
@@ -531,7 +531,7 @@
       "year": 1948,
       "kat": "teknisk",
       "niva": 4,
-      "why": "Boken som kodifierade västerländsk chartanalys: huvud-axel-skuldra, trekanter och trendkanler härstammar från denna grundtext.",
+      "why": "Boken som kodifierade västerländsk chartanalys: huvud-axlar, trekanter och trendkanaler härstammar från denna grundtext.",
       "ak": [
         "V20"
       ],
@@ -564,7 +564,7 @@
         "Brytpunkt"
       ],
       "lessons": [
-        "Ljusstakar mäter sentiment i realtid: långa överkast betyder press och doji betyder tvekan",
+        "Ljusstakar mäter sentiment i realtid: långa staplar betyder press och doji betyder tvekan",
         "En formations signal gäller bara i rätt kontext: trend, nivå och volym avgör",
         "Bekräfta vändningen med nästa stapel innan du agerar på ett enskilt mönster"
       ],
@@ -613,9 +613,9 @@
         "Tid"
       ],
       "lessons": [
-        "Köp bara aktier med stark kvartalsvinsttilväxt som går mot nya höjder",
-        "Köp på brytpunkt ur en sund basformation på minst halvhögre volym",
-        "Klipp förlusten vid sju åtta procent: små förluster är systemets försäkringspremie"
+        "Köp bara aktier med stark kvartalsvinsttillväxt som går mot nya höjder",
+        "Köp på brytpunkt ur en sund basformation på minst femtio procent högre volym",
+        "Klipp förlusten vid sju-åtta procent: små förluster är systemets försäkringspremie"
       ],
       "tier": 1,
       "status": "kurs"
@@ -637,7 +637,7 @@
         "Brytpunkt"
       ],
       "lessons": [
-        "Triple screen: längre tidslig ram för trend, kortare för timing och en indikator för bekräftelse",
+        "Triple screen: längre tidsram för trenden, kortare för timing och en indikator för bekräftelse",
         "Riskera aldrig mer än två procent av kapitalet i en enda position",
         "Din största fiende sitter mellan öronen: handelsdagboken är verktyget"
       ],
@@ -651,7 +651,7 @@
       "year": 2000,
       "kat": "teknisk",
       "niva": 4,
-      "why": "Statistiken bakom formationerna: Bulkowski mäter träffsäkerhet och pris mål på tusentals exempel — evidens istället för anekdoter.",
+      "why": "Statistiken bakom formationerna: Bulkowski mäter träffsäkerhet och prismål på tusentals exempel — evidens istället för anekdoter.",
       "ak": [
         "V12"
       ],
@@ -733,7 +733,7 @@
         "Tid"
       ],
       "lessons": [
-        "Värdeinnovation höjer kundvärdet och sänker kostnaden samtidigt: undvik blodigt konkurrensstrider",
+        "Värdeinnovation höjer kundvärdet och sänker kostnaden samtidigt: undvik blodiga konkurrensstrider",
         "Strategiprofilen avslöjar om bolaget äger en unik position eller kopierar",
         "En blå ocean utan barriärer imiteras snabbt: bedöm hållbarheten innan du betalar för den"
       ],
@@ -747,7 +747,7 @@
       "year": 1973,
       "kat": "strategi",
       "niva": 2,
-      "why": "Effektiva marknads-hypotesens klassiker: Malkiel tvingar varje analytiker att förklara varför marknaden skulle felprissatta just deras bolag.",
+      "why": "Effektiva marknadshypotesens klassiker: Malkiel tvingar varje analytiker att förklara varför marknaden skulle felprissatta just deras bolag.",
       "ak": [
         "V14",
         "V20"
@@ -805,8 +805,8 @@
         "Tid"
       ],
       "lessons": [
-        "Gör tillräckligt bra beskap under tillräckligt lång tid: tiden i marknaden slår timingen",
-        "Skilj på att gå bra och att gå i kris: överlevnad är första prioritet",
+        "Gör det tillräckligt bra under tillräckligt lång tid: tiden i marknaden slår timingen",
+        "Skilj på att bli rik och att förbli rik: överlevnad är första prioritet",
         "Din personliga pengahistoria styr besluten mer än kalkylbladet"
       ],
       "tier": 1,
@@ -831,7 +831,7 @@
       "lessons": [
         "Marknaden lönar inte rätt utan rätt timing: tålamod är en position",
         "Trendbrott på hög volym är information: handla på fakta, inte på hopp",
-        "Det finns tid att vara lång, tid att vara kort och tid att vänta: veta vilken tid det är"
+        "Det finns tid att vara lång, tid att vara kort och tid att vänta: vet vilken tid det är"
       ],
       "tier": 1,
       "status": "kurs"
@@ -854,7 +854,7 @@
         "Pris"
       ],
       "lessons": [
-        "Reflexivitet: marknadspriser förändrar fundamenten och feedbackslingor skapar bubbeldynamik",
+        "Reflexivitet: marknadspriser förändrar fundamenten och återkopplingsslingor skapar bubbeldynamik",
         "Satsa stort först när tesen är testad: börja smått och bygg upp vid bekräftelse",
         "Överlevnad kräver att erkänna fel snabbt: det avgörs inte av om du har rätt utan när du inser att du har fel"
       ],
@@ -904,7 +904,7 @@
       "lessons": [
         "Skilj process från resultat: ett bra beslut kan ge dåligt utfall och tvärtom",
         "Asymmetri är allt: sök satsningar med begränsad nedsida och öppen uppsida",
-        "Berättelsen efteråt är nästan alltid en konstruerad narrative, inte förklaring"
+        "Berättelsen efteråt är nästan alltid en konstruerad berättelse, inte förklaring"
       ],
       "tier": 1,
       "status": "kurs"
@@ -1046,7 +1046,7 @@
         "Pris"
       ],
       "lessons": [
-        "Tre källor till edge: informations-, analys- eller beteendefördel: ha minst en och veta vilken",
+        "Tre källor till edge — informations-, analys- eller beteendefördel: ha minst en och vet vilken",
         "Bedöm med moat-trädet i vilket skede från tillväxt till mognad bolagets konkurrensskydd är",
         "När marknaden är effektiv sök värde i svåra situationer där färre tittar"
       ],
@@ -1060,7 +1060,7 @@
       "year": 2005,
       "kat": "fundamental",
       "niva": 5,
-      "why": "Fördjupningen i kassaflödesdetektiv: hur rapporterade kassaflöden pytsas upp och hur de räknas om till äkta siffror.",
+      "why": "Fördjupningen i kassaflödesdetektiv: hur rapporterade kassaflöden piffas upp och hur de räknas om till äkta siffror.",
       "ak": [
         "V08",
         "V10",
@@ -1109,7 +1109,7 @@
       "year": 2009,
       "kat": "fundamental",
       "niva": 5,
-      "why": "Whitmans livserfarenhet från obestånd och rekonstruktion: var borgenären har de bästa rättigheterna och hur krisbolag värderas.",
+      "why": "Whitmans livserfarenhet från obestånd och rekonstruktion: där borgenären har de bästa rättigheterna och hur krisbolag värderas.",
       "ak": [
         "V06",
         "V07",
@@ -1168,8 +1168,8 @@
         "Pris"
       ],
       "lessons": [
-        "Fyra moattyper: immateriella tillgångar, ombyteskostnad, nätverk och skala: identifiera vilken och hur länge den håller",
-        "Läs femårssiffror för marginaler och avkastning: leta stabilitet inte toppår",
+        "Fyra moattyper: immateriella tillgångar, omställningskostnad, nätverk och skala: identifiera vilken och hur länge den håller",
+        "Läs femårssiffror för marginaler och avkastning: leta stabilitet, inte toppår",
         "Sälj när tesen bryts, priset överskrider värdet eller något bättre dyker upp, aldrig av rädsla"
       ],
       "tier": 2,
@@ -1192,7 +1192,7 @@
         "Pris"
       ],
       "lessons": [
-        "Fundamental analys är enda försvaret mot systematiska felprisningar: metoden går att granska",
+        "Fundamental analys är det enda försvaret mot systematiska felprisningar: metoden går att granska",
         "Använd flera värderingsmetoder parallellt: DCF, multiplar och substansvärde",
         "Sensitivitetsanalys är obligatorisk: visa hur värdet beror av tillväxt och diskonteringsränta"
       ],
@@ -1216,7 +1216,7 @@
         "Pris"
       ],
       "lessons": [
-        "Köp bolag till sextio procent av inneboende värde: det är kärnan i värdeinvestering",
+        "Köp bolag till sextio procent av det inneboende värdet: det är kärnan i värdeinvestering",
         "Stabil utdelning och stark balansräkning skyddar i nedgångar",
         "Tålamod är värdeinvesterarens enda verkliga konkurrensmedel"
       ],
@@ -1254,7 +1254,7 @@
       "year": 1999,
       "kat": "strategi",
       "niva": 3,
-      "why": "Indexfondens fader förklarar kostnadsrekenomen: avgifter, omsättning och medelvärdesåtergång gör att de flesta förlorar mot index.",
+      "why": "Indexfondens fader förklarar kostnadsaritmetiken: avgifter, omsättning och medelvärdesåtergång gör att de flesta förlorar mot index.",
       "ak": [
         "V11",
         "V14",
@@ -1468,7 +1468,7 @@
       "year": 2000,
       "kat": "teknisk",
       "niva": 4,
-      "why": "Farleys detaljerade hantverksbok: setup, exekvering och riskhantering i korta till medellånga svängar med sjufakters-modellen.",
+      "why": "Farleys detaljerade hantverksbok: setup, exekvering och riskhantering i korta till medellånga svängar med sjufaktorsmodellen.",
       "ak": [
         "V12",
         "V20"
@@ -1528,7 +1528,7 @@
       "lessons": [
         "Utmattning kan mätas objektivt: räkneverktyget kvantifierar när en rörelse når sitt slut",
         "Regler utan skönsmässiga antaganden ger samma signal för alla användare varje gång",
-        "Setup, countdown och exit: systemet tvingar dig definiera risken före belöningen"
+        "Setup, countdown och exit: systemet tvingar dig att definiera risken före belöningen"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1597,8 +1597,8 @@
       ],
       "lessons": [
         "Samma regler gav olika resultat: skillnaden var disciplin och risktolerans",
-        "Trendföljning är ett sannolikhets spel: acceptera låg träffkvot mot stor genomsnittsvinst",
-        "Mekaniska system går att lära ut men inte alla kan följa dem"
+        "Trendföljning är ett sannolikhetsspel: acceptera låg träffkvot mot stor genomsnittsvinst",
+        "Mekaniska system går att lära ut, men inte alla kan följa dem"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1643,7 +1643,7 @@
       ],
       "lessons": [
         "Banden mäter relativt höga och låga priser: statistisk kontext, inte köp- och säljsignaler i sig",
-        "Squeezen: låg volatilitet föregår ofta en stark rörelse, var beredd på utbrott",
+        "Squeeze: låg volatilitet föregår ofta en stark rörelse, var beredd på utbrott",
         "Bandfärd i stark trend är normalt: stäng inte positionen bara för att priset rör vid bandet"
       ],
       "tier": 2,
@@ -1691,7 +1691,7 @@
       "lessons": [
         "Alla topphandlare delar en egenskap: de kapar förluster omedelbart",
         "Det finns många vägar till framgång men ingen utan riskhantering",
-        "Känn din edge: handla bara setup du förstår och har testat"
+        "Känn din edge: handla bara setups du förstår och har testat"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1713,7 +1713,7 @@
       ],
       "lessons": [
         "Kroppens stresskemikalier driver över- och underkonfidens: lär känna dina fysiologiska cykler",
-        "Lång segerville gör dig övermodig precis när risken ökar",
+        "En lång vinstsvit gör dig övermodig precis när risken ökar",
         "Pausa vid utmattning: beslutskvaliteten faller innan du märker det"
       ],
       "tier": 2,
@@ -1760,8 +1760,8 @@
       ],
       "lessons": [
         "Jämför alltid priset med långsiktiga genomsnitt som CAPE: extrema nivåer varnar",
-        "Bubblor drivs av feedbackslingor: stigande pris lockar köpare som höjer priset",
-        "Narrativet om en ny tid är bubbels bränsle: fråga vad som saknas i storyn"
+        "Bubblor drivs av återkopplingsslingor: stigande pris lockar köpare som höjer priset",
+        "Narrativet om en ny tid är bubblans bränsle: fråga vad som saknas i storyn"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1807,7 +1807,7 @@
       ],
       "lessons": [
         "Belöningssystemet gör dig beroende av aktivitet: handla mindre",
-        "Förlusten gör dubbelt så ont som vinsten känns bra: anpassa positionsstorleken",
+        "En förlust gör dubbelt så ont som en lika stor vinst känns bra: anpassa positionsstorleken",
         "Sov på beslutet: regler som bestämts i förväg neutraliserar hjärnans feltendenser"
       ],
       "tier": 2,
@@ -1831,7 +1831,7 @@
       "lessons": [
         "Extrema händelser kan inte förutsägas men går att förbereda för: bygg robusthet",
         "Modeller som antar normalfördelning underskattar svansrisken kraftigt",
-        "Skråpstrategin: maximal säkerhet kombinerat med små aggressiva satsningar, inget däremellan"
+        "Skivstångsstrategin: maximal säkerhet kombinerat med små aggressiva satsningar, inget däremellan"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1855,7 +1855,7 @@
       "lessons": [
         "Hävstång förvandlar tillfälliga svängningar till permanenta förluster",
         "Korrelationen du räknade med gäller inte i krisen: likviditeten försvinner först",
-        "Modeller bygger på historisk data och blir farliga när en ny regime kommer"
+        "Modeller bygger på historisk data och blir farliga när en ny regim kommer"
       ],
       "tier": 2,
       "status": "kurs"
@@ -1876,7 +1876,7 @@
         "Tid"
       ],
       "lessons": [
-        "Bra prognoser är probabilistiska och kalibrerade, aldrig punktformade säkerheter",
+        "Bra prognoser är probabilistiska och kalibrerade, aldrig säkra punktprognoser",
         "Mer data ökar bruset lika snabbt som signalen: filtrera hänsynslöst",
         "Jämför prognoser mot utfall regelbundet: kalibrering slår skärpa"
       ],
@@ -1924,7 +1924,7 @@
         "Tid"
       ],
       "lessons": [
-        "Hög statsskuld har historiskt saktat tillväxten: kolla skuldquotan i analysen",
+        "Hög statsskuld har historiskt saktat tillväxten: kolla skuldkvoten i analysen",
         "Finanskriser återhämtar sig långsammare än vanliga recessioner",
         "Den farligaste meningen i finans är att denna gången är det annorlunda"
       ],
@@ -1948,7 +1948,7 @@
         "Brytpunkt"
       ],
       "lessons": [
-        "Läs de underliggande lånedokumenten: svaret låg offentligt tillgängligt hela tiden",
+        "Läs de underliggande lånedokumenten: svaret fanns offentligt tillgängligt hela tiden",
         "En kontrariansk tes kräver kapital som tål mellanår av press",
         "Systemets incitament skapar blindheter: följ pengaflödet"
       ],
@@ -1972,7 +1972,7 @@
         "Tid"
       ],
       "lessons": [
-        "På tjugoårig sikt har aktier historiskt aldrig underpresterat obligationer i usa",
+        "På tjugoårig sikt har aktier historiskt aldrig underpresterat obligationer i USA",
         "Inflationen äter obligationer men inte aktier på lång sikt: äg produktiva tillgångar",
         "Utdelningar och återinvestering står för majoriteten av långsiktig totalavkastning"
       ],
@@ -2056,7 +2056,7 @@
       "year": 2003,
       "kat": "makro",
       "niva": 3,
-      "why": "Historien om superstiget 1982 till 2000: hur analytiker, media och pensionsfonder byggde den största bubblan och vilka varningar som ignorerades.",
+      "why": "Historien om superhausset 1982 till 2000: hur analytiker, media och pensionsfonder byggde den största bubblan och vilka varningar som ignorerades.",
       "ak": [
         "V14",
         "V20"
@@ -2126,7 +2126,7 @@
       "year": 2014,
       "kat": "risk",
       "niva": 2,
-      "why": "Lewis gräver fram högfrekvenshandelns front-running: mikrosekundstrukturer som flyttar pengar från vanliga investerare.",
+      "why": "Lewis gräver fram högfrekvenshandelns front-running: mikrosekundsfördelar som flyttar pengar från vanliga investerare.",
       "ak": [
         "V20"
       ],
@@ -2265,7 +2265,7 @@
       "year": 1992,
       "kat": "strategi",
       "niva": 2,
-      "why": "Sam Waltons egen berättelse: hur en detaljhandelsjätte byggdes genom kostnadskontroll, skalning och kundbesatthet — ett moat-case från verkligheten.",
+      "why": "Sam Waltons egen berättelse: hur en detaljhandelsjätte byggdes genom kostnadskontroll, skalförstoring och kundbesatthet — ett moat-case från verkligheten.",
       "ak": [
         "V04",
         "V13"
@@ -2321,7 +2321,7 @@
         "Tid"
       ],
       "lessons": [
-        "Marknadsplats och moln ger två nätverkseffekter i samma bolag: sök kombinerade moats",
+        "Marknadsplats och moln ger två nätverkseffekter i samma bolag: flera kombinerade moats",
         "Pris- och kundbesatthet kan skala till strukturell fördel även med låga marginaler",
         "Långsiktigt ägarskap gör okonventionell kapitalallokering möjlig"
       ],
@@ -2370,7 +2370,7 @@
       ],
       "lessons": [
         "Hållbar tillväxttakt är avkastning på eget kapital gånger bibehållen vinst: kan bolaget växa utan nytt kapital",
-        "Små förändringar i rörelsekapital slår stort på finansieringsbehovet",
+        "Små förändringar i rörelsekapitalet har stor effekt på finansieringsbehovet",
         "Räkna alltid kapitalkostnad och värdemått tillsammans: avkastning utan kostnad är meningslös"
       ],
       "tier": 3,
@@ -2407,7 +2407,7 @@
       "year": 2015,
       "kat": "fundamental",
       "niva": 3,
-      "why": "Studien av de 365 aktier som gav 100x 1962-2014 — compounding, små startvärden och moats i ett bevisligt paket.",
+      "why": "Studien av de 365 aktierna som gav 100x 1962–2014 — compounding, små startvärden och moats i ett bevisligt paket.",
       "ak": [
         "V01",
         "V09",
@@ -2419,9 +2419,9 @@
         "Pris"
       ],
       "lessons": [
-        "100x kräver båda motorerna: EPS-tillväxt OCH multipel-expansion från låg startpunkt",
-        "Tid är strategin: ~25 år à 20 % — köp bolag som kan compounda, inte lotter",
-        "Aktieantalet avgör: utspädning äter avkastning, återköp (V20) adderar den"
+        "100x kräver båda motorerna: EPS-tillväxt och multipelexpansion från låg startpunkt",
+        "Tid är strategin: ~25 år à 20 % — köp bolag som kan växa med ränta på ränta, inte lotter",
+        "Aktieantalet avgör: utspädning äter avkastning och återköp adderar den"
       ],
       "tier": 1,
       "status": "kurs"

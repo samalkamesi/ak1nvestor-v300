@@ -137,7 +137,7 @@ Tableaus Ask Data (nu del av [Tableau Pulse](https://www.tableau.com/blog/tablea
 | "var var jag?" / "senast?" | `nav.minne` | `besok()[0]` | sida + länk |
 | "hur länge till nivå ⟨n⟩?" | `niva.kvar` | `lasXP()` | "X XP kvar" |
 
-Implementationsskiss: `src/lib/fraga-dashboard.ts` — ett intent-register (id, mönster-regexps med svenska synonymer, resolver-funktion, svars-formaterare). Normalisering: gemener, diakriter, ta bort interpunktion. Matchning: först längsta träff på entitet + attribut;多条 träff → DataTone-disambiguering (visa 2 tolkningar som chips). Ingen träff → "Jag kan svara på frågor om: streak · kurser · repetition · veckan · vågkartan · badges · analyser" (klickbara exempel). Hela registret < 300 rader kod, helt testbart, SSR-säkert (samma useEffect-mönster som övriga kort).
+Implementationsskiss: `src/lib/fraga-dashboard.ts` — ett intent-register (id, mönster-regexps med svenska synonymer, resolver-funktion, svars-formaterare). Normalisering: gemener, diakriter, ta bort interpunktion. Matchning: först längsta träff på entitet + attribut; flera träff → DataTone-disambiguering (visa 2 tolkningar som chips). Ingen träff → "Jag kan svara på frågor om: streak · kurser · repetition · veckan · vågkartan · badges · analyser" (klickbara exempel). Hela registret < 300 rader kod, helt testbart, SSR-säkert (samma useEffect-mönster som övriga kort).
 
 ---
 

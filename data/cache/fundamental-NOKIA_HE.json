@@ -1,0 +1,91 @@
+{
+  "ticker": "NOKIA.HE",
+  "namn": "Nokia Oyj",
+  "bransch": "teknik",
+  "land": "Finland",
+  "valuta": "EUR",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/NOKIA.HE",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 8.5,
+  "marknadsKapitalMdr": 47.588,
+  "tillvaxt": {
+    "omsattningCAGR5ar": -0.0721,
+    "resultatCAGR5ar": -0.4649,
+    "omsattningTillvaxtTTM": 0.084,
+    "prognosTillvaxt": 0.1834
+  },
+  "lonksamhet": {
+    "roe": 0.0345,
+    "roic": 0.0659,
+    "bruttoMarginal": 0.455,
+    "ebitMarginal": 0.0793,
+    "nettoMarginal": 0.0347,
+    "fcfMarginal": 0.058
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.1578,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 70.833,
+    "pb": 2.245,
+    "evEbit": 28.404,
+    "peg": 0.84,
+    "fcfYield": 0.0249,
+    "egenKapitalMultipl": 2.245
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      24911000000.0,
+      22258000000.0,
+      20279000000.0,
+      19904000000.0
+    ],
+    "resultat": [
+      4250000000.0,
+      665000000.0,
+      1277000000.0,
+      651000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

@@ -1,0 +1,76 @@
+{
+  "ticker": "JPM",
+  "namn": "JPMorgan Chase & Co.",
+  "bransch": "finans",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/JPM",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 356.22,
+  "marknadsKapitalMdr": 946.899,
+  "tillvaxt": {
+    "omsattningCAGR5ar": null,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 0.304,
+    "prognosTillvaxt": 0.0328
+  },
+  "lonksamhet": {
+    "roe": 0.1779,
+    "roic": null,
+    "bruttoMarginal": 0.0,
+    "ebitMarginal": 0.5039,
+    "nettoMarginal": 0.3492,
+    "fcfMarginal": null
+  },
+  "stabilitet": {
+    "skuldEgenkapital": null,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 22
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 15.269,
+    "pb": 2.678,
+    "evEbit": 8.358,
+    "peg": 1.65,
+    "fcfYield": null,
+    "egenKapitalMultipl": 2.678
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [],
+    "omsattning": [],
+    "resultat": [],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "resultaträkningshistorik saknas hos källan — serier/CAGR null; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); finansbolag: roic/skuld-EK ej meningsfullt jämförbara — null; rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; finansbolag: burn-rate ej meningsfullt (kassaflödet är kärnverksamheten) — null; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

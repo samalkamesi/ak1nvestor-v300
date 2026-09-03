@@ -1,0 +1,35 @@
+{
+  "tjanst": "AK1A Portföljforskning",
+  "version": "0.1.0",
+  "uppdaterad": "2026-09-01",
+  "notering": "Prisnivåer satta av moderagenten 2026-09-03 — beslutanderätt hos kundägaren. Alla belopp i SEK inklusive 25 % moms (i enlighet med användarvillkoren sektion 5 och konsumenträttens krav på prisuppgift inklusive moms).",
+  "nivaer": [
+    {
+      "id": "forskning",
+      "namn": "Portföljforskning Grund",
+      "prisManad": 249,
+      "prisAr": 2490,
+      "beskrivning": "Kunden väljer risknivå (konservativ, balanserad eller tillväxt) och tillväxttakt (lugn, stadig eller aggressiv) — 9 profiler sammanlagt. Månadsvis forskningsportfölj med AKM1-poäng, fundamental och teknisk vågstatus per horisont, golvmarginal samt kravkontroller per innehav. Pedagogiskt underlag utan köp- eller säljuppmaningar."
+    },
+    {
+      "id": "forskning-plus",
+      "namn": "Portföljforskning Plus",
+      "prisManad": 449,
+      "prisAr": 4490,
+      "beskrivning": "Grundnivån plus löpande ersättningsförslag när ett innehav brutit mot profilens strikta krav (upp till tre alternativ i samma bransch med jämförelsetext), kvartalsvis uppföljning då-vs-nu samt portföljens samlade vågmatris per horisont."
+    },
+    {
+      "id": "portfolj-hyra",
+      "namn": "Portföljhyra (forskningstjänst)",
+      "prisManad": 799,
+      "prisAr": 7990,
+      "beskrivning": "Kunden hyr den forskningsportfölj som speglar vald riskprofil: AK1A sköter omvikningar, kravkontroller och ersättningsanalys vid varje uppdatering. Forskning och utbildning — aldrig förvaltning eller investeringsrådgivning enligt lagen (2007:528)."
+    }
+  ],
+  "rabattFas": {
+    "fas2": 0.2,
+    "fas3": 0.2,
+    "beskrivning": "Medlemmar i Fas 2 och Fas 3 får 20 % rabatt på alla nivåer, alltid och automatiskt."
+  },
+  "juridiskFotnot": "Forskningsbaserad analys — inte investeringsrådgivning enligt lagen (2007:528) om värdepappersrörelser. AK1A Portföljforskning är pedagogiskt utbildningsmaterial inom AK1A Research Lab; kunden fattar alltid egna beslut och bär eget ansvar för dem."
+}

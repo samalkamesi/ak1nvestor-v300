@@ -1,0 +1,76 @@
+{
+  "ticker": "GE",
+  "namn": "GE Aerospace",
+  "bransch": "industri",
+  "land": "USA",
+  "valuta": "USD",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/GE",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 329.5,
+  "marknadsKapitalMdr": 341.877,
+  "tillvaxt": {
+    "omsattningCAGR5ar": null,
+    "resultatCAGR5ar": null,
+    "omsattningTillvaxtTTM": 0.211,
+    "prognosTillvaxt": 0.1468
+  },
+  "lonksamhet": {
+    "roe": 0.4823,
+    "roic": 0.2751,
+    "bruttoMarginal": 0.3105,
+    "ebitMarginal": 0.2057,
+    "nettoMarginal": 0.1772,
+    "fcfMarginal": 0.1302
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 1.1322,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 32
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 39.04,
+    "pb": 19.381,
+    "evEbit": 33.828,
+    "peg": 4.23,
+    "fcfYield": 0.0193,
+    "egenKapitalMultipl": 19.381
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [],
+    "omsattning": [],
+    "resultat": [],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "resultaträkningshistorik saknas hos källan — serier/CAGR null; prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

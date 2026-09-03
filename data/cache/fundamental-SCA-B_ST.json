@@ -1,0 +1,91 @@
+{
+  "ticker": "SCA-B.ST",
+  "namn": "Svenska Cellulosa Aktiebolaget SCA (publ)",
+  "bransch": "material",
+  "land": "Sverige",
+  "valuta": "SEK",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/SCA-B.ST",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest: ingen färsk data (börsen utanför planens täckning eller inaktuell)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 115.35,
+  "marknadsKapitalMdr": 81.015,
+  "tillvaxt": {
+    "omsattningCAGR5ar": -0.0059,
+    "resultatCAGR5ar": -0.2226,
+    "omsattningTillvaxtTTM": -0.014,
+    "prognosTillvaxt": 0.3647
+  },
+  "lonksamhet": {
+    "roe": 0.0217,
+    "roic": 0.0083,
+    "bruttoMarginal": 0.6935,
+    "ebitMarginal": 0.039,
+    "nettoMarginal": 0.097,
+    "fcfMarginal": 0.0544
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.1536,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 36.503,
+    "pb": 0.801,
+    "evEbit": 108.416,
+    "peg": 0.45,
+    "fcfYield": 0.0153,
+    "egenKapitalMultipl": 0.801
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "omsattning": [
+      20794000000.0,
+      18081000000.0,
+      20232000000.0,
+      20427000000.0
+    ],
+    "resultat": [
+      6821000000.0,
+      3625000000.0,
+      3639000000.0,
+      3205000000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan; källa B (MarketStack) saknade färsk kurs — ingen dubbelkoll av pris/valuation"
+}

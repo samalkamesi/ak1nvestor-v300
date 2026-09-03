@@ -1,0 +1,98 @@
+{
+  "_dokumentation": [
+    "FORMAT — data/portfolj-system/uppfoljning/<portfoljId>.json",
+    "En fil per forskningsportfölj som cronen /api/cron/portfolj-uppfoljning följer.",
+    "Fält:",
+    "  portfoljId (string, krävs) — unikt id, samma som filnamnet rekommenderat.",
+    "  namn (string, valfritt) — visningsnamn i notiser och historik.",
+    "  aktiv (boolean, valfritt, standard true) — false => cronen hoppar filen.",
+    "    DENNA FIL är dokumentation och är markerad aktiv: false.",
+    "  riskProfil (krävs) — RiskProfil enligt src/lib/portfolj-forskning/typer.ts",
+    "    ( t.ex. ur RISKNIVAER['balanserad:stadig'] i riskportfolj.ts ).",
+    "  tickers (string[], krävs) — exakt samma aktier som följs varje intervall;",
+    "    max 10 analyseras per andetag ( motorernas tak ), deduplicerat.",
+    "  intervall ('manad' | 'kvartal', krävs) — hur ofta portföljen omanalyseras.",
+    "  snapshots (UppfoljningSnapshot[], krävs) — mätningar per ticker och datum;",
+    "    cronen lägger till nya efter varje körning. Nedan två exempel som visar",
+    "    formen ( forandringPris/forandringAkm1 är decimal respektive poäng mot",
+    "    föregående snapshot för samma ticker; null när ingen finns ).",
+    "  historik (valfritt) — Array<{ datum, text }>, cronen lägger till en rad",
+    "    per körning med sammanfattningen; hålls maximalt 200 rader.",
+    "All text i filen är pedagogisk forskning — ALDRIG investeringsrådgivning",
+    "( lagen 2007:528 ). Vågklasser: impulsvag|korrigering|basbygge|osatt —",
+    "JSON-nycklar utan å/ä/ö enligt ekosystemets konvention."
+  ],
+  "portfoljId": "EXEMPEL",
+  "namn": "Exempelportföljen ( dokumentation )",
+  "aktiv": false,
+  "riskProfil": {
+    "niva": "balanserad",
+    "takt": "stadig",
+    "horisontVikter": {
+      "mikro": 0.05,
+      "kort": 0.2,
+      "medellang": 0.25,
+      "lang": 0.3,
+      "mega": 0.2
+    },
+    "maxPerAktie": 0.11,
+    "maxPerBransch": 0.3,
+    "minAKM1": 68,
+    "minGolvMarginal": 0.01
+  },
+  "tickers": ["ABB.ST", "SAAB-B.ST", "ATCO-A.ST"],
+  "intervall": "kvartal",
+  "snapshots": [
+    {
+      "ticker": "ABB.ST",
+      "datum": "2026-03-31",
+      "akm1Totalt": 74,
+      "fvagPerHorisont": {
+        "mikro": "basbygge",
+        "kort": "impulsvag",
+        "medellang": "impulsvag",
+        "lang": "basbygge",
+        "mega": "basbygge"
+      },
+      "tvagPerHorisont": {
+        "mikro": "impulsvag",
+        "kort": "impulsvag",
+        "medellang": "basbygge",
+        "lang": "basbygge",
+        "mega": "osatt"
+      },
+      "pris": 265.5,
+      "forandringPris": null,
+      "forandringAkm1": null
+    },
+    {
+      "ticker": "ABB.ST",
+      "datum": "2026-06-30",
+      "akm1Totalt": 79,
+      "fvagPerHorisont": {
+        "mikro": "basbygge",
+        "kort": "impulsvag",
+        "medellang": "impulsvag",
+        "lang": "impulsvag",
+        "mega": "basbygge"
+      },
+      "tvagPerHorisont": {
+        "mikro": "korrigering",
+        "kort": "impulsvag",
+        "medellang": "basbygge",
+        "lang": "basbygge",
+        "mega": "osatt"
+      },
+      "pris": 292.1,
+      "forandringPris": 0.1,
+      "forandringAkm1": 5,
+      "notisText": "ABB.ST: AKM1 ligger på 79 mot 74 senast (+5 poäng högre). Fundamental våg på lång sikt har gått från basbygge till impulsvåg. Detta är en beskrivning av då mot nu — inte en uppmaning att agera."
+    }
+  ],
+  "historik": [
+    {
+      "datum": "2026-06-30",
+      "text": "Din forskningsportfölj Exempelportföljen ( dokumentation ) är omanalyserad: 1 väsentlig förändring sedan förra mätningen — här är då mot nu, i ditt tempo."
+    }
+  ]
+}

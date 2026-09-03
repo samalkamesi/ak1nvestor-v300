@@ -1,0 +1,91 @@
+{
+  "ticker": "LOGN.SW",
+  "namn": "Logitech International S.A.",
+  "bransch": "teknik",
+  "land": "Schweiz",
+  "valuta": "CHF",
+  "kallor": [
+    {
+      "namn": "Yahoo Finance",
+      "hamtat": "2026-09-03",
+      "url": "https://query1.finance.yahoo.com/v10/finance/quoteSummary/LOGN.SW",
+      "paranoid": "quoteSummary-moduler: price,summaryDetail,defaultKeyStatistics,financialData,incomeStatementHistory,earningsTrend,netSharePurchaseActivity"
+    },
+    {
+      "namn": "MarketStack",
+      "hamtat": "2026-09-03",
+      "url": "https://api.marketstack.com/v1/eod/latest",
+      "paranoid": "eod/latest dubbelkoll av pris/PE/PB/marknadsvärde (slutkurs 2026-09-02)"
+    }
+  ],
+  "hamtat": "2026-09-03",
+  "pris": 81.0,
+  "marknadsKapitalMdr": 11.598,
+  "tillvaxt": {
+    "omsattningCAGR5ar": 0.0217,
+    "resultatCAGR5ar": 0.2495,
+    "omsattningTillvaxtTTM": 0.069,
+    "prognosTillvaxt": 0.0809
+  },
+  "lonksamhet": {
+    "roe": 0.3529,
+    "roic": 0.5257,
+    "bruttoMarginal": 0.4524,
+    "ebitMarginal": 0.2122,
+    "nettoMarginal": 0.1628,
+    "fcfMarginal": 0.147
+  },
+  "stabilitet": {
+    "skuldEgenkapital": 0.0359,
+    "rantaTackning": null,
+    "fcfPositivaSenaste5": null,
+    "kassaManaderBurnRate": null,
+    "nyemissionerSenaste5ar": null
+  },
+  "aterkop": {
+    "senasteArMdr": null,
+    "andelUtestande": null,
+    "insiderkopSenaste6man": 0
+  },
+  "moat": {
+    "bruttoMarginalMedel5ar": null,
+    "bruttoMarginalSpread5ar": null,
+    "roeMedel5ar": null
+  },
+  "vardering": {
+    "pe": 18.367,
+    "pb": 6.099,
+    "evEbit": 9.255,
+    "peg": 1.79,
+    "fcfYield": 0.0624,
+    "egenKapitalMultipl": 6.099
+  },
+  "golv": {
+    "typ": "osatt",
+    "vardePerAktie": null,
+    "marginal": null
+  },
+  "serier": {
+    "ar": [
+      "2023",
+      "2024",
+      "2025",
+      "2026"
+    ],
+    "omsattning": [
+      4538818000.0,
+      4298467000.0,
+      4554900000.0,
+      4840761000.0
+    ],
+    "resultat": [
+      364575000.0,
+      612143000.0,
+      631529000.0,
+      711187000.0
+    ],
+    "egetKapital": [],
+    "fcf": []
+  },
+  "notering": "serier/CAGR bygger på 4 räkenskapsår (källan ger 4, inte 5); prognosTillvaxt = konsensus EPS-tillväxt +1 år (earningsTrend); roic = approximerad proxy: EBIT före skatt / (skuld + bokfört EK); rantaTackning osatt: räntekostnad saknas för senaste räkenskapsåret; moat-bruttomarginaler: ingen årlig bruttovinsthistorik hos källan"
+}

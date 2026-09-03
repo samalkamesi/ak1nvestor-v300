@@ -10,7 +10,7 @@
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan du: förklara varför en ensam faktor inte räcker — värdefällan utan vändsignal och prisvågen utan värdegolv · behärska de fem oberoende dimensionerna — värdegolvet, kvaliteten, fundamental vågstart, prisvåglag och divergens — och veta vad varje dimension ensam aldrig svarar på · tillämpa konfluens-principen: minst tre oberoende källor, räknade över informationsfamiljer — en källa med fyra röster är inte fyra vittnen · klassa varje aktie i de fyra klasserna Konfluens, Värde-men-vågör-sover, Vågör-utan-värde och Ingen bild — och känna den pedagogiska handlingen för varje klass · känna igen och motverka fallgroparna: värdefällor, look-ahead, survivorship och overfitting i kompositer · redogöra öppet för kompositens pionjärer: Greenblatts Magic Formula, Novy-Marx' andra sidan av värde, Gray–Carlisles Quantitative Value och Asness–Moskowitz–Pedersens Value and Momentum Everywhere med den negativa korrelationen mellan värde och momentum · använda Konfluensradarn på /konfluens med dess grävverktyg /netnet och /vagfundament · fördjupa dig i varje dimension: NCAV-golvet och AKM1-kvaliteten, mikro- och kortvågstarten, konsten att vara tidig i prisvågen och divergensens fyra kvadranter · möta faktorzoo-kritiken i dess starkaste form — Harvey–Liu–Zhu, McLean–Pontiff och index-förespråkarna — och bära vårt svar och våra medgivanden: determinism, osatta celler, fem oberoende källor, och huvudsanningen att modellen rangordnar studieunderlag, inte predikterar framtiden · vandra certifikatsstigen från AKM1-grunden via värdeböckerna, vågläran och tidsserierna till den sammansatta läsningen.",
-  "why": "Trilogin lämnade en strukturell lucka: tre instrument, tre blindfläckar och ingen kurs i att läsa dem tillsammans. AKM1 poängsätter en stillbild, AK1TS läser priset utan ett ord bokslut, Vågfundamentet läser fundamentalen utan priset — och varje instruments styrka är de andras blindhet. Konfluens är ekosystemets svar: den sammansatta metoden, vår egen innovation, som systematiserar den gamla regeln (minst tre av fem ska peka samma håll) till fem oberoende dimensioner och fyra klasser. Kursen behövs av tre skäl. För det första är läsning av en femdimensionersbild ett hantverk — oberoende, klassning, divergens — som förtjänär sin egen manual: pedagogiken bakom Konfluensradarn på /konfluens. För det andra är den sammansatta metoden exakt den typ av konstruktion som akademikernas faktorzoo-kritik riktar sig mot; kursen formulerar därför kritiken starkare än kritikerna själva och svarar med determinism, osatta-cellernas ärlighet och kravet på fem oberoende källor — med medgivandet att komplexitet är ett partiellt skydd, inte en garanti. För det tredje sekretessen: motorns exakta vikter och trösklar är labbets interna know-how och nämns aldrig i kursen — det som lärs ut är koncept, klassnamn och principer, exakt som Vågfundament-kursen deklarerar för sin motor. Och huvudsanningen står i varje kapitel: konfluens-modeller predikterar inte framtiden — de rangordnar studieunderlag.",
+  "why": "Trilogin lämnade en strukturell lucka: tre instrument, tre blindfläckar och ingen kurs i att läsa dem tillsammans. AKM1 poängsätter en stillbild, AK1TS läser priset utan ett ord bokslut, Vågfundamentet läser fundamentalen utan priset — och varje instruments styrka är de andras blindhet. Konfluens är ekosystemets svar: den sammansatta metoden, vår egen innovation, som systematiserar den gamla regeln (minst tre av fem ska peka samma håll) till fem oberoende dimensioner och fyra klasser. Kursen behövs av tre skäl. För det första är läsning av en femdimensionersbild ett hantverk — oberoende, klassning, divergens — som förtjänar sin egen manual: pedagogiken bakom Konfluensradarn på /konfluens. För det andra är den sammansatta metoden exakt den typ av konstruktion som akademikernas faktorzoo-kritik riktar sig mot; kursen formulerar därför kritiken starkare än kritikerna själva och svarar med determinism, osatta-cellernas ärlighet och kravet på fem oberoende källor — med medgivandet att komplexitet är ett partiellt skydd, inte en garanti. För det tredje sekretessen: motorns exakta vikter och trösklar är labbets interna know-how och nämns aldrig i kursen — det som lärs ut är koncept, klassnamn och principer, exakt som Vågfundament-kursen deklarerar för sin motor. Och huvudsanningen står i varje kapitel: konfluens-modeller predikterar inte framtiden — de rangordnar studieunderlag.",
   "chapters_list": [
     {
       "num": 1,
@@ -154,7 +154,7 @@
       "num": 2,
       "minutes": 13,
       "title": "De fem dimensionerna — fem oberoende ögon på samma aktie",
-      "intro": "Konfluensradarn bygger på fem dimensioner. Inte tre, inte tjugo — fem, valda för att de svarar på fem oberoende frågör och hämtar sina svar från trilogins tre instrument plus börsens prisdata. Det här kapitlet presenterar varje dimension, dess arv och — lika viktigt — vad den ensam aldrig svarar på.",
+      "intro": "Konfluensradarn bygger på fem dimensioner. Inte tre, inte tjugo — fem, valda för att de svarar på fem oberoende frågor och hämtar sina svar från trilogins tre instrument plus börsens prisdata. Det här kapitlet presenterar varje dimension, dess arv och — lika viktigt — vad den ensam aldrig svarar på.",
       "blocks": [
         {
           "type": "text",
@@ -162,7 +162,7 @@
         },
         {
           "type": "text",
-          "content": "Nu kravet som håller ihop allt: dimensionerna ska vara OBEROENDE. AK1TS-kursens viktigaste självkritik gäller här direkt: räkna konfluens över informationsfamiljer, inte över celler — fem +1:or varav fyra från samma momentumgrund är en källa med fyra röster, inte fem vittnen. Konfluensradarn tillämpar samma stränghet över dimensioner: värdegolvet vilar på nivåer, kvaliteten på hälsa, vågstarten på fundamental riktning, prisvåglaget på prisrörelse och position, divergensen på relationen dem emellan — fem olika frågör, fem olika datafamiljer. Men ärligheten kräver ett medgivande: oberoende är ett designkrav, inte ett matematiskt bevis. I kriser korrelerar allt — företag, sektorer och faktorer faller samtidigt — och då krymper det effektiva antalet vittnen. Därför läses konfluens alltid tillsammans med riskbudget, och därför finns kapitel 12."
+          "content": "Nu kravet som håller ihop allt: dimensionerna ska vara OBEROENDE. AK1TS-kursens viktigaste självkritik gäller här direkt: räkna konfluens över informationsfamiljer, inte över celler — fem +1:or varav fyra från samma momentumgrund är en källa med fyra röster, inte fem vittnen. Konfluensradarn tillämpar samma stränghet över dimensioner: värdegolvet vilar på nivåer, kvaliteten på hälsa, vågstarten på fundamental riktning, prisvåglaget på prisrörelse och position, divergensen på relationen dem emellan — fem olika frågor, fem olika datafamiljer. Men ärligheten kräver ett medgivande: oberoende är ett designkrav, inte ett matematiskt bevis. I kriser korrelerar allt — företag, sektorer och faktorer faller samtidigt — och då krymper det effektiva antalet vittnen. Därför läses konfluens alltid tillsammans med riskbudget, och därför finns kapitel 12."
         },
         {
           "type": "text",
@@ -170,7 +170,7 @@
         },
         {
           "type": "insikt",
-          "content": "Fem dimensioner, fem frågör — och den fråga ingen av dem besvarar: vad händer imorgon. Skriv det på en lapp och läs den före varje användning av radarn: dimensionerna beskriver ett nu-läge i fem oberoende speglar, och speglar prognosticerar inte."
+          "content": "Fem dimensioner, fem frågor — och den fråga ingen av dem besvarar: vad händer imorgon. Skriv det på en lapp och läs den före varje användning av radarn: dimensionerna beskriver ett nu-läge i fem oberoende speglar, och speglar prognosticerar inte."
         },
         {
           "type": "tabell",
@@ -312,7 +312,7 @@
         },
         {
           "type": "insikt",
-          "content": "Klass är en fråga, inte ett svar. Konfluens frågar: vad är värt att studera först? Värde-men-vågör-sover frågar: vad skulle väcka vågorna? Vågör-utan-värde frågar: vad ser marknaden som jag missar? Ingen bild frågar: vilken data saknas? Fyra frågör — noll order."
+          "content": "Klass är en fråga, inte ett svar. Konfluens frågar: vad är värt att studera först? Värde-men-vågör-sover frågar: vad skulle väcka vågorna? Vågör-utan-värde frågar: vad ser marknaden som jag missar? Ingen bild frågar: vilken data saknas? Fyra frågor — noll order."
         },
         {
           "type": "tabell",
@@ -331,7 +331,7 @@
         {
           "q": "Vad är den pedagogiska handlingen för klassen Värde-men-vågör-sover?",
           "alternativ": [
-            "Köpå direkt — värde är värde",
+            "Köpa direkt — värde är värde",
             "Bevakningslista med en skriven vändobservation — tålamod är uppgiften",
             "Sälja allt i sektorn",
             "Byta hela listan till index"
@@ -404,7 +404,7 @@
           "alternativ": [
             "Att använda data som inte fanns tillgänglig när beslutet skulle ha fattats",
             "Att titta för länge på en graf",
-            "Att köpå dagen före utdelning",
+            "Att köpa dagen före utdelning",
             "Att analysera ett bolag före rapporten"
           ],
           "ratt": 0,
@@ -580,7 +580,7 @@
       "num": 8,
       "minutes": 13,
       "title": "Fördjupning I — värdegolvet och kvaliteten: Grahams arv i AKM1",
-      "intro": "De två första dimensionerna delar både arv och kapitel: båda kommer från värdeinvesterings tradition, båda mäter nivåer — men de svarar på olika frågör och skyddar mot olika död. Det här är golvet och muren i den sammansatta byggnaden.",
+      "intro": "De två första dimensionerna delar både arv och kapitel: båda kommer från värdeinvesterings tradition, båda mäter nivåer — men de svarar på olika frågor och skyddar mot olika död. Det här är golvet och muren i den sammansatta byggnaden.",
       "blocks": [
         {
           "type": "text",
@@ -588,7 +588,7 @@
         },
         {
           "type": "text",
-          "content": "Kvaliteten. AKM1:s bokslutssida — bruttomarginal och EBITDA-marginal (V07–V08), ROE (V09), skuldsättningsgrad och kvickkvot (V10–V11), intäktsstabilitet (V12) — plus riskraden V19 (kapitalförbränning och emissionsrisk: utspädning är värdeinvesterarens tysta fiende) och V20 (återköp: kapital som flödär tillbaka till ägarna). Andan är Piotroskis: nio binära kontroller, ingen tolkning, bolaget VISAR hälsan i stället för att analysen TYCKER om den. Kvalitetsdimensionen är filtret som skiljer billigt-friskt från billigt-döende — och Quantitative Value-kursens Deere-lära är dess karaktärsdrag i en mening: tråkighet är en feature, inte en bug; berättelselösa bolag handlas med rabatt eftersom ingen vill berätta om dem, och rabatten är kanten."
+          "content": "Kvaliteten. AKM1:s bokslutssida — bruttomarginal och EBITDA-marginal (V07–V08), ROE (V09), skuldsättningsgrad och kvickkvot (V10–V11), intäktsstabilitet (V12) — plus riskraden V19 (kapitalförbränning och emissionsrisk: utspädning är värdeinvesterarens tysta fiende) och V20 (återköp: kapital som flödar tillbaka till ägarna). Andan är Piotroskis: nio binära kontroller, ingen tolkning, bolaget VISAR hälsan i stället för att analysen TYCKER om den. Kvalitetsdimensionen är filtret som skiljer billigt-friskt från billigt-döende — och Quantitative Value-kursens Deere-lära är dess karaktärsdrag i en mening: tråkighet är en feature, inte en bug; berättelselösa bolag handlas med rabatt eftersom ingen vill berätta om dem, och rabatten är kanten."
         },
         {
           "type": "text",
@@ -600,7 +600,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\": \"Värdegolvet och kvaliteten — två dimensioner, två arv\", \"rader\": [[\"Dimension\", \"Kärnfråga\", \"Variabler och arv\", \"Vad den inte svarar\"], [\"Värdegolvet\", \"Hur djupt är golvet?\", \"NCAV-traditionen (/netnet) + V04–V06-familjen; QV:s kompositlära\", \"om bolaget förtjänär att räknas\"], [\"Kvaliteten\", \"Överlever bolaget till dess?\", \"V07–V12 + V19 och V20; Piotroski-andan\", \"när marknaden upptäcker det\"], [\"Tillsammans\", \"billigt och friskt\", \"Graham + QV-traditionen\", \"NÄR — därför räcker de aldrig ensamma till Konfluens\"]]}"
+          "content": "{\"rubrik\": \"Värdegolvet och kvaliteten — två dimensioner, två arv\", \"rader\": [[\"Dimension\", \"Kärnfråga\", \"Variabler och arv\", \"Vad den inte svarar\"], [\"Värdegolvet\", \"Hur djupt är golvet?\", \"NCAV-traditionen (/netnet) + V04–V06-familjen; QV:s kompositlära\", \"om bolaget förtjänar att räknas\"], [\"Kvaliteten\", \"Överlever bolaget till dess?\", \"V07–V12 + V19 och V20; Piotroski-andan\", \"när marknaden upptäcker det\"], [\"Tillsammans\", \"billigt och friskt\", \"Graham + QV-traditionen\", \"NÄR — därför räcker de aldrig ensamma till Konfluens\"]]}"
         },
         {
           "type": "utmaning",
@@ -671,7 +671,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\": \"Nivå, riktning, start — tre frågör till fundamentalen\", \"rader\": [[\"Fråga\", \"Horisont i Vågfundamentet\", \"Vad den fångar\", \"Fälla\"], [\"Nivå\", \"medellång till mega\", \"hur bra bolaget är\", \"stillbild — säger inget om vändning\"], [\"Riktning\", \"kort\", \"vart de färskaste serierna går\", \"en kvartalstrend är brus\"], [\"Vågstart\", \"mikro + kort\", \"har vändningen börjat — och upprepat sig?\", \"att läsa en ensam rapport som en våg\"]]}"
+          "content": "{\"rubrik\": \"Nivå, riktning, start — tre frågor till fundamentalen\", \"rader\": [[\"Fråga\", \"Horisont i Vågfundamentet\", \"Vad den fångar\", \"Fälla\"], [\"Nivå\", \"medellång till mega\", \"hur bra bolaget är\", \"stillbild — säger inget om vändning\"], [\"Riktning\", \"kort\", \"vart de färskaste serierna går\", \"en kvartalstrend är brus\"], [\"Vågstart\", \"mikro + kort\", \"har vändningen börjat — och upprepat sig?\", \"att läsa en ensam rapport som en våg\"]]}"
         },
         {
           "type": "utmaning",
@@ -738,7 +738,7 @@
         },
         {
           "type": "insikt",
-          "content": "Bekräftelse och marginal är varandras fiender: det som bekräftats mest är det som betalar minst att köpå. Den sammansatta läsaren söker inte vågens bevis utan vågens början — basbygge med golv under och motor på gång."
+          "content": "Bekräftelse och marginal är varandras fiender: det som bekräftats mest är det som betalar minst att köpa. Den sammansatta läsaren söker inte vågens bevis utan vågens början — basbygge med golv under och motor på gång."
         },
         {
           "type": "tabell",
@@ -872,7 +872,7 @@
         },
         {
           "type": "text",
-          "content": "Sedan praktiker-na, som inte alls är snällare, bara rakare. William Sharpes aritmetik: aktiv förvaltning är ett nollsumspel före kostnader och ett förlorarspel efter dem. Dumb money-forskningen: kapitalet strömmar till gårdagens vinnare. Empirin: efter kostnader slår ett enkelt index de allra flesta aktiva och komplexa strategier — och Quantitative Value-kursens eget bevis är rentav försvårande för vår del: Grahams enkla mekaniska regler backtestades i boken till runt sjutton procent per år, 1976 till 2011, utan en enda dimension. Varför lägga kurs, verktyg och fem dimensioner på något som en indexfond gör utan kurs — och som en enkel regel historiskt gjort lika bra? Det är en verklig fråga. Den förtjänär ett verkligt svar, inte en undanmanöver."
+          "content": "Sedan praktiker-na, som inte alls är snällare, bara rakare. William Sharpes aritmetik: aktiv förvaltning är ett nollsumspel före kostnader och ett förlorarspel efter dem. Dumb money-forskningen: kapitalet strömmar till gårdagens vinnare. Empirin: efter kostnader slår ett enkelt index de allra flesta aktiva och komplexa strategier — och Quantitative Value-kursens eget bevis är rentav försvårande för vår del: Grahams enkla mekaniska regler backtestades i boken till runt sjutton procent per år, 1976 till 2011, utan en enda dimension. Varför lägga kurs, verktyg och fem dimensioner på något som en indexfond gör utan kurs — och som en enkel regel historiskt gjort lika bra? Det är en verklig fråga. Den förtjänar ett verkligt svar, inte en undanmanöver."
         },
         {
           "type": "text",
@@ -888,7 +888,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Använd kritikens ribba på verktyget självt: kör Quantitative Value-kursens fyra frågör på Konfluensradarn — mekanism (vilket beteende eller strukturellt fel prisas fel?), enkelhet (kan metoden förklaras på en rad?), förkunskap (vilka byggstenar var kända före vår tillämpning?) och replikerbarhet (fungerar läsningen utanför sitt urval?). Skriv svaret ärligt — och notera var verktyget faller på sin egen examen. Det är kursens sista övning i ödmjukhet före syntesen."
+          "content": "Använd kritikens ribba på verktyget självt: kör Quantitative Value-kursens fyra frågor på Konfluensradarn — mekanism (vilket beteende eller strukturellt fel prisas fel?), enkelhet (kan metoden förklaras på en rad?), förkunskap (vilka byggstenar var kända före vår tillämpning?) och replikerbarhet (fungerar läsningen utanför sitt urval?). Skriv svaret ärligt — och notera var verktyget faller på sin egen examen. Det är kursens sista övning i ödmjukhet före syntesen."
         },
         {
           "type": "visuell",
@@ -947,7 +947,7 @@
         },
         {
           "type": "text",
-          "content": "Den sammansatta analytikerns porträtt, sju drag. Ett: kräver minst tre oberoende vittnen — och räknar familjer, inte röster. Två: tål osatta celler och skriver ut dem som forskningsagenda. Tre: skiljer klass från rekommendation — radarn rankar studie, aldrig position. Fyra: söker det tidiga läget hellre än det bekräftade, eftersom bekräftelse och marginal är fiender. Fem: formulerar studiefrågör i stället för teser — frågan kan ha svar, tesen vill bara ha rätt. Sex: definierar brytpunkt och riskbudget själv, före positionen. Sju: bär huvudsanningen som en fjärde pulsklocka: modellen rangordnar studieunderlag — människan avgör, och ansvaret är därmed också människans. Det är hela personen: inte smartare om framtiden än någon annan — bara disciplinerad i hur många oberoende ögon som fick titta före beslutet. Trilogin gav dig instrumenten. Konfluens lärde dig läsa dem tillsammans. Nu återstår det enda ingen kurs kan ge: att göra det, månadsruta för månadsruta, med ärligheten oskadd."
+          "content": "Den sammansatta analytikerns porträtt, sju drag. Ett: kräver minst tre oberoende vittnen — och räknar familjer, inte röster. Två: tål osatta celler och skriver ut dem som forskningsagenda. Tre: skiljer klass från rekommendation — radarn rankar studie, aldrig position. Fyra: söker det tidiga läget hellre än det bekräftade, eftersom bekräftelse och marginal är fiender. Fem: formulerar studiefrågor i stället för teser — frågan kan ha svar, tesen vill bara ha rätt. Sex: definierar brytpunkt och riskbudget själv, före positionen. Sju: bär huvudsanningen som en fjärde pulsklocka: modellen rangordnar studieunderlag — människan avgör, och ansvaret är därmed också människans. Det är hela personen: inte smartare om framtiden än någon annan — bara disciplinerad i hur många oberoende ögon som fick titta före beslutet. Trilogin gav dig instrumenten. Konfluens lärde dig läsa dem tillsammans. Nu återstår det enda ingen kurs kan ge: att göra det, månadsruta för månadsruta, med ärligheten oskadd."
         },
         {
           "type": "insikt",

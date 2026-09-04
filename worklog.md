@@ -5738,3 +5738,291 @@ MAIN-VERIFIERING: tsc 43/0 · svit 83 PASS/0/0 (76→83) · Kvalitetsvakten
 9/9 GRÖN. Nästa våg (styrelsens ordning): M1 AI-mentor bolagsfakta →
 M2 AKM2-läge i kalkylatorn → M4 mejl topp-3 → M5 vågnotiser (kräver
 Supabase-persistens) → motorändringar när validerings-kitet kalibrerat.
+
+## VÅG 57 agent D1: M2 AKM2-LÄGET I KALKYLATORN — 4 döda motorer monteras, riskfritt (2026-09-04)
+
+Underlag: data/forskning/STYRELSE-mega-integration.md M2 ("projektions-
+invarianten gör det riskfritt"; styrelsens byggordning 3). KÄRNAN RÖRS
+INTE — src/lib/akm2/ (karna/vikter/moduler/dynamik/typer) importeras
+ENDAST oförändrad och körs HELT på klienten (ren TS, ingen ny API-route).
+
+(1) VÄXEL "AKM1 / AKM2" i akm1-calculator.tsx: AKM1-läget är OFÖRÄNDRAT
+(samma tre flikar, samma summa 0-100, gratis). AKM2-läget lägger en
+fjärde flik "🧩 AKM2: moduler & vikter" + AKM2-panel i resultatkolumnen:
+(a) modulväljare — AUTO (branschväxlaren matchar modulregistret:
+teknik⇒saas+tillvaxt, finans⇒bank, industri/material/energi⇒cyklisk+
+tillgångstung, övrigt⇒allmän; V29 insider förblir villkorad/inaktiv) eller
+MANUELLT (6 kryssrutor, förhandsfyllda med autosvaret); modulvariablerna
+V21–V28 får egna reglage 0–5 (default 3 = neutralt mittskikt) och länkar
+till mikro-lektionerna; (b) viktprofil-väljare ur VIKTPROFILER
+(akm1-klassisk LÅST / akm2-2026 / superanalys-2026 — beskrivningarna ur
+registret); (c) dynamik-läge som ÖVNING: av (default) / medriktning +1 /
+motriktning −1 — injicerad lager-3-funktion öppnar konfluensporten
+manuellt (kärnan rundar p̂ till heltal; Φ-tabellens ±0,2 skulle avrundas
+bort — dokumenterat i koden); (d) resultatkolumnen redovisar VARJE
+komponent: kärna V01–V20 (dina poäng) · viktprofilens omviktning ·
+moduler per aktiv modul + viktad andel av kompositen (union — delade
+variabler som V22 räknas en gång) · dynamik med medriktnings-/
+motriktningsetikett + tak-hänvisning ±10 (DYNAMIKTAK ur kärnan, "taket
+nått" när |just| = 10) · totalt 0–100 + band + "AKM2 ger ±N p mot AKM1 —
+moduler ±M, dynamik ±D, vikter ±V". Dekompositionen bygger på TRE
+kärnkörningar (R0 utan moduler/dynamik, R1 med moduler, R2 med dynamik) —
+heltalsaritmetik, komponenterna summerar EXAKT till komposit − AKM1-summa
+(numeriskt bevisat). Kalkylatorläget kör raknaAKM2 med "akm1Manuell"
+(R4 §5: människans poäng = fattade beslut) mot ett skugga-nyckeltal med
+ALL nyckeltalsdata null — hårda porten (BESLUT §5) följer DATA och
+utlöses därför ALDRIG i kalkylatorn (dokumenterat i fliken).
+
+(2) FAS-GATING: AKM2 kräver Fas 2+ — harFas2Access ur kurs-access.ts
+läses i useEffect efter montering (samma mönster som Fas2Gate/min-sida;
+SSR/first paint visar AKM1-läget, ingen hydreringsklyfta). Utan åtkomst:
+låst marin-kort "AKM2 — den dynamiska modellen. Ingår i Fas 2 +
+Forskning Plus-prenumerationen" med CTA /medlemskap#fas2 + /prenumeration
+och "AKM1-läget förblir gratis — alltid"; admin-bonus "Lås upp (admin)"
+(aktiveraFas2Override — samma testväg som övriga verktyg:
+localStorage ak1a-fas2-override=true). AKM1-läget förblir gratis.
+
+(3) #fas2-ANKARE: medlemskapssidan saknade ankare — id="fas2" +
+scroll-mt-24 tillfogad på "Fas 2 — den fundamentala vägen"-rubriken
+(src/app/medlemskap/page.tsx) så låskortets CTA landar rätt.
+
+VERIFIERAT: (a) tsc --noEmit 43/0 (43 kända baslinjefel, 0 nya, 0 i
+rörda filer). (b) SVITERNA OFÖRÄNDRADA 100 %: testa-akm2-karna 25/25
+(projektionsinvarianten ×5 håller), testa-akm2-moduler 64/64,
+testa-akm2-dynamik 55/55 ⇒ 144/144 — kärnfilerna orörda (endast import).
+(c) NUMERISK PIPELINE-KOLL (tmp-afx, raderad): Volvo Cars-exemplet 62/100
+⇒ klassisk profil + inga moduler + dynamik av: komposit 62 === AKM1
+(invarianten i kalkylatorläget, projiceraAKM1 62); akm2-2026: vikter −2;
+moduler default 3p ⇒ påslag 0 (mittskikt = neutral default), modulpoäng
+5 ⇒ +14; dynamik ±1 ⇒ exakt ±10 (taket bitit — etiketten syns);
+dekompositionen summerar exakt; klassisk + moduler ⇒ 62 oförändrad +
+kärnans notering "väger 0 i profilen akm1-klassisk" visas i panelen;
+port aldrig aktiv på null-data. (d) DEV port 3493: /kalkylator 200 —
+SSR-HTML innehåller växeln (AKM1/AKM2-knapparna + 🔒-logik), AKM1-flikarna
++ AKM1-poäng intakta, AKM2-panelen korrekt ABSENT i SSR (bart efter
+lägesval i klienten); /medlemskap 200 med id="fas2"; /prenumeration 200;
+0 fel i dev-loggen. Dev-servern dödad, port 3493 verifierad fri.
+
+RÖRDES: src/components/ak1a/akm1-calculator.tsx (AKM2-läget),
+src/app/medlemskap/page.tsx (endast #fas2-ankaret). RÖRDES EJ:
+src/lib/akm2/** (KONTRAKTET OFÖRÄNDRAT — endast importerat), AKM1-lägets
+beräkning och UI, övriga verktyg. INGET committat.
+
+── VÅG 57, AGENT D3: AKM2-DASHBOARD — VISUELLA GRAFER UTAN BIBLIOTEK (2026-09-04) ──
+Kundens ord: "dashboarden med visuella grafer och bilder som ska hjälpa klienter
+att ta bästa beslut". Uppdrag §4: visuella komponenter, SVG utan bibliotek,
+marin+guld-DNA, färgblint-vänliga (etiketter + värden bär informationen —
+färgen är bara stöd).
+
+(1) NY FIL src/components/ak1a/akm2-dashboard.tsx ("use client", VIL-stil ur
+visuellt-bibliotek.tsx Akm1Radar — samma kortram/geometri, temebeständiga
+SVG-färger via var(--gold/--gold-soft/--djup-marin)):
+  • Akm2Radar — spindelnät V01–V20 (effektiva poäng via kärnans
+    effektivaPoang) + STRECKAD MODULRING V21–V29 (aktiva modulvariabler
+    guldprickade med poängsiffra, osatta/inaktiva tomma cirklar) + total
+    komposit i marincirkel i mitten. Hover-tooltip per punkt (fast höjd =
+    ingen layout-shift; variabelnamn + poäng + källa kärna/modul; SVG
+    <title>-fallback) och klick → highlight-ring (toggle).
+  • ModulPåslagStapel — per AKTIV modul: namn (kortetikett), automatisk-
+    märkning, horisontell stapel (bredd ∝ modulens viktade kompositbidrag,
+    "+X,X p") + klickbara variabelchips (V-id namn poäng/5 → lyfter
+    radarpunkten). DYNAMIKRADER per par: riktningpil+text (↑ förbättras /
+    ↓ försvagas / → stabilt), δ-belopp, faktisk kompositeffekt efter vikt
+    (överstruken "0,0 p" när porten ej öppen), port-status och TAK-NOTIS
+    "Sammanlagd modulering ±X p — tak ±10" (DYNAMIKTAK ur kärnan; "TAK
+    NÅTT" när |modulering| ≥ 10).
+  • ProfilJamforelse — två staplar AKM1 (marin) vs AKM2-komposit (guld) +
+    differenschip (↑/↓/= + ±X,X p, tecknet alltid i texten) + mini-
+    förklaring "Varför skillnaden": topp-2 orsaker ur modulbidrag/
+    dynamikeffekter/hård port, fallback-text om viktomfördelning eller
+    projektionsinvarianten (identiskt).
+  • Akm2Dashboard — sammansatt vy som ÄGER highlight-state (parent) och
+    skickar aktivVariabel/onVariabelKlick till radar+staplar; bandchip
+    (BAND_TEXT), viktprofils-chip, valfri prenumerationsEtikett + notis.
+  • Akm2DemoStrip — story-lik demo: två syntetiska fixturer (DEMO-IND moget
+    industri / DEMO-SAAS med hål — samma värden som testa-akm2-moduler.mjs:s
+    FIXTUR_A/B-mönster) + dynamik-toggle; räknas live av den ÄKTA kärnan
+    raknaAKM2 (moduler via registret + akm2-2026 + injicerad demo-dynamik i
+    kärnans lager 3-kontrakt, typer.ts). Prenumerations-etiketter: chip
+    "Demo — ej låst" + länkar /forskningsbiblioteket + /prenumeration
+    ("ingår i Portföljforskning-nivåerna") + disclaimer 2007:528.
+
+(2) NY FIL src/lib/akm2-visningsdata.ts — ren TS (medvetet utan "use client"
+och fs) så att både klientkomponenter och serverkod delar samma mappning:
+MODUL_IDN (spegling av MODULER-registrets ordning: saas/bank/cyklisk/
+tillgangstung/tillvaxt/allman), MODUL_ETIKTTER/modulKortNamn, svTal (svenska
+decimaler), byggModulAktiveringar(k) — lager 2 ur modulregistret med
+ÄRLIGHET: VariabelSvar.osatt injiceras ALDRIG som poäng (kärnan omfördelar
+deras vikt enligt BESLUT §2 i stället för att späda med gissade nollor).
+
+(3) NY FIL src/lib/akm2-onsdemand.ts (server) — hamtaAkm2ForAnalys(ticker):
+prioritet (1) analys-JSON:ns akm2-block OM helt AKM2Resultat-format,
+(2) D2:s berikningscache data/cache/akm2-{TICKER}.json → .resultat (fullt
+AKM2Resultat; kor-akm2-berika.mjs — samma konfiguration som fallbacken så
+siffrorna överensstämmer med D2:s textblock), (3) on-demand raknaAKM2 ur
+P1:s fundamental-{TICKER}.json-cache (moduler per bransch + akm2-2026, utan
+dynamik — neutral degradering R4 §4). Toleranta formguards + tickerFil-
+sanering (".":ar → "_", samma som kor-analysfabrik.mjs); null ⇒ sektion
+renderas ej (motorn gissar aldrig).
+
+(4) MONTERING: (a) kalkylatorns AKM2-läge — komponenterna EXPORTERAS från
+akm2-dashboard.tsx för D1 (D1 byggde under vågen sin egen panel i
+akm1-calculator.tsx; kalkylatorfilen orörd av D3 — adoption lämnas till D1).
+(c) /kalkylator TIPPEN: Akm2DemoStrip (demo när AKM2 ej låst) monterad i
+src/app/kalkylator/page.tsx mellan intro och Akm1Calculator. (b) Alla 22
+/forskningsbiblioteket/[ticker]-detaljsidor: ny sektion "AKM2-dashboarden —
+se helheten visuellt" efter D2:s textbaserade AKM2-profil; intro förklarar
+källa OCH att jämförelsen AKM1→AKM2 sker inom kärnan (dess AKM1-skugga kan
+ligga lägre än P1-summan — kärnan lämnar proxy-härledda variabler osatta).
+Min Sida orörd (uppdraget sa nej denna våg).
+
+(5) VERIFIERAT: dev 3495 (tidigare servers PID 3472/3494 togs ner först —
+projektlåset tillåter en dev-instans; efteråt dödades även 3495, port
+verifierad fri): /kalkylator 200 — SSR innehåller demo-stripens alla TRE
+komponenter ("AKM2-profil"-radar, "AKM1 → AKM2", "Modulpåslag & dynamik")
++ dynamikrader "↑ förbättras" + "Sammanlagd modulering" + DEMO-IND-fixtur
+och chip "Demo — ej låst"; detaljsidor INDU-C/HM-B/MC.PA/GOOGL 200 —
+dashboard via akm2-cache-sökvägen (INDU-C: komposit 85,0 i grafen === D2:s
+textblock "Total: 85" — konsistent), SVG-tooltips "V21 ROIC — 5/5 p
+(modul)" / "V22 … osatt/inaktiv" i HTML:n. tsc 43/0 (43 kända baslinjefel,
+0 nya, 0 i D3:s filer). Sviten validera-motorer: 85 PASS / 0 FAIL /
+0 SKIP, avslutskod 0 (100 % — 83→85 är D1/D2:s nya rader; D3 lade till 0
+och bröt 0). 0 fel i dev-loggen.
+
+RÖRDES: NYA src/components/ak1a/akm2-dashboard.tsx, src/lib/akm2-visningsdata.ts,
+src/lib/akm2-onsdemand.ts; src/app/kalkylator/page.tsx (demo-strip-import +
+montering), src/app/forskningsbiblioteket/[ticker]/page.tsx (import +
+hamtaAkm2ForAnalys + dashboard-sektionen). RÖRDES EJ: src/lib/akm2/**
+(kärnan endast importerad — OFÖRÄNDRAD), akm1-calculator.tsx (D1:s),
+Min Sida, data/. INGET committat.
+
+── VÅG 57, AGENT D2: AKM2 IN I PORTFÖLJFORSKNINGEN (2026-09-04) ──
+Kunduppdrag: AKM2-kärnan (färdig, OFÖRÄNDRAD — endast importerad) ut i
+portföljforskningens alla led: korstabell → portföljförslag → detaljsidor.
+KLARGÖRANDE (uppdragets fråga): korstabell-grund.json byggs av
+verktyg/python/sammanstalla_korstabell.py (P6), FORSKNINGSBIBLIOTEKET av
+verktyg/kor-analysfabrik.mjs (våg 56) — AKM2-berikningen blev därför ett NYTT
+TS-steg emellan (Python kan inte importera TS-kärnan).
+
+(1) BERIKNINGEN — 100/100 RADER + 100 CACHER. Nytt lib
+src/lib/portfolj-forskning/akm2-koppling.ts: byggAutomatiskaModuler
+(DELEGERAR till D3:s gemensamma byggModulAktiveringar i akm2-visningsdata.ts
+— EN modulaktiveringskälla i hela systemet; osatta modulvariabler injiceras
+aldrig → kärnan omfördelar vikt, BESLUT §2), raknaAkm2ForNyckeltal
+(raknaAKM2 med moduler auto per bransch + viktprofil "akm2-2026", NEUTRALT
+dynamiklager — ren fundamental syntes), berikaRadMedAkm2 (akm2 = komposit,
+akm2Skillnad = akm2 − akm1Totalt på 1 dec, akm2Moduler = registrets namn;
+främmande/saknat nyckeltal ⇒ null/[] — aldrig gissat) + akm2ProfilUr
+(serialiserbar profil: aktiva moduler med variabler+poäng, satta vs osatta
+modulvariabler, dynamikpåverkan-text, omfördelningsnot). Nytt verktyg
+verktyg/kor-akm2-berika.mjs (kor-fvag-mönstret: genererar tmp-ts, kör npx
+tsx, städar): KÖRT 2× (omkopplingen verifierad värdeidentisk) — 100 rader
+berikade (0 saknade), 100 data/cache/akm2-{T}.json (schema akm2-resultat-v1:
+fullt AKM2Resultat + profil), korstabell-grund.json additivt berikad +
+akm2Regler-dokumentation i roten. Utfall: modulfördelning SaaS 10 · Tillväxt
+20 · Cyklisk 30 · Tillgångstung 30 · Bank 10 · Allmän 30 (överlapp per
+bransch är registrets design); skillnad mot AKM1: medel +13,7 p · 97 höjda ·
+3 sänkta · topp INDU-C 85 (+26,9).
+
+(2) KORSTABELL-UI. korstabell.tsx: NY kolumn "AKM2" vid sidan av AKM1 —
+Akm2Cell (vag-stil.tsx: bandfärgad total + differens-chip ±N, bull/bear/grå,
+tooltip med aktiva moduler) i tabellen (aria-sort + sorteringsknapp —
+sortNyckel akm1|akm2, grupperaBranscher utökad, null-akm2 sorterar sist) och
+i mobilkorten (chip under Akm1Chip + "AKM2-moduler: N aktiva"-rad med
+registrets modulnamn i tooltip); legend + intro-text uppdaterade; tabell-
+bredd 1640→1740 px.
+
+(3) PORTFÖLJFÖRSLAGEN — POÄNGBAS AKM1|AKM2. riskportfolj.ts: PoangBas-typ +
+POANGBASER + sakradPoangBas; raknaPoang(rad, profil, bas) — basen byter
+ENDELIGT formelns första led (0,50 × bas/100; null-akm2 bidrar 0); byggPort-
+folj(..., {poangbas}) trådar basen genom poäng, motiv ("AKM2-komposit X/100
+… AKM1 Y som jämförelse"), ersättningskandidater, ak1aNot + id-stämpel
+"-akm2-"; PortfoljForslag.poangbas i typkontraktet. Kravkontrollerna förblir
+AKM1-baserade i båda lägena (de vaktar korstabellens strikta krav). API
+/api/portfolj-forskning POST: poangbas valideras (ogiltigt → akm1) och
+echas i svaret. GATING: src/lib/prenumeration.ts — nivåmodellen
+PRENUMERATIONS_NIVAER (forskning < forskning-plus < portfolj-hyra ur
+priser.json), lasValdPrenumerationsNiva (aktiveringsintentionen i
+localStorage — samma local-modell som Fas-gatingen tills betallösningen
+landar) + harPrenumerationsNiva (även admin-upplåst); bygg-portfolj-kort.tsx:
+"Poängbas: AKM1 | AKM2"-väljare (🔒 på AKM2 utan nivå, mäts i effekt + OM vid
+varje klick — hydrationssäkert); AKM2 valt utan Plus ⇒ låst panel med chip
+"Kräver Plus" + CTA /prenumeration + "Bygg på AKM1 i stället" — inbjudan,
+aldrig ett nej; med Plus ⇒ poangbas skickas i POST och förslags-chipen
+redovisar "Poängbas AKM2 (moduler V21+ · akm2-2026)".
+
+(4) DETALJSIDORNA. kor-analysfabrik.mjs ÅTERKÖRD (22 analyser): akm2-block
+per analys-JSON (totalt, skillnad, viktprofil, modellversion, band, port-
+status, aktivaModuler med variabler+poäng, satta/osatta modulvariabler,
+dynamikPaverkan, omfordelning, osakerhet, källa-rad) ur data/cache/akm2-* +
+radens berikade fält; bloggtvåvägslänken återställd (kor-analysblogg.mjs
+återkörd efter generatorn — bloggSlug tillbaka, akm2 kvar). analysfabrik.ts:
+AnalysfabrikAkm2-typ; detaljsidan renderar "AKM2-profilen": total + skillnad-
+chip (grön/röd/grå) + bandet + HÅRD PORT-merkze, aktiva moduler med V21+
+-poäng och orsak, satta vs osatta modulvariabler, DYNAMIKPÅVERKAN-kort
+(ärligt: lager 3 ej aktiverat i denna beräkning — ren fundamental syntes;
+FVag-dynamiken redovisas separat och påverkar inte kompositen) +
+omfördelningsnot + modellversion (D3:s dashboard-sektion kompletterar med
+grafer på samma sida — källorna delas: D2-cache via akm2-onsdemand.ts).
+
+(5) VERIFIERING. Svit: 2 NYA tester (83→85) — akm2-koppling: formeln
+akm2Skillnad = akm2 − akm1Totalt dubbelräknad + främmande/saknat nyckeltal →
+null + moduler + determinism; riskportfolj: poängbas AKM2 (Δpoäng = 0,50×Δbas,
+inverterade rader byter rankning mellan lägena, null-akm2 → 0, byggPortfolj
+2× JSON-identisk, poangbas + id-stämpel + motiv + ak1aNot + Σvikt=1, AKM1-
+default opåverkat) → RESULTAT: 85 PASS / 0 FAIL / 0 SKIP (6,3 s). tsc 43/0
+(kända fel, 0 i rörda filer). Gatinglogik (tsx-engångskoll med localStorage-
+shim): ingen intention LÅST · forskning LÅST · forskning-plus UPPLÅST ·
+portfolj-hyra UPPLÅST · okänd/ogiltig LÅST. DEV 3494 (repo-låget tvingade
+omstart — D3:s server på 3495 hann dö emellan): /portfolj-forskning 200 med
+200 AKM2-chips (100 tabell + 100 mobil) + 100 mobilmodulrader + poängbas-
+väljare; POST akm2 2× identiska (15 innehav, Σvikt 1,0, id …-akm2-…, motiv
+"AKM2-komposit 60/100 …", ak1aNot nämner AKM2) + default-läge fortfarande
+akm1 med eget id; detaljsidor 200 (INDU-C + NEM: "AKM2-profilen", "Aktiva
+moduler", "Dynamikpåverkan", skillnad-chip "mot AKM1", Modellversion
+AKM2.2026.09) + listan + /prenumeration 200 (CTA-målet). Server stoppad.
+
+RÖRDES: src/lib/portfolj-forskning/{akm2-koppling(NY),riskportfolj,typer,
+korstabell-data}.ts, src/lib/{prenumeration,analysfabrik}.ts,
+src/components/ak1a/portfolj-forskning/{korstabell,bygg-portfolj-kort}.tsx,
+vag-stil.tsx, detaljsidan [ticker]/page.tsx (AKM2-profilen + modulKortNamn),
+api/portfolj-forskning/route.ts, verktyg/{kor-akm2-berika(NY),
+kor-analysfabrik,kor-analysblogg,validera-motorer}.mjs, data: korstabell-
+grund.json (berikad) + 100 NYA cache/akm2-*.json + 22 analys-JSONer + 5
+bloggposter. RÖRDES EJ: src/lib/akm2/** (kärnan — endast importerad).
+INGET committat.
+
+── VÅG 57 KOMPLETT: AKM2 DOCKAD I HELA EKOSYSTEMET (2026-09-04) ──
+Kundfråga: "Var är AKM2 forskningen och verktyget? Har vi byggt klart
+detta Mega system och sammankopplat det med ekosystemet + dashboarden
+med visuella grafer... tillhöra portfölj-prenumerationer?" SVAR: forsk-
+ningen (data/forskning R1-R4 + AKM2-BESLUT.md) och stacken (144 interna
+tester) fanns sedan våg 38-39 men var ODOCKAD — nu dockad av TRE agenter:
+(D1) KALKYATORN: AKM1/AKM2-växel (AKM1 gratis oförändrad), AKM2-flik
+"moduler & vikter": bransch-auto moduler + manuella kryssrutor, reglage
+V21-V28 med kurslänkar, viktprofiler (klassisk låst/akm2-2026/super-
+analys), dynamikläge, FULL DEKOMPOSITION (kärna/vikter/moduler per
+aktiv+dynamik med tak ±10-notis, "AKM2 ger ±N — moduler ±M, dynamik ±D,
+vikter ±V", invarianttext vid 0). Fas2-gating med låskort + CTA.
+Invarianten bevisad i kalkylatorläge (62 === 62).
+(D2) PORTFÖLJFORSKNINGEN: kor-akm2-berika.mjs → 100/100 bolag berikade
+(medel +13,7 p, 97 höjda/3 sänkta, topp INDU-C 85 (+26,9); akm2-cacher
+data/cache/akm2-{T}.json) + korstabellens AKM2-kolumn (differenschip,
+sortering, mobilkort) + detaljsidornas AKM2-profilblock (moduler med
+orsak, satta vs osatta, dynamik, omfördelningsnot, modellversion) +
+PORTFÖLJENS POÄRGBAS-VÄLJARE AKM1|AKM2 (trådad genom poäng/motiv/
+ersättningar/ak1aNot) — gating: forskning-plus+ (449) enligt prenu-
+ationsmodellen (ingen intention/forskning= LÅST, plus/hyra= UPPLÅST).
+(D3) VISUELL DASHBOARD (akm2-dashboard.tsx): Akm2Radar (V01-V20 effektiva
+poäng + streckad modulring V21-V29 + komposit-i-centrum, hover/klick-
+highlight), ModulPåslagStapel (per modul + dynamikrader med riktningpil
++ tak-notis), ProfilJamforelse (AKM1 vs AKM2 + varför-skillnad), demo-
+strip på /kalkylator (räknad live av äkta kärnan) + dashboard-sektion på
+ALLA 22 detaljsidor (komposit 85,0 === textblocket — samma källa).
+En gemensam modulaktiveringskälla (akm2-visningsdata.ts — osatta injiceras
+ALDRIG, BESLUT §2). Kärnan src/lib/akm2/** OFÖRÄNDRAD i alla tre.
+MAIN: tsc 43/0 · svit 85 PASS/0/0 (83→85) · Kvalitetsvakten 9/9 GRÖN.
+Prenumerationslogiken: AKM1 gratis för alltid; AKM2 i kalkylatorn = Fas 2+;
+AKM2-poängbas i portföljen = Forskning Plus (449 kr/mån)+. Kö: M4 mejl
+topp-3, M5 vågnotiser (Supabase-persistens), motorändringar efter
+validerings-kitets kalibrering.

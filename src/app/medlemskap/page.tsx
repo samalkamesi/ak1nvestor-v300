@@ -476,7 +476,8 @@ export default function MedlemskapPage() {
           dina egna beslut.
         </p>
 
-        <h3 className="mt-5 font-serif text-lg font-bold">
+        {/* #fas2-ankare — AKM2-kalkylatorns låskort länkar hit (VÅG 57, M2). */}
+        <h3 id="fas2" className="mt-5 scroll-mt-24 font-serif text-lg font-bold">
           Fas 2 — den fundamentala vägen <span className="text-gold">· {fas2Antal} kurser</span>
         </h3>
         <div className="mt-3 grid gap-4 md:grid-cols-2">

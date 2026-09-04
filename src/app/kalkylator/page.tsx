@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Akm1Calculator } from "@/components/ak1a/akm1-calculator";
+import { Akm2DemoStrip } from "@/components/ak1a/akm2-dashboard";
 
 export const dynamic = "force-static";
 
@@ -30,6 +31,11 @@ export default function KalkylatorPage() {
         Dra i reglagen — rekommendationen och kategorisnitten uppdateras direkt.
         Osäker på vad en variabel betyder? Klicka på namnet för hela kursen.
       </p>
+
+      {/* AKM2-demo-strip — förhandsvisning medan AKM2-läget ej låst
+          (våg 57 D3; det fullständiga läget byggs av D1 i kalkylatorn). */}
+      <Akm2DemoStrip />
+
       <div className="mt-10">
         <Akm1Calculator />
       </div>

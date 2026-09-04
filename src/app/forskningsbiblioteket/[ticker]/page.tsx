@@ -2,8 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { lasAnalyser, getAnalys, HORIZONTER } from "@/lib/analysfabrik";
+import { hamtaAkm2ForAnalys } from "@/lib/akm2-onsdemand";
+import { modulKortNamn } from "@/lib/akm2-visningsdata";
 import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { Akm2Dashboard } from "@/components/ak1a/akm2-dashboard";
 
 export const dynamic = "force-static";
 
@@ -28,6 +31,14 @@ const DYN_ETIKETT: Record<string, string> = {
   stabilt: "stabilt",
   forsvamras: "försvagas",
   osatt: "osatt",
+};
+
+/** AKM2-bandens pedagogiska etiketter (kärnans BAND_TEXT — aldrig köp/sälj). */
+const AKM2_BAND_ETIKETT: Record<string, string> = {
+  aktor: "Aktör att följa",
+  studera: "Studera vidare",
+  skjut: "Skjut inte",
+  osatt: "Osatt",
 };
 
 export async function generateMetadata({
@@ -94,6 +105,10 @@ export default async function AnalysfabrikDetaljPage({
   ];
 
   const kategorier = Object.entries(a.akm1?.perKategori || {});
+
+  // AKM2-dashboard (våg 57 D3): D2:s akm2-cache om den finns, annars
+  // on-demand med raknaAKM2 ur nyckeltalscachen — null ⇒ sektionen renderas ej.
+  const akm2 = hamtaAkm2ForAnalys(a.ticker);
 
   return (
     <SeoPageShell
@@ -221,6 +236,132 @@ export default async function AnalysfabrikDetaljPage({
           </div>
         </div>
       </section>
+
+      {/* ── AKM2-profilen (våg 57 D2) ── */}
+      {a.akm2 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-2xl font-bold">AKM2-profilen</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            Kompositen ur <strong>AKM2</strong> — kärnans V01–V20 med automatiskt
+            aktiverade branschmoduler (V21+) och viktprofilen{" "}
+            <code className="rounded bg-muted px-1">{a.akm2.viktprofil}</code> — där
+            osattas vikt omfördelas istället för att straffa saknad data.
+            {a.akm2.totalt !== null && (
+              <>
+                {" "}
+                Total: <strong>{sv(a.akm2.totalt)}/100</strong>{" "}
+                {a.akm2.skillnad !== null && (
+                  <span
+                    className={`ml-1 inline-block rounded-full border px-2 py-0.5 text-xs font-bold ${
+                      a.akm2.skillnad > 0
+                        ? "border-emerald-700/30 bg-emerald-700/10 text-emerald-700 dark:text-emerald-400"
+                        : a.akm2.skillnad < 0
+                          ? "border-red-900/30 bg-red-900/10 text-red-700 dark:text-red-400"
+                          : "border-muted-foreground/30 bg-muted text-muted-foreground"
+                    }`}
+                    title="AKM2-kompositen minus korstabellens publicerade AKM1-total — hur modulerna, omfördelningen och viktprofilen flyttar bolagets total."
+                  >
+                    {a.akm2.skillnad > 0 ? "+" : a.akm2.skillnad < 0 ? "−" : "±"}
+                    {sv(Math.abs(a.akm2.skillnad))} mot AKM1
+                  </span>
+                )}
+                {a.akm2.band && (
+                  <>
+                    {" "}
+                    Pedagogiskt band:{" "}
+                    <strong>{AKM2_BAND_ETIKETT[a.akm2.band] ?? a.akm2.band}</strong>
+                  </>
+                )}
+                {a.akm2.portAktiv && (
+                  <span className="ml-2 rounded-full border border-red-900/40 bg-red-900/10 px-2 py-0.5 text-xs font-bold text-red-700 dark:text-red-400">
+                    HÅRD PORT aktiv — komposit takad
+                  </span>
+                )}
+              </>
+            )}
+          </p>
+
+          {/* Aktiva moduler — vilka, varför och deras variabelpoäng */}
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="rounded-lg border border-gold/20 bg-card p-4">
+              <h3 className="font-semibold">Aktiva moduler ({a.akm2.aktivaModuler.length})</h3>
+              {a.akm2.aktivaModuler.length === 0 ? (
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Inga branschmoduler lämnade poäng — modulblockets vikt har
+                  omfördelats till kärnans mätta variabler.
+                </p>
+              ) : (
+                <ul className="mt-2 space-y-2 text-sm">
+                  {a.akm2.aktivaModuler.map((m) => (
+                    <li key={m.modulId}>
+                      <span className="font-mono text-xs text-gold">
+                        {modulKortNamn(m.modulId)}
+                        {m.variabler.length > 0 &&
+                          ` · ${m.variabler
+                            .map((v) => `${v} ${sv(m.poang[v] ?? 0)}/5`)
+                            .join(" · ")}`}
+                      </span>
+                      <p className="mt-0.5 leading-relaxed text-muted-foreground">
+                        {m.orsak}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Satta modulvariabler: {a.akm2.modulVariablerSatta.length > 0 ? a.akm2.modulVariablerSatta.join(", ") : "inga"}.
+                Osatta (vikt omfördelad, aldrig straffad):{" "}
+                {a.akm2.modulVariablerOsatta.length > 0 ? a.akm2.modulVariablerOsatta.join(", ") : "inga"}.
+              </p>
+            </div>
+
+            {/* Dynamikpåverkan — kort och ärligt */}
+            <div className="rounded-lg border border-gold/20 bg-card p-4">
+              <h3 className="font-semibold">Dynamikpåverkan</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {a.akm2.dynamikPaverkan ??
+                  "Dynamiklagret lämnade ingen notering — kompositen är en ren fundamental syntes."}
+              </p>
+              {a.akm2.omfordelningText && (
+                <p className="mt-3 border-t border-gold/15 pt-2 text-xs leading-relaxed text-muted-foreground">
+                  {a.akm2.omfordelningText}
+                </p>
+              )}
+              {a.akm2.modellVersion && (
+                <p className="mt-2 text-xs text-muted-foreground">
+                  Modellversion {a.akm2.modellVersion}.
+                </p>
+              )}
+            </div>
+          </div>
+          <p className="mt-3 text-xs italic leading-relaxed text-muted-foreground">
+            Källa: {a.akm2.kalla}. Kompositen är ett pedagogiskt research-mått —
+            aldrig en köp- eller säljsignal.
+          </p>
+        </section>
+      )}
+
+      {/* ── AKM2-dashboarden — visuella grafer (våg 57 D3) ── */}
+      {akm2 && (
+        <section className="mt-10" aria-label="AKM2-dashboard med visuella grafer">
+          <h2 className="font-serif text-2xl font-bold">AKM2-dashboarden — se helheten visuellt</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {akm2.kalla === "beraknad-ur-cache"
+              ? "Beräknad on-demand med AKM2-kärnan (raknaAKM2) ur nyckeltalscachen: moduler aktiva per bransch, viktprofilen akm2-2026, utan dynamik (neutral degradering). Kärnans ärlighetsregler gör att osatta variabler väger om i stället för att straffa — därför kan kärnans AKM1-skugga här skilja sig från P1-summan ovan; osatt är osatt."
+              : "Samma beräkning som ovan, nu som grafer: spindelnätet visar kärnans V01–V20 (efter dynamik), den streckade ringen aktiva modulvariabler (V21–V29, guldprickade), och totalen står i mitten. Hovra över en punkt för namn och poäng — klicka för att koppla markeringen mellan graf och modulstaplar. Jämförelsen AKM1 → AKM2 sker inom kärnan: dess AKM1-skugga (lager 1) kan ligga lägre än P1-summan ovan, eftersom kärnan lämnar proxy-härledda variabler osatta i stället för att gissa."}
+          </p>
+          <div className="mt-4">
+            <Akm2Dashboard
+              resultat={akm2.resultat}
+              notis={
+                akm2.kalla === "akm2-cache"
+                  ? "Källa: data/cache/akm2-{ticker}.json (verktyg/kor-akm2-berika.mjs, våg 57 D2)."
+                  : undefined
+              }
+            />
+          </div>
+        </section>
+      )}
 
       {/* ── Vågläget ── */}
       <section className="mt-10">

@@ -32,6 +32,32 @@ export type Motiveringsrad = {
   motivering: string;
 };
 
+/** Våg 57 D2: en aktiverad branschmodul i AKM2-blocket (ur modulregistret). */
+export type Akm2ModulRad = {
+  modulId: string;
+  orsak: string;
+  variabler: string[];
+  poang: Record<string, number>;
+};
+
+/** Våg 57 D2: AKM2-profilen — raknaAKM2 med moduler auto + akm2-2026. */
+export type AnalysfabrikAkm2 = {
+  totalt: number | null;
+  skillnad: number | null;
+  viktprofil: string;
+  modellVersion: string | null;
+  band: string | null;
+  portAktiv: boolean;
+  aktivaModuler: Akm2ModulRad[];
+  modulVariablerSatta: string[];
+  modulVariablerOsatta: string[];
+  dynamikPaverkan: string | null;
+  omfordelningText: string | null;
+  osakerhetNote: string | null;
+  radModuler: string[];
+  kalla: string;
+};
+
 /** analysfabrik-v1 — genererat dokument (se verktyg/kor-analysfabrik.mjs). */
 export type AnalysfabrikAnalys = {
   schema: "analysfabrik-v1";
@@ -65,6 +91,8 @@ export type AnalysfabrikAnalys = {
     topp3Motiveringar: Motiveringsrad[];
     botten3Motiveringar: Motiveringsrad[];
   };
+  /** Våg 57 D2: bolagets AKM2-profil — null när beriknings-cachen saknades. */
+  akm2?: AnalysfabrikAkm2 | null;
   vaglage: {
     perHorisont: Record<HorisontNyckel, VagKlassText>;
     fvagDynamik: DynamikText;

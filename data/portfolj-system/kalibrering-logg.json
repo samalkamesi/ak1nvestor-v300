@@ -1,0 +1,153 @@
+{
+  "schema": "kalibrering/1",
+  "protokollVersion": 1,
+  "skapad": "2026-09-04",
+  "rader": [
+    {
+      "version": 1,
+      "typ": "matning",
+      "manad": "2026-09",
+      "datum": "2026-09-04",
+      "genererad": "2026-09-04T20:12:45.172Z",
+      "schema": "kalibrering/1",
+      "protokollVersion": 1,
+      "modell": "AKM3.2026.09",
+      "phiVersion": "design-2026-09-03",
+      "grindLasad": true,
+      "deltaPhi": 0,
+      "cleanFran": "2026-09-04",
+      "domRader": 0,
+      "episoderTotalt": 0,
+      "rho": 0.45,
+      "rhoKalla": "fallback (för få par: 0)",
+      "effektivaPerDag": 2.2,
+      "faser": {
+        "impulsvag_bekraftad": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.65,
+          "kredibeltIntervall90": [
+            0.3960434345546969,
+            0.8683083061056098
+          ],
+          "phiForslag": 1.06,
+          "phiSittande": 1.2,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": false
+          },
+          "status": "vantar-grind"
+        },
+        "impulsvag_obekraftad": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.5,
+          "kredibeltIntervall90": [
+            0.25136762740817664,
+            0.7486323725918231
+          ],
+          "phiForslag": 1,
+          "phiSittande": 1.1,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": false
+          },
+          "status": "vantar-grind"
+        },
+        "impulsvag_mogen": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.45,
+          "kredibeltIntervall90": [
+            0.20868433128333413,
+            0.7032321113634039
+          ],
+          "phiForslag": 0.98,
+          "phiSittande": 1.2,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": false
+          },
+          "status": "vantar-grind"
+        },
+        "basbygge": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.34,
+          "kredibeltIntervall90": [
+            0.12464357921787156,
+            0.5933625267366271
+          ],
+          "phiForslag": 0.968,
+          "phiSittande": 1,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": true
+          },
+          "status": "vantar-grind"
+        },
+        "korrigering_hog_g": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.4600000000000001,
+          "kredibeltIntervall90": [
+            0.21700334435416635,
+            0.712530905866096
+          ],
+          "phiForslag": 0.984,
+          "phiSittande": 0.8,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": false
+          },
+          "status": "vantar-grind"
+        },
+        "korrigering_lag_g": {
+          "T": 0,
+          "M": 0,
+          "episoder": 0,
+          "nEff": 0,
+          "pHat": 0.4,
+          "kredibeltIntervall90": [
+            0.16875049598732383,
+            0.6550586340562969
+          ],
+          "phiForslag": 0.98,
+          "phiSittande": 0.9,
+          "villkor": {
+            "nEff20": false,
+            "intervallKlart": false,
+            "rateLimit": false
+          },
+          "status": "vantar-grind"
+        }
+      },
+      "osattEpisoder": 0,
+      "odomdaEpisoder": 0,
+      "korrigeringGOkand": {
+        "episoder": 0,
+        "traff": 0,
+        "miss": 0
+      },
+      "rollbackRegel": "Automatisk återkallning är KONTRAKT: ligger träffen för faser med ny Φ mer än 5 procentenheter LÄGRE än gamla tabellens inom 90 dagar efter främjandet (n_eff ≥ 30) ⇒ rulla tillbaka och publicera \"version X återkallad öppet\" (r4 §8.2-formen). Dokumenterad regimepause fryser kalibreringen (ΔΦ = 0 tills vidare).",
+      "prevHash": null,
+      "hash": "b5400a158c0089b667b391165bbb6ec0685b59f997f30cac3a1472ec4a4b8b31"
+    }
+  ],
+  "senasteHash": "b5400a158c0089b667b391165bbb6ec0685b59f997f30cac3a1472ec4a4b8b31"
+}

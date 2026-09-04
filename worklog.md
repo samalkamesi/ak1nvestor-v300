@@ -6475,3 +6475,448 @@ fel före = 43 efter (0 NYA — baslinjen orörd).
 PARALLELLBYGGE: steg 3 (osakerhet) + steg 4 (peer) byggdes samtidigt av
 andra agenter — detaljsidan fogades additivt kring deras sektioner, inga
 konflikter. INGET COMMITTAT.
+
+── VÅG 60 FORSKNING: AKM3 r6–r7 + MARKNAD m9–m10 — underlag till nästa styrelserond (villkorade steg 7–9 + marknad våg 4) (2026-09-04) ──
+Fyra forskarrapporter (omgång 11–14 i kundens 20-omgångars-metforen), skrivna
+EFTER kodläsning av aktuellt läge (VÅG 59: ensemble/osakerhet/peer byggda,
+prediktionsloggen + Bana B v2 live, analysfabriken som mönster) + WebSearch.
+INGEN kod rörd, INGET COMMITTAT.
+
++ data/forskning/AKM3/r6-horisontvyer.md (NY): AKM3-BESLUT §11 steg 9
+  preciserat. Aktiveringsvillkoren mätbara: V1 = prediktionsloggen ≥ 8
+  kvartalsserier med stabil P5-dom mot AKM2 (neutralitet räcker för
+  presentationsvy, WORSE stänger ζ-kollaps permanent); V2 = V16–V18-täckning
+  ≥ 50 % av universumet (D1-baseline ~0 idag); V3 = distanskurvan m(2,0/
+  1,25/0,5) frusen som EN trippel + test som nekar per-horisont-tal.
+  Byggfärdig design: horisontprofiler.ts (ren funktion ur HEMMHORISONT +
+  VIKTPROFILER, normalize via losaVikter, ALDRIG ensemble-inom-horisont —
+  §9.3), HorisontVaxlare-UI (flikar Mikro→Mega, mikro-gråning vid tunn data,
+  ζ-rad som jämförelsetal ALDRIG ranking), kalkylatorreglaget "Vad händer
+  vid full data?" (r4 §3.3: K(x) = K + 20·(1−t)·x, port-klipp 45, avstängt i
+  manuellt läge). DOM: horisontvyer VILLKORAT (realistiskt 2028), reglaget
+  MOGET NU (oberoende av V1/V2 — kräver bara steg 3-chippet i korstabellen).
+
++ data/forskning/AKM3/r7-modulinduktion.md (NY): frågan "kan nya moduler
+  V21+ induceras ur data?" tudelad och dömd: STATISTISK induktion AVSLAGEN
+  (Harvey–Liu–Zhu/McLean–Pontiff — n=100 är multipel-test-brus);
+  DESIGNBUREN expansion GENOMFÖRBAR längs femstegstrappan G1–G5 (design →
+  datagrund → täckning ≥ 50 % → prediktionsspår → styrelsebeslut).
+  V29 (insider): FI:s PDMR-register är offentlig/exporterbar sedan 2016
+  (ingen officiellt API; Python-biblioteket insynsregistret = precedent) —
+  förslag verktyg/kor-insyn.mjs + data/insider/{TICKER}.json, aktivering
+  = protokollversion + nytt prediktionsspår. ESG (V30): Pedersen m.fl.
+  2021 ger den försiktiga evidensramen; leverantörsdivergensen bryter mot
+  kanonisk-källa-kulturen ⇒ LÄSLAGER först (mott vid källval), poängsatt
+  modul AVSLAGEN tills EN kanonisk källa kontrakterats (CSRD/ESRS gör det
+  lättare om 12–24 mån). DOM: VILLKORAT (V29:mätning moget nu, aktivering
+  beslut; ESG: läs-lager villkorat, poäng avslaget).
+
++ data/forskning/MARKNAD/m9-innehallsfabrik.md (NY): SEO-innehållsfabrik
+  ur forskningsdata. Datagrund VERIFIERAD: fundamental-cachen (67/100 bolag)
+  bär RÅA värden (t.ex. bruttoMarginal 0,8169 AZN, hamtat 2026-09-03 +
+  källa) — "V07-branschöversikt: bruttomarginalens medianer" blir äkta tal
+  ur data, inte poäng. Tre led: (1) kor-innehallsfabrik.mjs (mönstret
+  kor-analysfabrik.mjs — deterministiskt, md5-spårbart, peer.ts:s n≥5-regel,
+  osatt=osatt) → UTKAST i data/blogg-fabrik/, EVERGREEN slug per V (inte
+  månadsduplikat — scaled-content-försvar mot Googles mars-2024-policy);
+  (2) kvalitetsgrind kontrolleraText (BEROENDE: våg 2 — arbetskopia med
+  kontrolleraText() finns redan, icke-committad; kopplas in när våg 2 landat) +
+  strukturredaktör; (3) mänsklig granskning (granskadAv-
+  tvång) → data/blogg + og-generate (VÅG 1a). Mappning mot planens 20
+  long-tail-ämnen: fabriken KOMPLETTERAR de handskrivna guiderna (intern-
+  länkad), ersätter aldrig; V16–V18-serierna skjuts upp tills täckningen
+  växt (samma mätare som r6 V2). Startpilot: V07+V08+V09 (3 poster) före
+  full serie. DOM: VILLKORAT (genereringsledet moget nu; publicering väntar
+  våg 2 + granskningsrutin).
+
++ data/forskning/MARKNAD/m10-referral.md (NY): DelaKort-elev-för-elev med
+  referral-attribuering. VIKTIGT FYND: "anonym hash" är en paradox —
+  e-posthash är PSEUDONYM personuppgift (EDPS/AEPD-vägledning; brute-
+  force-bar) ⇒ REKOMMENDERAD design är SLUMPKOD (?ref=AB12CD9F, crypto-
+  random, spärrbar, opt-in via DelaKort) + aggregate-only (members.
+  antalTipsade INT; ingen social graf LAGNAS ALDRIG — A4-precedenset).
+  E-posthash-i-länk AVSLAGEN (läcker personuppgift i loggar); HMAC-variant
+  dokumenterad som fallback. Juridik SE: lotterilagen 3 § (med/utan insats)
+  ⇒ inga dragningar, deterministiskt tack endast; marknadsföringslagen ⇒
+  öppen "en väns inbjudan"-rad; ePrivacy ⇒ ref-parameter tvättas ur URL,
+  inga nya cookies (P6). Design utan FOMO: tack + privat badge (Mentor),
+  ALDRIG topplista/progress/deadlines; mottagarsidan opersonlig, kastar
+  koden. Kundåtgärder J1–J2 (policy + ROMP-rad) blockerar belöningssystemet,
+  inte QR-attribueringen. DOM: VILLKORAT (QR+mottagarrad moget nu; belöning
+  väntar J1–J2 + våg 2:s FOMO-vakt; alt A avslaget).
+
+Gemensam struktur: varje rapport ≤ 250 rader, källor (kod + WebSearch),
+avslutar med 3 rekommendationer + "moget nu / villkorat / avslå". Dessa
+fyra är underlaget till nästa styrelserond.
+
+── VÅG 60 bygg-D: DEL-RADEN + ANALYS-DELA-KORT + CTA-LUCKORNA (2026-09-04) ──
+Uppdrag: MARKNADS-BESLUT VÅG 3 (m8 §3b + m7 §3c) — öppen delning på blogg +
+forskningsbiblioteket, generaliserat DelaKort, två CTA-luckor. Fil-domäner
+respekterade (beslut §5: del-rad.tsx + dela-kort.tsx + qr-importer + CTA-
+patcher). varumarke.ts/kontrolleraText EJ landat ännu (våg 2) → all ny copy
+kontrollerad MANUELLT mot m6 §C FEL/VARNING-lista: 0 träffar ("investerings-
+råd" enbart i disclaimer-token-negation "Pedagogisk analys — inte investerings-
+råd"; "kunder"-träff var "sekunder"). INGET COMMITTAT.
+
+(1) NY FIL src/components/ak1a/del-rad.tsx ("use client", m8:s design —
+ikonrad, inte banner): EN Dela-knapp (navigator.share {title,text,url}) +
+Kopiera länk (clipboard + useToast) + subtil "Hittade du detta värdefullt?
+Dela gärna." NOLL belöning/lås/tredjepartsskript/någon spårning (AC2, P1/P5/
+P6); clipboard-fallback när share saknas (AC1); disclaimer-token i share-
+texten när propen disclaimer=true (analys-innehåll, AC1). Ingen import ur
+seo.tsx i klienten (fs-beroende) — LAB_URL-konstant som befintlig DelaKort.
+Monterad: blogg/[slug] efter </article> före "Fortsätt i kurserna" +
+forskningsbiblioteket/[ticker] efter "Fördjupa dig" (listvyn avsiktligt
+ostörd — detaljer räcker). /analyser/[ticker] (grundarens rapporter) berörs
+EJ — koordinatorns monteringslista är den operativa.
+
+(2) dela-kort.tsx GENERALISERAD, bakåtkompatibel (min-sida <DelaKort/> +
+kurs-steg <DelaKort kursTitel className/> oförändrade): optionella props
+titel + rubrikrader + qrUrl aktiverar ANALYS-LÄGET (Boolean(titel)) — ingen
+inloggningsvägg, ALDRIG localStorage-läsning, ren prop-drivet SSR-säkert
+(renderas direkt, ingen skeleton). byggKortSvg blir union typ "elev"|"analys":
+elev-grenen SVG-identisk med förr; analys-grenen samma DNA (marin/guld/
+serif 1200×630, eyebrow + FORSKNINGSBIBLIOTEKET-etikett, titel klampad 26,
+rubrikrader[0] → guldkursiv undertitel, resten Verdana-rader, sloganraden
+kvar, bottenrad = "Forskningsunderlag — pedagogisk analys, inte investerings-
+råd.", QR-block 928/120/208 med "Skanna — läs forskningen"). QR-målet = qrUrl
+(analys-URL:en — ALDRIG startsidan, AC3); share-texten i analys-läget bär
+disclaimer-token + qrUrl. LOKAL QR-KODARE RADERAD (~290 rader) — import
+{ qrMatris, qrPath } från src/lib/qr.ts (VÅG 1a:s extrakt, ordagrant samma
+algoritm → identisk utdata; certifikat.tsx:s egna kopia orörd, ej min fil).
+Filnamn analys-läge: ak1a-forskningskort.png. Mount på detaljsidan: DelRad
+(titel "{namn} ({ticker}) — AKM1-forskning", disclaimer) ovanpå + DelaKort
+(titel=namn, rubrikrader=[ticker·statusEtikett, "AKM1 x av y p (z %)"],
+qrUrl=SITE_URL/forskningsbiblioteket/{encodeURIComponent(ticker)}) under —
+m8:s ordning. Medvetet INGEN rekommendations-rad på kortet (P2: marknadsyta
+marknadar metodik, aldrig hållning i specifik aktie).
+
+(3) CTA-LUCKA kurs-steg.tsx (m7 §3c): fas2Porten-texten (nivå-upp-bannern,
+nivå ≥ 25) var ren text → nu textlänk-nivå (CTA_HIERARKI 4: text-gold +
+underline decoration-gold/40) till /medlemskap#fas2 (ankaret finns, medlemskap
+rad 480, scroll-mt-24). Bannern är pointer-events-none → länken bär
+pointer-events-auto för egen träffyta. xc: t()-översättningen orörd (sv/en/ar).
+
+(4) CTA-LUCKA forskningsbiblioteket/page.tsx (m7 §3c, A9:s tillåtna form):
+diskret rad under introrubriken — btn-marin "Forskning Plus låser AKM2-
+poängbasen" → /prenumeration + varsam rad "Alla översikter ovan förblir
+kostnadsfria — prenumerationen lägger till, den tar aldrig bort." (P3-vakt;
+ingen låsteaser, inget dolt Fas 1-innehåll).
+
+VERIFIERING (dev 3503): 200 på /blogg/5-vanliga-nyborjarmisstag-svenska-
+aktier + /forskningsbiblioteket/BSX + /forskningsbiblioteket + /medlemskap +
+/prenumeration + /kurser + /kurser/the-intelligent-investor + /min-sida.
+Del-raden syns i SSR-HTML på blogg (Dela + Kopiera länk + frågeraden) och på
+analys-sidan + analyskortet renderar (title-klamp "Boston Scientific Corpora…",
+FORSKNINGSBIBLIOTEKET, QR-block 928/120). QR node-strip-types-test (node
+22.19): qrMatris(analys-URL 52 tecken) → 33×33 (v4, EC M), deterministisk 2×,
+256/1089 moduler skiljer mot startsides-QR (genuint annat mål), sökare 3
+hörn intakta. CTA-mål: /medlemskap#fas2 → id="fas2" verifierad i HTML;
+/prenumeration 200. tsc --noEmit: 43 fel före = 43 efter (0 NYA, AC5).
+Dev-servern på 3503 stoppad efter verifiering. Tempfiler borttagna.
+
+EFTERSKRIFT (AC4 fullt infriad): src/lib/varumarke.ts landade PARALLELLT
+under bygget (våg 2-agenten) → ALLA nya share-strängar + CTA-copy kördes
+genom den ÄKTA kontrolleraText (node --experimental-strip-types; enda
+transformationen i testkopian: JSON-importen → fs-läsning): 12/12 OK —
+0 FEL, 0 VARNING (kontrollexemplet "SISTA CHANSEN … garanterad avkastning"
+ger korrekt FEL + VARNING). SIGNATUR.disclaimer = "Pedagogisk analys —
+inte investeringsråd" = exakt den token som används i analys-lägets
+share-text. Slutlig tsc-omkörning med varumarke.ts på plats: fortfarande
+43/0 nya.
+
+## VÅG 60 bygg-A: AKM3 STEG 5 — REGIMINDIKATORN, deskriptiv + loggad från dag 1 (2026-09-04)
+
+STEG 5 (AKM3-BESLUT §8 + §11.5; underlag r2-regimer.md §2): regimen är i
+AKM3.2026.09 ENBART deskriptiv + loggad — viktprofil-kopplingen är AVSLOGEN
+till vidare (BESLUT §9.1: N-indikatorn kan inte aktivera vid 12 < 30 vågbolag
+⇒ G/R-only; timing-evidens out-sample-svag; dubbelräkningsrisk mot lager 3).
+Regimen väljer ALDRIG profil, ändrar ALDRIG poäng, ger ALDRIG signaler —
+den beskriver UNDERLAGET per senastKontrollerad (lagen 2007:528, FORBUD
+§10.8). vagfundament-motorn/vikterna RÖRDES EJ.
+
++ src/lib/akm3/regim.ts (NY — ren funktion, P1): raknaRegime({gronAndel,
+  rodAndel, nettoVagbredd?, antalVagbolag?, sigmaArs?, senastKontrollerad?},
+  tidigare?) → {regime: balanserad|expansiv|magert|korrigering|osatt,
+  indikatorer, trosklar, senastKontrollerad, beskrivning, byte, kandidat,
+  kravdaSnapshots, nySnapshot, nOsattOrsak}. r2:s FYRA indikatorer: G/R ur
+  forskningslaget.ts (TROSKLAR_…-KONSTANTERNA importeras — kanoniska tal
+  0,10/0,08/0,35/0,30, EN källa till sanning, inga nya magiska G/R-tal), N =
+  netto fundamental vågbredd (−1…+1), Σu = års-volatilitet. REGIME_TROSKLAR
+  öppna + serialiserbara (redovisas på /transparens + i API-svaret).
+  N-VAKT (BESLUT §8): N gäller först vid ≥ 30 mätta vågbolag — annars null +
+  nOsattOrsak ("12 mätta vågbolag < 30 (n-vakten)") ⇒ expansiv/korrigering
+  onåbara 2026.09 (G/R-only, §9.1). HYSTERES: in-/utträde åtskilda (magert-
+  bandet G 0,08–0,10 / R 0,30–0,35) via malRegime(sittande) — utträde
+  magert = G ≥ 0,10 OCH R ≤ 0,30; N-baserade regimer lämnas också när N
+  degraderar till osatt (P2-arvet: utan mätt vågbredd kan de inte beskrivas).
+  2-SNAPSHOT-BEKRÄFTELSE: kandidat {regime, snapshots} bärs av loggraderna;
+  byte först när målet stått still kravdaSnapshots (2, alt 3 vid års-Σu >
+  25 % — Σu-gaten); målet tillbaka på sittande ⇒ kandidaten nollställs.
+  FRYSNINGSKONTRAKT: snapshot-identiteten är senastKontrollerad — samma
+  ELLER äldre datum ⇒ tillståndet orörd (nySnapshot=false; dagar räknas
+  ALDRIG som observationer, FORBUD §10.7:s princip; dagliga cron-ronder kan
+  inte vippa regimen). GENESIS: första mätningen sätter regimen direkt
+  (BESLUT §8 verifierat: 2026-09-03 G=0,07 R=0,17 ⇒ "magert", byte=true).
+  Etikettnot (dokumenterad tolkning): r2 §2.2:s sammansatta "magert-
+  korrigering" är onåbart medan N=osatt och ingår INTE i 2026.09:s femvärdes-
+  union (koordinatorns typkontrakt); vid N mätt + båda villkoren beskrivs
+  läget som "korrigering" med G/R öppet redovisade i indikatorerna.
++ data/portfolj-system/regime-logg.json (NY — append-only + hash-kedjad som
+  prediktionsloggen): kedjeregel sha256(prev + "\n" + kanonisk rad-utan-hash)
+  med INJICERAD sha256 (lib:t klientsäkert, node:crypto endast i cronen) —
+  kanoniskRegimeJSON/byggRegimeLoggrad (null när underlag saknas: loggen
+  tiger)/raknaRegimehash/stemplaRegimeRad/verifieraRegimekedja (tom kedja
+  giltig; null/ickerad ogiltig). DAG-1-RADEN skriven via den äkta lib-vägen
+  (korstabellen → raknaForskningslage → raknaRegime): magert, per 2026-09-03,
+  G=0,07 R=0,17, N=osatt, hash c83ddac4…, kedjan verifierar. Rader skrivs
+  endast vid REGLERAD förändring: genesis, bekräftat byte eller kandidat-
+  rörelse — tyst kvartal appendar inget.
++ cron/vagvalidering (UTÖKAD — punkt (f) i ruttdoket): 5c) AKM3-regimen
+  räknas ur DAGENS data varje rond: G/R ur korstabell-grund.json via
+  raknaForskningslage (R = roda/antal, 4 decimaler som lib:t), N ur SENASTE
+  vagscan-event (scans[0]) om läsbart — universumSammanfattning ⇒
+  (impulsvåg−korrigering)/(impulsvåg+korrigering+basbygge), antal mätta =
+  fel-fria tickers — annars osatt-degradering; Σu=null tills N aktiveras
+  (vagkon-koppling = villkorat framtida steg; osatt ⇒ standard 2 snapshots).
+  Regime-loggen läses + kedjan VERIFIERAS FÖRE append: bruten kedja ⇒ loggen
+  lämnas ORÖRD + öppen notis (append-only-kontraktet, prediktionsmönstret).
+  Append endast vid reglerad förändring (read-only fs på Vercel ⇒ tyst
+  fail; regimen lever ändå i system_events + svaret). system_events-details
+  + svaret utökas ADDITIVT (regim: {regime, indikatorer, byte, kandidat,
+  kravdaSnapshots, senastKontrollerad, logg-status}) + organ-eventets matt
+  (regimRegime/regimByte/regimLoggSkriven). Idempotens-raden orörd.
++ /api/forskningslage (UTÖKAD — additiv nyckel `regim`): LÄSER senaste raden
+  i regime-loggen (fs) och returnerar utsnitt {regime, datum, beskrivning,
+  indikatorer, modellVersion} — loggen är sanningen: API:t räknar ALDRIG om
+  regimen på egen hand (vippning vid tröskeln ska aldrig visas före
+  bekräftelse). Saknas loggen ⇒ regim: null (kortet vilar, P3). Memo-cachen
+  1 h bär fältet; befintliga fält orörda.
++ forskningslage-kort.tsx (UTÖKAD): regimen som CHIP under kortrubriken —
+  "AKM3-REGIM · MAGERT per 3 sep. 2026" med title + aria-label = känne-
+  tecknande text + "indikatorer och trösklar öppet på /transparens. Inte
+  investeringsråd". Nejutral gold-styling (inga signalfärger, inga signalverb
+  — betydelsen bärs av ord + datering). renRegim städar defensivt; ogiltigt
+  värde ⇒ chippet syns inte. hamtaForskningslage returnerar {lage, regim}.
++ /transparens (sv): NY sektion 10 "Metodrad — så räknas regimeindikatorn
+  (AKM3)": tabell med ALLA fyra indikatorer (G/R/N/Σu), källor och ÖPPNA
+  trösklar (0,10/0,08/0,35/0,30; N ±0,20/±0,10 + n-vakten 30; Σu 25 % +
+  2/3-snapshots), etiketterna, hysteresen (grönt band 0,08–0,10; "ett
+  enskilt nytt grönt bolag vippar aldrig regimen"), kvartalskadensen,
+  källkods- + loggfilreferens och 2007:528-not (r2 §3.3.5 metodbladet).
+  Endast svenska /transparens (kanonisk yta) — en/ar är översättningsskuld.
+
+TESTER (verktyg/validera-motorer.mjs, sviten 100 %): 4 nya block för motor
+akm3/regim — (1) TRÖSKLAR: G/R-konstanter === forskningslagets exporter +
+n-vakt 30 + Σu 25 %/2/3; genesis 0,07/0,17 ⇒ magert byte=true; N=osatt även
+med råvärde +0,9 vid 12 < 30 (balanserad — expansiv/korrigering onåbara);
+N mätt vid 30/40 ⇒ expansiv resp korrigering; G=null ⇒ osatt; R=0,36 ⇒
+magert. (2) HYSTERES (AC §11.5.ii): sex nya snapshots som vippar G
+0,07↔0,08 ⇒ ALDRIG byte, regimen magert hela vägen; G=0,09 i bandet står
+kvar utan kandidat; G=0,10 R=0,31 ⇒ kvar (utträde kräver R ≤ 0,30); fullt
+utträde: kandidat balanserad (1) sedan bekräftat byte. (3) 2-SNAPSHOT +
+Σu-GATE: inträde magert från balanserad (kandidat 1 → byte 2); kandidat-
+reset när målet vänder; Σu 30 % ⇒ 3 snapshots (byte först 3), Σu 15 %/osatt
+⇒ 2; frysningskontraktet: samma/äldre datum ⇒ nySnapshot=false, byte=false,
+kandidat orörd även när dagens indikatorer skulle säga annat. (4) DETERMINISM
++ HASH-KEDJA: 5 fall 2× byte-identiskt; loggradens kontrakt (spar
+"akm3-regim", AKM3.2026.09, null-rad vid saknat underlag); kedjan verifierar
+(genesis→kandidat→byte), deterministisk 2×, avslöjar etikettmanipulation med
+behållen hash OCH bruten länk; tom giltig/null ogiltig.
+RESULTAT: 101 PASS / 0 FAIL / 0 SKIP (97 + 4 nya) · testa-uppfoljning 50/50 ·
+tsc 43 fel före = 43 efter (0 NYA — baslinjen orörd).
+
+DEV (3501): /api/forskningslage ⇒ {finns, lage, regim:{regime:"magert",
+datum:"2026-09-03", beskrivning, indikatorer}} med G/R intakta; /transparens
+200 med metodraden (0,08–0,10 + regime-logg.json syns i HTML);
+/portfolj-forskning 200 (kortet mountar, chippet hydrerar via useEffect —
+första passt skelett). Servern stoppad efter verifiering.
+
+PARALLELLBYGGE: steg 6 (kalibrering.ts + cron/akm3-kalibrering) och
+varumarke/del-raden byggdes samtidigt av andra agenter — skilda fil-domäner,
+inga konflikter (regim.ts/importer opåverkade; tsc gemensamt 43/0).
+INGET COMMITTAT.
+
+## VÅG 60 bygg-C: VARUMÄRKET SOM KOD — varumarke.json/ts + tonvakt 2b + BRAND.md härlett (2026-09-04)
+
+Underlag: data/forskning/MARKNAD/MARKNADS-BESLUT.md våg 2 (AC1–AC5) +
+m6-varumarke.md §B–F (LAGEN). Finansiell-policy:42 lovar sedan tidigare "se
+vårt varumärkes-system där de är förbjudna fraser" — detta är infriandet
+(IOU:n från m6 A6).
+
+(1) SINGLE SOURCE data/varumarke.json (VARUMARKE_VERSION 1.0.0): TON_REGLER
+10 (m6 §B exakt), LEXIKON.viSager (m6 §C), forbjudnaFraser = 26 mönster
+(15 FEL juridiska: garanterad avkastning, riskfri*, slå index varje år,
+obegränsad avkastning, passiv inkomst utan risk, säker vinst, aktietips,
+köp/sälj-rekommendation, investeringsråd-om-eget, share-walls ×3 (P1),
+gratis* (P3), meta-pixel/retargeting (P6); 11 VARNING tonala: hemliga
+strategier, sista chansen, bli inte lämnad bakom, platser kvar,
+countdown/nedräkning, "enkelt!", proffstips, revolutionerande, kunder (A8),
+cashflow-hack, superkreativ) — regex-källor som strängar, kompileras med
+giu; "investeringsråd" NEGATIONSAVÄNDA lookbehind (inte|ej|aldrig|ingen|
+inga|utan|varken|icke) så disclaimer-formen "inte investeringsråd" ALDRIG
+träffas (annars 103 falska FEL dag ett); + HUVUDBUDSKAP ×3 persona
+(groundade: ordlista.ts:547, page.tsx-FAQ, fas3:521), CTA_HIERARKI 4 nivåer
+(A9:s textlänk-form = nivå 4), SIGNATUR (disclaimer + slogan 3-led),
+design-tokens ärvda ur globals.css. JSON-nycklar utantill åäö (AC4).
+
+(2) src/lib/varumarke.ts (speglingsmekanik som siffror.ts — samma json
+ägs av appen OCH vakten): typad import, frozen exporter
+(VARUMARKE_VERSION/TON_REGLER/FORBJUDNA_FRASER/LEXIKON{viSager,undviker=\
+FORBJUDNA_FRASER — ingen dubbelpost}/HUVUDBUDSKAP/CTA_HIERARKI/SIGNATUR/
+DESIGN) + kontrolleraText(text) → {fel: Traff[], varningar: Traff[]},
+Traff={fras,index,allvar,ersattning} — REN, beroendefri (AC5), stateless
+(lastIndex-återställning), avsedd som sista grind i AI-publicerings-
+pipelines (våg 4).
+
+(3) KVALITETSVAKTEN sektion 2b "Förbjudna fraser" (verktyg/kvalitetsvakt.
+mjs — endast ny sektion + filunderlagslista): återanvänder sektion 2:s
+extraktion + NY extraheraLibStrangar (alla strängliteraler, ${}-rensat,
+sökvägar/identifierare skipade) för filunderlaget utökat med src/lib/
+email-mallar.ts + nyhets-motor.ts + seo.tsx (m6 §F:s lucka: copy utanför
+komponenter). 207 filer/7015 strängar. FEL → räknas i fel (styr RÖD/GUL),
+VARNING → manuella. Vakten sänker ALDRIG nivå. CITERINGS-UNDANTAG (A10 —
+annars RÖD dag ett, korrekt identifierat av beslutet): FIL-vitlista
+finansiell-policy (citerar förbudet i löftet), ansvar + villkor (juridik:
+negerar med lagtext 2007:528/MAR), ordlista.ts + varumarke.ts/json (systemet
+självt, defensivt) + STRÄNG-exakta negerande FAQ-frågor "Ger AK1A
+investeringsråd eller aktietips?" (page/kurser/seo) och "Ger AK1A
+investeringsråd?" (medlemskap — svaren börjar "Nej. … aldrig …").
+Undantagen dokumenteras i vaktrapporten (info-rader med antal + lista).
+Bonus-rättning: rensaKommentarer behåller nu radbyten i blockkommentarer
+(length-preserving) — radnummer i 2/2b-rapporter träffar rätt rad
+(medlemskap-flaggan satt fel rad pga 12-raderskommentar; ogrupperat
+beteende, noll detectionseffekt).
+
+(4) docs/BRAND.md REGENERERAD ur varumarke.json (koden = sanningen, m6
+rek 1): drift rättad — guld #a8862a → #785c13 (brons, WCAG AA 2026-09-02)
++ #E8C766 (marin-yte-guld) + #7A5E14 (löptext-token); slogan 2-led →
+3-led; + förbjudna-fras-tabell, TON_REGLER-tabell, HUVUDBUDSKAP,
+CTA-hierarki, citerings-undantags-not, kontrolleraText-användning.
+Härledningsnot i dokumenthuvudet: hand-edita aldrig — ändra i JSON:en.
+
+VERIFIERING: kontrolleraText-torrttest (tsx, 17 PASS/0 FAIL): AC2a
+"SISTA CHANSEN att gå med gratis!" ⇒ 1 VARNING 0 FEL; AC2b "garanterad
+avkastning" ⇒ FEL m ersättning; disclaimer/negerade svar ⇒ 0 träffar;
+avsiktlig 12-FEL-sträng (i minnet, repot orört) ⇒ 12 FEL-träffar ⇒
+GUL vid 1–9/RÖD vid >9 i vakten (RÖD-uppträdande bevisat utan sabotage);
+kontraktskontroller (10 regler, 26=15+11 fraser, 4 CTA-nivåer, 3 personas).
+Vakten: sektion 2b MANUELL (0 FEL, 6 manuella — korrekt VARNING-nivå:
+B2B/admin-"kunder" ×4 (A8: teknisk yta), AKM1-variabeln "Kunder",
+superanalys "Sista chansen att justera" — mänsklig avvisning, inte
+nivåsänkning) ⇒ TOTALT GRÖN (0 fel/6 manuella) TROTS att policy-sidorna
+citerar förbjudna fraser (AC1+AC3-beviset). Svit 100 %: 101 PASS/0 FAIL/
+0 SKIP. tsc 43 före = 43 efter, identisk felmängd (0 NYA — baslinjen
+orörd). data/varumarke.json passar JSON-giltighet (sektion 3, auto).
+
+PARALLELLBYGGE: VÅG 60 bygg-A (regimindikatorn) noterade själv att
+varumarke/del-raden byggdes samtidigt — skilda fil-domäner (mina:
+data/varumarke.json, src/lib/varumarke.ts, vakten 2b, docs/BRAND.md),
+inga konflikter. INGET COMMITTAT.
+
+## VÅG 60 bygg-B: AKM3 STEG 6 — KALIBRERINGS-CRON med LÅST grind (ΔΦ=0) (2026-09-04)
+
+STEG 6 (AKM3-BESLUT §8 + §11.6; lagen = r1-bayes.md §1.2/§2.1): månadsrond
+som lär av Bana B:s verifierade utfall — men GRINDEN LÅST i AKM3.2026.09:
+cronen SAMLAR bara data, ändrar ALDRIG (BESLUT §2: Φ-kalibrering VILLKORAD;
+Φ-ändring kräver steg 7: n_eff ≥ 20 episoder — realistiskt 8–12 kvartal —
+plus walk-forward, ny protokollversion, nollställda räknare, deklarerad
+orsak). Levande posteriorer lämnar ALDRIG cron-lagret (FORBUD §10.4) —
+osatt kalibreras ALDRIG (§9.6). AKM2:s filer (karna/dynamik/vikter/moduler)
+RÖRDES EJ — kopplingen `kalibreradPhi?` i dynamik.ts är ett framtida steg 7-beslut.
+
++ src/lib/akm3/kalibrering.ts (NY — ren funktion, P1, ENDAST `import type`
+  från akm2/dynamik): prior Beta(α₀=m·q, β₀=m·(1−q)), m=10, q ur r1 §1.2
+  EXAKT (0,65/0,50/0,45/0,34/0,46/0,40 — speglar MARKOV_PRIOR-diagonalerna,
+  testet vaktar); posterior α=α₀+T, β=β₀+M där T/M räknas PER EPISOD
+  (majoritetsdom inom episoden; lika många ⇒ osatt; deduplicering per
+  episod+dag — dagar räknas ALDRIG som observationer, FORBUD §10.7); p̂ +
+  90 %-kredibelt intervall ur egna Beta-kvantiler (Lanczos + NR-betacf +
+  200-iterations-bisektion — deterministiskt, noll beroenden); n_eff =
+  ⌊episoder/√(1/ρ̄)⌋ med ρ̄ skattad ur Bana B:s tvärsnittspar (fallback
+  0,45, clamp [0,05; 0,95]; 12 tickers ⇒ ~1–3 effektiva/dag); Φ-förslag =
+  clamp(1+κ(2p̂−1), 0,80, 1,20), κ 0,20/0,10 enligt r1 (basbygge 0,10 —
+  dokumenterad tolkning, r1 saknar basbygge-κ); handlingsgrind beräknad som
+  TRE villkor true/false (n_eff≥20 · KI helt ena sidan 0,50 · ±0,05/månad)
+  men grindBeslut nekar ALLTID (GRIND_LASAD): status "vantar-grind", ΔΦ=0;
+  bordeGrindenOppnas ren test-funktion; rollback-kontraktet §10.11 kodat
+  (bordeAterkalla). FAS-MAPPNING (dokumenterad tolkning kalibrering/1):
+  impulsvåg ⇒ sekvens-proxy = antal kvartalsgränser episoden spänner
+  (speglar bestamVagfas n=1/2/4); korrigering ⇒ osatt enligt KÄRNANS EGNA
+  regel (Bana B saknar G — grenen 0,80/0,90 väljs aldrig utan gissning),
+  episoderna mäts i diagnostikpool korrigeringGOkand. Hash-kedja:
+  kanoniskJson + raknaLoggRadHash(digest INJICERAD) + valideraKedja.
+  PHI_DESIGN speglar dynamik.ts:s PHI lokalt (ZETA-mönstret — test vaktar).
+
++ src/app/api/cron/akm3-kalibrering/route.ts (NY): CRON_SECRET-mönstret
+  (401 utan/fel hemlighet). (a) läser ≤35 senaste vagvalidering-events,
+  tabell vagvalidering_dom, clean-filtret traff_datum ≥ 2026-09-04 (FORBUD
+  §10.5); (b) posteriors per fas (nivå 1) + per (variabel, fas) rått;
+  (c) FÖRSLAG + villkor + status i system_events type=akm3_kalibrering
+  (schema kalibrering/1, mått per fas: nEff/pHat/intervall90/villkor) +
+  OrganEvent (organ/akm3-kalibrering) + rapporten; (d) hash-kedjad
+  versionslogg data/portfolj-system/kalibrering-logg.json (append-only,
+  typ "matning", ΔΦ=0 i varje rad, phiVersion "design-2026-09-03" oförändrad)
+  — BRUTEN kedja ⇒ ingen append + öppen varning. Idempotens: samma månad
+  (event ELLER logg) ⇒ samma tabellversion returneras, inget dubbelloggas.
+
++ vercel.json: cron "20 5 2 * *" (dag 2 kl 05:20 UTC månadsvis — ledig slot
+  mellan vagscan 05:00 och vagvalidering 05:30; månadens första Bana B-ronder
+  ligger redan i system_events).
+
++ data/portfolj-system/kalibrering-logg.json + data/rapporter/
+  akm3-kalibrering-SENASTE.md (genererade av dev-verifieringen): v1 2026-09
+  typ matning ΔΦ=0, rena priors ännu (dev-databasen saknar Bana B-rader —
+  hederligt "okalibrerad (n=0/20) — vantar-grind" hela vägen), kedjan
+  verifierar {ok:true}.
+
+TESTER (verktyg/testa-akm3-kalibrering.mjs, 100 %-mönstret, 55 kontroller
+— 55/0): A priors/konstanter/speglingar · B posterior-formeln + Beta-kvantiler
+(uniform/symmetri/median) · C Φ-förslag (clamp, p̂=0,50⇒1,00, designfallet
+q=0,65⇒1,06; r1:s exempeltal 0,91 svarar mot κ=0,30 — FORMELN är normativ
+enligt BESLUT §8, κ=0,20 ⇒ 0,94, dokumenterat i sviten) · D diskonto
+(24@0,50⇒16; 29/30@0,45⇒19/20; clamp; 1–3 effektiva/dag; pearson; ρ̄-
+fallback) · E episoder (majoritet, lika⇒osatt, dedup, fas-mappning ==
+bestamVagfas) · F GRINDEN (öppnar EXAKT vid n_eff=20 — 29⇒stängd/30⇒öppen;
+(ii)- och (iii)-isolering; grindBeslut nekar även vid alla villkor uppfyllda;
+rollback-kontraktet) · G ronden (determinism 2×, append+verifierbar kedja,
+tamper upptäcks brutetVid=1, bruten kedja ⇒ ingen rad + varning, per-
+variabel-rådata) · H rapporten (LÅST-text, alla sex faser, villkorskolonner,
+disclaimer). tsc 43 fel före = 43 efter (0 NYA — baslinjen orörd).
+
+DEV (3502, CRON_SECRET satt): utan/fel hemlighet ⇒ 401; med hemlighet ⇒ 200
+med fullt JSON-protokoll + rapport + logg skrivna; ANDRA körningen ⇒
+idempotent:true (samma tabellversion, ΔΦ=0). Servern stoppad och porten
+verifierad nere efteråt.
+INGET COMMITTAT.
+
+── VÅG 60 KOMPLETT: AKM3 STEG 5-6 + MARKNAD VÅG 2-3 + FORSKNING 11-14 (2026-09-04) ──
+Mega-direktivet fortsätter: 5 agenter enligt styrelsens fattade beslut.
+(bygg-A) AKM3 STEG 5 REGIMEINDIKATORN: akm3/regim.ts (G/R-trösklar ur
+forskningslagets kanon, N-vakt <30=osatt [idag 12 ⇒ expansiv/korrigering
+onåbara — styrelsens avslag bevisat i kod], hysteres med 2-snapshot-
+bekräftelse + frysningskontrakt) + regime-logg.json hash-kedjad (genesis:
+MAGERT 2026-09-03 G=0,07 R=0,17) + regimen som chip i ForskningslageKort
++ /transparens sektion 10 (alla trösklar öppna). Svit 101/0/0.
+(bygg-B) AKM3 STEG 6 KALIBRINGS-CRON LÅST: akm3/kalibrering.ts (Beta-
+posteriors med egna deterministiska kvantiler, n_eff med korrelations-
+diskonto, Φ-förslag clamp 0,80-1,20, GRIND_LASAD ΔΦ=0 — nekar även när
+alla villkor uppfyllda) + cron 05:20 dag 2 + hash-kedjad kalibrering-logg
++ rapport; 55/55 tester (grinden öppnar exakt vid n_eff=20).
+(bygg-C) MARKNAD VÅG 2: data/varumarke.json (10 tonregler, 26 förbjudna
+fraser FEL/VARNING, huvudbudskap ×3 persona, CTA-hierarki) + varumarke.ts
+kontrolleraText + KVALITETSVAKTEN SEKTION 2b (207 filer/7015 strängar,
+FEL→RÖD-kraft, citerings-undantag A10, lib-täckning email/nyheter/seo) +
+BRAND.md regenererad (färgdrift rättad). Vakten GRÖN trots citeringar.
+(bygg-D) MARKNAD VÅG 3: del-rad.tsx (Web Share+kopiera, diskret) på alla
+bloggposter + analysdetaljer + generaliserat analys-DelaKort med QR till
+analys-URL + CTA-luckorna (kurs-steg→fas2-länk, biblioteket→prenumeration);
+12 share-texter genom kontrolleraText: 0 FEL.
+(forskning) OMGÅNG 11-14: r6 horisontvyer (reglage moget NU — vilar på
+intervallen; vyerna villkorade 3 grindelement) · r7 modulinduktion (stat-
+induktion AVSLAGEN n=100-brus; V29 insider närmast via FI:s PDMR-register;
+ESG läslager) · m9 innehållsfabrik (deterministiska månadsutkast ur cachen,
+evergreen-slugar, villkorad på granskning) · m10 referral (e-posthash=
+pseudonym AVSLAGEN; opt-in slumpkod + aggregate-only, lotterilagen).
+VERIFIERING: tsc 43/0 · svit 101/0/0 · Kvalitetsvakten GRÖN (6 manuella
+ton-granskningar). AKM3-BESLUTETS SEX MOGNA STEG ÄR NU ALLA BYGGDA.

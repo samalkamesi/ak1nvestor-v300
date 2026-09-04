@@ -47,6 +47,10 @@
     {
       "path": "/api/cron/oversatt",
       "schedule": "0 10 * * *"
+    },
+    {
+      "path": "/api/cron/akm3-kalibrering",
+      "schedule": "20 5 2 * *"
     }
   ]
 }

@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-04
 
-- **Genererad:** 2026-09-04T18:59:20.160Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-04T20:15:23.850Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 7.6 s
+- **Körtid:** 8.7 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,50 +15,67 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 203 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6753 strängar extraherade
+- 204 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6832 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
 
-## 3. JSON-giltighet (data/*.json + data/bokmaster/*.json) — **PASS**
+## 3. Förbjudna fraser — varumärket som kod (2b) — **MANUELL**
 
-- 114 filer parsade
+- 207 filer, 7015 strängar granskade mot 26 förbjudna fraser (15 FEL = juridiska, 11 VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)
+- CITERINGS-UNDANTAG (A10): 3 fil(er) + 4 sträng(ar) hoppades över — de CITERAR förbudet: src/app/finansiell-policy/page.tsx · src/app/ansvar/page.tsx · src/app/villkor/page.tsx · src/lib/ordlista.ts · src/lib/varumarke.ts · data/varumarke.json · sträng-exakta negerande FAQ-frågor: "Ger AK1A investeri
+- FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning; A8-notering: admin/B2B-ytor får tekniskt sett "kunder") · vakten sänker ALDRIG nivå för att bli grön
+
+### MANUELL GRANSKNING KRÄVS (6 träffar)
+
+| Fil | Plats | Misstänkt | Kontext |
+|---|---|---|---|
+| src/app/pro/admin/page.tsx | rad 77 (JSX-text) | kunder → elever | AK1A PRO:s B2B-översikt — kunder, rapportmallar, white-label och… |
+| src/app/pro/admin/page.tsx | rad 135 (JSX-text) | kunder → elever | Översikt över B2B-kunder, pro-analys-anrop, rapportmallar och… |
+| src/components/ak1a/pro/admin-panel.tsx | rad 603 (JSX-text) | kunder → elever | Hämtar kunder… |
+| src/components/ak1a/pro/admin-panel.tsx | rad 511 (attribut aria-labelledby) | kunder → elever | pro-admin-kunder |
+| src/components/ak1a/stock-analysis-view.tsx | rad 263 (objekt label) | Kunder → elever | Kunder |
+| src/components/ak1a/superanalys.tsx | rad 469 (JSX-text) | Sista chansen → välkommen när du är redo | Sista chansen att justera innan resultatet. Deklar… |
+
+## 4. JSON-giltighet (data/*.json + data/bokmaster/*.json) — **PASS**
+
+- 115 filer parsade
 
 Inga avvikelser hittade.
 
-## 4. Länk-validitet (sokindex + huvudmeny + sidfooter) — **PASS**
+## 5. Länk-validitet (sokindex + huvudmeny + sidfooter) — **PASS**
 
 - 4 interna länkar verifierade mot 74 rutter i src/app
 
 Inga avvikelser hittade.
 
-## 5. Kursdata-konsistens (bokmaster) — **PASS**
+## 6. Kursdata-konsistens (bokmaster) — **PASS**
 
 - 105 kurser kontrollerade (kapitelantal, quiz = kap×3, totalMinutes)
 
 Inga avvikelser hittade.
 
-## 6. Sitemap-täckning — **PASS**
+## 7. Sitemap-täckning — **PASS**
 
 - 41 sökvägar i sitemap.ts; 43 viktiga rutter jämförda
 - Medvetet exkluderade: /admin, /pro, /rapporter, /logga-in
 
 Inga avvikelser hittade.
 
-## 7. Motorvalidering (validera-motorer.mjs — 100%-väktaren) — **PASS**
+## 8. Motorvalidering (validera-motorer.mjs — 100%-väktaren) — **PASS**
 
 - kör verktyg/validera-motorer.mjs som subprocess (100%-väktaren, budget 120 s) …
-- subprocess (exit 0): RESULTAT: 97 PASS / 0 FAIL / 0 SKIP
+- subprocess (exit 0): RESULTAT: 101 PASS / 0 FAIL / 0 SKIP
 
 Inga avvikelser hittade.
 
-## 8. ÅÄÖ-degenerering i löptext (aao-degen.mjs) — **PASS**
+## 9. ÅÄÖ-degenerering i löptext (aao-degen.mjs) — **PASS**
 
 - NIVÅ A: 0 · NIVÅ B: 0 (detektor: säkra degenererade former + filsignatur)
 
 Inga avvikelser hittade.
 
-## 9. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) — **PASS**
+## 10. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) — **PASS**
 
 - guldkälla data/siffror.json (verktyg/rakna-siffror.mjs) + svep efter föråldrade tal i src
 
@@ -70,14 +87,15 @@ Inga avvikelser hittade.
 |---|---|---:|---:|
 | 1. ÅÄÖ-bortfall i bokmaster-text | **PASS** | 0 | 0 |
 | 2. UI-strängar (JSX-text + attribut) | **PASS** | 0 | 0 |
-| 3. JSON-giltighet (data/*.json + data/bokmaster/*.json) | **PASS** | 0 | 0 |
-| 4. Länk-validitet (sokindex + huvudmeny + sidfooter) | **PASS** | 0 | 0 |
-| 5. Kursdata-konsistens (bokmaster) | **PASS** | 0 | 0 |
-| 6. Sitemap-täckning | **PASS** | 0 | 0 |
-| 7. Motorvalidering (validera-motorer.mjs — 100%-väktaren) | **PASS** | 0 | 0 |
-| 8. ÅÄÖ-degenerering i löptext (aao-degen.mjs) | **PASS** | 0 | 0 |
-| 9. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) | **PASS** | 0 | 0 |
+| 3. Förbjudna fraser — varumärket som kod (2b) | **MANUELL** | 0 | 6 |
+| 4. JSON-giltighet (data/*.json + data/bokmaster/*.json) | **PASS** | 0 | 0 |
+| 5. Länk-validitet (sokindex + huvudmeny + sidfooter) | **PASS** | 0 | 0 |
+| 6. Kursdata-konsistens (bokmaster) | **PASS** | 0 | 0 |
+| 7. Sitemap-täckning | **PASS** | 0 | 0 |
+| 8. Motorvalidering (validera-motorer.mjs — 100%-väktaren) | **PASS** | 0 | 0 |
+| 9. ÅÄÖ-degenerering i löptext (aao-degen.mjs) | **PASS** | 0 | 0 |
+| 10. Sifferkonsistens (rakna-siffror + föråldrade tal i copy) | **PASS** | 0 | 0 |
 
-## ANTAL FEL: 0 | MANUELLA: 0 | STATUS: GRÖN
+## ANTAL FEL: 0 | MANUELLA: 6 | STATUS: GRÖN
 
 _Rapportgenererad av verktyg/kvalitetsvakt.mjs — kontinuerligt felsökningssystem (kontroller: åäö-bortfall, UI-strängar, JSON-giltighet, länk-validitet, kursdata-konsistens, sitemap-täckning, motorvalidering)._

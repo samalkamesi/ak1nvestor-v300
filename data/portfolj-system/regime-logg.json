@@ -1,0 +1,26 @@
+{
+  "modellVersion": "AKM3.2026.09",
+  "skapad": "2026-09-03",
+  "rader": [
+    {
+      "datum": "2026-09-03",
+      "spar": "akm3-regim",
+      "modellVersion": "AKM3.2026.09",
+      "indikatorer": {
+        "gronAndel": 0.07,
+        "rodAndel": 0.17,
+        "nettoVagbredd": null,
+        "sigmaArs": null,
+        "antalVagbolag": null
+      },
+      "regime": "magert",
+      "byte": true,
+      "kandidat": null,
+      "kravdaSnapshots": 2,
+      "beskrivning": "Få bolag klarar de strikta kraven — selektionen bär helheten. Netto-vågbredden är osatt (senaste vagscan-event ej läsbart) — beskrivningen vilar enbart på forskningslägets grön-/rödandel.",
+      "nOsattOrsak": "senaste vagscan-event ej läsbart",
+      "hash": "c83ddac434e0fde620baaa9acca134fa5f03939d6aa053f89f47f3c8962e0e13"
+    }
+  ],
+  "senasteHash": "c83ddac434e0fde620baaa9acca134fa5f03939d6aa053f89f47f3c8962e0e13"
+}

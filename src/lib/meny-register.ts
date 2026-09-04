@@ -13,9 +13,9 @@
  *   R9  Task-baserad struktur efter elevens flöde (Lära → Analysera → Praktik → Om).
  *   R14 Publik-nivå per punkt styr adaptiv synlighet i ALLA ytor.
  *
- * Struktur (27 länkar):
+ * Struktur (28 länkar):
  *   LÄRA 🎓        — Läroplanen · Alla kurser (hub) · Biblioteket · Labbar · Certifikat
- *   ANALYSERA 🔬   — Grundanalys → Skannar → Fördjupning → Portfölj & profil (11 verktyg)
+ *   ANALYSERA 🔬   — Grundanalys → Skannar → Fördjupning → Portfölj & profil (12 verktyg)
  *   PRAKTIK 🎯     — Min Sida (medlem) · Dagens Pass · Topplistan · Badges · Fas 3
  *   OM AK1A 🏛️    — Manifestet · Medlemskap · Prenumeration · PRO · Bloggen · Om oss
  *                    + Fas 2-ansökan (guld-CTA) · Logga in (footer/⌘K) m.fl.
@@ -239,6 +239,17 @@ export const MENY_REGISTER: MenySektion[] = [
         avdelare: "Fördjupning",
         beskrivning: "Rapportbanken — fullständiga bolagsanalyser",
         nycklar: "bolag aktie rapport",
+      },
+      {
+        text: "Forskningsbiblioteket",
+        nyckel: "nav.forskningsbiblioteket",
+        lank: "/forskningsbiblioteket",
+        ikon: "📚",
+        typ: "sida",
+        publik: "gast",
+        avdelare: "Fördjupning",
+        beskrivning: "Automatiska översikter av hela universet — 20 variabler",
+        nycklar: "forskningsbibliotek automatisk analys screening kandidatregel universum overblick",
       },
       {
         text: "Portföljbyggaren",

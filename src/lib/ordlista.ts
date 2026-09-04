@@ -57,6 +57,11 @@ export const ORDLISTA = {
   "nav.prenumeration": { sv: "Prenumeration", en: "Subscription", ar: "الاشتراك" },
   "nav.labb": { sv: "Labb", en: "Lab", ar: "المختبر" },
   "nav.analyser": { sv: "Analyser", en: "Analyses", ar: "التحليلات" },
+  "nav.forskningsbiblioteket": {
+    sv: "Forskningsbiblioteket",
+    en: "The Research Library",
+    ar: "مكتبة الأبحاث",
+  },
   "nav.aktier": { sv: "Aktier", en: "Stocks", ar: "الأسهم" },
   "nav.portal": { sv: "Min portal", en: "My Portal", ar: "بوابتي" },
 

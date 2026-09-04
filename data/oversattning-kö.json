@@ -1,0 +1,2166 @@
+{
+  "uppdaterad": "2026-09-04T10:06:22.251Z",
+  "notering": "fallback-kö — produktion kräver tabellen oversattningar (data/sql/oversattningar.sql)",
+  "poster": [
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.bliMedlem",
+      "sprak": "en",
+      "kallhash": "34f34f34af94",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.bliMedlem",
+      "sprak": "ar",
+      "kallhash": "34f34f34af94",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.du",
+      "sprak": "en",
+      "kallhash": "601b2c247381",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.du",
+      "sprak": "ar",
+      "kallhash": "601b2c247381",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.ejInloggad",
+      "sprak": "en",
+      "kallhash": "c3aa8ff62cc4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.ejInloggad",
+      "sprak": "ar",
+      "kallhash": "c3aa8ff62cc4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.gratisKonto",
+      "sprak": "en",
+      "kallhash": "0d63e8b33fa0",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.gratisKonto",
+      "sprak": "ar",
+      "kallhash": "0d63e8b33fa0",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaIn",
+      "sprak": "en",
+      "kallhash": "16f170b06689",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaIn",
+      "sprak": "ar",
+      "kallhash": "16f170b06689",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaInEllerGratis",
+      "sprak": "en",
+      "kallhash": "42a6e2bca358",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaInEllerGratis",
+      "sprak": "ar",
+      "kallhash": "42a6e2bca358",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaInPortal",
+      "sprak": "en",
+      "kallhash": "f248bcbb6ac4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaInPortal",
+      "sprak": "ar",
+      "kallhash": "f248bcbb6ac4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaUt",
+      "sprak": "en",
+      "kallhash": "22b75b375d49",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.loggaUt",
+      "sprak": "ar",
+      "kallhash": "22b75b375d49",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.namnMinSida",
+      "sprak": "en",
+      "kallhash": "de99e080faea",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.namnMinSida",
+      "sprak": "ar",
+      "kallhash": "de99e080faea",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.namnPortal",
+      "sprak": "en",
+      "kallhash": "cf7575038fdb",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.namnPortal",
+      "sprak": "ar",
+      "kallhash": "cf7575038fdb",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.redanMedlem",
+      "sprak": "en",
+      "kallhash": "cde58ff74f83",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.redanMedlem",
+      "sprak": "ar",
+      "kallhash": "cde58ff74f83",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.skapaGratisKonto",
+      "sprak": "en",
+      "kallhash": "5fab0bea64c6",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "auth.skapaGratisKonto",
+      "sprak": "ar",
+      "kallhash": "5fab0bea64c6",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.avbryt",
+      "sprak": "en",
+      "kallhash": "fc965dadc98c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.avbryt",
+      "sprak": "ar",
+      "kallhash": "fc965dadc98c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.eller",
+      "sprak": "en",
+      "kallhash": "563259f099de",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.eller",
+      "sprak": "ar",
+      "kallhash": "563259f099de",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.fortsatt",
+      "sprak": "en",
+      "kallhash": "b2b29fbf0186",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.fortsatt",
+      "sprak": "ar",
+      "kallhash": "b2b29fbf0186",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.fortsattLas",
+      "sprak": "en",
+      "kallhash": "aef56b4cfc58",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.fortsattLas",
+      "sprak": "ar",
+      "kallhash": "aef56b4cfc58",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.ja",
+      "sprak": "en",
+      "kallhash": "cde9e58a9a4e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.ja",
+      "sprak": "ar",
+      "kallhash": "cde9e58a9a4e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.komIgang",
+      "sprak": "en",
+      "kallhash": "09d42dba9846",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.komIgang",
+      "sprak": "ar",
+      "kallhash": "09d42dba9846",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.ladda",
+      "sprak": "en",
+      "kallhash": "e5dde083ebd8",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.ladda",
+      "sprak": "ar",
+      "kallhash": "e5dde083ebd8",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.lasMer",
+      "sprak": "en",
+      "kallhash": "2ebe43da7613",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.lasMer",
+      "sprak": "ar",
+      "kallhash": "2ebe43da7613",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.nastaSteg",
+      "sprak": "en",
+      "kallhash": "9d7ac82e450e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.nastaSteg",
+      "sprak": "ar",
+      "kallhash": "9d7ac82e450e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.nej",
+      "sprak": "en",
+      "kallhash": "abb12f8b9592",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.nej",
+      "sprak": "ar",
+      "kallhash": "abb12f8b9592",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.oppna",
+      "sprak": "en",
+      "kallhash": "ef4403310793",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.oppna",
+      "sprak": "ar",
+      "kallhash": "ef4403310793",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.sok",
+      "sprak": "en",
+      "kallhash": "335237e7c9b9",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.sok",
+      "sprak": "ar",
+      "kallhash": "335237e7c9b9",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.259Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.spara",
+      "sprak": "en",
+      "kallhash": "2ac5c9c2bb0c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.spara",
+      "sprak": "ar",
+      "kallhash": "2ac5c9c2bb0c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.stang",
+      "sprak": "en",
+      "kallhash": "9a2f62767239",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.stang",
+      "sprak": "ar",
+      "kallhash": "9a2f62767239",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.tillbaka",
+      "sprak": "en",
+      "kallhash": "ad0c44c78ead",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.tillbaka",
+      "sprak": "ar",
+      "kallhash": "ad0c44c78ead",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.visaAlla",
+      "sprak": "en",
+      "kallhash": "04193132807a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "cta.visaAlla",
+      "sprak": "ar",
+      "kallhash": "04193132807a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.allaKallor",
+      "sprak": "en",
+      "kallhash": "e48f58f80b32",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.allaKallor",
+      "sprak": "ar",
+      "kallhash": "e48f58f80b32",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.analysera",
+      "sprak": "en",
+      "kallhash": "f89bf3879698",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.analysera",
+      "sprak": "ar",
+      "kallhash": "f89bf3879698",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.ansvarFriskrivning",
+      "sprak": "en",
+      "kallhash": "6a8a965dc6c1",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.ansvarFriskrivning",
+      "sprak": "ar",
+      "kallhash": "6a8a965dc6c1",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.anvandarvillkor",
+      "sprak": "en",
+      "kallhash": "c46632c29e7a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.anvandarvillkor",
+      "sprak": "ar",
+      "kallhash": "c46632c29e7a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.byggtMed",
+      "sprak": "en",
+      "kallhash": "1bbf69dc2b6d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.byggtMed",
+      "sprak": "ar",
+      "kallhash": "1bbf69dc2b6d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.cookieInstallningar",
+      "sprak": "en",
+      "kallhash": "f62280d6bf0a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.cookieInstallningar",
+      "sprak": "ar",
+      "kallhash": "f62280d6bf0a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.cookiepolicy",
+      "sprak": "en",
+      "kallhash": "2dfee918b094",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.cookiepolicy",
+      "sprak": "ar",
+      "kallhash": "2dfee918b094",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.disclaimer",
+      "sprak": "en",
+      "kallhash": "0352e5de3594",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.disclaimer",
+      "sprak": "ar",
+      "kallhash": "0352e5de3594",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.finansiellPolicy",
+      "sprak": "en",
+      "kallhash": "9c0965b4cc45",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.finansiellPolicy",
+      "sprak": "ar",
+      "kallhash": "9c0965b4cc45",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.integritetspolicy",
+      "sprak": "en",
+      "kallhash": "cd7cf7312b09",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.integritetspolicy",
+      "sprak": "ar",
+      "kallhash": "cd7cf7312b09",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.juridikAnsvar",
+      "sprak": "en",
+      "kallhash": "635ccf068d8e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.juridikAnsvar",
+      "sprak": "ar",
+      "kallhash": "635ccf068d8e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.lar",
+      "sprak": "en",
+      "kallhash": "14c2c2b36baa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.lar",
+      "sprak": "ar",
+      "kallhash": "14c2c2b36baa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:38.260Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.navigation",
+      "sprak": "en",
+      "kallhash": "3db65f8c2a7d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.navigation",
+      "sprak": "ar",
+      "kallhash": "3db65f8c2a7d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.tillToppen",
+      "sprak": "en",
+      "kallhash": "dc53da6122cc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.tillToppen",
+      "sprak": "ar",
+      "kallhash": "dc53da6122cc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.trana",
+      "sprak": "en",
+      "kallhash": "b52528e3e3a1",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.trana",
+      "sprak": "ar",
+      "kallhash": "b52528e3e3a1",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.upphovsratt",
+      "sprak": "en",
+      "kallhash": "b666633e84ac",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.upphovsratt",
+      "sprak": "ar",
+      "kallhash": "b666633e84ac",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.villkor",
+      "sprak": "en",
+      "kallhash": "4343dc8fdedf",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "footer.villkor",
+      "sprak": "ar",
+      "kallhash": "4343dc8fdedf",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.bliCertifierad",
+      "sprak": "en",
+      "kallhash": "08fe176a174f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.bliCertifierad",
+      "sprak": "ar",
+      "kallhash": "08fe176a174f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.bliMedlemGratis",
+      "sprak": "en",
+      "kallhash": "1f327d9118cb",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.bliMedlemGratis",
+      "sprak": "ar",
+      "kallhash": "1f327d9118cb",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.fas2Etikett",
+      "sprak": "en",
+      "kallhash": "0ef83e6ad77b",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.fas2Etikett",
+      "sprak": "ar",
+      "kallhash": "0ef83e6ad77b",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro1",
+      "sprak": "en",
+      "kallhash": "2e8cfe664694",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro1",
+      "sprak": "ar",
+      "kallhash": "2e8cfe664694",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro2",
+      "sprak": "en",
+      "kallhash": "1baad22bd135",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro2",
+      "sprak": "ar",
+      "kallhash": "1baad22bd135",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro3",
+      "sprak": "en",
+      "kallhash": "be13ca435c18",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroMikro3",
+      "sprak": "ar",
+      "kallhash": "be13ca435c18",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroRubrik",
+      "sprak": "en",
+      "kallhash": "fa53e3e16dfa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroRubrik",
+      "sprak": "ar",
+      "kallhash": "fa53e3e16dfa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroUnderrubrik",
+      "sprak": "en",
+      "kallhash": "aee8321063c2",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.heroUnderrubrik",
+      "sprak": "ar",
+      "kallhash": "aee8321063c2",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.seMedlemskapen",
+      "sprak": "en",
+      "kallhash": "8c712f1912ac",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.seMedlemskapen",
+      "sprak": "ar",
+      "kallhash": "8c712f1912ac",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraBoker",
+      "sprak": "en",
+      "kallhash": "0f093af47d18",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.200Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraBoker",
+      "sprak": "ar",
+      "kallhash": "0f093af47d18",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraBokerUt",
+      "sprak": "en",
+      "kallhash": "efdc862cc0d5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraBokerUt",
+      "sprak": "ar",
+      "kallhash": "efdc862cc0d5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraKurser",
+      "sprak": "en",
+      "kallhash": "eb0a2629b5b7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraKurser",
+      "sprak": "ar",
+      "kallhash": "eb0a2629b5b7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraKurserUt",
+      "sprak": "en",
+      "kallhash": "ab866c930f1e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraKurserUt",
+      "sprak": "ar",
+      "kallhash": "ab866c930f1e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraQuiz",
+      "sprak": "en",
+      "kallhash": "d96e011acff0",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraQuiz",
+      "sprak": "ar",
+      "kallhash": "d96e011acff0",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraQuizUt",
+      "sprak": "en",
+      "kallhash": "0b5455e7baa7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraQuizUt",
+      "sprak": "ar",
+      "kallhash": "0b5455e7baa7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraStart",
+      "sprak": "en",
+      "kallhash": "28ba359abd92",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraStart",
+      "sprak": "ar",
+      "kallhash": "28ba359abd92",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraStartUt",
+      "sprak": "en",
+      "kallhash": "20a0020fe6e3",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraStartUt",
+      "sprak": "ar",
+      "kallhash": "20a0020fe6e3",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraVerktyg",
+      "sprak": "en",
+      "kallhash": "d5551a991257",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraVerktyg",
+      "sprak": "ar",
+      "kallhash": "d5551a991257",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraVerktygUt",
+      "sprak": "en",
+      "kallhash": "fd8350e4910b",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffraVerktygUt",
+      "sprak": "ar",
+      "kallhash": "fd8350e4910b",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffrorEyebrow",
+      "sprak": "en",
+      "kallhash": "0e2324281961",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.siffrorEyebrow",
+      "sprak": "ar",
+      "kallhash": "0e2324281961",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Lank",
+      "sprak": "en",
+      "kallhash": "46c51ae8808c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Lank",
+      "sprak": "ar",
+      "kallhash": "46c51ae8808c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Mening1",
+      "sprak": "en",
+      "kallhash": "117ecbaeecb5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Mening1",
+      "sprak": "ar",
+      "kallhash": "117ecbaeecb5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Mening2",
+      "sprak": "en",
+      "kallhash": "55a70831909a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Mening2",
+      "sprak": "ar",
+      "kallhash": "55a70831909a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Rubrik",
+      "sprak": "en",
+      "kallhash": "e44d74d49abc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal1Rubrik",
+      "sprak": "ar",
+      "kallhash": "e44d74d49abc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Lank",
+      "sprak": "en",
+      "kallhash": "f9759b31869e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Lank",
+      "sprak": "ar",
+      "kallhash": "f9759b31869e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Mening1",
+      "sprak": "en",
+      "kallhash": "ff0cc55486aa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Mening1",
+      "sprak": "ar",
+      "kallhash": "ff0cc55486aa",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Mening2",
+      "sprak": "en",
+      "kallhash": "b58e67ce5876",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Mening2",
+      "sprak": "ar",
+      "kallhash": "b58e67ce5876",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Rubrik",
+      "sprak": "en",
+      "kallhash": "fae0cb02585c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal2Rubrik",
+      "sprak": "ar",
+      "kallhash": "fae0cb02585c",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Lank",
+      "sprak": "en",
+      "kallhash": "49ebea55f908",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Lank",
+      "sprak": "ar",
+      "kallhash": "49ebea55f908",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Mening1",
+      "sprak": "en",
+      "kallhash": "faa2f3521dda",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Mening1",
+      "sprak": "ar",
+      "kallhash": "faa2f3521dda",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Mening2",
+      "sprak": "en",
+      "kallhash": "b683be3e0e97",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Mening2",
+      "sprak": "ar",
+      "kallhash": "b683be3e0e97",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Rubrik",
+      "sprak": "en",
+      "kallhash": "2d5654727997",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal3Rubrik",
+      "sprak": "ar",
+      "kallhash": "2d5654727997",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Lank",
+      "sprak": "en",
+      "kallhash": "4c27a02b23b7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Lank",
+      "sprak": "ar",
+      "kallhash": "4c27a02b23b7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Mening1",
+      "sprak": "en",
+      "kallhash": "b13bc52abeb7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Mening1",
+      "sprak": "ar",
+      "kallhash": "b13bc52abeb7",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Mening2",
+      "sprak": "en",
+      "kallhash": "b255a2f45b04",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Mening2",
+      "sprak": "ar",
+      "kallhash": "b255a2f45b04",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T09:52:53.201Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Rubrik",
+      "sprak": "en",
+      "kallhash": "e103cd3b3c79",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.247Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.skal4Rubrik",
+      "sprak": "ar",
+      "kallhash": "e103cd3b3c79",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.247Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutMikro1",
+      "sprak": "en",
+      "kallhash": "fff3c6175fbd",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutMikro1",
+      "sprak": "ar",
+      "kallhash": "fff3c6175fbd",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutOsaker",
+      "sprak": "en",
+      "kallhash": "f47bf8aa0df9",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutOsaker",
+      "sprak": "ar",
+      "kallhash": "f47bf8aa0df9",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutOvan",
+      "sprak": "en",
+      "kallhash": "649d7298e201",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutOvan",
+      "sprak": "ar",
+      "kallhash": "649d7298e201",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutRubrik",
+      "sprak": "en",
+      "kallhash": "3a4660cbb0a2",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutRubrik",
+      "sprak": "ar",
+      "kallhash": "3a4660cbb0a2",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutTitta",
+      "sprak": "en",
+      "kallhash": "ad5f56ac835a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutTitta",
+      "sprak": "ar",
+      "kallhash": "ad5f56ac835a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutUnderrubrik",
+      "sprak": "en",
+      "kallhash": "90111d737cbf",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.slutUnderrubrik",
+      "sprak": "ar",
+      "kallhash": "90111d737cbf",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig1Rubrik",
+      "sprak": "en",
+      "kallhash": "f7e30296b34e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig1Rubrik",
+      "sprak": "ar",
+      "kallhash": "f7e30296b34e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig1Undertext",
+      "sprak": "en",
+      "kallhash": "d98e09524a46",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig1Undertext",
+      "sprak": "ar",
+      "kallhash": "d98e09524a46",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig2Rubrik",
+      "sprak": "en",
+      "kallhash": "2b068b3f1d71",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig2Rubrik",
+      "sprak": "ar",
+      "kallhash": "2b068b3f1d71",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig2Undertext",
+      "sprak": "en",
+      "kallhash": "afe2a4392a1f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig2Undertext",
+      "sprak": "ar",
+      "kallhash": "afe2a4392a1f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig3Rubrik",
+      "sprak": "en",
+      "kallhash": "33b81411f11f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig3Rubrik",
+      "sprak": "ar",
+      "kallhash": "33b81411f11f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig3Undertext",
+      "sprak": "en",
+      "kallhash": "511511cff2bd",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig3Undertext",
+      "sprak": "ar",
+      "kallhash": "511511cff2bd",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig4Rubrik",
+      "sprak": "en",
+      "kallhash": "667f0ea88129",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig4Rubrik",
+      "sprak": "ar",
+      "kallhash": "667f0ea88129",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig4Undertext",
+      "sprak": "en",
+      "kallhash": "704d97c78831",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stig4Undertext",
+      "sprak": "ar",
+      "kallhash": "704d97c78831",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigEyebrow",
+      "sprak": "en",
+      "kallhash": "7e0ff1e5fe30",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigEyebrow",
+      "sprak": "ar",
+      "kallhash": "7e0ff1e5fe30",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigRubrik",
+      "sprak": "en",
+      "kallhash": "5b8ce04ddf93",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigRubrik",
+      "sprak": "ar",
+      "kallhash": "5b8ce04ddf93",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigUnderrubrik",
+      "sprak": "en",
+      "kallhash": "0da160e368b3",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.stigUnderrubrik",
+      "sprak": "ar",
+      "kallhash": "0da160e368b3",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.utforskaKurserna",
+      "sprak": "en",
+      "kallhash": "f6795ff40247",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.utforskaKurserna",
+      "sprak": "ar",
+      "kallhash": "f6795ff40247",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.varforEyebrow",
+      "sprak": "en",
+      "kallhash": "029c39b60496",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.varforEyebrow",
+      "sprak": "ar",
+      "kallhash": "029c39b60496",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.varforRubrik",
+      "sprak": "en",
+      "kallhash": "0f5866945961",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.varforRubrik",
+      "sprak": "ar",
+      "kallhash": "0f5866945961",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.verktygIdag",
+      "sprak": "en",
+      "kallhash": "5ef19f5cfb5d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "home.verktygIdag",
+      "sprak": "ar",
+      "kallhash": "5ef19f5cfb5d",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.allaKlara",
+      "sprak": "en",
+      "kallhash": "118c775a1d9e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.allaKlara",
+      "sprak": "ar",
+      "kallhash": "118c775a1d9e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fas2Porten",
+      "sprak": "en",
+      "kallhash": "7a0bb659aefe",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fas2Porten",
+      "sprak": "ar",
+      "kallhash": "7a0bb659aefe",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fokus",
+      "sprak": "en",
+      "kallhash": "8f737c05a153",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fokus",
+      "sprak": "ar",
+      "kallhash": "8f737c05a153",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.foregaende",
+      "sprak": "en",
+      "kallhash": "14efc33da617",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.foregaende",
+      "sprak": "ar",
+      "kallhash": "14efc33da617",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fortsattKursen",
+      "sprak": "en",
+      "kallhash": "c5c7e480bf79",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.fortsattKursen",
+      "sprak": "ar",
+      "kallhash": "c5c7e480bf79",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.grattis",
+      "sprak": "en",
+      "kallhash": "c98bf402fbe4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.grattis",
+      "sprak": "ar",
+      "kallhash": "c98bf402fbe4",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.insikt",
+      "sprak": "en",
+      "kallhash": "8e760463a09e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.insikt",
+      "sprak": "ar",
+      "kallhash": "8e760463a09e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitel",
+      "sprak": "en",
+      "kallhash": "401dc8c6eb60",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitel",
+      "sprak": "ar",
+      "kallhash": "401dc8c6eb60",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelAv",
+      "sprak": "en",
+      "kallhash": "4cd54ffbc07a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelAv",
+      "sprak": "ar",
+      "kallhash": "4cd54ffbc07a",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelBeharskat",
+      "sprak": "en",
+      "kallhash": "f45db5e7aa45",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelBeharskat",
+      "sprak": "ar",
+      "kallhash": "f45db5e7aa45",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelEnhet",
+      "sprak": "en",
+      "kallhash": "7222a4675480",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelEnhet",
+      "sprak": "ar",
+      "kallhash": "7222a4675480",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelTitel",
+      "sprak": "en",
+      "kallhash": "9bfd8100b5df",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kapitelTitel",
+      "sprak": "ar",
+      "kallhash": "9bfd8100b5df",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursenKlar",
+      "sprak": "en",
+      "kallhash": "feecc239c214",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursenKlar",
+      "sprak": "ar",
+      "kallhash": "feecc239c214",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursenSlut",
+      "sprak": "en",
+      "kallhash": "1c5dc89a186e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursenSlut",
+      "sprak": "ar",
+      "kallhash": "1c5dc89a186e",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursinnehall",
+      "sprak": "en",
+      "kallhash": "d20633a107b5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursinnehall",
+      "sprak": "ar",
+      "kallhash": "d20633a107b5",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursoversikt",
+      "sprak": "en",
+      "kallhash": "9d12f3414e4f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.kursoversikt",
+      "sprak": "ar",
+      "kallhash": "9d12f3414e4f",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.masterquiz",
+      "sprak": "en",
+      "kallhash": "179111bc5d29",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.masterquiz",
+      "sprak": "ar",
+      "kallhash": "179111bc5d29",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.minLasning",
+      "sprak": "en",
+      "kallhash": "72ec2114a6dc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.minLasning",
+      "sprak": "ar",
+      "kallhash": "72ec2114a6dc",
+      "status": "vantar-motor",
+      "kvalitet": 0,
+      "uppdaterad": "2026-09-04T10:06:22.248Z"
+    }
+  ]
+}

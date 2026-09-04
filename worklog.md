@@ -4846,3 +4846,160 @@ med hex-sanerad rate-nyckel). Sitemap +20 spegelrutter (vakten fångade
 20/20 spegelsidor 200.
 KVAR (fas 3): kursinnehåll 333 kurser ×2 språk (SPRAK-PLAN pipeline),
 verktygssidornas innehåll, klientkomponenters interna etiketter.
+
+── VÅG 52 AGENT B: DYNAMISKA KURSSPEGLAR /en|ar/kurser/[slug] (2026-09-01) ──
+Kunddirektivet "allt sker dynamiskt" ⇒ sida-för-sida-handskapande är gammalt:
+(1) ROUTING: src/app/en|ar/kurser/[slug]/page.tsx med generateStaticParams()
+⇒ [] + dynamicParams=true + force-static + revalidate 3600 — INGET förbygge
+(333×2=666 sidor byggs on-demand vid första begäran, ISR-cachade). Okänd slug
+⇒ notFound() (dev: 200+404-body av streaming, samma beteende som blogg/[slug];
+prod-prerender ger 404-status). Ny gemensam renderare
+src/components/ak1a/kurs-spegel-sida.tsx + språkpack per sidfil (professionell
+EN + fusha-AR; AR-behållare dir="rtl" som våg 51).
+(2) LAGERKOPPLING: src/lib/kurs-speglar.ts läser Supabase `oversattningar`
+(PostgREST via supabase-rest, 6 s timeout, React-cache-dedupe mellan
+generateMetadata+page, next.tags=["oversattningar","oversattningar:{slug}"]
+för revalidateTag vid publicering). ALIGNERAT med agent A:s kalla.ts + deras
+data/sql/oversattningar.sql: scope_typ "kursblock", nyckel
+"{slug}:kap{n}:block{i+1}" (1-BASERAT — kalla.ts:s konvention!), kolumner
+sprak/scope_nyckel/text/status matchar deras schema rakt; tolerant
+kolumnavläsning som säkerhetsnät. Progressandelen = publicerade/alla
+blockinnehåll (samma universum som kalla.ts ⇒ kan nå 100 %). Utökade nycklar
+(titel/learn/varfor/perspektiv/kap{n}:titel|intro/quiz{q}|:alt{j}|:tips)
+tillämpas opportunistiskt men räknas EJ — dokumenterade i filhuvudet för
+agent A att adoptera när kalla.ts växer.
+(3) FALLBACK: publicerad översättning → svensk originaltext per block; INGEN
+blockmarkering — EN notis överst: "Kursen håller på översättas — X % klart"
++ progressbar (döljs vid 100 %). Quiz ratt-index = struktur, aldrig översatt.
+UI-runor ur ordlistan via skapaT(lang) (kurs.kapitelAv/nasta/kursoversikt/
+totalt/fokus/tid/minLasning/kursinnehall/kapitelEnhet/vikt — 10 nya nycklar
+×3); KursSteg återanvänd oskadad (dess t() hydrerar via SprakLeverantor =
+plattformens arkitektur). Kursöversikt (våg 47:s vertikala mobil-lista)
+med samma fallback.
+(4) SEO-BESLUT: <80 % publicerat (INDEX_TRASKEL): robots noindex,follow +
+canonical → SVENSKA originalet (hreflang-kluster ute — vi annonserar inte
+halvfärdiga speglar). ≥80 %: index + egen canonical + fullt hreflang (sv-SE/
+en/ar/x-default→sv) + og:locale + Kurs-JSON-LD med inLanguage en/ar.
+(5) KURSÖVERSIKTERNAS KORT: KursSok +valfri prop lankPrefix ("" default =
+svenskt beteende oförändrat) — /en|ar/kurser-korten länkar nu till
+/en|ar/kurser/{slug} (även låsta Fas-länkar till /en|ar/fas*), notifierna
+omskrivna ("översätts live — öppnar din språkversion").
+VERIFIERAT: dev 3481 — /en/kurser/the-intelligent-investor 200 (svensk
+fallback + "0% complete"-notis + noindex + canonical mot originalet),
+/ar/kurser/zero-to-one 200 (dir=rtl + arabisk notis + AR-metadatatitel),
+v01-forsaljningstillvaxt m.fl. 200; tröskellogik enhetstestad via tsx
+(0%→noindex, 67%→noindex, 83%/100%→index+hreflang, ratt-index bevarat).
+tsc 43/0 NYA (43-bas; agent A:s 2 kontroller.ts-fel dök upp+löses under
+vågen). Tabellen finns ännu ej hos kunden (PGRST205) ⇒ fallback-vägen
+bevisad live; när kunden kör data/sql/oversattningar.sql + cron publicerar
+→ speglarna plockar upp automatiskt (tags+revalidate). Dev-servern dödad,
+port 3481 fri. Svenska kurssidan + oversattning/** orörda (endast lästa).
+
+── VÅG 52 AGENT A: MÖS-MOTORN — MEGA ÖVERSÄTTNINGSSYSTEMETS KÄRNA (2026-09-01) ──
+Kunddirektivet "mega översättningssystem + garantera rätt översättning +
+dynamiskt vid nytt innehåll" ⇒ pipelinens motor i src/lib/oversattning/:
+(1) TERMBANK termbank.ts — 293 kanoniska termer sv→en→ar i 11 kategorier
+(≥200 krävda), inkl. kundvalen sammanvägningen="the Synthesis"/الموازنة
+الشاملة, moat/vallgrav=الخندق التنافسي, impulsvåg/korrigering/basbygge,
+kassatäckning, nyemission, återköp, bruttomarginal, skuldsättningsgrad,
+intäktsdiversifiering + SPRAK-PLAN/ordlista-valen; latinsk kategori (ROE,
+NCAV, EV/EBITDA, AKM1, AK1TS…) behålls i AR. Nya rader = nya termer, allt
+harleds ur datan (sv-suffixmatchare, AR-åäö-vitlista).
+(2) KÄLLREGISTER kalla.ts — raknaHash() SHA-256 12 hex; listaKallor() =
+287 ui-nycklar (ordlistan) + 15 696 kursblock (public/deep-courses.json,
+scope "<slug>:kap<n>:block<n>") = 15 983 källor ×2 språk = 31 966 objekt;
+cachad 17 MB-parsning, spegelsidorna undantagna (premium-handskapade).
+(3) KONTROLLER kontroller.ts — termKonsistens (40p), sifferIntegritet (25p,
+multiset, AR-normalisering ٠-٩٫٬→0-9.,), strukturIntegritet (20p, stycken/
+rader/markdown/rubriker/tabellrader + JSON-toppnycklar/arraylängder),
+lateralKolla (15p, längd 0,5–2,5×, AR åäö-läckor, EN arabläckor) ⇒ poäng
+0–100, KVALITETSTRASKEL=90. Rena kärnor, inget nät.
+(4) MOTOR motor.ts — zaiAktiv-kontraktet: ZAI_APIKey finns ⇒ GLM-anrop med
+termbanken påtvingad i systempromten (exakt de termer kontrollerna kräver);
+annars "vantar-motor" (deterministisk ärlighet, ALDRIG låtsasöversättning).
+ALDRIG utan kontroller: 100p→publicerad, 90–99→utkast, <90→maskinutkast-
+behovar-granskning oavsett motor. zai.ts dynamiskimporterad (server-only).
+(5) LAGER lager.ts + data/sql/oversattningar.sql (KUNDEN KÖR EN GÅNG i
+Supabase SQL Editor — CREATE TABLE IF NOT EXISTS + RLS: publik SELECT enbart
+för status='publicerad', service-role skriver; 3 index). lasSpara/lasStatus-
+Karta/markeraInaktuell via getSupabase-REST; tabell saknas ⇒ TabellSaknasFel
+med instruktion + fallback-kö data/oversattning-kö.json (cap 500, read-only
+ på Vercel ⇒ produktion kräver tabellen, dokumenterat i SQL+rapport).
+(6) CRON /api/cron/oversatt (CRON_SECRET-skyddad som övriga; vercel.json
+"0 10 * * *" — ledig timme, MAX 1/dag): lista källor+hash → nya/ändrade →
+batch (motor aktiv 4/rond pga 25s ZAI-timeout × 60s budget; inaktiv 80/rond
+som kö-markeringar) + kontroller + status → ändrade utanför batchen markeras
+inaktuell (cap 200) → publiceraOrganEvent(organ/oversattning, matt {nya,
+granskas, publicerade, vantanMotor,…}) + publiceraSignal till admin vid
+granskningskö>0 → rapport data/rapporter/oversattning-SENASTE.md.
+(7) TEST verktyg/validera-motorer.mjs +10 PASS-rader (ny fas "MÖS"):
+termbanksstruktur+kundtermer, termKonsistens pass+fail, siffer-fail
+(12,5→12.5 + 258→259), struktur-fail (prosa+JSON), lateral-fail (0,36×,
+åäö-läcka, arabläcka i EN), AR-normalisering (vektorer + integrerat),
+hash-determinism (fast testvector ca978112ca1b), listaKallor-smoke
+(15 983 källor, unika identer, hash= raknaHash), motor-trösklar+vantar-
+motor, poängsummering. SVITEN: 68 PASS / 0 FAIL / 0 SKIP (5,2 s) — varav
+58 var bas; 100% bevarat.
+VERIFIERAT LIVE: dev 3137 med CRON_SECRET runtime-env: utan secret → 401;
+med ?secret= → 200 på 0,49 s {totaltKallor 15983, nya 31966, batch 80,
+vantanMotor 80, tabellFinns false (PGRST205 ännu ej skapad hos kunden) ⇒
+lagring "kö" fungerar, rapport skriven}; rond 2 idempotent (nya 31886,
+kö 160 unika). Servern dödad, porten frigjord. tsc 0 fel i MÖS-filerna
+(totaltalet 65 pga parallell agent B:s admin-rutt som konsumerar mina
+typer — deras fil, deras fix). /en|ar-sidorna, kommandopaletten, chat-
+widgeten, middleware och akm2 orörda. Inget committat.
+KVAR (main/kund): kör data/sql/oversattningar.sql; sätt ZAI_API_KEY i
+Vercel-env när motorronder ska börja producera; gransknings-UI för kö
+status=utkast/maskinutkast-behovar-granskning (agent B:s admin-rutt påbörjat).
+
+## VÅG 52 agent C: översättnings-admin (granskningspanel + API)
+
+Kunddirektiv "garantera att översättningen har också rätt översättning"
+= MÄNNISKOKONTROLL inbyggd. Byggde admin-sidan av MÖS-pipelinen, exakt
+följt agent A:s kontrakt i src/lib/oversattning/** (orört: kalla/
+kontroller/lager/motor/termbank + cron + data/sql/oversattningar.sql).
+
+API (samma säkerhetsmönster som /api/admin/beteende: ADMIN_PASSWORD,
+timing-safe, rate-limit 10 misslyckade/min, x-admin-password|Bearer|
+body.adminPassword):
+- GET /api/admin/oversattning?sprak=&status=&sida= — KPI per språk+status
+  (% publicerat räknat mot listaKallor()=15 983 källor), granskningskö
+  (utkast+maskinutkast-behovar-granskning+granskad, nyast först, 50/sida,
+  källtext SV sammanfogad per post + kallhash-avvikelsevarning), termbanks-
+  storlek, senaste cron-rapport (data/rapporter/oversattning-SENASTE.md),
+  motorAktiv + sprakRegister (MALSPRAK → framtida språk dyker upp automatiskt).
+  Tabell saknas → lage "tabell-saknas" + konfigurationskort + spegling av
+  lokala fallback-kön (lasKo) — aldrig krasch.
+- POST /api/admin/oversattning {action: godkann|publicera|avslå|redigera,
+  id|scope_typ+scope_nyckel+sprak, text?, force?} — redigera kör OM med
+  korKontroller (ärlig poäng även för mänsklig text; 100 poäng autopublisher
+  ALDRIG — publicering är explicit mänskligt steg); publicera under
+  KVALITETSTRASKEL 90 → 409-varning, tillåtet endast force:true; avslå →
+  inaktuell + OrganEvent-notis (organ/oversattning-admin). ALL skrivning
+  via lager.ts lasSpara.
+- GET/POST /api/admin/oversattning/termbank — banken (293 statiska rader)
+  + LEVANDE tillägg i data/termbank-tillagg.json (src/lib/oversattning-
+  admin.ts, A:s utökningsmodell följd: tillägg status "vantar-sammanslagning"
+  tills raden slagits in i TERMBANK — kontrollgarantin kan aldrig åsidosättas
+  tyst från admin: statisk sv-nyckel med andra värden → 409). laggTill|
+  uppdatera|taBort, kategorier härledda ur bankens data, bokstavskrav som
+  fångar felkodade kroppar.
+
+ADMIN-FLIK "Översättning 🌍" (oversattning-panel.tsx i page.tsx flikstruktur):
+lås-rad som Trafik & Säkerhet, 60 s-poll (visibility-gated), KPI-kort per
+språk, granskningskö med klickbart scope → två kolumner SV | översättning
+(AR dir=rtl), kvalitetsbadge + kontrollrapportens 4 detaljer, Redigera-
+textarea (dir anpassad, omkontroll vid spar), Godkänn/Publicera (force-
+bekräftelse vid <90)/Avslå, termbanksunderflik (sökbar tabell + lägg-till-
+rad + tilläggstabell med ta-bort), senaste rond-rapport, tomt läge
+"Allt översatt och publicerat — inget att granska".
+
+VERIFIERAT (dev 3482): /admin 200 med nya fliken (panel i klient-bundle +
+SSR-chunk); GET utan lösenord 401, med AK1A-2026 (ADMIN_PASSWORD ej satt i
+.env.local → default) 200 {lage tabell-saknas, konfigurationKravs, sprak-
+register en/ar, 15 983 källor, fallback-kö 160 poster paginerad 4 sidor,
+termbank 293}; POST godkann syntetiskt id 999999 → tydligt lagerfel 503
+"kör data/sql/oversattningar.sql" + konfigurationKravs:true; termbank POST
+laggTill/uppdatera/taBort/409-override-skydd/400-felkodad-text; ogiltig
+action/sprak 400. tsc 43/0 (samma 43 som baslinjen, 0 nya). Dev dödad.
+INGET committat; /en|ar-sidor, cron, akm2, chat orörda.

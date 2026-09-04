@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-04
 
-- **Genererad:** 2026-09-04T07:52:58.365Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-04T10:05:33.199Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 6.4 s
+- **Körtid:** 7.1 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,20 +15,20 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 189 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6237 strängar extraherade
+- 193 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6370 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
 
 ## 3. JSON-giltighet (data/*.json + data/bokmaster/*.json) — **PASS**
 
-- 113 filer parsade
+- 114 filer parsade
 
 Inga avvikelser hittade.
 
 ## 4. Länk-validitet (sokindex + huvudmeny + sidfooter) — **PASS**
 
-- 4 interna länkar verifierade mot 66 rutter i src/app
+- 4 interna länkar verifierade mot 68 rutter i src/app
 
 Inga avvikelser hittade.
 
@@ -48,7 +48,7 @@ Inga avvikelser hittade.
 ## 7. Motorvalidering (validera-motorer.mjs — 100%-väktaren) — **PASS**
 
 - kör verktyg/validera-motorer.mjs som subprocess (100%-väktaren, budget 120 s) …
-- subprocess (exit 0): RESULTAT: 58 PASS / 0 FAIL / 0 SKIP
+- subprocess (exit 0): RESULTAT: 68 PASS / 0 FAIL / 0 SKIP
 
 Inga avvikelser hittade.
 

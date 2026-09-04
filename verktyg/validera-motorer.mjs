@@ -33,6 +33,12 @@
  *      briefing-, badges-, analysbank-, assistent-motorerna + forsknings-
  *      motorerna akm2/karna, riskportfolj, fundamental-vagmotor, uppfoljning
  *      + konfluens-motorns sjalvkontroll på handgjorda rader.
+ *   MÖS) ÖVERSÄTTNINGSSYSTEMET (våg 52): termbankens garanti-kontrakt,
+ *      termKonsistens/siffer-/struktur-/lateral-kontroller (pass+fail),
+ *      AR-normalisering av östra siffror, versionshash-determinism,
+ *      källregistret ur deep-courses.json + ordlistan, motorstatusflödet
+ *      (vantar-motor utan nyckel — deterministisk ärlighet) och poäng-
+ *      summeringen. Inget nät: motorn testas endast i avstängt läge.
  *   E) ROBUSTHET: 90 s total budget (intern 88 s-väktare + process-träd-död).
  *
  * Nätverksberoende delar mockas ALDRIG med riktiga anrop: alla fixturtest
@@ -122,6 +128,9 @@ const KLASSER_JSON = ["impulsvag", "korrigering", "basbygge", "osatt"];
 let VFM: any, ANA: any, NET: any, KON: any, PVA: any, NLU: any, OMT: any, KUR: any, DAS: any;
 let VKN: any, SRP: any, VPL: any, BRE: any, BDG: any, ABK: any, AST: any, KAR: any, RSK: any;
 let FVG: any, UPP: any;
+// MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
+// källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
+let OVS: any, KLL: any, KTR: any, MOT: any, ORD: any;
 let körVagfundament: (o: { tickers: string[]; vikter?: Record<string, number> }) => Promise<any>;
 let hamtaBalansPoster: (t: string) => Promise<any>;
 let körAnalysMotor: (o: { tickers: string[] }) => Promise<any>;
@@ -1730,6 +1739,285 @@ async function fasD(): Promise<void> {
     );
   }
 }
+// ══ FAS MÖS: ÖVERSÄTTNINGSYSTEMET (våg 52) — deterministisk kärna, inget nät ══
+// Termbankens rätt-översättningsgaranti, siffer-/struktur-/lateral-kontroller,
+// AR-normalisering av östra siffror, versionshash samt källregistret ur
+// public/deep-courses.json + ordlistan. Motorstatusflödet testas med nyckeln
+// borttagen (deterministisk ärlighet: "vantar-motor", aldrig låtsasöversättning).
+async function fasOversattning(): Promise<void> {
+  // ── MÖS 1: termbankens struktur och garanti-kontrakt ───────────────────────
+  {
+    const problem: string[] = [];
+    const storlek: number = OVS.TERMBANK_STORLEK;
+    if (!(storlek >= 200)) problem.push("termbank " + String(storlek) + " termer (< 200 — kundkravet bruten)");
+    const tomma = OVS.TERMBANK.filter((r: any) => !r.sv || !r.en || !r.ar);
+    if (tomma.length > 0) problem.push(String(tomma.length) + " rader med tomt fält");
+    const svLista: string[] = OVS.TERMBANK.map((r: any) => r.sv);
+    const dubletter = svLista.filter((s: string, i: number) => svLista.indexOf(s) !== i);
+    if (dubletter.length > 0) problem.push("dubbla sv-termer: " + dubletter.slice(0, 4).join(","));
+    if (OVS.arVitlista().length !== 0) problem.push("arVitlista ej tom — termbanken läcker åäö i ar-fält");
+    if (!(OVS.latinskaTermer().length >= 20)) problem.push("latinska termer " + String(OVS.latinskaTermer().length) + " (< 20)");
+    const samman = OVS.termForSv("sammanvägningen");
+    if (!samman || samman.en !== "the Synthesis" || samman.ar !== "الموازنة الشاملة") {
+      problem.push("kundterminologi saknar rad: sammanvägningen → the Synthesis/الموازنة الشاملة");
+    }
+    const moat = OVS.termForSv("moat");
+    const vallgrav = OVS.termForSv("vallgrav");
+    if (!moat || moat.ar !== "الخندق التنافسي") problem.push("moat-ar ≠ الخندق التنافسي");
+    if (!vallgrav || vallgrav.en !== "moat" || vallgrav.ar !== "الخندق التنافسي") problem.push("vallgrav → moat/الخندق التنافسي saknas");
+    rad(
+      "mos-oversattning",
+      "TERMBANK struktur + kundtermer (≥200 rader)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? storlek + " termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (" + String(OVS.latinskaTermer().length) + ") behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska"
+        : problem.slice(0, 6).join("; "),
+      "storlek=" + String(storlek) + " latinska=" + String(OVS.latinskaTermer().length),
+    );
+  }
+
+  // ── MÖS 2: termKonsistens — rätt-översättningsgarantin (pass + fail) ──────
+  {
+    const problem: string[] = [];
+    const kalla = "Bruttomarginalen förbättrades och skuldsättningsgraden sjönk efter nyemissionen. ROE blev 23%.";
+    const bra = "The gross margin improved and the debt-to-equity ratio fell after the new share issue. ROE became 23%.";
+    const dalig = "The profit improved and the debt fell after the issue of shares. ROE became 23%.";
+    const okRes = KTR.termKonsistens(kalla, bra, "en");
+    const felRes = KTR.termKonsistens(kalla, dalig, "en");
+    if (!okRes.pass) problem.push("korrekt översättning underkänns: " + okRes.detaljer);
+    if (!(okRes.varden.traffade === 4)) problem.push("träffar=" + String(okRes.varden.traffade) + " (förväntat 4: bruttomarginal, skuldsättningsgrad, nyemission, ROE)");
+    if (felRes.pass) problem.push("felaktig översättning godkänns — garantin tät");
+    if (!(felRes.varden.missar >= 2)) problem.push("missar=" + String(felRes.varden.missar) + " (förväntat ≥2)");
+    rad(
+      "mos-oversattning",
+      "KONTROLL termKonsistens (pass + fail-case)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med " + String(felRes.varden.missar) + " missar"
+        : problem.slice(0, 6).join("; "),
+      "traffade=" + String(okRes.varden.traffade) + " missar(dålig)=" + String(felRes.varden.missar),
+    );
+  }
+
+  // ── MÖS 3: sifferIntegritet — ett ändrat tal är ett faktafel ───────────────
+  {
+    const problem: string[] = [];
+    const kalla = "Vinsten steg 12,5 % till 258 Mkr och marginalen blev 8,2 %. Året 2026 börjar bra.";
+    const bra = "Profit rose 12,5 % to 258 Mkr and the margin became 8,2 %. The year 2026 starts well.";
+    const dalig = "Profit rose 12.5% to 259 Mkr and the margin became 8,2 %. The year 2026 starts well.";
+    const okRes = KTR.sifferIntegritet(kalla, bra);
+    const felRes = KTR.sifferIntegritet(kalla, dalig);
+    if (!okRes.pass) problem.push("identiska tal underkänns: " + okRes.detaljer);
+    if (felRes.pass) problem.push("ändrade tal (12,5→12.5, 258→259) godkänns");
+    if (!(felRes.varden.saknade >= 2) || !(felRes.varden.extra >= 2)) problem.push("multiset-räkning avviker: " + JSON.stringify(felRes.varden));
+    rad(
+      "mos-oversattning",
+      "KONTROLL sifferIntegritet (tal ändrat ⇒ fail)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass"
+        : problem.slice(0, 6).join("; "),
+      "saknade=" + String(felRes.varden.saknade) + " extra=" + String(felRes.varden.extra),
+    );
+  }
+
+  // ── MÖS 4: strukturIntegritet — stycken/listor/markdown + JSON-block ───────
+  {
+    const problem: string[] = [];
+    const kalla = "Rubrik om moat\n\nFörsta stycket med genomgång.\n\n- punkt ett\n- punkt två\n\nAndra stycket.";
+    const bra = "Heading on moat\n\nFirst paragraph of the review.\n\n- point one\n- point two\n\nSecond paragraph.";
+    const dalig = "Heading on moat\n\nFirst paragraph and more text merged.";
+    const okRes = KTR.strukturIntegritet(kalla, bra);
+    const felRes = KTR.strukturIntegritet(kalla, dalig);
+    if (!okRes.pass) problem.push("identisk struktur underkänns: " + okRes.detaljer);
+    if (felRes.pass) problem.push("3 stycken/2 punkter → 1 stycke/0 punkter godkänns");
+    const jsonKalla = "{\"rubrik\":\"Investerare vs Spekulant\",\"rader\":[[\"Aspekt\",\"Investerare\"],[\"Grund\",\"Analys av värde\"]]}";
+    const jsonBra = "{\"rubrik\":\"Investor vs Speculator\",\"rader\":[[\"Aspect\",\"Investor\"],[\"Basis\",\"Value analysis\"]]}";
+    const jsonFel = "{\"rubrik\":\"Investor vs Speculator\",\"rader\":[[\"Aspect\",\"Investor\"]]}";
+    const jOk = KTR.strukturIntegritet(jsonKalla, jsonBra);
+    const jFel = KTR.strukturIntegritet(jsonKalla, jsonFel);
+    if (!jOk.pass) problem.push("JSON-block med bevarade nycklar/arraylängder underkänns: " + jOk.detaljer);
+    if (jFel.pass) problem.push("ändrad arraylängd i JSON-block godkänns");
+    rad(
+      "mos-oversattning",
+      "KONTROLL strukturIntegritet (stycken/listor/JSON)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas"
+        : problem.slice(0, 6).join("; "),
+      "prosa-fail=" + String(felRes.pass === false) + " json-pass=" + String(jOk.pass) + " json-fail=" + String(jFel.pass === false),
+    );
+  }
+
+  // ── MÖS 5: lateralKolla — längdförhållande 0,5–2,5× + AR åäö-läcka ────────
+  {
+    const problem: string[] = [];
+    const kalla = "Detta är en tillräckligt lång svensk text om bruttomarginal och moat så att längdförhållandet kan beräknas på ett meningsfullt sätt.";
+    const lagom = "This is a sufficiently long English text about gross margin and moat so that the length ratio can be calculated in a meaningful way.";
+    const avkapad = "Gross margin.";
+    const okRes = KTR.lateralKolla(kalla, lagom, "en");
+    const kortRes = KTR.lateralKolla(kalla, avkapad, "en");
+    if (!okRes.pass) problem.push("lagom längd underkänns: " + okRes.detaljer);
+    if (kortRes.pass) problem.push("avkapad översättning (förhållande " + String(kortRes.varden.langdForhallande) + ") godkänns");
+    const arKalla = "Fundamental analys handlar om att läsa ett bolags räkenskaper noggrant och utan stress.";
+    const arRen = "التحليل الأساسي يعني قراءة القوائم المالية للشركة بعناية ودون تسرع في كل جانب من جوانبها.";
+    const arLacka = "التحليل الأساسي يعني قراءة القوائم المالية للشركة بعناية och utan stress åäö varje dag.";
+    const arOk = KTR.lateralKolla(arKalla, arRen, "ar");
+    const arFel = KTR.lateralKolla(arKalla, arLacka, "ar");
+    if (!arOk.pass) problem.push("ren arabiska underkänns: " + arOk.detaljer);
+    if (arFel.pass) problem.push("åäö-läcka i AR godkänns");
+    const enArLacka = KTR.lateralKolla(kalla, lagom + " التحليل", "en");
+    if (enArLacka.pass) problem.push("arabisk läcka i EN godkänns");
+    rad(
+      "mos-oversattning",
+      "KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "förhållande " + String(okRes.varden.langdForhallande) + " inom intervall pass; avkapad (" + String(kortRes.varden.langdForhallande) + ") fail; AR åäö-läcka fail; EN arabiskläcka fail"
+        : problem.slice(0, 6).join("; "),
+      "okFörhållande=" + String(okRes.varden.langdForhallande) + " avkapad=" + String(kortRes.varden.langdForhallande),
+    );
+  }
+
+  // ── MÖS 6: AR-siffernormalisering ٠-٩ (vectorer + integrerat pass) ─────────
+  {
+    const problem: string[] = [];
+    if (KTR.normaliseraSiffror("٠١٢٣٤٥٦٧٨٩") !== "0123456789") problem.push("siffrorna ٠-٩ normaliseras ej");
+    if (KTR.normaliseraSiffror("٢٣٫٤") !== "23.4") problem.push("decimalseparatorn ٫ normaliseras ej");
+    if (KTR.normaliseraSiffror("١٢٬٣٤٥") !== "12,345") problem.push("tusentalsseparatorn ٬ normaliseras ej");
+    if (KTR.normaliseraSiffror(" redistribute 12,5 ") !== " redistribute 12,5 ") problem.push("redan latinsk text påverkas (ej idempotent)");
+    const kalla = "ROE blev 23,4 % och NCAV togs till 12 kronor per aktie i grundtestet.";
+    const arBra = "أصبح ROE ٢٣,٤٪ وتم احتساب NCAV بقيمة ١٢ كرونًا لكل سهم في الاختبار الأساسي.";
+    const arFel = "أصبح ROE ٢٤,٤٪ وتم احتساب NCAV بقيمة ١٢ كرونًا لكل سهم في الاختبار الأساسي.";
+    const okRes = KTR.sifferIntegritet(kalla, arBra);
+    const felRes = KTR.sifferIntegritet(kalla, arFel);
+    if (!okRes.pass) problem.push("östra siffror godkänns ej trots normalisering: " + okRes.detaljer);
+    if (felRes.pass) problem.push("٢٣,٤→٢٤,٤ (sifferväxling på östra siffror) godkänns");
+    rad(
+      "mos-oversattning",
+      "KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej"
+        : problem.slice(0, 6).join("; "),
+      "normaliserad='0123456789' ar-pass=" + String(okRes.pass) + " ar-fail=" + String(felRes.pass === false),
+    );
+  }
+
+  // ── MÖS 7: raknaHash — SHA-256 12 hex, deterministisk (testvector) ─────────
+  {
+    const problem: string[] = [];
+    const h1 = KLL.raknaHash("a");
+    const h2a = KLL.raknaHash("Bruttomarginalen steg.");
+    const h2b = KLL.raknaHash("Bruttomarginalen steg.");
+    const h3 = KLL.raknaHash("Bruttomarginalen steg!");
+    if (!/^[0-9a-f]{12}$/.test(h1)) problem.push("format ej 12 gemener hex: " + h1);
+    if (h1 !== "ca978112ca1b") problem.push("testvector sha256('a')='ca978112ca1b…' stämmer ej: " + h1);
+    if (h2a !== h2b) problem.push("samma indata ⇒ olika hash (indeterminism)");
+    if (h2a === h3) problem.push("olika indata ⇒ samma hash (kollision i test)");
+    const hUniA = KLL.raknaHash("åäö ÅÄÖ 100%");
+    const hUniB = KLL.raknaHash("åäö ÅÄÖ 100%");
+    if (hUniA !== hUniB || !/^[0-9a-f]{12}$/.test(hUniA)) problem.push("unicode-indata hashas ej deterministiskt");
+    rad(
+      "mos-oversattning",
+      "VERSIONSHASH determinism (SHA-256 12 hex)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt"
+        : problem.slice(0, 6).join("; "),
+      "hash('a')=" + h1 + " unicode=" + hUniA,
+    );
+  }
+
+  // ── MÖS 8: listaKallor — registret ur deep-courses.json + ordlistan ────────
+  {
+    const problem: string[] = [];
+    const kallor: any[] = KLL.listaKallor();
+    const ui = kallor.filter((k) => k.scope.typ === "ui");
+    const block = kallor.filter((k) => k.scope.typ === "kursblock");
+    if (!(block.length >= 15000)) problem.push("kursblock=" + String(block.length) + " (< 15000 — registret läser ej deep-courses.json)");
+    const ordAntal = Object.keys(ORD.ORDLISTA).length;
+    if (ui.length !== ordAntal) problem.push("ui=" + String(ui.length) + " ≠ ordlistans " + String(ordAntal) + " nycklar");
+    const identer = kallor.map((k) => KLL.kallaIdent(k.scope));
+    const unika = new Set(identer);
+    if (unika.size !== kallor.length) problem.push("dubbla källidenter: " + String(kallor.length - unika.size));
+    const allaHash = kallor.every((k) => /^[0-9a-f]{12}$/.test(k.hash) && k.hash === KLL.raknaHash(k.text));
+    if (!allaHash) problem.push("någon källas hash avviker från raknaHash(text)");
+    const nyttoFormat = block.every((k) => /^[^:]+:kap\d+:block\d+$/.test(k.scope.nyckel));
+    if (!nyttoFormat) problem.push("kursblock-nycklar följer ej <slug>:kap<n>:block<n>");
+    const igen: any[] = KLL.listaKallor();
+    if (igen.length !== kallor.length) problem.push("andra anropet ger annat antal (" + String(igen.length) + ")");
+    rad(
+      "mos-oversattning",
+      "KÄLLREGISTER listaKallor (ui + 15 696 kursblock)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? String(kallor.length) + " källor: " + String(ui.length) + " ui-nycklar (= ordlistan) + " + String(block.length) + " kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop"
+        : problem.slice(0, 6).join("; "),
+      "totalt=" + String(kallor.length) + " ui=" + String(ui.length) + " kursblock=" + String(block.length),
+    );
+  }
+
+  // ── MÖS 9: motorstatusflödet — trösklar + vantar-motor utan nyckel ─────────
+  {
+    const problem: string[] = [];
+    if (MOT.bestamStatus(100) !== "publicerad") problem.push("100 ⇒ " + String(MOT.bestamStatus(100)) + " (förväntat publicerad)");
+    if (MOT.bestamStatus(99) !== "utkast") problem.push("99 ⇒ " + String(MOT.bestamStatus(99)));
+    if (MOT.bestamStatus(90) !== "utkast") problem.push("90 ⇒ " + String(MOT.bestamStatus(90)) + " (förväntat utkast)");
+    if (MOT.bestamStatus(89) !== "maskinutkast-behovar-granskning") problem.push("89 ⇒ " + String(MOT.bestamStatus(89)));
+    if (MOT.bestamStatus(Number.NaN) !== "maskinutkast-behovar-granskning") problem.push("NaN-gränsfall hanteras ej");
+    const sparadNyckel = process.env.ZAI_API_KEY;
+    delete process.env.ZAI_API_KEY;
+    try {
+      if (MOT.motorAktiv() !== false) problem.push("motorAktiv() true utan nyckel");
+      const r = await MOT.oversatt("Bruttomarginalen förbättrades.", "en");
+      if (r.status !== "vantar-motor") problem.push("status=" + String(r.status) + " (förväntat vantar-motor)");
+      if (r.text !== null) problem.push("text producerad utan motor — låtsasöversättning!");
+      if (r.motor !== "ingen") problem.push("motor=" + String(r.motor));
+      const prompt = MOT.byggSystemPrompt("Bruttomarginalen och moat.", "en");
+      if (typeof prompt !== "string" || prompt.indexOf("TERMBANK") < 0 || prompt.indexOf("bruttomarginal") < 0) {
+        problem.push("systemprompt saknar TERMBANK-block/detekterade termer");
+      }
+      if (prompt.indexOf("الخندق التنافسي") < 0) problem.push("prompten visar ej ar-kolumnen för vallgrav/moat");
+      const t1 = MOT.raknaMaxTokens(200);
+      const t2 = MOT.raknaMaxTokens(4000);
+      if (!(t1 >= 800) || !(t2 > t1) || MOT.raknaMaxTokens(100000) > 8000) problem.push("maxTokens-intervall [800,8000] brutet");
+    } finally {
+      if (sparadNyckel !== undefined) process.env.ZAI_API_KEY = sparadNyckel;
+    }
+    rad(
+      "mos-oversattning",
+      "MOTOR statusflöde + vantar-motor (utan ZAI-nyckel)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan ZAI_API_KEY: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000]"
+        : problem.slice(0, 6).join("; "),
+      "trösklar=100/90/89 motorAktiv=false",
+    );
+  }
+
+  // ── MÖS 10: kontrollrapportens poängsummering (0–100, viktad) ──────────────
+  {
+    const problem: string[] = [];
+    const kalla = "Bruttomarginalen blev 12,5 % och ROE steg till 21.\n\n- punkt ett\n- punkt två";
+    const perfekt = "The gross margin became 12,5 % and ROE rose to 21.\n\n- point one\n- point two";
+    const brand = KTR.korKontroller(kalla, perfekt, "en");
+    if (brand.poang !== 100) problem.push("perfekt översättning ⇒ " + String(brand.poang) + " poäng (förväntat 100)");
+    if (brand.resultat.length !== 4) problem.push("antal kontroller=" + String(brand.resultat.length));
+    const halv = KTR.korKontroller(kalla, "The margin became 99 %.", "en");
+    if (halv.poang >= 90) problem.push("undermålig översättning ⇒ " + String(halv.poang) + " (skedevägran över tröskel)");
+    if (KTR.KVALITETSTRASKEL !== 90) problem.push("KVALITETSTRASKEL=" + String(KTR.KVALITETSTRASKEL));
+    rad(
+      "mos-oversattning",
+      "KONTROLLRAPPORT poäng 0–100 (viktad summa)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger " + String(halv.poang) + " poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning"
+        : problem.slice(0, 6).join("; "),
+      "perfekt=" + String(brand.poang) + " undermalig=" + String(halv.poang) + " traskel=" + String(KTR.KVALITETSTRASKEL),
+    );
+  }
+}
 // Hjälpfunktioner till vagkon-fixturerna (historik + SR-rensning)
 function H2(): number[] { return [100, 110, 105, 120, 115, 130]; }
 function lsRennaSR(): void { LS_DATA.delete("ak1a-sr-v1"); LS_DATA.delete("ak1a-sr-xp-v1"); }
@@ -1742,6 +2030,7 @@ const FASER: Array<[string, () => void | Promise<void>]> = [
   ["B: DETERMINISM", fasB],
   ["C: GRÄNSER", fasC],
   ["D: FIXTURTEST (rena kärnor)", fasD],
+  ["MÖS: ÖVERSÄTTNING (termbank/källor/kontroller/motor)", fasOversattning],
 ];
 
 function skriv(timeout: boolean): void {
@@ -1776,6 +2065,11 @@ let fardig = false;
   RSK = await import("./src/lib/portfolj-forskning/riskportfolj");
   FVG = await import("./src/lib/portfolj-forskning/fundamental-vagmotor");
   UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
+  OVS = await import("./src/lib/oversattning/termbank");
+  KLL = await import("./src/lib/oversattning/kalla");
+  KTR = await import("./src/lib/oversattning/kontroller");
+  MOT = await import("./src/lib/oversattning/motor");
+  ORD = await import("./src/lib/ordlista");
   körVagfundament = VFM.körVagfundament;
   hamtaBalansPoster = VFM.hamtaBalansPoster;
   körAnalysMotor = ANA.körAnalysMotor;
@@ -1918,8 +2212,8 @@ function byggRapport(payload, meta) {
     );
   }
   linjer.push("");
-  linjer.push("## Täckningsgrad (våg 49)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor och uppföljning. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("## Täckningsgrad (våg 49 + våg 52)\n");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor och uppföljning — samt (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

@@ -150,6 +150,20 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 }
 
 // ── Organ 4: RETENTION — den självrengörande vakten ────────────────────────
+//
+// Typ-scopade tak (VÅG 50): trafikmätningen (type=trafik) och säkerhets-
+// loggen (type=sakerhet) behöver ÖVERLEVA 30 dagar för admin-panelens
+// 7/30-d-aggregat — tidigare kunde det globala 500-radstaket radera
+// dagens trafik samma natt. Filosofin från 2026-08-kollapsen (17,7M rader)
+// består: varje scope har fortfarande ett HÅRT radtak + ålderstak, bara
+// nivåerna differentieras per syfte:
+//   övrigt    : 500 rader / 30 dagar  (oförändrat — organ/autonomi/styrelse)
+//   trafik    : 12 000 rader / 35 dagar (stickprov 30 % + bot-dedupe)
+//   sakerhet  : 3 000 rader / 35 dagar (en rad per blockering)
+
+const MAX_ANTAL_TRAFIK = 12_000;
+const MAX_ANTAL_SAKERHET = 3_000;
+const MAX_ALDER_TYP_DAGAR = 35;
 
 async function organRetention(
   sb: { origin: string; headers: Record<string, string> } | null
@@ -157,7 +171,6 @@ async function organRetention(
   if (!sb) return null;
   let deletedOld = 0;
   let cappedRows = 0;
-  const cutoff = new Date(Date.now() - MAX_LOG_AGE_DAYS * 86400_000).toISOString();
 
   const tryFetch = async (url: string, init?: RequestInit) => {
     const ctrl = new AbortController();
@@ -166,6 +179,56 @@ async function organRetention(
       return await fetch(url, { ...init, signal: ctrl.signal });
     } finally {
       clearTimeout(t);
+    }
+  };
+
+  /** Raderar inom ett typfilter som är äldre än `dagar` — returnerar antal. */
+  const rakraAldring = async (typFilter: string, dagar: number): Promise<number> => {
+    try {
+      const cut = new Date(Date.now() - dagar * 86400_000).toISOString();
+      const res = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?created_at=lt.${cut}&${typFilter}&select=id`, {
+        headers: { ...sb.headers, Prefer: "return=representation" },
+      });
+      if (!res.ok) return 0;
+      const rows = await res.json();
+      if (!rows?.length) return 0;
+      const ids = rows.map((r: any) => r.id).join(",");
+      const del = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?id=in.(${ids})`, {
+        method: "DELETE",
+        headers: { ...sb.headers, Prefer: "return=minimal" },
+      });
+      return del.ok ? rows.length : 0;
+    } catch {
+      return 0;
+    }
+  };
+
+  /** Hårt radtak inom ett typfilter — raderar äldsta överskottet. */
+  const raknaTak = async (typFilter: string, tak: number): Promise<number> => {
+    try {
+      const countRes = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?${typFilter}&select=id`, {
+        method: "HEAD",
+        headers: { ...sb.headers, Prefer: "count=planned" },
+      });
+      if (!countRes.ok) return 0;
+      const antal = Number(countRes.headers.get("content-range")?.split("/")[1] ?? 0) || 0;
+      if (antal <= tak) return 0;
+      const overskott = antal - tak;
+      const res = await tryFetch(
+        `${sb.origin}/rest/v1/${LOG_TABLE}?${typFilter}&select=id&order=created_at.asc&limit=${overskott}`,
+        { headers: sb.headers }
+      );
+      if (!res.ok) return 0;
+      const rows = await res.json();
+      if (!rows?.length) return 0;
+      const ids = rows.map((r: any) => r.id).join(",");
+      const del = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?id=in.(${ids})`, {
+        method: "DELETE",
+        headers: { ...sb.headers, Prefer: "return=minimal" },
+      });
+      return del.ok ? rows.length : 0;
+    } catch {
+      return 0;
     }
   };
 
@@ -188,52 +251,15 @@ async function organRetention(
     });
   } catch {}
 
-  // 1. Radera äldre än åldertaket (ignorera fel — tabellen kanske inte finns ännu)
-  try {
-    const res = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?created_at=lt.${cutoff}&select=id`, {
-      headers: { ...sb.headers, Prefer: "return=representation" },
-    });
-    if (res.ok) {
-      const rows = await res.json();
-      if (rows?.length) {
-        const ids = rows.map((r: any) => r.id).join(",");
-        const del = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?id=in.(${ids})`, {
-          method: "DELETE",
-          headers: { ...sb.headers, Prefer: "return=minimal" },
-        });
-        if (del.ok) deletedOld = rows.length;
-      }
-    }
-  } catch {}
+  // 1. Ålderstak, per scope. Ignorera fel — tabellen kanske inte finns ännu.
+  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet)", MAX_LOG_AGE_DAYS);
+  deletedOld += await rakraAldring("type=eq.trafik", MAX_ALDER_TYP_DAGAR);
+  deletedOld += await rakraAldring("type=eq.sakerhet", MAX_ALDER_TYP_DAGAR);
 
-  // 2. Hårt tak: om fler än MAX_LOG_ROWS — radera äldsta överskottet
-  try {
-    const res = await tryFetch(
-      `${sb.origin}/rest/v1/${LOG_TABLE}?select=id&order=created_at.desc&limit=${MAX_LOG_ROWS}`,
-      { headers: sb.headers }
-    );
-    if (res.ok) {
-      const keep = await res.json();
-      if (keep?.length >= MAX_LOG_ROWS) {
-        const keepIds = new Set(keep.map((r: any) => String(r.id)));
-        const allRes = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?select=id&order=created_at.asc&limit=1000`, {
-          headers: sb.headers,
-        });
-        if (allRes.ok) {
-          const all = await allRes.json();
-          const excess = (all || []).filter((r: any) => !keepIds.has(String(r.id)));
-          if (excess.length) {
-            const ids = excess.map((r: any) => r.id).join(",");
-            const del = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?id=in.(${ids})`, {
-              method: "DELETE",
-              headers: { ...sb.headers, Prefer: "return=minimal" },
-            });
-            if (del.ok) cappedRows = excess.length;
-          }
-        }
-      }
-    }
-  } catch {}
+  // 2. Hårta radtak, per scope (500 / 12 000 / 3 000)
+  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet)", MAX_LOG_ROWS);
+  cappedRows += await raknaTak("type=eq.trafik", MAX_ANTAL_TRAFIK);
+  cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
 
   return { deletedOld, cappedRows };
 }

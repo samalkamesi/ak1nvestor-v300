@@ -1,0 +1,233 @@
+/**
+ * ORDLISTAN — gränssnittets ord på svenska | english | العربية (fas 1).
+ *
+ * OMFATTNING: meny-, navigations-, kurs-UI-, notis-, CTA-, footer- och
+ * inloggningsord — INTE sidinnehåll (rubriker i page.tsx) och INTE
+ * kursinnehåll. Se data/forskning/SPRAK-PLAN.md: fas 2 = nyckelsidor,
+ * fas 3 = 333 kurser via professionell pipeline.
+ *
+ * RIKTLINJER ARABISKA: korrekt, formell men tillgänglig finansiell svenska→
+ * arabiska. Latinska förkortningar och varumärken behålls latinska (AKM1,
+ * AK1TS, ROE, NCAV, net-net, XP, Fas 2 ⇢ المرحلة 2 men "Fas 2-porten"
+ * ⇢ بوابة المرحلة 2). Termer: fundamental analys = التحليل الأساسي,
+ * portfölj = المحفظة, värdering = التقييم, kassaflöde = التدفق النقدي,
+ * avkastning = العائد, risk = المخاطر, kunskap = المعرفة.
+ */
+
+export type SprakRad = { sv: string; en: string; ar: string };
+
+export const ORDLISTA = {
+  // ── Huvudmeny / navigation (paneler + punkter) ────────────────────────────
+  "nav.lar": { sv: "Lär", en: "Learn", ar: "تعلَّم" },
+  "nav.analysera": { sv: "Analysera", en: "Analyze", ar: "حلِّل" },
+  "nav.trana": { sv: "Träna", en: "Practice", ar: "تدرَّب" },
+  "nav.hem": { sv: "Hem", en: "Home", ar: "الرئيسية" },
+  "nav.kurser": { sv: "Kurser", en: "Courses", ar: "الدورات" },
+  "nav.allaKurser": { sv: "Alla kurser", en: "All courses", ar: "جميع الدورات" },
+  "nav.kursbiblioteket": { sv: "Kursbiblioteket", en: "Course library", ar: "مكتبة الدورات" },
+  "nav.laroplanen": { sv: "Läroplanen", en: "The Curriculum", ar: "المنهج" },
+  "nav.biblioteket": { sv: "Biblioteket", en: "The Library", ar: "المكتبة" },
+  "nav.verktyg": { sv: "Verktyg", en: "Tools", ar: "الأدوات" },
+  "nav.manifestet": { sv: "Manifestet", en: "The Manifesto", ar: "البيان" },
+  "nav.certifikat": { sv: "Certifikat", en: "Certificates", ar: "الشهادات" },
+  "nav.nyhetscentralen": { sv: "Nyhetscentralen", en: "The News Center", ar: "مركز الأخبار" },
+  "nav.nyheter": { sv: "Nyheter", en: "News", ar: "الأخبار" },
+  "nav.akm1Kalkylatorn": {
+    sv: "AKM1-kalkylatorn",
+    en: "The AKM1 Calculator",
+    ar: "حاسبة AKM1",
+  },
+  "nav.vagfundamentet": { sv: "Vågfundamentet", en: "The Wave Foundation", ar: "أساس الموجات" },
+  "nav.portfoljbyggaren": { sv: "Portföljbyggaren", en: "The Portfolio Builder", ar: "باني المحفظة" },
+  "nav.konfluensradarn": { sv: "Konfluensradarn", en: "The Confluence Radar", ar: "رادار التقارب" },
+  "nav.netnetskannern": { sv: "Net-net-skannern", en: "The Net-net Scanner", ar: "ماسح Net-net" },
+  "nav.superanalysen": { sv: "Superanalysen", en: "The Super Analysis", ar: "التحليل الفائق" },
+  "nav.minPortfolj": { sv: "Min portfölj", en: "My Portfolio", ar: "محفظتي" },
+  "nav.portfoljforskning": { sv: "Portföljforskning", en: "Portfolio Research", ar: "أبحاث المحفظة" },
+  "nav.kognitivProfil": { sv: "Kognitiv profil", en: "Cognitive Profile", ar: "الملف المعرفي" },
+  "nav.dagensPass": { sv: "Dagens pass", en: "Today's Session", ar: "جلسة اليوم" },
+  "nav.minSida": { sv: "Min Sida", en: "My Page", ar: "صفحتي" },
+  "nav.topplistan": { sv: "Topplistan", en: "The Leaderboard", ar: "لوحة الصدارة" },
+  "nav.badges": { sv: "Badges", en: "Badges", ar: "الشارات" },
+  "nav.fas2Ansokan": { sv: "Fas 2-ansökan", en: "Phase 2 Application", ar: "طلب الالتحاق بالمرحلة 2" },
+  "nav.ansokFas2": { sv: "Ansök Fas 2", en: "Apply for Phase 2", ar: "التقدَّم للمرحلة 2" },
+  "nav.omOss": { sv: "Om oss", en: "About Us", ar: "من نحن" },
+  "nav.blogg": { sv: "Blogg", en: "Blog", ar: "المدونة" },
+  "nav.medlemskap": { sv: "Medlemskap", en: "Membership", ar: "العضوية" },
+  "nav.prenumeration": { sv: "Prenumeration", en: "Subscription", ar: "الاشتراك" },
+  "nav.labb": { sv: "Labb", en: "Lab", ar: "المختبر" },
+  "nav.analyser": { sv: "Analyser", en: "Analyses", ar: "التحليلات" },
+  "nav.aktier": { sv: "Aktier", en: "Stocks", ar: "الأسهم" },
+  "nav.portal": { sv: "Min portal", en: "My Portal", ar: "بوابتي" },
+
+  // ── Inloggning / konto ───────────────────────────────────────────────────
+  "auth.loggaIn": { sv: "Logga in", en: "Sign in", ar: "تسجيل الدخول" },
+  "auth.loggaUt": { sv: "Logga ut", en: "Sign out", ar: "تسجيل الخروج" },
+  "auth.namnMinSida": { sv: "{namn} · Min Sida", en: "{namn} · My Page", ar: "{namn} · صفحتي" },
+  "auth.du": { sv: "du", en: "you", ar: "أنت" },
+  "auth.loggaInEllerGratis": {
+    sv: "Logga in — eller skapa gratis konto",
+    en: "Sign in — or create a free account",
+    ar: "سجِّل الدخول — أو أنشئ حسابًا مجانيًا",
+  },
+  "auth.skapaGratisKonto": {
+    sv: "Skapa gratis konto",
+    en: "Create a free account",
+    ar: "أنشئ حسابًا مجانيًا",
+  },
+  "auth.gratisKonto": { sv: "Gratis konto", en: "Free account", ar: "حساب مجاني" },
+  "auth.bliMedlem": { sv: "Bli medlem", en: "Become a member", ar: "كن عضوًا" },
+  "auth.redanMedlem": { sv: "Redan medlem?", en: "Already a member?", ar: "عضو بالفعل؟" },
+  "auth.ejInloggad": { sv: "Ej inloggad", en: "Not signed in", ar: "لم تسجِّل الدخول" },
+
+  // ── Kurs-UI (KursSteg) ───────────────────────────────────────────────────
+  "kurs.kapitel": { sv: "Kapitel", en: "Chapter", ar: "الفصل" },
+  "kurs.kapitelAv": {
+    sv: "Kapitel {num} av {total} · {min} min",
+    en: "Chapter {num} of {total} · {min} min",
+    ar: "الفصل {num} من {total} · {min} د",
+  },
+  "kurs.minuter": { sv: "min", en: "min", ar: "د" },
+  "kurs.nastaKapitel": { sv: "Nästa kapitel", en: "Next chapter", ar: "الفصل التالي" },
+  "kurs.foregaende": { sv: "Föregående", en: "Previous", ar: "السابق" },
+  "kurs.testaDigSjalv": {
+    sv: "Testa dig själv — bevisa din kunskap (+10 XP per rätt)",
+    en: "Test yourself — prove your knowledge (+10 XP per correct answer)",
+    ar: "اختبر نفسك — أثبت معرفتك (+10 XP لكل إجابة صحيحة)",
+  },
+  "kurs.masterquiz": { sv: "Masterquiz", en: "Master Quiz", ar: "اختبار الإتقان" },
+  "kurs.ratt": { sv: "Rätt! +10 XP", en: "Correct! +10 XP", ar: "إجابة صحيحة! +10 XP" },
+  "kurs.kapitelBeharskat": {
+    sv: "Kapitel {num} behärskat!",
+    en: "Chapter {num} mastered!",
+    ar: "أتقنت الفصل {num}!",
+  },
+  "kurs.kursenKlar": { sv: "Kursen klar!", en: "Course completed!", ar: "أكملت الدورة!" },
+  "kurs.grattis": { sv: "Grattis!", en: "Congratulations!", ar: "تهانينا!" },
+  "kurs.insikt": { sv: "10x-insikt", en: "10x Insight", ar: "رؤية 10x" },
+  "kurs.utmaning": {
+    sv: "Utmaning — klicka när du är redo",
+    en: "Challenge — click when you are ready",
+    ar: "التحدّي — انقر عندما تكون مستعدًا",
+  },
+  "kurs.nivaUpp": { sv: "Nivå {n}!", en: "Level {n}!", ar: "المستوى {n}!" },
+  "kurs.fas2Porten": {
+    sv: "Fas 2-porten står öppen — ansök när du är redo.",
+    en: "The Phase 2 gate is open — apply when you are ready.",
+    ar: "بوابة المرحلة 2 مفتوحة — تقدَّم عندما تكون مستعدًا.",
+  },
+  "kurs.xpPerNiva": {
+    sv: "100 XP per nivå — poängen förtjänas.",
+    en: "100 XP per level — points are earned.",
+    ar: "100 XP لكل مستوى — النقاط تُكتسب بالجهد.",
+  },
+  "kurs.allaKlara": {
+    sv: "Du har klarat alla {total} kapitel i \"{titel}\" — kunskapen är nu din.",
+    en: "You have completed all {total} chapters of \"{titel}\" — the knowledge is now yours.",
+    ar: "أنجزت جميع فصول \"{titel}\" البالغة {total} — أصبحت المعرفة الآن ملكك.",
+  },
+  "kurs.tipsFallback": {
+    sv: "Gå tillbaka till texten — svaret finns där.",
+    en: "Go back to the text — the answer is there.",
+    ar: "عُد إلى النص — الإجابة موجودة هناك.",
+  },
+  "kurs.niva": { sv: "Nivå", en: "Level", ar: "المستوى" },
+  "kurs.startaKurs": { sv: "Starta kursen", en: "Start the course", ar: "ابدأ الدورة" },
+  "kurs.fortsattKursen": { sv: "Fortsätt kursen", en: "Continue the course", ar: "تابع الدورة" },
+  "kurs.kapitelTitel": { sv: "Kapitel {num}", en: "Chapter {num}", ar: "الفصل {num}" },
+
+  // ── Notiser (NotisCenter) ────────────────────────────────────────────────
+  "notis.notiser": { sv: "Notiser", en: "Notifications", ar: "الإشعارات" },
+  "notis.nya": { sv: "nya", en: "new", ar: "جديدة" },
+  "notis.olasta": { sv: "olästa", en: "unread", ar: "غير مقروءة" },
+  "notis.olast": { sv: "Oläst", en: "Unread", ar: "غير مقروء" },
+  "notis.allaLasta": { sv: "Alla lästa", en: "Mark all read", ar: "تعليم الكل كمقروء" },
+  "notis.rensa": { sv: "Rensa", en: "Clear", ar: "مسح" },
+  "notis.markeraLast": { sv: "Markera läst", en: "Mark as read", ar: "تعليم كمقروء" },
+  "notis.gatDit": { sv: "Gå dit", en: "Go there", ar: "انتقل" },
+  "notis.franSignalbussen": { sv: "Från signalbussen", en: "From the signal bus", ar: "من ناقل الإشارات" },
+  "notis.alltLugnt": {
+    sv: "Allt lugnt — vi höjer flaggan när något nytt väntar dig.",
+    en: "All quiet — we raise the flag when something new awaits you.",
+    ar: "كل شيء هادئ — سنرفع الراية عندما ينتظرك جديد.",
+  },
+  "notis.justNu": { sv: "just nu", en: "just now", ar: "الآن" },
+  "notis.nyaNotiserTitel": {
+    sv: "{n} nya notiser",
+    en: "{n} new notifications",
+    ar: "{n} إشعارات جديدة",
+  },
+  "notis.min": { sv: "min", en: "min", ar: "د" },
+  "notis.timme": { sv: "h", en: "h", ar: "س" },
+  "notis.dag": { sv: "d", en: "d", ar: "ي" },
+  "notis.varning": { sv: "Varning", en: "Warning", ar: "تحذير" },
+  "notis.mojlighet": { sv: "Möjlighet", en: "Opportunity", ar: "فرصة" },
+  "notis.beslut": { sv: "Beslut", en: "Decision", ar: "قرار" },
+
+  // ── CTA:er / generella knappar ───────────────────────────────────────────
+  "cta.lasMer": { sv: "Läs mer", en: "Learn more", ar: "اقرأ المزيد" },
+  "cta.komIgang": { sv: "Kom igång", en: "Get started", ar: "ابدأ الآن" },
+  "cta.fortsatt": { sv: "Fortsätt", en: "Continue", ar: "متابعة" },
+  "cta.fortsattLas": { sv: "Fortsätt läsa", en: "Keep reading", ar: "تابع القراءة" },
+  "cta.visaAlla": { sv: "Visa alla", en: "Show all", ar: "عرض الكل" },
+  "cta.tillbaka": { sv: "Tillbaka", en: "Back", ar: "رجوع" },
+  "cta.stang": { sv: "Stäng", en: "Close", ar: "إغلاق" },
+  "cta.oppna": { sv: "Öppna", en: "Open", ar: "فتح" },
+  "cta.sok": { sv: "Sök", en: "Search", ar: "بحث" },
+  "cta.spara": { sv: "Spara", en: "Save", ar: "حفظ" },
+  "cta.avbryt": { sv: "Avbryt", en: "Cancel", ar: "إلغاء" },
+  "cta.ja": { sv: "Ja", en: "Yes", ar: "نعم" },
+  "cta.nej": { sv: "Nej", en: "No", ar: "لا" },
+  "cta.eller": { sv: "eller", en: "or", ar: "أو" },
+  "cta.ladda": { sv: "Laddar…", en: "Loading…", ar: "جارٍ التحميل…" },
+  "cta.nastaSteg": { sv: "Nästa steg", en: "Next step", ar: "الخطوة التالية" },
+
+  // ── Footer / juridik ─────────────────────────────────────────────────────
+  "footer.disclaimer": {
+    sv: "AK1A Research Lab — pedagogisk finansanalys, inte investeringsråd.",
+    en: "AK1A Research Lab — educational financial analysis, not investment advice.",
+    ar: "AK1A Research Lab — تحليل مالي تعليمي، وليس نصيحة استثمارية.",
+  },
+  "footer.integritetspolicy": { sv: "Integritetspolicy", en: "Privacy Policy", ar: "سياسة الخصوصية" },
+  "footer.villkor": { sv: "Villkor", en: "Terms", ar: "الشروط" },
+  "footer.finansiellPolicy": { sv: "Finansiell policy", en: "Financial Policy", ar: "السياسة المالية" },
+  "footer.byggtMed": { sv: "Byggt med AKM1 + AK1TS", en: "Built with AKM1 + AK1TS", ar: "مبنيّ بمنهجيتي AKM1 + AK1TS" },
+  "footer.lar": { sv: "LÄR", en: "LEARN", ar: "تعلَّم" },
+  "footer.analysera": { sv: "ANALYSERA", en: "ANALYZE", ar: "حلِّل" },
+  "footer.trana": { sv: "TRÄNA", en: "PRACTICE", ar: "تدرَّب" },
+
+  // ── Gemensamma UI-ord ────────────────────────────────────────────────────
+  "ui.dagensPass": { sv: "Dagens pass", en: "Today's session", ar: "جلسة اليوم" },
+  "ui.nastaKapitel": { sv: "Nästa kapitel", en: "Next chapter", ar: "الفصل التالي" },
+  "ui.testaDigSjalv": { sv: "Testa dig själv", en: "Test yourself", ar: "اختبر نفسك" },
+  "ui.kunskap": { sv: "Kunskap", en: "Knowledge", ar: "المعرفة" },
+  "ui.progress": { sv: "Framsteg", en: "Progress", ar: "التقدُّم" },
+  "ui.sprakVaxla": { sv: "Byt språk", en: "Change language", ar: "تغيير اللغة" },
+  "ui.sprakNamn": { sv: "Språk", en: "Language", ar: "اللغة" },
+  "ui.brodsmulor": { sv: "Brödsmulor", en: "Breadcrumb", ar: "مسار التنقُّل" },
+  "ui.nivaKort": { sv: "Nivå {n}", en: "Level {n}", ar: "المستوى {n}" },
+  "ui.xp": { sv: "XP", en: "XP", ar: "XP" },
+  "ui.stjarnor": { sv: "Stjärnor", en: "Stars", ar: "النجوم" },
+  "ui.kurserKlara": { sv: "Kurser klara", en: "Courses completed", ar: "الدورات المكتملة" },
+  "ui.streak": { sv: "Streak", en: "Streak", ar: "سلسلة الأيام" },
+  "ui.medlem": { sv: "Medlem", en: "Member", ar: "عضو" },
+  "ui.gast": { sv: "Gäst", en: "Guest", ar: "زائر" },
+  "ui.fas2": { sv: "Fas 2", en: "Phase 2", ar: "المرحلة 2" },
+  "ui.fas3": { sv: "Fas 3", en: "Phase 3", ar: "المرحلة 3" },
+  "ui.gratis": { sv: "Gratis", en: "Free", ar: "مجاني" },
+  "ui.provperiod": { sv: "Provperiod", en: "Trial period", ar: "فترة تجريبية" },
+  "ui.inloggadSom": { sv: "Inloggad som {namn}", en: "Signed in as {namn}", ar: "مسجَّل الدخول باسم {namn}" },
+  "ui.registrera": { sv: "Registrera", en: "Register", ar: "التسجيل" },
+  "ui.epost": { sv: "E-post", en: "Email", ar: "البريد الإلكتروني" },
+  "ui.losenord": { sv: "Lösenord", en: "Password", ar: "كلمة المرور" },
+  "ui.namn": { sv: "Namn", en: "Name", ar: "الاسم" },
+  "ui.skicka": { sv: "Skicka", en: "Send", ar: "إرسال" },
+  "ui.ok": { sv: "OK", en: "OK", ar: "حسنًا" },
+  "ui.pagaende": { sv: "Pågående", en: "In progress", ar: "قيد التنفيذ" },
+  "ui.klar": { sv: "Klar", en: "Done", ar: "مكتمل" },
+  "ui.kvar": { sv: "kvar", en: "remaining", ar: "متبقٍ" },
+  "ui.visaMer": { sv: "Visa mer", en: "Show more", ar: "عرض المزيد" },
+  "ui.visaMindre": { sv: "Visa mindre", en: "Show less", ar: "عرض أقل" },
+} as const satisfies Record<string, SprakRad>;
+
+export type OrdlistaNyckel = keyof typeof ORDLISTA;

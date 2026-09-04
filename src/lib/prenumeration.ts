@@ -123,9 +123,17 @@ export type PrenumerationIntention = {
   fasStatus: FasStatus;
   namn?: string;
   epost?: string;
+  /** Frivillig nyhetsbrevscheck (VÅG 50): eleven vill ha morgon-briefingen
+   *  + forskningsuppdateringar per mejl. Intentionen POSTas även till
+   *  /api/email (typ=prenumeration-intention) och köas tills en mejl-
+   *  leverantör konfigureras — se src/lib/email-sandare.ts. */
+  nyhetsbrev?: boolean;
   /** ISO-timestamp för begäran. */
   skapad: string;
 };
+
+/** Status för nyhetsbrevs-intentionen (aktivera-panelens frivilliga check). */
+export type PrenusbrevStatus = "" | "köad" | "skickad" | "fel";
 
 /** Spara intention — returnerar true vid lyckad lagring. */
 export function sparaPrenumerationIntention(i: PrenumerationIntention): boolean {

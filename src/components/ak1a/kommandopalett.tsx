@@ -6,12 +6,16 @@ import { sokIIndex, type SokPost } from "@/lib/sokindex";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { SIFFROR } from "@/lib/siffror";
 import { besok, registreraBesok, titelFranSida } from "@/lib/navigationsminne";
+import { GAST_KONTEXT, lasMenyKontext, type MenyKontext } from "@/lib/meny-register";
 
 /**
  * KOMMANDOPALETT — ⌘K / Ctrl+K.
  * Söker alla sidor, verktyg och hela kursbiblioteket. Visar senast besökta
  * när fältet är tomt. Registrerar automatiskt navigation (mönsterigenkänning).
  * Öppnas även via window-event "ak1a:oppna-sok".
+ *
+ * 2026-09-03: datakällan är meny-registret via sokindex — publik-filtret
+ * gäller även här (medlem/fas/admin-ytor bara med behörighet).
  */
 
 const KATEGYRIKON: Record<string, string> = {
@@ -29,6 +33,8 @@ export function Kommandopalett() {
   const [resultat, setResultat] = useState<SokPost[]>([]);
   const [markerad, setMarkerad] = useState(0);
   const [laddar, setLaddar] = useState(false);
+  // Behörighetskontext (registrets publik-filter) — SSR-säkert gast från start.
+  const [kontext, setKontext] = useState<MenyKontext>(GAST_KONTEXT);
   const senaste = useRef<Array<{ sida: string; titel: string }>>([]);
   const inmatning = useRef<HTMLInputElement>(null);
 
@@ -68,6 +74,7 @@ export function Kommandopalett() {
     if (oppad) {
       inmatning.current?.focus();
       document.body.style.overflow = "hidden";
+      setKontext(lasMenyKontext());
       senaste.current = besok().slice(0, 5).map((b) => ({ sida: b.sida, titel: b.titel }));
     } else {
       document.body.style.overflow = "";
@@ -85,7 +92,7 @@ export function Kommandopalett() {
     let aktiv = true;
     setLaddar(true);
     const t = setTimeout(async () => {
-      const r = await sokIIndex(fraga);
+      const r = await sokIIndex(fraga, 12, kontext);
       if (aktiv) {
         setResultat(r);
         setMarkerad(0);
@@ -96,7 +103,7 @@ export function Kommandopalett() {
       aktiv = false;
       clearTimeout(t);
     };
-  }, [fraga, oppad]);
+  }, [fraga, oppad, kontext]);
 
   // — tangentnavigering i resultatan —
   useEffect(() => {

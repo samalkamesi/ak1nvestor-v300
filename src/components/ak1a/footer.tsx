@@ -3,14 +3,33 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowUp, Mail, Globe } from "lucide-react";
-import { useAk1aStore } from "@/lib/ak1a-store";
-import { FOOTER_NAV } from "@/lib/ak1a/data";
+import { GAST_KONTEXT, MENY_REGISTER, punktSynlig } from "@/lib/meny-register";
 import { HonestyTag } from "./primitives";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { Button } from "@/components/ui/button";
 
+// Navigationskolumnen läses UR meny-registret (EN källa, 2026-09-03): ett
+// kurerat urval av registrets viktigaste destinationer per sektion — samma
+// etiketter och länkar som huvudmenyn, aldrig ett motstridande urval.
+const FOOTER_URVAL = [
+  "/laroplan",
+  "/kurser",
+  "/bibliotek",
+  "/kalkylator",
+  "/superanalys",
+  "/analyser",
+  "/dagens-pass",
+  "/min-sida",
+  "/medlemskap",
+  "/prenumeration",
+  "/blogg",
+  "/om-oss",
+];
+const FOOTER_PUNKTER = MENY_REGISTER.flatMap((s) => s.punkter).filter(
+  (p) => FOOTER_URVAL.includes(p.lank) && punktSynlig(p, GAST_KONTEXT)
+);
+
 export function Footer() {
-  const { setSection } = useAk1aStore();
   const [version] = React.useState("2.0");
   const [updated] = React.useState("2026-07-31");
 
@@ -59,14 +78,14 @@ export function Footer() {
             <h4 className="col-span-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               Navigation
             </h4>
-            {FOOTER_NAV.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => setSection(item.section as any)}
+            {FOOTER_PUNKTER.map((punkt) => (
+              <Link
+                key={punkt.lank}
+                href={punkt.lank}
                 className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
               >
-                {item.label}
-              </button>
+                {punkt.text}
+              </Link>
             ))}
           </nav>
 

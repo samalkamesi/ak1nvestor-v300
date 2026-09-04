@@ -15,6 +15,9 @@ import {
 } from "@/lib/notiser";
 import { harFas2Access, arAdmin } from "@/lib/kurs-access";
 import { lasMedlem } from "@/lib/member-local";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
+import type { OrdlistaNyckel } from "@/lib/ordlista";
+import type { SprakParametrar } from "@/lib/sprak";
 
 /**
  * NOTIS-CENTRET — den tysta mentorns ansikte utåt.
@@ -63,11 +66,12 @@ const SIGNAL_CACHE_MS = 60_000;
 
 const SIGNAL_TYPER = ["info", "varning", "mojlighet", "beslut"] as const;
 
-/** Typ-markering — ⚠️ varning etc. (direktivet: typ-ikon per notiskort). */
-const SIGNAL_TYP_MARKE: Record<BusSignal["typ"], { ikon: string; etikett: string; klass: string } | null> = {
-  varning: { ikon: "⚠️", etikett: "Varning", klass: "border-bear/40 bg-bear/10 text-bear" },
-  mojlighet: { ikon: "💡", etikett: "Möjlighet", klass: "border-gold/40 bg-gold/10 text-gold" },
-  beslut: { ikon: "🏛️", etikett: "Beslut", klass: "border-gold/40 bg-gold/10 text-gold" },
+/** Typ-markering — ⚠️ varning etc. (direktivet: typ-ikon per notiskort).
+ *  Etiketten är en ordlistenyckel — språket löses i renderingen (fas 1). */
+const SIGNAL_TYP_MARKE: Record<BusSignal["typ"], { ikon: string; etikett: OrdlistaNyckel; klass: string } | null> = {
+  varning: { ikon: "⚠️", etikett: "notis.varning", klass: "border-bear/40 bg-bear/10 text-bear" },
+  mojlighet: { ikon: "💡", etikett: "notis.mojlighet", klass: "border-gold/40 bg-gold/10 text-gold" },
+  beslut: { ikon: "🏛️", etikett: "notis.beslut", klass: "border-gold/40 bg-gold/10 text-gold" },
   info: null, // info är bussens standard — ingen extra märkning behövs
 };
 
@@ -107,24 +111,27 @@ function signalMottagare(): "alla" | "fas2" | "admin" {
   return "alla";
 }
 
-/** Kort svensk relativ tid — "just nu", "12 min", "3 h", "2 d". */
-function tidSedan(ts: number): string {
+/** Kort relativ tid — "just nu", "12 min", "3 h", "2 d" — på valt språk. */
+type TFunktion = (nyckel: OrdlistaNyckel, parametrar?: SprakParametrar) => string;
+
+function tidSedan(ts: number, t: TFunktion): string {
   const s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
-  if (s < 60) return "just nu";
+  if (s < 60) return t("notis.justNu");
   const m = Math.floor(s / 60);
-  if (m < 60) return `${m} min`;
+  if (m < 60) return `${m} ${t("notis.min")}`;
   const h = Math.floor(m / 60);
-  if (h < 24) return `${h} h`;
-  return `${Math.floor(h / 24)} d`;
+  if (h < 24) return `${h} ${t("notis.timme")}`;
+  return `${Math.floor(h / 24)} ${t("notis.dag")}`;
 }
 
 /** En systemnotis för dagens nyheter — max en, taggad, med klick-fokus. */
-function visaSystemnotis(nya: Notis[]) {
+function visaSystemnotis(nya: Notis[], t: TFunktion) {
   try {
     if (typeof window === "undefined" || !("Notification" in window)) return;
     if (Notification.permission !== "granted" || nya.length === 0) return;
     const forsta = nya[0];
-    const titel = nya.length > 1 ? `AK1A — ${nya.length} nya notiser` : `AK1A — ${forsta.rubrik}`;
+    const titel =
+      nya.length > 1 ? `AK1A — ${t("notis.nyaNotiserTitel", { n: nya.length })}` : `AK1A — ${forsta.rubrik}`;
     const text =
       nya.length > 1 ? `${forsta.rubrik}: ${forsta.text} (+${nya.length - 1} till)` : forsta.text;
     const n = new Notification(titel, {
@@ -158,6 +165,7 @@ function meddelaServiceWorker(nya: Notis[]) {
 }
 
 export function NotisCenter() {
+  const { t } = useSprak();
   const [notiser, setNotiser] = useState<Notis[]>([]);
   const [oppen, setOppen] = useState(false);
   const [signaler, setSignaler] = useState<BusSignal[]>([]);
@@ -187,7 +195,7 @@ export function NotisCenter() {
       if (!aktiv) return;
       setNotiser(lasNotiser());
       if (nya.length > 0) {
-        visaSystemnotis(nya);
+        visaSystemnotis(nya, t);
         meddelaServiceWorker(nya);
       }
     })();
@@ -305,12 +313,12 @@ export function NotisCenter() {
         {oppen && (
           <div
             role="dialog"
-            aria-label="Notiser"
+            aria-label={t("notis.notiser")}
             className="absolute bottom-full left-0 mb-3 w-[min(92vw,360px)] overflow-hidden rounded-2xl border border-gold/30 bg-card shadow-2xl"
           >
             <div className="flex items-center justify-between gap-2 border-b border-gold/20 px-4 py-3">
               <h2 className="font-serif text-sm font-bold tracking-wide text-gold">
-                Notiser {olasta > 0 && <span className="text-foreground/70">· {olasta} nya</span>}
+                {t("notis.notiser")} {olasta > 0 && <span className="text-foreground/70">· {olasta} {t("notis.nya")}</span>}
               </h2>
               <div className="flex items-center gap-1.5">
                 <button
@@ -318,14 +326,14 @@ export function NotisCenter() {
                   disabled={olasta === 0}
                   className="inline-flex items-center gap-1 rounded-md border border-gold/30 bg-gold/5 px-2 py-1 text-[11px] font-semibold text-gold transition-colors hover:bg-gold/15 disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  <CheckCheck className="h-3.5 w-3.5" /> Alla lästa
+                  <CheckCheck className="h-3.5 w-3.5" /> {t("notis.allaLasta")}
                 </button>
                 <button
                   onClick={rensa}
                   disabled={notiser.length === 0}
                   className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-[11px] font-semibold text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  <Trash2 className="h-3.5 w-3.5" /> Rensa
+                  <Trash2 className="h-3.5 w-3.5" /> {t("notis.rensa")}
                 </button>
               </div>
             </div>
@@ -333,7 +341,7 @@ export function NotisCenter() {
             <div className="max-h-[60vh] overflow-y-auto">
               {notiser.length === 0 && synligaSignaler.length === 0 ? (
                 <p className="px-4 py-6 text-center text-xs leading-relaxed text-muted-foreground">
-                  Allt lugnt — vi höjer flaggan när något nytt väntar dig.
+                  {t("notis.alltLugnt")}
                 </p>
               ) : (
                 <>
@@ -351,7 +359,7 @@ export function NotisCenter() {
                         <div className="flex items-baseline justify-between gap-2">
                           <p className="truncate text-sm font-bold">{n.rubrik}</p>
                           <span className="shrink-0 text-[10px] text-muted-foreground">
-                            {tidSedan(n.skapad)}
+                            {tidSedan(n.skapad, t)}
                           </span>
                         </div>
                         <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{n.text}</p>
@@ -362,7 +370,7 @@ export function NotisCenter() {
                               onClick={() => lasEn(n.id)}
                               className="text-[11px] font-bold text-gold hover:underline"
                             >
-                              Gå dit <span aria-hidden>→</span>
+                              {t("notis.gatDit")} <span aria-hidden>→</span>
                             </Link>
                           )}
                           {!n.last && (
@@ -370,13 +378,13 @@ export function NotisCenter() {
                               onClick={() => lasEn(n.id)}
                               className="text-[11px] text-muted-foreground hover:text-foreground"
                             >
-                              Markera läst
+                              {t("notis.markeraLast")}
                             </button>
                           )}
                         </div>
                       </div>
                       {!n.last && (
-                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red-600" aria-label="Oläst" />
+                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red-600" aria-label={t("notis.olast")} />
                       )}
                     </div>
                   ))}
@@ -385,7 +393,7 @@ export function NotisCenter() {
                   {synligaSignaler.length > 0 && (
                     <div className="border-t border-gold/20 bg-gold/[0.02]">
                       <p className="px-4 pb-1 pt-3 text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
-                        Från signalbussen <span aria-hidden>📡</span>
+                        {t("notis.franSignalbussen")} <span aria-hidden>📡</span>
                       </p>
                       {synligaSignaler.map((s) => {
                         const marke = SIGNAL_TYP_MARKE[s.typ];
@@ -401,7 +409,7 @@ export function NotisCenter() {
                               <div className="flex items-baseline justify-between gap-2">
                                 <p className="truncate text-sm font-bold">{s.rubrik}</p>
                                 <span className="shrink-0 text-[10px] text-muted-foreground">
-                                  {tidSedan(s.tid)}
+                                  {tidSedan(s.tid, t)}
                                 </span>
                               </div>
                               <p className="mt-0.5 line-clamp-3 text-xs leading-relaxed text-muted-foreground">
@@ -412,7 +420,7 @@ export function NotisCenter() {
                                   <span
                                     className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-bold ${marke.klass}`}
                                   >
-                                    <span aria-hidden>{marke.ikon}</span> {marke.etikett}
+                                    <span aria-hidden>{marke.ikon}</span> {t(marke.etikett)}
                                   </span>
                                 )}
                                 {s.lank && (
@@ -420,7 +428,7 @@ export function NotisCenter() {
                                     href={s.lank}
                                     className="text-[11px] font-bold text-gold hover:underline"
                                   >
-                                    Gå dit <span aria-hidden>→</span>
+                                    {t("notis.gatDit")} <span aria-hidden>→</span>
                                   </Link>
                                 )}
                                 <span
@@ -446,7 +454,7 @@ export function NotisCenter() {
             Mobil: h-10 w-10 (mindre fotavtryck — täcker ej innehåll); desktop: h-12 w-12. */}
         <button
           onClick={vexla}
-          aria-label={olasta > 0 ? `Notiser — ${olasta} olästa` : "Notiser"}
+          aria-label={olasta > 0 ? `${t("notis.notiser")} — ${olasta} ${t("notis.olasta")}` : t("notis.notiser")}
           aria-expanded={oppen}
           className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-gold shadow-xl transition-transform hover:scale-105 sm:h-12 sm:w-12"
         >

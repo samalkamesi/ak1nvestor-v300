@@ -4,6 +4,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { lasMedlem, loggaUt } from "@/lib/member-local";
+import { SprakVaxlare } from "@/components/ak1a/sprak-vaxlare";
 import {
   Search,
   Moon,
@@ -14,28 +15,49 @@ import {
   Zap,
   Home,
   Crosshair,
-  BarChart3,
   TrendingUp,
   GraduationCap,
-  FlaskConical,
-  Users,
-  LogIn,
   Calculator,
   Briefcase,
   Landmark,
   BookOpen,
   Award,
-  LayoutDashboard,
   Medal,
   Microscope,
   Puzzle,
   ScanSearch,
   Target,
   Trophy,
+  Map,
+  BookMarked,
+  FlaskConical,
+  Waves,
+  Radar,
+  Newspaper,
+  BarChart3,
+  Brain,
+  Heart,
+  CreditCard,
+  Mail,
+  PenLine,
+  KeyRound,
+  ScrollText,
+  ShieldCheck,
+  Wrench,
+  ChevronDown,
+  type LucideIcon,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useAk1aStore, type SectionId } from "@/lib/ak1a-store";
-import { NAV_SECTIONS, FOOTER_NAV } from "@/lib/ak1a/data";
+import {
+  GAST_KONTEXT,
+  MENY_REGISTER,
+  lasMenyKontext,
+  sektionPunkter,
+  type MenyKontext,
+  type MenyPunkt,
+  type MenySektionId,
+} from "@/lib/meny-register";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -49,82 +71,59 @@ function levelFromXp(xp: number): { lvl: number; title: string } {
   return { lvl: 1, title: "NYANALYTIKER" };
 }
 
-// Ikoner per SPA-sektion (mobil-drawerns stora tryckrader).
-const SEKTIONS_IKONER: Record<string, typeof Home> = {
-  hem: Home,
-  prec: Crosshair,
-  analyser: BarChart3,
-  aktier: TrendingUp,
-  kurser: GraduationCap,
-  labb: FlaskConical,
-  "om-oss": Users,
-  portal: LogIn,
+// Registrets emoji-ikoner mappas till lucide (startsidan använder lucide-DNA).
+// Saknad ikon → Sparkles; nya registrepunkter kräver ingen kodändring.
+const IKON_FRAN_LUCIDE: Record<string, LucideIcon> = {
+  "🎓": GraduationCap,
+  "🗺️": Map,
+  "📚": BookOpen,
+  "📖": BookMarked,
+  "🧪": FlaskConical,
+  "🏅": Award,
+  "🧮": Calculator,
+  "🌊": Waves,
+  "📡": Radar,
+  "🔍": ScanSearch,
+  "📰": Newspaper,
+  "📊": BarChart3,
+  "🧩": Puzzle,
+  "💼": Briefcase,
+  "🧠": Brain,
+  "🎯": Target,
+  "🏠": Home,
+  "⚡": Zap,
+  "🏆": Trophy,
+  "🎖️": Medal,
+  "🏛️": Landmark,
+  "💛": Heart,
+  "💳": CreditCard,
+  "✉️": Mail,
+  "✍️": PenLine,
+  "🔑": KeyRound,
+  "📜": ScrollText,
+  "🛡️": ShieldCheck,
+  "🛠️": Wrench,
 };
 
-// Kort beskrivning under varje sektionsetikett (samma röst som Mobilmenyn).
-const SEKTIONS_BESKRIVNINGAR: Record<string, string> = {
-  hem: "Startsidan — allt på ett ställe",
-  prec: "PREC-analysen, sektion för sektion",
-  analyser: "Fullständiga bolagsanalyser",
-  aktier: "Bevakning & aktieuniversum",
-  kurser: "300+ moduler · sök & filter", // kurssektionen vidarebefordras till /kurser
-  labb: "Case + faror + historia",
-  "om-oss": "Meta-system (organ + visioner)",
-  portal: "Logga in · Min portal",
+// Använd direkta uppslag (som gamla SEKTIONS_IKONER-mönstret):
+//   const Ikon = IKON_FRAN_LUCIDE[punkt.ikon] ?? Sparkles;
+
+// Panelsymboler per sektion (startsidans egna paneler).
+const SEKTIONS_IKON: Record<MenySektionId, LucideIcon> = {
+  lara: GraduationCap,
+  analysera: Microscope,
+  praktik: Target,
+  om: Landmark,
 };
 
-// Riktiga routes (undersidor) — länkas med Link, ej SPA-sektioner.
-const FLER_SIDER: { text: string; href: string; beskrivning: string; ikon: typeof Home }[] = [
-  { text: "Kursbiblioteket", href: "/kurser", beskrivning: "Hela biblioteket med quiz", ikon: BookOpen },
-  { text: "AKM1-kalkylatorn", href: "/kalkylator", beskrivning: "20 fundamentalvariabler · V01–V20", ikon: Calculator },
-  { text: "Min portfölj", href: "/min-portfolj", beskrivning: "Innehav + djupanalys (5×5×4)", ikon: Briefcase },
-  { text: "Vågfundament", href: "/vagfundament", beskrivning: "Fundamentalvågorna per aktie", ikon: Landmark },
-  { text: "Dagens pass", href: "/dagens-pass", beskrivning: "5 minuters daglig marknadsträning", ikon: Zap },
-];
-
-// ── Megameny i EXAKT huvudmeny-stil (Lär/Analysera/Träna) ─────────────────
-// EN meny-upplevelse på hela sajten: samma typografi, marin-paneltoppar med
-// guldtext och 180 ms hover-fördröjning som undersidornas huvudmeny.
-// Skillnaden: "Lär" öppnar SPA-sektioner (button) medan "Analysera"/"Träna"
-// länkar riktiga routes (Link) — plus labb-sektionen i Träna.
-type MegaPunkt =
-  | { typ: "sektion"; text: string; sektion: SectionId; ikon: typeof Home; beskrivning: string }
-  | { typ: "lank"; text: string; href: string; ikon: typeof Home; beskrivning: string };
-
-const MEGA_PANELER: { titel: string; ikon: typeof Home; punkter: MegaPunkt[] }[] = [
-  {
-    titel: "Lär",
-    ikon: GraduationCap,
-    punkter: [
-      { typ: "sektion", text: "Hem", sektion: "hem", ikon: Home, beskrivning: "Startsidan — allt på ett ställe" },
-      { typ: "sektion", text: "Kurser", sektion: "kurser", ikon: GraduationCap, beskrivning: "300+ moduler · sök & filter" },
-      { typ: "sektion", text: "Labb", sektion: "labb", ikon: FlaskConical, beskrivning: "Case + faror + historia" },
-      { typ: "sektion", text: "Om oss", sektion: "om-oss", ikon: Users, beskrivning: "Meta-system (organ + visioner)" },
-    ],
-  },
-  {
-    titel: "Analysera",
-    ikon: Microscope,
-    punkter: [
-      { typ: "lank", text: "AKM1-kalkylatorn", href: "/kalkylator", ikon: Calculator, beskrivning: "20 fundamentalvariabler · V01–V20" },
-      { typ: "lank", text: "Vågfundamentet", href: "/vagfundament", ikon: Landmark, beskrivning: "Fundamentalvågor · 20×5-matris per aktie" },
-      { typ: "lank", text: "Portföljbyggaren", href: "/portfoljbyggare", ikon: Puzzle, beskrivning: "Bygg visuellt — se risk & spridning live" },
-      { typ: "lank", text: "Net-net-skannern", href: "/netnet", ikon: ScanSearch, beskrivning: "Grahams cigar-butts — NCAV-screening live" },
-      { typ: "lank", text: "Min portfölj", href: "/min-portfolj", ikon: Briefcase, beskrivning: "Innehav + djupanalys (5×5×4)" },
-      { typ: "lank", text: "Superanalysen", href: "/superanalys", ikon: Award, beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
-    ],
-  },
-  {
-    titel: "Träna",
-    ikon: Target,
-    punkter: [
-      { typ: "lank", text: "Dagens pass", href: "/dagens-pass", ikon: Zap, beskrivning: "5 minuters daglig marknadsträning" },
-      { typ: "lank", text: "Min sida", href: "/min-sida", ikon: LayoutDashboard, beskrivning: "Din dashboard — allt på ett ställe" },
-      { typ: "lank", text: "Topplistan", href: "/topplistan", ikon: Trophy, beskrivning: "Eleverna rankade på XP" },
-      { typ: "lank", text: "Badges", href: "/badges", ikon: Medal, beskrivning: "Troféer & meriter att förtjäna" },
-      { typ: "sektion", text: "Labb", sektion: "labb", ikon: FlaskConical, beskrivning: "Case + faror + historia (SPA)" },
-    ],
-  },
+// Startsidans äkta SPA-sektioner (inga rutter — finns ENBART här, aldrig i
+// registret → omöjliga att duplicera). Kurser/Labb/Analyser/Om-oss omdirigeras
+// sedan M3 direkt till rutterna och nås via registrets länkar.
+// Portal ligger som status-CTA längst ner i drawern (tumzonen) — inte här.
+const STARTSIDAN_SEKTIONER: { id: SectionId; text: string; ikon: LucideIcon; beskrivning: string }[] = [
+  { id: "hem", text: "Hem", ikon: Home, beskrivning: "Startsidan — allt på ett ställe" },
+  { id: "prec", text: "PREC-analysen", ikon: Crosshair, beskrivning: "PREC-analysen, sektion för sektion" },
+  { id: "aktier", text: "Aktier & bevakning", ikon: TrendingUp, beskrivning: "Bevakning & aktieuniversum" },
 ];
 
 export function Header() {
@@ -134,10 +133,14 @@ export function Header() {
   const [oppad, setOppad] = React.useState<string | null>(null); // öppen megamenu-panel
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [intrad, setIntrad] = React.useState(false); // för tonad drawer-entré
+  const [oppenSektion, setOppenSektion] = React.useState<MenySektionId | null>(null);
+  // Behörighetskontext ur registrets modell (SSR: gast-vyn, R16).
+  const [kontext, setKontext] = React.useState<MenyKontext>(GAST_KONTEXT);
   // Inloggningsstatus i drawerns CTA — medlem ser Portal + Logga ut
   // (kunddirektiv 2026-09-03: aldrig "Logga in" till inloggad).
   const [medlemNamn, setMedlemNamn] = React.useState<string | null>(null);
   React.useEffect(() => {
+    setKontext(lasMenyKontext());
     const m = lasMedlem();
     if (m) {
       const f = (m.namn || m.email || "").split("@")[0].split(" ")[0];
@@ -146,8 +149,14 @@ export function Header() {
   }, []);
   React.useEffect(() => setMounted(true), []);
 
+  // Registret anpassat för denna klient (meny-ytan, behörighetsfiltrerat).
+  const sektioner = MENY_REGISTER.map((s) => ({
+    ...s,
+    punkter: sektionPunkter(s, kontext, "meny"),
+  })).filter((s) => s.punkter.length > 0);
+
   // Megameny — hover med 180 ms fördröjning så panelerna inte flimrar
-  // (exakt samma mönster som huvudmenyn på undersidorna).
+  // (exakt samma mönster som huvudmenyn på undersidorna — EN upplevelse).
   const megamenyRef = React.useRef<HTMLElement>(null);
   const fordrojning = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -181,6 +190,7 @@ export function Header() {
   React.useEffect(() => {
     if (!mobileOpen) {
       setIntrad(false);
+      setOppenSektion(null);
       return;
     }
     const t = setTimeout(() => setIntrad(true), 10);
@@ -217,20 +227,19 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:px-6">
         <VarumarkesLogo onClick={() => setSection("hem")} storlek="md" prioritet />
 
-        {/* Desktop nav — megameny i EXAKT huvudmeny-stil: EN meny-upplevelse på hela sajten */}
+        {/* Desktop nav — registrets fyra sektioner i EXAKT huvudmeny-stil:
+            EN meny-upplevelse på hela sajten (samma register, samma ordning).
+            Startsidans SPA-sektioner når via fullmenyn (hamburgaren syns alltid). */}
         <nav
           ref={megamenyRef}
           aria-label="Huvudnavigation"
           className="relative ml-4 hidden items-center gap-0.5 lg:flex"
           onMouseLeave={hoverUt}
         >
-          {MEGA_PANELER.map((p) => {
-            // Guldmarkera knappen om en av panelens SPA-sektioner är aktiv.
-            const aktivIPanel = p.punkter.some(
-              (pk) => pk.typ === "sektion" && pk.sektion === section
-            );
+          {sektioner.map((p) => {
+            const PanelIkon = SEKTIONS_IKON[p.id];
             return (
-              <div key={p.titel} className="relative">
+              <div key={p.id} className="relative">
                 <button
                   onMouseEnter={() => hoverIn(p.titel)}
                   onClick={() => setOppad(oppad === p.titel ? null : p.titel)}
@@ -240,9 +249,7 @@ export function Header() {
                     "flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors",
                     oppad === p.titel
                       ? "bg-gold/15 text-gold"
-                      : aktivIPanel
-                        ? "text-gold"
-                        : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {p.titel}
@@ -258,60 +265,24 @@ export function Header() {
 
                 {oppad === p.titel && (
                   <div
-                    className="absolute left-0 top-full z-50 mt-1 w-72 overflow-hidden rounded-xl border border-gold/30 bg-card shadow-xl"
+                    className="absolute left-0 top-full z-50 mt-1 max-h-[70vh] w-72 overflow-y-auto rounded-xl border border-gold/30 bg-card shadow-xl"
                     onMouseEnter={() =>
                       fordrojning.current && clearTimeout(fordrojning.current)
                     }
                   >
                     {/* Paneltopp — marin med guldtext, identisk med huvudmenyn */}
                     <div className="marin-panel flex items-center gap-1.5 border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">
-                      <p.ikon className="h-3.5 w-3.5" />
+                      <PanelIkon className="h-3.5 w-3.5" />
                       {p.titel.toUpperCase()}
                     </div>
-                    {p.punkter.map((punkt) =>
-                      punkt.typ === "sektion" ? (
-                        <button
-                          key={`sektion-${punkt.sektion}`}
-                          onClick={() => {
-                            setSection(punkt.sektion);
-                            setOppad(null); // stäng vid val
-                          }}
-                          className="flex w-full items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 text-left last:border-b-0 hover:bg-gold/10"
-                        >
-                          <punkt.ikon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
-                          <span className="min-w-0">
-                            <span
-                              className={cn(
-                                "block text-xs font-bold",
-                                section === punkt.sektion ? "text-gold" : "text-foreground"
-                              )}
-                            >
-                              {punkt.text}
-                            </span>
-                            <span className="block text-[10px] leading-tight text-muted-foreground">
-                              {punkt.beskrivning}
-                            </span>
-                          </span>
-                        </button>
-                      ) : (
-                        <Link
-                          key={`lank-${punkt.href}`}
-                          href={punkt.href}
-                          onClick={() => setOppad(null)} // stäng vid val
-                          className="flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 last:border-b-0 hover:bg-gold/10"
-                        >
-                          <punkt.ikon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
-                          <span className="min-w-0">
-                            <span className="block text-xs font-bold text-foreground">
-                              {punkt.text}
-                            </span>
-                            <span className="block text-[10px] leading-tight text-muted-foreground">
-                              {punkt.beskrivning}
-                            </span>
-                          </span>
-                        </Link>
-                      )
-                    )}
+                    {p.punkter.map((punkt, i) => (
+                      <MegaRad
+                        key={punkt.lank}
+                        punkt={punkt}
+                        foregaende={p.punkter[i - 1]}
+                        onStang={() => setOppad(null)}
+                      />
+                    ))}
                   </div>
                 )}
               </div>
@@ -355,21 +326,29 @@ export function Header() {
             {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </Button>
 
+          {/* Språkväljare SV/EN/AR — samma standard som SEO-sidornas header */}
+          <SprakVaxlare />
+
+          {/* Fullmeny — syns i ALLA storlekar på startsidan: bär SPA-sektionerna
+              (PREC/Aktier) + registrets accordion. Desktop-megamyn är registret. */}
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8 lg:hidden"
+            className="h-8 w-8"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Meny"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </Button>
         </div>
       </div>
 
-      {/* Mobil drawer — fullskärm i samma design som Mobilmenyn (paper, guld, serif).
-          PORTAL till body: headerns backdrop-blur skapar containing block som
-          annars klipper fixed inset-0 till headerns 56px. */}
+      {/* Fullmeny-drawer — fullskärm i samma design som Mobilmenyn (paper, guld,
+          serif). PORTAL till body: headerns backdrop-blur skapar containing
+          block som annars klipper fixed inset-0 till headerns 56px.
+          Innehåll: startsidans SPA-sektioner först (de äger inga rutter),
+          sedan registrets sektioner som vertikal accordion (forskning §5). */}
       {mobileOpen &&
         createPortal(
         <div
@@ -424,97 +403,112 @@ export function Header() {
               />
             </div>
 
-            {/* SPA-sektionerna — stora tryckrader med ikon + beskrivning, aktiv = guld */}
-            <nav className="mt-7 space-y-8" aria-label="Mobilnavigation">
-              <section>
-                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
-                  Sektioner
+            <nav className="mt-6 space-y-3" aria-label="Mobilnavigation">
+              {/* STARTSIDAN — äkta SPA-sektioner (eged vy, inga rutter) */}
+              <section className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg">
+                <h2 className="marin-panel border-b border-gold/30 px-4 py-3 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
+                  🏠 STARTSIDAN
                 </h2>
-                <div className="mt-2">
-                  {NAV_SECTIONS.map((s) => {
-                    const Ikon = SEKTIONS_IKONER[s.id] ?? Sparkles;
-                    const beskrivning = SEKTIONS_BESKRIVNINGAR[s.id];
+                <div>
+                  {STARTSIDAN_SEKTIONER.map((s) => {
                     const aktiv = section === s.id;
                     return (
                       <button
                         key={s.id}
                         onClick={() => valjSektion(s.id)}
-                        className={`flex w-full items-start gap-3 border-b border-gold/10 py-3.5 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10 ${
-                          aktiv ? "bg-gold/5" : ""
-                        }`}
+                        aria-current={aktiv ? "true" : undefined}
+                        className={cn(
+                          "flex w-full items-start gap-3 border-b border-gold/10 px-4 py-3.5 text-left last:border-b-0 transition-colors hover:bg-gold/5 active:bg-gold/10",
+                          aktiv && "bg-gold/10"
+                        )}
                       >
-                        <Ikon
-                          className={`mt-0.5 h-5 w-5 shrink-0 ${
+                        <s.ikon
+                          className={cn(
+                            "mt-0.5 h-5 w-5 shrink-0",
                             aktiv ? "text-gold" : "text-muted-foreground"
-                          }`}
-                        />
-                        <span className="min-w-0">
-                          <span
-                            className={`block text-base font-bold ${
-                              aktiv ? "text-gold" : "text-foreground"
-                            }`}
-                          >
-                            {s.label}
-                          </span>
-                          {beskrivning && (
-                            <span className="block text-sm leading-snug text-muted-foreground">
-                              {beskrivning}
-                            </span>
                           )}
+                          aria-hidden="true"
+                        />
+                        <span className="min-w-0 flex-1">
+                          <span
+                            className={cn(
+                              "block text-base font-bold",
+                              aktiv ? "text-gold" : "text-foreground"
+                            )}
+                          >
+                            {s.text}
+                          </span>
+                          <span className="block text-sm leading-snug text-muted-foreground">
+                            {s.beskrivning}
+                          </span>
                         </span>
+                        {aktiv && (
+                          <span className="mt-1.5 shrink-0 text-gold" aria-hidden="true">
+                            ●
+                          </span>
+                        )}
                       </button>
                     );
                   })}
                 </div>
               </section>
 
-              {/* MER — samma länkar som desktop-droppen, som mindre rader */}
-              <section>
-                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
-                  Mer
-                </h2>
-                <div className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
-                  {FOOTER_NAV.slice(0, 6).map((item) => (
-                    <button
-                      key={item.label}
-                      onClick={() => valjSektion(item.section)}
-                      className="rounded-md px-3 py-2.5 text-left text-sm text-muted-foreground transition-colors hover:bg-gold/5 hover:text-foreground"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              </section>
-
-              {/* FLER SIDER — riktiga routes, länkas med Link */}
-              <section>
-                <h2 className="font-serif text-sm font-bold uppercase tracking-wide text-gold">
-                  Fler sider
-                </h2>
-                <div className="mt-2">
-                  {FLER_SIDER.map((sida) => (
-                    <Link
-                      key={sida.href}
-                      href={sida.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-start gap-3 border-b border-gold/10 py-3.5 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
-                    >
-                      <sida.ikon className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
-                      <span className="min-w-0">
-                        <span className="block text-base font-bold text-foreground">{sida.text}</span>
-                        <span className="block text-sm leading-snug text-muted-foreground">
-                          {sida.beskrivning}
+              {/* Registrets sektioner — vertikal accordion (endast en öppen). */}
+              {sektioner.map((s) => {
+                const arOppen = oppenSektion === s.id;
+                return (
+                  <section
+                    key={s.id}
+                    className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg"
+                  >
+                    <h2>
+                      <button
+                        type="button"
+                        onClick={() => setOppenSektion(arOppen ? null : s.id)}
+                        aria-expanded={arOppen}
+                        aria-controls={`spa-meny-${s.id}`}
+                        className="flex w-full items-center justify-between px-4 py-3.5 text-left"
+                      >
+                        <span className="font-serif text-sm font-bold tracking-wide text-[#E8C766]">
+                          {s.ikon} {s.titel.toUpperCase()}
                         </span>
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </section>
+                        <ChevronDown
+                          width={14}
+                          height={14}
+                          className={cn(
+                            "text-gold transition-transform duration-300",
+                            arOppen && "rotate-180"
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </h2>
+                    <div
+                      id={`spa-meny-${s.id}`}
+                      className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                        arOppen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        {s.punkter.map((punkt, i) => (
+                          <DrawerRad
+                            key={punkt.lank}
+                            punkt={punkt}
+                            foregaende={s.punkter[i - 1]}
+                            onStang={() => setMobileOpen(false)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                );
+              })}
             </nav>
 
-            {/* Guld-CTA längst ner — statusmedveten */}
-            <div className="mt-auto flex gap-3 pt-8">
-              <div className="flex flex-1 flex-col gap-2">
+            {/* Guld-CTA längst ner — statusmedveten, i tumzonen (forskning §5).
+                Portal är startsidans inloggningsyta och duplierar ingen registerlänk. */}
+            <div className="mt-auto pt-8">
+              <div className="flex flex-col gap-2">
                 <button
                   onClick={() => valjSektion("portal")}
                   className="w-full rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
@@ -533,18 +527,116 @@ export function Header() {
                   </button>
                 )}
               </div>
-              <Link
-                href="/fas2-ansok"
-                onClick={() => setMobileOpen(false)}
-                className="flex-1 rounded-xl border border-gold px-4 py-3.5 text-center text-base font-bold text-gold transition-colors hover:bg-gold/10"
-              >
-                Fas 2-ansökan
-              </Link>
             </div>
           </div>
         </div>
         , document.body)}
 
     </header>
+  );
+}
+
+/** Megameny-rad (desktop) — lucide-ikoner, avdelare vid ny undergrupp. */
+function MegaRad({
+  punkt,
+  foregaende,
+  onStang,
+}: {
+  punkt: MenyPunkt;
+  foregaende?: MenyPunkt;
+  onStang: () => void;
+}) {
+  // Direkt map-uppslag (etablerat mönster i kodbasen — stabila referenser).
+  const Ikon = IKON_FRAN_LUCIDE[punkt.ikon] ?? Sparkles;
+  const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
+  return (
+    <>
+      {nyAvdelare && (
+        <div className="border-b border-gold/10 bg-gold/5 px-3 pb-1 pt-2.5 text-[10px] font-bold uppercase tracking-widest text-gold">
+          {punkt.avdelare}
+        </div>
+      )}
+      <Link
+        href={punkt.lank}
+        onClick={onStang}
+        className={cn(
+          "flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 text-left last:border-b-0 hover:bg-gold/10",
+          punkt.guldknapp && "bg-gold/10 hover:bg-gold/20"
+        )}
+      >
+        <Ikon
+          className={cn(
+            "mt-0.5 h-4 w-4 shrink-0",
+            punkt.guldknapp ? "text-gold" : "text-muted-foreground"
+          )}
+        />
+        <span className="min-w-0">
+          <span
+            className={cn(
+              "block text-xs font-bold",
+              punkt.guldknapp ? "text-gold" : "text-foreground"
+            )}
+          >
+            {punkt.text}
+          </span>
+          <span className="block text-[10px] leading-tight text-muted-foreground">
+            {punkt.beskrivning}
+          </span>
+        </span>
+      </Link>
+    </>
+  );
+}
+
+/** Drawer-rad (fullmeny) — stora tryckytor, 16 px titlar (forskning §5). */
+function DrawerRad({
+  punkt,
+  foregaende,
+  onStang,
+}: {
+  punkt: MenyPunkt;
+  foregaende?: MenyPunkt;
+  onStang: () => void;
+}) {
+  // Direkt map-uppslag (etablerat mönster i kodbasen — stabila referenser).
+  const Ikon = IKON_FRAN_LUCIDE[punkt.ikon] ?? Sparkles;
+  const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
+  return (
+    <>
+      {nyAvdelare && (
+        <div className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold">
+          {punkt.avdelare}
+        </div>
+      )}
+      <Link
+        href={punkt.lank}
+        onClick={onStang}
+        className={cn(
+          "flex items-start gap-3 border-b border-gold/10 px-4 py-3.5 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10",
+          punkt.guldknapp && "bg-gold/10 hover:bg-gold/20"
+        )}
+      >
+        <Ikon
+          className={cn(
+            "mt-0.5 h-5 w-5 shrink-0",
+            punkt.guldknapp ? "text-gold" : "text-muted-foreground"
+          )}
+          aria-hidden="true"
+        />
+        <span className="min-w-0 flex-1">
+          <span
+            className={cn(
+              "block text-base font-bold",
+              punkt.guldknapp ? "text-gold" : "text-foreground"
+            )}
+          >
+            {punkt.text}
+          </span>
+          <span className="block text-sm leading-snug text-muted-foreground">
+            {punkt.beskrivning}
+          </span>
+        </span>
+      </Link>
+    </>
   );
 }

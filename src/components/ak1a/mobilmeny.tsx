@@ -5,85 +5,42 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { lasStreak, lasXP, niva } from "@/lib/member-local";
+import {
+  GAST_KONTEXT,
+  MENY_REGISTER,
+  lasMenyKontext,
+  sektionPunkter,
+  type MenyKontext,
+  type MenyPunkt,
+  type MenySektionId,
+} from "@/lib/meny-register";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { InloggadKnapp } from "./inloggad-knapp";
+import { SprakVaxlare } from "./sprak-vaxlare";
 import { cn } from "@/lib/utils";
 
 /**
- * MOBILMENY — fullskärms-drawer med samma AK1A-DNA: paper, guld, serif.
+ * MOBILMENY — fullskärms-drawer med AK1A-DNA: paper, guld, serif.
  * Hamburgerknappen syns enbart under md; drawern funkar oavsett brytpunkt.
  * Sökfältet dispatchar "ak1a:oppna-sok" (kommandopaletten lyssnar globalt).
  *
- * 2026-09-01 — omdesignad efter kundägarens önskan: menyn ska kännas som en
- * premium-panel från samma designer som övriga sidor. Därför:
- *   • Samma KORTSTIL som huvudmenyns paneler (rounded-xl + marin paneltopp
- *     med guld-serif, cream-kort under) — inte nakna listrader.
- *   • Länktitlar text-base (16px) + beskrivningar text-sm — alda mindre.
- *   • Generös tryckyta (py-3.5) för tummar.
- *   • Varumärkes-logotypen + stäng-knapp i topp; aktiv sida markeras i guld.
+ * 2026-09-03 — bygger UR src/lib/meny-register.ts och följer forskningen
+ * (data/forskning/MENYFORSKNING-2026-09-03.md §5):
+ *   • Vertikal ACCORDION — endast en sektion öppen åt gången, sektionen som
+ *     innehåller aktiva sidan öppnas automatiskt (progressive disclosure).
+ *   • Tryckytor ≥48 px (py-3.5 + 16 px titlar) för tummar; sök överst;
+ *     status-CTA (inloggning) längst ner i tumzonen.
+ *   • Behörighetsfiltrering via registrets publik-nivå: medlem-ytor syns
+ *     bara för inloggade, fas 2-ytor bara med åtkomst (R14).
+ *   • Horisontell mobil (915×412): drawern scrollar lodrätt — inga fasta
+ *     höjder som antar porträtt (R13).
  */
-
-type MenyPunkt = { text: string; lank: string; ikon: string; beskrivning?: string };
-/** Icke-klickbar sektionsrubrik inuti en panel — renderas som guld-versaler. */
-type MenyAvdelare = { avdelare: string };
-type MenyRad = MenyPunkt | MenyAvdelare;
-type MenyPanel = { titel: string; ikon: string; punkter: MenyRad[] };
-
-// Samma paneler som HUVUDMENYN — spegla innehållet exakt.
-const PANELER: MenyPanel[] = [
-  {
-    titel: "Lär",
-    ikon: "🎓",
-    punkter: [
-      { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
-      { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
-      { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "82 böcker kapitel för kapitel" }, // 2026-09-01: 82 BOKMASTER-kurser i deep-courses.json; kurs-sök läser ännu ej ?kategori=
-      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — böcker mappade mot AKM1/AK1TS" },
-      { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
-    ],
-  },
-  {
-    titel: "Analysera",
-    ikon: "🔬",
-    // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING — speglar huvudmenyn exakt.
-    punkter: [
-      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangordnade efter påverkan" },
-      { avdelare: "Grundtänkande" },
-      { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
-      { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
-      { avdelare: "Skannar" },
-      { text: "Konfluensradarn", lank: "/konfluens", ikon: "📡", beskrivning: "Där värde möter vågor — fem källor måste tala samman" },
-      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live" },
-      { text: "Portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live" },
-      { avdelare: "Fördjupning" },
-      { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
-      { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
-      { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
-      { text: "AI-Diagnos", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
-    ],
-  },
-  {
-    titel: "Träna",
-    ikon: "🎯",
-    punkter: [
-      { text: "Min Sida", lank: "/min-sida", ikon: "🏠", beskrivning: "Din dashboard — allt på ett ställe" },
-      { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
-      { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
-      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" }, // Uppdaterad 2026-09-01: 29 badges i src/lib/badges.ts
-      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "140 flashcards med SM-2" }, // Uppdaterad 2026-09-01: 140 kort i data/spaced-repetition.json — samma länk som huvudmenyn
-      { text: "Short-Seller", lank: "/kurser", ikon: "🔴", beskrivning: "Sokratisk grillning (röd widget)" },
-      { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
-      { text: "Fas 3 — Certifiering", lank: "/fas3", ikon: "🎓", beskrivning: "Certifierad AK1A-analytiker — praktikportfölj + etik" },
-      { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },
-      { text: "Medlemskap", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },
-    ],
-  },
-];
 
 export function Mobilmeny() {
   const [oppad, setOppad] = useState(false);
   const [intrad, setIntrad] = useState(false); // för tonad entré-animation
+  const [kontext, setKontext] = useState<MenyKontext>(GAST_KONTEXT); // SSR: gast-vyn (R16)
+  const [oppenSektion, setOppenSektion] = useState<MenySektionId | null>(null);
   const [xp, setXp] = useState(0);
   const [nivaNu, setNivaNu] = useState(1);
   const [streakAntal, setStreakAntal] = useState(0);
@@ -97,12 +54,22 @@ export function Mobilmeny() {
     [pathname]
   );
 
-  // Läs medlemsdata när drawern öppnas (alltid synliga, även vid 0 XP).
+  // Registret anpassat för denna klient (meny-ytan, behörighetsfiltrerat).
+  const sektioner = MENY_REGISTER.map((s) => ({
+    ...s,
+    punkter: sektionPunkter(s, kontext, "meny"),
+  })).filter((s) => s.punkter.length > 0);
+
+  // Läs medlemsdata + behörighet när drawern öppnas; öppna sektionen som
+  // innehåller aktiva sidan (annars den första) — accordion-standard.
   useEffect(() => {
     if (!oppad) return;
+    setKontext(lasMenyKontext());
     setXp(lasXP());
     setNivaNu(niva());
     setStreakAntal(lasStreak().antal);
+    const aktiv = sektioner.find((s) => s.punkter.some((p) => arAktiv(p.lank)));
+    setOppenSektion((nuvarande) => nuvarande ?? aktiv?.id ?? sektioner[0]?.id ?? null);
   }, [oppad]);
 
   // Tonad entré: vänd synlighet strax efter montering så transitionen spelas.
@@ -133,10 +100,13 @@ export function Mobilmeny() {
 
   return (
     <>
-      {/* Hamburgerknapp — tre linjer, syns enbart under md */}
+      {/* Hamburgerknapp — tre linjer, syns enbart under lg */}
       <button
         type="button"
-        onClick={() => setOppad(true)}
+        onClick={() => {
+          setOppad(true);
+          setOppenSektion(null);
+        }}
         aria-label="Öppna menyn"
         aria-expanded={oppad}
         className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold lg:hidden"
@@ -230,89 +200,147 @@ export function Mobilmeny() {
               />
             </div>
 
-            {/* Tre sektioner — KORTSTIL som huvudmenyns paneler:
-                marin paneltopp med guld-serif + cream-kort med tryckrader */}
-            <nav className="mt-6 space-y-5" aria-label="Mobilnavigation">
-              {PANELER.map((p) => (
-                <section
-                  key={p.titel}
-                  className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg"
-                >
-                  {/* Paneltopp — marin med guldtext, identisk med huvudmenyn */}
-                  <h2 className="marin-panel border-b border-gold/30 px-4 py-3 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
-                    {p.ikon} {p.titel.toUpperCase()}
-                  </h2>
+            {/* ACCORDION — en sektion öppen åt gången (forskning §5).
+                Panelhuvudena är marina kort med guld-serif; tryckrader under. */}
+            <nav className="mt-6 space-y-3" aria-label="Mobilnavigation">
+              {sektioner.map((s) => {
+                const arOppen = oppenSektion === s.id;
+                const innehallerAktiv = s.punkter.some((p) => arAktiv(p.lank));
+                return (
+                  <section
+                    key={s.id}
+                    className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg"
+                  >
+                    <h2>
+                      <button
+                        type="button"
+                        onClick={() => setOppenSektion(arOppen ? null : s.id)}
+                        aria-expanded={arOppen}
+                        aria-controls={`mobil-meny-${s.id}`}
+                        className="flex w-full items-center justify-between px-4 py-3.5 text-left"
+                      >
+                        <span className="flex items-center gap-2 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
+                          <span aria-hidden="true">{s.ikon}</span>
+                          {s.titel.toUpperCase()}
+                        </span>
+                        <span className="flex items-center gap-2">
+                          {innehallerAktiv && (
+                            <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-label="Aktiv sida finns här" />
+                          )}
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            className={`text-gold transition-transform duration-300 ${arOppen ? "rotate-180" : ""}`}
+                            aria-hidden="true"
+                          >
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </button>
+                    </h2>
 
-                  <div>
-                    {p.punkter.map((punkt) =>
-                      "avdelare" in punkt ? (
-                        <div
-                          key={`avdelare-${punkt.avdelare}`}
-                          className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold"
-                        >
-                          {punkt.avdelare}
-                        </div>
-                      ) : (
-                        <Link
-                          key={punkt.lank + punkt.text}
-                          href={punkt.lank}
-                          onClick={stang}
-                          aria-current={arAktiv(punkt.lank) ? "page" : undefined}
-                          className={cn(
-                            "flex items-start gap-3 border-b border-gold/10 px-4 py-3.5 text-left last:border-b-0 transition-colors hover:bg-gold/5 active:bg-gold/10",
-                            arAktiv(punkt.lank) && "bg-gold/10"
-                          )}
-                        >
-                          <span className="mt-0.5 w-6 shrink-0 text-center text-xl" aria-hidden="true">
-                            {punkt.ikon}
-                          </span>
-                          <span className="min-w-0 flex-1">
-                            <span
-                              className={cn(
-                                "block text-base font-bold",
-                                arAktiv(punkt.lank) ? "text-gold" : "text-foreground"
-                              )}
-                            >
-                              {punkt.text}
-                            </span>
-                            {punkt.beskrivning && (
-                              <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">
-                                {punkt.beskrivning}
-                              </span>
-                            )}
-                          </span>
-                          {arAktiv(punkt.lank) && (
-                            <span className="mt-1.5 shrink-0 text-gold" aria-hidden="true">
-                              ●
-                            </span>
-                          )}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                </section>
-              ))}
+                    {/* Mjukt utfällbart innehåll (grid-template-rows-tricket) */}
+                    <div
+                      id={`mobil-meny-${s.id}`}
+                      className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                        arOppen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        {s.punkter.map((punkt, i) => (
+                          <AccordionRad
+                            key={punkt.lank}
+                            punkt={punkt}
+                            foregaende={s.punkter[i - 1]}
+                            aktiv={arAktiv(punkt.lank)}
+                            onStang={stang}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                );
+              })}
             </nav>
 
-            {/* Längst ner: inloggningsstatus + Fas 2-ansökan.
-                Inloggad medlem ser "Min Sida"-hälsning + Logga ut (aldrig
-                "Logga in" till någon som redan är inloggad — kunddirektiv
-                2026-09-03). */}
-            <div className="mt-auto flex gap-3 pt-8">
-              <div className="flex-1">
-                <InloggadKnapp stor />
+            {/* Längst ner: inloggningsstatus i TUMZONEN (forskning §5).
+                Fas 2-ansökan ligger som guld-rad i OM AK1A-sektionen —
+                aldrig samma destination två gånger i samma vy.
+                Inloggad medlem ser hälsning + Logga ut (aldrig "Logga in"
+                till någon som redan är inloggad — kunddirektiv 2026-09-03). */}
+            <div className="mt-auto pt-8">
+              {/* Språk SV/EN/AR — samma standard som SEO-headern, över CTA:n */}
+              <div className="mb-3 flex justify-center">
+                <SprakVaxlare />
               </div>
-              <Link
-                href="/fas2-ansok"
-                onClick={stang}
-                className="flex-1 rounded-xl border border-gold px-4 py-3.5 text-center text-base font-bold text-gold hover:bg-gold/10"
-              >
-                Fas 2-ansökan
-              </Link>
+              <InloggadKnapp stor />
             </div>
           </div>
         </div>
         , document.body)}
+    </>
+  );
+}
+
+/** Accordion-rad — avdelare renderas när punkten inleder en ny undergrupp. */
+function AccordionRad({
+  punkt,
+  foregaende,
+  aktiv,
+  onStang,
+}: {
+  punkt: MenyPunkt;
+  foregaende?: MenyPunkt;
+  aktiv: boolean;
+  onStang: () => void;
+}) {
+  const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
+  return (
+    <>
+      {nyAvdelare && (
+        <div className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold">
+          {punkt.avdelare}
+        </div>
+      )}
+      <Link
+        href={punkt.lank}
+        onClick={onStang}
+        aria-current={aktiv ? "page" : undefined}
+        className={cn(
+          "flex items-start gap-3 border-b border-gold/10 px-4 py-3.5 text-left last:border-b-0 transition-colors hover:bg-gold/5 active:bg-gold/10",
+          aktiv && "bg-gold/10",
+          punkt.guldknapp && "bg-gold/10 hover:bg-gold/20"
+        )}
+      >
+        <span className="mt-0.5 w-6 shrink-0 text-center text-xl" aria-hidden="true">
+          {punkt.ikon}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span
+            className={cn(
+              "block text-base font-bold",
+              aktiv || punkt.guldknapp ? "text-gold" : "text-foreground"
+            )}
+          >
+            {punkt.text}
+          </span>
+          {punkt.beskrivning && (
+            <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">
+              {punkt.beskrivning}
+            </span>
+          )}
+        </span>
+        {aktiv && (
+          <span className="mt-1.5 shrink-0 text-gold" aria-hidden="true">
+            ●
+          </span>
+        )}
+      </Link>
     </>
   );
 }

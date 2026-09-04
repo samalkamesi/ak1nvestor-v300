@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { TemaVaxlare } from "@/components/ak1a/tema-vaxlare";
 import { Huvudmeny } from "@/components/ak1a/huvudmeny";
 import { Mobilmeny } from "@/components/ak1a/mobilmeny";
@@ -6,6 +5,8 @@ import { NastaSteg } from "@/components/ak1a/nasta-steg";
 import { Sidfooter } from "@/components/ak1a/sidfooter";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { InloggadKnapp } from "@/components/ak1a/inloggad-knapp";
+import { SprakVaxlare } from "@/components/ak1a/sprak-vaxlare";
+import { Brodkrumma } from "@/components/ak1a/brodkrumma";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
@@ -35,27 +36,14 @@ export function SeoPageShell({
           <div className="ml-auto flex items-center gap-2 text-sm">
             {/* Inloggningsstatus — hälsning + utloggning när medlem, guld-CTA annars */}
             <InloggadKnapp />
+            <SprakVaxlare />
             <TemaVaxlare />
           </div>
         </div>
       </header>
       <div className={`mx-auto ${wide ? "max-w-6xl" : "max-w-3xl"} px-4 sm:px-6 py-12`}>
-        {breadcrumb && breadcrumb.length > 0 && (
-          <nav className="flex flex-wrap items-center gap-3 pb-8 text-sm">
-            {breadcrumb.map((b, i) => (
-              <span key={b.name} className="flex items-center gap-3">
-                {b.href ? (
-                  <Link href={b.href} className="text-muted-foreground hover:text-foreground">
-                    {b.name}
-                  </Link>
-                ) : (
-                  <span className="text-foreground">{b.name}</span>
-                )}
-                {i < (breadcrumb?.length ?? 0) - 1 && <span className="text-muted-foreground">/</span>}
-              </span>
-            ))}
-          </nav>
-        )}
+        {/* Brödsmulor — klientkomponent: orden översätts via ordlistan (fas 1) */}
+        <Brodkrumma breadcrumb={breadcrumb} />
         <main>{children}</main>
         {/* Personlig mönsterigenkänning — nästa steg för just denna elev */}
         <div className="pt-10">

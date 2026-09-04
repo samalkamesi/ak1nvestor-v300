@@ -4,77 +4,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { besok } from "@/lib/navigationsminne";
+import {
+  GAST_KONTEXT,
+  MENY_REGISTER,
+  lasMenyKontext,
+  sektionPunkter,
+  type MenyKontext,
+  type MenyPunkt,
+} from "@/lib/meny-register";
+import { cn } from "@/lib/utils";
 
 /**
  * HUVUDMENY — megamenu i AK1A-DNA: paper, guld, serif.
  * Desktop: hover-panels med fördröjning + ⌘K-sökning + personligt
  * "Fortsätt"-chip (mönsterigenkänning). Mobil: klicka för panel.
+ *
+ * 2026-09-03 — läser UR src/lib/meny-register.ts (EN källa för alla menyer,
+ * MENYFORSKNING-2026-09-03: Hick + NN/g "show each choice only once").
+ * Panelerna filtreras adaptivt via registrets publik-nivå: gästen ser
+ * basutbudet, medlemmen sina ytor, admin allt — samma register överallt.
  */
-
-type MenyPunkt = { text: string; lank: string; ikon: string; beskrivning?: string };
-/** Icke-klickbar sektionsrubrik inuti en panel — renderas som guld-versaler. */
-type MenyAvdelare = { avdelare: string };
-type MenyRad = MenyPunkt | MenyAvdelare;
-type MenyPanel = { titel: string; ikon: string; punkter: MenyRad[] };
-
-const PANELER: MenyPanel[] = [
-  {
-    titel: "Lär",
-    ikon: "🎓",
-    punkter: [
-      { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
-      { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
-      { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "82 böcker kapitel för kapitel" }, // 2026-09-01: 82 BOKMASTER-kurser i deep-courses.json; kurs-sök läser ännu ej ?kategori=
-      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — böcker mappade mot AKM1/AK1TS" }, // Uppdaterad 2026-09-01: kanon-datatum forskas fram, inget antal hävdas
-      { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
-    ],
-  },
-  {
-    titel: "Analysera",
-    ikon: "🔬",
-    // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING (avdelare = icke-klickbara rubriker).
-    // Labbar lämnar panelen (10 punkter blev för många) — finns kvar i sökindexet.
-    punkter: [
-      { text: "Nyhetscentralen", lank: "/nyheter", ikon: "📰", beskrivning: "Ditt nyhetsrum — nyheter rangordnade efter påverkan" },
-      { avdelare: "Grundtänkande" },
-      { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
-      { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
-      { avdelare: "Skannar" },
-      { text: "Konfluensradarn", lank: "/konfluens", ikon: "📡", beskrivning: "Där värde möter vågor — fem källor måste tala samman" },
-      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigarettfimpar — NCAV-screening live" },
-      { text: "Portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live" },
-      { avdelare: "Fördjupning" },
-      { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
-      { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
-      { text: "Portföljforskning", lank: "/portfolj-forskning", ikon: "📡", beskrivning: "Välj risknivå — motorn forskar fram en portfölj" },
-      { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
-      { text: "AI-Diagnos", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
-    ],
-  },
-  {
-    titel: "Träna",
-    ikon: "🎯",
-    punkter: [
-      { text: "Min Sida", lank: "/min-sida", ikon: "🏠", beskrivning: "Din dashboard — allt på ett ställe" },
-      { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
-      { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
-      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" },
-      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "140 flashcards med SM-2" }, // Uppdaterad 2026-09-01: 140 kort i data/spaced-repetition.json
-      { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
-      { text: "Fas 3 — Certifiering", lank: "/fas3", ikon: "🎓", beskrivning: "Certifierad AK1A-analytiker — praktikportfölj + etik" },
-      { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },
-      { text: "Medlemskap", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },
-    ],
-  },
-];
 
 export function Huvudmeny() {
   const [oppad, setOppad] = useState<string | null>(null);
   const [fortsatt, setFortsatt] = useState<{ sida: string; titel: string } | null>(null);
+  // SSR: gast-vyn → hydrering utökar till medlem/fas/admin (R16).
+  const [kontext, setKontext] = useState<MenyKontext>(GAST_KONTEXT);
   const behallare = useRef<HTMLDivElement>(null);
   const stallning = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+
+  useEffect(() => setKontext(lasMenyKontext()), []);
 
   // Mönsterigenkänning: senaste besökta sida (som inte är aktuell)
   useEffect(() => {
@@ -96,7 +56,7 @@ export function Huvudmeny() {
     };
   }, []);
 
-  // Hover med fördröjning så panelerna inte flimrar
+  // Hover med fördröjning så panelerna inte flimrar (NN/g hover-intent)
   function hoverIn(titel: string) {
     if (stallning.current) clearTimeout(stallning.current);
     setOppad(titel);
@@ -106,10 +66,16 @@ export function Huvudmeny() {
     stallning.current = setTimeout(() => setOppad(null), 180);
   }
 
+  // Registret anpassat för denna klient (meny-ytan, behörighetsfiltrerat).
+  const paneler = MENY_REGISTER.map((s) => ({
+    ...s,
+    punkter: sektionPunkter(s, kontext, "meny"),
+  })).filter((s) => s.punkter.length > 0);
+
   return (
     <div ref={behallare} className="relative flex items-center gap-0.5" onMouseLeave={hoverUt}>
-      {PANELER.map((p) => (
-        <div key={p.titel} className="relative">
+      {paneler.map((p) => (
+        <div key={p.id} className="relative">
           <button
             onMouseEnter={() => hoverIn(p.titel)}
             onClick={() => setOppad(oppad === p.titel ? null : p.titel)}
@@ -131,31 +97,14 @@ export function Huvudmeny() {
               <div className="marin-panel border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">
                 {p.ikon} {p.titel.toUpperCase()}
               </div>
-              {p.punkter.map((punkt) =>
-                "avdelare" in punkt ? (
-                  <div
-                    key={`avdelare-${punkt.avdelare}`}
-                    className="border-b border-gold/10 bg-gold/5 px-3 pb-1 pt-2.5 text-[10px] font-bold uppercase tracking-widest text-gold"
-                  >
-                    {punkt.avdelare}
-                  </div>
-                ) : (
-                  <Link
-                    key={punkt.lank + punkt.text}
-                    href={punkt.lank}
-                    onClick={() => setOppad(null)}
-                    className="flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 last:border-b-0 hover:bg-gold/10"
-                  >
-                    <span className="mt-0.5 text-base">{punkt.ikon}</span>
-                    <span className="min-w-0">
-                      <span className="block text-xs font-bold text-foreground">{punkt.text}</span>
-                      {punkt.beskrivning && (
-                        <span className="block text-[10px] leading-tight text-muted-foreground">{punkt.beskrivning}</span>
-                      )}
-                    </span>
-                  </Link>
-                )
-              )}
+              {p.punkter.map((punkt, i) => (
+                <PanelRad
+                  key={punkt.lank}
+                  punkt={punkt}
+                  foregaende={p.punkter[i - 1]}
+                  onStang={() => setOppad(null)}
+                />
+              ))}
             </div>
           )}
         </div>
@@ -172,7 +121,7 @@ export function Huvudmeny() {
         <span className="hidden font-mono text-[10px] lg:inline">⌘K</span>
       </button>
 
-      {/* Fortsätt-chip — personlig mönsterigenkänning */}
+      {/* Fortsätt-chip — personlig mönsterigenkänning (recency, forskning §6) */}
       {fortsatt && (
         <Link
           href={fortsatt.sida}
@@ -185,5 +134,50 @@ export function Huvudmeny() {
         </Link>
       )}
     </div>
+  );
+}
+
+/** En menyrad — avdelare renderas när punkten inleder en ny undergrupp. */
+function PanelRad({
+  punkt,
+  foregaende,
+  onStang,
+}: {
+  punkt: MenyPunkt;
+  foregaende?: MenyPunkt;
+  onStang: () => void;
+}) {
+  const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
+  return (
+    <>
+      {nyAvdelare && (
+        <div className="border-b border-gold/10 bg-gold/5 px-3 pb-1 pt-2.5 text-[10px] font-bold uppercase tracking-widest text-gold">
+          {punkt.avdelare}
+        </div>
+      )}
+      <Link
+        href={punkt.lank}
+        onClick={onStang}
+        className={cn(
+          "flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 last:border-b-0 hover:bg-gold/10",
+          punkt.guldknapp && "bg-gold/10 hover:bg-gold/20"
+        )}
+      >
+        <span className="mt-0.5 text-base">{punkt.ikon}</span>
+        <span className="min-w-0">
+          <span
+            className={cn(
+              "block text-xs font-bold",
+              punkt.guldknapp ? "text-gold" : "text-foreground"
+            )}
+          >
+            {punkt.text}
+          </span>
+          {punkt.beskrivning && (
+            <span className="block text-[10px] leading-tight text-muted-foreground">{punkt.beskrivning}</span>
+          )}
+        </span>
+      </Link>
+    </>
   );
 }

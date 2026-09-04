@@ -32,6 +32,7 @@ import {
   manaderGratis,
   lasPrenumerationIntention,
   sparaPrenumerationIntention,
+  type PrenusbrevStatus,
   type PrenumerationIntention,
   type PrenumerationNiva,
   type RabattFasInfo,
@@ -40,6 +41,43 @@ import {
 const EPOST = "info@ak1nvestor.com";
 
 type Period = "manad" | "ar";
+
+/**
+ * Skicka nyhetsbrevs-intentionen till /api/email (typ=prenumeration-intention).
+ * Köas i system_events tills en mejl-leverantör konfigureras (VÅG 50) —
+ * misslyckas anropet påverkar det ALDRIG själva aktiveringsbegäran.
+ */
+async function skickaNyhetsbrevsIntention(arg: {
+  epost: string;
+  namn: string;
+  nivaNamn: string;
+  period: Period;
+  pris: string;
+}): Promise<PrenusbrevStatus> {
+  try {
+    const res = await fetch("/api/email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: arg.epost,
+        typ: "prenumeration-intention",
+        data: {
+          namn: arg.namn,
+          nivaNamn: arg.nivaNamn,
+          period: arg.period,
+          pris: arg.pris,
+        },
+      }),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return "fel";
+    const body = (await res.json()) as { ok?: boolean; skickat?: boolean; status?: string };
+    if (body.ok !== true) return "fel";
+    return body.skickat ? "skickad" : "köad";
+  } catch {
+    return "fel";
+  }
+}
 
 export function AktiveraPanel({
   nivaer,
@@ -56,6 +94,9 @@ export function AktiveraPanel({
   const [fel, setFel] = useState("");
   const [sparad, setSparad] = useState<PrenumerationIntention | null>(null);
   const [tidigare, setTidigare] = useState<PrenumerationIntention | null>(null);
+  // Frivillig nyhetsbrevscheck (VÅG 50) — köas via /api/email tills leverantör finns.
+  const [nyhetsbrev, setNyhetsbrev] = useState(false);
+  const [brevStatus, setBrevStatus] = useState<PrenusbrevStatus>("");
 
   const { hydrerad, fasStatus, harRabatt, rabatt, rabattProcent } = useFasRabatt(rabattFas);
 
@@ -88,7 +129,7 @@ export function AktiveraPanel({
   const rabatterat = rabatteratPris(ordinarie, harRabatt ? rabatt : 0);
   const periodText = period === "manad" ? "per månad" : "per år";
 
-  const begar = () => {
+  const begar = async () => {
     setFel("");
     if (!vald) {
       setFel("Välj en nivå först.");
@@ -96,6 +137,10 @@ export function AktiveraPanel({
     }
     if (epost.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(epost.trim())) {
       setFel("E-postadressen ser inte giltig ut — kontrollera den.");
+      return;
+    }
+    if (nyhetsbrev && !epost.trim()) {
+      setFel("Nyhetsbrevet behöver en e-postadress — fyll i raden ovan.");
       return;
     }
     const intention: PrenumerationIntention = {
@@ -109,6 +154,7 @@ export function AktiveraPanel({
       fasStatus,
       ...(namn.trim() ? { namn: namn.trim() } : {}),
       ...(epost.trim() ? { epost: epost.trim() } : {}),
+      ...(nyhetsbrev ? { nyhetsbrev: true } : {}),
       skapad: new Date().toISOString(),
     };
     const ok = sparaPrenumerationIntention(intention);
@@ -120,6 +166,23 @@ export function AktiveraPanel({
       );
       return;
     }
+
+    // Frivillig nyhetsbrevscheck: intentionen till kön via /api/email —
+    // ett misslyckat anrop påverkar ALDRIG aktiveringsbegäran ovan.
+      if (nyhetsbrev && epost.trim()) {
+      setBrevStatus("köad"); // optimistisk interim-status medan anropet går
+      const status = await skickaNyhetsbrevsIntention({
+        epost: epost.trim(),
+        namn: namn.trim(),
+        nivaNamn: vald.namn,
+        period,
+        pris: `${harRabatt ? rabatterat : ordinarie} kr ${period === "manad" ? "per månad" : "per år"}`,
+      });
+      setBrevStatus(status);
+    } else {
+      setBrevStatus("");
+    }
+
     setSparad(intention);
   };
 
@@ -162,6 +225,18 @@ export function AktiveraPanel({
         </p>
 
         <div className="mx-auto mt-6 max-w-lg space-y-3 text-left">
+          {sparad.nyhetsbrev && (
+            <div className="rounded-lg border border-gold/40 bg-paper p-4 text-sm">
+              <p className="font-semibold text-foreground">Nyhetsbrevet:</p>
+              <p className="mt-1.5 leading-relaxed text-muted-foreground">
+                {brevStatus === "skickad"
+                  ? "Din plats i morgon-briefingen är registrerad och en bekräftelse är på väg till din inkorg."
+                  : brevStatus === "fel"
+                    ? "Din nyhetsbrevsönskan kunde inte registreras just nu — mejla oss så lägger vi till dig manuellt."
+                    : "Din plats i morgon-briefingen är sparad i utskickskön — första brevet kommer så snart utskicken är igång (ingen leverantör är kopplad ännu)."}
+              </p>
+            </div>
+          )}
           <div className="rounded-lg border border-gold/30 bg-paper p-4 text-sm">
             <p className="font-semibold text-foreground">Nästa steg:</p>
             <ol className="mt-2 list-decimal space-y-1.5 pl-5 leading-relaxed text-muted-foreground">
@@ -342,6 +417,31 @@ export function AktiveraPanel({
         </div>
       </div>
 
+      {/* Frivillig nyhetsbrevscheck (VÅG 50) — morgon-briefingen + forskning */}
+      <label
+        htmlFor="pren-nyhetsbrev"
+        className="mt-4 flex cursor-pointer items-start gap-3 rounded-lg border border-gold/25 bg-paper p-3.5 transition-colors hover:border-gold/50"
+      >
+        <input
+          id="pren-nyhetsbrev"
+          type="checkbox"
+          checked={nyhetsbrev}
+          onChange={(e) => setNyhetsbrev(e.target.checked)}
+          className="mt-0.5 h-4 w-4 accent-gold"
+        />
+        <span className="text-sm leading-relaxed">
+          <span className="font-semibold text-foreground">
+            Få morgon-briefingen + forskningsuppdateringar per mejl
+          </span>
+          <span className="block text-xs text-muted-foreground">
+            Frivilligt och kostnadsfritt — en kort, saklig morgonhälsning (vågkartan,
+            dagens aktie, ett femminuterspass) och större forskningsuppdateringar.
+            Avsluta när du vill genom att svara på ett brev. Pedagogisk analys —
+            aldrig investeringsråd.
+          </span>
+        </span>
+      </label>
+
       {/* Pris-sammanfattning */}
       <div className="mt-6 rounded-lg border border-gold/30 bg-paper p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
@@ -374,7 +474,7 @@ export function AktiveraPanel({
 
       <Button
         className="mt-5 w-full bg-gold font-bold text-primary-foreground hover:bg-gold/90"
-        onClick={begar}
+        onClick={() => void begar()}
       >
         Begär aktivering
       </Button>

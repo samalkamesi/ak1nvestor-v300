@@ -7,6 +7,7 @@ import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
 import { DelaKort } from "@/components/ak1a/dela-kort";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 type Kapitel = {
   num: number;
@@ -32,6 +33,11 @@ type Kurs = {
  * Baserat på learning science: microlearning + active recall + dual coding.
  */
 export function KursSteg({ kurs }: { kurs: Kurs }) {
+  const { t, dir } = useSprak();
+  // RTL: pilarna pekar logiskt (föregående åt läsningens början) — i arabiska
+  // speglas de så att "föregående" fortfarande pekar bakåt i läsriktningen.
+  const pilForegaende = dir === "rtl" ? "→" : "←";
+  const pilNasta = dir === "rtl" ? "←" : "→";
   const [steg, setSteg] = useState(0);
   const [svar, setSvar] = useState<Record<string, number>>({});
   const [klaradeKap, setKlaradeKap] = useState<Set<number>>(new Set());
@@ -139,9 +145,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
       {nivaUpp != null && (
         <div className="pointer-events-none fixed inset-x-0 top-24 z-50 flex justify-center">
           <div className="animate-[fadeIn_0.3s_ease-out] rounded-2xl border-2 border-gold bg-card px-6 py-4 shadow-2xl">
-            <p className="text-center font-serif text-2xl font-black text-gold">🎉 Nivå {nivaUpp}!</p>
+            <p className="text-center font-serif text-2xl font-black text-gold">🎉 {t("kurs.nivaUpp", { n: nivaUpp })}</p>
             <p className="mt-1 text-center text-xs text-muted-foreground">
-              {nivaUpp >= 25 ? "Fas 2-porten står öppen — ansök när du är redo." : "100 XP per nivå — poängen förtjänas."}
+              {nivaUpp >= 25 ? t("kurs.fas2Porten") : t("kurs.xpPerNiva")}
             </p>
           </div>
         </div>
@@ -171,7 +177,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
                   key={ch.num}
                   onClick={() => { setSteg(i); setVisaQuiz(false); tillKapitelstart(); }}
                   className="flex flex-1 items-center py-2.5"
-                  aria-label={`Kapitel ${ch.num}`}
+                  aria-label={t("kurs.kapitelTitel", { num: ch.num })}
                   title={ch.title}
                 >
                   <span
@@ -205,7 +211,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
             </div>
             <div className="min-w-0">
               <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                Kapitel {kap.num} av {total} · {kap.minutes || 8} min
+                {t("kurs.kapitelAv", { num: kap.num, total, min: kap.minutes || 8 })}
               </p>
               <h2 className="font-serif text-2xl font-bold leading-tight">{kap.title}</h2>
             </div>
@@ -242,7 +248,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           {insiktBlock && (
             <div className="mt-8 rounded-2xl border-2 border-gold/40 bg-gradient-to-br from-gold/10 to-gold/5 px-6 py-5">
               <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold">
-                <InsiktPuls /> 10x-insikt
+                <InsiktPuls /> {t("kurs.insikt")}
               </p>
               <p className="mt-2 font-serif text-lg font-semibold leading-snug">{String(insiktBlock.content)}</p>
             </div>
@@ -252,7 +258,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           {utmaningBlock && (
             <details className="mt-4 rounded-2xl border border-dashed border-gold/50 bg-paper px-5 py-4">
               <summary className="cursor-pointer text-xs font-bold uppercase tracking-widest text-gold">
-                🎯 Utmaning — klicka när du är redo
+                🎯 {t("kurs.utmaning")}
               </summary>
               <p className="mt-3 text-sm leading-relaxed">{String(utmaningBlock.content)}</p>
             </details>
@@ -269,11 +275,11 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
                   onClick={() => setVisaQuiz(true)}
                   className="w-full rounded-xl border-2 border-gold/50 bg-gold/5 px-6 py-4 text-center text-sm font-bold text-gold hover:bg-gold/10 transition-colors"
                 >
-                  🧠 Testa dig själv — bevisa din kunskap (+10 XP per rätt)
+                  🧠 {t("kurs.testaDigSjalv")}
                 </button>
               ) : (
                 <div className="space-y-5 rounded-2xl border border-gold/30 bg-card p-6">
-                  <p className="text-xs font-bold uppercase tracking-widest text-gold">🧠 Masterquiz</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-gold">🧠 {t("kurs.masterquiz")}</p>
                   {kap.quiz.map((f, qi) => {
                     const nyckel = `ak1a-quiz-${kurs.slug}-${kap.num}-${qi}`;
                     const klarad = localStorage.getItem(nyckel) === "1";
@@ -306,16 +312,16 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
                         </div>
                         {mitt !== undefined && mitt !== f.ratt && !klarad && (
                           <p className="mt-2 rounded-md bg-gold/10 px-3 py-2 text-xs italic text-gold">
-                            💡 {f.tips || "Gå tillbaka till texten — svaret finns där."}
+                            💡 {f.tips || t("kurs.tipsFallback")}
                           </p>
                         )}
-                        {mitt === f.ratt && <p className="mt-2 text-xs font-bold text-green-700">✓ Rätt! +10 XP</p>}
+                        {mitt === f.ratt && <p className="mt-2 text-xs font-bold text-green-700">✓ {t("kurs.ratt")}</p>}
                       </div>
                     );
                   })}
                   {kap.quiz.every((_, i) => localStorage.getItem(`ak1a-quiz-${kurs.slug}-${kap.num}-${i}`) === "1") && (
                     <p className="rounded-xl border border-green-300 bg-green-50 px-4 py-3 text-center text-sm font-bold text-green-800">
-                      🏆 Kapitel {kap.num} behärskat!
+                      🏆 {t("kurs.kapitelBeharskat", { num: kap.num })}
                     </p>
                   )}
                 </div>
@@ -330,21 +336,21 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
               disabled={steg === 0}
               className="min-h-[44px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:bg-gold/5 disabled:opacity-30"
             >
-              ← Föregående
+              {pilForegaende} {t("kurs.foregaende")}
             </button>
             {steg < total - 1 ? (
               <button
                 onClick={naasta}
                 className="min-h-[44px] rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
-                Nästa kapitel →
+                {t("kurs.nastaKapitel")} {pilNasta}
               </button>
             ) : (
               <Link
                 href="/kurser"
                 className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
-                🏆 Kursen klar! →
+                🏆 {t("kurs.kursenKlar")} {pilNasta}
               </Link>
             )}
           </div>
@@ -354,9 +360,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           {steg === total - 1 && kursKlar && (
             <div className="mt-10">
               <div className="rounded-2xl border-2 border-gold/40 bg-gradient-to-br from-gold/10 to-gold/5 px-6 py-6 text-center">
-                <p className="font-serif text-3xl font-black text-gold">🏆 Grattis!</p>
+                <p className="font-serif text-3xl font-black text-gold">🏆 {t("kurs.grattis")}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Du har klarat alla {total} kapitel i "{kurs.title}" — kunskapen är nu din.
+                  {t("kurs.allaKlara", { total, titel: kurs.title })}
                 </p>
               </div>
               <DelaKort kursTitel={kurs.title} className="mt-6" />

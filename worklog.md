@@ -5430,3 +5430,311 @@ passerad!); /ar-kurs RTL+arabisk text; /en/kurser/zero-to-one 200;
 kapiteltitlar+intros+quiz täcks) — laggs i framtida våg.
 SQL-KRAVET PÅ KUNDEN ÄR BORTA — systemet helt självständigt; dagliga
 MyMemory-ronder fyller på allt efterhand.
+
+## VÅG 56 bygg-C: M3 FORSKNINGSLÄGET — korstabellens 100-bolagsforskning når eleven (2026-09-04)
+
+Underlag: data/forskning/STYRELSE-mega-integration.md M3 (styrelsens
+byggordning 1: "snabbast kundnytta per timme; ingen ny infrastruktur;
+synliggör P6-arbetet direkt"). Kärna: läget räknas ur korstabell-grund.json
+(100 rader, 7 gröna, daterad 2026-09-03) — statusreglerna grön/gul/röd
+ÅTERANVÄNDS ur P6:s rader, ej omimplementeras.
+
+(1) REN LIB src/lib/forskningslaget.ts: raknaForskningslage(rader,
+veckonr?) räknar grön/gul/röd + andel gröna (4 decimaler, stabilt JSON),
+topp-3 gröna (högst akm1Totalt, ties ⇒ ticker stigande — deterministiskt),
+veckans research-bolag (veckoHash ISO-veckonummer % storlek på sorterad
+grönapool — VECKOPLANS hashmönster, samma vecka ⇒ alltid samma bolag, inga
+prognospilar), "marknadsläge"-text ur FASTA trösklar (RIKT: andel gröna
+≥ 0.10 OCH andel röda ≤ 0.30; MAGERT: andel gröna < 0.08 ELLER andel röda
+> 0.35; däremellan BALANSERAT; tomt underlag ⇒ OSATT "inte levererat —
+motorn gissar aldrig"), datering = senaste senastKontrollerad i raderna
+(ärlighetsprincipen — aldrig "just nu på börsen"). inget nät/fs/klocka när
+veckonr anges explicit ⇒ testbar ren funktion. På riktiga data: 7/100
+gröna, 17 röda ⇒ MAGERT "selektion avgör"; topp INDU-C.ST 58,1 av 67 ·
+NEM 55,1 av 71,1 · INVE-B.ST 54 av 62,9; vecka 36 ⇒ Norsk Hydro.
+
+(2) API GET /api/forskningslage (nodejs): läser lasKorstabellGrund +
+räknar SERVER-side, svara { finns, lage } — klienten får ALDRIG de 100
+råa raderna (M3-risken "no-store per sidvisning" borts); finns:false ⇒
+lage:null ärligt. Cache 1 h: modulmemo + Cache-Control public, max-age=
+3600 (korstabellen levereras manuellt — en timmes utsikt ändrar aldrig
+siffrorna; max en fil-läsning per timme per process).
+
+(3) FORSKNINGSLAGEKORTET src/components/ak1a/forskningslage-kort.tsx
+(klient): marin-panel-kort i sajtens DNA — donut-SVG (grön/gul/röd andel
+av antal, % gröna i mitten, aria-label med alla tal), legend med counts,
+marknadsläge-texten, topp-3-listan (namn + ticker · bransch · AKM1 poäng
+av max) med länk → /forskningsbiblioteket/[ticker] (sidan byggs av
+parallell agent inom vågen — länkarna står redo), footer "Senast
+kontrollerad 3 sep. 2026 · uppdateras med forskningsronderna" +
+"Pedagogisk forskning — inte investeringsråd." Hydration-säkert skelett
+första passt; vila-läge ("grundunderlaget mäts upp") när underlag saknas;
+8 s timeout + tyst graceful.
+
+(4) MONTERING: (a) Min Sida — eget kort direkt EFTER Morgon-briefingen
+(före AssistentPanelen; medvetet EJ i Kunskapsflödet); (b) /portfolj-
+forskning — sidans topp, direkt under intro-headern (server-sidan
+serverar kortets deterministiska skelett — donut-skelettet syns i SSR-
+HTML:n). + (c) "Veckans research-bolag" i Kunskapsflödets "Vad är nytt"-
+flik: en rad längst upp ("Vecka {n}: {bolag} leder forskningsurvalet",
+🔬, länk → forskningsbiblioteket) ur SAMMA /api/forskningslage (egen
+liten fetch i useEffect, graceful — utan data visas ingen rad).
+
+(5) TEST (verktyg/validera-motorer.mjs, fas D): +3 rader för
+"forskningslaget" — (i) FIXTUR rikt 4/10/6 av 20: antal+andel+text+topp-3
+med tie-break+andelAvMax 0.8+datering; (ii) FIXTUR gränser: tomt ⇒ osatt,
+1 grön av 30 ⇒ magert, 2 gröna men 8 röda ⇒ magert via röda-tröskeln;
+(iii) DETERMINISM: 2× JSON-identiskt, ISO-veckonummer (2026-09-03 ⇒ 36,
+2026-01-01 ⇒ 1), veckourval 36–43 plockar endast ur grönapoolen och
+roterar (4 fångade bolag). SVITEN: 79 PASS / 0 FAIL / 0 SKIP (6,6 s; +3
+från 76).
+
+(6) VERIFIERAT: (a) tsc --noEmit 43 fel = exakt baslinjen (0 nya; 0 i
+forskningslaget.ts/routen/kortet/kunskaps-flode/min-sida/portfolj-
+forskning-sidan). (b) dev port 3492: GET /api/forskningslage → 200 med
+cache-control public, max-age=3600 och korrekt kropp (finns:true, 100/7/
+76/17/0, magert, topp INDU-C·NEM·INVE-B, vecka 36 Norsk Hydro,
+senastKontrollerad 2026-09-03); /min-sida → 200; /portfolj-forskning →
+200 med kortets donut-skelett i SSR-HTML. Inloggad Min Sida-DOM kunde ej
+curl-kontrolleras (medlemsstate i localStorage; browser-use är
+main-agent-only) — monteringen bevisad av tsc + kompilad route. Dev-
+servern dödad (PID 30832 taskkill /T /F, port 3492 verifierad fri).
+RÖRDES EJ: korstabell-data.ts/riskportfolj/analysfabriks-filer (parallell
+agent), menyer, chat, data/*.json. INGET committat.
+
+## VÅG 56 bygg-A: VÅGVALIDERINGS-KITET + ÄRLIGHETSRÄTTNING + ENIGHETSSCORE (2026-09-04)
+
+Underlag: data/forskning/STYRELSE-vag-exakthet.md — rådets rekommendation
+1+2+3. Kundkravet "våg analys skall göras och garantera högst exakthet"
+uppfylls enligt §4: inte en garanti om framtiden utan ett ÖPPET KVITTO om
+det förflutna — Träff ✓/✗ per vågklass och horisont, osatta redovisade som
+täckningsbråk, aldrig som fel.
+
+(1) VÄGVALIDERINGS-KITET — cron /api/cron/vagvalidering (NY fil
+src/app/api/cron/vagvalidering/route.ts + schema "30 5 * * *" i vercel.json;
+tidsläget verifierat LEADIGT: vagscan 05:00 → vagvalidering 05:30 →
+datacache 06:00 → email 06:30). CRON_SECRET-mönstret exakt som övriga cron
+(?secret= eller Bearer). Daglig rond, BILLIGT (noll Yahoo-anrop i normal-
+fallet): (a) förra rondens klasser ur senaste type=vagscan-event FÖRE idag
+(reserv: datacache-cachens vagfundament-rader), (b) dagens faktiska
+fundamentmomentum ur dagens vagscan-event (reserv: återmotor via lasEllerHamta
+— cache FÖRE nät, delad memoiserad universumkörning, omgångar om 4, samma
+mönster som /api/vagfundament; SSRF: enbart motorns egen allowlist+DNS-
+förkontroll via query2), (c) DOM enligt protokoll vagvalidering/1, (d) EN
+system_events-rad type=vagvalidering med dagens 60 domar (12 tickers × 5
+horisonter) + RULLANDE träff-% per (horisont, klass) — räknarna bärs fram i
+details, IDEMPOTENT (samma UTC-dag → inget nytt, inget dubbelräknat),
+(e) publiceraOrganEvent (organ/vagvalidering, verb rapport) + rapport till
+data/rapporter/vagvalidering-SENASTE.md (graceful på read-only fs).
+
+DOM-PROTOKOLL v1 (skrivet innan första domen, ren funktion domVagvalidering
+i NY fil src/lib/vagvalidering.ts): förra rondens vågklass per (ticker,
+horisont) — ur helhetstalets ±0,50-gränser, motorns egna — döms mot dagens
+teckenförda medel-momentum över variablerna med data (1 decimal): impulsvåg →
+träff vid positivt momentum (även svagt +0,4), miss vid negativt; korrigering
+spegelvät; exakt 0 dömer inte riktning → osatt; basbygge → träff vid |mom| ≤
+6 % (motorns EGEN tröskel, inklusiv gränsen — hedervändig symmetri), miss vid
+6,1; osatt klass / null / NaN → osatt — ALDRIG dömt. Invariant testad: varje
+rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — gransknings-
+bar rad för rad, och hela rapporten återrenderas ur det lagrade eventet.
+
+(2) ÄRLIGHETSRÄTTNINGEN — vagkurva-graf.tsx VAGKURVA_KALLA_TEXT hävdade
+"fundamental trippelröstning" men komponenten läser /api/vagfundament
+(encells-motorn) där trippelröstningen INTE körs. Rättad till exakt vad som
+sker: "vågKLASS från vagfundamentmotorn (encells-momentum per variabel mot
+±6 %-tröskeln; klass per horisont ur helhetstalets gränser ±0,50) med
+styrkan |helhetstal| och enighetsscore 0–100 — ingen trippelröstning körs i
+denna vy".
+
+(3) ENIGHETSSCORE 0–100 (rådets formel 40/30/30, ren funktion
+raknaEnighetsscore i vagvalidering.ts — inga imports, säker i klient):
+40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,|mom|/6) + 30·
+täckning (bedömda/totalt). Null när helt osatt — aldrig en påhittad siffra.
+Exponerad i TRE ytor: vagkurva-graf (per horisont: "enighet NN/100" bredvid
+styrkan + aria), vagkarta-kort (universumssnitt — beräknas SERVER-SIDE i
+/api/vagscan/senaste ur eventets egna tickers via raknaUniversumEnighet, visas
+som "◈ enighet NN/100" med per-horisont-tips), vagfundament-matrisen (NY
+kolumn "Enighet" per variabel över de fem horisonterna + legendrad + hover-
+formel). En tunn mätning ser tunn ut.
+
+(4) TEST — 4 NYA PASS-RADER i verktyg/validera-motorer.mjs (fas D, rena
+kärnor, inget nät): DOM-PROTOKOLL 17 fall + gränserna (0/±6/6,1/null/NaN/
+spök-klass, klassFranTal ±0,50); ENIGHETSSCORE omräknad för hand (55/100 ur
+40·0,5+30·0,75+30·0,4) + tak 100 + determinism 2×; DOMBYGGE ur två ronder +
+dom-återskapnings-invarianten; RULLANDE räknare + traffProcent 50 % (n=2) +
+osatt-andel + PURE-kontroll (r1 orörd av rullaFram) + rapportens tabellcell
+"50 % (n=2)" + protokollversion + determinism. Sviten: 83 PASS / 0 FAIL /
+0 SKIP = 100 % (6,6–7,4 s). tsc: 43 kända förväntade fel, 0 nya (43/0).
+
+DEV-TEST (port 3490, CRON_SECRET osatt → öppen): GET /api/cron/vagvalidering →
+{idempotent:false, kallaKlasser:"vagscan-event", kallaMomentum:"vagscan-event",
+60 domar: 48 dömda + 12 osatta (lång=null hos alla — Yahoo ~4 år), rullande
+52 % träff (n=48, osatta 20 %), supabaseSparad:true, rapportSkrivad:true}.
+Andra anropet: {idempotent:true} — inget dubbelräknat. /api/vagscan/senaste →
+enighet {total:69, mikro:63, kort:66, medellang:70, lang:null, mega:76} —
+lång=null är hederligt. /vagfundament-sidan (alla tre komponenterna): 200.
+Rapporten återrenderad ur det LAGRADE eventet (granskningsbarhet bevisad).
+Dev-servern dödad (taskkill /T /F PID 10588+25924, port 3490 verifierad fri).
+
+FYND UR FÖRSTA RONDEN (kitets syfte, direkt): basbygge på kort 30 % träff
+(n=10), medellång/mega basbygge 0 % (n=6+6) — säsongsblinda mikro-fönstret
+(§1.3) syns redan i data. Rang 5-motorändringar har nu något att valideras
+mot. RÖRDES EJ: motorerna, konfluens, vågkon, forskningslaget (parallell
+agent våg 56 M3 — validera-motorer.mjs redigerades i bådas delar, konflikt-
+fritt). INGET committat.
+
+## VÅG 56 bygg-B: ANALYSFABRIKEN — Forskningsbiblioteket + blogggenerator (2026-09-04)
+
+Byggplan: data/forskning/STYRELSE-analysbibliotek.md (§2.1–§2.4), MVP + blogg
+i en session. Data-sanning vann överallt; inget committat.
+
+(0) INDU-C.ST-NAMNVERIFIERINGEN (planens §6.2 — avgjord med data, inte tycke).
+Korstabell/bolagsunivers säger INDU-C.ST = "AB Industrivärden (publ)" men
+manifest.json §industri-motiveringen skrev "Indutrade". DOM ÄR INDUSTRIVÄRDEN:
+P/B 1,03 + P/E 3,7 + bruttomarginal 100 % + EBIT-marginal 99,9 % + omsättning
+4,6 mdr SEK mot börsvärde 231 mdr + resultatsvängningar −14/+27 mdr =
+innehavsmässigt investmentbolag, INTE distributör (Indutrade/INDT-C.ST finns
+inte i universet — ingen akm1-INDT-cache). KORSTABELLEN HADDE RÄTT, MANIFESTET
+FEL ⇒ rättad: data/portfolj-system/manifest.json industri-motiveringen byter
+"Indutrade"→"Industrivärden" + rättklar not (inkl. att branschetiketten
+"industri" är källans etikett — investmentbolagsprofilen flaggas istället i
+varje genererad analys som egen risk). Ingen spegelbranschlista i src
+(medlemskap/page.tsx granskat — innehåller ingen); verktyg/fixtures/
+korstabell-demo.json har "INDT.ST/Indutrade" men är SYNTETISK demodata —
+orörd, noted.
+
+(1) GENERATORN verktyg/kor-analysfabrik.mjs (NY). Kandidatregeln v1 exakt ur
+planen: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70
+OCH AKM1/max≥0,65). OBS: planens rubrikformel säger ≥0,70 för alla men §2.1:s
+egen simulering släpper in gröna på D1:s 60 %-golv med varningsetikett —
+simuleringen (22 bolag, 5 svenska) är den operativa läsningen och matchar
+uppdragets väntade 22; strikt ≥0,70 ger bara 20/3. KÄLLOR: korstabell-grund +
+bolagsunivers (land/valuta/notering) + akm1-{T}.json (motiveringar cit-
+ORDAGRAT) + fvag-{T}.json (klassbara variabelräkning). UTDATA:
+data/forskningsbiblioteket/{T}.json (NY katalog — löser planens §6.1-namn-
+kollision data/analyses vs data/analyser genom att inte använda någon av dem),
+ticker sanerad '.'→'_' som cachen, schema analysfabrik-v1: urvalsblock med
+regeln RÅ + varning "grön (låg täckning)" (INDU-C 67,0 % + INVE-B 62,9 %),
+rankPoang (§2.1:s bloggformel, konfluens omfördelat proportionellt /0,85),
+AKM1-block (totalt/max/relativ, perKategori, starkast/svagast, osatta-lista,
+topp/botten-3 med poäng + motivering ordagrant), vågläge per 5 horisonter med
+osatt-ärlighet + tolkning, konfluens=null (MVP, live-Yahoo lagras ej), golv
+(NP3 −42,2 % NAV-proxy; övriga osatt + not), 3–5 deterministiska risker
+(osatta-antal, investmentbolagsprofil, cyklisk+V12, V05, V11-osatt,
+fastighetsränta, låg täckning/gul, MarketStack-notering, räntetäckning,
+automatiskt-underlag — allt ur data, inget påhittat), ≥3 (faktiskt 5) MÄTBARA
+falsifieringsvillkor med V-ID+tröskel (V19 <12 mån inom 2 kvartal; dynamik→
+försvagas; täckning <0,60; starkaste variabelns tröskel t.ex. V09 ROE<15 %;
+statusbandet), lasMer (kurser efter starkaste variabler, bloggSlug=null),
+etikett + disclaimer "Forskningsunderlag — ej rådgivning … (lagen 2007:528)".
+KÖRD: 22 analyser, 5 svenska (INDU-C, NP3, TRUE-B, HM-B, INVE-B) — exakt
+planens simulerade utfall.
+
+(2) SERVER-LIB src/lib/analysfabrik.ts (NY): lasAnalyser() (tolerant fs-read
+data/forskningsbiblioteket/*.json, ogiltiga stryks, sort rankPoang desc),
+getAnalys() (normaliserad ticker: '_'≈'.'), svenskaForst(). INTE analysbank.ts
+(klient/localStorage) och INTE content.ts (premium data/analyses).
+
+(3) SIDORNA (SeoPageShell, force-static): /forskningsbiblioteket (NY) —
+ärlig intro som särskiljer från /analyser ("automatiskt underlag, 1 sida, 20
+variabler — 99-sidorsanalyserna finns i rapportbanken"), urvalsregeln VISAS
+RÅ, kort per bolag (namn, ticker, status-chip grön/gul + ⚠ låg täckning,
+AKM1/max, AV MAX %, TÄCKNING %, vågläge-kort med dynamik + klassade
+horisonter, versionsdatum, osatta-antal, blogglänk när den finns), sorterad
+på rank. /forskningsbiblioteket/[ticker] (NY) — generateStaticParams,
+longtail-metadata "{namn} analys — AKM1-forskning | AK1A", JSON-LD (breadcrumb
++ Article med Corporation-about), urvalsregel rå + utfallsrutor, AKM1-profil
+med kategoribars + topp/botten-3 ORDAGRAT, vågläge 5 chips (osatt syns),
+konfluensblock "ej mätt i MVP" + länk till radarn, golv, risker, FALSKIFIERING
+som guld-inramad egen sektion med numrerade villkor, fördjupningslänkar
+(kurser/kalkylatorn/vågfundamentet/blogg), etikett+disclaimer i sidfot.
+
+(4) NAVIGATION + SEO: meny-register.ts + punkt "Forskningsbiblioteket" under
+ANALYSERA/Fördjupning (28 länkar totalt, R2 böjs 11→12 i panelen — uppdraget
+ordrade menyposten; R3:s 36-tak intakt) + ordlista-nyckel
+"nav.forskningsbiblioteket" ×3 språk (sv/en/ar). sitemap.ts: /forsknings-
+biblioteket (0.8) + alla 22 detaljer (0.7, lastModified=versionsdatum).
+/analyser korslänkar "Se också: Forskningsbiblioteket".
+
+(5) BLOGGGENERATORN verktyg/kor-analysblogg.mjs (NY): läser biblioteket,
+land=Sverige sorterat på rankPoang → topp 5 (INDU→NP3→TRUE→HM→INVE; planens
+prosa sa INVE>HM men planens EGNA formel ger HM 0,6522 > INVE 0,6160 —
+formeln är den deterministiska regeln, båda får post ändå), skriver
+data/blogg/analys-{namn}-2026.json i EXAKT befintligt schema (nyckelmängd
+byte-vis jämförd mot v09-roe-analys.json: slug/title/description/pillar
+"Svensk aktieanalys"/author "Ak1 Apex Nexus"/publishedAt/readingMinutes 6–8
+(räknat ur ordantalet)/tags/body). Kropp §2.4: ingress med regeln + siffror,
+AKM1-profil med topp-3 ORDAGRAT, vågläge med osatt-ärlighet, golv+risker,
+falsifieringssektionen, fördjupa dig (kursslänkar + detaljsida + komplett-
+guiden), kursiv disclaimer med meningen "detta är en automatiskt genererad
+forskningsöversikt; den fullständiga AK1A-analysen tillverkas manuellt".
+Tvåvägslänk: lasMer.bloggSlug skrivs tillbaka i analys-jsonen. KÖRD: 5 poster
+(analys-industrivarden-2026, -np3-fastigheter-, -truecaller-, -h-och-m-
+hennes-och-mauritz-, -investor-). /blogg listar dem AUTOMATISKT (getBlogPosts
+är readdirSync-fs-read — ingen kodändring behövdes, planen §2.4 stämde);
+speglarna /en|ar/blogg plockar dem via befintlig mekanik (översättningsrond
+senare). Alla /kurser/v*-länkar verifierade mot public/deep-courses.json.
+
+(6) VERIFIERING. Generator-output: 22 giltiga JSON, schema=v1, ≥3 falsifi-
+kering + ≥3 risker + disclaimer 2007:528 i alla, inga köp/sälj/rekommendera-
+ord (ordgränskontroll — "försäljning" ska inte trigga). tsc: 43 kända fel /
+0 nya (43/0; inga i nya filer). DEV port 3491: /forskningsbiblioteket 200
+(22 kort, "5 svenska", 2 låg-täckning-varningar), detaljer 200 (INDU-C/NP3/
+INVE-B/TRUE-B/HM-B/NEM: falsifieringssektion, etikett, V19-villkor syns),
+/blogg 200 + listar alla 5 nya, alla 5 post-sidorna 200, /analyser 200 med
+korslänk, /sitemap.xml med 23 forskningsbiblioteket-rader (1 lista + 22
+detaljer), meny-länk syns i headern. Dev-servern dödad (PID 8648, port 3491
+verifierad fri — en STALE 3490-server från våg 55 togs också bort först).
+
+RÖRDES: manifest.json (Indutrade-rättningen), 2 NYA verktyg, 1 NYTT lib,
+2 NYA sidrutter, meny-register.ts, ordlista.ts, sitemap.ts, analyser/page.tsx,
+NYA data/forskningsbiblioteket/ (22 filer) + 5 NYA data/blogg/analys-*.json.
+RÖRDES EJ: motorerna, content.ts, korstabell-källorna (data-värdena — namnet
+i dem var redan rätt), MÖS-lagret. INGET committat.
+
+── VÅG 56 KOMPLETT: AI-STYRELSE + MEGA-BYGG (2026-09-04) ──
+Kunddirektiv: "Fråga ai styrelse agenter vilka fler saker... fler Mega
+integrerade system, speciellt våg analys... högst exakthet... producera
+och spara i analys biblioteket... blogga om de bästa bolagen som följer
+våra strikta riktlinjer." ER ANALYSSTANDARD LÄST (99-sidor + validerings-
+loggar med Träff ✓-kultur i Downloads/analyser 2026).
+STYRELSEROND (3 rådgivare, data/forskning/STYRELSE-*.md):
+• Våg-exakthet: tvÅ vågmotorer (prod=encells ±6 % momentum), svagheter
+  med radbevis (säsongsblind mikro, nästlade fönster, null-hål, ingen
+  träffmätning), ärlighetsbugg i vagkurva-graf; rekommendationer 1-5.
+• Analysbibliotek: Analysfabriken 4 steg, urvalsregel simulerad → 22
+  kandidater (5 svenska), namnkollisionsfynd data/analyses vs analyser,
+  INDU-C-namnfel upptäckt.
+• Mega-integration: M1-M5 rankade (M3 först), vad som INTE ska byggas.
+BYGG (3 agenter):
+(A) VÄGVALIDERINGS-KITET: cron 05:30 (vagscan 05:00 → validering 05:30 →
+  datacache 06:00), dom-protokoll v1 (impuls→träff om positivt momentum,
+  korrigering spegelvänt, basbygge |mom|≤6 %, osatt ALDRIG dömt), EN
+  event-rad/dag med 60 domar + rullande träff% per (horisont,klass),
+  idempotent, rapport vagvalidering-SENASTE.md. FÖRSTA LIVE-RONDEN:
+  52 % träff (n=48, 12 osatta); FYND: kort-basbygge 30 % (n=10) —
+  säsongsblindheten syns i data (nästa steg: motorändring när kitet
+  bevisar nettoförbättring). Ärlighetsrättning vagkurva-graf ( bort
+  "trippelröstning"-överdriften) + enighetsscore 0-100 (40 % medel-
+  bekräftelse+30 % tröskelmarginal+30 % celltäckning) i vagkurva-graf,
+  vagkarta-kort (universumssnitt 69/100) och matrisen (ny kolumn).
+(B) ANALYSFABRIKEN: kor-analysfabrik.mjs → 22 analyser i data/
+  forskningsbiblioteket/ (analysfabrik-v1: motiveringar ordagrant ur
+  cacher, vågläge ×5 med osatt-ärlighet, golv (NP3 NAV −42,2 %),
+  risker, 5 MÄTBARA FALSIIFIERINGSVILLKOR per bolag, disclaimer
+  2007:528). INDU-C-DATAFEL RÄTTAT: AB Industrivärden (investmentbolag
+  — manifestets "Indutrade" fel; bevisat ur bolagsunivers). Sidor
+  /forskningsbiblioteket + [ticker] (SeoPageShell, meny ANALYSERA,
+  sitemap+23, korslänk /analyser). Blogggenerator kor-analysblogg.mjs →
+  5 poster (Industrivärden/NP3/Truecaller/H&M/Investor) i blogg-
+  schemat, /blogg plockar automatiskt.
+(C) FORSKNINGSLÄGET (M3): forskningslaget.ts (grön/gul/röd, andel,
+  topp-3, veckans research-bolag via ISO-veckohash — vecka 36: Norsk
+  Hydro; marknadsläge rikt/balanserat/magert/osatt ur fasta trösklar)
+  + /api/forskningslage (1h-cache) + ForskningslageKort på Min Sida
+  (efter morgon-briefing) + /portfolj-forskning-toppen + "veckans
+  research-bolag"-rad i Kunskapsflödet.
+MAIN-VERIFIERING: tsc 43/0 · svit 83 PASS/0/0 (76→83) · Kvalitetsvakten
+9/9 GRÖN. Nästa våg (styrelsens ordning): M1 AI-mentor bolagsfakta →
+M2 AKM2-läge i kalkylatorn → M4 mejl topp-3 → M5 vågnotiser (kräver
+Supabase-persistens) → motorändringar när validerings-kitet kalibrerat.

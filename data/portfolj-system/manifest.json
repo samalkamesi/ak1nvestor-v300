@@ -18,7 +18,7 @@
     {
       "bransch": "industri",
       "bolag": ["ABB.ST", "ATCO-A.ST", "INDU-C.ST", "ALFA.ST", "SAND.ST", "SKF-B.ST", "ASSA-B.ST", "HEXA-B.ST", "ETN", "GE"],
-      "urvalsmotivering": "Sverigetyngt: OMXS-industrins kärna (ABB, Atlas Copco, Indutrade, Alfa Laval, Sandvik, SKF, Assa Abloy, Hexagon) + två USA-jättar (Eaton, GE) för djup dubbelkoll av källorna."
+      "urvalsmotivering": "Sverigetyngt: OMXS-industrins kärna (ABB, Atlas Copco, Industrivärden, Alfa Laval, Sandvik, SKF, Assa Abloy, Hexagon) + två USA-jättar (Eaton, GE) för djup dubbelkoll av källorna. [Rättad 2026-09-04: INDU-C.ST är AB Industrivärden (investmentbolag — P/B 1,03, P/E 3,7, bruttomarginal 100 % i bolagsunivers-data); tidigare stod 'Indutrade' här, ett bolag (INDT-C.ST) som aldrig fanns i universet. Branschetiketten 'industri' är källans etikett — investmentbolagsprofilen flaggas i analysfabrikens risker.]"
     },
     {
       "bransch": "halso",

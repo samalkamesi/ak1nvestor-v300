@@ -13,6 +13,10 @@
       "schedule": "0 5 * * *"
     },
     {
+      "path": "/api/cron/vagvalidering",
+      "schedule": "30 5 * * *"
+    },
+    {
       "path": "/api/cron/expand-courses",
       "schedule": "0 12 * * *"
     },

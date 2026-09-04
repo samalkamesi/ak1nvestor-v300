@@ -31,8 +31,11 @@
  *   D) FIXTURTEST (rena beräkningskärnor, INGET nät): chatbot-nlu, omtanke-,
  *      kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-,
  *      briefing-, badges-, analysbank-, assistent-motorerna + forsknings-
- *      motorerna akm2/karna, riskportfolj, fundamental-vagmotor, uppfoljning
- *      + konfluens-motorns sjalvkontroll på handgjorda rader.
+ *      motorerna akm2/karna, riskportfolj, fundamental-vagmotor, uppfoljning,
+ *      forskningslaget (våg 56 M3), vagvalidering (våg 56 bygg-A: dom-
+ *      protokoll klass×momentum, enighetsscore 40/30/30, rullande träff-%,
+ *      rapportbyggaren) + konfluens-motorns sjalvkontroll på
+ *      handgjorda rader.
  *   MÖS) ÖVERSÄTTNINGSSYSTEMET (våg 52 + våg 54): termbankens garanti-kontrakt,
  *      termKonsistens/siffer-/struktur-/lateral-kontroller (pass+fail),
  *      AR-normalisering av östra siffror, versionshash-determinism,
@@ -132,12 +135,14 @@ const KLASSER_JSON = ["impulsvag", "korrigering", "basbygge", "osatt"];
 //    top-level await stöds ej av tsx:i CJS-läge, därför dynamiska importer inuti IIFE:n) ──
 let VFM: any, ANA: any, NET: any, KON: any, PVA: any, NLU: any, OMT: any, KUR: any, DAS: any;
 let VKN: any, SRP: any, VPL: any, BRE: any, BDG: any, ABK: any, AST: any, KAR: any, RSK: any;
-let FVG: any, UPP: any;
+let FVG: any, UPP: any, VVAL: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
 // LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
 // delarna testas LIVE mot Supabase, se worklog våg 55 L1; sviten kör aldrig nät).
 let OVS: any, KLL: any, KTR: any, MOT: any, ORD: any, LGR: any;
+// FLS (våg 56 M3): forskningslaget.ts — korstabellens läge + veckourval (ren kärna).
+let FLS: any;
 let körVagfundament: (o: { tickers: string[]; vikter?: Record<string, number> }) => Promise<any>;
 let hamtaBalansPoster: (t: string) => Promise<any>;
 let körAnalysMotor: (o: { tickers: string[] }) => Promise<any>;
@@ -1689,6 +1694,122 @@ async function fasD(): Promise<void> {
     );
   }
 
+  // ── forskningslaget (våg 56 M3): rikt-fixtur — antal, andel, topp-3, datering ──
+  {
+    const problem: string[] = [];
+    const rader: any[] = [];
+    // 4 gröna (tie på toppen: lika akm1 ⇒ ticker stigande avgör), 10 gula, 6 röda
+    rader.push(korstadRad("G-B.ST", "teknik", 80, "gron", "2026-08-31"));
+    const tie = korstadRad("G-A.ST", "teknik", 80, "gron", "2026-09-02");
+    tie.akm1MaxMojligt = 100; // andelAvMax = 80/100 = 0.8 (poäng/max aldrig dolt)
+    rader.push(tie);
+    rader.push(korstadRad("G-C.ST", "industri", 70, "gron", "2026-09-03"));
+    rader.push(korstadRad("G-D.ST", "halso", 65, "gron", "2026-08-30"));
+    for (let i = 0; i < 10; i++) rader.push(korstadRad("Y" + String(i) + ".ST", "finans", 55, "gul", "2026-09-01"));
+    for (let i = 0; i < 6; i++) rader.push(korstadRad("R" + String(i) + ".ST", "energi", 30, "rod", "2026-09-01"));
+    const l = FLS.raknaForskningslage(rader, 36);
+    if (l.antal !== 20 || l.grona !== 4 || l.gula !== 10 || l.roda !== 6 || l.osatta !== 0) {
+      problem.push("antal=" + String(l.antal) + " grona=" + String(l.grona) + " gula=" + String(l.gula) + " roda=" + String(l.roda) + " osatta=" + String(l.osatta));
+    }
+    if (Math.abs(l.andelGrona - 0.2) > 1e-9 || l.andelGronaProcent !== 20) problem.push("andelGrona=" + String(l.andelGrona) + " procent=" + String(l.andelGronaProcent));
+    if (l.typ !== "rikt") problem.push("typ=" + String(l.typ) + " (andel gröna 0.2 ≥ 0.10 och andel röda 0.3 ≤ 0.30 ⇒ rikt)");
+    if (String(l.marknadslage).indexOf("rikt") < 0 || String(l.marknadslage).indexOf("4 av 20") < 0) {
+      problem.push("marknadslage=" + String(l.marknadslage));
+    }
+    if (!Array.isArray(l.topp) || l.topp.length !== 3) problem.push("topp=" + String(Array.isArray(l.topp) ? l.topp.length : "ej array"));
+    else {
+      if (l.topp[0].ticker !== "G-A.ST" || l.topp[1].ticker !== "G-B.ST" || l.topp[2].ticker !== "G-C.ST") {
+        problem.push("topp-ordning=" + JSON.stringify(l.topp.map((b: any) => b.ticker)) + " (tie 80/80 ⇒ G-A före G-B)");
+      }
+      if (Math.abs((l.topp[0].andelAvMax as number) - 0.8) > 1e-9) problem.push("andelAvMax=" + String(l.topp[0].andelAvMax) + " (förväntat 0.8)");
+      for (const b of l.topp) {
+        if (["G-A.ST", "G-B.ST", "G-C.ST", "G-D.ST"].indexOf(b.ticker) < 0) problem.push("icke-grön i topp: " + String(b.ticker));
+      }
+    }
+    if (l.senastKontrollerad !== "2026-09-03") problem.push("senastKontrollerad=" + String(l.senastKontrollerad));
+    if (l.veckansBolag.veckonr !== 36 || String(l.veckansBolag.text).indexOf("Vecka 36:") !== 0) {
+      problem.push("veckansBolag.veckonr/text=" + String(l.veckansBolag.veckonr) + "/" + String(l.veckansBolag.text));
+    }
+    if (!l.veckansBolag.bolag || ["G-A.ST", "G-B.ST", "G-C.ST", "G-D.ST"].indexOf(l.veckansBolag.bolag.ticker) < 0) {
+      problem.push("veckansBolag utanför grönapoolen: " + JSON.stringify(l.veckansBolag.bolag && l.veckansBolag.bolag.ticker));
+    }
+    rad(
+      "forskningslaget",
+      "FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet"
+        : problem.slice(0, 6).join("; "),
+      "typ=" + String(l.typ) + " topp=" + JSON.stringify(Array.isArray(l.topp) ? l.topp.map((b: any) => b.ticker) : null),
+    );
+  }
+  // ── forskningslaget: magert (båda trösklarna) + tomt underlag (osatt) ──────
+  {
+    const problem: string[] = [];
+    const tom = FLS.raknaForskningslage([], 36);
+    if (tom.typ !== "osatt" || tom.antal !== 0 || (tom.topp && tom.topp.length !== 0)) problem.push("tom: typ=" + String(tom.typ) + " antal=" + String(tom.antal));
+    if (String(tom.marknadslage).indexOf("levererat") < 0) problem.push("tom text=" + String(tom.marknadslage));
+    if (tom.senastKontrollerad !== "") problem.push("tom senastKontrollerad=" + String(tom.senastKontrollerad));
+    if (tom.veckansBolag.bolag !== null || String(tom.veckansBolag.text).indexOf("inget bolag") < 0) {
+      problem.push("tom veckansBolag=" + JSON.stringify(tom.veckansBolag));
+    }
+    const fattig: any[] = [korstadRad("E-EN.ST", "material", 72, "gron", "2026-09-03")];
+    for (let i = 0; i < 29; i++) fattig.push(korstadRad("M" + String(i) + ".ST", "teknik", 45, "gul", "2026-09-01"));
+    const lFat = FLS.raknaForskningslage(fattig, 36);
+    if (lFat.typ !== "magert" || String(lFat.marknadslage).indexOf("selektion avgör") < 0 || String(lFat.marknadslage).indexOf("1 av 30") < 0) {
+      problem.push("fattig: typ=" + String(lFat.typ) + " text=" + String(lFat.marknadslage) + " (andel gröna 0.033 < 0.08)");
+    }
+    const rodaTung: any[] = [];
+    for (let i = 0; i < 2; i++) rodaTung.push(korstadRad("G" + String(i) + ".ST", "teknik", 72, "gron", "2026-09-01"));
+    for (let i = 0; i < 8; i++) rodaTung.push(korstadRad("R" + String(i) + ".ST", "energi", 30, "rod", "2026-09-01"));
+    const lRod = FLS.raknaForskningslage(rodaTung, 36);
+    if (lRod.typ !== "magert") problem.push("röda-tung: typ=" + String(lRod.typ) + " (andel gröna 0.2 men andel röda 0.8 > 0.35 ⇒ magert)");
+    rad(
+      "forskningslaget",
+      "FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "[] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln"
+        : problem.slice(0, 6).join("; "),
+      "tom=" + String(tom.typ) + " fattig=" + String(lFat.typ) + " rodaTung=" + String(lRod.typ),
+    );
+  }
+  // ── forskningslaget: determinism + ISO-veckorum ────────────────────────────
+  {
+    const problem: string[] = [];
+    if (FLS.veckoNummer(new Date("2026-09-03T12:00:00Z")) !== 36 || FLS.veckoNummer(new Date("2026-01-01T12:00:00Z")) !== 1) {
+      problem.push("veckoNummer(2026-09-03)=" + String(FLS.veckoNummer(new Date("2026-09-03T12:00:00Z"))) + " (förväntat 36); veckoNummer(2026-01-01)=" + String(FLS.veckoNummer(new Date("2026-01-01T12:00:00Z"))) + " (förväntat 1)");
+    }
+    const gronaPool: any[] = [
+      korstadRad("G-A.ST", "teknik", 80, "gron", "2026-09-03"),
+      korstadRad("G-B.ST", "teknik", 75, "gron", "2026-09-03"),
+      korstadRad("G-C.ST", "industri", 70, "gron", "2026-09-03"),
+      korstadRad("G-D.ST", "halso", 65, "gron", "2026-09-03"),
+    ];
+    const d1 = JSON.stringify(FLS.raknaForskningslage(gronaPool, 36));
+    const d2 = JSON.stringify(FLS.raknaForskningslage(gronaPool, 36));
+    if (d1 !== d2) problem.push("raknaForskningslage ej deterministisk (2× JSON skiljer)");
+    const v36a = FLS.raknaForskningslage(gronaPool, 36).veckansBolag.bolag.ticker;
+    const v36b = FLS.raknaForskningslage(gronaPool, 36).veckansBolag.bolag.ticker;
+    if (v36a !== v36b) problem.push("samma vecka skiljer: " + String(v36a) + " vs " + String(v36b));
+    const fanga = new Set<string>();
+    for (let v = 36; v <= 43; v++) {
+      const b = FLS.raknaForskningslage(gronaPool, v).veckansBolag.bolag;
+      if (!b || gronaPool.map((r) => r.ticker).indexOf(b.ticker) < 0) { problem.push("v" + String(v) + " utanför poolen"); break; }
+      fanga.add(b.ticker);
+    }
+    if (fanga.size < 2) problem.push("veckourotering träffar bara " + String(fanga.size) + " bolag (hashen roterar ej)");
+    rad(
+      "forskningslaget",
+      "DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump"
+        : problem.slice(0, 6).join("; "),
+      "v36=" + String(v36a) + " fangat=" + String(fanga.size),
+    );
+  }
+
   // ── konfluens: sjalvkontroll på giltiga fixture-rader ──────────────────────
   {
     const giltiga = [
@@ -1743,6 +1864,165 @@ async function fasD(): Promise<void> {
         ? "sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll"
         : problem.slice(0, 6).join("; "),
       "7 fall verifierade",
+    );
+  }
+
+  // ── vagvalidering (våg 56 bygg-A): DOM-PROTOKOLLET klass×momentum → dom ────
+  {
+    const problem: string[] = [];
+    const D = VVAL.domVagvalidering;
+    // riktning: teckenprotokollet (impulsvåg>0, korrigering<0 — gränsfall 0 dömer ej)
+    if (D("impulsvåg", 12.5) !== "traff") problem.push("impulsvåg +12,5%");
+    if (D("impulsvåg", 0.4) !== "traff") problem.push("impulsvåg svagt positiv (+0,4)");
+    if (D("impulsvåg", -0.4) !== "miss") problem.push("impulsvåg svagt negativ (−0,4)");
+    if (D("impulsvåg", 0) !== "osatt") problem.push("impulsvåg exakt 0 (skulle dömas)");
+    if (D("korrigering", -7) !== "traff") problem.push("korrigering −7");
+    if (D("korrigering", -0.1) !== "traff") problem.push("korrigering svagt negativ");
+    if (D("korrigering", 3) !== "miss") problem.push("korrigering +3");
+    if (D("korrigering", 0) !== "osatt") problem.push("korrigering exakt 0");
+    // basbygge: motorns EGEN tröskel ±6 % inklusivt (hedervändig symmetri)
+    if (D("basbygge", 6) !== "traff") problem.push("basbygge +6 exakt på tröskeln (skulle vara träff — ≤ som motorn)");
+    if (D("basbygge", -6) !== "traff") problem.push("basbygge −6 exakt på tröskeln");
+    if (D("basbygge", 6.1) !== "miss") problem.push("basbygge +6,1");
+    if (D("basbygge", -12) !== "miss") problem.push("basbygge −12");
+    // osatt döms ALDRIG — saknad klass, saknat/ogiltigt momentum
+    if (D("osatt", 99) !== "osatt") problem.push("osatt klass med momentum");
+    if (D("impulsvåg", null) !== "osatt") problem.push("impulsvåg momentum=null");
+    if (D("impulsvåg", Number.NaN) !== "osatt") problem.push("impulsvåg momentum=NaN");
+    if (D("spökvalue", 5) !== "osatt") problem.push("okänd klass-sträng");
+    if (D(null, 5) !== "osatt") problem.push("klass=null");
+    // klassFranTal — spegling av motorns ±0,50-gränser
+    if (VVAL.klassFranTal(0.5) !== "impulsvåg") problem.push("klassFranTal(0,5)");
+    if (VVAL.klassFranTal(-0.5) !== "korrigering") problem.push("klassFranTal(−0,5)");
+    if (VVAL.klassFranTal(0.49) !== "basbygge") problem.push("klassFranTal(0,49)");
+    if (VVAL.klassFranTal(null) !== "osatt") problem.push("klassFranTal(null)");
+    rad(
+      "vagvalidering",
+      "DOM-PROTOKOLL v1: klass×momentum → traff/miss/osatt (17 fall + gränser)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "impulsvåg→träff vid positivt momentum (även +0,4), miss vid negativt; korrigering spegelvät; exakt 0 dömer inte riktning → osatt; basbygge träff vid |mom| ≤ 6 % (tröskeln inklusiv, motorns egen gräns — hedervändig symmetri), miss vid 6,1; osatt klass/null/NaN → osatt (ALDRIG dömt); klassFranTal speglar ±0,50 exakt"
+        : problem.slice(0, 6).join("; "),
+      "basbygge gräns 6/6,1 + riktning 0,4/−0,4",
+    );
+  }
+  // ── vagvalidering: ENIGHETSSCORE 40/30/30 omräknad för hand + determinism ──
+  {
+    const problem: string[] = [];
+    const celler = [
+      { medelBekraftad: true, momentum: 12 },
+      { medelBekraftad: false, momentum: 3 },
+      { medelBekraftad: null, momentum: null },
+    ];
+    // för hand: 40·(1/2) + 30·((1+0,5)/2) + 30·(2/5) = 20+22,5+12 = 54,5 → 55
+    const s1 = VVAL.raknaEnighetsscore(celler, 5);
+    if (s1 !== 55) problem.push("score=" + String(s1) + " (förväntat 55 ur 40·0,5 + 30·0,75 + 30·0,4)");
+    const s2 = VVAL.raknaEnighetsscore(celler, 5);
+    if (s1 !== s2) problem.push("ej deterministisk");
+    if (VVAL.raknaEnighetsscore([], 5) !== null) problem.push("tom lista skulle ge null");
+    if (VVAL.raknaEnighetsscore([{ medelBekraftad: true, momentum: null }], 5) !== null) problem.push("helt osatt skulle ge null");
+    // fulltäckande allt-bekräftad stark mätning → 100 (tak)
+    const max = VVAL.raknaEnighetsscore([{ medelBekraftad: true, momentum: 9 }, { medelBekraftad: true, momentum: 7 }], 2);
+    if (max !== 100) problem.push("max=" + String(max) + " (förväntat 100)");
+    // utan bekräftelser (ren basbygge: alla null) maxas axeln på 0 — hederligt
+    const bas = VVAL.raknaEnighetsscore([{ medelBekraftad: null, momentum: 1 }, { medelBekraftad: null, momentum: -1 }], 2);
+    if (bas !== Math.round(30 * (1 / 6 + 1 / 6) / 2 + 30)) problem.push("basbygge-score=" + String(bas));
+    rad(
+      "vagvalidering",
+      "ENIGHETSSCORE 40/30/30 omräknad för hand (55/100) + tak 100 + determinism",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "rådets formel: 40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,|mom|/6) + 30·täckning (bedömda/totalt); fixture 2 bedömda av 5 med 1 av 2 bekräftade → 55; komplett bekräftad stark mätning → 100; helt osatt → null (aldrig påhittad); heltalsavrundning deterministisk 2×"
+        : problem.slice(0, 6).join("; "),
+      "fixture=55/100 max=100/100",
+    );
+  }
+  // ── vagvalidering: DOMBYGGE ur två ronder + rullande räknare (ren funktion) ─
+  {
+    const problem: string[] = [];
+    const klasser: any = {
+      "AAA.ST": { mikro: "impulsvåg", kort: "korrigering", medellang: "basbygge", lang: "osatt", mega: "spökvalue" },
+    };
+    const momenter: any = {
+      "AAA.ST": { mikro: 3.1, kort: -2, medellang: 6, lang: null, mega: -8 },
+    };
+    const domar = VVAL.byggaDomar(["AAA.ST", "BBB.ST"], klasser, momenter);
+    if (domar.length !== 10) problem.push("antal=" + String(domar.length) + " (förväntat 2 tickers × 5 horisonter)");
+    const d0 = domar[0];
+    if (!d0 || d0.ticker !== "AAA.ST" || d0.horisont !== "mikro" || d0.klassForrigeRond !== "impulsvåg" || d0.utfallMomentum !== 3.1 || d0.dom !== "traff") {
+      problem.push("första dom: " + JSON.stringify(d0));
+    }
+    const hitta = (t: string, h: string) => domar.find((d: any) => d.ticker === t && d.horisont === h);
+    if (hitta("AAA.ST", "kort").dom !== "traff") problem.push("korrigering −2 → skulle vara träff");
+    if (hitta("AAA.ST", "medellang").dom !== "traff") problem.push("basbygge +6 (på tröskeln) → skulle vara träff");
+    if (hitta("AAA.ST", "lang").dom !== "osatt") problem.push("osatt klass → skulle vara osatt");
+    if (hitta("AAA.ST", "mega").klassForrigeRond !== "osatt" || hitta("AAA.ST", "mega").dom !== "osatt") problem.push("okänd klass-sträng saneras ej till osatt");
+    if (hitta("BBB.ST", "mikro").dom !== "osatt") problem.push("ticker utan momentum → skulle vara osatt");
+    // invariant: varje dom är återskapbar ur sina EGNA fält (spårbarhet)
+    for (const d of domar) {
+      if (VVAL.domVagvalidering(d.klassForrigeRond, d.utfallMomentum) !== d.dom) { problem.push("dom ej återskapbar: " + JSON.stringify(d)); break; }
+    }
+    rad(
+      "vagvalidering",
+      "DOMBYGGE ur två ronder (klass@T vs momentum@T+1) + dom-återskapning",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "kanonisk ordning (universum × horisont): AAA mikro impulsvåg+3,1→träff, kort korrigering−2→träff, medellång basbygge+6→träff, lång osatt→osatt, okänd klass saneras till osatt; BBB utan momentum→osatt; varje rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — granskningsbar rad för rad"
+        : problem.slice(0, 6).join("; "),
+      "10 domar varav 3 dömda träff + 7 osatta",
+    );
+  }
+  // ── vagvalidering: RULLANDE räknare + träff-% + rapporttext ────────────────
+  {
+    const problem: string[] = [];
+    const r0 = VVAL.tomRullande();
+    if (Object.keys(r0).length !== 5) problem.push("horisonter=" + String(Object.keys(r0).length));
+    if (JSON.stringify(r0.mikro["impulsvåg"]) !== JSON.stringify({ traff: 0, miss: 0, osatt: 0 })) problem.push("nollräknare saknas");
+    const domLista = [
+      { ticker: "A", horisont: "mikro", klassForrigeRond: "impulsvåg", utfallMomentum: 3, dom: "traff" },
+      { ticker: "A", horisont: "mikro", klassForrigeRond: "impulsvåg", utfallMomentum: -3, dom: "miss" },
+      { ticker: "A", horisont: "mikro", klassForrigeRond: "osatt", utfallMomentum: null, dom: "osatt" },
+      { ticker: "A", horisont: "kort", klassForrigeRond: "basbygge", utfallMomentum: 1, dom: "traff" },
+      { ticker: "A", horisont: "spök", klassForrigeRond: "impulsvåg", utfallMomentum: 1, dom: "traff" },
+    ];
+    const r1 = VVAL.rullaFram(r0, domLista);
+    if (JSON.stringify(r1.mikro["impulsvåg"]) !== JSON.stringify({ traff: 1, miss: 1, osatt: 0 })) problem.push("mikro/impulsvåg: " + JSON.stringify(r1.mikro["impulsvåg"]));
+    if (r1.mikro["osatt"].osatt !== 1) problem.push("osatt-klass räknas ej i eget fack");
+    if (r1.kort["basbygge"].traff !== 1) problem.push("kort/basbygge");
+    if (JSON.stringify(r1.mikro["basbygge"]) !== JSON.stringify({ traff: 0, miss: 0, osatt: 0 })) problem.push("orörda fack nollställda");
+    if (r1["spök"] !== undefined) problem.push("okänd horisont skapar eget fack");
+    if (VVAL.traffProcent(r1.mikro["impulsvåg"]) !== 50) problem.push("traffProcent=50");
+    if (VVAL.antalDomda(r1.mikro["impulsvåg"]) !== 2) problem.push("antalDomda=2");
+    if (VVAL.osattAndelProcent(r1.mikro["osatt"]) !== 100) problem.push("osattAndel=100");
+    if (VVAL.traffProcent({ traff: 0, miss: 0, osatt: 5 }) !== null) problem.push("n=0 → null");
+    const r2 = VVAL.rullaFram(r1, domLista);
+    if (r2.mikro["impulsvåg"].traff !== 2 || r2.mikro["impulsvåg"].miss !== 2) problem.push("andra ronden dubblerar ej");
+    if (r1.mikro["impulsvåg"].traff !== 1) problem.push("PURE brutet: r1 muterades av rullaFram");
+    // rapporten — träff-%-tabell per horisont+klass, n, osatt-andel, protokoll
+    const rapport = VVAL.byggVagvalideringRapport({
+      genererad: "2026-09-04T05:30:00.000Z", datum: "2026-09-04", universum: ["A"],
+      kallaKlasser: "vagscan-event", kallaMomentum: "vagscan-event",
+      domar: domLista, rullande: r1, rullandeSedan: "2026-09-04",
+    });
+    if (rapport.indexOf("# Vågvalidering") !== 0) problem.push("rubrik");
+    if (rapport.indexOf("vagvalidering/1") < 0) problem.push("protokollversion saknas");
+    if (rapport.indexOf("50 % (n=2)") < 0) problem.push("träff-%-cell '50 % (n=2)' saknas");
+    if (rapport.indexOf("Dom-protokoll") < 0) problem.push("protokolltext saknas");
+    if (rapport.indexOf("osatta") < 0) problem.push("osatt-andel saknas");
+    const rapport2 = VVAL.byggVagvalideringRapport({
+      genererad: "2026-09-04T05:30:00.000Z", datum: "2026-09-04", universum: ["A"],
+      kallaKlasser: "vagscan-event", kallaMomentum: "vagscan-event",
+      domar: domLista, rullande: r1, rullandeSedan: "2026-09-04",
+    });
+    if (rapport !== rapport2) problem.push("rapport ej deterministisk");
+    rad(
+      "vagvalidering",
+      "RULLANDE träff% per (horisont,klass) + rapport (tabell, n, osatt-andel)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta — byte-identisk 2×"
+        : problem.slice(0, 6).join("; "),
+      "rond1=1/1 rond2=2/2 traff=50%",
     );
   }
 }
@@ -2400,12 +2680,14 @@ let fardig = false;
   RSK = await import("./src/lib/portfolj-forskning/riskportfolj");
   FVG = await import("./src/lib/portfolj-forskning/fundamental-vagmotor");
   UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
+  VVAL = await import("./src/lib/vagvalidering");
   OVS = await import("./src/lib/oversattning/termbank");
   KLL = await import("./src/lib/oversattning/kalla");
   KTR = await import("./src/lib/oversattning/kontroller");
   MOT = await import("./src/lib/oversattning/motor");
   LGR = await import("./src/lib/oversattning/lager");
   ORD = await import("./src/lib/ordlista");
+  FLS = await import("./src/lib/forskningslaget");
   körVagfundament = VFM.körVagfundament;
   hamtaBalansPoster = VFM.hamtaBalansPoster;
   körAnalysMotor = ANA.körAnalysMotor;
@@ -2549,7 +2831,7 @@ function byggRapport(payload, meta) {
   }
   linjer.push("");
   linjer.push("## Täckningsgrad (våg 49 + våg 52)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor och uppföljning — samt (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

@@ -4037,3 +4037,703 @@ Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, kon
 - (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
 
 _Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._
+---
+
+# Motorervalidering — 100%-väktaren — 2026-09-04T14:30:41.941Z
+
+- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)
+- **Miljö:** node v22.19.0 på win32; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)
+- **Körtid:** 6.6 s (budget 90 s, inom budget)
+- **Internt (tsx):** 4.3 s; startad 2026-09-04T14:30:37.541Z, klar 2026-09-04T14:30:41.871Z
+- **Policy (våg 49):** varje deterministisk motor minst ett deterministiskt test; **SKIP är förbjudet** — under 100% PASS = FAIL.
+
+**RESULTAT: 79 PASS / 0 FAIL / 0 SKIP**
+
+## Sammanfattning
+
+| Motor | PASS | FAIL | SKIP |
+|---|---:|---:|---:|
+| vagfundament | 5 | 0 | 0 |
+| vagfundament/portfölj | 1 | 0 | 0 |
+| analys | 5 | 0 | 0 |
+| netnet | 3 | 0 | 0 |
+| netnet/NCAV | 3 | 0 | 0 |
+| konfluens | 4 | 0 | 0 |
+| portfolj-vagor | 1 | 0 | 0 |
+| gränser | 7 | 0 | 0 |
+| chatbot-nlu | 2 | 0 | 0 |
+| omtanke-motor | 2 | 0 | 0 |
+| kurstips | 2 | 0 | 0 |
+| dashfraga | 2 | 0 | 0 |
+| vagkon | 2 | 0 | 0 |
+| spaced-repetition | 2 | 0 | 0 |
+| veckoplan | 2 | 0 | 0 |
+| briefing | 2 | 0 | 0 |
+| badges | 2 | 0 | 0 |
+| analysbank | 1 | 0 | 0 |
+| assistent | 2 | 0 | 0 |
+| akm2/kärna | 2 | 0 | 0 |
+| riskportfolj | 2 | 0 | 0 |
+| fundamental-vagmotor | 2 | 0 | 0 |
+| uppfoljning | 2 | 0 | 0 |
+| forskningslaget | 3 | 0 | 0 |
+| mos-oversattning | 18 | 0 | 0 |
+| **Totalt** | **79** | **0** | **0** |
+
+## Kontroller i detalj
+
+| Motor | Kontroll | Resultat | Värden | Detalj | T+ (ms) |
+|---|---|---|---|---|---:|
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} sammanfattning={"impulsvag":16,"korrigering":8,"basbygge":17,"osatt":59} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1540 |
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} sammanfattning={"impulsvag":22,"korrigering":5,"basbygge":13,"osatt":60} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1541 |
+| vagfundament/portfölj | STRUKTUR portföljaggregering + procentfält | **PASS** | tackningProcent=100 totalText=Portföljen i genomsnitt: basbygge på mega | matris 20×5 i [-1,1]; kategorier 7×5; total 5; radTexter 7; tackningProcent i [0,100] | 1541 |
+| vagfundament | MATEMATIK kategorier+total omräknade (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} | 19 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000250 | 1541 |
+| vagfundament | MATEMATIK kategorier+total omräknade (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} | 20 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000313 | 1541 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (VOLV-B.ST) | **PASS** | pris=348.3 pos52=0.83 sammanfattning={"bull":16,"bear":0,"neutral":9} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1541 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (SAAB-B.ST) | **PASS** | pris=592 pos52=0.712 sammanfattning={"bull":17,"bear":6,"neutral":2} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1541 |
+| analys | MATEMATIK fib/pos52/vager omräknade (VOLV-B.ST) | **PASS** | fib38=315.7866 fib62=279.5134 momentum={"mikro":-0.0003,"kort":0.0763,"medellang":0.2488,"lang":0.5425,"mega":0.8301} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1541 |
+| analys | MATEMATIK fib/pos52/vager omräknade (SAAB-B.ST) | **PASS** | fib38=540.5718 fib62=411.9282 momentum={"mikro":-0.0744,"kort":0.1132,"medellang":0.1163,"lang":3.1154,"mega":8.6182} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1541 |
+| netnet | STRUKTUR screeningsrad (VOLV-B.ST) | **PASS** | kurs=348.3 ncavPerAktie=-44.7018 forhallande=null klass=ej pe=19.7561 pb=3.7146 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1541 |
+| netnet | STRUKTUR screeningsrad (SAAB-B.ST) | **PASS** | kurs=592 ncavPerAktie=19.0639 forhallande=31.0535 klass=ej pe=45.1564 pb=6.3535 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1541 |
+| netnet/NCAV | NCAV omräknad för hand (VOLV-B.ST) | **PASS** | CA=305570000000 CL=265914000000 LTD=130555000000 aktier=2033452084 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = -44.701816 ≈ motorns -44.7018; förhållande=kurs÷NCAV och Grahams klass stämmer | 1541 |
+| netnet/NCAV | NCAV omräknad för hand (SAAB-B.ST) | **PASS** | CA=82578000000 CL=63744000000 LTD=8475000000 aktier=543383388 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = 19.063888 ≈ motorns 19.0639; förhållande=kurs÷NCAV och Grahams klass stämmer | 1541 |
+| netnet/NCAV | GRAHAM_TROSKEL- och MAX_TICKER_PER_ANROP-konstanter | **PASS** | 0.667/15 | GRAHAM_TROSKEL=0.667 (förväntat 0.667 = 2/3); MAX_TICKER_PER_ANROP=15 (förväntat 15) | 1541 |
+| konfluens | STRUKTUR+SJÄLVKONTROLL skannaKonfluens (VOLV-B.ST, SAAB-B.ST) | **PASS** | VOLV-B.ST: konfluens=27 vg=5 klass=null \| SAAB-B.ST: konfluens=28 vg=0 klass=null | 2 rader i indataordning; motorns egna sjalvkontroll ok (poäng heltal 0–100/null, klass konsistent med trösklarna 70/50/3, tickers unika) | 1542 |
+| portfolj-vagor | STRUKTUR+MATEMATIK viktat snitt omräknat ur perAktie (2 tickers, likavikter) | **PASS** | sammanfattning={"impulsvag":4,"korrigering":0.5,"basbygge":0.5,"osatt":0} | perAktie-profiler en-hot per horisont; portföljandelen omräknad för hand som Σ(vikt×andel)/Σvikt per klass och horisont; sammanfattningen summerar 5 | 1542 |
+| vagfundament | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=10279 | två separata körningar gav byte-identisk JSON (10279 tecken) — konsistent med frusen marknadsdata | 1751 |
+| analys | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=1231 | två separata körningar gav byte-identisk JSON (1231 tecken) | 2424 |
+| netnet | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=141 | två separata körningar gav byte-identisk JSON (141 tecken) | 2585 |
+| konfluens | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=176 | två separata körningar gav byte-identisk JSON (176 tecken) — konfluenspoängen är reproducerbar ur de avrundade dimensionerna | 2811 |
+| gränser | vagfundament okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen fundamentaldata (Yahoo fundamentals-timeseries)"} | snyggt fel: 'ingen fundamentaldata (Yahoo fundamentals-timeseries)' | 3141 |
+| gränser | analys okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen data (Yahoo/MarketStack)"} | snyggt fel: 'ingen data (Yahoo/MarketStack)' | 3141 |
+| gränser | netnet okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ofullständig balansdata","klass":null} | snyggt fel: 'ofullständig balansdata' | 3141 |
+| gränser | netnet formatogiltig ticker 'BAD TICKER!' → valideringsfel | **PASS** | {"ticker":"BAD TICKER!","kurs":null,"ncavPerAktie":null,"forhallande":null,"klass":null,"fel":"ogiltig ticker"} | fel-text: 'ogiltig ticker' | 3141 |
+| gränser | konfluens tom tickerlista → tomt svar utan krasch | **PASS** | 0 rader | skannaKonfluens([]) returnerade [] | 3141 |
+| gränser | tomma tickerlistor → tomma svar (alla motorer) | **PASS** | 0 rader | vagfundament/analys/netnet returnerade alla [] utan krasch | 3141 |
+| gränser | portfolj-vagor tom lista → tom struktur + pedagogisk text | **PASS** | {"impulsvag":0,"korrigering":0,"basbygge":0,"osatt":0} | perAktie={}, portföljprofil nollställd, totalText närvarande | 3141 |
+| chatbot-nlu | FIXTUR normalisering + ämne + levenshtein + följdfråga | **PASS** | ren1='vad ar pe' ren2='borsen' | 'Vadd är P/E?'→'vad ar pe'→pe; 'brasken'→'borsen'; bruttomarginal→v07; mr market→mrmarket; levenshtein 0/1/2; 'och P/E?'=följdfråga men 'Vad är P/E?'=ej | 3155 |
+| chatbot-nlu | DETERMINISM 5 frågor 2× (JSON identiskt) | **PASS** | ["pe","borsen","v07","v04","moat"] | [{"ren":"vad ar pe","amne":"pe"},{"ren":"borsen","amne":"borsen"},{"ren":"hur raknar man bruttomarginal","amne":"v07"},{"ren":"och ps","amne":"v04"},{"ren":"vad ar moat","amne":"moat"}] | 3157 |
+| omtanke-motor | FIXTUR lasOmtanke: radslOro (prio 1), aterkomsten, harmoni=null | **PASS** | oro=radslOro aterkomsten=aterkomsten harmoni=null | 'förstår inte'→radslOro prio 1 länk /dagens-pass; 40 dagar borta→aterkomsten prio 2; lugn meny-surfare utan signaler→null (tystnad är omtanke); determinism 2× | 3159 |
+| omtanke-motor | FIXTUR lasSignaler: tracer/member/chat-minne tolkas ur localStorage | **PASS** | tracer=2 xp=120 fragor=2 | 2 tracer-sidor, xp=120, 2 mentorfrågor med senaste text, senastAktiv från senaste ts, samtycke+profil=true | 3159 |
+| kurstips | FIXTUR raknaKurstips: första steg v01 (100p), fälttyper, exkludering | **PASS** | antal=3 första=v01-forsaljningstillvaxt | ny elev (tom localStorage) → 1–3 tips, första = V01 Försäljningstillväxt med poäng 100, alla fält närvarande, exkluderaSlug utesluter | 3161 |
+| kurstips | DETERMINISM raknaKurstips 2× (JSON identiskt) | **PASS** | längd=620 | samma shim-tillstånd → byte-identiska tips | 3162 |
+| dashfraga | FIXTUR intents: streak → /dagens-pass, fallback, hälsning | **PASS** | streakLank=/dagens-pass | streak-fråga → streak-svar med länk /dagens-pass; okänd fråga → fallback-texten; 'hej' → välkomsttext; determinism 2× | 3164 |
+| dashfraga | FIXTUR vågkarta-intent degraderar gracefult när nät saknas | **PASS** | ikon=🌊 | fetch mot /api/vagscan/senaste misslyckas i Node (relativ URL) → dokumenterad fallback 'Ingen vågkarta har sparats ännu' — modulen kraschar aldrig på nätfel | 3164 |
+| vagkon | MATEMATIK σ + P10/P50/P90 omräknade för hand (S0·exp(z·σ·√t)) | **PASS** | sigma=0.08965827311693393 medianSlut(mega)=130 | σ (sampel, n−1) över log-returer omräknad med oberoende kodväg; medianen platt på S0=130; 48 stegs band verifierade mot √t-formeln; bandet breddar monoton | 3165 |
+| vagkon | FIXTUR horisontval, otillräcklig data, icke-tal rensas, determinism | **PASS** | n(ren)=5 | delmängd ['mega'] → endast mega i kanonisk ordning; <3 punkter → otillracklig utan horisonter; icke-tal (NaN) rensas ur historiken (negativa/0 är äkta tal — de bidrar bara inte till σ); 2× körning JSON-identisk | 3166 |
+| spaced-repetition | FIXTUR SM-2: EF'=EF+(0.1−q(0.08+(5−q)0.02)); 1→6→×EF; q<3 nollställer | **PASS** | [{"facit":2.2,"intervall":1,"repetitioner":1,"nastRepetition":"2026-09-05"},{"facit":1.9,"intervall":6,"repetitioner":2,"nastRepetition":"2026-09-10"},{"facit":1.72,"intervall":1,"repetitioner":0,"nastRepetition":"2026-09-05"},{"facit":1.42,"intervall":1,"repe | från jungfruligt kort: q5 → facit 2.2/rep 1/intervall 1; q4 → facit 1.9/rep 2/intervall 6; q2 → rep 0/intervall 1; q5 igen → rep 1 | 3166 |
+| spaced-repetition | FIXTUR SM-2 forts: facitgolv, tak 365, default-status, kortunderlag, nästa datum | **PASS** | kort=140 kategorier=7 | facit 1.3 med q5 → 1.3 (SM-2-steget 1.0 under golvet 1.3), intervall round(100×1.3)=130; intervall 400 → tak 365; okänt kort → default 2.5/0/0/null; 140 kort med unika id:n i 7 kategorier; nastRepetition ≈ idag+intervall | 3167 |
+| veckoplan | FIXTUR veckoNummer: ISO-veckor 2026-01-01→1, 2026-01-05→2, 2027-01-01→53 | **PASS** | v1/v2/v53 | ISO 8601-veckonummer (måndag start, torsdag definierar veckan): torsdag 1 jan 2026 → v1, måndag 5 jan → v2, fredag 1 jan 2027 → v53 | 3167 |
+| veckoplan | FIXTUR raknaVeckoPlan 75/25 min + lasKlara/markeraKlar-toggle + determinism | **PASS** | rader75=8 summa=74 rader25=5 | 75 min → 5 pass (mån–fre, 5 min) + kurstillfällen ≤ budget; 25 min → exakt 5 pass; kryss läses/toggLAS per veckonummer; samma veckohash → identisk plan | 3169 |
+| briefing | FIXTUR halsningFranTimme + vagLageFranVagdata + morgonMening exakt | **PASS** | m1='God morgon, Nivå 3 — vågkartan andas stigande impulser och d…' | morgon<11/dag/kväll>=17; argmax över universumsumman med mjuk null-degradering; morgonmeningen exakt mot mallen i alla tre streak-varianter (7/1/0) | 3169 |
+| briefing | FIXTUR raknaBriefing: struktur + determinism (utom klockstyrd hälsning) | **PASS** | niva=1 xp=0 klara=0 | niva/xp/klaraKurser finita; vagdata=null (degradering utan nät); mening alltid närvarande; alla fält utom den klockstyrdda hälsningen byte-identiska 2× | 3171 |
+| badges | FIXTUR BADGER-struktur (≥28, unika, 5 kategorier) + badgeStatus tom shim | **PASS** | badger=29 | 29 meriter med unika id:n, giltiga kategorier och komplett BADGE_MAP; tom shim → inga upplåsta, procent i [0,100], framsteg alltid text | 3194 |
+| badges | FIXTUR nivå-trösklar: 550 XP→nivå 6 (niva-5=100%), 3 kurser→kurser-5=60%, streak-3=100%, quiz + geBadge-kontrakt | **PASS** | niva-5=100% kurser-5=60% | tröskelberäkningen (stapel = låst [0,mal], procent = min(100, round(nu/mal×100))) verifierad på fyra badges; geBadge true endast första gången, okänt id → false | 3194 |
+| analysbank | FIXTUR spara/läsa/uppdatera (ny=true, samma id=false), nyast först, tak 50, ogiltig rad | **PASS** | rader efter 57 sparningar=0 | bankens localStorage-kontrakt: första sparning true, uppdatering false, datumsortering nyast först, MAX_RADER=50, normalisering avvisar rader utan id | 3198 |
+| assistent | FIXTUR raknaProaktivaForslag (streak 0 → /dagens-pass prio 100) + frustration + optimal tid | **PASS** | forslag=1 forsta=/dagens-pass | bruten streak → högst prioritet /dagens-pass; listan aldrig tom, dedup på länk, maxAntal kapsar; frustration = bruten kedje + ≥30 min + 0<quiz<50%; dygnsrytm majoritetsregel med exakta texter | 3198 |
+| assistent | FIXTUR genereraHalsning (klockprefix + namntilltal) + determinism | **PASS** | God dag, Elev — 1 kurs i ryggen och en rytm som vä | hälsningen följer dygnsrytmen (morgon/dag/kväll), tilltalar eleven med namn och speglar läget; förslagen byte-identiska 2× | 3199 |
+| akm2/kärna | FIXTUR raknaAKM1: HEL (Σpoang=totalt, 0–5, 7 kategorier) + NUL (allt osatt → 0) | **PASS** | HEL totalt=31 NUL totalt=0 | HEL-fixtur: 31/100 = Σ(V01–V20)-poäng omräknad exakt; NUL-fixtur: totalt 0 utan gissade poäng (ärlighetsprincipen); datum = k.hamtat | 3200 |
+| akm2/kärna | FIXTUR projektionsinvarianten + hård kassa-port (NEG ≤ 45) + determinism | **PASS** | NEG komposit=2 HEL komposit=31 | projiceraAKM1(raknaAKM2(HEL, akm1-klassisk)) === raknaAKM1(HEL) byte-vis; NEG (kassa 10 mån) → komposit 2 ≤ 45; lager1 o modifierad; 2× JSON-identisk | 3202 |
+| riskportfolj | FIXTUR 9 riskprofiler: horisontvikter summerar 1, spridningstak, MIN/MAX_INNEHAV | **PASS** | konservativ maxPerAktie=0.08 tillväxt=0.15 | 3 nivåer × 3 takter; varje profils horisontviktning summerar exakt 1 (mikro lägst); maxPerAktie ≤ maxPerBransch; konservativ tätare än tillväxt; 8–15 innehav | 3202 |
+| riskportfolj | FIXTUR byggPortfolj syntetisk pool (15 kandidater, 5 branscher): 8–15 innehav, Σvikt=1, tak, inga BROTT | **PASS** | innehav=15 viktsumma=1 | 15 innehav; vikter inom maxPerAktie=0.11; Σvikt=1 exakt; branschbelastning ≤ maxPerBransch=0.3; inga strikta krav brutna; 2× JSON-identisk | 3205 |
+| fundamental-vagmotor | FIXTUR klassaVag: stigande→impulsvag, fallande→korrigering, flat→basbygge (×5 horisonter), kort→osatt | **PASS** | rost a/b/c på stigande: impulsvag/impulsvag/impulsvag | trippelröstningen (teckenvändning + regression + delperiod, ≥2 av 3) enig på alla fem horisonter för rena monoton serier och plan serie; <3 punkter → osatt (gissar aldrig) | 3206 |
+| fundamental-vagmotor | FIXTUR raknaFVag: 20 variabler, giltiga klasser/dynamik, NUL→osatt, determinism | **PASS** | variabler=20 | HEL-fixtur → alla 20 AKM1-variabler klassade med anteckning; NUL-fixtur → samtliga osatta (motorn gissar aldrig); 2× JSON-identisk | 3208 |
+| uppfoljning | FIXTUR skapaSnapshot: förändringar mot föregående (AKM1 70→82, pris 100→125), datum härleds, ogiltig klass saneras | **PASS** | dAKM1=12 dpris=0.25 | ΔAKM1=12, prisförändring=0.25 (125/100−1) omräknade exakt; datum deterministiskt ur senastKontrollerad; ogiltig vågklass → 'osatt', aldrig gissad | 3208 |
+| uppfoljning | FIXTUR jamforDåNu: delta/pris/vågbytes omräknade, betydelse stor/man/liten | **PASS** | betydelser=["stor","liten","man"] | J1: AKM1 +12 & fundamental byte på LÅNG → 'stor'; J2: delta 2 & pris +2,5 % utan bytes → 'liten'; J3: pris +30 % ≥ 20 % → 'man'; ny bolag utan tidigare mätning → delta null | 3209 |
+| forskningslaget | FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering | **PASS** | typ=rikt topp=["G-A.ST","G-B.ST","G-C.ST"] | andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet | 3209 |
+| forskningslaget | FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert | **PASS** | tom=osatt fattig=magert rodaTung=magert | [] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln | 3209 |
+| forskningslaget | DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar | **PASS** | v36=G-D.ST fangat=4 | 2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump | 3210 |
+| konfluens | FIXTUR sjalvkontroll: 6 giltiga fixture-rader (alla klassvägen i specifikationen) | **PASS** | ok=true fel=0 | Konfluens/Värde-sover/Vågor-utan-golv/null-på-gränsen/Ingen-bild(<3 källor)/null(3 källor, osatta pelare) — samtliga accepteras med rätt tickerordning | 3210 |
+| konfluens | FIXTUR sjalvkontroll avvisar: poäng 101/-5, klassfel, dubletter, >10 tickers, datakallor 4 | **PASS** | 7 fall verifierade | sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll | 3210 |
+| mos-oversattning | TERMBANK struktur + kundtermer (≥200 rader) | **PASS** | storlek=293 latinska=22 | 293 termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (22) behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska | 3212 |
+| mos-oversattning | KONTROLL termKonsistens (pass + fail-case) | **PASS** | traffade=4 missar(dålig)=3 | 4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med 3 missar | 3444 |
+| mos-oversattning | KONTROLL sifferIntegritet (tal ändrat ⇒ fail) | **PASS** | saknade=2 extra=2 | decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass | 3445 |
+| mos-oversattning | KONTROLL strukturIntegritet (stycken/listor/JSON) | **PASS** | prosa-fail=true json-pass=true json-fail=true | stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas | 3445 |
+| mos-oversattning | KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor) | **PASS** | okFörhållande=1 avkapad=0.098 | förhållande 1 inom intervall pass; avkapad (0.098) fail; AR åäö-läcka fail; EN arabiskläcka fail | 3446 |
+| mos-oversattning | KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,) | **PASS** | normaliserad='0123456789' ar-pass=true ar-fail=true | östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej | 3446 |
+| mos-oversattning | VERSIONSHASH determinism (SHA-256 12 hex) | **PASS** | hash('a')=ca978112ca1b unicode=9d9a3e663781 | sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt | 3446 |
+| mos-oversattning | KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz) | **PASS** | totalt=70558 ui=289 kursblock=69501 | 70558 källor: 289 ui-nycklar (= ordlistan) + 69501 kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop | 4092 |
+| mos-oversattning | MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät) | **PASS** | trösklar=100/90/89 motorAktiv=false kedja=0 | 100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000] | 4095 |
+| mos-oversattning | KONTROLLRAPPORT poäng 0–100 (viktad summa) | **PASS** | perfekt=100 undermalig=0 traskel=90 | perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger 0 poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning | 4096 |
+| mos-oversattning | TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier) | **PASS** | r1=1 rattad r2='The moat protects the company.' r3=0 | synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي | 4230 |
+| mos-oversattning | MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter | **PASS** | bitar=7 langd=3370 | GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv\|en/sv\|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag | 4232 |
+| mos-oversattning | KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering | **PASS** | kedja=["deepl","google","mymemory"] | med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null) | 4232 |
+| mos-oversattning | STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät) | **PASS** | status=7 direktMaxOrd=8 | unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja | 4235 |
+| mos-oversattning | POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt) | **PASS** | utan=60 med=100 | simulerat motorsvar med två termfel: utan rättning poäng 60 (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller int | 4329 |
+| mos-oversattning | SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1) | **PASS** | message='[mös] publicerad the-intelligent-investor:kap5:block3 en' | message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2× | 4329 |
+| mos-oversattning | EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion) | **PASS** | dedupe=3 karta=3 | 5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta | 4329 |
+| mos-oversattning | SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt) | **PASS** | karta=1 nyckel=2 sprak | dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel | 4329 |
+
+## Täckningsgrad (våg 49 + våg 52)
+
+Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning och (våg 56 M3) forskningslaget — samt (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.
+
+### Kravlista på main
+
+- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
+
+_Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._
+---
+
+# Motorervalidering — 100%-väktaren — 2026-09-04T14:34:12.848Z
+
+- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)
+- **Miljö:** node v22.19.0 på win32; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)
+- **Körtid:** 6.6 s (budget 90 s, inom budget)
+- **Internt (tsx):** 4.4 s; startad 2026-09-04T14:34:08.348Z, klar 2026-09-04T14:34:12.764Z
+- **Policy (våg 49):** varje deterministisk motor minst ett deterministiskt test; **SKIP är förbjudet** — under 100% PASS = FAIL.
+
+**RESULTAT: 83 PASS / 0 FAIL / 0 SKIP**
+
+## Sammanfattning
+
+| Motor | PASS | FAIL | SKIP |
+|---|---:|---:|---:|
+| vagfundament | 5 | 0 | 0 |
+| vagfundament/portfölj | 1 | 0 | 0 |
+| analys | 5 | 0 | 0 |
+| netnet | 3 | 0 | 0 |
+| netnet/NCAV | 3 | 0 | 0 |
+| konfluens | 4 | 0 | 0 |
+| portfolj-vagor | 1 | 0 | 0 |
+| gränser | 7 | 0 | 0 |
+| chatbot-nlu | 2 | 0 | 0 |
+| omtanke-motor | 2 | 0 | 0 |
+| kurstips | 2 | 0 | 0 |
+| dashfraga | 2 | 0 | 0 |
+| vagkon | 2 | 0 | 0 |
+| spaced-repetition | 2 | 0 | 0 |
+| veckoplan | 2 | 0 | 0 |
+| briefing | 2 | 0 | 0 |
+| badges | 2 | 0 | 0 |
+| analysbank | 1 | 0 | 0 |
+| assistent | 2 | 0 | 0 |
+| akm2/kärna | 2 | 0 | 0 |
+| riskportfolj | 2 | 0 | 0 |
+| fundamental-vagmotor | 2 | 0 | 0 |
+| uppfoljning | 2 | 0 | 0 |
+| forskningslaget | 3 | 0 | 0 |
+| vagvalidering | 4 | 0 | 0 |
+| mos-oversattning | 18 | 0 | 0 |
+| **Totalt** | **83** | **0** | **0** |
+
+## Kontroller i detalj
+
+| Motor | Kontroll | Resultat | Värden | Detalj | T+ (ms) |
+|---|---|---|---|---|---:|
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} sammanfattning={"impulsvag":16,"korrigering":8,"basbygge":17,"osatt":59} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1454 |
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} sammanfattning={"impulsvag":22,"korrigering":5,"basbygge":13,"osatt":60} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1455 |
+| vagfundament/portfölj | STRUKTUR portföljaggregering + procentfält | **PASS** | tackningProcent=100 totalText=Portföljen i genomsnitt: basbygge på mega | matris 20×5 i [-1,1]; kategorier 7×5; total 5; radTexter 7; tackningProcent i [0,100] | 1455 |
+| vagfundament | MATEMATIK kategorier+total omräknade (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} | 19 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000250 | 1455 |
+| vagfundament | MATEMATIK kategorier+total omräknade (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} | 20 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000313 | 1455 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (VOLV-B.ST) | **PASS** | pris=348.3 pos52=0.83 sammanfattning={"bull":16,"bear":0,"neutral":9} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1455 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (SAAB-B.ST) | **PASS** | pris=591.6 pos52=0.712 sammanfattning={"bull":17,"bear":6,"neutral":2} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1455 |
+| analys | MATEMATIK fib/pos52/vager omräknade (VOLV-B.ST) | **PASS** | fib38=315.7866 fib62=279.5134 momentum={"mikro":-0.0003,"kort":0.0763,"medellang":0.2488,"lang":0.5425,"mega":0.8301} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1455 |
+| analys | MATEMATIK fib/pos52/vager omräknade (SAAB-B.ST) | **PASS** | fib38=540.5718 fib62=411.9282 momentum={"mikro":-0.075,"kort":0.1124,"medellang":0.1156,"lang":3.1126,"mega":8.6117} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1455 |
+| netnet | STRUKTUR screeningsrad (VOLV-B.ST) | **PASS** | kurs=348.3 ncavPerAktie=-44.7018 forhallande=null klass=ej pe=19.7561 pb=3.7146 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1455 |
+| netnet | STRUKTUR screeningsrad (SAAB-B.ST) | **PASS** | kurs=591.6 ncavPerAktie=19.0639 forhallande=31.0325 klass=ej pe=45.1259 pb=6.3492 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1455 |
+| netnet/NCAV | NCAV omräknad för hand (VOLV-B.ST) | **PASS** | CA=305570000000 CL=265914000000 LTD=130555000000 aktier=2033452084 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = -44.701816 ≈ motorns -44.7018; förhållande=kurs÷NCAV och Grahams klass stämmer | 1455 |
+| netnet/NCAV | NCAV omräknad för hand (SAAB-B.ST) | **PASS** | CA=82578000000 CL=63744000000 LTD=8475000000 aktier=543383388 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = 19.063888 ≈ motorns 19.0639; förhållande=kurs÷NCAV och Grahams klass stämmer | 1455 |
+| netnet/NCAV | GRAHAM_TROSKEL- och MAX_TICKER_PER_ANROP-konstanter | **PASS** | 0.667/15 | GRAHAM_TROSKEL=0.667 (förväntat 0.667 = 2/3); MAX_TICKER_PER_ANROP=15 (förväntat 15) | 1455 |
+| konfluens | STRUKTUR+SJÄLVKONTROLL skannaKonfluens (VOLV-B.ST, SAAB-B.ST) | **PASS** | VOLV-B.ST: konfluens=27 vg=5 klass=null \| SAAB-B.ST: konfluens=28 vg=0 klass=null | 2 rader i indataordning; motorns egna sjalvkontroll ok (poäng heltal 0–100/null, klass konsistent med trösklarna 70/50/3, tickers unika) | 1456 |
+| portfolj-vagor | STRUKTUR+MATEMATIK viktat snitt omräknat ur perAktie (2 tickers, likavikter) | **PASS** | sammanfattning={"impulsvag":4,"korrigering":0.5,"basbygge":0.5,"osatt":0} | perAktie-profiler en-hot per horisont; portföljandelen omräknad för hand som Σ(vikt×andel)/Σvikt per klass och horisont; sammanfattningen summerar 5 | 1456 |
+| vagfundament | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=10279 | två separata körningar gav byte-identisk JSON (10279 tecken) — konsistent med frusen marknadsdata | 1617 |
+| analys | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=1231 | två separata körningar gav byte-identisk JSON (1231 tecken) | 1951 |
+| netnet | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=141 | två separata körningar gav byte-identisk JSON (141 tecken) | 2502 |
+| konfluens | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=176 | två separata körningar gav byte-identisk JSON (176 tecken) — konfluenspoängen är reproducerbar ur de avrundade dimensionerna | 2719 |
+| gränser | vagfundament okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen fundamentaldata (Yahoo fundamentals-timeseries)"} | snyggt fel: 'ingen fundamentaldata (Yahoo fundamentals-timeseries)' | 3149 |
+| gränser | analys okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen data (Yahoo/MarketStack)"} | snyggt fel: 'ingen data (Yahoo/MarketStack)' | 3149 |
+| gränser | netnet okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ofullständig balansdata","klass":null} | snyggt fel: 'ofullständig balansdata' | 3149 |
+| gränser | netnet formatogiltig ticker 'BAD TICKER!' → valideringsfel | **PASS** | {"ticker":"BAD TICKER!","kurs":null,"ncavPerAktie":null,"forhallande":null,"klass":null,"fel":"ogiltig ticker"} | fel-text: 'ogiltig ticker' | 3149 |
+| gränser | konfluens tom tickerlista → tomt svar utan krasch | **PASS** | 0 rader | skannaKonfluens([]) returnerade [] | 3149 |
+| gränser | tomma tickerlistor → tomma svar (alla motorer) | **PASS** | 0 rader | vagfundament/analys/netnet returnerade alla [] utan krasch | 3149 |
+| gränser | portfolj-vagor tom lista → tom struktur + pedagogisk text | **PASS** | {"impulsvag":0,"korrigering":0,"basbygge":0,"osatt":0} | perAktie={}, portföljprofil nollställd, totalText närvarande | 3149 |
+| chatbot-nlu | FIXTUR normalisering + ämne + levenshtein + följdfråga | **PASS** | ren1='vad ar pe' ren2='borsen' | 'Vadd är P/E?'→'vad ar pe'→pe; 'brasken'→'borsen'; bruttomarginal→v07; mr market→mrmarket; levenshtein 0/1/2; 'och P/E?'=följdfråga men 'Vad är P/E?'=ej | 3154 |
+| chatbot-nlu | DETERMINISM 5 frågor 2× (JSON identiskt) | **PASS** | ["pe","borsen","v07","v04","moat"] | [{"ren":"vad ar pe","amne":"pe"},{"ren":"borsen","amne":"borsen"},{"ren":"hur raknar man bruttomarginal","amne":"v07"},{"ren":"och ps","amne":"v04"},{"ren":"vad ar moat","amne":"moat"}] | 3154 |
+| omtanke-motor | FIXTUR lasOmtanke: radslOro (prio 1), aterkomsten, harmoni=null | **PASS** | oro=radslOro aterkomsten=aterkomsten harmoni=null | 'förstår inte'→radslOro prio 1 länk /dagens-pass; 40 dagar borta→aterkomsten prio 2; lugn meny-surfare utan signaler→null (tystnad är omtanke); determinism 2× | 3155 |
+| omtanke-motor | FIXTUR lasSignaler: tracer/member/chat-minne tolkas ur localStorage | **PASS** | tracer=2 xp=120 fragor=2 | 2 tracer-sidor, xp=120, 2 mentorfrågor med senaste text, senastAktiv från senaste ts, samtycke+profil=true | 3155 |
+| kurstips | FIXTUR raknaKurstips: första steg v01 (100p), fälttyper, exkludering | **PASS** | antal=3 första=v01-forsaljningstillvaxt | ny elev (tom localStorage) → 1–3 tips, första = V01 Försäljningstillväxt med poäng 100, alla fält närvarande, exkluderaSlug utesluter | 3156 |
+| kurstips | DETERMINISM raknaKurstips 2× (JSON identiskt) | **PASS** | längd=620 | samma shim-tillstånd → byte-identiska tips | 3156 |
+| dashfraga | FIXTUR intents: streak → /dagens-pass, fallback, hälsning | **PASS** | streakLank=/dagens-pass | streak-fråga → streak-svar med länk /dagens-pass; okänd fråga → fallback-texten; 'hej' → välkomsttext; determinism 2× | 3157 |
+| dashfraga | FIXTUR vågkarta-intent degraderar gracefult när nät saknas | **PASS** | ikon=🌊 | fetch mot /api/vagscan/senaste misslyckas i Node (relativ URL) → dokumenterad fallback 'Ingen vågkarta har sparats ännu' — modulen kraschar aldrig på nätfel | 3157 |
+| vagkon | MATEMATIK σ + P10/P50/P90 omräknade för hand (S0·exp(z·σ·√t)) | **PASS** | sigma=0.08965827311693393 medianSlut(mega)=130 | σ (sampel, n−1) över log-returer omräknad med oberoende kodväg; medianen platt på S0=130; 48 stegs band verifierade mot √t-formeln; bandet breddar monoton | 3158 |
+| vagkon | FIXTUR horisontval, otillräcklig data, icke-tal rensas, determinism | **PASS** | n(ren)=5 | delmängd ['mega'] → endast mega i kanonisk ordning; <3 punkter → otillracklig utan horisonter; icke-tal (NaN) rensas ur historiken (negativa/0 är äkta tal — de bidrar bara inte till σ); 2× körning JSON-identisk | 3158 |
+| spaced-repetition | FIXTUR SM-2: EF'=EF+(0.1−q(0.08+(5−q)0.02)); 1→6→×EF; q<3 nollställer | **PASS** | [{"facit":2.2,"intervall":1,"repetitioner":1,"nastRepetition":"2026-09-05"},{"facit":1.9,"intervall":6,"repetitioner":2,"nastRepetition":"2026-09-10"},{"facit":1.72,"intervall":1,"repetitioner":0,"nastRepetition":"2026-09-05"},{"facit":1.42,"intervall":1,"repe | från jungfruligt kort: q5 → facit 2.2/rep 1/intervall 1; q4 → facit 1.9/rep 2/intervall 6; q2 → rep 0/intervall 1; q5 igen → rep 1 | 3158 |
+| spaced-repetition | FIXTUR SM-2 forts: facitgolv, tak 365, default-status, kortunderlag, nästa datum | **PASS** | kort=140 kategorier=7 | facit 1.3 med q5 → 1.3 (SM-2-steget 1.0 under golvet 1.3), intervall round(100×1.3)=130; intervall 400 → tak 365; okänt kort → default 2.5/0/0/null; 140 kort med unika id:n i 7 kategorier; nastRepetition ≈ idag+intervall | 3158 |
+| veckoplan | FIXTUR veckoNummer: ISO-veckor 2026-01-01→1, 2026-01-05→2, 2027-01-01→53 | **PASS** | v1/v2/v53 | ISO 8601-veckonummer (måndag start, torsdag definierar veckan): torsdag 1 jan 2026 → v1, måndag 5 jan → v2, fredag 1 jan 2027 → v53 | 3158 |
+| veckoplan | FIXTUR raknaVeckoPlan 75/25 min + lasKlara/markeraKlar-toggle + determinism | **PASS** | rader75=8 summa=74 rader25=5 | 75 min → 5 pass (mån–fre, 5 min) + kurstillfällen ≤ budget; 25 min → exakt 5 pass; kryss läses/toggLAS per veckonummer; samma veckohash → identisk plan | 3159 |
+| briefing | FIXTUR halsningFranTimme + vagLageFranVagdata + morgonMening exakt | **PASS** | m1='God morgon, Nivå 3 — vågkartan andas stigande impulser och d…' | morgon<11/dag/kväll>=17; argmax över universumsumman med mjuk null-degradering; morgonmeningen exakt mot mallen i alla tre streak-varianter (7/1/0) | 3159 |
+| briefing | FIXTUR raknaBriefing: struktur + determinism (utom klockstyrd hälsning) | **PASS** | niva=1 xp=0 klara=0 | niva/xp/klaraKurser finita; vagdata=null (degradering utan nät); mening alltid närvarande; alla fält utom den klockstyrdda hälsningen byte-identiska 2× | 3160 |
+| badges | FIXTUR BADGER-struktur (≥28, unika, 5 kategorier) + badgeStatus tom shim | **PASS** | badger=29 | 29 meriter med unika id:n, giltiga kategorier och komplett BADGE_MAP; tom shim → inga upplåsta, procent i [0,100], framsteg alltid text | 3179 |
+| badges | FIXTUR nivå-trösklar: 550 XP→nivå 6 (niva-5=100%), 3 kurser→kurser-5=60%, streak-3=100%, quiz + geBadge-kontrakt | **PASS** | niva-5=100% kurser-5=60% | tröskelberäkningen (stapel = låst [0,mal], procent = min(100, round(nu/mal×100))) verifierad på fyra badges; geBadge true endast första gången, okänt id → false | 3180 |
+| analysbank | FIXTUR spara/läsa/uppdatera (ny=true, samma id=false), nyast först, tak 50, ogiltig rad | **PASS** | rader efter 57 sparningar=0 | bankens localStorage-kontrakt: första sparning true, uppdatering false, datumsortering nyast först, MAX_RADER=50, normalisering avvisar rader utan id | 3183 |
+| assistent | FIXTUR raknaProaktivaForslag (streak 0 → /dagens-pass prio 100) + frustration + optimal tid | **PASS** | forslag=1 forsta=/dagens-pass | bruten streak → högst prioritet /dagens-pass; listan aldrig tom, dedup på länk, maxAntal kapsar; frustration = bruten kedje + ≥30 min + 0<quiz<50%; dygnsrytm majoritetsregel med exakta texter | 3184 |
+| assistent | FIXTUR genereraHalsning (klockprefix + namntilltal) + determinism | **PASS** | God dag, Elev — 1 kurs i ryggen och en rytm som vä | hälsningen följer dygnsrytmen (morgon/dag/kväll), tilltalar eleven med namn och speglar läget; förslagen byte-identiska 2× | 3184 |
+| akm2/kärna | FIXTUR raknaAKM1: HEL (Σpoang=totalt, 0–5, 7 kategorier) + NUL (allt osatt → 0) | **PASS** | HEL totalt=31 NUL totalt=0 | HEL-fixtur: 31/100 = Σ(V01–V20)-poäng omräknad exakt; NUL-fixtur: totalt 0 utan gissade poäng (ärlighetsprincipen); datum = k.hamtat | 3185 |
+| akm2/kärna | FIXTUR projektionsinvarianten + hård kassa-port (NEG ≤ 45) + determinism | **PASS** | NEG komposit=2 HEL komposit=31 | projiceraAKM1(raknaAKM2(HEL, akm1-klassisk)) === raknaAKM1(HEL) byte-vis; NEG (kassa 10 mån) → komposit 2 ≤ 45; lager1 o modifierad; 2× JSON-identisk | 3187 |
+| riskportfolj | FIXTUR 9 riskprofiler: horisontvikter summerar 1, spridningstak, MIN/MAX_INNEHAV | **PASS** | konservativ maxPerAktie=0.08 tillväxt=0.15 | 3 nivåer × 3 takter; varje profils horisontviktning summerar exakt 1 (mikro lägst); maxPerAktie ≤ maxPerBransch; konservativ tätare än tillväxt; 8–15 innehav | 3187 |
+| riskportfolj | FIXTUR byggPortfolj syntetisk pool (15 kandidater, 5 branscher): 8–15 innehav, Σvikt=1, tak, inga BROTT | **PASS** | innehav=15 viktsumma=1 | 15 innehav; vikter inom maxPerAktie=0.11; Σvikt=1 exakt; branschbelastning ≤ maxPerBransch=0.3; inga strikta krav brutna; 2× JSON-identisk | 3190 |
+| fundamental-vagmotor | FIXTUR klassaVag: stigande→impulsvag, fallande→korrigering, flat→basbygge (×5 horisonter), kort→osatt | **PASS** | rost a/b/c på stigande: impulsvag/impulsvag/impulsvag | trippelröstningen (teckenvändning + regression + delperiod, ≥2 av 3) enig på alla fem horisonter för rena monoton serier och plan serie; <3 punkter → osatt (gissar aldrig) | 3191 |
+| fundamental-vagmotor | FIXTUR raknaFVag: 20 variabler, giltiga klasser/dynamik, NUL→osatt, determinism | **PASS** | variabler=20 | HEL-fixtur → alla 20 AKM1-variabler klassade med anteckning; NUL-fixtur → samtliga osatta (motorn gissar aldrig); 2× JSON-identisk | 3193 |
+| uppfoljning | FIXTUR skapaSnapshot: förändringar mot föregående (AKM1 70→82, pris 100→125), datum härleds, ogiltig klass saneras | **PASS** | dAKM1=12 dpris=0.25 | ΔAKM1=12, prisförändring=0.25 (125/100−1) omräknade exakt; datum deterministiskt ur senastKontrollerad; ogiltig vågklass → 'osatt', aldrig gissad | 3194 |
+| uppfoljning | FIXTUR jamforDåNu: delta/pris/vågbytes omräknade, betydelse stor/man/liten | **PASS** | betydelser=["stor","liten","man"] | J1: AKM1 +12 & fundamental byte på LÅNG → 'stor'; J2: delta 2 & pris +2,5 % utan bytes → 'liten'; J3: pris +30 % ≥ 20 % → 'man'; ny bolag utan tidigare mätning → delta null | 3194 |
+| forskningslaget | FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering | **PASS** | typ=rikt topp=["G-A.ST","G-B.ST","G-C.ST"] | andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet | 3195 |
+| forskningslaget | FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert | **PASS** | tom=osatt fattig=magert rodaTung=magert | [] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln | 3195 |
+| forskningslaget | DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar | **PASS** | v36=G-D.ST fangat=4 | 2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump | 3195 |
+| konfluens | FIXTUR sjalvkontroll: 6 giltiga fixture-rader (alla klassvägen i specifikationen) | **PASS** | ok=true fel=0 | Konfluens/Värde-sover/Vågor-utan-golv/null-på-gränsen/Ingen-bild(<3 källor)/null(3 källor, osatta pelare) — samtliga accepteras med rätt tickerordning | 3195 |
+| konfluens | FIXTUR sjalvkontroll avvisar: poäng 101/-5, klassfel, dubletter, >10 tickers, datakallor 4 | **PASS** | 7 fall verifierade | sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll | 3195 |
+| vagvalidering | DOM-PROTOKOLL v1: klass×momentum → traff/miss/osatt (17 fall + gränser) | **PASS** | basbygge gräns 6/6,1 + riktning 0,4/−0,4 | impulsvåg→träff vid positivt momentum (även +0,4), miss vid negativt; korrigering spegelvät; exakt 0 dömer inte riktning → osatt; basbygge träff vid \|mom\| ≤ 6 % (tröskeln inklusiv, motorns egen gräns — hedervändig symmetri), miss vid 6,1; osatt klass/null/NaN → osatt (ALDRIG dömt); klassFranTal sp | 3195 |
+| vagvalidering | ENIGHETSSCORE 40/30/30 omräknad för hand (55/100) + tak 100 + determinism | **PASS** | fixture=55/100 max=100/100 | rådets formel: 40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,\|mom\|/6) + 30·täckning (bedömda/totalt); fixture 2 bedömda av 5 med 1 av 2 bekräftade → 55; komplett bekräftad stark mätning → 100; helt osatt → null (aldrig påhittad); heltalsavrundning deterministisk 2× | 3196 |
+| vagvalidering | DOMBYGGE ur två ronder (klass@T vs momentum@T+1) + dom-återskapning | **PASS** | 10 domar varav 3 dömda träff + 7 osatta | kanonisk ordning (universum × horisont): AAA mikro impulsvåg+3,1→träff, kort korrigering−2→träff, medellång basbygge+6→träff, lång osatt→osatt, okänd klass saneras till osatt; BBB utan momentum→osatt; varje rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — granskningsbar rad för rad | 3196 |
+| vagvalidering | RULLANDE träff% per (horisont,klass) + rapport (tabell, n, osatt-andel) | **PASS** | rond1=1/1 rond2=2/2 traff=50% | räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta —  | 3197 |
+| mos-oversattning | TERMBANK struktur + kundtermer (≥200 rader) | **PASS** | storlek=293 latinska=22 | 293 termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (22) behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska | 3198 |
+| mos-oversattning | KONTROLL termKonsistens (pass + fail-case) | **PASS** | traffade=4 missar(dålig)=3 | 4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med 3 missar | 3431 |
+| mos-oversattning | KONTROLL sifferIntegritet (tal ändrat ⇒ fail) | **PASS** | saknade=2 extra=2 | decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass | 3432 |
+| mos-oversattning | KONTROLL strukturIntegritet (stycken/listor/JSON) | **PASS** | prosa-fail=true json-pass=true json-fail=true | stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas | 3432 |
+| mos-oversattning | KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor) | **PASS** | okFörhållande=1 avkapad=0.098 | förhållande 1 inom intervall pass; avkapad (0.098) fail; AR åäö-läcka fail; EN arabiskläcka fail | 3433 |
+| mos-oversattning | KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,) | **PASS** | normaliserad='0123456789' ar-pass=true ar-fail=true | östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej | 3433 |
+| mos-oversattning | VERSIONSHASH determinism (SHA-256 12 hex) | **PASS** | hash('a')=ca978112ca1b unicode=9d9a3e663781 | sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt | 3433 |
+| mos-oversattning | KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz) | **PASS** | totalt=70559 ui=290 kursblock=69501 | 70559 källor: 290 ui-nycklar (= ordlistan) + 69501 kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop | 4192 |
+| mos-oversattning | MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät) | **PASS** | trösklar=100/90/89 motorAktiv=false kedja=0 | 100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000] | 4193 |
+| mos-oversattning | KONTROLLRAPPORT poäng 0–100 (viktad summa) | **PASS** | perfekt=100 undermalig=0 traskel=90 | perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger 0 poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning | 4194 |
+| mos-oversattning | TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier) | **PASS** | r1=1 rattad r2='The moat protects the company.' r3=0 | synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي | 4324 |
+| mos-oversattning | MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter | **PASS** | bitar=7 langd=3370 | GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv\|en/sv\|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag | 4325 |
+| mos-oversattning | KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering | **PASS** | kedja=["deepl","google","mymemory"] | med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null) | 4325 |
+| mos-oversattning | STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät) | **PASS** | status=7 direktMaxOrd=8 | unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja | 4328 |
+| mos-oversattning | POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt) | **PASS** | utan=60 med=100 | simulerat motorsvar med två termfel: utan rättning poäng 60 (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller int | 4416 |
+| mos-oversattning | SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1) | **PASS** | message='[mös] publicerad the-intelligent-investor:kap5:block3 en' | message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2× | 4416 |
+| mos-oversattning | EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion) | **PASS** | dedupe=3 karta=3 | 5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta | 4416 |
+| mos-oversattning | SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt) | **PASS** | karta=1 nyckel=2 sprak | dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel | 4416 |
+
+## Täckningsgrad (våg 49 + våg 52)
+
+Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.
+
+### Kravlista på main
+
+- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
+
+_Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._
+---
+
+# Motorervalidering — 100%-väktaren — 2026-09-04T14:36:21.081Z
+
+- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)
+- **Miljö:** node v22.19.0 på win32; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)
+- **Körtid:** 7.4 s (budget 90 s, inom budget)
+- **Internt (tsx):** 5.2 s; startad 2026-09-04T14:36:15.846Z, klar 2026-09-04T14:36:21.010Z
+- **Policy (våg 49):** varje deterministisk motor minst ett deterministiskt test; **SKIP är förbjudet** — under 100% PASS = FAIL.
+
+**RESULTAT: 83 PASS / 0 FAIL / 0 SKIP**
+
+## Sammanfattning
+
+| Motor | PASS | FAIL | SKIP |
+|---|---:|---:|---:|
+| vagfundament | 5 | 0 | 0 |
+| vagfundament/portfölj | 1 | 0 | 0 |
+| analys | 5 | 0 | 0 |
+| netnet | 3 | 0 | 0 |
+| netnet/NCAV | 3 | 0 | 0 |
+| konfluens | 4 | 0 | 0 |
+| portfolj-vagor | 1 | 0 | 0 |
+| gränser | 7 | 0 | 0 |
+| chatbot-nlu | 2 | 0 | 0 |
+| omtanke-motor | 2 | 0 | 0 |
+| kurstips | 2 | 0 | 0 |
+| dashfraga | 2 | 0 | 0 |
+| vagkon | 2 | 0 | 0 |
+| spaced-repetition | 2 | 0 | 0 |
+| veckoplan | 2 | 0 | 0 |
+| briefing | 2 | 0 | 0 |
+| badges | 2 | 0 | 0 |
+| analysbank | 1 | 0 | 0 |
+| assistent | 2 | 0 | 0 |
+| akm2/kärna | 2 | 0 | 0 |
+| riskportfolj | 2 | 0 | 0 |
+| fundamental-vagmotor | 2 | 0 | 0 |
+| uppfoljning | 2 | 0 | 0 |
+| forskningslaget | 3 | 0 | 0 |
+| vagvalidering | 4 | 0 | 0 |
+| mos-oversattning | 18 | 0 | 0 |
+| **Totalt** | **83** | **0** | **0** |
+
+## Kontroller i detalj
+
+| Motor | Kontroll | Resultat | Värden | Detalj | T+ (ms) |
+|---|---|---|---|---|---:|
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} sammanfattning={"impulsvag":16,"korrigering":8,"basbygge":17,"osatt":59} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 2033 |
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} sammanfattning={"impulsvag":22,"korrigering":5,"basbygge":13,"osatt":60} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 2034 |
+| vagfundament/portfölj | STRUKTUR portföljaggregering + procentfält | **PASS** | tackningProcent=100 totalText=Portföljen i genomsnitt: basbygge på mega | matris 20×5 i [-1,1]; kategorier 7×5; total 5; radTexter 7; tackningProcent i [0,100] | 2034 |
+| vagfundament | MATEMATIK kategorier+total omräknade (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} | 19 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000250 | 2035 |
+| vagfundament | MATEMATIK kategorier+total omräknade (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} | 20 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000313 | 2035 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (VOLV-B.ST) | **PASS** | pris=348.2 pos52=0.829 sammanfattning={"bull":16,"bear":0,"neutral":9} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 2035 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (SAAB-B.ST) | **PASS** | pris=591.5 pos52=0.711 sammanfattning={"bull":17,"bear":6,"neutral":2} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 2035 |
+| analys | MATEMATIK fib/pos52/vager omräknade (VOLV-B.ST) | **PASS** | fib38=315.7866 fib62=279.5134 momentum={"mikro":-0.0006,"kort":0.076,"medellang":0.2485,"lang":0.5421,"mega":0.8296} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 2035 |
+| analys | MATEMATIK fib/pos52/vager omräknade (SAAB-B.ST) | **PASS** | fib38=540.5718 fib62=411.9282 momentum={"mikro":-0.0752,"kort":0.1123,"medellang":0.1154,"lang":3.1119,"mega":8.6101} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 2035 |
+| netnet | STRUKTUR screeningsrad (VOLV-B.ST) | **PASS** | kurs=348.2 ncavPerAktie=-44.7018 forhallande=null klass=ej pe=19.7504 pb=3.7135 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 2035 |
+| netnet | STRUKTUR screeningsrad (SAAB-B.ST) | **PASS** | kurs=591.5 ncavPerAktie=19.0639 forhallande=31.0272 klass=ej pe=45.1182 pb=6.3481 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 2035 |
+| netnet/NCAV | NCAV omräknad för hand (VOLV-B.ST) | **PASS** | CA=305570000000 CL=265914000000 LTD=130555000000 aktier=2033452084 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = -44.701816 ≈ motorns -44.7018; förhållande=kurs÷NCAV och Grahams klass stämmer | 2035 |
+| netnet/NCAV | NCAV omräknad för hand (SAAB-B.ST) | **PASS** | CA=82578000000 CL=63744000000 LTD=8475000000 aktier=543383388 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = 19.063888 ≈ motorns 19.0639; förhållande=kurs÷NCAV och Grahams klass stämmer | 2035 |
+| netnet/NCAV | GRAHAM_TROSKEL- och MAX_TICKER_PER_ANROP-konstanter | **PASS** | 0.667/15 | GRAHAM_TROSKEL=0.667 (förväntat 0.667 = 2/3); MAX_TICKER_PER_ANROP=15 (förväntat 15) | 2035 |
+| konfluens | STRUKTUR+SJÄLVKONTROLL skannaKonfluens (VOLV-B.ST, SAAB-B.ST) | **PASS** | VOLV-B.ST: konfluens=27 vg=5 klass=null \| SAAB-B.ST: konfluens=28 vg=0 klass=null | 2 rader i indataordning; motorns egna sjalvkontroll ok (poäng heltal 0–100/null, klass konsistent med trösklarna 70/50/3, tickers unika) | 2036 |
+| portfolj-vagor | STRUKTUR+MATEMATIK viktat snitt omräknat ur perAktie (2 tickers, likavikter) | **PASS** | sammanfattning={"impulsvag":4,"korrigering":0.5,"basbygge":0.5,"osatt":0} | perAktie-profiler en-hot per horisont; portföljandelen omräknad för hand som Σ(vikt×andel)/Σvikt per klass och horisont; sammanfattningen summerar 5 | 2036 |
+| vagfundament | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=10279 | två separata körningar gav byte-identisk JSON (10279 tecken) — konsistent med frusen marknadsdata | 2221 |
+| analys | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=1233 | två separata körningar gav byte-identisk JSON (1233 tecken) | 2563 |
+| netnet | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=141 | två separata körningar gav byte-identisk JSON (141 tecken) | 3188 |
+| konfluens | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=176 | två separata körningar gav byte-identisk JSON (176 tecken) — konfluenspoängen är reproducerbar ur de avrundade dimensionerna | 3506 |
+| gränser | vagfundament okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen fundamentaldata (Yahoo fundamentals-timeseries)"} | snyggt fel: 'ingen fundamentaldata (Yahoo fundamentals-timeseries)' | 3902 |
+| gränser | analys okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen data (Yahoo/MarketStack)"} | snyggt fel: 'ingen data (Yahoo/MarketStack)' | 3902 |
+| gränser | netnet okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ofullständig balansdata","klass":null} | snyggt fel: 'ofullständig balansdata' | 3902 |
+| gränser | netnet formatogiltig ticker 'BAD TICKER!' → valideringsfel | **PASS** | {"ticker":"BAD TICKER!","kurs":null,"ncavPerAktie":null,"forhallande":null,"klass":null,"fel":"ogiltig ticker"} | fel-text: 'ogiltig ticker' | 3902 |
+| gränser | konfluens tom tickerlista → tomt svar utan krasch | **PASS** | 0 rader | skannaKonfluens([]) returnerade [] | 3902 |
+| gränser | tomma tickerlistor → tomma svar (alla motorer) | **PASS** | 0 rader | vagfundament/analys/netnet returnerade alla [] utan krasch | 3902 |
+| gränser | portfolj-vagor tom lista → tom struktur + pedagogisk text | **PASS** | {"impulsvag":0,"korrigering":0,"basbygge":0,"osatt":0} | perAktie={}, portföljprofil nollställd, totalText närvarande | 3902 |
+| chatbot-nlu | FIXTUR normalisering + ämne + levenshtein + följdfråga | **PASS** | ren1='vad ar pe' ren2='borsen' | 'Vadd är P/E?'→'vad ar pe'→pe; 'brasken'→'borsen'; bruttomarginal→v07; mr market→mrmarket; levenshtein 0/1/2; 'och P/E?'=följdfråga men 'Vad är P/E?'=ej | 3908 |
+| chatbot-nlu | DETERMINISM 5 frågor 2× (JSON identiskt) | **PASS** | ["pe","borsen","v07","v04","moat"] | [{"ren":"vad ar pe","amne":"pe"},{"ren":"borsen","amne":"borsen"},{"ren":"hur raknar man bruttomarginal","amne":"v07"},{"ren":"och ps","amne":"v04"},{"ren":"vad ar moat","amne":"moat"}] | 3909 |
+| omtanke-motor | FIXTUR lasOmtanke: radslOro (prio 1), aterkomsten, harmoni=null | **PASS** | oro=radslOro aterkomsten=aterkomsten harmoni=null | 'förstår inte'→radslOro prio 1 länk /dagens-pass; 40 dagar borta→aterkomsten prio 2; lugn meny-surfare utan signaler→null (tystnad är omtanke); determinism 2× | 3909 |
+| omtanke-motor | FIXTUR lasSignaler: tracer/member/chat-minne tolkas ur localStorage | **PASS** | tracer=2 xp=120 fragor=2 | 2 tracer-sidor, xp=120, 2 mentorfrågor med senaste text, senastAktiv från senaste ts, samtycke+profil=true | 3910 |
+| kurstips | FIXTUR raknaKurstips: första steg v01 (100p), fälttyper, exkludering | **PASS** | antal=3 första=v01-forsaljningstillvaxt | ny elev (tom localStorage) → 1–3 tips, första = V01 Försäljningstillväxt med poäng 100, alla fält närvarande, exkluderaSlug utesluter | 3910 |
+| kurstips | DETERMINISM raknaKurstips 2× (JSON identiskt) | **PASS** | längd=620 | samma shim-tillstånd → byte-identiska tips | 3910 |
+| dashfraga | FIXTUR intents: streak → /dagens-pass, fallback, hälsning | **PASS** | streakLank=/dagens-pass | streak-fråga → streak-svar med länk /dagens-pass; okänd fråga → fallback-texten; 'hej' → välkomsttext; determinism 2× | 3911 |
+| dashfraga | FIXTUR vågkarta-intent degraderar gracefult när nät saknas | **PASS** | ikon=🌊 | fetch mot /api/vagscan/senaste misslyckas i Node (relativ URL) → dokumenterad fallback 'Ingen vågkarta har sparats ännu' — modulen kraschar aldrig på nätfel | 3911 |
+| vagkon | MATEMATIK σ + P10/P50/P90 omräknade för hand (S0·exp(z·σ·√t)) | **PASS** | sigma=0.08965827311693393 medianSlut(mega)=130 | σ (sampel, n−1) över log-returer omräknad med oberoende kodväg; medianen platt på S0=130; 48 stegs band verifierade mot √t-formeln; bandet breddar monoton | 3912 |
+| vagkon | FIXTUR horisontval, otillräcklig data, icke-tal rensas, determinism | **PASS** | n(ren)=5 | delmängd ['mega'] → endast mega i kanonisk ordning; <3 punkter → otillracklig utan horisonter; icke-tal (NaN) rensas ur historiken (negativa/0 är äkta tal — de bidrar bara inte till σ); 2× körning JSON-identisk | 3912 |
+| spaced-repetition | FIXTUR SM-2: EF'=EF+(0.1−q(0.08+(5−q)0.02)); 1→6→×EF; q<3 nollställer | **PASS** | [{"facit":2.2,"intervall":1,"repetitioner":1,"nastRepetition":"2026-09-05"},{"facit":1.9,"intervall":6,"repetitioner":2,"nastRepetition":"2026-09-10"},{"facit":1.72,"intervall":1,"repetitioner":0,"nastRepetition":"2026-09-05"},{"facit":1.42,"intervall":1,"repe | från jungfruligt kort: q5 → facit 2.2/rep 1/intervall 1; q4 → facit 1.9/rep 2/intervall 6; q2 → rep 0/intervall 1; q5 igen → rep 1 | 3912 |
+| spaced-repetition | FIXTUR SM-2 forts: facitgolv, tak 365, default-status, kortunderlag, nästa datum | **PASS** | kort=140 kategorier=7 | facit 1.3 med q5 → 1.3 (SM-2-steget 1.0 under golvet 1.3), intervall round(100×1.3)=130; intervall 400 → tak 365; okänt kort → default 2.5/0/0/null; 140 kort med unika id:n i 7 kategorier; nastRepetition ≈ idag+intervall | 3913 |
+| veckoplan | FIXTUR veckoNummer: ISO-veckor 2026-01-01→1, 2026-01-05→2, 2027-01-01→53 | **PASS** | v1/v2/v53 | ISO 8601-veckonummer (måndag start, torsdag definierar veckan): torsdag 1 jan 2026 → v1, måndag 5 jan → v2, fredag 1 jan 2027 → v53 | 3913 |
+| veckoplan | FIXTUR raknaVeckoPlan 75/25 min + lasKlara/markeraKlar-toggle + determinism | **PASS** | rader75=8 summa=74 rader25=5 | 75 min → 5 pass (mån–fre, 5 min) + kurstillfällen ≤ budget; 25 min → exakt 5 pass; kryss läses/toggLAS per veckonummer; samma veckohash → identisk plan | 3913 |
+| briefing | FIXTUR halsningFranTimme + vagLageFranVagdata + morgonMening exakt | **PASS** | m1='God morgon, Nivå 3 — vågkartan andas stigande impulser och d…' | morgon<11/dag/kväll>=17; argmax över universumsumman med mjuk null-degradering; morgonmeningen exakt mot mallen i alla tre streak-varianter (7/1/0) | 3914 |
+| briefing | FIXTUR raknaBriefing: struktur + determinism (utom klockstyrd hälsning) | **PASS** | niva=1 xp=0 klara=0 | niva/xp/klaraKurser finita; vagdata=null (degradering utan nät); mening alltid närvarande; alla fält utom den klockstyrdda hälsningen byte-identiska 2× | 3914 |
+| badges | FIXTUR BADGER-struktur (≥28, unika, 5 kategorier) + badgeStatus tom shim | **PASS** | badger=29 | 29 meriter med unika id:n, giltiga kategorier och komplett BADGE_MAP; tom shim → inga upplåsta, procent i [0,100], framsteg alltid text | 3933 |
+| badges | FIXTUR nivå-trösklar: 550 XP→nivå 6 (niva-5=100%), 3 kurser→kurser-5=60%, streak-3=100%, quiz + geBadge-kontrakt | **PASS** | niva-5=100% kurser-5=60% | tröskelberäkningen (stapel = låst [0,mal], procent = min(100, round(nu/mal×100))) verifierad på fyra badges; geBadge true endast första gången, okänt id → false | 3934 |
+| analysbank | FIXTUR spara/läsa/uppdatera (ny=true, samma id=false), nyast först, tak 50, ogiltig rad | **PASS** | rader efter 57 sparningar=0 | bankens localStorage-kontrakt: första sparning true, uppdatering false, datumsortering nyast först, MAX_RADER=50, normalisering avvisar rader utan id | 3938 |
+| assistent | FIXTUR raknaProaktivaForslag (streak 0 → /dagens-pass prio 100) + frustration + optimal tid | **PASS** | forslag=1 forsta=/dagens-pass | bruten streak → högst prioritet /dagens-pass; listan aldrig tom, dedup på länk, maxAntal kapsar; frustration = bruten kedje + ≥30 min + 0<quiz<50%; dygnsrytm majoritetsregel med exakta texter | 3938 |
+| assistent | FIXTUR genereraHalsning (klockprefix + namntilltal) + determinism | **PASS** | God dag, Elev — 1 kurs i ryggen och en rytm som vä | hälsningen följer dygnsrytmen (morgon/dag/kväll), tilltalar eleven med namn och speglar läget; förslagen byte-identiska 2× | 3938 |
+| akm2/kärna | FIXTUR raknaAKM1: HEL (Σpoang=totalt, 0–5, 7 kategorier) + NUL (allt osatt → 0) | **PASS** | HEL totalt=31 NUL totalt=0 | HEL-fixtur: 31/100 = Σ(V01–V20)-poäng omräknad exakt; NUL-fixtur: totalt 0 utan gissade poäng (ärlighetsprincipen); datum = k.hamtat | 3939 |
+| akm2/kärna | FIXTUR projektionsinvarianten + hård kassa-port (NEG ≤ 45) + determinism | **PASS** | NEG komposit=2 HEL komposit=31 | projiceraAKM1(raknaAKM2(HEL, akm1-klassisk)) === raknaAKM1(HEL) byte-vis; NEG (kassa 10 mån) → komposit 2 ≤ 45; lager1 o modifierad; 2× JSON-identisk | 3941 |
+| riskportfolj | FIXTUR 9 riskprofiler: horisontvikter summerar 1, spridningstak, MIN/MAX_INNEHAV | **PASS** | konservativ maxPerAktie=0.08 tillväxt=0.15 | 3 nivåer × 3 takter; varje profils horisontviktning summerar exakt 1 (mikro lägst); maxPerAktie ≤ maxPerBransch; konservativ tätare än tillväxt; 8–15 innehav | 3942 |
+| riskportfolj | FIXTUR byggPortfolj syntetisk pool (15 kandidater, 5 branscher): 8–15 innehav, Σvikt=1, tak, inga BROTT | **PASS** | innehav=15 viktsumma=1 | 15 innehav; vikter inom maxPerAktie=0.11; Σvikt=1 exakt; branschbelastning ≤ maxPerBransch=0.3; inga strikta krav brutna; 2× JSON-identisk | 3944 |
+| fundamental-vagmotor | FIXTUR klassaVag: stigande→impulsvag, fallande→korrigering, flat→basbygge (×5 horisonter), kort→osatt | **PASS** | rost a/b/c på stigande: impulsvag/impulsvag/impulsvag | trippelröstningen (teckenvändning + regression + delperiod, ≥2 av 3) enig på alla fem horisonter för rena monoton serier och plan serie; <3 punkter → osatt (gissar aldrig) | 3945 |
+| fundamental-vagmotor | FIXTUR raknaFVag: 20 variabler, giltiga klasser/dynamik, NUL→osatt, determinism | **PASS** | variabler=20 | HEL-fixtur → alla 20 AKM1-variabler klassade med anteckning; NUL-fixtur → samtliga osatta (motorn gissar aldrig); 2× JSON-identisk | 3949 |
+| uppfoljning | FIXTUR skapaSnapshot: förändringar mot föregående (AKM1 70→82, pris 100→125), datum härleds, ogiltig klass saneras | **PASS** | dAKM1=12 dpris=0.25 | ΔAKM1=12, prisförändring=0.25 (125/100−1) omräknade exakt; datum deterministiskt ur senastKontrollerad; ogiltig vågklass → 'osatt', aldrig gissad | 3950 |
+| uppfoljning | FIXTUR jamforDåNu: delta/pris/vågbytes omräknade, betydelse stor/man/liten | **PASS** | betydelser=["stor","liten","man"] | J1: AKM1 +12 & fundamental byte på LÅNG → 'stor'; J2: delta 2 & pris +2,5 % utan bytes → 'liten'; J3: pris +30 % ≥ 20 % → 'man'; ny bolag utan tidigare mätning → delta null | 3951 |
+| forskningslaget | FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering | **PASS** | typ=rikt topp=["G-A.ST","G-B.ST","G-C.ST"] | andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet | 3951 |
+| forskningslaget | FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert | **PASS** | tom=osatt fattig=magert rodaTung=magert | [] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln | 3952 |
+| forskningslaget | DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar | **PASS** | v36=G-D.ST fangat=4 | 2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump | 3952 |
+| konfluens | FIXTUR sjalvkontroll: 6 giltiga fixture-rader (alla klassvägen i specifikationen) | **PASS** | ok=true fel=0 | Konfluens/Värde-sover/Vågor-utan-golv/null-på-gränsen/Ingen-bild(<3 källor)/null(3 källor, osatta pelare) — samtliga accepteras med rätt tickerordning | 3952 |
+| konfluens | FIXTUR sjalvkontroll avvisar: poäng 101/-5, klassfel, dubletter, >10 tickers, datakallor 4 | **PASS** | 7 fall verifierade | sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll | 3953 |
+| vagvalidering | DOM-PROTOKOLL v1: klass×momentum → traff/miss/osatt (17 fall + gränser) | **PASS** | basbygge gräns 6/6,1 + riktning 0,4/−0,4 | impulsvåg→träff vid positivt momentum (även +0,4), miss vid negativt; korrigering spegelvät; exakt 0 dömer inte riktning → osatt; basbygge träff vid \|mom\| ≤ 6 % (tröskeln inklusiv, motorns egen gräns — hedervändig symmetri), miss vid 6,1; osatt klass/null/NaN → osatt (ALDRIG dömt); klassFranTal sp | 3953 |
+| vagvalidering | ENIGHETSSCORE 40/30/30 omräknad för hand (55/100) + tak 100 + determinism | **PASS** | fixture=55/100 max=100/100 | rådets formel: 40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,\|mom\|/6) + 30·täckning (bedömda/totalt); fixture 2 bedömda av 5 med 1 av 2 bekräftade → 55; komplett bekräftad stark mätning → 100; helt osatt → null (aldrig påhittad); heltalsavrundning deterministisk 2× | 3953 |
+| vagvalidering | DOMBYGGE ur två ronder (klass@T vs momentum@T+1) + dom-återskapning | **PASS** | 10 domar varav 3 dömda träff + 7 osatta | kanonisk ordning (universum × horisont): AAA mikro impulsvåg+3,1→träff, kort korrigering−2→träff, medellång basbygge+6→träff, lång osatt→osatt, okänd klass saneras till osatt; BBB utan momentum→osatt; varje rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — granskningsbar rad för rad | 3953 |
+| vagvalidering | RULLANDE träff% per (horisont,klass) + rapport (tabell, n, osatt-andel) | **PASS** | rond1=1/1 rond2=2/2 traff=50% | räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta —  | 3955 |
+| mos-oversattning | TERMBANK struktur + kundtermer (≥200 rader) | **PASS** | storlek=293 latinska=22 | 293 termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (22) behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska | 3957 |
+| mos-oversattning | KONTROLL termKonsistens (pass + fail-case) | **PASS** | traffade=4 missar(dålig)=3 | 4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med 3 missar | 4218 |
+| mos-oversattning | KONTROLL sifferIntegritet (tal ändrat ⇒ fail) | **PASS** | saknade=2 extra=2 | decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass | 4218 |
+| mos-oversattning | KONTROLL strukturIntegritet (stycken/listor/JSON) | **PASS** | prosa-fail=true json-pass=true json-fail=true | stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas | 4219 |
+| mos-oversattning | KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor) | **PASS** | okFörhållande=1 avkapad=0.098 | förhållande 1 inom intervall pass; avkapad (0.098) fail; AR åäö-läcka fail; EN arabiskläcka fail | 4219 |
+| mos-oversattning | KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,) | **PASS** | normaliserad='0123456789' ar-pass=true ar-fail=true | östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej | 4219 |
+| mos-oversattning | VERSIONSHASH determinism (SHA-256 12 hex) | **PASS** | hash('a')=ca978112ca1b unicode=9d9a3e663781 | sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt | 4220 |
+| mos-oversattning | KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz) | **PASS** | totalt=70699 ui=290 kursblock=69501 | 70699 källor: 290 ui-nycklar (= ordlistan) + 69501 kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop | 4935 |
+| mos-oversattning | MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät) | **PASS** | trösklar=100/90/89 motorAktiv=false kedja=0 | 100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000] | 4937 |
+| mos-oversattning | KONTROLLRAPPORT poäng 0–100 (viktad summa) | **PASS** | perfekt=100 undermalig=0 traskel=90 | perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger 0 poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning | 4938 |
+| mos-oversattning | TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier) | **PASS** | r1=1 rattad r2='The moat protects the company.' r3=0 | synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي | 5069 |
+| mos-oversattning | MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter | **PASS** | bitar=7 langd=3370 | GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv\|en/sv\|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag | 5070 |
+| mos-oversattning | KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering | **PASS** | kedja=["deepl","google","mymemory"] | med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null) | 5070 |
+| mos-oversattning | STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät) | **PASS** | status=7 direktMaxOrd=8 | unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja | 5073 |
+| mos-oversattning | POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt) | **PASS** | utan=60 med=100 | simulerat motorsvar med två termfel: utan rättning poäng 60 (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller int | 5163 |
+| mos-oversattning | SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1) | **PASS** | message='[mös] publicerad the-intelligent-investor:kap5:block3 en' | message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2× | 5163 |
+| mos-oversattning | EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion) | **PASS** | dedupe=3 karta=3 | 5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta | 5163 |
+| mos-oversattning | SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt) | **PASS** | karta=1 nyckel=2 sprak | dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel | 5164 |
+
+## Täckningsgrad (våg 49 + våg 52)
+
+Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.
+
+### Kravlista på main
+
+- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
+
+_Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._
+---
+
+# Motorervalidering — 100%-väktaren — 2026-09-04T14:40:32.368Z
+
+- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)
+- **Miljö:** node v22.19.0 på win32; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)
+- **Körtid:** 5.5 s (budget 90 s, inom budget)
+- **Internt (tsx):** 3.5 s; startad 2026-09-04T14:40:28.769Z, klar 2026-09-04T14:40:32.301Z
+- **Policy (våg 49):** varje deterministisk motor minst ett deterministiskt test; **SKIP är förbjudet** — under 100% PASS = FAIL.
+
+**RESULTAT: 83 PASS / 0 FAIL / 0 SKIP**
+
+## Sammanfattning
+
+| Motor | PASS | FAIL | SKIP |
+|---|---:|---:|---:|
+| vagfundament | 5 | 0 | 0 |
+| vagfundament/portfölj | 1 | 0 | 0 |
+| analys | 5 | 0 | 0 |
+| netnet | 3 | 0 | 0 |
+| netnet/NCAV | 3 | 0 | 0 |
+| konfluens | 4 | 0 | 0 |
+| portfolj-vagor | 1 | 0 | 0 |
+| gränser | 7 | 0 | 0 |
+| chatbot-nlu | 2 | 0 | 0 |
+| omtanke-motor | 2 | 0 | 0 |
+| kurstips | 2 | 0 | 0 |
+| dashfraga | 2 | 0 | 0 |
+| vagkon | 2 | 0 | 0 |
+| spaced-repetition | 2 | 0 | 0 |
+| veckoplan | 2 | 0 | 0 |
+| briefing | 2 | 0 | 0 |
+| badges | 2 | 0 | 0 |
+| analysbank | 1 | 0 | 0 |
+| assistent | 2 | 0 | 0 |
+| akm2/kärna | 2 | 0 | 0 |
+| riskportfolj | 2 | 0 | 0 |
+| fundamental-vagmotor | 2 | 0 | 0 |
+| uppfoljning | 2 | 0 | 0 |
+| forskningslaget | 3 | 0 | 0 |
+| vagvalidering | 4 | 0 | 0 |
+| mos-oversattning | 18 | 0 | 0 |
+| **Totalt** | **83** | **0** | **0** |
+
+## Kontroller i detalj
+
+| Motor | Kontroll | Resultat | Värden | Detalj | T+ (ms) |
+|---|---|---|---|---|---:|
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} sammanfattning={"impulsvag":16,"korrigering":8,"basbygge":17,"osatt":59} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1252 |
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} sammanfattning={"impulsvag":22,"korrigering":5,"basbygge":13,"osatt":60} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1253 |
+| vagfundament/portfölj | STRUKTUR portföljaggregering + procentfält | **PASS** | tackningProcent=100 totalText=Portföljen i genomsnitt: basbygge på mega | matris 20×5 i [-1,1]; kategorier 7×5; total 5; radTexter 7; tackningProcent i [0,100] | 1253 |
+| vagfundament | MATEMATIK kategorier+total omräknade (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} | 19 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000250 | 1253 |
+| vagfundament | MATEMATIK kategorier+total omräknade (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} | 20 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000313 | 1253 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (VOLV-B.ST) | **PASS** | pris=348.2 pos52=0.829 sammanfattning={"bull":16,"bear":0,"neutral":9} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1253 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (SAAB-B.ST) | **PASS** | pris=591.3 pos52=0.711 sammanfattning={"bull":17,"bear":6,"neutral":2} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1253 |
+| analys | MATEMATIK fib/pos52/vager omräknade (VOLV-B.ST) | **PASS** | fib38=315.7866 fib62=279.5134 momentum={"mikro":-0.0006,"kort":0.076,"medellang":0.2485,"lang":0.5421,"mega":0.8296} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1253 |
+| analys | MATEMATIK fib/pos52/vager omräknade (SAAB-B.ST) | **PASS** | fib38=540.5718 fib62=411.9282 momentum={"mikro":-0.0755,"kort":0.1119,"medellang":0.115,"lang":3.1105,"mega":8.6068} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1253 |
+| netnet | STRUKTUR screeningsrad (VOLV-B.ST) | **PASS** | kurs=348.2 ncavPerAktie=-44.7018 forhallande=null klass=ej pe=19.7504 pb=3.7135 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1253 |
+| netnet | STRUKTUR screeningsrad (SAAB-B.ST) | **PASS** | kurs=591.3 ncavPerAktie=19.0639 forhallande=31.0168 klass=ej pe=45.103 pb=6.346 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1253 |
+| netnet/NCAV | NCAV omräknad för hand (VOLV-B.ST) | **PASS** | CA=305570000000 CL=265914000000 LTD=130555000000 aktier=2033452084 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = -44.701816 ≈ motorns -44.7018; förhållande=kurs÷NCAV och Grahams klass stämmer | 1253 |
+| netnet/NCAV | NCAV omräknad för hand (SAAB-B.ST) | **PASS** | CA=82578000000 CL=63744000000 LTD=8475000000 aktier=543383388 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = 19.063888 ≈ motorns 19.0639; förhållande=kurs÷NCAV och Grahams klass stämmer | 1253 |
+| netnet/NCAV | GRAHAM_TROSKEL- och MAX_TICKER_PER_ANROP-konstanter | **PASS** | 0.667/15 | GRAHAM_TROSKEL=0.667 (förväntat 0.667 = 2/3); MAX_TICKER_PER_ANROP=15 (förväntat 15) | 1253 |
+| konfluens | STRUKTUR+SJÄLVKONTROLL skannaKonfluens (VOLV-B.ST, SAAB-B.ST) | **PASS** | VOLV-B.ST: konfluens=27 vg=5 klass=null \| SAAB-B.ST: konfluens=28 vg=0 klass=null | 2 rader i indataordning; motorns egna sjalvkontroll ok (poäng heltal 0–100/null, klass konsistent med trösklarna 70/50/3, tickers unika) | 1254 |
+| portfolj-vagor | STRUKTUR+MATEMATIK viktat snitt omräknat ur perAktie (2 tickers, likavikter) | **PASS** | sammanfattning={"impulsvag":4,"korrigering":0.5,"basbygge":0.5,"osatt":0} | perAktie-profiler en-hot per horisont; portföljandelen omräknad för hand som Σ(vikt×andel)/Σvikt per klass och horisont; sammanfattningen summerar 5 | 1254 |
+| vagfundament | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=10279 | två separata körningar gav byte-identisk JSON (10279 tecken) — konsistent med frusen marknadsdata | 1428 |
+| analys | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=1233 | två separata körningar gav byte-identisk JSON (1233 tecken) | 1631 |
+| netnet | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=141 | två separata körningar gav byte-identisk JSON (141 tecken) | 1790 |
+| konfluens | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=176 | två separata körningar gav byte-identisk JSON (176 tecken) — konfluenspoängen är reproducerbar ur de avrundade dimensionerna | 1973 |
+| gränser | vagfundament okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen fundamentaldata (Yahoo fundamentals-timeseries)"} | snyggt fel: 'ingen fundamentaldata (Yahoo fundamentals-timeseries)' | 2297 |
+| gränser | analys okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen data (Yahoo/MarketStack)"} | snyggt fel: 'ingen data (Yahoo/MarketStack)' | 2297 |
+| gränser | netnet okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ofullständig balansdata","klass":null} | snyggt fel: 'ofullständig balansdata' | 2297 |
+| gränser | netnet formatogiltig ticker 'BAD TICKER!' → valideringsfel | **PASS** | {"ticker":"BAD TICKER!","kurs":null,"ncavPerAktie":null,"forhallande":null,"klass":null,"fel":"ogiltig ticker"} | fel-text: 'ogiltig ticker' | 2297 |
+| gränser | konfluens tom tickerlista → tomt svar utan krasch | **PASS** | 0 rader | skannaKonfluens([]) returnerade [] | 2297 |
+| gränser | tomma tickerlistor → tomma svar (alla motorer) | **PASS** | 0 rader | vagfundament/analys/netnet returnerade alla [] utan krasch | 2297 |
+| gränser | portfolj-vagor tom lista → tom struktur + pedagogisk text | **PASS** | {"impulsvag":0,"korrigering":0,"basbygge":0,"osatt":0} | perAktie={}, portföljprofil nollställd, totalText närvarande | 2297 |
+| chatbot-nlu | FIXTUR normalisering + ämne + levenshtein + följdfråga | **PASS** | ren1='vad ar pe' ren2='borsen' | 'Vadd är P/E?'→'vad ar pe'→pe; 'brasken'→'borsen'; bruttomarginal→v07; mr market→mrmarket; levenshtein 0/1/2; 'och P/E?'=följdfråga men 'Vad är P/E?'=ej | 2303 |
+| chatbot-nlu | DETERMINISM 5 frågor 2× (JSON identiskt) | **PASS** | ["pe","borsen","v07","v04","moat"] | [{"ren":"vad ar pe","amne":"pe"},{"ren":"borsen","amne":"borsen"},{"ren":"hur raknar man bruttomarginal","amne":"v07"},{"ren":"och ps","amne":"v04"},{"ren":"vad ar moat","amne":"moat"}] | 2304 |
+| omtanke-motor | FIXTUR lasOmtanke: radslOro (prio 1), aterkomsten, harmoni=null | **PASS** | oro=radslOro aterkomsten=aterkomsten harmoni=null | 'förstår inte'→radslOro prio 1 länk /dagens-pass; 40 dagar borta→aterkomsten prio 2; lugn meny-surfare utan signaler→null (tystnad är omtanke); determinism 2× | 2304 |
+| omtanke-motor | FIXTUR lasSignaler: tracer/member/chat-minne tolkas ur localStorage | **PASS** | tracer=2 xp=120 fragor=2 | 2 tracer-sidor, xp=120, 2 mentorfrågor med senaste text, senastAktiv från senaste ts, samtycke+profil=true | 2304 |
+| kurstips | FIXTUR raknaKurstips: första steg v01 (100p), fälttyper, exkludering | **PASS** | antal=3 första=v01-forsaljningstillvaxt | ny elev (tom localStorage) → 1–3 tips, första = V01 Försäljningstillväxt med poäng 100, alla fält närvarande, exkluderaSlug utesluter | 2305 |
+| kurstips | DETERMINISM raknaKurstips 2× (JSON identiskt) | **PASS** | längd=620 | samma shim-tillstånd → byte-identiska tips | 2305 |
+| dashfraga | FIXTUR intents: streak → /dagens-pass, fallback, hälsning | **PASS** | streakLank=/dagens-pass | streak-fråga → streak-svar med länk /dagens-pass; okänd fråga → fallback-texten; 'hej' → välkomsttext; determinism 2× | 2306 |
+| dashfraga | FIXTUR vågkarta-intent degraderar gracefult när nät saknas | **PASS** | ikon=🌊 | fetch mot /api/vagscan/senaste misslyckas i Node (relativ URL) → dokumenterad fallback 'Ingen vågkarta har sparats ännu' — modulen kraschar aldrig på nätfel | 2306 |
+| vagkon | MATEMATIK σ + P10/P50/P90 omräknade för hand (S0·exp(z·σ·√t)) | **PASS** | sigma=0.08965827311693393 medianSlut(mega)=130 | σ (sampel, n−1) över log-returer omräknad med oberoende kodväg; medianen platt på S0=130; 48 stegs band verifierade mot √t-formeln; bandet breddar monoton | 2307 |
+| vagkon | FIXTUR horisontval, otillräcklig data, icke-tal rensas, determinism | **PASS** | n(ren)=5 | delmängd ['mega'] → endast mega i kanonisk ordning; <3 punkter → otillracklig utan horisonter; icke-tal (NaN) rensas ur historiken (negativa/0 är äkta tal — de bidrar bara inte till σ); 2× körning JSON-identisk | 2307 |
+| spaced-repetition | FIXTUR SM-2: EF'=EF+(0.1−q(0.08+(5−q)0.02)); 1→6→×EF; q<3 nollställer | **PASS** | [{"facit":2.2,"intervall":1,"repetitioner":1,"nastRepetition":"2026-09-05"},{"facit":1.9,"intervall":6,"repetitioner":2,"nastRepetition":"2026-09-10"},{"facit":1.72,"intervall":1,"repetitioner":0,"nastRepetition":"2026-09-05"},{"facit":1.42,"intervall":1,"repe | från jungfruligt kort: q5 → facit 2.2/rep 1/intervall 1; q4 → facit 1.9/rep 2/intervall 6; q2 → rep 0/intervall 1; q5 igen → rep 1 | 2307 |
+| spaced-repetition | FIXTUR SM-2 forts: facitgolv, tak 365, default-status, kortunderlag, nästa datum | **PASS** | kort=140 kategorier=7 | facit 1.3 med q5 → 1.3 (SM-2-steget 1.0 under golvet 1.3), intervall round(100×1.3)=130; intervall 400 → tak 365; okänt kort → default 2.5/0/0/null; 140 kort med unika id:n i 7 kategorier; nastRepetition ≈ idag+intervall | 2307 |
+| veckoplan | FIXTUR veckoNummer: ISO-veckor 2026-01-01→1, 2026-01-05→2, 2027-01-01→53 | **PASS** | v1/v2/v53 | ISO 8601-veckonummer (måndag start, torsdag definierar veckan): torsdag 1 jan 2026 → v1, måndag 5 jan → v2, fredag 1 jan 2027 → v53 | 2307 |
+| veckoplan | FIXTUR raknaVeckoPlan 75/25 min + lasKlara/markeraKlar-toggle + determinism | **PASS** | rader75=8 summa=74 rader25=5 | 75 min → 5 pass (mån–fre, 5 min) + kurstillfällen ≤ budget; 25 min → exakt 5 pass; kryss läses/toggLAS per veckonummer; samma veckohash → identisk plan | 2308 |
+| briefing | FIXTUR halsningFranTimme + vagLageFranVagdata + morgonMening exakt | **PASS** | m1='God morgon, Nivå 3 — vågkartan andas stigande impulser och d…' | morgon<11/dag/kväll>=17; argmax över universumsumman med mjuk null-degradering; morgonmeningen exakt mot mallen i alla tre streak-varianter (7/1/0) | 2308 |
+| briefing | FIXTUR raknaBriefing: struktur + determinism (utom klockstyrd hälsning) | **PASS** | niva=1 xp=0 klara=0 | niva/xp/klaraKurser finita; vagdata=null (degradering utan nät); mening alltid närvarande; alla fält utom den klockstyrdda hälsningen byte-identiska 2× | 2309 |
+| badges | FIXTUR BADGER-struktur (≥28, unika, 5 kategorier) + badgeStatus tom shim | **PASS** | badger=29 | 29 meriter med unika id:n, giltiga kategorier och komplett BADGE_MAP; tom shim → inga upplåsta, procent i [0,100], framsteg alltid text | 2329 |
+| badges | FIXTUR nivå-trösklar: 550 XP→nivå 6 (niva-5=100%), 3 kurser→kurser-5=60%, streak-3=100%, quiz + geBadge-kontrakt | **PASS** | niva-5=100% kurser-5=60% | tröskelberäkningen (stapel = låst [0,mal], procent = min(100, round(nu/mal×100))) verifierad på fyra badges; geBadge true endast första gången, okänt id → false | 2329 |
+| analysbank | FIXTUR spara/läsa/uppdatera (ny=true, samma id=false), nyast först, tak 50, ogiltig rad | **PASS** | rader efter 57 sparningar=0 | bankens localStorage-kontrakt: första sparning true, uppdatering false, datumsortering nyast först, MAX_RADER=50, normalisering avvisar rader utan id | 2333 |
+| assistent | FIXTUR raknaProaktivaForslag (streak 0 → /dagens-pass prio 100) + frustration + optimal tid | **PASS** | forslag=1 forsta=/dagens-pass | bruten streak → högst prioritet /dagens-pass; listan aldrig tom, dedup på länk, maxAntal kapsar; frustration = bruten kedje + ≥30 min + 0<quiz<50%; dygnsrytm majoritetsregel med exakta texter | 2333 |
+| assistent | FIXTUR genereraHalsning (klockprefix + namntilltal) + determinism | **PASS** | God dag, Elev — 1 kurs i ryggen och en rytm som vä | hälsningen följer dygnsrytmen (morgon/dag/kväll), tilltalar eleven med namn och speglar läget; förslagen byte-identiska 2× | 2333 |
+| akm2/kärna | FIXTUR raknaAKM1: HEL (Σpoang=totalt, 0–5, 7 kategorier) + NUL (allt osatt → 0) | **PASS** | HEL totalt=31 NUL totalt=0 | HEL-fixtur: 31/100 = Σ(V01–V20)-poäng omräknad exakt; NUL-fixtur: totalt 0 utan gissade poäng (ärlighetsprincipen); datum = k.hamtat | 2335 |
+| akm2/kärna | FIXTUR projektionsinvarianten + hård kassa-port (NEG ≤ 45) + determinism | **PASS** | NEG komposit=2 HEL komposit=31 | projiceraAKM1(raknaAKM2(HEL, akm1-klassisk)) === raknaAKM1(HEL) byte-vis; NEG (kassa 10 mån) → komposit 2 ≤ 45; lager1 o modifierad; 2× JSON-identisk | 2337 |
+| riskportfolj | FIXTUR 9 riskprofiler: horisontvikter summerar 1, spridningstak, MIN/MAX_INNEHAV | **PASS** | konservativ maxPerAktie=0.08 tillväxt=0.15 | 3 nivåer × 3 takter; varje profils horisontviktning summerar exakt 1 (mikro lägst); maxPerAktie ≤ maxPerBransch; konservativ tätare än tillväxt; 8–15 innehav | 2337 |
+| riskportfolj | FIXTUR byggPortfolj syntetisk pool (15 kandidater, 5 branscher): 8–15 innehav, Σvikt=1, tak, inga BROTT | **PASS** | innehav=15 viktsumma=1 | 15 innehav; vikter inom maxPerAktie=0.11; Σvikt=1 exakt; branschbelastning ≤ maxPerBransch=0.3; inga strikta krav brutna; 2× JSON-identisk | 2340 |
+| fundamental-vagmotor | FIXTUR klassaVag: stigande→impulsvag, fallande→korrigering, flat→basbygge (×5 horisonter), kort→osatt | **PASS** | rost a/b/c på stigande: impulsvag/impulsvag/impulsvag | trippelröstningen (teckenvändning + regression + delperiod, ≥2 av 3) enig på alla fem horisonter för rena monoton serier och plan serie; <3 punkter → osatt (gissar aldrig) | 2341 |
+| fundamental-vagmotor | FIXTUR raknaFVag: 20 variabler, giltiga klasser/dynamik, NUL→osatt, determinism | **PASS** | variabler=20 | HEL-fixtur → alla 20 AKM1-variabler klassade med anteckning; NUL-fixtur → samtliga osatta (motorn gissar aldrig); 2× JSON-identisk | 2343 |
+| uppfoljning | FIXTUR skapaSnapshot: förändringar mot föregående (AKM1 70→82, pris 100→125), datum härleds, ogiltig klass saneras | **PASS** | dAKM1=12 dpris=0.25 | ΔAKM1=12, prisförändring=0.25 (125/100−1) omräknade exakt; datum deterministiskt ur senastKontrollerad; ogiltig vågklass → 'osatt', aldrig gissad | 2343 |
+| uppfoljning | FIXTUR jamforDåNu: delta/pris/vågbytes omräknade, betydelse stor/man/liten | **PASS** | betydelser=["stor","liten","man"] | J1: AKM1 +12 & fundamental byte på LÅNG → 'stor'; J2: delta 2 & pris +2,5 % utan bytes → 'liten'; J3: pris +30 % ≥ 20 % → 'man'; ny bolag utan tidigare mätning → delta null | 2344 |
+| forskningslaget | FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering | **PASS** | typ=rikt topp=["G-A.ST","G-B.ST","G-C.ST"] | andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet | 2344 |
+| forskningslaget | FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert | **PASS** | tom=osatt fattig=magert rodaTung=magert | [] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln | 2344 |
+| forskningslaget | DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar | **PASS** | v36=G-D.ST fangat=4 | 2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump | 2345 |
+| konfluens | FIXTUR sjalvkontroll: 6 giltiga fixture-rader (alla klassvägen i specifikationen) | **PASS** | ok=true fel=0 | Konfluens/Värde-sover/Vågor-utan-golv/null-på-gränsen/Ingen-bild(<3 källor)/null(3 källor, osatta pelare) — samtliga accepteras med rätt tickerordning | 2345 |
+| konfluens | FIXTUR sjalvkontroll avvisar: poäng 101/-5, klassfel, dubletter, >10 tickers, datakallor 4 | **PASS** | 7 fall verifierade | sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll | 2345 |
+| vagvalidering | DOM-PROTOKOLL v1: klass×momentum → traff/miss/osatt (17 fall + gränser) | **PASS** | basbygge gräns 6/6,1 + riktning 0,4/−0,4 | impulsvåg→träff vid positivt momentum (även +0,4), miss vid negativt; korrigering spegelvät; exakt 0 dömer inte riktning → osatt; basbygge träff vid \|mom\| ≤ 6 % (tröskeln inklusiv, motorns egen gräns — hedervändig symmetri), miss vid 6,1; osatt klass/null/NaN → osatt (ALDRIG dömt); klassFranTal sp | 2345 |
+| vagvalidering | ENIGHETSSCORE 40/30/30 omräknad för hand (55/100) + tak 100 + determinism | **PASS** | fixture=55/100 max=100/100 | rådets formel: 40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,\|mom\|/6) + 30·täckning (bedömda/totalt); fixture 2 bedömda av 5 med 1 av 2 bekräftade → 55; komplett bekräftad stark mätning → 100; helt osatt → null (aldrig påhittad); heltalsavrundning deterministisk 2× | 2345 |
+| vagvalidering | DOMBYGGE ur två ronder (klass@T vs momentum@T+1) + dom-återskapning | **PASS** | 10 domar varav 3 dömda träff + 7 osatta | kanonisk ordning (universum × horisont): AAA mikro impulsvåg+3,1→träff, kort korrigering−2→träff, medellång basbygge+6→träff, lång osatt→osatt, okänd klass saneras till osatt; BBB utan momentum→osatt; varje rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — granskningsbar rad för rad | 2345 |
+| vagvalidering | RULLANDE träff% per (horisont,klass) + rapport (tabell, n, osatt-andel) | **PASS** | rond1=1/1 rond2=2/2 traff=50% | räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta —  | 2346 |
+| mos-oversattning | TERMBANK struktur + kundtermer (≥200 rader) | **PASS** | storlek=293 latinska=22 | 293 termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (22) behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska | 2348 |
+| mos-oversattning | KONTROLL termKonsistens (pass + fail-case) | **PASS** | traffade=4 missar(dålig)=3 | 4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med 3 missar | 2583 |
+| mos-oversattning | KONTROLL sifferIntegritet (tal ändrat ⇒ fail) | **PASS** | saknade=2 extra=2 | decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass | 2583 |
+| mos-oversattning | KONTROLL strukturIntegritet (stycken/listor/JSON) | **PASS** | prosa-fail=true json-pass=true json-fail=true | stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas | 2584 |
+| mos-oversattning | KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor) | **PASS** | okFörhållande=1 avkapad=0.098 | förhållande 1 inom intervall pass; avkapad (0.098) fail; AR åäö-läcka fail; EN arabiskläcka fail | 2584 |
+| mos-oversattning | KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,) | **PASS** | normaliserad='0123456789' ar-pass=true ar-fail=true | östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej | 2584 |
+| mos-oversattning | VERSIONSHASH determinism (SHA-256 12 hex) | **PASS** | hash('a')=ca978112ca1b unicode=9d9a3e663781 | sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt | 2585 |
+| mos-oversattning | KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz) | **PASS** | totalt=70699 ui=290 kursblock=69501 | 70699 källor: 290 ui-nycklar (= ordlistan) + 69501 kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop | 3286 |
+| mos-oversattning | MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät) | **PASS** | trösklar=100/90/89 motorAktiv=false kedja=0 | 100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000] | 3288 |
+| mos-oversattning | KONTROLLRAPPORT poäng 0–100 (viktad summa) | **PASS** | perfekt=100 undermalig=0 traskel=90 | perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger 0 poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning | 3289 |
+| mos-oversattning | TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier) | **PASS** | r1=1 rattad r2='The moat protects the company.' r3=0 | synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي | 3422 |
+| mos-oversattning | MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter | **PASS** | bitar=7 langd=3370 | GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv\|en/sv\|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag | 3423 |
+| mos-oversattning | KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering | **PASS** | kedja=["deepl","google","mymemory"] | med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null) | 3424 |
+| mos-oversattning | STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät) | **PASS** | status=7 direktMaxOrd=8 | unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja | 3426 |
+| mos-oversattning | POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt) | **PASS** | utan=60 med=100 | simulerat motorsvar med två termfel: utan rättning poäng 60 (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller int | 3531 |
+| mos-oversattning | SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1) | **PASS** | message='[mös] publicerad the-intelligent-investor:kap5:block3 en' | message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2× | 3531 |
+| mos-oversattning | EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion) | **PASS** | dedupe=3 karta=3 | 5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta | 3532 |
+| mos-oversattning | SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt) | **PASS** | karta=1 nyckel=2 sprak | dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel | 3532 |
+
+## Täckningsgrad (våg 49 + våg 52)
+
+Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.
+
+### Kravlista på main
+
+- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
+
+_Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._
+---
+
+# Motorervalidering — 100%-väktaren — 2026-09-04T14:40:39.426Z
+
+- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)
+- **Miljö:** node v22.19.0 på win32; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)
+- **Körtid:** 6.0 s (budget 90 s, inom budget)
+- **Internt (tsx):** 4.1 s; startad 2026-09-04T14:40:35.305Z, klar 2026-09-04T14:40:39.356Z
+- **Policy (våg 49):** varje deterministisk motor minst ett deterministiskt test; **SKIP är förbjudet** — under 100% PASS = FAIL.
+
+**RESULTAT: 83 PASS / 0 FAIL / 0 SKIP**
+
+## Sammanfattning
+
+| Motor | PASS | FAIL | SKIP |
+|---|---:|---:|---:|
+| vagfundament | 5 | 0 | 0 |
+| vagfundament/portfölj | 1 | 0 | 0 |
+| analys | 5 | 0 | 0 |
+| netnet | 3 | 0 | 0 |
+| netnet/NCAV | 3 | 0 | 0 |
+| konfluens | 4 | 0 | 0 |
+| portfolj-vagor | 1 | 0 | 0 |
+| gränser | 7 | 0 | 0 |
+| chatbot-nlu | 2 | 0 | 0 |
+| omtanke-motor | 2 | 0 | 0 |
+| kurstips | 2 | 0 | 0 |
+| dashfraga | 2 | 0 | 0 |
+| vagkon | 2 | 0 | 0 |
+| spaced-repetition | 2 | 0 | 0 |
+| veckoplan | 2 | 0 | 0 |
+| briefing | 2 | 0 | 0 |
+| badges | 2 | 0 | 0 |
+| analysbank | 1 | 0 | 0 |
+| assistent | 2 | 0 | 0 |
+| akm2/kärna | 2 | 0 | 0 |
+| riskportfolj | 2 | 0 | 0 |
+| fundamental-vagmotor | 2 | 0 | 0 |
+| uppfoljning | 2 | 0 | 0 |
+| forskningslaget | 3 | 0 | 0 |
+| vagvalidering | 4 | 0 | 0 |
+| mos-oversattning | 18 | 0 | 0 |
+| **Totalt** | **83** | **0** | **0** |
+
+## Kontroller i detalj
+
+| Motor | Kontroll | Resultat | Värden | Detalj | T+ (ms) |
+|---|---|---|---|---|---:|
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} sammanfattning={"impulsvag":16,"korrigering":8,"basbygge":17,"osatt":59} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1328 |
+| vagfundament | STRUKTUR 20×5-matris + indikatorer (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} sammanfattning={"impulsvag":22,"korrigering":5,"basbygge":13,"osatt":60} valuta=SEK dataPer=2026-06-30 | matris 20×5, alla celler null eller heltal i [-1,1]; indikatorer 20; sammanfattning omräknad exakt | 1331 |
+| vagfundament/portfölj | STRUKTUR portföljaggregering + procentfält | **PASS** | tackningProcent=100 totalText=Portföljen i genomsnitt: basbygge på mega | matris 20×5 i [-1,1]; kategorier 7×5; total 5; radTexter 7; tackningProcent i [0,100] | 1331 |
+| vagfundament | MATEMATIK kategorier+total omräknade (VOLV-B.ST) | **PASS** | total={"mikro":0.542,"kort":0.167,"medellang":0.25,"lang":null,"mega":0.25} | 19 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000250 | 1332 |
+| vagfundament | MATEMATIK kategorier+total omräknade (SAAB-B.ST) | **PASS** | total={"mikro":0.042,"kort":0.417,"medellang":0.667,"lang":null,"mega":0.667} | 20 kategoriceller + 4 totalceller omräknade för hand (viktade med AKM1-vikterna); största avvikelse kategori=0.000333 total=0.000313 | 1332 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (VOLV-B.ST) | **PASS** | pris=348.2 pos52=0.829 sammanfattning={"bull":16,"bear":0,"neutral":9} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1332 |
+| analys | STRUKTUR 5×5-matris (25 celler) + data (SAAB-B.ST) | **PASS** | pris=591.3 pos52=0.711 sammanfattning={"bull":17,"bear":6,"neutral":2} kallor=1 | matris25=25 celler i {-1,0,1}; sammanfattning omräknad exakt; pris/spann/pos52 finita; momentum+vager 5 horisonter | 1332 |
+| analys | MATEMATIK fib/pos52/vager omräknade (VOLV-B.ST) | **PASS** | fib38=315.7866 fib62=279.5134 momentum={"mikro":-0.0006,"kort":0.076,"medellang":0.2485,"lang":0.5421,"mega":0.8296} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1332 |
+| analys | MATEMATIK fib/pos52/vager omräknade (SAAB-B.ST) | **PASS** | fib38=540.5718 fib62=411.9282 momentum={"mikro":-0.0755,"kort":0.1119,"medellang":0.115,"lang":3.1105,"mega":8.6068} | fib38/fib62/pos52 omräknade ur hojd52/lag52/pris; sammanfattning exakt; 5 vågklasser omräknade (0 gränsfall hoppades i omräkningen — kontrollen själv hoppas aldrig) | 1332 |
+| netnet | STRUKTUR screeningsrad (VOLV-B.ST) | **PASS** | kurs=348.2 ncavPerAktie=-44.7018 forhallande=null klass=ej pe=19.7504 pb=3.7135 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1332 |
+| netnet | STRUKTUR screeningsrad (SAAB-B.ST) | **PASS** | kurs=591.3 ncavPerAktie=19.0639 forhallande=31.0168 klass=ej pe=45.103 pb=6.346 | kurs/ncavPerAktie/forhallande finita tal; klass i {net-net,nära,ej} | 1332 |
+| netnet/NCAV | NCAV omräknad för hand (VOLV-B.ST) | **PASS** | CA=305570000000 CL=265914000000 LTD=130555000000 aktier=2033452084 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = -44.701816 ≈ motorns -44.7018; förhållande=kurs÷NCAV och Grahams klass stämmer | 1332 |
+| netnet/NCAV | NCAV omräknad för hand (SAAB-B.ST) | **PASS** | CA=82578000000 CL=63744000000 LTD=8475000000 aktier=543383388 valuta=SEK | (omsättningstillgångar − (rörelseskulder + långfristig skuld)) ÷ aktieantal = 19.063888 ≈ motorns 19.0639; förhållande=kurs÷NCAV och Grahams klass stämmer | 1332 |
+| netnet/NCAV | GRAHAM_TROSKEL- och MAX_TICKER_PER_ANROP-konstanter | **PASS** | 0.667/15 | GRAHAM_TROSKEL=0.667 (förväntat 0.667 = 2/3); MAX_TICKER_PER_ANROP=15 (förväntat 15) | 1332 |
+| konfluens | STRUKTUR+SJÄLVKONTROLL skannaKonfluens (VOLV-B.ST, SAAB-B.ST) | **PASS** | VOLV-B.ST: konfluens=27 vg=5 klass=null \| SAAB-B.ST: konfluens=28 vg=0 klass=null | 2 rader i indataordning; motorns egna sjalvkontroll ok (poäng heltal 0–100/null, klass konsistent med trösklarna 70/50/3, tickers unika) | 1333 |
+| portfolj-vagor | STRUKTUR+MATEMATIK viktat snitt omräknat ur perAktie (2 tickers, likavikter) | **PASS** | sammanfattning={"impulsvag":4,"korrigering":0.5,"basbygge":0.5,"osatt":0} | perAktie-profiler en-hot per horisont; portföljandelen omräknad för hand som Σ(vikt×andel)/Σvikt per klass och horisont; sammanfattningen summerar 5 | 1333 |
+| vagfundament | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=10279 | två separata körningar gav byte-identisk JSON (10279 tecken) — konsistent med frusen marknadsdata | 1547 |
+| analys | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=1233 | två separata körningar gav byte-identisk JSON (1233 tecken) | 1770 |
+| netnet | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=141 | två separata körningar gav byte-identisk JSON (141 tecken) | 2177 |
+| konfluens | DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt) | **PASS** | längd=176 | två separata körningar gav byte-identisk JSON (176 tecken) — konfluenspoängen är reproducerbar ur de avrundade dimensionerna | 2463 |
+| gränser | vagfundament okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen fundamentaldata (Yahoo fundamentals-timeseries)"} | snyggt fel: 'ingen fundamentaldata (Yahoo fundamentals-timeseries)' | 2816 |
+| gränser | analys okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ingen data (Yahoo/MarketStack)"} | snyggt fel: 'ingen data (Yahoo/MarketStack)' | 2816 |
+| gränser | netnet okänd ticker XXXX.ST → fel-rad utan krasch | **PASS** | {"ticker":"XXXX.ST","fel":"ofullständig balansdata","klass":null} | snyggt fel: 'ofullständig balansdata' | 2816 |
+| gränser | netnet formatogiltig ticker 'BAD TICKER!' → valideringsfel | **PASS** | {"ticker":"BAD TICKER!","kurs":null,"ncavPerAktie":null,"forhallande":null,"klass":null,"fel":"ogiltig ticker"} | fel-text: 'ogiltig ticker' | 2816 |
+| gränser | konfluens tom tickerlista → tomt svar utan krasch | **PASS** | 0 rader | skannaKonfluens([]) returnerade [] | 2816 |
+| gränser | tomma tickerlistor → tomma svar (alla motorer) | **PASS** | 0 rader | vagfundament/analys/netnet returnerade alla [] utan krasch | 2816 |
+| gränser | portfolj-vagor tom lista → tom struktur + pedagogisk text | **PASS** | {"impulsvag":0,"korrigering":0,"basbygge":0,"osatt":0} | perAktie={}, portföljprofil nollställd, totalText närvarande | 2816 |
+| chatbot-nlu | FIXTUR normalisering + ämne + levenshtein + följdfråga | **PASS** | ren1='vad ar pe' ren2='borsen' | 'Vadd är P/E?'→'vad ar pe'→pe; 'brasken'→'borsen'; bruttomarginal→v07; mr market→mrmarket; levenshtein 0/1/2; 'och P/E?'=följdfråga men 'Vad är P/E?'=ej | 2822 |
+| chatbot-nlu | DETERMINISM 5 frågor 2× (JSON identiskt) | **PASS** | ["pe","borsen","v07","v04","moat"] | [{"ren":"vad ar pe","amne":"pe"},{"ren":"borsen","amne":"borsen"},{"ren":"hur raknar man bruttomarginal","amne":"v07"},{"ren":"och ps","amne":"v04"},{"ren":"vad ar moat","amne":"moat"}] | 2823 |
+| omtanke-motor | FIXTUR lasOmtanke: radslOro (prio 1), aterkomsten, harmoni=null | **PASS** | oro=radslOro aterkomsten=aterkomsten harmoni=null | 'förstår inte'→radslOro prio 1 länk /dagens-pass; 40 dagar borta→aterkomsten prio 2; lugn meny-surfare utan signaler→null (tystnad är omtanke); determinism 2× | 2823 |
+| omtanke-motor | FIXTUR lasSignaler: tracer/member/chat-minne tolkas ur localStorage | **PASS** | tracer=2 xp=120 fragor=2 | 2 tracer-sidor, xp=120, 2 mentorfrågor med senaste text, senastAktiv från senaste ts, samtycke+profil=true | 2824 |
+| kurstips | FIXTUR raknaKurstips: första steg v01 (100p), fälttyper, exkludering | **PASS** | antal=3 första=v01-forsaljningstillvaxt | ny elev (tom localStorage) → 1–3 tips, första = V01 Försäljningstillväxt med poäng 100, alla fält närvarande, exkluderaSlug utesluter | 2824 |
+| kurstips | DETERMINISM raknaKurstips 2× (JSON identiskt) | **PASS** | längd=620 | samma shim-tillstånd → byte-identiska tips | 2824 |
+| dashfraga | FIXTUR intents: streak → /dagens-pass, fallback, hälsning | **PASS** | streakLank=/dagens-pass | streak-fråga → streak-svar med länk /dagens-pass; okänd fråga → fallback-texten; 'hej' → välkomsttext; determinism 2× | 2825 |
+| dashfraga | FIXTUR vågkarta-intent degraderar gracefult när nät saknas | **PASS** | ikon=🌊 | fetch mot /api/vagscan/senaste misslyckas i Node (relativ URL) → dokumenterad fallback 'Ingen vågkarta har sparats ännu' — modulen kraschar aldrig på nätfel | 2825 |
+| vagkon | MATEMATIK σ + P10/P50/P90 omräknade för hand (S0·exp(z·σ·√t)) | **PASS** | sigma=0.08965827311693393 medianSlut(mega)=130 | σ (sampel, n−1) över log-returer omräknad med oberoende kodväg; medianen platt på S0=130; 48 stegs band verifierade mot √t-formeln; bandet breddar monoton | 2826 |
+| vagkon | FIXTUR horisontval, otillräcklig data, icke-tal rensas, determinism | **PASS** | n(ren)=5 | delmängd ['mega'] → endast mega i kanonisk ordning; <3 punkter → otillracklig utan horisonter; icke-tal (NaN) rensas ur historiken (negativa/0 är äkta tal — de bidrar bara inte till σ); 2× körning JSON-identisk | 2826 |
+| spaced-repetition | FIXTUR SM-2: EF'=EF+(0.1−q(0.08+(5−q)0.02)); 1→6→×EF; q<3 nollställer | **PASS** | [{"facit":2.2,"intervall":1,"repetitioner":1,"nastRepetition":"2026-09-05"},{"facit":1.9,"intervall":6,"repetitioner":2,"nastRepetition":"2026-09-10"},{"facit":1.72,"intervall":1,"repetitioner":0,"nastRepetition":"2026-09-05"},{"facit":1.42,"intervall":1,"repe | från jungfruligt kort: q5 → facit 2.2/rep 1/intervall 1; q4 → facit 1.9/rep 2/intervall 6; q2 → rep 0/intervall 1; q5 igen → rep 1 | 2826 |
+| spaced-repetition | FIXTUR SM-2 forts: facitgolv, tak 365, default-status, kortunderlag, nästa datum | **PASS** | kort=140 kategorier=7 | facit 1.3 med q5 → 1.3 (SM-2-steget 1.0 under golvet 1.3), intervall round(100×1.3)=130; intervall 400 → tak 365; okänt kort → default 2.5/0/0/null; 140 kort med unika id:n i 7 kategorier; nastRepetition ≈ idag+intervall | 2827 |
+| veckoplan | FIXTUR veckoNummer: ISO-veckor 2026-01-01→1, 2026-01-05→2, 2027-01-01→53 | **PASS** | v1/v2/v53 | ISO 8601-veckonummer (måndag start, torsdag definierar veckan): torsdag 1 jan 2026 → v1, måndag 5 jan → v2, fredag 1 jan 2027 → v53 | 2827 |
+| veckoplan | FIXTUR raknaVeckoPlan 75/25 min + lasKlara/markeraKlar-toggle + determinism | **PASS** | rader75=8 summa=74 rader25=5 | 75 min → 5 pass (mån–fre, 5 min) + kurstillfällen ≤ budget; 25 min → exakt 5 pass; kryss läses/toggLAS per veckonummer; samma veckohash → identisk plan | 2827 |
+| briefing | FIXTUR halsningFranTimme + vagLageFranVagdata + morgonMening exakt | **PASS** | m1='God morgon, Nivå 3 — vågkartan andas stigande impulser och d…' | morgon<11/dag/kväll>=17; argmax över universumsumman med mjuk null-degradering; morgonmeningen exakt mot mallen i alla tre streak-varianter (7/1/0) | 2827 |
+| briefing | FIXTUR raknaBriefing: struktur + determinism (utom klockstyrd hälsning) | **PASS** | niva=1 xp=0 klara=0 | niva/xp/klaraKurser finita; vagdata=null (degradering utan nät); mening alltid närvarande; alla fält utom den klockstyrdda hälsningen byte-identiska 2× | 2828 |
+| badges | FIXTUR BADGER-struktur (≥28, unika, 5 kategorier) + badgeStatus tom shim | **PASS** | badger=29 | 29 meriter med unika id:n, giltiga kategorier och komplett BADGE_MAP; tom shim → inga upplåsta, procent i [0,100], framsteg alltid text | 2848 |
+| badges | FIXTUR nivå-trösklar: 550 XP→nivå 6 (niva-5=100%), 3 kurser→kurser-5=60%, streak-3=100%, quiz + geBadge-kontrakt | **PASS** | niva-5=100% kurser-5=60% | tröskelberäkningen (stapel = låst [0,mal], procent = min(100, round(nu/mal×100))) verifierad på fyra badges; geBadge true endast första gången, okänt id → false | 2848 |
+| analysbank | FIXTUR spara/läsa/uppdatera (ny=true, samma id=false), nyast först, tak 50, ogiltig rad | **PASS** | rader efter 57 sparningar=0 | bankens localStorage-kontrakt: första sparning true, uppdatering false, datumsortering nyast först, MAX_RADER=50, normalisering avvisar rader utan id | 2851 |
+| assistent | FIXTUR raknaProaktivaForslag (streak 0 → /dagens-pass prio 100) + frustration + optimal tid | **PASS** | forslag=1 forsta=/dagens-pass | bruten streak → högst prioritet /dagens-pass; listan aldrig tom, dedup på länk, maxAntal kapsar; frustration = bruten kedje + ≥30 min + 0<quiz<50%; dygnsrytm majoritetsregel med exakta texter | 2852 |
+| assistent | FIXTUR genereraHalsning (klockprefix + namntilltal) + determinism | **PASS** | God dag, Elev — 1 kurs i ryggen och en rytm som vä | hälsningen följer dygnsrytmen (morgon/dag/kväll), tilltalar eleven med namn och speglar läget; förslagen byte-identiska 2× | 2852 |
+| akm2/kärna | FIXTUR raknaAKM1: HEL (Σpoang=totalt, 0–5, 7 kategorier) + NUL (allt osatt → 0) | **PASS** | HEL totalt=31 NUL totalt=0 | HEL-fixtur: 31/100 = Σ(V01–V20)-poäng omräknad exakt; NUL-fixtur: totalt 0 utan gissade poäng (ärlighetsprincipen); datum = k.hamtat | 2853 |
+| akm2/kärna | FIXTUR projektionsinvarianten + hård kassa-port (NEG ≤ 45) + determinism | **PASS** | NEG komposit=2 HEL komposit=31 | projiceraAKM1(raknaAKM2(HEL, akm1-klassisk)) === raknaAKM1(HEL) byte-vis; NEG (kassa 10 mån) → komposit 2 ≤ 45; lager1 o modifierad; 2× JSON-identisk | 2855 |
+| riskportfolj | FIXTUR 9 riskprofiler: horisontvikter summerar 1, spridningstak, MIN/MAX_INNEHAV | **PASS** | konservativ maxPerAktie=0.08 tillväxt=0.15 | 3 nivåer × 3 takter; varje profils horisontviktning summerar exakt 1 (mikro lägst); maxPerAktie ≤ maxPerBransch; konservativ tätare än tillväxt; 8–15 innehav | 2855 |
+| riskportfolj | FIXTUR byggPortfolj syntetisk pool (15 kandidater, 5 branscher): 8–15 innehav, Σvikt=1, tak, inga BROTT | **PASS** | innehav=15 viktsumma=1 | 15 innehav; vikter inom maxPerAktie=0.11; Σvikt=1 exakt; branschbelastning ≤ maxPerBransch=0.3; inga strikta krav brutna; 2× JSON-identisk | 2858 |
+| fundamental-vagmotor | FIXTUR klassaVag: stigande→impulsvag, fallande→korrigering, flat→basbygge (×5 horisonter), kort→osatt | **PASS** | rost a/b/c på stigande: impulsvag/impulsvag/impulsvag | trippelröstningen (teckenvändning + regression + delperiod, ≥2 av 3) enig på alla fem horisonter för rena monoton serier och plan serie; <3 punkter → osatt (gissar aldrig) | 2859 |
+| fundamental-vagmotor | FIXTUR raknaFVag: 20 variabler, giltiga klasser/dynamik, NUL→osatt, determinism | **PASS** | variabler=20 | HEL-fixtur → alla 20 AKM1-variabler klassade med anteckning; NUL-fixtur → samtliga osatta (motorn gissar aldrig); 2× JSON-identisk | 2862 |
+| uppfoljning | FIXTUR skapaSnapshot: förändringar mot föregående (AKM1 70→82, pris 100→125), datum härleds, ogiltig klass saneras | **PASS** | dAKM1=12 dpris=0.25 | ΔAKM1=12, prisförändring=0.25 (125/100−1) omräknade exakt; datum deterministiskt ur senastKontrollerad; ogiltig vågklass → 'osatt', aldrig gissad | 2862 |
+| uppfoljning | FIXTUR jamforDåNu: delta/pris/vågbytes omräknade, betydelse stor/man/liten | **PASS** | betydelser=["stor","liten","man"] | J1: AKM1 +12 & fundamental byte på LÅNG → 'stor'; J2: delta 2 & pris +2,5 % utan bytes → 'liten'; J3: pris +30 % ≥ 20 % → 'man'; ny bolag utan tidigare mätning → delta null | 2862 |
+| forskningslaget | FIXTUR rikt (4 grön/10 gul/6 röd av 20): antal+andel+text+topp-3 med tie-break+datering | **PASS** | typ=rikt topp=["G-A.ST","G-B.ST","G-C.ST"] | andel gröna 0.2 ≥ tröskel 0.10 med andel röda 0.3 ≤ 0.30 ⇒ 'rikt — 4 av 20 bolag klarar de strikta kraven'; topp-3 = gröna med högst akm1Totalt (lika poäng ⇒ ticker stigande); andelAvMax 80/100=0.8; senastKontrollerad = senaste rad-datumet | 2863 |
+| forskningslaget | FIXTUR gränser: tomt underlag ⇒ osatt (gissar aldrig), få gröna och många röda ⇒ magert | **PASS** | tom=osatt fattig=magert rodaTung=magert | [] ⇒ osatt + 'inte levererat' + veckansBolag null ('inget bolag klarar de strikta kraven ännu'); 1 grön av 30 (0.033 < 0.08) ⇒ 'magert — selektion avgör'; 2 gröna men 8 röda av 10 (0.8 > 0.35) ⇒ magert via röda-tröskeln | 2863 |
+| forskningslaget | DETERMINISM: 2× JSON-identisk, ISO-veckonummer, veckourval ur grönapoolen roterar utanför prognospilar | **PASS** | v36=G-D.ST fangat=4 | 2026-09-03 ⇒ vecka 36 och 2026-01-01 ⇒ vecka 1 (torsdagsregeln); samma (rader, veckonr) ⇒ byte-vis identiskt svar inklusive veckans bolag; veckorna 36–43 plockar endast ur den sorterade grönapoolen och träffar ≥2 olika bolag — deterministiskt, aldrig slump | 2863 |
+| konfluens | FIXTUR sjalvkontroll: 6 giltiga fixture-rader (alla klassvägen i specifikationen) | **PASS** | ok=true fel=0 | Konfluens/Värde-sover/Vågor-utan-golv/null-på-gränsen/Ingen-bild(<3 källor)/null(3 källor, osatta pelare) — samtliga accepteras med rätt tickerordning | 2863 |
+| konfluens | FIXTUR sjalvkontroll avvisar: poäng 101/-5, klassfel, dubletter, >10 tickers, datakallor 4 | **PASS** | 7 fall verifierade | sju korruptionsfall ger alla ok=false med förväntade felförklaringar; valideraKonfluens är ett sant alias för sjalvkontroll | 2863 |
+| vagvalidering | DOM-PROTOKOLL v1: klass×momentum → traff/miss/osatt (17 fall + gränser) | **PASS** | basbygge gräns 6/6,1 + riktning 0,4/−0,4 | impulsvåg→träff vid positivt momentum (även +0,4), miss vid negativt; korrigering spegelvät; exakt 0 dömer inte riktning → osatt; basbygge träff vid \|mom\| ≤ 6 % (tröskeln inklusiv, motorns egen gräns — hedervändig symmetri), miss vid 6,1; osatt klass/null/NaN → osatt (ALDRIG dömt); klassFranTal sp | 2863 |
+| vagvalidering | ENIGHETSSCORE 40/30/30 omräknad för hand (55/100) + tak 100 + determinism | **PASS** | fixture=55/100 max=100/100 | rådets formel: 40·andel medel-bekräftade + 30·medel tröskelmarginal min(1,\|mom\|/6) + 30·täckning (bedömda/totalt); fixture 2 bedömda av 5 med 1 av 2 bekräftade → 55; komplett bekräftad stark mätning → 100; helt osatt → null (aldrig påhittad); heltalsavrundning deterministisk 2× | 2864 |
+| vagvalidering | DOMBYGGE ur två ronder (klass@T vs momentum@T+1) + dom-återskapning | **PASS** | 10 domar varav 3 dömda träff + 7 osatta | kanonisk ordning (universum × horisont): AAA mikro impulsvåg+3,1→träff, kort korrigering−2→träff, medellång basbygge+6→träff, lång osatt→osatt, okänd klass saneras till osatt; BBB utan momentum→osatt; varje rads dom = domVagvalidering(klassForrigeRond, utfallMomentum) — granskningsbar rad för rad | 2864 |
+| vagvalidering | RULLANDE träff% per (horisont,klass) + rapport (tabell, n, osatt-andel) | **PASS** | rond1=1/1 rond2=2/2 traff=50% | räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta —  | 2865 |
+| mos-oversattning | TERMBANK struktur + kundtermer (≥200 rader) | **PASS** | storlek=293 latinska=22 | 293 termer sv→en→ar i 11 kategorier; inga tomma fält, inga dubletter; latinska termer (22) behålls i AR; kundtermerna sammanvägningen/moat/vallgrav kanoniska | 2866 |
+| mos-oversattning | KONTROLL termKonsistens (pass + fail-case) | **PASS** | traffade=4 missar(dålig)=3 | 4 termbankstermer i källan kräver exakt målterm; korrekt översättning pass, felaktig (gross margin + debt-to-equity saknas) fångas med 3 missar | 3110 |
+| mos-oversattning | KONTROLL sifferIntegritet (tal ändrat ⇒ fail) | **PASS** | saknade=2 extra=2 | decimalteckenbyte (12,5→12.5) och sifferväxling (258→259) fångas som multiset-avvikelse; identisk översättning pass | 3110 |
+| mos-oversattning | KONTROLL strukturIntegritet (stycken/listor/JSON) | **PASS** | prosa-fail=true json-pass=true json-fail=true | stycken, rader, markdown-listor och rubriker jämförs; JSON-block (tabell/tidslinje) kräver identiska toppnycklar + arraylängder — kapad struktur fångas | 3111 |
+| mos-oversattning | KONTROLL lateralKolla (längd 0,5–2,5×, åäö/ar-läckor) | **PASS** | okFörhållande=1 avkapad=0.098 | förhållande 1 inom intervall pass; avkapad (0.098) fail; AR åäö-läcka fail; EN arabiskläcka fail | 3111 |
+| mos-oversattning | KONTROLL AR-normalisering (٠-٩٫٬ → 0-9.,) | **PASS** | normaliserad='0123456789' ar-pass=true ar-fail=true | östra siffror/separatatorer normaliseras före multiset-jämförelsen: ٢٣,٤≡23,4 pass, ٢٤,٤ fail; redan latinska tal rörs ej | 3111 |
+| mos-oversattning | VERSIONSHASH determinism (SHA-256 12 hex) | **PASS** | hash('a')=ca978112ca1b unicode=9d9a3e663781 | sha256('a')=ca978112ca1b (fast testvector); samma text ⇒ samma hash, annan text ⇒ annan hash; unicode utf-8-stabilt | 3112 |
+| mos-oversattning | KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz) | **PASS** | totalt=70699 ui=290 kursblock=69501 | 70699 källor: 290 ui-nycklar (= ordlistan) + 69501 kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop | 3821 |
+| mos-oversattning | MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät) | **PASS** | trösklar=100/90/89 motorAktiv=false kedja=0 | 100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000] | 3823 |
+| mos-oversattning | KONTROLLRAPPORT poäng 0–100 (viktad summa) | **PASS** | perfekt=100 undermalig=0 traskel=90 | perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger 0 poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning | 3824 |
+| mos-oversattning | TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier) | **PASS** | r1=1 rattad r2='The moat protects the company.' r3=0 | synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي | 3952 |
+| mos-oversattning | MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter | **PASS** | bitar=7 langd=3370 | GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv\|en/sv\|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag | 3953 |
+| mos-oversattning | KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering | **PASS** | kedja=["deepl","google","mymemory"] | med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null) | 3954 |
+| mos-oversattning | STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät) | **PASS** | status=7 direktMaxOrd=8 | unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja | 3961 |
+| mos-oversattning | POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt) | **PASS** | utan=60 med=100 | simulerat motorsvar med två termfel: utan rättning poäng 60 (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller int | 4050 |
+| mos-oversattning | SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1) | **PASS** | message='[mös] publicerad the-intelligent-investor:kap5:block3 en' | message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2× | 4051 |
+| mos-oversattning | EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion) | **PASS** | dedupe=3 karta=3 | 5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta | 4051 |
+| mos-oversattning | SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt) | **PASS** | karta=1 nyckel=2 sprak | dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel | 4051 |
+
+## Täckningsgrad (våg 49 + våg 52)
+
+Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.
+
+### Kravlista på main
+
+- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.
+
+_Rapport genererad av verktyg/validera-motorer.mjs (100%-väktaren) — kontroller: struktur, matematik (NCAV/σ/SM-2/AKM1 m.m.), determinism, gränser, fixturtest på rena kärnor, robusthet (90 s)._

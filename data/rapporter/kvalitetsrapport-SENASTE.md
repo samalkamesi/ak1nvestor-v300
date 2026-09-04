@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-03
 
-- **Genererad:** 2026-09-03T19:35:16.236Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-03T20:57:29.402Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 6.2 s
+- **Körtid:** 6.1 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,7 +15,7 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 161 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 5281 strängar extraherade
+- 167 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 5190 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
@@ -28,7 +28,7 @@ Inga avvikelser hittade.
 
 ## 4. Länk-validitet (sokindex + huvudmeny + sidfooter) — **PASS**
 
-- 83 interna länkar verifierade mot 46 rutter i src/app
+- 4 interna länkar verifierade mot 46 rutter i src/app
 
 Inga avvikelser hittade.
 
@@ -40,7 +40,7 @@ Inga avvikelser hittade.
 
 ## 6. Sitemap-täckning — **PASS**
 
-- 38 sökvägar i sitemap.ts; 41 viktiga rutter jämförda
+- 38 sökvägar i sitemap.ts; 40 viktiga rutter jämförda
 - Medvetet exkluderade: /admin, /pro, /rapporter, /logga-in
 
 Inga avvikelser hittade.

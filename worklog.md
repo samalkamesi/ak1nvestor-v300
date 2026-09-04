@@ -4467,3 +4467,166 @@ var ogiltiga och tystades!) + synlig "Reservkälla"-badge, KurstipsKort →
 Kvar-kö från registret: AKM2-UI-dockning (kalkylator/pro-analys bakom
 flagga — projektionsinvarianten gör det riskfritt), 28 motorer utan
 egen kanal = framtida ronder.
+
+## VÅG 50 agent 2: AI-SEO (2026-09-03)
+
+Kunddirektiv: "nr 1 hos alla AI + växa organiskt + mejl-utskick".
+
+**AI-såvbarhet:**
+- data/forskning/AI-SEO-2026-09-03.md — webbforskning med källor (GEO/KDD-2024,
+  OpenAI/Anthropic/Perplexity/Google/Apple-crawlerdok, llms.txt-läget 2026,
+  strukturdata-konsensus).
+- src/app/robots.ts — explicita allow-grupper för 15 AI-crawlers (GPTBot,
+  OAI-SearchBot, ChatGPT-User, ClaudeBot/User/SearchBot/Web, PerplexityBot,
+  Perplexity-Searchbot, Google-Extended, Applebot-Extended, meta-externalagent,
+  Amazonbot, CCBot) + vanliga sök; admin stängd; Crawl-delay 0 kvar.
+- src/lib/seo.tsx buildLlmsTxt — NY sektion "Kanoniska frågor → svarssidor"
+  (V01–V20-frågor ur levande kursdata + 12 fasta svarssidor), crawler-policy-
+  rad, tal UR src/lib/siffror (333/103/8 211 osv — hardcode "7500+ quiz" borta),
+  sifferkälla-rad i Metadata. public/llms.txt regenererad från /api/llms-txt
+  (55 frågerader, 693 rader).
+- Schema.org: faqJsonLd + educationalOrganizationJsonLd + sidaMetadata()
+  (optional jsonLd-stöd) i seo.tsx. FAQPage på /, /kurser, /medlemskap;
+  EducationalOrganization på / + /kurser + provider i courseJsonLd.
+  Startsidan uppgraderad till pageMetadata (canonical/hreflang/OG/robots).
+
+**Organisk tillväxt:**
+- data/forskning/ORGANISK-TILLVAXT-PLAN.md — 90-dagarsplan: cadence, 20
+  long-tail-ämnen mappade mot V-kurser, digital PR, community, KPI:er.
+- src/app/blogg/page.tsx — deskriptiva länktexter ("Läs fördjupningen inom X —",
+  "Fortsätt djupare: kursen Y") + kurslänk per kort utanför kortlänken.
+- src/app/blogg/[slug]/page.tsx — "Fortsätt i kurserna"-modul: kurser ur
+  artikelkroppen (max 4, deskriptiva ankare), fallback /kurser + /laroplan.
+
+**Mejl-utskick (byggd klart):**
+- src/lib/email-sandare.ts — NY leverantörsadapter: EMAIL_LEVERANTOR=resend|
+  sendgrid + EMAIL_API_KEY (+ valfri EMAIL_FROM; bakåtkompatibel med
+  RESEND_API_KEY/SENDGRID_API_KEY). Host-allowlist (api.resend.com,
+  api.sendgrid.com), 10 s timeout, kastar aldrig. Kundsetup dokumenterad
+  i filhuvudet.
+- src/app/api/email/route.ts — direktutskick efter köskrivning om leverantör
+  finns; annars status "köad (leverantör saknas)". NY typ
+  "prenumeration-intention" (välkomstbrev via NYHETSBREV_MALL).
+- src/app/api/cron/email/route.ts — rondan (06:30) skickar nu på riktigt via
+  adaptern när konfigurerad (bounechat MAX_KO_PER_KORNING), rapporterar
+  skickadeFaktiskt/leverantorsfel.
+- src/components/ak1a/prenumeration/aktivera-panel.tsx + src/lib/prenumeration.ts
+  (PrenusbrevStatus, intention.nyhetsbrev) — frivillig nyhetsbrevscheck som
+  POSTar type=prenumeration-intention; status visas i bekräftelsen; fel
+  påverkar aldrig aktiveringsbegäran.
+
+**Verifierat (dev 3472, nu dödad):** /robots.txt listar alla AI-crawlers ·
+/llms.txt 200 med frågestruktur · POST /api/email utan leverantör → 200
+{"köad":true,"status":"köad (leverantör saknas)"} · FAQPage/EducationalOrganization
+synliga i HTML på /, /kurser, /medlemskap, /kurser/v09-roe · blogg-lista +
+fallback modul verifierade · tsc 43 (0 nya).
+
+**KUND MÅSTE:** konto hos Resend el. SendGrid + verifiera avsändardomän +
+sätta EMAIL_LEVERANTOR/EMAIL_API_KEY(/EMAIL_FROM) i Vercel — utan det köas allt
+(behov: "morgon-briefing"-mejlen). Även Bing Webmaster Tools + Google Search
+Console (se ORGANISK-TILLVAXT-PLAN).
+
+## VÅG 50 agent 4: språkgrund — sv|en|ar (2026-09-03)
+Kunddirektiv: "språk ersättning till engelska och arabiska med exakt samma
+avancering." Fas 1 levererad (UI-grunden) + fas-plan med ÄRLIGA skalor:
+333 kurser = 2 916 kapitel, 8 211 quizfrågor, ~2,06 MILJONER ord — därför
+ALDRIG blind maskinöversättning; kundens eget krav kräver pipeline med
+kvalitetsgrind. (1) GRUND: src/lib/sprak.ts (register sv/en/ar, localStorage
+ak1a-sprak-v1, navigator-detektering ENDAST sv/en/ar annars svensk default,
+dirForSprak ar⇒rtl, typsäker oversatt() med {param}-interpolation + sv-fallback,
+skapaT(), oversattText() = exakt fritextmatchning för brödsmulor) +
+src/lib/ordlista.ts (142 nycklar × 3 språk: menyer, inloggning, kurs-UI,
+notiser, CTA:er, footer/juridik; arabiska formell-finansiell, latinska
+förkortningar behålls: AKM1/AK1TS/ROE/NCAV/XP). (2) LEVERANTÖR:
+sprak-leverantor.tsx monterad i rot-layouten (ytterst i ThemeProvider) —
+useSyncExternalStore med server-snapshot "sv": SSR och hydreringspass
+identiska (ingen mismatch, ingen blink — MGTM: bara textnoder byts), <html
+lang>+<html dir=rtl för ar> sätts i extern-system-effect. useSprak() har
+svensk fallback-kontext — kraschar aldrig utan leverantör. (3) VÄXLARE:
+sprak-vaxlare.tsx (diskret jordglob+SV-knapp i TemaVäxlarens stil, meny med
+flagga+inhemskt namn+bock; MONTERAD i seo-page-shell-headern bredvid
+TemaVaxlare på ~700 SEO-sidor; main monterar även i header.tsx/SPA +
+mobilmeny.tsx — menyagenten äger de filerna, orden finns redan i ordlistan
+nav.*). (4) ÖVERSATT NU (gränssnitt, ej innehåll): brödsmulor via nya
+brodkrumma.tsx (sidnamn matchas mot ordlistan; sidunika namn förblir sv tills
+fas 2), inloggad-knapp (Logga in/ut, "{namn} · Min Sida"), kurs-steg (ALLT
+UI: Nästa/Föregående med RTL-speglade pilar, Testa dig själv, Kapitel X av Y,
+Masterquiz, Rätt!, behärskat, Kursen klar, Grattis, 10x-insikt, Utmaning,
+nivå-upp, tips-fallback), notis-center (Notiser/nya/olästa, Alla lästa,
+Rensa, Markera läst, Gå dit, Från signalbussen, allt-lugnt-text, relativ tid
+just nu/min/h/d, typ-etiketter Varning/Möjlighet/Beslut, systemnotis-titel).
+(5) PIPELINE-DOK: data/forskning/SPRAK-PLAN.md — fas 2 nyckelsidor
+(~20–35k ord, 2–3 veckor, översättare krävs), fas 3 (333 kurser: termbank
+3–5 d, LLM-utkast+påtvingad terminologi+maskinella kontroller (term/
+siffer-/quiz-integritet)+mänsklig granskning 100 % rubriker + 10 % brödtext
+per batch av 10; totalt ~4–6 mån med 2 granskare, rekommendation:
+flaggskepps-kurser först ~3–4 veckor), RTL-krav (arabiskt typsnitt via
+next/font, <bdi> runt tickers, latinska siffror, quiz-bokstäver). (6)
+VERIFIERAT: tsc EXAKT 43 förhandsbefintliga fel, 0 nya (0 i rördas filer);
+eslint 0 problem på alla nya filer (kvarvarande setState-in-effect på
+inloggad-knapp/kurs-steg + no-var i layout-beaconen är FÖRHANDSBEFINTLIGA
+mönster); dev: sidor 200 (/, /kurser, kurs-sida, /laroplan, /logga-in,
+/bibliotek), SSR-markup verifierad (växlare SV-knapp + aria, svenska
+UI-ord, <html lang="sv">, brödsmulor-komponent), dev-logg 0 fel; logiktest
+kompilerad: en/ar-översättningar, interpolation ("الفصل 3 من 12 · 9 د"),
+dir ar=rtl, detektering ar-EG⇒ar/en-US⇒en/de⇒sv-default, localStorage-
+roundtrip + ogiltigt värde⇒sv, fritext "Kurser"⇒الدورات/Courses.
+NOTERING: dev-portarna delas med parallella agenter (3471–3475) — mina
+verificationer kördes mot den delade servern (samma arbetskatalog); mitt
+eget 3474-försök krockade med Next 16:s en-devserver-per-dir-lås. Byt språk
+i DOM (IAB) = main: klicka växlaren, kontrollera dir="rtl" + att kopplade
+ord byter. Inget committat.
+
+## VÅG 50 agent 3: trafik+säkerhet
+Kunddirektiv: "den sidan ska ha exceptionellt bra statistik med alla besökare och fullständig säkerhet och dna-blockeringar och intelligenta system för dessa ämnen, allt skall synas live i hemsidan." TRE LAGER BYGGDA. (1) TRAFIKMÄTNING (egen, GDPR-vänlig — inga cookies, inga personuppgifter): NY src/middleware.ts (fanns ej; Next 16 fil-konvention, deprecationsvarnad men fungerande) + NY src/lib/sakerhet.ts (edge+node-gemensam: sanering path 120/UA 120/query ALDRIG, IP→SHA-256+salt(SESSION_SECRET||fast) trunkerad 16 hex, klassificering UA→bot/mobil/dator/okänd) + NY /api/trafik (POST: rate-limit exakt 60/min/IP-hash, samtyckes-stegring — med analys-samtycke full rad {path,ref-host,ua-klass,språk,land,hashad session,urval}, utan/_"endast nödvändigt"_ ENBAST path+ua-klass; minnesbuffer, spolning var 10:e händelse till system_events type=trafik via getSupabase-REST, window-konvention som organ-event; GET: publik minimal {skyddad,besokareIdag,blockerat24h} + med x-admin-password fullt aggregat 24h/7d/30d per timme/dag, top-sidor, top-källor, unika sessioner, bot-andel, stickprovsfaktor 0.3) + klienten TrafikRapportor i layout (efter hydrering, sendBeacon fire-and-forget, session-första alltid + 30 % stickprov + puls var 3:e minut för "just nu", återanvänder ak1a-session-token, läser ak1a-cookie-samtycke via befintligt lasCookieSamtycke) + bot-halvan i middleware (bot-UA:s sidvisningar loggas direkt med 10-min-dedupe per klass+path — botar kör ingen JS). (2) SÄKERHET+DNA-BLOCKERING i kanten: hot-mönster (.env/wp-admin/phpmyadmin/.git/xmlrpc/phpunit/shell/backup/java-sond/nyckelfiler)→403+logg via event.waitUntil (extern Supabase-fetch, ALDRIG localhost); ≥3 hot/10 min per hash→uteslutning 429 (NAT-skydd: normala webbläsar-UA:n passerar, endast bot/okänd-UA blockas — delad IP slutar straffa oskyldiga); frekvensvakt 30/10 s (bot/okänd) resp 150/10 s (normal)→429; logg-throttle 1 hot-rad/s + 1 flod-rad/10 s per hash (skriv-DOS-skydd, eskalering loggas EN gång); NY /api/sakerhet/handelser (GET admin-skyddad x-admin-password timing-safe + 10 fel/min: senaste 25 blockeringar {tid,path-trunk 60,klass,http,monster,ip-hash-8}, totalt 24h, heat-map per sökväg, unika hot-hashar, allt-klart-läge). (3) LIVE I HEMSIDAN: admin-flik "Trafik & Säkerhet 📡" (trafik-sakerhet-panel.tsx: 60 s-poll pausad i gömd flik, lås-rad mönster BeteendePanel, KPI just-nu/idag/24h/blockerat, SVG-sparkline 24 h utan bibliotek, 7/30-d-rader, top-sidor+källor med guld-staplar, bot-andel-badge, säkerhetstabell+heatmap+"Allt klart"-läge, GDPR-fotrad) + diskret publik Sidfooter-rad "🔒 Skyddad trafikvakt — N attacker blockerade 24 h · N besökare idag" (trafik-status-rad.tsx, publik minimal-GET, tyst vid motstånd). RETENTION-organet ombyggt typ-scopat (annars raderade 500-radstaket dagens trafik samma natt): övrigt 500/30d oförändrat, trafik 12 000/35d, sakerhet 3 000/35d — 17,7M-kollapsens designregler består (hårda tak per scope). TRANSPARENS: två nya REGISTER-rader (trafikstatistik anonym berättigat intresse 6.1f, säkerhetslogg hashad IP 6.1f, lagring 35d). VERIFIERAT mot delad dev-server (portarna studsar mellan parallella agenter 3471–3475 — Next 16 en-devserver-per-dir; mina egna 3473-försök omdirigerades och avslutades, kvarvarande instans lämnad åt övriga agenter): / /kurser /transparens 200; /wp-admin-test + /.env → 403; 4 hot → bot-UA 429 på normala sökvägar + webbläsar-UA 200 (NAT-skydd); 65-burst POST → exakt 60×200+5×429; POST-stick landade i Supabase (admin-GET: 131 visningar, top-sidor /rate-test 70+/kurser 11+/laroplan 3 — även andra agenters webbläsar-sessioner rapporterade live via rapportören, top-källor direkt+google, bot-andel 42 % inkl. Googlebot-besök); /api/sakerhet/handelser 401 utan lösenord + 3 blockeringar/heatmap/unika hashar med; /admin 200; publik status-GET lämnar inga sökvägar; dev-logg 0 fel; tsc EXAKT 43 förhandsbefintliga (0 i rördas filer; +1 som synt i mellankörning tillhörde parallella agenters visuellt-bibliotek/spaced-repetition och försvann). KRAV PÅ MAIN: (a) SÄTT SESSION_SECRET i Vercel-env (annars gäller fast fallback-salt — hasharna förblir konsistenta men env är starkare), (b) ADMIN_PASSWORD redan satt = gäller även /api/trafik-GET + /api/sakerhet/handelser, (c) behåll middleware.ts-konventionen (proxy.ts-codemod kan tas senare — funktionen intakt), (d) första dagens "unika" underrapporterar tills besökare valt kaknivå (minimal-läge har ingen session — medvetet GDPR-val, redovisat i panelens urvalsnotering). Inget committat.
+
+## VÅG 50 agent 1: meny
+Kunddirektiv: "rätt fin menyn och inga upprepningar, smart och superintelligent, anpassa sig till alla klienter… samma standard i alla menyer, telefon som dator, vertikalt som horisontellt." FORSKNING Först (data/forskning/MENYFORSKNING-2026-09-03.md, 16 regler R1–R16 med källor): Hick's lag (max 4 toppnivåer, 5–11 punkter/panel, ≤36 länkar totalt), NN/g megameny ("show each choice only once — duplication confuses", medelgranularitet, frontloaded etiketter, hover-intent, max 70vh), hub-and-spoke (inga djuplänkar till objekt i menyn — /kurser är navet), task-based>audience-based (NN/g: audience-nav tvingar självklassificering), mobil-drawer (accordion progressive disclosure endast en öppen, ≥48px-tryckytor, 16px text mot iOS-zoom, CTA i tumzonen), adaptiva menyer (recency/frekvens föredras — aldrig omordna basnaven). REGISTER NY src/lib/meny-register.ts: hela navigationen som ETT typsäkert register — 4 sektioner LÄRA(Läroplanen·Alla kurser-hub·Biblioteket·Labbar·Certifikat) ANALYSERA(11 verktyg i avdelarna Grundanalys→Skannar→Fördjupning→Portfölj & profil) PRAKTIK(Min Sida·Dagens Pass·Topplistan·Badges·Fas 3) OM AK1A(Manifestet·Medlemskap·Prenumeration·AK1A PRO·Bloggen·Om oss·Fas 2-ansökan guldknapp + yttor-styrda Logga in/Dina rapporter/Admin/Transparens), fält per punkt {text,lank,beskrivning,ikon,typ:sida|verktyg|kursyta,publik:gast|medlem|fas2|admin,avdelare,yttor,guldknapp,nycklar} + hjälpare punktSynlig/sektionPunkter/registerFor/lasMenyKontext(member-local+kurs-access)/allaRegisterLankar. BORTTAGNA UPPREPNINGAR: Bokmaster-djuplänken (→ hubbens menytext "även Bokmaster & Short-Seller"), Short-Seller-menyposten, "Repetera"-dubletten (samma länk som Min Sida), "AI-Diagnos"-dubletten (sökindexet listade /profil två gånger), SPA-drawerns "Mer"-lista (samma sektioner som "Sektioner") + "Fler sider" (Kurser ×3 i samma vy), Medlemskap/Blogg/Fas 2 ur Träna-panelen (9→5 punkter), Manifestet kvar i OM. ALLA YTOR LÄSER REGISTRET: huvudmeny.tsx (paneler ur registret, avdelare vid ny undergrupp, guldknapp-rad, Fortsätt-chip behållen), mobilmeny.tsx (NY vertikal accordion endast-en-öppen + autoöppning av aktiv sidas sektion, grid-rows-animation, CTA=n_InloggadKnapp i tumzonen — dubbla Fas 2-knappar borta), header.tsx SPA-startsidan (MEGA_PANELER/FLER_SIDER/NAV_SECTIONS bortbyggda → registrets 4 paneler via emoji→lucide-mappning IKON_FRAN_LUCIDE, hamburgaren syns NU i alla storlekar: fullmeny-drawern bär SPA-sektionerna Hem/PREC/Aktier som "STARTSIDAN"-grupp + registrets accordions + Portal-CTA; vidarebefordran till rutter blir onödig — panelerna länkar direkt), sidfooter.tsx (kolumner=registerFor(gast,"footer") i registrets ordning — 28 länkar varje destination exakt en gång; TrafikStatusRad från agent 3 bevarad), footer.tsx SPA (FOOTER_NAV ersatt av kurerat registreurval FOOTER_URVAL), sokindex.ts (STATISKA byggd ur registret + kategori härledd ur sektion/typ + valfri MenyKontext i sokIIndex/popularaVerktyg) + kommandopalett.tsx (passerar lasMenyKontext — publik-filtret gäller även ⌘K). PERSONLIG ANPASSNING: registrets publik-fält → medlem-ytor (/min-sida) bara inloggad, fas2-ytor (/rapporter) bara harFas2Access, admin (/admin) bara arAdmin; SSR=gast-vyn, hydrering utökar (samma mönster som InloggadKnapp). VERIFIERAT på egen dev 3471 (Next 16 en-devserver-per-dir: död lås-PID 11424 städad, eigen instans startad; 429:arna under länksvepet = agent 3:s frekvensvakt, långsam omtest = 200): / och /kurser 200; samtliga 32 registerlänkar HTTP 200 + validerade mot src/app-routes (comm-jämförelse) + 0 länk-dubbletter i registret; /kurser-SSR: footerns 31 länkar exakt registret i ordning, hamburger närvarande, gamla etiketter (Bokmaster/Repetera/AI-Diagnos/Short-Seller/Webinarier/Kursbiblioteket) 0 i nav/footer (förekomster endast i sidinnehåll/RSC-payload); hem-SSR: 4 panelknappar + Meny + Sök + 0 gamla listor; viewport-DOM-mätningar 412×915 + 915×412: viewport-meta responsiv, enda fasta bredd w-[170px] (Fortsätt-chip, syns bara ≥xl), drawrar max-w-lg+overflow-y-auto (vertikal scroll i stående+liggande), panel w-72=288<412, rader py-3.5≥48px + text-base=16px, accordions grid-rows-[0fr]/[1fr] + aria-expanded/aria-controls i båda drawrarna, footer grid-cols-2→md:4; tsc EXAKT 43 bas (0 i menyfilerna), eslint: "Cannot create components"-felen fixade via direkt map-uppslag (kvarvarande setState-i-effect = kodbasens etablerade hydreringsmönster, gamla filerna hade samma); dev-servern (PID 30808) dödad efteråt. Inget committat.
+
+── VÅG 50 KOMPLETT: MENY · AI-SEO · TRAFIK/SÄKERHET · SPRÅK SV/EN/AR (2026-09-03) ──
+Kunddirektiv ×4, FYRA parallella agenter + main-montering.
+(1) MENYN: forskning (16 regler R1-R16 ur NN/g+Hick+Smashing, källor i
+data/forskning/MENYFORSKNING-2026-09-03.md) → EN KÄLLA src/lib/meny-
+register.ts (alla menyer läser ur registret: huvudmeny, mobilmeny, SPA-
+header, sidfooter, footer, kommandopalett, sokindex). Ny IA: LÄRA/
+ANALYSERA/PRAKTIK/OM AK1A — 27 länkar + 5 yta-styrda, 32 unika, 0 dubbletter
+(bort: Bokmaster-djuplänk, Short-Seller-post, Repetera-dublett, AI-Diagnos,
+SPA "Mer"-listor där Kurser syntes 3×, dubbla Fas 2-knappar). Mobil:
+vertikal accordion (aria-expanded, ≥48px, 16px, tumzon-CTA) = registret
+identiskt desktop; verifierad 412+915, 0 overflow. Svaret på "varför bara
+analys som huvudanalys": ANALYSERA är nu ETT av fyra task-baserade spår
+(NN/g: task- > audience-baserad).
+(2) AI-SEO: robots.ts öppen EXPLICIT för 15 AI-crawlers (GPTBot/OAI-Search/
+ChatGPT-User/Claude*/Perplexity*/Google-Extended/Applebot-Extended/meta-
+externalagent/Amazonbot/CCBot); llms.txt 693 rader med 55 kanoniska
+frågor→svarssidor (20 V-frågor ur levande kursdata, tal ur siffer-
+guldkällan); FAQPage-schema på //kurser/medlemskap + EducationalOrg.
+ORGANISK-TILLVAXT-PLAN.md (90 dagar, 20 long-tail-ämnen mappade V01-V20);
+blogg 35/35 med kurslänkar + deskriptiva ankartexter. MEJL: email-sandare.ts
+(resend|sendgrid-adapter, host-allowlist) — /api/email skickar riktigt när
+EMAIL_LEVERANTOR+EMAIL_API_KEY satts, annars "köad"; nyhetsbrevscheck på
+/prenumeration; cron/email tömmer kön. KUNDEN MÅSTE: Resend/SendGrid-konto
++ domänverifiering + env (steg i filhuvudet) + Bing WMT/GSC.
+(3) TRAFIK+SÄKERHET LIVE: middleware.ts (edge) — hot-mönster (.env/wp-admin/
+phpmyadmin/.git/xmlrpc...) → 403+logg, frekvensvakt 429 (bot 30/10s, normal
+150/10s, NAT-skydd), bot-visningar loggas direkt via event.waitUntil;
+TrafikRapportör (sendBeacon, session-första + 30% stick + 3min-puls),
+GDPR: path+UA-klass aldrig query/rå-IP (SHA-256+salt-hash), samtyckes-
+stegring; /api/trafik (60/min-limit, aggregat) + /api/sakerhet/handelser
+(admin); ADMIN ny flik "Trafik & Säkerhet 📡" (60s-poll, sparkline, top-
+listor, blockeringstabell) + diskret sidfooter-rad "🔒 Skyddad trafikvakt ·
+N besökare idag"; retention typ-scopad (trafik 12k/35d). Verifierat:
+/wp-admin-test + /.env → 403, 65-burst → exakt 60×200+5×429, Googlebot
+loggad, admin-GET 131 visningar. SESSION_SECRET önskad i Vercel-env.
+(4) SPRÅK SV/EN/AR: 142 ordlistenycklar ×3 (formell arabisk finansiell
+stil, latinska förkortningar kvar), sprak.ts + sprak-leverantor (useSync-
+ExternalStore — SSR=sv, hydrering byter utan blink), RTL dir på <html>,
+RTL-speglade pilar i kurs-steg; kopplat: seo-page-shell-brödsmulor,
+inloggad-knapp, kurs-steg, notiser; SprakVaxlare monterad SEO-header +
+(SPA-header + mobilmeny av main). IAB-VERIFIERAT: auto-detektering (en),
+explicit AR → dir=rtl + "تسجيل الدخول" + 0 overflow. SPRAK-PLAN.md ärligt:
+fas 2 nyckelsidor 2-3 v, fas 3 ALLA kurser (2,06 M ord) 4-6 mån med
+termbank+granskning — flaggskepp först. SSG orörd (700+ sidor svenska i
+crawl).
+Main-verifiering: tsc 43/0 · motorer 58/0/0 · Kvalitetsvakten 9/9 GRÖN ·
+säkerhetsblock 403 live · meny-accordion DOM · AR-RTL live.

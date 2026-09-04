@@ -186,6 +186,69 @@ export function Akm1Chip({
   );
 }
 
+// ── AKM2-komposit (våg 57 D2) — total + differens-chip mot AKM1 ─────────────
+
+/**
+ * AKM2-cell — kompositen 0–100 (samma bandmönster som AKM1-chippet) + en
+ * differens-chip ±N med färg: höjd = bull-grönt, sänkt = bear-rött,
+ * oförändrad/osatt = grått. Differensen är akm2 − akm1Totalt (P6:s
+ * publicerade AKM1-total) — skillnaden mellan modellernas utfall, aldrig
+ * ett omdöme om bolaget.
+ */
+export function Akm2Cell({
+  varde,
+  skillnad,
+  moduler,
+  stor = false,
+}: {
+  varde: number | null | undefined;
+  skillnad: number | null | undefined;
+  /** Aktiva branschmoduler — visas i tooltippet (spårbarhet). */
+  moduler?: string[];
+  stor?: boolean;
+}) {
+  const v = typeof varde === "number" && Number.isFinite(varde) ? Math.round(varde) : null;
+  const s =
+    typeof skillnad === "number" && Number.isFinite(skillnad)
+      ? Math.round(skillnad * 10) / 10
+      : null;
+  const band =
+    v === null ? null : v >= 70 ? AKM1_BAND.marin : v >= 40 ? AKM1_BAND.guld : AKM1_BAND.grå;
+  const diffText =
+    s === null ? "±?" : s > 0 ? `+${String(s).replace(".", ",")}` : s < 0 ? `−${String(Math.abs(s)).replace(".", ",")}` : "±0";
+  const diffKlass =
+    s === null || s === 0
+      ? "border-border bg-muted/40 text-muted-foreground"
+      : s > 0
+        ? "border-bull/30 bg-bull/10 text-bull"
+        : "border-bear/30 bg-bear/10 text-bear";
+  const modulText =
+    moduler && moduler.length > 0
+      ? ` Aktiva moduler: ${moduler.join(" · ")}.`
+      : " Inga branschmoduler registrerade.";
+  return (
+    <span className="inline-flex flex-col items-end gap-1 leading-none">
+      {v === null || !band ? (
+        <span className="font-mono text-lg font-bold text-muted-foreground">—</span>
+      ) : (
+        <span
+          className={`tabular inline-block rounded-lg px-2.5 py-1 font-mono font-bold ${stor ? "text-2xl" : "text-lg"}`}
+          style={{ background: band.bg, color: band.text }}
+          title={`AKM2-komposit: ${v} av 100 — raknaAKM2 med automatiska moduler (V21+) ur modulregistret och viktprofilen akm2-2026.${modulText}`}
+        >
+          {v}
+        </span>
+      )}
+      <span
+        className={`tabular inline-block rounded-full border px-1.5 py-0.5 font-mono text-[9px] font-bold ${diffKlass}`}
+        title={`AKM2 − AKM1: ${diffText} poäng — hur modulerna (V21+), omfördelningen vid osatt data och viktprofilen flyttar bolagets total mot den publicerade AKM1-radens.`}
+      >
+        {diffText}
+      </span>
+    </span>
+  );
+}
+
 // ── Datatäckning (D1 — andel av modellens vikt med dataunderlag) ────────────
 
 /** Täckning i hela procent utan tecken: 0.711 → "71 %". Null/ogiltigt → "—". */
@@ -292,13 +355,19 @@ export const BRANSCH_NAMN: Record<Bransch, string> = {
 export function grupperaBranscher(
   rader: KorstabbellRad[],
   sortDir: "asc" | "desc" | null = null,
+  sortNyckel: "akm1" | "akm2" = "akm1",
 ): Array<{ bransch: Bransch; rader: KorstabbellRad[] }> {
   const ut: Array<{ bransch: Bransch; rader: KorstabbellRad[] }> = [];
+  /** Sorteringsvärde: null/osatt (akm2 utan nyckeltal) sorterar alltid sist. */
+  const varde = (r: KorstabbellRad): number => {
+    const v = sortNyckel === "akm2" ? (r.akm2 ?? null) : r.akm1Totalt;
+    return typeof v === "number" && Number.isFinite(v) ? v : -Infinity;
+  };
   for (const b of BRANSCHER) {
     const grupp = rader.filter((r) => r.bransch === b);
     if (grupp.length === 0) continue;
-    if (sortDir === "desc") grupp.sort((x, y) => y.akm1Totalt - x.akm1Totalt);
-    else if (sortDir === "asc") grupp.sort((x, y) => x.akm1Totalt - y.akm1Totalt);
+    if (sortDir === "desc") grupp.sort((x, y) => varde(y) - varde(x));
+    else if (sortDir === "asc") grupp.sort((x, y) => varde(x) - varde(y));
     ut.push({ bransch: b, rader: grupp });
   }
   return ut;

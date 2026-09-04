@@ -5,6 +5,7 @@ import type { KorstabbellRad, VagKlass } from "@/lib/portfolj-forskning/typer";
 import { HonestyTag } from "@/components/ak1a/primitives";
 import {
   Akm1Chip,
+  Akm2Cell,
   BRANSCH_NAMN,
   DYNAMIK_TEXT,
   DynamikPil,
@@ -25,16 +26,17 @@ import {
 // ═══════════════════════════════════════════════════════════
 // KORSTABELLEN — 10 bästa bolag per bransch, allt på ett bräde.
 // Rader = bolag grupperade per bransch (10 sektioner), kolumner:
-//   AKM1-total + 7 kategoripoäng + fundamental vågklass på 5
-//   horisonter (+ sammanvägd dynamik) + teknisk vågklass på 5
-//   horisonter + golvmarginal + kravstatus.
+//   AKM1-total + AKM2-komposit med differens-chip (våg 57 D2) +
+//   7 kategoripoäng + fundamental vågklass på 5 horisonter (+
+//   sammanvägd dynamik) + teknisk vågklass på 5 horisonter +
+//   golvmarginal + kravstatus.
 // Vågcellerna bär kunddirektivets färgspråk: impulsvåg ↗
 // grönmörk, korrigering ↘ koppar, basbygge → gråblå, osatt · grå.
 // Allt är pedagogisk forskning — aldrig investeringsråd.
 // ═══════════════════════════════════════════════════════════
 
 /** Total antal kolumner i tabellen (för colSpan i grupperubriker). */
-const ANTAL_KOLUMNER = 1 + 1 + 1 + KATEGORIER.length + (HZ_VISNING.length + 1) + HZ_VISNING.length + 1 + 1;
+const ANTAL_KOLUMNER = 1 + 1 + 1 + 1 + KATEGORIER.length + (HZ_VISNING.length + 1) + HZ_VISNING.length + 1 + 1;
 
 /** Säker vågklass-läsning — saknad nyckel redovisas alltid som osatt. */
 function vag(record: Record<string, VagKlass> | undefined, horisont: string): VagKlass {
@@ -68,9 +70,19 @@ function BolagsKort({ rad }: { rad: KorstabbellRad }) {
         </span>
         <span className="flex shrink-0 flex-col items-end gap-1">
           <Akm1Chip varde={rad.akm1Totalt} max={rad.akm1MaxMojligt} />
+          <Akm2Cell varde={rad.akm2} skillnad={rad.akm2Skillnad} moduler={rad.akm2Moduler} />
           <StatusChip status={rad.status} />
         </span>
       </div>
+
+      {(rad.akm2Moduler?.length ?? 0) > 0 && (
+        <p
+          className="mt-2 truncate text-[10px] leading-relaxed text-muted-foreground"
+          title={`AKM2-moduler aktiverade för branschen ${BRANSCH_NAMN[rad.bransch] ?? rad.bransch}: ${(rad.akm2Moduler ?? []).join(" · ")}`}
+        >
+          AKM2-moduler: {(rad.akm2Moduler ?? []).length} aktiva för branschen
+        </p>
+      )}
 
       <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 border-t border-gold/15 pt-2">
         {KATEGORIER.map((k) => (
@@ -146,6 +158,13 @@ function BolagsKort({ rad }: { rad: KorstabbellRad }) {
 export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
   const [sok, setSok] = useState("");
   const [sort, setSort] = useState<"desc" | "asc" | null>(null);
+  const [sortNyckel, setSortNyckel] = useState<"akm1" | "akm2">("akm1");
+
+  /** Växla sortering inom vald kolumn (AKM1 eller AKM2 — våg 57 D2). */
+  function valjSort(nyckel: "akm1" | "akm2") {
+    setSortNyckel(nyckel);
+    setSort((s) => (s === null || sortNyckel !== nyckel ? "desc" : s === "desc" ? "asc" : "desc"));
+  }
 
   const filtrerade = useMemo(() => {
     const q = sok.trim().toLowerCase();
@@ -158,7 +177,10 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
     );
   }, [rader, sok]);
 
-  const grupper = useMemo(() => grupperaBranscher(filtrerade, sort), [filtrerade, sort]);
+  const grupper = useMemo(
+    () => grupperaBranscher(filtrerade, sort, sortNyckel),
+    [filtrerade, sort, sortNyckel],
+  );
   const statusRakning = useMemo(() => raknaStatus(filtrerade), [filtrerade]);
   const harData = rader.length > 0;
   const traffar = filtrerade.length;
@@ -180,7 +202,10 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
           Här redovisas hur AKM1-siffrorna ser ut för varje bolag: totalpoäng, sju kategoripoäng,
           den fundamentala vågklassen på fem tidshorisonter med riktning (dynamik-pilen — var vi är
           på väg), den tekniska vågklassen på samma horisonter samt golvmarginal och kravstatus.
-          Hög poäng betyder bred underkänning av branschkolleget — aldrig köpläge.
+          AKM2-kolumnen (våg 57 D2) visar kompositen ur raknaAKM2 — kärnans V01–V20 med
+          automatiskt aktiverade branschmoduler (V21+) och viktprofilen akm2-2026 — och chippet
+          under varje total är differensen mot AKM1-radens publicerade total. Hög poäng betyder
+          bred underkänning av branschkolleget — aldrig köpläge.
         </p>
 
         {harData && (
@@ -214,8 +239,8 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
             </div>
             <p className="mt-1.5 text-[11px] italic text-muted-foreground">
               {traffar} av {rader.length} bolag visas · {grupper.length}{" "}
-              {grupper.length === 1 ? "branschsektion" : "branschsektioner"} · klicka på AKM1-kolumnen
-              för att sortera inom varje bransch.
+              {grupper.length === 1 ? "branschsektion" : "branschsektioner"} · klicka på AKM1-
+              eller AKM2-kolumnen för att sortera inom varje bransch.
             </p>
           </>
         )}
@@ -240,7 +265,7 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
         {/* ≥sm: full korstabell med fryst bolagskolumn */}
         {harData && (
           <div className="mt-4 hidden overflow-x-auto scrollbar-ak1a rounded-xl border border-gold/30 bg-paper sm:block">
-            <table className="w-full min-w-[1640px] text-left text-sm">
+            <table className="w-full min-w-[1740px] text-left text-sm">
               <thead>
                 <tr className="border-b border-gold/30 text-[10px] uppercase tracking-wider text-muted-foreground">
                   <th rowSpan={2} className="sticky left-0 z-10 border-r border-gold/15 bg-paper px-3 py-2 font-semibold">
@@ -248,16 +273,31 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
                   </th>
                   <th
                     rowSpan={2}
-                    aria-sort={sort === "desc" ? "descending" : sort === "asc" ? "ascending" : "none"}
+                    aria-sort={sortNyckel === "akm1" && sort === "desc" ? "descending" : sortNyckel === "akm1" && sort === "asc" ? "ascending" : "none"}
                     className="border-b border-gold/30 px-2 py-2 text-right font-semibold"
                   >
                     <button
                       type="button"
-                      onClick={() => setSort((s) => (s === "desc" ? "asc" : "desc"))}
+                      onClick={() => valjSort("akm1")}
                       className="inline-flex items-center gap-1 font-semibold hover:text-gold"
                       title="Sortera bolagen på AKM1-total inom varje bransch"
                     >
-                      AKM1 {sort === "desc" ? "▾" : sort === "asc" ? "▴" : "↕"}
+                      AKM1 {sortNyckel === "akm1" && sort === "desc" ? "▾" : sortNyckel === "akm1" && sort === "asc" ? "▴" : "↕"}
+                    </button>
+                  </th>
+                  <th
+                    rowSpan={2}
+                    aria-sort={sortNyckel === "akm2" && sort === "desc" ? "descending" : sortNyckel === "akm2" && sort === "asc" ? "ascending" : "none"}
+                    className="border-b border-gold/30 px-2 py-2 text-right font-semibold"
+                    title="AKM2-kompositen — raknaAKM2 med automatiska moduler (V21+) ur modulregistret och viktprofilen akm2-2026; chippet under visar differensen mot AKM1-totalen (våg 57 D2)"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => valjSort("akm2")}
+                      className="inline-flex items-center gap-1 font-semibold hover:text-gold"
+                      title="Sortera bolagen på AKM2-komposit inom varje bransch"
+                    >
+                      AKM2 {sortNyckel === "akm2" && sort === "desc" ? "▾" : sortNyckel === "akm2" && sort === "asc" ? "▴" : "↕"}
                     </button>
                   </th>
                   <th
@@ -343,6 +383,13 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
                             <Akm1Chip
                               varde={Number.isFinite(rad.akm1Totalt) ? rad.akm1Totalt : null}
                               max={rad.akm1MaxMojligt}
+                            />
+                          </td>
+                          <td className="px-2 py-2.5 text-right">
+                            <Akm2Cell
+                              varde={rad.akm2 ?? null}
+                              skillnad={rad.akm2Skillnad ?? null}
+                              moduler={rad.akm2Moduler}
                             />
                           </td>
                           <td className="px-2 py-2.5 text-center">
@@ -434,6 +481,11 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
             <span className="flex items-center gap-1.5"><span className="font-bold text-bull">↑</span> förbättras</span>
             <span className="flex items-center gap-1.5"><span className="font-bold text-gold">→</span> stabilt</span>
             <span className="flex items-center gap-1.5"><span className="font-bold text-bear">↓</span> försvagas</span>
+            <span className="flex items-center gap-1.5 text-muted-foreground">|</span>
+            <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
+              AKM2-chippet: <span className="font-bold text-bull">+N</span> = kompositen över AKM1-radens total ·
+              <span className="font-bold text-bear"> −N</span> = under · osatta modulvariabler omfördelar sin vikt (aldrig straffas)
+            </span>
             <span className="flex items-center gap-1.5 text-muted-foreground">|</span>
             <span className="text-[11px] italic text-muted-foreground">
               Grön=gul tröskel skalad efter datatäckning — modellen straffar aldrig saknad data

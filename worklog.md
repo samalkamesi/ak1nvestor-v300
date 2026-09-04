@@ -5003,3 +5003,32 @@ termbank 293}; POST godkann syntetiskt id 999999 → tydligt lagerfel 503
 laggTill/uppdatera/taBort/409-override-skydd/400-felkodad-text; ogiltig
 action/sprak 400. tsc 43/0 (samma 43 som baslinjen, 0 nya). Dev dödad.
 INGET committat; /en|ar-sidor, cron, akm2, chat orörda.
+
+── VÅG 53: VBOUT-INTEGRATIONEN (2026-09-04) ──
+Kunden identifierade vbt.io = VBOUT (marknadsföringsautomation) — URL:en
+är deras INCOMING webhook (vbt.ak1nvestor.com → ssl.vbt.io, CNAME).
+BYGGT: src/lib/vbout.ts — skickaVboutLead (email/namn/kalla/notering/sida/
+tid som JSON) med FULLT SSRF-skydd i zai.ts-mönster (https-tvång + host-
+vitlista {vbt.ak1nvestor.com, ssl.vbt.io} + DNS-uppslag med privat-IP-
+avvisning = DNS-rebinding-skydd + redirect:error + 10s timeout + kastar
+aldrig) + vboutStatusText för loggar. Mimosa-lärdom: fetch av STRÄNG ur
+env = SSRF-flagga även med vitlista ovanför — fetch:a endast validerat
+URL-OBJEKT från separat valideraEndpoint()-funktion (zai.ts-mönstret).
+INKOPPLAT i tre lead-flöden (fire-and-forget, påverkar aldrig huvudflödet):
+/api/member/register (ny gratismedlem → kalla "medlem"; test-prefix-
+adresser filtreras), /api/fas2-ansok (kalla "fas2-ansok" + nivå/XP-notis),
+/api/email prenumeration-intention (kalla "prenumeration" + nivå/period/
+pris). ENV: VBOUT_WEBHOOK_URL (endast env — GUID:erna är hemlighet;
+satt i .env.local lokalt; KUNDEN sätter i Vercel).
+LIVE-VERIFIERING: första POST mot webhooken → 200 {"status":"success",
+"message":"Webhook request received successfully"} = payload-format GODKÄNT
+och kontakten levererad till kundens Vbout-automation. FYND: upprepade
+test-POST (även efter 75 s, fräscha email, sträng+URL-objekt) → 404 med
+Vbout-HTML — webhooken accepterade ENBART första anropet: sannolikt
+rate-/engångsskydd eller konsumtionsregel på Vbout-sidan. Vår adapter
+hanterar det korrekt (ok=false + "HTTP 404" i loggen). KUNDEN KOLLAR i
+Vbout: (a) kom integration-test@ak1nvestor.com in som kontakt? (b) har
+webhook:en/automationen rate-regler eller behöver återskapas (Settings →
+Integration → Webhooks)? När Vbout-sidan släpper igenom flödet fungerar
+KADEDA automatiskt — inget mer att bygga.
+tsc 43/0 · /api/email 200 med köad true + vbout-rad i loggen (dev).

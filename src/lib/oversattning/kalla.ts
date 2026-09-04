@@ -74,13 +74,30 @@ export function raknaHash(kalltext: string): string {
 
 /** Minimal form av blocket i public/deep-courses.json (vi bryr oss om content). */
 type DeepBlock = { type?: string; content?: unknown };
-type DeepChapter = { num?: number; blocks?: DeepBlock[] };
+type DeepQuiz = { q?: unknown; alternativ?: unknown; tips?: unknown };
+type DeepChapter = { num?: number; title?: unknown; intro?: unknown; blocks?: DeepBlock[]; quiz?: DeepQuiz[] };
 type DeepCourse = { chapters?: DeepChapter[] };
 type DeepCourses = Record<string, DeepCourse>;
 
 let kursCache: readonly KallaPost[] | null = null;
 
-/** Läs + tolka deep-courses.json en gång (cachas — 17 MB ska bara parsas en gång per process). */
+/** Skjut in en källa om texten är en icke-tom sträng (deterministisk nyckel). */
+function pushKalla(poster: KallaPost[], slug: string, nyckelSuffix: string, text: unknown): void {
+  if (typeof text !== "string" || !text) return;
+  poster.push({
+    scope: { typ: "kursblock", nyckel: slug + ":kap" + nyckelSuffix },
+    text,
+    hash: raknaHash(text),
+  });
+}
+
+/** Läs + tolka deep-courses.json en gång (cachas — 17 MB ska bara parsas en gång per process).
+ *
+ * Per kapitel registreras: titel, intro, varje blocks-innehåll (1-baserat) och
+ * quiz (q / alternativ k=0.. / tips — ratt-index är struktur och översätts aldrig).
+ * Detta gör att flaggskeppsleveransernas titel/intro/quiz-poster kan importeras
+ * och att motorronden täcker HELA kursinnehållet, inte bara brödtexten.
+ */
 function lasKursblock(): readonly KallaPost[] {
   if (kursCache) return kursCache;
   const fil = path.join(process.cwd(), "public", "deep-courses.json");
@@ -94,17 +111,34 @@ function lasKursblock(): readonly KallaPost[] {
     const kurs = data[slug];
     if (!kurs || !Array.isArray(kurs.chapters)) continue;
     for (const kap of kurs.chapters) {
-      if (!kap || !Array.isArray(kap.blocks)) continue;
+      if (!kap) continue;
       const kapNum = typeof kap.num === "number" ? kap.num : 0;
-      kap.blocks.forEach((block, i) => {
-        const text = typeof block?.content === "string" ? block.content : "";
-        if (!text) return; // tomma block är inga översättningsobjekt
-        poster.push({
-          scope: { typ: "kursblock", nyckel: slug + ":kap" + String(kapNum) + ":block" + String(i + 1) },
-          text,
-          hash: raknaHash(text),
+      const n = String(kapNum);
+      pushKalla(poster, slug, n + ":titel", kap.title);
+      pushKalla(poster, slug, n + ":intro", kap.intro);
+      if (Array.isArray(kap.blocks)) {
+        kap.blocks.forEach((block, i) => {
+          const text = typeof block?.content === "string" ? block.content : "";
+          if (!text) return; // tomma block är inga översättningsobjekt
+          poster.push({
+            scope: { typ: "kursblock", nyckel: slug + ":kap" + n + ":block" + String(i + 1) },
+            text,
+            hash: raknaHash(text),
+          });
         });
-      });
+      }
+      if (Array.isArray(kap.quiz)) {
+        kap.quiz.forEach((qz, j) => {
+          if (!qz) return;
+          pushKalla(poster, slug, n + ":quiz" + String(j + 1) + ":q", qz.q);
+          if (Array.isArray(qz.alternativ)) {
+            qz.alternativ.forEach((alt, k) => {
+              pushKalla(poster, slug, n + ":quiz" + String(j + 1) + ":a" + String(k), alt);
+            });
+          }
+          pushKalla(poster, slug, n + ":quiz" + String(j + 1) + ":tips", qz.tips);
+        });
+      }
     }
   }
   kursCache = poster;

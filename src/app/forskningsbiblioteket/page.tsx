@@ -64,6 +64,22 @@ export default function ForskningsbiblioteketPage() {
         . Forskningsunderlag — ej rådgivning.
       </p>
 
+      {/* VÅG 3 CTA-lucka (m7 §3c): diskret rad under rubriken — berättar vad
+          prenumerationen INNEHÅLLER (A9:s tillåtna form), låser aldrig det
+          öppna innehållet på denna sida. */}
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <Link
+          href="/prenumeration"
+          className="btn-marin inline-flex min-h-[44px] items-center px-5 py-2.5 text-sm"
+        >
+          Forskning Plus låser AKM2-poängbasen
+        </Link>
+        <span className="text-xs text-muted-foreground">
+          Alla översikter ovan förblir kostnadsfria — prenumerationen lägger
+          till, den tar aldrig bort.
+        </span>
+      </div>
+
       <div className="mt-6 rounded-lg border border-gold/30 bg-card p-4 text-sm text-muted-foreground">
         <p className="font-semibold text-foreground">Urvalsregeln (rå, som den körs)</p>
         <code className="mt-2 block font-mono text-xs leading-relaxed">

@@ -364,6 +364,99 @@ export default function TransparensPage() {
         </ul>
       </section>
 
+      {/* ── 10. Metodrad: regimeindikatorn (AKM3) ── */}
+      <section className="mt-8">
+        <h2 className="font-serif text-2xl font-bold">
+          10. Metodrad — så räknas regimeindikatorn (AKM3)
+        </h2>
+        <p className="mt-3 leading-relaxed text-muted-foreground">
+          AKM3 räknar en deterministisk regimbeskrivning av
+          forskningsunderlaget: samma underlag ger alltid samma regim, och
+          etiketten är daterad med korstabellens{" "}
+          <em>senast kontrollerad</em>-datum — aldrig &quot;marknaden just
+          nu&quot. Regimen väljer aldrig poängsättningsprofil, ändrar aldrig
+          bolagspoäng och är aldrig ett råd (lagen 2007:528) — den beskriver
+          läget i underlaget, och varje byte loggas öppet i en hash-kedjad
+          append-only logg från dag 1. Indikatorer och trösklar redovisas
+          här i sin helhet:
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="text-left text-foreground">
+                <th className="py-1.5 pr-4 font-semibold">Indikator</th>
+                <th className="py-1.5 pr-4 font-semibold">Källa</th>
+                <th className="py-1.5 font-semibold">Trösklar (öppna tal)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t border-gold/10">
+                <td className="py-1.5 pr-4 align-top">
+                  G — grönandel (0–1)
+                </td>
+                <td className="py-1.5 pr-4 align-top">
+                  Korstabellens 100 bolag (forskningsläget)
+                </td>
+                <td className="py-1.5 align-top">
+                  ≥ 0,10 tillsammans med N ≥ +0,20 ⇒ expansiv; &lt; 0,08 ⇒
+                  magert (inträde); ≥ 0,10 ⇒ lämnar magert
+                </td>
+              </tr>
+              <tr className="border-t border-gold/10">
+                <td className="py-1.5 pr-4 align-top">R — rödandel (0–1)</td>
+                <td className="py-1.5 pr-4 align-top">
+                  Korstabellens 100 bolag (forskningsläget)
+                </td>
+                <td className="py-1.5 align-top">
+                  &gt; 0,35 ⇒ magert (inträde); ≤ 0,30 krävs för att lämna
+                  magert
+                </td>
+              </tr>
+              <tr className="border-t border-gold/10">
+                <td className="py-1.5 pr-4 align-top">
+                  N — netto fundamental vågbredd (−1…+1)
+                </td>
+                <td className="py-1.5 pr-4 align-top">
+                  Senaste vågskanningen (12 vågbolag)
+                </td>
+                <td className="py-1.5 align-top">
+                  ≤ −0,20 ⇒ korrigering; ≥ +0,20 ⇒ expansiv (kräver G ≥ 0,10);
+                  redovisas som <em>osatt</em> tills minst 30 vågbolag mäts —
+                  därför vilar regimen idag enbart på G/R
+                </td>
+              </tr>
+              <tr className="border-t border-gold/10">
+                <td className="py-1.5 pr-4 align-top">
+                  Σu — universumets årsvolatilitet
+                </td>
+                <td className="py-1.5 pr-4 align-top">Vågkonen (per bolag)</td>
+                <td className="py-1.5 align-top">
+                  &gt; 25 % ⇒ regimebyte kräver 3 bekräftade snapshots i
+                  stället för 2 (osatt värde ⇒ standard 2)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3">
+            Etiketter: <strong>balanserad</strong>, <strong>expansiv</strong>,{" "}
+            <strong>magert</strong>, <strong>korrigering</strong> eller{" "}
+            <strong>osatt</strong>. Hysteres: in- och utträdeströsklar är
+            åtskilda (grönt band 0,08–0,10) och varje byte kräver 2
+            på varandra följande kvartalssnapshots — ett enskilt nytt grönt
+            bolag vippar aldrig regimen. Kadens: kvartal, följande
+            korstabellens manuella leverans. Källkod:{" "}
+            <code className="rounded bg-gold/10 px-1.5 py-0.5 text-xs">
+              src/lib/akm3/regim.ts
+            </code>
+            ; logg:{" "}
+            <code className="rounded bg-gold/10 px-1.5 py-0.5 text-xs">
+              data/portfolj-system/regime-logg.json
+            </code>{" "}
+            (append-only, hash-kedjad).
+          </p>
+        </div>
+      </section>
+
       <div className="mt-8 rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
         <strong className="text-foreground">Om vi ändrar.</strong> Ändras vår
         databehandling i grunden uppdaterar vi den här sidan och meddelar dig i

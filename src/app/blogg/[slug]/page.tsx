@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getBlogPosts, getBlogPost, getCourses } from "@/lib/content";
 import { blogMetadata, articleJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { DelRad } from "@/components/ak1a/del-rad";
 
 export const dynamic = "force-static";
 
@@ -138,6 +139,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           ))}
         </div>
       </article>
+
+      {/* Del-raden (VÅG 3, m8 §3b): öppen, diskret, ingen vägg — före
+          nästa-steg-blocket. */}
+      <DelRad
+        titel={post.title}
+        text={post.description}
+        path={`/blogg/${post.slug}`}
+        className="mt-8"
+      />
 
       {/* Fortsätt i kurserna — interna länkar med deskriptiva ankartexter */}
       <section className="mt-10 rounded-lg border border-gold/30 bg-card p-6">

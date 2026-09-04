@@ -1,10 +1,25 @@
 import { NextResponse, NextRequest } from "next/server";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { lasCache, lasEllerHamta } from "@/lib/datacache";
 import { körVagfundament, type MotorSvar } from "@/lib/vagfundament-motor";
 import { publiceraOrganEvent } from "@/lib/organ-event";
+import { lasKorstabellGrund } from "@/lib/portfolj-forskning/korstabell-data";
+import { raknaForskningslage } from "@/lib/forskningslaget";
+import {
+  raknaRegime,
+  byggRegimeLoggrad,
+  stemplaRegimeRad,
+  verifieraRegimekedja,
+  REGIM_MODELL_VERSION,
+  REGIMELOGG_GENESIS,
+  type RegimeLogg,
+  type RegimeLoggRad,
+  type RegimeTyp,
+  type Sha256Funktion,
+} from "@/lib/akm3/regim";
 import {
   VAGVALIDERING_SCHEMA,
   VAGVALIDERING_PROTOKOLL_VERSION,
@@ -64,6 +79,13 @@ export const maxDuration = 60;
  *       avgränsar episoden) + variabelRaknare + episodAntal.
  *   (e) publiceraOrganEvent (organ/vagvalidering) + rapport till
  *       data/rapporter/vagvalidering-SENASTE.md (graceful på read-only fs).
+ *   (f) SEDAN VÅG 60 bygg-A (BESLUT §8 steg 5): AKM3-regimen — deskriptiv +
+ *       loggad. Räknas ur dagens data (G/R ur korstabellen, N ur senaste
+ *       vagscan-event om läsbart annars osatt-degradering) med hysteres +
+ *       2-snapshots-bekräftelse (3 vid års-Σu > 25 %); regime-loggen
+ *       data/portfolj-system/regime-logg.json appendas vid REGLERAD
+ *       förändring (hash-kedjad som prediktionsloggen). Regimen väljer
+ *       ALDRIG profil och ändrar ALDRIG poäng (BESLUT §9.1).
  *
  * FAIL-SAFE: utan Supabase/nät körs ronden ändå (domar utan underlag blir
  * osatta — hederligt) och rutten svarar alltid 200 med sitt mätprotokoll.
@@ -263,6 +285,60 @@ async function momenterFranMotor(): Promise<{
   return { medel, perVariabel };
 }
 
+// ── AKM3-regimen (våg 60 bygg-A, BESLUT §8 steg 5) ──────────────────────────
+
+/** Regime-loggens hem — append-only + hash-kedjad (prediktionsloggens granne). */
+const REGIMELOGG_SOK = path.join(process.cwd(), "data", "portfolj-system", "regime-logg.json");
+
+/** sha-256 (hex) — injiceras till lib:ts rena kedjefunktioner (klientsäkert). */
+const sha256Regim: Sha256Funktion = (text: string) => createHash("sha256").update(text, "utf8").digest("hex");
+
+/** Formguard: ser ut som loggfilen (rader-array)? Annars ärligt tomt. */
+function arRegimeLogg(x: unknown): x is RegimeLogg {
+  if (!x || typeof x !== "object") return false;
+  const l = x as Record<string, unknown>;
+  return Array.isArray(l.rader) && l.rader.every((r) => r && typeof r === "object");
+}
+
+/** Läs regime-loggen — null när filen saknas/är ogiltig (första mätningen). */
+function lasRegimeLogg(): RegimeLogg | null {
+  try {
+    const rå = JSON.parse(readFileSync(REGIMELOGG_SOK, "utf8")) as unknown;
+    return arRegimeLogg(rå) ? rå : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * N (netto fundamental vågbredd) + antal MÄTTA vågbolag ur ett vagscan-events
+ * details: (impulsvåg − korrigering) / (impulsvåg + korrigering + basbygge)
+ * över universumSammanfattningen; antalet = fel-fria tickers i eventet.
+ * Oläsbart ⇒ { null, null } — regimen degraderar ärligt till G/R-only.
+ */
+function nettoVagbreddFranScan(details: Record<string, unknown> | null): {
+  netto: number | null;
+  antal: number | null;
+} {
+  if (!details) return { netto: null, antal: null };
+  const u = details.universumSammanfattning as
+    | { impulsvag?: unknown; korrigering?: unknown; basbygge?: unknown }
+    | undefined;
+  const i = Number(u?.impulsvag);
+  const k = Number(u?.korrigering);
+  const b = Number(u?.basbygge);
+  const tickers = Array.isArray(details.tickers) ? (details.tickers as ScanTicker[]) : [];
+  const antal = tickers.filter((t) => t && typeof t === "object" && !t.fel && typeof t.ticker === "string").length;
+  if (!Number.isFinite(i) || !Number.isFinite(k) || !Number.isFinite(b)) {
+    return { netto: null, antal: antal > 0 ? antal : null };
+  }
+  const namn = i + k + b;
+  return {
+    netto: namn > 0 ? Math.round(((i - k) / namn) * 1000) / 1000 : null,
+    antal: antal > 0 ? antal : null,
+  };
+}
+
 export async function GET(req: NextRequest) {
   // samma skydd som övriga cron-rutter: om CRON_SECRET är satt krävs matchning
   // via ?secret= (query) eller Authorization: Bearer (Vercel Cron).
@@ -404,6 +480,113 @@ export async function GET(req: NextRequest) {
       tOsatt += r.osatt;
     }
   }
+
+  // 5c) AKM3-REGIMEN (våg 60 bygg-A, BESLUT §8 steg 5): räkna regimen ur
+  //     dagens data + append regime-loggen vid REGLERAD förändring (genesis,
+  //     bekräftat byte eller kandidatrörelse — hysteresminnet bärs av loggen).
+  //     G/R ur korstabellen via raknaForskningslage (kanoniska tal 0,10/0,08/
+  //     0,35/0,30 i lib:t); N ur SENASTE vagscan-event om läsbart, annars
+  //     osatt-degradering (n-vakt: N gäller först vid ≥ 30 mätta vågbolag —
+  //     idag 12 ⇒ G/R-only). Σu (vagkon) kopplas när N aktiveras: osatt ⇒
+  //     standard 2 bekräftelse-snapshots. Regimen är ENBART deskriptiv +
+  //     loggad — den väljer ALDRIG profil och ändrar ALDRIG poäng
+  //     (viktprofil-kopplingen AVSLOGEN, BESLUT §9.1).
+  const regimeStatus: {
+    las: boolean;
+    verifierad: boolean;
+    regime: RegimeTyp | null;
+    byte: boolean;
+    kandidat: RegimeLoggRad["kandidat"];
+    indikatorer: RegimeLoggRad["indikatorer"] | null;
+    nOsattOrsak: string;
+    loggSkriven: boolean;
+    notis: string;
+  } = {
+    las: false,
+    verifierad: false,
+    regime: null,
+    byte: false,
+    kandidat: null,
+    indikatorer: null,
+    nOsattOrsak: "",
+    loggSkriven: false,
+    notis: "",
+  };
+  const regimeLoggLäst = lasRegimeLogg();
+  if (regimeLoggLäst) {
+    regimeStatus.las = true;
+    regimeStatus.verifierad = verifieraRegimekedja(regimeLoggLäst.rader, sha256Regim);
+    if (!regimeStatus.verifierad) {
+      regimeStatus.notis =
+        "Befintlig regime-logg verifierar EJ mot sin hash-kedja — loggen lämnas orörd och ingen rad skrivs (append-only: öppen rapport, ALDRIG tyst överskrivning).";
+    }
+  }
+  // Förra raden är bara minne värt om kedjan hänger ihop — en bruten kedja
+  // är ingen historia att bygga hysteres på.
+  const regimeTidigare: RegimeLoggRad | null =
+    regimeLoggLäst && regimeStatus.verifierad && regimeLoggLäst.rader.length > 0
+      ? regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1]
+      : null;
+
+  const { finns: korstabellFinns, rader: korstabellRader } = lasKorstabellGrund();
+  const lage = korstabellFinns ? raknaForskningslage(korstabellRader) : null;
+  const rodAndel = lage && lage.antal > 0 ? Math.round((lage.roda / lage.antal) * 10000) / 10000 : null;
+  const nv = nettoVagbreddFranScan(scans[0]?.details ?? null); // SENASTE vagscan-event
+
+  const regimResultat = raknaRegime(
+    {
+      gronAndel: lage ? lage.andelGrona : null,
+      rodAndel,
+      nettoVagbredd: nv.netto,
+      antalVagbolag: nv.antal,
+      sigmaArs: null,
+      senastKontrollerad: lage ? lage.senastKontrollerad : "",
+    },
+    regimeTidigare,
+  );
+  regimeStatus.regime = regimResultat.regime;
+  regimeStatus.byte = regimResultat.byte;
+  regimeStatus.kandidat = regimResultat.kandidat;
+  regimeStatus.indikatorer = regimResultat.indikatorer;
+  regimeStatus.nOsattOrsak = regimResultat.nOsattOrsak;
+
+  // REGLERAD förändring = genesis (ingen historia), bekräftat byte ELLER
+  // kandidatrörelse (start/avancemang/nollställning). Tyst kvartal (samma
+  // snapshot, oförskjutet tillstånd) appendar inget — dagar räknas ALDRIG
+  // som observationer; snapshot-identiteten är senastKontrollerad.
+  const regimeNyRad = byggRegimeLoggrad(regimResultat);
+  const regimeKandidatFörändrad =
+    JSON.stringify(regimResultat.kandidat ?? null) !== JSON.stringify(regimeTidigare?.kandidat ?? null);
+  const regimeRegleradFörändring =
+    regimeNyRad !== null && (regimeTidigare === null || regimResultat.byte || regimeKandidatFörändrad);
+  if (regimeRegleradFörändring && (regimeStatus.verifierad || !regimeLoggLäst)) {
+    const prevHash =
+      regimeLoggLäst && regimeLoggLäst.rader.length > 0 && regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1].hash
+        ? String(regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1].hash)
+        : REGIMELOGG_GENESIS;
+    const stampad = stemplaRegimeRad(regimeNyRad, prevHash, sha256Regim);
+    try {
+      mkdirSync(path.dirname(REGIMELOGG_SOK), { recursive: true });
+      writeFileSync(
+        REGIMELOGG_SOK,
+        JSON.stringify(
+          {
+            modellVersion: REGIM_MODELL_VERSION,
+            skapad: regimeLoggLäst?.skapad ?? stampad.datum,
+            rader: [...(regimeLoggLäst?.rader ?? []), stampad],
+            senasteHash: stampad.hash,
+          },
+          null,
+          2,
+        ) + "\n",
+        "utf8",
+      );
+      regimeStatus.loggSkriven = true;
+    } catch {
+      // read-only fs (t.ex. Vercel) — regimen lever ändå i system_events-raden
+      // och i svaret; loggen skrivs där fs tillåter (dev/CI).
+    }
+  }
   const totaltProcent = tTraff + tMiss > 0 ? Math.round((100 * tTraff) / (tTraff + tMiss)) : null;
   const totaltOsatt = tTraff + tMiss + tOsatt > 0 ? Math.round((100 * tOsatt) / (tTraff + tMiss + tOsatt)) : null;
   const nyaDomer = domar.filter((d) => d.dom !== "osatt").length;
@@ -454,6 +637,19 @@ export async function GET(req: NextRequest) {
             vagvalidering_dom: variabelDomar,
             variabelRaknare,
             episodAntal: episodSet.size,
+            // AKM3-REGIMEN (våg 60 bygg-A, BESLUT §8 steg 5): deskriptiv +
+            // loggad — additivt fält, påverkar ALDRIG domar/poäng/profiler.
+            regim: {
+              regime: regimeStatus.regime,
+              indikatorer: regimeStatus.indikatorer,
+              byte: regimeStatus.byte,
+              kandidat: regimeStatus.kandidat,
+              kravdaSnapshots: regimResultat.kravdaSnapshots,
+              nOsattOrsak: regimeStatus.nOsattOrsak,
+              senastKontrollerad: regimResultat.senastKontrollerad,
+              loggSkriven: regimeStatus.loggSkriven,
+              loggnotis: regimeStatus.notis,
+            },
             notering:
               "Dom-protokoll v" + String(VAGVALIDERING_PROTOKOLL_VERSION) +
               ": förra rondens klass döms mot dagens faktiska medel-momentum (impulsvåg>0, korrigering<0, basbygge |mom|<=tröskel per horisont: mikro/kort 6%, medellång 15%, lång/mega 25%). Osatt döms aldrig. Räknarna bärs fram per rond sedan rullandeSedan" +
@@ -487,6 +683,10 @@ export async function GET(req: NextRequest) {
       banaBDomda: variabelDomda,
       banaBRader: variabelDomar.length,
       banaBEpisoder: episodSet.size,
+      // AKM3-regimen (våg 60 bygg-A): grova tal only — etikett + byte + logg.
+      regimRegime: regimeStatus.regime,
+      regimByte: regimeStatus.byte,
+      regimLoggSkriven: regimeStatus.loggSkriven,
       kallaKlasser,
       kallaMomentum,
       sparad: supabaseSparad,
@@ -526,6 +726,22 @@ export async function GET(req: NextRequest) {
       episoder: episodSet.size,
       variabelRaknare,
       vagvalidering_dom: variabelDomar,
+    },
+    regim: {
+      regime: regimeStatus.regime,
+      indikatorer: regimeStatus.indikatorer,
+      byte: regimeStatus.byte,
+      kandidat: regimeStatus.kandidat,
+      kravdaSnapshots: regimResultat.kravdaSnapshots,
+      senastKontrollerad: regimResultat.senastKontrollerad,
+      beskrivning: regimResultat.beskrivning,
+      nOsattOrsak: regimeStatus.nOsattOrsak,
+      logg: {
+        las: regimeStatus.las,
+        verifierad: regimeStatus.verifierad,
+        skriven: regimeStatus.loggSkriven,
+        notis: regimeStatus.notis,
+      },
     },
     supabaseSparad,
     rapportSkrivad,

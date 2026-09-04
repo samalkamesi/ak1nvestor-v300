@@ -15,6 +15,8 @@ import { lasKorstabellGrund } from "@/lib/portfolj-forskning/korstabell-data";
 import { peerDragText, peerRankText, PEER_HALLNING_TEXT } from "@/lib/portfolj-forskning/peer";
 import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { DelRad } from "@/components/ak1a/del-rad";
+import { DelaKort } from "@/components/ak1a/dela-kort";
 import { Akm2Dashboard, ProfilEnsembleVy } from "@/components/ak1a/akm2-dashboard";
 
 export const dynamic = "force-static";
@@ -734,6 +736,26 @@ export default async function AnalysfabrikDetaljPage({
           )}
         </ul>
       </section>
+
+      {/* ── Del-raden + analyskortet (VÅG 3, m8 §3b) — öppen delning, ingen
+           vägg. QR:n pekar på analys-URL:en (ALDRIG startsidan). Del-raden
+           ovanpå, kortet under — samma ordning som m8:s skiss. ── */}
+      <DelRad
+        titel={`${a.namn} (${a.ticker}) — AKM1-forskning`}
+        text={`Automatisk forskningsöversikt: AKM1 ${sv(a.akm1.totalt)} av ${sv(a.akm1.maxMojligt)} p, status ${a.urval.statusEtikett}.`}
+        path={`/forskningsbiblioteket/${encodeURIComponent(a.ticker)}`}
+        disclaimer
+        className="mt-10"
+      />
+      <DelaKort
+        titel={a.namn}
+        rubrikrader={[
+          `${a.ticker} · ${a.urval.statusEtikett}`,
+          `AKM1 ${sv(a.akm1.totalt)} av ${sv(a.akm1.maxMojligt)} p (${pct(a.akm1.relativ)})`,
+        ]}
+        qrUrl={`${SITE_URL}/forskningsbiblioteket/${encodeURIComponent(a.ticker)}`}
+        className="mt-6"
+      />
 
       <p className="mt-10 border-t border-gold/20 pt-4 text-xs italic text-muted-foreground">
         {a.etikett}. {a.disclaimer} Genererad av {a.genereradAv || "analysfabriken"} —

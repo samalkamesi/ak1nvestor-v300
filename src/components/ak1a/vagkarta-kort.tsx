@@ -19,6 +19,9 @@ type VagkartaData = {
   universumSammanfattning?: Sammanfattning;
   topRorelse?: Rorelse[];
   botRorelse?: Rorelse[];
+  /** VÅG 56: universumets medel-enighetsscore 0–100 per horisont + totalt
+   * (beräknas server-side i /api/vagscan/senaste — rådets formel 40/30/30). */
+  enighet?: { total: number | null; perHorisont?: Record<string, number | null> };
 };
 
 type Tillstand =
@@ -37,6 +40,22 @@ function formatTid(iso?: string): string {
     hour: "2-digit",
     minute: "2-digit",
   }).format(d);
+}
+
+/** Enighetstitel: per-horisonts medelscore i kanonisk ordning (hover-tips). */
+function enighetTitel(perHorisont?: Record<string, number | null>): string {
+  const delar: string[] = [];
+  for (const [hz, namn] of [
+    ["mikro", "mikro"],
+    ["kort", "kort"],
+    ["medellang", "medellång"],
+    ["lang", "lång"],
+    ["mega", "mega"],
+  ] as const) {
+    const v = perHorisont?.[hz];
+    delar.push(namn + " " + (typeof v === "number" ? v : "—"));
+  }
+  return "Universumets medel-enighet per horisont: " + delar.join(" · ");
 }
 
 export function VagkartaKort() {
@@ -102,6 +121,17 @@ export function VagkartaKort() {
             <span className="rounded-md border border-border bg-muted/30 px-2 py-1 text-xs font-semibold text-muted-foreground">
               · {tillstand.data.universumSammanfattning?.osatt ?? 0} osatta
             </span>
+            {/* VÅG 56 — enighetsscore 0–100 (universumssnitt): en tunn mätning
+                ska se tunn ut. Null när inget underlag finns (ärlig tystnad). */}
+            <span
+              className="rounded-md border border-gold/30 bg-gold/10 px-2 py-1 text-xs font-semibold text-gold"
+              title={enighetTitel(tillstand.data.enighet?.perHorisont)}
+            >
+              ◈ enighet{" "}
+              {typeof tillstand.data.enighet?.total === "number"
+                ? `${tillstand.data.enighet.total}/100`
+                : "—"}
+            </span>
           </div>
 
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -139,7 +169,9 @@ export function VagkartaKort() {
 
       <p className="mt-3 border-t border-border pt-2 text-[11px] text-muted-foreground">
         Pedagogisk analys — inte investeringsråd. Deterministisk vågmätning på
-        fundamentaldata (Yahoo Finance) med kursstöd (MarketStack).
+        fundamentaldata (Yahoo Finance) med kursstöd (MarketStack). Enighet
+        0–100 = 40 % medel-bekräftelse + 30 % tröskelmarginal + 30 %
+        celltäckning (universumssnitt).
       </p>
     </section>
   );

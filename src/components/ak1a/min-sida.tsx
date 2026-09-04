@@ -31,6 +31,7 @@ import { AktieNyheter } from "@/components/ak1a/aktie-nyheter";
 import { DelaKort } from "@/components/ak1a/dela-kort";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { KunskapsFlode } from "@/components/ak1a/kunskaps-flode";
+import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -339,6 +340,13 @@ export function MinSida() {
           Det första eleven ser: vågkartan, passet, kursen och elden i ett
           marin-panel-tidningskort, före hero-raden. */}
       <MorgonBriefing />
+
+      {/* FORSKNINGSLÄGET (M3 — STYRELSE-mega-integration): korstabellens
+          100-bolagsforskning som eget marin-kort direkt efter Morgon-briefingen
+          — donut (andel gröna), topp-3 gröna med länk in i forskningsbiblioteket,
+          deterministisk marknadsläge-text och P6:s datering. Hämtar
+          /api/forskningslage (server-side sammanfattning, cache 1 h). */}
+      <ForskningslageKort />
 
       {/* DIN ASSISTENT — den högra handen (klientkontext + prediktiv motor):
           tids-/lägesmedveten hälsning, tillstånd-badge + tidsstämpel och max

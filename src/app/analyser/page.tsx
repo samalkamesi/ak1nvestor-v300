@@ -63,6 +63,19 @@ export default function AnalyserPage() {
         </Link>{" "}
         får ny analys först och kan begära prioriterade bolag.
       </p>
+
+      <p className="mt-4 rounded-lg border border-gold/20 bg-card p-4 text-sm text-muted-foreground">
+        Se också:{" "}
+        <Link
+          href="/forskningsbiblioteket"
+          className="underline hover:text-foreground"
+        >
+          Forskningsbiblioteket
+        </Link>{" "}
+        — automatiskt genererade översikter (en sida, 20 variabler) av hela
+        bolagsuniverset, urval enligt kandidatregeln. Manuell djupanalys
+        tillverkas här i rapportbanken.
+      </p>
     </SeoPageShell>
   );
 }

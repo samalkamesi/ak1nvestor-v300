@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { raknaEnighetsscore } from "@/lib/vagvalidering";
 
 // ═════════════════════════════════════════════════════════════════════════════
 // VAGKURVA-GRAF — Elliott-vågläget per tidshorisont (VÅG 48, agent B).
@@ -21,14 +22,23 @@ import * as React from "react";
 // moduleras av variablernas genomsnittliga momentum. Ingen slump, ingen
 // påhittad data — osatt förblir osatt.
 //
+// VÅG 56: varje horisont visar även ENIGHETSSCORE 0–100 (rådets formel ur
+// STYRELSE-vag-exakthet: 40 % medel-bekräftelse + 30 % tröskelmarginal +
+// 30 % celltäckning, ren funktion i src/lib/vagvalidering.ts) — motorns
+// encells-mätning ska synas som den är, tunn eller tjock.
+//
 // Ren SVG (viewBox), inga bibliotek; form + vågetiketter (1–5 / A–C) bär
 // informationen även utan färgseende. Marin panel med guldaccent i projektets
 // design-DNA. Pedagogisk forskning — ALDRIG investeringsråd.
 // ═════════════════════════════════════════════════════════════════════════════
 
-/** Källärligheten — exakt formulering, alltid synlig under graferna. */
+/** Källärligheten — exakt formulering, alltid synlig under graferna.
+ * VÅG 56 (STYRELSE-vag-exakthet rek 2 — ärlighetsrättningen): förra texten
+ * hävdade "fundamental trippelröstning", men denna vy läser /api/vagfundament
+ * (encells-motorn) där trippelröstningen INTE körs. Texten anger nu exakt
+ * den Klass motorn gav — och hur den stärks: styrka + enighetsscore. */
 export const VAGKURVA_KALLA_TEXT =
-  "Kurvan visar vågKLASS från fundamental trippelröstning (tecken+regression+delperiod på V01–V20) — formen är pedagogisk Elliott-visualisering, inte en kursprognos.";
+  "Kurvan visar vågKLASS från vagfundamentmotorn (encells-momentum per variabel mot ±6 %-tröskeln; klass per horisont ur helhetstalets gränser ±0,50) med styrkan |helhetstal| och enighetsscore 0–100 — ingen trippelröstning körs i denna vy (VÅG 56 ärlighetsrättning). Formen är pedagogisk Elliott-visualisering, inte en kursprognos.";
 
 /** De tolv standard-tickrarna (samma rotation som dagens-pass-API:t). */
 export const VAGKURVA_STANDARD_TICKERS: readonly string[] = [
@@ -67,6 +77,7 @@ type Indikator = {
   namn?: string;
   vager?: Record<string, string>;
   momentum?: Record<string, number | null>;
+  medelBekraftad?: Record<string, boolean | null>;
 };
 
 type Analys = {
@@ -116,7 +127,7 @@ function lasTal(v: number | null | undefined): number | null {
   return typeof v === "number" && Number.isFinite(v) ? v : null;
 }
 
-/** Per-horisons vy: klass + styrka + momentum-underlag för modulationen. */
+/** Per-horisons vy: klass + styrka + enighet + momentum-underlag för modulationen. */
 type HorisontVy = {
   id: HorisontId;
   namn: string;
@@ -128,16 +139,28 @@ type HorisontVy = {
   tecken: number;
   /** Medel |momentum| i procent över variabler med data — stighastigheten. */
   momMedel: number | null;
+  /** Enighetsscore 0–100 (rådets formel 40/30/30 ur VÅG 56) — null = osatt. */
+  enighet: number | null;
 };
 
 function byggVyer(data: Analys): HorisontVy[] {
   const ind = data.indikatorer ?? {};
+  const variabelAntal = Object.keys(ind).length;
   return HORIZONTER.map((h) => {
     const totalTal = lasTal(data.total?.[h.id]);
     const moms = Object.values(ind)
       .map((i) => lasTal(i?.momentum?.[h.id]))
       .filter((m): m is number => m !== null);
     const momMedel = moms.length > 0 ? moms.reduce((a, b) => a + Math.abs(b), 0) / moms.length : null;
+    // Enighet per horisont (VÅG 56): 40 % medel-bekräftelse + 30 % tröskel-
+    // marginal + 30 % celltäckning — ren funktion ur src/lib/vagvalidering.
+    const enighet = raknaEnighetsscore(
+      Object.values(ind).map((i) => ({
+        medelBekraftad: i?.medelBekraftad?.[h.id] ?? null,
+        momentum: lasTal(i?.momentum?.[h.id]),
+      })),
+      variabelAntal,
+    );
     return {
       id: h.id,
       namn: h.namn,
@@ -146,6 +169,7 @@ function byggVyer(data: Analys): HorisontVy[] {
       styrka: totalTal === null ? null : Math.min(1, Math.abs(totalTal)),
       tecken: totalTal === null || totalTal === 0 ? 0 : totalTal > 0 ? 1 : -1,
       momMedel,
+      enighet,
     };
   });
 }
@@ -293,6 +317,7 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
   const aria =
     `${vy.namn} (${vy.span}): ${vy.klass}` +
     (styrkaProcent !== null ? `, styrka ${String(styrkaProcent).replace(".", ",")} procent` : "") +
+    (vy.enighet !== null ? `, enighet ${vy.enighet} av 100` : ", enighet osatt") +
     ". Kurvformen är en pedagogisk Elliott-visualisering av vågklassen.";
 
   return (
@@ -357,6 +382,14 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
         </span>
         <span className="tabular text-[10px] text-muted-foreground">
           styrka {styrkaProcent === null ? "—" : `${styrkaProcent} %`}
+        </span>
+        {/* Enighetsscore 0–100 (VÅG 56): 40 % medel-bekräftelse + 30 % tröskel-
+            marginal + 30 % celltäckning — en tunn mätning ser tunn ut. */}
+        <span
+          className="tabular text-[10px] text-muted-foreground"
+          title="Enighet 0–100 = 40 % medel-bekräftelse + 30 % tröskelmarginal (tak vid 6 %) + 30 % celltäckning bland variablerna"
+        >
+          enighet {vy.enighet === null ? "—" : `${vy.enighet}/100`}
         </span>
       </div>
     </figure>

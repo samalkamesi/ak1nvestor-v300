@@ -5,6 +5,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Korstabell } from "@/components/ak1a/portfolj-forskning/korstabell";
 import { ByggPortfoljKort } from "@/components/ak1a/portfolj-forskning/bygg-portfolj-kort";
 import { PortfoljForskningDemo } from "@/components/ak1a/portfolj-forskning/demo-wrapper";
+import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
 import { lasKorstabellGrund, lasPriser, type Priser } from "@/lib/portfolj-forskning/korstabell-data";
 
 export const dynamic = "force-static";
@@ -135,6 +136,12 @@ export default function PortfoljForskningPage() {
           . Du fattar alltid egna beslut — och bär eget ansvar för dem.
         </p>
       </header>
+
+      {/* ── Forskningsläget (M3): sidans topp — korstabellens läge i ett svep ──
+          Donut (andel gröna), topp-3 gröna med länk in i forskningsbiblioteket,
+          deterministisk marknadsläge-text + P6:s datering. Klientkort som
+          hämtar /api/forskningslage (server-side, cache 1 h). */}
+      <ForskningslageKort />
 
       {/* ── Så fungerar flödet ──────────────────────────────────────── */}
       <section className="mt-10">

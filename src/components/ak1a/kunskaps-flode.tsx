@@ -182,6 +182,45 @@ async function hamtaNyheter(): Promise<RenNyhet[]> {
   }
 }
 
+// ── Veckans research-bolag (M3) ur /api/forskningslage ───────────────────────
+
+/**
+ * VECKANS RESEARCH-BOLAG — korstabellens deterministiska veckourval (hash ur
+ * ISO-veckonumret mot grönapoolen, räknas i src/lib/forskningslaget.ts: samma
+ * vecka ger alltid samma bolag — inga prognospilar). Hämtas ur samma API som
+ * Forskningslage-kortet (server-side sammanfattning, cache 1 h).
+ */
+type VeckoBolag = { text: string; ticker: string; namn: string };
+
+async function hamtaVeckansBolag(): Promise<VeckoBolag | null> {
+  try {
+    const kontroll = new AbortController();
+    const tidtagning = setTimeout(() => kontroll.abort(), TIMEOUT_MS);
+    const res = await fetch("/api/forskningslage", {
+      signal: kontroll.signal,
+      headers: { Accept: "application/json" },
+    });
+    clearTimeout(tidtagning);
+    if (!res.ok) return null;
+    const data = (await res.json()) as { finns?: unknown; lage?: Record<string, unknown> | null };
+    if (!data || data.finns !== true || !data.lage) return null;
+    const vb = data.lage.veckansBolag as Record<string, unknown> | undefined;
+    const bolag = vb ? (vb.bolag as Record<string, unknown> | null) : null;
+    if (!bolag || typeof bolag.ticker !== "string" || !bolag.ticker.trim()) return null;
+    const namn = typeof bolag.namn === "string" && bolag.namn.trim() ? bolag.namn.trim() : bolag.ticker.trim();
+    return {
+      text:
+        typeof vb?.text === "string" && vb.text.trim()
+          ? vb.text.trim()
+          : `Vecka ${String(vb?.veckonr ?? "?")}: ${namn} leder forskningsurvalet`,
+      ticker: bolag.ticker.trim(),
+      namn,
+    };
+  } catch {
+    return null; // tyst — raden visas helt enkelt inte
+  }
+}
+
 /** Kort, vänlig svensk tidsangivelse — körs klient-side efter hydrering. */
 function tidText(tidMs: number | null): string {
   if (tidMs === null) return "";
@@ -214,14 +253,17 @@ export function KunskapsFlode() {
   const [flik, setFlik] = useState<Flik>("nyheter");
   const [nyheter, setNyheter] = useState<RenNyhet[]>([]);
   const [hamtar, setHamtar] = useState(true);
+  /** Veckans research-bolag (M3) — visas överst i "Vad är nytt" när det finns. */
+  const [veckoBolag, setVeckoBolag] = useState<VeckoBolag | null>(null);
 
   // Nät ENDAST i useEffect — första passt är deterministiskt (hydration-säkert).
   useEffect(() => {
     let aktiv = true;
     (async () => {
-      const flode = await hamtaNyheter();
+      const [flode, vBolag] = await Promise.all([hamtaNyheter(), hamtaVeckansBolag()]);
       if (!aktiv) return;
       setNyheter(flode.slice(0, MAX_NYHETER));
+      setVeckoBolag(vBolag);
       setHamtar(false);
     })();
     return () => {
@@ -377,33 +419,59 @@ export function KunskapsFlode() {
               </ul>
             ))}
 
-          {/* Flik 3 · Vad är nytt — hela kunskapsflödet */}
+          {/* Flik 3 · Vad är nytt — veckans research-bolag + hela kunskapsflödet */}
           {flik === "nytt" && (
-            <ul className="divide-y divide-gold/10">
-              {KUNSKAPSPOSTER.map((p) => (
-                <li key={`${p.datum}-${p.rubrik}`} className="py-3">
-                  <Link href={p.lank} className="group flex items-start gap-3">
-                    <span className="mt-0.5 shrink-0 text-lg" aria-hidden="true" title={KATEGORI_NAMN[p.kategori]}>
-                      {KATEGORI_IKON[p.kategori]}
+            <>
+              {/* Veckans research-bolag (M3) — en rad längst upp: korstabellens
+                  deterministiska veckourval, länkar in i forskningsbiblioteket. */}
+              {veckoBolag && (
+                <div className="mb-2 rounded-xl border border-gold/40 bg-gold/10 p-3.5">
+                  <Link
+                    href={`/forskningsbiblioteket/${encodeURIComponent(veckoBolag.ticker)}`}
+                    className="group flex items-start gap-3"
+                  >
+                    <span className="mt-0.5 shrink-0 text-lg" aria-hidden="true">
+                      🔬
                     </span>
                     <span className="min-w-0">
-                      <span className="flex flex-wrap items-baseline gap-x-2">
-                        <span className="text-sm font-semibold leading-snug text-[#EDE6D6] group-hover:text-gold-soft group-hover:underline">
-                          {p.rubrik}
-                        </span>
-                        <span className="rounded-full border border-gold/25 bg-white/5 px-2 py-0.5 text-[10px] font-bold tracking-wide text-gold-soft/80">
-                          {KATEGORI_NAMN[p.kategori]}
-                        </span>
-                        <span className="text-[11px] text-[#EDE6D6]/50">{datumText(p.datum)}</span>
+                      <span className="block text-sm font-semibold leading-snug text-gold group-hover:underline">
+                        {veckoBolag.text}
                       </span>
-                      {p.text && (
-                        <span className="mt-0.5 block text-xs leading-relaxed text-[#EDE6D6]/70">{p.text}</span>
-                      )}
+                      <span className="mt-0.5 block text-xs leading-relaxed text-[#EDE6D6]/70">
+                        Deterministiskt veckourval ur korstabellens gröna bolag — samma
+                        vecka ger alltid samma bolag. Pedagogisk forskning, inte
+                        investeringsråd.
+                      </span>
                     </span>
                   </Link>
-                </li>
-              ))}
-            </ul>
+                </div>
+              )}
+              <ul className="divide-y divide-gold/10">
+                {KUNSKAPSPOSTER.map((p) => (
+                  <li key={`${p.datum}-${p.rubrik}`} className="py-3">
+                    <Link href={p.lank} className="group flex items-start gap-3">
+                      <span className="mt-0.5 shrink-0 text-lg" aria-hidden="true" title={KATEGORI_NAMN[p.kategori]}>
+                        {KATEGORI_IKON[p.kategori]}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="flex flex-wrap items-baseline gap-x-2">
+                          <span className="text-sm font-semibold leading-snug text-[#EDE6D6] group-hover:text-gold-soft group-hover:underline">
+                            {p.rubrik}
+                          </span>
+                          <span className="rounded-full border border-gold/25 bg-white/5 px-2 py-0.5 text-[10px] font-bold tracking-wide text-gold-soft/80">
+                            {KATEGORI_NAMN[p.kategori]}
+                          </span>
+                          <span className="text-[11px] text-[#EDE6D6]/50">{datumText(p.datum)}</span>
+                        </span>
+                        {p.text && (
+                          <span className="mt-0.5 block text-xs leading-relaxed text-[#EDE6D6]/70">{p.text}</span>
+                        )}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
         </div>
 

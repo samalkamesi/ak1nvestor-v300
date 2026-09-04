@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/content";
+import { lasAnalyser } from "@/lib/analysfabrik";
 
 export const dynamic = "force-dynamic";
 
@@ -35,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Innehållsnav
     { url: `${BASE_URL}/analyser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/forskningsbiblioteket`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/labb`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
     { url: `${BASE_URL}/bibliotek`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
@@ -113,6 +115,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
       });
     }
+  }
+
+  // ── Forskningsbiblioteket (analysfabriken) — varje automatisk översikt ────
+  for (const a of lasAnalyser()) {
+    entries.push({
+      url: `${BASE_URL}/forskningsbiblioteket/${encodeURIComponent(a.ticker)}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      lastModified: safeDate(a.versionsdatum, now),
+    });
   }
 
   // ── VARJE labb-case med lastModified ur createdAt ─────────────────────────

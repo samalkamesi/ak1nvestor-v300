@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { raknaEnighetsscore } from "@/lib/vagvalidering";
 
 /**
  * VÅGFUNDAMENT — fundamentalvågornas 20×5-matris (VAGFUNDAMENT-SPEC P4/P7).
@@ -8,6 +9,8 @@ import * as React from "react";
  * Varje cell = variabelns EGEN våg: ▲ impulsvåg · ▼ korrigering · ◼ basbygge ·
  * · osatt (hederlig utdata när historik saknas). Nivå-badge (0–5) visar
  * AKM1-poängen; "osatt" när nivån inte kan beräknas Deterministiskt.
+ * Enighet-kolumnen (VÅG 56): score 0–100 per variabel enligt rådets formel —
+ * en tunn mätning ser tunn ut.
  * prisVager (AK1TS-klasser per horisont) är valfri — styrs då kors-läsningen
  * (divergens: fundamentalvåg + prisvåg) visas enligt P4.5.
  */
@@ -128,6 +131,22 @@ function talKlass(tal: number | null | undefined): string {
 function formateraTal(tal: number | null | undefined): string {
   if (tal == null) return "·";
   return tal.toFixed(2).replace(".", ",");
+}
+
+/**
+ * VÅG 56 — Enighetsscore 0–100 per VARIABEL (rad): rådets formel över
+ * variabelns fem horisontceller — 40 % medel-bekräftelse + 30 % tröskelmarginal
+ * (tak vid 6 %) + 30 % celltäckning (bedömda horisonter av 5). Ren funktion
+ * ur src/lib/vagvalidering.ts — samma mätetal som vagkurva-graf och vagkort.
+ * Null när variabeln är helt osatt (visas som "–", aldrig en påhittad siffra).
+ */
+function enighetForRad(ind: Indikator | undefined): number | null {
+  if (!ind) return null;
+  const celler = HORIZONTER.map((h) => ({
+    medelBekraftad: ind.medelBekraftad?.[h.id] ?? null,
+    momentum: ind.momentum?.[h.id] ?? null,
+  }));
+  return raknaEnighetsscore(celler, HORIZONTER.length);
 }
 
 export function VagfundamentMatris({
@@ -259,8 +278,8 @@ export function VagfundamentMatris({
         Svep matrisen sidled — V-kolumnen följer med →
       </p>
       <div className="overflow-x-auto scrollbar-ak1a">
-        <div className="min-w-[640px]">
-          <div className="grid grid-cols-[52px_190px_repeat(5,1fr)] gap-1">
+        <div className="min-w-[700px]">
+          <div className="grid grid-cols-[52px_190px_repeat(5,1fr)_60px] gap-1">
             {/* Mobilsäker matris: fryst hörn över nivå-kolumnen */}
             <div className="sticky left-0 z-20 bg-card" />
             <div className="sticky left-[52px] z-10 -ml-1 border-r border-border/60 bg-card" />
@@ -269,6 +288,9 @@ export function VagfundamentMatris({
                 {h.namn}
               </div>
             ))}
+            <div className="pb-1 text-center text-[10px] font-bold uppercase tracking-wider text-gold" title="Enighetsscore 0–100 per variabel: 40 % medel-bekräftelse + 30 % tröskelmarginal + 30 % celltäckning (VÅG 56)">
+              Enighet
+            </div>
             {RADER.map((rad) => {
               const ind = data.indikatorer?.[rad.id];
               return (
@@ -314,6 +336,22 @@ export function VagfundamentMatris({
                       </div>
                     );
                   })}
+                  {/* VÅG 56 — enighetsscore per variabel: en tunn mätning ser tunn ut */}
+                  {(() => {
+                    const e = enighetForRad(ind);
+                    return (
+                      <div
+                        className="flex h-8 items-center justify-center rounded border border-gold/30 bg-gold/5 text-[11px] font-bold tabular text-gold"
+                        title={
+                          e === null
+                            ? `${rad.id} ${rad.namn} · enighet: osatt — inga bedömda horisonter`
+                            : `${rad.id} ${rad.namn} · enighet ${e}/100 — 40 % medel-bekräftelse + 30 % tröskelmarginal + 30 % celltäckning över de fem horisonterna`
+                        }
+                      >
+                        {e === null ? "–" : e}
+                      </div>
+                    );
+                  })()}
                 </React.Fragment>
               );
             })}
@@ -329,6 +367,7 @@ export function VagfundamentMatris({
         <span className="flex items-center gap-1.5"><span className="text-muted-foreground">·</span> osatt</span>
         {/* Hover-tips är pekaren-oberoende: döljs på mobil, svep-hint står vid matrisen */}
         <span className="hidden text-muted-foreground sm:inline">Hovra över en cell för momentum och medel-bekräftelse</span>
+        <span className="text-gold">Enighet 0–100 = 40 % medel-bekräftelse + 30 % tröskelmarginal + 30 % celltäckning</span>
       </div>
 
       {/* Kategorisammanfattning + totalrad (P4 hierarkin steg 3–4) */}

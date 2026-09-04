@@ -4,7 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/ak1a/theme-provider";
 import { Ak1aStoreProvider } from "@/components/ak1a/store-provider";
-import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { organizationJsonLd, websiteJsonLd, SITE_URL } from "@/lib/seo";
 import { ChatWidget } from "@/components/ak1a/chat-widget";
 import { ShortSeller } from "@/components/ak1a/short-seller";
 import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
@@ -47,6 +47,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
+  // metadataBase (VÅG 1a): relativa og:image-sökvägar (t.ex. /og/start.png)
+  // slås upp mot SITE_URL — aldrig hårdkodad domän (AC2).
+  metadataBase: new URL(SITE_URL),
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
     "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",
@@ -78,15 +81,31 @@ export const metadata: Metadata = {
     title: "AK1A Research Lab — Sveriges enda institutionella metodik för privatpersoner",
     description:
       "Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Håll know-how — redovisa generöst.",
-    url: "https://ak1nvestor.com",
+    // VÅG 1a bugg-fix: url var hårdkodad ägardomän och avvek från SITE_URL
+    // (lab-undersajten) — kanonisk URL nu importeras ur seo.tsx (AC2).
+    url: SITE_URL,
     siteName: "AK1A Research Lab",
     type: "website",
+    images: [
+      {
+        url: "/og/start.png",
+        width: 1200,
+        height: 630,
+        alt: "AK1A Research Lab — institutionell aktieanalysutbildning byggd för privatpersoner",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AK1A Research Lab",
     description:
       "Sveriges enda institutionella metodik, byggd för privatpersoner.",
+    images: [
+      {
+        url: "/og/start.png",
+        alt: "AK1A Research Lab — institutionell aktieanalysutbildning byggd för privatpersoner",
+      },
+    ],
   },
 };
 

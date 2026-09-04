@@ -91,18 +91,21 @@ export default function KurserPageEn() {
         institutions use, explained pedagogically for private investors.
       </p>
 
-      {/* Translation notice — the course library itself is still Swedish (phase 3) */}
+      {/* Translation notice — course cards now lead to the dynamic English
+          course mirrors (wave 52): published English where available, Swedish
+          fallback with a per-course progress notice where not. */}
       <div
         role="note"
         className="mt-5 rounded-xl border border-gold/40 bg-gold/[0.06] p-4 text-sm leading-relaxed"
       >
         <p className="font-semibold text-foreground">
-          Course titles and content are in Swedish — translation in progress.
+          Courses are being translated to English — live.
         </p>
         <p className="mt-1 text-muted-foreground">
-          The complete course list below is shown in its original Swedish. The
-          rest of this page, and the platform's key flow pages, are available in
-          English and Arabic.
+          Every course card opens its English page. Where the translation is
+          still in progress the page shows the original Swedish text with a
+          progress notice at the top; as each part is published, the page
+          updates automatically.
         </p>
       </div>
 
@@ -113,6 +116,7 @@ export default function KurserPageEn() {
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
         <KursSok
+          lankPrefix="/en"
           kurser={courses.map((c) => ({
             slug: c.slug,
             title: c.title,

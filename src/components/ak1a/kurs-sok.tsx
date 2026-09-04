@@ -23,7 +23,18 @@ export type KursKort = {
   quiz: number;
 };
 
-export function KursSok({ kurser }: { kurser: KursKort[] }) {
+export function KursSok({
+  kurser,
+  lankPrefix = "",
+}: {
+  kurser: KursKort[];
+  /**
+   * Språk-prefix för kortens länkar (våg 52): "" ⇒ /kurser/{slug} (svenska
+   * originalet, oförändrat beteende), "/en" ⇒ /en/kurser/{slug} (den
+   * dynamiska kursspegeln) osv. Låsta Fas-länkar följer samma prefix.
+   */
+  lankPrefix?: string;
+}) {
   const [sok, setSok] = useState("");
   const [kat, setKat] = useState("alla");
   const [fas2Access, setFas2Access] = useState(false);
@@ -113,10 +124,10 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
             dynamiska ekosystemet: vågor, teknisk analys på mästarnivå och
             psykologi (24 kurser). Öppnas med medlemskap.
           </span>
-          <Link href="/fas2-ansok" className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
+          <Link href={`${lankPrefix}/fas2-ansok`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
             Fas 2 →
           </Link>
-          <Link href="/fas3" className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
+          <Link href={`${lankPrefix}/fas3`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
             Fas 3 →
           </Link>
         </p>
@@ -141,7 +152,7 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
                 return (
                   <li key={c.slug}>
                     <Link
-                      href={last ? (fas === 3 ? "/fas3" : "/fas2-ansok") : `/kurser/${c.slug}`}
+                      href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
                       title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
                       className={`block rounded-lg border p-4 transition-all ${
                         last

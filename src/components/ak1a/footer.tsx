@@ -7,6 +7,7 @@ import { GAST_KONTEXT, MENY_REGISTER, punktSynlig } from "@/lib/meny-register";
 import { HonestyTag } from "./primitives";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { Button } from "@/components/ui/button";
+import { useSprak } from "./sprak-leverantor";
 
 // Navigationskolumnen läses UR meny-registret (EN källa, 2026-09-03): ett
 // kurerat urval av registrets viktigaste destinationer per sektion — samma
@@ -32,6 +33,7 @@ const FOOTER_PUNKTER = MENY_REGISTER.flatMap((s) => s.punkter).filter(
 export function Footer() {
   const [version] = React.useState("2.0");
   const [updated] = React.useState("2026-07-31");
+  const { t } = useSprak(); // våg 51: meny-etiketter + juridik-länkar byter språk
 
   return (
     <footer className="mt-auto border-t border-border bg-muted/40">
@@ -74,9 +76,9 @@ export function Footer() {
             </p>
           </div>
 
-          <nav aria-label="Sidfot navigation" className="grid grid-cols-2 gap-x-4 gap-y-1">
+          <nav aria-label={t("footer.navigation")} className="grid grid-cols-2 gap-x-4 gap-y-1">
             <h4 className="col-span-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              Navigation
+              {t("footer.navigation")}
             </h4>
             {FOOTER_PUNKTER.map((punkt) => (
               <Link
@@ -84,69 +86,69 @@ export function Footer() {
                 href={punkt.lank}
                 className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
               >
-                {punkt.text}
+                {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
               </Link>
             ))}
           </nav>
 
           {/* Juridik & ansvar */}
-          <nav aria-label="Juridik och ansvar" className="grid grid-cols-2 gap-x-4 gap-y-1">
+          <nav aria-label={t("footer.juridikAnsvar")} className="grid grid-cols-2 gap-x-4 gap-y-1">
             <h4 className="col-span-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              Juridik &amp; ansvar
+              {t("footer.juridikAnsvar")}
             </h4>
             <Link
               href="/villkor"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Användarvillkor
+              {t("footer.anvandarvillkor")}
             </Link>
             <Link
               href="/privacy-policy"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Integritetspolicy
+              {t("footer.integritetspolicy")}
             </Link>
             <Link
               href="/transparens"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Transparens &amp; GDPR
+              {t("nav.transparens")}
             </Link>
             <Link
               href="/cookiepolicy"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Cookiepolicy
+              {t("footer.cookiepolicy")}
             </Link>
             <Link
               href="/ansvar"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Ansvar &amp; friskrivning
+              {t("footer.ansvarFriskrivning")}
             </Link>
             <Link
               href="/upphovsratt"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Upphovsrätt &amp; källor
+              {t("footer.upphovsratt")}
             </Link>
             <Link
               href="/kallor"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Alla 101 källor
+              {t("footer.allaKallor")}
             </Link>
             <Link
               href="/finansiell-policy"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Finansiell policy
+              {t("footer.finansiellPolicy")}
             </Link>
             <Link
               href="/?cookies=1"
               className="text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
             >
-              Cookie-inställningar
+              {t("footer.cookieInstallningar")}
             </Link>
           </nav>
         </div>
@@ -221,7 +223,7 @@ export function Footer() {
             className="text-xs text-muted-foreground"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            Till toppen <ArrowUp className="ml-1 h-3 w-3" />
+            {t("footer.tillToppen")} <ArrowUp className="ml-1 h-3 w-3" />
           </Button>
         </div>
       </div>

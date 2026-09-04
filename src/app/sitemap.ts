@@ -67,6 +67,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
     { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/transparens`, changeFrequency: "yearly", priority: 0.4, lastModified: now },
+
+    // Språkspeglar EN/AR (våg 51) — hreflang-klustren pekar mot svensk original
+    { url: `${BASE_URL}/en`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/ar`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    ...["medlemskap", "manifest", "logga-in", "om-oss", "kurser", "fas2-ansok", "fas3", "prenumeration", "transparens"].flatMap((sida) => [
+      { url: `${BASE_URL}/en/${sida}`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
+      { url: `${BASE_URL}/ar/${sida}`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
+    ]),
     { url: `${BASE_URL}/villkor`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/cookiepolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/ansvar`, changeFrequency: "yearly", priority: 0.3, lastModified: now },

@@ -13,6 +13,7 @@ import {
   type MenyPunkt,
 } from "@/lib/meny-register";
 import { cn } from "@/lib/utils";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
  * HUVUDMENY — megamenu i AK1A-DNA: paper, guld, serif.
@@ -23,6 +24,11 @@ import { cn } from "@/lib/utils";
  * MENYFORSKNING-2026-09-03: Hick + NN/g "show each choice only once").
  * Panelerna filtreras adaptivt via registrets publik-nivå: gästen ser
  * basutbudet, medlemmen sina ytor, admin allt — samma register överallt.
+ *
+ * VÅG 51 (2026-09-01): etiketterna översätts via registrets `nyckel` +
+ * useSprak().t — SSR/SSG renderar svenska (sv-raden = registrets text),
+ * klienten byter till en/ar direkt vid språkval. Beskrivningar/avdelare
+ * översätts best-effort via tText (exakt sv-match mot ordlistan).
  */
 
 export function Huvudmeny() {
@@ -33,6 +39,7 @@ export function Huvudmeny() {
   const behallare = useRef<HTMLDivElement>(null);
   const stallning = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+  const { t, tText } = useSprak();
 
   useEffect(() => setKontext(lasMenyKontext()), []);
 
@@ -85,7 +92,7 @@ export function Huvudmeny() {
               oppad === p.titel ? "bg-gold/15 text-gold" : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            {p.titel}
+            {p.nyckel ? t(p.nyckel) : p.titel}
             <span className={`text-[8px] transition-transform ${oppad === p.titel ? "rotate-180" : ""}`}>▼</span>
           </button>
 
@@ -95,7 +102,7 @@ export function Huvudmeny() {
               onMouseEnter={() => stallning.current && clearTimeout(stallning.current)}
             >
               <div className="marin-panel border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">
-                {p.ikon} {p.titel.toUpperCase()}
+                {p.ikon} {(p.nyckel ? t(p.nyckel) : p.titel).toUpperCase()}
               </div>
               {p.punkter.map((punkt, i) => (
                 <PanelRad
@@ -113,8 +120,8 @@ export function Huvudmeny() {
       {/* ⌘K-sökning */}
       <button
         onClick={() => window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"))}
-        aria-label="Sök (Ctrl+K)"
-        title="Sök — Ctrl+K / ⌘K"
+        aria-label={t("ui.sokGenvag")}
+        title={t("ui.sokGenvag")}
         className="ml-1 flex items-center gap-1.5 rounded-md border border-gold/25 px-2 py-1.5 text-xs text-muted-foreground transition-colors hover:border-gold/50 hover:text-gold"
       >
         <span>🔎</span>
@@ -126,7 +133,7 @@ export function Huvudmeny() {
         <Link
           href={fortsatt.sida}
           className="ml-1 hidden max-w-[170px] items-center gap-1 rounded-md border border-gold/25 bg-gold/5 px-2 py-1.5 text-[11px] text-gold transition-colors hover:bg-gold/15 xl:flex"
-          title={`Fortsätt: ${fortsatt.titel}`}
+          title={t("ui.fortsattTitel", { titel: tText(fortsatt.titel) })}
         >
           <span className="shrink-0">⚡</span>
           <span className="truncate font-semibold">{fortsatt.titel}</span>
@@ -147,12 +154,13 @@ function PanelRad({
   foregaende?: MenyPunkt;
   onStang: () => void;
 }) {
+  const { t, tText } = useSprak();
   const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
   return (
     <>
       {nyAvdelare && (
         <div className="border-b border-gold/10 bg-gold/5 px-3 pb-1 pt-2.5 text-[10px] font-bold uppercase tracking-widest text-gold">
-          {punkt.avdelare}
+          {tText(punkt.avdelare ?? "")}
         </div>
       )}
       <Link
@@ -171,10 +179,10 @@ function PanelRad({
               punkt.guldknapp ? "text-gold" : "text-foreground"
             )}
           >
-            {punkt.text}
+            {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
           </span>
           {punkt.beskrivning && (
-            <span className="block text-[10px] leading-tight text-muted-foreground">{punkt.beskrivning}</span>
+            <span className="block text-[10px] leading-tight text-muted-foreground">{tText(punkt.beskrivning)}</span>
           )}
         </span>
       </Link>

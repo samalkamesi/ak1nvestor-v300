@@ -59,8 +59,10 @@ import {
   type MenySektionId,
 } from "@/lib/meny-register";
 import { VarumarkesLogo } from "./varumarkes-logo";
+import { useSprak } from "./sprak-leverantor";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import type { OrdlistaNyckel } from "@/lib/ordlista";
 
 /** Compute an analyst level from XP. */
 function levelFromXp(xp: number): { lvl: number; title: string } {
@@ -120,15 +122,24 @@ const SEKTIONS_IKON: Record<MenySektionId, LucideIcon> = {
 // registret → omöjliga att duplicera). Kurser/Labb/Analyser/Om-oss omdirigeras
 // sedan M3 direkt till rutterna och nås via registrets länkar.
 // Portal ligger som status-CTA längst ner i drawern (tumzonen) — inte här.
-const STARTSIDAN_SEKTIONER: { id: SectionId; text: string; ikon: LucideIcon; beskrivning: string }[] = [
-  { id: "hem", text: "Hem", ikon: Home, beskrivning: "Startsidan — allt på ett ställe" },
-  { id: "prec", text: "PREC-analysen", ikon: Crosshair, beskrivning: "PREC-analysen, sektion för sektion" },
-  { id: "aktier", text: "Aktier & bevakning", ikon: TrendingUp, beskrivning: "Bevakning & aktieuniversum" },
+// VÅG 51: `nyckel` översätter etiketten via ordlistan (sv = text nedan).
+const STARTSIDAN_SEKTIONER: {
+  id: SectionId;
+  text: string;
+  nyckel: OrdlistaNyckel;
+  beskrivningsNyckel: OrdlistaNyckel;
+  beskrivning: string;
+  ikon: LucideIcon;
+}[] = [
+  { id: "hem", text: "Hem", nyckel: "nav.hem", beskrivningsNyckel: "nav.hemBeskrivning", beskrivning: "Startsidan — allt på ett ställe", ikon: Home },
+  { id: "prec", text: "PREC-analysen", nyckel: "nav.precAnalys", beskrivningsNyckel: "nav.precBeskrivning", beskrivning: "PREC-analysen, sektion för sektion", ikon: Crosshair },
+  { id: "aktier", text: "Aktier & bevakning", nyckel: "nav.aktierBevakning", beskrivningsNyckel: "nav.aktierBeskrivning", beskrivning: "Bevakning & aktieuniversum", ikon: TrendingUp },
 ];
 
 export function Header() {
   const { section, setSection, progress } = useAk1aStore();
   const { theme, setTheme } = useTheme();
+  const { t } = useSprak();
   const [mounted, setMounted] = React.useState(false);
   const [oppad, setOppad] = React.useState<string | null>(null); // öppen megamenu-panel
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -252,7 +263,7 @@ export function Header() {
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  {p.titel}
+                  {p.nyckel ? t(p.nyckel) : p.titel}
                   <span
                     className={cn(
                       "text-[8px] transition-transform",
@@ -273,7 +284,7 @@ export function Header() {
                     {/* Paneltopp — marin med guldtext, identisk med huvudmenyn */}
                     <div className="marin-panel flex items-center gap-1.5 border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">
                       <PanelIkon className="h-3.5 w-3.5" />
-                      {p.titel.toUpperCase()}
+                      {(p.nyckel ? t(p.nyckel) : p.titel).toUpperCase()}
                     </div>
                     {p.punkter.map((punkt, i) => (
                       <MegaRad
@@ -296,7 +307,7 @@ export function Header() {
             size="icon"
             className="h-8 w-8"
             onClick={() => window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"))}
-            aria-label="Sök (Cmd+K)"
+            aria-label={t("ui.sokGenvag")}
           >
             <Search className="h-4 w-4" />
           </Button>
@@ -354,7 +365,7 @@ export function Header() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Huvudmeny"
+          aria-label={t("ui.huvudmeny")}
           className={`paper-texture fixed inset-0 z-[60] bg-background/98 backdrop-blur-md transition-opacity duration-300 ${
             intrad ? "opacity-100" : "opacity-0"
           }`}
@@ -369,7 +380,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                aria-label="Stäng menyn"
+                aria-label={t("ui.stangMenyn")}
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-gold/20 text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
               >
                 <X className="h-4 w-4" />
@@ -396,18 +407,18 @@ export function Header() {
               <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Sök kurser, verktyg, sidor…"
+                placeholder={t("ui.sokPlats")}
                 onFocus={oppnaSokOchStang}
                 onKeyDown={(e) => e.key === "Enter" && oppnaSokOchStang()}
                 className="w-full rounded-xl border border-gold/20 bg-card py-3 pl-10 pr-4 text-base text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
               />
             </div>
 
-            <nav className="mt-6 space-y-3" aria-label="Mobilnavigation">
+            <nav className="mt-6 space-y-3" aria-label={t("ui.mobilnavigation")}>
               {/* STARTSIDAN — äkta SPA-sektioner (eged vy, inga rutter) */}
               <section className="overflow-hidden rounded-xl border border-gold/30 bg-card shadow-lg">
                 <h2 className="marin-panel border-b border-gold/30 px-4 py-3 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
-                  🏠 STARTSIDAN
+                  🏠 {t("ui.startsidan").toUpperCase()}
                 </h2>
                 <div>
                   {STARTSIDAN_SEKTIONER.map((s) => {
@@ -436,10 +447,10 @@ export function Header() {
                               aktiv ? "text-gold" : "text-foreground"
                             )}
                           >
-                            {s.text}
+                            {t(s.nyckel)}
                           </span>
                           <span className="block text-sm leading-snug text-muted-foreground">
-                            {s.beskrivning}
+                            {t(s.beskrivningsNyckel)}
                           </span>
                         </span>
                         {aktiv && (
@@ -470,7 +481,7 @@ export function Header() {
                         className="flex w-full items-center justify-between px-4 py-3.5 text-left"
                       >
                         <span className="font-serif text-sm font-bold tracking-wide text-[#E8C766]">
-                          {s.ikon} {s.titel.toUpperCase()}
+                          {s.ikon} {(s.nyckel ? t(s.nyckel) : s.titel).toUpperCase()}
                         </span>
                         <ChevronDown
                           width={14}
@@ -513,7 +524,7 @@ export function Header() {
                   onClick={() => valjSektion("portal")}
                   className="w-full rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
                 >
-                  {medlemNamn ? `${medlemNamn} · Portal` : "Logga in / Portal"}
+                  {medlemNamn ? t("auth.namnPortal", { namn: medlemNamn }) : t("auth.loggaInPortal")}
                 </button>
                 {medlemNamn && (
                   <button
@@ -523,7 +534,7 @@ export function Header() {
                     }}
                     className="w-full rounded-xl border border-gold/30 px-4 py-2.5 text-center text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground"
                   >
-                    Logga ut
+                    {t("auth.loggaUt")}
                   </button>
                 )}
               </div>
@@ -546,6 +557,7 @@ function MegaRad({
   foregaende?: MenyPunkt;
   onStang: () => void;
 }) {
+  const { t, tText } = useSprak();
   // Direkt map-uppslag (etablerat mönster i kodbasen — stabila referenser).
   const Ikon = IKON_FRAN_LUCIDE[punkt.ikon] ?? Sparkles;
   const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
@@ -553,7 +565,7 @@ function MegaRad({
     <>
       {nyAvdelare && (
         <div className="border-b border-gold/10 bg-gold/5 px-3 pb-1 pt-2.5 text-[10px] font-bold uppercase tracking-widest text-gold">
-          {punkt.avdelare}
+          {tText(punkt.avdelare ?? "")}
         </div>
       )}
       <Link
@@ -577,10 +589,10 @@ function MegaRad({
               punkt.guldknapp ? "text-gold" : "text-foreground"
             )}
           >
-            {punkt.text}
+            {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
           </span>
           <span className="block text-[10px] leading-tight text-muted-foreground">
-            {punkt.beskrivning}
+            {punkt.beskrivning ? tText(punkt.beskrivning) : null}
           </span>
         </span>
       </Link>
@@ -598,6 +610,7 @@ function DrawerRad({
   foregaende?: MenyPunkt;
   onStang: () => void;
 }) {
+  const { t, tText } = useSprak();
   // Direkt map-uppslag (etablerat mönster i kodbasen — stabila referenser).
   const Ikon = IKON_FRAN_LUCIDE[punkt.ikon] ?? Sparkles;
   const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
@@ -605,7 +618,7 @@ function DrawerRad({
     <>
       {nyAvdelare && (
         <div className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold">
-          {punkt.avdelare}
+          {tText(punkt.avdelare ?? "")}
         </div>
       )}
       <Link
@@ -630,10 +643,10 @@ function DrawerRad({
               punkt.guldknapp ? "text-gold" : "text-foreground"
             )}
           >
-            {punkt.text}
+            {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
           </span>
           <span className="block text-sm leading-snug text-muted-foreground">
-            {punkt.beskrivning}
+            {punkt.beskrivning ? tText(punkt.beskrivning) : null}
           </span>
         </span>
       </Link>

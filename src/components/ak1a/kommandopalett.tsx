@@ -7,6 +7,7 @@ import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { SIFFROR } from "@/lib/siffror";
 import { besok, registreraBesok, titelFranSida } from "@/lib/navigationsminne";
 import { GAST_KONTEXT, lasMenyKontext, type MenyKontext } from "@/lib/meny-register";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
  * KOMMANDOPALETT — ⌘K / Ctrl+K.
@@ -28,6 +29,7 @@ const KATEGYRIKON: Record<string, string> = {
 export function Kommandopalett() {
   const router = useRouter();
   const pathname = usePathname();
+  const { t, tText } = useSprak(); // våg 51: titlar/kategorier/UI byter språk
   const [oppad, setOppad] = useState(false);
   const [fraga, setFraga] = useState("");
   const [resultat, setResultat] = useState<SokPost[]>([]);
@@ -136,7 +138,7 @@ export function Kommandopalett() {
   if (!oppad) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-start justify-center px-4 pt-[12vh]" role="dialog" aria-modal="true" aria-label="Sök">
+    <div className="fixed inset-0 z-[70] flex items-start justify-center px-4 pt-[12vh]" role="dialog" aria-modal="true" aria-label={t("cta.sok")}>
       {/* backdrop */}
       <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={() => setOppad(false)} />
 
@@ -144,9 +146,9 @@ export function Kommandopalett() {
         {/* rubrikrad — institutionell marin signatur */}
         <div className="marin-panel flex items-center justify-between border-b border-gold/30 px-4 py-2">
           <span className="font-serif text-xs font-bold tracking-widest text-[#E8C766]">
-            ⌘ KOMMANDOCENTRALEN
+            ⌘ {t("ui.kommandocentralen")}
           </span>
-          <span className="text-[10px] text-[#EDE6D6]/70">↑↓ bläddra · ↵ öppna · esc stäng</span>
+          <span className="text-[10px] text-[#EDE6D6]/70">{t("ui.palettTips")}</span>
         </div>
 
         {/* sökfält */}
@@ -156,9 +158,9 @@ export function Kommandopalett() {
             ref={inmatning}
             value={fraga}
             onChange={(e) => setFraga(e.target.value)}
-            placeholder="Sök kurser, verktyg, sidor…"
+            placeholder={t("ui.sokPlats")}
             className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
-            aria-label="Sökfråga"
+            aria-label={t("cta.sok")}
           />
           {laddar && <span className="text-[10px] text-muted-foreground">…</span>}
         </div>
@@ -167,7 +169,7 @@ export function Kommandopalett() {
         {visaSenaste && (
           <div className="border-b border-gold/10 px-2 py-2">
             <div className="px-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-              Mönsterigenkänning — senast besökta
+              {t("ui.senastBesokta")}
             </div>
             {senaste.current.map((b) => (
               <button
@@ -176,7 +178,7 @@ export function Kommandopalett() {
                 className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-gold/10"
               >
                 <span className="text-sm">🕘</span>
-                <span className="truncate text-xs text-foreground">{b.titel}</span>
+                <span className="truncate text-xs text-foreground">{tText(b.titel)}</span>
                 <span className="ml-auto text-[10px] text-muted-foreground">{b.sida}</span>
               </button>
             ))}
@@ -187,8 +189,7 @@ export function Kommandopalett() {
         <div className="max-h-[46vh] overflow-y-auto px-2 py-2">
           {resultat.length === 0 && !laddar && (
             <div className="px-3 py-6 text-center text-xs text-muted-foreground">
-              Inga träffar på “{fraga}”. Prova t.ex. <span className="text-gold">V01</span>,{" "}
-              <span className="text-gold">portfölj</span> eller <span className="text-gold">Graham</span>.
+              {t("ui.ingaTraffar", { fraga })}
             </div>
           )}
           {resultat.map((r, i) => (
@@ -202,13 +203,13 @@ export function Kommandopalett() {
             >
               <span className="text-base">{r.ikon}</span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-xs font-bold text-foreground">{r.titel}</span>
+                <span className="block truncate text-xs font-bold text-foreground">{tText(r.titel)}</span>
                 {r.beskrivning && (
-                  <span className="block truncate text-[10px] leading-tight text-muted-foreground">{r.beskrivning}</span>
+                  <span className="block truncate text-[10px] leading-tight text-muted-foreground">{tText(r.beskrivning)}</span>
                 )}
               </span>
               <span className="shrink-0 rounded border border-gold/25 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-gold">
-                {KATEGYRIKON[r.kategori]} {r.kategori}
+                {KATEGYRIKON[r.kategori]} {tText(r.kategori)}
               </span>
             </button>
           ))}
@@ -218,7 +219,7 @@ export function Kommandopalett() {
         <div className="flex items-center justify-between border-t border-gold/20 bg-gold/5 px-4 py-1.5 text-[10px] text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <VarumarkesLogo storlek="sm" medText={false} klass="scale-[0.6] origin-left" />
-            {`AK1A Research Lab · ${SIFFROR.kurser} kurser indexerade`}
+            {t("ui.kurserIndexerade", { antal: SIFFROR.kurser })}
           </span> {/* ur src/lib/siffror.ts */}
           <span className="font-mono">esc</span>
         </div>

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Check, Globe } from "lucide-react";
-import { SPRAK, SPRAK_IDN, type SprakId } from "@/lib/sprak";
+import { SPRAK, SPRAK_IDN, spegelSokvag, type SprakId } from "@/lib/sprak";
 import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
@@ -10,9 +11,14 @@ import { useSprak } from "@/components/ak1a/sprak-leverantor";
  * (rund, guldkant, paper-bakgrund). Jordglob + aktuell kod; klick öppnar en
  * liten tre-radsmeny (flagga + inhemska namn + bock för aktuellt språk).
  *
- * MONTERING (görs av main — menyagenten äger menyfilerna just nu):
+ * VÅG 51 — SPEGEL-NAVIGATION: om aktuell route har en översatt spegel-version
+ * (OVERSATTA_ROUTES i sprak.ts — /en/... och /ar/...) navigerar valet DIT via
+ * router.push, så även sidinnehållet byter språk. Annars byts enbart
+ * UI-språket (menyer, knappar, ordlista) på klienten.
+ *
+ * MONTERING:
  *   1. src/components/ak1a/seo-page-shell.tsx — i huvudraden bredvid
- *      <TemaVaxlare /> (REDAN monterad där av språkagenten, våg 50).
+ *      <TemaVaxlare />.
  *   2. src/components/ak1a/header.tsx (SPA-headern) — i verktygsraden
  *      bredvid tema-knappen, samma mall: <SprakVaxlare />.
  *   3. src/components/ak1a/mobilmeny.tsx — i lådan, på egen rad under
@@ -25,6 +31,8 @@ export function SprakVaxlare() {
   const { sprak, setSprak, t } = useSprak();
   const [oppad, setOppad] = useState(false);
   const behallare = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Klick utanför + Escape stänger — samma etikett som huvudmenyn.
   useEffect(() => {
@@ -42,8 +50,13 @@ export function SprakVaxlare() {
   }, [oppad]);
 
   const valj = (id: SprakId) => {
-    setSprak(id);
+    setSprak(id); // UI-språket alltid — menyer/knappar byter direkt
     setOppad(false);
+    // Spegel-navigation: /medlemskap + EN ⇒ /en/medlemskap (om den finns).
+    if (pathname) {
+      const spegel = spegelSokvag(pathname, id);
+      if (spegel && spegel !== pathname) router.push(spegel);
+    }
   };
 
   return (

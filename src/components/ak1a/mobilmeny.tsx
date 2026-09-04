@@ -17,6 +17,7 @@ import {
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { InloggadKnapp } from "./inloggad-knapp";
 import { SprakVaxlare } from "./sprak-vaxlare";
+import { useSprak } from "./sprak-leverantor";
 import { cn } from "@/lib/utils";
 
 /**
@@ -34,6 +35,9 @@ import { cn } from "@/lib/utils";
  *     bara för inloggade, fas 2-ytor bara med åtkomst (R14).
  *   • Horisontell mobil (915×412): drawern scrollar lodrätt — inga fasta
  *     höjder som antar porträtt (R13).
+ *
+ * VÅG 51 (2026-09-01): etiketterna översätts via registrets `nyckel` +
+ * useSprak().t (SSR/SSG = svenska; klienten byter direkt vid språkval).
  */
 
 export function Mobilmeny() {
@@ -45,6 +49,7 @@ export function Mobilmeny() {
   const [nivaNu, setNivaNu] = useState(1);
   const [streakAntal, setStreakAntal] = useState(0);
   const pathname = usePathname();
+  const { t } = useSprak();
 
   const stang = useCallback(() => setOppad(false), []);
 
@@ -107,7 +112,7 @@ export function Mobilmeny() {
           setOppad(true);
           setOppenSektion(null);
         }}
-        aria-label="Öppna menyn"
+        aria-label={t("ui.oppnaMenyn")}
         aria-expanded={oppad}
         className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold lg:hidden"
       >
@@ -135,7 +140,7 @@ export function Mobilmeny() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Huvudmeny"
+          aria-label={t("ui.huvudmeny")}
           className={`paper-texture fixed inset-0 z-[60] bg-background/98 backdrop-blur-md transition-opacity duration-300 ${
             intrad ? "opacity-100" : "opacity-0"
           }`}
@@ -152,7 +157,7 @@ export function Mobilmeny() {
               <button
                 type="button"
                 onClick={stang}
-                aria-label="Stäng menyn"
+                aria-label={t("ui.stangMenyn")}
                 className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gold/25 text-muted-foreground transition-colors hover:border-gold/60 hover:text-foreground"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -164,7 +169,7 @@ export function Mobilmeny() {
             {/* Guld-chips: nivå · XP · streak (egen rad så logotypen får luft) */}
             <div className="mt-3 flex flex-wrap items-center gap-1.5">
               <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold text-gold">
-                Nivå {nivaNu}
+                {t("ui.nivaKort", { n: nivaNu })}
               </span>
               <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-bold text-gold">
                 {xp} XP
@@ -193,7 +198,7 @@ export function Mobilmeny() {
               </svg>
               <input
                 type="text"
-                placeholder="Sök kurser, verktyg, sidor…"
+                placeholder={t("ui.sokPlats")}
                 onFocus={oppnaSok}
                 onKeyDown={(e) => e.key === "Enter" && oppnaSok()}
                 className="w-full rounded-xl border border-gold/20 bg-card py-3 pl-11 pr-4 text-base text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
@@ -202,7 +207,7 @@ export function Mobilmeny() {
 
             {/* ACCORDION — en sektion öppen åt gången (forskning §5).
                 Panelhuvudena är marina kort med guld-serif; tryckrader under. */}
-            <nav className="mt-6 space-y-3" aria-label="Mobilnavigation">
+            <nav className="mt-6 space-y-3" aria-label={t("ui.mobilnavigation")}>
               {sektioner.map((s) => {
                 const arOppen = oppenSektion === s.id;
                 const innehallerAktiv = s.punkter.some((p) => arAktiv(p.lank));
@@ -221,7 +226,7 @@ export function Mobilmeny() {
                       >
                         <span className="flex items-center gap-2 font-serif text-sm font-bold tracking-wide text-[#E8C766]">
                           <span aria-hidden="true">{s.ikon}</span>
-                          {s.titel.toUpperCase()}
+                          {(s.nyckel ? t(s.nyckel) : s.titel).toUpperCase()}
                         </span>
                         <span className="flex items-center gap-2">
                           {innehallerAktiv && (
@@ -299,12 +304,13 @@ function AccordionRad({
   aktiv: boolean;
   onStang: () => void;
 }) {
+  const { t, tText } = useSprak();
   const nyAvdelare = punkt.avdelare && punkt.avdelare !== foregaende?.avdelare;
   return (
     <>
       {nyAvdelare && (
         <div className="border-b border-gold/10 bg-gold/5 px-4 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-widest text-gold">
-          {punkt.avdelare}
+          {tText(punkt.avdelare ?? "")}
         </div>
       )}
       <Link
@@ -327,11 +333,11 @@ function AccordionRad({
               aktiv || punkt.guldknapp ? "text-gold" : "text-foreground"
             )}
           >
-            {punkt.text}
+            {punkt.nyckel ? t(punkt.nyckel) : punkt.text}
           </span>
           {punkt.beskrivning && (
             <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">
-              {punkt.beskrivning}
+              {tText(punkt.beskrivning)}
             </span>
           )}
         </span>

@@ -68,6 +68,7 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import type { Course, CourseChapter } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { lasPubliceradeForSpegel } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
 
 // ── Konvention: nyckelbyggare ────────────────────────────────────────────────
@@ -157,6 +158,20 @@ export const hamtaKursOversattningar = cache(
       } catch {
         /* nästa försök / tomt */
       }
+    }
+
+    // Försök 3 (våg 55 agent L1): MÖS-lagrets system_events-backend. Tabellen
+    // oversattningar finns inte ännu (kunden har inte kört SQL:en) — lagret
+    // sparar översättningar som type=oversattning-event i BEFINTLIGA
+    // system_events och läser dem med senaste-vinner-dedupe (en äldre
+    // publicerad rad servas aldrig när den senaste för nyckeln har annan
+    // status). Detta lagers API mot spegelsidorna är oförändrat — bara
+    // backend-internt har en tredje läsning lagts till.
+    try {
+      const urEvents = await lasPubliceradeForSpegel(slug);
+      if (urEvents.size > 0) return urEvents;
+    } catch {
+      /* tomt ⇒ svensk fallback, 0 % */
     }
     return tomt;
   }

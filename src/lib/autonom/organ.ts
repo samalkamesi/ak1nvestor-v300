@@ -160,10 +160,24 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 //   övrigt    : 500 rader / 30 dagar  (oförändrat — organ/autonomi/styrelse)
 //   trafik    : 12 000 rader / 35 dagar (stickprov 30 % + bot-dedupe)
 //   sakerhet  : 3 000 rader / 35 dagar (en rad per blockering)
+//   oversattning (VÅG 55 L1): 45 000 rader / INGET ålderstak — MÖS-lagrets
+//     system_events-backend (src/lib/oversattning/lager.ts) sparar
+//     översättningar här när tabellen oversattningar saknas. Publicerade
+//     översättningar ska BESTÅ tills de ersätts, därför gäller i stället:
+//     (a) äldsta DUBLETTRADER (samma details->>scope_nyckel + sprak —
+//         behåll SENASTE raden) raderas FÖRST, (b) därefter stympas vid
+//         överkott äldsta rader med status != 'publicerad', (c) sist äldsta
+//         publicerade. 17,7M-kollapsen får ALDRIG upprepas: hårt tak + ingen
+//         okontrollerad tillväxt (cron-ronden skriver batchvis, dedupe i
+//         lasSpara + denna städrunda håller raderna ≈ registrets storlek).
 
 const MAX_ANTAL_TRAFIK = 12_000;
 const MAX_ANTAL_SAKERHET = 3_000;
+const MAX_ANTAL_OVERSATTNING = 45_000;
 const MAX_ALDER_TYP_DAGAR = 35;
+/** Tak för MÖS-städningen per körning: 50 sidor à 1 000 rader + 5 000 raderade. */
+const MOS_STAD_MAX_Sidor = 50;
+const MOS_STAD_MAX_RADERA = 5_000;
 
 async function organRetention(
   sb: { origin: string; headers: Record<string, string> } | null
@@ -232,6 +246,114 @@ async function organRetention(
     }
   };
 
+  /** Radera id-lista i bitar à 300 (URL-längd) — returnerar antal raderade. */
+  const raderaIdn = async (ids: string[]): Promise<number> => {
+    let antal = 0;
+    for (let i = 0; i < ids.length; i += 300) {
+      const bit = ids.slice(i, i + 300).join(",");
+      try {
+        const del = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?id=in.(${bit})`, {
+          method: "DELETE",
+          headers: { ...sb.headers, Prefer: "return=minimal" },
+        });
+        if (del.ok) antal += Math.min(300, ids.length - i);
+      } catch { /* nästa bit */ }
+    }
+    return antal;
+  };
+
+  /**
+   * MÖS-dubbeltröjning (VÅG 55 L1): event-lagret är append-only — läsningarna
+   * låter SENASTE raden per (scope_nyckel, sprak) vinna, så äldre kopior är
+   * ren vikt. Skanna nyast-först (created_at.desc — id är uuid-text, ej
+   * kronologiskt!), behåll första förekomsten per nyckel, radera resten.
+   * Begränsat per körning (MOS_STAD_MAX_Sidor/MAX_RADERA) — bounded, alltid.
+   * OBS: råa filtervärden (aldrig citerade — se lager.ts våg 55-verifieringen).
+   */
+  const rensaMosDubletter = async (): Promise<number> => {
+    try {
+      const sedda = new Set<string>();
+      const radera: string[] = [];
+      for (let sida = 0; sida < MOS_STAD_MAX_Sidor; sida++) {
+        const fran = sida * 1000;
+        const res = await tryFetch(
+          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning` +
+            `&select=id,details->>scope_nyckel,details->>sprak&order=created_at.desc`,
+          { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
+        );
+        if (!res.ok) return 0;
+        const rows = await res.json();
+        if (!Array.isArray(rows) || rows.length === 0) break;
+        for (const r of rows) {
+          const nyckel = r?.scope_nyckel;
+          const sprak = r?.sprak;
+          const id = r?.id;
+          if (typeof nyckel !== "string" || typeof sprak !== "string" || typeof id !== "string") continue;
+          const k = nyckel + "\u0000" + sprak;
+          if (sedda.has(k)) radera.push(id);
+          else sedda.add(k);
+        }
+        if (rows.length < 1000) break;
+        if (radera.length >= MOS_STAD_MAX_RADERA) break;
+      }
+      if (radera.length === 0) return 0;
+      return await raderaIdn(radera);
+    } catch {
+      return 0;
+    }
+  };
+
+  /**
+   * MÖS-antalsstympning (VÅG 55 L1): överstiger type=oversattning 45 000
+   * rader raderas först äldsta icke-publicerade (details->>status=neq.
+   * publicerad — utkast/vantar/inaktuell är återvinningsbara via cron),
+   * därefter — om överkott kvarstår — äldsta rader totalt. Körs EFTER
+   * dubbeltröjningen (ersatta publicerade har då redan rensats som dubbletter).
+   */
+  const raknaTakMos = async (): Promise<number> => {
+    try {
+      const countRes = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning&select=id`, {
+        method: "HEAD",
+        headers: { ...sb.headers, Prefer: "count=planned" },
+      });
+      if (!countRes.ok) return 0;
+      const antal = Number(countRes.headers.get("content-range")?.split("/")[1] ?? 0) || 0;
+      if (antal <= MAX_ANTAL_OVERSATTNING) return 0;
+      let overskott = antal - MAX_ANTAL_OVERSATTNING;
+      let raderade = 0;
+      // (b) äldsta icke-publicerade först
+      const bRes = await tryFetch(
+        `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning&details->>status=neq.publicerad` +
+          `&select=id&order=created_at.asc&limit=${overskott}`,
+        { headers: sb.headers }
+      );
+      if (bRes.ok) {
+        const rows = await bRes.json();
+        if (Array.isArray(rows) && rows.length > 0) {
+          const n = await raderaIdn(rows.map((r: any) => String(r?.id ?? "")).filter(Boolean));
+          raderade += n;
+          overskott -= n;
+        }
+      }
+      // (c) återstår överkott: äldsta totalt (publicerade som följt med åldern)
+      if (overskott > 0) {
+        const cRes = await tryFetch(
+          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning&select=id&order=created_at.asc&limit=${overskott}`,
+          { headers: sb.headers }
+        );
+        if (cRes.ok) {
+          const rows = await cRes.json();
+          if (Array.isArray(rows) && rows.length > 0) {
+            raderade += await raderaIdn(rows.map((r: any) => String(r?.id ?? "")).filter(Boolean));
+          }
+        }
+      }
+      return raderade;
+    } catch {
+      return 0;
+    }
+  };
+
   // 0. Sidvisningsloggen: radera äldre än 90 dagar (bounded tracking)
   try {
     const cut90 = new Date(Date.now() - ACTIVITY_MAX_AGE_DAYS * 86400_000).toISOString();
@@ -252,14 +374,22 @@ async function organRetention(
   } catch {}
 
   // 1. Ålderstak, per scope. Ignorera fel — tabellen kanske inte finns ännu.
-  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet)", MAX_LOG_AGE_DAYS);
+  //    OBS (våg 55 L1): oversattning-typerna har INGET ålderstak (publicerade
+  //    översättningar består tills de ersätts) — de får sina egna regler i
+  //    steg 3 och får alldrig träffas av övrigt-regeln.
+  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet,oversattning)", MAX_LOG_AGE_DAYS);
   deletedOld += await rakraAldring("type=eq.trafik", MAX_ALDER_TYP_DAGAR);
   deletedOld += await rakraAldring("type=eq.sakerhet", MAX_ALDER_TYP_DAGAR);
 
   // 2. Hårta radtak, per scope (500 / 12 000 / 3 000)
-  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet)", MAX_LOG_ROWS);
+  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet,oversattning)", MAX_LOG_ROWS);
   cappedRows += await raknaTak("type=eq.trafik", MAX_ANTAL_TRAFIK);
   cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
+
+  // 3. MÖS-event-lagret (våg 55 L1): dublettrader FÖRST (senaste vinner),
+  //    därefter antalsstympning 45 000 (icke-publicerade äldst först).
+  cappedRows += await rensaMosDubletter();
+  cappedRows += await raknaTakMos();
 
   return { deletedOld, cappedRows };
 }

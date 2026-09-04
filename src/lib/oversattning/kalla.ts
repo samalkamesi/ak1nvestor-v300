@@ -14,6 +14,11 @@
  *     "the-intelligent-investor:kap5:block3". (Följer kundens exempelformat.)
  *     OBS: de 10 premium-handskapade spegelsidorna (/en, /ar) ingår INTE — de
  *     är redan professionellt översatta och ska inte röras av maskinronden.
+ *   - data/blogg/*.json — varje textbärande fält (våg 55, kunddirektiv "inte
+ *     kurser eller annat eller BLOG, ingen översätts" ⇒ bloggen IN i MÖS).
+ *     Scope-typ "blogg", nyckel "<slug>:titel" | "<slug>:ingress" (=
+ *     description-fältet) | "<slug>:p<n>" (stycke n i body, 1-baserat, samma
+ *     /\n\n+/-styckedelning som /blogg/[slug] och blogg-speglarna renderar).
  *   - src/lib/ordlista.ts — varje ui-nyckel (sv-texten är källan; en/ar där är
  *     fas 1:s handgjorda gränssnittsöversättningar — här deklareras de som
  *     källor så att termbanks-/kvalitetsgarantin täcker även dem).
@@ -28,14 +33,15 @@
  */
 
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import { ORDLISTA } from "../ordlista";
 
 // ── Typer ────────────────────────────────────────────────────────────────────
 
-/** Vad slags objekt översätts. "sida"/"kurs"/"blogg" reserverade för framtiden. */
+/** Vad slags objekt översätts. "sida"/"kurs" reserverade för framtiden;
+ *  "blogg" används av data/blogg/*.json (våg 55). */
 export type ScopeTyp = "ui" | "sida" | "kurs" | "kursblock" | "blogg";
 
 /** Varje översättningsobjekt identifieras entydigt av typ + nyckel + språk. */
@@ -145,6 +151,78 @@ function lasKursblock(): readonly KallaPost[] {
   return poster;
 }
 
+// ── data/blogg/*.json ────────────────────────────────────────────────────────
+
+/** Minimal form av ett blogg-inlägg i data/blogg/*.json (textbärande fält). */
+type BloggFil = { slug?: unknown; title?: unknown; description?: unknown; body?: unknown };
+
+let bloggCache: readonly KallaPost[] | null = null;
+
+/**
+ * Styckedelen av ett blogg-inläggs body. /\n\n+/ — EXAKT samma delning som
+ * renderBody på svenska /blogg/[slug] och som blogg-speglarna (src/lib/
+ * blogg-speglar.ts) tillämpar: stycke nummer n (1-baserat) måste vara samma
+ * text i källregistret och i spegeln, annars matchar inte lagret källorna.
+ * Tomma/vita block är inga översättningsobjekt och numreras inte.
+ */
+export function bloggStycken(body: string): string[] {
+  return body
+    .split(/\n\n+/)
+    .filter((s) => s.trim().length > 0);
+}
+
+/** Läs + tolka data/blogg/*.json en gång (cachas).
+ *
+ * Per inlägg registreras de textbärande fälten: titel, ingress
+ * (description-fältet — det är listvyns/kortets och metadatans text) och
+ * varje icke-tomt body-stycke p1..pN (rubrik-/liststycken ingår — de är
+ * textblock som renderas och ska översättas). pillar/author/tags/datum är
+ * struktur/etiketter och översätts inte här. Filnamnsordning (sorterad) ⇒
+ * deterministisk nyckelordning oavsett filsystem.
+ */
+function lasBloggKallor(): readonly KallaPost[] {
+  if (bloggCache) return bloggCache;
+  const dir = path.join(process.cwd(), "data", "blogg");
+  let filer: string[] = [];
+  try {
+    filer = readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .sort(); // deterministiskt: ren filnamnsordning (kodpunktsordning)
+  } catch {
+    bloggCache = [];
+    return bloggCache; // ingen bloggkatalog ⇒ inga bloggkällor (ej fel)
+  }
+
+  const poster: KallaPost[] = [];
+  const push = (slug: string, suffix: string, text: unknown): void => {
+    if (typeof text !== "string" || text.trim().length === 0) return;
+    poster.push({
+      scope: { typ: "blogg", nyckel: slug + ":" + suffix },
+      text,
+      hash: raknaHash(text),
+    });
+  };
+
+  for (const fil of filer) {
+    let inlagg: BloggFil;
+    try {
+      inlagg = JSON.parse(readFileSync(path.join(dir, fil), "utf8")) as BloggFil;
+    } catch {
+      continue; // ogiltig JSON hoppas över — ett trasigt inlägg ska inte stoppa registret
+    }
+    if (typeof inlagg?.slug !== "string" || !inlagg.slug) continue;
+    push(inlagg.slug, "titel", inlagg.title);
+    push(inlagg.slug, "ingress", inlagg.description);
+    if (typeof inlagg.body === "string") {
+      bloggStycken(inlagg.body).forEach((stycke, i) => {
+        push(inlagg.slug as string, "p" + String(i + 1), stycke);
+      });
+    }
+  }
+  bloggCache = poster;
+  return poster;
+}
+
 // ── ordlistans ui-nycklar ────────────────────────────────────────────────────
 
 let uiCache: readonly KallaPost[] | null = null;
@@ -169,21 +247,24 @@ let alltCache: readonly KallaPost[] | null = null;
 
 /**
  * ALLA översättningskällor, deterministisk ordning: ui först (små, hög
- * användarnytta per rond), därefter kursblock i filordning. Cron-ronden
- * konsumerar listan uppifrån — därför är ordningen en del av kontraktet.
+ * användarnytta per rond), därefter kursblock i filordning, och sist blogg
+ * i filnamnsordning (våg 55). Cron-ronden konsumerar listan uppifrån —
+ * därför är ordningen en del av kontraktet: ui → kurser → blogg.
  *
  * Kastar vid oläslig/ogiltig deep-courses.json — anroparen (cron) fångar och
  * rapporterar; ett trasigt källregister ska ALDRIG ge tyst halvkörning.
+ * (Bloggdelen degraderar i stället tyst till tom lista — se lasBloggKallor.)
  */
 export function listaKallor(): readonly KallaPost[] {
   if (alltCache) return alltCache;
-  alltCache = [...lasUiKallor(), ...lasKursblock()];
+  alltCache = [...lasUiKallor(), ...lasKursblock(), ...lasBloggKallor()];
   return alltCache;
 }
 
 /** Nollställ interna cachar (testbarhet/utveckling). */
 export function resetKallCache(): void {
   kursCache = null;
+  bloggCache = null;
   uiCache = null;
   alltCache = null;
 }

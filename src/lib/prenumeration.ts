@@ -27,7 +27,7 @@
  */
 
 import { useEffect, useState } from "react";
-import { harFas2Access, harFas3Access } from "@/lib/kurs-access";
+import { arAdmin, harFas2Access, harFas3Access } from "@/lib/kurs-access";
 
 // ── Typer (spegling av lasPriser()-utdata — måste hålla strukturell form) ────
 
@@ -155,5 +155,47 @@ export function lasPrenumerationIntention(): PrenumerationIntention | null {
     return typeof i?.nivaId === "string" ? i : null;
   } catch {
     return null;
+  }
+}
+
+// ── Nivåmodell + gating (våg 57 D2 — AKM2-läget i portföljforskningen) ───────
+
+/** Nivåordningen i data/portfolj-system/priser.json — lägre index = lägre nivå. */
+export const PRENUMERATIONS_NIVAER = ["forskning", "forskning-plus", "portfolj-hyra"] as const;
+export type PrenumerationsNivaId = (typeof PRENUMERATIONS_NIVAER)[number];
+
+/** Nivåns position i ordningen — okänd nivå ger -1 (rättar aldrig upp sig själv). */
+export function nivaRang(id: string | null | undefined): number {
+  if (typeof id !== "string") return -1;
+  const i = PRENUMERATIONS_NIVAER.indexOf(id as PrenumerationsNivaId);
+  return i;
+}
+
+/**
+ * Nivån som mäts lokalt just nu — ur den sparade aktiveringsintentionen
+ * (ak1a-prenumeration-intention-v1). Tills betallösningen landar är
+ * intentionen det enda lokala spåret av vald nivå; samma integritetsvänliga
+ * local-modell som Fas-gatingen i kurs-access.ts. Okänd/saknad → null.
+ */
+export function lasValdPrenumerationsNiva(): PrenumerationsNivaId | null {
+  const i = lasPrenumerationIntention();
+  if (!i) return null;
+  return nivaRang(i.nivaId) >= 0 ? (i.nivaId as PrenumerationsNivaId) : null;
+}
+
+/**
+ * Gating: har eleven en nivå på eller över `minst`? Portföljforskningens
+ * AKM2-poängbas kräver "forskning-plus"+. Admin-läget (ak1a-store) öppnar
+ * allt lokalt — granskning/test, samma mönster som Fas-överriden.
+ * SSR-säkert: false på servern (fönstret finns inte).
+ */
+export function harPrenumerationsNiva(minst: PrenumerationsNivaId): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    if (arAdmin()) return true;
+    const vald = lasValdPrenumerationsNiva();
+    return vald !== null && nivaRang(vald) >= nivaRang(minst);
+  } catch {
+    return false;
   }
 }

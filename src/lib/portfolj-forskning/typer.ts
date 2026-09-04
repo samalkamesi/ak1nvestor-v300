@@ -191,6 +191,18 @@ export type KorstabbellRad = {
    *  (20/97) = datatackning × 100. Osatt variabel ger alltid 0 poäng — maxMöjligt
    *  visas aldrig dolt i UI:t ("poäng/max"). */
   akm1MaxMojligt?: number;
+  /** Våg 57 D2: AKM2-kompositen 0–100 ur raknaAKM2(kursdata, { moduler:
+   *  automatiska ur modulregistret per bransch, viktprofil: "akm2-2026" }) —
+   *  se src/lib/portfolj-forskning/akm2-koppling.ts. null = nyckeltal saknas
+   *  (motorn gissar aldrig). Optionell för bakåtkompatibilitet. */
+  akm2?: number | null;
+  /** Våg 57 D2: akm2 − akm1Totalt (1 decimal) — differensen mellan AKM2:s
+   *  komposit och korstabellens publicerade AKM1-total. null när någon av
+   *  delarna saknas. */
+  akm2Skillnad?: number | null;
+  /** Våg 57 D2: namnen på branschmodulerna som aktiverades vid AKM2-
+   *  beräkningen (modulregistret, src/lib/akm2/moduler). */
+  akm2Moduler?: string[];
 };
 
 // ── 6. Riskprofil & portföljförslag ──────────────────────────────────────────
@@ -239,6 +251,10 @@ export type PortfoljForslag = {
   /** Pedagogisk sammanfattning — ALDRIG köp/sälj-rekommendation. */
   ak1aNot: string;
   vagprofilSammanfattning?: Record<Horisont, VagKlass>;
+  /** Våg 57 D2: poängbasen motorn använde — "akm1" (default) eller "akm2"
+   *  (AKM2-kompositen ur korstabellens berikade rader; kräver Portföljforskning
+   *  Plus i UI:t — motorn själv validerar aldrig prenumerationer). */
+  poangbas?: "akm1" | "akm2";
 };
 
 // ── 7. Uppföljning ("då vs nu") ──────────────────────────────────────────────

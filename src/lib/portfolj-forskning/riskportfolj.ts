@@ -3,6 +3,14 @@
  * tillväxt) och tillväxttakt (lugn|stadig|aggressiv); motorn poängsätter
  * korstabellkandidater och bygger en deterministisk forskningsportfölj.
  *
+ * POÄNGBAS (våg 57 D2): "akm1" (default — radens AKM1-total) eller "akm2"
+ * (radens AKM2-komposit ur korstabellens berikade fält, se akm2-koppling.ts).
+ * Basen byter ENDELIGT poängformelns första led (50 %-viken); vågstatus,
+ * golv och samtliga kravkontroller är identiska i båda lägena. Motorn själv
+ * validerar ALDRIG prenumerationer — UI:t (bygg-portfolj-kort.tsx) gatingar
+ * AKM2-läget mot Portföljforskning Plus och kallar endast motorn när det är
+ * upplåst.
+ *
  * KUNDdirektiv: "klienten väljer vilken risknivå den vill ha, hur snabb
  * tillväxt kan vara, och vårt jobb är att nyttja alla system för att ta fram
  * portfölj som kunden kan nyttja eller hyra — erbjuda alternativ namn på
@@ -10,11 +18,12 @@
  * börjat sakna några av de strikta kraven."
  *
  * POÄNGFORMEL (0–1, exporterad via POANGVIKTER):
- *   poäng = 0,50 × (AKM1 / 100)
+ *   poäng = 0,50 × (poängbas / 100)
  *         + 0,35 × Σ_horisont horisontVikt × (vågvikt(fvag) + vågvikt(tvag)) / 2
  *         + 0,15 × min(max(golvmarginal, 0) / 0,50, 1)
  *   där vågvikt: impulsvåg = 1,0, basbygge = 0,6, korrigering = 0,3, osatt = 0
- *   (osatt ger noll — motorn gissar aldrig).
+ *   (osatt ger noll — motorn gissar aldrig). Poängbasen är AKM1-totalen
+ *   (akm1Totalt) eller AKM2-kompositen (rad.akm2) — saknad AKM2 bidrar 0.
  *
  * ÄRLIGHETSPRINCIPER (spegling av portfolj-vagor.ts):
  *  - DETERMINISTISK: samma indata → samma utdata. Totala sorteringsordningar
@@ -89,6 +98,28 @@ const AKM1_VARNGRENS = 5;
 
 export const RISK_NIVOR: RiskNiva[] = ["konservativ", "balanserad", "tillvaxt"];
 export const RISK_TAKTER: TillvaxtTakt[] = ["lugn", "stadig", "aggressiv"];
+
+// ── Poängbas (våg 57 D2) ─────────────────────────────────────────────────────
+
+/** Poängformelns första led: AKM1-totalen eller AKM2-kompositen (våg 57 D2). */
+export type PoangBas = "akm1" | "akm2";
+
+/** Maskinläsbar lista över poängbaserna (validering i API/UI). */
+export const POANGBASER: PoangBas[] = ["akm1", "akm2"];
+
+/** Säker poängbas-läsning — ogiltigt värde blir "akm1" (bakåtkompatibelt). */
+export function sakradPoangBas(bas: unknown): PoangBas {
+  return bas === "akm2" ? "akm2" : "akm1";
+}
+
+/** Poängbasens talvärde för en rad — null/ogiltig AKM2 bidrar 0 (aldrig gissa). */
+function basVarde(rad: KorstabbellRad, bas: PoangBas): number {
+  if (bas === "akm2") {
+    const v = rad.akm2;
+    return typeof v === "number" && Number.isFinite(v) ? Math.min(Math.max(v / 100, 0), 1) : 0;
+  }
+  return Number.isFinite(rad.akm1Totalt) ? Math.min(Math.max(rad.akm1Totalt / 100, 0), 1) : 0;
+}
 
 // ── Risknivåer: 3 nivåer × 3 takter = 9 kombinationer ─────────────────────────
 
@@ -277,14 +308,13 @@ function fnv1a(s: string): string {
 
 /**
  * Samlad poäng 0–1 för en kandidat enligt profilens horisontvikter.
- * AKM1 50 % + vågstatus 35 % (fundamental och teknisk vågd halva var,
- * viktat per horisont) + golvmarginal-bonus 15 % (0 vid +50 % marginal,
- * inget bonus för saknat eller negativt golv).
+ * Poängbas 50 % (AKM1-total eller AKM2-komposit — våg 57 D2) + vågstatus 35 %
+ * (fundamental och teknisk vågd halva var, viktat per horisont) +
+ * golvmarginal-bonus 15 % (0 vid +50 % marginal, inget bonus för saknat
+ * eller negativt golv).
  */
-export function raknaPoang(rad: KorstabbellRad, profil: RiskProfil): number {
-  const akm1 = Number.isFinite(rad.akm1Totalt)
-    ? Math.min(Math.max(rad.akm1Totalt / 100, 0), 1)
-    : 0;
+export function raknaPoang(rad: KorstabbellRad, profil: RiskProfil, bas: PoangBas = "akm1"): number {
+  const grund = basVarde(rad, bas);
   let vag = 0;
   for (const hz of HORIZONTER) {
     const f = VAGVIKTER[sakradVagKlass(rad.fvagPerHorisont?.[hz])];
@@ -296,7 +326,7 @@ export function raknaPoang(rad: KorstabbellRad, profil: RiskProfil): number {
     g !== null && g !== undefined && Number.isFinite(g)
       ? Math.min(Math.max(g / GOLV_BONUS_TAK, 0), 1)
       : 0;
-  return POANGVIKTER.akm1 * akm1 + POANGVIKTER.vag * vag + POANGVIKTER.golv * golv;
+  return POANGVIKTER.akm1 * grund + POANGVIKTER.vag * vag + POANGVIKTER.golv * golv;
 }
 
 // ── Kravkontroller ────────────────────────────────────────────────────────────
@@ -551,16 +581,21 @@ function jamforBedomda(a: Bedomning, b: Bedomning): number {
 }
 
 /** Motivtext per innehav — pedagogisk, dömer aldrig, inga köp-/säljuppmaningar. */
-function byggMotiv(rad: KorstabbellRad, poang: number, profil: RiskProfil): string {
+function byggMotiv(rad: KorstabbellRad, poang: number, profil: RiskProfil, bas: PoangBas): string {
   const golvText =
     rad.golvMarginal !== null && rad.golvMarginal !== undefined && Number.isFinite(rad.golvMarginal)
       ? `golvmarginal ${procentText(rad.golvMarginal)}`
       : "golv ej mätt";
+  const basText =
+    bas === "akm2"
+      ? `AKM2-komposit ${rad.akm2 != null && Number.isFinite(rad.akm2) ? rad.akm2 : "saknas"}/100 (akm2-läget: moduler V21+ aktiva per bransch, viktprofil akm2-2026; AKM1 ${Number.isFinite(rad.akm1Totalt) ? rad.akm1Totalt : "saknas"} som jämförelse)`
+      : `AKM1 ${Number.isFinite(rad.akm1Totalt) ? rad.akm1Totalt : "saknas"}/100`;
+  const basEtikett = bas === "akm2" ? "AKM2" : "AKM1";
   return (
-    `AKM1 ${Number.isFinite(rad.akm1Totalt) ? rad.akm1Totalt : "saknas"}/100 (${rad.bransch}). ` +
+    `${basText} (${rad.bransch}). ` +
     `Fundamental vågstatus: ${klassRakning(rad.fvagPerHorisont)}; teknisk: ${klassRakning(rad.tvagPerHorisont)}. ` +
     `${golvText}. Samlad poäng ${poang.toFixed(2).replace(".", ",")} av 1,00 enligt profil ` +
-    `${profil.niva}/${profil.takt} (AKM1 50 %, vågstatus 35 % med profilens horisontvikter, golv 15 %). ` +
+    `${profil.niva}/${profil.takt} (poängbas ${basEtikett} 50 %, vågstatus 35 % med profilens horisontvikter, golv 15 %). ` +
     "Pedagogiskt studieobjekt — inte köp- eller säljrekommendation."
   );
 }
@@ -593,9 +628,9 @@ function raknaVagprofilSammanfattning(
   return ut;
 }
 
-function byggId(profil: RiskProfil, innehav: InnehavForslag[]): string {
+function byggId(profil: RiskProfil, innehav: InnehavForslag[], bas: PoangBas): string {
   const grund = innehav.map((i) => `${i.ticker}=${i.vikt.toFixed(4)}`).join("|");
-  return `pf-${profil.niva}-${profil.takt}-${innehav.length}-${fnv1a(grund)}`;
+  return `pf-${profil.niva}-${profil.takt}-${bas}-${innehav.length}-${fnv1a(grund)}`;
 }
 
 /** Deterministisk "skapad"-stämpel: senaste senastKontrollerad i underlaget. */
@@ -611,7 +646,7 @@ function talSenastKontrollerad(rader: KorstabbellRad[]): string {
 
 function byggAk1aNot(
   profil: RiskProfil,
-  ctx: { antalInnehav: number; takBruten: boolean; ersattningar: number }
+  ctx: { antalInnehav: number; takBruten: boolean; ersattningar: number; bas: PoangBas }
 ): string {
   if (ctx.antalInnehav === 0) {
     return (
@@ -622,6 +657,10 @@ function byggAk1aNot(
   }
   const hv = profil.horisontVikter;
   const viktText = HORIZONTER.map((hz) => `${HZ_NAMN[hz]} ${Math.round(hv[hz] * 100)} %`).join(", ");
+  const basText =
+    ctx.bas === "akm2"
+      ? "AKM2-kompositen (moduler V21+ per bransch, viktprofil akm2-2026) som poängbas"
+      : "AKM1-poäng";
   const varningar: string[] = [];
   if (ctx.antalInnehav < MIN_INNEHAV) {
     varningar.push(
@@ -641,7 +680,7 @@ function byggAk1aNot(
   const varningsText = varningar.length > 0 ? varningar.join(" ") + " " : "";
   return (
     `Denna forskningsportfölj speglar profil ${profil.niva}/${profil.takt}: vikterna bygger på ` +
-    `AKM1-poäng och fundamental+teknisk vågstatus enligt horisontvikterna (${viktText}) ` +
+    `${basText} och fundamental+teknisk vågstatus enligt horisontvikterna (${viktText}) ` +
     `samt golvmarginal som bonusfaktor. ${varningsText}` +
     "Materialet är pedagogisk forskning i AK1A:s ekosystem — inte investeringsrådgivning " +
     "enligt lagen (2007:528); inga köp- eller säljuppmaningar förekommer."
@@ -656,18 +695,24 @@ function byggAk1aNot(
  * 0,08 kräver minst 13 innehav för att summera till 1) — med branschkvot.
  * Viktning: poängproportionell water-filling med tak per aktie/bransch.
  * Ersättningar: rattaErsattningar körs internt på samma pool.
+ *
+ * opts.poangbas (våg 57 D2): "akm1" (default) eller "akm2" — poängformelns
+ * första led byts, allt annat är identiskt. Kravkontrollerna förblir AKM1-
+ * baserade i båda lägena (de vaktar korstabellens strika krav, inte poängen).
  */
 export function byggPortfolj(
   riskProfil: RiskProfil,
-  kandidater: KorstabbellRad[]
+  kandidater: KorstabbellRad[],
+  opts?: { poangbas?: PoangBas },
 ): PortfoljForslag {
+  const bas = sakradPoangBas(opts?.poangbas);
   const rensade = rensaKandidater(kandidater);
   const bedomda: Bedomning[] = rensade.map((rad) => {
     const krav = kontrolleraKrav(rad, riskProfil);
     return {
       rad,
       krav,
-      poang: raknaPoang(rad, riskProfil),
+      poang: raknaPoang(rad, riskProfil, bas),
       antalBrott: krav.filter((k) => k.status === "BROTT").length,
     };
   });
@@ -697,7 +742,7 @@ export function byggPortfolj(
   const innehav: InnehavForslag[] = valda.map((v, i) => ({
     ticker: v.rad.ticker,
     vikt: vikter[i],
-    motiv: byggMotiv(v.rad, v.poang, riskProfil),
+    motiv: byggMotiv(v.rad, v.poang, riskProfil, bas),
     krav: v.krav,
   }));
 
@@ -707,13 +752,14 @@ export function byggPortfolj(
   );
 
   const interim: PortfoljForslag = {
-    id: byggId(riskProfil, innehav),
+    id: byggId(riskProfil, innehav, bas),
     skapad: talSenastKontrollerad(valda.map((v) => v.rad)),
     riskProfil,
     innehav,
     ersattningar: [],
     ak1aNot: "",
     vagprofilSammanfattning: vagprofil,
+    poangbas: bas,
   };
 
   const ersattningar = rattaErsattningar(interim, rensade);
@@ -725,6 +771,7 @@ export function byggPortfolj(
       antalInnehav: innehav.length,
       takBruten,
       ersattningar: ersattningar.length,
+      bas,
     }),
   };
 }
@@ -756,7 +803,8 @@ function jamforMotErsatt(k: KorstabbellRad, ersatt: KorstabbellRad): string {
 function byggKandidatMotiv(
   k: KorstabbellRad,
   profil: RiskProfil,
-  befintligVikt: number | undefined
+  befintligVikt: number | undefined,
+  bas: PoangBas,
 ): string {
   const golvText =
     k.golvMarginal !== null && k.golvMarginal !== undefined && Number.isFinite(k.golvMarginal)
@@ -766,8 +814,12 @@ function byggKandidatMotiv(
     befintligVikt !== undefined
       ? ` Ingår redan i portföljen med vikt ${Math.round(befintligVikt * 100)} %.`
       : "";
+  const basText =
+    bas === "akm2"
+      ? `AKM2-komposit ${k.akm2 != null && Number.isFinite(k.akm2) ? k.akm2 : "saknas"}/100, AKM1 ${Number.isFinite(k.akm1Totalt) ? k.akm1Totalt : "saknas"} som jämförelse`
+      : `AKM1 ${Number.isFinite(k.akm1Totalt) ? k.akm1Totalt : "saknas"}/100`;
   return (
-    `AKM1 ${Number.isFinite(k.akm1Totalt) ? k.akm1Totalt : "saknas"}/100 (${k.bransch}), ` +
+    `${basText} (${k.bransch}), ` +
     `fundamentalt ${klassRakning(k.fvagPerHorisont)}, tekniskt ${klassRakning(k.tvagPerHorisont)}, ` +
     `${golvText}.${befintlig} Alternativt studieobjekt — inte köp- eller säljrekommendation.`
   );
@@ -786,6 +838,7 @@ export function rattaErsattningar(
   portfolioSnapshot?: UppfoljningSnapshot[]
 ): ErsattningsForslag[] {
   const profil = forslag.riskProfil;
+  const bas = sakradPoangBas(forslag.poangbas); // ersättningarna poängsätts i förslagets poängbas (våg 57 D2)
   const pool = rensaKandidater(kandidater);
   const radMap = new Map<string, KorstabbellRad>();
   for (const r of pool) radMap.set(r.ticker, r);
@@ -810,7 +863,7 @@ export function rattaErsattningar(
       .filter((k) => k.ticker !== inh.ticker && String(k.bransch) === String(rad?.bransch))
       .map((k) => ({
         rad: k,
-        poang: raknaPoang(effektivRad(k, snapMap.get(k.ticker)), profil),
+        poang: raknaPoang(effektivRad(k, snapMap.get(k.ticker)), profil, bas),
         brottFri: kontrolleraKrav(k, profil).every((x) => x.status !== "BROTT"),
       }))
       .filter((k) => k.brottFri)
@@ -822,7 +875,7 @@ export function rattaErsattningar(
       orsak: orsaker.join("; "),
       kandidater: kandidatBedoma.map(({ rad: k }) => ({
         ticker: k.ticker,
-        motiv: byggKandidatMotiv(k, profil, viktMap.get(k.ticker)),
+        motiv: byggKandidatMotiv(k, profil, viktMap.get(k.ticker), bas),
         skillnadMotErsatt: rad ? jamforMotErsatt(k, rad) : "",
       })),
     });

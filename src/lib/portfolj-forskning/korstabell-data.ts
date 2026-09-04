@@ -123,6 +123,13 @@ function normaliseraRad(råRad: unknown): KorstabbellRad | null {
     // värden faller tillbaka på undefined (UI:t visar då "—" och döljer aldrig taket).
     datatackning: lasTal(falt(rad, "datatackning", "datatackning")) ?? undefined,
     akm1MaxMojligt: lasTal(falt(rad, "akm1MaxMojligt", "akm1_max_mojligt")) ?? undefined,
+    // Våg 57 D2: AKM2-berikningen (akm2-koppling.ts) — null när nyckeltal
+    // saknades; modullistan normaliseras defensivt (icke-strängar stryks).
+    akm2: lasTal(falt(rad, "akm2", "akm2")) ?? null,
+    akm2Skillnad: lasTal(falt(rad, "akm2Skillnad", "akm2_skillnad")) ?? null,
+    akm2Moduler: Array.isArray(rad.akm2Moduler)
+      ? rad.akm2Moduler.filter((m): m is string => typeof m === "string" && m.trim() !== "")
+      : [],
   };
 }
 

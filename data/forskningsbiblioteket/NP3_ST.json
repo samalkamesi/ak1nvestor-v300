@@ -1,0 +1,131 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "NP3.ST",
+ "namn": "NP3 Fastigheter AB (publ)",
+ "bransch": "fastighet",
+ "land": "Sverige",
+ "valuta": "SEK",
+ "versionsdatum": "2026-09-04",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gul",
+  "statusEtikett": "gul",
+  "relativAkm1": 0.6878,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.7654,
+ "akm1": {
+  "totalt": 48.9,
+  "maxMojligt": 71.1,
+  "relativ": 0.6878,
+  "perKategori": {
+   "tillvaxt": 1,
+   "vardering": 2.33,
+   "lonsamhet": 3.67,
+   "stabilitet": 2.67,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 74,9 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   },
+   {
+    "variabel": "V12",
+    "namn": "Intäktsstabilitet",
+    "poang": 5,
+    "motivering": "Intäktsvolatilitet σ(yoy) 2,1 % → stabilitetsband 5/5 (4-årig serie — kort underlag, noteras)"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 31,4 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 1,
+    "motivering": "P/S 7,28x härlett som P/E 11,4 × vinstmarginal 64,0 % (identitet, valutasäker) → linjär band 1/5"
+   },
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 2,
+    "motivering": "ROE 14,5 % → konkav kurva 2/5"
+   },
+   {
+    "variabel": "V06",
+    "namn": "EV/EBITDA",
+    "poang": 2,
+    "motivering": "EV/EBIT 17,5x som NEDRE-GRÄNS-proxy för EV/EBITDA (EV/EBIT ≥ EV/EBITDA) → konvex kurva 2/5"
+   }
+  ]
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 1 av 20 variabler har klassbar vågdata; dynamiken (forbattras) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "NAV-proxy",
+  "marginal": -0.4217,
+  "not": "Bokfört eget kapital per aktie som NAV-proxy (fastighetsundantaget) — NCAV-data saknas hos källorna."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Räntekänslighet: fastighetsvärdena bakom NAV-proxyn sjunker med stigande avkastningskrav — golvet rör på sig.",
+  "Gul status: AKM1 68,8 % av max — mellanskiktet; en svag mätning till flyttar raden mot rött.",
+  "Dubbelkällsbrist: källa B (MarketStack) saknade färsk kurs vid insamlingen — pris och värdering dubbelkollades ej (notering i bolagsuniverset)."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar gul-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; NP3.ST ligger på 71,1 % i dag.",
+  "V08 EBITDA-marginalen under 10 % i nästa årsredovisning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V08 EBITDA-marginal, 5/5 p i dag).",
+  "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 68,8 %."
+ ],
+ "lasMer": {
+  "bloggSlug": "analys-np3-fastigheter-2026",
+  "kurser": [
+   "v08-ebitda-marginal",
+   "v12-intaktsstabilitet",
+   "v19-kapitalforbranning"
+  ],
+  "analysSida": "/forskningsbiblioteket/NP3.ST"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

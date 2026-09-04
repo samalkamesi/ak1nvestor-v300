@@ -1,0 +1,131 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "NHY.OL",
+ "namn": "Norsk Hydro ASA",
+ "bransch": "material",
+ "land": "Norge",
+ "valuta": "NOK",
+ "versionsdatum": "2026-09-04",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön",
+  "relativAkm1": 0.7511,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.7085,
+ "akm1": {
+  "totalt": 53.4,
+  "maxMojligt": 71.1,
+  "relativ": 0.7511,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 4.67,
+   "lonsamhet": 3,
+   "stabilitet": 2.67,
+   "moat": 1,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "vardering",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 5,
+    "motivering": "P/S 0,93x härlett som P/E 19,4 × vinstmarginal 4,8 % (identitet, valutasäker) → linjär band 5/5"
+   },
+   {
+    "variabel": "V06",
+    "namn": "EV/EBITDA",
+    "poang": 5,
+    "motivering": "EV/EBIT 3,6x som NEDRE-GRÄNS-proxy för EV/EBITDA (EV/EBIT ≥ EV/EBITDA) → konvex kurva 5/5; värdefalle-hål: <4x ger 5 endast om V19 ≥ 3 (V19-poäng: 5) → 5/5"
+   },
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 27,8 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 1,
+    "motivering": "ROE 9,4 % → konkav kurva 1/5"
+   },
+   {
+    "variabel": "V01",
+    "namn": "Försäljningstillväxt",
+    "poang": 2,
+    "motivering": "Försäljningstillväxt 0,0 % [5-års CAGR (4-årsbas): 0,0 %] → goldilocks-kurva 2/5"
+   },
+   {
+    "variabel": "V14",
+    "namn": "Varumärke",
+    "poang": 3,
+    "motivering": "SUBJEKTIV grovpoäng 3/4-tak: bruttomarginal 37,0 % som prissättningsmakt-proxy (5-årsaggregat saknas i pass 1; korrelerar med V07)"
+   }
+  ]
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "stabilt",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 1 av 20 variabler har klassbar vågdata; dynamiken (stabilt) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Dubbelkällsbrist: källa B (MarketStack) saknade färsk kurs vid insamlingen — pris och värdering dubbelkollades ej (notering i bolagsuniverset).",
+  "Räntetäckning osatt — räntekostnad saknas för senaste räkenskapsåret (notering i bolagsuniverset); skuldbördans kostnadssida är inte mätt.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är stabilt i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; NHY.OL ligger på 71,1 % i dag.",
+  "V04 P/S över 5× i nästa mätning falsifierar tesen för värdering — AKM1-profilens starkaste ben (V04 P/S, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 75,1 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v04-ps",
+   "v06-ev-ebitda",
+   "v08-ebitda-marginal"
+  ],
+  "analysSida": "/forskningsbiblioteket/NHY.OL"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

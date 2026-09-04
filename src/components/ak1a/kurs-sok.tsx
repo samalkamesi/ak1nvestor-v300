@@ -1,16 +1,41 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
 
 /**
- * KURSSÖK — sök + kategorifilter för hela kursbiblioteket.
- * Samma DNA som övriga sajten: kategorisektioner, guldkantade kort.
- * Fas-kurser (kraverFas: 2 = fundamental vägen, 3 = dynamiska ekosystemet) visas
- * alltid (titel + beskrivning) men låsas med 🔒 → /fas2-ansok resp. /fas3 för
- * de som ännu inte har medlemskapet (inbjudan vidare, aldrig ett stopp).
+ * KURSSÖ — Bibliotekshallens hjärta (våg 58).
+ *
+ * Forskningsbakgrund (NN/g + branschbest practice, se worklog VÅG 58):
+ *  1. Curated-först (progressive disclosure): det som syns först signalerar
+ *     viktigt — därför bor sök+fält och utvalda sektioner OVFAN registret.
+ *  2. Numrerad paginering (ej infinite scroll) för målinriktad katalogsökning:
+ *     förutsägbar position, bakåtknapp och fotnötten når fram.
+ *  3. "Visar 1–24 av N" — läsaren ser alltid var i registret hen står.
+ *  4. Kompakta rader på md+ (kort vid liten uppsättning, radlista vid 300+).
+ *  5. Filter/sortering byter → sida 1 återställs (positionen får aldrig bli en
+ *     tom sida).
+ *
+ * Struktur: (1) hero-sök stort + centralt med kategorichips som snabbfilter,
+ * (2) {children} = server-renderade utvalda sektioner (endast svenska /kurser —
+ * speglarna skickar inga children), (3) registret: 24 kurser/sida + sidväljare
+ * + sortering + kompakta rader, (4) kategoriväggen: alla kategorier med
+ * räknare som klick sätter filtret och scrollar till registret.
+ *
+ * INGEN databorttagning: samtliga kurser lever kvar i komponentens minne och
+ * filterlogik — pagineringen är enbart en visningsfråga. Fas-kurser (kraverFas:
+ * 2 = fundamental vägen, 3 = dynamiska ekosystemet) visas alltid men låsas med
+ * 🔒 → /fas2-ansok resp. /fas3 (en inbjudan, aldrig ett stopp).
+ *
+ * SEO (våg 58): SSR renderar sida 1 + de utvalda sektionernas interna länkar;
+ * samtliga 333 kurssidor nås av crawlers via sitemap.xml (sedan tidigare) —
+ * klientsidig paginering ger inga dubblett-URL:er att kanonisera.
  */
+
+const PER_SIDA = 24;
+
+type Sortering = "rekommenderad" | "ao" | "kapitel";
 
 export type KursKort = {
   slug: string;
@@ -26,6 +51,8 @@ export type KursKort = {
 export function KursSok({
   kurser,
   lankPrefix = "",
+  children,
+  sidopanel,
 }: {
   kurser: KursKort[];
   /**
@@ -34,17 +61,42 @@ export function KursSok({
    * dynamiska kursspegeln) osv. Låsta Fas-länkar följer samma prefix.
    */
   lankPrefix?: string;
+  /**
+   * Utvalda sektioner (Flaggskeppen, Nya i biblioteket, Börja här) —
+   * server-renderade barn som visas mellan hero-söket och registret.
+   * Bara svenska /kurser skickar children; speglarna kör utan (våg 58).
+   */
+  children?: React.ReactNode;
+  /** Sidopanel (FortsattPanel) bredvid registret på lg+ — endast /kurser. */
+  sidopanel?: React.ReactNode;
 }) {
   const [sok, setSok] = useState("");
   const [kat, setKat] = useState("alla");
+  const [sida, setSida] = useState(1);
+  const [sortering, setSortering] = useState<Sortering>("rekommenderad");
   const [fas2Access, setFas2Access] = useState(false);
   const [fas3Access, setFas3Access] = useState(false);
+  const registerRef = useRef<HTMLElement | null>(null);
+  const monterad = useRef(false);
 
   // Fas-åtkomst avgörs lokalt efter montering (SSR renderar låst — säkrast default)
   useEffect(() => {
     setFas2Access(harFas2Access() || arAdmin());
     setFas3Access(harFas3Access() || arAdmin());
   }, []);
+
+  // Sidbyte → mjuk scroll till registrets topp (ALDRIG vid första render)
+  useEffect(() => {
+    if (!monterad.current) {
+      monterad.current = true;
+      return;
+    }
+    const el = registerRef.current;
+    if (el) {
+      const topp = el.getBoundingClientRect().top + window.scrollY - 84;
+      window.scrollTo({ top: Math.max(0, topp), behavior: "smooth" });
+    }
+  }, [sida]);
 
   const kategorier = useMemo(() => {
     const m = new Map<string, number>();
@@ -61,57 +113,110 @@ export function KursSok({
     });
   }, [kurser, sok, kat]);
 
-  const grupperade = useMemo(() => {
-    const m = new Map<string, KursKort[]>();
-    for (const k of filtrerade) {
-      const list = m.get(k.category) ?? [];
-      list.push(k);
-      m.set(k.category, list);
+  // Sortering: Rekommenderad = underliggande ordning (vårt pedagogiska urval),
+  // A–Ö = localeCompare på titel, Fler kapitel först = djupaste kurserna först.
+  const sorterade = useMemo(() => {
+    if (sortering === "ao") {
+      return [...filtrerade].sort((a, b) => a.title.localeCompare(b.title, "sv"));
     }
-    return [...m.entries()];
-  }, [filtrerade]);
+    if (sortering === "kapitel") {
+      return [...filtrerade].sort(
+        (a, b) => b.kapitel - a.kapitel || a.title.localeCompare(b.title, "sv"),
+      );
+    }
+    return filtrerade;
+  }, [filtrerade, sortering]);
+
+  const antalSidor = Math.max(1, Math.ceil(sorterade.length / PER_SIDA));
+  // Skydd: filter som krymper registret kan lämna sida > antalSidor → clampa.
+  const aktuellSida = Math.min(sida, antalSidor);
+  const startIx = (aktuellSida - 1) * PER_SIDA;
+  const visade = sorterade.slice(startIx, startIx + PER_SIDA);
+  const fran = sorterade.length === 0 ? 0 : startIx + 1;
+  const till = startIx + visade.length;
+
+  // Sidlista med ellipser: 1 … (aktuell-1) aktuell (aktuell+1) … sista
+  const sidLista = useMemo(() => {
+    const n = antalSidor;
+    if (n <= 7) return Array.from({ length: n }, (_, i) => i + 1) as Array<number | "…">;
+    const ta = new Set<number>([1, 2, n - 1, n, aktuellSida - 1, aktuellSida, aktuellSida + 1]);
+    const tal = [...ta].filter((p) => p >= 1 && p <= n).sort((a, b) => a - b);
+    const ut: Array<number | "…"> = [];
+    tal.forEach((p, i) => {
+      if (i > 0 && p - tal[i - 1] > 1) ut.push("…");
+      ut.push(p);
+    });
+    return ut;
+  }, [antalSidor, aktuellSida]);
+
+  const scrollTillRegister = () => {
+    const el = registerRef.current;
+    if (el) {
+      const topp = el.getBoundingClientRect().top + window.scrollY - 84;
+      window.scrollTo({ top: Math.max(0, topp), behavior: "smooth" });
+    }
+  };
+
+  const valjKategori = (k: string) => {
+    setKat(k);
+    setSida(1);
+    scrollTillRegister();
+  };
 
   // Visas info-raden? — bara när minst en Fas-kurs (2 eller 3) finns i vyn
-  const fasSynliga = useMemo(() => filtrerade.some((c) => kraverFas(c.slug) !== 0), [filtrerade]);
+  const fasSynliga = useMemo(() => visade.some((c) => kraverFas(c.slug) !== 0), [visade]);
 
-  return (
-    <div>
-      {/* Sök + filter — samma chip-kit som läroplanen: aktiv marin med guldtext, inaktiv guldkant */}
-      <div className="sticky top-14 z-20 -mx-1 mb-6 flex flex-wrap items-center gap-2 bg-background/95 px-1 py-3 backdrop-blur-md">
-        <input
-          value={sok}
-          onChange={(e) => setSok(e.target.value)}
-          placeholder={`Sök bland ${kurser.length} kurser…`}
-          className="w-60 rounded-lg border border-gold/30 bg-card px-3 py-2 text-xs outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30"
-          aria-label="Sök kurser"
-        />
-        <button
-          onClick={() => setKat("alla")}
-          className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
-            kat === "alla"
-              ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
-              : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
-          }`}
-        >
-          Alla ({kurser.length})
-        </button>
-        {kategorier.slice(0, 8).map(([k, n]) => (
+  const filterAktivt = kat !== "alla" || sok.trim() !== "";
+
+  const register = (
+    <section ref={registerRef} id="registret" aria-label="Kursregistret" className="scroll-mt-24">
+      {/* Registerverktyg — sticky medan registret bläddras */}
+      <div className="sticky top-14 z-20 -mx-1 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-gold/20 bg-background/95 px-1 py-3 backdrop-blur-md">
+        <h2 className="font-serif text-2xl font-bold">
+          Registret
+          <span className="ml-2 align-middle text-sm font-normal tabular-nums text-muted-foreground">
+            {filterAktivt ? `${sorterade.length} träffar` : `hela biblioteket`}
+          </span>
+        </h2>
+        {filterAktivt && (
           <button
-            key={k}
-            onClick={() => setKat(kat === k ? "alla" : k)}
-            className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
-              kat === k
-                ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
-                : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
-            }`}
+            onClick={() => {
+              setSok("");
+              setKat("alla");
+              setSida(1);
+            }}
+            className="rounded-full border border-gold/30 px-2.5 py-1 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10"
           >
-            {k} ({n})
+            {kat !== "alla" ? `${kat} · ` : ""}
+            {sok.trim() ? `"${sok.trim()}" · ` : ""}
+            Rensa filter ✕
           </button>
-        ))}
-        <span className="ml-auto text-[11px] text-muted-foreground">
-          {filtrerade.length} kurser visas
-        </span>
+        )}
+        <label className="ml-auto flex items-center gap-2 text-[11px] font-semibold text-muted-foreground">
+          Sortera
+          <select
+            value={sortering}
+            onChange={(e) => {
+              setSortering(e.target.value as Sortering);
+              setSida(1);
+            }}
+            className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-[11px] font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30"
+            aria-label="Sortera kurserna"
+          >
+            <option value="rekommenderad">Rekommenderad</option>
+            <option value="ao">Titel A–Ö</option>
+            <option value="kapitel">Fler kapitel först</option>
+          </select>
+        </label>
       </div>
+
+      {/* Lägesrad — läsaren ser alltid var i registret hen står (NN/g regel 3) */}
+      <p className="mb-4 text-xs tabular-nums text-muted-foreground" aria-live="polite">
+        {sorterade.length > 0
+          ? `Visar ${fran}–${till} av ${sorterade.length} kurser`
+          : "Inga kurser att visa"}
+        {antalSidor > 1 && ` · sida ${aktuellSida} av ${antalSidor}`}
+      </p>
 
       {/* Vad är Fas 2 och Fas 3? — info-rad som förklarar lås-markeringen (inbjudan, aldrig stopp) */}
       {fasSynliga && (
@@ -133,80 +238,218 @@ export function KursSok({
         </p>
       )}
 
-      {/* Kategorisektioner */}
-      <div className="space-y-10">
-        {grupperade.map(([category, list]) => (
-          <section key={category}>
-            <h2 className="border-b border-gold/30 pb-2 font-serif text-2xl font-bold">
-              {category}
-              <span className="ml-2 text-sm font-normal text-muted-foreground">
-                {list.length} kurser
-              </span>
-            </h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((c) => {
-                // Fas-kurs utan åtkomst: kortet visas (titel + beskrivning) men
-                // klick leder till ansökan — inbjudan vidare, aldrig ett stopp.
-                const fas = kraverFas(c.slug);
-                const last = fas !== 0 && (fas === 3 ? !fas3Access : !fas2Access);
-                return (
-                  <li key={c.slug}>
-                    <Link
-                      href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
-                      title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
-                      className={`block rounded-lg border p-4 transition-all ${
-                        last
-                          ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
-                          : "border-gold/20 bg-card hover:border-gold/50 hover:shadow-lg"
+      {/* Registret — mobil: bevarad kortstil; md+: två kolumner kompakta rader
+          (titel + kategori-chip + kapitel/min/xp i en rad). Allt kvar i DOM —
+          kompakteringen är ren CSS. */}
+      <ul className="grid gap-3 md:grid-cols-2">
+        {visade.map((c) => {
+          // Fas-kurs utan åtkomst: kortet visas (titel + beskrivning) men
+          // klick leder till ansökan — inbjudan vidare, aldrig ett stopp.
+          const fas = kraverFas(c.slug);
+          const last = fas !== 0 && (fas === 3 ? !fas3Access : !fas2Access);
+          return (
+            <li key={c.slug}>
+              <Link
+                href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
+                title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
+                className={`block rounded-lg border p-4 transition-all md:flex md:items-center md:gap-3 md:px-3 md:py-2.5 ${
+                  last
+                    ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
+                    : "border-gold/20 bg-card hover:border-gold/50 hover:shadow-lg"
+                }`}
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-start justify-between gap-2">
+                    <span className="font-serif font-semibold md:truncate md:text-sm md:font-semibold">{c.title}</span>
+                    {fas !== 0 && (
+                      <span
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                          fas === 3
+                            ? last
+                              ? "bg-[#8C5A2B] text-[#F8EFE3] dark:bg-[#B07A3C] dark:text-[#081120]"
+                              : "bg-[#B07A3C]/15 koppar-text"
+                            : last
+                              ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                              : "bg-gold/15 text-gold"
+                        }`}
+                      >
+                        {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
+                      </span>
+                    )}
+                  </span>
+                  {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen (mobil) */}
+                  <span className="mt-1 block text-xs tabular-nums text-muted-foreground md:hidden">
+                    {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
+                  </span>
+                  <span className="mt-2 block text-xs leading-relaxed text-muted-foreground md:hidden">
+                    {c.learn}
+                  </span>
+                  {last && (
+                    <span
+                      className={`mt-2 block text-[10px] font-semibold md:hidden ${
+                        fas === 3 ? "koppar-text" : "text-gold"
                       }`}
                     >
-                      <span className="flex items-start justify-between gap-2">
-                        <span className="font-serif font-semibold">{c.title}</span>
-                        {fas !== 0 && (
-                          <span
-                            className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                              fas === 3
-                                ? last
-                                  ? "bg-[#8C5A2B] text-[#F8EFE3] dark:bg-[#B07A3C] dark:text-[#081120]"
-                                  : "bg-[#B07A3C]/15 koppar-text"
-                                : last
-                                  ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
-                                  : "bg-gold/15 text-gold"
-                            }`}
-                          >
-                            {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
-                          </span>
-                        )}
-                      </span>
-                      {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen */}
-                      <span className="mt-1 block text-xs tabular-nums text-muted-foreground">
-                        {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
-                      </span>
-                      <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">
-                        {c.learn}
-                      </span>
-                      {last && (
-                        <span
-                          className={`mt-2 block text-[10px] font-semibold ${
-                            fas === 3 ? "koppar-text" : "text-gold"
-                          }`}
-                        >
-                          Öppnas i Fas {fas} — ansök för att komma vidare →
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        ))}
-        {grupperade.length === 0 && (
-          <p className="rounded-xl border border-gold/20 bg-card p-8 text-center text-sm text-muted-foreground">
-            Inga kurser matchade — prova ett annat sökord.
+                      Öppnas i Fas {fas} — ansök för att komma vidare →
+                    </span>
+                  )}
+                </span>
+                {/* md+: kompaktraden — kategori-chip + kapitel/min/xp i en rad */}
+                <span className="hidden shrink-0 items-center gap-2 md:flex">
+                  <span className="hidden rounded-full border border-gold/25 px-2 py-0.5 text-[10px] font-bold text-muted-foreground lg:inline-flex">
+                    {c.category}
+                  </span>
+                  <span className="whitespace-nowrap text-[11px] tabular-nums text-muted-foreground">
+                    {c.kapitel} kap · {c.minuter} min · {c.xp} XP
+                  </span>
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      {sorterade.length === 0 && (
+        <p className="rounded-xl border border-gold/20 bg-card p-8 text-center text-sm text-muted-foreground">
+          Inga kurser matchade — prova ett annat sökord.
+        </p>
+      )}
+
+      {/* Sidväljare — numrerad paginering (NN/g: förutsägbar position för
+          katalogsökning; back-knappen och fotnoten når alltid fram) */}
+      {antalSidor > 1 && (
+        <nav aria-label="Sidnavigering" className="mt-8 flex flex-wrap items-center justify-center gap-1.5">
+          <button
+            onClick={() => setSida(Math.max(1, aktuellSida - 1))}
+            disabled={aktuellSida === 1}
+            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            ← Föregående
+          </button>
+          {sidLista.map((p, i) =>
+            p === "…" ? (
+              <span key={`ellips-${i}`} className="px-1 text-xs text-muted-foreground" aria-hidden>
+                …
+              </span>
+            ) : (
+              <button
+                key={p}
+                onClick={() => setSida(p)}
+                aria-current={p === aktuellSida ? "page" : undefined}
+                className={`min-w-9 rounded-lg px-2.5 py-1.5 text-[11px] font-bold tabular-nums transition-colors ${
+                  p === aktuellSida
+                    ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                    : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
+                }`}
+              >
+                {p}
+              </button>
+            ),
+          )}
+          <button
+            onClick={() => setSida(Math.min(antalSidor, aktuellSida + 1))}
+            disabled={aktuellSida === antalSidor}
+            className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Nästa →
+          </button>
+        </nav>
+      )}
+    </section>
+  );
+
+  return (
+    <div>
+      {/* (1) HERO-SÖK — stort och centralt: bibliotekshallens entré (våg 58) */}
+      <section aria-label="Sök i kursbiblioteket" className="mt-8">
+        <div className="mx-auto max-w-2xl">
+          <div className="relative">
+            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gold/70" aria-hidden>
+              ⌕
+            </span>
+            <input
+              value={sok}
+              onChange={(e) => {
+                setSok(e.target.value);
+                setSida(1);
+              }}
+              placeholder={`Sök bland ${kurser.length} kurser — titel eller ämne…`}
+              className="w-full rounded-2xl border border-gold/40 bg-card py-4 pl-12 pr-4 text-base outline-none transition-colors focus:border-[#0E1B2E] focus:ring-2 focus:ring-[#0E1B2E]/20 dark:focus:border-gold-soft dark:focus:ring-gold-soft/20"
+              aria-label="Sök kurser"
+            />
+          </div>
+          <p className="mt-2 text-center text-[11px] tabular-nums text-muted-foreground">
+            {kurser.length} kurser · {kategorier.length} kategorier — hela biblioteket, sökt på sekunder
           </p>
-        )}
-      </div>
+          {/* Kategorichips — snabbfilter direkt i heron */}
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <button
+              onClick={() => valjKategori("alla")}
+              className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
+                kat === "alla"
+                  ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                  : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
+              }`}
+            >
+              Alla ({kurser.length})
+            </button>
+            {kategorier.slice(0, 8).map(([k, n]) => (
+              <button
+                key={k}
+                onClick={() => valjKategori(kat === k ? "alla" : k)}
+                className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
+                  kat === k
+                    ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                    : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
+                }`}
+              >
+                {k} ({n})
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* (2) Utvalda sektioner — server-renderade barn (endast svenska /kurser) */}
+      {children}
+
+      {/* (3+4) Registret (+ sidopanel på /kurser) och kategoriväggen */}
+      {sidopanel ? (
+        <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_260px]">
+          <div>{register}</div>
+          <aside className="h-fit">{sidopanel}</aside>
+        </div>
+      ) : (
+        <div className="mt-12">{register}</div>
+      )}
+
+      {/* KATEGORIVÄGGEN — hela biblioteket i glimten: varje kategori med
+          räknare; klick sätter filtret och scrollar till registret */}
+      <section aria-label="Alla kategorier" className="mt-12 rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
+        <h2 className="font-serif text-2xl font-bold">
+          Kategoriväggen
+          <span className="ml-2 text-sm font-normal tabular-nums text-muted-foreground">
+            {kategorier.length} kategorier · {kurser.length} kurser
+          </span>
+        </h2>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+          Hela biblioteket på en vägg — välj en kategori så filtreras registret ovan.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {kategorier.map(([k, n]) => (
+            <button
+              key={k}
+              onClick={() => valjKategori(k)}
+              className={`rounded-full px-3 py-1.5 text-[11px] font-bold tabular-nums transition-colors ${
+                kat === k
+                  ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                  : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
+              }`}
+            >
+              {k} <span className="opacity-60">{n}</span>
+            </button>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

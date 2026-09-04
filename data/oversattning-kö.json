@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-04T10:06:22.251Z",
+  "uppdaterad": "2026-09-04T12:10:19.462Z",
   "notering": "fallback-kö — produktion kräver tabellen oversattningar (data/sql/oversattningar.sql)",
   "poster": [
     {
@@ -2161,6 +2161,726 @@
       "status": "vantar-motor",
       "kvalitet": 0,
       "uppdaterad": "2026-09-04T10:06:22.248Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.minuter",
+      "sprak": "en",
+      "kallhash": "1f6fa6f69d18",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:41.696Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.minuter",
+      "sprak": "ar",
+      "kallhash": "1f6fa6f69d18",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:41.932Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nasta",
+      "sprak": "en",
+      "kallhash": "dd5818380fb3",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:42.677Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nasta",
+      "sprak": "ar",
+      "kallhash": "dd5818380fb3",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:43.064Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nastaKapitel",
+      "sprak": "en",
+      "kallhash": "9d2f1184b3e0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:43.545Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nastaKapitel",
+      "sprak": "ar",
+      "kallhash": "9d2f1184b3e0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:43.785Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.niva",
+      "sprak": "en",
+      "kallhash": "14995e1ce7de",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:43.789Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.niva",
+      "sprak": "ar",
+      "kallhash": "14995e1ce7de",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:43.792Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nivaUpp",
+      "sprak": "en",
+      "kallhash": "96bd515ec909",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:44.221Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.nivaUpp",
+      "sprak": "ar",
+      "kallhash": "96bd515ec909",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:44.778Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.ratt",
+      "sprak": "en",
+      "kallhash": "ed01c9136a60",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:45.297Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.ratt",
+      "sprak": "ar",
+      "kallhash": "ed01c9136a60",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:45.813Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.startaKurs",
+      "sprak": "en",
+      "kallhash": "a1e20fcb0b4e",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:46.119Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.startaKurs",
+      "sprak": "ar",
+      "kallhash": "a1e20fcb0b4e",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:46.533Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.testaDigSjalv",
+      "sprak": "en",
+      "kallhash": "ef49d750a5d0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:47.197Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.testaDigSjalv",
+      "sprak": "ar",
+      "kallhash": "ef49d750a5d0",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:09:47.831Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.tid",
+      "sprak": "en",
+      "kallhash": "cdefbb07a3b8",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:48.136Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.tid",
+      "sprak": "ar",
+      "kallhash": "cdefbb07a3b8",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:48.329Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.tipsFallback",
+      "sprak": "en",
+      "kallhash": "46c0372e7ebf",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:48.795Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.tipsFallback",
+      "sprak": "ar",
+      "kallhash": "46c0372e7ebf",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:49.276Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.totalt",
+      "sprak": "en",
+      "kallhash": "1c0e4dcb651c",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:49.521Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.totalt",
+      "sprak": "ar",
+      "kallhash": "1c0e4dcb651c",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:49.707Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.utmaning",
+      "sprak": "en",
+      "kallhash": "00ffefcf51e2",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:50.439Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.utmaning",
+      "sprak": "ar",
+      "kallhash": "00ffefcf51e2",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:51.076Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.vikt",
+      "sprak": "en",
+      "kallhash": "4aa3deeb1bba",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:51.333Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.vikt",
+      "sprak": "ar",
+      "kallhash": "4aa3deeb1bba",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:51.493Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.xpPerNiva",
+      "sprak": "en",
+      "kallhash": "c1defa281826",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:52.280Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "kurs.xpPerNiva",
+      "sprak": "ar",
+      "kallhash": "c1defa281826",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:09:53.192Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAdmin",
+      "sprak": "en",
+      "kallhash": "916f79620459",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:53.613Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAdmin",
+      "sprak": "ar",
+      "kallhash": "916f79620459",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:54.053Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAllaKurser",
+      "sprak": "en",
+      "kallhash": "e863cd19bea0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:54.532Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAllaKurser",
+      "sprak": "ar",
+      "kallhash": "e863cd19bea0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:54.944Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAnalyser",
+      "sprak": "en",
+      "kallhash": "a26b3b532061",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:55.314Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descAnalyser",
+      "sprak": "ar",
+      "kallhash": "a26b3b532061",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:55.746Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBadges",
+      "sprak": "en",
+      "kallhash": "85d0688ab9d0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:56.102Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBadges",
+      "sprak": "ar",
+      "kallhash": "85d0688ab9d0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:56.671Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBiblioteket",
+      "sprak": "en",
+      "kallhash": "a3e72a42fa1d",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:57.192Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBiblioteket",
+      "sprak": "ar",
+      "kallhash": "a3e72a42fa1d",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:57.663Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBloggen",
+      "sprak": "en",
+      "kallhash": "0372d28af880",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:58.018Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descBloggen",
+      "sprak": "ar",
+      "kallhash": "0372d28af880",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:58.352Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descCertifikat",
+      "sprak": "en",
+      "kallhash": "3e4609607dc2",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:58.683Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descCertifikat",
+      "sprak": "ar",
+      "kallhash": "3e4609607dc2",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:59.107Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descDagensPass",
+      "sprak": "en",
+      "kallhash": "07e01c0ab4e0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:09:59.603Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descDagensPass",
+      "sprak": "ar",
+      "kallhash": "07e01c0ab4e0",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:00.555Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descFas2Ansokan",
+      "sprak": "en",
+      "kallhash": "cf8dd0d805ca",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:01.182Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descFas2Ansokan",
+      "sprak": "ar",
+      "kallhash": "cf8dd0d805ca",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:01.705Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descFas3",
+      "sprak": "en",
+      "kallhash": "dcd29f446e71",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:02.067Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descFas3",
+      "sprak": "ar",
+      "kallhash": "dcd29f446e71",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:02.699Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKalkylatorn",
+      "sprak": "en",
+      "kallhash": "cd848c445809",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:03.124Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKalkylatorn",
+      "sprak": "ar",
+      "kallhash": "cd848c445809",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:03.963Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKognitiv",
+      "sprak": "en",
+      "kallhash": "4e85c99ee86e",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:04.317Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKognitiv",
+      "sprak": "ar",
+      "kallhash": "4e85c99ee86e",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:04.704Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKonfluens",
+      "sprak": "en",
+      "kallhash": "817958e273d1",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:05.143Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descKonfluens",
+      "sprak": "ar",
+      "kallhash": "817958e273d1",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:05.573Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLabbar",
+      "sprak": "en",
+      "kallhash": "9032efe25086",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:06.016Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLabbar",
+      "sprak": "ar",
+      "kallhash": "9032efe25086",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:06.569Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLaroplan",
+      "sprak": "en",
+      "kallhash": "e4e859ac14b7",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:06.972Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLaroplan",
+      "sprak": "ar",
+      "kallhash": "e4e859ac14b7",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:07.305Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLoggaIn",
+      "sprak": "en",
+      "kallhash": "60a29c9cb369",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:07.685Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descLoggaIn",
+      "sprak": "ar",
+      "kallhash": "60a29c9cb369",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:08.790Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descManifest",
+      "sprak": "en",
+      "kallhash": "95082e476830",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:10.233Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descManifest",
+      "sprak": "ar",
+      "kallhash": "95082e476830",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:10.819Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMedlemskap",
+      "sprak": "en",
+      "kallhash": "800433250f45",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:11.368Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMedlemskap",
+      "sprak": "ar",
+      "kallhash": "800433250f45",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:11.864Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMinPortfolj",
+      "sprak": "en",
+      "kallhash": "7239de887920",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:12.461Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMinPortfolj",
+      "sprak": "ar",
+      "kallhash": "7239de887920",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:13.119Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMinSida",
+      "sprak": "en",
+      "kallhash": "c064bbeddaf4",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:14.089Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descMinSida",
+      "sprak": "ar",
+      "kallhash": "c064bbeddaf4",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:14.542Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descNetnet",
+      "sprak": "en",
+      "kallhash": "285d78bd248a",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:14.866Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descNetnet",
+      "sprak": "ar",
+      "kallhash": "285d78bd248a",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:15.618Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descNyheter",
+      "sprak": "en",
+      "kallhash": "15db322ef8e7",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:15.937Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descNyheter",
+      "sprak": "ar",
+      "kallhash": "15db322ef8e7",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:16.357Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPortfoljbyggaren",
+      "sprak": "en",
+      "kallhash": "91e767b8d880",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:16.719Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPortfoljbyggaren",
+      "sprak": "ar",
+      "kallhash": "91e767b8d880",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:17.067Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPortfoljforskning",
+      "sprak": "en",
+      "kallhash": "6ec1e3390887",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:17.400Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPortfoljforskning",
+      "sprak": "ar",
+      "kallhash": "6ec1e3390887",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:17.779Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPrenumeration",
+      "sprak": "en",
+      "kallhash": "8edd22f971f4",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:18.270Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPrenumeration",
+      "sprak": "ar",
+      "kallhash": "8edd22f971f4",
+      "status": "maskinutkast-behovar-granskning",
+      "kvalitet": 60,
+      "uppdaterad": "2026-09-04T12:10:18.723Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPro",
+      "sprak": "en",
+      "kallhash": "2572ac8cf985",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:19.020Z"
+    },
+    {
+      "scope_typ": "ui",
+      "scope_nyckel": "meny.descPro",
+      "sprak": "ar",
+      "kallhash": "2572ac8cf985",
+      "status": "publicerad",
+      "kvalitet": 100,
+      "uppdaterad": "2026-09-04T12:10:19.461Z"
     }
   ]
 }

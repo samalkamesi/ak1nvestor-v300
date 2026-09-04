@@ -5032,3 +5032,207 @@ webhook:en/automationen rate-regler eller behöver återskapas (Settings →
 Integration → Webhooks)? När Vbout-sidan släpper igenom flödet fungerar
 KADEDA automatiskt — inget mer att bygga.
 tsc 43/0 · /api/email 200 med köad true + vbout-rad i loggen (dev).
+
+── VÅG 54, AGENT M: EXTERN MOTOR-KEDA (2026-09-04) ──
+Kunddirektiv: "bygg klart systemet utan ai och att översättningen sker
+dynamiskt med externa super avancerade ekosystemet" — MÖS-motorn ska INTE
+vänta på kundens ZAI-nyckel. BYGGT i src/lib/oversattning/motor.ts:
+EXTERN KEDJA per textstycke (första som lyckas vinner): 1) DeepL om
+DEEPL_API_KEY (":fx"-suffix → api-free.deepl.com; DEEPL_HOST-override måste
+stå i vitlistan; POST /v2/translate text[]-batch, target EN-US/AR,
+DeepL-Auth-Key), 2) Google om GOOGLE_TRANSLATE_KEY (translation.
+googleapis.com v2, format "text" ALDRIG html — vi översätter råtextblock),
+3) MyMemory NYCKELFRI STANDARD (GET api.mymemory.translated.net/get,
+q ≤ 500 byte → deterministisk bitdelning där join("") återställer EXAKT
+originalets whitespace/radbrytningar), 4) alla fall → vantar-motor.
+ZAI-grenen består OFÖRÄNDRAD som premiumalternativ (nyckel = bästa
+kvalitet, våg 52-logik). SSRF-skydd i zai.ts-mönstret för alla tre:
+host-vitlistor, https-tvång, valideraExternUrl → URL-OBJEKT som endast det
+fetch:as, redirect:error, timeout 10 s, kastar aldrig; nycklar endast ur
+env, loggas aldrig (Google-nyckeln sitter på URL-objektets searchParams —
+url.toString() loggas aldrig).
+KVOT: MyMemory anonym ≈ 5000 ord/dag — modulräknare per process/lambdainstans
+(dokumenterat: hur Hobby-instanser delar är okänt) + tak 400 anrop/dygn;
+kvot-signal (responseStatus "MYMEMORY WARNING" / HTTP 429 / varning i
+translatedText) ⇒ NY STATUS "vantar-kvot" i unionen OVERSATTNING_STATUS
+(samma kö-semantik som vantar-motor, notering "nästa dags rond ca 24 h").
+SQL-NOT: data/sql/oversattningar.sql uppdaterad — KUNDEN KÖR OM FILEN
+(idempotent): CHECK-listan har 'vantar-kvot' + ALTER TABLE … DROP
+CONSTRAINT IF EXISTS oversattningar_status_check + ADD CONSTRAINT (Postgres
+namnger namnlösa kolumn-CHECKs så; andra omkörning släpper+lägger till
+igen, ingen dataförlust). Verifiera: pg_get_constraintdef(oid).
+TERMBANKSSTYRNING runt externa motorer (kvalitetsregeln består — kontroller/
+cron-poängsättning orörda): PRE — text ≤ 8 ord där VARJE ord är enkelordsterm
+i banken översätts DIREKT ur banken (noll nät/kvot; flerordsterm eller
+främmande ord ⇒ motor); POST — tvingaTermbank() rättar deterministiskt varje
+sv-term motorn felade på, 4 strategier: svenskt-lackage, skriftläge,
+ofullständig-målterm ("return on equity" → "return on equity (ROE)"; الخندق
+→ الخندق التنافسي), synonym-byte (bruttomarginal felaktigt "profit margin" →
+"gross margin" — bytes-källa måste vara en rads målterm vars sv-term INTE
+finns i källan). Rättningen körs FÖRE korKontroller → termKonsistens-poängen
+höjs deterministiskt. MotorResultat.motor utvidgad: zai|deepl|google|
+mymemory|termbank|ingen. Debug: EN console.log-rad per rond-objekt i motorn
+(antal per tjänst + kvotstatistik, inga hemligheter). Testläge utan nät:
+OVERSATTNING_EXTERN_AVSTANGD=1 (dokumenterad i filhuvudet; sviten använder
+den). Cron-routen, kontroller.ts, lager.ts, speglar, admin: ORÖRDA
+(admin räknar automatiskt upp vantar-kvot via OVERSATTNING_STATUS; cron:s
+statusräknare låter vantar-kvot hamna i granskas-fältet — kosmetiskt, ägs av
+cron/admin-agenten). vercel.json orörd (cron 10:00 UTC finns).
+VERIFIERAT: (1) validera-motorer 73 PASS / 0 FAIL / 0 SKIP (5,9 s) — 5 nya
+MÖS-rader: termbank-ersättning 4 strategier, MyMemory-payload (%20/%7C,
+bitdelning ≤500B med join===original, kvot-predikat + vakter 5000/400),
+kedjeordning+SSRF (http/evil.com/suffix-host/ogiltig → null), status-union
++ PRE-direkt (oversatt("aktie portfölj") → termbank 100p publicerad utan
+nät), POST-skydd → kontroller (60p → 100p); MÖS 9 kör nu med kedjan
+avstängd = fortfarande vantar-motor/text=null. (2) LIVE nyckelfritt:
+MyMemory "Vad är avkastning på eget kapital?" → en "What is return on
+equity?" + ar "ما هو العائد على حقوق الملكية ؟" (HTTP 200/responseStatus
+200) och HELA pipelinen live via tsx: motor=mymemory status=publicerad
+poang=100 bägge språk + kort text → termbank-direkt "stock portfolio".
+(3) tsc 43/0 (samma 43 som baslinjen). (4) DEV-CRON (port 3482, ingen
+CRON_SECRET i .env.local — namn kontrollerat): GET ?secret=dev-test → 200
+på 39,5 s, batch 80 objekt: 71 publicerade + 9 granskas + 0 vantar-motor,
+motorAktiv=false, lagring=kö (tabell saknas i dev, fallback 240→320
+poster); rondloggen: 78 MyMemory-anrop (388/5000 ord, 78/400 anrop, 0
+kvot) + 2 termbank-direkt; POST-skyddet rättade 1 term live (synonym-byte)
+→ 100p auto-publicerad. Dev dödad, port frigjord. INGET committat.
+
+── VÅG 54, AGENT Ö1: GRAHAM-FLAGGSKEPPET EN/AR (2026-09-04) ──
+Kunddirektiv: översättningen ska ske "med dig" — agenten levererar FÄRDIGA
+högkvalitativa översättningar direkt i MÖS-systemet, inte maskinutkast.
+LEVERERAT: data/oversattning-import/intelligent-investor.json — HELA kursen
+the-intelligent-investor (Grahams The Intelligent Investor, 21 kapitel) i
+EN + AR: 84 kursblockposter (scope-nycklar exakt enligt kalla.ts:
+"{slug}:kap{n}:block{i}" 1-baserat) + 420 "ovriga" (21 titlar + 21 intros +
+63 quiz × {q, a0-a3, tips}; ratt-index = struktur, ej översatt) = 1008
+översatta strängar, 138 KB. KVALITET: systemets EGNA kontroller körda via
+tsx på varje block×språk: korKontroller 168/168 = 100 poäng (100.0%)
+→ alla autopubliceringsklara (tröskel 90). Termbanksdisiplin: varje svensk
+term som hittaTermerIKalla träffar finns med bankens exakta en/ar-term —
+inklusive fällorna "kurs"→course/الدورة i kap1:1+12:1+20:4 (källa har
+"kurs"/"kurser" = kurs-innebörd, löst med naturlig kursreferens), "motstånd"
+i kap4:2 = vågläretermen resistance/المقاومة trots vardagsbetydelse
+("tvångsmässigt motstånd mot humöret"), "genombrott" i kap9:1 → breakout/
+الاختراق (indexfondens genombrott), "börsen" kap7:2 → stock exchange/
+البورصة. AR-grammatikfälla löst systematiskt: termbanken kräver exakt
+substringsmatch ⇒ bestämda former (الالتزامات، العائد الإجمالي، القيمة
+السوقية، الرافعة المالية) även där obestämd form vore naturligare; 35
+sådana justeringar fångade+fixade av egen förkontroll innan tsx-körningen.
+Sifferintegritet: ALLA tal exakta multiset — viktigt: decimaltecken
+bevaras ordagrant ("8,5 + 2g", "1,5", "0,2%" förblir komma även i EN;
+sifferkontrollen jämför strängform), teckenbevarande procent ("+33%",
+"-89%"), intervall med bindestreck intakta ("1966-70", "30-50%",
+"100 000 kr" med mellanslag). Struktur: tabell/tidslinje-block översatta
+som giltig JSON med identiska toppnycklar (rubrik/rader, titel/punkter) +
+arraylängder; ✓-symboler och → bevarade; latinska namn/termer kvar i AR
+(Mr Market, P/E, P/B, net-net, NCAV-princip, IPO, GEICO, Nifty Fifty,
+Dot-com, South Sea, RSI, MACD). Ton: pedagogisk analys, inga råds-
+formuleringar; EN "enterprising investor" (Grahams terminologi), AR فصحى.
+Källtypologier: källans "Thailand-tillägg" (kap18, uppenbar
+ generationsartefakt) översatt som "hans egen berömda tilläggsformulering";
+ källtyponis ("Gå igen", "secundära", "VD-löner +") bevarade i mening.
+VERKTYG LÄMNADE: data/tmp-tii/ (bygg.py + kontrollera.mts + 4 fragment-
+filer) för spårbarhet/återkörning — npx tsx data/tmp-tii/kontrollera.mts.
+src/ RÖRDES EJ. INGET committat.
+
+── VÅG 54 agent Ö3: Lynch EN/AR — mina-basta-investeringar komplett (2026-09-04) ──
+
+Kunddirektiv: flaggskeppskursen "Mina bästa investeringar" (Peter Lynch,
+20 kapitel, 60 textblock + 60 quiz) översatt till ENGELSKA + ARABISKA som
+importfil till MÖS-pipelinen.
+
+LEVERANS: data/oversattning-import/mina-basta-investeringar.json
+{kurs, sprak:{en,ar}, konvention, antalPoster:160, poster:[{nyckel,en,ar}]}
+= 160 poster × 2 språk = 320 översättningar. Nycklar enligt kalla.ts:
+block "mina-basta-investeringar:kap{n}:block{i}" (1-baserat, identiskt
+med kursblock-scopet i källregistret — 60/60 verifierade mot deep-courses.
+json) + konventionsdokumenterade tillägg: kap{n}:titel (20), kap{n}:intro
+(20), kap{n}:quiz{j} (60) där quizposten är 6 rader i fast ordning
+[q / alternativ 1-4 / tips] — ratt-index ingår ej i texten (översätts ej,
+alternativordningen bevarad rad för rad så indexet förblir giltigt).
+
+KVALITET — kontrollerna körda lokalt med tsx mot src/lib/oversattning/
+{kontroller,termbank}.ts (korKontroller per post × språk): 320/320 poster
+på 100 poäng (100,0%; målet var ≥95%). Fyra kontroller godkända överallt:
+termKonsistens (107 poster hade termbanksträffar, 57 unika termer — alla
+med bankens exakta en/ar-term), sifferIntegritet (strängformer bevarade:
+"50 000" med mellanslag, 29%/13/1977/1990/12/15/40×2/72×2/500 identiska;
+decimaler berördes ej), strukturIntegritet (60 block prosa 1 stycke,
+60 quiz 6 rader/1 stycke, 40 titel/intro 1 rad — listor/tabeller/JSON
+fanns ej i källan), lateralKolla (längd 0,5-2,5×; AR: 0 åäö-läckor; EN:
+0 arabtecken). Verktyg kvarlagda i tool-results/ (lynch-analys.ts,
+lynch-oversattningar.ts, lynch-kontroll.ts + JSON-utdata) — npx tsx
+tool-results/lynch-kontroll.ts [--bygg] återkör allt.
+
+SVÅRA TERMVAL: (1) termbankens "kurs"=course/الدورة kolliderar med
+kurs=aktiekurs i 21 poster — EN löst med idiomatiskt "of course", AR med
+الدورة i cykelbetydelse ("عبر الدورة", "الدورة الربعية", "الدورة
+الاقتصادية") som är semantiskt korrekt i marknadssammanhang. (2) Arabisk
+bestämd artikel eliderar alif efter preposition ل (للسهم/للمحاسبة
+innehåller inte السهم/المحاسبة som substräng) — 17 poäng-fel fixades med
+intakta former ("على المساهمين", "بالمحاسبة", "في المحفظة لديك").
+(3) Pluralformer av AR-termer innehåller inte singularformen (صناديق/
+صندوق المؤشرات، هياكل/هيكل الملكية) — generisk singular använd där.
+(4) Lynchs sex kategorier (slow growers, stalwarts, fast growers,
+cyclicals, turnarounds, asset plays) behålls latinska i AR med arabisk
+gloss vid första förekomst — samma princip som Lynch/Magellan/L'eggs/
+PEG/P/E. (5) indexfond i plural → AR generisk singular "صندوق المؤشرات"
+(fonden som kategori). (6) "diworsification" kvar latin med förklarande
+gloss. Ton: pedagogisk analys, inga rådsformuleringar, i EN neutral
+internationell finansengelska, i AR modern standardarabiska (فصحى).
+
+src/ RÖRDES EJ (kontrollerna importerades läsandes). INGET committat.
+
+── VÅG 54 agent Ö2: IMPORTÖREN + ZERO TO ONE (2026-09-04) ──
+UPPDRAG 1 — IMPORTÖREN: verktyg/importera-oversattning.mjs (nya verktygsskriptet
+för MÖS handöversättningsflöde). Läser data/oversattning-import/*.json
+({kurs, sprak?, poster:[{nyckel, en, ar}]}; ko-backup-* hoppas över), hämtar
+källtext+hash ur källa-registret via SAMA tsx-mönster som validera-motorer.mjs
+(genererar tmp_import_oversattning.ts i rot, kör npx --yes tsx under 300 s-
+budget, läser JSON mellan ASCII-markörer, städar alltid). Kör korKontroller
+per språk; STATUSLOGIK enligt brief: 100 p → "publicerad" (autopublicering
+som motorn, via bestamStatus), 90–99 → "utkast" (granskningskön), <90 →
+VARNING med kontrollens detaljer + SKIPPA (nekad — skrivs ALDRIT till
+lagret); okänd nyckel → VARNING + skip. Skrivning via lager.ts lasSpara i
+batchar om 250 (upsert Prefer merge-duplicates på UNIQUE(scope_typ,
+scope_nyckel, sprak) = IDEMPOTENT; körd 2× verifierat, identiskt utfall).
+ENV: .env.local + .env parsade i skriptet (KEY=VALUE, citat rensas,
+.env.local vinner över .env, satt processenv vinner över båda; värden loggas
+ALDRIG — endast nyckelnamn + satt/ej satt; python-mönstret _las_env översatt
+till node). NEDGRADERING: TabellSaknasFel (PGRST205/404 + Supabase ej
+konfigurerat) → skriver data/oversattning-import/ko-backup-{kurs}.json med
+poster+poäng+kontrollrapport + budskapet "kör data/sql/oversattningar.sql
+först", exit 0 (dokumenterat degraderat läge); andra lagerfel → backup +
+exit 1. Flagga --kontrollera = poängsättning utan skrivning (ingen env
+krävs). Robusthet: sprak-fält tolereras som sträng/lista/OBJEKT med en/ar-
+nycklar (leverantörernas två äkta filer skiljer sig åt), BOM rensas,
+dubblettnycklar inom fil varnas (sista vinner, som upsert), filvalsargument
+per namn. UPPDRAG 2 — ZERO TO ONE ÖVERSATT: data/oversattning-import/
+zero-to-one.json, ALLA 97 kursblock (14 kapitel; 41 text + 14 insikt +
+14 tabell + 14 utmaning + 14 visuell — kap9 har 6 block) × en+ar = 194
+poster, full täckning mot kalla.ts blocknycklar (0 saknade/extra).
+KVALITET: 194/194 = 100 % på 100 poäng (mål ≥95 %): alla 4 kontroller
+gröna per post — termbankens exakta måltermer (svårighet: AR-bestämdhet —
+"للخندق" innehåller inte "الخندق التنافسي", itererades med --kontrollera
+tills includes()-garantin gick igenom överallt), siffermultiset identiskt
+(inkl. "1,5" decimal-komma, "500 000", "1966-70" bindestreck före siffra
+ger "-70", "0-to-1" → {0,-1}, V01/AKM1/AK1A sifferrader, ARP en-dashes
+"V13–V15" aldri bindestreck), struktur identisk (tabellblock = giltig
+kompakt JSON med rubrik/rader-nycklar + oförändrade arraylängder, bara
+värden översatta), längd 0,5–2,5×, inga åäö i AR (latinska namn/brands
+t.ex. Thiel/PayPal/Tesla/SaaS kvar latin), ingen arabiska i EN, pedagogisk
+ton utan rådgivning. Quiz (42) och kapiteltitlar ingår EJ i källa-registret
+(kalla.ts indexerar blockinnehåll) — korrekt ej översatta.
+VERIFIERAT: --kontrollera på egen testfil (2 II-block, 100 p; termbanken
+fångade "kurs gick upp" → course/الدورة justerades naturligt); därefter
+landade DE ÄKTA filerna under körningen: intelligent-investor.json (Graham-
+agentens, 84 poster, 100 % på 100 p båda språk — imponerande) + mina-basta-
+investeringar.json (160 poster: 60 blockposter/språk → 100 p; 100/språk med
+nycklar kapN:titel/intro/quiz1-3 är EJ registrerade i kalla.ts → ärligt
+"okända nycklar", importören skriver aldrig utanför registret — om kunden
+vill täta titlar/quiz krävs utökning av källa-registret, ej importören).
+Äkta körning (3 filer): 682 poster · 482 på 100 p · 0 nekade · 200 okända;
+tabellen saknas fortfarande (PGRST205) → tre ko-backup-filer skrivna
+(168+120+194 poster med poäng) + tydligt SQL-budskap; omkörning efter
+data/sql/oversattningar.sql upsertar samma rader. src/ RÖRDES EJ. INGET
+committat.

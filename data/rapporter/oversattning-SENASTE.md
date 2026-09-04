@@ -1,10 +1,10 @@
 # MÖS — översättningsrond (SENASTE)
 
-- **Körd:** 2026-09-04T10:06:21.937Z
+- **Körd:** 2026-09-04T12:09:40.388Z
 - **Register:** 15983 källor → 31966 översättningsobjekt (× en/ar)
-- **Nya/ändrade:** 31806 nya, 0 ändrade
+- **Nya/ändrade:** 31726 nya, 0 ändrade
 - **Denna rond:** 80 objekt bearbetade (batchbudget: motor aktiv 4/rond, inaktiv 80/rond — Vercel Hobby max 1 cron/dag)
-- **Lagring:** kö (fallback data/oversattning-kö.json, 240 poster — produktion kräver data/sql/oversattningar.sql)
+- **Lagring:** kö (fallback data/oversattning-kö.json, 320 poster — produktion kräver data/sql/oversattningar.sql)
 
 ## Kvalitetsstatusflöde
 
@@ -18,85 +18,85 @@
 
 | Scope | Språk | Status | Poäng | Notering |
 |---|---|---|---:|---|
-| `ui:home.skal4Rubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.skal4Rubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutMikro1` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutMikro1` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutOsaker` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutOsaker` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutOvan` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutOvan` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutRubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutRubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutTitta` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutTitta` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutUnderrubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.slutUnderrubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig1Rubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig1Rubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig1Undertext` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig1Undertext` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig2Rubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig2Rubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig2Undertext` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig2Undertext` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig3Rubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig3Rubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig3Undertext` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig3Undertext` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig4Rubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig4Rubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig4Undertext` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stig4Undertext` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigEyebrow` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigEyebrow` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigRubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigRubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigUnderrubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.stigUnderrubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.utforskaKurserna` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.utforskaKurserna` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.varforEyebrow` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.varforEyebrow` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.varforRubrik` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.varforRubrik` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.verktygIdag` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:home.verktygIdag` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.allaKlara` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.allaKlara` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fas2Porten` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fas2Porten` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fokus` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fokus` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.foregaende` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.foregaende` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fortsattKursen` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.fortsattKursen` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.grattis` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.grattis` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.insikt` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.insikt` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitel` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitel` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelAv` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelAv` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelBeharskat` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelBeharskat` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelEnhet` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelEnhet` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelTitel` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kapitelTitel` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursenKlar` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursenKlar` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursenSlut` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursenSlut` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursinnehall` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursinnehall` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursoversikt` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.kursoversikt` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.masterquiz` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.masterquiz` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.minLasning` | en | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
-| `ui:kurs.minLasning` | ar | `vantar-motor` | 0 | ZAI_API_KEY saknas — deterministisk kö, ingen låtsasöversättning |
+| `ui:kurs.minuter` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.minuter` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nasta` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nasta` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nastaKapitel` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nastaKapitel` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.niva` | en | `publicerad` | 100 | kort text (≤ 8 ord) helt täckt av termbanken — översatt direkt ur banken utan motoranrop — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.niva` | ar | `publicerad` | 100 | kort text (≤ 8 ord) helt täckt av termbanken — översatt direkt ur banken utan motoranrop — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nivaUpp` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.nivaUpp` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.ratt` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.ratt` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.startaKurs` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.startaKurs` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.testaDigSjalv` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.testaDigSjalv` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:kurs.tid` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.tid` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.tipsFallback` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.tipsFallback` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.totalt` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.totalt` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.utmaning` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.utmaning` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.vikt` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.vikt` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.xpPerNiva` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:kurs.xpPerNiva` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descAdmin` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descAdmin` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descAllaKurser` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descAllaKurser` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descAnalyser` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descAnalyser` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBadges` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBadges` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBiblioteket` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBiblioteket` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBloggen` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descBloggen` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descCertifikat` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descCertifikat` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descDagensPass` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descDagensPass` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descFas2Ansokan` | en | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descFas2Ansokan` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descFas3` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descFas3` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descKalkylatorn` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descKalkylatorn` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descKognitiv` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descKognitiv` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descKonfluens` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descKonfluens` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descLabbar` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descLabbar` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descLaroplan` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descLaroplan` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descLoggaIn` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descLoggaIn` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descManifest` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descManifest` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descMedlemskap` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descMedlemskap` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descMinPortfolj` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descMinPortfolj` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descMinSida` | en | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descMinSida` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descNetnet` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descNetnet` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descNyheter` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descNyheter` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPortfoljbyggaren` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPortfoljbyggaren` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPortfoljforskning` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPortfoljforskning` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPrenumeration` | en | `publicerad` | 100 | extern motor mymemory svarade — termbanken rättade 1 term(er) efter motorn (synonym-byte) — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPrenumeration` | ar | `maskinutkast-behovar-granskning` | 60 | extern motor mymemory svarade — poäng 60 < 90, kräver granskning oavsett motor |
+| `ui:meny.descPro` | en | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
+| `ui:meny.descPro` | ar | `publicerad` | 100 | extern motor mymemory svarade — alla kontroller gröna, automatiskt publicerad |
 
 _Genererad av /api/cron/oversatt (MÖS, våg 52) — deterministiskt underlag: termbank med 293 termer + 4 kontroller i src/lib/oversattning/kontroller.ts._

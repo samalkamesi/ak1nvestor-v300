@@ -4,6 +4,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { skickaVboutLead, vboutStatusText } from "@/lib/vbout";
 
 export async function POST(req: NextRequest) {
   try {
@@ -58,8 +59,25 @@ export async function POST(req: NextRequest) {
       const errText = await createRes.text();
       return NextResponse.json({ error: `Supabase error: ${createRes.status} ${errText.substring(0, 200)}` }, { status: 500 });
     }
-    
+
+    // Vbout-hjälp: endast nybildade adresser (ej test-prefix) matas vidare
+    const isNewMemberLead = (e: string) => !/^(test|synthetic|dev)@/i.test(e);
+
     const newMember = await createRes.json();
+
+    // Vbout — ny medlem är sajtens viktigaste lead: mata marknadsautomationen
+    // (fire-and-forget: misslyckande påverkar ALDRIG registreringen)
+    if (isNewMemberLead(email)) {
+      void skickaVboutLead({
+        email,
+        namn: name || undefined,
+        kalla: "medlem",
+        notering: `Ny gratismedlem (${memberType})`,
+      }).then((r) => {
+        if (!r.ok) console.warn("[vbout] leadmiss medlem:", vboutStatusText(r));
+      });
+    }
+
     return NextResponse.json({ member: newMember[0] || newMember, isNew: true });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });

@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { morgonMejl, veckoRapport, fas2Nudge, NYHETSBREV_MALL } from "@/lib/email-mallar";
 import { lasLeverantor, skickaMejl, type SkickaResultat } from "@/lib/email-sandare";
+import { skickaVboutLead, vboutStatusText } from "@/lib/vbout";
 
 /**
  * POST /api/email — köa (och, om leverantör finns, SKICKA) ett mejl.
@@ -201,6 +202,19 @@ export async function POST(req: NextRequest) {
   const resultat: SkickaResultat = konfigurerad
     ? await skickaMejl({ till: email, amne: amneFor(typ), html })
     : { skickad: false, leverantor: null, status: "köad (leverantör saknas)" };
+
+  // ── Vbout: prenumerations-intentioner är leads — mata automationen ──
+  // (fire-and-forget, påverkar aldrig mejlflödet)
+  if (typ === "prenumeration-intention") {
+    void skickaVboutLead({
+      email,
+      namn: plockaStr(data.namn, MAX_NAMN) || undefined,
+      kalla: "prenumeration",
+      notering: `${plockaStr(data.nivaNamn, MAX_NAMN)} · ${plockaStr(data.period, 20) === "ar" ? "årsvis" : "månadsvis"} · ${plockaStr(data.pris, 60)}`,
+    }).then((r) => {
+      if (!r.ok) console.warn("[vbout] leadmiss prenumeration:", vboutStatusText(r));
+    });
+  }
 
   return NextResponse.json({
     ok: true,

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { skickaVboutLead, vboutStatusText } from "@/lib/vbout";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -72,6 +73,17 @@ export async function POST(req: NextRequest) {
         source: "fas2",
       }),
       signal: AbortSignal.timeout(10000),
+    });
+
+    // Vbout — Fas 2-ansökan är varm lead: mata marknadsautomationen direkt
+    // (fire-and-forget, påverkar aldrig ansökan)
+    void skickaVboutLead({
+      email: e,
+      namn: n,
+      kalla: "fas2-ansok",
+      notering: `Nivå ${niv} · ${xpTal} XP · ${kurser.length} klara kurser`,
+    }).then((r) => {
+      if (!r.ok) console.warn("[vbout] leadmiss fas2:", vboutStatusText(r));
     });
 
     return NextResponse.json({

@@ -6136,3 +6136,342 @@ SEO: sitemap täcker alla 333 + 18 SSR-länkar + 0 dubblett-URL:er.
 CDP-KLICKVERIFIERAT: sida 2→"25–48", sortering växlar topp, vägg-
 BOKMASTER→103/sida 1 av 5, sök graham→18, 0 overflow 412+915, speglar
 + kurssidor orörda. tsc 43/0 · svit 85/0/0 · Kvalitetsvakten GRÖN.
+
+── VÅG 59, BYGG-4: KONVERTINGSSYNEN + ANONYMISERAD INTENTION-PATCH (2026-09-04) ──
+Uppdrag: MARKNADS-BESLUT VÅG 1b (m7 §3a + A4-korrigeringen). Sex steg ur
+BEFINTLIGA källor — NOLL nya spår, tabeller eller fält (P6/AC1); vyn gör
+NOLL skrivningar. Fil-domäner respekterade (beslut §5).
+
+(1) NY FIL src/app/api/admin/konvertering/route.ts — GET, ADMIN_PASSWORD-
+lås (x-admin-password/Bearer, timing-safe — /api/trafik-mönstret): UTAN
+lösen 401 (AC5), MED 200 + trätt. Modulmemo 5 min (forskninglage-mönstret).
+Alla räkningar med Prefer: count=exact — "planned" är PostgreSQL-skattning
+som avvek kraftigt i verifikationen (340 skattat vs 2 äkta medlemmar); ärliga
+tal kräver exakt räkning (P4). SEX STEG: 1) Besökare = system_events
+type=trafik, unika hashade sessioner (details.s) 24h/7d/30d, bounded läsning
+3 000 rader som /api/trafik. 2) Gratismedlemmar = members count=exact
+(totalt + nya 30d). 3) Aktiva elever 30d = user_activities action≠page_view,
+unika session_id — märks SKATTAD (XP lever bara i elevens localStorage).
+4) Fas 2-ansökningar = type=fas2_ansokan (totalt + 30d). 5) Prenumerations-
+intentioner = email_kö details->>typ=prenumeration-intention (PostgREST-
+jsonfilter, URL-kodat) + type=konvertering_intention — delräkningar redo-
+visas separat (kan överlappa efter patchen; summan = tak). 6) Betalande =
+members member_type≠free — märks MANUELL ("0 är det ärliga svaret").
+Svaret bär steg (varde+sub+kalla+kvalitet+notering), fem grader med
+fönsterdeklaration (täljare/nämnare — blandade fönster skrivs ut, aldrig
+döljs), sex mätluckor och datumspann. GDPR/AC4: aggregat per period, ingen
+koppling session→member-id.
+
+(2) NY FIL src/app/api/konvertering/intention/route.ts — POST, A4-korrigeringen:
+aktivera-panelen postar ALLTID (även utan nyhetsbrevscheck) ett ANONYMISERAT
+intention-event. Fältlista STÄNGD: {nivaNamn, period(manad|ar), pris} — ingen
+e-post, inget namn, ingen IP, ingen session (AC2). Skriver system_events
+type=konvertering_intention, severity=info, source=konvertering. Rate-limit
+10/min per process (/api/email-mönstret). 400 ogiltig body · 429 · 503 utan
+Supabase · 502 skrivfel. Mejl-kön postas ALDRIG utan mottagare (m7 rek 2
+korrigeras alltså till aggregerad räkning utan personuppgift).
+
+(3) NY FIL src/components/ak1a/admin/konverterings-panel.tsx — TrafikSakerhet-
+mönstret exakt: lås-vy med lösenordsrad vid 401, refresh-knapp, AK1A-DNA.
+Tratt-staplar (bredd ∝ steg 1) med kvalitetsbadge MÄTT (grön)/SKATTAD (guld)/
+MANUELL (grå), sub-rader (24h/7d/30d, delräkningar), konverteringsgrad mellan
+varje steg (procent + täljare/nämnare + fönster, "—" vid nollnämnare),
+datumspann-badge och MÄTLUCKOR-ruta med routens sex ärliga noteringar +
+GDPR-rad (P6, /transparens).
+
+(4) PATCH src/app/admin/page.tsx — fliken "Konvertering 📊" efter Trafik &
+Säkerhet (TabsTrigger + TabsContent i Card, samma som övriga paneler).
+
+(5) PATCH src/components/ak1a/prenumeration/aktivera-panel.tsx — begar()
+postar ALLTID postaAnonymIntention({nivaNamn, period, pris}) fire-and-forget
+(8s timeout, fel sväljs tyst — påverkar aldrig begäran). Nyhetsbrevscheckens
+/api/email-flöde orört. Finstilt-tillägget berättar den anonymiserade
+räknaren + länkar /transparens (P4). Verifierad UTF-8-integritet åäö genom
+hela flödet (curl på Git Bash/Windows manglade em-dash — node-fetch ren).
+
+(6) PATCH src/app/transparens/page.tsx — REGISTER utökad med datakategorin
+"Konverteringsintentioner (anonym aggregerad räkning — ingen personuppgift)":
+vad/varför/grund (berättigat intresse 6.1 f)/lagring (35 dagar, systemhändelse-
+retentionen)/rätt (invändning 21 — ingen personuppgift att begära ut).
+
+VERIFIERAT (dev 3500): GET utan lösen → 401 {"Admin-lösenord krävs…"}; MED
+lösen → 200 med tratt (besökare 8 · medlemmar 2 · aktiva 21 SKATTAD · fas2 0
+· intentioner 2 · betalande 0 MANUELL; grader 25 %/1050 %-fönsterblandad/0 %/
+—/0 %). POST intention 200 → läs-tillbaka DIREKT i Supabase: 1 rad
+type=konvertering_intention details={nivaNamn,period,pris} (fältlistan exakt,
+ingen persondata); memo-förnyelse efter 5 min visar "2 anonymiserade" i
+tratten via GET (läs-tillbaka på båda vägarna). Ogiltig period → 400.
+/admin 200 + "Konvertering 📊" i både klient- och SSR-chunk (login-gömd som
+alla flikar). /transparens 200 med nya registerposten (10 vad-rubriker).
+tsc EXAKT 43/0 (0 nya; inget fel i ändrade filer). INGET COMMITTAT.
+
+── VÅG 59 bygg-2: AKM3 STEG 3+4 — osäkerhetsintervall + peer-läslagret (2026-09-04) ──
+Direktiv: AKM3-BESLUT.md (LAGEN) §5–§6 + §11 steg 3–4; r4-osakerhet §2–§3;
+r3-peer §3–§4. P1 determinism, P3 osatt=osatt, peer/intervall = PRESENTATIONS-
+lager som ALDRIG blir indata i poängen (§3 "lager 5/pres — LÄSER").
+
+BYGGT — STEG 3 (intervall):
+(1) src/lib/akm3/osakerhet.ts (NY, ren funktion, fs-fri): raknaIntervall(K,t,
+port) = [K, min(100, K+100(1−t))] med hårt porttak 45 (endast när naiv övre
+överstiger — min(ovre,45)), halvbredd=(övre−nedre)/2, konfidens=t; null när
+K/t saknas (P3). raknaFullviktsIntervall = [K·t, K·t+100(1−t)] (strängare
+fullviktsrad, BESLUT §5). Formaterare intervallText "58 [58–91] (täckning
+67 %)", intervallPlusText "58 ± 16,5 (täckning 67 %)" — svenska komma, inga
+lokalen (hydrationssäkra). Siffran följer ALLTID formeln (direktivets ±12
+vid 67 % var illustrativt; formeln ger ±16,5 — P1).
+(2) vag-stil.tsx: Akm1Chip + Akm2Cell får valfri prop intervall → ensidigt
+felstreck/gradient OVANFÖR chippet (markör vid K, utlöpande till övre —
+Correll/Gleicher-rekommendationen för asymmetriska spann, r4 §1.6), port-tak
+markeras med snedstrecksmönster vid 45; spann + ± i title OCH aria-label
+(role=img) — spannet får ALDRIG bara antydas. grupperaBranscher: sortNyckel
+utökad "akm1"|"akm2" → |"peer" (osatt peer sorterar sist).
+(3) korstabell.tsx: båda poängkolumnerna räknar intervallet ur radens egna
+fält (akm1Totalt/akm2 × datatackning × portV19); mobilkortet (BolagsKort)
+får utskriven rad "Spann 58–91 · täckning 67 %" + peerrad. Grupprubriken
+får "Median AKM2"-chip (60 i teknik ≠ 60 i finans).
+(4) portfolj-djupvy.tsx r~159 (SNABBVINSTEN, r4 §0): Akm1Chip i då/nu-
+snapshotten får max (rad.akm1MaxMojligt) — taket döljs aldrig.
+(5) Detaljsidan /forskningsbiblioteket/[ticker]: ny sektion "Osäkerhet —
+var totalen hamnar vid full data": AKM1-spann + AKM2-spann + strängare
+fullviktsrad ("med profilen behållen vid full data") + port-status + r4 §3.2c
+-förklaringen ("0 p värsta till 5 p bästa; modellen gissar aldrig").
+
+BYGGT — STEG 4 (peer):
+(1) src/lib/portfolj-forskning/peer.ts (NY, ren, MEDELVETET fs-fri så att
+klientkomponenter kan importera formaterarna): raknaPeer(rader, {referens-
+Datum, poangPerBolag}) → Map<ticker, PeerInfo>. peerPercentil = 100·(sämre+
+0,5·lika)/(n−1) MIDRANK (lika exkluderar sig själv — namnbrytning ALDRIG),
+rank = 1+strikt bättre ("4/10", delade delar), peerDrag = akm2−branschmedian
+(åäö-fri JSON-nyckel, BESLUT §6), per-variabel hållning mot branschmedian-
+poäng (>+0,5 ÖVER · |·|≤0,5 I NIVÅ · <−0,5 UNDER), grupp<5 ⇒ osatt
+"liten-grupp", saknad akm2 ⇒ "saknad-akm2", variabel osatt hos bolaget ⇒
+raden osatt (median per variabel över gruppens icke-osatta). referens =
+skapad + "N-bolagsunivers" (urvalsberoendet syns). Median kontrakt: jämnt n
+⇒ medel av två mittersta. Z-score/MAD förbjudet (n=10, §10.10).
+(2) typer.ts: KorstabbellRad + portV19? (porttaket) + peer?: PeerInfo
+(type-only-import av PeerInfo — typcirkel raderas, ingen runtime-koppling).
+(3) korstabell-data.ts: lasAkm1PoangFranCache (V01–V20 ur data/cache/
+akm1-{TICKER}.json; osatt-markering = motiveringens "osatt —"-prefix —
+källans kontrakt för skilja strukturellt saknad från poängen 0) +
+berikaMedPeer efter normaliseringen + portV19-parsning + skapad exponeras i
+KorstabellUnderlag. Additivt: gamla filer/fixturer utan fält fungerar kvar.
+(4) korstabell.tsx: Peer-kolumn omedelbart höger om AKM2 (sorterbar,
+aria-sort, osatt-visning "—"), tooltip med drag + över/i nivå/under +
+referens + AKTIVA MODULER (modul-konfunden deklareras i visningen, BESLUT
+§6). (5) Detaljsidan: "Peer-spegeln"-block — percentil/rank + 0–100-stapel
+(bolag mot branschmedian), drag-mening ("bär sitt sällskap"/"sällskapet bär
+bolaget"), variabeltabell med V07-RADER FÖRST (r3 §3.3:s pedagogiska
+kärna — namn ur kärnans kanoniska VARIABEL_META), aktiva moduler +
+referensnot. Bolag utanför universum ⇒ blocket renderas ej (bakåtkompatibelt).
+
+VERIFIERAT (allt mot egna körda instanser; INGET COMMITTAT):
+• Svit: node verktyg/validera-motorer.mjs ⇒ 91 PASS / 0 FAIL / 0 SKIP
+  (85 + 6 nya kontroller: osakerhet GOLDEN INDU-C [58,1;91,1]±16,5 · PSNY
+  övre 65,4 · VPLAY port 52→45 · t=1 ⇒ [K,K] · tak 100 · fullviktsrad
+  [38,927;71,927] · format exakta · determinism 2× · null⇒null; peer midrank
+  med delade 33:or ⇒ 37,5/rank 3+3 · jämn median 46 · grupp 4 ⇒ osatt ·
+  saknad akm2 ⇒ osatt · V07-hållning ±0,5-trösklar · referensfält ·
+  kompositen byte-identisk med/utan peer — lässlagerkontraktet).
+• tsc EXAKT 43/0 (0 nya; baslinje bevarad). git diff src/lib/akm2/ = TOMT
+  (kärnan karna.ts orörd — acceptanskriteriet §11.3.iv).
+• dev 3498 (ren .next efter krock med parallellagents serverlås — deras
+  3500/3499 togs över enligt "döda efteråt"-konventionen, min instans
+  dödad efter verifiering): /portfolj-forskning 200 med Peer-kolumnrubrik
+  (sorterbar), 10 "Median AKM2"-chips, 100 mobil-spannrader, 400 felstrecks-
+  gradienter, 9 porttak-markeringar (VPLAY-B) i tooltips/aria; /forsknings-
+  biblioteket/INDU-C.ST 200: "58 [58–91] (täckning 67 %)" + "58 ± 16,5" +
+  fullviktsrad [57–90] + Peer-spegeln ("+25 poäng över industri-branschens
+  median (60) — bolaget bär sitt sällskap", 7 över · 3 i nivå · 0 under ·
+  10 osatta, Aktiva branschmoduler, referens 2026-09-03 · 100-bolagsunivers);
+  NEM 200: "55 [55–84] (täckning 71 %)" (r4:s andra worked example, exakt);
+  TRUE-B.ST 200: båda sektionerna; startsida 200; /api/portfolj-forskning
+  200: 100 rader med peer (AAPL: percentil 33,3, rank 7/10, drag −1 mot
+  teknikmedian 61 — r3 §0:s fynd återgivet i data).
+
+── VÅG 59, BYGG-3: OG-BILDERNA + openGraph.url-BUGGEN + SOCIALA PLATSHÅLLARE (2026-09-04) ──
+Uppdrag: MARKNADS-BESLUT VÅG 1a — beslutets HÖGSTA prioritet ("husets största
+enskilda marknadsmiss": summary_large_image deklarerad men ingen bild levererad).
+Fil-domäner respekterade (beslut §5). INGET COMMITTAT.
+
+(1) BEROENDE satori ^0.33.4 i package.json (bun finns ej på maskinen → npm
+install; sharp ^0.34.3 fanns). Piplin: satori (objekt-SVG med text som
+glyf-PATHS → inga systemtypsnitt, ingen fontconfig, portabelt) + sharp → PNG.
+Typsnitt in-checkade scripts/fonts/ (OFL; statisk Google Fonts API): Source
+Serif 4 400/600/700 + Inter 400/600 — build utan nätverk. Glyftäckning för
+åäöÅÄÖ — … · verifierad per tecken via path-datalängd (alla riktiga glyfer).
+
+(2) NY FIL scripts/og-generate.mjs + "npm run og" (seo-generate-mönstret;
+-generatorerna körs manuellt och artefakterna checkas in, som data/seo +
+data/siffror — inget i next-build-kedjan). Mallar → public/og/, 1200×630 PNG
+(palette q92): start.png (marin gradient #0E1B2E→#081120, guldsignatur "AK1A"
++ "RESEARCH LAB", tagline, trådglasskulpturen inbäddad som data-URI = K5
+levererad i repo), default.png (typografisk fallback), kurs.png ("333 kurser
+i 27 ämnesområden" — tal ur data/siffror.json + räknade kategorier, P7),
+blogg.png, analys.png + EN PER SLUG: kurser/[slug].png ×333 (titel-clamp 70,
+kategori+nivå), blogg/[slug].png ×40 (titel + beskrivning), analys/
+[ticker].png ×11 (bolag + ticker + QR-kort till ANALYS-URL:en — P2: ingen
+rekommendation på marknadsytan, disclaimer i sidfoten). Lägen: "snabb"
+(översikter + 1/grupp) och "--check" (endast validering av existerande
+slugs). All iteration sorterad, inga tidsstämplar → AC3 determinism.
+
+(3) NY FIL src/lib/qr.ts — QR-kodaren extraherad ORDAGRANT ur dela-kort.tsx
+(GF(256) + Reed-Solomon, EC M, version 1–6): export qrMatris/qrPath/qrSvgPath,
+ren TS utan beroenden. og-skriptet importerar .ts-filen direkt (node ≥22
+type-stripping; fallback med import-attribut). FIL-DOMÄN NOTERAD: dela-kort
+behåller sin lokala kopia tills VÅG 3 kopplar qr-importern (beslut §5).
+
+(4) PATCH src/lib/seo.tsx — OG_BREDD/OG_HOJD (1200/630) + ogBildForPath():
+roten → start.png (även path "" — startsidans sidaMetadata skickar tom
+sökväg), /kurser → kurs.png, /kurser/[slug] → per-kurs-PNG, /blogg →
+blogg.png, /blogg/[slug] → per-post, /analyser → analys.png, /analyser/
+[ticker] → per-analys, övrigt → default.png. pageMetadata: openGraph.images
++ twitter.images = {url,width:1200,height:630,alt} (AC1; alt per sidtyp ur
+titeln), nytt valfritt opts.ogBild för explicit styrning. JSON-LD image-fält:
+articleJsonLd, analysisJsonLd, courseJsonLd (kanoniska PNG-URL:er).
+
+(5) PATCH src/app/layout.tsx — BUGGEN (m8 §1.1): openGraph.url var hårdkodad
+ägardomän och avvek från SITE_URL → nu url: SITE_URL (import) + metadataBase:
+new URL(SITE_URL) så relativa /og/…-sökvägar slås upp kanoniskt. Root-OG:
+images + twitter.images → /og/start.png med alt. AC2: ingen hårdkodad
+ak1nvestor.com-URL kvar i layouten (endast StagingBanners värd-jämförelse).
+
+(6) NY FIL src/lib/sociala.ts (K1-platshållare): SOCIALA_PROFILER linkedin/
+youtube/x/instagram = "" + SOCIALA_URLS (endast ifyllda). PATCH footer.tsx:
+ikonrad (lucide: Linkedin/Youtube/Twitter(X)/Instagram, guld) renderas ENDAST
+för ifyllda URL:er — idag 0 ikoner, aldrig döda länkar. PATCH
+organizationJsonLd(): sameAs = SOCIALA_URLS endast om icke-tom.
+
+VERIFIERAT: (a) AC3 determinism: md5 över alla PNG:er före/efter
+omgenerering = bitidentiska (72a3f2f2…); två körningar ~50 s. (b) 389/389
+bilder exakt 1200×630 (sharp-metadata), störst 29 kB
+(blogg/hur-vi-analyserade-volvo-cars.png), snitt 18 kB, 0 filer >200 kB,
+totalt 6,9 MB. (c) QR: pixeljämförelse renderad modulgrid mot qrMatris() för
+https://lab.ak1nvestor.com/analyser/ABB.ST = 841/841 moduler korrekta.
+(d) dev 3499 (STÄNGD efteråt): först dödades en främmande, glömd dev-server
+(PID 29148, port 3498) vars delade .next-turbopack-cache korrumperat SST-
+filerna (orsak till tillfälliga 500:or) + cache rensad. Därefter: / →
+og:image …/og/start.png, og:url lab.ak1nvestor.com, twitter:image detsamma;
+bloggpost → …/og/blogg/[slug].png MED og:image:width/height/alt;
+/analyser/ABB.ST → …/og/analys/ABB.ST.png; /kurser → kurs.png; kurssida →
+…/og/kurser/v01-….png; /blogg + /analyser → egna översikts-PNG; /manifest →
+default.png. JSON-LD "image" verifierad i HTML för blogg + analys; sameAs
+saknas i organizationJsonLd (korrekt med tomma URL:er); PNG:erna serveras
+200 image/png; footern SSR-renderar utan socialrad (0 sociala länkar i
+DOM). (e) AC4: inga runtime-endpoints — allt statiskt under public/.
+(f) AC5 tsc: HEAD-baslinje (ren git-worktree, --incremental false) = 43;
+arbetskopia = 46, diffen +3 samtliga i src/app/api/cron/vagvalidering/
+route.ts = ANNAN agents parallella icke-committade ändringar — 0 fel i
+VÅG 1a:s filer (seo/qr/sociala/layout/footer eslint-rena; layoutens 7 var-
+lint är oförändrade beaconskript sedan tidigare). OG-copy följer lexikon:
+"Kostnadsfritt, för alltid" (P3), disclaimer i varje sidfot (P2), "elev"-
+terminologi, inga förbjudna fraser.
+
+── VÅG 59 bygg-1: AKM3 STEG 1 (ENSEMBLE + PREDIKTIONSLOGG) + STEG 2 (BANA B + TRÖSKEL v2) (2026-09-04) ──
+Normativt underlag: data/forskning/AKM3/AKM3-BESLUT.md (AKM3.2026.09) — §4
+(ensemble), §7 (Bana B + v2-trösklar), §11 acceptanskriterier, FORBUD §10.
+
+STEG 1 — ENSEMBLE (r5 Design A, BESLUT §4):
++ src/lib/akm3/typer.ts (NY): typkontrakt — AKM3Ensemble (total/band
+  [min,median,max]/spridning/enighet/alfa/diagnostik/akm1Totalt/
+  akm2Komposit), EnsembleProfilResultat, Akm3Prediktionsrad +
+  Akm3Prediktionslogg. ENSEMBLE_PROFILER = exakt 3 kanoniska medlemmar.
++ src/lib/akm3/ensemble.ts (NY): raknaEnsemble(k, {moduler?}) = round(Σ 1/3·K_p)
+  över raknaAKM2 med akm1-klassisk/akm2-2026/superanalys-2026 (samma
+  modulaktiveringar); band [min,max] + median (mittenvärdet); spridning =
+  max−min; trappa enighetFranSpridning: 0–3 ENIG · 4–7 DELAD · ≥8
+  PROFILSPÄNNING; modellVersion "AKM3.2026.09"; datum ur k.hamtat (P1).
+  α=1/3 LÅST: ingen vikt-parameter finns (acceptans §11.1.vi — test nekar
+  custom-α); alfa-fältet dokumenterar 1/3×3. Porten slår igenom per profil
+  (följer DATA); osatta andelar ärvs per profil och visas; diagnostik:
+  omfördelningseffekten + kategorivikt-vs-variabelvikt. Runtime-import
+  ENBAST raknaAKM2 ur akm2/karna (läsning — samma precedens som
+  portfolj-forskning/akm2-koppling.ts; tolkning av byggreglerna dokumenterad
+  i filhuvudet). AKM2:s filer orörda — projektionsinvarianten orörd.
++ src/lib/akm2-onsdemand.ts: hamtaAkm3ForAnalys enligt akm2-mönstret —
+  data/cache/akm3-{TICKER}.json → .ensemble (formguard arAkm3Ensemble),
+  annars on-demand raknaEnsemble ur fundamental-cachen med SAMMA
+  byggModulAktiveringar som AKM2-fallbacken (medlemmarna stämmer med
+  dashboardens AKM2-komposit).
++ PREDIKTIONSLOGGEN (BESLUT §3 "mätning" + §12): src/lib/portfolj-forskning/
+  uppfoljning.ts utökad med RENA funktioner — byggAkm3Prediktionsrad
+  (spår "akm3-ensemble", versionsstämpel, ensemble sida vid sida med
+  akm2Komposit + akm1Totalt, band + pris|null) + hash-kedja
+  (PREDIKTIONSLOGG_GENESIS, rakna/stempla/verifieraPrediktionskedja,
+  sha256 injiceras av anroparen — lib:t förblir klientsäkert utan
+  node-imports). cron/portfolj-uppfoljning utökad: per mätt ticker
+  beräknas ensemblen (P1-cachen; saknas nyckeltal tiger loggen — P3), EN
+  rad per bolag per månad appendas hash-kedjad till data/portfolj-system/
+  prediktionslogg-akm3.json (rad-per-månad-dedupe på ticker+YYYY-MM);
+  befintlig kedja verifieras FÖRE rundan — manipulerad kedja lämnas ORÖRD
+  och rapporteras öppet (append-only, FORBUD §10.10); samma rond skriver
+  data/cache/akm3-{TICKER}.json; prediktionslogg-status i svaret +
+  OrganEvent (grova tal, P8). Dev-verifierat: cron svarar ok med
+  prediktionslogg-block; inga aktiva portföljer ⇒ 0 rader (hederligt).
++ UI: ProfilEnsembleVy i akm2-dashboard.tsx (tre staplar per profil med
+  osatta-andel + port-markering, band-remsa med median-streck + marin
+  ensemble-medel-markör, spridningschip med trappan, diagnostikrader,
+  jämförelsespår AKM2/AKM1, aria-labels — text bär informationen) +
+  Akm2Dashboard valfri prop ensemble/ensembleKalla (renderas SIDAN VID SIDAN
+  med ProfilJamforelse — ersätter ALDRIG). Detaljsidan (forskningsbiblioteket/
+  [ticker]) hämtar via hamtaAkm3ForAnalys och visar ensemblen i
+  dashboard-sektionen + fristående sektion när enbart ensemblen kan beräknas.
+  Dev 3497: INDU-C.ST renderar K=[22,85,82] total 63 spridning 63
+  PROFILSPÄNNING med källa "on-demand ur nyckeltalscachen"; /kalkylator 200.
+
+STEG 2 — BANA B + TRÖSKELPROTOKOLL v2 (BESLUT §7):
++ src/lib/vagvalidering.ts: PROTKOLL v2 (beslutad 2026-09-04): basbygge-
+  bandet skalas per horisont — TROSKEL_PROCENT_PER_HORIZONT mikro/kort 6 ·
+  medellång 15 · lång/mega 25 (inklusiva); impulsvåg/korrigering behåller
+  v1:s teckenregel (MEST FÖRSIKTIGA tolkningen av §7 — evidensen gällde
+  enbart basbygge; EN ändring per protokollversion, FORBUD §10.6);
+  domVagvalidering(klass, momentum, horisont?) — utan horisont gäller
+  v1:s ±6 så GAMLA v1-rader förblir återskapbara ordagrant;
+  TROSKEL_V2_BESLUTAD + TROSKEL_V2_ORSAK deklarerar fyndet (basbygge 0 %
+  på medellång/mega, 30 % på kort — momentum skalar med horisonten) och
+  nollställningen. Motorn vagfundament-motor.ts RÖRS EJ (variabeltrösklar
+  V01–V20 + motorans klassning ORÖRDA — protokollbeslut, ingen ny data).
++ BANA B: VagvalideringVariabelDom = tabellen vagvalidering_dom med
+  STYRELSE-vag-exakthet §3.2:s schema EXAKT (ticker, variabel, horisont,
+  domat_datum, traff_datum, klass, utfall_momentum, traff, episod_id,
+  protokoll_version; tolkning dokumenterad: domat=klassens datum,
+  traff=utfallets datum, traff=true endast vid dom "traff"). byggaVariabel-
+  Domar: variabel-UNIONEN × horisonter i kanonisk ordning, klasser
+  saneras, episodkedja (oförändrad klass ÄRVER episod_id; klassbyte OCH
+  osatt startar ny — dagar räknas ALDRIG som observationer, FORBUD §10.7);
+  raknaVariabelRaknare (traffPerVariabel) + raknaEpisoder
+  (n_episoder ≤ n_dagar-vakten). kvartalsNyckel + byggVagklassSnapshotRader
+  = vagklass_snapshot-rader (ticker, variabel, horisont, snapshot_datum,
+  klass, protokoll_version) — fel-tickers exkluderas, klasser saneras.
++ cron/vagvalidering: per-variabel-klasser/momenter ur FÖRRA/dagens
+  vagscan-event (reserv: datacache-vagfundament-rader — den befintliga
+  cachen ÄR historiken); Bana B-rader + episodkedja från föregående events
+  vagvalidering_dom; details utökas additivt (vagvalidering_dom,
+  variabelRaknare, episodAntal, protokollByte, troskelProcentPerHorisont);
+  v2-BYTE: när lagrad protokollVersion < 2 NOLLSTÄLLS rullande räknare,
+  rullandeSedan = byttesdagen, orsak deklareras i protokollByte (öppet);
+  rapporttexten uppdaterad till v2. Dev: förstagångskörning lagrade v2-
+  raden live; omedelbar omkörning => idempotent:true (döms aldrig två gånger).
++ cron/vagscan: kvartalsdeduplicerad vagklassSnapshot i dagens event —
+  skrivs ENBART när innevarande kvartal saknar snapshot (lättviktig
+  PostgREST json-arrow-läsning av senaste 120 dagarnas kvartalsnycklar;
+  misslyckas läsningen SKRIVS inget — konservativt, daglig historik finns
+  ändå); status (skrevs/dedupe-hoppades/skippades-okänt-läge) i svaret.
+
+TESTER (verktyg/validera-motorer.mjs, sviten 100 %): 5 nya block — DOM-
+PROTOKOLL v2 (gränser 6/15/25 inklusiva, medellång +10→träff där v1 dömde
+miss, teckenreglar kvar, v1-2-arg-kompatibilitet, konstanter+orsak),
+BANA B (15 rader, episodkedja arv/byte/osatt-avgränsning, sekvens A·A·B·B·
+osatt·osatt·A ⇒ 4 episoder ≤ 7 dagar, variabelräknare, kvartalsnyckel,
+snapshot-sanering), akm3-ensemble KONTRAKT (determinism 2×, total=round(Σ/3),
+band/median/spridning, α=1/3 låst + custom-α ignoreras, akm1Totalt ===
+raknaAKM1, diagnostik), GRÄNSFALL (NUL_FIX: tre identiska ⇒ total=K,
+spridning 0=ENIG; NEG_FIX: hård port per profil i 3/3), ENIGHETSTRAPPAN
+(0–3/4–7/≥8 + NaN), akm3-prediktionslogg (radbygge + hash-kedja: äkta
+verifierar, deterministisk 2×, värdemanipulation + bruten länk avslöjas).
+Befintlig dom-återskapningsinvariant uppdaterad till 3-arg (v2).
+RESULTAT: 97 PASS / 0 FAIL / 0 SKIP · testa-uppfoljning 50/50 · tsc 43
+fel före = 43 efter (0 NYA — baslinjen orörd).
+
+PARALLELLBYGGE: steg 3 (osakerhet) + steg 4 (peer) byggdes samtidigt av
+andra agenter — detaljsidan fogades additivt kring deras sektioner, inga
+konflikter. INGET COMMITTAT.

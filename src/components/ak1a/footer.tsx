@@ -2,12 +2,25 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUp, Mail, Globe } from "lucide-react";
+import { ArrowUp, Mail, Globe, Linkedin, Youtube, Twitter, Instagram } from "lucide-react";
 import { GAST_KONTEXT, MENY_REGISTER, punktSynlig } from "@/lib/meny-register";
+import { SOCIALA_PROFILER, SOCIALA_ETIKETTER, type SocialProfil } from "@/lib/sociala";
 import { HonestyTag } from "./primitives";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { Button } from "@/components/ui/button";
 import { useSprak } from "./sprak-leverantor";
+
+// Sociala ikonraden (VÅG 1a): renderas ENDAST för ifyllda profil-URL:er —
+// tom platshållare (K1 ej levererad) ger ingen rad alls, aldrig döda länkar.
+const SOCIALA_IKONER: Record<SocialProfil, React.ComponentType<{ className?: string }>> = {
+  linkedin: Linkedin,
+  youtube: Youtube,
+  x: Twitter,
+  instagram: Instagram,
+};
+const SOCIALA_IFYLDA = (Object.keys(SOCIALA_PROFILER) as SocialProfil[]).filter(
+  (nyckel) => SOCIALA_PROFILER[nyckel].trim().length > 0
+);
 
 // Navigationskolumnen läses UR meny-registret (EN källa, 2026-09-03): ett
 // kurerat urval av registrets viktigaste destinationer per sektion — samma
@@ -74,6 +87,26 @@ export function Footer() {
             <p className="mt-2 text-xs text-muted-foreground">
               Online (inget fysiskt huvudkontor) · Kontakt sker uteslutande via e-post.
             </p>
+            {SOCIALA_IFYLDA.length > 0 && (
+              <div className="mt-3 flex items-center gap-3">
+                {SOCIALA_IFYLDA.map((nyckel) => {
+                  const Ikon = SOCIALA_IKONER[nyckel];
+                  return (
+                    <a
+                      key={nyckel}
+                      href={SOCIALA_PROFILER[nyckel]}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={SOCIALA_ETIKETTER[nyckel]}
+                      title={SOCIALA_ETIKETTER[nyckel]}
+                      className="text-gold hover:opacity-80 transition-opacity"
+                    >
+                      <Ikon className="h-4.5 w-4.5" />
+                    </a>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <nav aria-label={t("footer.navigation")} className="grid grid-cols-2 gap-x-4 gap-y-1">

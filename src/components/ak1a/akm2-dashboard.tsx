@@ -35,6 +35,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { AKM2Resultat, DynamikJustering, DynamikLagerSvar } from "@/lib/akm2/typer";
 import type { RaknaAKM2Opts } from "@/lib/akm2/typer";
+import type { AKM3Ensemble, EnsembleEnighet } from "@/lib/akm3/typer";
 import {
   BAND_TEXT,
   DYNAMIKTAK,
@@ -654,6 +655,174 @@ export function ProfilJamforelse({
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
+// 3.5 PROFIL-ENSEMBLE-VY — AKM3 (våg 59 bygg-1, AKM3-BESLUT §4, r5 Design A)
+//     Tre staplar (profilkompositer) + band [min–median–max] + ensemble-medel
+//     + spridningschip med enighetstrappan. Läser, ändrar aldrig poäng —
+//     visas ALLTID sida vid sida med AKM2/AKM1, ersätter ALDRIG (P4).
+// ═════════════════════════════════════════════════════════════════════════════
+
+/** Profilnamn i visningsordning (kanonisk medlemsordning ur akm3/typer). */
+const ENSEMBLE_PROFIL_ETIKETT: Record<string, string> = {
+  "akm1-klassisk": "AKM1-klassisk (lås)",
+  "akm2-2026": "AKM2-2026",
+  "superanalys-2026": "Superanalys-2026",
+};
+
+const ENIGHET_ETIKETT: Record<EnsembleEnighet, { text: string; klass: string }> = {
+  enig: {
+    text: "ENIG — alla tre profilvärldarna ser samma bolag",
+    klass: "border-emerald-700/40 bg-emerald-700/10 text-emerald-800 dark:text-emerald-300",
+  },
+  delad: {
+    text: "DELAD — profilernas faktorsyn skiljer, läs differenserna",
+    klass: "border-gold/40 bg-gold/10 text-foreground",
+  },
+  profilspanning: {
+    text: "PROFILSPÄNNING — poängen styrs av profilval, inte bolaget",
+    klass: "border-red-800/30 bg-red-800/10 text-red-800 dark:text-red-300",
+  },
+};
+
+export function ProfilEnsembleVy({
+  ensemble,
+  kalla,
+}: {
+  ensemble: AKM3Ensemble;
+  /** Varifrån ensemblen kom (cache/on-demand) — transparens i visningen. */
+  kalla?: string;
+}) {
+  const e = ensemble;
+  const grader = ENIGHET_ETIKETT[e.enighet] ?? ENIGHET_ETIKETT.delad;
+  const bandVanster = Math.min(100, Math.max(0, e.band.min));
+  const bandBredd = Math.min(100, Math.max(0, e.band.max)) - bandVanster;
+  const medelVanster = Math.min(100, Math.max(0, e.total));
+
+  return (
+    <div className="rounded-xl border border-gold/20 bg-card p-4" data-akm3-ensemble="">
+      <p className="text-xs font-bold uppercase tracking-widest text-gold">
+        🧭 Profil-ensemble · AKM3
+      </p>
+      <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
+        Likaviktat medel (α = 1/3, låst i 2026.09) av de tre viktprofilernas
+        AKM2-kompositer — ett presentationsaggregat ÖVER AKM2 som aldrig
+        ersätter kompositen eller AKM1-projektionen (BESLUT §4).
+      </p>
+
+      {/* Tre staplar — en per profilkomposit K_p (texten bär informationen) */}
+      <div className="mt-3 space-y-2">
+        {e.perProfil.map((p) => (
+          <div key={p.profil}>
+            <div className="flex items-baseline justify-between gap-2 text-xs">
+              <span className="min-w-0 truncate text-muted-foreground">
+                {ENSEMBLE_PROFIL_ETIKETT[p.profil] ?? p.profil}
+                <span className="ml-1.5 font-mono text-[10px] opacity-80">
+                  osatta {svTal(p.andelOsatta * 100, 0)} %{p.portAktiv ? " · hård port" : ""}
+                </span>
+              </span>
+              <span className="shrink-0 font-mono font-bold">{svTal(p.komposit, 0)} p</span>
+            </div>
+            <div
+              className="mt-1 h-3.5 w-full overflow-hidden rounded bg-muted"
+              role="img"
+              aria-label={`${ENSEMBLE_PROFIL_ETIKETT[p.profil] ?? p.profil}: komposit ${p.komposit} av 100, band ${BAND_TEXT[p.band]}, ${Math.round(p.andelOsatta * 100)} procent osatta${p.portAktiv ? ", hård port aktiv" : ""}`}
+            >
+              <div
+                className={p.portAktiv ? "h-full rounded bg-gold/50" : "h-full rounded bg-gold"}
+                style={{ width: `${Math.min(100, Math.max(0.5, p.komposit))}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Band [min–median–max] + ensemble-medel-markören */}
+      <div className="mt-4">
+        <div className="flex items-baseline justify-between text-xs">
+          <span className="text-muted-foreground">Band min–median–max</span>
+          <span className="font-mono">
+            {svTal(e.band.min, 0)} – {svTal(e.band.median, 0)} – {svTal(e.band.max, 0)}
+          </span>
+        </div>
+        <div
+          className="relative mt-1 h-4 w-full rounded border border-gold/25 bg-muted"
+          role="img"
+          aria-label={`Ensemble-band ${e.band.min} till ${e.band.max}, median ${e.band.median}, likaviktat medel ${e.total} av 100, spridning ${e.spridning} poäng`}
+        >
+          {/* Bandet [min, max] — guldtonad remsa */}
+          <div
+            className="absolute inset-y-0 rounded bg-gold/25"
+            style={{ left: `${bandVanster}%`, width: `${Math.max(bandBredd, 0.75)}%` }}
+          />
+          {/* Median-streck (mittenvärdet) */}
+          <div
+            className="absolute inset-y-0 w-0.5 bg-gold/70"
+            style={{ left: `${Math.min(100, Math.max(0, e.band.median))}%` }}
+            title={`Median ${e.band.median} (mittenvärdet av de tre profilkompositerna)`}
+          />
+          {/* Ensemble-medel — marin markör med tal-etikett */}
+          <div
+            className="absolute -top-1 h-6 w-[3px] rounded"
+            style={{ left: `${medelVanster}%`, background: F_MARIN }}
+            title={`Ensemble-medel ${e.total} = round(1/3 · (${e.perProfil.map((p) => p.komposit).join(" + ")}))`}
+          />
+        </div>
+        <p className="mt-1.5 text-sm">
+          <span className="font-mono font-bold">{svTal(e.total, 0)}/100</span>
+          <span className="ml-1.5 text-xs text-muted-foreground">
+            ensemble-medel (α = 1/3 vardera, låst)
+          </span>
+        </p>
+      </div>
+
+      {/* Spridningschip + enighetstrappan (texten bär betydelsen) */}
+      <p className="mt-3">
+        <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 font-mono text-xs font-bold ${grader.klass}`}>
+          spridning {svTal(e.spridning, 0)} p · {grader.text.split(" — ")[0]}
+        </span>
+        <span className="ml-2 align-middle text-xs text-muted-foreground">{grader.text.split(" — ")[1] ?? ""}</span>
+      </p>
+
+      {/* Diagnostik: de två tolkningsnycklarna (BESLUT §4) */}
+      <div className="mt-3 border-t border-gold/15 pt-2">
+        <p className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">Diagnostik</p>
+        <ul className="mt-1 space-y-0.5 text-xs leading-snug text-muted-foreground">
+          <li>
+            Omfördelningseffekten (AKM2-2026 − AKM1-klassisk):{" "}
+            <span className="font-mono font-semibold">
+              {e.diagnostik.omfordelningseffekt > 0 ? "+" : e.diagnostik.omfordelningseffekt < 0 ? "−" : "±"}
+              {svTal(Math.abs(e.diagnostik.omfordelningseffekt), 0)} p
+            </span>{" "}
+            — osattas vikt + moduler.
+          </li>
+          <li>
+            Kategorivikt vs variabelvikt (Superanalys-2026 − AKM2-2026):{" "}
+            <span className="font-mono font-semibold">
+              {e.diagnostik.kategoriMotVariabel > 0 ? "+" : e.diagnostik.kategoriMotVariabel < 0 ? "−" : "±"}
+              {svTal(Math.abs(e.diagnostik.kategoriMotVariabel), 0)} p
+            </span>
+            .
+          </li>
+          <li>
+            Jämförelsespår sida vid sida: AKM2-komposit{" "}
+            <span className="font-mono font-semibold">{svTal(e.akm2Komposit, 0)}</span> · AKM1-projektion{" "}
+            <span className="font-mono font-semibold">{svTal(e.akm1Totalt, 0)}</span>.
+          </li>
+        </ul>
+      </div>
+
+      <p className="mt-3 border-t border-gold/15 pt-2 text-[10px] leading-relaxed text-muted-foreground">
+        Modellversion {e.modellVersion} · datum {e.datum}.
+        {kalla ? ` Källa: ${kalla}.` : ""} Enighetstrappan: 0–3 p enig · 4–7 p
+        delad · ≥ 8 p profilspänning. Ensemblen mäts öppet i
+        prediktionsloggen — ”öppet kvitto om det förflutna, aldrig garanti
+        om framtiden”. Pedagogisk forskning — aldrig investeringsråd (lagen
+        2007:528).
+      </p>
+    </div>
+  );
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
 // 4. AKM2-DASHBOARD — sammansatt vy (äger highlight-state i parent)
 // ═════════════════════════════════════════════════════════════════════════════
 
@@ -661,12 +830,19 @@ export function Akm2Dashboard({
   resultat,
   prenumerationsEtikett,
   notis,
+  ensemble,
+  ensembleKalla,
 }: {
   resultat: AKM2Resultat;
   /** Prenumerations-etikett där relevant (chips i sidhuvudet). */
   prenumerationsEtikett?: string;
   /** Fri notisrad under dashboarden (t.ex. källhänvisning). */
   notis?: string;
+  /** AKM3-ensemble (våg 59) — visas SIDAN VID SIDAN under jämförelsen,
+   *  ersätter ALDRIG AKM2/AKM1 (BESLUT §4). */
+  ensemble?: AKM3Ensemble;
+  /** Var ensemblen kom ifrån (cache/on-demand) — transparens i visningen. */
+  ensembleKalla?: string;
 }) {
   const [aktivVariabel, setAktivVariabel] = useState<string | null>(null);
 
@@ -695,6 +871,7 @@ export function Akm2Dashboard({
         <Akm2Radar resultat={resultat} aktivVariabel={aktivVariabel} onVariabelKlick={setAktivVariabel} />
         <div className="space-y-4">
           <ProfilJamforelse resultat={resultat} />
+          {ensemble && <ProfilEnsembleVy ensemble={ensemble} kalla={ensembleKalla} />}
           <ModulPåslagStapel resultat={resultat} aktivVariabel={aktivVariabel} onVariabelKlick={setAktivVariabel} />
         </div>
       </div>

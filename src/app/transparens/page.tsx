@@ -105,6 +105,17 @@ const REGISTER: Rad[] = [
     lagring: "Rullande 35 dagar eller tills radtaket (3 000) nås — därefter radering.",
     ratt: "Invändning (art. 21) samt rätt till information — loggen innehåller ingen persondata, endast tekniska fingeravtryck.",
   },
+  {
+    vad: "Konverteringsintentioner (anonym aggregerad räkning — ingen personuppgift)",
+    varfor:
+      "När du begär aktivering av en prenumeration räknas en helt anonymiserad händelse (endast nivåns namn, period och pris) så vi kan se hur tratten från besökare till prenumeration används. Händelsen innehåller ingen e-post, inget namn, ingen IP-adress och ingen sessionskod — det går inte att utläsa vem du är eller vad du gjorde.",
+    grund:
+      "Berättigat intresse — art. 6.1 f (funktionsutveckling och produktstatistik; uppgifterna kan inte kopplas till en person)",
+    lagring:
+      "Rullande enligt systemhändelsernas retention (35 dagar, samma som trafikstatistiken), därefter radering.",
+    ratt:
+      "Invändning (art. 21) — eftersom händelsen saknar personuppgift finns inget om dig att begära ut eller radera; begär du aktivering via mejl i stället räknas ingen anonym händelse om du blockerar anropet.",
+  },
 ];
 
 export default function TransparensPage() {

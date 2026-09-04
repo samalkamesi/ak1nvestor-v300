@@ -27,6 +27,7 @@ import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { MembersManager } from "@/components/ak1a/admin/members-manager";
 import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
 import { TrafikSakerhetPanel } from "@/components/ak1a/admin/trafik-sakerhet-panel";
+import { KonverteringsPanel } from "@/components/ak1a/admin/konverterings-panel";
 import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
 import { EkosystemPanel } from "@/components/ak1a/admin/ekosystem-panel";
 import { BeteendePanel } from "@/components/ak1a/admin/beteende-panel";
@@ -349,6 +350,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
             <TabsTrigger value="traffic" className="px-3 py-1.5 text-xs sm:text-sm">Statistik & SEO</TabsTrigger>
             <TabsTrigger value="trafik-sakerhet" className="px-3 py-1.5 text-xs sm:text-sm">Trafik &amp; Säkerhet 📡</TabsTrigger>
+            <TabsTrigger value="konvertering" className="px-3 py-1.5 text-xs sm:text-sm">Konvertering 📊</TabsTrigger>
             <TabsTrigger value="beteende" className="px-3 py-1.5 text-xs sm:text-sm">Beteende</TabsTrigger>
             <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
             <TabsTrigger value="utveckling" className="px-3 py-1.5 text-xs sm:text-sm">Utveckling 🔭</TabsTrigger>
@@ -632,6 +634,13 @@ export default function AdminDashboard() {
           <TabsContent value="trafik-sakerhet" className="mt-6">
             <Card className="p-5">
               <TrafikSakerhetPanel />
+            </Card>
+          </TabsContent>
+
+          {/* Konvertering 📊 — tratten i sex steg ur befintliga källor (MARKNADS-BESLUT VÅG 1b) */}
+          <TabsContent value="konvertering" className="mt-6">
+            <Card className="p-5">
+              <KonverteringsPanel />
             </Card>
           </TabsContent>
 

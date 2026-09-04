@@ -2,11 +2,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { lasAnalyser, getAnalys, HORIZONTER } from "@/lib/analysfabrik";
-import { hamtaAkm2ForAnalys } from "@/lib/akm2-onsdemand";
+import { hamtaAkm2ForAnalys, hamtaAkm3ForAnalys } from "@/lib/akm2-onsdemand";
 import { modulKortNamn } from "@/lib/akm2-visningsdata";
+import { VARIABEL_META } from "@/lib/akm2/karna";
+import {
+  raknaIntervall,
+  raknaFullviktsIntervall,
+  intervallText,
+  intervallPlusText,
+} from "@/lib/akm3/osakerhet";
+import { lasKorstabellGrund } from "@/lib/portfolj-forskning/korstabell-data";
+import { peerDragText, peerRankText, PEER_HALLNING_TEXT } from "@/lib/portfolj-forskning/peer";
 import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
-import { Akm2Dashboard } from "@/components/ak1a/akm2-dashboard";
+import { Akm2Dashboard, ProfilEnsembleVy } from "@/components/ak1a/akm2-dashboard";
 
 export const dynamic = "force-static";
 
@@ -110,6 +119,33 @@ export default async function AnalysfabrikDetaljPage({
   // on-demand med raknaAKM2 ur nyckeltalscachen — null ⇒ sektionen renderas ej.
   const akm2 = hamtaAkm2ForAnalys(a.ticker);
 
+  // AKM3-ensemble (våg 59 bygg-1, BESLUT §4): data/cache/akm3-{ticker}.json i
+  // första hand (skrivs av portfolj-uppfoljning-cronen), annars on-demand med
+  // raknaEnsemble ur samma nyckeltalscache — null ⇒ ensemble-vyn renderas ej.
+  // Visas ALLTID sida vid sida med AKM2/AKM1 — ersätter ALDRIG (P4).
+  const akm3 = hamtaAkm3ForAnalys(a.ticker);
+
+  // VÅG 59 (AKM3 steg 3 — r4 §3.2): osäkerhetsintervall ur (poäng, täckning,
+  // port). Deterministiskt presentationslager — läser poängen, ändrar ALDRIG.
+  const intervallAkm1 = raknaIntervall(a.akm1.totalt, a.urval.datatackning, a.urval.portV19);
+  const intervallAkm2 =
+    a.akm2 && a.akm2.totalt !== null
+      ? raknaIntervall(a.akm2.totalt, a.urval.datatackning, a.akm2.portAktiv)
+      : null;
+  // Strängare fullviktsrad för AKM2-kompositen (BESLUT §5): [K·t, K·t+100(1−t)]
+  // — "med profilen behållen vid full data". Extra rad, aldrig primär.
+  const fullviktAkm2 =
+    a.akm2 && a.akm2.totalt !== null
+      ? raknaFullviktsIntervall(a.akm2.totalt, a.urval.datatackning)
+      : null;
+
+  // VÅG 59 (AKM3 steg 4 — r3 §4.2): peer-spegeln ur korstabellens rader
+  // (peer-berikade i lasKorstabellGrund). Saknas bolaget i universum visas
+  // blocket ej — bakåtkompatibelt. Läslager: påverkar ALDRIG poängen.
+  const korstabell = lasKorstabellGrund();
+  const peerRad = korstabell.rader.find((r) => r.ticker === a.ticker) ?? null;
+  const peer = peerRad?.peer ?? null;
+
   return (
     <SeoPageShell
       breadcrumb={[
@@ -171,6 +207,57 @@ export default async function AnalysfabrikDetaljPage({
           <p className="mt-3 text-sm text-amber-700 dark:text-amber-400">⚠ {a.urval.varning}</p>
         )}
       </section>
+
+      {/* ── Osäkerhet (VÅG 59, AKM3 steg 3) — spannet vid full data ── */}
+      {intervallAkm1 && (
+        <section className="mt-10" aria-label="Osäkerhetsintervall">
+          <h2 className="font-serif text-2xl font-bold">Osäkerhet — var totalen hamnar vid full data</h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="rounded-lg border border-gold/20 bg-card p-4">
+              <h3 className="font-semibold">AKM1-totalen</h3>
+              <p className="mt-2 font-serif text-2xl font-bold text-gold tabular">
+                {intervallText(intervallAkm1)}
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Kompakt: {intervallPlusText(intervallAkm1)} — ± är halva spannet.
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {a.akm1.antalOsatta} av 20 variabler är osatta — spannet visar vad de är värda:
+                0 p (värsta) till 5 p (bästa) på den osatta vikten.
+                {a.urval.portV19 && " Hård port (V19) aktiv: övre gräns takad till 45."}
+              </p>
+            </div>
+            {intervallAkm2 && fullviktAkm2 && (
+              <div className="rounded-lg border border-gold/20 bg-card p-4">
+                <h3 className="font-semibold">AKM2-kompositen</h3>
+                <p className="mt-2 font-serif text-2xl font-bold text-gold tabular">
+                  {intervallText(intervallAkm2)}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Kompakt: {intervallPlusText(intervallAkm2)}.
+                </p>
+                <p className="mt-2 border-t border-gold/15 pt-2 text-xs leading-relaxed text-muted-foreground">
+                  Strängare fullviktsrad (med profilen behållen vid full data): [
+                  {String(Math.round(fullviktAkm2.nedre)).replace(".", ",")}–
+                  {String(Math.round(fullviktAkm2.ovre)).replace(".", ",")}] — [K·t, K·t+100·(1−t)].
+                </p>
+                {intervallAkm2.portTakad && (
+                  <p className="mt-1 text-xs font-semibold text-red-700 dark:text-red-400">
+                    Hård port aktiv — kompositens övre gräns takad till 45.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            Spannet visar var totalen hamnar när den osatta vikten poängsätts — 0 p (värsta)
+            till 5 p (bästa). Modellen gissar aldrig: nedre gräns är poängen själv, bredden
+            beror enbart på datatäckningen, och strukturellt saknad data rapporteras som
+            saknad (aldrig imputerad). Nya data som sätter en variabel kan behålla eller höja
+            totalen — modellen straffar aldrig saknad data.
+          </p>
+        </section>
+      )}
 
       {/* ── AKM1-profilen ── */}
       <section className="mt-10">
@@ -358,8 +445,176 @@ export default async function AnalysfabrikDetaljPage({
                   ? "Källa: data/cache/akm2-{ticker}.json (verktyg/kor-akm2-berika.mjs, våg 57 D2)."
                   : undefined
               }
+              ensemble={akm3?.ensemble}
+              ensembleKalla={
+                akm3?.kalla === "akm3-cache"
+                  ? "data/cache/akm3-{ticker}.json (portfolj-uppfoljning-cronen)"
+                  : akm3
+                    ? "on-demand ur nyckeltalscachen (raknaEnsemble, tre profiler)"
+                    : undefined
+              }
             />
           </div>
+        </section>
+      )}
+
+      {/* ── Profil-ensemblen (VÅG 59 bygg-1, AKM3 steg 1) — fristående när
+           AKM2-dashboarden saknas men ensemblen kan beräknas ── */}
+      {!akm2 && akm3 && (
+        <section className="mt-10" aria-label="AKM3 profil-ensemble">
+          <h2 className="font-serif text-2xl font-bold">Profil-ensemblen — tre viktvärldar, ett band</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            AKM3 läser de tre viktprofilernas AKM2-kompositer och redovisar det
+            likaviktade medlet med band och spridning — ett presentationslager
+            som aldrig ersätter AKM2-kompositen eller AKM1-projektionen.
+          </p>
+          <div className="mt-4">
+            <ProfilEnsembleVy
+              ensemble={akm3.ensemble}
+              kalla={
+                akm3.kalla === "akm3-cache"
+                  ? "data/cache/akm3-{ticker}.json (portfolj-uppfoljning-cronen)"
+                  : "on-demand ur nyckeltalscachen (raknaEnsemble, tre profiler)"
+              }
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ── Peer-spegeln (VÅG 59, AKM3 steg 4) — bolaget mot sitt sällskap ── */}
+      {peer && (
+        <section className="mt-10" aria-label="Peer-spegeln — bolaget mot sin branschgrupp">
+          <h2 className="font-serif text-2xl font-bold">Peer-spegeln — bolaget mot sitt sällskap</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            Den absoluta poängen säger inte vem som slår sin bransch: AAPL kan ligga under
+            teknikmedianen medan Öresund bär finans. Peer-läsningen rankar bolagets AKM2-komposit
+            inom sin branschgrupp — midrank-percentil, rank och avstånd till branschmedianen,
+            beräknat ur korstabellens {peer.antalIGruppen === 1 ? "1 bolag" : `${peer.antalIGruppen} bolag`} per bransch.
+            Ett läslager: peer påverkar aldrig poängen, portföljbygget eller banden.
+          </p>
+
+          {peer.osatt ? (
+            <p className="mt-4 rounded-lg border border-dashed border-gold/40 bg-paper p-4 text-sm italic leading-relaxed text-muted-foreground">
+              Peer jämförelse är osatt —{" "}
+              {peer.osattOrsak === "liten-grupp"
+                ? `branschgruppen har ${peer.antalIGruppen} bolag (under gränsen 5)`
+                : "bolagets AKM2-komposit saknas i underlaget"}
+              . Motorn gissar aldrig; osatt är ett hedervärt svar.
+            </p>
+          ) : (
+            <>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="rounded-lg border border-gold/20 bg-card p-4">
+                  <h3 className="font-semibold">Position i {a.bransch}-gruppen</h3>
+                  <p className="mt-2 font-serif text-3xl font-bold text-gold tabular">
+                    {peer.peerPercentil}
+                    <span className="text-base text-muted-foreground"> / 100</span>
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Peer-percentil (midrank) · rank {peerRankText(peer)} ·{" "}
+                    {peer.antalIGruppen} bolag i gruppen
+                  </p>
+                  {/* Stapel: bolagets komposit och branschmedianen på 0–100-skalan */}
+                  <div className="relative mt-3 h-2.5 w-full rounded bg-muted" title="Bolagets AKM2-komposit (guldmärket) mot branschmedianen (grå streck) på 0–100-skalan">
+                    <span
+                      className="absolute inset-y-0 w-[2px] bg-muted-foreground/70"
+                      style={{ left: `${Math.max(0, Math.min(100, peer.branschMedian ?? 0))}%` }}
+                      title={`Branschmedian ${peer.branschMedian}`}
+                    />
+                    <span
+                      className="absolute top-[-3px] w-[3px] rounded bg-gold"
+                      style={{
+                        left: `${Math.max(0, Math.min(100, peerRad?.akm2 ?? 0))}%`,
+                        height: "1.125rem",
+                      }}
+                      title={`Bolagets AKM2 ${peerRad?.akm2 ?? "—"}`}
+                    />
+                  </div>
+                  <p className="mt-1.5 text-[11px] text-muted-foreground">
+                    AKM2 {peerRad?.akm2 ?? "—"} mot branschmedian{" "}
+                    {(peer.branschMedian ?? 0).toString().replace(".", ",")} · drag{" "}
+                    {peerDragText(peer.peerDrag)} poäng
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gold/20 bg-card p-4">
+                  <h3 className="font-semibold">Branschdraget</h3>
+                  <p className="mt-2 text-sm leading-relaxed">
+                    {(peer.peerDrag ?? 0) > 0.5 &&
+                      `${a.namn} ligger ${peerDragText(peer.peerDrag)} poäng över ${a.bransch}-branschens median (${(peer.branschMedian ?? 0).toString().replace(".", ",")}) — bolaget bär sitt sällskap.`}
+                    {Math.abs(peer.peerDrag ?? 0) <= 0.5 &&
+                      `${a.namn} ligger i nivå med ${a.bransch}-branschens median (${(peer.branschMedian ?? 0).toString().replace(".", ",")}) — varken över eller under sitt sällskap.`}
+                    {(peer.peerDrag ?? 0) < -0.5 &&
+                      `${a.namn} ligger ${peerDragText(peer.peerDrag)} poäng under ${a.bransch}-branschens median (${(peer.branschMedian ?? 0).toString().replace(".", ",")}) — sällskapet bär bolaget.`}
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    Per variabel: {peer.overMedian} över · {peer.iNiva} i nivå ·{" "}
+                    {peer.underMedian} under branschmedianen
+                    {peer.variabler.filter((v) => v.hallning === "osatt").length > 0
+                      ? ` · ${peer.variabler.filter((v) => v.hallning === "osatt").length} osatta (jämförs aldrig)`
+                      : ""}
+                    .
+                  </p>
+                  {(peerRad?.akm2Moduler?.length ?? 0) > 0 && (
+                    <p className="mt-2 border-t border-gold/15 pt-2 text-xs leading-relaxed text-muted-foreground">
+                      Aktiva branschmoduler (medianerna speglar deras viktningar):{" "}
+                      {(peerRad?.akm2Moduler ?? []).join(" · ")}.
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Variabeltabellen — V07 först som pedagogiskt exemplar (r3 §3.3) */}
+              <div className="mt-4 overflow-x-auto rounded-lg border border-gold/20">
+                <table className="w-full text-sm">
+                  <thead className="bg-gold/10 text-left">
+                    <tr>
+                      <th className="p-3">Variabel</th>
+                      <th className="p-3 text-right">Bolagets poäng</th>
+                      <th className="p-3 text-right">Branschmedian</th>
+                      <th className="p-3 text-center">Hållning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {peer.variabler
+                      .filter((v) => v.hallning !== "osatt")
+                      .sort((x, y) => (x.id === "V07" ? -1 : y.id === "V07" ? 1 : x.id.localeCompare(y.id)))
+                      .map((v) => (
+                        <tr key={v.id} className="border-t border-gold/10">
+                          <td className="p-3 font-medium">
+                            <span className="font-mono text-xs text-gold">{v.id}</span>{" "}
+                            {VARIABEL_META[v.id]?.namn ?? v.id}
+                          </td>
+                          <td className="p-3 text-right font-mono tabular">
+                            {v.poang?.toString().replace(".", ",") ?? "—"}/5
+                          </td>
+                          <td className="p-3 text-right font-mono tabular text-muted-foreground">
+                            {v.branschmedian?.toString().replace(".", ",") ?? "—"}/5
+                          </td>
+                          <td
+                            className={`p-3 text-center font-semibold ${
+                              v.hallning === "over"
+                                ? "text-emerald-700 dark:text-emerald-400"
+                                : v.hallning === "under"
+                                  ? "text-red-700 dark:text-red-400"
+                                  : "text-muted-foreground"
+                            }`}
+                          >
+                            {PEER_HALLNING_TEXT[v.hallning]}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-xs italic leading-relaxed text-muted-foreground">
+                V07 Bruttomarginal är raden att börja i: samma absoluta marginal ger olika
+                poäng i olika branscher — det är peer-radens poäng mot branschens medianpoäng
+                som förklarar varför. Trösklarna (V01–V20) är absoluta; branschmedianerna
+                speglar både sällskapet och modulernas viktningar. Referens: {peer.referens} —
+                ändras universet ändras peer-värdena.
+              </p>
+            </>
+          )}
         </section>
       )}
 

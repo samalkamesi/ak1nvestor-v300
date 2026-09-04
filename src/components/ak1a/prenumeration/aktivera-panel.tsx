@@ -18,6 +18,16 @@
  * server-side och admin-signaler kräver ADMIN_PASSWORD i /api/signal, ett
  * lösenord som aldrig får ligga i klientkod. LocalStorage + e-postflöde är
  * det ärliga stommen (dokumenterat i src/lib/prenumeration.ts).
+ *
+ * KONVERTERINGS-INTENTION (MARKNADS-BESLUT VÅG 1b, korrigering av m7 rek 2):
+ * varje aktiveringsbegäran postar ALLTID — även utan nyhetsbrevscheck — ett
+ * ANONYMISERAT event till POST /api/konvertering/intention med endast
+ * {nivaNamn, period, pris}: ingen e-post, inget namn, ingen persondata.
+ * Eventet räknas aggregerat i adminens konverteringsvy (system_events
+ * type=konvertering_intention, dokumenterat i /transparens). Fire-and-forget
+ * — ett misslyckat anrop påverkar ALDRIG aktiveringsbegäran. Med
+ * nyhetsbrevschecken ikryssad är /api/email-flödet orört (mejl kräver
+ * mottagare; kön postas aldrig utan e-post).
  */
 
 import { useEffect, useMemo, useState } from "react";
@@ -47,6 +57,26 @@ type Period = "manad" | "ar";
  * Köas i system_events tills en mejl-leverantör konfigureras (VÅG 50) —
  * misslyckas anropet påverkar det ALDRIG själva aktiveringsbegäran.
  */
+/**
+ * Posta ALLTID ett anonymiserat intention-event till /api/konvertering/intention
+ * — endast {nivaNamn, period, pris}, ingen persondata (A4-korrigeringen).
+ * Fire-and-forget: felet sväljs tyst, begäran påverkas aldrig.
+ */
+function postaAnonymIntention(arg: { nivaNamn: string; period: Period; pris: string }): void {
+  void fetch("/api/konvertering/intention", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nivaNamn: arg.nivaNamn,
+      period: arg.period,
+      pris: arg.pris,
+    }),
+    signal: AbortSignal.timeout(8000),
+  }).catch(() => {
+    /* tyst — konverteringsräkningen får leva utan denna rad */
+  });
+}
+
 async function skickaNyhetsbrevsIntention(arg: {
   epost: string;
   namn: string;
@@ -166,6 +196,14 @@ export function AktiveraPanel({
       );
       return;
     }
+
+    // Konverterings-intention (ALLTID, VÅG 1b): anonymiserat event — endast
+    // nivå/period/pris, ingen persondata — för den aggregerade tratten.
+    postaAnonymIntention({
+      nivaNamn: vald.namn,
+      period,
+      pris: `${harRabatt ? rabatterat : ordinarie} kr ${period === "manad" ? "per månad" : "per år"}`,
+    });
 
     // Frivillig nyhetsbrevscheck: intentionen till kön via /api/email —
     // ett misslyckat anrop påverkar ALDRIG aktiveringsbegäran ovan.
@@ -486,7 +524,13 @@ export function AktiveraPanel({
 
       <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground">
         Begäran sparas lokalt i din webbläsare och blir ett färdigifyllt mejl till{" "}
-        {EPOST} — inga kortuppgifter efterfrågas här. Aktivering, pris och eventuellt
+        {EPOST} — inga kortuppgifter efterfrågas här. Samtidigt räknas en
+        anonymiserad intention (endast nivå, period och pris — inget om dig) för
+        vår konverteringsstatistik, se{" "}
+        <Link href="/transparens" className="underline hover:text-foreground">
+          transparensregistret
+        </Link>
+        . Aktivering, pris och eventuellt
         samtycke till omedelbar digital leverans (ångerrätten, se{" "}
         <Link href="/villkor#sektion-6" className="underline hover:text-foreground">
           villkoren sektion 6

@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-04
 
-- **Genererad:** 2026-09-04T17:32:51.640Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-04T18:59:20.160Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 8.6 s
+- **Körtid:** 7.6 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,7 +15,7 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 202 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6680 strängar extraherade
+- 203 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6753 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
@@ -48,7 +48,7 @@ Inga avvikelser hittade.
 ## 7. Motorvalidering (validera-motorer.mjs — 100%-väktaren) — **PASS**
 
 - kör verktyg/validera-motorer.mjs som subprocess (100%-väktaren, budget 120 s) …
-- subprocess (exit 0): RESULTAT: 85 PASS / 0 FAIL / 0 SKIP
+- subprocess (exit 0): RESULTAT: 97 PASS / 0 FAIL / 0 SKIP
 
 Inga avvikelser hittade.
 

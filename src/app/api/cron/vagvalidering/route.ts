@@ -8,10 +8,16 @@ import { publiceraOrganEvent } from "@/lib/organ-event";
 import {
   VAGVALIDERING_SCHEMA,
   VAGVALIDERING_PROTOKOLL_VERSION,
+  TROSKEL_PROCENT_PER_HORIZONT,
+  TROSKEL_V2_BESLUTAD,
+  TROSKEL_V2_ORSAK,
   VALIDERING_HORIZONTER,
   klassFranTal,
   momentumMedelPerHorisont,
+  domVagvalidering,
   byggaDomar,
+  byggaVariabelDomar,
+  raknaVariabelRaknare,
   rullaFram,
   tomRullande,
   traffProcent,
@@ -20,6 +26,7 @@ import {
   byggVagvalideringRapport,
   type VagKlass,
   type VagvalideringDom,
+  type VagvalideringVariabelDom,
   type RullandeTillstand,
   type MomentumIndikator,
 } from "@/lib/vagvalidering";
@@ -41,13 +48,20 @@ export const maxDuration = 60;
  *   (b) DAGENS faktiska fundamentmomentum ur dagens vagscan-event; saknas den
  *       återmotorn via datacache (lasEllerHamta — cache först, Yahoo först vid
  *       kall cache, samma mönster som /api/vagfundament).
- *   (c) DOM enligt protokoll vagvalidering/1 (ren funktion i src/lib/
+ *   (c) DOM enligt protokoll vagvalidering/1 v2 (ren funktion i src/lib/
  *       vagvalidering.ts, testad i 100%-sviten): impulsvåg→träff vid positiv
- *       momentum, korrigering→negativ, basbygge→|momentum| ≤ 6 %, osatt döms
- *       aldrig.
+ *       momentum, korrigering→negativ, basbygge→|momentum| ≤ tröskel PER
+ *       HORISONT (mikro/kort 6 % · medellång 15 % · lång/mega 25 % — AKM3-
+ *       BESLUT §7), osatt döms aldrig. Första v2-körningen NOLLSTÄLLER de
+ *       rullande räknarna med deklarerad orsak (FORBUD §10.6: en ändring
+ *       per protokollversion).
  *   (d) EN system_events-rad type=vagvalidering med dagens domar + RULLANDE
  *       träff-% per (horisont, klass) — räknarna bärs fram i details
  *       (idempotent: redan domad dag → inget nytt, inget dubbelräknat).
+ *       SEDAN VÅG 59 bygg-1 (BESLUT §7) även BANA B i samma rad: tabellen
+ *       vagvalidering_dom (per ticker × variabel × horisont: förra klassen
+ *       mot variabelns EGEN momentum, episodkedjad — klassbyte/osatt
+ *       avgränsar episoden) + variabelRaknare + episodAntal.
  *   (e) publiceraOrganEvent (organ/vagvalidering) + rapport till
  *       data/rapporter/vagvalidering-SENASTE.md (graceful på read-only fs).
  *
@@ -71,8 +85,12 @@ type ScanTicker = {
   ticker?: string;
   fel?: string | null;
   total?: Record<string, number | null> | null;
-  indikatorer?: Record<string, MomentumIndikator> | null;
+  indikatorer?: Record<string, MomentumIndikator & { vager?: Record<string, unknown> }> | null;
 };
+
+/** Per-variabel-kartor (Bana B): ticker → variabel → horisont → klass/momentum. */
+type PerVariabelKlasser = Record<string, Record<string, Record<string, unknown>>>;
+type PerVariabelMomenter = Record<string, Record<string, Record<string, number | null>>>;
 
 /** Läser N senaste system_events-rader av en typ (details + created_at, fallande). */
 async function lasEventRader(sb: ReturnType<typeof getSupabaseRest>, typ: string, limit: number): Promise<EventRad[]> {
@@ -126,19 +144,82 @@ function momenterFranScan(details: Record<string, unknown> | null): Record<strin
   return ut;
 }
 
-/** Reserv: klasser ur datacache-cachens senaste vagfundament-rader (valfri ålder). */
-async function klasserFranDatacache(): Promise<Record<string, Record<string, VagKlass>>> {
-  const ut: Record<string, Record<string, VagKlass>> = {};
+// ── BANA B (AKM3-BESLUT §7, våg 59 bygg-1): per-variabel klasser + momenter ──
+
+/** Klass per (ticker, variabel, horisont) ur en runds indikatorer.vager. */
+function perVariabelKlasserFranScan(details: Record<string, unknown> | null): PerVariabelKlasser {
+  const ut: PerVariabelKlasser = {};
+  const tickers = Array.isArray(details?.tickers) ? (details?.tickers as ScanTicker[]) : [];
+  for (const t of tickers) {
+    if (!t || typeof t !== "object" || t.fel || !t.ticker || !t.indikatorer) continue;
+    ut[t.ticker] = {};
+    for (const [v, ind] of Object.entries(t.indikatorer)) {
+      if (!ind || typeof ind !== "object") continue;
+      ut[t.ticker][v] = (ind as { vager?: Record<string, unknown> }).vager ?? {};
+    }
+  }
+  return ut;
+}
+
+/** Momentum per (ticker, variabel, horisont) ur en runds indikatorer.momentum
+ *  — variabelns EGEN serie, inte universumets medeltal (Bana B:s mätobjekt). */
+function perVariabelMomenterFranScan(details: Record<string, unknown> | null): PerVariabelMomenter {
+  const ut: PerVariabelMomenter = {};
+  const tickers = Array.isArray(details?.tickers) ? (details?.tickers as ScanTicker[]) : [];
+  for (const t of tickers) {
+    if (!t || typeof t !== "object" || t.fel || !t.ticker || !t.indikatorer) continue;
+    ut[t.ticker] = {};
+    for (const [v, ind] of Object.entries(t.indikatorer)) {
+      if (!ind || typeof ind !== "object") continue;
+      ut[t.ticker][v] = (ind as MomentumIndikator).momentum ?? {};
+    }
+  }
+  return ut;
+}
+
+/** Klass per (variabel, horisont) ur en ScanTicker-formad datacache-rad. */
+function perVariabelKlasserFranRad(rad: unknown): Record<string, Record<string, unknown>> {
+  const data = rad as ScanTicker | null | undefined;
+  if (!data || typeof data !== "object" || data.fel || !data.indikatorer) return {};
+  const ut: Record<string, Record<string, unknown>> = {};
+  for (const [v, ind] of Object.entries(data.indikatorer)) {
+    if (!ind || typeof ind !== "object") continue;
+    ut[v] = (ind as { vager?: Record<string, unknown> }).vager ?? {};
+  }
+  return ut;
+}
+
+/** Momentum per (variabel, horisont) ur en ScanTicker-formad datacache-rad. */
+function perVariabelMomenterFranRad(rad: unknown): Record<string, Record<string, number | null>> {
+  const data = rad as ScanTicker | null | undefined;
+  if (!data || typeof data !== "object" || data.fel || !data.indikatorer) return {};
+  const ut: Record<string, Record<string, number | null>> = {};
+  for (const [v, ind] of Object.entries(data.indikatorer)) {
+    if (!ind || typeof ind !== "object") continue;
+    ut[v] = (ind as MomentumIndikator).momentum ?? {};
+  }
+  return ut;
+}
+
+/** Reserv: klasser ur datacache-cachens senaste vagfundament-rader (valfri ålder).
+ *  Total-klasserna (Bana A) OCH per-variabel-klasserna (Bana B) ur samma rad. */
+async function klasserFranDatacache(): Promise<{
+  total: Record<string, Record<string, VagKlass>>;
+  perVariabel: PerVariabelKlasser;
+}> {
+  const total: Record<string, Record<string, VagKlass>> = {};
+  const perVariabel: PerVariabelKlasser = {};
   for (const t of UNIVERSUM) {
     const rad = await lasCache(t, "vagfundament");
     const data = rad?.data as ScanTicker | null | undefined;
     if (!data || typeof data !== "object" || data.fel || !data.total) continue;
-    ut[t] = {};
+    total[t] = {};
     for (const hz of VALIDERING_HORIZONTER) {
-      ut[t][hz] = klassFranTal(data.total[hz]);
+      total[t][hz] = klassFranTal(data.total[hz]);
     }
+    perVariabel[t] = perVariabelKlasserFranRad(data);
   }
-  return ut;
+  return { total, perVariabel };
 }
 
 /** Kör jobb i omgångar om `tak` (samma Yahoo-vänlighet som /api/vagfundament). */
@@ -153,8 +234,12 @@ async function iOmgangar<T>(jobb: (() => Promise<T>)[], tak = 4): Promise<T[]> {
 /**
  * Fallback-momentum: återmotorn via datacache — cache FÖRE nät, en delad
  * (memoiserad) universumkörning serverar alla kalla tickers, omgångar om 4.
+ * Returnerar MEDEL-momenten (Bana A) OCH per-variabel-momenten (Bana B).
  */
-async function momenterFranMotor(): Promise<Record<string, Record<string, number | null>>> {
+async function momenterFranMotor(): Promise<{
+  medel: Record<string, Record<string, number | null>>;
+  perVariabel: PerVariabelMomenter;
+}> {
   let gemensam: Promise<MotorSvar> | null = null;
   const korUniversum = (): Promise<MotorSvar> => (gemensam ??= körVagfundament({ tickers: UNIVERSUM }));
   const rader = await iOmgangar(
@@ -168,12 +253,14 @@ async function momenterFranMotor(): Promise<Record<string, Record<string, number
       return data as ScanTicker | null;
     }),
   );
-  const ut: Record<string, Record<string, number | null>> = {};
+  const medel: Record<string, Record<string, number | null>> = {};
+  const perVariabel: PerVariabelMomenter = {};
   for (const rad of rader) {
     if (!rad || typeof rad !== "object" || rad.fel || !rad.ticker || !rad.indikatorer) continue;
-    ut[rad.ticker] = momentumMedelPerHorisont(rad.indikatorer);
+    medel[rad.ticker] = momentumMedelPerHorisont(rad.indikatorer);
+    perVariabel[rad.ticker] = perVariabelMomenterFranRad(rad);
   }
-  return ut;
+  return { medel, perVariabel };
 }
 
 export async function GET(req: NextRequest) {
@@ -212,40 +299,98 @@ export async function GET(req: NextRequest) {
   const dagensScan = scans.find((s) => dagIso(s.created_at) === dagensDatum) ?? null;
   const forraScan = scans.find((s) => dagIso(s.created_at) < dagensDatum) ?? null;
 
-  // 3) förra rondens klasser (vagscan-event → reserv: datacache)
+  // 3) förra rondens klasser (vagscan-event → reserv: datacache) — BANA A
+  //    (total-klasserna) och BANA B (per variabel) ur samma källor.
   let klasser: Record<string, Record<string, VagKlass>> = {};
+  let klasserPerVariabel: PerVariabelKlasser = {};
   let kallaKlasser = "ingen";
+  let domatDatum = ""; // klassens datum — känt endast för vagscan-källan (aldrig påhittat)
   if (forraScan?.details) {
     klasser = klasserFranScan(forraScan.details);
+    klasserPerVariabel = perVariabelKlasserFranScan(forraScan.details);
+    domatDatum = dagIso(forraScan.created_at);
     if (Object.keys(klasser).length > 0) kallaKlasser = "vagscan-event";
   }
   if (Object.keys(klasser).length === 0) {
-    klasser = await klasserFranDatacache();
+    const reserv = await klasserFranDatacache();
+    klasser = reserv.total;
+    klasserPerVariabel = reserv.perVariabel;
     if (Object.keys(klasser).length > 0) kallaKlasser = "datacache (senaste cachade vagfundament-rader)";
   }
 
   // 4) dagens faktiska momentum (vagscan-event → reserv: återmotor via datacache)
   let momenter: Record<string, Record<string, number | null>> = {};
+  let momenterPerVariabel: PerVariabelMomenter = {};
   let kallaMomentum = "ingen";
   if (dagensScan?.details) {
     momenter = momenterFranScan(dagensScan.details);
+    momenterPerVariabel = perVariabelMomenterFranScan(dagensScan.details);
     if (Object.keys(momenter).length > 0) kallaMomentum = "vagscan-event";
   }
   if (Object.keys(momenter).length === 0) {
     try {
-      momenter = await momenterFranMotor();
+      const reserv = await momenterFranMotor();
+      momenter = reserv.medel;
+      momenterPerVariabel = reserv.perVariabel;
       if (Object.keys(momenter).length > 0) kallaMomentum = "motor via datacache (lasEllerHamta)";
     } catch {
       momenter = {}; // nätet borta → osatta domar, aldrig gissade
+      momenterPerVariabel = {};
     }
   }
 
+  // 4b) PROTKOLL v2-BYTE (AKM3-BESLUT §7): första körningen med version 2 ⇒
+  //     räknarna NOLLSTÄLLS (en ändring per protokollversion, FORBUD §10.6),
+  //     orsaken deklareras öppet och rullandeSedan sätts till versionsbytets
+  //     datum. Bana A-räknarna börjar om från noll under v2:s trösklar.
+  const tidigareVersion =
+    typeof tidigare?.details?.protokollVersion === "number"
+      ? tidigare.details.protokollVersion
+      : tidigare?.details
+        ? 1 // äldre rader (före fältet) var alla v1
+        : null;
+  const protokollByte =
+    tidigareVersion !== null && tidigareVersion < VAGVALIDERING_PROTOKOLL_VERSION
+      ? {
+          fran: tidigareVersion,
+          till: VAGVALIDERING_PROTOKOLL_VERSION,
+          beslutad: TROSKEL_V2_BESLUTAD,
+          orsak: TROSKEL_V2_ORSAK,
+          raknareNollstallda: dagensDatum,
+        }
+      : null;
+
   // 5) domar + rullande räknare (rena funktioner, testade i 100%-sviten)
   const domar: VagvalideringDom[] = byggaDomar(UNIVERSUM, klasser, momenter);
-  const barande = lasBarande(tidigare?.details ?? null);
+  const barande = protokollByte ? null : lasBarande(tidigare?.details ?? null); // nollställning vid byte
   const rullande = rullaFram(barande, domar);
-  const rullandeSedan =
-    typeof tidigare?.details?.rullandeSedan === "string" ? tidigare.details.rullandeSedan : dagensDatum;
+  const rullandeSedan = protokollByte
+    ? dagensDatum // räknarna börjar om under v2
+    : typeof tidigare?.details?.rullandeSedan === "string"
+      ? tidigare.details.rullandeSedan
+      : dagensDatum;
+
+  // 5b) BANA B (BESLUT §7): per-variabel-domar med episodkedja — tabellen
+  //     vagvalidering_dom (STYRELSE §3.2 exakt). Episod-identiteten ärvs från
+  //     föregående events rader när klassen är oförändrad; klassbyte/osatt
+  //     startar ny episod. Domen dömer med v2:s horisonttrösklar.
+  const tidigareDomRader: VagvalideringVariabelDom[] = Array.isArray(
+    (tidigare?.details as { vagvalidering_dom?: unknown } | null)?.vagvalidering_dom,
+  )
+    ? ((tidigare?.details as unknown as { vagvalidering_dom: VagvalideringVariabelDom[] }).vagvalidering_dom)
+    : [];
+  const variabelDomar = byggaVariabelDomar(
+    UNIVERSUM,
+    klasserPerVariabel,
+    momenterPerVariabel,
+    tidigareDomRader,
+    domatDatum,
+    dagensDatum,
+  );
+  const variabelRaknare = raknaVariabelRaknare(variabelDomar);
+  const variabelDomda = variabelDomar.filter((d) => domVagvalidering(d.klass, d.utfall_momentum, d.horisont) !== "osatt").length;
+  const episodSet = new Set<string>();
+  for (const d of variabelDomar) episodSet.add(d.episod_id);
 
   let tTraff = 0;
   let tMiss = 0;
@@ -293,6 +438,8 @@ export async function GET(req: NextRequest) {
           details: {
             schema: VAGVALIDERING_SCHEMA,
             protokollVersion: VAGVALIDERING_PROTOKOLL_VERSION,
+            protokollByte,
+            troskelProcentPerHorisont: TROSKEL_PROCENT_PER_HORIZONT,
             genererad: sammanstallning.genererad,
             datum: dagensDatum,
             universum: UNIVERSUM,
@@ -302,8 +449,16 @@ export async function GET(req: NextRequest) {
             domar,
             rullande,
             rullandeSedan,
+            // BANA B (AKM3-BESLUT §7): tabellen vagvalidering_dom — STYRELSE
+            // §3.2:s schema exakt, episodkedjad (klassbyte/osatt avgränsar).
+            vagvalidering_dom: variabelDomar,
+            variabelRaknare,
+            episodAntal: episodSet.size,
             notering:
-              "Dom-protokoll v1: förra rondens klass döms mot dagens faktiska medel-momentum (impulsvåg>0, korrigering<0, basbygge |mom|<=6%). Osatt döms aldrig. Räknarna bärs fram per rond sedan rullandeSedan.",
+              "Dom-protokoll v" + String(VAGVALIDERING_PROTOKOLL_VERSION) +
+              ": förra rondens klass döms mot dagens faktiska medel-momentum (impulsvåg>0, korrigering<0, basbygge |mom|<=tröskel per horisont: mikro/kort 6%, medellång 15%, lång/mega 25%). Osatt döms aldrig. Räknarna bärs fram per rond sedan rullandeSedan" +
+              (protokollByte ? " — NOLLSTÄLLDA vid v2-bytet (" + TROSKEL_V2_BESLUTAD + "), se protokollByte.orsak" : "") +
+              ". Bana B (vagvalidering_dom): per (ticker, variabel, horisont) döms variabelns EGEN klass mot variabelns EGEN momentum; episod_id ärvs medan klassen står still (osatt avgränsar också).",
           },
           source: "cron/vagvalidering",
         }),
@@ -322,11 +477,16 @@ export async function GET(req: NextRequest) {
     matt: {
       datum: dagensDatum,
       protokoll: VAGVALIDERING_PROTOKOLL_VERSION,
+      protokollByte: !!protokollByte,
       nyaDomer,
       nyaOsatta: domar.length - nyaDomer,
       rullandeTraffProcent: totaltProcent ?? -1,
       rullandeN: tTraff + tMiss,
       rullandeOsattProcent: totaltOsatt ?? -1,
+      // Bana B (grova tal only — P8): dömda per-variabelrader + episoder.
+      banaBDomda: variabelDomda,
+      banaBRader: variabelDomar.length,
+      banaBEpisoder: episodSet.size,
       kallaKlasser,
       kallaMomentum,
       sparad: supabaseSparad,
@@ -358,6 +518,15 @@ export async function GET(req: NextRequest) {
     rullandeTraffProcent: totaltProcent,
     rullandeN: tTraff + tMiss,
     rullandeOsattProcent: totaltOsatt,
+    protokollByte,
+    troskelProcentPerHorisont: TROSKEL_PROCENT_PER_HORIZONT,
+    banaB: {
+      rader: variabelDomar.length,
+      domda: variabelDomda,
+      episoder: episodSet.size,
+      variabelRaknare,
+      vagvalidering_dom: variabelDomar,
+    },
     supabaseSparad,
     rapportSkrivad,
     protokoll: { schema: VAGVALIDERING_SCHEMA, version: VAGVALIDERING_PROTOKOLL_VERSION },

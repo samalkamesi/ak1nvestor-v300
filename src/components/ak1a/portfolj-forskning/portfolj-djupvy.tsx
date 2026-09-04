@@ -120,10 +120,13 @@ function SnapshotSida({
   etikett,
   arNu,
   snapshot,
+  max,
 }: {
   etikett: string;
   arNu: boolean;
   snapshot: UppfoljningSnapshot | null;
+  /** Teoretiskt poängtak (D1) ur korstabellraden — "poäng/max", aldrig dolt. */
+  max?: number | null;
 }) {
   if (!snapshot) {
     return (
@@ -156,7 +159,10 @@ function SnapshotSida({
         <div>
           <p className="text-[9px] uppercase tracking-wider text-muted-foreground">AKM1</p>
           <div className="mt-1 flex items-center gap-1.5">
-            <Akm1Chip varde={Number.isFinite(snapshot.akm1Totalt) ? snapshot.akm1Totalt : null} />
+            <Akm1Chip
+              varde={Number.isFinite(snapshot.akm1Totalt) ? snapshot.akm1Totalt : null}
+              max={max}
+            />
             {arNu && <PoangBadge varde={snapshot.forandringAkm1} />}
           </div>
         </div>
@@ -253,8 +259,18 @@ function InnehavKort({
       )}
 
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        <SnapshotSida etikett="Då — förra snapshot" arNu={false} snapshot={da} />
-        <SnapshotSida etikett="Nu — aktuell" arNu={true} snapshot={nu} />
+        <SnapshotSida
+          etikett="Då — förra snapshot"
+          arNu={false}
+          snapshot={da}
+          max={rad?.akm1MaxMojligt ?? null}
+        />
+        <SnapshotSida
+          etikett="Nu — aktuell"
+          arNu={true}
+          snapshot={nu}
+          max={rad?.akm1MaxMojligt ?? null}
+        />
       </div>
 
       <div className="mt-3 border-t border-gold/15 pt-2">

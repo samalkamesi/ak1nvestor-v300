@@ -11,6 +11,8 @@ import type {
   VagKlass,
 } from "@/lib/portfolj-forskning/typer";
 import { BRANSCHER } from "@/lib/portfolj-forskning/typer";
+import type { OsakerhetsIntervall } from "@/lib/akm3/osakerhet";
+import { intervallPlusText, spannText } from "@/lib/akm3/osakerhet";
 
 // ═══════════════════════════════════════════════════════════
 // PORTFÖLJFORSKNING — delat visuellt språk för vågklasser,
@@ -137,6 +139,60 @@ export function DynamikPil({ dynamik, visaText = false }: { dynamik: Dynamik; vi
   );
 }
 
+// ── Osäkerhetsintervall (VÅG 59, AKM3 steg 3 — r4 §3.1) ───────────────────────
+
+/**
+ * Ensidigt felstreck/gradient: markör vid poängen (K), utlöpande mot övre
+ * gränsen — spannnet är alltid asymmetriskt uppåt (nedre = poängen), därför
+ * klassiskt ±-streck är olämpligt (Correll & Gleicher; r4 §1.6). Port-tak
+ * markeras med snedstrecksmönster vid 45. Barren är aria-hidden — spannet
+ * förs alltid i tooltip/aria-label på det omgivande chippet (aldrig bara syn).
+ */
+export function IntervallStreck({ intervall }: { intervall: OsakerhetsIntervall }) {
+  const n = Math.max(0, Math.min(100, intervall.nedre));
+  const o = Math.max(n, Math.min(100, intervall.ovre));
+  const bredd = Math.max(o - n, o - n <= 0 ? 0 : 2); // minst 2 % synlig om spannet > 0
+  return (
+    <span
+      aria-hidden
+      className="relative block h-1.5 w-16 rounded-sm border border-border bg-muted/40"
+    >
+      <span
+        className="absolute inset-y-0 rounded-sm"
+        style={{
+          left: `${n}%`,
+          width: `${bredd}%`,
+          background: "linear-gradient(90deg, rgba(168,134,42,0.85), rgba(168,134,42,0.12))",
+        }}
+      />
+      <span
+        className="absolute -top-0.5 h-2.5 w-[2px] rounded-sm bg-gold"
+        style={{ left: `calc(${n}% - 1px)` }}
+      />
+      {intervall.portTakad && (
+        <span
+          className="absolute -inset-y-0.5 w-[2px]"
+          style={{
+            left: "45%",
+            background:
+              "repeating-linear-gradient(45deg, rgba(153,27,27,0.9) 0 2px, transparent 2px 4px)",
+          }}
+        />
+      )}
+    </span>
+  );
+}
+
+/** Gemensam tooltip-text när ett intervall är kopplat till ett poäng-chip. */
+function intervallTitel(prefix: string, i: OsakerhetsIntervall): string {
+  return (
+    `${prefix} ${intervallPlusText(i)} · spann ${spannText(i)} — ` +
+    "nedre gräns är poängen själv (osatt vikt ger 0 p), övre gräns vid 5 p på osatt vikt" +
+    (i.portTakad ? "; hård port aktiv — övre gräns takad till 45" : "") +
+    ". Modellen gissar aldrig."
+  );
+}
+
 // ── AKM1-poäng: bandmönster från konfluensradarn (grå → guld → marin) ────────
 
 const AKM1_BAND = {
@@ -150,15 +206,19 @@ const AKM1_BAND = {
  * Med maxMojligt (D1): visar "poäng/max" — poängen mot det teoretiska taket med
  * nuvarande datatäckning. Taket döljs ALDRIG när det är känt (dataärlighet:
  * en poäng utan sitt tak är en dold ursäkt).
+ * Med intervall (VÅG 59, AKM3 steg 3): ensidigt felstreck ovanför chippet +
+ * spann/± i tooltip och aria-label — spannget får ALDRIG bara antydas.
  */
 export function Akm1Chip({
   varde,
   max,
   stor = false,
+  intervall,
 }: {
   varde: number | null;
   max?: number | null;
   stor?: boolean;
+  intervall?: OsakerhetsIntervall | null;
 }) {
   if (varde === null || !Number.isFinite(varde)) {
     return <span className="font-mono text-lg font-bold text-muted-foreground">—</span>;
@@ -166,15 +226,19 @@ export function Akm1Chip({
   const v = Math.round(varde);
   const band = v >= 70 ? AKM1_BAND.marin : v >= 40 ? AKM1_BAND.guld : AKM1_BAND.grå;
   const maxTal = typeof max === "number" && Number.isFinite(max) ? Math.round(max) : null;
-  const titel =
+  const grundTitel =
     maxTal !== null
       ? `AKM1-total: ${v} av teoretiskt max ${maxTal} med nuvarande datatäckning — saknad data ger alltid 0 poäng, modellen straffar aldrig saknad data`
       : `AKM1-total: ${v} av 100`;
-  return (
+  const titel = intervall
+    ? intervallTitel(`AKM1-total:`, intervall) +
+      (maxTal !== null ? ` Teoretiskt max ${maxTal} vid nuvarande täckning.` : "")
+    : grundTitel;
+  const chip = (
     <span
       className={`tabular inline-block rounded-lg px-2.5 py-1 font-mono font-bold leading-none ${stor ? "text-2xl" : "text-lg"}`}
       style={{ background: band.bg, color: band.text }}
-      title={titel}
+      title={intervall ? undefined : titel}
     >
       {v}
       {maxTal !== null && (
@@ -182,6 +246,18 @@ export function Akm1Chip({
           /{maxTal}
         </span>
       )}
+    </span>
+  );
+  if (!intervall) return chip;
+  return (
+    <span
+      className="inline-flex flex-col items-end gap-0.5 leading-none"
+      title={titel}
+      aria-label={titel}
+      role="img"
+    >
+      <IntervallStreck intervall={intervall} />
+      {chip}
     </span>
   );
 }
@@ -194,18 +270,22 @@ export function Akm1Chip({
  * oförändrad/osatt = grått. Differensen är akm2 − akm1Totalt (P6:s
  * publicerade AKM1-total) — skillnaden mellan modellernas utfall, aldrig
  * ett omdöme om bolaget.
+ * Med intervall (VÅG 59, AKM3 steg 3): ensidigt felstreck ovanför kompositen
+ * + spann/± i tooltip och aria-label (spannet visas ALDRIG bara som ±).
  */
 export function Akm2Cell({
   varde,
   skillnad,
   moduler,
   stor = false,
+  intervall,
 }: {
   varde: number | null | undefined;
   skillnad: number | null | undefined;
   /** Aktiva branschmoduler — visas i tooltippet (spårbarhet). */
   moduler?: string[];
   stor?: boolean;
+  intervall?: OsakerhetsIntervall | null;
 }) {
   const v = typeof varde === "number" && Number.isFinite(varde) ? Math.round(varde) : null;
   const s =
@@ -226,15 +306,33 @@ export function Akm2Cell({
     moduler && moduler.length > 0
       ? ` Aktiva moduler: ${moduler.join(" · ")}.`
       : " Inga branschmoduler registrerade.";
+  const kompositTitel = intervall
+    ? `${intervallTitel(`AKM2-komposit:`, intervall)}${modulText}`
+    : `AKM2-komposit: ${v} av 100 — raknaAKM2 med automatiska moduler (V21+) ur modulregistret och viktprofilen akm2-2026.${modulText}`;
   return (
     <span className="inline-flex flex-col items-end gap-1 leading-none">
       {v === null || !band ? (
         <span className="font-mono text-lg font-bold text-muted-foreground">—</span>
+      ) : intervall ? (
+        <span
+          className="inline-flex flex-col items-end gap-0.5 leading-none"
+          title={kompositTitel}
+          aria-label={kompositTitel}
+          role="img"
+        >
+          <IntervallStreck intervall={intervall} />
+          <span
+            className={`tabular inline-block rounded-lg px-2.5 py-1 font-mono font-bold ${stor ? "text-2xl" : "text-lg"}`}
+            style={{ background: band.bg, color: band.text }}
+          >
+            {v}
+          </span>
+        </span>
       ) : (
         <span
           className={`tabular inline-block rounded-lg px-2.5 py-1 font-mono font-bold ${stor ? "text-2xl" : "text-lg"}`}
           style={{ background: band.bg, color: band.text }}
-          title={`AKM2-komposit: ${v} av 100 — raknaAKM2 med automatiska moduler (V21+) ur modulregistret och viktprofilen akm2-2026.${modulText}`}
+          title={kompositTitel}
         >
           {v}
         </span>
@@ -351,15 +449,25 @@ export const BRANSCH_NAMN: Record<Bransch, string> = {
   tillvaxt: "Tillväxt",
 };
 
-/** Gruppera rader per bransch i typkontraktets canonicala ordning. */
+/**
+ * Gruppera rader per bransch i typkontraktets canonicala ordning.
+ * Sortnycklar (VÅG 59: "peer" tillkommen — r3 §4.1): akm1 | akm2 | peer
+ * (peerPercentil inom branschen; osatt peer sorterar alltid sist).
+ */
+export type KorstabellSortNyckel = "akm1" | "akm2" | "peer";
+
 export function grupperaBranscher(
   rader: KorstabbellRad[],
   sortDir: "asc" | "desc" | null = null,
-  sortNyckel: "akm1" | "akm2" = "akm1",
+  sortNyckel: KorstabellSortNyckel = "akm1",
 ): Array<{ bransch: Bransch; rader: KorstabbellRad[] }> {
   const ut: Array<{ bransch: Bransch; rader: KorstabbellRad[] }> = [];
-  /** Sorteringsvärde: null/osatt (akm2 utan nyckeltal) sorterar alltid sist. */
+  /** Sorteringsvärde: null/osatt (akm2 utan nyckeltal, osatt peer) sorterar sist. */
   const varde = (r: KorstabbellRad): number => {
+    if (sortNyckel === "peer") {
+      const p = r.peer?.peerPercentil;
+      return typeof p === "number" && Number.isFinite(p) && !r.peer?.osatt ? p : -Infinity;
+    }
     const v = sortNyckel === "akm2" ? (r.akm2 ?? null) : r.akm1Totalt;
     return typeof v === "number" && Number.isFinite(v) ? v : -Infinity;
   };

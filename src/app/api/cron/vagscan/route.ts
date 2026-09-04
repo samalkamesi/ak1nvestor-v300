@@ -2,6 +2,12 @@ import { NextResponse, NextRequest } from "next/server";
 import { körVagfundament, type MotorSvar } from "@/lib/vagfundament-motor";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { publiceraVagkartaSignal } from "@/lib/signal-bus";
+import {
+  byggVagklassSnapshotRader,
+  kvartalsNyckel,
+  VAGVALIDERING_PROTOKOLL_VERSION,
+  type VagklassSnapshotRad,
+} from "@/lib/vagvalidering";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -14,6 +20,17 @@ export const maxDuration = 60;
  * fundamentals (primärt), med MarketStack-stöd för senaste EOD-kurs.
  * Körs av Vercel Cron; EN vågskans-skrivning per körning (system_events,
  * type=vagscan) + dagens vågkarta-signal på signal-bussen (publiceraVagkartaSignal).
+ *
+ * VÅG 59 bygg-1 (AKM3-BESLUT §7, steg 2): tabellen vagklass_snapshot — en
+ * KVARTALSdeduplicerad klass-snapshot per (ticker, variabel, horisont) läggs
+ * i dagens event (details.vagklassSnapshot) ENBART när innevarande kvartal
+ * ännu inte har en snapshot. Den dagliga vagscan-historiken (system_events)
+ * ÄR den fulla historiken — snapshoten är kalibreringens (steg 6–7) och
+ * sekvens-n-ESKALERINGENS framtida kvartalsgaller (r3 väg 2, två
+ * konsumenter). Dedupe-källan: senaste ~120 dagarnas vagscan-rader läses
+ * lättviktigt (endast kvartalsnyckeln selekteras via PostgREST json-arrow);
+ * misslyckas läsningen SKRIVS ingen snapshot (konservativt: hellre en
+ * utebliven kvartalssnapshot — daglig historik finns ändå — än en dubblett).
  */
 
 // AKM1-universum — 12 tickers (motorns tak per anrop)
@@ -45,6 +62,17 @@ type VagscanSammanstallning = {
   universumSammanfattning: { impulsvag: number; korrigering: number; basbygge: number; osatt: number };
   topRorelse: Rorelse[];
   botRorelse: Rorelse[];
+  /**
+   * Kvartalsdeduplicerad vagklass_snapshot (VÅG 59 bygg-1, BESLUT §7) —
+   * närvarar ENDAST i första vagscan-raden per kvartal. r1 §5:s schema:
+   * (ticker, variabel, horisont, snapshot_datum, klass, protokoll_version).
+   */
+  vagklassSnapshot?: {
+    kvartal: string;
+    snapshot_datum: string;
+    protokoll_version: number;
+    rader: VagklassSnapshotRad[];
+  };
 };
 
 /** lokal kalenderdag som YYYY-MM-DD ( samma semantik som analys-motorn ). */
@@ -162,6 +190,32 @@ function raknaRorelser(tickers: MotorSvar["tickers"], totalBolag: number): { top
   return { top: bygg(impulsvag), bot: bygg(korrigering) };
 }
 
+// ── vagklass_snapshot (VÅG 59 bygg-1, AKM3-BESLUT §7): kvartalsdedupe ───────
+
+/** Finns redan en snapshot för detta kvartal bland senaste ~120 dagarnas
+ *  vagscan-rader? true = finns; false = saknas (skriv!); null = okänt
+ *  (läsningen misslyckades ⇒ konservativt INGEN ny snapshot, aldrig dubblett).
+ *  Lättviktig läsning: endast kvartalsnyckeln selekteras (json-arrow). */
+async function kvartalssnapshotFinns(
+  sb: ReturnType<typeof getSupabaseRest>,
+  kvartal: string,
+): Promise<boolean | null> {
+  if (!sb) return null; // ingen backend — okänt, skriv inte (dokumenterat)
+  try {
+    const selectParam = encodeURIComponent("details->vagklassSnapshot->>kvartal");
+    const res = await fetch(
+      `${sb.origin}/rest/v1/system_events?type=eq.vagscan&select=${selectParam}&order=created_at.desc&limit=120`,
+      { headers: sb.headers, cache: "no-store", signal: AbortSignal.timeout(8000) },
+    );
+    if (!res.ok) return null;
+    const rader = (await res.json()) as Array<{ kvartal?: string | null }>;
+    if (!Array.isArray(rader)) return null;
+    return rader.some((r) => r && typeof r.kvartal === "string" && r.kvartal === kvartal);
+  } catch {
+    return null;
+  }
+}
+
 export async function GET(req: NextRequest) {
   // samma skydd som cron/autonom: om CRON_SECRET är satt krävs matchning —
   // via ?secret= (query) eller Authorization: Bearer (Vercel Cron).
@@ -198,6 +252,28 @@ export async function GET(req: NextRequest) {
   const totalBolag = motorSvar.tickers.filter((t) => !t.fel).length;
   const { top, bot } = raknaRorelser(motorSvar.tickers, totalBolag);
 
+  // 3b) vagklass_snapshot (VÅG 59 bygg-1, BESLUT §7): kvartalsdeduplicerad
+  //     klass-historik — skrivs ENDAST när innevarande kvartal saknar snapshot.
+  const idag = lokalDagIso();
+  const kvartal = kvartalsNyckel(idag);
+  const sb = getSupabaseRest();
+  const finns = kvartal ? await kvartalssnapshotFinns(sb, kvartal) : null;
+  let vagklassSnapshot: VagscanSammanstallning["vagklassSnapshot"];
+  let snapshotStatus: "skrevs" | "dedupe-hoppades" | "skippades-okand-lage";
+  if (kvartal && finns === false) {
+    const rader = byggVagklassSnapshotRader(motorSvar.tickers, idag);
+    vagklassSnapshot = {
+      kvartal,
+      snapshot_datum: idag,
+      protokoll_version: VAGVALIDERING_PROTOKOLL_VERSION,
+      rader,
+    };
+    snapshotStatus = "skrevs";
+  } else {
+    vagklassSnapshot = undefined;
+    snapshotStatus = finns === true ? "dedupe-hoppades" : "skippades-okand-lage";
+  }
+
   const sammanstallning: VagscanSammanstallning = {
     genererad: new Date().toISOString(),
     universum: UNIVERSUM,
@@ -205,11 +281,11 @@ export async function GET(req: NextRequest) {
     universumSammanfattning,
     topRorelse: top,
     botRorelse: bot,
+    ...(vagklassSnapshot ? { vagklassSnapshot } : {}),
   };
 
   // 4) EN skrivning per körning — tyst vid fel (svaret returneras alltid)
   let supabaseSparad = false;
-  const sb = getSupabaseRest();
   if (sb) {
     try {
       const res = await fetch(`${sb.origin}/rest/v1/system_events`, {
@@ -232,5 +308,11 @@ export async function GET(req: NextRequest) {
   //    skanningen och system_events-skrivningen är klar.
   const signalSand = await publiceraVagkartaSignal({ ...universumSammanfattning, totalBolag });
 
-  return NextResponse.json({ ...sammanstallning, supabaseSparad, signalSand, disclaimer: "Pedagogisk analys — inte investeringsråd" });
+  return NextResponse.json({
+    ...sammanstallning,
+    supabaseSparad,
+    signalSand,
+    vagklassSnapshotStatus: snapshotStatus,
+    disclaimer: "Pedagogisk analys — inte investeringsråd",
+  });
 }

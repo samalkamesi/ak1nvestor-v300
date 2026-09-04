@@ -1,15 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fsp } from "fs";
+import { promises as fsp, readFileSync } from "fs";
+import { createHash } from "crypto";
 import path from "path";
 import { körAnalysMotor, type TickerAnalys } from "@/lib/analys-motor";
 import { publiceraSignal } from "@/lib/signal-bus";
 import { publiceraOrganEvent } from "@/lib/organ-event";
+import { raknaEnsemble, AKM3_MODELL_VERSION } from "@/lib/akm3/ensemble";
+import { byggModulAktiveringar } from "@/lib/akm2-visningsdata";
+import type { BolagsNyckeltal } from "@/lib/portfolj-forskning/typer";
+import type { Akm3Prediktionslogg, Akm3Prediktionsrad, AKM3Ensemble } from "@/lib/akm3/typer";
 import {
   beslutaIntervall,
+  byggAkm3Prediktionsrad,
   jamforDåNu,
   raknaNotisTexter,
   skapaSnapshot,
+  stemplaPrediktionsrad,
+  verifieraPrediktionskedja,
+  PREDIKTIONSLOGG_GENESIS,
   type Jamforelse,
+  type Sha256Funktion,
 } from "@/lib/portfolj-forskning/uppfoljning";
 import type {
   Bransch,
@@ -50,7 +60,17 @@ export const maxDuration = 60;
  *  5. Filen skrivs tillbaka med nya snapshots + historikrad. Skrivningen kan
  *     misslyckas på read-only filsystem ( Vercel ) — då publiceras notiserna
  *     ändå och felet redovisas ärligt i svaret ( se begränsning i rapporten ).
- *  6. publiceraOrganEvent ( organ/portfolj, verb rapport ) — den månadsvisa
+ *  6. AKM3-PREDIKTIONSLOGGEN ( våg 59 bygg-1, AKM3-BESLUT §3+§12 ): per mätt
+ *     ticker beräknas AKM3-ensemblen ur P1:s nyckeltalscache ( raknaEnsemble,
+ *     samma modulaktiveringar som akm2-onsdemand ) — EN rad per bolag per
+ *     månad appenderas hash-kedjad till data/portfolj-system/
+ *     prediktionslogg-akm3.json ( spår "akm3-ensemble", versionsstämpel
+ *     AKM3.2026.09, ensemble sida vid sida med AKM2-komposit + AKM1 ).
+ *     Saknas nyckeltal tiger loggen ( P3 ). Befintlig kedja verifieras FÖRE
+ *     rundan — en kedja som inte verifierar lämnas ORÖRD och rapporteras
+ *     öppet ( append-only, BESLUT §10.10 ). Samma rond skriver även
+ *     data/cache/akm3-{TICKER}.json ( §4:s cache-mönster ).
+ *  7. publiceraOrganEvent ( organ/portfolj, verb rapport ) — den månadsvisa
  *     kroppspulsen ( /api/kropp ), grova tal utan tickers/namn ( P8 ).
  *
  * SKYDD: samma CRON_SECRET-mönster som /api/nyheter/scan ( ?secret= eller
@@ -268,6 +288,68 @@ function sakraSokvag(namn: string): string | null {
   return mal.startsWith(rot) ? mal : null;
 }
 
+// ── AKM3-prediktionsloggen (AKM3-BESLUT §3 "mätning" + §12, våg 59 bygg-1) ──
+
+/** Loggfilens hem — append-only + hash-kedjad, delad över portföljerna. */
+const PREDIKTIONSLOGG_SOK = path.join(process.cwd(), "data", "portfolj-system", "prediktionslogg-akm3.json");
+
+/** sha-256 (hex) — injiceras till lib:ts rena kedjefunktioner (klientsäkert). */
+const sha256: Sha256Funktion = (text: string) => createHash("sha256").update(text, "utf8").digest("hex");
+
+/** Formguard: ser ut som loggfilen (rader-array)? Annars ärligt tomt. */
+function arPrediktionslogg(x: unknown): x is Akm3Prediktionslogg {
+  if (!x || typeof x !== "object") return false;
+  const l = x as Record<string, unknown>;
+  return Array.isArray(l.rader) && l.rader.every((r) => r && typeof r === "object");
+}
+
+/** Läs loggen — null när filen saknas/är ogiltig (första mätningen). */
+async function lasPrediktionslogg(): Promise<Akm3Prediktionslogg | null> {
+  const rå = await lasJson(PREDIKTIONSLOGG_SOK);
+  return arPrediktionslogg(rå) ? rå : null;
+}
+
+/** Finns redan en rad för (ticker, månad)? — rad per månad är kontraktet. */
+function radFinnsForManad(rader: Akm3Prediktionsrad[], ticker: string, datum: string): boolean {
+  const manad = String(datum).slice(0, 7); // YYYY-MM
+  return rader.some((r) => r && r.ticker === ticker && String(r.datum).slice(0, 7) === manad);
+}
+
+/**
+ * Beräkna AKM3-ensemblen för en ticker ur P1:s nyckeltalscache (samma
+ * modulaktiveringar som akm2-onsdemand — medlemmarna stämmer med dashboarden).
+ * Null när nyckeltal saknas: loggen gissar aldrig, den tiger.
+ */
+function raknaAkm3ForTicker(ticker: string): ReturnType<typeof raknaEnsemble> | null {
+  const nyckel = cacheNyckel(ticker);
+  if (!nyckel) return null;
+  const vag = path.join(CACHE_KATALOG, `fundamental-${nyckel}.json`);
+  try {
+    const k = JSON.parse(readFileSync(vag, "utf8")) as BolagsNyckeltal;
+    if (!k || typeof k.ticker !== "string" || typeof k.hamtat !== "string") return null;
+    return raknaEnsemble(k, { moduler: byggModulAktiveringar(k) });
+  } catch {
+    return null;
+  }
+}
+
+/** Skriv AKM3-cachen data/cache/akm3-{TICKER}.json (AKM3-BESLUT §4 —
+ *  akm2-onsdemand-mönstret; tyst vid read-only fs, loggen lever ändå). */
+async function skrivAkm3Cache(ticker: string, ensemble: AKM3Ensemble): Promise<boolean> {
+  const nyckel = cacheNyckel(ticker);
+  if (!nyckel) return false;
+  try {
+    await fsp.writeFile(
+      path.join(CACHE_KATALOG, `akm3-${nyckel}.json`),
+      JSON.stringify({ ensemble }, null, 2) + "\n",
+      "utf-8",
+    );
+    return true;
+  } catch {
+    return false; // read-only fs (Vercel) — on-demand-fallbacken täcker visningen
+  }
+}
+
 // ── Huvudlogik ────────────────────────────────────────────────────────────────
 
 interface resultatRad {
@@ -287,6 +369,29 @@ async function koraUppfoljning(): Promise<NextResponse> {
   const fel: Array<{ portfoljId: string; meddelande: string }> = [];
   let aktiva = 0;
   let korda = 0;
+
+  // AKM3-prediktionsloggen (våg 59 bygg-1): läs + verifiera kedjan FÖRE rundan.
+  // En manipulerad kedja lämnas ORÖRD och rapporteras öppet — append-only är
+  // kontraktet (BESLUT §10.10); vi skriver aldrig vidare på bristfällig evidens.
+  const prediktionStatus = {
+    las: false as boolean,
+    verifierad: false as boolean,
+    tillagdaRader: 0,
+    sparat: false as boolean,
+    notis: "" as string,
+  };
+  const prediktionslogg = await lasPrediktionslogg();
+  const predRader: Akm3Prediktionsrad[] = Array.isArray(prediktionslogg?.rader)
+    ? [...(prediktionslogg?.rader as Akm3Prediktionsrad[])]
+    : [];
+  if (prediktionslogg) {
+    prediktionStatus.las = true;
+    prediktionStatus.verifierad = verifieraPrediktionskedja(prediktionslogg.rader, sha256);
+    if (!prediktionStatus.verifierad) {
+      prediktionStatus.notis =
+        "Befintlig prediktionslogg verifierar EJ mot sin hash-kedja — inga nya rader skrivs (append-only: orörd logg + öppen rapport, ALDRIG tyst överskrivning).";
+    }
+  }
 
   for (const namn of filnamn) {
     if (korda >= MAX_PORTFOLJER) {
@@ -411,7 +516,24 @@ async function koraUppfoljning(): Promise<NextResponse> {
         snap.notisText = snap.notisText ? `${snap.notisText} ${del}` : del;
       }
 
-      // 3) Skriv tillbaka filen ( snapshots + historikrad med sammanfattningen ).
+      // 3) AKM3-PREDIKTIONSLOGGEN (våg 59 bygg-1, BESLUT §3+§12): en rad per
+      //     bolag per månad — ensemble-totalen sida vid sida med AKM2-kompositen
+      //     och AKM1-projektionen, versionsstämplad AKM3.2026.09, hash-kedjad.
+      //     Nyckeltal saknas ⇒ rad uteblir (loggen tiger — P3, aldrig gissad).
+      //     Samma rond skriver även data/cache/akm3-{TICKER}.json (§4-mönstret).
+      if (!prediktionslogg || prediktionStatus.verifierad) {
+        for (const snap of nyaSnapshots) {
+          if (radFinnsForManad(predRader, snap.ticker, snap.datum)) continue;
+          const ensemble = raknaAkm3ForTicker(snap.ticker);
+          if (!ensemble) continue;
+          const prev = predRader.length > 0 ? String(predRader[predRader.length - 1]?.hash ?? PREDIKTIONSLOGG_GENESIS) : PREDIKTIONSLOGG_GENESIS;
+          predRader.push(stemplaPrediktionsrad(byggAkm3Prediktionsrad(ensemble, snap.pris, snap.datum), prev, sha256));
+          prediktionStatus.tillagdaRader += 1;
+          await skrivAkm3Cache(snap.ticker, ensemble);
+        }
+      }
+
+      // 4) Skriv tillbaka filen ( snapshots + historikrad med sammanfattningen ).
       const historikrad = {
         datum: idag,
         text: notisTexter[notisTexter.length - 1] ?? `Omanalyserad ${idag}: ${nyaSnapshots.length} tickers mätta.`,
@@ -432,7 +554,7 @@ async function koraUppfoljning(): Promise<NextResponse> {
         });
       }
 
-      // 4) Publicera notiserna — samma mönster som nyhets-motorn: EN signal
+      // 5) Publicera notiserna — samma mönster som nyhets-motorn: EN signal
       //    per notistext på signal-bussen ( NotisCenter läser den server-side,
       //    det finns inget server-skrivet localStorage ). Max 3 per portfölj.
       for (const text of notisTexter) {
@@ -462,7 +584,28 @@ async function koraUppfoljning(): Promise<NextResponse> {
     }
   }
 
-  // 5) OrganEvent — den månadsvisa pulsen (AUTONOMI-ARKITEKTUR: varje autonom
+  // 6) Skriv AKM3-prediktionsloggen — EN gång per rond, endast när nya rader
+  //    tillkommit och kedjan var frisk (eller filen är ny). Append-only-form:
+  //    rader + senasteHash; retroaktiva ändringar är förbjudna (BESLUT §10.10).
+  if (prediktionStatus.tillagdaRader > 0) {
+    try {
+      const utLogg: Akm3Prediktionslogg = {
+        modellVersion: AKM3_MODELL_VERSION,
+        skapad: prediktionslogg?.skapad ?? predRader[0]?.datum ?? idag,
+        rader: predRader,
+        senasteHash: predRader[predRader.length - 1]?.hash,
+      };
+      await fsp.mkdir(path.dirname(PREDIKTIONSLOGG_SOK), { recursive: true });
+      await fsp.writeFile(PREDIKTIONSLOGG_SOK, JSON.stringify(utLogg, null, 2) + "\n", "utf-8");
+      prediktionStatus.sparat = true;
+    } catch (e: unknown) {
+      prediktionStatus.notis += `${prediktionStatus.notis ? " " : ""}kunde ej spara prediktionsloggen: ${
+        e instanceof Error ? e.message : "okänt fel"
+      } (read-only fs?) — raderna beräknades men persistens uteblev, redovisas öppet.`;
+    }
+  }
+
+  // 7) OrganEvent — den månadsvisa pulsen (AUTONOMI-ARKITEKTUR: varje autonom
   //    kanal andas ut ett organ-event, även en rond utan förfallna portföljer
   //    är en LEVANDE signal). Grova tal only (P8): inga tickers/namn läcker.
   await publiceraOrganEvent({
@@ -474,10 +617,22 @@ async function koraUppfoljning(): Promise<NextResponse> {
       notiser: bearbetade.reduce((s, r) => s + (r.notiser ?? 0), 0),
       hoppade: hoppade.length,
       fel: fel.length,
+      // AKM3-prediktionsloggen (grova tal only — P8: inga tickers läcker):
+      akm3Rader: prediktionStatus.tillagdaRader,
+      akm3Sparat: prediktionStatus.sparat,
     },
   });
 
-  return NextResponse.json({ ok: true, datum: idag, aktiva, bearbetade, hoppade, fel });
+  return NextResponse.json({
+    ok: true,
+    datum: idag,
+    aktiva,
+    bearbetade,
+    hoppade,
+    fel,
+    prediktionslogg: prediktionStatus,
+    disclaimer: "Pedagogisk forskning — ALDRIG investeringsråd (2007:528).",
+  });
 }
 
 /** Skyddet — identiskt med /api/nyheter/scan. */

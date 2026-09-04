@@ -76,6 +76,8 @@ const MARK_END = "===MOTORKOLL_JSON_END===";
 const TS_KOD = String.raw`// tmp_motor_koll.ts — GENERERAD av verktyg/validera-motorer.mjs. Raderas efter körning.
 // 100%-väktaren: varje deterministisk motor har minst ett deterministiskt test. SKIP är förbjudet.
 
+import { createHash } from "crypto";
+
 // ── 0) localStorage-shim — körs FÖR modulimporterna (klientmotorernas kontrakt) ──
 const LS_DATA = new Map<string, string>();
 (globalThis as any).localStorage = {
@@ -136,8 +138,13 @@ const KLASSER_JSON = ["impulsvag", "korrigering", "basbygge", "osatt"];
 let VFM: any, ANA: any, NET: any, KON: any, PVA: any, NLU: any, OMT: any, KUR: any, DAS: any;
 let VKN: any, SRP: any, VPL: any, BRE: any, BDG: any, ABK: any, AST: any, KAR: any, RSK: any;
 let FVG: any, UPP: any, VVAL: any;
+// ENS (våg 59 bygg-1): akm3/ensemble.ts — likaviktat medel av tre profiler.
+let ENS: any;
 // AK2 (våg 57 D2): akm2-koppling.ts — portföljforskningens bro till AKM2-kärnan.
 let AK2: any;
+// VÅG 59 (AKM3 steg 3+4): osakerhet.ts (deterministiskt intervall ur poäng×täckning)
+// + peer.ts (branschjämförelse på rank/median-basis — läslager, aldrig poäng).
+let OSK: any, PER: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
 // LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
@@ -2051,9 +2058,10 @@ async function fasD(): Promise<void> {
     if (hitta("AAA.ST", "lang").dom !== "osatt") problem.push("osatt klass → skulle vara osatt");
     if (hitta("AAA.ST", "mega").klassForrigeRond !== "osatt" || hitta("AAA.ST", "mega").dom !== "osatt") problem.push("okänd klass-sträng saneras ej till osatt");
     if (hitta("BBB.ST", "mikro").dom !== "osatt") problem.push("ticker utan momentum → skulle vara osatt");
-    // invariant: varje dom är återskapbar ur sina EGNA fält (spårbarhet)
+    // invariant: varje dom är återskapbar ur sina EGNA fält (spårbarhet).
+    // VÅG 59: v2 dömer med horisonttröskel — återskapning SKER med horisonten.
     for (const d of domar) {
-      if (VVAL.domVagvalidering(d.klassForrigeRond, d.utfallMomentum) !== d.dom) { problem.push("dom ej återskapbar: " + JSON.stringify(d)); break; }
+      if (VVAL.domVagvalidering(d.klassForrigeRond, d.utfallMomentum, d.horisont) !== d.dom) { problem.push("dom ej återskapbar: " + JSON.stringify(d)); break; }
     }
     rad(
       "vagvalidering",
@@ -2116,6 +2124,534 @@ async function fasD(): Promise<void> {
         ? "räknare per (horisont,klass): träff 1+miss 1 → 50 % (n=2); osatt-klass hamnar i eget fack (osatt-andel 100 %, aldrig fel); okänd horisont avvisas; rullaFram är PURE (r1 orörd); träff-%-rapporten innehåller rubrik, protokollversion vagvalidering/1, tabellcell '50 % (n=2)', protokolltext och osatta — byte-identisk 2×"
         : problem.slice(0, 6).join("; "),
       "rond1=1/1 rond2=2/2 traff=50%",
+    );
+  }
+
+  // ── vagvalidering: DOM-PROTOKOLL v2 (våg 59 bygg-1) — horisontskalat band ──
+  {
+    const problem: string[] = [];
+    const D = VVAL.domVagvalidering;
+    // v2 (AKM3-BESLUT §7): basbygge-band per horisont, gränserna INKLUSIVA
+    if (D("basbygge", 6, "mikro") !== "traff") problem.push("mikro +6 exakt på tröskeln");
+    if (D("basbygge", -6, "kort") !== "traff") problem.push("kort −6 exakt på tröskeln");
+    if (D("basbygge", 6.1, "mikro") !== "miss") problem.push("mikro +6,1");
+    if (D("basbygge", -6.1, "kort") !== "miss") problem.push("kort −6,1");
+    if (D("basbygge", 10, "medellang") !== "traff") problem.push("medellång +10 (v1 gav miss — rond-1-fyndet fixat)");
+    if (D("basbygge", 15, "medellang") !== "traff") problem.push("medellång +15 gränsen inklusiv");
+    if (D("basbygge", 15.1, "medellang") !== "miss") problem.push("medellång +15,1");
+    if (D("basbygge", 24.9, "lang") !== "traff") problem.push("lång +24,9");
+    if (D("basbygge", 25, "mega") !== "traff") problem.push("mega +25 gränsen inklusiv");
+    if (D("basbygge", 25.1, "lang") !== "miss") problem.push("lång +25,1");
+    if (D("basbygge", 30, "mega") !== "miss") problem.push("mega +30");
+    // teckenreglerna OFÖRÄNDRADE i v2 (EN ändring per protokollversion, FORBUD §10.6)
+    if (D("impulsvåg", 0.4, "medellang") !== "traff") problem.push("impulsvåg svagt positiv (v1-regel kvar)");
+    if (D("impulsvåg", -0.4, "mega") !== "miss") problem.push("impulsvåg svagt negativ");
+    if (D("korrigering", -0.4, "lang") !== "traff") problem.push("korrigering svagt negativ");
+    if (D("korrigering", 3, "medellang") !== "miss") problem.push("korrigering +3");
+    if (D("impulsvåg", 0, "kort") !== "osatt") problem.push("exakt noll dömer ej");
+    // v1-kompatibilitet: UTAN horisont gäller ±6 (gamla v1-rader återskapbara)
+    if (D("basbygge", 10) !== "miss") problem.push("2-arg (v1-default): +10 → miss");
+    if (D("basbygge", 6) !== "traff") problem.push("2-arg: +6 → träff");
+    if (D("basbygge", 10, "spök") !== "miss") problem.push("okänd horisont → v1-default");
+    // protokollkonstanterna är beslutade, daterade och motiverade (BESLUT §7)
+    if (VVAL.VAGVALIDERING_PROTOKOLL_VERSION !== 2) problem.push("protokollversion != 2");
+    if (VVAL.TROSKEL_PROCENT_PER_HORIZONT.mikro !== 6 || VVAL.TROSKEL_PROCENT_PER_HORIZONT.kort !== 6) problem.push("mikro/kort != 6");
+    if (VVAL.TROSKEL_PROCENT_PER_HORIZONT.medellang !== 15) problem.push("medellång != 15");
+    if (VVAL.TROSKEL_PROCENT_PER_HORIZONT.lang !== 25 || VVAL.TROSKEL_PROCENT_PER_HORIZONT.mega !== 25) problem.push("lang/mega != 25");
+    if (VVAL.TROSKEL_V2_BESLUTAD !== "2026-09-04") problem.push("v2-datum");
+    if (String(VVAL.TROSKEL_V2_ORSAK).indexOf("basbygge") < 0 || String(VVAL.TROSKEL_V2_ORSAK).indexOf("nollst") < 0) {
+      problem.push("orsak ej deklarerad (räknare nollställs + fyndet redovisat)");
+    }
+    rad(
+      "vagvalidering",
+      "DOM-PROTOKOLL v2: horisontskalat basbygge-band + v1-teckenreglar + v1-kompatibilitet",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "basbygge döms med tröskel per horisont (mikro/kort 6 · medellång 15 · lång/mega 25, inklusiva gränser) — medellång +10 är nu träff där v1 dömde miss (rond-1-fyndet: momentum skalar med horisonten); impulsvåg/korrigering behåller v1:s teckenregel (en ändring per protokollversion, FORBUD §10.6); utan horisont-argument gäller fortfarande ±6 så v1-rader i loggen förblir återskapbara; TROSKEL_V2_ORSAK deklarerar fyndet och nollställningen"
+        : problem.slice(0, 6).join("; "),
+      "medellång 10→träff · gränser 6/15/25 inklusiva",
+    );
+  }
+
+  // ── vagvalidering BANA B (våg 59 bygg-1): per-variabel-dom + episodkedja ────
+  {
+    const problem: string[] = [];
+    const klasser: any = {
+      "AAA.ST": { V01: { mikro: "impulsvåg", kort: "korrigering", medellang: "basbygge", lang: "osatt", mega: "spök" } },
+      "BBB.ST": { V09: { mikro: "basbygge" } },
+    };
+    const momenter: any = {
+      "AAA.ST": { V01: { mikro: 3.1, kort: -2, medellang: 10, lang: null, mega: -30 }, V07: { mikro: 1 } },
+      "BBB.ST": {},
+    };
+    const rader = VVAL.byggaVariabelDomar(["AAA.ST", "BBB.ST"], klasser, momenter, [], "2026-09-03", "2026-09-04");
+    // antal: variabel-UNIONEN (AAA: V01+V07, BBB: V09) × 5 horisonter = 15
+    if (rader.length !== 15) problem.push("antal=" + String(rader.length) + " (väntat 15)");
+    const hitta = (t: string, v: string, h: string) => rader.find((r: any) => r.ticker === t && r.variabel === v && r.horisont === h);
+    if (!hitta("AAA.ST", "V01", "mikro") || hitta("AAA.ST", "V01", "mikro").traff !== true) problem.push("impulsvåg +3,1 → träff");
+    if (hitta("AAA.ST", "V01", "kort").traff !== true) problem.push("korrigering −2 → träff");
+    if (hitta("AAA.ST", "V01", "medellang").traff !== true) problem.push("basbygge +10 medellång → träff under v2 (±15)");
+    if (hitta("AAA.ST", "V01", "lang").traff !== false) problem.push("osatt klass → osatt (traff=false)");
+    if (hitta("AAA.ST", "V01", "mega").klass !== "osatt" || hitta("AAA.ST", "V01", "mega").traff !== false) problem.push("okänd klass saneras ej");
+    if (!hitta("AAA.ST", "V07", "mikro")) problem.push("variabel bara i momenter saknar rad (union)");
+    else if (hitta("AAA.ST", "V07", "mikro").klass !== "osatt") problem.push("klass-lös variabel ska vara osatt");
+    if (rader.some((r: any) => r.domat_datum !== "2026-09-03" || r.traff_datum !== "2026-09-04")) problem.push("domat/traff-datum");
+    if (rader.some((r: any) => r.protokoll_version !== 2)) problem.push("protokoll_version != 2");
+    if (rader.some((r: any) => typeof r.episod_id !== "string" || r.episod_id === "")) problem.push("episod_id-form");
+    // determinism 2×
+    const rader2 = VVAL.byggaVariabelDomar(["AAA.ST", "BBB.ST"], klasser, momenter, [], "2026-09-03", "2026-09-04");
+    if (JSON.stringify(rader) !== JSON.stringify(rader2)) problem.push("ej deterministisk");
+
+    // EPISODKEDJA: oförändrad klass ÄRVER, klassbyte startar ny, osatt avgränsar
+    const runda2 = VVAL.byggaVariabelDomar(["AAA.ST"], klasser, momenter, rader, "2026-09-04", "2026-09-05");
+    const idR1 = hitta("AAA.ST", "V01", "mikro").episod_id;
+    const idR2 = runda2.find((r: any) => r.variabel === "V01" && r.horisont === "mikro").episod_id;
+    if (idR1 !== idR2) problem.push("oförändrad klass skulle ärva episod_id");
+    const klasserByte: any = { "AAA.ST": { V01: { mikro: "korrigering" } } };
+    const runda3 = VVAL.byggaVariabelDomar(["AAA.ST"], klasserByte, momenter, runda2, "2026-09-05", "2026-09-06");
+    const idR3 = runda3.find((r: any) => r.variabel === "V01" && r.horisont === "mikro").episod_id;
+    if (idR3 === idR2) problem.push("klassbyte startar ej ny episod");
+    if (idR3.indexOf("2026-09-06") < 0) problem.push("ny episod-id bär startdatum");
+    const klasserOsatt: any = { "AAA.ST": { V01: { mikro: "osatt" } } };
+    const runda4 = VVAL.byggaVariabelDomar(["AAA.ST"], klasserOsatt, momenter, runda3, "2026-09-06", "2026-09-07");
+    const idR4 = runda4.find((r: any) => r.variabel === "V01" && r.horisont === "mikro").episod_id;
+    if (idR4 === idR3) problem.push("osatt avgränsar ej (SKA ny episod)");
+    const runda5 = VVAL.byggaVariabelDomar(["AAA.ST"], klasserOsatt, momenter, runda4, "2026-09-07", "2026-09-08");
+    const idR5 = runda5.find((r: any) => r.variabel === "V01" && r.horisont === "mikro").episod_id;
+    if (idR5 !== idR4) problem.push("osatt-osatt SKA ärva samma episod");
+
+    // episodräknare-valideringen (acceptans §11.2.iv): n_episoder ≤ n_dagar
+    const sekvens = ["impulsvåg", "impulsvåg", "basbygge", "basbygge", "osatt", "osatt", "impulsvåg"];
+    const dagar = ["2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08"];
+    let historik: any[] = [];
+    for (let i = 0; i < sekvens.length; i++) {
+      const r = VVAL.byggaVariabelDomar(
+        ["AAA.ST"],
+        { "AAA.ST": { V01: { mikro: sekvens[i] } } },
+        { "AAA.ST": { V01: { mikro: 1.0 } } },
+        historik,
+        dagar[i],
+        dagar[i + 1],
+      );
+      historik = historik.concat(r);
+    }
+    const nEpisoder = VVAL.raknaEpisoder(historik, { ticker: "AAA.ST", variabel: "V01", horisont: "mikro" });
+    if (nEpisoder !== 4) problem.push("episoder=" + String(nEpisoder) + " (väntat 4: A·A | B·B | osatt·osatt | A)");
+    if (nEpisoder > sekvens.length) problem.push("INVARIANT bruten: n_episoder > n_dagar");
+
+    // per-variabel-räknare (STYRELSE §3.2 fas 2: traffPerVariabel)
+    const rakn = VVAL.raknaVariabelRaknare(rader);
+    if (JSON.stringify(rakn.V01) !== JSON.stringify({ traff: 3, miss: 0, osatt: 2 })) problem.push("V01-räknare: " + JSON.stringify(rakn.V01));
+    if (JSON.stringify(rakn.V07) !== JSON.stringify({ traff: 0, miss: 0, osatt: 5 })) problem.push("V07-räknare");
+    if (JSON.stringify(rakn.V09) !== JSON.stringify({ traff: 0, miss: 0, osatt: 5 })) problem.push("V09-räknare");
+
+    // kvartalsnyckel + snapshot-rader (vagklass_snapshot, dedupe-underlag)
+    if (VVAL.kvartalsNyckel("2026-09-04") !== "2026Q3") problem.push("kvartal sep");
+    if (VVAL.kvartalsNyckel("2026-01-01") !== "2026Q1" || VVAL.kvartalsNyckel("2026-05-15") !== "2026Q2") problem.push("kvartal q1/q2");
+    if (VVAL.kvartalsNyckel("2026-12-31") !== "2026Q4") problem.push("kvartal q4");
+    if (VVAL.kvartalsNyckel("ogiltigt") !== "" || VVAL.kvartalsNyckel("2026-13-01") !== "") problem.push("ogiltigt datum ska ge tom nyckel");
+    const scanFixture = [
+      { ticker: "AAA.ST", indikatorer: { V01: { vager: { mikro: "impulsvåg" } }, V07: { vager: { kort: "spök" } } } },
+      { ticker: "ZZZ.ST", fel: "nätfel", indikatorer: { V01: { vager: { mikro: "impulsvåg" } } } },
+    ];
+    const snap = VVAL.byggVagklassSnapshotRader(scanFixture, "2026-09-04");
+    if (snap.length !== 10) problem.push("snapshot-antal=" + String(snap.length) + " (väntat 10: AAA V01+V07 × 5, fel-ticker exkluderad)");
+    if (snap.some((r: any) => r.ticker === "ZZZ.ST")) problem.push("fel-ticker ska exkluderas");
+    const hzSeq = snap.filter((r: any) => r.ticker === "AAA.ST" && r.variabel === "V01").map((r: any) => r.horisont);
+    if (JSON.stringify(hzSeq) !== JSON.stringify(["mikro", "kort", "medellang", "lang", "mega"])) problem.push("horisontordning");
+    const s7 = snap.find((r: any) => r.variabel === "V07" && r.horisont === "kort");
+    if (s7.klass !== "osatt") problem.push("ogiltig klass i snapshot saneras ej");
+    if (snap.some((r: any) => r.snapshot_datum !== "2026-09-04" || r.protokoll_version !== 2)) problem.push("snapshot-stämplar");
+    rad(
+      "vagvalidering",
+      "BANA B: per-variabel-dom (vagvalidering_dom) + episodkedja + kvartalssnapshot",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "rader per (ticker×variabel×horisont) i STYRELSE §3.2:s schema exakt: v2-tröskeln verkar per horisont (basbygge +10 medellång → träff), klass-lösa variabler blir osatta (aldrig dömda), domat/traff-datum + protokoll_version 2 på varje rad; episod_id ärvs vid oförändrad klass, klassbyte OCH osatt startar ny episod (osatt-osatt ärver); sekvens A·A·B·B·osatt·osatt·A ⇒ 4 episoder ≤ 7 dagar (dagar räknas aldrig som observationer); variabelräknare V01=3 träff/2 osatta; kvartalsnyckel 2026-09-04→2026Q3 och snapshot-rader exkluderar fel-tickers, sanerar klasser, kanonisk ordning"
+        : problem.slice(0, 6).join("; "),
+      "15 rader · 4 episoder på 7 dagar · Q3-nyckel",
+    );
+  }
+
+  // ── akm3-ensemble (våg 59 bygg-1): kontrakt, determinism, låst α ────────────
+  {
+    const problem: string[] = [];
+    const e1 = ENS.raknaEnsemble(HEL_FIX);
+    const e2 = ENS.raknaEnsemble(HEL_FIX);
+    if (JSON.stringify(e1) !== JSON.stringify(e2)) problem.push("ej deterministisk (2× JSON-identiskt krav)");
+    if (JSON.stringify(e1.perProfil.map((p: any) => p.profil)) !== JSON.stringify(["akm1-klassisk", "akm2-2026", "superanalys-2026"])) {
+      problem.push("medlemmarna är ej exakt de tre kanoniska profilerna");
+    }
+    const K = e1.perProfil.map((p: any) => p.komposit);
+    const vantaTotal = Math.round((K[0] + K[1] + K[2]) / 3);
+    if (e1.total !== vantaTotal) problem.push("total=" + String(e1.total) + " väntat round((K1+K2+K3)/3)=" + String(vantaTotal));
+    const minK = Math.min(K[0], K[1], K[2]);
+    const maxK = Math.max(K[0], K[1], K[2]);
+    if (e1.band.min !== minK || e1.band.max !== maxK) problem.push("band [min,max]");
+    if (e1.band.median !== K[0] + K[1] + K[2] - minK - maxK) problem.push("median = mittenvärdet");
+    if (e1.spridning !== maxK - minK) problem.push("spridning = max − min");
+    if (e1.enighet !== ENS.enighetFranSpridning(e1.spridning)) problem.push("enighet följer ej trappan");
+    if (e1.modellVersion !== "AKM3.2026.09") problem.push("modellVersion");
+    if (e1.datum !== HEL_FIX.hamtat) problem.push("datum ska härledas ur k.hamtat (aldrig klocka)");
+    // α = 1/3 LÅST: fältet dokumenterar, custom-α i opts påverkar INGET (finns ej)
+    if (e1.alfa["akm1-klassisk"] !== 1 / 3 || e1.alfa["akm2-2026"] !== 1 / 3 || e1.alfa["superanalys-2026"] !== 1 / 3) problem.push("alfa != 1/3");
+    if (Math.abs(Object.values(e1.alfa).reduce((s: number, x: number) => s + x, 0) - 1) > 1e-12) problem.push("alfa summa != 1");
+    const eFusk = ENS.raknaEnsemble(HEL_FIX, { alfa: { "akm2-2026": 0.9 } });
+    if (JSON.stringify(eFusk) !== JSON.stringify(e1)) problem.push("custom-α påverkar utdata (SKA ignoreras — α=1/3 låst i 2026.09)");
+    // projektionsinvariant-kopplingen: akm1Totalt === raknaAKM1(k).totalt
+    if (e1.akm1Totalt !== KAR.raknaAKM1(HEL_FIX).totalt) problem.push("akm1Totalt != raknaAKM1 (projektionen)");
+    if (e1.akm2Komposit !== K[1]) problem.push("akm2Komposit != akm2-2026-medlemmens komposit");
+    if (e1.diagnostik.omfordelningseffekt !== K[1] - K[0] || e1.diagnostik.kategoriMotVariabel !== K[2] - K[1]) problem.push("diagnostik-differenser");
+    rad(
+      "akm3-ensemble",
+      "KONTRAKT: α=1/3 låst, total=round(Σ α·K), band/median/spridning, determinism",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "raknaEnsemble(HEL_FIX) 2× JSON-identisk; perProfil = exakt de tre kanoniska profilerna i fast ordning; total = round((K1+K2+K3)/3); band [min,max] + median (mittenvärdet) + spridning max−min ⇒ enighet enligt trappan 0–3/4–7/≥8; alfa-fältet 1/3 × 3 (summa 1) och custom-α i opts påverkar INGET (parametern finns ej — LÅST); akm1Totalt === raknaAKM1(k).totalt (projektionen orörd); akm2Komposit bär jämförelsespåret; datum ur k.hamtat"
+        : problem.slice(0, 6).join("; "),
+      "K=[" + String(K[0]) + "," + String(K[1]) + "," + String(K[2]) + "] total=" + String(e1.total),
+    );
+  }
+
+  // ── akm3-ensemble: tre identiska profiler ⇒ total = profilens komposit ─────
+  {
+    const problem: string[] = [];
+    const e = ENS.raknaEnsemble(NUL_FIX);
+    const K = e.perProfil.map((p: any) => p.komposit);
+    if (!(K[0] === K[1] && K[1] === K[2])) problem.push("NUL_FIX (allt osatt) gav ej identiska kompositer: " + JSON.stringify(K));
+    if (e.total !== K[0]) problem.push("identiska profiler ⇒ total=" + String(e.total) + " men K=" + String(K[0]));
+    if (e.spridning !== 0) problem.push("spridning != 0 vid identiska");
+    if (e.enighet !== "enig") problem.push("enighet != enig vid spridning 0");
+    // hård port följer DATA per profil (BESLUT §4) — NEG_FIX: kassa 10 mån
+    const en = ENS.raknaEnsemble(NEG_FIX);
+    if (!en.perProfil.every((p: any) => p.portAktiv === true)) problem.push("hård port syns ej per profil (följer DATA)");
+    if (!en.perProfil.every((p: any) => p.komposit <= 45)) problem.push("port-tak 45 bruten i någon profil");
+    rad(
+      "akm3-ensemble",
+      "GRÄNSFALL: identiska profiler ⇒ total = K · spridning 0 = ENIG · port per profil",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "NUL_FIX (inget underlag): alla tre profilerna degraderar till komposit 0 ⇒ total 0 = profilens komposit (acceptans §11.1.i), spridning 0 ⇒ 'enig'; NEG_FIX (kassatäckning 10 mån): hård port slår igenom i ALLA tre profilernas körningar (porten följer DATA, inte profilen) och varje K_p ≤ 45 — osatta andelar ärvs per profil och visas"
+        : problem.slice(0, 6).join("; "),
+      "NUL total=0 · NEG port i 3/3",
+    );
+  }
+
+  // ── akm3-ensemble: enighetstrappan 0–3 / 4–7 / ≥8 (ren funktion) ───────────
+  {
+    const problem: string[] = [];
+    for (const s of [0, 1, 2, 3]) {
+      if (ENS.enighetFranSpridning(s) !== "enig") problem.push("spridning " + String(s) + " ska vara enig");
+    }
+    for (const s of [4, 5, 6, 7]) {
+      if (ENS.enighetFranSpridning(s) !== "delad") problem.push("spridning " + String(s) + " ska vara delad");
+    }
+    for (const s of [8, 9, 20, 100]) {
+      if (ENS.enighetFranSpridning(s) !== "profilspanning") problem.push("spridning " + String(s) + " ska vara profilspanning");
+    }
+    if (ENS.enighetFranSpridning(Number.NaN) !== "delad") problem.push("NaN → mittfacket (inget omdöme)");
+    rad(
+      "akm3-ensemble",
+      "ENIGHETSTRAPPAN: 0–3 enig · 4–7 delad · ≥8 profilspanning",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "r5 §3.2 exakt: spridning 0/1/2/3 ⇒ 'enig', 4/5/6/7 ⇒ 'delad', 8/9/20/100 ⇒ 'profilspanning'; ogiltigt tal ⇒ mittfacket 'delad' (etiketten gissar aldrig men vägrar krascha)"
+        : problem.slice(0, 6).join("; "),
+      "3 + 4 + 4 gränsvärden",
+    );
+  }
+
+  // ── akm3-prediktionsloggen: radbygge + hash-kedja (append-only, tamper) ────
+  {
+    const problem: string[] = [];
+    const e = ENS.raknaEnsemble(HEL_FIX);
+    const r0 = UPP.byggAkm3Prediktionsrad(e, 123.5, "2026-09-04");
+    if (r0.spar !== "akm3-ensemble") problem.push("spar-typnamn");
+    if (r0.modellVersion !== "AKM3.2026.09") problem.push("versionsstämpel");
+    if (r0.datum !== "2026-09-04") problem.push("datum_override (mätningens datum)");
+    if (r0.ensembleTotal !== e.total || r0.akm2Komposit !== e.akm2Komposit || r0.akm1Totalt !== e.akm1Totalt) problem.push("jämförelsespåren (ensemble vs akm2 + akm1)");
+    if (r0.bandMin !== e.band.min || r0.bandMedian !== e.band.median || r0.bandMax !== e.band.max) problem.push("band-fält");
+    if (r0.pris !== 123.5) problem.push("pris");
+    const utan = UPP.byggAkm3Prediktionsrad(e, null);
+    if (utan.pris !== null) problem.push("pris saknas ska ge null (aldrig 0)");
+    if (utan.datum !== e.datum) problem.push("datum default = ensemble.datum (k.hamtat)");
+    const sha = (t: string) => createHash("sha256").update(t, "utf8").digest("hex");
+    const r1 = UPP.stemplaPrediktionsrad(r0, UPP.PREDIKTIONSLOGG_GENESIS, sha);
+    const r2 = UPP.stemplaPrediktionsrad(UPP.byggAkm3Prediktionsrad(e, 99, "2026-10-01"), String(r1.hash), sha);
+    const r3 = UPP.stemplaPrediktionsrad(UPP.byggAkm3Prediktionsrad(e, 101, "2026-11-01"), String(r2.hash), sha);
+    if (!UPP.verifieraPrediktionskedja([r1, r2, r3], sha)) problem.push("äkta kedja verifierar ej");
+    const r1b = UPP.stemplaPrediktionsrad(r0, UPP.PREDIKTIONSLOGG_GENESIS, sha);
+    if (r1.hash !== r1b.hash) problem.push("hashen ej deterministisk (samma rad + prev)");
+    const fusk = { ...r2, ensembleTotal: 99 };
+    if (UPP.verifieraPrediktionskedja([r1, fusk, r3], sha)) problem.push("manipulerad rad (ändrat värde, behållen hash) accepterades");
+    const r2annan = UPP.stemplaPrediktionsrad(UPP.byggAkm3Prediktionsrad(e, 987, "2026-10-02"), String(r1.hash), sha);
+    if (UPP.verifieraPrediktionskedja([r1, r2annan, r3], sha)) problem.push("bruten länk (r3 pekar på gammal hash) accepterades");
+    if (!UPP.verifieraPrediktionskedja([], sha)) problem.push("tom kedja ska vara giltig");
+    if (UPP.verifieraPrediktionskedja(null, sha)) problem.push("null-kedja ska vara ogiltig");
+    rad(
+      "akm3-prediktionslogg",
+      "RADBYGGE (spår akm3-ensemble, AKM3.2026.09) + HASH-KEDJA tamper-vakt",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "byggAkm3Prediktionsrad: spår 'akm3-ensemble', versionsstämpel AKM3.2026.09, ensemble sida vid sida med akm2Komposit + akm1Totalt, band + enighet, pris null när det saknas (aldrig påhittat); datum styrs av mätningstillfället (default k.hamtat); hash-kedjan sha256(prev + '\\n' + kanonisk rad-utan-hash) verifierar för äkta kedja, är deterministisk 2×, och avslöjar BÅDE värdemanipulation med behållen hash och brutna länkar (r3:s prev pekar fel); tom kedja giltig, null ogiltig — append-only-kontraktet vaktas av rent lib + injicerad sha256 (klientsäkert)"
+        : problem.slice(0, 6).join("; "),
+      "3 rador + 2 fuskgill",
+    );
+  }
+
+  // ── akm3/osakerhet (VÅG 59, AKM3 steg 3): GOLDEN intervallformel + porttak ──
+  {
+    const problem: string[] = [];
+    const nara = (fanns: number, vantat: number): boolean => Math.abs(fanns - vantat) <= 1e-9;
+    // INDU-C (r4 §2 worked example): K=58,1 t=0,67 ⇒ [58,1 ; 91,1], ±16,5
+    const g1 = OSK.raknaIntervall(58.1, 0.67, false);
+    if (!g1) problem.push("INDU-C: null");
+    else {
+      if (!nara(g1.nedre, 58.1)) problem.push("INDU-C nedre=" + String(g1.nedre));
+      if (!nara(g1.ovre, 91.1)) problem.push("INDU-C ovre=" + String(g1.ovre) + " (väntat 58,1+100·(1−0,67)=91,1)");
+      if (!nara(g1.halvbredd, 16.5)) problem.push("INDU-C halvbredd=" + String(g1.halvbredd) + " (formeln ger ±16,5 — inte direktivets illustrativa ±12)");
+      if (g1.portTakad) problem.push("INDU-C portTakad utan aktiv port");
+      if (!nara(g1.tackning, 0.67)) problem.push("INDU-C konfidens != t");
+    }
+    // PSNY: K=6,6 t=0,412 ⇒ övre 65,4
+    const g2 = OSK.raknaIntervall(6.6, 0.412, false);
+    if (!g2 || !nara(g2.ovre, 65.4)) problem.push("PSNY ovre=" + String(g2 && g2.ovre) + " (väntat 6,6+58,8=65,4)");
+    // VPLAY: K=18,6 t=0,67, HÅRD PORT ⇒ naiv övre 52 men takas till 45
+    const g3 = OSK.raknaIntervall(18.6, 0.67, true);
+    if (!g3) problem.push("VPLAY: null");
+    else {
+      if (!nara(g3.ovre, 45)) problem.push("VPLAY ovre=" + String(g3.ovre) + " (porttak 45 genomslaget)");
+      if (!g3.portTakad) problem.push("VPLAY portTakad=false trots kapning 52→45");
+      if (!nara(g3.nedre, 18.6)) problem.push("VPLAY nedre=" + String(g3.nedre));
+    }
+    // t=1 ⇒ spannet kollapsar [K,K]
+    const g4 = OSK.raknaIntervall(72, 1, false);
+    if (!g4 || !nara(g4.nedre, 72) || !nara(g4.ovre, 72) || !nara(g4.halvbredd, 0)) {
+      problem.push("t=1: " + JSON.stringify(g4) + " (väntat [72;72], ±0)");
+    }
+    // tak 100: K=80 t=0,5 ⇒ övre min(100,130)=100
+    const g5 = OSK.raknaIntervall(80, 0.5, false);
+    if (!g5 || !nara(g5.ovre, 100)) problem.push("tak100: ovre=" + String(g5 && g5.ovre));
+    // port som inte biter: naiv övre exakt 45 ⇒ portTakad=false (min(45,45)=45)
+    const g6 = OSK.raknaIntervall(20, 0.75, true);
+    if (!g6 || g6.portTakad || !nara(g6.ovre, 45)) problem.push("port-gränsfall: " + JSON.stringify(g6));
+    // strängare fullviktsrad [K·t, K·t+100(1−t)]: 58,1·0,67=38,927 … 71,927
+    const fw = OSK.raknaFullviktsIntervall(58.1, 0.67);
+    if (!fw || !nara(fw.nedre, 38.927) || !nara(fw.ovre, 71.927)) {
+      problem.push("fullviktsrad: " + JSON.stringify(fw) + " (väntat [38,927; 71,927])");
+    }
+    // visningsformat: spannet + ± (svenska komma, inga lokaler)
+    if (OSK.intervallText(g1) !== "58 [58–91] (täckning 67 %)") problem.push("intervallText=" + String(OSK.intervallText(g1)));
+    if (OSK.intervallPlusText(g1) !== "58 ± 16,5 (täckning 67 %)") problem.push("intervallPlusText=" + String(OSK.intervallPlusText(g1)));
+    if (OSK.spannText(g4) !== "[72–72]") problem.push("spannText(t=1)=" + String(OSK.spannText(g4)));
+    rad(
+      "akm3/osakerhet",
+      "GOLDEN intervallformel [K, min(100,K+100(1−t))] + porttak 45 + fullviktsrad",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "INDU-C 58,1/67 % ⇒ [58–91] ±16,5 · PSNY 6,6/41,2 % ⇒ övre 65,4 · VPLAY 18,6 med hård port ⇒ övre takad 52→45 (portTakad) · t=1 ⇒ [K,K] ±0 · K=80 t=0,5 ⇒ övre 100 · fullviktsrad [K·t, K·t+100(1−t)] = [38,927; 71,927] · format '58 [58–91] (täckning 67 %)' och '± 16,5' exakta"
+        : problem.slice(0, 6).join("; "),
+      "INDU-C=[58,1;91,1] VPLAY ovre=45 PSNY ovre=65,4",
+    );
+  }
+  // ── akm3/osakerhet: determinism + osatt-gränser (null in ⇒ null ut) ────────
+  {
+    const problem: string[] = [];
+    const indata: Array<[number | null, number | null, boolean]> = [
+      [58.1, 0.67, false], [6.6, 0.412, false], [18.6, 0.67, true],
+      [72, 1, false], [0, 0, false], [45, 0.5, true], [null, 0.5, false], [50, null, false],
+    ];
+    const a = JSON.stringify(indata.map((x) => OSK.raknaIntervall(x[0], x[1], x[2])));
+    const b = JSON.stringify(indata.map((x) => OSK.raknaIntervall(x[0], x[1], x[2])));
+    if (a !== b) problem.push("ej deterministisk (2 körningar skiljer)");
+    if (OSK.raknaIntervall(null, 0.67, false) !== null) problem.push("K=null ⇒ ej null (osatt=osatt brutet)");
+    if (OSK.raknaIntervall(58.1, null, false) !== null) problem.push("t=null ⇒ ej null");
+    if (OSK.raknaIntervall(undefined, undefined, true) !== null) problem.push("undefined ⇒ ej null");
+    if (OSK.raknaIntervall(Number.NaN, 0.5, false) !== null) problem.push("NaN ⇒ ej null");
+    const fwX = OSK.raknaFullviktsIntervall(null, 0.5);
+    if (fwX !== null) problem.push("fullviktsrad null-in ⇒ ej null");
+    rad(
+      "akm3/osakerhet",
+      "DETERMINISM 2× + gränser (K/t saknad ⇒ null, aldrig gissning)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "8 indatakombinationer (inkl. port, t=1, K=0) körda 2× — byte-identisk JSON; K/t null/undefined/NaN ⇒ null (P3: osatt är standardutdata); fullviktsraden likaså"
+        : problem.slice(0, 6).join("; "),
+      "indata=8 langd=" + String(a.length),
+    );
+  }
+
+  // ── peer (VÅG 59, AKM3 steg 4): midrank med delade + median (jämnt/udda) ──
+  function peerRad(ticker: string, bransch: string, akm2: number | null): any {
+    return { ...korstadRad(ticker, bransch, 50, "gron", "2026-09-03"), akm2: akm2 };
+  }
+  {
+    const problem: string[] = [];
+    // 5 bolag (grupp=5 ⇒ satt) med DELADE akm2-värden: 30, 33, 33, 55, 80
+    const rader = [
+      peerRad("P-A.ST", "finans", 30), peerRad("P-B.ST", "finans", 33),
+      peerRad("P-C.ST", "finans", 33), peerRad("P-D.ST", "finans", 55),
+      peerRad("P-E.ST", "finans", 80),
+    ];
+    const m = PER.raknaPeer(rader, { referensDatum: "2026-09-03" });
+    const b = m.get("P-B.ST"), c = m.get("P-C.ST"), d = m.get("P-D.ST"), e = m.get("P-E.ST");
+    if (!b || !c || !d || !e) problem.push("peer-saknas: " + JSON.stringify([...m.keys()]));
+    else {
+      // B och C delar 33: sämre=1 (A), lika=1 (varandra) ⇒ 100·(1+0,5)/4 = 37,5 — midrank
+      if (b.peerPercentil !== 37.5) problem.push("B percentil=" + String(b.peerPercentil) + " (väntat 37,5)");
+      if (c.peerPercentil !== 37.5) problem.push("C percentil=" + String(c.peerPercentil) + " (väntat 37,5 — delade värden)");
+      if (b.rank !== 3 || c.rank !== 3) problem.push("delad rank: B=" + String(b.rank) + " C=" + String(c.rank) + " (väntat 3/3 — namnbrytning ALDRIG)");
+      if (b.peerDrag !== 0) problem.push("B drag=" + String(b.peerDrag) + " (33 − median 33)");
+      if (d.peerPercentil !== 75 || d.rank !== 2) problem.push("D: " + JSON.stringify({ p: d.peerPercentil, r: d.rank }) + " (väntat 75, rank 2)");
+      if (e.peerPercentil !== 100 || e.rank !== 1) problem.push("E: " + JSON.stringify({ p: e.peerPercentil, r: e.rank }));
+      if (d.peerDrag !== 22) problem.push("D drag=" + String(d.peerDrag) + " (55 − 33, udda median)");
+    }
+    // 6 bolag ⇒ jämn median = medel av de två mittersta: [41,43,45,47,55,80] ⇒ 46
+    const rader2 = [
+      peerRad("Q-A.ST", "teknik", 41), peerRad("Q-B.ST", "teknik", 43),
+      peerRad("Q-C.ST", "teknik", 45), peerRad("Q-D.ST", "teknik", 47),
+      peerRad("Q-E.ST", "teknik", 55), peerRad("Q-F.ST", "teknik", 80),
+    ];
+    const m2 = PER.raknaPeer(rader2, {});
+    const qe = m2.get("Q-E.ST"), qa = m2.get("Q-A.ST");
+    if (!qe || qe.branschMedian !== 46) problem.push("jämn median=" + String(qe && qe.branschMedian) + " (väntat (45+47)/2=46)");
+    if (!qe || qe.peerDrag !== 9) problem.push("Q-E drag=" + String(qe && qe.peerDrag) + " (55 − 46)");
+    if (!qa || qa.rank !== 6 || qa.peerPercentil !== 0) problem.push("Q-A (sämst): " + JSON.stringify(qa && { r: qa.rank, p: qa.peerPercentil }));
+    rad(
+      "peer",
+      "MIDRANK percentil + delade värden + rank utan namnbrytning + median",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "grupp 5 (30/33/33/55/80): delade 33:or ⇒ percentil 37,5 för BÅDA och rank 3/3 (midrank, ingen namnbrytning); D ⇒ 75/rank 2, E ⇒ 100/rank 1; drag mot udda median 33; grupp 6 ⇒ jämn median (45+47)/2=46 och drag 55−46=+9; sämsta bolaget rank 6/percentil 0"
+        : problem.slice(0, 6).join("; "),
+      "B=C: p37,5 rank 3 · median(6)=46",
+    );
+  }
+  // ── peer: osatt-regler — grupp 4, saknad akm2, variabel osatt hos bolaget ──
+  {
+    const problem: string[] = [];
+    // grupp på 4 (< 5) ⇒ samtliga osatta, ALDRIG gissning
+    const fyra = [
+      peerRad("R-A.ST", "material", 50), peerRad("R-B.ST", "material", 60),
+      peerRad("R-C.ST", "material", 70), peerRad("R-D.ST", "material", 80),
+    ];
+    const mFyra = PER.raknaPeer(fyra, {});
+    const ra = mFyra.get("R-A.ST");
+    if (!ra || ra.osatt !== true || ra.osattOrsak !== "liten-grupp") {
+      problem.push("grupp=4: " + JSON.stringify(ra && { o: ra.osatt, orsak: ra.osattOrsak }));
+    }
+    if (ra && ra.peerPercentil !== null) problem.push("grupp=4 ändå percentil=" + String(ra.peerPercentil));
+    // grupp 5 där E saknar akm2 ⇒ E osatt (saknad-akm2), de fyra andra satta över n=4
+    const fem = [
+      peerRad("S-A.ST", "energi", 30), peerRad("S-B.ST", "energi", 40),
+      peerRad("S-C.ST", "energi", 50), peerRad("S-D.ST", "energi", 60),
+      peerRad("S-E.ST", "energi", null),
+    ];
+    const mFem = PER.raknaPeer(fem, {});
+    const se = mFem.get("S-E.ST"), sa = mFem.get("S-A.ST");
+    if (!se || se.osatt !== true || se.osattOrsak !== "saknad-akm2") problem.push("E: " + JSON.stringify(se && { o: se.osatt, orsak: se.osattOrsak }));
+    if (!sa || sa.osatt !== false || sa.peerPercentil !== 0 || sa.rank !== 4) {
+      problem.push("A i grupp med null-komposit: " + JSON.stringify(sa && { o: sa.osatt, p: sa.peerPercentil, r: sa.rank }));
+    }
+    // variabel osatt hos bolaget (poang null) ⇒ hallning osatt; medianen över de icke-osatta
+    const poang = {
+      "S-A.ST": { V07: 5 }, "S-B.ST": { V07: 4 }, "S-C.ST": { V07: 3 },
+      "S-D.ST": { V07: 2 }, "S-E.ST": { V07: null },
+    };
+    const mPoang = PER.raknaPeer(fem, { poangPerBolag: poang });
+    const vA = mPoang.get("S-A.ST").variabler.find((v: any) => v.id === "V07");
+    const vE = mPoang.get("S-E.ST").variabler.find((v: any) => v.id === "V07");
+    if (!vA || vA.poang !== 5 || vA.hallning !== "over") problem.push("V07 A: " + JSON.stringify(vA) + " (median [2,3,4,5]=3,5; 5−3,5=1,5 ⇒ över)");
+    if (!vE || vE.poang !== null || vE.hallning !== "osatt") problem.push("V07 E: " + JSON.stringify(vE) + " (osatt hos bolaget ⇒ osatt)");
+    rad(
+      "peer",
+      "OSATT-REGLER (grupp 4 < 5 · saknad akm2 · variabel osatt hos bolaget)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "grupp på 4 ⇒ samtliga fält osatt med orsak 'liten-grupp' och percentil null; grupp 5 med en null-komposit ⇒ det bolaget osatt ('saknad-akm2') medan de jämförbara rankas över n=4; V07 med poäng null hos bolaget ⇒ hallning osatt och medianen räknad över gruppens icke-osatta ([2,3,4,5] ⇒ 3,5; 5−3,5 ⇒ ÖVER)"
+        : problem.slice(0, 6).join("; "),
+      "grupp4=osatt E=saknad-akm2 V07(E)=osatt",
+    );
+  }
+  // ── peer: per-variabel hållning (±0,5-trösklarna) + referens + struktur ────
+  {
+    const problem: string[] = [];
+    const rader = [
+      peerRad("T-A.ST", "halso", 50), peerRad("T-B.ST", "halso", 55),
+      peerRad("T-C.ST", "halso", 60), peerRad("T-D.ST", "halso", 65),
+      peerRad("T-E.ST", "halso", 70),
+    ];
+    const poang: Record<string, Record<string, number | null>> = {
+      "T-A.ST": { V01: 5, V07: 4 }, "T-B.ST": { V01: 4, V07: 4 },
+      "T-C.ST": { V01: 3, V07: 3 }, "T-D.ST": { V01: 2, V07: 2 },
+      "T-E.ST": { V01: 1, V07: null },
+    };
+    const m = PER.raknaPeer(rader, { referensDatum: "2026-09-03", poangPerBolag: poang });
+    const tA = m.get("T-A.ST");
+    if (!tA) problem.push("T-A saknas");
+    else {
+      if (tA.referens !== "2026-09-03 · 5-bolagsunivers") problem.push("referens=" + String(tA.referens) + " (skapad + universets storlek)");
+      if (tA.antalIGruppen !== 5) problem.push("antalIGruppen=" + String(tA.antalIGruppen));
+      if (!Array.isArray(tA.variabler) || tA.variabler.length !== 20) problem.push("variabler=" + String(tA.variabler.length) + " (väntat 20, V01–V20)");
+      else {
+        const v07 = tA.variabler.find((v: any) => v.id === "V07");
+        // V07-pool [4,4,3,2] ⇒ median 3,5; 4−3,5=+0,5 ⇒ |·|≤0,5 ⇒ I NIVÅ
+        if (!v07 || v07.branschmedian !== 3.5 || v07.hallning !== "iNiva") {
+          problem.push("V07 A: " + JSON.stringify(v07) + " (median 3,5, diff +0,5 ⇒ i nivå)");
+        }
+        const v01 = tA.variabler.find((v: any) => v.id === "V01");
+        // V01-pool [5,4,3,2,1] ⇒ median 3; 5−3=+2 ⇒ ÖVER
+        if (!v01 || v01.hallning !== "over") problem.push("V01 A: " + JSON.stringify(v01) + " (5 − median 3 ⇒ över)");
+      }
+      // räkningar: A har V01 över + V07 i nivå — övriga 18 variabler osatta (ej poäng)
+      if (tA.overMedian !== 1 || tA.iNiva !== 1 || tA.underMedian !== 0) {
+        problem.push("räkning A: " + JSON.stringify({ o: tA.overMedian, n: tA.iNiva, u: tA.underMedian }));
+      }
+      const tD = m.get("T-D.ST");
+      if (!tD || tD.underMedian !== 2) problem.push("räkning D: under=" + String(tD && tD.underMedian) + " (V01 2−3 och V07 2−3,5 ⇒ under)");
+    }
+    if (PER.peerRankText(tA) !== "5/5") problem.push("peerRankText(T-A)=" + String(PER.peerRankText(tA)) + " (väntat 5/5)");
+    if (PER.peerDragText(-3.5) !== "−3,5" || PER.peerDragText(14) !== "+14" || PER.peerDragText(0) !== "±0" || PER.peerDragText(null) !== "—") {
+      problem.push("peerDragText: " + String(PER.peerDragText(-3.5)) + "/" + String(PER.peerDragText(14)));
+    }
+    rad(
+      "peer",
+      "PER-VARIABEL hållning (±0,5) + referensfält + rank/drag-format",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "20 variabelrader i kanonisk ordning; V07-median [4,4,3,2] ⇒ 3,5 med diff +0,5 ⇒ I NIVÅ (tröskeln inkluderad), V01 5−3=+2 ⇒ ÖVER; osatta variabler räknas ej i över/i nivå/under; referens '2026-09-03 · 5-bolagsunivers'; rank '5/5'; drag +14/−3,5/±0/— (svenska tecken, inga lokaler)"
+        : problem.slice(0, 6).join("; "),
+      "V07(A)=iNiva V01(A)=over referens=2026-09-03 · 5-bolagsunivers",
+    );
+  }
+  // ── peer: determinism 2× + kompositen OFÖRÄNDRAD med/utan peer ─────────────
+  {
+    const problem: string[] = [];
+    const rader = [
+      peerRad("U-A.ST", "industri", 51), peerRad("U-B.ST", "industri", 52),
+      peerRad("U-C.ST", "industri", 53), peerRad("U-D.ST", "industri", 54),
+      peerRad("U-E.ST", "industri", 55), peerRad("U-F.ST", "konsument", 30),
+      peerRad("U-G.ST", "konsument", 40), peerRad("U-H.ST", "konsument", null),
+      peerRad("U-I.ST", "konsument", 60), peerRad("U-J.ST", "konsument", 70),
+    ];
+    const poang = { "U-A.ST": { V07: 4 }, "U-B.ST": { V07: 3 } };
+    const a = JSON.stringify([...PER.raknaPeer(rader, { referensDatum: "2026-09-03", poangPerBolag: poang }).entries()]);
+    const b = JSON.stringify([...PER.raknaPeer(rader, { referensDatum: "2026-09-03", poangPerBolag: poang }).entries()]);
+    if (a !== b) problem.push("ej deterministisk (2 körningar skiljer)");
+    if (PER.raknaPeer([], {}).size !== 0) problem.push("tomma rader ⇒ ej tom karta");
+    // lässkiktsgaranti: poängfälten byte-identiska med och utan peer-information
+    const karna = (rs: any[]) => JSON.stringify(rs.map((r) => ({ t: r.ticker, a1: r.akm1Totalt, a2: r.akm2, s: r.akm2Skillnad })));
+    const medPeer = rader.map((r) => ({ ...r, peer: PER.raknaPeer(rader, { poangPerBolag: poang }).get(r.ticker) }));
+    if (karna(rader) !== karna(medPeer)) problem.push("poängfälten påverkade av peer (lässlager-kontrakt brutet)");
+    if (!medPeer.every((r) => r.peer && r.peer.variabler.length === 20)) problem.push("berikade rader saknar peer.variabler");
+    rad(
+      "peer",
+      "DETERMINISM 2× + kompositen OFÖRÄNDRAD med/utan peer + tomma rader",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "10 rader (2 branscher, en null-komposit) med poängfixture ⇒ 2× byte-identisk JSON; {ticker, akm1Totalt, akm2, akm2Skillnad} identiska med och utan peer-fält — peer är ett läslager som aldrig blir indata i poängen; raknaPeer([]) ⇒ tom karta"
+        : problem.slice(0, 6).join("; "),
+      "langd=" + String(a.length) + " rader=10",
     );
   }
 }
@@ -2772,9 +3308,12 @@ let fardig = false;
   KAR = await import("./src/lib/akm2/karna");
   RSK = await import("./src/lib/portfolj-forskning/riskportfolj");
   AK2 = await import("./src/lib/portfolj-forskning/akm2-koppling");
+  OSK = await import("./src/lib/akm3/osakerhet");
+  PER = await import("./src/lib/portfolj-forskning/peer");
   FVG = await import("./src/lib/portfolj-forskning/fundamental-vagmotor");
   UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
   VVAL = await import("./src/lib/vagvalidering");
+  ENS = await import("./src/lib/akm3/ensemble");
   OVS = await import("./src/lib/oversattning/termbank");
   KLL = await import("./src/lib/oversattning/kalla");
   KTR = await import("./src/lib/oversattning/kontroller");
@@ -2924,8 +3463,8 @@ function byggRapport(payload, meta) {
     );
   }
   linjer.push("");
-  linjer.push("## Täckningsgrad (våg 49 + våg 52)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59)\n");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

@@ -136,6 +136,8 @@ const KLASSER_JSON = ["impulsvag", "korrigering", "basbygge", "osatt"];
 let VFM: any, ANA: any, NET: any, KON: any, PVA: any, NLU: any, OMT: any, KUR: any, DAS: any;
 let VKN: any, SRP: any, VPL: any, BRE: any, BDG: any, ABK: any, AST: any, KAR: any, RSK: any;
 let FVG: any, UPP: any, VVAL: any;
+// AK2 (våg 57 D2): akm2-koppling.ts — portföljforskningens bro till AKM2-kärnan.
+let AK2: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
 // LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
@@ -1562,6 +1564,97 @@ async function fasD(): Promise<void> {
       "innehav=" + String(f1.innehav.length) + " viktsumma=" + String(vsum),
     );
   }
+  // ── akm2-koppling (våg 57 D2): berikaRadMedAkm2 — akm2Skillnad-formeln ────
+  {
+    const problem: string[] = [];
+    const grundRad = korstadRad("HEL.ST", "industri", 66.5, "gron", "2026-09-01");
+    const b1 = AK2.berikaRadMedAkm2(grundRad, HEL_FIX);
+    const b2 = AK2.berikaRadMedAkm2(grundRad, HEL_FIX);
+    if (!isFin(b1.akm2) || b1.akm2 < 0 || b1.akm2 > 100) problem.push("akm2=" + String(b1.akm2));
+    // FORMELN dubbelräknad: akm2Skillnad = akm2 − akm1Totalt (1 decimal).
+    const vanta = Math.round((b1.akm2 - grundRad.akm1Totalt) * 10) / 10;
+    if (b1.akm2Skillnad !== vanta) {
+      problem.push("akm2Skillnad=" + String(b1.akm2Skillnad) + " (förväntat " + String(vanta) + " = akm2 " + String(b1.akm2) + " − akm1Totalt " + String(grundRad.akm1Totalt) + ")");
+    }
+    // Främmande/saknat nyckeltal ⇒ null + tom modullista (aldrig gissa).
+    const fel = AK2.berikaRadMedAkm2(grundRad, { ...HEL_FIX, ticker: "ANNAT.ST" });
+    if (fel.akm2 !== null || fel.akm2Skillnad !== null || (fel.akm2Moduler ?? []).length !== 0) problem.push("främmande nyckeltal skulle ge null/[]");
+    const tom = AK2.berikaRadMedAkm2(grundRad, null);
+    if (tom.akm2 !== null || tom.akm2Skillnad !== null) problem.push("saknat nyckeltal skulle ge null");
+    // Industri matchar CYKLISK + TILLGÅNGSTUNG i modulregistret.
+    if (!Array.isArray(b1.akm2Moduler) || b1.akm2Moduler.length < 1) problem.push("akm2Moduler=" + JSON.stringify(b1.akm2Moduler));
+    // Befintliga fält orörda + determinism (2× JSON-identisk).
+    for (const nyckel of ["ticker", "namn", "akm1Totalt", "status", "golvMarginal", "senastKontrollerad"]) {
+      if (JSON.stringify((b1 as any)[nyckel]) !== JSON.stringify((grundRad as any)[nyckel])) problem.push(nyckel + " rördes av berikningen");
+    }
+    if (JSON.stringify(b1) !== JSON.stringify(b2)) problem.push("berikaRadMedAkm2 ej deterministisk");
+    rad(
+      "akm2-koppling",
+      "FIXTUR berikaRadMedAkm2: formeln akm2Skillnad = akm2 − akm1Totalt (1 dec) + moduler + determinism",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "HEL-fixtur (industri): akm2 " + String(b1.akm2) + "/100 med automatiska moduler (" + String(b1.akm2Moduler.length) + " st) och viktprofil akm2-2026; skillnad " + String(b1.akm2Skillnad) + " dubbelräknad mot akm1Totalt " + String(grundRad.akm1Totalt) + "; främmande/saknat nyckeltal → null + tom modullista; befintliga fält orörda; 2× JSON-identisk"
+        : problem.slice(0, 6).join("; "),
+      "akm2=" + String(b1.akm2) + " skillnad=" + String(b1.akm2Skillnad) + " moduler=" + String(b1.akm2Moduler.length),
+    );
+  }
+  // ── riskportfolj (våg 57 D2): poängbas AKM2 — formel + determinism ────────
+  {
+    const problem: string[] = [];
+    const profil = RSK.hamtaRiskProfil("balanserad", "stadig");
+    // Två rader där AKM1- och AKM2-ordningen är INVERTERAD: A vinner på AKM1,
+    // B vinner på AKM2 — poängbasen måste byta rankning mellan lägena.
+    const a = { ...korstadRad("AK2-A.ST", "teknik", 90, "gron", "2026-09-01"), akm2: 40, akm2Skillnad: -50 };
+    const b = { ...korstadRad("AK2-B.ST", "teknik", 40, "gron", "2026-09-01"), akm2: 90, akm2Skillnad: 50 };
+    if (!(RSK.raknaPoang(a, profil, "akm1") > RSK.raknaPoang(b, profil, "akm1"))) problem.push("AKM1-läget skulle ranka A före B");
+    if (!(RSK.raknaPoang(b, profil, "akm2") > RSK.raknaPoang(a, profil, "akm2"))) problem.push("AKM2-läget skulle ranka B före A");
+    // Formel-invariant: poängbasen är ENDA skillnaden — Δpoäng = 0,50 × Δ(bas/100).
+    for (const r of [a, b]) {
+      const p1 = RSK.raknaPoang(r, profil, "akm1");
+      const p2 = RSK.raknaPoang(r, profil, "akm2");
+      const vanta = 0.5 * ((r.akm2 - r.akm1Totalt) / 100);
+      if (Math.abs(p2 - p1 - vanta) > 1e-12) problem.push(r.ticker + ": Δpoäng " + String(p2 - p1) + " ≠ 0,5×Δbas " + String(vanta));
+    }
+    // Saknad AKM2 bidrar 0 (motorn gissar aldrig) — samma som akm2 = 0.
+    const nolla = { ...a, akm2: null as any, akm2Skillnad: null as any };
+    if (Math.abs(RSK.raknaPoang(nolla, profil, "akm2") - RSK.raknaPoang({ ...a, akm2: 0 }, profil, "akm2")) > 1e-12) problem.push("null-akm2 skulle bidra 0");
+    // Determinism + kontrakt: poängbas följer med förslaget, id:t skiljer lägena.
+    const branscher = ["teknik", "industri", "halso", "konsument", "finans"];
+    const pool: any[] = [];
+    let n = 0;
+    for (const br of branscher) {
+      for (let j = 0; j < 3; j++) {
+        const p = korstadRad("Q" + String(n) + ".ST", br, 72 + ((n * 7) % 21), "gron", "2026-08-0" + String((n % 9) + 1));
+        p.akm2 = 60 + ((n * 11) % 31);
+        p.akm2Skillnad = Math.round((p.akm2 - p.akm1Totalt) * 10) / 10;
+        p.akm2Moduler = ["Allmän — test"];
+        pool.push(p);
+        n += 1;
+      }
+    }
+    const f1 = RSK.byggPortfolj(profil, pool, { poangbas: "akm2" });
+    const f2 = RSK.byggPortfolj(profil, pool, { poangbas: "akm2" });
+    if (!jamhorJSON(f1, f2)) problem.push("byggPortfolj(akm2) ej deterministisk");
+    if (f1.poangbas !== "akm2") problem.push("poangbas=" + String(f1.poangbas));
+    if (String(f1.id).indexOf("-akm2-") < 0) problem.push("id saknar akm2-stämpel: " + String(f1.id));
+    const fAkm1 = RSK.byggPortfolj(profil, pool);
+    if (fAkm1.poangbas !== "akm1") problem.push("default-poängbas=" + String(fAkm1.poangbas));
+    if (fAkm1.id === f1.id) problem.push("akm1- och akm2-läget får inte dela id");
+    if (f1.innehav.length === 0 || !f1.innehav.every((ih: any) => String(ih.motiv).indexOf("AKM2-komposit") >= 0)) problem.push("motiven redovisar inte AKM2-poängbasen");
+    if (String(f1.ak1aNot).indexOf("AKM2") < 0) problem.push("ak1aNot nämner inte AKM2-läget");
+    let vsum = 0;
+    for (const ih of f1.innehav) vsum += isFin(ih.vikt) ? ih.vikt : 0;
+    if (Math.abs(vsum - 1) > 0.001) problem.push("Σvikt=" + String(vsum));
+    rad(
+      "riskportfolj",
+      "FIXTUR poängbas AKM2 (våg 57 D2): Δpoäng = 0,50×Δbas, rankning vänder, determinism + kontrakt",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "AKM2-läget byter ENDELIGT poängformelns första led (0,50 × bas/100): två inverterade rader byter rankning mellan lägena, saknad AKM2 bidrar 0; byggPortfolj(akm2) 2× JSON-identisk, poängbas + '-akm2-'-stämpel i id:t, motiv och ak1aNot redovisar läget, Σvikt=1; AKM1-läget opåverkat som default"
+        : problem.slice(0, 6).join("; "),
+      "innehav=" + String(f1.innehav.length) + " poangbas=" + String(f1.poangbas) + " id=" + String(f1.id),
+    );
+  }
 
   // ── fundamental-vagmotor: klassaVag + trippelrostning ──────────────────────
   {
@@ -2678,6 +2771,7 @@ let fardig = false;
   AST = await import("./src/lib/assistent");
   KAR = await import("./src/lib/akm2/karna");
   RSK = await import("./src/lib/portfolj-forskning/riskportfolj");
+  AK2 = await import("./src/lib/portfolj-forskning/akm2-koppling");
   FVG = await import("./src/lib/portfolj-forskning/fundamental-vagmotor");
   UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
   VVAL = await import("./src/lib/vagvalidering");
@@ -2831,7 +2925,7 @@ function byggRapport(payload, meta) {
   }
   linjer.push("");
   linjer.push("## Täckningsgrad (våg 49 + våg 52)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj, fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

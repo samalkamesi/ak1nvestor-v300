@@ -1,0 +1,298 @@
+{
+ "schema": "akm2-resultat-v1",
+ "genereradAv": "verktyg/kor-akm2-berika.mjs (vag 57 D2)",
+ "viktprofil": "akm2-2026",
+ "profil": {
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "totalt": 70,
+  "band": "osatt",
+  "portAktiv": false,
+  "moduler": [
+   {
+    "modulId": "allman",
+    "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V28"
+    ],
+    "poang": {
+     "V21": 5,
+     "V22": 4,
+     "V28": 3
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V24",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 19 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V20, V23, V24, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 9 aktiva variablerna.",
+  "osakerhetNote": "14 av 20 kärnvariabler är osatta (andel 70 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes."
+ },
+ "resultat": {
+  "ticker": "HM-B.ST",
+  "namn": "H & M Hennes & Mauritz AB (publ)",
+  "bransch": "konsument",
+  "datum": "2026-09-03",
+  "modellVersion": "AKM2.2026.09",
+  "lager1": {
+   "ticker": "HM-B.ST",
+   "poang": {
+    "V01": 1,
+    "V02": 0,
+    "V03": 0,
+    "V04": 0,
+    "V05": 1,
+    "V06": 0,
+    "V07": 4,
+    "V08": 0,
+    "V09": 4,
+    "V10": 2,
+    "V11": 0,
+    "V12": 5,
+    "V13": 0,
+    "V14": 0,
+    "V15": 0,
+    "V16": 0,
+    "V17": 0,
+    "V18": 0,
+    "V19": 0,
+    "V20": 0
+   },
+   "totalt": 17,
+   "perKategori": {
+    "Tillväxt": 0.33,
+    "Värdering": 0.33,
+    "Lönsamhet": 2.67,
+    "Stabilitet": 2.33,
+    "Moat": 0,
+    "Katalysator": 0,
+    "Risk": 0,
+    "Kapitalstruktur": 0
+   },
+   "motivering": {
+    "V01": "Försäljningstillväxt -3.3 % — −10–0 % ⇒ 1 (R2 §6 goldilocks-kurva). Källa: tillvaxt.omsattningTillvaxtTTM",
+    "V02": "Osatt — ARR redovisas inte i P1:s datakontrakt (BolagsNyckeltal). Aktivera SaaS-modulen (lager 2) eller poängsätt manuellt i kalkylatorn. Källa: tillvaxt.* (ARR saknas)",
+    "V03": "Osatt — segment- och storkundsdata redovisas inte i P1:s datakontrakt. Poängsätt manuellt (not om segment/intäktsfördelning).",
+    "V04": "Osatt — P/S kan inte beräknas ur datakontraktet (börsvärde finns men inte omsättningsnivån). EV/Revenue-länken levereras av SaaS-modulen. Kalkylatorns linjära trösklar: <1 ⇒ 5, <2 ⇒ 4, <3 ⇒ 3, <5 ⇒ 2, annars 1.",
+    "V05": "P/B 8.12x — linjär tröskel (kalkylatorn): ≥5 ⇒ 1. Källa: vardering.pb",
+    "V06": "Osatt — EV/EBITDA saknas i P1:s datakontrakt (evEbitda-fält finns ej; evEbit → se V28 Earnings yield). R2 §6-kurvan är implementerad i kärnan (poangEvEbitda) och aktiveras när kontraktet utökas.",
+    "V07": "Bruttomarginal 54.1 % — 50–70 % ⇒ 4 (R2 §6 konkav, platt topp; brutschmedian saknas i kontraktet så absolut nivå). Källa: lonksamhet.bruttoMarginal + moat.bruttoMarginalMedel5ar",
+    "V08": "Osatt — EBITDA-marginal saknas i datakontraktet (lonksamhet.ebitMarginal är EBIT-marginal; att lägga EBIT på EBITDA-trösklar skulle systematiskt underskatta). Kalkylatorns linjära trösklar: ≥25 ⇒ 5, ≥15 ⇒ 4, ≥10 ⇒ 3, ≥5 ⇒ 2, annars 1.",
+    "V09": "ROE 34.7 % — 25–35 % ⇒ 4 (R2 §6 konkav). Källa: lonksamhet.roe + moat.roeMedel5ar + stabilitet.skuldEgenkapital",
+    "V10": "Skuldsättningsgrad 2.26x — linjär tröskel (kalkylatorn): 2–3 ⇒ 2. Källa: stabilitet.skuldEgenkapital",
+    "V11": "Osatt — kvickkvot saknas i P1:s datakontrakt (omsättningstillgångar/kortfristiga skulder redovisas ej). Poängsätt manuellt ur balansräkningen.",
+    "V12": "Omsättningens variationskoefficient 2.2 % över 4 år — rak tröskel: ≤5 % ⇒ 5 (dokumenterad i kärnan). Källa: serier.omsattning",
+    "V13": "Osatt — Patent & IP är kvalitativ och bedöms ur förvaltningsberättelsen (Not om immateriella tillgångar; förvaltningsberättelsen), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V14": "Osatt — Varumärke är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen, kundnot, marknadsandelar), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V15": "Osatt — Nätverkseffekter är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen; kundantal över tid), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V16": "Osatt — Produktlanseringar är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen: kommande lanseringar/pipeline), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V17": "Osatt — Avtal & Partnerskap är kvalitativ och bedöms ur förvaltningsberättelsen (Pressmeddelanden + förvaltningsberättelse: 'viktiga avtal'), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V18": "Osatt — Regulatoriska är kvalitativ och bedöms ur förvaltningsberättelsen (Riskavsnittet i förvaltningsberättelsen; myndighetsbeslut), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V19": "Osatt — kassaManaderBurnRate saknas och FCF-historik bevisar inte självinansiering (5/5 krävs). R2 §6 klippkurva: <12 mån ⇒ 0 (+hård port) … >48 mån ⇒ 4.",
+    "V20": "Osatt — återköpsdata saknas (aterkop.*) och utspädningshistorik bevisar inget."
+   },
+   "datum": "2026-09-03"
+  },
+  "lager2": {
+   "aktiveradeModuler": [
+    {
+     "modulId": "allman",
+     "aktiv": true,
+     "automatisk": true,
+     "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+     "poang": {
+      "V21": 5,
+      "V22": 4,
+      "V28": 3
+     }
+    }
+   ],
+   "poang": {
+    "V21": 5,
+    "V22": 4,
+    "V28": 3
+   }
+  },
+  "lager3": {
+   "ticker": "HM-B.ST",
+   "perVariabel": {},
+   "perHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "tekniskPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "konfluens": {
+    "raknadeTeorier": 0,
+    "sammaRiktning": 0,
+    "port": "osatt",
+    "text": "Dynamiklagret ej anropat — neutral degradering: lager 3 bidrar med 0 justering (ren fundamental syntes, Fas 2-läge)."
+   },
+   "horisontVikter": {
+    "mikro": 0.05,
+    "kort": 0.2,
+    "medellang": 0.25,
+    "lang": 0.3,
+    "mega": 0.2
+   },
+   "datum": "2026-09-03"
+  },
+  "lager4": {
+   "viktprofil": "akm2-2026",
+   "viktPerVariabel": {
+    "V01": 0.10990052108005685,
+    "V02": 0,
+    "V03": 0,
+    "V04": 0,
+    "V05": 0.054950260540028426,
+    "V06": 0,
+    "V07": 0.13737565135007107,
+    "V08": 0,
+    "V09": 0.08242539081004263,
+    "V10": 0.054950260540028426,
+    "V11": 0,
+    "V12": 0.054950260540028426,
+    "V13": 0,
+    "V14": 0,
+    "V15": 0,
+    "V16": 0,
+    "V17": 0,
+    "V18": 0,
+    "V19": 0,
+    "V20": 0,
+    "V21": 0.18379914732354335,
+    "V22": 0.18379914732354335,
+    "V23": 0,
+    "V24": 0,
+    "V25": 0,
+    "V26": 0,
+    "V27": 0,
+    "V28": 0.13784936049265753
+   },
+   "omfordelning": {
+    "exkluderade": [
+     "V02",
+     "V03",
+     "V04",
+     "V06",
+     "V08",
+     "V11",
+     "V13",
+     "V14",
+     "V15",
+     "V16",
+     "V17",
+     "V18",
+     "V19",
+     "V20",
+     "V23",
+     "V24",
+     "V25",
+     "V26",
+     "V27"
+    ],
+    "text": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 19 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V20, V23, V24, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 9 aktiva variablerna."
+   }
+  },
+  "komposit": 70,
+  "perKategori": {
+   "Tillväxt": 20,
+   "Värdering": 63.9,
+   "Lönsamhet": 89.1,
+   "Stabilitet": 70
+  },
+  "band": "osatt",
+  "projiceradAKM1": {
+   "ticker": "HM-B.ST",
+   "poang": {
+    "V01": 1,
+    "V02": 0,
+    "V03": 0,
+    "V04": 0,
+    "V05": 1,
+    "V06": 0,
+    "V07": 4,
+    "V08": 0,
+    "V09": 4,
+    "V10": 2,
+    "V11": 0,
+    "V12": 5,
+    "V13": 0,
+    "V14": 0,
+    "V15": 0,
+    "V16": 0,
+    "V17": 0,
+    "V18": 0,
+    "V19": 0,
+    "V20": 0
+   },
+   "totalt": 17,
+   "perKategori": {
+    "Tillväxt": 0.33,
+    "Värdering": 0.33,
+    "Lönsamhet": 2.67,
+    "Stabilitet": 2.33,
+    "Moat": 0,
+    "Katalysator": 0,
+    "Risk": 0,
+    "Kapitalstruktur": 0
+   },
+   "motivering": {
+    "V01": "Försäljningstillväxt -3.3 % — −10–0 % ⇒ 1 (R2 §6 goldilocks-kurva). Källa: tillvaxt.omsattningTillvaxtTTM",
+    "V02": "Osatt — ARR redovisas inte i P1:s datakontrakt (BolagsNyckeltal). Aktivera SaaS-modulen (lager 2) eller poängsätt manuellt i kalkylatorn. Källa: tillvaxt.* (ARR saknas)",
+    "V03": "Osatt — segment- och storkundsdata redovisas inte i P1:s datakontrakt. Poängsätt manuellt (not om segment/intäktsfördelning).",
+    "V04": "Osatt — P/S kan inte beräknas ur datakontraktet (börsvärde finns men inte omsättningsnivån). EV/Revenue-länken levereras av SaaS-modulen. Kalkylatorns linjära trösklar: <1 ⇒ 5, <2 ⇒ 4, <3 ⇒ 3, <5 ⇒ 2, annars 1.",
+    "V05": "P/B 8.12x — linjär tröskel (kalkylatorn): ≥5 ⇒ 1. Källa: vardering.pb",
+    "V06": "Osatt — EV/EBITDA saknas i P1:s datakontrakt (evEbitda-fält finns ej; evEbit → se V28 Earnings yield). R2 §6-kurvan är implementerad i kärnan (poangEvEbitda) och aktiveras när kontraktet utökas.",
+    "V07": "Bruttomarginal 54.1 % — 50–70 % ⇒ 4 (R2 §6 konkav, platt topp; brutschmedian saknas i kontraktet så absolut nivå). Källa: lonksamhet.bruttoMarginal + moat.bruttoMarginalMedel5ar",
+    "V08": "Osatt — EBITDA-marginal saknas i datakontraktet (lonksamhet.ebitMarginal är EBIT-marginal; att lägga EBIT på EBITDA-trösklar skulle systematiskt underskatta). Kalkylatorns linjära trösklar: ≥25 ⇒ 5, ≥15 ⇒ 4, ≥10 ⇒ 3, ≥5 ⇒ 2, annars 1.",
+    "V09": "ROE 34.7 % — 25–35 % ⇒ 4 (R2 §6 konkav). Källa: lonksamhet.roe + moat.roeMedel5ar + stabilitet.skuldEgenkapital",
+    "V10": "Skuldsättningsgrad 2.26x — linjär tröskel (kalkylatorn): 2–3 ⇒ 2. Källa: stabilitet.skuldEgenkapital",
+    "V11": "Osatt — kvickkvot saknas i P1:s datakontrakt (omsättningstillgångar/kortfristiga skulder redovisas ej). Poängsätt manuellt ur balansräkningen.",
+    "V12": "Omsättningens variationskoefficient 2.2 % över 4 år — rak tröskel: ≤5 % ⇒ 5 (dokumenterad i kärnan). Källa: serier.omsattning",
+    "V13": "Osatt — Patent & IP är kvalitativ och bedöms ur förvaltningsberättelsen (Not om immateriella tillgångar; förvaltningsberättelsen), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V14": "Osatt — Varumärke är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen, kundnot, marknadsandelar), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V15": "Osatt — Nätverkseffekter är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen; kundantal över tid), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V16": "Osatt — Produktlanseringar är kvalitativ och bedöms ur förvaltningsberättelsen (Förvaltningsberättelsen: kommande lanseringar/pipeline), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V17": "Osatt — Avtal & Partnerskap är kvalitativ och bedöms ur förvaltningsberättelsen (Pressmeddelanden + förvaltningsberättelse: 'viktiga avtal'), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V18": "Osatt — Regulatoriska är kvalitativ och bedöms ur förvaltningsberättelsen (Riskavsnittet i förvaltningsberättelsen; myndighetsbeslut), som inte ingår i P1:s nyckeltalskontrakt. Poängsätt manuellt i kalkylatorn eller via modul.",
+    "V19": "Osatt — kassaManaderBurnRate saknas och FCF-historik bevisar inte självinansiering (5/5 krävs). R2 §6 klippkurva: <12 mån ⇒ 0 (+hård port) … >48 mån ⇒ 4.",
+    "V20": "Osatt — återköpsdata saknas (aterkop.*) och utspädningshistorik bevisar inget."
+   },
+   "datum": "2026-09-03"
+  },
+  "spar": [
+   {
+    "datum": "2026-09-03",
+    "komposit": 70,
+    "akm1": 17,
+    "notis": "Beräknad med profil \"akm2-2026\", 1 aktiva moduler, utan dynamik."
+   }
+  ],
+  "osakerhet": {
+   "andelOsatta": 0.7,
+   "andelarKallor": 1,
+   "note": "14 av 20 kärnvariabler är osatta (andel 70 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes."
+  }
+ }
+}

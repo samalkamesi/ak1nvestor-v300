@@ -7,7 +7,7 @@
  "valuta": "SEK",
  "versionsdatum": "2026-09-04",
  "underlagSenastKontrollerad": "2026-09-03",
- "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B)",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
  "urval": {
   "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
   "status": "gul",
@@ -85,6 +85,49 @@
     "motivering": "EBIT-marginal 11,0 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 2/5"
    }
   ]
+ },
+ "akm2": {
+  "totalt": 70,
+  "skillnad": 23.4,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "allman",
+    "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V28"
+    ],
+    "poang": {
+     "V21": 5,
+     "V22": 4,
+     "V28": 3
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V24",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 19 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V20, V23, V24, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 9 aktiva variablerna.",
+  "osakerhetNote": "14 av 20 kärnvariabler är osatta (andel 70 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+  ],
+  "kalla": "data/cache/akm2-HM-B_ST.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
  },
  "vaglage": {
   "perHorisont": {

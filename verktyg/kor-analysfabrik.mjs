@@ -6,10 +6,14 @@
  * Byggplan: data/forskning/STYRELSE-analysbibliotek.md §2.1–§2.2.
  *
  * KÄLLOR (alla läs-only):
- *   - data/portfolj-system/korstabell-grund.json   (urvalets sanningskälla)
+ *   - data/portfolj-system/korstabell-grund.json   (urvalets sanningskälla;
+ *     våg 57 D2: raderna bär även akm2/akm2Skillnad/akm2Moduler)
  *   - data/portfolj-system/bolagsunivers.json      (land/valuta/golv)
  *   - data/cache/akm1-{TICKER}.json                (poäng + motiveringar ORDAGRAT)
  *   - data/cache/fvag-{TICKER}.json                (våganteckningar per variabel)
+ *   - data/cache/akm2-{TICKER}.json                (AKM2-resultat + profil —
+ *     verktyg/kor-akm2-berika.mjs, våg 57 D2; raknaAKM2 med automatiska
+ *     moduler ur modulregistret och viktprofil akm2-2026)
  *
  * KANDIDATREGLN v1 (STYRELSE §2.1 — deterministisk, simulering = 22 bolag):
  *   portV19 = false                                  (hårt port: kassatäckning)
@@ -280,6 +284,36 @@ for (const k of kandidater) {
   } catch {
     fvag = null; // ärlighet: vågläget skrivs ur korstabellen ensam
   }
+  // Våg 57 D2: AKM2-blocket ur beriknings-cachen (raknaAKM2, moduler auto,
+  // viktprofil akm2-2026) + radens berikade fält. Saknas cachen är blocket
+  // null — fabriken hittar aldrig på AKM2-siffror.
+  let akm2Cache = null;
+  try {
+    akm2Cache = lasJson(path.join(CACHE, `akm2-${fil}.json`));
+  } catch {
+    akm2Cache = null;
+  }
+  const akm2Profil = akm2Cache?.profil ?? null;
+  const akm2Block =
+    akm2Profil || rad.akm2 != null
+      ? {
+          totalt: typeof rad.akm2 === "number" ? rad.akm2 : null,
+          skillnad: typeof rad.akm2Skillnad === "number" ? rad.akm2Skillnad : null,
+          viktprofil: akm2Profil?.viktprofil ?? "akm2-2026",
+          modellVersion: akm2Profil?.modellVersion ?? null,
+          band: akm2Profil?.band ?? null,
+          portAktiv: akm2Profil?.portAktiv ?? false,
+          aktivaModuler: akm2Profil?.moduler ?? [],
+          modulVariablerSatta: akm2Profil?.modulVariablerSatta ?? [],
+          modulVariablerOsatta: akm2Profil?.modulVariablerOsatta ?? [],
+          dynamikPaverkan: akm2Profil?.dynamikPaverkan ?? null,
+          omfordelningText: akm2Profil?.omfordelningText ?? null,
+          osakerhetNote: akm2Profil?.osakerhetNote ?? null,
+          radModuler: Array.isArray(rad.akm2Moduler) ? rad.akm2Moduler : [],
+          kalla:
+            "data/cache/akm2-" + fil + ".json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026",
+        }
+      : null;
   const u = universMap.get(rad.ticker) || {};
 
   // Osatta variabler = motiveringen inleds med "osatt" (bedömarens egen markering)
@@ -359,7 +393,7 @@ for (const k of kandidater) {
     valuta: u.valuta || null,
     versionsdatum: VERSIONSDATUM,
     underlagSenastKontrollerad: rad.senastKontrollerad || null,
-    genereradAv: "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B)",
+    genereradAv: "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
     urval: {
       regel:
         'kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1',
@@ -393,6 +427,7 @@ for (const k of kandidater) {
         motivering: t.motivering,
       })),
     },
+    akm2: akm2Block,
     vaglage: {
       perHorisont: HORIZONTER.reduce((acc, h) => {
         acc[h] = rad.fvagPerHorisont?.[h] || "osatt";
@@ -422,7 +457,7 @@ for (const k of kandidater) {
   );
   skrivna += 1;
   rapport.push(
-    `${rad.ticker.padEnd(10)} ${String(rad.namn).slice(0, 34).padEnd(34)} ${statusEtikett.padEnd(21)} rel ${pct(rel).padStart(7)}  täck ${pct(rad.datatackning).padStart(7)}  rank ${rankPoang(k)}`,
+    `${rad.ticker.padEnd(10)} ${String(rad.namn).slice(0, 34).padEnd(34)} ${statusEtikett.padEnd(21)} rel ${pct(rel).padStart(7)}  täck ${pct(rad.datatackning).padStart(7)}  akm2 ${String(rad.akm2 ?? "—").padStart(4)}  rank ${rankPoang(k)}`,
   );
 }
 

@@ -26,10 +26,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 0.33,
-    "lonsamhet": 4.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -45,7 +45,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 18.6,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "ASM.AS",
@@ -58,7 +64,7 @@
     "lonsamhet": 4.33,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -74,7 +80,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 16.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "ERIC-B.ST",
@@ -86,8 +98,8 @@
     "vardering": 3.33,
     "lonsamhet": 3.33,
     "stabilitet": 1.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -101,9 +113,15 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 73,
+   "akm2Skillnad": 29.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "GOOGL",
@@ -111,12 +129,12 @@
    "bransch": "teknik",
    "akm1Totalt": 47.4,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 0.67,
     "lonsamhet": 4.33,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -132,7 +150,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 13.6,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "KAMBI.ST",
@@ -143,9 +167,9 @@
     "tillvaxt": 0.33,
     "vardering": 1.33,
     "lonsamhet": 2.33,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -161,7 +185,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 44,
+   "akm2Skillnad": 6.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "LOGN.SW",
@@ -172,9 +202,9 @@
     "tillvaxt": 0.67,
     "vardering": 2.67,
     "lonsamhet": 3.67,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -190,7 +220,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 78,
+   "akm2Skillnad": 27.7,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "MSFT",
@@ -198,12 +234,12 @@
    "bransch": "teknik",
    "akm1Totalt": 46.6,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 0.33,
     "lonsamhet": 4.33,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -219,7 +255,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 14.4,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "NOKIA.HE",
@@ -231,8 +273,8 @@
     "vardering": 2.33,
     "lonsamhet": 1.67,
     "stabilitet": 3.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -248,7 +290,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 6.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "SAP.DE",
@@ -258,10 +306,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 1.67,
-    "lonsamhet": 4.0,
+    "lonsamhet": 4,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -277,7 +325,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 15.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "SINCH.ST",
@@ -286,11 +340,11 @@
    "akm1Totalt": 31.8,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
-    "vardering": 3.0,
+    "vardering": 3,
     "lonsamhet": 0.67,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -306,7 +360,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 37,
+   "akm2Skillnad": 5.2,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "ABB.ST",
@@ -315,11 +375,11 @@
    "akm1Totalt": 40.6,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 1.0,
+    "vardering": 1,
     "lonsamhet": 3.33,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -335,7 +395,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 21.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "ALFA.ST",
@@ -343,12 +408,12 @@
    "bransch": "industri",
    "akm1Totalt": 41.9,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 1.67,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -364,7 +429,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 16.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "ASSA-B.ST",
@@ -376,8 +446,8 @@
     "vardering": 2.33,
     "lonsamhet": 2.67,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -393,7 +463,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 8.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "ATCO-A.ST",
@@ -405,8 +480,8 @@
     "vardering": 0.67,
     "lonsamhet": 3.67,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -422,7 +497,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 23.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "ETN",
@@ -431,11 +511,11 @@
    "akm1Totalt": 38.6,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 1.0,
-    "lonsamhet": 3.0,
+    "vardering": 1,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -451,7 +531,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 52,
+   "akm2Skillnad": 13.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "GE",
@@ -462,9 +547,9 @@
     "tillvaxt": 1.33,
     "vardering": 0.67,
     "lonsamhet": 3.33,
-    "stabilitet": 1.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 1,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -478,9 +563,14 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 22.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "HEXA-B.ST",
@@ -490,10 +580,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 1.67,
-    "lonsamhet": 4.0,
-    "stabilitet": 3.0,
+    "lonsamhet": 4,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -509,7 +599,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 13.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "INDU-C.ST",
@@ -522,7 +617,7 @@
     "lonsamhet": 4.33,
     "stabilitet": 1.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -536,9 +631,14 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 85,
+   "akm2Skillnad": 26.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "SAND.ST",
@@ -547,11 +647,11 @@
    "akm1Totalt": 42.5,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 2.0,
-    "lonsamhet": 3.0,
+    "vardering": 2,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -567,7 +667,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 23.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "SKF-B.ST",
@@ -576,11 +681,11 @@
    "akm1Totalt": 35.7,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
-    "vardering": 3.0,
+    "vardering": 3,
     "lonsamhet": 1.33,
     "stabilitet": 2.67,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -596,7 +701,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 17.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
   },
   {
    "ticker": "AZN.ST",
@@ -605,11 +715,11 @@
    "akm1Totalt": 42.5,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 1.0,
+    "vardering": 1,
     "lonsamhet": 3.67,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -625,7 +735,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 5.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "BSX",
@@ -633,12 +748,12 @@
    "bransch": "halso",
    "akm1Totalt": 49.3,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 2.67,
     "lonsamhet": 3.33,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -654,7 +769,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 4.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "CEVI.ST",
@@ -667,7 +787,7 @@
     "lonsamhet": 3.33,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -683,20 +803,25 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 11.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "COLO-B.CO",
    "namn": "Coloplast A/S",
    "bransch": "halso",
-   "akm1Totalt": 46.0,
+   "akm1Totalt": 46,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 1.67,
-    "lonsamhet": 4.0,
+    "lonsamhet": 4,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -712,7 +837,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 18,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "EKTA-B.ST",
@@ -724,8 +854,8 @@
     "vardering": 1.67,
     "lonsamhet": 1.67,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -739,9 +869,14 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 23.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "FRE.DE",
@@ -749,12 +884,12 @@
    "bransch": "halso",
    "akm1Totalt": 33.2,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 3.33,
     "lonsamhet": 1.33,
-    "stabilitet": 2.0,
+    "stabilitet": 2,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -770,7 +905,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 46,
+   "akm2Skillnad": 12.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "GETI-B.ST",
@@ -780,10 +920,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 3.33,
-    "lonsamhet": 2.0,
+    "lonsamhet": 2,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -799,7 +939,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 12.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "JNJ",
@@ -808,11 +953,11 @@
    "akm1Totalt": 43.3,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
-    "vardering": 1.0,
+    "vardering": 1,
     "lonsamhet": 4.33,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -828,7 +973,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 19.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "LLY",
@@ -841,7 +991,7 @@
     "lonsamhet": 4.33,
     "stabilitet": 1.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -857,7 +1007,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 11.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "NOVO-B.CO",
@@ -866,11 +1021,11 @@
    "akm1Totalt": 52.8,
    "akm1PerKategori": {
     "tillvaxt": 1.33,
-    "vardering": 2.0,
+    "vardering": 2,
     "lonsamhet": 4.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -886,7 +1041,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 13.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "CARL-B.CO",
@@ -895,11 +1055,11 @@
    "akm1Totalt": 45.6,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 3.0,
-    "lonsamhet": 3.0,
+    "vardering": 3,
+    "lonsamhet": 3,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -915,7 +1075,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 11.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "ELUX-B.ST",
@@ -925,11 +1090,11 @@
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 1.33,
-    "lonsamhet": 0.0,
-    "stabilitet": 2.0,
+    "lonsamhet": 0,
+    "stabilitet": 2,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 2.0
+    "katalysator": 0,
+    "risk": 2
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -944,7 +1109,12 @@
    "datatackning": 0.5567,
    "akm1MaxMojligt": 55.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 19,
+   "akm2Skillnad": 1.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "ESSITY-B.ST",
@@ -955,9 +1125,9 @@
     "tillvaxt": 0.33,
     "vardering": 3.67,
     "lonsamhet": 2.33,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -973,7 +1143,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 15.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "HM-B.ST",
@@ -986,7 +1161,7 @@
     "lonsamhet": 3.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1002,7 +1177,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 70,
+   "akm2Skillnad": 23.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "ITX.MC",
@@ -1011,12 +1191,12 @@
    "akm1Totalt": 31.1,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 1.0,
-    "lonsamhet": 4.0,
+    "vardering": 1,
+    "lonsamhet": 4,
     "stabilitet": 1.33,
     "moat": 1.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1031,7 +1211,12 @@
    "datatackning": 0.5773,
    "akm1MaxMojligt": 57.7,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 27.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "MC.PA",
@@ -1040,11 +1225,11 @@
    "akm1Totalt": 49.1,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 3.0,
+    "vardering": 3,
     "lonsamhet": 3.33,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1060,20 +1245,25 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 13.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "MCD",
    "namn": "McDonald's Corporation",
    "bransch": "konsument",
-   "akm1Totalt": 39.0,
+   "akm1Totalt": 39,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 1.0,
-    "lonsamhet": 3.0,
+    "vardering": 1,
+    "lonsamhet": 3,
     "stabilitet": 1.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1089,7 +1279,12 @@
    "datatackning": 0.567,
    "akm1MaxMojligt": 56.7,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 23,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "NKE",
@@ -1099,10 +1294,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 3.33,
-    "lonsamhet": 3.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "lonsamhet": 3,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1118,7 +1313,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 17.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "PG",
@@ -1128,10 +1328,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 1.67,
-    "lonsamhet": 4.0,
-    "stabilitet": 3.0,
+    "lonsamhet": 4,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1147,7 +1347,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 15.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "VOLCAR-B.ST",
@@ -1160,8 +1365,8 @@
     "lonsamhet": 0.67,
     "stabilitet": 2.33,
     "moat": 0.67,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1176,7 +1381,12 @@
    "datatackning": 0.6186,
    "akm1MaxMojligt": 61.9,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 27,
+   "akm2Skillnad": 2.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "BALD-B.ST",
@@ -1186,10 +1396,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 2.33,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1205,7 +1415,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 46,
+   "akm2Skillnad": 2.7,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "CAST.ST",
@@ -1215,11 +1430,11 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 2.67,
-    "lonsamhet": 3.0,
-    "stabilitet": 3.0,
+    "lonsamhet": 3,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1234,7 +1449,12 @@
    "datatackning": 0.6186,
    "akm1MaxMojligt": 61.9,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 10.9,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "CATE.ST",
@@ -1242,12 +1462,12 @@
    "bransch": "fastighet",
    "akm1Totalt": 44.1,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
-    "vardering": 2.0,
-    "lonsamhet": 3.0,
+    "tillvaxt": 1,
+    "vardering": 2,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1263,7 +1483,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 5.9,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "DIOS.ST",
@@ -1273,11 +1498,11 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 3.33,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1292,7 +1517,12 @@
    "datatackning": 0.5567,
    "akm1MaxMojligt": 55.7,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 22.9,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "FABG.ST",
@@ -1302,10 +1532,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 2.33,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1321,7 +1551,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 6.7,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "HUFV-A.ST",
@@ -1331,10 +1566,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 2.33,
-    "lonsamhet": 3.0,
-    "stabilitet": 3.0,
+    "lonsamhet": 3,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1350,7 +1585,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 5.9,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "NP3.ST",
@@ -1358,12 +1598,12 @@
    "bransch": "fastighet",
    "akm1Totalt": 48.9,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 2.33,
     "lonsamhet": 3.67,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1379,7 +1619,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 6.1,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "PLD",
@@ -1387,12 +1632,12 @@
    "bransch": "fastighet",
    "akm1Totalt": 39.2,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 1.33,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 1.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1406,9 +1651,14 @@
    "golvMarginal": -1.3749,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 42,
+   "akm2Skillnad": 2.8,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "WALL-B.ST",
@@ -1417,11 +1667,11 @@
    "akm1Totalt": 42.5,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 2.0,
-    "lonsamhet": 3.0,
+    "vardering": 2,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1437,7 +1687,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 0.5,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "WIHL.ST",
@@ -1450,7 +1705,7 @@
     "lonsamhet": 3.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1466,7 +1721,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 5.8,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "BRK-B",
@@ -1476,10 +1736,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 2.67,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 1.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1495,7 +1755,12 @@
    "datatackning": 0.5567,
    "akm1MaxMojligt": 55.7,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 26.9,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "GS",
@@ -1506,10 +1771,10 @@
     "tillvaxt": 1.67,
     "vardering": 2.67,
     "lonsamhet": 3.67,
-    "stabilitet": 0.0,
+    "stabilitet": 0,
     "moat": 1.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1524,20 +1789,25 @@
    "datatackning": 0.5361,
    "akm1MaxMojligt": 53.6,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 70,
+   "akm2Skillnad": 31.4,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "INVE-B.ST",
    "namn": "Investor AB (publ)",
    "bransch": "finans",
-   "akm1Totalt": 54.0,
+   "akm1Totalt": 54,
    "akm1PerKategori": {
     "tillvaxt": 1.33,
     "vardering": 3.67,
     "lonsamhet": 4.33,
-    "stabilitet": 0.0,
+    "stabilitet": 0,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1553,7 +1823,12 @@
    "datatackning": 0.6289,
    "akm1MaxMojligt": 62.9,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 80,
+   "akm2Skillnad": 26,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "JPM",
@@ -1564,10 +1839,10 @@
     "tillvaxt": 1.33,
     "vardering": 2.67,
     "lonsamhet": 2.33,
-    "stabilitet": 0.0,
+    "stabilitet": 0,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1582,7 +1857,12 @@
    "datatackning": 0.5361,
    "akm1MaxMojligt": 53.6,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 11.8,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "LATO-B.ST",
@@ -1591,11 +1871,11 @@
    "akm1Totalt": 37.3,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 2.0,
+    "vardering": 2,
     "lonsamhet": 2.67,
     "stabilitet": 1.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1609,23 +1889,28 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 42,
+   "akm2Skillnad": 4.7,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "NDA-SE.ST",
    "namn": "Nordea Bank Abp",
    "bransch": "finans",
-   "akm1Totalt": 19.0,
+   "akm1Totalt": 19,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 0.67,
     "lonsamhet": 2.33,
     "stabilitet": 1.33,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1640,20 +1925,25 @@
    "datatackning": 0.5773,
    "akm1MaxMojligt": 57.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 30,
+   "akm2Skillnad": 11,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "ORES.ST",
    "namn": "Investment AB Öresund (publ)",
    "bransch": "finans",
-   "akm1Totalt": 41.0,
+   "akm1Totalt": 41,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 2.67,
     "lonsamhet": 3.67,
-    "stabilitet": 0.0,
+    "stabilitet": 0,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1669,7 +1959,12 @@
    "datatackning": 0.6289,
    "akm1MaxMojligt": 62.9,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 14,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "SEB-A.ST",
@@ -1680,10 +1975,10 @@
     "tillvaxt": 0.67,
     "vardering": 2.33,
     "lonsamhet": 2.33,
-    "stabilitet": 1.0,
+    "stabilitet": 1,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1698,7 +1993,12 @@
    "datatackning": 0.5773,
    "akm1MaxMojligt": 57.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 38,
+   "akm2Skillnad": 14.3,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "SHB-A.ST",
@@ -1707,12 +2007,12 @@
    "akm1Totalt": 21.4,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 2.0,
+    "vardering": 2,
     "lonsamhet": 2.33,
-    "stabilitet": 1.0,
+    "stabilitet": 1,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1727,7 +2027,12 @@
    "datatackning": 0.5773,
    "akm1MaxMojligt": 57.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": 11.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "SWED-A.ST",
@@ -1740,8 +2045,8 @@
     "lonsamhet": 2.33,
     "stabilitet": 0.67,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1756,7 +2061,12 @@
    "datatackning": 0.5773,
    "akm1MaxMojligt": 57.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": 13.2,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
   },
   {
    "ticker": "BILL.ST",
@@ -1766,11 +2076,11 @@
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 1.67,
-    "lonsamhet": 1.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
-    "risk": 2.0
+    "lonsamhet": 1,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1785,7 +2095,13 @@
    "datatackning": 0.5567,
    "akm1MaxMojligt": 55.7,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 11.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "BOL.ST",
@@ -1795,10 +2111,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 3.67,
-    "lonsamhet": 2.0,
-    "stabilitet": 3.0,
+    "lonsamhet": 2,
+    "stabilitet": 3,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1814,7 +2130,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 14.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "HOLM-B.ST",
@@ -1823,11 +2145,11 @@
    "akm1Totalt": 38.6,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
-    "vardering": 3.0,
+    "vardering": 3,
     "lonsamhet": 1.67,
     "stabilitet": 3.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1843,7 +2165,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 44,
+   "akm2Skillnad": 5.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "NEM",
@@ -1856,7 +2184,7 @@
     "lonsamhet": 4.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1872,7 +2200,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 79,
+   "akm2Skillnad": 23.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "NHY.OL",
@@ -1882,10 +2216,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 4.67,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1901,7 +2235,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 76,
+   "akm2Skillnad": 22.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "SCA-B.ST",
@@ -1914,7 +2254,7 @@
     "lonsamhet": 1.67,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1930,7 +2270,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 2.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "SSAB-B.ST",
@@ -1939,12 +2285,12 @@
    "akm1Totalt": 28.7,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
-    "vardering": 4.0,
+    "vardering": 4,
     "lonsamhet": 0.67,
     "stabilitet": 3.33,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -1959,7 +2305,13 @@
    "datatackning": 0.6186,
    "akm1MaxMojligt": 61.9,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 21.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "STERV.HE",
@@ -1972,7 +2324,7 @@
     "lonsamhet": 0.67,
     "stabilitet": 2.67,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -1988,7 +2340,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 31,
+   "akm2Skillnad": -1.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "UPM.HE",
@@ -1999,9 +2357,9 @@
     "tillvaxt": 0.33,
     "vardering": 3.33,
     "lonsamhet": 0.67,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 0.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2017,7 +2375,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 39,
+   "akm2Skillnad": 6.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "YAR.OL",
@@ -2025,12 +2389,12 @@
    "bransch": "material",
    "akm1Totalt": 36.9,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 3.33,
     "lonsamhet": 2.33,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2046,7 +2410,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 35,
+   "akm2Skillnad": -1.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "AKRBP.OL",
@@ -2057,10 +2427,10 @@
     "tillvaxt": 0.33,
     "vardering": 2.33,
     "lonsamhet": 3.67,
-    "stabilitet": 2.0,
+    "stabilitet": 2,
     "moat": 1.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "korrigering",
@@ -2075,7 +2445,13 @@
    "datatackning": 0.6186,
    "akm1MaxMojligt": 61.9,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 23.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "CVX",
@@ -2085,10 +2461,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 3.33,
-    "lonsamhet": 3.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "lonsamhet": 3,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2104,7 +2480,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 77,
+   "akm2Skillnad": 29.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "ENEL.MI",
@@ -2112,13 +2494,13 @@
    "bransch": "energi",
    "akm1Totalt": 39.6,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
-    "vardering": 3.0,
-    "lonsamhet": 3.0,
-    "stabilitet": 2.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
-    "risk": 2.0
+    "tillvaxt": 0,
+    "vardering": 3,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -2133,7 +2515,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 16.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "EQNR.OL",
@@ -2141,12 +2529,12 @@
    "bransch": "energi",
    "akm1Totalt": 41.9,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
-    "vardering": 3.0,
+    "tillvaxt": 0,
+    "vardering": 3,
     "lonsamhet": 3.67,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2162,7 +2550,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 17.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "FORTUM.HE",
@@ -2170,12 +2564,12 @@
    "bransch": "energi",
    "akm1Totalt": 35.7,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 2.33,
-    "lonsamhet": 2.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "lonsamhet": 2,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2191,7 +2585,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 42,
+   "akm2Skillnad": 6.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "IBE.MC",
@@ -2201,10 +2601,10 @@
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 2.33,
-    "lonsamhet": 3.0,
+    "lonsamhet": 3,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2220,7 +2620,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 7.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "RWE.DE",
@@ -2228,13 +2634,13 @@
    "bransch": "energi",
    "akm1Totalt": 23.9,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 2.67,
     "lonsamhet": 1.33,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -2249,7 +2655,13 @@
    "datatackning": 0.6186,
    "akm1MaxMojligt": 61.9,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 31,
+   "akm2Skillnad": 7.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "SHEL",
@@ -2257,12 +2669,12 @@
    "bransch": "energi",
    "akm1Totalt": 44.7,
    "akm1PerKategori": {
-    "tillvaxt": 0.0,
+    "tillvaxt": 0,
     "vardering": 4.33,
     "lonsamhet": 2.33,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2278,7 +2690,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 73,
+   "akm2Skillnad": 28.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "VAR.OL",
@@ -2289,9 +2707,9 @@
     "tillvaxt": 0.33,
     "vardering": 1.67,
     "lonsamhet": 4.33,
-    "stabilitet": 1.0,
+    "stabilitet": 1,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2307,7 +2725,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 27.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "XOM",
@@ -2318,9 +2742,9 @@
     "tillvaxt": 0.33,
     "vardering": 3.33,
     "lonsamhet": 2.33,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2336,7 +2760,13 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 24.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
   },
   {
    "ticker": "DIS",
@@ -2347,9 +2777,9 @@
     "tillvaxt": 0.67,
     "vardering": 3.67,
     "lonsamhet": 2.33,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2365,7 +2795,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 10.6,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "META",
@@ -2373,12 +2808,12 @@
    "bransch": "kommunikation",
    "akm1Totalt": 49.7,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 1.33,
     "lonsamhet": 4.33,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2394,7 +2829,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 12.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "MTG-B.ST",
@@ -2404,10 +2844,10 @@
    "akm1PerKategori": {
     "tillvaxt": 1.33,
     "vardering": 3.33,
-    "lonsamhet": 2.0,
+    "lonsamhet": 2,
     "stabilitet": 1.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2423,7 +2863,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 47,
+   "akm2Skillnad": 3.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "NFLX",
@@ -2431,12 +2876,12 @@
    "bransch": "kommunikation",
    "akm1Totalt": 43.9,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 0.67,
-    "lonsamhet": 4.0,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2452,20 +2897,25 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 23.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "T",
    "namn": "AT&T Inc.",
    "bransch": "kommunikation",
-   "akm1Totalt": 52.0,
+   "akm1Totalt": 52,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
     "vardering": 3.67,
     "lonsamhet": 3.67,
     "stabilitet": 2.67,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2481,7 +2931,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gron",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 15,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "TEL2-A.ST",
@@ -2493,8 +2948,8 @@
     "vardering": 1.67,
     "lonsamhet": 3.67,
     "stabilitet": 2.67,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2510,20 +2965,25 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 23.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "TELIA.ST",
    "namn": "Telia Company AB (publ)",
    "bransch": "kommunikation",
-   "akm1Totalt": 41.0,
+   "akm1Totalt": 41,
    "akm1PerKategori": {
     "tillvaxt": 0.33,
     "vardering": 2.33,
     "lonsamhet": 2.67,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2539,7 +2999,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 18,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "VPLAY-B.ST",
@@ -2548,12 +3013,12 @@
    "akm1Totalt": 18.6,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 2.0,
+    "vardering": 2,
     "lonsamhet": 0.33,
     "stabilitet": 1.67,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 0.0
+    "katalysator": 0,
+    "risk": 0
    },
    "fvagPerHorisont": {
     "mikro": "korrigering",
@@ -2566,9 +3031,14 @@
    "golvMarginal": null,
    "portV19": true,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 45,
+   "akm2Skillnad": 26.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "VZ",
@@ -2581,7 +3051,7 @@
     "lonsamhet": 3.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2597,7 +3067,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 11.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "WBD",
@@ -2608,9 +3083,9 @@
     "tillvaxt": 0.67,
     "vardering": 1.33,
     "lonsamhet": 1.33,
-    "stabilitet": 2.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2624,9 +3099,14 @@
    "golvMarginal": null,
    "portV19": false,
    "datatackning": 0.6701,
-   "akm1MaxMojligt": 67.0,
+   "akm1MaxMojligt": 67,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 39,
+   "akm2Skillnad": 7.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   },
   {
    "ticker": "AMD",
@@ -2634,12 +3114,12 @@
    "bransch": "tillvaxt",
    "akm1Totalt": 37.9,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 0.33,
     "lonsamhet": 2.67,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2655,7 +3135,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 5.1,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "KINV-B.ST",
@@ -2668,8 +3153,8 @@
     "lonsamhet": 1.67,
     "stabilitet": 1.67,
     "moat": 0.33,
-    "katalysator": 0.0,
-    "risk": 2.0
+    "katalysator": 0,
+    "risk": 2
    },
    "fvagPerHorisont": {
     "mikro": "osatt",
@@ -2684,7 +3169,12 @@
    "datatackning": 0.5155,
    "akm1MaxMojligt": 51.5,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 38,
+   "akm2Skillnad": 8.9,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "NVDA",
@@ -2695,9 +3185,9 @@
     "tillvaxt": 1.33,
     "vardering": 0.33,
     "lonsamhet": 4.33,
-    "stabilitet": 2.0,
+    "stabilitet": 2,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2713,7 +3203,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 49,
+   "akm2Skillnad": 4.1,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "PCELL.ST",
@@ -2721,12 +3216,12 @@
    "bransch": "tillvaxt",
    "akm1Totalt": 21.9,
    "akm1PerKategori": {
-    "tillvaxt": 1.0,
+    "tillvaxt": 1,
     "vardering": 0.67,
     "lonsamhet": 0.67,
-    "stabilitet": 3.0,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 0.5
    },
    "fvagPerHorisont": {
@@ -2742,7 +3237,12 @@
    "datatackning": 0.5567,
    "akm1MaxMojligt": 55.7,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": 11.1,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "PLTR",
@@ -2755,7 +3255,7 @@
     "lonsamhet": 4.33,
     "stabilitet": 2.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2771,7 +3271,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 47,
+   "akm2Skillnad": -0.4,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "PSNY",
@@ -2780,11 +3285,11 @@
    "akm1Totalt": 6.6,
    "akm1PerKategori": {
     "tillvaxt": 0.67,
-    "vardering": 0.0,
-    "lonsamhet": 0.0,
+    "vardering": 0,
+    "lonsamhet": 0,
     "stabilitet": 0.33,
     "moat": 0.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 0.5
    },
    "fvagPerHorisont": {
@@ -2800,7 +3305,12 @@
    "datatackning": 0.4124,
    "akm1MaxMojligt": 41.2,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 25,
+   "akm2Skillnad": 18.4,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "SE",
@@ -2812,9 +3322,9 @@
     "vardering": 1.67,
     "lonsamhet": 2.33,
     "stabilitet": 2.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
-    "risk": 2.0
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2
    },
    "fvagPerHorisont": {
     "mikro": "impulsvag",
@@ -2829,7 +3339,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 4.6,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "SHOP",
@@ -2841,8 +3356,8 @@
     "vardering": 0.33,
     "lonsamhet": 2.67,
     "stabilitet": 3.33,
-    "moat": 1.0,
-    "katalysator": 0.0,
+    "moat": 1,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2858,7 +3373,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 2.4,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "TRUE-B.ST",
@@ -2871,7 +3391,7 @@
     "lonsamhet": 3.67,
     "stabilitet": 3.33,
     "moat": 1.33,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2887,7 +3407,12 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "gul",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 10.8,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   },
   {
    "ticker": "TSLA",
@@ -2898,9 +3423,9 @@
     "tillvaxt": 0.67,
     "vardering": 0.33,
     "lonsamhet": 0.67,
-    "stabilitet": 3.0,
+    "stabilitet": 3,
     "moat": 0.67,
-    "katalysator": 0.0,
+    "katalysator": 0,
     "risk": 2.5
    },
    "fvagPerHorisont": {
@@ -2916,7 +3441,21 @@
    "datatackning": 0.7113,
    "akm1MaxMojligt": 71.1,
    "status": "rod",
-   "senastKontrollerad": "2026-09-03"
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": 6.2,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
   }
- ]
+ ],
+ "akm2Berikad": "2026-09-04",
+ "akm2Regler": {
+  "kalla": "data/portfolj-system/bolagsunivers.json via src/lib/portfolj-forskning/akm2-koppling.ts",
+  "formel": "akm2 = raknaAKM2(nyckeltal, { moduler: automatiska ur modulregistret (branschmatchning), viktprofil: \"akm2-2026\" }).komposit",
+  "skillnad": "akm2Skillnad = akm2 - akm1Totalt (1 decimal) — differens mot P6:s publicerade viktade AKM1-total",
+  "moduler": "akm2Moduler = branschmodulernas namn ur src/lib/akm2/moduler (aktiverade per bolagets bransch)",
+  "osatt": "nyckeltal saknas => akm2/akm2Skillnad = null och akm2Moduler = [] (verktyget gissar aldrig)",
+  "cache": "data/cache/akm2-{TICKER}.json (schema akm2-resultat-v1) — fullt resultat + serialiserbar profil"
+ }
 }

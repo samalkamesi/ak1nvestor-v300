@@ -7,7 +7,7 @@
  "valuta": "SEK",
  "versionsdatum": "2026-09-04",
  "underlagSenastKontrollerad": "2026-09-03",
- "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B)",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
  "urval": {
   "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
   "status": "gron",
@@ -87,6 +87,40 @@
     "motivering": "ROE 27,3 % → konkav kurva 4/5"
    }
   ]
+ },
+ "akm2": {
+  "totalt": 80,
+  "skillnad": 26,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "bank",
+    "orsak": "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp",
+    "variabler": [],
+    "poang": {}
+   }
+  ],
+  "modulVariablerSatta": [],
+  "modulVariablerOsatta": [
+   "V21",
+   "V22",
+   "V23",
+   "V24",
+   "V25",
+   "V26",
+   "V27",
+   "V28"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 24 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V10, V11, V12, V13, V14, V15, V16, V17, V18, V19, V20, V21, V22, V23, V24, V25, V26, V27, V28) och deras sammanlagda vikt har omfördelats proportionellt till de 4 aktiva variablerna.",
+  "osakerhetNote": "16 av 20 kärnvariabler är osatta (andel 80 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+  ],
+  "kalla": "data/cache/akm2-INVE-B_ST.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
  },
  "vaglage": {
   "perHorisont": {

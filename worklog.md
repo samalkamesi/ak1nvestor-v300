@@ -5236,3 +5236,197 @@ tabellen saknas fortfarande (PGRST205) → tre ko-backup-filer skrivna
 (168+120+194 poster med poäng) + tydligt SQL-budskap; omkörning efter
 data/sql/oversattningar.sql upsertar samma rader. src/ RÖRDES EJ. INGET
 committat.
+
+## VÅG 55 agent L2: bloggen in i MÖS — källregister + dynamiska bloggspeglar /en|ar/blogg (2026-09-04)
+
+Kunddirektiv: "inte kurser eller annat eller BLOG, ingen översätts" — bloggen
+in i MEGA ÖVERSÄTTNINGSSYSTEMET, på exakt kursspeglarnas (våg 52 agent B)
+mönster: läst+följt, deras filer ej ändrade.
+
+(1) KÄLLREGISTRET (src/lib/oversattning/kalla.ts): NY lasBloggKallor() med
+eigen bloggCache — läser data/blogg/*.json i sorterad FILNAMNSORDNING
+(deterministiskt; ogiltig JSON/ogiltig slug hopps över, saknad katalog ⇒ tom
+lista tyst — ett trasigt inlägg stoppar aldrig cron-ronden). Scope-typ
+"blogg", nycklar per textbärande fält: {slug}:titel (title), {slug}:ingress
+(description-fältet) och {slug}:p{n} (stycke n av body, 1-BASERAT, delning
+/\n\n+/ med tomma/vita block bort — exportad bloggStycken() är den enda
+räkneordningen, speglarna duplicerar den medvetet som kursspeglarna
+duplicerar sin blockuppräkning). pillar/author/tags/datum = struktur,
+översätts ej. listaKallor()-KONTRAKTET: [...ui, ...kursblock, ...blogg] —
+blogg EFTER kursblocken (cron-rondens prioritet ui→kurser→blogg);
+resetKallCache() nollställer även bloggCache/alltCache. Header-dokumentaionen
+uppdaterad (ScopeTyp "blogg" ej längre "reserverad").
+
+(2) BLOGGSPEGLARNA — NY src/lib/blogg-speglar.ts (kurs-speglar.ts mönster:
+samma toleranta kolumnavläsning lasKolumn/arPublicerad, samma PostgREST-
+försöksordning med 6 s-timeout + next.revalidate 3600 + taggar
+oversattningar/oversattningar:blogg, samma fallback publicerad→svensk
+originaltext) med scope_typ=eq.blogg i primärfrågan + lokalt scope_typ-filter
+säkerhetsnät (kursrader läcker aldrig in; slugs-prefix-filter i den toleranta
+fallback-frågan). hamtaBloggOversattningar(slug) per artikel +
+hamtaAllaBloggOversattningar(slugs) = EN fråga till hela listvyn (i stället
+för 35 st) + urAllaLager()/hamtaBloggLager(). byggBloggSpegel() räknar
+kalla.ts-paritet (titel+ingress+varje icke-tomt stycke = totala; andelen kan
+nå 100 %) och monterar om post.body ur de speglade styckena. SEO-tröskeln =
+IMPORTERAD INDEX_TRASKEL (80 %) från kurs-speglar (samma tröskel i EN punkt):
+under ⇒ robots noindex,follow + canonical MOT SVENSKA ORIGINALET /blogg/{slug}
+(hreflang-kluster avsiktligt ute), vid ≥ 80 % ⇒ egen canonical + fullt
+hreflang-kluster sv-SE/en/ar/x-default→sv. bloggSpegelMetadata() (openGraph
+type article + publishedTime) + bloggSpegelJsonLd() (Article på målspråk).
+
+(3) RENDERARE + RUTTER — NY src/components/ak1a/blogg-spegel-sida.tsx
+(KursSpegelSida-mönstret): EN notis överst per sida (🌐 + procent +
+progressstapel, döljs först vid komplett), svensk struktur speglad från
+/blogg/[slug] (## rubriker, - listor, [länk](href)/**fet**/_kursiv_ — samma
+inline-tolkning), brödsmula/JSON-LD via t("nav.blogg"), dir=rtl för ar,
+relaterade inlägg + tagg-chips; bloggSpegelGenerateMetadata()-allyta. NYA
+sidfiler: /en/blogg + /ar/blogg (force-static + revalidate 3600; spegelMetadata
+indexerbar lista; ALLA inlägg som kort med titel+ingress ur lagret per fält
+med svensk fallback + per-inlägg-progressrad VID DELVIS översättning
+[publicerade>0 && !komplett; 0 %-fallen täcks av den allmänna notisen] +
+översatt sidrubrik/intro/CTA inline per språk, ar med dir=rtl) samt
+/en|ar/blogg/[slug] (EXAKT kursspegel-kontraktet: dynamic="force-static" +
+generateStaticParams⇒[] + dynamicParams + revalidate 3600 — inget förbygge,
+varje artikel on-demand; okänd slug ⇒ notFound(); textpaket TEXTER_EN/TEXTER_AR
+inline i sidfilerna som kursspeglarna).
+
+VERIFIERAT: (a) tsx-körning av listaKallor: TOTAL 70 558 = ui 289 +
+kursblock 69 501 + BLOGG 768 (35 inlägg: 35 titel + 35 ingress + 698 stycken;
+0 dubbletter; första blogg-index 69 790 dvs strikt efter sista kursblock).
+(b) tsc --noEmit: EXAKT 43 förhandsbefintliga fel, 0 i rördas filer (en
+mellankörning med 15 fel = eget "*/"-i-blockkommentar-bugg i
+blogg-spegel-sida.tsx, fixad innan slutkontroll). (c) Dev (port 3486, egen
+instans): /en/blogg 200 (alla 35 kort, svensk fallback-titel, generell
+översättningsnotis, canonical /en/blogg), /ar/blogg/roic-den-glomda-
+nyckeltalen-v11 200 (arabisk notis "اكتمل 0٪" + progressstapel, dir=rtl,
+robots noindex,follow, canonical→svenska originalet, HEL svensk fallback-kropp
+verifierad: h2 "Vad ROIC" + kroppord NOPAT ×6 + relaterade ar-länkar),
+/en/blogg/mr-market-psykologi-svenska-borsen 200 (engelsk notis "0% complete",
+noindex, canonical→originalet, svensk fallback-kropp). Dev-logg 0 fel;
+servern dödad efteråt. RÖRDES EJ: lager.ts/motor.ts (annan agent),
+kurs-speglarnas befintliga filer, menyer, chat, seo.tsx. INGET committat.
+
+## VÅG 55 agent L1: MÖS-lagret OBEROENDE av ny tabell — auto-detektering + system_events-backend (2026-09-04)
+
+Kundproblemet (ordagrant): "det enda som fungerar nu meny... men inte
+kurser... ingen översätts". ROT: lager.ts krävde att kunden skapade tabellen
+oversattningar via SQL (data/sql/oversattningar.sql) — det hände aldrig, så
+importören + cron-ronderna köade ALLT i fallback och prod visade 0 %. Nu:
+lagret detekterar backend SJÄLVT vid första anropet per process och klarar
+sig på BEFINTLIGA system_events (skapad sedan länge av setup-SQL:en — ingen
+ny SQL krävs av kunden).
+
+(1) AUTO-DETEKTERING (src/lib/oversattning/lager.ts): sond 1 GET /rest/v1/
+oversattningar?select=scope_typ&limit=1 — ok (PGRST200) ⇒ TABELL-BACKEND,
+beteendet oförändrat (UNIQUE-upsert, RLS-publik läsning — fortfarande bästa
+läget när SQL:en körs). Annars sond 2 GET /rest/v1/system_events?select=id&
+limit=1 — ok ⇒ SYSTEM_EVENTS-BACKEND; når ingen ⇒ TabellSaknasFel (cron:ens
+fallback-kö-kedja är densamma). Sondresultatet cachas per process; nätverks-
+fel nollställer cachen (transienta fel låser aldrig processen). Alla befint-
+liga export-signaturer bevarade (lasSpara/lasStatusKarta/markeraInaktuell/
+lasPublicerad + kö-hjälpfunktionerna) — cron, admin-rutten och importören
+rördes inte och fungerar oförändrat.
+
+(2) EVENT-KONTRAKT "mös/1" (rena funktioner, testade i sviten): POST-rad
+{type:"oversattning", severity:"info", message:"[mös] <status> <scope_nyckel>
+<sprak>" (sökbart prefix), details:{schema:"mös/1", scope_typ, scope_nyckel,
+sprak, kallhash, text, status, kvalitet, kontrollrapport}, source:"mos"}.
+Hela event-sourcing: läsningarna går ALLTID order=created_at.desc (id är
+uuid-TEXT, ej kronologiskt!) + SENASTE-VINNER-dedupe per (scope_typ,
+scope_nyckel, sprak) i koden (dedupeSenasteVinner) — en äldre "publicerad"-rad
+servas ALDRIG när den senaste för nyckeln har annan status (t.ex. inaktuell
+källa ⇒ svensk fallback i spegeln: ärlig degradering).
+
+FILTER-SYNTAX VERIFIERAD MOT PROD-POSTGREST (två sondrundor före implemen-
+teringen): CITERADE värden ("...") är ICKE-träffande för details->>-filter
+på aktuell version — RÅA %-kodade värden fungerar. Exakta frågorna:
+  skriv:   POST /rest/v1/system_events  (EN begäran per batch; dublett-
+           nycklar inom batchen slås samman före skriv, sista vinner = samma
+           semantik som tabell-upserten)
+  radera:  DELETE /rest/v1/system_events?type=eq.oversattning&details->>
+           scope_typ=eq.{typ}&details->>scope_nyckel=eq.{nyckel}&details->>
+           sprak=eq.{sprak}&select=id  (best-effort per lasSpara, ≤12 nycklar
+           per anrop — verifierad fungerande med service-role; nekas den
+           vinner ändå senaste raden vid läsning)
+  status:  GET ...?type=eq.oversattning&select=created_at,details->>
+           scope_typ,details->>scope_nyckel,details->>sprak,details->>
+           kallhash,details->>status&order=created_at.desc (sidvis Range,
+           40 sidor à 1 000 — samma tak som tabell-läget)
+  spegel:  GET ...?type=eq.oversattning&details->>scope_nyckel=like.{slug}:*
+           &select=created_at,details->>scope_nyckel,details->>sprak,
+           details->>status,details->>text&order=created_at.desc&limit=1000
+  inaktuell: markeraInaktuell läser senaste raden per språk och appechar en
+           kopia med status="inaktuell" och GAMLA kallhash bevarad (cron:ens
+           hashjämförelse fortsätter köa objektet tills det verkligen
+           översatts om — rätt semantik, inga dubblettappends: redan-
+           inaktuell senaste rad skrivs aldrig om).
+
+(3) KURSSPEGLARNA (src/lib/kurs-speglar.ts — API:t OFÖRÄNDRAT, endast
+backend-internt): hamtaKursOversattningar fick ett TREDJE försök efter de
+befintliga två tabell-läsningarna: lasPubliceradeForSpegel(slug) i lager.ts
+(system_events + dedupe + publicerad-filter + slug-prefixvakt mot like-
+falska träffar). Finns tabellen senare används den fortfarande primärt.
+
+(4) KVANTITETSGRÄNSER — 17,7M-KOLLAPSEN FÅR ALDRIG UPPREPA SIG (minnet):
+retention-organet (src/lib/autonom/organ.ts, daglig cron 0 00) fick en egen
+regel för type=oversattning, dokumenterad i filhuvudena i organ.ts + lager.ts:
+  (a) HÅRT TAK 45 000 RADER. (b) STEG 1: äldsta DUBLETTRADER raderas FÖRST
+  (samma details->>scope_nyckel+sprak, behåll SENASTE — skanning nyast-först
+  med sidning, tak 50 sidor/5 000 raderade per körning = bounded, alltid).
+  (c) STEG 2: vid överkott stympas äldsta med status!="publicerad" först
+  (utkast/vantar/inaktuell är återvinningsbara via cron), därefter äldsta
+  publicerade. (d) Översattning-typen är EXKLUDERAD ur organets generella
+  regler (tidigare "type=not.in.(trafik,sakerhet)" 30 dagar/500 rader hade
+  raderat dagens översättningar första natten — nu not.in.(trafik,sakerhet,
+  oversattning)). ÄRLIG AVGRÄNSNING, dokumenterad: taket 45 000 < registrets
+  141 116 objekt (våg 55 L2:s blogg-utökning) ⇒ event-backend-läget täcker
+  registret inkrementellt; borttrimmade nycklar blir "nya" igen och köas om —
+  andelen speglar alltid pipeline:ens verkliga framsteg, aldrig påstått mer.
+  Tabell-backend-läget (om kunden kör SQL:en) har inget sådant tak.
+
+(5) VERIFIERAT: (a) tsc --noEmit 43/0 (43 förhandsbefintliga fel = bas-
+linjen, 0 nya; 0 i lager.ts/kurs-speglar.ts/organ.ts). (b) motorer-sviten
+(verktyg/validera-motorer.mjs): RESULTAT 76 PASS / 0 FAIL / 0 SKIP — 3 NYA
+tester MÖS 16-18 (system_events-kroppens meddelandeformat+details mös/1,
+senaste-vinner-dedupe+statuskarta, spegelkartans dedupe-FÖRE-status-filter +
+slug-vakt — rena funktioner, sviten kör fortfarande inget nät). (c) DEV-TEST
+MOT RIKTIG SUPABASE via tsx (tmp-skript, raderat efteråt; nycklar endast i
+env, värden loggades aldrig): tabellen oversattningar bekräftad SAKNAD
+(PGRST205) ⇒ auto-detekteringen valde system_events; lasSpara skrev 2
+testposter "[mös] publicerad test-mos:kap1:block1 en" + "[mös] publicerad
+test-mos:kap1:block2 ar" (verifierade som exakt 2 event-rader); lasPublicerad
+läste tillbaka "Test translation EN" + "اختبار AR"; lasPubliceradeForSpegel
+('test-mos') ⇒ 2 nycklar med rätt språk; lasStatusKarta innehöll kallhash
+testhash001/002+publicerad; omskrivning av (en)-nyckeln till utkast ⇒ EXAKT 1
+rad kvar (föregångar-raderingen fungerar) + lasPublicerad⇒null + kartan
+uppdaterad till testhash003/utkast; markeraInaktuell(ar)⇒1 rad med GAMLA
+hashen bevarad + lasPublicerad⇒null + spegeln serverade inte längre nyckeln;
+städning DELETE via id ⇒ 0 testrader kvar. SAMMANFATTNING: 12/12 krav OK.
+RÖRDES EJ: kalla.ts-registret, motor.ts, kontroller.ts, termbank.ts,
+importören (verktyg/importera-oversattning.mjs), cron/admin-rutternas kod,
+speglarnas export-API. INGET committat.
+
+── VÅG 55 KOMPLETT: ÖVERSÄTTNINGARNA LEVER — UTAN SQL, UTAN AI-NYCKEL (2026-09-04) ──
+Kundklagan: "men inte kurser eller annat eller blog, ingen översätts" —
+rot: lagret krävde en ny tabell kunden aldrig skapade. TVÅ AGENTER + main:
+(L1) LAGRET OBEROENDE AV NY TABELL: lager.ts auto-detekterar (tabell om
+finns, annars BEFINTLIGA system_events — type=oversattning, kontrakt
+mös/1, event-sourcing med created_at.desc + senaste-vinner-dedupe,
+föregångar-radering ≤12/anrop); kurs-speglar läser via tredje försök
+lasPubliceradeForSpegel — API oförändrat. PostgREST-fynd: citerade värden
+i details->>-filter är ICKE-träffande — råa %-kodade krävs. Retention:
+type=oversattning eget tak 45 000 (dubletter rensas först, icke-publicerade
+sedan), exkluderad ur generella 30-dagarsreglerna — 17.7M-kollapsen
+förebyggd. LIVE 12/12 mot riktig Supabase. Svit 76 PASS/0/0.
+(L2) BLOGGEN IN: registret +768 källor (35 titlar+35 ingresser+698 stycken,
+scope "blogg") — totalt 70 558 objekt; /en|ar/blogg + /en|ar/blogg/[slug]
+spegla med samma fallback+progress+80 %-SEO-tröskel som kurserna.
+(MAIN) LIVE-IMPORTEN KÖRD: node verktyg/importera-oversattning.mjs →
+"SPARAT — 1250 rader" I RIKTIG SUPABASE. DIREKTBEVIS dev (färsk server):
+/en/kurser/the-intelligent-investor → 200, progress-notis DOLD (=100 %),
+ENGELSK text (investment/speculation), robots "index, follow" (tröskeln
+passerad!); /ar-kurs RTL+arabisk text; /en/kurser/zero-to-one 200;
+/en|ar/blogg 200. Rest: kursers HUVUDTITEL-fält ej i registret (block +
+kapiteltitlar+intros+quiz täcks) — laggs i framtida våg.
+SQL-KRAVET PÅ KUNDEN ÄR BORTA — systemet helt självständigt; dagliga
+MyMemory-ronder fyller på allt efterhand.

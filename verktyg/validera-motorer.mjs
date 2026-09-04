@@ -135,7 +135,9 @@ let VKN: any, SRP: any, VPL: any, BRE: any, BDG: any, ABK: any, AST: any, KAR: a
 let FVG: any, UPP: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
-let OVS: any, KLL: any, KTR: any, MOT: any, ORD: any;
+// LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
+// delarna testas LIVE mot Supabase, se worklog våg 55 L1; sviten kör aldrig nät).
+let OVS: any, KLL: any, KTR: any, MOT: any, ORD: any, LGR: any;
 let körVagfundament: (o: { tickers: string[]; vikter?: Record<string, number> }) => Promise<any>;
 let hamtaBalansPoster: (t: string) => Promise<any>;
 let körAnalysMotor: (o: { tickers: string[] }) => Promise<any>;
@@ -2230,6 +2232,126 @@ async function fasOversattning(): Promise<void> {
       "utan=" + String(utan.poang) + " med=" + String(med.poang),
     );
   }
+
+  // ── MÖS 16 (våg 55 L1): SYSTEM_EVENTS-KROPPEN — meddelandeformat + mös/1 ────
+  // Lagret sparar översättningar som system_events-rader när tabellen
+  // oversattningar saknas (kundens SQL kördes ej). REN formatfunktion — nätet
+  // verifieras LIVE mot Supabase (worklog våg 55 L1), sviten kör aldrig nät.
+  {
+    const problem: string[] = [];
+    const medd = LGR.mosMeddelande("publicerad", "the-intelligent-investor:kap5:block3", "en");
+    if (medd !== "[mös] publicerad the-intelligent-investor:kap5:block3 en") {
+      problem.push("meddelandeformat avviker: '" + medd + "'");
+    }
+    if (medd.indexOf("[mös] ") !== 0) problem.push("sökbart prefix '[mös] ' saknas i början");
+    const medd2 = LGR.mosMeddelande("vantar-motor", "nav.lar", "ar");
+    if (medd2 !== "[mös] vantar-motor nav.lar ar") problem.push("ui-nyckel-format: '" + medd2 + "'");
+    const kropp = LGR.mosEventKropp({
+      scope_typ: "kursblock",
+      scope_nyckel: "zero-to-one:kap3:block2",
+      sprak: "ar",
+      kallhash: "abc123def456",
+      text: "الخندق التنافسي",
+      status: "publicerad",
+      kvalitet: 100,
+      kontrollrapport: { tom: true },
+    });
+    if (kropp.type !== "oversattning") problem.push("type=" + String(kropp.type) + " (förväntat oversattning)");
+    if (kropp.severity !== "info") problem.push("severity=" + String(kropp.severity));
+    if (kropp.source !== "mos") problem.push("source=" + String(kropp.source));
+    if (kropp.message !== LGR.mosMeddelande("publicerad", "zero-to-one:kap3:block2", "ar")) {
+      problem.push("message följer ej mosMeddelande");
+    }
+    const d = kropp.details;
+    if (d.schema !== "mös/1") problem.push("schema=" + String(d.schema) + " (förväntat mös/1)");
+    if (d.scope_typ !== "kursblock" || d.sprak !== "ar") problem.push("scope_typ/sprak fel i details");
+    if (d.kallhash !== "abc123def456" || d.status !== "publicerad" || d.kvalitet !== 100) {
+      problem.push("kallhash/status/kvalitet fel i details");
+    }
+    if (d.text !== "الخندق التنافسي") problem.push("texten följer inte med i details");
+    if (!d.kontrollrapport || d.kontrollrapport.tom !== true) problem.push("kontrollrapport följer inte med");
+    // determinism 2×
+    if (JSON.stringify(LGR.mosEventKropp({ scope_typ: "ui", scope_nyckel: "nav.lar", sprak: "en", kallhash: "h1h1h1h1h1h1", text: "Learn", status: "publicerad", kvalitet: 100, kontrollrapport: null }))
+        !== JSON.stringify(LGR.mosEventKropp({ scope_typ: "ui", scope_nyckel: "nav.lar", sprak: "en", kallhash: "h1h1h1h1h1h1", text: "Learn", status: "publicerad", kvalitet: 100, kontrollrapport: null }))) {
+      problem.push("mosEventKropp ej deterministisk");
+    }
+    rad(
+      "mos-oversattning",
+      "SYSTEM_EVENTS-KROPP meddelandeformat + details (schema mös/1)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "message = '[mös] <status> <scope_nyckel> <sprak>' (sökbart prefix, kurs- och ui-nycklar); kropp: type=oversattning, severity=info, source=mos, details bära schema mös/1 + scope/kallhash/text/status/kvalitet/kontrollrapport; deterministisk 2×"
+        : problem.slice(0, 6).join("; "),
+      "message='" + String(medd) + "'",
+    );
+  }
+
+  // ── MÖS 17 (våg 55 L1): SENASTE-VINNER-DEDUPE + statuskarta ur event-rader ──
+  {
+    const problem: string[] = [];
+    const rader = [
+      { created_at: "2026-09-04T10:00:00Z", scope_typ: "kursblock", scope_nyckel: "k:kap1:block1", sprak: "en", kallhash: "h2nyare", status: "publicerad", text: "ny text" },
+      { created_at: "2026-09-03T10:00:00Z", scope_typ: "kursblock", scope_nyckel: "k:kap1:block1", sprak: "en", kallhash: "h1gamla", status: "utkast", text: "gammal text" },
+      { created_at: "2026-09-03T10:00:00Z", scope_typ: "kursblock", scope_nyckel: "k:kap1:block1", sprak: "ar", kallhash: "h1gamla", status: "publicerad", text: "ar-text" },
+      { created_at: "2026-09-03T10:00:00Z", scope_typ: "ui", scope_nyckel: "nav.lar", sprak: "en", kallhash: "h3", status: "vantar-motor", text: "" },
+      { created_at: "2026-09-02T10:00:00Z", scope_typ: "ui", scope_nyckel: "nav.lar", sprak: "en", kallhash: "h0", status: "inaktuell", text: "" },
+    ];
+    const dedupe = LGR.dedupeSenasteVinner(rader);
+    if (dedupe.length !== 3) problem.push("dedupe-antal=" + String(dedupe.length) + " (förväntat 3: en-nyckeln slås samman, ar + ui är egna nycklar)");
+    const vinnare = dedupe.find((r: any) => r.sprak === "en" && r.scope_nyckel === "k:kap1:block1");
+    if (!vinnare || vinnare.status !== "publicerad" || vinnare.kallhash !== "h2nyare") {
+      problem.push("senaste raden vinner ej för (k:kap1:block1, en): " + JSON.stringify(vinnare));
+    }
+    const uiVinnare = dedupe.find((r: any) => r.scope_nyckel === "nav.lar");
+    if (!uiVinnare || uiVinnare.status !== "vantar-motor") problem.push("senaste ui-rad vinner ej");
+    const karta = LGR.mosStatusKartaUrEventRader(rader);
+    if (karta.size !== 3) problem.push("karta.size=" + String(karta.size) + " (förväntat 3)");
+    const p = karta.get("kursblock:k:kap1:block1:en");
+    if (!p || p.kallhash !== "h2nyare" || p.status !== "publicerad") problem.push("kartpost kursblock/en: " + JSON.stringify(p));
+    const q = karta.get("ui:nav.lar:en");
+    if (!q || q.status !== "vantar-motor" || q.kallhash !== "h3") problem.push("kartpost ui: " + JSON.stringify(q));
+    if (LGR.mosStatusKartaUrEventRader([]).size !== 0) problem.push("tom indata ⇒ ej tom karta");
+    rad(
+      "mos-oversattning",
+      "EVENT-DEDUPE senaste-vinner + statuskarta (ren funktion)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "5 rader (2 dubletter) nyast-först ⇒ 3 vinnare: (nyckel,en) håller publicerad/h2nyare, äldre utkast-rad slängs; (nyckel,ar) och (nav.lar,en) är egna nycklar med senaste status; kartan 'typ:nyckel:sprak' → {kallhash,status} samma form som tabell-läsningen; tom indata ⇒ tom karta"
+        : problem.slice(0, 6).join("; "),
+      "dedupe=" + String(dedupe.length) + " karta=" + String(karta.size),
+    );
+  }
+
+  // ── MÖS 18 (våg 55 L1): SPEGELKARTAN — inaktuell källa servar ALDRIG gammal text ──
+  {
+    const problem: string[] = [];
+    const rader = [
+      { created_at: "2026-09-04T10:00:00Z", scope_nyckel: "k:kap1:block1", sprak: "en", status: "publicerad", text: "servas" },
+      { created_at: "2026-09-04T09:00:00Z", scope_nyckel: "k:kap1:block1", sprak: "ar", status: "publicerad", text: "يُقدَّم" },
+      { created_at: "2026-09-04T10:00:00Z", scope_nyckel: "k:kap2:block1", sprak: "en", status: "inaktuell", text: "gammal" },
+      { created_at: "2026-09-01T10:00:00Z", scope_nyckel: "k:kap2:block1", sprak: "en", status: "publicerad", text: "FARLIG gammal publicerad" },
+      { created_at: "2026-09-04T10:00:00Z", scope_nyckel: "annan-kurs:block1", sprak: "en", status: "publicerad", text: "fel kurs" },
+      { created_at: "2026-09-04T10:00:00Z", scope_nyckel: "k:kap3:block1", sprak: "en", status: "publicerad", text: "   " },
+    ];
+    const karta = LGR.mosSpegelKartaUrRader(rader, "k");
+    if (karta.size !== 1) problem.push("karta.size=" + String(karta.size) + " (förväntat 1: endast k:kap1:block1)");
+    const block1 = karta.get("k:kap1:block1");
+    if (!block1 || block1.get("en") !== "servas" || block1.get("ar") !== "يُقدَّم") {
+      problem.push("kap1:block1 saknar en/ar-texter: " + JSON.stringify(block1 && Array.from(block1.entries())));
+    }
+    if (karta.has("k:kap2:block1")) problem.push("inaktuell senaste rad servar ändå — äldre publicerad läcks!");
+    if (karta.has("annan-kurs:block1")) problem.push("like-mönstrets säkerhetsnät (slug-prefix) läcker");
+    if (karta.has("k:kap3:block1")) problem.push("tom/vitrumstext publicerad-text accepterad");
+    rad(
+      "mos-oversattning",
+      "SPELGELKARTA ur event-rader (dedupe FÖRE status-filter, slug-vakt)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "dedupe körs FÖRE publicerad-filtret: (kap2, senaste=inaktuell) ⇒ äldre publicerad rad servas ALDRIG (svensk fallback i spegeln — ärlig degradering); endast slug-prefixede nycklar tas (like-falska träffar stoppas); tom text underkänns; en+ar levereras per nyckel"
+        : problem.slice(0, 6).join("; "),
+      "karta=" + String(karta.size) + " nyckel=" + String(block1 ? block1.size : "-") + " sprak",
+    );
+  }
 }
 // Hjälpfunktioner till vagkon-fixturerna (historik + SR-rensning)
 function H2(): number[] { return [100, 110, 105, 120, 115, 130]; }
@@ -2282,6 +2404,7 @@ let fardig = false;
   KLL = await import("./src/lib/oversattning/kalla");
   KTR = await import("./src/lib/oversattning/kontroller");
   MOT = await import("./src/lib/oversattning/motor");
+  LGR = await import("./src/lib/oversattning/lager");
   ORD = await import("./src/lib/ordlista");
   körVagfundament = VFM.körVagfundament;
   hamtaBalansPoster = VFM.hamtaBalansPoster;

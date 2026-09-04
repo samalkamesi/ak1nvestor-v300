@@ -12,6 +12,8 @@ import { TracerMount } from "@/components/ak1a/tracer-mount";
 import { Kommandopalett } from "@/components/ak1a/kommandopalett";
 import { NotisCenter } from "@/components/ak1a/notis-center";
 import { CookieConsent } from "@/components/ak1a/cookie-consent";
+import { SprakLeverantor } from "@/components/ak1a/sprak-leverantor";
+import { TrafikRapportor } from "@/components/ak1a/trafik-rapportor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -170,17 +172,22 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Ak1aStoreProvider>
-            {children}
-            <Toaster />
-            <ChatWidget />
-            <ShortSeller />
-            <PwaRegistrerare />
-            <TracerMount />
-            <Kommandopalett />
-            <NotisCenter />
-            <CookieConsent />
-          </Ak1aStoreProvider>
+          {/* Språk-grunden (fas 1): sv|en|ar klientsidigt — SSR förblir svensk,
+              <html lang>+dir sätts vid val; se data/forskning/SPRAK-PLAN.md */}
+          <SprakLeverantor>
+            <Ak1aStoreProvider>
+              {children}
+              <Toaster />
+              <ChatWidget />
+              <ShortSeller />
+              <PwaRegistrerare />
+              <TracerMount />
+              <TrafikRapportor />
+              <Kommandopalett />
+              <NotisCenter />
+              <CookieConsent />
+            </Ak1aStoreProvider>
+          </SprakLeverantor>
         </ThemeProvider>
       </body>
     </html>

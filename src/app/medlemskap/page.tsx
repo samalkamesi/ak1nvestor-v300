@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, faqJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { SIFFROR, tal } from "@/lib/siffror";
@@ -193,6 +193,35 @@ export default function MedlemskapPage() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Medlemskap" }]} wide>
+      {/* FAQPage-schema (AI-SEO våg 50) — fas-frågorna är vad användare (och
+          AI-assistenter) faktiskt frågar; svaren bygger på sidans egna tal. */}
+      <JsonLd
+        data={faqJsonLd([
+          {
+            fraga: "Vad är skillnaden mellan Fas 1, Fas 2 och Fas 3?",
+            svar:
+              "Fas 1 är grundutbildningen — kostnadsfri för alltid. Fas 2 är sammanvägningen: samma 20 analytiska indikatorer (V01–V20), nu vägda ihop på rätt sätt med grundarens coaching. Fas 3 är ekosystemet där teknisk analys och den kompletta analysresan lever.",
+          },
+          {
+            fraga: "Är Fas 1 verkligen gratis?",
+            svar: `Ja — Fas 1 är kostnadsfritt för alltid: ${tal(fas1Antal)} kurser, ${tal(fas1Bokmaster)} heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet.`,
+          },
+          {
+            fraga: "Hur många kurser och quiz ingår?",
+            svar: `${tal(SIFFROR.kurser)} kurser i hela biblioteket och över ${tal(quiz)} quiz i Fas 1 — alla med omedelbar förklaring av rätt svar.`,
+          },
+          {
+            fraga: "Vad är 90 dagars nöjd-kund-garantin?",
+            svar:
+              "Du betalar inget under de första 90 dagarna; betalning sker först efter 90 dagar, och bara om du förblir nöjd. Den lagstadgade ångerrätten kvarstår alltid parallellt — se villkoren.",
+          },
+          {
+            fraga: "Ger AK1A investeringsråd?",
+            svar:
+              "Nej. AK1A utbildar oberoende fundamentalanalytiker — pedagogisk analys, aldrig investeringsråd eller tips på enskilda aktier.",
+          },
+        ])}
+      />
       <h1 className="font-serif text-4xl font-bold">Vår vision: kunskap är en rättighet</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Fundamentalanalys ska vara tillgänglig för alla människor — som luft och vatten.

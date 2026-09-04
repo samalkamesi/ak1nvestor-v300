@@ -4,36 +4,57 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
-import { morgonMejl, veckoRapport, fas2Nudge } from "@/lib/email-mallar";
+import { morgonMejl, veckoRapport, fas2Nudge, NYHETSBREV_MALL } from "@/lib/email-mallar";
+import { lasLeverantor, skickaMejl, type SkickaResultat } from "@/lib/email-sandare";
 
 /**
- * POST /api/email — köa ett mejl (MEGA_PLAN_V3 våg #9: morgon-briefing via mejl).
+ * POST /api/email — köa (och, om leverantör finns, SKICKA) ett mejl.
+ * (MEGA_PLAN_V3 våg #9 + VÅG 50: leverantörsadapter — se src/lib/email-sandare.ts.)
  *
- * Body: { email, typ: "morgon"|"vecka"|"fas2nudge", data: {...} }
- *   morgon   → data { namn, vagText, dagensAktie, streak }
- *   vecka    → data { namn, klaraKurser, xp, topRorelse }
- *   fas2nudge→ data { namn, niva }        (nivå 25 → Fas 2-inbjudan)
+ * Body: { email, typ: "morgon"|"vecka"|"fas2nudge"|"prenumeration-intention", data: {...} }
+ *   morgon                  → data { namn, vagText, dagensAktie, streak }
+ *   vecka                   → data { namn, klaraKurser, xp, topRorelse }
+ *   fas2nudge               → data { namn, niva }        (nivå 25 → Fas 2-inbjudan)
+ *   prenumeration-intention → data { namn, nivaNamn, period, pris }
+ *                             (frivillig nyhetsbrevscheck i aktivera-panelen —
+ *                              köar en intention + välkomstbrev till eleven)
  *
  * Köhantering: varje anrop mallar HTML:en (src/lib/email-mallar.ts — AK1A-DNA,
  * tabellbaserad, disclaimer alltid) och lägger EN rad i system_events:
  *   type     = "email_kö"
  *   details  = { email, typ, "mallad-html": <färdigt brev> }
  *
- * DAGENS LÄGE — ingen extern leverantör: SendGrid/Resend är EJ konfigurerat,
- * så vi SPARAR bara brevet i kön (köad=true) och skickar ingenting. När en
- * leverantör konfigureras (t.ex. RESEND_API_KEY eller SENDGRID_API_KEY läggs
- * i miljövariablarna) tömmer en framtida utskickare kön — raderna här är
- * redan leveransklara med färdigmallad HTML. Tills dess är "skickade"=0.
+ * LEVERANTÖR (VÅG 50): är EMAIL_LEVERANTOR + EMAIL_API_KEY satta (eller äldre
+ * RESEND_API_KEY/SENDGRID_API_KEY) skickas brevet PÅ RIKTIGT direkt efter
+ * kön skrivits — host-allowlistad fetch via src/lib/email-sandare.ts.
+ * Annars stannar brevet i kön och svaret bär statusen
+ * "köad (leverantör saknas)". Se email-sandare.ts för kundsetup.
  *
- * SVAR: { ok:true, köad:true, typ, email } · 400 ogiltig indata ·
- * 429 rate-limit · 503 Supabase ej konfigurerat · 502 köskrivning misslyckades.
+ * SVAR: { ok:true, köad:true, skickat, status, typ, email } · 400 ogiltig
+ * indata · 429 rate-limit · 503 Supabase ej konfigurerat · 502 köskrivning
+ * misslyckades. (Leverantörsfel vid direktutskick är INTE 502 — brevet ligger
+ * tryggt i kön och statusen förklarar läget.)
  *
  * Pedagogisk analys — inte investeringsråd.
  */
 
 /** De mejltyper som får köas (samma uppräkning som cron/email bygger på). */
-const TYPER = ["morgon", "vecka", "fas2nudge"] as const;
+const TYPER = ["morgon", "vecka", "fas2nudge", "prenumeration-intention"] as const;
 type MejlTyp = (typeof TYPER)[number];
+
+/** Ämnesrad per typ — samma röst som mallarna. */
+function amneFor(typ: MejlTyp): string {
+  switch (typ) {
+    case "morgon":
+      return "AK1A — Morgon-briefingen";
+    case "vecka":
+      return "AK1A — Veckorapporten";
+    case "fas2nudge":
+      return "AK1A — Fas 2 väntar";
+    case "prenumeration-intention":
+      return "AK1A — din plats i morgon-briefingen";
+  }
+}
 
 /** Enkel e-postvalidering — tillräcklig för kö-validering (leverantören validerar igen). */
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
@@ -56,6 +77,21 @@ function plockaTal(v: unknown, min: number, max: number, standard: number): numb
   const n = typeof v === "number" ? v : Number(v);
   if (!Number.isFinite(n)) return standard;
   return Math.min(max, Math.max(min, Math.round(n)));
+}
+
+/** Välkomstbrev för nyhetsbrevs-intentioner (aktivera-panelens frivilliga check). */
+function prenumerationsMejl(namn: string, nivaNamn: string, period: string, pris: string): string {
+  const n = namn ? `, ${namn}` : "";
+  const nivaRad = nivaNamn
+    ? `<p style="margin:0 0 14px;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#0a0b0d;">Du har samtidigt begärt aktivering av <strong>${nivaNamn}</strong> (${period}${pris ? `, ${pris}` : ""}) — den handläggs via mejl, precis som vanligt.</p>`
+    : "";
+  return NYHETSBREV_MALL(
+    "Din plats i morgon-briefingen",
+    `<p style="margin:0 0 4px;font-family:Georgia,'Times New Roman',serif;font-size:19px;color:#0a0b0d;">Tack${n}!</p>` +
+      `<p style="margin:0 0 14px;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#6b6353;">Du har sagt ja till morgon-briefingen och forskningsuppdateringarna. Från första leveranssdag landar en kort, saklig morgonhälsning i din inkorg — vågkartan, dagens aktie och ett femminuterspass. Inget säljer, inget dömer.</p>` +
+      nivaRad +
+      `<p style="margin:0 0 6px;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#0a0b0d;">Vill du någon dag avsluta prenumerationen? Svara på vilket som helst av breven — det räcker.</p>`,
+  );
 }
 
 export async function POST(req: NextRequest) {
@@ -118,6 +154,14 @@ export async function POST(req: NextRequest) {
     case "fas2nudge":
       html = fas2Nudge(plockaStr(data.namn, MAX_NAMN), plockaTal(data.niva, 1, 100, 25));
       break;
+    case "prenumeration-intention":
+      html = prenumerationsMejl(
+        plockaStr(data.namn, MAX_NAMN),
+        plockaStr(data.nivaNamn, MAX_NAMN),
+        plockaStr(data.period, 20) === "ar" ? "årsvis" : "månadsvis",
+        plockaStr(data.pris, 60),
+      );
+      break;
   }
 
   // ── Köskrivning: EN rad i system_events ──
@@ -152,6 +196,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "Köskrivning misslyckades (nätverk)." }, { status: 502 });
   }
 
-  // DAGENS LÄGE: köat men EJ skickat — se kommentarsblocket uppe.
-  return NextResponse.json({ ok: true, köad: true, typ, email, skickat: false });
+  // ── Direktutskick om leverantör finns (annars: kön är sanningen) ──
+  const { konfigurerad, leverantor } = lasLeverantor();
+  const resultat: SkickaResultat = konfigurerad
+    ? await skickaMejl({ till: email, amne: amneFor(typ), html })
+    : { skickad: false, leverantor: null, status: "köad (leverantör saknas)" };
+
+  return NextResponse.json({
+    ok: true,
+    köad: true,
+    skickat: resultat.skickad,
+    status: resultat.status,
+    leverantor: resultat.leverantor,
+    typ,
+    email,
+  });
 }

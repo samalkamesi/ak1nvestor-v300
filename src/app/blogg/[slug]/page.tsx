@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getBlogPosts, getBlogPost } from "@/lib/content";
+import { getBlogPosts, getBlogPost, getCourses } from "@/lib/content";
 import { blogMetadata, articleJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
@@ -9,6 +9,23 @@ export const dynamic = "force-static";
 
 export function generateStaticParams() {
   return getBlogPosts().map((p) => ({ slug: p.slug }));
+}
+
+/**
+ * Interna länkar → kurser (organisk tillväxt, våg 50): plockar ut de
+ * kurser artikeln själv hänvisar till (/kurser/<slug> i kroppen) och
+ * renderar dem som en "Fortsätt i kurserna"-modul med deskriptiva
+ * länktexter (kurstitel + ämnesområde — aldrig "läs mer"). Utan
+ * kursreferenser i texten faller vi tillbaka på biblioteket/läroplanen,
+ * så varje artikel alltid länkar vidare in i kurserna.
+ */
+function kurserIArtikeln(body: string, max = 4) {
+  const kurser = getCourses();
+  const slugs = [...new Set([...body.matchAll(/\/kurser\/([a-z0-9-]+)/g)].map((m) => m[1]))];
+  return slugs
+    .map((s) => kurser[s])
+    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+    .slice(0, max);
 }
 
 export async function generateMetadata({
@@ -87,6 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   const related = getBlogPosts().filter((p) => p.slug !== post.slug).slice(0, 3);
+  const kurser = kurserIArtikeln(post.body);
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Blogg", href: "/blogg" }, { name: post.title }]}>
@@ -120,6 +138,44 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           ))}
         </div>
       </article>
+
+      {/* Fortsätt i kurserna — interna länkar med deskriptiva ankartexter */}
+      <section className="mt-10 rounded-lg border border-gold/30 bg-card p-6">
+        <h2 className="font-serif text-2xl font-bold">Fortsätt i kurserna</h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Artikeln är en grund — djupet lever i kurserna, med quiz och kapitel för kapitel.
+        </p>
+        <ul className="mt-4 space-y-2.5">
+          {kurser.length > 0 ? (
+            kurser.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/kurser/${c.slug}`}
+                  className="group block text-sm"
+                >
+                  <span className="font-semibold group-hover:text-gold">
+                    Kursen {c.title} — {c.category}
+                  </span>
+                  <span className="block text-muted-foreground">
+                    {c.chapters.length} kapitel · {c.totalMinutes || c.minutes} min · {c.level.toLowerCase()} nivå
+                  </span>
+                </Link>
+              </li>
+            ))
+          ) : (
+            <li>
+              <Link href="/kurser" className="text-sm font-semibold hover:text-gold">
+                Hela kursbiblioteket i institutionell aktieanalys — från AKM1:s 20 variabler till sektorsanalys
+              </Link>
+            </li>
+          )}
+          <li>
+            <Link href="/laroplan" className="text-sm font-semibold hover:text-gold">
+              Läroplanen — den strukturerade vägen från nybörjare till oberoende analytiker
+            </Link>
+          </li>
+        </ul>
+      </section>
 
       {related.length > 0 && (
         <section className="mt-12 border-t border-gold/30 pt-8">

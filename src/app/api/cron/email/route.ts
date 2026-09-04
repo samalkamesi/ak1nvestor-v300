@@ -7,6 +7,7 @@ export const maxDuration = 60;
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { publiceraOrganEvent } from "@/lib/organ-event";
 import { morgonMejl } from "@/lib/email-mallar";
+import { lasLeverantor, skickaMejl } from "@/lib/email-sandare";
 
 /**
  * GET /api/cron/email — den dagliga mejl-rondan (MEGA_PLAN_V3 våg #9).
@@ -20,14 +21,13 @@ import { morgonMejl } from "@/lib/email-mallar";
  *       /api/dagens-pass) — och KÖA morgonMejl i system_events
  *       (type=email_kö, details={email, typ, "mallad-html"}) — EN batchad
  *       skrivning för hela rondan.
+ *   (b2) VÅG 50: är en leverantör konfigurerad (EMAIL_LEVERANTOR=resend|
+ *       sendgrid + EMAIL_API_KEY — se src/lib/email-sandare.ts) SKICKAS
+ *       rondans brev också på riktigt, ett och ett, bounechat inom taket.
+ *       Utan leverantör köas breven som tidigare — kön är sanningen.
  *   (c) publiceraOrganEvent({ source:"organ/email", verb:"atgard",
  *       matt:{ skickade:N } }) — nervsystemsspåret, samma konvention som
  *       övriga organ.
- *
- * DAGENS LÄGE — UTAN FAKTISK UTSKICK: ingen extern mejl-leverantör
- * (SendGrid/Resend) är konfigurerad, så breven KÖAS bara (type=email_kö).
- * När en leverantör konfigureras tömmer en framtida utskickare kön — raderna
- * är leveransklara med färdigmallad HTML (src/lib/email-mallar.ts).
  *
  * Skydd: CRON_SECRET (om satt) krävs via ?secret= eller
  * Authorization: Bearer — samma mönster som /api/cron/vagscan.
@@ -183,23 +183,48 @@ export async function GET(req: NextRequest) {
 
     const skickade = supabaseSparad ? rader.length : 0;
 
+    // ── (b2) faktiskt utskick om leverantör finns (VÅG 50) ──
+    // Ett och ett, bounechat av MAX_SKICK_PER_ROND; misslyckade stannar i kön
+    // (system_events) och räknas i leverantorsfel — cron-skriptet larmar inte.
+    const { konfigurerad, leverantor } = lasLeverantor();
+    const MAX_SKICK_PER_ROND = MAX_KO_PER_KORNING;
+    let skickadeFaktiskt = 0;
+    let leverantorsfel = 0;
+    if (konfigurerad && leverantor && supabaseSparad) {
+      for (const rad of rader.slice(0, MAX_SKICK_PER_ROND)) {
+        const d = rad.details as { email?: string; typ?: string; "mallad-html"?: string };
+        if (!d?.email || !d["mallad-html"]) continue;
+        const r = await skickaMejl({
+          till: d.email,
+          amne: "AK1A — Morgon-briefingen",
+          html: d["mallad-html"],
+        });
+        if (r.skickad) skickadeFaktiskt++;
+        else leverantorsfel++;
+      }
+    }
+
     // ── (c) nervsystemsspåret — organ/email atgard (även 0 = puls) ──
     await publiceraOrganEvent({
       source: "organ/email",
       verb: "atgard",
-      matt: { skickade, typ: "morgon", dagensAktie, medlemmar: members.length, overskred_tak: Math.max(0, members.length - MAX_KO_PER_KORNING) },
+      matt: { skickade, skickadeFaktiskt, leverantorsfel, typ: "morgon", dagensAktie, medlemmar: members.length, overskred_tak: Math.max(0, members.length - MAX_KO_PER_KORNING) },
     });
 
     return NextResponse.json({
       ok: true,
       skickade,
+      skickadeFaktiskt,
+      leverantorsfel,
       medlemmar: members.length,
       dagensAktie,
       vagText,
       supabaseSparad,
-      leverantorKonfigurerad: Boolean(process.env.RESEND_API_KEY || process.env.SENDGRID_API_KEY),
-      notering:
-        "KÖAT, EJ SKICKAT — ingen mejl-leverantör konfigurerad; breven ligger i system_events (type=email_kö) och skickas när leverantör finns. Pedagogisk analys — inte investeringsråd.",
+      leverantorKonfigurerad: konfigurerad,
+      leverantor,
+      notering: konfigurerad
+        ? `Köat OCH utskickat via ${leverantor} (${skickadeFaktiskt} av ${skickade}; ${leverantorsfel} leverantörsfel stannar i kön). Pedagogisk analys — inte investeringsråd.`
+        : "KÖAT, EJ SKICKAT — ingen mejl-leverantör konfigurerad; breven ligger i system_events (type=email_kö) och skickas när EMAIL_LEVERANTOR + EMAIL_API_KEY sätts (se src/lib/email-sandare.ts). Pedagogisk analys — inte investeringsråd.",
     });
   } catch {
     return NextResponse.json({ ok: false, error: "Mejl-rondan misslyckades (nätverk)." }, { status: 502 });

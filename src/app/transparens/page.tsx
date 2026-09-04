@@ -83,11 +83,27 @@ const REGISTER: Rad[] = [
   },
   {
     vad: "Kakor (cookies och lokal lagring)",
-      varfor:
+    varfor:
       "Nödvändiga: inloggning och säkerhet. Funktionalitet: dina val (tema, kanaler). Analys: anonym användningsstatistik.",
     grund: "Lagen (2022:482) om elektronisk kommunikation — nödvändiga kakor kräver inget samtycke; övriga kräver ditt aktiva val i kakmuren.",
     lagring: "Enligt kaklistan i kakmuren (max 12 månader).",
     ratt: "Ändra ditt val när som helst via 'Kakinställningar' i sidfoten — lika enkelt som att lämna det.",
+  },
+  {
+    vad: "Trafikstatistik (anonym besöksmätning — ingen cookie, inga personuppgifter)",
+    varfor:
+      "Räkna besökare, mest lästa sidor och källor så utbildningen kan prioritera det som faktiskt används. Sida + enhetsklass + källa + språk + en slumpad, hashad sessionskod — aldrig IP, aldrig query-strängar, aldrig innehåll. Har du valt 'endast nödvändigt' mäts enbart sidväg + enhetsklass.",
+    grund: "Berättigat intresse — art. 6.1 f (anonym webbstatistik utan personuppgifter; vem du är går inte att utläsa)",
+    lagring: "Rullande 35 dagar, därefter raderat av retention-organet (hårt radtak).",
+    ratt: "Invändning (art. 21) — välj 'endast nödvändigt' i kakmuren så mäts inget om dig utöver det helt anonyma.",
+  },
+  {
+    vad: "Säkerhetslogg (blockerade attacker med hashad IP)",
+    varfor:
+      "Trafikvakten stoppar skannrar och flöden (t.ex. sökningar efter .env eller wp-admin) och loggar händelsen för att skydda tjänsten. IP-adressen hashas med salt innan lagring — den råa adressen lämnar aldrig minnet, och hashen kan inte föras tillbaka till en person.",
+    grund: "Berättigat intresse — art. 6.1 f (IT-säkerhet och förebyggande av obehörig åtkomst)",
+    lagring: "Rullande 35 dagar eller tills radtaket (3 000) nås — därefter radering.",
+    ratt: "Invändning (art. 21) samt rätt till information — loggen innehåller ingen persondata, endast tekniska fingeravtryck.",
   },
 ];
 

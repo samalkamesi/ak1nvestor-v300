@@ -6026,3 +6026,113 @@ Prenumerationslogiken: AKM1 gratis för alltid; AKM2 i kalkylatorn = Fas 2+;
 AKM2-poängbas i portföljen = Forskning Plus (449 kr/mån)+. Kö: M4 mejl
 topp-3, M5 vågnotiser (Supabase-persistens), motorändringar efter
 validerings-kitets kalibrering.
+
+## VÅG 58 UX: /KURSER → BIBLIOTEKSHALLEN — curated-först + paginerat register (2026-09-04)
+
+Kunddirektiv: "/kurser, jag ser här en lång sida... vi visar allt på en gång
+vilket kan vara jobbigt... gör det professionellt och enkelt att läsa... utan
+att känna oj vad långt och tappa aptiten. Tänk strategiskt och branding mässigt
+— allt ska vara roligt, intelligent och exceptionellt."
+
+FORSKNING (15 min, 5 regler med källor):
+R1 CURATED-FÖRST — NN/g Progressive Disclosure: "the very fact that some-
+thing appears on the initial display tells users it's important" → utvalda
+sektioner OVAN registret signalerar var läsaren ska börja (nngroup.com/
+articles/progressive-disclosure). R2 NUMRERAD PAGINERING FÖR KATALOGER —
+NN/g Infinite Scrolling: för målinriktad sökning vinner paginering/"load
+more" över infinite scroll (position är förutsägbar, back-knappen fungerar,
+fotnoten nås) → sidväljare 24/sida (nngroup.com/articles/infinite-
+scrolling-tips). R3 POSITIONSINDIKATOR — "Visar 1–24 av 333" + "sida 1 av
+14" ger alltid var läsaren står (ixdf.org/literature/topics/pagination).
+R4 KORT VID FÅ, RAD VID MÅNGA — Cards för hanterbara/kurerade uppsättningar,
+komprimerrad lista vid 300+ (smart-interface-design-patterns.com + NN/g
+"Card view vs list view": listor = space efficient + skannbara; M3: kompakta
+breakpoints byter kort→radlista) → utvalda sektioner = förhöjda kort,
+registret = tvåkomlumnsrader på md+ (titel+kategori-chip+kap/min/xp i en
+rad), mobilkort oförändrad stil. R5 FILTER BYTER → SIDA 1 — paginerings-
+positionen får aldrig fastna på en tom sida när urvalet krymper.
+
+BYGGT (src/components/ak1a/kurs-sok.tsx + src/app/kurser/page.tsx, inget annat
+rört — speglar/kurssidor/menyer orörda):
+(1) HERO-FÖRKORTNING: h1 + 2-radersintro kvar; sökfältet STORGT + CENTRALT
+(max-w-2xl, 2xl-radirad, guldkant, förstoringsglas) med kategorichips som
+snabbfilter (Alla + 8 största) direkt under — flyttat in i hero-området.
+(2) UTVALT FÖRE REGISTRET (3 × 6 server-renderade kort, länkar till kurs-
+sidorna): (a) FLAGGSKEPPEN — hårdkordad kanon (the-intelligent-investor,
+security-analysis, one-up-on-wall-street, zero-to-one, margin-of-safety,
+poor-charlies-almanack; alla verifierade i deep-courses.json, kategori
+BOKMASTER) med RO-förhöjda kort (goldgradient, border-gold/50, ★-chip,
+hover-lyft); urvalet = redaktionellt varumärkesval, dokumenterat i koden.
+(b) NYA I BIBLIOTEKET — publiceringsdatum saknas → ANTAGANDE: JSON-objekt-
+ordningens SLUT = senast tillagda; sista 6 i omvänd ordning minus redan
+utvalda flaggskepp (one-up-on-wall-street) = the-everything-store, shoe-dog,
+principles-of-corporate-finance, of-permanent-value, bull-a-history-of-
+boom-and-bust, analysis-for-financial-management — ✨-chip. (c) BÖRJA HÄR —
+V01–V06 (v01-forsaljningstillvaxt … v06-ev-ebitda) med stig-ikon (prickad
+SVG-stig, nybörjarspåret) + V0n-chip. Fas-lås märks ärligt i urvalet
+(security-analysis + margin-of-safety = Fas 2, principles-of-corporate-
+finance = Fas 2 → 🔒-chip på förhöjda kort).
+(3) REGISTRET MED PAGINERING: 24 kurser/sida + sidväljare (← Föregående /
+1 … 4 5 6 … 14 / Nästa →, ellipsfönster) + "Visar 1–24 av 333 kurser ·
+sida 1 av 14" (aria-live) + sortering-väljare (Rekommenderad = tidigare
+ordning · Titel A–Ö · Fler kapitel först). Sidbyte → mjuk scroll till
+registrets topp (scroll-mt, sticky header bevarad: Rubrik + träffar + Rensa
+filter + Sortera). Kompakare kort: md+ två kolumner rad-layout (titel +
+kategori-chip lg+ + kap/min/xp tabular-nums i en rad), mobil oförändrad
+kortstil (kapitel/min/quiz/xp + learn-text). Filter/sortering/sökning →
+återställning till sida 1 (även clamp mot min(sida, antalSidor)).
+(4) KATEGORIVÄGGEN: under registret — alla 27 kategorier med räknare
+("BOKMASTER 103 · SEKTORANALYS 26 · …") som klick sätter filtret + scrollar
+tillbaka till registret (inga egna sidor).
+(5) SEO-SKYDD: sitemap listar sedan tidigare varje/kurser-slug (crawler
+når alla 333) + 18 utvalda interna länkar SSR-renderas; KursSok SSR visar
+sida 1 (24 kort) — klientsidig paginering ger inga URL:er → inga dubblett-
+kanon-problem; valet dokumenterat här. INGEN databorttagning: alla 333 kurser
+lever kvar i komponentens filterlogik — endast visningen paginerad (mobil-
+learn + quiz-stats kvar i DOM, md+-kompaktring ren CSS).
+
+SPEGLARNA (/en, /ar): oförändrade filer — KursSok:ns nya API är bakåtkompa-
+tibelt (children/sidopanel valfria): speglarna får hero-sök + paginerat
+register utan utvalda sektioner, FortsattPanel kvar i deras egen grid.
+
+VERIFIERAT (dev 3496, dödad efteråt; äldre lås-PID 32812 på 3494 städad
+först): /kurser 200; SSR-DOM: 3 sektioner × 6 kort (Flaggskeppen 6 guld-
+förhöjda, ✨ 6, stig 6), "Visar 1–24 av 333 kurser · sida 1 av 14", 24
+registerkort. CDP-interaktivitet (headless Chrome, riktiga klick): sida 2 →
+"Visar 25–48 av 333" + 24 nya kort + scrollY 4701 med registertopp 88 px
+i vyn; sortering "Fler kapitel först" → The Intelligent Investor (21 kap)
+först, "A–Ö" → 100 Baggers först, båda återställer sida 1; kategorivägg
+BOKMASTER → "Visar 1–24 av 103 kurser · sida 1 av 5" + "103 träffar"; hero-
+chip BETEENDEFINANS → 17 träffar; sök "graham" → 18 träffar; tom-sida-läge
+("Inga kurser att visa") + Rensa filter → 333. Fas-lås: 5 🔒-rader på sida 1
+→ /fas2-ansok. MOBIL: CDP 412×915 porträtt + 915×412 landskap = 0 overflow
+(scrollWidth−clientWidth = 0, inget element utanför viewport, kompaktrad
+display:none på 412 = mobilkort kvar, flex på 915+; två kolumner 404+404 px
+på desktop; kategori-chip flex först ≥1024). Desktop 1280 = 0 overflow.
+Speglar: /en/kurser 200 (hero-sök JA, register + "Visar 1–24 av 333 kurser"
+i SSR, Flaggskeppen NEJ = korrekt), /ar/kurser 200, kurs-sida /kurser/
+v01-forsaljningstillvaxt 200 orörd. tsc EXAKT 43/0 (0 nya). Svit orörd:
+validera-motorer 85 PASS / 0 FAIL / 0 SKIP. eslint på de två filerna: endast
+kodbasens etablerade setState-i-effect-hydreringsmönster (samma som före).
+INGET COMMITTAT.
+
+── VÅG 58: BIBLIOTEKSHALLEN — /kurser med paginering + kuraterat (2026-09-04) ──
+Kunddirektiv: "lång sida... visar allt på en gång... tappa aptiten...
+professionellt, enkelt, roligt, intelligent, exceptionellt." Forsknings-
+regler (NN/g m.fl., källor i worklog-sektion): curated-först, numrerad
+paginering vid kataloger, positionsindikator, kort-vid-få/rad-vid-300+,
+filter-byte→sida-1. BYGGT (2 filer: kurser/page.tsx + kurs-sok.tsx):
+HERO: sökfält stort+centralt med kategorichips. UTVALT FÖRE REGISTRET:
+Flaggskeppen 6 (kanon-hårdkodad: Intelligent Investor, Security Analysis,
+One Up on Wall Street, Zero to One, Margin of Safety, Poor Charlie's —
+guldgradient-kort, Fas2-lås ärligt 🔒) · Nya i biblioteket 6 (JSON-ordningens
+slut=dokumenterat antagande, ✨) · Börja här 6 (V01-V06, stig-SVG).
+REGISTRET: paginering 24/sida, sidväljare med ellipsfönster, aria-live
+"Visar 1–24 av 333 · sida 1 av 14", sortering (Rekommenderad/A–Ö/Fler
+kapitel), sidbyte=mjuk scroll till registertopp, filter/sök/sortering
+→återställ sida 1, md+ tvåkomulumns kompaktrader, mobil kortstil.
+KATEGORIVÄGGEN: 27 kategorier med räknare → klick filtrerar+scrollar.
+SEO: sitemap täcker alla 333 + 18 SSR-länkar + 0 dubblett-URL:er.
+CDP-KLICKVERIFIERAT: sida 2→"25–48", sortering växlar topp, vägg-
+BOKMASTER→103/sida 1 av 5, sök graham→18, 0 overflow 412+915, speglar
++ kurssidor orörda. tsc 43/0 · svit 85/0/0 · Kvalitetsvakten GRÖN.

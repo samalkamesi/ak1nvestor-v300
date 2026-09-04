@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-04
 
-- **Genererad:** 2026-09-04T15:38:11.840Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-04T17:32:51.640Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 8.3 s
+- **Körtid:** 8.6 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,7 +15,7 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 202 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6634 strängar extraherade
+- 202 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 6680 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.

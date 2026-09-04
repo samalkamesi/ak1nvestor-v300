@@ -136,6 +136,20 @@ export const ORDLISTA = {
   "kurs.fortsattKursen": { sv: "Fortsätt kursen", en: "Continue the course", ar: "تابع الدورة" },
   "kurs.kapitelTitel": { sv: "Kapitel {num}", en: "Chapter {num}", ar: "الفصل {num}" },
 
+  // ── VÅG 52 (2026-09-01): kurs-UI för de dynamiska kursspegel-rutterna
+  // (/en|ar/kurser/[slug]) — sidorna server-renderar med skapaT(lang) ur
+  // sprak.ts; svenska kurssidan berörs ej (orden används endast av speglarna).
+  "kurs.kapitelEnhet": { sv: "kapitel", en: "chapters", ar: "فصول" },
+  "kurs.minLasning": { sv: "min läsning", en: "min read", ar: "دقيقة قراءة" },
+  "kurs.nasta": { sv: "Nästa: {titel}", en: "Next: {titel}", ar: "التالي: {titel}" },
+  "kurs.kursenSlut": { sv: "Kursen klar", en: "Course complete", ar: "اكتملت الدورة" },
+  "kurs.kursoversikt": { sv: "Kursöversikt", en: "Course overview", ar: "نظرة عامة على الدورة" },
+  "kurs.fokus": { sv: "Fokus", en: "Focus", ar: "التركيز" },
+  "kurs.tid": { sv: "Tid", en: "Time", ar: "الوقت" },
+  "kurs.totalt": { sv: "Totalt", en: "Total", ar: "الإجمالي" },
+  "kurs.kursinnehall": { sv: "Kursinnehåll", en: "Course content", ar: "محتوى الدورة" },
+  "kurs.vikt": { sv: "Vikt", en: "Weight", ar: "الوزن" },
+
   // ── Notiser (NotisCenter) ────────────────────────────────────────────────
   "notis.notiser": { sv: "Notiser", en: "Notifications", ar: "الإشعارات" },
   "notis.nya": { sv: "nya", en: "new", ar: "جديدة" },

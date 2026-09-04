@@ -1,0 +1,130 @@
+{
+  "_kalla": "data/forskning/MARKNAD/MARKNADS-BESLUT.md våg 2 + m6-varumarke.md §B–F — varumärket som kod. Speglas av src/lib/varumarke.ts (appen) och verktyg/kvalitetsvakt.mjs sektion 2b (vakten), mönstret siffror.json/siffror.ts: ingen dubbelpost, ingen drift. Ändra HÄR — aldrig i komponenter.",
+  "version": "1.0.0",
+  "uppdaterad": "2026-09-04",
+  "tonRegler": [
+    { "id": 1, "regel": "Du-form alltid; \"vi\" bakom, aldrig ovan", "exempel": "Välkommen — vi går bredvid dig", "antiexempel": "Man bör lära sig aktier" },
+    { "id": 2, "regel": "Hjälp, döm aldrig", "exempel": "nästa steg\", \"din resa", "antiexempel": "du borde\", \"du missade" },
+    { "id": 3, "regel": "Siffror ur SIFFROR, aldrig hårdkodade", "exempel": "{SIFFROR.kurser} kurser", "antiexempel": "över 300 kurser!" },
+    { "id": 4, "regel": "Påståenden kontrollerbara", "exempel": "Sex löften… håll oss ansvariga", "antiexempel": "bäst på marknaden" },
+    { "id": 5, "regel": "Osäkerhet skrivs ut", "exempel": "saknar vetenskapligt belagt prediktiv förmåga", "antiexempel": "beprövad vinnarstrategi" },
+    { "id": 6, "regel": "Gratis utan asterisk", "exempel": "kostnadsfritt, för alltid. Ingen kortuppgift.", "antiexempel": "gratis* + småstil" },
+    { "id": 7, "regel": "Gravör, aldrig casino", "exempel": "serif, guld, mätetal", "antiexempel": "SISTA CHANSEN!, 🔥-emojis, countdown" },
+    { "id": 8, "regel": "Välfärd är målet", "exempel": "trygghet, sömn, frihet, stolthet", "antiexempel": "sluta lura dig själv" },
+    { "id": 9, "regel": "Tipsa, tvinga aldrig — varför alltid med", "exempel": "Eftersom du klarat X väntar Y", "antiexempel": "måste du ta den här kursen" },
+    { "id": 10, "regel": "Tacksamhet tvåsidig", "exempel": "Tack för att du investerar i dig själv", "antiexempel": "grattis till smarta valet att välja oss" }
+  ],
+  "lexikon": {
+    "viSager": [
+      "forskningsunderlag",
+      "pedagogisk analys",
+      "deterministisk",
+      "reproducerbar",
+      "tröskel",
+      "poängsatt",
+      "forsknings- och utbildningsplattform",
+      "elev (aldrig \"kund\" eller \"användare\" i elevytor — A8)",
+      "resa, nästa steg, stapel",
+      "oberoende analytiker",
+      "gratis i Fas 1 — för alltid",
+      "metodiken (AKM1/AK1TS med versaler och siffror)",
+      "20 variabler",
+      "5×5×4",
+      "källa redovisas per analys",
+      "[est.] för uppskattningar"
+    ]
+  },
+  "forbjudnaFraser": [
+    { "fran": "garanterad[\\s\\-–]*avkastning", "istallet": "forskningsunderlag", "allvar": "FEL", "motiv": "P2/2007:528 — löfte om avkastning är rådgivning" },
+    { "fran": "\\briskfri(?:a|t)*\\b", "istallet": "riskmätt", "allvar": "FEL", "motiv": "P2 — ingen strategi är riskfri; säg riskmätt" },
+    { "fran": "slå[\\s\\-–]*index[\\s\\-–]*varje[\\s\\-–]*år", "istallet": "redovisad, reproducerbar metodik", "allvar": "FEL", "motiv": "P2 — ottalöfte om systematiskt indexöverträff" },
+    { "fran": "obegränsad[\\s\\-–]*avkastning", "istallet": "riskmätt forskningsunderlag", "allvar": "FEL", "motiv": "P2 — obegränsad avkastning finns inte" },
+    { "fran": "passiv[\\s\\-–]*inkomst[\\s\\-–]*utan[\\s\\-–]*risk", "istallet": "aktiv, redovisad metodik", "allvar": "FEL", "motiv": "P2 — dubbellöfte (passivt + riskfritt)" },
+    { "fran": "\\bsäker[a-t]*[\\s\\-–]*vinst", "istallet": "forskningsunderlag med redovisad risk", "allvar": "FEL", "motiv": "P2 — säker vinst är rådgivning" },
+    { "fran": "\\baktietips\\w*", "istallet": "pedagogisk analys", "allvar": "FEL", "motiv": "P2/MAR — tips på enskild aktie är rådgivning" },
+    { "fran": "\\b(köp|sälj)[\\s\\-–]*rekommendation\\w*", "istallet": "pedagogisk analys med redovisad metodik", "allvar": "FEL", "motiv": "P2/MAR — köp/sälj-rekommendation är rådgivning" },
+    { "fran": "(?<!([^\\p{L}]|^)(?:inte|ej|aldrig|ingen|inga|utan|varken|icke)\\s+)\\binvesteringsråd", "istallet": "pedagogisk analys", "allvar": "FEL", "motiv": "P2 — endast NEGERAT är tillåtet (\"inte investeringsråd\" = SIGNATUR.disclaimer); påstående om eget innehåll = FEL" },
+    { "fran": "dela[\\s\\-–]*för[\\s\\-–]*att[\\s\\-–]*låsa[\\s\\-–]*upp", "istallet": "Dela gärna — om du vill", "allvar": "FEL", "motiv": "P1 — share-walls förbjudna (A1, permanent avslag)" },
+    { "fran": "lås[\\s\\-–]*upp[\\s\\-–]*genom[\\s\\-–]*att[\\s\\-–]*dela", "istallet": "Dela gärna — om du vill", "allvar": "FEL", "motiv": "P1 — share-wall i omvänd formulering" },
+    { "fran": "betala[\\s\\-–]*med[\\s\\-–]*en[\\s\\-–]*(tweet|delning|retweet)", "istallet": "kostnadsfritt, för alltid", "allvar": "FEL", "motiv": "P1 — aldrig \"betala med en delning\"" },
+    { "fran": "gratis\\*", "istallet": "kostnadsfritt, för alltid", "allvar": "FEL", "motiv": "P3 — gratis-asterisk med småstil förråder gratis-löftet" },
+    { "fran": "\\bmeta[\\s\\-]*pixel\\w*", "istallet": "ingen spårning (P6)", "allvar": "FEL", "motiv": "P6 — inga nya pixlar eller spår" },
+    { "fran": "\\bretargeting\\w*", "istallet": "ingen retargeting (P6)", "allvar": "FEL", "motiv": "P6 — GDPR-by-design; konverteringsvyn bygger enbart på befintliga datapunkter" },
+    { "fran": "hemliga[\\s\\-–]*strategier", "istallet": "öppet redovisade metoder", "allvar": "VARNING", "motiv": "vi har inga hemligheter — det är poängen" },
+    { "fran": "sista[\\s\\-–]*chansen", "istallet": "välkommen när du är redo", "allvar": "VARNING", "motiv": "FOMO/knapphet — i CTA mot elev = FEL enligt praxis (A2)" },
+    { "fran": "bli[\\s\\-–]*inte[\\s\\-–]*lämnad[\\s\\-–]*bakom", "istallet": "din resa, din takt", "allvar": "VARNING", "motiv": "FOMO — rädsla är inte en försäljningsgrund (P4/P5)" },
+    { "fran": "\\bplatser[\\s\\-–]*kvar\\b", "istallet": "öppen ansökan", "allvar": "VARNING", "motiv": "påhittad knapphet är lögn; äkta selectivitet är sann (A2)" },
+    { "fran": "\\b(countdown|nedräkning)\\b", "istallet": "inget tidstryck", "allvar": "VARNING", "motiv": "knapphetsmekanik — avslagen i kampanjkalendern (A2)" },
+    { "fran": "\\benkelt!", "istallet": "det är ärligt arbete", "allvar": "VARNING", "motiv": "fundamental analys är ärligt arbete — inget \"enkelt!\"" },
+    { "fran": "\\bproffstips\\b", "istallet": "forskningsunderlag", "allvar": "VARNING", "motiv": "tonalt — vi redovisar metoder, ingen insider-ton" },
+    { "fran": "\\brevolutionerande\\b", "istallet": "deterministisk", "allvar": "VARNING", "motiv": "tom superlativ — gravör, aldrig casino (TON_REGLER 7)" },
+    { "fran": "\\bkunder\\b", "istallet": "elever", "allvar": "VARNING", "motiv": "A8 — i elev-/marknadsytor sägs \"elev\"; internt admin/B2B = teknisk yta, manuell bedömning" },
+    { "fran": "\\bcashflow[\\s\\-]*hack\\b", "istallet": "kassaflödesanalys", "allvar": "VARNING", "motiv": "lånord-hack-ton — institutionellt lexikon gäller" },
+    { "fran": "\\bsuperkreativ\\w*", "istallet": "[kontrollerbart påstående]", "allvar": "VARNING", "motiv": "representant för tomma superlativer (\"superkreativ nyckel till framgång\")" }
+  ],
+  "huvudbudskap": {
+    "nyborjare": {
+      "rubrik": "Bli analytikern som ser vad andra missar.",
+      "underrubrik": "Från din första årsredovisning till certifikatet — hela biblioteket, noll kronor, ingen kortuppgift.",
+      "bevis": [
+        "Från första årsredovisningen till certifikatet — steg för steg",
+        "Quiz efter varje kapitel ({SIFFROR.quiz} frågor)",
+        "\"Ingen kortuppgift\" — gratis Fas 1, för alltid"
+      ],
+      "cta": "Bli medlem — gratis"
+    },
+    "avancerad": {
+      "rubrik": "Väg ihop nyckeltal som en institutionell analytiker.",
+      "underrubrik": "AKM1:s 20 variabler och AK1TS 5×5×4 — deterministiska motorer, öppet redovisade.",
+      "bevis": [
+        "AKM1 V01–V20 — 20 poängsatta variabler, maxpoäng 100",
+        "AK1TS 5×5×4 — våg-matrisens 25 celler",
+        "Deterministiska, reproducerbara motorer",
+        "201 case studies i labbet"
+      ],
+      "cta": "Utforska kurserna"
+    },
+    "b2b": {
+      "rubrik": "Certifierad = klar för /pro-plattformen.",
+      "underrubrik": "Pedagogisk kompetensprövning — aldrig rådgivningslicens.",
+      "bevis": [
+        "Certifiering A–F",
+        "Etik-del och analytikerkod",
+        "Äkta selectivitet: vi kan avböja, du kan avbryta"
+      ],
+      "cta": "Ansök — vi kan avböja, du kan avbryta"
+    }
+  },
+  "ctaHierarki": [
+    { "niva": "signatur", "klass": "btn-guld-signatur", "regel": "max EN per vy; huvudhandling; verb först" },
+    { "niva": "primar", "klass": "btn-marin", "regel": "högst en per vy; stödjer signatur-CTA:n; aldrig FOMO-kopplad" },
+    { "niva": "sekundar", "klass": "border-gold/50 outline", "regel": "flera tillåtna; lågtryck; alltid med varför (TON_REGLER 9)" },
+    { "niva": "textlank", "klass": "text-gold underline decoration-gold/40", "regel": "textlänk-nivå — t.ex. \"Djupare forskning finns i prenumerationen →\" (A9: aldrig låsteaser)" }
+  ],
+  "signatur": {
+    "disclaimer": "Pedagogisk analys — inte investeringsråd",
+    "slogan": "Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning."
+  },
+  "design": {
+    "farger": {
+      "paper": "#f5f1e8",
+      "ink": "#0a0b0d",
+      "guld": "#785c13",
+      "guldText": "#7A5E14",
+      "guldSoft": "#c9a84c",
+      "guldMarinYta": "#E8C766",
+      "marin": "#0E1B2E",
+      "marinNatt": "#081120",
+      "koppar": "#8C5A2B",
+      "kort": "#fffdf7",
+      "sekundar": "#efe9da",
+      "cremeMarinText": "#EDE6D6"
+    },
+    "typografi": {
+      "rubriker": "serif — institutionell tyngd",
+      "loptext": "Inter",
+      "siffrorOchKod": "JetBrains Mono"
+    },
+    "notering": "ÄRVT ur src/app/globals.css (WCAG-justerat 2026-09-02). BRAND.md:s tidigare guld #a8862a var drift — koden är sanningen. Guld på marin-yta = #E8C766, guld för löptext på paper = #785c13/#7A5E14."
+  }
+}

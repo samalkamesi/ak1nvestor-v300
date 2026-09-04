@@ -12,6 +12,10 @@
  *      listas som "MANUELL GRANSKNING KRÄVS" med fil + sökväg + kontext.
  *   2. UI-strängar — JSX-text och attribut-strängar ur src/components/ak1a/*.tsx
  *      + alla page.tsx under src/app mot samma manglings-mönster.
+ *   2b. Förbjudna fraser — samma strängunderlag + lib-copy (email-mallar,
+ *       nyhets-motor, seo) mot FORBJUDNA_FRASER ur data/varumarke.json
+ *       (varumärket som kod, m6 §F/våg 60 bygg-C). FEL = räknas i fel,
+ *       VARNING = manuell granskning. Citerings-undantag enligt A10.
  *   3. JSON-giltighet — JSON.parse av ALLA data/*.json + data/bokmaster/*.json.
  *   4. Länk-validitet — varje href/lank ur sokindex.ts + huvudmeny.tsx +
  *      sidfooter.tsx måste motsvara en page.tsx i src/app (statisk eller dynamisk).
@@ -199,7 +203,9 @@ function sektionBokmasterAao() {
 
 /** Neutralisera kommentarer med SAMMA LÄNGD (behandlar radnummer korrekt). */
 function rensaKommentarer(src) {
-  let ut = src.replace(/\/\*[\s\S]*?\*\//g, (m) => " ".repeat(m.length));
+  // Blockkommentarer: behåll radbytena (längd och radantal bevaras — annars
+  // driver radnumren i träff-rapporterna när filen har flerradskommentarer).
+  let ut = src.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " "));
   ut = ut.replace(/(^|[^:'"\\\w])\/\/[^\n]*/g, (m) => m[0] + " ".repeat(m.length - 1));
   return ut;
 }
@@ -260,6 +266,147 @@ function sektionUiStrangar() {
       "Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade",
     ],
   };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SEKTION 2b — Förbjudna fraser (varumärket som kod; våg 60 bygg-C, m6 §F)
+// Samma sträng-underlag som sektion 2 + lib-copy, matchat mot
+// FORBJUDNA_FRASER ur data/varumarke.json — samma guldkälla som
+// src/lib/varumarke.ts importerar (speglingsmekaniken siffror.json/ts:
+// ingen dubbelpost, ingen drift).
+//   allvar FEL     → räknas i `fel` (styr RÖD/GUL direkt — juridiska fraser
+//                    SKA stoppa; vakten sänker ALDRIG nivå)
+//   allvar VARNING → `manuella` (syns i rapporten, mänsklig granskning)
+// ════════════════════════════════════════════════════════════════════════════
+// Filunderlaget utökas med lib-copy utanför komponenter (m6 §F:s lucka):
+const FRAS_LIB_FILER = [
+  "src/lib/email-mallar.ts", // mejl-mallarnas copy
+  "src/lib/nyhets-motor.ts", // nyhets-röstens texter
+  "src/lib/seo.tsx",         // title/description/FAQ/JSON-LD-copy
+];
+// CITERINGS-UNDANTAG (A10 — KRITISKT): filer/strängar som CITERAR förbudet
+// i pedagogiskt/juridiskt syfte vitlistas. Finansiell-policy-sidans publicerade
+// löfte ("Ord som 'garanterad avkastning', 'riskfritt' eller 'slå index varje
+// år' förekommer aldrig i vårt material — se vårt varumärkes-system där de är
+// förbjudna fraser") refererar själva de förbjudna fraserna; utan undantag
+// vore vakten RÖD dag ett — en bugg i VAKTEN, inte i copy:n. Undantagen
+// dokumenteras i rapporten och sänker ALDRIG allvar-nivån för ny text:
+// en ny icke-citerande träff på samma fras förblir FEL.
+const CITERINGS_UNDANTAG_FILER = new Set([
+  "src/app/finansiell-policy/page.tsx", // policy-löftet citerar förbudet (rad 42)
+  "src/app/ansvar/page.tsx",            // juridik: "Formuleringar som 'garanterad avkastning' … finns inte i vårt material"
+  "src/app/villkor/page.tsx",           // juridik: citerar/negerar rådgivning + lagtext (2007:528, MAR)
+  "src/lib/ordlista.ts",                // ordlistan lär ut kritiken (sveps ej idag — vitlistad om underlaget växer)
+  "src/lib/varumarke.ts",               // varumärkes-systemet självt (definitionerna lever här)
+  "data/varumarke.json",                // — " — (sveps ej av 2b, men dokumenterad)
+]);
+// Sträng-exakta undantag: FAQ-frågor som NEGERAR (svaret börjar "Nej. … aldrig …"):
+const CITERINGS_UNDANTAG_STRANGAR = new Set([
+  "Ger AK1A investeringsråd eller aktietips?", // src/app/page.tsx + src/app/kurser/page.tsx + src/lib/seo.tsx
+  "Ger AK1A investeringsråd?",                 // src/app/medlemskap/page.tsx (svar: "Nej. … aldrig investeringsråd …")
+]);
+
+/** Läs FORBJUDNA_FRASER ur data/varumarke.json (komplicerar regexarna med "giu"). */
+function lasForbjudnaFraser() {
+  const data = JSON.parse(readFileSync(path.join(REPO, "data", "varumarke.json"), "utf8"));
+  return data.forbjudnaFraser.map((f) => ({
+    re: new RegExp(f.fran, "giu"),
+    istallet: f.istallet,
+    allvar: f.allvar === "FEL" ? "FEL" : "VARNING",
+    motiv: f.motiv,
+  }));
+}
+
+/** Alla strängliteraler i lib-copy: "…" '…' `…` (${}-interpolationer urräknade).
+ *  Sökvägar/URL:er/rena identifierare hoppas över — de är inte copy. */
+function extraheraLibStrangar(kalla, renSrc) {
+  const ut = [];
+  const radFranIndex = (i) => renSrc.slice(0, i).split("\n").length;
+  const push = (t, i) => {
+    const s = t.replace(/\$\{[^}]*\}/g, " ").trim();
+    if (s.length < 3 || !/\p{L}/u.test(s)) return;
+    if (/^https?:|^[-.@#/\\]/.test(s)) return; // URL:er, sökvägar, scoped imports
+    if (!/\s/.test(s) && /^[\w\-:./]+$/.test(s)) return; // identifierare/klassnamn/färger
+    ut.push({ kalla, rad: radFranIndex(i), typ: "lib-sträng", text: s });
+  };
+  for (const m of renSrc.matchAll(/"((?:[^"\\\n]|\\.)*)"/g)) push(m[1], m.index);
+  for (const m of renSrc.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) push(m[1], m.index);
+  for (const m of renSrc.matchAll(/`((?:[^`\\]|\\.)*)`/g)) push(m[1], m.index);
+  return ut;
+}
+
+function sektionForbjudnaFras() {
+  const namn = "Förbjudna fraser — varumärket som kod (2b)";
+  const fel = [];
+  const manuella = [];
+  const info = [];
+  let fraser = [];
+  try {
+    fraser = lasForbjudnaFraser();
+  } catch (e) {
+    return {
+      namn,
+      fel: [{ fil: "data/varumarke.json", plats: "forbjudnaFraser", detalj: `kunde inte läsas/parseas (${esc(String(e?.message || e), 120)}) — vakten får ALDRIG passera utan sina regler` }],
+      manuella,
+      info,
+    };
+  }
+  if (!Array.isArray(fraser) || fraser.length === 0) {
+    fel.push({ fil: "data/varumarke.json", plats: "forbjudnaFraser", detalj: "listan är tom — varumärkes-reglerna får aldrig vara tomma" });
+  }
+  const antalFel = fraser.filter((f) => f.allvar === "FEL").length;
+
+  const filer = [
+    ...hittaFiler(path.join(REPO, "src", "components", "ak1a"), ".tsx"),
+    ...hittaFiler(path.join(REPO, "src", "app"), "page.tsx"),
+    ...FRAS_LIB_FILER.map((f) => path.join(REPO, f)).filter((p) => existsSync(p)),
+  ].sort();
+  const arLibFil = (absPath) => FRAS_LIB_FILER.includes(rel(absPath));
+
+  let strangar = 0;
+  let undantagnaFiler = 0;
+  let undantagnaStrangar = 0;
+  const sedda = new Set();
+  for (const fil of filer) {
+    const kalla = rel(fil);
+    if (CITERINGS_UNDANTAG_FILER.has(kalla)) {
+      undantagnaFiler += 1;
+      continue;
+    }
+    const ren = rensaKommentarer(readFileSync(fil, "utf8"));
+    const strangLista = arLibFil(fil)
+      ? [...extraheraUiStrangar(kalla, ren), ...extraheraLibStrangar(kalla, ren)]
+      : extraheraUiStrangar(kalla, ren);
+    for (const { kalla: k, rad, typ, text } of strangLista) {
+      const nyckel = `${k}:${rad}:${text}`;
+      if (sedda.has(nyckel)) continue;
+      sedda.add(nyckel);
+      strangar += 1;
+      if (CITERINGS_UNDANTAG_STRANGAR.has(text)) {
+        undantagnaStrangar += 1;
+        continue;
+      }
+      for (const { re, istallet, allvar, motiv } of fraser) {
+        re.lastIndex = 0;
+        let m;
+        while ((m = re.exec(text)) !== null) {
+          if (allvar === "FEL") {
+            fel.push({ fil: k, plats: `rad ${rad} (${typ})`, detalj: `"${m[0]}" → säg "${istallet}" — ${motiv}` });
+          } else {
+            manuella.push({ fil: k, plats: `rad ${rad} (${typ})`, ord: `${m[0]} → ${istallet}`, kontext: kontext(text, m.index, 50) });
+          }
+        }
+      }
+    }
+  }
+  const saknadeLibFiler = FRAS_LIB_FILER.filter((f) => !existsSync(path.join(REPO, f)));
+  info.push(`${filer.length} filer, ${strangar} strängar granskade mot ${fraser.length} förbjudna fraser (${antalFel} FEL = juridiska, ${fraser.length - antalFel} VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)`);
+  if (saknadeLibFiler.length > 0) {
+    info.push(`OBS: lib-fil(er) saknas och täcks ej: ${saknadeLibFiler.join(", ")}`);
+  }
+  info.push(`CITERINGS-UNDANTAG (A10): ${undantagnaFiler} fil(er) + ${undantagnaStrangar} sträng(ar) hoppades över — de CITERAR förbudet: ${[...CITERINGS_UNDANTAG_FILER].join(" · ")} · sträng-exakta negerande FAQ-frågor: ${[...CITERINGS_UNDANTAG_STRANGAR].map((s) => `"${s}"`).join(" / ")}`);
+  info.push("FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning; A8-notering: admin/B2B-ytor får tekniskt sett \"kunder\") · vakten sänker ALDRIG nivå för att bli grön");
+  return { namn, fel, manuella, info };
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -735,6 +882,7 @@ async function main() {
   const sektioner = [
     await Promise.resolve(sektionBokmasterAao()),
     sektionUiStrangar(),
+    sektionForbjudnaFras(),
     sektionJson(),
     sektionLankar(),
     sektionKursdata(),
@@ -746,7 +894,7 @@ async function main() {
 
   const totalFel = sektioner.reduce((s, x) => s + (x.fel ?? []).length, 0);
   const totalMan = sektioner.reduce((s, x) => s + (x.manuella ?? []).length, 0);
-  const jsonFel = sektioner[2]?.fel?.length ?? 0;
+  const jsonFel = sektioner.find((s) => s.namn.startsWith("JSON-giltighet"))?.fel?.length ?? 0;
   let status;
   if (totalFel > 9 || jsonFel > 0) status = "RÖD";
   else if (totalFel >= 1 || totalMan > 99) status = "GUL";

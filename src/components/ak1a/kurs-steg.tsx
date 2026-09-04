@@ -147,7 +147,20 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           <div className="animate-[fadeIn_0.3s_ease-out] rounded-2xl border-2 border-gold bg-card px-6 py-4 shadow-2xl">
             <p className="text-center font-serif text-2xl font-black text-gold">🎉 {t("kurs.nivaUpp", { n: nivaUpp })}</p>
             <p className="mt-1 text-center text-xs text-muted-foreground">
-              {nivaUpp >= 25 ? t("kurs.fas2Porten") : t("kurs.xpPerNiva")}
+              {/* VÅG 3 CTA-lucka (m7 §3c): fas2Porten-texten blev aldrig en
+                  länk — nu textlänk-nivå (CTA_HIERARKI 4) till medlemskapets
+                  #fas2-ankare. Bannern är pointer-events-none, länken
+                  återaktiverar träffytan för sig själv. */}
+              {nivaUpp >= 25 ? (
+                <Link
+                  href="/medlemskap#fas2"
+                  className="pointer-events-auto font-semibold text-gold underline decoration-gold/40 underline-offset-2 hover:decoration-gold"
+                >
+                  {t("kurs.fas2Porten")}
+                </Link>
+              ) : (
+                t("kurs.xpPerNiva")
+              )}
             </p>
           </div>
         </div>

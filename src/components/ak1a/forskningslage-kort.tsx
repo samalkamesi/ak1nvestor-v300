@@ -18,16 +18,47 @@ import type { Forskningslage, ForskningslageBolag } from "@/lib/forskningslaget"
  * klienten får aldrig de 100 råa raderna). Monteras på Min Sida (efter
  * morgon-briefingen) och i toppen av /portfolj-forskning.
  *
+ * REGIM-CHIPPET (våg 60 bygg-A, AKM3-BESLUT §8 steg 5): AKM3:s determinis-
+ * tiska regimebeskrivning ur API:ts additiva `regim`-fält (senaste raden i
+ * den hash-kedjade regime-loggen — hysteres + 2-snapshots-bekräftelse).
+ * Chipet BESKRIVER underlaget per dess eget datum — det väljer aldrig
+ * profil, ändrar aldrig poäng och innehåller aldrig signalverb (2007:528).
+ * Saknas fältet vilar chippet osynligt (P3 — inget påhittat läge).
+ *
  * Beskriver, dömer aldrig — pedagogisk forskning, inte investeringsråd
  * (lagen 2007:528). Hydration-säkert: första passt är ett skelett, nätet
  * körs ENDAST i useEffect.
  */
 
 /** Svar från GET /api/forskningslage — städas defensivt innan visning. */
-type ApiSvar = { finns: boolean; lage: Forskningslage | null };
+type ApiSvar = { finns: boolean; lage: Forskningslage | null; regim?: RegimeChip | null };
+
+/** AKM3-regimens utsnitt ur API-svaret (åäö-fria nycklar — loggradens form). */
+type RegimeChip = {
+  regime: string;
+  datum: string;
+  beskrivning: string;
+  modellVersion: string;
+};
+
+/** Regimetiketterna i kanonisk ordning — övriga/ogiltiga värden visas inte. */
+const REGIM_ETIKETTER = ["balanserad", "expansiv", "magert", "korrigering", "osatt"] as const;
 
 function arFin(x: unknown): x is number {
   return typeof x === "number" && Number.isFinite(x);
+}
+
+/** Okänd JSON → rent regime-utsnitt (eller null — tyst, graceful). */
+function renRegim(rå: unknown): RegimeChip | null {
+  if (!rå || typeof rå !== "object") return null;
+  const r = rå as Record<string, unknown>;
+  if (typeof r.regime !== "string" || !(REGIM_ETIKETTER as readonly string[]).includes(r.regime)) return null;
+  return {
+    regime: r.regime,
+    datum: typeof r.datum === "string" ? r.datum : "",
+    beskrivning: typeof r.beskrivning === "string" ? r.beskrivning : "",
+    modellVersion: typeof r.modellVersion === "string" ? r.modellVersion : "",
+  };
 }
 
 /** Okänd JSON → ren ForskningslageBolag (eller null — tyst, graceful). */
@@ -75,7 +106,10 @@ function renLage(rå: unknown): Forskningslage | null {
 }
 
 /** Ett anrop till /api/forskningslage. Null vid motstånd — kortet vilar. */
-async function hamtaForskningslage(): Promise<Forskningslage | null> {
+async function hamtaForskningslage(): Promise<{
+  lage: Forskningslage | null;
+  regim: RegimeChip | null;
+} | null> {
   try {
     const kontroll = new AbortController();
     const tidtagning = setTimeout(() => kontroll.abort(), 8000);
@@ -86,8 +120,11 @@ async function hamtaForskningslage(): Promise<Forskningslage | null> {
     clearTimeout(tidtagning);
     if (!res.ok) return null;
     const data = (await res.json()) as ApiSvar;
-    if (!data || data.finns !== true) return null;
-    return renLage(data.lage);
+    if (!data) return null;
+    return {
+      lage: data.finns === true ? renLage(data.lage) : null,
+      regim: renRegim(data.regim),
+    };
   } catch {
     return null;
   }
@@ -163,19 +200,47 @@ function Donut({ lage }: { lage: Forskningslage }) {
   );
 }
 
+// ── Regim-chippet (våg 60 bygg-A): AKM3:s deskriptiva lägesbeskrivning ───────
+
+/**
+ * Chippet är en ren BESKRIVNING av underlaget per dess eget datum — inga
+ * signalverb, inga färgkoder som låter som råd; betydelsen bärs av ordet
+ * + dateringen + tooltipen med den kännetecknande texten (2007:528).
+ */
+function RegimChip({ regim }: { regim: RegimeChip }) {
+  const daterad = regim.datum ? ` per ${datumText(regim.datum)}` : "";
+  const tooltip =
+    (regim.beskrivning ? regim.beskrivning + " " : "") +
+    "Deskriptiv lägesbeskrivning av forskningsunderlaget" + daterad +
+    " — indikatorer och trösklar redovisas öppet på /transparens. Inte investeringsråd.";
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full border border-gold/35 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-gold-soft"
+      title={tooltip}
+      role="status"
+      aria-label={`AKM3-regim: ${regim.regime}${daterad}. ${regim.beskrivning}`}
+    >
+      AKM3-regim · {regim.regime}
+      {regim.datum ? <span className="font-semibold normal-case tracking-normal text-[#EDE6D6]/55">{daterad.trim()}</span> : null}
+    </span>
+  );
+}
+
 // ── Kortet ───────────────────────────────────────────────────────────────────
 
 export function ForskningslageKort() {
   const [lage, setLage] = useState<Forskningslage | null>(null);
+  const [regim, setRegim] = useState<RegimeChip | null>(null);
   const [hamtat, setHamtat] = useState(false);
 
   // Nät ENDAST i useEffect — första passt är ett deterministiskt skelett.
   useEffect(() => {
     let aktiv = true;
     (async () => {
-      const l = await hamtaForskningslage();
+      const svar = await hamtaForskningslage();
       if (!aktiv) return;
-      setLage(l);
+      setLage(svar ? svar.lage : null);
+      setRegim(svar ? svar.regim : null);
       setHamtat(true);
     })();
     return () => {
@@ -237,6 +302,11 @@ export function ForskningslageKort() {
             >
               {lage.grona} gröna av {lage.antal} bolag
             </h2>
+            {regim && (
+              <div className="mt-2.5">
+                <RegimChip regim={regim} />
+              </div>
+            )}
           </div>
           <Link
             href="/portfolj-forskning"

@@ -145,6 +145,9 @@ let AK2: any;
 // VÅG 59 (AKM3 steg 3+4): osakerhet.ts (deterministiskt intervall ur poäng×täckning)
 // + peer.ts (branschjämförelse på rank/median-basis — läslager, aldrig poäng).
 let OSK: any, PER: any;
+// REG (våg 60 bygg-A, AKM3 steg 5): akm3/regim.ts — deterministisk regime-
+// beskrivning ur G/R/N/Σu med hysteres + 2-snapshots-bekräftelse (deskriptiv).
+let REG: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
 // LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
@@ -2481,6 +2484,191 @@ async function fasD(): Promise<void> {
     );
   }
 
+  // ── akm3/regim (VÅG 60 bygg-A, AKM3 steg 5): trösklar + genesis + n-vakt ──
+  {
+    const problem: string[] = [];
+    const T = REG.REGIME_TROSKLAR;
+    // G/R-trösklarna ÅTERANVÄNDER forskningslaget.ts:s kanoniska tal (r2 §2.2)
+    if (T.gronIntrade !== FLS.TROSKEL_RIKT_ANDEL_GRONA) problem.push("gronIntrade != forskningslagets 0,10");
+    if (T.gronUttrade !== FLS.TROSKEL_MAGERT_ANDEL_GRONA) problem.push("gronUttrade != forskningslagets 0,08");
+    if (T.rodIntrade !== FLS.TROSKEL_MAGERT_ANDEL_RODA) problem.push("rodIntrade != forskningslagets 0,35");
+    if (T.rodUttrade !== FLS.TROSKEL_RIKT_ANDEL_RODA) problem.push("rodUttrade != forskningslagets 0,30");
+    if (T.minVagbolagForN !== 30) problem.push("n-vakt != 30");
+    if (T.sigmaArsGate !== 0.25) problem.push("Σu-gate != 0,25");
+    if (T.snapshotsNormal !== 2 || T.snapshotsHogVol !== 3) problem.push("snapshots 2/3");
+    // Genesis mot BESLUT §8:s verifierade data: 2026-09-03 G=0,07 R=0,17 ⇒ magert
+    const g = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-09-03" });
+    if (g.regime !== "magert") problem.push("genesis 0,07/0,17 => " + String(g.regime) + " (väntat magert)");
+    if (g.byte !== true) problem.push("genesis ska sätta byte=true (första loggraden)");
+    if (g.indikatorer.nettoVagbredd !== null) problem.push("N utan scan ska vara null");
+    if (String(g.nOsattOrsak).indexOf("vagscan") < 0) problem.push("nOsattOrsak=" + String(g.nOsattOrsak));
+    if (g.senastKontrollerad !== "2026-09-03") problem.push("datering " + String(g.senastKontrollerad));
+    // N-VAKTEN (BESLUT §9.1): 12 < 30 ⇒ N degraderas till osatt ÄVEN med råvärde
+    // +0,9 ⇒ expansiv/korrigering är onåbara — regimen är G/R-only (test vaktar)
+    const u = REG.raknaRegime({ gronAndel: 0.12, rodAndel: 0.17, nettoVagbredd: 0.9, antalVagbolag: 12, senastKontrollerad: "2026-09-03" });
+    if (u.regime !== "balanserad") problem.push("12<30 + N=+0,9 => " + String(u.regime) + " (n-vakten ska degradera N till osatt)");
+    if (u.indikatorer.nettoVagbredd !== null) problem.push("12<30: nettoVagbredd ska redovisas null");
+    if (String(u.nOsattOrsak).indexOf("12") < 0) problem.push("nOsattOrsak ska nämna antalet: " + String(u.nOsattOrsak));
+    // N mätt (≥ 30): expansiv (G ≥ 0,10 OCH N ≥ +0,20) och korrigering (N ≤ −0,20)
+    const e = REG.raknaRegime({ gronAndel: 0.12, rodAndel: 0.1, nettoVagbredd: 0.25, antalVagbolag: 30, senastKontrollerad: "2026-09-03" });
+    if (e.regime !== "expansiv") problem.push("30st N=+0,25 G=0,12 => " + String(e.regime));
+    const ko = REG.raknaRegime({ gronAndel: 0.5, rodAndel: 0.1, nettoVagbredd: -0.25, antalVagbolag: 40, senastKontrollerad: "2026-09-03" });
+    if (ko.regime !== "korrigering") problem.push("N=−0,25 => " + String(ko.regime));
+    // G/R osatt ⇒ osatt (P3) + magert-entry via R-sidan (R > 0,35)
+    if (REG.raknaRegime({ gronAndel: null, rodAndel: 0.17 }).regime !== "osatt") problem.push("G=null => ej osatt");
+    if (REG.raknaRegime({ gronAndel: 0.2, rodAndel: 0.36, senastKontrollerad: "2026-09-03" }).regime !== "magert") problem.push("R=0,36 => ej magert");
+    rad(
+      "akm3/regim",
+      "TRÖSKLAR (forskningslagets kanoniska 0,10/0,08/0,35/0,30) + genesis + N-VAKT (12<30 ⇒ osatt)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "G/R-trösklarna är forskningslaget.ts:s egna konstanter (en källa till sanning); genesis 2026-09-03 G=0,07 R=0,17 ⇒ magert med byte=true; N degraderas till osatt vid <30 mätta vågbolag ÄVEN med högt råvärde ⇒ expansiv/korrigering onåbara (BESLUT §9.1 — dagens 12 bolag vaktas av testet); N mätt vid ≥30: N=+0,25 G=0,12 ⇒ expansiv, N=−0,25 ⇒ korrigering; G=null ⇒ osatt; R=0,36 ⇒ magert"
+        : problem.slice(0, 6).join("; "),
+      "7fall + 4 tröskelkonstanter",
+    );
+  }
+
+  // ── akm3/regim: HYSTERES — G 0,07↔0,08 byter ALDRIG (BESLUT §11 steg 5.ii) ─
+  {
+    const problem: string[] = [];
+    const genesis = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-09-03" });
+    const rad1 = REG.byggRegimeLoggrad(genesis);
+    if (!rad1 || rad1.regime !== "magert") problem.push("genesis-rad");
+    // Vippning 0,07↔0,08 över SEX nya kvartalssnapshots — regimen lämnar aldrig magert
+    const DATUM = ["2026-12-01", "2027-03-01", "2027-06-01", "2027-09-01", "2027-12-01", "2028-03-01"];
+    let forra = rad1;
+    DATUM.forEach((d, i) => {
+      const gron = i % 2 === 0 ? 0.07 : 0.08;
+      const res = REG.raknaRegime({ gronAndel: gron, rodAndel: 0.17, senastKontrollerad: d }, forra);
+      if (res.regime !== "magert") problem.push("vippning G=" + String(gron) + " (" + String(d) + ") => " + String(res.regime));
+      if (res.byte) problem.push("vippning (" + String(d) + ") gav byte — hysteresen bruten");
+      const nyRad = REG.byggRegimeLoggrad(res);
+      if (nyRad) forra = nyRad;
+    });
+    // Inom bandet stå kvar: G=0,09 (≥ 0,08 men < 0,10) ⇒ magert utan kandidat
+    const band = REG.raknaRegime({ gronAndel: 0.09, rodAndel: 0.17, senastKontrollerad: "2026-12-01" }, rad1);
+    if (band.regime !== "magert" || band.kandidat !== null) problem.push("G=0,09 i bandet: " + String(band.regime) + " kandidat=" + JSON.stringify(band.kandidat));
+    // R-sidan av utträdet: G=0,10 men R=0,31 (> 0,30) ⇒ fortfarande magert
+    const rSida = REG.raknaRegime({ gronAndel: 0.1, rodAndel: 0.31, senastKontrollerad: "2026-12-01" }, rad1);
+    if (rSida.regime !== "magert") problem.push("G=0,10 R=0,31 ska stanna magert (utträde kräver R ≤ 0,30)");
+    // Fullt utträde startar kandidat (1 snapshot) — INTE omedelbart byte
+    const ut1 = REG.raknaRegime({ gronAndel: 0.1, rodAndel: 0.3, senastKontrollerad: "2026-12-01" }, rad1);
+    if (ut1.regime !== "magert" || ut1.byte || !ut1.kandidat || ut1.kandidat.regime !== "balanserad" || ut1.kandidat.snapshots !== 1) {
+      problem.push("utträdesstart: " + JSON.stringify({ regime: ut1.regime, byte: ut1.byte, kandidat: ut1.kandidat }));
+    }
+    const ut2 = REG.raknaRegime({ gronAndel: 0.1, rodAndel: 0.3, senastKontrollerad: "2027-03-01" }, REG.byggRegimeLoggrad(ut1));
+    if (ut2.regime !== "balanserad" || !ut2.byte) problem.push("utträde efter 2 snapshots => " + String(ut2.regime) + " byte=" + String(ut2.byte));
+    rad(
+      "akm3/regim",
+      "HYSTERES: G 0,07↔0,08 byter ALDRIG · band 0,08–0,10 · utträde först vid G ≥ 0,10 OCH R ≤ 0,30",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "sex nya kvartalssnapshots som vippar G mellan 0,07 och 0,08 lämnar aldrig magert (kandidat aldrig ens startad — 0,08 uppfyller inte inträdet strikt-under-0,08); G=0,09 i hysteresbandet står kvar; G=0,10 med R=0,31 står kvar (R-sidan kräver ≤ 0,30); fullt utträde: kandidat balanserad vid snapshot 1, bekräftat byte först vid snapshot 2 — in-/ut-trösklarna är åtskilda (r2 §2.2)"
+        : problem.slice(0, 6).join("; "),
+      "6 vippningar + 4 bandfall",
+    );
+  }
+
+  // ── akm3/regim: 2-SNAPSHOT-BEKRÄFTELSE + Σu-gate + reset + frysningskontrakt ─
+  {
+    const problem: string[] = [];
+    const genesis = REG.byggRegimeLoggrad(
+      REG.raknaRegime({ gronAndel: 0.09, rodAndel: 0.17, senastKontrollerad: "2026-09-03" }),
+    );
+    // Inträde magert från balanserad: snapshot 1 startar kandidat, snapshot 2 bekräftar
+    const s1 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-12-01" }, genesis);
+    if (s1.regime !== "balanserad" || s1.byte || !s1.kandidat || s1.kandidat.regime !== "magert" || s1.kandidat.snapshots !== 1) {
+      problem.push("snapshot 1: " + JSON.stringify({ regime: s1.regime, byte: s1.byte, kandidat: s1.kandidat }));
+    }
+    const s2 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2027-03-01" }, REG.byggRegimeLoggrad(s1));
+    if (s2.regime !== "magert" || !s2.byte) problem.push("snapshot 2: " + String(s2.regime) + " byte=" + String(s2.byte));
+    // Målet tillbaka på sittande ⇒ kandidaten NOLLSTÄLLS (och regimen står kvar)
+    const r1 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-12-01" }, genesis);
+    const r2 = REG.raknaRegime({ gronAndel: 0.09, rodAndel: 0.17, senastKontrollerad: "2027-03-01" }, REG.byggRegimeLoggrad(r1));
+    if (r2.regime !== "balanserad" || r2.kandidat !== null) problem.push("kandidatreset: " + JSON.stringify({ regime: r2.regime, kandidat: r2.kandidat }));
+    // Σu-GATE (r2 §2.2): års-Σu 30 % > 25 % ⇒ 3 snapshots krävs för bytet
+    const q1 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, sigmaArs: 0.3, senastKontrollerad: "2026-12-01" }, genesis);
+    if (q1.kravdaSnapshots !== 3) problem.push("Σu=30 %: kravda=" + String(q1.kravdaSnapshots));
+    const q2 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, sigmaArs: 0.3, senastKontrollerad: "2027-03-01" }, REG.byggRegimeLoggrad(q1));
+    if (q2.regime !== "balanserad" || q2.byte || !q2.kandidat || q2.kandidat.snapshots !== 2) {
+      problem.push("Σu-gate snapshot 2: " + JSON.stringify({ regime: q2.regime, byte: q2.byte, kandidat: q2.kandidat }));
+    }
+    const q3 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, sigmaArs: 0.3, senastKontrollerad: "2027-06-01" }, REG.byggRegimeLoggrad(q2));
+    if (q3.regime !== "magert" || !q3.byte) problem.push("Σu-gate snapshot 3 => " + String(q3.regime) + " byte=" + String(q3.byte));
+    // Låg Σu (15 %) ⇒ standard 2 snapshots
+    if (REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, sigmaArs: 0.15, senastKontrollerad: "2026-12-01" }, genesis).kravdaSnapshots !== 2) {
+      problem.push("Σu=15 % ska ge kravda=2");
+    }
+    if (REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-12-01" }, genesis).kravdaSnapshots !== 2) {
+      problem.push("Σu osatt ska ge kravda=2");
+    }
+    // FRYSNINGSKONTRAKTET: samma/äldre snapshot-datum ⇒ tillståndet orörd
+    // (dagar räknas ALDRIG som observationer — kvartalskadens via senastKontrollerad)
+    const f1 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-12-01" }, genesis);
+    const f2 = REG.raknaRegime({ gronAndel: 0.03, rodAndel: 0.5, senastKontrollerad: "2026-12-01" }, REG.byggRegimeLoggrad(f1));
+    if (f2.nySnapshot || f2.byte || f2.regime !== "balanserad" || !f2.kandidat || f2.kandidat.regime !== "magert" || f2.kandidat.snapshots !== 1) {
+      problem.push("samma snapshot ska frysa: " + JSON.stringify({ ny: f2.nySnapshot, regime: f2.regime, kandidat: f2.kandidat }));
+    }
+    const f3 = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-09-03" }, REG.byggRegimeLoggrad(f1));
+    if (f3.nySnapshot || f3.byte) problem.push("äldre snapshot ska också frysa (ny=" + String(f3.nySnapshot) + ")");
+    rad(
+      "akm3/regim",
+      "2-SNAPSHOT-BEKRÄFTELSE + Σu-gate (3 vid >25 %) + kandidatreset + frysningskontrakt",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "inträde: kandidat magert (1) vid snapshot 1, bekräftat byte först vid snapshot 2; målet tillbaka på sittande nollställer kandidaten; års-Σu 30 % höjer kravet till 3 snapshots (byte först vid snapshot 3), Σu 15 %/osatt ⇒ 2; samma ELLER äldre senastKontrollerad fryser tillståndet helt (nySnapshot=false, byte=false, kandidat orörd) — dagliga cron-ronder kan aldrig räknas som observationer"
+        : problem.slice(0, 6).join("; "),
+      "inträde 2 + Σu 3 + reset + 2 frysningar",
+    );
+  }
+
+  // ── akm3/regim: determinism + loggrad + HASH-KEDJA (append-only, tamper) ────
+  {
+    const problem: string[] = [];
+    const sha = (t: string) => createHash("sha256").update(t, "utf8").digest("hex");
+    const fallen = [
+      { gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-09-03" },
+      { gronAndel: 0.12, rodAndel: 0.1, nettoVagbredd: 0.25, antalVagbolag: 30, senastKontrollerad: "2026-12-01" },
+      { gronAndel: null, rodAndel: null },
+      { gronAndel: 0.5, rodAndel: 0.02, sigmaArs: 0.4, senastKontrollerad: "2027-03-01" },
+      { gronAndel: 0.09, rodAndel: 0.31, nettoVagbredd: -0.3, antalVagbolag: 12, senastKontrollerad: "2027-06-01" },
+    ];
+    const forsta = JSON.stringify(fallen.map((f) => REG.raknaRegime(f)));
+    const andra = JSON.stringify(fallen.map((f) => REG.raknaRegime(f)));
+    if (forsta !== andra) problem.push("ej deterministisk (2 körningar skiljer)");
+    // Loggradens kontrakt: spår + version + null vid saknat underlag
+    const g = REG.raknaRegime({ gronAndel: 0.07, rodAndel: 0.17, senastKontrollerad: "2026-09-03" });
+    const r0 = REG.byggRegimeLoggrad(g);
+    if (!r0 || r0.spar !== "akm3-regim") problem.push("spar-typnamn");
+    if (r0.modellVersion !== "AKM3.2026.09") problem.push("modellVersion=" + String(r0 && r0.modellVersion));
+    if (REG.byggRegimeLoggrad(REG.raknaRegime({ gronAndel: null, rodAndel: 0.17 })) !== null) problem.push("G=null ska ge null-rad (loggen tiger)");
+    if (REG.byggRegimeLoggrad(REG.raknaRegime({ gronAndel: 0.5, rodAndel: 0.1 })) !== null) problem.push("ogiltig datering ska ge null-rad");
+    // HASH-KEDJAN: genesis → kandidatrad →byterad; verifiering + tamper-vakter
+    const rad1 = REG.stemplaRegimeRad(r0, REG.REGIMELOGG_GENESIS, sha);
+    const m1 = REG.raknaRegime({ gronAndel: 0.1, rodAndel: 0.3, senastKontrollerad: "2026-12-01" }, rad1);
+    const rad2 = REG.stemplaRegimeRad(REG.byggRegimeLoggrad(m1), String(rad1.hash), sha);
+    const m2 = REG.raknaRegime({ gronAndel: 0.1, rodAndel: 0.3, senastKontrollerad: "2027-03-01" }, rad2);
+    const rad3 = REG.stemplaRegimeRad(REG.byggRegimeLoggrad(m2), String(rad2.hash), sha);
+    if (!REG.verifieraRegimekedja([rad1, rad2, rad3], sha)) problem.push("äkta kedja verifierar ej");
+    const rad1b = REG.stemplaRegimeRad(r0, REG.REGIMELOGG_GENESIS, sha);
+    if (rad1.hash !== rad1b.hash) problem.push("hashen ej deterministisk (samma rad + prev)");
+    const fusk = { ...rad2, regime: "expansiv" };
+    if (REG.verifieraRegimekedja([rad1, fusk, rad3], sha)) problem.push("manipulerad rad (ändrad etikett, behållen hash) accepterades");
+    const rad2annan = REG.stemplaRegimeRad(REG.byggRegimeLoggrad(m1), "fel-prev-hash", sha);
+    if (REG.verifieraRegimekedja([rad1, rad2annan, rad3], sha)) problem.push("bruten länk (prev pekar fel) accepterades");
+    if (!REG.verifieraRegimekedja([], sha)) problem.push("tom kedja ska vara giltig");
+    if (REG.verifieraRegimekedja(null, sha)) problem.push("null-kedja ska vara ogiltig");
+    rad(
+      "akm3/regim",
+      "DETERMINISM 2× + loggrad (spar akm3-regim) + HASH-KEDJA tamper-vakt",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "5 indatakombinationer (genesis, N mätt, G/R null, Σu 40 %, N under n-vakten) körda 2× — byte-identisk JSON; loggraden bär spår 'akm3-regim' + AKM3.2026.09 och blir null när underlag saknas (ogiltig datering/G osatt — loggen tiger); kedjan sha256(prev + '\\n' + kanonisk rad-utan-hash) verifierar för äkta kedja (genesis→kandidat→byte), är deterministisk 2×, och avslöjar BÅDE etikettmanipulation med behållen hash och brutna länkar; tom kedja giltig, null ogiltig — append-only-kontraktet vaktas av rent lib + injicerad sha256 (klientsäkert)"
+        : problem.slice(0, 6).join("; "),
+      "5 fall ×2 + 3 rador + 2 fuskgill",
+    );
+  }
+
   // ── peer (VÅG 59, AKM3 steg 4): midrank med delade + median (jämnt/udda) ──
   function peerRad(ticker: string, bransch: string, akm2: number | null): any {
     return { ...korstadRad(ticker, bransch, 50, "gron", "2026-09-03"), akm2: akm2 };
@@ -3314,6 +3502,7 @@ let fardig = false;
   UPP = await import("./src/lib/portfolj-forskning/uppfoljning");
   VVAL = await import("./src/lib/vagvalidering");
   ENS = await import("./src/lib/akm3/ensemble");
+  REG = await import("./src/lib/akm3/regim");
   OVS = await import("./src/lib/oversattning/termbank");
   KLL = await import("./src/lib/oversattning/kalla");
   KTR = await import("./src/lib/oversattning/kontroller");
@@ -3463,8 +3652,8 @@ function byggRapport(payload, meta) {
     );
   }
   linjer.push("");
-  linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59 + våg 60)\n");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

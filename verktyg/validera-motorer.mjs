@@ -33,12 +33,17 @@
  *      briefing-, badges-, analysbank-, assistent-motorerna + forsknings-
  *      motorerna akm2/karna, riskportfolj, fundamental-vagmotor, uppfoljning
  *      + konfluens-motorns sjalvkontroll på handgjorda rader.
- *   MÖS) ÖVERSÄTTNINGSSYSTEMET (våg 52): termbankens garanti-kontrakt,
+ *   MÖS) ÖVERSÄTTNINGSSYSTEMET (våg 52 + våg 54): termbankens garanti-kontrakt,
  *      termKonsistens/siffer-/struktur-/lateral-kontroller (pass+fail),
  *      AR-normalisering av östra siffror, versionshash-determinism,
  *      källregistret ur deep-courses.json + ordlistan, motorstatusflödet
- *      (vantar-motor utan nyckel — deterministisk ärlighet) och poäng-
- *      summeringen. Inget nät: motorn testas endast i avstängt läge.
+ *      (vantar-motor/vantar-kvot utan nycklar — deterministisk ärlighet),
+ *      poängsummeringen SAMT (våg 54) den externa motor-kedjans rena kärnor:
+ *      termbanks-ersättning POST (fel term → rättad), MyMemory-payload/byt-
+ *      delning/kvot-vakter, kedjeordning DeepL→Google→MyMemory och SSRF-
+ *      valideringen. Inget nät: motorn testas endast i avstängt läge
+ *      (OVERSATTNING_EXTERN_AVSTANGD=1) — externa anrop verifieras LIVE
+ *      separat (se worklog våg 54).
  *   E) ROBUSTHET: 90 s total budget (intern 88 s-väktare + process-träd-död).
  *
  * Nätverksberoende delar mockas ALDRIG med riktiga anrop: alla fixturtest
@@ -1943,13 +1948,19 @@ async function fasOversattning(): Promise<void> {
     if (unika.size !== kallor.length) problem.push("dubbla källidenter: " + String(kallor.length - unika.size));
     const allaHash = kallor.every((k) => /^[0-9a-f]{12}$/.test(k.hash) && k.hash === KLL.raknaHash(k.text));
     if (!allaHash) problem.push("någon källas hash avviker från raknaHash(text)");
-    const nyttoFormat = block.every((k) => /^[^:]+:kap\d+:block\d+$/.test(k.scope.nyckel));
-    if (!nyttoFormat) problem.push("kursblock-nycklar följer ej <slug>:kap<n>:block<n>");
+    // Våg 54: registret omfattar nu block + titel + intro + quiz (q/a0-3/tips)
+    const blockNycklar = block.filter((k) => /:block\d+$/.test(k.scope.nyckel));
+    const blockFormat = blockNycklar.every((k) => /^[^:]+:kap\d+:block\d+$/.test(k.scope.nyckel));
+    if (!blockFormat) problem.push("block-nycklar följer ej <slug>:kap<n>:block<n>");
+    const ovrigaFormat = block
+      .filter((k) => !/:block\d+$/.test(k.scope.nyckel))
+      .every((k) => /^[^:]+:kap\d+:(titel|intro|quiz\d+:(q|a\d+|tips))$/.test(k.scope.nyckel));
+    if (!ovrigaFormat) problem.push("titel/intro/quiz-nycklar följer ej registrets konvention");
     const igen: any[] = KLL.listaKallor();
     if (igen.length !== kallor.length) problem.push("andra anropet ger annat antal (" + String(igen.length) + ")");
     rad(
       "mos-oversattning",
-      "KÄLLREGISTER listaKallor (ui + 15 696 kursblock)",
+      "KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz)",
       problem.length === 0 ? "PASS" : "FAIL",
       problem.length === 0
         ? String(kallor.length) + " källor: " + String(ui.length) + " ui-nycklar (= ordlistan) + " + String(block.length) + " kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop"
@@ -1958,7 +1969,7 @@ async function fasOversattning(): Promise<void> {
     );
   }
 
-  // ── MÖS 9: motorstatusflödet — trösklar + vantar-motor utan nyckel ─────────
+  // ── MÖS 9: motorstatusflödet — trösklar + vantar-motor (testläge, inget nät) ─
   {
     const problem: string[] = [];
     if (MOT.bestamStatus(100) !== "publicerad") problem.push("100 ⇒ " + String(MOT.bestamStatus(100)) + " (förväntat publicerad)");
@@ -1966,10 +1977,19 @@ async function fasOversattning(): Promise<void> {
     if (MOT.bestamStatus(90) !== "utkast") problem.push("90 ⇒ " + String(MOT.bestamStatus(90)) + " (förväntat utkast)");
     if (MOT.bestamStatus(89) !== "maskinutkast-behovar-granskning") problem.push("89 ⇒ " + String(MOT.bestamStatus(89)));
     if (MOT.bestamStatus(Number.NaN) !== "maskinutkast-behovar-granskning") problem.push("NaN-gränsfall hanteras ej");
+    // Våg 54: ZAI-nyckeln tas bort OCH hela externa kedjan stängs av
+    // (OVERSATTNING_EXTERN_AVSTANGD=1) — sviten kör ALDRIG riktiga nätanrop.
     const sparadNyckel = process.env.ZAI_API_KEY;
+    const sparadDeepl = process.env.DEEPL_API_KEY;
+    const sparadGoogle = process.env.GOOGLE_TRANSLATE_KEY;
+    const sparadAv = process.env.OVERSATTNING_EXTERN_AVSTANGD;
     delete process.env.ZAI_API_KEY;
+    delete process.env.DEEPL_API_KEY;
+    delete process.env.GOOGLE_TRANSLATE_KEY;
+    process.env.OVERSATTNING_EXTERN_AVSTANGD = "1";
     try {
       if (MOT.motorAktiv() !== false) problem.push("motorAktiv() true utan nyckel");
+      if (MOT.externKedja().length !== 0) problem.push("externKedja() ej tom i avstängt läge");
       const r = await MOT.oversatt("Bruttomarginalen förbättrades.", "en");
       if (r.status !== "vantar-motor") problem.push("status=" + String(r.status) + " (förväntat vantar-motor)");
       if (r.text !== null) problem.push("text producerad utan motor — låtsasöversättning!");
@@ -1984,15 +2004,19 @@ async function fasOversattning(): Promise<void> {
       if (!(t1 >= 800) || !(t2 > t1) || MOT.raknaMaxTokens(100000) > 8000) problem.push("maxTokens-intervall [800,8000] brutet");
     } finally {
       if (sparadNyckel !== undefined) process.env.ZAI_API_KEY = sparadNyckel;
+      if (sparadDeepl !== undefined) process.env.DEEPL_API_KEY = sparadDeepl;
+      if (sparadGoogle !== undefined) process.env.GOOGLE_TRANSLATE_KEY = sparadGoogle;
+      if (sparadAv !== undefined) process.env.OVERSATTNING_EXTERN_AVSTANGD = sparadAv;
+      else delete process.env.OVERSATTNING_EXTERN_AVSTANGD;
     }
     rad(
       "mos-oversattning",
-      "MOTOR statusflöde + vantar-motor (utan ZAI-nyckel)",
+      "MOTOR statusflöde + vantar-motor (ZAI + extern kedja avstängd — inget nät)",
       problem.length === 0 ? "PASS" : "FAIL",
       problem.length === 0
-        ? "100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan ZAI_API_KEY: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000]"
+        ? "100→publicerad, 90–99→utkast, <90→maskinutkast-behovar-granskning; utan nycklar och med kedjan avstängd: status vantar-motor, text=null (deterministisk ärlighet — ingen låtsasöversättning); prompten bär termbanken; maxTokens ∈ [800,8000]"
         : problem.slice(0, 6).join("; "),
-      "trösklar=100/90/89 motorAktiv=false",
+      "trösklar=100/90/89 motorAktiv=false kedja=0",
     );
   }
 
@@ -2015,6 +2039,195 @@ async function fasOversattning(): Promise<void> {
         ? "perfekt översättning = 100 (40+25+20+15); sifferfel+strukturavvikelse+termmiss ger " + String(halv.poang) + " poäng — under tröskeln 90, dvs maskinutkast-behovar-granskning"
         : problem.slice(0, 6).join("; "),
       "perfekt=" + String(brand.poang) + " undermalig=" + String(halv.poang) + " traskel=" + String(KTR.KVALITETSTRASKEL),
+    );
+  }
+
+  // ── MÖS 11 (våg 54): TERMBANK-ERSÄTTNING POST — fel term rättas deterministiskt ──
+  {
+    const problem: string[] = [];
+    // synonym-byte: bruttomarginal översatt till "profit margin" (vinstmarginalens målterm)
+    const k1 = "Bruttomarginalen blev 12,5 % och moat breddades under året.";
+    const m1 = "The profit margin became 12,5 % and the moat widened during the year.";
+    const r1 = MOT.tvingaTermbank(k1, m1, "en");
+    if (r1.text.indexOf("gross margin") < 0) problem.push("synonym-byte: rättad='" + r1.text + "'");
+    if (r1.text.indexOf("profit margin") >= 0) problem.push("fel term kvar efter byte");
+    if (r1.rattade.length !== 1 || r1.rattade[0].via !== "synonym-byte") problem.push("rattade=" + JSON.stringify(r1.rattade));
+    const k1k = KTR.termKonsistens(k1, r1.text, "en");
+    if (!k1k.pass) problem.push("termKonsistens failar efter rättning: " + k1k.detaljer);
+    // svenskt läckage: vallgrav lämnad oöversatt i svaret
+    const k2 = "Vallgraven skyddar bolaget.";
+    const m2 = "The vallgrav protects the company.";
+    const r2 = MOT.tvingaTermbank(k2, m2, "en");
+    if (r2.text !== "The moat protects the company.") problem.push("svenskt lackage: '" + r2.text + "'");
+    // redan korrekta termer rörds aldrig
+    const k3 = "Moat är intimt kopplad till prissättningsmakt.";
+    const m3 = "Moat is closely linked to pricing power.";
+    const r3 = MOT.tvingaTermbank(k3, m3, "en");
+    if (r3.text !== m3 || r3.rattade.length !== 0) problem.push("korrekt svar rördes: " + JSON.stringify(r3.rattade));
+    // ofullständig målterm (AR): الخندق utökas till الخندق التنافسي
+    const k4 = "Vallgraven skyddar bolaget i bransehen.";
+    const m4 = "يحمي الخندق الشركة في القطاع.";
+    const r4 = MOT.tvingaTermbank(k4, m4, "ar");
+    if (r4.text.indexOf("الخندق التنافسي") < 0) problem.push("ofullstandig malterm (ar): '" + r4.text + "'");
+    rad(
+      "mos-oversattning",
+      "TERMBANK-ERSÄTTNING POST (fel term → rättad, 4 strategier)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "synonym-byte: bruttomarginal→profit margin byts till gross margin (termKonsistens pass efteråt); svenskt lackage: vallgrav→moat; korrekt svar rörds ej (0 rättningar); ofullständig AR-målterm الخندق utökas till الخندق التنافسي"
+        : problem.slice(0, 6).join("; "),
+      "r1=" + String(r1.rattade.length) + " rattad r2='" + String(r2.text) + "' r3=" + String(r3.rattade.length),
+    );
+  }
+
+  // ── MÖS 12 (våg 54): MyMemory-payload — URL-kodning, bitdelning, kvot-vakter ──
+  {
+    const problem: string[] = [];
+    const u = MOT.byggMyMemoryUrl("Vad är avkastning på eget kapital?", "en");
+    if (u.protocol !== "https:" || u.hostname !== "api.mymemory.translated.net") problem.push("url=" + u.toString());
+    if (u.pathname !== "/get") problem.push("path=" + u.pathname);
+    if (u.searchParams.get("q") !== "Vad är avkastning på eget kapital?") problem.push("q ej korrekt kodad/rundad: " + String(u.searchParams.get("q")));
+    if (u.searchParams.get("langpair") !== "sv|en") problem.push("langpair=" + String(u.searchParams.get("langpair")));
+    if (u.toString().indexOf(" ") >= 0) problem.push("mellanslag ej URL-kodat");
+    if (u.toString().indexOf("%7C") < 0) problem.push("| ej kodad som %7C");
+    const uar = MOT.byggMyMemoryUrl("avkastning", "ar");
+    if (uar.searchParams.get("langpair") !== "sv|ar") problem.push("ar-langpair=" + String(uar.searchParams.get("langpair")));
+    // bitdelning: varje bit ≤ 500 byte och join("") === original (strukturen bevaras)
+    const kort = "Bruttomarginalen steg till 12,5 %.";
+    if (MOT.delaMyMemoryBitar(kort).length !== 1) problem.push("kort text delades i fler än 1 bit");
+    let langText = "";
+    for (let i = 0; i < 120; i++) langText += "ord" + String(i) + " med lite fyllnadstext ";
+    const bitar = MOT.delaMyMemoryBitar(langText);
+    if (bitar.length < 2) problem.push("lång text delades ej");
+    for (const b of bitar) {
+      if (new TextEncoder().encode(b).length > MOT.MYMEMORY_MAX_BYTES) problem.push("bit över " + String(MOT.MYMEMORY_MAX_BYTES) + " byte");
+    }
+    if (bitar.join("") !== langText) problem.push("join återställer ej originaltexten");
+    const stycke = "Rad ett om kassa.\n\nRad två om risk.\n\nRad tre om moat.";
+    if (MOT.delaMyMemoryBitar(stycke).join("") !== stycke) problem.push("styckesstruktur bevaras ej genom bitdelningen");
+    // kvot-predikat: responseStatus/HTTP/varning i texten
+    if (!MOT.myMemoryKvot("MYMEMORY WARNING: CAL LIMIT EXCEEDED", 200)) problem.push("varningssträng detekteras ej");
+    if (!MOT.myMemoryKvot("200", 429)) problem.push("HTTP 429 detekteras ej");
+    if (MOT.myMemoryKvot(200, 200)) problem.push("normal respons flaggas som kvot");
+    if (!MOT.myMemoryKvot("ok", 200, "MYMEMORY WARNING: daily limit")) problem.push("varning i translatedText detekteras ej");
+    // kvotvakter: 5000 ord/dag + 400 anrop
+    if (!MOT.myMemoryFarKora(10, { ord: 0, anrop: 0 })) problem.push("normal körning nekas");
+    if (MOT.myMemoryFarKora(10, { ord: 4995, anrop: 0 })) problem.push("ordgräns 5000 respekteras ej");
+    if (MOT.myMemoryFarKora(1, { ord: 0, anrop: 400 })) problem.push("anropstak 400 respekteras ej");
+    rad(
+      "mos-oversattning",
+      "MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv|en/sv|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag"
+        : problem.slice(0, 6).join("; "),
+      "bitar=" + String(bitar.length) + " langd=" + String(langText.length),
+    );
+  }
+
+  // ── MÖS 13 (våg 54): KEDJEORDNING + SSRF-validering + DeepL-host-val ────────
+  {
+    const problem: string[] = [];
+    const medAlla = MOT.externKedja({ deeplNyckel: "hemlig", googleNyckel: "hemlig" });
+    if (JSON.stringify(medAlla) !== JSON.stringify(["deepl", "google", "mymemory"])) problem.push("med nycklar: " + JSON.stringify(medAlla));
+    const medDeepl = MOT.externKedja({ deeplNyckel: "hemlig" });
+    if (medDeepl[0] !== "deepl") problem.push("DeepL ej först i kedjan");
+    const baraMm = MOT.externKedja({});
+    if (JSON.stringify(baraMm) !== JSON.stringify(["mymemory"])) problem.push("utan nycklar: " + JSON.stringify(baraMm));
+    if (MOT.externKedja({ externAvstangd: true }).length !== 0) problem.push("avstängd kedja ej tom");
+    if (MOT.deeplHost("hemlig-nyckel:fx") !== "api-free.deepl.com") problem.push(":fx-suffix → free-host misslyckades");
+    if (MOT.deeplHost("hemlig-nyckel") !== "api.deepl.com") problem.push("pro-nyckel → pro-host misslyckades");
+    const v: readonly string[] = ["api.deepl.com", "api-free.deepl.com"];
+    if (MOT.valideraExternUrl("http://api.deepl.com/v2/translate", v) !== null) problem.push("http tillåts (https-tvång brutet)");
+    if (MOT.valideraExternUrl("https://evil.com/v2/translate", v) !== null) problem.push("ej vitlistad host tillåts");
+    if (MOT.valideraExternUrl("https://api.deepl.com.evil.com/v2/translate", v) !== null) problem.push("suffix-host-tvärtillåts");
+    if (MOT.valideraExternUrl("inte-en-url", v) !== null) problem.push("ogiltig url tillåts");
+    const okUrl = MOT.valideraExternUrl("https://api-free.deepl.com/v2/translate", v);
+    if (!okUrl || okUrl.hostname !== "api-free.deepl.com") problem.push("vitlistad https-url underkänns");
+    if (MOT.valideraExternUrl("https://api.mymemory.translated.net/get", ["api.mymemory.translated.net"]) === null) problem.push("MyMemory-vitlistad url underkänns");
+    rad(
+      "mos-oversattning",
+      "KEDJEORDNING (DeepL först om nyckel → Google → MyMemory) + SSRF-validering",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "med bägge nycklarna: [deepl, google, mymemory]; utan: [mymemory] (nyckelfri standard); avstängd: []; :fx-nyckel → api-free.deepl.com; valideraExternUrl kräver https + exakt vitlistad host (http/evil.com/suffix-host/ogiltig → null)"
+        : problem.slice(0, 6).join("; "),
+      "kedja=" + JSON.stringify(medAlla),
+    );
+  }
+
+  // ── MÖS 14 (våg 54): STATUS-UNION vantar-kvot + PRE-termbanksdirekt (noll nät) ──
+  {
+    const problem: string[] = [];
+    const lista: readonly string[] = MOT.OVERSATTNING_STATUS;
+    if (lista.indexOf("vantar-kvot") < 0) problem.push("vantar-kvot saknas i OVERSATTNING_STATUS");
+    if (lista.indexOf("vantar-motor") < 0) problem.push("vantar-motor försvunnit ur unionen");
+    if (new Set(lista).size !== lista.length) problem.push("dubbla statusvärden i unionen");
+    const sparadAv = process.env.OVERSATTNING_EXTERN_AVSTANGD;
+    const spZ = process.env.ZAI_API_KEY;
+    const spD = process.env.DEEPL_API_KEY;
+    const spG = process.env.GOOGLE_TRANSLATE_KEY;
+    delete process.env.ZAI_API_KEY;
+    delete process.env.DEEPL_API_KEY;
+    delete process.env.GOOGLE_TRANSLATE_KEY;
+    process.env.OVERSATTNING_EXTERN_AVSTANGD = "1";
+    try {
+      const d1 = MOT.oversattKortTextViaTermbank("aktie portfölj", "en");
+      if (d1 !== "stock portfolio") problem.push("direkt en: " + String(d1));
+      const d2 = MOT.oversattKortTextViaTermbank("aktie portfölj", "ar");
+      if (d2 !== "السهم المحفظة") problem.push("direkt ar: " + String(d2));
+      if (MOT.oversattKortTextViaTermbank("Spara inställningar nu", "en") !== null) problem.push("främmande ord ger direktväg (skulle kräva motor)");
+      if (MOT.oversattKortTextViaTermbank("eget kapital", "en") !== null) problem.push("flerordsterm ger direktväg (skulle kräva motor)");
+      let nioOrd = "";
+      for (let i = 0; i < 9; i++) nioOrd += "aktie ";
+      if (MOT.oversattKortTextViaTermbank(nioOrd.trim(), "en") !== null) problem.push("9 ord ger direktväg (gränsen är 8)");
+      // helrond: oversatt() med kedjan avstängd men kort banktext → termbank + kontroller
+      const r = await MOT.oversatt("aktie portfölj", "en");
+      if (r.motor !== "termbank") problem.push("motor=" + String(r.motor));
+      if (r.status !== "publicerad" || r.poang !== 100) problem.push("status/poang=" + String(r.status) + "/" + String(r.poang));
+      if (r.text !== "stock portfolio") problem.push("text=" + String(r.text));
+    } finally {
+      if (spZ !== undefined) process.env.ZAI_API_KEY = spZ;
+      if (spD !== undefined) process.env.DEEPL_API_KEY = spD;
+      if (spG !== undefined) process.env.GOOGLE_TRANSLATE_KEY = spG;
+      if (sparadAv !== undefined) process.env.OVERSATTNING_EXTERN_AVSTANGD = sparadAv;
+      else delete process.env.OVERSATTNING_EXTERN_AVSTANGD;
+    }
+    rad(
+      "mos-oversattning",
+      "STATUS-UNION vantar-kvot + PRE-termbanksdirekt (kort text, inget nät)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "unionen innehåller vantar-kvot (vantar-motor kvar); ≤ 8 ord där alla ord är banktermer översätts direkt (aktie portfölj → stock portfolio/السهم المحفظة); främmande ord/flerordsterm/9 ord → motor; oversatt() kör termbanksgrenen + KONTROLLER → 100 poäng publicerad trots avstängd kedja"
+        : problem.slice(0, 6).join("; "),
+      "status=" + String(MOT.OVERSATTNING_STATUS.length) + " direktMaxOrd=" + String(MOT.DIREKT_MAX_ORD),
+    );
+  }
+
+  // ── MÖS 15 (våg 54): POST-skyddet → kontroller — poängen höjs deterministiskt ──
+  {
+    const problem: string[] = [];
+    const kalla = "Räntabilitet på eget kapital blev 23,4 % och bruttomarginalen steg.";
+    const motorSvar = "Return on equity became 23,4 % and the profit margin rose.";
+    const utan = KTR.korKontroller(kalla, motorSvar, "en");
+    if (utan.poang >= 90) problem.push("orättat motorsvar ⇒ " + String(utan.poang) + " (termmiss skulle hålla det under 90)");
+    const post = MOT.tvingaTermbank(kalla, motorSvar, "en");
+    if (post.rattade.length !== 2) problem.push("rattade=" + JSON.stringify(post.rattade.map((x: any) => x.via)));
+    const med = KTR.korKontroller(kalla, post.text, "en");
+    if (med.poang !== 100) {
+      problem.push("rättat svar ⇒ " + String(med.poang) + " — misslyckade kontroller: " + JSON.stringify(med.resultat.filter((x: any) => !x.pass).map((x: any) => x.namn)));
+    }
+    if (post.text.indexOf("return on equity (ROE)") < 0 || post.text.indexOf("gross margin") < 0) {
+      problem.push("rättad text saknar måltermerna: '" + post.text + "'");
+    }
+    rad(
+      "mos-oversattning",
+      "POST-SKYDD → KONTROLLER (termmiss 60p → rättat 100p, deterministiskt)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "simulerat motorsvar med två termfel: utan rättning poäng " + String(utan.poang) + " (termKonsistens failar); tvingaTermbank utökar 'return on equity' → 'return on equity (ROE)' (ofullständig målterm) + byter 'profit margin' → 'gross margin' (synonym-byte); kontrollerna ger därefter 100 — kedja motor→termbank→kontroller intakt"
+        : problem.slice(0, 6).join("; "),
+      "utan=" + String(utan.poang) + " med=" + String(med.poang),
     );
   }
 }

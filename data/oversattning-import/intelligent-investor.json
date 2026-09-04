@@ -1,0 +1,2545 @@
+{
+ "kurs": "the-intelligent-investor",
+ "sprak": {
+  "en": {
+   "namn": "English",
+   "inriktning": "neutral internationell engelska, pedagogisk finansiell prosa"
+  },
+  "ar": {
+   "namn": "العربية",
+   "inriktning": "modern standardarabiska (فصحى), korrekt finansiell terminologi; latinska termer behålls"
+  }
+ },
+ "metadata": {
+  "oversattare": "VÅG 54 agent Ö1",
+  "datum": "2026-09-04",
+  "metod": "agentisk kvalitetsöversättning av mänsklig grad — ingen maskinöversättning via nätet",
+  "kalla": "public/deep-courses.json [the-intelligent-investor] via src/lib/oversattning/kalla.ts",
+  "nyckelkonvention": "poster = kursblock-scope '{slug}:kap{n}:block{i}' (1-baserat, samma som kalla.ts); ovriga = titel/intro/quiz som INTE finns i källregistret ännu, namngivna '{slug}:kap{n}:titel|intro|quiz{j}:q|a{k}|tips'",
+  "kontroll": "korKontroller (src/lib/oversattning/kontroller.ts) körd på samtliga 84 block × 2 språk = 168 kontroller via npx tsx data/tmp-tii/kontrollera.mts: 168/168 på 100 poäng (100.0%) — autopubliceringsklara"
+ },
+ "poster": [
+  {
+   "nyckel": "the-intelligent-investor:kap1:block1",
+   "en": "Before you read further in this course: take this test. Open your broker and look at your last five trades. For each one, write down WHY you bought. (a) did you read the report and calculate the value, or (b) tip/gut feeling/the price went up? If more than two out of five are (b) - you are a speculator according to Graham. That is nothing to be ashamed of, but the rules are completely different.",
+   "ar": "قبل أن تواصل القراءة في هذه الدورة: قم بهذا الاختبار. افتح حساب الوساطة لديك وانظر في آخر صفقاتك الخمس. عن كل صفقة اكتب لماذا اشتريت: (أ) هل قرأت التقرير وحسبت القيمة، أم (ب) نصيحة/إحساس/ارتفع السعر؟ إذا كانت أكثر من اثنتين من خمس هي (ب) - فأنت مضارب وفق غراهام. ليس في ذلك عار، لكن القواعد مختلفة تمامًا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:block2",
+   "en": "An investment operation is grounded in thorough analysis, promises safety of the principal and a satisfactory return. If the operation does not meet all three requirements it is speculation. Graham warns on the very first page: the result of a speculative position depends on someone else paying more later; the investment result depends on the company's value. Most market participants cross this line daily without knowing it - they buy 'because it is going up'. The question that decides everything: where is the return supposed to come from - the company or the next buyer? The book's path also shows that both defensive and enterprising investors can succeed - but the half-hearted one, who reads tips and believes they are investing, is the one who loses.",
+   "ar": "عملية الاستثمار تقوم على تحليل دقيق، وتَعِد بأمان رأس المال وبعائد مُرضٍ. وإذا لم تلبِّ العملية هذه الشروط الثلاثة فهي مضاربة. يحذّر غراهام من الصفحة الأولى: نتيجة المركز المضاربي تعتمد على أن يدفع شخص آخر أكثر لاحقًا؛ أما نتيجة الاستثمار فتعتمد على قيمة الشركة. معظم مشاركي السوق يتجاوزون هذا الحد يوميًا دون أن يدروا - يشترون «لأن السهم يرتفع». السؤال الذي يحدد كل شيء: من أين سيأتي العائد - من الشركة أم من المشتري التالي؟ يُظهر منهج الكتاب أيضًا أن المستثمر الدفاعي والمستثمر النشط كليهما قادر على النجاح - لكن المتردد الذي يقرأ النصائح ويظن أنه يستثمر هو الخاسر."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:block3",
+   "en": "If your profit requires someone else to buy at a higher price than you did - it is speculation, no matter how good the story sounds.",
+   "ar": "إذا كان ربحك يتطلب أن يشتري شخص آخر بسعر أعلى من سعر شرائك - فهذه مضاربة، مهما بدت القصة جذابة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:block4",
+   "en": "Sort your portfolio into two columns: 'the company pays me' (dividend, cash flow) or 'the next buyer pays me' (price hopes). How many ended up in column two?",
+   "ar": "صنّف ما في المحفظة إلى عمودين: «الشركة تدفع لي» (التوزيعات، التدفق النقدي) أو «المشتري التالي يدفع لي» (توقعات السعر). كم عدد الحيازات التي وضعتها في العمود الثاني؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:block5",
+   "en": "{\"rubrik\":\"Investor vs Speculator (course overview)\",\"rader\":[[\"Aspect\",\"Investor\",\"Speculator\"],[\"Basis\",\"Analysis of value\",\"Price/trend\"],[\"Time frame\",\"Several years\",\"Days-months\"],[\"Risk\",\"Margin\",\"Stop-loss\"],[\"Enemy\",\"Your own impulses\",\"Everyone else's\"],[\"Result\",\"Accumulates value\",\"Zero-sum minus costs\"]]}",
+   "ar": "{\"rubrik\":\"المستثمر مقابل المضارب (نظرة عامة على الدورة)\",\"rader\":[[\"الجانب\",\"المستثمر\",\"المضارب\"],[\"الأساس\",\"تحليل القيمة\",\"السعر/الاتجاه\"],[\"الأفق الزمني\",\"سنوات عدة\",\"أيام-أشهر\"],[\"المخاطر\",\"هامش الأمان\",\"أمر إيقاف الخسارة\"],[\"العدو\",\"نزواتك الخاصة\",\"نزوات الجميع\"],[\"النتيجة\",\"تراكم القيمة\",\"مجموع صفري ناقص التكاليف\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:block6",
+   "en": "scale",
+   "ar": "المقياس"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block1",
+   "en": "Open a calculator. 100 000 kr after 10 years at 2% inflation = you need 121 899 kr for the same things. Inflation has eaten 22% of your purchasing power - silently and relentlessly. The question: do stocks protect against this? Graham: NOT reliably. During 1966-70 prices rose 22% while stocks FELL. Those who bought as an inflation hedge lost on both fronts.",
+   "ar": "افتح آلة حاسبة. 100 000 كرونة بعد 10 سنوات عند تضخم 2% = ستحتاج إلى 121 899 كرونة لشراء الأشياء نفسها. التضخم التهم 22% من القوة الشرائية لديك - بصمت وبلا هوادة. السؤال: هل تحمي الأسهم من هذا؟ رد غراهام: ليس بشكل موثوق. خلال 1966-70 ارتفعت الأسعار 22% بينما هبطت الأسهم. من اشتروا بدافع الحماية من التضخم خسروا على الجبهتين."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block2",
+   "en": "Many buy stocks as a reflex answer to inflation - Graham dismisses this as unsustainably simple. History shows that stocks do NOT reliably protect against rising prices: during 1966-70 consumer prices rose 22% while stocks fell. Even bonds can outperform stocks in inflationary periods. Graham's conclusion: do not rely on a single protection - balance. When inflation eats purchasing power it also eats badly placed stock positions. The real question is not 'stocks or interest rates against inflation' but 'what margin of safety exists in the price of what I am buying'. Stocks bought at the top out of fear of inflation are speculative insurance - not safety.",
+   "ar": "كثيرون يشترون الأسهم كرد فعل تلقائي على التضخم - ويرفض غراهام ذلك باعتباره تبسيطًا لا يستقيم. يُظهر التاريخ أن الأسهم لا تحمي بشكل موثوق من ارتفاع الأسعار: خلال 1966-70 ارتفعت أسعار الاستهلاك 22% بينما هبطت الأسهم. وحتى السندات قد تتفوق على الأسهم في فترات التضخم. خلاصة غراهام: لا تعتمد على حماية واحدة - وازن. حين يلتهم التضخم القوة الشرائية فإنه يلتهم أيضًا مراكز الأسهم الموضوعة في غير موضعها. السؤال الحقيقي ليس «أسهم أم أسعار فائدة في مواجهة التضخم» بل «ما هامش الأمان المتاح في سعر ما أشتريه». الأسهم المشتراة في القمة خوفًا من التضخم هي تأمين مضاربي - لا طمأنينة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block3",
+   "en": "Stocks are not an automatic inflation hedge - the margin in the price is the protection, not the asset itself.",
+   "ar": "الأسهم ليست حماية تلقائية من التضخم - الحماية هي الهامش في السعر، لا الأصل بحد ذاته."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block4",
+   "en": "Find out the current annual inflation. Then calculate what real return after inflation a stock you own must deliver. How large a margin in the price does that require?",
+   "ar": "اعرف معدل التضخم السنوي الحالي. ثم احسب ما يجب أن يحققه السهم الذي تملكه من العائد الحقيقي بعد التضخم. ما حجم الهامش المطلوب في السعر لذلك؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block5",
+   "en": "{\"rubrik\":\"Inflation vs stocks\",\"rader\":[[\"Period\",\"Prices\",\"Stocks\",\"Interest rates\"],[\"1946-49\",\"+33%\",\"-22%\",\"+6%\"],[\"1966-70\",\"+22%\",\"-15%\",\"+14%\"],[\"1973-74\",\"+22%\",\"-42%\",\"+2%\"],[\"1979-81\",\"+32%\",\"+22%\",\"-8%\"]]}",
+   "ar": "{\"rubrik\":\"التضخم مقابل الأسهم\",\"rader\":[[\"الفترة\",\"الأسعار\",\"الأسهم\",\"أسعار الفائدة\"],[\"1946-49\",\"+33%\",\"-22%\",\"+6%\"],[\"1966-70\",\"+22%\",\"-15%\",\"+14%\"],[\"1973-74\",\"+22%\",\"-42%\",\"+2%\"],[\"1979-81\",\"+32%\",\"+22%\",\"-8%\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:block6",
+   "en": "compound",
+   "ar": "الفائدة المركبة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block1",
+   "en": "See this timeline as a map of human folly. Year 1720: South Sea Company - Isaac Newton lost 20 000 pounds and said: I can calculate the movements of heavenly bodies, but not the madness of people. Year 1929: Dow -89%. Year 1972: Nifty Fifty -70%. Year 2000: Dot-com -78%. Year 2008: Financial crisis -54%. The same monster every time: a real trend, valuation decouples, this-time-is-different arguments, leverage + amateurs, crash.",
+   "ar": "انظر إلى هذا الخط الزمني باعتباره خريطة لحماقة البشر. عام 1720: شركة South Sea - خسر إسحاق نيوتن 20 000 جنيه وقال: أستطيع حساب مسارات الأجرام السماوية، لكن ليس حماقة البشر. عام 1929: مؤشر داو -89%. عام 1972: Nifty Fifty -70%. عام 2000: فقاعة Dot-com -78%. عام 2008: الأزمة المالية -54%. الوحش نفسه في كل مرة: الاتجاه الحقيقي، انفصال التقييم عن الواقع، حجج «هذه المرة مختلفة»، الرافعة المالية + الهواة، ثم الانهيار."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block2",
+   "en": "Graham travels through the South Sea bubble, the railway mania, 1929 and the crashes that followed - not as curiosities but as a pattern. A real trend earns legitimate value, valuation decouples from reality, new investors define away risk with slogans ('it is different this time'), ordinary people buy with leverage, and the correction destroys portfolios. The Summer Rally of 1932: after -89% in the Dow came +71% in three months - for those with a margin and nerves. The lesson: the market has no memory between generations, only prices. Staying home while the bull charges FEELS like a loss, but participating without a margin IS losing.",
+   "ar": "يرحل غراهام عبر فقاعة South Sea وهوس السكك الحديدية وعام 1929 والانهيارات التي تلت ذلك - لا بوصفها طرائف بل نمطًا متكررًا. الاتجاه الحقيقي يكتسب قيمة مشروعة، ثم ينفصل التقييم عن الواقع، فينحي المستثمرون الجدد المخاطر جانبًا بشعارات («الأمر مختلف هذه المرة»)، ويشتري عامة الناس بالرافعة المالية، ثم يفني التصحيح المحفظة تلو الأخرى. نهوض صيف 1932: بعد -89% في مؤشر داو جاء +71% خلال ثلاثة أشهر - لمن يملك هامشًا وأعصابًا. الدرس: السوق لا ذاكرة له بين الأجيال، بل أسعار فقط. البقاء في المنزل أثناء اندفاع الموجة الصاعدة يُشعرك بالخسارة، لكن المشاركة دون هامش هي الخسارة ذاتها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block3",
+   "en": "Bubbles feel like the new normal from the inside - history is the antidote.",
+   "ar": "الفقاعات تبدو من الداخل وكأنها الطبيعي الجديد - التاريخ هو الترياق."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block4",
+   "en": "Look up 1929 and 1972 (Nifty Fifty). Find three 'it is different this time' arguments from each era. Compare with the arguments of today's hyped companies.",
+   "ar": "ابحث عن عامي 1929 و1972 (حقبة Nifty Fifty). اعثر على ثلاث حجج من نوع «الأمر مختلف هذه المرة» من كل حقبة. قارنها بحجج الشركات المضخَّمة الشهرة اليوم."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block5",
+   "en": "{\"titel\":\"Bubbles through history\",\"punkter\":[[\"1720\",\"South Sea\"],[\"1929\",\"Dow -89%\"],[\"1972\",\"Nifty Fifty\"],[\"2000\",\"Dot-com\"],[\"2008\",\"Financial crisis\"]]}",
+   "ar": "{\"titel\":\"فقاعات عبر التاريخ\",\"punkter\":[[\"1720\",\"South Sea\"],[\"1929\",\"داو -89%\"],[\"1972\",\"Nifty Fifty\"],[\"2000\",\"Dot-com\"],[\"2008\",\"الأزمة المالية\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:block6",
+   "en": "cycle",
+   "ar": "الدورة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block1",
+   "en": "Graham's portfolio policy is simple enough to write on a card: the stock allocation between 25 and 75 percent. NEVER 0%, NEVER 100%. The extremes are forecasts. 0% stocks = a forecast that they will fall. 100% = a forecast that they will rise. Rebalancing is the antidote: when stocks rise to 65/35 you are forced to sell (sell high!), when they fall to 35/65 you are forced to buy (buy low!). This ALWAYS feels wrong - and that is why it works.",
+   "ar": "سياسة المحفظة عند غراهام بسيطة بما يكفي لكتابتها على بطاقة: حصة الأسهم بين 25 و75 بالمئة. أبدًا لا 0%، وأبدًا لا 100%. المتطرفان تنبؤان: 0% في الأسهم = تنبؤ بأنها ستهبط؛ و100% = تنبؤ بأنها سترتفع. إعادة الموازنة هي الترياق: حين ترتفع الأسهم إلى 65/35 تُجبر على البيع (بِع مرتفعًا!)، وحين تهبط إلى 35/65 تُجبر على الشراء (اشترِ منخفضًا!). هذا يبدو دائمًا خطأً - ولهذا السبب بالذات ينجح."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block2",
+   "en": "Graham's ground rule: the stock allocation should lie between 25 and 75 percent, never at the extremes. When the market has grown so much that the allocation rises sharply above your plan - LOWER it mechanically; when it sinks below - BUY more. This forced resistance to the mood is the whole point: rebalancing forces you to do what feels wrong and is right. Monthly saving (dollar cost averaging) complements it: the same amount buys more stocks when the price falls, fewer when it rises - automatic discipline without forecasts. Anyone who needs forecasts for their portfolio policy has already given up the margin.",
+   "ar": "القاعدة الأساسية عند غراهام: ينبغي أن تقع حصة الأسهم بين 25 و75 بالمئة، ولا تبلغ المتطرفين أبدًا. حين ينمو السوق حتى ترتفع الحصة بحدة فوق خطتك - اخفضها آليًا؛ وحين تنخفض دونها - اشترِ المزيد. هذه المقاومة القسرية للمزاج هي جوهر الفكرة كلها: إعادة الموازنة تجبرك على فعل ما يبدو خطأ وهو صواب. الادخار الشهري (dollar cost averaging) يكمل ذلك: المبلغ نفسه يشتري أسهمًا أكثر حين يهبط السعر، وأقل حين يرتفع - انضباط تلقائي بلا تنبؤات. من يحتاج إلى تنبؤات لسياسة محفظته فقد تخلى عن الهامش أصلًا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block3",
+   "en": "The policy must be mechanical enough to work on the day you least want to follow it.",
+   "ar": "يجب أن تكون السياسة آلية بالقدر الكافي لتعمل في اليوم الذي تكون فيه أقل رغبة في اتباعها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block4",
+   "en": "Write your personal policy: X% stocks, the remainder in interest rate assets, rebalancing at a deviation of Y percentage points. Date-stamp it. It is your contract with yourself.",
+   "ar": "اكتب سياستك الشخصية: X% في الأسهم والباقي في أدوات سعر الفائدة، مع إعادة موازنة عند انحراف بمقدار Y نقطة مئوية. ضع التاريخ عليها. هذا عقدك مع نفسك."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block5",
+   "en": "{\"rubrik\":\"Rebalancing\",\"rader\":[[\"Situation\",\"Feeling\",\"Policy\",\"Right\"],[\"Stocks rose\",\"Greed\",\"SELL\",\"✓\"],[\"Stocks fell\",\"Fear\",\"BUY\",\"✓\"],[\"Neutral\",\"Calm\",\"Hold\",\"✓\"]]}",
+   "ar": "{\"rubrik\":\"إعادة الموازنة\",\"rader\":[[\"الحالة\",\"الشعور\",\"السياسة\",\"الصواب\"],[\"ارتفعت الأسهم\",\"الطمع\",\"بِع\",\"✓\"],[\"هبطت الأسهم\",\"الخوف\",\"اشترِ\",\"✓\"],[\"محايد\",\"الهدوء\",\"احتفظ\",\"✓\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:block6",
+   "en": "compound",
+   "ar": "الفائدة المركبة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block1",
+   "en": "The defensive investor is NOT lazy - it is a DELIBERATE strategy. A simple portfolio of solid companies + rebalancing has historically beaten most active managers. Four requirements: (1) 10-30 companies across different industries, (2) adequate size, (3) financial stability, (4) 20+ years of dividends. Of ~400 companies on Nasdaq Stockholm, typically only 40-60 pass all four SIMULTANEOUSLY. That is the point - the filter is supposed to remove most of them.",
+   "ar": "المستثمر الدفاعي ليس كسولًا - بل هذه استراتيجية واعية. المحفظة البسيطة من شركات متينة + إعادة موازنة تفوقت تاريخيًا على معظم المديرين النشطين. أربعة شروط: (1) 10-30 شركة في قطاعات مختلفة، (2) حجم كافٍ، (3) استقرار مالي، (4) التوزيعات منذ 20+ عامًا. من بين ~400 شركة في بورصة ستوكهولم يجتاز عادة 40-60 فقط الشروط الأربعة في آن واحد. هذه هي الفكرة - فالمرشح مصمم ليستبعد معظم الشركات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block2",
+   "en": "The defensive investor buys: (1) a diversified selection of solid companies - 10-30 names, (2) sufficiently large enterprises (not speculative small caps), (3) financially stable - liabilities manageable relative to assets, (4) continuous dividends - preferably 20+ years. Graham does not exclude growth companies but warns: do not pay growth prices without a margin. Defensive does not mean without return - it means without a requirement to predict. From 1949-72 a simple defensive portfolio historically delivered a greater return than the return of fund after fund. Patience + breadth + rebalancing - that is the defensive trio.",
+   "ar": "يشتري المستثمر الدفاعي: (1) مجموعة منوعة من الشركات المتينة - 10-30 اسمًا، (2) شركات كبيرة بما يكفي (لا شركات صغيرة مضاربية)، (3) مستقرة ماليًا - بحيث تكون الالتزامات قابلة للإدارة مقابل الأصول، (4) التوزيعات المستمرة - يُفضل منذ 20+ عامًا. لا يستبعد غراهام شركات النمو لكنه يحذّر: لا تدفع أسعار نمو بلا هامش. الدفاعي لا يعني غياب العائد - بل غياب اشتراط التنبؤ. خلال 1949-72 حققت المحفظة الدفاعية البسيطة تاريخيًا عائدًا أعلى من عائد الصندوق تلو الصندوق. الصبر + الاتساع + إعادة الموازنة - هذا ثلاثي المستثمر الدفاعي."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block3",
+   "en": "Defensive does not mean without return - it means without a demand for prediction.",
+   "ar": "كلمة دفاعي لا تعني غياب العائد - بل غياب اشتراط التنبؤ."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block4",
+   "en": "Test your largest stock against the four rules: diversification (is it >20% of the portfolio?), size, stability, dividend history. Which rule falls first?",
+   "ar": "اختبر السهم الأكبر لديك مقابل القواعد الأربع: التنويع (هل يشكل أكثر من 20% من المحفظة؟)، والحجم، والاستقرار، وتاريخ التوزيعات. أي قاعدة تسقط أولًا؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block5",
+   "en": "{\"rubrik\":\"The defensive filter\",\"rader\":[[\"Requirement\",\"Threshold\",\"Why\"],[\"Diversification\",\"10-30 companies\",\"Single risk<5%\"],[\"Size\",\">1 bn\",\"Integration risk\"],[\"Stability\",\"Liabilities<EK/2\",\"Survival\"],[\"Dividend\",\"20+ years\",\"Endurance\"]]}",
+   "ar": "{\"rubrik\":\"المرشح الدفاعي\",\"rader\":[[\"الشرط\",\"العتبة\",\"لماذا\"],[\"التنويع\",\"10-30 شركة\",\"المخاطر الفردية<5%\"],[\"الحجم\",\">1 مليار\",\"مخاطر الاندماج\"],[\"الاستقرار\",\"الالتزامات<حقوق الملكية/2\",\"البقاء\"],[\"التوزيعات\",\"20+ عامًا\",\"المثابرة\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:block6",
+   "en": "donut",
+   "ar": "الدونات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:block1",
+   "en": "The enterprising investor is expected to do better than the market - Graham warns directly: this is difficult, most fail. Three acceptable paths: (1) low-valued stable companies the market has grown tired of, (2) secondary companies - mid-sized, unknown, trading below calculated value, (3) special situations - mergers, restructurings, liquidations where the outcome is calculable. Paths that do NOT work according to Graham: market timing, chasing growth companies at any price, short-term trading, options. The enterprising investor needs three times the discipline: the knowledge to value, the patience to wait for a margin, and the nerves to hold the position when Mr Market grimaces.",
+   "ar": "يُتوقع من المستثمر النشط أن يتفوق على السوق - ويحذّر غراهام مباشرة: هذا صعب، وأغلب الناس يفشلون. ثلاثة طرق مقبولة: (1) شركات مستقرة منخفضة التقييم ملّ السوق منها، (2) شركات ثانوية - متوسطة الحجم، مجهولة، متداولة دون قيمتها المحسوبة، (3) مواقف خاصة - الاندماجات وإعادة الهيكلة والتصفيات يمكن حساب نتيجتها. طرق لا تعمل وفق غراهام: توقيت السوق، وملاحقة شركات النمو بأي سعر، والتجارة قصيرة الأجل، والخيارات. يحتاج النشط إلى ثلاثة أضعاف الانضباط: المعرفة اللازمة للتقييم، والصبر لانتظار الهامش، والأعصاب للاحتفاظ بالمركز حين يعبس Mr Market."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:block2",
+   "en": "Beating the market is not a right - it is an exam most people fail.",
+   "ar": "التفوق على السوق ليس حقًا مكتسبًا - بل امتحان يرسب فيه معظم الناس."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:block3",
+   "en": "Choose your enterprising path (1, 2 or 3 above). Justify in three sentences why THAT one suits your knowledge. If you cannot - are you defensive? That is also an answer.",
+   "ar": "اختر طريقك النشط (1 أو 2 أو 3 أعلاه). برر في ثلاث جمل لماذا يناسب هذا الطريق بعينه مستوى المعرفة لديك. إن لم تستطع - فهل أنت دفاعي؟ هذا أيضًا جواب."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:block1",
+   "en": "Chapter 7 is a list of NOs. No to buying growth companies at any price whatsoever - history shows that the premium for growth almost always pays for more than what is delivered. No to IPOs - Graham cites studies where new share issues systematically underperform the market. No to short-term trading, options and warrants - zero-sum games with transaction costs that eat both parties. The negative method is not boredom - it is guard rails. Warren Buffett later summed it up: 'We have three boxes: yes, no and too hard.' Graham teaches you that 'too hard' is a legitimate answer - perhaps the most valuable one.",
+   "ar": "الفصل 7 قائمة من الرفض. لا لشراء شركات النمو بأي سعر كان - يُظهر التاريخ أن علاوة النمو تدفع في الأعم الأغلب أكثر مما يُقدَّم فعلًا. لا للاكتتابات الأولية IPO - يستشهد غراهام بدراسات تُظهر أن كل إصدار أسهم جديد يحقق أداءً أقل من السوق بشكل منهجي. لا للتجارة قصيرة الأجل وللخيارات وwarrants - ألعاب مجموع صفري تبتلع تكاليف معاملاتها الطرفين معًا. المنهج السلبي ليس مللًا - بل حواجز حماية. لخّص وارن بافيت ذلك لاحقًا: «لدينا ثلاثة صناديق: نعم، لا، وصعب جدًا». يعلّمك غراهام أن «صعب جدًا» جواب مشروع - وربما كان الأثمن."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:block2",
+   "en": "The most underrated answer on the stock exchange is 'too hard - I pass'.",
+   "ar": "أكثر جواب يُقدَّر بأقل من قيمته في البورصة هو «صعب جدًا - أمتنع»."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:block3",
+   "en": "Go through your watchlist. Mark each idea yes/no/too-hard. How many get 'too hard'? That is not weakness - it is Graham in practice.",
+   "ar": "راجع قائمة المتابعة لديك. صنّف كل فكرة: نعم/لا/صعب جدًا. كم فكرة تحصل على «صعب جدًا»؟ ليست تلك ضعفًا - بل غراهام في الممارسة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block1",
+   "en": "Imagine that you own a share in a small business - a farm, a shop. Every day Mr Market comes to your door and offers to buy your share or sell you more. His price varies wildly with his mood. Some days euphoric: Your farm is worth a fortune! Other days depressed: Nobody wants farms. You are NEVER forced to act - he comes back tomorrow. Buffett's application: in 1973 he bought Washington Post at 25% of its value. In 1987 Coca-Cola after the crash. In 2008 Goldman Sachs during the financial crisis. Every time: Mr Market's mood was not information but opportunity.",
+   "ar": "تخيّل أنك تملك حصة في مشروع صغير - مزرعة أو متجر. كل يوم يطرق Mr Market بابك عارضًا شراء حصتك أو بيعك المزيد. سعره يتقلب بجنون حسب مزاجه. بعض الأيام نشوان: مزرعتك تساوي ثروة! وأيام أخرى مكتئب: لا أحد يريد المزارع. أنت أبدًا غير مضطر للتحرك - سيعود غدًا. تطبيق بافيت: في 1973 اشترى Washington Post بمقدار 25% من قيمتها. وفي 1987 اشترى Coca-Cola بعد الانهيار. وفي 2008 اشترى Goldman Sachs خلال الأزمة المالية. في كل مرة: مزاج Mr Market لم يكن معلومة بل فرصة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block2",
+   "en": "You have a partner in every company: Mr Market. Daily he offers to buy or sell - at a price set by his mood. Euphoric days: sky-high prices. Depressed days: he gives the company away. You are free to ignore him - he comes back tomorrow. When a stock you understand falls 20% with no change in the business it is not a loss but a discount offer. If it rises 20% without cause: an offer to sell expensively. Buffett calls the chapter the most important ever written about investing. If you grasp one thing only - the market's mood is not your instruction, but your opportunity - you have the core of the book even if you take in only half of the rest.",
+   "ar": "لك في كل شركة شريك اسمه Mr Market. يوميًا يعرض شراء أو بيعًا - بسعر يحدده مزاجه. أيام النشوة: أسعار فلكية. أيام الكآبة: يهبك الشركة مجانًا. لك حرية تجاهله - سيعود غدًا. حين يهبط السهم الذي فهمته بنسبة 20% دون تغير في الأعمال فليست خسارة بل عرض خصم. وإذا ارتفع 20% بلا سبب: عرض للبيع بسعر مرتفع. يصف بافيت هذا الفصل بأنه أهم ما كُتب عن الاستثمار على الإطلاق. إن أدركت أمرًا واحدًا فقط - وهو أن مزاج السوق ليس أمرًا توجيهيًا لك بل فرصة بين يديك - فقد أدركت جوهر الكتاب حتى لو اكتفيت بنصفه."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block3",
+   "en": "Mr Market's price is his opinion - never the company's value. Profit from the mood, do not share it.",
+   "ar": "سعر Mr Market رأيه - ولا يكون أبدًا قيمة الشركة. اربح من المزاج ولا تشاركه فيه."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block4",
+   "en": "Pick a stock you follow. Three headlines from the past month: did they change the COMPANY or the MOOD? How did you act - and how should a Mr Market reader have acted?",
+   "ar": "اختر السهم الذي تتابعه. ثلاثة عناوين من الشهر الماضي: هل غيّرت الشركة أم المزاج؟ كيف تصرفت أنت - وكيف كان ينبغي لقارئ فكرة Mr Market أن يتصرف؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block5",
+   "en": "{\"rubrik\":\"The Mr Market lesson\",\"rader\":[[\"Signal\",\"Feeling\",\"Action\",\"Result\"],[\"Falls -20% without cause\",\"PANIC\",\"Buy with a margin\",\"✓\"],[\"Rises +20% without cause\",\"EUPHORIA\",\"Consider selling\",\"✓\"],[\"No signal at all\",\"Calm\",\"Do nothing\",\"✓\"]]}",
+   "ar": "{\"rubrik\":\"درس Mr Market\",\"rader\":[[\"الإشارة\",\"الشعور\",\"التصرف\",\"النتيجة\"],[\"يهبط -20% بلا سبب\",\"الهلع\",\"اشترِ بهامش\",\"✓\"],[\"يرتفع +20% بلا سبب\",\"النشوة\",\"فكّر في البيع\",\"✓\"],[\"لا إشارة أصلًا\",\"الهدوء\",\"لا تفعل شيئًا\",\"✓\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:block6",
+   "en": "cycle",
+   "ar": "الدورة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:block1",
+   "en": "Funds solve diversification but create two new problems: fees and the manager's obligation to always stay invested. Graham states it brutally: most funds underperform their index - fees eat the difference. The fund industry's marketing is built on historical return, but history does not repeat itself in fund tables: this year's winner is rarely next year's. This was 1949/1972 - decades before the index fund's breakout - and Graham already points there: the cheapest exposure to the entire market, with the lowest fee, is the defensive investor's natural home. If you still want to choose active management: compare at least 5-10 years, look at fees FIRST and return AFTERWARDS.",
+   "ar": "تحل الصناديق مشكلة التنويع لكنها تخلق مشكلتين جديدتين: الرسوم وإلزام المدير بالبقاء مستثمرًا دائمًا. يقرر غراهام بصرامة قاسية: أداء الصندوق في أغلب الصناديق يقل عن أداء المؤشر - فالرسوم تلتهم الفارق. تسويق صناعة الصناديق يقوم على العائد التاريخي، لكن التاريخ لا يعيد نفسه في جداول الصناديق: الفائز هذا العام نادرًا ما يفوز العام التالي. كان ذلك عام 1949/1972 - قبل عقود من أن يحقق صندوق المؤشرات الاختراق الكبير - وغرام يشير بالفعل إلى هناك: أرخص تعرّض للسوق كاملة، وبأدنى رسوم، هو البيت الطبيعي للمستثمر الدفاعي. وإن أردت مع ذلك اختيار إدارة نشطة: قارن 5-10 سنوات على الأقل، وانظر إلى الرسوم أولًا وإلى العائد بعدها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:block2",
+   "en": "Historical fund return is marketing - the fee is the only guaranteed number.",
+   "ar": "العائد التاريخي للصناديق تسويق - الرسوم هي الرقم الوحيد المضمون."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:block3",
+   "en": "Calculate: your fund's (or a chosen one) annual fee × 30 years on 100 000 kr, with unchanged return. Compare the sum with what an index fund at 0,2% delivers. The difference is your lesson.",
+   "ar": "احسب: رسوم الصندوق الذي تملكه (أو صندوقًا تختاره) السنوية × 30 عامًا على 100 000 كرونة، مع ثبات العائد. قارن المجموع بما يحققه صندوق المؤشرات برسوم 0,2%. الفرق هو درسك."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:block1",
+   "en": "Financial advisers come in two kinds: those paid for opinions (analysts) and those who live off transactions (brokers). Structure creates incentives: the broker earns from your activity, not your results. Graham urges: distrust advice that combines forecasts with a push to act - analysis and brokerage should never be mixed. The test of an adviser: do they tell you when to DO NOTHING? An honest adviser sometimes writes 'too hard - wait'. The bank's and the fund's free advice is rarely free - it is paid for in product fees. Your ultimate adviser should be your own checklist - the book you are holding is it.",
+   "ar": "المستشارون الماليون صنفان: من يتقاضون أجرًا على الآراء (المحللون) ومن يعيشون على المعاملات (السماسرة). البنية تخلق الحوافز: السمسار يكسب من نشاطك لا من نتائجك. يوصي غراهام: ارفض الثقة بنصيحة تجمع بين التنبؤات والحث على التحرك - فالتحليل والسمسرة يجب ألا يُخلطا أبدًا. اختبار المستشار: هل يقول لك متى لا تفعل شيئًا؟ المستشار الأمين يكتب أحيانًا «صعب جدًا - انتظر». نصائح البنك والصندوق المجانية نادرًا ما تكون مجانية - تدفع ثمنها في رسوم المنتجات. مستشارك الأخير ينبغي أن يكون قائمة التحقق الخاصة بك - والكتاب الذي بين يديك هو تلك القائمة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:block2",
+   "en": "Advisers who never say 'wait' are selling activity - not knowledge.",
+   "ar": "المستشار الذي لا يقول أبدًا «انتظر» يبيع النشاط - لا المعرفة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:block3",
+   "en": "Next time you receive a savings tip (bank, app, podcast): look for whose interest is served by you acting. Is there an incentive? Write it down - train the skeptic.",
+   "ar": "في المرة القادمة التي تصلك فيها نصيحة ادخار (من بنك أو تطبيق أو بودكاست): ابحث عن مصلحة من تُخدم بتحركك. هل هناك حافز؟ اكتب ذلك - درّب المتشكك فيك."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:block1",
+   "en": "The first layer: a defensive position - read the annual report like a suspicious auditor. Repeated one-off items, wobbly principles, overly lenient auditors: warning. The second: earning power - calculate average earnings over a FULL business cycle (5-10 years), never a peak year. The third: valuation - Graham presents his formula V = E × (8,5 + 2g) but immediately warns: no formula replaces the margin, formulas make you disciplined - the Margin makes you safe. The difference from technical analysis: fundamental analysis predicts the value of the business; the technical kind predicts mood. Graham devotes the book's first part to NOT predicting mood.",
+   "ar": "الطبقة الأولى: موقع دفاعي - اقرأ التقرير السنوي كما يفعل المدقق المتشكك. بنود استثنائية متكررة، ومبادئ متذبذبة، ومدققون متساهلون أكثر من اللازم: إنذار. الثانية: قوة الكسب - احسب متوسط الأرباح عبر دورة اقتصادية كاملة (5-10 سنوات)، لا عبر سنة ذروة أبدًا. الثالثة: التقييم - يقدم غراهام صيغته V = E × (8,5 + 2g) لكنه يحذر فورًا: لا صيغة تعوض الهامش، فالصيغ تجعلك منضبطًا - والهامش يجعلك آمنًا. الفرق عن التحليل الفني: التحليل الأساسي يتنبأ بقيمة الأعمال، والتحليل الفني يتنبأ بالمزاج. يخصص غراهام الجزء الأول من الكتاب لعدم التنبؤ بالمزاج."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:block2",
+   "en": "Graham examines companies the way auditors examine clients - suspicion is the starting point.",
+   "ar": "يفحص غراهام الشركات كما يفحص المدققون عملاءهم - فالشك هو نقطة البداية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:block3",
+   "en": "Fetch an annual report. Look for: three one-off items, one principle change, the auditor's name. Each find = a question worth asking before you buy.",
+   "ar": "احصل على التقرير السنوي. ابحث عن: ثلاثة بنود استثنائية، وتغيير واحد في المبادئ، واسم المدقق. كل اكتشاف = سؤال يستحق الطرح قبل الشراء."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:block1",
+   "en": "Graham lists the dangers in order. Forecasts: security analysis cannot predict prices - it can estimate value; whoever sells price tips is selling mood forecasts. Trading: the temptation to flip positions for profit is a felony against the Margin - every turn costs spread and tax. Leverage: magnifies the profit until it magnifies the loss - there is no such thing as 'safe' borrowed money. Especially warned against: buying on margin in a rising market - exactly where the feeling of safety is greatest, it is least real. The common denominator of the pitfalls: they all feel wise in the moment. That is why this course insists the checklist be written down - before the moment.",
+   "ar": "يعدّد غراهام الأخطار بالترتيب. التنبؤات: تحليل الأوراق المالية لا يستطيع التنبؤ بالأسعار - بل يقدّر القيمة؛ ومن يبيع نصائح الأسعار يبيع تنبؤات للمزاج. المضاربة: إغراء قلب المراكز بحثًا عن الربح جريمة في حق الهامش - فكل قلبة تكلف فرق السعر والضريبة. الرافعة المالية: تضخّم الربح حتى تضخّم الخسارة - لا وجود لمال مستعار «آمن». تحذير خاص: الشراء بالهامش في سوق صاعدة - فحيث يكون إحساس الأمان أكبر يكون أقل واقعية. القاسم المشترك للمصائد: كلها تبدو حكيمة في لحظتها. ولهذا تصر هذه الدورة على كتابة قائمة التحقق - قبل اللحظة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:block2",
+   "en": "The pitfalls feel wise in the moment - that is why the rules must be written beforehand.",
+   "ar": "المصائد تبدو حكيمة في لحظتها - ولهذا يجب كتابة القواعد قبلها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:block3",
+   "en": "Write your personal ban list: three things you NEVER do (e.g. 'never leverage', 'never an IPO on day one'). Keep it at your login. Never update it in a rising market.",
+   "ar": "اكتب قائمة منعك الشخصية: ثلاثة أشياء لا تفعلها أبدًا (مثل: «لا شراءً بالرافعة المالية أبدًا»، «لا شراء IPO في يومه الأول»). احفظها عند تسجيل الدخول. ولا تعدّلها أبدًا في سوق صاعدة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:block1",
+   "en": "Graham compares four real stock lists from 1941-60: the Dow Jones industrial index, the NYSE list, an 'undervalued portfolio' and a 'growth/premium portfolio'. The result that surprises everyone then and now: the cheap, boring, lowly valued companies delivered HIGHER total return than the dearer growth favorites. Not because quality did not matter - but because the price of the quality was too high. The chapter's core is a single equation: your return is determined not by how good the company is but by how much you paid. This is margin of safety presented as statistics.",
+   "ar": "يقارن غراهام أربع قوائم أسهم حقيقية خلال 1941-60: مؤشر داو جونز الصناعي، وقائمة بورصة نيويورك، و«محفظة منخفضة التقييم»، و«محفظة نمو/علاوة». النتيجة التي تفاجئ الجميع حينها والآن: كان العائد الإجمالي للشركات الرخيصة المملة منخفضة التقييم أعلى من مفضلات النمو الأغلى. ليس لأن الجودة غير مهمة - بل لأن سعر الجودة كان مرتفعًا أكثر من اللازم. جوهر الفصل معادلة واحدة: العائد لا تحدده جودة الشركة بقدر ما تحدده كمية ما دفعته. هذا هو هامش الأمان معروضًا بإحصاءات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:block2",
+   "en": "Your return is determined not by the company's quality - but by the price you paid for it.",
+   "ar": "العائد لا تحدده جودة الشركة - بل السعر الذي دفعته مقابلها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:block3",
+   "en": "Compare two companies you know: a 'boring' lowly valued one, a hyped premium one. Write down the P/E of both. What must the hyped one deliver to justify the difference?",
+   "ar": "قارن بين شركتين تعرفهما: واحدة «مملة» منخفضة التقييم، وأخرى مضخَّمة الشهرة بعلاوة. اكتب P/E لكلتيهما. ماذا يجب أن تحققه المضخَّمة لتبرير الفارق؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:block1",
+   "en": "For defensive purchases Graham requires: (1) adequate size, (2) stable earnings - positive in nine of ten years, (3) dividends 20+ years without interruption, (4) stability - ten years without a loss, (5) growth - at least a one-third earnings increase over a decade, (6) P/B below 1,5, (7) P/E below 15. The requirements are deliberately hard: almost no companies pass all of them at a given moment - and THAT is the point. A checklist that never blocks a purchase is not a checklist. Whoever wants to own a company that fails on two requirements may do so - but then as an ACTIVE investor with full analysis, not defensively on a feeling.",
+   "ar": "للشراء الدفاعي يشترط غراهام: (1) حجمًا كافيًا، (2) أرباحًا مستقرة - موجبة في تسع سنوات من عشر، (3) التوزيعات منذ 20+ عامًا دون انقطاع، (4) استقرارًا - عشر سنوات بلا خسارة، (5) النمو - زيادة في الأرباح لا تقل عن الثلث خلال عقد، (6) P/B دون 1,5، (7) P/E دون 15. الشروط صعبة عمدًا: ما يكاد لا يكون هناك من شركات تجتازها كلها في لحظة بعينها - وتلك هي الفكرة. قائمة التحقق التي لا تمنع شراءً أبدًا ليست قائمة تحقق. من أراد تملك شركة تخفق في شرطين فبإمكانه ذلك - لكن بوصفه مستثمرًا نشطًا بتحليل كامل، لا دفاعيًا على أساس شعور."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:block2",
+   "en": "A checklist that never says no is a tribute to your own impulses.",
+   "ar": "قائمة التحقق التي لا تقول لا أبدًا هي تحية لنزواتك الخاصة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:block3",
+   "en": "Test a company you own against the seven requirements. How many pass? Which three usually fall - and what does that say about the market's mood?",
+   "ar": "اختبر شركة تملكها مقابل الشروط السبعة. كم شرطًا تُجتاز؟ أي ثلاثة تسقط عادة - وماذا يقول ذلك عن مزاج السوق؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:block1",
+   "en": "The enterprising investor looks for a discount along three tracks. Track one: undervalued stable companies - profitable, but out of favor; wait for the rotation. Track two: secondary companies - mid-sized, unknown, with cash and a business but without analyst coverage; the lack of attention IS the margin. Track three: special situations - mergers, liquidations, restructurings where the outcome can be calculated from public documents. And the tool that made Graham legendary: net-nets - companies whose market capitalization is below net current capital (current assets minus ALL liabilities). In practice you buy the company for less than its cash. Net-nets are rare today in the large universe - but the principle is eternal: there is a price at which even an average company is a gift.",
+   "ar": "يبحث النشط عن سعر دون القيمة عبر ثلاثة مسارات. المسار الأول: شركات مستقرة منخفضة التقييم - رابحة لكن مهجورة؛ انتظر دوران الأضواء. المسار الثاني: شركات ثانوية - متوسطة الحجم، مجهولة، تملك النقد وأعمالًا قائمة لكن بلا تغطية من المحللين؛ غياب الاهتمام هو الهامش ذاته. المسار الثالث: مواقف خاصة - الاندماجات والتصفيات وإعادة الهيكلة يمكن حساب نتيجتها من وثائق معلنة. والأداة التي جعلت غراهام أسطوريًا: net-net - شركات تكون القيمة السوقية فيها أقل من رأس المال المتداول الصافي (الأصول المتداولة مطروحًا منها كل الالتزامات). أنت عمليًا تشتري الشركة بأقل من النقد الذي تملكه. ندر وجود net-net اليوم في الكون الكبير - لكن المبدأ خالد: ثمة سعر تصبح عنده حتى الشركة المتوسطة هدية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:block2",
+   "en": "Net-net: buy the company for less than its cash - Graham's most famous tool.",
+   "ar": "net-net: اشترِ الشركة بأقل من النقد الذي لديها - أشهر أدوات غراهام على الإطلاق."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:block3",
+   "en": "Run the numbers on a micro cap: (current assets − total liabilities) compared with the market capitalization. How close to net-net territory is it? What explains the gap?",
+   "ar": "احسب لإحدى الشركات الدقيقة: (الأصول المتداولة − مجموع الالتزامات) مقارنة بالقيمة السوقية. ما أقرب ما تكون إلى نطاق net-net؟ ما الذي يفسر الفجوة؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:block1",
+   "en": "Convertible bonds pay an interest rate PLUS the right to convert into stocks: 'lose a little, win a lot'. Graham shows the mathematics behind the illusion: the conversion parity is priced so that the company profits - you pay for the option you believe you are getting for free. Warrants (subscription options) are worse: pure lottery tickets on price movements, valuable only in an extreme rally, worthless otherwise - and they dilute the owners. Both instruments tempt with two-sidedness: 'downside protection, upside participation'. The reality: complicated terms that favor the issuer. Graham's rule is worth framing: the more an instrument resembles a construction instead of an asset, the more speculative it is.",
+   "ar": "السندات القابلة للتحويل تجمع بين سعر الفائدة وحق التحويل إلى الأسهم: «اخسر قليلًا، اربح كثيرًا». يكشف غراهام الحساب الكامن خلف الوهم: تعادل التحويل مُسعَّر بحيث تكسب الشركة - أنت تدفع ثمن الخيار الذي تظن أنه مجاني. أما warrants (خيارات الاكتتاب) فأسوأ: بطاقات يانصيب صرفة على تحركات السعر، ذات قيمة فقط عند صعود بالغ، وبلا قيمة فيما عدا ذلك - وهي تخفف ملكية المساهمين. كلتا الأداتين تغري بثنائية الجانب: «حماية في الهبوط ومشاركة في الصعود». الواقع: شروط معقدة تصب في مصلحة المُصدر. قاعدة غراهام تستحق التأطير: كلما أشبهت الأداة تركيبًا مصطنعًا بدلًا من أصل حقيقي، ازدادت مضاربتها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:block2",
+   "en": "Instruments promising lose-a-little-win-a-lot have already figured you out - that is why they exist.",
+   "ar": "الأدوات التي تعد بـ«اخسر قليلًا واربح كثيرًا» حسبتك مسبقًا - ولهذا وُجدت."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:block3",
+   "en": "Find a current convertible or share option (warrant). Read the terms: when does the exchange become profitable? Compare with simply buying the stock or the bond. What do 'both worlds' cost?",
+   "ar": "ابحث عن سند قابل للتحويل أو خيار أسهم (warrant) حالي. اقرأ الشروط: متى يصبح التحويل مربحًا؟ قارن ذلك بشراء السهم أو السند مباشرة. كم تكلّف «العالمان معًا»؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:block1",
+   "en": "Case one: Penn Central - the largest bankruptcy in the USA in 1970. The warnings stood in the reports: years of weak coverage, growing short-term liabilities. The market saw 'too big to fall'. Case two: Ling-Temco-Vought - a conglomerate built on leverage; market capitalization rose with accounting acrobatics and fell 96%+ when the construction cracked. Case three: AAA bonds 1970 - 'safe' paper that fell hard; a rating is not a margin. Common denominator: every warning was PUBLIC and calculable BEFORE the crash. The lesson of the case studies: catastrophes announce themselves in balance sheets - to those who read them. That is why chapter 11 exists.",
+   "ar": "الحالة الأولى: Penn Central - أكبر حالات الإفلاس في الولايات المتحدة عام 1970. الإنذارات كانت مكتوبة في التقارير: سنوات من ضعف التغطية، والالتزامات قصيرة الأجل المتزايدة. رأى السوق أنها «أكبر من أن تسقط». الحالة الثانية: Ling-Temco-Vought - بناء تكتلي على الرافعة المالية؛ ارتفعت القيمة السوقية ببهروحات محاسبية ثم هويت 96%+ حين انكسر البناء. الحالة الثالثة: السندات المصنفة AAA عام 1970 - أوراق «آمنة» هويت بشدة؛ فالتصنيف ليس هامشًا. القاسم المشترك: كل إنذار كان معلنًا وقابلًا للحساب قبل الانهيار. درس دراسات الحالة: الكوارث تعلن عن نفسها في الميزانيات العمومية - لمن يقرأها. ولهذا وُجد الفصل 11."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:block2",
+   "en": "Catastrophes announce themselves in balance sheets - to those who read them.",
+   "ar": "الكوارث تعلن عن نفسها في الميزانيات العمومية - لمن يقرأها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:block3",
+   "en": "The Penn Central warnings were public. Look in a current annual report for: a falling coverage ratio, growing short-term debt. Do you find the pattern anywhere in your watchlist?",
+   "ar": "كانت إنذارات Penn Central معلنة. ابحث في التقرير السنوي الأخير لأي شركة عن: نسبة تغطية متراجعة، ودين قصير الأجل متنامٍ. هل تجد النمط في أي مكان في قائمة متابعتك؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:block1",
+   "en": "Graham paired eight companies industry by industry: in each pair a highly valued favorite and a lowly valued, similar company. The outcome over time: the cheap ones usually delivered better total return than the dear signals - not always, not dramatically, but systematically. The chapter brings the message of chapter 13 down to the shop floor: THE MARKET'S FAVORITE pays a premium that is rarely repaid. The difference between the companies in each pair was usually smaller than the difference in price. Warren Buffett later phrased it as his own celebrated addition: price is what you pay, value is what you get. Chapter 18 is that sentence with eight proofs.",
+   "ar": "قارن غراهام ثماني شركات قطاعًا بعد قطاع: في كل زوج شركة مفضلة عالية التقييم وأخرى مشابهة منخفضة التقييم. النتيجة مع مرور الوقت: كان العائد الإجمالي للرخيصات عادة أفضل من الغاليات - ليس دائمًا، ولا بشكل دراماتيكي، لكن بشكل منهجي. ينزل الفصل برسالة الفصل 13 إلى أرض الواقع: مُفضَّل السوق يدفع علاوة نادرًا ما تُسترد. كان الفرق بين الشركتين في كل زوج غالبًا أصغر من الفرق في السعر. صاغ وارن بافيت ذلك لاحقًا بإضافته الشهيرة الخاصة: السعر هو ما تدفعه، والقيمة هي ما تحصل عليه. الفصل 18 هو هذه العبارة بثمانية براهين."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:block2",
+   "en": "In eight pairs of similar companies the price difference was greater than the real difference - systematically.",
+   "ar": "في ثمانية أزواج من شركات متشابهة كان فرق السعر أكبر من الفرق الحقيقي - بشكل منهجي."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:block3",
+   "en": "Pick an industry pair you know (e.g. two banks, two construction companies). Write down the P/E of both. What explains the premium - and would Graham buy it?",
+   "ar": "اختر زوجًا قطاعيًا تعرفه (مثلًا بنكين، أو شركتي مقاولات). اكتب P/E لكلتيهما. ما الذي يفسر العلاوة - وهل كان غراهام سيشتريها؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:block1",
+   "en": "Before index funds and moderate activism Graham preached the shareholder's responsibility: vote, read board reports, question long-running option programs and 'self-appointed' boards. He drove the issue in practice: campaigns for paying a dividend from unnecessarily accumulated cash (with Buffett as an ally in the GEICO era). The argument: the company's management stewards YOUR capital; passive ownership invites waste and complacency. He proposed that a minority protection mechanism should be safeguarded - the forerunner of today's annual general meeting motions. For the individual: your vote is an asset; abstaining is writing a blank check on your own equity.",
+   "ar": "قبل أن يشيع صندوق المؤشرات والنشاط المؤسسي المعتدل كان غراهام يعظ بمسؤولية المساهم: صوّت، واقرأ تقارير مجالس الإدارة، وشكك في برامج الخيارات طويلة الأمد وفي المجالس «المنصِّبة نفسها». خاض القضية عمليًا: حملات لدفع التوزيعات من النقد المتراكم بلا داعٍ (مع بافيت حليفًا في حقبة GEICO). الحجة: إدارة الشركة تدير رأس مالك أنت؛ والملكية السلبية دعوة للإسراف والاكتفاء بالذات. واقترح صيانة آلية لحماية الأقلية - وهي سلف حركات الجمعيات العمومية اليوم. وللفرد الواحد: صوتك أصل؛ والامتناع عن التصويت شيك فارغ على حقوق الملكية الخاصة بك."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:block2",
+   "en": "The company stewards your capital - passive ownership is a blank check.",
+   "ar": "الشركة تدير رأس مالك - والملكية السلبية شيك فارغ."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:block3",
+   "en": "Find the next annual general meeting of a company you own (or of the fund you hold). Read the motions. Would you vote as management proposes - and why?",
+   "ar": "ابحث عن موعد الجمعية العمومية القادمة لشركة تملكها (أو عن الصندوق الذي تستثمر فيه). اقرأ المقررات المعروضة. هل كنت ستصوت كما تقترح الإدارة - ولماذا؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block1",
+   "en": "Chapter 20 is the heart of the book. Margin of safety in one sentence: build the bridge stronger than the load. If the trucks weigh 10 tons, construct the bridge for 30. If you value a stock at 100 kronor, do not buy it for 98 - buy it for 70 or less. Three concrete examples: (1) Asset margin: a company with 200 bn in assets, 100 bn in liabilities, and a market capitalization of 80 bn = a 20% margin. (2) Earnings margin: P/E 6 - if earnings are halved the P/E is still only 12. (3) Diversification margin: 20 positions instead of 3 - one zero costs 5%, not 33%.",
+   "ar": "الفصل 20 هو قلب الكتاب. هامش الأمان في جملة واحدة: ابنِ الجسر أقوى من الحمل. إذا كانت الشاحنات تزن 10 أطنان فصمّم الجسر لتحمل 30. إذا قدّرت قيمة السهم بـ 100 كرونة فلا تشتره بـ 98 - بل بـ 70 أو أقل. ثلاثة أمثلة ملموسة: (1) هامش الأصول: شركة بأصول 200 مليار والالتزامات 100 مليار، والقيمة السوقية لها 80 مليار = هامش 20%. (2) هامش الأرباح: P/E عند 6 - وإذا انخفضت الأرباح إلى النصف يظل P/E 12 فقط. (3) هامش التنويع: 20 مركزًا بدل 3 - فالمركز الصفري يكلف 5% لا 33%."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block2",
+   "en": "Margin of safety is the bridge built for 30 tons when the trucks weigh 10. If you buy at 30-50% below conservatively calculated value you have room to be WRONG - if the business deteriorates, if the analysis contains mistakes, if the business cycle turns. Without a margin you must be RIGHT not to lose; with a margin you can be wrong and survive. This is the difference between hope and calculation. The margin comes in three forms: a price matched against value (assets or earning power), diversification (you never know which position will fail) and a demand for predictability (the more uncertain the future, the greater the margin). The whole history of investing in one sentence: never accept a price at which you must be right.",
+   "ar": "هامش الأمان هو جسر مبني لتحمل 30 طنًّا حين تزن الشاحنات 10. إذا اشتريت بخصم 30-50% دون قيمة محسوبة بتحفظ فلك هامش لتكون مخطئًا - إذا ساءت الأعمال، أو خان التحليل، أو انعطفت الدورة الاقتصادية. من دون هامش يلزم أن تكون محقًّا كي لا تخسر؛ ومع الهامش يمكنك أن تخطئ وتبقى. هذا هو الفرق بين الرجاء والحساب. يأتي الهامش في ثلاث صور: سعر مقارن بالقيمة (الأصول أو قوة الكسب)، والتنويع (لن تعرف أبدًا أي مركز سيخذلك)، واشتراط القابلية للتنبؤ (كلما غدا المستقبل أكثر غموضًا وجب هامش أكبر). تاريخ الاستثمار كله في جملة واحدة: لا تقبل أبدًا سعرًا يفرض عليك أن تكون محقًّا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block3",
+   "en": "Margin of safety does not mean you are never wrong - it means you survive being wrong.",
+   "ar": "هامش الأمان لا يعني أنك لا تخطئ أبدًا - بل إنك تنجو من الخطأ."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block4",
+   "en": "Value a stock you own conservatively (chapters 11-15 of this course). If your value is 100 - at what price does a 30% margin begin? 50%? Compare with today's price. Margin - or hope?",
+   "ar": "قدّر قيمة السهم الذي تملكه بتحفظ (فصول هذه الدورة 11-15). إذا كانت قيمتك 100 - فعند أي سعر يبدأ هامش 30%؟ و50%؟ قارن ذلك بسعر اليوم. أهو هامش - أم رجاء؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block5",
+   "en": "{\"rubrik\":\"The three forms of the margin\",\"rader\":[[\"Form\",\"Protection\",\"Example\"],[\"Price gap\",\"Buying below value\",\"100→70=30%\"],[\"Diversification\",\"Broad portfolio\",\"20 pos vs 3\"],[\"Predictability\",\"Demand stability\",\"Avoid cyclicals\"]]}",
+   "ar": "{\"rubrik\":\"الصور الثلاث للهامش\",\"rader\":[[\"الصورة\",\"الحماية\",\"المثال\"],[\"فجوة السعر\",\"الشراء دون القيمة\",\"100→70=30%\"],[\"التنويع\",\"المحفظة الواسعة\",\"20 مركزًا مقابل 3\"],[\"القابلية للتنبؤ\",\"اشتراط الاستقرار\",\"تجنب الدورات\"]]}"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:block6",
+   "en": "bridge",
+   "ar": "الجسر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:block1",
+   "en": "The afterword to the 2003 edition (with Zweig's commentary) lands on a single sentence from Buffett: 'Investing intelligently does not require genius - it requires character.' Stubbornness, discipline and the willingness to look boring while others play. Whoever masters chapter 8 (Mr Market) and chapter 20 (the Margin) holds the book's core; the rest is craft that deepens the core. Graham's own life sums it up: professor, practitioner, author - who taught that the market's greatest gift is other people's moods, and its greatest enemy is your own. The education you have completed here does not end - it begins. Next step: apply. One analysis at a time, one margin at a time, one mood at a time not to share.",
+   "ar": "تنتهي خاتمة طبعة 2003 (بتعليقات تسفايغ) إلى جملة واحدة لبافيت: «الاستثمار الذكي لا يتطلب عبقرية - بل يتطلب شخصية». عناد وانضباط واستعداد لتبدو مملًا بينما يلعب الآخرون. من أتقن الفصل 8 (Mr Market) والفصل 20 (الهامش) فقد ملك جوهر الكتاب؛ وما بقي صنعة تعمّق الجوهر. حياة غراهام نفسها تلخص ذلك: أستاذ وممارس وكاتب - علّم أن أعظم هدايا السوق مزاج الآخرين، وأن أعظم أعدائه مزاجك أنت. التعليم الذي خضته هنا لا ينتهي - بل يبدأ. الخطوة التالية: التطبيق. تحليل في كل مرة، وهامش في كل مرة، ومزاج لا تشاركه في كل مرة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:block2",
+   "en": "Investing does not require genius - it requires character.",
+   "ar": "الاستثمار لا يتطلب عبقرية - بل يتطلب شخصية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:block3",
+   "en": "Write your own afterword: three sentences about what the book has changed in your thinking. Date it. Save it - reread it in a year.",
+   "ar": "اكتب خاتمتك الخاصة: ثلاث جمل عما غيّره الكتاب في تفكيرك. ضع التاريخ. احفظها - واقرأها بعد عام."
+  }
+ ],
+ "ovriga": [
+  {
+   "nyckel": "the-intelligent-investor:kap1:titel",
+   "en": "Chapter 1 · Investing versus speculation",
+   "ar": "الفصل 1 · الاستثمار مقابل المضاربة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:intro",
+   "en": "Graham's distinction - the foundation everything rests on.",
+   "ar": "تمييز غراهام - الأساس الذي يقوم عليه كل شيء."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:q",
+   "en": "Graham's three requirements for an investment?",
+   "ar": "ما شروط غراهام الثلاثة للاستثمار؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:a0",
+   "en": "Trend, momentum, stop-loss",
+   "ar": "الاتجاه، الزخم، أمر إيقاف الخسارة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:a1",
+   "en": "Thorough analysis, safety of the principal, satisfactory return",
+   "ar": "تحليل دقيق، أمان رأس المال، عائد مُرضٍ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:a2",
+   "en": "Leverage, diversification, timing",
+   "ar": "الرافعة المالية، التنويع، اختيار التوقيت"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:a3",
+   "en": "Chart, RSI, news flow",
+   "ar": "الرسم البياني، RSI، تدفق الأخبار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz1:tips",
+   "en": "Analysis BEFORE capital.",
+   "ar": "التحليل قبل رأس المال."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:q",
+   "en": "Buying 'because the stock is up 40%' is, according to Graham...",
+   "ar": "شراء السهم «لأنه ارتفع 40%» هو وفق غراهام..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:a0",
+   "en": "Investing",
+   "ar": "استثمار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:a1",
+   "en": "Speculation - the return depends on the next buyer",
+   "ar": "مضاربة - العائد يعتمد على المشتري التالي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:a2",
+   "en": "An index strategy",
+   "ar": "استراتيجية مؤشرات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:a3",
+   "en": "Hedging",
+   "ar": "تحوّط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz2:tips",
+   "en": "Ask who will buy from you - and why.",
+   "ar": "اسأل من الذي سيشتري منك - ولماذا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:q",
+   "en": "Which type of investor has fared worst historically?",
+   "ar": "أي نوع من المستثمرين كان أسوأ حظًا تاريخيًا؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:a0",
+   "en": "The defensive one",
+   "ar": "المستثمر الدفاعي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:a1",
+   "en": "The enterprising one",
+   "ar": "المستثمر النشط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:a2",
+   "en": "The half-hearted one who believes they are investing",
+   "ar": "المتردد الذي يظن أنه يستثمر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:a3",
+   "en": "The index fund saver",
+   "ar": "المدخر عبر صناديق المؤشرات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap1:quiz3:tips",
+   "en": "The book warns especially against half-hearted participation.",
+   "ar": "يحذّر الكتاب بشكل خاص من المشاركة المترددة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:titel",
+   "en": "Chapter 2 · The investor and inflation",
+   "ar": "الفصل 2 · المستثمر والتضخم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:intro",
+   "en": "Are stocks a hedge against inflation? Graham's answer surprises.",
+   "ar": "هل الأسهم حماية من التضخم؟ إجابة غراهام مفاجئة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:q",
+   "en": "Do stocks reliably protect against inflation according to Graham?",
+   "ar": "هل تحمي الأسهم من التضخم بشكل موثوق وفق غراهام؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:a0",
+   "en": "Yes, always",
+   "ar": "نعم، دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:a1",
+   "en": "No - history shows the opposite in certain periods",
+   "ar": "لا - التاريخ يظهر العكس في فترات معينة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:a2",
+   "en": "Only banks",
+   "ar": "البنوك فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:a3",
+   "en": "Only gold stocks",
+   "ar": "أسهم الذهب فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz1:tips",
+   "en": "See the table: 1966-70 and 1973-74.",
+   "ar": "انظر الجدول: 1966-70 و1973-74."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:q",
+   "en": "What is the real protection against inflation?",
+   "ar": "ما الحماية الحقيقية من التضخم؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:a0",
+   "en": "More stocks",
+   "ar": "مزيد من الأسهم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:a1",
+   "en": "Margin of safety in the price",
+   "ar": "هامش الأمان في السعر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:a2",
+   "en": "Short bonds",
+   "ar": "سندات قصيرة الأجل"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:a3",
+   "en": "Crypto",
+   "ar": "العملات المشفرة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz2:tips",
+   "en": "The protection lies in the distance between price and value.",
+   "ar": "الحماية تكمن في المسافة بين السعر والقيمة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:q",
+   "en": "During 1966-70: prices +22%, stocks...",
+   "ar": "خلال 1966-70: الأسعار +22%، والأسهم..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:a0",
+   "en": "+50%",
+   "ar": "+50%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:a1",
+   "en": "Fell",
+   "ar": "هبطت"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:a2",
+   "en": "Unchanged",
+   "ar": "دون تغيير"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:a3",
+   "en": "Fell 90%",
+   "ar": "هبطت 90%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap2:quiz3:tips",
+   "en": "Stocks and prices moved in different directions for five years.",
+   "ar": "سارت الأسهم والأسعار في اتجاهين مختلفين لمدة خمس سنوات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:titel",
+   "en": "Chapter 3 · A century of stock market history",
+   "ar": "الفصل 3 · قرن من تاريخ البورصة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:intro",
+   "en": "A hundred years of cycles prove a single point: it happens again.",
+   "ar": "مئة عام من الدورات تثبت نقطة واحدة: الأمر يتكرر."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:q",
+   "en": "The pattern in all bubbles?",
+   "ar": "ما النمط المشترك في كل الفقاعات؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:a0",
+   "en": "Randomness",
+   "ar": "العشوائية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:a1",
+   "en": "Trend → decoupled valuation → 'different this time' → leverage → crash",
+   "ar": "اتجاه → تقييم منفصل عن الواقع → «مختلف هذه المرة» → رافعة مالية → انهيار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:a2",
+   "en": "The central bank's fault",
+   "ar": "خطأ البنك المركزي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:a3",
+   "en": "Always war",
+   "ar": "الحروب دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz1:tips",
+   "en": "Five bubbles, the same sequence every time.",
+   "ar": "خمس فقاعات، والتسلسل نفسه في كل مرة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:q",
+   "en": "Summer 1932 after -89%: the Dow rose...",
+   "ar": "صيف 1932 بعد -89%: ارتفع مؤشر داو..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:a0",
+   "en": "0%",
+   "ar": "0%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:a1",
+   "en": "+71% in three months",
+   "ar": "+71% خلال ثلاثة أشهر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:a2",
+   "en": "-20%",
+   "ar": "-20%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:a3",
+   "en": "Bank failure",
+   "ar": "إفلاس البنوك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz2:tips",
+   "en": "The market's mood swings violently both ways.",
+   "ar": "مزاج السوق ينقلب بعنف في الاتجاهين."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:q",
+   "en": "Does history make you a...",
+   "ar": "هل يجعلك التاريخ..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:a0",
+   "en": "Prophet",
+   "ar": "عرّافًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:a1",
+   "en": "Skeptic",
+   "ar": "شكّاكًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:a2",
+   "en": "Day trader",
+   "ar": "مضاربًا يوميًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:a3",
+   "en": "Index fund",
+   "ar": "صندوق مؤشرات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap3:quiz3:tips",
+   "en": "History is a tool - not a crystal ball.",
+   "ar": "التاريخ أداة - لا كرة بلورية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:titel",
+   "en": "Chapter 4 · General portfolio policy",
+   "ar": "الفصل 4 · السياسة العامة للمحفظة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:intro",
+   "en": "How much in stocks? The answer is a policy - not a feeling.",
+   "ar": "كم في الأسهم؟ الجواب سياسة - لا شعور."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:q",
+   "en": "Graham's stock range in the portfolio?",
+   "ar": "ما نطاق حصة الأسهم في المحفظة وفق غراهام؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:a0",
+   "en": "0-100%",
+   "ar": "0-100%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:a1",
+   "en": "25-75%",
+   "ar": "25-75%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:a2",
+   "en": "Always 50-50",
+   "ar": "دائمًا 50-50"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:a3",
+   "en": "90-10",
+   "ar": "90-10"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz1:tips",
+   "en": "The extremes are forecasts, and Graham despised forecasts.",
+   "ar": "المتطرفان تنبؤان، وكان غراهام يمقت التنبؤات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:q",
+   "en": "What is dollar cost averaging?",
+   "ar": "ما هو dollar cost averaging؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:a0",
+   "en": "Doubling on the way up",
+   "ar": "مضاعفة المبلغ عند الارتفاع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:a1",
+   "en": "A fixed amount monthly - more shares when the price falls",
+   "ar": "مبلغ ثابت شهريًا - أسهم أكثر حين يهبط السعر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:a2",
+   "en": "Actively averaging down",
+   "ar": "خفض متوسط السعر بنشاط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:a3",
+   "en": "Timing the bottoms",
+   "ar": "توقيت القيعان"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz2:tips",
+   "en": "A fixed amount, every month, regardless of conditions.",
+   "ar": "مبلغ ثابت، كل شهر، مهما كانت الأحوال."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:q",
+   "en": "Why mechanical rebalancing?",
+   "ar": "لماذا إعادة الموازنة الآلية؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:a0",
+   "en": "Guaranteed higher return",
+   "ar": "عائد أعلى مضمون"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:a1",
+   "en": "Forces you to act against your mood - sell high, buy low",
+   "ar": "تجبرك على التحرك عكس مزاجك - البيع مرتفعًا والشراء منخفضًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:a2",
+   "en": "Less tax",
+   "ar": "ضرائب أقل"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:a3",
+   "en": "Graham advised against it",
+   "ar": "كان غراهام يوصي بعدمها"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap4:quiz3:tips",
+   "en": "What does it take to do what feels wrong?",
+   "ar": "ماذا يتطلب الأمر لفعل ما يبدو خطأ؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:titel",
+   "en": "Chapter 5 · The defensive investor and stocks",
+   "ar": "الفصل 5 · المستثمر الدفاعي والأسهم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:intro",
+   "en": "Four rules for those who want to sleep well - and still own stocks.",
+   "ar": "أربع قواعد لمن يريد نومًا هادئًا - مع الاحتفاظ بملكية الأسهم."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:q",
+   "en": "How many companies in a defensive portfolio?",
+   "ar": "كم عدد الشركات في المحفظة الدفاعية؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:a0",
+   "en": "1-3",
+   "ar": "1-3"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:a1",
+   "en": "10-30",
+   "ar": "10-30"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:a2",
+   "en": "100+",
+   "ar": "100+"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:a3",
+   "en": "Only funds",
+   "ar": "صناديق فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz1:tips",
+   "en": "Count the risk per position - it must be able to disappear.",
+   "ar": "احسب المخاطر لكل مركز - يجب أن يكون بإمكانه الاختفاء."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:q",
+   "en": "Which dividend history is preferred?",
+   "ar": "أي تاريخ توزيعات مفضل؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:a0",
+   "en": "1 year",
+   "ar": "1 عام"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:a1",
+   "en": "20+ years",
+   "ar": "20+ عامًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:a2",
+   "en": "None",
+   "ar": "لا شيء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:a3",
+   "en": "Only buybacks",
+   "ar": "إعادة شراء الأسهم فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz2:tips",
+   "en": "Time is the toughest filter.",
+   "ar": "الزمن أقسى المرشحات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:q",
+   "en": "A defensive strategy requires...",
+   "ar": "الاستراتيجية الدفاعية تتطلب..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:a0",
+   "en": "Predictive ability",
+   "ar": "قدرة على التنبؤ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:a1",
+   "en": "No prediction - breadth + patience",
+   "ar": "بلا تنبؤ - اتساع + صبر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:a2",
+   "en": "Daily monitoring",
+   "ar": "متابعة يومية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:a3",
+   "en": "Leverage",
+   "ar": "الرافعة المالية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap5:quiz3:tips",
+   "en": "Defensive means without forecast requirements - not without return.",
+   "ar": "الدفاعي يعني بلا اشتراط التنبؤ - لا بلا عائد."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:titel",
+   "en": "Chapter 6 · The enterprising investor - portfolio policy",
+   "ar": "الفصل 6 · المستثمر النشط - سياسة المحفظة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:intro",
+   "en": "Willing to put in time? Then different rules apply - and every requirement is harder.",
+   "ar": "هل أنت مستعد لبذل الوقت؟ إذن تنطبق قواعد أخرى - وكل شرط أشد."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:q",
+   "en": "Which three paths does Graham accept for the enterprising investor?",
+   "ar": "ما الطرق الثلاثة التي يقبلها غراهام للمستثمر النشط؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:a0",
+   "en": "Timing, momentum, IPO",
+   "ar": "التوقيت، الزخم، IPO"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:a1",
+   "en": "Undervaluation, secondary companies, special situations",
+   "ar": "الانخفاض عن القيمة، الشركات الثانوية، المواقف الخاصة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:a2",
+   "en": "Day trading, quick transfers, crypto",
+   "ar": "المضاربة اليومية، التحويلات الفورية، العملات المشفرة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:a3",
+   "en": "Funds, ETFs, certificates",
+   "ar": "الصناديق، صناديق ETF، الشهادات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz1:tips",
+   "en": "Three workable areas - not three quick methods.",
+   "ar": "ثلاثة مجالات قابلة للتطبيق - لا ثلاث طرق سريعة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:q",
+   "en": "Graham's verdict on market timing?",
+   "ar": "ما حكم غراهام على توقيت السوق؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:a0",
+   "en": "A core tool",
+   "ar": "أداة أساسية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:a1",
+   "en": "Terribly difficult - no reliable method",
+   "ar": "صعب للغاية - لا توجد طريقة موثوقة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:a2",
+   "en": "Only for the enterprising",
+   "ar": "للنشطين فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:a3",
+   "en": "Works with the right chart",
+   "ar": "ينجح مع الرسم البياني الصحيح"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz2:tips",
+   "en": "Graham tested the accuracy of timing empirically.",
+   "ar": "اختبر غراهام دقة التوقيت تجريبيًا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:q",
+   "en": "The enterprising investor needs above all...",
+   "ar": "يحتاج المستثمر النشط قبل كل شيء إلى..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:a0",
+   "en": "Luck",
+   "ar": "الحظ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:a1",
+   "en": "Discipline ×3: value, wait, hold",
+   "ar": "انضباط ×3: قيّم، انتظر، احتفظ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:a2",
+   "en": "Expensive terminals",
+   "ar": "محطات تداول باهظة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:a3",
+   "en": "Insider information",
+   "ar": "معلومات داخلية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap6:quiz3:tips",
+   "en": "Value, wait, hold - in that order.",
+   "ar": "قيّم، انتظر، احتفظ - بهذا الترتيب."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:titel",
+   "en": "Chapter 7 · The enterprising investor - negative approaches",
+   "ar": "الفصل 7 · المستثمر النشط - الجوانب السلبية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:intro",
+   "en": "What you do NOT do is a strategy: Graham lists the forbidden temptations.",
+   "ar": "ما لا تفعله هو أيضًا استراتيجية: يعدّد غراهام الإغراءات المحظورة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:q",
+   "en": "IPOs according to Graham?",
+   "ar": "الاكتتابات الأولية IPO وفق غراهام؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:a0",
+   "en": "The best buys",
+   "ar": "أفضل الصفقات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:a1",
+   "en": "Systematic underperformance - zero margin",
+   "ar": "أداء أقل بشكل منهجي - هامش صفري"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:a2",
+   "en": "Same as established companies",
+   "ar": "لا تختلف عن الشركات القائمة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:a3",
+   "en": "Only tech IPOs are good",
+   "ar": "IPOs التكنولوجية فقط جيدة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz1:tips",
+   "en": "New issues are sold when the market is at its greediest.",
+   "ar": "تُطرح الإصدارات الجديدة حين يكون السوق في أوج طمعه."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:q",
+   "en": "Options and futures trading is...",
+   "ar": "تداول الخيارات والعقود المستقبلية هو..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:a0",
+   "en": "Hedging for everyone",
+   "ar": "تحوّط للجميع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:a1",
+   "en": "A zero-sum game minus costs",
+   "ar": "لعبة مجموع صفري ناقص التكاليف"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:a2",
+   "en": "An investment foundation",
+   "ar": "أساس استثماري"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:a3",
+   "en": "Graham's favorite",
+   "ar": "المفضل عند غراهام"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz2:tips",
+   "en": "Every option has a counterparty - and a cost.",
+   "ar": "لكل خيار طرف مقابل - وتكلفة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:q",
+   "en": "Buffett's three boxes?",
+   "ar": "ما الصناديق الثلاثة عند بافيت؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:a0",
+   "en": "Buy/sell/wait",
+   "ar": "شراء/بيع/انتظار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:a1",
+   "en": "Yes/no/too hard",
+   "ar": "نعم/لا/صعب جدًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:a2",
+   "en": "A/B/C shares",
+   "ar": "أسهم A/B/C"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:a3",
+   "en": "Large/mid/small cap",
+   "ar": "Large/mid/small cap"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap7:quiz3:tips",
+   "en": "Act only when the decision gets a label: buy, sell or wait.",
+   "ar": "لا تتحرك إلا حين يحصل القرار على بطاقة: شراء أو بيع أو انتظار."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:titel",
+   "en": "Chapter 8 · The investor and market fluctuations",
+   "ar": "الفصل 8 · المستثمر وتقلبات السوق"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:intro",
+   "en": "Mr Market - the most useful partner in the history of finance.",
+   "ar": "Mr Market - أنفع شريك في تاريخ المال."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:q",
+   "en": "Who sets Mr Market's daily price?",
+   "ar": "من يحدد سعر Mr Market اليومي؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:a0",
+   "en": "The company's value",
+   "ar": "قيمة الشركة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:a1",
+   "en": "His mood",
+   "ar": "مزاجه"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:a2",
+   "en": "The auditor",
+   "ar": "المدقق"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:a3",
+   "en": "The central bank",
+   "ar": "البنك المركزي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz1:tips",
+   "en": "Mr Market is emotional, not rational.",
+   "ar": "Mr Market عاطفي لا عقلاني."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:q",
+   "en": "A stock falls 20% with no change in the business. Reading?",
+   "ar": "سهم يهبط 20% دون تغير في الأعمال. ما التفسير؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:a0",
+   "en": "Panic",
+   "ar": "الهلع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:a1",
+   "en": "A discount offer",
+   "ar": "عرض خصم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:a2",
+   "en": "The company is broken",
+   "ar": "الشركة معطوبة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:a3",
+   "en": "Short it",
+   "ar": "بيعه على المكشوف"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz2:tips",
+   "en": "Nothing in the company changed - only the price.",
+   "ar": "لا شيء في الشركة تغيّر - السعر فقط."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:q",
+   "en": "Buffett on chapter 8:",
+   "ar": "قول بافيت عن الفصل 8:"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:a0",
+   "en": "Exaggerated",
+   "ar": "مبالغ فيه"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:a1",
+   "en": "The most important writing on investing",
+   "ar": "أهم ما كُتب عن الاستثمار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:a2",
+   "en": "Outdated",
+   "ar": "متقادم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:a3",
+   "en": "Good for day traders",
+   "ar": "مفيد للمضاربين اليوميين"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap8:quiz3:tips",
+   "en": "Buffett's most quoted praise of a book text.",
+   "ar": "أكثر ثناء لبافيت يُقتبس عن نص في كتاب."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:titel",
+   "en": "Chapter 9 · Investment funds",
+   "ar": "الفصل 9 · صناديق الاستثمار"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:intro",
+   "en": "Funds promise convenience - Graham shows the bill and the way out.",
+   "ar": "الصناديق تعد بالراحة - ويُري غراهام الفاتورة والمخرج."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:q",
+   "en": "Most funds beat their index...",
+   "ar": "معظم الصناديق تتفوق على مؤشرها..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:a0",
+   "en": "Yes",
+   "ar": "نعم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:a1",
+   "en": "No - fees eat the margin",
+   "ar": "لا - الرسوم تلتهم الهامش"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:a2",
+   "en": "Only in crises",
+   "ar": "في الأزمات فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:a3",
+   "en": "Only small-cap funds",
+   "ar": "صناديق الشركات الصغيرة فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz1:tips",
+   "en": "Count the fee over twenty years.",
+   "ar": "احسب الرسوم على مدى عشرين عامًا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:q",
+   "en": "What is 'guaranteed' in a fund?",
+   "ar": "ما الشيء «المضمون» في الصندوق؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:a0",
+   "en": "The return",
+   "ar": "العائد"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:a1",
+   "en": "The fee",
+   "ar": "الرسوم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:a2",
+   "en": "The manager's skill",
+   "ar": "مهارة المدير"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:a3",
+   "en": "The dividend",
+   "ar": "التوزيعات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz2:tips",
+   "en": "One thing is certain - and it is not the return.",
+   "ar": "أمر واحد مؤكد - وهو ليس العائد."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:q",
+   "en": "Graham's path for defensive fund exposure?",
+   "ar": "طريق غراهام للتعرض الدفاعي عبر الصناديق؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:a0",
+   "en": "Most expensive = best",
+   "ar": "الأغلى = الأفضل"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:a1",
+   "en": "Cheapest, broadest index",
+   "ar": "الأرخص والأوسع في المؤشرات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:a2",
+   "en": "High fees activate the management",
+   "ar": "الرسوم المرتفعة تنشّط الإدارة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:a3",
+   "en": "An active stock-picking fund",
+   "ar": "صندوق نشط في انتقاء الأسهم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap9:quiz3:tips",
+   "en": "Broad and cheap was Graham's late advice.",
+   "ar": "الاتساع والرخص كانا نصيحة غراهام المتأخرة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:titel",
+   "en": "Chapter 10 · The investor and his advisers",
+   "ar": "الفصل 10 · المستثمر ومستشاروه"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:intro",
+   "en": "Who should you trust? Graham's test is uncomfortably simple.",
+   "ar": "بمن تثق؟ اختبار غراهام بسيط إلى حد مزعج."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:q",
+   "en": "Brokers earn from...",
+   "ar": "يكسب السماسرة من..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:a0",
+   "en": "Your results",
+   "ar": "نتائجك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:a1",
+   "en": "Your activity",
+   "ar": "نشاطك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:a2",
+   "en": "Your patience",
+   "ar": "صبرك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:a3",
+   "en": "The index",
+   "ar": "المؤشر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz1:tips",
+   "en": "Who profits from your trades?",
+   "ar": "من يستفيد من صفقاتك؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:q",
+   "en": "A sign of an honest adviser?",
+   "ar": "ما علامة المستشار الأمين؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:a0",
+   "en": "Always a buy recommendation",
+   "ar": "توصية شراء دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:a1",
+   "en": "Sometimes says 'do nothing'",
+   "ar": "يقول أحيانًا «لا تفعل شيئًا»"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:a2",
+   "en": "Promises return",
+   "ar": "يعد بعائد"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:a3",
+   "en": "Sells their own funds",
+   "ar": "يبيع صناديقه الخاصة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz2:tips",
+   "en": "The honest adviser can advise against trades.",
+   "ar": "المستشار الأمين قد ينصحك بعدم إجراء صفقات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:q",
+   "en": "Free advice from the bank is paid via...",
+   "ar": "النصيحة المجانية من البنك تُدفع عبر..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:a0",
+   "en": "Love",
+   "ar": "المحبة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:a1",
+   "en": "Product fees",
+   "ar": "رسوم المنتجات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:a2",
+   "en": "Government funding",
+   "ar": "تمويل حكومي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:a3",
+   "en": "Nothing",
+   "ar": "لا شيء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap10:quiz3:tips",
+   "en": "Nothing is free - the follow-up question is who pays.",
+   "ar": "لا شيء مجاني - والسؤال التالي: من يدفع؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:titel",
+   "en": "Chapter 11 · Security analysis for the lay investor",
+   "ar": "الفصل 11 · تحليل الأوراق المالية للمستثمر العادي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:intro",
+   "en": "Three layers of craft: red flags, earning power, valuation.",
+   "ar": "ثلاث طبقات من الصنعة: الإشارات الحمراء، وقوة الكسب، والتقييم."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:q",
+   "en": "Earning power is calculated over...",
+   "ar": "تُحسب قوة الكسب على مدى..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:a0",
+   "en": "The latest quarter",
+   "ar": "الربع الأخير"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:a1",
+   "en": "The full business cycle, 5-10 years",
+   "ar": "الدورة الاقتصادية كاملة 5-10 سنوات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:a2",
+   "en": "Next year",
+   "ar": "العام القادم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:a3",
+   "en": "Analyst consensus",
+   "ar": "إجماع المحللين"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz1:tips",
+   "en": "One year says nothing - a full cycle says a lot.",
+   "ar": "سنة واحدة لا تقول شيئًا - ودورة كاملة تقول الكثير."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:q",
+   "en": "What is a red flag?",
+   "ar": "ما هي الإشارة الحمراء؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:a0",
+   "en": "Rising revenue",
+   "ar": "إيرادات متزايدة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:a1",
+   "en": "Repeated one-off items",
+   "ar": "بنود استثنائية متكررة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:a2",
+   "en": "A high dividend",
+   "ar": "توزيعات مرتفعة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:a3",
+   "en": "A new CEO",
+   "ar": "رئيس تنفيذي جديد"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz2:tips",
+   "en": "Look for what recurs 'just this once'.",
+   "ar": "ابحث عما يتكرر «هذه المرة فقط»."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:q",
+   "en": "The role of formulas according to Graham?",
+   "ar": "ما دور الصيغ وفق غراهام؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:a0",
+   "en": "They replace the margin",
+   "ar": "تعوض الهامش"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:a1",
+   "en": "They give discipline - never safety",
+   "ar": "تمنح الانضباط - لا الأمان أبدًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:a2",
+   "en": "They predict the price",
+   "ar": "تتنبأ بالسعر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:a3",
+   "en": "Required for buying",
+   "ar": "شرط للشراء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap11:quiz3:tips",
+   "en": "The formula organizes - the margin protects.",
+   "ar": "الصيغة تنظم - والهامش يحمي."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:titel",
+   "en": "Chapter 12 · The investor's pitfalls",
+   "ar": "الفصل 12 · مصائد المستثمر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:intro",
+   "en": "The perils: forecasting, trading, leverage - listed so you can recognize them.",
+   "ar": "المخاطر: التنبؤ، والمضاربة، والرافعة المالية - مدرجة لتتعرف عليها."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:q",
+   "en": "Can fundamental analysis predict prices?",
+   "ar": "هل يستطيع التحليل الأساسي التنبؤ بالأسعار؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:a0",
+   "en": "Yes, exactly",
+   "ar": "نعم، بدقة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:a1",
+   "en": "No - it estimates value, not price",
+   "ar": "لا - يقدّر القيمة لا السعر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:a2",
+   "en": "Only short term",
+   "ar": "قصير الأجل فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:a3",
+   "en": "Only banks",
+   "ar": "البنوك فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz1:tips",
+   "en": "Analysis states the distance from value, not clock times.",
+   "ar": "التحليل يحدد البعد عن القيمة، لا التوقيت."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:q",
+   "en": "Leverage magnifies...",
+   "ar": "الرافعة المالية تضخّم..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:a0",
+   "en": "Only the profit",
+   "ar": "الربح فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:a1",
+   "en": "The loss too - always",
+   "ar": "الخسارة أيضًا - دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:a2",
+   "en": "Nothing",
+   "ar": "لا شيء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:a3",
+   "en": "The margin",
+   "ar": "الهامش"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz2:tips",
+   "en": "Leverage works in both directions.",
+   "ar": "الرافعة المالية تعمل في الاتجاهين."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:q",
+   "en": "Buying on margin feels safest...",
+   "ar": "الشراء بالهامش يبدو أكثر أمانًا..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:a0",
+   "en": "In a downturn",
+   "ar": "في الهبوط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:a1",
+   "en": "In a peaking market - exactly when it is most dangerous",
+   "ar": "في سوق تبلغ قمتها - تمامًا حين يكون الأخطر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:a2",
+   "en": "With a stop-loss",
+   "ar": "مع أمر إيقاف الخسارة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:a3",
+   "en": "Never",
+   "ar": "أبدًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap12:quiz3:tips",
+   "en": "The feeling of safety is strongest just before the fall.",
+   "ar": "إحساس الأمان يبلغ ذروته قبل السقوط مباشرة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:titel",
+   "en": "Chapter 13 · A comparison of four lists",
+   "ar": "الفصل 13 · مقارنة أربع قوائم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:intro",
+   "en": "Four portfolios, the same period - the lesson on price versus quality.",
+   "ar": "أربع محافظ، والفترة نفسها - درس السعر مقابل الجودة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:q",
+   "en": "Which portfolio won 1941-60?",
+   "ar": "أي محفظة فازت خلال 1941-60؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:a0",
+   "en": "The growth favorites",
+   "ar": "مفضلات النمو"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:a1",
+   "en": "The lowly valued boring companies",
+   "ar": "الشركات المملة منخفضة التقييم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:a2",
+   "en": "The technology companies",
+   "ar": "شركات التكنولوجيا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:a3",
+   "en": "The banks",
+   "ar": "البنوك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz1:tips",
+   "en": "The 1941-60 follow-up judged the favorites.",
+   "ar": "المتابعة خلال 1941-60 حكمت على المفضلات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:q",
+   "en": "Decisive for return?",
+   "ar": "ما الحاسم في تحديد العائد؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:a0",
+   "en": "The company's quality",
+   "ar": "جودة الشركة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:a1",
+   "en": "The price you paid",
+   "ar": "السعر الذي دفعته"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:a2",
+   "en": "The CEO's charm",
+   "ar": "جاذبية الرئيس التنفيذي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:a3",
+   "en": "The sector",
+   "ar": "القطاع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz2:tips",
+   "en": "Same company, different price - different outcome.",
+   "ar": "الشركة نفسها بسعر مختلف - ونتيجة مختلفة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:q",
+   "en": "The chapter shows margin of safety as...",
+   "ar": "يُظهر الفصل هامش الأمان بوصفه..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:a0",
+   "en": "Philosophy",
+   "ar": "فلسفة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:a1",
+   "en": "Statistics",
+   "ar": "إحصاءات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:a2",
+   "en": "Myth",
+   "ar": "خرافة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:a3",
+   "en": "A thought experiment",
+   "ar": "تجربة ذهنية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap13:quiz3:tips",
+   "en": "The margin showed up in the outcome statistics.",
+   "ar": "ظهر الهامش في إحصاءات النتائج."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:titel",
+   "en": "Chapter 14 · Stock selection for the defensive investor",
+   "ar": "الفصل 14 · اختيار الأسهم للمستثمر الدفاعي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:intro",
+   "en": "The seven requirements - the checklist that must say no.",
+   "ar": "الشروط السبعة - قائمة التحقق التي يجب أن تقول لا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:q",
+   "en": "How many years of positive earnings are required?",
+   "ar": "كم سنة من الأرباح الموجبة مطلوبة؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:a0",
+   "en": "1",
+   "ar": "1"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:a1",
+   "en": "9 out of 10",
+   "ar": "9 من 10"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:a2",
+   "en": "3",
+   "ar": "3"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:a3",
+   "en": "5 out of 5",
+   "ar": "5 من 5"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz1:tips",
+   "en": "Stability is weighed over decades, not quarters.",
+   "ar": "الاستقرار يوزن بالعقود لا بالأرباع."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:q",
+   "en": "The dividend requirement?",
+   "ar": "ما شرط التوزيعات؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:a0",
+   "en": "5 years",
+   "ar": "5 أعوام"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:a1",
+   "en": "20+ years",
+   "ar": "20+ عامًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:a2",
+   "en": "None",
+   "ar": "لا شيء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:a3",
+   "en": "Only buybacks",
+   "ar": "إعادة شراء الأسهم فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz2:tips",
+   "en": "Chapter 5's filter again - now with numbers.",
+   "ar": "مرشح الفصل 5 مجددًا - الآن بالأرقام."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:q",
+   "en": "The P/E limit?",
+   "ar": "ما حد P/E؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:a0",
+   "en": "30",
+   "ar": "30"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:a1",
+   "en": "15",
+   "ar": "15"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:a2",
+   "en": "50",
+   "ar": "50"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:a3",
+   "en": "None",
+   "ar": "بلا حد"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap14:quiz3:tips",
+   "en": "Graham sets a ceiling for what you pay.",
+   "ar": "يضع غراهام سقفًا لما تدفعه."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:titel",
+   "en": "Chapter 15 · Stock selection for the enterprising investor",
+   "ar": "الفصل 15 · اختيار الأسهم للمستثمر النشط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:intro",
+   "en": "Three ways of working for a discount - and the famous net-net tool.",
+   "ar": "ثلاثة أساليب للشراء دون القيمة - وأداة net-net الشهيرة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:q",
+   "en": "What characterizes secondary companies?",
+   "ar": "ما السمة المميزة للشركات الثانوية؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:a0",
+   "en": "The largest on the exchange",
+   "ar": "الأكبر في البورصة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:a1",
+   "en": "Mid-sized, unknown - the lack of attention is the margin",
+   "ar": "متوسطة الحجم، مجهولة - غياب الاهتمام هو الهامش"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:a2",
+   "en": "Banking giants",
+   "ar": "عمالقة البنوك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:a3",
+   "en": "Only tech",
+   "ar": "التكنولوجيا فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz1:tips",
+   "en": "Ask why the company is unknown - the answer is the margin.",
+   "ar": "اسأل لماذا الشركة مجهولة - الجواب هو الهامش."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:q",
+   "en": "Net-net =",
+   "ar": "net-net ="
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:a0",
+   "en": "P/E below 5",
+   "ar": "P/E دون 5"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:a1",
+   "en": "Market capitalization below net current capital",
+   "ar": "قيمة سوقية دون رأس المال المتداول الصافي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:a2",
+   "en": "Zero debt",
+   "ar": "صفر ديون"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:a3",
+   "en": "50% dividend",
+   "ar": "توزيعات 50%"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz2:tips",
+   "en": "Calculate on working capital, not on P/E.",
+   "ar": "احسب رأس المال العامل لا P/E."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:q",
+   "en": "Special situations are built on...",
+   "ar": "المواقف الخاصة تقوم على..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:a0",
+   "en": "Rumors",
+   "ar": "الشائعات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:a1",
+   "en": "Public documents with a calculable outcome",
+   "ar": "وثائق معلنة بنتيجة قابلة للحساب"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:a2",
+   "en": "Charts",
+   "ar": "الرسوم البيانية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:a3",
+   "en": "Tips",
+   "ar": "النصائح"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap15:quiz3:tips",
+   "en": "The outcome should be in the documents, not in gut feeling.",
+   "ar": "النتيجة يجب أن تكون في الوثائق لا في الحدس."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:titel",
+   "en": "Chapter 16 · Convertibles and warrants",
+   "ar": "الفصل 16 · السندات القابلة للتحويل وwarrants"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:intro",
+   "en": "Hybrid paper that sounds good - until the bill arrives.",
+   "ar": "أوراق هجينة تبدو مغرية - إلى أن تصلك الفاتورة."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:q",
+   "en": "Convertibles give the impression of...",
+   "ar": "توحي السندات القابلة للتحويل بـ..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:a0",
+   "en": "Pure interest",
+   "ar": "فائدة صرفة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:a1",
+   "en": "Downside protection + upside participation",
+   "ar": "حماية في الهبوط + مشاركة في الصعود"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:a2",
+   "en": "A stock with a dividend",
+   "ar": "سهم مع توزيعات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:a3",
+   "en": "An index",
+   "ar": "مؤشر"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz1:tips",
+   "en": "Two sides of the coin: downside protection, upside participation.",
+   "ar": "وجها العملة: حماية في الهبوط ومشاركة في الصعود."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:q",
+   "en": "Warrants are, according to Graham...",
+   "ar": "warrants وفق غراهام..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:a0",
+   "en": "Wise hedging",
+   "ar": "تحوّط حصيف"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:a1",
+   "en": "A lottery ticket that dilutes owners",
+   "ar": "بطاقة يانصيب تخفف ملكية المساهمين"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:a2",
+   "en": "Safe interest",
+   "ar": "فائدة آمنة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:a3",
+   "en": "Defensive",
+   "ar": "أداة دفاعية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz2:tips",
+   "en": "Who pays for the warrant's party?",
+   "ar": "من يدفع ثمن حفلة الـwarrant؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:q",
+   "en": "The rule about complex instruments?",
+   "ar": "ما القاعدة بشأن الأدوات المعقدة؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:a0",
+   "en": "The more construction, the more speculative",
+   "ar": "كلما زاد التركيب زادت المضاربة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:a1",
+   "en": "Complexity = safety",
+   "ar": "التعقيد = أمان"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:a2",
+   "en": "Terms do not matter",
+   "ar": "الشروط لا تهم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:a3",
+   "en": "Always better",
+   "ar": "أفضل دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap16:quiz3:tips",
+   "en": "Every extra term is an extra risk.",
+   "ar": "كل شرط إضافي مخاطرة إضافية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:titel",
+   "en": "Chapter 17 · Four instructive case histories",
+   "ar": "الفصل 17 · أربع قصص تعليمية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:intro",
+   "en": "Penn Central, LTV, AAA bonds - catastrophes written in the numbers.",
+   "ar": "Penn Central وLTV وسندات AAA - كوارث كانت مكتوبة في الأرقام."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:q",
+   "en": "The Penn Central bankruptcy: where did the warnings stand?",
+   "ar": "إفلاس Penn Central: أين كانت الإنذارات؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:a0",
+   "en": "With insiders",
+   "ar": "لدى المطلعين الداخليين"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:a1",
+   "en": "In the public reports",
+   "ar": "في التقارير المعلنة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:a2",
+   "en": "In the chart",
+   "ar": "في الرسم البياني"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:a3",
+   "en": "With the government",
+   "ar": "لدى الحكومة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz1:tips",
+   "en": "The warnings were printed - the question is where.",
+   "ar": "كانت الإنذارات مطبوعة - والسؤال أين."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:q",
+   "en": "LTV fell because of...",
+   "ar": "سقطت LTV بسبب..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:a0",
+   "en": "A product failure",
+   "ar": "إخفاق منتج"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:a1",
+   "en": "Conglomerate + leverage + accounting acrobatics",
+   "ar": "تكتل + رافعة مالية + بهروحات محاسبية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:a2",
+   "en": "A strike",
+   "ar": "إضراب"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:a3",
+   "en": "Currency",
+   "ar": "عملة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz2:tips",
+   "en": "Growth bought with debt and creative accounting.",
+   "ar": "نمو اشتُري بالدين ومحاسبة إبداعية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:q",
+   "en": "The lesson of the AAA case?",
+   "ar": "ما درس حالة AAA؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:a0",
+   "en": "Rating = margin",
+   "ar": "التصنيف = هامش"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:a1",
+   "en": "A rating is not a margin",
+   "ar": "التصنيف ليس هامشًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:a2",
+   "en": "AAA is always safe",
+   "ar": "AAA آمنة دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:a3",
+   "en": "Interest protects",
+   "ar": "الفائدة تحمي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap17:quiz3:tips",
+   "en": "The rating says something about probability - not about the margin.",
+   "ar": "التصنيف يقول شيئًا عن الاحتمال - لا عن الهامش."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:titel",
+   "en": "Chapter 18 · A comparison of eight pairs",
+   "ar": "الفصل 18 · مقارنة ثمانية أزواج"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:intro",
+   "en": "Eight similar company pairs - one dear and one cheap. Who won?",
+   "ar": "ثمانية أزواج من شركات متشابهة - واحدة غالية وأخرى رخيصة. من فاز؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:q",
+   "en": "Chapter 18 compares...",
+   "ar": "يقارن الفصل 18..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:a0",
+   "en": "Funds",
+   "ar": "الصناديق"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:a1",
+   "en": "Eight pairs of similar companies - dear against cheap",
+   "ar": "ثمانية أزواج من شركات متشابهة - الغالي ضد الرخيص"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:a2",
+   "en": "Indexes",
+   "ar": "المؤشرات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:a3",
+   "en": "Bonds",
+   "ar": "السندات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz1:tips",
+   "en": "Pairwise comparison: dear against cheap in the same industry.",
+   "ar": "مقارنة ثنائية: الغالي ضد الرخيص في القطاع نفسه."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:q",
+   "en": "The conclusion over time?",
+   "ar": "ما الخلاصة عبر الزمن؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:a0",
+   "en": "The dear favorite always won",
+   "ar": "المفضلة الغالية فازت دائمًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:a1",
+   "en": "The cheap ones systematically better total return",
+   "ar": "الرخيصات بعائد إجمالي أفضل بشكل منهجي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:a2",
+   "en": "No difference",
+   "ar": "لا فرق"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:a3",
+   "en": "Randomness",
+   "ar": "محض مصادفة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz2:tips",
+   "en": "Follow the pairs over twenty years.",
+   "ar": "تابع الأزواج على مدى عشرين عامًا."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:q",
+   "en": "'Price is what you pay, value is what you get' - the chapter's message?",
+   "ar": "«السعر هو ما تدفعه، والقيمة هي ما تحصل عليه» - أهي رسالة الفصل؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:a0",
+   "en": "No",
+   "ar": "لا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:a1",
+   "en": "Yes",
+   "ar": "نعم"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:a2",
+   "en": "Only for tech",
+   "ar": "فقط للتكنولوجيا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:a3",
+   "en": "Only in a crisis",
+   "ar": "فقط في الأزمات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap18:quiz3:tips",
+   "en": "The chapter is the quote in practice.",
+   "ar": "الفصل هو الاقتباس مجسدًا في الواقع."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:titel",
+   "en": "Chapter 19 · Shareholders and managements",
+   "ar": "الفصل 19 · المساهمون والإدارات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:intro",
+   "en": "Graham - the early activist: ownership rights are a duty.",
+   "ar": "غراهام - الناشط المبكر: حق الملكية مسؤولية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:q",
+   "en": "Graham saw shareholding as...",
+   "ar": "نظر غراهام إلى ملكية الأسهم بوصفها..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:a0",
+   "en": "A passive piece",
+   "ar": "ورقة سلبية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:a1",
+   "en": "Ownership with a duty - vote, question",
+   "ar": "ملكية بمسؤولية - التصويت والمساءلة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:a2",
+   "en": "Pure speculation",
+   "ar": "مضاربة صرفة"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:a3",
+   "en": "A chart",
+   "ar": "رسمًا بيانيا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz1:tips",
+   "en": "The share is a certificate of ownership - not a lottery ticket.",
+   "ar": "السهم صك ملكية - لا ورقة يانصيب."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:q",
+   "en": "What did Graham motion about?",
+   "ar": "عن ماذا قدّم غراهام المقررات؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:a0",
+   "en": "Option programs",
+   "ar": "برامج الخيارات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:a1",
+   "en": "A dividend from unnecessary cash + minority protection",
+   "ar": "توزيعات من النقد غير الضروري + حماية الأقلية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:a2",
+   "en": "CEO salaries +",
+   "ar": "رواتب الرؤساء التنفيذيين +"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:a3",
+   "en": "Nothing",
+   "ar": "لا شيء"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz2:tips",
+   "en": "The surplus cash belongs to the owners - who decides over it?",
+   "ar": "النقد الفائض ملك للملاك - فمن يقرر بشأنه؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:q",
+   "en": "Not voting is...",
+   "ar": "عدم التصويت هو..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:a0",
+   "en": "Fine",
+   "ar": "أمر عادي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:a1",
+   "en": "A blank check on your own equity",
+   "ar": "شيك فارغ على حقوق الملكية الخاصة بك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:a2",
+   "en": "Mandatory",
+   "ar": "إلزامي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:a3",
+   "en": "Illegal",
+   "ar": "غير قانوني"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap19:quiz3:tips",
+   "en": "Unused ownership rights become someone else's power.",
+   "ar": "الحقوق الملكية غير المستعملة تصبح قوة بيد غيرك."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:titel",
+   "en": "Chapter 20 · Margin of safety - the central concept",
+   "ar": "الفصل 20 · هامش الأمان - المفهوم المحوري"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:intro",
+   "en": "The book's final chapter is its heart - three words that carry everything.",
+   "ar": "الفصل الأخير من الكتاب هو قلبه - ثلاث كلمات تحمل كل شيء."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:q",
+   "en": "The margin is compared to...",
+   "ar": "يُشبَّه الهامش بـ..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:a0",
+   "en": "A bubble pool",
+   "ar": "بركة فقاعات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:a1",
+   "en": "A bridge built for more than the expected load",
+   "ar": "جسر مبني لأكثر من الحمل المتوقع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:a2",
+   "en": "A brakeless car",
+   "ar": "سيارة بلا فرامل"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:a3",
+   "en": "Chess",
+   "ar": "الشطرنج"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz1:tips",
+   "en": "Construct for more than the expected load.",
+   "ar": "صمّم لأكثر من الحمل المتوقع."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:q",
+   "en": "Without a margin you are required to...",
+   "ar": "من دون هامش يُشترط أن..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:a0",
+   "en": "Be lucky",
+   "ar": "يكون الحظ حليفك"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:a1",
+   "en": "Be right",
+   "ar": "تكون محقًّا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:a2",
+   "en": "Diversify",
+   "ar": "تُنوّع"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:a3",
+   "en": "Hedge",
+   "ar": "تحوّط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz2:tips",
+   "en": "The margin is the right to be wrong.",
+   "ar": "الهامش هو حق الخطأ."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:q",
+   "en": "Three forms of margin?",
+   "ar": "ما الصور الثلاث للهامش؟"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:a0",
+   "en": "Trend, timing, luck",
+   "ar": "الاتجاه، التوقيت، الحظ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:a1",
+   "en": "Price match, diversification, predictability",
+   "ar": "مطابقة السعر، التنويع، قابلية التنبؤ"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:a2",
+   "en": "Chart, RSI, MACD",
+   "ar": "الرسم البياني، RSI، MACD"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:a3",
+   "en": "Size, leverage, options",
+   "ar": "الحجم، الرافعة المالية، الخيارات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap20:quiz3:tips",
+   "en": "Price, breadth and requirements - three protections.",
+   "ar": "السعر والاتساع والاشتراطات - ثلاث حمايات."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:titel",
+   "en": "Afterword · Stubbornness is not necessary",
+   "ar": "الخاتمة · العناد ليس ضروريًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:intro",
+   "en": "The book's last page - perhaps its finest.",
+   "ar": "الصفحة الأخيرة من الكتاب - وربما أجمل صفحاته."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:q",
+   "en": "Buffett on intelligent investing:",
+   "ar": "قول بافيت عن الاستثمار الذكي:"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:a0",
+   "en": "It requires genius",
+   "ar": "يتطلب عبقرية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:a1",
+   "en": "It requires character - not genius",
+   "ar": "يتطلب شخصية - لا عبقرية"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:a2",
+   "en": "It requires luck",
+   "ar": "يتطلب حظًا"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:a3",
+   "en": "It requires a terminal",
+   "ar": "يتطلب محطة تداول"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz1:tips",
+   "en": "Not IQ - character.",
+   "ar": "ليس معدل الذكاء - بل الشخصية."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:q",
+   "en": "The book's core lies in chapters...",
+   "ar": "يكمن جوهر الكتاب في الفصلين..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:a0",
+   "en": "1 and 2",
+   "ar": "1 و2"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:a1",
+   "en": "8 and 20",
+   "ar": "8 و20"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:a2",
+   "en": "17 and 18",
+   "ar": "17 و18"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:a3",
+   "en": "Only the afterword",
+   "ar": "في الخاتمة فقط"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz2:tips",
+   "en": "One chapter on mood, one on the margin.",
+   "ar": "فصل عن المزاج وآخر عن الهامش."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:q",
+   "en": "The market's greatest enemy is...",
+   "ar": "أكبر عدو في السوق هو..."
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:a0",
+   "en": "The central bank",
+   "ar": "البنك المركزي"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:a1",
+   "en": "Your own mood",
+   "ar": "مزاجك أنت"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:a2",
+   "en": "Analysts",
+   "ar": "المحللون"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:a3",
+   "en": "Algorithms",
+   "ar": "الخوارزميات"
+  },
+  {
+   "nyckel": "the-intelligent-investor:kap21:quiz3:tips",
+   "en": "The enemy sits at your own table.",
+   "ar": "العدو جالس إلى طاولتك أنت."
+  }
+ ]
+}

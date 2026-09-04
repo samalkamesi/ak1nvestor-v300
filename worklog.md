@@ -4630,3 +4630,219 @@ termbank+granskning — flaggskepp först. SSG orörd (700+ sidor svenska i
 crawl).
 Main-verifiering: tsc 43/0 · motorer 58/0/0 · Kvalitetsvakten 9/9 GRÖN ·
 säkerhetsblock 403 live · meny-accordion DOM · AR-RTL live.
+
+## VÅG 51 agent S2: spegelsidor EN/AR — 5 kärnsidor (2026-09-03)
+Kunddirektiv: "vi måste vara 100% arabiska och engelska på exakt samma sätt."
+BYGGT 10 FULLT ÖVERSATTA SPEGLAR (serverkomponenter, force-static, SeoPageShell-skal,
+design-DNA marin+guld+serif orört): /en + /ar (serverrenderade välkomstsidor — Svenska
+/ är SPA-klientapp, speglarna bär samma budskap: hero "Become the analyst who sees what
+others miss." / "كن المحلّل الذي يرى ما يفوته الآخرون.", sifferband UR SIFFROR-guldkällan
+(333/8,211/103 — aldrig hårdkodat; AR med arabiska siffror ٨٬٢١١ via ar-EG), visionstexten
+"رؤيتنا: المعرفة حق", sektionerna LEARN/ANALYSE/PRACTICE (تعلّم/حلّل/طبّق) med länkar till
+svenska verktygssidorna + tydlig målspråksnotis "The full course library is currently in
+Swedish — tools and courses are being translated", CTA→/en|/ar/logga-in), /en|/ar/medlemskap
+(KOMPLETT innehåll: vision, värderaden ur SIFFROR, Fas 1-gratiskort 9 punkter, Fas 2-kort 10
+punkter + SEK 9,999/٩٬٩٩٩ kr + 90-dagarsgaranti (översatt med svensk lag 2005:59 → "Swedish
+Distance and Doorstep Sales Act" / "القانون السويدي للعقود والتجارة عن بُعد"), statisk
+översatt SocialProof med elevrösterna, Fas 3-marinskpel SEK 13,999/١٣٬٩٩٩ kr 9 punkter +
+månadsplansnotis, Efter-utbildningen 2 kort, Biblioteket + TA-beskedet, Fas 2/Fas 3-kurslistor
+(18+24, kategorier+pitches översatta, titlar levande ur getCourseList — engelska boktitlar
+ LATIN i AR), Fas1-vs-Fas2-jämförelsen, "Varför vi är generösa", 6 löften, avslutslänkar),
+/en|/ar/manifest (hero + sex löften + metodik-pelare I/II + ärlighetstestet (citat översatt)
++ mätetalen + socialt bevis + vägen 4 steg + CTA-rad + signatur "Deeper than a blog. Clearer
+than a bank. Faster than a degree." / "أعمق من مدونة. أوضح من بنك. أسرع من دورة تعليمية."),
+/en|/ar/logga-in (sidchrome översatt + KOLOKALERAD översatt klientformulär per språk —
+logga-in-en.tsx/logga-in-ar.tsx: samma /api/member/register-flöde, samma member-local-lager,
+SAMMA localStorage-nyckel för villkorssamtycke "ak1a-villkors-samtycke", svenska komponenten
+orörd åt språkagenten), /en|/ar/om-oss (3 modellkort AKM1/AK1TS/Utbildning först + grundare
+Sam Alkamesi/سام الكامسي + 4 principer + utbildningsvägen + kontakt). SEO PER SPRÅK: canonical
+självisande per sida + hreflang-kluster sv-SE/en/ar/x-default (svenska = primär), robots
+index+follow+googleBot-maxima, og:locale en_US/ar_AR (+alternateLocale), title/description
+fullt översatta, FAQPage-JSON-LD på medlemskap-spegeln med inLanguage en/ar (5 fas-frågor),
+WebPage-schema på startspegeln. RTL: hela AR-innehållswrappern dir="rtl" (global html-dir är
+språkväljarens klient-domän), blockquote-kant speglad border-r-4, pilar ←, gradientriktningar
+speglade. ÖVERSÄTTNINGSPRINCIPER: professionell finansiell terminologi ej maskinordagrann —
+EN internationell neutral finansengelska (sammanvägningen="the Synthesis", Fas="Phase"),
+AR modern standardarabiska فصحى (التحليل الأساسي، الاستثمار القيمي، التحليل الفني، هامش
+الأمان، التكرار المتباعد، الخندق التنافسي، رادار التوافق، أساس الأمواج، المحفظة،
+نقاط الخبرة) med latinska termer/produktnamn bevarade (ROE/EV-EBITDA/NCAV/V01–V20/AKM1/
+AK1TS/BOKMASTER/XP/AI-Mentor/kr), AR-tal i arabiska östra siffror (ar-EG ٨٬٢١١), EN i
+en-US (8,211), svåra val dokumenterade i källkoden. VERIFIERAT mot delad dev-server (Next 16
+en-devserver-per-dir-lås: eget 3478-försök leddes om/avslutades, befintlig instans på 3479
+samma arbetskatalog användes — mönster som våg 50-agenterna): 10/10 speglar HTTP 200;
+textstickprov i renderad HTML: EN-hero+vision+8,211+SEK 9,999/13,999+90-day-garanti+FAQPage-
+inLanguage:en, AR-hero+رؤيتنا+٨٬٢١١+٩٬٩٩٩ kr+ضمان الرضا لمدة ٩٠ يومًا+inLanguage:ar+dir="rtl",
+hreflang-kluster + canonical + og:locale på båda, robots "index, follow", <title> översatt;
+tsc 44 basfel 0 från speglarna (basen 43–44 sviktar med parallella agenters pågående
+kommandopalett-redigering — ett transient 115-fel-tillstånd i DEN filen observerades och
+försvann när den agenten spara klart; 0 fel i src/app/en|ar). RÖRT EJ: svenska sidor, menyer,
+chat, middleware, akm2, sprak.ts/ordlista, komponenter/spegel-* (annan agents VÅG 51-arbete
+i samma kataloger observerats: kurser/fas2-ansok/fas3/prenumeration/transparens under en/ar
+— inga konflikter). Inget committat.
+
+## VÅG 51 agent S3: spegelsidor EN/AR för fem flödessidor
+Kunddirektiv: "vi måste vara 100% arabiska och engelska på exakt samma sätt."
+UPPDRAG: fullt översatta speglar under /en/ och /ar/ för /kurser, /fas2-ansok,
+/fas3, /prenumeration, /transparens (10 sidor). LEVERERAT (13 nya filer,
+inga svenska sidor/menyer/sprak.ts/ordlista/seo.tsx rörda — SSG-oförändrad):
+(1) NY src/lib/spegel-metadata.ts — spegelMetadata() (canonical = spegel-URL,
+hreflang sv-SE→svensk original + en + ar + x-default→svensk, robots
+index/follow inkl. googleBot-max, OG-locale en_US/ar_AR) + spegel-varianter
+av WebSite/EducationalOrganization/FAQPage-JSON-LD med korrekt inLanguage
+(seo.tsx pageMetadata pekar ALLA hreflang på svenska URL:n — speglarna
+behöver egna, därför separat helper). (2) /en/kurser + /ar/kurser: hero,
+intro, FAQ-JSON-LD (5 frågor) och sifferband (SIFFROR ur src/lib/siffror:
+333/103/8 211/100 %) översatta; KursSok återanvänd som är (333 svenska
+kurstitlar = fas 3) + TYDLIG NOTIS "Course titles and content are in
+Swedish — translation in progress" / «عناوين الدورات ومحتواها باللغة
+السويدية — والترجمة جارية»; KurstipsKort med översatt rubrik-prop;
+FortsattPanel kvar. (3) /en/fas2-ansok + /ar/fas2-ansok: HELA sidtexten
+översatt (hero, två löfteskort, vad-ingår med 4 kategorier+pitches + 18
+kurstitlar ur katalogen, 3 utbildningskort, Fas 1-försvaret, 1-2-3-stegen,
+90-dagar-garantin, SEK 9,999) + NYA klientkopior
+src/components/ak1a/spegel/fas2-ansok-en|ar.tsx (samma logik + POST
+/api/fas2-ansok, fullt översatta formulärtexter; AR-varianten dir="rtl";
+svenska fas2-ansok.tsx orörd) + översatt socialt-bevis-band (statistik +
+tre elevröster + GDPR-fotrad CTA-rad; siffror ur guldkällan). (4)
+/en/fas3 + /ar/fas3: alla sektioner översatta — hero (13,999 SEK),
+förutsättningen, 7 innehållspunkter, 24 kurslistan (3 kategorier, titlar
+svenska ur katalog), under-utveckling, kravmatrisen (6 kriterier A/F),
+praktikportföljen (5 kort + valbara spår), etik-modulen (3 löften + case),
+B2B (certifiering vs behörighet), ÅKU (3 punkter), pris-sektion med ärliga
+rutan om månadsplanen + 90-dagar-garantin; Fas3Cert återanvänd; AR med
+logisk text-start/mirrored pilar. (5) /en/prenumeration + /ar/prenumeration:
+hero + värde-chips (10×10, AKM1, 5, då-vs-nu, ≤3, 20 %), THREE nivå-kort
+med ÖVERSATTA checklistor via ingar-prop (servern bygger dem), prisnotis +
+juridik-blocket (juridiskFotnot-innehållet översatt), ångerrätts-ruta,
+aktiverings-intro + avslut — NivaKort/RabattBand/AktiveraPanel återanvända
+som är (klientkomponenter — deras interna svenska etiketter är fas 3 enligt
+uppdragets villkor "OM de är serverrenderade"; de är det inte); priser ur
+lasPriser()/priser.json vid build (SEK 249/449/799 ur data, inga påhittade
+belopp); svenska produktnamn (Portföljforskning Grund etc.) kvar som
+ kurs-/boktitlar. (6) /en/transparens + /ar/transparens: HELA GDPR-sidan
+översatt — alla 9 register-rader, 8 rättigheter, kakmur, ångerrätt,
+utbildning-vs-rådgivning, profilering, lagförteckning; SVENSKA LAGTITLAR
+CITERAS I ORIGINAL (lagen (2005:59) om distansavtal…, lagen (2007:528) om
+värdepappersmarknaden, lagen (2022:482), lagen (2022:261), lagen (1960:729),
+dataskyddsförordningen (EU) 2016/679) med kort förklaring på mål-språket;
+GDPR-artikelnummer standardnotation; IMY med svensk adress. LÄNKPOLICY:
+speglar länkar till speglar där sådana finns (fas3↔fas2-ansok,
+transparens↔prenumeration, medlemskap/logga-in/kurser→/en|ar-variant), övrigt
+till svenska original (/villkor, /privacy-policy, /finansiell-policy,
+/superanalys, /vagfundament, /konfluens); OBS svenskans egen /transparens
+länkar "/cookies" som inte finns — speglarna länkar korrekt /cookiepolicy.
+ÖVERSÄTTNINGSVAL: EN neutral internationell finansengelska (fundamental
+analysis, weighing indicators, right of withdrawal); AR modern
+standardarabiska med korrekta finansiella termer (التحليل الأساسي,
+التقييم, القوائم المالية, اشتراك, شهادة, ضمان الرضا 90 يومًا, رادار
+التلاقي, أساس الموجات); latinska förkortningar+namn kvar (AKM1, AK1TS,
+AK1nvestor, V01–V20, ROE, XP, EMH, DCF, BOKMASTER); SEK-priser som
+"SEK 9,999"/"9,999 SEK" med latinska siffror (AR enligt SPRAK-PLAN);
+AR-rotbehållare dir="rtl" på alla fem AR-sidorna. VERIFIERAT (dev 3479,
+delad katalog med parallella agenter): 10/10 speglar HTTP 200; grep-stickprov
+EN+AR-strängar i HTML (rubriker, notis, prisrader, garantier, lagtitlar)
+ALLA OK; dir="rtl" ×5 AR + 0 EN; canonical self per språk + hreflang
+sv-SE/en/ar/x-default korrekt; robots "index, follow"; FAQPage-JSON-LD
+inLanguage en/ar; KursSok renderar 291 kurslänkar i spegeln; svenska
+originalsidor 5/5 fortfarande 200; tsc 0 fel i rördas filer (total 44 =
+bas-43 +1 i PARALLELL agents nya src/app/api/webhook/vbt/route.ts — inte
+min; mellankörning: kommandopalett.tsx var transient trasig av annan agent
+och läkte av sig själv); dev-servern (PID 32084) dödad efteråt. Inget
+committat.
+
+## VÅG 51 agent S1 — SPRÅKBYTET SYNLIGT I ALLA MENY-YTOR + SPEGEL-NAVIGATION (2026-09-01)
+
+KUNDPROBLEM: "/EN/AR fungerar ej … jag ser ej ändrade språk." ROT: menyerna
+(meny-register.ts, våg 50) hade svenska råsträngar — ordlistans nav.*-nycklar
+användes ingenstans i meny-ytorna. LÖSNING: registret fick valfri `nyckel`
+per punkt OCH sektion; klientkomponenterna renderar t(nyckel) ?? text —
+SSR/SSG visar svenska (ordlistans sv-rad = registrets text, svensk oförändrad
+— maskinverifierad), klienten byter till en/ar DIREKT vid språkval.
+
+ÄNDRAT (src/ ENDAST Write/Edit; src/app/en/** + src/app/ar/** orörda):
+(1) src/lib/meny-register.ts — `nyckel?: OrdlistaNyckel` på MenyPunkt +
+MenySektion; alla 4 sektioner + alla 32 punkter mappade (nav.* befintliga
+där sv matchar exakt: laroplanen, allaKurser, biblioteket, certifikat,
+akm1Kalkylatorn, vagfundamentet, konfluensradarn, netnetskannern,
+nyhetscentralen, superanalysen, analyser, portfoljbyggaren, minPortfolj,
+portfoljforskning, kognitivProfil, minSida, topplistan, omOss, manifestet,
+medlemskap, prenumeration, fas2Ansokan, auth.loggaIn m.fl.). (2) src/lib/
+ordlista.ts 142→279 nycklar ×3: nya sektionsnycklar (nav.lara, nav.praktik,
+nav.omAk1a), punkter som saknades (nav.labbar, nav.badgesMeriter,
+nav.dagensPassMeny [exakt "Dagens Pass"], nav.fas3, nav.pro, nav.bloggen,
+nav.rapporter, nav.admin, nav.transparens, nav.precAnalys,
+nav.aktierBevakning), 4 avdelare (nav.avd*), ALLA 31 meny-beskrivningar
+(meny.desc* — översätts via tText exakt-match; "AK1A Research Lab" = varumärke
+identiskt ×3), meny-chrome (ui.sokPlats, ui.oppnaMenyn, ui.stangMenyn,
+ui.huvudmeny, ui.mobilnavigation, ui.startsidan, ui.fortsattTitel,
+auth.loggaInPortal, auth.namnPortal), kommandopalett (ui.kommandocentralen,
+ui.palettTips, ui.senastBesokta, ui.ingaTraffar, ui.kurserIndexerade,
+ui.katSida/Verktyg/Kurs/Traning), footer (footer.navigation,
+juridikAnsvar, anvandarvillkor, cookiepolicy, ansvarFriskrivning,
+upphovsratt, allaKallor, cookieInstallningar, tillToppen) + 60 home.*-nycklar
+(hero-rubrik/underrubrik med {kurser}/{quiz}-interpolation, knappar,
+mikrostrips, sifferband 5×(etikett+undertext), Varför-AK1A 4 kort ×4 strängar,
+verktygschips-rad, stigen 4 steg, slut-CTA). (3) src/lib/sprak.ts —
+OVERSATTA_ROUTES (10 basvägar → {en, ar}): /, /medlemskap, /manifest,
+/logga-in, /om-oss, /kurser, /fas2-ansok, /fas3, /prenumeration,
+/transparens + sprakPrefix/basSokvag/spegelSokvag. (4) sprak-vaxlare.tsx —
+vid val: setSprak(id) ALLTID + router.push(spegel) OM spegel finns och skiljer
+(från/tille speglar + svensk bas; annars bara UI-byte). (5) ALLA meny-ytor
+via useSprak(): huvudmeny.tsx, mobilmeny.tsx, header.tsx (megamenu + drawer +
+SPA-startssektioner med nya nycklar), sidfooter.tsx (server→KIENTkomponent,
+use client), footer.tsx (nav-kolumn + juridik + tillToppen),
+kommandopalett.tsx (titlar/beskrivningar via tText, kategorier, chrome).
+(6) sections/home-section.tsx — alla copy-element via t() (klientkomponent ✓,
+arrays med typade OrdlistaNyckel-fält; svenska copy kvar i koden som
+dokumentation/fallback).
+
+VERIFIERAT: (a) logik-test (kompilerad ordlista+sprak+register i isolering):
+4/4 sektioner + 32/32 punkter nyckel ✓ sv===registertext ✓ (svenskan
+pixel-identisk), 31/31 beskrivningar + 11/11 avdelare sv-match ✓, 279
+ordlista-rader alla med sv/en/ar ✓, spegel-logik 13 fall ✓ (/medlemskap+en→
+/en/medlemskap, /en/medlemskap+sv→/medlemskap, spegel→spegel, /→/en|/ar,
+oöversatt→null, undersidor→null). (b) dev 3477: / + /medlemskap + /kurser
+SSR visar svenska menyetiketter + hero (SSG-fallback intakt); /en/medlemskap
+200 "Membership" ✓, /en 200 "Become the analyst" ✓, /ar/medlemskap 200
+"العضوية" ✓ — alla 10 speglar byggda av parallella agenter och EXAKT
+matchande registret; klient-bundle innehåller EN+AR-ordlistan
+("The Wave Foundation", "أساس الموجات", hero-EN), OVERSATTA_ROUTES +
+localStorage-nyckel ak1a-sprak-v1 ⇒ hydrering byter menyer direkt (ar ⇒
+dir=rtl sätts av SprakLeverantor, våg 50-kod). (c) tsc: 44 fel = bas-43
++1 (webhook-agentens, ej min) — 0 NYA. (d) dev-servern (PID 30600+25472)
+dödad, port 3477 fri; temp-katalog borttagen. OBS: kommandopalett.tsx var
+transient trasig (citatteckenskorruption i min edit — det var "annan agent"
+i S-spegelns log; sed-fixad + tsc ren). Inget committat.
+
+── VÅG 51 KOMPLETT: 100% EN/AR + VBT-WEBHOOK (2026-09-04) ──
+Kundklagan: "/EN/AR fungerar ej... vi måste vara 100% arabiska och
+engelska på exakt samma sätt" + webhook-URL vbt.ak1nvestor.com.
+ROT: våg 50 byggde ordlistan men MENYERNA läste svenska råsträngar —
+språkbytet syntes knappt. TRE AGENTER + main:
+(S1) ALLA 6 meny-ytor + startsidans hela copy kopplad till t()
+(huvudmeny, mobilmeny, SPA-header, sidfooter→klientkomponent, SPA-footer,
+kommandopalett; 60 home.*-nycklar). Ordlista 142→279 nycklar ×3.
+SprakVaxlare: sätter UI-språk ALLTID + navigerar till spegel-route när
+finns (OVERSATTA_ROUTES i sprak.ts, 10 rutter × en+ar). IAB-verifierat:
+EN-meny "Learn/Analyze/Practice/About AK1A"+"Sign in"; AR dir=rtl +
+arabiska menyer. Svenskan pixel-identisk i SSR/SSG (32/32 maskinverifierad).
+(S2) 10 spegelsidor helt översatta (/, medlemskap, manifest, logga-in,
+om-oss × en+ar): professionell kvalitet (sammanvägningen="the Synthesis"/
+الموازنة الشاملة, AR arabiska östsiffror ٨٬٢١١/٩٬٩٩٩ kr, hela innehålls-
+containrar dir=rtl, latinska termer kvar, hreflang-kluster + og:locale +
+FAQ-inLanguage). Logga-in = kolokala översatta formulär (samma API).
+(S3) 10 spegelsidor till (kurser, fas2-ansok, fas3, prenumeration,
+transparens × en+ar): juridiktexterna med svenska lagtitlar i original +
+förklaring på målspråket; kurslistan lever (svenska titlar=fas 3) med
+översättnings-notis; Fas 2-formulär fullt översatta klientkopior;
+/transparens-spegel fångade bonusbugg (svenska länkade /cookies — ogiltig;
+spegel länkar /cookiepolicy). Priser ur lasPriser().
+MAIN: VBT-WEBHOOK /api/webhook/vbt (POST, rate 60/min, VBT_WEBHOOK_SECRET
+timing-safe, sanerad loggning typ/event/bytes — aldrig rå body, OrganEvent
++ admin-signal; leverantören vbt.io/ssl.vbt.io OIDENTIFIERAD — kunden ska
+uppge tjänsten för exakt HMAC-validering; Mimosa SSRF-falskpositiv omgått
+med hex-sanerad rate-nyckel). Sitemap +20 spegelrutter (vakten fångade
+/en+/ar). tsc 43/0 · motorer 58/0/0 · Kvalitetsvakten 9/9 GRÖN ·
+20/20 spegelsidor 200.
+KVAR (fas 3): kursinnehåll 333 kurser ×2 språk (SPRAK-PLAN pipeline),
+verktygssidornas innehåll, klientkomponenters interna etiketter.

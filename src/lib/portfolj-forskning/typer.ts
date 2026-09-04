@@ -13,6 +13,11 @@
  * fokuserar på kort/medellång/lång/Mega där fundamental tillväxt driver.
  */
 
+// Peer-profilen (VÅG 59, AKM3 steg 4) definieras i peer.ts — ren, fs-fri
+// modul. Importen är type-only: typcirkeln raderas vid kompilering och
+// skapar ingen runtime-koppling tillbaka till detta kontrakt.
+import type { PeerInfo } from "./peer";
+
 // ── Bas ─────────────────────────────────────────────────────────────────────
 
 export type Horisont = "mikro" | "kort" | "medellang" | "lang" | "mega";
@@ -203,6 +208,14 @@ export type KorstabbellRad = {
   /** Våg 57 D2: namnen på branschmodulerna som aktiverades vid AKM2-
    *  beräkningen (modulregistret, src/lib/akm2/moduler). */
   akm2Moduler?: string[];
+  /** VÅG 59 (AKM3 steg 3): hård port (V19 < 12 mån) aktiv — true gör att
+   *  osäkerhetsintervallets övre gräns takas till 45 (AKM3-BESLUT §5).
+   *  Optionell för bakåtkompatibilitet med äldre underlag. */
+  portV19?: boolean;
+  /** VÅG 59 (AKM3 steg 4): peer-läslager — branschjämförelse på rank/median-
+   *  basis (r3-peer). PRESENTATIONSLAGER: ingår ALDRIG i poängen eller
+   *  portföljbygget. Optionell — gamla filer/fixturer saknar fältet. */
+  peer?: PeerInfo;
 };
 
 // ── 6. Riskprofil & portföljförslag ──────────────────────────────────────────

@@ -14,6 +14,7 @@
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { raknaPeer, type RaknaPeerOptioner } from "./peer";
 import type { Bransch, Dynamik, Horisont, KorstabbellRad, VagKlass } from "./typer";
 
 const HORIZONTER: Horisont[] = ["mikro", "kort", "medellang", "lang", "mega"];
@@ -130,6 +131,10 @@ function normaliseraRad(råRad: unknown): KorstabbellRad | null {
     akm2Moduler: Array.isArray(rad.akm2Moduler)
       ? rad.akm2Moduler.filter((m): m is string => typeof m === "string" && m.trim() !== "")
       : [],
+    // VÅG 59 (AKM3 steg 3): hård port-flaggan från P6:s rad — driver
+    // porttaket (övre gräns 45) i osäkerhetsintervallet. defensivt: endast
+    // explicit true räknas som aktiv port (allt annat = ej triggad).
+    portV19: rad.portV19 === true,
   };
 }
 
@@ -160,17 +165,73 @@ export type KorstabellUnderlag = {
   /** true endast när filen finns OCH innehåller minst en giltig rad. */
   finns: boolean;
   rader: KorstabbellRad[];
+  /** P6:s `skapad`-datum (ur filroten) — peer-referensen dateras med det. */
+  skapad: string | null;
 };
+
+/**
+ * Läs per-variabelpoäng (V01–V20, 0–5) ur P6:s akm1-cachefiler — osatt
+ * markeras null (motiveringarnas "osatt —"-prefix är källans kontrakt för
+ * skilja strukturellt saknad data från poängen 0; r3 §3.3 + D1).
+ * Saknad/ogiltig fil ⇒ tickerns map saknas (peer-variablerna blir osatta).
+ * Server-side (fs) — anropas endast från build/request-vägen, aldrig klienten.
+ */
+export function lasAkm1PoangFranCache(
+  tickers: string[],
+): Record<string, Record<string, number | null>> {
+  const ut: Record<string, Record<string, number | null>> = {};
+  for (const ticker of tickers) {
+    if (typeof ticker !== "string" || ticker.trim() === "") continue;
+    const fil = join(process.cwd(), "data", "cache", `akm1-${ticker.replace(/\./g, "_")}.json`);
+    if (!existsSync(fil)) continue;
+    try {
+      const rå = lasObj(JSON.parse(readFileSync(fil, "utf8")));
+      const poang = lasObj(rå.poang);
+      const motivering = lasObj(rå.motivering);
+      const rad: Record<string, number | null> = {};
+      for (const [v, varde] of Object.entries(poang)) {
+        const tal = lasTal(varde);
+        const mot = typeof motivering[v] === "string" ? String(motivering[v]).trim().toLowerCase() : "";
+        rad[v] = tal !== null && !mot.startsWith("osatt") ? tal : null;
+      }
+      ut[ticker] = rad;
+    } catch {
+      // Ogiltig cache-rad lämnas bort — peer visar osatt, aldrig gissning.
+    }
+  }
+  return ut;
+}
+
+/**
+ * Berika rader med peer (VÅG 59, AKM3 steg 4 — r3 §4.3): raknaPeer efter
+ * normaliseringen, poäng ur akm1-cachen, referens ur filens `skapad`.
+ * ADDITIVT läslager — akm1Totalt/akm2/vågfälten rörs aldrig (peer ingår
+ * ALDRIG i poängen; låst av validera-motorernas svit).
+ */
+function berikaMedPeer(rader: KorstabbellRad[], skapad: string | null): KorstabbellRad[] {
+  const optioner: RaknaPeerOptioner = {
+    referensDatum: skapad ?? undefined,
+    poangPerBolag: lasAkm1PoangFranCache(rader.map((r) => r.ticker)),
+  };
+  const peer = raknaPeer(rader, optioner);
+  return rader.map((r) => {
+    const p = peer.get(r.ticker);
+    return p ? { ...r, peer: p } : r;
+  });
+}
 
 /** Läs och normalisera korstabell-grund.json (P6). Saknas/tom → finns: false. */
 export function lasKorstabellGrund(): KorstabellUnderlag {
   const sokVag = join(process.cwd(), "data", "portfolj-system", "korstabell-grund.json");
-  if (!existsSync(sokVag)) return { finns: false, rader: [] };
+  if (!existsSync(sokVag)) return { finns: false, rader: [], skapad: null };
   try {
-    const rader = normaliseraAlla(JSON.parse(readFileSync(sokVag, "utf8")));
-    return rader.length > 0 ? { finns: true, rader } : { finns: false, rader: [] };
+    const rå = JSON.parse(readFileSync(sokVag, "utf8"));
+    const rader = normaliseraAlla(rå); // accepterar kalt array eller { rader: [...] }
+    if (rader.length === 0) return { finns: false, rader: [], skapad: null };
+    const skapad = lasStr(lasObj(rå).skapad);
+    return { finns: true, rader: berikaMedPeer(rader, skapad), skapad };
   } catch {
-    return { finns: false, rader: [] };
+    return { finns: false, rader: [], skapad: null };
   }
 }
 

@@ -2,15 +2,53 @@
  * SEO-hjälpare: metadata-byggare + JSON-LD (schema.org) + llms.txt-generator.
  * Läser genererad meta från data/seo/[slug].json om den finns
  * (skapas av scripts/seo-generate.mjs), annars deterministisk fallback.
+ * OG-bilder (VÅG 1a): härleds ur sökvägen per sidtyp — genererade av
+ * scripts/og-generate.mjs ("npm run og") till public/og/ (1200×630 PNG).
  */
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 import type { Course, Analysis, CaseStudy, BlogPost } from "./content";
 import { getCourses, getCaseStudies, getBlogPosts, getAnalyses } from "./content";
 import { SIFFROR, tal } from "./siffror";
+import { SOCIALA_URLS } from "./sociala";
 
 export const SITE_URL = "https://lab.ak1nvestor.com";
 export const SITE_NAME = "AK1A Research Lab";
+
+// ── OG-bilder (VÅG 1a) — genererade av scripts/og-generate.mjs → public/og/ ──
+export const OG_BREDD = 1200;
+export const OG_HOJD = 630;
+
+/**
+ * OG-bild per sidtyp, härledd ur sökvägen: per-slug-bilder finns för kurser,
+ * blogg och analyser; översiktssidorna har egna mallar; roten → start.png;
+ * allt annat → den typografiska default.png. Alt-texten speglar sidans titel.
+ */
+function ogBildForPath(pathname: string, title: string): { sokvag: string; alt: string } {
+  // Startsidan anropar pageMetadata med path: "" (canonical utan slash) —
+  // både "" och "/" mappas till märkesbilden start.png.
+  if (pathname === "/" || pathname === "")
+    return {
+      sokvag: "/og/start.png",
+      alt: "AK1A Research Lab — institutionell aktieanalysutbildning byggd för privatpersoner",
+    };
+  if (pathname === "/kurser")
+    return { sokvag: "/og/kurs.png", alt: `Kursbiblioteket — ${tal(SIFFROR.kurser)} kurser i AKM1` };
+  if (pathname.startsWith("/kurser/"))
+    return { sokvag: `/og/kurser/${pathname.split("/")[2]}.png`, alt: clamp(`Kurs: ${title}`, 100) };
+  if (pathname === "/blogg")
+    return { sokvag: "/og/blogg.png", alt: "AK1A-bloggen — pedagogisk finansanalys" };
+  if (pathname.startsWith("/blogg/"))
+    return { sokvag: `/og/blogg/${pathname.split("/")[2]}.png`, alt: clamp(title, 100) };
+  if (pathname === "/analyser")
+    return { sokvag: "/og/analys.png", alt: "Institutionella aktieanalyser med AKM1" };
+  if (pathname.startsWith("/analyser/"))
+    return {
+      sokvag: `/og/analys/${decodeURIComponent(pathname.split("/")[2])}.png`,
+      alt: clamp(`Aktieanalys: ${title}`, 100),
+    };
+  return { sokvag: "/og/default.png", alt: clamp(`${title} — ${SITE_NAME}`, 100) };
+}
 
 type SeoMeta = { title?: string; description?: string; keywords?: string[] };
 
@@ -49,12 +87,19 @@ export function pageMetadata(opts: {
   type?: "website" | "article" | "course";
   publishedTime?: string;
   noIndex?: boolean;
+  /** Explicit OG-bild (sokvag under public + alt) — annars härleds ur path. */
+  ogBild?: { sokvag: string; alt: string };
 }) {
   const url = `${SITE_URL}${opts.path}`;
   // Open Graph-protokollet (ogp.me) har ingen "course"-typ och Next validerar
   // og:type hårt — kurser mappas därför till "article"; kursidentiteten lever
   // i JSON-LD via courseJsonLd (schema.org Course).
   const graphType = opts.type === "article" || opts.type === "course" ? "article" : "website";
+  // OG-bild (VÅG 1a AC1): varje sida levererar 1200×630 med alt — härledd
+  // ur sökvägen om ingen explicit bild ges. Relativ sökväg slås upp mot
+  // metadataBase (SITE_URL, satt i root-layouten).
+  const bild = opts.ogBild ?? ogBildForPath(opts.path, opts.title);
+  const bilder = [{ url: bild.sokvag, width: OG_BREDD, height: OG_HOJD, alt: bild.alt }];
   return {
     title: opts.title,
     description: opts.description,
@@ -88,12 +133,14 @@ export function pageMetadata(opts: {
       type: graphType,
       locale: "sv_SE",
       alternateLocale: ["en_US"],
+      images: bilder,
       ...(opts.publishedTime ? { publishedTime: opts.publishedTime } : {}),
     },
     twitter: {
       card: "summary_large_image" as const,
       title: opts.title,
       description: opts.description,
+      images: bilder,
     },
   };
 }
@@ -202,6 +249,8 @@ export function organizationJsonLd() {
     email: "info@ak1nvestor.com",
     description:
       "Sveriges enda institutionella aktieanalys-metodik, byggd för privatpersoner. Pedagogisk finansanalys — inte investeringsråd.",
+    // sameAs endast för ifyllda sociala profiler (VÅG 1a, K1) — aldrig döda länkar.
+    ...(SOCIALA_URLS.length > 0 ? { sameAs: SOCIALA_URLS } : {}),
   };
 }
 
@@ -279,6 +328,7 @@ export function courseJsonLd(course: Course) {
     name: `${course.title} — AKM1 ${course.slug.toUpperCase()}`,
     description: course.learn || course.summary,
     inLanguage: "sv-SE",
+    image: `${SITE_URL}/og/kurser/${course.slug}.png`,
     timeRequired: `PT${course.totalMinutes || course.minutes || 30}M`,
     provider: educationalOrganizationJsonLd(),
     hasCourseInstance: {
@@ -296,6 +346,7 @@ export function articleJsonLd(post: BlogPost) {
     headline: post.title,
     description: post.description,
     inLanguage: "sv-SE",
+    image: `${SITE_URL}/og/blogg/${post.slug}.png`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
     author: { "@type": "Person", name: post.author },
@@ -315,6 +366,7 @@ export function analysisJsonLd(a: Analysis) {
     headline: `${a.company} (${a.ticker}) — institutionell analys`,
     description: String(a.motivation || a.status || `Analys av ${a.company}`).slice(0, 300),
     inLanguage: "sv-SE",
+    image: `${SITE_URL}/og/analys/${a.ticker}.png`,
     datePublished: a.analysisDate || a.verified,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },

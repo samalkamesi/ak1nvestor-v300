@@ -25,6 +25,8 @@ import type {
   UppfoljningSnapshot,
   VagKlass,
 } from "./typer";
+import type { AKM3Ensemble } from "../akm3/typer";
+import type { Akm3Prediktionsrad } from "../akm3/typer";
 
 // ── Konstanter (exporterade för test och dokumentation) ──────────────────────
 
@@ -373,4 +375,106 @@ export function beslutaIntervall(
   const dagar = dagarMellan(senasteDatum, nu);
   if (!Number.isFinite(dagar)) return true;
   return dagar >= grans;
+}
+
+// ── 5. AKM3-prediktionsloggen (AKM3-BESLUT §3 "mätning" + §12, steg 1) ──────
+
+/**
+ * AKM3.2026.09 registreras som NYTT prediktorspår BREDAVID AKM1/AKM2 —
+ * "verkligheten dömer": P5-uppföljningen ("då vs nu") fäller domen inom
+ * 8–12 kvartal och publicerar den ÖPPET. Raderna här är allt domslutet
+ * behöver: ensemble-totalen sida vid sida med AKM2-kompositen och
+ * AKM1-projektionen per bolag och mättillfälle, versionsstämplade.
+ *
+ * HASH-KEDJA (append-only, tamper-vakten — BESLUT §3/§10.10): varje rads
+ * hash = sha-256 över (föregående radens hash + "\n" + radens kanoniska
+ * JSON utan hash-fältet). Cronen (nodejs-runtime) injicerar node:crypto:s
+ * sha256 — lib:t hålls fritt från node-importer (klientsäkert) och rent
+ * deterministiskt (samma rad + prev-hash ⇒ samma hash, test vaktar).
+ */
+
+/** Kanonisk JSON för en loggrad: exakt fältparamgång, utan hash-fältet. */
+export function kanoniskPrediktionsJSON(rad: Akm3Prediktionsrad): string {
+  const { hash: _hash, ...utan } = rad ?? ({} as Akm3Prediktionsrad);
+  return JSON.stringify(utan);
+}
+
+/**
+ * Bygg EN loggrad ur ett färdigt ensemble-resultat (ren funktion — inga
+ * klockor). Datum defaultar till ensemble.datum (k.hamtat — datans datum);
+ * cronen anger mätningens datum explicit (snapshot-datumet) eftersom det är
+ * MÄTNINGSTILLFÄLLET prediktionsloggen dömer mot (§12 "då vs nu").
+ * Priset bärs med som verklighetsreferens om det finns — null annars.
+ */
+export function byggAkm3Prediktionsrad(
+  ensemble: AKM3Ensemble,
+  pris: number | null | undefined,
+  datum?: string
+): Akm3Prediktionsrad {
+  const p = pris !== null && pris !== undefined && Number.isFinite(pris) ? pris : null;
+  return {
+    ticker: ensemble.ticker,
+    datum: arIsoDatum(datum) ? (datum as string) : ensemble.datum,
+    spar: "akm3-ensemble",
+    modellVersion: ensemble.modellVersion,
+    ensembleTotal: ensemble.total,
+    bandMin: ensemble.band.min,
+    bandMedian: ensemble.band.median,
+    bandMax: ensemble.band.max,
+    spridning: ensemble.spridning,
+    enighet: ensemble.enighet,
+    akm2Komposit: ensemble.akm2Komposit,
+    akm1Totalt: ensemble.akm1Totalt,
+    pris: p,
+  };
+}
+
+/** sha-256 som injiceras av anroparen (hex-sträng, lowercase). */
+export type Sha256Funktion = (text: string) => string;
+
+/** Genesis-värdet för kedjan (dokumenterat — rad 1 hashas mot detta). */
+export const PREDIKTIONSLOGG_GENESIS = "akm3-prediktionslogg-genesis-v1";
+
+/**
+ * Räkna en rads hash givet föregående hash (ren funktion + injicerad sha256).
+ * Kedjeregel: sha256(prevHash + "\n" + kanoniskJSON(rad-utan-hash)).
+ */
+export function raknaPrediktionshash(
+  rad: Akm3Prediktionsrad,
+  prevHash: string,
+  sha256: Sha256Funktion
+): string {
+  return sha256(`${prevHash}\n${kanoniskPrediktionsJSON(rad)}`);
+}
+
+/**
+ * Stämpla en rad med sin hash (ren funktion — returnerar NY rad, lämnar
+ * indata orörd; determinism: samma rad + prevHash ⇒ identisk hash).
+ */
+export function stemplaPrediktionsrad(
+  rad: Akm3Prediktionsrad,
+  prevHash: string,
+  sha256: Sha256Funktion
+): Akm3Prediktionsrad {
+  return { ...rad, hash: raknaPrediktionshash(rad, prevHash, sha256) };
+}
+
+/**
+ * Verifiera hela kedjan (ren funktion): true om och endast om varje rads
+ * hash stämmer mot sin prev-hash OCH kedjan hänger ihop i ordning.
+ * Tom kedja är giltig. Används av cronen efter läsning (tamper-vakt) och
+ * av testsviten (gyllene kedja + manipulerad rad ⇒ false).
+ */
+export function verifieraPrediktionskedja(
+  rader: readonly Akm3Prediktionsrad[] | null | undefined,
+  sha256: Sha256Funktion
+): boolean {
+  if (!Array.isArray(rader)) return false;
+  let prev = PREDIKTIONSLOGG_GENESIS;
+  for (const r of rader) {
+    if (!r || typeof r !== "object" || typeof r.hash !== "string") return false;
+    if (raknaPrediktionshash(r, prev, sha256) !== r.hash) return false;
+    prev = r.hash;
+  }
+  return true;
 }

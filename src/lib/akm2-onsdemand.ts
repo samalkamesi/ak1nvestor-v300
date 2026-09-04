@@ -25,6 +25,12 @@
  * ger JSON-identiskt resultat vid varje build. Läsning är tolerant: saknas
  * eller är ogiltig cachefilen returneras null och sektionen renderas ej.
  *
+ * AKM3 (våg 59 bygg-1, AKM3-BESLUT §4): hamtaAkm3ForAnalys följer EXAKT
+ * samma mönster för ensemble-spalten — cache data/cache/akm3-{TICKER}.json
+ * i första hand, annars on-demand med raknaEnsemble (tre profiler, samma
+ * modulaktiveringar som AKM2-fallbacken). AKM3 visas alltid SIDAN VID SIDAN
+ * med AKM2 — ersätter aldrig.
+ *
  * Pedagogisk forskning — ALDRIG investeringsråd (lagen 2007:528).
  */
 
@@ -32,6 +38,8 @@ import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 import type { AKM2Resultat } from "./akm2/typer";
 import { raknaAKM2 } from "./akm2/karna";
+import { raknaEnsemble, arAkm3Ensemble } from "./akm3/ensemble";
+import type { AKM3Ensemble } from "./akm3/typer";
 import type { BolagsNyckeltal } from "./portfolj-forskning/typer";
 import { getAnalys } from "./analysfabrik";
 import { byggModulAktiveringar } from "./akm2-visningsdata";
@@ -43,6 +51,15 @@ export type Akm2Upphamtning = {
   resultat: AKM2Resultat;
   /** Varifrån resultatet kom — visas i UI för transparens. */
   kalla: Akm2Kalla;
+};
+
+export type Akm3Kalla = "akm3-cache" | "beraknad-ur-cache";
+
+export type Akm3Upphamtning = {
+  ticker: string;
+  ensemble: AKM3Ensemble;
+  /** Varifrån ensemblen kom — visas i UI för transparens. */
+  kalla: Akm3Kalla;
 };
 
 /** Formguard: ser ut som ett AKM2Resultat (lager 1/2/4 + komposit)? */
@@ -126,6 +143,53 @@ export function hamtaAkm2ForAnalys(ticker: string): Akm2Upphamtning | null {
       viktprofil: "akm2-2026",
     });
     return { ticker: a.ticker, resultat, kalla: "beraknad-ur-cache" };
+  } catch {
+    return null; // ogiltig JSON/läsfel — ärlighetsprincipen gäller läsning också
+  }
+}
+
+/**
+ * Hämta AKM3-ensemblen för en analys i Forskningsbiblioteket (AKM3-BESLUT
+ * §4: "API/cache: data/cache/akm3-{TICKER}.json enligt akm2-onsdemand-
+ * mönstret"). Två steg, exakt mönstret ovan:
+ *   1) data/cache/akm3-{TICKER}.json → `.ensemble` — skrivs av uppfoljnings-
+ *      cronen när den mäter bolaget (månadsvis), formguardad;
+ *   2) annars beräknas ensemblen on-demand med raknaEnsemble ur P1:s
+ *      nyckeltalscache — SAMMA modulaktiveringar (byggModulAktiveringar)
+ *      som AKM2-fallbacken ovan, så medlemmarna och akm2Komposit-jämförelsen
+ *      överensstämmer med den AKM2-komposit dashboarden visar.
+ *
+ * AKM3 visas ALLTID sida vid sida med AKM2/AKM1 — ersätter ALDRIG (P4).
+ * Returnerar null när underlag saknas (sektionen renderas ej — aldrig gissad).
+ */
+export function hamtaAkm3ForAnalys(ticker: string): Akm3Upphamtning | null {
+  const a = getAnalys(ticker);
+  if (!a) return null;
+
+  const fil = tickerFil(a.ticker);
+  if (!fil) return null;
+
+  // (1) AKM3-cachen — skriven av portfolj-uppfoljning-cronen när den mäter bolaget.
+  const akm3CacheVag = join(process.cwd(), "data", "cache", `akm3-${fil}.json`);
+  if (existsSync(akm3CacheVag)) {
+    try {
+      const c = JSON.parse(readFileSync(akm3CacheVag, "utf8")) as { ensemble?: unknown };
+      if (arAkm3Ensemble(c?.ensemble)) {
+        return { ticker: a.ticker, ensemble: c.ensemble, kalla: "akm3-cache" };
+      }
+    } catch {
+      // ogiltig cache — fall vidare till on-demand-beräkningen
+    }
+  }
+
+  // (2) On-demand ur P1:s nyckeltalscache — tre profiler, samma moduler.
+  const vag = join(process.cwd(), "data", "cache", `fundamental-${fil}.json`);
+  if (!existsSync(vag)) return null;
+  try {
+    const k = JSON.parse(readFileSync(vag, "utf8")) as unknown;
+    if (!arNyckeltal(k)) return null;
+    const ensemble = raknaEnsemble(k, { moduler: byggModulAktiveringar(k) });
+    return { ticker: a.ticker, ensemble, kalla: "beraknad-ur-cache" };
   } catch {
     return null; // ogiltig JSON/läsfel — ärlighetsprincipen gäller läsning också
   }

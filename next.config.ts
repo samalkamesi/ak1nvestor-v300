@@ -47,6 +47,22 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Vercel-bundla datafilerna som läses dynamiskt med readFileSync i routes —
+  // Natives tracing följer inte alltid path.join(process.cwd(), ...) vid nya
+  // filer (regimen saknades på prod 2026-09-04 tills dessa lades till).
+  outputFileTracingIncludes: {
+    "/api/forskningslage": [
+      "./data/portfolj-system/korstabell-grund.json",
+      "./data/portfolj-system/regime-logg.json",
+    ],
+    "/api/cron/vagvalidering": ["./data/portfolj-system/regime-logg.json"],
+    "/api/cron/akm3-kalibrering": [
+      "./data/portfolj-system/kalibrering-logg.json",
+    ],
+    "/api/cron/portfolj-uppfoljning": [
+      "./data/portfolj-system/prediktionslogg-akm3.json",
+    ],
+  },
 };
 
 export default nextConfig;

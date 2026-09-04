@@ -34,8 +34,9 @@ export const dynamic = "force-dynamic";
  * Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528).
  */
 
-/** 1 timme — cachen är en accelererare; vid omstart räknas läget om direkt. */
-const CACHE_MS = 60 * 60 * 1000;
+/** 10 min — läget ändras sällan men regimen/filen kan landa i en deploy;
+ *  en timme (v1) höll kvar ett null-läge ett helt dygn efter fix. */
+const CACHE_MS = 10 * 60 * 1000;
 
 /** Regime-loggens hem (append-only + hash-kedjad — prediktionsloggens granne). */
 const REGIMELOGG_SOK = path.join(process.cwd(), "data", "portfolj-system", "regime-logg.json");
@@ -88,7 +89,7 @@ let memo: {
 
 export async function GET() {
   if (memo !== null && Date.now() - memo.vid < CACHE_MS) {
-    return NextResponse.json(memo.svar, { headers: { "Cache-Control": "public, max-age=3600" } });
+    return NextResponse.json(memo.svar, { headers: { "Cache-Control": "public, max-age=300, stale-while-revalidate=600" } });
   }
 
   const { finns, rader } = lasKorstabellGrund();
@@ -96,5 +97,5 @@ export async function GET() {
     ? { finns: true, lage: raknaForskningslage(rader), regim: lasSenasteRegim() }
     : { finns: false, lage: null, regim: lasSenasteRegim() };
   memo = { vid: Date.now(), svar };
-  return NextResponse.json(svar, { headers: { "Cache-Control": "public, max-age=3600" } });
+  return NextResponse.json(svar, { headers: { "Cache-Control": "public, max-age=300, stale-while-revalidate=600" } });
 }

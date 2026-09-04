@@ -30,6 +30,7 @@
 
 import { lasMedlem } from "@/lib/member-local";
 import { arAdmin, harFas2Access, harFas3Access } from "@/lib/kurs-access";
+import type { OrdlistaNyckel } from "@/lib/ordlista";
 
 /** Vem som får se punkten. `fas2` inkluderar fas3/premium/pro (supermängd). */
 export type MenyPublik = "gast" | "medlem" | "fas2" | "admin";
@@ -43,6 +44,12 @@ export type MenyYta = "meny" | "footer" | "sok";
 export type MenyPunkt = {
   /** Frontloaded, etablerad etikett — inga påhittade ord (R5). */
   text: string;
+  /**
+   * Ordlistenyckel (våg 51): KLIENT-komponenterna renderar
+   * t(nyckel) ?? text — SSR/SSG visar svenska (radens sv-värde = text),
+   * klienten byter till en/ar vid språkval. Saknas nyckel ⇒ svenskan.
+   */
+  nyckel?: OrdlistaNyckel;
   /** GILTIG route — valideras mot src/app (sidfot/sökindex är sanningsvittne). */
   lank: string;
   beskrivning?: string;
@@ -66,6 +73,8 @@ export type MenySektionId = "lara" | "analysera" | "praktik" | "om";
 export type MenySektion = {
   id: MenySektionId;
   titel: string;
+  /** Ordlistenyckel för sektionstiteln (våg 51 — se MenyPunkt.nyckel). */
+  nyckel?: OrdlistaNyckel;
   ikon: string;
   punkter: MenyPunkt[];
 };
@@ -92,10 +101,12 @@ export const MENY_REGISTER: MenySektion[] = [
   {
     id: "lara",
     titel: "Lära",
+    nyckel: "nav.lara",
     ikon: "🎓",
     punkter: [
       {
         text: "Läroplanen",
+        nyckel: "nav.laroplanen",
         lank: "/laroplan",
         ikon: "🗺️",
         typ: "sida",
@@ -105,6 +116,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Alla kurser",
+        nyckel: "nav.allaKurser",
         lank: "/kurser",
         ikon: "📚",
         typ: "kursyta",
@@ -114,6 +126,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Biblioteket",
+        nyckel: "nav.biblioteket",
         lank: "/bibliotek",
         ikon: "📖",
         typ: "sida",
@@ -123,6 +136,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Labbar",
+        nyckel: "nav.labbar",
         lank: "/labb",
         ikon: "🧪",
         typ: "sida",
@@ -132,6 +146,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Certifikat",
+        nyckel: "nav.certifikat",
         lank: "/certifikat",
         ikon: "🏅",
         typ: "sida",
@@ -144,11 +159,13 @@ export const MENY_REGISTER: MenySektion[] = [
   {
     id: "analysera",
     titel: "Analysera",
+    nyckel: "nav.analysera",
     ikon: "🔬",
     // Logisk verktygskedja: GRUNDANALYS → SKANNAR → FÖRDJUPNING → PORTFÖLJ (R9).
     punkter: [
       {
         text: "AKM1-kalkylatorn",
+        nyckel: "nav.akm1Kalkylatorn",
         lank: "/kalkylator",
         ikon: "🧮",
         typ: "verktyg",
@@ -159,6 +176,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Vågfundamentet",
+        nyckel: "nav.vagfundamentet",
         lank: "/vagfundament",
         ikon: "🌊",
         typ: "verktyg",
@@ -169,6 +187,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Konfluensradarn",
+        nyckel: "nav.konfluensradarn",
         lank: "/konfluens",
         ikon: "📡",
         typ: "verktyg",
@@ -179,6 +198,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Net-net-skannern",
+        nyckel: "nav.netnetskannern",
         lank: "/netnet",
         ikon: "🔍",
         typ: "verktyg",
@@ -189,6 +209,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Nyhetscentralen",
+        nyckel: "nav.nyhetscentralen",
         lank: "/nyheter",
         ikon: "📰",
         typ: "verktyg",
@@ -199,6 +220,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Superanalysen",
+        nyckel: "nav.superanalysen",
         lank: "/superanalys",
         ikon: "🏅",
         typ: "verktyg",
@@ -209,6 +231,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Analyser",
+        nyckel: "nav.analyser",
         lank: "/analyser",
         ikon: "📊",
         typ: "sida",
@@ -219,6 +242,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Portföljbyggaren",
+        nyckel: "nav.portfoljbyggaren",
         lank: "/portfoljbyggare",
         ikon: "🧩",
         typ: "verktyg",
@@ -229,6 +253,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Min portfölj",
+        nyckel: "nav.minPortfolj",
         lank: "/min-portfolj",
         ikon: "💼",
         typ: "verktyg",
@@ -239,6 +264,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Portföljforskning",
+        nyckel: "nav.portfoljforskning",
         lank: "/portfolj-forskning",
         ikon: "📡",
         typ: "verktyg",
@@ -249,6 +275,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Kognitiv profil",
+        nyckel: "nav.kognitivProfil",
         lank: "/profil",
         ikon: "🧠",
         typ: "verktyg",
@@ -262,10 +289,12 @@ export const MENY_REGISTER: MenySektion[] = [
   {
     id: "praktik",
     titel: "Praktik",
+    nyckel: "nav.praktik",
     ikon: "🎯",
     punkter: [
       {
         text: "Min Sida",
+        nyckel: "nav.minSida",
         lank: "/min-sida",
         ikon: "🏠",
         typ: "sida",
@@ -275,6 +304,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Dagens Pass",
+        nyckel: "nav.dagensPassMeny",
         lank: "/dagens-pass",
         ikon: "⚡",
         typ: "sida",
@@ -284,6 +314,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Topplistan",
+        nyckel: "nav.topplistan",
         lank: "/topplista",
         ikon: "🏆",
         typ: "sida",
@@ -293,6 +324,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Badges & meriter",
+        nyckel: "nav.badgesMeriter",
         lank: "/badges",
         ikon: "🎖️",
         typ: "sida",
@@ -302,6 +334,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Fas 3 — Certifiering",
+        nyckel: "nav.fas3",
         lank: "/fas3",
         ikon: "🎓",
         typ: "sida",
@@ -314,10 +347,12 @@ export const MENY_REGISTER: MenySektion[] = [
   {
     id: "om",
     titel: "Om AK1A",
+    nyckel: "nav.omAk1a",
     ikon: "🏛️",
     punkter: [
       {
         text: "Manifestet",
+        nyckel: "nav.manifestet",
         lank: "/manifest",
         ikon: "🏛️",
         typ: "sida",
@@ -327,6 +362,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Medlemskap",
+        nyckel: "nav.medlemskap",
         lank: "/medlemskap",
         ikon: "💛",
         typ: "sida",
@@ -336,6 +372,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Prenumeration",
+        nyckel: "nav.prenumeration",
         lank: "/prenumeration",
         ikon: "💳",
         typ: "sida",
@@ -345,6 +382,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "AK1A PRO",
+        nyckel: "nav.pro",
         lank: "/pro",
         ikon: "🏛️",
         typ: "sida",
@@ -354,6 +392,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Bloggen",
+        nyckel: "nav.bloggen",
         lank: "/blogg",
         ikon: "✍️",
         typ: "sida",
@@ -363,6 +402,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Om oss",
+        nyckel: "nav.omOss",
         lank: "/om-oss",
         ikon: "🏛️",
         typ: "sida",
@@ -372,6 +412,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Fas 2-ansökan",
+        nyckel: "nav.fas2Ansokan",
         lank: "/fas2-ansok",
         ikon: "✉️",
         typ: "sida",
@@ -383,6 +424,7 @@ export const MENY_REGISTER: MenySektion[] = [
       // Endast vissa ytar:
       {
         text: "Logga in",
+        nyckel: "auth.loggaIn",
         lank: "/logga-in",
         ikon: "🔑",
         typ: "sida",
@@ -393,6 +435,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Dina rapporter",
+        nyckel: "nav.rapporter",
         lank: "/rapporter",
         ikon: "📜",
         typ: "verktyg",
@@ -403,6 +446,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Admin",
+        nyckel: "nav.admin",
         lank: "/admin",
         ikon: "🛠️",
         typ: "sida",
@@ -413,6 +457,7 @@ export const MENY_REGISTER: MenySektion[] = [
       },
       {
         text: "Transparens & GDPR",
+        nyckel: "nav.transparens",
         lank: "/transparens",
         ikon: "🛡️",
         typ: "sida",

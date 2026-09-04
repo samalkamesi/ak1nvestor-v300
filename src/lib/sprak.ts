@@ -104,6 +104,62 @@ export function dirForSprak(sprak: SprakId): "ltr" | "rtl" {
   return SPRAK[sprak].dir;
 }
 
+// ── Översatta spegel-routes (våg 51) ────────────────────────────────────────
+//
+// Sidor som finns i fullständiga EN/AR-versioner under /en/... och /ar/....
+// SprakVaxlare-navigerar till spegeln vid språkval (samtidigt som UI-språket
+// sätts) så även SID-INNEHÅLLET byter språk — inte bara menyerna. Sidor som
+// saknas i registret byter enbart UI-språk (menyer/knappar) på klienten.
+//
+// Svenska bas-sökvägen är nyckeln; startsidans speglar är /en respektive /ar.
+// Byggs ut i takt med att nya spegel-sidor monteras (våg 51-agenter).
+
+export type SpegelVagar = { en: string; ar: string };
+
+export const OVERSATTA_ROUTES: Record<string, SpegelVagar> = {
+  "/": { en: "/en", ar: "/ar" },
+  "/medlemskap": { en: "/en/medlemskap", ar: "/ar/medlemskap" },
+  "/manifest": { en: "/en/manifest", ar: "/ar/manifest" },
+  "/logga-in": { en: "/en/logga-in", ar: "/ar/logga-in" },
+  "/om-oss": { en: "/en/om-oss", ar: "/ar/om-oss" },
+  "/kurser": { en: "/en/kurser", ar: "/ar/kurser" },
+  "/fas2-ansok": { en: "/en/fas2-ansok", ar: "/ar/fas2-ansok" },
+  "/fas3": { en: "/en/fas3", ar: "/ar/fas3" },
+  "/prenumeration": { en: "/en/prenumeration", ar: "/ar/prenumeration" },
+  "/transparens": { en: "/en/transparens", ar: "/ar/transparens" },
+};
+
+/** Har sökvägen ett /en- eller /ar-prefix? Returnerar språket eller null. */
+export function sprakPrefix(sokvag: string): SprakId | null {
+  if (sokvag === "/en" || sokvag.startsWith("/en/")) return "en";
+  if (sokvag === "/ar" || sokvag.startsWith("/ar/")) return "ar";
+  return null;
+}
+
+/** Svenska bas-sökvägen: "/en/medlemskap" → "/medlemskap", "/ar" → "/". */
+export function basSokvag(sokvag: string): string {
+  const prefix = sprakPrefix(sokvag);
+  if (!prefix) return sokvag === "/" ? "/" : sokvag.replace(/\/+$/, "") || "/";
+  if (sokvag === "/" + prefix) return "/";
+  return sokvag.slice(3) || "/"; // klipp "/en" + "/": "/en/x" → "/x"
+}
+
+/**
+ * Spegel-sökvägen för ett språkval — eller null om sidan saknar spegel.
+ * Exempel: på /medlemskap + "en" ⇒ "/en/medlemskap"; på /en/kurser + "sv" ⇒
+ * "/kurser"; på /en/kurser + "ar" ⇒ "/ar/kurser". Svenska på svensk sida
+ * returnerar sökvägen oförändrad (ingen navigering behövs).
+ */
+export function spegelSokvag(sokvag: string, mal: SprakId): string | null {
+  const bas = basSokvag(sokvag);
+  if (mal === "sv") {
+    // Endast navigering om vi står på en spegel och basen är registrerad.
+    return sprakPrefix(sokvag) && bas in OVERSATTA_ROUTES ? bas : null;
+  }
+  const vagar = OVERSATTA_ROUTES[bas];
+  return vagar ? vagar[mal] : null;
+}
+
 // ── t() — typsäker översättning ─────────────────────────────────────────────
 
 export type SprakParametrar = Record<string, string | number>;

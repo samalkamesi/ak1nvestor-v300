@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-05
 
-- **Genererad:** 2026-09-05T17:40:07.609Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-05T20:35:34.520Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 8.3 s
+- **Körtid:** 8.7 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 

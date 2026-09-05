@@ -1,0 +1,552 @@
+{
+ "kurs": "v67blogg",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v67blogg): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "hur-raknar-man-roe:titel",
+   "en": "How do you calculate ROE? The formula, a worked example and the three pitfalls",
+   "ar": "كيف يُحسب ROE؟ الصيغة ومثال محسوب والفخاخ الثلاثة"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:ingress",
+   "en": "ROE = net profit divided by equity. Here is the formula, a fully worked example, the DuPont decomposition that shows where the return actually comes from — and the three pitfalls that make the number look better than it is.",
+   "ar": "ROE = صافي الربح مقسومًا على حقوق الملكية. هنا الصيغة، ومثال محسوب بالكامل، وتفكيك DuPont الذي يُظهر من أين يأتي العائد فعليًا — والفخاخ الثلاثة التي تجعل الرقم يبدو أفضل مما هو عليه."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p1",
+   "en": "ROE — return on equity — is calculated as the company's net profit after tax divided by its equity, expressed as a percentage. A company that earns a profit of SEK 12 million on equity of SEK 40 million has an ROE of 30 percent. The number answers a single question: how efficiently does the company turn the owners' capital into earnings?",
+   "ar": "يُحسب ROE — أي العائد على حقوق الملكية — كصافي ربح الشركة بعد الضريبة مقسومًا على حقوق الملكية، ويُعبَّر عنه بالنسبة المئوية. الشركة التي تحقق ربحًا قدره 12 مليون كرونة على حقوق ملكية قدرها 40 مليون كرونة لديها ROE بنسبة 30 بالمئة. يجيب هذا الرقم على سؤال واحد: ما مدى كفاءة تحويل الشركة رأس مال الملاك إلى نتائج؟"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p2",
+   "en": "But as with every financial ratio, the calculation is the easy part — interpretation is the art. ROE can look impressive for entirely the wrong reasons, and three specific pitfalls account for most of the misunderstandings. We take them in turn, after the arithmetic itself.",
+   "ar": "لكن كما هو الحال مع كل نسبة مالية، يكون الحساب هو الجزء السهل — أما التفسير فهو الفن. قد يبدو ROE مثيرًا للإعجاب لأسباب خاطئة تمامًا، وثلاثة فخاخ محددة تقف وراء معظم سوء الفهم؛ فالنسبة المالية لا تفسّر نفسها بنفسها. سنستعرضها الواحد تلو الآخر، بعد أداة الحساب نفسها."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p3",
+   "en": "## The formula — one division and nothing more",
+   "ar": "## الصيغة — قسمة واحدة لا أكثر"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p4",
+   "en": "**ROE = Net profit after tax ÷ Equity × 100**",
+   "ar": "**ROE = صافي الربح بعد الضريبة ÷ حقوق الملكية × 100**"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p5",
+   "en": "Both figures are found in the annual report. Net profit is the bottom line of the income statement — after net financial items and tax. You find equity on the balance sheet: share capital, restricted reserves and free liquidity, minus any stocks the company holds in itself.",
+   "ar": "كلا الرقمين موجود في التقرير السنوي. صافي الربح هو السطر الأخير في قائمة الدخل — بعد صافي البنود المالية والضريبة. أما حقوق الملكية فتجدها في الميزانية العمومية: رأس مال الأسهم، والاحتياطيات المقيدة، والسيولة الحرة، مطروحًا منها أي من الأسهم التي تملكها الشركة في نفسها."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p6",
+   "en": "A matter of practice: do you use equity at year-end or the average of the beginning and end of the year? The average is right if the company has built up capital during the year — otherwise growth companies that retain profits in the business are penalized. Always compare companies using the same calculation practice, otherwise the numbers are not comparable.",
+   "ar": "مسألة عرفية: هل تستخدم حقوق الملكية عند نهاية السنة أم متوسط بدايتها ونهايتها؟ المتوسط هو الصحيح إذا كانت الشركة قد راكمت رأس مال خلال السنة — وإلا تُعاقَب شركات النمو التي تحتفظ بأرباحها في النشاط. قارن دائمًا بين شركات تستخدم الأسلوب نفسه في الحساب، وإلا فلن تكون الأرقام قابلة للمقارنة."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p7",
+   "en": "## The worked example: two companies, the same profit",
+   "ar": "## المثال المحسوب: شركتان ونفس الربح"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p8",
+   "en": "Imagine two companies that both report SEK 12 million in net profit:",
+   "ar": "تخيل شركتين كلتاهما تُظهر 12 مليون كرونة في صافي الربح:"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p9",
+   "en": "- **Company A**: equity of SEK 40 million. ROE = 12 ÷ 40 = **30 percent**.\n- **Company B**: equity of SEK 120 million. ROE = 12 ÷ 120 = **10 percent**.",
+   "ar": "- **الشركة A**: حقوق الملكية لديها 40 مليون كرونة. ROE = 12 ÷ 40 = **30 بالمئة**.\n- **الشركة B**: حقوق الملكية لديها 120 مليون كرونة. ROE = 12 ÷ 120 = **10 بالمئة**."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p10",
+   "en": "The same profit, a threefold difference in measured efficiency. Company A squeezes more earnings out of every owner's krona; Company B rests on a heavy capital base. Neither number is \"better\" in absolute terms — they describe two different business models. That is why ROE should always be read against industry peers, not against a universal target.",
+   "ar": "نفس الربح، وفارق ثلاثة أضعاف في الكفاءة المقاسة. الشركة A تنتزع نتائج أكثر من كل كرونة يملكها المالك؛ والشركة B تستند إلى قاعدة رأسمالية ثقيلة. لا يوجد رقم \"أفضل\" بالمعنى المطلق — فكلاهما يصف نموذج عمل مختلفًا. لهذا يجب دائمًا قراءة ROE بمقارنتها بنظراء القطاع، لا بهدف عالمي."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p11",
+   "en": "## The DuPont decomposition: where the return comes from",
+   "ar": "## تفكيك DuPont: من أين يأتي العائد"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p12",
+   "en": "ROE can be broken down into three components — the classic DuPont identity:",
+   "ar": "يمكن تفكيك ROE إلى ثلاثة مكونات — متطابقة DuPont الكلاسيكية:"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p13",
+   "en": "**ROE = Profit margin × Capital turnover speed × Capital structure (leverage)**",
+   "ar": "**ROE = هامش الربح × سرعة دوران رأس المال × هيكل رأس المال (الرافعة المالية)**"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p14",
+   "en": "- **Profit margin** (net profit ÷ revenue) — how much of every sales krona is left over.\n- **Capital turnover speed** (revenue ÷ total assets) — how hard the assets work.\n- **Leverage** (total assets ÷ equity) — how much of the balance sheet is financed with debt.",
+   "ar": "- **هامش الربح** (صافي الربح ÷ الإيرادات) — كم يتبقى من كل كرونة مبيعات.\n- **سرعة دوران رأس المال** (الإيرادات ÷ إجمالي الأصول) — ما مدى قوة عمل الأصول.\n- **الرافعة المالية** (إجمالي الأصول ÷ حقوق الملكية) — كم من الميزانية العمومية ممول بالدين."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p15",
+   "en": "The decomposition reveals the story behind the number. Two companies with 20 percent ROE are not the same thing if one gets there through a 15 percent profit margin and the other through heavy borrowing. Margin quality is sustainable; leverage quality is cycle-dependent. In the AKM1 model, that is why ROE is always read together with V10 (debt-to-equity ratio) and V19 (capital burn) — return and risk are two sides of the same balance sheet.",
+   "ar": "يكشف التفكيك القصة الكامنة خلف الرقم. شركتان لديهما ROE بنسبة 20 بالمئة ليستا الشيء نفسه إذا وصلت إحداهما إلى هناك عبر هامش ربح قدره 15 بالمئة ووصلت الأخرى عبر اقتراض مرتفع. جودة هامش الربح مستدامة؛ أما جودة الرافعة فمرتبطة بالدورة. في نموذج AKM1، لهذا تُقرأ ROE دائمًا مع V10 (نسبة الدين إلى حقوق الملكية) وV19 (احتراق رأس المال) — فالعائد والمخاطر وجهان لنفس الميزانية العمومية."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p16",
+   "en": "## Pitfall 1: leverage masquerading as efficiency",
+   "ar": "## الفخ 1: الرافعة المالية المتنكرة في هيئة كفاءة"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p17",
+   "en": "Because leverage is a multiplicative component of ROE, a company can raise the number simply by borrowing more. Equity shrinks, the division yields a higher figure — the business is unchanged. The check: also calculate return on total capital (net profit plus after-tax interest costs, divided by total assets). If ROE rises while total return stands still, the improvement is debt-financed, not operational.",
+   "ar": "لأن الرافعة المالية مكوّن مضاعِف في ROE، تستطيع الشركة رفع الرقم بمجرد الاقتراض أكثر. تتقلص حقوق الملكية، فيعطي القسم رقمًا أعلى — بينما النشاط لم يتغير. الفحص: احسب أيضًا العائد على إجمالي رأس المال (صافي الربح زائد تكاليف الفوائد بعد الضريبة، مقسومًا على إجمالي الأصول). إذا ارتفع ROE بينما بقي العائد الإجمالي ثابتًا، فالتحسين ممول بالقروض وليس تشغيليًا."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p18",
+   "en": "## Pitfall 2: the shrunk equity",
+   "ar": "## الفخ 2: تقلّص حقوق الملكية"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p19",
+   "en": "Large share buybacks and extraordinary depreciation can push equity toward zero — and a small denominator mechanically inflates ROE. In the extreme, the denominator turns negative and the financial ratio becomes meaningless. The check: follow the development of equity over five years, not just the last balance-sheet date. Equity that eats itself is not a sustainable ROE engine.",
+   "ar": "يمكن لإعادة شراء الأسهم الكبيرة والإهلاكات الاستثنائية أن تدفع حقوق الملكية نحو الصفر — والمقام الصغير ينفخ ROE ميكانيكيًا. في الحالة القصوى يصبح المقام سالبًا وتفقد النسبة المالية معناها. الفحص: راقب تطور حقوق الملكية على مدى خمس سنوات، لا عند تاريخ الميزانية الأخير فقط. حقوق الملكية التي تلتهم نفسها ليست محرك ROE مستدامًا."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p20",
+   "en": "## Pitfall 3: one-off items in the earnings",
+   "ar": "## الفخ 3: البنود الاستثنائية لمرة واحدة في النتيجة"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p21",
+   "en": "The sale of an asset, a tax effect or a divestment can lift net profit in a given year. The check: go to the cash flow side and compare earnings with the cash flow from ongoing operations. Booked profit without a corresponding cash flow deserves a close reading of the notes — the accruals leg of the Piotroski F-score captures exactly this pattern.",
+   "ar": "قد يرفع بيعُ أصلٍ أو أثرٌ ضريبي أو عمليةُ تصفية صافيَ الربح في سنة بعينها. الفحص: انتقل إلى جانب التدفق النقدي وقارن النتيجة بالتدفق النقدي من الأنشطة الجارية. الربح الدفتري بلا تدفق نقدي مقابل يستحق قراءة متأنية للإيضاحات — فمكوّن الاستحقاقات في Piotroski F-score يلتقط هذا النمط تحديدًا."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p22",
+   "en": "## The industry check: what is normal",
+   "ar": "## فحص القطاع: ما هو الطبيعي"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p23",
+   "en": "Descriptively, without moralizing: banks often sit around 10–15 percent (regulated leverage), mature manufacturers around 10–20 (capital heavy), software companies can sit significantly higher (light balance sheets), and real estate companies vary sharply with the valuation cycle. The comparison group defines the interpretation — an 8-percent ROE in an industry where the median is 6 is a different story from the same number among companies at 18.",
+   "ar": "بأسلوب وصفي، دون وعظ: تتحرك البنوك غالبًا حول 10–15 بالمئة (الرافعة المالية هناك منظمة)، والمصنّعون الناضجون حول 10–20 (كثافة رأسمالية)، وشركات البرمجيات قد تعلو كثيرًا (ميزانيات عمومية خفيفة)، وشركات العقار تتقلب بقوة مع دورة التقييم. مجموعة المقارنة هي التي تحدد التفسير — فـ ROE بنسبة 8 بالمئة في قطاع وسيطه 6 قصة مختلفة عن الرقم نفسه بين شركات عند 18."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p24",
+   "en": "The full ROE deep dive is in [the Curriculum](/laroplan): the V09 course walks through the calculation, DuPont and industry adjustment with Swedish examples.",
+   "ar": "الخوض العميق الكامل في ROE موجود في [المنهج](/laroplan): تتناول الدورة V09 الحساب وتفكيك DuPont وتعديل القطاع بأمثلة سويدية."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p25",
+   "en": "## The exercise: run the formula on a real annual report",
+   "ar": "## التمرين: طبّق الصيغة على التقرير السنوي لشركة حقيقية"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p26",
+   "en": "1. Open the latest annual report of a company you follow.\n2. Read off net profit and equity — calculate ROE for the three most recent years.\n3. Decompose with DuPont: which of the three components is driving?\n4. Enter the figures in [the calculator](/kalkylator) and see how the financial ratio positions against the industry median.",
+   "ar": "1. افتح التقرير السنوي الأخير لشركة تتابعها.\n2. اقرأ صافي الربح وحقوق الملكية — واحسب ROE للسنوات الثلاث الأخيرة.\n3. فكّك بأداة DuPont: أي من المكونات الثلاثة يقود؟\n4. أدخل الأرقام في [الحاسبة](/kalkylator) وانظر كيف تتموضع النسبة المالية مقابل وسيط القطاع."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p27",
+   "en": "Fifteen minutes, four numbers — and you know more about the company than most headlines tell.",
+   "ar": "خمس عشرة دقيقة، وأربعة أرقام — فتعرف عن الشركة أكثر مما ترويه معظم العناوين."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p28",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p29",
+   "en": "- Go deeper into where the ROE page belongs in [the Curriculum](/laroplan): the V09 course ties the financial ratio to earnings quality and capital structure.\n- Test the pitfalls in practice: [the calculator](/kalkylator) computes the DuPont decomposition automatically.\n- See the whole context in [the portfolio builder](/min-portfolj): ROE is one of the voices, never the whole choir.",
+   "ar": "- تعمّق في مكان صفحة ROE ضمن [المنهج](/laroplan): تربط الدورة V09 النسبة المالية بجودة الأرباح وهيكل رأس المال.\n- اختبر الفخاخ عمليًا: [الحاسبة](/kalkylator) تحسب تفكيك DuPont تلقائيًا.\n- شاهد السياق كاملًا في [منشئ المحفظة](/min-portfolj): ROE صوت من الأصوات، وليس الكورال كله أبدًا."
+  },
+  {
+   "nyckel": "hur-raknar-man-roe:p30",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:titel",
+   "en": "The quick ratio formula — how to measure a company's liquidity in 30 seconds",
+   "ar": "صيغة النسبة السريعة — هكذا تقيس السيولة لدى شركة ما في 30 ثانية"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:ingress",
+   "en": "The quick ratio = (current assets − inventory) divided by short-term liabilities. The formula takes into account that inventory does not become cash overnight. Here are the worked example, the interpretation per industry and the limits of the rule of thumb > 1.",
+   "ar": "النسبة السريعة = (الأصول المتداولة − المخزون) مقسومةً على الالتزامات قصيرة الأجل. تأخذ الصيغة في الحسبان أن المخزون لا يتحول إلى النقد بين ليلة وضحاها. هنا المثال المحسوب، والتفسير لكل قطاع، وحدود القاعدة التقريبية > 1."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p1",
+   "en": "The quick ratio is calculated as current assets minus inventory, divided by short-term liabilities. A company with SEK 200 million in accounts receivable and liquid funds, SEK 50 million in inventory and SEK 150 million in short-term liabilities has a quick ratio of (200 − 50) ÷ 150 = 1,0: without selling anything from inventory, the company can pay all liabilities maturing within the next year. The rule of thumb says above 1,0 — but as usual the real interpretation is the context of the industry and the balance sheet.",
+   "ar": "تُحسب النسبة السريعة كالأصول المتداولة مطروحًا منها المخزون، مقسومةً على الالتزامات قصيرة الأجل. شركة لديها 200 مليون كرونة من الذمم المدينة والأصول السائلة، و50 مليون كرونة من المخزون، و150 مليون كرونة من الالتزامات قصيرة الأجل، تكون نسبتها السريعة (200 − 50) ÷ 150 = 1,0: فدون بيع أي شيء من المخزون تستطيع الشركة سداد جميع الالتزامات المستحقة خلال السنة القادمة. القاعدة التقريبية تقول فوق 1,0 — لكن كالعادة، التفسير الحقيقي هو سياق القطاع والميزانية العمومية."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p2",
+   "en": "The financial ratio is the pulse of the balance sheet: it measures short-term payment capacity — not profitability, not valuation. It is the first check in any crisis analysis, because liquidity is what runs out while everything else is still catching up.",
+   "ar": "النسبة المالية هي نبض الميزانية العمومية: تقيس القدرة على السداد قصيرة الأجل — لا الربحية ولا التقييم. إنها الفحص الأول في أي تحليل أزمة، لأن السيولة هي ما ينفد بينما لا يزال كل شيء آخر يلهث للّحاق."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p3",
+   "en": "## The formula and why inventory is subtracted",
+   "ar": "## الصيغة ولماذا يُطرح المخزون"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p4",
+   "en": "**Quick ratio = (Current assets − Inventory) ÷ Short-term liabilities**",
+   "ar": "**النسبة السريعة = (الأصول المتداولة − المخزون) ÷ الالتزامات قصيرة الأجل**"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p5",
+   "en": "Current assets are accounts receivable, inventory and liquid funds. Short-term liabilities are accounts payable, tax liabilities, accrued costs and salary advances — everything falling due within twelve months.",
+   "ar": "الأصول المتداولة هي الذمم المدينة والمخزون والأصول السائلة. أما الالتزامات قصيرة الأجل فهي الذمم الدائنة والديون الضريبية والتكاليف المستحقة وسلف الرواتب — كل ما يستحق خلال اثني عشر شهرًا."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p6",
+   "en": "Why minus inventory? Receivables can confidently be tied to invoices falling due within 30–90 days. Liquid funds are already a means of payment. But inventory must first be sold — at an uncertain time, at an uncertain price — before it turns into cash. The quick ratio thus counts what can become money *quickly*, hence the name. (Its cousin, the cash ratio, goes further and also subtracts accounts receivable — only liquid funds count.)",
+   "ar": "لماذا يُطرح المخزون؟ يمكن ربط الذمم المدينة بثقة بفواتير تستحق خلال 30–90 يومًا. والأصول السائلة هي أصلًا وسيلة دفع. أما المخزون فيجب بيعه أولًا — في وقت غير مؤكد وبسعر غير مؤكد — قبل أن يتحول إلى النقد. إذن تحسب النسبة السريعة ما يمكن أن يصبح مالًا *بسرعة*، ومن هنا جاء الاسم. (النسبة النقدية، قريبتها، تذهب أبعد وتطرح الذمم المدينة أيضًا — لا تُحتسب إلا الأصول السائلة.)"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p7",
+   "en": "## The worked example: two retailers",
+   "ar": "## المثال المحسوب: بائعا تجزئة"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p8",
+   "en": "- **Company A**: accounts receivable SEK 80m, liquid funds SEK 40m, inventory SEK 60m, short-term liabilities SEK 150m. Quick ratio = (80 + 40 − 60) ÷ 150 = **0,4**. Conventional reading: strained. But if inventory turns over eight times a year — every fourteenth day — the \"slow\" asset is in practice faster than the receivables.\n- **Company B**: accounts receivable SEK 30m, liquid funds SEK 20m, inventory SEK 10m, same liabilities SEK 150m. Quick ratio = (30 + 20 − 10) ÷ 150 = **0,27**. Low — but a cash-paying food company with daily cash flow intake rarely lives dangerously on this number.",
+   "ar": "- **الشركة A**: ذمم مدينة 80 مليون كرونة، أصول سائلة 40 مليون كرونة، مخزون 60 مليون كرونة، والالتزامات قصيرة الأجل 150 مليون كرونة. النسبة السريعة = (80 + 40 − 60) ÷ 150 = **0,4**. القراءة التقليدية: متوترة. لكن إذا دار المخزون ثماني مرات في السنة — كل أربعة عشر يومًا — فإن الأصل \"البطيء\" أسرع عمليًا من الذمم المدينة.\n- **الشركة B**: ذمم مدينة 30 مليون كرونة، أصول سائلة 20 مليون كرونة، مخزون 10 مليون كرونة، والالتزامات نفسها 150 مليون كرونة. النسبة السريعة = (30 + 20 − 10) ÷ 150 = **0,27**. منخفضة — لكن شركة أغذية تتقاضى نقدًا ويدخل إليها تدفق نقدي يوميًا نادرًا ما تعيش على حافة الخطر بهذا الرقم."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p9",
+   "en": "The moral: the quick ratio mechanically punishes inventory-dependent business models. That makes it an excellent starting point for questions — not a finished answer.",
+   "ar": "الخلاصة: تعاقب النسبة السريعة ميكانيكيًا نماذج الأعمال المعتمدة على المخزون. وهذا يجعلها نقطة انطلاق ممتازة للأسئلة — لا جوابًا جاهزًا."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p10",
+   "en": "## The interpretation per industry",
+   "ar": "## التفسير حسب القطاع"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p11",
+   "en": "- **Retail and food**: low quick ratios (0,3–0,8) are normal — fast inventory turnover and cash sales make the balance sheet \"faster\" than the financial ratio suggests.\n- **Manufacturing and construction**: inventories are heavy and project-bound; here 0,8–1,2 is a common corridor and below 0,5 raises questions.\n- **SaaS and services**: almost no inventory, subscriptions billed in advance — quick ratios above 1,5 are common and part of the business model's financing (negative working capital is an advantage, not a source of risk).\n- **Banks and insurance companies**: the financial ratio is meaningless — their liabilities are depositors and reserves, not accounts payable. Use capital adequacy measures instead.",
+   "ar": "- **تجارة التجزئة والأغذية**: النسب السريعة المنخفضة (0,3–0,8) طبيعية — فدوران المخزون السريع والبيع النقدي يجعلان الميزانية العمومية \"أسرع\" مما توحي به النسبة المالية.\n- **التصنيع والبناء**: المخزونات ثقيلة ومرتبطة بالمشاريع؛ هنا 0,8–1,2 ممر معتاد وما دون 0,5 يثير الأسئلة.\n- **SaaS والخدمات**: لا مخزون تقريبًا، واشتراكات تُفوتر مقدمًا — النسب السريعة فوق 1,5 شائعة وهي جزء من تمويل نموذج العمل (رأس المال العامل السالب ميزة، لا مصدرًا من مصادر المخاطر).\n- **البنوك وشركات التأمين**: النسبة المالية بلا معنى — فالالتزامات لديها هي المودعون والاحتياطيات، لا الذمم الدائنة. استخدم مقاييس كفاية رأس المال بدلًا منها."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p12",
+   "en": "## Three checks before you trust the number",
+   "ar": "## ثلاثة فحوص قبل أن تثق بالرقم"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p13",
+   "en": "1. **Seasonality**: the balance-sheet date is a single second of the year. A company with Christmas sales can show a completely different quick ratio on 31 December than on 31 January. Read the quarterly report as it is published, not only the annual report.\n2. **Receivables quality**: an accounts receivable that is 120 days old is closer to a loss than to an asset. The note on the age distribution of accounts receivable is the quick ratio's reality anchor.\n3. **Currency and interest**: short-term debt at a floating interest rate becomes more expensive in a rising rate cycle — the liquidity pressure can grow even while the ratio stands still.",
+   "ar": "1. **الموسمية**: تاريخ الميزانية هو ثانية واحدة من السنة. شركة ذات مبيعات عيد الميلاد قد تُظهر نسبة سريعة مختلفة كليًا في 31 ديسمبر عنها في 31 يناير. اقرأ التقرير الربع سنوي فور صدوره، لا التقرير السنوي وحده.\n2. **جودة الذمم المدينة**: الذمم المدينة التي يبلغ عمرها 120 يومًا أقرب إلى خسارة منها إلى أصل. إيضاح التوزيع العمري للذمم المدينة هو مرساة الواقع للنسبة السريعة.\n3. **العملة وسعر الفائدة**: الدين قصير الأجل بسعر فائدة متغير يصبح أغلى في دورة ارتفاع — وقد يشتد ضغط السيولة حتى عندما تقف النسبة ساكنة."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p14",
+   "en": "## The quick ratio in the bigger picture",
+   "ar": "## النسبة السريعة في الصورة الأكبر"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p15",
+   "en": "Liquidity is one of four balance-sheet voices in [the AKM1 stability row](/laroplan): V10 (debt-to-equity ratio) captures the long-term structure, V11 (liquidity) the short-term payment capacity, and V19 (capital burn) the speed of the cash outflow. A company can be solidly financed and still collapse on cash liquidity — which is why the dimensions are measured separately. In a 15-minute review of the balance sheet, the quick ratio is minutes 9–12: after the equity ratio and net debt, before goodwill and warning signs.",
+   "ar": "السيولة أحد أصوات الميزانية العمومية الأربعة في [صف الاستقرار AKM1](/laroplan): يلتقط V10 (نسبة الدين إلى حقوق الملكية) الهيكلَ طويل الأجل، ويلتقط V11 (السيولة) القدرةَ على السداد قصيرة الأجل، ويلتقط V19 (احتراق رأس المال) سرعةَ التدفق النقدي الخارج. قد تكون الشركة ممولة بصلابة ومع ذلك تنهار بسبب السيولة النقدية — لهذا تُقاس الأبعاد كل على حدة. في مراجعة للميزانية العمومية مدتها 15 دقيقة، تأتي النسبة السريعة في الدقائق 9–12: بعد نسبة الملاءة وصافي الدين، وقبل الشهرة وإشارات التحذير."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p16",
+   "en": "## The exercise: two numbers per quarter",
+   "ar": "## التمرين: رقمان كل ربع سنة"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p17",
+   "en": "1. Read current assets, inventory and short-term liabilities from the latest balance sheet — preferably four quarters in a row.\n2. Calculate the quick ratio per quarter. Is the trend falling?\n3. Compare with industry peers in [the calculator](/kalkylator) — the V11 cell positions the company against the group's median and shows the distance.",
+   "ar": "1. اقرأ الأصول المتداولة والمخزون والالتزامات قصيرة الأجل من الميزانية العمومية الأحدث — ويُفضل أربعة أرباع متتالية.\n2. احسب النسبة السريعة كل ربع. هل الاتجاه هابط؟\n3. قارن بنظراء القطاع في [الحاسبة](/kalkylator) — خلية V11 تضع الشركة مقابل وسيط المجموعة وتُظهر المسافة."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p18",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p19",
+   "en": "- The [V11 course](/kurser/v11-likviditet) deepens the liquidity hierarchy: cash ratio, quick ratio, current ratio — and when each measure lies.\n- Combine it with [the debt-to-equity ratio guide](/blogg/skuldsattningsgrad-vilken-niva-ar-farlig): structure and cash are two sides of the same balance sheet.\n- See the whole balance-sheet build in [the portfolio builder](/min-portfolj) — where V10, V11 and V19 speak together.",
+   "ar": "- تعمّق [الدورة V11](/kurser/v11-likviditet) في تراتب السيولة: النسبة النقدية، والنسبة السريعة، ونسبة الميزانية — ومتى يكذب كل مقياس.\n- ادمجها مع [دليل نسبة الدين إلى حقوق الملكية](/blogg/skuldsattningsgrad-vilken-niva-ar-farlig): فالهيكل والنقد وجهان لنفس الميزانية العمومية.\n- شاهد تشكيل الميزانية كاملًا في [منشئ المحفظة](/min-portfolj) — حيث تتحدث V10 وV11 وV19 معًا."
+  },
+  {
+   "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p20",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:titel",
+   "en": "What is EV/EBITDA — and how do you calculate it? The formula step by step",
+   "ar": "ما هو EV/EBITDA — وكيف يُحسب؟ الصيغة خطوة بخطوة"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:ingress",
+   "en": "EV/EBITDA values the entire company — including its debt — and thereby makes companies with different capital structures comparable. Here are the formula, a fully worked example from market data and the two pitfalls.",
+   "ar": "يقوّم EV/EBITDA الشركة بأكملها — الدينَ أيضًا — وبذلك يجعل الشركات ذات هياكل رأس المال المختلفة قابلة للمقارنة. هنا الصيغة، ومثال محسوب بالكامل من بيانات السوق، والفخّان."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p1",
+   "en": "EV/EBITDA values the whole company — not just the stocks. Work out enterprise value (EV) as market capitalization plus net debt, divide by operating profit before depreciation (EBITDA), and you have a valuation multiple that makes companies with different debt loads comparable. A company trading at an EV of SEK 3 billion with EBITDA of SEK 300 million stands at 10× EV/EBITDA.",
+   "ar": "يقوّم EV/EBITDA الشركة كاملة — لا الأسهم فقط. احسب قيمة المؤسسة (EV) كالقيمة السوقية زائد صافي الدين، ثم اقسم على الربح التشغيلي قبل الإهلاكات (EBITDA)، فتحصل على مضاعف التقييم الذي يجعل الشركات ذات مستويات المديونية المختلفة قابلة للمقارنة. شركة تتداول عند EV قدره 3 مليارات كرونة ومعها EBITDA قدرها 300 مليون كرونة تقف عند 10× EV/EBITDA."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p2",
+   "en": "Why not just P/E? Well — because P/E compares price with earnings after interest and depreciation, which punishes highly leveraged companies and rewards debt-free ones, regardless of how the business is doing. EV/EBITDA lifts the comparison one level up, to the operation itself. Here is how to calculate it, step by step.",
+   "ar": "لماذا لا الاكتفاء بـ P/E؟ لأن P/E يقارن السعر بالربح بعد الفوائد والإهلاكات، فيعاقب الشركات عالية المديونية ويكافئ الخالية من الدين، بغض النظر عن حالة النشاط. يرفع EV/EBITDA المقارنة إلى المستوى الأعلى، إلى النشاط التشغيلي نفسه. إليك كيفية الحساب، خطوة بخطوة."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p3",
+   "en": "## Step 1: Enterprise Value — what the whole company costs",
+   "ar": "## الخطوة 1: القيمة المؤسسية — كم تتكلف الشركة كاملة"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p4",
+   "en": "**EV = Market capitalization + Net debt (+ minority interests)**",
+   "ar": "**EV = القيمة السوقية + صافي الدين (+ حصص الأقلية)**"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p5",
+   "en": "- **Market capitalization** = number of stocks × share price. Use every share series (A, B, C) and the fully diluted count if there are convertibles.\n- **Net debt** = interest-bearing debt − liquid funds. These are the liabilities a buyer of the whole company takes over, minus the cash they pocket immediately.\n- If the group has **minority interests**, they are added — they logically belong to the enterprise's value, but not to the shareholders.",
+   "ar": "- **القيمة السوقية** = عدد الأسهم × سعر السهم. استخدم جميع فئات الأسهم (A, B, C) والعدد المخفف بالكامل إذا وُجدت سندات قابلة للتحويل.\n- **صافي الدين** = الديون بفوائد − الأصول السائلة. هذه هي الالتزامات التي يتحملها مشتري الشركة كاملة، مطروحًا منها النقد الذي يقتطعه فورًا.\n- إذا كان لدى المجموعة **حصص أقلية** تُضاف — فهي منطقيًا جزء من قيمة المؤسسة لا من نصيب المساهمين."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p6",
+   "en": "Think of EV as the price of a house: you pay the price of the house (market capitalization) and take over the mortgage (the liabilities), but you also get to see what is sitting in the bank account (liquid funds).",
+   "ar": "فكّر في EV كأنه سعر منزل: تدفع ثمن المنزل (القيمة السوقية) وتتولى القرض العقاري (الالتزامات)، لكنك تعرف أيضًا ما يرقد في الحساب المصرفي (الأصول السائلة)."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p7",
+   "en": "## Step 2: EBITDA — earnings before the costs of the debt",
+   "ar": "## الخطوة 2: EBITDA — النتيجة قبل التكاليف المرتبطة بالدين"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p8",
+   "en": "**EBITDA = Operating profit (EBIT) + Depreciation and impairments**",
+   "ar": "**EBITDA = الربح التشغيلي (EBIT) + الإهلاكات وخسائر انخفاض القيمة**"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p9",
+   "en": "All four letters: Earnings Before Interest, Taxes, Depreciation and Amortization. The figures are found in the income statement and the notes to the accounts — operating profit is the intermediate line after the operation's revenue and costs, and depreciation is specified in the notes or the cash flow statement.",
+   "ar": "الحروف الأربعة: Earnings Before Interest, Taxes, Depreciation and Amortization. توجد الأرقام في قائمة الدخل والإيضاحات المتممة للقوائم المالية — فالربح التشغيلي هو السطر الوسيط بعد الإيرادات والتكاليف الخاصة بالنشاط، والإهلاكات مفصّلة في الإيضاحات المتممة للقوائم المالية أو في قائمة التدفقات النقدية."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p10",
+   "en": "The point of adding depreciation back? It is an accounting reflection of historical investments, not a cash expense this year — and different companies depreciate with different aggression. But that is also the valuation multiple's greatest weakness, which we will return to.",
+   "ar": "ما الحكمة من إعادة إضافة الإهلاكات؟ إنها انعكاس محاسبي لاستثمارات تاريخية، لا نفقة نقدية هذا العام — والشركات المختلفة تُهلك بدرجات مختلفة من الحزم. لكن هذا أيضًا أكبر نقطة ضعف في مضاعف التقييم، وسنعود إليه."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p11",
+   "en": "## Step 3: The worked example",
+   "ar": "## الخطوة 3: المثال المحسوب"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p12",
+   "en": "A listed company with 100 million stocks at SEK 20:",
+   "ar": "شركة مدرجة لديها 100 مليون من الأسهم بسعر 20 كرونة:"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p13",
+   "en": "- Market capitalization: 100 × 20 = **SEK 2 000m**\n- Interest-bearing debt SEK 600m, liquid funds SEK 200m → net debt **SEK 400m** (the liabilities taken over, minus cash)\n- EV = 2 000 + 400 = **SEK 2 400m**\n- Operating profit SEK 260m, depreciation SEK 140m → EBITDA = **SEK 400m**\n- **EV/EBITDA = 2 400 ÷ 400 = 6,0×**",
+   "ar": "- القيمة السوقية: 100 × 20 = **2 000 مليون كرونة**\n- الديون بفوائد 600 مليون كرونة، أصول سائلة 200 مليون كرونة → صافي دين **400 مليون كرونة** (الالتزامات المتحملة مطروحًا منها النقد)\n- EV = 2 000 + 400 = **2 400 مليون كرونة**\n- الربح التشغيلي 260 مليون كرونة، الإهلاكات 140 مليون كرونة → EBITDA = **400 مليون كرونة**\n- **EV/EBITDA = 2 400 ÷ 400 = 6,0×**"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p14",
+   "en": "Note what happens to P/E in the same example: a highly leveraged company can have a temptingly low P/E (the interest costs eat the profit, but that is invisible in EV/EBITDA) — and vice versa. The multiple you choose determines the question you are asking.",
+   "ar": "لاحظ ما يحدث لـ P/E في المثال نفسه: شركة عالية المديونية قد يكون لديها P/E منخفض مغوٍ (تكاليف الفوائد تلتهم الربح لكن ذلك لا يظهر في EV/EBITDA) — والعكس صحيح. المضاعف الذي تختاره يحدد السؤال الذي تطرحه."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p15",
+   "en": "## What the multiple actually compares",
+   "ar": "## ما الذي يقارنه المضاعف فعليًا"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p16",
+   "en": "EV/EBITDA answers: how many years of operating earnings does the whole company cost? It ignores capital structure (good for comparison), tax differences (good across countries) and depreciation policy (good between accounting traditions). That is why it is the standard in acquisition analyses and industry comparisons — sell-side banks almost always calculate in EV/EBITDA.",
+   "ar": "يجيب EV/EBITDA: كم سنة من النتائج التشغيلية تكلف الشركة كاملة؟ يتجاهل هيكل رأس المال (جيد للمقارنة)، والفروق الضريبية (جيد عبر البلدان)، وسياسة الإهلاك (جيد بين التقاليد المحاسبية). لهذا هو المعيار في تحليلات الاستحواذ والمقارنات القطاعية — وبنوك جانب البيع تحسب دائمًا تقريبًا بـ EV/EBITDA."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p17",
+   "en": "But that ignoring has a price:",
+   "ar": "لكن هذا التجاهل له ثمن:"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p18",
+   "en": "## Pitfall 1: EBITDA is not cash flow",
+   "ar": "## الفخ 1: EBITDA ليس التدفق النقدي"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p19",
+   "en": "Depreciation is not a cash expense this year — but investments are, and depreciation is just investments smeared over time. A company that must reinvest all of EBITDA into machinery and development does not have the free cash the valuation multiple implies. The check: compare EBITDA with cash flow from ongoing operations minus investments (free cash flow). The gap between EBITDA and FCF is the true face of capital intensity.",
+   "ar": "الإهلاكات ليست نفقة نقدية هذا العام — لكن الاستثمارات كذلك، والإهلاكات ليست سوى استثمارات موزعة على الزمن. الشركة التي يجب أن تعيد استثمار كل EBITDA في الآلات والتطوير لا تملك النقد الحر الذي يوحي به مضاعف التقييم. الفحص: قارن EBITDA بالتدفق النقدي من الأنشطة الجارية مطروحًا منه الاستثمارات (التدفق النقدي الحر). الفجوة بين EBITDA وFCF هي الوجه الحقيقي لكثافة رأس المال."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p20",
+   "en": "## Pitfall 2: comparisons without an industry",
+   "ar": "## الفخ 2: مقارنات بلا قطاع"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p21",
+   "en": "A 6× valuation multiple is cheap for a rock-steady consulting firm and expensive for a cycle-driven engineering company with heavy investment needs. The multiple is a relative number — it means something only against the company's own industry and history. In [the Curriculum](/laroplan), the V06 course walks through the comparison group systematically: same industry, same business-cycle phase, same ownership situation.",
+   "ar": "مضاعف التقييم عند 6× رخيص لشركة استشارات بالغة الاستقرار، وغالٍ لشركة صناعية تحكمها الدورة وتحتاج استثمارات ثقيلة. المضاعف رقم نسبي — لا يعني شيئًا إلا مقابل قطاع الشركة وتاريخها الخاص. في [المنهج](/laroplan)، تستعرض الدورة V06 مجموعة المقارنة بشكل منهجي: نفس القطاع، ونفس مرحلة الدورة الاقتصادية، ونفس وضع الملكية."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p22",
+   "en": "## The exercise: calculate it yourself in 10 minutes",
+   "ar": "## التمرين: احسب بنفسك في 10 دقائق"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p23",
+   "en": "1. Pick a company and note down: every share series × price, interest-bearing debt (the liabilities behind it), liquid funds — the calculator gathers these as a matter of course.\n2. Read operating profit and depreciation from the latest financial year — sum up EBITDA.\n3. Divide EV by EBITDA. Lay the results for three years side by side: is the multiple rising or falling?\n4. Run the same calculation on two industry peers — [the calculator](/kalkylator) does EV/EBITDA with every step automatically.",
+   "ar": "1. اختر شركة ودوّن: جميع فئات الأسهم × السعر، والديون بفوائد (الالتزامات المرتبطة بها)، والأصول السائلة — وتُلتقط خلال الدورة الحسابية تلقائيًا.\n2. اقرأ الربح التشغيلي والإهلاكات من السنة المالية الأخيرة — واجمع EBITDA.\n3. اقسم EV على EBITDA. ضع نتائج ثلاث سنوات جنبًا إلى جنب: هل مضاعف التقييم صاعد أم هابط؟\n4. أجرِ الحساب نفسه على نظيرين في القطاع — [الحاسبة](/kalkylator) تنفذ EV/EBITDA بجميع الخطوات تلقائيًا."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p24",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p25",
+   "en": "- The [V06 course](/kurser/v06-ev-ebitda) deepens the logic of the valuation multiple: when EV/EBITDA beats P/E and vice versa.\n- Tie it together with the balance-sheet side: [V10 (debt-to-equity ratio)](/kurser/v10-skuldsattningsgrad) and [V19 (capital burn)](/kurser/v19-kapitalforbranning) show the risk behind the net debt inside EV.\n- Gather the whole tool row in [the portfolio builder](/min-portfolj) — a valuation multiple is one instrument, not an orchestra.",
+   "ar": "- تعمّق [الدورة V06](/kurser/v06-ev-ebitda) في منطق مضاعف التقييم: متى يتفوق EV/EBITDA على P/E ومتى يحدث العكس.\n- اربط ذلك بجانب الميزانية العمومية: [V10 (نسبة الدين إلى حقوق الملكية)](/kurser/v10-skuldsattningsgrad) و[V19 (احتراق رأس المال)](/kurser/v19-kapitalforbranning) يكشفان المخاطر الكامنة خلف صافي الدين في EV.\n- اجمع صف الأدوات كاملًا في [منشئ المحفظة](/min-portfolj) — فمضاعف التقييم آلة واحدة، لا أوركسترا."
+  },
+  {
+   "nyckel": "sa-raknar-du-ev-ebitda:p26",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:titel",
+   "en": "Debt-to-equity ratio: which level is dangerous — and when debt is manageable",
+   "ar": "نسبة الدين إلى حقوق الملكية: ما المستوى الخطير — ومتى يكون الدين قابلًا للإدارة"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:ingress",
+   "en": "Debt-to-equity ratio = total liabilities divided by equity. There is no universally dangerous level — the industry, the interest coverage and the maturity of the debt decide. Here are the formula, the example and the three questions that separate manageable debt from dangerous.",
+   "ar": "نسبة الدين إلى حقوق الملكية = إجمالي الالتزامات مقسومًا على حقوق الملكية. لا مستوى خطير عالميًا؛ فالمستوى الحرج يتحدد بالقطاع ودرجة تغطية الفوائد وأجل الدين. هنا الصيغة والمثال والأسئلة الثلاثة التي تفصل بين الدين المُدار والدين الخطير."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p1",
+   "en": "The debt-to-equity ratio is calculated as the company's total liabilities divided by its equity. A company with SEK 600 million in liabilities and SEK 400 million in equity has a debt-to-equity ratio of 1,5 — there is one and a half kronor of borrowed capital for every krona the owners put in. But the question everyone asks — \"which level is dangerous?\" — has no universal answer. The same 1,5 is everyday life for a real estate company and alarming for a consulting firm.",
+   "ar": "تُحسب نسبة الدين إلى حقوق الملكية كإجمالي التزامات الشركة مقسومًا على حقوق الملكية الخاصة بها. شركة لديها 600 مليون كرونة من الالتزامات و400 مليون كرونة من حقوق الملكية تكون نسبتها 1,5 — أي كرون ونصف من رأس المال المقترض مقابل كل كرونة أدخلها المالكون. لكن السؤال الذي يطرحه الجميع — \"ما المستوى الخطير؟\" — لا يحمل إجابة عالمية. فالمستوى 1,5 نفسه أمر اعتيادي لشركة عقارات ومقلق لشركة استشارات."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p2",
+   "en": "What decides whether debt is dangerous is not its size but three other things: what it finances, whether earnings cover the interest with margin, and when it matures. We walk through the formula first and these three questions after.",
+   "ar": "ما يحدد ما إذا كان الدين خطيرًا ليس حجمه بل ثلاثة أمور أخرى: ماذا يموّل، وهل تغطي النتيجة الفائدة بهامش، ومتى يستحق السداد. نستعرض الصيغة أولًا، ثم هذه الأسئلة الثلاثة."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p3",
+   "en": "## The formula — and its mirror image, the equity ratio",
+   "ar": "## الصيغة — وانعكاسها المرآتي، نسبة الملاءة"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p4",
+   "en": "**Debt-to-equity ratio = Total liabilities ÷ Equity**",
+   "ar": "**نسبة الدين إلى حقوق الملكية = إجمالي الالتزامات ÷ حقوق الملكية**"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p5",
+   "en": "**Equity ratio = Equity ÷ Total assets × 100**",
+   "ar": "**نسبة الملاءة = حقوق الملكية ÷ إجمالي الأصول × 100**"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p6",
+   "en": "The two financial ratios describe the same balance sheet from two directions. A debt-to-equity ratio of 1,0 corresponds to a 50 percent equity ratio (half own capital, half borrowed); a debt-to-equity ratio of 3,0 corresponds to a 25 percent equity ratio. Swedish annual reports usually report the equity ratio; international reports more often use debt-to-equity. Convert before you compare.",
+   "ar": "النسبة المالية في كلتا صورتَيها تصف الميزانية العمومية نفسها من جهتين. فنسبة الدين إلى حقوق الملكية البالغة 1,0 تعادل نسبة ملاءة 50 بالمئة (نصف رأس المال ذاتي ونصفه مقترض)؛ والنسبة البالغة 3,0 تعادل نسبة ملاءة 25 بالمئة. تعرض التقارير السنوية السويدية غالبًا نسبة الملاءة؛ أما التقارير الدولية فتستخدم أكثر عبارة debt-to-equity. حوّل قبل أن تقارن."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p7",
+   "en": "A definitional question with big effect: do you count **total** liabilities (including accounts payable, accrued costs, tax liabilities) or only **interest-bearing** debt? The first form is the accounting standard; the second — net debt against equity — says more about financial risk, because only interest-bearing debt costs money and can be called up. Always state which one you use.",
+   "ar": "سؤال تعريفي ذو أثر كبير: هل تحسب **إجمالي** الالتزامات (بما فيه الذمم الدائنة والتكاليف المستحقة والديون الضريبية) أم **الديون بفوائد** وحدها؟ الصيغة الأولى هي المعيار المحاسبي؛ والثانية — صافي الدين مقابل حقوق الملكية — تقول المزيد عن المخاطر المالية، لأن الديون بفوائد وحدها هي ما يكلف المال ويمكن استدعاؤه. حدّد دائمًا أيهما تستخدم."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p8",
+   "en": "## The worked example: three companies, three different truths",
+   "ar": "## المثال المحسوب: ثلاث شركات وثلاث حقائق مختلفة"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p9",
+   "en": "- **The real estate company**: liabilities SEK 7 000m, equity SEK 3 000m → debt-to-equity ratio **2,3**. The liabilities finance buildings that generate rental income; long maturities; a 60 percent loan-to-value ratio is the industry standard.\n- **The engineering company**: liabilities SEK 1 200m, equity SEK 1 500m → **0,8**. The debt covers working capital and machinery; cyclical earnings make the coverage vulnerable in downturns.\n- **The consulting firm**: liabilities SEK 150m, equity SEK 250m → **0,6**. Almost no non-current assets; debt even at this level should raise the question of why a company without heavy assets needs to borrow.",
+   "ar": "- **شركة العقار**: التزامات 7 000 مليون كرونة، حقوق ملكية 3 000 مليون كرونة → نسبة الدين إلى حقوق الملكية **2,3**. الالتزامات تموّل مبانٍ تدر إيرادات إيجار؛ آجال طويلة؛ ونسبة قرض إلى قيمة 60 بالمئة هي معيار القطاع.\n- **شركة الصناعة الهندسية**: التزامات 1 200 مليون كرونة، حقوق ملكية 1 500 مليون كرونة → **0,8**. الدين يغطي رأس المال العامل والآلات؛ والنتيجة الدورية تجعل التغطية هشة في فترات التراجع.\n- **شركة الاستشارات**: التزامات 150 مليون كرونة، حقوق ملكية 250 مليون كرونة → **0,6**. لا تكاد توجد الأصول الثابتة؛ ودين حتى عند هذا المستوى ينبغي أن يثير سؤال لماذا تحتاج شركة بلا أصول ثقيلة إلى الاقتراض."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p10",
+   "en": "Three numbers, none of them self-explanatory. The real estate company's 2,3 can be the most sustainable of the three — if the interest coverage holds.",
+   "ar": "ثلاثة أرقام، لا واحد منها بديهي. قد تكون نسبة 2,3 لدى شركة العقار الأكثر استدامة بين الثلاث — إذا صمدت تغطية الفوائد."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p11",
+   "en": "## Question 1: Does earnings cover the interest — with margin?",
+   "ar": "## السؤال 1: هل تغطي النتيجة الفائدة — بهامش؟"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p12",
+   "en": "**Interest coverage ratio = Operating profit (EBIT) ÷ Interest costs**",
+   "ar": "**درجة تغطية الفوائد = الربح التشغيلي (EBIT) ÷ تكاليف الفوائد**"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p13",
+   "en": "This is the most important check. An interest coverage ratio of 8 means operating profit can fall to one-eighth before the interest becomes a problem. At 2 the margin is thin: a normal dip in the business cycle is enough for the company to end up in negotiations with the banks. Below 1 the company pays the interest with borrowed money or cash — a situation that is time-limited by definition.",
+   "ar": "هذا هو الفحص الأهم. درجة تغطية الفوائد البالغة 8 تعني أن الربح التشغيلي يمكن أن يهبط إلى الثمن قبل أن تصبح الفائدة مشكلة. عند 2 يصبح الهامش رقيقًا: تراجع اعتيادي في الدورة الاقتصادية يكفي لأن تجد الشركة نفسها في مفاوضات مع البنوك. وتحت 1 تدفع الشركة الفائدة بأموال مقترضة أو من النقد — وهي وضعية محدودة زمنيًا بحكم التعريف."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p14",
+   "en": "Complement it with **Net debt ÷ EBITDA**: how many years of operating profit before depreciation are needed to pay back the debt. Levels around 1–2 are low for most industries, 3–4 is markedly leveraged, and above 5 puts the refinancing question front and center. Again: the industry sets the scale.",
+   "ar": "استكمله بـ **صافي الدين ÷ EBITDA**: كم سنة من الربح التشغيلي قبل الإهلاكات تلزم لسداد الدين. المستوى حول 1–2 منخفض لمعظم القطاعات، و3–4 مديونية واضحة، وما فوق 5 يضع سؤال إعادة التمويل في المقدمة. ومرة أخرى: القطاع هو الذي يضع المقياس."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p15",
+   "en": "## Question 2: What does the debt finance?",
+   "ar": "## السؤال 2: ماذا يموّل الدين؟"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p16",
+   "en": "Debt that finances assets with their own cash flows — real estate, rental machinery, acquired companies with stable revenue — is structurally different from debt that covers operating losses. The check: compare the debt increase with the investments in the cash flow statement. If debt grows while investments stand still, it is financing something else — often share buybacks, a dividend or negative cash flow from operations. Here the V10 course connects directly to [V19 (capital burn)](/kurser/v19-kapitalforbranning): a company that burns cash while increasing its debt has two alarm bells ringing at once.",
+   "ar": "الدين الذي يموّل الأصول ذات التدفقات النقدية الخاصة — عقارات، وآلات تأجير، وشركات مستحوذ عليها ذات الإيرادات المستقرة — يختلف هيكليًا عن الدين الذي يغطي خسائر التشغيل. الفحص: قارن زيادة الدين بالاستثمارات في قائمة التدفقات النقدية. إذا نما الدين بينما توقفت الاستثمارات فهو يموّل شيئًا آخر — غالبًا إعادة شراء الأسهم أو التوزيعات أو التدفق النقدي السالب من العمليات. هنا تربط الدورة V10 مباشرة بـ [V19 (احتراق رأس المال)](/kurser/v19-kapitalforbranning): الشركة التي تحرق النقد وتزيد دينها في آن واحد لها جرّسان يدقان معًا."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p17",
+   "en": "## Question 3: When does the debt mature?",
+   "ar": "## السؤال 3: متى يستحق الدين للسداد؟"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p18",
+   "en": "A debt of SEK 5 billion maturing in seven years at a fixed interest rate is a different thing from the same debt having to be refinanced next quarter at a floating interest rate. The note on interest-bearing debt (the liabilities that accrue interest) reports the maturity structure — maturities within one year, one to five years, over five years. Concentrated near-term maturities are a source of risk regardless of the debt-to-equity ratio; that was exactly the mechanism that put pressure on several Swedish real estate companies when interest rates rose in 2022–2023.",
+   "ar": "دين قدره 5 مليارات كرونة يستحق بعد سبع سنوات بسعر الفائدة الثابت أمر مختلف عن الدين نفسه إذا وجب إعادة تمويله الربع القادم بسعر الفائدة المتغير. وفي الإيضاح الخاص بالالتزامات تُعرض الديون بفوائد بهيكل آجالها — الاستحقاق خلال سنة، ومن سنة إلى خمس سنوات، وفوق خمس سنوات. الاستحقاقات المتركزة في الأجل القريب مصدر من مصادر المخاطر بغض النظر عن نسبة الدين إلى حقوق الملكية؛ وهذه بالضبط الآلية التي ضغطت على عدة شركات عقارية سويدية عندما ارتفعت أسعار الفائدة في 2022–2023."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p19",
+   "en": "## The warning signs — the checklist",
+   "ar": "## إشارات التحذير — قائمة التحقق"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p20",
+   "en": "- A debt-to-equity ratio rising three years in a row without a corresponding increase in assets.\n- An interest coverage ratio below 3 in an industry with cyclical earnings.\n- Over 30 percent of interest-bearing debt maturing within 12 months.\n- Covenants (loan terms) mentioned in the notes to the accounts with wording about \"renegotiation\" or \"waiver\".\n- Net debt/EBITDA rising while the EBITDA margin falls — deterioration on two fronts.",
+   "ar": "- نسبة الدين إلى حقوق الملكية ترتفع ثلاث سنوات متتالية دون زيادة مقابلة في الأصول.\n- درجة تغطية الفوائد تحت 3 في قطاع ذي نتائج دورية.\n- أكثر من 30 بالمئة من الديون بفوائد تستحق خلال 12 شهرًا.\n- كوفينانت (شروط القرض) مذكورة في الإيضاحات المتممة للقوائم المالية بصيغ مثل \"إعادة التفاوض\" أو \"waiver\".\n- صافي الدين/EBITDA يرتفع بينما يهبط هامش EBITDA — تدهور في اتجاهين."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p21",
+   "en": "## The exercise: three numbers in 10 minutes",
+   "ar": "## التمرين: ثلاثة أرقام في 10 دقائق"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p22",
+   "en": "1. Open the balance sheet: count both total liabilities and interest-bearing debt against equity.\n2. From the income statement: operating profit divided by interest costs.\n3. From the note on liabilities: how large a share matures within one year?\n4. Position the company against its industry in [the calculator](/kalkylator) — the V10 cell shows the distance to the industry median.",
+   "ar": "1. افتح الميزانية العمومية: احسب كلًّا من إجمالي الالتزامات والديون بفوائد مقابل حقوق الملكية.\n2. من قائمة الدخل: الربح التشغيلي مقسومًا على تكاليف الفوائد.\n3. من إيضاح الالتزامات: أيّ حصة تستحق خلال سنة؟\n4. ضع الشركة مقابل قطاعها في [الحاسبة](/kalkylator) — خلية V10 تُظهر المسافة إلى وسيط القطاع."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p23",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p24",
+   "en": "- The [V10 course](/kurser/v10-skuldsattningsgrad) walks through the industry logic of debt with Swedish examples — real estate, engineering, banking, software.\n- Read it together with [V11 (liquidity)](/kurser/v11-likviditet) — short-term payment capacity is the debt's second dimension.\n- See how the stability row (V10, V11, V19) interacts in [the Curriculum](/laroplan) and in your own [portfolio builder](/min-portfolj).",
+   "ar": "- تستعرض [الدورة V10](/kurser/v10-skuldsattningsgrad) منطق المديونية عبر القطاعات بأمثلة سويدية — عقار، وصناعة، وبنوك، وبرمجيات.\n- اقرأها مع [V11 (السيولة)](/kurser/v11-likviditet) — فالقدرة على السداد قصيرة الأجل هي البعد الثاني للدين.\n- شاهد كيف يتفاعل صف الاستقرار (V10 وV11 وV19) في [المنهج](/laroplan) وفي [منشئ المحفظة](/min-portfolj) الخاص بك."
+  },
+  {
+   "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p25",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  }
+ ]
+}

@@ -7974,3 +7974,262 @@ ar 1 302 (från 1 620 i morse = +1 052) · UI 295/295 · kursblock
 788+777.
 KÖ: dagliga agentpaket (3-4 agenter/dag × ~60 block) + motorbatch =
 hela registret på ~3-4 veckor UTAN DeepL — med DeepL pro: dagar.
+
+── VÅG 65 styrelse: STYRELSE-NASTA-NIVA — lägesanalys + nästa nivå-beslut (2026-09-04) ──
+Kunddirektiv: "Fortsätt fråga ai styrelse med max agenter kapacitet parallellt."
+Leverans: data/forskning/STYRELSE-NASTA-NIVA.md (216 rader, två ronder).
+
+ROND 1 (LÄGE): LEVERERAT — UI 100 % + V01-V10 komplett (100 p/0 nekade),
+AKM3 steg 1-6 alla byggda (svit 105/0/0), B2B-cockpit MVP (G1: 5 rutter,
+tenant-kontrakt, mal-låst, 0 nya tabeller, 0 personuppgifter), marknad våg
+1-3 (OG/varumärke-kod/del-rad), optimering våg 1 (kraschfixar+requireAdmin+
+prevHash-fallback, ⌘K −99,6 %, korstabell −82 %, tsc 44→34), 20 forskar-
+rapporter + 3 beslut. ÖPPET — översättning 2 196/139 164 objekt = 1,6 %
+(kursblock ~1,1 %, blogg 0 %; kundens "~4 %" gäller annan nämnare — exakta
+tal redovisade), AKM3 steg 7-9 datavillkorade (Φ: n_eff ≥ 20 episoder ≈
+8-12 kvartal), G2-juridiken saknas (= enda blockeraren till första kunden),
+16/20 guider + FAQPage + språkväljare-orphan, kall TTFB + lazy-load.
+Kundblockerare tabell: K-SÄK:1-2 (CRON_SECRET + SQL-index, minuter),
+K-Ö:1 (DeepL valfri), K-B2B:1-3/5 (jurist/pris/moms/underbiträde = G2),
+K-B2B:6 (pilot-DPA = G3), m10 J1-J2 (belöning).
+
+ROND 2 (RANKNING av 8): 1) ÖVERSIKTNINGSBLITZEN (a) — kundens eget
+direktiv, v64b-pipelinen kursoberoende, HÖGST parallelliserbar (4-6 ÖA-
+agenter/dag + motorbatch; 2 agenter = +1 052/dag bevisat ⇒ 6 agenter ≈
++2 500-3 000/dag ⇒ registret ~7-8 veckor utan DeepL); 2) G2-JURIKDIK-
+PAKETET (d) — DRAFTAS av agent, juristgranskas av kund ("timmar inte
+veckor"), mal-låsning+referral-spärr har redan maskinella test; 3) ORGANISKA
+KOMBINATET (b+h) — m9-fabrik (kontrolleraText villkoret LANDAT) + pilot
+V07-V09 + FAQPage + llms.txt-frågekarta + SPRÅKVÄLJARE /en|ar (annars syns
+inte blitzens arbete i Google); 4) KALKYLATORREGLAGET r6 (moget NU — kräver
+ej V1/V2, ren pedagogik över steg 3-intervallet); 5) PRESTANDA våg 2;
+6) m10 ENDAST QR-attribuering (belöning väntar J1-J2); 7) B2B-API VILLKORAT
+("när första kunden frågar" — G4, bryter beslut att bygga nu); 8) VÅGMOTOR-
+förbättringar AVSLÅS nu (grind LÅST av design, croner matar Bana B
+automatiskt — omprövning ~2027).
+
+VÅGPLAN 66-68 (8 agenter/våg, max parallellitet): V66 = 4 ÖA (V11-V20 +
+blogg 1 016) + JUR-1 (G2-draft till kunden) + M9-1 (fabrik+pilot) + R6-1
+(reglaget) + MAIN (motorbatch + KUNDKOMMUNIKÉ K-SÄK/K-B2B/DeepL). V67 =
+4 ÖA (KM/TS/PC/RK/PF/SE/SJ/BF) + SEO-1 (språkväljare+FAQPage+llms.txt) +
+INH-1 (4 guider) + M9-2 (granskningskö) + MAIN (G2-montering dolt läge).
+V68 = 3 ÖA (MK/VM/UD+bokpaket) + 2 PERF (TTFB-cache+lazy-load) + INH-2
+(4 guider till ⇒ 12/20) + JUR-2 (policy-biträdesroll el. m10-QR) + MAIN
+(mätning + vågplan 69-71). Prognos: ~9 000-11 000 publicerade objekt
+(8-13 %) efter 3 dagar, G2 på juristbordet, organiska maskinen igång.
+Tre fasta regler: rör ej karna/vagfundament/privata korstabellen/fattade
+beslut; fil-domäner per agent (paket-N.json = noll konflikter);
+kundblockerarna kommuniceras DAG 1. INGET COMMITTAT.
+
+
+## VÅG 65 Ö3: BLOGG TOPP-20 — agentöversättning av de 20 mest värdefulla bloggposterna, importklar (2026-09-04)
+
+UPPDRAG (parallell ÖA-agent i VÅG 65, fil-domän v65o3-*): översätta de 20 mest
+värdefulla bloggposterna komplett (titel+ingress+ALLA stycken) till en+ar.
+
+URVAL (dokumenterat, mot ORGANISK-planens åtgärd #1 "20 frågeguider" + åtgärd #3):
+- 4 nya frågeguider (SEO-PRIORITET, pillar "Grunderna"): vad-ar-roe,
+  vad-ar-ev-ebitda, vad-ar-skuldsattningsgrad,
+  hur-gor-man-en-snabb-fundamental-aktieanalys.
+- 5 analysposter (analys-* 2026-09-04, sajtens djupaste innehåll, döda-länk-
+  åtgärdens ämne): H&M, Industrivärden, Investor, NP3, Truecaller.
+- 11 äldsta värdeguiderna = AKM1-serien V01–V11 (alla publicerade 2026-08-23 =
+  bloggens äldsta datum; kursmotparter V01–V10 redan 100p-översatta i
+  grundpaket v2/v3 ⇒ maximal terminologisk konsistens).
+Totalt 20 poster = 458 nycklar (titel+ingress+p1..pN, konvention "{slug}:titel" |
+"{slug}:ingress" | "{slug}:p{n}" exakt enligt lasBloggKallor/bloggStycken).
+
+LEVERANS (data/oversattning-import/blogg-topp20.json, 458 poster, IMPORTERAD):
+- Professionell finansengelska + modern standardarabiska per ÖA/ÖB-standard:
+  termbankens EXAKTA måltermer, latinska termer kvar (ROE/EBITDA/EV/EBITDA/
+  P/E/P/B/P/S/SaaS/ARR/ROIC/NCAV/NAV/AKM1/AK1A...), tal IDENTISKA strängform
+  (decimal komma "12,2 %", tusentalsgrupp med mellanslag "172 426", punkter i
+  "1.5x/0.5x" där källan har det, U+2212 bevarad, "pre-2017" ger token "-2017",
+  V11→token "11" inte "1"+"1" — extratoken-fällor fångade av kontrollen),
+  rad-för-rad-struktur (markdown ##/**/-/[länk](url)/emoji bevarade, stycke-
+  radantal identiskt), AR: åäö-fria (svenska bolagsnamn avdiakriterade:
+  Industrivarden), bestämda ar-former för termer (المحفظة/الإيرادات/
+  نسبة الدين إلى حقوق الملكية...) eftersom kontrollens includes() kräver
+  kanonformen, lam-assimilation (للنسبة ⊅ النسبة) systematiskt hanterad,
+  "kurs"=aktiekurs-fällan löst med "price course"/"الدورة السعرية".
+- KVALITET: 458/458 poster × 2 språk = 100p i korKontroller (term 40 + siffror
+  25 + struktur 20 + lateral 15) → ALLA AUTOPLUSHERADE. 0 utkast, 0 nekade,
+  0 okända nycklar.
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs blogg-topp20.json →
+  TOTALT 916 poster · 916 publicerade · 0 utkast · 0 nekade · 0 okända
+  nycklar · LÄGE SPARAT (upsert i tabellen oversattningar, 4,5 s). Bloggen är
+  därmed inte längre 0 % översatt — topp-20 (av 42 poster) 100 % på båda språken
+  (916 rader = hela bloggens dagliga kort-kvot ≈ 458 motorobjekt × 2).
+- METOD/VERKTYG (tool-results/, prefix v65o3-): extrahera.mjs (data/blogg →
+  v65o3-paket.json + läsbara dumpar v65o3-kalla-<slug>.txt med radnummer),
+  kontroll.ts (korKontroller per nyckel+språk + --skriv → blogg-topp20.json),
+  termer.ts (termbanksträffar per post — planeringsunderlag), diffa.mjs
+  (per-nyckel tokendiff för sifferlokalisering), bygg-analys.mjs (de 4 sista
+  analysposterna ur den validerade indrustivarden-mallen — memo-metoden).
+- ARBETSFILER: tool-results/v65o3-* (20 del-filer + verktyg). src/ orört.
+  INGET COMMITTAT.
+KVAR (nästa Ö-runda): resterande 22 bloggposter (v12–v20 + pedagogik-/ekosystem-
+posterna) med samma mall — v65o3-verktygen är postoberoenda (peka extrahera-
+listan på nya slugs), termer.ts ger direkt kravlistan per post.
+
+## VÅG 65 Ö4: FLAGGSKEPPENS TITLAR+INTROS+QUIZ — agentöversättning av 5 bokkurser komplett på en+ar (2026-09-04)
+
+UPPDRAG (fortsättning av ÖA/ÖB/Ö1–Ö3-metoden): de 5 FLAGGSKEPPEN (the-
+intelligent-investor, security-analysis, mina-basta-investeringar, zero-to-one,
+blue-ocean-strategy) — deras TITLAR+INTROS+QUIZ komplett till en+ar. Blocken
+(vara klara sedan våg 54); nyckelkonventionen enligt kalla.ts lasKursblock:
+"{slug}:kap{n}:titel", "{slug}:kap{n}:intro", quiz "{slug}:kap{n}:quiz{j}:q|
+a{k}|tips" (j 1-baserat, k 0-baserat). Ratt-index är ALDRIG översättningsbart —
+a{k} publiceras i källordning (alternativordningen bevarad exakt).
+
+LEVERANS (data/oversattning-import/flaggskepp-titlar-quiz.json, 1405 poster,
+IMPORTERAD):
+- Statusdiagnostik via tsx mot lasStatusKarta (v65o4-status.mts): 1780 poster
+  totalt · 375 redan publicerade (mina-basta partiellt från våg 54) · 1405 att
+  göra = 1380 helt saknade + 25 partiella i mina-basta (13 en-saknade/5 ar-
+  saknade/7 bada — partiella levererar ENDAST saknat språk, redan-publicerat
+  rubbas aldrig).
+- Professionell finansengelska + modern standardarabiska per ÖA/ÖB-standard:
+  termbankens EXAKTA bestämda ar-former (المحفظة/الصندوق/الالتزامات/
+  الإيرادات/الإهلاكات/المخصصات/هامش الأمان/الخندق التنافسي...), lam-
+  assimilation systematiskt hanterad (للسند ⊅ السند، للخندق ⊅ الخندق،
+  للمساهمين ⊅ المساهم — alla ل+ال-faller omskrivna med مع/على/في/ب),
+  latinska termer kvar i AR (The Intelligent Investor, Security Analysis,
+  Mr Market, PayPal, Tesla, warrants, net-net, P/E, IPO, AKM1, AK1A, V01-V19,
+  CAC/LTV, S&M, Kelly...), tal IDENTISKA strängform (decimal komma "3,70",
+  "1,5 miljarder", "1966-70", "1973-74", "+71%", "-89%", "5–10" med en-dash,
+  "9 av 10", "0-100%", "50-50", "1924–1929", "1897–1949", decennier som
+  "1920-talets/1930-talet/2000-talets" kräver SIFFRORNA i ar-text ("عقد 1920")
+  — tokenfällor som 0-till-1 (token "-1"!) lösta med "0-إلى-1").
+- KVALITET: 1405 poster · en 1392/1392 + ar 1398/1398 = 100p i korKontroller
+  (term 40 + siffror 25 + struktur 20 + lateral 15) → ALLA AUTOPLUSHERADE.
+  0 utkast, 0 nekade, 0 okända nycklar.
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs flaggskepp-titlar-
+  quiz.json → TOTALT 2790 poster · 2790 publicerade · 0 utkast · 0 nekade ·
+  0 okända nycklar · LÄGE SPARAT (upsert i tabellen oversattningar, 6,1 s).
+  Slutstatus via lasStatusKarta: 1778/1780 poster publicerade på BÅDA språken
+  — TII 418/420, SA 400/400, MB 400/400, Z21 280/280, BOS 280/280. Flaggskeppen
+  är därmed HELT översatta (block + titlar + intros + quiz) på en+ar utom 2 AR-
+  fält (se KÄND GRÄNS).
+- KÄND GRÄNS (dokumenterad i importfilens metadata): the-intelligent-investor:
+  kap15:quiz3:a2 och kap19:quiz1:a3 har källan "Chart" (5 tecken) — termgarantin
+  kräver "الرسم البياني" (13 tecken) → längdförhållande 2,6 > 2,5 ⇒ AR kan
+  MATEMATISKT INTE nå 100p; EN levereras fullt (100p), AR-fältet lämnat tomt
+  istället för att skicka in en 85p-post som blivit NEKAD. Enda återstående
+  åtgärd om dessa önskas: källtextförlängning eller termbank/latinalisering
+  av "chart".
+- METOD/VERKTYG (tool-results/, prefix v65o4-): extrahera.mjs (titel/intro/
+  quiz-nycklar ur deep-courses.json → v65o4-paket.json), status.mts (lasStatusKarta
+  → v65o4-status.json, publicerad/SAKNAS per språk), termer.mts (termbanksträffar
+  per post → kravlista), bygg.mts (täckningskontroll + RIKTIGA korKontroller mot
+  kalla.ts per språk + --skriv → importfilen; vägrar skriva vid täckningsfel).
+  Arbetsfiler: v65o4-kalla-<kurs>.txt (källtextdumpar), v65o4-todo.jsonl,
+  v65o4-{tii,sa,mb,z21,bos}.json (leveransdelar). src/ orört. INGET COMMITTAT.
+KVAR (nästa Ö-runda): v65o4-metoden täcker nu titlar/intros/quiz för ALLA
+kurser — peka extrahera.mjs på nya slugs (KM/TS/PC/RK/PF/SE/SJ/BF/MK/VM/UD +
+övriga bokpaket) samma väg; status.mts håller reda på vad som redan är klart.
+
+## VÅG 65 Ö1: V11–V15 ALLA BLOCK — agentöversättning till en+ar, importklad (2026-09-05)
+
+UPPDRAG (per ÖA/ÖB-mall från våg 64): översätta V11 Likviditet, V12 Intäkts-
+stabilitet, V13 Patent & IP, V14 Varumärke, V15 Nätverkseffekter — ALLA block
+(5 kurser × kap1–6 = 30 poster, varav 5 megakapitel à 452 rader) till en+ar.
+
+LEVERANS (data/oversattning-import/v11-v15.json, 30 poster, IMPORTERAD):
+- Professionell finansengelska + modern standardarabiska enligt ÖA/ÖB-standard:
+  termbankens EXAKTA måltermer per block (bestämda ar-former; lam-assimilation
+  löst med fristående former — «للخندق» innehåller INTE «الخندق», fångad och
+  fixad systematiskt; även «للمخاطر/للمحلل»-fällorna), latinska termer kvar
+  (ROE/EBITDA/P/E/ROIC/ARR/MRR/SaaS/AKM1/AK1TS/XP/CEO/GMV/NPS/CLV/FRAND/SEP),
+  tal IDENTISKA i strängform (decimal komma "0,8", tusentalsgrupp "60 000",
+  U+2212-minus "−", signum-token "-40%"/"-2017"/"top-100", intervall "5-10",
+  Q4/Q1 som tecken — svenska/arabiska ORD-TAL var fällan: «مئة عام»→«100 عام»,
+  «عشر مرات»→«10-bagger», «سنتين»→«2 سنة», «B2B»→token «2» — alla fångade av
+  per-rad-tokendiff), rad-för-rad-struktur (452/452 rader i de fem megarna;
+  23–33 rader i 25 ordinarie kapitel), åäö-sanering i AR (Nära→Nara,
+  Hemköp→Hemkop — vitlistan täcker bara termbanken).
+- KVALITET: 30/30 poster × 2 språk = 100p i korKontroller (term 40 + siffror 25
+  + struktur 20 + lateral 15) → AUTOPLUSHERADE. Poängfördelning: en 100p=30/30,
+  ar 100p=30/30, 0 utkast, 0 nekade, 0 okända nycklar. Kontrollen snurrade
+  iterativt (~10 fixrundor): termbankens trädgångar (lager=sammanhängande
+  «lager av moat» vs termbanken «inventory/المخزون» löst med naturlig
+  serviceinventarie-inskott i EN+AR) dokumenterade och lösta.
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs v11-v15.json →
+  TOTALT 60 poster · 60 publicerade · 0 utkast · 0 nekade · 0 okända nycklar ·
+  LÄGE SPARAT (upsert i tabellen oversattningar, 3,5 s). Grundkurserna är
+  därmed V01–V15 KOMPLETT ÖVERSATTA (V01–V10 våg 64, V11–V15 denna våg).
+- METOD/VERKTYG (tool-results/, prefix v65-): extrahera.mjs (kap.num-
+  medveten källaextraktion → v65-paket.json), memo.mjs (rad-memo ur v64+v64b,
+  ~45–50 % av megaboilerplaten återanvände ÖA/ÖB:s exakta rader), jobb.mjs
+  (utkast med ⟦N⟧-markörer), bygg.mjs (radantals-+placeholder-validering →
+  v65-<kurs>.json), kontroll.ts (korKontroller + --skriv → importfilen),
+  termer.ts (termbankskrav per block), diffa.mjs (blockdiff + per-rad-
+  tokendiff). Källfilerna v65-en/ar-<kurs>-kap<n>.txt är redigeringsgrunden.
+  src/ orört. INGET COMMITTAT.
+KVAR (nästa Ö-runda): V16–V20 + KM/TS/PC/RK/PF/SE/SJ/BF/MK/VM/UD-kurserna
+samma väg — v65-verktygen är kursoberoende (peka extrahera.mjs på nya slugs;
+v65o4-metoden tar titlar/intros/quiz).
+
+## VÅG 65 agent-Ö2: KATALYSATOR- OCH RISKPAKETET — V16–V20 ALLA BLOCK, importklar (2026-09-04)
+
+UPPDRAG (arbetsgång från VÅG 64 agent-ÖA/ÖB, mall v64b-verktygen): översätta
+V16–V20 ALLA kursblock (v16-produktlanseringar, v17-avtal-partnerskap,
+v18-regulatoriska, v19-kapitalforbranning, v20-aterekop-egna-aktier —
+"{slug}:kap{n}:block{i}", kap.num = källregistrets nyckel) till en+ar.
+
+LEVERANS (data/oversattning-import/v16-v20.json, 48 poster, IMPORTERAD):
+- 48 block: v16 kap1–6 (592 rader, megakapitel 457), v17 kap1–6 (597 rader,
+  mega 457), v18 kap1–6 (600 rader, mega 460), v19 kap1–8 (988 rader —
+  8 kapitel! — mega 697), v20 kap1–6 med 22 småblock (58 rader; blocktyper
+  text/insight/definition i samma källregisternycklar).
+- KVALITET: 48/48 poster × 2 språk = 100p i korKontroller (term 40 + siffror
+  25 + struktur 20 + lateral 15) → AUTOPLUSHERADE. Termbankens exakta
+  bestämda ar-former genomgående; lam-assimilationsfällan aktivt hanterad
+  (للتنويع innehåller inte التنويع — fristående bestämd form tillagd i varje
+  drabbat block; även للـ/بالـ-fall som للأسهم), latinska termer kvar
+  (M&A/PDUFA/EBITDA/ROIC/TERP/rNPD…), tal IDENTISKA i strängform: decimal
+  komma (0,85 · 1,25 · 2,55M), tusentalsgrupp med mellanslag (100 000 ·
+  1 250M), U+2212-minus bevarad i v19 (30 st i kap2/3/4/5/8, t.ex. «50 − 30
+  = 20»), intervallhyphen ger tokenpar (5-10 → 5 + -10) medan ord-tal
+  («sex månader», «سنتين») översätts med ord («six months») — per-rad-
+  tokendiff fångade alla avvikelser inkl. sifferord (9-bagger → 9x,
+  «Greenblatts 6 kategorier» → «الست (6 فئات)»), rad-för-rad-struktur.
+- METOD/VERKTYG (tool-results/, prefix v65o2- — agent-Ö1 (V11–V15) äger
+  v65-): extrahera.mjs (källor ur public/deep-courses.json → v65o2-paket.json
+  med kap.num), memo.mjs (rad-memo ur PUBLICERADE grundpaket v2+v3: 1 738/
+  2 835 rader återanvända = 61 % — megaboilerplate + fotrad + skalrad),
+  jobb.mjs (endast saknade rader per block: 1 097 rader nya), bygg.mjs
+  (svarsfiler "<radnr>\t<text>" + memo → v65o2-v*.json med radantals- och
+  placeholder-validering), kontroll.ts (korKontroller + --skriv →
+  v16-v20.json), termer.mts (termbanksträffar per block), diffa.mjs +
+  per-rad-tokendiff (lokalisering av exakta sifferavvikelser), visa.mjs
+  (memoannoterad källvy).
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs v16-v20.json →
+  TOTALT 96 poster · 96 publicerade · 0 utkast · 0 nekade · 0 okända
+  nycklar · LÄGE SPARAT (upsert i tabellen oversattningar, 3,6 s).
+- ARBETSFILER: tool-results/v65o2-* (verktyg, jobb-, svars- och källfiler,
+  memo). src/ orört. INGET COMMITTAT.
+STATUS: därmed är V16–V20 (katalysatorerna + kapitalförbränning + återköp)
+komplett översatta — tillsammans med grundpaketen V01–V10 är 15 av 20
+AKM1-variabelkurser publicerade på båda språken. KVAR: agent-Ö1 levererar
+V11–V15; därefter KM/TS/PC/RK/PF/SE/SJ/BF/MK/VM/UD + blogg med samma mall
+(v65o2-verktygen är kursoberoende — peka extrahera.mjs på nya slugs).
+
+── VÅG 65 KOMPLETT: MAX KAPACITET — 5 agenter parallellt (2026-09-05) ──
+Styrelsen + 4 översättningsagenter SAMTIDIGT (2 790 → 6 652 rader, +3 862
+publicerade på en session — mer än alla tidigare dagar tillsammans):
+(Ö1) V11-V15: 60 rader 100p — GRUNDKURSERNA V01-V20 ÄR NU KOMPLETT
+ÖVERSATTA PÅ BÅDA SPRÅKEN (lärar-kärnan i AKM1!).
+(Ö2) V16-V20: 96 rader 100p (v19 med 8 kapitel + 30 U+2212-minus, v20:s
+22 småblock med blocktyper; 61 % memo-återanvändning av v64-raderna).
+(Ö3) BLOGGENS TOPP-20: 916 rader 100p — 4 SEO-frågeguider + 5 analys-
+poster + V01-V11-serien; BLOGGEN 0 % → TOPP-20 = 100 % (458/458 poster).
+(Ö4) FLAGGSKEPPEN KOMPLETTA: 2 790 rader 100p — ALLA titlar+intros+quiz
+för de 5 mästarverken (1 780 poster; 2 AR-fält medvetet tomma: "Chart"→
+termbanken kräver 13 tecken → längdkontroll omöjlig, dokumenterat).
+(STYRELSE) STYRELSE-NASTA-NIVA.md: vågplan 66-68 (8 agenter/våg):
+översättningsblitz #1, G2-juridikpaketet DRAFTAS (endå blockeraren till
+första B2B-kunden), m9-innehållsfabrik, kalkylatorreglage; B2B-API
+VILLKORAT, vågmotorändringar AVSLÅS (grinden låst enligt beslut).
+STATUS: publicerade en 3 416 + ar 3 236 · kursblock 2 258/2 253 · ui
+295/295 · blogg 458/458 (topp-20) · tsc 34 · svit 105/0/0.

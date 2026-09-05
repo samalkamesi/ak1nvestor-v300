@@ -7433,3 +7433,158 @@ VERIFIERING: tsc 43/0 · svit 105/0/0 · Kvalitetsvakten GRÖN · /pro alla
 5 rutter 200 med riktig data i SSR. GRIND KVAR: G2-juridikpaketet (B2B-
 villkor, DPA-mall, underbiträdeslista) före första kunden; G3 klient-
 registret kräver signerad DPA. Kundkrav K-B2B:1-6 dokumenterade.
+
+## VÅG 62 batch: MÖS-BATCHMOTORN "varenda ord översätts" — byggd + två maximala omgångar körda (2026-09-05)
+
+Kunddirektiv: "varenda ord översätts". Cron-ronden (60 s, 4–80 objekt) rör
+inget vid 141 402 objekt — detta verktyg kör MAXIMALA omgångar lokalt.
+
+(1) VERKTYGET — NY verktyg/kor-oversatt-batch.mjs (importörens mjs→tmp-TS→
+npx-tsx-mönster, ASCII-markörer, tmp-städning alltid; env .env.local/.env med
+värden ALDRIG loggade). (a) källor via kalla.ts listaKallor i prioritet ui →
+kursblock i kursordning → blogg; (b) statuskarta via lager.lasStatusKarta —
+senaste-vinner-dedupe körs INTERNT (mosStatusKartaUrEventRader, ingen
+dubbletterad kod); (c) för varje EJ publicerat objekt (publicerad+aktuell
+kallhash = enda skipregeln — idempotent): motor.oversatt (kedja DeepL→Google→
+MyMemory, termbanks-PRE/POST internt), status per våg-62-brief 100p⇒publicerad
+/ 90–99p OCH <90p⇒utkast (medveten avvikelse från bestamStatus; kontroll-
+rapporten bevarar poängen), skrivning via lasSpara i spolningar om ≤12 rader
+(föregångarrader raderas — 0 dubbletter); källor >MAX_KALLTEXST_LANGD räknas
+ärligt som för-långa utan motoranrop; (d) SLUTVILLKOR kvot-signal | --max-min
+(default 25) | --max-antal | motor-borta (3 konsekutiva vantar-motor);
+vantar-kvot/vantar-motor skrivs ALDRIB som rader (en tom kö-rad skulle kunna
+radera en värdefull utkast-föregångare); (e) rapport per scope_typ/språk med
+publicerade/utkast/vantar-kvot/hoppade-over + MyMemory-ordförbrukning +
+exakt stoppposition ("nästa ej publicerade"). Flaggor: --max-min N, --max-antal
+N, --status (källor + lagerräkning, noll motoranrop). Framstegsrader reläas
+live under körningen.
+
+(2) OMGÅNG 1 (node verktyg/kor-oversatt-batch.mjs --max-min 25): 413 objekt på
+179 s → 354 publicerade + 58 utkast; stopp ORSAK kvot vid ui:nav.nyheter:en
+(källindex 206 av 70 701) — MyMemory 1 554/5 000 ord, 400/400 ANROP (vårt
+per-process-tak band före ord-taket). Motorfördelning: mymemory 401 ·
+termbank-direkt 12. Publicerandegång 86 % (354/412).
+
+(3) OMGÅNG 2 (samma flagga — daglig kadens + idempotensbevis): hoppade över 354
+redan publicerade (0 anrop), omförsökte 58 utkast → 16 konverterade till
+publicerade (28 %), stannade efter 75 objekt på 42 s vid ui:nav.precAnalys:en —
+NU på MyMemory:s EGENA dagskvot-signal ("MYMEMORY WARNING" från tjänsten vid
+blott 75/400 modulanrop + 417 ord): den ärliga degraderingen fungerar också
+mot tjänstens verkliga gräns (totalt idag 475 riktiga anrop / 1 971 ord).
+Slutläge: 1 678 råa rader i system_events (type=oversattning), SENASTE-VINNER
+1 678 unika = NOLL dubbletter; publicerade 1 620 (en 831: 629 kursblock+202 ui
+· ar 789: 621+168) + 58 utkast (en 12, ar 46). Före vågen: 1 250 publicerade.
+UI-fasen: 107/292 nycklar klara på båda språken (214/584 objekt).
+
+(4) VERIFIERING: --status stämmer exakt mot PostgREST-räkning. Speglar (dev
+:3510, egen instans): /en/kurser/zero-to-one renderar lagrets engelska text
+("The three forms of power…" 1 träff) med SVENSK KÄLLA FRÅNVARANDE ("De tre
+maktformerna" 0 träffar) — 97/97 blockenheter publicerade ⇒ komplett ⇒ notis
+korrekt dold; /ar/kurser/the-intelligent-investor: arabisk lager-text renderad
+(2 träffar), svensk källa 0, dir=rtl, 84/84 block kompletta (plock via
+system_events-fallback, Försök 3, eftersom tabellen fortfarande ej skapad).
+OBS ärligt: INGA nya kursblock från mina omgångar — prioritet ui först +
+kvotstoppen höll dem i UI-fasen; spegelbeviset kördes mot lagrets nyaste
+kursrader (våg 54-importerna). Svit orörd: validera-motorer 105 PASS/0 FAIL/
+0 SKIP (motor-kontraktet). tsc EXAKT 43/0 (baslinjen, 0 i mina filer).
+Parallellagents additiva ändringar (lager.lasRad*, admin-rutt/panel) lästa,
+EJ rörda. Rört EJ: motor.ts/kontroller.ts/kalla.ts/kurs-speglar.ts/cron-rutter.
+INGET committat.
+
+(5) TAKT (kvar: 139 782 objekt av 141 402; källtext totalt 12 259 005 tecken ⇒
+24 5 M tecken att översätta): gratis-MyMemory ~428–475 objekt/dag (~370
+netto-publicerade) RÄKNAT som ren genomströmning ≈ 378 dagar — men
+utkast-poolen (växer ~14 % av försöken; omförsök konverterar 28 %) äter
+successivt dagskvoten: utan granskning eller premiummotor stagnerar
+nettotillväxten. DeepL FREE-key: 500 k tecken/mån ⇒ teckenbundet ≈ 49 månader
+(ui+blogg ≈ 0,4 M tecken dock på ~1 månad). DeepL PRO: obegränsat — taket blir
+tiden: observerad batchtakt 2,3 objekt/s ⇒ hela registret ≈ 17 h ren körning
+≈ 40–70 dagliga 25-minutersomgångar. Rekommendation: DeepL-key (även free för
+ui+blogg) + daglig omgång; utkast till mänsklig granskning.
+
+── VÅG 62 STATUS+KVALITET: täckningstabell + events-panel + manuell granskning 30 rader (2026-09-05) ──
+Kunduppdrag "kontrollera all system" för översättningarna. FYRA DELAR:
+(1) STATUSVYN: GET /api/admin/oversattning läser nu VÅG 55:S EVENTS-BACKEND —
+tabellen oversattningar saknas fortfarande (verifierat: 404; aktiv backend =
+system_events, 1 250 kursblock + växande ui-rader) vilket tidigare gjorde att
+panelen visade den åldrade lokala fallback-kön i stället för lagrets
+verklighet. Nu: tabell → events (senaste-vinner-dedupe, lager.ts dedupe-
+SenasteVinner, 40 sidor à 1 000) → först DÄREFTER fallback-kö. Sammanfattningen
+fick KATEGORIBRYTNING per scope_typ × språk (sammanfattning.perTyp: totalt
+källor ur listaKallor, publicerad/granskningsko/vantar/kvot/inaktuell,
+procent) + "kvar i gratis-kvot"-estimat (sammanfattning.kvot: ca 5 000 ord/
+dygn → dagar kvar; ord räknas per ännu ej publicerad källa × språk). POST:ens
+radläsning går via NYA lager.ts lasRad/lasRadEfterId (båda backends, senaste-
+vinner) — granskning/publicering fungerar NUMERA i events-läget (tidigare 503).
+Panelen (Översättning 🌍): TÄCKNINGSTABELL (rader ui/kursblock/blogg + totalrad,
+kolumner EN/AR publ./% + täckning) + kvotrad + vantar-kvot-badge/etikett/filter
++ amber notis i events-läget. (2) KVALITETSGRANSKNING: 30 slumpvist utvalda
+(seed 62, Mulberry32) publicerade kursblock (15 en + 15 ar av 629/621) manuellt
+granskade mot svensk källtext → data/rapporter/oversattning-kvalitetsgransk-
+ning-2026-09-05.md: 25 bra / 4 ok / 1 behöver-förbättring (3,3 % — rad
+kap14:quiz3:a1 ar: tillagt "خلال الدورة") — UNDER 20 %-tröskeln ⇒ INGEN
+tröskelhöjning krävs, trösklar orörda (styrelsens bord). (3) SYSTEMKONTROLL:
+(a) BLOGG-SPEGLARNA saknade våg 55:s events-fallback (kurs-speglarna hade den)
+— publicerade bloggöversättningar skulle ALDRIG synas på /en|ar/blogg medan
+tabellen saknas: adderad (en fråga scope_typ=eq.blogg + mosSpegelKartaUrRader
+per slug, samma Försök-3-mönster); (b) VIKTIGT FYND: 870 av 69 501 kursblocks-
+källor är "visuell"-block vars content är DIAGRAMTYP SNYCKLAR (skala/cykel/
+donut/bro/radar/sankey/bubbel) som KursSteg switchar på — 42 redan publicerade
+som översättningar (21+21, t.ex. "cykel"→"الدورة" OCH "الحلقة" inkonsekvent),
+översatt nyckel ⇒ VisuellBlock "saknar renderer" ⇒ diagrammet försvinner TYST
+ur spegeln. FIX: kurs-speglar.ts räknar visuell-block i progressandelen
+(kalla.ts-paritet) men översätter ALDRIG nyckeln — verifierat: AR-spegeln
+renderar översatt prosa, råa nycklar intakta, översatta nycklar borta.
+BORDSREKOMMENDATION: exkludera type:"visuell" ur källa.ts (universum 69 501 →
+68 271) i framtida våg + sätt de 42 publicerade i inaktuell via panelen;
+(c) importören (lasSpara, 100 p→publicerad/90-99→utkast/<90 skip) och batchen
+verktyg/kor-oversatt-batch.mjs (LÄST, ej körd — lasSpara ≤12-radersbatchar,
+100→publicerad, 90-99 OCH <90→utkast, vantar-kvot/motor skrivs aldrig som
+rader) är kontrakt-kompatibla med panelen: batchens 58 ui-utkast (~60 p, bl.a
+"Net-net-skannern"→"الماسح الضوئي على شبكة الإنترنت" — termbanksfel som MÖS
+korrekt låser i granskningskön) syns MED text i panelens kö; (d) kontrollerna
+fångar typiska MyMemory-fel: 5 syntetexempel genom korKontroller via tsx —
+termfel 60 p, sifferskevhet 75 p, avkapning 0 p (alla fyra faller), åäö-läckage
+85 p, listsammanslagning 80 p; ren kontroll 100 p. BONUSFYND: MyMemory
+konverterar nativt decimalkomma→punkt ("12,5"→"12.5") vilket per kontrakt
+(strängform bevaras exakt) ger 75 p ⇒ Tvingas granskning — avsiktlig strikthet,
+dokumenterad i rapporten. (4) VERIFIERING: tsc 43/0 (baslinje 43, 0 nya),
+validera-motorer 105/0/0, dev :3511 (delad instans var trasig: uncaughtException
+EPIPE + alla kursrutter häng, även orörda svenska originalet — omstartad på
+:3511 enligt uppdrag): /admin 200, GET 200 (lage=events; täckning ui 63 %
+(370/584), kursblock 1 % (1 250/139 002), blogg 0 %, totalt 1 620/141 402 = 1
+%; kvot 3 515 346 ord kvar → 704 dygn à 5 000), kön sida 1+2 (58 poster, 50/sida
+med text+kontrollrapport), POST 400/401/404-vägar säkerställda (inga destruktiva
+skrivningar), /en/kurser/zero-to-one 200 med översatt prosa + intakta diagram-
+nycklar, /ar/blogg 200. De 10 handgjorda spegelsidorna läser korrekt INTE
+lagret (handskapade, exkluderade ur MÖS enligt källa.ts). Täckningstabellen
+syns i panelen efter lösenordsupplåsning (klientkomponent — API-data + kod
+verifierad; browserklick utanför denna agents verktyg). INGET committat.
+
+── VÅG 62 KOMPLETT: "VARENDA ORD ÖVERSÄTTS" — batchmotor + systemkontroll (2026-09-05) ──
+Status före: 1 250/70 558 källor publicerade (1,8 %, endast flaggskepp).
+TVÅ AGENTER:
+(A) BATCHMOTORN verktyg/kor-oversatt-batch.mjs: prioriterad (ui→kursblock→
+blogg), idempotent (bevisat live: 354 hoppade med 0 anrop), kvot-/tids-
+/antalstopp, termbanks-pre/post + kontroller per objekt, skriver publicerade/
+utkast (vantar-kvot skrivs aldrig). TVÅ OMGNINGAR KÖRDA: +370 publicerade
+(1 250→1 620) + 58 utkast i granskningskön; MyMemory-kvoten detekterades
+ärligt (400-anropstaket omgång 1, tjänstens egna dagsgräns omgång 2 vid
+475 anrop). Speglar verifierade: /en/kurser/zero-to-one engelsk text ur
+lagret (97/97), AR-spegel arabisk. TID-TILL-ALLT (139 782 kvar):
+gratis-MyMemory ~378 dagar (stagnerar pga utkast-omförsök); DeepL free
+~49 mån; DeepL pro ~17 h ren körning = 40-70 dagliga omgångar.
+(B) SYSTEMKONTROLLEN: täckningstabell per kategori i admin (ui 63 %,
+kursblock 1 %, blogg 0 %) + 704-dygn-estimat; MANUELL KVALITETSGRANSKNING
+av 30 publicerade: 25 bra/4 ok/1 behöver-förbättring (3,3 % — under
+20 %-tröskeln, granskningströskeln orödd); 5 syntetiska MyMemory-fel
+fångades ALLA av kontrollerna. BUGGAR FIXADE: panelen läste fel backend
+(events-fallback-kö — nu lasRad/lasRadEfterId), blogg-speglarna saknade
+events-fallback (adderad), VISUELL-BLOCKBUGGEN: 870 diagramtypsnycklar
+("donut"/"bro") var översättningsobjekt — 42 publicerade fick diagram att
+TYST FÖRSVINNA i speglarna; MAIN: type:visuell exkluderad ur källregistret
+(universum 69 501→68 631) + 9 publicerade enkeltordsnycklar satta inaktuala.
+Kvar till bordet: termbankstillskott "Net-net"+"belåning" via panelen.
+VERIFIERING: tsc 43/0 · svit 105/0/0 · Kvalitetsvakten GRÖN.
+KUNDBESLUT ÖNSKAT: DeepL pro-key accelererar till ~17 h; gratis-tak =
+~370 objekt/dag → ~1 år.

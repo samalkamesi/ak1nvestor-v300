@@ -83,6 +83,7 @@ type SprakSammanfattning = {
   publicerad: number;
   granskningsKo: number;
   vantarMotor: number;
+  vantarKvot?: number;
   inaktuell: number;
   utkast: number;
   kraverGranskning: number;
@@ -90,11 +91,32 @@ type SprakSammanfattning = {
   procentPublicerad: number;
 };
 
+/** Täckning per kategori (scope_typ × språk) — våg 62. */
+type TypSammanfattning = {
+  namn: string;
+  totaltKallor: number;
+  publiceradTotalt: number;
+  procentPublicerad: number;
+  perSprak: Record<
+    string,
+    { publicerad: number; granskningsKo: number; vantarMotor: number; vantarKvot?: number; inaktuell: number; procentPublicerad: number }
+  >;
+};
+
+/** "Kvar i gratis-kvot"-estimat (ca 5 000 ord/dygn) — våg 62. */
+type KvotEstimat = {
+  ordPerDygn: number;
+  ordKvar: number;
+  dagarKvar: number;
+  perSprak: Record<string, { ordKvar: number; dagarKvar: number }>;
+  notering: string;
+};
+
 type OversattningSvar = {
   ok?: boolean;
   genererad?: string;
   motorAktiv?: boolean;
-  lage?: "tabell" | "tabell-saknas" | "ko";
+  lage?: "tabell" | "events" | "tabell-saknas" | "ko";
   lagerFel?: string | null;
   konfigurationKravs?: { rubrik: string; instruktion: string } | null;
   sprakRegister?: { id: string; namn: string; dir: "ltr" | "rtl" }[];
@@ -102,6 +124,8 @@ type OversattningSvar = {
     totaltKallor: number;
     oversattningsobjekt: number;
     perSprak: Record<string, SprakSammanfattning>;
+    perTyp?: Record<string, TypSammanfattning>;
+    kvot?: KvotEstimat;
     kallfel?: string | null;
   };
   ko?: KoRad[];
@@ -142,6 +166,7 @@ const STATUS_ETIKETT: Record<string, { text: string; cls: string }> = {
   granskad: { text: "Granskad — väntar publicering", cls: "border-blue-500/40 text-blue-600 dark:text-blue-400" },
   publicerad: { text: "Publicerad", cls: "border-bull/40 text-green-700 dark:text-green-400" },
   "vantar-motor": { text: "Väntar motor", cls: "border-border text-muted-foreground" },
+  "vantar-kvot": { text: "Väntar kvot (MyMemory-gratisnivån)", cls: "border-border text-muted-foreground" },
   inaktuell: { text: "Inaktuell — köas om", cls: "border-red-500/40 text-red-600 dark:text-red-400" },
 };
 
@@ -354,6 +379,17 @@ export function OversattningPanel() {
         <p className="text-xs text-orange-600 dark:text-orange-400">{data.sammanfattning.kallfel}</p>
       )}
 
+      {/* Events-backend-notis (våg 62): lagret fungerar — men bästa läget väntar */}
+      {data?.lage === "events" && (
+        <p className="rounded-md border border-amber-500/30 bg-amber-500/[0.05] px-3 py-2 text-[11px] leading-relaxed text-amber-700 dark:text-amber-400">
+          <ShieldCheck className="mr-1 inline h-3.5 w-3.5 align-[-2px]" />
+          system_events-backend aktiv — tabellen <span className="font-mono">oversattningar</span> saknas ännu
+          (kör <span className="font-mono">data/sql/oversattningar.sql</span> för bästa läget: unika nycklar + publik
+          RLS-läsning). Granskning och publicering fungerar ändå — läsning/skrivning går via lagret med samma
+          senaste-vinner-regler som speglarna.
+        </p>
+      )}
+
       {/* Konfigurationskort — tabellen saknas: aldrig krasch, alltid instruktion */}
       {data?.konfigurationKravs && (
         <div className="rounded-lg border border-orange-500/40 bg-orange-500/[0.04] p-4">
@@ -396,6 +432,11 @@ export function OversattningPanel() {
                 <Badge variant="outline" className="text-[10px] tabular-nums">
                   {sv(sum.vantarMotor)} väntar motor
                 </Badge>
+                {(sum.vantarKvot ?? 0) > 0 && (
+                  <Badge variant="outline" className="text-[10px] tabular-nums">
+                    {sv(sum.vantarKvot)} väntar kvot
+                  </Badge>
+                )}
                 <Badge variant="outline" className="text-[10px] tabular-nums">
                   {sv(sum.inaktuell)} inaktuella
                 </Badge>
@@ -410,6 +451,111 @@ export function OversattningPanel() {
           <p className="text-xs text-muted-foreground">Ingen sammanfattning tillgänglig ännu.</p>
         )}
       </div>
+
+      {/* Täckning per kategori (våg 62): scope_typ × språk + totalrad + kvotestimat */}
+      {data?.sammanfattning?.perTyp && Object.keys(data.sammanfattning.perTyp).length > 0 && (
+        <div className="rounded-lg border border-gold/30 bg-card p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Globe className="h-4 w-4 text-gold" />
+              <h4 className="font-serif text-sm font-bold">Täckning per kategori</h4>
+            </div>
+            <span className="text-[10px] text-muted-foreground">
+              {sv(data.sammanfattning.totaltKallor)} källor × {register.length} språk ={" "}
+              {sv(data.sammanfattning.oversattningsobjekt)} översättningsobjekt
+            </span>
+          </div>
+          <div className="mt-2 overflow-x-auto">
+            <table className="w-full text-left text-[11px]">
+              <thead>
+                <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
+                  <th className="py-1.5 pr-3 font-semibold">Kategori</th>
+                  <th className="py-1.5 pr-3 text-right font-semibold">Källor</th>
+                  {register.map((s) => (
+                    <th key={s.id} className="py-1.5 pr-3 text-right font-semibold">
+                      {s.namn} ({s.id.toUpperCase()}) · publ. / %
+                    </th>
+                  ))}
+                  <th className="py-1.5 text-right font-semibold">Täckning</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(data.sammanfattning.perTyp).map(([typ, t]) => (
+                  <tr key={typ} className="border-b border-border/50 last:border-0">
+                    <td className="py-1.5 pr-3 font-medium">
+                      {t.namn || typ} <span className="ml-1 font-mono text-[10px] text-muted-foreground">{typ}</span>
+                    </td>
+                    <td className="py-1.5 pr-3 text-right tabular-nums">{sv(t.totaltKallor)}</td>
+                    {register.map((s) => {
+                      const ps = t.perSprak?.[s.id];
+                      const proc = ps?.procentPublicerad ?? 0;
+                      return (
+                        <td key={s.id} className="py-1.5 pr-3 text-right tabular-nums">
+                          {sv(ps?.publicerad)} /{" "}
+                          <span
+                            className={cn(
+                              "font-semibold",
+                              proc >= 80
+                                ? "text-green-700 dark:text-green-400"
+                                : proc > 0
+                                  ? "text-gold"
+                                  : "text-muted-foreground",
+                            )}
+                          >
+                            {proc} %
+                          </span>
+                        </td>
+                      );
+                    })}
+                    <td className="py-1.5 text-right font-semibold tabular-nums">{t.procentPublicerad} %</td>
+                  </tr>
+                ))}
+                {/* Totalrad */}
+                <tr className="border-t-2 border-border font-semibold">
+                  <td className="py-1.5 pr-3">Totalt</td>
+                  <td className="py-1.5 pr-3 text-right tabular-nums">{sv(data.sammanfattning.totaltKallor)}</td>
+                  {register.map((s) => {
+                    const ps = data.sammanfattning?.perSprak?.[s.id];
+                    return (
+                      <td key={s.id} className="py-1.5 pr-3 text-right tabular-nums">
+                        {sv(ps?.publicerad)} / {ps?.procentPublicerad ?? 0} %
+                      </td>
+                    );
+                  })}
+                  <td className="py-1.5 text-right tabular-nums">
+                    {data.sammanfattning.totaltKallor > 0 && register.length > 0
+                      ? Math.round(
+                          (register.reduce(
+                            (summa, s) => summa + (data.sammanfattning?.perSprak?.[s.id]?.publicerad ?? 0),
+                            0,
+                          ) /
+                            (data.sammanfattning.totaltKallor * register.length)) *
+                            100,
+                        )
+                      : 0}{" "}
+                    %
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {data.sammanfattning.kvot && (
+            <p className="mt-2.5 text-[11px] leading-relaxed text-muted-foreground">
+              <Clock className="mr-1 inline h-3.5 w-3.5 align-[-2px]" />
+              Kvar i gratis-kvot: ca <strong className="tabular-nums">{sv(data.sammanfattning.kvot.ordKvar)}</strong> ord
+              (
+              {register.map((s, i) => (
+                <React.Fragment key={s.id}>
+                  {i > 0 ? " + " : ""}
+                  {s.id.toUpperCase()} {sv(data.sammanfattning?.kvot?.perSprak?.[s.id]?.ordKvar)}
+                </React.Fragment>
+              ))}
+              ) → ca <strong className="tabular-nums">{sv(data.sammanfattning.kvot.dagarKvar)}</strong> dygn à{" "}
+              {sv(data.sammanfattning.kvot.ordPerDygn)} ord/dygn. {data.sammanfattning.kvot.notering}
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Underflikar: granskning + termbank */}
       <Tabs defaultValue="granskning" className="w-full">
@@ -445,6 +591,7 @@ export function OversattningPanel() {
                   <SelectItem value="granskad">Granskad — väntar publicering</SelectItem>
                   <SelectItem value="publicerad">Publicerad</SelectItem>
                   <SelectItem value="vantar-motor">Väntar motor</SelectItem>
+                  <SelectItem value="vantar-kvot">Väntar kvot</SelectItem>
                   <SelectItem value="inaktuell">Inaktuell</SelectItem>
                 </SelectContent>
               </Select>

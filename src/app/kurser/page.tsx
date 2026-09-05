@@ -20,6 +20,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/kurser (VÅG 63 O3 #2)
   // Antal ur src/lib/siffror.ts (guldkällan) — verktyg/rakna-siffror.mjs räknar om
   title: `Kurser i institutionell aktieanalys — ${SIFFROR.kurser} kurser | AK1A`,
   description:

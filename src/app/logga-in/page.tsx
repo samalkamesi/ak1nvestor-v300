@@ -8,6 +8,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = pageMetadata({
   path: "/logga-in",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/logga-in (VÅG 63 O3 #2)
   title: "Logga in — gratis konto, alla kurser upplåsta | AK1A",
   // Antal ur src/lib/siffror.ts (guldkällan)
   description:

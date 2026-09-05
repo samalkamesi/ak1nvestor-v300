@@ -4,9 +4,22 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { requireAdmin } from "@/lib/admin-auth";
+
+/**
+ * /api/admin/members — medlemsadministration.
+ *
+ * SKYDD (VÅG 63 bygg-1, O4-robusthet §5 — "värsta fyndet"): requireAdmin på
+ * ALLA metoder. PATCH ändrar medlemmars nivå (free/premium/pro!) och GET
+ * listar namn/e-post/telefon — ingen av dessa får vara öppen mot internet.
+ * Samma x-admin-password-mönster som fas2-access (timing-säkert).
+ */
 
 /** GET /api/admin/members — lista alla medlemmar */
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   const rest = getSupabaseRest();
   if (!rest) {
     return NextResponse.json({ members: [] });
@@ -44,6 +57,9 @@ export async function GET() {
 
 /** PATCH /api/admin/members — ändra medlems nivå { id, memberType } */
 export async function PATCH(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   const rest = getSupabaseRest();
   if (!rest) {
     return NextResponse.json({ error: "Supabase ej konfigurerad" }, { status: 500 });

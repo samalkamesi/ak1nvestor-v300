@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KursForslag } from "@/components/ak1a/kurs-forslag";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
-import djurKurser from "../../public/deep-courses.json";
+import sokindex from "../../public/sok-index.json";
 
 export const metadata: Metadata = {
   title: "Sidan hittades inte (404) | AK1A Research Lab",
@@ -10,10 +10,21 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-/** Slug + titel per kurs — enda data 404-förslagen behöver (liten vikt). */
-const KURSER = Object.entries(
-  djurKurser as Record<string, { title?: string }>,
-).map(([slug, k]) => ({ slug, titel: k.title ?? slug }));
+/**
+ * Slug + titel per kurs — enda data 404-förslagen behöver (liten vikt).
+ * VÅG 63 bygg-2 (optimering #2): läses ur det slimmade sok-index.json
+ * (~72 kB, verktyg/kor-sokindex.mjs) i stället för deep-courses.json —
+ * tidigare drogs hela 17 MB in i serverbuntens modulgraf bara för att
+ * plocka ut 333 titlar. KursForslag-kontraktet (slug+titel) är oändrat.
+ */
+const KURSER = (
+  (Array.isArray(sokindex) ? sokindex : sokindex.kurser ?? []) as Array<{
+    slug?: string;
+    title?: string;
+  }>
+)
+  .filter((k): k is { slug: string; title?: string } => typeof k.slug === "string" && k.slug.length > 0)
+  .map((k) => ({ slug: k.slug, titel: k.title ?? k.slug }));
 
 const NAV_KORT = [
   {

@@ -27,6 +27,7 @@ const rabattProcent = priser ? Math.round(priser.rabattFas.fas2 * 100) : 0;
 
 export const metadata: Metadata = pageMetadata({
   path: "/prenumeration",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/prenumeration (VÅG 63 O3 #2)
   title: "Prenumeration — forskningsbaserad portföljuppföljning | AK1A",
   description: grundNiva
     ? `Tre nivåer från ${grundNiva.prisManad} kr/mån: månadsvis forskningsportfölj (10 branscher × 10 bolag) med AKM1-poäng, fundamental och teknisk vågstatus, då-vs-nu-uppföljning och ersättningsförslag när strikta krav bryts. Är du Fas 2- eller Fas 3-elev? ${rabattProcent} % rabatt för alltid — statusen känns igen automatiskt. Forskning, inte rådgivning.`

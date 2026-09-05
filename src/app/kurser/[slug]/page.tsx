@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { Fas2Gate } from "@/components/ak1a/fas2-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
-import { KursSteg } from "@/components/ak1a/kurs-steg";
+import { KursSteg, KapitelOversiktLank } from "@/components/ak1a/kurs-steg";
 import { Kallkort } from "@/components/ak1a/kallkort";
 import { RikText, SektionBryt } from "@/components/ak1a/rik-text";
 
@@ -40,6 +41,19 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
   const siblings = Object.values(getCourses())
     .filter((c) => c.category === course.category && c.slug !== course.slug)
     .slice(0, 6);
+
+  // Har kursen quiz renderas KapitelAv KursSteg (steg-läge) — annars vanliga
+  // kapitel-artiklar med id="kap-N". Styr både val av komponent och om
+  // Kursöversiktens länkar ska vara #ankare eller kapitelval (VÅG 63 O2 #4).
+  const harQuiz = (course.chapters as unknown as Array<{ quiz?: unknown }>).some(
+    (ch) => Array.isArray(ch.quiz) && ch.quiz.length > 0
+  );
+
+  // Prenum-CTA-raden (VÅG 63 O2 #2): exempelnivå ur priser.json — byggs vid
+  // build via lasPriser(), serialiserbar prop in i KursSteg.
+  const priser = lasPriser();
+  const prenumNiva =
+    priser?.nivaer.find((n) => n.id === "forskning") ?? priser?.nivaer[0] ?? null;
 
   return (
     <SeoPageShell
@@ -97,8 +111,9 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         <ol className="mt-3 space-y-2 md:hidden">
           {course.chapters.map((ch) => (
             <li key={ch.num}>
-              <a
-                href={`#kap-${ch.num}`}
+              <KapitelOversiktLank
+                num={ch.num}
+                harQuiz={harQuiz}
                 className="flex items-start gap-3 rounded-xl border border-gold/20 bg-card p-3 active:bg-gold/5"
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold/10 font-serif text-sm font-bold text-gold">
@@ -113,7 +128,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                 <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
                   {ch.minutes || 9} min
                 </span>
-              </a>
+              </KapitelOversiktLank>
             </li>
           ))}
           <li className="flex items-center justify-between rounded-xl border border-gold/30 bg-gold/5 px-3 py-2 text-sm font-semibold">
@@ -136,9 +151,13 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
               {course.chapters.map((ch) => (
                 <tr key={ch.num} className="border-t border-gold/10 hover:bg-gold/5">
                   <td className="p-3 font-medium">
-                    <a href={`#kap-${ch.num}`} className="text-gold hover:underline">
+                    <KapitelOversiktLank
+                      num={ch.num}
+                      harQuiz={harQuiz}
+                      className="text-gold hover:underline"
+                    >
                       {ch.num}. {ch.title}
-                    </a>
+                    </KapitelOversiktLank>
                   </td>
                   <td className="p-3 text-muted-foreground">{ch.intro?.slice(0, 90)}{(ch.intro?.length || 0) > 90 ? "…" : ""}</td>
                   <td className="p-3 text-right font-mono text-xs text-muted-foreground">{ch.minutes || 9} min</td>
@@ -164,8 +183,9 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       >
       {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
       <KursGate slug={slug} titel={course.title}>
-      {(course.chapters as any).some((ch: any) => ch.quiz) ? (
+      {harQuiz ? (
         <KursSteg
+          prenumNiva={prenumNiva}
           kurs={{
             slug: slug,
             title: course.title,

@@ -4,9 +4,24 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { requireAdmin } from "@/lib/admin-auth";
+
+/**
+ * /api/admin/activity — aktivitetslogg.
+ *
+ * SKYDD (VÅG 63 bygg-1, O4-robusthet §5): GET (läs loggen — sessioner,
+ * UA, IP-hash) kräver requireAdmin (x-admin-password, timing-säkert enligt
+ * fas2-access-mönstret). POST är MEDVETET öppen: den anropas av sajtens
+ * egna besökare (use-activity-logger) för att logga aktivitet — publika
+ * klienter kan inte bära ett admin-lösenord, och skrivningen är sanerad +
+ * append-only.
+ */
 
 /** GET /api/admin/activity — hämta aktivitetslogg */
 export async function GET(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   const rest = getSupabaseRest();
   if (!rest) {
     return NextResponse.json({ activities: [] });

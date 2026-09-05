@@ -50,6 +50,18 @@ export const metadata: Metadata = {
   // metadataBase (VÅG 1a): relativa og:image-sökvägar (t.ex. /og/start.png)
   // slås upp mot SITE_URL — aldrig hårdkodad domän (AC2).
   metadataBase: new URL(SITE_URL),
+  // Start-klustrets hreflang (VÅG 63 O3 #2): ömsesidighet med /en- och
+  // /ar-speglarna — layouten deklarerar start-tratten; sidor med egen
+  // metadata (via pageMetadata/spegelMetadata) överskuggar detta fält.
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "sv-SE": SITE_URL,
+      en: `${SITE_URL}/en`,
+      ar: `${SITE_URL}/ar`,
+      "x-default": SITE_URL,
+    },
+  },
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
     "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",

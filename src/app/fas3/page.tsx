@@ -9,6 +9,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/fas3",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/fas3 (VÅG 63 O3 #2)
   title: "Fas 3 — Det Dynamiska Ekosystemet | AK1A",
   description:
     "Fas 3 är certifieringsfasen — praktikportfölj och tillämpning — och där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. 13 999 kr, 90 dagars nöjd-kund-garanti. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.",

@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { publiceraOrganEvent } from "@/lib/organ-event";
+import { requireAdmin } from "@/lib/admin-auth";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
  * /api/pro/admin — B2B-ADMINISTRATIONEN (skild från publik /api/admin).
+ *
+ * SKYDD (VÅG 63 bygg-1, O4-robusthet §5): requireAdmin på ALLA metoder —
+ * x-admin-password (timing-säkert, fas2-access-mönstret). GET läser B2B-
+ * kunduppgifter (e-post, XP, logits) och POST fattar mall-beslut — ingen
+ * av dessa fick vara öppen mot internet.
  *
  * GET  → samlade B2B-metrics i EN vända:
  *        - användare: members med member_type != free (B2B-kunderna),
@@ -102,7 +108,10 @@ async function antalRader(
 
 // ── GET — B2B-METRICS ──────────────────────────────────────────────────────
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   const tomSvar = {
     genererad: new Date().toISOString(),
     konfigurerad: false,
@@ -257,6 +266,9 @@ function saneraWhiteLabel(rå: unknown): { foretagsnamn: string; logotypUrl: str
  * (source "organ/pro-admin", verb "beslut", matt { mallar, whiteLabel? }).
  */
 export async function POST(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   let kropp: unknown = null;
   try {
     kropp = await req.json();

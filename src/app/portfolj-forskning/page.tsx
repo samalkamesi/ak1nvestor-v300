@@ -4,6 +4,7 @@ import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Korstabell } from "@/components/ak1a/portfolj-forskning/korstabell";
 import { ByggPortfoljKort } from "@/components/ak1a/portfolj-forskning/bygg-portfolj-kort";
+import { KorstabellLeverantor } from "@/components/ak1a/portfolj-forskning/korstabell-leverantor";
 import { PortfoljForskningDemo } from "@/components/ak1a/portfolj-forskning/demo-wrapper";
 import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
 import { lasKorstabellGrund, lasPriser, type Priser } from "@/lib/portfolj-forskning/korstabell-data";
@@ -93,6 +94,12 @@ export default function PortfoljForskningPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Portföljforskning" }]}>
       <JsonLd data={websiteJsonLd()} />
+
+      {/* VÅG 63 bygg-2 (optimering #1): raderkedjan levereras EN gång via
+          kontext-leverantören — Korstabell och ByggPortfoljKort läser den
+          ur kontexten i stället för att var och en få hela 100-raders-
+          propset serialiserat i RSC-flighten (tidigare dubbelkostnad). */}
+      <KorstabellLeverantor rader={rader}>
 
       {/* ── Intro-pedagogik ─────────────────────────────────────────── */}
       <header className="border-b border-gold/30 pb-8">
@@ -192,7 +199,7 @@ export default function PortfoljForskningPage() {
         </p>
         <div className="mt-6">
           {finns ? (
-            <ByggPortfoljKort rader={rader} />
+            <ByggPortfoljKort />
           ) : (
             <div className="rounded-2xl border border-dashed border-gold/40 bg-paper p-5 sm:p-6">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
@@ -224,7 +231,7 @@ export default function PortfoljForskningPage() {
         </p>
         <div className="mt-6">
           {finns ? (
-            <Korstabell rader={rader} />
+            <Korstabell />
           ) : (
             <div className="space-y-4">
               <p className="rounded-xl border border-gold/30 bg-gold/10 p-3 text-xs italic leading-relaxed text-gold">
@@ -288,6 +295,7 @@ export default function PortfoljForskningPage() {
           </Link>
         </div>
       </section>
+      </KorstabellLeverantor>
     </SeoPageShell>
   );
 }

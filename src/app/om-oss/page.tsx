@@ -7,7 +7,17 @@ export const metadata: Metadata = {
   title: "Om oss — AK1A Research Lab | Ak1 Apex Nexus",
   description:
     "AK1A Research Lab är Sveriges enda institutionella analysmetodik byggd för privatpersoner. Bakom plattformen står Ak1 Apex Nexus och grundaren Sam Alkamesi.",
-  alternates: { canonical: "https://lab.ak1nvestor.com/om-oss" },
+  // Ömsesidig hreflang med /en|ar/om-oss (VÅG 63 O3 #2) — speglarna
+  // deklarerar klustret sedan våg 51; originalet måste göra detsamma.
+  alternates: {
+    canonical: "https://lab.ak1nvestor.com/om-oss",
+    languages: {
+      "sv-SE": "https://lab.ak1nvestor.com/om-oss",
+      en: "https://lab.ak1nvestor.com/en/om-oss",
+      ar: "https://lab.ak1nvestor.com/ar/om-oss",
+      "x-default": "https://lab.ak1nvestor.com/om-oss",
+    },
+  },
 };
 
 export default function OmOssPage() {

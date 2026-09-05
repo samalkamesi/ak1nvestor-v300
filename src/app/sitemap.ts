@@ -57,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Medlems- och företagssidor
     { url: `${BASE_URL}/pro`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    // Pro-undersidorna (VÅG 63 O3 #4): robots index:true men saknades i
+    // sitemap — 4 B2B-pengasidor osynliga för upptäckt.
+    { url: `${BASE_URL}/pro/priser`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/pro/analys`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/pro/klienter`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/pro/rapporter`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/prenumeration`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
@@ -77,6 +83,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${BASE_URL}/en/${sida}`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
       { url: `${BASE_URL}/ar/${sida}`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
     ]),
+    // Blogglist-speglarna (VÅG 63 O3 #4): indexbara (spegelMetadata med
+    // canonical + hreflang sedan våg 55) men osynliga i sitemap.
+    { url: `${BASE_URL}/en/blogg`, changeFrequency: "daily", priority: 0.7, lastModified: now },
+    { url: `${BASE_URL}/ar/blogg`, changeFrequency: "daily", priority: 0.7, lastModified: now },
     { url: `${BASE_URL}/villkor`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/cookiepolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/ansvar`, changeFrequency: "yearly", priority: 0.3, lastModified: now },

@@ -10,6 +10,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/manifest",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/manifest (VÅG 63 O3 #2)
   title: "Manifestet — världens bästa finansutbildning | AK1A Research Lab",
   // Siffror ur src/lib/siffror.ts (guldkällan) — kroppen räknar dynamiskt
   description:

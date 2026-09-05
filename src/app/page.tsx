@@ -13,6 +13,7 @@ import { SIFFROR, tal } from "@/lib/siffror";
  */
 const SIDA = sidaMetadata({
   path: "",
+  harSpeglar: true, // Ömsesidig hreflang med /en + /ar (VÅG 63 O3 #2)
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
     "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",

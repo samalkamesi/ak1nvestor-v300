@@ -11,6 +11,7 @@ import { raknaForskningslage } from "@/lib/forskningslaget";
 import {
   raknaRegime,
   byggRegimeLoggrad,
+  raknaRegimehash,
   stemplaRegimeRad,
   verifieraRegimekedja,
   REGIM_MODELL_VERSION,
@@ -311,6 +312,60 @@ function lasRegimeLogg(): RegimeLogg | null {
 }
 
 /**
+ * KEDJEBAS UR SYSTEM_EVENTS (VÅG 63 bygg-1, O4-robusthet §6): på prod är
+ * regime-loggen frusen sedan build (read-only fs — writeFileSync misslyckas
+ * tyst), så varje REGLERAD förändring kedjade mot samma prevHash = syskon-
+ * rader, inte en kedja. Fallback: varje akm3_regime-event (skrivs av denna
+ * cron sedan VÅG 63) bär sin STAMPADE rad i details.loggRad — DB:n vinner
+ * som kedjebas när den är den sanna fortsättningen på filens huvud (se
+ * basvalet i GET). Regime-rader är glesa (reglerade förändringar), därför
+ * ett eget event per rad: fönstret 100 räcker årtionden och payloaden
+ * hålls minimal (select=details->loggRad).
+ */
+async function lasRegimeKedjebasUrEventer(
+  sb: ReturnType<typeof getSupabaseRest>,
+  limit = 100,
+): Promise<RegimeLoggRad[]> {
+  if (!sb) return [];
+  try {
+    const res = await fetch(
+      `${sb.origin}/rest/v1/system_events?type=eq.akm3_regime&select=details->loggRad&order=created_at.desc&limit=${limit}`,
+      { headers: sb.headers, cache: "no-store", signal: AbortSignal.timeout(10000) },
+    );
+    if (!res.ok) return [];
+    const svar = (await res.json()) as Array<{ loggRad?: unknown } | null>;
+    const ut: RegimeLoggRad[] = [];
+    for (const r of Array.isArray(svar) ? svar : []) {
+      const lr = r?.loggRad;
+      if (lr && typeof lr === "object" && typeof (lr as RegimeLoggRad).hash === "string") {
+        ut.push(lr as RegimeLoggRad);
+      }
+    }
+    return ut.reverse(); // fallande → stigande
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Länkkontroll för en rekonstruerad DB-kedja: varje rads (≥ 2) hash omräknas
+ * mot föregående rads hash. Fönstrets huvud får vara trunkerat — regime-
+ * rader bär ingen egen prevHash (kedjan är implicit rad→rad), så rad 1 i
+ * fönstret kan inte verifieras mot sin osedda föregångare; append-only-
+ * kontraktet (§10.10) kräver hel länk framåt, och sista radens äkthet
+ * garanteras transivt av kedjan bakåt inom fönstret.
+ */
+function regimeDbLankarOk(rader: readonly RegimeLoggRad[]): boolean {
+  for (let i = 1; i < rader.length; i += 1) {
+    const rad = rader[i];
+    const fore = rader[i - 1];
+    if (!rad || !fore || typeof rad.hash !== "string" || typeof fore.hash !== "string") return false;
+    if (raknaRegimehash(rad, fore.hash, sha256Regim) !== rad.hash) return false;
+  }
+  return true;
+}
+
+/**
  * N (netto fundamental vågbredd) + antal MÄTTA vågbolag ur ett vagscan-events
  * details: (impulsvåg − korrigering) / (impulsvåg + korrigering + basbygge)
  * över universumSammanfattningen; antalet = fel-fria tickers i eventet.
@@ -501,6 +556,10 @@ export async function GET(req: NextRequest) {
     nOsattOrsak: string;
     loggSkriven: boolean;
     notis: string;
+    /** Var kedjebasen lästes ifrån (VÅG 63 bygg-1): filen eller system_events. */
+    kalla: "fil" | "system_events";
+    /** true när den stampade raden sparades som akm3_regime-event (prod-spår). */
+    dbSparad: boolean;
   } = {
     las: false,
     verifierad: false,
@@ -511,22 +570,48 @@ export async function GET(req: NextRequest) {
     nOsattOrsak: "",
     loggSkriven: false,
     notis: "",
+    kalla: "fil",
+    dbSparad: false,
   };
   const regimeLoggLäst = lasRegimeLogg();
-  if (regimeLoggLäst) {
+  const regimeFilRader: RegimeLoggRad[] = regimeLoggLäst ? regimeLoggLäst.rader : [];
+
+  // KEDJEBAS (VÅG 63 bygg-1): DB:n vinner när den är den SANNA fortsättningen
+  // på filen — på prod frös filen med build och växer aldrig; DB:n är då
+  // sanningen. Regime-rader bär ingen egen prevHash, men länken kan OMRÄKNAS:
+  // om NÅGON DB-rad hashas exakt av filens sista hash är DB:n en fortsättning
+  // på filens huvud (prod-fallet, oavsett hur många ronder som gått). Saknas
+  // en sådan rad är filen framme eller kedjorna förgrenade → filen (dev-
+  // sanningen; en eventuell DB-förgrening lämnas orörd och rapporteras av
+  // länkkontrollen).
+  const regimeDbRader = await lasRegimeKedjebasUrEventer(sb);
+  const regimeFilSista = regimeFilRader.length > 0 ? regimeFilRader[regimeFilRader.length - 1] : null;
+  const anvandDbBas =
+    regimeDbRader.length > 0 &&
+    (regimeFilSista === null ||
+      regimeDbRader.some(
+        (rad) =>
+          typeof regimeFilSista?.hash === "string" &&
+          raknaRegimehash(rad, regimeFilSista.hash, sha256Regim) === rad.hash,
+      ));
+  const regimeBas: RegimeLoggRad[] = anvandDbBas ? regimeDbRader : regimeFilRader;
+  regimeStatus.kalla = anvandDbBas ? "system_events" : "fil";
+
+  if (regimeBas.length > 0) {
     regimeStatus.las = true;
-    regimeStatus.verifierad = verifieraRegimekedja(regimeLoggLäst.rader, sha256Regim);
+    regimeStatus.verifierad =
+      regimeBas === regimeFilRader
+        ? verifieraRegimekedja(regimeFilRader, sha256Regim)
+        : regimeDbLankarOk(regimeBas);
     if (!regimeStatus.verifierad) {
       regimeStatus.notis =
-        "Befintlig regime-logg verifierar EJ mot sin hash-kedja — loggen lämnas orörd och ingen rad skrivs (append-only: öppen rapport, ALDRIG tyst överskrivning).";
+        "Befintlig regime-kedja (källa: " + regimeStatus.kalla + ") verifierar EJ mot sin hash-kedja — loggen lämnas orörd och ingen rad skrivs (append-only: öppen rapport, ALDRIG tyst överskrivning).";
     }
   }
   // Förra raden är bara minne värt om kedjan hänger ihop — en bruten kedja
   // är ingen historia att bygga hysteres på.
   const regimeTidigare: RegimeLoggRad | null =
-    regimeLoggLäst && regimeStatus.verifierad && regimeLoggLäst.rader.length > 0
-      ? regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1]
-      : null;
+    regimeStatus.verifierad && regimeBas.length > 0 ? regimeBas[regimeBas.length - 1] : null;
 
   const { finns: korstabellFinns, rader: korstabellRader } = lasKorstabellGrund();
   const lage = korstabellFinns ? raknaForskningslage(korstabellRader) : null;
@@ -559,10 +644,10 @@ export async function GET(req: NextRequest) {
     JSON.stringify(regimResultat.kandidat ?? null) !== JSON.stringify(regimeTidigare?.kandidat ?? null);
   const regimeRegleradFörändring =
     regimeNyRad !== null && (regimeTidigare === null || regimResultat.byte || regimeKandidatFörändrad);
-  if (regimeRegleradFörändring && (regimeStatus.verifierad || !regimeLoggLäst)) {
+  if (regimeRegleradFörändring && (regimeStatus.verifierad || regimeBas.length === 0)) {
     const prevHash =
-      regimeLoggLäst && regimeLoggLäst.rader.length > 0 && regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1].hash
-        ? String(regimeLoggLäst.rader[regimeLoggLäst.rader.length - 1].hash)
+      regimeBas.length > 0 && regimeBas[regimeBas.length - 1].hash
+        ? String(regimeBas[regimeBas.length - 1].hash)
         : REGIMELOGG_GENESIS;
     const stampad = stemplaRegimeRad(regimeNyRad, prevHash, sha256Regim);
     try {
@@ -573,7 +658,7 @@ export async function GET(req: NextRequest) {
           {
             modellVersion: REGIM_MODELL_VERSION,
             skapad: regimeLoggLäst?.skapad ?? stampad.datum,
-            rader: [...(regimeLoggLäst?.rader ?? []), stampad],
+            rader: [...regimeBas, stampad], // bas (ev. DB-ikapphämning) + ny rad
             senasteHash: stampad.hash,
           },
           null,
@@ -583,8 +668,42 @@ export async function GET(req: NextRequest) {
       );
       regimeStatus.loggSkriven = true;
     } catch {
-      // read-only fs (t.ex. Vercel) — regimen lever ändå i system_events-raden
-      // och i svaret; loggen skrivs där fs tillåter (dev/CI).
+      // read-only fs (t.ex. Vercel) — regimen lever ändå i akm3_regime-eventet
+      // nedan och i svaret; loggen skrivs där fs tillåter (dev/CI).
+    }
+
+    // DB-SPÅRET (VÅG 63 bygg-1): den stampade raden som EGET akm3_regime-
+    // event — på prod (read-only fs) är detta den enda växande kedjan; nästa
+    // rond läser details.loggRad som kedjebas (se lasRegimeKedjebasUrEventer).
+    if (sb) {
+      try {
+        const res = await fetch(`${sb.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...sb.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({
+            type: "akm3_regime",
+            severity: "info",
+            message:
+              "AKM3-regimen: reglerad förändring (" +
+              String(stampad.regime) +
+              (stampad.byte ? ", bekräftat byte" : "") +
+              ") — loggrad " + String(stampad.datum) + ", hash " + String(stampad.hash).slice(0, 12) + "…",
+            details: {
+              modellVersion: REGIM_MODELL_VERSION,
+              loggRad: stampad,
+              kedjekalla: regimeStatus.kalla,
+              notering:
+                "Append-only hash-kedjad regime-rad (BESLUT §10.10): hash = sha256(prevHash + kanonisk rad). " +
+                "Filen regime-logg.json kan vara frusen på read-only fs — detta event är prod-spåret.",
+            },
+            source: "cron/vagvalidering",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+        regimeStatus.dbSparad = res.ok;
+      } catch {
+        // tyst — svaret returneras alltid
+      }
     }
   }
   const totaltProcent = tTraff + tMiss > 0 ? Math.round((100 * tTraff) / (tTraff + tMiss)) : null;
@@ -648,6 +767,8 @@ export async function GET(req: NextRequest) {
               nOsattOrsak: regimeStatus.nOsattOrsak,
               senastKontrollerad: regimResultat.senastKontrollerad,
               loggSkriven: regimeStatus.loggSkriven,
+              loggKalla: regimeStatus.kalla,
+              loggDbSparad: regimeStatus.dbSparad,
               loggnotis: regimeStatus.notis,
             },
             notering:
@@ -740,6 +861,8 @@ export async function GET(req: NextRequest) {
         las: regimeStatus.las,
         verifierad: regimeStatus.verifierad,
         skriven: regimeStatus.loggSkriven,
+        kalla: regimeStatus.kalla,
+        dbSparad: regimeStatus.dbSparad,
         notis: regimeStatus.notis,
       },
     },

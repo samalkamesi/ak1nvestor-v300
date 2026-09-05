@@ -15,9 +15,11 @@ import {
   ROLLBACK_REGEL_TEXT,
   byggKalibreringsRond,
   byggKalibreringsRapport,
+  raknaLoggRadHash,
   valideraKedja,
   type KalibreringDomRad,
   type KalibreringLogg,
+  type KalibreringLoggRad,
 } from "@/lib/akm3/kalibrering";
 
 export const runtime = "nodejs";
@@ -65,6 +67,18 @@ export const maxDuration = 60;
 /** Antal senaste vagvalidering-ronder som läses (dagliga — ~5 veckor). */
 const LASA_RONDER = 35;
 
+/**
+ * KEDJEBAS UR SYSTEM_EVENTS (VÅG 63 bygg-1, O4-robusthet §6): på prod är
+ * filen frusen sedan build (read-only fs — writeFileSync misslyckas tyst),
+ * så varje rond kedjade mot samma build-time prevHash = syskonrader, inte
+ * en kedja. Fallback: varje akm3_kalibrering-event bär sin FULLA loggRad
+ * (med hash + prevHash) i details — när DB:n ligger FÖRE filen är DB:n
+ * kedjebas och prod-kedjan växer äkta. Fönstret räcker 10 år bakåt
+ * (månadsronder); äldre truncering påverkar bara versionsräknaren, aldrig
+ * hash-länkningen.
+ */
+const KEDJEBAS_FONSTER = 120;
+
 type EventRad = { details: Record<string, unknown> | null; created_at: string };
 
 /** Läser N senaste system_events-rader av en typ (details + created_at, fallande). */
@@ -86,6 +100,53 @@ async function lasEventRader(sb: ReturnType<typeof getSupabaseRest>, typ: string
 /** UTC-kalenderdag (YYYY-MM-DD) ur en ISO-sträng. */
 function dagIso(iso: string): string {
   return String(iso).slice(0, 10);
+}
+
+/**
+ * Kedjebas ur system_events (type=akm3_kalibrering): läser ENDAST
+ * details->loggRad per rad (smal payload — event-details i övrigt är stora),
+ * formguardar och returnerar raderna STIGANDE i tid.
+ */
+async function lasKedjebasUrEventer(
+  sb: ReturnType<typeof getSupabaseRest>,
+  limit: number,
+): Promise<KalibreringLoggRad[]> {
+  if (!sb) return [];
+  try {
+    const res = await fetch(
+      `${sb.origin}/rest/v1/system_events?type=eq.akm3_kalibrering&select=details->loggRad&order=created_at.desc&limit=${limit}`,
+      { headers: sb.headers, cache: "no-store", signal: AbortSignal.timeout(15000) },
+    );
+    if (!res.ok) return [];
+    const svar = (await res.json()) as Array<{ loggRad?: unknown } | null>;
+    const ut: KalibreringLoggRad[] = [];
+    for (const r of Array.isArray(svar) ? svar : []) {
+      const lr = r?.loggRad;
+      if (lr && typeof lr === "object" && typeof (lr as KalibreringLoggRad).hash === "string") {
+        ut.push(lr as KalibreringLoggRad);
+      }
+    }
+    return ut.reverse(); // fallande → stigande
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Länkkontroll för en rekonstruerad DB-kedja: varje rads hash omräknas och
+ * varje prevHash (rad ≥ 2) pekar på föregående rad. Fönstrets huvud får
+ * vara trunkerat (prevHash ≠ null på första raden — historien före fönstret
+ * syns inte); append-only-kontraktet kräver hel länk FRAMÅT, och den sista
+ * radens äkthet garanteras av kedjan bakåt inom fönstret.
+ */
+function dbKedjaLankarOk(rader: readonly KalibreringLoggRad[]): boolean {
+  for (let i = 0; i < rader.length; i += 1) {
+    const rad = rader[i];
+    if (!rad || typeof rad.hash !== "string") return false;
+    if (raknaLoggRadHash(rad as Omit<KalibreringLoggRad, "hash">, digest) !== rad.hash) return false;
+    if (i > 0 && rad.prevHash !== rader[i - 1].hash) return false;
+  }
+  return true;
 }
 
 /** sha-256-digesten (INJICERAS till lib:s rena funktioner — P1-vänligt). */
@@ -131,12 +192,33 @@ export async function GET(req: NextRequest) {
   } catch {
     logg = null; // finns inte ännu (första ronden) eller oläslig — hederligt
   }
-  const kedjekoll = loggLasbar ? valideraKedja(logg?.rader ?? [], digest) : { ok: true, brutetVid: null };
   const loggRader = loggLasbar && Array.isArray(logg?.rader) ? logg.rader : [];
 
-  // ── idempotens: månadens rond redan genomförd? (loggen ELLER eventet) ─────
+  // ── kedjebas: filen ELLER system_events (VÅG 63 bygg-1, O4 §6) ────────────
+  // På prod (read-only fs) växer filen aldrig — DB:n är då sanningen. Bas =
+  // kedjan som är LÄNGST FRAMME (högst version på sista raden); oavgjort →
+  // filen (dev-sanningen). Append-only-kontraktet (§10.5) kräver att varje
+  // ny rad länkar mot den FAKTISKT senaste raden — aldrig en frusen fil.
   const senasteEvent = (await lasEventRader(sb, "akm3_kalibrering", 1))[0] ?? null;
-  const loggManad = loggRader.length > 0 ? loggRader[loggRader.length - 1].manad : null;
+  const dbLoggRader = await lasKedjebasUrEventer(sb, KEDJEBAS_FONSTER);
+  const filSista = loggRader.length > 0 ? loggRader[loggRader.length - 1] : null;
+  const dbSista = dbLoggRader.length > 0 ? dbLoggRader[dbLoggRader.length - 1] : null;
+  const dbFramme =
+    dbSista !== null &&
+    (filSista === null ||
+      (dbSista.version ?? 0) > (filSista.version ?? 0) ||
+      ((dbSista.version ?? 0) === (filSista.version ?? 0) && dbLoggRader.length > loggRader.length));
+  const basRader: KalibreringLoggRad[] = dbFramme ? dbLoggRader : loggRader;
+  const kedjekalla: "fil" | "system_events" = dbFramme ? "system_events" : "fil";
+  const kedjekoll =
+    basRader === loggRader
+      ? loggLasbar
+        ? valideraKedja(basRader, digest)
+        : { ok: true, brutetVid: null }
+      : { ok: dbKedjaLankarOk(basRader), brutetVid: null };
+
+  // ── idempotens: månadens rond redan genomförd? (kedjebasen ELLER eventet) ─
+  const loggManad = basRader.length > 0 ? basRader[basRader.length - 1].manad : null;
   const eventManad =
     senasteEvent?.details && typeof senasteEvent.details.manad === "string"
       ? senasteEvent.details.manad
@@ -214,7 +296,10 @@ export async function GET(req: NextRequest) {
     genererad: nu.toISOString(),
     datum: dagensDatum,
     manad,
-    tidigareLogg: loggLasbar ? logg : null,
+    tidigareLogg:
+      basRader.length > 0
+        ? { schema: KALIBRERING_SCHEMA, protokollVersion: KALIBRERING_PROTOKOLL_VERSION, rader: basRader }
+        : null,
     digest,
     kedjaBruten: !kedjekoll.ok,
   });
@@ -227,7 +312,7 @@ export async function GET(req: NextRequest) {
         schema: KALIBRERING_SCHEMA,
         protokollVersion: KALIBRERING_PROTOKOLL_VERSION,
         skapad: loggLasbar && logg?.skapad ? logg.skapad : dagensDatum,
-        rader: [...loggRader, rond.loggRad],
+        rader: [...basRader, rond.loggRad], // bas (ev. DB-ikapphämning) + ny rad
         senasteHash: rond.loggRad.hash,
       };
       mkdirSync(path.dirname(loggSok), { recursive: true });
@@ -280,6 +365,7 @@ export async function GET(req: NextRequest) {
             handlingsgrind: HANDLINGSGRIND_TEXT,
             rollbackRegel: ROLLBACK_REGEL_TEXT,
             loggRad: rond.loggRad,
+            kedjekalla,
             varningar: rond.varningar,
             notering:
               "Grinden LÅST i AKM3.2026.09 (BESLUT §11 steg 6): cronen samlar bara data, ΔΦ=0. " +
@@ -368,7 +454,7 @@ export async function GET(req: NextRequest) {
     variabelFasAntal: rond.variabelFas.length,
     handlingsgrind: HANDLINGSGRIND_TEXT,
     rollbackRegel: ROLLBACK_REGEL_TEXT,
-    logg: { skrivad: loggSkrivad, rad: rond.loggRad, kedjaOk: kedjekoll.ok, brutetVid: kedjekoll.brutetVid },
+    logg: { skrivad: loggSkrivad, rad: rond.loggRad, kedjaOk: kedjekoll.ok, brutetVid: kedjekoll.brutetVid, kalla: kedjekalla },
     varningar: rond.varningar,
     supabaseSparad,
     rapportSkrivad,

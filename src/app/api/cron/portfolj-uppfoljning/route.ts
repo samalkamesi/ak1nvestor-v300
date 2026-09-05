@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fsp, readFileSync } from "fs";
 import { createHash } from "crypto";
 import path from "path";
+import { getSupabaseRest } from "@/lib/supabase-rest";
 import { körAnalysMotor, type TickerAnalys } from "@/lib/analys-motor";
 import { publiceraSignal } from "@/lib/signal-bus";
 import { publiceraOrganEvent } from "@/lib/organ-event";
@@ -14,6 +15,7 @@ import {
   byggAkm3Prediktionsrad,
   jamforDåNu,
   raknaNotisTexter,
+  raknaPrediktionshash,
   skapaSnapshot,
   stemplaPrediktionsrad,
   verifieraPrediktionskedja,
@@ -309,6 +311,62 @@ async function lasPrediktionslogg(): Promise<Akm3Prediktionslogg | null> {
   return arPrediktionslogg(rå) ? rå : null;
 }
 
+/**
+ * KEDJEBAS UR SYSTEM_EVENTS (VÅG 63 bygg-1, O4-robusthet §6): på prod är
+ * prediktionsloggen frusen sedan build (read-only fs — writeFile misslyckas
+ * med notis), så varje ronds rader kedjade mot samma prevHash = syskonrader,
+ * inte en kedja. Fallback: varje akm3_prediktion-event (skrivs av denna
+ * cron sedan VÅG 63) bär rundens STAMPADE rader i details.rader — DB:n
+ * vinner som kedjebas när den är den sanna fortsättningen på filens huvud
+ * (se basvalet i koraUppfoljning). Fönstret 12 månadsronder räcker för
+ * dedupe + kedjekontinuitet; äldre truncering påverkar aldrig hash-
+ * länkningen framåt.
+ */
+async function lasPrediktionsKedjebasUrEventer(
+  sb: ReturnType<typeof getSupabaseRest>,
+  limit = 12,
+): Promise<Akm3Prediktionsrad[]> {
+  if (!sb) return [];
+  try {
+    const res = await fetch(
+      `${sb.origin}/rest/v1/system_events?type=eq.akm3_prediktion&select=details->rader&order=created_at.desc&limit=${limit}`,
+      { headers: sb.headers, cache: "no-store", signal: AbortSignal.timeout(10000) },
+    );
+    if (!res.ok) return [];
+    const svar = (await res.json()) as Array<{ rader?: unknown } | null>;
+    const ut: Akm3Prediktionsrad[] = [];
+    for (const r of Array.isArray(svar) ? svar : []) {
+      const rader = r?.rader;
+      if (!Array.isArray(rader)) continue;
+      for (const rad of rader) {
+        if (rad && typeof rad === "object" && typeof (rad as Akm3Prediktionsrad).hash === "string") {
+          ut.push(rad as Akm3Prediktionsrad);
+        }
+      }
+    }
+    return ut; // eventerna är fallande, raderna inom dem stigande → redan kedjeordning
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Länkkontroll för en rekonstruerad DB-kedja: varje rads (≥ 2) hash omräknas
+ * mot föregående rads hash (kedjeregeln sha256(prev + kanonisk rad)). Fönstrets
+ * huvud får vara trunkerat — rad 1 kan inte verifieras mot sin osedda
+ * föregångare; append-only (BESLUT §10.10) kräver hel länk framåt och sista
+ * radens äkthet garanteras av kedjan bakåt inom fönstret.
+ */
+function prediktionDbLankarOk(rader: readonly Akm3Prediktionsrad[]): boolean {
+  for (let i = 1; i < rader.length; i += 1) {
+    const rad = rader[i];
+    const fore = rader[i - 1];
+    if (!rad || !fore || typeof rad.hash !== "string" || typeof fore.hash !== "string") return false;
+    if (raknaPrediktionshash(rad, fore.hash, sha256) !== rad.hash) return false;
+  }
+  return true;
+}
+
 /** Finns redan en rad för (ticker, månad)? — rad per månad är kontraktet. */
 function radFinnsForManad(rader: Akm3Prediktionsrad[], ticker: string, datum: string): boolean {
   const manad = String(datum).slice(0, 7); // YYYY-MM
@@ -373,25 +431,54 @@ async function koraUppfoljning(): Promise<NextResponse> {
   // AKM3-prediktionsloggen (våg 59 bygg-1): läs + verifiera kedjan FÖRE rundan.
   // En manipulerad kedja lämnas ORÖRD och rapporteras öppet — append-only är
   // kontraktet (BESLUT §10.10); vi skriver aldrig vidare på bristfällig evidens.
+  // VÅG 63 bygg-1 (O4 §6): kedjebas är filen ELLER system_events (akm3_
+  // prediktion-eventen) — på prod (read-only fs) växer bara DB:n, och DB:n
+  // vinner som bas när den är längre fram än filen. Utan fallback kedjade
+  // varje rond mot samma frusna prevHash = syskonrader, aldrig en kedja.
   const prediktionStatus = {
     las: false as boolean,
     verifierad: false as boolean,
     tillagdaRader: 0,
     sparat: false as boolean,
+    dbSparat: false as boolean,
+    kalla: "fil" as "fil" | "system_events",
     notis: "" as string,
   };
   const prediktionslogg = await lasPrediktionslogg();
-  const predRader: Akm3Prediktionsrad[] = Array.isArray(prediktionslogg?.rader)
+  const predFilRader: Akm3Prediktionsrad[] = Array.isArray(prediktionslogg?.rader)
     ? [...(prediktionslogg?.rader as Akm3Prediktionsrad[])]
     : [];
-  if (prediktionslogg) {
+  // Basval: prediktionsraderna bär ingen egen prevHash, men länken kan
+  // OMRÄKNAS — om NÅGON DB-rad hashas exakt av filens sista hash är DB:n
+  // den sanna fortsättningen på filens huvud (prod: filen frusen, DB:n växer
+  // — gäller oavsett antal ronder). Saknas en sådan rad är filen framme
+  // (dev skrev filen efter senaste event) eller kedjorna förgrenade → filen.
+  const predDbRader = await lasPrediktionsKedjebasUrEventer(getSupabaseRest());
+  const predFilSista = predFilRader.length > 0 ? predFilRader[predFilRader.length - 1] : null;
+  const anvandDbBas =
+    predDbRader.length > 0 &&
+    (predFilSista === null ||
+      predDbRader.some(
+        (rad) =>
+          typeof predFilSista?.hash === "string" &&
+          raknaPrediktionshash(rad, predFilSista.hash, sha256) === rad.hash,
+      ));
+  const predBas: Akm3Prediktionsrad[] = anvandDbBas ? predDbRader : predFilRader;
+  prediktionStatus.kalla = anvandDbBas ? "system_events" : "fil";
+  if (predBas.length > 0 || prediktionslogg) {
     prediktionStatus.las = true;
-    prediktionStatus.verifierad = verifieraPrediktionskedja(prediktionslogg.rader, sha256);
+    prediktionStatus.verifierad =
+      predBas === predFilRader
+        ? verifieraPrediktionskedja(predFilRader, sha256)
+        : prediktionDbLankarOk(predBas);
     if (!prediktionStatus.verifierad) {
       prediktionStatus.notis =
-        "Befintlig prediktionslogg verifierar EJ mot sin hash-kedja — inga nya rader skrivs (append-only: orörd logg + öppen rapport, ALDRIG tyst överskrivning).";
+        "Befintlig prediktionslogg (källa: " + prediktionStatus.kalla + ") verifierar EJ mot sin hash-kedja — inga nya rader skrivs (append-only: orörd logg + öppen rapport, ALDRIG tyst överskrivning).";
     }
   }
+  const predRader: Akm3Prediktionsrad[] = [...predBas];
+  /** Rundens NYA rader — bärs till akm3_prediktion-eventet (DB-spåret). */
+  const nyaPredRader: Akm3Prediktionsrad[] = [];
 
   for (const namn of filnamn) {
     if (korda >= MAX_PORTFOLJER) {
@@ -521,13 +608,15 @@ async function koraUppfoljning(): Promise<NextResponse> {
       //     och AKM1-projektionen, versionsstämplad AKM3.2026.09, hash-kedjad.
       //     Nyckeltal saknas ⇒ rad uteblir (loggen tiger — P3, aldrig gissad).
       //     Samma rond skriver även data/cache/akm3-{TICKER}.json (§4-mönstret).
-      if (!prediktionslogg || prediktionStatus.verifierad) {
+      if (predBas.length === 0 || prediktionStatus.verifierad) {
         for (const snap of nyaSnapshots) {
           if (radFinnsForManad(predRader, snap.ticker, snap.datum)) continue;
           const ensemble = raknaAkm3ForTicker(snap.ticker);
           if (!ensemble) continue;
           const prev = predRader.length > 0 ? String(predRader[predRader.length - 1]?.hash ?? PREDIKTIONSLOGG_GENESIS) : PREDIKTIONSLOGG_GENESIS;
-          predRader.push(stemplaPrediktionsrad(byggAkm3Prediktionsrad(ensemble, snap.pris, snap.datum), prev, sha256));
+          const stampad = stemplaPrediktionsrad(byggAkm3Prediktionsrad(ensemble, snap.pris, snap.datum), prev, sha256);
+          predRader.push(stampad);
+          nyaPredRader.push(stampad);
           prediktionStatus.tillagdaRader += 1;
           await skrivAkm3Cache(snap.ticker, ensemble);
         }
@@ -601,7 +690,46 @@ async function koraUppfoljning(): Promise<NextResponse> {
     } catch (e: unknown) {
       prediktionStatus.notis += `${prediktionStatus.notis ? " " : ""}kunde ej spara prediktionsloggen: ${
         e instanceof Error ? e.message : "okänt fel"
-      } (read-only fs?) — raderna beräknades men persistens uteblev, redovisas öppet.`;
+      } (read-only fs?) — raderna beräknades men filpersistens uteblev, redovisas öppet.`;
+    }
+
+    // 6b) DB-SPÅRET (VÅG 63 bygg-1, O4 §6): rundens nya rader som ETT
+    //     akm3_prediktion-event — på prod (read-only fs) är detta den enda
+    //     växande kedjan; nästa rond läser details.rader som kedjebas (se
+    //     lasPrediktionsKedjebasUrEventer). system_events är gransknings-
+    //     loggen där tickers redan lever (vagscan/vagvalidering); OrganEvent
+    //     behåller grova tal (P8).
+    const sb = getSupabaseRest();
+    if (sb) {
+      try {
+        const res = await fetch(`${sb.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...sb.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({
+            type: "akm3_prediktion",
+            severity: "info",
+            message:
+              "AKM3-prediktionsloggen: " + String(nyaPredRader.length) + " nya hash-kedjade rader (" +
+              String(nyaPredRader[0]?.hash ?? "").slice(0, 12) + "… → " +
+              String(nyaPredRader[nyaPredRader.length - 1]?.hash ?? "").slice(0, 12) + "…)",
+            details: {
+              modellVersion: AKM3_MODELL_VERSION,
+              datum: idag,
+              rader: nyaPredRader,
+              kedjekalla: prediktionStatus.kalla,
+              filSparat: prediktionStatus.sparat,
+              notering:
+                "Append-only hash-kedjade prediktionsrader (BESLUT §10.10): hash = sha256(prevHash + kanonisk rad). " +
+                "Filen prediktionslogg-akm3.json kan vara frusen på read-only fs — detta event är prod-spåret.",
+            },
+            source: "cron/portfolj-uppfoljning",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+        prediktionStatus.dbSparat = res.ok;
+      } catch {
+        // tyst — svaret returneras alltid
+      }
     }
   }
 
@@ -620,6 +748,7 @@ async function koraUppfoljning(): Promise<NextResponse> {
       // AKM3-prediktionsloggen (grova tal only — P8: inga tickers läcker):
       akm3Rader: prediktionStatus.tillagdaRader,
       akm3Sparat: prediktionStatus.sparat,
+      akm3DbSparat: prediktionStatus.dbSparat,
     },
   });
 

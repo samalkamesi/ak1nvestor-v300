@@ -4,9 +4,19 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { requireAdmin } from "@/lib/admin-auth";
 
-/** POST /api/admin/upload-analysis — analytiker laddar upp analys */
+/**
+ * POST /api/admin/upload-analysis — analytiker laddar upp analys.
+ *
+ * SKYDD (VÅG 63 bygg-1, O4-robusthet §5): requireAdmin (x-admin-password,
+ * timing-säkert enligt fas2-access-mönstret) — skriver analysrader och
+ * publiclyerar dem, fick aldrig vara öppen.
+ */
 export async function POST(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
   try {
     const body = await req.json();
     const { memberId, portfolioId, type, title, summary, body: analysisBody, portfolioOverview, riskAssessment, waveAnalysis, recommendations, nextSteps, confidence, isPublished } = body;

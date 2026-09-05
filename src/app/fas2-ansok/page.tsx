@@ -67,6 +67,7 @@ const FAS2_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }
 
 export const metadata: Metadata = pageMetadata({
   path: "/fas2-ansok",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/fas2-ansok (VÅG 63 O3 #2)
   title: "Ansök om Fas 2 — den fundamentala vägen | AK1A",
   description:
     "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt med stöd av 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Oändligt med timmar med grundaren tills du är värdig titeln oberoende analytiker, och chansen att bli representant för AK1nvestor. Ingen teknisk analys-utbildning — mästarnivån är Fas 3. 9 999 kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd.",

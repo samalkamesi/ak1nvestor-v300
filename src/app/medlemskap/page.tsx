@@ -116,6 +116,7 @@ const FAS3_KURSLISTA: Array<{ kategori: string; pitch: string; slugs: string[] }
 
 export const metadata: Metadata = pageMetadata({
   path: "/medlemskap",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/medlemskap (VÅG 63 O3 #2)
   title: "Fas 1 gratis — Fas 2 sammanvägningen — Fas 3 ekosystemet | AK1A",
   // Uppdaterad 2026-09-01: antalen räknas dynamiskt nedan (Fas 1 = totalt − Fas 2 − Fas 3)
   description:

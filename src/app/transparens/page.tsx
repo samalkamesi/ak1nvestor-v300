@@ -7,6 +7,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/transparens",
+  harSpeglar: true, // Ömsesidig hreflang med /en|ar/transparens (VÅG 63 O3 #2)
   title: "Transparens — din data och dina rättigheter, enligt lagen | AK1A",
   description:
     "AK1A:s fullständiga redovisning av personuppgiftsbehandlingen enligt dataskyddsförordningens artikel 13: vilka uppgifter vi samlar in, varför vi använder dem för analys, rättslig grund, lagringstid, dina åtta rättigheter och hur du klagar hos IMY.",

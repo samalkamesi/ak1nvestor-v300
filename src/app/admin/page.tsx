@@ -21,6 +21,7 @@ import {
   Download,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
+import { sparaAdminLosenord, rensaAdminLosenord, adminHeaders } from "@/lib/admin-klient";
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
@@ -160,6 +161,7 @@ export default function AdminDashboard() {
       if (res.ok) {
         setAuthed(true);
         setIsAdmin(true);
+        sparaAdminLosenord(password); // x-admin-password på skyddade admin-anrop
       } else {
         const data = await res.json().catch(() => ({ error: "Fel lösenord." }));
         setLoginError(data.error || "Fel lösenord.");
@@ -186,7 +188,7 @@ export default function AdminDashboard() {
       const params = new URLSearchParams({ limit: "200" });
       if (actionFilter !== "all") params.set("action", actionFilter);
       if (sectionFilter !== "all") params.set("section", sectionFilter);
-      const res = await fetch(`/api/admin/activity?${params}`);
+      const res = await fetch(`/api/admin/activity?${params}`, { headers: adminHeaders() });
       if (res.ok) {
         const data = await res.json();
         setActivities(data.activities || []);
@@ -280,6 +282,7 @@ export default function AdminDashboard() {
               onClick={() => {
                 setAuthed(false);
                 setIsAdmin(false);
+                rensaAdminLosenord();
                 setPassword("");
                 setSection("hem");
               }}

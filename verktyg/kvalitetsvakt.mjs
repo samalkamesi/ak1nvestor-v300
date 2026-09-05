@@ -305,6 +305,15 @@ const CITERINGS_UNDANTAG_STRANGAR = new Set([
   "Ger AK1A investeringsråd eller aktietips?", // src/app/page.tsx + src/app/kurser/page.tsx + src/lib/seo.tsx
   "Ger AK1A investeringsråd?",                 // src/app/medlemskap/page.tsx (svar: "Nej. … aldrig investeringsråd …")
 ]);
+// YTA-REGLER (K8, B2B-BESLUT våg 61 bygg-2): B2B har faktiskt kunder; elever
+// har elever. A8-ordet "kunder" (allvar VARNING) är legitim B2B-terminologi på
+// PRO-ytorna — rutter under src/app/pro/**, komponenter under
+// src/components/ak1a/pro/** och kontraktet under src/lib/pro/** undantas från
+// JUST den varningen. FEL-nivåns juridiska fraser gäller ALLTID, även på
+// B2B-ytor (vakten sänker aldrig nivån för att bli grön), och privata ytor
+// varnar fortfarande för "kunder" (A8 oförändrat).
+const PRO_YTA_RE = /^(?:src\/app\/pro\/|src\/components\/ak1a\/pro\/|src\/lib\/pro\/)/;
+const arProYta = (kalla) => PRO_YTA_RE.test(kalla);
 
 /** Läs FORBJUDNA_FRASER ur data/varumarke.json (komplicerar regexarna med "giu"). */
 function lasForbjudnaFraser() {
@@ -366,6 +375,7 @@ function sektionForbjudnaFras() {
   let strangar = 0;
   let undantagnaFiler = 0;
   let undantagnaStrangar = 0;
+  let ytaUndantagnaKunder = 0;
   const sedda = new Set();
   for (const fil of filer) {
     const kalla = rel(fil);
@@ -392,6 +402,11 @@ function sektionForbjudnaFras() {
         while ((m = re.exec(text)) !== null) {
           if (allvar === "FEL") {
             fel.push({ fil: k, plats: `rad ${rad} (${typ})`, detalj: `"${m[0]}" → säg "${istallet}" — ${motiv}` });
+          } else if (m[0].toLowerCase() === "kunder" && arProYta(k)) {
+            // K8: "kunder" är legitim B2B-terminologi på PRO-ytan — räknas och
+            // dokumenteras, men kräver ingen manuell granskning (endast
+            // VARNING-nivån; FEL-fraserna gäller även här).
+            ytaUndantagnaKunder += 1;
           } else {
             manuella.push({ fil: k, plats: `rad ${rad} (${typ})`, ord: `${m[0]} → ${istallet}`, kontext: kontext(text, m.index, 50) });
           }
@@ -405,7 +420,8 @@ function sektionForbjudnaFras() {
     info.push(`OBS: lib-fil(er) saknas och täcks ej: ${saknadeLibFiler.join(", ")}`);
   }
   info.push(`CITERINGS-UNDANTAG (A10): ${undantagnaFiler} fil(er) + ${undantagnaStrangar} sträng(ar) hoppades över — de CITERAR förbudet: ${[...CITERINGS_UNDANTAG_FILER].join(" · ")} · sträng-exakta negerande FAQ-frågor: ${[...CITERINGS_UNDANTAG_STRANGAR].map((s) => `"${s}"`).join(" / ")}`);
-  info.push("FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning; A8-notering: admin/B2B-ytor får tekniskt sett \"kunder\") · vakten sänker ALDRIG nivå för att bli grön");
+  info.push("FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning) · vakten sänker ALDRIG nivå för att bli grön");
+  info.push(`YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): A8-varningen "kunder" undantas på PRO-ytor (src/app/pro/**, src/components/ak1a/pro/**, src/lib/pro/**) — ${ytaUndantagnaKunder} träff(ar) undantagna som legitim B2B-terminologi; privata ytor varnar fortfarande och FEL-fraserna gäller överallt`);
   return { namn, fel, manuella, info };
 }
 

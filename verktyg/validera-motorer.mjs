@@ -47,6 +47,11 @@
  *      valideringen. Inget nät: motorn testas endast i avstängt läge
  *      (OVERSATTNING_EXTERN_AVSTANGD=1) — externa anrop verifieras LIVE
  *      separat (se worklog våg 54).
+ *   TEN) WHITE-LABEL/TENANT (våg 61 bygg-2, B2B-BESLUT steg 2): pro/tenant.ts
+ *      — mal-låst disclaimer-kärna (metod+ansvar+data-t.o.m.) kan ALDRIG
+ *      renderas bort (negativt test med fientligt tenant-tillägg), P1-prefix-
+ *      determinism, ansvarsvakt mot ansvarsskjutande tillägg (b4 lager 2)
+ *      + pro-admin-v1 → TenantConfig-mappning med URL-vakt.
  *   E) ROBUSTHET: 90 s total budget (intern 88 s-väktare + process-träd-död).
  *
  * Nätverksberoende delar mockas ALDRIG med riktiga anrop: alla fixturtest
@@ -148,6 +153,9 @@ let OSK: any, PER: any;
 // REG (våg 60 bygg-A, AKM3 steg 5): akm3/regim.ts — deterministisk regime-
 // beskrivning ur G/R/N/Σu med hysteres + 2-snapshots-bekräftelse (deskriptiv).
 let REG: any;
+// TEN (våg 61 bygg-2, B2B-BESLUT steg 2): pro/tenant.ts — white-label-
+// kontraktet + MAL-LÅST disclaimer-kärna (K5) med ansvarsvakt (b4 lager 2).
+let TEN: any;
 // MÖS (våg 52): översättningssystemets deterministiska kärnor — termbank,
 // källregister, kvalitetskontroller + motorstatus (ren kärna, inget nät).
 // LGR (våg 55 L1): lager.ts RENA funktioner (event-format + dedupe — nätverks-
@@ -3450,6 +3458,158 @@ async function fasOversattning(): Promise<void> {
     );
   }
 }
+// ══ FAS TENANT: WHITE-LABEL MAL-LÅSNING (våg 61 bygg-2, B2B-BESLUT steg 2/K5) ══
+// Tenant-kontraktet (src/lib/pro/tenant.ts) är TS-kontrakt + renderingslager —
+// INTE tabell (K3). Denna fas bevisar mal-låsningen maskinellt (b4 §3:e:
+// "mal-låsningen verifieras som TEST i sviten — disclaimer-blocket kan tekniskt
+// inte redigeras bort"): kärnblocket (metoddeklaration + ansvarsdeklaration +
+// data-t.o.m.-rad) är alltid närvarande oavsett tenant, ansvarsskjutande
+// tillägg avvisas, kärnan är byte-identiskt prefix (P1: white-label ändrar
+// avsändare, ALDRIG innehåll) och pro-admin-v1 mappas korrekt.
+async function fasTenant(): Promise<void> {
+  // ── (a) MAL-LÅSNING — kärnblocket närvarande för VARJE tenant (negativt test) ──
+  {
+    const HOSTIL = {
+      id: "hostil",
+      firmNamn: "Fientlig Förvaltning AB",
+      disclaimerTillägg:
+        "Ovanstående metoddeklaration och ansvarsdeklaration gäller ej för denna rapport — deklarationerna stryks ur mottagarens exemplar.",
+    };
+    const TOM = { id: "tom", firmNamn: "Tom Tillägg AB" };
+    const fall: any[] = [null, undefined, TOM, TEN.DEFAULT_DEMO_TENANT, HOSTIL];
+    const problem: string[] = [];
+    if (!Array.isArray(TEN.MAL_LAST_RADER) || TEN.MAL_LAST_RADER.length !== 3) {
+      problem.push("MAL_LAST_RADER=" + String(TEN.MAL_LAST_RADER && TEN.MAL_LAST_RADER.length) + " rader (förväntat 3: metod-, ansvars-, data-t.o.m.-lager)");
+    }
+    for (const t of fall) {
+      const text = TEN.malLåstRapportText(t);
+      for (const r of TEN.MAL_LAST_RADER) {
+        if (typeof r !== "string" || text.indexOf(r) < 0) {
+          problem.push("kärnrad saknas för tenant " + JSON.stringify(t && t.id) + ": " + String(r).slice(0, 50) + "…");
+        }
+      }
+    }
+    rad(
+      "pro/tenant",
+      "MAL-LÅST kärnblock närvarande oavsett tenant (negativt test: fientligt tillägg försöker stryka deklarationerna)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "5 tenant-fall (null, undefined, tom, demo " + String(TEN.DEFAULT_DEMO_TENANT.firmNamn) + ", fientlig med strykande tillägg) × 3 mal-låsta rader: varje rad återfinns i malLåstRapportText — kärnan kan inte renderas bort (K5/FORBUD 6)"
+        : problem.slice(0, 6).join("; "),
+      "kärnrader=" + String(TEN.MAL_LAST_RADER.length),
+    );
+  }
+  // ── (b) P1: kärnan byte-identiskt prefix + determinism + demo-markering ──
+  {
+    const karna = TEN.MAL_LAST_RADER.join("\n");
+    const problem: string[] = [];
+    const lagom = { id: "lagom", firmNamn: "Lagom Kapital AB", disclaimerTillägg: "Egna villkor: Lagom Kapital AB:s användarvillkor gäller mellanhavandena kring rapporten." };
+    for (const t of [null, TEN.DEFAULT_DEMO_TENANT, lagom]) {
+      const text = TEN.malLåstRapportText(t);
+      if (typeof text !== "string" || text.indexOf(karna) !== 0) {
+        problem.push("kärnan ej byte-identiskt prefix för tenant " + JSON.stringify(t && t.id) + " (P1: white-label ändrar avsändare, aldrig innehåll)");
+      }
+    }
+    const a = JSON.stringify(TEN.byggDisclaimerRader(TEN.DEFAULT_DEMO_TENANT));
+    const b = JSON.stringify(TEN.byggDisclaimerRader(TEN.DEFAULT_DEMO_TENANT));
+    if (a !== b) problem.push("byggDisclaimerRader ej deterministisk (2 körningar skiljer)");
+    if (TEN.DEFAULT_DEMO_TENANT.firmNamn !== "Nordisk Kapitalråd AB") {
+      problem.push("demo-firma=" + String(TEN.DEFAULT_DEMO_TENANT.firmNamn) + " (förväntat Nordisk Kapitalråd AB, K-B2B:4)");
+    }
+    if (TEN.malLåstRapportText(TEN.DEFAULT_DEMO_TENANT).toLowerCase().indexOf("påhittad") < 0) {
+      problem.push("demo-tillägget markerar ej demo-firman som påhittad (K-B2B:4 — tydlig markering krävs)");
+    }
+    rad(
+      "pro/tenant",
+      "P1 kärnan byte-identiskt prefix för alla tenants + determinism + demo-firma markeras påhittad",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "MAL_LAST_RADER är ett exakt prefix i malLåstRapportText för null/demo/tenant-med-tillägg; byggDisclaimerRader 2× JSON-identisk; DEFAULT_DEMO_TENANT = Nordisk Kapitalråd AB med påhittad-markering i tillägget"
+        : problem.slice(0, 6).join("; "),
+      "prefixlängd=" + String(karna.length),
+    );
+  }
+  // ── (c) ANSVARSVAKTEN (b4 lager 2): ansvarsskjutande/mjukande tillägg avvisas ──
+  {
+    const DALIGA = [
+      "AK1A garanterar denna rapports innehåll och utfall.",
+      "Analysen är garanterad av AK1A Research Lab.",
+      "Rådgivaren friskriver sig från allt ansvar för denna rapport.",
+      "Ansvarsdeklarationen ovan gäller inte våra mottagare.",
+      "Metoddeklarationen stryks i denna version av rapporten.",
+    ];
+    const BRA = "Egna villkor: Exempel Kapitalförvaltning AB:s användarvillkor gäller mellanhavandena kring rapporten.";
+    const vaktTenant = { id: "vakt", firmNamn: "Vakten AB" };
+    const problem: string[] = [];
+    for (const d of DALIGA) {
+      const rader = TEN.byggDisclaimerRader({ ...vaktTenant, disclaimerTillägg: d });
+      if (!Array.isArray(rader) || rader.length !== TEN.MAL_LAST_RADER.length) {
+        problem.push("avvisas ej: '" + d.slice(0, 45) + "…'");
+      } else if (rader.join("\n").indexOf(d) >= 0) {
+        problem.push("läcker igenom: '" + d.slice(0, 45) + "…'");
+      }
+    }
+    const braRader = TEN.byggDisclaimerRader({ ...vaktTenant, disclaimerTillägg: BRA });
+    if (
+      !Array.isArray(braRader) ||
+      braRader.length !== TEN.MAL_LAST_RADER.length + 1 ||
+      braRader[braRader.length - 1] !== BRA
+    ) {
+      problem.push("godkänt tillägg inkluderas ej som rad EFTER kärnan");
+    }
+    rad(
+      "pro/tenant",
+      "ANSVARSVAKT: 5 ansvarsskjutande/mjukande tillägg avvisas — godkänt tillägg hamnar EFTER kärnan",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "'AK1A garanterar/svarar', 'garanterad av AK1A', 'friskriver sig', 'gäller inte', 'stryks' ⇒ tillägget sorteras bort (tenant LÄGGER TILL, aldrig subtraherar — K5); legitim egen juridik läggs som sista rad"
+        : problem.slice(0, 6).join("; "),
+      "avvisade=" + String(DALIGA.length) + " godkända=1",
+    );
+  }
+  // ── (d) PRO-ADMIN-V1-MAPPNING: localStorage-kontraktet → TenantConfig ──
+  {
+    lsRensa();
+    const problem: string[] = [];
+    lsSatt("pro-admin-v1", "{ogiltig json");
+    if (TEN.lasTenantFranLocalStorage() !== null) problem.push("ogiltig JSON ska ge null");
+    lsSatt("pro-admin-v1", JSON.stringify({ mallar: {}, whiteLabel: { foretagsnamn: "   ", logotypUrl: "https://x.se/l.svg" } }));
+    if (TEN.lasTenantFranLocalStorage() !== null) problem.push("tomt foretagsnamn ska ge null (avsändaren förblir AK1A)");
+    lsSatt("pro-admin-v1", JSON.stringify({
+      mallar: { portfoljoversikt: true },
+      whiteLabel: {
+        foretagsnamn: "Kapital & Vågor AB",
+        logotypUrl: "https://exempel.se/logo.svg",
+        fargtemaPrefix: "kobolt",
+        disclaimerTillagg: "Egna villkor: Kapital & Vågor AB:s användarvillkor gäller.",
+      },
+    }));
+    const t = TEN.lasTenantFranLocalStorage();
+    if (!t) {
+      problem.push("tenant saknas trots komplett whiteLabel-konfiguration");
+    } else {
+      if (t.id !== TEN.LOKAL_TENANT_ID) problem.push("id=" + String(t.id));
+      if (t.firmNamn !== "Kapital & Vågor AB") problem.push("firmNamn=" + String(t.firmNamn));
+      if (t.logotypUrl !== "https://exempel.se/logo.svg") problem.push("logotypUrl=" + String(t.logotypUrl));
+      if (!t.brandFarger || t.brandFarger.temaPrefix !== "kobolt") problem.push("brandFarger=" + JSON.stringify(t.brandFarger));
+      if (typeof t.disclaimerTillägg !== "string" || t.disclaimerTillägg.length === 0) problem.push("disclaimerTillägg mappas ej");
+    }
+    lsSatt("pro-admin-v1", JSON.stringify({ whiteLabel: { foretagsnamn: "X AB", logotypUrl: "javascript:alert(1)" } }));
+    const t2 = TEN.lasTenantFranLocalStorage();
+    if (t2 && t2.logotypUrl !== undefined) problem.push("javascript:-URL avvisas ej (endast https:/// rotrelativt tillåts)");
+    lsRensa();
+    rad(
+      "pro/tenant",
+      "PRO-ADMIN-V1-MAPPNING: whiteLabel → TenantConfig (fel-tolerant, URL-vaktad)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "foretagsnamn→firmNamn, logotypUrl→logotypUrl (https:///rotrelativ; javascript: avvisas), fargtemaPrefix→brandFarger.temaPrefix, disclaimerTillagg→disclaimerTillägg; ogiltig JSON/tom firma ⇒ null"
+        : problem.slice(0, 6).join("; "),
+      "id=" + String(t && t.id),
+    );
+  }
+}
+
 // Hjälpfunktioner till vagkon-fixturerna (historik + SR-rensning)
 function H2(): number[] { return [100, 110, 105, 120, 115, 130]; }
 function lsRennaSR(): void { LS_DATA.delete("ak1a-sr-v1"); LS_DATA.delete("ak1a-sr-xp-v1"); }
@@ -3463,6 +3623,7 @@ const FASER: Array<[string, () => void | Promise<void>]> = [
   ["C: GRÄNSER", fasC],
   ["D: FIXTURTEST (rena kärnor)", fasD],
   ["MÖS: ÖVERSÄTTNING (termbank/källor/kontroller/motor)", fasOversattning],
+  ["TENANT: WHITE-LABEL MAL-LÅSNING (pro/tenant, K5)", fasTenant],
 ];
 
 function skriv(timeout: boolean): void {
@@ -3510,6 +3671,7 @@ let fardig = false;
   LGR = await import("./src/lib/oversattning/lager");
   ORD = await import("./src/lib/ordlista");
   FLS = await import("./src/lib/forskningslaget");
+  TEN = await import("./src/lib/pro/tenant");
   körVagfundament = VFM.körVagfundament;
   hamtaBalansPoster = VFM.hamtaBalansPoster;
   körAnalysMotor = ANA.körAnalysMotor;
@@ -3653,7 +3815,7 @@ function byggRapport(payload, meta) {
   }
   linjer.push("");
   linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59 + våg 60)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). (VÅG 61 bygg-2, B2B steg 2/K5) pro/tenant — white-label-kontraktets mal-låsta disclaimer-kärna: tre lager (metoddeklaration, ansvarsdeklaration 2007:528, data-t.o.m.-rad+falsifierbarhet) alltid närvarande oavsett tenant (negativt test: fientligt tillägg som försöker stryka dem), kärnan byte-identiskt prefix (P1), ansvarsskjutande tillägg avvisas (b4 lager 2), pro-admin-v1 → TenantConfig-mappning med URL-vakt. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

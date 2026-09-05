@@ -6920,3 +6920,516 @@ evergreen-slugar, villkorad på granskning) · m10 referral (e-posthash=
 pseudonym AVSLAGEN; opt-in slumpkod + aggregate-only, lotterilagen).
 VERIFIERING: tsc 43/0 · svit 101/0/0 · Kvalitetsvakten GRÖN (6 manuella
 ton-granskningar). AKM3-BESLUTETS SEX MOGNA STEG ÄR NU ALLA BYGGDA.
+
+── VÅG 61 B2: B2-PERSONAVÄXLING FORSKNING (2026-09-04) ──
+data/forskning/B2B/b2-persona-vaxling.md (207 rader): dual-audience-IA för
+Privatperson|Företag. (1) Webbmönster: NN/g audience-nav-varning förenad med
+vår R9-task-struktur => växeln = scope-switch OVANFOR tva task-baserade
+varldar; banker (Nordea/SEB/Swish) + Slack/Notion bekräftar persistent
+toppväxel; subroot > subdomän (Mueller/Ahrefs/Semrush). (2) Lakage-karta:
+"AK1A PRO" i OM AK1A-panelen utan yttor-begränsning => läcker i 5 ytor
+(huvudmeny/SPA-header/mobilmeny/sidfooter/KOMMANDOPALETT via sokindex);
+B2B-skalet läcker ut via dödlänk /terms (finns ej — ska vara /villkor) och
+privacy-policy som renderar SeoPageShell (hel privat sitemap). (3) Tre rek:
+R1 toppväxel som ren länk-separation (URL=läget, INGEN cookie — SSG-säker,
+delbar, crawlbar; registerrad får yttor:["footer","sok"]); R2 PRO-eget skal
+med rutter /pro{,/klienter,/analys,/rapporter,/priser} + dödlänkfix; R3
+privat→B2B CTA-flöde ("Är du rådgivare?" på fas3/Superanalysen/rapporter),
+blogg+juridik delade, kurser ALDRIG. SEO per alternativ dokumenterat.
+Committades ej (enligt direktiv). Verification: wc -l = 207 ≤ 280.
+
+── VÅG 61 B1: FORSKNING MEGA-B2B — PLATTFORMSMARKNAD + /pro-INVENTERING + GAP (2026-09-04) ──
+Leverans: data/forskning/B2B/b1-plattformar.md (124 rader, 3 rekommendationer).
+(WEBB) Advisoryplattformar 2026: Morningstar Direct Advisory Suite (klient-
+dashboard, FINRA-granskade rapporter, compliance+CRM), YCharts (bakgrunds-
+bevakning, klientförslag, offertpris + 26%-kampanj), FactSet Wealth (modulär
+advisor-dashboard, AI-agenter 2026), Koyfin (Advisor ~209 USD/mån ≈ 2 300 kr
+— AK1A:s 499/1 499/4 999 kr/seat bekräftat "mellan TIKR och Koyfin"), TIKR
+(25-120 USD). Norden: Alwy (SE), Harvest, 3rd-eyes — INGEN säljer metodik-
+driven white-label-rapportgenerering i AK1A:s prisläge (blå hav lever).
+"Kvadrant" = dansk konsult (Elixirr), INTE plattform — referens rensas.
+(KOD) /pro inventerad: landning+pris-trappa (499/1 499/4 999 kr/mån/seat,
+Fas 3-förtur 299), CsvImport 737 r (svensk CSV, vikter, max 10, P8),
+/api/pro/analys (konfluens+vågfundament+universum-sammanfattning),
+/pro/admin 5 sektioner (kunder, Fas 2, 3 låsta mallar + white-label-fält,
+analyslogg; localStorage "pro-admin-v1", POST redo som OrganEvent).
+(GAP) ~70 % av B2B-värdet är ARVBART som rena libs/klientsäkra komponenter:
+AKM2-dashboard, vagkurva-graf, vagvalidering träff% (protokoll v2),
+AKM3-ensemble, peer (läslager). MÅSTE BYGGAS B2B-SPECIFIKT: PDF-rapport-
+generering med white-label + mal-låst kolofon, API-nyckel/rättighetsstyrd
+metodikmodul, seat + hash-kedjat audit-spar per export, bevakning/notiser.
+Klientöverblick med persondata (Morningstar-vägen) AVVISAD — anonym
+portföljidentitet är GDPR- och rådgivningslags-fördel (2007:528).
+(RANKNING) 1. White-label PDF-rapportgenerator 2. Metodik-dashboard per
+portfölj (arv) 3. Träff%-kvitto i rapporten 4. Metodik-API-nyckel
+5. Universum-bevakning 6. Seat+audit-spar 7. Peer-rader 8. Bokkanon-bilaga.
+(REK) 1) bygg rapportgeneratorn FÖRST (pris-trappans olösta löfte),
+2) ärv den visuella kärnan som Metodikpanel bakom inloggad pro-vy,
+3) B2B-spåret: API-nyckel + seats + append-only audit-logg (mönster ur
+regime-/kalibrering-loggarna) — gör Institution-nivån avtalbar.
+INGET COMMITTAT.
+
+── VÅG 61 B3: RÅDGIVARDASHBOARD-FORSKNING (2026-09-04) ──
+Levererat data/forskning/B2B/b3-rådgivardashboard.md (211 rader, 3
+rekommendationer) — produktforskning mot kundvisionen "dashboard som är
+exceptionell för RÅDGIVARE". Webbresearch: Morningstar Direct Advisory
+Suite/Koyfin-mönster (klientöverblick + X-ray + rapportvolymstrappor),
+NN/g dashboard-IA (preattentiva attribut, progressive disclosure, pod->
+detail), screening-kanon (sparade screeningar -> bevakning -> alerts),
+EDPB 07/2020 + IMY för GDPR-rollerna. Repo-syntes: akm2-dashboard.tsx
+(prop-drivna komponenter ateranvands rakt), korstabell.tsx (screening-
+verkyget finns: filter+sort+peer+intervall), /api/portfolj-forskning (GET
+korstabell-rader, POST byggPortfolj, ingen auth), trafik-sakerhet-panelen
+(kort-grid+60s-poll+hash-IP som morgonrondens layout-DNA), /pro/admin
+(3 lasda mallar + white-labelfalt i localStorage), /rapporter (window.print-
+vag — INGEN server-PDF i package.json: analysfabrikens PDF-vag existerar
+ej an). Arkitektureslag "Radgivarens cockpit" i 4 vyer: (a) Klientvyn —
+demoklient i MVP, riktiga klienter fas 2; (b) Screening-vyn ur 100-bolags-
+korstabellen med sparade filter; (c) Rapportflodet = Rapportbyggare-motorn
+bakom /pro med white-label-block i dokumentet, server-PDF i fas 3; (d)
+Morgonrond: vagvalidering-traff procent + AKM3-regim + veckans research +
+screeningrörelser. Datamodell: members/client_portfolios/system_events
+finns; 5 nya pro_-tabeller i fas 2 (organisation/seat/klient/klientinnehav/
+screening), klientkod-alias (dataminimering), PUB-avtal som fas-2-grind,
+ALDRIG aterspa de ~350 legacy AI-organ-tabellerna. FASNING: MVP (0 nya
+tabeller, personuppgiftsfri) -> fas 2 klientregister -> fas 3 white-label-
+PDF+seats. INGET COMMITTAT.
+
+## VÅG 61 B5: ARVSKANSLISTA + B2B-UNIKA SYSTEM — forskningsunderlag inför B2B-språnget (2026-09-04)
+
+Kundvision: "ta de bästa från privatpersons-sidan och bygg vidare i B2B + nya
+system". INGEN kod rörd — data/forskning/B2B/ (NY katalog) + denna post.
+LÄST FÖRST: data/motorregister.json (42 motorer, våg 49) + worklog våg 48-60
++ direkta källor: akm2-dashboard.tsx, vagkurva-graf.tsx, vagvalidering.ts,
+analysfabriken (22 analyser), akm3/{ensemble,osakerhet,peer,regim,kalibrering},
+konverteringsvyn, MÖS (oversattning/ + speglarna), prediktions-/regime-/
+kalibrering-loggarna, korstabell-grund.json (verifierad i node: 100 rader,
+10 branscher × 10, peer-/akm2-/portV19-/datatackningsfält).
+
+LEVERANS data/forskning/B2B/b5-arv-och-nya.md (116 rader):
+(1) ARVSKANSLISTA — privatsidans 10 bästa rankade efter B2B-värde för
+rådgivare, varje rad med krav för B2B-kontext (white-label/multi-seat/
+export/disclaimer): 1 AKM2-dashboarden (kundmötets visuella ryggrad —
+radar+modulring+dekomposition) · 2 forskningsbiblioteket/analysfabriken
+(research-delen; ANSVARSBYTE: disclaimern konfigureras per tenant) · 3
+Elliott-vågkurvorna (presentation + källärligheten som SÄLJER) · 4 MÖS
+(klientrapporter sv/en/ar — arabiska = arv få konkurrenter matchar) · 5
+peer+osäkerhetsintervall (redan presentationslager, nästan nolla krav) · 6
+prediktionsloggen+vågvalidering (spårbarhet) · 7 portföljforskningen
+(modellportföljer per riskprofil, MiFID-mappning) · 8 då-vs-nu-uppföljningen
+(månatliga klientbrev) · 9 konverteringsvyn (B2B-lead-tratt, CRM-export) ·
+10 nyhetsmotorn (morgonspaning per klientuniversum). Utanför topp-10
+dokumenterat: regim/forskningsläge (går i mötespaketet), vagkon,
+rapportbyggaren.
+(2) FEM NYA B2B-UNIKA: (a) KLINIKJÄMFÖRELSE klient A vs B vs bransch-peer
+(peer.ts midrank återanvänds) · (b) PORTFÖLJBLÅSBILD koncentration/
+branschspridning + HHI ur vikter (ren SVG, dashboard-precedensen) · (c)
+COMPLIANCE-SPÅR — prediktionsloggen ÄR redan revisionsvägen (sha256-kedja,
+verifieras före append, manipuleringsskyddad); utöka till rapportversioner
++ export · (d) MÖTESFÖRBEREDELSE-PAKET (regim+forskningsläge+vågprofil+
+då-vs-nu+nyheter+peer → 1 A4; samlar åtta färdiga motorer) · (e) B2B-API
+läs-API per tenant (datacache-mönstret gör endpoints billiga).
+(3) DAGENS DATA vs NY INSAMLING (tabell): a-d mogna på dagens data (endast
+klientinnehav är verklig nyinsamling — pro/csv-import + Min Portfölj är
+färdiga mönster); (e) mest infra (auth/nycklar), minst data.
+(4) BYGGORDNING: 0 tenant-grunden (org-nyckel + white-label-tokens +
+konfigurerbar disclaimer — varumarke.json-mönstret) → 1 mötespaket v1 på
+forskningsportföljer (noll ny insamling, M3-principen) → 2 innehavsgrunden
+→ 3 compliance-export → 4 MÖS-klientrapporter → 5 B2B-API sist.
+(5) TRE REKOMMENDATIONER: tenant-grund FÖRST (annars ombygge vid kund 2) ·
+mötespaketet som första B2B-produkt (säljdemo dag 1) · compliance-spåret
+som differentiering (kedjan redan byggd+testad — spårbar metodik öpppar
+bank-/fond-dörrar). Rättsnoter: 2007:528 blir tenant-konfigurerbart
+ansvarsbyte; varumarke-vaktens "kunder"-VARNING (A8) behöver yta-regel för
+B2B/admin innan första kundpanel (4 manuella träffar redan idag).
+
+FYND UNDER LÄSNINGEN: prediktionslogg-akm3.json finns ännu ej (0 aktiva
+portföljer — hederligt) men kedjemaskineriet är färdigt och testat; 0
+akm3-cacher (ensembler räknas on-demand); korstabellens 10×10-struktur är
+PEER-systemets genomslag — medianer per bransch redan i varje rad.
+INGET committat.
+
+## VÅG 61 B4: juridik + priser B2B (/pro) (2026-09-04)
+
+Uppdrag: B2B-regulering, GDPR/DPA för klientdata, prismodell, juridisk
+lanseringschecklista.
+
+- data/forskning/B2B/b4-juridik-priser.md (125 rader, 3 rekommendationer) —
+  NY katalog data/forskning/B2B/.
+- Regulering: verktygsleverantör till reglerade rådgivare = inget
+  FI-tillstånd; substans över etikett (ESMA supervisory briefing); rådgivarens
+  lämplighetsansvar kan ej disclaimas bort; oberoende rådgivare = inga
+  tredjepartsersättningar → AK1A betalar aldrig referral till rådgivare.
+  2022:260/261 gäller EJ B2B → separata B2B-villkor krävs (avtalslagen 36 §).
+- GDPR: rådgivare = ansvarig, AK1A = biträde → DPA-mall art 28 (9 punkter,
+  IMY/EDPB-källor); underbiträdeslista Vercel/Supabase/Stripe att publicera;
+  dataminimering hårdkodad: CSV = instrument+vikt (aldrig personuppgifter),
+  cockpit-pseudonym, PDF bär metodik-utdata ej rådata.
+- Pris: forskning bekräftar flat per seat (marknad $150–400/advisor/mån;
+  AUM-opacitet = Addepar-kritiken; onboarding-avgift standard i B2B SaaS).
+  Tre alternativ — REK A: behåll 499/1 499/4 999 + engångs-onboarding
+  9 900 kr Institution (avklippt mot 2-årsbindning); B hybrid rapporttrappa;
+  C AUM-band avrås (transparenslöftet + compliance-renhet). Slutligt beslut
+  kundägaren; privat 249/449/799 berörs ej.
+- Checklista 9 blockerare: B2B-villkor, DPA, behandlingsregister,
+  underbiträdeslista, policy-komplement, mal-låsning verifierad i kod,
+  juristgranskning disclaimers (en gång), B2B-faktura/moms exkl. moms,
+  referral-spärr mot /pro.
+- Inget committat. Källor: FI/ESMA/IMY/EDPB/Kitces/Paddle m.fl. i rapporten.
+
+## VÅG 61 styrelse: B2B-BESLUT — syntes av b1–b5 (2026-09-04)
+
+- data/forskning/B2B/B2B-BESLUT.md (238 rader, normativt, version
+  B2B.2026.09) — AI-styrelsens ordförande, tre ronder över b1-b5 +
+  AKM3/MARKNADS-BESLUT-format + kodläsning (/pro, meny-register,
+  seo-page-shell).
+- ROND 1 (9 konflikter dömda, §2): b3 vinner över b1 om byggordning
+  (morgonrond+screening före PDF — 0 nya beroenden); b2:s rutter vinner
+  över b3:s /pro/cockpit-prefix (EN B2B-nav); b5:s tenant-grund blir
+  KONTRAKT inte tabell (K3); b5:s "konfigurerbar disclaimer" skärps till
+  b4:s mal-låsta tre lager (K5); b4:s 9 blockerare blir LANSERINGSGRINDAR
+  inte bygggrindar (K6); pris-copy "PDF/mån" justeras ärligt tills PDF
+  finns (K7); yta-regel för "kunder" i varumarke-vakten (K8).
+- ROND 2 (arkitekturen, §3-5): (1) toppväxel Privatperson|Företag — ren
+  länk-separation, ingen cookie, utility-raden alla sidor + spegel i
+  PRO-skalet; AK1A PRO-raden får yttor:["footer","sok"]; PRO-nav med 5
+  rutter (/pro, /pro/klienter, /pro/analys, /pro/rapporter, /pro/priser);
+  footerfix /terms→/villkor (dödlänks-bugg); delade ytor = juridik+blogg+om
+  (B2B-villkor som PRO-sektion på /villkor); LÄRA/PRAKTIK aldrig länkade
+  från B2B. (2) MVP = morgonrond + screening + demoklient + mötespaket +
+  Rapportverkstan print-först — 0 nya tabeller, 0 personuppgifter.
+  (3) Grindtabell G1-G4: demo fritt; betalande kund kräver villkor+jurist+
+  faktura; klientregister kräver signerad DPA; Stripe/PDF/API = fas 3.
+  (4) Pris-rek till kundägaren: alternativ A (499/1 499/4 999 flat/seat +
+  onboarding 9 900 kr Institution) — AUM avrått permanent.
+- ROND 3 (§6-8): FORBUD 12 st (personuppgifter i MVP, referral till
+  rådgivare ALDRIG, AUM-pris avrått, cookie-växel, white-label suddar
+  aldrig ansvarsdeklaration, persondata-klientöverblick förbjuden som
+  arkitektur, legacy-tabeller orörda, P1-determinism etc.) · byggordning
+  steg 1-6 med acceptanskriterier (1 växeln, 2 tenant-kontraktet, 3
+  morgonrond+screening, 4 demoklient+mötespaket+Rapportverkstan, 5
+  juridikpaketet G2, 6 VILLKORAD klientregister efter DPA) · kundkrav
+  K-B2B:1-6 (jurist, prisbeslut, moms/faktura, white-label-demo,
+  underbiträdes-bekräftelse, pilot-DPA).
+- INGET committat.
+
+## VÅG 61 bygg-1: Separationsväxeln + registerrad + PRO-nav + footerfix (2026-09-04)
+
+STEG 1 av B2B-BESLUT §7 — kunddirektivets "separationen Mega". Fil-domäner
+enligt §9; /pro-innehållet orört bortsett från layout+stubbar (fylls av
+steg 3-4-agenterna).
+
+- NY src/components/ak1a/toppvaxel.tsx — "Privatperson | Företag": ren
+  LÄNK-separation (URL:n = läget, INGEN cookie — FORBUD 4). Aktiv halva =
+  icke-länk med aria-current="true" + marin-panel/guld-pill (DNA); andra
+  halvan = länk (privat vy: Företag→/pro; PRO-vy: Privatperson→/). Stor-
+  variant för drawers. Etiketter via ordlistan: nav.privatperson +
+  nav.foretag (sv/en/ar — våg 51-mönstret), tillagda i ordlista.ts.
+- Monterad i utility-raden: seo-page-shell.tsx ( bredvid InloggadKnapp,
+  hidden under sm), header.tsx (SPA: efter sök-knappen + EGEN RAD i
+  fullmeny-drawern), mobilmeny.tsx (egen rad överst i drawern under
+  logotypen — ETT klick från varje sida även i mobil).
+- meny-register.ts: AK1A PRO-raden (OM AK1A) fick yttor:["footer","sok"] —
+  ur huvudmeny/mobilmeny/SPA-paneler (alla tre konsumerar
+  sektionPunkter(…,"meny") som respekterar yttor — samma mekanism som
+  redan höll "Logga in" ur menyerna), KVAR i Sidfooter (SEO-internlänk)
+  och sökbar i ⌘K. SPA-footerns kurerade FOOTER_URVAL berörs ej ( listar
+  aldrig /pro).
+- sokindex.ts LÄCKAN (b2 §2.1.5) fixad: STATISKA plattade hela registret
+  utan yta-filter — nu filter !yttor || yttor.includes("sok") (samma
+  kontrakt som sektionPunkter(…,"sok")). Palettens utbud oförändrat idag
+  (ingen punkt är footer-exklusiv) men läckan är stängd för framtiden.
+- PRO-skalet (src/app/pro/layout.tsx): EGEN B2B-nav — NY
+  src/components/ak1a/pro/pro-nav.tsx (klient) med fem rutter i
+  rådgivarens arbetsordning: /pro Översikt · /pro/klienter · /pro/analys
+  · /pro/rapporter (etiketten "Rapportverkstan" löser namnkrocken mot
+  privat /rapporter, K4) · /pro/priser; aria-current på aktiv vy; desktop-
+  rad + rullbar mobilrad. Speglad Toppvaxel variant="pro" (aktiv=Företag).
+  VarumarkesLogo (skulptur-rutan, kundens standard) + PRO:ts egna guld/
+  cream-ordmärke mot marin vägg. Landningssidans tre #ankare ersatta av
+  rutterna i skalet (ankarna ägs av /pro-sidans egen text). Marin vägg,
+  guldbadge, style-tagg (döljer AI-Mentor/Short-Seller), inga privata
+  menyer — oförändrat. FOOTERFIX: /terms→/villkor (dödlänk→404-bugg,
+  b2 §2.2.1); /privacy-policy behållen med notering — juridiken delas,
+  EN sanningskälla (§3 "Delade ytar").
+- FYRA STUBBAR (force-static, ProShell-stil — INTE SeoPageShell, med
+  rubrik + kommer-text + tydliga TODO-markörer i filhuvudena för steg 3-4):
+  /pro/analys (screening+CSV-import, STEG 3), /pro/klienter (demoklient+
+  mötespaket, STEG 4), /pro/rapporter (Rapportverkstan print-först+white-
+  label+mal-låst, STEG 4), /pro/priser (lyft ur #priser-ankaret med K7-
+  copy-direktivet, STEG 4). Alla bär 2007:528-låsraden.
+- VERIFIERAT (dev :3506): växeln syns server-renderad på / + /kurser
+  (aktiv=Privatperson, aria-current) och /pro (aktiv=Företag) + i båda
+  drawers; AK1A PRO kvar i Sidfooter på SEO-sidor, borta ur meny-ytor;
+  direktlänk /pro renderar PRO-skal i ren HTML (ingen cookie); fem
+  PRO-rutter 200; /villkor-länk i PRO-footer, 0 "/terms" kvar i src;
+  tsc: 0 fel i steg-1-filerna (totalen i trädet ägs av parallellagenter);
+  eslint: 0 nya (header 3 + mobilmeny 1 förhandsexisterande, verifierat
+  via stash). Svit/verktyg orörda.
+- INGET committat (enligt direktiv).
+
+## VÅG 61 bygg-2: TENANT-KONTRAKTET + white-label-lager + mal-låsningstest + "kunder"-yta-regel (B2B-BESLUT steg 2, K3/K5/K8) (2026-09-05)
+
+Uppdrag: steg 2 av §7 — tenant-grunden som TypeScript-KONTRAKT + renderingslager
+(aldrig tabell; pro_-persistensen väntar i fas 2 bakom DPA-grinden G3).
+
+- NY src/lib/pro/tenant.ts (K3-dom: kontrakt, INTE tabell):
+  - TenantConfig {id, firmNamn, logotypUrl?, brandFarger?{temaPrefix?},
+    disclaimerTillägg?} — täcker firmnamn/logotyp-URL/färgtema + LÄGG-TILL-
+    juridik (acceptans i). Ren, deterministisk lib-funktionssamling: 0 I/O
+    utöver localStorage-läsning, 0 klockor/slump (P1/FORBUD 11).
+  - DEFAULT_DEMO_TENANT (K-B2B:4): "Nordisk Kapitalråd AB" — PÅHITTAD demo-
+    firma, tydligt markerad (id demo-nordisk-kapitalrad + "Demo-firma —
+    påhittad (K-B2B:4)"-badge i renderingen + påhittad-markering I
+    disclaimerTillägget så den syns i varje dokument). Logotyp-URL väntar på
+    kundens demo-underlag — monogram-plats renderas tills dess.
+  - MAL_LAST_RADER (frusen readonly, 3 rader = b4:s tre lager): metod-
+    deklaration (AKM1/AK1TS/Konfluens, generisk+deterministisk) +
+    ansvarsdeklaration ("Pedagogisk analys — inte investeringsråd (2007:528)",
+    rådgivaren bär tillståndet) + data-t.o.m.-rad med öppen falsifierbarhet.
+    byggDisclaimerRader() har INGEN kodväg som plockar bort kärnan —
+    mal-låsningen är teknisk, inte policytext (b4 §3:e).
+  - Ansvarsvakten arTillaggGodkand() (b4 lager 2): disclaimerTillägg avvisas
+    vid ansvarsskjutande/mjukande språk ("AK1A garanterar/svarar för",
+    "garanterad av AK1A", "friskriver sig", "deklarationen gäller ej/stryks")
+    — tenant LÄGGER TILL, subtraherar aldrig (K5/FORBUD 6).
+  - lasTenantFranLocalStorage(): pro-admin-v1 {whiteLabel:{foretagsnamn,
+    logotypUrl, fargtemaPrefix, disclaimerTillagg?}} → TenantConfig (id
+    pro-admin-v1-lokal); fel-tolerant (ogiltig JSON/tom firma ⇒ null) +
+    URL-vakt (endast https:///rotrelativ; javascript: avvisas). LS-nycklarna
+    förblir åäö-fria (P7) — kontraktstypen får åäö.
+- NY src/components/ak1a/pro/tenant-header.tsx (renderingslagret): TenantHeader
+  (presentationskomponent — logo-plats: img om logotypUrl annars monogram,
+  firmNamn + "× AK1A-metodik"-band + demo-badge; data-tenant-tema-hook för
+  fas 2-tokens) + useTenant()-kroken (pro-admin-v1 först; annars
+  DEFAULT_DEMO_TENANT ENDAST på /pro-ytor; annars null — P4: B2B läcker
+  aldrig in i privat-upplevelsen; hydration-säker bakom useEffect).
+- rapportbyggare.tsx (delad motor, /rapporter + framtida Rapportverkstan):
+  valfri tenant-prop (explicit tenant vinner över useTenant); TenantHeader
+  renderas I #ak1a-rapport-dokument (print-CSS:n följer med i utskrift);
+  footern byggs nu ur byggDisclaimerRader() — mal-låsta kärnan ALLTID
+  först, tenantens vaktagade tillägg efter, elev-raden endast utan tenant
+  (privat upplevelse orörd: utan pro-admin-konfiguration är avsändaren
+  AK1A och renderingen som förr + de tre mal-låsta raderna).
+- MAL-LÅSNINGSTEST (acceptans ii — "disclaimer-blocket kan inte renderas
+  bort") i verktyg/validera-motorer.mjs: NY fas "TENANT: WHITE-LABEL
+  MAL-LÅSNING (pro/tenant, K5)" med 4 kontroller: (a) kärnblocket närvarande
+  för 5 tenant-fall inkl. NEGATIVT test (fientligt tillägg som försöker
+  stryka deklarationerna), (b) P1: kärnan byte-identiskt prefix för alla
+  tenants + determinism 2× + demo-markering, (c) ansvarsvakten (5 avvisade +
+  1 godkänt tillägg EFTER kärnan), (d) pro-admin-v1-mappningen (fälten,
+  fel-tolerans, javascript:-URL-vakt). Svit: 105 PASS / 0 FAIL / 0 SKIP
+  (baslinje 101 + 4 nya; kördes 2×).
+- YTA-REGLN (K8, acceptans iii) — "kunder"-varningen får B2B-undantag:
+  - verktyg/kvalitetsvakt.mjs sektion 2b: PRO_YTA_RE (src/app/pro/**,
+    src/components/ak1a/pro/**, src/lib/pro/**) — A8-varningen "kunder"
+    (ENDAST VARNING-nivån) räknas som yta-undantagen och dokumenteras i
+    rapporten; FEL-fraserna gäller överallt, privata ytor varnar kvar.
+  - src/lib/varumarke.ts kontrolleraText(text, {proYta?}): samma undantag
+    app-sidan (additiv valfri parameter — pipelines deklarerar yta).
+  - data/varumarke.json: "kunder"-radens motiv dokumenterar yta-regeln
+    (guldkällan — samma text-speglingsmekanik som vakten).
+  - VERIFIERAT: kvalitetsvakten GRÖN, 0 fel, manuella 6→2 (de 4 PRO-yte-
+    träffarna pro/admin + pro/admin-panel undantas; kvar: stock-analysis-
+    view "Kunder" + superanalys "Sista chansen" — privata ytor, korrekt).
+- VERIFIERING: svit 105/0/0 (100% kvar); tsc: 0 fel i byg-2:s filer
+  (trädets total ägs av parallellagenter — vid slutkontroll 1 syntaxfel i
+  cockpitagentens pågående pro-utskrift.tsx, inte min fil); renderToString-
+  koll (react-dom/server, tillfällig skript, raderad): TenantHeader med
+  demo-tenant renderar firmNamn + monogram "N" + × AK1A-metodik + demo-
+  badge, img+alt med logotyp-URL, footerrader = 3 mal-låsta + 1 demo-tillägg,
+  2007:528-raden närvarande; dev: sidorna /rapporter + /pro + /pro/admin
+  200 på den delade dev-instansen :3506 (Next 16 dev-låset tillåter bara EN
+  dev-server per träd — bygg-1:s instans; samma arbetskopia, /rapporter
+  server-renderad med ändringarna). 0 nya tabeller, 0 nya beroenden.
+- Rört EJ: pro-skal/menyer (bygg-1), cockpit-sidor (steg 3-4), AKM2/AKM3-lib,
+  legacy-tabeller. INGET committat (enligt direktiv).
+
+## VÅG 61 bygg-3: cockpit-MVP — morgonrond + screening + CSV-import (2026-09-04)
+
+Uppdrag: B2B-BESLUT §7 steg 3 (§4a+§4b) — /pro-översiktens fyra kort +
+/pro/analys screening med namngivna filter + CSV-import monterad.
+
+- /pro — MORNONRONDEN (fyra kort, trafik-sakerhet-panelens kort-grid-DNA:
+  grid → sm:2 → lg:4; §4e: landningssidans hero+tre ben+CsvImport behålls
+  som introduktion OVANFÖR morgonronden, morgonronden före pris-trappan):
+  1. TRÄFF-% — vågvalideringens rullande träff har INGEN läs-API; nya
+     src/components/ak1a/pro/morgonrond-data.ts läser
+     data/rapporter/vagvalidering-SENASTE.md SERVER-side (ren tolkare
+     tolkaVagvalideringText + fs-wrapper lasVagvalideringTraff): totalrad,
+     räknare-sedan, genererad-stamp + per-horizontabell ("— (n=0)"-celler ⇒
+     null). Visar "52 % träff · n=48 dömda · osatta 20 % · sedan 4 september
+     2026" + horisont-tooltip; "öppet kvitto — ej garanti" (§10).
+  2. REGIM — /api/forskningslage:s toppnivåfält `regim` (AKM3, hash-kedjad
+     logg): regime-namn + "per 2026-09-03" + beskrivning + gröna/röda-andelar
+     + N-vakt-status (nettoVagbredd). Nu: magert, "Få bolag klarar de strikta
+     kraven — selektionen bär helheten".
+  3. VECKANS RESEARCH — forskningslage.veckansBolag (vecko-hash, P1): nu
+     vecka 36 Norsk Hydro ASA (NHY.OL, AKM1 53,4). Kort 2–3 hämtar live i
+     useEffect (forskningslage-kortets hydration-säkra mönster; skelett
+     första passt).
+  4. SCREENING — räknare av sparade screeningar ur localStorage
+     (pro-screeningar-v1) + tre namngivna snabbfilter (gröna · AKM2-topp ·
+     peer-topp → /pro/analys?screening=…) + länk in i Analys.
+  Låsrad 2007:528 i sektionen (§7 steg 3 iii). G1: öppen, pro-branded.
+- /pro/analys — SCREENINGEN: nya
+  src/components/ak1a/pro/pro-screening.tsx (korstabell.tsx privat och
+  orörd — B2B-VARIANT som ÅTERANVÄNDER vag-stil-chips: Akm1Chip, Akm2Cell,
+  TackningChip, StatusChip + peerRankText/peerDragText ur peer-lib, läs-läge):
+  - Data ur lasKorstabellGrund SERVER-side (100 rader, peer-berikade) som
+    props — klienten hämtar aldrig 100 rader själv (M3).
+  - FILTER: status, bransch, AKM2-min, täckning-min (procent), peer-min +
+    fritextsök (svenskt decimalKomma tolereras i alla min-fält).
+  - SORTERING: AKM1/AKM2/peer/täckning/golv (korstabellens ▾/▴/↕-knappmönster,
+    osatt/null sorterar alltid sist).
+  - NAMNGIVNA SCREENINGAR: fyra fördefinierade (grona, akm2topp ≥ 70,
+    peertopp ≥ 75, bredast täckning ≥ 80 — samma id:n som morgonrodens
+    snabbfilter) + spara/ladda/radera egna i localStorage pro-screeningar-v1
+    (hela läget: filter+sortering; återskapas bitidentiskt; namnunikhet
+    valideras; korrupt JSON tystas). ?screening=<id> appliceras vid mount.
+  - CSV-EXPORT: client-side blob, semikolon, SVENSKA DECIMALER (komma),
+    BOM för Excel, filnamn ak1a-pro-screening.csv — metodik-utdata, aldrig
+    rådata.
+  - CsvImport KVAR på /pro och MONTERAD på /pro/analys (§4b): instrument+
+    vikter, max 10 tickers, ingen persistens (P3/P8). Stub från bygg-1 fylld
+    (metadata utökad, deras sidhuvud/eyebrow behållet).
+- TESTER (100 %-mönstret): verktyg/testa-morgonrond-data.mjs 19/19 PASS
+  (rikig rapportfil + fixture med komma-decimaler + ärlighet-null + P1-
+  determinism); verktyg/testa-pro-screening.mjs 26/26 PASS (tal-input,
+  sorteringsvärden per nyckel inkl. osatt→-Infinity, CSV-kontraktet,
+  determinism). Obs: tsx-spawn behövde citerad kommandosträng — repots
+  sökväg innehåller blanksteg (Windows).
+- VERIFIERING (dev 3508; Next 16 tillåter EN dev-server per träd — stoppade
+  den eftersatta :3506-instansen, startade :3508 som lämnas igång):
+  /pro 200 — MORNONRONDEN + kort 1 med RIKTIG data i server-HTML (52 %,
+  sedan 4 september 2026, perHorisont i RSC-payloaden), kort 2–3:s etiketter
+  + skelett, /api/forskningslage levererar regim=magert per 2026-09-03 +
+  veckansBolag vecka 36 NHY.OL; /pro/analys 200 — 100 tabellrader, alla
+  kontroller (chips, sök, selects, min-fält, Exportera CSV (100), Spara
+  screening), PORTFÖLJ-IMPORT monterad, låsrad; ?screening=grona|peertopp
+  200. tsc: 0 fel i bygg-3:s filer (trädets enda kvarvarande = bygg-4:s
+  pågående pro-utskrift.tsx; baslinjen 43 har parallellagenterna prunikat).
+- Rört EJ: pro-layout/menyer (bygg-1), tenant-kontraktet (bygg-2),
+  rapportbyggaren/pro-utskrift (bygg-4), privata korstabell.tsx (läst +
+  mönsterföljt), AKM2/AKM3-lib. 0 nya tabeller, 0 nya beroenden. INGET
+  committat.
+
+## VÅG 61 bygg-4: DEMOKLIENTVY + MÖTESPAKET-A4 + RAPPORTVERKSTAN PRINT-FÖRST + /PRO/PRISER (B2B-BESLUT steg 4, §4c-d + §4e) (2026-09-04)
+
+Uppdrag: BESLUT §7 steg 4 — /pro/klienter (demoklient = medföljande
+forskningsportfölj), mötespaket-A4, /pro/rapporter (print-motor + white-label
++ mallväljare), /pro/priser (alternativ A + K7-copy + exkl. moms).
+
+- NYA FILER (min fil-domän, §9): src/components/ak1a/pro/{demoklient-data.ts,
+  klientvy.tsx, motespaket.tsx, rapportverkstan.tsx, pro-utskrift.tsx,
+  mal-last-sida.tsx} + src/app/pro/{klienter,rapporter,priser}/page.tsx
+  (bygg-1:s stubbar ifyllda — skal/nav/översikt/analens orörda) +
+  verktyg/testa-demoklient-data.mjs (100%-mönstret, §7 steg 4(i):s
+  datakontraktstest).
+- /PRO/KLIENTER (§4c): korthuvud (alias + nästa uppföljning = senaste
+  senastKontrollerad + 30 dagar, REN datumaritmetik — ingen klocka),
+  portföljöversikt med innehav × vikt + VagCell-rader per horisont (vag-stil.tsx
+  importerad) + differens-chip "ändrat sedan sist" + aggregerad vågprofil
+  (vikttungaste klass + osatt-andel per horisont), AKM2-radar +
+  ProfilJamforelse PROP-DRIVNA ur akm2-dashboard.tsx (importerad, RÖRD EJ —
+  fulla AKM2Resultat ur data/cache/akm2-*.json med formguard, akm2-onsdemand-
+  mönstret utan getAnalys-kravet), vågprofil-kort VagkurvaGraf (live
+  /api/vagfundament), peer-rad per innehav (peer.ts:s formatterare). Knapp
+  "Mötespaket-A4 →" till /pro/rapporter?mall=motespaket.
+- DEMOKLIENTEN: 6 innehav ur korstabellens topp enligt AKM2 (85/80/79/78/77/76
+  = INDU-C.ST, INVE-B.ST, NEM, LOGN.SW, CVX, NHY.OL; ticker som deterministisk
+  tie-breaker), likavikt 1/6 — METODOLOGISKT val, icke-person (test A1-A3).
+- MÖTESPAKETET (§4c/b5 §2d): ETT A4 som samlar regim + forskningsläge (GET
+  /api/forskningslage — samma källa som morgonronden), klientens vågprofil
+  (aggregat + per-innehav VagCell-tabell), då-vs-nu (jamforDåNu UR
+  uppfoljning.ts — ANROPBAR och kopplad; utan då-serie märks raden ÄRLIGT
+  "platshållare: första mätningen", aldrig påhittat delta), topp-3 nyheter
+  (GET /api/nyheter?tickers=… rankade på paverkan + AK1A-notens fråga) och
+  peer-sammanfattning för de tre största — allt window.print-vägen.
+- RAPPORTVERKSTAN (§4d): mall-väljare Mötespaket | Analys | Portföljöversikt;
+  ?mall= läses KLIENTSIDIGT i useEffect (sidan förblir force-static — URL:n
+  är läget, FORBUD 4). Rapportbyggare-motorn återanvänd (PRO_PRINT_CSS: bara
+  #pro-rapport-dokument syns i @media print). Analys-mallen = djupanalys-kort
+  per innehav (konfluensradens 5 dimensioner + klass + divergens),
+  Portföljöversikt = vågfundamentets 20×5-värmematris (V01-V20 × 5 horisonter,
+  ikon ▲▼→· bär betydelsen, intensitet = |värde|) + horisont-totaler +
+  universum-sammanfattning — renderas ur POST /api/pro/analys (samma route som
+  CSV-importen; motorerna körs på knytttryck, ALDRIG i rendervägen).
+  WHITE-LABEL: TenantHeader + useTenant IMPORTERADE ur bygg-2:s landade
+  tenant-lager (tenant-header.tsx + src/lib/pro/tenant.ts) —
+  "[firmnamn] × AK1A-metodik"-bandet I dokumentet; MAL-LÅSTA SIDAN =
+  MalLastSida som renderar byggDisclaimerRader() (MAL_LAST_RADER först,
+  tenantens tillägg vaktaget efteråt — SAMMA funktion svitens mal-låsningstest
+  bevisar; ingen egen disclaimer-text skrevs). Rapportkvot-räknare i
+  localStorage "pro-rapportkvot-v1" per månad (K7-ärlig: räknar
+  utskriftsförsök — PDF-export på väg, server-PDF = fas 3).
+- /PRO/PRISER (§4e): lasPriser() läser data/portfolj-system/priser.json —
+  där finns ENDAST privata nivåer (249/449/799 inkl. moms), INGA pro-nivåer ⇒
+  hårdkodade PRO_NIVAER 499/1 499/4 999 kr/mån/seat flat + engångs-onboarding
+  9 900 kr Institution (avklippt vid 2-årsbindning) + Fas 3-certifierad 299 kr
+  första året, MED KÄLLA DOKUMENTERAD per kort ("B2B-BESLUT §3.4 alternativ
+  A"); landar pro-nivåer i priser.json används filen automatiskt (lasProNivaer-
+  UrFil). K7-copy: "20/100/obegränsat rapporter/mån — utskriftsklassat dokument
+  (PDF-export på väg)" — aldrig "PDF-rapporter". EXKL. MOMS tydligt (B2B,
+  K-B2B:3). CTA = kontakt mailto (teckning väntar på G2) — aldrig köpknapp.
+  "Aldrig rev-share"-block (FORBUD 3).
+- VERIFIERING: /pro/klienter + /pro/rapporter + /pro/rapporter?mall=motespaket
+  + /pro/priser = 200 med innehåll kontrollerat i renderad HTML (radar-SVG, 6
+  tickers, peer-percentiler, differens-chips "första mätningen", nästa
+  uppföljning 2026-10-03, mall-knappar, @media print + #pro-rapport-dokument i
+  DOM, mal-låst sektion, K7-copy, mailto). tsc 43/0 (47 total = 43 baslinje +
+  4 i bygg-3:s kvarlämnade tmp_morgonrond_koll.ts — inte mina). Svit orörd:
+  testa-uppfoljning 50/50, testa-morgonrond-data ALLT PASS, validera-motorer
+  105/105; NYTT testa-demoklient-data 17/17 PASS (icke-person, topp-6,
+  determinism, då-vs-nu-null, vågsammansättning, +30-dagar, AKM2-formguard).
+  Dev: 3509 kunde ej starta (Next:s enhetslås per repo-katalog hålls av
+  parallellagentens levande instans på 3508) — verifiering kördes på den
+  delade 3508-instansen, samma kodbas (dev-servern kompilerade mina filer
+  live).
+- NOTER TILL GRANNELAGEN: (1) /pro-översiktens NIVAER-text säger fortfarande
+  "20 PDF-rapporter/mån" — K7-justeringen där är bygg-3:s bord (jag rör ej
+  deras fil). (2) eslint-regeln react-hooks/set-state-in-effect träffar hela
+  huset (admin-panel, morgonrond, pro-screening, tenant-header, mina filer) —
+  hydration-mönstret är etablerat; tsc är porten.
+- Rört EJ: pro-layout/nav (bygg-1), src/lib/pro + tenant-header +
+  rapportbyggare (bygg-2 — KONSUMERAS via import), /pro + /pro/analys (bygg-3),
+  AKM2/AKM3-lib, korstabell-data/peer/uppfoljning/nyhets-motor (lästa +
+  anropade, aldrig ändrade). 0 nya tabeller, 0 nya beroenden, 0 personuppgifter.
+  INGET committat.
+
+── VÅG 61 KOMPLETT: MEGA-B2B — separation + rådgivarens cockpit (2026-09-05) ──
+Kunddirektiv: /pro ska vara separat B2B-värld med intelligent växel
+Privatperson|Företag, Mega-förbättrad med dashboard exceptionell för
+rådgivare. ARKITEKTUR: 10 agenter (5 forskare → 1 styrelse → 4 byggare).
+FAS A: b1 plattformar (Morningstar/Koyfin/TIKR-benchmark: priset rätt,
+blå hav i Norden; Kvadrant=kontultbolag-fyndet) · b2 persona-växling
+(NN/g-undantaget ömsesidigt uteslutande uppgifter; URL=läget, subroot
+över subdomän; 7 läckor dokumenterade) · b3 rådgivardashboard (cockpit i
+rådgivarens sekvens; PDF-server existerar ej — print-först; PUB-avtal =
+fas-2-grind) · b4 juridik (verktygsleverantör utan FI-tillstånd; DPA art
+28; referral till rådgivare ALDRIG; 9 blockerare; prisalternativ A) ·
+b5 arv (70 % arvbart; tenant-grund först).
+FAS B: B2B-BESLUT.md (B2B.2026.09) — URL-separation utan cookie; cockpiten
+i rådgivarens arbetsordning; print-först-rapporter med mal-låst kärna;
+juridik som GRINDAR (G1 personuppgiftsfritt fritt, G2 första kunden,
+G3 klientregister kräver DPA); pris A (499/1499/4999 + onboarding 9900).
+FAS C (4 byggare): (1) SEPARATIONEN: toppvaxel.tsx på tre meny-ytor +
+ordlista ×3, AK1A PRO → yttor footer/sok (ur menyer, kvar i footer+⌘K),
+PRO-skalet med 5-rutters B2B-nav + speglad växel, /terms-dödlänken fixad.
+(2) TENANT: pro/tenant.ts TS-kontrakt + demo-firma Nordisk Kapitalråd AB +
+MAL_LAST_RADER (3 lager, ingen kodväg tar bort) + ansvarsvakt mot tillägg
++ TenantHeader i rapportbyggaren + "kunder"-yta-regel i tonvakten (PRO-
+filer undantas) — svit 105/0/0 (4 nya tenant-tester inkl. fientligt
+tillägg). (3) MORGONRONDEN på /pro (4 kort med RIKTIG data: 52 % träff,
+regim magert, Norsk Hydro v36, screening-snabbfilter) + PRO-SCREENING på
+/pro/analys (100 rader, filter+sortering+namngivna screeningar+CSV-export,
+privata korstabellen orörd) + CSV-import. (4) DEMOKLIENT på /pro/klienter
+(6 topp-AKM2-innehav, radar+jämförelse+vågkurva+peer importerade) +
+MÖTESPAKET-A4 (regim+forskningsläge+vågprofil+då-vs-nu+nyheter+peer,
+mal-låst) + RAPPORTVERKSTAN (3 mallar, print-först) + /pro/priser
+(alternativ A, exkl. moms, K7-copy ärlig). K7-brottet "20 PDF-rapporter"
+→ "20 rapporter" rättat av main.
+VERIFIERING: tsc 43/0 · svit 105/0/0 · Kvalitetsvakten GRÖN · /pro alla
+5 rutter 200 med riktig data i SSR. GRIND KVAR: G2-juridikpaketet (B2B-
+villkor, DPA-mall, underbiträdeslista) före första kunden; G3 klient-
+registret kräver signerad DPA. Kundkrav K-B2B:1-6 dokumenterade.

@@ -8623,3 +8623,71 @@ STATUS: 10 102 publicerade rader totalt (8 686 → efter Ö7) · kursblock
 ÖVERSÄTTNINGSLÄGET: V01-V20 + KM + VM + TS + PC + RK-kategorierna KLARA
 (≈112 kurser komplett) · kvar: km-001…070 breda kurser + PF/SE/SJ/BF/UD +
 titlar/quiz för nya kategorier + 22 bloggposter.
+
+## Våg 67 — ROND 1 KLAR (2026-09-05): 155 kurser KOMPLETTA + lager-buggfixad
+
+**Statuskarta byggd först** (tool-results/v67-status.mjs — exakt kalla.ts-logik:
+titel+intro+block+quiz): INGEN kurs var 100 % efter våg 66 — blocken var
+översatta men titlar/intros/quiz saknades överallt. Verklig rest: MK/PC/RK/TS/V/VM
+saknade ~10 900 titlar/quiz + KM/PF/SE/SJ/BF/UD/ak1ts/akm1 saknade allt.
+
+**ROND 1 — 9 ÖA-agenter parallellt** (v67a-h + v67blogg; generiska verktyg
+v67-extrahera/bygg/kontroll — butiksaktiva, kursoberoende):
+- v67a MK+VM titlar/quiz 2 062 · v67b PC 1 752 · v67c RK 1 605 · v67d TS 2 369
+- v67e V 2 182 · v67f PF+SJ hela 2 344 · v67g SE 1 590 · v67h UD+BF 2 198
+- v67blogg 4 nya SEO-guider 109
+- SUMMA: 16 211 källor × 2 språk = 32 422 rader publicerade — ALLA 100p,
+  bygg fel 0, import 0 nekade.
+
+**KOMPLETTA kurser efter rond 1: 155** (MK 11+VM 11+PC 20+RK 15+TS 25+V 20+
+SE 15+UD 8+BF 11+PF 14+SJ 5). Granskningskön löst: 31 v01/v02-utkast ersatta
+av v67e-rader (senaste-vinner), 9 inaktuell = visuell-block (korrekt design).
+
+**LAGER-BUGG UPPTÄCKT + FIXAD (src/lib/oversattning/lager.ts)**: MOS_ORDNING
+var order=created_at.desc UTAN tiebreaker — alla rader i en POST-batch delar
+transaktionens tidsstämpel, offset-sidning över ties är icke-deterministisk
+och HOPPADE rader (16 vm-07/vm-08-block "försvann" ur statuskartan trots
+publicerade rader). Fix: order=created_at.desc,id.desc (total ordning; id är
+uuid-TEXT men determinism — inte kronologi — är det som krävs bland ties).
+Diagnosverktyg v67-diagnos-vm2.mjs bekräftar 0 saknade efter fix.
+
+**4 SEO-guider** (ORGANISK-TILLVAXT-PLAN #1/#2/#6/#7 — högsta volym):
+hur-raknar-man-roe · sa-raknar-du-ev-ebitda · skuldsattningsgrad-vilken-niva-
+ar-farlig · kvickrakningsformeln-sa-mater-du-likviditet. kontrolleraText 0 FEL,
+husformat (övningssektion + Nästa steg + negerad disclaimer).
+
+**Verifiering**: svit 107/0/0 · Kvalitetsvakten GRÖN (0 FEL) · prod-hälsa 200.
+
+**ROND 2 PÅGÅR**: 7 agenter (v67km1-7) översätter KM-001…070 (8 617 källor).
+Kvar efteråt: ak1ts+akm1 flaggskepp (1 080) + blogg-resten + bokmaster-svansen.
+
+**KRITISKT TILL KUNDEN**: oversattningar-TABELLEN existerar ej (REST 404) —
+allt bor i system_events (nu 42 k råa rader). Kör data/sql/oversattningar.sql
+i Supabase SQL-editorn FÖRE bokmaster-svansen (38 520 källor till ≈ >45k
+retentionstaket). Även ALTER-system_events-composite.sql.
+
+## Våg 67 — ROND 2 KLAR + SKALNINGSKRIS LÖST (2026-09-05, 8964755)
+
+**ROND 2 — 7 KM-agenter (v67km1-7):** KM-001…070 = 8 617 källor × 2 = 17 234
+rader publicerade, ALLA 100p, bygg fel 0, 0 nekade. KM 70/70 KOMPLETT.
+
+**STATUS EFTER ROND 2: 225/333 kurser KOMPLETTA** (KM 70+MK 11+VM 11+PC 20+
+RK 15+TS 25+V 20+SE 15+UD 8+BF 11+PF 14+SJ 5). Kvar: ak1ts+akm1 flaggskepp
+(1 080, ROND 3 PÅGÅR) + bokmaster 104 kurser (38 520 ≈ 5-6 rundor, våg 68+).
+
+**SKALNINGSKRIS UPPTÄCKT + LÖST (två src-fixar, pushade innan nästa
+auton-cron ~00:10 UTC):**
+1. lasStatusKarta MAX_Sidor 40→200: korpusen 59k råa rader passerade
+   40-sidorstaketet — kartan läste bara nyaste 40 000 och rond-1-kategorier
+   "försvann" (falska ofullständigheter). Verifierat: 16 s läsning, allt tillbaka.
+2. Retention MAX_ANTAL_OVERSATTNING 45k→200k + MOS_STAD 50/5k→200/20k +
+   tiebreaker i rensaMosDubletter: organet hade vid 45k börjat radera ÄLDSTA
+   PUBLICERADE (äkta dataförlust av v66-block/flaggskepp) — full korpus ≈ 139 164
+   språknycklar ryms ej under 45k.
+3. Rötten till "försvunna" vm-block: PostgREST-tiebreakern (se rond 1-fixen).
+
+**Prod:** 4 SEO-guider live (200 ×4, innehållsverifierade). Svit 107/0/0 ·
+Kvalitetsvakten GRÖN · tsc 0 fel i rörd kod.
+
+**ROND 3 (PÅGÅR):** v67ak1 (ak1ts 540) · v67akm (akm1 540) · v67bg1+v67bg2
+(blogg-resten 608 = 27 poster). Efteråt: kontroll+import+status+push.

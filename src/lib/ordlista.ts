@@ -264,6 +264,11 @@ export const ORDLISTA = {
   "nav.dagensPassMeny": { sv: "Dagens Pass", en: "Today's Session", ar: "جلسة اليوم" },
   "nav.fas3": { sv: "Fas 3 — Certifiering", en: "Phase 3 — Certification", ar: "المرحلة 3 — الشهادة" },
   "nav.pro": { sv: "AK1A PRO", en: "AK1A PRO", ar: "AK1A PRO" },
+  // VÅG 61 (2026-09-04): toppväxeln "Privatperson | Företag" — B2B-BESLUT §3.1.
+  // Etiketterna i växeln på ALLA sidor (privat utility-rad + mobil-drawer +
+  // PRO-skalets spegel). URL:n är läget — aldrig någon cookie (FORBUD 4).
+  "nav.privatperson": { sv: "Privatperson", en: "Personal", ar: "الأفراد" },
+  "nav.foretag": { sv: "Företag", en: "Business", ar: "الشركات" },
   "nav.bloggen": { sv: "Bloggen", en: "The Blog", ar: "المدونة" },
   "nav.rapporter": { sv: "Dina rapporter", en: "Your Reports", ar: "تقاريرك" },
   "nav.admin": { sv: "Admin", en: "Admin", ar: "الإدارة" },

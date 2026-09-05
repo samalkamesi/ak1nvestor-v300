@@ -132,8 +132,16 @@ export const DESIGN = Object.freeze({
  * form. Citerande text (policy-sidor som citerar förbudet) hanteras av
  * kvalitetsvaktens citerings-undantag (A10), ALDRIG här: funktionen sänker
  * aldrig nivå.
+ *
+ * Yta-regeln (K8, B2B-BESLUT våg 61 bygg-2): med { proYta: true } undantas
+ * A8-varningen "kunder" — legitim B2B-terminologi på /pro-ytorna (samma
+ * undantag som kvalitetsvaktens sektion 2b applicerar på filmönstret).
+ * ENDAST VARNING-nivån filtreras; FEL-fraserna gäller även på B2B-ytor.
  */
-export function kontrolleraText(text: string): { fel: Traff[]; varningar: Traff[] } {
+export function kontrolleraText(
+  text: string,
+  yta?: { proYta?: boolean },
+): { fel: Traff[]; varningar: Traff[] } {
   const fel: Traff[] = [];
   const varningar: Traff[] = [];
   if (typeof text !== "string" || text.length === 0) return { fel, varningar };
@@ -141,6 +149,10 @@ export function kontrolleraText(text: string): { fel: Traff[]; varningar: Traff[
     fran.lastIndex = 0; // globala regexar är stateful — börja från början varje gång
     let m: RegExpExecArray | null;
     while ((m = fran.exec(text)) !== null) {
+      // K8: "kunder" är legitim terminologi när anropet deklarerar en PRO-yta.
+      if (yta?.proYta === true && allvar === "VARNING" && m[0].toLowerCase() === "kunder") {
+        continue;
+      }
       const traff: Traff = { fras: m[0], index: m.index, allvar, ersattning: istallet };
       if (allvar === "FEL") fel.push(traff);
       else varningar.push(traff);

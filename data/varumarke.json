@@ -58,7 +58,7 @@
     { "fran": "\\benkelt!", "istallet": "det är ärligt arbete", "allvar": "VARNING", "motiv": "fundamental analys är ärligt arbete — inget \"enkelt!\"" },
     { "fran": "\\bproffstips\\b", "istallet": "forskningsunderlag", "allvar": "VARNING", "motiv": "tonalt — vi redovisar metoder, ingen insider-ton" },
     { "fran": "\\brevolutionerande\\b", "istallet": "deterministisk", "allvar": "VARNING", "motiv": "tom superlativ — gravör, aldrig casino (TON_REGLER 7)" },
-    { "fran": "\\bkunder\\b", "istallet": "elever", "allvar": "VARNING", "motiv": "A8 — i elev-/marknadsytor sägs \"elev\"; internt admin/B2B = teknisk yta, manuell bedömning" },
+    { "fran": "\\bkunder\\b", "istallet": "elever", "allvar": "VARNING", "motiv": "A8 — i elev-/marknadsytor sägs \"elev\"; YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): på PRO-ytor (src/app/pro/**, src/components/ak1a/pro/**, src/lib/pro/**) är \"kunder\" legitim B2B-terminologi — vakten/kontrolleraText undantar dem där; privata ytor varnar fortfarande" },
     { "fran": "\\bcashflow[\\s\\-]*hack\\b", "istallet": "kassaflödesanalys", "allvar": "VARNING", "motiv": "lånord-hack-ton — institutionellt lexikon gäller" },
     { "fran": "\\bsuperkreativ\\w*", "istallet": "[kontrollerbart påstående]", "allvar": "VARNING", "motiv": "representant för tomma superlativer (\"superkreativ nyckel till framgång\")" }
   ],

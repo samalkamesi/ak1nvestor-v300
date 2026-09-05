@@ -21,6 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { adminHeaders } from "@/lib/admin-klient";
 
 /**
  * EKOSYSTEM-PANELEN — det unifierade kommandobordet (admin-ser ALLT på ett ställe).
@@ -526,7 +527,7 @@ async function hamtaEkosystem(): Promise<Snapshot> {
   const svar = await Promise.allSettled([
     fetch("/api/kropp", { cache: "no-store", signal: AbortSignal.timeout(8000) }),
     fetch("/api/admin/stats", { cache: "no-store", signal: AbortSignal.timeout(15000) }),
-    fetch("/api/pro/admin", { cache: "no-store", signal: AbortSignal.timeout(10000) }),
+    fetch("/api/pro/admin", { cache: "no-store", headers: adminHeaders(), signal: AbortSignal.timeout(10000) }),
     lasKursStat(),
   ]);
 

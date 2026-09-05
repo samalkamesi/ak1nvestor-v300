@@ -168,11 +168,22 @@ export function Certifikat() {
         {niv < 25 ? (
           <>
             <p className="text-sm font-semibold text-gold">
-              Nivå {niv}/100 — {25 - niv} nivåer kvar till Fas 2-kvalificering
+              Nivå {niv}/100 — {Math.min(100, Math.round((xp / 2400) * 100))} % mot Fas 2-kvalificering
             </p>
+            {/* VÅG 63 O2 #5: räknaren var "(25-niv)*2 kurser kvar" — antog 50
+                XP/kurs och ignorerade quiz-XP (10 XP/svar) ≈ 4x avskräckande.
+                Nu XP-baserad mot kodens verkliga tröskel: nivå 25 = 2 400 XP
+                (nivaFranXP), ≈ antal rätt quiz-svar som återstår. */}
             <p className="mt-1 text-xs text-muted-foreground">
-              Klara {(25 - niv) * 2} kurser till för att låsa upp Fas 2-ansökan
+              {Math.max(0, 2400 - xp).toLocaleString("sv-SE")} XP kvar — ≈{" "}
+              {Math.ceil(Math.max(0, 2400 - xp) / 10).toLocaleString("sv-SE")} rätt
+              quiz-svar (10 XP per svar)
             </p>
+            {niv < 15 && (
+              <p className="mt-1 text-xs text-muted-foreground">
+                Mellanmilstenare på vägen: nivå 15 ger D-certifikatet.
+              </p>
+            )}
           </>
         ) : (
           <>

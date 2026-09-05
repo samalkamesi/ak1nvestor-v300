@@ -7,6 +7,8 @@ import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
 import { DelaKort } from "@/components/ak1a/dela-kort";
+import { PrenumCtaRad } from "@/components/ak1a/prenumeration/prenum-cta";
+import type { PrenumerationNiva } from "@/lib/prenumeration";
 import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 type Kapitel = {
@@ -32,7 +34,15 @@ type Kurs = {
  * visuell progress, quiz integrerat, "nästa"-knapp med dopamin-kick.
  * Baserat på learning science: microlearning + active recall + dual coding.
  */
-export function KursSteg({ kurs }: { kurs: Kurs }) {
+export function KursSteg({
+  kurs,
+  prenumNiva = null,
+}: {
+  kurs: Kurs;
+  /** Exempelnivå ur priser.json för prenum-CTA-raden vid klarad kurs
+   *  (VÅG 63 O2 #2) — servern skickar med som serialiserbar prop. */
+  prenumNiva?: PrenumerationNiva | null;
+}) {
   const { t, dir } = useSprak();
   // RTL: pilarna pekar logiskt (föregående åt läsningens början) — i arabiska
   // speglas de så att "föregående" fortfarande pekar bakåt i läsriktningen.
@@ -65,6 +75,24 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
     const t = setTimeout(() => setNivaUpp(null), 4000);
     return () => clearTimeout(t);
   }, [nivaUpp]);
+
+  // Kapitelval från Kursöversikten (VÅG 63 O2 #4): i steg-läget finns inga
+  // #kap-N-ankare att hoppa till — sidhuvudets översiktslänkar sänder i
+  // stället ak1a:hoppa-kapitel och vi byter steg + scrollar till start.
+  // Samma CustomEvent-mönster som ak1a:valj-prenumeration (aktivera-panelen).
+  useEffect(() => {
+    const hoppa = (e: Event) => {
+      const num = (e as CustomEvent<{ num?: number }>).detail?.num;
+      const i = kurs.chapters.findIndex((ch) => ch.num === num);
+      if (i < 0) return;
+      setSteg(i);
+      setVisaQuiz(false);
+      // Två ramar: låt React måla om kapitlet innan scroll-måten mäts.
+      requestAnimationFrame(() => requestAnimationFrame(() => tillKapitelstart()));
+    };
+    window.addEventListener("ak1a:hoppa-kapitel", hoppa);
+    return () => window.removeEventListener("ak1a:hoppa-kapitel", hoppa);
+  }, [kurs.chapters]);
 
   useEffect(() => {
     setXp(lasXP());
@@ -109,8 +137,12 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
         if (klaradeKap.size + 1 >= total) {
           // Hela kursen klarad → kurs-meriter
           const nysynkad = markeraKursKlar(kurs.slug);
+          // VÅG 63 O2-buggfix: "första-kurs-klar" ska låsas upp även om kursen
+          // redan markerats klar MANUELT (NivaBar-knappen) innan quizet
+          // färdigställdes — tidigare satt badgen bara i nysynkad-grenen och
+          // gick då förlorad. geBadge är idempotent (räknar ej dubbelt).
+          geBadge("forsta-kurs-klar");
           if (nysynkad) {
-            geBadge("forsta-kurs-klar");
             const klara = lasKlaraKurser().length;
             [5, 10, 25, 50, 100].forEach((m) => { if (klara >= m) geBadge(`kurser-${m}`); });
             if (ORIGINAL_BOKMASTER.includes(kurs.slug)) geBadge("forsta-bokmaster");
@@ -379,6 +411,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
                 </p>
               </div>
               <DelaKort kursTitel={kurs.title} className="mt-6" />
+              {/* Prenum-CTA (VÅG 63 O2 #2): klarad kurs → nästa steg är
+                  portföljforskningen — priset ur priser.json via props. */}
+              <PrenumCtaRad niva={prenumNiva} />
             </div>
           )}
         </div>
@@ -386,5 +421,43 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
 
       <style>{`@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }`}</style>
     </div>
+  );
+}
+
+/**
+ * Kursöversikt-länk (VÅG 63 O2 #4): döda ankare-borttagning.
+ * I steg-läget (kurs med quiz — de flesta kurser) renderas kapitlen av
+ * KursSteg och inga id="kap-N" existerar, så #kap-N-klick var döda.
+ *  - harQuiz → knapp som sänder ak1a:hoppa-kapitel (KursSteg byter steg).
+ *  - annars  → vanligt #ankare till kapitel-artikeln, som tidigare.
+ */
+export function KapitelOversiktLank({
+  num,
+  harQuiz,
+  className,
+  children,
+}: {
+  num: number;
+  harQuiz: boolean;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  if (!harQuiz) {
+    return (
+      <a href={`#kap-${num}`} className={className}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        window.dispatchEvent(new CustomEvent("ak1a:hoppa-kapitel", { detail: { num } }))
+      }
+      className={`${className ?? ""} w-full cursor-pointer text-left`}
+    >
+      {children}
+    </button>
   );
 }

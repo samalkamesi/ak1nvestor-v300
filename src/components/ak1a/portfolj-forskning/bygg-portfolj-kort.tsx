@@ -13,6 +13,7 @@ import { harPrenumerationsNiva } from "@/lib/prenumeration";
 import { lasMedlem, type Medlem } from "@/lib/member-local";
 import { RiskvalPanel } from "./riskval-panel";
 import { PortfoljDjupvy } from "./portfolj-djupvy";
+import { lasKorstabellRader } from "./korstabell-leverantor";
 import { RISKNIVA_TEXT, TAKT_TEXT, datumText, talText } from "./vag-stil";
 
 // ═══════════════════════════════════════════════════════════
@@ -43,7 +44,14 @@ import { RISKNIVA_TEXT, TAKT_TEXT, datumText, talText } from "./vag-stil";
 
 type Lage = "vilar" | "bygger" | "klart" | "pagaar" | "fel";
 
-export function ByggPortfoljKort({ rader }: { rader: KorstabbellRad[] }) {
+/**
+ * VÅG 63 bygg-2 (optimering #1): `rader` är VALFRI — sidan levererar
+ * kedjan via KorstabellLeverantorns kontext (en serialization i flighten
+ * i stället för en per komponent); en direkt prop (demo, framtida ytor)
+ * vinner fortfarande över kontexten.
+ */
+export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[] }) {
+  const rader = raderProp ?? lasKorstabellRader() ?? [];
   const [medlem, setMedlem] = useState<Medlem | null>(null);
   const [lage, setLage] = useState<Lage>("vilar");
   const [forslag, setForslag] = useState<PortfoljForslag | null>(null);

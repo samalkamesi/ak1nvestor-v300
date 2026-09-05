@@ -81,11 +81,11 @@ function renderPoangSkala(rader: string[], key: string) {
         return (
           <div key={i} className="flex items-center gap-3">
             <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
-              style={{ background: fargar[poang - 1] || "#5a5045" }}>{poang}</div>
+              style={{ background: farger[poang - 1] || "#5a5045" }}>{poang}</div>
             <div className="h-2 flex-1 overflow-hidden rounded-full bg-black/5">
-              <div className="h-full rounded-full" style={{ width: `${poang * 20}%`, background: fargar[poang - 1] }} />
+              <div className="h-full rounded-full" style={{ width: `${poang * 20}%`, background: farger[poang - 1] }} />
             </div>
-            <span className="w-24 shrink-0 text-right text-[10px] font-semibold" style={{ color: fargar[poang - 1] }}>
+            <span className="w-24 shrink-0 text-right text-[10px] font-semibold" style={{ color: farger[poang - 1] }}>
               {niva.trim()}
             </span>
           </div>

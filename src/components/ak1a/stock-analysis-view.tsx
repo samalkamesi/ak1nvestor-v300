@@ -489,7 +489,7 @@ export function StockAnalysisView({ ticker, onBack }: StockAnalysisViewProps) {
       <PrincipSection data={data} registerRef={registerRef} />
 
       {/* ───────────── REKOMMENDATION ───────────── */}
-      <RecommendationSection data={data} level={level} registerRef={registerRef} />
+      <RecommendationSection data={data} level={level} registerRef={registerRef} setSection={setSection} />
 
       {/* ───────────── MOTIVERING ───────────── */}
       <MotivationSection data={data} level={level} registerRef={registerRef} />
@@ -675,13 +675,24 @@ function RecommendationSection({
   data,
   level,
   registerRef,
+  setSection,
 }: {
   data: AnalysisData;
   level: Level;
   registerRef: (id: string) => (el: HTMLElement | null) => void;
+  setSection: (s: "hem" | "analyser" | "aktier" | "kurser" | "labb" | "styrelse" | "om-oss" | "portal") => void;
 }) {
   const r = data.recommendation;
   const pt = r.priceTarget;
+  // "Du är här"-steget: den aktiva rutan i r.scale, med reserv i omslagets
+  // recommendationScale — aldrig "undefined av 5" (O4-robusthet §1A).
+  const aktivtSteg = r.scale.findIndex((s) => s.active) + 1;
+  const skalaSteg =
+    aktivtSteg > 0
+      ? aktivtSteg
+      : Number.isFinite(data.cover.recommendationScale) && data.cover.recommendationScale > 0
+        ? data.cover.recommendationScale
+        : 0;
   return (
     <section
       id="rekommendation"
@@ -809,7 +820,7 @@ function RecommendationSection({
           <div className="flex items-center justify-between">
             <Eyebrow>Rekommendationsskalan · 5 steg</Eyebrow>
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Du är här · {r.recommendationScale} av 5
+              Du är här · {skalaSteg > 0 ? skalaSteg : "—"} av 5
             </span>
           </div>
           <div className="mt-3 flex flex-wrap items-stretch gap-2">

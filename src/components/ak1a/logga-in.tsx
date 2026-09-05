@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { lasMedlem, sparaMedlem, loggaUt, niva, lasXP, lasStjarnor } from "@/lib/member-local";
@@ -9,6 +10,17 @@ import { SIFFROR } from "@/lib/siffror";
 
 /** localStorage-nyckel för spårat samtycke till villkor + integritetspolicy. */
 const SAMTYCKE_NYCKEL = "ak1a-villkors-samtycke";
+
+/**
+ * Return-URL-sanering (VÅG 63 O2 #1): ?next= accepteras ENDAST som intern
+ * sökväg — aldrig protokoll-relativa (//evil.com) eller absoluta mål
+ * (https://…), annars vore ?next en öppen redirect.
+ */
+function santNext(raw: string | null): string | null {
+  if (!raw) return null;
+  if (!raw.startsWith("/") || raw.startsWith("//") || raw.includes("://")) return null;
+  return raw;
+}
 
 /** Sparar samtycket vid första lyckade inloggningen — skriver aldrig över ett befintligt. */
 function sparaSamtycke() {
@@ -30,6 +42,10 @@ function sparaSamtycke() {
 
 /** Inloggning med e-post — GRATIS konto: hittar eller skapar medlemmen. */
 export function LoggaIn() {
+  const router = useRouter();
+  // Return-URL (VÅG 63 O2 #1): kurs-portallen länkar hit med
+  // ?next=/kurser/{slug} — vid framgång skickas eleven direkt tillbaka.
+  const next = santNext(useSearchParams().get("next"));
   const [email, setEmail] = useState("");
   const [namn, setNamn] = useState("");
   const [status, setStatus] = useState("");
@@ -37,9 +53,16 @@ export function LoggaIn() {
   const [redan, setRedan] = useState(false);
   const [samtycke, setSamtycke] = useState(false);
 
-  useState(() => {
-    if (typeof window !== "undefined" && lasMedlem()) setRedan(true);
-  });
+  // Redan inloggad från ett tidigare besök? Visa inloggnings-läget direkt.
+  // (Tidigare useState(() => … setRedan(true)) — render-fas-updatering,
+  // skör antipattern; useEffect är det hydreringssäkra sättet.) Kom eleven
+  // hit med ?next och var redan medlem → återför direkt till målet.
+  useEffect(() => {
+    if (lasMedlem()) {
+      setRedan(true);
+      if (next) router.push(next);
+    }
+  }, [next, router]);
 
   // Redan sparat samtycke? Ikryssat direkt så återkommande besökare inte blockeras.
   useEffect(() => {
@@ -77,6 +100,9 @@ export function LoggaIn() {
             : `Välkommen tillbaka, ${data.member.name || email}!`
         );
         setRedan(true);
+        // Return-URL: tillbaka till kursen som låstes (fallback Min Sida) —
+        // tar bort 3 steg + hela kontextförlusten i nybörjarresan.
+        router.push(next ?? "/min-sida");
       } else {
         setStatus(data.error || "Något gick fel — försök igen.");
       }

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { RefreshCw } from "lucide-react";
+import { adminHeaders } from "@/lib/admin-klient";
 
 type Medlem = {
   id: string;
@@ -36,7 +37,7 @@ export function CustomerEcosystem() {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/admin/members");
+        const res = await fetch("/api/admin/members", { headers: adminHeaders() });
         const data = await res.json();
         if (!cancelled) setMedlemmar(data.members || []);
       } catch {

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { RefreshCw } from "lucide-react";
+import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
 
 type Member = {
   id: string;
@@ -43,7 +44,7 @@ export function MembersManager() {
   const load = async (showSpinner = false) => {
     if (showSpinner) setLoading(true);
     try {
-      const res = await fetch("/api/admin/members");
+      const res = await fetch("/api/admin/members", { headers: adminHeaders() });
       const data = await res.json();
       setMembers(data.members || []);
     } catch {
@@ -57,7 +58,7 @@ export function MembersManager() {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/admin/members");
+        const res = await fetch("/api/admin/members", { headers: adminHeaders() });
         const data = await res.json();
         if (!cancelled) setMembers(data.members || []);
       } catch {
@@ -88,7 +89,7 @@ export function MembersManager() {
     try {
       await fetch("/api/admin/members", {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: adminJsonHeaders(),
         body: JSON.stringify({ id, memberType }),
       });
       setMembers((prev) =>

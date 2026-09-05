@@ -82,6 +82,7 @@ import {
 
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { cn } from "@/lib/utils";
+import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
 
 /* ────────────────────────────────────────────────────────────
  *  Types
@@ -399,7 +400,7 @@ export function AdminAnalysisManager() {
   const fetchMembers = React.useCallback(async () => {
     setMembersLoading(true);
     try {
-      const res = await fetch("/api/admin/members", { cache: "no-store" });
+      const res = await fetch("/api/admin/members", { cache: "no-store", headers: adminHeaders() });
       if (res.ok) {
         const data: MembersResponse = await res.json();
         setMembers(data.members || []);
@@ -415,7 +416,7 @@ export function AdminAnalysisManager() {
   const fetchBookings = React.useCallback(async () => {
     setBookingsLoading(true);
     try {
-      const res = await fetch("/api/admin/bookings", { cache: "no-store" });
+      const res = await fetch("/api/admin/bookings", { cache: "no-store", headers: adminHeaders() });
       if (res.ok) {
         const data = await res.json();
         setBookings(data.bookings || []);
@@ -564,7 +565,7 @@ export function AdminAnalysisManager() {
       }
       const res = await fetch("/api/admin/upload-analysis", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: adminJsonHeaders(),
         body: JSON.stringify({
           memberId: selectedMember.id,
           portfolioId: selectedPortfolio.id,
@@ -1548,7 +1549,7 @@ function BookingsManager({
     try {
       const res = await fetch("/api/admin/bookings", {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: adminJsonHeaders(),
         body: JSON.stringify({
           bookingId: confirmDialog.id,
           status: "confirmed",
@@ -1570,7 +1571,7 @@ function BookingsManager({
     try {
       await fetch("/api/admin/bookings", {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: adminJsonHeaders(),
         body: JSON.stringify({ bookingId: booking.id, status: "cancelled" }),
       });
       onRefresh();

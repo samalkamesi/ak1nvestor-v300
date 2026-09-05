@@ -46,8 +46,11 @@ export function KursGate({
             Skapa ett kostnadsfritt konto så låser du upp <strong>hela "{titel}"</strong> —
             och alla övriga {SIFFROR.kurser} kurserna, för alltid. Fundamentalanalys är en rättighet.
           </p>
+          {/* Return-URL (VÅG 63 O2 #1): eleven landar tillbaka i DENNA kurs
+              efter inloggningen — inte på ett generellt "Du är inloggad"-kort
+              som kräver 3 extra steg för att hitta tillbaka. */}
           <Link
-            href="/logga-in"
+            href={`/logga-in?next=${encodeURIComponent(`/kurser/${slug}`)}`}
             className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90"
           >
             Lås upp gratis →

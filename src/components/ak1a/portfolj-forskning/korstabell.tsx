@@ -1,10 +1,11 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
-import type { KorstabbellRad, VagKlass } from "@/lib/portfolj-forskning/typer";
+import type { Bransch, KorstabbellRad, VagKlass } from "@/lib/portfolj-forskning/typer";
 import { raknaIntervall, spannText } from "@/lib/akm3/osakerhet";
 import { peerDragText, peerRankText } from "@/lib/portfolj-forskning/peer";
 import { HonestyTag } from "@/components/ak1a/primitives";
+import { lasKorstabellRader } from "./korstabell-leverantor";
 import {
   Akm1Chip,
   Akm2Cell,
@@ -241,10 +242,30 @@ function BolagsKort({ rad }: { rad: KorstabbellRad }) {
 
 // ── Komponenten ─────────────────────────────────────────────────────────────
 
-export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
+export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
+  // VÅG 63 bygg-2 (optimering #1): rader kan komma via prop (demo-
+  // wrapper) ELLER via KorstabellLeverantorns kontext (sidan — rader-
+  // kedjan serialiseras en gång i flighten i stället för en per mottagare).
+  const raderFranKontext = lasKorstabellRader();
+  const allaRader = rader ?? raderFranKontext ?? [];
   const [sok, setSok] = useState("");
   const [sort, setSort] = useState<"desc" | "asc" | null>(null);
   const [sortNyckel, setSortNyckel] = useState<KorstabellSortNyckel>("akm1");
+  // Kollapsade branscher (VÅG 63 bygg-2, optimering #1): SSR levererar
+  // som standard 10 gruppade rader i stället för 100 bolagsrader ×2
+  // vyer (mobilkort + tabell) — bolagen renderas först när besökaren
+  // vecklar ut branschen. Aktiv sökning vecklar upp automatiskt (en
+  // sökträff måste synas utan extra klick).
+  const [oppnaBranscher, setOppnaBranscher] = useState<ReadonlySet<Bransch>>(() => new Set());
+  const sokAktiv = sok.trim().length > 0;
+  const arOppen = (b: Bransch) => sokAktiv || oppnaBranscher.has(b);
+  const vaxlaBransch = (b: Bransch) =>
+    setOppnaBranscher((forr) => {
+      const nu = new Set(forr);
+      if (nu.has(b)) nu.delete(b);
+      else nu.add(b);
+      return nu;
+    });
 
   /** Växla sortering inom vald kolumn (AKM1, AKM2 eller Peer — VÅG 59). */
   function valjSort(nyckel: KorstabellSortNyckel) {
@@ -254,22 +275,23 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
 
   const filtrerade = useMemo(() => {
     const q = sok.trim().toLowerCase();
-    if (!q) return rader;
-    return rader.filter(
+    if (!q) return allaRader;
+    return allaRader.filter(
       (r) =>
         r.ticker.toLowerCase().includes(q) ||
         r.namn.toLowerCase().includes(q) ||
         (BRANSCH_NAMN[r.bransch] ?? r.bransch).toLowerCase().includes(q),
     );
-  }, [rader, sok]);
+  }, [allaRader, sok]);
 
   const grupper = useMemo(
     () => grupperaBranscher(filtrerade, sort, sortNyckel),
     [filtrerade, sort, sortNyckel],
   );
   const statusRakning = useMemo(() => raknaStatus(filtrerade), [filtrerade]);
-  const harData = rader.length > 0;
+  const harData = allaRader.length > 0;
   const traffar = filtrerade.length;
+  const oppnaGrupper = grupper.filter((g) => arOppen(g.bransch)).length;
 
   return (
     <section className="marin-panel overflow-hidden rounded-2xl border border-gold/40">
@@ -295,6 +317,10 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
           Poäng-chipsen bär ett ensidigt felstreck — osäkerhetsintervallet [poäng–övre] som
           växer med saknad datatäckning (AKM3 steg 3): spannet står i tooltippet, modellen
           gissar aldrig. Hög poäng betyder bred underkänning av branschkolleget — aldrig köpläge.
+          Branscherna är ihopfällda som standard (snabbare sida — bolagsraderna
+          är tunga); klicka på en branschrubrik för att veckla ut dess bolag,
+          eller sök direkt på bolag/ticker/bransch — sökträffar fälls upp av
+          sig själva.
         </p>
 
         {harData && (
@@ -327,26 +353,40 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
               </div>
             </div>
             <p className="mt-1.5 text-[11px] italic text-muted-foreground">
-              {traffar} av {rader.length} bolag visas · {grupper.length}{" "}
-              {grupper.length === 1 ? "branschsektion" : "branschsektioner"} · klicka på AKM1-,
-              AKM2- eller Peer-kolumnen för att sortera inom varje bransch.
+              {traffar} av {allaRader.length} bolag i {grupper.length}{" "}
+              {grupper.length === 1 ? "branschsektion" : "branschsektioner"} ·{" "}
+              {oppnaGrupper} utfällda · klicka på en branschrubrik för att veckla ut dess bolag ·
+              klicka på AKM1-, AKM2- eller Peer-kolumnen för att sortera inom varje bransch.
             </p>
           </>
         )}
 
-        {/* Mobil (412px): kort-lista — ingen sidled scroll */}
+        {/* Mobil (412px): kort-lista — ingen sidled scroll. Kollapsad per
+            bransch som standard (VÅG 63 bygg-2): korten renderas först när
+            gruppen fälls ut — mobilkort-läget är kvar, bara gömt bakom
+            rubriken tills besökaren ber om bolagen. */}
         {harData && (
           <div className="mt-4 space-y-2 sm:hidden">
-            {grupper.map((grupp) => (
-              <div key={grupp.bransch}>
-                <BranschRubrikMob bransch={grupp.bransch} rader={grupp.rader} />
-                <div className="mt-2 space-y-2">
-                  {grupp.rader.map((rad) => (
-                    <BolagsKort key={rad.ticker} rad={rad} />
-                  ))}
+            {grupper.map((grupp) => {
+              const oppet = arOppen(grupp.bransch);
+              return (
+                <div key={grupp.bransch}>
+                  <BranschRubrikMob
+                    bransch={grupp.bransch}
+                    rader={grupp.rader}
+                    oppen={oppet}
+                    onVaxla={() => vaxlaBransch(grupp.bransch)}
+                  />
+                  {oppet && (
+                    <div className="mt-2 space-y-2">
+                      {grupp.rader.map((rad) => (
+                        <BolagsKort key={rad.ticker} rad={rad} />
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {traffar === 0 && <TomSok sok={sok} />}
           </div>
         )}
@@ -457,14 +497,28 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
                   // i finans" (r3 §4.1); osatt grupp visar den inte.
                   const gruppMedian = grupp.rader.find((r) => r.peer && !r.peer.osatt)?.peer
                     ?.branschMedian;
+                  const oppet = arOppen(grupp.bransch);
                   return (
                     <Fragment key={grupp.bransch}>
                       <tr className="border-b border-gold/20 bg-paper">
                         <td colSpan={ANTAL_KOLUMNER} className="px-3 py-2">
                           <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                            <span className="font-serif text-xs font-bold uppercase tracking-[0.14em] text-gold">
+                            {/* Kollapsad bransch (VÅG 63 bygg-2): rubriken är
+                                expanderaren — 10 gruppade rader som standard,
+                                bolagsraderna renderas på begäran. */}
+                            <button
+                              type="button"
+                              onClick={() => vaxlaBransch(grupp.bransch)}
+                              aria-expanded={oppet}
+                              title={oppet ? "Fäll ihop branschens bolagsrader" : "Veckla ut branschens bolagsrader"}
+                              className="inline-flex cursor-pointer items-baseline gap-1.5 font-serif text-xs font-bold uppercase tracking-[0.14em] text-gold hover:underline"
+                            >
+                              <span aria-hidden className="text-[10px] not-italic">{oppet ? "▾" : "▸"}</span>
                               {BRANSCH_NAMN[grupp.bransch] ?? grupp.bransch}
-                            </span>
+                              <span className="font-sans text-[10px] font-semibold normal-case tracking-wider text-muted-foreground">
+                                {oppet ? "dölj" : `visa ${grupp.rader.length}`}
+                              </span>
+                            </button>
                             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
                               {grupp.rader.length} bolag
                             </span>
@@ -482,7 +536,7 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
                           </span>
                         </td>
                       </tr>
-                      {grupp.rader.map((rad) => (
+                      {oppet && grupp.rader.map((rad) => (
                         <tr key={rad.ticker} className="border-b border-gold/15 transition-colors hover:bg-gold/5">
                           <td className="sticky left-0 z-10 border-r border-gold/15 bg-paper px-3 py-2.5">
                             <span className="flex items-center gap-1.5">
@@ -644,18 +698,39 @@ export function Korstabell({ rader }: { rader: KorstabbellRad[] }) {
 
 // ── Småhjälpare ─────────────────────────────────────────────────────────────
 
-/** Branschrubrik för mobilvyn — namn + snitt AKM1. */
-function BranschRubrikMob({ bransch, rader }: { bransch: KorstabbellRad["bransch"]; rader: KorstabbellRad[] }) {
+/** Branschrubrik för mobilvyn — namn + snitt AKM1; kollapsad bransch ⇒
+ *  rubriken är expanderaren (VÅG 63 bygg-2), korten kommer under den. */
+function BranschRubrikMob({
+  bransch,
+  rader,
+  oppen,
+  onVaxla,
+}: {
+  bransch: KorstabbellRad["bransch"];
+  rader: KorstabbellRad[];
+  oppen: boolean;
+  onVaxla: () => void;
+}) {
   const snitt = rader.reduce((s, r) => s + (Number.isFinite(r.akm1Totalt) ? r.akm1Totalt : 0), 0) / rader.length;
   return (
-    <p className="flex flex-wrap items-baseline gap-x-2 border-b border-gold/20 pb-1 pt-2">
+    <button
+      type="button"
+      onClick={onVaxla}
+      aria-expanded={oppen}
+      title={oppen ? "Fäll ihop branschens bolagskort" : "Veckla ut branschens bolagskort"}
+      className="flex w-full flex-wrap items-baseline gap-x-2 border-b border-gold/20 pb-1 pt-2 text-left"
+    >
+      <span aria-hidden className="text-[10px] font-bold text-gold">
+        {oppen ? "▾" : "▸"}
+      </span>
       <span className="font-serif text-xs font-bold uppercase tracking-[0.14em] text-gold">
         {BRANSCH_NAMN[bransch] ?? bransch}
       </span>
       <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-        {rader.length} bolag · snitt AKM1 {poangText(Math.round(snitt * 10) / 10)}
+        {rader.length} bolag · snitt AKM1 {poangText(Math.round(snitt * 10) / 10)} ·{" "}
+        <span className="font-semibold lowercase">{oppen ? "dölj" : "visa"}</span>
       </span>
-    </p>
+    </button>
   );
 }
 

@@ -32,6 +32,8 @@ import { DelaKort } from "@/components/ak1a/dela-kort";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { KunskapsFlode } from "@/components/ak1a/kunskaps-flode";
 import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
+import { PrenumCtaKort } from "@/components/ak1a/prenumeration/prenum-cta";
+import type { PrenumerationNiva } from "@/lib/prenumeration";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -43,6 +45,13 @@ import { ForskningslageKort } from "@/components/ak1a/forskningslage-kort";
  */
 
 const LAROPLAN_TOTAL = 307; // Uppdaterad 2026-09-01: totalt antal kurser i deep-courses.json
+
+/**
+ * Fas 2-tröskelns XP-mål (VÅG 63 O2 #3): fas2Upplast() öppnar vid nivå 25,
+ * och nivaFranXP ger nivå 25 vid 2 400 XP (floor(2400/100)+1) — detta är
+ * kodens verkliga kvalificeringsgräns, som progressbaren och räknare visar.
+ */
+const FAS2_XP_MAL = 2400;
 
 /** De 8 nyckelkurserna — dashboardens fasta "nästa steg"-väg (prioriterad ordning). */
 const NYCKELKURSER = [
@@ -140,7 +149,14 @@ function fasEtikett(fas: 1 | 2 | 3): { ikon: string; text: string } {
   return { ikon: "💛", text: "Fas 1 · gratis" };
 }
 
-export function MinSida() {
+export function MinSida({
+  prenumNiva = null,
+  prenumRabattProcent = 0,
+}: {
+  /** Exempelnivå ur priser.json för prenum-CTA-kortet (VÅG 63 O2 #2). */
+  prenumNiva?: PrenumerationNiva | null;
+  prenumRabattProcent?: number;
+}) {
   const [hydrerad, setHydrerad] = useState(false);
   const [medlem, setMedlem] = useState<Medlem | null>(null);
   const [xp, setXp] = useState(0);
@@ -347,6 +363,74 @@ export function MinSida() {
           deterministisk marknadsläge-text och P6:s datering. Hämtar
           /api/forskningslage (server-side sammanfattning, cache 1 h). */}
       <ForskningslageKort />
+
+      {/* PRENUM-CTA (VÅG 63 O2 #2): kompakt kort direkt efter Forskningsläget
+          — /prenumeration var före denna våg enbart footer-länkad och i
+          praktiken osynlig. Pris + rabatt ur priser.json via props; elever
+          med sparad aktiveringsintention skonas (komponenten döljer sig). */}
+      <PrenumCtaKort niva={prenumNiva} rabattProcent={prenumRabattProcent} />
+
+      {/* FAS 2-CTA (VÅG 63 O2 #3): tidigare fanns INGEN ansöknings-CTA på
+          dashboarden alls (endast info-chip). Från nivå 20 visas ett
+          XP-progress-kort mot Fas 2-kvalificeringen (nivå 25 = 2 400 XP) —
+          vid nivå 25+ vänds det till en direkt "ansök kostnadsfritt"-knapp.
+          Fas 2/3-medlemmar behöver det inte (de är redan inne). */}
+      {fas === 1 && elevNiva >= 20 && (
+        <section className="rounded-2xl border-2 border-gold bg-gradient-to-br from-gold/10 to-gold/5 p-6 sm:p-8">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
+                Fas 2 — utbildning medgrundaren
+              </p>
+              {elevNiva >= 25 ? (
+                <>
+                  <h2 className="mt-2 font-serif text-xl font-bold tracking-tight sm:text-2xl">
+                    Du är redo — ansök om Fas 2
+                  </h2>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    Nivå {elevNiva} · {xp.toLocaleString("sv-SE")} XP. Ansökan är
+                    kostnadsfri och tar några minuter.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h2 className="mt-2 font-serif text-xl font-bold tracking-tight sm:text-2xl">
+                    {25 - elevNiva} nivåer kvar till Fas 2
+                  </h2>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {(FAS2_XP_MAL - xp).toLocaleString("sv-SE")} XP kvar — varje
+                    rätt quiz-svar ger 10 XP. Ansökan är kostnadsfri.
+                  </p>
+                </>
+              )}
+              <div
+                className="mt-4 h-2.5 w-full max-w-md overflow-hidden rounded-full bg-muted"
+                role="progressbar"
+                aria-label={`XP mot Fas 2-kvalificering: ${Math.min(100, Math.round((xp / FAS2_XP_MAL) * 100))} procent`}
+                aria-valuenow={Math.min(100, Math.round((xp / FAS2_XP_MAL) * 100))}
+                aria-valuemin={0}
+                aria-valuemax={100}
+              >
+                <div
+                  className="h-full rounded-full bg-gold transition-all"
+                  style={{ width: `${Math.min(100, Math.round((xp / FAS2_XP_MAL) * 100))}%` }}
+                />
+              </div>
+              <p className="mt-1.5 text-xs text-muted-foreground">
+                {Math.min(100, Math.round((xp / FAS2_XP_MAL) * 100))} % mot
+                Fas 2-kvalificering · {xp.toLocaleString("sv-SE")} av{" "}
+                {FAS2_XP_MAL.toLocaleString("sv-SE")} XP
+              </p>
+            </div>
+            <Link
+              href="/fas2-ansok"
+              className="shrink-0 rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02]"
+            >
+              Ansök kostnadsfritt →
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* DIN ASSISTENT — den högra handen (klientkontext + prediktiv motor):
           tids-/lägesmedveten hälsning, tillstånd-badge + tidsstämpel och max

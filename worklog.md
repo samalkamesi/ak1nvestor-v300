@@ -7588,3 +7588,289 @@ Kvar till bordet: termbankstillskott "Net-net"+"belåning" via panelen.
 VERIFIERING: tsc 43/0 · svit 105/0/0 · Kvalitetsvakten GRÖN.
 KUNDBESLUT ÖNSKAT: DeepL pro-key accelererar till ~17 h; gratis-tak =
 ~370 objekt/dag → ~1 år.
+
+── VÅG 63 O1: MEGA-OPTIMERING FAS A — mät & ranka (2026-09-05) ──
+Prestandabaslinje mot prod (node fetch ×3/sida) + statisk buntanalys.
+LEVERERAD: data/forskning/OPTIMERING/o1-prestanda.md (152 rader, topp-10
+rankade problem + fixar + estimerad vinst). TYNGSTA FYNDEN: (1) /portfolj-
+forskning 2 266 kB HTML — 1 894 kB synlig DOM (2 510 td, 9 287 span;
+korstabell "use client" ⇒ dubbelkostnad + 319 kB RSC-flight); (2)
+kommandopaletten fetchar /deep-courses.json = 16,6 MB över wire vid första
+⌘K (sokindex.ts:71; chapters-fält 32,3 kB/kurs × 333 = onödigt för sök);
+(3) kall TTFB 459–936 ms — readFileSync+parse av 17,4 MB i serverless-
+bootstrap (content.ts:99 cachad, data-access.ts:14 OM-varje-anrop);
+(4) /kurser skickar 333 kurser med learn-text till klient (flight 348 kB);
+(5) 1 201 kB JS på startsidan — 9 globala klientkomponenter i layout
+(ChatWidget 1 118 r + ShortSeller 804 r m.fl.) + /api/notiser-fetch (835 ms
+kall) vid VARJE sidladdning. AVSKRIVNA med mätning: OG-bilder 389 st/7,9 MB
+(endast meta — aldrig i viewport), scripts/fonts 308 kB (endast OG-gen,
+ej levererade), fonter 187 kB preload acceptabla. INGET committat.
+
+## VÅG 63 O2: UX/KV-GRANSKNING — nybörjarresan + konverteringsytor + a11y (2026-09-04)
+LEVERERAT data/forskning/OPTIMERING/o2-ux.md (170 rader, topp-10 rankade
+förbättringar med filändringar + effektestimat a/b/c). KODFYND:
+(1) Nybörjarresan = 8 interaktioner; ingen redirect efter login — KursGate
+tappar kurs-kontext (3 extra steg). (2) DÖDA ANKARE: Kursöversiktens #kap-N-
+länkar gör ingenting i KursSteg-läget (id finns ej). (3) Dubbelt progress-UI
+(NivaBar + KursSteg sticky bar) på samma kurssida; badge-bugg om man tryckt
+manuellt «markera klar» före quiz. (4) /prenumeration länkas ENDAST från
+footern — största konverteringsluckan. (5) Fas 2 har två olika vägar
+(/medlemskap#fas2 vs /fas2-ansok) och SAKNAR CTA på Min Sida; certifikatets
+«(25-niv)*2 kurser kvar»-räknare ignorerar quiz-XP = 4x avskräckande fel.
+(6) A11y: logga-in.tsx 0 aria (placeholder-labels, ingen form/autoComplete/
+aria-live); alert() x2 (kurs-gate, certifikat); NivaBar-knapp ~32px < 44px;
+hårdkodad text-[#E8C766] utanför tokensystemet är kontrastrisk (1.46:1 om den
+hamnar på paper). Topp-3: return-URL efter login (+15-25 % aktivisering),
+prenum-CTA på Min Sida/kurs-slut, Fas 2-CTA-kort på Min Sida vid nivå >= 20.
+INGET committat; inga kodändringar — enbart rapport.
+
+---
+
+## VÅG 63 O4 — Robusthet/skuldbild (MEGA-OPTIMERING fas A)
+
+LEVERERAT: data/forskning/OPTIMERING/o4-robusthet.md (topp-10, max 250 r).
+FYND: (1) TSC-BASLINJEN 43 FEL KARTLAGD EXAKT — 9 är runtime-krascher i
+prod dolda av ignoreBuildErrors=true: bookings PATCH (4× TS2304, alltid
+500), rik-text fargar/farger-typo (3× TS2552, komponentkrasch),
+stock-analysis-view setSection + recommendationScale (klickkrasch +
+"undefined av 5"); övriga 10 type-fel i src + 24 i scripts/examples
+(seed-cases tuple 11 vs 10 = avgår en kolumn i seed!). (2) CONSOLE.LOG:
+5 st / 3 filer; endast motor.ts:651 är prod (rondlogg — aggregera).
+(3) DUBBLETTER: tre menyimplementationer (header.tsx 667 r egen logik ||
+huvudmeny.tsx + mobilmeny.tsx, samma tillståndsmönster), ~10 handrullade
+rate-limiters, två SQL-setup-filer (system_events i båda). (4) DEPS:
+16 paket med NOLL importer (@dnd-kit×3, mdxeditor, framer-motion,
+next-auth, next-intl, react-markdown, zod, uuid, date-fns,
+react-syntax-highlighter, @tanstack×2, @reactuses, @hookform/resolvers)
++ 7 via oanvända ui-filer (recharts, embla, input-otp, react-day-picker,
+react-hook-form, vaul, react-resizable-panels); DUBBLA LOCKFILER
+(bun.lock + package-lock). (5) RISK: CRON_SECRET osatt → ALLA 12
+schemalagda rutter öppna (email-cron = spam-vektor; oversatt bränner
+kvoter); VÄRST: /api/admin/members PATCH (ändra till pro!) + bookings/
+activity/upload-analysis/pro-admin helt utan auth. Rate-limits globala
+per process för email+intention (DoS-bar yta). system_events saknar
+(type, created_at)-index — varje läsning sorterar upp till 45k rader.
+Next 16.3.2 deprecatar middleware.ts → npx @next/codemod@canary
+middleware-to-proxy . (f.n. endast buildvarning). (6) DATAVÅRD:
+hash-kedjorna (kalibrering/regime/prediktion) skrivs writeFileSync i
+try/catch — på Vercels read-only fs misslyckas de TYST, filerna frysta
+sedan build → prod-ronder kedjar mot samma prevHash = syskonrader,
+append-only-kontraktet (§10.5/§10.10) uppfylls bara i dev/CI; 45k-
+trimningen (raknaTakMos) har inget automatiserat test (repot saknar
+*.test.ts helt); data/backup manuell, prediktionsloggen saknas där.
+PUSH-KRAV (topp-7 i rapporten): requireAdmin()+middleware-block,
+CRON_SECRET (kund), 5 rader kraschfix + ignoreBuildErrors=false,
+prevHash-fallback ur system_events, CREATE INDEX (type, created_at)
+(kund), per-IP-tak för email. Inget committat.
+
+── VÅG 63 O3: MEGA-OPTIMERING FAS A — SEO/AI-mätning & rankning (2026-09-05) ──
+SEO-nuläge mätt: sitemap 887 URL:er (60 statiska + 333 kurser + 231 analys/
+variabel + 22 FB + 201 labb + 40 blogg) mot 78 rutter — 0 spök-URL:er, MEN
+/pro/{priser,analys,klienter,rapporter} + /en|ar/blogg indexbara och osynliga
+i sitemap. P1-BUGG: hreflang enkelriktad — 10 SV-original saknar languages
+(Google ignorerar klustret); /en|ar/blogg helt utan canonical. OG-bilder 389/
+389 kopplade (0 gap båda vägor). llms.txt stark (693 rader + /api/llms-txt).
+JSON-LD saknas på laroplan+vagfundament (båda prio 1.0) m.fl. 7 högprio-sidor.
+Dödlänkssvep (Kvalitetsvaktens sektion täcker bara 4 länkar): manuellt 109
+tsx-länkar + 40 markdown-länkar → 5 DÖDA i FB-genererade bloggposter
+("svenska" vs filens "svensk" i komplett-guide-slugen). /en + /ar orphans
+(ingen språkväljare). Innehållsgap: 0/20 av ORGANISK-PLANENS frågeformade
+guider publicerade (alla har kurs + analyspost). LEVERERAD:
+data/forskning/OPTIMERING/o3-seo.md (topp-10 rankad, filer per rad, sitemap-
+diff, max 250 rader). INGET committat.
+
+── VÅG 63 bygg-2: MEGA-OPTIMERING fas B — topp-2 (#2 sökindex + #1 korstabell) (2026-09-05) ──
+FIX #2 KOMMANDOPALETTENS 16,6 MB-FETCH: nytt verktyg/kor-sokindex.mjs
+genererar public/sok-index.json (333 kurser · slug+title+category+level+
+weight+summary≤110 · 72 kB — level/summary följde med för identisk
+sökträffkvalitet, budget 150 kB hölls) ur public/deep-courses.json;
+FILHUVUDET dokumenterar körs EFTER VARJE KURSÄNDRING (pipelinen som
+skriver deep-courses gör det inte själv) + skriptet är idempotent
+(skrivs bara när kurslistan ändras). src/lib/sokindex.ts lasKurser
+läser /sok-index.json först med FALLBACK till /deep-courses.json när
+filen saknas (äldre deploy) — extraktionen tar båda formatena.
+404-sidan (not-found.tsx) importerade hela 17,4 MB deep-courses.json i
+serverbuntens modulgraf för att plocka 333 titlar — läser nu sok-index.
+json (72 kB); KursForslag-komponenten ORÖRD (kontrakt slug+titel kvar).
+FIX #1 KORSTABELLEN 2,27 MB: korstabell.tsx kollapsar per bransch —
+SSR levererar 10 grupperade rubrikrader (branschnamn = expander-knapp
+med aria-expanded + ▸/▾ + "visa N/dölj"), bolagsraderna renderas först
+vid utfällning; MOBILKORT-LÄGET KVAR (rubriken är knappen, BolagsKort
+under den vid utfällning); aktiv sökning fäller upp automatiskt (träffar
+syns utan extra klick). RSC-DELEN: ny korstabell-leverantor.tsx ger
+raderkedjan via kontext EN gång (prop valfri, demo-wrapper oändrad) —
+men mätningen visade att flighten ALDRIG bar rader dubbelt: React
+Flight deduplicerar upprepade objektreferenser (akm1Totalt = 100
+förekomster = 1 kopia, även FÖRE ändringen) — o1-rapportens
+"flight-dubbelkostnad" var satt i DOM+flight, inte 2×flight; leverantören
+behållen som garanti mot framtida props-dump, vinsten ligger i
+DOM-kollapset. MÄTNING (dev, varm; Next 16 vägrar 2:a dev-instans per
+katalog ⇒ kördes mot befintliga :3511 i stället för :3512): /portfolj-
+forskning HTML 2 321 233 → 412 932 B (−82 %) · td 2 510→10 · span
+9 287→211 · tr 112→12 · flight ~287 kB oförändrad (dedup, se ovan) ·
+⌘K-fetch 17 417 881 B (16,6 MB, 80 ms lokal) → 75 248 B (−99,6 %, 12 ms)
+· 404-sidan 200/404-ok med kursförslag · /, /kurser, kurssida opåverkade
+(200). VERIFIERAT: ⌘K hittar "intelligent investor"+v01+nyborjare på
+BÅDA vägarna (tsx-test med fetch-stub: ny väg = endast sok-index.json,
+fallback = sok-index→deep-courses); svit 105/0/0 · Kvalitetsvakten
+GRÖN (0 fel/2 manuella) · tsc 34/0 (43→34, 4 fixade av bygg-1 parallellt;
+egna filer 0 fel). INGET committat.
+
+── VÅG 63 bygg-4: ORGANISK PLAN §3 — 4 första frågeguiderna (2026-09-05) ──
+INNEHÅLLSGAP (o3-seo §2: 0/20 i frågeformat) → publicerade de 4 första
+"vad/hur"-guiderna enligt o3:s startlista: data/blogg/vad-ar-roe.json ·
+vad-ar-ev-ebitda.json · vad-ar-skuldsattningsgrad.json · hur-gor-man-en-
+snabb-fundamental-aktieanalys.json. Schema exakt som befintliga poster
+(slug/title/description/pillar/author/publishedAt/readingMinutes/tags/
+body); pillar "Grunderna", author "Sam Alkamesi", publishedAt 2026-09-05,
+lästid 6-7 min, kropp 818-865 ord (renräknat, krav 800-1 200). Struktur
+per guide: direkt svar i första stycket (featured-snippet) → formel →
+räkneexempel → AKM1-poängskala 0-5 med exakta trösklar ur akm2/karna.ts
+(V09 konkav <9⇒0 … >35⇒5 endast med 5-årssnitt+skuld/EK≤2 · V06 konvex
+4-6x⇒5 med värdefallehål <4x kräver V19≥3 · V10 linjär <0,5⇒5 … ≥3⇒1) →
+vanliga misstag → kurslänk (/kurser/v09-roe|v06-ev-ebitda|v10-skulds-
+attningsgrad) + FB-analyslänk (INDU-C.ST/INVE-B.ST/HM-B.ST/TRUE-B.ST med
+bibliotekets senaste mätetal, t.ex. INDU-C ROE 32,3 %⇒4/5) + /kalkylator
+→ falsifieringsrad + signaturdisclaimer. KVALITETSGRIND: kropp+titel+
+description genom kontrolleraText (src/lib/varumarke.ts via npx tsx) =
+0 FEL + 0 VARNING × 4 (varning "kunder" A8 fångades och omformulerades
+till "köpare"); inga hårdkodade kurs-/quizantal (SIFFROR-regeln; AKM1:s
+metodikkonstanter 20 variabler/0-5/max 100 ur varumarke-lexikon). KORS-
+LÄNKAR: guider⇄guider⇄kurser⇄FB⇄kalkylator; alla interna länkar levande
+(Node-validering mot deep-courses + data/blogg + forskningsbiblioteket +
+rutter); /blogg fs-read plockar automatiskt 44 poster (40+4). OG: körde
+scripts/og-generate.mjs → 393 PNG (389+4), kontroll "0 saknas" — o3:s
+OG-invariant bevarad. KLAR NÄSTA: FAQPage-schema på blogg/[slug] (o3 #8,
+kod — JSON kan inte bära det), llms.txt-frågekartan pekas om kurs→guide
+per publicering, hreflang-reciprocitet (o3 #2), därefter remaining 16
+guider (2/vecka enligt kalendern). INGET committat.
+
+── VÅG 63 bygg-1: PUSH-KRAV från O4-robusthet — kraschfixar + admin-skydd
++ äkta hashkedjor på prod (2026-09-05) ──
+Uppdrag: PUSH-KRAV-listan i data/forskning/OPTIMERING/o4-robusthet.md.
+(1) KRASCHFIXAR (§1A, 9 tsc-fel): api/admin/bookings PATCH skriven om till
+getSupabaseRest-mönstret (4× TS2304 SUPABASE_URL/KEY/rest — PATCH kastade
+ReferenceError = bokningsbekräftelsen ALWAYS 500) + PUT-alias { bookingId,
+status, meetingLink } ty AdminAnalysisManager anropar PUT (rutten saknade
+den = 405) — hela bekräftelseflödet återuppstånden; rik-text.tsx fargar→
+farger 3× (ReferenceError vid poängskalor); stock-analysis-view.tsx
+setSection("labb") → prop från useAk1aStore (klickkrasch på "Öppna AKM1-
+calculatorn") + recommendationScale-vakt (aktiv ruta i r.scale, reserv
+cover.recommendationScale, "—" vid 0 — aldrig "undefined av 5").
+(2) ADMIN-SKYDD (§5 "värsta fyndet"): ny delad src/lib/admin-auth.ts
+requireAdmin — x-admin-password | Bearer | body.adminPassword, timing-säker
+jämförelse, rate-limit 10 FEL/min per process (fas2-access-mönstret exakt)
+— på members GET+PATCH, bookings GET+PATCH+PUT, activity GET (POST är
+medvetet öppet: publika besökares use-activity-logger kan inte bära
+lösenordet; sanerad append-only), upload-analysis POST, pro/admin GET+POST.
+Klientsidan: ny src/lib/admin-klient.ts (sessionStorage vid inloggning via
+/api/admin/auth, rensas vid utloggning; adminHeaders()) kopplad i
+admin/page.tsx, members-manager, customer-ecosystem, ekosystem-panel,
+admin-analysis-manager (6 anrop) — ingen PII-läcka kvar på /api/admin-ytorna.
+(3) PREVHASH-FALLBACK (§6 syskonrader): kalibrering-cronen läser nu
+kedjebas ur system_events (details->loggRad, fönster 120, version avgör
+vilken kedja är längst fram); regime-cronen skriver varje stampad rad som
+EGEN akm3-regime-rad i system_events (details.loggRad) och vagvalidering-
+ronden läser bas ur den; portfolj-uppfoljning skriver rondens nya rader
+som akm3_prediktion-event (details.rader) och läser bas ur det. Basval
+för regime/prediktion via LÄNK-OMRÄKNING (raderna saknar prevHash-fält):
+finns en DB-rad som hashas exakt av filens sista hash är DB:n den sanna
+fortsättningen → DB bas (prod: frusen fil, DB växer — rond 1 och alla
+efterföljande); annars filen (dev). Filer skriver ikapp basen där fs är
+skrivbar; länkkontroll (trunkerat fönsterhuvud OK, hel länk framåt,
+append-only §10.5/§10.10) vägrar append vid bruten kedja. Rena lib-
+funktioner orörda — sviten oberörd.
+(4) SQL: data/sql/ALTER-system_events-composite.sql — CREATE INDEX IF
+NOT EXISTS CONCURRENTLY idx_system_events_type_created ON system_events
+(type, created_at desc); KUNDÅTGÄRD i Supabase SQL-editorn, idempotent,
+dokumenterad (CONCURRENTLY kan ej köras i transaktionsblock).
+VERIFIERING: tsc 44→34 (målet ≤36; baslinjen var 44 trots O4:s 43 —
+9 kraschfel borta, not-found-felet togs parallellt av bygg-2) · svit
+validera-motorer 105 PASS/0 FAIL/0 SKIP (5,5 s) · eslint rent på alla
+rörda filer. INGET committat.
+
+── VÅG 63 bygg-3: O2-UX + O3-SEO topp-fixerarna (2026-09-04, develop) ──
+Bygg efter o2-ux.md + o3-seo.md. LEVERERAT per punkt: (1) RETURN-URL:
+kurs-gate lås-upp länkar /logga-in?next=/kurser/{slug} (encodeURIComponent);
+logga-in läser ?next via useSearchParams med öppen-redirect-sanering
+(endast interna sökvägar), router.push(next ?? /min-sida) vid success ÄVEN
+vid redan-inloggad; useState(() => setRedan)-render-buggen → useEffect.
+(2) PRENUM-CTA: ny prenum-cta.tsx (PrenumCtaKort + PrenumCtaRad, btn-marin,
+pris ur priser.json via serialiserbara props från servern = prenumeration-
+lib:s nivådata); kort på Min Sida efter ForskningslageKort (döljs för elever
+med sparad intention), rad efter DelaKort i kurs-steg vid klarad kurs;
+ordlista-nycklar prenum.cta* (sv/en/ar) så kurs-speglingarna får rätt
+språk + spegellänk. (3) FAS 2-CTA Min Sida: nivå ≥20 OCH fas 1 →
+XP-progress-kort mot nivå 25-tröskeln (konstant FAS2_XP_MAL=2400 =
+nivaFranXP:s verkliga gräns; rapportens "2500" var uppskattning — bar
+och klartext visar 100 % exakt vid redo), 20-24: "N nivåer kvar"+XP kvar,
+≥25: "Du är redo — ansök", guldprimärknapp → /fas2-ansok "ansök
+kostnadsfritt". (4) BADGE-BUGG: forsta-kurs-klar ges nu alltid när hela
+kursen quiz-klarats — även om NivaBar-knappen hunnit markeraKursKlar
+manuellt (nysynkad styr bara räknar-badges; geBadge idempotent).
+CERTIFIKAT-RÄKNARE: "(25-niv)*2 kurser" (4x fel) → XP-baserad: % mot
+kvalificering + "N XP kvar ≈ N/10 rätt quiz-svar" + nivå 15/D-milstenare.
+(5) DÖDA ANKARE: KapitelOversiktLank (kurs-steg.tsx) — kurs med quiz →
+knapp som dispatchar ak1a:hoppa-kapitel (samma CustomEvent-mönster som
+ak1a:valj-prenumeration), KursSteg lyssnar: byter steg + scrollar till
+kapitelstart (dubbel rAF); utan quiz → #kap-N-ankare kvar. Alla 333 kurser
+har quiz i dag — fallback-grenen vilande men bevarad. (6) HREFLANG-
+RECIPROCITET: pageMetadata harSpeglar-flagga (sv-SE→orig, en→/en{path},
+ar→/ar{path}, x-default→orig) påslagen på medlemskap, manifest, logga-in,
+kurser, fas2-ansok, fas3, prenumeration, transparens + start (sidaMetadata
+path:"" OCH layoutens metadata); om-oss (handskriven) fick languages
+direkt; /badges-kontroll visar oförändrat beteende för spegelfria sidor.
+(7) DÖDA BLOGG-LÄNKAR: /blogg/komplett-guide-svenska-aktieanalys-2026 →
+…svensk-… i 5 JSON (industrivärden, investor, np3, truecaller, h&m) —
+filnamn först verifierat (komplett-guide-svensk-aktieanalys-2026.json),
+JSON giltiga efter sed, 0 kvarvarande. (8) SITEMAP: +/pro/{priser,analys,
+klienter,rapporter} (0.8) + /en/blogg + /ar/blogg (0.7 daily) → 887→897
+URL:er. VERIFIERING: tsc 34/0 i rörda filer (0 nya; 44→34 är bygg-2:s
+fixar, mina filer 0 fel) · eslint: prenum-cta + seo/sitemap/ordlista/
+page-filer rent; kurs-steg/logga-in kvarvarande set-state-in-effect är
+kodbasens etablerade hydreringsmönster (fanns före) · dev-svit 18+4 URL:er
+200 inkl. /blogg/komplett-guide-svensk-aktieanalys-2026 · hreflang
+ssr-verifierad på /, /kurser, /om-oss, /prenumeration, /logga-in ·
+sitemap.xml innehåller alla 6 nya URL:er · kapitelval-knappar renderar i
+översiktstabellen (0 kalla #kap-). NOTERA: dev-test kördes på :3511 —
+Next låser en dev-instans per katalog och en parallell sessions server
+låg på ;3513-blockerande lås (samma repo, samma filer). INGET committat.
+
+── VÅG 63 KOMPLETT: MEGA-OPTIMERINGEN våg 1 — mät → bygg (2026-09-05) ──
+AI-styrelsen granskade med MÄTVÄRDEN (4 rådgivare, data/forskning/
+OPTIMERING/o1-o4): O1 PRESTANDA (mätt prod ×3: /portfolj-forskning
+2 266 kB HTML!, ⌘K fetchar 16,6 MB deep-courses, kall TTFB 459-936 ms,
+/kurser 475 kB, 9 globala klientkomponenter) · O2 UX (8 steg till första
+quiz, ingen redirect efter login, /prenumeration enbart i footern!, Fas 2
+saknar CTA på Min Sida, badge-bugg, döda #kap-ankare, certifikaträknare
+4x överdriven) · O3 SEO (hreflang ENKELRIKTAD — google ignorerar!, 6
+sidor saknas i sitemap, 5 döda blogg-länkar, 0/20 long-tail-guider
+publicerade, /en+/ar orphans) · O4 ROBUSTHET (3 PROD-KRASCHER dolda av
+ignoreBuildErrors: bookings-PATCH ReferenceError + rik-text fargar +
+stock-view setSection-klickkrasch; OGARDADE admin-ytor members/bookings/
+activity/upload/pro-admin; prevHash-kedjor skriver filer på read-only fs
+= syskinrader på prod; system_events saknar composite-index; 16 oanvända
+deps).
+FYRA BYGGARE (våg 1 av daglig takt):
+(1) KRITISKA: 3 kraschfixarna (bookings omgiven av PUT-alias: hela
+bekräftelseflödet var dött!, farger, setSection+undefined-vakt) +
+requireAdmin (delad admin-auth.ts + admin-klient.ts med sessionStorage)
+på 6 ytor + prevHash-fallback ur system_events (äkta kedjor på prod —
+länk-omräkningsregeln) + SQL-index-fil (kund kör). tsc 44→34.
+(2) PRESTANDA: ⌘K-fetch 17,4 MB→75 kB (−99,6 %; sok-index.json-generator
++ fallback) + korstabellen kollapsad per bransch (2 321→413 kB, −82 %;
+td 2 510→10) + RSC-dedup-fyndet (flight deduplicerar props — o1:s
+"dubbelkostnad" var DOM+flight).
+(3) UX+SEO: return-URL efter login (öppen-redirect-sanerad), prenum-CTA
+på Min Sida + kurs-slut (priser ur priser.json, 3-språkig), Fas 2-CTA
+(2400-XP-tröskeln = kodens verkliga), badge-bugg + certifikaträknare
+(XP-baserad), #kap-ankare → fungerande kapitelhopp (CustomEvent),
+hreflang-RECIPROCITET på 10 original (harSpeglar-flaggan), 5 döda
+blogg-länkar fixade, sitemap 887→897.
+(4) INNEHÅLL: 4 första long-tail-guiderna publicerade (ROE/EV-EBITDA/
+skuldsättningsgrad/snabbanalys — 818-865 ord, kontrolleraText 0 FEL ×4,
+393 OG-bilder, 0 döda länkar) + nästa 16 listade.
+VERIFIERING: tsc 44→34 · svit 105/0/0 · Kvalitetsvakten GRÖN.
+KRITISKT KVAR (KUND): CRON_SECRET (12 öppna rutter!) + SQL-indexet +
+DeepL-key. Våg 2 imorgon: 16 guider till, kall-TTFB-cache, font-preload,
+globala komponenter lazy-load.

@@ -1,0 +1,82 @@
+{
+  "slug": "vagkartan-traffprocent",
+  "title": "Vågkartan september 2026 — träffprocenten 52 %",
+  "description": "Vågmotorns rullande träffprocent: 52 % på 48 dömda mätningar (osatta 20 % räknas aldrig som fel) — ett öppet kvitto om det förflutna, aldrig en garanti om framtiden. Domdatum 2026-09-04.",
+  "pillar": "Institutionell metodik",
+  "author": "Ak1 Apex Nexus",
+  "publishedAt": "2026-09-04",
+  "readingMinutes": 4,
+  "tags": [
+    "vågvalidering",
+    "vågkartan",
+    "träffprocent",
+    "AK1TS",
+    "vågforskning"
+  ],
+  "body": "Vågmotorns rullande träffprocent är **52 %** — 48 dömda mätningar sedan 2026-09-04, 20 % av mätningarna är osatta och räknas aldrig som fel. Universum: 12 tickers, fem horisonter. Domdatum 2026-09-04, protokoll vagvalidering/1 v1.\n\nDetta är en automatiskt genererad forskningsöversikt; den fullständiga AK1A-analysen tillverkas manuellt.\n\n## Så dömer protokollet\n\n**Dom-protokoll v1 (fastställt innan första domen):** förra rondens vågklass per (ticker, horisont) döms mot dagens faktiska fundamentmomentum — impulsvåg → träff vid positiv momentum; korrigering → träff vid negativ; basbygge → träff vid |momentum| ≤ 6 % (motorns egen tröskel, hedervändig symmetri); exakt nollrörelse dömer inte riktning; osatt klass döms ALDRIG. Osatta räknas i täckningsbråket, aldrig som fel.\n\n## Träffprocenten per horisont och vågklass\n\nn = antal dömda mätningar (träff + miss); klasser utan dömda mätningar redovisas inte.\n\n- **mikro** — impulsvåg 75 % (n=4) · basbygge 63 % (n=8)\n- **kort** — impulsvåg 100 % (n=2) · basbygge 30 % (n=10)\n- **medellång** — impulsvåg 100 % (n=6) · basbygge 0 % (n=6)\n- **lång** — inga dömda mätningar\n- **mega** — impulsvåg 100 % (n=6) · basbygge 0 % (n=6)\n\n## Vad siffran är — och inte är\n\nTräffprocenten är ett öppet kvitto om det förflutna — aldrig en garanti om framtiden. Motorn beskriver rytm och läge i fundamentalserier; \"osatt\" är information, inte fel, och därför räknas osatta mätningar i täckningsbråket men aldrig som fel. Enhetssiffran 52 % säger inte vilken horisont eller klass som bär den — listan ovan gör det.\n\n## Ändringen sedan förra utgåvan\n\nSeriens första utgåva — räknarna är unga (sedan 2026-09-04) och varje ny rond väger tyngre än den förra. Nästa utgåva redovisar hur träffprocenten rörde sig; oförändrat skrivs oförändrat.\n\n## Fördjupa dig\n\n- [Kursen AK1TS 25 cellers matris](/kurser/ts-10-ak1ts-25cellers-matris) — vågmatrisen bakom horisonterna\n- [Vågfundament — indikatorer är tidsserier](/blogg/vagfundament-indikatorer-ar-tidsserier) — varför motorn kräver serier, inte nivåer\n- [Forskningsbiblioteket](/forskningsbiblioteket) — bolagsanalyserna vågscannens universum hämtar ifrån\n\n_Detta är en automatiskt genererad forskningsöversikt; den fullständiga AK1A-analysen tillverkas manuellt. Träffprocenten är ett öppet kvitto om det förflutna — aldrig en garanti om framtiden. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._",
+  "metadata": {
+    "techReview": "auto",
+    "granskat": false,
+    "granskadAv": null,
+    "granskadDatum": null,
+    "notering": "m9-innehållsfabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING fordras enligt m9/MARKNADS-BESLUT våg 4 innan storskalig drift (max 20+1 poster/månad, granskadAv-tvång)",
+    "serie": "vagkartan"
+  },
+  "fabrik": {
+    "version": "innehallsfabrik-v1",
+    "genereradUr": "verktyg/kor-innehallsfabrik.mjs",
+    "manad": "2026-09",
+    "kallor": [
+      {
+        "fil": "data/rapporter/vagvalidering-SENASTE.md",
+        "md5": "b7194627c055d2ddb5503009a544cff8"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "forraStatistik": null,
+    "statistik": {
+      "traffProcent": 52,
+      "domda": 48,
+      "osattaAndel": 20,
+      "universum": 12,
+      "protokoll": "vagvalidering/1 v1",
+      "sedan": "2026-09-04",
+      "domdatum": "2026-09-04",
+      "perHorisont": {
+        "mikro": {
+          "impulsvag": "75 % (n=4)",
+          "korrigering": "— (n=0)",
+          "basbygge": "63 % (n=8)",
+          "osattKlass": "— (n=0)"
+        },
+        "kort": {
+          "impulsvag": "100 % (n=2)",
+          "korrigering": "— (n=0)",
+          "basbygge": "30 % (n=10)",
+          "osattKlass": "— (n=0)"
+        },
+        "medellång": {
+          "impulsvag": "100 % (n=6)",
+          "korrigering": "— (n=0)",
+          "basbygge": "0 % (n=6)",
+          "osattKlass": "— (n=0)"
+        },
+        "lång": {
+          "impulsvag": "— (n=0)",
+          "korrigering": "— (n=0)",
+          "basbygge": "— (n=0)",
+          "osattKlass": "— (n=0)"
+        },
+        "mega": {
+          "impulsvag": "100 % (n=6)",
+          "korrigering": "— (n=0)",
+          "basbygge": "0 % (n=6)",
+          "osattKlass": "— (n=0)"
+        }
+      }
+    }
+  }
+}

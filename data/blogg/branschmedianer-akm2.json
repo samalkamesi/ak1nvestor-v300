@@ -1,0 +1,139 @@
+{
+  "slug": "branschmedianer-akm2",
+  "title": "Branschmedianer september 2026 — varje branschs AKM2-profil",
+  "description": "AKM2-medianen per bransch i 100-bolagsuniversum, underlag 2026-09-03: teknik 61, konsument 60,5, industri 60, kommunikation 60 med flera — antal mätta, spridning och gränsregeln redovisas öppet.",
+  "pillar": "AKM1",
+  "author": "Ak1 Apex Nexus",
+  "publishedAt": "2026-09-03",
+  "readingMinutes": 4,
+  "tags": [
+    "AKM2",
+    "branschjämförelse",
+    "median",
+    "peer",
+    "portföljforskning"
+  ],
+  "body": "Medianen per bransch i korstabellens 100-bolagsuniversum, underlag skapat 2026-09-03: **teknik 61** · **konsument 60,5** · **industri 60** · **kommunikation 60** · **energi 58** · **hälsa 56,5** · **fastighet 50** · **tillväxt 43** · **material 42** · **finans 41** (AKM2-poäng, median över gruppens mätta bolag). Högst median: teknik 61. Lägst: finans 41.\n\nDetta är en automatiskt genererad forskningsöversikt; den fullständiga AK1A-analysen tillverkas manuellt.\n\n## Så räknas medianen\n\nAKM2 är AKM1:s 20 variabler omviktade enligt viktprofilen akm2-2026 med automatiska moduler ur modulregistret — samma komposit som korstabellens rader bär. Medianen följer peer-motorns kontrakt ordagrant: gruppen är korstabellens kanoniska branscher (10 bolag var), medianen räknas över gruppens mätta bolag, och jämnt antal ger medelvärdet av de två mittersta. Urvalsberoendet syns i referensen: 2026-09-03 · 100-bolagsuniversum.\n\n## Varje bransch — median, spridning och ytterligheter\n\n- **teknik** — median **61** · 10 mätta av 10 · spridning 37–78 (lägst Sinch, högst Logitech International)\n- **konsument** — median **60,5** · 10 mätta av 10 · spridning 19–70 (lägst Electrolux, högst H & M Hennes & Mauritz)\n- **industri** — median **60** · 10 mätta av 10 · spridning 51–85 (lägst ASSA ABLOY, högst Industrivärden)\n- **kommunikation** — median **60** · 10 mätta av 10 · spridning 39–68 (lägst Warner Bros. Discovery,, högst Tele2)\n- **energi** — median **58** · 10 mätta av 10 · spridning 31–77 (lägst RWE, högst Chevron)\n- **hälsa** — median **56,5** · 10 mätta av 10 · spridning 46–66 (lägst Fresenius, högst Novo Nordisk)\n- **fastighet** — median **50** · 10 mätta av 10 · spridning 42–60 (lägst Prologis,, högst Diös Fastigheter)\n- **tillväxt** — median **43** · 10 mätta av 10 · spridning 25–58 (lägst Polestar Automotive Holding UK, högst Truecaller)\n- **material** — median **42** · 10 mätta av 10 · spridning 31–79 (lägst Stora Enso, högst Newmont)\n- **finans** — median **41** · 10 mätta av 10 · spridning 30–80 (lägst Nordea Bank, högst Investor)\n\nEn jämförbarhetsnot: Industrivärden (industri) och Investor (finans) är investmentbolag — deras nyckeltal speglar innehavens marknadsvärden (substans), inte en driftsrörelse, så gruppens median blandar två olika bolagsformer. Det är information, inte fel.\n\n## Gränsregeln — och varför ingen rad saknas\n\nPeer-motorens gränsregel är kanon: en grupp under 5 mätta bolag redovisas aldrig (\"för få mätta\" — motorn gissar aldrig). I detta underlag har alla 10 branschgrupper 10 mätta bolag var, så ingen rad saknas.\n\n## Ändringen sedan förra utgåvan\n\nDetta är seriens första utgåva — ingen tidigare månad att jämföra med. Från nästa utgåva redovisas varje branschs förändring här; oförändrad median skrivs \"oförändrat\" (att inget rörde sig är också ett utfall).\n\n## Fördjupa dig\n\n- [Forskningsbiblioteket](/forskningsbiblioteket) — varje kandidatbolags AKM2-profil, urvalsregel och utfall\n- [Kursen V07 bruttomarginal](/kurser/v07-bruttomarginal) — lönsamhetsvariabeln bakom kompositen\n- [Kursen V08 EBITDA-marginal](/kurser/v08-ebitda-marginal) — marginalmatrisen steg för steg\n- [Kursen V09 ROE](/kurser/v09-roe) — avkastning på eget kapital\n\n_Detta är en automatiskt genererad forskningsöversikt; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._",
+  "metadata": {
+    "techReview": "auto",
+    "granskat": false,
+    "granskadAv": null,
+    "granskadDatum": null,
+    "notering": "m9-innehållsfabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING fordras enligt m9/MARKNADS-BESLUT våg 4 innan storskalig drift (max 20+1 poster/månad, granskadAv-tvång)",
+    "serie": "branschmedianer"
+  },
+  "fabrik": {
+    "version": "innehallsfabrik-v1",
+    "genereradUr": "verktyg/kor-innehallsfabrik.mjs",
+    "manad": "2026-09",
+    "kallor": [
+      {
+        "fil": "data/portfolj-system/korstabell-grund.json",
+        "md5": "33fe62a0c617e8339024851c6361bd6a"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "forraStatistik": null,
+    "statistik": {
+      "universum": 100,
+      "referens": "2026-09-03 · 100-bolagsuniversum",
+      "perBransch": {
+        "teknik": {
+          "median": 61,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 37,
+          "max": 78,
+          "minBolag": "Sinch",
+          "maxBolag": "Logitech International"
+        },
+        "industri": {
+          "median": 60,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 51,
+          "max": 85,
+          "minBolag": "ASSA ABLOY",
+          "maxBolag": "Industrivärden"
+        },
+        "halso": {
+          "median": 56.5,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 46,
+          "max": 66,
+          "minBolag": "Fresenius",
+          "maxBolag": "Novo Nordisk"
+        },
+        "konsument": {
+          "median": 60.5,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 19,
+          "max": 70,
+          "minBolag": "Electrolux",
+          "maxBolag": "H & M Hennes & Mauritz"
+        },
+        "fastighet": {
+          "median": 50,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 42,
+          "max": 60,
+          "minBolag": "Prologis,",
+          "maxBolag": "Diös Fastigheter"
+        },
+        "finans": {
+          "median": 41,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 30,
+          "max": 80,
+          "minBolag": "Nordea Bank",
+          "maxBolag": "Investor"
+        },
+        "material": {
+          "median": 42,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 31,
+          "max": 79,
+          "minBolag": "Stora Enso",
+          "maxBolag": "Newmont"
+        },
+        "energi": {
+          "median": 58,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 31,
+          "max": 77,
+          "minBolag": "RWE",
+          "maxBolag": "Chevron"
+        },
+        "kommunikation": {
+          "median": 60,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 39,
+          "max": 68,
+          "minBolag": "Warner Bros. Discovery,",
+          "maxBolag": "Tele2"
+        },
+        "tillvaxt": {
+          "median": 43,
+          "matta": 10,
+          "iGruppen": 10,
+          "min": 25,
+          "max": 58,
+          "minBolag": "Polestar Automotive Holding UK",
+          "maxBolag": "Truecaller"
+        }
+      },
+      "rapporteradeGrupper": 10,
+      "gransGrupp": 5
+    }
+  }
+}

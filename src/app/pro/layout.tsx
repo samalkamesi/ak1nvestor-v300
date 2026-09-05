@@ -1,15 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { Toppvaxel } from "@/components/ak1a/toppvaxel";
+import { ProNav } from "@/components/ak1a/pro/pro-nav";
 
 /**
- * AK1A PRO — DET EGNA B2B-SKALET (Fas D, forskning-b2b 5.1).
+ * AK1A PRO — DET EGNA B2B-SKALET (Fas D, forskning-b2b 5.1; B2B-BESLUT §3-4).
  *
  * "/pro är en skild värld" — därför eget skal: mörk marin vägg i stället för
  * publik pappers-header, PRO-badge i guld, INGA publika menyer (ingen mega-
  * meny, ingen mobil-drawer, ingen publik logga-in). Tonen är institutionell:
  * färre val, tyngre väggar.
  *
- * Röt-länk till den publika världen finns (diskret, i footern) — B2B-kunden
+ * VÅG 61 (B2B-BESLUT steg 1):
+ *   • EGEN B2B-NAV med fem rutter (ProNav): /pro · /pro/klienter · /pro/analys
+ *     · /pro/rapporter · /pro/priser — arbetsordningen morgonrond → screening
+ *     → klientmöte → rapport. Ankarna (#plattformen/#kom-igång) ägs numera av
+ *     landningssidans egen text, inte av skalet.
+ *   • SPEGLAD VÄXEL: Toppvaxel variant="pro" (aktiv = Företag, icke-länk med
+ *     aria-current; "Privatperson" → /). URL:n är läget — ingen cookie (FORBUD 4).
+ *   • Varumärket: kundens skulptur-standard (VarumarkesLogo, ruta utan ordmärke
+ *     — ordmärket är PRO:ts egna guld/cream-typsnitt för den marina väggen).
+ *   • FOOTERFIX: /terms → /villkor (dödlänk → 404, b2 §2.2.1 — bugg).
+ *
+ * Röt-länk till den publika världen finns (växeln + footern) — B2B-kunden
  * ska aldrig känna sig instängd, bara skild från folkhavet.
  */
 export const metadata: Metadata = {
@@ -30,13 +44,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-/** B2B-ankarnavigation — tre fasta håll på landningssidan, aldrig publik meny. */
-const ANKARE = [
-  { href: "#plattformen", namn: "Plattformen" },
-  { href: "#kom-igang", namn: "Kom igång" },
-  { href: "#priser", namn: "Priser" },
-] as const;
-
 export default function ProLayout({
   children,
 }: Readonly<{
@@ -55,10 +62,13 @@ export default function ProLayout({
         }}
       />
 
-      {/* ── Marin vägg — PRO:s egen header ── */}
+      {/* ── Marin vägg — PRO:s egen header med B2B-nav ── */}
       <header className="marin-panel sticky top-0 z-30 w-full border-b border-gold/40">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6">
+          {/* Varumärket: skulptur-rutan (kundens standard) + PRO:ts egna
+              guld/cream-ordmärke — läsbart mot marin oavsett tema-läge. */}
           <Link href="/pro" className="flex items-center gap-2.5 hover:opacity-85">
+            <VarumarkesLogo storlek="sm" medText={false} />
             <span className="font-serif text-base font-bold tracking-tight text-[#EDE6D6] sm:text-lg">
               AK1<span className="text-[#E8C766]">A</span>
             </span>
@@ -67,21 +77,30 @@ export default function ProLayout({
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center gap-6 text-xs sm:flex">
-            {ANKARE.map((a) => (
-              <a key={a.href} href={a.href} className="text-[#EDE6D6]/80 transition-colors hover:text-[#E8C766]">
-                {a.namn}
-              </a>
-            ))}
-          </nav>
+          {/* B2B-naven — fem rutter i rådgivarens arbetsordning (desktop).
+              Mobil: horisontellt rullbar rad under huvudraden (nedan). */}
+          <div className="ml-4 hidden lg:flex">
+            <ProNav />
+          </div>
 
-          <a
-            href="mailto:info@ak1nvestor.com?subject=Boka%20demo%20%E2%80%94%20AK1A%20PRO"
-            className="btn-guld-signatur ml-auto min-h-[38px] px-4 py-2 text-xs sm:ml-4"
-          >
-            Boka demo
-          </a>
+          {/* Speglad världsväxel (aktiv = Företag) + demo-CTA */}
+          <div className="ml-auto flex items-center gap-3">
+            <Toppvaxel variant="pro" />
+            <a
+              href="mailto:info@ak1nvestor.com?subject=Boka%20demo%20%E2%80%94%20AK1A%20PRO"
+              className="btn-guld-signatur hidden min-h-[38px] px-4 py-2 text-xs min-[420px]:inline-flex sm:ml-4"
+            >
+              Boka demo
+            </a>
+          </div>
         </div>
+
+        {/* B2B-naven på mobil/sm — egen rullbar rad (tryckvänlig, aldrig
+            hopklämd; samma fem rutter, samma aktiva markering). */}
+        <div className="mx-auto max-w-6xl px-4 pb-2 lg:hidden sm:px-6">
+          <ProNav mobil />
+        </div>
+
         <div className="hjarlinje" />
       </header>
 
@@ -108,9 +127,15 @@ export default function ProLayout({
               <a href="mailto:info@ak1nvestor.com" className="text-[#E8C766] hover:opacity-80">
                 info@ak1nvestor.com
               </a>
-              <Link href="/terms" className="text-[#EDE6D6]/70 hover:text-[#E8C766]">
+              {/* VÅG 61 footerfix: /terms var en dödlänk (rutten finns inte —
+                  404). /villkor är den delade juridiska sanningskällan;
+                  B2B-villkoren blir PRO-sektion där (steg 5), aldrig kopia. */}
+              <Link href="/villkor" className="text-[#EDE6D6]/70 hover:text-[#E8C766]">
                 Villkor
               </Link>
+              {/* Delad juridik (B2B-BESLUT §3 "Delade ytor"): integritets-
+                  policyn är EN sanningskälla för båda världarna — länken
+                  stannar, biträdesrollen beskrivs i steg 5. */}
               <Link href="/privacy-policy" className="text-[#EDE6D6]/70 hover:text-[#E8C766]">
                 Integritetspolicy
               </Link>

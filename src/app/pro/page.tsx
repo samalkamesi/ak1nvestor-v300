@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CsvImport } from "@/components/ak1a/pro/csv-import";
+import { Morgonrond } from "@/components/ak1a/pro/morgonrond";
+import { lasVagvalideringTraff } from "@/components/ak1a/pro/morgonrond-data";
 
 export const dynamic = "force-static";
 
@@ -19,11 +21,18 @@ export const metadata: Metadata = {
 };
 
 /**
- * /pro — LANDNINGSSIDAN (Fas D-MVP, "startskottet").
+ * /pro — /PRO-ÖVERSIKTEN med MORNONRONDEN (B2B-BESLUT §4a/§4e + §7 steg 3).
  *
  * En sida, en berättelse: vad plattformen är (hero) → vad den gör (tre kort)
- * → att den FUNKERAR (kärnan: CSV-import direkt på sidan) → vad den kostar
- * (tre nivåer) → vad den är för något (disclaimer + Fas 3-förtur).
+ * → att den FUNKERAR (kärnan: CSV-import direkt på sidan) → RÅDGIVARENS DAG
+ * (morgonronden: fyra kort med riktig data — träff-%, regim, veckans
+ * research, screening) → vad den kostar (tre nivåer) → vad den är för något
+ * (disclaimer + Fas 3-förtur). Landningssidans hero + tre ben + CsvImport
+ * är översiktens introduktion OVANFÖR morgonronden (BESLUT §4e).
+ *
+ * Träff-% läses server-side ur vågvalideringsrapporten (ingen läs-API finns)
+ * vid build; regim + veckans research hämtas live av korten (forskningslage-
+ * kortets mönster). force-static kvar (BESLUT §7 steg 1 v).
  *
  * Allt AK1A-DNA: marin-panel, guld, serif, .btn-marin — samma papper och
  * pennskaft som den publika världen, men väggarna är mörkare här.
@@ -61,7 +70,7 @@ const NIVAER = [
     punkter: [
       "Obegränsad CSV-portföljimport",
       "Tre låsta AK1A-rapportmallar",
-      "20 PDF-rapporter/mån · AK1A-branding",
+      "20 rapporter/mån · AK1A-branding",
       "Fas 3-certifierad? 299 kr/mån det första året",
     ],
     lyft: false,
@@ -95,6 +104,9 @@ const NIVAER = [
 ] as const;
 
 export default function ProPage() {
+  // Vågvalideringens träff-% — server-side ur rapportfilen (build/request-vägen).
+  const traff = lasVagvalideringTraff();
+
   return (
     <>
       {/* ═══ HERO — marin fullbleed-vägg, startskottet ═══ */}
@@ -187,6 +199,23 @@ export default function ProPage() {
           </div>
           <div className="mt-6">
             <CsvImport />
+          </div>
+        </section>
+
+        {/* ═══ MORNONRONDEN — rådgivarens fyra kort, översiktens kärna (§4a) ═══ */}
+        <section id="morgonronden" className="mt-16 scroll-mt-24">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="font-serif text-3xl font-bold">Morgonronden</h2>
+              <p className="mt-2 max-w-2xl text-sm italic leading-relaxed text-muted-foreground">
+                Före kaffet är klart: vågmotorns ärliga träff-%, regimen i underlaget,
+                veckans research och vägen in i dina screeningar. Fem sekunder — sedan
+                vet du var dagen börjar.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <Morgonrond traff={traff} />
           </div>
         </section>
 

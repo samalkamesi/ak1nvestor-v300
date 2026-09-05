@@ -398,6 +398,10 @@ export const MENY_REGISTER: MenySektion[] = [
         ikon: "🏛️",
         typ: "sida",
         publik: "gast",
+        // VÅG 61 (B2B-BESLUT §3.1): ur menypanelerna — toppväxeln
+        // "Privatperson | Företag" äger B2B-ingången nu. Kvar i sidfotens
+        // sitemap (SEO-internlänk, b2 §3d) och sökbar i ⌘K.
+        yttor: ["footer", "sok"],
         beskrivning: "Analytikerplattformen — bygg institutionella rapporter",
         nycklar: "pro plattform rapporter verkstad institutionell fas d",
       },

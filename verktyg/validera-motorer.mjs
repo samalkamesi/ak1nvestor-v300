@@ -2491,6 +2491,78 @@ async function fasD(): Promise<void> {
       "indata=8 langd=" + String(a.length),
     );
   }
+  // ── akm3/osakerhet (VÅG 66 r6): KALKYLATORREGLAGET "Vad händer vid full
+  //    data?" — geometri-svep 0→100 % låtsas-täckning (r4 §3.3 + r6 §6 AC) ──
+  {
+    const problem: string[] = [];
+    const nara = (fanns: number, vantat: number): boolean => Math.abs(fanns - vantat) <= 1e-9;
+    const K = 62; // kalkylatorns komposit är alltid heltal (kärnan roundar)
+    let forraOvre = Infinity;
+    const varden: string[] = [];
+    for (let p = 0; p <= 100; p += 5) {
+      const i = OSK.raknaIntervall(K, p / 100, false);
+      if (!i) { problem.push("p=" + p + ": null"); continue; }
+      if (!nara(i.nedre, K)) problem.push("p=" + p + ": nedre=" + String(i.nedre) + " != K (golvet orubbligt brutet)");
+      const vantatOvre = Math.min(100, K + 100 * (1 - p / 100));
+      if (!nara(i.ovre, vantatOvre)) problem.push("p=" + p + ": ovre=" + String(i.ovre) + " != " + String(vantatOvre));
+      if (i.ovre > forraOvre + 1e-9) problem.push("p=" + p + ": ovre ökar när t växer (ej monoton)");
+      if (i.portTakad) problem.push("p=" + p + ": portTakad utan aktiv port");
+      forraOvre = i.ovre;
+      varden.push(p + "%=[" + String(i.nedre) + ";" + String(i.ovre) + "]");
+    }
+    // snabbknappens slutläge: t=100 % ⇒ "vid full data fastnar totalen vid K"
+    const full = OSK.raknaIntervall(K, 1, false);
+    if (!full || !nara(full.nedre, K) || !nara(full.ovre, K) || !nara(full.halvbredd, 0)) {
+      problem.push("t=1: " + JSON.stringify(full) + " (väntat [62;62] ±0 — totalen fastnar vid K)");
+    }
+    rad(
+      "akm3/osakerhet",
+      "REGLAGE-SVEP låtsas-t 0→100 % (golvet K orubbligt, övre monoton)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "21 låtsas-lägen (0, 5, …, 100 %) på kalkylator-K 62: nedre = K i SAMTLIGA (saknad data vägs aldrig in poängmässigt), övre = min(100, 62+100·(1−t)) monotont icke-ökande 100→62, ingen portklippning utan port; t=100 % ⇒ [62;62] ±0 — vid full data fastnar totalen vid K"
+        : problem.slice(0, 6).join("; "),
+      "svep=" + varden.slice(0, 4).join(" ") + " … " + varden[varden.length - 1],
+    );
+  }
+  // ── akm3/osakerhet (VÅG 66 r6): REGLAGE-KONTRAKT — låtsas-t utanför [0,1]
+  //    kläms + ärlighetsnoten återges (reglaget kan aldrig ljuga om spann) ──
+  {
+    const problem: string[] = [];
+    const K = 62;
+    const over = OSK.raknaIntervall(K, 1.37, false); // låtsas-t över 100 % (omöjligt i UI:t — kontraktet ändå)
+    if (!over) problem.push("t=1,37: null");
+    else {
+      if (Math.abs(over.tackning - 1) > 1e-9) problem.push("t=1,37 kläms ej till 1 (läst " + String(over.tackning) + ")");
+      if (Math.abs(over.ovre - K) > 1e-9) problem.push("t=1,37: ovre=" + String(over.ovre) + " != K");
+    }
+    const under = OSK.raknaIntervall(K, -0.25, false); // under 0 %
+    if (!under) problem.push("t=-0,25: null");
+    else {
+      if (Math.abs(under.tackning) > 1e-9) problem.push("t=-0,25 kläms ej till 0 (läst " + String(under.tackning) + ")");
+      if (Math.abs(under.ovre - 100) > 1e-9) problem.push("t=-0,25: ovre=" + String(under.ovre) + " != 100");
+      if (Math.abs(under.nedre - K) > 1e-9) problem.push("t=-0,25: nedre=" + String(under.nedre) + " != K");
+    }
+    // note-kontraktet (källkonsistens med korstabellens chip): spannet + täckning
+    // + 0 p/5 p-fyllningen + 'Modellen gissar aldrig' återges i reglagets not.
+    const i67 = OSK.raknaIntervall(K, 0.67, false);
+    if (!i67) problem.push("t=0,67: null");
+    else {
+      if (i67.note.indexOf("[62") < 0) problem.push("note utan spann: " + i67.note);
+      if (i67.note.indexOf("67 %") < 0) problem.push("note utan täckning: " + i67.note);
+      if (i67.note.indexOf("0 p") < 0 || i67.note.indexOf("5 p") < 0) problem.push("note utan 0 p/5 p-fyllning: " + i67.note);
+      if (i67.note.indexOf("Modellen gissar aldrig") < 0) problem.push("note utan ärlighetsfras: " + i67.note);
+    }
+    rad(
+      "akm3/osakerhet",
+      "REGLAGE-KONTRAKT klämning av låtsas-t + ärlighetsnot (note)",
+      problem.length === 0 ? "PASS" : "FAIL",
+      problem.length === 0
+        ? "låtsas-t 1,37 ⇒ kläms till 1 ⇒ [62;62]; −0,25 ⇒ kläms till 0 ⇒ [62;100] (reglaget kan aldrig producera ett spann utanför formeln ens med felaktigt UI-tal); note = 'Spann [62–95]: osatt vikt poängsatt 0 p (värsta) till 5 p (bästa) vid täckning 67 %. Modellen gissar aldrig.' — samma not som korstabellens chip"
+        : problem.slice(0, 6).join("; "),
+      "t=1,37 ⇒ [62;62] · t=−0,25 ⇒ [62;100] · note=äkta",
+    );
+  }
 
   // ── akm3/regim (VÅG 60 bygg-A, AKM3 steg 5): trösklar + genesis + n-vakt ──
   {
@@ -3815,7 +3887,7 @@ function byggRapport(payload, meta) {
   }
   linjer.push("");
   linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59 + våg 60)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). (VÅG 61 bygg-2, B2B steg 2/K5) pro/tenant — white-label-kontraktets mal-låsta disclaimer-kärna: tre lager (metoddeklaration, ansvarsdeklaration 2007:528, data-t.o.m.-rad+falsifierbarhet) alltid närvarande oavsett tenant (negativt test: fientligt tillägg som försöker stryka dem), kärnan byte-identiskt prefix (P1), ansvarsskjutande tillägg avvisas (b4 lager 2), pro-admin-v1 → TenantConfig-mappning med URL-vakt. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser; VÅG 66 r6 tillägg: kalkylatorreglagets geometri-svep låtsas-t 0→100 % — golvet K orubbligt, övre monotont icke-ökande, t=100 % ⇒ [K;K] — samt låtsas-t-klämning utanför [0,1] och ärlighetsnot-kontrakt) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). (VÅG 61 bygg-2, B2B steg 2/K5) pro/tenant — white-label-kontraktets mal-låsta disclaimer-kärna: tre lager (metoddeklaration, ansvarsdeklaration 2007:528, data-t.o.m.-rad+falsifierbarhet) alltid närvarande oavsett tenant (negativt test: fientligt tillägg som försöker stryka dem), kärnan byte-identiskt prefix (P1), ansvarsskjutande tillägg avvisas (b4 lager 2), pro-admin-v1 → TenantConfig-mappning med URL-vakt. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");

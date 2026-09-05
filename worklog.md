@@ -8233,3 +8233,393 @@ första B2B-kunden), m9-innehållsfabrik, kalkylatorreglage; B2B-API
 VILLKORAT, vågmotorändringar AVSLÅS (grinden låst enligt beslut).
 STATUS: publicerade en 3 416 + ar 3 236 · kursblock 2 258/2 253 · ui
 295/295 · blogg 458/458 (topp-20) · tsc 34 · svit 105/0/0.
+
+── VÅG 66 r6 bygg: KALKYLATORREGLAGET "Vad händer vid full data?" — AKM2-
+fliken visar osäkerhetens geometri (2026-09-04) ──
+Direktiv: r6-horisontvyer §6 ("Reglaget: MOGET NU" — villkorat endast på att
+osäkerhetsintervallet rullat ut, vilket steg 3-bygget VÅG 59 uppfyllde) +
+r4-osakerhet §3.3 + uppdragets t-anpassning (låtsas-täckning 0–100 % i stället
+för fyllnadsgrad x — kalkylatorn är alltid manuellt läge). BESLUT §3
+lager 5/pres: reglaget LÄSER kompositen, väger ALDRIG in saknad data.
+BYGGT:
+(1) src/components/ak1a/akm1-calculator.tsx — ny sektion 5 i AKM2-fliken
+    (Fas2-gatad med hela fliken: syns endast lage=akm2 + harFas2Access):
+    skjutreglage "Låtsas-täckning t" 0–100 % (steg 1, förval 67 = D1:s
+    INDU-C-exempel — kodkanon, ingen fri parameter) + snabbknapp "Full data
+    (t = 100 %)". Intervallet [K, K+100·(1−t)] räknas LIVE av raknaIntervall
+    ur akm3/osakerhet.ts — SAMMA funktion som korstabellens osäkerhetschip
+    (källkonsistens); K = AKM2-kompositen (kärnans heltal). Visualisering:
+    felstreck/gradient i IntervallStreck-DNA (guldmarkör vid K, gradient
+    utlöpande mot övre, bana 0–100 med spåret mot 100, aria-hidden — talen i
+    texten) + två siffer-rutor: intervallText ("62 [62–95] (täckning 67 %)")
+    och missionens rubriktal "vid 100 % data: totalen fastnar vid {K}".
+    Ärlighetsnot ordagrant: "Reglaget visar osäkerhetens geometri — saknad
+    data vägs aldrig in poängmässigt" + r4 §3.3:s deklaration av det verkliga
+    läget ("t = 100 % — alla variabler poängsatta av dig") + modulens egen
+    note ("… 0 p (värsta) till 5 p (bästa) … Modellen gissar aldrig") +
+    "pedagogisk projection, aldrig prognos". Porten: portAktiv alltid false
+    (skuggnyckeltal null ⇒ hårda porten följer DATA, utlöses aldrig) — inga
+    rådgivningsfraser, inga signalverb. Port/källor-stycket omnumrerat 5→6.
+(2) verktyg/validera-motorer.mjs — +2 kontroller (105→107):
+    • REGLAGE-SVEP: 21 låtsas-lägen 0→100 % på kalkylator-K 62 — nedre = K i
+      SAMTLIGA (golvet orubbligt), övre = min(100, K+100·(1−t)) monotont
+      icke-ökande, ingen portklippning, t=100 % ⇒ [62;62] ±0.
+    • REGLAGE-KONTRAKT: låtsas-t 1,37 kläms till 1 ⇒ [K;K], −0,25 kläms till
+      0 ⇒ [K;100] (reglaget kan aldrig producera spann utanför formeln ens
+      med felaktigt UI-tal) + note-kontraktet (spann/täckning/0 p–5 p/
+      "Modellen gissar aldrig" — samma not som korstabellens chip).
+    Sammanfattningsraden i genererad rapport utökad med VÅG 66 r6-tillägget.
+VERIFIERAT (allt mot egna körda instanser; INGET COMMITTAT):
+• Svit: node verktyg/validera-motorer.mjs ⇒ 107 PASS / 0 FAIL / 0 SKIP
+  (105 + 2 nya REGLAGE-rader PASS i data/rapporter/motorervalidering-…md).
+• tsc EXAKT 34/0 (34 före = 34 efter; 0 i ändrade filer — baslinjen orörd).
+• dev 3515 (stale låsserver :3511/PID 30348 togs över enligt "döda efteråt"-
+  konventionen; min instans dödad efter verifiering, porten frigjord):
+  /kalkylator 200 · / 200 · /portfolj-forskning 200; kompilad klient-chunk
+  (src_20nyxxj._.js) innehåller alla 7 reglage-strängar ("Vad händer vid
+  full data", "Låtsas-täckning", "totalen fastnar vid", "saknad data vägs
+  aldrig in", "Full data (t = 100 %)", raknaIntervall-importen …) — sektionen
+  monterad i AKM2-flikens klientbunt (SSR visar låspanelen som väntat: Fas 2-
+  gatad). Worklog-verktyg: tool-results/dev-3515-vag66r6.log.
+STATUS: r6 §6:s "bygg reglaget vid nästa byggrond" är därmed inhämtat —
+horisontvyerna (V1+V2+V3) berörs INTE av detta bygge (r6 §8.1 skilde domarna).
+
+## VÅG 66 G2: JURIDIKPAKETET — B2B-villkor, DPA-mall, biträdesroll (2026-09-04)
+
+UPPDRAG (juridik-agent, B2B-BESLUT steg 5 + b4 DEL 4): drafta G2-juridikpaketet
+i sin helhet — kundens jurist granskar (K-B2B:1), vi levererar fullständiga
+förslag, inget committat.
+
+LEVERANS:
+- B2B-VILLKOR som PRO-sektion på /villkor (EN sanningskälla — aldrig kopia):
+  ny block-del "AK1A PRO — villkor för företag" (anchor #pro-villkor) efter
+  konsumentsektion 1–12 med P1–P9: parter/avtalsslut (näringsidkare),
+  uppdraget (verktygs- och forskningsleverantör — deterministisk generisk
+  utdata, AK1A lämnar aldrig investeringsråd, lämplighetsansvaret är Kundens;
+  ESMA substans-över-etikett + ESMA35-43-3172), pris alternativ A (499/1 499/
+  4 999 kr/mån exkl. moms + onboarding 9 900 kr Institution, avklippt vid
+  2-årsbindning; aldrig rev-share; referral-FORBUD med MiFID II-hänvisning),
+  bindningstid/uppsägning (månad för Analytiker/Studio, 12 mån Institution,
+  30 dagars varsel, 9 § hävning), ansvarsbegränsning (verktygslämnare, tak =
+  12 månaders avgift, personskada/uppsåt undantagna, 36 § AvL-spärr),
+  mal-låsning (tre lager kan aldrig suddas — maskinell spärr verifierad av
+  negativa tester i sviten), personuppgifter (Kunden ansvarig, AK1A biträde,
+  DPA FÖRE klientdata — G3), ändringar (30 dagars varsel + uppsägningsrätt),
+  tvist (svensk rätt, allmän domstol, Stockholms tingsrätt utgångspunkt,
+  valfri hemvist i teckningsunderlaget). FORBUD 12 hållet: inga konsument-
+  klausuler (ångerrätt/90-dagars/ARN/2022:260/261 explicitt avgränsade i
+  intro-rutan). Metadata + Snabbfakta uppdaterade med PRO-visaren.
+- DPA-MALL som dokument: data/forskning/B2B/DPA-MALL.md — art 28.3:s 9 punkter
+  exakt enligt b4 §2.2 (instruktioner, konfidentialitet, TOM art 32,
+  underbiträden med 30-dagarsavisering + invändningsrätt, registrerades
+  rättigheter + DPIA-stöd, radering/återlämning 30 dagar, revisionsrätt +
+  årlig redovisning, tredjelandsförbud utan skriftligt godkännande,
+  ansvarsfördelning art 82) + stegvis incidentflöde (AK1A→Kunden utan
+  dröjsmål max 24 h, Kunden→IMY 72 h, art 34-samråd, logg minst 2 år) +
+  Bilaga A (behandlingsbestämmelser: klientkod/etikett + instrument + vikt —
+  namn/personnummer/skuldlistor TEKNISKT spärrade, art 9 aldrig) + Bilaga B
+  (underbiträdeslista PUBLICERAD: Vercel + Supabase EU-region verifierad;
+  Stripe-notering utanför klientregistret; Resend planerad) + Bilaga C (TOM)
+  + signaturblock. Statusrader: UTKAST till K-B2B:1, signeras före G3.
+- DPA-MALLEN SERVERAS: ny route GET /api/pro/dpa-mall (text/markdown,
+  1 h cache) — dokumentet är mastern, ingen egen sida (beslut: "dokument-fil
+  + /pro/priser länkar till den"); next.config.ts outputFileTracingIncludes
+  utökat med filen (mönstret från /api/forskningslage — prod-tracing).
+- /pro/priser: "Underlagen"-stycke med länkar till B2B-villkoren (/villkor#
+  pro-villkor) och DPA-mallen (/api/pro/dpa-mall) — G2-transparens.
+- /transparens: biträdesrollen tillagd — ny registerpost "Klientuppgifter i
+  AK1A PRO (biträdesledet — kräver signerat biträdesavtal)" (vad/varför/
+  grund art 6.1 b + 28/lagring 30 dagar/rättigheter via ansvarig rådgivare)
+  + sektion 1 utökad med de omvända rollerna i PRO och DPA-hänvisning.
+  NOTERA: /transparens har en/ar-speglar — de nya raderna är svensk text
+  hittills (översättningsskuld för nästa Ö-runda).
+- Varumärkesvakt: kontrolleraText via byte-identisk kopia av varumarke.ts
+  (tool-results/v66g2/: enda skillnad Node-importattribut; diff-verifierad)
+  över HELA villkor + transparens + priser (485 UI-strängar) + DPA-mallen
+  som löptext: 0 FEL · 0 VARNINGAR. Bonusfix: konsumentdelens "inte en
+  investeringsrådgivare" → "inte investeringsrådgivare" (artikeln bröt
+  kontrolleraText:s omedelbara negering — filen klarar nu grunden UTAN
+  vaktens citerings-undantag).
+VERIFIERING: dev :3514 — /villkor 200 (P1–P9 + #pro-villkor renderade),
+/pro/priser 200 (href /api/pro/dpa-mall + /villkor#pro-villkor), /transparens
+200 (biträdesposten), /api/pro/dpa-mall 200 (markdown-innehållet, 15 träffar
+på Vercel/Supabase/incidentflöde/art 28.3); tsc 34/0 (baslinjen oförändrad).
+INGET COMMITTAT.
+KVAR (kundens jurist, K-B2B:1): granska PRO-sektion P1–P9 + DPA-mallens 9
+punkter/bilagor + de tre mal-låsta deklarationslagren (timmar, inte veckor);
+därefter fastställ versionsdatum — G2:s återstående delar (faktura-/momsflöde
+K-B2B:3) låses fortfarande av kundägaren.
+
+## VÅG 66 m9: INNEHÅLLSFABRIKEN — pilot, 3 evergreen-poster ur forskningsdatan (2026-09-04)
+
+UPPDRAG (m9-innehallsfabrik.md LED 1+2 + STYRELSE-NASTA-NIVA vågplan 66-68;
+MARKNADS-BESLUT §0 P1-P7 + våg 4:s regel "AI-genererade texter MÅSTE passera
+kontrolleraText + mänskligt godkännande"): bygg innehållsfabriken och kör
+m9-piloten — tre evergreen-slug-poster per månad UR FORSKNINGSDATAN, aldrig
+månadsduplikat, kontrolleraText på varje rad, granskningskö före storskalig drift.
+
+LEVERANS:
+- VERKTYG verktyg/kor-innehallsfabrik.mjs (innehallsfabrik-v1, mönstret
+  kor-analysfabrik/kor-analysblogg): genererar 3 poster deterministiskt ur
+  (a) korstabellens AKM2-fält via peer.ts:s median-logik (median-kontraktet
+  jämnt n ⇒ medel av mittersta; PEER_MIN_GRUPP=5; referens-form
+  "skapad · 100-bolagsuniversum"), (b) forskningslaget.ts:s tal + regim
+  (trösklar OCH lägestexter omimplementerade ORDAGRAT: 7 gröna/76 gula/
+  17 röda ⇒ magert), (c) data/rapporter/vagvalidering-SENASTE.md parsad
+  (52 % träff, n=48, osatta 20 %, dom-protokollet citeras ordagrant).
+- EVERGREEN-SLUGS (m9 §2.4): branschmedianer-akm2 · forskningslaget-grona-
+  av-100 · vagkartan-traffprocent — EN kanonisk slug per serie som
+  UPPDATERAS (publishedAt bevaras, updatedAt sätts, "Ändringen sedan förra
+  utgåvan"-avsnitt ur fabrik.forraStatistik); oförändrat underlag ⇒
+  identiska bytes ⇒ filen skrivs ej (md5-bevisat: körning 2 och 3 = 0
+  skrivna). Mänskligt granskad post (metadata.granskadAv) skrivs ALDRIG
+  över utan --tvinga.
+- KVALITETSGRIND (LED 2): kontrolleraText på TITEL + BESKRIVNING + VARJE
+  kroppsrad (28+24+22 rader) = 0 FEL, 0 VARNINGAR; spegeln läser SAMMA
+  data/varumarke.json som src/lib/varumarke.ts (ts-filens JSON-import utan
+  attribut avvisas av node — ingen data-drift) med våg 2 AC2-självtest som
+  startvakt; strukturredator: disclaimer-token, automatisk-markering,
+  datering, internlänkar (/forskningsbiblioteket + /kurser/ — V07/V08/V09,
+  ts-10, V09 + guide) maskinkontrollerat; 45-dagars färskhetsvakt på
+  underlagen (m9 §5); bolagsnämningar ENDAST deskriptiva (median/jämförelse)
+  + investmentbolags-not (Industrivärden/Investor).
+- KÖRD PILOT: 3 JSON i data/blogg/ med EXAKT blogg-schemat (slug/title/
+  description/pillar/author/publishedAt/readingMinutes/tags/body — inga
+  saknade fält) + fabrikfält (kallor med fil+md5, statistik per bransch/
+  status/horisont, forraStatistik) — full spårbarhet publicerad text →
+  datafil (P4). OG: node scripts/og-generate.mjs --check visade 3 saknade →
+  full körning = 396/396 (47 blogg-bilder), 0 saknas.
+- GRANSKNINGSKÖ: samtliga 3 poster bär metadata.techReview="auto" +
+  granskat:false + notering "MÄNSKLIG GRANSKNING fordras … innan storskalig
+  drift" — m9:s dom uppfylls: maskinen publicerar inget autonomt i skala;
+  granskarparet fyller granskadAv/granskadDatum (därefter skrivskyddade).
+- VERIFIERING: getBlogPosts-logik → 47 poster, piloterna bland de nyaste
+  (2026-09-03/04) och plockas av /blogg + speglarna; kontrolleraText-
+  rapport i verktygets utdata; determinism md5-stabil över 3 körningar;
+  tsc 34/0 (baslinjen oförändrad). src/ orört. INGET COMMITTAT.
+KVAR (m9 LED 3): granskarpar granskar de 3 utkasten mot fabrik.statistik
+(verifieringsjobb, inte skrivjobb — m9 rek 3), fyller granskadAv; därefter
+beslut om utrullning av resterande serier (V07-V09 först enligt m9 rek 2,
+max 20+1/månad).
+
+## VÅG 66 Ö5: MAKRO- OCH VÄRDERINGSPAKETET — mk-01…mk-11 + vm-01…vm-11 ALLA BLOCK, importklar (2026-09-04)
+
+UPPDRAG (arbetsgång från VÅG 64 agent-ÖA/ÖB + VÅG 65 Ö1/Ö2, mall v64b/v65-verktygen,
+nytt prefix v66km-): översätta makropaketet (mk-01-bnp-och-tillvaxt …
+mk-11-kinaekonomin) OCH värderingspaketet (vm-01-grahams-formel … vm-11-waccfallor)
+— ALLA kursblock ("{slug}:kap{n}:block{i}", kap.num, visuell-block hoppas över)
+till en+ar; hoppa över publicerade (status via lasStatusKarta).
+
+LEVERANS (data/oversattning-import/km-vm.json, 528 poster, IMPORTERAD):
+- Statusdiagnostik (v66km-status.mts, lasStatusKarta): 528/528 block SAKNADE på
+  båda språken (0 publicerade) — inga att hoppa över. Rad-memo ur ALLA 12
+  publicerade paketfilerna: 0 % träff (mk/vm är helt nytt innehåll — V-kursernas
+  megaboilerplate återanvändes inte) ⇒ alla 1 320 rader nyöversatta.
+- 22 kurser × 24 block: MAKRO (mk-01 BNP/tillväxt, mk-02 arbetslöshet,
+  mk-03 handelsbalans, mk-04 statsobligationer, mk-05 geopolitik, mk-06
+  penningpolitik/QE-QT, mk-07 finanspolitik, mk-08 omvänd yield curve, mk-09
+  deflation/inflation, mk-10 oljepris, mk-11 Kinaekonomin) + VÄRDERING
+  (vm-01 Grahams formel … vm-11 WACC-fällor). Upptäckt under arbetet: vm-kurserna
+  är MALLBASERADE i källan (block2-4 identiska mellan kapitel, block1 skiljer
+  endast kapitelintro + kursens koncept/koppling/experter) — verifierat
+  programmatiskt; vm-02…vm-11 genererades ur handöversatta parametrar
+  (v66km-gen-vm.mjs: koncept/koppling/experter per kurs, termbank + latinska
+  termer + tal inbakade i parametrarna).
+- KVALITET: 528/528 poster × 2 språk = 100p i korKontroller (term 40 + siffror 25
+  + struktur 20 + lateral 15) → ALLA AUTOPLUSHERADE. Termbankens exakta bestämda
+  ar-former genomgående (النمو/التضخم/الانكماش/البورصة/الأسهم/المحفظة/الميزانية
+  العمومية/سعر الفائدة/سعر الفائدة الأساسي/الهامش الإجمالي/القوة التسعيرية/
+  القيمة الحقيقية/صافي قيمة الأصول/التدفق النقدي/الإيرادات/التقييم…), lam-
+  assimilation aktivt hanterad (للنمو ⊅ النمو، للبورصة ⊅ البورصة، للسند ⊅ السند —
+  samtliga fångade av kontrollen och omskrivna med fristående bestämd form),
+  latinska termer kvar (AKM1/QE/QT/DCF/WACC/DDM/P/E/EV-EBITDA/P/B/ROE/EBITDA/
+  NIM/REER/NAIRU/PMI/SCB/OMXSPI/5G/V01-V19), tal IDENTISKA strängform: decimal
+  komma (6,9 · −0,7 · 1,25 biljoner), tusentalsgrupp med mellanslag (30 000 ·
+  100 000 · 1 850 · 1 200), U+2212-minus bevarad (−0,5 · −2,8 · −8,6 · −37),
+  ASCII-hyphen-intervall ger tokenpar (2-10 → 2 + -10, 1-5 → 1 + -5 — skiljt
+  från en-dash-intervall 5–10 som ger två rena tal; Q4/Q2 + årtal, "60+ procent",
+  "1:1", "15–20%", version "AKM1 1.1" som token 1 + 1.1) — per-rad-tokendiff
+  (v66km-diffa.mjs) vid alla sifferavvikelser; svenska/arabiska ORD-TAL var
+  fällan igen («sex månader»→six months är säkert, men «1 miljon fat» får inte
+  bli «مليون برميل» och «ثلاثة أشهر» får inte ersätta «3 أشهر» när källan har
+  siffra) — alla fångade; rad-för-rad-struktur (tomrader mellan stycken bevarade).
+- METOD/VERKTYG (tool-results/, prefix v66km-): extrahera.mjs (källor →
+  v66km-paket.json + per-block-dumpar), status.mts (lasStatusKarta → vad som
+  saknas), memo.mjs (rad-memo ur data/oversattning-import/*.json), termer.mts
+  (termbanksträffar per block → kravlista), gen-vm.mjs (mallgenerator för
+  vm-kurserna), bygg.mjs (radantals-+placeholder-validering → v66km-v*.json),
+  kontroll.ts (korKontroller + --skriv → km-vm.json), diffa.mjs (per-rad-
+  tokendiff). Svarsfiler v66km-svar-<kurs>.json (radarrayer) är redigerings-
+  grunden. src/ orört. INGET COMMITTAT.
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs km-vm.json →
+  TOTALT 1056 poster · 1056 publicerade · 0 utkast · 0 nekade · 0 okända
+  nycklar · LÄGE SPARAT (upsert i tabellen oversattningar, 4,6 s).
+  Slutstatus via lasStatusKarta: 528/528 block publicerade på BÅDA språken —
+  makro- och värderingspaketen är därmed HELT översatta.
+STATUS: km-/vm-paketen (22 kurser, 528 block) publicerade på en+ar. KVAR av
+kursblocken: km-001…km-070 (koncernmästarcykeln — 70 kurser), ts/pc/rk/pf/se/
+sj/bf/ud + titlar/intros/quiz för mk/vm-kurserna (v65o4-metoden) — samma mall,
+peka extrahera.mjs på nya slugs.
+
+## VÅG 66 Ö6: TS-KURSERNA — agentöversättning av teknisk analys ts-01…ts-25 ALLA BLOCK, importklar (2026-09-05)
+
+UPPDRAG (arbetsgång från VÅG 64 agent-ÖA/ÖB + VÅG 65 Ö1–Ö4, mall v65o2-verktygen,
+fil-domän v66ts-): översätta TS-kurserna (teknisk analys, ts-01…ts-25) ALLA
+kursblock ("{slug}:kap{n}:block{i}") till en+ar; publicerade hoppas över.
+
+LEVERANS (data/oversattning-import/ts.json, 489 poster, IMPORTERAD):
+- STATUSKOLL FÖRST (v66ts-status.mts mot lasStatusKarta): 0/489 block
+  publicerade → samtliga 489 att göra (ts-01…ts-25 × kap1–6; blockantal per
+  kapitel 3–4, 927 rader totalt, inga megakapitel — småblock 1–5 rader).
+- Professionell finansengelska + modern standardarabiska per ÖA/ÖB-standard:
+  termbankens EXAKTA bestämda ar-former (الموجة الدافعة/تصحيح/الدعم/المقاومة/
+  الاتجاه/الارتداد/الزخم/المستوى/المتوسط المتحرك/خط الاتجاه/التشبع الشرائي…),
+  latinska termer kvar (RSI/MACD/ATR/EMA/SMA/RSI/VWAP/OBV/POC/VPOC/VA/SMA/
+  Bollinger/OMXS30/NASDAQ/EUR/USD/ECB/SEK/DCF/P/E/P/S/EV/EBITDA/AKM1/AK1TS/
+  AK1A/Gann/Wyckoff/Steidlmayer/Fibonacci/shooting star/hammer/engulfing/doji/
+  whipsaw/squeeze/mean reversion/cup and handle/head and shoulders/Gartley/Bat/
+  Butterfly/Crab/ABCD/WXY/triple three/curve fitting/fakeout…), tal IDENTISKA
+  i strängform (decimal komma "61,8%" och decimal punkt "61.8%" bevarade
+  per rad, "100 000" med mellanslag, U+2212 bevarad där källan har den,
+  intervall "15–20%"/"5-10", Q4→"(Q4)" i ar för siffertoken 4, "3-vågs"→
+  "الموجات الـ3" (inte "ثلاث") så siffran 3 bevaras, 1x1/2x1/1:2/L(0)=2/
+  L(n)=L(n-1)+L(n-2) bevarade ordagrant, "0, 1, 1, 2, 3, 5, 8, 13…"-sekvenser
+  identiska), rad-för-rad-struktur (1–5 rader/block, radantal verifierat av
+  bygg+kontroll), åäö-fria ar-texter (AK1TS FÖRDJUPNING:s Ö sanerad till
+  "تعمق AK1TS" — Ö äär inte i vitlistan).
+- KVALITET: 489/489 poster × 2 språk = 100p i korKontroller (term 40 + siffror
+  25 + struktur 20 + lateral 15) → ALLA AUTOPLUSHERADE. Poängfördelning:
+  en 100p=489/489, ar 100p=489/489, 0 utkast, 0 nekade, 0 okända nycklar.
+- METOD/VERKTYG (tool-results/, prefix v66ts-): extrahera.mjs (källor ur
+  public/deep-courses.json → v66ts-paket.json + läsbara dumpar), status.mts
+  (lasStatusKarta → publicerad/SAKNAS per block — alla 489 saknade), memo.mjs
+  (rad-memo ur grundpaket v2+v3+v11-v15+v16-v20: 219/927 rader = 23,6 %
+  återanvände publicerade rader), jobb.mjs (708 nya rader att översätta),
+  unika-termer.mts (termbanksträffar per rad — kravlistan), t1–t6.mjs
+  (översättningstabell radnummer→{en,ar}, 585 unika rader), fix1–fix6.mjs
+  (patch-lager: fullständiga rader + kirurgiska {ersatt:[[finn,ersätt]]}-
+  substitutioner), bygg.mjs (memo+tabell+patchar → v66ts-v<kurs>.json-delar
+  med radantals- och placeholder-validering; DJUPMERGE av patch-lager —
+  {ar}-lager ska inte radera {en}), kontroll.ts (korKontroller + --skriv →
+  ts.json), diag2.mts + diag-memo.mts + dump-fel.mts (per-rad feljakt),
+  diffa-verktyg från v65o2 återanvändbara.
+- ARBETSGÅNGENS LÄRDOMAR (dokumenterade för nästa Ö-agent): (1) den stora
+  ar-fällan var EGNA lam-assimilationer — «للمحلل/للاتجاه/للارتداد/للسهم»
+  innehåller INTE kanonformen «المحلل/الاتجاه/الارتداد/السهم» (kontrollens
+  includes() ser dem inte); lösning: fristående bestämd form i varje rad
+  («لدى المحلل»، «في السهم»، «مع الدورة»…). (2) «المستويات» innehåller
+  INTE «المستوى» (ى vs ي) — singular behövs. (3) ord-tal i ar («ثلاث
+  موجات», «الربع الرابع», «خمسين يوماً») tappar siffertoken — skriv
+  «الموجات الـ3», «الربع الرابع (Q4)», «لمدة 50 يوماً». (4) per-rad-check
+  är strängare än block-check (block täcker över radmissar) — kör diag på
+  radnivå + kontroll på blocknivå. 6 iterationsrundor till 100p.
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs ts.json → TOTALT
+  978 poster · 978 publicerade · 0 utkast · 0 nekade · 0 okända nycklar ·
+  LÄGE SPARAT (upsert i tabellen oversattningar, 4,4 s). Slutstatus via
+  lasStatusKarta: 489/489 TS-block publicerade på BÅDA språken — hela
+  tekniska analys-paketet (Elliott, Fibonacci ×4, Gann ×2, Lucas, volym ×2,
+  AK1TS-matrisen, candlesticks, MA, RSI, MACD, Bollinger, stöd/motstånd,
+  trendlinjer, chart-mönster, harmoniska, multi-tidshorisont, VSA, order
+  flow, market profile) är översatt.
+- ARBETSFILER: tool-results/v66ts-* (delar, verktyg, patchlager, memo,
+  diagdata). src/ orört. INGET COMMITTAT.
+KVAR (nästa Ö-runda): titlar/intros/quiz för ts-kurserna (v65o4-metoden) +
+km-001…km-070 och pc/rk/pf/se/sj/bf/ud-block med samma mall — extrahera.mjs
+är kursoberoende, memo.mjs växer med varje publicerat paket.
+
+## VÅG 66 Ö7: PC- OCH RISKPAKETET — agentöversättning av pc-01…pc-20 + rk-01…rk-15 ALLA BLOCK, importklar (2026-09-04)
+
+UPPDRAG (arbetsgång från VÅG 64 agent-ÖA/ÖB + VÅG 65 Ö1/Ö2, nytt fil-prefix
+v66pc-): översätta praktik-case-kurserna pc-01…pc-20 OCH riskkurserna
+rk-01…rk-15 — ALLA kursblock ("{slug}:kap{n}:block{i}", 708 block totalt,
+0 redan publicerade enligt lasStatusKarta-diagnostik) till en+ar.
+
+LEVERANS (data/oversattning-import/pc-rk.json, 708 poster, IMPORTERAD):
+- pc-01…pc-10 (rika case-texter à 18 block/30 rader): pc-01 Atlas Copco,
+  pc-02 AstraZeneca, pc-03 Swedbank, pc-04 Investor AB, pc-05 Volvo AB,
+  pc-06 H&M, pc-07 Sinch, pc-08 Precise Biometrics, pc-09 Novo Nordisk,
+  pc-10 Ericsson — handöversatta rad-för-rad med termbankskrav per block
+  (v66pc-termer.mts → kravlista: AKM1 157·risk 132·avkastning 96·portfölj
+  73·riskjusterad avkastning 64·börs 62·kapitel 60·intäkter 41 …).
+- pc-11…pc-20 (templatiserade case à 24 block/60 rader): KÄLLAN ÄR EN
+  GEMENSAM MALL (12 unika rader/kurs) — v66pc-mall.mjs genererar alla 240
+  block från en variabellista (bolag, beskrivning, ursprungsår) och
+  validerar radantalet mot källan. Bolagsnamn latinska i AR med åäö-
+  sanering (Öresund→Oresund, Höganäs→Hoganas) enligt blogg-vågens
+  precedent; pc-12-väven: källans "lager" (termbanksträff) löst med
+  naturligt serviceinventarie-inskott i EN+AR (ÖA:s dokumenterade metod).
+- rk-01…rk-15 (riskkurser à 18 block + rk-13/14/15 à 24 block):
+  kapitalförbränning, emissionsrisk, skuldfälla, likviditetskris,
+  cykelrisk, regulatorisk, valutarisk, ränterisk, koncentrationsrisk,
+  korrelationsrisk, bedrägeririsk, black swan, GDPR/datarisk, ESG,
+  cykelrisk II — 258 block med siffror identiska strängform (0,5 % ·
+  3,5 % · 5–10 % · 200% · 520 miljoner · 58 miljoner · 1,5 miljarder
+  komma-form bevarad; "15–20%" en-dash; NACV/NAV/ESG/GDPR/AI Act/NIS2/
+  SFDR/CSRD/TCFD/SCC/TIA/CDS/LIBOR-OIS latinska i AR).
+- KVALITET: 708/708 poster × 2 språk = 1416 rader 100p i korKontroller
+  (term 40 + siffror 25 + struktur 20 + lateral 15) → ALLA AUTOPLUSHERADE.
+  0 utkast, 0 nekade, 0 okända nycklar, 0 saknade fält. Fällor som
+  fångades och fixades under ~15 iterativa kontrollrundor: arabisk
+  lam-assimilation (للمخاطر/للمحفظة/للنسبة innehåller INTE kanonformen —
+  omskrivet med مع/على/في/ب eller fristående bestämd form), ى/ي-fällan
+  (المستويات ⊅ المستوى — "nivå"-termen kräver المستوى med alef
+  maqsura), pluralformer av termer (الارتباطات ⊅ الارتباط → fristående
+  bestämd form), "aktier→stocks"-dubbelträff i "vinst per aktie" (EN
+  behöver både earnings per share OCH stock), bestämda former av
+  motsatstermer (إصدار أسهم obestämd vs تخفيف الملكية bestämd —
+  termbanken blandar bestämthet!), ord-tal ("دورتين"→"2 دورة",
+  "الربعين"→"2 ربع"), 5G som token ("الجيل الخامس" saknar 5 → "5G"
+  latinskt i AR), Orrön→Orron (åäö-läckage i AR).
+- IMPORTRESULTAT: node verktyg/importera-oversattning.mjs pc-rk.json →
+  TOTALT 1416 poster · 1416 publicerade · 0 utkast · 0 nekade · 0 okända
+  nycklar · LÄGE SPARAT (upsert i tabellen oversattningar, 5,2 s).
+  Efterverifiering via lasStatusKarta: 708/708 block publicerade på BÅDA
+  språken — pc- och rk-kurserna är därmed HELT översatta (blocknivå).
+- METOD/VERKTYG (tool-results/, prefix v66pc-): extrahera.mjs (källor ur
+  public/deep-courses.json → v66pc-paket.json + läsbara dumpar),
+  status.mts (lasStatusKarta → v66pc-status.json — 0/708 publicerade
+  först), termer.mts (termbanksträffar per block → kravlista),
+  mall.mjs (pc-11…pc-20-generator med radantalsvalidering),
+  kontroll.ts (korKontroller + --skriv → pc-rk.json), diffa.mjs
+  (per-block tokendiff för sifferlokalisering). RK-kurserna skrevs som
+  kapitelvisa delfiler (v66pc-vrk-XX-d<n>.json via python-heredoc) som
+  monterades till v66pc-vrk-XX-<kurs>.json — format: rader som
+  strängar med \n-escape. src/ orört. INGET COMMITTAT.
+STATUS: registret efter vågen innehåller grundkurserna V01–V20 +
+flaggskeppen + bloggen topp-20 + TS + PC + RK. KVAR (nästa Ö-runda):
+KM/TS-titlar/PF/SE/SJ/BF/MK/VM/UD-block + pc/rk-titlar+intros+quiz
+(v65o4-metoden tar dem) + resterande bloggposter — v66pc-verktygen är
+kursoberoende (peka extrahera.mjs på nya slugs), mall.mjs-mönstret
+återanvändbart för andra templatiserade kursfamiljer.
+
+── VÅG 66 KOMPLETT: SEX AGENTER PARALLELLT — orgelplanens våg 1 (2026-09-05) ──
+Styrelsens vågplan 66-68 våg 1: allt levererat samma session.
+(Ö5) KM+VM 22 KURSER: 1 056 rader 100p (mk-01…11 makro + vm-01…11 värde-
+ring; vm-mallfyndet: block2-4 identiska i källan → parametriserad generering).
+(Ö6) TS 25 KURSER: 978 rader 100p (ts-01…25 teknisk analys; 23,6 % memo-
+återanvändning; kundtermerna impulsvåg/korrigering i perfekt ar-form).
+(Ö7) PC+RK 35 KURSER: 1 416 rader 100p (pc-01…20 praktik-case + rk-01…15
+risk; 12-radsmall-generering pc-11-20; NCAV/ESG/GDPR/CDS latinska).
+(G2) JURIDIKPAKETET DRAFTAT — ENDÅ BLOCKERAREN TILL FÖRSTA B2B-KUNDEN:
+PRO-villkor P1-P9 på /villkor#pro-villkor (en sanningskälla; 36 §-spärr,
+ansvarstak 12 mån, mal-låsning refererar de maskinella testen) + DPA-MALL
+art 28 exakt (9 punkter + underbiträdeslista Vercel/Supabase EU + incident-
+flöde 24h/72h) serveras via /api/pro/dpa-mall + /transparens biträdes-
+registret + kontrolleraText 0 FEL över 485 strängar — KLAR-lista för
+juristen K-B2B:1 levererad (P5 ansvarstak/P4 bindning/P9 domstolsval/P3 moms
++ DPA 24h-fristen + mal-låsta lagren + platshållarna [ORGANISATIONSNR]).
+(r6) KALKYLATORREGLAGET "Vad händer vid full data?": sektion 5 i AKM2-
+fliken (Fas2-gatad), skjutreglage 0-100 % täckning med [K, K+100(1-t)]-
+intervallet live ur osakerhet.ts, felstreck-gradient, ärlighetsnot — svit
+105→107 PASS.
+(m9) INNEHÅLLSFABRIKEN PILOT: kor-innehallsfabrik.mjs genererar 3 evergreen-
+poster DETERMINISTISKT ur forskningsdatan (Branschmedianer ur peer.ts,
+Forskningsläget ur forskningslaget.ts inkl. regimen, Vågkartan ur validerings-
+rapporten) — md5-stabila omkörningar, kontrolleraText 0 FEL per rad, techReview
+"auto" + granskat false (mänsklig granskning innan drift, enligt beslut) +
+396/396 OG-bilder.
+STATUS: 10 102 publicerade rader totalt (8 686 → efter Ö7) · kursblock
+3 983 en + 3 978 ar · tsc 34/0 · svit 107/0/0 · Kvalitetsvakten GRÖN.
+ÖVERSÄTTNINGSLÄGET: V01-V20 + KM + VM + TS + PC + RK-kategorierna KLARA
+(≈112 kurser komplett) · kvar: km-001…070 breda kurser + PF/SE/SJ/BF/UD +
+titlar/quiz för nya kategorier + 22 bloggposter.

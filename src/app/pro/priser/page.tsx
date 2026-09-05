@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { lasPriser, type PrisNiva } from "@/lib/portfolj-forskning/korstabell-data";
 
 export const dynamic = "force-static";
@@ -246,6 +247,28 @@ export default function ProPriserPage() {
               info@ak1nvestor.com
             </a>{" "}
             — eller boka en demo och se mötespaketet byggas på demoklienten.
+          </p>
+          {/* G2-juridikpaketet (våg 66): dokumenten är publicerade och länkade —
+              B2B-villkoren som PRO-sektion på /villkor (en sanningskälla),
+              DPA-mallen som dokument via /api/pro/dpa-mall. Utkast tills
+              juristgranskningen (K-B2B:1) är godkänd. */}
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            Underlagen:{" "}
+            <Link
+              href="/villkor#pro-villkor"
+              className="font-semibold text-gold underline underline-offset-2"
+            >
+              B2B-villkoren (PRO-sektionen på villkorssidan)
+            </Link>{" "}
+            samt{" "}
+            <a
+              href="/api/pro/dpa-mall"
+              className="font-semibold text-gold underline underline-offset-2"
+            >
+              DPA-mallen enligt GDPR art 28 (underbiträdeslista och
+              incidentflöde ingår)
+            </a>{" "}
+            — båda utkast till granskning av er jurist.
           </p>
           <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-guld-djup">
             Rapporter/mån = utskriftsklassat dokument · PDF-export på väg (fas 3)

@@ -62,6 +62,9 @@ const nextConfig: NextConfig = {
     "/api/cron/portfolj-uppfoljning": [
       "./data/portfolj-system/prediktionslogg-akm3.json",
     ],
+    // G2-juridikpaketet (våg 66): DPA-mallen serveras som dokument av
+    // /api/pro/dpa-mall — filen måste följa med i tracingen på prod.
+    "/api/pro/dpa-mall": ["./data/forskning/B2B/DPA-MALL.md"],
   },
 };
 

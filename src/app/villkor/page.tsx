@@ -9,7 +9,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/villkor",
   title: "Användarvillkor — avtal, rättigheter och ångerrätt | AK1A",
   description:
-    "AK1A Research Labs användarvillkor: avtalsslut, konton, rättigheter per fas, betalning, 90 dagars nöjd-kund-garanti (betalning först efter 90 dagar om du förblir nöjd), 14 dagars ångerrätt vid digital leverans, hävningsrätt vid överträdelser, immaterialrätt, ansvarsbegränsning och tvistlösning enligt svensk rätt.",
+    "AK1A Research Labs användarvillkor: avtalsslut, konton, rättigheter per fas, betalning, 90 dagars nöjd-kund-garanti (betalning först efter 90 dagar om du förblir nöjd), 14 dagars ångerrätt vid digital leverans, hävningsrätt vid överträdelser, immaterialrätt, ansvarsbegränsning och tvistlösning enligt svensk rätt — samt en särskild PRO-sektion med B2B-villkor för AK1A PRO (verktygsleverantör till reglerade rådgivare, priser exkl. moms, svensk avtalsrätt, DPA enligt GDPR art 28).",
   keywords: [
     "användarvillkor",
     "köpvillkor",
@@ -19,6 +19,10 @@ export const metadata: Metadata = pageMetadata({
     "medlemsvillkor",
     "AK1A Research Lab",
     "finansutbildning",
+    "B2B-villkor",
+    "AK1A PRO",
+    "företagsvillkor",
+    "personuppgiftsbiträdesavtal",
   ],
 });
 
@@ -92,7 +96,11 @@ export default function VillkorPage() {
         dagar — och endast om du förblir nöjd (se sektion 5 och 6) · Ångerrätt:
         14 dagar enligt lagen (2005:59) om distansavtal och avtal utanför
         affärslokaler, med undantag vid påbörjad digital leverans med
-        uttryckligt samtycke (se sektion 6) · Tillämplig lag: svensk.
+        uttryckligt samtycke (se sektion 6) · Tillämplig lag: svensk ·{" "}
+        <strong className="text-foreground">AK1A PRO (företag):</strong> särskilda
+        B2B-villkor i PRO-sektionen (P1–P9) längst ner på sidan — priser exkl.
+        moms, svensk avtalsrätt; konsumentreglerna i denna ruta gäller inte
+        avtal mellan näringsidkare.
       </div>
 
       {sektion("1. Inledning och avtalsslut", [
@@ -170,7 +178,7 @@ export default function VillkorPage() {
           p: (
             <>
               AK1A är{" "}
-              <strong className="text-foreground">inte en investeringsrådgivare</strong>{" "}
+              <strong className="text-foreground">inte investeringsrådgivare</strong>{" "}
               och är inte det i någon del av tjänsten. Vi lämnar aldrig
               personliga investeringsråd eller rekommendationer om köp eller
               försäljning av finansiella instrument, bedriver ingen
@@ -768,6 +776,450 @@ export default function VillkorPage() {
               {lank("/upphovsratt", "Upphovsrättspolicy")},{" "}
               {lank("/privacy-policy", "Integritetspolicy")} och{" "}
               {lank("/medlemskap", "medlemskap och priser")}.
+            </>
+          ),
+        },
+      ])}
+
+      {/* ────────────────────────────────────────────────────────────────────
+        AK1A PRO — VILLKOR FÖR FÖRETAG (B2B). G2-juridikpaketet (VÅG 66 G2,
+        B2B-BESLUT steg 5 + b4-juridik-priser DEL 4). EN SANNINGSKÄLLA: B2B-
+        villkoren är en PRO-sektion här — aldrig en kopia på egen sida.
+        FORBUD 12: inga konsumentklausuler (ångerrätt, 90-dagars-garanti, ARN)
+        blandas in — skilda avtalsvärldar; 2022:260/261 gäller inte B2B.
+        Status: FULLSTÄNDIGT UTKAST till granskning av kundens jurist
+        (K-B2B:1) — teckningsbara avtal öppnas först när granskningen är
+        godkänd (G2-grinden).
+        ──────────────────────────────────────────────────────────────────── */}
+      <div className="mt-16 border-t-2 border-gold/40 pt-8" id="pro-villkor">
+        <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-gold">
+          AK1A PRO · Villkor för företag (B2B)
+        </p>
+        <h2 className="mt-2 font-serif text-3xl font-bold">
+          AK1A PRO — villkor för företag
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Utkast 2026-09-04 (G2-juridikpaketet) · gäller lab.ak1nvestor.com/pro ·
+          granskas av kundens jurist före teckning (K-B2B:1)
+        </p>
+        <div className="mt-4 rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">
+            En sanningskälla, två avtalsvärldar.
+          </strong>{" "}
+          Denna PRO-sektion reglerar AK1A PRO — forsknings- och
+          analysverktygen på{" "}
+          {lank("/pro", "/pro")} — när användaren är ett företag eller en annan
+          näringsidkare: exempelvis ett värdepappersinstitut, en oberoende
+          rådgivare, en kapitalförvaltare eller ett analysföretag. Sektion
+          1–12 ovan gäller konsumentledet (utbildningsplattformen); för AK1A
+          PRO gäller i stället punkterna P1–P9 nedan. Konsumentlagstiftningen
+          — ångerrätten enligt lagen (2005:59), lagarna (2022:260) och
+          (2022:261) om digitalt innehåll, nöjd-kund-garantin och
+          konsumenttvistlösning via ARN — omfattar inte avtal mellan
+          näringsidkare och förekommer därför aldrig i PRO-sektionen. Mellan
+          parterna gäller i stället svensk avtalsrätt, med 36 § avtalslagen
+          (1915:218) som spärr mot oskäliga villkor. Statusen är ett
+          fullständigt utkast: det slutgiltiga versionsdatumet fastställs
+          efter juristgranskning (K-B2B:1), och teckningsbara avtal öppnas
+          först när den granskningen är godkänd (G2-grinden).
+        </div>
+      </div>
+
+      {sektion("P1. Parter, omfattning och avtalsslut", [
+        {
+          p: (
+            <>
+              Parter är AK1A Research Lab, organisationsnummer
+              [ORGANISATIONSNR], kontakt info@ak1nvestor.com
+              (&quot;AK1A&quot;, i personuppgiftsfrågor &quot;Biträdet&quot;),
+              och den näringsidkare som tecknar tjänsten
+              (&quot;Kunden&quot;). Kunden kan vara ett värdepappersinstitut
+              med tillstånd enligt lagen (2007:528) om värdepappersmarknaden,
+              en oberoende rådgivare, en kapitalförvaltare eller ett
+              analysföretag — i alla fall är Kunden den part som svarar
+              gentemot sina egna slutklienter.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">Avtalsomfattning.</strong>{" "}
+              Tjänsten AK1A PRO omfattar tillgång till PRO-cockpiten —
+              morgonronden, screening, klientvy, mötespaket och Rapportverkstan
+              — i den omfattning som motsvarar tecknad nivå (Pro Analytiker,
+              Pro Studio eller Pro Institution). Uppgiften per nivå framgår av{" "}
+              {lank("/pro/priser", "PRO:s prislista")}; vid avvikelse mellan
+              beskrivningar gäller teckningsunderlaget.
+            </>
+          ),
+        },
+        {
+          ul: [
+            <>
+              <strong className="text-foreground">Avtalsslut.</strong> Genom
+              teckningsorder från Kunden och AK1A:s orderbekräftelse per
+              e-post. Bekräftelsen anger nivå, antal seat (namngivna
+              användare), bindningstid, pris exklusive moms och
+              faktureringsuppgifter, och utgör tillsammans med denna
+              PRO-sektion det fullständiga avtalet.
+            </>,
+            <>
+              <strong className="text-foreground">Relaterade dokument.</strong>{" "}
+              {lank("/finansiell-policy", "Finansiell policy")} och{" "}
+              {lank("/upphovsratt", "upphovsrättspolicyn")} gäller även för
+              AK1A PRO i tillämpliga delar; för behandling av klientuppgifter
+              gäller punkten P7 och det personuppgiftsbiträdesavtal (DPA) som
+              tecknas enligt den.
+            </>,
+            <>
+              <strong className="text-foreground">Användare.</strong> Kunden
+              ansvarar för att varje seat nyttjas av namngiven personal hos
+              Kunden och för att inloggningsuppgifter inte sprids utanför
+              verksamheten.
+            </>,
+          ],
+        },
+      ])}
+
+      {sektion("P2. Uppdraget — forskningsverktyg, aldrig rådgivning", [
+        {
+          p: (
+            <>
+              AK1A är i AK1A PRO{" "}
+              <strong className="text-foreground">
+                verktygs- och forskningsleverantör, inte rådgivare
+              </strong>
+              . Materialet är pedagogisk analys och generiskt forskningsunderlag:
+              deterministiska motorer där samma underlag alltid ger samma
+              utdata — oavsett läsare, kundföretag eller tidpunkt. Ingen del
+              av tjänsten är anpassad till en namngiven slutklients ekonomiska
+              situation, och AK1A lämnar aldrig investeringsråd eller
+              personliga rekommendationer om köp eller försäljning av
+              finansiella instrument.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">
+                Lämplighetsansvaret är Kundens.
+              </strong>{" "}
+              Kunden är — som tillståndshavare och rådgivare — ensam ansvarig
+              för den rådgivning, lämplighetsprövning och dokumentation som
+              lämnas Kundens slutklienter, oavsett hur AK1A:s verktyg används
+              i processen. Enligt ESMA:s vägledning kan en rådgivare inte
+              friskriva sig från lämplighetskraven genom en disclaimer eller
+              genom att åberopa ett verktyg (substansen avgör, inte etiketten).
+              Därför är AK1A:s skydd själva designen — den generiska utdata —
+              och Kunden ska inte använda materialet på sätt som skjuter
+              ansvaret på verktyget.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">Användningsgränser.</strong>{" "}
+              Kunden får inte presentera AK1A:s utdata som egna analyser utan
+              angiven källa och inte använda materialet i strid med den
+              mal-låsta metod- och ansvarsdeklarationen (P6). Återförsäljning
+              eller vidareuthyrning av åtkomst till tredje man kräver
+              skriftligt avtal med AK1A.
+            </>
+          ),
+        },
+      ])}
+
+      {sektion("P3. Priser och betalning (exklusive moms)", [
+        {
+          ul: [
+            <>
+              <strong className="text-foreground">Priser enligt alternativ A</strong>{" "}
+              — transparent flat-fee per nivå och månad,{" "}
+              <strong className="text-foreground">exklusive moms</strong>: Pro
+              Analytiker 499 kr/mån (1 seat), Pro Studio 1 499 kr/mån (upp
+              till 5 seats), Pro Institution 4 999 kr/mån (10 eller fler
+              seats, årsbindning). Aktuella nivåbeskrivningar publiceras på{" "}
+              {lank("/pro/priser", "PRO:s prislista")}; vid avvikelse gäller
+              teckningsunderlaget. Priset för påbörjad bindningsperiod ändras
+              aldrig retroaktivt.
+            </>,
+            <>
+              <strong className="text-foreground">Onboarding.</strong>{" "}
+              Engångsavgift 9 900 kr på Pro Institution för analysavdelningens
+              upplärning i metodiken och white-label-setup — avklippt vid
+              teckning med 24 månaders bindning (2-årsbindning).
+            </>,
+            <>
+              <strong className="text-foreground">Fakturering.</strong> Mot
+              faktura med 30 dagars betalningstid. Svensk moms tillkommer där
+              sådan ska redovisas; omvänd skattskyldighet kan gälla för
+              kundföretag utomlands och avgörs i teckningsunderlaget.
+              Dröjsmålsränta utgår enligt räntelagen (1975:635).
+            </>,
+            <>
+              <strong className="text-foreground">Aldrig rev-share.</strong>{" "}
+              Priset följer aldrig förvaltat kapital (AUM) eller klientantal,
+              och AK1A betalar aldrig referral- eller remunerationsersättning
+              till rådgivare — oberoende rådgivares förbud mot
+              tredjepartsersättningar enligt MiFID II gäller hela
+              avtalsförhållandet.
+            </>,
+            <>
+              <strong className="text-foreground">Fas 3-certifierade.</strong>{" "}
+              Certifierad analytiker har introduktionspriset 299 kr/mån det
+              första året på Pro Analytiker, dokumenterat i certifikatet.
+            </>,
+          ],
+        },
+      ])}
+
+      {sektion("P4. Bindningstid och uppsägning", [
+        {
+          ul: [
+            <>
+              <strong className="text-foreground">
+                Pro Analytiker och Pro Studio.
+              </strong>{" "}
+              Löpande avtal per kalendermånad. Uppsägning sker skriftligt
+              (e-post räcker) med 30 dagars varsel till utgången av innevarande
+              månad; återbetalning lämnas inte för påbörjad månad.
+            </>,
+            <>
+              <strong className="text-foreground">Pro Institution.</strong>{" "}
+              Initial bindningstid 12 månader, därefter förlängning om 12
+              månader i taget om avtalet inte sägs upp skriftligt senast 30
+              dagar före löpande periodens utgång. Tecknas 24 månaders
+              bindning klipps onboarding-avgiften av (P3).
+            </>,
+            <>
+              <strong className="text-foreground">Väsentlig avtalsbrist.</strong>{" "}
+              Häver en part avtalet på grund av motpartens väsentliga
+              avtalsbrott (9 § avtalslagen (1915:218)) återbetalas betald men
+              otillhandahållen del av perioden.
+            </>,
+            <>
+              <strong className="text-foreground">Åtkomst vid avtalets slut.</strong>{" "}
+              Kundens konton stängs och eventuell klientdata hanteras enligt
+              P7 (radering eller återlämning enligt DPA:n); rapportunderlag
+              exporteras på begäran innan stängning.
+            </>,
+            <>
+              <strong className="text-foreground">Åsidosättanden.</strong> Om
+              Kunden bryter mot P2 eller P6 — exempelvis genom att försöka
+              sudda metoddeklarationen eller lägga fram utdata som egna
+              personliga rekommendationer i strid med avtalet — får AK1A
+              stänga åtkomsten omedelbart efter skriftlig tillsägelse, med
+              fråga om återbetalning prövad enligt allmänna avtalsrättsliga
+              regler.
+            </>,
+          ],
+        },
+      ])}
+
+      {sektion("P5. Ansvarsbegränsning — verktygslämnaren", [
+        {
+          p: (
+            <>
+              AK1A förbinder sig att tillhandahålla tjänsten med omsorg och god
+              funktion, men lämnar inga löften om avkastning,
+              investeringsresultat eller framtida marknadsutveckling, och
+              historiska exempel är aldrig en garanti för framtida resultat.
+              Data och underlag kan innehålla fel eller vara ofullständiga —
+              redovisning av det osatta är del av metodiken — och Kunden ska
+              granska utdata innan det används i Kundens processer.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">
+                AK1A är inte part i Kundens klientförhållanden
+              </strong>{" "}
+              och svarar aldrig för Kundens rådgivning, lämplighetsbedömning
+              eller andra beslut. Enligt ESMA:s lämplighetsriktlinjer
+              (ESMA35-43-3172) bär institutet — alltså Kunden — ansvaret för
+              lämplighetsprövningen även när processen är verktygsstödd; det
+              ansvaret kan inte avtalas bort till AK1A.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              Så långt lagen tillåter är AK1A:s sammanlagda ansvar mot Kunden
+              begränsat till den avgift Kunden erlagt för de senaste tolv
+              månaderna. AK1A svarar inte för indirekta skador, förlorad
+              vinst eller uteblna uppdrag. Ansvar för personskada och för
+              skada som vållats av uppsåt eller grov oaktsamhet kan aldrig
+              begränsas, och alla ansvarsbegränsningar prövas mot 36 §
+              avtalslagen (1915:218) — standard för B2B-avtal mellan
+              näringsidkare.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              AK1A ansvarar inte heller för tillfälliga driftstörningar,
+              planerat underhåll (meddelas i förväg), tredje parts tekniska
+              fel eller händelser utanför AK1A:s rimliga kontroll (force
+              majeure).
+            </>
+          ),
+        },
+      ])}
+
+      {sektion("P6. Den mal-låsta metod- och ansvarsdeklarationen", [
+        {
+          p: (
+            <>
+              Alla rapporter och utskrifter som skapas i AK1A PRO bär en{" "}
+              <strong className="text-foreground">mal-låst deklaration</strong>{" "}
+              i tre lager: metoddeklarationen (hur utdata räknas),
+              ansvarsdeklarationen (pedagogisk forskning — inte
+              investeringsrådgivning; rådgivaren svarar för sin rådgivning och
+              lämplighetsbedömning, 2007:528) samt data-t.o.m.-raden med
+              falsifierbarhetsrad (underlagets datum och vad som var osatt).
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">
+                White-label lägger till — subtraherar aldrig.
+              </strong>{" "}
+              Kunden kan på Pro Studio och Pro Institution via white-label
+              lägga till egen logotyp, färger, kolofon och egen juridik. Den
+              mal-låsta kärnan kan inte ändras, kortas, mjukas upp eller
+              suddas — inte ens på Institution-nivå, inte via white-label och
+              inte genom tilläggstext. Mal-låsningen är en maskinell spärr i
+              Rapportverkstans rendering och verifieras av negativa tester i
+              verktygssviten (blocket kan tekniskt inte renderas bort).
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              Dokumentet tillför inget eget, senare datum: varje rapport
+              dateras efter underlaget — aldrig efter utskriftstillfället.
+            </>
+          ),
+        },
+      ])}
+
+      {sektion("P7. Personuppgifter — biträdesrollen och DPA", [
+        {
+          p: (
+            <>
+              För klientuppgifter i AK1A PRO är rollfördelningen fast:{" "}
+              <strong className="text-foreground">
+                Kunden är personuppgiftsansvarig och AK1A är
+                personuppgiftsbiträde
+              </strong>{" "}
+              enligt dataskyddsförordningen (EU) 2016/679, artikel 28. AK1A
+              behandlar uppgifterna enbart på Kundens dokumenterade
+              instruktioner och för att leverera tjänsten.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">DPA före klientdata.</strong>{" "}
+              Innan någon klientuppgift läses in — även pseudonymiserad —
+              krävs ett signerat personuppgiftsbiträdesavtal. AK1A:s DPA-mall,
+              som täcker artikel 28.3:s krav punkt för punkt samt
+              underbiträdeslista och incidentflöde, publiceras som dokument
+              och länkas från {lank("/pro/priser", "PRO:s prislista")}.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              <strong className="text-foreground">
+                Dataminimering som teknisk spärr.
+              </strong>{" "}
+              Import i AK1A PRO sker enbart som instrument och vikt eller
+              antal — aldrig namn, personnummer eller skuldlistor — och
+              klienten identifieras i verktyget genom en klientkod eller
+              etikett som Kunden själv väljer. Det som aldrig passerar
+              systemet kan aldrig läcka.
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              Sektion 11 och {lank("/privacy-policy", "Integritetspolicyn")}{" "}
+              beskriver konsumentledet (AK1A:s egna medlemmar); för PRO-ledet
+              gäller DPA:n, och biträdesrollen redovisas även i{" "}
+              {lank("/transparens", "transparensregistret")}.
+            </>
+          ),
+        },
+      ])}
+
+      {sektion("P8. Ändringar av PRO-villkoren", [
+        {
+          p: (
+            <>
+              AK1A får uppdatera denna PRO-sektion, exempelvis vid
+              lagändringar, nya funktioner eller prisändringar. Väsentliga
+              ändringar meddelas Kundens kontaktperson per e-post minst 30
+              dagar innan de träder i kraft, och gällande version publiceras
+              alltid med datum på denna sida. Kunden, som inte accepterar en
+              väsentlig ändring, har rätt att säga upp avtalet med verkan från
+              ikraftträdandet och får återbetalning för betald men
+              otillhandahållen del av perioden. Fortsatt användning efter
+              ikraftträdande innebär att den nya versionen accepterats.
+            </>
+          ),
+        },
+      ])}
+
+      {sektion("P9. Tillämplig lag och tvist", [
+        {
+          p: (
+            <>
+              Denna PRO-sektion och avtal som grundas på den ska tolkas och
+              tillämpas enligt svensk materiell rätt. Tvist ska avgöras av
+              svensk allmän domstol, med Stockholms tingsrätt som utgångspunkt
+              för behörig domstol — om inte parterna i det enskilda
+              teckningsunderlaget skriftligen kommer överens om annan hemvist
+              (valfri hemvist).
+            </>
+          ),
+        },
+        {
+          p: (
+            <>
+              Innan en tvist drivs uppmanas Kunden att kontakta
+              info@ak1nvestor.com — de allra flesta frågor löses direkt och i
+              dialog. Konsumenttvistlösning (kommunal konsumentvägledning, ARN
+              och ECC-Net) omfattar inte avtal mellan näringsidkare och
+              ligger därför utanför PRO-sektionen.
+            </>
+          ),
+        },
+        {
+          box: (
+            <>
+              <strong className="text-foreground">
+                Kontakt och relaterade dokument (PRO).
+              </strong>{" "}
+              Frågor om AK1A PRO-villkoren besvaras via info@ak1nvestor.com ·
+              AK1A Research Lab, org.nr [ORGANISATIONSNR] · Relaterat:{" "}
+              {lank("/pro/priser", "PRO:s prislista och DPA-mallen")} ·{" "}
+              {lank("/transparens", "Transparensregistret (inklusive biträdesrollen)")} ·{" "}
+              {lank("/finansiell-policy", "Finansiell policy")} ·{" "}
+              {lank("/upphovsratt", "Upphovsrättspolicy")}.
             </>
           ),
         },

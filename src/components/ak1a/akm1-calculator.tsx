@@ -18,6 +18,7 @@ import {
   KASSA_PORT_MAX_KOMPOSIT,
 } from "@/lib/akm2/karna";
 import { VIKTPROFILER } from "@/lib/akm2/vikter";
+import { raknaIntervall, intervallText, spannText } from "@/lib/akm3/osakerhet";
 import { MODULER, aktivaModulerForBransch, KARNA_MODUL_VARIABLER } from "@/lib/akm2/moduler";
 import { harFas2Access, arAdmin, aktiveraFas2Override } from "@/lib/kurs-access";
 import { BRANSCHER } from "@/lib/portfolj-forskning/typer";
@@ -112,6 +113,15 @@ const BRANSCH_NAMN: Record<Bransch, string> = {
 
 /** Fast övningsdatum — determinism (kärnan läser aldrig klockan); visas ej som data. */
 const KALKYL_DATUM = "2026-09-04";
+
+/**
+ * Osäkerhetsreglagets ("Vad händer vid full data?", r4 §3.3 + r6 §6 — VÅG 66
+ * r6) förvalda låtsas-täckning i procent. INGEN fri parameter: talet är D1-
+ * rapportens INDU-C-exempel (t = 67 %, kodkanon sedan r4 §2) — samma referens
+ * som korstabellens golden-test. Reglaget är pedagogisk projection över
+ * akm3/osakerhet.ts raknaIntervall och påverkar ALDRIG någon poäng.
+ */
+const LATSAS_TACKNING_DEFAULT = 67;
 
 /**
  * Skugga-nyckeltal för kalkylatorläget: ALL nyckeltalsdata null — dina egna
@@ -427,6 +437,8 @@ export function Akm1Calculator() {
   const [modulPoang, setModulPoang] = useState<Record<string, number>>({});
   const [viktprofilId, setViktprofilId] = useState<ViktProfilId>("akm2-2026");
   const [dynamikLage, setDynamikLage] = useState<DynamikLage>("av");
+  // Osäkerhetsreglaget (VÅG 66 r6): låtsas-täckning i hela procent, 0–100.
+  const [latsasTackning, setLatsasTackning] = useState(LATSAS_TACKNING_DEFAULT);
 
   useEffect(() => {
     // Samma mönster som Fas2Gate/min-sida: åtkomst avgörs lokalt efter montering
@@ -527,6 +539,19 @@ export function Akm1Calculator() {
       skillnad: R2.komposit - total,
     };
   }, [lage, fas2, bransch, poang, total, katMedel, aktivaModuler, modulLage, modulPoang, viktprofilId, dynamikLage]);
+
+  /**
+   * Osäkerhetsreglaget (VÅG 66 r6, r4 §3.3 + r6 §6): låtsas-täckning → spann
+   * för AKM2-kompositen. Samma funktion som korstabellens osäkerhetschip
+   * (raknaIntervall i akm3/osakerhet.ts — källkonsistens); portAktiv är alltid
+   * false i kalkylatorläget (skuggnyckeltalen är null ⇒ hårda porten följer
+   * DATA och utlöses aldrig). PRESENTATIONSLAGER: läser kompositen, ändrar
+   * den ALDRIG (BESLUT §3 lager 5/pres).
+   */
+  const reglageIntervall = useMemo(
+    () => (akm2 ? raknaIntervall(akm2.R2.komposit, latsasTackning / 100, false) : null),
+    [akm2, latsasTackning],
+  );
 
   const vaxlaModul = (id: string) => {
     setManuellaModuler((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
@@ -1080,7 +1105,112 @@ export function Akm1Calculator() {
                 </p>
               </section>
 
-              {/* 5 · Porten, källor, disclaimer */}
+              {/* 5 · Osäkerhetsreglage (VÅG 66 r6, r4 §3.3 + r6 §6): "Vad händer
+                  vid full data?" — låtsas-täckning 0–100 %. Intervallet räknas
+                  av akm3/osakerhet.ts raknaIntervall (samma funktion som
+                  korstabellens osäkerhetschip — källkonsistens) och påverkar
+                  ALDRIG kompositen: presentationslager som LÄSER (BESLUT §3
+                  lager 5/pres). Fas2-gatad med hela AKM2-fliken. */}
+              {reglageIntervall && (
+                <section aria-label="Vad händer vid full data? — osäkerhetens geometri">
+                  <h2 className="font-serif text-lg font-bold">
+                    Vad händer vid full data? — osäkerhetsreglaget
+                  </h2>
+                  <div className="hjarlinje mt-1" />
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    Din kalkyl har reellt <strong>t = 100 % — alla variabler poängsatta
+                    av dig</strong>: spannet är kollapsat. Reglaget låtsas att
+                    datatäckningen vore lägre — som korstabellens bolag (D1:
+                    41–71 %) — och visar hur AKM2-totalens intervall
+                    [K, K+100·(1−t)] sluter sig när täckningen växer: golvet K
+                    flyttar sig aldrig, mer data kan bara äta osäkerheten uppåt.
+                    Hård port följer DATA och utlöses aldrig här (ingen
+                    snedstrecksmarkör finns därför att rita).
+                  </p>
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
+                    <Slider
+                      value={[latsasTackning]}
+                      min={0}
+                      max={100}
+                      step={1}
+                      onValueChange={([n]) => setLatsasTackning(n)}
+                      className="min-w-48 flex-1"
+                      aria-label={`Låtsas-täckning ${latsasTackning} procent — spann ${spannText(reglageIntervall)} (vid 100 % data fastnar totalen vid ${reglageIntervall.poang})`}
+                    />
+                    <span className="w-16 shrink-0 text-right font-mono text-sm font-bold">
+                      t = {latsasTackning} %
+                    </span>
+                    <Button size="sm" variant="outline" onClick={() => setLatsasTackning(100)}>
+                      Full data (t = 100 %)
+                    </Button>
+                  </div>
+                  <p className="mt-1 flex justify-between text-[10px] text-muted-foreground">
+                    <span>0 % — maximalt spann</span>
+                    <span>100 % — spannet kollapsar</span>
+                  </p>
+                  {/* Felstreck/gradient (IntervallStreck-DNA): guldmarkör vid K,
+                      gradient utlöpande mot övre gränsen — asymmetriskt spann,
+                      klassiskt ±-streck är olämpligt (r4 §1.6). Banan 0–100
+                      visar alltid spåret mot 100. Barren aria-hidden — talen
+                      förs i texten (aldrig bara syn). */}
+                  <div className="mt-4 rounded-lg border border-border bg-muted/40 p-3" aria-hidden>
+                    <span className="relative block h-3 w-full rounded-sm border border-border">
+                      <span
+                        className="absolute inset-y-0 rounded-sm"
+                        style={{
+                          left: `${reglageIntervall.nedre}%`,
+                          width: `${Math.max(
+                            reglageIntervall.ovre - reglageIntervall.nedre,
+                            reglageIntervall.ovre > reglageIntervall.nedre ? 2 : 0,
+                          )}%`,
+                          background:
+                            "linear-gradient(90deg, rgba(168,134,42,0.85), rgba(168,134,42,0.12))",
+                        }}
+                      />
+                      <span
+                        className="absolute -top-1 h-5 w-[2px] rounded-sm bg-gold"
+                        style={{ left: `calc(${reglageIntervall.nedre}% - 1px)` }}
+                      />
+                      <span
+                        className="absolute -top-1 h-5 w-[2px] bg-muted-foreground/70"
+                        style={{ left: `calc(${reglageIntervall.ovre}% - 1px)` }}
+                      />
+                    </span>
+                    <div className="mt-1 flex justify-between font-mono text-[10px] text-muted-foreground">
+                      <span>0</span>
+                      <span>K = {reglageIntervall.poang}</span>
+                      <span>övre {Math.round(reglageIntervall.ovre)}</span>
+                      <span>100</span>
+                    </div>
+                  </div>
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                    <div className="rounded-lg border border-gold/30 bg-paper p-3">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                        Spann vid låtsas-täckning {latsasTackning} %
+                      </p>
+                      <p className="mt-1 font-mono text-sm font-bold">
+                        {intervallText(reglageIntervall)}
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-gold/30 bg-paper p-3">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                        Vid 100 % data
+                      </p>
+                      <p className="mt-1 font-mono text-sm font-bold">
+                        totalen fastnar vid {reglageIntervall.poang}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-xs italic leading-relaxed text-muted-foreground">
+                    Reglaget visar osäkerhetens geometri — saknad data vägs aldrig
+                    in poängmässigt: kompositen är {reglageIntervall.poang} i varje
+                    reglageläge (pedagogisk projection, aldrig prognos — r4 §3.3).{" "}
+                    {reglageIntervall.note}
+                  </p>
+                </section>
+              )}
+
+              {/* 6 · Porten, källor, disclaimer */}
               <p className="text-xs leading-relaxed text-muted-foreground">
                 Hård port (BESLUT §5): kassatäckning under {KASSA_PORT_MANADER} månader
                 takar kompositen till max {KASSA_PORT_MAX_KOMPOSIT}/100 — porten följer

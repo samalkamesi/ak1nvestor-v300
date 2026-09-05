@@ -117,6 +117,17 @@ const REGISTER: Rad[] = [
     ratt:
       "Invändning (art. 21) — eftersom händelsen saknar personuppgift finns inget om dig att begära ut eller radera; begär du aktivering via mejl i stället räknas ingen anonym händelse om du blockerar anropet.",
   },
+  {
+    vad: "Klientuppgifter i AK1A PRO (biträdesledet — kräver signerat biträdesavtal)",
+    varfor:
+      "Leverera PRO-tjänsten åt den ansvariga rådgivaren: klientkod/etikett jämte instrument och vikter räknas mot metodiken och renderas i rapporter. När en rådgivare tecknar AK1A PRO är rollerna därför omvända — rådgivaren är personuppgiftsansvarig och AK1A är personuppgiftsbiträde som behandlar enligt rådgivarens dokumenterade instruktioner (art. 28) och endast efter signerat biträdesavtal (DPA). AK1A:s underbiträden i ledet — Vercel och Supabase, båda med EU-region verifierad — redovisas i DPA-mallens publicerade lista.",
+    grund:
+      "Avtal — art. 6.1 b hos den personuppgiftsansvarige rådgivaren + art. 28 (AK1A:s roll: biträde; DPA tecknas FÖRE att någon klientuppgift läses in)",
+    lagring:
+      "Enligt DPA:ns villkor — portfölj- och klientdata raderas senast 30 dagar efter att avtalet med rådgivaren sägs upp, om inte rådgivaren begärt återlämning först.",
+    ratt:
+      "Styrs av den ansvariga rådgivaren — AK1A lämnar utan dröjsmål underlag till rådgivarens svar på tillgång, rättelse och radering (DPA punkt 5). Dataminimering är teknisk spärr: namn, personnummer och skuldlistor kan aldrig importeras.",
+  },
 ];
 
 export default function TransparensPage() {
@@ -160,7 +171,12 @@ export default function TransparensPage() {
           databehandlare (leverantörer som behandlar data åt oss, art. 28) är
           vår europeiska databasleverantör och vår webbhotellsleverantör. De
           får bara behandla data efter våra instruktioner och har
-          databehandlaravtal med oss.
+          databehandlaravtal med oss. I AK1A PRO är rollerna de omvända —
+          se posten om biträdesledet i registret nedan: där är rådgivaren
+          personuppgiftsansvarig, AK1A är personuppgiftsbiträde och rollen
+          regleras i ett separat biträdesavtal (DPA) vars mall publiceras som
+          dokument med underbiträdeslista (Vercel och Supabase, EU-region
+          verifierad) och incidentflöde.
         </p>
       </section>
 

@@ -7,6 +7,7 @@ import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { InloggadKnapp } from "@/components/ak1a/inloggad-knapp";
 import { SprakVaxlare } from "@/components/ak1a/sprak-vaxlare";
 import { Brodkrumma } from "@/components/ak1a/brodkrumma";
+import { Toppvaxel } from "@/components/ak1a/toppvaxel";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
@@ -34,6 +35,10 @@ export function SeoPageShell({
           </div>
           <Mobilmeny />
           <div className="ml-auto flex items-center gap-2 text-sm">
+            {/* VÅG 61: världsväxeln Privatperson | Företag — B2B-BESLUT §3.1.
+                Diskret pill i utility-raden; under sm bor växeln i mobil-
+                drawerns egen rad istället (mobilmeny.tsx). */}
+            <Toppvaxel klass="hidden sm:inline-flex" />
             {/* Inloggningsstatus — hälsning + utloggning när medlem, guld-CTA annars */}
             <InloggadKnapp />
             <SprakVaxlare />

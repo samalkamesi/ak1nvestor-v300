@@ -59,6 +59,7 @@ import {
   type MenySektionId,
 } from "@/lib/meny-register";
 import { VarumarkesLogo } from "./varumarkes-logo";
+import { Toppvaxel } from "./toppvaxel";
 import { useSprak } from "./sprak-leverantor";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -312,6 +313,11 @@ export function Header() {
             <Search className="h-4 w-4" />
           </Button>
 
+          {/* VÅG 61: världsväxeln Privatperson | Företag (B2B-BESLUT §3.1) —
+              diskret pill i utility-raden; under sm bor den i fullmeny-
+              drawerns egen rad. */}
+          <Toppvaxel klass="hidden sm:inline-flex" />
+
           {/* Global XP indicator — gamification visible everywhere */}
           {mounted && (
             <button
@@ -399,6 +405,12 @@ export function Header() {
                   🔥 {progress.streak}
                 </span>
               </div>
+            </div>
+
+            {/* VÅG 61: världsväxeln — EGEN RAD överst i fullmeny-drawern
+                (B2B-BESLUT §3.1: "en klick från varje sida", även på mobil). */}
+            <div className="mt-4">
+              <Toppvaxel stor />
             </div>
 
             {/* Sökfält — öppnar kommandopaletten (global lyssnare) och stänger drawern.

@@ -12,6 +12,11 @@ import {
   raknaTotal,
   type SuperanalysData,
 } from "@/lib/superanalys";
+import {
+  byggDisclaimerRader,
+  type TenantConfig,
+} from "@/lib/pro/tenant";
+import { TenantHeader, useTenant } from "@/components/ak1a/pro/tenant-header";
 
 /**
  * RAPPORTBYGGAREN — redovisningsverkstan (MEGA_PLAN_V3 Fas B, steg 1).
@@ -26,6 +31,16 @@ import {
  *
  * Fas 2-koppling: nivå-badge; under nivå 25 visas en generös notis —
  * verkstans dörrar är öppna ändå, den är ju träningen den är.
+ *
+ * WHITE-LABEL-LAGER (B2B-BESLUT våg 61 steg 2 / K5): valfri `tenant`-prop
+ * (Rapportverkstan på /pro/rapporter skickar sin tenant; utan prop löser
+ * useTenant() pro-admin-kontraktet — på privata ytor blir avsändaren AK1A,
+ * P4: B2B läcker aldrig in i privat-upplevelsen). Med tenant renderas
+ * TenantHeader (firma + logotyp-plats + "× AK1A-metodik") I dokumentet och
+ * tenantens LÄGG-TILL-juridik efter det MAL-LÅSTA blocket — som bygger på
+ * byggDisclaimerRader() ur src/lib/pro/tenant.ts och därmed ALDRIG kan
+ * suddas, mjukas eller kortas (mal-låsningstestet i validera-motorer.mjs
+ * bevisar samma funktion).
  *
  * Hydration-säker: all localStorage-läsning sker i useEffect bakom `hydrerad`.
  */
@@ -116,18 +131,34 @@ const PRINT_CSS = `
 
 // ── Komponenten ──────────────────────────────────────────────────────────────
 
-export function Rapportbyggare() {
+export function Rapportbyggare({
+  tenant,
+}: {
+  /** Explicit tenant (t.ex. Rapportverkstan på /pro/rapporter) — eller
+   *  undefined för useTenant()-lösning (pro-admin-kontraktet; AK1A på privata ytor). */
+  tenant?: TenantConfig | null;
+} = {}) {
   const [hydrerad, setHydrerad] = useState(false);
   const [rader, setRader] = useState<BankRad[]>([]);
   const [valda, setValda] = useState<Set<string>>(new Set());
   const [niva, setNiva] = useState(1);
   const [rapportSynlig, setRapportSynlig] = useState(false);
+  const { tenant: lsTenant } = useTenant();
 
   useEffect(() => {
     setRader(lasAnalysbank());
     setNiva(raknaNiva());
     setHydrerad(true);
   }, []);
+
+  /** Explicit prop vinner; annars useTenant() (pro-admin-v1 → /pro-demo → null). */
+  const aktivTenant = tenant !== undefined ? tenant : lsTenant;
+  /** Mal-låst disclaimer + (vaktaget) tenant-tillägg — SAMMA funktion som
+   *  mal-låsningstestet i verktyg/validera-motorer.mjs kör mot. */
+  const disclaimerRader = useMemo(
+    () => byggDisclaimerRader(aktivTenant),
+    [aktivTenant]
+  );
 
   const valdaRader = useMemo(
     () => rader.filter((r) => valda.has(r.id)),
@@ -177,6 +208,11 @@ export function Rapportbyggare() {
           id="ak1a-rapport-dokument"
           className="gravor-ram mt-6 rounded-sm bg-card p-6 sm:p-10"
         >
+          {/* WHITE-LABEL — avsändarbandet I dokumentet (utskriftsenheterna
+              följer med): firma + logotyp-plats + "× AK1A-metodik". Utan
+              tenant är avsändaren AK1A och bandet renderas ej. */}
+          {aktivTenant && <TenantHeader tenant={aktivTenant} />}
+
           {/* Marin omslagsband — certifikat-känslan */}
           <header className="marin-panel relative overflow-hidden rounded-sm px-6 py-10 text-center sm:px-10">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#E8C766]">
@@ -265,13 +301,28 @@ export function Rapportbyggare() {
           {/* Disclaimers + signatur — automatiskt, alltid */}
           <footer className="mt-10">
             <div className="hjarlinje" />
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Detta är en pedagogisk analys från AK1A Research Lab — inte
-              investeringsråd. Rekommendationsbanden (&quot;Aktör att följa&quot;,
-              &quot;Studera vidare&quot;, &quot;Skjut inte&quot;) är läranderedskap och
-              ska aldrig läsas som köp- eller säljuppmaningar. Underlaget är elevens
-              eget arbete och allt material sparas lokalt i elevens webbläsare.
-            </p>
+            {/* MAL-LÅST BLOCK (b4:s tre lager — B2B-BESLUT K5/FORBUD 6):
+                byggs UR byggDisclaimerRader() i src/lib/pro/tenant.ts och kan
+                ALDRIG stängas av, varken av tenant-konfiguration eller prop —
+                kärnan är en frusen konstant som alltid renderas först. Tenantens
+                tillägg (om nyckeln finns OCH vakten godkänner den) hamnar EFTER. */}
+            <div className="mt-4 space-y-2 text-xs leading-relaxed text-muted-foreground">
+              {disclaimerRader.map((rad, i) => (
+                <p key={i}>{rad}</p>
+              ))}
+            </div>
+            {/* Utan tenant är avsändaren AK1A och elev-raden berättar var
+                underlaget bor — white-label-ytan (tenant) har sin egen juridik
+                i tillägget ovan i stället. */}
+            {!aktivTenant && (
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                Detta är en pedagogisk analys från AK1A Research Lab — inte
+                investeringsråd. Rekommendationsbanden (&quot;Aktör att följa&quot;,
+                &quot;Studera vidare&quot;, &quot;Skjut inte&quot;) är läranderedskap och
+                ska aldrig läsas som köp- eller säljuppmaningar. Underlaget är elevens
+                eget arbete och allt material sparas lokalt i elevens webbläsare.
+              </p>
+            )}
             <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
               Fas 2-verktyg — byggt med AK1A Research Lab
             </p>

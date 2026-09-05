@@ -17,6 +17,7 @@ import {
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { InloggadKnapp } from "./inloggad-knapp";
 import { SprakVaxlare } from "./sprak-vaxlare";
+import { Toppvaxel } from "./toppvaxel";
 import { useSprak } from "./sprak-leverantor";
 import { cn } from "@/lib/utils";
 
@@ -164,6 +165,13 @@ export function Mobilmeny() {
                   <path d="M6 6l12 12M18 6L6 18" />
                 </svg>
               </button>
+            </div>
+
+            {/* VÅG 61: världsväxeln Privatperson | Företag — EGEN RAD överst i
+                drawern, under logotypen (B2B-BESLUT §3.1/b2 §3a: separationen
+                ska nås med ETT klick från varje sida, även i mobil). */}
+            <div className="mt-4">
+              <Toppvaxel stor />
             </div>
 
             {/* Guld-chips: nivå · XP · streak (egen rad så logotypen får luft) */}

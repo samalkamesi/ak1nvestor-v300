@@ -7,7 +7,17 @@ import { publiceraOrganEvent } from "@/lib/organ-event";
 import { MALSPRAK, arMalSprak, listaKallor, type KallaPost, type MalSprak, type ScopeTyp } from "@/lib/oversattning/kalla";
 import { korKontroller, KVALITETSTRASKEL, type Kontrollrapport } from "@/lib/oversattning/kontroller";
 import { motorAktiv, OVERSATTNING_STATUS, type OversattningStatus } from "@/lib/oversattning/motor";
-import { TabellSaknasFel, lasKo, lasSpara, type OversattningRad } from "@/lib/oversattning/lager";
+import {
+  TabellSaknasFel,
+  dedupeSenasteVinner,
+  lasKo,
+  lasRad,
+  lasRadEfterId,
+  lasSpara,
+  type MosEventLasRad,
+  type OversattningRad,
+  type OversattningRadLas,
+} from "@/lib/oversattning/lager";
 import { TERMBANK_STORLEK } from "@/lib/oversattning/termbank";
 import { lasTermbankTillagg } from "@/lib/oversattning-admin";
 
@@ -47,6 +57,15 @@ export const dynamic = "force-dynamic";
  * speglar i stället lokala fallback-kön — panelen visar konfigurationskort,
  * aldrig krasch. Skrivåtgärder kräver tabellen (fallback-kön saknar textfält
  * — en publicering utan bestående text vore lögn, inte graceful).
+ *
+ * VÅG 62 (status + kvalitet): (1) GET läser VÅG 55:S EVENTS-BACKEND — saknas
+ * tabellen oversattningar räknas i stället MÖS-eventen i system_events
+ * (senaste-vinner-dedupe, samma regler som lager.ts) innan fallback-kön över
+ * huvud taget övervägs: lagrets verklighet före den lokala dev-speglingen.
+ * Sammanfattningen fick KATEGORIBRYTNING per scope_typ (ui/kursblock/blogg) ×
+ * språk + "kvar i gratis-kvot"-estimat (ca 5 000 ord/dygn). (2) POST läser
+ * sin rad via lager.ts lasRad/lasRadEfterId — granskning/publicering fungerar
+ * ALLTID i system_events-läget, precis som speglarna och importören.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -202,19 +221,36 @@ export async function GET(req: NextRequest) {
 
   const totaltKallor = kallor.length;
 
-  // (2) Lägesdetektering + statusräkning. Tabell läses direkt (läsning får
-  //     gå utanför lagret; lasStatusKarta:s kompositnycklar går inte att
-  //     entydigt räkna per språk eftersom kursnycklar innehåller ":").
-  let lage: "tabell" | "tabell-saknas" | "ko" = "tabell";
+  // (2) Lägesdetektering + statusräkning. Läsning går direkt mot PostgREST
+  //     (lasStatusKarta:s kompositnycklar går inte att entydigt räkna per
+  //     språk eftersom kursnycklar innehåller ":").
+  //     VÅG 62: saknas tabellen oversattningar läses i stället MÖS-eventen i
+  //     system_events (senaste-vinner-dedupe — samma regler som lager.ts) —
+  //     sammanfattningen ska visa LAGRETS verklighet, aldrig en åldrad lokal
+  //     fallback-kö när det finns riktiga översättningar i events-backenden.
+  let lage: "tabell" | "events" | "tabell-saknas" | "ko" = "tabell";
   let lagerFel: string | null = null;
   const raknarePerSprak = new Map<string, StatusRaknare>();
   for (const s of MALSPRAK) raknarePerSprak.set(s, nollRaknare());
+  /** Kategoribrytning (våg 62): "typ\u0000språk" → statusräknare. */
+  const raknarePerTyp = new Map<string, StatusRaknare>();
+  /** Publicerade "typ:nyckel:språk" — underlag till ordkvotestimatet. */
+  const publiceradeNycklar = new Set<string>();
 
-  /** Räkna en (sprak, status)-rad i sammanfattningen. */
-  function rakna(sprak: string, status: string): void {
-    const r = raknarePerSprak.get(sprak);
-    const nyckel = status as OversattningStatus;
-    if (r && (OVERSATTNING_STATUS as readonly string[]).includes(status)) r[nyckel] += 1;
+  const arStatus = (s: string): s is OversattningStatus =>
+    (OVERSATTNING_STATUS as readonly string[]).includes(s);
+
+  /** Räkna en (typ, nyckel, språk, status)-rad i båda sammanfattningarna. */
+  function rakna(typ: string | null, nyckel: string | null, sprak: string, status: string): void {
+    if (!arStatus(status)) return;
+    const rs = raknarePerSprak.get(sprak);
+    if (!rs) return;
+    rs[status] += 1;
+    if (!typ) return;
+    const rt = raknarePerTyp.get(typ + "\u0000" + sprak) ?? nollRaknare();
+    rt[status] += 1;
+    raknarePerTyp.set(typ + "\u0000" + sprak, rt);
+    if (status === "publicerad" && nyckel) publiceradeNycklar.add(typ + ":" + nyckel + ":" + sprak);
   }
 
   type KoRadRaa = {
@@ -241,31 +277,29 @@ export async function GET(req: NextRequest) {
 
   if (rest && lage === "tabell") {
     try {
-      // 2a. Ljus statusräkning (sprak+status räcker för KPI-raderna).
-      const statusRader: Array<{ sprak: string; status: string }> = [];
+      // 2a. Ljus statusräkning (typ+nyckel+språk+status räcker för KPI-raderna,
+      //     kategoribrytningen och ordkvotens publicerade nycklar).
+      const statusRader: Array<{ scope_typ?: string | null; scope_nyckel?: string | null; sprak: string; status: string }> = [];
       for (let sidaIx = 0; sidaIx < 40; sidaIx++) {
         const fran = sidaIx * 1000;
         const res = await fetch(
-          `${rest.origin}/rest/v1/oversattningar?select=sprak,status`,
+          `${rest.origin}/rest/v1/oversattningar?select=scope_typ,scope_nyckel,sprak,status`,
           {
             headers: { ...rest.headers, Range: `${fran}-${fran + 999}` },
             signal: AbortSignal.timeout(20_000),
           },
         );
         if (!res.ok) await sankaLagerfel(res);
-        const rader = (await res.json()) as Array<{ sprak: string; status: string }>;
+        const rader = (await res.json()) as Array<{ scope_typ: string; scope_nyckel: string; sprak: string; status: string }>;
         statusRader.push(...rader);
         if (rader.length < 1000) break;
       }
-      for (const r of statusRader) rakna(r.sprak, r.status);
+      for (const r of statusRader) rakna(r.scope_typ ?? null, r.scope_nyckel ?? null, r.sprak, r.status);
 
       // 2b. Granskningskön: nyast först, en sida à 50.
-      const koStatusLista = statusFilter
-        ? `eq.${encodeURIComponent(statusFilter)}`
-        : `in.(${GRANSKNINGS_STATUS.map((s) => `"${encodeURIComponent(s)}"`).join(",")})`;
       let koUrl =
         `${rest.origin}/rest/v1/oversattningar?select=id,scope_typ,scope_nyckel,sprak,kallhash,text,status,kvalitet,kontrollrapport,uppdaterad` +
-        `&status=${koStatusLista}&order=uppdaterad.desc`;
+        `&status=${statusFilter ? `eq.${encodeURIComponent(statusFilter)}` : `in.(${GRANSKNINGS_STATUS.map((s) => `"${encodeURIComponent(s)}"`).join(",")})`}&order=uppdaterad.desc`;
       if (sprakFilter) koUrl += `&sprak=eq.${sprakFilter}`;
       const fran = (sida - 1) * KO_SIDSTORLEK;
       const koRes = await fetch(koUrl, {
@@ -289,9 +323,103 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // (2c) Fallback: lokala kön (data/oversattning-kö.json) — dev-läge utan tabell.
-  if (lage !== "tabell") {
-    for (const p of lasKo()) rakna(p.sprak, p.status);
+  // (2b′) EVENTS-BACKEND (våg 62): tabellen saknas ⇒ läs MÖS-eventen ur
+  //       system_events — ljus projection, senaste-vinner-dedupe (lager.ts:s
+  //       ren funktion), retentionstakets 40 sidor à 1 000 rader.
+  if (rest && lage === "tabell-saknas") {
+    try {
+      const eventRader: MosEventLasRad[] = [];
+      for (let sidaIx = 0; sidaIx < 40; sidaIx++) {
+        const fran = sidaIx * 1000;
+        const res = await fetch(
+          `${rest.origin}/rest/v1/system_events?type=eq.oversattning` +
+            `&select=created_at,details->>scope_typ,details->>scope_nyckel,details->>sprak,details->>status` +
+            `&order=created_at.desc`,
+          {
+            headers: { ...rest.headers, Range: `${fran}-${fran + 999}` },
+            signal: AbortSignal.timeout(20_000),
+          },
+        );
+        if (!res.ok) await sankaLagerfel(res);
+        const batch = (await res.json()) as MosEventLasRad[];
+        eventRader.push(...batch);
+        if (batch.length < 1000) break;
+      }
+      for (const r of dedupeSenasteVinner(eventRader)) {
+        rakna(r.scope_typ ?? null, r.scope_nyckel ?? null, r.sprak ?? "", r.status ?? "");
+      }
+      lage = "events";
+    } catch (e) {
+      // TabellSaknasFel (heller inga events) ⇒ tabell-saknas-läget kvarstår
+      // med fallback-kön nedan; annat fel ⇒ ko-läge med tydlig orsak.
+      if (!(e instanceof TabellSaknasFel)) {
+        lage = "ko";
+        lagerFel = e instanceof Error ? "lagret svarade inte (" + e.name + ")" : "lagret svarade inte";
+      }
+    }
+  }
+
+  // (2b″) Granskningskön i events-läget: de 5 000 nyaste event-raderna MED
+  //       text, dedupe → statusfilter → nyast först → sidning i koden.
+  //       Fönstret är dokumenterat ärligt: en kö större än fönstret servar de
+  //       nyaste sidorna (koTotalt nedan räknas EXAKT ur räkneverket ovan).
+  if (rest && lage === "events") {
+    const koStatusLista: readonly string[] = statusFilter ? [statusFilter] : GRANSKNINGS_STATUS;
+    try {
+      const eventRader: MosEventLasRad[] = [];
+      for (let sidaIx = 0; sidaIx < 5; sidaIx++) {
+        const fran = sidaIx * 1000;
+        const res = await fetch(
+          `${rest.origin}/rest/v1/system_events?type=eq.oversattning` +
+            `&select=created_at,details->>scope_typ,details->>scope_nyckel,details->>sprak,details->>kallhash,details->>text,details->>status,details->>kvalitet,details->>kontrollrapport` +
+            `&order=created_at.desc`,
+          {
+            headers: { ...rest.headers, Range: `${fran}-${fran + 999}` },
+            signal: AbortSignal.timeout(20_000),
+          },
+        );
+        if (!res.ok) await sankaLagerfel(res);
+        const batch = (await res.json()) as MosEventLasRad[];
+        eventRader.push(...batch);
+        if (batch.length < 1000) break;
+      }
+      koRader = dedupeSenasteVinner(eventRader)
+        .filter((r) => typeof r.status === "string" && koStatusLista.includes(r.status))
+        .filter((r) => (sprakFilter ? r.sprak === sprakFilter : true))
+        .filter((r) => Boolean(r.scope_typ && r.scope_nyckel && r.sprak))
+        .sort((a, b) => (b.created_at ?? "").localeCompare(a.created_at ?? ""))
+        .slice((sida - 1) * KO_SIDSTORLEK, sida * KO_SIDSTORLEK)
+        .map((r) => ({
+          id: undefined,
+          scope_typ: r.scope_typ as ScopeTyp,
+          scope_nyckel: r.scope_nyckel as string,
+          sprak: r.sprak as MalSprak,
+          status: r.status as OversattningStatus,
+          kvalitet: Number(r.kvalitet ?? 0) || 0, // details->> ger text — tolka
+          kallhash: r.kallhash ?? "",
+          text: r.text ?? "",
+          kontrollrapport: r.kontrollrapport,
+          uppdaterad: r.created_at ?? "",
+        }));
+      // koTotalt ur räkneverket (exakt — hela events-databasen är räknad).
+      koTotalt = 0;
+      for (const status of koStatusLista) {
+        for (const [sprak, r] of raknarePerSprak) {
+          if (!sprakFilter || sprak === sprakFilter) koTotalt += r[status as OversattningStatus] ?? 0;
+        }
+      }
+    } catch {
+      // Kö-läsningen misslyckades men räkneverket fungerar — visa tom kö,
+      // aldrig krasch (sammanfattningen bär täckningen).
+      koRader = [];
+      koTotalt = 0;
+    }
+  }
+
+  // (2c) Fallback: lokala kön (data/oversattning-kö.json) — dev-läge utan
+  //     varken tabell eller events (alltså INTE när events-backenden svarar).
+  if (lage === "tabell-saknas" || lage === "ko") {
+    for (const p of lasKo()) rakna(p.scope_typ, p.scope_nyckel, p.sprak, p.status);
     const filtrerade = lasKo()
       .filter((p) => (statusFilter ? p.status === statusFilter : (GRANSKNINGS_STATUS as readonly string[]).includes(p.status)))
       .filter((p) => (sprakFilter ? p.sprak === sprakFilter : true))
@@ -304,7 +432,7 @@ export async function GET(req: NextRequest) {
       status: p.status,
       kvalitet: p.kvalitet,
       kallhash: p.kallhash,
-      text: "", // fallback-kön bär ingen text — granskning kräver tabellen (dokumenteras i panelen)
+      text: "", // fallback-kön bär ingen text — granskning kräver lagret (dokumenteras i panelen)
       kontrollrapport: null,
       uppdaterad: p.uppdaterad,
     }));
@@ -320,6 +448,7 @@ export async function GET(req: NextRequest) {
       publicerad: number;
       granskningsKo: number;
       vantarMotor: number;
+      vantarKvot: number;
       inaktuell: number;
       utkast: number;
       kraverGranskning: number;
@@ -337,6 +466,7 @@ export async function GET(req: NextRequest) {
       publicerad: r.publicerad,
       granskningsKo,
       vantarMotor: r["vantar-motor"],
+      vantarKvot: r["vantar-kvot"],
       inaktuell: r.inaktuell,
       utkast: r.utkast,
       kraverGranskning: r["maskinutkast-behovar-granskning"],
@@ -344,6 +474,96 @@ export async function GET(req: NextRequest) {
       procentPublicerad: totaltKallor > 0 ? Math.round((r.publicerad / totaltKallor) * 100) : 0,
     };
   }
+
+  // (3b) KATEGORIBRYTNING per scope_typ × språk (våg 62) — källunderlaget ur
+  //      samma register (listaKallor) som cron-ronden och importören bygger på.
+  const kallorPerTyp = new Map<string, { antal: number; ord: number }>();
+  const publiceradeOrd: Record<string, number> = {};
+  for (const s of MALSPRAK) publiceradeOrd[s] = 0;
+  for (const k of kallor) {
+    const rad = kallorPerTyp.get(k.scope.typ) ?? { antal: 0, ord: 0 };
+    rad.antal += 1;
+    const ord = k.text.split(/\s+/).filter(Boolean).length;
+    rad.ord += ord;
+    kallorPerTyp.set(k.scope.typ, rad);
+    for (const s of MALSPRAK) {
+      if (publiceradeNycklar.has(k.scope.typ + ":" + k.scope.nyckel + ":" + s)) publiceradeOrd[s] += ord;
+    }
+  }
+  // Typordning = källregistrets kontraktsordning (ui → kurser → blogg); typer
+  // som bara finns i lagret (t.ex. framtida "sida") läggs sorterat efter.
+  const TYP_ORDNING: readonly string[] = ["ui", "kursblock", "blogg"];
+  const typNamn: Record<string, string> = { ui: "Gränssnitt (ui)", kursblock: "Kursblock", blogg: "Blogg", sida: "Sidor", kurs: "Kurser" };
+  const typUnion = new Set<string>([...kallorPerTyp.keys()]);
+  for (const nyckel of raknarePerTyp.keys()) typUnion.add(nyckel.split("\u0000")[0]);
+  const typOrdning = [...typUnion].sort((a, b) => {
+    const ia = TYP_ORDNING.indexOf(a);
+    const ib = TYP_ORDNING.indexOf(b);
+    return (ia === -1 ? TYP_ORDNING.length : ia) - (ib === -1 ? TYP_ORDNING.length : ib) || a.localeCompare(b);
+  });
+
+  const perTyp: Record<
+    string,
+    {
+      namn: string;
+      totaltKallor: number;
+      publiceradTotalt: number;
+      procentPublicerad: number;
+      perSprak: Record<
+        string,
+        { publicerad: number; granskningsKo: number; vantarMotor: number; vantarKvot: number; inaktuell: number; procentPublicerad: number }
+      >;
+    }
+  > = {};
+  for (const typ of typOrdning) {
+    const totaltTyp = kallorPerTyp.get(typ)?.antal ?? 0;
+    const perSprakTyp: Record<
+      string,
+      { publicerad: number; granskningsKo: number; vantarMotor: number; vantarKvot: number; inaktuell: number; procentPublicerad: number }
+    > = {};
+    let publiceradTotalt = 0;
+    for (const s of MALSPRAK) {
+      const r = raknarePerTyp.get(typ + "\u0000" + s) ?? nollRaknare();
+      publiceradTotalt += r.publicerad;
+      perSprakTyp[s] = {
+        publicerad: r.publicerad,
+        granskningsKo: r.utkast + r.granskad + r["maskinutkast-behovar-granskning"],
+        vantarMotor: r["vantar-motor"],
+        vantarKvot: r["vantar-kvot"],
+        inaktuell: r.inaktuell,
+        procentPublicerad: totaltTyp > 0 ? Math.round((r.publicerad / totaltTyp) * 100) : 0,
+      };
+    }
+    perTyp[typ] = {
+      namn: typNamn[typ] ?? typ,
+      totaltKallor: totaltTyp,
+      publiceradTotalt,
+      procentPublicerad: totaltTyp > 0 ? Math.round((publiceradTotalt / (totaltTyp * MALSPRAK.length)) * 100) : 0,
+      perSprak: perSprakTyp,
+    };
+  }
+
+  // (3c) "KVAR I GRATIS-KVOT"-ESTIMAT (våg 62): MyMemory-gratisnivån räknas
+  //      ca 5 000 ord/dygn — dagar kvar = ord kvar / ord per dygn. Ord kvar =
+  //      källregistrets ord för källor som ännu inte är publicerade, per språk
+  //      (varje källa översätts en gång per målspråk). Estimat, ej löfte.
+  const IGRATIS_ORD_PER_DYGN = 5000;
+  let totaltOrd = 0;
+  for (const t of kallorPerTyp.values()) totaltOrd += t.ord;
+  const kvot = {
+    ordPerDygn: IGRATIS_ORD_PER_DYGN,
+    perSprak: {} as Record<string, { ordKvar: number; dagarKvar: number }>,
+    ordKvar: 0,
+    dagarKvar: 0,
+    notering:
+      "estimat — gratisnivån (MyMemory) räknas ca " + String(IGRATIS_ORD_PER_DYGN) + " ord/dygn; dagar kvar = ord kvar / ord per dygn",
+  };
+  for (const s of MALSPRAK) {
+    const ordKvar = Math.max(0, totaltOrd - (publiceradeOrd[s] ?? 0));
+    kvot.perSprak[s] = { ordKvar, dagarKvar: Math.ceil(ordKvar / IGRATIS_ORD_PER_DYGN) };
+    kvot.ordKvar += ordKvar;
+  }
+  kvot.dagarKvar = Math.ceil(kvot.ordKvar / IGRATIS_ORD_PER_DYGN);
 
   // (4) Kön med källtexter sammanfogade (two-column-vyn i panelen).
   const ko: KoRadVy[] = koRader.map((r) => {
@@ -387,6 +607,8 @@ export async function GET(req: NextRequest) {
       totaltKallor,
       oversattningsobjekt: totaltKallor * MALSPRAK.length,
       perSprak,
+      perTyp,
+      kvot,
       kallfel,
     },
     ko,
@@ -448,57 +670,29 @@ export async function POST(req: NextRequest) {
   if (!rest) {
     return NextResponse.json(
       {
-        error: "Supabase ej konfigurerat — granskningsåtgärder kräver tabellen oversattningar (kör data/sql/oversattningar.sql).",
+        error:
+          "Supabase ej konfigurerat — granskningsåtgärder kräver lagret (tabellen oversattningar ELLER system_events; kör data/sql/oversattningar.sql för bästa läget).",
       },
       { status: 503 },
     );
   }
 
-  // Läs aktuell rad (läsning direkt; all skrivning går via lager.ts).
-  let radUrl = `${rest.origin}/rest/v1/oversattningar?select=id,scope_typ,scope_nyckel,sprak,kallhash,text,status,kvalitet,kontrollrapport&limit=1`;
-  if (id !== null) {
-    radUrl += `&id=eq.${id}`;
-  } else {
-    if (!scope_typ || !SCOPTYPER.includes(scope_typ) || !scope_nyckel || !arMalSprak(sprakRaw)) {
-      return NextResponse.json(
-        { error: "id (numeriskt) eller scope_typ + scope_nyckel + sprak (en|ar) krävs." },
-        { status: 400 },
-      );
-    }
-    radUrl +=
-      `&scope_typ=eq.${encodeURIComponent(scope_typ)}` +
-      `&scope_nyckel=eq.${encodeURIComponent(scope_nyckel)}` +
-      `&sprak=eq.${sprakRaw}`;
-  }
-
-  type TabellRad = {
-    id: number;
-    scope_typ: ScopeTyp;
-    scope_nyckel: string;
-    sprak: MalSprak;
-    kallhash: string;
-    text: string;
-    status: OversattningStatus;
-    kvalitet: number;
-    kontrollrapport: unknown;
-  };
-  let rad: TabellRad | null = null;
+  // Läs aktuell rad via LAGRET (våg 62): lasRad/lasRadEfterId hanterar båda
+  // backends (tabell + system_events) med senaste-vinner-semantik — och all
+  // skrivning går sedan via lager.ts lasSpara, samma som cronden/importören.
+  let rad: OversattningRadLas | null = null;
   try {
-    const res = await fetch(radUrl, { headers: rest.headers, signal: AbortSignal.timeout(15_000) });
-    if (!res.ok) {
-      if (res.status === 404) {
+    if (id !== null) {
+      rad = await lasRadEfterId(id); // id:n är tabellfödda — events-rader nyttjar scope-tuppeln
+    } else {
+      if (!scope_typ || !SCOPTYPER.includes(scope_typ) || !scope_nyckel || !arMalSprak(sprakRaw)) {
         return NextResponse.json(
-          {
-            error: "Tabellen oversattningar saknas — kör data/sql/oversattningar.sql i Supabase SQL Editor först.",
-            konfigurationKravs: true,
-          },
-          { status: 503 },
+          { error: "id (numeriskt) eller scope_typ + scope_nyckel + sprak (en|ar) krävs." },
+          { status: 400 },
         );
       }
-      return NextResponse.json({ error: "Lagret svarade HTTP " + String(res.status) + "." }, { status: 502 });
+      rad = await lasRad(scope_typ, scope_nyckel, sprakRaw);
     }
-    const rader = (await res.json()) as TabellRad[];
-    rad = Array.isArray(rader) && rader.length > 0 ? rader[0] : null;
   } catch (e) {
     if (e instanceof TabellSaknasFel) {
       return NextResponse.json({ error: e.message, konfigurationKravs: true }, { status: 503 });
@@ -512,7 +706,7 @@ export async function POST(req: NextRequest) {
         error:
           "Översättningen hittades inte (" +
           (id !== null ? "id " + String(id) : scope_typ + ":" + scope_nyckel + ":" + sprakRaw) +
-          ") — kontrollera att cron-ronden körts och att objektet finns i tabellen.",
+          ") — kontrollera att cron-ronden/batchen körts och att objektet finns i lagret (tabell eller system_events).",
       },
       { status: 404 },
     );

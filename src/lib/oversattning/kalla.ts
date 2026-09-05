@@ -126,6 +126,9 @@ function lasKursblock(): readonly KallaPost[] {
         kap.blocks.forEach((block, i) => {
           const text = typeof block?.content === "string" ? block.content : "";
           if (!text) return; // tomma block är inga översättningsobjekt
+          // Diagramtypsnycklar ("donut", "bro"…) är REFERENSER till VIL-komponenter,
+          // inte språk — översätts aldrig (annars försvinner diagram i speglarna).
+          if (block?.type === "visuell") return;
           poster.push({
             scope: { typ: "kursblock", nyckel: slug + ":kap" + n + ":block" + String(i + 1) },
             text,

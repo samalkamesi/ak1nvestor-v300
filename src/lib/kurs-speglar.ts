@@ -266,11 +266,19 @@ function speglaKapitel(
   // Samma universum som kalla.ts: varje block med icke-tom string-content är
   // en enhet (även tabell/tidslinje-JSON och visuell-id — de renderas ej av
   // KursSteg idag, men andelen ska matcha pipeline:ens källa exakt).
-  const blocks = (ch.blocks ?? []).map((b, i) =>
-    typeof b.content === "string" && b.content.length > 0
-      ? { ...b, content: taBlock(nyckelBlock(slug, ch.num, i), b.content) }
-      : b
-  );
+  //
+  // VÅG 62 (kvalitetsgranskningens fynd): visuell-blockets content är en
+  // DIAGRAMTYP SNYCKEL ("skala"|"cykel"|"donut"|"bro"|"radar"|…), inte prosa —
+  // KursSteg renderar <VisuellBlock typ={content}/> och en översatt nyckel
+  // ("الرادار", "الحلقة") faller i "saknar renderer"-fallet och diagrammet
+  // försvinner tyst ur spegeln. Därför: enheten RÄKNAS i progressandelen
+  // (kalla.ts-paritet — taBlock anropas), men nyckeln ÖVERSÄTTS ALDRIG.
+  const blocks = (ch.blocks ?? []).map((b, i) => {
+    if (typeof b.content !== "string" || b.content.length === 0) return b;
+    const oversatt = taBlock(nyckelBlock(slug, ch.num, i), b.content);
+    if (b.type === "visuell") return { ...b };
+    return { ...b, content: oversatt };
+  });
   const quiz = Array.isArray((ch as { quiz?: unknown }).quiz)
     ? (ch as unknown as { quiz: Array<{ q: string; alternativ: string[]; ratt: number; tips?: string }> }).quiz.map(
         (f, qi) => {

@@ -46,6 +46,7 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import type { BlogPost } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
+import { mosSpegelKartaUrRader, type MosEventLasRad } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
 import { INDEX_TRASKEL } from "@/lib/kurs-speglar";
 
@@ -118,7 +119,16 @@ function franRader(rader: unknown, slugs: readonly string[]): Map<string, Map<st
   return lager;
 }
 
-/** Kör sökvägarna i tur och ordning; första försöket med träffar vinner. */
+/** Kör sökvägarna i tur och ordning; första försöket med träffar vinner.
+ *
+ * VÅG 62: sista försöket är MÖS-lagrets system_events-backend (samma Försök 3
+ * som kurs-speglarna fick i våg 55) — tabellen oversattningar finns inte ännu
+ * (kunden har inte kört SQL:en), lagret sparar översättningar som
+ * type=oversattning-event och läser dem med senaste-vinner-dedupe. Utan denna
+ * gren skulle publicerade bloggöversättningar ALDRIG synas i speglarna medan
+ * tabellen saknar. En enda fråga för alla blogg-event + dedupe/statusfilter i
+ * koden via lagrets rena funktioner (dedupeSenasteVinner/mosSpegelKartaUrRader).
+ */
 async function hamtaLager(sokvagar: string[], slugs: readonly string[]): Promise<Map<string, Map<string, string>>> {
   const rest = getSupabaseRest();
   const tomt = new Map<string, Map<string, string>>();
@@ -136,8 +146,37 @@ async function hamtaLager(sokvagar: string[], slugs: readonly string[]): Promise
       const lager = franRader(await svar.json(), slugs);
       if (lager.size > 0) return lager;
     } catch {
-      /* nästa försök / tomt */
+      /* nästa försök / events nedan */
     }
+  }
+
+  // Sista försöket (våg 62): MÖS-lagrets system_events-backend — läs ALLA
+  // blogg-event (nyast först, tak 1 000 rader som lasPubliceradeForSpegel),
+  // dedupe senaste-vinner per (nyckel, språk), filtrera publicerade + kända
+  // blogg-prefix i koden via lagrets rena funktion.
+  try {
+    const svar = await fetch(
+      `${rest.origin}/rest/v1/system_events?type=eq.oversattning&details->>scope_typ=eq.blogg` +
+        `&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text` +
+        `&order=created_at.desc&limit=1000`,
+      {
+        headers: { apikey: rest.headers.apikey, Authorization: rest.headers.Authorization },
+        signal: AbortSignal.timeout(6000),
+        next: { revalidate: 3600, tags: ["oversattningar", "oversattningar:blogg"] },
+      },
+    );
+    if (svar.ok) {
+      const rader = (await svar.json()) as MosEventLasRad[];
+      const lager = new Map<string, Map<string, string>>();
+      for (const slug of slugs) {
+        for (const [nyckel, perSprak] of mosSpegelKartaUrRader(rader, slug)) {
+          lager.set(nyckel, perSprak);
+        }
+      }
+      if (lager.size > 0) return lager;
+    }
+  } catch {
+    /* tomt ⇒ svensk fallback, 0 % */
   }
   return tomt;
 }

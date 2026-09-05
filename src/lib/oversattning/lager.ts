@@ -548,6 +548,102 @@ export async function markeraInaktuell(
   return attSkriva.length;
 }
 
+/** En hel rad som lasRad returnerar — kontrollrapporten är tolkningsbar
+ *  (tabellen ger jsonb-OBJEKT, system_events->> ger JSON-STRÄNG; anroparen
+ *  tolkar försiktigt, se admin-ruttens tolkaRapport). */
+export type OversattningRadLas = {
+  id: number | null;
+  scope_typ: ScopeTyp;
+  scope_nyckel: string;
+  sprak: MalSprak;
+  kallhash: string;
+  text: string;
+  status: OversattningStatus;
+  kvalitet: number;
+  kontrollrapport: unknown;
+};
+
+/** Tabellrad → OversattningRadLas (delad mappning för lasRad/lasRadEfterId). */
+function tabellRadTillLasRad(r: {
+  id?: number;
+  scope_typ: ScopeTyp;
+  scope_nyckel: string;
+  sprak: MalSprak;
+  kallhash: string;
+  text: string;
+  status: OversattningStatus;
+  kvalitet: number;
+  kontrollrapport: unknown;
+}): OversattningRadLas {
+  return {
+    id: typeof r.id === "number" ? r.id : null,
+    scope_typ: r.scope_typ,
+    scope_nyckel: r.scope_nyckel,
+    sprak: r.sprak,
+    kallhash: r.kallhash ?? "",
+    text: typeof r.text === "string" ? r.text : "",
+    status: r.status,
+    kvalitet: typeof r.kvalitet === "number" ? r.kvalitet : 0,
+    kontrollrapport: r.kontrollrapport ?? null,
+  };
+}
+
+/**
+ * Läs EN rads SENASTE läge oavsett backend (våg 62 — admin-panelens POST
+ * granskar/publicerar även i system_events-läget): tabell ⇒ enda raden;
+ * system_events ⇒ senaste-vinner-dedupe av de 25 nyaste för nyckeln (en
+ * äldre status servas ALDRIG, samma semantik som lasPublicerad).
+ * Returnerar null när nyckeln saknas i lagret.
+ */
+export async function lasRad(
+  scope_typ: ScopeTyp,
+  scope_nyckel: string,
+  sprak: MalSprak,
+): Promise<OversattningRadLas | null> {
+  const backend = await detekteraBackend();
+
+  if (backend === "tabell") {
+    const res = await restForfragning(
+      TABELL,
+      "?scope_typ=eq." + encodeURIComponent(scope_typ) +
+        "&scope_nyckel=eq." + encodeURIComponent(scope_nyckel) +
+        "&sprak=eq." + sprak + "&limit=1" +
+        "&select=id,scope_typ,scope_nyckel,sprak,kallhash,text,status,kvalitet,kontrollrapport",
+      { method: "GET", timeoutMs: 12_000 },
+    );
+    if (!res.ok) await sankaFel(res);
+    const rader = (await res.json()) as Parameters<typeof tabellRadTillLasRad>[0][];
+    return rader[0] ? tabellRadTillLasRad(rader[0]) : null;
+  }
+
+  // system_events: nyast först ⇒ dedupe ger senaste läget för nyckeln.
+  const res = await restForfragning(
+    EVENTS,
+    "?" + mosEventFilter({ scope_typ, scope_nyckel, sprak }) +
+      "&select=created_at,details->>scope_typ,details->>scope_nyckel,details->>sprak,details->>kallhash,details->>text,details->>status,details->>kvalitet,details->>kontrollrapport" +
+      MOS_ORDNING + "&limit=25",
+    { method: "GET", timeoutMs: 12_000 },
+  );
+  if (!res.ok) await sankaFel(res);
+  const rader = (await res.json()) as MosEventLasRad[];
+  const senaste = dedupeSenasteVinner(rader)[0] ?? null;
+  if (!senaste || !senaste.scope_typ || !senaste.scope_nyckel || !senaste.sprak || !senaste.status) return null;
+  return {
+    id: null,
+    scope_typ: senaste.scope_typ as ScopeTyp,
+    scope_nyckel: senaste.scope_nyckel,
+    sprak: senaste.sprak as MalSprak,
+    kallhash: senaste.kallhash ?? "",
+    text: typeof senaste.text === "string" ? senaste.text : "",
+    status: senaste.status as OversattningStatus,
+    kvalitet:
+      typeof senaste.kvalitet === "number"
+        ? senaste.kvalitet
+        : Number(senaste.kvalitet ?? 0) || 0, // details->> ger text — tolka både former
+    kontrollrapport: senaste.kontrollrapport ?? null,
+  };
+}
+
 /** Publik läsning av EN publicerad översättning (framtida UI-konsumtion). */
 export async function lasPublicerad(
   scope_typ: ScopeTyp,
@@ -582,6 +678,24 @@ export async function lasPublicerad(
   const rader = (await res.json()) as MosEventLasRad[];
   const senaste = dedupeSenasteVinner(rader)[0] ?? null;
   return senaste && senaste.status === "publicerad" && typeof senaste.text === "string" ? senaste.text : null;
+}
+
+/**
+ * Läs raden med TABELL-id (våg 62, admin-POST:ens id-form). id:n är tabellfödda
+ * — i system_events-läget har panelraderna id=null och använder scope-tuppeln.
+ * Kastar TabellSaknasFel när tabellen saknas (ärligt: ett id kan inte finnas
+ * utan tabellen).
+ */
+export async function lasRadEfterId(id: number): Promise<OversattningRadLas | null> {
+  const res = await restForfragning(
+    TABELL,
+    "?id=eq." + encodeURIComponent(String(id)) + "&limit=1" +
+      "&select=id,scope_typ,scope_nyckel,sprak,kallhash,text,status,kvalitet,kontrollrapport",
+    { method: "GET", timeoutMs: 12_000 },
+  );
+  if (!res.ok) await sankaFel(res);
+  const rader = (await res.json()) as Parameters<typeof tabellRadTillLasRad>[0][];
+  return rader[0] ? tabellRadTillLasRad(rader[0]) : null;
 }
 
 /**

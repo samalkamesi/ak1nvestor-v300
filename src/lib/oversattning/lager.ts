@@ -43,7 +43,8 @@
  *       &order=created_at.desc&limit=1000
  *
  * KVANTITETSGRÄNSER — 17,7M-KOLLAPSEN (2026-08) FÅR ALDRIG UPPREPA SIG:
- *   - HÅRT TAK 45 000 RADER för type=oversattning, hållet av retention-
+ *   - HÅRT TAK 200 000 RADER (höjt våg 67; var 45 000) för type=oversattning,
+ *     hållet av retention-
  *     organet (src/lib/autonom/organ.ts, dagligen via /api/cron/autonom):
  *     (a) äldsta DUBLETTRADER raderas FÖRST (samma scope_nyckel+sprak —
  *         behåll senaste), (b) därefter stympas äldsta rader med
@@ -428,8 +429,13 @@ async function lasSparaEvents(rader: readonly OversattningRad[]): Promise<void> 
 
 /** Max rader att läsa per sid_begäran — PostgREST default-sida är 1000 rader. */
 const SIDSTORLEK = 1000;
-/** Tak för statuskartan: 40 sidor = 40 000 rader (retentionstaket 45 000). */
-const MAX_Sidor = 40;
+/** Tak för statuskartan: 200 sidor = 200 000 rader. Våg 67: korpusen växte
+ *  över det gamla 40-sidorstaketet (59k råa rader) — kartan läste bara de
+ *  nyaste 40 000 och "tappade" äldre nycklar (falskt ofullständiga kurser).
+ *  Full korpus ≈ 139 164 unika språknycklar; 200 sidor täcker det med marginal.
+ *  Enda tunga anroparen är cron-oversatt (tidsbudgetad) — speglarna läser
+ *  per kurs och berörs inte. Retentionstaketet synkas i organ.ts (200 000). */
+const MAX_Sidor = 200;
 
 /**
  * Läs HELA statuskartan: "typ:nyckel:sprak" → {kallhash, status}.

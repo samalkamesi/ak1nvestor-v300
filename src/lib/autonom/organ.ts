@@ -160,7 +160,7 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 //   övrigt    : 500 rader / 30 dagar  (oförändrat — organ/autonomi/styrelse)
 //   trafik    : 12 000 rader / 35 dagar (stickprov 30 % + bot-dedupe)
 //   sakerhet  : 3 000 rader / 35 dagar (en rad per blockering)
-//   oversattning (VÅG 55 L1): 45 000 rader / INGET ålderstak — MÖS-lagrets
+//   oversattning (VÅG 55 L1; tak höjt våg 67): 200 000 rader / INGET ålderstak — MÖS-lagrets
 //     system_events-backend (src/lib/oversattning/lager.ts) sparar
 //     översättningar här när tabellen oversattningar saknas. Publicerade
 //     översättningar ska BESTÅ tills de ersätts, därför gäller i stället:
@@ -173,11 +173,15 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 
 const MAX_ANTAL_TRAFIK = 12_000;
 const MAX_ANTAL_SAKERHET = 3_000;
-const MAX_ANTAL_OVERSATTNING = 45_000;
+/** Våg 67: 45 000 → 200 000. Korpusen passerade 59k råa rader (full korpus
+ *  ≈ 139 164 unika språknycklar) — vid 45k hade stympning (c) börjat radera
+ *  ÄLDSTA PUBLICERADE = äkta dataförlust av v66-block/flaggskepp. 200k ligger
+ *  fortfarande ~100× under 17,7M-kollapsen och avgränsar fortfarande tillväxten. */
+const MAX_ANTAL_OVERSATTNING = 200_000;
 const MAX_ALDER_TYP_DAGAR = 35;
-/** Tak för MÖS-städningen per körning: 50 sidor à 1 000 rader + 5 000 raderade. */
-const MOS_STAD_MAX_Sidor = 50;
-const MOS_STAD_MAX_RADERA = 5_000;
+/** Tak för MÖS-städningen per körning: 200 sidor à 1 000 rader + 20 000 raderade. */
+const MOS_STAD_MAX_Sidor = 200;
+const MOS_STAD_MAX_RADERA = 20_000;
 
 async function organRetention(
   sb: { origin: string; headers: Record<string, string> } | null
@@ -276,11 +280,11 @@ async function organRetention(
       const radera: string[] = [];
       for (let sida = 0; sida < MOS_STAD_MAX_Sidor; sida++) {
         const fran = sida * 1000;
-        const res = await tryFetch(
-          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning` +
-            `&select=id,details->>scope_nyckel,details->>sprak&order=created_at.desc`,
-          { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
-        );
+      const res = await tryFetch(
+        `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.oversattning` +
+          `&select=id,details->>scope_nyckel,details->>sprak&order=created_at.desc,id.desc`,
+        { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
+      );
         if (!res.ok) return 0;
         const rows = await res.json();
         if (!Array.isArray(rows) || rows.length === 0) break;
@@ -304,7 +308,8 @@ async function organRetention(
   };
 
   /**
-   * MÖS-antalsstympning (VÅG 55 L1): överstiger type=oversattning 45 000
+   * MÖS-antalsstympning (VÅG 55 L1; tak 200 000 sedan våg 67): överstiger
+   * type=oversattning MAX_ANTAL_OVERSATTNING
    * rader raderas först äldsta icke-publicerade (details->>status=neq.
    * publicerad — utkast/vantar/inaktuell är återvinningsbara via cron),
    * därefter — om överkott kvarstår — äldsta rader totalt. Körs EFTER
@@ -387,7 +392,7 @@ async function organRetention(
   cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
 
   // 3. MÖS-event-lagret (våg 55 L1): dublettrader FÖRST (senaste vinner),
-  //    därefter antalsstympning 45 000 (icke-publicerade äldst först).
+  //    därefter antalsstympning MAX_ANTAL_OVERSATTNING (icke-publicerade äldst först).
   cappedRows += await rensaMosDubletter();
   cappedRows += await raknaTakMos();
 

@@ -785,6 +785,23 @@ export const ORDLISTA = {
     en: "Browse the courses first",
     ar: "تصفَّح الدورات أولًا",
   },
+
+  // ── Prenumerations-CTA (VÅG 63 O2 #2 — kurs-slutet + Min Sida) ────────────
+  "prenum.ctaTitel": {
+    sv: "Ta nästa steg: portföljforskningen",
+    en: "Take the next step: the portfolio research",
+    ar: "الخطوة التالية: أبحاث المحفظة",
+  },
+  "prenum.ctaText": {
+    sv: "Kurserna bygger kunskapen — forskningen håller den vid liv. Från {pris}/mån.",
+    en: "The courses build the knowledge — the research keeps it alive. From {pris}/month.",
+    ar: "الدورات تبني المعرفة — والأبحاث تبقيها حيّة. ابتداءً من {pris}/شهريًا.",
+  },
+  "prenum.ctaKnapp": {
+    sv: "Utforska prenumerationen →",
+    en: "Explore the subscription →",
+    ar: "استكشف الاشتراك ←",
+  },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

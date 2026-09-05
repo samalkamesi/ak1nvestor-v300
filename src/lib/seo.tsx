@@ -89,6 +89,12 @@ export function pageMetadata(opts: {
   noIndex?: boolean;
   /** Explicit OG-bild (sokvag under public + alt) — annars härleds ur path. */
   ogBild?: { sokvag: string; alt: string };
+  /** Spegel-klustret (VÅG 63 O3 #2): satt för svenska original som HAR
+   *  fullt översatta /en- och /ar-speglar (se OVERSATTA_ROUTES i sprak.ts).
+   *  Google kräver ömsesidig hreflang — tidigare deklarerade bara speglarna
+   *  klustret, varför hela sv/en/ar-klustret ignorerades. true ⇒ en/ar
+   *  pekar på /en{path} respektive /ar{path}, x-default på originalet. */
+  harSpeglar?: boolean;
 }) {
   const url = `${SITE_URL}${opts.path}`;
   // Open Graph-protokollet (ogp.me) har ingen "course"-typ och Next validerar
@@ -100,17 +106,27 @@ export function pageMetadata(opts: {
   // metadataBase (SITE_URL, satt i root-layouten).
   const bild = opts.ogBild ?? ogBildForPath(opts.path, opts.title);
   const bilder = [{ url: bild.sokvag, width: OG_BREDD, height: OG_HOJD, alt: bild.alt }];
+  // Startsidan (path "" eller "/") har speglarna /en och /ar — övriga blir
+  // /en{path} och /ar{path} (t.ex. "/kurser" → "/en/kurser").
+  const spegelBas = opts.path === "" || opts.path === "/" ? "" : opts.path;
   return {
     title: opts.title,
     description: opts.description,
     keywords: opts.keywords,
     alternates: {
       canonical: url,
-      languages: {
-        "sv-SE": url,
-        en: url,
-        "x-default": url,
-      },
+      languages: opts.harSpeglar
+        ? {
+            "sv-SE": url,
+            en: `${SITE_URL}/en${spegelBas}`,
+            ar: `${SITE_URL}/ar${spegelBas}`,
+            "x-default": url,
+          }
+        : {
+            "sv-SE": url,
+            en: url,
+            "x-default": url,
+          },
     },
     robots: opts.noIndex
       ? { index: false, follow: false }

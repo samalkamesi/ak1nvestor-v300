@@ -2,8 +2,10 @@
  * SÖKINDEX — kommandopalettens datakälla.
  * Statiska poster läses UR meny-registret (src/lib/meny-register.ts —
  * EN källa för all navigation, 2026-09-03) + kurser som lazy-laddas från
- * /deep-courses.json vid första sökningen. Publik-filtret i registret styr
- * även paletten: medlem/fas/admin-ytor syns bara med behörighet.
+ * /sok-index.json vid första sökningen (VÅG 63 bygg-2: slimmat index,
+ * ~72 kB — fallback /deep-courses.json om filen saknas). Publik-filtret
+ * i registret styr även paletten: medlem/fas/admin-ytor syns bara med
+ * behörighet.
  *
  * VÅG 61 (B2B-BESLUT steg 1): STATISKA respekterar nu registrets `yttor` —
  * en punkt utan "sok" bland sina yttor kommer ALDRIG med i paletten.
@@ -65,23 +67,42 @@ const REGISTER_PUNKTER = new Map(
 // — kurscache —
 let kursPoster: SokPost[] | null = null;
 
+/**
+ * VÅG 63 bygg-2 (optimering #2): kurserna läses från det slimmade
+ * /sok-index.json (~72 kB — slug+title+category+level+weight+summary,
+ * genererat av verktyg/kor-sokindex.mjs) i stället för hela
+ * /deep-courses.json (16,6 MB över wire — chapters-historyn behövs
+ * aldrig för sökning). Extraktionen nedan tar båda formatena: indexets
+ * { kurser: [...] } och, som fallback när indexet saknas (äldre deploy
+ * utan genererad fil), den gamla { slug: kurs }-mappningen — sökningen
+ * fungerar alltid, bara långsammare på fallback-vägen.
+ */
 async function lasKurser(): Promise<SokPost[]> {
   if (kursPoster) return kursPoster;
-  try {
-    const res = await fetch("/deep-courses.json");
-    const data = await res.json();
-    const arr = Array.isArray(data) ? data : data.kurser || Object.values(data);
-    kursPoster = (arr as Array<Record<string, unknown>>).map((k) => ({
-      titel: String(k.title || k.titel || k.slug || ""),
-      lank: `/kurser/${k.slug}`,
-      beskrivning: String(k.summary || "").slice(0, 110),
-      kategori: "Kurs" as const,
-      ikon: "📖",
-      nycklar: [k.category, k.level, k.slug].filter(Boolean).join(" "),
-    }));
-  } catch {
-    kursPoster = [];
+  for (const kalla of ["/sok-index.json", "/deep-courses.json"]) {
+    try {
+      const res = await fetch(kalla);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const arr = Array.isArray(data) ? data : data.kurser || Object.values(data);
+      const poster = (arr as Array<Record<string, unknown>>).map((k) => ({
+        titel: String(k.title || k.titel || k.slug || ""),
+        lank: `/kurser/${k.slug}`,
+        beskrivning: String(k.summary || "").slice(0, 110),
+        kategori: "Kurs" as const,
+        ikon: "📖",
+        nycklar: [k.category, k.level, k.slug].filter(Boolean).join(" "),
+      }));
+      if (poster.length > 0) {
+        kursPoster = poster;
+        break;
+      }
+    } catch {
+      // Nästa källa; tar alla källor slut lämnas listan tom nedan —
+      // paletten visar då fortfarande sina statiska poster.
+    }
   }
+  kursPoster ??= [];
   return kursPoster;
 }
 

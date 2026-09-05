@@ -284,10 +284,16 @@ function mosEventFilter(r: { scope_typ: string; scope_nyckel: string; sprak: str
   );
 }
 
-/** Gemensam projektion: nyast först + bara de fält läsningarna behöver. */
+/** Gemensam projektion: nyast först + bara de fält läsningarna behöver.
+ *  Ordningen MÅSTE bära id.desc som tiebreaker: alla rader i en och samma
+ *  POST-batch delar transaktionens created_at (now() är transaktionstid) —
+ *  utan unik sekundärnyckel är offset-sidningen över ties icke-deterministisk
+ *  och kan HOPPA rader (våg 67: 16 vm-07/vm-08-block försvann ur statuskartan
+ *  trots publicerade rader). id är uuid-TEXT (inte kronologiskt) men ger en
+ *  TOTAL ordning — det är determinismen som krävs, inte kronologi bland ties. */
 const MOS_VAL_FALT =
   "created_at,details->>scope_typ,details->>scope_nyckel,details->>sprak,details->>kallhash,details->>status";
-const MOS_ORDNING = "&order=created_at.desc";
+const MOS_ORDNING = "&order=created_at.desc,id.desc";
 
 // ── Backend-detektering (en sond per process) ────────────────────────────────
 

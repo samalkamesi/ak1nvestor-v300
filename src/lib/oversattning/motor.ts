@@ -457,10 +457,12 @@ const MYMEMORY_VERTAR: readonly string[] = ["api.mymemory.translated.net"];
 
 /** MyMemory:s q-parameter tar max 500 byte — längre texter delas i bitar. */
 export const MYMEMORY_MAX_BYTES = 500;
-/** Anonym kvot ≈ 5000 ord/dag — vi stannar säkert under (per process/lambdainstans). */
-export const MYMEMORY_MAX_ORD_PER_DAG = 5_000;
-/** Tak 400 anrop per process-dygn (≈ en ronds behov på Hobby, 1 cron/dag). */
-export const MYMEMORY_MAX_ANROP_PER_DAG = 400;
+/** Anonym kvot ≈ 5000 ord/dag; med MYMEMORY_EMAIL (de-param) ≈ 50 000 ord/dag.
+ *  Vi stannar säkert under (per process/lambdainstans). */
+export const MYMEMORY_MAX_ORD_PER_DAG = process.env.MYMEMORY_EMAIL ? 45_000 : 5_000;
+/** Tak anrop per process-dygn; med e-post-kvot tar vi 3000 (deras server-
+ *  artighet), annars 400 (≈ en anonym dagskvot). */
+export const MYMEMORY_MAX_ANROP_PER_DAG = process.env.MYMEMORY_EMAIL ? 3_000 : 400;
 
 /**
  * Bygg MyMemory-GET:URL (ren funktion — testbar). searchParams kodar q och
@@ -470,6 +472,12 @@ export function byggMyMemoryUrl(text: string, sprak: MalSprak): URL {
   const u = new URL("https://api.mymemory.translated.net/get");
   u.searchParams.set("q", text);
   u.searchParams.set("langpair", "sv|" + sprak);
+  // MyMemory: "de"-param (registrerad e-post) höjer gratis-kvoten 5 000 → 50 000
+  // ord/dag (dokumenterat api.mymemory.translated.net — 10x utan kostnad).
+  const epost = process.env.MYMEMORY_EMAIL;
+  if (epost && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(epost)) {
+    u.searchParams.set("de", epost);
+  }
   return u;
 }
 
@@ -564,7 +572,12 @@ async function oversattMyMemory(kalltext: string, sprak: MalSprak): Promise<Moto
       "https://api.mymemory.translated.net/get?q=" +
       encodeURIComponent(karna) +
       "&langpair=" +
-      encodeURIComponent("sv|" + sprak);
+      encodeURIComponent("sv|" + sprak) +
+      // de-param (registrerad e-post) -> 50 000 ord/dag gratis i stallet foer 5 000
+      (process.env.MYMEMORY_EMAIL &&
+      /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(process.env.MYMEMORY_EMAIL)
+        ? "&de=" + encodeURIComponent(process.env.MYMEMORY_EMAIL)
+        : "");
     let r: Response;
     try {
       r = await fetch(url, {

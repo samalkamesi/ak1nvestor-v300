@@ -8791,3 +8791,14 @@ från 44,8 % vid vågstart, från 1,6 % vid våg 65). Blogg 91 % endast pga de
 
 **Kvar: bokmaster 93 kurser (35 191 källor) ≈ 5 ronder = våg 69-71 enligt
 STYRELSE-VAGPLAN-69-71.md.**
+
+## Våg 68 — ALLT KLART (2026-09-06, 655a0af+)
+
+**v68bg (4 guiders EN/AR, 116 poster 100p) importerat — BLOGGEN åter 100 %**
+(1 291/1 291 per språk). SLUTMÄTNING VÅG 68: **49,6 % total täckning ·
+69 363 publicerade rader · 240/333 kurser KOMPLETTA.**
+
+Vågens leveranser: 12 bokkanon-kurser översatta (3 447 källor/6 892 rader)
++ prestanda våg 2 på prod (−44 % HTML /kurser · −105 kB JS · −50 kB fonter ·
+5 ms backend-cache) + 8 SEO-guider totalt live (4+4, alla tri-språk) ·
+motorer 107/0/0 · vakten GRÖN · tsc 0 nya.

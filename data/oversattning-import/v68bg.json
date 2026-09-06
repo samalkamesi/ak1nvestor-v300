@@ -1,0 +1,587 @@
+{
+ "kurs": "v68bg",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v68bg): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:titel",
+   "en": "ARR growth: what recurring revenue says about quality",
+   "ar": "النمو في ARR: ما تقوله الإيرادات المتكررة عن الجودة"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:ingress",
+   "en": "ARR growth is calculated as the CAGR on recurring revenue: (ARR_n ÷ ARR_0)^(1/number of years) − 1. Here is the formula, a fully worked three-year example, the difference from booked revenue, the NRR engine — and the pitfalls in companies' own ARR definitions.",
+   "ar": "يُحسب النمو في ARR كعائد سنوي مركب CAGR على الإيرادات المتكررة: (ARR_n ÷ ARR_0)^(1/عدد السنوات) − 1. ها هي الصيغة، ومثال محسوب لثلاث سنوات، والفرق عن الإيرادات الدفترية، ومحرك NRR — ومزالق تعريفات ARR التي تضعها الشركات بنفسها."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p1",
+   "en": "ARR growth measures how fast a company's recurring revenue grows, calculated as the annual growth rate (CAGR) on ARR — Annual Recurring Revenue. A company that has gone from 120 to 300 million kronor in ARR over three years has grown 35,7 % per year. What makes the figure interesting is not the speed but the quality pledge: recurring revenue is money contracted to come back even if the company does nothing new at all. That is why ARR growth says something about revenue quality that neither revenue growth nor any earnings multiple captures.",
+   "ar": "يقيس نمو ARR سرعة نمو الإيرادات المتكررة لدى شركة ما، محسوبًا كمعدل النمو السنوي (CAGR) على ARR — أي الإيراد السنوي المتكرر. شركة انتقلت من 120 إلى 300 مليون كرونة في ARR خلال ثلاث سنوات تكون قد نمت بمعدل 35,7 % سنويًا. ما يجعل الرقم مثيرًا للاهتمام ليس السرعة بل تعهد الجودة: فالإيرادات المتكررة أموال متعاقد على عودتها حتى لو لم تفعل الشركة شيئًا جديدًا على الإطلاق. لهذا يقول نمو ARR شيئًا عن جودة الإيرادات لا يلتقطه لا نمو الإيرادات ولا أي مضاعف أرباح."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p2",
+   "en": "## The formula — CAGR on the recurring base",
+   "ar": "## الصيغة — CAGR على القاعدة المتكررة"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p3",
+   "en": "**ARR growth = (ARR_n ÷ ARR_0)^(1/number of years) − 1**",
+   "ar": "**النمو في ARR = (ARR_n ÷ ARR_0)^(1/عدد السنوات) − 1**"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p4",
+   "en": "where ARR_0 is ARR at the start of the period and ARR_n at the end of the period. ARR itself is the annualized value of all active recurring contracts: a three-year contract worth 30 Mkr counts as 10 Mkr in ARR, because it corresponds to 10 Mkr per year for three years.",
+   "ar": "حيث ARR_0 هو ARR عند بداية الفترة وARR_n عند نهايتها. ARR نفسه هو القيمة المُسنَّنة لجميع العقود المتكررة النشطة: عقد ثلاث سنوات بقيمة 30 مليون كرونة يُحتسب 10 ملايين كرونة في ARR، لأنه يعادل 10 ملايين كرونة سنويًا على مدى ثلاث سنوات."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p5",
+   "en": "One important caveat right away: ARR is a management steering metric, not an accounting post. IFRS does not define it — the companies do that themselves, in their lists of alternative financial ratios in annual and quarterly reports. Two companies can both report ARR and still be measuring different things. The definition is therefore part of the analysis, not a footnote at the bottom.",
+   "ar": "تحفظ مهم منذ البداية: ARR مقياسٌ لقيادة الإدارة وليس بندًا محاسبيًا. IFRS لا تعرّفه — بل تفعل ذلك الشركات بنفسها، في قوائم النسبة المالية البديلة داخل التقارير السنوية والتقرير الربع سنوي. يمكن لشركتين أن تفصحا كلتاهما عن ARR وتقيسا مع ذلك شيئين مختلفين. فالتعريف إذن جزء من التحليل، لا حاشية أسفل الصفحة."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p6",
+   "en": "## The worked example: three years, three ways to read the same development",
+   "ar": "## المثال المحسوب: ثلاث سنوات، وثلاث طرق لقراءة التطور نفسه"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p7",
+   "en": "A hypothetical software company, four measurement points:",
+   "ar": "شركة برمجيات افتراضية، وأربع نقاط قياس:"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p8",
+   "en": "- Year 0: ARR = **120 Mkr**\n- Year 1: ARR = **168 Mkr** (annual growth 40,0 %)\n- Year 2: ARR = **225 Mkr** (annual growth 33,9 %)\n- Year 3: ARR = **300 Mkr** (annual growth 33,3 %)",
+   "ar": "- السنة 0: ARR = **120 مليون كرونة**\n- السنة 1: ARR = **168 مليون كرونة** (النمو السنوي 40,0 %)\n- السنة 2: ARR = **225 مليون كرونة** (النمو السنوي 33,9 %)\n- السنة 3: ARR = **300 مليون كرونة** (النمو السنوي 33,3 %)"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p9",
+   "en": "CAGR = (300 ÷ 120)^(1/3) − 1 = 2,5^(1/3) − 1 ≈ **35,7 % per year**.",
+   "ar": "CAGR = (300 ÷ 120)^(1/3) − 1 = 2,5^(1/3) − 1 ≈ **35,7 % سنويًا**."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p10",
+   "en": "Note what the average hides: the annual pace falls from 40,0 % to 33,3 %. CAGR is the honest summary of a period, but the trend in the individual years — and even more the quarterly new bookings — is what says where the company is heading. A third way to read the same numbers: at 35,7 % annual growth, ARR doubles in roughly 2,0 years (rule of 72: 72 ÷ 35,7 ≈ 2). Three readings of one and the same source — speed, direction and doubling time.",
+   "ar": "لاحظ ما يخفيه المتوسط: الوتيرة السنوية تهبط من 40,0 % إلى 33,3 %. CAGR هو الخلاصة الأمينة لفترة ما، لكن الاتجاه في السنوات المفردة — وبدرجة أكبر الاكتتابات الجديدة ربع السنوية — هو ما يقول إلى أين تتجه الشركة. طريقة ثالثة لقراءة الأرقام نفسها: في ظل النمو السنوي 35,7 % يتضاعف ARR خلال نحو 2,0 سنة (قاعدة 72: 72 ÷ 35,7 ≈ 2). ثلاث قراءات لمصدر واحد — السرعة، والاتجاه، وزمن التضاعف."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p11",
+   "en": "## ARR is not booked revenue — the difference is timing",
+   "ar": "## ARR ليس بالإيرادات الدفترية — والفرق هو التوقيت"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p12",
+   "en": "The accounting rules (IFRS 15) spread a subscription revenue over the period the service is delivered. The three-year agreement of 30 Mkr above gives 10 Mkr in booked revenue per year, while the difference sits as deferred revenue on the balance sheet until it is earned. The consequence: for a growing subscription company, ARR development leads booked revenue by typically one to two years. Revenue growth (V01 in AKM1) is history; ARR growth (V02) is the order book that shows up in the income statement only later. Whoever reads only the income statement is driving with rear-view mirrors — seeing what has already happened, not what is on its way in.",
+   "ar": "توزع قواعد المحاسبة (IFRS 15) إيراد الاشتراك على الفترة التي تُقدَّم فيها الخدمة. اتفاق الثلاث سنوات البالغ 30 مليون كرونة أعلاه يعطي 10 ملايين كرونة إيرادًا دفتريًا سنويًا، بينما يقع الفرق كإيرادات مؤجلة في الميزانية العمومية حتى يُكتسب. النتيجة: في شركة اشتراكات متنامية، يتقدم تطور ARR الإيراداتِ الدفترية بنحو سنة إلى سنتين عادةً. نمو الإيرادات (V01 في AKM1) هو التاريخ؛ أما النمو في ARR (V02) فهي محفظة الطلبات التي تظهر في قائمة الدخل لاحقًا فقط. من يقرأ قائمة الدخل وحدها يقود بمرايا خلفية — يرى ما حدث فعلًا، لا ما هو في طريقه إلى الدخول."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p13",
+   "en": "## NRR — the silent engine behind the number",
+   "ar": "## NRR — المحرك الصامت خلف الرقم"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p14",
+   "en": "ARR growth can be split into four sources: **newly signed contracts**, **expansion** (those already paying broaden their contracts), **churn** (cancellations) and **downgrades** (contracts renewed in a smaller format). Net revenue retention — NRR — captures the last three: the share of the starting year's ARR that remains a year later, with expansion and churn included. An NRR of 112 % means the base grows 12 % per year even if the sales organization does not write a single new contract.",
+   "ar": "يمكن تفكيك النمو في ARR إلى أربعة مصادر: **عقود مكتتبة حديثًا**، و**التوسع** (من يدفعون فعلًا يوسعون عقودهم)، و**الفقد** (الإلغاءات)، و**التخفيضات** (عقود تُجدد بصيغة أصغر). صافي الاحتفاظ بالإيرادات — NRR — يلتقط الثلاثة الأخيرة: حصة ARR في سنة البداية الباقية بعد سنة، مع احتساب التوسع والفقد. NRR بقيمة 112 % يعني أن القاعدة تنمو 12 % سنويًا حتى لو لم توقّع منظومة المبيعات عقدًا جديدًا واحدًا."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p15",
+   "en": "It is the quality difference that makes NRR important: two companies with 35 % ARR growth are not the same thing if one gets there with NRR 105 % — practically all growth is then new sales that must be replaced again and again — and the other with NRR 125 %, where the base feeds itself back. Expansion among those already paying is the cheapest growth there is, and it never shows up in a revenue chart.",
+   "ar": "فرق الجودة هو ما يجعل NRR مهمًا: شركتان بنمو ARR قدره 35 % ليستا الشيء نفسه إذا وصلت إحداهما إلى ذلك بـ NRR 105 % — فعمليًا كل النمو حينها مبيعات جديدة يجب تعويضها مرارًا وتكرارًا — والأخرى بـ NRR 125 %، حيث تُغذي القاعدة نفسها بنفسها. التوسع لدى من يدفعون فعلًا هو أرخص نمو موجود، ولا يظهر أبدًا في رسم بياني للإيرادات."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p16",
+   "en": "## Pitfall 1: the definitions drift apart",
+   "ar": "## المزلق 1: التعريفات تنزلق بعيدًا عن بعضها"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p17",
+   "en": "One company calculates MRR × 12. Another includes transaction revenue with the justification that it repeats. A third counts backlog — signed but not yet started assignments. No definition is wrong in itself, but they are not comparable. Always read the definitions section of the report before two ARR figures are placed side by side, and note when the company changes its definition between years — retroactive recalculation is a requirement, not a courtesy.",
+   "ar": "شركة تحسب MRR × 12. وأخرى تدرج إيرادات المعاملات بحجة أنها متكررة. وثالثة تحتسب backlog — أي المهام الموقعة غير المبدوءة بعد. لا يوجد تعريف خاطئ بذاته، لكنها غير قابلة للمقارنة. اقرأ دائمًا قسم التعريفات في التقرير قبل وضع رقمَي ARR جنبًا إلى جنب، ولاحظ متى غيّرت الشركة تعريفها بين السنوات — فإعادة الاحتساب إلى الوراء شرط، لا مجاملة."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p18",
+   "en": "## Pitfall 2: contracted is not automatically recurring",
+   "ar": "## المزلق 2: المتعاقد عليه ليس متكررًا تلقائيًا"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p19",
+   "en": "A five-year infrastructure contract is contracted but is not silently renewed year after year like a subscription — when it expires, the renewal stands like a cliff in the curve. Multi-year agreements with a small renewal share give high ARR growth today and broken falls tomorrow. The check: the share of ARR renewed annually versus what is bound for multiple years, and how large a part of the growth comes from occasional giant contracts.",
+   "ar": "عقد بنية تحتية لخمس سنوات متعاقدٌ عليه لكنه لا يتجدد بصمت سنة بعد سنة كالاشتراك — وحين ينتهي تقف التجديدات كصخرة في المنحنى. الاتفاقيات متعددة السنوات ذات حصة التجديد الصغيرة تعطي نموًا مرتفعًا في ARR اليوم وانهيارات غدًا. الفحص: حصة ARR المتجددة سنويًا مقابل ما هو مقيد متعدد السنوات، وكم من النمو يأتي من عقود عملاقة متفرقة."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p20",
+   "en": "## Pitfall 3: growth bought with a discount",
+   "ar": "## المزلق 3: النمو الذي يُشترى بخصم"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p21",
+   "en": "Aggressive pricing, long commitment periods combined with prepayment and generous introductory offers can make signed ARR rise while profitability per krona sinks. The check: follow the gross margin (V07) together with ARR growth. Growth bought at a loss shows up in the margin first — in the multiple last.",
+   "ar": "التسعير العدواني، ومدد الالتزام الطويلة مقترنة بالدفع المسبق، والعروض التمهيدية السخية يمكن أن ترفع ARR الموقَّع بينما تهبط الربحية لكل كرونة. الفحص: تابع الهامش الإجمالي (V07) مع نمو ARR. النمو الذي يُشترى بخسارة يظهر في الهامش أولًا — وفي المضاعف آخرًا."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p22",
+   "en": "In the AKM1 model this is V02, and the variable is deliberately weighed together with V01 (revenue growth) and V12 (revenue stability): recurring revenue that both grows and stays is the combination that separates the subscription model from the project company with pretty graphics.",
+   "ar": "في نموذج AKM1 هذا هو V02، والمتغير يُوزن عمدًا مع V01 (نمو الإيرادات) وV12 (استقرار الإيرادات): الإيرادات المتكررة التي تنمو وتبقى معًا هي التركيبة التي تفصل نموذج الاشتراك عن شركة المشاريع ذات الرسوم الجميلة."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p23",
+   "en": "## Rule of 40 — when growth should start paying for itself",
+   "ar": "## قاعدة 40 — متى يجب أن يبدأ النمو في تسديد ثمن نفسه"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p24",
+   "en": "ARR growth has a built-in temptation: it rewards speed, not profitability. The counterweight is the rule of thumb **Rule of 40** — ARR growth in percent plus EBITDA margin in percent should together reach at least 40. A company with 55 % ARR growth and −15 % EBITDA margin lands on 40, exactly on the boundary, while 30 % growth and 5 % margin stops at 35. The rule of thumb is intended as a conversation, not a verdict — but the point is the trade-off: the more growth falls with the years, the more of the gap the EBITDA margin must fill, and a company whose margin improvement lags behind decelerating ARR growth carries a story that the scale does not quite pay for itself yet. In the AKM1 model, V02 is therefore weighed against V08 (EBITDA margin) and V19 (cash burn): recurring revenue that grows while the cash drains away is a matter of time, not a matter of quality.",
+   "ar": "للنمو في ARR إغراء مدمج: فهو يكافئ السرعة لا الربحية. والثقل المضاد هو القاعدة العملية **قاعدة 40** — نمو ARR بالنسبة المئوية زائد هامش EBITDA بالنسبة المئوية ينبغي أن يبلغا معًا 40 على الأقل. شركة بنمو ARR قدره 55 % وهامش EBITDA بقيمة −15 % تهبط على 40، على الحد تمامًا، بينما 30 % نموًا و5 % هامشًا تتوقف عند 35. القاعدة العملية مقصودة كحوار لا كحكم — لكن بيت القصيد هو الموازنة: كلما انخفض النمو مع السنوات، وجب على هامش EBITDA أن يملأ أكثر من الفجوة، والشركة التي يتخلف تحسن هامشها عن نمو ARR المتباطئ تحمل قصة مفادها أن الحجم لا يسدد ثمن نفسه بعد. في نموذج AKM1 يُوزن V02 لذلك مقابل V08 (هامش EBITDA) وV19 (حرق رأس المال): الإيرادات المتكررة التي تنمو بينما يشح النقد مسألة وقت، لا مسألة جودة."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p25",
+   "en": "## The exercise: read the ARR chain in a real report",
+   "ar": "## التمرين: اقرأ سلسلة ARR في تقرير حقيقي"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p26",
+   "en": "1. Open the latest report of a subscription company you follow and find the definition of ARR among the alternative financial ratios.\n2. Note ARR today and a year ago — calculate the annual growth rate.\n3. Look up NRR. If it is missing, note the absence — that is information in itself.\n4. Enter the numbers in [the calculator](/kalkylator) and compare ARR growth against booked revenue growth. The gap between them is future income statement on its way in.",
+   "ar": "1. افتح أحدث تقرير لشركة اشتراكات تتابعها واعثر على تعريف ARR بين النسبة المالية البديلة.\n2. دوّن ARR اليوم وقبل سنة — واحسب معدل النمو السنوي.\n3. ابحث عن NRR. إن كان غائبًا فدوّن الغياب — فهو في ذاته معلومة.\n4. أدخل الأرقام في [الحاسبة](/kalkylator) وقارن نمو ARR بنمو الإيرادات الدفترية. الفجوة بينهما هي قائمة الدخل المستقبلية في طريقها إلى الدخول."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p27",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p28",
+   "en": "- Go deeper in [the course ARR growth (V02)](/kurser/v02-arr-tillvaxt): six chapters — chapter after chapter — on subscription logic, NRR and how the variable is weighted in the model.\n- See the whole context in [the Curriculum](/laroplan) — V02 ties the growth block to revenue stability (V12).\n- Test the impact in [the portfolio builder](/min-portfolj): recurring revenue is one quality marker among twenty.",
+   "ar": "- اذهب أعمق في الدورة [نمو ARR (V02)](/kurser/v02-arr-tillvaxt): ستة فصول — الفصل بعد الفصل — عن منطق الاشتراكات، وNRR، وكيف يُوزن المتغير في النموذج.\n- شاهد السياق كاملًا في [المنهج](/laroplan) — V02 يربط كتلة النمو باستقرار الإيرادات (V12).\n- اختبر الأثر في [باني المحفظة](/min-portfolj): الإيرادات المتكررة علامة جودة واحدة من عشرين."
+  },
+  {
+   "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p29",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:titel",
+   "en": "Revenue diversification — the risk that never shows up in P/E",
+   "ar": "تنويع الإيرادات — المخاطر التي لا تظهر في P/E"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:ingress",
+   "en": "Revenue diversification is measured with HHI or the largest customer's share of revenue. Here are the formulas, a fully worked example with two companies showing an identical P/E — and why the concentration risk never shows up in the multiple.",
+   "ar": "يُقاس تنويع الإيرادات بمؤشر HHI أو بحصة أكبر عميل من الإيرادات. ها هي الصيغ، ومثال محسوب بشركتين تُظهران P/E متطابقًا — ولماذا لا تظهر مخاطر التركز أبدًا في المضاعف."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p1",
+   "en": "Revenue diversification measures how spread out a company's revenue is across customer relationships, products and geographies — most often expressed as **HHI** (the sum of squared revenue shares) or as **the largest customer's share of revenue**. A company where the largest customer relationship accounts for 40 % of revenue carries a risk that the P/E ratio is completely blind to: two companies can show identical earnings and an identical multiple and still have entirely different probability distributions for the future. It is that risk — the one that does not show up in P/E — that revenue diversification captures.",
+   "ar": "يقيس تنويع الإيرادات مدى انتشار إيرادات الشركة عبر علاقات العملاء والمنتجات والمناطق الجغرافية — ويعبَّر عنه غالبًا بـ**HHI** (مجموع مربعات حصص الإيرادات) أو بـ**حصة أكبر عميل من الإيرادات**. الشركة التي تمثل فيها أكبر علاقة عملاء 40 % من الإيرادات تحمل المخاطر التي تكون نسبة P/E عمياء عنها تمامًا: يمكن لشركتين أن تُظهرا ربحًا متطابقًا ومضاعفًا متطابقًا، ومع ذلك يكون لهما توزيعا احتمالات مختلفان تمامًا للمستقبل. إنها هذه المخاطر — التي لا تظهر في P/E — التي يلتقطها تنويع الإيرادات."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p2",
+   "en": "## The formula — two measures of the same exposure",
+   "ar": "## الصيغة — مقياسان لنفس التعرّض"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p3",
+   "en": "**HHI = Σ (share_i × 100)²**",
+   "ar": "**HHI = Σ (الحصة_i × 100)²**"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p4",
+   "en": "where share_i is the revenue share in percent for each customer relationship or segment. The scale: eight equal shares of 12,5 % give 8 × 12,5² = 1 250; a single customer relationship at 100 % gives 10 000. Competition law uses the same measure for a mirrored purpose — measuring seller concentration — and from there come the thresholds that also hold analytically: below 1 500 low concentration, 1 500–2 500 moderate, above 2 500 high. Turn the measure toward the company itself and you have a scale for how much of the revenue stream rests on few legs.",
+   "ar": "حيث الحصة_i هي حصة الإيرادات بالنسبة المئوية لكل علاقة عملاء أو قطاع. السلم: ثماني حصص متساوية بواقع 12,5 % تعطي 8 × 12,5² = 1 250؛ وعلاقة عملاء واحدة بنسبة 100 % تعطي 10 000. يستخدم قانون المنافسة المقياس نفسه لغرض معكوس — قياس تركز البائعين — ومن هناك تأتي العتبات التي تصمد تحليليًا أيضًا: تحت 1 500 تركز منخفض، و1 500–2 500 متوسط، وفوق 2 500 مرتفع. وجّه المقياس نحو الشركة نفسها وتكون لديك سلمٌ يقيس كم من تدفق الإيرادات يستند إلى أرجل قليلة."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p5",
+   "en": "The simpler complement:",
+   "ar": "المكمّل الأبسط:"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p6",
+   "en": "**Top-customer share = Largest customer's revenue ÷ Net revenue × 100**",
+   "ar": "**حصة العميل الأعلى = إيرادات أكبر عميل ÷ صافي الإيرادات × 100**"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p7",
+   "en": "HHI captures the whole distribution; the top-customer share answers the bluntest question: how much disappears if a single relationship breaks? Use both — they answer different questions.",
+   "ar": "يلتقط HHI التوزيع كله؛ أما حصة العميل الأعلى فتجيب عن السؤال الأكثر مباشرة: كم يختفي إذا انقطعت علاقة واحدة؟ استخدم كليهما — فهما يجيبان عن سؤالين مختلفين."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p8",
+   "en": "## The worked example: same P/E, entirely different underlying risk",
+   "ar": "## المثال المحسوب: P/E نفسه، والمخاطر الكامنة مختلفة تمامًا"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p9",
+   "en": "Two hypothetical companies, both with 150 Mkr in earnings and both traded at P/E 15 — in other words, the market capitalization is 2 250 Mkr each:",
+   "ar": "شركتان افتراضيتان، كلتاهما بربح 150 مليون كرونة وكلتاهما متداولة عند P/E بقيمة 15 — أي أن القيمة السوقية لكل منهما 2 250 مليون كرونة:"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p10",
+   "en": "- **Company A** — subcontractor to the automotive industry. Revenue shares: 40, 20, 15, 10, 8 and 7 %. HHI = 40² + 20² + 15² + 10² + 8² + 7² = 1 600 + 400 + 225 + 100 + 64 + 49 = **2 438**. Top-customer share: 40 %.\n- **Company B** — consumer brand. Eight revenue segments, none above 12,5 %. HHI = 8 × 12,5² = **1 250**. Top-customer share: 12,5 %.",
+   "ar": "- **الشركة A** — مورد من الباطن لصناعة السيارات. حصص الإيرادات: 40 و20 و15 و10 و8 و7 %. HHI = 40² + 20² + 15² + 10² + 8² + 7² = 1 600 + 400 + 225 + 100 + 64 + 49 = **2 438**. حصة العميل الأعلى: 40 %.\n- **الشركة B** — علامة تجارية استهلاكية. ثمانية قطاعات إيرادات، لا يتجاوز أي منها 12,5 %. HHI = 8 × 12,5² = **1 250**. حصة العميل الأعلى: 12,5 %."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p11",
+   "en": "Same earnings. Same P/E. But if Company A loses its largest customer relationship — 40 % of revenue, and since the volumes carried the operation probably the greater part of operating profit — next year's numbers look entirely different. For Company B the same event is an absorbable shove: 12,5 % of revenue disappears and the business keeps running. The multiple was the same — the risk was not. A P/E discounts this year's earnings; concentration affects the probability distribution of all future earnings. That is why revenue diversification is not a valuation variable but a risk variable — and why it is called V03 in the AKM1 model, where it is weighed next to V01 and V02 but always read as a risk filter on the entire growth block.",
+   "ar": "الربح نفسه. وP/E نفسه. لكن إذا فقدت الشركة A أكبر علاقة عملاء لديها — 40 % من الإيرادات، وبما أن الأحجام كانت تحمل العمليات فغالبًا معظم الربح التشغيلي — فإن أرقام السنة القادمة ستبدو مختلفة تمامًا. أما للشركة B فالحدث نفسه دفعة قابلة للاستيعاب: يختفي 12,5 % من الإيرادات وتواصل العمليات سيرها. كان المضاعف نفسه — ولم تكن المخاطر كذلك. P/E يخصم ربح السنة؛ أما التركز فيؤثر في توزيع الاحتمالات لجميع الأرباح المستقبلية. لهذا ليس تنويع الإيرادات متغيرَ تقييمٍ بل متغير مخاطر — ولهذا اسمه V03 في نموذج AKM1، حيث يُوزن بجوار V01 وV02 لكنه يُقرأ دائمًا كمرشِّح للمخاطر على كتلة النمو كلها."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p12",
+   "en": "## The three dimensions — and how they differ",
+   "ar": "## الأبعاد الثلاثة — وكيف تختلف"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p13",
+   "en": "The customer dimension is only one of three:",
+   "ar": "بُعد العملاء ليس سوى واحد من ثلاثة:"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p14",
+   "en": "- **Customer**: how many independent payers stand behind the revenue?\n- **Product**: how many revenue-driving products are there? A company can have a large collective of buyers and still rest its entire revenue on a single platform that a technical transition can knock out.\n- **Geography and currency**: the same customer base spread across several countries spreads both business cycle risk and currency risk; a single home market concentrates both.",
+   "ar": "- **العملاء**: كم دافعًا مستقلًا يقف خلف الإيرادات؟\n- **المنتج**: كم منتجًا مولِّدًا للإيرادات موجود؟ قد تكون لدى شركة جمهورٌ كبير من المشترين ومع ذلك تستند بكل إيراداتها إلى منصة واحدة يمكن لتحول تقني أن يطيح بها.\n- **الجغرافيا والعملة**: القاعدة نفسها من العملاء موزعة على عدة بلدان توزِّع مخاطر الدورة الاقتصادية ومخاطر العملة معًا؛ وسوق محلية وحيدة تركِّزهما معًا."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p15",
+   "en": "A complete reading goes through all three. The raw material is the segment reporting in the notes to the accounts of the annual report — with the important proviso that the companies choose the segmentation themselves, usually by product or geography and rarely by counterparty. The true customer concentration lies one level deeper, in the note on significant counterparties (see pitfall 1).",
+   "ar": "القراءة الكاملة تمر عبر الأبعاد الثلاثة كلها. المادة الخام هي تقارير القطاعات في الإيضاحات المتممة للقوائم المالية الواردة في التقرير السنوي — مع التحفظ المهم أن الشركات نفسها تختار التقسيم، غالبًا حسب المنتج أو الجغرافيا ونادرًا حسب الطرف المقابل. تمركز العملاء الحقيقي يقع في المستوى الأعمق بدرجة، في ملاحظة الأطراف المقابلة المهمة (انظر المزلق 1)."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p16",
+   "en": "## Pitfall 1: segments are not counterparties",
+   "ar": "## المزلق 1: القطاعات ليست أطرافًا مقابلة"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p17",
+   "en": "The reporting requirement (IFRS 8) covers operating segments — product or geographic areas — while individual counterparties only have to be reported if they pass the 10 % threshold for revenue or assets. The consequence: the reported top-customer share is a lower bound, not an exact level. A segment labelled Europe 55 % of revenue can at its core rest on a single distributor. The level beneath the segment notes is the counterparty list; when it does not exist, that is a gap in the material, not proof of diversification.",
+   "ar": "متطلب الإفصاح (IFRS 8) يغطي قطاعات التشغيل — مناطق المنتجات أو الجغرافيا — بينما لا يجب الإفصاح عن الأطراف المقابلة المفردة إلا إذا تجاوزت عتبة 10 % من الإيرادات أو الأصول. النتيجة: حصة العميل الأعلى المفصح عنها حدٌّ أدنى، لا المستوى الدقيق. قطاع يحمل عنوان أوروبا 55 % من الإيرادات قد يستند في جوهره إلى موزع واحد. المستوى الواقع تحت إيضاحات القطاعات هو قائمة الأطراف المقابلة؛ وحين لا توجد فهي ثغرة في المادة، لا دليل على التنويع."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p18",
+   "en": "## Pitfall 2: the number of heads is not the same as independence",
+   "ar": "## المزلق 2: عدد الرؤوس ليس الشيء نفسه كالاستقلالية"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p19",
+   "en": "Ten customer relationships that all sell into the same end market — ten subcontractors to the automotive industry, or two formally separate counterparties in the same group — are correlated. HHI counts heads, not co-movement. In a downturn, correlated revenue falls at the same time and the diversification turns out to be an illusion. The better question: if the customers' own customer market invests 20 % less next year — how large a share of the company's revenue is affected then? It is that share that is the true concentration.",
+   "ar": "عشر علاقات عملاء تبيع كلها إلى السوق النهائية نفسها — عشرة موردين من الباطن لصناعة السيارات، أو طرفان مقابلان منفصلان رسميًا في المجموعة نفسها — مترابطة. HHI يعدّ الرؤوس لا الحركة المشتركة. في الانحسار تهبط الإيرادات المترابطة في الوقت نفسه ويتضح أن التنويع وهم. السؤال الأفضل: إذا كان سوقُ عملاء العملاء نفسهم يستثمر 20 % أقل في السنة القادمة — فكم حصة من إيرادات الشركة تتأثر حينها؟ إنها تلك الحصة هي التركز الحقيقي."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p20",
+   "en": "## Pitfall 3: diversification that has been bought",
+   "ar": "## المزلق 3: التنويع الذي اشتُري"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p21",
+   "en": "Acquisitions in new business areas lower HHI on paper but stack integration risk and the risk of a splintered management focus on top of the one that disappeared. Peter Lynch called the phenomenon diworsification — diversification that makes things worse. By all means count revenue shares by segment as they look acquired, but read a falling HHI with skepticism if it comes only from acquisitions: organically grown spread is the kind that holds when the business cycle turns.",
+   "ar": "عمليات الاستحواذ في مجالات أعمال جديدة تخفض HHI على الورق لكنها تكدس فوق المخاطر التي زالت مخاطرَ الاندماج وخطرَ تشتت تركيز الإدارة. أسمى Peter Lynch الظاهرة diworsification — أي التنويع الذي يزيد الأمر سوءًا. احسب إن شئت حصص الإيرادات حسب القطاع كما تبدو مكتسبة، لكن اقرأ انخفاض HHI بشك إذا كان ناتجًا عن الاستحواذ وحده: الانتشار المزروع عضويًا هو الذي يثبت حين تنقلب الدورة الاقتصادية."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p22",
+   "en": "## The industry interpretation — what is normal",
+   "ar": "## تفسير القطاع — ما هو طبيعي"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p23",
+   "en": "Descriptively, with no yardstick beyond the comparison group: project-based industries such as construction, contracting and systems delivery live naturally with high concentration — a few large clients carry the year's revenue, and an HHI above 2 500 is the norm rather than the exception. Retail and consumer goods sit at the other end: thousands of buyers per day give an HHI far below 1 000 — there it is instead product and channel risk that carries the analysis. B2b suppliers with a handful of industrial counterparties fall in between, and that is exactly where the correlation question (pitfall 2) makes the biggest difference. The point is not that an HHI is good or bad in absolute terms, but that the threshold should be read against the industry's structure: an HHI of 2 400 is high for a consumer company and completely normal for a contracting company. In the AKM1 model, V03 is therefore always scored against industry type — the same logic that makes ROE (V09) interpreted differently in banking and software.",
+   "ar": "بوصفٍ لا معيار له سوى مجموعة المقارنة: الصناعات القائمة على المشاريع كالبناء والمقاولات وتوريد الأنظمة تعيش بطبيعتها مع تركز مرتفع — الإيرادات السنوية محمولة على عدد قليل من كبار الجهات الطالبة، وHHI فوق 2 500 هو القاعدة لا الاستثناء. وتجارة التجزئة والسلع الاستهلاكية في الطرف الآخر: آلاف المشترين يوميًا يعطون HHI أدنى بكثير من 1 000 — هناك تحمل التحليلَ بدلًا من ذلك مخاطرُ المنتج والقناة. موردو B2b بحفنة من الأطراف الصناعية المقابلة يقعون بين بين، وهنا تحديدًا يصنع سؤال الارتباط (المزلق 2) الفرق الأكبر. المقصود ليس أن HHI جيد أو سيئ بالمعنى المطلق، بل أن العتبة تُقرأ مقابل هيكل القطاع: HHI بقيمة 2 400 مرتفع لشركة استهلاكية وطبيعي تمامًا لشركة مقاولات. في نموذج AKM1 لذلك يُقيَّم V03 دائمًا مقابل نوع القطاع — بالمنطق نفسه الذي يجعل ROE (V09) يفسَّر بشكل مختلف في البنوك والبرمجيات."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p24",
+   "en": "## The exercise: measure concentration in a real annual report",
+   "ar": "## التمرين: قِس التركز في التقرير السنوي لشركة حقيقية"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p25",
+   "en": "1. Open the latest annual report of a company you follow and find the segment reporting and the note on significant customer concentration.\n2. Build a table of revenue shares — by segment as a minimum, by counterparty if the notes to the accounts go deep enough.\n3. Calculate HHI and top-customer share for the two most recent years. Is concentration rising or falling, and why?\n4. Enter the shares in [the calculator](/kalkylator) and see the placement against industry-typical levels.",
+   "ar": "1. افتح التقرير السنوي الأحدث لشركة تتابعها واعثر على تقارير القطاعات وعلى الإيضاح المتعلق بتمركز العملاء المهم.\n2. ابنِ جدولًا لحصص الإيرادات — حسب القطاع كحد أدنى، وحسب الطرف المقابل إن كانت الإيضاحات المتممة للقوائم المالية تكفي.\n3. احسب HHI وحصة العميل الأعلى لآخر سنتين. هل يرتفع التركز أم يهبط، ولماذا؟\n4. أدخل الحصص في [الحاسبة](/kalkylator) وشاهد الموقع مقابل المستوى النمطي للقطاع."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p26",
+   "en": "A quarter of an hour, one table — and you see the risk that the multiple never shows.",
+   "ar": "ربع ساعة، وجدول واحد — وترى المخاطر التي لا يعرضها المضاعف أبدًا."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p27",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p28",
+   "en": "- Continue in [the course Revenue diversification (V03)](/kurser/v03-intaktsdiversifiering): six chapters — chapter after chapter — on HHI, segment reading and concentration risk.\n- See how V03 works as a risk filter in [the Curriculum](/laroplan) — growth resting on too few legs is counted differently.\n- Add the whole picture in [the portfolio builder](/min-portfolj): diversification at company level and at portfolio level are two different questions.",
+   "ar": "- واصل في الدورة [تنويع الإيرادات (V03)](/kurser/v03-intaktsdiversifiering): ستة فصول — الفصل بعد الفصل — عن HHI وقراءة القطاعات ومخاطر التركز.\n- شاهد كيف يعمل V03 كمرشِّح للمخاطر في [المنهج](/laroplan) — فالنمو المستند إلى أرجل قليلة جدًا يُحتسب بشكل مختلف.\n- أدخل الصورة الكاملة في [باني المحفظة](/min-portfolj): التنويع على مستوى الشركة وعلى مستوى المحفظة سؤالان مختلفان."
+  },
+  {
+   "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p29",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:titel",
+   "en": "The P/B ratio — when do you compare book value correctly?",
+   "ar": "نسبة P/B — متى تقارن القيمة الدفترية بشكل صحيح؟"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:ingress",
+   "en": "P/B = the share price divided by book value per share (equity per stock). Here is the formula, a fully worked example with an industrial group and a bank, the link to ROE — and the pitfalls that make book value sometimes measure everything and sometimes nothing.",
+   "ar": "P/B = سعر السهم مقسومًا على القيمة الدفترية للسهم (حقوق الملكية للسهم الواحد). ها هي الصيغة، ومثال محسوب بمجموعة صناعية وبنك، والصلة بـ ROE — والمزالق التي تجعل القيمة الدفترية أحيانًا تقيس كل شيء وأحيانًا لا تقيس شيئًا."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p1",
+   "en": "The P/B ratio — Price-to-Book — is calculated as the share price divided by book value per share (equity per stock), and the comparison is right only when the balance sheet credibly represents the business's real value. For banks, investment companies and other capital-intensive companies, book value is the very raw material of the business — there P/B is a natural yardstick. For knowledge and software companies the value sits in brand, code and employees that never enter the balance sheet, and then P/B becomes a number without interpretability. The art is thus not the arithmetic — it is a division — but knowing when book value carries information and when it is merely an accounting residue.",
+   "ar": "نسبة P/B — Price-to-Book — تُحسب كسعر السهم مقسومًا على القيمة الدفترية للسهم (حقوق الملكية للسهم الواحد)، والمقارنة صحيحة فقط حين تمثل الميزانية العمومية القيمةَ الحقيقية للنشاط بصدق. في البنوك وشركات الاستثمار وغيرها من الشركات كثيفة رأس المال تكون القيمة الدفترية هي المادة الخام نفسها في الصفقة — وهناك يكون P/B معيارًا طبيعيًا. في شركات المعرفة والبرمجيات تقع القيمة في العلامة التجارية والشفرة والموظفين الذين لا يدخلون الميزانية العمومية أبدًا، وعندها تصبح P/B رقمًا بلا قابلية للتفسير. الفن إذن ليس الحساب — فهو قسمة — بل معرفة متى تحمل القيمة الدفترية معلومةً ومتى تكون مجرد بقية محاسبية."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p2",
+   "en": "## The formula — two routes to the same number",
+   "ar": "## الصيغة — طريقان إلى الرقم نفسه"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p3",
+   "en": "**P/B = Share price ÷ Book value per share (equity per stock)**",
+   "ar": "**P/B = سعر السهم ÷ القيمة الدفترية للسهم (حقوق الملكية لكل سهم)**"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p4",
+   "en": "Equivalent at company level: **P/B = Market capitalization ÷ Equity**. Book value per share is in turn calculated as (equity − treasury stocks) ÷ number of stocks — stocks held in the company's own hands are a parked asset, not something the owners can meaningfully count as theirs.",
+   "ar": "بالمكافئ على مستوى الشركة: **P/B = القيمة السوقية ÷ حقوق الملكية**. وتُحسب القيمة الدفترية للسهم بدورها كـ (حقوق الملكية − الأسهم الذاتية) ÷ عدد الأسهم — فالأسهم الذاتية أصل متوقفة، والسهم منها ليس شيئًا يستطيع الملاك احتسابه ملكًا لهم بمعنى حقيقي."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p5",
+   "en": "Two practice questions: keep the same definition of equity (with or without minority interests) throughout the comparison, and preferably use the balance sheet of the latest quarterly report. Unlike earnings, book value moves slowly — but share buybacks and dividends make a year-old number noticeably wrong for precisely the companies where the buy-and-sell discussion tends to be at its liveliest.",
+   "ar": "مسألتان عمليتان: حافظ على التعريف نفسه لحقوق الملكية (مع المصالح الأقلية أو بدونها) عبر المقارنة كلها، واستخدم يُفضَّل الميزانية العمومية للتقرير الربع سنوي الأحدث. بخلاف الربح تتحرك القيمة الدفترية ببطء — لكن إعادة شراء الأسهم والتوزيعات تجعل رقمًا عمره سنة خاطئًا بشكل ملموس عند تحديد الشركات التي يكون فيها نقاش الشراء والبيع أكثر حيوية."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p6",
+   "en": "## The worked example: an industrial group and a bank",
+   "ar": "## المثال المحسوب: مجموعة صناعية وبنك"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p7",
+   "en": "**The industrial company.** Equity 1 850 Mkr, of which treasury stocks 50 Mkr — adjusted equity 1 800 Mkr. Number of stocks: 72 million. Book value per share = 1 800 ÷ 72 = **25,0 kr**. Share price: 50 kr. P/B = 50 ÷ 25,0 = **2,0**. The market prices the company at double book value — reasonable if, and only if, the company is moving toward a durable return on equity (ROE) well above what the owners can demand anywhere else.",
+   "ar": "**شركة التصنيع.** حقوق الملكية 1 850 مليون كرونة، منها الأسهم الذاتية 50 مليونًا — حقوق الملكية المعدلة 1 800 مليون. عدد الأسهم: 72 مليونًا. القيمة الدفترية للسهم = 1 800 ÷ 72 = **25,0 كرونة**. سعر السهم: 50 كرونة. P/B = 50 ÷ 25,0 = **2,0**. يسعّر السوق الشركة عند ضعف القيمة الدفترية — وهذا معقول إذا وفقط إذا كانت الشركة تتجه نحو العائد الدائم على حقوق الملكية (ROE) بمستوى يفوق بوضوح ما يستطيع الملاك المطالبة به في أي مكان آخر."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p8",
+   "en": "**The bank.** Reported equity per stock (book value per share): 95 kr. Share price: 114 kr. P/B = 114 ÷ 95 = **1,2**. For a bank, the level 1,0 is a natural anchor: assets are continuously valued near market value and the capital base is regulated. A stable banking business that earns its cost of capital trades around book value, and the deviation upward or downward reflects whether the market believes in a ROE above or below that level. A multiple of 1,2 therefore does not say expensive — it says that the market is pricing a return somewhat above the cost of capital for the foreseeable future.",
+   "ar": "**البنك.** القيمة الدفترية للسهم (حقوق الملكية) كما هي مقيدة: 95 كرونة. سعر السهم: 114 كرونة. P/B = 114 ÷ 95 = **1,2**. للبنك فإن المستوى 1,0 مرساة طبيعية: فالأصول تُقيَّم باستمرار قرب القيمة السوقية وقاعدة رأس المال منظَّمة. نشاط مصرفي مستقر يكسب كلفة رأس ماله يتداول حول القيمة الدفترية، والانحراف صعودًا أو هبوطًا يعكس ما إذا كان السوق يعتقد بـ ROE أعلى أو أدنى من ذلك المستوى. فمضاعف 1,2 لا يقول إذن غالٍ — بل يقول إن السوق يسعّر العائد أعلى قليلًا من كلفة رأس المال في المستقبل المنظور."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p9",
+   "en": "## The link to ROE — why P/B above 1 is normal",
+   "ar": "## الصلة بـ ROE — لماذا P/B فوق 1 أمر طبيعي"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p10",
+   "en": "Book value is history: paid-in capital plus accumulated earnings minus dividends and share buybacks. The share price is, of course, the future: expected cash flows. A company that durably earns a return on its equity above its cost of capital is reasonably worth more than book — the higher the ROE and the more sustainable it is, the higher the justified P/B. In a standard perpetual growth model, roughly **P/B ≈ (ROE − growth rate) ÷ (cost of capital − growth rate)**: with ROE 18 %, cost of capital 9 % and growth 4 %, a P/B ≈ (18 − 4) ÷ (9 − 4) = 2,8 is justified. That is why P/B and ROE are a pair — V05 and V09 in the AKM1 model are always read together. A P/B of 2,0 with ROE 18 % is a different world from P/B 2,0 with ROE 8 %. And mirrored: P/B below 1,0 does not automatically mean cheap — the market may be pricing upcoming impairments or a business model that systematically destroys capital.",
+   "ar": "القيمة الدفترية هي الماضي: رأس مال مدفوع زائد أرباح متراكمة ناقص التوزيعات وإعادة شراء الأسهم. أما سعر السهم فهو المستقبل: التدفقات النقدية المتوقعة في الدورة السعرية القادمة. الشركة التي تكسب على الدوام عائدًا على حقوق الملكية يفوق كلفة رأس مالها تستحق بلا شك أكثر من قيمتها الدفترية — كلما ارتفع ROE وكان أكثر استدامة، ارتفع P/B المبرَّر. في نموذج قياسي للنمو الأبدي ينطبق تقريبًا **P/B ≈ (ROE − معدل النمو) ÷ (كلفة رأس المال − معدل النمو)**: مع ROE بنسبة 18 %، وكلفة رأس مال 9 %، ونمو 4 %، يُبرَّر P/B ≈ (18 − 4) ÷ (9 − 4) = 2,8. لهذا يكون P/B وROE زوجًا — V05 وV09 في نموذج AKM1 يُقرآن دائمًا معًا. P/B بقيمة 2,0 مع ROE 18 % عالمٌ آخر غير P/B 2,0 مع ROE 8 %. وبالمرآة: P/B دون 1,0 لا يعني تلقائيًا رخيصًا — فقد يسعّر السوق خسائر انخفاض قيمة قادمة أو نموذج عمل يدمّر رأس المال بشكل منهجي."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p11",
+   "en": "## When book value carries the analysis",
+   "ar": "## متى تحمل القيمة الدفترية التحليل"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p12",
+   "en": "- **Banks and insurance companies.** The balance sheet is the business: assets and liabilities continuously valued near market, the capital base regulated. P/B together with ROE is the industry's standard measure — and the net-asset reasoning becomes especially clear when the interest rate environment moves the cost of capital.\n- **Investment companies.** Net asset value is a finely polished book value where the holdings are reported at market value. The relationship between price and net asset value — the discount or the premium, of course — is here the very analysis, not an aid alongside it.\n- **Capital intensive industry and real estate.** Machines, plants and property portfolios dominate the balance sheet. With the proviso that revaluation reserves and depreciation practice can lie years from current market values, book value gives a meaningful floor.",
+   "ar": "- **البنوك وشركات التأمين.** الميزانية العمومية هي الصفقة نفسها: الأصول والالتزامات مقوَّمة باستمرار قرب السوق، وقاعدة رأس مال منظَّمة. P/B مع ROE هو المقياس المعياري للقطاع — ويصبح نقاش القيمة الجوهرية أوضح بشكل خاص حين يحرّك وضعُ الفائدة كلفةَ رأس المال.\n- **شركات الاستثمار.** صافي قيمة الأصول قيمةٌ دفترية مصقولة بدقة تُعرض فيها الحيازات بالقيمة السوقية. العلاقة بين السعر وصافي القيمة — الخصم أو العلاوة في الدورة السعرية — هي هنا جوهر التحليل بعينه، لا أداة مساعدة إلى جانبه.\n- **قطاع صناعي كثيف رأس المال، والعقارات.** الآلات والمنشآت والمحافظ العقارية تهيمن على الميزانية العمومية. مع التحفظ بأن احتياطيات إعادة التقييم وأساليب الإهلاك قد تبعد سنوات عن القيم السوقية الحالية، تعطي القيمة الدفترية أرضية ذات معنى."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p13",
+   "en": "## When P/B fails — three classic cases",
+   "ar": "## متى يفشل P/B — ثلاث حالات كلاسيكية"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p14",
+   "en": "**Case 1: the invisible value.** Brands, software and competence built internally are not reported as assets — only acquired intangible assets (goodwill and acquired rights) enter the balance sheet. Two otherwise equivalent companies therefore get different equity depending on whether the growth was built or bought. A knowledge company with P/B 15 is not expensive in the P/B sense — the measure is simply empty there.",
+   "ar": "**الحالة 1: القيمة غير المرئية.** العلامات التجارية والبرمجيات والكفاءات المبنية داخليًا لا تُعرض كأصول — فقط الأصول غير الملموسة المكتسبة (الشهرة والحقوق المكتسبة) تدخل الميزانية العمومية. لذلك تحصل شركتان متكافئتان فيما عدا ذلك على قدر مختلف من حقوق الملكية تبعًا لما إذا كان النمو مبنيًا أو مشترًى. شركة معرفية بـ P/B 15 ليست غالية بمعنى P/B — فالمقياس فارغ هناك ببساطة."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p15",
+   "en": "**Case 2: the shrunk denominator.** Large share buybacks press down equity, P/B rises mechanically without anything happening to the business, and in the extreme equity turns negative and the division becomes meaningless. The check: the five-year development of equity, not just the last balance sheet date — the same mechanics that make ROE's denominator deceptive (V09's classic pitfall) strike P/B head-on.",
+   "ar": "**الحالة 2: المقام المتقلص.** إعادة شراء الأسهم الكبيرة تضغط حقوق الملكية، فيرتفع P/B ميكانيكيًا دون أن يحدث شيء للصفقة، وفي الحالة القصوى تصبح حقوق الملكية سالبة ويصبح القسم بلا معنى. الفحص: تطور حقوق الملكية على مدى خمس سنوات، لا آخر يوم ميزانية فقط — الميكانيكا نفسها التي تجعل مقام ROE خادعًا (المزلق الكلاسيكي لـ V09) تصيب P/B مباشرة."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p16",
+   "en": "**Case 3: accounting choices that splinter comparability.** IFRS leaves room for different valuation practices — revaluation reserves, capitalized development, treatment of goodwill — and two companies can report the same real position with different reported equity. Before P/B is compared between two companies: read through the notes to the accounts of what the equity actually consists of.",
+   "ar": "**الحالة 3: اختيارات محاسبية تشرذم القابلية للمقارنة.** يترك IFRS مجالًا لممارسات تقييم مختلفة — احتياطيات إعادة التقييم، والتطوير المرسمل، ومعالجة الشهرة — ويمكن لشركتين أن تبلغا عن المركز الحقيقي نفسه بحقوق ملكية مقيدة مختلفة. قبل مقارنة P/B بين شركتين: اقرأ الإيضاحات المتممة للقوائم المالية بشأن ما تتكون منه حقوق الملكية فعلًا."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p17",
+   "en": "## The industry interpretation — what is normal",
+   "ar": "## تفسير القطاع — ما هو طبيعي"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p18",
+   "en": "Descriptively, with no yardstick beyond the comparison group: well-managed banks have historically moved around 0,8–1,5 times book value, with ROE and the interest rate environment explaining where in the range the multiple lands. Investment companies often trade at a discount to net asset value — the discount is itself an object of study, since it reflects both credibility in management and the general appetite for risk. Property companies vary sharply with the valuation cycle and the interest rate environment, because the property values in the books move with the market. And knowledge companies — software, services, brand-driven consumption — are regularly quoted at 5–15 times book value or higher, which is not an alarm bell but a sign that the measure is the wrong tool: the value does not sit in the balance sheet. The rule is the same as for ROE (V09): the multiple has no universal zero point, only industry-specific frames of reference.",
+   "ar": "بوصفٍ لا معيار له سوى مجموعة المقارنة: البنوك جيدة الإدارة تحركت تاريخيًا حول 0,8–1,5 ضعف القيمة الدفترية، مع ROE ووضع الفائدة يفسران أين في النطاق يقع المضاعف. شركات الاستثمار تتداول كثيرًا بخصم عن صافي قيمة الأصول — والخصم في ذاته موضوع دراسة، لأنه يعكس مصداقية الإدارة وشهية المخاطر العامة معًا. شركات العقارات تتغير بحدّة مع دورة التقييم ووضع الفائدة، لأن قيم العقارات في الدفاتر تتحرك مع السوق. وشركات المعرفة — البرمجيات والخدمات والاستهلاك المدفوع بالعلامة التجارية — تُدرج بانتظام عند 5–15 ضعف القيمة الدفترية أو أعلى، وهو ليس جرس إنذار بل علامة على أن المقياس أداة خاطئة: القيمة لا تقع في الميزانية العمومية. صورة القاعدة نفسها كما لـ ROE (V09): ليس للمضاعف نقطة صفر كونية، بل أطر مرجعية خاصة بكل قطاع."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p19",
+   "en": "## The exercise: pair P/B with ROE on a real company",
+   "ar": "## التمرين: اقرن P/B مع ROE في شركة حقيقية"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p20",
+   "en": "1. Fetch equity, treasury stocks and the number of stocks for a company you follow — the balance sheet and the note on equity are enough.\n2. Calculate book value per share and today's P/B.\n3. Pair with ROE for the three most recent years: does the return legitimize the multiple, or does it rest on leverage and a temporary peak?\n4. Enter the numbers in [the calculator](/kalkylator) and compare the placement against the industry's typical level.",
+   "ar": "1. أحضر حقوق الملكية والأسهم الذاتية وعدد الأسهم لشركة تتابعها — تكفي الميزانية العمومية وإيضاح حقوق الملكية.\n2. احسب القيمة الدفترية للسهم — نصيب السهم من حقوق الملكية — وP/B لليوم.\n3. اقرن مع ROE لآخر ثلاث سنوات: هل يُشرعن العائد المضاعفَ، أم يستند إلى الرافعة المالية وقمة مؤقتة؟\n4. أدخل الأرقام في [الحاسبة](/kalkylator) وقارن الموقع مقابل المستوى النمطي للقطاع."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p21",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p22",
+   "en": "- Deepen in [the course P/B (V05)](/kurser/v05-pb): six chapters — chapter after chapter — on book value analysis, bank comparisons and the pair with ROE.\n- See how V05 is placed among the nineteen other variables in [the Curriculum](/laroplan) — the valuation block is read as a whole.\n- Build the context in [the portfolio builder](/min-portfolj): a multiple is one tool among several, never a decision.",
+   "ar": "- تعمّق في الدورة [P/B (V05)](/kurser/v05-pb): ستة فصول — الفصل بعد الفصل — عن تحليل القيمة الدفترية، ومقارنات البنوك، والاقتران مع ROE.\n- شاهد كيف يوضع V05 بين المتغيرات التسعة عشر الأخرى في [المنهج](/laroplan) — كتلة التقييم تُقرأ ككل.\n- ابنِ السياق في [باني المحفظة](/min-portfolj): المضاعف أداة بين عدة أدوات، وليس قرارًا أبدًا."
+  },
+  {
+   "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p23",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:titel",
+   "en": "The P/S ratio — when is Price-to-Sales useful? The formula, a worked example and three pitfalls",
+   "ar": "نسبة P/S — متى يكون Price-to-Sales مفيدًا؟ الصيغة، ومثال محسوب، وثلاثة مزالق"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:ingress",
+   "en": "P/S = market capitalization divided by revenue. Here is the formula, a fully worked example with Swedish numbers, when the multiple is at its most useful — and the three pitfalls that make a low P/S able to hide an expensive company.",
+   "ar": "P/S = القيمة السوقية مقسومة على الإيرادات. ها هي الصيغة، ومثال محسوب بأرقام سويدية، ومتى يكون المضاعف في أكثر حالاته فائدة — والمزالق الثلاثة التي تجعل P/S منخفضة قادرة على إخفاء شركة غالية."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p1",
+   "en": "The P/S ratio — Price-to-Sales — is calculated as the company's market capitalization divided by its annual revenue, and it is at its most useful when earnings are negative, small or temporarily distorted: in other words, exactly where P/E has stopped working. A company with a market capitalization of 6 000 million kronor and revenue of 2 400 million has P/S = 2,5. The question the financial ratio asks is simple — what is the market paying per earned krona of sales? But the number says nothing about how much of that krona becomes profit, and that is where both the strength and the trap lie.",
+   "ar": "نسبة P/S — Price-to-Sales — تُحسب كالقيمة السوقية للشركة مقسومة على الإيرادات السنوية للشركة، وهي في أكثر حالاتها فائدة حين يكون الربح سالبًا أو صغيرًا أو مشوهًا مؤقتًا: أي بالضبط حيث يتوقف P/E عن العمل. شركة بقيمة سوقية قدرها 6 000 مليون كرونة وإيرادات قدرها 2 400 مليون لديها P/S = 2,5. السؤال الذي تطرحه النسبة المالية بسيط — كم يدفع السوق مقابل كل كرونة مبيعات مكتسبة؟ لكن الرقم لا يقول شيئًا عن كم من تلك الكرونة يصبح ربحًا، وهنا يكمن كلٌّ من القوة والفخ."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p2",
+   "en": "## The formula — revenue is line 1, earnings are an afterthought",
+   "ar": "## الصيغة — الإيرادات هي السطر 1، والربح سؤال لاحق"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p3",
+   "en": "**P/S = Market capitalization ÷ Net revenue**",
+   "ar": "**P/S = القيمة السوقية ÷ صافي الإيرادات**"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p4",
+   "en": "Equivalent form, stock by stock: **P/S = Share price ÷ Revenue per stock**. Market capitalization is, of course, the number of stocks multiplied by the current price. Net revenue is the top line of the income statement — revenue after customer discounts, returns and VAT, before a single cost has been deducted.",
+   "ar": "الصيغة المكافئة، سهمًا بسهم: **P/S = سعر السهم ÷ الإيرادات للسهم الواحد**. القيمة السوقية هي عدد الأسهم مضروبًا في السعر الجاري في الدورة السعرية. وصافي الإيرادات هو السطر الأعلى في قائمة الدخل — الإيرادات بعد خصومات العملاء والمرتجعات وضريبة القيمة المضافة، قبل خصم أي تكلفة على الإطلاق."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p5",
+   "en": "One practice question worth the habit: calculate on rolling twelve-month revenue (the last four quarters, LTM) instead of the latest full year. The latest fiscal year can be almost a year old when you read it, and for a company growing 30 % per year the difference between the two numbers is a quarter of a year's revenue. The second practice question: P/S is calculated on market capitalization and ignores debt. The variant **EV/S** — enterprise value divided by revenue — puts net debt in the numerator and gives cleaner comparisons between differently indebted companies. For two companies with equally solid balance sheets the choice matters little; just do not mix systematically.",
+   "ar": "مسألة عملية تستحق أن تصبح عادة: احسب على إيرادات اثني عشر شهرًا متدحرجة (آخر أربعة أرباع سنوية، LTM) بدلًا من آخر سنة كاملة. فالسنة المالية الأحدث قد يكون عمرها قارب السنة حين تقرؤها، ولشركة تنمو 30 % سنويًا يكون الفرق بين الرقمين ربع إيرادات سنة. المسألة العملية الثانية: تُحسب P/S على القيمة السوقية وتتجاهل الدين. والصيغة البديلة **EV/S** — قيمة المؤسسة مقسومة على الإيرادات — تضع صافي الدين في البسط وتعطي مقارنات أنظف بين الشركات المدينة المختلفة. لشركتين لهما الميزانية العمومية المتينة نفسها لا يكاد الخيار يهم؛ فقط لا تخلط بينهما بشكل منهجي."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p6",
+   "en": "## The worked example: same P/S, two different business models",
+   "ar": "## المثال المحسوب: P/S نفسها، ونموذجا عمل مختلفان"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p7",
+   "en": "Imagine two hypothetical companies:",
+   "ar": "تخيل شركتين افتراضيتين:"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p8",
+   "en": "- **Company A** — a cloud service. Market capitalization 6 000 Mkr, rolling revenue 2 400 Mkr. P/S = 6 000 ÷ 2 400 = **2,5**. Gross margin: 80 %.\n- **Company B** — a retail chain. Market capitalization 3 000 Mkr, rolling revenue 3 000 Mkr. P/S = 3 000 ÷ 3 000 = **1,0**. Gross margin: 25 %.",
+   "ar": "- **الشركة A** — خدمة سحابية. القيمة السوقية 6 000 مليون كرونة، والإيرادات المتدحرجة 2 400 مليون. P/S = 6 000 ÷ 2 400 = **2,5**. الهامش الإجمالي: 80 %.\n- **الشركة B** — سلسلة تجزئة. القيمة السوقية 3 000 مليون كرونة، وإيرادات متدحرجة 3 000 مليون. P/S = 3 000 ÷ 3 000 = **1,0**. الهامش الإجمالي: 25 %."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p9",
+   "en": "B looks on paper like half as expensive. But follow each revenue krona down the income statement: of A's krona, 80 öre are kept to cover product development, sales and ultimately profit. Of B's krona, 25 öre are kept — which moreover must carry stores, inventory and logistics before anything at all becomes earnings. A multiple per revenue krona can only be compared between companies whose kronor are worth roughly the same. That is why 0,5 in groceries and 5,0 in software is no paradox — it is the price of the gross margin.",
+   "ar": "تبدو B على الورق أرخص بنصف. لكن تتبّع كل كرونة إيرادات نزولًا في قائمة الدخل: من كرونة A يُحتفظ بـ 80 أورًا لتغطية تطوير المنتجات والمبيعات وفي نهاية المطاف الربح. ومن كرونة B يُحتفظ بـ 25 أورًا — عليها فوق ذلك أن تحمل المتاجر والمخزون واللوجستيات قبل أن يصبح أي شيء ربحًا. المضاعف لكل كرونة إيرادات لا يمكن مقارنته إلا بين شركات كروناتها متساوية القيمة تقريبًا. لهذا ليس 0,5 في تجارة البقالة و5,0 في البرمجيات مفارقةً — بل هو ثمن الهامش الإجمالي."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p10",
+   "en": "Complete with a third angle: if A grows 30 % per year and B 3 %, the worlds differ even more, since a multiple on today's revenue in fact pays for future revenue. A rule of thumb that holds the reasoning together: a high gross margin carries a high P/S; a low gross margin requires either a very low P/S or high growth. In the AKM1 model this is exactly why V04 (P/S) is never read alone but always together with V01 (revenue growth) and V07 (gross margin) — three variables, one picture.",
+   "ar": "استكمل بزاوية ثالثة: إذا نمت A بنسبة 30 % سنويًا وB بنسبة 3 % اختلفت العالمان أكثر، لأن مضاعفًا على إيرادات اليوم يدفع في الواقع ثمن إيرادات المستقبل. قاعدة عملية تربط الاستدلال: الهامش الإجمالي المرتفع يحمل P/S مرتفعة؛ والهامش الإجمالي المنخفض يتطلب إما P/S منخفضة جدًا أو أن يكون النمو مرتفعًا. في نموذج AKM1 لهذا بالضبط لا يُقرأ V04 (P/S) وحده أبدًا بل دائمًا مع V01 (نمو الإيرادات) وV07 (الهامش الإجمالي) — ثلاثة متغيرات، صورة واحدة."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p11",
+   "en": "## When P/S is at its most useful",
+   "ar": "## متى تكون P/S في أكثر حالاتها فائدة"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p12",
+   "en": "Three situations make the multiple the first choice:",
+   "ar": "ثلاث حالات تجعل المضاعف الخيار الأول:"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p13",
+   "en": "1. **Early growth companies with negative results.** When earnings are minus there is no P/E to calculate — division by a negative number is meaningless. Revenue is always there, on line 1, in black and white.\n2. **Temporarily distorted profits.** Large depreciations, restructuring costs or a one-off sale can knock out earnings for a year without saying anything about the business itself. Revenue is the stable number underneath.\n3. **Cyclical companies in the middle of a trough.** In a recession, earnings can fall 60 % while revenue falls 10 %. P/E then looks bizarrely high exactly when the stock exchange is at its most depressed — P/S gives a more stable reference point for where in the cycle the multiple sits.",
+   "ar": "1. **شركات نمو مبكرة بنتائج سالبة.** حين يكون الربح بالسالب لا توجد P/E تُحسب — فالقسمة على عدد سالب بلا معنى. الإيرادات موجودة دائمًا هناك، في السطر 1، بالأبيض والأسود.\n2. **أرباح مشوهة مؤقتًا.** الإهلاكات الكبيرة، أو تكاليف إعادة الهيكلة أو عملية بيع لمرة واحدة يمكن أن تطيح بالربح سنةً كاملة دون أن تقول شيئًا عن الصفقة ذاتها. الإيرادات هي الرقم المستقر من الأسفل.\n3. **شركات دورية في قاع الدورة.** في انحسار اقتصادي يمكن أن يهبط الربح 60 % بينما تهبط الإيرادات 10 %. تبدو P/E حينها مرتفعة بشكل غريب تمامًا حين تكون البورصة في أكثر حالاتها اكتئابًا — وتعطي P/S نقطة مرجعية أكثر استقرارًا لموقع المضاعف في الدورة."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p14",
+   "en": "## Pitfall 1: revenue is not the same as revenue quality",
+   "ar": "## المزلق 1: الإيرادات ليست الشيء نفسه كجودة الإيرادات"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p15",
+   "en": "The accounting rules (IFRS 15) distinguish between acting as principal — reporting revenue gross — and as agent — reporting one's fee. Two marketplaces with identical volume can therefore report entirely different revenue depending on legal structure and contract form. Read the note on revenue recognition before P/S is compared between companies: the same number can measure different things.",
+   "ar": "تميّز قواعد المحاسبة (IFRS 15) بين العمل كطرف أصلي — يقيّد الإيراد بالإجمالي — والعمل كوكيل — يقيّد عمولته. لذلك يمكن لسوقين متطابقي الحجم أن يقيدا إيرادات مختلفة تمامًا تبعًا للهيكل القانوني وشكل العقد. اقرأ إيضاح الإيرادات قبل مقارنة P/S بين الشركات: الرقم نفسه قد يقيس شيئين مختلفين."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p16",
+   "en": "## Pitfall 2: the trap of the low multiple",
+   "ar": "## المزلق 2: فخ المضاعف المنخفض"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p17",
+   "en": "A P/S of 0,3 can be expensive. In structurally low-margin industries — trade, construction, staffing — margins are squeezed further in hard years, and a company traded at 0,3 × revenue with pressed profitability can look cheap until the losses have begun eating the equity. A low P/S without margin analysis is half an analysis. The IT bubble's mirrored lesson is the same story in reverse order: in 1995–2000, revenue growth without a credible path to profitability was valued at astronomical multiples, and when the capital drought came the revenue remained but the companies were gone. The multiple shouted expensive the whole way — what was missing was the question of what the kronor were worth.",
+   "ar": "P/S بقيمة 0,3 قد تكون غالية. في الصناعات منخفضة الهوامش بنيويًا — التجارة والبناء والتوظيف — تنضغط الهوامش أكثر في السنوات الصعبة، وشركة تتداول عند 0,3 × الإيرادات مع ربحية مضغوطة قد تبدو رخيصة إلى أن تبدأ الخسائر التهام حقوق الملكية. P/S منخفضة بلا تحليل للهامش نصفُ تحليل. ودرس فقاعة تقنية المعلومات بالمرآة هو القصة نفسها بترتيب معكوس: في 1995–2000 قُيّم نمو الإيرادات بلا مسار مصداقي نحو الربحية بمضاعفات فلكية، وحين جاء جفاف رأس المال بقيت الإيرادات وذهبت الشركات. صرخ المضاعف «غالٍ» طوال الطريق — وما كان ناقصًا هو السؤال عن قيمة الكرونات."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p18",
+   "en": "## Pitfall 3: revenue growth that has been bought",
+   "ar": "## المزلق 3: نمو الإيرادات المُشترى"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p19",
+   "en": "Discounts, aggressive sign-up offers and purchases of revenue through acquisitions can inflate line 1 without creating corresponding value. The check: follow the gross margin and the cash flow from operations as revenue grows. Growth bought at a loss shows up in the two numbers long before it shows up in the multiple.",
+   "ar": "الخصومات، وعروض الاكتتاب العدوانية، وشراء الإيرادات عبر الاستحواذات، يمكن أن تنفخ السطر 1 دون خلق قيمة مقابلة. الفحص: تابع الهامش الإجمالي والتدفق النقدي من الأنشطة التشغيلية مع نمو الإيرادات. النمو الذي يُشترى بخسارة يظهر في الرقمين قبل ظهوره في المضاعف بزمن طويل."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p20",
+   "en": "## The industry interpretation — the multiple has no zero point",
+   "ar": "## تفسير القطاع — ليس للمضاعف نقطة صفر"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p21",
+   "en": "Descriptively, with no yardstick beyond the comparison group: software companies with gross margins around 75–85 % have historically traded at multiples that would have made Graham raise his eyebrows — often several times revenue — while retail chains with margins around 20–30 % move around fractions of revenue. Commodity and service companies with thin margins often sit below 0,5. None of these levels is cheap or expensive in itself — they are the image of the gross margin. That is why P/S is a comparison measure within industries and a nonsense detector between them: the question is never whether 2,5 is a lot, but whether 2,5 is a lot for a company with this margin structure and this growth rate. A practical rule of thumb from the SaaS world is Rule of 40 — ARR growth plus EBITDA margin should together exceed 40 — and it works for the same reason: it weighs together the multiple's two drivers, growth and profitability, in a single number.",
+   "ar": "بوصفٍ لا معيار له سوى مجموعة المقارنة: شركات البرمجيات بهوامش إجمالية حول 75–85 % تداولت تاريخيًا عند مضاعفات كانت ستجعل Graham يرفع حاجبيه — غالبًا عدة أضعاف الإيرادات — بينما سلاسل التجزئة بهوامش حول 20–30 % تتحرك حول أجزاء من الإيرادات. وشركات المواد الخام والخدمات ذات الهوامش الرقيقة كثيرًا ما تقع تحت 0,5. المستوى الواحد منها ليس رخيصًا ولا غاليًا بذاته — فالمستويات هي انعكاس الهامش الإجمالي. لهذا تكون P/S مقياسَ مقارنة داخل القطاعات وكاشفَ معنى بينها: السؤال ليس أبدًا هل 2,5 كثير، بل هل 2,5 كثير لشركة بهذا الهيكل الهامشي وهذه الوتيرة من النمو. قاعدة عملية من عالم SaaS هي قاعدة 40 — نمو ARR زائد هامش EBITDA ينبغي أن يتجاوزا معًا 40 — وهي تعمل للسبب نفسه: تجمع محرّكي المضاعف، النمو والربحية، في رقم واحد."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p22",
+   "en": "## The exercise: calculate P/S on a real company",
+   "ar": "## التمرين: احسب P/S على شركة حقيقية"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p23",
+   "en": "1. Look up market capitalization and rolling twelve-month revenue for a company you follow.\n2. Calculate P/S on today's numbers — and backwards for the three most recent fiscal years. Is the multiple rising or falling, and does the course of events depend on the price or on revenue?\n3. Look up the gross margin and compare the placement against the industry median in [the calculator](/kalkylator).\n4. Place the three numbers — P/S, growth, margin — side by side and formulate in one sentence what the multiple is paying for.",
+   "ar": "1. اعثر على القيمة السوقية وإيرادات اثني عشر شهرًا متدحرجة لشركة تتابعها.\n2. احسب P/S على أرقام اليوم — وإلى الوراء لآخر ثلاث سنوات مالية. هل يرتفع المضاعف أم يهبط، وهل يعتمد ذلك على الدورة السعرية أم على الإيرادات؟\n3. اعثر على الهامش الإجمالي وقارن الموقع مقابل وسيط القطاع في [الحاسبة](/kalkylator).\n4. ضع الأرقام الثلاثة — P/S، النمو، الهامش — جنبًا إلى جنب وصُغ بجملة واحدة ما يدفع المضاعف ثمنه."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p24",
+   "en": "Fifteen minutes, three numbers — and you know what the figure on the screen actually measures.",
+   "ar": "خمس عشرة دقيقة، وثلاثة أرقام — وتعرف ماذا يقيس الرقم على الشاشة فعلًا."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p25",
+   "en": "## Next steps",
+   "ar": "## الخطوات التالية"
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p26",
+   "en": "- Deepen the multiple in [the course P/S (V04)](/kurser/v04-ps): six chapters — chapter after chapter — on when Price-to-Sales carries the analysis and when it is just decoration.\n- See how V04 is bound to the nineteen other variables in [the Curriculum](/laroplan) — valuation without margin is half-finished work.\n- Test the whole in [the portfolio builder](/min-portfolj): P/S is one voice in the choir, never the soloist.",
+   "ar": "- تعمّق في المضاعف ضمن الدورة [P/S (V04)](/kurser/v04-ps): ستة فصول — الفصل بعد الفصل — عن متى يحمل Price-to-Sales التحليل ومتى يكون مجرد زخرفة.\n- شاهد كيف يرتبط V04 بالمتغيرات التسعة عشر الأخرى في [المنهج](/laroplan) — فالتقييم بلا هامش عملٌ نصف مصنوع.\n- جرّب الصورة الكاملة في [باني المحفظة](/min-portfolj): P/S صوت في الكورال، وليست المنفردة أبدًا."
+  },
+  {
+   "nyckel": "ps-tal-nar-ar-det-anvandbart:p27",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  }
+ ]
+}

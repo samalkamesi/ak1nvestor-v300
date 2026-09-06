@@ -8852,3 +8852,16 @@ Steg 2 (tack/badges) väntar kundens J1-J2-policy.
 **SLUTMÄTNING: 252/333 kurser KOMPLETTA · 56,1 % total täckning · 78 465
 publicerade rader.** Kvar: 81 bokmaster-kurser (30 640 källor ≈ 4 ronder =
 våg 70-71). Från 1,6 % (våg 65) → 56,1 % på tre vågdygn.
+
+## Våg 70 — KOMPLETT (2026-09-06): 266/333 kurser · 63,7 %
+
+Bokmaster rond 3 (14 kurser: valuation-measuring-managing, psychology-of-
+money, snowball, encyclopedia-of-chart-patterns, reminiscences, when-genius-
+failed, you-can-be-genius, against-the-gods, fooled-by-randomness, theory-of-
+investment-value, signal-and-noise, liars-poker, misbehaving, black-swan +
+v70c) = 5 311 källor · 10 622 rader 100p. ALLA 7 originalagenter dog tyst
+vid ~48 min (samma plattformsmönster som v68c) — FORTSÄTTNINGS-AGENTER
+(fyll luckorna ur bygg-listan + ärva QA-loopen) räddade 100 % av arbetet:
+regel bekräftad: vid tyst död,.starta fortsättningsagent per paket, starta
+ALDRIG om från noll. 63,7 % totalt · 89 087 rader. Kvar: 67 kurser (rond
+71-75, paket för 71 extraherade).

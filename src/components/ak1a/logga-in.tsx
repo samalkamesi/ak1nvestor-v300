@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { lasMedlem, sparaMedlem, loggaUt, niva, lasXP, lasStjarnor } from "@/lib/member-local";
+import { lasRefPending, rensaRefPending } from "@/lib/referral";
 import { SIFFROR } from "@/lib/siffror";
 
 /** localStorage-nyckel för spårat samtycke till villkor + integritetspolicy. */
@@ -84,14 +85,21 @@ export function LoggaIn() {
     setBusy(true);
     setStatus("");
     try {
+      // m10 steg 1: bär sessions pending-ref-kod (läst EN gång av
+      // RefMottagare på startsidan) med i registreringen — servern matchar
+      // den mot en aktiv tipskod och KASTAR fältet efteråt (AC2). Ingen kod
+      // ⇒ exakt dagens beteende (AC4).
+      const ref = lasRefPending() || undefined;
       // Hitta eller skapa medlemmen
       const res = await fetch("/api/member/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), name: namn.trim() || null }),
+        body: JSON.stringify({ email: email.trim(), name: namn.trim() || null, ref }),
       });
       const data = await res.json();
       if (res.ok && data.member) {
+        // Koden är konsumerad (matchad eller ej) — kasta fältet direkt.
+        if (ref) rensaRefPending();
         sparaMedlem({ id: data.member.id, email: data.member.email, namn: data.member.name || namn || undefined });
         sparaSamtycke();
         setStatus(

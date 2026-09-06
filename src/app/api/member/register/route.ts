@@ -5,15 +5,21 @@ export const dynamic = "force-dynamic";
 
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { skickaVboutLead, vboutStatusText } from "@/lib/vbout";
+import { lasMedlemsidForKod, saneraRefKod, skrivReferralFramgang } from "@/lib/referral";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { email, name, phone, memberType = "free", sessionId } = body;
+    const { email, name, phone, memberType = "free", sessionId, ref } = body;
 
     if (!email) {
       return NextResponse.json({ error: "email krävs" }, { status: 400 });
     }
+
+    // m10 steg 1: ref-koden saneras SERVER-SIDE (formatvakt — ogiltig ⇒ "")
+    // och används ALDRIG i svar/körlogg. Självvärvarfallet är omöjligt: kod
+    // skapas endast för befintliga medlemmar, attribuering endast för NYA.
+    const refKod = saneraRefKod(ref);
 
     const rest = getSupabaseRest();
     if (!rest) {
@@ -64,6 +70,24 @@ export async function POST(req: NextRequest) {
     const isNewMemberLead = (e: string) => !/^(test|synthetic|dev)@/i.test(e);
 
     const newMember = await createRes.json();
+
+    // m10 steg 1 — REFERENS-ATTRIBUERING (endast NYA registreringar, AC2):
+    // bär begäran en giltig ref-kod OCH matchar den en lagrad aktiv tipskod ⇒
+    // skriv ETT anonymiserat aggregat-event (type=referral, details=
+    // {framgang:true, kod}). Den nya elevens identitet kopplas ALDRIG till
+    // koden (ingen social graf) och ref-fältet kastas efter matchingen — det
+    // finns ALDRIG i svaret eller på medlemsraden. Fire-and-forget: en misslyckad
+    // attribuering får ALDRIG påverka registreringen (vbout-mönstret).
+    if (refKod && rest) {
+      void lasMedlemsidForKod(rest, refKod)
+        .then((tipsgivarid) => {
+          if (!tipsgivarid) return; // okänd/spärrad kod ⇒ tyst noll — exakt som utan kod
+          return skrivReferralFramgang(rest, refKod);
+        })
+        .catch(() => {
+          /* attribuering är statistik, inte registreringsdata — tyst härifrån */
+        });
+    }
 
     // Vbout — ny medlem är sajtens viktigaste lead: mata marknadsautomationen
     // (fire-and-forget: misslyckande påverkar ALDRIG registreringen)

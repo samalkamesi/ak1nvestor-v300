@@ -7,10 +7,14 @@ export const dynamic = "force-dynamic";
 /**
  * /api/admin/konvertering — konverteringsvyns aggregat (MARKNADS-BESLUT VÅG 1b).
  *
- * Sex steg ur BEFINTLIGA källor — NOLL nya spår, NOLL skrivningar (P6/AC1):
+ * Sju steg ur BEFINTLIGA källor — NOLL nya spår, NOLL skrivningar (P6/AC1):
  *   1. Besökare            system_events type=trafik — unika sessioner
  *                          (details.s) 24 h/7 d/30 d (bounded läsning 3 000).
  *   2. Gratismedlemmar     members (PostgREST count=exact): totalt + nya 30 d.
+ *   2b. Tips-värvar        system_events type=referral (details.framgang=
+ *      (m10 steg 1)        true) — registreringar som bar en giltig tipskod.
+ *                          AGGREGAT: ingen koppling till den nya elevens
+ *                          identitet (m10-referral.md AC2 — ingen social graf).
  *   3. Aktiva elever       user_activities 30 d, action ≠ page_view,
  *                          unika session_id — SKATTNING (XP lever bara i
  *                          elevens localStorage; m7 §3a).
@@ -140,7 +144,7 @@ export async function GET(req: NextRequest) {
   const fran30d = new Date(nu - 30 * DAG_MS).toISOString();
 
   // Alla läsningar parallellt — INGA skrivningar (AC1).
-  const [trafikRes, medTotalt, medGratis, medBetalande, medNya30, aktivaRes, fas2Totalt, fas2D30, koPrenTotalt, koPrenD30, konvIntTotalt, konvIntD30] =
+  const [trafikRes, medTotalt, medGratis, medBetalande, medNya30, aktivaRes, fas2Totalt, fas2D30, koPrenTotalt, koPrenD30, konvIntTotalt, konvIntD30, refTotalt, refD30] =
     await Promise.all([
       // 1. Trafik: bounded läsning (samma gräns som /api/trafik).
       fetch(
@@ -168,6 +172,9 @@ export async function GET(req: NextRequest) {
       ),
       antalExakt(rest, "system_events?type=eq.konvertering_intention&select=id"),
       antalExakt(rest, `system_events?type=eq.konvertering_intention&created_at=gte.${fran30d}&select=id`),
+      // 2b. m10 steg 1: tips-värvar — attribuerade registreringar (aggregat).
+      antalExakt(rest, "system_events?type=eq.referral&details-%3E%3Eframgang=eq.true&select=id"),
+      antalExakt(rest, `system_events?type=eq.referral&details-%3E%3Eframgang=eq.true&created_at=gte.${fran30d}&select=id`),
     ]);
 
   // 1. Besökare — unika sessioner per fönster (details.s = hashad token).
@@ -235,6 +242,16 @@ export async function GET(req: NextRequest) {
       kvalitet: "MÄTT",
       notering:
         "Gratis Fas 1-konton (member_type=free) — kostnadsfritt, för alltid. Graden nedan räknas på NYA medlemmar 30 d mot besökare 30 d (samma fönster).",
+    },
+    {
+      id: "referral",
+      namn: "Tips-värvar (elev-för-elev)",
+      varde: refTotalt,
+      sub: `${refD30.toLocaleString("sv-SE")} senaste 30 d`,
+      kalla: "system_events type=referral (details.framgang=true)",
+      kvalitet: "MÄTT",
+      notering:
+        "m10 steg 1 (våg 69): registreringar som bar en giltig tipskod från ett elev-kort. Ren statistik — ingen belöning, ingen koppling till den nya elevens identitet (ingen social graf). Belöningssystemet (tack/badges) är medvetet ej byggt: väntar på kundens policy-uppdatering J1–J2.",
     },
     {
       id: "aktiva",
@@ -343,7 +360,7 @@ export async function GET(req: NextRequest) {
     grader,
     luckor,
     urvalNotering:
-      "Sex steg ur befintliga källor — noll nya spår (P6). Besökare = unika hashade sessioner (analys-samtycke); aktiva = skattning ur aktivitetsspåret; betalande = manuellt underhållet. Räkningar med count=exact (planned-skattningar redovisas aldrig).",
+      "Sju steg ur befintliga källor — noll nya spår (P6). Besökare = unika hashade sessioner (analys-samtycke); aktiva = skattning ur aktivitetsspåret; betalande = manuellt underhållet. Räkningar med count=exact (planned-skattningar redovisas aldrig).",
   };
 
   memo = { vid: Date.now(), svar };

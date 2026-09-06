@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { lasKlaraKurser, lasMedlem, lasStreak, niva } from "@/lib/member-local";
 import { qrMatris, qrPath } from "@/lib/qr";
+import { lasTipskodLokalt, refUrl, saneraRefKod, sparaTipskodLokalt } from "@/lib/referral";
 import { useToast } from "@/hooks/use-toast";
 
 /**
@@ -19,12 +20,24 @@ import { useToast } from "@/hooks/use-toast";
  *    Ingen inloggningsvägg, ingen localStorage-läsning — öppen delning (P1:
  *    aldrig väggar på analyser). Share-texten bär disclaimer-token (AC1).
  *
+ * M10 STEG 1 (våg 69, m10-referral.md §3/rek 2 — attribuering UTAN belöning):
+ * eleven kan OPT-IN skapa en slumpad tipskod ("Skapa din tipskod" — POST
+ * /api/referral/kod; skapandet skickar ENDAST elevens e-post). Med kod pekar
+ * elev-kortets QR på lab.ak1nvestor.com/?ref={kod} och delningstextens rad
+ * blir "Gå med gratis (om du vill): länk". UTAN kod: EXAKT som före (AC4).
+ * Kortets SVG-bild är i sig OFÖRÄNDRAD (elevens prestation, inte kampanj) —
+ * enda skillnaden är QR:ens innehåll. FOMO-FÖRBUD (§0/§3): ingen belöning,
+ * räknare, deadline eller "lås upp"-mekanik får någonsin läggas här — steg 2
+ * (tack) väntar på kundens policy-uppdatering J1–J2.
+ *
  * QR-kodaren importeras från src/lib/qr.ts — sajtens enda, ren TS (VÅG 1a).
  *
  * INTEGRITET: QR-koden genereras med en INNEBOENDE encoder (byte-läge,
  * EC-nivå M) och kortet ritas i webbläsaren — ingen data skickas någonstans,
- * ingen extern tjänst anropas. Delandet är helt frivilligt (pedagogik.ts:
- * "tipsa, tvinga aldrig").
+ * ingen extern tjänst anropas. ENDA undantaget är den explicita opt-in-
+ * knapp som skapar tipskoden (en POST med e-posten — påskriven i knappraden).
+ * Tipskoden är passiv data I QR:en — ingen telemetri. Delandet är helt
+ * frivilligt (pedagogik.ts: "tipsa, tvinga aldrig").
  *
  * HYDRATION-SÄKERT (elev-läget): all localStorage-läsning sker i useEffect;
  * komponenten visar en deterministisk skeleton tills hydration är klar.
@@ -200,6 +213,9 @@ export function DelaKort({
   const [streak, setStreak] = useState(0);
   const [laddar, setLaddar] = useState(false);
   const [delar, setDelar] = useState(false);
+  // m10 steg 1: elevens tipskod (opt-in — "" = inget kod-läge, exakt som före).
+  const [tipskod, setTipskod] = useState("");
+  const [skaparKod, setSkaparKod] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -209,6 +225,7 @@ export function DelaKort({
     setNivaVarde(niva());
     setKurser(lasKlaraKurser().length);
     setStreak(lasStreak().antal);
+    setTipskod(lasTipskodLokalt());
   }, [arAnalys]);
 
   // QR-koden är deterministisk för fast URL — räkna en gång per session.
@@ -216,7 +233,10 @@ export function DelaKort({
   // (den vita rutans marginal) — krav för robust skanning.
   const qr = useMemo(() => {
     // Analys-läget: QR till ANALYS-URL:en, aldrig startsidan (AC3).
-    const mal = arAnalys && qrUrl ? qrUrl : LAB_URL;
+    // Elev-läget: LAB_URL + ev. "?ref=" + tipskod (m10 steg 1) — utan kod
+    // EXAKT som före (AC4). qrMatris klarar URL:er ~100 tecken; en kod-URL
+    // är 36 tecken ⇒ v3 (44 dataord), gott om marginal.
+    const mal = arAnalys && qrUrl ? qrUrl : refUrl(LAB_URL, tipskod);
     const matris = qrMatris(mal);
     if (!matris) return "";
     const n = matris.length;
@@ -224,7 +244,7 @@ export function DelaKort({
     const skala = Math.floor(ruta / (n + 8));
     const marginal = (ruta - n * skala) / 2;
     return qrPath(matris, skala, 928 + marginal, 120 + marginal);
-  }, [arAnalys, qrUrl]);
+  }, [arAnalys, qrUrl, tipskod]);
 
   const namn = medlem?.namn || (medlem ? medlem.email.split("@")[0] : "AK1A-elev");
   const datum = new Date().toLocaleDateString("sv-SE", {
@@ -269,14 +289,52 @@ export function DelaKort({
     }
   }
 
+  /** m10 steg 1: OPT-IN — skapa tipskod via /api/referral/kod (en POST med
+   *  e-posten som enda indata; misslyckande lämnar kortet helt orört). */
+  async function skapaTipskod() {
+    if (skaparKod || !medlem) return;
+    setSkaparKod(true);
+    try {
+      const res = await fetch("/api/referral/kod", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: medlem.email }),
+      });
+      const data = (await res.json()) as { ok?: boolean; kod?: string; error?: string };
+      if (res.ok && data.ok && saneraRefKod(data.kod)) {
+        const kod = saneraRefKod(data.kod);
+        sparaTipskodLokalt(kod);
+        setTipskod(kod);
+        toast({
+          title: "Din tipskod är skapad",
+          description: "Kortets QR-kod bär nu din personliga länk — ladda ner bilden igen om du vill dela den.",
+        });
+      } else {
+        toast({
+          title: "Kunde inte skapa koden",
+          description: data.error || "Försök igen om en stund.",
+        });
+      }
+    } catch {
+      toast({
+        title: "Nätverksfel",
+        description: "Servern kunde inte nås — försök igen.",
+      });
+    } finally {
+      setSkaparKod(false);
+    }
+  }
+
   async function dela() {
     if (delar || !svg) return;
     setDelar(true);
     try {
       // Analys-läge: disclaimer-token i texten (AC1) + analys-URL:en.
+      // Elev-läge: sista raden är m10:s "Gå med gratis (om du vill)" — INGA
+      // belönlöften i delningstexten (m10-referral.md §3 DelaKort-ändring 2).
       const text = arAnalys
         ? `🔬 ${titel} — AK1A Research Lab\n${(rubrikrader ?? []).join("\n")}\nPedagogisk analys — inte investeringsråd.\n${qrUrl || LAB_URL}`
-        : `🔬 ${namn} — AK1A Research Lab\nNivå ${nivaVarde}/100 · ${kurser} kurser klarade · ${streak} dagar i rad\nGå med gratis: ${LAB_URL}`;
+        : `🔬 ${namn} — AK1A Research Lab\nNivå ${nivaVarde}/100 · ${kurser} kurser klarade · ${streak} dagar i rad\nGå med gratis (om du vill): ${refUrl(LAB_URL, tipskod)}`;
       const png = await svgTillPng(svg);
       const fil = new File([png], "ak1a-delkort.png", { type: "image/png" });
       const nav = navigator as DelbarNavigator;
@@ -387,9 +445,41 @@ export function DelaKort({
         </button>
       </div>
 
+      {/* m10 steg 1 — tipskod-raden (ELEV-LÄGET, opt-in). Aldrig i analys-läget:
+          forskningskortet delas öppet, utan kod. FOMO-FÖRBUD (§0/§3): inga
+          räknare, deadlines, belönlöften eller påminnelser här — raden är en
+          stillsam möjlighet, inte en push. */}
+      {!arAnalys && (
+        <div className="mt-5 rounded-xl border border-gold/20 bg-gold/5 px-4 py-3">
+          {tipskod ? (
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Din tipskod <span className="font-mono font-semibold tracking-wider text-gold">{tipskod}</span>{" "}
+              sitter i kortets QR-kod och delningslänken. Frivilligt och utan belöning —
+              bara en kod i länken, inget krav, inget lås.
+            </p>
+          ) : (
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="max-w-md text-xs leading-relaxed text-muted-foreground">
+                Vill du att kortets QR-kod ska bära en personlig tipskod? Helt
+                frivilligt — koden är bara en bokstavskombination i länken, och
+                ingen belöning kopplas till den. Skapandet skickar endast din
+                e-post; kortet ritas förblir i din webbläsare.
+              </p>
+              <button
+                onClick={skapaTipskod}
+                disabled={skaparKod}
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-gold/40 px-4 py-2 text-xs font-semibold text-gold transition-colors hover:bg-gold/10 disabled:opacity-60"
+              >
+                {skaparKod ? "Skapar kod…" : "Skapa din tipskod"}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       <p className="mt-4 text-xs text-muted-foreground">
-        🔒 Kortet ritas i din webbläsare — ingen data skickas någonstans. Du
-        delar det endast om du själv vill.
+        🔒 Kortet ritas i din webbläsare — ingen data skickas någonstans (utom
+        om du själv skapar en tipskod ovan). Du delar det endast om du själv vill.
       </p>
     </section>
   );

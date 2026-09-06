@@ -11,6 +11,7 @@ import { PrecSection } from "@/components/ak1a/sections/prec-section";
 import { AktierSection } from "@/components/ak1a/sections/aktier-section";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { PortalSection } from "@/components/ak1a/sections/portal-section";
+import { RefMottagare } from "@/components/ak1a/ref-mottagare";
 
 // ── M3 SPA-avveckling (2026-09-02) ─────────────────────────────────────────
 // Dessa sektioner duplicerar riktiga routes — valet omdirigeras dit i stället
@@ -115,6 +116,9 @@ export function SpaHem() {
     <div className="flex min-h-screen flex-col max-w-full overflow-x-hidden">
       <Header />
       <main className="flex-1">
+        {/* m10 steg 1: diskret mottagar-rad om besöket bar ?ref= (läses en
+            gång, tvättas ur URL:en, försvinner vid nästa klick). */}
+        <RefMottagare />
         {skaVidarebefodra ? (
           <SektionVidarebefodran sektion={section} />
         ) : (

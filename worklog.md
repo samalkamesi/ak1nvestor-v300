@@ -8715,3 +8715,26 @@ publicerade · allt 100p.**
 
 **Verifieringar:** svit 107/0/0 · Kvalitetsvakten GRÖN · prod 200 ·
 4 SEO-guider live · granskningskö = endast 9 korrekta visuell-inaktuell-rader.
+
+## Våg 68 — START (2026-09-06): bokmaster rond 1 + prestanda våg 2 + guider
+
+**STYRELSEMÄTNING (exakt):** korpus 69 741 källobjekt — publicerade 62 473
+rader = 44,8 % (från 1,6 % vid våg 65). Blogg 100 % · UI 100 % · kursblock
+43,6 %. Kvar: bokmaster-svansen ~35 200 efter pågående rond.
+
+**8 agenter parallellt:**
+- v68a-e (5 ÖA): the-intelligent-investor (2 resterande!) + blue-ocean +
+  security-analysis + interpretation-of-financial-statements + one-up-on-
+  wall-street + little-book-that-beats + margin-of-safety + poor-charlies +
+  the-outsiders + 100-baggers + quality-of-earnings + expectations-investing
+  = 3 331 källor (12 kurser + 3 krympposter)
+- PERF-1: getBackendStatus-cache (o1 #3b) + learn/quiz ur KursSok-props (o1 #4)
+- PERF-2: lazy-mount 4 globala klientkomponenter (o1 #5) + font-slimming (o1 #9)
+- INH-2: 4 nya SEO-guider (#5 P/S, #8 ARR, #9 intäktsdiversifiering, #19 P/B)
+
+**Verifierat före start:** organ-cron 00:11 UTC körde med nya 200k-taket —
+62 482 rader kvar, inget stympat (dataförlusthotet från våg 67 avvärjt).
+Prod grön (/, /kurser, guider, KM/EN-spegel 200).
+
+**Vågplan 69–71:** data/forskning/STYRELSE-VAGPLAN-69-71.md (bokmaster
+rond 2-6 → 100 % tredubbelt språk; prestanda våg 3; m10-QR; m9-skala).

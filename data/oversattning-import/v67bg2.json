@@ -1,0 +1,1527 @@
+{
+ "kurs": "v67bg2",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v67bg2): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p17",
+   "en": "Rule: companies that report profit year after year while running cash flow is negative — read the note on revenue recognition one extra time.",
+   "ar": "قاعدة: الشركات التي تُعلن أرباحًا عامًا بعد عام بينما التدفق النقدي الجاري سالب — اقرأ إيضاح الاعتراف بالإيرادات مرة إضافية."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p18",
+   "en": "## Step 5: The notes to the accounts — where the lawyers speak (3 min)",
+   "ar": "## الخطوة 5: الإيضاحات المتممة للقوائم المالية — حيث يتحدث المحامون (3 د)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p19",
+   "en": "You do not need all the notes to the accounts. Three of them:",
+   "ar": "لست بحاجة إلى جميع الإيضاحات المتممة للقوائم المالية. ثلاثة منها:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p20",
+   "en": "1. **Accounting policies** (note 1) — changed principles this year? Why?\n2. **Segment reporting** — which parts of the company earn the money? The [V03](/kurser/v03-intaktsdiversifiering) course explains\n3. **Major customers** — if one customer is > 10 % of revenue it MUST be disclosed. Concentration = risk",
+   "ar": "1. **مبادئ المحاسبة** (الإيضاح 1) — هل تغيرت المبادئ هذا العام؟ ولماذا؟\n2. **التقرير القطاعي** — أي أجزاء الشركة تكسب المال؟ الدورة [V03](/kurser/v03-intaktsdiversifiering) تشرح ذلك\n3. **العملاء الكبار** — إذا كان عميل واحد يمثل أكثر من 10 % من الإيرادات فيجب الإفصاح عن ذلك. التركز = المخاطر"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p21",
+   "en": "## The route in table form",
+   "ar": "## المسار في شكل جدول"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p22",
+   "en": "| Step | Document part | Gives variable | Time |\n|---|---|---|---|\n| 0 | IR page → PDF | — | 2 min |\n| 1 | Management report | story vs truth | 3 min |\n| 2 | Income statement | V01, V07, V08, V09 | 5 min |\n| 3 | Balance sheet | V05, V10, V19 | 4 min |\n| 4 | Cash flow statement | V19 + honesty check | 3 min |\n| 5 | Note 1 + segments + major customers | V03 + warnings | 3 min |",
+   "ar": "| الخطوة | جزء الوثيقة | يعطي المتغير | الوقت |\n|---|---|---|---|\n| 0 | صفحة علاقات المستثمرين → PDF | — | 2 د |\n| 1 | تقرير الإدارة | القصة مقابل الحقيقة | 3 د |\n| 2 | قائمة الدخل | V01, V07, V08, V09 | 5 د |\n| 3 | الميزانية العمومية | V05, V10, V19 | 4 د |\n| 4 | قائمة التدفقات النقدية | V19 + فحص الصدق | 3 د |\n| 5 | الإيضاح 1 + القطاعات + العملاء الكبار | V03 + تحذيرات | 3 د |"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p23",
+   "en": "**Total: 20 minutes — and you have more control over the numbers than 90 % of the market.**",
+   "ar": "**المجموع: 20 دقيقة — وتكون لديك سيطرة على الأرقام أكبر من تلك التي لدى 90 % من السوق.**"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p24",
+   "en": "## Practice right away",
+   "ar": "## تمرن مباشرة"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p25",
+   "en": "Open the annual report of any company you own or watch, follow the route, and enter the numbers in the [calculator's](/kalkylator) 'Calculate with your own numbers' tab. In 30 minutes you have your first entirely self-collected AKM1 dataset. Missing the company in our analyses? [Request it](/min-portfolj) — frequently requested wishes are prioritized.",
+   "ar": "افتح التقرير السنوي لأي شركة تمتلكها أو تتابعها، واتبع المسار، وأدخل الأرقام في تبويب [الحاسبة](/kalkylator) 'احسب بأرقامك الخاصة'. خلال 30 دقيقة تحصل على أول قاعدة بيانات AKM1 جمعتها بنفسك بالكامل. ألا تجد الشركة في تحليلاتنا؟ [اطلبها](/min-portfolj) — الطلبات المتكررة تحظى بالأولوية."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p26",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:titel",
+   "en": "The debt-to-equity ratio is not a number — it is a wave",
+   "ar": "نسبة الدين إلى حقوق الملكية ليست رقمًا — إنها موجة"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:ingress",
+   "en": "A debt ratio of 0,8 says almost nothing. The direction — is the company borrowing in euphoria or amortizing against the headwind? — says almost everything. On V10 as a time series in the Wave Foundation's 20×5 matrix.",
+   "ar": "نسبة الدين عند 0,8 لا تقول شيئًا تقريبًا. أما الاتجاه — هل تقترض الشركة في زمن النشوة أم تسدد أقساطها في وجه الريح؟ — فيقول كل شيء تقريبًا. حول V10 كسلسلة زمنية في مصفوفة 20×5 لدى أساس الموجات."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p1",
+   "en": "Two companies both have a debt-to-equity ratio of 0,8. The first borrowed its way there over a three-year course of rising prices and euphoric forecasts — the current ratio is the top of a borrowing wave. The other stood at 1,4 two years ago and has since amortized down, quarter by quarter, while the industry fights a headwind. The same number. Two entirely different companies. Two entirely different risk pictures.",
+   "ar": "شركتان لدى كل منهما نسبة الدين إلى حقوق الملكية عند 0,8. الأولى وصلت إلى هناك بالاقتراض على مدى ثلاث سنوات من صعود الدورة السوقية والتوقعات المفعمة بالتفاؤل — فالنسبة الحالية هي قمة موجة اقتراض. والثانية كانت عند 1,4 قبل عامين وهي منذ ذلك الحين تسدد ديونها ربعًا بعد ربع بينما يصارع القطاع الريح المعاكسة. الرقم نفسه. شركتان مختلفتان تمامًا. صورتان للمخاطر مختلفتان تمامًا."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p2",
+   "en": "This is the core of the [Wave Foundation](/vagfundament): a fundamental variable is not a still image but a time series with a direction. And no variable illustrates that better than **V10 — Debt-to-equity ratio**, one of the AKM1 model's 20 fundamental variables and one of the heaviest in the Stability category.",
+   "ar": "هذا هو جوهر [أساس الموجات](/vagfundament): المتغير الأساسي ليس صورة ثابتة بل سلسلة زمنية لها اتجاه. ولا يوضح ذلك أفضل من **V10 — نسبة الدين إلى حقوق الملكية**، أحد متغيرات نموذج AKM1 الـ20 وأحد أثقلها في فئة الاستقرار."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p3",
+   "en": "## The level answers the wrong question",
+   "ar": "## المستوى يجيب عن السؤال الخطأ"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p4",
+   "en": "The question 'how high is the debt-to-equity ratio?' is static. The interesting question is dynamic: **where is it heading, and why?**. Debt built up as the business cycle turns down is something entirely different from debt built up three years ago that is now being paid down out of operating cash flow. The first is a behavior pattern — someone is borrowing in euphoria. The second is also a behavior pattern — someone prioritizes the strength of the balance sheet when the wind blows hardest.",
+   "ar": "السؤال 'ما مقدار نسبة الدين إلى حقوق الملكية؟' سؤال ثابت. أما السؤال المثير فهو ديناميكي: **إلى أين تتجه، ولماذا؟**. الدين المتراكم عندما تنعكس الدورة الاقتصادية شيء مختلف تمامًا عن الدين الذي تراكم قبل ثلاثة أعوام ويُسدد الآن من التدفق النقدي التشغيلي. الأول نمط سلوكي — أحدهم يقترض في زمن النشوة. والثاني أيضًا نمط سلوكي — أحدهم يعطي الأولوية لقوة الميزانية العمومية حين تشتد الريح."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p5",
+   "en": "Behaviors are more analyzable than levels. A level can be captured in a single number; a behavior only shows in a series.",
+   "ar": "السلوكيات أقبل للتحليل من المستويات. المستوى يمكن تصويره في رقم واحد؛ أما السلوك فلا يظهر إلا في سلسلة."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p6",
+   "en": "## The direction reveals the discipline",
+   "ar": "## الاتجاه يكشف الانضباط"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p7",
+   "en": "When we classify V10 as a time series in our 20×5 matrix — 20 variables on the vertical axis, five time horizons (micro, short, medium, long, mega) on the horizontal — we are thus not looking at the ratio in isolation. We look at the wave class per horizon:",
+   "ar": "عندما نصنف V10 كسلسلة زمنية في مصفوفتنا 20×5 — 20 متغيرًا على المحور الرأسي، وخمسة آفاق زمنية (ميكرو، قصير، متوسط، طويل، ميجا) على المحور الأفقي — فنحن لا ننظر إلى النسبة بمعزل عن غيرها. ننظر إلى فئة الموجة لكل أفق:"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p8",
+   "en": "- **Impulse wave ▲** — the debt-to-equity ratio falls, or the balance sheet systematically strengthens\n- **Correction ▼** — borrowing grows, and dilution and refinancing risk builds up\n- **Base building ◼** — the ratio moves sideways, the company holds and does not build\n- **Undecided ·** — the data is not enough. Then we write undecided, and nothing else",
+   "ar": "- **الموجة الدافعة ▲** — تنخفض نسبة الدين إلى حقوق الملكية، أو تتقوى الميزانية العمومية بشكل منهجي\n- **تصحيح ▼** — يزداد الاقتراض، وتتراكم مخاطر تخفيف الملكية وإعادة التمويل\n- **بناء القاعدة ◼** — تتحرك النسبة جانبيًا، فالشركة تتماسك ولا تبني\n- **غير محسوم ·** — البيانات لا تكفي. حينها نكتب غير محسوم، ولا شيء غير ذلك"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p9",
+   "en": "Note that the symbols describe the fundamental's movement, not the price's. A ▼ on V10 does not mean the stock is falling — it means the company is wobbling. Is anything more worth studying than a company whose fundamentals weaken while the course of the price rises? That is the divergence, and we treat it in its own post.",
+   "ar": "لاحظ أن الرموز تصف حركة الأساس لا حركة السعر. ▼ على V10 لا تعني أن السهم يهبط — بل تعني أن الشركة تتأرجح. هل هناك ما هو أجدر بالدراسة من شركة تضعف أساسياتها بينما تصعد الدورة السعرية؟ تلك هي الانفراجة، ونخصص لها مقالًا مستقلًا."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p10",
+   "en": "## Context still governs the interpretation",
+   "ar": "## السياق لا يزال يحكم التفسير"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p11",
+   "en": "That V10 becomes a wave does not change the old truth: debt is judged contextually. A bank with a high debt-to-equity ratio is no alarm — that is the business model. A growth company at the same ratio is a different story. A net cash position can also hide traps: cash locked in foreign subsidiaries, cash earmarked for a specific investment, cash that is really prepaid items. The wave class helps here, but it does not replace reading the notes to the accounts in the annual report — it points out where you should read.",
+   "ar": "كون V10 يصبح موجة لا يغيّر الحقيقة القديمة: الدين يُقيَّم حسب السياق. بنك ترتفع لديه نسبة الدين إلى حقوق الملكية ليس إنذارًا — فهذا هو نموذج العمل. أما شركة نمو بالنسبة نفسها فقصة أخرى. وصافي النقد قد يخفي فخاخًا أيضًا: نقد محتجز في شركات تابعة أجنبية، ونقد مخصص لاستثمار بعينه، ونقد هو في حقيقته بنود مدفوعة مقدمًا. فئة الموجة تساعد هنا، لكنها لا تحل محل قراءة الإيضاحات المتممة للقوائم المالية في التقرير السنوي — بل تحدد أين ينبغي أن تقرأ."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p12",
+   "en": "And interest rate sensitivity is debt's third dimension: the same ratio is more dangerous in a rising rate environment than in a falling one. A correction ▼ on V10 in a high-rate environment is more serious than the same correction when the interest rate is falling. The matrix shows the movement — you as the analyst weigh in the world around it.",
+   "ar": "وحساسية سعر الفائدة هي البعد الثالث للدين: النسبة نفسها أخطر في بيئة فوائد صاعدة منها في بيئة هابطة. تصحيح ▼ على V10 في بيئة فوائد مرتفعة أشد خطورة من التصحيح نفسه عندما تنخفض الفائدة. المصفوفة تعرض الحركة — وأنت بوصفك المحلل تُدخل العالم من حولها في الحساب."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p13",
+   "en": "## The dangerous pattern — and the fine one",
+   "ar": "## النمط الخطير — والنمط الجميل"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p14",
+   "en": "The pattern that deserves the most skepticism is the combination: a debt-to-equity ratio rising **at the same time** as profitability (V09) corrects and margins (V07, V08) are squeezed. Borrowing more while earning less — that is the equation behind almost every corporate collapse we have studied in our cases. High debt alone rarely kills companies; high debt meeting falling revenue does.",
+   "ar": "النمط الذي يستحق أكبر قدر من التشكك هو التوليفة: نسبة الدين إلى حقوق الملكية ترتفع **في الوقت نفسه** الذي تتراجع فيه الربحية (V09) وتُضغط فيه الهوامش (V07, V08). الاقتراض أكثر مع الكسب أقل — هذه هي المعادلة وراء كل انهيار شركات تقريبًا درسناه في حالاتنا. الدين المرتفع وحده نادرًا ما يقتل الشركات؛ الدين المرتفع عند التقائه مع الإيرادات المتراجعة هو ما يفعل."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p15",
+   "en": "The opposite pattern — amortizing against the headwind, perhaps even with profit growth stalled — looks dull in a table. In a time series it looks like character. Companies that strengthen the balance sheet when the business cycle is at its weakest have historically often been the ones that could invest cheaply when the turn came, while competitors were busy negotiating with the banks. The Wave Foundation makes that pattern visible years before it shows up in a valuation multiple.",
+   "ar": "النمط المعاكس — التسديد في وجه الريح، وربما مع توقف نمو الأرباح — يبدو مملًا في جدول. لكنه في سلسلة زمنية يبدو كطبع راسخ. الشركات التي تقوّي الميزانية العمومية حين تكون الدورة الاقتصادية في أضعف حالاتها كانت تاريخيًا كثيرًا ما تكون من استطاعت الاستثمار رخيصًا عند مجيء الانعطاف، بينما انشغل المنافسون بالتفاوض مع البنوك. أساس الموجات يجعل ذلك النمط مرئيًا سنوات قبل أن يظهر في مضاعف التقييم."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p16",
+   "en": "## The honesty principle applies here too",
+   "ar": "## مبدأ الصدق ينطبق هنا أيضًا"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p17",
+   "en": "Quarterly data on balance sheet items is noisy, some companies report rarely, and the history at data vendors is short. When we cannot classify V10's movement on a horizon we write **undecided** — we do not guess, do not stretch the data, and do not fill gaps with stitched-together half-truths. The exact execution of the classification rules is our know-how; how you read the waves we teach openly.",
+   "ar": "البيانات الفصلية على بنود الميزانية العمومية مشوشة، وبعض الشركات نادرًا ما تُصدر تقارير، والتاريخ المتاح لدى مزودي البيانات قصير. عندما نعجز عن تصنيف حركة V10 على أفق زمني نكتب **غير محسوم** — نحن لا نخمن ولا نمدّ البيانات ولا نملأ الفراغات بأنصاف حقائق ملحومة. التنفيذ الدقيق لقواعد التصنيف هو معرفتنا الخاصة؛ أما كيفية قراءة الموجة فنعلّمها بكل انفتاح."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p18",
+   "en": "## Study it yourself",
+   "ar": "## ادرس بنفسك"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p19",
+   "en": "Want to see V10 as a wave instead of a number? Everything in Phase 1 is free.",
+   "ar": "أتريد أن ترى V10 كموجة بدلاً من رقم؟ كل شيء في المرحلة 1 مجاني."
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p20",
+   "en": "- [Open the Wave Foundation](/vagfundament) — see V10's wave class on all five horizons, applied to a real stock\n- The [Debt-to-equity ratio (V10)](/kurser/v10-skuldsattningsgrad) course — six chapters on the variable, with worked examples and industry comparisons\n- [Your portfolio's debt profile](/min-portfolj) — how your holdings' Stability rows move, together and individually\n- [AKM1 — The Controversial Model](/kurser/akm1-den-kontroversiella-modellen) — the entire fundamentals side, from V01 to V20",
+   "ar": "- [افتح أساس الموجات](/vagfundament) — شاهد فئة موجة V10 على الآفاق الخمسة كلها مطبقةً على السهم الحقيقي\n- الدورة [نسبة الدين إلى حقوق الملكية (V10)](/kurser/v10-skuldsattningsgrad) — ستة فصول — الفصل بعد الفصل — عن المتغير، مع أمثلة حسابية ومقارنات بين القطاعات\n- [ملف الديون في المحفظة](/min-portfolj) — كيف تتحرك صفوف الاستقرار لحيازاتك، مجتمعةً ومنفردةً\n- [AKM1 — النموذج المثير للجدل](/kurser/akm1-den-kontroversiella-modellen) — جانب الأساسيات كاملًا، من V01 إلى V20"
+  },
+  {
+   "nyckel": "skuldsattningsgraden-som-vag:p21",
+   "en": "Educational analysis, not investment advice — V10's wave is a question to you, never a decision for you.",
+   "ar": "تحليل تعليمي وليس نصيحة استثمارية — موجة V10 سؤال يُطرح عليك، وليست أبدًا قرارًا يُتخذ عنك."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:titel",
+   "en": "V09: Calculate ROE like an analyst",
+   "ar": "V09: احسب ROE مثل المحلل"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:ingress",
+   "en": "ROE is AKM1's most important profitability variable. Here is the formula, the Du Pont breakdown, common mistakes, and how Carnegie uses it — with worked examples.",
+   "ar": "ROE هو متغير الربحية الأهم في AKM1. ها هي الصيغة، وتفكيك Du Pont، والأخطاء الشائعة، وكيف يستخدمها Carnegie — مع أمثلة حسابية."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p1",
+   "en": "If you could learn only one fundamental variable — one to carry with you for the rest of your life as an investor — it would be ROE, return on equity. In the AKM1 model it is V09, and it carries heavy weight for one reason: ROE is the only variable that captures the entire profitability chain in a single number.",
+   "ar": "لو لم تتعلم سوى متغير واحد — المتغير الأساسي الوحيد الذي تحمله معك بقية حياتك كمستثمر — لكان ROE، أي العائد على حقوق الملكية. في نموذج AKM1 هو V09، وله وزن ثقيل لسبب واحد: ROE هو المتغير الوحيد الذي يلتقط سلسلة الربحية كاملة في رقم واحد."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p2",
+   "en": "## The formula",
+   "ar": "## الصيغة"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p3",
+   "en": "ROE = Profit after tax ÷ Equity",
+   "ar": "ROE = الربح بعد الضريبة ÷ حقوق الملكية"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p4",
+   "en": "Sounds simple. But as always the keys lie in the details: which profit, which capital, which period?",
+   "ar": "يبدو بسيطًا. لكن كما هي العادة تقع المفاتيح في التفاصيل: أي ربح، وأي رأس مال، وأي فترة؟"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p5",
+   "en": "## Three decisions that determine whether your ROE is right",
+   "ar": "## ثلاثة قرارات تحدد ما إذا كان ROE لديك دقيقًا"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p6",
+   "en": "**1. Average or closing value?** Equity grows during the year (profit is retained). If you use the year-end capital you underestimate the return on the capital that was actually at work. Institutions often use the average of opening and closing equity.",
+   "ar": "**1. المتوسط أم القيمة الختامية؟** حقوق الملكية تنمو خلال العام (يُحتفظ بالربح). إذا استخدمت رأس مال نهاية العام فأنت تقلل من تقدير العائد على رأس المال الذي كان في العمل فعلًا. المؤسسات كثيرًا ما تستخدم متوسط حقوق الملكية الافتتاحية والختامية."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p7",
+   "en": "**2. Adjusted equity?** In Sweden, equity often contains large undistributed reserves (especially in investment companies and owner-led companies). Analysts sometimes adjust — but be consistent between companies.",
+   "ar": "**2. حقوق الملكية المعدلة؟** في السويد كثيرًا ما تنطوي حقوق الملكية على احتياطيات غير موزعة كبيرة (خاصة في شركات الاستثمار والشركات التي تقودها الملكية). المحللون يعدّلون أحيانًا — لكن كن متسقًا بين الشركات."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p8",
+   "en": "**3. Comparability.** ROE for a bank (12–15 %) is not ROE for an industrial company (8–10 %) is not ROE for a SaaS company (it can be negative in the growth phase and still be valuable). Compare only within a sector — and preferably against the company's own 5-year history.",
+   "ar": "**3. قابلية المقارنة.** ROE للبنك (12–15 %) ليس هو ROE لشركة صناعية (8–10 %) وليس هو ROE لشركة SaaS (قد يكون سالبًا في مرحلة النمو ويبقى ذا قيمة). قارن داخل القطاع فقط — والأفضل مقابل تاريخ الشركة نفسه على مدى 5 سنوات."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p9",
+   "en": "## Du Pont: tear ROE apart into three parts",
+   "ar": "## Du Pont: فكك ROE إلى ثلاثة أجزاء"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p10",
+   "en": "ROE = Margin × Turnover ratio × Leverage",
+   "ar": "ROE = الهامش × معدل الدوران × الرافعة المالية"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p11",
+   "en": "This is the Du Pont equation, and it is worth its weight in gold. Two companies with ROE 15 % can be entirely different businesses:",
+   "ar": "هذه هي معادلة Du Pont، وإنها لا تُقدَّر بثمن. شركتان لديهما ROE بنسبة 15 % قد تكونان عملين مختلفين تمامًا:"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p12",
+   "en": "- A high-margin, low-turnover company with little debt (a quality company — e.g. a niche consulting firm)\n- A low-margin, fast-turnover company with high leverage (efficient but fragile — e.g. retail)",
+   "ar": "- شركة هوامش مرتفعة ودوران منخفض مع دين قليل (شركة جودة — مثل شركة استشارات متخصصة)\n- شركة هوامش منخفضة ودوران سريع مع ارتفاع الرافعة المالية (فعالة لكنها هشة — مثل تجارة التجزئة)"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p13",
+   "en": "Same ROE, entirely different risk. Du Pont shows where the return comes from — and therefore how sustainable it is.",
+   "ar": "ROE نفسه، مع اختلاف المخاطر كليًا. Du Pont يُظهر من أين يأتي العائد — وبالتالي مدى استدامته."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p14",
+   "en": "## Common mistakes private investors make",
+   "ar": "## أخطاء شائعة يرتكبها المستثمرون الأفراد"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p15",
+   "en": "**Confusing ROE with stock returns.** ROE measures the company's capital productivity, not your return as a shareholder. A company with ROE 20 % can be a bad stock if you paid 5 times book value.",
+   "ar": "**الخلط بين ROE وعائد السهم.** يقيس ROE إنتاجية رأس مال الشركة، لا العائد الذي تجنيه أنت بوصفك المساهم. شركة ذات ROE بنسبة 20 % قد تكون سهمًا سيئًا إذا دفعت 5 أضعاف القيمة الدفترية."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p16",
+   "en": "**Ignoring leverage.** ROE driven by debt is no achievement — it is risk. Always check net debt/EBITDA next to ROE (in AKM1: V12 and V13).",
+   "ar": "**تجاهل الرافعة المالية.** ROE المدفوع بالدين ليس إنجازًا — بل هو من المخاطر. تحقق دائمًا من صافي الدين/EBITDA إلى جانب ROE (في AKM1: V12 وV13)."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p17",
+   "en": "**Forgetting the timing of fiscal years.** A half-year reported ROE × 2 is not annual ROE. Seasons, one-off items, and currencies distort it.",
+   "ar": "**نسيان توقيت السنوات المالية.** ROE نصف سنوي × 2 ليس ROE سنويًا. المواسم والبنود لمرة واحدة والعملات تشوه النتيجة."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p18",
+   "en": "## Worked example: Volvo Cars (simplified)",
+   "ar": "## مثال حسابي: Volvo Cars (مبسط)"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p19",
+   "en": "Say a company reports profit after tax of 12,5 bn SEK and equity of 65 bn SEK. Average capital (if opening was 60): 62,5 bn.",
+   "ar": "قل إن شركة تُعلن ربحًا بعد الضريبة قدره 12,5 مليار SEK وحقوق الملكية قدرها 65 مليار SEK. متوسط رأس المال (إذا كان الافتتاحي 60): 62,5 مليار."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p20",
+   "en": "ROE = 12,5 ÷ 62,5 = 20 %",
+   "ar": "ROE = 12,5 ÷ 62,5 = 20 %"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p21",
+   "en": "Du Pont: net margin ~5 % × turnover ratio ~1,6 × leverage ~2,5. The return is driven by volume and leverage — not by extreme margin. That tells you what you must monitor: margin pressure in price wars and interest rate sensitivity.",
+   "ar": "Du Pont: صافي الهامش ~5 % × معدل الدوران ~1,6 × الرافعة المالية ~2,5. العائد مدفوع بالحجم والرافعة المالية — لا بهامش متطرف. هذا يخبرك بما يجب أن تراقبه: ضغط الهوامش عند حرب الأسعار وحساسية سعر الفائدة."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p22",
+   "en": "(We report exact figures in our full [Volvo Cars analysis](/analyser/VOLCAR-B) — these are simplified numbers for the pedagogy.)",
+   "ar": "(نعرض الأرقام الدقيقة في [تحليل Volvo Cars الكامل](/analyser/VOLCAR-B) — وهذه أرقام مبسطة لأغراض التعليم.)"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p23",
+   "en": "## How AK1A uses V09",
+   "ar": "## كيف تستخدم AK1A متغير V09"
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p24",
+   "en": "In AKM1, V09 is scored 0–5 against the sector median and the company's trend. Rising ROE with stable leverage gives a high score. Falling ROE despite growth is a warning flag — the company is growing poorer.",
+   "ar": "في AKM1 يُقيَّم V09 من 0 إلى 5 مقابل وسيط القطاع والاتجاه الخاص بالشركة. ارتفاع ROE مع استقرار الرافعة المالية يعطي درجة عالية. انخفاض ROE رغم النمو راية تحذير — الشركة تنمو نحو الفقر."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p25",
+   "en": "Want to practice yourself? The course [V09 in the AKM1 series](/kurser/v09-roe) contains chapters with calculation exercises, the Lynch and Graham perspectives, and how AK1 interprets the variable in the wave matrix.",
+   "ar": "أتريد التمرن بنفسك؟ الدورة [V09 في سلسلة AKM1](/kurser/v09-roe) تتضمن فصولًا من التمارين الحسابية على ROE — الفصل بعد الفصل — إضافة إلى منظورَي Lynch وGraham وكيف يفسّر AK1 المتغير في مصفوفة الموجات."
+  },
+  {
+   "nyckel": "v09-roe-avkastning-eget-kapital:p26",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:titel",
+   "en": "V12: Revenue stability — how to analyze it",
+   "ar": "V12: استقرار الإيرادات — هكذا تحللها"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:ingress",
+   "en": "How predictable revenue is. Recurring (ARR) > contracts > one-offs. Variable V12 in AKM1 explained: definition, calculation, and traps.",
+   "ar": "ما مدى قابلية الإيرادات للتنبؤ. المتكررة (ARR) > العقود > لمرة واحدة. متغير V12 في AKM1 مشروحًا: التعريف والحساب والفخاخ."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p1",
+   "en": "Stable revenue = predictable cash flows = the company can plan, invest, and grow without share issues. Volatile revenue = the company must hold extra cash = lower efficiency.",
+   "ar": "الإيرادات المستقرة = تدفقات نقدية قابلة للتنبؤ = تستطيع الشركة التخطيط والاستثمار والنمو دون اللجوء إلى إصدار أسهم. إيرادات متقلبة = على الشركة الاحتفاظ بمزيد من النقد = كفاءة أقل."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p2",
+   "en": "This is **V12 — Revenue stability** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V12 — استقرار الإيرادات** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p4",
+   "en": "Cash flow stability as an analytical concept was developed late compared with other financial metrics. While the debt-to-equity ratio and liquidity were already being analyzed in the 1930s by Graham and Dodd, cash flow statement analysis only became mainstream in the 1980s. Two drivers: 1) Buffett and Munger popularized 'owner earnings' (cash flow minus capex) as the true value. 2) The scandals of the 2000s (Enron, Worldcom) showed that earnings could be manipulated through accounting, but cash flow was harder to fake. In the 1990s the SaaS business model (Salesforce 1999, Netflix 2007, Adobe 2013) became a new paradigm — 'ARR' as a metric was created. Pre-SaaS, 'recurring revenue' was mainly newspaper subscriptions, gym memberships, and service contracts.",
+   "ar": "استقرار التدفق النقدي كمفهوم تحليلي تطور متأخرًا مقارنة بمقاييس مالية أخرى. فبينما كان تحليل نسبة الدين إلى حقوق الملكية والسيولة قائمًا منذ عقد 1930 على يد Graham وDodd، لم يصبح تحليل قائمة التدفقات النقدية سائدًا إلا في عقد 1980. محركان: 1) جعل Buffett وMunger مفهوم 'owner earnings' (التدفق النقدي مطروحًا منه capex) شائعًا بوصفه القيمة الحقيقية. 2) أظهرت فضائح عقد 2000 (Enron وWorldcom) أن الأرباح قابلة للتلاعب محاسبيًا، بينما التدفق النقدي أصعب تزييفًا. وفي عقد 1990 أصبح نموذج عمل SaaS (Salesforce عام 1999، Netflix عام 2007، Adobe عام 2013) نموذجًا جديدًا — فوُلد مقياس 'ARR'. وقبل حقبة SaaS كانت 'الإيرادات المتكررة' أساسًا اشتراكات صحف، وعضويات صالات رياضية، وعقود خدمة."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p5",
+   "en": "## Stability over time — the forgotten dimension",
+   "ar": "## الاستقرار عبر الزمن — البعد المنسي"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p6",
+   "en": "Three dimensions of stability The AKM1 stability category has three variables that answer different time horizons. Debt-to-equity ratio (V10) — long-term financial structure, a 5-10 year perspective. Liquidity (V11) — short-term survival, a 30-90 day perspective. Cash flow stability (V12) — medium-term predictability, a 1-3 year perspective. V12 answers the question: 'if you look at the company's cash flow from operations over the last 5 years — how stable is it?' A company that generates 100 MSEK in operating cash year after year (small variation) has high cash flow stability. A company whose operating cash swings between 50 MSEK and 200 MSEK has low. This stability is fundamental for investors: it determines the safety of the dividend, the ability to reinvest, and the company's capacity to carry debt across a business cycle. 📖 DEFINITION Cash flow stability = the degree of predictability in the company's operating cash flow over time. High = ARR-based or contract-based revenue.",
+   "ar": "ثلاثة أبعاد للاستقرار تضم فئة الاستقرار في AKM1 ثلاثة متغيرات تجيب عن آفاق زمنية مختلفة. نسبة الدين إلى حقوق الملكية (V10) — هيكل مالي طويل الأجل بمنظور 5-10 سنوات. السيولة (V11) — البقاء قصير الأجل بمنظور 30-90 يومًا. استقرار التدفق النقدي (V12) — قابلية تنبؤ متوسطة الأجل بمنظور 1-3 سنوات. يجيب V12 عن السؤال: 'إذا نظرت إلى التدفق النقدي من الأنشطة التشغيلية للشركة خلال آخر 5 أعوام — فما مدى استقراره؟'. شركة تولّد 100 مليون SEK من النقد التشغيلي عامًا بعد عام (تفاوت صغير) لديها استقرار عالٍ للتدفق النقدي. شركة يتأرجح نقد تشغيلها بين 50 مليون SEK و200 مليون SEK لديها استقرار منخفض. هذا الاستقرار جوهري للمستثمرين: فهو يحدد أمان التوزيعات، وإمكانية إعادة الاستثمار، وقدرة الشركة على حمل الدين عبر دورة اقتصادية كاملة. 📖 التعريف استقرار التدفق النقدي = درجة قابلية التنبؤ بالتدفق النقدي التشغيلي للشركة عبر الزمن. مرتفع = الإيرادات القائمة على ARR أو على العقود."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p7",
+   "en": "## Assessing cash flow stability in practice",
+   "ar": "## تقييم استقرار التدفق النقدي عمليًا"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p8",
+   "en": "Five-step process Step 1: Calculate the ARR share — read the CEO statement or the note on 'Revenue structure' or 'Recurring revenue'. Some companies (SaaS) report ARR directly. Others (industrial) require you to look for 'Service' or 'Aftermarket' as segments. Step 2: Assess contract lengths — read the notes to the accounts on 'Agreements' or 'Contracts'. Multi-year agreements (3-5 years+) give high stability. Monthly agreements give low. Step 3: Analyze customer lifetime — look for 'Average customer relationship' or 'Churn rate'. Companies with churn <5% have high stability; >15% have low. Step 4: Look at the historical variation of the cash flow — calculate the standard deviation of operating cash flow over 5 years. Low variation = high stability. Step 5: Assess cycle sensitivity — compare operating cash in an economic boom vs a recession. Non-cyclical companies (pharma, software) have high stability; cyclical ones (industrial, construction) have low.",
+   "ar": "عملية من خمس خطوات الخطوة 1: احسب حصة ARR — اقرأ كلمة المدير العام أو الإيضاح المتمم للقوائم المالية عن 'هيكل الإيرادات' أو 'الإيرادات المتكررة'. بعض الشركات (SaaS) تفصح عن ARR مباشرة. وأخرى (صناعية) عليك فيها البحث عن 'الخدمات' أو 'ما بعد البيع' بوصفها قطاعات. الخطوة 2: قيّم مدد العقود — اقرأ الإيضاحات المتممة للقوائم المالية عن 'الاتفاقيات' أو 'العقود'. الاتفاقيات متعددة الأعوام (3-5 أعوام فأكثر) تمنح استقرارًا عاليًا. والشهرية تمنح استقرارًا منخفضًا. الخطوة 3: حلل عمر العميل — ابحث عن 'متوسط علاقة العميل' أو 'معدل التسرب'. الشركات ذات تسرب أقل من 5% استقرارها عالٍ؛ وأكثر من 15% استقرارها منخفض. الخطوة 4: انظر إلى التباين التاريخي للتدفق النقدي — احسب الانحراف المعياري للتدفق النقدي التشغيلي على مدى 5 أعوام. تباين منخفض = استقرار عالٍ. الخطوة 5: قيّم الحساسية للدورة — قارن النقد التشغيلي في الازدهار الاقتصادي مقابل الركود. الشركات غير الدورية (الأدوية، البرمجيات) استقرارها عالٍ؛ والدورية (الصناعة، الإنشاءات) استقرارها منخفض."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p9",
+   "en": "## Stability traps and illusions",
+   "ar": "## فخاخ الاستقرار وأوهامه"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p10",
+   "en": "The ARR illusion — high churn A company can have 'ARR 60%' but if churn is 30% per year, ARR is not stable — customers leave quickly and new ones must replace them. Effective 'renewed ARR' is much lower than reported ARR. Three problems: 1) 'Gross ARR' vs 'Net ARR' — a company can report 'ARR 100 MSEK' but if churn is 30 MSEK, the net is only 70 MSEK. 2) NRR (Net Revenue Retention) — if NRR <100%, the existing customer base shrinks. 3) Contract renewals — companies with 1-year agreements and 80% renewal have 'stability' but not as strong as 5-year agreements with 95% renewal. Read the notes to the accounts on 'Churn' or 'Retention' carefully. Salesforce (NRR 120%+) has genuine ARR stability. Sinch (historical NRR ~95%) had 'ARR' but not stable — crashed in 2022. Lesson: combine the ARR share with NRR and churn to judge true stability.",
+   "ar": "وهم ARR — التسرب المرتفع قد تكون لدى شركة 'ARR 60%' لكن إذا كان التسرب 30% سنويًا فلن يكون ARR مستقرًا — العملاء يغادرون بسرعة ويجب أن يحل محلهم جدد. فـ'ARR المجدد' الفعلي أدنى بكثير من ARR المعلن. ثلاث مشكلات: 1) 'ARR الإجمالي' مقابل 'ARR الصافي' — قد تعلن شركة عن 'ARR 100 مليون SEK' لكن إذا كان التسرب 30 مليون SEK فالصافي 70 مليون SEK فقط. 2) NRR (الاحتفاظ الصافي بالإيرادات) — إذا كان NRR أقل من 100% فإن قاعدة العملاء القائمة تنكمش. 3) تجديد العقود — الشركات ذات العقود لمدة 1 عام وتجديد 80% لديها 'استقرار' لكنه ليس بقوة العقود لمدة 5 أعوام بتجديد 95%. اقرأ الإيضاحات المتممة للقوائم المالية عن 'التسرب' أو 'الاحتفاظ' بعناية. فـSalesforce (بـNRR يتجاوز 120%) لديها استقرار ARR حقيقي. أما Sinch (بـNRR تاريخي ~95%) فكان لديها 'ARR' غير مستقر — وانهارت عام 2022. الدرس: اجمع حصة ARR مع NRR ومع التسرب للحكم على الاستقرار الحقيقي."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p11",
+   "en": "## Three perspectives on revenue stability",
+   "ar": "## ثلاثة منظورات حول استقرار الإيرادات"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p12",
+   "en": "**Peter Lynch:** Lynch loved companies with 'predictable earnings' — a stable revenue base. He argued that predictability is worth a premium. 'A company where you know what next quarter brings is worth more than one where you guess.' Lynch preferred consumer goods and pharmaceuticals (stable) over cyclicals (volatile).",
+   "ar": "**Peter Lynch:** عشق Lynch الشركات ذات 'الأرباح القابلة للتنبؤ' — قاعدة إيرادات مستقرة. كان يرى أن قابلية التنبؤ تستحق علاوة سعرية. 'شركة تعرف ما سيقدمه الربع القادم أغلى قيمة من شركة تخمن فيها'. فضّل Lynch سلع الاستهلاك والأدوية (المستقرة) على الدورية (المتقلبة)."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p13",
+   "en": "**Benjamin Graham:** Graham emphasized revenue stability strongly. His 'defensive investor' rule: positive earnings every year for the last 10 years. Graham argued that stability indicates a durable business model. 'A company with loss years is a company you do not understand.' He adjusted the value downward for volatile companies.",
+   "ar": "**Benjamin Graham:** أولى Graham استقرار الإيرادات أهمية كبيرة. قاعدته للمستثمر الدفاعي: أرباح موجبة كل عام خلال آخر 10 أعوام. كان Graham يرى أن الاستقرار يدل على نموذج عمل راسخ. 'الشركة التي فيها سنوات خسارة شركة لا تفهمها'. كان يخفض القيمة للشركات المتقلبة."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 5%. Revenue stability is assessed on three axes: (1) annual variance — low variance = good, (2) ARR share — high ARR = stable, (3) cyclical exposure — cyclical companies (mines, banks) have naturally volatile revenue. AKM1 adjusts stability for cyclicality — a steel company with 30% revenue variance can be 'stable' in its context.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 5%. يُقيَّم استقرار الإيرادات على ثلاثة محاور: (1) التباين السنوي — تباين منخفض = جيد، (2) حصة ARR — ARR مرتفع = استقرار، (3) التعرض الدوري — الشركات الدورية (المناجم، البنوك) لديها إيرادات متقلبة بطبيعتها. يعدّل AKM1 الاستقرار وفق الدورية — شركة صلب بتباين إيرادات 30% قد تكون 'مستقرة' في سياقها."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p16",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Revenue stability (V12)](/kurser/v12-intaktsstabilitet) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [استقرار الإيرادات (V12)](/kurser/v12-intaktsstabilitet) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet-analys:p17",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:titel",
+   "en": "V13: Patents & Intellectual Property Rights — how to analyze it",
+   "ar": "V13: براءات الاختراع والحقوق غير الملموسة — هكذا تحللها"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:ingress",
+   "en": "Patents, brands, licenses, know-how — legal protection against competitors. Variable V13 in AKM1 explained: definition, calculation, and traps.",
+   "ar": "براءات الاختراع، والعلامات التجارية، والتراخيص، والمعرفة الفنية — حماية قانونية من المنافسين. متغير V13 في AKM1 مشروحًا: التعريف والحساب والفخاخ."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p1",
+   "en": "A patent = a monopoly on a solution for 20 years. It is the strongest moat there is. Pharmaceutical companies live on this. Without patents, competitors can copy overnight.",
+   "ar": "براءة الاختراع = احتكار حلٍّ ما لمدة 20 عامًا. إنها أقوى أنواع الخندق التنافسي الموجودة. شركات الأدوية تعيش على هذا. وبدون براءات الاختراع يستطيع المنافسون النسخ بين عشية وضحاها."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p2",
+   "en": "This is **V13 — Patents & Intellectual property rights** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V13 — براءات الاختراع والحقوق غير الملموسة** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p4",
+   "en": "The origins of patents can be traced to Venice in 1474, when the first patent law was enacted — the 'Parte Veneziana'. The purpose was to attract craftsmen to the city by giving them a 10-year monopoly on their inventions. England followed with the Statute of Monopolies in 1624, the USA with the Patent Act of 1790 (Thomas Jefferson was the first patent examiner), and Sweden in 1834. The modern patent system was formalized in the Patent Cooperation Treaty (PCT) in 1970, which enables international patent applications. The European patent office (EPO) was founded in 1977. Brands have an even longer history — Roman bakers marked their bread with unique symbols as early as around the year 100 AD.",
+   "ar": "يمكن تتبع أصول براءات الاختراع إلى البندقية عام 1474 حين صدر أول قانون براءات — 'Parte Veneziana'. كان الهدف جذب الحرفيين إلى المدينة بمنحهم احتكارًا لمدة 10 أعوام على اختراعاتهم. لحقت إنجلترا بقانون الاحتكارات عام 1624، والولايات المتحدة بقانون البراءات عام 1790 (كان Thomas Jefferson أول من يفحص البراءات)، والسويد عام 1834. وقد أُرسيت الصيغة الحديثة لنظام البراءات في معاهدة التعاون بشأن البراءات (PCT) عام 1970 التي تتيح طلبات براءات دولية. وأُسست منظمة البراءات الأوروبية (EPO) عام 1977. أما العلامات التجارية فتاريخها أطول — فقد وسم الخبازون الرومان أرغفتهم برموز فريدة منذ حوالي عام 100 الميلادي."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p5",
+   "en": "## What is a moat — and why patents are its sharpest form",
+   "ar": "## ما هو الخندق التنافسي — ولماذا براءات الاختراع أحدّ أشكاله"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p6",
+   "en": "The concept of the economic moat Warren Buffett coined the term 'economic moat' in the 1990s as a metaphor for the structural advantages that protect a company's profits from competitors. Just as a medieval castle had a water-filled moat to keep enemies from storming the keep, some companies are surrounded by the competitive moat that stops competitors from eroding their profitability. Buffett's point is subtle but critical: it is not enough for a company to be profitable today — there must be a reason the profitability will persist. Without a moat, competition will drive returns down to the industry average, no matter how good the company is right now. The moat is what separates a 'good company' from a 'good business'. A good company can have 20% ROE today; a good business will have 20% ROE in 10 years because no one can copy it. Patents & intellectual property rights are the most concrete and measurable form of moat — it is written down in law, time-limited, and geographically defined.",
+   "ar": "مفهوم الخندق الاقتصادي صاغ Warren Buffett مصطلح 'economic moat' (الخندق الاقتصادي) في عقد 1990 استعارةً عن المزايا الهيكلية التي تحمي أرباح الشركة من المنافسين. وكما أحاطت قلاع العصور الوسطى نفسها بخندق مائي يمنع الأعداء من اقتحامها، فإن بعض الشركات يحيط بها الخندق التنافسي الذي يمنع المنافسين من النيل من ربحيتها. نقطة Buffett دقيقة لكنها حاسمة: لا يكفي أن تكون الشركة رابحة اليوم — لا بد من سبب يجعل الربحية تدوم. وبدون moat سيدفع المنافسون العائد نزولًا إلى متوسط القطاع مهما كانت الشركة جيدة الآن. الخندق التنافسي هو ما يفصل 'شركة جيدة' عن 'صفقة جيدة'. شركة جيدة قد تحقق 20% ROE اليوم؛ أما الصفقة الجيدة فستحقق 20% ROE بعد 10 أعوام لأن لا أحد يستطيع نسخها. براءات الاختراع والحقوق غير الملموسة هي أكثر أشكال الخندق التنافسي ملموسية وقابلية للقياس — فهي مدونة في القانون، ومحددة زمنيًا، ومعرفة جغرافيًا."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p7",
+   "en": "## Valuing a patent portfolio in practice",
+   "ar": "## تقييم محفظة براءات الاختراع عمليًا"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p8",
+   "en": "Finding IP information in the annual report Patents and brands appear in three places in the annual report. First: the balance sheet under 'Intangible non-current assets' — here, capitalized development costs are booked (IFRS rule: may be capitalized if technical and commercial feasibility is demonstrated), acquired patents, brands, goodwill. Note that INTERNALLY developed patents are rarely allowed to be capitalized — R&D is normally expensed directly. This means the balance sheet UNDERSTATES the IP value for companies that develop their own patents. Second: the note on 'Intangible non-current assets' — shows costs, depreciation, and remaining value by category. Here you can see 'patents and similar rights' as a specific line. Third: the CEO statement and investor presentation — here the number of patents, geographic coverage, pipeline status, and license revenue are often reported in running text.",
+   "ar": "إيجاد معلومات الملكية الفكرية في التقرير السنوي تظهر براءات الاختراع والعلامات التجارية في ثلاثة مواضع من التقرير السنوي. أولًا: الميزانية العمومية تحت بند 'الأصول الثابتة غير الملموسة' — هنا تُقيَّد تكاليف التطوير المرسملة (قاعدة IFRS: يجوز رسملتها إذا أثبتت الجدوى الفنية والتجارية)، وبراءات الاختراع المكتسبة، والعلامات التجارية، والشهرة (goodwill). ولاحظ أن براءات الاختراع المطورة داخليًا نادرًا ما يُسمح برسملتها — فنفقات البحث والتطوير تُحمَّل عادة كمصروف مباشرة. وهذا يعني أن الميزانية العمومية تُقلل من قيمة الملكية الفكرية للشركات التي تطور براءاتها بنفسها. ثانيًا: الإيضاح المتمم للقوائم المالية عن 'الأصول الثابتة غير الملموسة' — يعرض التكاليف والإهلاكات والقيمة المتبقية حسب الفئة. هنا ترى 'براءات الاختراع والحقوق المماثلة' بندًا مستقلًا. ثالثًا: كلمة المدير العام وعرض المستثمرين — هنا يُفصح غالبًا عن عدد البراءات والتغطية الجغرافية وحالة خط الإنتاج وإيرادات التراخيص في النص الجاري."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p9",
+   "en": "## IP traps — illusions and misleading",
+   "ar": "## فخاخ الملكية الفكرية — أوهام وتضليل"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p10",
+   "en": "Patent applications ≠ granted patents A common rhetorical trick among smaller tech companies is to count patent applications as patents. This is gravely misleading. Of all patents applied for, 30-60% are granted after examination. Of those granted, 30-50% are invalidated if challenged in court. A company that says 'we have 500 patents applied for' may in reality have 200 granted and 100 that would hold up in court. The right way to measure: 'granted patents' divided by 'applied patents' = grant rate. Ericsson has a grant rate ~70%; a typical startup ~40%. Always ask the company: 'How many of your patents are granted, not just applied for?' If they do not want to answer — warning. Another trick: counting 'pending applications' as granted patents in marketing.",
+   "ar": "طلبات البراءات ≠ البراءات الممنوحة حيلة بلاغية شائعة بين شركات التقنية الصغيرة هي عدّ طلبات براءات الاختراع بوصفها براءات. هذا تضليل بالغ. من بين جميع البراءات المطلوبة تُمنح 30-60% بعد الفحص. ومن البراءات الممنوحة يُلغى 30-50% إذا طُعن عليها أمام القضاء. شركة تقول 'لدينا 500 براءة مطلوبة' قد يكون لديها في الواقع 200 ممنوحة و100 فقط قادرة على الصمود في المحاكم. الطريقة الصحيحة للقياس: 'البراءات الممنوحة' مقسومة على 'البراءات المطلوبة' = معدل المنح. لدى Ericsson معدل منح ~70%؛ ولدى شركة ناشئة نموذجية ~40%. اسأل الشركة دائمًا: 'كم براءة لديكم ممنوحة لا مطلوبة فقط؟'. إن لم يرغبوا في الإجابة — فهذا إنذار. حيلة أخرى: عدّ 'الطلبات المعلقة' بوصفها براءات ممنوحة في التسويق."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p11",
+   "en": "## Three perspectives on patents & intellectual property rights",
+   "ar": "## ثلاثة منظورات حول براءات الاختراع والحقوق غير الملموسة"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p12",
+   "en": "**Peter Lynch:** Lynch saw patents as a moat but warned against relying on them alone. 'Patents expire — moats should be eternal.' He preferred brands and network effects over patents. Lynch argued that patents are valuable in pharma (7-year exclusivity) but less valuable in tech (fast innovation).",
+   "ar": "**Peter Lynch:** نظر Lynch إلى براءات الاختراع بوصفها أحد أشكال الخندق التنافسي لكنه حذّر من الاعتماد عليها وحدها. 'البراءات تنتهي — أما الخنادق فينبغي أن تكون أبدية'. فضّل العلامات التجارية وأثر الشبكة على براءات الاختراع. رأى Lynch أن البراءات قيّمة في صناعة الأدوية (احتكار لمدة 7 أعوام) لكنها أقل قيمة في التقنية (سرعة الابتكار)."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p13",
+   "en": "**Benjamin Graham:** Graham saw patents as an asset but adjusted the value down due to the time limit. He argued that a patent expiring in 3 years is worth less than a brand lasting 30 years. Graham preferred 'goodwill' and brands over patents.",
+   "ar": "**Benjamin Graham:** اعتبر Graham براءات الاختراع أصلًا لكنه خفض قيمتها بسبب القيد الزمني. كان يرى أن براءة تنتهي بعد 3 أعوام أقل قيمة من علامة تجارية تدوم 30 عامًا. فضّل Graham 'الشهرة (goodwill)' والعلامة التجارية على براءات الاختراع."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 6%. Patents are assessed in three ways: (1) number of active patents, (2) remaining patent life, (3) patent breadth — broad patents (blocking competitors) > narrow ones (specific products). AKM1 warns of the 'patent moat illusion' — companies with many patents expiring within 3 years. We combine V13 with V14 (brand) — patent + brand = the double moat.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 6%. تُقيَّم البراءات بثلاث طرق: (1) عدد البراءات النشطة، (2) العمر المتبقي للبراءة، (3) اتساع البراءة — البراءات الواسعة (تصد المنافسين) > الضيقة (منتجات بعينها). يحذّر AKM1 من 'وهم خندق البراءات' — شركات كثيرة البراءات تنتهي خلال 3 أعوام. نجمع V13 مع V14 (العلامة التجارية) — براءة + علامة تجارية = الخندق التنافسي المزدوج."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p16",
+   "en": "From patent counting to moat architecture",
+   "ar": "من عدّ براءات الاختراع إلى هندسة الخندق التنافسي"
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p17",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Patents & Intellectual property rights (V13)](/kurser/v13-patent-ip) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [براءات الاختراع والحقوق غير الملموسة (V13)](/kurser/v13-patent-ip) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v13-patent-ip-analys:p18",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:titel",
+   "en": "V14: Brand & Customer Loyalty — how to analyze it",
+   "ar": "V14: العلامة التجارية وولاء العملاء — هكذا تحللها"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:ingress",
+   "en": "The strength of the brand — can the company charge a higher price than its competitors? Variable V14 in AKM1 explained: definition, calculation, and traps.",
+   "ar": "قوة العلامة التجارية — هل تستطيع الشركة أخذ سعر أعلى من منافسيها؟ متغير V14 في AKM1 مشروحًا: التعريف والحساب والفخاخ."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p1",
+   "en": "Strong brands = pricing power = higher margins = higher ROE. Apple, Coca-Cola, Nike. A brand is the moat that is hardest to build but strongest once it exists.",
+   "ar": "علامات تجارية قوية = القوة التسعيرية = هوامش أعلى = ROE أعلى. Apple وCoca-Cola وNike. العلامة التجارية هي الخندق التنافسي الأصعب بناءً والأقوى عند وجودها."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p2",
+   "en": "This is **V14 — Brand & Customer loyalty** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V14 — العلامة التجارية وولاء العملاء** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p4",
+   "en": "The origins of the brand can be traced to antiquity. Roman bakers marked their bread with unique symbols (1st century AD) to distinguish themselves from competitors. Medieval guild requirements (1100-1500s) forced craftsmen to mark their products — so defective goods could be traced to the maker. The modern brand system was born with industrialization in the 1800s — mass production required differentiation. Coca-Cola (1886), Lipton (1890), Heinz (1869) were early brands built on national distribution + consistent quality + advertising. In Sweden, brands such as Volvo (1927), Electrolux (1919), Atlas Copco (1873), SKF (1907) were founded during this period. The early 1900s saw 'brand building' as a discipline — ad agencies (J.",
+   "ar": "يمكن تتبع أصول العلامة التجارية إلى العصور القديمة. وسم الخبازون الرومان أرغفتهم برموز فريدة (القرن 1 الميلادي) لتمييز أنفسهم عن المنافسين. وإلزام الطوائف الحرفية في العصور الوسطى (قرون 1100-1500) الحرفيين بوسم منتجاتهم — لتتبع السلع المعيبة إلى صانعها. ووُلد نظام العلامات الحديث مع التصنيع في القرن 1800 — فالإنتاج الجماهيري تطلب التمايز. كانت Coca-Cola (عام 1886) وLipton (عام 1890) وHeinz (عام 1869) من العلامات المبكرة القائمة على التوزيع الوطني + الجودة الثابتة + الإعلان. وفي السويد أُسست علامات مثل Volvo (عام 1927) وElectrolux (عام 1919) وAtlas Copco (عام 1873) وSKF (عام 1907) خلال هذه الفترة. وشهد مطلع القرن 1900 'بناء العلامات' بوصفه تخصصًا — وكالات الإعلان (J."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p5",
+   "en": "## The power of the brand — the moat's art of patience",
+   "ar": "## قوة العلامة التجارية — فن الصبر في الخندق التنافسي"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p6",
+   "en": "What is a brand, really? A brand is not a logotype or a name — it is the sum of all the associations that consumers (or B2B customers) have around a company, a product, or a service. When someone hears 'IKEA' they think of: flat packages, Swedish design, low prices, assembly, meatballs, family outing. When someone hears 'Volvo' they think of: safety, Swedish quality, heavy, reliable. When someone hears 'Atlas Copco' (B2B), an engineer thinks of: quality, precision, expensive, reliable. These associations are the brand. They take decades to build and can vanish in weeks during a crisis. The brand is the moat in its most subtle form — it is not legally protected like a patent, but it is cognitively protected. Customers CHOOSE the brand again and again, even when cheaper options exist. This is 'pricing power' — the ability to charge a higher price than competitors without losing customers.",
+   "ar": "ما هي العلامة التجارية في الحقيقة؟ العلامة التجارية ليست شعارًا ولا اسمًا — إنها مجموع كل الارتباطات التي يحملها المستهلكون (أو عملاء B2B) حول شركة أو منتج أو خدمة. حين يسمع أحدهم 'IKEA' يفكر في: علب مسطحة، تصميم سويدي، أسعار منخفضة، التجميع الذاتي، كرات اللحم، نزهة عائلية. حين يسمع 'Volvo' يفكر في: السلامة، الجودة السويدية، متانة، موثوقية. وحين يسمع مهندس 'Atlas Copco' (B2B) يفكر في: الجودة، الدقة، الغلاء، الموثوقية. هذه الارتباطات هي العلامة التجارية. تستغرق عقودًا لبنائها وقد تختفي في أسابيع عند أزمة. العلامة التجارية هي الخندق التنافسي في أكثر صوره دقة — فهي ليست محمية قانونيًا كبراءة الاختراع لكنها محمية إدراكيًا. العملاء يختارون العلامة التجارية مرة بعد أخرى حتى مع وجود بدائل أرخص. هذه هي 'القوة التسعيرية' — القدرة على أخذ سعر أعلى من المنافسين دون فقدان العملاء."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p7",
+   "en": "## Measuring brand strength in practice",
+   "ar": "## قياس قوة العلامة التجارية عمليًا"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p8",
+   "en": "Finding brand data in the annual report A brand is hard to measure directly — it is an intangible asset that is partly booked and partly not. Three places to look. First: the balance sheet under 'Intangible non-current assets' — the line 'Brands'. When a company acquires another company, the acquired brand is booked at market price (e.g. Amazon bought Whole Foods for 13,7 bn USD of which ~1 bn USD was the brand). Internally developed brands are NOT booked — they are 'hidden value' in the balance sheet. Coca-Cola's brand is worth ~80 bn USD according to Interbrand, but book value is only ~5 bn USD (acquired brands). The difference = hidden brand value. Second: the CEO statement and investor presentation — look for 'brand health metrics', 'brand awareness', 'customer satisfaction', 'NPS'.",
+   "ar": "إيجاد بيانات العلامة التجارية في التقرير السنوي يصعب قياس العلامة التجارية مباشرة — فهي أصل غير ملموس يُقيَّد جزئيًا ولا يُقيَّد جزئيًا آخر. ثلاثة مواضع للبحث. أولًا: الميزانية العمومية تحت 'الأصول الثابتة غير الملموسة' — بند 'العلامات التجارية'. حين تستحوذ شركة على أخرى، تُقيَّد العلامة التجارية المكتسبة بالسعر السوقي (مثلًا اشترت Amazon شركة Whole Foods بمبلغ 13,7 مليار دولار كان منها ~1 مليار دولار قيمة العلامة التجارية). العلامات المطورة داخليًا لا تُقيَّد — إنها 'قيمة خفية' في الميزانية العمومية. علامة Coca-Cola تساوي ~80 مليار دولار وفق Interbrand، لكن القيمة الدفترية لها ~5 مليارات دولار فقط (علامات مكتسبة). الفرق = قيمة العلامة الخفية. ثانيًا: كلمة المدير العام وعرض المستثمرين — ابحث عن 'مقاييس صحة العلامة' و'الوعي بالعلامة' و'رضا العملاء' و'NPS'."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p9",
+   "en": "## Brand traps — illusions and erosion",
+   "ar": "## فخاخ العلامة التجارية — أوهام وانحسار"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p10",
+   "en": "Brand erosion — the silent killer A brand can erode slowly over several years without anyone noticing. Three warning signals: 1) falling NPS over time — if NPS drops from 65 to 55 to 45 over 3 years, the brand is under attack. 2) shrinking premium price — if the company must cut prices to hold volume, pricing power has weakened. 3) changed customer demographics — if loyal customers switch to younger or older segments, it indicates brand shift. A classic example: H&M 2015-2018. NPS fell from 60 to 45, the premium over Primark fell from 25% to 10%, loyal customers moved to Zara. The brand eroded — but the company still believed they were 'fashion giants'. The share fell from 360 SEK (2015) to 150 SEK (2018) — 58% value destruction. Another example: Nokia 2007-2013.",
+   "ar": "انحسار العلامة التجارية — القاتل الصامت قد تنحسر العلامة التجارية ببطء عبر عدة أعوام دون أن ينتبه أحد. ثلاث إشارات تحذير: 1) تراجع NPS عبر الزمن — إذا هبط NPS من 65 إلى 55 إلى 45 خلال 3 أعوام فالعلامة التجارية تتعرض لهجوم. 2) انكماش علاوة السعر — إذا اضطرت الشركة لخفض الأسعار للحفاظ على الحجم فقد ضعفت القوة التسعيرية. 3) تغير ديموغرافيا العملاء — إذا تحول العملاء الأوفياء إلى شرائح أصغر أو أكبر سنًا فهذا يشير إلى انزياح العلامة التجارية. مثال كلاسيكي: H&M في الفترة 2015-2018. هبط NPS من 60 إلى 45، وهبطت علاوة السعر على Primark من 25% إلى 10%، وانتقل العملاء الأوفياء إلى Zara. انحسرت العلامة التجارية — لكن الشركة ظلت تعتقد أنها 'عمالقة أزياء'. هبط السهم من 360 SEK (عام 2015) إلى 150 SEK (عام 2018) — تدمير للقيمة بنسبة 58%. مثال آخر: Nokia في الفترة 2007-2013."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p11",
+   "en": "## Three perspectives on brand & customer loyalty",
+   "ar": "## ثلاثة منظورات حول العلامة التجارية وولاء العملاء"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p12",
+   "en": "**Peter Lynch:** Lynch loved brand moats. In 'One Up On Wall Street' he argued that 'a brand people love is worth more than a factory'. He mentioned Coca-Cola, McDonald's and Johnson & Johnson as the examples. Lynch's rule: 'If people pay 30% more for your brand than for a generic copy, you have the moat.'",
+   "ar": "**Peter Lynch:** عشق Lynch خنادق العلامات التجارية. في 'One Up On Wall Street' رأى أن 'العلامة التجارية التي يحبها الناس تساوي أكثر من مصنع'. ذكر Coca-Cola وMcDonald's وJohnson & Johnson أمثلةً. قاعدة Lynch: 'إذا دفع الناس 30% أكثر مقابل علامتك التجارية مقارنة بنسخة عامة فأنت تملك الخندق التنافسي'."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p13",
+   "en": "**Benjamin Graham:** Graham saw brands as a form of goodwill. He adjusted the value down due to the difficulty of measuring. Graham preferred measurable assets (factories, cash) over intangible ones (brands). But he acknowledged that strong brands provide 'earnings power' that lasts longer than patents.",
+   "ar": "**Benjamin Graham:** نظر Graham إلى العلامات التجارية بوصفها شكلًا من الشهرة (goodwill). خفض قيمتها بسبب صعوبة القياس. فضّل Graham الأصول القابلة للقياس (المصانع، النقد) على غير الملموسة (العلامات التجارية). لكنه أقر بأن العلامات التجارية القوية تمنح 'قدرة على الكسب' تدوم أطول من براءات الاختراع."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 5%. The brand is assessed in three ways: (1) pricing power — can the company charge a premium price?, (2) customer loyalty — how high is churn?, (3) brand awareness — awareness in the target group. AKM1 combines V14 with V07 (gross margin) — a strong brand + a high gross margin = genuine pricing power.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 5%. تُقيَّم العلامة التجارية بثلاث طرق: (1) القوة التسعيرية — هل تستطيع الشركة أخذ سعر مميز؟، (2) ولاء العملاء — ما مقدار التسرب؟، (3) الوعي بالعلامة التجارية — الحضور في الجمهور المستهدف. يجمع AKM1 بين V14 وV07 (الهامش الإجمالي) — علامة تجارية قوية + هامش إجمالي مرتفع = قوة تسعيرية حقيقية."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p16",
+   "en": "From brand recognition to moat architecture",
+   "ar": "من التعرّف على العلامة التجارية إلى هندسة الخندق التنافسي"
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p17",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Brand & Customer loyalty (V14)](/kurser/v14-varumarke) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [العلامة التجارية وولاء العملاء (V14)](/kurser/v14-varumarke) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v14-varumarke-analys:p18",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:titel",
+   "en": "V15: Network Effects — how to analyze it",
+   "ar": "V15: أثر الشبكة — هكذا تحللها"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:ingress",
+   "en": "The company's significance grows as more people use it. (Meta, LinkedIn, payment networks.) Variable V15 in AKM1 explained: definition, calculation, and traps.",
+   "ar": "أهمية الشركة تزداد كلما زاد مستخدموها. (Meta وLinkedIn وشبكات الدفع.) متغير V15 في AKM1 مشروحًا: التعريف والحساب والفخاخ."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p1",
+   "en": "The network effect = the strongest moat. Every new user makes the service more valuable to everyone else. Competitors cannot enter even if they have better technology — they lack the users. This is why Facebook defeated Google+.",
+   "ar": "أثر الشبكة = أقوى أنواع الخندق التنافسي. كل مستخدم جديد يجعل الخدمة أكثر قيمة للجميع. لا يستطيع المنافسون الدخول حتى لو امتلكوا تقنية أفضل — فهم يفتقرون إلى المستخدمين. هذا هو السبب في هزيمة Facebook لـGoogle+."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p2",
+   "en": "This is **V15 — Network effects** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V15 — أثر الشبكة** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p4",
+   "en": "Network effects have existed as long as human networks. The Roman road system (1st century BC) — more cities connected to the road network increased the value for all cities. The telephone network (Alexander Graham Bell 1876) — Metcalfe's law in its purest form. TV networks (1930s) — more viewers attracted more advertisers; more advertisers funded more content. Payment networks: Visa (1958) and Mastercard (1966) — more card-accepting stores attracted more cardholders; more cardholders attracted more stores. The internet (1990s) — the most users attracted the most services; the most services attracted the most users.",
+   "ar": "أثر الشبكة موجود منذ وجود الشبكات البشرية. نظام الطرق الروماني (القرن 1 قبل الميلاد) — اتصال مزيد من المدن بشبكة الطرق رفع القيمة لكل المدن. شبكة الهاتف (Alexander Graham Bell عام 1876) — قانون Metcalfe في أنقى صوره. شبكات التلفزة (عقد 1930) — مزيد المشاهدين جذب مزيد المعلنين؛ ومزيد المعلنين موّل مزيد المحتوى. شبكات الدفع: Visa (عام 1958) وMastercard (عام 1966) — مزيد المتاجر التي تقبل البطاقات جذب مزيد حاملي البطاقات؛ ومزيد حاملي البطاقات جذب مزيد المتاجر. الإنترنت (عقد 1990) — أكثر المستخدمين جلب أكثر الخدمات؛ وأكثر الخدمات جلب أكثر المستخدمين."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p5",
+   "en": "## The power of the network effect — the ultimate moat",
+   "ar": "## قوة أثر الشبكة — الخندق التنافسي المطلق"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p6",
+   "en": "What is a network effect? A network effect arises when the value of a product or service increases for each user as more people use it. Classic example: the telephone. A telephone is worthless if you are the only user. Two telephones = a little value. 100 telephones = useful. 1 million telephones = indispensable. Every new telephone user increases the value for all existing users — a network effect. This is fundamentally different from traditional products. A chocolate bar is worth the same no matter how many others eat chocolate bars. A telephone becomes more valuable with every new user. The difference is enormous economically. Traditional companies grow linearly (each new customer = 1 unit of value). Network companies grow exponentially (each new customer increases the value for all existing ones). Metcalfe's law: the value of a network ∝ n² (the square of the number of users). 10 users = 100 units of value. 100 users = 10 000 units of value (a 100x increase for 10x users).",
+   "ar": "ما هو أثر الشبكة؟ ينشأ أثر الشبكة عندما تزداد قيمة منتج أو خدمة لكل مستخدم مع زيادة عدد المستخدمين. مثال كلاسيكي: الهاتف. الهاتف بلا قيمة إن كنت المستخدم الوحيد. هاتفان = قيمة قليلة. 100 هاتف = شيء مفيد. 1 مليون هاتف = لا غنى عنه. كل مستخدم هاتف جديد يرفع القيمة لجميع المستخدمين الحاليين — هذا أثر الشبكة. هذا مختلف جوهريًا عن المنتجات التقليدية. لوح شوكولاتة قيمته واحدة مهما كان عدد من يأكلون ألواح الشوكولاتة. أما الهاتف فتزداد قيمته مع كل مستخدم جديد. الفرق هائل اقتصاديًا. الشركات التقليدية تنمو خطيًا (كل عميل جديد = 1 وحدة قيمة). شركات الشبكات تنمو أسّيًا (كل عميل جديد يرفع القيمة لجميع العملاء الحاليين). قانون Metcalfe: قيمة الشبكة ∝ n² (مربع عدد المستخدمين). 10 مستخدمين = 100 وحدة قيمة. 100 مستخدم = 10 000 وحدة قيمة (زيادة 100x مقابل 10x من المستخدمين)."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p7",
+   "en": "## Valuing network companies in practice",
+   "ar": "## تقييم شركات الشبكات عمليًا"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p8",
+   "en": "Finding network data in the annual report Network companies often report more operational metrics than traditional companies. Three places to look. First: the CEO statement and investor presentation — network companies report user statistics here. Spotify reports MAU (Monthly Active Users), premium subscribers, ARPU; Blocket (Schibsted) reports GMV (Gross Merchandise Value), transactions, users; Klarna reports active consumers, active merchants, GMV. Second: the note on 'Segments' or 'Geographic information' — breaks down users by region. Third: the note on 'Performance metrics' or 'Operating metrics' — a dedicated section for network KPIs. Swedish examples: Spotify has very transparent reporting of user statistics (quarterly); Blocket (Schibsted-owned) reports less in detail but provides GMV and transaction volume; Klarna reports active consumers and merchants.",
+   "ar": "إيجاد بيانات الشبكة في التقرير السنوي كثيرًا ما تفصح شركات الشبكات عن مقاييس تشغيلية أكثر من الشركات التقليدية. ثلاثة مواضع للبحث. أولًا: كلمة المدير العام وعرض المستثمرين — تفصح شركات الشبكات هنا عن إحصاءات المستخدمين. تفصح Spotify عن MAU (المستخدمين النشطين شهريًا) والمشتركين المميزين وARPU؛ وتفصح Blocket (Schibsted) عن GMV (إجمالي قيمة البضائع) والمعاملات والمستخدمين؛ وتفصح Klarna عن المستهلكين النشطين والتاجر النشط وGMV. ثانيًا: الإيضاح عن 'القطاعات' أو 'المعلومات الجغرافية' — يفصّل المستخدمين حسب المنطقة. ثالثًا: الإيضاح عن 'مقاييس الأداء' أو 'المقاييس التشغيلية' — قسم مخصص لمؤشرات الشبكة. أمثلة سويدية: لدى Spotify إفصاح شفاف جدًا عن إحصاءات المستخدمين (ربع سنوي)؛ وBlocket (المملوكة لـSchibsted) تفصح بتفصيل أقل لكنها تعطي GMV وحجم المعاملات؛ وتفصح Klarna عن المستهلكين النشطين والتاجر."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p9",
+   "en": "## Network traps — illusions and erosion",
+   "ar": "## فخاخ الشبكات — أوهام وانحسار"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p10",
+   "en": "Big ≠ network effect A common mistake is confusing a 'big company' with a 'network company'. A company can have 10 million customers without a network effect. ICA has 5 million loyal customers in Sweden but no network effect — if one customer leaves ICA, the value for other ICA customers does not decrease. Volvo has millions of drivers but no network effect — your Volvo does not become more valuable because more people buy Volvos. A network effect requires users to INTERACT with each other through the platform. The test: 'If one user leaves, does the value for existing users decrease?' If yes → network effect. If no → just size, not a network. Blocket: if one seller leaves, the offering for buyers shrinks → yes, a network effect.",
+   "ar": "كبير ≠ أثر الشبكة خطأ شائع هو الخلط بين 'شركة كبيرة' و'شركة شبكة'. قد يكون لدى شركة 10 ملايين عميل دون أثر الشبكة. لدى ICA 5 ملايين عميل دائم في السويد لكن دون أثر الشبكة — إذا غادر عميلٌ ICA فلن تنخفض القيمة لبقية عملاء ICA. لدى Volvo ملايين السائقين لكن دون أثر الشبكة — فسيارتك Volvo لا تصبح أثمن لأن آخرين يشترون Volvo. يتطلب أثر الشبكة أن يتفاعل المستخدمون فيما بينهم عبر المنصة. الاختبار: 'إذا غادر مستخدم واحد، هل تنخفض القيمة أمام المستخدمين الحاليين؟'. إن كان نعم → أثر الشبكة. وإن كان لا → مجرد ضخامة لا شبكة. Blocket: إذا غادر بائع واحد يتقلص العرض أمام المشترين → نعم، أثر الشبكة."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p11",
+   "en": "## Three perspectives on network effects",
+   "ar": "## ثلاثة منظورات حول أثر الشبكة"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p12",
+   "en": "**Peter Lynch:** Lynch argued that network effects are the strongest moat. He mentioned Visa, American Express and H&R Block as examples. 'As more people use the network, it becomes more valuable to everyone — an unbeatable spiral.' Lynch warned, however, that networks can collapse (MySpace → Facebook).",
+   "ar": "**Peter Lynch:** رأى Lynch أن أثر الشبكة هو أقوى أنواع الخندق التنافسي. ذكر Visa وAmerican Express وH&R Block أمثلةً. 'كلما زاد مستخدمو الشبكة ازدادت قيمتها للجميع — إنها حلقة لا تُقهر'. لكن Lynch حذّر من أن الشبكات قد تنهار (MySpace → Facebook)."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p13",
+   "en": "**Benjamin Graham:** Graham (who wrote before the internet) saw network effects as 'economies of scale' — big-company advantages. He argued that scale gives lower costs per unit, which is a form of the moat. Graham warned that scale advantages can be eroded by technology. He preferred measurable scale advantages (factories) over digital networks.",
+   "ar": "**Benjamin Graham:** نظر Graham (الذي كتب قبل الإنترنت) إلى أثر الشبكة بوصفه 'وفورات الحجم' — مزايا الشركات الكبرى. رأى أن الحجم يخفض التكاليف لكل وحدة، وهذا شكل من الخندق التنافسي. حذّر Graham من أن مزايا الحجم يمكن أن تنخرها التقنية. فضّل مزايا الحجم القابلة للقياس (المصانع) على الشبكات الرقمية."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 6%. Network effects are assessed in three ways: (1) direct networks — more users = more value (Meta, telephone networks), (2) indirect networks — two-sided platforms (Uber, Airbnb), (3) data networks — more data = a better product (Google, Netflix recommendations). AKM1 warns of the 'network illusion' — companies that appear to have a network but where switching costs are low.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 6%. يُقيَّم أثر الشبكة بثلاث طرق: (1) الشبكات المباشرة — مزيد من المستخدمين = مزيد من القيمة (Meta، شبكات الهاتف)، (2) الشبكات غير المباشرة — منصات ثنائية الجانب (Uber، Airbnb)، (3) شبكات البيانات — مزيد من البيانات = منتج أفضل (Google، توصيات Netflix). يحذّر AKM1 من 'وهم الشبكة' — شركات تبدو ذات شبكة لكن تكاليف التحويل فيها منخفضة."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p16",
+   "en": "From network recognition to moat architecture",
+   "ar": "من التعرّف على الشبكة إلى هندسة الخندق التنافسي"
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p17",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Network effects (V15)](/kurser/v15-natverkseffekter) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [أثر الشبكة (V15)](/kurser/v15-natverkseffekter) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v15-natverkseffekter-analys:p18",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:titel",
+   "en": "V16: Product Launches — how to analyze it",
+   "ar": "V16: إطلاقات المنتجات — هكذا تحللها"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:ingress",
+   "en": "Upcoming product launches that can drive revenue — new products, new markets, new versions.",
+   "ar": "إطلاقات منتجات قادمة يمكن أن تدفع الإيرادات — منتجات جديدة، وأسواق جديدة، وإصدارات جديدة."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p1",
+   "en": "Product launches are short-term catalysts. A successful launch can move the stock 30% in a week. A failed launch can fall 20%. This is where short trade profits are made.",
+   "ar": "إطلاقات المنتجات محفزات قصيرة الأجل. الإطلاق الناجح يمكن أن يحرك السهم 30% في أسبوع. والإطلاق الفاشل قد يهبط 20%. هنا تُصنع أرباح الصفقات القصيرة."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p2",
+   "en": "This is **V16 — Product launches** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V16 — إطلاقات المنتجات** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p4",
+   "en": "Product launches as an investment catalyst have existed as long as the stock market itself. The Amsterdam stock exchange (1602) reacted strongly to the annual cargo arrivals of the VOC (Dutch East India Company) from the East Indies — every ship arriving with spices was a catalyst. During the industrialization of the 1800s, product launches became more common: Carnegie Steel's new steel processes, Edison's light bulb in 1879, Bell's telephone in 1876. Every launch moved share prices dramatically. It was not until the 1900s, however, that catalyst investing became a systematic strategy.",
+   "ar": "وجود إطلاقات المنتجات بوصفها محفزًا استثماريًا قديم قدم سوق الأسهم نفسه. فقد تفاعلت البورصة في أمستردام (عام 1602) بقوة مع وصول حمولات شركة VOC (الشركة الهولندية للهند الشرقية) السنوية من جزر الهند الشرقية — فكل سفينة تصل محملة بالتوابل كانت محفزًا. وخلال التصنيع في القرن 1800 أصبحت الإطلاقات أكثر شيوعًا: عمليات الصلب الجديدة لدى Carnegie Steel، ومصباح Edison الكهربائي عام 1879، وهاتف Bell عام 1876. كل إطلاق كان يحرك سعر السهم بشكل دراماتيكي. غير أن الاستثمار القائم على المحفزات لم يصبح استراتيجية منظمة إلا في القرن 1900."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p5",
+   "en": "## Product launches as price-moving events",
+   "ar": "## إطلاقات المنتجات بوصفها أحداثًا محركة للسعر"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p6",
+   "en": "What is a product launch as a catalyst? A product launch is a discrete, time-bound event that fundamentally changes the market's expectations of a company's future revenue and profits. Unlike organic growth, which sneaks in quarter after quarter, a launch is a binary event: the product either succeeds or fails, the market reacts either positively or negatively, and the price often adjusts within days. This makes launches the purest form of investment catalyst. AstraZeneca's Covid-19 vaccine (Vaxzevria) was approved in the EU in January 2021 — the stock rose 8% in a week and the company raised its guidance for 2021 from $26M to $36M in revenue. In a single press conference, the company's 12-month forecast changed by 40%. That is the power of a successful launch.",
+   "ar": "ما هو إطلاق المنتج بوصفه محفزًا؟ إطلاق المنتج حدث منفصل ومحدد زمنيًا يغيّر جوهريًا توقعات السوق من إيرادات الشركة وأرباحها المستقبلية. وعلى خلاف النمو العضوي الذي يتسلل ربعًا بعد ربع، فإن الإطلاق حدث ثنائي: المنتج إما أن ينجح أو يفشل، والسوق إما أن يتفاعل إيجابًا أو سلبيًا، والسعر كثيرًا ما يتكيف خلال أيام. هذا يجعل الإطلاقات أنقى أشكال محفزات الاستثمار. جرى اعتماد لقاح AstraZeneca المضاد لـCovid-19 (Vaxzevria) في الاتحاد الأوروبي في يناير 2021 — فصعد السهم 8% في أسبوع ورفعت الشركة توجيهاتها لعام 2021 من $26M إلى $36M من الإيرادات. في مؤتمر صحفي واحد تغيرت توقعات الشركة لمدة 12 شهرًا بنسبة 40%. هذه هي قوة الإطلاق الناجح."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p7",
+   "en": "## Calculating the launch's value in practice",
+   "ar": "## حساب قيمة الإطلاق عمليًا"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p8",
+   "en": "The four-step framework A systematic catalyst analysis follows four steps. Step 1 — Identify the catalyst: what is the event, when is it scheduled, what is the market's current expectation? Example: the AstraZeneca drug Enhertu (breast cancer) is seeking FDA approval with a PDUFA date of 27 August 2022. The market expects approval based on strong Phase III data. Step 2 — Quantify potential revenue: addressable market × penetration × price × duration. For Enhertu: 200 000 patients × $15 000/patient × 5 years of treatment = $15M addressable market; with 20% penetration at peak = $3M annual revenue at peak. Step 3 — Probability-weight the outcomes: P(approval) × V(income if approved) + P(rejected) × V(without approval). For Enhertu with 85% probability: 0,85 × $3M + 0,15 × $0 = $2,55M expected value.",
+   "ar": "إطار العمل ذو الخطوات الأربع تتبع عملية تحليل المحفزات المنظمة أربع خطوات. الخطوة 1 — حدد المحفز: ما الحدث، ومتى مقرر له، وما التوقع الحالي للسوق؟ مثال: يطلب دواء AstraZeneca المسمى Enhertu (سرطان الثدي) موافقة FDA بتاريخ PDUFA في 27 أغسطس 2022. يتوقع السوق الموافقة استنادًا إلى بيانات المرحلة III القوية. الخطوة 2 — كيّم الإيراد المحتمل: السوق القابل للمعالجة × نسبة الانتشار × السعر × المدة. لأجل Enhertu: 200 000 مريض × $15 000/مريض × 5 أعوام من العلاج = $15M سوق قابل للمعالجة؛ وبانتشار 20% عند الذروة = $3M إيراد سنوي عند الذروة. الخطوة 3 — وَزن النتائج بالاحتمالات: P(الموافقة) × V(الدخل عند الموافقة) + P(الرفض) × V(بدون موافقة). لأجل Enhertu باحتمال 85%: 0,85 × $3M + 0,15 × $0 = $2,55M قيمة متوقعة."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p9",
+   "en": "## Three perspectives on product launches",
+   "ar": "## ثلاثة منظورات حول إطلاقات المنتجات"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p10",
+   "en": "**Peter Lynch:** Lynch loved product launches as catalysts. In 'One Up On Wall Street' he described how new products (the Apple Macintosh 1984, the Chrysler minivan 1983) could double a stock. He looked for 'the next big thing' — but warned that catalysts can fail to materialize. 'A company with a good pipeline is worth more than one without.'",
+   "ar": "**Peter Lynch:** عشق Lynch إطلاقات المنتجات بوصفها محفزات. في 'One Up On Wall Street' وصف كيف يمكن لمنتجات جديدة (Apple Macintosh عام 1984، وChrysler minivan عام 1983) أن تضاعف قيمة السهم. كان يبحث عن 'الشيء الكبير التالي' — لكنه حذّر من أن المحفزات قد لا تتحقق. 'الشركة ذات خط الإنتاج الجيد أغلى قيمة من شركة بلا خط'."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p11",
+   "en": "**Benjamin Graham:** Graham was skeptical of catalysts as a valuation basis. He argued that the market overpays for future events. 'A catalyst is a guess, not a fact.' Graham preferred valuing companies on current revenue and regarded catalysts as a 'bonus'. He warned of 'story stocks' that live on future promises.",
+   "ar": "**Benjamin Graham:** كان Graham متشككًا في المحفزات أساسًا للتقييم. كان يرى أن السوق يدفع أكثر من اللازم مقابل الأحداث المستقبلية. 'المحفز تخمين لا حقيقة'. فضّل Graham تقييم الشركات على الإيرادات الحالية واعتبر المحفزات 'مكافأة'. وحذّر من 'أسهم القصص' التي تعيش على وعود مستقبلية."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p12",
+   "en": "**AK1's interpretation:** AKM1 weight 7%. Catalysts are assessed in three ways: (1) concreteness — a specific date > a vague promise, (2) probability — FDA approval 90% vs a new product 30%, (3) size — blockbuster vs incremental. AKM1 combines V16 with V01 (growth) — catalyst + already growing = momentum. We warn of the 'catalyst trap' — companies that live on a single upcoming event.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 7%. تُقيَّم المحفزات بثلاث طرق: (1) الملموسية — تاريخ محدد > وعد غامض، (2) الاحتمال — موافقة FDA بنسبة 90% مقابل منتج جديد بنسبة 30%، (3) الحجم — دواء كاسح مقابل تدريجي. يجمع AKM1 بين V16 وV01 (النمو) — محفز + نمو قائم بالفعل = الزخم. نحذّر من 'فخ المحفز' — شركات تعيش على حدث قادم وحيد."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p13",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p14",
+   "en": "From single catalysts to portfolio strategy",
+   "ar": "من محفزات مفردة إلى استراتيجية المحفظة"
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p15",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Product launches (V16)](/kurser/v16-produktlanseringar) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [إطلاقات المنتجات (V16)](/kurser/v16-produktlanseringar) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v16-produktlanseringar-analys:p16",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:titel",
+   "en": "V17: Agreements & Partnerships — how to analyze it",
+   "ar": "V17: الاتفاقيات والشراكات — هكذا تحللها"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:ingress",
+   "en": "Major customer agreements, partner deals, distribution deals that can drive revenue. Variable V17 in AKM1 explained: definition, calculation, and traps.",
+   "ar": "اتفاقيات عملاء كبرى، وصفقات شراكة، وصفقات توزيع يمكن أن تدفع الإيرادات. متغير V17 في AKM1 مشروحًا: التعريف والحساب والفخاخ."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p1",
+   "en": "A major agreement can validate a technology, open a market, or secure revenue for several years. For small caps, a major agreement can be the difference between survival and bankruptcy.",
+   "ar": "الاتفاقية الكبرى يمكن أن تصادق على تقنية، أو تفتح سوقًا، أو تؤمّن الإيرادات لعدة أعوام. بالنسبة للشركات الصغيرة قد تكون الاتفاقية الكبرى الفارق بين البقاء والإفلاس."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p2",
+   "en": "This is **V17 — Agreements & Partnerships** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V17 — الاتفاقيات والشراكات** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p4",
+   "en": "M&A as an investment catalyst has existed as long as the stock market. As early as the 1600s, the VOC (Dutch East India Company) carried out 'mergers' with smaller trading companies. During the industrial revolution of the 1800s, M&A accelerated — Carnegie Steel was merged into US Steel in 1901 for $492 million (the largest deal ever at that time). The first 'M&A wave' in the USA was 1897-1904 with over 1 500 deals. Sweden had its first major M&A wave 1910-1920 with consolidation of forestry, steel, and banks. The Astra-Zeneca merger in 1999 was the largest Swedish pharmaceutical deal until AstraZeneca-Alexion in 2021.",
+   "ar": "وجود M&A بوصفه محفزًا استثماريًا قديم قدم سوق الأسهم. ففي القرن 1600 نفذت شركة VOC (الشركة الهولندية للهند الشرقية) 'اندماجات' مع شركات تجارية أصغر. وخلال الثورة الصناعية في القرن 1800 تسارعت وتيرة M&A — اندمجت Carnegie Steel في US Steel عام 1901 مقابل $492 مليون (أكبر صفقة آنذاك). كانت 'موجة M&A' الأولى في الولايات المتحدة في الفترة 1897-1904 بأكثر من 1 500 صفقة. وشهدت السويد أول موجة M&A كبرى في الفترة 1910-1920 مع توحيد قطاعات الغابات والصلب والبنوك. وكان الاندماج بين Astra وZeneca عام 1999 أكبر صفقة أدوية سويدية حتى صفقة AstraZeneca-Alexion عام 2021."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p5",
+   "en": "## M&A as a price-moving catalyst",
+   "ar": "## M&A بوصفه محفزًا محركًا للسعر"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p6",
+   "en": "M&A — the most powerful catalyst Mergers & Acquisitions (M&A) is the most powerful form of investment catalyst. When a company announces that it is acquiring or being acquired, the price often moves 20-50% in a day. Volvo Cars was acquired by Geely from Ford for $1,8 billion in March 2010 — the Volvo Cars stake (then indirectly via Ford) had risen 60% on the rumor before the deal. When it became official, the Geely stock rose 25% in a month. The TeliaSonera merger in 2002 created the Nordics' largest telecom company and moved both companies' stocks 15-30% in the week. The difference between M&A catalysts and product launches is that M&A are 'capital transactions' — the company exchanges cash for revenue, or stocks for control. This makes the price movement more predictable (many deal terms are public weeks in advance) but also more complex to value (synergies, integration risk, financing).",
+   "ar": "M&A — أقوى المحفزات تعتبر عمليات الاستحواذ والاندماج (M&A) أقوى أشكال محفزات الاستثمار. حين تعلن شركة أنها تستحوذ أو تخضع للاستحواذ، يتحرك السعر كثيرًا بنسبة 20-50% في يوم واحد. استُحوذ على Volvo Cars من جانب Geely شراءً من Ford بمبلغ $1,8 مليار في مارس 2010 — وكانت حصة Volvo Cars (حينها بشكل غير مباشر عبر Ford) قد صعدت 60% مع الشائعة قبل الصفقة. وحين أصبح الأمر رسميًا صعد سهم Geely بنسبة 25% في شهر. أما اندماج TeliaSonera عام 2002 فخلق أكبر شركة اتصالات في الشمال وأحرّك أسهم الشركتين 15-30% في الأسبوع. الفرق بين محفزات M&A وإطلاقات المنتجات أن عمليات M&A 'معاملات رأسمالية' — الشركة تبدل النقد مقابل الإيرادات، أو الأسهم مقابل السيطرة. هذا يجعل حركة السعر أكثر قابلية للتنبؤ (كثير من شروط الصفقة معلنة قبل أسابيع) لكنه أيضًا يجعلها أكثر تعقيدًا في التقييم (الوفورات، المخاطر التكاملية، التمويل)."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p7",
+   "en": "## Merger arbitrage — a practical strategy",
+   "ar": "## مراجحة الاندماج — استراتيجية عملية"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p8",
+   "en": "What is merger arbitrage? Merger arbitrage is an event-driven strategy where you buy the target company after a takeover bid has been announced, but before the deal closes. The spread between the bid price and the current market price is your potential profit. Example: Microsoft announces a bid for Activision at $95/share in January 2022. The Activision stock rises from $65 to $82 on the day — not to $95, because the market priced in the risk that the deal does not close (antitrust, regulation). Spread = $95 - $82 = $13, or 16%. If the deal closes at $95, you make a $13 profit in 6-12 months — that is a 26-52% annual return. If the deal falls through, Activision falls back to $65 — you lose $17. Probability of closing: typically 85-95% for friendly acquisitions with few regulatory risks; 50-70% for deals with major antitrust questions. Expected value: 0,90 × $13 + 0,10 × (-$17) = $11,70 - $1,70 = $10.",
+   "ar": "ما هي مراجحة الاندماج؟ مراجحة الاندماج استراتيجية مدفوعة بالأحداث تشتري فيها الشركة المستهدفة بعد الإعلان عن عرض استحواذ وقبل إتمام الصفقة. الفارق بين سعر العرض والسعر السوقي الحالي هو ربحك المحتمل. مثال: تعلن Microsoft عرضًا للاستحواذ على Activision بسعر $95/سهم في يناير 2022. يصعد السهم من $65 إلى $82 في اليوم نفسه — وليس إلى $95 لأن السوق سعّر احتمال عدم إتمام الصفقة (مخاطر مكافحة الاحتكار، التنظيم). الفارق = $95 - $82 = $13 أي 16%. إذا أُتمت الصفقة عند $95 تحقق ربحًا قدره $13 خلال 6-12 شهرًا — أي أن العائد السنوي يبلغ 26-52%. وإذا سقطت الصفقة يعود Activision إلى $65 — فتخسر $17. احتمال الإتمام: نموذجيًا 85-95% لعمليات الاستحواذ الودية قليلة المخاطر التنظيمية؛ و50-70% للصفقات ذات الأسئلة الكبرى حول مكافحة الاحتكار. القيمة المتوقعة: 0,90 × $13 + 0,10 × (-$17) = $11,70 - $1,70 = $10."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p9",
+   "en": "## Three perspectives on agreements & partnerships",
+   "ar": "## ثلاثة منظورات حول الاتفاقيات والشراكات"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p10",
+   "en": "**Peter Lynch:** Lynch saw major agreements as catalysts. He mentioned how a single major contract (a Boeing 737 order, a Walmart supplier agreement) could transform a company. 'An agreement worth 10% of annual sales is a game-changer.' Lynch warned, however, that dependence on one agreement can become a trap if the agreement expires.",
+   "ar": "**Peter Lynch:** نظر Lynch إلى الاتفاقيات الكبرى بوصفها محفزات. ذكر كيف يمكن لعقد واحد كبير (طلبية Boeing 737، اتفاقية توريد مع Walmart) أن تغيّر شركة. 'اتفاقية تساوي 10% من المبيعات السنوية تغيّر قواعد اللعبة'. لكن Lynch حذّر من أن الاعتماد على اتفاقية واحدة قد يصبح فخًا إذا انتهت مدتها."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p11",
+   "en": "**Benjamin Graham:** Graham adjusted the value of agreements downward due to uncertainty. He argued that 'an agreement that is not signed is worth nothing'. Graham preferred diversified revenue streams over dependence on individual agreements. He warned of 'agreement-dependent' companies — if they lose the main agreement, revenue collapses.",
+   "ar": "**Benjamin Graham:** خفض Graham قيمة الاتفاقيات بسبب عدم اليقين. كان يرى أن 'الاتفاقية غير الموقعة لا تساوي شيئًا'. فضّل Graham تدفقات الإيرادات المتنوعة على الاعتماد على اتفاقيات منفردة. وحذّر من الشركات 'المعتمدة على اتفاقية' — إذا فقدت الاتفاقية الرئيسية انهارت الإيرادات."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p12",
+   "en": "**AK1's interpretation:** AKM1 weight 7%. Agreements are assessed in three ways: (1) agreement value — as % of annual sales, (2) duration — long agreements > short ones, (3) exclusivity — exclusive agreements > non-exclusive. AKM1 combines V17 with V03 (diversification) — one major agreement + low diversification = concentration risk. We warn of the 'agreement trap' — companies where one agreement makes up >30% of revenue.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 7%. تُقيَّم الاتفاقيات بثلاث طرق: (1) قيمة الاتفاقية — كنسبة % من المبيعات السنوية، (2) المدة — الاتفاقيات الطويلة > القصيرة، (3) الحصرية — الاتفاقيات الحصرية > غير الحصرية. يجمع AKM1 بين V17 وV03 (التنويع) — اتفاقية كبرى + تنويع منخفض = مخاطر التركز. نحذّر من 'فخ الاتفاقية' — شركات تشكل فيها اتفاقية واحدة أكثر من 30% من الإيرادات."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p13",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p14",
+   "en": "From single deals to an event-driven portfolio",
+   "ar": "من صفقات منفردة إلى المحفظة المبنية على الأحداث"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p15",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Agreements & Partnerships (V17)](/kurser/v17-avtal-partnerskap) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [الاتفاقيات والشراكات (V17)](/kurser/v17-avtal-partnerskap) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap-analys:p16",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:titel",
+   "en": "V18: Regulatory Catalysts — how to analyze it",
+   "ar": "V18: المحفزات التنظيمية — هكذا تحللها"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:ingress",
+   "en": "Upcoming legislative changes, approvals, or regulations that affect the company positively or negatively.",
+   "ar": "تغييرات تشريعية أو موافقات أو لوائح قادمة تؤثر في الشركة إيجابًا أو سلبيًا."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p1",
+   "en": "Regulatory changes can create or destroy markets overnight. A drug approval = billions in value. A ban = bankruptcy. This is the most overlooked catalyst among beginners.",
+   "ar": "التغييرات التنظيمية يمكن أن تخلق أسواقًا أو تدمرها بين عشية وضحاها. موافقة على دواء = مليارات في القيمة. حظر = الإفلاس. هذا أكثر المحفزات إغفالًا بين المبتدئين."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p2",
+   "en": "This is **V18 — Regulatory catalysts** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V18 — المحفزات التنظيمية** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p4",
+   "en": "Regulatory catalysts have existed as long as the regulation of business. As early as the 1300s, Venice regulated the spice trade through licenses. During the industrialization of the 1800s came the first wave of modern regulation: the British Factory Act (1833) regulated child labor, the American Interstate Commerce Act (1887) regulated railways, and the Swedish Apotekarsocieteten (1837) regulated pharmacies. The modern regulatory era did not begin until the 1900s, however. The US FDA was formed in 1906 (Pure Food and Drug Act) and was tightened dramatically after the thalidomide scandal of 1962. The EU's EMA was formed in 1995 (after the earlier CPMP). The Swedish medical products agency has roots in the 1700s but was modernized in 1971.",
+   "ar": "المحفزات التنظيمية موجودة منذ وجود تنظيم النشاط التجاري. ففي القرن 1300 نظمت البندقية تجارة التوابل عبر التراخيص. وخلال التصنيع في القرن 1800 جاءت الموجة الأولى من التنظيم الحديث: نظّم قانون المصانع البريطاني (عام 1833) عمل الأطفال، ونظّم قانون التجارة بين الولايات الأمريكي (عام 1887) السكك الحديدية، ونظّمت جمعية الصيدلة السويدية Apotekarsocieteten (عام 1837) الصيدليات. غير أن العصر التنظيمي الحديث لم يبدأ إلا في القرن 1900. تشكلت هيئة FDA الأمريكية عام 1906 (قانون الأغذية والأدوية النقية) وتشددت بشكل حاد بعد فضيحة الثاليدومايد عام 1962. وتشكلت هيئة EMA الأوروبية عام 1995 (بعد هيئة CPMP السابقة). أما هيئة الأدوية السويدية فأصولها تعود إلى القرن 1700 لكنها حُدّثت عام 1971."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p5",
+   "en": "## Regulation as a price-moving force",
+   "ar": "## التنظيم بوصفه قوة محركة للسعر"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p6",
+   "en": "The regulatory catalyst — the most overlooked Regulatory catalysts are the most overlooked type of investment events. While product launches and M&A get great attention, regulatory changes often fly under the radar — until they strike. An FDA approval for a drug can create billions in value overnight. A ban on a business model can crush a company. The EU's Digital Markets Act (DMA), which entered into force in March 2024, forces Apple to allow alternative app stores in Europe — Apple services accounting for 5-15% of global revenue can be affected. At the same time, the DMA benefits Swedish companies like Spotify (which can offer direct subscriptions without Apple's 30% 'tax'). These are regulatory catalysts: discrete, time-bound events that fundamentally change a company's regulatory environment. AstraZeneca's Covid vaccine was approved by the EMA in January 2021 — this regulatory approval opened a market of $4-6 billion annually. The company's stock rose 8% in a week.",
+   "ar": "المحفز التنظيمي — الأكثر إغفالًا المحفزات التنظيمية أكثر أنواع أحداث الاستثمار إغفالًا. فبينما تحظى إطلاقات المنتجات وعمليات M&A باهتمام كبير، كثيرًا ما تمر التغييرات التنظيمية دون رادار — إلى أن تضرب. موافقة FDA على دواء يمكن أن تخلق مليارات في القيمة بين ليلة وضحاها. وحظر نموذج عمل يمكن أن يسحق شركة. قانون الأسواق الرقمية الأوروبي (DMA) الذي دخل حيز التنفيذ في مارس 2024 يُلزم Apple بالسماح بمتاجر تطبيقات بديلة في أوروبا — وقد تتأثر خدمات Apple التي تمثل 5-15% من الإيرادات العالمية. وفي الوقت نفسه يفيد DMA الشركات السويدية مثل Spotify (التي تستطيع تقديم اشتراكات مباشرة دون 'ضريبة' Apple البالغة 30%). هذه هي المحفزات التنظيمية: أحداث منفصلة ومحددة زمنيًا تغيّر جوهريًا البيئة التنظيمية للشركة. اعتُمد لقاح AstraZeneca المضاد لكوفيد من هيئة EMA في يناير 2021 — هذا الاعتماد التنظيمي فتح سوقًا بقيمة $4-6 مليار سنويًا. صعد السهم بنسبة 8% في أسبوع."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p7",
+   "en": "## Spectrum auctions and environmental permits",
+   "ar": "## مزادات الطيف الترددي والتصاريح البيئية"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p8",
+   "en": "5G spectrum auctions 5G spectrum auctions are one of the largest industrial regulatory catalysts for telecom companies. Process: the government allocates 'spectrum' (radio frequencies) via auction to the highest bidders. Winning an auction gives the right to build 5G networks on those frequencies for 15-20 years. Sweden held its 5G auction in November 2021 — Telia won for 3,2 BSEK, Tele2 for 2,3 BSEK, Telenor for 1,5 BSEK, Hi3G for 0,5 BSEK. A total of 7,5 BSEK for Swedish taxpayers. These auctions are double-edged swords: (1) positive for winners — the right to build 5G networks and earn new revenue; (2) negative for winners — they must pay the auction price, which burdens the balance sheet. Telia after the auction: liabilities increased by 3,2 BSEK; investment in 5G expansion a further 10-15 BSEK over 5 years.",
+   "ar": "مزادات طيف 5G تُعد مزادات طيف 5G من أكبر المحفزات التنظيمية الصناعية لشركات الاتصالات. العملية: تخصص الحكومة 'الطيف' (الترددات الراديوية) عبر مزاد لأصحاب أعلى العروض. الفوز في المزاد يمنح الحق في بناء شبكات 5G على هذه الترددات لمدة 15-20 عامًا. عقدت السويد مزاد 5G في نوفمبر 2021 — فازت Telia بمبلغ 3,2 BSEK، وTele2 بمبلغ 2,3 BSEK، وTelenor بمبلغ 1,5 BSEK، وHi3G بمبلغ 0,5 BSEK. الإجمالي 7,5 BSEK على دافعي الضرائب السويديين. هذه المزادات سلاح ذو حدين: (1) إيجابي للفائزين — الحق في بناء شبكات 5G وكسب الإيرادات الجديدة؛ (2) سلبي للفائزين — عليهم دفع سعر المزاد مما يثقل الميزانية العمومية. Telia بعد المزاد: زادت الالتزامات بمبلغ 3,2 BSEK؛ والاستثمار في توسعة 5G 10-15 BSEK إضافية خلال 5 أعوام."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p9",
+   "en": "## Mastery — regulatory monitoring as a system",
+   "ar": "## الإتقان — الرصد التنظيمي بوصفه نظامًا"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p10",
+   "en": "Regulatory calendar Mastery in regulatory investing requires systematic monitoring of upcoming decisions. Create a regulatory calendar with the following sources. (1) Pharmaceuticals: the FDA PDUFA calendar (published continuously), EMA CHMP meeting dates (published annually), the Swedish medical products agency's calendar. (2) Telecom: PTS auction and license calendar, FCC (USA), BEREC (EU). (3) Gaming: the Spelinspektionen decision calendar, UKGC, MGA. (4) Mines: the land and environment court calendar, county administrative boards' environmental cases. (5) Finance: Finansinspektionen decisions, EBA stress test results, Riksbank monetary policy decisions. A well-maintained calendar has 50-100 regulatory events over the coming 12 months, of which 5-10 are directly relevant to Swedish companies you are considering.",
+   "ar": "التقويم التنظيمي يتطلب الإتقان في الاستثمار التنظيمي رصدًا منهجيًا للقرارات القادمة. أنشئ تقويمًا تنظيميًا بالمصادر التالية. (1) الأدوية: تقويم FDA للمواعيد النهائية PDUFA (يُنشر باستمرار)، وتواريخ اجتماعات EMA لمجموعة CHMP (تنشر سنويًا)، وتقويم هيئة الأدوية السويدية. (2) الاتصالات: تقويم مزادات وتراخيص PTS، وFCC (الولايات المتحدة)، وBEREC (الاتحاد الأوروبي). (3) الألعاب: تقويم قرارات هيئة تفتيش الألعاب السويدية، وUKGC، وMGA. (4) المناجم: تقويم محكمة الأراضي والبيئة، وقضايا البيئة لدى مجالس المحافظات. (5) المالية: قرارات هيئة الرقابة المالية السويدية، ونتائج اختبارات الضغط لدى EBA، وقرارات السياسة النقدية للبنك المركزي السويدي. التقويم المُعتنى به جيدًا يضم 50-100 حدث تنظيمي خلال 12 شهرًا قادمًا، منها 5-10 أحداث وثيقة الصلة مباشرة بالشركات السويدية التي تفكر فيها."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p11",
+   "en": "## Three perspectives on regulatory catalysts",
+   "ar": "## ثلاثة منظورات حول المحفزات التنظيمية"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p12",
+   "en": "**Peter Lynch:** Lynch saw regulatory catalysts as unpredictable. He avoided companies where regulation was the main thesis. 'You cannot predict what politicians do — do not invest based on it.' Lynch preferred companies where regulation was a tailwind, not a precondition.",
+   "ar": "**Peter Lynch:** نظر Lynch إلى المحفزات التنظيمية بوصفها غير قابلة للتنبؤ. كان يتجنب الشركات التي يكون التنظيم فيها الفكرة الرئيسية. 'لا يمكنك التنبؤ بما يفعله السياسيون — لا تستثمر على أساس ذلك'. فضّل Lynch الشركات التي يكون التنظيم فيها ريحًا مواتية لا شرطًا مسبقًا."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p13",
+   "en": "**Benjamin Graham:** Graham was extremely skeptical of regulatory risk. He adjusted down the value of companies in highly regulated industries (banks, insurance, telecom). Graham argued that regulation can destroy a business model overnight. He preferred companies in lightly regulated industries.",
+   "ar": "**Benjamin Graham:** كان Graham شديد التشكك في المخاطر التنظيمية. خفض قيمة الشركات في القطاعات شديدة التنظيم (البنوك، التأمين، الاتصالات). رأى Graham أن التنظيم يمكن أن يدمر نموذج عمل بين ليلة وضحاها. فضّل الشركات في القطاعات قليلة التنظيم."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 7%. Regulatory risk is assessed on two axes: (1) negative risk — upcoming regulation that can harm (AML, competition law, environmental requirements), (2) positive catalyst — upcoming approvals (FDA, EMA, ESMA). AKM1 combines V18 with V19 (capital burn) — regulatory risk + high burn = double risk. We warn of 'regulatory blackjack' — companies whose value depends on a single approval.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 7%. تُقيَّم المخاطر التنظيمية على محورين: (1) المخاطر السلبية — لوائح قادمة قد تضر (مكافحة غسل الأموال، قانون المنافسة، المتطلبات البيئية)، (2) المحفز الإيجابي — موافقات قادمة (FDA، EMA، ESMA). يجمع AKM1 بين V18 وV19 (احتراق رأس المال) — مخاطر تنظيمية + احتراق مرتفع = درجة مضاعفة من المخاطر. نحذّر من 'بلاك جاك تنظيمي' — شركات تعتمد قيمتها على موافقة واحدة."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p16",
+   "en": "From single approvals to systematic monitoring",
+   "ar": "من موافقات منفردة إلى رصد منهجي"
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p17",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Regulatory catalysts (V18)](/kurser/v18-regulatoriska) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [المحفزات التنظيمية (V18)](/kurser/v18-regulatoriska) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v18-regulatoriska-analys:p18",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:titel",
+   "en": "V19: Capital Burn & Share Issue Risk — How to Analyze It",
+   "ar": "V19: احتراق رأس المال والمخاطر المرتبطة بإصدار أسهم — هكذا تحللها"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:ingress",
+   "en": "How fast the company burns money — and the risk of a new share issue that dilutes your stocks.",
+   "ar": "ما مدى سرعة احتراق الشركة للنقد — والمخاطر المرتبطة بإصدار أسهم جديدة يخفف من قيمة الأسهم لديك."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p1",
+   "en": "This is THE MOST IMPORTANT variable. The most common trap for small-cap investors: the company burns cash, needs a new share issue, dilutes your stocks, and the course of the price crashes. Many 'good' companies have destroyed investors through share issues.",
+   "ar": "هذا هو المتغير الأهم على الإطلاق. أشهر فخ لمستثمري الشركات الصغيرة: الشركة تحرق النقد، وتحتاج إلى إصدار أسهم جديدة، فتخفف قيمة الأسهم لديك، وتهوي الدورة السعرية. كثير من الشركات 'الجيدة' دمرت المستثمرين عبر عمليات إصدار أسهم."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p2",
+   "en": "This is **V19 — Capital Burn & Share Issue Risk** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V19 — احتراق رأس المال والمخاطر المرتبطة بإصدار أسهم** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p4",
+   "en": "The concept of capital burn and issue risk is as old as the stock market itself. The Dutch 'acties' of the VOC (Vereenigde Oost-Indische Compagnie, 1602) were issued continuously to finance expeditions, and early investors quickly discovered that dilution could destroy their value. It was only with the modern venture capital industry (the 1970s, Silicon Valley), however, that 'burn rate' and 'runway' became formal metrics. Sequoia Capital's Don Valentine and Kleiner Perkins' Tom Perkins developed frameworks for assessing startups' capital needs and survival time.",
+   "ar": "مفهوم احتراق رأس المال ومخاطر الإصدار قديم قدم سوق الأسهم نفسه. فقد كانت 'أسهم' شركة VOC الهولندية (Vereenigde Oost-Indische Compagnie، عام 1602) تُصدر باستمرار لتمويل الحملات الاستكشافية، واكتشف المستثمرون الأوائل سريعًا أن تخفيف الملكية يمكن أن يدمر قيمتهم. غير أنه فقط مع صناعة رأس المال المخاطر الحديثة (عقد 1970، وادي السيليكون) أصبح 'معدل الاحتراق' و'المدرج الزمني' مقياسين رسميين. طوّر Don Valentine من Sequoia Capital وTom Perkins من Kleiner Perkins أُطرًا لتقييم احتياجات الشركات الناشئة من رأس المال ومدة بقائها."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p5",
+   "en": "## Why capital burn is the most important variable",
+   "ar": "## لماذا يُعد احتراق رأس المال أهم متغير"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p6",
+   "en": "The silent killer — issues kill more investors than bankruptcy When new investors hear the word 'risk' they think of bankruptcy — the company going under, the stock falling to zero, the capital disappearing overnight. That is a dramatic, visible, and (relatively) rare event. The real killer is quieter, slower, and more insidious: share issues. Every year, Swedish small caps issue hundreds of billions of kronor in new share issues. Some are legitimate — the company is growing fast and needs capital to fund growth. But many are life-sustaining: the company burns money faster than it earns it, and instead of solving the underlying problem (the business model), management sends out a new share issue every year. The result is 'death by a thousand dilutions'. The stock may not fall to zero — it just gets diluted so much that your original holding becomes worthless. The Sinch stock fell from 600 kr to 30 kr between 2021 and 2024 — 95% value destruction.",
+   "ar": "القاتل الصامت — الإصدارات تقتل من المستثمرين أكثر مما يقتل الإفلاس حين يسمع المستثمرون الجدد كلمة 'المخاطرة' يفكرون في الإفلاس — الشركة التي تنهار، والسهم الذي يهبط إلى الصفر، ورأس المال الذي يختفي بين ليلة وضحاها. ذلك حدث درامي ومرئي و(نسبيًا) نادر. أما القاتل الحقيقي فأهدأ وأبطأ وأكثر مكرًا: إصدارات الأسهم. كل عام تصدر الشركات السويدية الصغيرة مئات المليارات من الكرونات في صورة إصدار أسهم جديدة. بعضها مشروع — الشركة تنمو بسرعة وتحتاج رأس مال لتمويل النمو. لكن كثيرًا منها لدعم البقاء: الشركة تحرق المال أسرع مما تكسبه، وبدلًا من حل المشكلة الجذرية (نموذج العمل) ترسل الإدارة إصدار أسهم جديدة كل عام. النتيجة 'موت بألف تخفيف ملكية'. قد لا يهبط السهم إلى الصفر — بل يُخفف حتى تصبح حيازتك الأصلية بلا قيمة. هبط سهم شركة Sinch من 600 kr إلى 30 kr بين 2021 و2024 — تدمير للقيمة بنسبة 95%."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p7",
+   "en": "## Finding and calculating burn rate in the annual report",
+   "ar": "## كيف تجد معدل الاحتراق وتحسبه في التقرير السنوي"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p8",
+   "en": "The cash flow statement — line by line The cash flow statement is V19's home. It sits in the annual report, usually after the income statement and the balance sheet. It consists of three sections: 1) Cash flow from operations (operating activities) — cash generated or consumed by the company's core business. 2) Cash flow from investing activities — cash used to buy equipment, companies, or intellectual assets. 3) Cash flow from financing activities — cash from share issues, loans, or dividends. For V19 analysis, section 1 (operations) is the primary interest. The line 'Cash flow from the operating activities before changes in working capital' shows the company's underlying cash generation before working capital effects. Then comes 'Change in working capital', which can be positive (cash is released) or negative (cash is tied up).",
+   "ar": "قائمة التدفقات النقدية — بندًا بعد بند قائمة التدفقات النقدية هي بيت V19. تقع في التقرير السنوي، عادة بعد قائمة الدخل والميزانية العمومية. تتكون من ثلاثة أقسام: 1) التدفق النقدي من الأنشطة التشغيلية (operating activities) — النقد الذي تولده النشاطات الجوهرية للشركة أو تستهلكه. 2) التدفق النقدي من الأنشطة الاستثمارية (investing activities) — النقد المستخدم لشراء المعدات أو الشركات أو الأصول الفكرية. 3) التدفق النقدي من الأنشطة التمويلية (financing activities) — النقد القادم من إصدار أسهم أو قروض أو توزيعات. في تحليل V19، القسم 1 (التشغيل) هو موضع الاهتمام الأول. بند 'التدفق النقدي من الأنشطة التشغيلية قبل التغيرات في رأس المال العامل' يُظهر توليد النقد الكامن لدى الشركة قبل تأثيرات رأس المال العامل. ثم يأتي 'التغير في رأس المال العامل' وقد يكون موجبًا (يتحرر النقد) أو سالبًا (يُحتجز النقد)."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p9",
+   "en": "## The risk framework — your checklist before investing",
+   "ar": "## إطار المخاطر — قائمة فحصك قبل الاستثمار"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p10",
+   "en": "10-point checklist for V19 Before investing in a small cap, run this 10-point checklist. If more than 3 answers are 'no' or 'warning' — abstain. 1) Runway > 18 months? Calculate cash / burn rate. Under 12 months = warning. Under 6 months = acute risk. 2) Is operating cash flow positive or trending toward positive? Last year's operating CF + next year's forecast. 3) Has the company issued shares in the last 3 years? Count the number of share issues and their purpose. 4) Total increase in the stock's share count over 5 years < 50%? Count the number of stocks 5 years ago vs today. Over 100% = major dilution. 5) Is EBITDA per share for the stock growing over 5 years? Make a table. 6) Capex to sales < 15%? (Exception: growth companies in expansion may be higher.) 7) Liabilities to EBITDA < 3x? Calculate total interest-bearing debt / EBITDA. Over 5x = high risk.",
+   "ar": "قائمة فحص من 10 بنود لأجل V19 قبل الاستثمار في شركة صغيرة، شغّل قائمة الفحص ذات البنود 10 هذه. إذا كانت أكثر من 3 إجابات 'لا' أو 'تحذير' — امتنع. 1) هل المدرج الزمني يتجاوز 18 شهرًا؟ احسب النقد ÷ معدل الاحتراق. أقل من 12 شهرًا = تحذير. أقل من 6 أشهر = خطر حاد. 2) هل التدفق النقدي التشغيلي موجب أو متجه نحو الموجب؟ التدفق التشغيلي للعام الماضي + توقعات العام القادم. 3) هل أصدرت الشركة أسهمًا خلال آخر 3 أعوام؟ احسب عدد عمليات إصدار أسهم وغرضها. 4) هل الزيادة الإجمالية في عدد أسهم السهم خلال 5 أعوام أقل من 50%؟ قارن عدد الأسهم قبل 5 أعوام بعددها اليوم. أكثر من 100% = قدر كبير من تخفيف الملكية. 5) هل ربحية السهم من EBITDA تنمو خلال 5 أعوام؟ أنشئ جدولًا. 6) هل النفقات الرأسمالية إلى المبيعات أقل من 15%؟ (استثناء: شركات النمو في مرحلة توسع قد تكون أعلى.) 7) هل الالتزامات إلى EBITDA أقل من 3x؟ احسب إجمالي الديون بفوائد ÷ EBITDA. أكثر من 5x = درجة عالية من المخاطر."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p11",
+   "en": "## Three perspectives on capital burn & share issue risk",
+   "ar": "## ثلاثة منظورات حول احتراق رأس المال والمخاطر المرتبطة بإصدار أسهم"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p12",
+   "en": "**Peter Lynch:** Lynch avoided companies that burned money. 'If a company needs to issue shares every third year, you do not own the company — the company owns you.' He preferred companies with positive cash flow that could fund their own growth. Lynch's rule: 'A company that cannot generate cash from its operations is a theory, not an investment.'",
+   "ar": "**Peter Lynch:** تجنّب Lynch الشركات التي تحرق المال. 'إذا كانت الشركة بحاجة إلى إصدار أسهم كل عام ثالث، فأنت لا تملك الشركة — بل الشركة تملكك'. فضّل الشركات ذات التدفق النقدي الموجب القادرة على تمويل النمو بنفسها. قاعدة Lynch: 'الشركة غير القادرة على توليد النقد من عملياتها نظرية لا استثمار'."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p13",
+   "en": "**Benjamin Graham:** Graham was extremely risk-averse toward capital burn. He avoided companies with negative cash flow entirely. Graham argued that 'a company that burns money is a theory about future profitability — and theories are cheap.' He required positive cash flow from operations for the last 5 years.",
+   "ar": "**Benjamin Graham:** كان Graham شديد النفور من المخاطر تجاه احتراق رأس المال. كان يتجنب كليًا الشركات ذات التدفق النقدي السالب. رأى Graham أن 'الشركة التي تحرق المال نظرية عن ربحية مستقبلية — والنظريات رخيصة'. اشترط أن يكون التدفق النقدي من الأنشطة التشغيلية موجبًا خلال آخر 5 أعوام."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight CRITICAL — the highest risk weight. We combine V19 with V11 (liquidity) and V10 (debt level). A company with an 18-month runway, 60% debt ratio, and negative cash flow gets V19=1 (lowest) no matter how strong growth is. AKM1 calculates 'runway' = cash / monthly burn. Under 12 months = acute share issue risk.",
+   "ar": "**تفسير AK1:** وزن AKM1 حرج — أعلى أوزان المخاطر. نجمع V19 مع V11 (السيولة) وV10 (مستوى الدين). وشركة يكون التدفق النقدي فيها سالبًا، مع مدرج زمني 18 شهرًا ونسبة دين 60%، تحصل على V19=1 (الأدنى) مهما كان النمو قويًا. يحسب AKM1 'المدرج الزمني' = النقد ÷ الاحتراق الشهري. أقل من 12 شهرًا = خطر حاد في إصدار أسهم."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p16",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Capital Burn & Share Issue Risk (V19)](/kurser/v19-kapitalforbranning) contains 8 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [احتراق رأس المال والمخاطر المرتبطة بإصدار أسهم (V19)](/kurser/v19-kapitalforbranning) تضم 8 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v19-kapitalforbranning-analys:p17",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:titel",
+   "en": "V20: Share Buybacks of Own Stocks — How to Analyze It",
+   "ar": "V20: إعادة شراء الأسهم الخاصة — هكذا تحللها"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:ingress",
+   "en": "How to judge whether share buybacks of own stocks create value or destroy it — and why V20 is AKM1's 20th indicator.",
+   "ar": "كيف تحكم على ما إذا كانت إعادة شراء الأسهم الخاصة تخلق قيمة أم تدمرها — ولماذا V20 هو المؤشر 20 لدى AKM1."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p1",
+   "en": "Share buybacks are the most misunderstood capital allocation mechanism. Used right = a powerful value-creating signal. Used wrong = EPS manipulation with debt. This variable separates genuine compounders from companies that hide weak growth with buybacks.",
+   "ar": "إعادة شراء الأسهم هي أكثر آليات تخصيص رأس المال سوء فهمًا. الاستخدام الصحيح = إشارة قوية لخلق القيمة. الاستخدام الخاطئ = تلاعب بـEPS عبر الدين. هذا المتغير يفصل المتراكمات الحقيقية عن الشركات التي تخفي النمو الضعيف بالاسترجاعات."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p2",
+   "en": "This is **V20 — Share buybacks of own stocks** in the AKM1 model: one of the 20 variables that together determine whether a company is an institutional quality stock or a company of stories. In this article you get the variable explained, how to calculate it yourself, and how three of history's greatest investors would have interpreted it.",
+   "ar": "هذا هو **V20 — إعادة شراء الأسهم الخاصة** في نموذج AKM1: أحد المتغيرات الـ20 التي تحدد معًا ما إذا كانت الشركة سهمًا مؤسسيًا عالي الجودة أم مجرد سلسلة قصص. في هذا المقال تحصل على شرح المتغير، وكيف تحسبه بنفسك، وكيف كان سيفسّره ثلاثة من كبار المستثمرين في التاريخ."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p3",
+   "en": "## Why the variable exists",
+   "ar": "## لماذا يوجد هذا المتغير"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p4",
+   "en": "Share buybacks of own stocks were legalized in the USA in 1982 (SEC Rule 10b-18) after previously being considered market manipulation. In Sweden, buybacks became common only in the 2000s after changes to the companies act. Early pioneers: IBM and Exxon in the 1980s.",
+   "ar": "قُنّنت إعادة شراء الأسهم الخاصة في الولايات المتحدة عام 1982 (قاعدة SEC رقم 10b-18) بعد أن كانت تُعد سابقًا تلاعبًا بالسوق. وفي السويد لم تشع الاسترجاعات إلا في عقد 2000 بعد تعديلات قانون الشركات. الرواد الأوائل: IBM وExxon في عقد 1980."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p5",
+   "en": "## What is a share buyback — and why it exists",
+   "ar": "## ما هي إعادة شراء الأسهم — ولماذا توجد"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p6",
+   "en": "A share buyback of own stocks (share buyback / share repurchase) means that a company buys back its own outstanding stocks from the market. The bought stocks are withdrawn (retired) or kept as treasury stock. The effect: the number of outstanding stocks decreases, which raises earnings per share (EPS) even if total profit is unchanged. The mechanics are simple but the consequences are deep. A company with 100 million stocks and 100 MSEK in profit has EPS = 1,00 SEK. If the company buys back 10 million stocks (now 90 M outstanding), EPS rises to 1,11 SEK — an 11% 'growth' in EPS without the company earning a krona more. That is the power of buybacks — and their danger.",
+   "ar": "تعني إعادة شراء الأسهم الخاصة (share buyback / share repurchase) أن تشتري الشركة أسهمها القائمة من السوق. الأسهم المشتراة تُلغى (تُسترد) أو تُحتفظ بها كأسهم خزينة. الأثر: يقل عدد الأسهم القائمة، مما يرفع ربحية السهم (EPS) حتى لو بقي الربح الإجمالي دون تغيير. الميكانيكا بسيطة لكن العواقب عميقة. شركة لديها 100 مليون سهم وربح 100 مليون SEK تكون ربحية السهم لديها = 1,00 SEK. إذا اشترت الشركة 10 ملايين سهم (فيصبح القائم 90 مليونًا) ترتفع ربحية السهم إلى 1,11 SEK — 'النمو' بنسبة 11% في EPS دون أن تكسب الشركة كرونة واحدة إضافية. هذه قوة الاسترجاعات — وهذا خطرها."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p7",
+   "en": "## Calculating buyback return in practice",
+   "ar": "## حساب العائد من الاسترجاعات عمليًا"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p8",
+   "en": "The AKM1 V20 score scale: • Score 5: Buybacks funded with free cash flow, at P/B < 1, without eroding R&D. Examples: Investor AB, Atlas Copco. • Score 4: Buybacks funded with free cash flow, at P/B 1-2. Good but not optimal. • Score 3: Buybacks funded with debt but at the right price. Acceptable. • Score 2: Buybacks funded with debt, at P/B > 2, or replacing R&D. Value-destroying. • Score 1: Aggressive buybacks funded with debt, at extreme valuations, while the business decays. Examples: Boeing 2010-2019, GE under Immelt. To check: look in the annual report for 'share repurchase program' in the cash flow statement and 'treasury shares' in the balance sheet.",
+   "ar": "مقياس درجات AKM1 لمتغير V20: • الدرجة 5: استرجاعات ممولة بالتدفق النقدي الحر، عند P/B أقل من 1، دون تقويض البحث والتطوير. أمثلة: Investor AB وAtlas Copco. • الدرجة 4: استرجاعات ممولة بالتدفق النقدي الحر، عند P/B بين 1-2. جيد لكنه ليس أمثل. • الدرجة 3: استرجاعات ممولة بالدين لكن بالسعر المناسب. مقبول. • الدرجة 2: استرجاعات ممولة بالدين، عند P/B أعلى من 2، أو تحل محل البحث والتطوير. مدمرة للقيمة. • الدرجة 1: استرجاعات عدوانية ممولة بالدين، عند تقييمات متطرفة، بينما ينهار النشاط. أمثلة: Boeing في الفترة 2010-2019، وGE في عهد Immelt. للتحقق: ابحث في التقرير السنوي عن 'share repurchase program' في قائمة التدفقات النقدية وعن 'treasury shares' في الميزانية العمومية."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p9",
+   "en": "## The dangerous illusion — EPS manipulation",
+   "ar": "## الوهم الخطير — التلاعب بـEPS"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p10",
+   "en": "The most dangerous use of buybacks is EPS manipulation. The mechanism: a company with 0% organic growth can show 10% EPS growth by retiring 10% of the stocks. Shareholders see 'growth' that does not exist in the business. When the buyback program ends (often in a crisis when debt is too high), EPS growth collapses and the stock falls. Boeing is the most extreme example. Between 2010 and 2019, Boeing bought back for 43 bn USD — funded with debt. At the same time, they underinvested in 737 MAX development. EPS grew, the stock rose, management got bonuses. Then came the 737 MAX crashes (2018-2019) and COVID (2020). Debt was enormous, cash flow was negative, and the buyback program had emptied the cash. Boeing fell 75%. Buybacks had masked an operation in decay.",
+   "ar": "أخطر استخدام للاسترجاعات هو التلاعب بـEPS. الآلية: شركة النمو العضوي فيها 0% يمكنها إظهار نمو EPS بنسبة 10% عبر استرداد 10% من الأسهم. المساهمون يرون 'نموًا' غير موجود في النشاط. عندما ينتهي برنامج الاسترجاع (غالبًا عند أزمة يصبح فيها الدين مرتفعًا جدًا) ينهار نمو EPS ويهبط السهم. تعد Boeing المثال الأشد تطرفًا. بين 2010 و2019 استرجعت Boeing أسهمًا بقيمة 43 مليار دولار — بتمويل من الدين. وفي الوقت نفسه قللت الاستثمار في تطوير 737 MAX. نمت EPS وصعد السهم وحصلت الإدارة على مكافآت. ثم جاءت حوادث 737 MAX (2018-2019) وكوفيد (2020). كان الدين هائلًا والتدفق النقدي سالبًا، وكان برنامج الاسترجاع قد أفرغ الخزينة. هبطت Boeing بنسبة 75%. كانت الاسترجاعات قد قنعت نشاطًا في طور الانهيار."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p11",
+   "en": "## Three perspectives on share buybacks of own stocks",
+   "ar": "## ثلاثة منظورات حول إعادة شراء الأسهم الخاصة"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p12",
+   "en": "**Peter Lynch:** Lynch saw buybacks as one of the strongest signals. 'When management buys back stocks with their own money, not borrowed, they know something you do not — and they share the profit with you.' He preferred buybacks over dividends for tax reasons.",
+   "ar": "**Peter Lynch:** نظر Lynch إلى الاسترجاعات بوصفها من أقوى الإشارات. 'حين تشتري الإدارة الأسهم بأموالها الخاصة لا بأموال مقترضة، فهي تعرف ما لا تعرفه — وتشاركك الربح'. فضّل الاسترجاعات على التوزيعات لأسباب ضريبية."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p13",
+   "en": "**Benjamin Graham:** Graham saw buybacks as neutral — he preferred the dividend. 'A dividend is a check you can bank; a buyback is a promise of future EPS growth that may or may not be fulfilled.' He distrusted buybacks made with debt.",
+   "ar": "**Benjamin Graham:** نظر Graham إلى الاسترجاعات بوصفها محايدة — كان يفضل التوزيعات. 'التوزيعات شيك يمكنك إيداعه؛ أما الاسترجاع فوعد بالنمو المستقبلي في EPS قد يتحقق أو لا يتحقق'. كان يشك في الاسترجاعات الممولة بالدين."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p14",
+   "en": "**AK1's interpretation:** AKM1 weight 5% (new in the V20 expansion). We judge buybacks on three criteria: (1) funded with free cash flow, not debt; (2) at a price below intrinsic value; (3) not instead of necessary R&D investment. Buybacks done for the right reason = score 4-5; buybacks done to manipulate EPS = score 1.",
+   "ar": "**تفسير AK1:** وزن AKM1 هو 5% (جديد في توسعة V20). نقيّم الاسترجاعات وفق ثلاثة معايير: (1) ممولة بالتدفق النقدي الحر لا بالدين؛ (2) بسعر أدنى من القيمة الحقيقية؛ (3) ليست بديلًا عن استثمار ضروري في البحث والتطوير. الاسترجاعات لسبب صحيح = درجة 4-5؛ والاسترجاعات للتلاعب بـEPS = درجة 1."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p15",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p16",
+   "en": "Integrate V20 with the other 19 variables",
+   "ar": "ادمج V20 مع المتغيرات الأخرى الـ19"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p17",
+   "en": "Want to practice with worked examples, chapter by chapter? The course [Share buybacks of own stocks (V20)](/kurser/v20-aterekop-egna-aktier) contains 6 chapters, the Lynch and Graham perspectives, and how AK1 uses the variable in the wave matrix. See also [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) for how all 20 variables fit together.",
+   "ar": "أتريد التمرن بأمثلة حسابية، الفصل بعد الفصل؟ الدورة [إعادة شراء الأسهم الخاصة (V20)](/kurser/v20-aterekop-egna-aktier) تضم 6 فصول، ومنظورَي Lynch وGraham، وكيف يستخدم AK1 المتغير في مصفوفة الموجات. انظر أيضًا [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) لفهم كيف تترابط المتغيرات الـ20 كلها."
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier-analys:p18",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:titel",
+   "en": "What is institutional stock analysis — and how do you use it?",
+   "ar": "ما هو تحليل الأسهم المؤسسي — وكيف تستخدمه؟"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:ingress",
+   "en": "The difference between retail and institutional analysis is not secrets but methodology. Here is what Carnegie and Swedbank do — and how you apply the same process.",
+   "ar": "الفرق بين التحليل الفردي والتحليل المؤسسي ليس أسرارًا بل منهجية. ها هو ما يفعله Carnegie وSwedbank — وكيف تطبق العملية نفسها."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p1",
+   "en": "'Institutional analysis' sounds like a closed club — models behind expensive terminals, analysts who get to speak with CEOs. The truth is duller and more useful: institutional analysis is a **process**, applied identically to every company, with disclosed assumptions. It is the process — not the asset — that makes the difference.",
+   "ar": "يبدو 'التحليل المؤسسي' ناديًا مغلقًا — نماذج خلف وحدات عرض باهظة، ونخبة من المحللين تحصل على مقابلات مع المديرين العامين. الحقيقة أكثر مللًا وأكثر فائدة: التحليل المؤسسي **عملية** تُطبق بشكل متطابق على كل شركة، مع افتراضات معلنة. إنها العملية — لا الأصل — التي تصنع الفارق."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p2",
+   "en": "## Three things institutions do that private investors rarely do",
+   "ar": "## ثلاثة أمور تفعلها المؤسسات ونادرًا ما يفعلها الأفراد"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p3",
+   "en": "**1. They write down their assumptions before the result.** Before a report is presented, the assumptions driving the thesis are documented: margins, volume growth, cost of capital. When the report then deviates, exactly *where* it went wrong is visible. This is the core of [reproducible analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) — and the reason every AK1A analysis discloses its entire basis.",
+   "ar": "**1. يكتبون افتراضاتهم قبل ظهور النتيجة.** قبل تقديم تقرير تُوثَّق الافتراضات التي تقود الفكرة: الهوامش، ونمو الحجم، وتكلفة رأس المال. وحين تحيد النتيجة بعد ذلك يظهر بدقة *أين* حدث الخطأ. هذا هو جوهر [التحليل القابل للتكرار](/blogg/komplett-guide-svensk-aktieanalys-2026) — وسبب إفصاح كل تحليل من تحليلات AK1A عن أساسه كاملًا."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p4",
+   "en": "**2. They have a checklist and follow it mechanically.** No institution analyzes a company 'on feeling'. 20, 30, 50 points are answered for every company — always the same points, always in the same order. That is why two analysts at the same house can be compared, and why the checklist finds things intuition misses. AKM1's [20 variables](/kurser) are exactly such a list — one course per variable.",
+   "ar": "**2. لديهم قائمة فحص يتبعونها آليًا.** لا توجد مؤسسة تحلل شركة 'بالإحساس'. تُجاب 20 و30 و50 نقطة لكل شركة — دائمًا النقاط نفسها، ودائمًا بالترتيب نفسه. لهذا يمكن مقارنة اثنين من المحللين في الدار نفسها، ولهذا تعثر قائمة الفحص على أشياء تفوتها الحدس. إن قائمة [متغيرات AKM1 الـ20](/kurser) — بحيث تُخصص لكل متغير الدورة الخاصة به — هي بالضبط قائمة من هذا النوع."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p5",
+   "en": "**3. They think in scenarios with probabilities.** The question is never 'what is the stock worth?' but 'which three paths can the company take, how likely are they, and what is the stock worth in each?' See what it looks like in practice in our [Volvo Cars analysis](/analyser/VOLCAR-B) — three scenarios, three price levels, three probabilities.",
+   "ar": "**3. يفكرون بسيناريوهات مع احتمالات.** السؤال ليس أبدًا 'ما قيمة السهم؟' بل 'ما المسارات الثلاثة الممكنة للشركة، وما مدى احتمالها، وما قيمة السهم في كل منها؟'. انظر كيف يبدو ذلك عمليًا في [تحليل Volvo Cars](/analyser/VOLCAR-B) — ثلاثة سيناريوهات، وثلاثة مستويات سعرية، وثلاثة احتمالات."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p6",
+   "en": "## The difference from retail thinking",
+   "ar": "## الفرق عن التفكير الفردي"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p7",
+   "en": "| Retail | Institutional |\n|---|---|\n| Starts with the price chart | Starts with the business model |\n| Looks for confirmation of the thesis | Actively looks for disconfirmation |\n| Point estimate ('the stock is worth 58 kr') | Scenarios with probabilities |\n| Remembers the wins | Logs everything, including the errors |\n| One story is enough | The checklist must be complete |",
+   "ar": "| الفردي | المؤسسي |\n|---|---|\n| يبدأ بالرسم البياني للسهم | يبدأ بنموذج العمل |\n| يبحث عن تأكيد الفكرة | يبحث بنشاط عن دحضها |\n| تقدير نقطي ('السهم يساوي 58 kr') | سيناريوهات مع احتمالات |\n| يتذكر المكاسب | يسجل كل شيء حتى الأخطاء |\n| تكفي قصة واحدة | يجب أن تكتمل قائمة الفحص |"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p8",
+   "en": "Note: nothing in the right column costs money. What is required is discipline and a structure.",
+   "ar": "لاحظ: لا شيء في العمود الأيمن يكلف مالًا. المطلوب هو الانضباط وبنية منظمة."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p9",
+   "en": "## What banks do not do (and why you can win)",
+   "ar": "## ما لا تفعله البنوك (ولماذا يمكنك الفوز)"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p10",
+   "en": "Institutions also have weaknesses you can exploit:",
+   "ar": "للمؤسسات أيضًا نقاط ضعف يمكنك استغلالها:"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p11",
+   "en": "- **The time horizon.** Bonus systems and quarterly pressure force a short horizon. Companies with 2–3 dull years before a turnaround get sorted out — even when the turnaround is highly probable. Precise Biometrics after the merger is a textbook example: [our analysis](/analyser/PREC.ST) shows a company where institutional impatience meets pedagogical patience.\n- **Coverage logic.** One analyst covers 30–50 companies. Small caps below a certain market cap threshold never get coverage — there, the fundamental analysis is actually *better* available to you than to them.\n- **Conformity.** Nobody got fired for having the same recommendation as the competitors. Consensus therefore becomes a risk factor of its own — read [how AKM1 calculates](/kalkylator) to see how one systematically breaks down consensus into variables.",
+   "ar": "- **الأفق الزمني.** أنظمة المكافآت وضغط التقارير الفصلية تفرض أفقًا قصيرًا. الشركات التي تمر بـ2–3 سنوات مملة قبل انعطاف تُستبعد — حتى حين يكون الانعطاف مرجحًا بشدة. شركة Precise Biometrics بعد الاندماج مثال مدرسي: [تحليلنا](/analyser/PREC.ST) يعرض شركة يلتقي فيها نفاد الصبر المؤسسي مع الصبر التربوي.\n- **منطق التغطية.** المحلل الواحد يغطي 30–50 شركة. الشركات الصغيرة دون حد معين للقيمة السوقية لا تحصل أبدًا على تغطية — وهناك يكون التحليل الأساسي في الواقع *أفضل* توفرًا لك منهم.\n- **الامتثالية.** لم يُفصل أحد لأن لديه التوصية نفسها التي لدى المنافسين. لذلك يصبح الإجماع عامل مخاطر بحد ذاته — اقرأ [كيف يحسب AKM1](/kalkylator) لترى كيف يُفكك منهجيًا الإجماع إلى متغيرات."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p12",
+   "en": "## How you start working institutionally — in practice",
+   "ar": "## هكذا تبدأ العمل بمنهجية مؤسسية — عمليًا"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p13",
+   "en": "1. **Choose a checklist** (AKM1's 20 variables are a good start — every variable has a [course](/kurser))\n2. **Score mechanically** — 0–5 per variable, justified with numbers from the annual report\n3. **Build three scenarios** with probabilities that sum to 100 %\n4. **Write down what would make you change your mind** — before you buy",
+   "ar": "1. **اختر قائمة فحص** (متغيرات AKM1 الـ20 بداية جيدة — لكل متغير [الدورة](/kurser) الخاصة به)\n2. **قيّم آليًا** — من 0 إلى 5 لكل متغير، مع التبرير بأرقام من التقرير السنوي\n3. **ابنِ ثلاثة سيناريوهات** باحتمالات مجموعها 100 %\n4. **اكتب ما الذي يجعلك تغير رأيك** — قبل أن تشتري"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p14",
+   "en": "Step four is the most important and the worst executed in the entire industry.",
+   "ar": "الخطوة الرابعة هي الأهم والأسوأ تنفيذًا في الصناعة كلها."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p15",
+   "en": "## The methodology is not secret — that is the point",
+   "ar": "## المنهجية ليست سرية — هذه هي الفكرة"
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p16",
+   "en": "AK1A Research Lab exists for one thesis: if the process is what is valuable, the process should be open. Every variable explained, every analysis disclosed, every error logged. [Membership](/medlemskap) gives you the tools — but the method is published here, free, so that it can be scrutinized.",
+   "ar": "يوجد AK1A Research Lab من أجل فكرة واحدة: إذا كانت العملية هي ما له قيمة، فينبغي أن تكون العملية مفتوحة. كل متغير مشروح، وكل تحليل معلن، وكل خطأ مسجل. [العضوية](/medlemskap) تمنحك الأدوات — لكن المنهجية منشورة هنا مجانًا لكي تخضع للمراجعة."
+  },
+  {
+   "nyckel": "vad-ar-institutionell-aktieanalys:p17",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:titel",
+   "en": "Why indicators are no longer static — the idea behind the Wave Foundation",
+   "ar": "لهذا لم تعد المؤشرات ثابتة — الفكرة وراء أساس الموجات"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:ingress",
+   "en": "A ROE number is a still image. But every fundamental variable has a history — and a direction. So we let every AKM1 variable get its own wave class across five time horizons. Here is how we think.",
+   "ar": "رقم ROE صورة ثابتة. لكن المتغير الأساسي لديه تاريخ — واتجاه. لذلك نمنح كل متغير من متغيرات AKM1 فئة موجته الخاصة عبر خمسة آفاق زمنية. هكذا نفكر."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p1",
+   "en": "Most fundamental analyses end in a number. ROE is 21 %. The margin is 14 %. The debt-to-equity ratio 0,8. Neat, tidy — and completely static.",
+   "ar": "معظم التحليلات الأساسية تنتهي إلى رقم. ROE عند 21 %. الهامش عند 14 %. نسبة الدين إلى حقوق الملكية عند 0,8. أنيق ومرتب — وساكن تمامًا."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p2",
+   "en": "We found that strange. Prices get waves, but the fundamentals stand still? A company projection is not a static image — over its course it moves, brakes, accelerates. So we rebuilt the entire way we look at fundamental data: **every variable is a time series with its own wave class** — on each of our five time horizons: micro, short, medium, long, and mega.",
+   "ar": "وجدنا ذلك غريبًا. الأسعار تأخذ شكل موجات، أما الأساسيات فتقف ساكنة؟ التوقعات الخاصة بالشركة ليست صورة ثابتة — فهي على مدار الدورة تتحرك وتبطئ وتتسارع. لذلك أعدنا بناء طريقتنا كلها في النظر إلى البيانات الأساسية: **كل متغير سلسلة زمنية لها فئة موجة خاصة بها** — على كل أفق من آفاقنا الزمنية الخمسة: ميكرو، قصير، متوسط، طويل، وميجا."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p3",
+   "en": "## What a wave class means for a fundamental variable",
+   "ar": "## ماذا تعني فئة الموجة لمتغير أساسي"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p4",
+   "en": "When we look at revenue growth (V01), we do not just ask 'how big?' but 'where is it heading?'. The answer is one of four classes:",
+   "ar": "حين ننظر إلى نمو الإيرادات (V01) لا نسأل فقط 'ما حجمها؟' بل 'إلى أين تتجه؟'. الجواب إحدى أربع فئات:"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p5",
+   "en": "- **Impulse wave** — the variable moves forcefully in its direction\n- **Correction** — it pulls in the opposite direction\n- **Base building** — it moves sideways, gathering strength\n- **Undecided** — the data is not enough to say anything. And then we say nothing.",
+   "ar": "- **الموجة الدافعة** — المتغير يتحرك بقوة في اتجاهه\n- **تصحيح** — ينجذب إلى الاتجاه المعاكس\n- **بناء القاعدة** — يتحرك جانبيًا جامعًا القوة\n- **غير محسوم** — البيانات لا تكفي للقول شيئًا. وحينها لا نقول شيئًا."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p6",
+   "en": "The fourth class is the most important. Most services guess when data is missing — we prefer silence. An undecided cell is more honest than a fabricated number, and in the long run honesty is the only thing that works in analysis.",
+   "ar": "الفئة الرابعة هي الأهم. معظم الخدمات تخمن عندما تنقص البيانات — نحن نفضل الصمت. الخلية غير المحسومة أصدق من رقم ملفق، وعلى المدى الطويل الصدق هو الشيء الوحيد الذي ينجح في التحليل."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p7",
+   "en": "## 20 variables × 5 horizons = a matrix, not a number",
+   "ar": "## 20 متغيرًا × 5 آفاق = مصفوفة لا رقم"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p8",
+   "en": "The result is a matrix: 20 AKM1 variables on the vertical axis, five time horizons on the horizontal. Every cell has a wave class. Suddenly patterns appear that a single score never shows: that profitability drives in the short term while growth corrects in the medium term. That the risk variables are base building. That an entire category moves in step — or rebels against the rest.",
+   "ar": "النتيجة مصفوفة: 20 متغيرًا من متغيرات AKM1 على المحور الرأسي، وخمسة آفاق زمنية على المحور الأفقي. كل خلية لها فئة موجة. فجأة تظهر أنماط لا يعرضها رقم مفرد أبدًا: أن الربحية تدفع على الأجل القصير بينما يصحح النمو على الأجل المتوسط. أن متغيرات المخاطر في طور بناء القاعدة. أن فئة كاملة تتحرك بإيقاع واحد — أو تتمرد على الباقي."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p9",
+   "en": "And then the most interesting printout of all: **the divergence**. When the price (which AK1TS reads) says one thing but the fundamentals (which the Wave Foundation reads) say something else — then there is something to study. The divergence is not a buy or sell signal; it is a question. Our task is to educate you in asking it, not to answer it for you.",
+   "ar": "ثم أكثر المخرجات إثارة على الإطلاق: **الانفراجة**. حين يقول السعر (الذي يقرأه AK1TS) شيئًا وتقول الأساسيات (التي يقرأها أساس الموجات) شيئًا آخر — فهناك ما يستحق الدراسة. الانفراجة ليست إشارة شراء أو بيع؛ إنها سؤال. مهمتنا أن نعلمك طرحه، لا أن نجيب عنه نيابة عنك."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p10",
+   "en": "## From stock to portfolio",
+   "ar": "## من السهم إلى المحفظة"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p11",
+   "en": "One stock at a time first — then the entire portfolio. All holdings are weighted together, cell by cell, and the portfolio gets its own matrix: where is the average of what you own on each horizon? It is the same hierarchy all the way: cell → variable → category → whole.",
+   "ar": "نبدأ بالسهم الواحد في كل مرة — ثم المحفظة كاملة. تُوزن جميع الحيازات معًا، خلية بعد خلية، فتحصل المحفظة على مصفوفتها الخاصة: أين يقع متوسط ما تملكه على كل أفق؟ إنه التسلسل الهرمي نفسه على طول الطريق: خلية → متغير → فئة → كل."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p12",
+   "en": "## The controversy — say it as it is",
+   "ar": "## الجدل — قلها كما هي"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p13",
+   "en": "Mainstream fundamental analysis is about levels and multiples, not about waves on fundamental data. It is a fair criticism: quarterly data is noisy, the history at data vendors is short, and a 'wave' on a variable is not the same thing as a price pattern theory. We buy the whole criticism — that is why we report frequently with undecided cells instead of stretching the data. The exact execution of the classification rules is our know-how; how you read and interpret the wave classes we teach entirely openly.",
+   "ar": "التحليل الأساسي السائد يدور حول المستوى والمضاعفات، لا حول موجات في البيانات الأساسية. وهي ملاحظة نقدية وجيهة: البيانات الفصلية مشوشة، والتاريخ لدى مزودي البيانات قصير، و'موجة' على متغير ليست الشيء نفسه كنظرية أنماط سعرية. نحن نقبل النقد كاملًا — لذلك نفصح كثيرًا بخلايا غير محسومة بدلًا من مدّ البيانات. التنفيذ الدقيق لقواعد التصنيف هو معرفتنا الخاصة؛ أما كيفية قراءة فئات الموجة وتفسيرها فنعلّمها بكل انفتاح."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p14",
+   "en": "## Try it yourself",
+   "ar": "## جرّب بنفسك"
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p15",
+   "en": "The Wave Foundation is free, like everything in Phase 1. Try the demo page with a real stock, and run your own holdings in the portfolio section — fundamental waves per stock and for the portfolio as a whole. Educational analysis, not investment advice: the tool teaches you to think, it never decides for you.",
+   "ar": "أساس الموجات مجاني، مثل كل شيء في المرحلة 1. جرّب صفحة العرض التوضيحي على السهم الحقيقي، وشغّل حيازاتك الخاصة في قسم المحفظة — موجة أساسية لكل سهم وللمحفظة ككل. تحليل تعليمي وليس نصيحة استثمارية: الأداة تعلمك التفكير، ولا تقرر أبدًا نيابة عنك."
+  },
+  {
+   "nyckel": "vagfundament-indikatorer-ar-tidsserier:p16",
+   "en": "- [Open the Wave Foundation](/vagfundament) — demo with a real stock\n- [Your portfolio's fundamental waves](/min-portfolj) — analysis per holding + portfolio matrix\n- [Learn AKM1 from the ground up](/kurser/akm1-den-kontroversiella-modellen) — the flagship course\n- [AK1TS — the hierarchy of wave theory](/kurser/ak1ts-vaglarans-hierarki) — the price-side counterpart",
+   "ar": "- [افتح أساس الموجات](/vagfundament) — عرض توضيحي على السهم الحقيقي\n- [موجات المحفظة الأساسية](/min-portfolj) — تحليل لكل حيازة + مصفوفة المحفظة\n- [تعلم AKM1 من الأساس](/kurser/akm1-den-kontroversiella-modellen) — الدورة الرائدة\n- [AK1TS — التسلسل الهرمي لنظرية الموجات](/kurser/ak1ts-vaglarans-hierarki) — النظير على جانب السعر"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:titel",
+   "en": "The Wave Map September 2026 — the hit rate 52 %",
+   "ar": "خريطة الموجات سبتمبر 2026 — نسبة الإصابة 52 %"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:ingress",
+   "en": "The wave engine's rolling hit rate: 52 % over 48 judged measurements (undecided 20 % are never counted as errors) — an open receipt about the past, never a guarantee about the future. Verdict date 2026-09-04.",
+   "ar": "نسبة الإصابة المتجددة لمحرك الموجات: 52 % على 48 قياسًا محكومًا عليه (غير المحسوم 20 % لا يُحتسب أبدًا خطأً) — إيصال مفتوح عن الماضي، وليس أبدًا ضمانًا للمستقبل. تاريخ الحكم 2026-09-04."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p1",
+   "en": "The wave engine's rolling hit rate is **52 %** — 48 judged measurements since 2026-09-04, 20 % of the measurements are undecided and never counted as errors. Universe: 12 tickers — the ticker per stock — five horizons. Verdict date 2026-09-04, protocol vagvalidering/1 v1.",
+   "ar": "نسبة الإصابة المتجددة لمحرك الموجات هي **52 %** — 48 قياسًا محكومًا عليه منذ 2026-09-04، و20 % من القياسات غير محسومة ولا تُحتسب أبدًا خطأً. الكون: 12 رمزًا — الرمز لكل سهم — وخمسة آفاق. تاريخ الحكم 2026-09-04، البروتوكول vagvalidering/1 v1."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p2",
+   "en": "This is an automatically generated research overview; the full AK1A analysis is produced manually.",
+   "ar": "هذه نظرة بحثية مولدة تلقائيًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p3",
+   "en": "## How the protocol judges",
+   "ar": "## هكذا يحكم البروتوكول"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p4",
+   "en": "**Verdict protocol v1 (fixed before the first verdict):** last round's wave class per (ticker, horizon) is judged against today's actual fundamental momentum — impulse wave → hit at positive momentum; correction → hit at negative; base building → hit at |momentum| ≤ 6 % (the engine's own threshold, honorable symmetry); exact zero movement does not judge direction; an undecided class is NEVER judged. Undecided measurements count in the coverage fraction, never as errors.",
+   "ar": "**بروتوكول الحكم v1 (المثبت قبل الحكم الأول):** تُحاكَم فئة موجة الجولة السابقة لكل (الرمز، الأفق) مقابل الزخم الأساسي الفعلي لليوم — الموجة الدافعة → إصابة عند الزخم الموجب؛ تصحيح → إصابة عند الزخم السالب؛ بناء القاعدة → إصابة عند |الزخم| ≤ 6 % (عتبة المحرك نفسها، تناظر مشرّف)؛ الحركة الصفرية الدقيقة لا تحكم على اتجاه؛ الفئة غير المحسومة لا تُحاكم أبدًا. القياسات غير المحسومة تُحتسب في كسر التغطية، لا كأخطاء أبدًا."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p5",
+   "en": "## The hit rate per horizon and wave class",
+   "ar": "## نسبة الإصابة لكل أفق وفئة موجة"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p6",
+   "en": "n = number of judged measurements (hit + miss); classes without judged measurements are not reported.",
+   "ar": "n = عدد القياسات المحكوم عليها (إصابة + خطأ)؛ الفئات بلا قياسات محكوم عليها لا تُعرض."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p7",
+   "en": "- **micro** — impulse wave 75 % (n=4) · base building 63 % (n=8)\n- **short** — impulse wave 100 % (n=2) · base building 30 % (n=10)\n- **medium** — impulse wave 100 % (n=6) · base building 0 % (n=6)\n- **long** — no judged measurements\n- **mega** — impulse wave 100 % (n=6) · base building 0 % (n=6)",
+   "ar": "- **ميكرو** — الموجة الدافعة 75 % (n=4) · بناء القاعدة 63 % (n=8)\n- **قصير** — الموجة الدافعة 100 % (n=2) · بناء القاعدة 30 % (n=10)\n- **متوسط** — الموجة الدافعة 100 % (n=6) · بناء القاعدة 0 % (n=6)\n- **طويل** — لا قياسات محكوم عليها\n- **ميجا** — الموجة الدافعة 100 % (n=6) · بناء القاعدة 0 % (n=6)"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p8",
+   "en": "## What the number is — and is not",
+   "ar": "## ما هو الرقم — وما ليس عليه"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p9",
+   "en": "The hit rate is an open receipt about the past — never a guarantee about the future. The engine describes rhythm and position in fundamental series; 'undecided' is information, not an error, and that is why undecided measurements count in the coverage fraction but never as errors. The single number 52 % does not say which horizon or class carries it — the list above does.",
+   "ar": "نسبة الإصابة إيصال مفتوح عن الماضي — وليست أبدًا ضمانًا للمستقبل. يصف المحرك الإيقاع والموقع في السلاسل الأساسية؛ و'غير محسوم' معلومة لا خطأ، ولهذا تُحتسب القياسات غير المحسومة في كسر التغطية لا كأخطاء أبدًا. رقم الوحدة 52 % لا يقول أي أفق أو فئة يحمله — القائمة أعلاه تقول ذلك."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p10",
+   "en": "## The change since the previous edition",
+   "ar": "## التغيير منذ الإصدار السابق"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p11",
+   "en": "The series' first edition — the counters are young (since 2026-09-04) and each new round weighs more than the previous one. The next edition reports how the hit rate moved; unchanged is written as unchanged.",
+   "ar": "الإصدار الأول من السلسلة — العدادات فتية (منذ 2026-09-04) وكل جولة جديدة تزن أثقل من سابقتها. الإصدار القادم يعرض كيف تحركت نسبة الإصابة؛ وما لم يتغير يُكتب كما هو."
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p12",
+   "en": "## Go deeper",
+   "ar": "## تعمق أكثر"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p13",
+   "en": "- The [AK1TS 25-cell matrix](/kurser/ts-10-ak1ts-25cellers-matris) course — the wave matrix behind the horizons\n- [Wave Foundation — indicators are time series](/blogg/vagfundament-indikatorer-ar-tidsserier) — why the engine requires series, not levels\n- [The research library](/forskningsbiblioteket) — the company analyses the wave scanner's universe draws from",
+   "ar": "- تغطي الدورة [مصفوفة AK1TS ذات الخلايا 25](/kurser/ts-10-ak1ts-25cellers-matris) — مصفوفة الموجات الكامنة وراء الآفاق\n- [أساس الموجات — المؤشرات سلاسل زمنية](/blogg/vagfundament-indikatorer-ar-tidsserier) — لماذا يتطلب المحرك سلاسل لا المستوى الساكن\n- [مكتبة البحوث](/forskningsbiblioteket) — تحليلات الشركات التي يستقي منها كون ماسح الموجات"
+  },
+  {
+   "nyckel": "vagkartan-traffprocent:p14",
+   "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. The hit rate is an open receipt about the past — never a guarantee about the future. Educational research — never investment advisory (the Act 2007:528)._",
+   "ar": "_هذه نظرة بحثية مولدة تلقائيًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. نسبة الإصابة إيصال مفتوح عن الماضي — وليست أبدًا ضمانًا للمستقبل. بحث تعليمي — وليس أبدًا تقديم استشارات استثمارية (قانون 2007:528)._"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:titel",
+   "en": "The market this week v34: the price of patience and the arithmetic of the merger",
+   "ar": "سوق الأسبوع v34: ثمن الصبر وحساب الاندماج"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:ingress",
+   "en": "Market commentary v34 2026: what the small-cap merger wave teaches us about valuation, patience, and how to calculate TERP — with a concrete link to Precise Biometrics.",
+   "ar": "تعليق السوق v34 لعام 2026: ماذا تعلمنا موجة اندماجات الشركات الصغيرة عن التقييم والصبر وكيفية حساب TERP — مع ربط ملموس بـPrecise Biometrics."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p1",
+   "en": "The summer lull is over and the small-cap sector wakes up to something as unusual as a real merger wave. For those who analyze institutionally, this is not chatter — it is an exercise in calculating things the market prices carelessly.",
+   "ar": "انتهى كساد الصيف واستيقظ قطاع الشركات الصغيرة على شيء غير معتاد كموجة اندماجات حقيقية. لمن يحلل بمنهجية مؤسسية، هذا ليس كلام مقاهٍ — بل تمرين في حساب أشياء يسعّرها السوق باستهتار."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p2",
+   "en": "## Lesson 1: TERP is math, not feeling",
+   "ar": "## الدرس 1: TERP رياضيات لا إحساس"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p3",
+   "en": "Every listed merger with a new share issue raises the question: what is the stock 'really' worth after the share issue? The answer is called TERP — Theoretical Ex-Rights Price — and it is pure arithmetic: (market capitalization before + new capital) ÷ number of stocks after.",
+   "ar": "كل الاندماجات المدرجة في البورصة والمقترنة بإصدار أسهم جديدة تطرح السؤال: ما قيمة السهم 'حقًا' بعد الإصدار؟ الجواب اسمه TERP — السعر النظري بعد نزع حقوق الاكتتاب — وهو حساب بحت: (القيمة السوقية قبل + رأس المال الجديد) ÷ عدد الأسهم بعده."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p4",
+   "en": "WHY do we point this out? Because TERP is the case where feeling most often beats against the rulebook. The stock traded above the subscription price feels 'expensive' and below TERP 'cheap' — but both can be wrong. In our [Precise Biometrics analysis](/analyser/PREC.ST) the TERP calculation (1,27 SEK against a subscription price of 0,82) is the very backbone of the entire valuation — and a pedagogical exercise in the [how to calculate share issues](/kurser) course.",
+   "ar": "لماذا نشير إلى هذا؟ لأن TERP هو الحالة التي يتغلب فيها الإحساس في أغلب الأحيان على القواعد. السهم المتداول فوق سعر الاكتتاب 'يبدو غاليًا' وتحت TERP 'رخيصًا' — لكن كليهما قد يكون خطأ. في [تحليل Precise Biometrics](/analyser/PREC.ST) تكون حسابات TERP (بـ1,27 SEK مقابل سعر اكتتاب 0,82) هي العمود الفقري في التقييم بأكمله — وتمرينًا تعليميًا في الدورة [كيف تُحسب عمليات إصدار أسهم](/kurser)."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p5",
+   "en": "## Lesson 2: Mergers are variable business, not story business",
+   "ar": "## الدرس 2: الاندماجات صفقات متغيرات لا صفقات قصص"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p6",
+   "en": "When two companies merge, the story shines: synergies, scale, 'the next phase'. The checklist asks something else:",
+   "ar": "حين تندمج شركتان تتلألأ القصة: وفورات، وحجم، و'المرحلة التالية'. قائمة الفحص تسأل شيئًا آخر:"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p7",
+   "en": "- **V01 Revenue growth:** pro forma or organic? Do not mix — the [V01](/kurser/v01-forsaljningstillvaxt) course shows the difference of 5–15 percentage points\n- **V03 Revenue diversification:** does the customer base really get broader, or just bigger but concentrated?\n- **V12 Revenue stability:** is combined revenue stable, or two unstable ones pretending to be one stable?\n- **V19 Capital burn:** mergers that buy time cost time — does the combined company burn slower than the sum of the parts?",
+   "ar": "- **V01 نمو الإيرادات:** شكلي أم عضوي؟ لا تخلط — الدورة [V01](/kurser/v01-forsaljningstillvaxt) تعرض فرقًا قدره 5–15 نقطة مئوية\n- **V03 تنويع الإيرادات:** هل تتسع قاعدة العملاء فعلًا، أم تكبر فقط مع بقائها مركزة؟\n- **V12 استقرار الإيرادات:** هل الإيرادات المدمجة مستقرة، أم أنها اثنتان غير مستقرتين تدّعيان أنها واحدة مستقرة؟\n- **V19 احتراق رأس المال:** الاندماجات التي تشتري الوقت تدفع ثمنه — هل يحترق رأس مال الشركة المدمجة أبطأ من مجموع الأجزاء؟"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p8",
+   "en": "Four questions, ten minutes, and the story starts to be regarded as what it is: a hypothesis to test in the [calculator](/kalkylator).",
+   "ar": "أربعة أسئلة، عشر دقائق، وتبدأ القصة تُعامل كما هي: فرضية تُختبر في [الحاسبة](/kalkylator)."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p9",
+   "en": "## Lesson 3: The market's patience is your edge — sometimes",
+   "ar": "## الدرس 3: صبر السوق هو ميزتك — أحيانًا"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p10",
+   "en": "Small caps after a merger often trade in a 'comfortless zone': the share issue is cleared, synergies are 12–18 months away, no catalyst for 2 quarters. Institutions drop coverage — and of course the price drifts regardless of fundamentals. That is exactly where process beats sentiment — but only if you log every assumption and know what would turn you. Otherwise it is not patience, it is hope.",
+   "ar": "كثيرًا ما يتداول سهم الشركات الصغيرة بعد الاندماج في 'منطقة بلا عزاء': تم إنجاز إصدار أسهم، والوفورات تبعد 12–18 شهرًا، ولا محفز خلال الأرباع الـ2 القادمة. المؤسسات تسحب التغطية، وسعر السهم ينزلق خلال هذه الدورة بغض النظر عن الأساسيات. هناك بالضبط تتغلب العملية على المعنويات — لكن فقط إذا سجلت كل افتراض وعرفت ما الذي يغير رأيك. وإلا فليس ذلك صبرًا بل رجاءً."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p11",
+   "en": "## This week's AKM1 challenge",
+   "ar": "## التحدي الأسبوعي من AKM1"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p12",
+   "en": "Take a company on your watch list that recently did a share issue or merger. Score V01, V03, V12 and V19 — 0–5 each, justified with a number from the report. Compare with the broker's story. Does the overall impression differ? Feel free to share it in the lab.",
+   "ar": "خذ شركة من قائمة متابعتك أجرت مؤخرًا إصدار أسهم أو مرّت بالاندماج. قيّم V01 وV03 وV12 وV19 — من 0 إلى 5 لكل منها، مع التبرير برقم من التقرير. قارن بقصة الوسيط المالية. هل يختلف الانطباع العام؟ شاركنا إياه في المختبر."
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p13",
+   "en": "_Next week: the quarterly report season — a checklist for reading a Q report in 20 minutes._",
+   "ar": "_الأسبوع القادم: موسم التقارير الربع سنوية — قائمة فحص لقراءة تقرير ربع سنوي في 20 دقيقة._"
+  },
+  {
+   "nyckel": "veckans-marknad-2026-w34:p14",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  }
+ ]
+}

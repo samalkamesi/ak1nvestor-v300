@@ -1,0 +1,1527 @@
+{
+ "kurs": "v67bg1",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v67bg1): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:titel",
+   "en": "5 common beginner mistakes with Swedish stocks — and the remedies",
+   "ar": "5 أخطاء شائعة للمبتدئين في الأسهم السويدية — وعلاج كل خطأ قبل شراء السهم"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:ingress",
+   "en": "Concentration without a clue, story stocks without numbers, issuance traps, the wrong time horizon and result blindness — five mistakes that cost the most, with a concrete exercise against each.",
+   "ar": "التركيز دون وعي، وأسهم قصصية بلا أرقام، وفخاخ الإصدارات، وأفق زمني خاطئ، وعمى عن النتائج — خمسة أخطاء هي الأكثر كلفة في الأسهم، مع تمرين ملموس ضد كل خطأ يبدأ من تحليل السهم."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p1",
+   "en": "Everyone makes mistakes on the stock exchange. The difference between beginners and analysts is not that analysts are spared — it is that they have checklists that catch the mistake BEFORE the money goes in. Here are the five mistakes that cost Swedes the most — with a concrete countermeasure against each, ready to practise as early as tonight.",
+   "ar": "الجميع يخطئ في البورصة. الفرق بين المبتدئ والمحلل ليس أن المحلل معصوم — بل أن لديه قوائم تحقق تلتقط الخطأ قبل أن يدخل المال. هذه هي الأخطاء الخمسة التي تكلّف السويديين أكثر من غيرها — مع إجراء مضاد ملموس لكل خطأ، يمكن التدرّب عليه منذ الليلة."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p2",
+   "en": "## Mistake 1: Concentration without awareness",
+   "ar": "## الخطأ 1: التركيز دون وعي"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p3",
+   "en": "Three stocks, one of which is 60 % of the portfolio. That is not a portfolio — it is a bet. Concentration can be a strategy (Lynch lived on it), but then it is conscious, motivated and size-weighed. The beginner's concentration arises by accident: the stock that has climbed the most becomes the largest on its own.",
+   "ar": "ثلاثة من الأسهم، أحدها يمثل 60 % من المحفظة. هذه ليست محفظة — بل رهان. قد يكون التركيز استراتيجية (عاش لينتش عليها)، لكنه حينها واعٍ ومبرر ومضبوط الحجم. أما تركيز المبتدئ فينشأ بالمصادفة: السهم الذي ارتفع أكثر من غيره يصبح الأكبر من تلقاء نفسه."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p4",
+   "en": "**Remedy:** count the weights. [Build your portfolio here](/min-portfolj) and let the system show the largest holding's share. Rule for beginners: no company above 20 % without a written justification.",
+   "ar": "**العلاج:** احسب الأوزان. [ابنِ المحفظة هنا](/min-portfolj) ودع النظام يعرض حصة أكبر مركز. قاعدة للمبتدئين: لا شركة فوق 20 % من دون مبرر مكتوب."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p5",
+   "en": "## Mistake 2: Story before numbers",
+   "ar": "## الخطأ 2: القصة قبل الأرقام"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p6",
+   "en": "\"They have agreements with Volvo\", \"they are the only company in X\", \"the founder is a genius\". All of it can be true — and the stock can still be a bad deal at the price. The story is a hypothesis; the numbers are the test.",
+   "ar": "«لديهم اتفاقيات مع فولفو»، «هم الشركة الوحيدة في مجال X»، «المؤسس عبقري». كل هذا قد يكون صحيحًا — ويظل السهم صفقة سيئة بهذا السعر. القصة فرضية؛ والأرقام هي الاختبار."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p7",
+   "en": "**Remedy:** before buying, fill in [the calculator](/kalkylator) with real numbers from the latest report. No data = no purchase. A hypothesis without a test is not analysis — it is hope.",
+   "ar": "**العلاج:** قبل الشراء، املأ [الحاسبة](/kalkylator) بأرقام حقيقية من أحدث تقرير. لا بيانات = لا شراء. الفرضية بلا اختبار ليست تحليلًا — بل أمنية."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p8",
+   "en": "## Mistake 3: The share issue trap",
+   "ar": "## الخطأ 3: فخ إصدار الأسهم"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p9",
+   "en": "Sweden is the promised land of share issues. A new share issue at a discount, the share price — of course — climbs toward the subscription price, the beginner buys — and does not understand that the stocks being issued dilute his share of the company. TERP (read [our market commentary on the arithmetic of the merger](/blogg/veckans-marknad-2026-w34)) does not exist to be advanced — it exists to work out what the stock is worth AFTER the dilution.",
+   "ar": "السويد هي أرض إصدار الأسهم الموعودة. إصدار أسهم جديدة بخصم، يرتفع السعر خلال الدورة الحالية نحو سعر الاكتتاب، فيشتري المبتدئ — ولا يفهم أن الأسهم المصدرة تخفف حصته من الشركة. إن معادلة TERP (اقرأ [تعليقنا السوقي عن حسابات الاندماج](/blogg/veckans-marknad-2026-w34)) ليست موجودة لتكون متقدمة — بل لتحسب قيمة السهم بعد تخفيف الملكية."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p10",
+   "en": "**Remedy:** every time the word share issue appears: calculate (market capitalization before + new capital) ÷ the number of stocks after. Compare with today's price, of course. 30 seconds.",
+   "ar": "**العلاج:** في كل مرة تظهر فيها كلمة إصدار أسهم: احسب (القيمة السوقية قبل + رأس المال الجديد) ÷ عدد الأسهم بعد ذلك. قارن بسعر السهم في الدورة الحالية. 30 ثانية."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p11",
+   "en": "## Mistake 4: The wrong time horizon for the right analysis",
+   "ar": "## الخطأ 4: الأفق الزمني الخاطئ للتحليل الصحيح"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p12",
+   "en": "The beginner buys on a technical breakout (weeks) but justifies it with fundamentals (years) — and vice versa. When the course of the price then moves against him, he has no frame for knowing whether the thesis is broken or merely early.",
+   "ar": "يشتري المبتدئ عند اختراق فني (أسابيع) لكنه يبرر الشراء بالأساسيات (سنوات) — والعكس صحيح. وحين تتحرك الدورة السعرية ضده بعد ذلك، لا يكون لديه إطار يعرف به هل انكسرت الأطروحة أم أنها مبكرة فقط."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p13",
+   "en": "**Remedy:** set the wave per horizon before buying: what do I believe on the micro, short, medium and long term? Our [portfolio system](/min-portfolj) has exactly that assessment per holding — and shows the portfolio's aggregated wave profile.",
+   "ar": "**العلاج:** حدد موجة لكل أفق قبل الشراء: بماذا أؤمن على المدى الأصغر والقصير والمتوسط والطويل؟ [نظام المحفظة](/min-portfolj) لديه بالضبط هذا التقدير لكل مركز — ويعرض موجة المحفظة الإجمالية."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p14",
+   "en": "## Mistake 5: Result blindness",
+   "ar": "## الخطأ 5: العمى عن النتائج"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p15",
+   "en": "A rising price of course means \"I was right\". A falling price means \"the market does not get it\". Without a log, every trade becomes a story you tell yourself, and the lessons die with memory.",
+   "ar": "ارتفاع السعر يعني «كنت على حق». وهبوط السعر يعني «السوق لا يفهم». من دون سجل، تتحول كل صفقة إلى قصة ترويها لنفسك، وتموت دروس الدورة مع الذاكرة."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p16",
+   "en": "**Remedy:** write down at every purchase: the thesis (max 3 sentences), what would disprove the thesis, the time horizon. Review quarterly. That is why AK1A logs everything — [reproducibility](/blogg/komplett-guide-svensk-aktieanalys-2026) is the whole difference between analysis and opinion.",
+   "ar": "**العلاج:** دوّن عند كل عملية شراء: الأطروحة (3 جمل كحد أقصى)، وما الذي يدحض الأطروحة، والأفق الزمني. راجع كل ربع سنة. لهذا يسجل AK1A كل شيء — [قابلية التكرار](/blogg/komplett-guide-svensk-aktieanalys-2026) هي الفرق كله بين التحليل وإبداء الرأي."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p17",
+   "en": "## Bonus mistake: believing there are shortcuts",
+   "ar": "## خطأ إضافي: الاعتقاد بوجود طرق مختصرة"
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p18",
+   "en": "The most expensive course on the stock exchange is the course in the fact that there are no shortcuts. The methodology is free — [all 307 courses](/kurser) cost nothing, because we believe fundamental analysis is a right. The only thing that costs is the time you put in — and it pays for itself by sparing you the five mistakes above.",
+   "ar": "أغلى دورة في البورصة هي الدورة التي تعلّمك أنه لا توجد طرق مختصرة. المنهجية مجانية — [جميع الدورات الـ 307](/kurser) لا تكلف شيئًا، لأننا نؤمن بأن التحليل الأساسي حق. الشيء الوحيد الذي يكلف هو الوقت الذي تستثمره — وهو يعود عليك بإعفائك من الأخطاء الخمسة أعلاه."
+  },
+  {
+   "nyckel": "5-vanliga-nyborjarmisstag-svenska-aktier:p19",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:titel",
+   "en": "Sector medians September 2026 — every sector's AKM2 profile",
+   "ar": "وسائط القطاعات سبتمبر 2026 — ملف AKM2 لكل قطاع"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:ingress",
+   "en": "The AKM2 median per sector in the 100-company universe, underlying data 2026-09-03: technology 61, consumer 60,5, industrials 60, communication 60 and more — number measured, dispersion and the boundary rule are reported openly.",
+   "ar": "وسيط AKM2 لكل قطاع في عالم الشركات المكوّن من 100 شركة، ببيانات مؤرخة 2026-09-03: التقنية 61، والمستهلك 60,5، والصناعة 60، والاتصالات 60 وغيرها — يُعرض بصراحة عدد الشركات المقاسة والتشتت وقاعدة الحد."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p1",
+   "en": "The median per sector in the cross-tabulation's 100-company universe, underlying data created 2026-09-03: **technology 61** · **consumer 60,5** · **industrials 60** · **communication 60** · **energy 58** · **healthcare 56,5** · **real estate 50** · **growth 43** · **materials 42** · **financials 41** (AKM2 points, median over the group's measured companies). Highest median: technology 61. Lowest: financials 41.",
+   "ar": "الوسيط لكل قطاع في عالم الشركات المكوّن من 100 شركة في الجدول المتقاطع، ببيانات أُنشئت 2026-09-03: **التقنية 61** · **المستهلك 60,5** · **الصناعة 60** · **الاتصالات 60** · **الطاقة 58** · **الرعاية الصحية 56,5** · **العقارات 50** · **النمو 43** · **المواد 42** · **المالية 41** (نقاط AKM2، الوسيط عبر الشركات المقاسة في المجموعة). أعلى وسيط: التقنية 61. أدنى وسيط: المالية 41."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p2",
+   "en": "This is an automatically generated research overview; the complete AK1A analysis is produced manually.",
+   "ar": "هذا ملخص بحثي مُولّد تلقائيًا؛ يتم إعداد تحليل AK1A الكامل يدويًا."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p3",
+   "en": "## How the median is calculated",
+   "ar": "## كيف يُحسب الوسيط"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p4",
+   "en": "AKM2 is AKM1's 20 variables reweighted according to the akm2-2026 weight profile with automatic modules from the module registry — the same composite that the cross-tabulation's rows carry. The median follows the peer engine's contract word for word: the group is the cross-tabulation's canonical sectors (10 companies each), the median is calculated over the group's measured companies, and an even number yields the mean of the two middle values. The selection dependence is visible in the reference: 2026-09-03 · 100-company universe.",
+   "ar": "AKM2 هو متغيرات AKM1 الـ 20 بعد إعادة وزنها وفق ملف الأوزان akm2-2026 بوحدات تلقائية من سجل الوحدات — المركّب نفسه الذي تحمله صفوف الجدول المتقاطع. يتبع الوسيط عقد محرك الأقران حرفيًا: المجموعة هي القطاعات القانونية للجدول المتقاطع (10 شركات لكل قطاع)، ويُحسب الوسيط عبر الشركات المقاسة في المجموعة، والعدد الزوجي يعطي متوسط القيمتين الوسطيتين. ويظهر اعتماد العينة في المرجع: 2026-09-03 · عالم 100 شركة."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p5",
+   "en": "## Every sector — median, dispersion and extremes",
+   "ar": "## كل قطاع — الوسيط والتشتت والحدود القصوى"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p6",
+   "en": "- **technology** — median **61** · 10 measured of 10 · range 37–78 (lowest Sinch, highest Logitech International)\n- **consumer** — median **60,5** · 10 measured of 10 · range 19–70 (lowest Electrolux, highest H & M Hennes & Mauritz)\n- **industrials** — median **60** · 10 measured of 10 · range 51–85 (lowest ASSA ABLOY, highest Industrivärden)\n- **communication** — median **60** · 10 measured of 10 · range 39–68 (lowest Warner Bros. Discovery, highest Tele2)\n- **energy** — median **58** · 10 measured of 10 · range 31–77 (lowest RWE, highest Chevron)\n- **healthcare** — median **56,5** · 10 measured of 10 · range 46–66 (lowest Fresenius, highest Novo Nordisk)\n- **real estate** — median **50** · 10 measured of 10 · range 42–60 (lowest Prologis, highest Diös Fastigheter)\n- **growth** — median **43** · 10 measured of 10 · range 25–58 (lowest Polestar Automotive Holding UK, highest Truecaller)\n- **materials** — median **42** · 10 measured of 10 · range 31–79 (lowest Stora Enso, highest Newmont)\n- **financials** — median **41** · 10 measured of 10 · range 30–80 (lowest Nordea Bank, highest Investor)",
+   "ar": "- **التقنية** — الوسيط **61** · 10 مقاسة من أصل 10 · تشتت 37–78 (الأدنى Sinch، الأعلى Logitech International)\n- **المستهلك** — الوسيط **60,5** · 10 مقاسة من أصل 10 · تشتت 19–70 (الأدنى Electrolux، الأعلى H & M Hennes & Mauritz)\n- **الصناعة** — الوسيط **60** · 10 مقاسة من أصل 10 · تشتت 51–85 (الأدنى ASSA ABLOY، الأعلى Industrivarden)\n- **الاتصالات** — الوسيط **60** · 10 مقاسة من أصل 10 · تشتت 39–68 (الأدنى Warner Bros. Discovery، الأعلى Tele2)\n- **الطاقة** — الوسيط **58** · 10 مقاسة من أصل 10 · تشتت 31–77 (الأدنى RWE، الأعلى Chevron)\n- **الرعاية الصحية** — الوسيط **56,5** · 10 مقاسة من أصل 10 · تشتت 46–66 (الأدنى Fresenius، الأعلى Novo Nordisk)\n- **العقارات** — الوسيط **50** · 10 مقاسة من أصل 10 · تشتت 42–60 (الأدنى Prologis، الأعلى Dios Fastigheter)\n- **النمو** — الوسيط **43** · 10 مقاسة من أصل 10 · تشتت 25–58 (الأدنى Polestar Automotive Holding UK، الأعلى Truecaller)\n- **المواد** — الوسيط **42** · 10 مقاسة من أصل 10 · تشتت 31–79 (الأدنى Stora Enso، الأعلى Newmont)\n- **المالية** — الوسيط **41** · 10 مقاسة من أصل 10 · تشتت 30–80 (الأدنى Nordea Bank، الأعلى Investor)"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p7",
+   "en": "A comparability note: Industrivärden (industrials) and Investor (financials) are investment companies — their financial ratios reflect the market values of their holdings (net asset value), not an operating business, so the group's median mixes two different company forms. That is information, not an error.",
+   "ar": "ملاحظة حول قابلية المقارنة: إن Industrivarden (الصناعة) وInvestor (المالية) شركتا استثمار — بيانات النسبة المالية لديهما تعكس القيم السوقية لمحافظهما (صافي قيمة الأصول)، لا عمليات تشغيلية، ولذلك يخلط وسيط المجموعة شكلين مختلفين من الشركات. هذه معلومة، لا خطأ."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p8",
+   "en": "## The boundary rule — and why no row is missing",
+   "ar": "## قاعدة الحد — ولماذا لا تنقص أي صفوف"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p9",
+   "en": "The peer engine's boundary rule is canon: a group with fewer than 5 measured companies is never reported ('too few measured' — the engine never guesses). In this underlying dataset, all 10 sector groups have 10 measured companies each, so no row is missing.",
+   "ar": "قاعدة الحد في محرك الأقران هي القانون: المجموعة التي تقل عن 5 شركات مقاسة لا تُعرض أبدًا («عدد مقاس قليل جدًا» — المحرك لا يخمن أبدًا). في هذا الأساس، لكل من مجموعات القطاعات الـ 10 عدد 10 شركات مقاسة، لذا لا تنقص أي صفوف."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p10",
+   "en": "## The change since the previous edition",
+   "ar": "## التغيير منذ الإصدار السابق"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p11",
+   "en": "This is the series' first edition — no previous month to compare with. From the next edition, each sector's change will be reported here; an unchanged median is written 'unchanged' (nothing moving is also an outcome).",
+   "ar": "هذا هو الإصدار الأول من السلسلة — لا شهر سابق للمقارنة به. اعتبارًا من الإصدار التالي، سيُعرض هنا تغير كل قطاع؛ والوسيط غير المتغير يُكتب «دون تغيير» (عدم تحرك أي شيء نتيجة أيضًا)."
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p12",
+   "en": "## Dig deeper",
+   "ar": "## تعمّق أكثر"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p13",
+   "en": "- [The research library](/forskningsbiblioteket) — every candidate company's AKM2 profile, selection rule and outcome\n- [The course V07 gross margin](/kurser/v07-bruttomarginal) — the profitability variable behind the composite\n- [The course V08 EBITDA margin](/kurser/v08-ebitda-marginal) — the margin matrix step by step\n- [The course V09 ROE](/kurser/v09-roe) — return on equity (ROE)",
+   "ar": "- [مكتبة البحث](/forskningsbiblioteket) — ملف AKM2 لكل شركة مرشحة، مع قاعدة الاختيار والنتيجة\n- [الدورة V07 الهامش الإجمالي](/kurser/v07-bruttomarginal) — متغير الربحية خلف المركّب\n- [الدورة V08 هامش EBITDA](/kurser/v08-ebitda-marginal) — مصفوفة الهوامش خطوة بخطوة\n- [الدورة V09 العائد على حقوق الملكية (ROE)](/kurser/v09-roe) — العائد على حقوق الملكية (ROE)"
+  },
+  {
+   "nyckel": "branschmedianer-akm2:p14",
+   "en": "_This is an automatically generated research overview; the complete AK1A analysis is produced manually. Educational research — never investment advice (law 2007:528)._",
+   "ar": "_هذا ملخص بحثي مُولّد تلقائيًا؛ يتم إعداد تحليل AK1A الكامل يدويًا. بحث تعليمي — وليس أبدًا تقديم نصيحة استثمارية (القانون 2007:528)._"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:titel",
+   "en": "Divergence: when the fundamentals and the course of the price quarrel",
+   "ar": "التباعد: حين يتنازع الأساس مع الدورة السعرية"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:ingress",
+   "en": "Fundamentals ▲ while the course of the price ▼ — that is the most important output in our entire ecosystem. But divergence is a study question, not a buy signal. Here is how to read it without getting itchy to buy.",
+   "ar": "أساسيات ▲ مع هبوط الدورة السعرية ▼ — هذه أهم مخرجات منظومتنا كلها. لكن التباعد سؤال للدراسة، لا إشارة شراء. هكذا تقرؤه من دون أن تتشوق للشراء."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p1",
+   "en": "If we were to highlight a single output from our entire ecosystem — beyond matrices, scores and reports — it is this one: **the divergence between fundamentals and price**. When the Wave Foundation shows that the fundamentals are improving (impulse wave ▲) while the course of the price corrects (▼) — or vice versa — two independent stories about the same company have started to quarrel. Then there is something to study.",
+   "ar": "لو أردنا إبراز مخرج واحد من منظومتنا كلها — بعد المصفوفات والنقاط والتقارير — فهو هذا: **التباعد بين الأساسيات والسعر**. حين يُظهر أساس الموجات أن الأساسيات تتحسن (الموجة الدافعة ▲) بينما تصحح الدورة السعرية (▼) — أو العكس — تكون حكايتان مستقلتان عن الشركة نفسها قد بدأتا بالتنازع. عندها يوجد ما يستحق الدراسة."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p2",
+   "en": "Note the wording. An object of study — not an object of purchase. The difference is the whole difference, and this article is about keeping it.",
+   "ar": "لاحظ اختيار الكلمات. موضوع للدراسة — لا موضوع للشراء. الفرق هو الفرق كله، وهذا المقال يدور حول الحفاظ عليه."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p3",
+   "en": "## The ecosystem's two halves",
+   "ar": "## نصفا المنظومة"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p4",
+   "en": "Our framework reads a stock from two directions. The fundamentals side is AKM1: 20 variables (V01–V20) which in the Wave Foundation each receive a wave class per time horizon — micro, short, medium, long, mega — in a 20×5 matrix. The price side is AK1TS: five theories × five horizons × four dimensions, 100 data points that tell how the market is actually pricing the company right now. Two independent measuring instruments aimed at the same reality.",
+   "ar": "يقرأ إطارنا السهم من جهتين. جانب الأساسيات هو AKM1: ‏20 متغيرًا (V01–V20) يحصل كل منها في أساس الموجات على صنف موجة لكل أفق زمني — مصغر، قصير، متوسط، طويل، ضخم — في مصفوفة 20×5. وجانب السعر هو AK1TS: خمس نظريات × خمسة آفاق × أربعة أبعاد، أي 100 نقطة بيانات تخبرك كيف يسعّر السوق الشركة فعلًا الآن. أجهزتا قياس مستقلتان موجهتان نحو الحقيقة نفسها."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p5",
+   "en": "They give the most information when they agree. But **they give the most learning when they do not**.",
+   "ar": "تقدمان أكبر قدر من المعلومات عندما يتفقان. لكن **أكبر قدر من التعلم تقدمه عندما لا يتفقان**."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p6",
+   "en": "- **Fundamentals ▲ + price ▼** — the market is skeptical about something the matrix does not see, or the mood is dark. A question of why.\n- **Fundamentals ▼ + price ▲** — the nastier variant. Celebrating the price while the balance sheet and the margins erode is the classic euphoria trap. The question becomes acute: what does the market know — or believe it knows — that the matrix lacks?",
+   "ar": "- **أساسيات ▲ + سعر ▼** — السوق متشكك في شيء لا تراه المصفوفة، أو المزاج مظلم. سؤال عن السبب.\n- **أساسيات ▼ + سعر ▲** — النسخة الأسوأ. الاحتفال بالسعر بينما تتآكل الميزانية العمومية والهوامش هو فخ النشوة الكلاسيكي. يصبح السؤال ملحًا: ماذا يعرف السوق — أو يظن أنه يعرف — وتفتقر إليه المصفوفة؟"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p7",
+   "en": "Both are objects of study. One is more pleasant to find. The other is more important to find.",
+   "ar": "كلاهما موضوع للدراسة. أحدهما ألطف في العثور عليه. والآخر أهم في العثور عليه."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p8",
+   "en": "## Mr Market is your opportunity — not your instruction",
+   "ar": "## السيد السوق فرصتك — لا أمرك"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p9",
+   "en": "Our principles rest on an old truth: the market has a mood, and the mood is not your order. When the fundamentals and the course of the price quarrel, it is tempting to read it as 'the market is wrong' and dive in. But the divergence itself says nothing about who is wrong. It only says that two stories point apart. The market can be wrong for years — an expensive lesson that many pay for with their own equity.",
+   "ar": "تقوم مبادئنا على حقيقة قديمة: للسوق مزاج، والمزاج ليس أمرًا لك. حين يتخاصم الأساس مع الدورة السعرية، من المغري تفسير ذلك بأن «السوق مخطئ» والانقضاض على الشراء. لكن التباعد في ذاته لا يقول شيئًا عن أي الطرفين مخطئ. يقول فقط إن حكايتين تتفرقان. قد يخطئ السوق لسنوات — وهذا درس باهظ الثمن يدفع كثيرون ثمنه من حقوق الملكية لديهم."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p10",
+   "en": "That is why the divergence's output with us is never a direction. It is a question, _formulated around your analysis: what is required for you to know which side is right?",
+   "ar": "لهذا لا تكون مخرجات التباعد لدينا ابدًا اتجاهًا. بل سؤالًا،_مصوغًا حول تحليلك: ما الذي يلزم حتى تعرف أي الطرفين على صواب؟"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p11",
+   "en": "## Four steps — without getting itchy to buy",
+   "ar": "## أربع خطوات — من دون أن تتشوق للشراء"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p12",
+   "en": "**1. Verify the cells.** Before you even think about what the divergence means: check that it exists. Cite the matrix's cells exactly as reported — V09 on medium is an impulse wave ▲, the price on short is a correction ▼ — and do not round up, soften or embellish. A divergence that is made up to look a little stronger than it is, is no longer analysis but wishful thinking.",
+   "ar": "**1. تحقّق من الخلايا.** قبل أن تفكر حتى في معنى التباعد: تأكد أنه موجود. اقتبس خلايا المصفوفة كما هي معروضة بالضبط — V09 على المدى المتوسط هو الموجة الدافعة ▲، والسعر على المدى القصير تصحيح ▼ — ولا تستدرج للتقريب أو التليين أو التجميل. التباعد الذي يُجمَّل ليبدو أقوى قليلًا مما هو عليه لم يعد تحليلًا بل تمنّيًا."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p13",
+   "en": "**2. Check the horizon.** A fundamental ▲ on a long horizon meeting a price ▼ on a short horizon is no conflict at all — it is a matter of patience, not a signal. True divergence arises when both sides speak about the **same** time horizon and still point differently. In [the course on the hierarchy of wave theory](/kurser/ak1ts-vaglarans-hierarki) we go through how the horizons should be weighed against each other — and why that is the most common mistake among beginners.",
+   "ar": "**2. تحقّق من الأفق.** أساسيات ▲ على أفق طويل تقابلها ▼ للسعر على أفق قصير ليست تعارضًا أصلًا — بل مسألة صبر، لا إشارة. ينشأ التباعد الحقيقي عندما يتحدث الجانبان عن الأفق الزمني **نفسه** ومع ذلك يشيران إلى اتجاهين مختلفين. نستعرض في الدورة المقدمة ضمن AK1TS عن تراتبية نظرية الموجات كيف تُوزن الآفاق مقابل بعضها — ولماذا يكون ذلك أشيع أخطاء المبتدئين."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p14",
+   "en": "**3. Demand confluence.** A single ▼ cell on the price side is noise. Five theories each voted on, where at least three point the same way — that is an observation worthy of the name. Divergence built on a lone theory's reading is no divergence, just a coincidence with self-confidence.",
+   "ar": "**3. اطلب التقارب.** خلية ▼ وحيدة على جانب السعر مجرد ضجيج. خمس نظريات يُصوَّت على كل منها، وعلى الأقل ثلاث منها تشير إلى الاتجاه نفسه — تلك ملاحظة تستحق اسمها. أما التباعد المبني على حكم نظرية وحيدة فليس تباعدًا، بل مصادفة واثقة من نفسها."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p15",
+   "en": "**4. Write the thesis — and its date of death.** Three sentences: what I believe, which cells confirm it, and exactly what must happen for me to realize I am wrong. A divergence you cannot formulate a falsifiable thesis around, you should not act on. Full stop.",
+   "ar": "**4. اكتب الأطروحة — وتاريخ وفاتها.** ثلاث جمل: ما أعتقده، وأي الخلايا تؤكده، وما الذي يجب أن يحدث بالضبط لأدرك أنني مخطئ. التباعد الذي لا تستطيع صياغة أطروحة قابلة للدحض حوله لا يجوز أن تتصرف بناءً عليه. نقطة."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p16",
+   "en": "## The AI Mentor and P7 — citation as discipline",
+   "ar": "## الموجّه بالذكاء الاصطناعي وP7 — الاقتباس بوصفه انضباطًا"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p17",
+   "en": "Our [AI Mentor](/om-oss) has a special protocol just for the Wave Foundation — we call it P7 — and its rules are worth knowing even when you analyze entirely on your own:",
+   "ar": "يمتلك [الموجّه بالذكاء الاصطناعي](/om-oss) عندنا بروتوكولًا خاصًا لأساس الموجات — نسميه P7 — وقواعده جديرة بالمعرفة حتى عندما تحلل بمفردك تمامًا:"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p18",
+   "en": "- Cite cells **exactly** as reported in the matrix\n- **Never extrapolate** outside unset cells — unset means unset\n- **Flag divergence** between the fundamental wave and the price wave when both are mentioned, as something to study — never as a buy or a sell\n- Always end with the disposition: educational analysis, not investment advice",
+   "ar": "- اقتبس الخلايا **بالضبط** كما هي معروضة في المصفوفة\n- **لا تستقرئ أبدًا** خارج الخلايا غير المحددة — غير محدد يعني غير محدد\n- **أشر إلى التباعد** بين الموجة الأساسية وموجة السعر عند ذكرهما معًا، بوصفه شيئًا يستحق الدراسة — لا أبدًا بوصفه شراء أو بيع\n- اختم دائمًا بالإفصاح: تحليل تعليمي، لا نصيحة استثمارية"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p19",
+   "en": "The point of P7 is not bureaucracy. It is that the machine fools you less than your own brain does. An AI that _were_ given free rein could paint an alluring story around every ▲ that meets a ▼. An AI that must cite exactly, acknowledge the unset, and end with the disclaimer is forced to remain what it should be: a teacher, not an advisor. The same discipline applies to you.",
+   "ar": "الغاية من P7 ليست البيروقراطية. بل أن الآلة تخدعك أقل مما يخدعك عقلك أنت. ذكاء اصطناعي _لو_ أُطلق له العنان قد يرسم حكاية مغرية حول كل ▲ تلتقي بـ ▼. أما ذكاء اصطناعي مضطر إلى الاقتباس الدقيق والإقرار بغير المحدد والختام بالإفصاح فيُجبر على البقاء ما ينبغي أن يكون: معلمًا، لا مقدّم نصائح. الانضباط نفسه ينطبق عليك."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p20",
+   "en": "## From a single stock to a portfolio",
+   "ar": "## من السهم الواحد إلى المحفظة"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p21",
+   "en": "Divergence exists at the portfolio level too: a portfolio whose fundamental matrix strengthens while the total price picture weakens — or the reverse, fundamentals eroding beneath a rising curve. In [My portfolio](/min-portfolj) your holdings are aggregated cell by cell, so you see whether the tension sits in a single company or in the whole portfolio construction. The latter is more dangerous — and almost always harder to admit.",
+   "ar": "يوجد التباعد على مستوى المحفظة أيضًا: محفظة تتعزز مصفوفتها الأساسية بينما تضعف صورة السعر الإجمالية — أو العكس، أساسيات تتآكل تحت منحنى صاعد. في [محفظتي](/min-portfolj) تُجمَّع مراكزك خلية بخلية، لترى هل التوتر يكمن في شركة بعينها أم في بنية المحفظة كلها. هذا الأخير أخطر — وأصعب دائمًا في الإقرار به تقريبًا."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p22",
+   "en": "## The honest ending",
+   "ar": "## النهاية الصادقة"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p23",
+   "en": "We cannot promise that divergence analysis makes you a winner. We can promise that it makes you a better questioner — and in finance, the one who asks better questions is rarely the one who gets surprised. The tool teaches you to think. It never decides for you.",
+   "ar": "لا نستطيع أن نعد بأن تحليل التباعد يجعلك رابحًا. نستطيع أن نعد بأنه يجعلك أفضل في طرح الأسئلة — وفي المال، من يطرح أسئلة أفضل نادرًا ما يُفاجأ. الأداة تعلّمك التفكير. لا تقرر عنك أبدًا."
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p24",
+   "en": "- [Open the Wave Foundation](/vagfundament) — the 20×5 matrix for a real stock, free\n- [My portfolio](/min-portfolj) — fundamental waves and price picture, per holding and in aggregate\n- [The AK1TS course — the hierarchy of wave theory](/kurser/ak1ts-vaglarans-hierarki) — the price side's five theories and five horizons",
+   "ar": "- [افتح أساس الموجات](/vagfundament) — مصفوفة 20×5 الخاصة بالسهم الحقيقي، مجانًا\n- [محفظتي](/min-portfolj) — أمواج أساسية وصورة سعرية في المحفظة، لكل مركز ومجتمعة\n- [AK1TS — تراتبية نظرية الموجات](/kurser/ak1ts-vaglarans-hierarki) — نظريات جانب السعر الخمس وآفاقه الخمسة من الدورة"
+  },
+  {
+   "nyckel": "divergens-fundament-ot-pris:p25",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:titel",
+   "en": "The research situation September 2026 — 7 green out of 100",
+   "ar": "حالة البحث في سبتمبر 2026 — 7 خضراء من أصل 100"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:ingress",
+   "en": "The research situation in the cross-tabulation's 100-company universe: 7 green, 76 yellow, 17 red — the regime is lean according to fixed thresholds. Underlying data dated 2026-09-03.",
+   "ar": "حالة البحث في عالم الشركات المكوّن من 100 شركة في الجدول المتقاطع: 7 خضراء، و76 صفراء، و17 حمراء — النظام هزيل وفق عتبات ثابتة. البيانات مؤرخة 2026-09-03."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p1",
+   "en": "7 of 100 companies in the cross-tabulation's universe are green right now. The regime is **lean**: 'The research situation is lean — 7 of 100 companies pass the strict requirements, selection decides.' — the status text verbatim from the research situation engine, which calculates from fixed thresholds, not opinion. The distribution: 7 green · 76 yellow · 17 red · 0 unset. Underlying data dated 2026-09-03.",
+   "ar": "7 من أصل 100 شركة في عالم الجدول المتقاطع خضراء الآن. النظام **هزيل**: «حالة البحث هزيلة — 7 من أصل 100 شركة تجتاز المتطلبات الصارمة، والانتقاء هو الفيصل.» — نص الحالة حرفيًا من محرك حالة البحث، الذي يحسب من عتبات ثابتة لا من آراء. التوزيع: 7 خضراء · 76 صفراء · 17 حمراء · 0 غير محددة. البيانات مؤرخة 2026-09-03."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p2",
+   "en": "This is an automatically generated research overview; the complete AK1A analysis is produced manually.",
+   "ar": "هذا ملخص بحثي مُولّد تلقائيًا؛ يتم إعداد تحليل AK1A الكامل يدويًا."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p3",
+   "en": "## What the colors mean",
+   "ar": "## ماذا تعني الألوان"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p4",
+   "en": "The status classification is the cross-tabulation's own rule set, quoted verbatim from the underlying data (2026-09-03):",
+   "ar": "تصنيف الحالة هو منظومة قواعد الجدول المتقاطع نفسه، مقتبس حرفيًا من الأساس (2026-09-03):"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p5",
+   "en": "- **green:** AKM1 ≥ 70 % of akm1MaxMojligt AND data coverage ≥ 60 % AND no port breach (D1 scaling — low coverage can never become green)\n- **yellow:** AKM1 50–70 % of akm1MaxMojligt AND no port breach\n- **red:** AKM1 < 50 % of akm1MaxMojligt OR port breach (V19 < 12 months)",
+   "ar": "- **خضراء:** AKM1 ≥ 70 % من akm1MaxMojligt وتغطية بيانات ≥ 60 % ولا خرق للبوابة (تحجيم D1 — التغطية المنخفضة لا يمكن أن تصبح خضراء أبدًا)\n- **صفراء:** AKM1 50–70 % من akm1MaxMojligt ولا خرق للبوابة\n- **حمراء:** AKM1 < 50 % من akm1MaxMojligt أو خرق للبوابة (V19 < 12 شهرًا)"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p6",
+   "en": "## The regime and its thresholds",
+   "ar": "## النظام وعتباته"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p7",
+   "en": "The regime is calculated from fixed thresholds: rich requires a share of green ≥ 10 % AND a share of red ≤ 30 %; lean occurs when the share of green is < 8 % OR the share of red is > 35 %; in between, the situation is balanced. In this underlying dataset: green share 7 % and red share 17 % — the outcome is lean. The same underlying data always gives the same text; the thresholds were written before the data.",
+   "ar": "يُحسب النظام من عتبات ثابتة: الوفر يتطلب حصة خضراء ≥ 10 % وحصة حمراء ≤ 30 %؛ والهزال يحدث عندما تكون حصة الخضراء < 8 % أو الحمراء > 35 %؛ وما بينهما وضع متوازن. في هذا الأساس: حصة الخضراء 7 % وحصة الحمراء 17 % — والنتيجة هزيلة. الأساس نفسه يعطي دائمًا النص نفسه؛ فالعتبات كُتبت قبل البيانات."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p8",
+   "en": "## The three highly ranked green companies",
+   "ar": "## الشركات الخضراء الثلاث عالية الترتيب"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p9",
+   "en": "Among the green companies, these three have the highest AKM1 scores in the underlying data (score out of max, dated 2026-09-03) — a descriptive ranking from the data, not a valuation:",
+   "ar": "بين الشركات الخضراء، هذه الثلاثة لديها أعلى نقاط AKM1 في الأساس (النقاط من الحد الأقصى، مؤرخة 2026-09-03) — ترتيب وصفي مستمد من البيانات، وليس التقييم:"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p10",
+   "en": "- **Industrivärden** (INDU-C.ST, industrials) — AKM1 58,1 of 67 possible points (86,7 %)\n- **Newmont** (NEM, materials) — AKM1 55,1 of 71,1 possible points (77,5 %)\n- **Investor** (INVE-B.ST, financials) — AKM1 54 of 62,9 possible points (85,9 %)",
+   "ar": "- **Industrivarden** (INDU-C.ST، الصناعة) — AKM1 ‏58,1 من 67 نقطة ممكنة (86,7 %)\n- **Newmont** (NEM، المواد) — AKM1 ‏55,1 من 71,1 نقطة ممكنة (77,5 %)\n- **Investor** (INVE-B.ST، المالية) — AKM1 ‏54 من 62,9 نقطة ممكنة (85,9 %)"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p11",
+   "en": "The selection is the cross-tabulation's 100-company universe (10 sectors × 10 companies) — the numbers are selection-dependent and say nothing about companies outside the universe. The dating comes from the underlying data itself (created 2026-09-03), never from the clock.",
+   "ar": "الاختيار هو عالم الشركات المكوّن من 100 شركة في الجدول المتقاطع (10 قطاعات × 10 شركات) — والأرقام مرتبطة بالاختيار ولا تقول شيئًا عن شركات خارج هذا العالم. التأريخ يأتي من الأساس نفسه (أُنشئ 2026-09-03)، لا من الساعة أبدًا."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p12",
+   "en": "## The change since the previous edition",
+   "ar": "## التغيير منذ الإصدار السابق"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p13",
+   "en": "The series' first edition — no previous month to compare with. The next edition will report how many companies changed status; unchanged is written as unchanged.",
+   "ar": "الإصدار الأول من السلسلة — لا شهر سابق للمقارنة به. الإصدار التالي سيعرض عدد الشركات التي غيرت حالتها؛ وما بقي كما هو يُكتب «دون تغيير»."
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p14",
+   "en": "## Dig deeper",
+   "ar": "## تعمّق أكثر"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p15",
+   "en": "- [The research library](/forskningsbiblioteket) — the companies that passed the candidate rule, with selection rule and outcome\n- [The course V09 ROE](/kurser/v09-roe) — the variable behind the profitability score\n- [Complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) — the methodology from the ground up",
+   "ar": "- [مكتبة البحث](/forskningsbiblioteket) — الشركات التي اجتازت قاعدة الترشيح، مع قاعدة الاختيار والنتيجة\n- [الدورة V09 ROE](/kurser/v09-roe) — المتغير الكامن خلف نقاط الربحية\n- [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) — المنهجية من الأساس"
+  },
+  {
+   "nyckel": "forskningslaget-grona-av-100:p16",
+   "en": "_This is an automatically generated research overview; the complete AK1A analysis is produced manually. Educational research — never investment advice (law 2007:528)._",
+   "ar": "_هذا ملخص بحثي مُولّد تلقائيًا؛ يتم إعداد تحليل AK1A الكامل يدويًا. بحث تعليمي — وليس أبدًا تقديم نصيحة استثمارية (القانون 2007:528)._"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:titel",
+   "en": "How we analyzed Volvo Cars — from report to recommendation",
+   "ar": "كيف حللنا شركة فولفو كارز — من التقرير إلى التوصية"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:ingress",
+   "en": "A complete case: how an AK1A analysis is built step by step, from Q report to AKM1 score, scenarios and wave matrix. That is what institutional methodology looks like in practice.",
+   "ar": "حالة كاملة: كيف تُبنى تحليلات AK1A خطوة بخطوة، من التقرير الربعي إلى نقاط AKM1 والسيناريوهات ومصفوفة الموجات. هكذا تبدو المنهجية المؤسسية في الممارسة."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p1",
+   "en": "What does a complete stock analysis look like from behind — from a Q report landing on the desk to a motivated recommendation? We show the whole chain with Volvo Cars (VOLCAR-B) as the example. The goal: that you can replicate every step on any company.",
+   "ar": "كيف يبدو تحليل الأسهم الكامل من الخلف — من هبوط تقرير ربع سنوي على المكتب إلى توصية مبررة؟ نعرض السلسلة كاملة بمثال شركة فولفو كارز (VOLCAR-B). الهدف: أن تستطيع تكرار كل خطوة على أي شركة كانت."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p2",
+   "en": "## Step 1: Gather the underlying data",
+   "ar": "## الخطوة 1: اجمع الأساس"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p3",
+   "en": "An analysis never begins with an opinion — it begins with sources. For a listed company: the latest 4 quarterly reports, the latest annual report, a prospectus at new share issues, investor presentations, and sector data (for cars: registration statistics, margin pressure, the electric transition).",
+   "ar": "لا يبدأ التحليل أبدًا برأي — بل بمصادر. لشركة مدرجة: التقرير الربع سنوي عن آخر 4 أرباع، وأحدث إصدار من التقرير السنوي، ونشرة الإصدار عند إصدار أسهم جديدة، وعروض المستثمرين، وبيانات القطاع (للسيارات: إحصاءات التسجيل، وضغط الهوامش، والتحول إلى الكهرباء)."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p4",
+   "en": "We log every figure with its source. Reproducibility is the whole difference between analysis and opinion.",
+   "ar": "نسجل كل رقم مع مصدره. قابلية التكرار هي الفرق كله بين التحليل وإبداء الرأي."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p5",
+   "en": "## Step 2: Structure with AKM1's 20 variables",
+   "ar": "## الخطوة 2: البناء الهيكلي بمتغيرات AKM1 الـ 20"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p6",
+   "en": "Each variable is scored 0–5 with a motivated comment. A few examples from the weighing work on VOLCAR-B:",
+   "ar": "يُمنح كل متغير نقاطًا من 0–5 مع تعليق مبرر. بعض الأمثلة من عمل الموازنة على VOLCAR-B:"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p7",
+   "en": "- **V01 Revenue growth:** volumes stable but the mix shifts — electric cars give a lower gross margin in the transition phase\n- **V09 ROE:** large transition investments press the return on capital — the trend weighs more than the level\n- **V12/V13 Debt:** the car division's financing operations make the debt picture complex — adjust for customer financing before comparing",
+   "ar": "- **V01 نمو الإيرادات:** الأحجام مستقرة لكن المزيج ينزاح — السيارات الكهربائية تخفض الهامش الإجمالي في مرحلة الانتقال\n- **V09 ROE:** استثمارات ضخمة في التحول تضغط على عائد رأس المال — والاتجاه يزن أثقل من المستوى\n- **V12/V13 الدين:** تجعل أنشطة التمويل في قسم السيارات صورة الدين معقدة — عدّل لتمويل العملاء قبل المقارنة"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p8",
+   "en": "The scores are not summed mechanically — the weighting differs between wave types (impulse, correction and base variables). That is the wave matrix's 25 cells.",
+   "ar": "لا تُجمع النقاط آليًا — فالوزن يختلف بين أنواع الموجات (متغيرات الدفع والتصحيح والقاعدة). تلك هي الخلايا الـ 25 لمصفوفة الموجات."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p9",
+   "en": "## Step 3: Build three scenarios",
+   "ar": "## الخطوة 3: ابنِ ثلاثة سيناريوهات"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p10",
+   "en": "Institutions force themselves to think in paths, not points:",
+   "ar": "تُجبر المؤسسات نفسها على التفكير في مسارات لا نقاط:"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p11",
+   "en": "- **Bull:** the margin run holds, the electric transition goes faster than plan, China recovers\n- **Base:** volumes per the guidance, marginal improvement per year, the valuation at the historical median\n- **Bear:** price war, tariffs, delayed electric profitability — the capital need forces dilution",
+   "ar": "- **Bull:** يستمر ضبط الهوامش، ويسير التحول الكهربائي أسرع من الخطة، وتتعافى الصين\n- **Base:** الأحجام وفق التوجيهات، وتحسن هامشي كل عام، والتقييم عند الوسيط التاريخي\n- **Bear:** حرب أسعار، ورسوم جمركية، وربحية كهربائية متأخرة — والحاجة إلى رأس المال تفرض تخفيف الملكية"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p12",
+   "en": "Each path gets a probability and a price target. The bear path is the most important: it defines your risk, not your return.",
+   "ar": "لكل مسار احتمال وسعر مستهدف. مسار الدب هو الأهم: إنه يحدد المخاطر لا العائد."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p13",
+   "en": "## Step 4: Technical confluence",
+   "ar": "## الخطوة 4: التقارب الفني"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p14",
+   "en": "With the fundamental picture clear, we check the price picture: is the price structure in an impulse wave that confirms the base case? Or a correction suggesting the market is pricing the bear? Confluence = high confidence. Divergence = smaller position or waiting.",
+   "ar": "بعد اكتمال الصورة الأساسية نفحص صورة السعر: هل تقع بنية السعر في الموجة الدافعة التي تؤكد السيناريو الأساسي؟ أم في تصحيح يوحي بأن السوق يسعّر سيناريو الدب؟ التقارب = ثقة عالية. التباعد = مركز أصغر أو انتظار."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p15",
+   "en": "## Step 5: Recommendation with positioning",
+   "ar": "## الخطوة 5: التوصية مع تحديد المركز"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p16",
+   "en": "The end result is not 'buy' or 'sell' — it is a recommendation with horizon, position size and a stepped entry. A conclusion without position logic is unusable: the right company with too large a position is a bad decision.",
+   "ar": "النتيجة النهائية ليست «شراء» أو «بيع» — بل توصية بأفق وحجم مركز ودخول متدرج. الاستنتاج بلا منطق للمركز غير قابل للاستخدام: الشركة الصحيحة بمركز كبير للغاية قرار سيئ."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p17",
+   "en": "## The result",
+   "ar": "## النتيجة"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p18",
+   "en": "The whole analysis — 99 pages, all 20 variables reported with sources, scenarios with probabilities, price levels and key events — is here: [Volvo Cars (VOLCAR-B) — complete analysis](/analyser/VOLCAR-B).",
+   "ar": "التحليل كاملًا — 99 صفحة، وجميع المتغيرات الـ 20 معروضة بمصادرها، وسيناريوهات باحتمالاتها، ومستويات أسعار وأحداث رئيسية — متاح هنا: [فولفو كارز (VOLCAR-B) — تحليل كامل](/analyser/VOLCAR-B)."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p19",
+   "en": "## Replicate it yourself",
+   "ar": "## كرّرها بنفسك"
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p20",
+   "en": "The methodology is not secret — that is the point. If you want to learn it step by step, start with [the complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) and [the AKM1 courses](/kurser). In [the lab](/labb) you practise on 201 cases with the lessons reported.",
+   "ar": "المنهجية ليست سرًا — هذه هي الفكرة. إن أردت تعلمها خطوة بخطوة فابدأ بـ[الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) و[الدورة الكاملة لـ AKM1](/kurser). في [المختبر](/labb) تتدرب على 201 حالة مع عرض الدروس المستفادة."
+  },
+  {
+   "nyckel": "hur-vi-analyserade-volvo-cars:p21",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:titel",
+   "en": "Complete guide to Swedish stock analysis 2026",
+   "ar": "الدليل الكامل لتحليل الأسهم السويدية 2026"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:ingress",
+   "en": "This is how institutions do stock analysis — and how you as a private individual use the same method. From annual report to recommendation in 7 steps, with AKM1's 20 variables.",
+   "ar": "هكذا تجري المؤسسات تحليل الأسهم — وكيف تستخدم أنت كفرد خاص الطريقة نفسها. من التقرير السنوي إلى التوصية في 7 خطوات، وبمتغيرات AKM1 الـ 20."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p1",
+   "en": "What separates an institutional analyst at Carnegie from a private individual reading Placera? Not intelligence. Not access to data — everything they use is public. The difference is **methodology**: a structured, repeatable framework applied identically to every company.",
+   "ar": "ما الذي يفرق بين محلل مؤسسي في Carnegie وفرد عادي يقرأ Placera؟ ليس الذكاء. وليس الوصول إلى البيانات — فكل ما يستخدمونه علني. الفرق هو **المنهجية**: إطار منظم قابل للتكرار يُطبَّق بالطريقة نفسها على كل شركة."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p2",
+   "en": "This guide summarizes how Swedish stock analysis works at the institutional level — and how you apply the same thinking with the AKM1 model.",
+   "ar": "يلخص هذا الدليل كيف يعمل تحليل الأسهم السويدية على المستوى المؤسسي — وكيف تطبق التفكير نفسه بنموذج AKM1."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p3",
+   "en": "## Step 1: Start with the business, not the course of the price",
+   "ar": "## الخطوة 1: ابدأ بالعمل لا بالدورة السعرية"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p4",
+   "en": "Most private individuals start with the price chart. Analysts start with the business model: What does the company sell? To whom? Why do they win customers? What do the margins look like — and do they hold?",
+   "ar": "معظم الأفراد يبدؤون بمخطط السعر. أما المحلل فيبدأ بنموذج العمل: ماذا تبيع الشركة؟ ولمن؟ ولماذا تكسب العملاء؟ كيف تبدو الهوامش — وهل تصمد؟"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p5",
+   "en": "A stock is a share of a company. The course of the price over a month is driven by sentiment; the value over five years is driven by the operating profit. Your analysis should explain the company — the chart explains itself.",
+   "ar": "السهم حصة في شركة. الدورة السعرية في شهر ما يقودها المعنويات؛ أما القيمة في خمس سنوات فيقودها الربح التشغيلي. تحليلك يجب أن يفسر الشركة — والمخطط يفسر نفسه."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p6",
+   "en": "## Step 2: Read the annual report like a detective",
+   "ar": "## الخطوة 2: اقرأ التقرير السنوي كمحقق"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p7",
+   "en": "The Swedish annual report contains everything an analyst needs — but not in the order beginners read. Go straight to: note 1 (accounting principles), the appropriation of results, the segment report and the risk section. Compare 'Listed and other liabilities' year over year.",
+   "ar": "يحتوي التقرير السنوي السويدي على كل ما يحتاجه المحلل — لكن ليس بالترتيب الذي يقرأ به المبتدئون. اذهب مباشرة إلى: الإيضاح 1 (مبادئ المحاسبة)، وتخصيص النتيجة، وتقرير القطاعات، وقسم المخاطر. قارن «الالتزامات المقيدة وغيرها» سنة بسنة."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p8",
+   "en": "Looking for dishonesty? Follow four trails: sprinting revenue items, capitalized costs, changed accounting principles in good times, and the words 'one-off items' that return every year.",
+   "ar": "تبحث عن عدم الأمانة؟ تتبع أربعة آثار: بنود إيرادات متعجلة، والتكاليف المرسملة، ومبادئ محاسبية تغيرت في السنوات الجيدة، وعبارات «بنود استثنائية» تتكرر كل عام."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p9",
+   "en": "## Step 3: Tear the growth apart (V01–V03)",
+   "ar": "## الخطوة 3: فكّك النمو (V01–V03)"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p10",
+   "en": "AKM1 begins with three growth variables: revenue growth, ARR growth and revenue diversification. Why in that order? Because growth without quality is a trap. A company that grows 30 % but on a single customer is a risk company, not a growth company.",
+   "ar": "يبدأ AKM1 بثلاثة متغيرات للنمو: نمو الإيرادات، ونمو ARR، وتنويع الإيرادات. لماذا بهذا الترتيب؟ لأن النمو بلا جودة فخ. الشركة التي تنمو 30 % لكن اعتمادًا على عميل واحد هي شركة مخاطرة لا شركة نمو."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p11",
+   "en": "Always recalculate organic growth: strip out acquisitions and currency effects. On the Stockholm exchange, the difference between reported and organic growth is often 5–15 percentage points.",
+   "ar": "أعد دائمًا حساب النمو العضوي: استبعد الاستحواذات وآثار العملة. في بورصة ستوكهولم، يكون الفرق بين النمو المعلن والنمو العضوي غالبًا 5–15 نقطة مئوية."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p12",
+   "en": "## Step 4: Margins and capital efficiency (V07–V12)",
+   "ar": "## الخطوة 4: الهوامش وكفاءة رأس المال (V07–V12)"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p13",
+   "en": "The gross margin reveals pricing power. The EBIT margin reveals discipline. ROE — return on equity (ROE) — reveals whether the growth creates value. A company can grow 20 % a year and still destroy value if ROE is 5 % and the cost of capital is 8 %.",
+   "ar": "الهامش الإجمالي يكشف القوة التسعيرية. وهامش EBIT يكشف الانضباط. وROE — العائد على حقوق الملكية (ROE) — يكشف هل يخلق النمو قيمة. يمكن لشركة أن تنمو 20 % سنويًا ومع ذلك تدمر القيمة إذا كان ROE هو 5 % وكلفة رأس المال 8 %."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p14",
+   "en": "That is why ROE (V09) — the return measure — weighs heavily in AKM1. See our deep dive: [How to calculate ROE like Carnegie](/blogg/v09-roe-avkastning-eget-kapital).",
+   "ar": "لهذا يحظى ROE (V09) — مقياس العائد — بوزن ثقيل في AKM1. انظر تعميقنا: [كيف تحسب ROE مثل Carnegie](/blogg/v09-roe-avkastning-eget-kapital)."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p15",
+   "en": "## Step 5: Valuation with multiples — and their traps",
+   "ar": "## الخطوة 5: التقييم بالمضاعفات — وفخاخها"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p16",
+   "en": "P/E, P/S, EV/EBITDA — every multiple has a story to tell and a way to fool you. A low P/S can mean underpriced — or a company without profitability that never earns a multiple. Always compare with the company's own historical multiple and with the sector's, and remember: a valuation multiple is a conclusion packaged as a number. Your task is to work out whether the conclusion is reasonable.",
+   "ar": "P/E وP/S وEV/EBITDA — لكل مضاعف حكاية يرويها وطريقة يخدعك بها. فالـ P/S المنخفض قد يعني تسعيرًا أدنى من الحقيقة — أو شركة بلا ربحية لا تستحق مضاعفًا أبدًا. قارن دائمًا بالمضاعف التاريخي للشركة نفسها وبمضاعف القطاع، وتذكر: مضاعف التقييم استنتاج معبأ في رقم. مهمتك أن تكتشف هل هذا الاستنتاج معقول."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p17",
+   "en": "## Step 6: Scenarios, not point estimates",
+   "ar": "## الخطوة 6: سيناريوهات لا تقديرات نقطية"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p18",
+   "en": "Institutions rarely give a price — they give three paths: bull, base and bear, with probabilities. That forces honesty: which assumptions must hold for the bear case to occur? If the bear case requires everything to go wrong at once, the risk is smaller than it looks.",
+   "ar": "نادرًا ما تعطي المؤسسات سعرًا — بل تعطي ثلاثة مسارات: صاعد وأساسي وهابط، مع احتمالات. ذلك يفرض الصدق: ما الافتراضات التي يجب أن تتحقق ليقع السيناريو الهابط؟ إذا كان يتطلب أن يخطئ كل شيء في وقت واحد فالمخاطر أقل مما تبدو."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p19",
+   "en": "Every AK1A analysis reports scenarios with probability and a motivated price target — see an example in our [analysis of Precise Biometrics](/analyser/PREC.ST).",
+   "ar": "كل تحليل AK1A يعرض سيناريوهات باحتمال وسعر مستهدف مبرر — انظر مثالًا في [تحليلنا لشركة Precise Biometrics](/analyser/PREC.ST)."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p20",
+   "en": "## Step 7: Confluence — when everything points the same way",
+   "ar": "## الخطوة 7: التقارب — حين يشير كل شيء إلى الاتجاه نفسه"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p21",
+   "en": "Last: technical analysis. Not as fortune-telling, but as a confluence check. When fundamental scenarios and the course of the price's wave structure point the same way, confidence is high. When they split — wait. There is always a new case.",
+   "ar": "أخيرًا: التحليل الفني. ليس بوصفه تنبؤًا بل فحص تقارب. حين تشير السيناريوهات الأساسية وبنية موجات الدورة السعرية إلى الاتجاه نفسه تكون الثقة عالية. وحين تتباعد — انتظر. هناك دائمًا حالة جديدة."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p22",
+   "en": "## Summary",
+   "ar": "## الخلاصة"
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p23",
+   "en": "Institutional stock analysis is no secret — it is discipline. Seven steps, applied the same way every time: business model, annual report, growth, margins, valuation, scenarios, confluence. AKM1 packages them in 20 measurable variables.",
+   "ar": "تحليل الأسهم المؤسسي ليس سرًا — بل انضباط. سبع خطوات تُطبق بالطريقة نفسها في كل مرة: نموذج العمل، والتقرير السنوي، والنمو، والهوامش، والتقييم، والسيناريوهات، والتقارب. AKM1 يغلفها في 20 متغيرًا قابلًا للقياس."
+  },
+  {
+   "nyckel": "komplett-guide-svensk-aktieanalys-2026:p24",
+   "en": "Do you want to learn the method step by step? All 307 courses start here: [AKM1's 20 variables](/kurser).",
+   "ar": "أتريد تعلم الطريقة خطوة بخطوة؟ الدورة الكاملة بجميع أجزائها الـ 307 تبدأ هنا: [متغيرات AKM1 الـ 20](/kurser)."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:titel",
+   "en": "Mr Market and the Swedish stock exchange — the psychology that moves the course of prices more than the numbers do",
+   "ar": "السيد السوق والبورصة السويدية — علم النفس الذي يحرك الدورة السعرية أكثر من الأرقام"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:ingress",
+   "en": "The pendulum between greed and fear swings further than any fundamental data explains. Here is the Mr Market allegory, Swedish examples of sentiment swings and concrete rules for rebalancing.",
+   "ar": "بندول الطمع والخوف يتأرجح أبعد مما تفسره أي بيانات أساسية. ها هي استعارة السيد السوق، وأمثلة سويدية على تقلبات المعنويات، وقواعد ملموسة لإعادة التوازن."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p1",
+   "en": "According to classic value investing practice, you should think of the stock exchange as a business partner with a peculiar temperament. Every day he offers to buy your share of the company or sell you more — at a price he sets at random. Some days he is elated, sees only good times ahead and bids high. Other days he is deeply depressed, sees only work and worry and bids far below what the business is worth. His name is Mr Market, the allegory is almost a hundred years old — and his most important property is that you are free to say no.",
+   "ar": "وفق ممارسة الاستثمار القيمي الكلاسيكية، ينبغي أن تفكر في البورصة بوصفها شريك عمل ذا مزاج غريب. كل يوم يعرض أن يشتري حصتك من الشركة أو يبيعك المزيد — بسعر يحدده جزافًا. بعض الأيام يكون مبتهجًا لا يرى إلا أزمنة حسنة أمامه فيسعر عاليًا. وأيامًا أخرى يكون مكتئبًا بعمق، لا يرى إلا عملًا وهمومًا، فيسعر أدنى بكثير من قيمة النشاط. اسمه السيد السوق، والاستعارة عمرها قريب من مئة عام — وأهم خصائصه أنك حر في أن ترفض."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p2",
+   "en": "That is the whole point: Mr Market exists to serve you, not to guide you. He does not report the price — he offers it. The price is a quotation, not a verdict. Whoever forgets the difference starts obeying the market instead of using it.",
+   "ar": "هذه هي الفكرة كلها: السيد السوق موجود ليخدمك لا ليرشدك. هو لا يبلغ بالسعر — بل يعرضه. السعر عرض سعري لا حكم. من ينسى هذا الفرق يبدأ بطاعة السوق بدل استخدامه."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p3",
+   "en": "## The pendulum: greedy — afraid — greedy",
+   "ar": "## البندول: طمع — خوف — طمع"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p4",
+   "en": "The market's sentiment moves like a pendulum. It rarely stops in the middle — at the cold, calculated position where the price mirrors fundamentals — but sweeps past it on the way to the extremes. At greed's outer position the story becomes 'this time is different' and every new quote seems to confirm that the price only goes up. At fear's outer position the story becomes 'stocks are gambling' and every fall proves the catastrophe is here. Strangely enough, both stories contain a core of feeling that is real — that is why they are so contagious — but both fail to price the most likely outcome, which almost always lies somewhere in between.",
+   "ar": "تتحرك المعنويات في السوق كبندول. نادرًا ما تتوقف في المنتصف — عند الموضع البارد المحسوب حيث يعكس السعر الأساسيات — بل تمر به عابرة نحو الأطراف. في الطرف الأقصى للطمع تصبح الحكاية «هذه المرة مختلفة» ويبدو كل تسعير جديد مؤكدًا أن سعر السهم لا يذهب إلا صعودًا. وفي الطرف الأقصى للخوف تصبح الحكاية «الأسهم قمار» ويثبت كل هبوط أن الكارثة وصلت. وغريب أن الحكايتين تحملان نواة شعور حقيقية — لهذا هما معدية إلى هذا الحد — لكن كلتيهما تفشل في تسعير النتيجة الأكثر ترجيحًا، التي تكاد دائمًا تقع في مكان ما بين بين."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p5",
+   "en": "The important thing for you who want to become one of the analysts: the pendulum swings further than fundamentals data explains. The revenue and the margins of an average company move tens of percent between good and bad years. The course of the price can move hundreds. The difference between the two movements is not mathematics — it is psychology.",
+   "ar": "الأهم لمن يريد أن يصبح من المحللين: البندول يتأرجح أبعد مما تفسره بيانات الأساسيات. فالإيرادات والهوامش عند شركة متوسطة تتحرك عشرات بالمئة بين السنوات الجيدة والسيئة. أما الدورة السعرية فقد تتحرك مئات. والفرق بين الحركتين ليس رياضيات — بل علم نفس."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p6",
+   "en": "## Three Swedish examples of sentiment swings",
+   "ar": "## ثلاثة أمثلة سويدية على تقلبات المعنويات"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p7",
+   "en": "Need proof that the pendulum exists? You do not need to go further back than the Swedish exchange's recent years.",
+   "ar": "أتحتاج دليلًا على وجود البندول؟ لا تحتاج للعودة أبعد من السنوات الأخيرة للبورصة السويدية."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p8",
+   "en": "**The small-cap euphoria of 2021.** During the pandemic years and the extremely stimulating 2021, Swedish small- and growth companies rose to multiples that hardly any calculation justified. The share issue wave was enormous, companies with ideas but no revenue were listed at hundreds of millions, and days with twenty percent gains without new news were common. The sentiment — not the operating profit — carried the course of the prices. Many private individuals had their first exchange experience in precisely that environment and drew the conclusion that stocks only go up. The pendulum stood at the outer position: greedy.",
+   "ar": "**نشوة الأسهم الصغيرة 2021.** خلال سنوات الجائحة وعام 2021 شديد التحفيز، صعدت الشركات السويدية الصغيرة والنامية إلى مضاعفات بالكاد بررها أي حساب. كانت موجة إصدار الأسهم هائلة، وشركات بأفكار أُدرجت بمئات الملايين رغم غياب الإيرادات، وكانت أيام بارتفاع عشرين بالمئة من دون أخبار جديدة أمرًا مألوفًا. المعنويات — لا الربح التشغيلي — هي التي حملت الدورة السعرية. كثير من الأفراد خاضوا أول تجربة بورصية لهم في تلك البيئة بالذات واستنتجوا أن السهم لا يرتفع إلا صعودًا. وقف البندول في الطرف الأقصى: طمع."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p9",
+   "en": "**The interest rate shock of 2022.** Then inflation and the interest rate turned. The same growth companies often fell seventy to ninety percent from their peaks — considerably more than changed earnings forecasts justified. The interesting thing in retrospect is that fundamentals for many companies deteriorated moderately while the course of the prices collapsed totally. When fear takes command, the market no longer discounts the future's cash flows — it discounts the very existence of a future. The pendulum stood at the outer position: afraid.",
+   "ar": "**صدمة أسعار الفائدة 2022.** ثم انقلب التضخم وسعر الفائدة. الشركات النامية نفسها هبطت غالبًا سبعين إلى تسعين بالمئة من قممها — أكثر بكثير مما بررته تنبؤات الأرباح المعدلة. واللافت في التأمل البعدي أن أساسيات شركات كثيرة تدهورت باعتدال بينما انهارت الدورة السعرية انهيارًا كليًا. حين يتولى الخوف القيادة لم يعد السوق يخصم التدفق النقدي للمستقبل — بل يخصم وجود المستقبل ذاته. وقف البندول في الطرف الأقصى: خوف."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p10",
+   "en": "**The AI wave 2023–2025.** Thereafter: a concentrated euphoria around companies with ties to AI, where a few heavy stocks carried the index while the broader market stood still. Same mechanism, new story: this time is different, because now the technology is real. (The technology can be real and the prices exaggerated at the same time — one does not exclude the other.)",
+   "ar": "**موجة الذكاء الاصطناعي 2023–2025.** بعدها: النشوة المركزة حول شركات مرتبطة بالذكاء الاصطناعي، حمل فيها عدد قليل من الأسهم الثقيلة المؤشر بينما وقف السوق الأوسع ساكنًا. الآلية نفسها بحكاية جديدة: هذه المرة مختلفة، فالتقنية الآن حقيقية. (قد تكون التقنية حقيقية وسعر السهم مبالغًا فيه في الوقت نفسه — أحدهما لا ينفي الآخر.)"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p11",
+   "en": "The pattern repeats not because the market is stupid, but because it is composed of people who are good at rationalizing the latest price move in both directions. That is precisely why rule sets are needed — mechanics that work even when feeling does not.",
+   "ar": "يتكرر النمط لا لأن السوق غبي، بل لأنه مؤلف من بشر يجيدون تبرير آخر حركة سعر في الاتجاهين. لهذا بالضبط تُلزم منظومات من القواعد — ميكانيكا تعمل حتى حين لا تعمل المشاعر."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p12",
+   "en": "## How do you measure the sentiment — without guessing?",
+   "ar": "## كيف تقيس المعنويات — من دون تخمين؟"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p13",
+   "en": "You do not need to be clairvoyant to read the pendulum; you only need to know where it is read off. Some observable market data that institutions follow:",
+   "ar": "لا تحتاج إلى بصر خارق لقراءة البندول؛ يكفي أن تعرف أين تُقرأ قيمته. بعض بيانات السوق القابلة للرصد التي تتابعها المؤسسات:"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p14",
+   "en": "- **The share issue volume.** When the listing and new issue wave is at its largest and subscription premiums are pressed downward, the pendulum stands at greed's outer position — capital is not chased, it offers itself\n- **The spread between small caps and large caps.** When the small-cap index runs away from Large Cap, risk appetite is high; when small companies trade at fractions of large-cap multiples, it is at its lowest\n- **Interest rate sensitivity.** How does the stock exchange react to an unchanged interest rate message? Overreaction in both directions signals that nerves are tense\n- **The recommendation picture.** When the share of buy recommendations among analyses approaches the maximum, few remain to convert into buyers — the sentiment is one-sided just when it feels most like consensus",
+   "ar": "- **حجم الإصدارات.** حين تكون موجة الإدراج والإصدار الجديد في أقصاها وتُضغط علاوات الاكتتاب إلى الأسفل، يقف البندول في طرف الطمع الأقصى — رأس المال لا يُطارد، بل يعرض نفسه\n- **الفارق بين الشركات الصغيرة والكبيرة.** حين يسبق مؤشر الشركات الصغيرة قائمة Large Cap تكون شهية المخاطرة عالية؛ وحين تُتداول الشركات الصغيرة بكسور من مضاعفات الكبيرة تكون في أدنى مستوياتها\n- **حساسية أسعار الفائدة.** كيف تتفاعل البورصة مع قرار فائدة دون تغيير؟ رد الفعل المفرط في الاتجاهين يشير إلى أن الأعصاب مشدودة\n- **صورة التوصيات.** حين تقترب حصة توصيات الشراء بين التحليلات من الحد الأقصى يتبقى قليلون يمكن تحويلهم إلى مشترين — تكون المعنويات أحادية الجانب تمامًا حين يبدو الإجماع في ذروته"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p15",
+   "en": "None of these is a buy or sell signal in itself. Together they give a thermometer: they say where the pendulum is, not where it stops next. It is when the thermometer shows an extreme value that Mr Market's offers are as a rule most interesting — in both directions.",
+   "ar": "لا شيء منها إشارة شراء أو بيع في ذاته. معًا تعطي ميزان حرارة: تقول أين يقع البندول، لا أين سيتوقف تاليًا. حين يظهر الميزان قيمة متطرفة تكون عروض السيد السوق كقاعدة في أوج إثارة الاهتمام — في الاتجاهين."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p16",
+   "en": "## How you use Mr Market — three rules that silence the pendulum",
+   "ar": "## كيف تستخدم السيد السوق — ثلاث قواعد تُسكت البندول"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p17",
+   "en": "Mr Market is useful in exactly one way: he sometimes makes offers worth looking at. But 'looking at' is an analysis process, not a buy button. Here are three rules that turn the insight into practice:",
+   "ar": "السيد السوق نافع بطريقة واحدة بالضبط: يقدم أحيانًا عروضًا تستحق النظر. لكن «النظر» عملية تحليلية لا زر شراء. إليك ثلاث قواعد تحول الرؤية إلى ممارسة:"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p18",
+   "en": "**Rule 1: Rebalance on mechanics, not on gut feeling.** Set an interval for each holding's weight in the portfolio — for example, that an active weight may deviate at most five percentage points from the target weight before you trade. When a stock has risen above the band you trim back; when it has fallen below you top up. The decision is made by the rule, not by the mood. Calendar-based quarterly review works as a complement: then you look, but the bands decide.",
+   "ar": "**القاعدة 1: أعد التوازن بالميكانيكا لا بالحدس.** حدد نطاقًا لوزن كل مركز في المحفظة — مثلًا ألا يبتعد الوزن الفعلي أكثر من خمس نقاط مئوية عن الوزن المستهدف قبل أن تتداول. حين يصعد السهم فوق النطاق تقلّص؛ وحين يهبط تحته تُكمل. القرار تتخذه القاعدة لا الحالة المزاجية. المراجعة الربعية المبنية على التقويم تعمل كتكملة: حينها تنظر، لكن النطاقات تحسم."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p19",
+   "en": "**Rule 2: Write the thesis before you buy — with falsification conditions.** A thesis that cannot be wrong cannot be right either. Write down (max three sentences) why you own, what would prove you wrong, and within which time horizon. When the course of the price then falls twenty percent without news, you have a document that separates 'the market is wrong' from 'I was wrong' — a difference memory cannot handle on its own.",
+   "ar": "**القاعدة 2: اكتب الأطروحة قبل الشراء — مع شروط الدحض.** الأطروحة التي لا يمكن أن تكون خاطئة لا يمكن أن تكون صحيحة أيضًا. دوّن (ثلاث جمل كحد أقصى) لماذا تملك، وما الذي يثبت خطأك، وفي أي أفق زمني. حين تهبط الدورة السعرية بعدها عشرين بالمئة بلا خبر جديد، يكون لديك وثيقة تفرق بين «السوق مخطئ» و«كنت أنا المخطئ» — فرقًا لا يقدر عليه الحافظ وحده."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p20",
+   "en": "**Rule 3: Let the fundamentals be the anchor when the sentiment roars.** The next time a large price move without news occurs: run the variables. Do the margins (V07, V08), the return on equity (ROE) (V09) and the balance sheet (V10) still hold? Then the price move was mostly psychology — information about other market actors' mood, not about the company. If they do not hold — then Mr Market may have seen something before you, and it is better to know it today.",
+   "ar": "**القاعدة 3: اجعل الأساسيات المرساة حين تعصف المعنويات.** في المرة القادمة التي تحدث فيها حركة سعرية كبيرة بلا أخبار: شغّل المتغيرات. هل ما زالت الهوامش (V07 وV08)، والعائد على حقوق الملكية (ROE) (V09)، والميزانية العمومية (V10) صحيحة؟ إذن كانت الحركة السعرية نفسانية في معظمها — معلومة عن مزاج لاعبين آخرين في السوق لا عن الشركة. وإن لم تعد صحيحة — فقد يكون السيد السوق رأى شيئًا قبلك، ومن الأفضل أن تعرفه اليوم."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p21",
+   "en": "## Sentiment lives on the short term — value lives on the long term",
+   "ar": "## المعنويات تعيش على المدى القصير — والقيمة تعيش على المدى الطويل"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p22",
+   "en": "Here the AK1TS framework is truly useful. AK1TS crosses five time horizons (micro, short, medium, long and mega) with theories and dimensions — and the sentiment noise lives almost exclusively on the shortest horizons. A daily price move says something about the mood of those who traded that day; it says nothing about the company's value over five years. The mega and long horizons are governed by things like demographics, structural profitability and capital return (V11–V20 in AKM1) — forces the pendulum cannot influence, only temporarily shout over.",
+   "ar": "هنا يصبح إطار AK1TS مفيدًا فعلًا. يقطع AK1TS خمسة آفاق زمنية (مصغر وقصير ومتوسط وطويل وضخم) مع النظريات والأبعاد — وضجيج المعنويات يعيش حصريًا تقريبًا على أقصر الآفاق. فالحركة اليومية للسعر تقول شيئًا عن مزاج من تداولوا ذلك اليوم؛ ولا تقول شيئًا عن قيمة الشركة في خمس سنوات. أما أفق الضخم والطويل فيحكمهما الديموغرافيا والربحية الهيكلية وعودة رأس المال (V11–V20 في AKM1) — قوى لا يستطيع البندول التأثير فيها، بل مجرد الصياح فوقها مؤقتًا."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p23",
+   "en": "The consequence is a division of labor: use the short horizon's sentiment as a generator of offers — Mr Market as servant — but let the long horizon's fundamental analysis decide which offers are worth accepting. Whoever instead uses long-term stories to justify short-term trades has mixed up the controls in the wrong direction.",
+   "ar": "النتيجة تقسيم للعمل: استخدم المعنويات في الأفق القصير بوصفها مولدًا للعروض — السيد السوق خادمًا — لكن دع التحليل الأساسي للأفق الطويل يقرر أي العروض يستحق القبول. ومن يستخدم بدلًا من ذلك حكايات بعيدة المدى لتبرير صفقات قصيرة المدى فقد خلط المقود بالعكس."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p24",
+   "en": "This is also the difference between reacting and ruling. Reacting is chemical: loss aversion, herd behavior, the need for confirmation — inner mechanisms evolution gave us and the stock exchange exploits. Ruling is structural: bands, theses, checklists, review dates. The independent analyst differs from the impulsive investor not through feelings — both feel everything — but through which of the two systems gets to make the decisions.",
+   "ar": "هذا أيضًا الفرق بين رد الفعل والحُكم. رد الفعل كيميائي: النفور من الخسارة، وسلوك القطيع، والحاجة إلى التأكيد — آليات داخلية منحنا إياها التطور وتستغلها البورصة. أما الحكم فبنيوي: نطاقات، وأطروحات، وقوائم تحقق، وتواريخ مراجعة. يختلف المحلل المستقل عن المستثمر الاندفاعي ليس بالمشاعر — كلاهما يشعر بكل شيء — بل بأي النظامين يتخذ القرارات."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p25",
+   "en": "## Next step",
+   "ar": "## الخطوة التالية"
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p26",
+   "en": "- Set bands for rebalancing on your holdings in [the portfolio builder](/min-portfolj) — written intervals, not emotional ones.\n- Review [the Curriculum](/laroplan) for how AK1TS's five time horizons help you sort sentiment noise from substance, and complement with [the library](/bibliotek) for deeper studies in market psychology and value investing.\n- The exercise: choose a holding that has fallen at least 15 % in the last month without new news and run an AKM1 check in [the calculator](/kalkylator). Vary the variables that feel sensitive — what did any of them actually say? Now you can separate sentiment from substance with numbers on the table.",
+   "ar": "- ضع نطاقات لإعادة التوازن على مراكزك في [باني المحفظة](/min-portfolj) — فترات مكتوبة لا شعورية.\n- راجع [المنهج](/laroplan) لترى كيف تساعدك الآفاق الزمنية الخمسة لـ AK1TS على فرز ضجيج المعنويات عن الجوهر، واستكمل بـ[المكتبة](/bibliotek) لدراسات أعمق في علم نفس السوق والاستثمار القيمي.\n- التمرين: اختر مركزًا هبط 15 % على الأقل في الشهر الأخير من دون أخبار جديدة وشغّل فحص AKM1 في [الحاسبة](/kalkylator). غيّر المتغيرات التي تبدو حساسة — ماذا قال أحدها فعلًا؟ الآن تستطيع التمييز بين المعنويات والجوهر والأرقام على الطاولة."
+  },
+  {
+   "nyckel": "mr-market-psykologi-svenska-borsen:p27",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:titel",
+   "en": "The PEG multiple's weaknesses — when a low PEG fools you",
+   "ar": "نقاط ضعف مضاعف PEG — حين يخدعك انخفاض PEG"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:ingress",
+   "en": "PEG feels exact: P/E divided by the growth rate. But the mathematics hides more than it reveals. Here is the worked example, the traps with the sustainability of growth and cyclical peaks — and when P/E alone is enough.",
+   "ar": "يبدو PEG دقيقًا: ‏P/E مقسومًا على معدل النمو. لكن الرياضيات تخفي أكثر مما تكشف. ها هو المثال الحسابي، وفخاخ استدامة النمو والقمم الدورية — ومتى تكفي P/E وحدها."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p1",
+   "en": "Everyone loves financial ratios that feel exact. PEG is the most tempting of them all: a single number claimed to capture both what you pay (P/E) and what you get (the growth). The rule of thumb sounds simple — PEG below 1 is cheap, above 1 is expensive. But the more exact a financial ratio feels, the more important it is to ask what the number actually hides. According to classic value investing practice, a valuation multiple is a conclusion packaged as a number — and PEG packages two conclusions in a single division.",
+   "ar": "الجميع يحب النسبة المالية التي تبدو دقيقة. PEG أكثرها إغراءً: رقم واحد يُزعم أنه يلتقط ما تدفعه (P/E) وما تحصل عليه (النمو) معًا. قاعدة الإبهام تبدو بسيطة — PEG أقل من 1 رخيص، وأكثر من 1 غالٍ. لكن كلما بدت النسبة المالية أكثر دقة، ازدادت أهمية أن تسأل ماذا يخفي الرقم فعلًا. وفق ممارسة الاستثمار القيمي الكلاسيكية، مضاعف التقييم استنتاج معبأ في رقم — وPEG يعبئ استنتاجين في قسمة واحدة."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p2",
+   "en": "## PEG in its simplest form",
+   "ar": "## PEG في أبسط صوره"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p3",
+   "en": "PEG = P/E ÷ expected earnings growth, expressed in percentage points.",
+   "ar": "PEG = P/E ÷ نمو الأرباح المتوقع، معبرًا عنه بالنقاط المئوية."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p4",
+   "en": "- Company A: P/E 18, expected growth 12 % → PEG 1,5\n- Company B: P/E 24, expected growth 30 % → PEG 0,8",
+   "ar": "- الشركة A: ‏P/E 18، والنمو المتوقع 12 % → PEG ‏1,5\n- الشركة B: ‏P/E 24، والنمو المتوقع 30 % → PEG ‏0,8"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p5",
+   "en": "On paper B is cheaper: you do pay more per krona of earnings, but the growth is more than twice as fast. That far, the mathematics is friendly. The problem begins in the denominator — and there almost all the weaknesses live.",
+   "ar": "على الورق الشركة B أرخص: صحيح أنك تدفع أكثر لكل كرون من الأرباح، لكن النمو أسرع بأكثر من الضعف. إلى هذا الحد الرياضيات ودودة. تبدأ المشكلة في المقام — وهناك تسكن نقاط الضعف كلها تقريبًا."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p6",
+   "en": "## The worked example: the sensitivity in the denominator",
+   "ar": "## المثال الحسابي: الحساسية في المقام"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p7",
+   "en": "Take a concrete example in Swedish kronor. Company X has a stock with earnings per share of 10 kr, and the course of the share price stands at 220 kr. P/E becomes 22. The consensus counts on 20 % earnings growth per year ahead. PEG = 22 ÷ 20 = 1,1. Decent, not cheap.",
+   "ar": "خذ مثالًا ملموسًا بالكرونات السويدية. الشركة X ربحية السهم فيها 10 كرون، والدورة السعرية عند 220 كرونًا. يصبح P/E هو 22. يحسب الإجماع على نمو أرباح 20 % سنويًا في المستقبل. PEG = 22 ÷ 20 = 1,1. لا بأس به، ليس رخيصًا."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p8",
+   "en": "Now the same company, but with a more cautious growth assumption of 10 % instead of 20 %. PEG = 22 ÷ 10 = 2,2. Note what happened: the growth was halved — and PEG doubled. The mathematics of division amplifies every uncertainty in the denominator. A financial ratio that doubles when a single input changes by a factor of two is not a decision basis. It is an amplifier of your own ignorance about the future.",
+   "ar": "الآن الشركة نفسها لكن بافتراض نمو أكثر حذرًا هو 10 % بدلًا من 20 %. PEG = 22 ÷ 10 = 2,2. لاحظ ما حدث: انخفض النمو إلى النصف — وتضاعف PEG. رياضيات القسمة تضخم كل عدم يقين في المقام. النسبة المالية التي تتضاعف حين يتغير مدخل واحد بمعامل اثنين ليست أساسًا لقرار. إنها مكبر صوت لجهلك أنت بالمستقبل."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p9",
+   "en": "And it is worse than that. Growth is not a fact — it is an analyst's guess, often aggregated into a consensus that historically tends to be optimistic at peaks and pessimistic at bottoms. The same mechanism that makes PEG low when optimism is highest is exactly the mechanism that makes PEG most dangerous then.",
+   "ar": "والأمر أسوأ من ذلك. النمو ليس حقيقة — بل تخمين محلل، يُجمَّع غالبًا في الإجماع السائد الذي يميل تاريخيًا إلى التفاؤل في القمم والتشاؤم في القيعان. الآلية نفسها التي تجعل PEG منخفضًا حين يكون التفاؤل في ذروته هي بالضبط الآلية التي تجعل PEG أخطر ما يكون حينها."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p10",
+   "en": "## Weakness 1: G is a guess — and growth mean-reverts",
+   "ar": "## نقطة الضعف 1: ‏G تخمين — والنمو يعود إلى متوسطه"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p11",
+   "en": "According to classic value investing practice, high growth is more exposed to regression toward the mean than low. The causes are structural: competition, commoditization, customer concentration, the mathematics of size. A company growing 30 % per year doubles in barely three years — and it is considerably harder to double a large business than a small one.",
+   "ar": "وفق ممارسة الاستثمار القيمي الكلاسيكية، النمو المرتفع أكثر عرضة للانحدار نحو المتوسط من النمو المنخفض. الأسباب هيكلية: المنافسة، وتحوّل المنتجات إلى سلع، وتمركز العملاء، ورياضيات الحجم. الشركة التي تنمو 30 % سنويًا تتضاعف في أقل من ثلاث سنوات بقليل — ومن الصعب كثيرًا مضاعفة نشاط كبير عن نشاط صغير."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p12",
+   "en": "PEG completely ignores this. The denominator is treated as eternal, when in practice it is an assumption of perhaps one to three years. Always ask yourself: where does G come from? Trailing (last year's growth) is at least a fact — but a backward-looking one, full of one-off items and base effects. Forward (consensus) is a forecast. Do not mix randomly: a PEG built on trailing growth and one built on forward growth are two different numbers that happen to share a name.",
+   "ar": "يتجاهل PEG هذا كليًا. يُعامَل المقام بوصفه أبديًا، بينما هو عمليًا افتراض لربما سنة إلى ثلاث سنوات. اسأل نفسك دائمًا: من أين يأتي G؟ ‏ال trailing (نمو العام الأخير) حقيقة على الأقل — لكنها حقيقة إلى الوراء، مليئة بالبنود الاستثنائية وآثار القاعدة. أما ال forward (الإجماع) فتوقع. لا تخلط عشوائيًا: PEG مبني على النمو التاريخي وPEG مبني على النمو المتوقع رقمان مختلفان يصادف أنهما يحملان الاسم نفسه."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p13",
+   "en": "## Weakness 2: cyclical peaks give the lowest PEG — precisely when it is most dangerous",
+   "ar": "## نقطة الضعف 2: القمم الدورية تعطي أدنى PEG — تحديدًا حين يكون الأخطر"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p14",
+   "en": "Here is PEG's biggest and most Swedish trap. The Stockholm exchange is dominated by cyclical businesses: forest, steel, engineering, cars, construction. For a cyclical company, the result is a function of the business cycle position, not of a stable organic growth engine.",
+   "ar": "هنا أكبر فخاخ PEG وأكثرها سويدية. تهيمن على بورصة ستوكهولم أنشطة دورية: الغابات، والصلب، والهندسة الميكانيكية، والسيارات، والبناء. بالنسبة لشركة دورية، النتيجة دالة على موضع الدورة الاقتصادية لا على محرك نمو عضوي مستقر."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p15",
+   "en": "Imagine a Swedish engineering company in the middle of an upturn. After a recession bottom, the result has grown 35 % in a year — not because the company has gotten better, but because it is recovering from a deep recession. P/E has been pressed to 8 because E is at a record high. PEG = 8 ÷ 35 = 0,23. Screamingly cheap by the rule of thumb — and in practice often a cycle peak. The next year demand falls, E halves, P/E doubles and the growth turns negative, which makes PEG meaningless (a negative denominator gives a negative PEG — the number stops communicating altogether).",
+   "ar": "تخيل شركة هندسة سويدية في منتصف صعود. بعد قاع ركود نمت النتيجة 35 % في سنة — لا لأن الشركة تحسنت، بل لأنها تتعافى من الركود العميق. ضُغط P/E إلى 8 لأن E في مستوى قياسي. PEG = 8 ÷ 35 = 0,23. رخيص صارخ وفق قاعدة الإبهام — وعمليًا غالبًا قمة دورية. في السنة التالية يهبط الطلب، وتنخفض E إلى النصف، ويتضاعف P/E، ويصبح النمو سلبيًا، مما يجعل PEG بلا معنى (مقام سلبي يعطي PEG سلبيًا — الرقم يتوقف عن التواصل أصلًا)."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p16",
+   "en": "Invert the picture: at the bottom, when the cyclical company is actually cheap, PEG shows negative or extremely high. The valuation multiple says cheap when it is expensive and expensive when it is cheap. That is not a random error — it is systematic, and it arises every cycle.",
+   "ar": "اعكس الصورة: في القاع، حين تكون الشركة الدورية رخيصة فعلًا، يُظهر PEG قيمة سالبة أو مرتفعة للغاية. يقول مضاعف التقييم «رخيص» حين يكون غاليًا و«غالٍ» حين يكون رخيصًا. ليس هذا خطأ عشوائيًا — بل منهجي، ويتكرر في كل دورة."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p17",
+   "en": "In the AKM1 model, this is precisely what V12 (revenue stability) exists to capture: how stable are the revenues through the business cycle? A company with a high V12 score — stable, diversified, recurring revenue — is the only kind of company where PEG at all begins to be a meaningful number.",
+   "ar": "في نموذج AKM1، هذا بالضبط ما وُجد V12 (استقرار الإيرادات) لالتقاطه: ما مدى استقرار الإيرادات عبر الدورة الاقتصادية؟ الشركة ذات نقاط V12 عالية — إيرادات مستقرة ومنوعة ومتكررة — هي النوع الوحيد من الشركات الذي يبدأ فيه PEG أصلًا أن يصبح رقمًا ذا معنى."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p18",
+   "en": "## Weakness 3: PEG ignores the balance sheet and the quality of growth",
+   "ar": "## نقطة الضعف 3: ‏PEG يتجاهل الميزانية العمومية وجودة النمو"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p19",
+   "en": "Two companies with an identical PEG 0,9 can be completely different businesses:",
+   "ar": "شركتان بمقياس PEG متطابق 0,9 قد تكونان عملين مختلفين تمامًا:"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p20",
+   "en": "- The first is capital light: grows without tying up capital, net debt near zero, gross margin (V07) stable for ten years\n- The second grows just as fast but with large liabilities, capitalized development costs and an EBITDA margin (V08) that is pressed every quarter",
+   "ar": "- الأولى خفيفة رأس المال: تنمو من دون تقييد رأس المال، وصافي دين قرب الصفر، والهامش الإجمالي (V07) مستقر عشر سنوات\n- والثانية تنمو بالسرعة نفسها لكن الالتزامات عليها كبيرة، مع تكاليف تطوير مرسملة وهامش EBITDA (V08) ينضغط كل ربع"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p21",
+   "en": "P/E — and thereby PEG — sees no difference. P/E builds on earnings after net financial items, but the capital structure determines how much of the future growth actually ends up with you as a shareholder and how much goes to creditors. Therefore every PEG exercise should be complemented with a capital-structure-neutral measure such as EV/EBITDA (V06 in AKM1) and a look at net debt and the debt-to-equity ratio (V10).",
+   "ar": "‏P/E — وبالتالي PEG — لا يرى فرقًا. يُبنى P/E على النتيجة بعد صافي البنود المالية، لكن هيكل رأس المال يحدد كم من النمو المستقبلي يصل إليك فعلًا بوصفك المساهم وكم يذهب إلى الدائنين. لذلك ينبغي أن تستكمل كل عملية PEG بمقياس محايد تجاه هيكل رأس المال مثل EV/EBITDA ‏(V06 في AKM1) وبنظرة على صافي الدين ونسبة الدين إلى حقوق الملكية (V10)."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p22",
+   "en": "In addition, PEG says nothing about what the growth costs. Growth bought when the return is higher than the cost of capital creates value; growth bought expensively destroys it — even when delivered in full. That is the whole difference between growing valuable and growing poorer, and it is a question PEG is structurally blind to.",
+   "ar": "إضافة إلى ذلك لا يقول PEG شيئًا عن كلفة النمو. النمو الذي يُشترى حين يكون العائد أعلى من كلفة رأس المال يخلق قيمة؛ والنمو الذي يُشترى بغالي الثمن يدمرها — حتى حين يتحقق كاملًا. هذا هو الفرق كله بين أن تنمو فتزداد قيمة وأن تنمو فتزداد فقرًا، وهو سؤال أعمى عنه PEG هيكليًا."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p23",
+   "en": "## When is P/E alone enough?",
+   "ar": "## متى تكفي P/E وحدها؟"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p24",
+   "en": "Despite all the above, there are situations where the ordinary P/E does the job better than PEG:",
+   "ar": "رغم كل ما سبق، هناك حالات تؤدي فيها P/E العادية المهمة أفضل من PEG:"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p25",
+   "en": "- When you compare companies in the same sector with similar business models and capital structures — then the growth differences are often already priced, and P/E ranks them honestly\n- When the company is mature with a predictable result: stable customer base, high revenue stability (V12), little acquisition expansion — then the difference between trailing and forward is small and P/E becomes robust\n- When you compare the company's current P/E with its own 5-year historical valuation multiple, rather than with a growth forecast — history is at least a fact\n- When the growth is roughly the same for all candidates — then the division just scales all the P/E:s down by the same number and adds no information at all",
+   "ar": "- حين تقارن شركات في القطاع نفسه بنماذج أعمال وهياكل رأس مال متشابهة — عندها تكون فروق النمو مسعّرة غالبًا بالفعل، وترتبها P/E بأمانة\n- حين تكون الشركة ناضجة بنتيجة قابلة للتنبؤ: قاعدة عملاء مستقرة، واستقرار إيرادات مرتفع (V12)، وتوسع استحواذي محدود — عندها يكون الفرق بين trailing وforward صغيرًا وتصبح P/E متينة\n- حين تقارن P/E الحالية للشركة بمضاعف التقييم التاريخي الخاص بها على 5 سنوات بدلًا من توقع نمو — فالتاريخ على كل حال حقيقة\n- حين يكون النمو متقاربًا لكل المرشحين — عندها فقط تُقسم جميع P/E على الرقم نفسه دون أن تضيف القسمة أي معلومة"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p26",
+   "en": "The disciplined order is: first quality (V07, V08, V09, V12), then the balance sheet (V10), then the valuation. A valuation multiple — any one — comes last. Whoever starts with the multiple and hunts for motives afterwards is not doing analysis; that is rhetoric.",
+   "ar": "الترتيب المنضبط هو: الجودة أولًا (V07 وV08 وV09 وV12)، ثم الميزانية العمومية (V10)، ثم التقييم. ومضاعف التقييم — أيًّا كان — يأتي أخيرًا. من يبدأ بالمضاعف ثم يبحث عن مبررات بعده لا يمارس التحليل؛ بل يمارس البلاغة."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p27",
+   "en": "## PEG's place in the ecosystem — and in the time horizons",
+   "ar": "## مكانة PEG في المنظومة — وفي الآفاق الزمنية"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p28",
+   "en": "In AKM1, PEG has no variable of its own, and that is deliberate: the valuation (V04 P/S, V05 P/B, V06 EV/EBITDA) and the growth (V01, V02) are kept apart, so that you always see what you are paying for what. PEG can still be used as a complement — a third eye — when the conditions above are met.",
+   "ar": "في AKM1 لا يملك PEG متغيرًا خاصًا به، وهذا مقصود: يُبقى التقييم (V04 ‏P/S، وV05 ‏P/B، وV06 ‏EV/EBITDA) والنمو (V01، وV02) منفصلين، لترى دائمًا ماذا تدفع مقابل ماذا. ومع ذلك يمكن استخدام PEG كمكمل — عين ثالثة — حين تتحقق الشروط أعلاه."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p29",
+   "en": "The AK1TS perspective is at least as important: a growth forecast for next year is a short-term tool. The same company's growth on the medium and long term can be a fraction of the consensus forecast — competition catches up, markets saturate. Before you act on a PEG, ask: does the assumption hold on all the time horizons I intend to own the company? If PEG only works on the shortest horizon, you do not have a valuation argument — you have a momentum argument in disguise.",
+   "ar": "منظور AK1TS مهم بالقدر نفسه على الأقل: توقع النمو للسنة القادمة أداة قصيرة المدى. قد يكون نمو الشركة نفسه على المدى المتوسط والطويل جزءًا ضئيلًا من توقع الإجماع — فالمنافسة تلحق، والأسواق تشبع. قبل أن تتحرك بناءً على PEG، اسأل: هل يصمد الافتراض على كل الآفاق الزمنية التي أنوي تملك الشركة خلالها؟ إذا كان PEG يعمل على أقصر أفقي فقط فليست لديك حجة تقييم — بل حجة زخم في ثوب تنكر."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p30",
+   "en": "## Next step",
+   "ar": "## الخطوة التالية"
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p31",
+   "en": "- Test the sensitivity yourself in [the calculator](/kalkylator): enter three companies in the same sector and calculate PEG twice per company — once with consensus growth, once with your own, lower forecast. See how the ranking changes.\n- Look up V12 (revenue stability) for the same companies in [the syllabus](/laroplan) before you trust any growth narrows. The course [V09: ROE](/kurser/v09-roe) shows how you simultaneously check that the growth is value-creating.\n- Run a complete deep analysis with scenarios instead of a single growth forecast — then the denominator is forced to compete with a base case, not just a wish.",
+   "ar": "- اختبر الحساسية بنفسك في [الحاسبة](/kalkylator): أدخل ثلاث شركات في القطاع نفسه واحسب PEG مرتين لكل شركة — مرة بنمو الإجماع، ومرة بتوقعك الأدنى. انظر كيف يتغير الترتيب.\n- ابحث عن V12 (استقرار الإيرادات) للشركات نفسها في [المنهج](/laroplan) قبل أن تثق بأي تضييق للنمو. الدورة [V09: ROE](/kurser/v09-roe) تري كيف تتحقق في الوقت نفسه من أن النمو خالق للقيمة.\n- أجرِ تحليلًا معمقًا كاملًا بسيناريوهات بدلًا من توقع نمو واحد — عندها يُجبر المقام على المنافسة مع حالة أساسية، لا مع مجرد أمنية."
+  },
+  {
+   "nyckel": "peg-multipeln-svagheter-2026:p32",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:titel",
+   "en": "ROIC — the forgotten financial ratio that decides whether growth creates value",
+   "ar": "ROIC — النسبة المالية المنسية التي تحدد هل يخلق النمو قيمة"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:ingress",
+   "en": "Growth without a return on capital is just expensive volume growth. Here is ROIC's mathematics with a worked example, the link to the moat (V13–V15), the leverage trap in ROE and the rule for reinvestment versus capital return.",
+   "ar": "النمو من دون العائد على رأس المال مجرد نمو حجمي باهظ. ها هي رياضيات ROIC مع مثال حسابي، والصلة بالخندق التنافسي (V13–V15)، وفخ الرافعة المالية في ROE، وقاعدة إعادة الاستثمار مقابل عودة رأس المال."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p1",
+   "en": "Everyone talks growth. Everyone talks P/E. Almost no one talks about the number that decides whether the growth is worth anything: return on invested capital (ROIC). It is the financial ratio institutional analysts use to distinguish a company growing rich from a company growing poor — and at the same time the most systematically overlooked tool in private individuals' toolbox. According to classic value investing practice, the question is namely not whether the company grows, but what each growth krona costs to buy.",
+   "ar": "الجميع يتحدث عن النمو. الجميع يتحدث عن P/E. لا أحد تقريبًا يتحدث عن الرقم الذي يحدد هل يستحق النمو شيئًا: العائد على رأس المال المستثمر (ROIC). إنها النسبة المالية التي يستخدمها المحللون المؤسسيون للتمييز بين شركة تنمو فتغتني وشركة تنمو فتفقر — وهي في الوقت نفسه الأداة الأكثر تجاهلًا منهجيًا في صندوق أدوات الأفراد. فوفق ممارسة الاستثمار القيمي الكلاسيكية، السؤال ليس هل تنمو الشركة، بل كم تكلفة كل كرون نمو لشرائه."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p2",
+   "en": "## What ROIC is — in a single equation",
+   "ar": "## ما هو ROIC — في معادلة واحدة"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p3",
+   "en": "ROIC = NOPAT ÷ invested capital",
+   "ar": "ROIC = NOPAT ÷ رأس المال المستثمر"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p4",
+   "en": "NOPAT (net operating profit after tax) is the operating profit after tax but before interest. Calculate it most simply as operating profit × (1 − effective tax rate). Invested capital is the capital the business actually works with: equity plus interest-bearing debt (the liabilities with interest), minus liquid funds. Alternatively — and more operationally — net working capital plus non-current assets. Both routes should land in the same order of magnitude; if they do not, you have found something worth digging into.",
+   "ar": "‏NOPAT (صافي الربح التشغيلي بعد الضريبة) هو الربح التشغيلي بعد الضريبة وقبل الفوائد. احسبه بأبسط صورة: الربح التشغيلي × (1 − نسبة الضريبة الفعلية). ورأس المال المستثمر هو رأس المال الذي يعمل به النشاط فعلًا: حقوق الملكية زائد الديون بفوائد (أي الالتزامات ذات الفوائد)، ناقص الأصول السائلة. أو — وبصورة أكثر تشغيلية — رأس المال العامل الصافي زائد الأصول الثابتة. ينبغي أن يهبط المساران في رتبة الحجم نفسها؛ فإن لم يفعلا فقد عثرت على شيء يستحق الحفر فيه."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p5",
+   "en": "The key to understanding ROIC's point is what is not in the formula: the financing. ROE (V09 in AKM1) measures the return on your own equity — but that equity can carry leverage on it. ROIC measures the return on the whole capital base, regardless of how it is financed. It is the company's operations standing on stage, without its CFO.",
+   "ar": "مفتاح فهم جوهر ROIC هو ما ليس موجودًا في المعادلة: التمويل. يقيس ROE (V09 في AKM1) العائد على حقوق الملكية لديك — لكن هذه الحقوق قد تحمل عليها الرافعة المالية. أما ROIC فيقيس العائد على قاعدة رأس المال كلها، بصرف النظر عن كيفية تمويلها. إنه نشاط الشركة واقفًا على المسرح، من دون مديره المالي."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p6",
+   "en": "## The worked example: from annual report to conclusion",
+   "ar": "## المثال الحسابي: من التقرير السنوي إلى الاستنتاج"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p7",
+   "en": "A simplified example in Swedish kronor. An industrial company reports:",
+   "ar": "مثال مبسط بالكرونات السويدية. شركة صناعية تُبلغ:"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p8",
+   "en": "- Operating profit: 2 000 mkr\n- Effective tax rate: 20 %\n- Equity: 5 000 mkr\n- Interest-bearing debt (liabilities with interest): 3 000 mkr\n- Liquid funds: 1 000 mkr",
+   "ar": "- الربح التشغيلي: 2 000 مليون كرون\n- نسبة الضريبة الفعلية: 20 %\n- حقوق الملكية: 5 000 مليون كرون\n- الديون بفوائد (الالتزامات ذات الفوائد): 3 000 مليون كرون\n- الأصول السائلة: 1 000 مليون كرون"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p9",
+   "en": "NOPAT = 2 000 × (1 − 0,20) = 1 600 mkr. Invested capital = 5 000 + 3 000 − 1 000 = 7 000 mkr.",
+   "ar": "NOPAT = 2 000 × (1 − 0,20) = 1 600 مليون كرون. ورأس المال المستثمر = 5 000 + 3 000 − 1 000 = 7 000 مليون كرون."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p10",
+   "en": "ROIC = 1 600 ÷ 7 000 ≈ 23 %.",
+   "ar": "ROIC = 1 600 ÷ 7 000 ≈ 23 %."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p11",
+   "en": "Is that good? The question is meaningless without a reference point: the cost of capital. As a rule of thumb for mid-sized Swedish listed companies, a discount rate (WACC) often lies somewhere in the range 8–10 %. A ROIC of 23 % against a cost of capital around 9 % means that every reinvested krona earns about 14 öre more than it costs — year after year. That is value-creating, and strongly so. A ROIC of 6 % against the same cost of capital means that every growth krona destroys roughly 3 öre per year. Growth bought below the cost of capital is not growth — it is a slow liquidation with revenue growth as a distraction.",
+   "ar": "هل هذا جيد؟ السؤال بلا معنى من دون نقطة مرجعية: كلفة رأس المال. كقاعدة إبهام للشركات السويدية المتوسطة المدرجة، يقع معدل الخصم (WACC) غالبًا في نطاق 8–10 %. ‏ROIC بنسبة 23 % مقابل كلفة رأس مال نحو 9 % يعني أن كل كرون معاد استثماره يكسب نحو 14 أورًا أكثر مما يكلف — سنة بعد سنة. هذا خلق للقيمة، وبقوة. أما ROIC بنسبة 6 % مقابل الكلفة نفسها فيعني أن كل كرون نمو يدمر نحو 3 أورات سنويًا. النمو الذي يُشترى دون كلفة رأس المال ليس نموًا — بل تصفية بطيئة ونموُ الإيرادات شرطة تشتيت."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p12",
+   "en": "## Why ROIC determines the moat (V13–V15)",
+   "ar": "## لماذا يحدد ROIC الخندق التنافسي (V13–V15)"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p13",
+   "en": "Here comes the deeper point. In a functioning market economy, excess returns gravitate toward the cost of capital: competitors see the profit margins, capital flocks, prices are pressed. A company that keeps ROIC well above WACC for ten years is doing something the market should have stopped — and has not. Something is protecting the return.",
+   "ar": "هنا تأتي الفكرة الأعمق. في اقتصاد سوق عامل، تنجذب العوائد الفائقة نحو كلفة رأس المال: يرى المنافسون هامش الربح، ويتدفق رأس المال، وتُضغط الأسعار. الشركة التي تحافظ على ROIC أعلى بكثير من WACC عشر سنوات تفعل شيئًا كان على السوق أن يوقفه — ولم يفعل. شيء ما يحمي العائد."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p14",
+   "en": "That is the definition of a moat, and in the AKM1 model the protected return is precisely what the moat variables measure: V13 (patents and intangible rights), V14 (brand and pricing power) and V15 (network effects). See it as symptom and diagnosis: a persistently high ROIC is the symptom — V13–V15 are the underlying diagnosis. If you cannot point to which of the three (or a combination) explains why ROIC does not erode, then you do not have a moat — you have a temporary lead, and leads have a tendency to disappear precisely when you have begun counting on them.",
+   "ar": "هذا هو تعريف الخندق التنافسي، وفي نموذج AKM1 العائد المحمي هو بالضبط ما تقيسه متغيرات الخندق: V13 (براءات الاختراع والحقوق غير الملموسة)، وV14 (العلامة التجارية والقوة التسعيرية)، وV15 (أثر الشبكة). انظر إليه كعرض مرضي وتشخيص: ‏ROIC المرتفع باستمرار هو العرض — وV13–V15 هي التشخيص الكامن. إن لم تستطع الإشارة إلى أي الثلاثة (أو أي تركيب منها) يفسر لماذا لا يتآكل ROIC، فليس لديك خندق تنافسي — بل تقدم مؤقت، والتقدمات تميل إلى الاختفاء في اللحظة التي بدأت تعتمد عليها."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p15",
+   "en": "A methodical requirement here: do not say 'high ROIC' based on a single year. According to classic value investing practice, it is the average over a whole business cycle — five to ten years — that is the proof. A single peak year can be a cycle gift; an average ROIC above 15–20 % through both boom and recession is a structure. Therefore calculate ROIC for the last five years and look at both the level and the trend: a falling series from a high level is a moat being filled in again, and the market reprices it sooner or later.",
+   "ar": "مطلب منهجي هنا: لا تقل «ROIC مرتفع» استنادًا إلى سنة واحدة. وفق ممارسة الاستثمار القيمي الكلاسيكية، المتوسط عبر دورة اقتصادية كاملة — خمس إلى عشر سنوات — هو الدليل. سنة قمة منفردة قد تكون هدية الدورة؛ أما ROIC متوسط فوق 15–20 % عبر الازدهار والركود معًا فهو بنية. لذلك احسب ROIC للسنوات الخمس الأخيرة وانظر إلى المستوى والاتجاه معًا: السلسلة الهابطة من مستوى مرتفع تعني الخندق التنافسي في طور الردم، والسوق يعيد تسعيره عاجلًا أم آجلًا."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p16",
+   "en": "Conversely: a company with a wise V14 assessment but falling ROIC has a moat that is being dug over. The pricing power shows in the margins (V07, V08) but is proven in the return on capital.",
+   "ar": "والعكس صحيح: الشركة ذات تقييم V14 حكيم لكن مع ROIC هابط لديها الخندق التنافسي في طور الردم. تظهر القوة التسعيرية في الهوامش (V07 وV08) لكنها تُثبت في عائد رأس المال."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p17",
+   "en": "## The leverage trap: when ROE lies and ROIC tells the truth",
+   "ar": "## فخ الرافعة المالية: متى يكذب ROE ويتحدث ROIC بالحقيقة"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p18",
+   "en": "Classic example: two companies with identical operations, both with ROE 15 %. The first is debt-free. The second has a debt-to-equity ratio of 150 % — the ROE is driven by leverage, not by the operations. If you calculate ROIC you see that the second company's operations return perhaps 8 %, below the cost of capital. The shareholders get their ROE — but they pay for it with risk: interest rate sensitivity, contract-bound cash and a balance sheet that worsens every downturn.",
+   "ar": "مثال كلاسيكي: شركتان بعمليات متطابقة، كلتاهما بـ ROE ‏15 %. الأولى خالية من الدين. والثانية نسبة الدين إلى حقوق الملكية فيها 150 % — فـ ROE تقوده الرافعة المالية لا العمليات. إن حسبت ROIC سترى أن عمليات الشركة الثانية تعطي عائدًا ربما 8 %، دون كلفة رأس المال. يحصل المساهمون على ROE لهم — لكن ثمنهم هو المخاطر: حساسية لأسعار الفائدة، والنقد المقيد بالعقود، والميزانية العمومية التي تضخم كل هبوط."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p19",
+   "en": "That is why V09 (ROE) should always be read together with V10 (debt-to-equity ratio). The Du Pont decomposition (margin × turnover ratio × leverage) shows where the return comes from — the course [V09: Calculate ROE like an analyst](/kurser/v09-roe) goes through that method step by step. ROIC is the next floor up: it cleans away the leverage completely and compares the operations against their price.",
+   "ar": "لهذا يجب قراءة V09 (ROE) دائمًا مع V10 (نسبة الدين إلى حقوق الملكية). تفكيك Du Pont ‏(الهامش × معدل الدوران × الرافعة المالية) يبين من أين يأتي العائد — والدورة [V09: احسب ROE كالمحلل](/kurser/v09-roe) تستعرض هذه الطريقة خطوة بخطوة. أما ROIC فهو الطابق التالي: يزيل الرافعة المالية كليًا ويقارن العمليات بسعرها."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p20",
+   "en": "## The value engine: reinvestment × (ROIC − WACC)",
+   "ar": "## محرك القيمة: إعادة الاستثمار × (ROIC − WACC)"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p21",
+   "en": "A company's value creation can be summarized roughly as: reinvested capital × (ROIC − cost of capital) × time. Three components — and two of them are multipliers. Think of two companies that both grow 10 % per year:",
+   "ar": "يمكن تلخيص خلق الشركة للقيمة إجمالًا كالتالي: رأس مال معاد استثماره × (ROIC − كلفة رأس المال) × الزمن. ثلاثة مكونات — واثنان منها مضاعِفات. فكر في شركتين تنموان كلتاهما 10 % سنويًا:"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p22",
+   "en": "- Company A reinvests to grow and returns 25 % on the new capital. Every reinvestment adds value far above the cost of capital; the growth is a value engine.\n- Company B reinvests just as much but returns 8 %, while the capital costs 9 %. The growth is real — revenue increases — but every year it grows it destroys shareholder value. It would be more valuable if it paid out the money and stopped growing.",
+   "ar": "- الشركة A تعيد الاستثمار لتنمو وتحقق العائد بنسبة 25 % على رأس المال الجديد. كل إعادة استثمار تضيف قيمة أعلى بكثير من كلفة رأس المال؛ فالنمو محرك قيمة.\n- والشركة B تعيد الاستثمار بالقدر نفسه لكن العائد فيها 8 %، بينما يكلف رأس المال 9 %. نموها حقيقي — فالإيرادات ترتفع — لكن كل سنة تنمو فيها تدمر قيمة المساهمين. لكانت أثمن لو وزعت الأموال وتوقفت عن النمو."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p23",
+   "en": "The same growth figure in the press release. Two completely different values. The valuation multiple the market should give them differs — but the market often sees only the growth percentage, especially in euphoric phases. That is why a simple PEG approach (P/E divided by growth) can rank companies wrongly: it rewards B and A equally. Our [review of PEG's weaknesses](/blogg/peg-multipeln-svagheter-2026) develops precisely that blindness.",
+   "ar": "رقم النمو نفسه في البيان الصحفي. قيمتان مختلفتان تمامًا. مضاعف التقييم الذي ينبغي للسوق منحهما مختلف — لكن السوق غالبًا لا يرى إلا نسبة النمو، خصوصًا في المراحل النشوية. لهذا يمكن لتفكير PEG بسيط (‏P/E مقسومًا على النمو) أن يرتب الشركات خطأً: فهو يكافئ B وA بالتساوي. [استعراضنا لنقاط ضعف PEG](/blogg/peg-multipeln-svagheter-2026) يفصل هذه العمى تحديدًا."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p24",
+   "en": "For early-stage growth companies an important variant is added: the capital burn (V19). A company with a negative result cannot yet show a meaningful ROIC — but the cash burn rate together with the cash on the balance sheet determines whether the company reaches profitability. Capital discipline is not the opposite of growth; it is the precondition for the growth being allowed to remain.",
+   "ar": "للشركات النامية في مرحلة مبكرة يضاف نوع مهم: حرق رأس المال (V19). الشركة ذات النتيجة السالبة لا تستطيع بعد إظهار ROIC ذي معنى — لكن وتيرة حرق النقد مع النقد في الميزانية العمومية تحدد هل تبلغ الشركة الربحية. انضباط رأس المال ليس نقيض النمو؛ بل شرط بقاء النمو قائمًا."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p25",
+   "en": "## Reinvest or hand back? Capital return as the test",
+   "ar": "## إعادة الاستثمار أم الإعادة إلى الملاك؟ عودة رأس المال بوصفها اختبارًا"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p26",
+   "en": "The question every CEO should face for every krona: does a reinvestment return more than the cost of capital? If yes — invest. If no — hand the capital back to the owners, through dividend or share buyback of own stocks (V20 in AKM1). A precondition for a share buyback that creates value is namely that the company has no better internal use of the capital — a buyback at too high a price to push up earnings per share is pure capital destruction.",
+   "ar": "السؤال الذي ينبغي أن يواجهه كل رئيس تنفيذي أمام كل كرون: هل العائد من إعادة الاستثمار أكبر من كلفة رأس المال؟ إن كان نعم — استثمر. وإن كان لا — أعد رأس المال إلى الملاك، عبر التوزيعات أو إعادة شراء الأسهم من أسهم الشركة نفسها (V20 في AKM1). فشرط إعادة شراء الأسهم الخالقة للقيمة هو ألا يكون لدى الشركة استخدام داخلي أفضل لرأس المال — وإعادة الشراء بأعلى من قيمته لدفع ربحية السهم إلى أعلى تدمير خالص لرأس المال."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p27",
+   "en": "So ROIC gives you a powerful way to think about capital use: companies with high ROIC and few reinvestment opportunities should distribute capital; companies with ROIC well above WACC should reinvest aggressively; companies with ROIC below WACC should not grow at all — they should shrink themselves to profitability or turn into dividend machines. When you read a management report, look for paragraphs that prove the management thinks in those paths.",
+   "ar": "وهكذا يمنحك ROIC طريقة قوية للتفكير في استخدام رأس المال: الشركات ذات ROIC المرتفع وفرص إعادة الاستثمار القليلة ينبغي أن توزع رأس المال؛ والشركات التي ROIC لديها أعلى بكثير من WACC ينبغي أن تعيد الاستثمار بشراسة؛ والشركات التي ROIC أدنى من WACC لا ينبغي أن تنمو أصلًا — بل أن تنكمش إلى الربحية أو تتحول إلى آلات توزيعات. حين تقرأ تقرير الإدارة، ابحث عن فقرات تثبت أن القيادة تفكر في تلك المسارات."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p28",
+   "en": "## And the exercise's final check: does the company survive long enough?",
+   "ar": "## والفحص الأخير للتمرين: هل تنجو الشركة وقتًا كافيًا؟"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p29",
+   "en": "A high ROIC is a longevity property — it presupposes that the company lives. That is why in AKM1 we always read the return on capital together with the stability variables: V10 (debt-to-equity ratio) and V11 (liquidity — the quick ratio, which measures whether short-term liabilities can be paid). A company with ROIC 25 % and quick ratio 0,4 is a brilliant business that may not exist in a year. A return without survival is a theory; survival without return is a waiting. You need both, and they should be interpreted together.",
+   "ar": "‏ROIC المرتفع خاصية طول عمر — فهو يفترض أن الشركة تعيش. لهذا نقرأ في AKM1 عائد رأس المال دائمًا مع متغيرات الاستقرار: V10 (نسبة الدين إلى حقوق الملكية) وV11 (السيولة — نسبة التسيير التي تقيس هل يمكن سداد الالتزامات قصيرة الأجل). الشركة ذات ROIC ‏25 % ونسبة تسيير 0,4 عمل لامع قد لا يوجد بعد سنة. العائد من دون بقاء نظرية؛ والبقاء من دون العائد انتظار. تحتاج كليهما، وينبغي تفسيرهما معًا."
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p30",
+   "en": "## Next step",
+   "ar": "## الخطوة التالية"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p31",
+   "en": "- Calculate ROIC for a company you already own: fetch operating profit, tax rate and balance sheet items from the latest report and run the equation in [the calculator](/kalkylator). Compare with a cost of capital of 8–10 % — on which side of zero does the value engine land?\n- Deepen the ROE side in the course [V09: ROE](/kurser/v09-roe) — the Du Pont decomposition is the best complement to ROIC.\n- Continue in [the Curriculum](/laroplan) to the moat variables V13–V15 and test: can you explain the company's ROIC with a concrete moat — or is it just a temporary lead?",
+   "ar": "- احسب ROIC لشركة تملكها بالفعل: خذ الربح التشغيلي ونسبة الضريبة وبنود الميزانية العمومية من أحدث تقرير وشغّل المعادلة في [الحاسبة](/kalkylator). قارن بكلفة رأس مال 8–10 % — في أي جانب من الصفر يقع محرك القيمة؟\n- تعمّق في جانب ROE ضمن الدورة [V09: ROE](/kurser/v09-roe) — تفكيك Du Pont هو أفضل مكمل لـ ROIC.\n- تابع في [المنهج](/laroplan) إلى متغيرات الخندق التنافسي V13–V15 واختبر: هل تستطيع تفسير ROIC للشركة بخندق تنافسي ملموس — أم أنه مجرد تقدم مؤقت؟"
+  },
+  {
+   "nyckel": "roic-den-glomda-nyckeltalen-v11:p32",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:titel",
+   "en": "How to read your portfolio report — from 25 cells to decision",
+   "ar": "هكذا تقرأ تقرير محفظتك — من 25 خلية إلى قرار"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:ingress",
+   "en": "AKM1 per stock, wave profile per horizon, weighted volatility and the bias verdict — step by step through the portfolio system's deep analysis, with interpretation examples from real data.",
+   "ar": "‏AKM1 على مستوى السهم، وملف موجة لكل أفق، والتقلب المرجح، وحكم الانحياز — خطوة بخطوة عبر التحليل العميق لنظام المحفظة، مع أمثلة تفسيرية من بيانات حقيقية."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p1",
+   "en": "You have pressed 'Run deep analysis' in [My portfolio](/min-portfolj). Seconds later a report is lying there: a color-coded 25-cell matrix, five wave profile bars, risk measures and a bias verdict. This is the guide to what everything means — and what you do with it.",
+   "ar": "لقد ضغطت على «تشغيل التحليل العميق» في [محفظتي](/min-portfolj). بعد ثوانٍ يظهر تقرير المحفظة: مصفوفة من 25 خلية مرمزة بالألوان، وخمسة أعمدة لملفات الموجات، ومقاييس مخاطر، وحكم انحياز. هذا هو الدليل إلى معنى كل شيء — وماذا تفعل به."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p2",
+   "en": "## Step 1: Read the bias verdict first",
+   "ar": "## الخطوة 1: اقرأ حكم الانحياز أولًا"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p3",
+   "en": "At the top: BULLISH, BEARISH or NEUTRAL BIAS. It summarizes 25 cells (5 theories × 5 horizons) weighted by how large each holding is. A real example from the system: a portfolio of Precise Biometrics and Volvo Cars gave **BEARISH BIAS, 24/25 cells ▼** — the engine saw a correction on all five horizons for both companies. The same day, Saab B gave **21/25 ▲**. Two portfolios, two completely different verdicts — from the same method, the same data sources.",
+   "ar": "في الأعلى: ‏BULLISH أو BEARISH أو NEUTRAL BIAS. يلخص 25 خلية (5 نظريات × 5 آفاق) مرجحة بحسب حجم كل مركز. مثال حقيقي من النظام: المحفظة المكوّنة من Precise Biometrics وVolvo Cars أعطت **BEARISH BIAS، ‏24/25 خلية ▼** — رأى المحرك تصحيحًا على الآفاق الخمسة كلها عند الشركتين. وفي اليوم نفسه أعطت Saab B **21/25 ▲**. محفظتان، حكمان مختلفان تمامًا — من الطريقة نفسها والمصادر نفسها."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p4",
+   "en": "## Step 2: Which horizon is driving?",
+   "ar": "## الخطوة 2: أي أفق يقود؟"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p5",
+   "en": "The bias can look different per row. A strong picture on long, weak on short = a matter of patience, not alarm. Split on medium = wait. Your SAVING HORIZON decides which row is yours. The course [From stock to portfolio](/kurser/portfolj-ekosystemet) goes through all five windows in depth.",
+   "ar": "قد يبدو الانحياز مختلفًا من صف لآخر. صورة قوية على الطويل وضعيفة على القصير = مسألة صبر لا إنذار. ومتصدع على المتوسط = انتظر. أفق الادخار عندك هو الذي يحدد أي صف لك. الدورة [من السهم إلى المحفظة](/kurser/portfolj-ekosystemet) تستعرض النوافذ الخمسة كلها بعمق."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p6",
+   "en": "## Step 3: The risk measures — fix them before you trade",
+   "ar": "## الخطوة 3: مقاييس المخاطر — عالجها قبل أن تتداول"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p7",
+   "en": "- **Weighted σ** — the portfolio's aggregated volatility in %/year (the example above: 78 % — considerably riskier than OMX30's typical 15-20 %)\n- **Concentration** — the largest holding's share; above 30 % one company steers your fortune\n- **Coverage** — how large a share of the value has calculated analysis; uncontrolled capital is one of the risks in itself",
+   "ar": "- **‏σ المرجحة** — التقلب الإجمالي للمحفظة في %/سنة (المثال أعلاه: 78 % — أخطر بكثير من نطاق OMX30 النموذجي 15-20 %)\n- **التركيز** — حصة أكبر مركز؛ فوق 30 % تدير شركة واحدة ثروتك\n- **التغطية** — ما نسبة القيمة التي لديها تحليل محسوب؛ فرأس المال غير الخاضع للرقابة أحد المخاطر في حد ذاته"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p8",
+   "en": "Errors in the risk structure you fix before acting on signals — otherwise you trade on the right signal with the wrong structure.",
+   "ar": "أخطاء بنية المخاطر تعالجها قبل أن تتحرك بناءً على الإشارات — وإلا تداولت على الإشارة الصحيحة بالبنية الخاطئة."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p9",
+   "en": "## Step 4: The per-stock view",
+   "ar": "## الخطوة 4: عرض السهم الواحد"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p10",
+   "en": "Each holding is shown with price, σ, 52-week position and its own cell count. This is where you find the causes of the portfolio picture: a ▼-heavy portfolio can consist of one correcting large holding and three healthy small ones. Change one holding → run again → see the difference. That is systems thinking in practice.",
+   "ar": "يُعرض كل مركز بالسعر وσ وموضع 52 أسبوعًا وعدّ خلاياه الخاص. هنا تجد أسباب صورة المحفظة: المحفظة المثقلة بـ ▼ قد تتألف من مركز كبير في طور التصحيح وثلاثة مراكز صغيرة سليمة. غيّر مركزًا → أعد التشغيل → راقب الفرق. هذا هو التفكير المنظومي في الممارسة."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p11",
+   "en": "## Step 5: Write down what would change your picture",
+   "ar": "## الخطوة 5: دوّن ما الذي قد يغير صورتك"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p12",
+   "en": "The routine that separates analysts from jumpers: note the thesis (three sentences max), which signals confirm it, and exactly what invalidates it. Review quarterly. Our [calculator](/kalkylator) and [annual report guide](/blogg/sa-laser-du-en-svensk-arsredovisning) complement with a fundamental foundation.",
+   "ar": "الروتين الذي يفصل المحلل عن القافز: دوّن الأطروحة (ثلاث جمل كحد أقصى)، وأي الإشارات تؤكدها، وما الذي ينقضها بالضبط. راجع كل ربع سنة. [الحاسبة](/kalkylator) و[دليل التقرير السنوي](/blogg/sa-laser-du-en-svensk-arsredovisning) لدينا تكملان بالأساس الجوهري."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p13",
+   "en": "## The honesty in the numbers",
+   "ar": "## الصدق في الأرقام"
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p14",
+   "en": "Signals are calculated by the Python engine from price and volume data from independent sources (Yahoo Finance primarily, MarketStack secondarily). The theories — Elliott, Fibonacci, GANN, Lucas, volume — are heuristic structuring tools, reported as proxy measures, not proofs. Educational financial analysis, not investment advice. But every step is reviewable — and that is the whole point.",
+   "ar": "تُحسب الإشارات بمحرك Python من بيانات الأسعار والأحجام من مصادر مستقلة (‏Yahoo Finance أولًا، وMarketStack ثانيًا). النظريات — إيليوت، وفيبوناتشي، وGANN، ولوكاس، والحجم — أدوات هيكلية استكشافية، تُعرض بوصفها مقاييس وكيلة لا براهين. التحليل المالي التعليمي، لا نصيحة استثمارية. لكن كل خطوة قابلة للمراجعة — وتلك هي الفكرة كلها."
+  },
+  {
+   "nyckel": "sa-laser-du-din-portfoljrapport:p15",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:titel",
+   "en": "How to read a balance sheet in 15 minutes — four financial ratios and the warning signals",
+   "ar": "هكذا تقرأ الميزانية العمومية في 15 دقيقة — أربعة أبعاد من النسبة المالية وإشارات التحذير"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:ingress",
+   "en": "The income statement is the company's sales story; the balance sheet is its truth. A 15-minute route through the equity ratio, net debt, goodwill and working capital — with warning signals and an exercise on a real annual report.",
+   "ar": "قائمة الدخل هي قصة البيع لدى الشركة؛ والميزانية العمومية هي حقيقتها. مسار من 15 دقيقة عبر نسبة حقوق الملكية وصافي الدين والشهرة ورأس المال العامل — مع إشارات تحذير وتمرين تطبيقي على التقرير السنوي لشركة حقيقية."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p1",
+   "en": "The income statement is the company's sales story: it shows what they want you to see, in the light they want you to see it in. The balance sheet, on the other hand, is a documentation of what the company actually owns and owes — at a given moment, according to mandatory rules. According to classic value investing practice, the careful analysis therefore often begins where others end: in liabilities and assets, not in the profit.",
+   "ar": "قائمة الدخل قصة البيع لدى الشركة: تعرض ما يريدونك أن ترى، وفي الضوء الذي يريدونك أن تراه فيه. أما الميزانية العمومية فوثيقة لما تملكه الشركة فعلًا وما عليها من ديون — في لحظة بعينها، وفق قواعد ملزمة. لذلك يبدأ وفق ممارسة الاستثمار القيمي الكلاسيكية التحليل الدقيق غالبًا حيث ينتهي غيره: في الالتزامات والأصول، لا في الربح."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p2",
+   "en": "We have previously shown [the route through the whole annual report in 20 minutes](/blogg/sa-laser-du-en-svensk-arsredovisning). This time we go deeper on a single part: the balance sheet. The goal is a repeatable 15-minute method — four financial ratios, a clear answer for each, and a checklist with warning signals at the end. With timekeeping. It is only when the method takes time that it is honest.",
+   "ar": "سبق أن عرضنا [المسار عبر التقرير السنوي كاملًا في 20 دقيقة](/blogg/sa-laser-du-en-svensk-arsredovisning). هذه المرة نتعمق في جزء واحد: الميزانية العمومية. الهدف طريقة قابلة للتكرار في 15 دقيقة — أربعة أبعاد من النسبة المالية، لكل منها إجابة واضحة، وقائمة تحقق بإشارات تحذير في الختام. مع ضبط الوقت. فالطريقة لا تكون أمينة إلا حين تأخذ وقتها."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p3",
+   "en": "## Minute 0–3: The equity ratio — how much of the company is paid for?",
+   "ar": "## الدقيقة 0–3: نسبة حقوق الملكية — كم من الشركة مدفوع؟"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p4",
+   "en": "Equity ratio = equity ÷ total assets",
+   "ar": "نسبة حقوق الملكية = حقوق الملكية ÷ إجمالي الميزانية"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p5",
+   "en": "Total assets is the sum of everything the company owns (and finances). The equity ratio tells how large a part of that heap has been financed by the owners — and how large a part consists of loans, accounts payable and other claims from the outside world. Rules of thumb for Swedish listed companies (outside banking and finance):",
+   "ar": "إجمالي الميزانية هو مجموع كل ما تملكه الشركة (وتموله). تخبرك نسبة حقوق الملكية ما الجزء الممول من قبل الملاك من تلك الكومة — وما الجزء الذي يتألف من قروض ومن الذمم الدائنة ومطالبات أخرى من الخارج. قواعد إبهام للشركات السويدية المدرجة (عدا البنوك والتمويل):"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p6",
+   "en": "- Above 40 %: solid financing — the company withstands at least a weak business cycle without an acute balance crisis\n- 25–40 %: normal, especially in capital-intensive sectors — but the trend becomes more important than the level\n- Below 25 %: stop and think. It can be completely legitimate (trade with fast revenue turnover) or the beginning of something unpleasant — the next step determines which",
+   "ar": "- فوق 40 %: تمويل متين — تتحمل الشركة الدورة الاقتصادية الضعيفة على الأقل من دون أزمة ميزانية حادة\n- ‏25–40 %: طبيعي، خصوصًا في القطاعات كثيفة رأس المال — لكن الاتجاه يصير أهم من المستوى\n- تحت 25 %: توقف. قد يكون الأمر مشروعًا تمامًا (تجارة ذات دوران الإيرادات السريع) أو بداية شيء مقلق — الخطوة التالية تحدد أيهما"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p7",
+   "en": "What you are really looking for is the movement: a falling equity ratio year after year, in combination with a rising dividend and rising investments, is a classic profile of a company eating its buffer. Negative equity is, in the Swedish listed context, almost always a warning signal — it means accumulated losses have eaten up the owners' contributions.",
+   "ar": "ما تبحث عنه فعلًا هو الحركة: نسبة حقوق ملكية هابطة سنة بعد سنة، مع ارتفاع التوزيعات وارتفاع الاستثمارات، ملف كلاسيكي لشركة تأكل من احتياطيها. حقوق الملكية السالبة في السياق السويدي المدرج إشارة تحذير دائمًا تقريبًا — فهي تعني أن الخسائر المتراكمة التهمت مساهمات الملاك."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p8",
+   "en": "A technical note on the way: since the leasing accounting rules were brought into Swedish reporting, large leasing commitments sit in the balance sheet both as an asset and as a liability. That pushes down the equity ratio for companies with many premises and vehicles. Be consistent therefore — compare companies that report under the same principles, and preferably the same company against itself over time.",
+   "ar": "ملاحظة فنية في الطريق: منذ إدخال قواعد محاسبة التأجير في التقارير السويدية، تقع الالتزامات التأجيرية الكبيرة في الميزانية العمومية أصلًا والتزامًا معًا. ذلك يضغط نسبة حقوق الملكية للشركات ذات المواقع والمركبات الكثيرة. كن لذلك متسقًا — قارن شركات تُظهر وفق المبادئ نفسها، والأفضل الشركة نفسها مع نفسها عبر الزمن."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p9",
+   "en": "## Minute 3–6: Net debt — how long can the company manage without new loans?",
+   "ar": "## الدقيقة 3–6: صافي الدين — كم تصمد الشركة من دون قروض جديدة؟"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p10",
+   "en": "Net debt = interest-bearing debt (the liabilities with interest) − liquid funds",
+   "ar": "صافي الدين = الديون بفوائد (الالتزامات ذات الفوائد) − الأصول السائلة"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p11",
+   "en": "You find interest-bearing debt in the long debt post plus the short-term part of the loans (not accounts payable — those are interest-free operating liabilities). Subtract the bank cash and short-term investments. The result is the capital the company actually owes banks and bondholders, net.",
+   "ar": "تجد الديون بفوائد (أي الالتزامات ذات الفوائد) في بند الدين الطويل زائد الجزء قصير الأجل من القروض (لا الذمم الدائنة — فهي ديون تشغيلية بلا فوائد). اطرح النقد في البنك والاستثمارات قصيرة الأجل. الناتج هو رأس المال الذي تدين به الشركة فعلًا للبنوك وحاملي السندات، صافيًا."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p12",
+   "en": "Put the number in relation to the earnings power:",
+   "ar": "ضع الرقم في علاقته بالقوة الربحية:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p13",
+   "en": "Net debt ÷ EBITDA",
+   "ar": "صافي الدين ÷ EBITDA"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p14",
+   "en": "- Below 1×: low indebtedness, considerable freedom of action\n- 1–2×: normal for industry and engineering\n- Above 3×: considerable — here the interest rate and refinancing needs begin to steer the company's room for maneuver\n- Negative net debt: the company has more cash than debt — but ask yourself why, and note that large cash balances are sometimes earmarked for specific investments",
+   "ar": "- تحت 1×: مديونية منخفضة، وحرية حركة كبيرة\n- ‏1–2×: طبيعي للصناعة والهندسة الميكانيكية\n- فوق 3×: كبير — هنا يبدأ سعر الفائدة وإعادة التمويل في توجيه هامش حركة الشركة\n- صافي دين سالب: لدى الشركة من النقد أكثر من دينها — لكن اسأل نفسك لماذا، ولاحظ أن الأرصدة النقدية الكبيرة تُخصص أحيانًا لاستثمارات بعينها"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p15",
+   "en": "For cyclical companies the same warning applies as for any valuation multiple: feel free to calculate on normalized EBITDA (an average over the business cycle), otherwise the debt looks innocently small at the peak and frighteningly large at the bottom. This is the core of AKM1 variable V10 (debt-to-equity ratio) — and note that net debt per se is not wrong; debt against return is the question, not debt against zero.",
+   "ar": "للشركات الدورية التحذير نفسه الذي ينسحب على مضاعف التقييم بأي صورة: احسب وإن شئت على EBITDA مطبعًا (متوسط عبر الدورة الاقتصادية)، وإلا بدا الدين صغيرًا بريئًا في القمة ومرعبًا في القاع. هذا جوهر متغير AKM1 ‏V10 (نسبة الدين إلى حقوق الملكية) — ولاحظ أن صافي الدين في ذاته ليس خطأً؛ السؤال هو الدين مقابل العائد، لا الدين مقابل الصفر."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p16",
+   "en": "## Minute 6–9: Goodwill — what has the company paid for that is not there?",
+   "ar": "## الدقيقة 6–9: الشهرة — ما الذي دفعته الشركة مقابل ما ليس موجودًا هناك؟"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p17",
+   "en": "Goodwill arises when a company buys another company for more than the value of the identifiable assets. The post thus represents a paid premium for future synergies, brands, customer relationships — things that may turn out to be real, or not.",
+   "ar": "تنشأ الشهرة حين تشتري شركة أخرى بأكثر من قيمة الأصول القابلة للتحديد. فالبند يمثل إذن علاوة مدفوعة لقاء تآزمات مستقبلية وعلامات تجارية وعلاقات عملاء — أشياء قد تثبت أنها حقيقية أو لا."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p18",
+   "en": "Goodwill share = goodwill ÷ equity",
+   "ar": "نسبة الشهرة = الشهرة ÷ حقوق الملكية"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p19",
+   "en": "- Below 30 %: manageable — even if an impairment would hurt, the equity ratio survives\n- 30–50 %: considerable — read the acquisition note and ask: have the acquired companies performed as the motivated purchase price?\n- Above 50 %: the red flag. A large impairment can blow a hole in the equity and thereby in the whole balance sheet's credibility",
+   "ar": "- تحت 30 %: قابل للإدارة — حتى لو أوجعت خسارة انخفاض القيمة، تنجو نسبة الملاءة\n- ‏30–50 %: كبير — اقرأ إيضاح الاستحواذ واسأل: هل أدت الشركات المشتراة بما يبرر ثمن الشراء؟\n- فوق 50 %: العلم الأحمر. خسارة انخفاض قيمة كبيرة قد تثقب حقوق الملكية ومعها مصداقية الميزانية العمومية كلها"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p20",
+   "en": "Goodwill is also the post where longing lives. A company that has grown through acquisitions has often paid in good times to grow, and impairments rarely come as merely technical adjustments — they come as admissions. So when you see a large goodwill: find the segment report, identify which acquisition carries the post, and check that its result still remains in the report.",
+   "ar": "الشهرة أيضًا هي البند الذي يسكنه التمني. الشركة التي نمت عبر الاستحواذ غالبًا ما دفعت في الأزمنة الجيدة لتنمو، وخسائر انخفاض القيمة نادرًا ما تأتي مجرد تسويات فنية — بل تأتي اعترافات. لذلك حين ترى شهرة كبيرة: اعثر على تقرير القطاعات، وحدد أي استحواذ يحمل البند، وتحقق من أن نتيجته ما زالت باقية في التقرير."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p21",
+   "en": "## Minute 9–12: Working capital — is the company growing efficiently or on credit?",
+   "ar": "## الدقيقة 9–12: رأس المال العامل — هل تنمو الشركة بكفاءة أم بتمويل ائتماني؟"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p22",
+   "en": "Working capital = current assets − short-term liabilities",
+   "ar": "رأس المال العامل = الأصول المتداولة − الالتزامات قصيرة الأجل"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p23",
+   "en": "Working capital is the capital tied up in the everyday: accounts receivable, inventory, prepayments — minus what suppliers and employees effectively lend out in the form of payment times. Two questions:",
+   "ar": "رأس المال العامل هو رأس المال المقيد في اليوميات: الذمم المدينة، والمخزون، والدفعات المقدمة — ناقص ما تقرضه الموردون والموظفون فعليًا في صورة آجال سداد. سؤالان:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p24",
+   "en": "- Is the working capital growing faster than the revenue? Then every growth krona costs more and more in capital tied up — the growth is bought on credit, literally\n- Is the operating profit converted to cash? Compare operating cash flow with operating profit over three years. A result that never becomes cash is a bookkeeping creation; according to classic value investing practice, cash is reality and the results are an opinion about it",
+   "ar": "- هل ينمو رأس المال العامل أسرع من الإيرادات؟ عندها تكلف كل كرون نمو أكثر فأكثر من رأس المال المقيد — فالنمو يُشترى بالائتمان، حرفيًا\n- هل يتحول الربح التشغيلي إلى نقد؟ قارن التدفق النقدي التشغيلي بالربح التشغيلي عبر ثلاث سنوات. النتيجة التي لا تصير نقدًا أبدًا خلق محاسبي؛ وفق ممارسة الاستثمار القيمي الكلاسيكية، النقد هو الحقيقة والنتائج رأي فيها"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p25",
+   "en": "Complement with the quick ratio (V11 in AKM1 — it measures whether the company can pay its short-term liabilities even if all customer flow freezes):",
+   "ar": "استكمل بنسبة التسيير السريع (V11 في AKM1 — تقيس هل تستطيع الشركة سداد الالتزامات قصيرة الأجل حتى لو تجمد كل تدفق العملاء):"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p26",
+   "en": "Quick ratio = (current assets − inventory) ÷ short-term liabilities",
+   "ar": "نسبة التسيير = (الأصول المتداولة − المخزون) ÷ الالتزامات قصيرة الأجل"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p27",
+   "en": "Above 1 is comfortable. Below 0,5 is an acute situation regardless of how good the income statement looks. And for early-stage growth companies: how many months does the cash last at the current burn? That is V19 (capital burn) — survival mathematics, not profitability mathematics.",
+   "ar": "فوق 1 مريح. وتحت 0,5 وضع حاد مهما بدت قائمة الدخل جيدة. وللشركات النامية المبكرة: لكم شهرًا يكفي النقد بوتيرة الحرق الحالية؟ ذلك هو V19 (حرق رأس المال) — رياضيات بقاء لا رياضيات ربحية."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p28",
+   "en": "## Minute 12–15: The warning signals — the checklist before you close the PDF",
+   "ar": "## الدقيقة 12–15: إشارات التحذير — قائمة التحقق قبل أن تغلق ملف PDF"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p29",
+   "en": "- Short-term liabilities growing faster than the revenue — payment strain in the everyday\n- Capitalized development costs that swell — costs dressed up as assets\n- Changed accounting principles in good years — earnings-boosting adjustments at a comfortable moment\n- Dividend or share buyback financed with new net debt — the capital return is borrowed, not earned\n- Sales of accounts receivable (invoicing) to an increasing extent — the quick ratio improves cosmetically, the risk remains\n- Large, undefined 'other' posts on both sides — where mysteries usually live\n- A total picture of the balance sheet that does not match the cash flow — when the two documents tell different stories, it is the cash flow that is right",
+   "ar": "- الالتزامات قصيرة الأجل التي تنمو أسرع من الإيرادات — إجهاد سداد في اليوميات\n- تكاليف تطوير مرسملة تنتفخ — التكاليف متنكرة في زي الأصول\n- مبادئ محاسبية تتغير في السنوات الجيدة — تسويات ترفع النتائج في لحظة مريحة\n- التوزيعات أو إعادة شراء الأسهم ممولة بصافي دين جديد — عودة رأس المال مقترضة لا مكتسبة\n- بيع الذمم المدينة (الفوترة) بدرجة متزايدة — تتحسن نسبة التسيير تجميليًا والمخاطر تبقى\n- بنود «أخرى» كبيرة غير معرفة في الجانبين — هناك تسكن الأسرار عادة\n- صورة إجمالية للميزانية العمومية لا تتطابق مع التدفق النقدي — حين تروي الوثيقتان حكايتين مختلفتين، فالتدفق النقدي هو صاحب الحق"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p30",
+   "en": "## What the balance sheet does not show — the shadow sides of the notes to the accounts",
+   "ar": "## ما لا تعرضه الميزانية العمومية — الجوانب الخفية في الإيضاحات المتممة للقوائم المالية"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p31",
+   "en": "A Swedish balance sheet does not report all commitments as posts. In the notes to the accounts behind it there are often guarantees and warranty commitments, pension obligations, ongoing disputes and contingent liabilities to partners. These can be material — especially in construction and contracting industries, where a single lost warranty case can amount to the annual result. The routine: before you close the PDF, look up the note on contingent liabilities and compare the amount with equity. A shadow debt of half the equity changes the picture of the equity ratio more than any valuation multiple does.",
+   "ar": "الميزانية العمومية السويدية لا تعرض كل الالتزامات بنودًا. في الإيضاحات المتممة للقوائم المالية خلفها توجد غالبًا كفالات والتزامات ضمان، والتزامات تقاعد، ونزاعات جارية، والتزامات محتملة تجاه الشركاء. قد تكون هذه جوهرية — خصوصًا في صناعات البناء والمقاولات، حيث قد تعادل قضية ضمان خاسرة واحدة نتيجة السنة كلها. الروتين: قبل أن تغلق ملف PDF، افتح إيضاح الالتزامات المحتملة وقارن المبلغ بحقوق الملكية. دين الظل بنصف حقوق الملكية يغير صورة نسبة الملاءة أكثر مما يفعله مضاعف التقييم أيًّا كان."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p32",
+   "en": "Also remember that the balance sheet is a photo of the last day of the fiscal year. Companies that want to show lower debt can move posts across the year boundary — the debt still exists, just not in the photo. Therefore feel free to compare the balance sheet with the average debt level during the quarters of the same year, when the quarterly report shows it.",
+   "ar": "تذكر أيضًا أن الميزانية العمومية صورة لآخر يوم من السنة المالية. الشركات التي تريد إظهار دين أدنى قد تنقل بنودًا عبر رأس السنة — الدين موجود دائمًا، لكن ليس في الصورة. لذلك قارن وإن شئت الميزانية العمومية بمتوسط مستوى الدين خلال أرباع السنة نفسها، حين يعرضه التقرير الربع سنوي."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p33",
+   "en": "## The exercise: run the route on a real annual report",
+   "ar": "## التمرين: نفّذ المسار على التقرير السنوي لشركة حقيقية"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p34",
+   "en": "Theory without review is just reading. Do this:",
+   "ar": "النظرية من دون المراجعة مجرد قراءة. افعل هكذا:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p35",
+   "en": "- Choose a larger Swedish listed company in a sector you want to learn — engineering, trade or construction are good because the balance sheet carries a lot of information there\n- Download the latest annual report (the PDF with notes to the accounts — not the presentation) from the company's IR page\n- Set a timer to 15 minutes and fill in the route: equity ratio, net debt/EBITDA, goodwill share, quick ratio — four numbers, five minutes of support per number\n- Repeat on last year's balance sheet and compare. The trend over two to three years says more than any single level\n- Log the results in [the calculator](/kalkylator) so that next time you can compare directly against your latest review",
+   "ar": "- اختر شركة سويدية مدرجة أكبر في قطاع تريد التعرف إليه — الهندسة الميكانيكية أو التجارة أو البناء جيدة لأن الميزانية العمومية تحمل هناك معلومات كثيرة\n- نزّل التقرير السنوي الأحدث (ملف PDF مع الإيضاحات المتممة للقوائم المالية — لا العرض التقديمي) من صفحة علاقات المستثمرين للشركة\n- اضبط مؤقتًا على 15 دقيقة واملأ المسار: نسبة حقوق الملكية، وصافي الدين/EBITDA، ونسبة الشهرة، ونسبة التسيير — أربعة أرقام، بخمس دقائق من الدعم لكل رقم\n- كرر على الميزانية العمومية للعام الماضي وقارن. الاتجاه عبر سنتين إلى ثلاث يقول أكثر مما يفعله المستوى المنفرد\n- سجّل النتائج في [الحاسبة](/kalkylator) لتقارن في المرة القادمة مباشرة بأحدث مراجعة قمت بها"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p36",
+   "en": "If the course [V09: ROE](/kurser/v09-roe) teaches you to read return, this route is your tidiness page: it says whether the return is built on rock or on loans and longing. Together they cover most of what a balance sheet has to tell.",
+   "ar": "إن كانت الدورة [V09: ROE](/kurser/v09-roe) تعلمك قراءة العائد، فهذا المسار صفحتك المنظمة: يقول هل بُني العائد على صخر أم على قروض وتمنٍ. معًا يغطيان معظم ما يمكن أن ترويه الميزانية العمومية."
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p37",
+   "en": "## Next step",
+   "ar": "## الخطوة التالية"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p38",
+   "en": "- Run the 15-minute route on a real annual report tonight — four numbers, timer on, log in [the calculator](/kalkylator).\n- Deepen the stability side in [the Curriculum](/laroplan): V10 (debt-to-equity ratio), V11 (liquidity) and V19 (capital burn) are the balance sheet's voice in the AKM1 model.\n- Review your own portfolio's aggregated risk picture in [the portfolio builder](/min-portfolj): how many of your holdings have net debt above 2× EBITDA — and did you know?",
+   "ar": "- نفّذ مسار الـ 15 دقيقة على التقرير السنوي الحقيقي الليلة — أربعة أرقام، والمؤقت يعمل، وسجّل في [الحاسبة](/kalkylator).\n- تعمّق في جانب الاستقرار ضمن [المنهج](/laroplan): ‏V10 (نسبة الدين إلى حقوق الملكية)، وV11 (السيولة)، وV19 (حرق رأس المال) هي صوت الميزانية العمومية في نموذج AKM1.\n- راجع صورة المخاطر الإجمالية لمحفظتك في [باني المحفظة](/min-portfolj): كم من مراكزك لديه صافي دين فوق 2× EBITDA — وهل كنت تعلم؟"
+  },
+  {
+   "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p39",
+   "en": "_This is educational financial analysis, not investment advice._",
+   "ar": "_هذا هو التحليل المالي التعليمي، وليس نصيحة استثمارية._"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:titel",
+   "en": "How to read a Swedish annual report — step by step",
+   "ar": "هكذا تقرأ التقرير السنوي السويدي — خطوة بخطوة"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:ingress",
+   "en": "From the first page to the notes to the accounts: exactly where you find revenue, margins, liabilities and warnings — with a 20-minute route through the whole report.",
+   "ar": "من الصفحة الأولى إلى الإيضاحات المتممة للقوائم المالية: أين تجد بالضبط الإيرادات والهوامش والالتزامات والتحذيرات — بمسار من 20 دقيقة عبر التقرير كاملًا."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p1",
+   "en": "The annual report is the company's own trial — where it must speak truthfully, in a way marketing material never has to. The problem is that it is written for auditors, not for you. Here is the route through the report in 20 minutes, with exactly what to look for at each place. The same map is used in [the AKM1 calculator's report guide](/kalkylator).",
+   "ar": "التقرير السنوي هو محكمة الشركة الخاصة — حيث يجب أن تتحدث بصدق، بطريقة لا تُلزم بها المادة التسويقية أبدًا. المشكلة أنه مكتوب من أجل المدققين لا من أجلك. ها هو المسار عبر التقرير في 20 دقيقة، مع ما تبحث عنه بالضبط في كل موضع. الخريطة نفسها تُستخدم في [دليل تقارير حاسبة AKM1](/kalkylator)."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p2",
+   "en": "## Step 0: Get the right document (2 min)",
+   "ar": "## الخطوة 0: احصل على الوثيقة الصحيحة (2 دقيقة)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p3",
+   "en": "Go to the company's investor relations page or the exchange's presentation page. Download **the annual report** (not the press release, not the presentation — those are marketing). You want the PDF with 'annual report' in the title, at least 40 pages. A dormant company with a 15-page 'summary'? Ask yourself why.",
+   "ar": "اذهب إلى صفحة علاقات المستثمرين للشركة أو صفحة العرض في البورصة. نزّل **التقرير السنوي** (لا البيان الصحفي، ولا العرض التقديمي — فهما تسويق). أنت تريد ملف PDF الذي يحمل «التقرير السنوي» في عنوانه، بـ 40 صفحة على الأقل. شركة خاملة بـ«ملخص» من 15 صفحة؟ اسأل نفسك لماذا."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p4",
+   "en": "## Step 1: The administration report — the CEO's letter (3 min)",
+   "ar": "## الخطوة 1: تقرير الإدارة — خطاب الرئيس التنفيذي (3 دقيقة)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p5",
+   "en": "Read the first paragraph and the last paragraph. Between them lies the truth: the CEO tells the year in STORY form. Note:",
+   "ar": "اقرأ الفقرة الأولى والفقرة الأخيرة. بينهما تكمن الحقيقة: يروي الرئيس التنفيذي السنة في قالب قصة. لاحظ:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p6",
+   "en": "- Are failures written in passive form ('the market weakened') but successes active ('we launched')? A classic pattern\n- Words that recur: 'transition', 'focus forward', 'one-off effects' — count them\n- Compare with last year's letter: the same promises again? There lie the most honest signals",
+   "ar": "- هل تُكتب الإخفاقات بصيغة مبنية للمجهول («تراجع السوق») بينما النجاحات بصيغة فاعلة («أطلقنا»)؟ نمط كلاسيكي\n- كلمات تتكرر: «التحول»، و«التركيز إلى الأمام»، و«آثار لمرة واحدة» — عُدّها\n- قارن بخطاب العام الماضي: الوعود نفسها مجددًا؟ هناك تكمن أصدق الإشارات"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p7",
+   "en": "## Step 2: The income statement — the year's cash flow engine (5 min)",
+   "ar": "## الخطوة 2: قائمة الدخل — محرك التدفق النقدي للسنة (5 دقائق)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p8",
+   "en": "Find 'Consolidated income statement'. Read from the top down, four rows mean everything:",
+   "ar": "اعثر على «قائمة الدخل الموحدة». اقرأ من الأعلى إلى الأسفل، أربعة صفوف تعني كل شيء:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p9",
+   "en": "1. **Net revenue** — this year and last year (the column beside). Calculation, per the course: (this year − last) ÷ last = growth [V01](/kurser/v01-forsaljningstillvaxt)\n2. **The operating costs** — together with the revenue gives the gross margin [V07](/kurser/v07-bruttomarginal)\n3. **Operating profit** — + depreciation = EBITDA → margin [V08](/kurser/v08-ebitda-marginal)\n4. **The year's result** — the bottom line after financials and tax → used in ROE [V09](/kurser/v09-roe)",
+   "ar": "1. **صافي الإيرادات** — هذه السنة والسنة الماضية (العمود المجاور). الحساب وفق الدورة: (هذه السنة − الماضية) ÷ الماضية = النمو [V01](/kurser/v01-forsaljningstillvaxt)\n2. **التكاليف التشغيلية** — تعطي الهامش الإجمالي مع الإيرادات [V07](/kurser/v07-bruttomarginal)\n3. **الربح التشغيلي** — + الإهلاكات = EBITDA → الهامش [V08](/kurser/v08-ebitda-marginal)\n4. **نتيجة السنة** — الصف الأخير بعد البنود المالية والضريبة → تُستخدم في ROE [V09](/kurser/v09-roe)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p10",
+   "en": "## Step 3: The balance sheet — what owns what (4 min)",
+   "ar": "## الخطوة 3: الميزانية العمومية — ما الذي يملك ماذا (4 دقائق)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p11",
+   "en": "Three numbers to lift out:",
+   "ar": "ثلاثة أرقام لاستخلاصها:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p12",
+   "en": "- **Cash and bank** + **short-term investments** — the war chest [V19 in the course](/kurser/v19-kapitalforbranning)\n- **Equity** — both years (for the ROE average and P/B) [V05](/kurser/v05-pb)\n- **Liabilities and other commitments** — the total, for the debt-to-equity ratio [V10](/kurser/v10-skuldsattningsgrad)",
+   "ar": "- **النقد والبنك** + **الاستثمارات قصيرة الأجل** — خزنة الحرب [V19 في الدورة](/kurser/v19-kapitalforbranning)\n- **حقوق الملكية** — السنتان معًا (لمتوسط ROE وP/B) [V05](/kurser/v05-pb)\n- **الالتزامات والتعهدات الأخرى** — الإجمالي، من أجل نسبة الدين إلى حقوق الملكية [V10](/kurser/v10-skuldsattningsgrad)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p13",
+   "en": "A warning signal to look for: if 'Recognized and other liabilities' grows much faster than the revenue, open the notes to the accounts — there hide deferred tax, guarantees and pension commitments.",
+   "ar": "إشارة تحذير تبحث عنها: إذا نمت «الالتزامات المقيدة وغيرها» أسرع كثيرًا من الإيرادات، فافتح الإيضاحات المتممة للقوائم المالية — هناك تختبئ الضرائب المؤجلة والكفالات والتزامات التقاعد."
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p14",
+   "en": "## Step 4: The cash flow statement — the truth behind the result (3 min)",
+   "ar": "## الخطوة 4: قائمة التدفقات النقدية — الحقيقة خلف النتيجة (3 دقائق)"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p15",
+   "en": "The result can be made up. The cash flow cannot. Three rows:",
+   "ar": "النتيجة يمكن تجميلها. أما التدفق النقدي فلا. ثلاثة صفوف:"
+  },
+  {
+   "nyckel": "sa-laser-du-en-svensk-arsredovisning:p16",
+   "en": "- **Cash flow from ongoing operations** — the real operating surplus. Positive year after year = worthy of a moat\n- **Investments** — how much goes to growth vs. maintenance?\n- **Financing activities** — loan uptake? Dividend? Share issue? (Look closely at share issues: they dilute YOU)",
+   "ar": "- **التدفق النقدي من الأنشطة الجارية** — الفائض التشغيلي الحقيقي. إيجابي سنة بعد سنة = يستحق الخندق التنافسي\n- **الاستثمارات** — كم يذهب إلى النمو مقابل الصيانة؟\n- **أنشطة التمويل** — اقتراض جديد؟ التوزيعات؟ إصدار أسهم؟ (راقب الإصدارات جيدًا: إنها تخفف حصتك أنت)"
+  }
+ ]
+}

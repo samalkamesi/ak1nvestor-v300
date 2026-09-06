@@ -8691,3 +8691,27 @@ Kvalitetsvakten GRÖN · tsc 0 fel i rörd kod.
 
 **ROND 3 (PÅGÅR):** v67ak1 (ak1ts 540) · v67akm (akm1 540) · v67bg1+v67bg2
 (blogg-resten 608 = 27 poster). Efteråt: kontroll+import+status+push.
+
+## Våg 67 — ROND 3 KLAR: VÅGEN SLUTSTÄLLD (2026-09-05)
+
+**ROND 3 — 4 agenter:** v67ak1 (ak1ts-vaglarans-hierarki 540) + v67akm
+(akm1-den-kontroversiella-modellen 540) + v67bg1+v67bg2 (blogg-resten 608).
+2 168 källor × 2 = 4 336 rader publicerade, ALLA 100p, 0 nekade.
+
+**VÅG 67 TOTALT (21 agenter, 3 ronder): 27 889 källor · 55 778 rader
+publicerade · allt 100p.**
+
+**SLUTSTÄLLNING:**
+- 227/333 kurser KOMPLETTA (hela kursinnehållet en+ar: titel+intro+block+quiz)
+  — AK 1 · AKM 1 · BF 11 · KM 70 · MK 11 · PC 20 · PF 14 · RK 15 · SE 15 ·
+  SJ 5 · TS 25 · UD 8 · V 20 · VM 11 + the-intelligent-investor/zero-to-one
+- BLOGGEN 100 % KOMPLETT: 1 175/1 175 källor per språk (alla 51 poster
+  inkl. 4 nya SEO-guider)
+- UI 100 % (295/295)
+- Kvar: bokmaster-svansen 104 kurser (38 520 källor ≈ 5-6 rundor à 7
+  agenter = våg 68+; SECURITY-PRIORITY: kör data/sql/oversattningar.sql FÖRE
+  svansen — events-backenden närmar sig 100k rader och tabellen är den
+  permanenta arkitekturen)
+
+**Verifieringar:** svit 107/0/0 · Kvalitetsvakten GRÖN · prod 200 ·
+4 SEO-guider live · granskningskö = endast 9 korrekta visuell-inaktuell-rader.

@@ -8738,3 +8738,35 @@ Prod grön (/, /kurser, guider, KM/EN-spegel 200).
 
 **Vågplan 69–71:** data/forskning/STYRELSE-VAGPLAN-69-71.md (bokmaster
 rond 2-6 → 100 % tredubbelt språk; prestanda våg 3; m10-QR; m9-skala).
+
+## Våg 68 — DELRESULTAT (2026-09-06, 2daed6b+48e265e, prod-verifierat)
+
+**Översättning (4 av 5 paket importerade):** v68a 1 108 publicerade (2 nekade
+= Chart-fallen, matematiskt omöjliga i AR enligt lateral-taket — dokumenterat)
++ v68b 1 292 + v68d 1 416 + v68e 1 350 = 5 166 rader. the-intelligent-investor
+497/497 EN · blue-ocean + security-analysis + interpretation + Lynch +
+Greenblatt + Outsiders + 100-baggers + QoE + Expectations KOMPLETTA.
+v68c (Klarman+Munger 747) dog tyst 2× — delad i v68c1/v68c2 (mindre paket,
+tredje försöket pågår).
+
+**PRESTANDA våg 2 LEVERERAD OCH PÅ PROD:**
+- getBackendStatus modul-cache (132→5 ms warm, 17,4 MB-läsning nu 1×/process)
+- learn/quiz ur KursSok-props → lazy /api/kurs-hämtning per kort: /kurser
+  HTML 483→269 kB (−44 %), flight 338→143 kB (−58 %), speglarna −53 %
+- LasyGlobal idle-mount (ChatWidget/ShortSeller/NotisCenter) + PalettVakt
+  (eager ⌘K-lyssnare + lazy palett): First Load JS 1 201→1 096 kB (−105)
+- Fonter: italic ur preload (186,9→136,6 kB, display:swap kvar, RIKTIG
+  italic behållen i CSS)
+- Prod-rökkontroll: chatt ur SSR ✓, CookieConsent kvar ✓, 3 woff2-preload ✓,
+  /kurser 268 kB ✓. Webbläsarkontroll av idle-knappar (chat efter ~2 s + ⌘K)
+  överlämnad till nästa besök — chunk-verifiering land.
+- tsc 0 nya · motorer 107/0/0 · vakten GRÖN · build exit 0 (916/916)
+
+**INH-2:** 4 nya SEO-guider LIVE på prod (P/S, ARR-tillväxt, intäkts-
+diversifiering, P/B — kontrolleraText 0 FEL, kurslänkar verifierade).
+Guiderna är SV — EN/AR kommer i våg 69 (v68bg-paket).
+
+**Beteendenedan KursSok (medveten, o1 #4):** sökmatchar titel+kategori i
+stället för titel+learn (learn kunde inte ligga kvar i minnet — 176 kB);
+"bokmaster"-träffar 2→103, "risk" 101→27 (mindre brus). Full learn-sökning
+kräver sökändpunkt = framtida funktionalitet.

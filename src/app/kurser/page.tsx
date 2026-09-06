@@ -240,6 +240,10 @@ export default function KurserPage() {
         Börja med ett flaggskepp eller följ stigen från noll.
       </p>
 
+      {/* o1 #4 (prestanda): learn/quiz skickas INTE längre i klient-props
+          (flight ~348 kB → ~90 kB) — KursSok hämtar dem lazigt per synligt
+          kort via /api/kurs/[slug]. INGEN databorttagning: texten visas som
+          förr i kortet, bara transporten är ändrad. */}
       <KursSok
         kurser={courses.map((c) => ({
           slug: c.slug,
@@ -247,9 +251,7 @@ export default function KurserPage() {
           category: c.category,
           kapitel: c.chapters.length,
           minuter: c.totalMinutes || c.minutes,
-          learn: c.learn,
           xp: c.xp,
-          quiz: c.chapters.reduce((s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0), 0),
         }))}
         sidopanel={<FortsattPanel />}
       >

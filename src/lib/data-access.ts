@@ -6,8 +6,15 @@ import { isSupabaseConfigured } from "./supabase";
  * Arkitektur efter Prisma-avlusningen: statisk JSON är primärkälla,
  * Supabase är molnlager för medlemsdata. Detta är den status som
  * /api/backend rapporterar.
+ *
+ * PRESTANDA (o1 #3b): contentStats läser + parsar 17,4 MB
+ * deep-courses.json — det cacheas i en modulvariabel (samma mönster som
+ * courseCache i src/lib/content.ts) så filen bara berörs en gång per
+ * process. checkedAt beräknas per anrop som förr.
  */
-export function getBackendStatus() {
+let contentStatsCache: ReturnType<typeof raknaContentStats> | null = null;
+
+function raknaContentStats() {
   let courses = 0;
   try {
     courses = Object.keys(
@@ -16,17 +23,23 @@ export function getBackendStatus() {
   } catch {}
 
   return {
+    courses,
+    analyses:
+      countJsonEntries(join(process.cwd(), "data", "analyses")) ||
+      countJsonEntries(join(process.cwd(), "data", "export", "analyses")),
+    caseStudies: countJsonEntries(join(process.cwd(), "data", "export", "case-studies.json")),
+  };
+}
+
+export function getBackendStatus() {
+  if (!contentStatsCache) contentStatsCache = raknaContentStats();
+
+  return {
     ok: true,
     backend: isSupabaseConfigured ? "supabase+json" : "json-files",
     prisma: false,
     supabaseConfigured: isSupabaseConfigured,
-    contentStats: {
-      courses,
-      analyses:
-        countJsonEntries(join(process.cwd(), "data", "analyses")) ||
-        countJsonEntries(join(process.cwd(), "data", "export", "analyses")),
-      caseStudies: countJsonEntries(join(process.cwd(), "data", "export", "case-studies.json")),
-    },
+    contentStats: contentStatsCache,
     checkedAt: new Date().toISOString(),
   };
 }

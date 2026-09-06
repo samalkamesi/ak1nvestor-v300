@@ -5,12 +5,19 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/ak1a/theme-provider";
 import { Ak1aStoreProvider } from "@/components/ak1a/store-provider";
 import { organizationJsonLd, websiteJsonLd, SITE_URL } from "@/lib/seo";
-import { ChatWidget } from "@/components/ak1a/chat-widget";
-import { ShortSeller } from "@/components/ak1a/short-seller";
+// VÅG 68 PRESTANDA B (o1 #5): de fyra tunga globala klientkomponenterna
+// (ChatWidget 1 118 r, ShortSeller 804 r, Kommandopaletten, NotisCenter)
+// monteras via lazy/idle-wrappern — funktionaliteten är identisk, bara
+// NÄR/HUR koden laddas har ändrats. CookieConsent lämnas orörd (kräver
+// omedelbar synlighet), liksom PwaRegistrerare/TracerMount/TrafikRapportor.
+import {
+  LasyChatWidget,
+  LasyShortSeller,
+  LasyNotisCenter,
+  PalettVakt,
+} from "@/components/ak1a/lasy-global";
 import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
 import { TracerMount } from "@/components/ak1a/tracer-mount";
-import { Kommandopalett } from "@/components/ak1a/kommandopalett";
-import { NotisCenter } from "@/components/ak1a/notis-center";
 import { CookieConsent } from "@/components/ak1a/cookie-consent";
 import { SprakLeverantor } from "@/components/ak1a/sprak-leverantor";
 import { TrafikRapportor } from "@/components/ak1a/trafik-rapportor";
@@ -21,12 +28,27 @@ const inter = Inter({
   display: "swap",
 });
 
+// VÅG 68 PRESTANDA B (o1 #9): Source Serif delas i två instanser — normal
+// (400/600/700) preloadas; italic lämnas ur preload-listan (hämtas on demand
+// med display:swap när serif-kursiv löptext renderas — citat/blockquote på
+// manifest/speglar/medlemskap ligger sällan ovanför fold). Eftersom Google
+// tjänar variabla woff2-filer är filunderlaget oförändrat: RIKTIG italic
+// behålls för alla vikter, bara preloaden (−50 kB kritisk bandbredd) försvinner.
 const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
+  style: ["normal"],
+});
+
+const sourceSerifKursiv = Source_Serif_4({
+  variable: "--font-serif-kursiv",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600", "700"],
+  style: ["italic"],
+  preload: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -186,7 +208,7 @@ export default function RootLayout({
   return (
     <html lang="sv" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground paper-texture`}
+        className={`${inter.variable} ${sourceSerif.variable} ${sourceSerifKursiv.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground paper-texture`}
       >
         <StagingBanner />
         <PageViewBeacon />
@@ -209,13 +231,16 @@ export default function RootLayout({
             <Ak1aStoreProvider>
               {children}
               <Toaster />
-              <ChatWidget />
-              <ShortSeller />
+              {/* VÅG 68 PRESTANDA B (o1 #5): idle/lazy-montering — se
+                  src/components/ak1a/lasy-global.tsx. ⌘K-lyssnaren registreras
+                  direkt i PalettVakt; paletten laddas vid första öppningen. */}
+              <LasyChatWidget />
+              <LasyShortSeller />
               <PwaRegistrerare />
               <TracerMount />
               <TrafikRapportor />
-              <Kommandopalett />
-              <NotisCenter />
+              <PalettVakt />
+              <LasyNotisCenter />
               <CookieConsent />
             </Ak1aStoreProvider>
           </SprakLeverantor>

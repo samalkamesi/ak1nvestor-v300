@@ -115,6 +115,8 @@ export default function KurserPageEn() {
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
+        {/* o1 #4 (prestanda): learn/quiz skickas inte i klient-props — KursSok
+            hämtar dem lazigt per synligt kort via /api/kurs/[slug]. */}
         <KursSok
           lankPrefix="/en"
           kurser={courses.map((c) => ({
@@ -123,9 +125,7 @@ export default function KurserPageEn() {
             category: c.category,
             kapitel: c.chapters.length,
             minuter: c.totalMinutes || c.minutes,
-            learn: c.learn,
             xp: c.xp,
-            quiz: c.chapters.reduce((s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0), 0),
           }))}
         />
         <aside className="h-fit"><FortsattPanel /></aside>

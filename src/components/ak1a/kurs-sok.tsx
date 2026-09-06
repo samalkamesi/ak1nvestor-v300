@@ -24,7 +24,10 @@ import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-acc
  * räknare som klick sätter filtret och scrollar till registret.
  *
  * INGEN databorttagning: samtliga kurser lever kvar i komponentens minne och
- * filterlogik — pagineringen är enbart en visningsfråga. Fas-kurser (kraverFas:
+ * filterlogik — pagineringen är enbart en visningsfråga. Sedan o1 #4 skickas
+ * learn-text/quiz-antal inte i props utan hämtas lazigt per synligt kort via
+ * /api/kurs/[slug] (modul-cache: en hämtning per kurs) — beteendet i kortet
+ * är oförändrat, bara transporten. Fas-kurser (kraverFas:
  * 2 = fundamental vägen, 3 = dynamiska ekosystemet) visas alltid men låsas med
  * 🔒 → /fas2-ansok resp. /fas3 (en inbjudan, aldrig ett stopp).
  *
@@ -43,10 +46,168 @@ export type KursKort = {
   category: string;
   kapitel: number;
   minuter: number;
-  learn: string;
   xp: number;
-  quiz: number;
 };
+
+// ── LAZY KURSDETALJER (o1-prestanda #4) ─────────────────────────────────────
+// learn-texten och quiz-antalet skickas INTE längre i props (flight ~348 kB →
+// ~90 kB för 333 kurser): de hämtas per kurs från befintliga /api/kurs/[slug]
+// när kortet närmar sig viewport och cacheas på modulnivå — varje kurs hämtas
+// högst en gång per sidladdning, oavsett sidbläddring i pagineringen. md+
+// visar aldrig learn/quiz (ren CSS-döljning) och triggar därför ingen hämtning.
+
+type KursDetalj = { learn: string; quiz: number };
+
+const kursDetaljCache = new Map<string, Promise<KursDetalj | null>>();
+
+function hamtaKursDetalj(slug: string): Promise<KursDetalj | null> {
+  const befintlig = kursDetaljCache.get(slug);
+  if (befintlig) return befintlig;
+  const lovat = fetch(`/api/kurs/${encodeURIComponent(slug)}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((kurs: { learn?: unknown; chapters?: unknown } | null) => {
+      if (!kurs || typeof kurs.learn !== "string") return null;
+      let quiz = 0;
+      if (Array.isArray(kurs.chapters)) {
+        for (const ch of kurs.chapters as Array<{ quiz?: unknown }>) {
+          const q = ch?.quiz;
+          if (Array.isArray(q)) quiz += q.length;
+        }
+      }
+      return { learn: kurs.learn, quiz };
+    })
+    .catch(() => {
+      kursDetaljCache.delete(slug); // misslyckad hämtning får göras om senare
+      return null;
+    });
+  kursDetaljCache.set(slug, lovat);
+  return lovat;
+}
+
+/**
+ * Registerrad/kort — identisk markup som före o1 #4, men learn-texten och
+ * quiz-antalet hämtas lazigt (se kursDetaljCache ovan) när kortet är på väg
+ * in i viewport (400 px marginal, så texten oftast är på plats före exponeringen).
+ * Skeleton reserverar cirka learn-radens höjd medan texten är på väg.
+ */
+function RegisterKort({
+  c,
+  lankPrefix,
+  fas,
+  last,
+}: {
+  c: KursKort;
+  lankPrefix: string;
+  fas: number;
+  last: boolean;
+}) {
+  const [detalj, setDetalj] = useState<KursDetalj | null>(null);
+  const [misslyckades, setMisslyckades] = useState(false);
+  const textRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+    let aktiv = true;
+    const starta = () => {
+      hamtaKursDetalj(c.slug).then((d) => {
+        if (!aktiv) return;
+        if (d) setDetalj(d);
+        else setMisslyckades(true);
+      });
+    };
+    if (typeof IntersectionObserver === "undefined") {
+      starta(); // äldre webbläsare: hämta direkt — texten ska alltid nå fram
+      return () => {
+        aktiv = false;
+      };
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          obs.disconnect();
+          starta();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    obs.observe(el);
+    return () => {
+      aktiv = false;
+      obs.disconnect();
+    };
+  }, [c.slug]);
+
+  return (
+    <li>
+      <Link
+        href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
+        title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
+        className={`block rounded-lg border p-4 transition-all md:flex md:items-center md:gap-3 md:px-3 md:py-2.5 ${
+          last
+            ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
+            : "border-gold/20 bg-card hover:border-gold/50 hover:shadow-lg"
+        }`}
+      >
+        <span className="min-w-0 flex-1">
+          <span className="flex items-start justify-between gap-2">
+            <span className="font-serif font-semibold md:truncate md:text-sm md:font-semibold">{c.title}</span>
+            {fas !== 0 && (
+              <span
+                className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                  fas === 3
+                    ? last
+                      ? "bg-[#8C5A2B] text-[#F8EFE3] dark:bg-[#B07A3C] dark:text-[#081120]"
+                      : "bg-[#B07A3C]/15 koppar-text"
+                    : last
+                      ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                      : "bg-gold/15 text-gold"
+                }`}
+              >
+                {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
+              </span>
+            )}
+          </span>
+          {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen (mobil) */}
+          <span className="mt-1 block text-xs tabular-nums text-muted-foreground md:hidden">
+            {c.kapitel} kapitel · {c.minuter} min · {detalj ? `${detalj.quiz} quiz · ` : ""}
+            {c.xp} XP
+          </span>
+          <span
+            ref={textRef}
+            className="mt-2 block min-h-[3.5rem] text-xs leading-relaxed text-muted-foreground md:hidden"
+          >
+            {detalj?.learn ??
+              (misslyckades ? null : (
+                <span
+                  className="block h-[3.25rem] max-w-[38ch] animate-pulse rounded-md bg-gold/[0.07]"
+                  aria-hidden="true"
+                />
+              ))}
+          </span>
+          {last && (
+            <span
+              className={`mt-2 block text-[10px] font-semibold md:hidden ${
+                fas === 3 ? "koppar-text" : "text-gold"
+              }`}
+            >
+              Öppnas i Fas {fas} — ansök för att komma vidare →
+            </span>
+          )}
+        </span>
+        {/* md+: kompaktraden — kategori-chip + kapitel/min/xp i en rad */}
+        <span className="hidden shrink-0 items-center gap-2 md:flex">
+          <span className="hidden rounded-full border border-gold/25 px-2 py-0.5 text-[10px] font-bold text-muted-foreground lg:inline-flex">
+            {c.category}
+          </span>
+          <span className="whitespace-nowrap text-[11px] tabular-nums text-muted-foreground">
+            {c.kapitel} kap · {c.minuter} min · {c.xp} XP
+          </span>
+        </span>
+      </Link>
+    </li>
+  );
+}
 
 export function KursSok({
   kurser,
@@ -108,7 +269,9 @@ export function KursSok({
     const q = sok.toLowerCase().trim();
     return kurser.filter((k) => {
       if (kat !== "alla" && k.category !== kat) return false;
-      if (q && !`${k.title} ${k.learn}`.toLowerCase().includes(q)) return false;
+      // o1 #4: learn-texten ligger inte längre i minnet — sökningen täcker
+      // titel + kategori (kategorinamnen är ämnena: VÄRDERING, RISKHANTERING …).
+      if (q && !`${k.title} ${k.category}`.toLowerCase().includes(q)) return false;
       return true;
     });
   }, [kurser, sok, kat]);
@@ -240,7 +403,7 @@ export function KursSok({
 
       {/* Registret — mobil: bevarad kortstil; md+: två kolumner kompakta rader
           (titel + kategori-chip + kapitel/min/xp i en rad). Allt kvar i DOM —
-          kompakteringen är ren CSS. */}
+          kompakteringen är ren CSS. learn/quiz kommer lazigt (RegisterKort). */}
       <ul className="grid gap-3 md:grid-cols-2">
         {visade.map((c) => {
           // Fas-kurs utan åtkomst: kortet visas (titel + beskrivning) men
@@ -248,63 +411,7 @@ export function KursSok({
           const fas = kraverFas(c.slug);
           const last = fas !== 0 && (fas === 3 ? !fas3Access : !fas2Access);
           return (
-            <li key={c.slug}>
-              <Link
-                href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
-                title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
-                className={`block rounded-lg border p-4 transition-all md:flex md:items-center md:gap-3 md:px-3 md:py-2.5 ${
-                  last
-                    ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
-                    : "border-gold/20 bg-card hover:border-gold/50 hover:shadow-lg"
-                }`}
-              >
-                <span className="min-w-0 flex-1">
-                  <span className="flex items-start justify-between gap-2">
-                    <span className="font-serif font-semibold md:truncate md:text-sm md:font-semibold">{c.title}</span>
-                    {fas !== 0 && (
-                      <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                          fas === 3
-                            ? last
-                              ? "bg-[#8C5A2B] text-[#F8EFE3] dark:bg-[#B07A3C] dark:text-[#081120]"
-                              : "bg-[#B07A3C]/15 koppar-text"
-                            : last
-                              ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
-                              : "bg-gold/15 text-gold"
-                        }`}
-                      >
-                        {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
-                      </span>
-                    )}
-                  </span>
-                  {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen (mobil) */}
-                  <span className="mt-1 block text-xs tabular-nums text-muted-foreground md:hidden">
-                    {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
-                  </span>
-                  <span className="mt-2 block text-xs leading-relaxed text-muted-foreground md:hidden">
-                    {c.learn}
-                  </span>
-                  {last && (
-                    <span
-                      className={`mt-2 block text-[10px] font-semibold md:hidden ${
-                        fas === 3 ? "koppar-text" : "text-gold"
-                      }`}
-                    >
-                      Öppnas i Fas {fas} — ansök för att komma vidare →
-                    </span>
-                  )}
-                </span>
-                {/* md+: kompaktraden — kategori-chip + kapitel/min/xp i en rad */}
-                <span className="hidden shrink-0 items-center gap-2 md:flex">
-                  <span className="hidden rounded-full border border-gold/25 px-2 py-0.5 text-[10px] font-bold text-muted-foreground lg:inline-flex">
-                    {c.category}
-                  </span>
-                  <span className="whitespace-nowrap text-[11px] tabular-nums text-muted-foreground">
-                    {c.kapitel} kap · {c.minuter} min · {c.xp} XP
-                  </span>
-                </span>
-              </Link>
-            </li>
+            <RegisterKort key={c.slug} c={c} lankPrefix={lankPrefix} fas={fas} last={last} />
           );
         })}
       </ul>

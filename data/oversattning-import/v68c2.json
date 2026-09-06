@@ -1,0 +1,1872 @@
+{
+ "kurs": "v68c2",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v68c2): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "poor-charlies-almanack:kap1:titel",
+   "en": "The man and the almanac — who was Charlie Munger?",
+   "ar": "الرجل والألماناك — من كان تشارلي منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:intro",
+   "en": "In 2005 Peter Kaufman compiled Charlie Munger's talks and essays into Poor Charlie's Almanack, a nod to Benjamin Franklin's Poor Richard's Almanack. It is no ordinary investing book but an operating manual for thinking. Munger was Berkshire's vice chairman for over forty years — and the person Buffett has pointed out, time and again, as the wisest he knows.",
+   "ar": "في عام 2005 جمع بيتر كوفمان محاضرات تشارلي منغر ومقالاته في كتاب Poor Charlie's Almanack، في إيماءة إلى كتاب Poor Richard's Almanack لبنجامين فرانكلين. ليس هذا كتاب استثمار عاديًا بل دليل استخدام للتفكير. كان منغر نائب رئيس مجلس إدارة بيركشاير لأكثر من أربعين عامًا — وهو الشخص الذي أشار إليه بافيت مرة بعد مرة بوصفه أحكم من يعرف."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block1",
+   "en": "Charles T. Munger was born in 1924 in Omaha, Nebraska — the same city as Warren Buffett, in whose grandfather's grocery store he worked as a young man. During World War II he served as a meteorologist in the air force, then got into Harvard Law School without even a finished college degree, became a lawyer in Los Angeles and eventually an investor. His investment partnership Wheeler, Munger & Co. delivered 1962–1975 an annual return on the order of twenty percent, against roughly five percent for the Dow — with a portfolio concentrated in a handful of positions, long before that was fashionable.",
+   "ar": "وُلد تشارلي تي منغر عام 1924 في أوماها بنبراسكا — المدينة نفسها التي ينتمي إليها وارن بافيت، وفي متجر بقالة جده عمل شابًا. خلال الحرب العالمية الثانية خدم كعالم أرصاد جوية في سلاح الطيران، ثم التحق بكلية الحقوق في هارفارد من دون حتى شهادة جامعية مكتملة، وصار محاميًا في لوس أنجلوس ثم مستثمرًا في نهاية المطاف. بين عامي 1962 و1975 بلغ العائد السنوي لشراكته الاستثمارية Wheeler, Munger & Co. نحو عشرين بالمئة، مقابل خمسة بالمئة تقريبًا لمؤشر داو جونز — وكانت المحفظة مركزة في عدد قليل من المراكز، قبل أن يصبح ذلك موضة بوقت طويل."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block2",
+   "en": "The book is built in three main parts: a biography of Munger, eleven of his talks and essays — with The Psychology of Human Misjudgment and Elementary Worldly Wisdom as the cores — plus the collection Mungerisms, his punchy quotes. Kaufman's editing is invisible but deliberate: the almanac format, with maxims and marginal notes, is a direct tribute to Benjamin Franklin, Munger's patron saint when it comes to self-discipline, curiosity and lifelong learning.",
+   "ar": "الكتاب مبني في ثلاثة أجزاء رئيسية: سيرة ذاتية لمنغر، وإحدى عشرة من محاضراته ومقالاته — وفي قلبها The Psychology of Human Misjudgment وElementary Worldly Wisdom — إضافة إلى مجموعة Mungerisms، وهي اقتباساته اللاذعة. عمل كوفمان التحريري غير مرئي لكنه مقصود: صيغة الألماناك، بالحِكم والهوامش، تحية مباشرة لبنجامين فرانكلين، قديس منغر الحامي في ما يخص الانضباط الذاتي والفضول والتعلم مدى الحياة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block3",
+   "en": "The Munger style is punchy, straight and funny. At Berkshire's annual meetings he sat next to Buffett and politely refused to be drawn out: when someone tried to lure a recommendation out of him or get him to repeat himself, the answer often came in a single line — »I have nothing to add.« He mocked »frothy professionals«, consultant vocabulary and analysts who confuse activity with thinking. The humor is not decoration; it is part of the method — seeing the world as straight as possible, including your own stupidity.",
+   "ar": "أسلوب منغر سريع وصريح وممتع. في الاجتماعات السنوية لبيركشاير كان يجلس بجانب بافيت ويرفض بأدب أن يُستدرج: حين حاول أحدهم انتزاع توصية منه أو جعله يعيد كلامه، جاء الجواب غالبًا في سطر واحد — »ليس لدي ما أضيفه.« كان يسخر من »المهنيين الرغويين« ومن مفردات المستشارين ومن المحللين الذين يخلطون بين النشاط والتفكير. الفكاهة ليست زينة؛ إنها جزء من المنهج — أن ترى العالم مستقيمًا قدر الإمكان، بما في ذلك حماقتك أنت."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block4",
+   "en": "Why does AK1 lift the book as a CRITICAL BOOK MASTER? Because it delivers the thinking models behind the platform's entire ecosystem: theories as different lenses, scenarios and the risk matrix as applied inversion, Bayesian reweighting as humble probability updating, and cognitive profiling as a personal bias map. Munger himself rarely cites financial ratios — his contribution is the meta level: how you think before you calculate. That is exactly why he should be read before the books about multiples.",
+   "ar": "لماذا ترفع AK1 هذا الكتاب بوصفه إتقانًا كتابيًا حاسمًا؟ لأنه يقدم نماذج التفكير التي يقوم عليها النظام البيئي كله للمنصة: النظريات بوصفها عدسات مختلفة، والسيناريوهات ومصفوفة المخاطر بوصفها انعكاسًا تطبيقيًا، وإعادة الوزن البايزية بوصفها تحديثًا متواضعًا للاحتمالات، والتوصيف المعرفي بوصفه خريطة انحيازات شخصية. منغر نفسه نادرًا ما يستشهد بالنسبة المالية — إسهامه هو المستوى الفوقي: كيف تفكر قبل أن تحسب. ولهذا بالضبط ينبغي قراءته قبل كتب المضاعفات."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block5",
+   "en": "Munger got rich by thinking better, not by counting faster. The book's greatest asset is not a single stock tip — it is an operating system for judgment.",
+   "ar": "أثرى منغر لأنه فكر بشكل أفضل، لا لأنه حسب بشكل أسرع. أعظم ما يقدمه الكتاب ليس نصيحة سهم واحدة — بل نظام تشغيل للبصيرة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:block6",
+   "en": "Before you move on: write three words describing how YOU usually make investment decisions. Save them — in chapter 8 you will compare them with the tendency that most likely governs you.",
+   "ar": "قبل أن تواصل: اكتب ثلاث كلمات تصف كيف تتخذ أنت عادة قرارات الاستثمار. احتفظ بها — في الفصل 8 ستقارنها بالنزعة التي تحكمك على الأرجح أكثر من غيرها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:q",
+   "en": "Which historical model does the title Poor Charlie's Almanack nod to?",
+   "ar": "إلى أي نموذج تاريخي تومئ عنوان Poor Charlie's Almanack؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:a0",
+   "en": "Benjamin Franklin's Poor Richard's Almanack",
+   "ar": "كتاب Poor Richard's Almanack لبنجامين فرانكلين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:a1",
+   "en": "Adam Smith's The Wealth of Nations",
+   "ar": "كتاب The Wealth of Nations لآدم سميث"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:a2",
+   "en": "Benjamin Graham's The Intelligent Investor",
+   "ar": "كتاب The Intelligent Investor لبنجامين غراهام"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:a3",
+   "en": "Charles Darwin's On the Origin of Species",
+   "ar": "كتاب On the Origin of Species لتشارلز داروين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz1:tips",
+   "en": "Think about what sort of publication Franklin put out — and why Kaufman chose precisely the almanac format's maxims.",
+   "ar": "فكر في أي نوع من المطبوعات أصدر فرانكلين — ولماذا اختار كوفمان تحديدًا حِكم صيغة الألماناك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:q",
+   "en": "What makes up the book's core in terms of content?",
+   "ar": "ما الذي يشكل جوهر الكتاب من حيث المحتوى؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:a0",
+   "en": "Munger's trading system with technical signals",
+   "ar": "نظام التداول لدى منغر بالإشارات الفنية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:a1",
+   "en": "A collection of ratio templates for valuation",
+   "ar": "مجموعة قوالب نسب جاهزة لأغراض التقييم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:a2",
+   "en": "Eleven talks and essays, including The Psychology of Human Misjudgment",
+   "ar": "إحدى عشرة محاضرة ومقالة، بينها The Psychology of Human Misjudgment"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:a3",
+   "en": "Summaries of Buffett's annual letters",
+   "ar": "ملخصات الرسائل السنوية لبافيت"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz2:tips",
+   "en": "The book is structured around what Munger actually lectured about for decades.",
+   "ar": "الكتاب مبني حول ما ألقى منغر فيه محاضرات فعليًا عبر عقود."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:q",
+   "en": "How did Munger typically answer in Q&A when someone tried to get him to say too much?",
+   "ar": "كيف كان منغر يجيب عادة في جلسات الأسئلة والأجوبة حين حاول أحدهم جعله يقول أكثر من اللازم؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:a0",
+   "en": "He held long lectures about every company",
+   "ar": "كان يلقي محاضرات طويلة عن كل شركة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:a1",
+   "en": "He read out his buy list",
+   "ar": "كان يقرأ قائمة شرائه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:a2",
+   "en": "He always referred to his fund",
+   "ar": "كان يشير دائمًا إلى الصندوق الخاص به"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:a3",
+   "en": "He answered »I have nothing to add«",
+   "ar": "كان يجيب »ليس لدي ما أضيفه«"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap1:quiz3:tips",
+   "en": "Silence can be an answer — especially from someone who knows the price of words.",
+   "ar": "يمكن أن يكون الصمت جوابًا — لا سيما من شخص يعرف ثمن الكلمات."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:titel",
+   "en": "Latticework — the lattice of mental models",
+   "ar": "الإطار الشبكي — هيكل النماذج الذهنية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:intro",
+   "en": "Munger's most quoted idea is the latticework of mental models: a lattice of models from many disciplines on which all experience is organized. Without the lattice, knowledge becomes isolated facts that rattle around without becoming insight. With it, every new experience is a nail to hang something on.",
+   "ar": "أكثر أفكار منغر استشهادًا هو الإطار الشبكي من النماذج الذهنية: هيكل من نماذج مستمدة من تخصصات كثيرة تُرتَّب عليه كل تجربة. من دون هذا الهيكل تتحول المعرفة إلى حقائق معزولة تخشخش هنا وهناك دون أن تصبح رؤية. ومعه تصبح كل تجربة جديدة مسمارًا تعلق عليه شيئًا ما."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block1",
+   "en": "In the talk Elementary Worldly Wisdom (USC 1994) Munger formulates the principle: »You've got to have models in your head. And you've got to array your experience — both vicarious and direct — on this latticework of your models.« Isolated facts are not enough: »You can't really know anything if you just remember isolated facts and try and bang 'em back.« The point is that the models must form a coherent grid — not a toolbox where you pick one at a time.",
+   "ar": "في محاضرة Elementary Worldly Wisdom (بجامعة جنوب كاليفورنيا 1994) يصوغ منغر المبدأ: »يجب أن تملك نماذج في رأسك. وأن ترتب تجربتك — المكتسبة بالواسطة والمباشرة على السواء — على هذا الإطار الشبكي من نماذجك.« الحقائق المعزولة لا تكفي: »لا يمكنك حقًا أن تعرف شيئًا إذا اكتفيت بتذكر حقائق معزولة وحاولت إعادة قذفها.« والخلاصة أن النماذج يجب أن تشكل شبكة متماسكة — لا صندوق أدوات تنتقي منه أداة واحدة في كل مرة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block2",
+   "en": "What happens otherwise? The man with a hammer. »To the man with only a hammer, every problem looks pretty much like a nail.« Economists who know only economics see everything as supply and demand; psychologists who know only psychology see everything as childhood; quantitative analysts see everything as multiples. Munger argues that this is a deterministic way of producing errors — not because the models are bad but because they are used alone.",
+   "ar": "ماذا يحدث خلاف ذلك؟ الرجل ذو المطرقة. »أمام من لا يملك إلا مطرقة تبدو كل مشكلة أشبه بمسمار.« الاقتصاديون الذين لا يعرفون إلا الاقتصاد يرون كل شيء عرضًا وطلبًا؛ وعلماء النفس الذين لا يعرفون إلا علم النفس يرون كل شيء طفولة؛ والمحللين الكميين يرون كل شيء مضاعفات. يرى منغر أن هذا أسلوب حتمي لإنتاج الأخطاء — لا لأن النماذج رديئة بل لأنها تُستخدم منفردة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block3",
+   "en": "Which disciplines? Physics (equilibrium, critical mass, redundancy and back-up systems), biology (evolution and extinction), psychology (biases and antidote), mathematics (probability, compounding, basic statistics), history and economics. Munger reckons that roughly 80–90 powerful models carry almost the entire load — you do not need a thousand. But they must come from several fields, because real problems do not obey any subject boundaries.",
+   "ar": "أي التخصصات؟ الفيزياء (التوازن، والكتلة الحرجة، والتكرار وأنظمة الاحتياط)، والأحياء (التطور والانقراض)، وعلم النفس (الانحيازات والترياق)، والرياضيات (الاحتمال، والتراكم، والإحصاء الأساسي)، والتاريخ والاقتصاد. يقدّر منغر أن نحو 80–90 نموذجًا قويًا تحمل العبء كله تقريبًا — لست بحاجة إلى ألف. لكن يجب أن تأتي من مجالات عدة، لأن المشكلات الحقيقية لا تخضع لحدود المواد."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block4",
+   "en": "The AK1 connection is direct: the ecosystem of five time horizons × five theories × four dimensions is in essence a latticework where theory weights are updated Bayesianly. When a theory — for example network effects (V15) — gets consistent support from several models, economic critical mass as well as biological ecology, the signal becomes stronger than any single model can give. The pattern between the models is the insight; individual models are only raw material.",
+   "ar": "الصلة بـAK1 مباشرة: النظام البيئي القائم على خمسة أفاق زمنية × خمس نظريات × أربعة أبعاد هو في جوهره إطار شبكي تُحدَّث فيه أوزان النظريات على طريقة بايز. عندما تحصل نظرية ما — مثل أثر الشبكة (V15) — على الدعم المتسق من عدة نماذج، الكتلة الحرجة الاقتصادية والبيئة البيولوجية معًا، تصبح الإشارة أقوى مما يعطيه أي نموذج مفرد. النمط بين النماذج هو الرؤية؛ أما النماذج المفردة فليست إلا مادة خام."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block6",
+   "en": "{\"rubrik\":\"Discipline → model → in investing\",\"rader\":[[\"Discipline\",\"Model in Munger\",\"Application\"],[\"Physics\",\"Critical mass, redundancy\",\"Network effects (V15) and back-up systems in the business\"],[\"Biology\",\"Evolution and extinction\",\"Creative destruction, eroding moats\"],[\"Psychology\",\"Biases and antidote\",\"Bubbles, buying dips, quarterly panic\"],[\"Mathematics\",\"Probability and compounding\",\"Expected value, compounding of the interest rate, Kelly\"],[\"History\",\"Manias and patterns\",\"Tulips to dotcom — what recurs\"]]}",
+   "ar": "{\"rubrik\":\"التخصص → النموذج → في الاستثمار\",\"rader\":[[\"التخصص\",\"النموذج عند منغر\",\"التطبيق\"],[\"الفيزياء\",\"الكتلة الحرجة، التكرار\",\"أثر الشبكة (V15) وأنظمة الاحتياط في النشاط\"],[\"الأحياء\",\"التطور والانقراض\",\"الهدم الإبداعي، تآكل الخندق التنافسي\"],[\"علم النفس\",\"الانحيازات والترياق\",\"الفقاعات، شراء التراجعات، هلع ربع سنوي\"],[\"الرياضيات\",\"الاحتمال والتراكم\",\"القيمة المتوقعة، تراكم سعر الفائدة، كيلي\"],[\"التاريخ\",\"الهواجس الجماعية والأنماط\",\"من الزنبق إلى الدوت كوم — ما يتكرر\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block7",
+   "en": "The one-model person has a hammer and sees nails everywhere. The many-models person sees the same reality from several angles — and what looks like a nail from one angle turns out to be a screw from another.",
+   "ar": "إنسان النموذج الواحد يملك مطرقة ويرى مسامير في كل مكان. وإنسان النماذج المتعددة يرى الواقع نفسه من زوايا عدة — وما يبدو مسمارًا من زاوية يتضح أنه برغي من زاوية أخرى."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:block8",
+   "en": "Which discipline is entirely missing in your own decision-making — biology, psychology, history or mathematics? Choose one and read thirty minutes a week about it, linked to one of your holdings. Note after a month: what question could you ask that you could not before?",
+   "ar": "أي تخصص غائب كليًا عن اتخاذك للقرارات — الأحياء أم علم النفس أم التاريخ أم الرياضيات؟ اختر واحدًا واقرأ عنه ثلاثين دقيقة أسبوعيًا، مربوطًا بأحد استثماراتك. ودوّن بعد شهر: أي سؤال صرت قادرًا على طرحه ولم تكن قادرًا من قبل؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:q",
+   "en": "What does Munger mean by »latticework of mental models«?",
+   "ar": "ماذا يقصد منغر بعبارة »الإطار الشبكي للنماذج الذهنية«؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:a0",
+   "en": "A technical analysis model with trendlines",
+   "ar": "نموذج تحليل فني بخطوط اتجاه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:a1",
+   "en": "A checklist with buy criteria",
+   "ar": "قائمة تحقق بمعايير الشراء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:a2",
+   "en": "A lattice of models from many disciplines on which experience is organized",
+   "ar": "هيكل من نماذج مستمدة من تخصصات كثيرة تُرتَّب عليه التجربة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:a3",
+   "en": "A database of historical stock market data",
+   "ar": "قاعدة بيانات عن بيانات البورصة التاريخية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz1:tips",
+   "en": "The key lies in the word lattice — something that holds several parts together at the same time.",
+   "ar": "المفتاح يكمن في كلمة الهيكل — شيء يضم أجزاء عدة معًا في الوقت نفسه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:q",
+   "en": "What is the consequence of mastering only a single model?",
+   "ar": "ما نتيجة إتقان نموذج واحد فقط؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:a0",
+   "en": "Everything starts to resemble a nail",
+   "ar": "كل شيء يبدأ في الشبه بمسمار"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:a1",
+   "en": "You automatically become more diversified",
+   "ar": "تصبح متنوعًا أكثر بشكل تلقائي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:a2",
+   "en": "You stop using models altogether",
+   "ar": "تتوقف عن استخدام النماذج كليًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:a3",
+   "en": "You make faster decisions without bias",
+   "ar": "تتخذ قرارات أسرع بلا انحياز"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz2:tips",
+   "en": "Munger lets one tool explain the whole phenomenon.",
+   "ar": "يترك منغر أداة واحدة تفسر الظاهرة بأكملها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:q",
+   "en": "How many models does Munger believe carry almost the entire load?",
+   "ar": "كم نموذجًا يرى منغر أنها تحمل العبء كله تقريبًا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:a0",
+   "en": "At least a thousand specialized models",
+   "ar": "ألف نموذج متخصص على الأقل"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:a1",
+   "en": "None — experience is enough",
+   "ar": "لا شيء — التجربة تكفي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:a2",
+   "en": "Only one: cash flow discounting",
+   "ar": "واحد فقط: خصم التدفقات النقدية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:a3",
+   "en": "Roughly 80–90 powerful models",
+   "ar": "نحو 80–90 نموذجًا قويًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap2:quiz3:tips",
+   "en": "It is about a manageable number — but from many different disciplines.",
+   "ar": "الأمر يتعلق بعدد يمكن التعامل معه — لكن من تخصصات مختلفة كثيرة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:titel",
+   "en": "Invert, always invert",
+   "ar": "اقلب، اقلب دائمًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:intro",
+   "en": "Munger borrowed from the mathematician Carl Gustav Jacobi: »man muss immer umkehren« — one must always invert. Instead of asking how to succeed, you ask how to fail with certainty — and then avoid that. It sounds simple, but it changes every analysis.",
+   "ar": "استعار منغر من عالم الرياضيات كارل غوستاف ياكوبي قوله »man muss immer umkehren« — يجب دائمًا أن تعكس. فبدلًا من أن تسأل كيف تنجح، تسأل كيف تفشل حتمًا — ثم تتجنب ذلك. يبدو هذا بسيطًا، لكنه يغير كل تحليل."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block1",
+   "en": "Munger's version of Jacobi is notorious: »All I want to know is where I'm going to die, so I'll never go there« — tell me where I die, and I will never go there. Munger recounts that as a young man he realized he was not smart enough to become the market's best — but he could become the market's least stupid. Inversion became his weapon: list what certainly destroys, and back away from it.",
+   "ar": "نسخة منغر من ياكوبي شهيرة: »كل ما أريد معرفته هو أين سأموت، حتى لا أذهب إلى هناك أبدًا« — قل لي أين أموت، فلن أذهب إلى هناك أبدًا. يحكي منغر أنه أدرك في شبابه أنه لم يكن ذكيًا بما يكفي ليصير الأفضل في السوق — لكنه كان يستطيع أن يصير الأقل غباءً في السوق. صار الانعكاس سلاحه: ضع قائمة بما يدمر حتمًا، ثم ابتعد عنه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block2",
+   "en": "Invert life first. The question is not »how do I become happy?« but »how do I become miserable with certainty?« — and the answers are tiresomely familiar: gambling and games, alcohol and drugs, envy, bitterness, bearing grudges against others' successes, living beyond your assets. Munger: »The safest way to get what you want is to try to deserve what you want.« The world is not yet crazy enough to reward a whole mass of undeserving people — merit is the strategy, not trickery.",
+   "ar": "اقلب الحياة أولًا. السؤال ليس »كيف أصبح سعيدًا؟« بل »كيف أصبح بائسًا حتمًا؟« — والأجوبة مألوفة إلى حد الملالة: القمار والميسر، والكحول والمخدرات، والحسد، والمرارة، وحمل الضغائن على نجاح الآخرين، والعيش فوق الأصول. منغر: »أأمن طريق لتنال ما تريد هو أن تحاول استحقاق ما تريد.« العالم لم يصر بعد مجنونًا بما يكفي ليكافئ حشدًا كاملًا من غير المستحقين — الاستحقاق هو الاستراتيجية، لا الاحتيال."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block3",
+   "en": "Then invert the investing. Do not ask »how do I find the next ten-bagger?« but »what kills capital permanently?«: paying too much and ignoring margin of safety, leverage that forces selling in crises, fraud and partners with the wrong incentives, thin liquidity, forgotten technological disruption — and in growth companies: capital burn that forces dilutive share issues (V19). If the list of causes of death is long and probable, the answer is pass — no matter how exciting the story is. AK1's risk matrix and scenario space are built exactly so: map first what can go wrong, price afterwards.",
+   "ar": "ثم اقلب الاستثمار. لا تسأل »كيف أجد المضاعف القادم؟« بل »ما الذي يقتل رأس المال قتلًا دائمًا؟«: الدفع أكثر من اللازم وتجاهل هامش الأمان، والرافعة المالية التي تفرض البيع في الأزمات، والاحتيال وشركاء ذوو حوافز خاطئة، والسيولة الرقيقة، والاضطراب التقني المنسي — وفي شركات النمو: حرق رأس المال الذي يفرض إصدار أسهم مخفف للملكية (V19). إذا كانت قائمة أسباب الموت طويلة ومحتملة فالجواب هو المرور — مهما كانت القصة مثيرة. مصفوفة المخاطر لدى AK1 وفضاء السيناريوهات مبنيان هكذا بالضبط: ارسم أولًا ما يمكن أن يخطئ، ثم سعّر بعده."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block4",
+   "en": "And then the most underrated sentence in the book becomes logical: »It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.« Avoiding stupidity is cheaper, more reliable and more repeatable than seeking brilliance. It is also the Short-Seller's whole logic in AK1: the analyst who systematically asks »where does this company die?« applies Munger to the upside idea — same tool, reversed direction.",
+   "ar": "وحينها تصبح أكثر جملة يُستهان بها في الكتاب منطقية: »من المدهش كم من ميزة طويلة الأجل جنى أشخاص مثلنا بمحاولة الثبات على عدم الغباء بدلًا من محاولة أن يكونوا فائقين الذكاء.« تجنب الغباء أرخص وأكثر موثوقية وأكثر قابلية للتكرار من السعي إلى البراعة. وهو أيضًا المنطق كله لدى Short-Seller في AK1: المحلل الذي يسأل منهجيًا »أين تموت هذه الشركة؟« يطبق منغر على فكرة الصعود — الأداة نفسها والاتجاه معكوس."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block5",
+   "en": "{\"rubrik\":\"Inverted due diligence — the questions that come first\",\"rader\":[[\"Area\",\"Question\"],[\"Capital\",\"How could the company be forced to issue shares and dilute me? (V19)\"],[\"Moat\",\"What is eating the moat in five years?\"],[\"Price\",\"What happens if the multiple halves while the business stays intact?\"],[\"Trust\",\"What incentive does the one who sold me the story have?\"],[\"Self\",\"Which bias makes me want to see this?\"]]}",
+   "ar": "{\"rubrik\":\"العناية الواجبة المقلوبة — الأسئلة التي تأتي أولًا\",\"rader\":[[\"المجال\",\"السؤال\"],[\"رأس المال\",\"كيف قد تُضطر الشركة إلى الإصدار وتخفيف حصتي؟ (V19)\"],[\"الخندق التنافسي\",\"ما الذي يلتهم الخندق التنافسي بعد خمس سنوات؟\"],[\"السعر\",\"ماذا يحدث إذا انخفض المضاعف إلى النصف بينما النشاط سليم؟\"],[\"الثقة\",\"أي حافز لدى من باعني القصة؟\"],[\"الذات\",\"أي انحياز يجعلني أريد رؤية هذا؟\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block6",
+   "en": "The question is rarely »how do I win?« but »how do I avoid the obvious ways of losing?«. Capital that survives gets the interest rate compounding for free — mortality sits in a few, recurring mistakes.",
+   "ar": "السؤال نادرًا ما يكون »كيف أفوز؟« بل »كيف أتجنب الطرق الواضحة للخسارة؟«. رأس المال الذي ينجو يحصل على تراكم سعر الفائدة مجانًا — أما الوفيات فتكمن في أخطاء قليلة متكررة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:block7",
+   "en": "Pick your largest holding. Write down five realistic paths to a permanent loss of fifty percent. If you cannot list five, either the company is magnificent — or you do not know it well enough to own it in that size.",
+   "ar": "اختر أكبر مركز لديك. اكتب خمسة طرق واقعية إلى خسارة دائمة بنسبة خمسين بالمئة. إن لم تستطع عدّ خمسة فإما أن الشركة رائعة — أو أنك لا تعرفها جيدًا بما يكفي لتملكها بهذا الحجم."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:q",
+   "en": "Who coined »Invert, always invert«, the principle Munger borrowed?",
+   "ar": "من صاغ عبارة »اقلب، اقلب دائمًا« التي استعار منغر المبدأ منها؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:a0",
+   "en": "Isaac Newton",
+   "ar": "إسحاق نيوتن"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:a1",
+   "en": "Carl Gustav Jacobi",
+   "ar": "كارل غوستاف ياكوبي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:a2",
+   "en": "Benjamin Graham",
+   "ar": "بنجامين غراهام"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:a3",
+   "en": "Charles Darwin",
+   "ar": "تشارلز داروين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz1:tips",
+   "en": "A mathematician — who solved problems by turning them around.",
+   "ar": "عالم رياضيات — كان يحل المشكلات بقلبها رأسًا على عقب."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:q",
+   "en": "What is the point of »Tell me where I die, and I will never go there«?",
+   "ar": "ما المغزى من عبارة »قل لي أين أموت، فلن أذهب إلى هناك أبدًا«؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:a0",
+   "en": "To identify and avoid deadly mistakes instead of seeking perfection",
+   "ar": "تحديد الأخطاء القاتلة وتجنبها بدلًا من السعي إلى الكمال"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:a1",
+   "en": "To find the best exit strategy for every stock",
+   "ar": "إيجاد أفضل استراتيجية خروج من السهم في كل حالة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:a2",
+   "en": "To short companies that are in crisis",
+   "ar": "بيع شركات تمر بأزمة على المكشوف"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:a3",
+   "en": "To time the market cycles",
+   "ar": "توقيت دورات السوق"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz2:tips",
+   "en": "It is about where you should not be — not about finding the nuggets.",
+   "ar": "الأمر يتعلق بالمكان الذي لا ينبغي أن تكون فيه — لا بإيجاد لآلئ الكنز."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:q",
+   "en": "What does Munger mean by »consistently not stupid«?",
+   "ar": "ماذا يقصد منغر بعبارة »الثبات على عدم الغباء«؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:a0",
+   "en": "To never take any risks at all",
+   "ar": "ألا تتحمل أيًّا من المخاطر إطلاقًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:a1",
+   "en": "To only buy index funds",
+   "ar": "أن تكتفي بشراء صندوق المؤشرات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:a2",
+   "en": "To trust experts in all decisions",
+   "ar": "أن تثق بالخبراء في كل القرارات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:a3",
+   "en": "Avoiding big mistakes gives more lasting advantage than chasing genius",
+   "ar": "تجنب الأخطاء الكبيرة يمنح ميزة أكثر دوامًا من مطاردة العبقرية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap3:quiz3:tips",
+   "en": "Compare the cost of a big mistake with the gain of a brilliant hit.",
+   "ar": "قارن تكلفة خطأ كبير بمكسب إصابة بارعة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:titel",
+   "en": "Circle of competence and sit-on-your-ass investing",
+   "ar": "دائرة الكفاءة واستثمار البقاء ساكنًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:intro",
+   "en": "Munger knew what he did not know — and built his style on sitting still. Knowledge of where your circle ends is more valuable than a large circle. And once you have found the right company inside the circle, activity is your enemy, not your friend.",
+   "ar": "عرف منغر ما لا يعرفه — وبنى أسلوبه على البقاء ساكنًا. المعرفة بمكان انتهاء دائرتك أثمن من دائرة كبيرة. وحين تجد الشركة الصحيحة داخل الدائرة، يصبح النشاط عدوك لا صديقك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block1",
+   "en": "The circle: »You have to figure out what your own aptitudes are. If you play games where other people have the aptitudes and you don't, you're going to lose.« What is decisive is not how interesting a company is but whether you understand it better than the one selling you the stock. Munger again: »Knowing what you don't know is more useful than being brilliant.« Admitting the circle's edge is not weakness — it is the cheapest risk management there is.",
+   "ar": "الدائرة: »عليك أن تكتشف ما هي مواهبك أنت. إذا لعبت مباريات يملك الآخرون مواهبها ولا تملكها أنت فستخسر.« الحاسم ليس كم تكون الشركة مثيرة للاهتمام بل إن كنت تفهمها أفضل من الذي يبيع لك السهم فيها. منغر مجددًا: »معرفة ما لا تعرفه أنفع من أن تكون بارعًا.« الإقرار بحافة الدائرة ليس ضعفًا — بل هو أرخص إدارة مخاطر موجودة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block2",
+   "en": "Sit-on-your-ass investing is Munger's self-ironic name for the style: buy very rarely, buy right, then sit still. »The big money is not in the buying and the selling, but in the waiting.« Why? Because every decision is a new exposure to biases, costs and wear — too many decisions wear you out. Few, considered decisions in companies you truly understand beat many half-good ones. Berkshire made its fortune on roughly a dozen decisions in forty years, not on forty decisions a year.",
+   "ar": "استثمار البقاء ساكنًا هو الاسم الساخر من الذات الذي أطلقه منغر على هذا الأسلوب: اشترِ نادرًا جدًا، واشترِ الصحيح، ثم ابقَ ساكنًا. »المال الكبير ليس في الشراء والبيع بل في الانتظار.« لماذا؟ لأن كل قرار تعرض جديد للانحيازات والتكاليف والاهتراء — كثرة القرارات تستنزفك. قليل من القرارات المدروسة في شركات تفهمها حقًا يتفوق على كثير من القرارات المتوسطة. صنع بيركشاير ثروته بنحو اثني عشر قرارًا في أربعين عامًا، لا بأربعين قرارًا في العام."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block3",
+   "en": "But sitting is not free — it is only rational if the chair is right. The precondition is companies whose revenue is predictable enough not to require revaluation every quarter; in AK1's vocabulary, revenue stability (V12) is the natural measurable for whether you are allowed to sit still. If the company has no stable revenue base, no honest capital allocation and a moat that depends on next quarter's miracle, then sitting still is not patience but denial.",
+   "ar": "لكن البقاء ساكنًا ليس مجانيًا — فهو عقلاني فقط إذا كان الكرسي صحيحًا. الشرط المسبق هو شركات تكون الإيرادات فيها متوقعة بما يكفي لعدم تطلب إعادة تقييم كل ربع سنة؛ وفي قاموس AK1 فإن استقرار الإيرادات (V12) هو المقياس الطبيعي لما إذا كان مسموحًا لك بالبقاء ساكنًا. إذا لم تكن لدى الشركة قاعدة إيرادات مستقرة، ولا تخصيص رأسمالي نزيه، والخندق التنافسي لديها يعتمد على معجزة الربع القادم، فالبقاء الساكن ليس صبرًا بل إنكار."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block4",
+   "en": "Concentration belongs to the same logic. Munger considered compulsive over-diversification fundamentally madness when you genuinely understand a business: it protects ignorance but suffocates the edge. At the same time, concentration requires genuine edge — otherwise breadth is safer. The AK1 connection: Kelly logic sizes the position by edge and uncertainty; sit-still works when the edge is large and the probability stable, and the Monte Carlo simulation shows what patience is worth in crowns.",
+   "ar": "التركيز ينتمي إلى المنطق نفسه. عدّ منغر التنويع المفرط القسري حماقة جوهرية حين تفهم نشاطًا تجاريًا فهمًا حقيقيًا: إنه يحمي الجهل لكنه يخنق الأفضلية. وفي الوقت نفسه يتطلب التركيز أفضلية حقيقية — وإلا فالاتساع أكثر أمانًا. صلة AK1: منطق كيلي يحدد حجم المركز بحسب الأفضلية وعدم اليقين؛ والبقاء ساكنًا ينجح حين تكون الأفضلية كبيرة والاحتمال مستقرًا، ومحاكاة مونت كارلو تُظهر قيمة الصبر بالكرونات."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block6",
+   "en": "Activity is a tax you pay in brokerage, biases and wear. The big money lies in the waiting — but only if you are sitting on the right chair.",
+   "ar": "النشاط ضريبة تدفعها عمولات وانحيازات واهتراءً. المال الكبير يكمن في الانتظار — لكن فقط إن كنت جالسًا على الكرسي الصحيح."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:block7",
+   "en": "Count your trades over the past twelve months. Sort every trade into two piles: driven by a genuinely new insight, or driven by boredom, regret or other people's price moves? The second pile is pure activity — set as your goal to halve it next year.",
+   "ar": "عُد صفقاتك خلال الاثني عشر شهرًا الماضية. صنّف كل صفقة في كومتين: مدفوعة برؤية جديدة حقيقية، أم مدفوعة بالملل أو الندم أو تحركات الأسعار لدى الآخرين؟ الكومة الثانية نشاط خالص — اجعل هدفك أن تنصفها العام القادم."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:q",
+   "en": "What is meant by circle of competence?",
+   "ar": "ما المقصود بدائرة الكفاءة؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:a0",
+   "en": "The sector that performed best in the past year",
+   "ar": "القطاع الذي حقق أفضل أداء في العام الماضي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:a1",
+   "en": "Everything you have read a research report about",
+   "ar": "كل ما قرأت تقريرًا بحثيًا عنه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:a2",
+   "en": "Your broker's recommendation list",
+   "ar": "قائمة توصيات الوسيط لديك"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:a3",
+   "en": "Areas where your understanding exceeds the market's — and you know where the edge goes",
+   "ar": "المجالات التي يفوق فيها فهمك فهم السوق — وتعرف أين يمر الحد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz1:tips",
+   "en": "The important thing is not only what is inside the circle but that you can see its boundary.",
+   "ar": "المهم ليس فقط ما في داخل الدائرة بل أن تكون قادرًا على رؤية حدّها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:q",
+   "en": "What does »The big money is in the waiting« mean?",
+   "ar": "ماذا تعني عبارة »المال الكبير في الانتظار«؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:a0",
+   "en": "Value is created in holding the right companies for a long time, not in active trading",
+   "ar": "القيمة تُخلق في الاحتفاظ بالشركات الصحيحة طويلًا، لا في التداول النشط"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:a1",
+   "en": "You should wait for the perfect entry before buying",
+   "ar": "ينبغي انتظار نقطة الدخول المثالية قبل الشراء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:a2",
+   "en": "You should stay in cash between the bubbles",
+   "ar": "ينبغي البقاء في النقد بين الفقاعات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:a3",
+   "en": "Day trading pays off in the long run",
+   "ar": "المضاربة اليومية مجدية على المدى الطويل"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz2:tips",
+   "en": "The word waiting refers to the time after the purchase, not before.",
+   "ar": "كلمة الانتظار تشير إلى الوقت بعد الشراء، لا قبله."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:q",
+   "en": "Why does Munger warn against too many decisions?",
+   "ar": "لماذا يحذر منغر من كثرة القرارات؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:a0",
+   "en": "Brokerage costs always become elevated",
+   "ar": "تكاليف السمسرة ترتفع دائمًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:a1",
+   "en": "Analysts dislike active traders",
+   "ar": "المحللون لا يحبون المتداولين النشطين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:a2",
+   "en": "More decisions wear you down, activate biases and increase the attrition — a few considered choices beat many half-good ones",
+   "ar": "كثرة القرارات تُنهك وتفعّل الانحيازات وتزيد الاهتراء — قليل من الخيارات المدروسة يتفوق على كثير من المتوسطة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:a3",
+   "en": "It is illegal to trade too often in certain jurisdictions",
+   "ar": "التداول المفرط غير قانوني في بعض الولايات القضائية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap4:quiz3:tips",
+   "en": "Every decision costs more than the brokerage — consider what happens to judgment at a high decision rate.",
+   "ar": "كل قرار يكلف أكثر من العمولة — فكر في ما يطرأ على البصيرة عند إيقاع قرار مرتفع."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:titel",
+   "en": "Misjudgment I — incentives, denial, consistency and deprival",
+   "ar": "سوء الحكم الأول — الحوافز، والإنكار، والاتساق، والحرمان"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:intro",
+   "en": "In 1995 Munger held his most famous talk: The Psychology of Human Misjudgment, a catalogue of roughly twenty-five cognitive tendencies that systematically warp human judgment. We begin with the four that do the most damage in business life: incentive-caused bias, denial, consistency/first-conclusion and deprival super-reaction.",
+   "ar": "في عام 1995 ألقى منغر أشهر محاضراته: The Psychology of Human Misjudgment، وهي فهرس لنحو خمسة وعشرين نزعة معرفية تحرف البصيرة البشرية بصورة منهجية. نبدأ بالأربع التي تسبب أكبر ضرر في عالم الأعمال: انحياز الحوافز، والإنكار، والاتساق/الاستنتاج الأول، وردة الفعل المفرطة على الحرمان."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block1",
+   "en": "Incentive-caused bias is first and strongest: »Show me the incentive and I will show you the outcome.« Munger's classic example is Federal Express, where the night shift long failed to sort the packages on time. The problem was not the staff but the system: when the shift was paid by the hour, there was no reason to finish. When the company instead paid per completed shift, the problem was in principle solved overnight. Conclusion for the investor: never trust blindly in forecasts from those who earn by you believing them — salespeople, IR chiefs, sponsored analysts. Always ask who pays for your information.",
+   "ar": "انحياز الحوافز أول النزعات وأقواها: »أرني الحافز وأرِك النتيجة.« مثال منغر الكلاسيكي هو Federal Express، حيث ظل فريق الليل فترة طويلة عاجزًا عن فرز الطرود في وقتها. لم تكن المشكلة في الموظفين بل في النظام: ما دام الفريق يتقاضى أجره بالساعة فلا سبب يدعوه إلى إنجاز العمل. وحين دفعت الشركة بدلًا من ذلك بحسب كل وردية مكتملة، حُلّت المشكلة عمليًا في ليلة واحدة. الخلاصة للمستثمر: لا تثق أبدًا ثقة عمياء بتوقعات من يكسب من اعتقادك بها — البائعون ومديرو علاقات المستثمرين والمحللون الممولون. اسأل دائمًا: من يدفع مقابل معلوماتك؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block2",
+   "en": "Pain-avoiding psychological denial: when reality is too painful, it is distorted. The alcoholic is convinced he can stop whenever he wants; the grieving can deny the obvious. In the portfolio, denial takes on a discreet language: holdings that have done badly are redefined as »long-term«, theses that have cracked are called »too early«. Denial is comfortable in the week and expensive in the decade — that is why you need predefined conditions, determined before the pain is there.",
+   "ar": "الإنكار النفسي اتقاءً للألم: حين يصبح الواقع مؤلمًا أكثر من اللازم يتشوه. المدمن على الكحول مقتنع بأنه يستطيع التوقف متى شاء؛ والحزين قد ينكر البديهي. في المحفظة يتخذ الإنكار لغة مهذبة: الملكيات التي ساء أداؤها يعاد تعريفها بوصفها »طويلة الأمد«، والأطروحات المتصدعة توصف بأنها »مبكرة أكثر من اللازم«. الإنكار مريح على مدار الأسبوع وباهظ الثمن على مدار العقد — لهذا تحتاج إلى شروط محددة سلفًا، تُقر قبل أن يوجد الألم."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block3",
+   "en": "First-conclusion bias and consistency: »The mind is a lot like the human egg. When one sperm gets in, it shuts down so the next one can't get in.« The brain locks onto its first conclusion and then defends it against everything. Munger points to Darwin as the antidote: his greatness lay not in being right first but in hunting his own mistake — he immediately noted down observations that spoke against his theory, before they could be forgotten. The exercise for you: always write the best argument AGAINST your thesis before you act on it.",
+   "ar": "انحياز الاستنتاج الأول والاتساق: »العقل يشبه كثيرًا البويضة البشرية. حين يدخل حيوان منوي واحد تُغلق في وجه التالي.« ينغلق الدماغ على استنتاجه الأول ثم يدافع عنه ضد كل شيء. يشير منغر إلى داروين بوصفه الترياق: لم تكمن عظمته في أن يكون مصيبًا أولًا بل في مطاردة خطئه هو — كان يدوّن فورًا الملاحظات التي تناقض نظريته، قبل أن تُنسى. تمرينك أنت: اكتب دائمًا أقوى حجة ضد أطروحتك قبل أن تتصرف بناءً عليها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block4",
+   "en": "Deprival super-reaction syndrome is Munger's name for what we would today call loss aversion on steroids: when we are deprived of something we own — or almost own — we react disproportionately strongly. That is why auctions escalate, why labor conflicts turn violent over small benefits, and why investors refuse to sell at a loss »until it comes back«. The purchase price becomes a possession to defend. The antidote is rules not tied to your anchor price: why you own, at what probability, and what must hold for you to be wrong.",
+   "ar": "متلازمة ردة الفعل المفرطة على الحرمان هو اسم منغر لما نسميه اليوم النفور من الخسارة في أقصى صوره: حين نُحرم من شيء نملكه — أو نكاد نملكه — نتفاعل بقوة لا تتناسب. لهذا تتصاعد المزادات، ولهذا تتحول نزاعات العمل إلى عنف من أجل منافع صغيرة، ولهذا يرفض المستثمرون البيع بخسارة »حتى يعود السعر«. يصبح سعر الشراء ملكية يدافع عنها. الترياق هو قواعد غير مرتبطة بسعرك المرجعي: لماذا تملك، وبأي احتمال، وما الذي يجب أن يتحقق لتكون مخطئًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block5",
+   "en": "{\"rubrik\":\"Tendency → mechanism → antidote\",\"rader\":[[\"Tendency\",\"Mechanism\",\"Antidote\"],[\"Incentive bias\",\"The one who pays steers the conclusion\",\"Map who finances the source\"],[\"Denial\",\"Painful information is filtered away\",\"Predefined exit conditions in a calm state\"],[\"First conclusion / consistency\",\"The brain locks onto conclusion number one\",\"Write the best counterargument first\"],[\"Deprival super-reaction\",\"Loss of one's own feels excessively large\",\"Rules with no link to the purchase price\"]]}",
+   "ar": "{\"rubrik\":\"النزعة → الآلية → الترياق\",\"rader\":[[\"النزعة\",\"الآلية\",\"الترياق\"],[\"انحياز الحوافز\",\"من يدفع يقود الاستنتاج\",\"ارسم من يمول المصدر\"],[\"الإنكار\",\"المعلومات المؤلمة تُرشَّح بعيدًا\",\"شروط خروج محددة سلفًا في حالة هدوء\"],[\"الاستنتاج الأول / الاتساق\",\"الدماغ ينغلق على الاستنتاج الأول\",\"اكتب أقوى حجة معارضة أولًا\"],[\"ردة الفعل المفرطة على الحرمان\",\"خسارة ما تملكه تبدو مبالغة في ضخامتها\",\"قواعد بلا صلة بسعر الشراء\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block6",
+   "en": "Most bad decisions are not stupid — they are logical answers to wrong incentives. Fix the incentive and the »stupidity« disappears: Show me the incentive and I will show you the outcome.",
+   "ar": "معظم القرارات السيئة ليست غبية — بل أجوبة منطقية على حوافز خاطئة. صحّح الحافز ويختفي »الغباء«: أرني الحافز وأرِك النتيجة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:block7",
+   "en": "Which holding do you refuse to sell »until it comes back«? Write down the price you paid — then cross it out. Without your anchor point: what is the company worth, and would you buy it today?",
+   "ar": "أي مركز ترفض بيعه »حتى يعود«؟ اكتب السعر الذي اشتريت به — ثم اشطبه. من دون نقطتك المرجعية: كم تساوي الشركة، وهل كنت ستشتريها اليوم؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:q",
+   "en": "What does the Federal Express example show?",
+   "ar": "ماذا يوضح مثال Federal Express؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:a0",
+   "en": "That night workers are less motivated as a group",
+   "ar": "أن عمال الليل أقل تحفيزًا كجماعة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:a1",
+   "en": "That technology always beats psychology",
+   "ar": "أن التقنية تتفوق دائمًا على علم النفس"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:a2",
+   "en": "That the right incentive solved an impossible logistics problem almost immediately",
+   "ar": "أن الحافز الصحيح حل مشكلة لوجستية مستعصية تقريبًا على الفور"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:a3",
+   "en": "That bonuses never work",
+   "ar": "أن المكافآت لا تنجح أبدًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz1:tips",
+   "en": "The staff were the same before and after — it was something else that changed.",
+   "ar": "كان الموظفون أنفسهم قبل وبعد — تغير شيء آخر."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:q",
+   "en": "What does Munger illustrate with the egg-and-sperm analogy?",
+   "ar": "ما الذي يوضحه منغر بتشبيه البويضة والحيوان المنوي؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:a0",
+   "en": "That ideas fertilize each other in teams",
+   "ar": "أن الأفكار تلقح بعضها بعضًا داخل الفرق"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:a1",
+   "en": "That creativity requires many parallel ideas",
+   "ar": "أن الإبداع يتطلب أفكارًا متوازية كثيرة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:a2",
+   "en": "That memory selects information automatically",
+   "ar": "أن الذاكرة تنتقي المعلومات تلقائيًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:a3",
+   "en": "That the brain locks onto the first conclusion and shuts out the next",
+   "ar": "أن الدماغ ينغلق على الاستنتاج الأول ويصدّ ما بعده"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz2:tips",
+   "en": "It is about what happens after the first conclusion has entered.",
+   "ar": "الأمر يتعلق بما يحدث بعد دخول الاستنتاج الأول."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:q",
+   "en": "Deprival super-reaction syndrome mainly explains why …",
+   "ar": "متلازمة ردة الفعل المفرطة على الحرمان تفسر قبل كل شيء لماذا …"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:a0",
+   "en": "… we buy more of a falling stock",
+   "ar": "… نشتري المزيد من السهم الهابط"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:a1",
+   "en": "… losses of one's own feel excessively large and auctions are driven up",
+   "ar": "… خسائر ما نملكه تبدو مبالغة في ضخامتها وتُلهب المزادات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:a2",
+   "en": "… we like free things and gifts",
+   "ar": "… نحب الأشياء المجانية والهدايا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:a3",
+   "en": "… we listen to authorities",
+   "ar": "… ننصت للسلطات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap5:quiz3:tips",
+   "en": "Think of the feeling when something you almost had slips out of your hands.",
+   "ar": "تذكر الشعور حين ينزلق من يديك شيء كدت تملكه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:titel",
+   "en": "Misjudgment II — social proof, contrast, availability, authority",
+   "ar": "سوء الحكم الثاني — الإثبات الاجتماعي، والتباين، وسهولة الاستحضار، والسلطة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:intro",
+   "en": "Four tendencies that steer us without our noticing: we follow the group, we measure against the wrong reference, we weigh the easily available too heavily, and we heed the coat. Together they explain a surprisingly large share of the market's behavior.",
+   "ar": "أربع نزعات تقودنا من دون أن نشعر: نتبع الجماعة، ونقيس على مرجع خاطئ، ونرجّح ما يسهل استحضاره بأكثر من وزنه، ونصغي إلى المعطف. ومجتمعةً تفسر حصة مدهشة من سلوك السوق."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block1",
+   "en": "Social-proof tendency: we are evolutionarily programmed to be influenced by what others do, because for thousands of years the group was survival. Munger's example is the Kitty Genovese case, where a number of eyewitnesses allegedly heard and saw an assault without intervening — everyone assumed someone else would act. On the market the same mechanics takes form as momentum, FOMO and »all the analyses have a buy on it, after all«. Social proof is at its most powerful precisely when information is at its most uncertain — which is exactly when the stock exchange as a whole swings the most.",
+   "ar": "نزعة الإثبات الاجتماعي: نحن مبرمجون تطورًا للتأثر بما يفعله الآخرون، لأن الجماعة كانت تعني البقاء لآلاف السنين. مثال منغر هو قضية كيتي جينوفيز، حيث يُزعم أن عددًا من شهود العيان سمعوا وشاهدوا اعتداءً من دون أن يتدخلوا — افترض الجميع أن أحدهم سيتصرف. في السوق يتخذ المسار نفسه شكل الزخم وFOMO و»كل التحليلات توصية شراء عليه أصلًا«. يكون الإثبات الاجتماعي في أقوى صوره بالضبط حين تكون المعلومات في أكثرها غموضًا — وهو بالضبط حين تتأرجح البورصة ككل أكثر ما يكون."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block2",
+   "en": "Contrast-misreaction tendency: we do not perceive absolute levels but changes against the most recent — the frog that does not jump out of slowly heated water. Munger warns against everyone who controls your reference point: the broker who shows three awful properties before the »reasonable« one, the company that lowers margins one percent at a time until the moat is gone. The antidote is to always look at absolute series — levels and trends from a zero point — never only at the difference from last quarter.",
+   "ar": "نزعة سوء التفاعل مع التباين: لا ندرك المستوى المطلق بل التغيرات مقارنة بالأحدث — كالضفدع التي لا تقفز من الماء الذي يُسخَّن ببطء. يحذر منغر من كل من يتحكم في نقطتك المرجعية: الوسيط الذي يعرض ثلاثة عقارات رديئة قبل العقار »المعقول«، والشركة التي تخفض الهوامش واحدًا بالمئة في كل مرة حتى يختفي الخندق التنافسي. الترياق هو النظر دائمًا إلى السلاسل المطلقة — المستويات والاتجاهات انطلاقًا من نقطة الصفر — لا إلى الفرق عن الربع السابق فحسب."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block3",
+   "en": "Availability-misweighing tendency: the easily available is weighed too heavily — the latest quarter, the shocking headline, the friend's tenfold case. Munger: an idea is not worth more just because it is easily available. What is easy to remember feels true, and what is vivid feels probable. The antidote is base rates and long history: how often does this really happen, over ten years — not how vivid does the latest example feel?",
+   "ar": "نزعة الترجيح الخاطئ لسهولة الاستحضار: ما يسهل الوصول إليه يُرجَّح بأكثر من وزنه — الربع الأخير، والعنوان الصادم، وحالة الصديق التي تضاعفت عشر مرات. منغر: الفكرة لا تساوي أكثر لمجرد أنها سهلة الاستحضار. ما يسهل تذكره يبدو صادقًا، وما يكون حيًّا يبدو محتملًا. الترياق هو التكرارات الأساسية والتاريخ الطويل: كم مرة يحدث هذا فعلًا عبر عشر سنوات، لا مدى حيوية آخر مثال؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block4",
+   "en": "Authority-misinfluence tendency: Milgram's experiment showed that perfectly ordinary people deliver (what they believe are) dangerous electric shocks when a person in a lab coat instructs them to continue. In finance the coat is called a CFA charter, »top-ranked analyst«, founder-CEO or TV studio. The connection to AK1: cognitive profiling via /profil measures, among other things, your susceptibility to social proof and authority belief — your result shows where your personal checklist must begin. And for the Short-Seller, authority + social proof is the fuel in almost every pumped story: an admired figurehead plus a rising share price is not, of course, evidence — it is mechanics.",
+   "ar": "نزعة سوء التأثر بالسلطة: أظهرت تجربة ميلغرام أن أشخاصًا عاديين تمامًا يقدمون صدمات كهربائية (يظنونها) خطيرة حين يأمرهم شخص بمعطف مختبر بالاستمرار. في عالم المالية يتخذ المعطف اسم شهادة CFA، أو »المحلل الأعلى تصنيفًا«، أو الرئيس التنفيذي المؤسس، أو استوديو التلفزيون. الصلة بـAK1: التوصيف المعرفي عبر /profil يقيس من بين أمور أخرى ميلك إلى الإثبات الاجتماعي والإيمان بالسلطة — نتيجتك تُظهر أين يجب أن تبدأ قائمة التحقق الشخصية لديك. وبالنسبة إلى Short-Seller فإن السلطة مع الإثبات الاجتماعي هما وقود كل قصة منتفخة تقريبًا: رجل يحظى بالإعجاب مع الدورة الصاعدة للسهم ليس دليلًا — بل هو الميكانيكا ذاتها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block5",
+   "en": "When everyone sees the same thing it is no longer information — it is company. Consensus feels safe precisely because it is consensus, and the stock exchange does not pay for safety but for deviation that proves right.",
+   "ar": "حين يرى الجميع الشيء نفسه لم يعد معلومة — بل مؤانسة. الإجماع يبعث على الأمان لأنه إجماع بالضبط، والبورصة لا تدفع مقابل الأمان بل مقابل الانحراف الذي يثبت أنه صحيح."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:block6",
+   "en": "Take your latest purchase and trace the source backwards: did the impulse come from your own analysis or from »everyone« talking about the company? Then run /profil and see how your social proof score matches the answer — there is no shame in being normal, only a cost in not knowing it.",
+   "ar": "خذ آخر عملية شراء لك وتتبع المصدر إلى الوراء: هل جاءت الشرارة من تحليلك الخاص أم من أن »الجميع« كانوا يتحدثون عن الشركة؟ ثم نفّذ /profil وانظر كيف تتوافق درجتك في الإثبات الاجتماعي مع الجواب — لا عار في أن تكون عاديًا، بل التكلفة في ألا تعرف ذلك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:q",
+   "en": "What is the point of the Kitty Genovese case in Munger's talk?",
+   "ar": "ما مغزى قضية كيتي جينوفيز في محاضرة منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:a0",
+   "en": "That cities are dangerous environments",
+   "ar": "أن المدن بيئات خطرة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:a1",
+   "en": "That social proof creates diffusion of responsibility — everyone waits for someone else to act",
+   "ar": "أن الإثبات الاجتماعي يخلق تشتتًا للمسؤولية — الجميع ينتظر أن يتصرف شخص آخر"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:a2",
+   "en": "That media exaggerates crime",
+   "ar": "أن الإعلام يبالغ في الجريمة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:a3",
+   "en": "That the police respond slowly",
+   "ar": "أن الشرطة تستجيب ببطء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz1:tips",
+   "en": "Consider what each one believed the others were doing.",
+   "ar": "فكر فيما ظنه كل فرد أن الآخرين يفعلونه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:q",
+   "en": "What does the frog analogy warn against?",
+   "ar": "ممَّ يحذر تشبيه الضفدع؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:a0",
+   "en": "That gradual deteriorations go undetected because the contrast against the most recent is too low",
+   "ar": "أن التدهور التدريجي لا يُكتشف لأن التباين مع الأحدث منخفض أكثر من اللازم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:a1",
+   "en": "That you should jump between companies more often",
+   "ar": "أنه ينبغي التنقل بين الشركات بمزيد من التكرار"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:a2",
+   "en": "That warming is dangerous for the return",
+   "ar": "أن ارتفاع الحرارة خطر على العائد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:a3",
+   "en": "That frogs can be fooled by us",
+   "ar": "أن الضفادع يمكن خداعها من قبلنا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz2:tips",
+   "en": "The problem is not the speed itself but what we compare with.",
+   "ar": "المشكلة ليست السرعة ذاتها بل ما نقارن به."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:q",
+   "en": "What is the financial world's variant of Milgram's lab coat?",
+   "ar": "ما هي صيغة معطف ميلغرام المعملي في عالم المالية؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:a0",
+   "en": "That we trade via apps instead of brokers",
+   "ar": "أننا نتداول عبر التطبيقات بدلًا من الوسطاء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:a1",
+   "en": "That we follow price charts blindly",
+   "ar": "أننا نتبع الرسوم البيانية للأسهم بلا تفكير"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:a2",
+   "en": "That we trust family more than strangers",
+   "ar": "أننا نثق بالأقارب أكثر من الغرباء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:a3",
+   "en": "That titles and expert labels give directives an edge they have not earned",
+   "ar": "أن الألقاب وملصقات الخبراء تمنح التوجيهات تفوقًا لا تستحقه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap6:quiz3:tips",
+   "en": "Consider what makes you accept a claim without evidence.",
+   "ar": "فكر في ما يجعلك تقبل ادعاءً من دون دليل."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:titel",
+   "en": "Misjudgment III — reciprocation, association, liking and envy",
+   "ar": "سوء الحكم الثالث — المعاملة بالمثل، والاقتران، والود، والحسد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:intro",
+   "en": "The social tendencies are the hardest to see in yourself, because they dress up as virtues: generosity, loyalty, kindness. Munger shows how each one buys your judgment without you noticing the transaction.",
+   "ar": "النزعات الاجتماعية هي الأصعب رؤيةً في النفس، لأنها تتنكر في هيئة فضائل: الكرم، والوفاء، واللطف. يُظهر منغر كيف تشتري كل نزعة من بصيرتك من دون أن تلحظ الصفقة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block1",
+   "en": "Reciprocation tendency: giving and taking creates debt deeper than we think. The broker's lunch, the research report with the company's logo, the conference in the Alps, the »free« webinar — small gifts buy great conformity, because the one who has received feels indebted. Munger notes that the tendency is so strong that it works even when the gift is unwanted and when the giver has an obvious interest. The antidote is deciding in advance what a relationship may cost you in judgment — and saying no to gifts from a party with an interest in your conclusion.",
+   "ar": "نزعة المعاملة بالمثل: العطاء والأخذ يخلقان دَينًا أعمق مما نظن. غداء الوسيط، وتقرير البحث بشعار الشركة، والمؤتمر في جبال الألب، والندوة الإلكترونية »المجانية« — الهدايا الصغيرة تشتري درجة عالية من المطابقة، لأن من تلقى يشعر بأنه مدين. يلاحظ منغر أن النزعة قوية إلى حد أنها تعمل حتى حين تكون الهدية غير مرغوبة وحين يكون للمهدي مصلحة واضحة. الترياق هو أن تقرر سلفًا ما يجوز أن تكلفك العلاقة في بصيرتك — وأن ترفض الهدايا من طرف له مصلحة في استنتاجك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block2",
+   "en": "Influence-from-merely-association: feelings are automatically transferred to unrelated objects. That is why celebrity advertising works — the Porsche ad associates the car with something beautiful, not with mechanics — and that is why the messenger with bad news gets punished. In the portfolio: companies you have made money on before feel safe regardless of today's price, and a pleasant product is taken to mean the stock is good. Note the nuance: brand (V14) is association's commercial cousin — the difference is that a moat brand is association that competitors cannot replicate with advertising money. Association that can be bought for a campaign is not a moat.",
+   "ar": "التأثر بمجرد الاقتران: المشاعر تنتقل تلقائيًا إلى أشياء لا صلة بها. لهذا تنجح إعلانات المشاهير — فإعلان بورشه يقرن السيارة بشيء جميل لا بالميكانيكا — ولهذا يُعاقَب رسول الأخبار السيئة. في المحفظة: الشركات التي ربحت منها سابقًا تبدو آمنة بغض النظر عن سعر اليوم، والمنتج اللطيف يوحي بأن السهم جيد. ولاحظ الفرق الدقيق: العلامة التجارية (V14) ابنة عم الجانب التجاري للاقتران — والفرق أن العلامة التجارية القائمة على الخندق التنافسي هي اقتران لا يستطيع المنافسون نسخه بأموال الإعلانات. الاقتران الذي يمكن شراؤه بحملة إعلانية ليس خندقًا تنافسيًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block3",
+   "en": "Liking/distorting tendency and doubt-avoidance: we buy from those we like and automatically like what they sell — charming founders, pleasant IR departments, sleek presentations. And doubt is uncomfortable; evolutionarily, hesitation has been dangerous, so the brain hurries to fill the gaps with story instead of enduring the uncertainty. The antidotes are boring and real: judge the numbers before the person, and allow »I don't know« as a fully valid position — while waiting for better information it is a position, not a failure.",
+   "ar": "نزعة الميل المحرِّف وتجنب الشك: نشتري ممن نحب ونحب تلقائيًا ما يبيعونه — مؤسسون ساحرون، وإدارات علاقات مستثمرين لطيفة، وعروض أنيقة. والشك مزعج؛ فالتردد كان خطرًا عبر التطور، لذا يهرع الدماغ إلى ملء الفجوات بقصة بدل تحمل اللايقين. الترياقات مملة وحقيقية: احكم على الأرقام قبل الأشخاص، واسمح بعبارة »لا أعرف« بوصفها مركزًا كامل الأهلية — ففي انتظار معلومات أفضل هي مركز لا فشل."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block4",
+   "en": "Envy/jealousy tendency received Munger's harshest verdict: »Envy is the stupidest sin. Well, there's no upside to it at all. It's 100 % destructive.« It is the only sin without any pleasure whatsoever — and the market's most profitable to let go of. Envy is activated by comparisons: the neighbor's return, this year's winners, the index this year. The result is mechanical: buy what has already run, sell what has been still. In AK1 terms, the antidote is choosing your time horizon among the five — and being measured only against it. Comparisons on the wrong horizon are envy's springboard; comparison on the right horizon is learning.",
+   "ar": "نالت نزعة الحسد أقسى أحكام منغر: »الحسد أغبى الخطايا. نعم، لا مكسب منه إطلاقًا. إنه مدمر بنسبة 100 %.« إنها الخطيئة الوحيدة بلا أي متعة على الإطلاق — وأكثر خطايا السوق ربحيةً في تركها. يُستثار الحسد بالمقارنات: العائد الذي حققه الجار، وفائزو السنة، والمؤشر هذه السنة. والنتيجة ميكانيكية: شراء ما سبق أن قفز، وبيع ما بقي ساكنًا. وبمصطلحات AK1 فإن الترياق هو اختيار أفقك الزمني من بين الخمسة — وألا تُقاس إلا عليه. المقارنة على الأفق الخاطئ منصة قفز الحسد؛ والمقارنة على الأفق الصحيح تعلّم."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block5",
+   "en": "{\"rubrik\":\"Social tendencies → mechanism → antidote\",\"rader\":[[\"Tendency\",\"Mechanism\",\"Antidote\"],[\"Reciprocation\",\"Gifts and favors create guilt\",\"Set the cost in advance; say no\"],[\"Association\",\"Feelings transfer to unrelated objects\",\"Separate the feeling from the substance\"],[\"Liking\",\"We buy from those we like\",\"Judge the numbers before the person\"],[\"Envy\",\"Comparison activates the urge to catch up\",\"Measure only against your own horizon\"],[\"Doubt avoidance\",\"Uncomfortable gaps are filled with story\",\"Allow 'I don't know' as a position\"]]}",
+   "ar": "{\"rubrik\":\"النزعات الاجتماعية → الآلية → الترياق\",\"rader\":[[\"النزعة\",\"الآلية\",\"الترياق\"],[\"المعاملة بالمثل\",\"الهدايا والخدمات تخلق شعورًا بالذنب\",\"حدد الكلفة سلفًا؛ ارفض\"],[\"الاقتران\",\"المشاعر تنتقل إلى أشياء لا صلة بها\",\"افصل الشعور عن الجوهر\"],[\"الميل\",\"نشتري ممن نحب\",\"احكم على الأرقام قبل الأشخاص\"],[\"الحسد\",\"المقارنة تفعّل رغبة اللحاق\",\"قِس فقط بأفقك أنت\"],[\"تجنب الشك\",\"الفجوات المزعجة تُملأ بقصة\",\"اسمح بـ'لا أعرف' مركزًا\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block6",
+   "en": "Envy is one hundred percent destructive — the only sin without pleasure. The stock market's version of it is called »buying what has already run«, and it is always driven by comparing yourself with the wrong people on the wrong time horizon.",
+   "ar": "الحسد مدمر بنسبة مئة بالمئة — الخطيئة الوحيدة بلا متعة. نسخة البورصة منه تسمى »شراء ما سبق أن قفز«، وهي مدفوعة دائمًا بمقارنة النفس بأشخاص خاطئين على أفق زمني خاطئ."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:block7",
+   "en": "Which holding do you own mostly because you like the company, the founder or the story? The test: describe the moat without mentioning a single person or feeling. If the description comes out empty, you have a relationship, not an analysis.",
+   "ar": "أي مركز تملكه في معظمه لأنك تحب الشركة أو المؤسس أو القصة؟ الاختبار: صِف الخندق التنافسي من دون ذكر إنسان واحد أو شعور واحد. إن خرج الوصف فارغًا فأنت تملك علاقة لا تحليلًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:q",
+   "en": "Why does Munger warn against brokers' gifts and lunches?",
+   "ar": "لماذا يحذر منغر من هدايا الوسطاء ووجبات غدائهم؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:a0",
+   "en": "They are illegal in most countries",
+   "ar": "إنها غير قانونية في معظم البلدان"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:a1",
+   "en": "The reciprocation tendency creates guilt that buys your judgment",
+   "ar": "نزعة المعاملة بالمثل تخلق شعورًا بالذنب يشتري بصيرتك"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:a2",
+   "en": "They are always expensive for the broker",
+   "ar": "إنها مكلفة دائمًا للوسيط"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:a3",
+   "en": "They contain hidden fees",
+   "ar": "إنها تحوي رسومًا خفية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz1:tips",
+   "en": "Do not ask what the gift costs — ask what it creates.",
+   "ar": "لا تسأل كم تكلف الهدية — اسأل ماذا تخلقه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:q",
+   "en": "What is the difference between pure association and a moat brand (V14)?",
+   "ar": "ما الفرق بين الاقتران الخالص وبين العلامة التجارية القائمة على الخندق التنافسي (V14)؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:a0",
+   "en": "None — both are advertising",
+   "ar": "لا فرق — كلاهما إعلان"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:a1",
+   "en": "Association only works in the consumer segment",
+   "ar": "الاقتران يعمل في جانب المستهلك فقط"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:a2",
+   "en": "A moat brand is association that competitors cannot replicate with advertising money",
+   "ar": "العلامة التجارية القائمة على الخندق التنافسي هي اقتران لا يستطيع المنافسون نسخه بأموال الإعلانات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:a3",
+   "en": "Brands are measured in number of employees",
+   "ar": "العلامات التجارية تقاس بعدد الموظفين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz2:tips",
+   "en": "Think about what happens if a competitor spends the same sum on marketing.",
+   "ar": "فكر في ما يحدث لو أنفق منافس المبلغ نفسه على التسويق."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:q",
+   "en": "Why does Munger call envy the stupidest sin?",
+   "ar": "لماذا يسمي منغر الحسد أغبى الخطايا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:a0",
+   "en": "It is the only one without any upside at all — one hundred percent destructive",
+   "ar": "إنها الوحيدة بلا أي مكسب إطلاقًا — مدمرة بنسبة مئة بالمئة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:a1",
+   "en": "It breaks religious rules",
+   "ar": "إنها تنتهك القواعد الدينية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:a2",
+   "en": "It is the hardest to hide",
+   "ar": "إنها الأصعب إخفاءً"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:a3",
+   "en": "It always leads to crime",
+   "ar": "إنها تؤدي دائمًا إلى الجريمة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap7:quiz3:tips",
+   "en": "Compare with greed, which at least has a covering moment of pleasure.",
+   "ar": "قارنها بالجشع الذي يملك على الأقل لحظة لذّة يستتر بها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:titel",
+   "en": "Misjudgment IV — excess self-regard, optimism, reason-respecting and framing",
+   "ar": "سوء الحكم الرابع — المبالغة في تقدير الذات، والتفاؤل، وإيمان الأسباب، والتأطير"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:intro",
+   "en": "The last tendencies in the catalogue bend toward the ego and language: we overestimate ourselves, believe what we wish, are pacified by any reason whatsoever, and make different decisions depending on how the question is framed. Here too sits the most important antidote: knowing which tendency is your own.",
+   "ar": "النزعات الأخيرة في الفهرس تنحدر نحو الأنا واللغة: نبالغ في تقدير أنفسنا، ونؤمن بما نتمنى، ونستكين لأي سبب كان، ونتخذ قرارات مختلفة تبعًا لطريقة تأطير السؤال. وهنا أيضًا يقوم أهم ترياق: أن تعرف أي نزعة هي نزعتك أنت."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block1",
+   "en": "Excess self-regard tendency: Munger loves the study where ninety percent of Swedish drivers considered themselves better drivers than the average driver — mathematically impossible, humanly completely normal. In the portfolio this means that most private savers and most managers believe they can beat the index, and that every analysis one writes oneself feels objective. The antidote is brutally simple: measure your outcome over whole cycles, count your mistakes, and remember Munger on the driver's neighbor — everyone cannot be better than average, and the probability that precisely you are the exception requires proof, not feeling.",
+   "ar": "نزعة المبالغة في تقدير الذات: يعشق منغر الدراسة التي اعتبر فيها تسعون بالمئة من السائقين السويديين أنهم يقودون أفضل من السائق المتوسط — أمر مستحيل رياضيًا، وطبيعي تمامًا بشريًا. في المحفظة يعني هذا أن معظم المدخرين الأفراد ومعظم المديرين يظنون أنهم يتغلبون على المؤشر، وأن كل تحليل يكتبه المرء بنفسه يبدو موضوعيًا. الترياق بسيط بقسوة: قِس نتيجتك عبر دورات كاملة، وعُد أخطاءك، وتذكر قول منغر عن جار السائق — لا يمكن أن يكون الجميع أفضل من المتوسط، واحتمال أنك أنت الاستثناء تحديدًا يتطلب برهانًا لا شعورًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block2",
+   "en": "Over-optimism tendency with Demosthenes' classic: »What a man wishes, that he will believe« — what the man wishes, he believes. Proforma forecasts, executive presentations and shareholder letters are written by optimists who are rewarded for optimism. Natural connection: always compare management's growth fantasy with ten years of realized revenue growth (V01) — the gap between guidance and history is the optimism measure. Munger: it is remarkable how much can be explained by people believing what they wish.",
+   "ar": "نزعة فرط التفاؤل مع كلاسيكية ديموستينس: »ما يتمناه المرء يصدّقه« — ما يتمناه الرجل يؤمن به. توقعات الأعمال الاستباقية والعروض التنفيذية ورسائل المساهمين يكتبها متفائلون يُكافؤون على التفاؤل. صلة طبيعية: قارن دائمًا خيال النمو لدى الإدارة بعشر سنوات من نمو الإيرادات المحقق (V01) — الفجوة بين التوجيهات والتاريخ هي مقياس التفاؤل. منغر: من المدهش كم يمكن تفسيره بأن الناس يعتقدون ما يتمنونه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block3",
+   "en": "Reason-respecting tendency: we go along with things as soon as a »reason« is given, even when the reason is empty. Munger refers to Langer's copying experiment: the mere word »because« — because I need to copy — increased the share of people who let someone go ahead in the queue, even when the reason was utterly contentless. In investing, the story is the reason: an elegant story (»platform«, »AI moat«, »next generation«) functions as moral permission to pay any multiple whatsoever. The antidote: demand that the reason show up in numbers — pricing power that holds over time is visible in the gross margin (V07), not in the adjectives.",
+   "ar": "نزعة احترام الأسباب: نوافق على الأمور متى قُدِّم »سبب«، حتى وإن كان السبب فارغًا. يستشهد منغر بتجربة النسخ عند لانغر: مجرد كلمة »because« — لأنني أحتاج إلى النسخ — رفعت نسبة من سمحوا لشخص بالتقدم في الطابور، حتى حين كان السبب خاليًا من المضمون تمامًا. في الاستثمار تكون القصة هي السبب: حكاية أنيقة (»منصة«، »الخندق التنافسي للذكاء الاصطناعي«، »الجيل القادم«) تعمل كإذن أخلاقي لدفع أي مضاعف كان. الترياق: اشترط أن يظهر السبب في الأرقام — القوة التسعيرية التي تدوم عبر الزمن تتجلى في الهامش الإجمالي (V07) لا في الصفات."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block4",
+   "en": "Twaddle tendency and state factors: Munger despised twaddle — empty talk that sounds wise — and his own answer to it was silence: »I have nothing to add.« In addition, he reminded us of the trivial but real states that warp judgment: fatigue, stress, dehydration and drugs. The conclusion is practical: make no decisions about the portfolio late at night, in panic, in illness or intoxicated — it is not character that protects you in those states, it is routine.",
+   "ar": "نزعة الثرثرة وعوامل الحالة: كان منغر يمقت الثرثرة — الكلام الفارغ الذي يبدو حكيمًا — وكان جوابه عليها الصمت: »ليس لدي ما أضيفه«. كما نبّه على الحالات التافهة لكنها الحقيقية التي تحرف البصيرة: الإرهاق، والضغط النفسي، والجفاف، والمخدرات. والخلاصة عملية: لا تتخذ أي قرار بشأن المحفظة في وقت متأخر من الليل، أو في الهلع، أو في المرض، أو تحت التأثير — الذي يحميك في تلك الحالات ليس الشخصية بل الروتين."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block5",
+   "en": "Frame dependence and simplicity bias: the same decision is flipped by framing. »Profit« versus »loss«, »cheap after the halving« versus »expensive before«, the quarterly report's framing versus the ten-year series — the substance is unchanged, the decision differs. And Munger was a convinced worshipper of simplicity: if something is too hard to understand, he moves on — not because he is lazy but because the circle has an edge and life is short. If you cannot explain in three sentences why you make money on the company, you own a story, not a position.",
+   "ar": "الاعتماد على التأطير وانحياز البساطة: القرار نفسه ينعكس بتغيير الإطار. »ربح« مقابل »خسارة«، و»رخيص بعد التنصيف« مقابل »غالٍ قبل«، وتأطير التقرير الربع سنوي مقابل سلسلة العشر سنوات — الجوهر لم يتغير والقرار يختلف. وكان منغر قائدًا مقتنعًا بعبادة البساطة: إن كان شيء ما أصعب من أن يُفهم فلا يعبأ به — لا لأنه كسول بل لأن للدائرة حافة ولأن الحياة قصيرة. إن لم تستطع أن تشرح في ثلاث جمل لماذا تكسب المال من الشركة، فأنت تملك قصة لا مركزًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block6",
+   "en": "{\"rubrik\":\"The ego and language → mechanism → antidote\",\"rader\":[[\"Tendency\",\"Mechanism\",\"Antidote\"],[\"Excess self-regard\",\"Everyone believes they are above average\",\"Measure outcomes over whole cycles; count mistakes\"],[\"Over-optimism\",\"We believe what we wish (Demosthenes)\",\"Compare guidance with ten-year history (V01)\"],[\"Reason-respecting\",\"An arbitrary 'because' increases compliance\",\"Demand the reason show up in numbers (V07)\"],[\"Twaddle\",\"Empty talk sounds wise\",\"Silence and short answers\"],[\"Framing\",\"Framing decides the decision despite the same substance\",\"Rephrase the question in absolute figures first\"]]}",
+   "ar": "{\"rubrik\":\"الأنا واللغة → الآلية → الترياق\",\"rader\":[[\"النزعة\",\"الآلية\",\"الترياق\"],[\"المبالغة في تقدير الذات\",\"الجميع يظن أنه فوق المتوسط\",\"قِس النتائج عبر دورات كاملة؛ عُد الأخطاء\"],[\"فرط التفاؤل\",\"نؤمن بما نتمنى (ديموستينس)\",\"قارن التوجيهات بتاريخ عشر سنوات (V01)\"],[\"احترام الأسباب\",\"'لأن' اعتباطية تزيد الاستجابة\",\"اشترط ظهور السبب في الأرقام (V07)\"],[\"الثرثرة\",\"الكلام الفارغ يبدو حكيمًا\",\"الصمت والأجوبة القصيرة\"],[\"التأطير\",\"التأطير يحسم القرار رغم تطابق الجوهر\",\"أعد صياغة السؤال بالأرقام المطلقة أولًا\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block7",
+   "en": "Optimism is free to write and expensive to read as truth. The story is not the evidence — it is the price you paid to avoid scrutinizing the numbers.",
+   "ar": "التفاؤل مجاني في الكتابة وغالٍ حين يُقرأ بوصفه حقيقة. القصة ليست الدليل — إنها الثمن الذي دفعته لتفادي تدقيق الأرقام."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:block8",
+   "en": "Find your latest »reason buy«: a story that made you accept a valuation you would otherwise have laughed at. Which single number could have exposed the story — and why did you not look at it then? Compare now with the three words you wrote in chapter 1.",
+   "ar": "اعثر على آخر »شراء بسبب« لديك: قصة جعلتك تقبل التقييم الذي كنت ستضحك عليه لولاها. أي رقم واحد كان يمكن أن يكشف القصة — ولماذا لم تنظر إليه حينها؟ قارن الآن بالكلمات الثلاث التي كتبتها في الفصل 1."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:q",
+   "en": "What does the study about Swedish drivers that Munger likes to quote show?",
+   "ar": "ماذا تُظهر دراسة سائقي السيارات السويديين التي يحب منغر الاستشهاد بها؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:a0",
+   "en": "That Swedes drive worse than others",
+   "ar": "أن السويديين يسوقون أسوأ من غيرهم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:a1",
+   "en": "That overconfidence is systematic — ninety percent believed they were better than the average driver",
+   "ar": "أن المبالغة في تقدير الذات منهجية — تسعون بالمئة ظنوا أنهم أفضل من السائق المتوسط"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:a2",
+   "en": "That traffic is safer in Sweden",
+   "ar": "أن حركة المرور أكثر أمانًا في السويد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:a3",
+   "en": "That surveys are unreliable",
+   "ar": "أن الاستطلاعات غير موثوقة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz1:tips",
+   "en": "Do the math on the number — everyone cannot be above average.",
+   "ar": "احسب الرقم — لا يمكن أن يكون الجميع فوق المتوسط."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:q",
+   "en": "What is the Demosthenes point (»What a man wishes, that he will believe«)?",
+   "ar": "ما مغزى ديموستينس (»ما يتمناه المرء يصدّقه«)؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:a0",
+   "en": "That wishes influence what we believe is true",
+   "ar": "أن التمنيات تؤثر في ما نعتقد أنه حق"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:a1",
+   "en": "That the ancient Greeks were wiser",
+   "ar": "أن الإغريق القدماء كانوا أحكم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:a2",
+   "en": "That you should wish yourself success in life",
+   "ar": "أن ينبغي للمرء أن يتمنى النجاح في الحياة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:a3",
+   "en": "That rhetoric is stronger than facts in public debate",
+   "ar": "أن البلاغة أقوى من الوقائع في النقاش العام"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz2:tips",
+   "en": "Consider who wrote that buy recommendation and what it wishes.",
+   "ar": "فكر في من كتب توصية الشراء تلك وما الذي تتمناه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:q",
+   "en": "What does reason-respecting tendency mean in a valuation context?",
+   "ar": "ماذا تعني نزعة احترام الأسباب في سياق التقييم؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:a0",
+   "en": "That we demand good reasons before we buy",
+   "ar": "أننا نشترط أسبابًا وجيهة قبل الشراء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:a1",
+   "en": "That we respect analysts' recommendations",
+   "ar": "أننا نحترم توصيات المحللين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:a2",
+   "en": "That rational arguments always win",
+   "ar": "أن الحجج العقلانية تنتصر دائمًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:a3",
+   "en": "That a story suffices as a 'because' for us to accept unreasonable multiples",
+   "ar": "أن قصة واحدة تكفي بمثابة 'لأن' لكي نقبل مضاعفات غير معقولة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap8:quiz3:tips",
+   "en": "Think of the copying queue: the very word »because« was enough — the content mattered less.",
+   "ar": "تذكر طابور النسخ: كلمة »because« وحدها كفت — والمضمون كان أقل أهمية."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:titel",
+   "en": "The Lollapalooza effect — when the forces point the same way",
+   "ar": "تأثير اللولابالوزا — حين تشير القوى في الاتجاه نفسه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:intro",
+   "en": "Munger's favorite phenomenon: when two, three, four or five forces act simultaneously in the same direction, the result is not additive but extreme. The economics books miss this, he argues, because they assume separate, additive effects. Reality converges.",
+   "ar": "ظاهرة منغر المفضلة: حين تعمل قوتان أو ثلاث أو أربع أو خمس في الاتجاه نفسه وفي الوقت نفسه، لا تكون النتيجة جمعية بل متطرفة. كتب الاقتصاد تفوّت هذا برأيه لأنها تفترض تأثيرات منفصلة وجمعية. الواقع يتقارب."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block1",
+   "en": "The definition is Munger himself, more or less: when several psychological forces — social proof, reciprocation, deprival, commitment, authority — pull in the same direction at the same time, lollapalooza effects arise: results that no single force can explain and that look irrational in hindsight but were completely mechanical in the moment. Munger held that the market's greatest extremes — up as well as down — are almost always convergence phenomena, not individual mistakes.",
+   "ar": "التعريف هو منغر نفسه تقريبًا: حين تسحب عدة قوى نفسية — الإثبات الاجتماعي، والمعاملة بالمثل، والحرمان، والالتزام، والسلطة — في الاتجاه نفسه وفي الوقت نفسه، تنشأ تأثيرات اللولابالوزا: نتائج لا يستطيع أي قوة مفردة تفسيرها، وتبدو غير عقلانية في ما بعد لكنها كانت ميكانيكية تمامًا في لحظتها. رأى منغر أن أقصى حالات السوق تطرفًا — صعودًا وهبوطًا — هي دائمًا تقريبًا ظواهر تقارب لا أخطاء مفردة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block2",
+   "en": "The Tupperware party is his showcase example. Why do household products sell better in someone's living room than in a department store? Because the party stacks the tendencies: reciprocation (the hostess offers games, party and coffee — the guest feels indebted), social proof (all the neighbors are buying, visibly), commitment and consistency (public demonstration of the product), liking (the hostess is a friend, not a salesperson) and deprival/scarcity (the offer is valid only tonight). Sales per minute reach levels no store ever reaches — not because the product is better but because the forces point the same way.",
+   "ar": "حفلة Tupperware هي مثاله الأبرز. لماذا تُباع المنتجات المنزلية أفضل في غرفة معيشة أحدهم منها في متجر كبير؟ لأن الحفلة تكدّس النزعات: المعاملة بالمثل (المضيفة تقدم الألعاب والحفل والقهوة — الضيف يشعر بالدَّين)، والإثبات الاجتماعي (كل الجيران يشترون، بشكل مرئي)، والالتزام والاتساق (استعراض علني للمنتج)، والميل (المضيفة صديقة لا بائعة)، والحرمان/الندرة (العرض صالح الليلة فقط). تصل المبيعات في الدقيقة إلى المستوى الذي لا يبلغه أي متجر على الإطلاق — لا لأن المنتج أفضل بل لأن القوى تشير في الاتجاه نفسه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block3",
+   "en": "Open outcry auctions show the same convergence in pure form: social proof (the rival bidders' visible enthusiasm), deprival super-reaction (»it was almost mine« — losing what you almost own feels like losing what you own), commitment (open bids must be defended) and authority (an authoritative auctioneer who controls the tempo). The result is prices far above what the participant would pay in a calm state. The same mechanics drives bidding wars for companies and oversubscribed IPOs.",
+   "ar": "مزادات المزايدة العلنية تُظهر التقارب نفسه في أنقى صوره: الإثبات الاجتماعي (حماس المزايدين المنافسين المرئي)، وردة الفعل المفرطة على الحرمان (»كان شبه ملكي« — خسارة ما تكاد تملكه تشعرك كأنها خسارة ما تملكه)، والالتزام (العرُوض المعلنة يجب أن تُدافَع)، والسلطة (مُبرز مزادات حاسم يضبط الإيقاع). والنتيجة أسعار تفوق بكثير ما كان المشارك سيدفعه في حالة هدوء. الميكانيكا نفسها تدير حروب العروض على الشركات والاكتتابات العامة المفرطة التغطية."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block4",
+   "en": "And in the reverse direction: the Short-Seller's decomposition. When a company has an admired founder (authority), sponsored research and advocates with an interest (reciprocation), a strong share-price trend (social proof), a story that supplies a reason (reason-respecting), and believing owners who have never sold (deprival + denial), then, of course, all the pieces are in place for a fall that becomes deeper than any single force justifies. When the trend turns, the same forces work downward: denial blocks the exit, deprival holds on, forced selling accelerates. The manias — tulips, dotcom 1999, growth/IPO 2021 — are all lollapalooza patterns. The short seller rarely needs to find new information; it is enough to see the convergence and have patience.",
+   "ar": "وفي الاتجاه المعاكس: تفكيك Short-Seller. حين تملك شركة مؤسسًا محل إعجاب (السلطة)، وبحوثًا ممولة ومدافعين ذوي مصلحة (المعاملة بالمثل)، واتجاهًا قويًا في الدورة السعرية (الإثبات الاجتماعي)، وقصة تمنح سببًا (احترام الأسباب)، ومالكين مؤمنين لم يبيعوا قط (الحرمان + الإنكار)، تكون كل القطع في مكانها لانهيار أعمق مما تبرره أي قوة مفردة. حين ينقلب الاتجاه تعمل القوى نفسها نزولًا: الإنكار يسد المخرج، والحرمان يُبقي، والمبيعات القسرية تتسارع. الهواجس — الزنبق، ودوت كوم 1999، والنمو/الطرح العام 2021 — كلها أنماط لولابالوزا. نادرًا ما يحتاج بائع الاختصار إلى معلومة جديدة؛ يكفي أن يرى التقارب وأن يملك الصبر."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block6",
+   "en": "{\"rubrik\":\"Lollapalooza decomposition — forces that converge\",\"rader\":[[\"Situation\",\"Force 1\",\"Force 2\",\"Force 3\"],[\"Tupperware party\",\"Reciprocation (the party)\",\"Social proof (everyone buys)\",\"Liking (the hostess is a friend)\"],[\"Auction/open outcry\",\"Deprival (almost mine)\",\"Commitment (open bids)\",\"Social proof (counter-bids)\"],[\"High bubble\",\"Social proof (the trend)\",\"Authority (the guru)\",\"Reason-respecting (the story)\"],[\"Crash\",\"Denial\",\"Deprival (refuses to realize)\",\"Forced selling\"]]}",
+   "ar": "{\"rubrik\":\"تفكيك اللولابالوزا — قوى تتقارب\",\"rader\":[[\"الموقف\",\"القوة 1\",\"القوة 2\",\"القوة 3\"],[\"حفلة Tupperware\",\"المعاملة بالمثل (الحفل)\",\"الإثبات الاجتماعي (الجميع يشتري)\",\"الميل (المضيفة صديقة)\"],[\"مزاد/مزايدة علنية\",\"الحرمان (شبه ملكي)\",\"الالتزام (العرُوض المعلنة)\",\"الإثبات الاجتماعي (المزايدات المضادة)\"],[\"فقاعة عالية\",\"الإثبات الاجتماعي (الاتجاه)\",\"السلطة (الغورو)\",\"احترام الأسباب (القصة)\"],[\"الانهيار\",\"الإنكار\",\"الحرمان (يرفض تحقيق الخسارة)\",\"البيع القسري\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block7",
+   "en": "A lone bias is expensive. Three pointing the same way are devastating — in both directions. Always look for convergence of forces, never single reasons: the pattern between them is what flies the plane into the mountain.",
+   "ar": "الانحياز المنفرد مكلف. وثلاثة تشير في الاتجاه نفسه مدمرة — في كلا الاتجاهين. ابحث دائمًا عن تقارب القوى، لا عن أسباب مفردة: النمط بينها هو الذي يقود الطائرة إلى الجبل."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:block8",
+   "en": "Describe a mania you yourself took part in or witnessed — dotcom, crypto 2021, meme stocks. List at least three forces acting at the same time on you or your surroundings. Which single question, asked at the right time, could have broken the spell?",
+   "ar": "صِف هوسًا جماعيًا شاركت فيه بنفسك أو شاهدته — الدوت كوم، أو تشفير 2021، أو الأسهم الميمية. اذكر ثلاث قوى على الأقل عملت في الوقت نفسه عليك أو على محيطك. أي سؤال واحد، لو طُرح في وقته، كان يمكن أن يكسر التعويذة؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:q",
+   "en": "What characterizes a lollapalooza effect?",
+   "ar": "ما الذي يميز تأثير اللولابالوزا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:a0",
+   "en": "A single force that is exceptionally strong",
+   "ar": "قوة مفردة استثنائية القوة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:a1",
+   "en": "Several forces acting simultaneously in the same direction and producing an extreme, non-additive outcome",
+   "ar": "عدة قوى تعمل في الوقت نفسه في الاتجاه نفسه وتنتج نتيجة متطرفة غير جمعية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:a2",
+   "en": "A random black swan event",
+   "ar": "حدث بجعة سوداء عشوائي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:a3",
+   "en": "A statistical outlier without explanation",
+   "ar": "قيمة شاذة إحصائية بلا تفسير"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz1:tips",
+   "en": "The key is not the strength of one force but that they point the same way at the same time.",
+   "ar": "المفتاح ليس قوة قوة واحدة بل كونها تشير في الاتجاه نفسه في الوقت نفسه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:q",
+   "en": "Why do Tupperware parties work so well for sales?",
+   "ar": "لماذا تنجح حفلات Tupperware هذا النجاح في البيع؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:a0",
+   "en": "The products are objectively superior to the store's",
+   "ar": "المنتجات أفضل موضوعيًا من منتجات المتجر"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:a1",
+   "en": "The prices are always lower than in retail",
+   "ar": "الأسعار أدنى دائمًا من أسعار التجزئة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:a2",
+   "en": "The party stacks reciprocation, social proof, liking and consistency in the same direction",
+   "ar": "الحفلة تكدّس المعاملة بالمثل والإثبات الاجتماعي والميل والاتساق في الاتجاه نفسه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:a3",
+   "en": "Hostesses have special sales training",
+   "ar": "لدى المضيفات تدريب بيع خاص"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz2:tips",
+   "en": "Look at the situation's social mechanics, not at the plastic bowls.",
+   "ar": "انظر إلى الميكانيكا الاجتماعية للموقف، لا إلى أوعية البلاستيك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:q",
+   "en": "How does the Short-Seller use lollapalooza thinking?",
+   "ar": "كيف يستخدم Short-Seller تفكير اللولابالوزا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:a0",
+   "en": "By finding companies with a single big weakness",
+   "ar": "بإيجاد شركات ذات ضعف واحد كبير"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:a1",
+   "en": "By shorting every company with a high multiple",
+   "ar": "ببيع أسهم كل شركة ذات مضاعف مرتفع على المكشوف"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:a2",
+   "en": "By shorting the index at tops",
+   "ar": "ببيع المؤشر على المكشوف عند القمم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:a3",
+   "en": "By seeing when several forces have converged upward — and can therefore converge downward",
+   "ar": "برؤية اللحظة التي تقاربت فيها عدة قوى صعودًا — وبالتالي يمكنها التقارب نزولًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap9:quiz3:tips",
+   "en": "The same forces that build the story knock it over when the trend turns.",
+   "ar": "القوى نفسها التي تبني القصة تقلبها حين ينقلب الاتجاه."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:titel",
+   "en": "Cigar butts versus quality — See's Candies",
+   "ar": "أعقاب السجائر مقابل الجودة — See's Candies"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:intro",
+   "en": "Munger's perhaps greatest contribution to Buffett was moving him from Graham's cigar butts to wonderful companies at reasonable prices. The purchase of See's Candies in 1972 became the dividing line — and the proof that moat and pricing power are worth paying for.",
+   "ar": "أعظم إسهام لمنغر في بافيت ربما كان نقله من أعقاب سجائر غراهم إلى الشركات الرائعة بأسعار معقولة. صار شراء See's Candies عام 1972 خط الفصل — والدليل على أن الخندق التنافسي والقوة التسعيرية يستحقان أن يدفع مقابلهما."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block1",
+   "en": "The Graham school hunted cigar butts — companies trading so cheaply that the last puff was free, like a cigar butt on the sidewalk. The strategy worked on the mid-century markets, but it was statistical and capital-inefficient: you bought mediocre companies at fantastic prices, sold when value was realized, and did it again. Munger, who came from outside the Graham tradition, pushed Buffett in another direction: why not pay for quality and let time work? Through Blue Chip Stamps they bought the chocolate maker See's Candies in 1972 — and the story turned.",
+   "ar": "كانت مدرسة غراهم تبحث عن أعقاب السجائر — شركات يتداول سهمها برخص يجعل النفخة الأخيرة مجانية، كعقب سيجارة على الرصيف. نجحت الاستراتيجية في أسواق منتصف القرن، لكنها كانت إحصائية وغير كفؤة في رأس المال: تشتري شركات متواضعة بأسعار خيالية، وتبيع حين تتحقق القيمة، وتعيد الكرة. ومنغر، القادم من خارج تقاليد غراهم، ضغط على بافيت في اتجاه آخر: لماذا لا ندفع مقابل الجودة ونترك الوقت يعمل؟ عبر Blue Chip Stamps اشتريا عام 1972 شركة الشوكولاتة See's Candies — وانقلبت القصة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block2",
+   "en": "The numbers: the purchase price was 25 MUSD for a company with around 32 MUSD in annual sales and — crucially — only about 1 MUSD of rolling capital in the business. See's was a Californian brand with extraordinary pricing power: price increases fell almost straight through to earnings, and surplus capital could be lifted out and reinvested in other things within Berkshire. They paid three times book value — unthinkable according to Graham. Buffett later summarized the lesson: »It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.« Without See's, he has hinted, Berkshire's later big deals like Coca-Cola would hardly have happened.",
+   "ar": "الأرقام: كان ثمن الاستحواذ 25 مليون دولار مقابل شركة تبلغ مبيعاتها السنوية نحو 32 مليون دولار و— والأهم — نحو 1 مليون دولار فقط من رأس المال المتداول في النشاط. مثّلت سيز العلامة التجارية الكاليفورنية ذات القوة التسعيرية الاستثنائية: زيادات الأسعار كانت تمر شبه مباشرة إلى النتيجة، وكان يمكن سحب رأس المال الفائض وإعادة استثماره في غيره داخل بيركشاير. دفعوا ثلاثة أمثال القيمة الدفترية — أمر لا يُتصور وفق منهج غراهام. لخّص بافيت الدرس لاحقًا: »من الأفضل بكثير شراء شركة رائعة بسعر عادل من شراء شركة عادلة بسعر رائع.« ولولا سيز، كما لمّح، لما تمت صفقات بيركشاير الكبرى اللاحقة مثل كوكا كولا على الأرجح."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block3",
+   "en": "How does quality look in numbers? Pricing power that lasts shows up in a stable gross margin (V07) and an ROE (V09) that needs no leverage. A brand (V14) like See's is association with defense — customers pay for Californian tradition, not for the kilo price of raw chocolate. And margin of safety does not have to be only a discount to book value: for a quality company the protection is the moat plus a reasonable price. P/B (V05) is almost meaningless for See's — book value does not capture the pricing power, and that is precisely why the Graham school missed the company.",
+   "ar": "كيف تبدو الجودة في الأرقام؟ القوة التسعيرية التي تدوم تتجلّى في استقرار الهامش الإجمالي (V07) وفي ROE (V09) لا يحتاج إلى الرافعة المالية. العلامة التجارية (V14) مثل سيز هي اقتران مصحوب بدفاع — العملاء يدفعون مقابل التقاليد الكاليفورنية لا مقابل سعر كيلوغرام الشوكولاتة الخام. وهامش الأمان لا يلزم أن يكون خصمًا عن القيمة الدفترية فحسب: ففي شركة الجودة تكون الحماية هي الخندق التنافسي مضافًا إليه سعر معقول. إن P/B (V05) شبه بلا معنى بالنسبة إلى سيز — القيمة الدفترية لا تلتقط القوة التسعيرية، ولهذا بالضبط أغفلت مدرسة غراهام هذه الشركة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block4",
+   "en": "Munger's warning also belongs to the story: capitalism is a destruction machine for advantages. Wonderful companies eventually become ordinary — moats erode, competitors attack, consumers tire. That is why you own See's companies for a long time but monitor the moat: when the pricing power runs dry, it shows first in the margins. Paying a premium for quality is right when the quality is true and reasonably priced — and a trap when it is a quality illusion: a mediocre company with a pretty story and a high multiple. The difference shows in the history, not in the presentation.",
+   "ar": "تحذير منغر ينتمي بدوره إلى القصة: الرأسمالية آلة تدمير للمزايا. الشركات الرائعة تصير عادية في نهاية المطاف — الخندق التنافسي يتآكل، والمنافسون يهاجمون، والمستهلكون يملّون. لهذا تمتلك شركات سيز طويلًا لكنك تراقب الخندق التنافسي: حين تضعف القوة التسعيرية يظهر ذلك أولًا في الهوامش. دفع علاوة مقابل الجودة صحيح حين تكون الجودة حقيقية وسعرها عادلًا — وفخ حين تكون وهم جودة: شركة متوسطة بقصة جميلة ومضاعف مرتفع. الفرق يظهر في التاريخ لا في العرض التقديمي."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block6",
+   "en": "{\"rubrik\":\"Cigar butt versus quality company\",\"rader\":[[\"Aspect\",\"Cigar butt (Graham)\",\"Quality company (Munger/Buffett)\"],[\"Price logic\",\"Deep discount, often below book value (V05)\",\"Fair price for moat and pricing power\"],[\"Capital\",\"Capital tied up until value is realized\",\"Small balance sheet, surplus extracted\"],[\"Return\",\"One-off kick at realization\",\"Compounding for decades (V09)\"],[\"Risk\",\"Value impairment, value traps\",\"Moat erosion, quality illusions\"],[\"Example\",\"Classic Graham net-nets\",\"See's Candies, Coca-Cola\"]]}",
+   "ar": "{\"rubrik\":\"عقب السيجارة مقابل شركة الجودة\",\"rader\":[[\"الجانب\",\"عقب سيجارة (غراهام)\",\"شركة الجودة (منغر/بافيت)\"],[\"منطق السعر\",\"خصم عميق، غالبًا تحت القيمة الدفترية (V05)\",\"سعر معادل مقابل الخندق التنافسي والقوة التسعيرية\"],[\"رأس المال\",\"رأس مال مقيد حتى تتحقق القيمة\",\"الميزانية العمومية صغيرة، يُسحب الفائض\"],[\"العائد\",\"دفعة لمرة واحدة عند التحقيق\",\"تراكم لعقود (V09)\"],[\"المخاطر\",\"خفض القيمة، فخاخ القيمة\",\"تآكل الخندق التنافسي، أوهام الجودة\"],[\"مثال\",\"صافيات غراهام الكلاسيكية\",\"See's Candies، كوكا كولا\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block7",
+   "en": "It is far better to buy a wonderful company at a fair price than a fair company at a wonderful price. Munger taught Buffett that — and it built the modern Berkshire.",
+   "ar": "من الأفضل بكثير شراء شركة رائعة بسعر عادل من شراء شركة عادلة بسعر رائع. هذا ما علّمه منغر لبافيت — وهذا ما بنى بيركشاير الحديثة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:block8",
+   "en": "Classify your five largest holdings: cigar butt (statistically cheap), quality (moat plus reasonable price) or quality illusion (premium price without a moat)? Let historical gross margin — not the story — decide the category.",
+   "ar": "صنّف أكبر خمسة مراكز لديك: عقب سيجارة (رخيص إحصائيًا)، أم جودة (خندق تنافسي مع سعر معقول)، أم وهم جودة (سعر علاوة من دون الخندق التنافسي)؟ دع الهامش الإجمالي التاريخي — لا القصة — يحدد الفئة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:q",
+   "en": "What is a »cigar butt« in the Graham tradition?",
+   "ar": "ما هي »عقب السيجارة« في تقاليد غراهام؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:a0",
+   "en": "A company with a rising dividend",
+   "ar": "شركة ترتفع فيها التوزيعات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:a1",
+   "en": "A company trading so cheaply that the last puff is free — like a cigar butt on the sidewalk",
+   "ar": "شركة يتداول سهمها برخص يجعل النفخة الأخيرة مجانية — كعقب سيجارة على الرصيف"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:a2",
+   "en": "A small company with high indebtedness",
+   "ar": "شركة صغيرة ذات اقتراض مرتفع"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:a3",
+   "en": "A newly started company without revenue",
+   "ar": "شركة حديثة التأسيس لا تملك الإيرادات بعد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz1:tips",
+   "en": "The metaphor is about picking up something discarded and smoking it to the end.",
+   "ar": "الاستعارة تتعلق بالتقاط شيء مطروح وتدخينه حتى نهايته."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:q",
+   "en": "What made See's Candies so exceptional in 1972?",
+   "ar": "ما الذي جعل See's Candies استثنائية إلى هذا الحد في عام 1972؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:a0",
+   "en": "An extremely low P/B ratio",
+   "ar": "نسبة P/B منخفضة للغاية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:a1",
+   "en": "High dividends every year",
+   "ar": "توزيعات مرتفعة كل عام"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:a2",
+   "en": "A brand with pricing power and only about 1 MUSD of rolling capital on 32 MUSD in sales",
+   "ar": "العلامة التجارية تملك القوة التسعيرية ومعها نحو 1 مليون دولار فقط من رأس المال المتداول مقابل 32 مليون دولار من المبيعات"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:a3",
+   "en": "A large export share to Europe",
+   "ar": "حصة تصدير كبيرة إلى أوروبا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz2:tips",
+   "en": "Look at the relationship between sales and capital in the business — and who set the prices.",
+   "ar": "انظر إلى العلاقة بين المبيعات ورأس المال في النشاط — ومن كان يحدد الأسعار."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:q",
+   "en": "How is Munger's lesson to Buffett usually summarized?",
+   "ar": "كيف تُلخَّص عادة درس منغر لبافيت؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:a0",
+   "en": "»It is far better to buy a wonderful company at a fair price than a fair company at a wonderful price«",
+   "ar": "»من الأفضل بكثير شراء شركة رائعة بسعر عادل من شراء شركة عادلة بسعر رائع«"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:a1",
+   "en": "»Diversify broadly and buy the index«",
+   "ar": "»نوِّع على نطاق واسع واشترِ المؤشر«"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:a2",
+   "en": "»Always buy below book value«",
+   "ar": "»اشترِ دائمًا بأقل من القيمة الدفترية«"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:a3",
+   "en": "»Timing is everything in investing«",
+   "ar": "»التوقيت كل شيء في الاستثمار«"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap10:quiz3:tips",
+   "en": "The word order twists what should be wonderful and what should be fair.",
+   "ar": "ترتيب الكلمات يقلب ما ينبغي أن يكون رائعًا وما ينبغي أن يكون عادلًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:titel",
+   "en": "The compounding interest rate, probability and expected value",
+   "ar": "تراكم سعر الفائدة، والاحتمال، والقيمة المتوقعة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:intro",
+   "en": "Munger demands no advanced mathematics — he demands basic mathematics mastered: probability, expected value and the compounding interest rate. Most investors' errors are not a lack of knowledge of stochastic calculus but that they ignore the first principles.",
+   "ar": "لا يطلب منغر رياضيات متقدمة — بل يطلب إتقان الرياضيات الأساسية: الاحتمال، والقيمة المتوقعة، وتراكم سعر الفائدة. أخطاء معظم المستثمرين ليست نقصًا في معرفة التفاضل العشوائي بل أنهم يتجاهلون المبادئ الأولى."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block1",
+   "en": "The compounding interest rate is the silent force. »The first rule of compounding is to never interrupt it unnecessarily« — the first rule of compounding is to never interrupt it unnecessarily. And about starting: »The first $100,000 is a bitch, but you gotta do it« — the first hundred thousand is hell but has to be done. The curve is tired at the start and explosive at the end; that is why time, not return in percent, is the most underrated variable. See chapter 10: See's small capital and decades of reinvestment space was compounding in its purest form.",
+   "ar": "تراكم سعر الفائدة هو القوة الصامتة. »القاعدة الأولى في التراكم هي ألا تقاطعه أبدًا من دون داع« — القاعدة الأولى في التراكم هي ألا تقاطعه أبدًا من دون داع. وحول البداية: »أول 100,000 دولار جحيم، لكن لا بد منه« — أول مئة ألف جحيم لكن لا بد منه. المنحنى متعب في البداية وانفجاري في النهاية؛ لذلك فإن الوقت، لا العائد بالنسبة المئوية، هو المتغير الأكثر إهمالًا. انظر الفصل 10: رأس مال سيز الصغير ومساحة إعادة الاستثمار لعقود كانت التراكم في أنقى صوره."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block2",
+   "en": "Munger's market model is the horse race. The track takes a share of every bet — the equivalents in the stock market are brokerage, spread and the market's mistakes. On a track where the chance of winning exists in every program, the question is not »which horse is prettiest?« but »are the odds wrong?«. Most people analyze the company (the horse) and forget the price (the odds). The investor's only question: how wrong is the price against the probability? It is the expected value that pays — probability times gain minus risk times loss — and nothing else.",
+   "ar": "نموذج السوق عند منغر هو سباق الخيل. يأخذ المضمار حصة من كل رهان — والمقابل في سوق الأسهم هو العمولة والفارق السعري وأخطاء السوق. على مضمار توجد فيه فرصة الربح في كل برنامج، السؤال ليس »أي حصان أجمل؟« بل »هل الاحتمالات خاطئة؟«. يحلل معظم الناس الشركة (الحصان) وينسون السعر (الاحتمالات). سؤال المستثمر الوحيد: كم يكون السعر خاطئًا مقابل الاحتمال؟ الذي يدفع هو القيمة المتوقعة — الاحتمال مضروبًا في الربح ناقص المخاطر مضروبة في الخسارة — ولا شيء غير ذلك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block3",
+   "en": "Concentration or diversification? Munger: excessive diversification is a protection for ignorance — if you know what you are doing, it is an obstacle. But concentration without edge is arrogance. AK1 solves the equation with Kelly logic: the position's size should be a function of the edge and the uncertainty, and Monte Carlo simulation shows the outcome space instead of a single guess. It is Munger's recipe in systematized form: a large position when probability and odds are both on your side, small or none when they are not.",
+   "ar": "التركيز أم التنويع؟ منغر: التنويع المفرط حماية للجهل — إن كنت تعرف ما تفعله فهو عائق. لكن التركيز بلا أفضلية غطرسة. تحل AK1 المعادلة بمنطق كيلي: حجم المركز ينبغي أن يكون دالة في الأفضلية وعدم اليقين، ومحاكاة مونت كارلو تُظهر فضاء النتائج بدلًا من تخمين واحد. إنه وصفة منغر في صورة منظَّمة: مركز كبير حين يكون الاحتمال والاحتمالات السعرية في صفك، وصغير أو معدوم حين لا يكونان."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block4",
+   "en": "Probability updating: new information — a product launch that succeeds, a deal that gets signed, a regulatory decision that lands — changes the probability, not the feeling. Munger thought in Bayesian terms long before it became fashionable: stick to the base rate as a starting point and update step by step as new data arrives. AK1's Bayesian reweighting of theory weights is exactly this principle: five theories each have their probability, every new quarterly report shifts the weights a little, and no single event turns the entire worldview upside down.",
+   "ar": "تحديث الاحتمالات: المعلومة الجديدة — إطلاق منتج ينجح، أو اتفاق يُوقَّع، أو قرار تنظيمي يصدر — تغير الاحتمال لا الشعور. فكر منغر بطريقة بايزية قبل أن تصير موضة بوقت طويل: تشبث بالتكرار الأساسي نقطة انطلاق وحدّث خطوة خطوة مع وصول بيانات جديدة. إعادة الوزن البايزية لأوزان النظريات في AK1 هي هذا المبدأ بعينه: خمس نظريات لكل منها احتمالها، وفي كل مرة يزحزح التقرير الربع سنوي الجديد الأوزان قليلًا، ولا حدث مفرد يقلب صورة العالم كلها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block6",
+   "en": "Probability without a price is a casino; a price without probability is a guess. Expected value is the only thing that pays — and the compounding interest rate is its patient workhorse that must never be interrupted unnecessarily.",
+   "ar": "الاحتمال من دون سعر كازينو؛ والسعر من دون احتمال تخمين. القيمة المتوقعة هي الشيء الوحيد الذي يدفع — وتراكم سعر الفائدة هو خادمها الصبور الذي لا يجوز قطعه من دون داع أبدًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:block7",
+   "en": "Calculate the CAGR of your largest holding since purchase. Then work out, in percent, what a single unnecessary exit and re-entry has cost you in interrupted compounding. When was the chain broken — and which bias drove that exit?",
+   "ar": "احسب CAGR لأكبر مركز لديك منذ الشراء. ثم اعرف بالنسبة المئوية كم كلفتك عملية خروج وإعادة دخول واحدة غير ضرورية من تراكم متقطع. متى انقطعت السلسلة — وأي انحياز قاد ذلك الخروج؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:q",
+   "en": "What is the first rule of compounding according to Munger?",
+   "ar": "ما القاعدة الأولى في التراكم عند منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:a0",
+   "en": "To never interrupt it unnecessarily",
+   "ar": "ألا تقاطعه أبدًا من دون داع"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:a1",
+   "en": "To always reinvest dividends",
+   "ar": "إعادة استثمار التوزيعات دائمًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:a2",
+   "en": "To start with small amounts",
+   "ar": "أن تبدأ بمبالغ صغيرة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:a3",
+   "en": "To avoid leverage",
+   "ar": "تجنب الرافعة المالية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz1:tips",
+   "en": "The rule is about time — and what you do with it.",
+   "ar": "القاعدة تتعلق بالوقت — وبما تفعله به."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:q",
+   "en": "What is the point of Munger's horse-race model?",
+   "ar": "ما مغزى نموذج سباق الخيل عند منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:a0",
+   "en": "That you should bet on more horses at the same time",
+   "ar": "أن تراهن على خيول أكثر في الوقت نفسه"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:a1",
+   "en": "That the track always wins in the long run",
+   "ar": "أن المضمار يفوز دائمًا في الأمد الطويل"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:a2",
+   "en": "That the question is not which horse is best but whether the odds are wrong",
+   "ar": "أن السؤال ليس أي حصان أفضل بل هل الاحتمالات خاطئة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:a3",
+   "en": "That you should avoid betting altogether",
+   "ar": "أن تتجنب المراهنة كليًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz2:tips",
+   "en": "The track takes its share regardless — what determines whether you profit?",
+   "ar": "يأخذ المضمار حصته في كل الأحوال — فما الذي يحدد ربحك؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:q",
+   "en": "What is expected value in AK1's sense?",
+   "ar": "ما القيمة المتوقعة بالمعنى المقصود في AK1؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:a0",
+   "en": "Probability times gain minus risk times loss",
+   "ar": "الاحتمال مضروبًا في الربح ناقص المخاطر مضروبة في الخسارة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:a1",
+   "en": "The average of your previous trades",
+   "ar": "متوسط صفقاتك السابقة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:a2",
+   "en": "Analyst consensus for next quarter",
+   "ar": "إجماع المحللين للربع القادم"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:a3",
+   "en": "The price target multiplied by the Kelly fraction",
+   "ar": "السعر المستهدف مضروبًا في كسر كيلي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap11:quiz3:tips",
+   "en": "It is a formula with both chance and risk — on both sides of the minus sign.",
+   "ar": "إنها صيغة تجمع الفرصة والمخاطر — على جانبي علامة الطرح."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:titel",
+   "en": "Evolution, moats and capitalism's creative destruction",
+   "ar": "التطور، الخندق التنافسي، والهدم الإبداعي للرأسمالية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:intro",
+   "en": "From biology Munger borrows the most powerful models: evolution, extinction and adaptation. Companies are organisms in an ecosystem, moats are evolutionary advantages — and evolution always takes the advantages back sooner or later.",
+   "ar": "من علم الأحياء يستعير منغر أقوى النماذج: التطور، والانقراض، والتكيف. الشركات كائنات في نظام بيئي، والخندق التنافسي ميزة تطورية — والتطور يسترد المزايا كلها عاجلًا أم آجلًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block1",
+   "en": "Munger admired Darwin deeply — not only for the theory but for the method: Darwin's discipline of immediately noting observations that spoke against his own theory is one of history's best examples of a bias antidote. Evolutionary economics sees markets as ecosystems: companies as organisms, niches to fill, symbiosis, parasitism and extinction events. The question for every company becomes ecological: which niche, which head start, and what pressure from the environment?",
+   "ar": "أعجب منغر بداروين إعجابًا عميقًا — لا بالنظرية فحسب بل بالمنهج: انضباط داروين في تدوين الملاحظات فورًا مما كان يناقض نظريته هو من أفضل أمثلة التاريخ على ترياق الانحياز. يرى الاقتصاد التطوري الأسواق نظمًا بيئية: الشركات كائنات حية، ومساحات يجب ملؤها، وتكافل وتطفل وأحداث انقراض. يصبح السؤال لكل شركة سؤالًا بيئيًا: أي مساحة، وأي سبق، وأي ضغط من المحيط؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block2",
+   "en": "Moats are evolutionary advantages. Network effects (V15) are critical mass in a purely ecological sense — every new user makes the system more valuable, until the position locks. Agreements and partnerships (V17) are mutualism: two species living together out of shared interest — but symbiosis can slide into parasitism when one party takes almost all the value, as when a platform changes the terms for its application developers. Always ask which party in a partnership controls the customer and the value.",
+   "ar": "الخندق التنافسي ميزة تطورية. أثر الشبكة (V15) كتلة حرجة بالمعنى البيئي الصرف — كل مستخدم جديد يجعل النظام أكثر قيمة، حتى تنغلق المنزلة. والاتفاقيات والشراكات (V17) تكافل: نوعان يعيشان معًا لمصلحة مشتركة — لكن التعايش قد ينزلق إلى تطفل حين يأخذ طرف ما كل القيمة تقريبًا، كأن تغير منصة شروطها لمطوري التطبيقات عليها. اسأل دائمًا أي طرف في الشراكة يتحكم بالعميل وبالقيمة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block3",
+   "en": "Extinction and disruption: technological extinction events wipe out species that were perfectly adapted — until adaptation became meaningless. The newspapers had moats that looked impregnable; within a couple of decades they were dry. The Munger principle: cannibalize yourself before anyone else does — companies that actively destroy their own yesterday's cash cows (destroy your own business) survive technology shifts; those that protect it are protected for too long. Kodak is the textbook example: the owner of the future that got stuck in the present.",
+   "ar": "الانقراض والاضطراب: أحداث الانقراض التقنية تمحو أنواعًا كانت متكيفة تكيفًا تامًا — إلى أن غدا التكيف بلا معنى. كانت الصحف تملك خنادق بدت منيعة؛ وخلال عقود قليلة جفت. مبدأ منغر: كن آكلًا لنفسك قبل أن يفعلها غيرك — الشركات التي تدمر عمدًا بقرة الحليب الخاصة بأمس (destroy your own business) تنجو من تحولات التقنية؛ والتي تحميها تُحمى أطول من اللازم. كوداك مثال الكتاب المدرسي: مالك المستقبل الذي علق في الحاضر."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block4",
+   "en": "Incentives are the ecosystem's selection pressure: what is rewarded replicates, what is promoted becomes the organization's DNA. A company that rewards volume, short quarters and internal targets cultivates exactly that behavior — »show me the incentive and I will show you the outcome« applies internally too. In AK1's analysis, management's incentive structure is therefore a structural risk factor at the same level as indebtedness and capital needs: culture is not soft — it is genetic material that determines which behaviors survive in the company.",
+   "ar": "الحوافز هي ضغط الانتقاء في النظام البيئي: ما يُكافأ يتكرر، وما يُرقَّى يغدو الحمض النووي للمنظمة. الشركة التي تكافئ الحجم والأرباع القصيرة والأهداف الداخلية تُنمي ذلك السلوك بعينه — »أرني الحافز وأرِك النتيجة« يسري داخليًا أيضًا. في تحليل AK1 تُعد بنية حوافز الإدارة لذلك عامل خطر هيكليًا على المستوى نفسه مثل المديونية والاحتياج الرأسمالي: الثقافة ليست أمرًا لينًا — إنها مادة وراثية تحدد أي السلوكيات يبقى في الشركة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block5",
+   "en": "A moat is not a castle — it is an evolutionary advantage, and evolution takes back all advantages sooner or later. Ask not only how strong the moat is, but whether it is drying out.",
+   "ar": "الخندق التنافسي ليس قلعة — بل ميزة تطورية، والتطور يسترد كل ميزة عاجلًا أم آجلًا. لا تسأل فقط عن قوة الخندق التنافسي، بل عمّا إذا كان يجف."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:block6",
+   "en": "Which of your holdings has an advantage in the process of being selected away — by technology, habits or regulations? Write one sentence about what the company's niche looks like in ten years. If the sentence comes out empty you have your answer.",
+   "ar": "أي من ملكياتك تتمتع بميزة يجري استبعادها الآن بالانتقاء — بسبب التقنية أو العادات أو اللوائح؟ اكتب جملة واحدة عن شكل مساحة الشركة بعد عشر سنوات. إن خرجت الجملة فارغة فقد حصلت على الجواب."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:q",
+   "en": "What was Darwin's method that Munger admired?",
+   "ar": "ما كانت منهجية داروين التي أعجب بها منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:a0",
+   "en": "To publish quickly and often",
+   "ar": "النشر بسرعة وبكثرة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:a1",
+   "en": "To immediately note down observations that spoke against his own theory",
+   "ar": "تدوين الملاحظات فورًا مما كان يناقض نظريته هو"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:a2",
+   "en": "To keep the theory secret until it was finished",
+   "ar": "إبقاء النظرية سرًا حتى تكتمل"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:a3",
+   "en": "To rely on authorities in biology",
+   "ar": "الاعتماد على المراجع في علم الأحياء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz1:tips",
+   "en": "It is about the relationship to one's own mistakes — an early antidote to a tendency from chapter 5.",
+   "ar": "الأمر يتعلق بالعلاقة مع أخطاء المرء نفسه — ترياق مبكر لنزعة من الفصل 5."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:q",
+   "en": "What does »destroy your own business« mean in practice?",
+   "ar": "ماذا تعني عبارة »destroy your own business« عمليًا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:a0",
+   "en": "To stay close to bankruptcy for tax advantages",
+   "ar": "البقاء قرب الإفلاس لأجل المزايا الضريبية"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:a1",
+   "en": "To actively cannibalize your own product before competitors do",
+   "ar": "أن تلتهم منتجك أنت عمدًا قبل أن يفعل المنافسون"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:a2",
+   "en": "To sell off divisions continuously",
+   "ar": "التخلي باستمرار عن أقسام من الشركة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:a3",
+   "en": "To short your own company's stock",
+   "ar": "بيع السهم الخاص بشركتك على المكشوف"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz2:tips",
+   "en": "Better to eat your own framework than to let someone else do it.",
+   "ar": "من الأفضل أن تأكل هيكل عملك بنفسك على أن يفعله غيرك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:q",
+   "en": "Why does Munger compare incentives with evolutionary selection pressure?",
+   "ar": "لماذا يقارن منغر الحوافز بضغط الانتقاء التطوري؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:a0",
+   "en": "Because incentives change slowly, like DNA",
+   "ar": "لأن الحوافز تتغير ببطء مثل DNA"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:a1",
+   "en": "Because reward systems determine which behaviors survive and replicate in the organization",
+   "ar": "لأن أنظمة المكافآت تحدد السلوكيات التي تبقى وتتكرر داخل المنظمة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:a2",
+   "en": "Because all companies evolve toward perfection",
+   "ar": "لأن كل الشركات تتطور نحو الكمال"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:a3",
+   "en": "Because wages are genetically determined",
+   "ar": "لأن الأجور محددة جينيًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap12:quiz3:tips",
+   "en": "Consider what happens to behaviors that are never rewarded.",
+   "ar": "فكر في ما يحدث للسلوكيات التي لا تُكافأ أبدًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:titel",
+   "en": "Psychology in practice — checklists, airplanes, credit cards and Perc",
+   "ar": "علم النفس عمليًا — قوائم التحقق، والطائرات، وبطاقات الائتمان، والبيرك"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:intro",
+   "en": "Munger ends his psychology with the practical question: what does one do about the biases? The answer is not willpower but systems. His favorite example comes from aviation — and his warning examples from credit cards and dry cleaning.",
+   "ar": "يختم منغر علم نفسه بالسؤال العملي: ماذا يفعل المرء حيال الانحيازات؟ الجواب ليس قوة الإرادة بل النظم. مثاله المفضل يأتي من الطيران — وأمثلته التحذيرية من بطاقات الائتمان والتنظيف الجاف."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block1",
+   "en": "The airplane metaphor: the aviation industry made flying the world's safest mode of transport — not by recruiting smarter pilots but through systems: mandatory checklists, simulator training on failures, redundant systems and a culture where errors are reported without punishment. Munger asks rhetorically: if pilots with thousands of flight hours need checklists before every flight, why would investors make their biggest decisions without them? The difference is that the pilot who skips the checklist dies himself — the investor survives with his bias intact, which makes the systems even more important.",
+   "ar": "استعارة الطائرة: جعلت صناعة الطيران الطيران أأمن وسائل النقل في العالم — لا بتجنيد طيارين أذكى بل بالنظم: قوائم تحقق إلزامية، وتدريب على المحاكيات في الأعطال، وأنظمة مكررة، وثقافة تُبلَّغ فيها الأخطاء من دون عقاب. يسأل منغر خطابيًا: إذا كان الطيارون ذوو آلاف ساعات الطيران يحتاجون قوائم تحقق قبل كل رحلة، فلماذا يتخذ المستثمرون أكبر قراراتهم من دونها؟ الفرق أن الطيار الذي يتخطى القائمة يموت بنفسه — أما المستثمر فينجو بانحيازه سليمًا، وهذا يجعل النظم أهم من ذلك."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block2",
+   "en": "Build your bias checklist. Before every purchase: Who pays for the information I am reading? (incentive) Have I written the best argument against? (first conclusion) Do three or more forces act at the same time? (lollapalooza) Am I looking at absolute series or the latest contrast? Would I buy if I did not already own it and could not see my average price? (deprival) Who is the authority behind the belief? And trivial but true: have I slept, eaten and drunk water? Connect to /profil: your cognitive profile says which of these points YOU should double-check the hardest — the checklist should be personal, not generic.",
+   "ar": "ابنِ قائمة تحقق الانحيازات لديك. قبل كل شراء: من يدفع مقابل المعلومات التي أقرؤها؟ (الحوافز) هل كتبت أقوى حجة معارضة؟ (الاستنتاج الأول) هل تعمل ثلاث قوى أو أكثر في وقت واحد؟ (اللولابالوزا) هل أنظر إلى السلاسل المطلقة أم إلى آخر تباين؟ هل كنت سأشتري لو لم أكن أملكه أصلًا ولم أرَ متوسط سعري؟ (الحرمان) من هي السلطة وراء الاعتقاد؟ وسؤال تافه لكنه حقيقي: هل نمت وأكلت وشربت الماء؟ اربط ذلك بـ/profil: ملفك المعرفي يقول أيًّا من هذه البنود ينبغي لك أنت أن تراجعه بأشدّ شكل — قائمة التحقق يجب أن تكون شخصية، لا عامة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block3",
+   "en": "The credit card example: the credit card business's design is a lollapalooza of tendencies. Paying later hides the pain (pain-avoiding denial), the minimum payment frames the debt as small (contrast and frame dependence), the reward points associate the card with joy (influence-from-merely-association), and available credit makes every renunciation a deprival. The customer feels rich; the company harvests the interest. The lesson for analysis: when a company earns money because its customers misjudge — credit cards, betting and payday loans — ask whether the profit is a moat that holds or a mechanics that regulation or competition can smash.",
+   "ar": "مثال بطاقة الائتمان: تصميم عمل بطاقات الائتمان لولابالوزا من النزعات. الدفع لاحقًا يخفي الألم (الإنكار اتقاءً للألم)، والحد الأدنى للسداد يؤطر الدين بوصفه صغيرًا (التباين والاعتماد على التأطير)، ونقاط المكافآت تربط البطاقة بالفرح (التأثر بمجرد الاقتران)، والائتمان المتاح يجعل كل امتناع حرمانًا. يشعر العميل بالثراء وتحصد الشركة الفائدة. الدرس التحليلي: حين تكسب شركة من سوء تقدير عملائها — بطاقات الائتمان والمراهنة والقروض السريعة — فاسأل حينها هل الربح هو الخندق التنافسي الذي يصمد أم ميكانيكا يمكن للتنظيم أو المنافسة أن تحطمها."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block4",
+   "en": "The Perc example: perchloroethylene was the dry cleaning industry's standard solution long after the evidence for serious health risks grew. Munger describes how an entire industry — owners, consultants, organizations — held on: the incentives (conversion costs money), first-conclusion bias (»it has always worked«), social proof (»everyone else uses it«) and denial (the damage is invisible and delayed by years) interacted. The same pattern as tobacco and asbestos: when an entire industry earns money on the status quo, the negative information arrives late and is met with organized resistance. Good to know whether you are long and wondering why the upswing drags on, or short and want to know why the market talks itself into wrong things for so long.",
+   "ar": "مثال البيرك: ظل البيركلوروإيثيلين المحلول القياسي لصناعة التنظيف الجاف زمنًا طويلًا بعد تنامي الأدلة على مخاطر صحية خطيرة. يصف منغر كيف تشبثت صناعة كاملة — الملاك والمستشارون والمنظمات: بالحوافز (التحويل مكلف)، وانحياز الاستنتاج الأول (»كان هذا ينجح دائمًا«)، والإثبات الاجتماعي (»كل الآخرين يستخدمونه«)، والإنكار (الضرر غير مرئي ويتأخر سنوات). النمط نفسه كالتبغ والأسبستوس: حين تكسب صناعة كاملة من الوضع القائم، تأتي المعلومات السلبية متأخرة وتواجهها المقاومة المنظمة. من الجيد معرفة ذلك سواء كنت طويلًا وتتساءل لماذا يطول الصعود، أو قصيرًا وتريد أن تعرف لماذا يقنع السوق نفسه بأشياء خاطئة هذه المدة الطويلة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block5",
+   "en": "{\"rubrik\":\"Case → acting forces → lesson\",\"rader\":[[\"Case\",\"Acting forces\",\"Lesson\"],[\"Airplane\",\"Checklists, simulator, redundancy\",\"Systems defeat recklessness — build the checklist\"],[\"Credit card\",\"Denial + contrast + association + deprival\",\"If the business builds on customers' misjudgment — how durable is it?\"],[\"Perc\",\"Incentives + first conclusion + social proof + denial\",\"The industry's consensus delays the truth — count on it\"],[\"Tupperware\",\"Reciprocation + social proof + liking + consistency\",\"Convergence explains extreme outcomes\"]]}",
+   "ar": "{\"rubrik\":\"الحالة → القوى العاملة → الدرس\",\"rader\":[[\"الحالة\",\"القوى العاملة\",\"الدرس\"],[\"الطائرة\",\"قوائم التحقق، المحاكي، التكرار\",\"النظم تهزم التهور — ابنِ قائمة التحقق\"],[\"بطاقة الائتمان\",\"الإنكار + التباين + الاقتران + الحرمان\",\"إن بُني العمل على سوء تقدير العملاء — فما مدى دوامه؟\"],[\"البيرك\",\"الحوافز + الاستنتاج الأول + الإثبات الاجتماعي + الإنكار\",\"الإجماع داخل القطاع يؤخر الحقيقة — احسب بذلك\"],[\"Tupperware\",\"المعاملة بالمثل + الإثبات الاجتماعي + الميل + الاتساق\",\"التقارب يفسر النتائج المتطرفة\"]]}"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block6",
+   "en": "You cannot train biases away with will — but you can build systems that catch them. The pilots solved it with checklists. The question is whether your portfolio is worth more or less than a plane.",
+   "ar": "لا يمكنك أن تتخلص من الانحيازات بالتدريب بالإرادة — لكن يمكنك بناء نظم تلتقطها. حلّها الطيارون بقوائم التحقق. السؤال: هل تستحق المحفظة لديك أكثر أم أقل من طائرة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:block7",
+   "en": "Write your ten-point checklist now — three points from the book, three from your /profil, four from your own scars. Use it at your next buy decision before you even look at the course of the share price. Tear it up and rewrite it every six months.",
+   "ar": "اكتب قائمة التحقق ذات العشرة بنود الآن — ثلاثة بنود من الكتاب، وثلاثة من /profil، وأربعة من ندوبك أنت. استخدمها عند قرار الشراء القادم قبل أن تنظر حتى إلى الدورة السعرية للسهم. مزّقها وأعد كتابتها كل نصف سنة."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:q",
+   "en": "Why did flying become so safe according to Munger's reading?",
+   "ar": "لماذا أصبح الطيران بهذا الأمان بحسب قراءة منغر؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:a0",
+   "en": "Because the pilots became smarter and smarter over time",
+   "ar": "لأن الطيارين صاروا أكثر ذكاءً مع الوقت"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:a1",
+   "en": "Because systems — checklists, simulators, redundancy — subdue the human error",
+   "ar": "لأن النظم — قوائم التحقق والمحاكيات والتكرار — تكبح الخطأ البشري"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:a2",
+   "en": "Because technology eliminated the pilots",
+   "ar": "لأن التقنية ألغت الطيارين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:a3",
+   "en": "Because regulations banned all mistakes",
+   "ar": "لأن اللوائح حظرت كل الأخطاء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz1:tips",
+   "en": "The word to look for is not intelligence but system.",
+   "ar": "الكلمة التي تبحث عنها ليست الذكاء بل النظام."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:q",
+   "en": "What is the core of the credit card example?",
+   "ar": "ما جوهر مثال بطاقة الائتمان؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:a0",
+   "en": "That cards are expensive for the customer in all situations",
+   "ar": "أن البطاقات مكلفة للعميل في كل الأحوال"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:a1",
+   "en": "That card companies lack a moat",
+   "ar": "أن شركات البطاقات تفتقر إلى الخندق التنافسي"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:a2",
+   "en": "That the design stacks biases — denial, contrast, association, deprival — against the customer",
+   "ar": "أن التصميم يكدّس الانحيازات — الإنكار والتباين والاقتران والحرمان — ضد العميل"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:a3",
+   "en": "That cashback never pays off",
+   "ar": "أن استرداد النقد لا يخلف ربحًا أبدًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz2:tips",
+   "en": "Consider why it feels so easy to swipe and so hard to see the total.",
+   "ar": "فكر لماذا يبدو تمرير البطاقة سهلًا إلى هذا الحد ورؤية المبلغ النهائي صعبة إلى هذا الحد."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:q",
+   "en": "What does the Perc case teach an analyst?",
+   "ar": "ماذا تعلّم قضية البيرك المحلل؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:a0",
+   "en": "That dry cleaning is a bad sector",
+   "ar": "أن التنظيف الجاف قطاع سيء"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:a1",
+   "en": "That individual managers are often corrupt",
+   "ar": "أن المديرين المنفردين فاسدون كثيرًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:a2",
+   "en": "That environmental regulations always come quickly",
+   "ar": "أن اللوائح البيئية تأتي دائمًا بسرعة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:a3",
+   "en": "That when an entire industry earns money on the status quo, negative information comes late and is met with denial",
+   "ar": "أنه حين تكسب صناعة كاملة من الوضع القائم تأتي المعلومات السلبية متأخرة وتُستقبل بالإنكار"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap13:quiz3:tips",
+   "en": "Think about the incentives of everyone involved — who would lose by knowing?",
+   "ar": "فكر في حوافز كل المعنيين — من كان سيخسر لو عرف؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:titel",
+   "en": "Munger's legacy — rationality as a way of life",
+   "ar": "إرث منغر — العقلانية منهج حياة"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:intro",
+   "en": "Poor Charlie's Almanack does not end with capital but with character. Munger regarded rationality as a moral duty and learning as a life's task. The final chapter ties the book together with AK1 — from mental models to profile, risk matrix and Short-Seller.",
+   "ar": "لا يُختم Poor Charlie's Almanack برأس المال بل بالشخصية. عدّ منغر العقلانية واجبًا أخلاقيًا والتعلم مهمة عمر. يربط الفصل الأخير الكتاب بـAK1 — من النماذج الذهنية إلى الملف الشخصي ومصفوفة المخاطر وShort-Seller."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block1",
+   "en": "The life philosophy is Franklinian: »To get what you want, you have to deserve what you want. The world is not yet a crazy enough place to reward a whole bunch of undeserving people.« Deserving is the strategy — in the portfolio as in life. And learning is a duty, not a hobby project: wisdom acquisition is a moral duty — if you go to bed wiser than you got up, every day for decades, the result is not only a better portfolio but a better life. Munger died in 2023, ninety-nine years old, still reading and answering more sharply than most half as young.",
+   "ar": "فلسفة الحياة فرانكلينية: »لكي تنال ما تريد عليك أن تستحق ما تريد. العالم لم يصر بعد مكانًا مجنونًا بما يكفي ليكافئ حشدًا كاملًا من غير المستحقين.« الاستحقاق هو الاستراتيجية — في المحفظة كما في الحياة. والتعلم واجب لا مشروع هواية: اكتساب الحكمة واجب أخلاقي — إن نمت كل ليلة أحكم مما استيقظت، كل يوم لعقود، فلن تكون النتيجة محفظة أفضل فحسب بل حياة أفضل. توفي منغر عام 2023 عن تسعة وتسعين عامًا، وقد ظل حتى آخره قارئًا يجيب بحدة تفوق معظم من هم بنصف عمره."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block2",
+   "en": "The style was part of the content. The punchiness of the Munger quotes — »I have nothing to add«, »Show me the incentive and I will show you the outcome«, the dryness about envy as the only sin without pleasure — is not just entertainment: it forces out what Kaufman calls his most repeated lesson, seeing the world as straight as possible. The book's closing bon mot sums up the whole program: spend each day trying to become a little wiser than you were when you woke up — slug your way forward an inch at a time, day by day, and at the end of the day — if you live long enough — you will get out of life what you deserve.",
+   "ar": "كان الأسلوب جزءًا من المضمون. لذع اقتباسات منغر — »ليس لدي ما أضيفه«، و»أرني الحافز وأرِك النتيجة«، وجفافه في وصف الحسد بوصفه الخطيئة الوحيدة بلا متعة — ليس ترفيهًا فحسب: إنه ينتزع ما يسميه كوفمان أكثر دروسه تكرارًا، أن ترى العالم مستقيمًا قدر الإمكان. البونمو الختامي للكتاب يلخص البرنامج كله: اقضِ كل يوم في محاولة أن تصبح أحكم قليلًا مما كنت حين استيقظت — زحف قدمًا بوصة في كل مرة، يومًا بعد يوم، وفي نهاية اليوم — إن عشت ما يكفي — ستنال من الحياة ما تستحق."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block3",
+   "en": "From book to ecosystem — AK1 in Munger's light. The latticework ideal lives in the five theories: different lenses on the same reality, weighted by probability. The inversion principle lives in the risk matrix and the scenario space — what can go wrong first, pricing afterwards. Probability thinking lives in Monte Carlo and Kelly. The cognitive tendencies live in the profiling via /profil: which of the twenty-five are yours, measured and followed up. Lollapalooza thinking lives in the Short-Seller's decomposition of pumped stories. And sit-on-your-ass investing lives in the longest of the five time horizons — the one where the compounding interest rate does the work while you do something else.",
+   "ar": "من الكتاب إلى النظام البيئي — AK1 في ضوء منغر. مثال الإطار الشبكي حي في النظريات الخمس: عدسات مختلفة على الواقع نفسه، موزونة بالاحتمال. مبدأ الانعكاس حي في مصفوفة المخاطر وفضاء السيناريوهات — ما يمكن أن يخطئ أولًا، والتسعير بعده. التفكير الاحتمالي حي في مونت كارلو وكيلي. النزعات المعرفية حية في التوصيف عبر /profil: أي نزعة من الخمس والعشرين هي نزعاتك، مقيسة ومتابعة. تفكير اللولابالوزا حي في تفكيك Short-Seller للقصص المنتفخة. واستثمار البقاء ساكنًا حي في أطول الأفاق الزمنية الخمسة — ذلك الذي يتراكم فيه سعر الفائدة ويقوم بالعمل بينما تنشغل أنت بغيره."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block4",
+   "en": "The final exercise is structured humility: you cannot master twenty-five tendencies. Choose the three that cost you the most — the profiling and your trade log provide the lead — and build systems against precisely those: checklist points, predefined conditions, a log. Handle the rest with inverse thinking: do not try to be smart, just avoid being stupid the same way twice. Munger did not get rich from being right often; he got rich from rarely being catastrophically wrong, and from sitting still when he was right.",
+   "ar": "التمرين الختامي تواضع منظم: لا يمكنك إتقان خمس وعشرين نزعة. اختر الثلاث التي تكلفك أكثر شيء — التوصيف وسجل صفقاتك يوفران الدليل — وابنِ نظمًا ضد تلك بعينها: بنود قائمة تحقق، وشروطًا محددة سلفًا، وسجلًا. أما البقية فتعالجها بالتفكير العكسي: لا تحاول أن تكون ذكيًا، فقط تجنب أن تكون غبيًا بالطريقة نفسها مرتين. لم يثر منغر لأنه أصاب كثيرًا؛ بل أثر لأنه نادرًا ما أخطأ خطأً كارثيًا، ولأنه بقي ساكنًا حين كان مصيبًا."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block6",
+   "en": "Go to bed wiser than you got up — every day, for decades. That is the whole secret, and it is underrated only by those who have never tried it.",
+   "ar": "اذهب إلى الفراش أحكم مما استيقظت — كل يوم، لعقود. هذا هو السر كله، ولا يستهين به إلا من لم يجربه قط."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:block7",
+   "en": "Choose ONE tendency to 'own' this quarter — for example deprival, social proof or first-conclusion. Every time it shows up in your decision-making, write a line in a log. After four weeks: run /profil again and compare. Awareness without measurement is just an opinion.",
+   "ar": "اختر نزعة واحدة لـ'امتلاكها' هذا الربع — مثل الحرمان أو الإثبات الاجتماعي أو الاستنتاج الأول. في كل مرة تظهر في قراراتك اكتب سطرًا في سجل. بعد أربعة أسابيع: نفّذ /profil من جديد وقارن. الوعي من دون قياس مجرد رأي."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:q",
+   "en": "What does Munger mean by merit being the strategy?",
+   "ar": "ماذا يقصد منغر بأن الاستحقاق هو الاستراتيجية؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:a0",
+   "en": "That you should deserve your gains — the world does not reward a whole gang of undeserving people",
+   "ar": "أن تستحق أرباحك — العالم لا يكافئ عصابة كاملة من غير المستحقين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:a1",
+   "en": "That you should earn the respect of analysts",
+   "ar": "أن تكسب احترام المحللين"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:a2",
+   "en": "That the salary should be merit-based",
+   "ar": "أن يكون الأجر قائمًا على الاستحقاق"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:a3",
+   "en": "That you should deserve your losses by learning from them",
+   "ar": "أن تستحق خسائرك عن طريق أن تتعلم منها"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz1:tips",
+   "en": "The quote begins with »to get what you want« — how do you do that in the safest way?",
+   "ar": "يبدأ الاقتباس بعبارة »to get what you want« — كيف يفعل المرء ذلك بأكثر الطرق أمانًا؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:q",
+   "en": "What is the Bayesian connection between Munger and AK1?",
+   "ar": "ما هو الرابط البايزي بين منغر وAK1؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:a0",
+   "en": "That both use the same financial ratios",
+   "ar": "أن كليهما يستخدم النسبة المالية نفسها"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:a1",
+   "en": "That new information updates theory weights and probabilities step by step — not the feeling",
+   "ar": "أن المعلومات الجديدة تحدّث أوزان النظريات والاحتمالات خطوة خطوة — لا الشعور"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:a2",
+   "en": "That both predict the market's tops",
+   "ar": "أن كليهما يتنبأ بقمم السوق"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:a3",
+   "en": "That profiles replace analyses entirely",
+   "ar": "أن الملفات الشخصية تحل محل التحليلات كليًا"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz2:tips",
+   "en": "Consider what a quarterly report should change — and what it should not change.",
+   "ar": "فكر في ما الذي ينبغي أن يغيّره التقرير الربع سنوي — وما لا ينبغي أن يغيّره."
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:q",
+   "en": "What is the structured-humility final exercise in this course?",
+   "ar": "ما هو التمرين الختامي للتواضع المنظم في هذه الدورة؟"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:a0",
+   "en": "To master all twenty-five tendencies",
+   "ar": "إتقان النزعات الخمس والعشرين كلها"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:a1",
+   "en": "To read the book once more per year",
+   "ar": "قراءة الكتاب مرة إضافية كل عام"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:a2",
+   "en": "To never repeat a mistake by stopping trading",
+   "ar": "ألا تكرر أي خطأ بالتوقف عن التداول"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:a3",
+   "en": "To choose three tendencies that cost you the most and build systems and measurement against precisely those",
+   "ar": "اختيار ثلاث نزعات تكلفك أكثر شيء وبناء نظم وقياس ضد تلك بعينها"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:kap14:quiz3:tips",
+   "en": "Twenty-five is too many — which are yours?",
+   "ar": "خمسة وعشرون أكثر من اللازم — فأيها نزعاتك؟"
+  }
+ ]
+}

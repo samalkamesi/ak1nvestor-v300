@@ -8770,3 +8770,24 @@ Guiderna är SV — EN/AR kommer i våg 69 (v68bg-paket).
 stället för titel+learn (learn kunde inte ligga kvar i minnet — 176 kB);
 "bokmaster"-träffar 2→103, "risk" 101→27 (mindre brus). Full learn-sökning
 kräver sökändpunkt = framtida funktionalitet.
+
+## Våg 68 — VÅGEN SLUTSTÄLLD (2026-09-06)
+
+**v68c-strategisk lärdom:** HELA paketet (747) dog tyst 2× i följd —
+delat i två mindre (374+373) = levererat direkt tredje försöket. REGEL:
+vid tyst agentdöd, dela paketet och försök igen (små scopar > stora).
+
+**Våg 68 översättning TOTALT: 3 331 källor · 6 660 rader publicerade**
+(v68a 1 108 + v68b 1 292 + v68c1 748 + v68c2 746 + v68d 1 416 + v68e 1 350;
+2 nekade = Chart-fallen). **240/333 kurser KOMPLETTA** — bokkanon-tillväxt:
+the-intelligent-investor (497/497 EN), blue-ocean, security-analysis,
+interpretation-of-financial-statements, one-up-on-wall-street, the-little-
+book-that-beats-the-market, margin-of-safety, poor-charlies-almanack,
+the-outsiders, 100-baggers, quality-of-earnings, expectations-investing.
+
+**Slutmätning: 49,5 % total täckning** (69 131 publicerade rader i lagret;
+från 44,8 % vid vågstart, från 1,6 % vid våg 65). Blogg 91 % endast pga de
+4 SV-nya guiderna — v68bg-agenten (116 poster) stänger gapet pågående.
+
+**Kvar: bokmaster 93 kurser (35 191 källor) ≈ 5 ronder = våg 69-71 enligt
+STYRELSE-VAGPLAN-69-71.md.**

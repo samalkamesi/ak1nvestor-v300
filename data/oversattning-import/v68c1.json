@@ -1,0 +1,1877 @@
+{
+ "kurs": "v68c1",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v68c1): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "margin-of-safety:kap1:titel",
+   "en": "The casino — where most investors go wrong",
+   "ar": "الكازينو — حيث يخطئ معظم المستثمرين"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:intro",
+   "en": "Seth Klarman founded The Baupost Group in Boston in 1982, after apprentice years with Max Heine and Michael Price at Mutual Shares, and wrote Margin of Safety in 1991 against the backdrop of the collapses of the '80s. He refuses to reprint the book — used copies trade for thousands of dollars, and he has suggested that the money would rather go to charity. That is why this course quotes the book openly: knowledge should be accessible.",
+   "ar": "أسس سيث كلارمان The Baupost Group في بوسطن عام 1982، بعد سنوات تدريب لدى ماكس هاين ومايكل برايس في Mutual Shares، وكتب كتاب Margin of Safety عام 1991 على خلفية انهيارات سنوات الـ80. يرفض إعادة طبع الكتاب — تُتداول النسخ المستعملة بآلاف الدولارات، واقترح أن من الأفضل أن تذهب هذه الأموال إلى أعمال الخير. لهذا السبب تقتبس هذه الدورة الكتاب بانفتاح: المعرفة يجب أن تكون في متناول الجميع."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block1",
+   "en": "The book's subtitle is »Risk-Averse Value Investing Strategies for the Thoughtful Investor« — strategies for the thoughtful investor. Klarman opens with a diagnosis: most investors go wrong before they have bought anything at all. They seek return first and treat risk as a footnote. The speculator buys in the hope that someone else will pay more; the investor buys a share of a business at a price below its calculated value. The difference is not a degree of skill but the very game being played.",
+   "ar": "العنوان الفرعي للكتاب هو »Risk-Averse Value Investing Strategies for the Thoughtful Investor« — استراتيجيات للمستثمر المتأمل. يفتتح كلارمان بالتشخيص: معظم المستثمرين يخطئون قبل أن يشتروا أي شيء على الإطلاق. إنهم يطلبون العائد أولًا ويعتبرون المخاطر حاشية. المضارب يشتري أملاً في أن يدفع شخص آخر أكثر؛ المستثمر يشتري حصة من شركة بسعر أقل من قيمتها المحسوبة. الفرق ليس في درجة المهارة بل في طبيعة اللعبة نفسها."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block2",
+   "en": "The nature of Wall Street is the second problem: the street's firms earn from activity, not from your return. New products are launched when demand exists — not when they are good for the buyer. Junk bonds in the '80s, portfolio insurance, derivatives, and later eras' structured products and index products follow the same pattern: innovation as a response to greed, packaged as service. Klarman recalls Graham's image: the market is short-term a voting machine, long-term a weighing machine. The casino's participants play the voting; the investor waits for the weighing.",
+   "ar": "طبيعة وول ستريت هي المشكلة الثانية: شركات الشارع تكسب من النشاط، لا من العائد الذي تحققه أنت. تُطلق المنتجات الجديدة عندما يوجد الطلب — لا عندما تكون جيدة للمشتري. سندات الجنك في سنوات الـ80، وتأمين المحافظ، والمشتقات، ثم لاحقًا المنتجات المهيكلة ومنتجات المؤشرات تتبع النمط نفسه: ابتكار استجابةً للجشع، معبأً في هيئة خدمة. يذكّرنا كلارمان بصورة غراهام: السوق على المدى القصير آلة تصويت، وعلى المدى الطويل آلة وزن. المشاركون في الكازينو يراهنون على التصويت؛ المستثمر ينتظر الوزن."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block3",
+   "en": "The institutional problem: pension managers and funds are measured quarterly against an index and against colleagues. Whoever deviates and is wrong loses the job; whoever follows the herd and is wrong keeps it. Institutions therefore become structurally conformist — they must own what everyone else owns and may not own what nobody else looks at. The short-term performance derby forces fully invested portfolios even when bargains are absent, which in turn creates the mispricings the value investor later exploits.",
+   "ar": "المشكلة المؤسسية: مديرو المعاشات والعاملون في الصندوق الاستثماري يُقاسون كل ربع سنة مقابل المؤشر ومقابل الزملاء. من يحيد ويخطئ يفقد وظيفته؛ من يتبع القطيع ويخطئ يحتفظ بها. لذلك تصبح المؤسسات مطابقة للسائد بنيويًا — عليها أن تملك ما يملكه الجميع ولا يجوز لها أن تملك ما لا يلتفت إليه أحد. سباق الأداء قصير الأجل يفرض أن تكون المحفظة مستثمرة بالكامل حتى عند غياب الصفقات الرابحة، وهو ما يخلق بدوره سوء التسعير الذي يستغله المستثمر القيمي لاحقًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block4",
+   "en": "Klarman's counter-image is deliberate and few: analysis of individual companies, buying with a margin, patience to wait, and courage to act when others are paralyzed. Baupost was built on that culture — few, unequal positions, high cash when the supply of bargains was poor, and a readiness to buy what others were forced to sell. The rest of the course builds out that method: chapters 2-6 give the philosophy, chapters 7-8 history's warnings, chapters 9-12 the hunting grounds and the mechanics, chapters 13-14 cash, ownership and the rules.",
+   "ar": "الصورة المضادة عند كلارمان مقصودة وقلة: تحليل شركات فردية، وشراء بهامش، وصبر على الانتظار، وشجاعة على التصرف عندما يكون غيرك مشلولًا. بُنيت Baupost على هذه الثقافة — مراكز قليلة وغير متساوية، ونقد مرتفع حين يكون العرض رديئًا، وجاهزية لشراء ما كان على الآخرين بيعه. بقية الدورة تبني هذه الطريقة: الفصل 2-6 تعطي الفلسفة، الفصل 7-8 تحذيرات التاريخ، الفصل 9-12 مناطق الصيد والميكانيكا، الفصل 13-14 النقد والملكية والقواعد."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block5",
+   "en": "{\"rubrik\":\"Speculator or investor — Klarman's dividing lines\",\"rader\":[[\"Question\",\"Speculator\",\"Investor\"],[\"What do you buy?\",\"An expected price move\",\"A share of a business below calculated value\"],[\"What protects you?\",\"Timing, trend, stop-loss\",\"Margin of safety — the price below the value\"],[\"How are you measured?\",\"Quarter against index and peers\",\"Few decisions, long-term result\"],[\"How do you meet news?\",\"Trades on it immediately\",\"Asks whether the price already contains it\"],[\"Who is your enemy?\",\"Missing the rally\",\"Permanently losing capital\"]]}",
+   "ar": "{\"rubrik\":\"مضارب أم مستثمر — خطوط الفصل عند كلارمان\",\"rader\":[[\"السؤال\",\"المضارب\",\"المستثمر\"],[\"ماذا تشتري؟\",\"حركة سعر متوقعة\",\"حصة من شركة بأقل من القيمة المحسوبة\"],[\"ما الذي يحميك؟\",\"التوقيت والاتجاه ووقف الخسارة\",\"هامش الأمان — السعر أدنى من القيمة\"],[\"كيف تُقاس؟\",\"ربع سنوي مقابل المؤشر والزملاء\",\"قرارات قليلة ونتيجة طويلة الأجل\"],[\"كيف تستقبل خبرًا؟\",\"يتداول عليه فورًا\",\"يسأل هل السعر يتضمنه بالفعل\"],[\"من هو عدوك؟\",\"تفويت الصعود\",\"خسارة رأس المال بشكل دائم\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block6",
+   "en": "Wall Street earns from your activity, not from your return — every product whose revenue depends on your trading should be scrutinized extra closely.",
+   "ar": "وول ستريت تكسب من نشاطك، لا من العائد الذي تحققه — كل منتج تعتمد الإيرادات فيه على تداولك يجب فحصه بعناية مضاعفة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:block7",
+   "en": "Go through your last ten trades. Classify each purchase as investment (value below price, with a margin) or speculation (hope of a rise) — and write one decisive reason per trade. Be honest: what would have made each trade a speculation, and what did you lack to be able to call it an investment?",
+   "ar": "راجع صفقاتك العشر الأخيرة. صنّف كل شراء على أنه استثمار (قيمة أعلى من السعر، بهامش) أو مضاربة (أمل بالصعود) — واكتب سببًا حاسمًا واحدًا لكل صفقة. كن صادقًا: ما الذي كان سيجعل كل صفقة مضاربة، وما الذي نقص لديك لتستطيع تسميتها استثمارًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:q",
+   "en": "Why does Klarman refuse to print a new edition of the book?",
+   "ar": "لماذا يرفض كلارمان طباعة طبعة جديدة من الكتاب؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:a0",
+   "en": "The publisher owns the rights and says no",
+   "ar": "دار النشر تملك الحقوق وترفض"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:a1",
+   "en": "He considers the content outdated since the 1990s",
+   "ar": "يرى أن المحتوى قديم منذ عقد 1990"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:a2",
+   "en": "He does not want it read as a recipe collection — the subtitle demands thoughtfulness, and he has suggested that money would rather go to charity",
+   "ar": "لا يريد أن تُقرأ كمجموعة وصفات جاهزة — العنوان الفرعي يقتضي التأمل، وقد اقترح أن من الأفضل أن تذهب الأموال إلى أعمال الخير"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:a3",
+   "en": "He is writing a completely new book instead",
+   "ar": "يكتب كتابًا جديدًا تمامًا بدلًا منه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz1:tips",
+   "en": "Look at the subtitle: what kind of investor is he addressing?",
+   "ar": "انظر إلى العنوان الفرعي: إلى أي نوع من المستثمرين يتوجه؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:q",
+   "en": "According to Klarman, what is the main reason most investors fail?",
+   "ar": "ما السبب الرئيسي وفقًا لكلارمان لفشل معظم المستثمرين؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:a0",
+   "en": "They lack access to information",
+   "ar": "لا يملكون فرصة الوصول إلى المعلومات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:a1",
+   "en": "They focus on return first and ignore the risk — they play the casino's game",
+   "ar": "يركزون على العائد أولًا ويتجاهلون المخاطر — إنهم يلعبون لعبة الكازينو"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:a2",
+   "en": "They invest too long-term",
+   "ar": "يستثمرون بمدى طويل أكثر من اللازم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:a3",
+   "en": "They use the wrong broker",
+   "ar": "يستخدمون الوسيط الخطأ"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz2:tips",
+   "en": "What does the speculator ask first — and what does the value investor ask first?",
+   "ar": "ما الذي يسأل عنه المضارب أولًا — وما الذي يسأل عنه المستثمر القيمي أولًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:q",
+   "en": "How does the institutional problem contribute to mispriced stocks?",
+   "ar": "كيف تسهم المشكلة المؤسسية في الأسهم المغلوطة التسعير؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:a0",
+   "en": "Institutions lack the capital to influence the course of prices",
+   "ar": "المؤسسات تفتقر إلى رأس المال للتأثير في الدورة السعرية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:a1",
+   "en": "By law, institutions may not own insignificant stocks",
+   "ar": "يُحظر على المؤسسات بحسب القانون امتلاك الأسهم قليلة الشأن"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:a2",
+   "en": "Institutions are measured short-term against colleagues and can therefore rarely deviate — the conformism creates both overvalued favorites and ignored bargains",
+   "ar": "تُقاس المؤسسات على المدى القصير مقابل الزملاء ولذلك نادرًا ما تستطيع الحياد — فالتطابق مع السائد يخلق المفضلات المفرطة التقييم والفرص الرابحة المهملة معًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:a3",
+   "en": "Institutions always analyze more thoroughly than private individuals",
+   "ar": "تحلل المؤسسات دائمًا بشكل أعمق من الأفراد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap1:quiz3:tips",
+   "en": "What happens to the one who deviates and is wrong — compared with the one who follows the herd and is wrong?",
+   "ar": "ماذا يحدث لمن يحيد ويخطئ — مقارنةً بمن يتبع القطيع ويخطئ؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:titel",
+   "en": "Margin of safety — the principle that gave the book its name",
+   "ar": "هامش الأمان — المبدأ الذي أعطى الكتاب اسمه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:intro",
+   "en": "The core of the book is a single principle: buy at a price so low that mistakes, bad luck and the market's mood can be absorbed. Klarman formulates it as the margin always being dependent on the price — large at one price, small at a higher one, nonexistent at a higher still. In AKM1, margin of safety is a principle without a V-number: it determines how all V-measures are to be interpreted.",
+   "ar": "جوهر الكتاب مبدأ واحد: اشترِ بسعر منخفض إلى درجة يمكن معها امتصاص الأخطاء وسوء الطالع ومزاج السوق. يصوغه كلارمان على أن الهامش يعتمد دائمًا على السعر — كبير عند سعر معين، وصغير عند سعر أعلى، ومنعدم عند سعر أعلى أكثر. في AKM1 يمثل هامش الأمان مبدأً بلا رقم V: فهو يحدد كيف تُفسر جميع مقاييس V."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block1",
+   "en": "Klarman inherits the Graham tradition's core dictum: »Margin of safety is always dependent on the price paid« — the margin is always dependent on the price you pay (freely translated). It is large at a low price, small at a higher one and nonexistent at a higher still. A perfectly formulated signal: the margin is a function of the price, never of how exciting the company is. An excellent company at the wrong price gives no margin; a boring company at half of net asset value gives a massive one.",
+   "ar": "يرث كلارمان العبارة المحورية لتقليد غراهام: »Margin of safety is always dependent on the price paid« — الهامش يعتمد دائمًا على السعر الذي تدفعه (ترجمة حرة). إنه كبير عند سعر منخفض، وصغير عند سعر أعلى، ومنعدم عند سعر أعلى أكثر. إشارة مصوغة بإتقان: الهامش دالة في السعر، لا في مدى إثارة الشركة. شركة ممتازة بسعر خاطئ لا تعطي هامشًا؛ وشركة مملة بنصف صافي قيمة أصولها تعطي هامشًا هائلًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block2",
+   "en": "What does the margin protect against? Three things: first your own mistakes — that you calculated too high or missed a risk. Second, that the company's fundamentals deteriorate — the business cycle, competition, lost contracts. Third, the market's mood — that the price stays depressed longer than you can bear. The book's image is the doll in the toy store: if it is worth ten dollars and the price is three, you do not need to know exactly whether it is worth nine or eleven — the margin makes the coarseness of the estimate harmless.",
+   "ar": "وممّ يحمي الهامش؟ ثلاثة أشياء: أولًا أخطاؤك أنت — أن تكون قد حسبت أعلى من اللازم أو أغفلت واحدة من المخاطر. ثانيًا تدهور أساسيات الشركة — الدورة الاقتصادية والمنافسة وفقدان العقود. ثالثًا مزاج السوق — أن يبقى السعر مكتئبًا مدة أطول مما تحتمل. صورة الكتاب هي الدمية في متجر الألعاب: إن كانت تساوي عشرة دولارات والسعر ثلاثة، فلست بحاجة إلى معرفة هل تساوي تسعة أم أحد عشر بالضبط — الهامش يجعل خشونة التقدير غير مؤذية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block3",
+   "en": "In the AKM1 ecosystem, margin of safety is a principle — and is therefore written without a V-number. It is the meta-rule that decides when other measures mean anything: a low P/B (V05) without stable assets and an honest balance sheet is a value trap; a high P/B can still contain a margin if the intrinsic value is many times higher than the course of the share price. The margin is never replaced by multiples — multiples are shortcuts that only work when an independent valuation already exists.",
+   "ar": "في منظومة AKM1 يمثل هامش الأمان مبدأً — ولذلك يُكتب بلا رقم V. هو القاعدة الفوقية التي تحدد متى يكون لسائر المقاييس معنى: P/B منخفض (V05) من دون الأصول المستقرة والميزانية العمومية الصادقة هو فخ قيمة؛ وP/B مرتفع قد يحتمل الهامش مع ذلك إذا كانت القيمة الحقيقية أعلى بأضعاف من الدورة السعرية للسهم. الهامش لا يُستكمل أبدًا بالمضاعفات — فالمضاعفات اختصارات لا تنفع إلا عند وجود حساب قيمة مستقل سلفًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block4",
+   "en": "The margin's three sources in practice: the situation's coercion (chapters 9-10 — buying from price-insensitive sellers), the instrument's structure (seniority, security, the repayment ladder — bondholders stand ahead of shareholders) and diversification as the last protection when the individual analysis is uncertain. Without patience the margin is still consumed: whoever is forced to sell in panic never owns his own decision. That is why the margin belongs together with cash (chapter 13) — and with never levering yourself to a margin call.",
+   "ar": "مصادر الهامش الثلاثة في الممارسة: إكراه الموقف (الفصل 9-10 — الشراء من بائعين غير حساسين للسعر)، وبنية الأداة (الأقدمية والضمان وسلم السداد — حاملو السندات يتقدمون على المساهمين)، والتنويع بوصفه الحماية الأخيرة عندما يكون التحليل الفردي غير مؤكد. من دون صبر يُستهلك الهامش مع ذلك: من اضطر إلى البيع في الهلع لا يملك قراره أبدًا. لهذا يرتبط الهامش بالنقد (الفصل 13) — وبعدم اللجوء أبدًا إلى اقتراض يوصلك إلى نداء الهامش."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block6",
+   "en": "The margin is always a function of the price — never of the company's quality. The best company at the wrong price is a speculation.",
+   "ar": "الهامش دائمًا دالة في السعر — لا في جودة الشركة. أفضل شركة بسعر خاطئ هي مضاربة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:block7",
+   "en": "Take a stock you own. Estimate the value in three scenarios: pessimist, base and optimist. Calculate the margin (value minus price, as a percent of the price) in each scenario. If the margin is negative in the base case — why do you own it? If it is positive only in the optimist scenario — what does Klarman call that?",
+   "ar": "خذ سهمًا تملكه. قدّر قيمة السهم في ثلاثة سيناريوهات: متشائم وأساسي ومتفائل. احسب الهامش (القيمة ناقص السعر، كنسبة مئوية من السعر) في كل سيناريو. إذا كان الهامش سلبيًا في السيناريو الأساسي — فلماذا تملكه إذن؟ إذا كان إيجابيًا في السيناريو المتفائل وحده — فماذا يسمي ذلك كلارمان؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:q",
+   "en": "What does Klarman mean by the margin »always being dependent on the price«?",
+   "ar": "ماذا يقصد كلارمان بأن الهامش »يعتمد دائمًا على السعر«؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:a0",
+   "en": "That good companies always have a margin",
+   "ar": "أن الشركات الجيدة لديها هامش دائمًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:a1",
+   "en": "That the margin is the same regardless of entry price",
+   "ar": "أن الهامش واحد مهما كان سعر الدخول"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:a2",
+   "en": "That the margin grows with the company's growth rate",
+   "ar": "أن الهامش ينمو مع وتيرة نمو الشركة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:a3",
+   "en": "That the margin is large at a low price, small at a higher one and nonexistent at a higher still — the price decides, not the quality",
+   "ar": "أن الهامش كبير عند سعر منخفض، وصغير عند سعر أعلى، ومنعدم عند سعر أعلى أكثر — السعر هو من يحدد، لا الجودة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz1:tips",
+   "en": "Consider what happens to the margin if you pay more and more for exactly the same company.",
+   "ar": "فكر في ما يحدث للهامش إذا دفعت أكثر فأكثر مقابل الشركة نفسها بالضبط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:q",
+   "en": "Which three mistakes should the margin protect against?",
+   "ar": "ما الأخطاء الثلاثة التي يجب أن يحمي منها الهامش؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:a0",
+   "en": "Mistakes in your own analysis, deteriorated fundamentals and the market's mood",
+   "ar": "أخطاء في التحليل الذاتي، وأساسيات متدهورة، ومزاج السوق"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:a1",
+   "en": "Inflation, taxes and brokerage fees",
+   "ar": "التضخم والضرائب وعمولات السمسرة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:a2",
+   "en": "Competitors, CEO change and currency risk",
+   "ar": "المنافسون، وتغيير الرئيس التنفيذي، ومخاطر العملة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:a3",
+   "en": "Interest rates, GDP and the oil price",
+   "ar": "سعر الفائدة، والناتج المحلي الإجمالي، وسعر النفط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz2:tips",
+   "en": "One of the three concerns you, one the company, one the market.",
+   "ar": "واحدة من الثلاثة تتعلق بك، وواحدة بالشركة، وواحدة بالسوق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:q",
+   "en": "How does margin of safety relate to AKM1's V-measures?",
+   "ar": "كيف يرتبط هامش الأمان بمقاييس V في AKM1؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:a0",
+   "en": "It is one V-measure among others",
+   "ar": "إنه مقياس V بين مقاييس أخرى"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:a1",
+   "en": "It is a principle without a V-number that determines how the V-measures are to be interpreted",
+   "ar": "إنه مبدأ بلا رقم V يحدد كيف تُفسر مقاييس V"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:a2",
+   "en": "It corresponds to V06",
+   "ar": "إنه يقابل V06"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:a3",
+   "en": "It applies only in the analysis part, not in the portfolio",
+   "ar": "لا ينسحب إلا على جزء التحليل، لا على المحفظة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap2:quiz3:tips",
+   "en": "Some things are measures — others are principles that decide when the measures mean anything.",
+   "ar": "بعض الأشياء مقاييس — وأخرى مبادئ تحدد متى تكون للمقاييس معنى."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:titel",
+   "en": "Bottoms-up and contrarian — pillars two and three",
+   "ar": "من الأسفل إلى الأعلى والعكسية — الركن الثاني والثالث"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:intro",
+   "en": "The value investor's three pillars are margin of safety, bottoms-up analysis and contrarian thinking at the pendulum's extremes. Pillars two and three belong together: whoever does not need to forecast the macro can also dare to act differently from the consensus. The course links the pendulum to AKM1's cycle thinking.",
+   "ar": "أركان المستثمر القيمي الثلاثة هي هامش الأمان، والتحليل من الأسفل إلى الأعلى، والتفكير العكسي عند طرفي البندول المتطرفين. الركنان الثاني والثالث متلازمان: من لا يحتاج إلى التنبؤ بالاقتصاد الكلي يستطيع أيضًا أن يجرؤ على التصرف بخلاف الإجماع. تربط الدورة البندول بتفكير AKM1 الدوري."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block1",
+   "en": "The top-down investor begins with forecasts: economy, interest rates, currencies, market level — and then chooses holdings that fit the picture. Klarman dismisses the method for two reasons: forecasts are mostly wrong, and even when they are right they are mostly already priced in — nobody pays you for knowing what everyone knows. Bottoms-up is the opposite: start with an individual security, calculate its value independently of the macro and buy when the price lies below. You never need to know where the market is going — only what a company is worth.",
+   "ar": "يبدأ المستثمر من الأعلى إلى الأسفل بالتوقعات: الاقتصاد وأسعار الفائدة والعملات ومستوى السوق — ثم يختار المقتنيات التي تناسب الصورة. يرفض كلارمان هذه الطريقة لسببين: التوقعات خاطئة في الغالب، وحتى عندما تكون صحيحة فهي غالبًا مسعّرة سلفًا — لا أحد يدفع لك لمعرفة ما يعرفه الجميع. الأسفل إلى الأعلى هو العكس: ابدأ بورقة مالية بعينها، واحسب قيمتها بشكل مستقل عن الاقتصاد الكلي، واشترِ عندما يكون السعر أدنى منها. لا تحتاج أبدًا إلى معرفة إلى أين يتجه السوق — فقط كم تساوي الشركة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block2",
+   "en": "Contrarian thinking is pillar three, but Klarman is precise: it is not about mechanically believing the opposite of the consensus. It is about recognizing the pendulum's extreme positions — when greed or fear has peaked — and realizing that the price then contains an extreme expectation that gives asymmetry. In the panic the risk is already priced in; in the euphoria it is completely unpriced. The consensus can never give a margin, because everyone has already traded on it.",
+   "ar": "التفكير العكسي هو الركن الثالث، لكن كلارمان دقيق: الأمر ليس تصديق عكس الإجماع آليًا. الأمر هو التعرف إلى طرفي البندول المتطرفين — حين يبلغ الجشع أو الخوف ذروته — وإدراك أن السعر يحمل حينها توقعًا متطرفًا يمنح عدم تماثل. في الهلع تكون المخاطر مسعّرة سلفًا؛ وفي النشوة تكون غير مسعّرة إطلاقًا. الإجماع لا يمكن أن يعطي هامشًا، لأن الجميع تداولوا على أساسه سلفًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block3",
+   "en": "Rational contrarianism requires three things: an independent valuation that shows the margin, the ability to distinguish information from opinion (a fall in the price is not information about the value) and psychological endurance to look wrong for a period — the contrarian is often early and appears to be wrong. Graham's weighing machine consoles: in the long run the price tends toward value. In the short term the casino's participants vote (chapter 1).",
+   "ar": "يتطلب العكسيون الرشيد ثلاثة أشياء: حساب قيمة مستقلًا يُظهر الهامش، والقدرة على التمييز بين المعلومات والرأي (هبوط السعر ليس معلومة عن القيمة)، والصبر النفسي على أن تبدو مخطئًا لفترة — فالعكسي كثيرًا ما يكون مبكرًا ويبدو مخطئًا. آلة الوزن عند غراهام تعزّي: على المدى الطويل يميل السعر نحو القيمة. وعلى المدى القصير يصوّت المشاركون في الكازينو (الفصل 1)."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block4",
+   "en": "In bottoms-up work you begin in the business, not in the macro: how predictable is demand — that is, revenue stability (V12)? A company with stable, recurring revenue can be valued with greater certainty and thus less margin, while a company with cyclical revenue requires wider ranges and a deeper discount. Only thereafter come multiples and catalysts. The analysis of the individual company is the pillar — the macro forecast is its opposite.",
+   "ar": "في عمل الأسفل إلى الأعلى تبدأ من العمل التجاري لا من الاقتصاد الكلي: ما مدى قابلية الطلب للتنبؤ — أي استقرار الإيرادات (V12)؟ الشركة ذات الإيرادات المستقرة المتكررة يمكن تقييمها بقدر أكبر من اليقين وبالتالي بهامش أقل، بينما الشركة ذات الإيرادات الدورية تتطلب نطاقات أوسع وخصمًا أعمق. فقط بعد ذلك تأتي المضاعفات والمحفزات. تحليل الشركة الفردية هو الركن — وتوقع الاقتصاد الكلي هو نقيضه."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block6",
+   "en": "Bottoms-up analysis frees you from the coercion of the forecast: you do not need to know where the market is going — only what an individual company is worth.",
+   "ar": "التحليل من الأسفل إلى الأعلى يحررك من إكراه التوقع: لا تحتاج إلى معرفة إلى أين يتجه السوق — فقط كم تساوي شركة فردية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:block7",
+   "en": "Choose a sector everyone loves right now. Write the consensus thesis in one sentence. Then construct the contrarian counter-thesis: what must be true for the price to be wrong? Finally formulate a confirmation requirement — what concretely would make you abandon the counter-thesis? Without that, contrarianism is mere defiance.",
+   "ar": "اختر قطاعًا يحبه الجميع الآن. اكتب أطروحة الإجماع في جملة واحدة. ثم ابنِ الأطروحة العكسية المضادة: ما الذي يجب أن يكون صحيحًا حتى يكون السعر خاطئًا؟ صُغ أخيرًا شرط تأكيد — ما الذي يمكن أن يجعلك تحديدًا تتخلى عن الأطروحة المضادة؟ من دون ذلك تكون العكسية مجرد عناد."
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:q",
+   "en": "Why does Klarman reject top-down investing?",
+   "ar": "لماذا يرفض كلارمان الاستثمار من الأعلى إلى الأسفل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:a0",
+   "en": "Macro is unimportant for return",
+   "ar": "الاقتصاد الكلي غير مهم من حيث العائد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:a1",
+   "en": "Forecasts are mostly wrong — and even when they are right they are already priced in",
+   "ar": "التوقعات خاطئة في الغالب — وحتى عندما تكون صحيحة فهي مسعّرة سلفًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:a2",
+   "en": "Institutions have been banned from using it",
+   "ar": "حُظر على المؤسسات استخدامه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:a3",
+   "en": "It requires data that is too expensive",
+   "ar": "يتطلب بيانات باهظة الثمن"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz1:tips",
+   "en": "What happens to your excess return if the market already knows what you think you know?",
+   "ar": "ماذا يحدث بعائدك الزائد إذا كان السوق يعرف سلفًا ما تظن أنك تعرفه؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:q",
+   "en": "When is contrarian thinking most profitable according to the book's logic?",
+   "ar": "متى يكون التفكير العكسي أكثر ربحية وفقًا لمنطق الكتاب؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:a0",
+   "en": "When the trend is strong and stable",
+   "ar": "عندما يكون الاتجاه قويًا ومستقرًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:a1",
+   "en": "At company reports",
+   "ar": "عند تقارير الشركات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:a2",
+   "en": "When the pendulum has hit an extreme — panic or euphoria — and the price contains an extreme expectation",
+   "ar": "عندما يبلغ البندول أقصاه — في الهلع أو في النشوة — ويحمل السعر توقعًا متطرفًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:a3",
+   "en": "Every trading day",
+   "ar": "كل يوم تداول"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz2:tips",
+   "en": "Where in the pendulum's swing is the asymmetry between risk and reward?",
+   "ar": "في أي موضع من تأرجح البندول يقع عدم التماثل بين المخاطر والمكافأة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:q",
+   "en": "What is required for a contrarian position to be rational, not just defiant?",
+   "ar": "ما الذي يلزم حتى يكون المركز العكسي رشيدًا، لا مجرد تحدٍّ؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:a0",
+   "en": "An independent valuation that shows a margin — otherwise the deviation is just opinion",
+   "ar": "حساب قيمة مستقل يُظهر الهامش — وإلا فالانحراف مجرد رأي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:a1",
+   "en": "High leverage to reinforce the conviction",
+   "ar": "رفع مالي مرتفع لتقوية القناعة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:a2",
+   "en": "That the media confirms the thesis",
+   "ar": "أن تؤكد وسائل الإعلام الأطروحة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:a3",
+   "en": "That the position is small enough to be forgotten",
+   "ar": "أن يكون المركز صغيرًا بما يكفي لينسى"
+  },
+  {
+   "nyckel": "margin-of-safety:kap3:quiz3:tips",
+   "en": "What separates the one who thinks differently and is right from the one who merely does the opposite?",
+   "ar": "ما الذي يفصل من يفكر بشكل مختلف ويكون على صواب عمَّن يكتفي بفعل العكس؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:titel",
+   "en": "Intrinsic value — the art of reckoning with uncertainty",
+   "ar": "القيمة الحقيقية — فن الحساب مع عدم اليقين"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:intro",
+   "en": "Intrinsic value is the book's most misunderstood concept: not an exact number but a range of estimates. Klarman reckons with three paths — cash flow value, net asset value and the sum of the parts — and uses relative measures such as V04-V06 only as shortcuts. The course links the quality of profitability (V07-V09) and moat thinking (V13-V15) to the certainty of the value range.",
+   "ar": "القيمة الحقيقية هي أكثر مفاهيم الكتاب سوء فهم: ليست رقمًا مضبوطًا بل نطاقًا من التقديرات. يحسب كلارمان بثلاث طرق — قيمة التدفق النقدي، وصافي قيمة الأصول، ومجموع الأجزاء — ويستخدم المقاييس النسبية مثل V04-V06 اختصارات فقط. تربط الدورة جودة الربحية (V07-V09) وتفكير الخندق التنافسي (V13-V15) بيقين نطاق القيمة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block1",
+   "en": "Intrinsic value is the discounted value of future cash flows — but Klarman stresses that it is an estimate, not a fact. Always work with ranges and let the margin grow as the uncertainty grows. Three paths: (1) cash flow value (NPV) — what the business generates forward in time; (2) net asset value and liquidation value — what the assets are worth in a break-up, often a Graham-inspired lower bound; (3) the market capitalization of the parts — the sum of publicly traded subsidiaries, observable prices. It is best when the methods overlap and point to a value far above the course of the price.",
+   "ar": "القيمة الحقيقية هي القيمة المخصومة للتدفقات النقدية المستقبلية — لكن كلارمان يؤكد أنها تقدير لا حقيقة. اعمل دائمًا بالنطاقات ودع الهامش ينمو كلما نمى عدم اليقين. ثلاث طرق: (1) قيمة التدفق النقدي (NPV) — ما يولّده العمل للأمام في الزمن؛ (2) صافي قيمة الأصول وقيمة التصفية — كم تساوي الأصول عند التفكيك، وغالبًا حد أدنى مستوحى من غراهام؛ (3) القيمة السوقية للأجزاء — مجموع الشركات التابعة المتداولة علنًا، بأسعار قابلة للرصد. الأفضل أن تتقاطع الطرق وتشير إلى قيمة أعلى بكثير من الدورة السعرية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block2",
+   "en": "Relative measures are shortcuts, not answers. P/S (V04), P/B (V05) and EV/EBITDA (V06) say nothing without context: compare with the company's own history, with competitors and with capital needs. A low P/S on a company where the gross margin (V07) is negative is meaningless — every krona of revenue destroys value. A low P/B on a bank with bad loans is a value trap — book value is an opinion, not a ceiling. A low EV/EBITDA (V06) on an industrial with constant capital needs is a trap of another kind — the capital burn (V19) eats the value the valuation multiple promises.",
+   "ar": "المقاييس النسبية اختصارات لا إجابات. لا تقول P/S (V04) وP/B (V05) وEV/EBITDA (V06) شيئًا من دون سياق: قارن بتاريخ الشركة نفسها وبالمنافسين وبالاحتياج الرأسمالي. P/S منخفض على شركة يكون الهامش الإجمالي فيها سالبًا (V07) بلا معنى — كل كرونا من الإيرادات تدمر قيمة. وP/B منخفض على بنك بقروض رديئة فخ قيمة — القيمة الدفترية رأي لا سقف. وEV/EBITDA (V06) منخفض على شركة صناعية ذات احتياج رأسمالي دائم فخ من نوع آخر — حرق رأس المال (V19) يلتهم القيمة التي يَعِد بها مضاعف التقييم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block3",
+   "en": "The quality of profitability refines the range: the gross margin (V07) reveals pricing power, the EBITDA margin (V08) cost discipline and ROE (V09) the efficiency of capital. But a high ROE with a rising debt-to-equity ratio (V10) is a leverage illusion — separate operating and financed return before you trust the number. Conversely, companies with temporarily depressed margins — after a crisis or a restructuring — can be exactly where normalized margins give a sharply undervalued cash flow value.",
+   "ar": "جودة الربحية تصقل النطاق: يكشف الهامش الإجمالي (V07) القوة التسعيرية، وهامش EBITDA (V08) انضباط التكاليف، وROE (V09) كفاءة رأس المال. لكن ROE مرتفعًا مع ارتفاع نسبة الدين إلى حقوق الملكية (V10) هو وهم من الرافعة المالية — افصل العائد التشغيلي عن العائد الممَوَّل قبل أن تثق بالرقم. وبالعكس، قد تكون الشركات ذات الهوامش المضغوطة مؤقتًا — بعد أزمة أو إعادة هيكلة — هي بالضبط حيث تعطي الهوامش الطبيعية قيمة تدفق نقدي شديدة النقص في التقييم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block4",
+   "en": "Moat thinking decides the durability of the range: durable advantages such as brand (V14), patents and IP (V13) and — in modern companies — the network effect (V15) deserve longer and safer cash flow assumptions. But Klarman warns against paying for the moat: a moat that is being filled in is worse than none, because the market still prices it as eternal. The moat strengthens the range; the margin still requires the price to lie below the lower end of the range.",
+   "ar": "تفكير الخندق التنافسي يحدد متانة النطاق: المزايا المستدامة كالعلامة التجارية (V14) وبراءات الاختراع والملكية الفكرية (V13) و— في الشركات الحديثة — أثر الشبكة (V15) تستحق افتراضات تدفق نقدي أطول وأكثر أمانًا. لكن كلارمان يحذّر من الدفع مقابل الخندق التنافسي: الخندق التنافسي الذي يجري ردمه أسوأ من لا خندق، لأن السوق لا يزال يسعّره أبديًا. الخندق التنافسي يقوّي النطاق؛ الهامش يظل يتطلب أن يقع السعر أدنى من الطرف الأدنى للنطاق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block5",
+   "en": "{\"rubrik\":\"Three paths to intrinsic value\",\"rader\":[[\"Method\",\"What you calculate\",\"Strength\",\"Weakness\"],[\"Cash flow value (NPV)\",\"Discounted future flows\",\"Captures the value of the business\",\"Extremely sensitive to assumptions — use ranges\"],[\"Net asset / liquidation value\",\"Assets minus liabilities in a break-up\",\"A lower bound that tolerates mistakes\",\"Ignores future value creation\"],[\"Market capitalization of parts\",\"The sum of publicly traded subsidiaries\",\"Built on observable prices\",\"All the parts can be overvalued\"]]}",
+   "ar": "{\"rubrik\":\"ثلاث طرق إلى القيمة الحقيقية\",\"rader\":[[\"الطريقة\",\"ما تحسبه\",\"القوة\",\"الضعف\"],[\"قيمة التدفق النقدي (NPV)\",\"التدفقات المستقبلية المخصومة\",\"تلتقط قيمة العمل التجاري\",\"حساسة للغاية للافتراضات — استخدم النطاقات\"],[\"صافي قيمة الأصول / قيمة التصفية\",\"الأصول ناقص الالتزامات عند التفكيك\",\"حد أدنى يتحمل الأخطاء\",\"تتجاهل خلق القيمة المستقبلي\"],[\"القيمة السوقية للأجزاء\",\"مجموع الشركات التابعة المتداولة علنًا\",\"مبنية على أسعار قابلة للرصد\",\"قد تكون جميع الأجزاء مفرطة التقييم\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block6",
+   "en": "Value is a range, not a point — the margin is what remains when you calculate on the range's pessimistic end.",
+   "ar": "القيمة نطاق لا نقطة — الهامش هو ما يتبقى حين تحسب عند الطرف المتشائم من النطاق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:block7",
+   "en": "Value the company with all three methods: NPV in three scenarios, net asset value as the lower bound and sum-of-the-parts if parts are listed. Note where the ranges overlap. Does today's price lie below the lower end of the overlap with a margin, within it, or above — and what does that say about how you should relate to the company?",
+   "ar": "قيّم الشركة بالطرق الثلاث كلها: NPV في ثلاثة سيناريوهات، وصافي قيمة الأصول حدًا أدنى، ومجموع الأجزاء إن كانت بعض الأجزاء مدرجة. لاحظ أين تتقاطع النطاقات. هل يقع سعر اليوم أدنى من الطرف الأدنى للتقاطع بهامش، أم ضمنه، أم أعلى منه — وماذا يقول ذلك عن كيفية تعاملك مع الشركة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:q",
+   "en": "How does Klarman view the calculation of intrinsic value?",
+   "ar": "كيف ينظر كلارمان إلى حساب القيمة الحقيقية؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:a0",
+   "en": "As an exact number that can be punched into the spreadsheet",
+   "ar": "كرقم مضبوط يمكن إدخاله في جدول البيانات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:a1",
+   "en": "As the reasonableness of the latest share price",
+   "ar": "كمعقولية آخر سعر للسهم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:a2",
+   "en": "As a range of estimates — where the uncertainty demands a larger margin",
+   "ar": "كنطاق من التقديرات — حيث يفرض عدم اليقين هامشًا أكبر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:a3",
+   "en": "As the accounting value in the balance sheet",
+   "ar": "كالقيمة المحاسبية في الميزانية العمومية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz1:tips",
+   "en": "What happens to precision when the outcome depends on the future?",
+   "ar": "ماذا يحدث للدقة عندما تتوقف النتيجة على المستقبل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:q",
+   "en": "Why is a low P/S (V04) meaningless if the gross margin (V07) is negative?",
+   "ar": "لماذا يكون P/S المنخفض (V04) بلا معنى إذا كان الهامش الإجمالي (V07) سالبًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:a0",
+   "en": "P/S applies only to banks",
+   "ar": "ينطبق P/S على البنوك فقط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:a1",
+   "en": "A negative gross margin always means bankruptcy within a year",
+   "ar": "الهامش الإجمالي السالب يعني دائمًا الإفلاس خلال عام"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:a2",
+   "en": "Revenue is irrelevant to the valuation",
+   "ar": "الإيرادات لا علاقة لها بالتقييم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:a3",
+   "en": "Every krona of revenue destroys value — a low valuation multiple on destructive revenue is no margin",
+   "ar": "كل كرونا من الإيرادات تدمر قيمة — مضاعف التقييم المنخفض على إيرادات مدمرة ليس هامشًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz2:tips",
+   "en": "What happens to every sales krona when the margin is negative?",
+   "ar": "ماذا يحدث لكل كرونا مبيعات عندما يكون الهامش سالبًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:q",
+   "en": "A high ROE (V09) can mislead — when?",
+   "ar": "قد يضلّل ROE المرتفع (V09) — متى؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:a0",
+   "en": "When it is driven by a high debt-to-equity ratio (V10) rather than operating quality",
+   "ar": "عندما يكون مدفوعًا بارتفاع نسبة الدين إلى حقوق الملكية (V10) لا بالجودة التشغيلية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:a1",
+   "en": "When the company pays a dividend",
+   "ar": "عندما تدفع الشركة التوزيعات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:a2",
+   "en": "When revenue is growing",
+   "ar": "عندما تنمو الإيرادات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:a3",
+   "en": "When the company has many employees",
+   "ar": "عندما يكون لدى الشركة موظفون كثيرون"
+  },
+  {
+   "nyckel": "margin-of-safety:kap4:quiz3:tips",
+   "en": "Calculate the return on total capital — what accounts for the difference?",
+   "ar": "احسب العائد على إجمالي رأس المال — ما الذي يفسر الفرق؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:titel",
+   "en": "Risk — permanent capital loss, not volatility",
+   "ar": "المخاطر — خسارة رأس المال الدائمة، لا التقلب"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:intro",
+   "en": "Klarman redefines risk from the ground up: risk is the possibility of permanent capital loss — not volatility in the price. The course goes through the five concrete sources of loss (V10-V12, V19) and risk management's three tools: position size, diversification as the last protection and insuring the portfolio.",
+   "ar": "يعيد كلارمان تعريف المخاطر من الأساس: المخاطر هي إمكان خسارة رأس المال بصورة دائمة — لا التقلب في السعر. تستعرض الدورة مصادر الخسارة الخمسة الملموسة (V10-V12 وV19) وأدوات إدارة المخاطر الثلاث: حجم المركز، والتنويع بوصفه الحماية الأخيرة، وتأمين المحفظة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block1",
+   "en": "Modern financial theory equates risk with volatility — the more the course of the price swings, the riskier. Klarman dismisses that as conceptual confusion: a stock that has fallen 40 percent below its value is not more risky — it is cheaper. The risk that matters is the possibility of permanent loss: that the capital never comes back. Bankruptcy, dilution to nothing, leverage that explodes, the instrument's legal weakness. Volatility is a price along the way; permanent loss is the end of the journey.",
+   "ar": "تساوي النظرية المالية الحديثة بين المخاطر والتقلب — كلما تأرجحت الدورة السعرية أكثر ازدادت الخطورة. يرفض كلارمان ذلك بوصفه خلطًا مفاهيميًا: السهم الذي هبط 40 بالمئة دون قيمته ليس أكثر خطورة — بل أرخص. الخطر الذي يهم هو إمكان الخسارة الدائمة: ألا يعود رأس المال أبدًا. الإفلاس، وتخفيف الملكية إلى العدم، ورفع مالي ينفجر، وضعف الأداة قانونيًا. التقلب سعر في الطريق؛ والخسارة الدائمة نهاية الرحلة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block2",
+   "en": "Five concrete paths to permanent loss: (1) the company's leverage (V10 debt-to-equity ratio) — interest costs and forced measures eat all room in a downturn; (2) your own leverage — a margin call makes you a forced seller at exactly the point where patience is your most valuable weapon; (3) liquidity risk (V11) — when nobody buys, the price is crushed by your own selling; (4) business risk with unsteady revenue (low V12 revenue stability) — the cash flow breaks at precisely the moment when the outside world shows no mercy; (5) capital burn (V19) — the company covers the gap with share issues and dilutes you into significantly smaller ownership.",
+   "ar": "خمسة طرق ملموسة إلى الخسارة الدائمة: (1) رفع الشركة المالي (V10 نسبة الدين إلى حقوق الملكية) — تكاليف سعر الفائدة والإجراءات القسرية تلتهم كل هامش مناورة في الهبوط؛ (2) رفعك المالي أنت — نداء الهامش يجعلك بائعًا مضطرًا في اللحظة بالضبط التي يكون فيها الصبر سلاحك الأثمن؛ (3) مخاطر السيولة (V11) — حين لا يشتري أحد يُسحق السعر ببيعك أنت؛ (4) خطر العمل التجاري مع إيرادات غير مستقرة (V12 منخفض — استقرار الإيرادات) — ينكسر التدفق النقدي في اللحظة التي لا يغفر فيها العالم الخارجي؛ (5) حرق رأس المال (V19) — تغطي الشركة الفجوة بإصدار أسهم وتخفف ملكيتك إلى حصة أصغر بكثير."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block3",
+   "en": "Risk management according to the book: size positions by downside — not by expected return; diversification is the last protection when the individual analysis is uncertain, never a substitute for the margin; and at extreme points the portfolio can be insured — cheap put options or short positions that protect the downside. Baupost hedges tail risk when the price of insurance is low, not as a permanent cost. In addition: understand the instrument's structure — seniority, security, the repayment ladder. A safe bond in a bad company beats a stock in a good one.",
+   "ar": "إدارة المخاطر وفق الكتاب: حدّد حجم المراكز وفق الجانب الهابط — لا وفق العائد المتوقع؛ التنويع هو الحماية الأخيرة عندما يكون التحليل الفردي غير مؤكد، وليس بديلًا عن الهامش أبدًا؛ وعند المواضع المتطرفة يمكن تأمين المحفظة — بخيارات بيع رخيصة أو مراكز بيع على المكشوف تحمي الجانب الهابط. تتحوط Baupost لمخاطر الذيل حين يكون سعر التأمين منخفضًا، لا بوصفه تكلفة دائمة. إضافةً إلى ذلك: افهم بنية الأداة — الأقدمية والضمان وسلم السداد. السند الآمن في شركة رديئة يتفوق على السهم في شركة جيدة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block4",
+   "en": "The balance between concentration and spread: too much concentration means a single mistake becomes catastrophic, too much diversification dilutes the edge until the portfolio is an expensive copy of the index. Klarman's stance: positions should be unequally sized by margin and risk — largest where the intrinsic value is most secure and the forced-selling situation strongest, and absent where the margin is missing. Risk management begins with what you refuse to own.",
+   "ar": "التوازن بين التركز والتوزيع: التركز المفرط يجعل خطأً واحدًا كارثيًا، والتنويع المفرط يميّع الأفضلية حتى تصبح المحفظة نسخة باهظة من المؤشر. موقف كلارمان: يجب أن تكون المراكز متفاوتة الحجم وفق الهامش والمخاطر — الأكبر حيث تكون القيمة الحقيقية أكثر أمانًا وموقف البيع القسري أقوى، والمنعدمة حيث يغيب الهامش. إدارة المخاطر تبدأ بما ترفض تملكه."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block5",
+   "en": "{\"rubrik\":\"Five paths to permanent loss\",\"rader\":[[\"Source\",\"Mechanism\",\"AKM1 measure\"],[\"Leverage at the company\",\"Interest rate and forced measures in a downturn eat the room for action\",\"V10 debt-to-equity ratio\"],[\"Leverage at you\",\"A margin call makes you a forced seller at the bottom\",\"Own leverage\"],[\"Liquidity\",\"No buyer when you need to sell — the price is crushed\",\"V11 liquidity\"],[\"Business risk\",\"Unsteady revenue breaks the cash flow when it hurts most\",\"V12 revenue stability\"],[\"Capital burn\",\"The gap is covered with share issues — dilution\",\"V19 emission-risk\"]]}",
+   "ar": "{\"rubrik\":\"خمسة طرق إلى الخسارة الدائمة\",\"rader\":[[\"المصدر\",\"الآلية\",\"مقياس AKM1\"],[\"رفع مالي عند الشركة\",\"سعر الفائدة والإجراءات القسرية في الهبوط تلتهم هامش التحرك\",\"V10 نسبة الدين إلى حقوق الملكية\"],[\"رفع مالي عندك أنت\",\"نداء الهامش يجعلك بائعًا مضطرًا في القاع\",\"الرافعة المالية الذاتية\"],[\"السيولة\",\"لا مشتري حين تحتاج البيع — يُسحق السعر\",\"V11 السيولة\"],[\"خطر العمل التجاري\",\"إيرادات غير مستقرة تكسر التدفق النقدي في أشد اللحظات إيلامًا\",\"V12 استقرار الإيرادات\"],[\"حرق رأس المال\",\"تُغطى الفجوة بإصدار أسهم — تخفيف الملكية\",\"V19 المخاطر الخاصة بالإصدار\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block7",
+   "en": "Never ask first how high the return can become — ask first how you can lose the capital permanently.",
+   "ar": "لا تسأل أبدًا أولًا إلى أي مدى يمكن أن يرتفع العائد — اسأل أولًا كيف يمكنك أن تخسر رأس المال بصورة دائمة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:block8",
+   "en": "Take one of your holdings and rate the five sources of loss 1-5: the company's leverage (V10), the stock's liquidity (V11), revenue stability (V12), capital consumption (V19) and your own leverage. Decide: what is the worst reasonable outcome — and will your portfolio and your psyche survive it? If not: what is the first action?",
+   "ar": "خذ أحد مقتنياتك وقيّم مصادر الخسارة الخمسة على مقياس 1-5: رفع الشركة المالي (V10)، وضعف السيولة في السهم (V11)، واستقرار الإيرادات (V12)، واستهلاك رأس المال (V19)، ورفعك المالي أنت. حدّد لنفسك: ما أسوأ نتيجة معقولة — وهل تنجو المحفظة ونفسيتك منها؟ إن لم يكن: ما الإجراء الأول؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:q",
+   "en": "How does Klarman define risk?",
+   "ar": "كيف يعرّف كلارمان المخاطر؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:a0",
+   "en": "As volatility in the course of the price",
+   "ar": "كالتقلب في الدورة السعرية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:a1",
+   "en": "As the beta value against the index",
+   "ar": "كقيمة بيتا مقابل المؤشر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:a2",
+   "en": "As the possibility of permanent capital loss",
+   "ar": "كإمكان الخسارة الدائمة لرأس المال"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:a3",
+   "en": "As the deviation from the price target",
+   "ar": "كانحراف عن السعر المستهدف"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz1:tips",
+   "en": "Which loss can you never recover from?",
+   "ar": "أي خسارة لا يمكنك أبدًا التعافي منها؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:q",
+   "en": "Why is leverage on the investor himself so dangerous?",
+   "ar": "لماذا يكون الرفع المالي لدى المستثمر نفسه بالغ الخطورة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:a0",
+   "en": "The interest cost always becomes higher than the return",
+   "ar": "تكلفة سعر الفائدة تصبح دائمًا أعلى من العائد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:a1",
+   "en": "A margin call takes away your patience — you are forced to sell at exactly the point where waiting was your greatest advantage",
+   "ar": "نداء الهامش ينتزع منك الصبر — تُرغم على البيع في اللحظة بالضبط التي كانت فيها الانتظار أفضل ما لديك"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:a2",
+   "en": "It is illegal in value investing",
+   "ar": "إنه غير قانوني في الاستثمار القيمي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:a3",
+   "en": "Leverage increases the brokerage fees",
+   "ar": "الرفع المالي يزيد عمولات السمسرة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz2:tips",
+   "en": "What does a margin call require you to do — and at what price?",
+   "ar": "ماذا يطلب منك نداء الهامش أن تفعل — وبأي سعر؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:q",
+   "en": "What role should diversification play according to the book?",
+   "ar": "ما الدور الذي يجب أن يلعبه التنويع وفق الكتاب؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:a0",
+   "en": "Replace the margin when time is short",
+   "ar": "أن يحل محل الهامش حين يكون الوقت ضيقًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:a1",
+   "en": "Always be maximized — 100 holdings is the minimum",
+   "ar": "أن يُعظَّم دائمًا — 100 مقتنى هو الحد الأدنى"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:a2",
+   "en": "Be the last protection when the individual analysis is uncertain — never an excuse to buy without a margin",
+   "ar": "أن يكون الحماية الأخيرة عندما يكون التحليل الفردي غير مؤكد — لا عذرًا أبدًا للشراء من دون هامش"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:a3",
+   "en": "Apply only to bonds",
+   "ar": "أن يقتصر على السندات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap5:quiz3:tips",
+   "en": "What protects you best: more stocks without a margin — or fewer with one?",
+   "ar": "ما الذي يحميك أفضل: مزيد من الأسهم بلا هامش — أم أقل منها بهامش؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:titel",
+   "en": "Inflation — the invisible enemy",
+   "ar": "التضخم — العدو الخفي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:intro",
+   "en": "After the inflation of the '70s and the swings of the '80s, Klarman devotes an entire track to what inflation does to the saver: it taxes cash and all fixed claims without appearing in any chart. The course goes through the mechanism, the rule of 72 and the protection — index-linked bonds and companies with pricing power.",
+   "ar": "بعد تضخم سنوات الـ70 وتقلبات سنوات الـ80، يخصص كلارمان مسارًا كاملًا لما يفعله التضخم بالمدخر: إنه يفرض ضريبة على النقد وكل المطالبات الثابتة من دون أن يظهر في أي رسم بياني. تستعرض الدورة الآلية وقاعدة 72 والحماية — السندات المرتبطة بالمؤشرات وشركات ذات قدرة على التسعير."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block1",
+   "en": "Volatility shows in every chart; inflation shows nowhere — until it has already eaten your purchasing power. Klarman writes with the double-digit inflation of the '70s in mind: an account paying an interest rate of 3 percent at 6 percent inflation loses half of its purchasing power in twelve years. The rule of 72 gives the feel: divide 72 by the inflation rate and you get the number of years to halved purchasing power. Real return — return minus inflation — is the only one that counts.",
+   "ar": "التقلب يظهر في كل رسم بياني؛ التضخم لا يظهر في أي مكان — إلا بعد أن يكون قد التهم قوتك الشرائية سلفًا. يكتب كلارمان وفي ذهنه تضخم سنوات الـ70 ثنائي الرقم: حساب يقدم سعر الفائدة 3 بالمئة عند تضخم 6 بالمئة يفقد نصف قوته الشرائية في اثني عشر عامًا. قاعدة 72 تعطي الإحساس: اقسم 72 على وتيرة التضخم تحصل على عدد السنوات حتى تنخفض القوة الشرائية إلى النصف. العائد الحقيقي — العائد ناقص التضخم — هو الوحيد الذي يُحسب."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block2",
+   "en": "Inflation hits with different force: fixed bonds are hit worst because both coupon and nominal value are locked; cash loses directly but at least visibly; stocks with pricing power can raise prices in step with costs and hold the gross margin (V07) — inflation becomes a test of the company's power in its market; real estate and other real assets can protect the value but are not immune to the price you pay. The key is to distinguish the asset's real nature from the price you buy it at — inflation protects no one from overpaying.",
+   "ar": "يضرب التضخم بقوى متفاوتة: السندات ذات الفائدة الثابتة الأشد تضررًا لأن الكوبون والقيمة الاسمية مقيّدان؛ النقد يخسر مباشرة لكن بشكل مرئي على الأقل؛ الأسهم ذات القوة التسعيرية تستطيع رفع الأسعار مع ارتفاع التكاليف والمحافظة على الهامش الإجمالي (V07) — يصبح التضخم اختبارًا لقوة الشركة في سوقها؛ العقارات وسائر الأصول الحقيقية تحمي القيمة لكنها ليست محصنة ضد السعر الذي تدفعه. المفتاح هو التمييز بين الطبيعة الحقيقية للأصل والسعر الذي تشتريه به — التضخم لا يحمي أحدًا من الدفع أكثر من اللازم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block3",
+   "en": "The protection according to the book: inflation-protected bonds — in his day Klarman advocated index-linked government securities as an important alternative, since they eliminate inflation risk and leave only the real interest rate negotiable; companies with stable demand (V12) and pricing power; and restraint with long nominal bonds when the real interest rate is low. Note who the counterparties are: whoever issues nominal debt wins on unexpected inflation — whoever owns it loses.",
+   "ar": "الحماية وفق الكتاب: سندات محمية من التضخم — دعا كلارمان في زمنه إلى الأوراق الحكومية المرتبطة بالمؤشرات بديلًا مهمًا، لأنها تلغي مخاطر التضخم ولا تترك إلا سعر الفائدة الحقيقي قابلًا للتفاوض؛ وشركات بطلب مستقر (V12) وقوة تسعيرية؛ وتحفّظ تجاه السندات الاسمية الطويلة حين يكون سعر الفائدة الحقيقي منخفضًا. لاحظ من هم الأطراف المقابلة: من يصدر الدين الاسمي يكسب من التضخم غير المتوقع — ومن يملكه يخسر."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block4",
+   "en": "The paradox of cash versus inflation: cash loses purchasing power every year — yet Baupost still held high cash when the alternative was poor investments. Klarman's resolution of the tension: the choice is always relative. The cost of cash is known and slow (inflation); the cost of a poor investment is unknown and can become permanent (chapter 5). Cash is therefore the right choice even in an inflationary time — provided it is viewed as waiting for better supply, not as a permanent home.",
+   "ar": "مفارقة النقد مقابل التضخم: النقد يفقد القوة الشرائية كل عام — ومع ذلك أبقت Baupost على نقد مرتفع حين كان البديل استثمارات رديئة. حل كلارمان لهذا التوتر: الاختيار دائمًا نسبي. تكلفة النقد معروفة وبطيئة (التضخم)؛ وتكلفة الاستثمار الرديء مجهولة وقد تصبح دائمة (الفصل 5). لذلك فإن النقد خيار صائب حتى في زمن التضخم — بشرط أن يُنظر إليه بوصفه انتظارًا لعرض أفضل، لا موطنًا دائمًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block5",
+   "en": "{\"rubrik\":\"What inflation does to different assets\",\"rader\":[[\"Asset\",\"Mechanism under unexpected inflation\",\"Protection value\"],[\"Cash\",\"Purchasing power erodes directly and visibly\",\"Weak — only as waiting for better supply\"],[\"Fixed interest rate (bond)\",\"The real interest rate falls and the course of the price declines\",\"Weakest — avoid when the real interest rate is already low\"],[\"Index-linked bond\",\"Coupon and value follow the index\",\"Strong — direct compensation\"],[\"Stocks with pricing power\",\"Prices can be raised in step with costs — the gross margin (V07) is held\",\"Depends on the company's power in its market\"]]}",
+   "ar": "{\"rubrik\":\"ماذا يفعل التضخم بمختلف الأصول\",\"rader\":[[\"الأصل\",\"الآلية عند التضخم غير المتوقع\",\"قيمة الحماية\"],[\"النقد\",\"القوة الشرائية تتآكل مباشرة وبشكل مرئي\",\"ضعيفة — فقط بوصفها انتظارًا لعرض أفضل\"],[\"سعر الفائدة الثابت (السند)\",\"سعر الفائدة الحقيقي ينخفض وتتراجع الدورة السعرية\",\"الأضعف — تجنّبه حين يكون سعر الفائدة الحقيقي منخفضًا سلفًا\"],[\"السند المرتبط بالمؤشر\",\"الكوبون والقيمة يتبعان المؤشر\",\"قوية — تعويض مباشر\"],[\"الأسهم ذات القوة التسعيرية\",\"يمكن رفع الأسعار مع ارتفاع التكاليف — يُحافظ على الهامش الإجمالي (V07)\",\"يتوقف على قوة الشركة في سوقها\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block6",
+   "en": "Always calculate in real terms: inflation is the only enemy that taxes you without appearing in the account statement.",
+   "ar": "احسب دائمًا بالقيم الحقيقية: التضخم هو العدو الوحيد الذي يفرض عليك ضريبة من دون أن يظهر في كشف الحساب."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:block7",
+   "en": "Calculate your portfolio's real five-year return: total return minus actual accumulated inflation over the period. Which holdings contributed in real terms — and which were nominal illusions? Then test the bond with a 4 percent coupon at inflation of 2, 6 and 10 percent: what happens to the real value?",
+   "ar": "احسب العائد الحقيقي الخمسي لما حققته المحفظة: العائد الإجمالي ناقص التضخم المتراكم الفعلي خلال الفترة. أي المقتنيات أسهمت بالقيم الحقيقية — وأيها كان أوهامًا اسمية؟ اختبر بعد ذلك السند الذي كوبونه 4 بالمئة عند تضخم 2 و6 و10 بالمئة: ماذا يحدث للقيمة الحقيقية؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:q",
+   "en": "Why does Klarman call inflation invisible?",
+   "ar": "لماذا يسمي كلارمان التضخم خفيًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:a0",
+   "en": "It is never published in statistics",
+   "ar": "لا يُنشر أبدًا في الإحصاءات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:a1",
+   "en": "It affects only foreign currencies",
+   "ar": "لا يؤثر إلا في العملات الأجنبية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:a2",
+   "en": "It does not show in the chart but erodes cash and fixed claims — the loss is real without being reported",
+   "ar": "لا يظهر في الرسم البياني لكنه ينخر النقد والمطالبات الثابتة — الخسارة حقيقية من دون أن يُبلَّغ عنها"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:a3",
+   "en": "It can only be measured in CPI-X",
+   "ar": "لا يمكن قياسه إلا في CPI-X"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz1:tips",
+   "en": "Where in your account statements does the fall in purchasing power show?",
+   "ar": "أين في كشوف حسابك يظهر تراجع القوة الشرائية؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:q",
+   "en": "What gives the best direct protection against inflation according to the book?",
+   "ar": "ما الذي يوفر أفضل حماية مباشرة من التضخم وفق الكتاب؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:a0",
+   "en": "Long nominal bonds with a high coupon",
+   "ar": "السندات الاسمية الطويلة بكوبون مرتفع"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:a1",
+   "en": "Index-linked bonds as well as companies that can raise prices and hold the gross margin (V07)",
+   "ar": "السندات المرتبطة بالمؤشرات وكذلك الشركات القادرة على رفع الأسعار والحفاظ على الهامش الإجمالي (V07)"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:a2",
+   "en": "Money in an interest-bearing account",
+   "ar": "أموال في حساب مدرّ للفوائد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:a3",
+   "en": "Preference shares with a fixed dividend",
+   "ar": "أسهم ممتازة بالتوزيعات الثابتة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz2:tips",
+   "en": "Which assets have a built-in mechanism that follows the price level up?",
+   "ar": "أي الأصول فيها آلية مدمجة تتبع مستوى الأسعار صعودًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:q",
+   "en": "According to the rule of 72: at 6 percent inflation, purchasing power halves in approximately...",
+   "ar": "وفق قاعدة 72: عند بلوغ التضخم 6 بالمئة تنخفض القوة الشرائية إلى النصف في نحو..."
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:a0",
+   "en": "6 years",
+   "ar": "6 أعوام"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:a1",
+   "en": "36 years",
+   "ar": "36 عامًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:a2",
+   "en": "12 years",
+   "ar": "12 عامًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:a3",
+   "en": "24 years",
+   "ar": "24 عامًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap6:quiz3:tips",
+   "en": "Divide 72 by the inflation rate.",
+   "ar": "اقسم 72 على وتيرة التضخم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:titel",
+   "en": "Junk bonds and Milken — when bad ideas became an institution",
+   "ar": "سندات الجنك وميلكن — حين أصبحت الأفكار الرديئة مؤسسة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:intro",
+   "en": "Klarman followed the junk bond era up close: Michael Milken and Drexel Burnham built a market that financed buyouts with debt and sold it as high return without extra risk. When the recession came, everything collapsed — Drexel went into bankruptcy in 1990 and Milken was convicted the same year. The chapter dissects the rationalizations, for each one has a modern heir.",
+   "ar": "تابع كلارمان حقبة سندات الجنك عن كثب: بنى مايكل ميلكن وDrexel Burnham سوقًا موّلت عمليات الاستحواذ بالدين وبيعت بوصفها العائد المرتفع من دون المخاطر الإضافية. حين جاء الكساد انهار كل شيء — دخلت Drexel طور الإفلاس عام 1990 وأُدين ميلكن في العام نفسه. يشرّح هذا الفصل التبريرات، فلكل تبرير منها وريث حديث."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block1",
+   "en": "Michael Milken at Drexel Burnham Lambert built in the '80s a complete financing machine: issue high-yielding debt (junk) to companies and buyout firms the banks refused to lend to, thereby financing the LBO wave. The sales argument was that the higher interest rate more than compensated for the default risk — »the studies show it«. Klarman saws through study after study: they measured a period without a hard recession, they assumed that defaults never arrived simultaneously and that everything could always be refinanced. The risk had simply never been tested.",
+   "ar": "بنى مايكل ميلكن في Drexel Burnham Lambert خلال سنوات الـ80 آلة تمويل كاملة: إصدار ديون عالية المردود (الجنك) إلى شركات وشركات استحواذ رفضت البنوك الإقراض لها، وبذلك تمويل موجة LBO. كانت حجة البيع أن سعر الفائدة الأعلى يعوّض أكثر من اللازم عن مخاطر التخلف عن السداد — »الدراسات تظهر ذلك«. يقطّع كلارمان دراسة بعد دراسة: قاست فترة خالية من كساد قاسٍ، وافترضت أن حالات العجز لا تصل أبدًا في وقت واحد وأن كل شيء يمكن دائمًا إعادة تمويله. لم تُختبر المخاطر ببساطة قط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block2",
+   "en": "The mechanics behind the collapse: the LBO companies were leveraged to debt-to-equity ratios (V10) without historical precedent, with thin interest coverage — the EBITDA margin (V08) barely covered the interest in good times. When growth faded and the refinancing window closed, the default wave came: Revco, Campeau's department store conglomerate, Integrated Resources. The buyers were often leveraged institutions themselves — savings and life insurers like Lincoln Savings under Charles Keating — that kept junk at the core of the portfolio, highly concentrated. Drexel Burnham entered bankruptcy in February 1990; Milken was convicted in 1990 for securities crimes.",
+   "ar": "الميكانيكا وراء الانهيار: رُفعت شركات LBO إلى مستويات مرتفعة من نسبة الدين إلى حقوق الملكية (V10) بلا سابقة تاريخية، مع تغطية فوائد هزيلة — هامش EBITDA (V08) بالكاد يغطي الفائدة في الأزمنة الجيدة. حين خبا النمو وأُغلق نافذة إعادة التمويل جاءت موجة التخلف عن السداد: Revco، وتكتل متاجر Campeau، وIntegrated Resources. كان المشترون غالبًا مؤسسات مرفوعة نفسها — شركات ادخار وتأمين على الحياة مثل Lincoln Savings بقيادة تشارلز كيتينغ — أبقت الجنك في صميم المحفظة بتركيز شديد. دخلت Drexel Burnham طور الإفلاس في فبراير 1990؛ وأُدين ميلكن عام 1990 بجرائم أوراق مالية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block3",
+   "en": "Klarman's general lesson: when an asset class has »never had a loss« — ask over which period it has been tested. Junk had not met a recession. The four most dangerous words are »this time is different«. This does not mean that high-yield credit is wrong in itself — wrong is the price against the risk and the structure: seniority, security, the repayment ladder and the borrower's revenue stability (V12) and leverage (V10). Credit can be valuable — only with a margin.",
+   "ar": "الدرس العام عند كلارمان: حين تكون فئة أصول »لم تعرف خسارة قط« — اسأل عن أي فترة اختبرت. لم تواجه الجنك كسادًا. أخطر أربع كلمات هي »هذه المرة مختلفة«. لا يعني ذلك أن الائتمان عالي المردود خطأ في ذاته — الخطأ هو السعر مقابل المخاطر والبنية: الأقدمية والضمان وسلم السداد واستقرار إيرادات المقترض (V12) ورفعه المالي (V10). يمكن أن يكون الائتمان قيّمًا — بهامش فقط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block4",
+   "en": "Today's translation: every era has its »risk-free high yield« — after Klarman, private credit, structured products and catastrophe bonds have received the same stamp of safety. The test is always Klarman's three questions: What happens in a real recession? Who is the counterparty and how leveraged is it? What happens when the refinancing window closes? If the answer is »we don't know — but so far it has gone well« you have found the junk era's heir.",
+   "ar": "ترجمة اليوم: لكل حقبة نصيبها من »العائد المرتفع بلا مخاطر« — بعد كلارمان تلقّى الائتمان الخاص والمنتجات المهيكلة وسندات الكوارث الختم نفسه بالأمان. الاختبار دائمًا هو أسئلة كلارمان الثلاثة: ماذا يحدث في كساد حقيقي؟ من الطرف المقابل وما مدى رفعه المالي؟ وماذا يحدث حين تُغلق نافذة إعادة التمويل؟ إن كانت الإجابة »لا نعلم — لكن الأمور سارت جيدًا حتى الآن« فقد وجدت وريث حقبة الجنك."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block5",
+   "en": "{\"rubrik\":\"The junk era's rationalizations — and the answer\",\"rader\":[[\"Rationalization\",\"The answer\"],[\"»Diversification eliminates the risk«\",\"Defaults arrive correlated — in precisely the recession that triggers them\"],[\"»Historical default rates are low«\",\"Measured over a period without a recession — the sample is biased\"],[\"»The companies can always refinance«\",\"When the window closes, failed refinancing becomes default\"],[\"»The buyers are professionals«\",\"The buyers were leveraged savings and life insurers with the same blind spot\"]]}",
+   "ar": "{\"rubrik\":\"تبريرات حقبة الجنك — والجواب\",\"rader\":[[\"التبرير\",\"الجواب\"],[\"»التنويع يلغي المخاطر«\",\"حالات العجز تأتي مترابطة — في الكساد نفسه الذي يطلقها\"],[\"»معدلات التخلف التاريخية منخفضة«\",\"قِيست خلال فترة بلا كساد — العينة منحازة\"],[\"»الشركات تستطيع دائمًا إعادة التمويل«\",\"حين تُغلق النافذة يصبح تعثر إعادة التمويل تخلفًا عن السداد\"],[\"»المشترون محترفون«\",\"كان المشترون شركات ادخار وتأمينًا مرفوعة ماليًا وبالنقطة العمياء نفسها\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block7",
+   "en": "An asset class that has never shown a loss has simply not met its test yet — always ask over which period the »history« is measured.",
+   "ar": "فئة أصول لم تُظهر خسارة قط لم تواجه اختبارها بعد فحسب — اسأل دائمًا عن أي فترة قيست »التاريخ«."
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:block8",
+   "en": "Choose today's most celebrated »high return without high risk« product. Write down its three most important rationalizations and formulate the Klarman answer to each: which scenario has it not yet met, who is the counterparty when it occurs, and what happens when refinancing dries up?",
+   "ar": "اختر أكثر منتجات اليوم احتفاءً من نوع »العائد المرتفع من دون المخاطر العالية«. اكتب أهم ثلاثة تبريرات له وصُغ الجواب الكلارماني لكل منها: أي سيناريو لم تواجهه بعد، ومن الطرف المقابل حين يقع، وماذا يحدث حين تُبطئ إعادة التمويل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:q",
+   "en": "What was the fundamental error in the Milken era's »historically high return« studies?",
+   "ar": "ما الخطأ الجوهري في دراسات »العائد المرتفع تاريخيًا« في حقبة ميلكن؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:a0",
+   "en": "They miscalculated the coupons",
+   "ar": "أخطأت في حساب الكوبونات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:a1",
+   "en": "They measured a period without a recession and assumed infinite refinancing — the risk was never tested",
+   "ar": "قاست فترة بلا كساد وافترضت إعادة تمويل لا نهائية — لم تُختبر المخاطر قط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:a2",
+   "en": "They forgot the brokerage fees",
+   "ar": "أغفلت عمولات السمسرة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:a3",
+   "en": "They used the wrong comparison index",
+   "ar": "استخدمت مؤشر مقارنة خاطئًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz1:tips",
+   "en": "Which event had the study's date range never contained?",
+   "ar": "أي حدث لم يتضمنه النطاق الزمني للدراسة قط؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:q",
+   "en": "Who became the junk era's biggest losers?",
+   "ar": "من كان أكبر الخاسرين في حقبة الجنك؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:a0",
+   "en": "Day traders on the stock exchange",
+   "ar": "المتداولون اليوميون في البورصة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:a1",
+   "en": "Central banks",
+   "ar": "البنوك المركزية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:a2",
+   "en": "Leveraged institutions — savings and life insurers — that kept junk at the core of the portfolio in a concentrated way",
+   "ar": "مؤسسات مرفوعة ماليًا — شركات ادخار وتأمين — جعلت الجنك في صميم المحفظة بتركيز شديد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:a3",
+   "en": "Foreign tourists",
+   "ar": "السياح الأجانب"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz2:tips",
+   "en": "Who had both defaults and own leverage at the same time?",
+   "ar": "من جمع بين حالات العجز ورفعه المالي الخاص في وقت واحد؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:q",
+   "en": "What is the load-bearing lesson from the chapter?",
+   "ar": "ما الدرس الأساسي من هذا الفصل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:a0",
+   "en": "High return without risk sometimes exists — the trick is finding it in time",
+   "ar": "العائد المرتفع الخالي من المخاطر موجود أحيانًا — المهم إيجاده في الوقت المناسب"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:a1",
+   "en": "Junk bonds are banned and should remain so",
+   "ar": "سندات الجنك محظورة وينبغي أن تبقى كذلك"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:a2",
+   "en": "All credit is bad credit",
+   "ar": "كل ائتمان هو ائتمان رديء"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:a3",
+   "en": "»This time is different« are the most dangerous words — test every thesis against the scenario it has not yet met",
+   "ar": "»هذه المرة مختلفة« أخطر الكلمات — اختبر كل أطروحة أمام السيناريو الذي لم تواجهه بعد"
+  },
+  {
+   "nyckel": "margin-of-safety:kap7:quiz3:tips",
+   "en": "What happens to »historical safety« when the history is short?",
+   "ar": "ماذا يحدث لـ»الأمان التاريخي« حين يكون التاريخ قصيرًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:titel",
+   "en": "1987 — portfolio insurance and the mechanism that magnified the fall",
+   "ar": "1987 — تأمين المحافظ والميكانيكية التي ضخّمت الهبوط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:intro",
+   "en": "On October 19, 1987, the Dow fell 22,6 percent in one day — 508 points. Behind the fall was a mechanism intended as protection: portfolio insurance, which sold stock futures as the market fell. Klarman uses the crash as proof of how institutionalized speculation disguises itself as risk management.",
+   "ar": "في 19 أكتوبر 1987 هبط مؤشر داو بنسبة 22,6 بالمئة في يوم واحد — 508 نقطة. خلف الهبوط كانت ميكانيكية مقصود بها الحماية: تأمين المحافظ، الذي كان يبيع عقود الأسهم الآجتية مع هبوط السوق. يستخدم كلارمان الانهيار دليلًا على كيف تتنكر المضاربة المؤسسية في هيئة إدارة المخاطر."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block1",
+   "en": "Portfolio insurance — most associated with Leland, O'Brien and Rubinstein — was a strategy that would give institutions a protected downside: sell stock futures as the market falls, so that the portfolio behaves like a bought put option. The advantage: no premium. The drawback: the mechanism assumed you could always sell at functioning prices. When the market fell, all portfolio insurers would sell the same instrument at the same time — on October 19, 1987, there was no buyer. The liquidity (V11) — which everyone assumed was given — disappeared exactly when it was needed.",
+   "ar": "تأمين المحافظ — الأكثر ارتباطًا بـLeland وO'Brien وRubinstein — كان استراتيجية تمنح المؤسسات جانبًا هابطًا محميًا: بيع عقود الأسهم الآجتية بمقدار ما يهبط السوق، بحيث تتصرف المحفظة كخيار بيع مشترى. الميزة: لا قسط. العيب: افترضت الميكانيكية أنك تستطيع دائمًا البيع بأسعار عاملة. حين يهبط السوق سيبيع جميع المؤمِّنين الأداة نفسها في الوقت نفسه — في 19 أكتوبر 1987 لم يوجد مشترٍ. اختفت السيولة (V11) — التي افترض الجميع أنها بديهية — في اللحظة التي احتيجت فيها بالضبط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block2",
+   "en": "The result was self-fulfilling: the more the market fell, the more the mechanism was forced to sell, which made the market fall more. The Dow fell 508 points, 22,6 percent, in a single day — and the strategy that was to protect the capital became the catalyst of its destruction. Klarman's point: the institutions had rationalized their speculation as risk management — they had a model that worked in the small movements of normal days and collapsed at the extreme, when the correlation between all participants went toward one.",
+   "ar": "كانت النتيجة ذاتية التحقق: كلما هبط السوق أكثر اضطرت الميكانيكية إلى البيع أكثر، وهو ما جعل السوق يهبط أكثر. هبط داو 508 نقطة، أي 22,6 بالمئة، في يوم واحد — وأصبحت الاستراتيجية التي كانت لتحمي رأس المال محفّزة تدميره. نقطة كلارمان: عقلنت المؤسسات مضاربتها بوصفها إدارة مخاطر — كانت لديها نموذج عمل في تحركات الأيام العادية الصغيرة وانهار عند التطرف، حين مال الارتباط بين جميع المشاركين نحو الواحد."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block3",
+   "en": "The aftermath — and the opportunity: in the days after the crash, bargains were everywhere, for the forced sales (chapter 9) created prices far below value. Those who had cash and a margin — and the psyche to buy when everyone else sold — got the opportunities of the decade. Baupost's philosophy in practice: the cash from chapter 13 and the courage from chapter 3 pay off on precisely these days. The crash also teaches that market liquidity is a cowardly variable: it exists when nobody needs it and disappears when everyone does.",
+   "ar": "ما بعد الانهيار — والفرصة: في الأيام التي أعقبت الانهيار كانت الفرص في كل مكان، لأن المبيعات القسرية (الفصل 9) خلقت أسعارًا أدنى من القيمة بكثير. من امتلك النقد والهامش — والنفسية للشراء حين باع الجميع — نال فرص العقد. فلسفة Baupost في الممارسة: النقد من الفصل 13 والشجاعة من الفصل 3 تؤتي ثمارها في هذه الأيام بالذات. يعلّم الانهيار أيضًا أن سيولة السوق متغيرة جبانة: موجودة حين لا يحتاجها أحد ومختفية حين يحتاجها الجميع."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block4",
+   "en": "Today's parallels: mechanisms that automatically reduce risk when the market falls — volatility targets, risk parity, trend-following stop-loss systems and enormous passive flows — have the same structure as portfolio insurance: they react to the price's movement, not to value, and they do the same thing at the same time. The question is always the Klarman question: who is the counterparty when everyone triggers the same signal? If the answer is »the market« — it is 1987 again, in new packaging.",
+   "ar": "أوجه الشبه اليوم: الميكانيكيات التي تخفض المخاطر تلقائيًا عند هبوط السوق — استهدافات التقلب وتكافؤ المخاطر وأنظمة وقف الخسارة الاتباعية والتدفقات السلبية الهائلة — لها البنية نفسها التي لتأمين المحافظ: إنها تتفاعل مع حركة السعر لا مع القيمة، وتفعل الشيء نفسه في الوقت نفسه. السؤال دائمًا هو سؤال كلارمان: من الطرف المقابل حين يطلق الجميع الإشارة نفسها؟ إن كانت الإجابة »السوق« — فهي 1987 من جديد، في تغليف جديد."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block6",
+   "en": "Insurance that everyone buys at the same time ends as a fire — do not ask only what protects you, but what happens when everyone triggers the same protection at the same time.",
+   "ar": "التأمين الذي يشتريه الجميع في وقت واحد ينتهي حريقًا — لا تسأل فقط عمّا يحميك، بل عمّا يحدث حين يُطلق الجميع الحماية نفسها في اللحظة نفسها."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:block7",
+   "en": "Map one of today's popular automatic risk protections: stop-loss, volatility target or trend filter. Describe exactly what the mechanism does when the market falls 10 percent quickly — and which millions of others do the same thing at the same time. Identify a concrete situation where the mechanism becomes its own catalyst — and what you, as a value investor, can do with that information.",
+   "ar": "ارسم خريطة لأحد وسائل الحماية من المخاطر التلقائية الشائعة اليوم: وقف الخسارة أو استهداف التقلب أو مرشِّح الاتجاه. صف بالضبط ما تفعله الميكانيكية حين يهبط السوق 10 بالمئة بسرعة — ومن من الملايين يفعل الشيء نفسه في الوقت نفسه. حدّد موقفًا ملموسًا تصبح فيه الميكانيكية محفّزًا لذاتها — وما الذي يمكن أن يفعله المستثمر القيمي بهذه المعلومة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:q",
+   "en": "How did portfolio insurance work?",
+   "ar": "كيف عمل تأمين المحافظ؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:a0",
+   "en": "By buying put options on the market",
+   "ar": "بشراء خيارات البيع في السوق"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:a1",
+   "en": "By diversification into gold and currencies",
+   "ar": "بالتنويع بين الذهب والعملات"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:a2",
+   "en": "By selling stock futures as the market fell — a synthetic put without a premium",
+   "ar": "ببيع عقود الأسهم الآجتية بمقدار ما يهبط السوق — خيار بيع تركيبي بلا قسط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:a3",
+   "en": "By shorting corporate bonds",
+   "ar": "ببيع سندات الشركات على المكشوف"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz1:tips",
+   "en": "Which position did the strategy imitate — and how was it built up?",
+   "ar": "أي مركز قلّدته الاستراتيجية — وكيف بُني؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:q",
+   "en": "Why did the strategy become its own catalyst?",
+   "ar": "لماذا أصبحت الاستراتيجية محفّزًا لذاتها؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:a0",
+   "en": "The premium became too high over time",
+   "ar": "أصبح القسط مرتفعًا أكثر من اللازم مع الوقت"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:a1",
+   "en": "The computers were too slow for the orders",
+   "ar": "كانت الحواسيب بطيئة أكثر من اللازم على الأوامر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:a2",
+   "en": "The regulator stopped the selling",
+   "ar": "أوقف الجهة الرقابية البيع"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:a3",
+   "en": "Everyone would sell the same instrument at the same time — the liquidity disappeared and the fall was magnified",
+   "ar": "كان الجميع سيبيعون الأداة نفسها في الوقت نفسه — اختفت السيولة وتضخّم الهبوط"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz2:tips",
+   "en": "What happens when the sell orders in the very portfolio and on the same instrument exist for thousands?",
+   "ar": "ماذا يحدث حين تتطابق أوامر البيع في المحفظة الواحدة وعلى الأداة نفسها لدى آلاف المستثمرين؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:q",
+   "en": "Which modern mechanism best resembles portfolio insurance?",
+   "ar": "أي ميكانيكية حديثة تشبه تأمين المحافظ أكثر من غيرها؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:a0",
+   "en": "Value investors holding cash while waiting for bargains",
+   "ar": "المستثمر القيمي الذي يحتفظ بالنقد انتظارًا للفرص"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:a1",
+   "en": "Volatility targets and risk parity that automatically reduce risk in a fall — and can reinforce the same self-reinforcing loop",
+   "ar": "استهدافات التقلب وتكافؤ المخاطر اللذان يخفضان المخاطر تلقائيًا عند الهبوط — ويمكن أن يعززا الحلقة ذاتية التعزيز نفسها"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:a2",
+   "en": "Central banks' policy rates",
+   "ar": "أسعار الفائدة الأساسية للبنوك المركزية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:a3",
+   "en": "Share splits and reverse share splits",
+   "ar": "تجزئة السهم وتوحيد الأسهم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap8:quiz3:tips",
+   "en": "Look for systems that react to the price's movement instead of to value.",
+   "ar": "ابحث عن أنظمة تتفاعل مع حركة السعر بدلًا من القيمة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:titel",
+   "en": "Hunting grounds I: panic, crises and forced sales",
+   "ar": "مناطق الصيد الأولى: الهلع والأزمات والبيع القسري"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:intro",
+   "en": "Bargains do not arise in the world of fundamentals but in people's coercion: whoever must sell today sells outside the value. Klarman maps the forced sellers — the index fund, the liquidating fund, margin takers and bankruptcy trustees — and the course trains the question that decides everything: who must sell, and how long does the coercion last?",
+   "ar": "لا تنشأ الفرص في عالم الأساسيات بل في إكراه البشر: من عليه أن يبيع اليوم يبيع خارج القيمة. يرسم كلارمان خريطة البائعين المضطرين — صندوق المؤشرات، والصندوق الخاضع للتصفية، ومستخدمي الهامش، والأمناء على الإفلاس — وتدرّب الدورة على السؤال الذي يقرر كل شيء: من الذي عليه أن يبيع، وكم يطول الإكراه؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block1",
+   "en": "The first hunting ground is that of the forced sale. The price of a stock is set by the marginal buyer and the marginal seller — when the seller is price-insensitive, because rules, liquidation or panic force him, the price lands far below value. Klarman categorizes: index funds that must sell when a company drops out of an index; funds being liquidated that must sell entire portfolios; investors on margin who must cover; fund managers airing the portfolio before quarter-end (window dressing); and bankruptcy trustees who must realize assets according to the process's timetable, not the market's.",
+   "ar": "منطقة الصيد الأولى هي منطقة البيع القسري. يُحدد سعر السهم بالمشتري الحدي والبائع الحدي — حين يكون البائع غير حساس للسعر، لأن القواعد أو التصفية أو الهلع تكرهه، يستقر السعر أدنى من القيمة بكثير. يصنّف كلارمان: صندوق المؤشرات الذي عليه البيع حين تخرج شركة من المؤشر؛ والصندوق الخاضع للتصفية الذي عليه تصفية المحفظة بأكملها؛ والمستثمرون بالهامش الذين عليهم تغطية مراكزهم؛ ومديرو الصناديق الذين يهوّون المحفظة قبل نهاية الربع (window dressing)؛ والأمناء على الإفلاس الذين عليهم تحويل الأصول إلى نقدية وفق جدول العملية لا السوق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block2",
+   "en": "The mechanics of the crisis: panic pushes prices below value because the sellers are price-insensitive and the buyers few. In the days after 1987 (chapter 8), the forced sellers' price was so low that buyers with cash and a margin — not courage, but cash — could buy the deals of the decade. The key to being able to act is preparedness: valuations made in calm, cash that exists (chapter 13), and positions with a margin so that you yourself never become a forced seller.",
+   "ar": "ميكانيكا الأزمة: الهلع يخفض الأسعار دون القيمة لأن البائعين غير حساسين للسعر والمشترين قليلين. في الأيام التي أعقبت 1987 (الفصل 8) كان سعر البائعين المضطرين منخفضًا إلى حد أن المشترين بالنقد والهامش — لا بالشجاعة بل بالنقد — استطاعوا شراء صفقات العقد. مفتاح القدرة على التصرف هو الجاهزية: حسابات قيمة أُعدت في الهدوء، ونقد موجود (الفصل 13)، ومراكز بهامش بحيث لا تصبح أنت نفسك بائعًا مضطرًا أبدًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block3",
+   "en": "The discipline of analysis still stands: that a forced seller is the cause of the price does not prove the value. If the company simultaneously has high leverage (V10), weak liquidity in the stock (V11) and unsteady revenue (V12), it can be a falling knife that reaches zero. The difference between a bargain and a falling knife is the margin: buy below conservatively calculated value, with room for the price to fall further, and size for the downside (chapter 5). The coercion is your discount — not your analysis.",
+   "ar": "يبقى انضباط التحليل قائمًا: كون البائع المضطر سببًا للسعر لا يثبت القيمة. إذا كانت الشركة في الوقت نفسه مرفوعة ماليًا (V10)، ضعيفة السيولة في السهم (V11)، غير مستقرة الإيرادات (V12)، فقد تكون سكينًا هابطة تبلغ الصفر. الفرق بين الفرصة والسكين الهابطة هو الهامش: اشترِ دون قيمة محسوبة بتحفظ، مع متسع لمزيد من الهبوط، وحدّد الحجم وفق الجانب الهابط (الفصل 5). الإكراه هو خصمك — لا تحليلك."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block4",
+   "en": "Institutional coercion is the rulebook you must know better than the sellers: mandates that forbid certain assets (split, insolvent, too small companies), rating rules that force selling on a downgrade, index rules that sell on delisting, and the funds' liquidity rules that sell what is sellable — not what is worst. Your job is to know which rule creates the selling pressure and when the rule expires: an overhang with an end date is better than one without.",
+   "ar": "الإكراه المؤسسي هو كتاب القواعد الذي يجب أن تعرفه أفضل من البائعين: ولايات تحظر بعض الأصول (شركات مقسمة أو معسرة أو أصغر من اللازم)، وقواعد تصنيف تفرض البيع عند خفض التصنيف، وقواعد مؤشرات تبيع عند شطب السهم، وقواعد سيولة الصناديق تبيع ما يمكن بيعه — لا ما هو أسوأ. مهمتك أن تعرف أي قاعدة تخلق ضغط البيع ومتى تنتهي القاعدة: العرض الزائد ذو تاريخ نهاية أفضل من غير المؤرَّخ."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block5",
+   "en": "{\"rubrik\":\"Forced sellers — who sells and why\",\"rader\":[[\"Seller\",\"Coercion\",\"What you get\"],[\"Index fund\",\"The company drops out of the index — the rules force selling\",\"Massive holdings sold without pricing\"],[\"Liquidating fund\",\"Redemption by unit holders\",\"The portfolio sold entire, at once, regardless of value\"],[\"Investor on margin\",\"Margin call\",\"Price-insensitive sell orders in panic\"],[\"Window dressing\",\"Quarter-/year-end must look good\",\"Selling pressure without fundamental cause — recurring and predictable\"],[\"Bankruptcy trustee\",\"The process's timetable demands realization\",\"Illiquid assets sold below value\"]]}",
+   "ar": "{\"rubrik\":\"البائعون المضطرون — من يبيع ولماذا\",\"rader\":[[\"البائع\",\"الإكراه\",\"ما تحصل عليه\"],[\"صندوق المؤشرات\",\"خروج الشركة من المؤشر — القواعد تفرض البيع\",\"مقتنيات ضخمة تباع من دون تسعير\"],[\"الصندوق الخاضع للتصفية\",\"فك الاستثمار من حملة الوحدات\",\"تباع المحفظة بأكملها دفعة واحدة بصرف النظر عن القيمة\"],[\"مستثمر بالهامش\",\"نداء هامش\",\"أوامر بيع غير حساسة للسعر في الهلع\"],[\"Window dressing\",\"يجب أن تبدو نهاية الربع/العام جميلة\",\"ضغط بيع بلا سبب أساسي — متكرر وقابل للتنبؤ\"],[\"أمين الإفلاس\",\"جدول العملية يقتضي تحويل الأصول إلى نقدية\",\"أصول غير سيّالة تباع دون القيمة\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block6",
+   "en": "Do not ask »why is the stock cheap?« — ask »who must sell, and how long does the coercion last?«.",
+   "ar": "لا تسأل »لماذا السهم رخيص؟« — اسأل »من عليه أن يبيع، وكم يدوم الإكراه؟«."
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:block7",
+   "en": "Identify a recent index removal or a delisting. Find out: who must sell, since when, and how large an overhang remains — does it have an end date? Then estimate the company's conservative value (V10 leverage, V11 liquidity, V12 revenue stability). Is there a margin once the forced selling has ebbed — and what is the downside if the deal goes wrong?",
+   "ar": "حدّد حالة حديثة لخروج سهم من المؤشر أو شطب السهم. اعرف: من عليه البيع، ومنذ متى، وما حجم العرض الزائد المتبقي — هل له تاريخ نهاية؟ ثم قدّر القيمة المتحفظة للشركة (V10 الرفع المالي، V11 السيولة، V12 استقرار الإيرادات). هل يوجد هامش حين ينحسر البيع القسري — وما الجانب الهابط إن سارت الصفقة خطأً؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:q",
+   "en": "Why do forced sales create bargains?",
+   "ar": "لماذا تخلق المبيعات القسرية فرصًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:a0",
+   "en": "Because the companies simultaneously improve their fundamentals",
+   "ar": "لأن الشركات تحسّن أساسياتها في الوقت نفسه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:a1",
+   "en": "Because the course of the price always rebounds immediately afterward",
+   "ar": "لأن الدورة السعرية ترتد دائمًا مباشرة بعد ذلك"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:a2",
+   "en": "Because the media exaggerate the risk",
+   "ar": "لأن وسائل الإعلام تبالغ في المخاطر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:a3",
+   "en": "Because the seller is price-insensitive — the price is set by the coercion, not by the value",
+   "ar": "لأن البائع غير حساس للسعر — السعر يحدده الإكراه لا القيمة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz1:tips",
+   "en": "What governs the price when the seller cannot wait for a better one?",
+   "ar": "ما الذي يحكم السعر حين لا يستطيع البائع انتظار سعر أفضل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:q",
+   "en": "According to the course, what separates a bargain from a falling knife?",
+   "ar": "وفق الدورة، ما الذي يفرق بين الفرصة والسكين الهابطة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:a0",
+   "en": "The shape of the chart in the daily graph",
+   "ar": "شكل الرسم البياني في المخطط اليومي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:a1",
+   "en": "The margin: buy below conservatively calculated value — and size so that a continued fall does not force you to sell",
+   "ar": "الهامش: اشترِ دون قيمة محسوبة بتحفظ — وحدّد الحجم بحيث لا يضطرك هبوط متواصل إلى البيع"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:a2",
+   "en": "The stock's beta value against the index",
+   "ar": "قيمة بيتا الخاصة بالسهم مقابل المؤشر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:a3",
+   "en": "How many analysts cover the company",
+   "ar": "كم محللًا يغطي الشركة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz2:tips",
+   "en": "What decides whether a continued fall is unpleasant or catastrophic for you?",
+   "ar": "ما الذي يحدد إن كان الهبوط المتواصل مزعجًا أم كارثيًا بالنسبة إليك؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:q",
+   "en": "What is an example of institutional coercion?",
+   "ar": "ما مثال على الإكراه المؤسسي؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:a0",
+   "en": "Analysts' price target changes",
+   "ar": "تغييرات المحللين للسعر المستهدف"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:a1",
+   "en": "The CEO's stock options",
+   "ar": "خيارات أسهم الرئيس التنفيذي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:a2",
+   "en": "Index rules that force selling on removal or downgrade — regardless of value",
+   "ar": "قواعد المؤشرات التي تفرض البيع عند الخروج أو خفض التصنيف — بصرف النظر عن القيمة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:a3",
+   "en": "Dividend decisions in the company",
+   "ar": "قرارات التوزيعات في الشركة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap9:quiz3:tips",
+   "en": "Which rule can sell stocks without even looking at the price?",
+   "ar": "أي قاعدة يمكنها بيع الأسهم دون حتى النظر إلى السعر؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:titel",
+   "en": "Hunting grounds II: complexity, spin-offs and post-reorganization",
+   "ar": "مناطق الصيد الثانية: التعقيد والانفصال (spin-off) وما بعد إعادة التنظيم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:intro",
+   "en": "The second hunting ground is the hard-to-analyze and the unknown: companies nobody covers, conglomerates nobody bothers to calculate, newly created spin-offs that end up with owners who do not want them, and stocks in companies that have exited bankruptcy. In common: the sellers are structurally motivated and the »ramp against you« — buying when the trend has turned — is often the price you pay.",
+   "ar": "منطقة الصيد الثانية هي ما يصعب تحليله والمجهول: شركات لا يغطيها أحد، وتكتلات لا يكلف أحد نفسه حسابها، وعمليات انفصال (spin-off) حديثة الخلق تقع لدى مالكين لا يريدونها، وحصص الأسهم في شركات خرجت من الإفلاس. القاسم المشترك: البائعون مدفوعون بنيويًا و»المنحدر ضدك« — الشراء حين ينقلب الاتجاه — هو غالبًا الثمن الذي تدفعه."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block1",
+   "en": "Complexity and obscurity are the bargain's friends: when a security is hard to analyze — or simply unattended — the institutions abandon it. Small, unled and unread companies often trade below value for the same reasons: no institution may own them (too small for the mandate) and no analysis covers them. The conglomerate discount belongs here: when revenue is spread across many businesses (V03 revenue diversification in abundance), the valuation work becomes so laborious that the sum of the parts is sold at a discount — sometimes a deep one.",
+   "ar": "التعقيد والمجهول صديقا الفرصة: حين تكون الورقة المالية عسيرة التحليل — أو مهمَلة فحسب — تتخلى عنها المؤسسات. الشركات الصغيرة غير الموجهة وغير المقروءة تتداول غالبًا دون قيمتها للأسباب نفسها: لا يجوز لمؤسسة امتلاكها (أصغر من أن تناسب الولاية) ولا يغطيها أي تحليل. خصم التكتل ينتمي إلى هنا: حين تتوزع الإيرادات على أعمال كثيرة (V03 تنويع الإيرادات بوفرة)، يصبح عمل التقييم مضنيًا إلى حد يُباع معه مجموع الأجزاء بخصم — وأحيانًا خصم عميق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block2",
+   "en": "Spin-offs are the book's textbook example: the parent company makes a subsidiary independent — often because it does not fit (»diworsification«) or to breed value growth. The mechanics automatically create forced sellers: the stocks are distributed to owners who never asked for them, who may not own that sector, or who find it too small. The information situation is also favorable — the restructuring documents (Form 10 in the US) contain detailed information that the ordinary prospectus rarely matches. The discount is structural, not fundamental.",
+   "ar": "الانفصال (spin-off) هو المثال النموذجي في الكتاب: تجعل الشركة الأم عملًا تابعًا مستقلًا — غالبًا لأنه لا يناسب (»التشتيت الأسوأ«) أو لإنبات نمو القيمة. تخلق الميكانيكية تلقائيًا بائعين مضطرين: توزع الأسهم على مالكين لم يطلبوها قط، أو لا يجوز لهم امتلاك ذلك القطاع، أو يرونها أصغر من اللازم. وضع المعلومات مؤاتٍ كذلك — وثائق إعادة الهيكلة (نموذج Form 10 في الولايات المتحدة) تتضمن معلومات تفصيلية نادرًا ما تضاهيها نشرة الإصدار العادية. الخصم بنيوي لا أساسي."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block3",
+   "en": "Post-reorganization stocks: when a company exits bankruptcy, the old shareholders have been wiped out and new stocks have landed with the creditors — who wanted money back, not unlisted ownership. They are motivated sellers with no interest in the company, and the company lacks analysis history and institutional anchoring — obscurity deepens the discount. At the same time, the balance sheet after the reconstruction can be clean: the liabilities negotiated away, and valuable assets — real estate, patents and IP (V13), established brands (V14) — remain at structurally low prices.",
+   "ar": "أسهم ما بعد إعادة التنظيم: حين تخرج شركة من الإفلاس تكون ملكية المساهمين القدامى قد أُبيدت وحلّت الأسهم الجديدة لدى الدائنين — الذين أرادوا أموالهم назад لا ملكية غير مدرجة. إنهم بائعون مدفوعون بلا اهتمام بالشركة، والشركة تفتقر إلى تاريخ تحليلي وارتساخ مؤسسي — فيعمق المجهول الخصم. في الوقت نفسه قد تكون الميزانية العمومية بعد إعادة الهيكلة نظيفة: الالتزامات فُاوض على إزالتها، وتبقى الأصول القيّمة — عقارات وبراءات اختراع وملكية فكرية (V13) وعلامات تجارية راسخة (V14) — بأسعار بنيوية منخفضة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block4",
+   "en": "The ramp against you — buying when the price ramp has turned against you — is this hunting ground's price: you buy when momentum and the media point downward and look wrong for months. The protection is chapters 2-3: independent valuation with a margin and endurance to wait for the weighing machine. Operational turn catalysts — new product launches (V16) or new contracts (V17) — can accelerate the value shift but should be treated as a bonus: the foundation is that the price lies below the value even without them.",
+   "ar": "المنحدر ضدك — الشراء حين ينقلب منحدر السعر ضدك — هو ثمن هذه المنطقة من الصيد: تشتري حين يشير الزخم ووسائل الإعلام إلى الأسفل وتبدو مخطئًا لأشهر. الحماية هي الفصل 2-3: حساب قيمة مستقل بهامش وصبر على انتظار آلة الوزن. محفزات المنعطف التشغيلية — إطلاقات منتجات جديدة (V16) أو عقود جديدة (V17) — يمكن أن تسرّع تحول القيمة لكن يجب التعامل معها بوصفها مكافأة: الأساس أن السعر أدنى من القيمة حتى من دونها."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block5",
+   "en": "{\"rubrik\":\"The hunting ground — why the seller is motivated\",\"rader\":[[\"Situation\",\"Who sells\",\"Why motivated\"],[\"Spin-off\",\"Owners of the parent company\",\"Wrong mandate or too small — they never wanted to own the subsidiary\"],[\"Post-reorganization\",\"Creditors who received stocks\",\"They wanted cash — not stocks in an unknown company\"],[\"Complex conglomerate part\",\"Institutions without analyst coverage\",\"Nobody calculates on the company — obscurity becomes a sell signal\"],[\"Small companies under the radar\",\"Larger institutions\",\"Too small for the mandates — regardless of value\"]]}",
+   "ar": "{\"rubrik\":\"منطقة الصيد — لماذا البائع مدفوع إلى البيع\",\"rader\":[[\"الموقف\",\"من يبيع\",\"لماذا هو مدفوع\"],[\"الانفصال (spin-off)\",\"مالكو الشركة الأم\",\"ولاية خاطئة أو حجم أصغر من اللازم — لم يريدوا قط امتلاك التابع\"],[\"ما بعد إعادة التنظيم\",\"دائنون تسلموا الأسهم\",\"أرادوا نقدًا — لا أسهمًا في شركة مجهولة\"],[\"جزء تكتل معقد\",\"مؤسسات بلا تغطية تحليلية\",\"لا أحد يحسب للشركة — يصير المجهول إشارة بيع\"],[\"شركات صغيرة تحت الرادار\",\"مؤسسات أكبر\",\"أصغر من الولايات — بصرف النظر عن القيمة\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block6",
+   "en": "The best hunting ground is where the analysis is hard — your willingness to dig is itself the margin.",
+   "ar": "أفضل مناطق الصيد حيث يكون التحليل عسيرًا — استعدادك للحفر هو بذاته الهامش."
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:block7",
+   "en": "Find a recently completed or ongoing spin-off. Read the restructuring documents: who receives the stocks, what mandates do the recipients have, and when may they sell? Estimate the subsidiary's standalone value according to chapter 4 (cash flow value and net asset value). Does the price lie below the value with a margin — and who will sell to you in the coming months?",
+   "ar": "ابحث عن عملية انفصال (spin-off) أُنجزت حديثًا أو جارية. اقرأ وثائق إعادة الهيكلة: من يتسلم الأسهم، وأي ولايات لدى المتسلمين، ومتى يجوز لهم البيع؟ قدّر القيمة المستقلة للتابع وفق الفصل 4 (قيمة التدفق النقدي وصافي قيمة الأصول). هل يقع السعر دون القيمة بهامش — ومن الذي سيبيع لك في الأشهر المقبلة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:q",
+   "en": "Why are newly created spin-offs often bargains?",
+   "ar": "لماذا تكون عمليات الانفصال (spin-off) المنشأة حديثًا فرصًا غالبًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:a0",
+   "en": "They are always cheaper than the parent company",
+   "ar": "إنها أرخص دائمًا من الشركة الأم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:a1",
+   "en": "The parent company usually buys them back cheaply",
+   "ar": "تعود الشركة الأم إلى إعادة شرائها رخيصة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:a2",
+   "en": "They lack competitors in their market",
+   "ar": "لا منافس لها في سوقها"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:a3",
+   "en": "The stock certificate lands with owners who may not or do not want to own them — structural forced selling is built into the mechanics",
+   "ar": "تقع قسائم الأسهم لدى مالكين لا يجوز لهم أو لا يريدون امتلاكها — البيع القسري البنيوي مدمج في الميكانيكية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz1:tips",
+   "en": "What do the recipients of the new stocks do — and why?",
+   "ar": "ماذا يفعل متسلمو الأسهم الجديدة — ولماذا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:q",
+   "en": "Why are post-reorganization stocks sold cheaply?",
+   "ar": "لماذا تباع الأسهم الخاصة بما بعد إعادة التنظيم رخيصة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:a0",
+   "en": "They are illegal for institutions to hold",
+   "ar": "يُحظر على المؤسسات حيازتها"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:a1",
+   "en": "New stocks land with creditors who would rather have cash than stocks — motivated sellers without analysis interest",
+   "ar": "تحل أسهم جديدة لدى دائنين يفضلون النقد على الأسهم — بائعون مدفوعون بلا اهتمام تحليلي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:a2",
+   "en": "After bankruptcy the course of the price is always higher than the value",
+   "ar": "الدورة السعرية أعلى دائمًا من القيمة بعد الإفلاس"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:a3",
+   "en": "They are never traded on the stock exchange",
+   "ar": "لا تتداول أبدًا في البورصة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz2:tips",
+   "en": "What did the creditors want from the reconstruction — stocks or money?",
+   "ar": "ماذا أراد الدائنون من إعادة الهيكلة — الأسهم أم المال؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:q",
+   "en": "What is meant by buying »the ramp against you«?",
+   "ar": "ماذا يعني شراء »المنحدر ضدك«؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:a0",
+   "en": "Shorting stocks in a strong uptrend",
+   "ar": "بيع الأسهم على المكشوف في اتجاه صاعد قوي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:a1",
+   "en": "Trading so often that the trend matters less",
+   "ar": "التداول بكثرة إلى حد يقل معه وزن الاتجاه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:a2",
+   "en": "Buying when the price ramp and sentiment have turned downward — with an independent valuation and a margin as protection",
+   "ar": "الشراء حين ينقلب منحدر السعر والمعنويات نحو الأسفل — بحساب قيمة مستقل وهامش حمايةً"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:a3",
+   "en": "Buying expensive growth stocks in euphoria",
+   "ar": "شراء أسهم نمو باهظة في النشوة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap10:quiz3:tips",
+   "en": "What protects you when the trend and the media point against you for months?",
+   "ar": "ما الذي يحميك حين يشير الاتجاه ووسائل الإعلام ضدك لأشهر؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:titel",
+   "en": "Special situations I: arbitrage and merger securities",
+   "ar": "المواقف الخاصة الأولى: المراجحة وأوراق الاندماج"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:intro",
+   "en": "Klarman loved special situations because the mechanics — not the market's mood — govern the outcome. The chapter goes through merger arbitrage step by step: probability, time and downside in a break — and the hidden gem merger securities, where the non-stock part of the bid is sold off for structural reasons.",
+   "ar": "أحب كلارمان المواقف الخاصة لأن الميكانيكية — لا مزاج السوق — تحكم النتيجة. يستعرض الفصل المراجحة على الاندماج خطوة خطوة: الاحتمال والزمن والجانب الهابط عند الفشل — والجوهرة الخفية أوراق الاندماج، حيث يُباع الجزء غير المتعلق بالأسهم من العرض لأسباب بنيوية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block1",
+   "en": "Merger arbitrage in its simple form: a company is bid for, the target's stock trades just below the bid price — the spread is your return if the deal goes through, your loss if it breaks. The analysis is three questions: (1) Does the deal go through? — the agreement's structure and conditions (V17 contracts and partnerships): binding, break clauses, the security of the financing, the approvals of shareholders and authorities (V18 regulatory catalysts). (2) When? — the time to closing determines the annualized return. (3) What happens if it breaks? — the target's standalone value defines the downside.",
+   "ar": "المراجحة على الاندماج بصيغتها البسيطة: يُقدَّم عرض لشراء شركة، ويتداول السهم الخاص بالهدف أدنى قليلًا من سعر العرض — الفارق هو العائد الذي تحصل عليه إن نُفّذت الصفقة، وخسارتك إن فشلت. التحليل ثلاثة أسئلة: (1) هل تنفَّذ الصفقة؟ — بنية الاتفاق وشروطه (V17 العقود والشراكات): الإلزام وبنود الفسخ ومتانة التمويل وموافقات المساهمين والجهات (V18 المحفزات التنظيمية). (2) متى؟ — الزمن حتى الإغلاق يحدد العائد السنوي. (3) ماذا يحدث إن فشلت؟ — القيمة المستقلة للهدف تحدد الجانب الهابط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block2",
+   "en": "The deal's structure determines the risk: a cash bid gives a clean spread; a stock bid gives the ratio between the companies and thus risk in both stocks; break points (collars) can move the price; and the financing terms link the deal to the health of the credit market — a deal dependent on the debt market in stress has higher break risk (the junk era parallel, chapter 7). Competing bids can raise the price and give unexpected upside, while authority stops (V18) and financing collapse are the common causes of death. Always calculate with expected value: probability times return minus break probability times downside.",
+   "ar": "بنية الصفقة تحدد المخاطر: العرض النقدي يعطي فارقًا نظيفًا؛ وعرض الأسهم يعطي النسبة بين الشركتين وبالتالي مخاطر في كلا السهمين؛ ونقاط الفصل (الطوق) قد تحرك السعر؛ وشروط التمويل تربط الصفقة بصحة سوق الائتمان — الصفقة المعتمدة على سوق الدين في حالة توتر لها احتمال فشل أعلى (أوجه الشبه مع حقبة الجنك، الفصل 7). العروض المنافسة قد ترفع السعر وتمنح جانبًا صاعدًا غير متوقع، بينما إيقاف الجهات (V18) وانهيار التمويل هما سببا الموت الشائعان. احسب دائمًا بالقيمة المتوقعة: الاحتمال مضروبًا في العائد ناقص احتمال الفشل مضروبًا في الجانب الهابط."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block3",
+   "en": "Merger securities are the chapter's hidden gem: in completed deals, selling shareholders often receive a mix of cash, stocks and — less well known — bonds and convertibles. Institutions that may only or are expected to own stocks sell the non-stock part immediately, and many private owners do not understand what they received. The result: bonds and convertibles from a fresh deal can be bought below value. They are often small and illiquid (V11) — exactly where the value investor's analysis pays, because the competition is structurally absent.",
+   "ar": "أوراق الاندماج جوهرة الفصل الخفية: في الصفقات المنجزة يتسلم المساهمون البائعون غالبًا مزيجًا من النقد والأسهم و— الأقل شهرة — السندات والأوراق القابلة للتحويل. المؤسسات التي لا يجوز لها أو يُتوقع منها أن تملك الأسهم تبيع الجزء غير السهمي فورًا، وكثير من المالكين الأفراد لا يفهمون ما تسلموه. النتيجة: يمكن شراء السندات والقابلة للتحويل من صفقة طازجة دون القيمة. إنها غالبًا صغيرة وغير سيّالة (V11) — بالضبط حيث يؤتي تحليل المستثمر القيمي ثماره، لأن المنافسة غائبة بنيويًا."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block4",
+   "en": "Discretionary — not mechanical — arbitrage: most arbitrageurs own every deal in the index, so as not to deviate from competitors (chapter 1's institutional problem again). Klarman does the opposite: own only deals where you have a documented edge — where you understand the coercion, the structure or the law better than the market — and stand outside the rest. In special situations, selection is the whole difference between dealing and gambling.",
+   "ar": "مراجحة تقديرية — لا ميكانيكية: يملك معظم المراجحين كل صفقة في المؤشر حتى لا يحيدوا عن المنافسين (مشكلة الفصل 1 المؤسسية مجددًا). يفعل كلارمان العكس: لا تملك إلا الصفقات التي لديك فيها أفضلية موثقة — حيث تفهم الإكراه أو البنية أو القانون أفضل من السوق — وابقَ خارج الباقي. في المواقف الخاصة، الانتقاء هو الفرق كله بين التعامل والمقامرة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block5",
+   "en": "{\"rubrik\":\"Merger arbitrage — the analysis matrix\",\"rader\":[[\"Question\",\"What you analyze\",\"Example of a warning\"],[\"Does it go through?\",\"The agreement's conditions and financing (V17)\",\"Financing tied to a debt market in stress\"],[\"When?\",\"Time to closing — annualize the spread\",\"Long authority processes (V18) eat the return\"],[\"What if it breaks?\",\"The target's standalone value\",\"Break price far above the value before the bid — deep downside\"]]}",
+   "ar": "{\"rubrik\":\"المراجحة على الاندماج — مصفوفة التحليل\",\"rader\":[[\"السؤال\",\"ما تحلله\",\"مثال على إنذار\"],[\"هل تنفَّذ؟\",\"شروط الاتفاق والتمويل (V17)\",\"تمويل مرتبط بسوق دين متوتر\"],[\"متى؟\",\"الزمن حتى الإغلاق — سنَّوِن الفارق\",\"عمليات جهات طويلة (V18) تلتهم العائد\"],[\"ماذا لو فشلت؟\",\"القيمة المستقلة للهدف\",\"سعر الفشل أعلى بكثير من القيمة قبل العرض — جانب هابط عميق\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block6",
+   "en": "The spread is not a margin — it is the price of your analysis: you earn from knowing more about the completion than the market, not from hoping.",
+   "ar": "الفارق ليس هامشًا — إنه ثمن تحليلك: تكسب من معرفتك أكثر من السوق بشأن التنفيذ، لا من التمني."
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:block7",
+   "en": "Choose an ongoing public bid deal. Estimate: probability of completion (in percent), time to closing (months), current spread and downside at a break (the target's standalone value). Calculate expected value: p × spread minus (1 − p) × downside. Annualize. At what spread does the deal become attractive to you — and what information would move your probability?",
+   "ar": "اختر صفقة عرض عامة جارية. قدّر: احتمال التنفيذ (بالمئة)، والزمن حتى الإغلاق (أشهر)، والفارق الحالي والجانب الهابط عند الفشل (القيمة المستقلة للهدف). احسب القيمة المتوقعة: p × الفارق ناقص (1 − p) × الجانب الهابط. سنَّوِن. عند أي فارق تصبح الصفقة جاذبة لك — وأي معلومة كانت ستحرك احتمالك؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:q",
+   "en": "What is the spread in merger arbitrage?",
+   "ar": "ما هو الفارق في المراجحة على الاندماج؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:a0",
+   "en": "The difference between the bid price and the current price — compensation for risk and time",
+   "ar": "الفرق بين سعر العرض والسعر الحالي — تعويض عن المخاطر والزمن"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:a1",
+   "en": "The brokerage fee the broker takes",
+   "ar": "عمولة السمسرة التي يأخذها السمسار"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:a2",
+   "en": "The difference between your and the analysts' price targets",
+   "ar": "الفرق بين أسعارك المستهدفة وأسعار المحللين المستهدفة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:a3",
+   "en": "The dividend up to closing",
+   "ar": "التوزيعات حتى الإغلاق"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz1:tips",
+   "en": "What does it mean that the target trades just below the bid?",
+   "ar": "ماذا يعني أن يتداول الهدف أدنى قليلًا من العرض؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:q",
+   "en": "Why can merger securities become bargains?",
+   "ar": "لماذا يمكن لأوراق الاندماج أن تصبح فرصًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:a0",
+   "en": "They are always safer than stocks",
+   "ar": "إنها أكثر أمانًا دائمًا من الأسهم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:a1",
+   "en": "They are tax-free for the recipient",
+   "ar": "إنها معفاة من الضرائب للمتسلم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:a2",
+   "en": "They always have the highest interest rate on the market",
+   "ar": "إن سعر الفائدة فيها هو الأعلى دائمًا في السوق"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:a3",
+   "en": "The non-stock part lands with owners who may not or do not want to own that type of security — structural sellers press the price",
+   "ar": "يقع الجزء غير السهمي لدى مالكين لا يجوز لهم أو لا يريدون امتلاك ذلك النوع من الأوراق — بائعون بنيويون يضغطون السعر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz2:tips",
+   "en": "What does a stock fund do with the bonds it receives in a deal?",
+   "ar": "ماذا يفعل صندوق أسهم بالسندات التي يتسلمها في صفقة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:q",
+   "en": "Which question best defines the risk in a bid deal?",
+   "ar": "أي سؤال يعرّف المخاطر أفضل تعريف في صفقة عرض؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:a0",
+   "en": "How large the spread is today",
+   "ar": "ما حجم الفارق اليوم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:a1",
+   "en": "What the target is worth if the deal breaks — the downside, not the spread, defines the risk",
+   "ar": "كم تساوي الهدف إن فشلت الصفقة — الجانب الهابط، لا الفارق، هو ما يحدد المخاطر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:a2",
+   "en": "Which investment bank is advising",
+   "ar": "أي بنك استثماري يقدّم المشورة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:a3",
+   "en": "How the media writes about the deal",
+   "ar": "كيف تكتب وسائل الإعلام عن الصفقة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap11:quiz3:tips",
+   "en": "What do you lose if the deal falls — and how deep is that hole?",
+   "ar": "ماذا تخسر إن سقطت الصفقة — وما عمق تلك الحفرة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:titel",
+   "en": "Special situations II: liquidations, rights offerings and thrift conversions",
+   "ar": "المواقف الخاصة الثانية: التصفيات وعروض الاكتتاب وتحويلات صناديق التوفير"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:intro",
+   "en": "Three mechanical situations where the structure does the job: liquidations where you calculate assets minus liabilities minus time, rights offerings where the issue's discount creates value, and thrift conversions where savings banks are listed far below book value. Common denominator: the catalyst is built in — you do not need to guess the market's mood.",
+   "ar": "ثلاثة مواقف ميكانيكية تؤدي فيها البنية العمل: تصفيات تحسب فيها الأصول ناقص الالتزامات ناقص الزمن، وعروض اكتتاب يخلق فيها خصم الإصدار قيمة، وتحويلات صناديق توفير تُدرج فيها بنوك التوفير أدنى بكثير من القيمة الدفترية. القاسم المشترك: المحفّز مدمج — لا تحتاج إلى تخمين مزاج السوق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block1",
+   "en": "Liquidation analysis step by step: (1) value the assets conservatively — real estate at demonstrated values (not book), inventory with a deduction, receivables with regard to collectability; (2) subtract all liabilities and winding-up costs — trustees, lawyers, time; (3) the result is the shareholders' share — which you discount for time and uncertainty. Always complement with the structure: certain windings-up — for example companies with regulatorily governed assets — require regulatory approval (V18) that decides both time and outcome. Klarman shows cases where the stock traded at a fraction of conservatively calculated liquidation value — the mechanics, not the mood, closed the gap.",
+   "ar": "تحليل التصفية خطوة خطوة: (1) قيّم الأصول بتحفظ — العقارات بقيم موثقة (لا دفترية)، والمخزون بخصم، والذمم بمراعاة قابلية التحصيل؛ (2) اطرح كل الالتزامات وتكاليف التصفية — الأمناء والمحامون والزمن؛ (3) النتيجة هي حصة المساهمين — التي تخصمها للزمن وعدم اليقين. أكمل دائمًا بالبنية: تصفيات معينة — مثلًا شركات بأصول خاضعة لتنظيم الجهات — تتطلب موافقة تنظيمية (V18) تحدد الزمن والنتيجة معًا. يعرض كلارمان حالات تداول فيها السهم عند جزء يسير من قيمة تصفية محسوبة بتحفظ — الميكانيكية، لا المزاج، أغلقت الفجوة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block2",
+   "en": "Rights offerings — subscription offers to existing owners, often at a discount to the market price. The mechanics: the subscription right trades separately until the last day; owners who do not want to subscribe sell their rights; after the completed share issue the stocks are diluted and the course of the price can be pressed by the overhang (V19 emission-risk — the dilution is a risk to count on, not to ignore). Value creation arises when the discount is deep, the company is fundamentally sound and the issue strengthens the balance sheet — in times of panic (financial crises) banks and real estate companies have given participants a margin, while refusing to participate paid the dilution price.",
+   "ar": "عروض الاكتتاب — عروض تخصيص للمالكين القائمين، غالبًا بخصم من سعر السوق. الميكانيكية: يتداول حق الاكتتاب بمعزل حتى اليوم الأخير؛ المالكون الذين لا يريدون الاكتتاب يبيعون حقوقهم؛ بعد إتمام إصدار أسهم جديد تصبح الأسهم مخففة وقد يضغط العرض الزائد على الدورة السعرية (V19 مخاطر الإصدار — تخفيف الملكية من المخاطر التي يجب حسابها لا تجاهلها). ينشأ خلق القيمة حين يكون الخصم عميقًا والشركة سليمة أساسيًا ويعزز الإصدار الميزانية العمومية — في أزمنة الهلع (الأزمات المالية) منحت البنوك وشركات العقارات المشاركين هامشًا، بينما دفع الرافضون ثمن تخفيف الملكية."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block3",
+   "en": "Thrift conversions — the book's period piece and eternal pattern: savings institutions owned by depositors (mutual) were converted into limited companies through a new share issue. Klarman 1991: the stocks were offered far below book value (V05 P/B), partly because the supply of stocks exceeded the immediate demand, partly because the issue proceeds streamed into the balance sheet and made P/B even lower after the listing — a double effect. When the new capital was put to work, ROE (V09) could surprise upward. The pattern lives: structural forced selling in new share issues — regardless of sector — is the same hunting ground today.",
+   "ar": "تحويلات صناديق التوفير — وثيقة زمن الكتاب ونمطه الأبدي: مؤسسات توفير يملكها المودعون (تبادلية) حُوّلت إلى شركات مساهمة عبر إصدار أسهم جديدة. كلارمان 1991: عُرضت الأسهم أدنى بكثير من القيمة الدفترية (V05 P/B)، جزئيًا لأن عرض الأسهم فاق الطلب الفوري، وجزئيًا لأن حصيلة الإصدار تدفقت إلى الميزانية العمومية وجعلت P/B أدنى بعد الإدراج — أثر مزدوج. حين وُضع رأس المال الجديد في العمل أمكن لـROE (V09) أن يفاجئ صعودًا. النمط حي: البيع القسري البنيوي في إصدارات الأسهم الجديدة — بصرف النظر عن القطاع — هو منطقة الصيد نفسها اليوم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block4",
+   "en": "Common denominator: in all three situations the catalyst sits in the structure — a decided winding-up with a timetable, a share issue with a deadline, a conversion with a listing. That is why Klarman calls special situations the value investor's home ground: the outcome is driven by mechanics and law, which can be analyzed, rather than by the market's mood, which can only be guessed. Your work is to calculate the mechanics more precisely than the structurally motivated sellers — and to demand a margin here too, for mechanics can get stuck, be postponed or be taken to court.",
+   "ar": "القاسم المشترك: في المواقف الثلاثة كلها يجلس المحفّز في البنية — تصفية مقررة بجدول زمني، وإصدار أسهم بموعد نهائي، وتحويل بإدراج. لهذا يسمي كلارمان المواقف الخاصة ملعب المستثمر القيمي الأمثل: النتيجة تقودها الميكانيكا والقانون، القابلة للتحليل، لا مزاج السوق، القابل للتخمين وحده. عملك أن تحسب الميكانيكا أدق من البائعين المدفوعين بنيويًا — وأن تطالب بهامش هنا أيضًا، فالميكانيكا قد تعلق أو تُؤجَّل أو تُرفع إلى المحكمة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block5",
+   "en": "{\"rubrik\":\"Three special situations — mechanics and catalyst\",\"rader\":[[\"Situation\",\"Mechanics\",\"Built-in catalyst\"],[\"Liquidation\",\"Assets are realized, liabilities are paid, the rest is distributed\",\"Decided winding-up with a timetable — regulatory approval (V18) can govern\"],[\"Rights offering\",\"A discount on the subscription right — dilution to count on (V19)\",\"Subscription price and deadline — the discount closes upon completion\"],[\"Thrift conversion\",\"Mutual ownership is listed via a new share issue\",\"Issue price below book value (V05) plus new capital into the balance sheet\"]]}",
+   "ar": "{\"rubrik\":\"ثلاثة مواقف خاصة — الميكانيكا والمحفّز\",\"rader\":[[\"الموقف\",\"الميكانيكا\",\"المحفّز المدمج\"],[\"التصفية\",\"تُحقَّق الأصول وتُدفع الالتزامات ويوزَّع الباقي\",\"تصفية مقررة بجدول زمني — موافقة الجهات (V18) قد توجه\"],[\"عرض الاكتتاب\",\"خصم على حق الاكتتاب — تخفيف الملكية يُحسب (V19)\",\"سعر الاكتتاب والموعد النهائي — يُغلق الخصم عند التنفيذ\"],[\"تحويل صندوق التوفير\",\"ملكية تبادلية تُدرج عبر إصدار أسهم جديدة\",\"سعر إصدار أدنى من القيمة الدفترية (V05) ورأس مال جديد إلى الميزانية العمومية\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block6",
+   "en": "In special situations the catalyst is built into the structure — your task is to calculate the mechanics, not to divine the market's mood.",
+   "ar": "في المواقف الخاصة المحفّز مدمج في البنية — مهمتك أن تحسب الميكانيكا لا أن تتنبأ بمزاج السوق."
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:block7",
+   "en": "Build a liquidation analysis for a company trading below net asset value: (1) conservative value of all assets, (2) minus liabilities and winding-up costs of 10-30 percent, (3) a discount for expected time to payout. Compare with the market capitalization. Do the same exercise mentally for a bank or real estate owner — what is required for the discount to be a bargain rather than a value trap?",
+   "ar": "ابنِ تحليل تصفية لشركة تتداول دون صافي قيمة أصولها: (1) قيمة متحفظة لكل الأصول، (2) ناقص الالتزامات وتكاليف تصفية قدرها 10-30 بالمئة، (3) خصم للزمن المتوقع حتى الدفع. قارن بالقيمة السوقية. أجرِ التمرين نفسه ذهنيًا لبنك أو مالك عقارات — ما المطلوب ليكون الخصم فرصة لا فخ قيمة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:q",
+   "en": "What is the core of a liquidation analysis?",
+   "ar": "ما جوهر تحليل التصفية؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:a0",
+   "en": "Multiplying the profit by a historical valuation multiple",
+   "ar": "ضرب الربح في مضاعف التقييم التاريخي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:a1",
+   "en": "Conservatively valuing assets, subtracting liabilities and winding-up costs — and discounting for time",
+   "ar": "تقييم الأصول بتحفظ، وطرح الالتزامات وتكاليف التصفية — والخصم للزمن"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:a2",
+   "en": "Looking at P/E and price targets",
+   "ar": "النظر إلى P/E والأسعار المستهدفة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:a3",
+   "en": "Calculating revenue growth forward",
+   "ar": "حساب نمو الإيرادات إلى الأمام"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz1:tips",
+   "en": "What do the shareholders own when everything has been sold and everything paid — and when?",
+   "ar": "ماذا يبقى ملكًا للمساهمين حين بيع كل شيء ودُفع كل شيء — ومتى؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:q",
+   "en": "Why could thrift conversions become bargains?",
+   "ar": "لماذا أمكن لتحويلات صناديق التوفير أن تصبح فرصًا؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:a0",
+   "en": "The banks were in bankruptcy-like condition",
+   "ar": "كانت البنوك في حالة شبه إفلاس"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:a1",
+   "en": "They always paid a high dividend",
+   "ar": "كانت تدفع التوزيعات المرتفعة دائمًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:a2",
+   "en": "They were government-guaranteed against losses",
+   "ar": "كانت مضمونة حكوميًا ضد الخسائر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:a3",
+   "en": "The surplus of stocks at the launch of a share issue, added to the new issue proceeds, meant the stock was sold far below book value (V05)",
+   "ar": "فائض الأسهم عند طرح إصدار أسهم جديدة، مضافًا إليه حصيلة هذا الإصدار، جعل السهم يُباع أدنى بكثير من القيمة الدفترية (V05)"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz2:tips",
+   "en": "What happens to P/B when the share issue is made below book value — and the capital streams into the company?",
+   "ar": "ماذا يحدث لـP/B حين يتم إصدار أسهم دون القيمة الدفترية — ويتدفق رأس المال إلى الشركة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:q",
+   "en": "What must the buyer understand in a rights offering?",
+   "ar": "ما الذي يجب أن يفهمه المشتري في عرض اكتتاب؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:a0",
+   "en": "That dilution is a relevant risk (V19) and that participating at a discount can give a margin — while refusing costs the dilution price",
+   "ar": "أن تخفيف الملكية من المخاطر ذات الصلة (V19) وأن المشاركة بخصم قد تمنح هامشًا — بينما يكلّف الرفض ثمن تخفيف الملكية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:a1",
+   "en": "That rights can never be resold",
+   "ar": "أن الحقوق لا يمكن إعادة بيعها أبدًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:a2",
+   "en": "That a share issue is always positive for old owners",
+   "ar": "أن إصدار أسهم إيجابي دائمًا للمالكين القدامى"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:a3",
+   "en": "That the subscription price lacks significance",
+   "ar": "أن سعر الاكتتاب بلا أهمية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap12:quiz3:tips",
+   "en": "What happens to your ownership if you stand outside — and what does the discount give you if you enter?",
+   "ar": "ماذا يحدث لملكيتك إن بقيت خارجًا — وماذا يمنحك الخصم إن دخلت؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:titel",
+   "en": "Cash is a position — patience as strategy",
+   "ar": "النقد مركز استثماري — الصبر بوصفه استراتيجية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:intro",
+   "en": "Klarman's most provocative message: cash is not passive waiting but an active position — an option on future bargains. The chapter explains why fully invested is a choice, not a coercion, how negative compounding destroys players in options and futures, and how Baupost has used cash in the panics of the decades.",
+   "ar": "أكثر رسائل كلارمان استفزازًا: النقد ليس انتظارًا سلبيًا بل مركز نشط — خيار على فرص المستقبل. يشرح الفصل لماذا كون الاستثمار كاملًا خيار لا إكراه، وكيف يدمر التراكم السلبي اللاعبين في الخيارات والعقود الآجلة، وكيف استخدمت Baupost النقد في حالات الهلع عبر العقود."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block1",
+   "en": "Klarman formulates his cash doctrine in one sentence: the combination of available cash and a contrarian temperament is the best precondition for investment success (freely translated). Cash is an option on future bargains — without expiry and without the premium to an issuer. Holding it is hard: in an upturn every percent of neglected return feels like a loss, and for professionals it creates career risk. Precisely therefore cash is a choice few make — and one that pays those who make it.",
+   "ar": "يصوغ كلارمان تعاليمه عن النقد في جملة واحدة: الجمع بين النقد المتاح والطباع العكسي هو أفضل شرط مسبق للنجاح الاستثماري (ترجمة حرة). النقد خيار على فرص المستقبل — بلا تاريخ استحقاق وبلا قسط لمُصدر. الاحتفاظ به عسير: في الصعود يشعر المرء أن كل بالمئة من العائد المهمل خسارة، وللمحترفين يخلق خطرًا مهنيًا. لهذا بالضبط النقد خيار يقدم عليه قليلون — ويدفع أرباحًا لمن يقدمون عليه."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block2",
+   "en": "Negative compounding is cash's evil twin: instruments with negative expected value — options, futures and warrants — play the mathematics against you. Every small loss in premium and time value compounds as you keep playing; Klarman warns against all speculative instruments where the counterparty understands the instrument better than you. The rule is simple: whoever cannot calculate the instrument's expected value is not an investor in it — he is the counterparty. Avoid negative compounders, however exciting they may look.",
+   "ar": "التراكم السلبي هو التوأم الشرير لحامل النقد: الأدوات ذات القيمة المتوقعة السالبة — الخيارات والعقود الآجلة والصكوك — تجعل الرياضيات ضدك. كل خسارة صغيرة في القسط والقيمة الزمنية تتراكم ما دمت تواصل اللعب؛ يحذّر كلارمان من كل الأدوات المضاربية التي يفهم فيها الطرف المقابل الأداة أفضل منك. القاعدة بسيطة: من لا يستطيع حساب القيمة المتوقعة للأداة ليس مستثمرًا فيها — هو الطرف المقابل. تجنّب المراكمات السلبية، مهما بدت مثيرة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block3",
+   "en": "Baupost practice through history: often 20-50 percent cash when the supply of bargains has been poor — not from a forecast of a downturn, but because the alternatives were not good enough. Cash has since been what made it possible to buy heavily in the panics — 1987, 1990 and later 2008 — when the forced sellers (chapter 9) opened the door. »Cash drag« in calm times is the cost of the option to strike in chaos. Patience is not passivity: it is preparedness with calculated values and standing buy orders.",
+   "ar": "ممارسة Baupost عبر التاريخ: غالبًا 20-50 بالمئة نقدًا حين يكون عرض الفرص رديئًا — لا بسبب توقع هبوط، بل لأن البدائل لم تكن جيدة بما يكفي. النقد هو منذ ذلك الحين ما مكّن من الشراء المكثف في حالات الهلع — 1987 و1990 ولاحقًا 2008 — حين فتح البائعون المضطرون (الفصل 9) الباب. »سحب النقد« في الأزمنة الهادئة هو ثمن الخيار في الضرب وقت الفوضى. الصبر ليس سلبيةً: إنه جاهزية بقيم محسوبة وأوامر شراء معلقة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block4",
+   "en": "The fully-invested coercion is the cultural norm — being fully invested is perceived as diligence, and cash as laziness. Klarman turns it around: the opportunity cost of cash is known and limited (the upside you miss, the inflation of chapter 6), while the cost of poor investments — made to »be in« — is unknown and can become permanent (chapter 5). Keep cash rather than owning the doubtful: companies that burn capital and must issue share after share (V19) or businesses with unsteady revenue (V12) bought without a margin.",
+   "ar": "إكراه الاستثمار الكامل هو المعيار الثقافي — يُنظر إلى الاستثمار الكامل بوصفه اجتهادًا وإلى النقد بوصفه كسلًا. يقلبه كلارمان: تكلفة الفرصة البديلة للنقد معروفة ومحدودة (الصعود الذي تفوته، والتضخم من الفصل 6)، بينما تكلفة الاستثمارات الرديئة — المصنوعة لكي »تكون موجودًا« — مجهولة وقد تصبح دائمة (الفصل 5). احتفظ بالنقد بدلًا من امتلاك المشكوك فيه: شركات تحرق رأس المال وعليها إصدار أسهم (V19)، أو أعمال لا تستقر فيها الإيرادات (V12) مشتراة بلا هامش."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block6",
+   "en": "The cost of cash is known and limited — the cost of poor investments is unknown and can become permanent: always choose the known evil.",
+   "ar": "تكلفة النقد معروفة ومحدودة — تكلفة الاستثمارات الرديئة مجهولة وقد تصبح دائمة: اختر دائمًا الشر المعروف."
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:block7",
+   "en": "Write a cash policy for yourself: a minimum level (for example 10 percent) and trigger conditions — at what margin below calculated value may the cash be used, and how much per position? Apply it the next time the market panics: did the rule make you act decisively — or did it reveal that you had no precalculated values to act on?",
+   "ar": "اكتب لنفسك سياسة نقد: حدًا أدنى (مثلًا 10 بالمئة) وشروط إطلاق — عند أي هامش دون القيمة المحسوبة يجوز استخدام النقد، وكم لكل مركز؟ طبّقها في المرة القادمة التي يهلع فيها السوق: هل جعلتك القاعدة تتصرف بحسم — أم كشفت أنك لم تكن تملك قيمًا محسوبة سلفًا تتصرف بناءً عليها؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:q",
+   "en": "What is meant by »cash is a position«?",
+   "ar": "ماذا يعني أن »النقد مركز«؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:a0",
+   "en": "Being 100 percent invested at all times",
+   "ar": "أن تكون مستثمرًا بنسبة 100 بالمئة دائمًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:a1",
+   "en": "That cash is an active choice — an option on future bargains to be compared with the supply, not a passive remainder",
+   "ar": "أن النقد خيار نشط — خيار على فرص المستقبل يُقارن بالعرض، لا بقايا سلبية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:a2",
+   "en": "That cash is always the best placement",
+   "ar": "أن النقد دائمًا أفضل توظيف للأموال"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:a3",
+   "en": "That one should stop investing entirely",
+   "ar": "أن يتوقف المرء عن الاستثمار تمامًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz1:tips",
+   "en": "What can you do in a panic that the fully invested cannot?",
+   "ar": "ماذا تستطيع فعله في الهلع لا يستطيعه المستثمر بالكامل؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:q",
+   "en": "Why does Klarman warn against options, futures and warrants?",
+   "ar": "لماذا يحذّر كلارمان من الخيارات والعقود الآجلة والصكوك؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:a0",
+   "en": "They are illegal in most jurisdictions",
+   "ar": "إنها غير قانونية في معظم الولايات القضائية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:a1",
+   "en": "They give too high a return compared with stocks",
+   "ar": "العائد الذي تمنحه مرتفع أكثر من اللازم مقارنة بالأسهم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:a2",
+   "en": "They are too hard to buy technically",
+   "ar": "يصعب شراؤها تقنيًا أكثر من اللازم"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:a3",
+   "en": "Negative expected value: premiums and time value compound against you — and the counterparty understands the instrument better",
+   "ar": "قيمة متوقعة سالبة: الأقساط والقيمة الزمنية تتراكم ضدك — والطرف المقابل يفهم الأداة أفضل"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz2:tips",
+   "en": "What happens to small, recurring losses over time when the compound interest rate is allowed to work on them?",
+   "ar": "ماذا يحدث لخسائر صغيرة متكررة مع الزمن حين يُترك سعر الفائدة المركب يعمل عليها؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:q",
+   "en": "Why did Baupost often hold 20-50 percent cash?",
+   "ar": "لماذا احتفظت Baupost غالبًا بنسبة 20-50 بالمئة من النقد؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:a0",
+   "en": "Because they believed the stock market would always fall",
+   "ar": "لأنهم كانوا يعتقدون أن سوق الأسهم سيهبط دائمًا"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:a1",
+   "en": "Because the regulations required it",
+   "ar": "لأن اللوائح كانت تقتضي ذلك"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:a2",
+   "en": "Because the clients paid to get exposure to cash",
+   "ar": "لأن العملاء دفعوا مقابل الحصول على تعرض لنسبة النقد في المحفظة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:a3",
+   "en": "Because when bargains were absent, cash was the best alternative — and the cash made it possible to buy big in the next panic",
+   "ar": "لأنه حين غابت الفرص كان النقد أفضل بديل — والنقد هو ما مكّن من الشراء الكبير في الهلع التالي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap13:quiz3:tips",
+   "en": "What transforms a crash from threat to opportunity?",
+   "ar": "ما الذي يحوّل الانهيار من تهديد إلى فرصة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:titel",
+   "en": "Ownership thinking, catalysts and Klarman's rules — the synthesis",
+   "ar": "تفكير المالك، والمحفزات، وقواعد كلارمان — الخلاصة التركيبية"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:intro",
+   "en": "The course's final chapter ties everything together: entrepreneurial thinking — buying as if you were buying the whole company — the catalyst family in AKM1 (V16-V18), share buybacks (V20) as capital allocation and Klarman's ten rules. From Baupost's founding in 1982 to the book in 1991: thoughtfulness is the method, the margin is the tool.",
+   "ar": "الفصل الأخير من الدورة يربط كل شيء: التفكير الريادي — الشراء كأنك تشتري الشركة كاملة — وعائلة المحفزات في AKM1 (V16-V18)، وإعادة شراء الأسهم (V20) بوصفها تخصيصًا لرأس المال، وقواعد كلارمان العشر. من تأسيس Baupost عام 1982 إلى الكتاب عام 1991: التأمل هو المنهج، والهامش هو الأداة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block1",
+   "en": "Entrepreneurial thinking is Klarman's active side: buy the stock as if you were buying the whole company — what would you pay for the entire business, its cash flows and its control possibilities? As an owner you can create the catalyst yourself: gather a significant stake, conduct a dialogue with the board and drive value-creating measures through proxy control — unlocking hidden assets, selling non-cores and buying back stocks (V20) below intrinsic value. Ownership is the margin's last defense: even if the market is slow, the value can be forced out.",
+   "ar": "التفكير الريادي هو الجانب النشط عند كلارمان: اشترِ السهم كأنك تشتري الشركة كاملة — كم كنت ستدفع مقابل العمل بأكمله وتدفقاته النقدية وإمكانات السيطرة فيه؟ بوصفك مالكًا تستطيع خلق المحفّز بنفسك: اجمع حصة مؤثرة، وأجرِ حوارًا مع مجلس الإدارة، وادفع بإجراءات خلق القيمة عبر سيطرة الوكالة — تحرير الأصول الخفية، وبيع الأنشطة غير الجوهرية، وإعادة شراء الأسهم (V20) دون القيمة الحقيقية. الملكية هي خط الدفاع الأخير للهامش: حتى لو كان السوق بطيئًا، يمكن دفع القيمة إلى الظهور."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block2",
+   "en": "The catalyst family in AKM1: product launches (V16), contracts and partnerships (V17) and regulatory changes (V18) complement the structural catalysts from the course's chapters 10-12 — spin-offs, bid deals, liquidations and conversions. Klarman's hierarchy is clear: the catalyst is a bonus. If the deal is not worth its price without the catalyst, it is a speculation — you are betting that someone else will do the work. If the deal is safe, on the other hand, the catalyst turns a long wait into a planned event. V20 share buybacks are moreover a test of management's capital allocation: buybacks below intrinsic value benefit the owners — buybacks above intrinsic value destroy them.",
+   "ar": "عائلة المحفزات في AKM1: إطلاقات المنتجات (V16)، والعقود والشراكات (V17)، والتغييرات التنظيمية (V18) تكمل المحفزات البنيوية من الفصل 10-12 من الدورة — الانفصال (spin-off) والاندماج والتصفية والتحويل. تراتب كلارمان واضح: المحفّز مكافأة. إن لم تكن الصفقة تستحق سعرها من دون المحفّز فهي مضاربة — أنت تراهن على أن غيرك سيقوم بالعمل. أما إن كانت الصفقة مأمونة فالمحفّز يحوّل انتظارًا طويلًا إلى حدث مخطط. V20 إعادة شراء الأسهم كذلك اختبار لتخصيص الإدارة لرأس المال: إعادة الشراء دون القيمة الحقيقية تنفع الملاك — وإعادة الشراء فوقها تدمرهم."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block3",
+   "en": "Klarman's ten rules — the course's summary: (1) margin of safety first, always a function of the price; (2) bottoms-up analysis — no macro forecast needed; (3) be contrarian when the pendulum hits an extreme; (4) buy forced sellers' paper, not the trend's; (5) love special situations where the mechanics are your friend; (6) risk is permanent loss — never volatility; (7) calculate in real terms — inflation is invisible; (8) avoid speculative instruments and negative compounders; (9) cash is an active choice; (10) think like an owner — a catalyst is a bonus. Behind the rules stands history: the junk era's collapse and 1987 show what happens when they are broken.",
+   "ar": "قواعد كلارمان العشر — خلاصة الدورة: (1) هامش الأمان أولًا، وهو دائمًا دالة في السعر؛ (2) التحليل من الأسفل إلى الأعلى — لا حاجة إلى توقع الاقتصاد الكلي؛ (3) كن عكسيًا حين يبلغ البندول أقصاه؛ (4) اشترِ أوراق البائعين المضطرين لا أوراق الاتجاه؛ (5) أحبب المواقف الخاصة حيث الميكانيكا صديقتك؛ (6) المخاطر خسارة دائمة — لا التقلب أبدًا؛ (7) احسب بالقيم الحقيقية — التضخم خفي؛ (8) تجنّب الأدوات المضاربية والمراكمات السلبية؛ (9) النقد خيار نشط؛ (10) فكر كمالك — المحفّز مكافأة. خلف القواعد يقف التاريخ: انهيار حقبة الجنك و1987 يظهران ما يحدث حين تُكسر."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block4",
+   "en": "The synthesis with AKM1: the course has mapped the book to the ecosystem — V10-V12 for the stability risks (leverage, liquidity, revenue stability), V19 for capital burn and issue risk, V16-V18 for the catalysts, V20 for the share buybacks, V04-V06 for the valuation shortcuts, V07-V09 for the quality of profitability, V13-V15 for the moat. And the most important rule of writing: margin of safety itself is a principle without a V-number — it governs how all V-measures are to be interpreted and when they mean anything at all. The book's last words are its first: be a thoughtful investor — risk-averse, patient and prepared when the hour of coercion comes.",
+   "ar": "التركيب مع AKM1: رسمت الدورة خرائط الكتاب على المنظومة — V10-V12 لمخاطر الاستقرار (الرفع المالي، والسيولة، واستقرار الإيرادات)، وV19 لحرق رأس المال ومخاطر الإصدار، وV16-V18 للمحفزات، وV20 لإعادة شراء الأسهم، وV04-V06 لاختصارات التقييم، وV07-V09 لجودة الربحية، وV13-V15 لأجل الخندق التنافسي (moats). وأهم قاعدة كتابة: هامش الأمان نفسه مبدأ بلا رقم V — يحكم كيف تُفسَّر جميع مقاييس V ومتى تكون لها معنى أصلًا. آخر كلمات الكتاب أول كلماته: كن مستثمرًا متأملًا — نافرًا من المخاطر، صبورًا، ومستعدًا حين تأتي ساعة الإكراه."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block5",
+   "en": "{\"rubrik\":\"Klarman's ten rules — quick reference\",\"rader\":[[\"No.\",\"Rule\",\"Course reference\"],[\"1\",\"Margin of safety first — always a function of the price\",\"Chapter 2\"],[\"2\",\"Bottoms-up analysis — no macro forecast needed\",\"Chapter 3\"],[\"3\",\"Be contrarian when the pendulum hits an extreme\",\"Chapter 3 and 9\"],[\"4\",\"Buy forced sellers' paper — not the trend's\",\"Chapters 9-10\"],[\"5\",\"Special situations when the mechanics are your friend\",\"Chapters 11-12\"],[\"6\",\"Risk = permanent loss — never volatility\",\"Chapter 5\"],[\"7\",\"Calculate in real terms — inflation is invisible\",\"Chapter 6\"],[\"8\",\"Avoid speculative instruments and negative compounders\",\"Chapter 7 and 13\"],[\"9\",\"Cash is an active choice\",\"Chapter 13\"],[\"10\",\"Think like an owner — a catalyst is a bonus\",\"Chapter 14\"]]}",
+   "ar": "{\"rubrik\":\"قواعد كلارمان العشر — مرجع سريع\",\"rader\":[[\"الرقم\",\"القاعدة\",\"مرجع الدورة\"],[\"1\",\"هامش الأمان أولًا — دائمًا دالة في السعر\",\"الفصل 2\"],[\"2\",\"التحليل من الأسفل إلى الأعلى — لا حاجة إلى توقع الاقتصاد الكلي\",\"الفصل 3\"],[\"3\",\"كن عكسيًا حين يبلغ البندول أقصاه\",\"الفصل 3 و9\"],[\"4\",\"اشترِ أوراق البائعين المضطرين — لا أوراق الاتجاه\",\"الفصل 9-10\"],[\"5\",\"المواقف الخاصة حين تكون الميكانيكا صديقتك\",\"الفصل 11-12\"],[\"6\",\"المخاطر = خسارة دائمة — لا التقلب أبدًا\",\"الفصل 5\"],[\"7\",\"احسب بالقيم الحقيقية — التضخم خفي\",\"الفصل 6\"],[\"8\",\"تجنّب الأدوات المضاربية والمراكمات السلبية\",\"الفصل 7 و13\"],[\"9\",\"النقد خيار نشط\",\"الفصل 13\"],[\"10\",\"فكر كمالك — المحفّز مكافأة\",\"الفصل 14\"]]}"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block7",
+   "en": "Never buy anything where you need the catalyst in order not to lose — the catalyst should elevate an already safe deal, not rescue an unsafe one.",
+   "ar": "لا تشترِ أبدًا شيئًا تحتاج فيه إلى المحفّز كي لا تخسر — ينبغي أن يرفع المحفّز صفقة مأمونة سلفًا، لا أن ينقذ صفقة غير مأمونة."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:block8",
+   "en": "Write your own Klarman testament: one page with your ten rules from the course, formulated in the first person and adapted to your portfolio. Date it and put it up. The next time a bubble invites you in — a »risk-free high yield«, a mechanism everyone believes in, a piece of news you feel compelled to trade on — read the testament before you click.",
+   "ar": "اكتب وصيتك الكلارمانية: صفحة واحدة بقواعدك العشر من الدورة، مصوغة بصيغة المتكلم ومكيّفة على حجم المحفظة لديك. دوّن التاريخ وعلّقها. في المرة القادمة التي تدعوك فيها الفقاعة — »عائد مرتفع بلا مخاطر«، أو ميكانيكية يؤمن بها الجميع، أو خبر تشعر بإلحاح على التداول به — اقرأ الوصية قبل أن تنقر."
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:q",
+   "en": "What does entrepreneurial thinking mean according to the course?",
+   "ar": "ماذا يعني التفكير الريادي وفق الدورة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:a0",
+   "en": "Starting your own company instead of investing",
+   "ar": "تأسيس شركتك الخاصة بدلًا من الاستثمار"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:a1",
+   "en": "Day trading actively with leverage",
+   "ar": "المضاربة اليومية بنشاط مع الرفع المالي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:a2",
+   "en": "Buying stocks as if you were buying the whole company — with ownership's possibilities of creating the catalyst yourself (dialogue, proxy control, share buybacks)",
+   "ar": "شراء الأسهم كأنك تشتري الشركة كاملة — مع إمكانات الملكية في خلق المحفّز بنفسك (الحوار، وسيطرة الوكالة، وإعادة شراء الأسهم)"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:a3",
+   "en": "Owning the index fund and letting time do the work",
+   "ar": "امتلاك صندوق المؤشرات وترك الوقت يعمل"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz1:tips",
+   "en": "What can an owner do with a company that a passive price-watcher cannot?",
+   "ar": "ماذا يستطيع مالك فعله بشركة لا يستطيعه مراقب سلبي للسعر؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:q",
+   "en": "How does the catalyst relate to the margin?",
+   "ar": "كيف يرتبط المحفّز بالهامش؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:a0",
+   "en": "The catalyst replaces the margin when it is strong enough",
+   "ar": "المحفّز يحل محل الهامش حين يكون قويًا بما يكفي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:a1",
+   "en": "The catalyst is the same thing as the margin",
+   "ar": "المحفّز هو الشيء نفسه الذي هو الهامش"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:a2",
+   "en": "The catalyst is never needed in value investing",
+   "ar": "لا يُحتاج إلى المحفّز أبدًا في الاستثمار القيمي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:a3",
+   "en": "The catalyst is a bonus — the deal should be worth its price even without it",
+   "ar": "المحفّز مكافأة — ينبغي أن تكون الصفقة تستحق سعرها حتى من دونه"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz2:tips",
+   "en": "What remains of the deal if the catalyst fails to appear — profit or loss?",
+   "ar": "ماذا يتبقى من الصفقة إن لم يأتِ المحفّز — ربح أم خسارة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:q",
+   "en": "What does V20 (share buybacks) say about a company's management?",
+   "ar": "ماذا يقول V20 (إعادة شراء الأسهم) عن إدارة الشركة؟"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:a0",
+   "en": "Share buybacks are always good regardless of price",
+   "ar": "إعادة شراء الأسهم جيدة دائمًا بصرف النظر عن السعر"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:a1",
+   "en": "Share buybacks are always bad because the capital disappears",
+   "ar": "إعادة شراء الأسهم رديئة دائمًا لأن رأس المال يختفي"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:a2",
+   "en": "Share buybacks below intrinsic value benefit the owners — buybacks above intrinsic value destroy value; it is a test of capital allocation",
+   "ar": "إعادة شراء الأسهم دون القيمة الحقيقية تنفع الملاك — وإعادة الشراء فوق القيمة الحقيقية تدمر القيمة؛ إنه اختبار لتخصيص رأس المال"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:a3",
+   "en": "Share buybacks say nothing at all about management",
+   "ar": "إعادة شراء الأسهم لا تقول شيئًا أبدًا عن الإدارة"
+  },
+  {
+   "nyckel": "margin-of-safety:kap14:quiz3:tips",
+   "en": "What is the company really buying when it buys back its own stocks — and at what price?",
+   "ar": "ماذا تشتري الشركة حقًا حين تعيد شراء الأسهم الخاصة بها — وبأي سعر؟"
+  }
+ ]
+}

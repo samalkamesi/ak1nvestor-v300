@@ -8802,3 +8802,53 @@ Vågens leveranser: 12 bokkanon-kurser översatta (3 447 källor/6 892 rader)
 + prestanda våg 2 på prod (−44 % HTML /kurser · −105 kB JS · −50 kB fonter ·
 5 ms backend-cache) + 8 SEO-guider totalt live (4+4, alla tri-språk) ·
 motorer 107/0/0 · vakten GRÖN · tsc 0 nya.
+
+## Våg 69 — m10 QR-ATTRIBUERING STEG 1 LEVERERAD (2026-09-06, JUR/BYGG)
+
+**m10-referral steg 1 (rek 2: attribuering UTAN belöning — J1–J2 väntar):**
+- Lagringsväg UTAN DDL: members saknar kod-kolumn ⇒ system_events (lager.ts-
+  mönstret): type=referral_kod details={kod, medlemsid, aktiv:true} +
+  senaste-vinner-läsning (order=created_at.desc,id.desc, råa filtervärden).
+  Framgång = type=referral details={framgang:true, kod} — ALDRIG nya elevens
+  identitet (bevisat med stubbat nät: 17/18 PASS, 1 FAIL var ogiltigt
+  TESTDATA som formatvakten korrekt avvisade).
+- Nytt: src/lib/referral.ts (ren kärna: 8-teckens slumpkod ur alfabet utan
+  I/O/0/1, saneraRefKod, refUrl) · POST /api/referral/kod (opt-in, rate-
+  limit 6/min, idempotent — befintlig kod returneras) · RefMottagare (läser
+  ?ref= EN gång, tvättar URL:n med replaceState, rad försvinner vid klick,
+  kod i sessionStorage tills registreringen konsumerar den).
+- Utökat: member/register (ref matchas endast vid isNew, fire-and-forget —
+  registreringen kan aldrig misslyckas på attribuering) · DelaKort (Skapa
+  din tipskod-knapp; QR = lab.ak1nvestor.com/?ref={kod} i v3-M 29x29, utan
+  kod exakt v2-M 25x25 som före; delningsrad "Gå med gratis (om du vill)";
+  kort-SVG:n oförändrad) · admin/konvertering +1 steg "Tips-värvar" (befintlig
+  data-driven panel — ingen ny admin-sida).
+- AC: AC1 ✓ (qrMatris verklig kodare, kanonisk ?ref=-URL) · AC2 ✓ (stubbat
+  e2e: details exakt {framgang:true,kod}, ingen id/e-post) · AC3 ✓
+  (kontrolleraText 0 FEL + 0 VARNING på 13 nya copy-strängar) · AC4 ✓ (utan
+  kod: ingen ref-trafik alls, QR oförändrad) · AC5 ✓ (tsc 36=före=efter 0
+  nya · motorer 107/0/0 · vakten GRÖN 0 fel · build exit 0) · AC6 ✓ (FOMO-
+  grep: 5 träffar ENDAST i förbudsciterande kodkommentarer, 0 i UI-copy;
+  "kunder" 0 träffar). Steg 2 (tack/badges) BYGGS EJ — J1–J2.
+
+## Våg 69 — KOMPLETT (2026-09-06)
+
+**Bokmaster rond 2 (6 agenter, 12 kurser):** Marks (Most Important Thing),
+O'Shaughnessy (What Works), Schwager (Market Wizards), Buffett-essäerna,
+Soros (Alchemy), Staley (Art of Short Selling), Dreman (Contrarian),
+Kahneman (Tänka snabbt), Frost/Prechter (Elliott Wave), Pabrai (Dhandho),
+Elder (Trading for a Living), Edwards/Magee (TA of Stock Trends).
+4 551 källor · 9 102 rader publicerade · ALLA 100p · 0 nekade.
+
+**m10 QR-ATTRIBUERING STEG 1 LEVERERAD (JUR-2):** slumpkod (alt C — aldrig
+e-posthash) i DelaKort-QR + opt-in-generering (/api/referral/kod, rate-limit,
+idempotent) + RefMottagare (läser ?ref= en gång, tvättar URL, försvinner vid
+klick) + register-flödet räknar aggregat-event (type=referral, ALDRIG identitet)
++ konverteringspanelens nya steg. AC1-AC6 alla gröna (17/17 QR-test, e2e
+identitetsfrihet bevisad, kontrolleraText 0 FEL, FOMO-grep: endast citat-
+kommentarer, tsc 0 nya, motorer 107/0/0, vakten GRÖN, build exit 0).
+Steg 2 (tack/badges) väntar kundens J1-J2-policy.
+
+**SLUTMÄTNING: 252/333 kurser KOMPLETTA · 56,1 % total täckning · 78 465
+publicerade rader.** Kvar: 81 bokmaster-kurser (30 640 källor ≈ 4 ronder =
+våg 70-71). Från 1,6 % (våg 65) → 56,1 % på tre vågdygn.

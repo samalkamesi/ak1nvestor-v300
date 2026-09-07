@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { addXP, lasXP } from "@/lib/member-local";
+import { skapaT } from "@/lib/sprak";
+import type { SprakId } from "@/lib/sprak";
 
 export type QuizFraga = {
   q: string;
@@ -15,8 +17,23 @@ export type QuizFraga = {
  * Kapitelquiz — AI-lärarens examination. Rätt svar = automatisk +10 XP
  (endast första gången per fråga). Fel svar = pedagogisk coachning.
  * Poängen TAS inte — poängen FÖRTJÄNAS.
+ *
+ * VÅG 80A: lang-prop (default "sv") — quiz-chromet kommer ur ordlistan så
+ * smakprovet kap 1–2 håller sitt språk även på /en|/ar-speglarna (fragor/
+ * alternativ/tips är redan översatta via kursspegel-lagret).
  */
-export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr: number; fragor: QuizFraga[] }) {
+export function KursQuiz({
+  slug,
+  kapitelNr,
+  fragor,
+  lang = "sv",
+}: {
+  slug: string;
+  kapitelNr: number;
+  fragor: QuizFraga[];
+  lang?: SprakId;
+}) {
+  const t = skapaT(lang);
   const [svar, setSvar] = useState<Record<number, number>>({});
   const [xp, setXp] = useState<number | null>(null);
   const [klarade, setKlarade] = useState(0);
@@ -48,10 +65,10 @@ export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr:
     <div data-chat-anker="quiz" className="mt-4 scroll-mt-24 rounded-xl border-2 border-gold/40 bg-paper p-4">
       <div className="flex items-center justify-between">
         <p className="text-xs font-bold uppercase tracking-widest text-gold">
-          🧠 Masterquiz — kapitel {kapitelNr}
+          🧠 {t("kurs.quizRubrik", { num: kapitelNr })}
         </p>
         <span className="text-[11px] text-muted-foreground">
-          {klarade}/{fragor.length} klarade · +10 XP per rätt
+          {t("kurs.quizRaknare", { klarade, total: fragor.length })}
         </span>
       </div>
       <div className="mt-3 space-y-4">
@@ -85,11 +102,11 @@ export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr:
               </div>
               {mitt !== undefined && mitt !== f.ratt && !klarad && (
                 <p className="mt-2 rounded-md bg-gold/10 px-3 py-2 text-xs italic text-gold">
-                  💡 Läraren tipsar: {f.tips || "Gå tillbaka till kapitlet och leta ledtråden — svaret finns där."}
+                  💡 {t("kurs.lararenTipsar")} {f.tips || t("kurs.quizTipsFallback")}
                 </p>
               )}
               {mitt === f.ratt && (
-                <p className="mt-2 text-xs font-semibold text-green-700">✓ Rätt! +10 XP förtjänat.</p>
+                <p className="mt-2 text-xs font-semibold text-green-700">✓ {t("kurs.rattFortjanat")}</p>
               )}
             </div>
           );
@@ -97,12 +114,12 @@ export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr:
       </div>
       {klarade === fragor.length && (
         <p className="mt-3 rounded-lg bg-green-50 border border-green-300 px-3 py-2 text-sm font-bold text-green-800">
-          🏆 Kapitel {kapitelNr} behärskat! {xp !== null && `Totalt ${xp} XP.`} Gå vidare till nästa kapitel.
+          🏆 {t("kurs.kapitelBeharskat", { num: kapitelNr })} {xp !== null && `${t("kurs.totaltXp", { xp })} `}{t("kurs.gaVidareNasta")}
         </p>
       )}
       {rattCount > 0 && klarade < fragor.length && (
         <p className="mt-3 text-[11px] text-muted-foreground italic">
-          Försök igen — fel svar kostar inget, men rätt svar måste förtjänas.
+          {t("kurs.forsokIgenQuiz")}
         </p>
       )}
     </div>

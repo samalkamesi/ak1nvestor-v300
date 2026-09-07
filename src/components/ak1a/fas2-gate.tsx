@@ -8,9 +8,10 @@ import {
   harFas3Access,
   arAdmin,
   aktiveraFas2Override,
-  fas2LockeradText,
-  fas3LockeradText,
+  fas2LockeradGrupp,
+  fas3LockeradGrupp,
 } from "@/lib/kurs-access";
+import { skapaT } from "@/lib/sprak";
 import { KursGate } from "@/components/ak1a/kurs-gate";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
 import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artiklar";
@@ -68,6 +69,13 @@ export function Fas2Gate({
   // Rent Set-uppslag (SSR-säkert) — 0 = gratis, 2/3 = lås bakom respektive fas
   const fas = kraverFas(slug);
   const fas3 = fas === 3;
+  // VÅG 80A: ALL text i låsvyn/smakprovet/laddar-läget kommer ur ordlistan
+  // (sv|en|ar) — inga hårdkodade svenska strängar på speglarna. Svenska
+  // originalet skickar inte lang ⇒ "sv" ⇒ samma texter som före våg 80a.
+  const t = skapaT(lang);
+  // Länkar följer spegeln (sv: /x · en/ar: /en/x) — spegelrutter finns för
+  // /fas2-ansok, /fas3, /kurser och /logga-in (OVERSATTA_ROUTES, våg 51+).
+  const bas = (vag: string) => (lang === "sv" ? vag : `/${lang}${vag}`);
   // LÅST är SSR-default (v1 läckte här: access === null → children)
   const [access, setAccess] = useState(false);
   const [admin, setAdmin] = useState(false);
@@ -132,7 +140,7 @@ export function Fas2Gate({
       chapters={smakprov}
       total={kapitel}
       lang={lang}
-      rubrik="Smakprov — de två första kapitlen"
+      rubrik={t("fas.smakprovRubrik")}
       fortsattning={fortsattning}
     />
   ) : null;
@@ -144,9 +152,7 @@ export function Fas2Gate({
         {fel ? (
           <section className="mt-10" aria-live="polite">
             <div className="rounded-xl border border-gold/40 bg-card p-6 text-center">
-              <p className="text-sm font-semibold">
-                Kursen kunde inte hämtas just nu — kontrollera anslutningen.
-              </p>
+              <p className="text-sm font-semibold">{t("fas.hamtaFel")}</p>
               <button
                 type="button"
                 onClick={() => {
@@ -156,16 +162,14 @@ export function Fas2Gate({
                 }}
                 className="btn-marin mt-3 px-5 py-2 text-xs"
               >
-                Försök igen
+                {t("fas.forsokIgen")}
               </button>
             </div>
             {smakprovSektion}
           </section>
         ) : !kurs ? (
           <section className="mt-10" aria-busy="true">
-            <p className="text-sm text-muted-foreground">
-              Låser upp kursen — hämtar kapitlen …
-            </p>
+            <p className="text-sm text-muted-foreground">{t("fas.laserUpp")}</p>
             {smakprovSektion}
           </section>
         ) : harQuiz ? (
@@ -183,7 +187,7 @@ export function Fas2Gate({
             chapters={kurs.chapters}
             total={kurs.chapters.length}
             lang={lang}
-            rubrik={lang === "sv" ? "Kursinnehåll" : undefined}
+            rubrik={t("kurs.kursinnehall")}
           />
         )}
       </KursGate>
@@ -210,31 +214,17 @@ export function Fas2Gate({
         className={`marin-panel relative mt-10 overflow-hidden rounded-3xl border-2 p-6 text-center shadow-xl sm:p-10 ${
           fas3 ? "border-[#B07A3C]/60" : "border-gold/50"
         }`}
-        aria-label={fas3 ? "Fas 3-kurs — inbjudan vidare" : "Fas 2-kurs — inbjudan vidare"}
+        aria-label={t(fas3 ? "fas.aria3" : "fas.aria2")}
       >
         {/* Lås-visualisering */}
         <p className="text-5xl" aria-hidden>
           🔒
         </p>
         <h2 className="mt-4 font-serif text-2xl font-bold leading-tight text-[#EDE6D6] sm:text-3xl">
-          {fas3 ? "Fas 3 — det dynamiska ekosystemet" : "Fas 2 — den fundamentala vägen"}
+          {t(fas3 ? "fas3.rubrik" : "fas2.rubrik")}
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[#EDE6D6]/75">
-          {fas3 ? (
-            <>
-              Välkommen vidare när du är redo. I Fas 3 börjar fundamentalanalysen röra
-              sig — värde möter vågor, kapitel för kapitel. Du har just läst smakprovet;
-              nedan ser du exakt vad som väntar bakom låset — innehållet stänger vi
-              aldrig in, vi bjuder in till det.
-            </>
-          ) : (
-            <>
-              Välkommen vidare när du är redo. Fas 2 är den snabba fundamentala vägen
-              till oberoende analytiker — och chansen att få representera AK1nvestor
-              med kvalitet. Du har just läst smakprovet; nedan ser du exakt vad som
-              väntar bakom låset — innehållet stänger vi aldrig in, vi bjuder in till det.
-            </>
-          )}
+          {t(fas3 ? "fas3.beskrivning" : "fas2.beskrivning")}
         </p>
 
         {/* SE KORTET — eleven får se vad som finns */}
@@ -244,13 +234,13 @@ export function Fas2Gate({
           }`}
         >
           <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${accentText}`}>
-            Kurskortet — en blick på resan
+            {t("fas.kurskortRubrik")}
           </p>
           <h3 className="mt-2 font-serif text-xl font-bold text-[#EDE6D6]">{titel}</h3>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <span className={chipKlass}>📖 {kapitel} kapitel</span>
+            <span className={chipKlass}>📖 {kapitel} {t("kurs.kapitelEnhet")}</span>
             {xp ? <span className={chipKlass}>⚡ {xp} XP</span> : null}
-            <span className={chipKlass}>🎓 Fas {fas}-kurs</span>
+            <span className={chipKlass}>🎓 {t("fas.fasKurs", { fas })}</span>
           </div>
           {intro && (
             <p
@@ -266,47 +256,50 @@ export function Fas2Gate({
         {/* VARFÖR FAS 2/3 — varför detta är nästa analytiska fas */}
         <div className="mx-auto mt-6 max-w-2xl text-left">
           <p className={`text-[10px] font-bold uppercase tracking-[0.3em] ${accentText}`}>
-            Varför Fas {fas}?
+            {t("fas.varfor", { fas })}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-[#EDE6D6]/90">
-            {fas3 ? fas3LockeradText(slug) : fas2LockeradText(slug)}
+            {t(
+              fas3
+                ? `fas3.lasText.${fas3LockeradGrupp(slug)}`
+                : `fas2.lasText.${fas2LockeradGrupp(slug)}`
+            )}
           </p>
         </div>
 
         {/* CTA */}
         <div className="mt-8 flex flex-col items-center gap-3">
           <Link
-            href={fas3 ? "/fas3" : "/fas2-ansok"}
+            href={bas(fas3 ? "/fas3" : "/fas2-ansok")}
             className="btn-guld-signatur inline-block px-8 py-3.5 text-sm"
           >
-            {fas3 ? "Till Fas 3 — ekosystemet →" : "Ansök till Fas 2 →"}
+            {t(fas3 ? "fas3.cta" : "fas2.cta")}
           </Link>
           {/* Redan medlem men ej inloggad på denna enhet — lås upp gratis-kontot
               först (member_type bärs av ak1a-member, våg 78 B1). */}
           <p className="text-xs text-[#EDE6D6]/70">
-            Redan Fas {fas}-medlem?{" "}
+            {t("fas.redanMedlem", { fas })}{" "}
             <Link
-              href={`/logga-in?next=${encodeURIComponent(
+              href={`${bas("/logga-in")}?next=${encodeURIComponent(
                 lang === "sv" ? `/kurser/${slug}` : `/${lang}/kurser/${slug}`,
               )}`}
               className="underline hover:text-[#EDE6D6]"
             >
-              Logga in
+              {t("auth.loggaIn")}
             </Link>{" "}
-            för att läsa vidare.
+            {t("fas.loggaInEfter")}
           </p>
           {fas3 ? (
             <p className="max-w-xl text-xs leading-relaxed text-[#EDE6D6]/70">
-              Fas 3 innehåller alla framtida utvecklingar — dashboard, AI-koppling och
-              rapporter. Efter utbildningen kan ekosystemet fortsätta nyttjas via månadsplan.
+              {t("fas3.inkluderat")}
             </p>
           ) : (
             <p className="text-xs text-[#EDE6D6]/70">
-              Fas 1 förblir gratis — alltid.{" "}
-              <Link href="/kurser" className="underline hover:text-[#EDE6D6]">
-                Hela gratis-biblioteket
+              {t("fas.fas1Gratis")}{" "}
+              <Link href={bas("/kurser")} className="underline hover:text-[#EDE6D6]">
+                {t("fas.bibliotekLank")}
               </Link>{" "}
-              väntar tills vidare, och det förblir så.
+              {t("fas.bibliotekEfter")}
             </p>
           )}
         </div>
@@ -319,7 +312,7 @@ export function Fas2Gate({
               className="btn-marin px-5 py-2 text-xs"
               title="Sätter ak1a-fas2-override=true i localStorage"
             >
-              Lås upp (admin)
+              {t("fas.adminLasUpp")}
             </button>
           </div>
         )}

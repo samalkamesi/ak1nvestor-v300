@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
+import { PRISER } from "@/lib/variabler";
 
 /**
  * تقديم طلب المرحلة 2 (AR) — arabisk spegelkopia av
@@ -13,11 +14,16 @@ import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
  * standardarabiska, finansiella termer) och roten bär dir="rtl".
  * Latinska förkortningar (AKM1, XP, SEK) behålls enligt språkplanen.
  * Den svenska komponenten är orörd.
+ *
+ * VÅG 80A (språk-agent 2): pris-talet kommer som prop (prisFas2) från
+ * server-sidan, som läser lasPriserGallande() — samma kontrakt som svenska
+ * Fas2Ansok. Statisk PRISER-importen är endast robust fallback om
+ * komponenten renderas utan prop. Latinska siffror behålls.
  */
 
 const MAX_VARFOR = 800;
 
-export function Fas2AnsokAr() {
+export function Fas2AnsokAr({ prisFas2 }: { prisFas2?: number }) {
   const [hydrerad, setHydrerad] = useState(false);
   const [inloggad, setInloggad] = useState(false);
   const [elevNiva, setElevNiva] = useState(1);
@@ -245,7 +251,8 @@ export function Fas2AnsokAr() {
       <div className="rounded-lg border border-gold/30 bg-paper p-5 text-xs leading-relaxed text-muted-foreground">
         <p>
           <strong className="text-foreground">لا دفع الآن.</strong> الطلب مجاني
-          وغير مُلزِم. تكلفة المرحلة 2 هي 9,999 SEK — لكنك لا تدفع شيئًا خلال
+          وغير مُلزِم. تكلفة المرحلة 2 هي{" "}
+          {(prisFas2 ?? PRISER.fas2EnGang).toLocaleString("en-US")} SEK — لكنك لا تدفع شيئًا خلال
           الأيام التسعين الأولى: يُدفع المبلغ بعد 90 يومًا فقط، وفقط إن بقيت
           راضيًا (ضمان الرضا 90 يومًا، بأساس قانوني في{" "}
           <Link href="/villkor" className="underline hover:text-foreground">

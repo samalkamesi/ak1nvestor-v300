@@ -114,7 +114,7 @@ export function KursArtiklar({
                   })}
               </div>
               {ch.quiz && ch.quiz.length > 0 && (
-                <KursQuiz slug={slug} kapitelNr={ch.num} fragor={ch.quiz} />
+                <KursQuiz slug={slug} kapitelNr={ch.num} fragor={ch.quiz} lang={lang} />
               )}
               <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
                 <span className="h-px flex-1 bg-gold/20" />

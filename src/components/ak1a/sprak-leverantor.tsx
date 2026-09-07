@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import {
   dirForSprak,
@@ -27,14 +27,21 @@ import type { OrdlistaNyckel } from "@/lib/ordlista";
  * useSprak().t byter innehåll. <html lang> + <html dir> sätts i samma svep
  * (dir="rtl" för arabiska) — det är en extern-systemsynk (tillåtet i effect).
  *
+ * VÅG 80A — SPEGELREGELN: på spegelroutrar (/en/**, /ar/**) vinner spegelns
+ * språk ALLTID (t, tText, kontextens sprak/dir) — en direktbesökare utan
+ * sparat UI-val ser annars spegelns innehåll med svensk meny/footer.
+ * Serverrenderingen är fortfarande alltid svenska; regeln slås på först
+ * efter montering (monteringsgrind) så hydreringen förblir identisk.
+ * Utanför speglarna följs UI-valet (localStorage ⇒ navigator ⇒ sv) som förr.
+ *
  * useSprak() fungerar ÄVEN utan leverantör (fallback-kontexten = svenska)
  * — en komponent kan aldrig krascha på grund av ett saknat omslag.
  */
 
 export type SprakKontext = {
-  /** Valt språk ("sv" på servern tills hydreringen resolverat). */
+  /** Renderat språk: på speglar (/en/**, /ar/**) spegelns språk, annars UI-valet. "sv" på servern. */
   sprak: SprakId;
-  /** Textriktning för valt språk. */
+  /** Textriktning för det renderade språket. */
   dir: "ltr" | "rtl";
   /** Byt språk — sparar localStorage + uppdaterar kontexten. */
   setSprak: (sprak: SprakId) => void;
@@ -79,19 +86,33 @@ export function SprakLeverantor({ children }: { children: React.ReactNode }) {
   const sprak = useSyncExternalStore(prenumerera, lasKlientSprak, lasServerSprak);
   const pathname = usePathname() ?? "/";
 
+  // VÅG 80A — monteringsgrinden: SSR + hydreringspasset renderar svenska som
+  // alltid (servern ser aldrig localStorage); spegelregeln slås på först
+  // efter montering på klienten ⇒ server-HTML och hydreringsrendering
+  // förblir byte-identiska, vilket den än må tro om usePathname under
+  // prerender. Textnoderna byts därefter i samma MGTM-svep som vanligt.
+  const [monterad, setMonterad] = useState(false);
+  useEffect(() => setMonterad(true), []);
+
+  // VÅG 80A — SPEGELREGELN FÖR ALLA TEXTER (fullföljer våg 78 C #6): på
+  // spegelroutrar (/en/**, /ar/**) vinner SPEGELNS språk inte bara i
+  // <html lang/dir> utan även i t()/tText()/sprak/dir. Innan denna rad
+  // såg direkta besökare (sökmotor → /en/kurser/..., utan sparat UI-val)
+  // engelskt/arabiskt sidinnehåll med SVENSK huvudmeny, footer och
+  // CTA:er — kundens "får problem"-rapport. Utanför speglarna följer
+  // UI-valet som förr (oförändrat beteende på originalsidorna).
+  const spegelSprak = monterad ? sprakPrefix(pathname) : null;
+  const effektivtSprak = spegelSprak ?? sprak;
+
   // <html lang> + <html dir> — extern-systemsynk vid varje byte (ar ⇒ rtl).
-  // VÅG 78 C #6: på spegelroutrar (/en/**, /ar/**) vinner SPEGELNS språk —
-  // sidinnehållet är på spegelns språk oavsett UI-val (tillsammans med
-  // inline-skripten i src/app/{en,ar}/layout.tsx som täcker första
-  // SSR-passet). pathname i deps: SprakVäxlarens router.push in/ut ur
-  // speglar ska synkas direkt — utanför speglarna följer <html> UI-språket
-  // som förr (oförändrat beteende).
+  // Effekten körs endast på klienten (post-montering) där effektivtSprak
+  // redan inbegriper spegelregeln; pathname i deps behövs inte längre —
+  // växling in/ut ur speglar ändrar effektivtSprak och triggar om.
   useEffect(() => {
     if (typeof document === "undefined") return;
-    const htmlSprak: SprakId = sprakPrefix(pathname) ?? sprak;
-    document.documentElement.lang = htmlSprak;
-    document.documentElement.dir = dirForSprak(htmlSprak);
-  }, [sprak, pathname]);
+    document.documentElement.lang = effektivtSprak;
+    document.documentElement.dir = dirForSprak(effektivtSprak);
+  }, [effektivtSprak]);
 
   const setSprak = useCallback((ny: SprakId) => {
     lagerSprak = ny;
@@ -100,18 +121,18 @@ export function SprakLeverantor({ children }: { children: React.ReactNode }) {
   }, []);
 
   const t = useCallback<SprakKontext["t"]>(
-    (nyckel, parametrar) => oversatt(nyckel, sprak, parametrar),
-    [sprak],
+    (nyckel, parametrar) => oversatt(nyckel, effektivtSprak, parametrar),
+    [effektivtSprak],
   );
 
   const tText = useCallback<SprakKontext["tText"]>(
-    (text) => oversattText(text, sprak),
-    [sprak],
+    (text) => oversattText(text, effektivtSprak),
+    [effektivtSprak],
   );
 
   const varde = useMemo<SprakKontext>(
-    () => ({ sprak, dir: dirForSprak(sprak), setSprak, t, tText }),
-    [sprak, setSprak, t, tText],
+    () => ({ sprak: effektivtSprak, dir: dirForSprak(effektivtSprak), setSprak, t, tText }),
+    [effektivtSprak, setSprak, t, tText],
   );
 
   return <SprakContext.Provider value={varde}>{children}</SprakContext.Provider>;

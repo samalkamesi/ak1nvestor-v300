@@ -170,7 +170,7 @@ export function KursSpegelSida({
           <div className="mt-4 flex flex-wrap gap-2">
             {[
               `📖 ${kurs.chapters.length} ${t("kurs.kapitelEnhet")}`,
-              `⏱ ${totaltMin} min`,
+              `⏱ ${totaltMin} ${t("kurs.minuter")}`,
               `⚡ ${intjanbarXp} XP`,
               `⚖ ${t("kurs.vikt")}: ${kurs.weight || "6%"}`,
               `🏷 ${kurs.category}`,
@@ -219,19 +219,19 @@ export function KursSpegelSida({
                   <span className="min-w-0 flex-1">
                     <span className="block font-medium leading-snug">{ch.title}</span>
                     <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                      {introSnutt(ch, 110) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — Fas ${fas}` : "")}
+                      {introSnutt(ch, 110) ?? (fas > 0 && ch.num > 2 ? t("kurs.kapLas", { num: ch.num, fas }) : "")}
                       {introSnutt(ch, 110) && (ch.intro?.length || 0) > 110 ? "…" : ""}
                     </span>
                   </span>
                   <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
-                    {ch.minutes || 9} min
+                    {ch.minutes || 9} {t("kurs.minuter")}
                   </span>
                 </a>
               </li>
             ))}
             <li className="flex items-center justify-between rounded-xl border border-gold/30 bg-gold/5 px-3 py-2 text-sm font-semibold">
               <span>{t("kurs.totalt")}</span>
-              <span className="font-mono text-xs">{totaltMin} min</span>
+              <span className="font-mono text-xs">{totaltMin} {t("kurs.minuter")}</span>
             </li>
           </ol>
 
@@ -253,11 +253,11 @@ export function KursSpegelSida({
                       </a>
                     </td>
                     <td className="p-3 text-muted-foreground">
-                      {introSnutt(ch, 90) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — Fas ${fas}` : "")}
+                      {introSnutt(ch, 90) ?? (fas > 0 && ch.num > 2 ? t("kurs.kapLas", { num: ch.num, fas }) : "")}
                       {introSnutt(ch, 90) && (ch.intro?.length || 0) > 90 ? "…" : ""}
                     </td>
                     <td className="p-3 text-right font-mono text-xs text-muted-foreground">
-                      {ch.minutes || 9} min
+                      {ch.minutes || 9} {t("kurs.minuter")}
                     </td>
                   </tr>
                 ))}
@@ -265,7 +265,7 @@ export function KursSpegelSida({
                   <td className="p-3" colSpan={2}>
                     {t("kurs.totalt")}
                   </td>
-                  <td className="p-3 text-right font-mono text-xs">{totaltMin} min</td>
+                  <td className="p-3 text-right font-mono text-xs">{totaltMin} {t("kurs.minuter")}</td>
                 </tr>
               </tbody>
             </table>

@@ -185,46 +185,56 @@ const FAS2_FINANS = new Set([
   "distress-investing",
 ]);
 
-/** Fas 2-låstext per grupp — den fundamentala vägen till oberoende analytiker. */
-export function fas2LockeradText(slug: string): string {
-  if (FAS2_VARDERING.has(slug)) {
-    return (
-      "Värderingsbiblorna — Graham & Dodd, Damodaran, McKinsey, Williams. " +
-      "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: här lär du dig " +
-      "väga ett bolag i handen, från bokslut till värde, tills siffrorna blir ett omdöme du kan försvara."
-    );
-  }
-  if (FAS2_BOKSLUT.has(slug)) {
-    return (
-      "Bokslutets hantverk — Penman, O'Glove, Schilit. Fas 2 handlar om att läsa " +
-      "redovisningen som en analytiker: hitta kvaliteten i vinsten, genomskåda kreativ " +
-      "kassaflödesredovisning, och veta skillnaden på en rapport och en berättelse."
-    );
-  }
-  if (FAS2_FINANS.has(slug)) {
-    return (
-      "Företagsfinansen på MBA-nivå — Higgins, Brealey, Whitman. Fas 2 ger dig " +
-      "ränta-på-ränta, kapitalstruktur och kassaflödesmatematiken som gör att du " +
-      "räknar som en analytiker — inte som en gissare."
-    );
-  }
-  // Standard Fas 2: värdeinvesteringens mästarverk + AKM1-djupet
-  return (
-    "Fas 2 är den snabba fundamentala vägen till oberoende analytiker — och chansen " +
-    "att få representera AK1nvestor med kvalitet. Här läses mästarverken kapitel för " +
-    "kapitel, med grundaren vid din sida, tills ditt omdöme är ditt eget."
-  );
+/** Fas 2-låstextens grupp — nyckel i ordlistan ("fas2.lasText.<grupp>"). */
+export type Fas2LockeradGrupp = "vardering" | "bokslut" | "finans" | "standard";
+
+/** Vilken Fas 2-låstextgrupp tillhör kursen? (Våg 80a: låsvyn översätts via
+ *  ordlistan — gruppen avgör nyckeln; fas2LockeradText behåller svensk text.) */
+export function fas2LockeradGrupp(slug: string): Fas2LockeradGrupp {
+  if (FAS2_VARDERING.has(slug)) return "vardering";
+  if (FAS2_BOKSLUT.has(slug)) return "bokslut";
+  if (FAS2_FINANS.has(slug)) return "finans";
+  return "standard";
 }
 
-/** Fas 3-låstext per grupp — det dynamiska ekosystemet. */
-export function fas3LockeradText(slug: string): string {
+/** Fas 2-låstext per grupp — den fundamentala vägen till oberoende analytiker. */
+export function fas2LockeradText(slug: string): string {
+  switch (fas2LockeradGrupp(slug)) {
+    case "vardering":
+      return (
+        "Värderingsbiblorna — Graham & Dodd, Damodaran, McKinsey, Williams. " +
+        "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: här lär du dig " +
+        "väga ett bolag i handen, från bokslut till värde, tills siffrorna blir ett omdöme du kan försvara."
+      );
+    case "bokslut":
+      return (
+        "Bokslutets hantverk — Penman, O'Glove, Schilit. Fas 2 handlar om att läsa " +
+        "redovisningen som en analytiker: hitta kvaliteten i vinsten, genomskåda kreativ " +
+        "kassaflödesredovisning, och veta skillnaden på en rapport och en berättelse."
+      );
+    case "finans":
+      return (
+        "Företagsfinansen på MBA-nivå — Higgins, Brealey, Whitman. Fas 2 ger dig " +
+        "ränta-på-ränta, kapitalstruktur och kassaflödesmatematiken som gör att du " +
+        "räknar som en analytiker — inte som en gissare."
+      );
+    // Standard Fas 2: värdeinvesteringens mästarverk + AKM1-djupet
+    default:
+      return (
+        "Fas 2 är den snabba fundamentala vägen till oberoende analytiker — och chansen " +
+        "att få representera AK1nvestor med kvalitet. Här läses mästarverken kapitel för " +
+        "kapitel, med grundaren vid din sida, tills ditt omdöme är ditt eget."
+      );
+  }
+}
+
+/** Fas 3-låstextens grupp — nyckel i ordlistan ("fas3.lasText.<grupp>"). */
+export type Fas3LockeradGrupp = "ekosystem" | "psykologi" | "standard";
+
+/** Vilken Fas 3-låstextgrupp tillhör kursen? (Våg 80a — se fas2LockeradGrupp.) */
+export function fas3LockeradGrupp(slug: string): Fas3LockeradGrupp {
   if (slug === "ak1ts-vaglarans-hierarki" || slug === "vagfundament-variablerna-som-tidsserier" || slug === "konfluens-varde-moter-vagor") {
-    return (
-      "Fas 3 är stunden då fundamentalanalysen slutar vara statisk: varje AKM1-variabel " +
-      "rör sig, blir tidsserie och våg. Här förenas AKM1 med AK1TS — värde möter vågor — " +
-      "och konfluens blir ditt analytiska språk. Du får också rätt till alla framtida " +
-      "utvecklingar: analys av aktier och portföljer, dashboarden och AI-kopplingen."
-    );
+    return "ekosystem";
   }
   if (
     slug === "trading-in-the-zone" ||
@@ -232,16 +242,33 @@ export function fas3LockeradText(slug: string): string {
     slug === "market-mind-games" ||
     slug === "your-money-and-your-brain"
   ) {
-    return (
-      "Fasenet smids i Fas 3: marknaden utkämpas i sinnet, och dessa mästarverk om " +
-      "trader-psykologi och neuroekonomi hör hemma där ekosystemet lever — daglig " +
-      "mätning, dagligt beteende, tålamod när vågorna kräver det."
-    );
+    return "psykologi";
   }
-  // Standard Fas 3: teknisk analys på mästarnivå
-  return (
-    "Teknisk analys på mästarnivå — Elliott, Murphy, Nison, Bollinger och de stora " +
-    "trendföljarna. I Fas 3 läses de inte som historia utan som instrument i det " +
-    "dynamiska ekosystemet: vågor som möter fundamentalt värde, kapitel för kapitel."
-  );
+  return "standard";
+}
+
+/** Fas 3-låstext per grupp — det dynamiska ekosystemet. */
+export function fas3LockeradText(slug: string): string {
+  switch (fas3LockeradGrupp(slug)) {
+    case "ekosystem":
+      return (
+        "Fas 3 är stunden då fundamentalanalysen slutar vara statisk: varje AKM1-variabel " +
+        "rör sig, blir tidsserie och våg. Här förenas AKM1 med AK1TS — värde möter vågor — " +
+        "och konfluens blir ditt analytiska språk. Du får också rätt till alla framtida " +
+        "utvecklingar: analys av aktier och portföljer, dashboarden och AI-kopplingen."
+      );
+    case "psykologi":
+      return (
+        "Fasenet smids i Fas 3: marknaden utkämpas i sinnet, och dessa mästarverk om " +
+        "trader-psykologi och neuroekonomi hör hemma där ekosystemet lever — daglig " +
+        "mätning, dagligt beteende, tålamod när vågorna kräver det."
+      );
+    // Standard Fas 3: teknisk analys på mästarnivå
+    default:
+      return (
+        "Teknisk analys på mästarnivå — Elliott, Murphy, Nison, Bollinger och de stora " +
+        "trendföljarna. I Fas 3 läses de inte som historia utan som instrument i det " +
+        "dynamiska ekosystemet: vågor som möter fundamentalt värde, kapitel för kapitel."
+      );
+  }
 }

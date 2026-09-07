@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
+import { PRISER } from "@/lib/variabler";
 
 /**
  * FAS 2-ANMALAN (EN) — engelsk spegelkopia av src/components/ak1a/fas2-ansok.tsx
@@ -12,11 +13,16 @@ import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
  * endast texterna är översatta och länkarna pekar på /en-spegelsidorna där
  * sådana finns (övriga länkar går till de svenska originalsidorna tills
  * alla sidor är speglade). Den svenska komponenten är orörd.
+ *
+ * VÅG 80A (språk-agent 2): pris-talet kommer som prop (prisFas2) från
+ * server-sidan, som läser lasPriserGallande() — samma kontrakt som svenska
+ * Fas2Ansok. Statisk PRISER-importen är endast robust fallback om
+ * komponenten renderas utan prop.
  */
 
 const MAX_VARFOR = 800;
 
-export function Fas2AnsokEn() {
+export function Fas2AnsokEn({ prisFas2 }: { prisFas2?: number }) {
   const [hydrerad, setHydrerad] = useState(false);
   const [inloggad, setInloggad] = useState(false);
   const [elevNiva, setElevNiva] = useState(1);
@@ -242,7 +248,8 @@ export function Fas2AnsokEn() {
       <div className="rounded-lg border border-gold/30 bg-paper p-5 text-xs leading-relaxed text-muted-foreground">
         <p>
           <strong className="text-foreground">No payment now.</strong> The
-          application is free and non-binding. Phase 2 costs SEK 9,999 — but you
+          application is free and non-binding. Phase 2 costs SEK{" "}
+          {(prisFas2 ?? PRISER.fas2EnGang).toLocaleString("en-US")} — but you
           pay nothing during the first 90 days: payment is due only after 90
           days, and only if you remain satisfied (90-day satisfaction guarantee,
           with legal basis in{" "}

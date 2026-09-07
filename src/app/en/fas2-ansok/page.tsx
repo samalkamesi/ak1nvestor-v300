@@ -5,8 +5,13 @@ import { Fas2AnsokEn } from "@/components/ak1a/spegel/fas2-ansok-en";
 import { getCourseList } from "@/lib/content";
 import { SIFFROR } from "@/lib/siffror";
 import { spegelMetadata } from "@/lib/spegel-metadata";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 
-export const dynamic = "force-static";
+// VÅG 80A (språk-agent 2): spegeln följer svenska originalsidans våg 79-
+// kontrakt — priset läses live via lasPriserGallande() (Supabase-override,
+// filen = fallback) med ISR 5 min, i stället för force-static + hårdkodat
+// "SEK 9,999". Metadata behåller fil-default (SEO-stabilt), som originalet.
+export const revalidate = 300;
 
 /**
  * /en/fas2-ansok — full mirror of the Swedish /fas2-ansok flow page
@@ -91,7 +96,10 @@ export const metadata: Metadata = spegelMetadata({
   ],
 });
 
-export default function Fas2AnsokPageEn() {
+export default async function Fas2AnsokPageEn() {
+  // Pris-talet live ur variabellagret (kastar aldrig — filen är fallback);
+  // klientkomponenten får det som serialiserbar prop (samma som originalet).
+  const priser = await lasPriserGallande();
   const katalog = getCourseList();
   const titelFor = (slug: string) =>
     katalog.find((k) => k.slug === slug)?.title ?? slug;
@@ -102,7 +110,7 @@ export default function Fas2AnsokPageEn() {
       <article className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            Phase 2 · The fast fundamental path · SEK 9,999
+            {`Phase 2 · The fast fundamental path · SEK ${priser.fas2EnGang.toLocaleString("en-US")}`}
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             Apply for Phase 2
@@ -152,7 +160,7 @@ export default function Fas2AnsokPageEn() {
           </div>
         </div>
 
-        <Fas2AnsokEn />
+        <Fas2AnsokEn prisFas2={priser.fas2EnGang} />
 
         {/* SOCIAL PROOF — numbers and student voices after the requirements/application part.
             English mirror of the SocialProof band (figures from src/lib/siffror). */}

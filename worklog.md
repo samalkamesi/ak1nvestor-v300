@@ -8996,3 +8996,31 @@ build exit 0 med alla pris-ytor ISR ○ 5m · curl: priser live ur lagret.
 
 **Nästa (våg 80, sankt):** blogg-publiceringsflödet (draft→granska→
 publicera med kontrolleraText-grind) — styrelsens stegplan styrs vidare.
+
+## Våg 80a — DJUP SPRÅKKONTROLL: KUNDENS PROBLEM HITTAT OCH FIXAT (2026-09-07)
+
+4 granskningsagenter (34 prod-sidor + växlingsmatris 392 test + speglar +
+ordlista-maskin). FYND OCH FIXAR:
+- **P0 ROTORSAK (trolig): svensk UI-krom på alla 22 speglar** — direkt-
+  besökare utan sparat språkval fick engelskt/arabiskt INNEHÅLL men svensk
+  meny/footer/CTA. FIX: sprak-leverantor — effektivSprak = spegelns språk
+  vinner efter montering (SSR+hydrering sv opåverkad — omöjlig mismatch).
+- **P0: låsvyn på Fas-kursspeglar HELT svensk** ("Ansök till Fas 2" på
+  /en!) + quiz-chromet + kapitel-lås + minuter. FIX: 39 nya ordlistenycklar
+  (sv/en/ar), fas2-gate via skapaT(lang), länkar till spegelns fas2-ansok.
+- **P0: /en|/ar fas2-ansok hårdkodade "SEK 9,999"** (force-static — våg 79:s
+  live-priser nådde 2 av 3 språk). FIX: ISR 300 + prisFas2-prop.
+- **P1: customer-ecosystem .locale(→.localeCompare** (krasch vid ≥2
+  medlemmar).
+- GRÖNT: ordlistan komplett (327+36, 0 saknade nycklar — den misstänkta
+  källan falsifierad), t()-params interpolerar korrekt ×3 språk, växlingen
+  392/392, bloggspeglar fullt översatta + rtl, gating tät (kap 3+ borta
+  ur HTML).
+
+**KÖ (P1, ej fixat):** kurstitlar (H1 "…: KOMPLETT") på speglar —
+{slug}:huvudtitel saknas i lagret · KursSteg upplåst läge följer UI-språk ·
+chatbot svensk-only (produktbeslut) · ak1nvestor.com-pekar på WordPress
+(bekräfta domän).
+
+**Verifierat:** tsc 36 (baslinje) · motorer 107/0/0 · vakten GRÖN ·
+build exit 0 · dev: 0 svenska låsvy-markörer på speglar.

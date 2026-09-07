@@ -81,7 +81,7 @@ export function CustomerEcosystem() {
         <ScrollArea className="mt-3 h-[460px]">
           <div className="space-y-1 pr-3">
             {filtrerade
-              .sort((a, b) => a.email.locale(b.email, "sv"))
+              .sort((a, b) => a.email.localeCompare(b.email, "sv"))
               .map((m) => (
                 <button
                   key={m.id}

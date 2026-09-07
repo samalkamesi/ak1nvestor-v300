@@ -5,8 +5,13 @@ import { Fas2AnsokAr } from "@/components/ak1a/spegel/fas2-ansok-ar";
 import { getCourseList } from "@/lib/content";
 import { SIFFROR } from "@/lib/siffror";
 import { spegelMetadata } from "@/lib/spegel-metadata";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 
-export const dynamic = "force-static";
+// VÅG 80A (språk-agent 2): spegeln följer svenska originalsidans våg 79-
+// kontrakt — priset läses live via lasPriserGallande() (Supabase-override,
+// filen = fallback) med ISR 5 min, i stället för force-static + hårdkodat
+// "9,999 SEK". Metadata behåller fil-default (SEO-stabilt), som originalet.
+export const revalidate = 300;
 
 /**
  * /ar/fas2-ansok — مرآة كاملة للصفحة السويدية /fas2-ansok (الموجة 51،
@@ -91,7 +96,10 @@ export const metadata: Metadata = spegelMetadata({
   ],
 });
 
-export default function Fas2AnsokPageAr() {
+export default async function Fas2AnsokPageAr() {
+  // Pris-talet live ur variabellagret (kastar aldrig — filen är fallback);
+  // klientkomponenten får det som serialiserbar prop (samma som originalet).
+  const priser = await lasPriserGallande();
   const katalog = getCourseList();
   const titelFor = (slug: string) =>
     katalog.find((k) => k.slug === slug)?.title ?? slug;
@@ -102,7 +110,7 @@ export default function Fas2AnsokPageAr() {
       <article dir="rtl" className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            المرحلة 2 · المسار الأساسي السريع · 9,999 SEK
+            {`المرحلة 2 · المسار الأساسي السريع · ${priser.fas2EnGang.toLocaleString("en-US")} SEK`}
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             تقدّم بطلبك للمرحلة 2
@@ -150,7 +158,7 @@ export default function Fas2AnsokPageAr() {
           </div>
         </div>
 
-        <Fas2AnsokAr />
+        <Fas2AnsokAr prisFas2={priser.fas2EnGang} />
 
         {/* الإثبات الاجتماعي — أرقام وأصوات الطلاب بعد قسمي الشروط والطلب.
             مرآة عربية لشريط SocialProof (الأرقام من src/lib/siffror). */}

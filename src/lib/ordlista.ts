@@ -154,6 +154,202 @@ export const ORDLISTA = {
   "kurs.totalt": { sv: "Totalt", en: "Total", ar: "الإجمالي" },
   "kurs.kursinnehall": { sv: "Kursinnehåll", en: "Course content", ar: "محتوى الدورة" },
   "kurs.vikt": { sv: "Vikt", en: "Weight", ar: "الوزن" },
+  // Kursöversiktens låsta rader (kap 3+ på fas-kurser) — speglarna + originalet.
+  "kurs.kapLas": {
+    sv: "🔒 kapitel {num} — låses med Fas {fas}",
+    en: "🔒 chapter {num} — unlocked with Phase {fas}",
+    ar: "🔒 الفصل {num} — يُفتح مع المرحلة {fas}",
+  },
+
+  // ── VÅG 80A (2026-09-07): Fas2Gate:s låsvy + smakprov + laddar/fel —
+  // tidigare hårdkodad svenska på /en|/ar-speglarna ("Ansök till Fas 2" osv.
+  // syntes oöversatt). Alla strängar i låsvyn kommer härifrån via skapaT(lang).
+  "fas.smakprovRubrik": {
+    sv: "Smakprov — de två första kapitlen",
+    en: "Sample — the first two chapters",
+    ar: "مقتطف — الفصلان الأولان",
+  },
+  "fas2.rubrik": {
+    sv: "Fas 2 — den fundamentala vägen",
+    en: "Phase 2 — the fundamental path",
+    ar: "المرحلة 2 — المسار الأساسي",
+  },
+  "fas3.rubrik": {
+    sv: "Fas 3 — det dynamiska ekosystemet",
+    en: "Phase 3 — the dynamic ecosystem",
+    ar: "المرحلة 3 — المنظومة الديناميكية",
+  },
+  "fas2.beskrivning": {
+    sv: "Välkommen vidare när du är redo. Fas 2 är den snabba fundamentala vägen till oberoende analytiker — och chansen att få representera AK1nvestor med kvalitet. Du har just läst smakprovet; nedan ser du exakt vad som väntar bakom låset — innehållet stänger vi aldrig in, vi bjuder in till det.",
+    en: "Welcome onward when you are ready. Phase 2 is the fast fundamental path to becoming an independent analyst — and the chance to represent AK1nvestor with quality. You have just read the sample; below you see exactly what awaits behind the lock — we never wall content in, we invite you to it.",
+    ar: "مرحباً بك في التقدّم متى كنت مستعدًا. المرحلة 2 هي المسار الأساسي السريع نحو محلل مستقل — وفرصة تمثيل AK1nvestor بجودة. لقد قرأت للتو المقتطف؛ أدناه ترى بالضبط ما ينتظرك خلف القفل — نحن لا نحتجز المحتوى أبدًا، بل ندعوك إليه.",
+  },
+  "fas3.beskrivning": {
+    sv: "Välkommen vidare när du är redo. I Fas 3 börjar fundamentalanalysen röra sig — värde möter vågor, kapitel för kapitel. Du har just läst smakprovet; nedan ser du exakt vad som väntar bakom låset — innehållet stänger vi aldrig in, vi bjuder in till det.",
+    en: "Welcome onward when you are ready. In Phase 3 fundamental analysis begins to move — value meets waves, chapter by chapter. You have just read the sample; below you see exactly what awaits behind the lock — we never wall content in, we invite you to it.",
+    ar: "مرحباً بك في التقدّم متى كنت مستعدًا. في المرحلة 3 يبدأ التحليل الأساسي بالحركة — القيمة تلتقي بالموجات، فصلًا بعد فصل. لقد قرأت للتو المقتطف؛ أدناه ترى بالضبط ما ينتظرك خلف القفل — نحن لا نحتجز المحتوى أبدًا، بل ندعوك إليه.",
+  },
+  "fas.kurskortRubrik": {
+    sv: "Kurskortet — en blick på resan",
+    en: "The course card — a glimpse of the journey",
+    ar: "بطاقة الدورة — لمحة عن الرحلة",
+  },
+  "fas.fasKurs": {
+    sv: "Fas {fas}-kurs",
+    en: "Phase {fas} course",
+    ar: "دورة المرحلة {fas}",
+  },
+  "fas.varfor": {
+    sv: "Varför Fas {fas}?",
+    en: "Why Phase {fas}?",
+    ar: "لماذا المرحلة {fas}؟",
+  },
+  // Låstext per kursgrupp (samma uppdelning som fas2LockeradText/fas3LockeradText
+  // i kurs-access.ts — grupperna exporteras där som fas2LockeradGrupp/fas3LockeradGrupp).
+  "fas2.lasText.vardering": {
+    sv: "Värderingsbiblorna — Graham & Dodd, Damodaran, McKinsey, Williams. Fas 2 är den snabba fundamentala vägen till oberoende analytiker: här lär du dig väga ett bolag i handen, från bokslut till värde, tills siffrorna blir ett omdöme du kan försvara.",
+    en: "The valuation bibles — Graham & Dodd, Damodaran, McKinsey, Williams. Phase 2 is the fast fundamental path to becoming an independent analyst: here you learn to weigh a company in your hand, from financial statements to value, until the numbers become a judgment you can defend.",
+    ar: "أناجيل التقييم — غراهام ودود، داموداران، ماكنزي، ويليامز. المرحلة 2 هي المسار الأساسي السريع نحو محلل مستقل: هنا تتعلّم أن تزن الشركة بيدك، من القوائم المالية إلى القيمة، حتى تصبح الأرقام حكمًا تستطيع الدفاع عنه.",
+  },
+  "fas2.lasText.bokslut": {
+    sv: "Bokslutets hantverk — Penman, O'Glove, Schilit. Fas 2 handlar om att läsa redovisningen som en analytiker: hitta kvaliteten i vinsten, genomskåda kreativ kassaflödesredovisning, och veta skillnaden på en rapport och en berättelse.",
+    en: "The craft of the financial statements — Penman, O'Glove, Schilit. Phase 2 is about reading the accounts like an analyst: finding the quality in earnings, seeing through creative cash-flow reporting, and knowing the difference between a report and a story.",
+    ar: "صناعة القوائم المالية — بينمان، أوغليف، شيليت. المرحلة 2 هي أن تقرأ التقارير المالية كما يقرؤها المحلل: أن تجد جودة الأرباح، أن تخترق المحاسبة الإبداعية للتدفقات النقدية، وأن تعرف الفرق بين تقرير وحكاية.",
+  },
+  "fas2.lasText.finans": {
+    sv: "Företagsfinansen på MBA-nivå — Higgins, Brealey, Whitman. Fas 2 ger dig ränta-på-ränta, kapitalstruktur och kassaflödesmatematiken som gör att du räknar som en analytiker — inte som en gissare.",
+    en: "Corporate finance at MBA level — Higgins, Brealey, Whitman. Phase 2 gives you compound interest, capital structure and the cash-flow mathematics that make you calculate like an analyst — not a guesser.",
+    ar: "تمويل الشركات بمستوى ماجستير إدارة الأعمال — هيغينز، بريلي، ويتمان. المرحلة 2 تمنحك الفائدة المركّبة وهيكل رأس المال ورياضيات التدفق النقدي التي تجعلك تحسب كمحلل — لا كمن يخمّن.",
+  },
+  "fas2.lasText.standard": {
+    sv: "Fas 2 är den snabba fundamentala vägen till oberoende analytiker — och chansen att få representera AK1nvestor med kvalitet. Här läses mästarverken kapitel för kapitel, med grundaren vid din sida, tills ditt omdöme är ditt eget.",
+    en: "Phase 2 is the fast fundamental path to becoming an independent analyst — and the chance to represent AK1nvestor with quality. Here the masterworks are read chapter by chapter, with the founder at your side, until your judgment is your own.",
+    ar: "المرحلة 2 هي المسار الأساسي السريع نحو محلل مستقل — وفرصة تمثيل AK1nvestor بجودة. هنا تُقرأ الأعمال الفنية فصلًا بعد فصل، والمؤسس بجانبك، حتى يصبح حكمك ملكك أنت.",
+  },
+  "fas3.lasText.ekosystem": {
+    sv: "Fas 3 är stunden då fundamentalanalysen slutar vara statisk: varje AKM1-variabel rör sig, blir tidsserie och våg. Här förenas AKM1 med AK1TS — värde möter vågor — och konfluens blir ditt analytiska språk. Du får också rätt till alla framtida utvecklingar: analys av aktier och portföljer, dashboarden och AI-kopplingen.",
+    en: "Phase 3 is the moment fundamental analysis stops being static: every AKM1 variable moves, becomes a time series and a wave. Here AKM1 joins AK1TS — value meets waves — and confluence becomes your analytical language. You also gain the right to all future developments: stock and portfolio analysis, the dashboard and the AI connection.",
+    ar: "المرحلة 3 هي اللحظة التي يتوقف فيها التحليل الأساسي عن الجمود: كل متغير من متغيرات AKM1 يتحرك ويصبح سلسلة زمنية وموجة. هنا يلتقي AKM1 بـ AK1TS — القيمة تلتقي بالموجات — ويصبح التقارب لغتك التحليلية. تحصل أيضًا على حق جميع التطورات المستقبلية: تحليل الأسهم والمحافظ، ولوحة المعلومات، والربط بالذكاء الاصطناعي.",
+  },
+  "fas3.lasText.psykologi": {
+    sv: "Fasenet smids i Fas 3: marknaden utkämpas i sinnet, och dessa mästarverk om trader-psykologi och neuroekonomi hör hemma där ekosystemet lever — daglig mätning, dagligt beteende, tålamod när vågorna kräver det.",
+    en: "Patience is forged in Phase 3: the market is fought in the mind, and these masterworks on trading psychology and neuroeconomics belong where the ecosystem lives — daily measurement, daily behaviour, patience when the waves demand it.",
+    ar: "تُصقل الأعصاب في المرحلة 3: السوق تُخاض معركتها في العقل، وهذه الأعمال الفنية عن سيكولوجية التداول والاقتصاد العصبي تنتمي إلى حيث تعيش المنظومة — قياس يومي، وسلوك يومي، وصبر حين تقتضيه الموجات.",
+  },
+  "fas3.lasText.standard": {
+    sv: "Teknisk analys på mästarnivå — Elliott, Murphy, Nison, Bollinger och de stora trendföljarna. I Fas 3 läses de inte som historia utan som instrument i det dynamiska ekosystemet: vågor som möter fundamentalt värde, kapitel för kapitel.",
+    en: "Technical analysis at master level — Elliott, Murphy, Nison, Bollinger and the great trend followers. In Phase 3 they are read not as history but as instruments in the dynamic ecosystem: waves meeting fundamental value, chapter by chapter.",
+    ar: "التحليل الفني بمستوى الأساتذة — إليوت، ميرفي، نيسون، بولينجر، وكبار متبعي الاتجاه. في المرحلة 3 لا تُقرأ كتاريخ بل كأدوات في المنظومة الديناميكية: موجات تلتقي بالقيمة الأساسية، فصلًا بعد فصل.",
+  },
+  "fas2.cta": {
+    sv: "Ansök till Fas 2 →",
+    en: "Apply for Phase 2 →",
+    ar: "التقدَّم للمرحلة 2 ←",
+  },
+  "fas3.cta": {
+    sv: "Till Fas 3 — ekosystemet →",
+    en: "To Phase 3 — the ecosystem →",
+    ar: "إلى المرحلة 3 — المنظومة ←",
+  },
+  "fas.redanMedlem": {
+    sv: "Redan Fas {fas}-medlem?",
+    en: "Already a Phase {fas} member?",
+    ar: "هل أنت عضو بالمرحلة {fas}؟",
+  },
+  "fas.loggaInEfter": {
+    sv: "för att läsa vidare.",
+    en: "to keep reading.",
+    ar: "لمتابعة القراءة.",
+  },
+  "fas3.inkluderat": {
+    sv: "Fas 3 innehåller alla framtida utvecklingar — dashboard, AI-koppling och rapporter. Efter utbildningen kan ekosystemet fortsätta nyttjas via månadsplan.",
+    en: "Phase 3 includes all future developments — the dashboard, the AI connection and reports. After the training the ecosystem can continue to be used via a monthly plan.",
+    ar: "تشمل المرحلة 3 جميع التطورات المستقبلية — لوحة المعلومات والربط بالذكاء الاصطناعي والتقارير. بعد إتمام التدريب يمكن الاستمرار في استخدام المنظومة عبر خطة شهرية.",
+  },
+  "fas.fas1Gratis": {
+    sv: "Fas 1 förblir gratis — alltid.",
+    en: "Phase 1 stays free — always.",
+    ar: "تبقى المرحلة 1 مجانية — دائمًا.",
+  },
+  "fas.bibliotekLank": {
+    sv: "Hela gratis-biblioteket",
+    en: "The entire free library",
+    ar: "كامل المكتبة المجانية",
+  },
+  "fas.bibliotekEfter": {
+    sv: "väntar tills vidare, och det förblir så.",
+    en: "awaits you in the meantime — and it always will.",
+    ar: "في انتظارك في هذه الأثناء — وسيبقى الأمر كذلك.",
+  },
+  "fas.hamtaFel": {
+    sv: "Kursen kunde inte hämtas just nu — kontrollera anslutningen.",
+    en: "The course could not be fetched right now — check your connection.",
+    ar: "تعذَّر جلب الدورة الآن — تحقَّق من الاتصال.",
+  },
+  "fas.forsokIgen": { sv: "Försök igen", en: "Try again", ar: "حاول مجددًا" },
+  "fas.laserUpp": {
+    sv: "Låser upp kursen — hämtar kapitlen …",
+    en: "Unlocking the course — fetching the chapters …",
+    ar: "جارٍ فتح الدورة — يتم جلب الفصول …",
+  },
+  "fas.aria2": {
+    sv: "Fas 2-kurs — inbjudan vidare",
+    en: "Phase 2 course — an invitation onward",
+    ar: "دورة المرحلة 2 — دعوة للتقدّم",
+  },
+  "fas.aria3": {
+    sv: "Fas 3-kurs — inbjudan vidare",
+    en: "Phase 3 course — an invitation onward",
+    ar: "دورة المرحلة 3 — دعوة للتقدّم",
+  },
+  "fas.adminLasUpp": {
+    sv: "Lås upp (admin)",
+    en: "Unlock (admin)",
+    ar: "فتح (مشرف)",
+  },
+
+  // ── VÅG 80A: KursQuiz (renderas i smakprovet kap 1–2 på speglarna) —
+  // samma P0: quiz-chromet var hårdkodad svenska på /en|/ar.
+  "kurs.quizRubrik": {
+    sv: "Masterquiz — kapitel {num}",
+    en: "Master Quiz — chapter {num}",
+    ar: "اختبار الإتقان — الفصل {num}",
+  },
+  "kurs.quizRaknare": {
+    sv: "{klarade}/{total} klarade · +10 XP per rätt",
+    en: "{klarade}/{total} completed · +10 XP per correct",
+    ar: "{klarade}/{total} مكتملة · +10 XP لكل إجابة صحيحة",
+  },
+  "kurs.lararenTipsar": {
+    sv: "Läraren tipsar:",
+    en: "The teacher hints:",
+    ar: "المعلّم يلمّح:",
+  },
+  "kurs.quizTipsFallback": {
+    sv: "Gå tillbaka till kapitlet och leta ledtråden — svaret finns där.",
+    en: "Go back to the chapter and look for the clue — the answer is there.",
+    ar: "عُد إلى الفصل وابحث عن القرينة — الإجابة موجودة هناك.",
+  },
+  "kurs.rattFortjanat": {
+    sv: "Rätt! +10 XP förtjänat.",
+    en: "Correct! +10 XP earned.",
+    ar: "إجابة صحيحة! +10 XP مُكتسبة.",
+  },
+  "kurs.totaltXp": {
+    sv: "Totalt {xp} XP.",
+    en: "Total {xp} XP.",
+    ar: "الإجمالي {xp} XP.",
+  },
+  "kurs.gaVidareNasta": {
+    sv: "Gå vidare till nästa kapitel.",
+    en: "Move on to the next chapter.",
+    ar: "انتقل إلى الفصل التالي.",
+  },
+  "kurs.forsokIgenQuiz": {
+    sv: "Försök igen — fel svar kostar inget, men rätt svar måste förtjänas.",
+    en: "Try again — a wrong answer costs nothing, but a correct one must be earned.",
+    ar: "حاول مجددًا — الإجابة الخاطئة لا تكلّف شيئًا، لكن الصحيحة يجب أن تُكتسب.",
+  },
 
   // ── Notiser (NotisCenter) ────────────────────────────────────────────────
   "notis.notiser": { sv: "Notiser", en: "Notifications", ar: "الإشعارات" },

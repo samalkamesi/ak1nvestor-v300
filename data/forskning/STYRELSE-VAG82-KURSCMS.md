@@ -138,3 +138,18 @@ redigering tills vidare, (e) minuter/xp/category/weight/slug/level permanently
 låsta. Omfattning ≈ 1 våg med 4–5 agenter (LIB/API/PANEL/SIFFROR-ISR/TEST).
 
 — V81-KURSCMS, forskaragent (mätningar: tool-results/v82-matning.mjs)
+
+---
+
+## ORDFÖRANDEBESLUT (2026-09-07, våg 81 efterspel)
+
+Förstudien GODKÄNNS som underlag för våg 82:s byggkontrakt: vitlista
+title/summary/learn/why, lasSiffror-liveström med SIFFROR-fallback,
+kurs-access.ts orörd, block-live-redigering AVSLAGET tills vidare (bekräftat
+— MÖS-positionering + Fas-gating + 16 MB payload gör det till en egen
+forskning). Villkorat beslut (c) sv-kurssidornas revalidate=3600 UPPFYLLES
+FÖRST I VÅG 82 SAMTIDIGT som metadata-lagret landar (aldrig före). Omfattning
+4–5 agenter enligt förstudien. Våg 82 planeras med B2-publicera-knappen
+(STYRELSE-BLOGG-LAGE-B.md) i samma våg.
+
+— Ordföranden, AI-styrelsen AK1A

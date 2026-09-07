@@ -105,3 +105,17 @@ att undvika på publika ytor.
 6. Speglarna /en|ar/blogg + hreflang-klustret bygger på filerna (dubbelrisk).
 
 — V81-BENCH, AK1A Research Lab (mätdata: tool-results/v81-bench-*)
+
+---
+
+## ORDFÖRANDEBESLUT (2026-09-07, våg 81 efterspel)
+
+**LÄGE A BESTÅR som publiceringsväg** — mätningarna (61–76 ms varm statisk
+mot 240–630 ms per hot-path-request; OG-generering + sitemap bygger 100 % på
+filerna på disk som prod-fs ändå kräver kvar) gör full Läge B till ren
+kostnad utan vinst. **B2-HYBRIDEN SANKAS** (dubbelwrite: Supabase-rad +
+agent-påminnelse via "Publicera"-knapp) som en del av NÄSTA admin-våg —
+den ger kunden hela UX-vinsten ("publicera" känns live) utan att röra
+hot-pathen. Implementation enligt detta dokuments B2-kontraktutkast.
+
+— Ordföranden, AI-styrelsen AK1A

@@ -8865,3 +8865,23 @@ vid ~48 min (samma plattformsmönster som v68c) — FORTSÄTTNINGS-AGENTER
 regel bekräftad: vid tyst död,.starta fortsättningsagent per paket, starta
 ALDRIG om från noll. 63,7 % totalt · 89 087 rader. Kvar: 67 kurser (rond
 71-75, paket för 71 extraherade).
+
+## 🏆 KORPUSEN 100 % TRESPRÅKIG — SLUTSTÄLLNING (2026-09-07)
+
+**Vågorna 67-76 (10 ronder, ~90 agenter): HELA REGISTRET ÖVERSATT en+ar.**
+Slutmätning: kursblock 68 271/68 271 EN + 68 269/68 271 AR (100 %/99,997 %)
+· blogg 1 291/1 291 ×2 · UI 295/295 ×2 · **TOTALT 69 857 källobjekt = 100 %**
+· 139 745 publicerade rader i lagret. Från 1,6 % (våg 65) → 100 % på 3 dagar.
+
+**ENDA DOKUMENTERADE UNDANTAG (2 st):** the-intelligent-investor kap15/19
+quiz-AR — källan "Chart" (5 tecken) vs termbankens الرسم البياني (13) ger
+längdkvot 2,6 > 2,5-taket: matematiskt omöjligt; EN 497/497 komplett.
+
+**Sista rundans lärdomar:** (1) omimportera paket vid vakant kontroll —
+kontrollen hoppar tyst nullade poster ("ALLA POSTER 100p" över 0-poster är
+VAKANT; kontrollera alltid bygg fel:0 + poster-antal FÖRE import);
+(2) rondlistorna måste genereras ur statuskartan (v70-rondplanerare.mjs) —
+2 kurser (TA-bibeln, devil-take-the-hindmost) missades i handsgjorda listor
+och krävde extra rond 76.
+
+**Verifieringar:** motorer 107/0/0 · Kvalitetsvakten GRÖN · allt pushat.

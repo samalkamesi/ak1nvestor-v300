@@ -8,6 +8,14 @@ import { DelRad } from "@/components/ak1a/del-rad";
 
 export const dynamic = "force-static";
 
+/**
+ * VÅG 81: dynamicParams=false = ÄKTA 404 på okända slug:ar. Default (true)
+ * gav i Next 16 SOFT-404 (notFound-HTML med HTTP 200 + statisk skal —
+ * prodmätt 2026-09-07, samma systemfynd som /kurser). Säkert här: alla
+ * poster täcks av generateStaticParams, on-demand-rendering behövs ej.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getBlogPosts().map((p) => ({ slug: p.slug }));
 }

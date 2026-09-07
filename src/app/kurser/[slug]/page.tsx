@@ -13,21 +13,20 @@ import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artik
 import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { Kallkort } from "@/components/ak1a/kallkort";
 
-export const dynamic = "force-static";
-
 /**
- * VÅG 81: okända slug:ar EXECUTERAR sidan (⇒ notFound() ⇒ request-scoped
- * render av 404-gränsen) i stället för routerns statiska /_not-found-fallback.
- * Status är fortfarande RIKTIG 404 — samma mönster som spegelrutorna
- * /en|/ar/kurser/[slug] (våg 52) — men 404-HTML:n nu renderas för den
- * begärda URL:en, vilket kurs-forslag.tsx behöver för SSR-förslagen
- * (Levenshtein-top-3 ur usePathname; våg 81:s prodverifiering kräver
- * länkarna i server-HTML/flight-data). Kända 333 slug:ar förhandsrenderas
- * oförändrat via generateStaticParams. Tidigare dynamicParams=false togs i
- * bruk mot SOFT-404 (HTTP 200) — det felet kan inte återkomma: notFound()
- * svarar alltid 404-status.
+ * VÅG 81 (slutligt, prodmätt): dynamicParams=false = ÄKTA 404 på okända
+ * slug:ar (routern matchar aldrig → Vercel servar den förhandsrenderade
+ * 404:n med korrekt status). dynamicParams=true visade sig i Next 16 ge
+ * SOFT-404: notFound-HTML med HTTP 200 + statisk skal UTAN request-
+ * kontext (inga SSR-kursförslag, root-layout-titel) — verifierat mot
+ * prod och lokal produktionsserver 2026-09-07; samma mekanism gör att
+ * /blogg/[slug] och /en|/ar-speglarna svarar 200 på okända slug:ar
+ * (systemfynd → våg 82). KursForslag-komponenten (usePathname) behåller
+ * sin fix — den renderar SSR-förslag så snart en request-scoped 404-
+ * render någonsin blir möjlig. generateStaticParams prerenderar de 333
+ * kända kurserna (SSG oförändrat).
  */
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return Object.keys(getCourses()).map((slug) => ({ slug }));

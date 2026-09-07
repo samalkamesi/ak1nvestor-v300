@@ -216,3 +216,60 @@ Villkor från ordföranden utöver dokumentets kritor:
    seed-skriptet migrerar priser.json till Supabase vid steg 1-deploy.
 Steg 2 (blogg-publiceringsflöde) = våg 80. Steg 3-5 efter varje godkänd
 leverans.
+
+---
+
+## BYGGKONTRAKT STEG 1 (våg 79, ordföranden 2026-09-07)
+
+**Datakälla (INGEN DDL — kunden har ej kört SQL):** system_events
+type="variabel", details={nyckel, varde, gammalt, av, kalla} — SENASTE-
+VINNER per nyckel (m10/oversattning-mönstret, order created_at.desc,id.desc).
+
+**NYCKLAR (kanoniska, panelen redigerar ENDAST dessa):**
+pris.forskning.manad / .ar · pris.forskning-plus.manad / .ar ·
+pris.portfolj-hyra.manad / .ar · pris.pro-analytiker.manad ·
+pris.pro-studio.manad · pris.pro-institution.manad ·
+pris.b2b-onboarding.engang · pris.fas2.engang · pris.fas3.engang ·
+pris.fas3-intro.manad
+(LÅS: panelen kan ENDAST ändra värden på dessa nycklar — aldrig skapa
+nya nivåer, aldrig sätta värde < 0, aldrig nollställa gratis-konceptet.)
+
+**API-KONTRAKT:**
+- GET /api/variabler — PUBlik, cache 60 s (Cache-Control), svar
+  {priser: {...sammanslagna värden}} — sammanslagning: filvärde +
+  Supabase-override senaste-vinner.
+- GET /api/admin/variabler — requireAdmin UTAN dev-fallback i prod:
+  {poster: [{nyckel, varde, filvarde, kalla, andrad}], logg: [senaste 20
+  type=variabel-andring-rader]}.
+- POST /api/admin/variabler — requireAdmin-skriv (samma hårda krav),
+  body {nyckel, varde} → validerar nyckel mot vitlistan + värde ≥ 0 heltal
+  → skriver system_events type="variabel" (gammalt = förra gällande) +
+  type="variabel-andring" (revisbarhet: nyckel/gammalt/nytt/av).
+
+**LÄSVÄG (server):** src/lib/variabler-lagring.ts — lasGallande():
+async, modul-cache 5 min, läser overrides (tak: alla rader av typen,
+paginerat Range 1000/sida) + slår ihop med filens PRISER-defaults.
+Exporterar lasPriserGallande(): Promise<PRISER-typ>.
+
+**KONSUMERARE ( ISR):** server-sidor som visar pris (/prenumeration,
+/medlemskap, pro/priser, villkor, startsidans props till home-section)
+byter statisk PRISER → await lasPriserGallande() + export const
+revalidate = 300. Klient-flöden (fas2-ansok, chatbot-route) läser
+GET /api/variabler (server-side i route) eller props. OBS: variabler.ts
+(export PRISER) får INTE brytas — kvar som fil-default + byggvärde.
+
+**TERMBANK-PROD-FIX:** POST /api/admin/termbank skriver system_events
+type="termbank_tillagg" (details={sv,en,ar,kat}) — filen skrivs endast i
+dev (ok=false på Vercel är accepterat svar med Supabase-raden som sanning);
+verktyg/synka-termbank.mjs drar Supabase→fil före lokala pipelineruns;
+termbank.ts overlay läses vid pipeline-start (lokal tsx — läser både fil
+och vid .env Supabase). Admin-fliken visar Supabase-läget.
+
+**SÄKERHET:** admin-auth.ts — requireAdmin: i NODE_ENV=production utan
+ADMIN_PASSWORD satt → 500 med tydligt fel (dev-fallback "AK1A-2026" får
+ENBAST gälla i development). Alla admin-rutter med skrivning använder
+denna.
+
+**GULDKANT:** panel-UI i befintlig admin-skal (ingen ny sida): flik
+"Variabler 📊" — grupperade nycklar, nuvärde, filvärde grått, inline-edit,
+spara→POST, toast, logg-lista. Materialstil = befintliga paneler.

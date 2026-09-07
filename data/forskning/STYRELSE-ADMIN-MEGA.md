@@ -273,3 +273,41 @@ denna.
 **GULDKANT:** panel-UI i befintlig admin-skal (ingen ny sida): flik
 "Variabler 📊" — grupperade nycklar, nuvärde, filvärde grått, inline-edit,
 spara→POST, toast, logg-lista. Materialstil = befintliga paneler.
+
+## BYGGKONTRAKT VÅG 80b (ordföranden 2026-09-07)
+
+### Del A — KURSTITLAR PÅ SPEGLAR (P1 från 80a)
+- NY KÄLLA i kalla.ts: kursblock-domänens {slug}:titel = kursens title-fält
+  ur deep-courses.json (333 källor; OBS kollisionssäkert — kursblock har
+  bara :kapN:-suffix hittills, kursens egen titel saknas). FÖRBIKOPPLA
+  inte gällande registerstruktur — bara TILLÄGG.
+- ÖVERSÄTTNING: 333 titlar × en+ar via agent(er) — importpaket
+  data/oversattning-import/v80titel{1,2}.json (poster {nyckel,en,ar}),
+  kontroll som vanligt (titlar = 1 rad, term/sifferr-reglerna gäller).
+- KONSUMENTER: kurs-spegel-sida.tsx + /en|ar/kurser-listsidorna + KursSok-
+  speglar läser titel ur lasPubliceradeForSpegel (fallback svensk title).
+- VERIFIERA KursSteg-upplåst läge: följer nu spegelns språk via
+  effektivSprak (80a-fixen) — bekräfta, åtgärda ej om redan rätt.
+
+### Del B — ADMIN-MEGA STEG 2: BLOGG-PUBLICERINGSFLOW (WordPress-kärnan)
+- DATA: system_events type="blogg_utkast" details={slug, titel, ingress,
+  bodyMarkdown, status: "utkast"|"granskad"|"publicerad", av, version}
+  — SENASTE-VINNER per slug (variabel-mönstret, ingen DDL).
+- PUBLICERINGSVÄG: PUBLICERAD blogg = rad i system_events type=
+  "blogg_publicerad" OCH data/blogg/<slug>.json skrivs i dev (prod:
+  filen skapas vid nästa main-push av agent — STEG 2:LÄGE A = utkast-
+  flödet levererar PAKET: knappen "Exportera klar post" ger JSON som
+  main/agent droppar i data/blogg/ + commit. Produktbeslut Läge B
+  (hot-path: /blogg läser Supabase-live) väntar — prestandarisken på
+  51+ inlägg kräver benchmark först.)
+- GRIND: kontrolleraText på titel+ingress+body vid varje statusbyte till
+  granskad/publicerad — 0 FEL krav (våg 66-mönstret); varumärkesreglerna
+  gäller (negerad disclaimer tillsätts automatiskt om den saknas).
+- PANEL: admin-flik "Blogg ✍️" — lista utkast/granskade/publicerade,
+  editor (titel/ingress/markdown-body), kontrolleraText-knapp med
+  rapport, statussteg knappar, exportera-knapp. requireAdmin-skriv.
+- SEO: exporterad post får pageMetadata + OG automatiskt vid drop
+  (befintlig blogg-[slug]-rendering).
+
+Båda delar: max parallella agenter, src via Write/Edit, grön svit+vakten
++ build krav, commit separat per del.

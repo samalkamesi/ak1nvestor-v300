@@ -54,3 +54,17 @@ bokmaster-nyckelord SD-runna när SQL-tabellen landar.
 1. data/sql/oversattningar.sql + ALTER-composite (139 745 rader!)
 2. CRON_SECRET · 3. Jurist G2 · 4. DeepL + MYMEMORY_EMAIL · 5. K1-K5
 6. När B2B klart: NEXT_PUBLIC_B2B_AKTIV=1 i Vercel.
+
+## TILLÄGG VÅG 80a — DJUP SPRÅKKONTROLL (kundrapport 2026-09-07: "får problem")
+
+Kunden upplever språkproblem. Senaste ändringar som RÖRDE språkytor:
+(våg 78 B) fas2-gate-omskrivning + kurs-spegel-sida + /api/kurs-spegel
+(smakprov/låsvy på speglar); (våg 78 S) lang/dir-inline-skript +
+sprak-leverantor usePathname-deps; (våg 78 A) home-section/ordlista-
+parametrar (t() med params i tre språk); (våg 79) fas2-ansok props.
+
+BESLUT: 4 granskningsagenter parallellt — (1) prod-svep UI-språk alla
+nyckelsidor ×3, (2) språkväxlare+närliggande kod, (3) kursspeglar+gating,
+(4) bloggspeglar+chatbot+ordlista-konsistens. Agenter FIXAR endast
+otvetydiga P0-buggar (trasig rendering, fel språk-läckor) och rapporterar
+resten; ordföranden sankar fixrond efter listorna.

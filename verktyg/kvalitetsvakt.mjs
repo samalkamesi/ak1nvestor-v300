@@ -824,8 +824,11 @@ function sektionSiffror() {
     // (249/449/799/499/1 499/4 999/9 900) får ENBART leva i data/portfolj-
     // system/priser.json och interpoleras via @/lib/variabler (Excel-beroendet).
     // Undantagna filer: registret självt + priser.json + prenumerationsflödets
-    // JSDoc-exempel (kommentarer, inte renderad copy) + FAS3-intro-299 ( Framtida
-    // kanon som ännu inte har registry-nyckel — dökumenteras i B2-beslutet).
+    // JSDoc-exempel (kommentarer, inte renderad copy).
+    // VÅG 78 A6: Fas-utbildningarnas engångspriser (9 999/13 999) + Fas 3-intro
+    // (299, kr/mån på Pro Analytiker) bevakas likaså — de lever i priser.json:s
+    // "fas"-sektion och interpoleras via PRISER.fas2EnGang/fas3EnGang/
+    // fas3IntroManad (dökumenterat i B2-beslutet).
     const FORALDRADE = [
       [/\b(226|227|291|307|311|324|326)\s+(kurser|moduler i)\b/, "kursantal"],
       [/\b(65|78|92)\s+(heltäckta\s+böcker|BOKMASTER-böcker|böcker kapitel|böcker täckta)\b/, "bokantal"],
@@ -833,6 +836,7 @@ function sektionSiffror() {
       [/\bpris[":\s=]+\s*(249|449|799|499|1499|4999|9900)\b/, "pris"],
       [/\b(249|449|799)\s*(kr|:-)\s*(\/|per|\/\s*mån)/i, "pris"],
       [/\b(499|1[\s\u00a0]?499|4[\s\u00a0]?999|9[\s\u00a0]?900)\s*kr\b/, "pris"],
+      [/\b(9[\s\u00a0]?999|1[\s\u00a0]?3999)\s*kr\b/, "fas-pris"],
     ];
     const filer = [...hittaFiler("src/components/ak1a", ".tsx"), ...hittaFiler("src/app", ".tsx"), ...hittaFiler("src/app", ".ts"), ...hittaFiler("src/lib", ".ts")];
     for (const fil of filer) {

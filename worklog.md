@@ -9106,3 +9106,21 @@ ca009f9 + 4fc5b87, develop+main pushade.**
 
 **Verifierat totalt: motorer 107/0/0 · vakten GRÖN · tsc 35 · build exit 0
 (333 kurser SSG) · allt pushat.**
+
+## Våg 81 — RÄTTELSE: ÄKTA 404 + SOFT-404-SYSTEMFUND (2026-09-07, 55d112f)
+
+Prodverifieringen av speglar-fixen (fotern engelsk ✓, Sign in ✓, svensk
+läcka borta ✓) avslöjade att 404-förslagsfixen introducerat SOFT-404 på
+/kurser/[slug]: okänd slug svarade 200. Mekanismen prodmättes (lokal
+produktionsserver + prod): **Next 16 + dynamicParams=true (oavsett
+force-static) servar notFound-HTML med HTTP 200 och en STATISK skal utan
+request-kontext** — usePathname når aldrig sökvägen (inga SSR-förslag),
+root-layout-titel läcker. Speglarna /en|/ar + /blogg har BETEENDET SEDAN
+TIDIGARE (systemfynd: "prod svarar 200 på allt"-fenomenet nu förklarat på
+routingnivå). RÄTNING: /kurser + /blogg till dynamicParams=false (äkta 404,
+generateStaticParams täcker allt) — lokal prod-server verifierad: finns-ej
+404/404, äkta sidor 200/200. KursForslag behåller usePathname-fixen
+(renderar SSR-förslag när en request-scoped 404-render blir möjlig).
+**Våg 82-forskning: speglarnas soft-404 (on-demand-rendering vs äkta 404 —
+kanske dynamicParams=false + full generateStaticParams även där, 333×2
+sidor byggkostnad) + html lang på speglar + kategorietiketter.**

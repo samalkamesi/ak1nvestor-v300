@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
+import { PRISER, kr } from "@/lib/variabler";
 
 const MAX_VARFOR = 800;
 
@@ -235,7 +236,7 @@ export function Fas2Ansok() {
       <div className="rounded-lg border border-gold/30 bg-paper p-5 text-xs leading-relaxed text-muted-foreground">
         <p>
           <strong className="text-foreground">Ingen betalning nu.</strong> Ansökan är
-          kostnadsfri och icke-bindande. Fas 2 kostar 9 999 kr — men du betalar
+          kostnadsfri och icke-bindande. Fas 2 kostar {kr(PRISER.fas2EnGang)} kr — men du betalar
           inget under de första 90 dagarna: betalning sker först efter 90 dagar,
           och bara om du förblir nöjd (90 dagars nöjd-kund-garanti, med
           juridisk hemvist i{" "}

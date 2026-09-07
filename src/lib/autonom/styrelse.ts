@@ -13,6 +13,7 @@
  */
 
 import type { OrganReport } from "./organ";
+import { PRISER, kr } from "@/lib/variabler";
 
 export type Beslut = {
   titel: string;
@@ -60,7 +61,7 @@ const KANDIDATER: Array<{
     motiv: "Nya Fas 2-modellen kräver ansökan + möte — flödet saknas än (portalen länkar dit men bokning är manuell). Intäktsväg #1.",
   },
   {
-    titel: "Fas 3 representeras (13 999 kr) — innehåll + sida",
+    titel: `Fas 3 representeras (${kr(PRISER.fas3EnGang)} kr) — innehåll + sida`,
     vikt: 7,
     insats: "MEDEL",
     kundnytta: 3,

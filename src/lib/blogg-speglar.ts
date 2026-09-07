@@ -151,22 +151,35 @@ async function hamtaLager(sokvagar: string[], slugs: readonly string[]): Promise
   }
 
   // Sista försöket (våg 62): MÖS-lagrets system_events-backend — läs ALLA
-  // blogg-event (nyast först, tak 1 000 rader som lasPubliceradeForSpegel),
-  // dedupe senaste-vinner per (nyckel, språk), filtrera publicerade + kända
-  // blogg-prefix i koden via lagrets rena funktion.
+  // blogg-event, dedupe senaste-vinner per (nyckel, språk), filtrera
+  // publicerade + kända blogg-prefix i koden via lagrets rena funktion.
+  //
+  // VÅG 78 C #1 — SIDUPPDELAD läsning (Range-header, 1 000 rader i taget,
+  // tak 10 sidor): korpusen är 2 582 blogg-event och det gamla limit=1000-
+  // fönstret höll bara de nyaste 1 000 ⇒ 29 slugs hamnade utanför och visade
+  // 0 % i prod. order=created_at.desc,id.desc (id.desc = determinism bland
+  // ties, se MOS_ORDNING i lager.ts) gör offset-sidningen stabil; sidorna
+  // sammanfogas före dedupe så senaste-vinner gäller globalt.
   try {
-    const svar = await fetch(
-      `${rest.origin}/rest/v1/system_events?type=eq.oversattning&details->>scope_typ=eq.blogg` +
-        `&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text` +
-        `&order=created_at.desc&limit=1000`,
-      {
-        headers: { apikey: rest.headers.apikey, Authorization: rest.headers.Authorization },
-        signal: AbortSignal.timeout(6000),
-        next: { revalidate: 3600, tags: ["oversattningar", "oversattningar:blogg"] },
-      },
-    );
-    if (svar.ok) {
-      const rader = (await svar.json()) as MosEventLasRad[];
+    const rader: MosEventLasRad[] = [];
+    for (let sida = 0; sida < 10; sida++) {
+      const fran = sida * 1000;
+      const svar = await fetch(
+        `${rest.origin}/rest/v1/system_events?type=eq.oversattning&details->>scope_typ=eq.blogg` +
+          `&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text` +
+          `&order=created_at.desc,id.desc`,
+        {
+          headers: { apikey: rest.headers.apikey, Authorization: rest.headers.Authorization, Range: `${fran}-${fran + 999}` },
+          signal: AbortSignal.timeout(6000),
+          next: { revalidate: 3600, tags: ["oversattningar", "oversattningar:blogg"] },
+        },
+      );
+      if (!svar.ok) break; // troligen tabellen/kolumnen ej skapad ännu
+      const sidRader = (await svar.json()) as MosEventLasRad[];
+      rader.push(...sidRader);
+      if (sidRader.length < 1000) break; // sista sidan — alla blogg-event lästa
+    }
+    if (rader.length > 0) {
       const lager = new Map<string, Map<string, string>>();
       for (const slug of slugs) {
         for (const [nyckel, perSprak] of mosSpegelKartaUrRader(rader, slug)) {

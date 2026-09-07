@@ -8920,3 +8920,46 @@ strängar (mejlar, org.namn, sociala URL:er) i registret.
 
 **Kundaktivering av B2B (när klart):** Vercel → Settings → Environment
 Variables → NEXT_PUBLIC_B2B_AKTIV=1 → redeploy. Allt återställs.
+
+## Våg 78 — TELEFON-REFRESH + FINSLIPNINGRONDER + ADMIN-MEGA-BESLUT (2026-09-07)
+
+**P0 TELEFON-REFRESH (pushat 323912f):** ingen auto-reload finns i prod-kod —
+rotorsak ~70 %: kunden surfar DEV-instansen (keepalive.sh curl:ar var 15:e s,
+dödar+omstartar next dev när datorn är trött → HMR reconnect ~10 s).
+Förebyggande fixar: sw.js v3 (skipWaiting/clientsClaim bort — uppdatering vid
+nästa naturliga navigering), updateViaCache:none, notiser endast synlig
+flik + minst 60 s, ALLA globala intervall pausar vid document.hidden.
+Kundråd: surfa exakt https://lab.ak1nvestor.com (ingen port/localhost/IP);
+engångs "Rensa webbplatsdata" på telefonen skyndar SW-v3.
+
+**P1 FINSLIPNING (8 agenter: 3 läsare + 3 fixare + 5 forskare, max parallellt):**
+- LÄSARFYND: 3×P0 + 13×P1 + 13×P2 totalt (listorna tool-results/v78-finslip-A/B/C.md)
+- FIX S (speglar): P0 event-fönstret trunkerade prod-speglar (36 bloggspeglar
+  visade 0 %!) — PAGINERING i lasPubliceradeForSpegel + blogg-speglar
+  (Range-loop, tak 10 sidor): ak1ts 460→540, TII 496→501, blogg 31→55/55
+  slugs; SprakVäxlare detaljsidor (kurser+blogg mönster), harSpeglar på alla
+  kurser/bloggposter (hreflang-reciprocitet), sitemap 908→1 684 URLer
+  (+776 spegeldetaljer), lang/dir på speglar (inline pre-hydration).
+- FIX A (publikt): död /cookies-länk, [ORGANISATIONSNR] villkorligt (ORG_NR
+  i registret, tom = rad dold), "Tips på bolag"-motsägelsen, alla hårdkodade
+  tal → SIFFROR-interpolation, 103-kanon-felrätt, död blogglänk, Fas-priser
+  9 999/13 999/299 i priser.json+variabler.ts (16 ställen interpolerar,
+  vakten bevakar), manifest-fallback, AKM3-tabell mobil-vertikal, SERP-
+  titlar avlöftade, kadens bort, tryckytor 44px.
+- FIX B (verktyg/gating): Fas 2/3-SSR-läckan TYPAD I GRUNDEN (fulltext
+  bakades i statisk HTML för 42 betalkurser! — nu: LÅST vy i SSR + smakprov
+  kap 1–2 + behöriga hämtar via API; speglarna samma; curl-verifierat),
+  korstabell AKM1-rubrik+sortering, 9 döda V21-29-länkar mappade till
+  existerande kurser, XP-ekonomin ärlig (680 resp 2 000 utlovat på TII —
+  quiz×10+50), kurs-klar-stigarna jämka (+50 XP/+★ endast en gång),
+  V19-Infinity → "osatt", nästlade Link giltiga, död Fråga-knapp →
+  ak1a:oppna-mentor-event, V14/V18/V20-terminologi jämka.
+
+**P2 ADMIN-MEGA (ordförandebeslut 62df431):** STYRELSE-ADMIN-MEGA.md —
+steg 1 = VARIABELPANEL (Supabase som sanning + fil dev-fallback) +
+termbank-prod-fix = VÅG 79, med revisbarhets-logg + gratis-nivå-lås.
+Nulägesfynd: termbank-tillägget fungerar INTE på prod (read-only fs) och
+ADMIN_PASSWORD har dev-fallback — åtgärdas i steg 1.
+
+**Verifierat:** tsc 36 (baslinje, 0 nya) · motorer 107/0/0 · vakten GRÖN ·
+build exit 0 · SSR-curl: Fas2-kurs fulltext BORTA ur HTML, smakprov kvar.

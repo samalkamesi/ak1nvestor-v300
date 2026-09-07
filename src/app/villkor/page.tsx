@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
-import { PRISER, kr } from "@/lib/variabler";
+import { PRISER, kr, ORG_NR_LANG, ORG_NR_KORT } from "@/lib/variabler";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
 export const dynamic = "force-static";
@@ -81,8 +81,8 @@ export default function VillkorPage() {
       <p className="mt-6 leading-relaxed text-muted-foreground">
         Dessa användarvillkor (&quot;Villkoren&quot;) reglerar din användning av AK1A
         Research Lab — utbildningsplattformen på lab.ak1nvestor.com
-        (&quot;Plattformen&quot;) — som tillhandahålls av AK1A Research Lab,
-        organisationsnummer [ORGANISATIONSNR], med kontakt via
+        (&quot;Plattformen&quot;) — som tillhandahålls av AK1A
+        Research Lab{ORG_NR_LANG}, med kontakt via
         info@ak1nvestor.com (&quot;AK1A&quot;, &quot;vi&quot;). Villkoren utgör ett
         bindande avtal mellan dig (&quot;Kunden&quot;, &quot;du&quot;) och AK1A. Läs
         dem noga innan du registrerar konto eller genomför ett köp.
@@ -90,9 +90,10 @@ export default function VillkorPage() {
 
       <div className="mt-4 rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
         <strong className="text-foreground">Snabbfakta.</strong> Utgivare: AK1A
-        Research Lab, org.nr [ORGANISATIONSNR] · Kontakt:
-        info@ak1nvestor.com · Fas 1: kostnadsfritt · Fas 2: 9 999 kr inkl. moms
-        (12 månader) · Fas 3: 13 999 kr inkl. moms (12 månader) · 90 dagars
+        Research Lab{ORG_NR_KORT} · Kontakt:
+        info@ak1nvestor.com · Fas 1: kostnadsfritt · Fas 2:{" "}
+        {kr(PRISER.fas2EnGang)} kr inkl. moms
+        (12 månader) · Fas 3: {kr(PRISER.fas3EnGang)} kr inkl. moms (12 månader) · 90 dagars
         nöjd-kund-garanti på Fas 2 och Fas 3: betalning sker först efter 90
         dagar — och endast om du förblir nöjd (se sektion 5 och 6) · Ångerrätt:
         14 dagar enligt lagen (2005:59) om distansavtal och avtal utanför
@@ -281,7 +282,7 @@ export default function VillkorPage() {
               flashcards) samt aktieanalyser och case studies i labbet.
             </>,
             <>
-              <strong className="text-foreground">Fas 2 — 9 999 kr.</strong> Den
+              <strong className="text-foreground">Fas 2 — {kr(PRISER.fas2EnGang)} kr.</strong> Den
               fundamentala vägen till oberoende analytiker: de 18 fundamentala
               mästarverks-kurserna (värdering, bokslutsanalys, redovisning,
               företagsfinans och värdeinvesteringens mästarverk) där de 20
@@ -295,7 +296,7 @@ export default function VillkorPage() {
               nivå 25 och kräver godkänd ansökan.
             </>,
             <>
-              <strong className="text-foreground">Fas 3 — 13 999 kr.</strong> Allt i
+              <strong className="text-foreground">Fas 3 — {kr(PRISER.fas3EnGang)} kr.</strong> Allt i
               Fas 2 samt det dynamiska ekosystemet: de 24 ekosystem- och
               fördjupningskurserna (AKM1 × AK1TS-integrationen, Vågfundamentet,
               Konfluensradarn och Portföljens vågor), teknisk analys på
@@ -365,8 +366,9 @@ export default function VillkorPage() {
           ul: [
             <>
               <strong className="text-foreground">Priser.</strong> Alla priser anges i
-              svenska kronor och inkluderar moms (25 procent): Fas 2 omfattar
-              9 999 kr och Fas 3 omfattar 13 999 kr. Fas 1 är kostnadsfri.
+              svenska kronor och inkluderar moms (25 procent): Fas 2 omfattar{" "}
+              {kr(PRISER.fas2EnGang)} kr och Fas 3 omfattar{" "}
+              {kr(PRISER.fas3EnGang)} kr. Fas 1 är kostnadsfri.
               Priset för en påbörjad köpt period ändras aldrig under periodens
               löptid.
             </>,
@@ -771,8 +773,8 @@ export default function VillkorPage() {
           box: (
             <>
               <strong className="text-foreground">Kontakt.</strong> Frågor om dessa
-              Villkor besvaras via info@ak1nvestor.com · AK1A Research Lab,
-              org.nr [ORGANISATIONSNR] · lab.ak1nvestor.com. Relaterade
+              Villkor besvaras via info@ak1nvestor.com · AK1A
+              Research Lab{ORG_NR_KORT} · lab.ak1nvestor.com. Relaterade
               dokument: {lank("/finansiell-policy", "Finansiell policy")},{" "}
               {lank("/upphovsratt", "Upphovsrättspolicy")},{" "}
               {lank("/privacy-policy", "Integritetspolicy")} och{" "}
@@ -830,8 +832,8 @@ export default function VillkorPage() {
         {
           p: (
             <>
-              Parter är AK1A Research Lab, organisationsnummer
-              [ORGANISATIONSNR], kontakt info@ak1nvestor.com
+              Parter är AK1A Research Lab{ORG_NR_LANG}, kontakt
+              info@ak1nvestor.com
               (&quot;AK1A&quot;, i personuppgiftsfrågor &quot;Biträdet&quot;),
               och den näringsidkare som tecknar tjänsten
               (&quot;Kunden&quot;). Kunden kan vara ett värdepappersinstitut
@@ -972,7 +974,8 @@ export default function VillkorPage() {
             </>,
             <>
               <strong className="text-foreground">Fas 3-certifierade.</strong>{" "}
-              Certifierad analytiker har introduktionspriset 299 kr/mån det
+              Certifierad analytiker har introduktionspriset{" "}
+              {kr(PRISER.fas3IntroManad)} kr/mån det
               första året på Pro Analytiker, dokumenterat i certifikatet.
             </>,
           ],
@@ -1218,7 +1221,7 @@ export default function VillkorPage() {
                 Kontakt och relaterade dokument (PRO).
               </strong>{" "}
               Frågor om AK1A PRO-villkoren besvaras via info@ak1nvestor.com ·
-              AK1A Research Lab, org.nr [ORGANISATIONSNR] · Relaterat:{" "}
+              AK1A Research Lab{ORG_NR_KORT} · Relaterat:{" "}
               {lank("/pro/priser", "PRO:s prislista och DPA-mallen")} ·{" "}
               {lank("/transparens", "Transparensregistret (inklusive biträdesrollen)")} ·{" "}
               {lank("/finansiell-policy", "Finansiell policy")} ·{" "}

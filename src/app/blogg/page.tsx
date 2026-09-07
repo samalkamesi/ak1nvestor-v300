@@ -11,6 +11,9 @@ export const metadata: Metadata = pageMetadata({
   title: "Blogg — svensk aktieanalys & institutionell metodik | AK1A",
   description:
     "Djupgående artiklar om svensk aktieanalys, AKM1:s 20 variabler, årsredovisningar, värdering och hur institutioner egentligen analyserar aktier. Nytt inlägg varje vecka.",
+  // VÅG 78 C #4: hreflang-ÖMSESIDIGHET — /en/blogg + /ar/blogg är indexbara
+  // speglar sedan våg 55; originalet deklarerar klustret tillbaka.
+  harSpeglar: true,
   keywords: [
     "aktieanalys blogg",
     "svensk aktieanalys",
@@ -44,7 +47,7 @@ export default function BloggPage() {
       <h1 className="font-serif text-4xl font-bold">AK1A Blogg</h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
         Institutionell metodik, förklarad för privatpersoner. Pelare: {pillars.join(" · ")}.
-        Nytt innehåll varje vecka — djupanalyser på måndag, variabelfördjupning på onsdag.
+        Nytt innehåll löpande — djupanalyser och variabelfördjupningar.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

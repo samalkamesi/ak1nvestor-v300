@@ -5,6 +5,7 @@ import { pageMetadata, faqJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { SIFFROR, tal } from "@/lib/siffror";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -118,9 +119,10 @@ export const metadata: Metadata = pageMetadata({
   path: "/medlemskap",
   harSpeglar: true, // Ömsesidig hreflang med /en|ar/medlemskap (VÅG 63 O3 #2)
   title: "Fas 1 gratis — Fas 2 sammanvägningen — Fas 3 ekosystemet | AK1A",
-  // Uppdaterad 2026-09-01: antalen räknas dynamiskt nedan (Fas 1 = totalt − Fas 2 − Fas 3)
+  // Uppdaterad 2026-09-01: antalen räknas dynamiskt nedan (Fas 1 = totalt − Fas 2 − Fas 3).
+  // Priserna interpoleras ur variabelregistret (våg 78 A6).
   description:
-    "Fas 1: alla grundläggande kurser, heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt. Oändligt med timmar med grundaren tills du är värdig titeln oberoende aktieanalytiker. Teknisk analys utbildas inte i Fas 1/Fas 2 — mästarnivån är Fas 3. 9 999 kr / 13 999 kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du är nöjd.",
+    `Fas 1: alla grundläggande kurser, heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt. Oändligt med timmar med grundaren tills du är värdig titeln oberoende aktieanalytiker. Teknisk analys utbildas inte i Fas 1/Fas 2 — mästarnivån är Fas 3. ${kr(PRISER.fas2EnGang)} kr / ${kr(PRISER.fas3EnGang)} kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du är nöjd.`,
   keywords: [
     "gratis aktieutbildning",
     "fundamentalanalys gratis",
@@ -287,7 +289,7 @@ export default function MedlemskapPage() {
         {/* FAS 2 */}
         <div className="flex flex-col rounded-xl border border-gold/40 bg-card p-7">
           <span className="mb-2 inline-block w-fit rounded-full border border-gold/50 px-3 py-0.5 text-xs font-semibold text-gold">
-            FAS 2 · ANSÖKAN KRÄVS · 9 999 KR
+            {`FAS 2 · ANSÖKAN KRÄVS · ${kr(PRISER.fas2EnGang)} KR`}
           </span>
           <h2 className="font-serif text-2xl font-bold">Den snabba fundamentala vägen</h2>
           <p className="mt-1 text-sm italic text-muted-foreground">
@@ -303,7 +305,7 @@ export default function MedlemskapPage() {
               "Ingen teknisk analys-utbildning — i Fas 2 (som i Fas 1) berättar vi bara grundläggande kunskap om teknisk analys, som orientering. Mästarnivån är Fas 3",
               "Utbildning i grupp tillsammans med andra klienter",
               "Representant-chansen: vägen att bli representant för AK1nvestor — att representera oss med kvalitet",
-              "Tips på bolag under utbildningen — testade med siffror och variabler",
+              "Case-studier av verkliga bolag genom utbildningen — testade med siffror och variabler; aldrig tips om köp eller försäljning",
               "Rätt att nyttja verktygen och framtida Fas 2-tjänster (utvecklas löpande)",
             ].map((f) => (
               <li key={f} className="flex gap-2">
@@ -338,7 +340,7 @@ export default function MedlemskapPage() {
       {/* FAS 3 — det dynamiska ekosystemet */}
       <section className="marin-panel mt-8 rounded-2xl border border-gold/40 p-7 sm:p-9">
         <span className="mb-2 inline-block w-fit rounded-full border border-[#E8C766]/50 px-3 py-0.5 text-xs font-semibold text-[#E8C766]">
-          FAS 3 · EFTER TILLÄMPNING AV FAS 2 · 13 999 KR
+          {`FAS 3 · EFTER TILLÄMPNING AV FAS 2 · ${kr(PRISER.fas3EnGang)} KR`}
         </span>
         <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
           Fas 3 — det dynamiska ekosystemet
@@ -358,7 +360,7 @@ export default function MedlemskapPage() {
           {[
             `AKM1 × AK1TS-integrationen — den sammansatta analysen där fundamentalstyrka möter vågor`,
             "Vågfundamentet — varje fundamentalvariabel som tidsserie",
-            "Konfluensradarn — där värde garanterat möter vågor (fem dimensioner)",
+            "Konfluensradarn — där värde möter vågor (fem dimensioner)",
             "Portföljens vågor — vågprofilen på mikro-, kort-, medellång-, lång- och mega-horisont",
             `Teknisk analys på mästarnivå — 17 kanonverk: Elliott, Murphy, Nison, Bollinger…`,
             "Trading-psykologi & neuroekonomi — Douglas, Coates, Shull, Zweig",

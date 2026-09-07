@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { spegelMetadata } from "@/lib/spegel-metadata";
+import { ORG_NR } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -166,8 +167,9 @@ export default function TransparensPageEn() {
           1. Who is responsible for your data
         </h2>
         <p className="mt-3 leading-relaxed text-muted-foreground">
-          The data controller is AK1A Research Lab, organisation number
-          [ORGANISATIONSNR], contact info@ak1nvestor.com (art. 13.1 a). We
+          The data controller is AK1A Research Lab
+          {ORG_NR ? `, organisation number ${ORG_NR}` : ""}, contact
+          info@ak1nvestor.com (art. 13.1 a). We
           currently have no formal data protection officer — it is not
           mandatory for the size of our operation — and handle privacy
           matters directly via the contact above. Our most important data

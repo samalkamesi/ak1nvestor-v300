@@ -96,6 +96,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // ── VARJE kurs-slug: BOKMASTER 0.9, övriga kurser 0.8 ─────────────────────
+  // + spegeldetaljer (VÅG 78 C #3): /{en,ar}/kurser/{slug} för varje kurs —
+  // 666 spegel-URLer som indexeras allteftersom översättningsandelen passerar
+  // INDEX_TRASKEL (kurs-speglar.ts); upptäcks tidigare via sitemap än via
+  // interna länkar ensamt.
   for (const slug of courseSlugs) {
     const course = courses[slug];
     entries.push({
@@ -105,6 +109,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // Kapiteldata innehåller inga datumfält — lastModified = genereringstillfället
       lastModified: now,
     });
+    for (const lang of ["en", "ar"] as const) {
+      entries.push({
+        url: `${BASE_URL}/${lang}/kurser/${slug}`,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        lastModified: now,
+      });
+    }
   }
 
   // ── Analyser (PREC.ST, VOLCAR-B, …) + variabel-landningssidor per analys ──
@@ -148,6 +160,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // ── VARJE bloggpost med lastModified ur publicerings-/uppdateringsdatum ───
+  // + spegeldetaljer (VÅG 78 C #3): /{en,ar}/blogg/{slug} för varje inlägg
+  // (110 spegel-URLer) — samma tröskel-logik som kursspeglarna.
   for (const p of getBlogPosts()) {
     entries.push({
       url: `${BASE_URL}/blogg/${p.slug}`,
@@ -155,6 +169,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       lastModified: safeDate(p.updatedAt || p.publishedAt, now),
     });
+    for (const lang of ["en", "ar"] as const) {
+      entries.push({
+        url: `${BASE_URL}/${lang}/blogg/${p.slug}`,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        lastModified: safeDate(p.updatedAt || p.publishedAt, now),
+      });
+    }
   }
 
   return entries;

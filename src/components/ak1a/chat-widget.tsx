@@ -652,6 +652,19 @@ export function ChatWidget() {
     }
   }, [oppnad, srAktiv]);
 
+  // VÅG 78 B7: öppna mentorn utifrån — samma CustomEvent-mönster som
+  // kommandopalettens "ak1a:oppna-sok". Detail { fraga? } förhandsfyller
+  // frågefältet (t.ex. "Fråga"-knappen i Min portfölj).
+  useEffect(() => {
+    const oppna = (e: Event) => {
+      const f = (e as CustomEvent<{ fraga?: string }>).detail?.fraga;
+      setOppnad(true);
+      if (typeof f === "string" && f.trim().length > 0) setFraga(f.trim());
+    };
+    window.addEventListener("ak1a:oppna-mentor", oppna);
+    return () => window.removeEventListener("ak1a:oppna-mentor", oppna);
+  }, []);
+
   // Initiera med proaktiv hälsning när chatt öppnas (hälsningen minns minnet)
   useEffect(() => {
     if (oppnad && meddelanden.length === 0) {

@@ -63,6 +63,34 @@ const VARIABLER: Var[] = [
 
 const KATEGORIER = ["Tillväxt", "Värdering", "Lönsamhet", "Stabilitet", "Moat", "Katalysator", "Risk", "Kapitalstruktur"];
 
+/**
+ * VÅG 78 B3: kärnans V21+-kursSluggar (akm2/karna.ts, "v21-roic" … "v29-…")
+ * är provisoriska och har INGA kurssidor (dynamicParams=false → 404).
+ * UI-lagret mappar i stället varje modulvariabel till närmaste EXISTERANDE
+ * kurs (nycklar verifierade mot public/deep-courses.json) — aldrig döda
+ * länkar. Osäker match faller tillbaka på kursbiblioteket.
+ */
+const MODUL_KURS_LANK: Record<string, string> = {
+  // ROIC — Greenblatts magiska formel är EV/EBIT + ROIC (kursen lär ut ROIC i praktiken)
+  V21: "/kurser/the-little-book-that-beats-the-market",
+  // Fri kassaflödesavkastning — exakt ämne
+  V22: "/kurser/vm-07-free-cash-flow-yield",
+  // Redovisningskvalitet — O'Gloves klassiker om vinstkvalitet
+  V23: "/kurser/quality-of-earnings",
+  // Skuldbetjäningsförmåga — närmaste skuld/stabilitetskurs (räntetäckning, nettoskuld)
+  V24: "/kurser/v10-skuldsattningsgrad",
+  // Utspädning — nyemission/utspädningsrisk
+  V25: "/kurser/rk-02-emissionrisk",
+  // Kapitalcykel — CapEx/avskrivningar är cykelns mekanik
+  V26: "/kurser/km-021-avskrivningsprinciper",
+  // Utdelningskontinuitet — aristokrater = kontinuitet i praktiken
+  V27: "/kurser/ud-03-dividend-aristocrats",
+  // Earnings yield (EV/EBIT) — exakt ämne
+  V28: "/kurser/km-010-evebit",
+  // Insider-ägande — V20-kursen täcker återköp + insiderköp som insidersignal
+  V29: "/kurser/v20-aterekop-egna-aktier",
+};
+
 /** Riktiga poäng från AK1A-analyser — pedagogiska exempel. */
 const EXEMPEL: Record<string, { label: string; poang: Record<string, number>; not: string }> = {
   prec: {
@@ -409,6 +437,10 @@ export const RAKNARE: Raknare[] = [
       const kassa = tal(v, "kassa");
       if (!Number.isFinite(fkf) || kassa == null) return null;
       if (fkf > 0) return { varde: fkf, enhet: "MSEK positivt", poang: 5 };
+      // VÅG 78 B5: FKF = 0 (break-even) — kassa/|0| = Infinity fångades inte
+      // av Number.isFinite-grenen. Runway är då inte definierad (ingen
+      // förbränning) → redovisa break-even + "runway osatt", INTE Infinity.
+      if (fkf === 0) return { varde: 0, enhet: "MSEK break-even — runway osatt", poang: 5 };
       const manader = Math.round((kassa / Math.abs(fkf)) * 12);
       const p = manader >= 60 ? 5 : manader >= 36 ? 4 : manader >= 18 ? 3 : manader >= 12 ? 2 : 1;
       return { varde: manader, enhet: "mån runway", poang: p };
@@ -1007,9 +1039,13 @@ export function Akm1Calculator() {
                         <div key={v} className="flex items-center gap-4">
                           <div className="min-w-0 flex-1">
                             <Link
-                              href={`/kurser/${meta?.kursSlug ?? ""}`}
+                              href={MODUL_KURS_LANK[v] ?? (meta?.kursSlug ? `/kurser/${meta.kursSlug}` : "/kurser")}
                               className="text-sm font-medium hover:text-gold"
-                              title={meta?.kalla}
+                              title={
+                                MODUL_KURS_LANK[v]
+                                  ? `${meta?.kalla ?? ""} — öppnar närmaste kurs i ämnet`
+                                  : meta?.kalla
+                              }
                             >
                               {v} · {meta?.namn ?? v}
                             </Link>

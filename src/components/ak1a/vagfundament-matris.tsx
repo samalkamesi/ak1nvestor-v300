@@ -37,13 +37,17 @@ const RADER: Array<{ id: string; namn: string; kategori: string }> = [
   { id: "V11", namn: "Likviditet", kategori: "stabilitet" },
   { id: "V12", namn: "Intäktsstabilitet", kategori: "stabilitet" },
   { id: "V13", namn: "Patent & IP", kategori: "moat" },
-  { id: "V14", namn: "Varumärke & Kundlojalitet", kategori: "moat" },
+  // VÅG 78 B8: variabelnamn härledda ur kärnans VARIABEL_META-kontrakt
+  // (akm2/karna.ts) — V14 "Varumärke" (ej "Varumärke & Kundlojalitet"),
+  // V18 "Regulatoriska" (ej "Regulatoriska katalysatorer"), V20 i egen
+  // kategori "kapitalstruktur" som i kalkylatorn (8:e kategorin).
+  { id: "V14", namn: "Varumärke", kategori: "moat" },
   { id: "V15", namn: "Nätverkseffekter", kategori: "moat" },
   { id: "V16", namn: "Produktlanseringar", kategori: "katalysator" },
   { id: "V17", namn: "Avtal & Partnerskap", kategori: "katalysator" },
-  { id: "V18", namn: "Regulatoriska katalysatorer", kategori: "katalysator" },
+  { id: "V18", namn: "Regulatoriska", kategori: "katalysator" },
   { id: "V19", namn: "Kassatäckning — nyemissionsrisk", kategori: "risk" },
-  { id: "V20", namn: "Återköp av egna aktier", kategori: "risk" },
+  { id: "V20", namn: "Återköp av egna aktier", kategori: "kapitalstruktur" },
 ];
 
 const KATEGORI_NAMN: Record<string, string> = {
@@ -54,6 +58,7 @@ const KATEGORI_NAMN: Record<string, string> = {
   moat: "Moat",
   katalysator: "Katalysator",
   risk: "Risk",
+  kapitalstruktur: "Kapitalstruktur",
 };
 
 const HZ_NAMN: Record<string, string> = {
@@ -370,11 +375,14 @@ export function VagfundamentMatris({
         <span className="text-gold">Enighet 0–100 = 40 % medel-bekräftelse + 30 % tröskelmarginal + 30 % celltäckning</span>
       </div>
 
-      {/* Kategorisammanfattning + totalrad (P4 hierarkin steg 3–4) */}
+      {/* Kategorisammanfattning + totalrad (P4 hierarkin steg 3–4).
+          VÅG 78 B8: raderna härleds ur DATA:S kategorinycklar (vagfundament-
+          filernas 7 basserier — kapitalstruktur saknar tidsserie där) så
+          ingen tom rad ritas; visningsnamnen ur KATEGORI_NAMN ovan. */}
       {data.kategorier ? (
         <div className="rounded-lg border border-border bg-card p-4">
           <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-            Kategorisammanfattning · 7 kategorier
+            Kategorisammanfattning · {Object.keys(data.kategorier).length} kategorier
           </p>
           <div className="mt-2 overflow-x-auto scrollbar-ak1a">
             <table className="w-full min-w-[560px] text-sm">
@@ -388,7 +396,9 @@ export function VagfundamentMatris({
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(KATEGORI_NAMN).map(([kid, namn]) => (
+                {Object.keys(data.kategorier).map((kid) => {
+                  const namn = KATEGORI_NAMN[kid] ?? kid;
+                  return (
                   <tr key={kid} className="border-t border-border/60">
                     <td className="sticky left-0 bg-card py-1.5 pr-2 font-serif text-xs font-bold">{namn}</td>
                     {HORIZONTER.map((h) => {
@@ -400,7 +410,8 @@ export function VagfundamentMatris({
                       );
                     })}
                   </tr>
-                ))}
+                  );
+                })}
                 {data.total ? (
                   <tr className="border-t-2 border-gold/40 bg-gold/5">
                     <td className="sticky left-0 bg-card py-2 pr-2 font-serif text-sm font-bold">AKM1-helhet</td>

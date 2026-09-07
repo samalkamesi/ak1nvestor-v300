@@ -110,12 +110,21 @@ export default function ForskningsbiblioteketPage() {
             osatt: "osatt",
           };
           return (
-            <Link
+            // VÅG 78 B6: kortet är en div med ett utstruket Link-lager
+            // (absolute inset-0) i stället för en yttre <Link> — blogg-länken
+            // inne i kortet blev annars ett ogiltigt <a> inuti <a> som
+            // webbläsaren kunde reparenta (hydrering-/klickrisk). Blogg-länken
+            // ligger ovanför det utstrukna lagret (z-10) och är klickbar.
+            <div
               key={a.ticker}
-              href={`/forskningsbiblioteket/${encodeURIComponent(a.ticker)}`}
-              className="block rounded-lg border border-gold/20 bg-card p-6 hover:border-gold/60 transition-colors"
+              className="relative block rounded-lg border border-gold/20 bg-card p-6 transition-colors hover:border-gold/60"
             >
-              <div className="flex items-start justify-between gap-3">
+              <Link
+                href={`/forskningsbiblioteket/${encodeURIComponent(a.ticker)}`}
+                className="absolute inset-0 rounded-lg"
+                aria-label={`Läs forskningsöversikten för ${a.namn} (${a.ticker})`}
+              />
+              <div className="relative z-10 flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-gold">
                     {a.land || "—"} · {a.bransch}
@@ -126,7 +135,7 @@ export default function ForskningsbiblioteketPage() {
                 <StatusChip etikett={a.urval?.statusEtikett || a.urval?.status || "osatt"} />
               </div>
 
-              <dl className="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
+              <dl className="relative z-10 mt-4 grid grid-cols-3 gap-2 text-center text-sm">
                 <div className="rounded border border-gold/10 bg-background/50 p-2">
                   <dt className="text-xs text-muted-foreground">AKM1</dt>
                   <dd className="font-semibold">
@@ -144,7 +153,7 @@ export default function ForskningsbiblioteketPage() {
                 </div>
               </dl>
 
-              <p className="mt-3 text-sm text-muted-foreground">
+              <p className="relative z-10 mt-3 text-sm text-muted-foreground">
                 Vågläge: {DYN[a.vaglage?.fvagDynamik] || a.vaglage?.fvagDynamik || "osatt"}
                 {klassadeHz === 0
                   ? " · inga horisonter klassade (osatt är osatt)"
@@ -152,19 +161,19 @@ export default function ForskningsbiblioteketPage() {
               </p>
 
               {a.urval?.varning && (
-                <p className="mt-2 text-xs text-amber-700 dark:text-amber-400">
+                <p className="relative z-10 mt-2 text-xs text-amber-700 dark:text-amber-400">
                   ⚠ {a.urval.varning}
                 </p>
               )}
 
-              <p className="mt-3 text-xs text-muted-foreground">
+              <p className="relative z-10 mt-3 text-xs text-muted-foreground">
                 Version {a.versionsdatum} · {a.akm1?.antalOsatta ?? 20} av 20
                 variabler osatta ·{" "}
                 {a.lasMer?.bloggSlug ? (
                   <>
                     <Link
                       href={`/blogg/${a.lasMer.bloggSlug}`}
-                      className="underline hover:text-foreground"
+                      className="z-20 underline hover:text-foreground"
                     >
                       bloggpost finns
                     </Link>{" "}
@@ -173,7 +182,7 @@ export default function ForskningsbiblioteketPage() {
                 ) : null}
                 Läs översikten →
               </p>
-            </Link>
+            </div>
           );
         })}
       </div>

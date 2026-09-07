@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { ORG_NR_LANG } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -32,6 +33,35 @@ type Rad = {
   lagring: string;
   ratt: string;
 };
+
+/** AKM3-regimtabellens indikatorrader — delade av mobil-listan och
+ *  desktop-tabellen (våg 78 A9: mobil-vertikalt läge enligt kursöversiktens
+ *  mönster — aldrig sidscroll på telefon). */
+const AKM3_RADER: Array<{ indikator: string; kalla: string; troskel: string }> = [
+  {
+    indikator: "G — grönandel (0–1)",
+    kalla: "Korstabellens 100 bolag (forskningsläget)",
+    troskel:
+      "≥ 0,10 tillsammans med N ≥ +0,20 ⇒ expansiv; < 0,08 ⇒ magert (inträde); ≥ 0,10 ⇒ lämnar magert",
+  },
+  {
+    indikator: "R — rödandel (0–1)",
+    kalla: "Korstabellens 100 bolag (forskningsläget)",
+    troskel: "> 0,35 ⇒ magert (inträde); ≤ 0,30 krävs för att lämna magert",
+  },
+  {
+    indikator: "N — netto fundamental vågbredd (−1…+1)",
+    kalla: "Senaste vågskanningen (12 vågbolag)",
+    troskel:
+      "≤ −0,20 ⇒ korrigering; ≥ +0,20 ⇒ expansiv (kräver G ≥ 0,10); redovisas som osatt tills minst 30 vågbolag mäts — därför vilar regimen idag enbart på G/R",
+  },
+  {
+    indikator: "Σu — universumets årsvolatilitet",
+    kalla: "Vågkonen (per bolag)",
+    troskel:
+      "> 25 % ⇒ regimebyte kräver 3 bekräftade snapshots i stället för 2 (osatt värde ⇒ standard 2)",
+  },
+];
 
 const REGISTER: Rad[] = [
   {
@@ -163,8 +193,10 @@ export default function TransparensPage() {
           1. Vem är ansvarig för dina uppgifter
         </h2>
         <p className="mt-3 leading-relaxed text-muted-foreground">
-          Personuppgiftsansvarig är AK1A Research Lab, organisationsnummer
-          [ORGANISATIONSNR], kontakt info@ak1nvestor.com (art. 13.1 a). Vi har
+          {/* Org.nr ur variabelregistret (ORG_NR) — raden renderas endast när
+              numret är ifyllt; aldrig en platshållare publikt (våg 78 A2). */}
+          Personuppgiftsansvarig är AK1A Research Lab{ORG_NR_LANG}, kontakt
+          info@ak1nvestor.com (art. 13.1 a). Vi har
           för närvarande inget formellt dataskyddsombud — det är inte
           obligatoriskt för vår verksamhets storlek — utan hanterar
           integritetsfrågor direkt via kontakten ovan. Våra viktigaste
@@ -304,7 +336,7 @@ export default function TransparensPage() {
           &quot;Kakinställningar&quot; i sidfoten — lagen kräver att det ska vara
           lika enkelt att återkalla ett samtycke som att ge det. Se hela
           kaklistan med namn och giltighetstid i{" "}
-          {lank("/cookies", "kakpolicyn")}.
+          {lank("/cookiepolicy", "kakpolicyn")}.
         </p>
       </section>
 
@@ -397,63 +429,50 @@ export default function TransparensPage() {
           append-only logg från dag 1. Indikatorer och trösklar redovisas
           här i sin helhet:
         </p>
-        <div className="mt-4 overflow-x-auto rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="text-left text-foreground">
-                <th className="py-1.5 pr-4 font-semibold">Indikator</th>
-                <th className="py-1.5 pr-4 font-semibold">Källa</th>
-                <th className="py-1.5 font-semibold">Trösklar (öppna tal)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t border-gold/10">
-                <td className="py-1.5 pr-4 align-top">
-                  G — grönandel (0–1)
-                </td>
-                <td className="py-1.5 pr-4 align-top">
-                  Korstabellens 100 bolag (forskningsläget)
-                </td>
-                <td className="py-1.5 align-top">
-                  ≥ 0,10 tillsammans med N ≥ +0,20 ⇒ expansiv; &lt; 0,08 ⇒
-                  magert (inträde); ≥ 0,10 ⇒ lämnar magert
-                </td>
-              </tr>
-              <tr className="border-t border-gold/10">
-                <td className="py-1.5 pr-4 align-top">R — rödandel (0–1)</td>
-                <td className="py-1.5 pr-4 align-top">
-                  Korstabellens 100 bolag (forskningsläget)
-                </td>
-                <td className="py-1.5 align-top">
-                  &gt; 0,35 ⇒ magert (inträde); ≤ 0,30 krävs för att lämna
-                  magert
-                </td>
-              </tr>
-              <tr className="border-t border-gold/10">
-                <td className="py-1.5 pr-4 align-top">
-                  N — netto fundamental vågbredd (−1…+1)
-                </td>
-                <td className="py-1.5 pr-4 align-top">
-                  Senaste vågskanningen (12 vågbolag)
-                </td>
-                <td className="py-1.5 align-top">
-                  ≤ −0,20 ⇒ korrigering; ≥ +0,20 ⇒ expansiv (kräver G ≥ 0,10);
-                  redovisas som <em>osatt</em> tills minst 30 vågbolag mäts —
-                  därför vilar regimen idag enbart på G/R
-                </td>
-              </tr>
-              <tr className="border-t border-gold/10">
-                <td className="py-1.5 pr-4 align-top">
-                  Σu — universumets årsvolatilitet
-                </td>
-                <td className="py-1.5 pr-4 align-top">Vågkonen (per bolag)</td>
-                <td className="py-1.5 align-top">
-                  &gt; 25 % ⇒ regimebyte kräver 3 bekräftade snapshots i
-                  stället för 2 (osatt värde ⇒ standard 2)
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="mt-4 rounded-lg border border-gold/30 bg-card p-4 text-sm leading-relaxed text-muted-foreground">
+          {/* Mobil: vertikala indikatorkort (våg 78 A9 — ALA tabeller ska ha
+              ett mobil-vertikalt läge); tabell från md och uppåt. */}
+          <ol className="space-y-2 md:hidden">
+            {AKM3_RADER.map((r) => (
+              <li
+                key={r.indikator}
+                className="rounded-xl border border-gold/20 bg-paper p-3"
+              >
+                <span className="block font-serif text-base font-bold text-foreground">
+                  {r.indikator}
+                </span>
+                <span className="mt-1 block">
+                  <strong className="text-foreground">Källa:</strong> {r.kalla}
+                </span>
+                <span className="mt-1 block">
+                  <strong className="text-foreground">Trösklar (öppna tal):</strong>{" "}
+                  {r.troskel}
+                </span>
+              </li>
+            ))}
+          </ol>
+
+          {/* Desktop: tabell */}
+          <div className="hidden overflow-x-auto md:block">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="text-left text-foreground">
+                  <th className="py-1.5 pr-4 font-semibold">Indikator</th>
+                  <th className="py-1.5 pr-4 font-semibold">Källa</th>
+                  <th className="py-1.5 font-semibold">Trösklar (öppna tal)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {AKM3_RADER.map((r) => (
+                  <tr key={r.indikator} className="border-t border-gold/10">
+                    <td className="py-1.5 pr-4 align-top">{r.indikator}</td>
+                    <td className="py-1.5 pr-4 align-top">{r.kalla}</td>
+                    <td className="py-1.5 align-top">{r.troskel}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <p className="mt-3">
             Etiketter: <strong>balanserad</strong>, <strong>expansiv</strong>,{" "}
             <strong>magert</strong>, <strong>korrigering</strong> eller{" "}

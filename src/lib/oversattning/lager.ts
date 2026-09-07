@@ -717,18 +717,41 @@ export async function lasRadEfterId(id: number): Promise<OversattningRadLas | nu
  * inte svarar (den primära spegelläsningen är oförändrad). Nyast först +
  * senaste-vinner-dedupe + status-filter i koden (ren kärna: se
  * mosSpegelKartaUrRader).
+ *
+ * VÅG 78 C #2 — SIDUPPDELAD läsning (Range-header, 1 000 rader i taget):
+ * flaggskeppskurserna har >1 000 event-rader per slug (ak1ts-vaglarans-
+ * hierarki 1 080, the-intelligent-investor 1 008) och det gamla limit=1000-
+ * fönstret skar av de äldsta nycklarna (EN 73 % ⇒ noindex i prod). Samma
+ * totala ordning som alltid (created_at.desc,id.desc — id.desc ger
+ * determinism bland ties, se MOS_ORDNING) gör offset-sidningen stabil, och
+ * dedupe senaste-vinner sker ÖVER ALLA sidor tillsammans. Tak 10 sidor =
+ * 10 000 rader per slug — gott om marginal (största slugen ≈ 1 100 rader).
+ * Server-side funktion som memo-cachas av anroparen (hamtaKursOversattningar)
+ * — en extra sida kostar en REQUEST, inte en sidrendering.
  */
+const SPEGEL_MAX_Sidor = 10;
+
 export async function lasPubliceradeForSpegel(slug: string): Promise<Map<string, Map<string, string>>> {
-  const res = await restForfragning(
-    EVENTS,
-    "?type=eq." + MOS_EVENT_TYP +
-      "&details->>scope_nyckel=like." + fv(slug + ":*") +
-      "&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text" +
-      MOS_ORDNING + "&limit=1000",
-    { method: "GET", timeoutMs: 12_000 },
-  );
-  if (!res.ok) await sankaFel(res);
-  const rader = (await res.json()) as MosEventLasRad[];
+  const rader: MosEventLasRad[] = [];
+  for (let sida = 0; sida < SPEGEL_MAX_Sidor; sida++) {
+    const fran = sida * SIDSTORLEK;
+    const res = await restForfragning(
+      EVENTS,
+      "?type=eq." + MOS_EVENT_TYP +
+        "&details->>scope_nyckel=like." + fv(slug + ":*") +
+        "&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text" +
+        MOS_ORDNING,
+      {
+        method: "GET",
+        headers: { Range: fran + "-" + String(fran + SIDSTORLEK - 1) },
+        timeoutMs: 12_000,
+      },
+    );
+    if (!res.ok) await sankaFel(res);
+    const sidRader = (await res.json()) as MosEventLasRad[];
+    rader.push(...sidRader);
+    if (sidRader.length < SIDSTORLEK) break; // sista sidan — slugen är helt läst
+  }
   return mosSpegelKartaUrRader(rader, slug);
 }
 

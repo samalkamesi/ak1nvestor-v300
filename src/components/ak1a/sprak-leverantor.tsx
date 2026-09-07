@@ -1,12 +1,14 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
 import {
   dirForSprak,
   hamtaSprak,
   oversatt,
   oversattText,
   sparaSprak,
+  sprakPrefix,
   type SprakId,
   type SprakParametrar,
 } from "@/lib/sprak";
@@ -75,13 +77,21 @@ function lasServerSprak(): SprakId {
 
 export function SprakLeverantor({ children }: { children: React.ReactNode }) {
   const sprak = useSyncExternalStore(prenumerera, lasKlientSprak, lasServerSprak);
+  const pathname = usePathname() ?? "/";
 
   // <html lang> + <html dir> — extern-systemsynk vid varje byte (ar ⇒ rtl).
+  // VÅG 78 C #6: på spegelroutrar (/en/**, /ar/**) vinner SPEGELNS språk —
+  // sidinnehållet är på spegelns språk oavsett UI-val (tillsammans med
+  // inline-skripten i src/app/{en,ar}/layout.tsx som täcker första
+  // SSR-passet). pathname i deps: SprakVäxlarens router.push in/ut ur
+  // speglar ska synkas direkt — utanför speglarna följer <html> UI-språket
+  // som förr (oförändrat beteende).
   useEffect(() => {
     if (typeof document === "undefined") return;
-    document.documentElement.lang = sprak;
-    document.documentElement.dir = dirForSprak(sprak);
-  }, [sprak]);
+    const htmlSprak: SprakId = sprakPrefix(pathname) ?? sprak;
+    document.documentElement.lang = htmlSprak;
+    document.documentElement.dir = dirForSprak(htmlSprak);
+  }, [sprak, pathname]);
 
   const setSprak = useCallback((ny: SprakId) => {
     lagerSprak = ny;

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SIFFROR } from "@/lib/siffror";
+import { PRISER, kr } from "@/lib/variabler";
 import { getCourses, getBlogPosts } from "@/lib/content";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
 import { EKOSYSTEM } from "@/lib/ekosystem";
@@ -1055,9 +1056,9 @@ function fas3Svar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
   return {
-    svar: `Precis rätt fråga — här är hur faser och certifiering hänger ihop. Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
+    svar: `Precis rätt fråga — här är hur faser och certifiering hänger ihop. Fas 3 (${kr(PRISER.fas3EnGang)} kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
 • Fas 1 — hela biblioteket (${SIFFROR.kurser} kurser, kalkylatorn, portföljsystemet): gratis för alltid.
-• Fas 2 (9 999 kr) — den fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu analyserade och sammanvägda på rätt sätt med stöd av 18 mästarverk (värdering, bokslut, redovisning, företagsfinans), oändligt med timmar med grundaren och chansen att bli representant för AK1nvestor. 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
+• Fas 2 (${kr(PRISER.fas2EnGang)} kr) — den fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu analyserade och sammanvägda på rätt sätt med stöd av 18 mästarverk (värdering, bokslut, redovisning, företagsfinans), oändligt med timmar med grundaren och chansen att bli representant för AK1nvestor. 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd. Ingen teknisk analys här — den hör hemma i Fas 3; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
 • Fas 3 — allt i Fas 2 plus det dynamiska ekosystemet: AKM1 × AK1TS, Vågfundamentet, Konfluensradarn och Portföljens vågor, teknisk analys på mästarnivå, trading-psykologi samt dashboard med AI-koppling och rapporter — och rätt till alla framtida utvecklingar.
 • Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
 Kraven växer alltså ur vad du faktiskt gör här i labbet — inte ur vad du betalar.`,

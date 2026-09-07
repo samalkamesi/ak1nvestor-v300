@@ -123,11 +123,39 @@ export const OVERSATTA_ROUTES: Record<string, SpegelVagar> = {
   "/logga-in": { en: "/en/logga-in", ar: "/ar/logga-in" },
   "/om-oss": { en: "/en/om-oss", ar: "/ar/om-oss" },
   "/kurser": { en: "/en/kurser", ar: "/ar/kurser" },
+  // VÅG 78 C #5: blogg-listan har speglar sedan våg 55 (indexbara, i sitemap).
+  "/blogg": { en: "/en/blogg", ar: "/ar/blogg" },
   "/fas2-ansok": { en: "/en/fas2-ansok", ar: "/ar/fas2-ansok" },
   "/fas3": { en: "/en/fas3", ar: "/ar/fas3" },
   "/prenumeration": { en: "/en/prenumeration", ar: "/ar/prenumeration" },
   "/transparens": { en: "/en/transparens", ar: "/ar/transparens" },
 };
+
+/**
+ * Dynamiska detaljside-mönster (VÅG 78 C #5): speglar vars sökväg följer ett
+ * förutsägbart mönster — /{sprak} + samma rest. ENDAST segment som verkligen
+ * har speglar för VARJE slug idag: kurser (alla kurser har /en+/ar-speglar
+ * sedan våg 52+) och bloggposter (alla inlägg sedan våg 55). Nya spegeldetalj-
+ * typer läggs till här först när deras rutter är monterade — annars navigerar
+ * växlaren till en 404.
+ */
+const OVERSATTA_MONSTER: readonly string[] = ["/kurser/", "/blogg/"];
+
+/**
+ * Spegel-vägar för en svensk bas-sökväg: registrerad rad först, därefter
+ * mönster-match (/kurser/x ⇒ /en/kurser/x + /ar/kurser/x). Null = ingen
+ * spegel. Slug-resten måste vara icke-tom ("/kurser/" i sig är ingen sida).
+ */
+function vagarForBas(bas: string): SpegelVagar | null {
+  const registrerad = OVERSATTA_ROUTES[bas];
+  if (registrerad) return registrerad;
+  for (const prefix of OVERSATTA_MONSTER) {
+    if (bas.startsWith(prefix) && bas.length > prefix.length) {
+      return { en: "/en" + bas, ar: "/ar" + bas };
+    }
+  }
+  return null;
+}
 
 /** Har sökvägen ett /en- eller /ar-prefix? Returnerar språket eller null. */
 export function sprakPrefix(sokvag: string): SprakId | null {
@@ -147,16 +175,19 @@ export function basSokvag(sokvag: string): string {
 /**
  * Spegel-sökvägen för ett språkval — eller null om sidan saknar spegel.
  * Exempel: på /medlemskap + "en" ⇒ "/en/medlemskap"; på /en/kurser + "sv" ⇒
- * "/kurser"; på /en/kurser + "ar" ⇒ "/ar/kurser". Svenska på svensk sida
- * returnerar sökvägen oförändrad (ingen navigering behövs).
+ * "/kurser"; på /en/kurser + "ar" ⇒ "/ar/kurser". VÅG 78 C #5: även DETALJ-
+ * sidor via mönster — /kurser/v09-roe + "en" ⇒ "/en/kurser/v09-roe", och på
+ * spegeln /ar/blogg/vad-ar-roe + "sv" ⇒ TILLBAKA till "/blogg/vad-ar-roe".
+ * Svenska på svensk sida returnerar sökvägen oförändrad (ingen navigering).
  */
 export function spegelSokvag(sokvag: string, mal: SprakId): string | null {
   const bas = basSokvag(sokvag);
   if (mal === "sv") {
-    // Endast navigering om vi står på en spegel och basen är registrerad.
-    return sprakPrefix(sokvag) && bas in OVERSATTA_ROUTES ? bas : null;
+    // Endast navigering om vi står på en spegel och basen har en spegel
+    // (registrerad ruta ELLER detaljside-mönster — se vagarForBas).
+    return sprakPrefix(sokvag) && vagarForBas(bas) ? bas : null;
   }
-  const vagar = OVERSATTA_ROUTES[bas];
+  const vagar = vagarForBas(bas);
   return vagar ? vagar[mal] : null;
 }
 

@@ -74,7 +74,8 @@ export async function publiceraOrganEvent(input: OrganEventInput): Promise<boole
  *
  * KONVENTION (dokumenterad i forskning-organ-arkitektur.md §3.4 och här):
  * - Namn: "ak1a:<domän>-<händelse>", gärna med bindestreck — aldrig fritext.
- *   Befintliga: "ak1a:oppna-sok", "ak1a:shortseller-attacka",
+ *   Befintliga: "ak1a:oppna-sok", "ak1a:oppna-mentor" (chat-widget, våg 78
+ *   B7 — detail { fraga? } förhandsfyller frågefältet), "ak1a:shortseller-attacka",
  *   "ak1a:shortseller-uppdaterad". Nya organ-event sänder "ak1a:organ-event"
  *   med detail { organ, verb, status, matt }.
  * - Mönstret: EN poll (t.ex. KroppsvyKort → /api/kropp var 60:e sekund) jämför

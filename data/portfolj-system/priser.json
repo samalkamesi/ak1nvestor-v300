@@ -31,6 +31,12 @@
     "fas3": 0.2,
     "beskrivning": "Medlemmar i Fas 2 och Fas 3 får 20 % rabatt på alla nivåer, alltid och automatiskt."
   },
+  "fas": {
+    "fas2EnGang": 9999,
+    "fas3EnGang": 13999,
+    "fas3IntroManad": 299,
+    "notering": "VÅG 78 A6: Fas-utbildningarnas priser (våg 78 tidigare hårdkodade på 8+ ställen i src-copy). fas2EnGang/fas3EnGang = engångspris för 12 månaders åtkomst, SEK inkl. 25 % moms. fas3IntroManad = introduktionspris (kr/mån, exkl. moms) det första året på Pro Analytiker för Fas 3-certifierad analytiker (användarvillkoren P3) — dokumenterat i B2-beslutet."
+  },
   "juridiskFotnot": "Forskningsbaserad analys — inte investeringsrådgivning enligt lagen (2007:528) om värdepappersrörelser. AK1A Portföljforskning är pedagogiskt utbildningsmaterial inom AK1A Research Lab; kunden fattar alltid egna beslut och bär eget ansvar för dem.",
   "b2b": {
     "notering": "B2B-BESLUT §3.4 alternativ A — flat kr/mån/seat exkl. moms. Våg 77: flyttade ur /pro/priser/page.tsx till denna enda källa (variabelregistret).",

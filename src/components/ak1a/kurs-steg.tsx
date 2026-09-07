@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
-import { addXP, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKursKlar } from "@/lib/member-local";
+import { addXP, addStjarna, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKursKlar } from "@/lib/member-local";
 import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
@@ -143,6 +143,15 @@ export function KursSteg({
           // gick då förlorad. geBadge är idempotent (räknar ej dubbelt).
           geBadge("forsta-kurs-klar");
           if (nysynkad) {
+            // VÅG 78 B4b: belöningen följer PRESTATIONEN, inte vägen.
+            // Quiz-fullpoäng ger samma +50 XP + 1 ★ som NivaBar-knappen —
+            // markeraKursKlar är idempotent så belöningen utdelas EXAKT en
+            // gång per kurs oavsett vilken stig som kommer först.
+            const nivaEfterKlar = addXP(50);
+            addStjarna();
+            setXp(lasXP());
+            setStjarnor(lasStjarnor());
+            if (nivaEfterKlar > nivaFore) setNivaUpp(nivaEfterKlar);
             const klara = lasKlaraKurser().length;
             [5, 10, 25, 50, 100].forEach((m) => { if (klara >= m) geBadge(`kurser-${m}`); });
             if (ORIGINAL_BOKMASTER.includes(kurs.slug)) geBadge("forsta-bokmaster");

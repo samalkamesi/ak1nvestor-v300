@@ -94,6 +94,7 @@ const FLAGGSKEPP_SLUGS = [
 
 /** Kortdata för de utvalda sektionerna — samma fält som registret. */
 function kurKort(c: Course) {
+  const quiz = c.chapters.reduce((s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0), 0);
   return {
     slug: c.slug,
     title: c.title,
@@ -101,8 +102,10 @@ function kurKort(c: Course) {
     kapitel: c.chapters.length,
     minuter: c.totalMinutes || c.minutes,
     learn: c.learn,
-    xp: c.xp,
-    quiz: c.chapters.reduce((s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0), 0),
+    // VÅG 78 B4a: verkligt intjänbar XP (quiz×10 + 50 klar-bonus) — xp-fältet
+    // i deep-courses.json stämmer inte med quizet (333/333 kurser avviker).
+    xp: quiz * 10 + 50,
+    quiz,
     fas: kraverFas(c.slug),
   };
 }
@@ -251,7 +254,12 @@ export default function KurserPage() {
           category: c.category,
           kapitel: c.chapters.length,
           minuter: c.totalMinutes || c.minutes,
-          xp: c.xp,
+          // VÅG 78 B4a: verkligt intjänbar XP (quiz×10 + 50 klar-bonus)
+          xp:
+            c.chapters.reduce(
+              (s, k) => s + ((k as { quiz?: unknown[] }).quiz?.length ?? 0),
+              0
+            ) * 10 + 50,
         }))}
         sidopanel={<FortsattPanel />}
       >

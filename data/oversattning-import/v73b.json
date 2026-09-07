@@ -3847,6 +3847,136 @@
    "nyckel": "this-time-is-different:kap14:quiz3:tips",
    "en": "AK1A's Bayesian reweighting exists to welcome corrections — not to rebut them.",
    "ar": "إعادة الوزن البايزية لدى AK1A موجودة للترحيب بالتصحيحات — لا لردها."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:titel",
+   "en": "Summary — the book of base rates (V10, V11, V19)",
+   "ar": "خلاصة — كتاب التكرارات الأساسية (V10، V11، V19)"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:intro",
+   "en": "The last chapter assembles everything: R&R as the AK1A library's macro superstructure — the frequency table behind Kindleberger's story and Galbraith's drama — and the personal arsenal: the crisis watch's five indicators, the risk matrix's five numbers and the data ethics' four tests. Plus the final differentiation: what the data-driven investor does that the narrator never can.",
+   "ar": "الفصل الأخير يجمع كل شيء: R&R بوصفه البنية الفوقية الكلية لمكتبة AK1A — جدول التكرارات خلف حكاية Kindleberger ودراما Galbraith — والترسانة الشخصية: مؤشرات مراقبة الأزمات الخمسة، وأرقام مصفوفة المخاطر الخمسة، واختبارات أخلاقيات البيانات الأربعة. زد على ذلك التمايز الأخير: ما يفعله المستثمر المدفوع بالبيانات ولا يستطيع الراوي فعله أبدًا."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block1",
+   "en": "The placement in the library, one last time, now with everything in place. Kindleberger gives the MECHANISM: Minsky's five phases explain why bubbles form, burn out and collapse — the narrative core. Galbraith gives the FEELING: what it was like to live 1929, when everyone knew and no one acted — the drama and the folly in close-up. R&R give the FREQUENCIES: how often crises come (rhythm over 800 years — banking crises in rich countries about once per generation when the financial sector is liberalized, defaults in clusters with decades between), how deep they are (chapter 8's five numbers) and how long (housing six years down, unemployment five years up). Together: the mechanism builds the scenario story, the frequencies dimension it, the feeling keeps you honest about what the dimensioning costs psychologically. AKM1 scores the company — R&R score the world the company lives in. A stock analysis without a macro superstructure is a wall without a house: pretty, but it does not stand alone.",
+   "ar": "الموضع في المكتبة مرة أخيرة، الآن وكل شيء في مكانه. Kindleberger يعطي الآلية: أطوار Minsky الخمسة تفسر لماذا تتشكل الفقاعات وتخبو وتنهار — النواة السردية. Galbraith يعطي الإحساس: كيف كانت الحياة عام 1929 حين عرف الجميع ولم يتحرك أحد — الدراما والحمق في لقطة مقربة. R&R يعطيان التكرارات: كم مرة تجيء الأزمات (إيقاع عبر 800 عام — أزمات مصرفية في البلدان الغنية نحو مرة كل جيل حين يكون القطاع المالي محررًا، وفشل سداد في عناقيد بفواصل عقود)، وكم هي عميقة (أرقام الفصل 8 الخمسة) وكم تدوم (مساكن ست سنوات هبوطًا، وبطالة خمس سنوات صعودًا). معًا: الآلية تبني حكاية السيناريو، والتكرارات تحدد أحجامها، والإحساس يبقيك أمينًا بشأن ما يكلفه التحديد نفسيًا. AKM1 تقيّم الشركة — وR&R يقيّمان العالم الذي تعيش فيه الشركة. تحليل سهم بلا بنية فوقية كلية جدار بلا بيت: جميل، لكنه لا يقف وحده."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block2",
+   "en": "The crisis watch's five indicators — R&R's data distilled into a watchlist, built for AK1A's scenario and risk modules. One: CREDIT GROWTH — total credit to the private sector as share of GDP, relative to trend; a rapid upward deviation is the single strongest forerunner of banking crises in the database. Two: HOUSING PRICES — real prices against incomes and against trend; housing falls nationally in severe crises, which the syndrome denies and the table proves. Three: CURRENT ACCOUNT — large deficits in advanced economies are historically rare outside crisis processes; the USA's deficit before 2007 was a great warning. Four: GOVERNMENT DEBT AND DEFAULT HISTORY — total debt, external plus domestic, read against the country's serial default record; debt intolerance is country-specific, and history is the fundamental. Five: THE SYNDROME ITSELF — when leaders and press explain that new structures have made old measures obsolete, the claim is in itself a data point with frequency support. At each indicator: set thresholds today, write down what you do when they are struck, and let the risk matrix carry chapter 8's five numbers as base rate for the swan scenario. A crisis watch without predetermined answers is just a collection of curves — not a course of action — that you will rationalize away in the euphoria phase.",
+   "ar": "مؤشرات مراقبة الأزمات الخمسة — بيانات R&R مقطرة في قائمة متابعة، مبنية لوحدتي السيناريوهات والمخاطر لدى AK1A. واحدة: نمو الائتمان — إجمالي الائتمان للقطاع الخاص نسبة إلى الناتج، مقارنة بالاتجاه؛ فالانحراف السريع صعودًا أقوى مقدمات الأزمات المصرفية في قاعدة البيانات على الإطلاق. ثانية: أسعار المساكن — أسعار حقيقية مقابل الدخول ومقابل الاتجاه؛ فالمساكن تهبط قوميًا في الأزمات الشديدة، وهو ما تنكره المتلازمة ويثبته الجدول. ثالثة: الحساب الجاري — العجوزات الكبيرة في الاقتصادات المتقدمة نادرة تاريخيًا خارج مسارات الأزمات؛ وكان عجز الولايات المتحدة قبل 2007 إنذارًا كبيرًا. رابعة: الدين الحكومي وتاريخ الفشل — الدين الكلي، الخارجي زائد الداخلي، مقروءًا مقابل سجل الفشل المتسلسل للبلد؛ فعدم تحمل الديون خاص بكل بلد، والتاريخ هو الأساس. خامسة: المتلازمة ذاتها — حين يفسر القادة والإعلام أن بنى جديدة جعلت المقاييس القديمة متقادمة، فالادعاء بذاته نقطة بيانات ذات سند تكراري. عند كل مؤشر: ضع العتبات اليوم، واكتب ما تفعله حين تُضرب، ودع مصفوفة المخاطر تحمل أرقام الفصل 8 الخمسة تكرارًا أساسيًا لسيناريو البجعة. مراقبة أزمات بلا أجوبة محددة سلفًا ليست إلا مجموعة منحنيات، وستبرر إهمالها في طور النشوة — وهذا ما تحذرك منه الدورة."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block3",
+   "en": "The legacy, doubled. The bright: This Time Is Different is financial history's greatest argument that history — as data — is the investor's most undervalued information source; no other book has converted eight centuries of collapses into usable base rates, and the book's appendix, with its published chronologies, is a model of what open research looks like. The dark: the same authors' weakest result held for three years as justification for policy that deepened recessions for millions, until a doctoral student's homework turned the sign — from minus 0,1 to plus 2,2. Both legacies belong to the course, and together they are AK1A's program: data can fail, be abused and dominate — but the answer to deficient data is never less data. The answer is more open data, harder replication, outliers respected and correlations kept at arm's length from causal statements. The investor who carries the book's five numbers in the risk matrix and Herndon's three findings in the methodology — openness, replication, humility — carries R&R's entire legacy: the base rates' power and their limits. That is AK1A's way of reading This Time Is Different: as a warning against four words — and as a manual for never having to believe instead of knowing.",
+   "ar": "الإرث مزدوج. المشرق: This Time Is Different أقوى حجج التاريخ المالي على أن التاريخ — بوصفه بيانات — هو أكثر مصادر المعلومات دون تقدير لدى المستثمر؛ لا كتاب آخر حوّل ثمانية قرون من الانهيارات إلى تكرارات أساسية قابلة للاستخدام، وملحق الكتاب، بسلاسله المنشورة، نموذج لما تبدو عليه البحوث المفتوحة. والمظلم: أضعف نتيجة لدى المؤلفَين نفسيهما صمدت ثلاث سنوات مسوغًا لسياسة عمّقت الركود لملايين البشر، إلى أن قلب واجب طالب دكتوراه الإشارة — من سالب 0,1 إلى زائد 2,2. الإرثان كلاهما يخصان الدورة، وهما معًا برنامج AK1A: البيانات قد تخفق ويُساء إليها وتهيمن — لكن الجواب عن البيانات الناقصة ليس أبدًا بيانات أقل. الجواب بيانات أكثر انفتاحًا، وتكرارًا أشد، وقيمًا شاذة تُحترم، والارتباطات تُبقى على بعد ذراع من عبارات السببية. المستثمر الذي يحمل أرقام الكتاب الخمسة في مصفوفة المخاطر واكتشافات Herndon الثلاثة في المنهجية — انفتاح، وتكرار، وتواضع — يحمل إرث R&R كاملًا: قوة التكرارات الأساسية وحدودها. هكذا تقرأ AK1A كتاب This Time Is Different: تحذيرًا من أربع كلمات — ودليلًا عمليًا كي لا تضطر أبدًا إلى الاعتقاد بدلًا من أن تعرف."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block4",
+   "en": "The book's title is its own warning and its own proof: over eight centuries the four words this time is different have cost more than all wars together — and whoever said them about R&R's own 90-percent figure was also wrong. The final rule: when you hear the phrase — in the market, in politics or in your own head — look up the frequency table before you strike. Base rates against four words; that is the whole course.",
+   "ar": "عنوان الكتاب تحذيره وبرهانه: عبر ثمانية قرون كلفت الكلمات الأربع this time is different أكثر من كل الحروب مجتمعة — ومن قالها عن رقم الـ90 بالمئة نفسه لدى R&R كان مخطئًا أيضًا. القاعدة الأخيرة: حين تسمع العبارة — في السوق أو السياسة أو في رأسك — ارجع إلى جدول التكرارات قبل أن تضرب. التكرارات الأساسية في مقابل أربع كلمات؛ تلك هي الدورة كلها."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block5",
+   "en": "{\"rubrik\":\"This Time Is Different to AK1A — the translation table\",\"rader\":[[\"The book's building block\",\"AKM1 / module\",\"Role\"],[\"The aftershock table (GDP -9, unemployment +7, housing -35, stocks -56, debt +86)\",\"risk matrix + Monte Carlo\",\"base rates for the swan scenario\"],[\"The crisis watch's five indicators\",\"the scenario module\",\"early warning — credit growth, housing, current account, debt, the syndrome\"],[\"Serial default and debt intolerance\",\"V10 with history's weight\",\"same ratio, different risk — history is the fundamental\"],[\"Liquidity mechanics and banking crises\",\"V11\",\"banking crisis = liquidity crisis dressed in a solvency question; Bagehot's template\"],[\"Currency mismatch and twin crises\",\"V19 + V10 stress\",\"which currency does the debt sleep in, which do the revenues wake up in?\"],[\"Hidden domestic debt\",\"V10 total count\",\"pension, leasing, guarantees — the iceberg counted in\"],[\"The Herndon case\",\"the data ethics' four tests\",\"source and selection, replication, outlier sensitivity, direction\"],[\"Inflation and repression\",\"real return control\",\"nominal is not real — soft default exists even in rich countries\"]]}",
+   "ar": "{\"rubrik\":\"This Time Is Different إلى AK1A — جدول الترجمة\",\"rader\":[[\"لبنة الكتاب\",\"AKM1 / الوحدة\",\"الدور\"],[\"جدول الارتدادات (الناتج -9، البطالة +7، المساكن -35، الأسهم -56، الدين +86)\",\"مصفوفة المخاطر + Monte Carlo\",\"تكرارات أساسية لسيناريو البجعة\"],[\"مؤشرات مراقبة الأزمات الخمسة\",\"وحدة السيناريوهات\",\"إنذار مبكر — نمو الائتمان، المساكن، الحساب الجاري، الدين، المتلازمة\"],[\"الفشل المتسلسل وعدم تحمل الديون\",\"V10 بوزن التاريخ\",\"النسبة نفسها والمخاطر مختلفة — التاريخ هو الأساس\"],[\"ميكانيكا السيولة والأزمات المصرفية\",\"V11\",\"الأزمة المصرفية = أزمة سيولة في ثوب مسألة ملاءة؛ قالب Bagehot\"],[\"عدم توافق العملة والأزمات التوأم\",\"V19 + ضغط V10\",\"في أي عملة ينام الدين، وفي أي عملة تستيقظ الإيرادات؟\"],[\"الدين الداخلي الخفي\",\"الجرد الكلي لV10\",\"معاشات، تأجير، ضمانات — جبل الجليد يُحتسب\"],[\"قضية Herndon\",\"اختبارات أخلاقيات البيانات الأربعة\",\"المصدر والاختيار، التكرار، الحساسية للقيم الشاذة، الاتجاه\"],[\"التضخم والقمع\",\"رقابة العائد الحقيقي\",\"الاسمي ليس حقيقيًا — الفشل الناعم موجود حتى في البلدان الغنية\"]]}"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:block6",
+   "en": "The final project — build your crisis watch: one page, dated. Column one: the five indicators for your home market with current level and your threshold (credit growth against trend, real housing prices against incomes, current account, total government debt and default history, plus the latest this-time claim you encountered). Column two: chapter 8's five numbers as swan scenario in your risk matrix — and the written plan from chapter 8's challenge. Column three: the Herndon test — choose one figure from column one and run the four tests. Finish with your conclusion in one sentence: which base rate surprised you most — and what difference does it make for your portfolio today? Date and save the document for next year's re-evaluation.",
+   "ar": "المشروع الختامي — ابنِ مراقبة أزماتك: صفحة واحدة، مؤرخة. العمود الأول: المؤشرات الخمسة لسوقك المحلي بالمستوى الراهن وعتبتك (نمو الائتمان مقابل الاتجاه، وأسعار المساكن الحقيقية مقابل الدخول، والحساب الجاري، وإجمالي الدين الحكومي وتاريخ الفشل، زد آخر ادعاء من نوع «هذه المرة» صادفته). العمود الثاني: أرقام الفصل 8 الخمسة سيناريو بجعة في مصفوفة المخاطر لديك — والخطة المكتوبة من التحدي في الفصل 8. العمود الثالث: اختبار Herndon — اختر رقمًا من العمود الأول وشغّل الاختبارات الأربعة. اختم بخلاصتك في جملة: أي تكرار أساسي فاجأك أكثر — وما فرقه بالنسبة إلى المحفظة لديك اليوم؟ أرّخ الوثيقة واحفظها لمراجعة السنة القادمة."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:q",
+   "en": "What is the correct division of labor between Kindleberger, Galbraith and R&R in AK1A's library?",
+   "ar": "ما تقسيم العمل الصحيح بين Kindleberger وGalbraith وR&R في مكتبة AK1A؟"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:a0",
+   "en": "All three are stories and interchangeable",
+   "ar": "الثلاثة كلها حكايات وقابلة للتبديل"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:a1",
+   "en": "Kindleberger gives the mechanism (the five phases), Galbraith gives the feeling (one case in close-up) — R&R give the frequencies (how often, how deep, how long)",
+   "ar": "Kindleberger يعطي الآلية (الأطوار الخمسة)، وGalbraith يعطي الإحساس (حالة واحدة بلقطة مقربة) — وR&R يعطيان التكرارات (كم مرة، وكم عمقًا، وكم مدة)"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:a2",
+   "en": "R&R give the mechanism and Kindleberger the frequencies",
+   "ar": "R&R يعطيان الآلية وKindleberger التكرارات"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:a3",
+   "en": "Galbraith gives the frequencies and R&R the feeling",
+   "ar": "Galbraith يعطي التكرارات وR&R الإحساس"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz1:tips",
+   "en": "The story builds the scenario, the frequencies dimension it, the feeling keeps you honest about the price.",
+   "ar": "الحكاية تبني السيناريو، والتكرارات تحدد أحجامه، والإحساس يبقيك أمينًا بشأن الثمن."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:q",
+   "en": "Which of the following is NOT included in the crisis watch's five indicators?",
+   "ar": "أي مما يلي ليس ضمن مؤشرات مراقبة الأزمات الخمسة؟"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:a0",
+   "en": "Credit growth against trend",
+   "ar": "نمو الائتمان مقابل الاتجاه"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:a1",
+   "en": "Real housing prices against incomes",
+   "ar": "أسعار المساكن الحقيقية مقابل الدخول"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:a2",
+   "en": "The stock's dividend yield",
+   "ar": "مردود التوزيعات على السهم"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:a3",
+   "en": "Government debt read against the country's default history",
+   "ar": "الدين الحكومي مقروءًا مقابل تاريخ الفشل في السداد لدى البلد"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz2:tips",
+   "en": "The watch monitors the system the company lives in — not individual stocks' valuation.",
+   "ar": "المراقبة تراقب النظام الذي تعيش فيه الشركة — لا التقييم الخاص بالأسهم المنفردة."
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:q",
+   "en": "What is the course's last lesson of the whole R&R story — book and controversy together?",
+   "ar": "ما الدرس الأخير للدورة من قصة R&R كاملة — الكتاب والجدل معًا؟"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:a0",
+   "en": "That quantitative data cannot be trusted and should be avoided",
+   "ar": "بأن البيانات الكمية لا يوثق بها وينبغي تجنبها"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:a1",
+   "en": "That famous researchers' results are always right",
+   "ar": "بأن نتائج الباحثين المشهورين صائبة دائمًا"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:a2",
+   "en": "That the answer to deficient data is more open data, harder replication and humility — data-driven but always verifiable",
+   "ar": "بأن الجواب عن البيانات الناقصة بيانات أكثر انفتاحًا وتكرارًا أشد وتواضعًا — مدفوع بالبيانات لكن قابل للتحقق دائمًا"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:a3",
+   "en": "That austerity is always the right policy",
+   "ar": "بأن التقشف هو السياسة الصحيحة دائمًا"
+  },
+  {
+   "nyckel": "this-time-is-different:kap15:quiz3:tips",
+   "en": "Both legacies belong to the course: the base rates' power — and their limits.",
+   "ar": "كلا الإرثين يخص الدورة: قوة التكرارات الأساسية — وحدودها."
   }
  ]
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { spegelMetadata } from "@/lib/spegel-metadata";
+import { ORG_NR } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -160,8 +161,8 @@ export default function TransparensPageAr() {
             1. من المسؤول عن بياناتك
           </h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            المسؤول عن معالجة البيانات هو AK1A Research Lab، رقم المنظمة
-            [ORGANISATIONSNR]، للتواصل info@ak1nvestor.com (المادة 13.1 أ). لا
+            المسؤول عن معالجة البيانات هو AK1A Research Lab
+            {ORG_NR ? `، رقم المنظمة ${ORG_NR}` : ""}، للتواصل info@ak1nvestor.com (المادة 13.1 أ). لا
             لدينا حاليًا مسؤول رسمي لحماية البيانات — فذلك غير إلزامي لحجم
             نشاطنا — ونعالج مسائل الخصوصية مباشرة عبر جهة الاتصال أعلاه.
             أهم معالجي البيانات لدينا (موردون يعالجون البيانات لصالحنا،

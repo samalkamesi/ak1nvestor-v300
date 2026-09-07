@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { lasMedlem, lasXP, lasStjarnor, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
+import { lasMedlem, lasXP, lasStjarnor, lasKlaraKurser, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
 import { SIFFROR } from "@/lib/siffror";
 
 /**
@@ -73,7 +73,11 @@ export function NivaBar({ slug }: { slug: string }) {
   useEffect(() => {
     setXP(lasXP());
     setStjarnor(lasStjarnor());
-  }, []);
+    // VÅG 78 B4b: redan klarad kurs (t.ex. via quiz-fullpoäng, som numera
+    // utdelar samma belöning) visar status direkt — knappen dubbelbelönar
+    // aldrig (markeraKursKlar är idempotent per kurs).
+    setKlar(lasKlaraKurser().includes(slug));
+  }, [slug]);
 
   if (xp === null) return null;
 
@@ -116,7 +120,7 @@ export function NivaBar({ slug }: { slug: string }) {
         disabled={klar}
         className="mt-3 w-full rounded-lg border border-gold/40 px-4 py-2 text-xs font-bold text-gold hover:bg-gold/10 disabled:opacity-50"
       >
-        {klar ? "✓ Kurs markerad klar (+50 XP)" : "Markera kursen klar (+50 XP, +1 ★)"}
+        {klar ? "✓ Kurs klar — belöningen är utdelad" : "Markera kursen klar (+50 XP, +1 ★)"}
       </button>
     </div>
   );

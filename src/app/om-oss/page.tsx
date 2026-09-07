@@ -6,7 +6,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 export const metadata: Metadata = {
   title: "Om oss — AK1A Research Lab | Ak1 Apex Nexus",
   description:
-    "AK1A Research Lab är Sveriges enda institutionella analysmetodik byggd för privatpersoner. Bakom plattformen står Ak1 Apex Nexus och grundaren Sam Alkamesi.",
+    "AK1A Research Lab är en institutionell analysmetodik byggd för privatpersoner. Bakom plattformen står Ak1 Apex Nexus och grundaren Sam Alkamesi.",
   // Ömsesidig hreflang med /en|ar/om-oss (VÅG 63 O3 #2) — speglarna
   // deklarerar klustret sedan våg 51; originalet måste göra detsamma.
   alternates: {
@@ -126,9 +126,9 @@ export default function OmOssPage() {
             Ak1 Apex Nexus · info@ak1nvestor.com
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Link href="/medlemskap" className="rounded-lg bg-gold px-3 py-1.5 font-bold text-primary-foreground">Medlemskap</Link>
-            <Link href="/kurser" className="rounded-lg border border-gold/40 px-3 py-1.5 font-bold text-gold">Alla kurser</Link>
-            <Link href="/bibliotek" className="rounded-lg border border-gold/40 px-3 py-1.5 font-bold text-gold">Biblioteket</Link>
+            <Link href="/medlemskap" className="inline-flex min-h-[44px] items-center rounded-lg bg-gold px-4 font-bold text-primary-foreground">Medlemskap</Link>
+            <Link href="/kurser" className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/40 px-4 font-bold text-gold">Alla kurser</Link>
+            <Link href="/bibliotek" className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/40 px-4 font-bold text-gold">Biblioteket</Link>
           </div>
         </section>
       </div>

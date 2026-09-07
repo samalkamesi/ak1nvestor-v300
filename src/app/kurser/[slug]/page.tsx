@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
+import { kraverFas } from "@/lib/kurs-access";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { Fas2Gate } from "@/components/ak1a/fas2-gate";
-import { KursQuiz } from "@/components/ak1a/kurs-quiz";
-import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg, KapitelOversiktLank } from "@/components/ak1a/kurs-steg";
+import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artiklar";
+import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { Kallkort } from "@/components/ak1a/kallkort";
-import { RikText, SektionBryt } from "@/components/ak1a/rik-text";
 
 export const dynamic = "force-static";
 
@@ -55,6 +55,44 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
   const prenumNiva =
     priser?.nivaer.find((n) => n.id === "forskning") ?? priser?.nivaer[0] ?? null;
 
+  // ── VÅG 78 B1: SSR-säker Fas-gate ──
+  // Fas 2/3-kurser: servern renderar SMAKPROV (kapitel 1–2) + låst vy —
+  // kapitel 3+ hämtas på klienten efter lokal åtkomstkontroll och skickas
+  // ALDRIG i statiskt HTML/flight-payload. Gratis-kurser (fas 0) renderas
+  // som förut i sin helhet.
+  const fas = kraverFas(slug);
+
+  // ── VÅG 78 B4a: verkligt intjänbar XP ──
+  // Chippet lovar det quizet faktiskt betalar ut: 10 XP per fråga + 50 i
+  // klar-bonus (kurs.xp-fältet i deep-courses.json stämmer inte med quizet
+  // för 333/333 kurser — visa det verkliga intjänbara i stället).
+  const intjanbarXp =
+    course.chapters.reduce(
+      (s, ch) => s + ((ch as unknown as { quiz?: unknown[] }).quiz?.length ?? 0),
+      0
+    ) * 10 + 50;
+
+  // Smakprovet (kapitel 1–2) — det enda kapitelinnehåll som får serialiseras
+  // till Fas2Gate för fas-kurser. "Nästa:"-rader pekar på fulla TOC:n.
+  const smakprov: SmakprovKapitel[] = course.chapters.slice(0, 2).map((ch) => ({
+    num: ch.num,
+    title: ch.title,
+    intro: ch.intro,
+    minutes: ch.minutes,
+    blocks: (ch.blocks || []).map((b) => ({ type: String(b.type), content: String(b.content) })),
+    quiz: (ch as unknown as { quiz?: SmakprovKapitel["quiz"] }).quiz,
+  }));
+  const forsattning = course.chapters.map((ch) => ({ num: ch.num, title: ch.title }));
+
+  // Kursöversiktens intro-snuttar: kapitel 1–2 syns alltid (smakprov/SEO);
+  // för fas-kurser visas ingen prosa från kapitel 3+ i den statiska HTML:n
+  // (våg 78 B1) — titlar och tider får följa med (kurskorts-metadata).
+  const introSnutt = (ch: (typeof course.chapters)[number], langd: number): string | null => {
+    if (!ch.intro) return null;
+    if (fas > 0 && ch.num > 2) return null;
+    return ch.intro.slice(0, langd);
+  };
+
   return (
     <SeoPageShell
       wide
@@ -79,7 +117,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           {[
             `📖 ${course.chapters.length} kapitel`,
             `⏱ ${course.totalMinutes || course.minutes} min`,
-            course.xp ? `⚡ ${course.xp} XP` : null,
+            `⚡ ${intjanbarXp} XP`,
 
             `⚖ Vikt: ${course.weight || "6%"}`,
             `🏷 ${course.category}`,
@@ -122,7 +160,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                 <span className="min-w-0 flex-1">
                   <span className="block font-medium leading-snug">{ch.title}</span>
                   <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                    {ch.intro?.slice(0, 110)}{(ch.intro?.length || 0) > 110 ? "…" : ""}
+                    {introSnutt(ch, 110) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — låses med Fas ${fas}` : "")}
+                    {introSnutt(ch, 110) && (ch.intro?.length || 0) > 110 ? "…" : ""}
                   </span>
                 </span>
                 <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
@@ -159,7 +198,10 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                       {ch.num}. {ch.title}
                     </KapitelOversiktLank>
                   </td>
-                  <td className="p-3 text-muted-foreground">{ch.intro?.slice(0, 90)}{(ch.intro?.length || 0) > 90 ? "…" : ""}</td>
+                  <td className="p-3 text-muted-foreground">
+                    {introSnutt(ch, 90) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — låses med Fas ${fas}` : "")}
+                    {introSnutt(ch, 90) && (ch.intro?.length || 0) > 90 ? "…" : ""}
+                  </td>
                   <td className="p-3 text-right font-mono text-xs text-muted-foreground">{ch.minutes || 9} min</td>
                 </tr>
               ))}
@@ -172,16 +214,24 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      {/* Fas 2-gate — kurser i FAS2_KURSER låses bakom Fas 2-medlemskap.
-          Fas2Gate är en no-op för gratis-kurser (renderar barnen direkt). */}
-      <Fas2Gate
-        slug={slug}
-        titel={course.title}
-        kapitel={course.chapters.length}
-        xp={course.xp}
-        intro={course.chapters[0]?.intro}
-      >
-      {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
+      {/* ── VÅG 78 B1: SSR-säker Fas-gate ──
+          Fas 2/3-kurser: Fas2Gate renderar smakprov (kap 1–2) + låst vy i
+          SSR-passet och hämtar fullkursen på klienten för behöriga —
+          kapitel 3+ skickas aldrig i statiskt HTML. Gratis-kurser (fas 0):
+          som förut — hela innehållet direkt i KursGate (SSR/first paint). */}
+      {fas > 0 ? (
+        <Fas2Gate
+          slug={slug}
+          titel={course.title}
+          kapitel={course.chapters.length}
+          xp={intjanbarXp}
+          intro={course.chapters[0]?.intro}
+          smakprov={smakprov}
+          harQuiz={harQuiz}
+          prenumNiva={prenumNiva}
+          fortsattning={forsattning}
+        />
+      ) : (
       <KursGate slug={slug} titel={course.title}>
       {harQuiz ? (
         <KursSteg
@@ -200,77 +250,17 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           }}
         />
       ) : (
-      <section className="mt-10">
-        <h2 className="font-serif text-2xl font-bold">Kursinnehåll</h2>
-        <div className="mt-4 space-y-6">
-          {course.chapters.map((ch) => {
-            const insiktBlock = (ch.blocks || []).find((b) => b.type === "insikt");
-            const utmaningBlock = (ch.blocks || []).find((b) => b.type === "utmaning");
-            const text = (ch.blocks || [])
-              .filter((b) => b.type === "text")
-              .map((b) => String(b.content))
-              .join("\n\n");
-            const stycken = text.split(/\n\n+/);
-            const insikt = stycken.length > 1
-              ? (stycken.find((p) => p.length > 80 && p.length < 350) || "").split(/[.!?] /)[0]
-              : "";
-            return (
-              <article key={ch.num} id={`kap-${ch.num}`} className="scroll-mt-24 rounded-xl border border-gold/20 bg-card p-5">
-                <div className="flex items-start gap-3">
-                  <KapitelBadge num={ch.num} total={course.chapters.length} aktiv />
-                  <div className="min-w-0 flex-1">
-                    <h3 className="font-serif text-xl font-semibold">{ch.title}</h3>
-                    <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
-                      Kapitel {ch.num} av {course.chapters.length} · {ch.minutes || 9} min läsning
-                    </p>
-                  </div>
-                </div>
-                {ch.intro && (
-                  <p className="mt-3 border-l-2 border-gold/50 pl-3 text-sm italic text-muted-foreground">
-                    {ch.intro}
-                  </p>
-                )}
-                {insikt && (
-                  <div className="mt-3 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3">
-                    <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold"><InsiktPuls /> Nyckelinsikt</p>
-                    <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
-                  </div>
-                )}
-                <div className="mt-3 space-y-3">
-                  {stycken
-                    .filter((p) => p !== insikt)
-                    .map((p, i) => {
-                      const rader = p.split("\n");
-                      const listRader = rader.filter((r) => /^[•\-*]\s/.test(r.trim()));
-                      if (listRader.length >= 2) {
-                        return (
-                          <ul key={i} className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-foreground/90">
-                            {rader.map((r, j) =>
-                              /^[•\-*]\s/.test(r.trim()) ? <li key={j}>{r.trim().replace(/^[•\-*]\s*/, "")}</li> : null
-                            )}
-                          </ul>
-                        );
-                      }
-                      return (
-                        <RikText key={i} text={p} />
-                      );
-                    })}
-                </div>
-                {(ch as any).quiz && (
-                  <KursQuiz slug={slug} kapitelNr={ch.num} fragor={(ch as any).quiz} />
-                )}
-                <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
-                  <span className="h-px flex-1 bg-gold/20" />
-                  {ch.num < course.chapters.length ? `Nästa: ${course.chapters[ch.num]?.title || ""}` : "Kursen klar ⭐"}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      <KursArtiklar
+        slug={slug}
+        chapters={course.chapters as SmakprovKapitel[]}
+        total={course.chapters.length}
+        lang="sv"
+        rubrik="Kursinnehåll"
+        fortsattning={forsattning}
+      />
       )}
     </KursGate>
-    </Fas2Gate>
+      )}
 
     {/* Källverk — upphovsrättslig transparens: visas för alla BOKMASTER-kurser,
         även låsta (transparensen ska inte sitta bakom betalväggen). */}

@@ -4,11 +4,13 @@
  * MODELL (användarens direktiv 2026-09-03 — Fas-inversionen):
  *  - FAS 1 (gratis, för alltid): hela grundbiblioteket — fundamental grunder,
  *    V01–V20, bokkanonens grundnivåer.
- *  - FAS 2 (9 999 kr): DEN SNABBA FUNDAMENTALA VÄGEN till oberoende analytiker.
+ *  - FAS 2 (engångspris — se data/portfolj-system/priser.json + PRISER.fas2EnGang):
+ *    DEN SNABBA FUNDAMENTALA VÄGEN till oberoende analytiker.
  *    Enbart avancerad fundamental analys (värdering, bokslutsanalys, redovisning,
  *    penningströmmar) + chansen att bli representant för AK1nvestor.
  *    INGEN teknisk analys, INGA vågor, INGET ekosystem — det är Fas 3.
- *  - FAS 3 (13 999 kr + ev. månadsprenumeration för ekosystemet efter utbildning):
+ *  - FAS 3 (engångspris + ev. månadsprenumeration för ekosystemet efter
+ *    utbildning — se priser.json + PRISER.fas3EnGang):
  *    Det dynamiska ekosystemet — fundamentalanalys som rör sig: AKM1 × AK1TS,
  *    Vågfundamentet, Konfluensradarn, Portföljens vågor, teknisk analys på
  *    mästarnivå, trading-psykologi, dashboard + AI-koppling + rapporter, och

@@ -175,6 +175,10 @@ export function courseMetadata(course: Course) {
     title,
     description,
     type: "course",
+    // VÅG 78 C #4: hreflang-ÖMSESIDIGHET — speglar finns för ALLA kurser
+    // sedan våg 52+ (/{en,ar}/kurser/{slug} genereras per slug). Utan
+    // klustret på originalet kan Google förkasta hela sv/en/ar-klustret.
+    harSpeglar: true,
     keywords: gen?.keywords ?? [
       "AKM1",
       course.title,
@@ -230,6 +234,10 @@ export function blogMetadata(post: BlogPost) {
     description: gen?.description ?? clamp(post.description, 158),
     keywords: gen?.keywords ?? post.tags,
     type: "article",
+    // VÅG 78 C #4: hreflang-ÖMSESIDIGHET — alla bloggposter har speglar
+    // (/{en,ar}/blogg/{slug} sedan våg 55); originalet måste deklarera
+    // klustret tillbaka annars kan Google förkasta hela klustret.
+    harSpeglar: true,
     publishedTime: post.publishedAt,
   });
 }

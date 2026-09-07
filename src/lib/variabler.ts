@@ -14,8 +14,10 @@
  *                                 (genereras: node verktyg/rakna-siffror.mjs)
  *   data/portfolj-system/priser.json — ALLA priser: privatnivåer
  *                                 (forskning 249 / plus 449 / hyra 799 +
- *                                 årsplaner + fas-rabatt) och B2B-nivåer
- *                                 (499 / 1 499 / 4 999 + onboarding 9 900)
+ *                                 årsplaner + fas-rabatt), Fas-utbildningarna
+ *                                 (fas2EnGang / fas3EnGang / fas3IntroManad)
+ *                                 och B2B-nivåerna (499 / 1 499 / 4 999 +
+ *                                 onboarding 9 900)
  *
  * Steg 2-kö (dokumenterad i styrelsebeslutet): kanoniska strängar
  * (mejladresser, organisationsnamn, sociala URL:er) flyttas hit.
@@ -81,6 +83,32 @@ export function rabatterat(pris: number): number {
   return Math.round(pris * (1 - fasRabatt()));
 }
 
+/** Fas-utbildningarnas priser ur priser.json:s "fas"-sektion (våg 78 A6).
+ *  Fas 2/Fas 3 = engångspris för 12 månader (inkl. moms); fas3IntroManad =
+ *  introduktionspris kr/mån (exkl. moms) på Pro Analytiker för Fas
+ *  3-certifierad analytiker (villkoren P3). Saknas sektionen → 0. */
+export function fasPriser(): { fas2EnGang: number; fas3EnGang: number; fas3IntroManad: number } {
+  const f = (priserData as { fas?: { fas2EnGang?: number; fas3EnGang?: number; fas3IntroManad?: number } }).fas;
+  return {
+    fas2EnGang: f?.fas2EnGang ?? 0,
+    fas3EnGang: f?.fas3EnGang ?? 0,
+    fas3IntroManad: f?.fas3IntroManad ?? 0,
+  };
+}
+
+/** ORGANISATIONSNUMMER (våg 78 A2) — EN gemensam källa för alla juridiska
+ *  dokument (transparens, villkor, privacy-policy). TOM sträng = bolaget är
+ *  ännu inte registrerat: då renderas org.nr-raden INTE alls — aldrig en
+ *  "[ORGANISATIONSNR]"-platshållare publikt (GDPR art. 13.1 a kräver att
+ *  uppgiften är fullständig när den finns). Kunden fyller i värdet här när
+ *  registreringen är klar — alla ytor uppdateras vid nästa build. */
+export const ORG_NR = "";
+
+/** ", organisationsnummer 556677-8899" resp. ", org.nr 556677-8899" —
+ *  TOM sträng när ORG_NR ej är satt (rendrera då ingen rad alls). */
+export const ORG_NR_LANG = ORG_NR !== "" ? `, organisationsnummer ${ORG_NR}` : "";
+export const ORG_NR_KORT = ORG_NR !== "" ? `, org.nr ${ORG_NR}` : "";
+
 /** Presentationstal med svenskt tusentalsavstånd ("2 490"). */
 export const kr = (n: number) => n.toLocaleString("sv-SE");
 
@@ -96,6 +124,9 @@ export const PRISER = {
   b2bStudio: b2bNiva("pro-studio")?.prisManad ?? 0,
   b2bInstitution: b2bNiva("pro-institution")?.prisManad ?? 0,
   b2bOnboarding: b2bOnboarding(),
+  fas2EnGang: fasPriser().fas2EnGang,
+  fas3EnGang: fasPriser().fas3EnGang,
+  fas3IntroManad: fasPriser().fas3IntroManad,
 } as const;
 
 //Referens sånt radata läses (undviker oanvänd-varning; källfilen dokumenterad ovan).

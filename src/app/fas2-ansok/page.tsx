@@ -5,6 +5,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas2Ansok } from "@/components/ak1a/fas2-ansok";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { getCourseList } from "@/lib/content";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -70,7 +71,7 @@ export const metadata: Metadata = pageMetadata({
   harSpeglar: true, // Ömsesidig hreflang med /en|ar/fas2-ansok (VÅG 63 O3 #2)
   title: "Ansök om Fas 2 — den fundamentala vägen | AK1A",
   description:
-    "Fas 2 är den snabba fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt med stöd av 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Oändligt med timmar med grundaren tills du är värdig titeln oberoende analytiker, och chansen att bli representant för AK1nvestor. Ingen teknisk analys-utbildning — mästarnivån är Fas 3. 9 999 kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd.",
+    `Fas 2 är den snabba fundamentala vägen till oberoende analytiker: inget nytt — samma 20 analytiska indikatorer (V01–V20), nu sammanvägda på rätt sätt med stöd av 18 mästarverk — värdering (Graham & Dodd, Damodaran, McKinsey), bokslutsanalys (Penman, Schilit, O'Glove), finans (Higgins, Brealey) och värdeinvestering (Klarman, Greenwald, Einhorn) plus AKM1 på superdjup. Oändligt med timmar med grundaren tills du är värdig titeln oberoende analytiker, och chansen att bli representant för AK1nvestor. Ingen teknisk analys-utbildning — mästarnivån är Fas 3. ${kr(PRISER.fas2EnGang)} kr, 90 dagars nöjd-kund-garanti: betalning först efter 90 dagar om du förblir nöjd.`,
   keywords: [
     "Fas 2 ansökan",
     "fundamentalanalys utbildning Sverige",
@@ -95,7 +96,7 @@ export default function Fas2AnsokPage() {
       <article className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            Fas 2 · Den snabba fundamentala vägen · 9 999 kr
+            {`Fas 2 · Den snabba fundamentala vägen · ${kr(PRISER.fas2EnGang)} kr`}
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             Ansök om Fas 2

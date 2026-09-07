@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getCourses, getCourse } from "@/lib/content";
+import { getCourse, getCourses, type CourseChapter } from "@/lib/content";
 import { skapaT } from "@/lib/sprak";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import {
@@ -14,11 +14,11 @@ import {
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { Fas2Gate } from "@/components/ak1a/fas2-gate";
-import { KursQuiz } from "@/components/ak1a/kurs-quiz";
-import { LasProgress, KapitelBadge, InsiktPuls } from "@/components/ak1a/kurs-visuellt";
+import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artiklar";
+import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
 import { Kallkort } from "@/components/ak1a/kallkort";
-import { RikText } from "@/components/ak1a/rik-text";
+import { kraverFas } from "@/lib/kurs-access";
 
 /**
  * KURSSPEGEL-SIDA (våg 52, agent B) — gemensam server-renderare för de
@@ -86,6 +86,31 @@ export function KursSpegelSida({
 
   const harQuiz = (kurs.chapters as unknown as Array<{ quiz?: unknown }>).some((ch) => ch.quiz);
 
+  // ── VÅG 78 B1: SSR-säker Fas-gate (samma som svenska /kurser/[slug]) ──
+  const fas = kraverFas(slug);
+  // ── VÅG 78 B4a: verkligt intjänbar XP (quiz×10 + 50 klar-bonus) ──
+  const intjanbarXp =
+    kurs.chapters.reduce(
+      (s, ch) => s + ((ch as unknown as { quiz?: unknown[] }).quiz?.length ?? 0),
+      0
+    ) * 10 + 50;
+  const smakprov: SmakprovKapitel[] = kurs.chapters.slice(0, 2).map((ch) => ({
+    num: ch.num,
+    title: ch.title,
+    intro: ch.intro,
+    minutes: ch.minutes,
+    blocks: (ch.blocks || []).map((b) => ({ type: String(b.type), content: String(b.content) })),
+    quiz: (ch as unknown as { quiz?: SmakprovKapitel["quiz"] }).quiz,
+  }));
+  const forsattning = kurs.chapters.map((ch) => ({ num: ch.num, title: ch.title }));
+  // Kursöversiktens intro-snuttar: kap 1–2 syns alltid; fas-kurser visar ingen
+  // prosa från kapitel 3+ i statiskt HTML (titlar/tider = kurskorts-metadata).
+  const introSnutt = (ch: CourseChapter, langd: number): string | null => {
+    if (!ch.intro) return null;
+    if (fas > 0 && ch.num > 2) return null;
+    return ch.intro.slice(0, langd);
+  };
+
   const ovningar = (() => {
     const num = ["v04", "v05", "v06", "v07", "v08", "v09", "v10", "v19"].includes(slug.slice(0, 3));
     const vikt = kurs.weight || "6%";
@@ -146,7 +171,7 @@ export function KursSpegelSida({
             {[
               `📖 ${kurs.chapters.length} ${t("kurs.kapitelEnhet")}`,
               `⏱ ${totaltMin} min`,
-              kurs.xp ? `⚡ ${kurs.xp} XP` : null,
+              `⚡ ${intjanbarXp} XP`,
               `⚖ ${t("kurs.vikt")}: ${kurs.weight || "6%"}`,
               `🏷 ${kurs.category}`,
             ]
@@ -194,8 +219,8 @@ export function KursSpegelSida({
                   <span className="min-w-0 flex-1">
                     <span className="block font-medium leading-snug">{ch.title}</span>
                     <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                      {ch.intro?.slice(0, 110)}
-                      {(ch.intro?.length || 0) > 110 ? "…" : ""}
+                      {introSnutt(ch, 110) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — Fas ${fas}` : "")}
+                      {introSnutt(ch, 110) && (ch.intro?.length || 0) > 110 ? "…" : ""}
                     </span>
                   </span>
                   <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
@@ -228,8 +253,8 @@ export function KursSpegelSida({
                       </a>
                     </td>
                     <td className="p-3 text-muted-foreground">
-                      {ch.intro?.slice(0, 90)}
-                      {(ch.intro?.length || 0) > 90 ? "…" : ""}
+                      {introSnutt(ch, 90) ?? (fas > 0 && ch.num > 2 ? `🔒 kapitel ${ch.num} — Fas ${fas}` : "")}
+                      {introSnutt(ch, 90) && (ch.intro?.length || 0) > 90 ? "…" : ""}
                     </td>
                     <td className="p-3 text-right font-mono text-xs text-muted-foreground">
                       {ch.minutes || 9} min
@@ -247,9 +272,23 @@ export function KursSpegelSida({
           </div>
         </section>
 
-        {/* Fas 2-gate — som originalet: no-op för gratis-kurser, inbjudan för
-            fas-kurser. KursGate: kapitel 1–2 smakprov, resten gratis-medlemskap. */}
-        <Fas2Gate slug={slug} titel={kurs.title} kapitel={kurs.chapters.length} xp={kurs.xp} intro={kurs.chapters[0]?.intro}>
+        {/* ── VÅG 78 B1: SSR-säker Fas-gate (som svenska originalet) ──
+            Fas 2/3-kurser: smakprov (kap 1–2) + låst vy i SSR; behöriga
+            hämtar fullkursen via /api/kurs-spegel/[lang]/[slug] — kapitel 3+
+            skickas aldrig i statiskt HTML. Gratis-kurser: som förut. */}
+        {fas > 0 ? (
+          <Fas2Gate
+            slug={slug}
+            titel={kurs.title}
+            kapitel={kurs.chapters.length}
+            xp={intjanbarXp}
+            intro={kurs.chapters[0]?.intro}
+            smakprov={smakprov}
+            lang={lang}
+            harQuiz={harQuiz}
+            fortsattning={forsattning}
+          />
+        ) : (
           <KursGate slug={slug} titel={kurs.title}>
             {harQuiz ? (
               <KursSteg
@@ -267,83 +306,17 @@ export function KursSpegelSida({
                 }}
               />
             ) : (
-              <section className="mt-10">
-                <h2 className="font-serif text-2xl font-bold">{t("kurs.kursinnehall")}</h2>
-                <div className="mt-4 space-y-6">
-                  {kurs.chapters.map((ch) => {
-                    const text = (ch.blocks || [])
-                      .filter((b) => b.type === "text")
-                      .map((b) => String(b.content))
-                      .join("\n\n");
-                    const stycken = text.split(/\n\n+/);
-                    const insikt =
-                      stycken.length > 1
-                        ? (stycken.find((p) => p.length > 80 && p.length < 350) || "").split(/[.!?] /)[0]
-                        : "";
-                    const quiz = (ch as unknown as { quiz?: Array<{ q: string; alternativ: string[]; ratt: number; tips?: string }> }).quiz;
-                    return (
-                      <article
-                        key={ch.num}
-                        id={`kap-${ch.num}`}
-                        className="scroll-mt-24 rounded-xl border border-gold/20 bg-card p-5"
-                      >
-                        <div className="flex items-start gap-3">
-                          <KapitelBadge num={ch.num} total={kurs.chapters.length} aktiv />
-                          <div className="min-w-0 flex-1">
-                            <h3 className="font-serif text-xl font-semibold">{ch.title}</h3>
-                            <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
-                              {t("kurs.kapitelAv", { num: ch.num, total: kurs.chapters.length, min: ch.minutes || 9 })} · {t("kurs.minLasning")}
-                            </p>
-                          </div>
-                        </div>
-                        {ch.intro && (
-                          <p className="mt-3 border-l-2 border-gold/50 pl-3 text-sm italic text-muted-foreground">
-                            {ch.intro}
-                          </p>
-                        )}
-                        {insikt && (
-                          <div className="mt-3 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3">
-                            <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold">
-                              <InsiktPuls /> {texter.nyckelinsikt}
-                            </p>
-                            <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
-                          </div>
-                        )}
-                        <div className="mt-3 space-y-3">
-                          {stycken
-                            .filter((p) => p !== insikt)
-                            .map((p, i) => {
-                              const rader = p.split("\n");
-                              const listRader = rader.filter((r) => /^[•\-*]\s/.test(r.trim()));
-                              if (listRader.length >= 2) {
-                                return (
-                                  <ul key={i} className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-foreground/90">
-                                    {rader.map((r, j) =>
-                                      /^[•\-*]\s/.test(r.trim()) ? (
-                                        <li key={j}>{r.trim().replace(/^[•\-*]\s*/, "")}</li>
-                                      ) : null
-                                    )}
-                                  </ul>
-                                );
-                              }
-                              return <RikText key={i} text={p} />;
-                            })}
-                        </div>
-                        {quiz && <KursQuiz slug={slug} kapitelNr={ch.num} fragor={quiz} />}
-                        <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
-                          <span className="h-px flex-1 bg-gold/20" />
-                          {ch.num < kurs.chapters.length
-                            ? t("kurs.nasta", { titel: kurs.chapters[ch.num]?.title || "" })
-                            : `${t("kurs.kursenSlut")} ⭐`}
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </section>
+              <KursArtiklar
+                slug={slug}
+                chapters={kurs.chapters as SmakprovKapitel[]}
+                total={kurs.chapters.length}
+                lang={lang}
+                rubrik={t("kurs.kursinnehall")}
+                fortsattning={forsattning}
+              />
             )}
           </KursGate>
-        </Fas2Gate>
+        )}
 
         {/* Källverk — upphovsrättslig transparens visas för alla BOKMASTER-
             kurser, även låsta (samma ordning som originalet). */}

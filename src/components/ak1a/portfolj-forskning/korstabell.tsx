@@ -400,18 +400,23 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                   <th rowSpan={2} className="sticky left-0 z-10 border-r border-gold/15 bg-paper px-3 py-2 font-semibold">
                     Bolag
                   </th>
+                  {/* VÅG 78 B2: första datakolumnen = AKM1-totalen (Akm1Chip i
+                      tbody) — rubriken var felmärkt "AKM2" med dito
+                      sorteringsnyckel, vilket gjorde AKM1-sorteringen
+                      onåbar trots hjälptexten. */}
                   <th
                     rowSpan={2}
+                    aria-sort={sortNyckel === "akm1" && sort === "desc" ? "descending" : sortNyckel === "akm1" && sort === "asc" ? "ascending" : "none"}
                     className="border-b border-gold/30 px-2 py-2 text-right font-semibold"
-                    title="AKM2-kompositen — raknaAKM2 med automatiska moduler (V21+) ur modulregistret och viktprofilen akm2-2026; chippet under visar differensen mot AKM1-totalen (våg 57 D2)"
+                    title="AKM1-totalen — din klassiska 20-variabelsumma (V01–V20); chippet under visar osäkerhetsintervallet (våg 59, AKM3 steg 3)"
                   >
                     <button
                       type="button"
-                      onClick={() => valjSort("akm2")}
+                      onClick={() => valjSort("akm1")}
                       className="inline-flex items-center gap-1 font-semibold hover:text-gold"
-                      title="Sortera bolagen på AKM2-komposit inom varje bransch"
+                      title="Sortera bolagen på AKM1-total inom varje bransch"
                     >
-                      AKM2 {sortNyckel === "akm2" && sort === "desc" ? "▾" : sortNyckel === "akm2" && sort === "asc" ? "▴" : "↕"}
+                      AKM1 {sortNyckel === "akm1" && sort === "desc" ? "▾" : sortNyckel === "akm1" && sort === "asc" ? "▴" : "↕"}
                     </button>
                   </th>
                   <th

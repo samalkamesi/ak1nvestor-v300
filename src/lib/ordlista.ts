@@ -600,7 +600,7 @@ export const ORDLISTA = {
     en: "Every course ends with a quiz that pinpoints your knowledge gaps.",
     ar: "تنتهي كل دورة باختبار يحدد فجوات معرفتك.",
   },
-  "home.siffraBoker": { sv: "kanonböcker", en: "canonical books", ar: "كتابًا أساسيًا" },
+  "home.siffraBoker": { sv: "heltäckta böcker", en: "complete books", ar: "كتب شاملة" },
   "home.siffraBokerUt": {
     sv: "Från Security Analysis till Poor Charlie's Almanack.",
     en: "From Security Analysis to Poor Charlie's Almanack.",
@@ -646,9 +646,9 @@ export const ORDLISTA = {
     ar: "مبنيّ على كتب الأساتذة",
   },
   "home.skal2Mening1": {
-    sv: "103 kanonverk — var och en en egen kurs med källkort som pekar på originalkapitlen.",
-    en: "103 canonical works — each one a course of its own, with source cards pointing to the original chapters.",
-    ar: "103 عملًا أساسيًا — كلٌّ منها دورة قائمة بذاتها مع بطاقات مصادر تشير إلى الفصول الأصلية.",
+    sv: "{bocker} böcker — var och en en egen kurs med källkort som pekar på originalkapitlen.",
+    en: "{bocker} books — each one a course of its own, with source cards pointing to the original chapters.",
+    ar: "{bocker} كتابًا — كلٌّ منها دورة قائمة بذاتها مع بطاقات مصادر تشير إلى الفصول الأصلية.",
   },
   "home.skal2Mening2": {
     sv: "Du lär dig mästarnas metoder i original, inte andrahandsreferat.",
@@ -743,9 +743,9 @@ export const ORDLISTA = {
     ar: "جميع الدورات مفتوحة",
   },
   "home.stig2Undertext": {
-    sv: "333 kurser, direkt",
-    en: "333 courses, instantly",
-    ar: "333 دورة، فورًا",
+    sv: "{kurser} kurser, direkt",
+    en: "{kurser} courses, instantly",
+    ar: "{kurser} دورة، فورًا",
   },
   "home.stig3Rubrik": { sv: "XP & badges", en: "XP & badges", ar: "XP والشارات" },
   "home.stig3Undertext": {

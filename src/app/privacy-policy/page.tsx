@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { ORG_NR_LANG } from "@/lib/variabler";
 
 export const metadata: Metadata = {
   title: "Integritetspolicy — GDPR | AK1A Research Lab",
@@ -61,11 +62,13 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="font-serif text-xl font-bold">Personuppgiftsansvarig</h2>
           <p className="mt-2 text-muted-foreground">
+            {/* Org.nr ur variabelregistret (ORG_NR) — kompletteras automatiskt
+                när registreringen är klar; ingen platshållare publikt (våg 78 A2). */}
             AK1A Research Lab (drivet av Ak1 Apex Nexus), e-post{" "}
             <a className="text-gold underline" href="mailto:info@ak1nvestor.com">
               info@ak1nvestor.com
             </a>
-            , organisationsnummer [ORGANISATIONSNR — kompletteras vid registrering]. Frågor om
+            {ORG_NR_LANG}. Frågor om
             personuppgifter besvaras på samma adress. Vi har inget separat dataskyddsombud — kontakta
             oss direkt, vi svarar inom 30 dagar.
           </p>

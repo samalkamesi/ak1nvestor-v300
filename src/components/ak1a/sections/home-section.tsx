@@ -14,15 +14,17 @@ import { NyhetsChips } from "../kunskaps-flode";
 import { VarumarkesLogo } from "../varumarkes-logo";
 import { useSprak } from "../sprak-leverantor";
 import type { OrdlistaNyckel } from "@/lib/ordlista";
+import { SIFFROR } from "@/lib/siffror";
 
 /* ────────────────────────────────────────────────────────────────────────────
    AK1A Research Lab — startsidans hem-sektion (omskriven 2026-09-01).
 
    Copyuppdrag: säljande, to the point, allt klickbart — men alltid faktabaserat.
-   Alla tal nedan är räknade direkt ur public/deep-courses.json:
-   · 333 kurser
-   · 8 211 quiz-frågor (chapters[].quiz, summerat)
-   · 103 bokkurser (kategori BOKMASTER)
+   Alla antalstal interpoleras ur @/lib/siffror (guldkälleregeln, våg 78 A4):
+   · SIFFROR.kurser — kurser
+   · SIFFROR.quiz — quiz-frågor (chapters[].quiz, summerat)
+   · SIFFROR.bokmaster — BOKMASTER-kurser (heltäckta böcker; OBS: bokKANONEN
+     är SIFFROR.kanonBocker = ett annat tal — aldrig kalla bokmaster för "kanon")
    · 8 verktyg (kalkylatorn, vågfundamentet, portföljbyggaren, net-net-skannern,
      superanalysen, konfluensradarn, min portfölj, dagens pass)
    · 0 kr inträde (Fas 1 gratis för alltid — se /medlemskap)
@@ -32,14 +34,14 @@ import type { OrdlistaNyckel } from "@/lib/ordlista";
    SSR/SSG renderar svenska, klienten byter direkt vid språkval.
    ──────────────────────────────────────────────────────────────────────────── */
 
-const ANTAL_KURSER = 333;
-const ANTAL_QUIZ = 8211;
-const ANTAL_BOKER = 103;
+const ANTAL_KURSER = SIFFROR.kurser;
+const ANTAL_QUIZ = SIFFROR.quiz;
+const ANTAL_BOKER = SIFFROR.bokmaster;
 const ANTAL_VERKTYG = 8;
 
 /* ---------- Sifferbandets mätta tal — varje stat är klickbar ---------- */
 
-const SIFFROR: {
+const SIFFERBAND: {
   tal: number;
   suffix?: string;
   etikett: string;
@@ -66,7 +68,7 @@ const SIFFROR: {
   },
   {
     tal: ANTAL_BOKER,
-    etikett: "kanonböcker",
+    etikett: "heltäckta böcker",
     etikettNyckel: "home.siffraBoker",
     undertext: "Från Security Analysis till Poor Charlie's Almanack.",
     undertextNyckel: "home.siffraBokerUt",
@@ -99,6 +101,8 @@ const SKAL: {
   rubrikNyckel: OrdlistaNyckel;
   mening1: string;
   mening1Nyckel: OrdlistaNyckel;
+  /** {parameter}-interpolation till mening1 (t.ex. {bocker} — våg 78 A4). */
+  mening1Parametrar?: Record<string, string | number>;
   mening2: string;
   mening2Nyckel: OrdlistaNyckel;
   lankText: string;
@@ -124,8 +128,9 @@ const SKAL: {
     rubrik: "Byggd på mästarnas böcker",
     rubrikNyckel: "home.skal2Rubrik",
     mening1:
-      "103 kanonverk — var och en en egen kurs med källkort som pekar på originalkapitlen.",
+      `${ANTAL_BOKER} böcker — var och en en egen kurs med källkort som pekar på originalkapitlen.`,
     mening1Nyckel: "home.skal2Mening1",
+    mening1Parametrar: { bocker: ANTAL_BOKER },
     mening2:
       "Du lär dig mästarnas metoder i original, inte andrahandsreferat.",
     mening2Nyckel: "home.skal2Mening2",
@@ -178,6 +183,8 @@ const STIG: {
   rubrikNyckel: OrdlistaNyckel;
   undertext: string;
   undertextNyckel: OrdlistaNyckel;
+  /** {parameter}-interpolation till undertexten (t.ex. {kurser} — våg 78 A4). */
+  undertextParametrar?: Record<string, string | number>;
   href: string;
 }[] = [
   {
@@ -192,8 +199,9 @@ const STIG: {
     num: "2",
     rubrik: "Alla kurser upplåsta",
     rubrikNyckel: "home.stig2Rubrik",
-    undertext: "333 kurser, direkt",
+    undertext: `${ANTAL_KURSER} kurser, direkt`,
     undertextNyckel: "home.stig2Undertext",
+    undertextParametrar: { kurser: ANTAL_KURSER },
     href: "/kurser",
   },
   {
@@ -342,7 +350,7 @@ export function HomeSection() {
             <HonestyTag kind="matt" />
           </div>
           <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {SIFFROR.map((s) => (
+            {SIFFERBAND.map((s) => (
               <Link
                 key={s.etikett}
                 href={s.href}
@@ -387,7 +395,7 @@ export function HomeSection() {
                   {t(s.rubrikNyckel)}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {t(s.mening1Nyckel)} {t(s.mening2Nyckel)}
+                  {t(s.mening1Nyckel, s.mening1Parametrar)} {t(s.mening2Nyckel)}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 pt-2 text-xs font-semibold uppercase tracking-wider text-gold transition-transform group-hover:translate-x-0.5">
                   {t(s.lankNyckel)} <ArrowRight className="h-3 w-3" />
@@ -464,7 +472,7 @@ export function HomeSection() {
                     {t(steg.rubrikNyckel)}
                   </h3>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {t(steg.undertextNyckel)}
+                    {t(steg.undertextNyckel, steg.undertextParametrar)}
                   </p>
                   <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold opacity-70 transition-opacity group-hover:opacity-100">
                     {t("notis.gatDit")} <ArrowRight className="h-3 w-3" />

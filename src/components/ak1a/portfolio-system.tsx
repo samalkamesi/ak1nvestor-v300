@@ -747,7 +747,24 @@ export function PortfolioSystem() {
             </p>
             <div className="mt-3 flex flex-col gap-2 sm:flex-row">
               <Input value={fraga} onChange={(e) => setFraga(e.target.value)} placeholder="t.ex. hur stor är risken?" className="min-h-[44px]" />
-              <Button variant="outline" className="min-h-[44px] shrink-0">Fråga</Button>
+              {/* VÅG 78 B7: knappen var död (svaret renderas redan live via
+                  svara-memo:t). Nu öppnar den AI-mentorn med frågan
+                  förhandsfylld — samma CustomEvent-mönster som
+                  "ak1a:oppna-sok" (chat-widget lyssnar globalt). */}
+              <Button
+                variant="outline"
+                className="min-h-[44px] shrink-0"
+                title="Öppna AI-mentorn med din fråga förhandsfylld"
+                onClick={() =>
+                  window.dispatchEvent(
+                    new CustomEvent("ak1a:oppna-mentor", {
+                      detail: { fraga: fraga.trim() || undefined },
+                    })
+                  )
+                }
+              >
+                Fråga mentorn →
+              </Button>
             </div>
             {svara && (
               <p className="mt-3 rounded-lg border border-gold/20 bg-paper p-3 text-sm leading-relaxed">{svara}</p>

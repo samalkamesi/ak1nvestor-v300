@@ -4,6 +4,7 @@ import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas3Cert } from "@/components/ak1a/fas3-cert";
 import { getCourseList } from "@/lib/content";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   harSpeglar: true, // Ömsesidig hreflang med /en|ar/fas3 (VÅG 63 O3 #2)
   title: "Fas 3 — Det Dynamiska Ekosystemet | AK1A",
   description:
-    "Fas 3 är certifieringsfasen — praktikportfölj och tillämpning — och där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. 13 999 kr, 90 dagars nöjd-kund-garanti. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.",
+    `Fas 3 är certifieringsfasen — praktikportfölj och tillämpning — och där fundamentalanalysen börjar röra sig: inget indikatorvärde är statiskt utan en tidsserie med egen rytm. AKM1 × AK1TS-integrationen, Vågfundamentet, Konfluensradarn, Portföljens vågor, 17 kanonverk i teknisk analys och trading-psykologi — plus dashboard, AI-koppling och rätt till alla framtida utvecklingar. ${kr(PRISER.fas3EnGang)} kr, 90 dagars nöjd-kund-garanti. Tar vid efter tillämpning av Fas 2. Pedagogisk utbildning — aldrig investeringsråd.`,
   keywords: [
     "Fas 3 ekosystem",
     "AKM1 AK1TS integration",
@@ -235,7 +236,7 @@ export default function Fas3Page() {
         <div className="pointer-events-none absolute inset-2 rounded-2xl border border-[#E8C766]/30" aria-hidden />
         <div className="relative max-w-3xl">
           <p className="text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
-            Det dynamiska ekosystemet · Fas 3 · 13 999 kr
+            {`Det dynamiska ekosystemet · Fas 3 · ${kr(PRISER.fas3EnGang)} kr`}
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#EDE6D6] sm:text-5xl">
             Fas 3 — där fundamentalanalysen börjar röra sig
@@ -600,7 +601,7 @@ export default function Fas3Page() {
           Fas 3 · Det dynamiska ekosystemet · Engångspris
         </p>
         <p className="mt-3 font-serif text-4xl font-black text-gold sm:text-5xl">
-          13 999 kr
+          {kr(PRISER.fas3EnGang)} kr
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           En engångsbetalning för hela utbildningen: de {antalKurser} kurserna,

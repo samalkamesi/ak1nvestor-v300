@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { SIFFROR } from "@/lib/siffror";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -27,11 +28,12 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function ManifestPage() {
-  // Levande tal — räknas från innehållslager vid build. Statisk fallback om datan saknas.
+  // Levande tal — räknas från innehållslager vid build. Fallback ur
+  // SIFFROR (guldkällan) om datan saknas — aldrig föråldrade hårdkodade tal.
   const kurserLista = getCourseList();
-  const kurser = kurserLista.length || 324;
+  const kurser = kurserLista.length || SIFFROR.kurser;
   const bokmaster =
-    kurserLista.filter((c) => c.category === "BOKMASTER").length || 78;
+    kurserLista.filter((c) => c.category === "BOKMASTER").length || SIFFROR.bokmaster;
   const quiz =
     kurserLista.reduce(
       (s, c) =>
@@ -333,7 +335,7 @@ export default function ManifestPage() {
               titel: "Fas 2 — utbildning med grundaren",
               body: (
                 <>
-                  9 999 kr, ansökan krävs, 90 dagars nöjd-kund-garanti (betalning
+                  {kr(PRISER.fas2EnGang)} kr, ansökan krävs, 90 dagars nöjd-kund-garanti (betalning
                   först efter 90 dagar om du förblir nöjd). Den fundamentala
                   vägen till oberoende analytiker: inget nytt — samma 20
                   analytiska indikatorer, nu sammanvägda på rätt sätt. 18
@@ -393,19 +395,19 @@ export default function ManifestPage() {
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/laroplan"
-            className="rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
           >
             Börja gratis — öppna läroplanen
           </Link>
           <Link
             href="/profil"
-            className="rounded-md border border-gold/50 px-5 py-2.5 text-sm font-semibold hover:bg-gold/10"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-gold/50 px-5 py-2.5 text-sm font-semibold hover:bg-gold/10"
           >
             Testa din profil
           </Link>
           <Link
             href="/bibliotek"
-            className="rounded-md border border-gold/50 px-5 py-2.5 text-sm font-semibold hover:bg-gold/10"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-gold/50 px-5 py-2.5 text-sm font-semibold hover:bg-gold/10"
           >
             Se biblioteket
           </Link>

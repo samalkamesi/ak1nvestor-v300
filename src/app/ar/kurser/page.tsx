@@ -5,6 +5,7 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SIFFROR } from "@/lib/siffror";
+import { hamtaKursTitelLager, titelUrLager } from "@/lib/kurs-speglar";
 import {
   spegelMetadata,
   spegelWebsiteJsonLd,
@@ -14,15 +15,19 @@ import {
 import { JsonLd } from "@/lib/seo";
 
 export const dynamic = "force-static";
+export const revalidate = 3600;
 
 /**
  * /ar/kurser — مرآة كاملة للصفحة السويدية /kurser (الموجة 51، الوكيل S3).
  * جميع نصوص الصفحة مترجمة إلى العربية الفصحى الحديثة، والمحتوى داخل
- * الحاوية يقرأ من اليمين إلى اليسار (dir="rtl"). قائمة الدورات نفسها
- * (333 عنوان دورة سويدية) تُعرض كما هي عبر KursSok — ترجمة الدورات هي
- * المرحلة 3 من خطة اللغات، مع إشعار واضح للقارئ. الأرقام من
- * src/lib/siffror (المصدر الوحيد للأرقام). تُحتفظ بالاختصارات اللاتينية
- * (AKM1 وBOKMASTER وXP) وبالأرقام اللاتينية وفق خطة اللغات.
+ * الحاوية يقرأ من اليمين إلى اليسار (dir="rtl"). عناوين بطاقات الدورات
+ * (الموجة 80b الجزء A) تُقرأ من طبقة الترجمة بمفتاح "{slug}:titel" عبر
+ * hamtaKursTitelLager (قراءة واحدة لجميع الدورات)، مع العنوان السويدي
+ * الأصلي كاحتياط حيث لم تُنشر الترجمة بعد. الأرقام من src/lib/siffror
+ * (المصدر الوحيد للأرقام). تُحافَظ على الاختصارات اللاتينية (AKM1
+ * وBOKMASTER وXP) وبالأرقام اللاتينية وفق خطة اللغات. ISR (إعادة
+ * التحقق كل ساعة — مثل مرايا الدورات): العناوين المترجمة تظهر دون
+ * إعادة نشر.
  */
 
 export const metadata: Metadata = spegelMetadata({
@@ -70,8 +75,11 @@ function coursesFaqJsonLd() {
   ]);
 }
 
-export default function KurserPageAr() {
+export default async function KurserPageAr() {
   const courses = getCourseList();
+  // الموجة 80b الجزء A: عناوين البطاقات من طبقة العناوين (قراءة واحدة
+  // لجميع الدورات)، مع العنوان السويدي كاحتياط حيث لم تُنشر الترجمة.
+  const titelLager = await hamtaKursTitelLager();
 
   return (
     <SeoPageShell breadcrumb={[{ name: "الدورات" }]} wide>
@@ -122,7 +130,7 @@ export default function KurserPageAr() {
             lankPrefix="/ar"
             kurser={courses.map((c) => ({
               slug: c.slug,
-              title: c.title,
+              title: titelUrLager(titelLager, c.slug, c.title, "ar"),
               category: c.category,
               kapitel: c.chapters.length,
               minuter: c.totalMinutes || c.minutes,

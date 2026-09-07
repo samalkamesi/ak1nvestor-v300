@@ -755,6 +755,59 @@ export async function lasPubliceradeForSpegel(slug: string): Promise<Map<string,
   return mosSpegelKartaUrRader(rader, slug);
 }
 
+/**
+ * VÅG 80b DEL A — kurstitlar för ALLA slugs i EN läsning. Spegel-listsidorna
+ * (/en/kurser, /ar/kurser) översätter 333 korttitlar och kan inte köra
+ * lasPubliceradeForSpegel per slug (333 rundor). Detta är samma läsning men
+ * med like-mönster "*:titel" (träffar även kapiteltitlar "{slug}:kapN:titel"
+ * — mosTitelKartaUrRader filtrerar bort dem och behåller ENDAST kursens
+ * egen titel "{slug}:titel"). Samma totala ordning (created_at.desc,id.desc)
+ * och senaste-vinner-dedupe över ALLA sidor tillsammans; tak 10 sidor =
+ * 10 000 rader — titelnycklarna är en bråkdel av det.
+ */
+const TITEL_MAX_Sidor = 10;
+
+/** Event-rader (nyast först) → karta ENDAST för kurs-titelnycklar
+ *  ("{slug}:titel", exakt två segment). Ren funktion. */
+export function mosTitelKartaUrRader(rader: readonly MosEventLasRad[]): Map<string, Map<string, string>> {
+  const karta = new Map<string, Map<string, string>>();
+  for (const r of dedupeSenasteVinner(rader)) {
+    if (r.status !== "publicerad") continue;
+    if (typeof r.text !== "string" || r.text.trim().length === 0) continue;
+    if (typeof r.scope_nyckel !== "string" || !/^[^:]+:titel$/.test(r.scope_nyckel)) continue;
+    if (typeof r.sprak !== "string") continue;
+    const perSprak = karta.get(r.scope_nyckel) ?? new Map<string, string>();
+    perSprak.set(r.sprak, r.text);
+    karta.set(r.scope_nyckel, perSprak);
+  }
+  return karta;
+}
+
+/** Alla publicerade KURS-titelöversättningar: Map<"{slug}:titel", Map<sprak, text>>. */
+export async function lasPubliceradeKursTitlar(): Promise<Map<string, Map<string, string>>> {
+  const rader: MosEventLasRad[] = [];
+  for (let sida = 0; sida < TITEL_MAX_Sidor; sida++) {
+    const fran = sida * SIDSTORLEK;
+    const res = await restForfragning(
+      EVENTS,
+      "?type=eq." + MOS_EVENT_TYP +
+        "&details->>scope_nyckel=like." + fv("*:titel") +
+        "&select=created_at,details->>scope_nyckel,details->>sprak,details->>status,details->>text" +
+        MOS_ORDNING,
+      {
+        method: "GET",
+        headers: { Range: fran + "-" + String(fran + SIDSTORLEK - 1) },
+        timeoutMs: 12_000,
+      },
+    );
+    if (!res.ok) await sankaFel(res);
+    const sidRader = (await res.json()) as MosEventLasRad[];
+    rader.push(...sidRader);
+    if (sidRader.length < SIDSTORLEK) break; // sista sidan — titelkorpusen är helt läst
+  }
+  return mosTitelKartaUrRader(rader);
+}
+
 // ── Fallback-kö (lokal JSON) ────────────────────────────────────────────────
 
 /** Köpost = rad + tidsstämpel (filformat data/oversattning-kö.json). */

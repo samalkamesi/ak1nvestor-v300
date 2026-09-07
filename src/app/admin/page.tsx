@@ -35,6 +35,7 @@ import { BeteendePanel } from "@/components/ak1a/admin/beteende-panel";
 import { Utvecklingsradar } from "@/components/ak1a/admin/utvecklingsradar";
 import { OversattningPanel } from "@/components/ak1a/admin/oversattning-panel";
 import { VariabelPanel } from "@/components/ak1a/admin/variabel-panel";
+import { BloggPanel } from "@/components/ak1a/admin/blogg-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -360,6 +361,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="utveckling" className="px-3 py-1.5 text-xs sm:text-sm">Utveckling 🔭</TabsTrigger>
             <TabsTrigger value="oversattning" className="px-3 py-1.5 text-xs sm:text-sm">Översättning 🌍</TabsTrigger>
             <TabsTrigger value="variabler" className="px-3 py-1.5 text-xs sm:text-sm">Variabler 📊</TabsTrigger>
+            <TabsTrigger value="blogg" className="px-3 py-1.5 text-xs sm:text-sm">Blogg ✍️</TabsTrigger>
           </TabsList>
 
           {/* Overview */}
@@ -740,6 +742,13 @@ export default function AdminDashboard() {
           <TabsContent value="variabler" className="mt-6">
             <Card className="p-5">
               <VariabelPanel />
+            </Card>
+          </TabsContent>
+
+          {/* Blogg ✍️ — admin-mega steg 2: utkastflöde + paketexport (Läge A, våg 80b del B) */}
+          <TabsContent value="blogg" className="mt-6">
+            <Card className="p-5">
+              <BloggPanel />
             </Card>
           </TabsContent>
         </Tabs>

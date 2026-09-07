@@ -9024,3 +9024,26 @@ chatbot svensk-only (produktbeslut) · ak1nvestor.com-pekar på WordPress
 
 **Verifierat:** tsc 36 (baslinje) · motorer 107/0/0 · vakten GRÖN ·
 build exit 0 · dev: 0 svenska låsvy-markörer på speglar.
+
+## Våg 80b — KURSTITLAR TRESPRÅKIGA + BLOGG-PUBLICERINGSFLOW (2026-09-07)
+
+**Del A — kurstitlarna (P1 från 80a):** kalla.ts + {slug}:titel (333 nya
+källor, total 70 228) · spegel-H1 kopplad sedan våg 52 (orörd) · /en|ar/
+kurser-listsidorna nya titel-lagret lasPubliceradeKursTitlar + ISR 1 h ·
+333 titlar översatta 100p (v80t1: 167 + v80t2: 166 — 666 rader, siffer-
+traps som "Bolagsskatt 20,6%" och AK1TS-eta:an lösta) · KursSteg-upplåst
+verifierad följa spegeLspråk via 80a-fixen (redan rätt).
+Fälla notepad: bygg läser -svar-*.json — agents enskilda svar.json måste
+kopieras till -svar-all.json vid vakanta 0-poster-importer.
+
+**Del B — ADMIN-MEGA STEG 2 (Läge A):** src/lib/blogg-utkast.ts (utkast-
+livscykel i system_events, senaste-vinner, kontrolleraText-grind: granskad
+kräver 0 FEL — "garanterad avkastning"-text NEKAD i test) + /api/admin/
+blogg (spara/kontrollera/status/exportera) + admin-flik "Blogg ✍️" med
+editor, varumärkesrapport, statussteg och Exportera klar post (JSON-paket
+i exakt BlogPost-form med disclaimer-garanti — droppas i data/blogg/ +
+main-push = live med metadata/OG). 14 funktionstest PASS, testrader
+städade ur databasen. WordPress-kärnan: skriv → granska → exportera.
+
+**Verifierat:** tsc 35 (baslinje) · motorer 107/0/0 (MÖS 8 utökad med
+titelformatet) · vakten GRÖN · build exit 0 · speglar-ISR 1 h.

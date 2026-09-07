@@ -37,6 +37,13 @@
  *   {slug}:kap{n}:quiz{q}:alt{j}       (alternativ j)
  *   {slug}:kap{n}:quiz{q}:tips
  *
+ * VÅG 80b DEL A: kursens EGEN titel — "{slug}:titel" — är nu en FULLVÄRDIG
+ * källa i kalla.ts (333 källor, importpaket v80titel{1,2}.json). Spegel-
+ * sidans H1 läser den via byggKursSpegel och spegel-LISTSIDORNA via
+ * hamtaKursTitelLager (sammalager för alla slugs i en läsning) — båda med
+ * fallback till svensk kurs.title. Övriga utökade nycklar (learn/varfor/
+ * perspektiv) är fortfarande opportunistiska.
+ *
  * FAKTISKT SCHEMA (agent A:s data/sql/oversattningar.sql, inläst 2026-09-01 —
  * källtabellen är skapad av agent A och detta lader läser den):
  *
@@ -68,7 +75,7 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import type { Course, CourseChapter } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
-import { lasPubliceradeForSpegel } from "@/lib/oversattning/lager";
+import { lasPubliceradeForSpegel, lasPubliceradeKursTitlar } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
 
 // ── Konvention: nyckelbyggare ────────────────────────────────────────────────
@@ -186,6 +193,87 @@ export async function hamtaKursLager(slug: string, sprak: KursSpegelSprak): Prom
     if (text) lager.set(nyckel, text);
   }
   return lager;
+}
+
+// ── VÅG 80b DEL A: kurstitlar till spegel-LISTSIDORNA — sammalager ──────────
+
+/**
+ * Sammalager för kurs-TITLAR (våg 80b del A): alla publicerade översättningar
+ * av kursens egen titel (nyckel "{slug}:titel" — källa i kalla.ts sedan våg
+ * 80b, konsumerad av kurs-spegel-sidans H1 sedan våg 52 via nyckelKurs) för
+ * ALLA kurser i EN läsning. /en/kurser + /ar/kurser renderar 333 kort och
+ * kan inte läsa per slug (hamtaKursOversattningar × 333 = hundratals
+ * rundor). Map<"{slug}:titel", Map<sprak, text>>.
+ *
+ * Samma fallback-kedja som spegelläsningen: tabell-backend först (like-
+ * mönstret "*:titel" träffar även kapiteltitlar — de filtreras bort här i
+ * koden mot EXAKT "{slug}:titel"), därefter MÖS-lagrets system_events-
+ * backend (lasPubliceradeKursTitlar — senaste-vinner-dedupe). Fel/inget
+ * lagrat ⇒ tomt ⇒ svensk fallback i listvyn (titelUrLager).
+ */
+export const hamtaKursTitelLager = cache(
+  async (): Promise<Map<string, Map<string, string>>> => {
+    const tomt = new Map<string, Map<string, string>>();
+    const rest = getSupabaseRest();
+    if (!rest) return tomt; // ingen env ⇒ svensk fallback
+
+    const franRader = (rader: unknown): Map<string, Map<string, string>> => {
+      const lager = new Map<string, Map<string, string>>();
+      if (!Array.isArray(rader)) return lager;
+      for (const r of rader) {
+        if (!r || typeof r !== "object") continue;
+        const rad = r as Record<string, unknown>;
+        if (!arPublicerad(rad)) continue;
+        const sprak = lasKolumn(rad, ["sprak", "mal_sprak", "lang", "locale", "target_lang", "sprak_kod"]);
+        const nyckel = lasKolumn(rad, ["scope_nyckel", "nyckel"]);
+        const text = lasKolumn(rad, ["text", "innehall", "oversattning", "oversatt_text", "varde", "content"]);
+        if (!sprak || !nyckel || !text) continue;
+        if (!/^[^:]+:titel$/.test(nyckel)) continue; // ENDAST kursens egen titel — kapiteltitlar sorteras bort
+        const perSprak = lager.get(nyckel) ?? new Map<string, string>();
+        perSprak.set(sprak, text);
+        lager.set(nyckel, perSprak);
+      }
+      return lager;
+    };
+
+    for (const sokvag of [
+      `/rest/v1/oversattningar?scope_nyckel=like.${encodeURIComponent("*:titel")}&status=eq.publicerad&select=*&limit=10000`,
+      `/rest/v1/oversattningar?scope_nyckel=like.${encodeURIComponent("*:titel")}&select=*&limit=10000`,
+    ]) {
+      try {
+        const svar = await fetch(`${rest.origin}${sokvag}`, {
+          headers: { apikey: rest.headers.apikey, Authorization: rest.headers.Authorization },
+          signal: AbortSignal.timeout(6000),
+          next: { revalidate: 3600, tags: ["oversattningar"] },
+        });
+        if (!svar.ok) continue; // troligen tabellen/kolumnen ej skapad ännu
+        const lager = franRader(await svar.json());
+        if (lager.size > 0) return lager;
+      } catch {
+        /* nästa försök / tomt */
+      }
+    }
+
+    // Försök 3: MÖS-lagrets system_events-backend (samma som speglarna).
+    try {
+      const urEvents = await lasPubliceradeKursTitlar();
+      if (urEvents.size > 0) return urEvents;
+    } catch {
+      /* tomt ⇒ svensk fallback */
+    }
+    return tomt;
+  }
+);
+
+/** Korttiteln ur titel-sammalagret med fallback till svensk kurs.title. */
+export function titelUrLager(
+  lager: Map<string, Map<string, string>>,
+  slug: string,
+  svensk: string,
+  sprak: KursSpegelSprak,
+): string {
+  const text = lager.get(nyckelKurs("titel", slug))?.get(sprak);
+  return typeof text === "string" && text.trim().length > 0 ? text : svensk;
 }
 
 // ── Tillämpning: svensk kurs + lager → speglad kurs + andel ──────────────────

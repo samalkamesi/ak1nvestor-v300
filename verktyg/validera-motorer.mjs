@@ -3131,20 +3131,28 @@ async function fasOversattning(): Promise<void> {
     const blockNycklar = block.filter((k) => /:block\d+$/.test(k.scope.nyckel));
     const blockFormat = blockNycklar.every((k) => /^[^:]+:kap\d+:block\d+$/.test(k.scope.nyckel));
     if (!blockFormat) problem.push("block-nycklar följer ej <slug>:kap<n>:block<n>");
+    // Våg 80b del A: kursens EGEN titel — nyckel "<slug>:titel" (en per kurs;
+    // kollisionssäker i kursblock-domänen eftersom övriga nycklar har :kapN:).
+    const kursTitlar = block.filter((k) => /^[^:]+:titel$/.test(k.scope.nyckel));
+    const kursTitelFormat = kursTitlar.every((k) => k.scope.nyckel === k.scope.nyckel.split(":")[0] + ":titel" && typeof k.text === "string" && k.text.length > 0);
+    if (!kursTitelFormat) problem.push("kurs-titelnycklar följer ej <slug>:titel eller saknar text");
+    const kapSlugs = new Set(block.filter((k) => /:kap\d+:/.test(k.scope.nyckel)).map((k) => k.scope.nyckel.split(":")[0]));
+    const titelSlugs = new Set(kursTitlar.map((k) => k.scope.nyckel.split(":")[0]));
+    if (titelSlugs.size !== kapSlugs.size) problem.push("kurs-titlar=" + String(kursTitlar.length) + " för " + String(titelSlugs.size) + " slugs ≠ " + String(kapSlugs.size) + " kurser med kapitel");
     const ovrigaFormat = block
-      .filter((k) => !/:block\d+$/.test(k.scope.nyckel))
+      .filter((k) => !/:block\d+$/.test(k.scope.nyckel) && !/^[^:]+:titel$/.test(k.scope.nyckel))
       .every((k) => /^[^:]+:kap\d+:(titel|intro|quiz\d+:(q|a\d+|tips))$/.test(k.scope.nyckel));
     if (!ovrigaFormat) problem.push("titel/intro/quiz-nycklar följer ej registrets konvention");
     const igen: any[] = KLL.listaKallor();
     if (igen.length !== kallor.length) problem.push("andra anropet ger annat antal (" + String(igen.length) + ")");
     rad(
       "mos-oversattning",
-      "KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz)",
+      "KÄLLREGISTER listaKallor (ui + kursblock: block/titel/intro/quiz + kurs-titel)",
       problem.length === 0 ? "PASS" : "FAIL",
       problem.length === 0
-        ? String(kallor.length) + " källor: " + String(ui.length) + " ui-nycklar (= ordlistan) + " + String(block.length) + " kursblock; alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n>, deterministiskt vid upprepat anrop"
+        ? String(kallor.length) + " källor: " + String(ui.length) + " ui-nycklar (= ordlistan) + " + String(block.length) + " kursblock (varav " + String(kursTitlar.length) + " kurs-titlar <slug>:titel, en per kurs); alla hashar = raknaHash(text), identer unika, nyckelformat <slug>:kap<n>:block<n> + <slug>:titel, deterministiskt vid upprepat anrop"
         : problem.slice(0, 6).join("; "),
-      "totalt=" + String(kallor.length) + " ui=" + String(ui.length) + " kursblock=" + String(block.length),
+      "totalt=" + String(kallor.length) + " ui=" + String(ui.length) + " kursblock=" + String(block.length) + " kurstitlar=" + String(kursTitlar.length),
     );
   }
 

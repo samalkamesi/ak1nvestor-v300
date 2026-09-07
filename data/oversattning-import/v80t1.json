@@ -1,0 +1,842 @@
+{
+ "kurs": "v80t1",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v80t1): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "bf-01-tillganglighetsfalla:titel",
+   "en": "The Availability Trap",
+   "ar": "فخ الانحياز للإتاحة"
+  },
+  {
+   "nyckel": "bf-02-sunk-cost:titel",
+   "en": "Sunk Cost",
+   "ar": "التكلفة الغارقة"
+  },
+  {
+   "nyckel": "bf-03-mental-accounting:titel",
+   "en": "Mental Accounting",
+   "ar": "المحاسبة الذهنية"
+  },
+  {
+   "nyckel": "bf-04-investera-som-en-robot:titel",
+   "en": "Invest Like a Robot",
+   "ar": "استثمر كالروبوت"
+  },
+  {
+   "nyckel": "km-001-bokforingens-grunder:titel",
+   "en": "The Basics of Accounting",
+   "ar": "أساسيات المحاسبة"
+  },
+  {
+   "nyckel": "km-002-forvaltningsberattelsen:titel",
+   "en": "The Management Report",
+   "ar": "تقرير الإدارة"
+  },
+  {
+   "nyckel": "km-003-kassaflodesanalysen:titel",
+   "en": "The Cash Flow Statement",
+   "ar": "قائمة التدفقات النقدية"
+  },
+  {
+   "nyckel": "km-004-noter:titel",
+   "en": "Notes to the Accounts — the Hidden Information",
+   "ar": "الإيضاحات المتممة للقوائم المالية — المعلومات الخفية"
+  },
+  {
+   "nyckel": "km-005-eget-kapital-utdelningar:titel",
+   "en": "Equity & Dividends",
+   "ar": "حقوق الملكية والتوزيعات"
+  },
+  {
+   "nyckel": "km-006-kvartalsrapporten:titel",
+   "en": "The Quarterly Report",
+   "ar": "التقرير الربع سنوي"
+  },
+  {
+   "nyckel": "km-007-dcf:titel",
+   "en": "DCF — Discounted Cash Flows",
+   "ar": "DCF — التدفقات النقدية المخصومة"
+  },
+  {
+   "nyckel": "km-008-wacc:titel",
+   "en": "WACC — Weighted Cost of Capital",
+   "ar": "WACC — تكلفة رأس المال المرجحة"
+  },
+  {
+   "nyckel": "km-009-pe:titel",
+   "en": "P/E — Price-to-Earnings Deep Dive",
+   "ar": "P/E — تعمق في نسبة السعر إلى الأرباح"
+  },
+  {
+   "nyckel": "km-010-evebit:titel",
+   "en": "EV/EBIT — Cleaner than P/E",
+   "ar": "EV/EBIT — أنظف من P/E"
+  },
+  {
+   "nyckel": "km-011-relativ-vardering:titel",
+   "en": "Relative Valuation — Peer Comps",
+   "ar": "التقييم النسبي — مقارنات الأقران"
+  },
+  {
+   "nyckel": "km-012-sum-of-the-parts-sotp:titel",
+   "en": "Sum-of-the-Parts (SOTP)",
+   "ar": "مجموع الأجزاء (SOTP)"
+  },
+  {
+   "nyckel": "km-013-volatilitet-standardavvikelse:titel",
+   "en": "Volatility & Standard Deviation",
+   "ar": "التقلب والانحراف المعياري"
+  },
+  {
+   "nyckel": "km-014-korrelation-diversifiering:titel",
+   "en": "Correlation & Diversification",
+   "ar": "الارتباط والتنويع الاستثماري"
+  },
+  {
+   "nyckel": "km-015-beta-capm:titel",
+   "en": "Beta & CAPM",
+   "ar": "معامل بيتا و CAPM"
+  },
+  {
+   "nyckel": "km-016-sharpe-kvot:titel",
+   "en": "Sharpe Ratio",
+   "ar": "نسبة شاربي"
+  },
+  {
+   "nyckel": "km-017-position-sizing-kelly-kriteriet:titel",
+   "en": "Position Sizing & the Kelly Criterion",
+   "ar": "تحديد حجم المركز ومعيار كيلي"
+  },
+  {
+   "nyckel": "km-018-forlustaversion:titel",
+   "en": "Loss Aversion",
+   "ar": "النفور من الخسارة"
+  },
+  {
+   "nyckel": "km-019-bekraftelsefalla:titel",
+   "en": "The Confirmation Trap",
+   "ar": "مصيدة التأكيد"
+  },
+  {
+   "nyckel": "km-020-ankareffekt:titel",
+   "en": "The Anchoring Effect",
+   "ar": "تأثير الإرساء"
+  },
+  {
+   "nyckel": "km-021-avskrivningsprinciper:titel",
+   "en": "Depreciation Principles",
+   "ar": "مبادئ الإهلاك المحاسبي"
+  },
+  {
+   "nyckel": "km-022-goodwill-och-immateriella-tillgangar:titel",
+   "en": "Goodwill and Intangible Assets",
+   "ar": "الشهرة والأصول غير الملموسة"
+  },
+  {
+   "nyckel": "km-023-leasing:titel",
+   "en": "Leasing — IFRS 16",
+   "ar": "الإيجار — IFRS 16"
+  },
+  {
+   "nyckel": "km-024-segmentrapportering:titel",
+   "en": "Segment Reporting",
+   "ar": "التقارير القطاعية"
+  },
+  {
+   "nyckel": "km-025-pensionsataganden:titel",
+   "en": "Pension Commitments",
+   "ar": "التزامات المعاشات"
+  },
+  {
+   "nyckel": "km-026-relaterade-parter:titel",
+   "en": "Related Parties",
+   "ar": "الأطراف ذات العلاقة"
+  },
+  {
+   "nyckel": "km-027-pegratio:titel",
+   "en": "PEG Ratio",
+   "ar": "نسبة PEG"
+  },
+  {
+   "nyckel": "km-028-reverse-dcf:titel",
+   "en": "Reverse DCF",
+   "ar": "DCF العكسي"
+  },
+  {
+   "nyckel": "km-029-scenarioanalys:titel",
+   "en": "Scenario Analysis",
+   "ar": "تحليل السيناريوهات"
+  },
+  {
+   "nyckel": "km-030-margin-of-safety:titel",
+   "en": "Margin of Safety",
+   "ar": "هامش الأمان"
+  },
+  {
+   "nyckel": "km-031-var:titel",
+   "en": "VaR — Value at Risk",
+   "ar": "VaR — القيمة عند المخاطرة"
+  },
+  {
+   "nyckel": "km-032-stresstesting-portfoljen:titel",
+   "en": "Stress-Testing the Portfolio",
+   "ar": "اختبار الضغط على المحفظة"
+  },
+  {
+   "nyckel": "km-033-tailrisk-hedging:titel",
+   "en": "Tail-Risk Hedging",
+   "ar": "التحوط من المخاطر الذيلية"
+  },
+  {
+   "nyckel": "km-034-drawdownanalys:titel",
+   "en": "Drawdown Analysis",
+   "ar": "تحليل التراجع"
+  },
+  {
+   "nyckel": "km-035-flockbeteende:titel",
+   "en": "Herd Behavior",
+   "ar": "سلوك القطيع"
+  },
+  {
+   "nyckel": "km-036-overconfidence:titel",
+   "en": "Overconfidence",
+   "ar": "الثقة المفرطة"
+  },
+  {
+   "nyckel": "km-037-disposition-effect:titel",
+   "en": "Disposition Effect",
+   "ar": "أثر التصرف"
+  },
+  {
+   "nyckel": "km-038-techsektorn:titel",
+   "en": "The Tech Sector",
+   "ar": "قطاع التقنية"
+  },
+  {
+   "nyckel": "km-039-pharmasektorn:titel",
+   "en": "The Pharma Sector",
+   "ar": "قطاع الأدوية"
+  },
+  {
+   "nyckel": "km-040-banksektorn:titel",
+   "en": "The Banking Sector",
+   "ar": "قطاع البنوك"
+  },
+  {
+   "nyckel": "km-041-industrisektorn:titel",
+   "en": "The Industrial Sector",
+   "ar": "القطاع الصناعي"
+  },
+  {
+   "nyckel": "km-042-fastighetsektorn:titel",
+   "en": "The Real Estate Sector",
+   "ar": "قطاع العقارات"
+  },
+  {
+   "nyckel": "km-043-energisektorn:titel",
+   "en": "The Energy Sector",
+   "ar": "قطاع الطاقة"
+  },
+  {
+   "nyckel": "km-044-konsumentsektorn:titel",
+   "en": "The Consumer Sector",
+   "ar": "القطاع الاستهلاكي"
+  },
+  {
+   "nyckel": "km-045-materialsektorn:titel",
+   "en": "The Materials Sector",
+   "ar": "قطاع المواد الخام"
+  },
+  {
+   "nyckel": "km-046-telekomsektorn:titel",
+   "en": "The Telecom Sector",
+   "ar": "قطاع الاتصالات"
+  },
+  {
+   "nyckel": "km-047-utilitysektorn:titel",
+   "en": "The Utilities Sector",
+   "ar": "قطاع المرافق"
+  },
+  {
+   "nyckel": "km-048-halsovardsektorn:titel",
+   "en": "The Healthcare Sector",
+   "ar": "قطاع الرعاية الصحية"
+  },
+  {
+   "nyckel": "km-049-bolagsskatt-206:titel",
+   "en": "Corporate Tax 20,6%",
+   "ar": "ضريبة الشركات 20,6%"
+  },
+  {
+   "nyckel": "km-050-utdelningsskatt-30:titel",
+   "en": "Dividend Tax 30%",
+   "ar": "ضريبة التوزيعات 30%"
+  },
+  {
+   "nyckel": "km-051-kapitalvinstskatt:titel",
+   "en": "Capital Gains Tax",
+   "ar": "ضريبة الأرباح الرأسمالية"
+  },
+  {
+   "nyckel": "km-052-isk:titel",
+   "en": "ISK — the Flat-Rate Tax",
+   "ar": "ISK — الضريبة النمطية"
+  },
+  {
+   "nyckel": "km-053-312reglerna:titel",
+   "en": "The 3:12 Rules",
+   "ar": "قواعد 3:12"
+  },
+  {
+   "nyckel": "km-054-ranta:titel",
+   "en": "Interest Rates — the Price of Money",
+   "ar": "سعر الفائدة — ثمن المال"
+  },
+  {
+   "nyckel": "km-055-inflation:titel",
+   "en": "Inflation — the 2% Target",
+   "ar": "التضخم — هدف 2%"
+  },
+  {
+   "nyckel": "km-056-centralbanker:titel",
+   "en": "Central Banks",
+   "ar": "البنوك المركزية"
+  },
+  {
+   "nyckel": "km-057-konjunkturcykler:titel",
+   "en": "Business Cycles",
+   "ar": "الدورات الاقتصادية"
+  },
+  {
+   "nyckel": "km-058-valutor:titel",
+   "en": "Currencies",
+   "ar": "العملات"
+  },
+  {
+   "nyckel": "km-059-optionsgrunder:titel",
+   "en": "Options Fundamentals",
+   "ar": "أساسيات الخيارات"
+  },
+  {
+   "nyckel": "km-060-covered-calls:titel",
+   "en": "Covered Calls",
+   "ar": "خيارات الشراء المغطاة"
+  },
+  {
+   "nyckel": "km-061-protective-puts:titel",
+   "en": "Protective Puts",
+   "ar": "خيارات البيع الوقائية"
+  },
+  {
+   "nyckel": "km-062-blackscholes:titel",
+   "en": "Black-Scholes",
+   "ar": "نموذج بلاك-شولز"
+  },
+  {
+   "nyckel": "km-063-direktavkastning:titel",
+   "en": "Dividend Yield",
+   "ar": "مردود التوزيعات"
+  },
+  {
+   "nyckel": "km-064-utdelningstillvaxt:titel",
+   "en": "Dividend Growth",
+   "ar": "نمو التوزيعات"
+  },
+  {
+   "nyckel": "km-065-dogs-of-the-dow:titel",
+   "en": "Dogs of the Dow",
+   "ar": "استراتيجية Dogs of the Dow"
+  },
+  {
+   "nyckel": "km-066-utdelning-vs-aterkop:titel",
+   "en": "Dividends vs Share Buybacks",
+   "ar": "التوزيعات مقابل إعادة شراء الأسهم"
+  },
+  {
+   "nyckel": "km-067-investmentbolag:titel",
+   "en": "Investment Companies — NAV Discount",
+   "ar": "شركات الاستثمار — خصم NAV"
+  },
+  {
+   "nyckel": "km-068-wallenbergsfaren:titel",
+   "en": "The Wallenberg Sphere",
+   "ar": "مجموعة والنبرغ"
+  },
+  {
+   "nyckel": "km-069-orderbok-och-prissattning:titel",
+   "en": "Order Book and Pricing",
+   "ar": "دفتر الأوامر والتسعير"
+  },
+  {
+   "nyckel": "km-070-natmaklare-i-sverige:titel",
+   "en": "Online Brokers in Sweden",
+   "ar": "الوسطاء الإلكترونيون في السويد"
+  },
+  {
+   "nyckel": "mk-01-bnp-och-tillvaxt:titel",
+   "en": "GDP and Growth",
+   "ar": "الناتج المحلي الإجمالي والنمو"
+  },
+  {
+   "nyckel": "mk-02-arbetsloshet:titel",
+   "en": "Unemployment",
+   "ar": "البطالة"
+  },
+  {
+   "nyckel": "mk-03-handelsbalans:titel",
+   "en": "Trade Balance",
+   "ar": "الميزان التجاري"
+  },
+  {
+   "nyckel": "mk-04-statsobligationer:titel",
+   "en": "Government Bonds",
+   "ar": "السندات الحكومية"
+  },
+  {
+   "nyckel": "mk-05-geopolitik:titel",
+   "en": "Geopolitics",
+   "ar": "الجغرافيا السياسية"
+  },
+  {
+   "nyckel": "pc-01-case-atlas-copco:titel",
+   "en": "Case: Atlas Copco",
+   "ar": "دراسة حالة: Atlas Copco"
+  },
+  {
+   "nyckel": "pc-02-case-astrazeneca:titel",
+   "en": "Case: AstraZeneca",
+   "ar": "دراسة حالة: AstraZeneca"
+  },
+  {
+   "nyckel": "pc-03-case-swedbank:titel",
+   "en": "Case: Swedbank",
+   "ar": "دراسة حالة: Swedbank"
+  },
+  {
+   "nyckel": "pc-04-case-investor-ab:titel",
+   "en": "Case: Investor AB",
+   "ar": "دراسة حالة: Investor AB"
+  },
+  {
+   "nyckel": "pc-05-case-volvo-ab:titel",
+   "en": "Case: Volvo AB",
+   "ar": "دراسة حالة: Volvo AB"
+  },
+  {
+   "nyckel": "pc-06-case-hm:titel",
+   "en": "Case: H&M",
+   "ar": "دراسة حالة: H&M"
+  },
+  {
+   "nyckel": "pc-07-case-sinch:titel",
+   "en": "Case: Sinch",
+   "ar": "دراسة حالة: Sinch"
+  },
+  {
+   "nyckel": "pc-08-case-precise-biometrics:titel",
+   "en": "Case: Precise Biometrics",
+   "ar": "دراسة حالة: Precise Biometrics"
+  },
+  {
+   "nyckel": "pc-09-case-novo-nordisk:titel",
+   "en": "Case: Novo Nordisk",
+   "ar": "دراسة حالة: Novo Nordisk"
+  },
+  {
+   "nyckel": "pc-10-case-ericsson:titel",
+   "en": "Case: Ericsson",
+   "ar": "دراسة حالة: Ericsson"
+  },
+  {
+   "nyckel": "pc-11-case-boliden:titel",
+   "en": "Case: Boliden — Mines",
+   "ar": "دراسة حالة: Boliden — المناجم"
+  },
+  {
+   "nyckel": "pf-01-portfoljbyggande:titel",
+   "en": "Portfolio Construction",
+   "ar": "بناء المحفظة"
+  },
+  {
+   "nyckel": "pf-02-position-sizing:titel",
+   "en": "Position Sizing",
+   "ar": "تحديد حجم المركز"
+  },
+  {
+   "nyckel": "pf-03-diversifiering:titel",
+   "en": "Diversification",
+   "ar": "التنويع الاستثماري"
+  },
+  {
+   "nyckel": "pf-04-rebalansering:titel",
+   "en": "Rebalancing",
+   "ar": "إعادة الموازنة"
+  },
+  {
+   "nyckel": "pf-05-utdelningsstrategi:titel",
+   "en": "Dividend Strategy",
+   "ar": "استراتيجية التوزيعات"
+  },
+  {
+   "nyckel": "pf-06-aterinvestering:titel",
+   "en": "Reinvestment — the Portfolio's Compounding Interest Rate",
+   "ar": "إعادة الاستثمار — سعر الفائدة المركب في المحفظة"
+  },
+  {
+   "nyckel": "pf-07-krishantering:titel",
+   "en": "Crisis Management",
+   "ar": "إدارة الأزمات"
+  },
+  {
+   "nyckel": "pf-08-isk-vs-aktiedepa:titel",
+   "en": "ISK vs Securities Account",
+   "ar": "ISK مقابل حساب الأسهم"
+  },
+  {
+   "nyckel": "rk-01-kapitalforbranning:titel",
+   "en": "Cash Burn — Runway",
+   "ar": "احتراق رأس المال — المدى النقدي"
+  },
+  {
+   "nyckel": "rk-02-emissionrisk:titel",
+   "en": "Share Issue Risk — Dilution",
+   "ar": "المخاطر المرتبطة بإصدار أسهم — تخفيف الملكية"
+  },
+  {
+   "nyckel": "rk-03-skuldfalla:titel",
+   "en": "The Debt Trap",
+   "ar": "فخ الديون"
+  },
+  {
+   "nyckel": "rk-04-likviditetskris:titel",
+   "en": "Liquidity Crisis",
+   "ar": "أزمة السيولة"
+  },
+  {
+   "nyckel": "rk-05-cykelrisk:titel",
+   "en": "Cyclical Risk",
+   "ar": "المخاطر الدورية"
+  },
+  {
+   "nyckel": "rk-06-regulatorisk-risk:titel",
+   "en": "Regulatory Risk",
+   "ar": "المخاطر التنظيمية"
+  },
+  {
+   "nyckel": "rk-07-valutarisk:titel",
+   "en": "Currency Risk",
+   "ar": "مخاطر العملة"
+  },
+  {
+   "nyckel": "rk-08-ranterisk:titel",
+   "en": "Interest Rate Risk — Duration",
+   "ar": "مخاطر أسعار الفائدة — المدة"
+  },
+  {
+   "nyckel": "rk-09-koncentrationsrisk:titel",
+   "en": "Concentration Risk",
+   "ar": "مخاطر التركز"
+  },
+  {
+   "nyckel": "rk-10-korrelationsrisk:titel",
+   "en": "Correlation Risk",
+   "ar": "مخاطر الارتباط"
+  },
+  {
+   "nyckel": "rk-11-bedrageririsk:titel",
+   "en": "Fraud Risk",
+   "ar": "المخاطر الاحتيالية"
+  },
+  {
+   "nyckel": "rk-12-black-swanrisk:titel",
+   "en": "Black Swan Risk",
+   "ar": "المخاطر من نوع البجعة السوداء"
+  },
+  {
+   "nyckel": "se-01-saassektorn:titel",
+   "en": "The SaaS Sector",
+   "ar": "قطاع SaaS"
+  },
+  {
+   "nyckel": "se-02-halvledarsektorn:titel",
+   "en": "The Semiconductor Sector",
+   "ar": "قطاع أشباه الموصلات"
+  },
+  {
+   "nyckel": "se-03-forsvarssektorn:titel",
+   "en": "The Defense Sector",
+   "ar": "قطاع الدفاع"
+  },
+  {
+   "nyckel": "se-04-logistiksektorn:titel",
+   "en": "The Logistics Sector",
+   "ar": "قطاع الخدمات اللوجستية"
+  },
+  {
+   "nyckel": "se-05-lyxsektorn:titel",
+   "en": "The Luxury Sector",
+   "ar": "قطاع السلع الفاخرة"
+  },
+  {
+   "nyckel": "sj-01-utlandsk-kallskatt:titel",
+   "en": "Foreign Withholding Tax",
+   "ar": "ضريبة المصدر الأجنبية"
+  },
+  {
+   "nyckel": "sj-02-cryptobeskattning:titel",
+   "en": "Crypto Taxation",
+   "ar": "الضرائب على العملات المشفرة"
+  },
+  {
+   "nyckel": "sj-03-bolagsstamma-och-rostratt:titel",
+   "en": "Annual General Meeting and Voting Rights",
+   "ar": "الجمعية العمومية وحق التصويت"
+  },
+  {
+   "nyckel": "ts-01-elliott-wave:titel",
+   "en": "Elliott Wave — 5-Wave Impulse",
+   "ar": "Elliott Wave — الموجة الدافعة ذات 5 موجات"
+  },
+  {
+   "nyckel": "ts-02-elliott-wave:titel",
+   "en": "Elliott Wave — 3-Wave Correction",
+   "ar": "Elliott Wave — موجة تصحيحية من 3 موجات"
+  },
+  {
+   "nyckel": "ts-03-fibonacciretracements:titel",
+   "en": "Fibonacci Retracements",
+   "ar": "مستويات الارتداد لفيبوناتشي"
+  },
+  {
+   "nyckel": "ts-04-fibonacciextensions:titel",
+   "en": "Fibonacci Extensions",
+   "ar": "امتدادات فيبوناتشي"
+  },
+  {
+   "nyckel": "ts-05-gannvinklar:titel",
+   "en": "Gann Angles",
+   "ar": "زوايا غان"
+  },
+  {
+   "nyckel": "ts-06-ganncyklar:titel",
+   "en": "Gann Cycles",
+   "ar": "دورات غان"
+  },
+  {
+   "nyckel": "ts-07-lucastalserie:titel",
+   "en": "The Lucas Number Sequence",
+   "ar": "متتالية أعداد لوكاس"
+  },
+  {
+   "nyckel": "ts-08-volymanalys:titel",
+   "en": "Volume Analysis",
+   "ar": "تحليل الحجم"
+  },
+  {
+   "nyckel": "ts-09-volymprofiler:titel",
+   "en": "Volume Profiles — VPOC",
+   "ar": "ملامح الحجم — VPOC"
+  },
+  {
+   "nyckel": "ts-10-ak1ts-25cellers-matris:titel",
+   "en": "The AK1TS 25-Cell Matrix",
+   "ar": "مصفوفة AK1TS ذات 25 خلية"
+  },
+  {
+   "nyckel": "ts-11-candlestickmonster:titel",
+   "en": "Candlestick Patterns",
+   "ar": "أنماط الشموع اليابانية"
+  },
+  {
+   "nyckel": "ts-12-moving-averages:titel",
+   "en": "Moving Averages",
+   "ar": "المتوسطات المتحركة"
+  },
+  {
+   "nyckel": "ts-13-rsi:titel",
+   "en": "RSI",
+   "ar": "RSI"
+  },
+  {
+   "nyckel": "ts-14-macd:titel",
+   "en": "MACD",
+   "ar": "MACD"
+  },
+  {
+   "nyckel": "ts-15-bollinger-bands:titel",
+   "en": "Bollinger Bands",
+   "ar": "أشرطة بولينجر"
+  },
+  {
+   "nyckel": "ts-16-stod-och-motstand:titel",
+   "en": "Support and Resistance",
+   "ar": "الدعم والمقاومة"
+  },
+  {
+   "nyckel": "ts-17-trendlinjer:titel",
+   "en": "Trendlines",
+   "ar": "خطوط الاتجاه"
+  },
+  {
+   "nyckel": "ts-18-chartmonster:titel",
+   "en": "Chart Patterns",
+   "ar": "أنماط الرسم البياني"
+  },
+  {
+   "nyckel": "ts-19-fibonaccitidszoner:titel",
+   "en": "Fibonacci Time Zones",
+   "ar": "مناطق فيبوناتشي الزمنية"
+  },
+  {
+   "nyckel": "ts-20-harmoniska-monster:titel",
+   "en": "Harmonic Patterns",
+   "ar": "الأنماط التوافقية"
+  },
+  {
+   "nyckel": "ts-21-fibonaccikluster:titel",
+   "en": "Fibonacci Clusters",
+   "ar": "تجمعات فيبوناتشي"
+  },
+  {
+   "nyckel": "ts-22-elliott-wave:titel",
+   "en": "Elliott Wave — Multiple Time Horizons",
+   "ar": "Elliott Wave — آفاق زمنية متعددة"
+  },
+  {
+   "nyckel": "ts-23-volume-spread-analysis-vsa:titel",
+   "en": "Volume Spread Analysis (VSA)",
+   "ar": "تحليل انتشار الحجم (VSA)"
+  },
+  {
+   "nyckel": "ts-24-order-flow:titel",
+   "en": "Order Flow — Market Depth",
+   "ar": "تدفق الأوامر — عمق السوق"
+  },
+  {
+   "nyckel": "ts-25-market-profile:titel",
+   "en": "Market Profile",
+   "ar": "ملامح السوق"
+  },
+  {
+   "nyckel": "ud-01-payout-ratio:titel",
+   "en": "Payout Ratio",
+   "ar": "نسبة التوزيع"
+  },
+  {
+   "nyckel": "ud-02-aterinvestering:titel",
+   "en": "Reinvestment — the Power of Dividends",
+   "ar": "إعادة الاستثمار — قوة التوزيعات"
+  },
+  {
+   "nyckel": "v01-forsaljningstillvaxt:titel",
+   "en": "Revenue Growth",
+   "ar": "نمو الإيرادات"
+  },
+  {
+   "nyckel": "v02-arr-tillvaxt:titel",
+   "en": "ARR Growth (Recurring Revenue)",
+   "ar": "النمو في ARR (الإيرادات المتكررة)"
+  },
+  {
+   "nyckel": "v03-intaktsdiversifiering:titel",
+   "en": "Revenue Diversification",
+   "ar": "تنويع الإيرادات"
+  },
+  {
+   "nyckel": "v04-ps:titel",
+   "en": "P/S (Price-to-Sales)",
+   "ar": "P/S (نسبة السعر إلى المبيعات)"
+  },
+  {
+   "nyckel": "v05-pb:titel",
+   "en": "P/B (Price-to-Book)",
+   "ar": "P/B (نسبة السعر إلى القيمة الدفترية)"
+  },
+  {
+   "nyckel": "v06-ev-ebitda:titel",
+   "en": "EV/EBITDA",
+   "ar": "EV/EBITDA"
+  },
+  {
+   "nyckel": "v07-bruttomarginal:titel",
+   "en": "Gross Margin",
+   "ar": "الهامش الإجمالي"
+  },
+  {
+   "nyckel": "v08-ebitda-marginal:titel",
+   "en": "EBITDA Margin",
+   "ar": "هامش EBITDA"
+  },
+  {
+   "nyckel": "v09-roe:titel",
+   "en": "ROE (Return on Equity)",
+   "ar": "ROE (العائد على حقوق الملكية)"
+  },
+  {
+   "nyckel": "v10-skuldsattningsgrad:titel",
+   "en": "Debt-to-Equity Ratio",
+   "ar": "نسبة الدين إلى حقوق الملكية"
+  },
+  {
+   "nyckel": "v11-likviditet:titel",
+   "en": "Liquidity (Quick)",
+   "ar": "السيولة (السريعة)"
+  },
+  {
+   "nyckel": "v12-intaktsstabilitet:titel",
+   "en": "Revenue Stability",
+   "ar": "استقرار الإيرادات"
+  },
+  {
+   "nyckel": "v13-patent-ip:titel",
+   "en": "Patents & Intellectual Property Rights",
+   "ar": "براءات الاختراع وحقوق الملكية الفكرية"
+  },
+  {
+   "nyckel": "v14-varumarke:titel",
+   "en": "Brand & Customer Loyalty",
+   "ar": "العلامة التجارية وولاء العملاء"
+  },
+  {
+   "nyckel": "v15-natverkseffekter:titel",
+   "en": "Network Effects",
+   "ar": "أثر الشبكة"
+  },
+  {
+   "nyckel": "v16-produktlanseringar:titel",
+   "en": "Product Launches",
+   "ar": "إطلاقات المنتجات"
+  },
+  {
+   "nyckel": "v17-avtal-partnerskap:titel",
+   "en": "Agreements & Partnerships",
+   "ar": "الاتفاقيات والشراكات"
+  },
+  {
+   "nyckel": "v18-regulatoriska:titel",
+   "en": "Regulatory Catalysts",
+   "ar": "المحفزات التنظيمية"
+  },
+  {
+   "nyckel": "v19-kapitalforbranning:titel",
+   "en": "Cash Burn & Share Issue Risk",
+   "ar": "احتراق رأس المال والمخاطر المتعلقة بإصدار أسهم"
+  },
+  {
+   "nyckel": "v20-aterekop-egna-aktier:titel",
+   "en": "Share Buyback of Own Stocks",
+   "ar": "إعادة شراء الأسهم الخاصة"
+  },
+  {
+   "nyckel": "vm-01-grahams-formel:titel",
+   "en": "Graham's Formula",
+   "ar": "معادلة غراهام"
+  },
+  {
+   "nyckel": "vm-02-intrinsic-value:titel",
+   "en": "Intrinsic Value",
+   "ar": "القيمة الحقيقية"
+  }
+ ]
+}

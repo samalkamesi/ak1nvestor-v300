@@ -14,6 +14,10 @@
  *     "the-intelligent-investor:kap5:block3". (Följer kundens exempelformat.)
  *     OBS: de 10 premium-handskapade spegelsidorna (/en, /ar) ingår INTE — de
  *     är redan professionellt översatta och ska inte röras av maskinronden.
+ *     VÅG 80b DEL A: kursens EGEN titel är också en källa — nyckel
+ *     "<kurs-slug>:titel" (333 källor, en per kurs; kollisionssäkert i
+ *     kursblock-domänen eftersom alla övriga nycklar har :kapN:-prefix).
+ *     Det är nyckeln kurs-spegel-sida.tsx och spegel-listsidorna läser.
  *   - data/blogg/*.json — varje textbärande fält (våg 55, kunddirektiv "inte
  *     kurser eller annat eller BLOG, ingen översätts" ⇒ bloggen IN i MÖS).
  *     Scope-typ "blogg", nyckel "<slug>:titel" | "<slug>:ingress" (=
@@ -82,7 +86,7 @@ export function raknaHash(kalltext: string): string {
 type DeepBlock = { type?: string; content?: unknown };
 type DeepQuiz = { q?: unknown; alternativ?: unknown; tips?: unknown };
 type DeepChapter = { num?: number; title?: unknown; intro?: unknown; blocks?: DeepBlock[]; quiz?: DeepQuiz[] };
-type DeepCourse = { chapters?: DeepChapter[] };
+type DeepCourse = { title?: unknown; chapters?: DeepChapter[] };
 type DeepCourses = Record<string, DeepCourse>;
 
 let kursCache: readonly KallaPost[] | null = null;
@@ -99,10 +103,12 @@ function pushKalla(poster: KallaPost[], slug: string, nyckelSuffix: string, text
 
 /** Läs + tolka deep-courses.json en gång (cachas — 17 MB ska bara parsas en gång per process).
  *
- * Per kapitel registreras: titel, intro, varje blocks-innehåll (1-baserat) och
- * quiz (q / alternativ k=0.. / tips — ratt-index är struktur och översätts aldrig).
- * Detta gör att flaggskeppsleveransernas titel/intro/quiz-poster kan importeras
- * och att motorronden täcker HELA kursinnehållet, inte bara brödtexten.
+ * Per kurs registreras kursens EGEN titel (våg 80b del A — nyckel
+ * "<slug>:titel", se lasKursblock nedan) och per kapitel: titel, intro,
+ * varje blocks-innehåll (1-baserat) och quiz (q / alternativ k=0.. / tips —
+ * ratt-index är struktur och översätts aldrig). Detta gör att flaggskepps-
+ * leveransernas titel/intro/quiz-poster kan importeras och att motorronden
+ * täcker HELA kursinnehållet, inte bara brödtexten.
  */
 function lasKursblock(): readonly KallaPost[] {
   if (kursCache) return kursCache;
@@ -116,6 +122,20 @@ function lasKursblock(): readonly KallaPost[] {
   for (const slug of Object.keys(data)) {
     const kurs = data[slug];
     if (!kurs || !Array.isArray(kurs.chapters)) continue;
+    // VÅG 80b DEL A — kursens TITEL är en källa: nyckel "<slug>:titel" i
+    // kursblock-domänen (333 källor). KOLLISIONSSÄKERT: alla övriga nycklar
+    // i domänen bär ":kapN:"-prefix ("{slug}:kap5:titel" …), så kurs-titeln
+    // kan aldrig krocka — och det är EXAKT den nyckel kurs-speglar.ts läser
+    // (nyckelKurs("titel", slug)) och som importpaketen v80titel{1,2}.json
+    // kommer att bära. pushKalla kan INTE användas här — den vantar ett
+    // kapitelnummer och byggar "{slug}:kap<suffix>".
+    if (typeof kurs.title === "string" && kurs.title) {
+      poster.push({
+        scope: { typ: "kursblock", nyckel: slug + ":titel" },
+        text: kurs.title,
+        hash: raknaHash(kurs.title),
+      });
+    }
     for (const kap of kurs.chapters) {
       if (!kap) continue;
       const kapNum = typeof kap.num === "number" ? kap.num : 0;

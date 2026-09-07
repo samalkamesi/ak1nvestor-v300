@@ -1,0 +1,837 @@
+{
+ "kurs": "v80t2",
+ "skapad": "2026-09-04",
+ "beskrivning": "Våg 67 agent-ÖA (v80t2): saknade källor en+ar, 100p-kontrollerade",
+ "poster": [
+  {
+   "nyckel": "100-baggers:titel",
+   "en": "100 Baggers — Mayer: COMPLETE",
+   "ar": "100 Baggers — Mayer: كامل"
+  },
+  {
+   "nyckel": "a-random-walk-down-wall-street:titel",
+   "en": "A Random Walk Down Wall Street — Malkiel: COMPLETE",
+   "ar": "A Random Walk Down Wall Street (المسيرة العشوائية) — Malkiel: كامل"
+  },
+  {
+   "nyckel": "against-the-gods:titel",
+   "en": "Against the Gods — Bernstein: COMPLETE",
+   "ar": "Against the Gods — Bernstein: كامل"
+  },
+  {
+   "nyckel": "ak1ts-vaglarans-hierarki:titel",
+   "en": "AK1TS — The Hierarchy of Wave Theory: SUPER DEEP",
+   "ar": "AK1TS — التسلسل الهرمي لنظرية الموجات: فائق العمق"
+  },
+  {
+   "nyckel": "akm1-den-kontroversiella-modellen:titel",
+   "en": "AKM1 — The Controversial Model: SUPER DEEP",
+   "ar": "AKM1 — النموذج المثير للجدل: فائق العمق"
+  },
+  {
+   "nyckel": "all-about-asset-allocation:titel",
+   "en": "All About Asset Allocation — Ferri: COMPLETE",
+   "ar": "All About Asset Allocation — Ferri: كامل"
+  },
+  {
+   "nyckel": "analysis-for-financial-management:titel",
+   "en": "Analysis for Financial Management — Robert C. Higgins: COMPLETE",
+   "ar": "Analysis for Financial Management — Robert C. Higgins: كامل"
+  },
+  {
+   "nyckel": "bf-05-ankareffekt:titel",
+   "en": "Anchoring effect — the average is irrelevant",
+   "ar": "تأثير الإرساء — المتوسط غير ذي صلة"
+  },
+  {
+   "nyckel": "bf-06-tillganglighetsheuristik:titel",
+   "en": "Availability heuristic",
+   "ar": "استدلال الإتاحة"
+  },
+  {
+   "nyckel": "bf-07-framstegseffekt:titel",
+   "en": "The progress effect",
+   "ar": "تأثير التقدم"
+  },
+  {
+   "nyckel": "bf-08-priming:titel",
+   "en": "Priming — unconscious influences",
+   "ar": "التهيئة — التأثيرات اللاواعية"
+  },
+  {
+   "nyckel": "bf-09-haloeffekt:titel",
+   "en": "Halo effect",
+   "ar": "تأثير الهالة"
+  },
+  {
+   "nyckel": "bf-10-dunningkruger:titel",
+   "en": "Dunning-Kruger",
+   "ar": "دونينغ-كروغر"
+  },
+  {
+   "nyckel": "bf-11-kognitiv-bias:titel",
+   "en": "Cognitive bias — the complete list",
+   "ar": "التحيز المعرفي — قائمة كاملة"
+  },
+  {
+   "nyckel": "blue-ocean-strategy:titel",
+   "en": "Blue Ocean Strategy — Kim & Mauborgne: COMPLETE",
+   "ar": "Blue Ocean Strategy — Kim & Mauborgne: كامل"
+  },
+  {
+   "nyckel": "bollinger-on-bollinger-bands:titel",
+   "en": "Bollinger on Bollinger Bands — Bollinger: COMPLETE",
+   "ar": "Bollinger on Bollinger Bands — Bollinger: كامل"
+  },
+  {
+   "nyckel": "bull-a-history-of-boom-and-bust:titel",
+   "en": "Bull! — Maggie Mahar: COMPLETE",
+   "ar": "Bull! — Maggie Mahar: كامل"
+  },
+  {
+   "nyckel": "charlie-munger-complete-investor:titel",
+   "en": "Charlie Munger: The Complete Investor — Griffin: COMPLETE",
+   "ar": "Charlie Munger: The Complete Investor — Griffin: كامل"
+  },
+  {
+   "nyckel": "come-into-my-trading-room:titel",
+   "en": "Come Into My Trading Room — Elder: COMPLETE",
+   "ar": "Come Into My Trading Room — Elder: كامل"
+  },
+  {
+   "nyckel": "common-sense-on-mutual-funds:titel",
+   "en": "Common Sense on Mutual Funds — Bogle: COMPLETE",
+   "ar": "Common Sense on Mutual Funds — Bogle: كامل"
+  },
+  {
+   "nyckel": "common-stocks-uncommon-profits:titel",
+   "en": "Common Stocks and Uncommon Profits — Fisher: COMPLETE",
+   "ar": "Common Stocks and Uncommon Profits — Fisher: كامل"
+  },
+  {
+   "nyckel": "competition-demystified:titel",
+   "en": "Competition Demystified — Greenwald & Kahn: COMPLETE",
+   "ar": "Competition Demystified — Greenwald & Kahn: كامل"
+  },
+  {
+   "nyckel": "contrarian-investment-strategies:titel",
+   "en": "Contrarian Investment Strategies — Dreman: COMPLETE",
+   "ar": "Contrarian Investment Strategies — Dreman: كامل"
+  },
+  {
+   "nyckel": "creative-cash-flow-reporting:titel",
+   "en": "Creative Cash Flow Reporting — Mulford & Comiskey: COMPLETE",
+   "ar": "Creative Cash Flow Reporting — Mulford & Comiskey: كامل"
+  },
+  {
+   "nyckel": "devil-take-the-hindmost:titel",
+   "en": "Devil Take the Hindmost — Chancellor: COMPLETE",
+   "ar": "Devil Take the Hindmost — Chancellor: كامل"
+  },
+  {
+   "nyckel": "distress-investing:titel",
+   "en": "Distress Investing: Principles and Technique — Whitman & Diz: COMPLETE",
+   "ar": "Distress Investing: Principles and Technique — Whitman & Diz: كامل"
+  },
+  {
+   "nyckel": "elliott-wave-principle:titel",
+   "en": "Elliott Wave Principle — Frost & Prechter: COMPLETE",
+   "ar": "Elliott Wave Principle — Frost & Prechter: كامل"
+  },
+  {
+   "nyckel": "encyclopedia-of-chart-patterns:titel",
+   "en": "Encyclopedia of Chart Patterns — Bulkowski: COMPLETE",
+   "ar": "Encyclopedia of Chart Patterns (موسوعة أنماط الرسم البياني) — Bulkowski: كامل"
+  },
+  {
+   "nyckel": "expectations-investing:titel",
+   "en": "Expectations Investing — Rappaport & Mauboussin: COMPLETE",
+   "ar": "Expectations Investing — Rappaport & Mauboussin: كامل"
+  },
+  {
+   "nyckel": "extraordinary-popular-delusions:titel",
+   "en": "Extraordinary Popular Delusions — Mackay: COMPLETE",
+   "ar": "Extraordinary Popular Delusions — Mackay: كامل"
+  },
+  {
+   "nyckel": "fibonacci-applications:titel",
+   "en": "Fibonacci Applications and Strategies for Traders — Fischer: COMPLETE",
+   "ar": "Fibonacci Applications and Strategies for Traders (فيبوناتشي للمتداولين) — Fischer: كامل"
+  },
+  {
+   "nyckel": "financial-shenanigans:titel",
+   "en": "Financial Shenanigans — Schilit: COMPLETE",
+   "ar": "Financial Shenanigans — Schilit: كامل"
+  },
+  {
+   "nyckel": "financial-statement-analysis-and-security-valuation:titel",
+   "en": "Financial Statement Analysis and Security Valuation — Stephen Penman: COMPLETE",
+   "ar": "Financial Statement Analysis and Security Valuation — Stephen Penman: كامل"
+  },
+  {
+   "nyckel": "flash-boys:titel",
+   "en": "Flash Boys — Lewis: COMPLETE",
+   "ar": "Flash Boys — Lewis: كامل"
+  },
+  {
+   "nyckel": "fooled-by-randomness:titel",
+   "en": "Fooled by Randomness — Taleb: COMPLETE",
+   "ar": "Fooled by Randomness — Taleb: كامل"
+  },
+  {
+   "nyckel": "fooling-some-of-the-people:titel",
+   "en": "Fooling Some of the People All of the Time — Einhorn: COMPLETE",
+   "ar": "Fooling Some of the People All of the Time — Einhorn: كامل"
+  },
+  {
+   "nyckel": "foretagsvardering-med-fundamental-analys:titel",
+   "en": "Company Valuation: with fundamental analysis — Hjelström, Isaksson & Nilsson: COMPLETE",
+   "ar": "تقييم الشركات: بالتحليل الأساسي — Hjelstrom, Isaksson & Nilsson: كامل"
+  },
+  {
+   "nyckel": "good-to-great:titel",
+   "en": "Good to Great — Jim Collins: COMPLETE",
+   "ar": "Good to Great — Jim Collins: كامل"
+  },
+  {
+   "nyckel": "how-to-make-money-in-stocks:titel",
+   "en": "How to Make Money in Stocks — O'Neil: COMPLETE",
+   "ar": "How to Make Money in Stocks — O'Neil: كامل"
+  },
+  {
+   "nyckel": "intermarket-analysis:titel",
+   "en": "Intermarket Analysis — Murphy: COMPLETE",
+   "ar": "Intermarket Analysis — Murphy: كامل"
+  },
+  {
+   "nyckel": "interpretation-of-financial-statements:titel",
+   "en": "The Interpretation of Financial Statements — Graham: COMPLETE",
+   "ar": "The Interpretation of Financial Statements — Graham: كامل"
+  },
+  {
+   "nyckel": "investment-valuation:titel",
+   "en": "Investment Valuation — Damodaran: COMPLETE",
+   "ar": "Investment Valuation — Damodaran: كامل"
+  },
+  {
+   "nyckel": "irrational-exuberance:titel",
+   "en": "Irrational Exuberance — Shiller: COMPLETE",
+   "ar": "Irrational Exuberance — Shiller: كامل"
+  },
+  {
+   "nyckel": "japanese-candlestick-charting:titel",
+   "en": "Japanese Candlestick Charting — Nison: COMPLETE",
+   "ar": "Japanese Candlestick Charting — Nison: كامل"
+  },
+  {
+   "nyckel": "konfluens-varde-moter-vagor:titel",
+   "en": "Confluence — Where Value Meets Waves: THE COMPOSITE METHOD",
+   "ar": "التوافق — حيث تلتقي القيمة مع الأمواج: المنهج المركب"
+  },
+  {
+   "nyckel": "liars-poker:titel",
+   "en": "Liar's Poker — Lewis: COMPLETE",
+   "ar": "Liar's Poker — Lewis: كامل"
+  },
+  {
+   "nyckel": "made-in-america:titel",
+   "en": "Made in America — Sam Walton: COMPLETE",
+   "ar": "Made in America — Sam Walton: كامل"
+  },
+  {
+   "nyckel": "manias-panics-and-crashes:titel",
+   "en": "Manias, Panics, and Crashes — Kindleberger & Aliber: COMPLETE",
+   "ar": "Manias, Panics, and Crashes — Kindleberger & Aliber: كامل"
+  },
+  {
+   "nyckel": "margin-of-safety:titel",
+   "en": "Margin of Safety — Klarman: COMPLETE",
+   "ar": "Margin of Safety (هامش الأمان) — Klarman: كامل"
+  },
+  {
+   "nyckel": "market-mind-games:titel",
+   "en": "Market Mind Games — Shull: COMPLETE",
+   "ar": "Market Mind Games — Shull: كامل"
+  },
+  {
+   "nyckel": "market-wizards:titel",
+   "en": "Market Wizards — Schwager: COMPLETE",
+   "ar": "Market Wizards — Schwager: كامل"
+  },
+  {
+   "nyckel": "martin-pring-on-market-momentum:titel",
+   "en": "Martin Pring on Market Momentum — Pring: COMPLETE",
+   "ar": "Martin Pring on Market Momentum (الزخم في السوق) — Pring: كامل"
+  },
+  {
+   "nyckel": "mina-basta-investeringar:titel",
+   "en": "My Best Investments — Peter Lynch: COMPLETE (all chapters)",
+   "ar": "أفضل استثماراتي — Peter Lynch: كامل (الفصل تلو الفصل)"
+  },
+  {
+   "nyckel": "misbehaving:titel",
+   "en": "Misbehaving — Thaler: COMPLETE",
+   "ar": "Misbehaving — Thaler: كامل"
+  },
+  {
+   "nyckel": "mk-06-penningpolitik:titel",
+   "en": "Monetary policy — QE and QT",
+   "ar": "السياسة النقدية — QE وQT"
+  },
+  {
+   "nyckel": "mk-07-fiscal-politik:titel",
+   "en": "Fiscal policy — the state budget",
+   "ar": "السياسة المالية — ميزانية الدولة"
+  },
+  {
+   "nyckel": "mk-08-omvand-yield-curve:titel",
+   "en": "Inverted yield curve",
+   "ar": "منحنى العائد المقلوب"
+  },
+  {
+   "nyckel": "mk-09-deflation-vs-inflation:titel",
+   "en": "Deflation vs inflation",
+   "ar": "الانكماش مقابل التضخم"
+  },
+  {
+   "nyckel": "mk-10-oljepris:titel",
+   "en": "The oil price — a macro driver",
+   "ar": "سعر النفط — محرك اقتصادي كلي"
+  },
+  {
+   "nyckel": "mk-11-kinaekonomin:titel",
+   "en": "The China economy",
+   "ar": "الاقتصاد الصيني"
+  },
+  {
+   "nyckel": "of-permanent-value:titel",
+   "en": "Of Permanent Value — Andrew Kilpatrick: COMPLETE",
+   "ar": "Of Permanent Value — Andrew Kilpatrick: كامل"
+  },
+  {
+   "nyckel": "one-up-on-wall-street:titel",
+   "en": "One Up on Wall Street — Peter Lynch: COMPLETE",
+   "ar": "One Up on Wall Street — Peter Lynch: كامل"
+  },
+  {
+   "nyckel": "origins-of-the-crash:titel",
+   "en": "Origins of the Crash — Lowenstein: COMPLETE",
+   "ar": "Origins of the Crash — Lowenstein: كامل"
+  },
+  {
+   "nyckel": "pc-12-case-skf:titel",
+   "en": "Case: SKF — industrial moat",
+   "ar": "دراسة حالة: SKF — الخندق التنافسي الصناعي"
+  },
+  {
+   "nyckel": "pc-13-case-ssab:titel",
+   "en": "Case: SSAB — cyclical steel",
+   "ar": "دراسة حالة: SSAB — الصلب الدوري"
+  },
+  {
+   "nyckel": "pc-14-case-electrolux:titel",
+   "en": "Case: Electrolux — disruption",
+   "ar": "دراسة حالة: Electrolux — الابتكار التخريبي"
+  },
+  {
+   "nyckel": "pc-15-case-kambi:titel",
+   "en": "Case: Kambi — tech niche",
+   "ar": "دراسة حالة: Kambi — تخصص تقني"
+  },
+  {
+   "nyckel": "pc-16-case-beijer-ref:titel",
+   "en": "Case: Beijer Ref — refrigeration distribution",
+   "ar": "دراسة حالة: Beijer Ref — توزيع التبريد"
+  },
+  {
+   "nyckel": "pc-17-case-sandvik:titel",
+   "en": "Case: Sandvik — tools",
+   "ar": "دراسة حالة: Sandvik — الأدوات"
+  },
+  {
+   "nyckel": "pc-18-case-oresund:titel",
+   "en": "Case: Öresund — investment company",
+   "ar": "دراسة حالة: Oresund — شركة استثمارية"
+  },
+  {
+   "nyckel": "pc-19-case-hoganas:titel",
+   "en": "Case: Höganäs — iron powder monopoly",
+   "ar": "دراسة حالة: Hoganas — احتكار في مسحوق الحديد"
+  },
+  {
+   "nyckel": "pc-20-case-essity:titel",
+   "en": "Case: Essity — hygiene products",
+   "ar": "دراسة حالة: Essity — منتجات النظافة"
+  },
+  {
+   "nyckel": "pf-09-taxloss-harvesting:titel",
+   "en": "Tax-loss harvesting",
+   "ar": "حصاد الخسائر الضريبية"
+  },
+  {
+   "nyckel": "pf-10-longshort:titel",
+   "en": "Long/short — hedging",
+   "ar": "المراكز الطويلة والقصيرة — التحوط"
+  },
+  {
+   "nyckel": "pf-11-koncentrerad-portfolj:titel",
+   "en": "Concentrated portfolio — 5-10 companies",
+   "ar": "المحفظة المركزة — 5-10 شركات"
+  },
+  {
+   "nyckel": "pf-12-arsrapportering:titel",
+   "en": "Annual reporting — portfolio review",
+   "ar": "التقارير السنوية — مراجعة المحفظة"
+  },
+  {
+   "nyckel": "pf-13-esgportfolj:titel",
+   "en": "ESG portfolio",
+   "ar": "المحفظة وفق معايير ESG"
+  },
+  {
+   "nyckel": "pf-14-pensionssparande:titel",
+   "en": "Pension savings",
+   "ar": "الادخار للتقاعد"
+  },
+  {
+   "nyckel": "poor-charlies-almanack:titel",
+   "en": "Poor Charlie's Almanack — Munger: COMPLETE",
+   "ar": "Poor Charlie's Almanack — Munger: كامل"
+  },
+  {
+   "nyckel": "portfolj-ekosystemet:titel",
+   "en": "From stock to portfolio — the 5×5×4 ecosystem in practice",
+   "ar": "من السهم إلى المحفظة — منظومة 5×5×4 في الممارسة"
+  },
+  {
+   "nyckel": "principles-of-corporate-finance:titel",
+   "en": "Principles of Corporate Finance — Brealey, Myers & Allen: COMPLETE",
+   "ar": "Principles of Corporate Finance — Brealey, Myers & Allen: كامل"
+  },
+  {
+   "nyckel": "quality-of-earnings:titel",
+   "en": "Quality of Earnings — O'Glove: COMPLETE",
+   "ar": "Quality of Earnings — O'Glove: كامل"
+  },
+  {
+   "nyckel": "quantitative-value:titel",
+   "en": "Quantitative Value — Gray & Carlisle: COMPLETE",
+   "ar": "Quantitative Value — Gray & Carlisle: كامل"
+  },
+  {
+   "nyckel": "reminiscences-of-a-stock-operator:titel",
+   "en": "Reminiscences of a Stock Operator — Lefèvre: COMPLETE",
+   "ar": "Reminiscences of a Stock Operator — Lefèvre: كامل"
+  },
+  {
+   "nyckel": "rk-13-gdpr-och-datarisk:titel",
+   "en": "GDPR and data risk",
+   "ar": "GDPR والمخاطر المتعلقة بالبيانات"
+  },
+  {
+   "nyckel": "rk-14-esgrisk:titel",
+   "en": "ESG risk — environmental and social",
+   "ar": "المخاطر المتعلقة بمعايير ESG — البيئة والجوانب الاجتماعية"
+  },
+  {
+   "nyckel": "rk-15-cykelrisk:titel",
+   "en": "Cycle risk — business cycle sensitivity",
+   "ar": "المخاطر الدورية — الحساسية لدورة الأعمال"
+  },
+  {
+   "nyckel": "se-06-finanssektorn:titel",
+   "en": "The financial sector — insurance",
+   "ar": "القطاع المالي — التأمين"
+  },
+  {
+   "nyckel": "se-07-detailhandel:titel",
+   "en": "Retail — scale and e-commerce",
+   "ar": "تجارة التجزئة — الحجم والتجارة الإلكترونية"
+  },
+  {
+   "nyckel": "se-08-media:titel",
+   "en": "Media — content and streaming",
+   "ar": "الإعلام — المحتوى والبث"
+  },
+  {
+   "nyckel": "se-09-bil:titel",
+   "en": "Cars — disruption and electric",
+   "ar": "السيارات — التخريب والكهرباء"
+  },
+  {
+   "nyckel": "se-10-flyg:titel",
+   "en": "Airlines — cyclicality and fuel",
+   "ar": "الطيران — الدورية والوقود"
+  },
+  {
+   "nyckel": "se-11-krypto:titel",
+   "en": "Crypto — extreme risk",
+   "ar": "العملات المشفرة — المخاطر القصوى"
+  },
+  {
+   "nyckel": "se-12-spel:titel",
+   "en": "Gaming — licensing and regulation",
+   "ar": "الألعاب — الترخيص والتنظيم"
+  },
+  {
+   "nyckel": "se-13-utbildning:titel",
+   "en": "Education — recurring revenue",
+   "ar": "التعليم — الإيرادات المتكررة"
+  },
+  {
+   "nyckel": "se-14-livsmedel:titel",
+   "en": "Food — staples and brands",
+   "ar": "الأغذية — السلع الأساسية والعلامة التجارية"
+  },
+  {
+   "nyckel": "se-15-logistik:titel",
+   "en": "Logistics — networks",
+   "ar": "الخدمات اللوجستية — الشبكات"
+  },
+  {
+   "nyckel": "security-analysis:titel",
+   "en": "Security Analysis — Graham & Dodd: COMPLETE",
+   "ar": "Security Analysis — Graham & Dodd: كامل"
+  },
+  {
+   "nyckel": "shoe-dog:titel",
+   "en": "Shoe Dog — Phil Knight: COMPLETE",
+   "ar": "Shoe Dog — Phil Knight: كامل"
+  },
+  {
+   "nyckel": "sj-04-optionsbeskattning:titel",
+   "en": "Options taxation",
+   "ar": "الضرائب على الخيارات"
+  },
+  {
+   "nyckel": "sj-05-kapitalforsakring-vs-isk:titel",
+   "en": "Capital insurance vs ISK",
+   "ar": "التأمين الرأسمالي مقابل ISK"
+  },
+  {
+   "nyckel": "stocks-for-the-long-run:titel",
+   "en": "Stocks for the Long Run — Siegel: COMPLETE",
+   "ar": "Stocks for the Long Run — Siegel: كامل"
+  },
+  {
+   "nyckel": "tanka-snabbt-och-langsamt:titel",
+   "en": "Thinking, Fast and Slow — Kahneman: COMPLETE",
+   "ar": "التفكير السريع والبطيء — Kahneman: كامل"
+  },
+  {
+   "nyckel": "technical-analysis-financial-markets:titel",
+   "en": "Technical Analysis of the Financial Markets — Murphy: COMPLETE",
+   "ar": "Technical Analysis of the Financial Markets — Murphy: كامل"
+  },
+  {
+   "nyckel": "technical-analysis-of-stock-trends:titel",
+   "en": "Technical Analysis of Stock Trends — Edwards & Magee: COMPLETE",
+   "ar": "Technical Analysis of Stock Trends (الاتجاهات في أسعار الأسهم) — Edwards & Magee: كامل"
+  },
+  {
+   "nyckel": "teknisk-analys-med-johnny-torssell:titel",
+   "en": "Technical Analysis with Johnny Torssell — SWEDISH STANDARD WORK: COMPLETE",
+   "ar": "التحليل الفني مع Johnny Torssell — العمل المرجعي السويدي: كامل"
+  },
+  {
+   "nyckel": "the-acquirers-multiple:titel",
+   "en": "The Acquirer's Multiple — Tobias Carlisle: COMPLETE",
+   "ar": "The Acquirer's Multiple — Tobias Carlisle: كامل"
+  },
+  {
+   "nyckel": "the-alchemy-of-finance:titel",
+   "en": "The Alchemy of Finance — Soros: COMPLETE",
+   "ar": "The Alchemy of Finance — Soros: كامل"
+  },
+  {
+   "nyckel": "the-art-of-short-selling:titel",
+   "en": "The Art of Short Selling — Staley: COMPLETE",
+   "ar": "The Art of Short Selling — Staley: كامل"
+  },
+  {
+   "nyckel": "the-big-short:titel",
+   "en": "The Big Short — Lewis: COMPLETE",
+   "ar": "The Big Short — Lewis: كامل"
+  },
+  {
+   "nyckel": "the-black-swan:titel",
+   "en": "The Black Swan — Taleb: COMPLETE",
+   "ar": "The Black Swan — Taleb: كامل"
+  },
+  {
+   "nyckel": "the-bogleheads-guide-to-investing:titel",
+   "en": "The Bogleheads' Guide to Investing — Larimore, Lindauer & LeBoeuf: COMPLETE",
+   "ar": "The Bogleheads' Guide to Investing — Larimore, Lindauer & LeBoeuf: كامل"
+  },
+  {
+   "nyckel": "the-complete-turtletrader:titel",
+   "en": "The Complete TurtleTrader — Covel: COMPLETE",
+   "ar": "The Complete TurtleTrader — Covel: كامل"
+  },
+  {
+   "nyckel": "the-dhandho-investor:titel",
+   "en": "The Dhandho Investor — Pabrai: COMPLETE",
+   "ar": "The Dhandho Investor — Pabrai: كامل"
+  },
+  {
+   "nyckel": "the-essays-of-warren-buffett:titel",
+   "en": "The Essays of Warren Buffett — Cunningham: COMPLETE",
+   "ar": "The Essays of Warren Buffett — Cunningham: كامل"
+  },
+  {
+   "nyckel": "the-everything-store:titel",
+   "en": "The Everything Store — Brad Stone: COMPLETE",
+   "ar": "The Everything Store — Brad Stone: كامل"
+  },
+  {
+   "nyckel": "the-five-rules-for-successful-stock-investing:titel",
+   "en": "The Five Rules for Successful Stock Investing — Pat Dorsey: COMPLETE",
+   "ar": "The Five Rules for Successful Stock Investing — Pat Dorsey: كامل"
+  },
+  {
+   "nyckel": "the-great-crash-1929:titel",
+   "en": "The Great Crash 1929 — Galbraith: COMPLETE",
+   "ar": "The Great Crash 1929 — Galbraith: كامل"
+  },
+  {
+   "nyckel": "the-hour-between-dog-and-wolf:titel",
+   "en": "The Hour Between Dog and Wolf — Coates: COMPLETE",
+   "ar": "The Hour Between Dog and Wolf — Coates: كامل"
+  },
+  {
+   "nyckel": "the-innovators-dilemma:titel",
+   "en": "The Innovator's Dilemma — Clayton Christensen: COMPLETE",
+   "ar": "The Innovator's Dilemma — Clayton Christensen: كامل"
+  },
+  {
+   "nyckel": "the-intelligent-asset-allocator:titel",
+   "en": "The Intelligent Asset Allocator — Bernstein: COMPLETE",
+   "ar": "The Intelligent Asset Allocator — Bernstein: كامل"
+  },
+  {
+   "nyckel": "the-intelligent-investor:titel",
+   "en": "The Intelligent Investor — Graham: COMPLETE (all chapters)",
+   "ar": "The Intelligent Investor — Graham: كامل (الفصل تلو الفصل)"
+  },
+  {
+   "nyckel": "the-little-book-of-value-investing:titel",
+   "en": "The Little Book of Value Investing — Christopher Browne: COMPLETE",
+   "ar": "The Little Book of Value Investing — Christopher Browne: كامل"
+  },
+  {
+   "nyckel": "the-little-book-that-beats-the-market:titel",
+   "en": "The Little Book That Beats the Market — Greenblatt: COMPLETE",
+   "ar": "The Little Book That Beats the Market — Greenblatt: كامل"
+  },
+  {
+   "nyckel": "the-master-swing-trader:titel",
+   "en": "The Master Swing Trader — Farley: COMPLETE",
+   "ar": "The Master Swing Trader — Farley: كامل"
+  },
+  {
+   "nyckel": "the-money-game:titel",
+   "en": "The Money Game — Adam Smith: COMPLETE",
+   "ar": "The Money Game — Adam Smith: كامل"
+  },
+  {
+   "nyckel": "the-most-important-thing:titel",
+   "en": "The Most Important Thing — Marks: COMPLETE",
+   "ar": "The Most Important Thing — Marks: كامل"
+  },
+  {
+   "nyckel": "the-new-science-of-technical-analysis:titel",
+   "en": "The New Science of Technical Analysis — DeMark: COMPLETE",
+   "ar": "The New Science of Technical Analysis — DeMark: كامل"
+  },
+  {
+   "nyckel": "the-outsiders:titel",
+   "en": "The Outsiders — Thorndike: COMPLETE",
+   "ar": "The Outsiders — Thorndike: كامل"
+  },
+  {
+   "nyckel": "the-psychology-of-money:titel",
+   "en": "The Psychology of Money — Housel: COMPLETE",
+   "ar": "The Psychology of Money — Housel: كامل"
+  },
+  {
+   "nyckel": "the-signal-and-the-noise:titel",
+   "en": "The Signal and the Noise — Silver: COMPLETE",
+   "ar": "The Signal and the Noise — Silver: كامل"
+  },
+  {
+   "nyckel": "the-snowball:titel",
+   "en": "The Snowball — Schroeder on Buffett: COMPLETE",
+   "ar": "The Snowball — Schroeder عن Buffett: كامل"
+  },
+  {
+   "nyckel": "the-theory-of-investment-value:titel",
+   "en": "The Theory of Investment Value — Williams: COMPLETE",
+   "ar": "The Theory of Investment Value — Williams: كامل"
+  },
+  {
+   "nyckel": "the-trend-following-bible:titel",
+   "en": "The Trend Following Bible — Abraham: COMPLETE",
+   "ar": "The Trend Following Bible (متابعة الاتجاه) — Abraham: كامل"
+  },
+  {
+   "nyckel": "the-visual-investor:titel",
+   "en": "The Visual Investor — Murphy: COMPLETE",
+   "ar": "The Visual Investor — Murphy: كامل"
+  },
+  {
+   "nyckel": "the-warren-buffett-portfolio:titel",
+   "en": "The Warren Buffett Portfolio — Hagstrom: COMPLETE",
+   "ar": "The Warren Buffett Portfolio — Hagstrom: كامل"
+  },
+  {
+   "nyckel": "the-warren-buffett-way:titel",
+   "en": "The Warren Buffett Way — Hagstrom: COMPLETE",
+   "ar": "The Warren Buffett Way — Hagstrom: كامل"
+  },
+  {
+   "nyckel": "this-time-is-different:titel",
+   "en": "This Time Is Different — Reinhart & Rogoff: COMPLETE",
+   "ar": "This Time Is Different — Reinhart & Rogoff: كامل"
+  },
+  {
+   "nyckel": "trading-for-a-living:titel",
+   "en": "Trading for a Living — Elder: COMPLETE",
+   "ar": "Trading for a Living — Elder: كامل"
+  },
+  {
+   "nyckel": "trading-in-the-zone:titel",
+   "en": "Trading in the Zone — Douglas: COMPLETE",
+   "ar": "Trading in the Zone — Douglas: كامل"
+  },
+  {
+   "nyckel": "ud-03-dividend-aristocrats:titel",
+   "en": "Dividend Aristocrats",
+   "ar": "أرستقراطيو التوزيعات"
+  },
+  {
+   "nyckel": "ud-04-utdelningsfallor:titel",
+   "en": "Dividend traps",
+   "ar": "مصائد التوزيعات"
+  },
+  {
+   "nyckel": "ud-05-drip:titel",
+   "en": "DRIP — automatic reinvestment",
+   "ar": "DRIP — إعادة الاستثمار التلقائية"
+  },
+  {
+   "nyckel": "ud-06-svenska-utdelningsaktier:titel",
+   "en": "Swedish dividend stocks",
+   "ar": "الأسهم السويدية ذات التوزيعات"
+  },
+  {
+   "nyckel": "ud-07-utdelningskalender:titel",
+   "en": "Dividend calendar",
+   "ar": "تقويم التوزيعات"
+  },
+  {
+   "nyckel": "ud-08-speciella-utdelningar:titel",
+   "en": "Special dividends",
+   "ar": "التوزيعات الخاصة"
+  },
+  {
+   "nyckel": "vagfundament-variablerna-som-tidsserier:titel",
+   "en": "Wave Foundation — The Variables as Time Series",
+   "ar": "أساس الموجات — المتغيرات كسلاسل زمنية"
+  },
+  {
+   "nyckel": "valuation-measuring-managing:titel",
+   "en": "Valuation — McKinsey (Koller et al.): COMPLETE",
+   "ar": "Valuation — McKinsey (Koller وآخرون): كامل"
+  },
+  {
+   "nyckel": "value-investing-from-graham-to-buffett:titel",
+   "en": "Value Investing: From Graham to Buffett and Beyond — Greenwald: COMPLETE",
+   "ar": "Value Investing: From Graham to Buffett and Beyond — Greenwald: كامل"
+  },
+  {
+   "nyckel": "var-ekonomi:titel",
+   "en": "Our Economy — Klas Eklund: COMPLETE",
+   "ar": "اقتصادنا — Klas Eklund: كامل"
+  },
+  {
+   "nyckel": "vm-03-multipelval:titel",
+   "en": "Valuation multiple choice — when to use which",
+   "ar": "اختيار مضاعف التقييم — متى تستخدم أيها"
+  },
+  {
+   "nyckel": "vm-04-cyklisk-justering:titel",
+   "en": "Cyclical adjustment — Shiller P/E",
+   "ar": "التعديل الدوري — نسبة P/E وفق Shiller"
+  },
+  {
+   "nyckel": "vm-05-realoptioner:titel",
+   "en": "Real options",
+   "ar": "الخيارات الحقيقية"
+  },
+  {
+   "nyckel": "vm-06-dividend-discount-model-ddm:titel",
+   "en": "Dividend Discount Model (DDM)",
+   "ar": "نموذج الخصم للتوزيعات (DDM)"
+  },
+  {
+   "nyckel": "vm-07-free-cash-flow-yield:titel",
+   "en": "Free Cash Flow Yield",
+   "ar": "عائد التدفق النقدي الحر"
+  },
+  {
+   "nyckel": "vm-08-evsales:titel",
+   "en": "EV/Sales",
+   "ar": "EV/Sales"
+  },
+  {
+   "nyckel": "vm-09-pricetocashflow:titel",
+   "en": "Price-to-Cash-Flow",
+   "ar": "السعر إلى التدفق النقدي"
+  },
+  {
+   "nyckel": "vm-10-assetbased-valuation:titel",
+   "en": "Asset-based valuation",
+   "ar": "التقييم القائم على الأصول"
+  },
+  {
+   "nyckel": "vm-11-waccfallor:titel",
+   "en": "WACC traps",
+   "ar": "مصائد WACC"
+  },
+  {
+   "nyckel": "way-of-the-turtle:titel",
+   "en": "Way of the Turtle — Faith: COMPLETE",
+   "ar": "Way of the Turtle — Faith: كامل"
+  },
+  {
+   "nyckel": "what-works-on-wall-street:titel",
+   "en": "What Works on Wall Street — O'Shaughnessy: COMPLETE",
+   "ar": "What Works on Wall Street — O'Shaughnessy: كامل"
+  },
+  {
+   "nyckel": "when-genius-failed:titel",
+   "en": "When Genius Failed — Lowenstein: COMPLETE",
+   "ar": "When Genius Failed — Lowenstein: كامل"
+  },
+  {
+   "nyckel": "winning-the-losers-game:titel",
+   "en": "Winning the Loser's Game — Ellis: COMPLETE",
+   "ar": "Winning the Loser's Game — Ellis: كامل"
+  },
+  {
+   "nyckel": "you-can-be-a-stock-market-genius:titel",
+   "en": "You Can Be a Stock Market Genius — Greenblatt: COMPLETE",
+   "ar": "You Can Be a Stock Market Genius — Greenblatt: كامل"
+  },
+  {
+   "nyckel": "your-money-and-your-brain:titel",
+   "en": "Your Money and Your Brain — Zweig: COMPLETE",
+   "ar": "Your Money and Your Brain — Zweig: كامل"
+  },
+  {
+   "nyckel": "zero-to-one:titel",
+   "en": "Zero to One — Peter Thiel: COMPLETE",
+   "ar": "Zero to One — Peter Thiel: كامل"
+  }
+ ]
+}

@@ -5,6 +5,7 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SIFFROR } from "@/lib/siffror";
+import { hamtaKursTitelLager, titelUrLager } from "@/lib/kurs-speglar";
 import {
   spegelMetadata,
   spegelWebsiteJsonLd,
@@ -14,14 +15,17 @@ import {
 import { JsonLd } from "@/lib/seo";
 
 export const dynamic = "force-static";
+export const revalidate = 3600;
 
 /**
  * /en/kurser — full mirror of the Swedish /kurser flow page (wave 51,
- * agent S3). All page texts are translated to English; the course list
- * itself (333 Swedish course titles) is rendered as-is via KursSok —
- * translating the courses is phase 3 of the language plan. A clear notice
- * tells the reader that course titles and content are still in Swedish.
- * Numbers come from src/lib/siffror (single source of truth).
+ * agent S3). All page texts are translated to English. Course CARD TITLES
+ * come from the translation layer (wave 80b part A): key "{slug}:titel"
+ * (a full source in kalla.ts since wave 80b), read in ONE bulk pass via
+ * hamtaKursTitelLager — Swedish course.title as fallback while a title is
+ * untranslated. Numbers come from src/lib/siffror (single source of truth).
+ * ISR (revalidate 1 h, same as the course mirrors): imported titles go
+ * live without a redeploy.
  */
 
 export const metadata: Metadata = spegelMetadata({
@@ -69,8 +73,11 @@ function coursesFaqJsonLd() {
   ]);
 }
 
-export default function KurserPageEn() {
+export default async function KurserPageEn() {
   const courses = getCourseList();
+  // Våg 80b del A: korttitlar ur titel-sammalagret (EN läsning för alla 333),
+  // svensk kurs.title som fallback där översättning ännu ej publicerats.
+  const titelLager = await hamtaKursTitelLager();
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Courses" }]} wide>
@@ -117,17 +124,17 @@ export default function KurserPageEn() {
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
         {/* o1 #4 (prestanda): learn/quiz skickas inte i klient-props — KursSok
             hämtar dem lazigt per synligt kort via /api/kurs/[slug]. */}
-        <KursSok
-          lankPrefix="/en"
-          kurser={courses.map((c) => ({
-            slug: c.slug,
-            title: c.title,
-            category: c.category,
-            kapitel: c.chapters.length,
-            minuter: c.totalMinutes || c.minutes,
-            xp: c.xp,
-          }))}
-        />
+          <KursSok
+            lankPrefix="/en"
+            kurser={courses.map((c) => ({
+              slug: c.slug,
+              title: titelUrLager(titelLager, c.slug, c.title, "en"),
+              category: c.category,
+              kapitel: c.chapters.length,
+              minuter: c.totalMinutes || c.minutes,
+              xp: c.xp,
+            }))}
+          />
         <aside className="h-fit"><FortsattPanel /></aside>
       </div>
 

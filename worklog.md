@@ -9124,3 +9124,20 @@ generateStaticParams täcker allt) — lokal prod-server verifierad: finns-ej
 **Våg 82-forskning: speglarnas soft-404 (on-demand-rendering vs äkta 404 —
 kanske dynamicParams=false + full generateStaticParams även där, 333×2
 sidor byggkostnad) + html lang på speglar + kategorietiketter.**
+
+## HETZNER-ARKITEKTUR SANKT (2026-09-07, direkt efter våg 81)
+
+Kunden levererade servern (65.108.241.93, CX23) + visionen "ZCode hanterar
+Hetzner direkt via SSH — kundens dator slipper". Styrelsens beslut (data/
+forskning/STYRELSE-HETZNER-ARKITEKTUR.md): **PROD STÅR PÅ VERCEL** (flytt
+avslagen: 0 kr kostnad, CDN/ISR/cron/deploy-flöde lastbärande, migrations-
+risk utan vinst) — **HETZNER = BYGGMILJÖ i 3 faser**: H1 provisionering +
+byggbox (härdning, ak1a-konto, Node 22 signerat apt-repo — ALDRIG curl|bash,
+Mimosa höll rätt där — UFW 22/80/443, PM2 berett), H2 keepalive/dev-instans
+flyttar hit (telefon-refresh-roten försvinner), H3 villkorad staging-spegel.
+Skript: data/infra/hetzner/{setup-server,bygg}.sh. Automationens SSH-nyckel
+~/.ssh/hetzner_key (ed25519, lösenordslös) skapad; servern svarar men nekar
+(Permission denied publickey,password) — **KUNDSTEG 1: ssh-copy-id -i
+~/.ssh/hetzner_key.pub root@65.108.241.93 (rotenlösenord en gång) — sedan
+tar AI:n över 100 %.** Kundsteg 2 (efter H1): serverns deploy-nyckel i
+GitHub NewUserAK/AK1 (gh-CLI saknas lokalt — kan ej automatiseras bort).

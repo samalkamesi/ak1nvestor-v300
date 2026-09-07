@@ -21,7 +21,9 @@ import type { MetadataRoute } from "next";
  *     inga wildcards) — därför hålls AI-grupperna raka.
  */
 
-/** Publika ytor som ALLA — sök + AI — bjuds in till. */
+/** Publika ytor som ALLA — sök + AI — bjuds in till.
+ *  VÅG 77 (B1-grinden): /pro är under uppbyggnad — bjuds in först när
+ *  NEXT_PUBLIC_B2B_AKTIV=1 (annars hålls hela B2B-trädet borta). */
 const PUBLIKA_YTOR = [
   "/",
   "/kurser/",
@@ -36,7 +38,7 @@ const PUBLIKA_YTOR = [
   "/medlemskap/",
   "/prenumeration/",
   "/kallor/",
-  "/pro/",
+  ...(process.env.NEXT_PUBLIC_B2B_AKTIV === "1" ? ["/pro/"] : []),
   "/llms.txt",
   "/api/llms-txt",
   "/sitemap.xml",

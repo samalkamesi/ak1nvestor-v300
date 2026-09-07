@@ -30,6 +30,7 @@
 
 import { lasMedlem } from "@/lib/member-local";
 import { arAdmin, harFas2Access, harFas3Access } from "@/lib/kurs-access";
+import { b2bAktiv } from "@/lib/b2b-status";
 import type { OrdlistaNyckel } from "@/lib/ordlista";
 
 /** Vem som får se punkten. `fas2` inkluderar fas3/premium/pro (supermängd). */
@@ -62,6 +63,9 @@ export type MenyPunkt = {
   avdelare?: string;
   /** Var punkten får synas; saknas = alla ytor. */
   yttor?: MenyYta[];
+  /** B2B-grindad punkt (våg 77): syns ENDAST när b2bAktiv() — PRO är
+   *  under uppbyggnad tills kunden slår på NEXT_PUBLIC_B2B_AKTIV=1. */
+  b2b?: boolean;
   /** Guld-markerad konverteringsknapp (Fas 2-ansökan). */
   guldknapp?: boolean;
   /** Extra sökbara ord för kommandopaletten. */
@@ -395,6 +399,7 @@ export const MENY_REGISTER: MenySektion[] = [
         text: "AK1A PRO",
         nyckel: "nav.pro",
         lank: "/pro",
+        b2b: true,
         ikon: "🏛️",
         typ: "sida",
         publik: "gast",
@@ -504,7 +509,7 @@ export function punktSynlig(p: MenyPunkt, k: MenyKontext): boolean {
 /** Punkter i en sektion, filtrerade på behörighet + yta. Tomma sektioner tas bort. */
 export function sektionPunkter(s: MenySektion, k: MenyKontext, yta: MenyYta = "meny"): MenyPunkt[] {
   return s.punkter.filter(
-    (p) => (!p.yttor || p.yttor.includes(yta)) && punktSynlig(p, k)
+    (p) => (!p.yttor || p.yttor.includes(yta)) && punktSynlig(p, k) && (!p.b2b || b2bAktiv())
   );
 }
 

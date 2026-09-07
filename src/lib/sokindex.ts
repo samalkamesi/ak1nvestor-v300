@@ -15,6 +15,7 @@
  */
 
 import { SIFFROR } from "@/lib/siffror";
+import { b2bAktiv } from "@/lib/b2b-status";
 import {
   MENY_REGISTER,
   punktSynlig,
@@ -48,7 +49,8 @@ const STATISKA: SokPost[] = MENY_REGISTER.flatMap((s) =>
     // VÅG 61: yta-filter — bara punkter som FÅR synas i sök ("sok" bland
     // yttor, eller ingen yttor-begränsning alls). Samma kontrakt som
     // sektionPunkter(…, "sok") i registret.
-    .filter((p) => !p.yttor || p.yttor.includes("sok"))
+    // VÅG 77: B2B-grindade punkter ("AK1A PRO") syns bara när b2bAktiv().
+    .filter((p) => (!p.yttor || p.yttor.includes("sok")) && (!p.b2b || b2bAktiv()))
     .map((p) => ({
       titel: p.text,
       lank: p.lank,

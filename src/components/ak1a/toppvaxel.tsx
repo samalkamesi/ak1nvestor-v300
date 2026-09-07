@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { b2bAktiv } from "@/lib/b2b-status";
 import { useSprak } from "./sprak-leverantor";
 
 /**
@@ -64,7 +65,17 @@ export function Toppvaxel({
         klass
       )}
     >
-      {privatVy ? (
+      {/*
+        VÅG 77 (B1-grinden): B2B-ytan är under uppbyggnad — när
+        b2bAktiv() är AV visas ENDAST Privatperson-segmentet (Företag-
+        länken till /pro döljs helt). PRO-skalet går inte att nå via
+        växeln förrän kunden slår på NEXT_PUBLIC_B2B_AKTIV=1.
+      */}
+      {!b2bAktiv() ? (
+        <span aria-current="true" className={cn(aktivStil, "marin-panel text-[#E8C766]")}>
+          {t("nav.privatperson")}
+        </span>
+      ) : privatVy ? (
         <>
           <span aria-current="true" className={cn(aktivStil, "marin-panel text-[#E8C766]")}>
             {t("nav.privatperson")}

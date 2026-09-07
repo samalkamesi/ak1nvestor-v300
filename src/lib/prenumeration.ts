@@ -95,7 +95,8 @@ export function rabatteratPris(pris: number, rabatt: number): number {
 }
 
 /**
- * Hur många månader årspriset gör gratis (2 490 kr/år à 249 kr/mån → 2).
+ * Hur många månader årspriset gör gratis — räknas ur priserna i
+ * priser.json (aldrig hårdkodade belopp i exemplen; vakten bevakar).
  * Returneras bara när det är ett helt antal ≥ 1 — annars null (vi hittar
  * aldrig på siffror; prisdata kan ändras av moderagenten).
  */

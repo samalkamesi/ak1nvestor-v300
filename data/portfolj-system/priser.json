@@ -31,5 +31,26 @@
     "fas3": 0.2,
     "beskrivning": "Medlemmar i Fas 2 och Fas 3 får 20 % rabatt på alla nivåer, alltid och automatiskt."
   },
-  "juridiskFotnot": "Forskningsbaserad analys — inte investeringsrådgivning enligt lagen (2007:528) om värdepappersrörelser. AK1A Portföljforskning är pedagogiskt utbildningsmaterial inom AK1A Research Lab; kunden fattar alltid egna beslut och bär eget ansvar för dem."
+  "juridiskFotnot": "Forskningsbaserad analys — inte investeringsrådgivning enligt lagen (2007:528) om värdepappersrörelser. AK1A Portföljforskning är pedagogiskt utbildningsmaterial inom AK1A Research Lab; kunden fattar alltid egna beslut och bär eget ansvar för dem.",
+  "b2b": {
+    "notering": "B2B-BESLUT §3.4 alternativ A — flat kr/mån/seat exkl. moms. Våg 77: flyttade ur /pro/priser/page.tsx till denna enda källa (variabelregistret).",
+    "nivaer": [
+      {
+        "id": "pro-analytiker",
+        "prisManad": 499,
+        "seats": 1
+      },
+      {
+        "id": "pro-studio",
+        "prisManad": 1499,
+        "seats": 5
+      },
+      {
+        "id": "pro-institution",
+        "prisManad": 4999,
+        "seatsMin": 10
+      }
+    ],
+    "onboardingEnGang": 9900
+  }
 }

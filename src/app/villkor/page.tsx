@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
+import { PRISER, kr } from "@/lib/variabler";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
 export const dynamic = "force-static";
@@ -939,18 +940,20 @@ export default function VillkorPage() {
               <strong className="text-foreground">Priser enligt alternativ A</strong>{" "}
               — transparent flat-fee per nivå och månad,{" "}
               <strong className="text-foreground">exklusive moms</strong>: Pro
-              Analytiker 499 kr/mån (1 seat), Pro Studio 1 499 kr/mån (upp
-              till 5 seats), Pro Institution 4 999 kr/mån (10 eller fler
-              seats, årsbindning). Aktuella nivåbeskrivningar publiceras på{" "}
+              Analytiker {PRISER.b2bAnalytiker} kr/mån (1 seat), Pro Studio{" "}
+              {kr(PRISER.b2bStudio)} kr/mån (upp till 5 seats), Pro Institution{" "}
+              {kr(PRISER.b2bInstitution)} kr/mån (10 eller fler seats,
+              årsbindning). Aktuella nivåbeskrivningar publiceras på{" "}
               {lank("/pro/priser", "PRO:s prislista")}; vid avvikelse gäller
               teckningsunderlaget. Priset för påbörjad bindningsperiod ändras
               aldrig retroaktivt.
             </>,
             <>
               <strong className="text-foreground">Onboarding.</strong>{" "}
-              Engångsavgift 9 900 kr på Pro Institution för analysavdelningens
-              upplärning i metodiken och white-label-setup — avklippt vid
-              teckning med 24 månaders bindning (2-årsbindning).
+              Engångsavgift {kr(PRISER.b2bOnboarding)} kr på Pro Institution
+              för analysavdelningens upplärning i metodiken och
+              white-label-setup — avklippt vid teckning med 24 månaders
+              bindning (2-årsbindning).
             </>,
             <>
               <strong className="text-foreground">Fakturering.</strong> Mot

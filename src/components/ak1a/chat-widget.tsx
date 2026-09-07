@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback, type TouchEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP, lasStreak } from "@/lib/member-local";
+import { b2bAktiv } from "@/lib/b2b-status";
 import { geBadge } from "@/lib/badges";
 import { SIFFROR } from "@/lib/siffror";
 import {
@@ -372,9 +373,14 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
       break;
     case "pro":
       forslag.push(
-        { text: "AK1A Pro", lank: "/pro", ikon: "🏢", beskrivning: "För skolor, företag och institutioner" },
         { text: "Medlemskap & faser", lank: "/medlemskap", ikon: "💛", beskrivning: "Privata medlemskapen" },
       );
+      // VÅG 77 (B1-grinden): AK1A Pro-länken syns bara när B2B är aktiverat.
+      if (b2bAktiv()) {
+        forslag.push(
+          { text: "AK1A Pro", lank: "/pro", ikon: "🏢", beskrivning: "För skolor, företag och institutioner" },
+        );
+      }
       break;
     case "profil":
       forslag.push(

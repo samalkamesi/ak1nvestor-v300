@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { lasPriser, type PrisNiva } from "@/lib/portfolj-forskning/korstabell-data";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
@@ -14,18 +15,16 @@ export const metadata: Metadata = {
 /**
  * /pro/priser — PRISMODELL ENLIGT BESLUT PUNKT 5 (VÅG 61 bygg-4, §4e).
  *
- * Alternativ A (b4-rekommendationen, B2B-BESLUT §3.4): 499 / 1 499 / 4 999
- * kr/mån/seat FLAT + engångs-onboarding 9 900 kr på Institution (avklippt
- * vid 2-årsbindning). AUM-/rev-share AVRÅTT permanent (FORBUD 3 — transparen-
+ * Alternativ A (b4-rekommendationen, B2B-BESLUT §3.4): flat kr/mån/seat
+ * per trappan + engångs-onboarding på Institution (avklippt vid
+ * 2-årsbindning). AUM-/rev-share AVRÅTT permanent (FORBUD 3 — transparen-
  * slöftet + compliance-renhet mot oberoende rådgivare). Fas 3-certifierad:
- * 299 kr/mån första året. Privatsidans 249/449/799 orörd (P4).
+ * introduktionspris första året. Privatsidans nivåer orörda (P4).
  *
- * KÄLLA FÖR SIFFRORNA: data/portfolj-system/priser.json läses via lasPriser()
- * — men innehåller (per 2026-09-04) ENDAST de privata nivåerna (forskning,
- * forskning-plus, portfolj-hyra: 249/449/799 inkl. moms) — INGA pro-nivåer.
- * Därför: hårdkodade PRO_NIVAER nedan med källa dokumenterad i varje rad
- * (BESLUT §3.4 alternativ A). Slutligt prisbeslut: kundägaren (K-B2B:2) —
- * landar pro-nivåer i priser.json används de automatiskt (se lasProNivaer).
+ * KÄLLA FÖR SIFFRORNA (VÅG 77 — Excel-beroendet): data/portfolj-system/
+ * priser.json:s b2b-sektion, interpolerad via src/lib/variabler.ts
+ * (PRISER.b2b*). Ändra pris i JSON-filen — aldrig här. Slutligt
+ * prisbeslut: kundägaren (K-B2B:2).
  *
  * K7-COPY (ärlighet i löfte vs leverans): rapportkvoterna formuleras
  * "20/100/obegränsat rapporter/mån — utskriftsklassat dokument (PDF-export
@@ -41,14 +40,17 @@ export const metadata: Metadata = {
 
 /** Engångs-onboarding på Institution (avklippt vid 2-årsbindning — §3.4). */
 const ONBOARDING_INSTITUTION = {
-  pris: 9900,
+  pris: PRISER.b2bOnboarding,
   text: "Engångs-onboarding av analysavdelningen — avklippt vid 2-årsbindning.",
 } as const;
 
 /** Fas 3-certifierades introduktionspris (certifikatet dokumenterar förturen). */
 const FAS3_FORSTA_AR = 299;
 
-/** Mallen för de tre pro-nivåerna (K7-justerad copy i punkterna). */
+/** Mallen för de tre pro-nivåerna (K7-justerad copy i punkterna).
+ *  VÅG 77 (variabelregistret): priserna interpolerar ur priser.json:s
+ *  b2b-sektion via src/lib/variabler.ts — ÄNDRA PRIS I data/portfolj-
+ *  system/priser.json, aldrig här (Excel-beroendet). */
 type ProNiva = {
   id: string;
   banderoll: string;
@@ -57,7 +59,7 @@ type ProNiva = {
   typ: string;
   punkter: string[];
   lyft: boolean;
-  /** Källa — dokumenterad per rad (priser.json saknar pro-nivåer ännu). */
+  /** Källa — dokumenterad per rad. */
   kalla: string;
 };
 
@@ -66,7 +68,7 @@ const PRO_NIVAER: ProNiva[] = [
     id: "pro-analytiker",
     banderoll: "PRO ANALYTIKER",
     tagline: "Analytikerversikt",
-    pris: 499,
+    pris: PRISER.b2bAnalytiker,
     typ: "kr/mån · 1 seat · exkl. moms",
     punkter: [
       "Obegränsad CSV-portföljimport (instrument + vikter)",
@@ -75,13 +77,13 @@ const PRO_NIVAER: ProNiva[] = [
       "Fas 3-certifierad? 299 kr/mån det första året",
     ],
     lyft: false,
-    kalla: "B2B-BESLUT §3.4 alternativ A (499 kr/mån/seat flat)",
+    kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — priser.json → variabler.ts",
   },
   {
     id: "pro-studio",
     banderoll: "PRO STUDIO",
     tagline: "Rådgivarens nivå",
-    pris: 1499,
+    pris: PRISER.b2bStudio,
     typ: "kr/mån · 5 seats · exkl. moms",
     punkter: [
       "Allt i Pro Analytiker",
@@ -90,22 +92,22 @@ const PRO_NIVAER: ProNiva[] = [
       "Delade mallbibliotek · prioriterad support",
     ],
     lyft: true,
-    kalla: "B2B-BESLUT §3.4 alternativ A (1 499 kr/mån/seat flat)",
+    kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — priser.json → variabler.ts",
   },
   {
     id: "pro-institution",
     banderoll: "PRO INSTITUTION",
     tagline: "White-label & metodik-licens",
-    pris: 4999,
+    pris: PRISER.b2bInstitution,
     typ: "kr/mån · 10+ seats · årsbindning · exkl. moms",
     punkter: [
       "Allt i Pro Studio — obegränsat antal rapporter/mån",
       "Rättighetsstyrd metodikmodul (API-utdata)",
-      "SLA · onboarding av analysavdelningen (engång 9 900 kr)",
+      `SLA · onboarding av analysavdelningen (engång ${kr(PRISER.b2bOnboarding)} kr)`,
       "Metod- och ansvarsdeklarationen mal-låst — även för Institution",
     ],
     lyft: false,
-    kalla: "B2B-BESLUT §3.4 alternativ A (4 999 kr/mån/seat flat + onboarding)",
+    kalla: "B2B-BESLUT §3.4 alternativ A (flat + onboarding) — priser.json → variabler.ts",
   },
 ];
 

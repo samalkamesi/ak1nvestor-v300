@@ -3,6 +3,7 @@ import Link from "next/link";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { Toppvaxel } from "@/components/ak1a/toppvaxel";
 import { ProNav } from "@/components/ak1a/pro/pro-nav";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 /**
  * AK1A PRO — DET EGNA B2B-SKALET (Fas D, forskning-b2b 5.1; B2B-BESLUT §3-4).
@@ -41,7 +42,9 @@ export const metadata: Metadata = {
     "konfluens",
     "finansiell analys Sverige",
   ],
-  robots: { index: true, follow: true },
+  // VÅG 77 (B1-grinden): PRO är under uppbyggnad — noindex tills
+  // NEXT_PUBLIC_B2B_AKTIV=1 slås på i Vercel.
+  robots: b2bAktiv() ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export default function ProLayout({
@@ -49,6 +52,56 @@ export default function ProLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  /*
+    VÅG 77 (B1-grinden, STYRELSE-B2B-VARIABLER.md): när B2B inte är
+    aktiverat renderas INTE cockpit-skalet alls — i stället en neutral
+    "Under uppbyggnad"-vy. Inga priser, inga demo-CTA:er, inga data-ytor
+    läcker; koden och samtliga PRO-komponenter finns kvar oskadda bakom
+    flaggan och återställs automatiskt när kunden slår på den.
+  */
+  if (!b2bAktiv()) {
+    return (
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <header className="marin-panel w-full border-b border-gold/40">
+          <div className="mx-auto flex h-16 max-w-6xl items-center gap-2.5 px-4 sm:px-6">
+            <VarumarkesLogo storlek="sm" medText={false} />
+            <span className="font-serif text-base font-bold tracking-tight text-[#EDE6D6] sm:text-lg">
+              AK1<span className="text-[#E8C766]">A</span>
+            </span>
+            <span className="rounded border border-[#E8C766]/60 bg-[#E8C766]/10 px-1.5 py-0.5 font-mono text-[10px] font-bold tracking-[0.22em] text-[#E8C766]">
+              PRO
+            </span>
+          </div>
+          <div className="hjarlinje" />
+        </header>
+
+        <main className="mx-auto flex max-w-2xl flex-1 flex-col items-center px-6 py-20 text-center">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            Under uppbyggnad
+          </p>
+          <h1 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-4xl">
+            AK1A PRO håller på att byggas klart
+          </h1>
+          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+            Den institutionella plattformen för rådgivare och analytiker är under
+            uppbyggnad och inte öppen för besök ännu. Den publika utbildningsdelen
+            av AK1A Research Lab är däremot helt öppen — med hela biblioteket,
+            kalkylatorn och forskningen.
+          </p>
+          <Link href="/" className="btn-guld-signatur mt-8 min-h-[44px] px-6 py-2.5 text-sm">
+            Till den publika plattformen
+          </Link>
+        </main>
+
+        <footer className="mt-16 border-t border-gold/30">
+          <p className="mx-auto max-w-6xl px-4 py-6 text-center text-[11px] text-muted-foreground sm:px-6">
+            © {new Date().getFullYear()} Ak1 Apex Nexus · AK1A Research Lab · Pedagogisk analys — inte investeringsråd
+          </p>
+        </footer>
+      </div>
+    );
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       {/*

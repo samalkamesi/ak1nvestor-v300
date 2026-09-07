@@ -820,13 +820,24 @@ function sektionSiffror() {
     }
 
     // Föråldrade tal i src-copy (visningstext) — undantag: siffror.ts:s egen källa
+    // VÅG 77 (variabelregistret): PRIS-tal bevakas också — kanoniska priser
+    // (249/449/799/499/1 499/4 999/9 900) får ENBART leva i data/portfolj-
+    // system/priser.json och interpoleras via @/lib/variabler (Excel-beroendet).
+    // Undantagna filer: registret självt + priser.json + prenumerationsflödets
+    // JSDoc-exempel (kommentarer, inte renderad copy) + FAS3-intro-299 ( Framtida
+    // kanon som ännu inte har registry-nyckel — dökumenteras i B2-beslutet).
     const FORALDRADE = [
       [/\b(226|227|291|307|311|324|326)\s+(kurser|moduler i)\b/, "kursantal"],
       [/\b(65|78|92)\s+(heltäckta\s+böcker|BOKMASTER-böcker|böcker kapitel|böcker täckta)\b/, "bokantal"],
       [/\b(3[\s\u00a0]?573|6[\s\u00a0]?309|7[\s\u00a0]?089|7[\s\u00a0]?812)\s*(quiz|-)?\s*(frågor)?\b/, "quizantal"],
+      [/\bpris[":\s=]+\s*(249|449|799|499|1499|4999|9900)\b/, "pris"],
+      [/\b(249|449|799)\s*(kr|:-)\s*(\/|per|\/\s*mån)/i, "pris"],
+      [/\b(499|1[\s\u00a0]?499|4[\s\u00a0]?999|9[\s\u00a0]?900)\s*kr\b/, "pris"],
     ];
     const filer = [...hittaFiler("src/components/ak1a", ".tsx"), ...hittaFiler("src/app", ".tsx"), ...hittaFiler("src/app", ".ts"), ...hittaFiler("src/lib", ".ts")];
     for (const fil of filer) {
+      if (fil.endsWith("siffror.ts") || fil.endsWith("variabler.ts")) continue;
+      if (fil.replaceAll("\\", "/").includes("portfolj-forskning/korstabell-data")) continue; // lasPriser-läsaren (läser JSON, hårdkodar ej)
       if (fil.endsWith("siffror.ts")) continue;
       const rader = readFileSync(fil, "utf8").split("\n");
       rader.forEach((rad, i) => {

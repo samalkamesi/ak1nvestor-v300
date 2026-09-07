@@ -8885,3 +8885,38 @@ VAKANT; kontrollera alltid bygg fel:0 + poster-antal FÖRE import);
 och krävde extra rond 76.
 
 **Verifieringar:** motorer 107/0/0 · Kvalitetsvakten GRÖN · allt pushat.
+
+## Våg 77 — B2B-GRIND + VARIABELREGISTER (2026-09-07)
+
+**Kunddirektiv:** B2B ska ej synas förrän klart + Excel-beroende (ändra en
+siffra → hela sajten uppdaterar). Styrelsen konvoquerad → beslut i
+data/forskning/STYRELSE-B2B-VARIABLER.md (B1 grind, B2 register, B3 process).
+
+**B1 — B2B-GRINDEN (default AV):**
+- src/lib/b2b-status.ts: b2bAktiv() ← NEXT_PUBLIC_B2B_AKTIV=1 (kunden slår
+  på i Vercel när B2B är klar — noll kodändring; NEXT_PUBLIC gör den
+  klient- och server-lesbar)
+- Toppväxeln: endast "Privatperson" syns (Företag-länken bort)
+- /pro-layout: renderar neutral "Under uppbyggnad"-vy (noindex, inga
+  priser/CTA:er läcker) + metadata robots noindex när avstängd
+- Menyregistret: nytt fält b2b:true på AK1A PRO-punkten — sektionPunkter
+  + sokindex filtrerar (footer + ⌘K dolda)
+- Chat-menyns Pro-förslag villkorat; robots.ts: /pro/ borta ur allow-listan
+
+**B2 — VARIABELREGISTRET (Excel-beroendet steg 1):**
+- data/portfolj-system/priser.json + b2b-sektion (499/1 499/4 999 +
+  onboarding 9 900) — ALLA priser i EN fil
+- src/lib/variabler.ts: PRISER + läsare (privatNiva/b2bNiva/fasRabatt/
+  rabatterat) + re-export SIFFROR — filhuvudet dokumenterar modellen:
+  ändra i guldkällan → npm run build → hela sajten uppdaterar
+- Svep: /pro/page (4 st), /pro/priser (4), villkor P-sektionen (4),
+  prenumerations-JSDoc — ALLT interpolerar ur registret nu
+- Kvalitetsvakten sektion 9 utökad: hårdkodade kanoniska pris-tal i
+  src-copy = FAIL (fångade direkt 9 äkta träffar som åtgärdades)
+
+**Verifierat:** tsc 0 nya · vakten GRÖN (0 fel, prisregeln aktiv) ·
+motorer 107/0/0 · next build exit 0. Steg 2-kö i beslutet: kanoniska
+strängar (mejlar, org.namn, sociala URL:er) i registret.
+
+**Kundaktivering av B2B (när klart):** Vercel → Settings → Environment
+Variables → NEXT_PUBLIC_B2B_AKTIV=1 → redeploy. Allt återställs.

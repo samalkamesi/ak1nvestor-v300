@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { CsvImport } from "@/components/ak1a/pro/csv-import";
 import { Morgonrond } from "@/components/ak1a/pro/morgonrond";
 import { lasVagvalideringTraff } from "@/components/ak1a/pro/morgonrond-data";
+import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "AK1A PRO — Analytikerplattformen | Bygg institutionella rapporter",
-  description:
-    "AK1A PRO är den skilda B2B-världen: importera en portfölj via CSV, kör AKM1 · AK1TS · Konfluens som rättighetsstyrd metodik-modul och bygg institutionella rapporter — white-label redo. Från 499 kr/mån/seat. Pedagogisk analys — inte investeringsråd.",
+  description: `AK1A PRO är den skilda B2B-världen: importera en portfölj via CSV, kör AKM1 · AK1TS · Konfluens som rättighetsstyrd metodik-modul och bygg institutionella rapporter — white-label redo. Från ${PRISER.b2bAnalytiker} kr/mån/seat. Pedagogisk analys — inte investeringsråd.`,
   keywords: [
     "AK1A PRO",
     "analytikerplattform",
@@ -60,12 +60,14 @@ const KORT = [
   },
 ] as const;
 
-/** Pris-trappan (forskning-b2b 5.2) — per analytiker-seat, kr/mån. */
+/** Pris-trappan (forskning-b2b 5.2) — per analytiker-seat, kr/mån.
+ *  VÅG 77: priserna interpolerar ur variabelregistret (priser.json →
+ *  @/lib/variabler) — ändra pris i JSON-filen, aldrig här. */
 const NIVAER = [
   {
     banderoll: "PRO ANALYTIKER",
     tagline: "Analytikerversikt",
-    pris: "499",
+    pris: String(PRISER.b2bAnalytiker),
     typ: "kr/mån · 1 seat",
     punkter: [
       "Obegränsad CSV-portföljimport",
@@ -78,7 +80,7 @@ const NIVAER = [
   {
     banderoll: "PRO STUDIO",
     tagline: "Pro-rapporter",
-    pris: "1 499",
+    pris: kr(PRISER.b2bStudio),
     typ: "kr/mån · 5 seats",
     punkter: [
       "Allt i Pro Analytiker",
@@ -91,7 +93,7 @@ const NIVAER = [
   {
     banderoll: "PRO INSTITUTION",
     tagline: "White-label & metodik-licens",
-    pris: "4 999",
+    pris: kr(PRISER.b2bInstitution),
     typ: "kr/mån · 10+ seats · årsbindning",
     punkter: [
       "Allt i Pro Studio — obegränsat rapportskapande",
@@ -155,7 +157,7 @@ export default function ProPage() {
             <span>CSV-import på 2 minuter</span>
             <span>Tre låsta AK1A-mallar</span>
             <span>White-label redo</span>
-            <span>Från 499 kr/mån/seat</span>
+            <span>Från {PRISER.b2bAnalytiker} kr/mån/seat</span>
           </div>
         </div>
       </section>
@@ -263,7 +265,7 @@ export default function ProPage() {
                       : "rounded-md border border-gold/50 font-semibold hover:bg-gold/10"
                   }`}
                 >
-                  {n.pris === "499" ? "Kom igång som analytiker" : "Boka demo"}
+                  {n.pris === String(PRISER.b2bAnalytiker) ? "Kom igång som analytiker" : "Boka demo"}
                 </a>
               </article>
             ))}

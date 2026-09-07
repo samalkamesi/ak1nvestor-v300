@@ -6,10 +6,20 @@
  * Läser aktuellt pathname; om besökaren sökte /kurser/{slug} matchas den med
  * litet redigeringsavstånd (Levenshtein) mot alla kurs-slugs och de 3 närmaste
  * föreslås. Fungerar även för percent-encodade åäö-slugar (gamla länkar).
+ *
+ * VÅG 81 — SSR: pathname läses via usePathname() (NEXT-Router) i stället för
+ * window.location + typeof-window-grinden. usePathname är tillgänglig i
+ * serverrenderingen (request-scoped) och identisk vid hydreringen ⇒ exakt
+ * samma förslag beräknas på båda sidor: länkarna syns I server-HTML/flight-
+ * datan (våg 81:s no-JS-prodverifiering krävde det) och hydreringsmismatchen
+ * som det gamla mönstret orsakade (SSR=null, klient=förslag) försvinner.
+ * För 404:or utan /kurser/-prefix (statisk /_not-found) blir resultatet []
+ * på båda sidor — oförändrat beteende.
  */
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export type KursSlug = { slug: string; titel: string };
 
@@ -43,9 +53,10 @@ function avstand(a: string, b: string): number {
 }
 
 export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
+  const pathname = usePathname();
   const forslag = React.useMemo(() => {
-    if (typeof window === "undefined") return [];
-    const path = normalisera(window.location.pathname);
+    if (!pathname) return [];
+    const path = normalisera(pathname);
     const match = path.match(/^\/kurser\/(.+?)\/?$/);
     if (!match) return [];
     const sokt = match[1];
@@ -54,7 +65,7 @@ export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
       .sort((a, b) => a.d - b.d)
       .slice(0, 3)
       .filter((k, i) => k.d <= Math.max(6, sokt.length / 2) || i === 0);
-  }, [kurser]);
+  }, [kurser, pathname]);
 
   if (forslag.length === 0) return null;
 

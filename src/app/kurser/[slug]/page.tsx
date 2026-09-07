@@ -15,8 +15,19 @@ import { Kallkort } from "@/components/ak1a/kallkort";
 
 export const dynamic = "force-static";
 
-/** Okända slug:ar → RIKTIG 404 (annars soft-404 med HTTP 200 i produktion). */
-export const dynamicParams = false;
+/**
+ * VÅG 81: okända slug:ar EXECUTERAR sidan (⇒ notFound() ⇒ request-scoped
+ * render av 404-gränsen) i stället för routerns statiska /_not-found-fallback.
+ * Status är fortfarande RIKTIG 404 — samma mönster som spegelrutorna
+ * /en|/ar/kurser/[slug] (våg 52) — men 404-HTML:n nu renderas för den
+ * begärda URL:en, vilket kurs-forslag.tsx behöver för SSR-förslagen
+ * (Levenshtein-top-3 ur usePathname; våg 81:s prodverifiering kräver
+ * länkarna i server-HTML/flight-data). Kända 333 slug:ar förhandsrenderas
+ * oförändrat via generateStaticParams. Tidigare dynamicParams=false togs i
+ * bruk mot SOFT-404 (HTTP 200) — det felet kan inte återkomma: notFound()
+ * svarar alltid 404-status.
+ */
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return Object.keys(getCourses()).map((slug) => ({ slug }));

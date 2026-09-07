@@ -142,3 +142,52 @@ export function SprakLeverantor({ children }: { children: React.ReactNode }) {
 export function useSprak(): SprakKontext {
   return useContext(SprakContext);
 }
+
+/**
+ * VÅG 81 — SPEGEL-LEVERANTÖREN (SSR): nästlad under /en- och /ar-layouterna.
+ *
+ * Våg 80a lärde kontexten spegelregeln (spegelns språk vinner), men regeln
+ * slogs på FÖRST EFTER MONTERING — serverrenderingen (och därmed prod-HTML:n
+ * som sökmotorer och våg 81:s no-JS-verifiering ser) var fortsatt svensk:
+ * svensk footer-megameny + svensk "Logga in"-knapp på /en|/ar-speglar.
+ *
+ * Denna leverantör får spegelns språk som PROP från en server-layout
+ * (src/app/en/layout.tsx | src/app/ar/layout.tsx) — samma deterministiska
+ * värde serverrenderas och hydreras (RSC-payloaden bär propen), så
+ * t()/tText()/sprak/dir är spegelns språk FRÅN FÖRSTA BYTET utan någon
+ * monteringsgrind och omöjlig hydreringsmismatch. Skyddet mot det 80a
+ * oroade sig för (usePathname osäkert under prerender) kvarstår: inget
+ * pathname-läsande alls — språket sitter i layoutträdet.
+ *
+ * Semantiken är oförändrad vs 80a: på spegeln vinner spegelns språk ALLTID
+ * (UI-valet undertrycks); setSprak skriver fortfarande det delade lagret +
+ * localStorage så SprakVäxlarens flöde (spara val ⇒ navigera till spegeln)
+ * fungerar som förut. Ursprungliga sidor (/kurser, /blogg, …) berörs ej —
+ * där gäller rot-leverantörens MGTM-beteende oförändrat.
+ */
+export function SpegelSprakLeverantor({
+  lang,
+  children,
+}: {
+  lang: SprakId;
+  children: React.ReactNode;
+}) {
+  const setSprak = useCallback<SprakKontext["setSprak"]>((ny: SprakId) => {
+    lagerSprak = ny;
+    sparaSprak(ny);
+    lyssnare.forEach((l) => l());
+  }, []);
+
+  const varde = useMemo<SprakKontext>(
+    () => ({
+      sprak: lang,
+      dir: dirForSprak(lang),
+      setSprak,
+      t: (nyckel, parametrar) => oversatt(nyckel, lang, parametrar),
+      tText: (text) => oversattText(text, lang),
+    }),
+    [lang, setSprak],
+  );
+
+  return <SprakContext.Provider value={varde}>{children}</SprakContext.Provider>;
+}

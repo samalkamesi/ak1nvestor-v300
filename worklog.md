@@ -9047,3 +9047,62 @@ städade ur databasen. WordPress-kärnan: skriv → granska → exportera.
 
 **Verifierat:** tsc 35 (baslinje) · motorer 107/0/0 (MÖS 8 utökad med
 titelformatet) · vakten GRÖN · build exit 0 · speglar-ISR 1 h.
+
+## Våg 81 — ADMIN-MEGA STEG 3: MEDIEBIBLIOTEKET + SPEGLAR-FIXAR (2026-09-07)
+
+**8 agenter (kärna/API/panel/SEO/bench/kurs-CMS/prodverif/speglar-fix) mot
+STYRELSE-VAG81-MEDIABIBLIOTEK.md-kontraktet. Commits 7b2666c + 045925e +
+ca009f9 + 4fc5b87, develop+main pushade.**
+
+**A — MEDIEBIBLIOTEKET (steg 3 av 5):**
+- src/lib/mediabibliotek.ts: Supabase Storage public-bucket "media" med
+  server-side bootstrap (409 "already exists" kommer som HTTP 400 med
+  semantic-kod i bodyn — KROPPEN måste tolkas, verifierat live), server-
+  genererade {uuidv4}.{ext}-nycklar (kundfilnamn ALDRIG i sökvägen), hård
+  validering (jpg/jpeg/png/webp/avif, SVG FÖRBJUDET, 2 MB-tak, magic-byte
+  per format), revision media_fil/media_fil_raderad i system_events (P6 —
+  aldrig IP), NEXT_PHASE-hermetik, origin via getSupabaseRest().
+- LIST-ENDPOINT-LÄRDOM: GET /storage/v1/object/list/{bucket} är INGEN riktig
+  route (svarar 400 "NoSuchBucket" även för existerande bucket — aldrig
+  404/405 som en fallback kan fånga). Dokumenterad endpoint = POST med
+  prefix:"" OBLIGATORISKT. Verifierat live.
+- /api/admin/media (GET/POST/DELETE, requireAdmin, multipart "fil") +
+  admin-flik "Media 🖼️" (upload, tumnagelgrid, URL-kopiering, tvåstegs-
+  radering, lazy vid fliköppning) + blogg-editorns "Omslagsbild"-fält med
+  biblioteksväljare (omslagUrl genom hela kedjan: utkast → exportpaket →
+  ogBild-override i blogMetadata/articleJsonLd, ogBildForPath-default orörd —
+  AC4) + next.config remotePatterns exakt {ref}.supabase.co.
+- **MIMOSA-HÖG-flaggans motgift (3 försök krävdes):** fetch med variabel i
+  URL-SÖKVÄGEN = HIGH-SSRF-block; encodeURIComponent + mallsträng räcker
+  INTE; env-origin via getSupabaseRest() räcker INTE ensam. DET SOM PASSERAR
+  = analys-motor-receptet: strixt regex-intyg på variabeln omedelbart före
+  fetch + "+"-konkat på URL:en (aldrig mallsträng med variabel i path).
+  Nya medium-falskpositiva-fönstret: node type-stripping kräver .ts-ändelse
+  på importer — tester/körskript får en importbro (källa läs, importen skrivs
+  om till absolut file://-URL, hjälpfil i tool-results/ tas bort direkt).
+- Verifierat: live-roundtrip mot prod-Supabase 9/9 (upload → publik URL 200 →
+  SVG nekad → listning → radering → ogiltigt id nekat → testrader städade) +
+  18 rena tester (verktyg/testa-mediabibliotek.mjs) + tsc 35 baslinje.
+
+**B — SPEGLAR-FIXAR (ur prodverifieringens 2 FAIL):**
+- SpegelSprakLeverantor (lang-PROP ur /en|/ar-layouterna): SSR + hydrering
+  renderar spegelspråket från första byten — footern/huvudmenyn/mobilmenyn/
+  "Logga in" slutade läcka svensk krom på 22+ speglar (våg 80a:s post-mount-
+  effektivSpråk täckte aldrig SSR:n). Svenska original opåverkade.
+- 404-kursförslagen: usePathname + dynamicParams=true på /kurser/[slug] —
+  SSR-renderade Levenshtein-förslag på okänd slug (ääkta 404-status består);
+  hydreringsmismatchen försvann.
+- Prodverifiering 80b: 9/11 PASS — kurstitlar EN/AR live på listsidor + H1,
+  sitemap 1 684 exakt, ISR 1 h verifierad, /api/variabler 200. P2-kö (våg
+  82): html lang="sv" kvar på speglar, oöversatta kategorietiketter i
+  en/ar-listor (BOKMASTER m.m.).
+
+**C — FORSKNING → STYRELSEBESLUT (4fc5b87):**
+- LÄGE A BESTÅR (61–76 ms statisk vs 240–630 ms hot-path; OG+sitemap bygger
+  på filerna på disk) + B2-publicera-knapp SANKT för våg 82.
+- KURS-CMS steg 4: vitlista title/summary/learn/why + lasSiffror (~1 ms
+  varm) godkänd som våg 82-underlag; block-live-redigering AVSLAGEN; sv-
+  kurssidors revalidate=3600 landar FÖRST i våg 82 tillsammans med lagret.
+
+**Verifierat totalt: motorer 107/0/0 · vakten GRÖN · tsc 35 · build exit 0
+(333 kurser SSG) · allt pushat.**

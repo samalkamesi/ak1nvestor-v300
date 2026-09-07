@@ -3,27 +3,34 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 import { NivaKort } from "@/components/ak1a/prenumeration/niva-kort";
 import { RabattBand } from "@/components/ak1a/prenumeration/rabatt-band";
 import { AktiveraPanel } from "@/components/ak1a/prenumeration/aktivera-panel";
 
-export const dynamic = "force-static";
+// VÅG 79 (admin-mega steg 1): pristalen läses live via lasPriserGallande()
+// (Supabase-override senaste-vinner; priser.json = fallback) och sidan är
+// ISR (revalidate 300 s) — metadata behåller fil-default (SEO-stabilt).
+export const revalidate = 300;
 
 /**
  * PRENUMERATION — den dedikerade prenumerations-sidan för AK1A
  * Portföljforskning (tjänsten i data/portfolj-system/priser.json).
  *
- * ALLA pris-siffror läses vid build-tillfället ur priser.json via lasPriser()
- * (src/lib/portfolj-forskning/korstabell-data.ts) — metadata description,
- * nivå-kort, rabatt-band och aktiverings-panel. Inga hårdkodade belopp här.
- * Klientkomponenterna får prisdatan som serialiserbara props.
+ * ALLA pris-siffror läses ur variabellagret: strukturen (namn, beskrivningar,
+ * rabatt, juridik) från priser.json via lasPriser()
+ * (src/lib/portfolj-forskning/korstabell-data.ts) och pristalen via
+ * lasPriserGallande() (src/lib/variabler-lagring.ts — Supabase-override
+ * senaste-vinner, filen = fallback). Sidan är ISR (revalidate 300 s).
+ * Metadata description behåller fil-default (SEO-stabilt). Inga hårdkodade
+ * belopp här. Klientkomponenterna får prisdatan som serialiserbara props.
  */
 
-// Prisunderlaget läses EN gång vid build (force-static) — metadata och vy
-// delar samma läsning så de aldrig kan skilja sig åt.
-const priser = lasPriser();
-const grundNiva = priser?.nivaer.find((n) => n.id === "forskning") ?? priser?.nivaer[0];
-const rabattProcent = priser ? Math.round(priser.rabattFas.fas2 * 100) : 0;
+// Metadata läser FIL-defaults statiskt (SEO-stabilt enligt våg 79-kontraktet);
+// vyn nedan mergar live-överstyrningar ovanpå samma filstruktur vid render.
+const priserFil = lasPriser();
+const grundNiva = priserFil?.nivaer.find((n) => n.id === "forskning") ?? priserFil?.nivaer[0];
+const rabattProcent = priserFil ? Math.round(priserFil.rabattFas.fas2 * 100) : 0;
 
 export const metadata: Metadata = pageMetadata({
   path: "/prenumeration",
@@ -69,7 +76,22 @@ const INGAR_PER_NIVA: Record<string, string[]> = {
   ],
 };
 
-export default function PrenumerationPage() {
+export default async function PrenumerationPage() {
+  // ── Prisunderlag: strukturen (namn, beskrivningar, juridik, rabatt) ur
+  //    priser.json via lasPriser(); pristalen via lasPriserGallande()
+  //    (Supabase-override senaste-vinner, filen = fallback — kastar aldrig).
+  //    ISR 300 s ⇒ ändring i panelen syns inom fönstret.
+  const live = await lasPriserGallande();
+  const override: Record<string, { prisManad?: number; prisAr?: number }> = {
+    forskning: { prisManad: live.forskningManad, prisAr: live.forskningAr },
+    "forskning-plus": { prisManad: live.plusManad, prisAr: live.plusAr },
+    "portfolj-hyra": { prisManad: live.hyraManad, prisAr: live.hyraAr },
+  };
+  const fil = lasPriser();
+  const priser = fil
+    ? { ...fil, nivaer: fil.nivaer.map((n) => ({ ...n, ...(override[n.id] ?? {}) })) }
+    : null;
+
   // ── Ärligt fallback-läge: priser.json saknas/ogiltig → vi visar inga påhittade priser.
   if (!priser || priser.nivaer.length === 0) {
     return (
@@ -92,7 +114,8 @@ export default function PrenumerationPage() {
   }
 
   const { nivaer, rabattFas, juridiskFotnot, notering, uppdaterad, tjanst } = priser;
-  const exempelNiva = grundNiva ?? nivaer[0];
+  const exempelNiva =
+    nivaer.find((n) => n.id === "forskning") ?? nivaer[0];
   const mittId = nivaer[1]?.id; // mitt-kortet markeras "Mest valda"
 
   return (

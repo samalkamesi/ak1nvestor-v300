@@ -1,78 +1,56 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { TERMBANK, TERMBANK_STORLEK, termForSv, type TermKategori, type TermRad } from "@/lib/oversattning/termbank";
+import { requireAdmin } from "@/lib/admin-auth";
+import { TERMBANK, TERMBANK_STORLEK, kanoniskTermForSv, type TermKategori, type TermRad } from "@/lib/oversattning/termbank";
 import {
   lasTermbankTillagg,
+  lasTermbankTillaggSupabase,
+  skrivTermbankEventSupabase,
   sparaTermbankTillagg,
   taBortTermbankTillagg,
   upsertTermbankTillagg,
+  type TermbankTillagg,
 } from "@/lib/oversattning-admin";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * /api/admin/oversattning/termbank — termbankens admin-vy (Våg 52 agent C).
+ * /api/admin/oversattning/termbank — termbankens admin-vy (Våg 52 agent C → våg 79 prod-fix).
  *
  * Kunddirektiv: termbanken är LEVANDE — nya termer ska in i pipelinen direkt.
  * Den kanoniska banken (src/lib/oversattning/termbank.ts, ≥ 200 rader) är
  * källfakta i kod och ägs av pipelinen; nya/admin-uppdaterade termer persistas
- * i data/termbank-tillagg.json (src/lib/oversattning-admin.ts) och presenteras
- * med status "vantar-sammanslagning": termKonsistens-kontrollen garanterar
- * termen när raden slagits in i TERMBANK-arrayen (bankens dokumenterade
- * utökningsmodell — inga andra filer ska behöva ändras). Admin kan ALDRIG
- * tyst åsidosätta den kanoniska garantin: en sv-nyckel som redan finns i
- * banken avvisas (409) med instruktion att ändra i källkoden istället.
+ * (våg 79: STYRELSE-ADMIN-MEGA steg 1 "TERMBANK-PROD-FIX") i SUPABASE först —
+ * en system_events-rad med type="termbank_tillagg", details={sv,en,ar,kat,
+ * notering?,av:"admin"} — som är SANNINGEN och fungerar på Vercel. Filen
+ * data/termbank-tillagg.json skrivs endast som DEV-FÖRSÖK (read-only-filsystem
+ * på Vercel ger ok=false — accepterat svar; verktyg/synka-termbank.mjs drar
+ * Supabase → filen före lokala pipeline-runs). Admin kan ALDRIG tyst åsidosätta
+ * den kanoniska garantin: en sv-nyckel som redan finns i banken avvisas (409)
+ * med instruktion att ändra i källkoden istället.
  *
- * GET  → { statiska, tillagg, kategorier, antal … }
+ * GET  → { statiska, tillagg (merged vy), kategorier, lage: {supabase, fil,
+ *         synkaLokalt}, antal … }
  * POST { action: "laggTill"|"uppdatera"|"taBort", sv, en, ar, kat?, notering? }
+ *     → { ok:true, lage: "supabase"|"fil"|"bada", varning? } — varning då en
+ *        av lagren misslyckades (den andra är sanningen), 503 om BÅDA misslyckades.
  *
- * SKYDD: ADMIN_PASSWORD (x-admin-password | Bearer | body.adminPassword),
- * timing-säker, misslyckade försök rate-limitas 10/min — mönstret från
- * /api/admin/beteende.
+ * SKYDD: requireAdmin (src/lib/admin-auth.ts — delad vakt, skärpt våg 79):
+ * ADMIN_PASSWORD (x-admin-password | Bearer | body.adminPassword), timing-
+ * säker, misslyckade försök rate-limitas 10/min; i produktion utan
+ * ADMIN_PASSWORD satt vägras anropet (ingen dev-fallback i prod). Supabase-
+ * nycklar läses via supabase-rest.ts (SSRF-skydd) och loggas ALDRIG.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
 
-// ── Admin-skydd (mönster från /api/admin/beteende) ───────────────────────────
-
-const misslyckade: number[] = [];
-const MAX_MISSLYCKADE_PER_MIN = 10;
-
-function timingSafeEqual(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
-}
-
-function utdragLosenord(req: NextRequest, body: Record<string, unknown>): string {
-  const urHeader = req.headers.get("x-admin-password");
-  if (urHeader) return urHeader;
-  const bearer = req.headers.get("authorization");
-  if (bearer?.startsWith("Bearer ")) return bearer.slice(7);
-  const urBody = body.adminPassword;
-  return typeof urBody === "string" ? urBody : "";
-}
-
-function kontrolleraAdmin(req: NextRequest, body: Record<string, unknown>): NextResponse | null {
-  const expected = process.env.ADMIN_PASSWORD || "AK1A-2026";
-  const provided = utdragLosenord(req, body);
-
-  const now = Date.now();
-  while (misslyckade.length && now - misslyckade[0] > 60_000) misslyckade.shift();
-  if (misslyckade.length >= MAX_MISSLYCKADE_PER_MIN) {
-    return NextResponse.json(
-      { error: "För många felaktiga försök — vänta en minut." },
-      { status: 429 },
-    );
-  }
-  if (!provided || !timingSafeEqual(provided, expected)) {
-    misslyckade.push(now);
-    return NextResponse.json({ error: "Admin-lösenord krävs (x-admin-password)." }, { status: 401 });
-  }
-  return null;
-}
+// ── Admin-skydd ──────────────────────────────────────────────────────────────
+// VÅG 79: den egna kopian av kontrollen är BORTKOPPLAD — rutten använder den
+// delade requireAdmin (src/lib/admin-auth.ts), som är skärpt: dev-fallback
+// "AK1A-2026" gäller ENBAST i development; i produktion utan ADMIN_PASSWORD
+// satt vägras anropet (500) istället för att låsa med ett publicerat lösenord
+// (STYRELSE-ADMIN-MEGA §4.2 + BYGGKONTRAKT STEG 1:s säkerhetskrav).
 
 function plockaObjekt(rå: unknown): Record<string, unknown> {
   return rå && typeof rå === "object" && !Array.isArray(rå) ? (rå as Record<string, unknown>) : {};
@@ -97,25 +75,68 @@ function rensum(v: unknown, falt: string): { varde: string } | { fel: string } {
   return { varde: trimmad };
 }
 
-// ── GET — banken + tilläggen ─────────────────────────────────────────────────
+// ── Merged vy: fil-rader + Supabase-vinnare (Supabase vinner per sv) ─────────
+
+type TillaggVy = TermbankTillagg & { kalla: "fil" | "supabase" | "bada" };
+
+function mergeTillagg(filPoster: TermbankTillagg[], sbPoster: TermbankTillagg[]): TillaggVy[] {
+  const perSv = new Map<string, TillaggVy>();
+  for (const p of filPoster) perSv.set(p.sv, { ...p, kalla: "fil" });
+  for (const p of sbPoster) {
+    const befintlig = perSv.get(p.sv);
+    perSv.set(p.sv, befintlig ? { ...p, kalla: "bada" } : { ...p, kalla: "supabase" });
+  }
+  return [...perSv.values()];
+}
+
+/**
+ * "Synka lokalt"-signal: filens sv-mängd skiljer sig från Supabases vinnare
+ * (antal eller innehåll) ⇒ den lokala pipelinen ser inte allt som admin skrivit
+ * — kör verktyg/synka-termbank.mjs.
+ */
+function skillnadMellanLager(filPoster: TermbankTillagg[], sbPoster: TermbankTillagg[]): boolean {
+  if (filPoster.length !== sbPoster.length) return true;
+  const sbKarta = new Map(sbPoster.map((p) => [p.sv, p]));
+  for (const f of filPoster) {
+    const s = sbKarta.get(f.sv);
+    if (!s || s.en !== f.en || s.ar !== f.ar || s.kat !== f.kat) return true;
+  }
+  return false;
+}
+
+// ── GET — banken + tilläggen (Supabase-läge + fil-läge) ─────────────────────
 
 export async function GET(req: NextRequest) {
-  const skyddSvar = kontrolleraAdmin(req, {});
+  const skyddSvar = requireAdmin(req);
   if (skyddSvar) return skyddSvar;
 
-  const { poster: tillagg } = lasTermbankTillagg();
+  const { poster: filPoster } = lasTermbankTillagg();
+  const sb = await lasTermbankTillaggSupabase();
+
+  const tillagg = mergeTillagg(filPoster, sb.ok ? sb.poster : []);
+  const synkaLokalt = sb.ok ? skillnadMellanLager(filPoster, sb.poster) : false;
 
   return NextResponse.json({
     ok: true,
     genererad: new Date().toISOString(),
     antalStatiska: TERMBANK_STORLEK,
     antalTillagg: tillagg.length,
+    lage: {
+      supabase: { ok: sb.ok, antal: sb.ok ? sb.poster.length : null, fel: sb.ok ? null : sb.fel },
+      fil: { antal: filPoster.length },
+      synkaLokalt,
+      instruktion: synkaLokalt
+        ? "Fil och Supabase skiljer sig — kör node verktyg/synka-termbank.mjs lokalt innan pipeline-runs."
+        : null,
+    },
     kategorier: KATEGORIER,
     statiska: TERMBANK,
     tillagg,
     notering:
-      "Tillägg väntar sammanslagning in i TERMBANK (src/lib/oversattning/termbank.ts) — därefter garanteras " +
-      "termen av termKonsistens-kontrollen i pipelinen (kontroller + motorprompt härleds ur bankens data).",
+      "Tillägg persistas i Supabase (system_events type=termbank_tillagg — sanningen, fungerar på Vercel) " +
+      "och speglas i data/termbank-tillagg.json (dev); verktyg/synka-termbank.mjs synkar filen före lokala runs. " +
+      "Kontrollgarantin (termKonsistens) gäller termen när raden slagits samman in i TERMBANK " +
+      "(src/lib/oversattning/termbank.ts) eller via bankens tilläggs-overlay.",
     disclaimer: "Pedagogisk analys — inte investeringsråd",
   });
 }
@@ -131,7 +152,7 @@ export async function POST(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skyddSvar = kontrolleraAdmin(req, body);
+  const skyddSvar = requireAdmin(req, body);
   if (skyddSvar) return skyddSvar;
 
   const action = typeof body.action === "string" ? body.action : "";
@@ -146,9 +167,17 @@ export async function POST(req: NextRequest) {
   if ("fel" in svSvar) return NextResponse.json({ error: svSvar.fel }, { status: 400 });
   const sv = svSvar.varde;
 
+  // Lägesunderlag: filen (dev-spegling) + Supabase-vinnare (sanningen). En
+  // Supabase-koll som misslyckas blockerar INTE skrivningen — filen bär då
+  // dev-läget och varningen dokumenterar det (aldrig tyst).
+  const { poster: filPosterFore } = lasTermbankTillagg();
+  const sbFore = await lasTermbankTillaggSupabase();
+  const fannsIFil = filPosterFore.some((p) => p.sv === sv);
+  const fannsISupabase = sbFore.ok && sbFore.poster.some((p) => p.sv === sv);
+
   // ── taBort: endast tilläggsrader — den kanoniska banken är källfakta ──
   if (action === "taBort") {
-    const befintlig = termForSv(sv);
+    const befintlig = kanoniskTermForSv(sv);
     if (befintlig) {
       return NextResponse.json(
         {
@@ -159,18 +188,46 @@ export async function POST(req: NextRequest) {
         { status: 409 },
       );
     }
-    const resultat = taBortTermbankTillagg(sv);
-    if (!resultat.fanns) {
+    if (!fannsIFil && !fannsISupabase) {
       return NextResponse.json({ error: "Tillägget '" + sv + "' hittades inte." }, { status: 404 });
     }
+
+    // (1) SUPABASE: tombstone-event — senaste raden per sv vinner, termen är
+    //     alltså borta ur GET/synka direkt (prod-sanningen).
+    const sbSkriv = await skrivTermbankEventSupabase({ sv, raderad: true, av: "admin" }, action);
+    // (2) FIL: dev-försök (read-only på Vercel är accepterat).
+    const resultat = taBortTermbankTillagg(sv);
     const spar = sparaTermbankTillagg(resultat.poster);
-    if (!spar.ok) {
-      return NextResponse.json({ error: spar.fel ?? "Kunde inte spara." , posterOforandrade: true }, { status: 503 });
+
+    const lage = sbSkriv.ok && spar.ok ? "bada" : sbSkriv.ok ? "supabase" : spar.ok ? "fil" : null;
+    if (!lage) {
+      return NextResponse.json(
+        {
+          error:
+            "Både Supabase (" + (sbSkriv.fel ?? "?") + ") och filen (" + (spar.fel ?? "?") +
+            ") misslyckades — tillägget raderades INTE.",
+          posterOforandrade: true,
+        },
+        { status: 503 },
+      );
     }
-    return NextResponse.json({ ok: true, action, sv, antalTillagg: resultat.poster.length, tillagg: resultat.poster });
+    return NextResponse.json({
+      ok: true,
+      action,
+      sv,
+      lage,
+      varning:
+        lage === "supabase"
+          ? "Raderad i Supabase — filen kunde inte skrivas (" + (spar.fel ?? "?") + "); kör verktyg/synka-termbank.mjs lokalt."
+          : lage === "fil"
+            ? "Raderad endast i filen — Supabase misslyckades (" + (sbSkriv.fel ?? "?") + "): tillägget kan återkomma vid nästa synka."
+            : undefined,
+      antalTillagg: resultat.poster.length,
+      tillagg: resultat.poster,
+    });
   }
 
-  // ── laggTill / uppdatera (upsert på sv i tilläggsfilen) ──
+  // ── laggTill / uppdatera (upsert på sv) ──
   const enSvar = rensum(body.en, "en");
   if ("fel" in enSvar) return NextResponse.json({ error: enSvar.fel }, { status: 400 });
   const arSvar = rensum(body.ar, "ar");
@@ -191,7 +248,7 @@ export async function POST(req: NextRequest) {
       ? body.notering.trim().slice(0, 300)
       : "admin-tillägg " + new Date().toISOString().slice(0, 10);
 
-  const befintlig = termForSv(sv);
+  const befintlig = kanoniskTermForSv(sv);
   if (befintlig) {
     // Samma värden ⇒ idempotent ok; andra värden ⇒ garantin kan inte åsidosättas tyst.
     if (befintlig.en === enSvar.varde && befintlig.ar === arSvar.varde && befintlig.kat === kat) {
@@ -214,26 +271,51 @@ export async function POST(req: NextRequest) {
   }
 
   const rad: TermRad = { sv, en: enSvar.varde, ar: arSvar.varde, kat, notering };
+
+  // (1) SUPABASE-FÖRST (sanningen — fungerar på Vercel).
+  const sbSkriv = await skrivTermbankEventSupabase(
+    { sv, en: rad.en, ar: rad.ar, kat: rad.kat, notering: rad.notering, av: "admin" },
+    action,
+  );
+
+  // (2) FIL: dev-försök — ok=false på read-only filsystem är accepterat.
   const upsert = upsertTermbankTillagg(rad);
   const spar = sparaTermbankTillagg(upsert.poster);
-  if (!spar.ok) {
+
+  const lage = sbSkriv.ok && spar.ok ? "bada" : sbSkriv.ok ? "supabase" : spar.ok ? "fil" : null;
+  if (!lage) {
     return NextResponse.json(
-      { error: spar.fel ?? "Kunde inte spara — tillägget genomfördes INTE.", posterOforandrade: true },
+      {
+        error:
+          "Både Supabase (" + (sbSkriv.fel ?? "?") + ") och filen (" + (spar.fel ?? "?") +
+          ") misslyckades — tillägget genomfördes INTE.",
+        posterOforandrade: true,
+      },
       { status: 503 },
     );
   }
+
+  // varNy = nyckeln fanns varken i filen eller Supabase innan skrivningen.
+  const varNy = !fannsIFil && !fannsISupabase;
 
   return NextResponse.json({
     ok: true,
     action,
     sv,
-    varNy: upsert.varNy,
+    varNy,
+    lage,
+    varning:
+      lage === "supabase"
+        ? "Sparad i Supabase — filen kunde inte skrivas (" + (spar.fel ?? "?") + "); kör verktyg/synka-termbank.mjs lokalt innan pipeline-runs."
+        : lage === "fil"
+          ? "Sparad endast i filen — Supabase misslyckades (" + (sbSkriv.fel ?? "?") + "): tillägget består inte i prod och skrivs över vid nästa synka."
+          : undefined,
     status: "vantar-sammanslagning",
     antalTillagg: upsert.poster.length,
     tillagg: upsert.poster,
     meddelande:
-      (upsert.varNy ? "Termen tillagd" : "Termen uppdaterad") +
-      " — den garanteras av kontrollerna när raden slagits samman in i TERMBANK (src/lib/oversattning/termbank.ts).",
+      (varNy ? "Termen tillagd" : "Termen uppdaterad") +
+      " (lage: " + lage + ") — den garanteras av kontrollerna via termbankens tilläggs-overlay och fullt när raden slagits samman in i TERMBANK (src/lib/oversattning/termbank.ts).",
     disclaimer: "Pedagogisk analys — inte investeringsråd",
   });
 }

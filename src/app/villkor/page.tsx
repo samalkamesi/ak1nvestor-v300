@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
-import { PRISER, kr, ORG_NR_LANG, ORG_NR_KORT } from "@/lib/variabler";
+import { kr, ORG_NR_LANG, ORG_NR_KORT } from "@/lib/variabler";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
-export const dynamic = "force-static";
+// VÅG 79 (admin-mega steg 1): pristalen i villkorstexten läses live via
+// lasPriserGallande() (Supabase-override, filen = fallback) — villkoren ska
+// alltid ange samma pris som köp-ytorna. ISR: ändring syns ≤ 300 s.
+export const revalidate = 300;
 
 export const metadata: Metadata = pageMetadata({
   path: "/villkor",
@@ -30,7 +34,9 @@ export const metadata: Metadata = pageMetadata({
 /** Blocktyper: stycke (p), punktlista (ul) eller framhävd ruta (box). */
 type Block = { p: React.ReactNode } | { ul: React.ReactNode[] } | { box: React.ReactNode };
 
-export default function VillkorPage() {
+export default async function VillkorPage() {
+  // Pris-talen live ur variabellagret (kastar aldrig — filen är fallback).
+  const PRISER = await lasPriserGallande();
   const lank = (href: string, text: string) => (
     <Link href={href} className="underline hover:text-foreground">
       {text}

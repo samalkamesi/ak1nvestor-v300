@@ -8963,3 +8963,36 @@ ADMIN_PASSWORD har dev-fallback — åtgärdas i steg 1.
 
 **Verifierat:** tsc 36 (baslinje, 0 nya) · motorer 107/0/0 · vakten GRÖN ·
 build exit 0 · SSR-curl: Fas2-kurs fulltext BORTA ur HTML, smakprov kvar.
+
+## Våg 79 — ADMIN-MEGA STEG 1 LEVERERAD (2026-09-07): VARIABELPANELEN
+
+**Kundens "WordPress på långt håll" — steg 1 av 5, 4 agenter parallellt:**
+- KÄRNA: src/lib/variabler-lagring.ts (system_events type=variabel,
+  senaste-vinner, 5 min memo, Range-paginering; fil-fallback — prod blir
+  aldrig utan priser) + GET /api/variabler (publik, 60 s cache) + GET/POST
+  /api/admin/variabler (vitlista 13 nycklar, heltal ≥ 0, skriver värderad +
+  variabel-andring-loggrad) + ADMIN_PASSWORD-skärpning: dev-fallback
+  "AK1A-2026" gäller ENDAST development — prod utan env = vägran.
+  Roundtrip-testat mot Supabase (idempotent + städat).
+- PANEL: admin-flik "Variabler 📊" — 3 grupper, nuvärde/filvärde/källa-badge,
+  inline-edit, lås (nivåer/fria värden kan ej skapas), logg senaste 20.
+- KONSUMENTER: /prenumeration /medlemskap /pro/priser /villkor /fas2-ansok
+  + chatbot-route → lasPriserGallande() med revalidate=300 (ISR ○ 5m
+  verifierade i build); 2 sista hårdkodade 299-talen borta; NEXT_PHASE-
+  grind i kärnan gör bygget nätverkshermetiskt (korsfynd av konsument-
+  agenten: kall no-store-fetch under prerender bollade sidor till ƒ).
+- TERMBANK-PROD-FIX: tillägg skriver Supabase-FÖRST (type=termbank_tillagg,
+  senaste-vinner + tombstones), fil = dev-försök; verktyg/synka-termbank.mjs
+  drar Supabase→fil inför pipeline-runs; overlay i termbank.ts (strikt
+  filtrerad); retention-undantag i organet; 19 tester PASS, alla testrader
+  städade ur databasen.
+
+**Excel-beroendet är nu TVÅVÄGS:** filen är kvar som guldkälla för
+byggdefaults + panelen skriver Supabase-override som sajten plockar inom
+5 min (ISR) — ändra pris i admin → hela sajten uppdaterar, ingen deploy.
+
+**Verifierat:** tsc 36 (baslinje, 0 nya) · motorer 107/0/0 · vakten GRÖN ·
+build exit 0 med alla pris-ytor ISR ○ 5m · curl: priser live ur lagret.
+
+**Nästa (våg 80, sankt):** blogg-publiceringsflödet (draft→granska→
+publicera med kontrolleraText-grind) — styrelsens stegplan styrs vidare.

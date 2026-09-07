@@ -134,7 +134,7 @@ type OversattningSvar = {
   senasteRond?: { datum: string | null; rapport: string } | null;
 };
 
-type TermRadVy = { sv: string; en: string; ar: string; kat: string; notering?: string; uppdaterad?: string };
+type TermRadVy = { sv: string; en: string; ar: string; kat: string; notering?: string; uppdaterad?: string; kalla?: "fil" | "supabase" | "bada" };
 
 type TermbankSvar = {
   ok?: boolean;
@@ -144,6 +144,13 @@ type TermbankSvar = {
   statiska?: TermRadVy[];
   tillagg?: TermRadVy[];
   notering?: string;
+  /** Våg 79: lagrens läge — Supabase (sanningen) vs filen (dev-spegling). */
+  lage?: {
+    supabase: { ok: boolean; antal: number | null; fel: string | null };
+    fil: { antal: number };
+    synkaLokalt: boolean;
+    instruktion?: string | null;
+  };
 };
 
 type PostSvar = {
@@ -954,6 +961,38 @@ function TermbankVy({
         slagits samman in i banken (status visas nedan — aldrig tyst).
       </p>
 
+      {/* Våg 79: lagrens läge — Supabase (sanningen) + filen (dev-spegling) */}
+      {termbank?.lage && (
+        <div
+          className={cn(
+            "flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border p-3 text-[11px]",
+            termbank.lage.synkaLokalt ? "border-orange-500/40 bg-orange-500/5" : "border-border bg-card",
+          )}
+        >
+          <span className="font-semibold">Lager:</span>
+          <span>
+            Supabase:{" "}
+            {termbank.lage.supabase.ok ? (
+              <span className="font-medium tabular-nums">{sv(termbank.lage.supabase.antal ?? 0)} termer</span>
+            ) : (
+              <span className="text-red-600 dark:text-red-400" title={termbank.lage.supabase.fel ?? ""}>
+                onåbart ({termbank.lage.supabase.fel ?? "okänd orsak"})
+              </span>
+            )}
+          </span>
+          <span>
+            Fil: <span className="font-medium tabular-nums">{sv(termbank.lage.fil.antal)} termer</span>
+          </span>
+          {termbank.lage.synkaLokalt ? (
+            <span className="font-medium text-orange-600 dark:text-orange-400">
+              skillnad — synka lokalt: node verktyg/synka-termbank.mjs
+            </span>
+          ) : (
+            <span className="text-muted-foreground">i synk</span>
+          )}
+        </div>
+      )}
+
       {/* Lägg-till-rad */}
       <div className="rounded-lg border border-gold/30 bg-card p-4">
         <h4 className="font-serif text-sm font-bold">Lägg till / uppdatera term (sv → en → ar)</h4>
@@ -994,7 +1033,7 @@ function TermbankVy({
         {resultat && (
           <p className={cn("mt-2 text-[11px]", resultat.ok ? "text-green-700 dark:text-green-400" : "text-red-600")}>
             {resultat.ok
-              ? (resultat.meddelande ?? "Termen sparad.")
+              ? (resultat.meddelande ?? "Termen sparad.") + (resultat.varning ? " ⚠ " + resultat.varning : "")
               : (resultat.error ?? "Termen sparades inte.")}
           </p>
         )}
@@ -1017,6 +1056,7 @@ function TermbankVy({
                   <th className="py-1.5 pr-3 font-semibold">English</th>
                   <th className="py-1.5 pr-3 font-semibold">العربية</th>
                   <th className="py-1.5 pr-3 font-semibold">Kategori</th>
+                  <th className="py-1.5 pr-3 font-semibold">Lager</th>
                   <th className="py-1.5 pr-3 font-semibold">Uppdaterad</th>
                   <th className="py-1.5 font-semibold" />
                 </tr>
@@ -1028,6 +1068,9 @@ function TermbankVy({
                     <td className="py-1.5 pr-3">{t.en}</td>
                     <td className="py-1.5 pr-3" dir="rtl">{t.ar}</td>
                     <td className="py-1.5 pr-3 text-muted-foreground">{t.kat}</td>
+                    <td className="py-1.5 pr-3 text-muted-foreground">
+                      {t.kalla === "supabase" ? "Supabase" : t.kalla === "bada" ? "Supabase + fil" : "Fil"}
+                    </td>
                     <td className="py-1.5 pr-3 text-muted-foreground">{datumKort(t.uppdaterad)}</td>
                     <td className="py-1.5 text-right">
                       <Button

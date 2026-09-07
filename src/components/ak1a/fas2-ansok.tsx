@@ -10,8 +10,13 @@ import { PRISER, kr } from "@/lib/variabler";
 const MAX_VARFOR = 800;
 
 /** Fas 2-ansökan — elevstatus lokalt + POST till /api/fas2-ansok. Premium-ton,
- *  generös: "Fas 1 gömmer ingenting" — ingen aggressiv säljton. */
-export function Fas2Ansok() {
+ *  generös: "Fas 1 gömmer ingenting" — ingen aggressiv säljton.
+ *
+ *  VÅG 79 (admin-mega steg 1): pris-talet kommer som prop (prisFas2) från
+ *  server-sidan, som läser lasPriserGallande() (Supabase-override, filen =
+ *  fallback) — statisk PRISER-importen är endast robust fallback om
+ *  komponenten renderas utan prop. */
+export function Fas2Ansok({ prisFas2 }: { prisFas2?: number }) {
   // SSR-säkra guards: allt localStorage-läsande sker i useEffect efter montering.
   const [hydrerad, setHydrerad] = useState(false);
   const [inloggad, setInloggad] = useState(false);
@@ -236,7 +241,7 @@ export function Fas2Ansok() {
       <div className="rounded-lg border border-gold/30 bg-paper p-5 text-xs leading-relaxed text-muted-foreground">
         <p>
           <strong className="text-foreground">Ingen betalning nu.</strong> Ansökan är
-          kostnadsfri och icke-bindande. Fas 2 kostar {kr(PRISER.fas2EnGang)} kr — men du betalar
+          kostnadsfri och icke-bindande. Fas 2 kostar {kr(prisFas2 ?? PRISER.fas2EnGang)} kr — men du betalar
           inget under de första 90 dagarna: betalning sker först efter 90 dagar,
           och bara om du förblir nöjd (90 dagars nöjd-kund-garanti, med
           juridisk hemvist i{" "}

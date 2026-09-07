@@ -6,8 +6,13 @@ import { Fas2Ansok } from "@/components/ak1a/fas2-ansok";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { getCourseList } from "@/lib/content";
 import { PRISER, kr } from "@/lib/variabler";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 
-export const dynamic = "force-static";
+// VÅG 79 (admin-mega steg 1): pristalena på sidan (chip + komponentens
+// villkorsruta) läses live via lasPriserGallande() (Supabase-override,
+// filen = fallback) och skickas som prop till klientkomponenten — metadata
+// behåller fil-default (SEO-stabilt). ISR: ändring syns ≤ 300 s.
+export const revalidate = 300;
 
 /**
  * Fas 2 (nya modellen): de 18 fundamentala mästarverken, kategorivis —
@@ -85,7 +90,10 @@ export const metadata: Metadata = pageMetadata({
   ],
 });
 
-export default function Fas2AnsokPage() {
+export default async function Fas2AnsokPage() {
+  // Pris-talet live ur variabellagret (kastar aldrig — filen är fallback);
+  // klientkomponenten får det som serialiserbar prop.
+  const priser = await lasPriserGallande();
   const katalog = getCourseList();
   const titelFor = (slug: string) =>
     katalog.find((k) => k.slug === slug)?.title ?? slug;
@@ -96,7 +104,7 @@ export default function Fas2AnsokPage() {
       <article className="space-y-8">
         <header className="space-y-4">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold">
-            {`Fas 2 · Den snabba fundamentala vägen · ${kr(PRISER.fas2EnGang)} kr`}
+            {`Fas 2 · Den snabba fundamentala vägen · ${kr(priser.fas2EnGang)} kr`}
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight">
             Ansök om Fas 2
@@ -146,7 +154,7 @@ export default function Fas2AnsokPage() {
           </div>
         </div>
 
-        <Fas2Ansok />
+        <Fas2Ansok prisFas2={priser.fas2EnGang} />
 
         {/* SOCIALT BEVIS — siffror och elevröster efter krav/ansökningsdelen */}
         <SocialProof />

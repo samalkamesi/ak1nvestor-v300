@@ -170,6 +170,12 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 //         publicerade. 17,7M-kollapsen får ALDRIG upprepas: hårt tak + ingen
 //         okontrollerad tillväxt (cron-ronden skriver batchvis, dedupe i
 //         lasSpara + denna städrunda håller raderna ≈ registrets storlek).
+//   termbank_tillagg (VÅG 79, STYRELSE-ADMIN-MEGA steg 1): INGET ålderstak
+//     och INGET allmänt radtak — varje rad är en admin-term-händelse där
+//     SENASTE per details->>sv är SANNINGEN ("Supabase-raden är sanningen");
+//     30-dagarsregeln/500-taket skulle äta upp termbanken. Tillväxten hålls
+//     i stället av deduplicering (äldsta kopior per sv raderas, senaste
+//     behålls) — raderna begränsas av antalet distinkta termer admin rört.
 
 const MAX_ANTAL_TRAFIK = 12_000;
 const MAX_ANTAL_SAKERHET = 3_000;
@@ -359,6 +365,44 @@ async function organRetention(
     }
   };
 
+  /**
+   * TERMBANK-dubbeltröjning (VÅG 79): type=termbank_tillagg är append-only —
+   * läsningarna låter SENASTE raden per details->>sv vinna (senaste-vinner,
+   * samma semantik som MÖS-lagret), så äldre kopior är ren vikt. Speglar
+   * rensaMosDubletter men med sv som nyckel och ett blygsamt tak (typen är
+   * liten: en rad per admin-åtgärd). Råa filtervärden, aldrig citerade.
+   */
+  const rensaTermbankDubletter = async (): Promise<number> => {
+    try {
+      const sedda = new Set<string>();
+      const radera: string[] = [];
+      for (let sida = 0; sida < 5; sida++) {
+        const fran = sida * 1000;
+        const res = await tryFetch(
+          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.termbank_tillagg` +
+            `&select=id,details->>sv&order=created_at.desc,id.desc`,
+          { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
+        );
+        if (!res.ok) return 0;
+        const rows = await res.json();
+        if (!Array.isArray(rows) || rows.length === 0) break;
+        for (const r of rows) {
+          const sv = r?.sv;
+          const id = r?.id;
+          if (typeof sv !== "string" || typeof id !== "string" || !sv) continue;
+          if (sedda.has(sv)) radera.push(id);
+          else sedda.add(sv);
+        }
+        if (rows.length < 1000) break;
+        if (radera.length >= 2000) break;
+      }
+      if (radera.length === 0) return 0;
+      return await raderaIdn(radera);
+    } catch {
+      return 0;
+    }
+  };
+
   // 0. Sidvisningsloggen: radera äldre än 90 dagar (bounded tracking)
   try {
     const cut90 = new Date(Date.now() - ACTIVITY_MAX_AGE_DAYS * 86400_000).toISOString();
@@ -382,12 +426,14 @@ async function organRetention(
   //    OBS (våg 55 L1): oversattning-typerna har INGET ålderstak (publicerade
   //    översättningar består tills de ersätts) — de får sina egna regler i
   //    steg 3 och får alldrig träffas av övrigt-regeln.
-  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet,oversattning)", MAX_LOG_AGE_DAYS);
+  //    OBS (våg 79): termbank_tillagg hör till samma undantag — en admin-
+  //    terms SENASTE rad är sanningen och får aldrig åldras bort (se steg 3b).
+  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg)", MAX_LOG_AGE_DAYS);
   deletedOld += await rakraAldring("type=eq.trafik", MAX_ALDER_TYP_DAGAR);
   deletedOld += await rakraAldring("type=eq.sakerhet", MAX_ALDER_TYP_DAGAR);
 
   // 2. Hårta radtak, per scope (500 / 12 000 / 3 000)
-  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet,oversattning)", MAX_LOG_ROWS);
+  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg)", MAX_LOG_ROWS);
   cappedRows += await raknaTak("type=eq.trafik", MAX_ANTAL_TRAFIK);
   cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
 
@@ -395,6 +441,12 @@ async function organRetention(
   //    därefter antalsstympning MAX_ANTAL_OVERSATTNING (icke-publicerade äldst först).
   cappedRows += await rensaMosDubletter();
   cappedRows += await raknaTakMos();
+
+  // 3b. TERMBANK-tilläggen (våg 79): samma dubbeltröjning men per details->>sv
+  //     — varje laggTill/uppdatera/taBort lägger en rad, SENASTE per sv är
+  //     sanningen, äldre kopior är ren vikt. Inget ålderstak/radtak behövs:
+  //     denna rensning håller typen ≈ antalet distinkta termer.
+  cappedRows += await rensaTermbankDubletter();
 
   return { deletedOld, cappedRows };
 }

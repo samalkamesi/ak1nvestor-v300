@@ -27,9 +27,27 @@
  * UTÖKNING: nya rader i TERMBANK-arrayen = nya termer. Inga andra filer ska
  * behöva ändras — kontroller, motorpromt och vitlista härleds ur datan.
  *
- * Obs: modulen är avsiktligt fri från nätverk/fs/server-only så att BOTH Next
- * (cron-rutten) och verktyg/validera-motorer.mjs (tsx) kan importera den.
+ * TILLÄGGS-OVERLAY (våg 79, STYRELSE-ADMIN-MEGA steg 1): vid modulinit läses
+ * admin-tilläggen ur data/termbank-tillagg.json (env-överridbar via
+ * TERMBANK_TILLAGG_SOKVAG — skriven av admin-rutten lokalt OCH av verktyg/
+ * synka-termbank.mjs, som drar Supabase type=termbank_tillagg före lokala
+ * pipeline-runs). Godkända rader MERGAS ÖVER banken i uppslagen nedan — admin-
+ * termen blir alltså garanterad av termKonsistens/redan vid pipeline-start.
+ * Supabase läses INTE här: modulinit är synkront (tsx CJS klarar inte top-level
+ * await, kontrollerna är synkrona) och sviten kör aldrig nät — Supabase når
+ * pipelinen via synka-skriptet → filen → denna overlay. Filraderna FILTRERAS
+ * STRIKT: kanonisk rad vinner på sv-kollision (aldrig dublett), ar får inte
+ * innehålla åäö (arVitlista-garantin), kat måste vara bankens egna, och ogiltiga
+ * rader hoppas tyst. Misslyckad/saknad fil ⇒ exakt föregående beteende.
+ *
+ * Obs: modulen är avsiktligt fri från NÄTVERK så att BOTH Next (cron-rutten)
+ * och verktyg/validera-motorer.mjs (tsx) kan importera den; fs-användningen är
+ * endast den synkrona overlay-läsningen ovan (server/tsx-sammanhang — modulen
+ * importeras aldrig av klientkomponenter).
  */
+
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 
 /** Kategori — endast fasta värden (organisation + motorpromt). */
 export type TermKategori =
@@ -382,14 +400,82 @@ export const TERMBANK_STORLEK: number = TERMBANK.length;
 
 const SV_TILL_RAD: ReadonlyMap<string, TermRad> = new Map(TERMBANK.map((r) => [r.sv, r]));
 
-/** Returnerar den kanoniska raden för en svensk term, eller undefined. */
-export function termForSv(sv: string): TermRad | undefined {
+// ── Tilläggs-overlay (våg 79) ────────────────────────────────────────────────
+
+/** Filformatet i data/termbank-tillagg.json (ägs av oversattning-admin.ts). */
+type TillaggsFil = { poster?: unknown };
+
+/** Bankens egna kategorier — overlay-rader utanför dessa avvisas. */
+const KATEGORIER: ReadonlySet<string> = new Set(TERMBANK.map((r) => r.kat));
+
+/**
+ * Läs admin-tilläggen VID MODULINIT (en gång per process, synkront). Strikt
+ * filtrering — en overlay-rad ska hålla EXAKT samma garantier som bankens egna:
+ * icke-tomma fält, rimlig längd, bokstäver i sv, ar utan åäö (arVitlista-fri),
+ * kanonisk kategori, samt INGEN kollision med bankens (eller filens egna)
+ * sv-nycklar — kanoniska rader vinner alltid. Tyst vid varje misslyckande:
+ * utan fil/vid fel blir overlay tomma = precist föregående beteende.
+ */
+function lasTillaggsOverlay(): readonly TermRad[] {
+  try {
+    const sokvag = process.env.TERMBANK_TILLAGG_SOKVAG || path.join(process.cwd(), "data", "termbank-tillagg.json");
+    if (!existsSync(sokvag)) return [];
+    const parsad = JSON.parse(readFileSync(sokvag, "utf8")) as Partial<TillaggsFil>;
+    if (!Array.isArray(parsad.poster)) return [];
+    const giltiga: TermRad[] = [];
+    const sedda = new Set<string>(SV_TILL_RAD.keys());
+    for (const rå of parsad.poster) {
+      if (!rå || typeof rå !== "object" || Array.isArray(rå)) continue;
+      const r = rå as Partial<TermRad>;
+      if (typeof r.sv !== "string" || typeof r.en !== "string" || typeof r.ar !== "string" || typeof r.kat !== "string") continue;
+      const sv = r.sv.trim();
+      const en = r.en.trim();
+      const ar = r.ar.trim();
+      if (!sv || !en || !ar) continue;
+      if (sv.length > 120 || en.length > 200 || ar.length > 200) continue;
+      if (!/\p{L}/u.test(sv) || !/\p{L}/u.test(en) || !/\p{L}/u.test(ar)) continue;
+      if (/[åäöÅÄÖ]/.test(ar)) continue; // arVitlista-garantin: AR läcker aldrig svenska tecken
+      if (!KATEGORIER.has(r.kat)) continue;
+      if (sedda.has(sv)) continue; // kanonisk/fil-rad vinner — aldrig dublett
+      sedda.add(sv);
+      giltiga.push({
+        sv,
+        en,
+        ar,
+        kat: r.kat as TermKategori,
+        ...(typeof r.notering === "string" && r.notering.trim() ? { notering: r.notering } : {}),
+      });
+    }
+    return giltiga;
+  } catch {
+    return [];
+  }
+}
+
+/** Admin-tilläggen (strikt filtrerade) — tomma utan fil, exakt som före våg 79. */
+const OVERLAY: readonly TermRad[] = lasTillaggsOverlay();
+
+/** Banken + godkända admin-tillägg — det pipelinen SER (kontroller + motorpromt). */
+const ALLA_RADER: readonly TermRad[] = Object.freeze([...TERMBANK, ...OVERLAY]);
+
+/** Antal godkända admin-tillägg i denna process (diagnostik; 0 utan fil). */
+export const TERMBANK_OVERLAY_STORLEK: number = OVERLAY.length;
+
+const SV_TILL_RAD_ALLA: ReadonlyMap<string, TermRad> = new Map(ALLA_RADER.map((r) => [r.sv, r]));
+
+/** Returnerar den KANONISKA raden (endast TERMBANK, ej overlay) för en svensk term. */
+export function kanoniskTermForSv(sv: string): TermRad | undefined {
   return SV_TILL_RAD.get(sv);
 }
 
-/** Alla svenska termer (källsidan av garantin). */
+/** Returnerar den kanoniska raden för en svensk term (bank + overlay), eller undefined. */
+export function termForSv(sv: string): TermRad | undefined {
+  return SV_TILL_RAD_ALLA.get(sv);
+}
+
+/** Alla svenska termer (källsidan av garantin) — bank + godkända tillägg. */
 export function allaSvTermer(): readonly string[] {
-  return TERMBANK.map((r) => r.sv);
+  return ALLA_RADER.map((r) => r.sv);
 }
 
 /**
@@ -418,7 +504,7 @@ function svRegex(sv: string): RegExp {
  */
 export function hittaTermerIKalla(kalltext: string): readonly TermRad[] {
   const traffade: TermRad[] = [];
-  for (const rad of TERMBANK) {
+  for (const rad of ALLA_RADER) {
     if (svRegex(rad.sv).test(kalltext)) traffade.push(rad);
   }
   return traffade;
@@ -439,7 +525,7 @@ export function svTermMatchar(sv: string, text: string): boolean {
  */
 export function arVitlista(): readonly string[] {
   const vit: string[] = [];
-  for (const rad of TERMBANK) {
+  for (const rad of ALLA_RADER) {
     if (/[åäöÅÄÖ]/.test(rad.ar)) vit.push(rad.ar);
   }
   return vit;
@@ -450,5 +536,5 @@ export function arVitlista(): readonly string[] {
  * Används av motorpromten ("behåll dessa exakt") och dokumentation.
  */
 export function latinskaTermer(): readonly TermRad[] {
-  return TERMBANK.filter((r) => r.kat === "latinsk");
+  return ALLA_RADER.filter((r) => r.kat === "latinsk");
 }

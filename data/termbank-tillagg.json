@@ -1,0 +1,5 @@
+{
+  "uppdaterad": "2026-09-07T14:39:50.649Z",
+  "notering": "Admin-tillägg till MÖS-termbanken (Supabase type=termbank_tillagg är sanningen; denna fil är den lokala spegling termbank.ts:s overlay läser — synkad av verktyg/synka-termbank.mjs, idempotent). Kontrollgarantin (termKonsistens) gäller termen via overlay och fullt när raden slagits samman in i TERMBANK i src/lib/oversattning/termbank.ts.",
+  "poster": []
+}

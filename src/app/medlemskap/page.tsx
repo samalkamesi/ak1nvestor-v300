@@ -6,8 +6,12 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { SIFFROR, tal } from "@/lib/siffror";
 import { PRISER, kr } from "@/lib/variabler";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 
-export const dynamic = "force-static";
+// VÅG 79 (admin-mega steg 1): sidkroppens pristal läses live via
+// lasPriserGallande() (Supabase-override, filen = fallback); metadata
+// behåller fil-default (SEO-stabilt). ISR: ändring syns ≤ 300 s.
+export const revalidate = 300;
 
 /**
  * Fas 2 (nya modellen): de 18 fundamentala mästarverken, kategorivis —
@@ -166,7 +170,9 @@ function GarantiRuta({ mork }: { mork?: boolean }) {
   );
 }
 
-export default function MedlemskapPage() {
+export default async function MedlemskapPage() {
+  // Pris-talen live ur variabellagret (kastar aldrig — filen är fallback).
+  const PRISER_LIVE = await lasPriserGallande();
   const kurserLista = getCourseList();
   const kurser = kurserLista.length;
   const lasSlugs = new Set([
@@ -289,7 +295,7 @@ export default function MedlemskapPage() {
         {/* FAS 2 */}
         <div className="flex flex-col rounded-xl border border-gold/40 bg-card p-7">
           <span className="mb-2 inline-block w-fit rounded-full border border-gold/50 px-3 py-0.5 text-xs font-semibold text-gold">
-            {`FAS 2 · ANSÖKAN KRÄVS · ${kr(PRISER.fas2EnGang)} KR`}
+            {`FAS 2 · ANSÖKAN KRÄVS · ${kr(PRISER_LIVE.fas2EnGang)} KR`}
           </span>
           <h2 className="font-serif text-2xl font-bold">Den snabba fundamentala vägen</h2>
           <p className="mt-1 text-sm italic text-muted-foreground">
@@ -340,7 +346,7 @@ export default function MedlemskapPage() {
       {/* FAS 3 — det dynamiska ekosystemet */}
       <section className="marin-panel mt-8 rounded-2xl border border-gold/40 p-7 sm:p-9">
         <span className="mb-2 inline-block w-fit rounded-full border border-[#E8C766]/50 px-3 py-0.5 text-xs font-semibold text-[#E8C766]">
-          {`FAS 3 · EFTER TILLÄMPNING AV FAS 2 · ${kr(PRISER.fas3EnGang)} KR`}
+          {`FAS 3 · EFTER TILLÄMPNING AV FAS 2 · ${kr(PRISER_LIVE.fas3EnGang)} KR`}
         </span>
         <h2 className="font-serif text-2xl font-bold text-[#EDE6D6]">
           Fas 3 — det dynamiska ekosystemet

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { lasPriser, type PrisNiva } from "@/lib/portfolj-forskning/korstabell-data";
-import { PRISER, kr } from "@/lib/variabler";
+import { kr } from "@/lib/variabler";
+import { lasPriserGallande, type PriserGallande } from "@/lib/variabler-lagring";
 
-export const dynamic = "force-static";
+// VÅG 79 (admin-mega steg 1): pristalen läses live via lasPriserGallande()
+// (Supabase-override senaste-vinner; priser.json = fallback — ÄNDRA PRIS i
+// panelen/filen, aldrig här). ISR: ändring syns ≤ 300 s.
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Priser — AK1A PRO",
@@ -38,19 +42,14 @@ export const metadata: Metadata = {
  * Skalet ägs av ../layout.tsx (ProShell) — INTE SeoPageShell.
  */
 
-/** Engångs-onboarding på Institution (avklippt vid 2-årsbindning — §3.4). */
-const ONBOARDING_INSTITUTION = {
-  pris: PRISER.b2bOnboarding,
-  text: "Engångs-onboarding av analysavdelningen — avklippt vid 2-årsbindning.",
-} as const;
-
-/** Fas 3-certifierades introduktionspris (certifikatet dokumenterar förturen). */
-const FAS3_FORSTA_AR = 299;
+/** Engångs-onboarding på Institution (avklippt vid 2-årsbindning — §3.4).
+ *  Priset läses live i komponenten (PRISER.b2bOnboarding via lagret). */
 
 /** Mallen för de tre pro-nivåerna (K7-justerad copy i punkterna).
- *  VÅG 77 (variabelregistret): priserna interpolerar ur priser.json:s
- *  b2b-sektion via src/lib/variabler.ts — ÄNDRA PRIS I data/portfolj-
- *  system/priser.json, aldrig här (Excel-beroendet). */
+ *  VÅG 77 (variabelregistret) + VÅG 79 (live): priserna interpolerar ur
+ *  variabellagret (lasPriserGallande — Supabase-override, priser.json =
+ *  fallback) — ÄNDRA PRIS I panelen/data/portfolj-system/priser.json,
+ *  aldrig här (Excel-beroendet). */
 type ProNiva = {
   id: string;
   banderoll: string;
@@ -63,53 +62,55 @@ type ProNiva = {
   kalla: string;
 };
 
-const PRO_NIVAER: ProNiva[] = [
-  {
-    id: "pro-analytiker",
-    banderoll: "PRO ANALYTIKER",
-    tagline: "Analytikerversikt",
-    pris: PRISER.b2bAnalytiker,
-    typ: "kr/mån · 1 seat · exkl. moms",
-    punkter: [
-      "Obegränsad CSV-portföljimport (instrument + vikter)",
-      "Tre låsta mallar i Rapportverkstan + mötespaket-A4",
-      "20 rapporter/mån — utskriftsklassat dokument (PDF-export på väg)",
-      "Fas 3-certifierad? 299 kr/mån det första året",
-    ],
-    lyft: false,
-    kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — priser.json → variabler.ts",
-  },
-  {
-    id: "pro-studio",
-    banderoll: "PRO STUDIO",
-    tagline: "Rådgivarens nivå",
-    pris: PRISER.b2bStudio,
-    typ: "kr/mån · 5 seats · exkl. moms",
-    punkter: [
-      "Allt i Pro Analytiker",
-      "White-label — logo, färger, kolofon (lägger till, subtraherar aldrig)",
-      "100 rapporter/mån — utskriftsklassat dokument (PDF-export på väg)",
-      "Delade mallbibliotek · prioriterad support",
-    ],
-    lyft: true,
-    kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — priser.json → variabler.ts",
-  },
-  {
-    id: "pro-institution",
-    banderoll: "PRO INSTITUTION",
-    tagline: "White-label & metodik-licens",
-    pris: PRISER.b2bInstitution,
-    typ: "kr/mån · 10+ seats · årsbindning · exkl. moms",
-    punkter: [
-      "Allt i Pro Studio — obegränsat antal rapporter/mån",
-      "Rättighetsstyrd metodikmodul (API-utdata)",
-      `SLA · onboarding av analysavdelningen (engång ${kr(PRISER.b2bOnboarding)} kr)`,
-      "Metod- och ansvarsdeklarationen mal-låst — även för Institution",
-    ],
-    lyft: false,
-    kalla: "B2B-BESLUT §3.4 alternativ A (flat + onboarding) — priser.json → variabler.ts",
-  },
-];
+function proNivaerDefault(p: PriserGallande): ProNiva[] {
+  return [
+    {
+      id: "pro-analytiker",
+      banderoll: "PRO ANALYTIKER",
+      tagline: "Analytikerversikt",
+      pris: p.b2bAnalytiker,
+      typ: "kr/mån · 1 seat · exkl. moms",
+      punkter: [
+        "Obegränsad CSV-portföljimport (instrument + vikter)",
+        "Tre låsta mallar i Rapportverkstan + mötespaket-A4",
+        "20 rapporter/mån — utskriftsklassat dokument (PDF-export på väg)",
+        `Fas 3-certifierad? ${kr(p.fas3IntroManad)} kr/mån det första året`,
+      ],
+      lyft: false,
+      kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — variabellagret (priser.json + override)",
+    },
+    {
+      id: "pro-studio",
+      banderoll: "PRO STUDIO",
+      tagline: "Rådgivarens nivå",
+      pris: p.b2bStudio,
+      typ: "kr/mån · 5 seats · exkl. moms",
+      punkter: [
+        "Allt i Pro Analytiker",
+        "White-label — logo, färger, kolofon (lägger till, subtraherar aldrig)",
+        "100 rapporter/mån — utskriftsklassat dokument (PDF-export på väg)",
+        "Delade mallbibliotek · prioriterad support",
+      ],
+      lyft: true,
+      kalla: "B2B-BESLUT §3.4 alternativ A (flat kr/mån/seat) — variabellagret (priser.json + override)",
+    },
+    {
+      id: "pro-institution",
+      banderoll: "PRO INSTITUTION",
+      tagline: "White-label & metodik-licens",
+      pris: p.b2bInstitution,
+      typ: "kr/mån · 10+ seats · årsbindning · exkl. moms",
+      punkter: [
+        "Allt i Pro Studio — obegränsat antal rapporter/mån",
+        "Rättighetsstyrd metodikmodul (API-utdata)",
+        `SLA · onboarding av analysavdelningen (engång ${kr(p.b2bOnboarding)} kr)`,
+        "Metod- och ansvarsdeklarationen mal-låst — även för Institution",
+      ],
+      lyft: false,
+      kalla: "B2B-BESLUT §3.4 alternativ A (flat + onboarding) — variabellagret (priser.json + override)",
+    },
+  ];
+}
 
 /**
  * Läs pro-nivåer ur priser.json om de finns (id med "pro"-prefix) — annars
@@ -138,9 +139,12 @@ function lasProNivaerUrFil(): ProNiva[] | null {
 const KONTAKT_MAILTO =
   "mailto:info@ak1nvestor.com?subject=AK1A%20PRO%20%E2%80%94%20intresse%20(%C3%B6nskad%20niv%C3%A5)";
 
-export default function ProPriserPage() {
+export default async function ProPriserPage() {
+  // Pris-talen live ur variabellagret (Supabase-override senaste-vinner,
+  // filen = fallback — kastar aldrig).
+  const PRISER = await lasPriserGallande();
   const franFil = lasProNivaerUrFil();
-  const nivaer = franFil ?? PRO_NIVAER;
+  const nivaer = franFil ?? proNivaerDefault(PRISER);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -208,9 +212,10 @@ export default function ProPriserPage() {
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             <span className="tabular font-mono font-bold text-foreground">
-              {ONBOARDING_INSTITUTION.pris.toLocaleString("sv-SE")} kr
+              {PRISER.b2bOnboarding.toLocaleString("sv-SE")} kr
             </span>{" "}
-            engångsvis. {ONBOARDING_INSTITUTION.text} Standard i B2B SaaS —
+            engångsvis. Engångs-onboarding av analysavdelningen — avklippt vid
+            2-årsbindning. Standard i B2B SaaS —
             analysavdelningens upplärning i metodiken och white-label-setup
             betalas en gång, inte varje månad.
           </p>
@@ -219,7 +224,7 @@ export default function ProPriserPage() {
           <h2 className="font-serif text-lg font-bold">Fas 3-certifierade analytiker</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             <span className="tabular font-mono font-bold text-foreground">
-              {FAS3_FORSTA_AR} kr/mån
+              {PRISER.fas3IntroManad} kr/mån
             </span>{" "}
             det första året — bevislig förtur dokumenterad i certifikatet.
             Metodiken är redan inövad, noll utbildningskostnad, och vägen från

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SIFFROR } from "@/lib/siffror";
-import { PRISER, kr } from "@/lib/variabler";
+import { kr } from "@/lib/variabler";
+import { lasPriserGallande } from "@/lib/variabler-lagring";
 import { getCourses, getBlogPosts } from "@/lib/content";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
 import { EKOSYSTEM } from "@/lib/ekosystem";
@@ -1051,10 +1052,15 @@ Pedagogiskt verktyg — aldrig investeringsråd.`,
   };
 }
 
-/** FAS 3 / CERTIFIERING — kraven och länkarna. */
-function fas3Svar(fraga: string) {
+/** FAS 3 / CERTIFIERING — kraven och länkarna.
+ *  VÅG 79 (admin-mega steg 1): pris-talen läses live ur variabellagret
+ *  (lasPriserGallande — Supabase-override, filen = fallback; modul-cache
+ *  5 min). Async; matchnings-testet gör FÖRE await så övriga frågor
+ *  inte betalar latensen. */
+async function fas3Svar(fraga: string) {
   const q = fraga.toLowerCase();
   if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
+  const PRISER = await lasPriserGallande();
   return {
     svar: `Precis rätt fråga — här är hur faser och certifiering hänger ihop. Fas 3 (${kr(PRISER.fas3EnGang)} kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
 • Fas 1 — hela biblioteket (${SIFFROR.kurser} kurser, kalkylatorn, portföljsystemet): gratis för alltid.
@@ -1546,7 +1552,7 @@ export async function POST(req: NextRequest) {
     const netnet = netnetSvar(q);
     if (netnet) return berika(netnet, q, historik);
 
-    const fas3 = fas3Svar(q);
+    const fas3 = await fas3Svar(q);
     if (fas3) return berika(fas3, q, historik);
 
     const pro = proSvar(q);

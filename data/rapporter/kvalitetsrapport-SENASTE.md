@@ -1,8 +1,8 @@
 # KVALITETSVAKTEN — 2026-09-07
 
-- **Genererad:** 2026-09-07T12:34:11.182Z (node v22.19.0 på win32)
+- **Genererad:** 2026-09-07T15:08:35.767Z (node v22.19.0 på win32)
 - **Skript:** `verktyg/kvalitetsvakt.mjs` — körs dagligen 07:00 UTC via `/api/cron/kvalitet`
-- **Körtid:** 9.9 s
+- **Körtid:** 10.5 s
 
 **Statusregler:** RÖD = fler än 9 fel ELLER ogiltig JSON · GUL = 1–9 fel ELLER fler än 99 manuella · GRÖN = 0 fel och högst 99 manuella.
 
@@ -15,14 +15,14 @@ Inga avvikelser hittade.
 
 ## 2. UI-strängar (JSX-text + attribut) — **PASS**
 
-- 223 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 7217 strängar extraherade
+- 224 filer (src/components/ak1a/*.tsx + src/app/**/page.tsx), 7269 strängar extraherade
 - Endast JSX-text, attribut-strängar och UI-objekttext — kodidentifierare och kommentarer exkluderade
 
 Inga avvikelser hittade.
 
 ## 3. Förbjudna fraser — varumärket som kod (2b) — **MANUELL**
 
-- 226 filer, 7362 strängar granskade mot 26 förbjudna fraser (15 FEL = juridiska, 11 VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)
+- 227 filer, 7415 strängar granskade mot 26 förbjudna fraser (15 FEL = juridiska, 11 VARNING = tonala) ur data/varumarke.json — samma guldkälla som src/lib/varumarke.ts (kontrolleraText)
 - CITERINGS-UNDANTAG (A10): 3 fil(er) + 4 sträng(ar) hoppades över — de CITERAR förbudet: src/app/finansiell-policy/page.tsx · src/app/ansvar/page.tsx · src/app/villkor/page.tsx · src/lib/ordlista.ts · src/lib/varumarke.ts · data/varumarke.json · sträng-exakta negerande FAQ-frågor: "Ger AK1A investeri
 - FEL = juridiskt/löftesbrott (P1/P2/P3/P6 — räknas i RÖD/GUL) · VARNING = tonalt (manuell granskning) · vakten sänker ALDRIG nivå för att bli grön
 - YTA-REGLN (K8, B2B-BESLUT våg 61 bygg-2): A8-varningen "kunder" undantas på PRO-ytor (src/app/pro/**, src/components/ak1a/pro/**, src/lib/pro/**) — 4 träff(ar) undantagna som legitim B2B-terminologi; privata ytor varnar fortfarande och FEL-fraserna gäller överallt
@@ -36,7 +36,7 @@ Inga avvikelser hittade.
 
 ## 4. JSON-giltighet (data/*.json + data/bokmaster/*.json) — **PASS**
 
-- 115 filer parsade
+- 116 filer parsade
 
 Inga avvikelser hittade.
 

@@ -6,11 +6,12 @@ import { NextRequest, NextResponse } from "next/server";
  *
  * Mönstret är EXAKT det fas2-access redan använder (src/app/api/admin/
  * fas2-access/route.ts): ADMIN_PASSWORD på servern (env; dev-fallback
- * "AK1A-2026" — samma som POST /api/admin/auth verifierar), lösenordet
- * lämnas i headern "x-admin-password" (alternativt "Authorization: Bearer
- * <pwd>" eller body-fältet adminPassword) och jämförs TIMING-SÄKERT.
- * Endast misslyckade försök rate-limitas (10/min per process — samma tak
- * som fas2-access).
+ * "AK1A-2026" ENBAST i development — VÅG 79: i NODE_ENV=production utan
+ * ADMIN_PASSWORD satt vägrar requireAdmin med 500, se forvantatLosenord),
+ * lösenordet lämnas i headern "x-admin-password" (alternativt
+ * "Authorization: Bearer <pwd>" eller body-fältet adminPassword) och
+ * jämförs TIMING-SÄKERT. Endast misslyckade försök rate-limitas (10/min
+ * per process — samma tak som fas2-access).
  *
  * Användning i en route:
  *
@@ -45,15 +46,42 @@ function utdragLosenord(req: NextRequest, body: Record<string, unknown>): string
   return typeof urBody === "string" ? urBody : "";
 }
 
+/** Dev-fallback-lösenordet — gäller ENBAST i development (se förvantatLosenord). */
+const DEV_FALLBACK_LOSENORD = "AK1A-2026";
+
+/**
+ * Förväntat lösenord — eller null när admin-åtkomst är STÄNGD.
+ *
+ * VÅG 79 (ADMIN-MEGA steg 1, STYRELSE-ADMIN-MEGA §4.2 + BYGGKONTRAKTETS
+ * säkerhetskrav): dev-fallback "AK1A-2026" gäller ENBAST när NODE_ENV !==
+ * "production". I produktion utan ADMIN_PASSWORD satt finns INGEN fallback —
+ * det publicerade lösenordet får aldrig vara prod-låset när panelen kan
+ * ändra PRISER. requireAdmin svarar då 500 med tydligt fel (refused).
+ */
+export function forvantatLosenord(): string | null {
+  if (process.env.ADMIN_PASSWORD) return process.env.ADMIN_PASSWORD;
+  if (process.env.NODE_ENV === "production") return null;
+  return DEV_FALLBACK_LOSENORD;
+}
+
 /**
  * requireAdmin — null när anropet är auktoriserat (fortsätt), annars ett
- * färdigt 401/429-svar som routen returnerar direkt.
+ * färdigt 401/429/500-svar som routen returnerar direkt.
  */
 export function requireAdmin(
   req: NextRequest,
   body: Record<string, unknown> = {},
 ): NextResponse | null {
-  const expected = process.env.ADMIN_PASSWORD || "AK1A-2026";
+  const expected = forvantatLosenord();
+  if (!expected) {
+    return NextResponse.json(
+      {
+        error:
+          "ADMIN_PASSWORD är inte satt i miljön — admin-åtkomst är avstängd i produktion utan lösenord (säkerhetskrav våg 79). Sätt ADMIN_PASSWORD i Vercel-projektets miljövariabler och deploya om.",
+      },
+      { status: 500 },
+    );
+  }
   const provided = utdragLosenord(req, body);
 
   const now = Date.now();

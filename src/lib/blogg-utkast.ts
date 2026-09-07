@@ -18,7 +18,8 @@
  * ── EVENT-RADENS KONTRAKT ──────────────────────────────────────────────────
  *   type="blogg_utkast" severity="info" source="blogg"
  *   message="[blogg] <slug> v<version> <status>"
- *   details={slug, titel, ingress, bodyMarkdown, status, av, version}
+ *   details={slug, titel, ingress, bodyMarkdown, status, av, version,
+ *            omslagUrl}        // våg 81 A5: giltig URL | null (inget omslag)
  * SENASTE-VINNER per slug: order=created_at.desc,id.desc, paginerat 1 000
  * rader/sida, tak 10 sidor (läs-reglerna från variabler-lagring.ts våg 79).
  * Modul-cache 60 s (panelens lista ska kännas live men inte DDoSa lagret).
@@ -62,10 +63,30 @@ export type BloggUtkastPost = {
   version: number;
   /** Radens created_at (ISO) — när utkastet senast skrevs. */
   uppdaterad: string;
+  /** Valfri omslagsbild (VÅG 81 A5): ENDAST giltig https-URL till projektets
+   *  Supabase-medialager bärs — ogiltiga värden klassas bort vid tolkningen. */
+  omslagUrl?: string;
 };
 
 /** Slug-formatet — kontraktet: ^[a-z0-9-]+$ (URL-säkert, filnamnssäkert). */
 const SLUG_RE = /^[a-z0-9-]+$/;
+
+/**
+ * Omslags-URL-kontraktet (VÅG 81 A5): ENDAST https till Supabase-storage —
+ * exakt host-vitlista <projektref>.supabase.co/storage/v1/object/public/
+ * media/<nyckel> (publika media-bucketens objekt-URL:er). Inga query- eller
+ * hash-delar, inga andra hosts. Icke-tomt men ogiltigt värde AVVISAS i
+ * skrivvägen (400) och klassas ogiltigt (null) vid tolkning/export.
+ */
+const OMSLAG_URL_RE =
+  /^https:\/\/[a-z0-9][a-z0-9-]*\.supabase\.co\/storage\/v1\/object\/public\/media\/[A-Za-z0-9._~/-]+$/;
+
+/** Normaliserad giltig omslags-URL, eller null (ogiltig/tom/fel typ). */
+export function valideraOmslagUrl(u: unknown): string | null {
+  if (typeof u !== "string") return null;
+  const t = u.trim();
+  return t !== "" && OMSLAG_URL_RE.test(t) ? t : null;
+}
 
 /** Den exporterade klara posten — exakt BlogPost-formen (content.ts) som
  *  data/blogg/*.json redan bär; main/agent droppar filen + committar. */
@@ -79,6 +100,12 @@ export type BloggExportPost = {
   readingMinutes: number; // estimat: ordantal / 600, avrundat
   tags: string[];
   body: string;
+  /** Extern OG-bild-override (VÅG 81 A5): medföljer ENDAST när utkastets
+   *  omslagUrl var giltig (https + Supabase-media-vitlistan). Utan detta
+   *  fält gäller render-tidens genererade /og/blogg/<slug>.png (ogBildForPath
+   *  i seo.tsx) — media är override, ALDRIG ersättning av build-genereringen
+   *  (kontrakt AC4). */
+  ogBild?: string;
 };
 
 // ── Strukturella krav (kontraktet) ──────────────────────────────────────────
@@ -196,6 +223,7 @@ type BloggLasRad = {
   status?: string | null;
   av?: string | null;
   version?: string | number | null; // jsonb->> ger text — tolka båda
+  omslagUrl?: string | null; // VÅG 81 A5 — vitlistas av valideraOmslagUrl
 };
 
 /** Tolka status — ogiltig rad kan inte vinna (tolerant läsning). */
@@ -215,6 +243,9 @@ function tolkaRad(r: BloggLasRad): BloggUtkastPost | null {
   if (typeof r.titel !== "string" || !r.titel.trim()) return null;
   const status = tolkaStatus(r.status);
   if (!status) return null;
+  // Omslags-URLn vitlistas hårt — ogiltigt värde klassas bort (fältet
+  // sätts aldrig), raden själv påverkas inte (tolerant läsning).
+  const omslagUrl = valideraOmslagUrl(r.omslagUrl);
   return {
     slug: r.slug,
     titel: r.titel,
@@ -224,6 +255,7 @@ function tolkaRad(r: BloggLasRad): BloggUtkastPost | null {
     av: typeof r.av === "string" && r.av ? r.av : "admin",
     version: tolkaVersion(r.version) ?? 1,
     uppdaterad: typeof r.created_at === "string" ? r.created_at : "",
+    ...(omslagUrl ? { omslagUrl } : {}),
   };
 }
 
@@ -240,7 +272,7 @@ async function lasRader(): Promise<BloggLasRad[]> {
     try {
       const res = await fetch(
         `${rest.origin}/rest/v1/system_events?type=eq.${fv(BLOGG_EVENT_TYP)}` +
-          `&select=created_at,details->>slug,details->>titel,details->>ingress,details->>bodyMarkdown,details->>status,details->>av,details->>version&${SENASTE}`,
+          `&select=created_at,details->>slug,details->>titel,details->>ingress,details->>bodyMarkdown,details->>status,details->>av,details->>version,details->>omslagUrl&${SENASTE}`,
         {
           headers: { ...rest.headers, Range: `${fran}-${String(fran + SIDSTORLEK - 1)}` },
           signal: AbortSignal.timeout(10_000),
@@ -318,6 +350,10 @@ export type NyttUtkast = {
   bodyMarkdown: string;
   status?: BloggStatus;
   av?: string;
+  /** Valfri omslagsbild (VÅG 81 A5) — icke-tomt värde MÅSTE klara
+   *  valideraOmslagUrl (https + Supabase-media-vitlista), annars 400.
+   *  Tom sträng/undefined = inget omslag (rensning). */
+  omslagUrl?: string;
 };
 
 /**
@@ -349,6 +385,15 @@ export async function sparaUtkast(post: NyttUtkast, ny = false): Promise<BloggUt
   }
   if (post.bodyMarkdown.trim().length === 0 && status === "granskad") {
     throw new BloggValideringsFel("Body får inte vara tom vid granskad-status.");
+  }
+  // VÅG 81 A5: omslags-URL — valfri, men icke-tomt värde avvisas hårt om det
+  // inte klara vitlistan (https + <ref>.supabase.co/storage/.../media/...).
+  // Ogiltigt värde ska aldrig kunna persistas — aldrig tyst sanitering här.
+  const omslagUrl = valideraOmslagUrl(post.omslagUrl);
+  if (post.omslagUrl != null && post.omslagUrl.trim() !== "" && !omslagUrl) {
+    throw new BloggValideringsFel(
+      "Omslagsbilds-URL ogiltig — endast https till <projektref>.supabase.co/storage/v1/object/public/media/... accepteras (våg 81 A5).",
+    );
   }
   // STATUSREGEL (kontraktet): utkast→granskad kräver 0 FEL i kontrolleraText
   // — grunden bor i lib:en (rutten är tunn; våg 66-mönstret).
@@ -396,6 +441,7 @@ export async function sparaUtkast(post: NyttUtkast, ny = false): Promise<BloggUt
           status,
           av,
           version,
+          omslagUrl, // giltig URL eller null (null = inget omslag — rensning)
         },
         source: BLOGG_KALLA,
       }),
@@ -419,6 +465,7 @@ export async function sparaUtkast(post: NyttUtkast, ny = false): Promise<BloggUt
     av,
     version,
     uppdaterad: new Date().toISOString(),
+    ...(omslagUrl ? { omslagUrl } : {}),
   };
 }
 
@@ -454,9 +501,14 @@ function normaliseraTaggar(tags: unknown): string[] {
  * "Institutionell metodik", author "AK1A Research Lab", publishedAt = dagens
  * ISO-dag, readingMinutes = ordantal/600 avrundat, disclaimer-tillagd body.
  * Paketet droppas av main/agent i data/blogg/<slug>.json + commit → live.
+ *
+ * VÅG 81 A5: utkastets omslagUrl (valfritt) medföljer som paketfältet
+ * ogBild ENDAST när det klara valideraOmslagUrl-vitlistan — annars bär
+ * paketet inget og-fält och render-tidens genererade /og-bloggbild gäller
+ * (media = override, ALDRIG ersättning av npm run og-genereringen, AC4).
  */
 export function exporteraKlarPost(
-  post: Pick<BloggUtkastPost, "slug" | "titel" | "ingress" | "bodyMarkdown">,
+  post: Pick<BloggUtkastPost, "slug" | "titel" | "ingress" | "bodyMarkdown" | "omslagUrl">,
   tags: unknown = [],
 ): { paket: BloggExportPost; rapport: Kontrollrapport } {
   const rapport = kontrolleratextRad(post.titel, post.ingress, post.bodyMarkdown);
@@ -472,6 +524,7 @@ export function exporteraKlarPost(
 
   const body = sakerstallDisclaimer(post.bodyMarkdown);
   const dag = new Date().toISOString().slice(0, 10);
+  const ogBild = valideraOmslagUrl(post.omslagUrl);
   return {
     paket: {
       slug: post.slug,
@@ -483,6 +536,7 @@ export function exporteraKlarPost(
       readingMinutes: rapport.readingMinutes,
       tags: normaliseraTaggar(tags),
       body,
+      ...(ogBild ? { ogBild } : {}),
     },
     rapport,
   };
@@ -517,6 +571,7 @@ export async function markeraPublicerad(post: BloggUtkastPost): Promise<void> {
           status: "publicerad" as BloggStatus,
           av: post.av,
           version,
+          omslagUrl: post.omslagUrl ?? null, // bärs med i revisionshistoriken
         },
         source: BLOGG_KALLA,
       }),

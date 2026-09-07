@@ -1,11 +1,43 @@
 import type { NextConfig } from "next";
 
+/**
+ * Supabase-projektref för next/image (VÅG 81 A5 — mediebiblioteket).
+ * Refen är publik i alla bild-URL:er ändå: läs ur NEXT_PUBLIC_SUPABASE_URL
+ * när byggmiljön bär den (Vercel-bygget har env:n), annars fallback till den
+ * kända ref:en. Endast https-hostnamn på formen <ref>.supabase.co accepteras
+ * — remotePatterns får EXAKT en post, ALDRIG wildcards på hostname
+ * (STYRELSE-VAG81-MEDIABIBLIOTEK.md §A5).
+ */
+function supabaseProjektRef(): string {
+  try {
+    const host = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").hostname;
+    const m = /^([a-z0-9][a-z0-9-]{2,})\.supabase\.co$/.exec(host);
+    if (m) return m[1];
+  } catch {
+    // Ogiltig/tom URL ⇒ fallback nedan.
+  }
+  return "aufrvmesyzsfsuhvlsbp";
+}
+
 const nextConfig: NextConfig = {
   /* Vercel handles output automatically — no standalone needed */
   typescript: {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  images: {
+    // VÅG 81 A5: mediebibliotekets publika bucket — EXAKT en post, exakt
+    // hostname + pathname, inga wildcards på host. Media-bilder är OVERRIDE
+    // för enskilda bloggposter (omslagUrl/ogBild) — ALDRIG ersättning av de
+    // build-genererade public/og/-bilderna (kontrakt AC4: ingen runtime-OG).
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: `${supabaseProjektRef()}.supabase.co`,
+        pathname: "/storage/v1/object/public/media/**",
+      },
+    ],
+  },
   async redirects() {
     return [
       { source: "/mina-analyser", destination: "/min-sida", permanent: true },

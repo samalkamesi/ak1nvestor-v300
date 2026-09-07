@@ -20,6 +20,23 @@ export const OG_BREDD = 1200;
 export const OG_HOJD = 630;
 
 /**
+ * Extern OG-bild-vitlista (VÅG 81 A5 — mediebiblioteket): ENDAST https-URL:er
+ * till Supabase-storagens publika media-bucket på formen
+ * https://<projektref>.supabase.co/storage/v1/object/public/media/<nyckel>
+ * accepteras som ogBild-override. Ogiltigt värde ⇒ null ⇒ den genererade
+ * /og-bilden (ogBildForPath) gäller OROÄRD som fallback.
+ */
+const EXTERN_OG_RE =
+  /^https:\/\/[a-z0-9][a-z0-9-]*\.supabase\.co\/storage\/v1\/object\/public\/media\/[A-Za-z0-9._~/-]+$/;
+
+/** Normaliserad giltig extern OG-URL, eller null (ogiltig/tom/fel typ). */
+export function giltigExternOgBild(u: unknown): string | null {
+  if (typeof u !== "string") return null;
+  const t = u.trim();
+  return t !== "" && EXTERN_OG_RE.test(t) ? t : null;
+}
+
+/**
  * OG-bild per sidtyp, härledd ur sökvägen: per-slug-bilder finns för kurser,
  * blogg och analyser; översiktssidorna har egna mallar; roten → start.png;
  * allt annat → den typografiska default.png. Alt-texten speglar sidans titel.
@@ -87,7 +104,12 @@ export function pageMetadata(opts: {
   type?: "website" | "article" | "course";
   publishedTime?: string;
   noIndex?: boolean;
-  /** Explicit OG-bild (sokvag under public + alt) — annars härleds ur path. */
+  /** Explicit OG-bild (sokvag under public + alt) — annars härleds ur path.
+   *  Lokal sokvag förväntas exakt 1200×630 (npm run og-genereringen).
+   *  Absolut https-URL (Supabase-media-omslag, våg 81 A5) ⇒ width/height
+   *  utelåmnas: media-bilder kan ha andra proportioner, ingen tvångsskalning
+   *  sker — plattformarna (Facebook/X/LinkedIn) läser verkliga dimensioner
+   *  själva. Rekommenderad omslagsproportion för uppladdning: 1200×630. */
   ogBild?: { sokvag: string; alt: string };
   /** Spegel-klustret (VÅG 63 O3 #2): satt för svenska original som HAR
    *  fullt översatta /en- och /ar-speglar (se OVERSATTA_ROUTES i sprak.ts).
@@ -105,7 +127,16 @@ export function pageMetadata(opts: {
   // ur sökvägen om ingen explicit bild ges. Relativ sökväg slås upp mot
   // metadataBase (SITE_URL, satt i root-layouten).
   const bild = opts.ogBild ?? ogBildForPath(opts.path, opts.title);
-  const bilder = [{ url: bild.sokvag, width: OG_BREDD, height: OG_HOJD, alt: bild.alt }];
+  // VÅG 81 A5: externa media-omslag (absolut https-URL) antas INTE vara
+  // 1200×630 — width/height utelåmnas då (plattformarna läser verkliga
+  // proportioner; ingen tvångsskalning). Genererade lokala bilder är
+  // alltid exakt OG_BREDD×OG_HOJD.
+  const externBild = /^https:\/\//.test(bild.sokvag);
+  const bilder = [
+    externBild
+      ? { url: bild.sokvag, alt: bild.alt }
+      : { url: bild.sokvag, width: OG_BREDD, height: OG_HOJD, alt: bild.alt },
+  ];
   // Startsidan (path "" eller "/") har speglarna /en och /ar — övriga blir
   // /en{path} och /ar{path} (t.ex. "/kurser" → "/en/kurser").
   const spegelBas = opts.path === "" || opts.path === "/" ? "" : opts.path;
@@ -226,8 +257,17 @@ export function caseMetadata(c: CaseStudy) {
   });
 }
 
-export function blogMetadata(post: BlogPost) {
+/**
+ * blogMetadata — bloggpostens metadata. VÅG 81 A5: en exporterad post med
+ * giltig extern omslagsbild (paketfältet ogBild från blogg-utkast.ts;
+ * omslagUrl accepteras som alias) får den som OG-bild — vitlistad av
+ * giltigExternOgBild (https + Supabase-media). Utan giltigt omslag gäller
+ * ogBildForPath-defaulten (genererad /og/blogg/<slug>.png) OROÄRD — media
+ * är override, ALDRIG ersättning av npm run og-genereringen (AC4).
+ */
+export function blogMetadata(post: BlogPost & { ogBild?: string; omslagUrl?: string }) {
   const gen = loadGeneratedMeta("blogg", post.slug);
+  const omslag = giltigExternOgBild(post.ogBild) ?? giltigExternOgBild(post.omslagUrl);
   return pageMetadata({
     path: `/blogg/${post.slug}`,
     title: gen?.title ?? clamp(post.title, 60),
@@ -239,6 +279,7 @@ export function blogMetadata(post: BlogPost) {
     // klustret tillbaka annars kan Google förkasta hela klustret.
     harSpeglar: true,
     publishedTime: post.publishedAt,
+    ...(omslag ? { ogBild: { sokvag: omslag, alt: clamp(post.title, 100) } } : {}),
   });
 }
 
@@ -363,14 +404,17 @@ export function courseJsonLd(course: Course) {
   };
 }
 
-export function articleJsonLd(post: BlogPost) {
+export function articleJsonLd(post: BlogPost & { ogBild?: string; omslagUrl?: string }) {
+  // VÅG 81 A5: samma omslags-override som blogMetadata — JSON-LD-bilden ska
+  // spegla OG-bilden; utan giltigt omslag den genererade /og-bilden (OROÄRD).
+  const omslag = giltigExternOgBild(post.ogBild) ?? giltigExternOgBild(post.omslagUrl);
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
     inLanguage: "sv-SE",
-    image: `${SITE_URL}/og/blogg/${post.slug}.png`,
+    image: omslag ?? `${SITE_URL}/og/blogg/${post.slug}.png`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
     author: { "@type": "Person", name: post.author },

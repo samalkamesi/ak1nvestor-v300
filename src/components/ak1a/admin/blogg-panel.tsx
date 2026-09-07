@@ -7,6 +7,7 @@ import {
   Download,
   FileJson,
   History,
+  ImagePlus,
   Lock,
   Pencil,
   Plus,
@@ -19,6 +20,13 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { adminHeaders, adminJsonHeaders, sparaAdminLosenord } from "@/lib/admin-klient";
@@ -71,6 +79,9 @@ type PosterRad = {
   version: number;
   uppdaterad: string;
   kontroll: KontrollStatus;
+  /** Omslagsbild-URL (våg 81 §A4) — rutten skickar den när wiring landat;
+   *  panelen är defensiv tills dess. */
+  omslagUrl?: string;
 };
 
 type TraffRad = { fras: string; ersattning: string };
@@ -87,6 +98,11 @@ type Rapport = {
 };
 
 type GetSvar = { poster?: PosterRad[]; error?: string };
+
+/** Mediebiblioteket (GET /api/admin/media — våg 81 §A3) för omslagsväljaren.
+ *  Kontraktet stavar filnamnsfältet "filnaman" — båda stavningarna tas. */
+type MediaFilVal = { id: string; url: string; filnaman?: string; filnamn?: string };
+type MediaBibliotekSvar = { poster?: MediaFilVal[]; konfigurerat?: boolean; fel?: string; error?: string };
 type PostSvar = {
   ok?: boolean;
   error?: string;
@@ -138,11 +154,14 @@ type EditorState = {
   bodyMarkdown: string;
   /** Taggar (ämnesord) — kommaseparerade i fältet, array mot export-rutten. */
   tags: string;
+  /** Omslagsbild (valfri URL — våg 81 §A4): följer med sparar-flödet som
+   *  omslagUrl; kan klistras rakt av eller väljas ur mediebiblioteket. */
+  omslagUrl: string;
   /** True när editorn är ett ÄNNU EJ SPARAT nytt utkast (unik-slug-tvånget). */
   ny: boolean;
 };
 
-const TOM_EDITOR: EditorState = { slug: "", titel: "", ingress: "", bodyMarkdown: "", tags: "", ny: true };
+const TOM_EDITOR: EditorState = { slug: "", titel: "", ingress: "", bodyMarkdown: "", tags: "", omslagUrl: "", ny: true };
 
 // ── Panelen ──────────────────────────────────────────────────────────────────
 
@@ -157,9 +176,14 @@ export function BloggPanel() {
 
   const [editor, setEditor] = React.useState<EditorState | null>(null);
   const [arbetar, setArbetar] = React.useState(false);
-  /** Senaste serverkontrollen + vilken text den gällde (stämplar = exakt text). */
+  /** Senaste serverkontrollen + vilken text den gällde (stämpla = exakt text). */
   const [rapport, setRapport] = React.useState<Rapport | null>(null);
   const [rapportText, setRapportText] = React.useState("");
+
+  /** Omslagsväljaren (våg 81 §A4) — biblioteket hämtas LAZY vid första öppning. */
+  const [bibliotekOppet, setBibliotekOppet] = React.useState(false);
+  const [bibliotek, setBibliotek] = React.useState<MediaBibliotekSvar | null>(null);
+  const [bibliotekLaddar, setBibliotekLaddar] = React.useState(false);
 
   const hamta = React.useCallback(async () => {
     setLaddar(true);
@@ -229,6 +253,24 @@ export function BloggPanel() {
     [toast],
   );
 
+  /** GET mediebiblioteket (våg 81 §A3) — körs först när väljaren öppnas. */
+  const hamtaBibliotek = React.useCallback(async () => {
+    setBibliotekLaddar(true);
+    try {
+      const res = await fetch("/api/admin/media", { headers: adminHeaders() });
+      setBibliotek((await res.json().catch(() => ({}))) as MediaBibliotekSvar);
+    } catch {
+      setBibliotek({ fel: "Nätverksfel — kunde inte hämta mediebiblioteket." });
+    } finally {
+      setBibliotekLaddar(false);
+    }
+  }, []);
+
+  const oppnaBibliotek = () => {
+    setBibliotekOppet(true);
+    if (!bibliotek) void hamtaBibliotek();
+  };
+
   // ── Editor-handlingar ─────────────────────────────────────────────────────
 
   const oppna = (rad: PosterRad) => {
@@ -238,6 +280,7 @@ export function BloggPanel() {
       ingress: rad.ingress,
       bodyMarkdown: rad.bodyMarkdown,
       tags: "",
+      omslagUrl: rad.omslagUrl ?? "",
       ny: false,
     });
     setRapport(null);
@@ -267,6 +310,7 @@ export function BloggPanel() {
       titel: editor.titel,
       ingress: editor.ingress,
       bodyMarkdown: editor.bodyMarkdown,
+      omslagUrl: editor.omslagUrl.trim(),
       ny: editor.ny,
     });
     setArbetar(false);
@@ -385,6 +429,9 @@ export function BloggPanel() {
       </div>
     );
   }
+
+  const bibliotekPoster = bibliotek?.poster ?? [];
+  const bibliotekFel = bibliotek?.fel || bibliotek?.error || "";
 
   return (
     <div className="space-y-5">
@@ -553,6 +600,42 @@ export function BloggPanel() {
                 className="text-xs"
               />
             </div>
+            <div className="grid gap-1.5">
+              <label htmlFor="blogg-omslag" className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Omslagsbild (valfri URL — sparas i utkastet som omslagUrl)
+              </label>
+              <div className="flex flex-wrap gap-2">
+                <Input
+                  id="blogg-omslag"
+                  value={editor.omslagUrl}
+                  onChange={(e) => setEditor({ ...editor, omslagUrl: e.target.value.trim() })}
+                  placeholder="https://…supabase.co/storage/v1/object/public/media/…"
+                  className="min-w-0 flex-1 font-mono text-xs"
+                  inputMode="url"
+                />
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-gold/40 text-gold hover:bg-gold/10"
+                  onClick={oppnaBibliotek}
+                >
+                  <ImagePlus className="mr-1 h-3 w-3" /> Välj från mediebiblioteket
+                </Button>
+              </div>
+              {editor.omslagUrl !== "" && (
+                <p className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                  <img
+                    src={editor.omslagUrl}
+                    alt=""
+                    className="h-6 w-10 rounded border border-border object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                  Förhandsvisning — blir OG-bild i den exporterade posten.
+                </p>
+              )}
+            </div>
           </div>
 
           {/* Förhandsvisning av rubriker */}
@@ -698,6 +781,61 @@ export function BloggPanel() {
                 )}
             </div>
           )}
+
+          {/* Omslagsväljaren — mediebiblioteket (våg 81 §A4). Hämtas LAZY vid
+              första öppning; klick på en bild fyller omslagsfältet. */}
+          <Dialog open={bibliotekOppet} onOpenChange={setBibliotekOppet}>
+            <DialogContent className="max-w-2xl">
+              <DialogHeader>
+                <DialogTitle>Välj omslagsbild ur mediebiblioteket</DialogTitle>
+                <DialogDescription>
+                  Klicka på en bild för att fylla fältet med dess URL. Uppladdning sköts under
+                  fliken "Media 🖼️".
+                </DialogDescription>
+              </DialogHeader>
+              {bibliotekLaddar ? (
+                <p className="py-6 text-center text-xs text-muted-foreground">Hämtar biblioteket …</p>
+              ) : bibliotek?.konfigurerat === false ? (
+                <p className="rounded-md border border-gold/30 bg-gold/[0.03] px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+                  Supabase Storage är inte konfigurerat — inga bilder kan hämtas ännu
+                  {bibliotekFel ? ` (${bibliotekFel})` : ""}. Se fliken "Media 🖼️" för mer.
+                </p>
+              ) : bibliotekFel ? (
+                <p className="text-xs text-red-600">{bibliotekFel}</p>
+              ) : bibliotekPoster.length === 0 ? (
+                <p className="py-6 text-center text-xs text-muted-foreground">
+                  Inga bilder i biblioteket än — ladda upp din första under fliken "Media 🖼️".
+                </p>
+              ) : (
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {bibliotekPoster.map((bild) => (
+                    <button
+                      key={bild.id}
+                      type="button"
+                      className="group overflow-hidden rounded-md border border-border bg-card text-left transition-colors hover:border-gold/60"
+                      aria-label={`Välj ${bild.filnamn ?? bild.filnaman ?? bild.id} som omslagsbild`}
+                      onClick={() => {
+                        setEditor((e) => (e ? { ...e, omslagUrl: bild.url } : e));
+                        setBibliotekOppet(false);
+                      }}
+                    >
+                      <span className="block aspect-video w-full overflow-hidden bg-muted">
+                        <img
+                          src={bild.url}
+                          alt=""
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-opacity group-hover:opacity-90"
+                        />
+                      </span>
+                      <span className="block truncate px-2 py-1 font-mono text-[10px] text-muted-foreground">
+                        {bild.filnamn ?? bild.filnaman ?? bild.id}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       )}
 

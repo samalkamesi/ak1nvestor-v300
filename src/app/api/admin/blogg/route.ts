@@ -69,6 +69,7 @@ export async function GET(req: NextRequest) {
         titel: p.titel,
         ingress: p.ingress,
         bodyMarkdown: p.bodyMarkdown,
+        omslagUrl: p.omslagUrl ?? "",
         status: p.status,
         av: p.av,
         version: p.version,

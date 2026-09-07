@@ -36,6 +36,7 @@ import { Utvecklingsradar } from "@/components/ak1a/admin/utvecklingsradar";
 import { OversattningPanel } from "@/components/ak1a/admin/oversattning-panel";
 import { VariabelPanel } from "@/components/ak1a/admin/variabel-panel";
 import { BloggPanel } from "@/components/ak1a/admin/blogg-panel";
+import { MediaPanel } from "@/components/ak1a/admin/media-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -362,6 +363,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="oversattning" className="px-3 py-1.5 text-xs sm:text-sm">Översättning 🌍</TabsTrigger>
             <TabsTrigger value="variabler" className="px-3 py-1.5 text-xs sm:text-sm">Variabler 📊</TabsTrigger>
             <TabsTrigger value="blogg" className="px-3 py-1.5 text-xs sm:text-sm">Blogg ✍️</TabsTrigger>
+            <TabsTrigger value="media" className="px-3 py-1.5 text-xs sm:text-sm">Media 🖼️</TabsTrigger>
           </TabsList>
 
           {/* Overview */}
@@ -749,6 +751,14 @@ export default function AdminDashboard() {
           <TabsContent value="blogg" className="mt-6">
             <Card className="p-5">
               <BloggPanel />
+            </Card>
+          </TabsContent>
+
+          {/* Media 🖼️ — admin-mega steg 3: bildbibliotek i Supabase Storage (våg 81 §A4).
+              Panelen mountas först när fliken öppnas → GET sker lazy, inte vid sidladdning. */}
+          <TabsContent value="media" className="mt-6">
+            <Card className="p-5">
+              <MediaPanel />
             </Card>
           </TabsContent>
         </Tabs>

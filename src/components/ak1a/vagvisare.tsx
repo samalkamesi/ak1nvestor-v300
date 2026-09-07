@@ -83,7 +83,12 @@ export function Vagvisare() {
     const raf = requestAnimationFrame(() => {
       if (aktiv) setIntradde(true);
     });
-    const timer = setInterval(slag, PULS_INTERVALL_MS);
+    // VÅG 78: pulsen pausas i bakgrundsaktig flik — ingen timer ticksar
+    // CPU/batteri när ingen ser indikatorn (första slaget ovan är kvar).
+    const timer = setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      slag();
+    }, PULS_INTERVALL_MS);
 
     return () => {
       aktiv = false;

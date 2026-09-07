@@ -64,6 +64,15 @@ const SIGNAL_MAX_ANTAL = 8;
 /** Minnes-cache: samma öppning inom 60 s återanvänder svaret (anti-spam). */
 const SIGNAL_CACHE_MS = 60_000;
 
+/**
+ * VÅG 78 (o1 #6 — telefon-buggen): /api/notiser hämtas ENBART i synlig flik
+ * och med minst 60 s mellan anrop. Gränsen ligger på MODULNIVÅ så att alla
+ * monteringar (remontering vid navigering/offline-fallback) delar samma
+ * klocka — ett besök gör som mest ett nätanrop per minut, aldrig per mount.
+ */
+const NOTIS_HAMTA_MIN_MS = 60_000;
+let notisHamtadVid = 0;
+
 const SIGNAL_TYPER = ["info", "varning", "mojlighet", "beslut"] as const;
 
 /** Typ-markering — ⚠️ varning etc. (direktivet: typ-ikon per notiskort).
@@ -178,11 +187,19 @@ export function NotisCenter() {
   const laddaOm = useCallback(() => setNotiser(lasNotiser()), []);
 
   // Start: hygien + hämta underlag + generera/fäst + ev. push + SW-meddelande.
+  // VÅG 78: nätanropet /api/notiser görs ENDAST när fliken är synlig och
+  // tidigast 60 s efter förra hämtningen (modul-klocka). Dold flik vid start
+  // → engångslyssnare tar över när sidan blir synlig. Lokala notiser läsns
+  // omedelbart oavsett — de kostar inget nät.
   useEffect(() => {
     let aktiv = true;
     rensaGamla();
+    setNotiser(lasNotiser());
 
-    (async () => {
+    const hamtaUnderlag = async () => {
+      if (document.visibilityState !== "visible") return;
+      if (Date.now() - notisHamtadVid < NOTIS_HAMTA_MIN_MS) return;
+      notisHamtadVid = Date.now();
       let underlag: NotisUnderlag | null = null;
       try {
         const r = await fetch("/api/notiser");
@@ -198,11 +215,19 @@ export function NotisCenter() {
         visaSystemnotis(nya, t);
         meddelaServiceWorker(nya);
       }
-    })();
+    };
+
+    void hamtaUnderlag();
+    const onSynlighet = () => {
+      if (document.visibilityState === "visible") void hamtaUnderlag();
+    };
+    document.addEventListener("visibilitychange", onSynlighet);
 
     return () => {
       aktiv = false;
+      document.removeEventListener("visibilitychange", onSynlighet);
     };
+    // t är stabil (språk-leverantörens callback läses via ref) — [] som före våg 78.
   }, []);
 
   // Escape stänger panelen — tangentbords-etikett.

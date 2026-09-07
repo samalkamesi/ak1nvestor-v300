@@ -112,9 +112,14 @@ export function SocialProof({ className = "" }: { className?: string }) {
   const tal = useRaknaUpp(nuvarande.tal);
 
   // Rotation — endast på klienten (useEffect), aldrig under SSR.
+  // VÅG 78: pausad i bakgrundsaktig flik (document.hidden) — ingen CPU/
+  // batteri till en animation ingen ser; rAF-delen pausar webbläsaren själv.
   useEffect(() => {
     const id = setInterval(
-      () => setI((v) => (v + 1) % STATIST.length),
+      () => {
+        if (document.hidden) return;
+        setI((v) => (v + 1) % STATIST.length);
+      },
       ROTATIONS_MS
     );
     return () => clearInterval(id);

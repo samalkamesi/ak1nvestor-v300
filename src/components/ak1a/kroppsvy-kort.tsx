@@ -7,7 +7,8 @@ import { uiEvent } from "@/lib/organ-event";
  * KROPPSVYN — ekosystemets puls (MEGA_PLAN_V3 Fas A).
  *
  * Hämtar /api/kropp med enkel SWR-lik poll: useEffect + setInterval var 60:e
- * sekund (Vercel Hobby = inga websockets; forskning-organ-arkitektur.md §2.5).
+ * sekund (Vercel Hobby = inga websockets; forskning-organ-arkitektur.md §2.5)
+ * — pausad i bakgrundsaktig flik (våg 78: batteri/nät i fred).
  * Vid förändrad puls broadcastas "ak1a:organ-event" via uiEvent() — en poll →
  * många prenumererande komponenter.
  *
@@ -111,10 +112,21 @@ export function KroppsvyKort() {
     };
 
     void hamta();
-    const timer = setInterval(() => void hamta(), POLL_MS);
+    // VÅG 78 (telefon-buggen): polling pausas i bakgrundsaktig flik — ingen
+    // timer tickar onödiga nätanrop/batteri när ingen ser pulsen. Fliken blir
+    // synlig igen → ett omedelbart uppfångningsslag.
+    const timer = setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      void hamta();
+    }, POLL_MS);
+    const onSynlighet = () => {
+      if (document.visibilityState === "visible") void hamta();
+    };
+    document.addEventListener("visibilitychange", onSynlighet);
     return () => {
       aktiv = false;
       clearInterval(timer);
+      document.removeEventListener("visibilitychange", onSynlighet);
     };
   }, []);
 

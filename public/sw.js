@@ -1,17 +1,26 @@
 /* AK1A Research Lab — service worker (PWA)
  * Strategi: nätverksförst för sidor (alltid färskt innehåll), cache-först för
  * statiska assets. Offline: senast cachad sida + offline-fallback.
+ *
+ * VÅG 78 TELEFON-BUGGEN (styrelsens beslut): en SW-uppdatering får ALDRIG
+ * tvinga fram en sidladdning eller avbryta ett pågående besök. Därför finns
+ * INGEN skipWaiting() och INGEN clients.claim() här — en ny SW-version blir
+ * väntande och börjar gälla först när gamla flikar stängs, dvs. vid nästa
+ * naturliga navigering/nytt besök. sw.js ska heller ALDRIG få någon
+ * reload-logik (varken direkt eller via postMessage till sidan).
  */
-const VERSION = "ak1a-v2";
+const VERSION = "ak1a-v3";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(VERSION).then((cache) => cache.addAll(OFFLINE_URLS)).then(() => self.skipWaiting())
-  );
+  // Ingen skipWaiting(): uppdateringen aktiveras vid naturlig navigering,
+  // aldrig mitt i ett pågående besök (det som kan kännas som reload-loop).
+  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(OFFLINE_URLS)));
 });
 
 self.addEventListener("activate", (event) => {
+  // Hygienen behålls (raderar gamla versioners cachear + ev. felstatussvar),
+  // men ingen clients.claim(): en sida som redan lever lämnas helt ifred.
   event.waitUntil(
     caches
       .keys()
@@ -30,7 +39,6 @@ self.addEventListener("activate", (event) => {
           )
         )
       )
-      .then(() => self.clients.claim())
   );
 });
 

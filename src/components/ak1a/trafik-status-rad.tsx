@@ -20,6 +20,9 @@ export function TrafikStatusRad() {
   React.useEffect(() => {
     let aktiv = true;
     const hamta = async () => {
+      // VÅG 78: bakgrundsaktig flik = inga nätanrop; onSynlighet fångar upp
+      // med en färsk hämtning så fort fliken blir synlig igen.
+      if (document.visibilityState !== "visible") return;
       try {
         const res = await fetch("/api/trafik", { headers: { Accept: "application/json" } });
         if (!res.ok || !aktiv) return;

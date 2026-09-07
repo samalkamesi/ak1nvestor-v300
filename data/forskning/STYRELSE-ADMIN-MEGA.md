@@ -196,3 +196,23 @@ publicera, med kontrolleraText-grind) blir påtaglig för kunden. BYGG INGET än
 src/lib/{variabler,siffror,oversattning,oversattning-admin,referral,admin-auth,
 varumarke,content}.ts, data/portfolj-system/priser.json, data/siffror.json,
 vercel.json, STYRELSE-B2B-VARIABLER, B2B/MARKNADS/AKM3-BESLUT).
+
+---
+
+## ORDFÖRANDEBESLUT (våg 78, 2026-09-07)
+
+**GODKÄNT enligt rekommendationen:** Admin-mega steg 1 (variabelpanel,
+alternativ B: Supabase som sanning + fil som dev-fallback) + termbank-
+prod-fixen — byggs som VÅG 79 efter att våg 78:s finslipningsfixar landat.
+Villkor från ordföranden utöver dokumentets kritor:
+1. Skriv-rutter: requireAdmin UTAN dev-fallback i prod (ADMIN_PASSWORD
+   förblir bootstrap; logga varje ändring som system_events type=variabel-
+   andring med gamla/nya värdet — revisbarhet).
+2. Panelen låser gratis-nivån: Fas 1-priser (gratis) kan ALDRIG skapas/
+   ändras/raderas från panelen — hardkodat skydd i rutten.
+3. Våg 78:s kod-mitigering av spegelfönstret (paginering) kombineras med
+   kundens SQL: när tabellen landar växer lasSpara/lasStatusKarta automatiskt.
+4. Fas-priserna 9 999/13 999 (fixat i våg 78) blir panelens första data —
+   seed-skriptet migrerar priser.json till Supabase vid steg 1-deploy.
+Steg 2 (blogg-publiceringsflöde) = våg 80. Steg 3-5 efter varje godkänd
+leverans.

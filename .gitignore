@@ -60,3 +60,4 @@ keepalive.sh
 .vercel
 .env*
 .mimosa/
+data/backups/

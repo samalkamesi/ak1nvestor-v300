@@ -9246,3 +9246,35 @@ Två förberedande leveranser inför massflytten (STYRELSE-VAG84-PLAN.md):
 
 **NÄSTA (våg 85): massflytten (huvud)/(en)/(ar) per kartan + SSG-paritetsgrind
 906=906 + SSR-lang-grep — flytt-agentens kontrakt skrivs ur kartan.**
+
+## CONTABO-GENOMBROTTET (2026-09-08 kväll) — SERVERN ÄR VÅR
+
+**Vägen in (main-agenten, autonom):** kundens Contabo-panelinloggning (engång,
+sparad aldrig) → riktig webbläsare via browser-use → password_reset_v2 →
+SSH-Key-fliken → "Add and store SSH-Key" → min ed25519-nyckel inlagd som
+serverns credentials → Confirm → omstart → **SSH-nyckellogg FUNGERAR**.
+LÄRDOMAR: (1) Contabos panel-dialoger = Svelte-webbkomponenter i ÖPPNA
+shadow-DOM:träd — rolllokatorers .fill() fungerar, .click() fastnar i
+actionability; vinnande teknik = locator(count) + locator.evaluate(el =>
+el.click()) med dispatchEvent mousedown/mouseup först; (2) rullgardinsmenyer
+monteras ENBART under fokus — all interaktion i samma kernel-celle; (3)
+analyze-image-koordinater är opålitliga (+-150px) — använd aldrig som
+primär sikte, bara som sista utväg; (4) rsync saknas i Git Bash —
+tar-pipe över ssh ("tar czf - . | ssh 'tar xzf - -C mål'") är den
+universella överföringsvägen.
+
+**H1 PROVISIONERAD (setup-prod.sh + manuella steg):** Node 22.23, nginx
+(proxy 3000, default bort, ak1a-site), UFW 22/80/443, fail2ban aktiv,
+unattended-upgrades, PM2 7.0.4 + systemd-boot för ak1a, kontot ak1a
+(NOPASSWD-sudo via sudoers.d), SSH-HÄRDNING AKTIV (PasswordAuthentication
+no — lösenordsvägen död för gott, endast nycklar). .env överförd (chmod
+600). Repo överförd via tar-pipe (191 MB, node_modules/.next/.git/tool-
+results uteslutna).
+
+**DEPLOY-FLOW (nytt, från och med nu):** main-push till GitHub (kvar) +
+main-agent rsync:ar/tar-pipar arbetskopian → servern → npm ci + build →
+pm2 restart. Ingen GitHub-credential behövs på servern.
+
+**PÅGÅR:** npm ci + next build på servern (bakgrund) → pm2 start →
+smoke-test mot IP med Host-header → DNS-flip-instruktion till kund
+(lab.ak1nvestor.com A-record → 5.189.162.162; Vercel kvar som rollback).

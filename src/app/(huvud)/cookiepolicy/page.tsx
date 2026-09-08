@@ -18,10 +18,22 @@ const KAKOR: Array<{ namn: string; kat: string; syfte: string; tid: string }> = 
     tid: "Tills du ändrar ditt val",
   },
   {
+    namn: "ak1a_admin",
+    kat: "Nödvändiga",
+    syfte: "Inloggad admin-/redaktörssession. Signerad sessionskaka som sätts av servern — httpOnly och Secure, dvs. inte läsbar för skript i webbläsaren (XSS-skydd). Säkerhet och behörighetsstyrning.",
+    tid: "Sessionen (kort utgåendetid, förnyas vid ny inloggning)",
+  },
+  {
+    namn: "ak1a_medlem · ak1a_medlem_refresh",
+    kat: "Nödvändiga",
+    syfte: "Inloggad medlemssession via Supabase Auth. Access-token (ak1a_medlem, 1 timme) och roterande refresh-token (ak1a_medlem_refresh, 30 dagar) sätts av servern — bägge httpOnly och Secure, aldrig tillgängliga för skript i webbläsaren. Krävs för att visa ditt köpta innehåll; gratisinnehåll fungerar utan konto.",
+    tid: "1 timme · 30 dagar (förnyelse vid aktivitet, tills utloggning)",
+  },
+  {
     namn: "ak1a-member",
     kat: "Nödvändiga",
-    syfte: "Inloggnings- och medlemstyp (gratis/Fas 2/Fas 3) för att visa rätt innehåll.",
-    tid: "Sessionen / tills utloggning",
+    syfte: "Äldre lokal medlemsprofil (gratis/Fas 2/Fas 3) från tiden före riktiga konton — finns kvar som mjuk övergång och slutar användas när du skapat konto.",
+    tid: "Tills du rensar browserdata eller skapar konto",
   },
   {
     namn: "ak1a-elevkarna-v1 · ak1a-klara-kurser",
@@ -60,7 +72,7 @@ export default function CookiePolicy() {
     <SeoPageShell breadcrumb={[{ name: "Cookiepolicy" }]}>
       <h1 className="font-serif text-3xl font-bold">Cookiepolicy</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Senast uppdaterad: 2026-09-01 · Enligt lagen (2022:482) om elektronisk kommunikation, 6 kap.
+        Senast uppdaterad: 2026-09-07 · Enligt lagen (2022:482) om elektronisk kommunikation, 6 kap.
         19–20 §§
       </p>
 
@@ -122,8 +134,10 @@ export default function CookiePolicy() {
             </table>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Utöver detta lagrar driftleverantören Vercel tekniska serverloggar (IP, tidsstämpel)
-            enligt deras standard — det är inte cookies och styrs inte av ditt val här.
+            Utöver detta lagrar vår serverleverantör Contabo (Tyskland) tekniska
+            trafik- och säkerhetsloggar (IP, tidsstämpel) i driften — det är inte
+            cookies och styrs inte av ditt val här. Vi använder inga
+            marknadsförings- eller tredjepartskakor.
           </p>
         </section>
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const KATEGORIER: Array<{ rubrik: string; text: string }> = [
   {
     rubrik: "1. Konto och inloggning",
-    text: "E-postadress (användarnamn), medlemstyp (gratis-konto / Fas 2 / Fas 3 / admin) och ett lösenord som lagras som hash i Supabase Auth — vi ser aldrig lösenordet i klartext. Behandlas för att leverera tjänsten du har konto för.",
+    text: "E-postadress (användarnamn) och ett lösenord som lagras som hash i Supabase Auth (EU-region) — vi ser aldrig lösenordet i klartext. Medlemskontot behövs för att leverera det du köpt (Fas 2, Fas 3 och övriga köpta nivåer); allt gratisinnehåll kan användas helt utan konto. Inloggning sker via säkra sessionskakor (httpOnly), aldrig via lagring i webbläsaren. Tidigare lokala gästprofiler migreras mjukt — ditt gamla lokala läge fungerar tills du själv väljer att skapa konto. I takt med att kontobaserade nivåer driftsätts synkas även medlemstyp (gratis / Fas 2 / Fas 3 / admin) till ditt konto.",
   },
   {
     rubrik: "2. Utbildningsdata",
@@ -45,7 +45,7 @@ const KATEGORIER: Array<{ rubrik: string; text: string }> = [
   },
   {
     rubrik: "7. Tekniska loggar",
-    text: "Vår driftleverantör Vercel lagrar serverloggar (bl.a. IP-adress och tidsstämplar) för säkerhet och felsökning, med kort lagringstid enligt deras standard.",
+    text: "Sajten drivs på egen virtuell server hos Contabo (Tyskland/EU). Serverns trafik- och säkerhetsloggar (webbserverns åtkomstlogg samt Intrångsspärren fail2ban) innehåller IP-adress och tidsstämpel — mer lagras inte i ledet (dataminimering) — och används enbart för drift och skydd mot angrepp, med kort lagringstid genom löpande loggrotation. Vår tidigare driftleverantör Vercel finns kvar som passiv reserv och samlar inte in data i normaldrift.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
     <SeoPageShell breadcrumb={[{ name: "Integritetspolicy" }]}>
       <h1 className="font-serif text-3xl font-bold">Integritetspolicy</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Senast uppdaterad: 2026-09-01 · Enligt dataskyddsförordningen (GDPR, EU 2016/679) och
+        Senast uppdaterad: 2026-09-07 · Enligt dataskyddsförordningen (GDPR, EU 2016/679) och
         dataskyddslagen (2018:218)
       </p>
 
@@ -127,12 +127,19 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="font-serif text-xl font-bold">Vem får dina uppgifter</h2>
           <p className="mt-2 text-muted-foreground">
-            Vi säljer aldrig personuppgifter. Vi delar endast med underleverantörer som behandlar
-            data åt oss: <strong className="text-foreground">Supabase</strong> (autentisering och
-            databas) samt <strong className="text-foreground">Vercel</strong> (drift och loggar) —
-            båda med standardavtalsklausuler (SCC) respektive EU–US Data Privacy Framework för
-            överföring utanför EES — samt e-postleverantör för utskick (endast med samtycke). Vid
-            lagkrav kan uppgifter lämnas till myndighet.
+          Vi säljer aldrig personuppgifter. Vi delar endast med underleverantörer
+          som behandlar data åt oss: <strong className="text-foreground">Contabo</strong>{" "}
+          (serverdrift, Tyskland — trafik- och säkerhetsloggar),{" "}
+          <strong className="text-foreground">Supabase</strong>{" "}
+          (autentisering och databas, EU-region) samt{" "}
+          <strong className="text-foreground">one.com</strong> (DNS och
+          e-post, EU) — samtliga inom EES, så personuppgifterna lämnar inte
+          EES i normaldrift.{" "}
+          <strong className="text-foreground">Vercel</strong> finns kvar som
+          passiv reserv-/backuphosting utan aktiv drift och omfattas av EU–US
+          Data Privacy Framework om reserven någonsin aktiveras. E-postutskick
+          sker endast med ditt samtycke. Vid lagkrav kan uppgifter lämnas till
+          myndighet.
           </p>
         </section>
 

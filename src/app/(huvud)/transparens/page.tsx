@@ -137,6 +137,17 @@ const REGISTER: Rad[] = [
     ratt: "Invändning (art. 21) samt rätt till information — loggen innehåller ingen persondata, endast tekniska fingeravtryck.",
   },
   {
+    vad: "Tekniska drift- och säkerhetsloggar hos serverleverantören Contabo (Tyskland)",
+    varfor:
+      "Sajten drivs på egen virtuell server hos Contabo (Tyskland/EU). Serverns trafik- och säkerhetsloggar (webbserverns åtkomstlogg samt Intrångsspärren fail2ban) innehåller i princip bara två slags uppgifter om dig: IP-adress och tidstämpel — enligt principen om dataminimering (art. 5.1 c) lagras inget mer i ledet, och uppgifterna används enbart för att leverera sidorna och skydda tjänsten mot angrepp.",
+    grund:
+      "Berättigat intresse — art. 6.1 f (drift av tjänsten, IT-säkerhet och förebyggande av obehörig åtkomst)",
+    lagring:
+      "Kort lagringstid med löpande loggrotation på servern — loggar hålls inte längre än drift och felsökning kräver.",
+    ratt:
+      "Invändning (art. 21) — kontaktar du oss granskar vi loggarna om dig och raderar vad som inte längre behövs för pågående säkerhetsärenden.",
+  },
+  {
     vad: "Konverteringsintentioner (anonym aggregerad räkning — ingen personuppgift)",
     varfor:
       "När du begär aktivering av en prenumeration räknas en helt anonymiserad händelse (endast nivåns namn, period och pris) så vi kan se hur tratten från besökare till prenumeration används. Händelsen innehåller ingen e-post, inget namn, ingen IP-adress och ingen sessionskod — det går inte att utläsa vem du är eller vad du gjorde.",
@@ -150,7 +161,7 @@ const REGISTER: Rad[] = [
   {
     vad: "Klientuppgifter i AK1A PRO (biträdesledet — kräver signerat biträdesavtal)",
     varfor:
-      "Leverera PRO-tjänsten åt den ansvariga rådgivaren: klientkod/etikett jämte instrument och vikter räknas mot metodiken och renderas i rapporter. När en rådgivare tecknar AK1A PRO är rollerna därför omvända — rådgivaren är personuppgiftsansvarig och AK1A är personuppgiftsbiträde som behandlar enligt rådgivarens dokumenterade instruktioner (art. 28) och endast efter signerat biträdesavtal (DPA). AK1A:s underbiträden i ledet — Vercel och Supabase, båda med EU-region verifierad — redovisas i DPA-mallens publicerade lista.",
+      "Leverera PRO-tjänsten åt den ansvariga rådgivaren: klientkod/etikett jämte instrument och vikter räknas mot metodiken och renderas i rapporter. När en rådgivare tecknar AK1A PRO är rollerna därför omvända — rådgivaren är personuppgiftsansvarig och AK1A är personuppgiftsbiträde som behandlar enligt rådgivarens dokumenterade instruktioner (art. 28) och endast efter signerat biträdesavtal (DPA). AK1A:s underbiträden i ledet — Contabo (serverdrift, Tyskland/EU), Supabase (EU-region verifierad) och Vercel (passiv reservhosting, tar emot klientdata endast om reserven aktiveras) — redovisas i DPA-mallens publicerade lista.",
     grund:
       "Avtal — art. 6.1 b hos den personuppgiftsansvarige rådgivaren + art. 28 (AK1A:s roll: biträde; DPA tecknas FÖRE att någon klientuppgift läses in)",
     lagring:
@@ -173,7 +184,7 @@ export default function TransparensPage() {
         Transparens — berättat som lagen kräver
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Fastställd 2026-09-01 · lab.ak1nvestor.com · AK1A Research Lab
+        Fastställd 2026-09-07 · lab.ak1nvestor.com · AK1A Research Lab
       </p>
 
       <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -200,15 +211,24 @@ export default function TransparensPage() {
           för närvarande inget formellt dataskyddsombud — det är inte
           obligatoriskt för vår verksamhets storlek — utan hanterar
           integritetsfrågor direkt via kontakten ovan. Våra viktigaste
-          databehandlare (leverantörer som behandlar data åt oss, art. 28) är
-          vår europeiska databasleverantör och vår webbhotellsleverantör. De
-          får bara behandla data efter våra instruktioner och har
-          databehandlaravtal med oss. I AK1A PRO är rollerna de omvända —
-          se posten om biträdesledet i registret nedan: där är rådgivaren
+          underleverantörer (biträden som behandlar data åt oss, art. 28) är:
+          <strong className="text-foreground"> Contabo</strong> (serverdrift,
+          Tyskland/EU — trafik- och säkerhetsloggar, se registret nedan),{" "}
+          <strong className="text-foreground">Supabase</strong>{" "}
+          (autentisering och databas, EU-region),{" "}
+          <strong className="text-foreground">Vercel</strong> (passiv
+          reserv-/backuphosting — ingen aktiv drift sedan flytten till Contabo)
+          samt <strong className="text-foreground">one.com</strong> (DNS och
+          e-post, EU). De får bara behandla data efter våra instruktioner och
+          har databehandlaravtal med oss. När driften ändras dokumenteras
+          processändringen enligt art. 30:s register över behandlingsaktiviteter
+          — senaste ändring: driftflytten till Contabo (Tyskland/EU) med Vercel
+          kvar som passiv reserv. I AK1A PRO är rollerna de omvända — se posten
+          om biträdesledet i registret nedan: där är rådgivaren
           personuppgiftsansvarig, AK1A är personuppgiftsbiträde och rollen
           regleras i ett separat biträdesavtal (DPA) vars mall publiceras som
-          dokument med underbiträdeslista (Vercel och Supabase, EU-region
-          verifierad) och incidentflöde.
+          dokument med underbiträdeslista (Contabo, Supabase och Vercel enligt
+          ovan) och incidentflöde.
         </p>
       </section>
 
@@ -331,7 +351,18 @@ export default function TransparensPage() {
         <p className="mt-3 leading-relaxed text-muted-foreground">
           När du först besöker oss möter du en kakmur med tre kategorier:
           nödvändigt (inloggning och säkerhet — kräver inget val), funktionalitet
-          (dina preferenser) och analys (anonym statistik). Kakmuren lagrar ditt
+          (dina preferenser) och analys (anonym statistik). De nödvändiga
+          kakorna är bl.a. två sessionskakor för inloggning —{" "}
+          <code className="rounded bg-gold/10 px-1.5 py-0.5 text-xs">
+            ak1a_admin
+          </code>{" "}
+          och{" "}
+          <code className="rounded bg-gold/10 px-1.5 py-0.5 text-xs">
+            ak1a_medlem
+          </code>{" "}
+          — som bägge är httpOnly (ej läsbara för skript i webbläsaren) och
+          enbart behövs för säker inloggning; vi använder inga
+          marknadsföringskakor alls. Kakmuren lagrar ditt{" "}
           val i 12 månader och du kan ändra det när som helst via
           &quot;Kakinställningar&quot; i sidfoten — lagen kräver att det ska vara
           lika enkelt att återkalla ett samtycke som att ge det. Se hela

@@ -9188,3 +9188,43 @@ prerender-kostnad), html-lang = route-group-restruktur (egen våg).
 
 **Verifierat: motorer 107/0/0 · vakten GRÖN · tsc 35 baslinje · build exit 0
 (ISR 1h på /kurser, 333 SSG) · roundtrip 12/12 · 16/16 rena test.**
+
+## Våg 83 — ADMIN-MEGA STEG 5: SESSIONER + ROLLER + SPEGLARNA ÄKTA 404 (2026-09-08)
+
+**4 agenter (säkerhetsskäl sankar avvikelsen från max-agenter: admin-auth.ts
+ägdes av exakt EN agent) mot STYRELSE-VAG83-ROLLER.md (ef5229a). Commits
+c48f86a + panel + speglar404 + d82d179, develop+main pushade.**
+
+**A — SESSIONER + ROLLER (steg 5 av 5 KLART — admin-mega fullständig):**
+- admin-auth.ts utökad bakåtkompatibelt: signerad httpOnly-cookie ak1a_admin
+  ("<roll>.<utgar>.<hmac>", HMAC-SHA256 ur SESSION_SECRET, 8 h) — aktiveras
+  ENDAST när SESSION_SECRET finns; annars lösenordsläget oförändrat (prod
+  kan aldrig låsa sig på en env kunden saknar). REAKTÖR_PASSWORD-roll
+  (dev-fallback "AK1A-REDAKTOR-2026" endast development): redaktör når
+  blogg/kurser/media/termbank; DEFAULT tillat=["admin"] (AVVIKELSE från
+  kontraktets "default båda" — sankat säkerhetsdirektiv: minsta yta).
+- /api/admin/login + logout (generell 401 som aldrig avslöjar roll, 429 vid
+  10 fel/min, 503 utan SESSION_SECRET med ärlig text). Panelen: loggaIn/
+  loggaUt/lasRoll + roll-chip + redaktören ser ENDAST Blogg/Kurser/Media +
+  "Redaktörsyta"-copy; termbank-API:t öppet för redaktör men Översättnings-
+  panelen är fortfarande admin-yta i UI (benign yta-skillnad, dokumenterad).
+- 14/14 sessionstest (HMAC-format, utgångsvakt, tamper, rollmatris, graceful).
+
+**B — SPEGLARNA ÄKTA 404 (alt C ur SPEGLAR-P2):**
+- verktyg/kor-speglar-slugar.mjs → public/speglar-slugar.json (333+55 slug,
+  9,9 kB, idempotent — kör efter varje kurs-/bloggändring).
+- middleware-vakt: /{en,ar}/(kurser|blogg)/<slug> med exakt ett segment —
+  slug i listan ⇒ passera, annars ÄKTA 404 med inline EN(ltr)/AR(rtl)-sida
+  (noindex, marin stil, länkar till listan). Fail-open vid trasig lista.
+  Bunt-påverkan 9,9 kB (tak 40). 23/23 logiktest + LOKAL PRODUKTIONSSERVER
+  10/10 PASS (äkta speglar 200, okända 404 på alla 4 ytor, svenska 404 kvar).
+
+**C — VÅG 84-PLAN (STYRELSE-VAG84-PLAN.md):** html-lang-route-group i EN
+egen våg (spike + flytt-agent + SSG-paritetsgrind 906=906); commit-back =
+periodisk agent-synk (ALDRIG GitHub-token i Vercel-env); översättningens
+efterliv = motorbatch pensioneras, termbank underhållsläge, "översätt vid
+publicering" som main-rutin; Hetzner H2 = pm2 + nginx + basic-auth (enda
+telefon-kompatibla skyddet) — H1 blockerar fortfarande på kundens ssh-copy-id.
+
+**Verifierat: tsc 35 · sessionstest 14/14 · motorer 107/0/0 · vakten GRÖN ·
+build exit 0 · lokal prod-server 10/10 (speglar-404) · allt pushat d82d179.**

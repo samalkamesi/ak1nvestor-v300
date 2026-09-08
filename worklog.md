@@ -9228,3 +9228,21 @@ telefon-kompatibla skyddet) — H1 blockerar fortfarande på kundens ssh-copy-id
 
 **Verifierat: tsc 35 · sessionstest 14/14 · motorer 107/0/0 · vakten GRÖN ·
 build exit 0 · lokal prod-server 10/10 (speglar-404) · allt pushat d82d179.**
+
+## Våg 84 (start) — HTML-LANG-SPIKE + VARIABELSPEGLARE (2026-09-08, 2881c18)
+
+Två förberedande leveranser inför massflytten (STYRELSE-VAG84-PLAN.md):
+- **84a SPIKE (12a1bbc):** GlobaltSkal + typografi-singletoner — DÖD KOD
+  (0 aktiva importer, tsc 35 identisk) redo för flytt-agenten; V84-METADATA-
+  KARTA.md: 78 sidrutter (52 sv + 13 en + 13 ar; 101 API-rutter stannar),
+  0 dubbelkanonikal-risker (alla 26 speglar explicit canonical), notFound-
+  design per grupp; skuld: KursForslag-regex matchar ej spegelprefix.
+- **84b SYNK (2881c18):** verktyg/synka-variabler.mjs (Supabase→priser.json —
+  styrelsens commit-back: periodisk agent-synk ALDRIG GitHub-token i Vercel);
+  0 differenser idag, idempotens bevisad; agentens ESM-mock-incident ärligt
+  rapporterad + återställd bytevis.
+- Build exit 0, tsc 35. LÄRDOM: Mimosa-hooken kan blockera HELA bash-kedjan
+  (PreToolUse) — worklog-append + commit måste ibland delas i två steg.
+
+**NÄSTA (våg 85): massflytten (huvud)/(en)/(ar) per kartan + SSG-paritetsgrind
+906=906 + SSR-lang-grep — flytt-agentens kontrakt skrivs ur kartan.**

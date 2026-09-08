@@ -14,10 +14,12 @@ cd "$(dirname "$0")/.."
 
 echo "── 1/4 push: GitHub + Contabo ──"
 git push origin develop
-git -c core.sshCommand="ssh -i $NYCKEL -o BatchMode=yes" push contabo develop
+# Städa serverns arbetsträd först (appens runtime-cache gör det smutsigt → push avvisas)
+ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && git checkout -- . 2>/dev/null; git clean -fd data/cache 2>/dev/null; true"
+git -c core.sshCommand="ssh -i \"$NYCKEL\" -o BatchMode=yes" push contabo develop
 
 echo "── 2/4 server: npm ci + build ──"
-ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && npm ci --no-audit --no-fund >/dev/null 2>&1 && npm run build 2>&1 | tail -2"
+ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && git log --oneline -1 && npm ci --no-audit --no-fund >/dev/null 2>&1 && npm run build 2>&1 | tail -2"
 
 echo "── 3/4 server: pm2 restart ──"
 ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && pm2 restart ak1a --update-env && sleep 6 && pm2 ls | grep -o 'ak1a.*online' | head -1"

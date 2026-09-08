@@ -176,6 +176,16 @@ function organContent(readJson: (p: string) => string | null): OrganFinding[] {
 //     30-dagarsregeln/500-taket skulle äta upp termbanken. Tillväxten hålls
 //     i stället av deduplicering (äldsta kopior per sv raderas, senaste
 //     behålls) — raderna begränsas av antalet distinkta termer admin rört.
+//   medlem-typerna (VÅG 86 — retention-flaggan ur STYRELSE-V86-L3 §KRITA):
+//     type=medlem (L1-profiler), medlem_progress (L2) samt ändrings-
+//     historiken medlem_andring/admin-andring (L3-audit) förs ALDRIG under
+//     övrigt-regeln (500 rader/30d) och har INGET ålderstak — senaste raden
+//     per details->>authId är medlemns profil/progress (senaste-vinner,
+//     samma semantik som MÖS- och termbank-lagren); tappas den försvinner
+//     profilen och ev. Fas-grants (L3-beroende). I stället egna hårda tak
+//     per typ (se raknaTakMedlem): medlem 50 000, medlem_progress 500 000;
+//     andrings-typerna får INGET tak (audit-spår, en rad per admin-åtgärd —
+//     termbank-precedensen).
 
 const MAX_ANTAL_TRAFIK = 12_000;
 const MAX_ANTAL_SAKERHET = 3_000;
@@ -188,6 +198,16 @@ const MAX_ALDER_TYP_DAGAR = 35;
 /** Tak för MÖS-städningen per körning: 200 sidor à 1 000 rader + 20 000 raderade. */
 const MOS_STAD_MAX_Sidor = 200;
 const MOS_STAD_MAX_RADERA = 20_000;
+/** Våg 86 (STYRELSE-V86-L3 §KRITA): medlemsprofilerna får ALDRIG åldras
+ *  bort — i stället egna hårta radtak. 50 000 medlemmar / 500 000 progress-
+ *  rader ligger långt över realistiska medlemsantal och ~350×/~35× under
+ *  17,7M-kollapsen: tillväxten förblir avgränsad, profilerna består. */
+const MAX_ANTAL_MEDLEM = 50_000;
+const MAX_ANTAL_MEDLEM_PROGRESS = 500_000;
+/** Tak för medlem-städningen per körning: 200 sidor à 1 000 rader + 20 000
+ *  raderade (samma budget som MÖS-städningen — våg 67 mätte 16 s för 200 sidor). */
+const MEDLEM_STAD_MAX_Sidor = 200;
+const MEDLEM_STAD_MAX_RADERA = 20_000;
 
 async function organRetention(
   sb: { origin: string; headers: Record<string, string> } | null
@@ -403,6 +423,100 @@ async function organRetention(
     }
   };
 
+  /**
+   * MEDLEM-radtak (VÅG 86 — retention-flaggan ur STYRELSE-V86-L3 §KRITA):
+   * type=medlem (profiler) och type=medlem_progress har inget ålderstak men
+   * ett per-typ-radtak (50 000 / 500 000). SENASTE raden per details->>authId
+   * är medlemns profil/progress-sanning — den raderas ALDRIG här. Vid över-
+   * skott raderas i stället, i ordning: (a) äldsta DUBLETTRADER per authId
+   * (en nyare kopia finns redan — ren vikt, samma semantik som MÖS/termbank),
+   * (b) om skannet inte täckte hela typen: äldsta OSYNLIGA rader som har en
+   * synlig nyare kopia per authId. Räcker inte det (fler distinkta authId än
+   * taket) raderas INGET mer — ärligt: taket är en vaknivå och senaste-
+   * raderna består (realistiskt medlemsantal ligger årtionden under 50 000).
+   * Skanna nyast-först (id är uuid-text, ej kronologiskt — se MÖS-röjningen),
+   * råa filtervärden, bounded per körning (MEDLEM_STAD_MAX_*). Idempotent.
+   */
+  const raknaTakMedlem = async (typ: string, tak: number): Promise<number> => {
+    try {
+      const countRes = await tryFetch(`${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.${typ}&select=id`, {
+        method: "HEAD",
+        headers: { ...sb.headers, Prefer: "count=planned" },
+      });
+      if (!countRes.ok) return 0;
+      const antal = Number(countRes.headers.get("content-range")?.split("/")[1] ?? 0) || 0;
+      if (antal <= tak) return 0;
+      const overskott = antal - tak;
+
+      // (a) skanna nyast-först: senaste rad per authId + övriga = dubletter
+      const seddaAuthId = new Set<string>();
+      const dubbletIdn: string[] = []; // ny→gammal ordning (vänds före radering)
+      let komplett = false;
+      for (let sida = 0; sida < MEDLEM_STAD_MAX_Sidor; sida++) {
+        const fran = sida * 1000;
+        const res = await tryFetch(
+          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.${typ}` +
+            `&select=id,details->>authId&order=created_at.desc,id.desc`,
+          { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
+        );
+        if (!res.ok) break;
+        const rows = await res.json();
+        if (!Array.isArray(rows) || rows.length === 0) break;
+        for (const r of rows) {
+          const id = r?.id;
+          if (typeof id !== "string") continue;
+          const authId = r?.authId;
+          // rad utan authId lämnas orörd (kan vara medlemns enda profil-rad)
+          if (typeof authId !== "string" || !authId || seddaAuthId.has(authId)) dubbletIdn.push(id);
+          else seddaAuthId.add(authId);
+        }
+        if (rows.length < 1000) {
+          komplett = true;
+          break;
+        }
+        if (dubbletIdn.length >= MEDLEM_STAD_MAX_RADERA) break;
+      }
+
+      // äldsta dubletter först — radera högst överskottet (behåll historiken)
+      const antalA = Math.min(overskott, dubbletIdn.length, MEDLEM_STAD_MAX_RADERA);
+      let raderade = 0;
+      if (antalA > 0) {
+        raderade += await raderaIdn(dubbletIdn.reverse().slice(0, antalA));
+      }
+      let kvar = overskott - raderade;
+      if (kvar <= 0 || komplett) return raderade;
+
+      // (b) osynliga äldre rader (skannet trunkerat): äldsta först, ENDAST de
+      // med synlig nyare kopia — en osynlig rad utan sedd authId kan vara
+      // medlemns senaste och lämnas därför alltid orörd
+      for (let sida = 0; sida < MEDLEM_STAD_MAX_Sidor && kvar > 0; sida++) {
+        const fran = sida * 1000;
+        const res = await tryFetch(
+          `${sb.origin}/rest/v1/${LOG_TABLE}?type=eq.${typ}` +
+            `&select=id,details->>authId&order=created_at.asc,id.asc`,
+          { headers: { ...sb.headers, Range: `${fran}-${fran + 999}` } }
+        );
+        if (!res.ok) break;
+        const rows = await res.json();
+        if (!Array.isArray(rows) || rows.length === 0) break;
+        const tagna: string[] = [];
+        for (const r of rows) {
+          const id = r?.id;
+          const authId = r?.authId;
+          if (typeof id !== "string" || typeof authId !== "string" || !seddaAuthId.has(authId)) continue;
+          tagna.push(id);
+          kvar--;
+          if (kvar <= 0 || tagna.length >= MEDLEM_STAD_MAX_RADERA) break;
+        }
+        if (tagna.length > 0) raderade += await raderaIdn(tagna);
+        if (rows.length < 1000 || tagna.length < rows.length) break;
+      }
+      return raderade;
+    } catch {
+      return 0;
+    }
+  };
+
   // 0. Sidvisningsloggen: radera äldre än 90 dagar (bounded tracking)
   try {
     const cut90 = new Date(Date.now() - ACTIVITY_MAX_AGE_DAYS * 86400_000).toISOString();
@@ -428,12 +542,22 @@ async function organRetention(
   //    steg 3 och får alldrig träffas av övrigt-regeln.
   //    OBS (våg 79): termbank_tillagg hör till samma undantag — en admin-
   //    terms SENASTE rad är sanningen och får aldrig åldras bort (se steg 3b).
-  deletedOld += await rakraAldring("type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg)", MAX_LOG_AGE_DAYS);
+  //    OBS (våg 86): medlem-typerna (medlem, medlem_progress, medlem_andring,
+  //    admin-andring) åldras ALDRIG bort — senaste raden per authId är
+  //    medlemns profil/progress/audit-sanning (STYRELSE-V86-L3 §KRITA; se
+  //    steg 3c).
+  deletedOld += await rakraAldring(
+    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod)",
+    MAX_LOG_AGE_DAYS
+  );
   deletedOld += await rakraAldring("type=eq.trafik", MAX_ALDER_TYP_DAGAR);
   deletedOld += await rakraAldring("type=eq.sakerhet", MAX_ALDER_TYP_DAGAR);
 
   // 2. Hårta radtak, per scope (500 / 12 000 / 3 000)
-  cappedRows += await raknaTak("type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg)", MAX_LOG_ROWS);
+  cappedRows += await raknaTak(
+    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod)",
+    MAX_LOG_ROWS
+  );
   cappedRows += await raknaTak("type=eq.trafik", MAX_ANTAL_TRAFIK);
   cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
 
@@ -447,6 +571,14 @@ async function organRetention(
   //     sanningen, äldre kopior är ren vikt. Inget ålderstak/radtak behövs:
   //     denna rensning håller typen ≈ antalet distinkta termer.
   cappedRows += await rensaTermbankDubletter();
+
+  // 3c. MEDLEM-typerna (våg 86 — STYRELSE-V86-L3 §KRITA): egna hårda tak
+  //     (medlem 50 000, medlem_progress 500 000) i stället för övrigt-regeln;
+  //     SENASTE per details->>authId raderas aldrig (profiler/Fas-grants).
+  //     medlem_andring/admin-andring (audit-spår) får inget tak alls — de
+  //     hanteras enbart av undantagen i steg 1–2 ovan.
+  cappedRows += await raknaTakMedlem("medlem", MAX_ANTAL_MEDLEM);
+  cappedRows += await raknaTakMedlem("medlem_progress", MAX_ANTAL_MEDLEM_PROGRESS);
 
   return { deletedOld, cappedRows };
 }

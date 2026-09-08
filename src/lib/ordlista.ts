@@ -84,6 +84,7 @@ export const ORDLISTA = {
   "auth.bliMedlem": { sv: "Bli medlem", en: "Become a member", ar: "كن عضوًا" },
   "auth.redanMedlem": { sv: "Redan medlem?", en: "Already a member?", ar: "عضو بالفعل؟" },
   "auth.ejInloggad": { sv: "Ej inloggad", en: "Not signed in", ar: "لم تسجِّل الدخول" },
+  "auth.mittKonto": { sv: "Mitt konto", en: "My account", ar: "حسابي" },
 
   // ── Kurs-UI (KursSteg) ───────────────────────────────────────────────────
   "kurs.kapitel": { sv: "Kapitel", en: "Chapter", ar: "الفصل" },

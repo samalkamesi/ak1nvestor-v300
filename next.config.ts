@@ -25,6 +25,13 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // VÅG 86 (KARTA §5, flytt-avvikelse #2): aktiverar src/app/global-not-found.js
+  // som global 404 för HELT omatchade URL:er — nödvändigt med flera rot-layouter
+  // ((huvud)/(en)/(ar)) där ingen gemensam rot-layout finns. Flaggnamn verifierat
+  // mot installerad Next 16.3.2 (config-schema.js + config-shared.d.ts).
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     // VÅG 81 A5: mediebibliotekets publika bucket — EXAKT en post, exakt
     // hostname + pathname, inga wildcards på host. Media-bilder är OVERRIDE

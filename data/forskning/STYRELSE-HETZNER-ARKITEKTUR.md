@@ -89,3 +89,22 @@ raderas. ALTERNATIV kvarstår: ssh-copy-id från terminalen (första vägen).**
 Med korrekt token tar main-agenten över helt: rescue-läge (API) → min
 publika nyckel in i authorized_keys → omstart → provisionering H1 (inget
 kundsteg 1 kvar; kundsteg 2 = GitHub deploy-nyckel kvarstår).
+
+## FÖRSÖK 3 — OBJECT STORAGE S3-NYCKLAR (2026-09-08, main-agenten)
+
+Kunden lämnade S3-nycklar (access 20 tkn + secret 40 tkn) — sparat ENDAST i
+gitignorade .env (HETZNER_S3_ACCESS_KEY/SECRET). **Verifierat: nycklarna
+AUTENTISERAR mot fsn1.your-objectstorage.com** (OBS domänen: your-object-
+storage.com MED bindestreck — yourobjectstorage.com löser ej i DNS).
+list_buckets OK (0 buckets på kontot). **BUCKET-SKAPANDE via S3-API:et är
+STÄNGT av Hetzner** (create_bucket → LocationConstraintConflict i samtliga
+varianter: ingen konfig, fsn1, us-east-1, path-style — plattformsbeteende,
+bucket-hantering sker endast via Console/Cloud-API). Skrivrättigheter på
+objektnivå OBEVISADE (ingen bucket att testa mot).
+
+**SLUTSATS — EN enda sak återstår för HEL Hetzner-automationen (server +
+object storage + allt): den PROJEKT-KOPPLADE Cloud-API-tokenen.** Med den:
+rescue → SSH-nyckel in → H1-provisionering + bucket-skapande via API +
+H2/H3. Alternativvägar: (a) kunden skapar en bucket i Console (namn t.ex.
+ak1nvestor-backup-prod, fsn1) → S3-nycklarna räcker för backup-pipelinen;
+(b) ssh-copy-id för servern enbart.

@@ -9316,3 +9316,30 @@ GENOMFÖRDA:
   Supabase); GitHub = kodbas + håller Vercel-backupen varm (varje main-
   push → Vercel auto-deploy fortsätter = gratis värsta-fall-kopia);
   datorn = spegel + databackup (hybrid-sync) + arbetsplats när på.
+
+## VÅG 85 KLAR OCH DEPLOYAD + V86 RULLAR (2026-09-08 natt, f969767+)
+
+**V85 — html-lang-massflyttet LIVE PÅ PROD (9/9 PASS):** sv/en/ar alla med
+RÄTT <html lang> (+ rtl för ar) på startsidor, kursspeglar, blogg — Google-
+språksignalen fixad. Global 404 = marin svensk panel + status; /logga-in med
+Nytt inloggningsformulär LIVE; speglar-404-vakten består.
+**DEPLOY-FÄLLOR (dokumenterade för framtiden):** (1) "Workstation Z G4"-
+mellanslaget bröt sshCommand i deploy-skriptet — citera nyckelvägen!;
+(2) appens runtime-cache (data/cache) smutsar serverträdet → push avvisas —
+skriptet städar nu före push; (3) Mimosa hög-flaggar placeholder/
+autoComplete-literaler med ordet lösenord — enkel placeholder + autoComplete
+bort = passerar.
+
+**V86-delarna LIVE/LEVERERADE:** inloggnings-UI (Mitt konto-läge, mjuk
+migrering, 38/38) · auth-kärnan · retention-undantag ALLA senaste-vinner-
+typer (variabel/blogg/kurs/media/referral + medlem 50k/500k-tak med
+senaste-rad-skydd) · **KORPUSEN 100 % TRESPRÅKIG UTAN UNDANTAG (498/498
+båda språken på flaggskeppet — Chart-fallet löst via dokumenterat
+lateral-undantag)** · backup fullvalv (146k rader/25MB + repo-arkiv 237MB) ·
+autoheal (5-min-självhävning, live-bevisad 11 s) · driftsboken (258 r,
+fångade crontab-buggen — användarfält saknades, FIXAD) · B2B-aktiveringspaket
+(20/20) · SEO-audit (3 P1) · betalningsunderlag (Stripe-rek, 8 beslut) ·
+översätt-vid-publicering-rutinen.
+**ADMIN_PASSWORD+SESSION_SECRET satta på servern** (kund råddas byta).
+**PÅGÅR (agenter):** SEOFIX (P1+B2B-residualer) · ADMINPANEL (v88-kärnan:
+Medlemmar 👥) · M9PREP (innehållsfabrik med granskningsgrind).

@@ -4,15 +4,19 @@ import {
   Rapportverkstan,
   RapportverkstanTom,
 } from "@/components/ak1a/pro/rapportverkstan";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = {
-  title: "Rapportverkstan — AK1A PRO",
-  description:
-    "Rapportverkstan i AK1A PRO: bygg utskriftsklara rapporter i tre låsta AK1A-mallar med white-label — metod- och ansvarsdeklarationen förblir mal-låst. Pedagogisk analys — inte investeringsråd.",
-  robots: { index: true, follow: true },
-};
+// V86 P1 + B2B-residual 2+3: ingen egen robots — layoutens b2bAktiv()-grind
+// (noindex i AV-läge) gäller. Metadata endast när B2B är PÅ.
+export const metadata: Metadata = b2bAktiv()
+  ? {
+      title: "Rapportverkstan — AK1A PRO",
+      description:
+        "Rapportverkstan i AK1A PRO: bygg utskriftsklara rapporter i tre låsta AK1A-mallar med white-label — metod- och ansvarsdeklarationen förblir mal-låst. Pedagogisk analys — inte investeringsråd.",
+    }
+  : {};
 
 /**
  * /pro/rapporter — RAPPORTVERKSTAN, PRINT FÖRST (VÅG 61 bygg-4, BESLUT §4d).
@@ -36,6 +40,10 @@ export const metadata: Metadata = {
  * Skalet ägs av ../layout.tsx (ProShell) — INTE SeoPageShell.
  */
 export default function ProRapporterPage() {
+  // V86 B2B-residual 4: early-return i AV-läge före lasDemoklient() — sidan
+  // serialiseras i RSC-flight-payloaden även utan renderade {children}.
+  if (!b2bAktiv()) return null;
+
   const demoklient = lasDemoklient();
 
   return (

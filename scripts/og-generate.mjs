@@ -319,7 +319,10 @@ if (!ENKONTROLL) {
     if (SNABB) break;
   }
   for (const a of analyser) {
-    laggTill("analyser", `analys/${a.ticker}.png`, analysSida(a));
+    // V86 P1 #2: filnamn i gemener med ".st"-suffix — samma normalisering som
+    // ogBildForPath/analysOgStam i src/lib/seo.tsx (URL-form "abb-st" ↔ fil
+    // "abb.st.png"); rå ticker (ABB.ST) gav skiftläges-404:ar på Linux-prod.
+    laggTill("analyser", `analys/${String(a.ticker).toLowerCase().replace(/\.st$/, ".st")}.png`, analysSida(a));
     if (SNABB) break;
   }
 

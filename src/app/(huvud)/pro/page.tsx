@@ -3,22 +3,28 @@ import { CsvImport } from "@/components/ak1a/pro/csv-import";
 import { Morgonrond } from "@/components/ak1a/pro/morgonrond";
 import { lasVagvalideringTraff } from "@/components/ak1a/pro/morgonrond-data";
 import { PRISER, kr } from "@/lib/variabler";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = {
-  title: "AK1A PRO — Analytikerplattformen | Bygg institutionella rapporter",
-  description: `AK1A PRO är den skilda B2B-världen: importera en portfölj via CSV, kör AKM1 · AK1TS · Konfluens som rättighetsstyrd metodik-modul och bygg institutionella rapporter — white-label redo. Från ${PRISER.b2bAnalytiker} kr/mån/seat. Pedagogisk analys — inte investeringsråd.`,
-  keywords: [
-    "AK1A PRO",
-    "analytikerplattform",
-    "B2B finansanalys",
-    "portfölj CSV-import",
-    "rapportmallar",
-    "white-label",
-    "metodik-licens",
-  ],
-};
+// V86 B2B-residual 2+3: ingen egen robots — layoutens b2bAktiv()-grind gäller
+// hela trädet. Metadata (titel + pris copy i description) sätts ENDAST när
+// B2B är PÅ; i AV-läge ärar sidan layoutens neutrala "under uppbyggnad"-meta.
+export const metadata: Metadata = b2bAktiv()
+  ? {
+      title: "AK1A PRO — Analytikerplattformen | Bygg institutionella rapporter",
+      description: `AK1A PRO är den skilda B2B-världen: importera en portfölj via CSV, kör AKM1 · AK1TS · Konfluens som rättighetsstyrd metodik-modul och bygg institutionella rapporter — white-label redo. Från ${PRISER.b2bAnalytiker} kr/mån/seat. Pedagogisk analys — inte investeringsråd.`,
+      keywords: [
+        "AK1A PRO",
+        "analytikerplattform",
+        "B2B finansanalys",
+        "portfölj CSV-import",
+        "rapportmallar",
+        "white-label",
+        "metodik-licens",
+      ],
+    }
+  : {};
 
 /**
  * /pro — /PRO-ÖVERSIKTEN med MORNONRONDEN (B2B-BESLUT §4a/§4e + §7 steg 3).
@@ -106,6 +112,12 @@ const NIVAER = [
 ] as const;
 
 export default function ProPage() {
+  // V86 B2B-residual 4 (VIKTIGAST): sidan serialiseras in i RSC-flight-payloaden
+  // även när layoutens grind inte renderar {children} — early-return i AV-läge
+  // före all datahämtning (lasVagvalideringTraff) håller cockpit-markupen ur
+  // payloaden. Layouten renderar "Under uppbyggnad"-substitutet.
+  if (!b2bAktiv()) return null;
+
   // Vågvalideringens träff-% — server-side ur rapportfilen (build/request-vägen).
   const traff = lasVagvalideringTraff();
 

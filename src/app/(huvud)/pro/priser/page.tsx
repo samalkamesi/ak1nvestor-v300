@@ -3,18 +3,24 @@ import Link from "next/link";
 import { lasPriser, type PrisNiva } from "@/lib/portfolj-forskning/korstabell-data";
 import { kr } from "@/lib/variabler";
 import { lasPriserGallande, type PriserGallande } from "@/lib/variabler-lagring";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 // VÅG 79 (admin-mega steg 1): pristalen läses live via lasPriserGallande()
 // (Supabase-override senaste-vinner; priser.json = fallback — ÄNDRA PRIS i
 // panelen/filen, aldrig här). ISR: ändring syns ≤ 300 s.
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Priser — AK1A PRO",
-  description:
-    "AK1A PRO i tre nivåer per analytiker-seat: Pro Analytiker, Pro Studio och Pro Institution — transparent flat-fee, aldrig rev-share. Priser exkl. moms. Pedagogisk analys — inte investeringsråd.",
-  robots: { index: true, follow: true },
-};
+// V86 P1 (audit 5.3) + B2B-residual 2+3: ingen egen robots-rad — layoutens
+// b2bAktiv()-grind (noindex i AV-läge) är robots-källan för hela /pro-trädet.
+// Metadata sätts ENDAST när B2B är PÅ; i AV-läge gäller layoutens neutrala
+// "AK1A PRO — under uppbyggnad"-titel i head (pris-copy läcker aldrig).
+export const metadata: Metadata = b2bAktiv()
+  ? {
+      title: "Priser — AK1A PRO",
+      description:
+        "AK1A PRO i tre nivåer per analytiker-seat: Pro Analytiker, Pro Studio och Pro Institution — transparent flat-fee, aldrig rev-share. Priser exkl. moms. Pedagogisk analys — inte investeringsråd.",
+    }
+  : {};
 
 /**
  * /pro/priser — PRISMODELL ENLIGT BESLUT PUNKT 5 (VÅG 61 bygg-4, §4e).
@@ -140,6 +146,13 @@ const KONTAKT_MAILTO =
   "mailto:info@ak1nvestor.com?subject=AK1A%20PRO%20%E2%80%94%20intresse%20(%C3%B6nskad%20niv%C3%A5)";
 
 export default async function ProPriserPage() {
+  // V86 B2B-residual 4 (VIKTIGAST): Next renderar+serialiserar sidkomponenten
+  // för RSC-flight-payloaden ÄVEN när layoutens grind inte renderar {children}
+  // — därför early-return FÖRE all datahämtning i AV-läge: varken pristalen
+  // (lasPriserGallande) eller cockpit-markupen kan då hamna i flight-payloaden
+  // eller köras i onödan. Layouten renderar "Under uppbyggnad"-substitutet.
+  if (!b2bAktiv()) return null;
+
   // Pris-talen live ur variabellagret (Supabase-override senaste-vinner,
   // filen = fallback — kastar aldrig).
   const PRISER = await lasPriserGallande();

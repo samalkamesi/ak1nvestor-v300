@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/content";
 import { lasAnalyser } from "@/lib/analysfabrik";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-dynamic";
 
@@ -56,13 +57,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/rapporter`, changeFrequency: "monthly", priority: 0.7, lastModified: now },
 
     // Medlems- och företagssidor
-    { url: `${BASE_URL}/pro`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
-    // Pro-undersidorna (VÅG 63 O3 #4): robots index:true men saknades i
-    // sitemap — 4 B2B-pengasidor osynliga för upptäckt.
-    { url: `${BASE_URL}/pro/priser`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${BASE_URL}/pro/analys`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${BASE_URL}/pro/klienter`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${BASE_URL}/pro/rapporter`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    // V86 B2B-residual 1: /pro-blocket grindas mot b2bAktiv() — sitemap får
+    // aldrig bjuda in crawlerar till URL:er som pro-layoutens grind håller
+    // noindex:ade (Search Console: "Submitted URL marked 'noindex'").
+    // /pro + 4 undersidor (VÅG 63 O3 #4) listas endast när B2B är PÅ.
+    ...(b2bAktiv()
+      ? ([
+          { url: `${BASE_URL}/pro`, changeFrequency: "monthly" as const, priority: 0.9, lastModified: now },
+          { url: `${BASE_URL}/pro/priser`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
+          { url: `${BASE_URL}/pro/analys`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
+          { url: `${BASE_URL}/pro/klienter`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
+          { url: `${BASE_URL}/pro/rapporter`, changeFrequency: "monthly" as const, priority: 0.8, lastModified: now },
+        ] satisfies MetadataRoute.Sitemap)
+      : []),
     { url: `${BASE_URL}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/prenumeration`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },

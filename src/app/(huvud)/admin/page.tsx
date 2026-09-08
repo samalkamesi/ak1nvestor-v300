@@ -33,6 +33,7 @@ import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { MembersManager } from "@/components/ak1a/admin/members-manager";
+import { MedlemmarPanel } from "@/components/ak1a/admin/medlemmar-panel";
 import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
 import { TrafikSakerhetPanel } from "@/components/ak1a/admin/trafik-sakerhet-panel";
 import { KonverteringsPanel } from "@/components/ak1a/admin/konverterings-panel";
@@ -142,7 +143,15 @@ const SEVERITY_COLORS: Record<string, string> = {
  */
 const ALLA_FLIKAR: { id: string; etikett: string; endastAdmin?: boolean }[] = [
   { id: "overview", etikett: "Översikt", endastAdmin: true },
-  { id: "members", etikett: "Medlemmar", endastAdmin: true },
+  /**
+   * VÅG 88 (FAS L3, STYRELSE-V86-L3 §A): gamla "Medlemmar"-fliken byter
+   * etikett till "Leads 🧲" (members-manager.tsx läser leads ur members-
+   * tabellen — panel+route orörd) och NY flik "Medlemmar 👥" (auth-medlemmar)
+   * visar AUTH-användare via medlemmar-panel.tsx. Två flikar med namnet
+   * "Medlemmar" förbjuds (kontraktets beslut).
+   */
+  { id: "members", etikett: "Leads 🧲", endastAdmin: true },
+  { id: "auth-medlemmar", etikett: "Medlemmar 👥", endastAdmin: true },
   { id: "kundekosystem", etikett: "Kundekosystem", endastAdmin: true },
   { id: "ekosystem", etikett: "Ekosystem", endastAdmin: true },
   { id: "activity", etikett: "Aktivitetslogg", endastAdmin: true },
@@ -539,10 +548,18 @@ export default function AdminDashboard() {
             )}
           </TabsContent>
 
-          {/* Activity Log */}
+          {/* Leads 🧲 (våg 88: gamla "Medlemmar"-fliken — members-tabellen/leads, orörd) */}
           <TabsContent value="members" className="mt-6">
             <Card className="p-5">
               <MembersManager />
+            </Card>
+          </TabsContent>
+
+          {/* Medlemmar 👥 — FAS L3 (våg 88 §A): AUTH-användare + members-profiler.
+              Panelen mountas först när fliken öppnas → GET sker lazy (media-mönstret). */}
+          <TabsContent value="auth-medlemmar" className="mt-6">
+            <Card className="p-5">
+              <MedlemmarPanel />
             </Card>
           </TabsContent>
 

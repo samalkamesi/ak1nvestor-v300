@@ -37,6 +37,25 @@ export function giltigExternOgBild(u: unknown): string | null {
 }
 
 /**
+ * Filnamns-stammen för en analys-OG-bild, härledd ur URL-segmentet (V86 P1 #2):
+ * URL-formen är ticker.toLowerCase().replace(/\.st$/, "-st") (se t.ex.
+ * sitemap.ts + [variabel]/page.tsx generateStaticParams) medan FILERNA i
+ * public/og/analys/ är normaliserade till gemener — "abb-st" ↔ "abb.st",
+ * "VOLCAR-B" ↔ "volcar-b". Inversemappningen + gemener gör sökvägen
+ * skiftläges-säker mot Linux-prod (case-känsligt FS): båda URL-formerna
+ * ("ABB.ST" ur huvudsidan, "abb-st" ur variabelsidorna) ⇒ "abb.st".
+ */
+function analysOgStam(segment: string): string {
+  let rå = segment;
+  try {
+    rå = decodeURIComponent(segment);
+  } catch {
+    /* ogiltig %-sekvens ⇒ använd segmentet rått */
+  }
+  return rå.toLowerCase().replace(/-st$/, ".st");
+}
+
+/**
  * OG-bild per sidtyp, härledd ur sökvägen: per-slug-bilder finns för kurser,
  * blogg och analyser; översiktssidorna har egna mallar; roten → start.png;
  * allt annat → den typografiska default.png. Alt-texten speglar sidans titel.
@@ -61,7 +80,9 @@ function ogBildForPath(pathname: string, title: string): { sokvag: string; alt: 
     return { sokvag: "/og/analys.png", alt: "Institutionella aktieanalyser med AKM1" };
   if (pathname.startsWith("/analyser/"))
     return {
-      sokvag: `/og/analys/${decodeURIComponent(pathname.split("/")[2])}.png`,
+      // V86 P1 #2: stam i gemener med "-st"→".st" — matchar de normaliserade
+      // filnamnen i public/og/analys/ (abb.st.png m.fl.), inte rå tickerslut.
+      sokvag: `/og/analys/${analysOgStam(pathname.split("/")[2])}.png`,
       alt: clamp(`Aktieanalys: ${title}`, 100),
     };
   return { sokvag: "/og/default.png", alt: clamp(`${title} — ${SITE_NAME}`, 100) };
@@ -434,7 +455,7 @@ export function analysisJsonLd(a: Analysis) {
     headline: `${a.company} (${a.ticker}) — institutionell analys`,
     description: String(a.motivation || a.status || `Analys av ${a.company}`).slice(0, 300),
     inLanguage: "sv-SE",
-    image: `${SITE_URL}/og/analys/${a.ticker}.png`,
+    image: `${SITE_URL}/og/analys/${analysOgStam(a.ticker)}.png`,
     datePublished: a.analysisDate || a.verified,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },

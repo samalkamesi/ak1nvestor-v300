@@ -73,11 +73,14 @@
 
 import { cache } from "react";
 import type { Metadata } from "next";
+import { existsSync } from "fs";
+import { join } from "path";
 import type { Course, CourseChapter } from "@/lib/content";
 import { ORDLISTA, type OrdlistaNyckel, type SprakRad } from "@/lib/ordlista";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { lasPubliceradeForSpegel, lasPubliceradeKursTitlar } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
+import { OG_BREDD, OG_HOJD } from "@/lib/seo";
 
 // ── Konvention: nyckelbyggare ────────────────────────────────────────────────
 
@@ -430,6 +433,21 @@ function speglaKapitel(
 // ── Metadata: per språk, hreflang mot originalet, noindex under tröskeln ─────
 
 /**
+ * Spegelns OG-bild (V86 P1 #3): ÅTERANVÄNDER svenska originalets genererade
+ * per-slug-bild (ogBildForPath-mönstret i seo.tsx — /og/kurser/{slug}.png,
+ * 1200×630) istället för att peka spegeln på ingen bild alls (666 kursspegel-
+ * URLer saknade og:image → summary_large_image utan förhandsvisning).
+ * Vakt: finns inte per-slug-filen på disk (og-genereringen ej omkörd efter
+ * nytt innehåll) faller spegeln tillbaka på översiktsbilden — og:image som
+ * 404:ar är värre än ingen egen bild (samma defektklass som V86 P1 #2).
+ */
+function spegelOgBild(slug: string, katalog: "kurser", fallback: string, alt: string) {
+  const perSlug = `/og/${katalog}/${slug}.png`;
+  const finns = existsSync(join(process.cwd(), "public", "og", katalog, `${slug}.png`));
+  return [{ url: finns ? perSlug : fallback, width: OG_BREDD, height: OG_HOJD, alt }];
+}
+
+/**
  * Metadata för kursspegeln. Under INDEX_TRASKEL % publicerat:
  *   robots noindex,follow + canonical → SVENSKA originalet (duktig duplikat-
  *   signal: halvfärdiga speglar konkurrerar aldrig med originalet i söket).
@@ -461,6 +479,8 @@ export function kursSpegelMetadata(opts: {
           `${kurs.learn} دورة ${slug.toUpperCase()} في منهجية AKM1: ${kurs.chapters.length} فصول، مستوى ${kurs.level}. دورة تعليمية مجانية في تحليل الأسهم من AK1A Research Lab.`,
           300
         );
+  // V86 P1 #3: OG/Twitter-bild — originalets per-slug-bild delas med spegeln.
+  const ogBild = spegelOgBild(slug, "kurser", "/og/kurs.png", clamp(titel, 100));
 
   return {
     title: titel,
@@ -500,8 +520,9 @@ export function kursSpegelMetadata(opts: {
       type: "website",
       locale: lang === "ar" ? "ar_AR" : "en_US",
       alternateLocale: ["sv_SE"],
+      images: ogBild,
     },
-    twitter: { card: "summary_large_image", title: titel, description: beskrivning },
+    twitter: { card: "summary_large_image", title: titel, description: beskrivning, images: ogBild },
   };
 }
 

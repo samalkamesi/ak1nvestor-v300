@@ -28,9 +28,16 @@ import { b2bAktiv } from "@/lib/b2b-status";
  * ska aldrig känna sig instängd, bara skild från folkhavet.
  */
 export const metadata: Metadata = {
-  title: "AK1A PRO — Analytikerplattformen för rådgivare och analytiker",
-  description:
-    "Bygg institutionella rapporter på AKM1 · AK1TS · Konfluens — metodiken som rättighetsstyrd modul. CSV-portföljimport, tre låsta AK1A-rapportmallar, white-label redo. Pedagogisk analys — inte investeringsråd.",
+  // V86 B2B-residual 3: i AV-läge läcker cockpit-copy i <head> via titel/
+  // description — grindläget ska spegla "Under uppbyggnad"-vyn. Sidorna
+  // under /pro sätter metadata bara när b2bAktiv() (samma mönster), så denna
+  // off-titel är den enda som syns på grindade URL:er.
+  title: b2bAktiv()
+    ? "AK1A PRO — Analytikerplattformen för rådgivare och analytiker"
+    : "AK1A PRO — under uppbyggnad",
+  description: b2bAktiv()
+    ? "Bygg institutionella rapporter på AKM1 · AK1TS · Konfluens — metodiken som rättighetsstyrd modul. CSV-portföljimport, tre låsta AK1A-rapportmallar, white-label redo. Pedagogisk analys — inte investeringsråd."
+    : "AK1A PRO — den institutionella plattformen för rådgivare och analytiker — är under uppbyggnad och ännu inte öppen för besök. Den publika utbildningsdelen av AK1A Research Lab är däremot helt öppen.",
   keywords: [
     "AK1A PRO",
     "B2B analysplattform",
@@ -43,7 +50,9 @@ export const metadata: Metadata = {
     "finansiell analys Sverige",
   ],
   // VÅG 77 (B1-grinden): PRO är under uppbyggnad — noindex tills
-  // NEXT_PUBLIC_B2B_AKTIV=1 slås på i Vercel.
+  // NEXT_PUBLIC_B2B_AKTIV=1 slås på i Vercel. V86 residual 2: undersidorna
+  // sätter ingen egen robots längre — denna grind är hela /pro-trädets
+  // robots-källa (index först när B2B är PÅ).
   robots: b2bAktiv() ? { index: true, follow: true } : { index: false, follow: false },
 };
 

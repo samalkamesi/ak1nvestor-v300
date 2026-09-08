@@ -44,11 +44,14 @@
 
 import { cache } from "react";
 import type { Metadata } from "next";
+import { existsSync } from "fs";
+import { join } from "path";
 import type { BlogPost } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { mosSpegelKartaUrRader, type MosEventLasRad } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
 import { INDEX_TRASKEL } from "@/lib/kurs-speglar";
+import { OG_BREDD, OG_HOJD } from "@/lib/seo";
 
 // ── Konvention: nyckelbyggare (EN punkt när nycklarna ändras) ────────────────
 
@@ -301,6 +304,21 @@ export function byggBloggSpegel(post: BlogPost, lager: Map<string, string>): Blo
 // ── Metadata: per språk, hreflang mot originalet, noindex under tröskeln ─────
 
 /**
+ * Spegelns OG-bild (V86 P1 #3): ÅTERANVÄNDER svenska originalets genererade
+ * per-slug-bild (ogBildForPath-mönstret i seo.tsx — /og/blogg/{slug}.png,
+ * 1200×630) istället för att peka spegeln på ingen bild alls (110 bloggspegel-
+ * URLer saknade og:image → summary_large_image utan förhandsvisning).
+ * Vakt: 8 av 55 poster saknar idag per-slug-fil (og-genereringen ej omkörd
+ * sedan de publicerades) — de faller tillbaka på översiktsbilden /og/blogg.png
+ * så att INGEN spegel någonsin bär en og:image som 404:ar (V86 P1 #2-klassen).
+ */
+function spegelOgBild(slug: string, alt: string) {
+  const perSlug = `/og/blogg/${slug}.png`;
+  const finns = existsSync(join(process.cwd(), "public", "og", "blogg", `${slug}.png`));
+  return [{ url: finns ? perSlug : "/og/blogg.png", width: OG_BREDD, height: OG_HOJD, alt }];
+}
+
+/**
  * Metadata för bloggspegeln. Under INDEX_TRASKEL % publicerat:
  *   robots noindex,follow + canonical → SVENSKA originalet /blogg/{slug}
  *   (halvfärdiga speglar konkurrerar aldrig med originalet i söket).
@@ -325,6 +343,9 @@ export function bloggSpegelMetadata(opts: { lang: BloggSpegelSprak; spegel: Blog
       : `${post.description} مقالة معمّقة في تحليل الأسهم السويدية والمنهجية المؤسسية من AK1A Research Lab.`,
     300
   );
+  // V86 P1 #3: OG/Twitter-bild — originalets per-slug-bild delas med spegeln
+  // (fallback /og/blogg.png när per-slug-filen ännu inte genererats).
+  const ogBild = spegelOgBild(slug, clamp(titel, 100));
 
   return {
     title: titel,
@@ -365,8 +386,9 @@ export function bloggSpegelMetadata(opts: { lang: BloggSpegelSprak; spegel: Blog
       locale: lang === "ar" ? "ar_AR" : "en_US",
       alternateLocale: ["sv_SE"],
       publishedTime: post.publishedAt,
+      images: ogBild,
     },
-    twitter: { card: "summary_large_image", title: titel, description: beskrivning },
+    twitter: { card: "summary_large_image", title: titel, description: beskrivning, images: ogBild },
   };
 }
 

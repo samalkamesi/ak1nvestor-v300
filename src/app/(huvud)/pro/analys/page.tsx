@@ -4,25 +4,30 @@ import Link from "next/link";
 import { lasKorstabellGrund } from "@/lib/portfolj-forskning/korstabell-data";
 import { ProScreening } from "@/components/ak1a/pro/pro-screening";
 import { CsvImport } from "@/components/ak1a/pro/csv-import";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = {
-  title: "Analys — screening av 100 bolag | AK1A PRO",
-  description:
-    "Screena korstabellens 100 mätta bolag på status, bransch, AKM2, täckning och peer — namngivna screeningar, sortering, CSV-export med svenska decimaler och portfölj-CSV-import (instrument och vikter — aldrig personuppgifter). Pedagogisk analys — inte investeringsråd.",
-  keywords: [
-    "AK1A PRO",
-    "screening",
-    "aktiescreener",
-    "AKM2",
-    "peer-percentil",
-    "datatäckning",
-    "CSV-export",
-    "portfölj CSV-import",
-  ],
-  robots: { index: true, follow: true },
-};
+// V86 P1 (audit 5.3-förebyggande) + B2B-residual 2+3: ingen egen robots —
+// layoutens b2bAktiv()-grind (noindex i AV-läge) gäller hela /pro-trädet.
+// Metadata endast när B2B är PÅ; AV-läge ärar layoutens neutrala titel.
+export const metadata: Metadata = b2bAktiv()
+  ? {
+      title: "Analys — screening av 100 bolag | AK1A PRO",
+      description:
+        "Screena korstabellens 100 mätta bolag på status, bransch, AKM2, täckning och peer — namngivna screeningar, sortering, CSV-export med svenska decimaler och portfölj-CSV-import (instrument och vikter — aldrig personuppgifter). Pedagogisk analys — inte investeringsråd.",
+      keywords: [
+        "AK1A PRO",
+        "screening",
+        "aktiescreener",
+        "AKM2",
+        "peer-percentil",
+        "datatäckning",
+        "CSV-export",
+        "portfölj CSV-import",
+      ],
+    }
+  : {};
 
 /**
  * /pro/analys — SCREENINGEN (B2B-BESLUT §4b + §7 steg 3, våg 61 bygg-3).
@@ -47,6 +52,11 @@ export const metadata: Metadata = {
  * ../layout.tsx (bygg-1).
  */
 export default function ProAnalysPage() {
+  // V86 B2B-residual 4: sidan renderas för RSC-flight-payloaden även när
+  // layoutens grind inte renderar {children} — early-return i AV-läge före
+  // lasKorstabellGrund() håller cockpit-markupen ur payloaden.
+  if (!b2bAktiv()) return null;
+
   const { finns, rader, skapad } = lasKorstabellGrund();
 
   return (

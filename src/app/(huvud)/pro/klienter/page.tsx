@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import { lasDemoklient } from "@/components/ak1a/pro/demoklient-data";
 import { Klientvy, KlientvyTom } from "@/components/ak1a/pro/klientvy";
+import { b2bAktiv } from "@/lib/b2b-status";
 
 export const dynamic = "force-static";
 
-export const metadata: Metadata = {
-  title: "Klienter — AK1A PRO",
-  description:
-    "Klientvyn i AK1A PRO: portföljöversikt, AKM2-radar, vågrader per horisont och mötespaketet — ETT utskriftbart A4 inför klientmötet. Pedagogisk analys — inte investeringsråd.",
-  robots: { index: true, follow: true },
-};
+// V86 P1 + B2B-residual 2+3: ingen egen robots — layoutens b2bAktiv()-grind
+// (noindex i AV-läge) gäller. Metadata endast när B2B är PÅ.
+export const metadata: Metadata = b2bAktiv()
+  ? {
+      title: "Klienter — AK1A PRO",
+      description:
+        "Klientvyn i AK1A PRO: portföljöversikt, AKM2-radar, vågrader per horisont och mötespaketet — ETT utskriftbart A4 inför klientmötet. Pedagogisk analys — inte investeringsråd.",
+    }
+  : {};
 
 /**
  * /pro/klienter — KLIENTVYN PÅ DEMOKLIENTEN (VÅG 61 bygg-4, BESLUT §4c).
@@ -30,6 +34,10 @@ export const metadata: Metadata = {
  * Skalet ägs av ../layout.tsx (ProShell) — INTE SeoPageShell.
  */
 export default function ProKlienterPage() {
+  // V86 B2B-residual 4: early-return i AV-läge före lasDemoklient() — sidan
+  // serialiseras i RSC-flight-payloaden även utan renderade {children}.
+  if (!b2bAktiv()) return null;
+
   const demoklient = lasDemoklient();
 
   return (

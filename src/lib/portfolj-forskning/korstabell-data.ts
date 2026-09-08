@@ -5,6 +5,9 @@
  *  - data/portfolj-system/korstabell-grund.json  (P6 levererar; saknas än så
  *    länge → lasKorstabellGrund returnerar finns: false — motorn gissar aldrig)
  *  - data/portfolj-system/priser.json            (prenumerationsnivåer)
+ *  - data/cache/akm2-{TICKER}.json               (AKM2-resultat, våg 57 D2 —
+ *    lasAkm2ResultatMedFallback läser filen först och faller ENDAST när den
+ *    saknas/är ogiltig tillbaka på Supabase-snapshots, våg 86)
  *
  * Normalisering: P6:s fil kan komma med camelCase (typkontraktet) eller
  * snake_case-nycklar samt vågklasser med å/ä ("impulsvåg") — allt mappas
@@ -14,6 +17,8 @@
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { arAkm2Resultat, akm2CacheFilnamn, lasAkm2Snapshot } from "../akm2-snapshot-lagring";
+import type { AKM2Resultat } from "../akm2/typer";
 import { raknaPeer, type RaknaPeerOptioner } from "./peer";
 import type { Bransch, Dynamik, Horisont, KorstabbellRad, VagKlass } from "./typer";
 
@@ -232,6 +237,63 @@ export function lasKorstabellGrund(): KorstabellUnderlag {
     return { finns: true, rader: berikaMedPeer(rader, skapad), skapad };
   } catch {
     return { finns: false, rader: [], skapad: null };
+  }
+}
+
+// ── AKM2-resultat: fil → Supabase (VÅG 86 — serverfallet) ────────────────────
+
+/**
+ * AKM2-resultat med fallback-kedja (våg 86, AKM2-snapshot-persistensen):
+ *
+ *   1) data/cache/akm2-{TICKER}.json (våg 57 D2) — FILEN VINNER ALLTID när den
+ *      finns OCH bär ett giltigt resultat (dev är sanningen; Supabase kan
+ *      ALDRIG bli bättre än filen),
+ *   2) ENDAST när filen saknas/är tom/ogiltig: Supabase-snapshot (system_
+ *      events type=akm2_snapshot via akm2-snapshot-lagring.ts — serverfallet:
+ *      Vercel-fs är read-only och filerna delas inte mellan enheter).
+ *
+ * KÄRNAN src/lib/akm2/** är ORÖRD — detta är ett rent LÄSLAGER ovanpå
+ * cachefilerna. Nästa-build är nätverks-hermetiskt (lasAkm2Snapshot:s våg 79-
+ * vakt): bygget läser enbart filerna, ISR-revalidation läser live. Ogiltig
+ * cache hos BÅDA lederna lämnar tickern utanför kartan (aldrig gissat).
+ *
+ * @returns karta TICKER (äkt form, t.ex. "ABB.ST") → helt AKM2Resultat.
+ */
+export async function lasAkm2ResultatMedFallback(
+  tickers: readonly string[],
+): Promise<Record<string, AKM2Resultat>> {
+  const ut: Record<string, AKM2Resultat> = {};
+  const saknade: string[] = [];
+  for (const ticker of tickers) {
+    if (typeof ticker !== "string" || ticker.trim() === "") continue;
+    // (1) filen först — den vinner alltid när den finns och är giltig.
+    const fil = akm2CacheFilnamn(ticker);
+    const franFil = fil === null ? null : lasAkm2ResultatUrFil(fil);
+    if (franFil !== null) ut[ticker] = franFil;
+    else saknade.push(ticker); // fil saknas/tom/ogiltig — serverfallet
+  }
+  // (2) Supabase ENDAST för tickers utan giltig fil — ETT gemensamt läs (modul-
+  //     cache 10 min i akm2-snapshot-lagring), aldrig ett anrop per ticker.
+  if (saknade.length > 0) {
+    const karta = await lasAkm2Snapshot();
+    for (const ticker of saknade) {
+      const snap = karta.get(ticker);
+      if (snap) ut[ticker] = snap.resultat; // formguardad vid tolkningen
+    }
+  }
+  return ut;
+}
+
+/** Läs ett AKM2Resultat ur D2:s cachefil — null när den saknas/är tom/ogiltig
+ *  (formguard: arAkm2Resultat ur akm2-snapshot-lagring — EN källa, alla köpare). */
+function lasAkm2ResultatUrFil(filnamn: string): AKM2Resultat | null {
+  const vag = join(process.cwd(), "data", "cache", `akm2-${filnamn}.json`);
+  if (!existsSync(vag)) return null;
+  try {
+    const c = JSON.parse(readFileSync(vag, "utf8")) as { resultat?: unknown };
+    return arAkm2Resultat(c?.resultat) ? c.resultat : null;
+  } catch {
+    return null; // tom/ogiltig JSON — ärlighetsprincipen gäller läsning också
   }
 }
 

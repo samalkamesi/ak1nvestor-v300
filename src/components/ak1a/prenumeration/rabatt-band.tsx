@@ -21,6 +21,7 @@ import {
   type PrenumerationNiva,
   type RabattFasInfo,
 } from "@/lib/prenumeration";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 export function RabattBand({
   rabattFas,
@@ -30,7 +31,11 @@ export function RabattBand({
   /** Lägsta nivån ur priser.json — visas som konkret exempel. */
   exempelNiva: PrenumerationNiva;
 }) {
+  const { t, sprak } = useSprak();
   const { hydrerad, fasStatus, harRabatt, rabatt, rabattProcent } = useFasRabatt(rabattFas);
+
+  // Speglarna har egna ansöknings-sidor (prenumLank-mönstret i prenum-cta).
+  const fas2Lank = sprak === "en" || sprak === "ar" ? `/${sprak}/fas2-ansok` : "/fas2-ansok";
 
   // Elev → den kännda rabatten; icke-elev → Fas 2-rabatten i pitcken (lägsta tröskeln).
   const exempelRabatt = harRabatt ? rabatt : rabattFas.fas2;
@@ -46,25 +51,25 @@ export function RabattBand({
           <div>
             <p className="font-serif text-lg font-bold text-[#E8C766]">
               {hydrerad && harRabatt
-                ? `Din Fas ${fasStatus === "fas3" ? "3" : "2"}-status är kännd — ${rabattProcent} % rabatt för alltid`
-                : `Fas 2- eller Fas 3-elev? ${Math.round(rabattFas.fas2 * 100)} % rabatt för alltid`}
+                ? t("prenum.rabattElev", { fas: fasStatus === "fas3" ? "3" : "2", procent: rabattProcent })
+                : t("prenum.rabattFraga", { procent: Math.round(rabattFas.fas2 * 100) })}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/85">
               {hydrerad && harRabatt ? (
                 <>
-                  Din status känns igen automatiskt — du behöver aldrig bevis eller
-                  kupongkoder. Exempel: {exempelNiva.namn}{" "}
+                  {t("prenum.rabattElevTextA")}
+                  {exempelNiva.namn}{" "}
                   <span className="line-through">{formateraKr(exempelNiva.prisManad)}</span>{" "}
-                  <strong className="text-[#E8C766]">{formateraKr(exempelRabatterat)}</strong>/mån,
-                  alla nivåer, både månads- och årspris.
+                  <strong className="text-[#E8C766]">{formateraKr(exempelRabatterat)}</strong>
+                  {t("prenum.rabattElevTextB")}
                 </>
               ) : (
                 <>
-                  Din status känns igen automatiskt — inga kupongkoder. Exempel:{" "}
-                  {exempelNiva.namn} <span className="line-through">{formateraKr(exempelNiva.prisManad)}</span>{" "}
-                  <strong className="text-[#E8C766]">{formateraKr(exempelRabatterat)}</strong>/mån.
-                  Prenumerationen är öppen för alla — utbildningseleverna får den bara
-                  lite billigare, för alltid.
+                  {t("prenum.rabattEjTextA")}
+                  {exempelNiva.namn}{" "}
+                  <span className="line-through">{formateraKr(exempelNiva.prisManad)}</span>{" "}
+                  <strong className="text-[#E8C766]">{formateraKr(exempelRabatterat)}</strong>
+                  {t("prenum.rabattEjTextB")}
                 </>
               )}
             </p>
@@ -73,10 +78,10 @@ export function RabattBand({
 
         {!(hydrerad && harRabatt) && (
           <Link
-            href="/fas2-ansok"
+            href={fas2Lank}
             className="shrink-0 rounded-md border border-[#E8C766] px-4 py-2.5 text-center text-sm font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/15"
           >
-            Ansök om Fas 2 →
+            {t("prenum.ansokFas2")}
           </Link>
         )}
       </div>

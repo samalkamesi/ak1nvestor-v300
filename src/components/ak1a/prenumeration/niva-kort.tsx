@@ -21,6 +21,7 @@ import {
   type PrenumerationNiva,
   type RabattFasInfo,
 } from "@/lib/prenumeration";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 export function NivaKort({
   niva,
@@ -35,6 +36,7 @@ export function NivaKort({
   /** Mitt-kortet ("Mest valda") — guldkant och skugga. */
   markerad?: boolean;
 }) {
+  const { t, tText } = useSprak();
   const { hydrerad, fasStatus, harRabatt, rabatt, rabattProcent } = useFasRabatt(rabattFas);
 
   const manad = rabatteratPris(niva.prisManad, rabatt);
@@ -60,7 +62,7 @@ export function NivaKort({
     >
       {markerad && (
         <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground shadow">
-          Mest valda
+          {t("prenum.mestValda")}
         </span>
       )}
 
@@ -76,17 +78,20 @@ export function NivaKort({
             <span className="font-serif text-4xl font-black text-gold">
               {formateraKr(manad)}
             </span>
-            <span className="text-sm text-muted-foreground">/mån</span>
+            <span className="text-sm text-muted-foreground">{t("prenum.perManad")}</span>
           </div>
         ) : (
           <div className="flex flex-wrap items-baseline gap-x-2">
             <span className="font-serif text-4xl font-black">{formateraKr(niva.prisManad)}</span>
-            <span className="text-sm text-muted-foreground">/mån</span>
+            <span className="text-sm text-muted-foreground">{t("prenum.perManad")}</span>
           </div>
         )}
         {hydrerad && harRabatt && (
           <span className="mt-1.5 inline-block rounded-full border border-bull/40 bg-bull/10 px-2.5 py-0.5 text-[11px] font-semibold text-bull">
-            Fas {fasStatus === "fas3" ? "3" : "2"}-rabatt −{rabattProcent} % — känns igen automatiskt
+            {t("prenum.fasRabattChip", {
+              fas: fasStatus === "fas3" ? "3" : "2",
+              procent: rabattProcent,
+            })}
           </span>
         )}
 
@@ -98,17 +103,22 @@ export function NivaKort({
           <span className={harRabatt ? "font-semibold text-foreground" : "text-foreground"}>
             {formateraKr(ar)}
           </span>
-          <span>/år</span>
+          <span>{t("prenum.perAr")}</span>
           {gratisManader !== null && (
             <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[11px] font-semibold text-gold">
-              {gratisManader} {gratisManader === 1 ? "månad" : "månader"} gratis
+              {gratisManader === 1
+                ? t("prenum.manader1")
+                : gratisManader === 2
+                  ? t("prenum.manader2")
+                  : t("prenum.manaderFlera", { n: gratisManader })}
             </span>
           )}
         </div>
       </div>
 
-      {/* Beskrivning ur priser.json */}
-      <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{niva.beskrivning}</p>
+      {/* Beskrivning ur priser.json — tText-exaktmatch mot ordlistan (V86):
+          svensk data ordagrant på /prenumeration, översatt på speglarna. */}
+      <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{tText(niva.beskrivning)}</p>
 
       {/* Vad som ingår */}
       <ul className="mt-4 flex-1 space-y-2 text-sm">
@@ -131,7 +141,7 @@ export function NivaKort({
             : "border border-gold/50 text-foreground hover:bg-gold/10"
         }`}
       >
-        Aktivera den här nivån →
+        {t("prenum.aktiveraNiva")}
       </button>
     </article>
   );

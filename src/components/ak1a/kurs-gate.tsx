@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { lasMedlem, lasXP, lasStjarnor, lasKlaraKurser, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
 import { SIFFROR } from "@/lib/siffror";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
  * Kursportall — kapitel 1–2 är smakprov för alla (SEO + lockbete);
  * kapitel 3+ kräver GRATIS medlemskap. Inloggad: allt + XP/stjärnor.
+ * V86: porten + nivåbaren via useSprak().t — på speglarna (våg 81) rätt
+ * språk från första hydreringspasset; inloggningslänken följer spegeln.
  */
 export function KursGate({
   slug,
@@ -18,6 +21,7 @@ export function KursGate({
   titel: string;
   children: React.ReactNode;
 }) {
+  const { t, sprak } = useSprak();
   const [medlem, setMedlem] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -27,6 +31,12 @@ export function KursGate({
   if (medlem === null) return <>{children}</>; //SSR/first paint
 
   if (medlem) return <>{children}</>;
+
+  // Speglarna: inloggning + retur-kurs på spegelns egna sökvägar.
+  const inloggning =
+    sprak === "en" || sprak === "ar"
+      ? `/${sprak}/logga-in?next=${encodeURIComponent(`/${sprak}/kurser/${slug}`)}`
+      : `/logga-in?next=${encodeURIComponent(`/kurser/${slug}`)}`;
 
   return (
     <div className="relative">
@@ -40,23 +50,24 @@ export function KursGate({
         <div className="max-w-md rounded-2xl border-2 border-gold bg-paper p-8 text-center shadow-xl">
           <p className="text-3xl">🔒</p>
           <h3 className="mt-3 font-serif text-2xl font-bold">
-            Fortsätt läsa — helt gratis
+            {t("gate.fortsattGratis")}
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Skapa ett kostnadsfritt konto så låser du upp <strong>hela "{titel}"</strong> —
-            och alla övriga {SIFFROR.kurser} kurserna, för alltid. Fundamentalanalys är en rättighet.
+            {t("gate.skapaA")}
+            <strong>{t("gate.helaTitel", { titel })}</strong>
+            {t("gate.skapaB", { kurser: SIFFROR.kurser })}
           </p>
           {/* Return-URL (VÅG 63 O2 #1): eleven landar tillbaka i DENNA kurs
               efter inloggningen — inte på ett generellt "Du är inloggad"-kort
               som kräver 3 extra steg för att hitta tillbaka. */}
           <Link
-            href={`/logga-in?next=${encodeURIComponent(`/kurser/${slug}`)}`}
+            href={inloggning}
             className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90"
           >
-            Lås upp gratis →
+            {t("gate.lasUppGratis")}
           </Link>
           <p className="mt-3 text-[11px] text-muted-foreground">
-            20 sekunder. Ingen betalning. Ingen kortinformation.
+            {t("gate.sekunder")}
           </p>
         </div>
       </div>
@@ -66,6 +77,7 @@ export function KursGate({
 
 /** Nivåbar + stjärnor + "markera klar" — visas för inloggade på kurssidor. */
 export function NivaBar({ slug }: { slug: string }) {
+  const { t, sprak } = useSprak();
   const [xp, setXP] = useState<number | null>(null);
   const [stjarnor, setStjarnor] = useState(0);
   const [klar, setKlar] = useState(false);
@@ -84,12 +96,13 @@ export function NivaBar({ slug }: { slug: string }) {
   const niv = nivaFranXP(xp);
   const iNivan = xp % 100;
   const procent = Math.min(100, iNivan);
+  const medlemskapLank = sprak === "en" || sprak === "ar" ? `/${sprak}/medlemskap#fas2` : "/medlemskap#fas2";
 
   return (
     <div className="rounded-xl border border-gold/30 bg-card p-4">
       <div className="flex items-center justify-between text-xs">
         <span className="font-bold text-gold">
-          ⭐ Nivå {niv}/100 · {"★".repeat(Math.min(5, Math.floor(stjarnor / 3) + (stjarnor > 0 ? 1 : 0)))} ({stjarnor} stjärnor)
+          ⭐ {t("kurs.niva")} {niv}/100 · {"★".repeat(Math.min(5, Math.floor(stjarnor / 3) + (stjarnor > 0 ? 1 : 0)))} ({stjarnor} {t("nivabar.stjarnor")})
         </span>
         <span className="text-muted-foreground">{xp} XP</span>
       </div>
@@ -98,9 +111,9 @@ export function NivaBar({ slug }: { slug: string }) {
       </div>
       {niv >= 25 && (
         <p className="mt-2 text-xs font-semibold text-gold">
-          🚀 Nivå {niv} — du är redo för Fas 2: utbildning medgrundaren →{" "}
-          <Link href="/medlemskap#fas2" className="underline">
-            ansök
+          🚀 {t("nivabar.redoFas2", { niv })}{" "}
+          <Link href={medlemskapLank} className="underline">
+            {t("nivabar.ansok")}
           </Link>
         </p>
       )}
@@ -112,7 +125,7 @@ export function NivaBar({ slug }: { slug: string }) {
             setXP(lasXP());
             setStjarnor(lasStjarnor());
             setKlar(true);
-            if (niv % 10 === 0) alert(`Grattis — du nådde nivå ${niv}! 🎉`);
+            if (niv % 10 === 0) alert(t("nivabar.grattisNiva", { niv }));
           } else {
             setKlar(true);
           }
@@ -120,7 +133,7 @@ export function NivaBar({ slug }: { slug: string }) {
         disabled={klar}
         className="mt-3 w-full rounded-lg border border-gold/40 px-4 py-2 text-xs font-bold text-gold hover:bg-gold/10 disabled:opacity-50"
       >
-        {klar ? "✓ Kurs klar — belöningen är utdelad" : "Markera kursen klar (+50 XP, +1 ★)"}
+        {klar ? t("nivabar.klarRedan") : t("nivabar.markeraKlar")}
       </button>
     </div>
   );

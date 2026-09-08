@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
  * KURSSÖ — Bibliotekshallens hjärta (våg 58).
@@ -89,6 +90,9 @@ function hamtaKursDetalj(slug: string): Promise<KursDetalj | null> {
  * quiz-antalet hämtas lazigt (se kursDetaljCache ovan) när kortet är på väg
  * in i viewport (400 px marginal, så texten oftast är på plats före exponeringen).
  * Skeleton reserverar cirka learn-radens höjd medan texten är på väg.
+ * V86: all kort-krom (Fas-märken, metadata-rader, låsnotis) via useSprak().t
+ * — svenska originalet oförändrat (sv-raden är den tidigare texten ordagrant),
+ * speglarna får spegelns språk via SpegelSprakLeverantor (våg 81).
  */
 function RegisterKort({
   c,
@@ -101,6 +105,7 @@ function RegisterKort({
   fas: number;
   last: boolean;
 }) {
+  const { t } = useSprak();
   const [detalj, setDetalj] = useState<KursDetalj | null>(null);
   const [misslyckades, setMisslyckades] = useState(false);
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -142,7 +147,7 @@ function RegisterKort({
     <li>
       <Link
         href={last ? `${lankPrefix}${fas === 3 ? "/fas3" : "/fas2-ansok"}` : `${lankPrefix}/kurser/${c.slug}`}
-        title={last ? `Fas ${fas}-kurs — öppnas med Fas ${fas}-medlemskap` : undefined}
+        title={last ? t("ksok.fasKursTitel", { fas }) : undefined}
         className={`block rounded-lg border p-4 transition-all md:flex md:items-center md:gap-3 md:px-3 md:py-2.5 ${
           last
             ? "border-gold/40 bg-gold/[0.04] hover:border-gold/60 hover:shadow-lg"
@@ -164,14 +169,15 @@ function RegisterKort({
                       : "bg-gold/15 text-gold"
                 }`}
               >
-                {last ? `🔒 Fas ${fas}` : `Fas ${fas}`}
+                {last ? t("ksok.fasLas", { fas }) : t("ksok.fasKort", { fas })}
               </span>
             )}
           </span>
           {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen (mobil) */}
           <span className="mt-1 block text-xs tabular-nums text-muted-foreground md:hidden">
-            {c.kapitel} kapitel · {c.minuter} min · {detalj ? `${detalj.quiz} quiz · ` : ""}
-            {c.xp} XP
+            {t("ksok.kortMeta", { kapitel: c.kapitel, minuter: c.minuter })}
+            {detalj ? t("ksok.kortQuiz", { quiz: detalj.quiz }) : ""}
+            {t("ksok.kortXp", { xp: c.xp })}
           </span>
           <span
             ref={textRef}
@@ -191,7 +197,7 @@ function RegisterKort({
                 fas === 3 ? "koppar-text" : "text-gold"
               }`}
             >
-              Öppnas i Fas {fas} — ansök för att komma vidare →
+              {t("ksok.lasNotice", { fas })}
             </span>
           )}
         </span>
@@ -201,7 +207,7 @@ function RegisterKort({
             {c.category}
           </span>
           <span className="whitespace-nowrap text-[11px] tabular-nums text-muted-foreground">
-            {c.kapitel} kap · {c.minuter} min · {c.xp} XP
+            {t("ksok.radMeta", { kapitel: c.kapitel, minuter: c.minuter, xp: c.xp })}
           </span>
         </span>
       </Link>
@@ -231,6 +237,7 @@ export function KursSok({
   /** Sidopanel (FortsattPanel) bredvid registret på lg+ — endast /kurser. */
   sidopanel?: React.ReactNode;
 }) {
+  const { t } = useSprak();
   const [sok, setSok] = useState("");
   const [kat, setKat] = useState("alla");
   const [sida, setSida] = useState(1);
@@ -332,13 +339,13 @@ export function KursSok({
   const filterAktivt = kat !== "alla" || sok.trim() !== "";
 
   const register = (
-    <section ref={registerRef} id="registret" aria-label="Kursregistret" className="scroll-mt-24">
+    <section ref={registerRef} id="registret" aria-label={t("ksok.ariaRegister")} className="scroll-mt-24">
       {/* Registerverktyg — sticky medan registret bläddras */}
       <div className="sticky top-14 z-20 -mx-1 mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-gold/20 bg-background/95 px-1 py-3 backdrop-blur-md">
         <h2 className="font-serif text-2xl font-bold">
-          Registret
+          {t("ksok.register")}
           <span className="ml-2 align-middle text-sm font-normal tabular-nums text-muted-foreground">
-            {filterAktivt ? `${sorterade.length} träffar` : `hela biblioteket`}
+            {filterAktivt ? t("ksok.traffar", { antal: sorterade.length }) : t("ksok.helaBiblioteket")}
           </span>
         </h2>
         {filterAktivt && (
@@ -352,11 +359,11 @@ export function KursSok({
           >
             {kat !== "alla" ? `${kat} · ` : ""}
             {sok.trim() ? `"${sok.trim()}" · ` : ""}
-            Rensa filter ✕
+            {t("ksok.rensaFilter")}
           </button>
         )}
         <label className="ml-auto flex items-center gap-2 text-[11px] font-semibold text-muted-foreground">
-          Sortera
+          {t("ksok.sortera")}
           <select
             value={sortering}
             onChange={(e) => {
@@ -364,11 +371,11 @@ export function KursSok({
               setSida(1);
             }}
             className="rounded-lg border border-gold/30 bg-card px-2 py-1.5 text-[11px] font-semibold text-foreground outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30"
-            aria-label="Sortera kurserna"
+            aria-label={t("ksok.sorteraAria")}
           >
-            <option value="rekommenderad">Rekommenderad</option>
-            <option value="ao">Titel A–Ö</option>
-            <option value="kapitel">Fler kapitel först</option>
+            <option value="rekommenderad">{t("ksok.sortRekommenderad")}</option>
+            <option value="ao">{t("ksok.sortAo")}</option>
+            <option value="kapitel">{t("ksok.sortKapitel")}</option>
           </select>
         </label>
       </div>
@@ -376,27 +383,22 @@ export function KursSok({
       {/* Lägesrad — läsaren ser alltid var i registret hen står (NN/g regel 3) */}
       <p className="mb-4 text-xs tabular-nums text-muted-foreground" aria-live="polite">
         {sorterade.length > 0
-          ? `Visar ${fran}–${till} av ${sorterade.length} kurser`
-          : "Inga kurser att visa"}
-        {antalSidor > 1 && ` · sida ${aktuellSida} av ${antalSidor}`}
+          ? t("ksok.visarAv", { fran, till, total: sorterade.length })
+          : t("ksok.ingaAttVisa")}
+        {antalSidor > 1 && ` · ${t("ksok.sidaAv", { sida: aktuellSida, sidor: antalSidor })}`}
       </p>
 
       {/* Vad är Fas 2 och Fas 3? — info-rad som förklarar lås-markeringen (inbjudan, aldrig stopp) */}
       {fasSynliga && (
         <p className="mb-6 flex flex-wrap items-center gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
           <span aria-hidden>🔒</span>
-          <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
-          <span>
-            Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18
-            mästarverks-kurser; ingen teknisk analys-utbildning). Fas 3 — det
-            dynamiska ekosystemet: vågor, teknisk analys på mästarnivå och
-            psykologi (24 kurser). Öppnas med medlemskap.
-          </span>
+          <span className="font-bold text-gold">{t("ksok.fasFraga")}</span>
+          <span>{t("ksok.fasInfo")}</span>
           <Link href={`${lankPrefix}/fas2-ansok`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
-            Fas 2 →
+            {t("ksok.fas2Lank")}
           </Link>
           <Link href={`${lankPrefix}/fas3`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
-            Fas 3 →
+            {t("ksok.fas3Lank")}
           </Link>
         </p>
       )}
@@ -417,20 +419,20 @@ export function KursSok({
       </ul>
       {sorterade.length === 0 && (
         <p className="rounded-xl border border-gold/20 bg-card p-8 text-center text-sm text-muted-foreground">
-          Inga kurser matchade — prova ett annat sökord.
+          {t("ksok.ingaMatchade")}
         </p>
       )}
 
       {/* Sidväljare — numrerad paginering (NN/g: förutsägbar position för
           katalogsökning; back-knappen och fotnoten når alltid fram) */}
       {antalSidor > 1 && (
-        <nav aria-label="Sidnavigering" className="mt-8 flex flex-wrap items-center justify-center gap-1.5">
+        <nav aria-label={t("ksok.sidnavigering")} className="mt-8 flex flex-wrap items-center justify-center gap-1.5">
           <button
             onClick={() => setSida(Math.max(1, aktuellSida - 1))}
             disabled={aktuellSida === 1}
             className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
           >
-            ← Föregående
+            {t("ksok.foregaendeKnapp")}
           </button>
           {sidLista.map((p, i) =>
             p === "…" ? (
@@ -457,7 +459,7 @@ export function KursSok({
             disabled={aktuellSida === antalSidor}
             className="rounded-lg border border-gold/30 px-3 py-1.5 text-[11px] font-bold text-muted-foreground transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
           >
-            Nästa →
+            {t("ksok.nastaKnapp")}
           </button>
         </nav>
       )}
@@ -467,7 +469,7 @@ export function KursSok({
   return (
     <div>
       {/* (1) HERO-SÖK — stort och centralt: bibliotekshallens entré (våg 58) */}
-      <section aria-label="Sök i kursbiblioteket" className="mt-8">
+      <section aria-label={t("ksok.heroAria")} className="mt-8">
         <div className="mx-auto max-w-2xl">
           <div className="relative">
             <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gold/70" aria-hidden>
@@ -479,13 +481,13 @@ export function KursSok({
                 setSok(e.target.value);
                 setSida(1);
               }}
-              placeholder={`Sök bland ${kurser.length} kurser — titel eller ämne…`}
+              placeholder={t("ksok.sokPlats", { antal: kurser.length })}
               className="w-full rounded-2xl border border-gold/40 bg-card py-4 pl-12 pr-4 text-base outline-none transition-colors focus:border-[#0E1B2E] focus:ring-2 focus:ring-[#0E1B2E]/20 dark:focus:border-gold-soft dark:focus:ring-gold-soft/20"
-              aria-label="Sök kurser"
+              aria-label={t("ksok.sokAria")}
             />
           </div>
           <p className="mt-2 text-center text-[11px] tabular-nums text-muted-foreground">
-            {kurser.length} kurser · {kategorier.length} kategorier — hela biblioteket, sökt på sekunder
+            {t("ksok.sokStat", { kurser: kurser.length, kategorier: kategorier.length })}
           </p>
           {/* Kategorichips — snabbfilter direkt i heron */}
           <div className="mt-4 flex flex-wrap justify-center gap-2">
@@ -497,7 +499,7 @@ export function KursSok({
                   : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
               }`}
             >
-              Alla ({kurser.length})
+              {t("ksok.alla", { antal: kurser.length })}
             </button>
             {kategorier.slice(0, 8).map(([k, n]) => (
               <button
@@ -531,15 +533,15 @@ export function KursSok({
 
       {/* KATEGORIVÄGGEN — hela biblioteket i glimten: varje kategori med
           räknare; klick sätter filtret och scrollar till registret */}
-      <section aria-label="Alla kategorier" className="mt-12 rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
+      <section aria-label={t("ksok.allaKategorierAria")} className="mt-12 rounded-2xl border border-gold/20 bg-card p-5 sm:p-6">
         <h2 className="font-serif text-2xl font-bold">
-          Kategoriväggen
+          {t("ksok.kategorivagg")}
           <span className="ml-2 text-sm font-normal tabular-nums text-muted-foreground">
-            {kategorier.length} kategorier · {kurser.length} kurser
+            {t("ksok.kategorivaggStat", { kategorier: kategorier.length, kurser: kurser.length })}
           </span>
         </h2>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-          Hela biblioteket på en vägg — välj en kategori så filtreras registret ovan.
+          {t("ksok.kategorivaggText")}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {kategorier.map(([k, n]) => (

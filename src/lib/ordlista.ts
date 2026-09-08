@@ -1063,6 +1063,592 @@ export const ORDLISTA = {
   },
   "kategori.risk": { sv: "RISK", en: "Risk", ar: "المخاطر" },
   "kategori.kapitalstruktur": { sv: "KAPITALSTRUKTUR", en: "Capital Structure", ar: "هيكل رأس المال" },
+
+  // ── V86 (2026-09-07): totalrensning av svensk krom-läcka på speglarna ────
+  // P0-kundrapporten: kurs-sökets register/kort/paginering, prenumerationens
+  // nivå-kort/rabattband/aktiveringspanel och Fas3Cert renderade hårdkodad
+  // svenska på /en|/ar. Alla dessa är DELADE klientkomponenter (även svenska
+  // originalet) — sv-raden ÄR den tidigare hårdkodade texten ordagrant, så
+  // (huvud)-sidorna är oförändrade. Språket löses med useSprak() — på
+  // speglarna ger SpegelSprakLeverantor (våg 81) spegelns språk från SSR.
+  // AR: modern standardarabiska, korrekt finansiell terminologi, bestämda
+  // former; pilar speglade (→ blir ←); inga translitterationer.
+
+  // Kurs-söket (kurs-sok.tsx) — registret, korten, pagineringen, väggen
+  "ksok.ariaRegister": { sv: "Kursregistret", en: "The course register", ar: "سجل الدورات" },
+  "ksok.register": { sv: "Registret", en: "The Register", ar: "السجل" },
+  "ksok.helaBiblioteket": { sv: "hela biblioteket", en: "the entire library", ar: "المكتبة كاملة" },
+  "ksok.traffar": { sv: "{antal} träffar", en: "{antal} matches", ar: "النتائج: {antal}" },
+  "ksok.rensaFilter": { sv: "Rensa filter ✕", en: "Clear filters ✕", ar: "مسح عوامل التصفية ✕" },
+  "ksok.sortera": { sv: "Sortera", en: "Sort", ar: "ترتيب" },
+  "ksok.sorteraAria": { sv: "Sortera kurserna", en: "Sort the courses", ar: "ترتيب الدورات" },
+  "ksok.sortRekommenderad": { sv: "Rekommenderad", en: "Recommended", ar: "الموصى به" },
+  "ksok.sortAo": { sv: "Titel A–Ö", en: "Title A–Z", ar: "العنوان أ–ي" },
+  "ksok.sortKapitel": { sv: "Fler kapitel först", en: "Most chapters first", ar: "الأكثر فصولًا أولًا" },
+  "ksok.visarAv": {
+    sv: "Visar {fran}–{till} av {total} kurser",
+    en: "Showing {fran}–{till} of {total} courses",
+    ar: "عرض {fran}–{till} من {total} دورة",
+  },
+  "ksok.ingaAttVisa": { sv: "Inga kurser att visa", en: "No courses to show", ar: "لا دورات لعرضها" },
+  "ksok.sidaAv": { sv: "sida {sida} av {sidor}", en: "page {sida} of {sidor}", ar: "صفحة {sida} من {sidor}" },
+  "ksok.fasFraga": {
+    sv: "Vad är Fas 2 och Fas 3?",
+    en: "What are Phase 2 and Phase 3?",
+    ar: "ما المرحلتان 2 و3؟",
+  },
+  "ksok.fasInfo": {
+    sv: "Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18 mästarverks-kurser; ingen teknisk analys-utbildning). Fas 3 — det dynamiska ekosystemet: vågor, teknisk analys på mästarnivå och psykologi (24 kurser). Öppnas med medlemskap.",
+    en: "Phase 2 — weighing the 20 indicators together into a judgment of your own (18 masterwork courses; no technical-analysis training). Phase 3 — the dynamic ecosystem: waves, technical analysis at master level and psychology (24 courses). Opened with membership.",
+    ar: "المرحلة 2 — الجمع بين المؤشرات العشرين في حكمك الخاص (18 دورة في الأعمال الفنية؛ بلا تدريب على التحليل الفني). المرحلة 3 — المنظومة الديناميكية: الموجات والتحليل الفني بمستوى الأساتذة وعلم النفس (24 دورة). تُفتح مع العضوية.",
+  },
+  "ksok.fas2Lank": { sv: "Fas 2 →", en: "Phase 2 →", ar: "المرحلة 2 ←" },
+  "ksok.fas3Lank": { sv: "Fas 3 →", en: "Phase 3 →", ar: "المرحلة 3 ←" },
+  "ksok.ingaMatchade": {
+    sv: "Inga kurser matchade — prova ett annat sökord.",
+    en: "No courses matched — try another search term.",
+    ar: "لا دورات مطابقة — جرِّب كلمة بحث أخرى.",
+  },
+  "ksok.foregaendeKnapp": { sv: "← Föregående", en: "← Previous", ar: "→ السابق" },
+  "ksok.nastaKnapp": { sv: "Nästa →", en: "Next →", ar: "التالي ←" },
+  "ksok.sidnavigering": { sv: "Sidnavigering", en: "Page navigation", ar: "تنقُّل الصفحات" },
+  "ksok.heroAria": {
+    sv: "Sök i kursbiblioteket",
+    en: "Search the course library",
+    ar: "ابحث في مكتبة الدورات",
+  },
+  "ksok.sokPlats": {
+    sv: "Sök bland {antal} kurser — titel eller ämne…",
+    en: "Search {antal} courses — title or topic…",
+    ar: "ابحث بين {antal} دورة — العنوان أو الموضوع…",
+  },
+  "ksok.sokAria": { sv: "Sök kurser", en: "Search courses", ar: "ابحث في الدورات" },
+  "ksok.sokStat": {
+    sv: "{kurser} kurser · {kategorier} kategorier — hela biblioteket, sökt på sekunder",
+    en: "{kurser} courses · {kategorier} categories — the entire library, searched in seconds",
+    ar: "{kurser} دورة · {kategorier} فئة — المكتبة كاملة، ونتائج فورية",
+  },
+  "ksok.alla": { sv: "Alla ({antal})", en: "All ({antal})", ar: "الكل ({antal})" },
+  "ksok.kategorivagg": { sv: "Kategoriväggen", en: "The Category Wall", ar: "جدار الفئات" },
+  "ksok.kategorivaggStat": {
+    sv: "{kategorier} kategorier · {kurser} kurser",
+    en: "{kategorier} categories · {kurser} courses",
+    ar: "{kategorier} فئة · {kurser} دورة",
+  },
+  "ksok.kategorivaggText": {
+    sv: "Hela biblioteket på en vägg — välj en kategori så filtreras registret ovan.",
+    en: "The entire library on one wall — choose a category to filter the register above.",
+    ar: "المكتبة كاملة على جدار واحد — اختر فئة لتصفية السجل أعلاه.",
+  },
+  "ksok.allaKategorierAria": { sv: "Alla kategorier", en: "All categories", ar: "جميع الفئات" },
+  "ksok.fasKursTitel": {
+    sv: "Fas {fas}-kurs — öppnas med Fas {fas}-medlemskap",
+    en: "Phase {fas} course — opened with Phase {fas} membership",
+    ar: "دورة المرحلة {fas} — تُفتح مع عضوية المرحلة {fas}",
+  },
+  "ksok.fasLas": { sv: "🔒 Fas {fas}", en: "🔒 Phase {fas}", ar: "🔒 المرحلة {fas}" },
+  "ksok.fasKort": { sv: "Fas {fas}", en: "Phase {fas}", ar: "المرحلة {fas}" },
+  "ksok.kortMeta": {
+    sv: "{kapitel} kapitel · {minuter} min · ",
+    en: "{kapitel} chapters · {minuter} min · ",
+    ar: "{kapitel} فصول · {minuter} د · ",
+  },
+  "ksok.kortQuiz": { sv: "{quiz} quiz · ", en: "{quiz} quiz · ", ar: "{quiz} اختبار · " },
+  "ksok.kortXp": { sv: "{xp} XP", en: "{xp} XP", ar: "{xp} XP" },
+  "ksok.radMeta": {
+    sv: "{kapitel} kap · {minuter} min · {xp} XP",
+    en: "{kapitel} ch · {minuter} min · {xp} XP",
+    ar: "{kapitel} فصول · {minuter} د · {xp} XP",
+  },
+  "ksok.lasNotice": {
+    sv: "Öppnas i Fas {fas} — ansök för att komma vidare →",
+    en: "Opens in Phase {fas} — apply to move on →",
+    ar: "تُفتح في المرحلة {fas} — قدِّم طلبك للمتابعة ←",
+  },
+
+  // Prenumerationen (niva-kort.tsx, rabatt-band.tsx, aktivera-panel.tsx)
+  "prenum.mestValda": { sv: "Mest valda", en: "Most chosen", ar: "الأكثر اختيارًا" },
+  "prenum.perManad": { sv: "/mån", en: "/mo", ar: "/شهر" },
+  "prenum.perAr": { sv: "/år", en: "/yr", ar: "/سنة" },
+  "prenum.fasRabattChip": {
+    sv: "Fas {fas}-rabatt −{procent} % — känns igen automatiskt",
+    en: "Phase {fas} discount −{procent} % — recognised automatically",
+    ar: "خصم المرحلة {fas} −{procent}٪ — يُتعرَّف عليه تلقائيًا",
+  },
+  "prenum.manader1": { sv: "1 månad gratis", en: "1 month free", ar: "شهر واحد مجانًا" },
+  "prenum.manader2": { sv: "2 månader gratis", en: "2 months free", ar: "شهران مجانًا" },
+  "prenum.manaderFlera": {
+    sv: "{n} månader gratis",
+    en: "{n} months free",
+    ar: "{n} أشهر مجانية",
+  },
+  "prenum.aktiveraNiva": {
+    sv: "Aktivera den här nivån →",
+    en: "Activate this tier →",
+    ar: "فعِّل هذا المستوى ←",
+  },
+  // Nivå-beskrivningarna ur priser.json (data) — tText-exaktmatch i NivaKort;
+  // sv-raden ÄR datavärdet ordagrant, framtida nivåer faller tillbaka på sitt
+  // eget värde (samma fallback-form som kategorierna, våg 82 D).
+  "prenum.beskrivning.forskning": {
+    sv: "Kunden väljer risknivå (konservativ, balanserad eller tillväxt) och tillväxttakt (lugn, stadig eller aggressiv) — 9 profiler sammanlagt. Månadsvis forskningsportfölj med AKM1-poäng, fundamental och teknisk vågstatus per horisont, golvmarginal samt kravkontroller per innehav. Pedagogiskt underlag utan köp- eller säljuppmaningar.",
+    en: "You choose risk level (conservative, balanced or growth) and growth pace (calm, steady or aggressive) — 9 profiles in total. A monthly research portfolio with AKM1 scores, fundamental and technical wave status per horizon, floor margin and requirement checks per holding. Educational material — no prompts to buy or sell.",
+    ar: "تختار مستوى المخاطر (متحفظًا أو متوازنًا أو نمو) ووتيرة النمو (هادئة أو ثابتة أو عدوانية) — 9 ملفات إجمالًا. محفظة بحثية شهرية بدرجات AKM1، وحالة موجات أساسية وفنية لكل أفق زمني، وهامش أرضي واختبارات متطلبات لكل حيازة. مادة تعليمية — بلا أي دعوات للشراء أو البيع.",
+  },
+  "prenum.beskrivning.forskningPlus": {
+    sv: "Grundnivån plus löpande ersättningsförslag när ett innehav brutit mot profilens strikta krav (upp till tre alternativ i samma bransch med jämförelsetext), kvartalsvis uppföljning då-vs-nu samt portföljens samlade vågmatris per horisont.",
+    en: "The Basic tier plus ongoing replacement suggestions when a holding has broken the profile's strict requirements (up to three alternatives in the same sector with comparison text), quarterly then-vs-now follow-up and the portfolio's combined wave matrix per horizon.",
+    ar: "المستوى الأساسي مع مقترحات بديلة مستمرة عندما تخرق إحدى الحيازات متطلبات الملف الصارمة (حتى ثلاثة بدائل في القطاع نفسه مع نص مقارن)، ومتابعة ربع سنوية «آنذاك مقابل الآن»، ومصفوفة الأمواج الموحدة للمحفظة لكل أفق زمني.",
+  },
+  "prenum.beskrivning.portfoljHyra": {
+    sv: "Kunden hyr den forskningsportfölj som speglar vald riskprofil: AK1A sköter omvikningar, kravkontroller och ersättningsanalys vid varje uppdatering. Forskning och utbildning — aldrig förvaltning eller investeringsrådgivning enligt lagen (2007:528).",
+    en: "You rent the research portfolio that mirrors your chosen risk profile: AK1A manages rebalancing, requirement checks and replacement analysis at every update. Research and education — never management or investment advice under the Swedish Securities Market Act (2007:528).",
+    ar: "تستأجر المحفظة البحثية التي تعكس ملف المخاطر الذي اخترته: تتولى AK1A إعادة الموازنة واختبارات المتطلبات وتحليل البدائل عند كل تحديث. بحث وتعليم — وليست أبدًا إدارة أو تقديم نصائح استثمارية وفق القانون السويدي (2007:528).",
+  },
+  "prenum.rabattElev": {
+    sv: "Din Fas {fas}-status är kännd — {procent} % rabatt för alltid",
+    en: "Your Phase {fas} status is recognised — {procent} % off forever",
+    ar: "حالتك في المرحلة {fas} مُعرَّفة — خصم {procent}٪ إلى الأبد",
+  },
+  "prenum.rabattFraga": {
+    sv: "Fas 2- eller Fas 3-elev? {procent} % rabatt för alltid",
+    en: "Phase 2 or Phase 3 student? {procent} % off forever",
+    ar: "طالب في المرحلة 2 أو 3؟ خصم {procent}٪ إلى الأبد",
+  },
+  "prenum.rabattElevTextA": {
+    sv: "Din status känns igen automatiskt — du behöver aldrig bevis eller kupongkoder. Exempel: ",
+    en: "Your status is recognised automatically — you never need proof or coupon codes. Example: ",
+    ar: "يُتعرَّف على حالتك تلقائيًا — لن تحتاج أبدًا إلى إثباتات أو أكواد خصم. مثال: ",
+  },
+  "prenum.rabattElevTextB": {
+    sv: "/mån, alla nivåer, både månads- och årspris.",
+    en: "/mo, all tiers, both monthly and annual prices.",
+    ar: "/شهر، جميع المستويات، بالسعرين الشهري والسنوي معًا.",
+  },
+  "prenum.rabattEjTextA": {
+    sv: "Din status känns igen automatiskt — inga kupongkoder. Exempel: ",
+    en: "Your status is recognised automatically — no coupon codes. Example: ",
+    ar: "يُتعرَّف على حالتك تلقائيًا — بلا أكواد خصم. مثال: ",
+  },
+  "prenum.rabattEjTextB": {
+    sv: "/mån. Prenumerationen är öppen för alla — utbildningseleverna får den bara lite billigare, för alltid.",
+    en: "/mo. The subscription is open to everyone — students of the educations simply get it a little cheaper, forever.",
+    ar: "/شهر. الاشتراك متاح للجميع — طلاب المراحل التعليمية يحصلون عليه بسعر أقل قليلًا فقط، وإلى الأبد.",
+  },
+  "prenum.ansokFas2": {
+    sv: "Ansök om Fas 2 →",
+    en: "Apply for Phase 2 →",
+    ar: "التقدُّم بطلب للمرحلة 2 ←",
+  },
+  "prenum.aktiveringSteg": {
+    sv: "AKTIVERING · STEG 1 AV 2",
+    en: "ACTIVATION · STEP 1 OF 2",
+    ar: "التفعيل · الخطوة 1 من 2",
+  },
+  "prenum.begarAktivering": { sv: "Begär aktivering", en: "Request activation", ar: "اطلب التفعيل" },
+  "prenum.begarIntro": {
+    sv: "Välj nivå och period — sedan skickar du begäran. Ingen betalning sker här: vi återkommer per e-post med aktivering och betalningsuppgifter.",
+    en: "Choose a tier and period — then send your request. No payment takes place here: we return by email with activation and payment details.",
+    ar: "اختر المستوى والمدة — ثم أرسل طلبك. لا تتم أي عملية دفع هنا: نعود إليك عبر البريد الإلكتروني بالتفعيل وبيانات الدفع.",
+  },
+  "prenum.sparadHittad": { sv: "Sparad begäran hittad.", en: "Saved request found.", ar: "عُثر على طلب محفوظ." },
+  "prenum.sparadText": {
+    sv: "Vi har en tidigare aktiveringsbegäran i den här webbläsaren ({niva}, {period}, sparat {datum}) — du kan skriva över den nedan.",
+    en: "We have an earlier activation request in this browser ({niva}, {period}, saved {datum}) — you can overwrite it below.",
+    ar: "لدينا طلب تفعيل سابق في هذا المتصفح ({niva}، {period}، حُفظ في {datum}) — يمكنك الكتابة فوقه أدناه.",
+  },
+  "prenum.valjNiva": { sv: "Välj nivå", en: "Choose a tier", ar: "اختر المستوى" },
+  "prenum.periodRubrik": { sv: "Betalningsperiod", en: "Payment period", ar: "مدة الدفع" },
+  "prenum.manadsvis": { sv: "Månadsvis", en: "Monthly", ar: "شهري" },
+  "prenum.arsvis": { sv: "Årsvis", en: "Yearly", ar: "سنوي" },
+  "prenum.manadsvisLank": { sv: "månadsvis", en: "monthly", ar: "شهري" },
+  "prenum.arsvisLank": { sv: "årsvis", en: "yearly", ar: "سنوي" },
+  "prenum.perManadLang": { sv: "per månad", en: "per month", ar: "شهريًا" },
+  "prenum.perArLang": { sv: "per år", en: "per year", ar: "سنويًا" },
+  "prenum.arPrisManader": {
+    sv: "Årspriset motsvarar {betalda} månader — {gratis} gratis. ",
+    en: "The annual price equals {betalda} months — {gratis} free. ",
+    ar: "السعر السنوي يعادل {betalda} أشهر — منها {gratis} مجانًا. ",
+  },
+  "prenum.arPrisRabatterat": {
+    sv: "Årspriset är rabatterat mot månadspriset. ",
+    en: "The annual price is discounted against the monthly price. ",
+    ar: "السعر السنوي مخفَّض عن السعر الشهري. ",
+  },
+  "prenum.arIngenBindningA": {
+    sv: "Du binder dig inte: förnyelse sker bara efter ditt aktiva val (",
+    en: "You are not locked in: renewal happens only after your active choice (",
+    ar: "أنت غير ملتزم بأي قيد: لا يحدث التجديد إلا بعد اختيارك الفعلي (",
+  },
+  "prenum.villkorSektion5": {
+    sv: "villkoren, sektion 5",
+    en: "the terms, section 5",
+    ar: "الشروط، القسم 5",
+  },
+  "prenum.dittNamn": { sv: "Ditt namn", en: "Your name", ar: "اسمك" },
+  "prenum.epostExempel": { sv: "din@epost.se", en: "you@email.com", ar: "you@email.com" },
+  "prenum.nyhetRubrik": {
+    sv: "Få morgon-briefingen + forskningsuppdateringar per mejl",
+    en: "Get the morning briefing + research updates by email",
+    ar: "احصل على موجز الصباح + تحديثات الأبحاث عبر البريد الإلكتروني",
+  },
+  "prenum.nyhetText": {
+    sv: "Frivilligt och kostnadsfritt — en kort, saklig morgonhälsning (vågkartan, dagens aktie, ett femminuterspass) och större forskningsuppdateringar. Avsluta när du vill genom att svara på ett brev. Pedagogisk analys — aldrig investeringsråd.",
+    en: "Voluntary and free of charge — a short, factual morning greeting (the wave map, today's stock, a five-minute session) and larger research updates. End it whenever you like by replying to a letter. Educational analysis — never investment advice.",
+    ar: "اختياري ومجاني — تحية صباحية قصيرة وموضوعية (خريطة الموجات، وسهم اليوم، وجلسة من خمس دقائق) وتحديثات بحثية أكبر. أنهِ الاشتراك متى شئت بالرد على رسالة. تحليل تعليمي — وليس أبدًا نصيحة استثمارية.",
+  },
+  "prenum.fasMinus": {
+    sv: "Fas {fas} −{procent} %",
+    en: "Phase {fas} −{procent} %",
+    ar: "المرحلة {fas} −{procent}٪",
+  },
+  "prenum.fasStatusRabatt": {
+    sv: "Din Fas-status känns igen automatiskt — rabatten gäller för alltid, på alla nivåer.",
+    en: "Your Phase status is recognised automatically — the discount applies forever, on every tier.",
+    ar: "يُتعرَّف على حالتك في المراحل تلقائيًا — والخصم قائم إلى الأبد على جميع المستويات.",
+  },
+  "prenum.ingenFasStatus": {
+    sv: "Ingen Fas-status hittades i den här webbläsaren. Är du Fas 2- eller Fas 3-elev? Rabatten ({procent} %) syns automatiskt när du är inloggad med din elevstatus.",
+    en: "No Phase status was found in this browser. Are you a Phase 2 or Phase 3 student? The discount ({procent} %) appears automatically when you are signed in with your student status.",
+    ar: "لم يُعثر على حالة مراحل في هذا المتصفح. هل أنت طالب في المرحلة 2 أو 3؟ يظهر الخصم ({procent}٪) تلقائيًا عند تسجيل الدخول بحالة الطالب.",
+  },
+  "prenum.felValjNiva": { sv: "Välj en nivå först.", en: "Choose a tier first.", ar: "اختر المستوى أولًا." },
+  "prenum.felEpost": {
+    sv: "E-postadressen ser inte giltig ut — kontrollera den.",
+    en: "The email address does not look valid — please check it.",
+    ar: "يبدو عنوان البريد الإلكتروني غير صالح — تحقَّق منه.",
+  },
+  "prenum.felNyhetEpost": {
+    sv: "Nyhetsbrevet behöver en e-postadress — fyll i raden ovan.",
+    en: "The newsletter needs an email address — fill in the line above.",
+    ar: "تحتاج النشرة البريدية إلى عنوان بريد إلكتروني — املأ الحقل أعلاه.",
+  },
+  "prenum.felSpara": {
+    sv: "Kunde inte spara begäran i din webbläsare (privat läge?). Skicka ett mejl till {epost} i stället.",
+    en: "Could not save the request in your browser (private mode?). Send an email to {epost} instead.",
+    ar: "تعذَّر حفظ الطلب في متصفحك (وضع التصفح الخاص؟). أرسل بريدًا إلكترونيًا إلى {epost} بدلًا من ذلك.",
+  },
+  "prenum.bekraftRubrik": {
+    sv: "Aktiveringsbegäran sparad",
+    en: "Activation request saved",
+    ar: "حُفظ طلب التفعيل",
+  },
+  "prenum.tack": { sv: "Tack", en: "Thank you", ar: "شكرًا" },
+  "prenum.bekraftText": {
+    sv: "Din begäran på {niva} ({period}) är sparad i din webbläsare{faspris}. Betalflödet är inte öppet ännu — aktivering sker via e-post.",
+    en: "Your request for {niva} ({period}) is saved in your browser{faspris}. The payment flow is not open yet — activation takes place by email.",
+    ar: "طلبك بخصوص {niva} ({period}) محفوظ في متصفحك{faspris}. لم يُفتح تدفق الدفع بعد — يتم التفعيل عبر البريد الإلكتروني.",
+  },
+  "prenum.bekraftFaspris": {
+    sv: " med ditt Fas {fas}-pris ({pris} kr {period})",
+    en: " with your Phase {fas} price ({pris} SEK {period})",
+    ar: " بسعر المرحلة {fas} الخاص بك ({pris} كرونة {period})",
+  },
+  "prenum.nyhetRubrikBekraft": { sv: "Nyhetsbrevet:", en: "The newsletter:", ar: "النشرة البريدية:" },
+  "prenum.nyhetSkickad": {
+    sv: "Din plats i morgon-briefingen är registrerad och en bekräftelse är på väg till din inkorg.",
+    en: "Your place in the morning briefing is registered and a confirmation is on its way to your inbox.",
+    ar: "تم تسجيل مكانك في موجز الصباح ورسالة تأكيد في طريقها إلى صندوق بريدك.",
+  },
+  "prenum.nyhetFel": {
+    sv: "Din nyhetsbrevsönskan kunde inte registreras just nu — mejla oss så lägger vi till dig manuellt.",
+    en: "Your newsletter request could not be registered right now — email us and we will add you manually.",
+    ar: "تعذَّر تسجيل طلب النشرة البريدية الآن — راسلنا عبر البريد الإلكتروني وسنضيفك يدويًا.",
+  },
+  "prenum.nyhetKoad": {
+    sv: "Din plats i morgon-briefingen är sparad i utskickskön — första brevet kommer så snart utskicken är igång (ingen leverantör är kopplad ännu).",
+    en: "Your place in the morning briefing is saved in the send queue — the first letter arrives as soon as the sends are running (no provider is connected yet).",
+    ar: "مكانك في موجز الصباح محفوظ في قائمة الإرسال — سيصل أول بريد فور بدء عمليات الإرسال (لم يُربط أي مزوِّد بعد).",
+  },
+  "prenum.steg1": {
+    sv: "Mejla oss — knappen nedan öppnar ditt e-postprogram med allt ifyllt.",
+    en: "Email us — the button below opens your email program with everything filled in.",
+    ar: "راسلنا — الزر أدناه يفتح برنامج بريدك الإلكتروني وكل شيء معبَّأ مسبقًا.",
+  },
+  "prenum.steg2": {
+    sv: "Vi återkommer med aktivering, aktuella betalningsuppgifter och start.",
+    en: "We return with activation, current payment details and start.",
+    ar: "نعود إليك بالتفعيل وبيانات الدفع الحالية وموعد البدء.",
+  },
+  "prenum.steg3A": { sv: "Läs gärna ", en: "Please read ", ar: "ننصحك بقراءة " },
+  "prenum.villkorAngerratt": {
+    sv: "villkorens ångerrätts-sektion",
+    en: "the terms' right-of-withdrawal section",
+    ar: "قسم حق الانسحاب في الشروط",
+  },
+  "prenum.steg3B": {
+    sv: " innan du börjar — digitalt innehåll levereras direkt.",
+    en: " before you start — digital content is delivered immediately.",
+    ar: " قبل أن تبدأ — المحتوى الرقمي يُسلَّم فورًا.",
+  },
+  "prenum.mejlaKnapp": {
+    sv: "Mejla {epost} med begäran",
+    en: "Email {epost} with the request",
+    ar: "أرسل إلى {epost} بريدًا بالطلب",
+  },
+  "prenum.andraBegaran": { sv: "Ändra min begäran", en: "Change my request", ar: "تعديل طلبي" },
+  "prenum.mailtoAmne": {
+    sv: "Aktiveringsbegäran — {niva}",
+    en: "Activation request — {niva}",
+    ar: "طلب تفعيل — {niva}",
+  },
+  "prenum.mailtoHej": { sv: "Hej AK1A,", en: "Hello AK1A,", ar: "مرحبًا AK1A،" },
+  "prenum.mailtoVill": {
+    sv: "Jag vill aktivera: {niva} ({period})",
+    en: "I want to activate: {niva} ({period})",
+    ar: "أريد تفعيل: {niva} ({period})",
+  },
+  "prenum.mailtoPris": { sv: "Pris: {pris}", en: "Price: {pris}", ar: "السعر: {pris}" },
+  "prenum.mailtoPrisRad": {
+    sv: "{pris} kr {period} (ordinarie {ord} kr, Fas {fas}-rabatt)",
+    en: "{pris} SEK {period} (regular {ord} SEK, Phase {fas} discount)",
+    ar: "{pris} كرونة {period} (السعر العادي {ord} كرونة، خصم المرحلة {fas})",
+  },
+  "prenum.mailtoPrisRadEnkel": {
+    sv: "{pris} kr {period}",
+    en: "{pris} SEK {period}",
+    ar: "{pris} كرونة {period}",
+  },
+  "prenum.mailtoNamn": { sv: "Namn: {namn}", en: "Name: {namn}", ar: "الاسم: {namn}" },
+  "prenum.mailtoEpost": {
+    sv: "E-post: {epost}",
+    en: "Email: {epost}",
+    ar: "البريد الإلكتروني: {epost}",
+  },
+  "prenum.mailtoSparad": {
+    sv: "(Begäran sparad i min webbläsare {datum}.)",
+    en: "(Request saved in my browser {datum}.)",
+    ar: "(الطلب محفوظ في متصفحي بتاريخ {datum}.)",
+  },
+  "prenum.fotA": {
+    sv: "Begäran sparas lokalt i din webbläsare och blir ett färdigifyllt mejl till ",
+    en: "The request is saved locally in your browser and becomes a pre-filled email to ",
+    ar: "يُحفظ الطلب محليًا في متصفحك ويتحول إلى بريد إلكتروني معبَّأ مسبقًا إلى ",
+  },
+  "prenum.fotB": {
+    sv: " — inga kortuppgifter efterfrågas här. Samtidigt räknas en anonymiserad intention (endast nivå, period och pris — inget om dig) för vår konverteringsstatistik, se ",
+    en: " — no card details are requested here. At the same time an anonymised intention (only tier, period and price — nothing about you) is counted for our conversion statistics, see ",
+    ar: " — لا تُطلب بيانات بطاقة هنا. وفي الوقت نفسه تُحتسب نيّة مجهولة الهوية (المستوى والمدة والسعر فقط — لا شيء عنك) لإحصاءات التحويل لدينا، انظر ",
+  },
+  "prenum.fotTransparens": {
+    sv: "transparensregistret",
+    en: "the transparency register",
+    ar: "سجل الشفافية",
+  },
+  "prenum.fotC": {
+    sv: ". Aktivering, pris och eventuellt samtycke till omedelbar digital leverans (ångerrätten, se ",
+    en: ". Activation, price and any consent to immediate digital delivery (the right of withdrawal, see ",
+    ar: ". يتم تأكيد التفعيل والسعر وأي موافقة على التسليم الرقمي الفوري (حق الانسحاب، انظر ",
+  },
+  "prenum.fotVillkor6": { sv: "villkoren sektion 6", en: "the terms, section 6", ar: "الشروط القسم 6" },
+  "prenum.fotD": {
+    sv: ") bekräftas i mejlväxlingen. AK1A lämnar aldrig investeringsråd — se ",
+    en: ") in the email exchange. AK1A never gives investment advice — see ",
+    ar: ") في مراسلات البريد الإلكتروني. لا تقدِّم AK1A أبدًا نصائح استثمارية — انظر ",
+  },
+  "prenum.fotFinPolicy": { sv: "finansiell policy", en: "financial policy", ar: "السياسة المالية" },
+
+  // Fas 3-cert-panelen (fas3-cert.tsx) — progress mot certifieringen
+  "fas3cert.ringAria": {
+    sv: "{procent} procent av steget",
+    en: "{procent} percent of the step",
+    ar: "{procent} بالمئة من الخطوة",
+  },
+  "fas3cert.pagar": { sv: "Pågår", en: "In progress", ar: "قيد التنفيذ" },
+  "fas3cert.vantar": { sv: "Väntar", en: "Waiting", ar: "في الانتظار" },
+  "fas3cert.last": { sv: "Låst", en: "Locked", ar: "مقفل" },
+  "fas3cert.stegGrund": { sv: "Grund", en: "Foundation", ar: "الأساس" },
+  "fas3cert.stegPraktik": { sv: "Praktik", en: "Practice", ar: "التطبيق" },
+  "fas3cert.stegEtik": { sv: "Etik", en: "Ethics", ar: "الأخلاق" },
+  "fas3cert.stegCert": { sv: "Certifiering", en: "Certification", ar: "الشهادة" },
+  "fas3cert.av": { sv: "av {n}", en: "of {n}", ar: "من {n}" },
+  "fas3cert.grundKlar": {
+    sv: "Grunden är lagd — nivå {krav} är nått och Fas 3:s dörr står öppen för dig. Allt du byggt i Fas 1 bär du med dig in i praktiken.",
+    en: "The foundation is laid — level {krav} is reached and Phase 3's door stands open for you. Everything you built in Phase 1 you carry with you into practice.",
+    ar: "أُرسي الأساس — بلغتَ المستوى {krav} وباب المرحلة 3 مفتوح أمامك. كل ما بنيته في المرحلة 1 تحمله معك إلى التطبيق.",
+  },
+  "fas3cert.grundPagar": {
+    sv: "Du är på nivå {niva} av {krav}. Varje kurs du klarar är en stapel närmare — och Fas 1:s hela bibliotek är gratis, för alltid.",
+    en: "You are at level {niva} of {krav}. Every course you complete is one bar closer — and Phase 1's entire library is free, forever.",
+    ar: "أنت في المستوى {niva} من {krav}. كل دورة تكملها تقرِّبك خطوة — ومكتبة المرحلة 1 كاملة مجانية، إلى الأبد.",
+  },
+  "fas3cert.fortsattGrund": {
+    sv: "Fortsätt bygga grunden — gratis",
+    en: "Keep building the foundation — free",
+    ar: "واصل بناء الأساس — مجانًا",
+  },
+  "fas3cert.praktikKlar": {
+    sv: "Tio kompletta analyser — praktikportföljen är full. Tack för att du bygger hantverket på riktiga bolag, steg för steg.",
+    en: "Ten complete analyses — the practice portfolio is full. Thank you for building the craft on real companies, step by step.",
+    ar: "عشرة تحليلات كاملة — محفظة التطبيق اكتملت. شكرًا لأنك تبني الحرفة على شركات حقيقية، خطوة بخطوة.",
+  },
+  "fas3cert.praktikPagarA": {
+    sv: "Varje komplett Superanalys du sparar räknas automatiskt i din portfölj — {n} av {krav} staplar står redan.",
+    en: "Every complete Superanalysis you save is counted automatically in your portfolio — {n} of {krav} bars already stand.",
+    ar: "كل تحليل فائق كامل تحفظه يُحتسب تلقائيًا في محفظتك — {n} من أصل {krav} أعمدة قائمة بالفعل.",
+  },
+  "fas3cert.praktikUtkast1": {
+    sv: "{n} pågående utkast väntar tålmodigt på sina sista poäng.",
+    en: "One ongoing draft waits patiently for its final points.",
+    ar: "مسودة واحدة جارية تنتظر بصبر نقاطها الأخيرة.",
+  },
+  "fas3cert.praktikUtkastFlera": {
+    sv: "{n} pågående utkast väntar tålmodigt på sina sista poäng.",
+    en: "{n} ongoing drafts wait patiently for their final points.",
+    ar: "{n} مسودات جارية تنتظر بصبر نقاطها الأخيرة.",
+  },
+  "fas3cert.praktikPagarB": {
+    sv: "Nästa analys du bygger är nästa steg.",
+    en: "The next analysis you build is the next step.",
+    ar: "التحليل التالي الذي تبنيه هو الخطوة التالية.",
+  },
+  "fas3cert.oppnaSuper": {
+    sv: "Öppna Superanalysen",
+    en: "Open the Superanalysis",
+    ar: "افتح التحليل الفائق",
+  },
+  "fas3cert.etikText": {
+    sv: "Etik-modulen öppnas tillsammans med din Fas 3-ansökan — tre löften som blir din analytikerkod. Löftena står redan här på sidan, så du kan börja leva efter dem idag.",
+    en: "The ethics module opens together with your Phase 3 application — three promises that become your analyst code. The promises already stand here on the page, so you can begin living by them today.",
+    ar: "تُفتح وحدة الأخلاق مع طلبك للمرحلة 3 — ثلاثة وعود تصبح مدونة المحلل الخاصة بك. الوعود معروضة هنا في الصفحة بالفعل، فيمكنك البدء بالعيش وفقها اليوم.",
+  },
+  "fas3cert.certText": {
+    sv: "När grunden, portföljen och etiken är klara lämnar du in portföljen för granskning — AI-förgranskning och grundarens mänskliga slutbedömning, betyg A–F. Sedan är beviset ditt, för alltid.",
+    en: "When the foundation, the portfolio and the ethics are complete you submit the portfolio for review — AI pre-review and the founder's human final judgement, grades A–F. Then the proof is yours, forever.",
+    ar: "عندما يكتمل الأساس والمحفظة والأخلاق تُسلِّم المحفظة للمراجعة — مراجعة أولية بالذكاء الاصطناعي وحكم نهائي إنساني من المؤسس، بتقييم A–F. عندها يصبح الدليل ملكك، إلى الأبد.",
+  },
+  "fas3cert.aria": {
+    sv: "Din progress mot Fas 3-certifieringen",
+    en: "Your progress toward Phase 3 certification",
+    ar: "تقدُّمك نحو شهادة المرحلة 3",
+  },
+  "fas3cert.eyebrow": {
+    sv: "Din väg till certifieringen",
+    en: "Your path to certification",
+    ar: "طريقك إلى الشهادة",
+  },
+  "fas3cert.velkommenNu": {
+    sv: "Välkommen{namn} — så här ser din resa ut just nu",
+    en: "Welcome{namn} — this is what your journey looks like right now",
+    ar: "مرحبًا{namn} — هكذا تبدو رحلتك الآن",
+  },
+  "fas3cert.velkommenResa": {
+    sv: "Välkommen — så här ser resan mot certifieringen ut",
+    en: "Welcome — this is what the journey toward certification looks like",
+    ar: "مرحبًا — هكذا تبدو الرحلة نحو الشهادة",
+  },
+  "fas3cert.elevstatus": { sv: "Din elevstatus: ", en: "Your student status: ", ar: "حالتك كطالب: " },
+  "fas3cert.statKursSing": {
+    sv: "{n} klar kurs",
+    en: "{n} course completed",
+    ar: "دورة واحدة مكتملة",
+  },
+  "fas3cert.statKursFler": {
+    sv: "{n} klara kurser",
+    en: "{n} courses completed",
+    ar: "{n} دورات مكتملة",
+  },
+  "fas3cert.statAnalysSing": {
+    sv: "{n} sparad analys",
+    en: "{n} saved analysis",
+    ar: "تحليل واحد محفوظ",
+  },
+  "fas3cert.statAnalysFler": {
+    sv: "{n} sparade analyser",
+    en: "{n} saved analyses",
+    ar: "{n} تحليلات محفوظة",
+  },
+  "fas3cert.laserStatus": {
+    sv: "Läser din elevstatus…",
+    en: "Reading your student status…",
+    ar: "يتم الآن قراءة حالتك كطالب…",
+  },
+  "fas3cert.avVagen": { sv: "av vägen", en: "of the way", ar: "من الطريق" },
+  "fas3cert.ringText": {
+    sv: "Ringen visar hela vägen — alla fyra steg. Den växer med dig, i din takt. Kunskapen är din, och ingen kan ta den ifrån dig.",
+    en: "The ring shows the whole way — all four steps. It grows with you, at your pace. The knowledge is yours, and no one can take it from you.",
+    ar: "تُظهر الحلقة كامل الطريق — الخطوات الأربع كلها. تنمو معك، وبوتيرتك أنت. المعرفة ملكك، ولا أحد يستطيع انتزاعها منك.",
+  },
+  "fas3cert.steg": { sv: "Steg {nr}", en: "Step {nr}", ar: "الخطوة {nr}" },
+  "fas3cert.nastaStegRubrik": {
+    sv: "Nästa steg på din resa:",
+    en: "The next step on your journey:",
+    ar: "الخطوة التالية في رحلتك:",
+  },
+  "fas3cert.nastaFallback": {
+    sv: "Välkommen — börja där du är, så går vi bredvid dig hela vägen.",
+    en: "Welcome — begin where you are, and we will walk beside you the whole way.",
+    ar: "مرحبًا — ابدأ من حيث أنت، وسنسير بجانبك الطريق كله.",
+  },
+  "fas3cert.fot": {
+    sv: "Allt spåras lokalt i din egen webbläsare — integritetsvänligt och utan kontokrav. Din portfölj växer fram successivt, precis som lärandet.",
+    en: "Everything is tracked locally in your own browser — privacy-friendly and with no account required. Your portfolio emerges gradually, just like the learning.",
+    ar: "كل شيء يُتتبع محليًا في متصفحك أنت — بما يحفظ الخصوصية ودون أي اشتراط لحساب. تنشأ محفظتك تدريجيًا، تمامًا كالتعلم.",
+  },
+
+  // Fortsatt-panelen + kurstips-kortet (små krom-ytor på speglarna)
+  "fortsatt.darDuSlutade": {
+    sv: "Fortsätt där du slutade",
+    en: "Continue where you left off",
+    ar: "تابع من حيث توقفت",
+  },
+  "tips.oppna": { sv: "→ Öppna", en: "→ Open", ar: "افتح ←" },
+
+  // Kursporten + nivåbaren (kurs-gate.tsx) — syns post-hydration på
+  // speglarnas kurssidor (utloggad: porten; inloggad: nivåbaren), dold för
+  // no-JS-crawlers men fullt synlig för riktiga besökare (V86-tillägget).
+  "gate.fortsattGratis": {
+    sv: "Fortsätt läsa — helt gratis",
+    en: "Keep reading — completely free",
+    ar: "تابع القراءة — مجانًا بالكامل",
+  },
+  "gate.skapaA": {
+    sv: "Skapa ett kostnadsfritt konto så låser du upp ",
+    en: "Create a free account and you unlock ",
+    ar: "أنشئ حسابًا مجانيًا لتفتح ",
+  },
+  "gate.helaTitel": {
+    sv: "hela \"{titel}\"",
+    en: "all of \"{titel}\"",
+    ar: "كامل دورة \"{titel}\"",
+  },
+  "gate.skapaB": {
+    sv: " — och alla övriga {kurser} kurserna, för alltid. Fundamentalanalys är en rättighet.",
+    en: " — and all the other {kurser} courses, forever. Fundamental analysis is a right.",
+    ar: " — وجميع الدورات الأخرى البالغة {kurser}، إلى الأبد. التحليل الأساسي حق للجميع.",
+  },
+  "gate.lasUppGratis": {
+    sv: "Lås upp gratis →",
+    en: "Unlock for free →",
+    ar: "افتح مجانًا ←",
+  },
+  "gate.sekunder": {
+    sv: "20 sekunder. Ingen betalning. Ingen kortinformation.",
+    en: "20 seconds. No payment. No card details.",
+    ar: "20 ثانية. بلا دفع. وبلا بيانات بطاقة.",
+  },
+  "nivabar.stjarnor": { sv: "stjärnor", en: "stars", ar: "نجمة" },
+  "nivabar.redoFas2": {
+    sv: "Nivå {niv} — du är redo för Fas 2: utbildning medgrundaren →",
+    en: "Level {niv} — you are ready for Phase 2: education with the founder →",
+    ar: "المستوى {niv} — أنت مستعد للمرحلة 2: التعليم مع المؤسس ←",
+  },
+  "nivabar.ansok": { sv: "ansök", en: "apply", ar: "قدِّم طلبك" },
+  "nivabar.klarRedan": {
+    sv: "✓ Kurs klar — belöningen är utdelad",
+    en: "✓ Course completed — the reward is given",
+    ar: "✓ الدورة مكتملة — المكافأة مُمنوحة",
+  },
+  "nivabar.markeraKlar": {
+    sv: "Markera kursen klar (+50 XP, +1 ★)",
+    en: "Mark the course as completed (+50 XP, +1 ★)",
+    ar: "علِّم الدورة كمكتملة (+50 XP، +1 ★)",
+  },
+  "nivabar.grattisNiva": {
+    sv: "Grattis — du nådde nivå {niv}! 🎉",
+    en: "Congratulations — you reached level {niv}! 🎉",
+    ar: "تهانينا — بلغت المستوى {niv}! 🎉",
+  },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

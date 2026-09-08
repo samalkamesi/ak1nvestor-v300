@@ -3,8 +3,16 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { besok, titelFranSida } from "@/lib/navigationsminne";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 type Post = { path: string; t: number };
+
+/** Datumformat per språk (V86) — sv-SE oförändrat på originalet. */
+function datumLocale(sprak: string): string {
+  if (sprak === "en") return "en-GB";
+  if (sprak === "ar") return "ar-EG";
+  return "sv-SE";
+}
 
 function ikonFranPath(path: string): string {
   if (path.startsWith("/kurser")) return "📚";
@@ -18,6 +26,7 @@ function ikonFranPath(path: string): string {
 
 /** "Fortsätt där du slutade" — läser navigationsminnet (fallback: äldre ak1a-senaste). */
 export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?: boolean }) {
+  const { t, sprak } = useSprak();
   const [poster, setPoster] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -45,7 +54,7 @@ export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?:
   return (
     <div className="rounded-xl border border-gold/30 bg-card p-4">
       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        Fortsätt där du slutade
+        {t("fortsatt.darDuSlutade")}
       </p>
       <ul className="mt-2 space-y-1.5">
         {poster.map((p) => (
@@ -57,7 +66,7 @@ export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?:
               <span>{ikonFranPath(p.path)}</span>
               <span className="min-w-0 flex-1 truncate">{titelFranSida(p.path)}</span>
               <span className="text-[10px] text-muted-foreground">
-                {new Date(p.t).toLocaleDateString("sv-SE")}
+                {new Date(p.t).toLocaleDateString(datumLocale(sprak))}
               </span>
             </Link>
           </li>

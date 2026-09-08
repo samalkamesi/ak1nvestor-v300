@@ -35,6 +35,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { lasMedlem } from "@/lib/member-local";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 import {
   useFasRabatt,
   formateraKr,
@@ -116,6 +117,7 @@ export function AktiveraPanel({
   nivaer: PrenumerationNiva[];
   rabattFas: RabattFasInfo;
 }) {
+  const { t } = useSprak();
   const mittId = nivaer[1]?.id ?? nivaer[0]?.id ?? "";
   const [nivaId, setNivaId] = useState(mittId);
   const [period, setPeriod] = useState<Period>("manad");
@@ -157,20 +159,23 @@ export function AktiveraPanel({
 
   const ordinarie = vald ? (period === "manad" ? vald.prisManad : vald.prisAr) : 0;
   const rabatterat = rabatteratPris(ordinarie, harRabatt ? rabatt : 0);
-  const periodText = period === "manad" ? "per månad" : "per år";
+  const periodText = period === "manad" ? t("prenum.perManadLang") : t("prenum.perArLang");
+  const periodVis = period === "manad" ? t("prenum.manadsvisLank") : t("prenum.arsvisLank");
+  // "Månader gratis" i årspriset — räknas EN gång så null-inspektionen blir smal.
+  const arGratis = vald ? manaderGratis(vald.prisManad, vald.prisAr) : null;
 
   const begar = async () => {
     setFel("");
     if (!vald) {
-      setFel("Välj en nivå först.");
+      setFel(t("prenum.felValjNiva"));
       return;
     }
     if (epost.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(epost.trim())) {
-      setFel("E-postadressen ser inte giltig ut — kontrollera den.");
+      setFel(t("prenum.felEpost"));
       return;
     }
     if (nyhetsbrev && !epost.trim()) {
-      setFel("Nyhetsbrevet behöver en e-postadress — fyll i raden ovan.");
+      setFel(t("prenum.felNyhetEpost"));
       return;
     }
     const intention: PrenumerationIntention = {
@@ -189,11 +194,7 @@ export function AktiveraPanel({
     };
     const ok = sparaPrenumerationIntention(intention);
     if (!ok) {
-      setFel(
-        "Kunde inte spara begäran i din webbläsare (privat läge?). Skicka ett mejl till " +
-          EPOST +
-          " i stället."
-      );
+      setFel(t("prenum.felSpara", { epost: EPOST }));
       return;
     }
 
@@ -202,7 +203,7 @@ export function AktiveraPanel({
     postaAnonymIntention({
       nivaNamn: vald.namn,
       period,
-      pris: `${harRabatt ? rabatterat : ordinarie} kr ${period === "manad" ? "per månad" : "per år"}`,
+      pris: `${harRabatt ? rabatterat : ordinarie} kr ${periodText}`,
     });
 
     // Frivillig nyhetsbrevscheck: intentionen till kön via /api/email —
@@ -214,7 +215,7 @@ export function AktiveraPanel({
         namn: namn.trim(),
         nivaNamn: vald.namn,
         period,
-        pris: `${harRabatt ? rabatterat : ordinarie} kr ${period === "manad" ? "per månad" : "per år"}`,
+        pris: `${harRabatt ? rabatterat : ordinarie} kr ${periodText}`,
       });
       setBrevStatus(status);
     } else {
@@ -226,23 +227,32 @@ export function AktiveraPanel({
 
   const mailto = useMemo(() => {
     if (!sparad) return "";
+    const perText = sparad.period === "manad" ? t("prenum.perManadLang") : t("prenum.perArLang");
     const prisrad = sparad.prisRabatterat !== null
-      ? `${sparad.prisRabatterat} kr ${sparad.period === "manad" ? "per månad" : "per år"} (ordinarie ${sparad.prisOrdinarie} kr, Fas ${sparad.fasStatus === "fas3" ? "3" : "2"}-rabatt)`
-      : `${sparad.prisOrdinarie} kr ${sparad.period === "manad" ? "per månad" : "per år"}`;
+      ? t("prenum.mailtoPrisRad", {
+          pris: sparad.prisRabatterat,
+          period: perText,
+          ord: sparad.prisOrdinarie,
+          fas: sparad.fasStatus === "fas3" ? "3" : "2",
+        })
+      : t("prenum.mailtoPrisRadEnkel", { pris: sparad.prisOrdinarie, period: perText });
     const kropp = [
-      "Hej AK1A,",
+      t("prenum.mailtoHej"),
       "",
-      `Jag vill aktivera: ${sparad.nivaNamn} (${sparad.period === "manad" ? "månadsvis" : "årsvis"})`,
-      `Pris: ${prisrad}`,
-      namn.trim() ? `Namn: ${namn.trim()}` : "",
-      epost.trim() ? `E-post: ${epost.trim()}` : "",
+      t("prenum.mailtoVill", {
+        niva: sparad.nivaNamn,
+        period: sparad.period === "manad" ? t("prenum.manadsvisLank") : t("prenum.arsvisLank"),
+      }),
+      t("prenum.mailtoPris", { pris: prisrad }),
+      namn.trim() ? t("prenum.mailtoNamn", { namn: namn.trim() }) : "",
+      epost.trim() ? t("prenum.mailtoEpost", { epost: epost.trim() }) : "",
       "",
-      "(Begäran sparad i min webbläsare " + sparad.skapad.slice(0, 10) + ".)",
+      t("prenum.mailtoSparad", { datum: sparad.skapad.slice(0, 10) }),
     ]
       .filter(Boolean)
       .join("\n");
-    return `mailto:${EPOST}?subject=${encodeURIComponent("Aktiveringsbegäran — " + sparad.nivaNamn)}&body=${encodeURIComponent(kropp)}`;
-  }, [sparad, namn, epost]);
+    return `mailto:${EPOST}?subject=${encodeURIComponent(t("prenum.mailtoAmne", { niva: sparad.nivaNamn }))}&body=${encodeURIComponent(kropp)}`;
+  }, [sparad, namn, epost, t]);
 
   // ── Bekräftelseläge: intentionen sparad, nästa steg visas ─────────────────
   if (sparad) {
@@ -251,45 +261,48 @@ export function AktiveraPanel({
         <p className="text-4xl" aria-hidden="true">
           ✅
         </p>
-        <h3 className="mt-3 font-serif text-2xl font-bold">Aktiveringsbegäran sparad</h3>
+        <h3 className="mt-3 font-serif text-2xl font-bold">{t("prenum.bekraftRubrik")}</h3>
         <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Tack{namn.trim() ? `, ${namn.trim()}` : ""}! Din begäran på{" "}
-          <strong className="text-foreground">{sparad.nivaNamn}</strong>{" "}
-          ({sparad.period === "manad" ? "månadsvis" : "årsvis"}) är sparad i din webbläsare
-          {sparad.prisRabatterat !== null
-            ? ` med ditt Fas ${sparad.fasStatus === "fas3" ? "3" : "2"}-pris (${sparad.prisRabatterat} kr ${sparad.period === "manad" ? "per månad" : "per år"})`
-            : ""}
-          . Betalflödet är inte öppet ännu — aktivering sker via e-post.
+          {t("prenum.tack")}
+          {namn.trim() ? `, ${namn.trim()}` : ""}!{" "}
+          {t("prenum.bekraftText", {
+            niva: sparad.nivaNamn,
+            period: sparad.period === "manad" ? t("prenum.manadsvisLank") : t("prenum.arsvisLank"),
+            faspris:
+              sparad.prisRabatterat !== null
+                ? t("prenum.bekraftFaspris", {
+                    fas: sparad.fasStatus === "fas3" ? "3" : "2",
+                    pris: sparad.prisRabatterat,
+                    period: sparad.period === "manad" ? t("prenum.perManadLang") : t("prenum.perArLang"),
+                  })
+                : "",
+          })}
         </p>
 
         <div className="mx-auto mt-6 max-w-lg space-y-3 text-left">
           {sparad.nyhetsbrev && (
             <div className="rounded-lg border border-gold/40 bg-paper p-4 text-sm">
-              <p className="font-semibold text-foreground">Nyhetsbrevet:</p>
+              <p className="font-semibold text-foreground">{t("prenum.nyhetRubrikBekraft")}</p>
               <p className="mt-1.5 leading-relaxed text-muted-foreground">
                 {brevStatus === "skickad"
-                  ? "Din plats i morgon-briefingen är registrerad och en bekräftelse är på väg till din inkorg."
+                  ? t("prenum.nyhetSkickad")
                   : brevStatus === "fel"
-                    ? "Din nyhetsbrevsönskan kunde inte registreras just nu — mejla oss så lägger vi till dig manuellt."
-                    : "Din plats i morgon-briefingen är sparad i utskickskön — första brevet kommer så snart utskicken är igång (ingen leverantör är kopplad ännu)."}
+                    ? t("prenum.nyhetFel")
+                    : t("prenum.nyhetKoad")}
               </p>
             </div>
           )}
           <div className="rounded-lg border border-gold/30 bg-paper p-4 text-sm">
-            <p className="font-semibold text-foreground">Nästa steg:</p>
+            <p className="font-semibold text-foreground">{t("cta.nastaSteg")}:</p>
             <ol className="mt-2 list-decimal space-y-1.5 pl-5 leading-relaxed text-muted-foreground">
+              <li>{t("prenum.steg1")}</li>
+              <li>{t("prenum.steg2")}</li>
               <li>
-                Mejla oss — knappen nedan öppnar ditt e-postprogram med allt ifyllt.
-              </li>
-              <li>
-                Vi återkommer med aktivering, aktuella betalningsuppgifter och start.
-              </li>
-              <li>
-                Läs gärna{" "}
+                {t("prenum.steg3A")}
                 <Link href="/villkor#sektion-6" className="underline hover:text-foreground">
-                  villkorens ångerrätts-sektion
-                </Link>{" "}
-                innan du börjar — digitalt innehåll levereras direkt.
+                  {t("prenum.villkorAngerratt")}
+                </Link>
+                {t("prenum.steg3B")}
               </li>
             </ol>
           </div>
@@ -300,14 +313,14 @@ export function AktiveraPanel({
             href={mailto}
             className="rounded-md bg-gold px-4 py-2.5 text-sm font-bold text-primary-foreground hover:opacity-90"
           >
-            Mejla {EPOST} med begäran
+            {t("prenum.mejlaKnapp", { epost: EPOST })}
           </a>
           <button
             type="button"
             onClick={() => setSparad(null)}
             className="text-sm text-muted-foreground underline hover:text-foreground"
           >
-            Ändra min begäran
+            {t("prenum.andraBegaran")}
           </button>
         </div>
       </div>
@@ -317,25 +330,26 @@ export function AktiveraPanel({
   // ── Formulärläge ───────────────────────────────────────────────────────────
   return (
     <div id="aktivera" className="scroll-mt-24 rounded-2xl border-2 border-gold/60 bg-card p-7 shadow-lg sm:p-9">
-      <p className="text-[10px] uppercase tracking-[0.3em] text-gold">AKTIVERING · STEG 1 AV 2</p>
-      <h3 className="mt-3 font-serif text-2xl font-bold">Begär aktivering</h3>
+      <p className="text-[10px] uppercase tracking-[0.3em] text-gold">{t("prenum.aktiveringSteg")}</p>
+      <h3 className="mt-3 font-serif text-2xl font-bold">{t("prenum.begarAktivering")}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Välj nivå och period — sedan skickar du begäran. Ingen betalning sker här:
-        vi återkommer per e-post med aktivering och betalningsuppgifter.
+        {t("prenum.begarIntro")}
       </p>
 
       {tidigare && (
         <div className="mt-4 rounded-lg border border-gold/30 bg-paper p-3 text-xs leading-relaxed text-muted-foreground">
-          <strong className="text-foreground">Sparad begäran hittad.</strong> Vi har en
-          tidigare aktiveringsbegäran i den här webbläsaren ({tidigare.nivaNamn},{" "}
-          {tidigare.period === "manad" ? "månadsvis" : "årsvis"}, sparat{" "}
-          {tidigare.skapad.slice(0, 10)}) — du kan skriva över den nedan.
+          <strong className="text-foreground">{t("prenum.sparadHittad")}</strong>{" "}
+          {t("prenum.sparadText", {
+            niva: tidigare.nivaNamn,
+            period: tidigare.period === "manad" ? t("prenum.manadsvisLank") : t("prenum.arsvisLank"),
+            datum: tidigare.skapad.slice(0, 10),
+          })}
         </div>
       )}
 
       {/* Nivå-val */}
       <fieldset className="mt-6">
-        <legend className="mb-2 text-xs font-semibold text-foreground">Välj nivå</legend>
+        <legend className="mb-2 text-xs font-semibold text-foreground">{t("prenum.valjNiva")}</legend>
         <div className="space-y-2">
           {nivaer.map((n) => {
             const aktivtVal = n.id === nivaId;
@@ -387,12 +401,12 @@ export function AktiveraPanel({
 
       {/* Period-val */}
       <div className="mt-5">
-        <p className="mb-2 text-xs font-semibold text-foreground">Betalningsperiod</p>
-        <div className="inline-flex rounded-lg border border-gold/30 bg-paper p-1" role="group" aria-label="Betalningsperiod">
+        <p className="mb-2 text-xs font-semibold text-foreground">{t("prenum.periodRubrik")}</p>
+        <div className="inline-flex rounded-lg border border-gold/30 bg-paper p-1" role="group" aria-label={t("prenum.periodRubrik")}>
           {(
             [
-              { id: "manad", label: "Månadsvis" },
-              { id: "ar", label: "Årsvis" },
+              { id: "manad", label: t("prenum.manadsvis") },
+              { id: "ar", label: t("prenum.arsvis") },
             ] as const
           ).map((p) => (
             <button
@@ -412,12 +426,12 @@ export function AktiveraPanel({
         </div>
         {period === "ar" && vald && (
           <p className="mt-1.5 text-[11px] text-muted-foreground">
-            {manaderGratis(vald.prisManad, vald.prisAr) !== null
-              ? `Årspriset motsvarar ${12 - (manaderGratis(vald.prisManad, vald.prisAr) ?? 0)} månader — ${manaderGratis(vald.prisManad, vald.prisAr)} gratis. `
-              : "Årspriset är rabatterat mot månadspriset. "}
-            Du binder dig inte: förnyelse sker bara efter ditt aktiva val (
+            {arGratis !== null
+              ? t("prenum.arPrisManader", { betalda: 12 - arGratis, gratis: arGratis })
+              : t("prenum.arPrisRabatterat")}
+            {t("prenum.arIngenBindningA")}
             <Link href="/villkor#sektion-5" className="underline hover:text-foreground">
-              villkoren, sektion 5
+              {t("prenum.villkorSektion5")}
             </Link>
             ).
           </p>
@@ -428,27 +442,27 @@ export function AktiveraPanel({
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="pren-namn" className="mb-1.5 block text-xs font-semibold text-foreground">
-            Namn
+            {t("ui.namn")}
           </label>
           <Input
             id="pren-namn"
             value={namn}
             onChange={(e) => setNamn(e.target.value)}
-            placeholder="Ditt namn"
+            placeholder={t("prenum.dittNamn")}
             maxLength={80}
             autoComplete="name"
           />
         </div>
         <div>
           <label htmlFor="pren-epost" className="mb-1.5 block text-xs font-semibold text-foreground">
-            E-post
+            {t("ui.epost")}
           </label>
           <Input
             id="pren-epost"
             type="email"
             value={epost}
             onChange={(e) => setEpost(e.target.value)}
-            placeholder="din@epost.se"
+            placeholder={t("prenum.epostExempel")}
             maxLength={160}
             autoComplete="email"
           />
@@ -469,13 +483,10 @@ export function AktiveraPanel({
         />
         <span className="text-sm leading-relaxed">
           <span className="font-semibold text-foreground">
-            Få morgon-briefingen + forskningsuppdateringar per mejl
+            {t("prenum.nyhetRubrik")}
           </span>
           <span className="block text-xs text-muted-foreground">
-            Frivilligt och kostnadsfritt — en kort, saklig morgonhälsning (vågkartan,
-            dagens aktie, ett femminuterspass) och större forskningsuppdateringar.
-            Avsluta när du vill genom att svara på ett brev. Pedagogisk analys —
-            aldrig investeringsråd.
+            {t("prenum.nyhetText")}
           </span>
         </span>
       </label>
@@ -484,7 +495,7 @@ export function AktiveraPanel({
       <div className="mt-6 rounded-lg border border-gold/30 bg-paper p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
           <span className="text-muted-foreground">
-            {vald?.namn} · {period === "manad" ? "månadsvis" : "årsvis"}
+            {vald?.namn} · {periodVis}
           </span>
           <span className="flex items-baseline gap-2">
             {hydrerad && harRabatt && (
@@ -493,7 +504,7 @@ export function AktiveraPanel({
                   {formateraKr(ordinarie)}
                 </span>
                 <span className="rounded-full border border-bull/40 bg-bull/10 px-2 py-0.5 text-[10px] font-semibold text-bull">
-                  Fas {fasStatus === "fas3" ? "3" : "2"} −{rabattProcent} %
+                  {t("prenum.fasMinus", { fas: fasStatus === "fas3" ? "3" : "2", procent: rabattProcent })}
                 </span>
               </>
             )}
@@ -505,8 +516,8 @@ export function AktiveraPanel({
         </div>
         <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
           {hydrerad && harRabatt
-            ? "Din Fas-status känns igen automatiskt — rabatten gäller för alltid, på alla nivåer."
-            : `Ingen Fas-status hittades i den här webbläsaren. Är du Fas 2- eller Fas 3-elev? Rabatten (${rabattProcent} %) syns automatiskt när du är inloggad med din elevstatus.`}
+            ? t("prenum.fasStatusRabatt")
+            : t("prenum.ingenFasStatus", { procent: rabattProcent })}
         </p>
       </div>
 
@@ -514,7 +525,7 @@ export function AktiveraPanel({
         className="mt-5 w-full bg-gold font-bold text-primary-foreground hover:bg-gold/90"
         onClick={() => void begar()}
       >
-        Begär aktivering
+        {t("prenum.begarAktivering")}
       </Button>
       {fel && (
         <p className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
@@ -523,21 +534,19 @@ export function AktiveraPanel({
       )}
 
       <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground">
-        Begäran sparas lokalt i din webbläsare och blir ett färdigifyllt mejl till{" "}
-        {EPOST} — inga kortuppgifter efterfrågas här. Samtidigt räknas en
-        anonymiserad intention (endast nivå, period och pris — inget om dig) för
-        vår konverteringsstatistik, se{" "}
+        {t("prenum.fotA")}
+        {EPOST}
+        {t("prenum.fotB")}
         <Link href="/transparens" className="underline hover:text-foreground">
-          transparensregistret
+          {t("prenum.fotTransparens")}
         </Link>
-        . Aktivering, pris och eventuellt
-        samtycke till omedelbar digital leverans (ångerrätten, se{" "}
+        {t("prenum.fotC")}
         <Link href="/villkor#sektion-6" className="underline hover:text-foreground">
-          villkoren sektion 6
+          {t("prenum.fotVillkor6")}
         </Link>
-        ) bekräftas i mejlväxlingen. AK1A lämnar aldrig investeringsråd — se{" "}
+        {t("prenum.fotD")}
         <Link href="/finansiell-policy" className="underline hover:text-foreground">
-          finansiell policy
+          {t("prenum.fotFinPolicy")}
         </Link>
         .
       </p>

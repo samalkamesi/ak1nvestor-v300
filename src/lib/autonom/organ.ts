@@ -205,9 +205,18 @@ const MOS_STAD_MAX_RADERA = 20_000;
 const MAX_ANTAL_MEDLEM = 50_000;
 const MAX_ANTAL_MEDLEM_PROGRESS = 500_000;
 /** Tak för medlem-städningen per körning: 200 sidor à 1 000 rader + 20 000
- *  raderade (samma budget som MÖS-städningen — våg 67 mätte 16 s för 200 sidor). */
+ * raderade (samma budget som MÖS-städningen — våg 67 mätte 16 s för 200 sidor). */
 const MEDLEM_STAD_MAX_Sidor = 200;
 const MEDLEM_STAD_MAX_RADERA = 20_000;
+/** Våg 86 (AKM2-snapshot-persistensen): type=akm2_snapshot — Supabase-lagret
+ *  bakom data/cache/akm2-{T}.json (akm2-snapshot-lagring.ts). Snapshots är
+ *  serverns ENDAST källa när cachefilen saknas (read-only fs) och får därför
+ *  ALDRIG åldras bort — INGET ålderstak, i stället ett eget hårt radtak:
+ *  2 000 rader = 100 tickers × 20 generationer (skrivvägen är idempotent, så
+ *  tillväxten är en rad per ticker och generation). ~350× under kollapsen av
+ *  2026-08 och ändå brett huvudutrymme för generationer; äldsta överskottet
+ *  stympas hårt (raknaTak — senaste-vinner-läsningen tål det). */
+const MAX_ANTAL_AKM2_SNAPSHOT = 2_000;
 
 async function organRetention(
   sb: { origin: string; headers: Record<string, string> } | null
@@ -545,9 +554,11 @@ async function organRetention(
   //    OBS (våg 86): medlem-typerna (medlem, medlem_progress, medlem_andring,
   //    admin-andring) åldras ALDRIG bort — senaste raden per authId är
   //    medlemns profil/progress/audit-sanning (STYRELSE-V86-L3 §KRITA; se
-  //    steg 3c).
+  //    steg 3c). akm2_snapshot (våg 86 AKM2-persistensen) hör till samma
+  //    undantag — senaste raden per details->>ticker är serverns gällande
+  //    AKM2-snapshot när cachefilen saknas; egna taket finns i steg 2b.
   deletedOld += await rakraAldring(
-    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod)",
+    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod,akm2_snapshot)",
     MAX_LOG_AGE_DAYS
   );
   deletedOld += await rakraAldring("type=eq.trafik", MAX_ALDER_TYP_DAGAR);
@@ -555,11 +566,16 @@ async function organRetention(
 
   // 2. Hårta radtak, per scope (500 / 12 000 / 3 000)
   cappedRows += await raknaTak(
-    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod)",
+    "type=not.in.(trafik,sakerhet,oversattning,termbank_tillagg,medlem,medlem_progress,medlem_andring,admin-andring,variabel,variabel-andring,blogg_utkast,blogg_publicerad,kurs_metadata,kurs_metadata-andring,media_fil,media_fil_raderad,referral,referral_kod,akm2_snapshot)",
     MAX_LOG_ROWS
   );
   cappedRows += await raknaTak("type=eq.trafik", MAX_ANTAL_TRAFIK);
   cappedRows += await raknaTak("type=eq.sakerhet", MAX_ANTAL_SAKERHET);
+  // 2b. AKM2-snapshots (våg 86): inget ålderstak (undantagen i steg 1–2 ovan)
+  //     men eget hårt radtak 2 000 (100 tickers × 20 generationer) — äldsta
+  //     överskottet stympas; senaste raden per details->>ticker är serverns
+  //     gällande snapshot och vinner alltid vid läsningen.
+  cappedRows += await raknaTak("type=eq.akm2_snapshot", MAX_ANTAL_AKM2_SNAPSHOT);
 
   // 3. MÖS-event-lagret (våg 55 L1): dublettrader FÖRST (senaste vinner),
   //    därefter antalsstympning MAX_ANTAL_OVERSATTNING (icke-publicerade äldst först).

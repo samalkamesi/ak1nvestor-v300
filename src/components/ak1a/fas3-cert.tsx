@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { lasKlaraKurser, lasMedlem, lasXP, niva } from "@/lib/member-local";
 import { arKomplett, lasSparade, type SuperanalysData } from "@/lib/superanalys";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
  * FAS 3-CERT — elevens progress mot praktikexamen (certifierad AK1A-analytiker).
@@ -23,6 +24,13 @@ const NIVA_KRAV = 25;
 const ANALYSER_KRAV = 10;
 const ETIK_LOFTEN = 3;
 
+/** Talformat per språk (XP-gruppering) — sv-SE oförändrat på originalet. */
+function xpLocale(sprak: string): string {
+  if (sprak === "en") return "en-US";
+  if (sprak === "ar") return "ar-EG";
+  return "sv-SE";
+}
+
 /** Guld-progressring (SVG-mätare) — marin bakgrund, guldstråk. */
 function Ring({
   procent,
@@ -35,6 +43,7 @@ function Ring({
   centrum: string;
   sub?: string;
 }) {
+  const { t } = useSprak();
   const p = Math.max(0, Math.min(1, procent));
   const r = (storlek - 12) / 2;
   const omkrets = 2 * Math.PI * r;
@@ -46,7 +55,7 @@ function Ring({
         height={storlek}
         viewBox={`0 0 ${storlek} ${storlek}`}
         role="img"
-        aria-label={`${Math.round(p * 100)} procent av steget`}
+        aria-label={t("fas3cert.ringAria", { procent: Math.round(p * 100) })}
       >
         <circle
           cx={storlek / 2}
@@ -95,15 +104,17 @@ type Steg = {
   lank?: { href: string; text: string };
 };
 
-const STATUS_ETIKETT: Record<StegStatus, { text: string; klass: string }> = {
-  klar: { text: "Klar", klass: "border-[#E8C766] bg-[#E8C766]/15 text-[#E8C766]" },
-  pagar: { text: "Pågår", klass: "border-[#E8C766]/50 bg-[#E8C766]/10 text-[#E8C766]" },
-  vantar: { text: "Väntar", klass: "border-[#EDE6D6]/25 bg-transparent text-[#EDE6D6]/60" },
-  last: { text: "Låst", klass: "border-[#EDE6D6]/25 bg-transparent text-[#EDE6D6]/60" },
+/** Status-chipens färgklasser (texten kommer ur ordlistan i render). */
+const STATUS_KLASS: Record<StegStatus, string> = {
+  klar: "border-[#E8C766] bg-[#E8C766]/15 text-[#E8C766]",
+  pagar: "border-[#E8C766]/50 bg-[#E8C766]/10 text-[#E8C766]",
+  vantar: "border-[#EDE6D6]/25 bg-transparent text-[#EDE6D6]/60",
+  last: "border-[#EDE6D6]/25 bg-transparent text-[#EDE6D6]/60",
 };
 
 export function Fas3Cert() {
   // SSR-säkra guards: allt localStorage-läsande sker i useEffect efter montering.
+  const { t, sprak } = useSprak();
   const [hydrerad, setHydrerad] = useState(false);
   const [elevNiva, setElevNiva] = useState(1);
   const [elevXp, setElevXp] = useState(0);
@@ -137,60 +148,67 @@ export function Fas3Cert() {
     {
       id: "grund",
       nr: "1",
-      namn: "Grund",
+      namn: t("fas3cert.stegGrund"),
       ikon: "📚",
       status: grundAndel >= 1 ? "klar" : "pagar",
       andel: grundAndel,
       centrum: `${hydrerad ? elevNiva : 1}`,
-      sub: `av ${NIVA_KRAV}`,
+      sub: t("fas3cert.av", { n: NIVA_KRAV }),
       text:
         grundAndel >= 1
-          ? `Grunden är lagd — nivå ${NIVA_KRAV} är nått och Fas 3:s dörr står öppen för dig. Allt du byggt i Fas 1 bär du med dig in i praktiken.`
-          : `Du är på nivå ${hydrerad ? elevNiva : 1} av ${NIVA_KRAV}. Varje kurs du klarar är en stapel närmare — och Fas 1:s hela bibliotek är gratis, för alltid.`,
+          ? t("fas3cert.grundKlar", { krav: NIVA_KRAV })
+          : t("fas3cert.grundPagar", { niva: hydrerad ? elevNiva : 1, krav: NIVA_KRAV }),
       lank:
         grundAndel >= 1
           ? undefined
-          : { href: "/kurser", text: "Fortsätt bygga grunden — gratis" },
+          : {
+              href: sprak === "en" || sprak === "ar" ? `/${sprak}/kurser` : "/kurser",
+              text: t("fas3cert.fortsattGrund"),
+            },
     },
     {
       id: "praktik",
       nr: "2",
-      namn: "Praktik",
+      namn: t("fas3cert.stegPraktik"),
       ikon: "🏅",
       status: praktikAndel >= 1 ? "klar" : "pagar",
       andel: praktikAndel,
       centrum: `${hydrerad ? kompletta : 0}`,
-      sub: `av ${ANALYSER_KRAV}`,
+      sub: t("fas3cert.av", { n: ANALYSER_KRAV }),
       text:
         praktikAndel >= 1
-          ? `Tio kompletta analyser — praktikportföljen är full. Tack för att du bygger hantverket på riktiga bolag, steg för steg.`
-          : `Varje komplett Superanalys du sparar räknas automatiskt i din portfölj — ${hydrerad ? kompletta : 0} av ${ANALYSER_KRAV} staplar står redan.${
-              hydrerad && utkast > 0
-                ? ` ${utkast} pågående utkast väntar tålmodigt på sina sista poäng.`
-                : ""
-            } Nästa analys du bygger är nästa steg.`,
-      lank: { href: "/superanalys", text: "Öppna Superanalysen" },
+          ? t("fas3cert.praktikKlar")
+          : t("fas3cert.praktikPagarA", { n: hydrerad ? kompletta : 0, krav: ANALYSER_KRAV }) +
+            (hydrerad && utkast > 0
+              ? " " +
+                (utkast === 1
+                  ? t("fas3cert.praktikUtkast1", { n: utkast })
+                  : t("fas3cert.praktikUtkastFlera", { n: utkast }))
+              : "") +
+            " " +
+            t("fas3cert.praktikPagarB"),
+      lank: { href: "/superanalys", text: t("fas3cert.oppnaSuper") },
     },
     {
       id: "etik",
       nr: "3",
-      namn: "Etik",
+      namn: t("fas3cert.stegEtik"),
       ikon: "⚖️",
       status: "vantar",
       andel: etikAndel,
       centrum: "0",
-      sub: `av ${ETIK_LOFTEN}`,
-      text: `Etik-modulen öppnas tillsammans med din Fas 3-ansökan — tre löften som blir din analytikerkod. Löftena står redan här på sidan, så du kan börja leva efter dem idag.`,
+      sub: t("fas3cert.av", { n: ETIK_LOFTEN }),
+      text: t("fas3cert.etikText"),
     },
     {
       id: "cert",
       nr: "4",
-      namn: "Certifiering",
+      namn: t("fas3cert.stegCert"),
       ikon: "🎓",
       status: klarForCert ? "pagar" : "last",
       andel: certAndel,
       centrum: klarForCert ? "◎" : "🔒",
-      text: `När grunden, portföljen och etiken är klara lämnar du in portföljen för granskning — AI-förgranskning och grundarens mänskliga slutbedömning, betyg A–F. Sedan är beviset ditt, för alltid.`,
+      text: t("fas3cert.certText"),
     },
   ];
 
@@ -199,7 +217,7 @@ export function Fas3Cert() {
 
   return (
     <section
-      aria-label="Din progress mot Fas 3-certifieringen"
+      aria-label={t("fas3cert.aria")}
       className="marin-panel relative overflow-hidden rounded-3xl border-2 border-gold/60 p-6 shadow-xl sm:p-9"
     >
       <div className="pointer-events-none absolute inset-2 rounded-2xl border border-[#E8C766]/25" aria-hidden />
@@ -207,27 +225,32 @@ export function Fas3Cert() {
       <div className="relative">
         {/* Rubrik + personlig hälsning — alltid välkommen, aldrig skyldig */}
         <p className="text-[10px] uppercase tracking-[0.3em] text-[#E8C766]">
-          🎓 Din väg till certifieringen
+          🎓 {t("fas3cert.eyebrow")}
         </p>
         <h2 className="mt-2 font-serif text-2xl font-bold text-[#EDE6D6]">
           {hydrerad
-            ? `Välkommen${namn ? `, ${namn}` : ""} — så här ser din resa ut just nu`
-            : "Välkommen — så här ser resan mot certifieringen ut"}
+            ? t("fas3cert.velkommenNu", { namn: namn ? `, ${namn}` : "" })
+            : t("fas3cert.velkommenResa")}
         </h2>
 
         {/* Statusrad — samma neutrala ton som fas2-ansök */}
         <p className="mt-2 text-xs text-[#EDE6D6]/75">
           {hydrerad ? (
             <>
-              Din elevstatus:{" "}
+              {t("fas3cert.elevstatus")}
               <strong className="text-[#EDE6D6]">
-                Nivå {elevNiva} · {elevXp.toLocaleString("sv-SE")} XP · {klara.length}{" "}
-              klar{klara.length === 1 ? "" : "a"} kurs{klara.length === 1 ? "" : "er"} ·{" "}
-                {sparade.length} sparad{sparade.length === 1 ? "" : "e"} analys{sparade.length === 1 ? "" : "er"}
+                {t("kurs.niva")} {elevNiva} · {elevXp.toLocaleString(xpLocale(sprak))} XP ·{" "}
+                {klara.length === 1
+                  ? t("fas3cert.statKursSing", { n: klara.length })
+                  : t("fas3cert.statKursFler", { n: klara.length })}{" "}
+                ·{" "}
+                {sparade.length === 1
+                  ? t("fas3cert.statAnalysSing", { n: sparade.length })
+                  : t("fas3cert.statAnalysFler", { n: sparade.length })}
               </strong>
             </>
           ) : (
-            <span className="text-[#EDE6D6]/50">Läser din elevstatus…</span>
+            <span className="text-[#EDE6D6]/50">{t("fas3cert.laserStatus")}</span>
           )}
         </p>
 
@@ -238,69 +261,70 @@ export function Fas3Cert() {
               procent={total}
               storlek={124}
               centrum={`${Math.round(total * 100)}%`}
-              sub="av vägen"
+              sub={t("fas3cert.avVagen")}
             />
             <p className="max-w-[15rem] text-xs leading-relaxed text-[#EDE6D6]/80 sm:text-center">
-              Ringen visar hela vägen — alla fyra steg. Den växer med dig, i din
-              takt. Kunskapen är din, och ingen kan ta den ifrån dig.
+              {t("fas3cert.ringText")}
             </p>
           </div>
 
           {/* Fyra steg */}
           <ol className="flex-1 space-y-3">
-            {steg.map((s) => {
-              const statusEtikett = STATUS_ETIKETT[s.status];
-              return (
-                <li
-                  key={s.id}
-                  className="flex items-start gap-4 rounded-2xl border border-[#E8C766]/20 bg-[#EDE6D6]/[0.03] p-4"
-                >
-                  <Ring
-                    procent={s.andel}
-                    centrum={s.centrum}
-                    sub={s.sub}
-                    storlek={68}
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-serif text-base font-bold text-[#EDE6D6]">
-                        {s.ikon} Steg {s.nr} · {s.namn}
-                      </span>
-                      <span
-                        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${statusEtikett.klass}`}
-                      >
-                        {statusEtikett.text}
-                      </span>
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/85">{s.text}</p>
-                    {s.lank && (
-                      <Link
-                        href={s.lank.href}
-                        className="mt-2 inline-block text-xs font-semibold text-[#E8C766] underline decoration-[#E8C766]/40 underline-offset-2 hover:decoration-[#E8C766]"
-                      >
-                        {s.lank.text} →
-                      </Link>
-                    )}
+            {steg.map((s) => (
+              <li
+                key={s.id}
+                className="flex items-start gap-4 rounded-2xl border border-[#E8C766]/20 bg-[#EDE6D6]/[0.03] p-4"
+              >
+                <Ring
+                  procent={s.andel}
+                  centrum={s.centrum}
+                  sub={s.sub}
+                  storlek={68}
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-serif text-base font-bold text-[#EDE6D6]">
+                      {s.ikon} {t("fas3cert.steg", { nr: s.nr })} · {s.namn}
+                    </span>
+                    <span
+                      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${STATUS_KLASS[s.status]}`}
+                    >
+                      {s.status === "klar"
+                        ? t("ui.klar")
+                        : s.status === "pagar"
+                          ? t("fas3cert.pagar")
+                          : s.status === "vantar"
+                            ? t("fas3cert.vantar")
+                            : t("fas3cert.last")}
+                    </span>
                   </div>
-                </li>
-              );
-            })}
+                  <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/85">{s.text}</p>
+                  {s.lank && (
+                    <Link
+                      href={s.lank.href}
+                      className="mt-2 inline-block text-xs font-semibold text-[#E8C766] underline decoration-[#E8C766]/40 underline-offset-2 hover:decoration-[#E8C766]"
+                    >
+                      {s.lank.text} →
+                    </Link>
+                  )}
+                </div>
+              </li>
+            ))}
           </ol>
         </div>
 
         {/* Nästa steg — pedagogisk tonsatt, aldrig dömande */}
         <div className="mt-6 rounded-xl border border-[#E8C766]/40 bg-[#E8C766]/10 p-4">
           <p className="text-xs leading-relaxed text-[#EDE6D6]">
-            <strong className="text-[#E8C766]">Nästa steg på din resa:</strong>{" "}
+            <strong className="text-[#E8C766]">{t("fas3cert.nastaStegRubrik")}</strong>{" "}
             {hydrerad && nasta
               ? `${nasta.namn} — ${nasta.text.split(".")[0]}.`
-              : "Välkommen — börja där du är, så går vi bredvid dig hela vägen."}
+              : t("fas3cert.nastaFallback")}
           </p>
         </div>
 
         <p className="mt-4 text-[11px] leading-relaxed text-[#EDE6D6]/60">
-          Allt spåras lokalt i din egen webbläsare — integritetsvänligt och utan
-          kontokrav. Din portfölj växer fram successivt, precis som lärandet.
+          {t("fas3cert.fot")}
         </p>
       </div>
     </section>

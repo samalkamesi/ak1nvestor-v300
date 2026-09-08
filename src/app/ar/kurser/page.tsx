@@ -5,7 +5,7 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SIFFROR } from "@/lib/siffror";
-import { hamtaKursTitelLager, titelUrLager } from "@/lib/kurs-speglar";
+import { hamtaKursTitelLager, titelUrLager, kategoriEtikett } from "@/lib/kurs-speglar";
 import {
   spegelMetadata,
   spegelWebsiteJsonLd,
@@ -131,7 +131,9 @@ export default async function KurserPageAr() {
             kurser={courses.map((c) => ({
               slug: c.slug,
               title: titelUrLager(titelLager, c.slug, c.title, "ar"),
-              category: c.category,
+              // الموجة 82 D: تُترجم فئة الدورة من قائمة الكلمات (kategori.*)
+              // — الصفحة السويدية /kurser تعرض الفئة كما هي.
+              category: kategoriEtikett(c.category, "ar"),
               kapitel: c.chapters.length,
               minuter: c.totalMinutes || c.minutes,
               xp: c.xp,

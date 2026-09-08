@@ -74,6 +74,7 @@
 import { cache } from "react";
 import type { Metadata } from "next";
 import type { Course, CourseChapter } from "@/lib/content";
+import { ORDLISTA, type OrdlistaNyckel, type SprakRad } from "@/lib/ordlista";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { lasPubliceradeForSpegel, lasPubliceradeKursTitlar } from "@/lib/oversattning/lager";
 import { SPEGEL_SITE_URL, SPEGEL_SITE_NAME } from "@/lib/spegel-metadata";
@@ -274,6 +275,44 @@ export function titelUrLager(
 ): string {
   const text = lager.get(nyckelKurs("titel", slug))?.get(sprak);
   return typeof text === "string" && text.trim().length > 0 ? text : svensk;
+}
+
+// ── VÅG 82 D: kategorietiketter på speglarna ────────────────────────────────
+//
+// Kategorin är en fri sträng ur public/deep-courses.json (27 unika, versala).
+// Översättningarna bor som kategori.*-rader i ordlistan; nyckeln härleds ur
+// datavärdet med en deterministisk normalisering (nedan). ENDAST speglarna
+// konsumerar detta: svenska /kurser visar kategorin rå (datavärdet) som förr.
+
+/**
+ * Normalisera en rå kategoristräng till ordlistans nyckelstämma: versalisera →
+ * Å/Ä→A, Ö→O, É→E → övriga tecken utanför A–Z/0–9 stryks → gemener.
+ * Exempel: "BOKFÖRING & ÅRSREDOVISNING" → "bokforingarsredovisning".
+ * Medvetet tecken-för-tecken: ALDRIG \w i regex mot svensk text (åäö faller
+ * utanför \w och skulle strykas osanerat).
+ */
+export function kategoriNyckel(kategori: string): string {
+  let ut = "";
+  for (const tecken of kategori.toUpperCase()) {
+    if (tecken === "Å" || tecken === "Ä") ut += "A";
+    else if (tecken === "Ö") ut += "O";
+    else if (tecken === "É") ut += "E";
+    else if ((tecken >= "A" && tecken <= "Z") || (tecken >= "0" && tecken <= "9")) ut += tecken;
+  }
+  return ut.toLowerCase();
+}
+
+/**
+ * Kategorietikett på spegelspråket: rått datavärde → ordlistans
+ * kategori.<nyckel>-rad om den finns, annars originalet oförändrat (okända
+ * framtida kategorier läcker aldrig — samma fallback-form som titelUrLager;
+ * sv-raden i ordlistan ÄR datavärdet ordagrant). Varumärkeskategorier
+ * (BOKMASTER) är identiska på alla tre språken — se ordlistans VÅG 82 D-not.
+ */
+export function kategoriEtikett(kategori: string, sprak: KursSpegelSprak): string {
+  const nyckel = ("kategori." + kategoriNyckel(kategori)) as OrdlistaNyckel;
+  const rad: SprakRad | undefined = ORDLISTA[nyckel];
+  return rad ? rad[sprak] || rad.sv : kategori;
 }
 
 // ── Tillämpning: svensk kurs + lager → speglad kurs + andel ──────────────────

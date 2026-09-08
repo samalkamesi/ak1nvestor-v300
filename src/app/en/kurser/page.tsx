@@ -5,7 +5,7 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SIFFROR } from "@/lib/siffror";
-import { hamtaKursTitelLager, titelUrLager } from "@/lib/kurs-speglar";
+import { hamtaKursTitelLager, titelUrLager, kategoriEtikett } from "@/lib/kurs-speglar";
 import {
   spegelMetadata,
   spegelWebsiteJsonLd,
@@ -129,7 +129,9 @@ export default async function KurserPageEn() {
             kurser={courses.map((c) => ({
               slug: c.slug,
               title: titelUrLager(titelLager, c.slug, c.title, "en"),
-              category: c.category,
+              // VÅG 82 D: kategorietiketten översätts via ordlistan (kategori.*)
+              // — svenska /kurser visar kategorin rå som förr.
+              category: kategoriEtikett(c.category, "en"),
               kapitel: c.chapters.length,
               minuter: c.totalMinutes || c.minutes,
               xp: c.xp,

@@ -998,6 +998,70 @@ export const ORDLISTA = {
     en: "Explore the subscription →",
     ar: "استكشف الاشتراك ←",
   },
+
+  // ── VÅG 82 D (2026-09-07): kurskategorier på speglarna ─────────────────────
+  // Kategori-värdena är FRIA STRÄNGAR ur public/deep-courses.json (versala,
+  // 27 unika). Nyckelstämman är normaliserad ur datavärdet (versal → Å/Ä→A,
+  // Ö→O → kvarvarande icke A–Z/0–9 stryks → gemener) — funktionen bor i
+  // kurs-speglar.ts (kategoriNyckel/kategoriEtikett). SV-raden ÄR datavärdet
+  // ordagrant: svenska /kurser visar kategorin rå som förr, och en framtida
+  // okänd kategori faller tillbaka på sitt eget värde (aldrig tomt).
+  // Bedömning per etikett: vanliga substantiv översätts; varumärkeskategorierna
+  // BOKMASTER förblir latinska på alla tre språken (ordlistans varumärkes-
+  // regel); AK1TS är varumärke men FÖRDJUPNING översätts runt det; MOAT är
+  // vardaglig finansiell term (EN oförändrad, AR standardtermen الخندق
+  // الاقتصادي ur Buffett-litteraturen).
+  "kategori.bokmaster": { sv: "BOKMASTER", en: "BOKMASTER", ar: "BOKMASTER" },
+  "kategori.sektoranalys": { sv: "SEKTORANALYS", en: "Sector Analysis", ar: "تحليل القطاعات" },
+  "kategori.ak1tsfordjupning": { sv: "AK1TS FÖRDJUPNING", en: "AK1TS Deep Dives", ar: "تعمُّق AK1TS" },
+  "kategori.varderingsmetoder": { sv: "VÄRDERINGSMETODER", en: "Valuation Methods", ar: "طرق التقييم" },
+  "kategori.praktiskacase": { sv: "PRAKTISKA CASE", en: "Practical Cases", ar: "حالات عملية" },
+  "kategori.beteendefinans": { sv: "BETEENDEFINANS", en: "Behavioral Finance", ar: "التمويل السلوكي" },
+  "kategori.riskhantering": { sv: "RISKHANTERING", en: "Risk Management", ar: "إدارة المخاطر" },
+  "kategori.portfoljhantering": { sv: "PORTFÖLJHANTERING", en: "Portfolio Management", ar: "إدارة المحفظة" },
+  "kategori.bokforingarsredovisning": {
+    sv: "BOKFÖRING & ÅRSREDOVISNING",
+    en: "Accounting & Annual Reports",
+    ar: "المحاسبة والتقارير السنوية",
+  },
+  "kategori.utdelningsstrategi": { sv: "UTDELNINGSSTRATEGI", en: "Dividend Strategy", ar: "استراتيجية توزيعات الأرباح" },
+  "kategori.makroekonomi": { sv: "MAKROEKONOMI", en: "Macroeconomics", ar: "الاقتصاد الكلي" },
+  "kategori.riskhanteringportfoljteori": {
+    sv: "RISKHANTERING & PORTFÖLJTEORI",
+    en: "Risk Management & Portfolio Theory",
+    ar: "إدارة المخاطر ونظرية المحفظة",
+  },
+  "kategori.svenskbolagsskattjuridik": {
+    sv: "SVENSK BOLAGSSKATT & JURIDIK",
+    en: "Swedish Corporate Tax & Law",
+    ar: "ضرائب الشركات السويدية والقانون",
+  },
+  "kategori.makroekonomiranta": {
+    sv: "MAKROEKONOMI & RÄNTA",
+    en: "Macroeconomics & Interest Rates",
+    ar: "الاقتصاد الكلي وأسعار الفائدة",
+  },
+  "kategori.skattjuridik": { sv: "SKATT & JURIDIK", en: "Tax & Law", ar: "الضرائب والقانون" },
+  "kategori.optionsderivat": { sv: "OPTIONS & DERIVAT", en: "Options & Derivatives", ar: "الخيارات والمشتقات" },
+  "kategori.ekosystem": { sv: "EKOSYSTEM", en: "Ecosystem", ar: "المنظومة" },
+  "kategori.tillvaxt": { sv: "TILLVÄXT", en: "Growth", ar: "النمو" },
+  "kategori.vardering": { sv: "VÄRDERING", en: "Valuation", ar: "التقييم" },
+  "kategori.lonsamhet": { sv: "LÖNSAMHET", en: "Profitability", ar: "الربحية" },
+  "kategori.stabilitet": { sv: "STABILITET", en: "Stability", ar: "الاستقرار" },
+  "kategori.moat": { sv: "MOAT", en: "Moat", ar: "الخندق الاقتصادي" },
+  "kategori.katalysator": { sv: "KATALYSATOR", en: "Catalyst", ar: "المُحفِّز" },
+  "kategori.privateequityinvestmentbolag": {
+    sv: "PRIVATE EQUITY & INVESTMENTBOLAG",
+    en: "Private Equity & Investment Companies",
+    ar: "الأسهم الخاصة وشركات الاستثمار",
+  },
+  "kategori.aktiemarknadenipraktiken": {
+    sv: "AKTIEMARKNADEN I PRAKTIKEN",
+    en: "The Stock Market in Practice",
+    ar: "سوق الأسهم عمليًا",
+  },
+  "kategori.risk": { sv: "RISK", en: "Risk", ar: "المخاطر" },
+  "kategori.kapitalstruktur": { sv: "KAPITALSTRUKTUR", en: "Capital Structure", ar: "هيكل رأس المال" },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

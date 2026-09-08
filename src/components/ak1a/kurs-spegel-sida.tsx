@@ -10,6 +10,7 @@ import {
   kursSpegelMetadata,
   byggKursSpegel,
   hamtaKursLager,
+  kategoriEtikett,
 } from "@/lib/kurs-speglar";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
@@ -163,7 +164,7 @@ export function KursSpegelSida({
 
         <header className="border-b border-gold/30 pb-6">
           <p className="text-xs uppercase tracking-widest text-gold">
-            AKM1 · {kurs.category}
+            AKM1 · {kategoriEtikett(kurs.category, lang)}
           </p>
           <h1 className="mt-2 font-serif text-4xl font-bold">{kurs.title}</h1>
           <p className="mt-3 text-muted-foreground leading-relaxed">{kurs.learn}</p>
@@ -173,7 +174,7 @@ export function KursSpegelSida({
               `⏱ ${totaltMin} ${t("kurs.minuter")}`,
               `⚡ ${intjanbarXp} XP`,
               `⚖ ${t("kurs.vikt")}: ${kurs.weight || "6%"}`,
-              `🏷 ${kurs.category}`,
+              `🏷 ${kategoriEtikett(kurs.category, lang)}`,
             ]
               .filter((chip): chip is string => Boolean(chip))
               .map((chip) => (
@@ -387,7 +388,7 @@ export function KursSpegelSida({
           {siblings.length > 0 && (
             <div className="mt-6">
               <h3 className="text-xs uppercase tracking-widest text-muted-foreground">
-                {texter.relaterade(kurs.category)}
+                {texter.relaterade(kategoriEtikett(kurs.category, lang))}
               </h3>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {siblings.map((s) => (

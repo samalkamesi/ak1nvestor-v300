@@ -21,7 +21,14 @@ import {
   Download,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
-import { sparaAdminLosenord, rensaAdminLosenord, adminHeaders } from "@/lib/admin-klient";
+import {
+  sparaAdminLosenord,
+  adminHeaders,
+  loggaIn,
+  loggaUt,
+  lasRoll,
+  type AdminRoll,
+} from "@/lib/admin-klient";
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
@@ -126,6 +133,35 @@ const SEVERITY_COLORS: Record<string, string> = {
   critical: "text-red-600 dark:text-red-400",
 };
 
+/**
+ * VÅG 83 §A2 — flikkarta + rolltillåtelse i panelen. Redaktören ser ENDAST
+ * Blogg/Media/Kurser (termbanken är INTE en egen flik — den lever inuti
+ * Översättning-panelen och förblir admin-endast här). Alla andra flikar är
+ * admin-endast och döljs för redaktören. Lösenordsläget (ADMIN_PASSWORD,
+ * ingen session) = roll "admin" = nuvarande beteende med alla flikar.
+ */
+const ALLA_FLIKAR: { id: string; etikett: string; endastAdmin?: boolean }[] = [
+  { id: "overview", etikett: "Översikt", endastAdmin: true },
+  { id: "members", etikett: "Medlemmar", endastAdmin: true },
+  { id: "kundekosystem", etikett: "Kundekosystem", endastAdmin: true },
+  { id: "ekosystem", etikett: "Ekosystem", endastAdmin: true },
+  { id: "activity", etikett: "Aktivitetslogg", endastAdmin: true },
+  { id: "portfolios", etikett: "Klientportföljer", endastAdmin: true },
+  { id: "analysis-upload", etikett: "Analys-uppladdning", endastAdmin: true },
+  { id: "system", etikett: "Systemevents", endastAdmin: true },
+  { id: "traffic", etikett: "Statistik & SEO", endastAdmin: true },
+  { id: "trafik-sakerhet", etikett: "Trafik & Säkerhet 📡", endastAdmin: true },
+  { id: "konvertering", etikett: "Konvertering 📊", endastAdmin: true },
+  { id: "beteende", etikett: "Beteende", endastAdmin: true },
+  { id: "ai-organ", etikett: "AI-organ styrelse", endastAdmin: true },
+  { id: "utveckling", etikett: "Utveckling 🔭", endastAdmin: true },
+  { id: "oversattning", etikett: "Översättning 🌍", endastAdmin: true },
+  { id: "variabler", etikett: "Variabler 📊", endastAdmin: true },
+  { id: "blogg", etikett: "Blogg ✍️" },
+  { id: "media", etikett: "Media 🖼️" },
+  { id: "kurser", etikett: "Kurser 🎓" },
+];
+
 function timeAgo(iso: string | null | undefined): string {
   if (!iso) return "—";
   const t = new Date(iso).getTime();
@@ -153,9 +189,37 @@ export default function AdminDashboard() {
   const [autoRefresh, setAutoRefresh] = React.useState(true);
   const [activeTab, setActiveTab] = React.useState("overview");
   const [loginError, setLoginError] = React.useState("");
+  /** VÅG 83 §A2: roll efter session-inloggning (null = lösenordsläge/admin). */
+  const [roll, setRoll] = React.useState<AdminRoll | null>(null);
+  /** Ärlig 503-info: sessionsvägen av — lösenordsfältet gäller som tidigare. */
+  const [sessionHint, setSessionHint] = React.useState("");
+
+  const arRedaktor = roll === "redaktor";
+
+  // Senaste roll från sessionStorage (tyst på servern/nysida).
+  React.useEffect(() => {
+    setRoll(lasRoll());
+  }, []);
 
   const forsokLoggaIn = async () => {
+    if (!password) return;
     setLoginError("");
+    // 1) Session-inloggning (våg 83 §A): cookie ak1a_admin + {roll} om
+    //    SESSION_SECRET finns — då skickas lösenordet aldrig vidare.
+    const svar = await loggaIn(password);
+    if (svar.roll) {
+      setRoll(svar.roll);
+      setAuthed(true);
+      setIsAdmin(true);
+      return;
+    }
+    if (svar.fel?.includes("SESSION_SECRET")) {
+      setSessionHint(
+        "Sessioner kräver SESSION_SECRET — skicka lösenord i fältet som tidigare.",
+      );
+    }
+    // 2) Fall-back: befintlig ADMIN_PASSWORD-väg (POST /api/admin/auth) —
+    //    fungerar oförändrat när sessionsvägen är av (503) eller ruten saknas.
     try {
       const res = await fetch("/api/admin/auth", {
         method: "POST",
@@ -163,6 +227,7 @@ export default function AdminDashboard() {
         body: JSON.stringify({ password }),
       });
       if (res.ok) {
+        setRoll(null); // lösenordsläge = admin-beteende som tidigare (alla flikar)
         setAuthed(true);
         setIsAdmin(true);
         sparaAdminLosenord(password); // x-admin-password på skyddade admin-anrop
@@ -202,20 +267,21 @@ export default function AdminDashboard() {
     }
   }, [actionFilter, sectionFilter]);
 
+  // Redaktören nekas aktivitet/statistik (våg 83 §A) — hämtas endast för admin.
   React.useEffect(() => {
-    if (!authed) return;
+    if (!authed || arRedaktor) return;
     fetchStats();
     fetchActivities();
-  }, [authed, fetchStats, fetchActivities]);
+  }, [authed, arRedaktor, fetchStats, fetchActivities]);
 
   React.useEffect(() => {
-    if (!authed || !autoRefresh) return;
+    if (!authed || arRedaktor || !autoRefresh) return;
     const interval = setInterval(() => {
       fetchStats();
       if (activeTab === "activity") fetchActivities();
     }, 10000); // refresh var 10s
     return () => clearInterval(interval);
-  }, [authed, autoRefresh, activeTab, fetchStats, fetchActivities]);
+  }, [authed, arRedaktor, autoRefresh, activeTab, fetchStats, fetchActivities]);
 
   if (!authed) {
     return (
@@ -250,6 +316,11 @@ export default function AdminDashboard() {
           {loginError && (
             <p className="mt-2 text-center text-xs text-red-600">{loginError}</p>
           )}
+          {sessionHint && (
+            <p className="mt-2 text-center text-[11px] leading-relaxed text-yellow-700 dark:text-yellow-400">
+              {sessionHint}
+            </p>
+          )}
           <p className="mt-3 text-center text-[11px] leading-relaxed text-muted-foreground">
             Lösenord sätts via ADMIN_PASSWORD i Vercel-miljövariabler.
           </p>
@@ -268,25 +339,36 @@ export default function AdminDashboard() {
         <div className="flex items-center justify-between">
           <VarumarkesLogo storlek="md" onClick={() => setSection("hem")} />
           <div className="flex items-center gap-2">
-            <Badge className="bg-gold text-background">ADMIN</Badge>
+            {/* Roll-chip (våg 83 §A2): Redaktör efter session-inloggning,
+                ADMIN annars (lösenordsläget motsvarar admin). */}
+            {arRedaktor ? (
+              <Badge variant="outline" className="border-gold/40 text-gold">REDAKTÖR</Badge>
+            ) : (
+              <Badge className="bg-gold text-background">ADMIN</Badge>
+            )}
+            {!arRedaktor && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setAutoRefresh((v) => !v)}
+              >
+                <RefreshCw className={cn("mr-1 h-3.5 w-3.5", autoRefresh && "animate-spin")} />
+                {autoRefresh ? "Auto-uppdaterar" : "Pausad"}
+              </Button>
+            )}
+            {!arRedaktor && (
+              <Button variant="outline" size="sm" onClick={() => { fetchStats(); fetchActivities(); }}>
+                <RefreshCw className="mr-1 h-3.5 w-3.5" /> Uppdatera
+              </Button>
+            )}
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setAutoRefresh((v) => !v)}
-            >
-              <RefreshCw className={cn("mr-1 h-3.5 w-3.5", autoRefresh && "animate-spin")} />
-              {autoRefresh ? "Auto-uppdaterar" : "Pausad"}
-            </Button>
-            <Button variant="outline" size="sm" onClick={() => { fetchStats(); fetchActivities(); }}>
-              <RefreshCw className="mr-1 h-3.5 w-3.5" /> Uppdatera
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
+              onClick={async () => {
+                await loggaUt(); // POST /api/admin/logout + rensar lösenord/roll lokalt
                 setAuthed(false);
                 setIsAdmin(false);
-                rensaAdminLosenord();
+                setRoll(null);
                 setPassword("");
                 setSection("hem");
               }}
@@ -298,17 +380,25 @@ export default function AdminDashboard() {
 
         <div className="mt-6">
           <Eyebrow>AK1A Research Lab</Eyebrow>
-          <h1 className="mt-2 font-serif text-3xl font-bold">Admin Dashboard</h1>
+          <h1 className="mt-2 font-serif text-3xl font-bold">
+            {arRedaktor ? "Redaktörsyta" : "Admin Dashboard"}
+          </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Realtidsöversikt över klientaktivitet, portföljer, AI-organ-möten och systemhälsa.
-            <HonestyTag kind="matt" className="ml-2" /> — all data är anonymiserad per session.
+            {arRedaktor ? (
+              <>Blogg, kurser och media — publicera och håll innehållet aktuellt.</>
+            ) : (
+              <>
+                Realtidsöversikt över klientaktivitet, portföljer, AI-organ-möten och systemhälsa.
+                <HonestyTag kind="matt" className="ml-2" /> — all data är anonymiserad per session.
+              </>
+            )}
           </p>
         </div>
 
         <GoldRule className="my-6" />
 
-        {/* KPI Cards */}
-        {stats && (
+        {/* KPI Cards — admin only (redaktören nekas aktivitetsdata, våg 83 §A) */}
+        {stats && !arRedaktor && (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             <KpiCard
               icon={<Activity className="h-5 w-5 text-gold" />}
@@ -344,28 +434,20 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
+        {/* Tabs — redaktören ser endast Blogg/Media/Kurser (våg 83 §A2);
+            utan flik-matchning (t.ex. kvarvarande "overview" efter
+            rollbyte) landar redaktören på Blogg. */}
+        <Tabs
+          value={arRedaktor && !ALLA_FLIKAR.some((f) => !f.endastAdmin && f.id === activeTab) ? "blogg" : activeTab}
+          onValueChange={setActiveTab}
+          className="mt-8"
+        >
           <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
-            <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
-            <TabsTrigger value="members" className="px-3 py-1.5 text-xs sm:text-sm">Medlemmar</TabsTrigger>
-            <TabsTrigger value="kundekosystem" className="px-3 py-1.5 text-xs sm:text-sm">Kundekosystem</TabsTrigger>
-            <TabsTrigger value="ekosystem" className="px-3 py-1.5 text-xs sm:text-sm">Ekosystem</TabsTrigger>
-            <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
-            <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
-            <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
-            <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
-            <TabsTrigger value="traffic" className="px-3 py-1.5 text-xs sm:text-sm">Statistik & SEO</TabsTrigger>
-            <TabsTrigger value="trafik-sakerhet" className="px-3 py-1.5 text-xs sm:text-sm">Trafik &amp; Säkerhet 📡</TabsTrigger>
-            <TabsTrigger value="konvertering" className="px-3 py-1.5 text-xs sm:text-sm">Konvertering 📊</TabsTrigger>
-            <TabsTrigger value="beteende" className="px-3 py-1.5 text-xs sm:text-sm">Beteende</TabsTrigger>
-            <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
-            <TabsTrigger value="utveckling" className="px-3 py-1.5 text-xs sm:text-sm">Utveckling 🔭</TabsTrigger>
-            <TabsTrigger value="oversattning" className="px-3 py-1.5 text-xs sm:text-sm">Översättning 🌍</TabsTrigger>
-            <TabsTrigger value="variabler" className="px-3 py-1.5 text-xs sm:text-sm">Variabler 📊</TabsTrigger>
-            <TabsTrigger value="blogg" className="px-3 py-1.5 text-xs sm:text-sm">Blogg ✍️</TabsTrigger>
-            <TabsTrigger value="media" className="px-3 py-1.5 text-xs sm:text-sm">Media 🖼️</TabsTrigger>
-            <TabsTrigger value="kurser" className="px-3 py-1.5 text-xs sm:text-sm">Kurser 🎓</TabsTrigger>
+            {ALLA_FLIKAR.filter((f) => !arRedaktor || !f.endastAdmin).map((f) => (
+              <TabsTrigger key={f.id} value={f.id} className="px-3 py-1.5 text-xs sm:text-sm">
+                {f.etikett}
+              </TabsTrigger>
+            ))}
           </TabsList>
 
           {/* Overview */}

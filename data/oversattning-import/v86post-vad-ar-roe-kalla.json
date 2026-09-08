@@ -1,0 +1,192 @@
+{
+  "_lasMig": "AGENTPAKET (våg 86) — arbetsfil, INTE importbar: saknar kurs/poster-fält med flit. Översätt enligt instruktioner och leverera v86post-vad-ar-roe-svar-all.json; städa bort denna fil när kedjan är klar.",
+  "typ": "v86post-kalla",
+  "slug": "vad-ar-roe",
+  "skapad": "2026-09-08",
+  "kallaFil": "data/blogg/vad-ar-roe.json",
+  "antalKallposter": 27,
+  "svarsFilForvantad": "v86post-vad-ar-roe-svar-all.json",
+  "instruktioner": {
+    "uppdrag": "Översätt ALLA källposter (kallposter) nedan till professionell finansengelska (en) och modern standardarabiska (ar), pedagogisk plattformston — inga rådsformuleringar. Behåll nycklarna OFÖRÄNDRADE och leverera ALLA poster i EN fil: data/oversattning-import/v86post-vad-ar-roe-svar-all.json med formen {\"poster\":[{\"nyckel\":\"…\",\"en\":\"…\",\"ar\":\"…\"}]}.",
+    "termbankRegler": [
+      "Termbanken (src/lib/oversattning/termbank.ts + data/termbank-tillagg.json) är sanningen: varje svensk termbanksterm som förekommer i källtexten SKALL ha bankens EXAKTA en-/ar-målterm i översättningen (kontrollen söker med includes()).",
+      "Latinska förkortningar/varumärken behålls latinska i AR: ROE, EV/EBITDA, P/E, P/B, P/S, EBIT, EBITDA, ROIC, NCAV, NAV, DCF, SaaS, ARR, AKM1, AK1A, AK1TS m.fl.",
+      "Okänd fackterm? Håll dig till banken — hitta inte på egna synonymer; samma begrepp ska heta samma sak genom hela sajten."
+    ],
+    "fullfrasKravEN": [
+      "EN-måltermen måste ingå som HEL fras (ordgränser) — delträffar räcker inte: 'aktier'→'stocks' kräver själva ordet 'stocks', inte 'stockholm'.",
+      "Sammansatta källtermer kan kräva FLERA målord: 'vinst per aktie' kräver både 'earnings per share' OCH 'stock' i texten (dubbelträff-fällan).",
+      "Svenska ägarsuffix oversätt aldrig mekaniskt: 'AKM1:s poängskala' = 'the AKM1 scoring scale'."
+    ],
+    "bestandaFormerAR": [
+      "Kontrollen kräver EXAKT substringsmatch ⇒ använd termbankens BESTÄMDA form (المحفظة، الإيرادات، نسبة الدين إلى حقوق الملكية …) även där obestämd form vore naturligare.",
+      "Lam-assimilation GÖMMER kanonformen: للنسبة innehåller INTE النسبة — skriv om med مع/على/في/ب eller fristående bestämd form.",
+      "Pluralformer av termer gäller inte som träff (الارتباطات ⊅ الارتباط) — använd den singulära bestämda formen.",
+      "INGA å/ä/ö i arabisk text: avdiakritisera svenska bolagsnamn (Industrivärden→Industrivarden, Orrön→Orron).",
+      "ألف maqsura-fällan: 'nivå'-termen kräver المستوى (ى), inte المستويات-former."
+    ],
+    "langdkvot": {
+      "mal": "0,6–2,5× källtextens längd per post och språk",
+      "hardt": "utanför 0,5–2,5 nekar pipelinen (lateralKolla, 15p)",
+      "notering": "kraftigt avvikande längd = avkapad (för kort) eller påhittad (för lång) text"
+    },
+    "sifferintegritet": [
+      "ALLA tal ska vara identiska multiset med källan — en felaktig siffra är ett FAKTAFEL, inte ett språkfel.",
+      "Strängformen bevaras EXAKT: decimaltecken '12,5' förblir komma även i EN, '+33%' behåller tecknet, intervall '30-50%' intakta, tusentalsgrupp med mellanslag '172 426', punkter i '1.5x' där källan har det.",
+      "AR får använda östra siffror (٠-٩) — de normaliseras före jämförelsen; västerländska 0-9 är dock sajtens convention.",
+      "Se upp för extratoken-fällor: 'AKM1' ger token '1', 'V11' ger '11' (inte '1'+'1'), 'pre-2017' ger '-2017'."
+    ],
+    "struktur": [
+      "Rad för rad: antal rader per post identiskt; markdown bevaras (## rubriker, **fetstil**, - listor, numrerade listor, tabellrader |, emoji).",
+      "Länk-URL:er översätts ALDRIG — [text](/sokvag) håller sökvägen orörd, bara länktexten översätts.",
+      "Inläggsdisclaimer-sista-raden översätts med samma negerade formulering ('inte investeringsråd')."
+    ],
+    "svarformat": {
+      "fil": "data/oversattning-import/v86post-vad-ar-roe-svar-all.json",
+      "form": "{\"poster\": [{\"nyckel\": \"<oförändrad källnyckel>\", \"en\": \"…\", \"ar\": \"…\"}, …]}",
+      "krav": [
+        "ALLA källposter, i samma ordning, i EN fil (-svar-all-konventionen).",
+        "Tom sträng på ett språk = posten importeras bara för det andra — undantag ska motiveras i leveransen.",
+        "Kör sedan: node verktyg/oversatt-post.mjs vad-ar-roe --kontroll v86post-vad-ar-roe-svar-all.json"
+      ]
+    },
+    "fullKontrollVidImport": "Dessa regler kontrolleras FULLT av importpipelinen (verktyg/importera-oversattning.mjs → src/lib/oversattning/kontroller.ts: termKonsistens 40p + sifferIntegritet 25p + strukturIntegritet 20p + lateralKolla 15p, tröskel 90) — följ dem vid skrivandet, inte vid rättandet."
+  },
+  "kallposter": [
+    {
+      "nyckel": "vad-ar-roe:titel",
+      "sv": "Vad är ROE? — formel, tolkning och AKM1:s poängskala",
+      "hash": "5dd52eb5d9e3"
+    },
+    {
+      "nyckel": "vad-ar-roe:ingress",
+      "sv": "ROE mäter hur mycket vinst bolaget skapar per krona eget kapital. Här är formeln, Du Pont-uppdelningen, AKM1:s poängskala 0–5 och de vanligaste misstagen.",
+      "hash": "335558488ec6"
+    },
+    {
+      "nyckel": "vad-ar-roe:p1",
+      "sv": "ROE — Return on Equity, avkastning på eget kapital — mäter hur mycket resultat efter skatt ett bolag skapar per krona eget kapital. Formeln: ROE = resultat efter skatt ÷ eget kapital. ROE på 20 % betyder att bolaget tjänar tjugo öre per krona som ägarna har satt in. En kvot. En balansräkning. Hela lönsamhetskedjan. Därför kallas ROE den variabel som fångar hela lönsamheten i ett enda tal — i AKM1:s 20 variabler heter den V09.",
+      "hash": "58930c37048a"
+    },
+    {
+      "nyckel": "vad-ar-roe:p2",
+      "sv": "## Formeln",
+      "hash": "1960cb0206e6"
+    },
+    {
+      "nyckel": "vad-ar-roe:p3",
+      "sv": "ROE = Resultat efter skatt ÷ Eget kapital",
+      "hash": "01f039d1052e"
+    },
+    {
+      "nyckel": "vad-ar-roe:p4",
+      "sv": "Tre beslut avgör om din ROE stämmer:",
+      "hash": "0bea7e46d376"
+    },
+    {
+      "nyckel": "vad-ar-roe:p5",
+      "sv": "- **Vilket kapital?** Eget kapital växer under året, eftersom vinst som inte delas ut stannar kvar. Använder du årets slutvärde underskattar du avkastningen på kapitalet som faktiskt var i arbete. Institutionell praxis: snittet av ingående och utgående eget kapital.\n- **Vilket resultat?** Resultat efter skatt, helst rensat från engångsposter. En försäljning av en fastighet är ingen lönsamhet.\n- **Vilken period?** Samma räkenskapsår i täljare och nämnare. Aldrig blandat.",
+      "hash": "201094ab3656"
+    },
+    {
+      "nyckel": "vad-ar-roe:p6",
+      "sv": "## Riv isär ROE med Du Pont",
+      "hash": "7c7fc8659ecc"
+    },
+    {
+      "nyckel": "vad-ar-roe:p7",
+      "sv": "ROE = Vinstmarginal × Omsättningshastighet × Hävstång",
+      "hash": "1ac6bfc0c536"
+    },
+    {
+      "nyckel": "vad-ar-roe:p8",
+      "sv": "Detta är Du Pont-ekvationen, och den förklarar varför två bolag med identisk ROE kan bära helt olika risk. Ett nischkonsultbolag: hög marginal, låg omsättningshastighet, ingen skuld. Ett detaljhandelsbolag: tunn marginal, hög volym, betydande hävstång. Samma ROE på pappret. Oberoende risk i verkligheten. Du Pont visar var avkastningen kommer ifrån — och därmed hur hållbar den är.",
+      "hash": "eed4bfca603a"
+    },
+    {
+      "nyckel": "vad-ar-roe:p9",
+      "sv": "## Räkneexempel: från årsredovisning till siffra",
+      "hash": "6a5799bcddca"
+    },
+    {
+      "nyckel": "vad-ar-roe:p10",
+      "sv": "Ett bolag rapporterar resultat efter skatt på 12,5 mdr SEK. Eget kapital var 60 mdr vid årets början och 65 mdr vid slutet — snittet blir 62,5 mdr. ROE = 12,5 ÷ 62,5 = 20 %.",
+      "hash": "77c3f98d624b"
+    },
+    {
+      "nyckel": "vad-ar-roe:p11",
+      "sv": "Riv sedan isär den med Du Pont. Omsättningen var 200 mdr och balansomslutningen 125 mdr. Vinstmarginalen: 12,5 ÷ 200 = 6,25 %. Omsättningshastigheten: 200 ÷ 125 = 1,6. Hävstången: 125 ÷ 62,5 = 2,0. Kontrollen: 6,25 % × 1,6 × 2,0 = 20 %. Marginmotor. Snabb omgång. Måttlig hävstång. Nu vet du vad du ska bevaka i nästa rapport — marginalen, inte räntekostnaden — och du vet det innan kursgrafen sagt något alls.",
+      "hash": "1707fac65b08"
+    },
+    {
+      "nyckel": "vad-ar-roe:p12",
+      "sv": "## Så poängsätts ROE i AKM1 (V09)",
+      "hash": "de07319b90fb"
+    },
+    {
+      "nyckel": "vad-ar-roe:p13",
+      "sv": "AKM1 poängsätter varje variabel 0–5; 20 variabler ger sammanlagt max 100 poäng. V09 följer en konkav kurva med en tröskel vid kapitalkostnaden — under den skapar bolaget inget mervärde:",
+      "hash": "827852094423"
+    },
+    {
+      "nyckel": "vad-ar-roe:p14",
+      "sv": "- Under 9 % ⇒ 0 poäng — bolaget tjänar mindre än kapitalet kostar: värdeförstöring oavsett nivå [est.]\n- 9–12 % ⇒ 1 poäng\n- 12–18 % ⇒ 2 poäng\n- 18–25 % ⇒ 3 poäng\n- 25–35 % ⇒ 4 poäng\n- Över 35 % ⇒ 5 poäng — men endast om 5-årssnittet också ligger över 35 % och skuldsättningsgraden är högst 2. Annars 4 poäng: extrem avkastning utan bevisad uthållighet och utan säkerhet mean-reverterar.",
+      "hash": "f08519dce6ae"
+    },
+    {
+      "nyckel": "vad-ar-roe:p15",
+      "sv": "Varför konkav? Eftersom avkastning har trappsteg, inte en rak linje. Skillnaden mellan 8 och 12 % är kvalitativ — under eller över kapitalkostnaden. Skillnaden mellan 30 och 33 % är i praktiken brus. Kurvan säger också något om skepticism: femte poängen ska förtjänas två gånger, genom nivå och genom uthållighet. En toppnotering är ett faktum. En femårsföljd är ett bevis.",
+      "hash": "054be25a3291"
+    },
+    {
+      "nyckel": "vad-ar-roe:p16",
+      "sv": "Så ser det ut i forskningsbibliotekets senaste mätningar, med motivering redovisad per analys: [Industrivärden](/forskningsbiblioteket/INDU-C.ST) ROE 32,3 % ⇒ 4/5, [Investor](/forskningsbiblioteket/INVE-B.ST) ROE 27,3 % ⇒ 4/5, NP3 Fastigheter ROE 14,5 % ⇒ 2/5. Du kan kontrollera varje poäng själv — det är poängen med öppna motiveringar.",
+      "hash": "97ad0bf5ee2e"
+    },
+    {
+      "nyckel": "vad-ar-roe:p17",
+      "sv": "## ROE i olika bolagstyper",
+      "hash": "7549235aa487"
+    },
+    {
+      "nyckel": "vad-ar-roe:p18",
+      "sv": "Nivån tolkas aldrig i vakuum. Ett svenskt industribolag på 8–10 % är hederligt; en bank ligger ofta runt 12–15 % eftersom balansräkningen är själva affären; ett investmentbolag kan behöva justerat eget kapital för att stora outdelade reserver inte ska snedvrida kvoten. Ett SaaS-bolag i tillväxtfas kan visa negativt resultat och ändå bygga värde — men då är det intäktstillväxten och marginalbanan som bär analysen, inte ROE. AKM1 poängsätter nivån som den redovisas; jämförelsen görs mot sektorns median och bolagets egen femårshistoria.",
+      "hash": "c1a07aac1e87"
+    },
+    {
+      "nyckel": "vad-ar-roe:p19",
+      "sv": "## Vanliga misstag",
+      "hash": "c8fb2ecbf011"
+    },
+    {
+      "nyckel": "vad-ar-roe:p20",
+      "sv": "- **Förväxla ROE med aktieavkastning.** ROE mäter bolagets kapitalproduktivitet, inte din avkastning som ägare. Ett bolag med ROE 20 % kan vara en dyr aktie om du betalar fem gånger bokvärdet. Olika frågor. Olika svar.\n- **Ignorera hävstången.** ROE som drivs av skuld är lånat, inte skapat. Kontrollera alltid skuldsättningsgraden bredvid — i AKM1 räknas V10 före V09 av exakt det skälet.\n- **Jämföra över sektorsgränser.** En banks ROE är inte ett industribolags ROE. Jämför mot sektorns median och bolagets egen femårshistoria.\n- **Lita på ett år.** Ett enskilt år kan bäras av engångsposter, valutor eller en konjunkturtopp. Tre år är en trend. Fem år är ett bevis.\n- **Negativt eget kapital.** Negativt resultat dividerat med negativt kapital ger en positiv siffra. Det är inte lönsamhet utan matte. AKM1 markerar måttet osatt när eget kapital är negativt.",
+      "hash": "d696bef40e5a"
+    },
+    {
+      "nyckel": "vad-ar-roe:p21",
+      "sv": "## Gå djupare",
+      "hash": "c7e087090c90"
+    },
+    {
+      "nyckel": "vad-ar-roe:p22",
+      "sv": "- Kursen [ROE (Return on Equity) — Lönsamhet](/kurser/v09-roe): formeln steg för steg, räkneövningar, Lynch- och Graham-perspektiv.\n- [Vad är skuldsättningsgrad?](/blogg/vad-ar-skuldsattningsgrad) — hävstångskontrollen som hör till ROE.\n- [Kalkylatorn](/kalkylator) räknar ROE och Du Pont på dina egna siffror — samma formler som kurserna lär ut.",
+      "hash": "ee61978e9e50"
+    },
+    {
+      "nyckel": "vad-ar-roe:p23",
+      "sv": "## Falsifieringen",
+      "hash": "05c7a985d3d9"
+    },
+    {
+      "nyckel": "vad-ar-roe:p24",
+      "sv": "Om bolag med ROE över 35 %, låg skuldsättning och bevisad 5-års-uthållighet ändå systematiskt faller tillbaka under 20 % är kurvans försiktighet felkalibrerad. Det är testet — och varje ny årsredovisning i biblioteket är en ny chans att falsifiera oss.",
+      "hash": "b3b852d1aded"
+    },
+    {
+      "nyckel": "vad-ar-roe:p25",
+      "sv": "_Pedagogisk analys — inte investeringsråd._",
+      "hash": "38ad1f76c447"
+    }
+  ]
+}

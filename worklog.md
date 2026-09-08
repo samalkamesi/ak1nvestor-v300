@@ -9141,3 +9141,50 @@ Skript: data/infra/hetzner/{setup-server,bygg}.sh. Automationens SSH-nyckel
 ~/.ssh/hetzner_key.pub root@65.108.241.93 (rotenlösenord en gång) — sedan
 tar AI:n över 100 %.** Kundsteg 2 (efter H1): serverns deploy-nyckel i
 GitHub NewUserAK/AK1 (gh-CLI saknas lokalt — kan ej automatiseras bort).
+
+## Våg 82 — KURS-CMS + SIFFROR LIVE + B2-PUBLICERA + SPEGLAR-KATEGORIER (2026-09-08)
+
+**6 agenter mot STYRELSE-VAG82-BYGG.md (5d169bd). Commits 9e35d52 + 1be25f1
++ 7ba14fa + speglar-commit + 8243aba, develop+main pushade.**
+
+**A — ADMIN-MEGA STEG 4 KURS-CMS:**
+- src/lib/kurs-metadata-live.ts: system_events type=kurs_metadata
+  (senaste-vinner per "{slug}.{falt}", tombstone = rollback ⇒ filen gäller,
+  Range-paginering, cache 5 min) + kurs_metadata-andring (revision) +
+  skrivKursMetadata med HÅRD validering (vitlista title/summary/learn/why,
+  VITLÅS 13 fält avvisas, längdtak 120/300/300/900, kontrolleraText 0 FEL)
+  + medKursOverrides-merge. 16 rena test + **live-roundtrip 12/12 mot
+  riktig Supabase** (skriv→läs→merge→vitlås→okänd slug→tombstone→rollback→
+  kvalitetsgrind→städning — allt bevisat).
+- /api/admin/kurser (GET 333 poster fil+gällande+källa+ändrad + logg 20,
+  POST per fält) + admin-flik "Kurser 🎓" (sök, inline-edit, diff fil grå/
+  gällande, rollback-knapp = tombstone, spårhistorik, lazy mount).
+- NUANC: title-override påverkar ej speglarnas titel (MÖS-lagret vinner;
+  svensk = fallback) — dokumenterat, ingen bug.
+
+**B — SIFFROR LIVE + SV-ISR:**
+- src/lib/siffror-live.ts lasSiffror(): räknar ur getCourses()-memot
+  (333/103/8 211 exakt = seed-verifierat), FAS-sets via import (kurs-access
+  ORÖRD), granulär ärlig fallback (aldrig 0-lögn), hermetik.
+- sv /kurser + /kurser/[slug] fick revalidate=3600 (ordförandebeslutet —
+  samtidigt som lagret; spegel-combon) ⇒ metadata-ändringar live ≤1 h ÄVEN
+  på svenska originalet. dynamicParams=false består (äkta 404).
+- [slug]-sidan trådar medKursOverrides genom metadata/H1/learn/why/Kallkort.
+
+**C — B2-PUBLICERA-KNAPPEN (Läge A består, B2 sankat):**
+- publiceraMedPaket (0-FEL-grinden består) + agent-påminnelse type=
+  blogg_publicerad + /api/admin/blogg/publicera + panelknapp "Publicera
+  (skickar till agent)" + "Väntar på agent"-vy + paket-kort för hand-drop.
+- MAIN-AGENTENS SIDA (ingen kod): plocka blogg_publicerad-rader → fil-drop
+  i data/blogg/ + commit → prod. Publika bloggrutter orörda.
+
+**D — SPEGLAR-KATEGORIER (25 översatta + BOKMASTER varumärkeskvar + MOAT
+gränsfall):** kategoriEtikett() i kurs-speglar + 27 kategori.*-ordlistenycklar
+(sv=datavärdet, en/ar översatta, åäö-säker normalisering tecken-för-tecken)
+— speglarnas chips/väggar/detaljeyebrows översatta; svenska originalet orört.
+Forskning STYRELSE-SPEGLAR-P2.md: soft-404-speglar rek ALT C (middleware-404
+mot destillerad slug-lista ~10 kB — full generateStaticPaths = +50-75 %
+prerender-kostnad), html-lang = route-group-restruktur (egen våg).
+
+**Verifierat: motorer 107/0/0 · vakten GRÖN · tsc 35 baslinje · build exit 0
+(ISR 1h på /kurser, 333 SSG) · roundtrip 12/12 · 16/16 rena test.**

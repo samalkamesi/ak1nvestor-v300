@@ -9296,3 +9296,23 @@ smoke-test mot IP med Host-header → DNS-flip-instruktion till kund
 
 **Kostnad: €6,88/mån totalt. Obegränsad bandbredd. Kundens dator avlastad
 (byggen sker på servern). Vercel-taket (100 GB) historia.**
+
+## KUNDDIREKTIV: CONTABO = HELA DRIFTEN (2026-09-08, 605a833)
+
+Kunden: "jag kommer att stänga av min dator hemma — fortsätt nyttja Contabo
+fullt ut; Vercel endast värsta-falls-backup likt datorn." KONSEKVENSER
+GENOMFÖRDA:
+- **Servern självförsörjande (verifierad):** croner i /etc/crontab
+  (vagscan 06:30 + nyheter 08:00 UTC + portfolj mån 1:a 07:00 — den tidiga
+  crontab-installationen bugfade TYST, installerad om i /etc/crontab),
+  certbot.timer (SSL auto-förnyelse), pm2-ak1a enabled (boot),
+  unattended-upgrades + fail2ban aktiva. INGET kräver datorn på.
+- **Deploy-spår nytt:** serverns ~/AK1 är nu en GIT-repo (remote 'contabo'
+  på arbetsstationen, receive.denyCurrentBranch=updateInstead) —
+  `git push contabo develop` uppdaterar arbets trädet direkt; HELA flödet
+  i ett kommando: **bash verktyg/deploya-contabo.sh** (push GitHub+Contabo
+  → npm ci+build → pm2 restart → HTTPS-verifiering).
+- **Rollfördelning:** Contabo = drift (prod, croner, SSL, data via
+  Supabase); GitHub = kodbas + håller Vercel-backupen varm (varje main-
+  push → Vercel auto-deploy fortsätter = gratis värsta-fall-kopia);
+  datorn = spegel + databackup (hybrid-sync) + arbetsplats när på.

@@ -12,6 +12,8 @@ import {
   skrivTrafikBatch,
   type UaKlass,
 } from "@/lib/sakerhet";
+// Våg 83 B (SPEGLAR404): destillerad slug-lista — se blocket i slutet av filen.
+import speglarSlugar from "../public/speglar-slugar.json";
 
 /**
  * MIDDLEWARE — trafikvakten i kanten (edge, snabbt, ALDRIG försenande).
@@ -215,9 +217,143 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     }
   }
 
+  // 4) SPEGLAR-404 (våg 83 B): ogiltiga spegel-slugar ⇒ äkta 404 FÖRE
+  //    routern (soft-404-fällan: speglarnas [slug]-router svarar 200-skal).
+  //    Ren tilläggslogik — ingen trafik-/säkerhetsgren ovan påverkas.
+  //    Källkod: blocket "SPEGLAR-404" i slutet av filen (inga fetchar,
+  //    ingen ny loggning — P6).
+  const spegel404 = speglar404Svar(req.nextUrl.pathname, klass === "ok" ? uaKlass : klass);
+  if (spegel404) return spegel404;
+
   // Passera med klass-märkning (Server-Timing är läsbar av klient-JS).
   const res = NextResponse.next();
   res.headers.set("x-ak1a-klass", klass === "ok" ? uaKlass : klass);
   res.headers.set("Server-Timing", `ak1a;desc="${klass === "ok" ? uaKlass : klass}"`);
   return res;
+}
+
+// ── SPEGLAR-404 (våg 83 B, STYRELSE-VAG83-ROLLER DEL B — alt C ur P2) ────────
+//
+// Speglarnas [slug]-sidor (/en|/ar/kurser/[slug], /en|/ar/blogg/[slug]) har
+// dynamicParams=true + force-static: okänd slug renderar 404-UI i ett 200-skal
+// (soft-404). Detta block validerar slugen mot en destillerad lista och svarar
+// ÄKTA 404 FÖRE routern. Regler:
+//   • ENDAST exakt ett segment efter prefixet — djupare sökvägar, listsidorna
+//     (/en/kurser …), svenska originalen (/kurser/…) och allt annat orörda.
+//   • Slug = [a-z0-9-]+ (minnets regel, ren ASCII) — ogiltigt tecken ⇒ 404
+//     direkt (ingen normalisering, ingen gissning).
+//   • Slugar läses EN gång per kall start (module-scope Set ur JSON-importen;
+//     verktyg/kor-speglar-slugar.mjs genererar filen efter kurs-/bloggändring).
+//   • ALDRIG nät (ingen fetch), aldrig loggning av ny data (P6), aldrig
+//     blockering av giltiga sidor: tom/garper lista = fail-open (då gäller
+//     status quo före våg 83 — skyddet viker, aldrig sajten).
+// Bunt-påverkan: speglar-slugar.json ~10 kB buntas in i edge-modulen (tak 40 kB).
+
+/** Slug-listor — byggs en gång per kall start ur den genererade JSON-filen. */
+const KURS_SLUGAR = new Set(
+  (Array.isArray(speglarSlugar?.kurser) ? speglarSlugar.kurser : []).filter(
+    (s): s is string => typeof s === "string" && s.length > 0,
+  ),
+);
+const BLOGG_SLUGAR = new Set(
+  (Array.isArray(speglarSlugar?.blogg) ? speglarSlugar.blogg : []).filter(
+    (s): s is string => typeof s === "string" && s.length > 0,
+  ),
+);
+
+/** Spegel-detaljsidor: exakt /{en|ar}/{kurser|blogg}/{ett-segment}. */
+const SPEGLAR_PATH_MONSTER = /^\/(en|ar)\/(kurser|blogg)\/([^/]+)$/;
+/** Minnets slug-regel (ren ASCII — åäö och versaler är ogiltiga). */
+const SPEGLAR_SLUG_MONSTER = /^[a-z0-9-]+$/;
+
+/** 404-sidans texter per spegelspråk (hårdkodade — EN på /en, AR/rtl på /ar). */
+const SPEGLAR_404_TEXTER = {
+  en: {
+    htmlLang: "en",
+    dir: "ltr",
+    title: "Page not found (404) | AK1A Research Lab",
+    etikett: "AK1A Research Lab · Navigation error",
+    rubrik: "Page not found",
+    text: "Even analysts take wrong turns sometimes — the page you are looking for has moved or never existed. Let us guide you back.",
+    kurserLank: "Browse all courses",
+    bloggLank: "Browse the blog",
+    hem: "Start page",
+    footer: "AK1A Research Lab · Educational finance research — not investment advice",
+  },
+  ar: {
+    htmlLang: "ar",
+    dir: "rtl",
+    title: "الصفحة غير موجودة (404) | AK1A Research Lab",
+    etikett: "AK1A Research Lab · خطأ في التنقّل",
+    rubrik: "الصفحة غير موجودة",
+    text: "حتى المحللين يخطئون أحيانًا — الصفحة التي تبحث عنها انتقلت أو لم توجد قط. دعنا نعيدك إلى المسار الصحيح.",
+    kurserLank: "استعرض جميع الدورات",
+    bloggLank: "استعرض المدونة",
+    hem: "الصفحة الرئيسية",
+    footer: "AK1A Research Lab · أبحاث مالية تعليمية — ليست نصيحة استثمارية",
+  },
+} as const;
+
+/** Enkel marin 404-sida i svenska originalets ton (navy/guld/creme, serif) — INLINE, inga resurser. */
+function speglar404Sida(lang: "en" | "ar", typ: "kurser" | "blogg"): string {
+  const t = SPEGLAR_404_TEXTER[lang];
+  const lista = `/${lang}/${typ}`;
+  const listaText = typ === "kurser" ? t.kurserLank : t.bloggLank;
+  return `<!doctype html>
+<html lang="${t.htmlLang}" dir="${t.dir}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>${t.title}</title>
+<style>
+:root{color-scheme:dark}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#0b1321;color:#EDE6D6;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+main{background:#0E1B2E;border:1px solid rgba(232,199,102,.35);border-radius:16px;max-width:560px;width:100%;padding:44px 32px;text-align:center}
+.etikett{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,199,102,.85);margin:0}
+.kod{font-size:72px;font-weight:700;color:#E8C766;line-height:1;margin:20px 0 0}
+h1{font-size:24px;margin:12px 0 0}
+.brod{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:rgba(237,230,214,.8);margin:12px auto 0;max-width:420px}
+nav{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+a{display:inline-block;padding:12px 20px;border:1px solid #E8C766;border-radius:8px;color:#E8C766;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:14px}
+a:hover{background:rgba(232,199,102,.12)}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid rgba(232,199,102,.3);font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,230,214,.55)}
+</style>
+</head>
+<body>
+<main>
+<p class="etikett">${t.etikett}</p>
+<p class="kod" aria-hidden="true">404</p>
+<h1>${t.rubrik}</h1>
+<p class="brod">${t.text}</p>
+<nav><a href="${lista}">${listaText}</a><a href="/${lang}">${t.hem}</a></nav>
+<footer>${t.footer}</footer>
+</main>
+</body>
+</html>`;
+}
+
+/**
+ * Ren lookup: returnerar en 404-Response för ogiltiga spegel-slugar, null om
+ * förfrågan ska passera oförändrad (äkta slug, ej spegel-sökväg, fail-open).
+ */
+function speglar404Svar(pathname: string, klass: string): Response | null {
+  const m = SPEGLAR_PATH_MONSTER.exec(pathname);
+  if (!m) return null; // Ej en spegel-detaljsida — helt orörd trafik.
+  // Monstersäker avtypning: regexen fångar ENBART (en|ar)/(kurser|blogg).
+  const lang = m[1] as "en" | "ar";
+  const typ = m[2] as "kurser" | "blogg";
+  const slug = m[3];
+  const slugar = typ === "kurser" ? KURS_SLUGAR : BLOGG_SLUGAR;
+  if (slugar.size === 0) return null; // Fail-open: trasig/genererad-lista saknas ⇒ status quo.
+  if (SPEGLAR_SLUG_MONSTER.test(slug) && slugar.has(slug)) return null; // Äkta slug ⇒ routern.
+  return new Response(speglar404Sida(lang, typ), {
+    status: 404,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "x-ak1a-klass": klass,
+      "Server-Timing": `ak1a;desc="${klass}"`,
+    },
+  });
 }

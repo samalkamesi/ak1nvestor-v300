@@ -9343,3 +9343,48 @@ fångade crontab-buggen — användarfält saknades, FIXAD) · B2B-aktiveringspa
 **ADMIN_PASSWORD+SESSION_SECRET satta på servern** (kund råddas byta).
 **PÅGÅR (agenter):** SEOFIX (P1+B2B-residualer) · ADMINPANEL (v88-kärnan:
 Medlemmar 👥) · M9PREP (innehållsfabrik med granskningsgrind).
+
+## FRONT A / A1 — LLMS.TXT TILL CITATIONSVAPEN (2026-09-08, A1-LLMS)
+STYRELSE-AI-INNOVATION.md FRONT A: llms.txt fullständig översyn.
+**Före:** 32 kanoniska frågor (20 V-kurser + 12 svarssidor), 154 kB.
+**Efter:** 445 frågeposter — 100 topp-sökfrågor + 12 svarssidor + 333 kurser
+(en kanonisk fråga per kurs, "hur räknar man ROE?"-stil, rakt ETT-meningar-svar
+FAKTISKT ur kursens learn) — 207 kB; + llms-full.txt 294 kB (kursintros + FAQ,
+budget 500 kB, alla 333 kurser med).
+- **Generering:** tool-results/llms-generera.mjs → data/llms-fragor.json
+  (källfilen) ur public/deep-courses.json + data/siffror.json +
+  data/blogg/vagkartan-traffprocent.json + data/motorregister.json — källa
+  citeras per block, inga påhittade tal.
+- **Sökvolym-mätning:** dokumenterad heuristik (P/E 100 > ROE 96 > EBITDA 94 >
+  ISK 90 > utdelning 88 > skatt 86 …) + kategorivikt → topp-100; metodtexten
+  med i llms.txt (ärligt märkt "INTE mätdata").
+- **SEO-sammanfattning:** llms.txt inleds nu med VEM-VAD-VARFÖR + 10 stärksta
+  unika datapåståendena (bl.a. vågmotor 52 % träff på 48 dömda mätningar,
+  20 % osatta döms aldrig — källa vagkartan-traffprocent.json).
+- **Rutter:** /api/llms-txt (oförändrad signatur, nytt innehåll) + NY
+  /api/llms-full-txt (text/plain; statisk spegel /llms-full.txt). Statiska
+  speglar regenererade ur rutten (paritet bevisad: cmp identiska).
+- **tsc: 35 = baslinjen (0 nya).** Verifierat live: båda rutter 200 +
+  text/plain; charset=utf-8.
+
+## SPRÅKBRISET BEVISAT + INNOVATIONSPROGRAMMET STARTAT (2026-09-09 natt)
+
+**Kundens P0 (svenska luckor) — FIXAT OCH BEVISAT:** sprakfix-agenten (168
+ordlistenycklar ×3, 8 komponenter: kurslistor/prenum/cert/gate/fortsatt)
+deployad → om-audit 16 sidor: **15/16 "(rent)"** — enda kvarvarande =
+kursDATAfälten (learn/summary/why/intro) på detaljspeglar = LEARNFIX-agenten
+pågår (breddat till alla metadatafält). Dessutom dokumenterade kvarvarande:
+kurstips personliga varför-rader (delad lib, egen våg).
+
+**Kundvision sankt: AI-INNOVATIONSPROGRAMMET** (STYRELSE-AI-INNOVATION.md):
+FRONT A AI-citation-overlord (llms-översyn 333 kurser + dataset-sidor som
+citeringsmagneter) · FRONT B rekommendationsmaskinen (lärvägsdesign) ·
+FRONT C plattform-expansion. VERKLIGHETSGRUND: AK1A ej topp-10 på kärnfrågan
+(Avanza/SEB/Aktiespararna/Finanskursen); vapen = unika data. KUNDBESLUT
+köat: lab-subdomän → huvuddomän (auktoritet).
+
+**Övriga landningar deployade:** AKM2-snapshot-persistens (100 bolag i
+Supabase, idempotent, 12/12) · 8 OG-bloggbilder · testinstans på servern
+(ak1a-test port 3100, basic-auth ak1a/dyT0SAuRZAU0izvVVaUsrsZ, noindex,
+dokumenterad test-deploy-rutin i V86-DEVINSTANS.md) · m9-fabriken v2
+(granskningsgrind hårdkodad).

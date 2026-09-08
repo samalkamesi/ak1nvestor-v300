@@ -1,0 +1,17 @@
+{
+  "kurs": "the-intelligent-investor",
+  "skapad": "2026-09-07",
+  "beskrivning": "V86-CHARTFIX: korpusens 2 dokumenterade översättningsundantag (våg 76) — kap15:quiz3:a2 + kap19:quiz1:a3, källtext exakt \"Chart\" (5 tecken). Termkrock verifierad våg 86: källan träffar kanoniska raden chart→الرسم البياني (skiftlägesokänslig) och en tilläggsrad Chart→مخطط skulle kräva BÅDA termerna (kvot 3,6) — därför dokumenterat lateral-undantag (tak 3,0) i kontroller.ts LATERAL_UNDANTAG_CHART i stället för termbanks-tillägg. AR = termbankens exakta målterm (kvot 2,6 ≤ 3,0). EN redan levererat (497/497) och orört här.",
+  "poster": [
+    {
+      "nyckel": "the-intelligent-investor:kap15:quiz3:a2",
+      "en": "",
+      "ar": "الرسم البياني"
+    },
+    {
+      "nyckel": "the-intelligent-investor:kap19:quiz1:a3",
+      "en": "",
+      "ar": "الرسم البياني"
+    }
+  ]
+}

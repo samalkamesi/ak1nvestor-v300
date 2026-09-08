@@ -5,7 +5,8 @@
  * Kundens krav: "vi måste garantera att översättningen har också rätt
  * översättning". Garantin består av FYRA kontroller som varje maskinöversätt
  * MÅSTE passera innan den får status högre än "maskinutkast-behovar-
- * granskning" (se ./motor.ts):
+ * granskning" (se ./motor.ts). Deterministiska, inga nätverk — exakt ETT
+ * dokumenterat undantag finns (LATERAL_UNDANTAG_CHART, se lateralKolla):
  *
  *   1. termKonsistens   — varje termbanksterm i källan SKALL vara översatt med
  *                         bankens kanoniska målterm (rätt-översättningsgarantin).
@@ -253,11 +254,30 @@ export function strukturIntegritet(kalltext: string, oversattning: string): Kont
 
 // ── Kontroll 4: lateralKolla ─────────────────────────────────────────────────
 
+/**
+ * Korpusens ENDA dokumenterade lateral-undantag (våg 76 → våg 86, V86-CHARTFIX):
+ * the-intelligent-investor kap15:quiz3:a2 + kap19:quiz1:a3 har källtexten exakt
+ * "Chart" (5 tecken). Termbankens kanoniska rad "chart" (skiftlägesokänslig
+ * träff i termKonsistens) kräver måltermen "الرسم البياني" — 13 tecken, dvs.
+ * längdkvot 13/5 = 2,6. INGEN termbankskorrekt AR-översättning kan hålla sig
+ * under taket 2,5 (måltermen ensam är 13 tecken), och en tilläggsrad
+ * ("Chart"→"مخطط") löser det inte: källan träffar BÅDA raderna och svaret
+ * måste då innehålla båda arabtermerna (≥ 18 tecken, kvot 3,6). Korpus-skann
+ * (våg 86) bekräftar att exakt DESSA 2 poster är de enda källorna vars text
+ * efter trim är "Chart" — undantaget scopas av källtexten + språket, inte
+ * nyckeln (kontrollerna är nyckellösa). Tak 3,0 släpper in 2,6 men förkastar
+ * fortfarande t.ex. "مخطط الرسم البياني" (18 tecken, 3,6). Undre taket
+ * (0,5) och åäö-kontrollen gäller oförändrat; EN påverkas inte.
+ */
+const LATERAL_UNDANTAG_CHART = "Chart";
+const LATERAL_UNDANTAG_TAK = 3.0;
+
 /** AR-vitlistan hämtas en gång (termbanken är oföränderlig per process). */
 let vitlistaCache: readonly string[] | null = null;
 
 /**
- * Lateral sanering: längdförhållande 0,5–2,5× källan; AR får inte läcka å/ä/ö
+ * Lateral sanering: längdförhållande 0,5–2,5× källan (undantag: källtext exakt
+ * "Chart" i AR får 3,0× — se LATERAL_UNDANTAG_CHART); AR får inte läcka å/ä/ö
  * (utom inom vitlistade termbankssträngar — arVitlista()); EN får inte läcka
  * arabiska bokstäver. Riktning: SPRAK-PLAN §4.1.4a längdsanitet.
  */
@@ -269,11 +289,13 @@ export function lateralKolla(
   const problem: string[] = [];
   const kallaLangd = kalltext.length;
   const ovLangd = oversattning.length;
+  const undantaget = sprak === "ar" && kalltext.trim() === LATERAL_UNDANTAG_CHART;
+  const tak = undantaget ? LATERAL_UNDANTAG_TAK : 2.5;
   let forhallande = 1;
   if (kallaLangd > 0) {
     forhallande = ovLangd / kallaLangd;
     if (forhallande < 0.5) problem.push("för kort: förhållande " + forhallande.toFixed(3) + " (< 0,5) — avkapad?");
-    if (forhallande > 2.5) problem.push("för lång: förhållande " + forhallande.toFixed(3) + " (> 2,5) — påhittat innehåll?");
+    if (forhallande > tak) problem.push("för lång: förhållande " + forhallande.toFixed(3) + " (> " + String(tak) + (undantaget ? ", undantagets tak" : "") + ") — påhittat innehåll?");
   }
   if (sprak === "ar") {
     if (!vitlistaCache) vitlistaCache = arVitlista();
@@ -291,7 +313,7 @@ export function lateralKolla(
     namn: "lateralKolla",
     pass: problem.length === 0,
     detaljer: problem.length === 0
-      ? "längdförhållande " + forhallande.toFixed(3) + " inom [0,5; 2,5]" + (sprak === "ar" ? "; inga åäö-läckor" : "") + (sprak === "en" ? "; inga arabiska läckor" : "")
+      ? "längdförhållande " + forhallande.toFixed(3) + " inom [0,5; " + String(tak) + "]" + (undantaget ? " (dokumenterat Chart-undantag)" : "") + (sprak === "ar" ? "; inga åäö-läckor" : "") + (sprak === "en" ? "; inga arabiska läckor" : "")
       : problem.join("; "),
     varden: {
       langdForhallande: Math.round(forhallande * 1000) / 1000,

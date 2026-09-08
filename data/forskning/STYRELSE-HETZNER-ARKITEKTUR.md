@@ -66,3 +66,26 @@ Faser, varje fas egenlevererad och verifierad:
    (NewUserAK/AK1 → Settings → Deploy keys) — AI:n genererar och visar den.
 
 — Ordföranden, AI-styrelsen AK1A (autonom mandat 2026-09-07)
+
+---
+
+## FÖRSÖK 2 — CLOUD-API-TOKEN (2026-09-08, main-agenten)
+
+Kunden levererade säkerhetsklassat material: IP (känt), IPv6-block
+2a01:4f9:c011:99ec::/64 + 64-teckens token — sparat ENDAST i gitignorade
+.env (HETZNER_API_TOKEN m.fl.; ALDRIG i repo/loggar/commits — rutin följd).
+
+**Diagnos (trevärdes test):** (1) token AUTENTISERAR mot api.hetzner.com —
+ogiltig token ⇒ 401, vår token ⇒ aldrig 401 + rate-limit-header aktiv;
+(2) ändå 404 "Page not found" på ALLA endpoints (/servers, /ssh_keys,
+/datacenters, /primary_ips, /firewalls — till och med publika som utan
+token svarar 401 "token is required"); (3) inte heller root-lösenordet
+(paramiko-test: AuthenticationException). **SLUTSATS: token skapad utan
+projekt-scope (kontokontext i stället för projekt-kopplad) — Hetzner
+gömmer alla resurser med 404 för sådana token. ÅTGÄRD (kund, ~30 s):
+Hetzner Console → DET PROJEKT som innehåller servern → Security → API
+tokens → skapa NY med read/write → skicka/ersätt i .env; gamla token kan
+raderas. ALTERNATIV kvarstår: ssh-copy-id från terminalen (första vägen).**
+Med korrekt token tar main-agenten över helt: rescue-läge (API) → min
+publika nyckel in i authorized_keys → omstart → provisionering H1 (inget
+kundsteg 1 kvar; kundsteg 2 = GitHub deploy-nyckel kvarstår).

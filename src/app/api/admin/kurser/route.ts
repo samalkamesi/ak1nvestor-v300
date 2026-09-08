@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { ADMIN_OCH_REDAKTOR, requireAdmin } from "@/lib/admin-auth";
 import { getCourseList } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import {
@@ -162,7 +162,7 @@ function tolkKursAndring(rad: KursAndringRad): KursAndring {
 // ── GET — panelens vy: filvärde + gällande per kurs + ändringsloggen ────────
 
 export async function GET(req: NextRequest) {
-  const skydd = requireAdmin(req);
+  const skydd = requireAdmin(req, {}, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   // Kärnan kastar aldrig (kontraktet §A1): Supabase-fel ⇒ tom override-karta.
@@ -223,7 +223,7 @@ export async function POST(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skydd = requireAdmin(req, body);
+  const skydd = requireAdmin(req, body, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   // Formkontroll i rutten (variabler-mönstret) — DJUP validering (slug i

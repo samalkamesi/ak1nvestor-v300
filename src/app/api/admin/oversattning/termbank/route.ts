@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { ADMIN_OCH_REDAKTOR, requireAdmin } from "@/lib/admin-auth";
 import { TERMBANK, TERMBANK_STORLEK, kanoniskTermForSv, type TermKategori, type TermRad } from "@/lib/oversattning/termbank";
 import {
   lasTermbankTillagg,
@@ -107,7 +107,7 @@ function skillnadMellanLager(filPoster: TermbankTillagg[], sbPoster: TermbankTil
 // ── GET — banken + tilläggen (Supabase-läge + fil-läge) ─────────────────────
 
 export async function GET(req: NextRequest) {
-  const skyddSvar = requireAdmin(req);
+  const skyddSvar = requireAdmin(req, {}, ADMIN_OCH_REDAKTOR);
   if (skyddSvar) return skyddSvar;
 
   const { poster: filPoster } = lasTermbankTillagg();
@@ -152,7 +152,7 @@ export async function POST(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skyddSvar = requireAdmin(req, body);
+  const skyddSvar = requireAdmin(req, body, ADMIN_OCH_REDAKTOR);
   if (skyddSvar) return skyddSvar;
 
   const action = typeof body.action === "string" ? body.action : "";

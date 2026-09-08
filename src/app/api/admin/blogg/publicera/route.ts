@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { ADMIN_OCH_REDAKTOR, requireAdmin } from "@/lib/admin-auth";
 import {
   publiceraMedPaket,
   lasUtkast,
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skydd = requireAdmin(req, body);
+  const skydd = requireAdmin(req, body, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   const slug = typeof body.slug === "string" ? body.slug.trim() : "";

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { ADMIN_OCH_REDAKTOR, requireAdmin } from "@/lib/admin-auth";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import {
   exporteraKlarPost,
@@ -57,7 +57,7 @@ function strang(v: unknown): string {
 // ── GET — panelens lista: alla utkast + kontrollstatus ──────────────────────
 
 export async function GET(req: NextRequest) {
-  const skydd = requireAdmin(req);
+  const skydd = requireAdmin(req, {}, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   const utkast = await lasUtkast();
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skydd = requireAdmin(req, body);
+  const skydd = requireAdmin(req, body, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   const action = strang(body.action);

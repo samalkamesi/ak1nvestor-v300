@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { ADMIN_OCH_REDAKTOR, requireAdmin } from "@/lib/admin-auth";
 import {
   listaMedia,
   laddaUppMedia,
@@ -72,7 +72,7 @@ function plockaObjekt(rå: unknown): Record<string, unknown> {
 // ── GET — panelens lista: poster + konfigurerad-flagga + ärligt fel ─────────
 
 export async function GET(req: NextRequest) {
-  const skydd = requireAdmin(req);
+  const skydd = requireAdmin(req, {}, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   const konfigurerat = mediaKonfigurerat();
@@ -96,7 +96,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   // Header-först: obehöriga avvisas innan kroppen läses (admin-auth-mönstret).
-  const skydd = requireAdmin(req);
+  const skydd = requireAdmin(req, {}, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   if (!mediaKonfigurerat()) {
@@ -170,7 +170,7 @@ export async function DELETE(req: NextRequest) {
   }
   const body = plockaObjekt(kropp);
 
-  const skydd = requireAdmin(req, body);
+  const skydd = requireAdmin(req, body, ADMIN_OCH_REDAKTOR);
   if (skydd) return skydd;
 
   const id = typeof body.id === "string" ? body.id.trim() : "";

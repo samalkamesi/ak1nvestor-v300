@@ -15,6 +15,12 @@
  * Läge B (hot-path: /blogg läser Supabase-live) väntar på benchmark —
  * prestandarisken på 51+ inlägg kräver mätning först.
  *
+ * VÅG 82 DEL C — B2-HYBRIDEN (STYRELSE-BLOGG-LAGE-B §D): publiceraMedPaket
+ * = samma 0-FEL-grind (exporterarKlarPost) + markeraPublicerad + en agent-
+ * påminnelse (type="blogg_publicerad", details=paketet) som main-agenten
+ * plockar: fil-drop i data/blogg/ + commit. Publika bloggrutter förblir
+ * fil-baserade (force-static) — 0 ms på hot-pathen.
+ *
  * ── EVENT-RADENS KONTRAKT ──────────────────────────────────────────────────
  *   type="blogg_utkast" severity="info" source="blogg"
  *   message="[blogg] <slug> v<version> <status>"
@@ -544,9 +550,10 @@ export function exporteraKlarPost(
 
 /**
  * markeraPublicerad — skriver raden med status="publicerad". ANROPAS ENBART
- * av export-rutten EFTER att exporteraKlarPost passerat 0-FEL-grinden: det
- * är så "publicerad sätts enbart via exportvägen (Läge A)" hålls i lagret
- * (sparaUtkast avvisar statusen — detta är den enda insläppet). Versionen
+ * av export-rutten och publiceraMedPaket EFTER att exporteraKlarPost
+ * passerat 0-FEL-grinden: det är så "publicerad sätts enbart via
+ * exportvägen (Läge A)" hålls i lagret (sparaUtkast avvisar statusen —
+ * detta är det enda insläppet). Versionen
  * räknas vidare; innehållet bärs rakt av från det sparade utkastet.
  */
 export async function markeraPublicerad(post: BloggUtkastPost): Promise<void> {
@@ -585,4 +592,68 @@ export async function markeraPublicerad(post: BloggUtkastPost): Promise<void> {
     throw new BloggSparningsFel(e instanceof Error ? e.name : "okänt fel");
   }
   glomBloggCache();
+}
+
+// ── Publiceringsvägen B2 (våg 82 del C — dubbelwrite + agent-påminnelse) ────
+
+/** Event-typen för agent-påminnelsen (B2-kontraktet, LAGE-B §D). */
+export const BLOGG_PUBLICERAD_EVENT_TYP = "blogg_publicerad";
+
+/**
+ * publiceraMedPaket — B2-hybriden (våg 82 del C, STYRELSE-BLOGG-LAGE-B §D
+ * ordagrant): panelens "Publicera (skickar till agent)"-knapp UTAN att röra
+ * hot-pathen. Tre steg, i ordning:
+ *   (1) exporterarKlarPost — 0-FEL-grinden BESTÅR: kontroll-FEL ⇒
+ *       BloggValideringsFel och publiceringen nekas (våg 66-grunden);
+ *   (2) markeraPublicerad — status=publicerad-raden (revision + sannings-
+ *       källa för status; fortfarande enda insläppet för statusen);
+ *   (3) POSTAR agent-påminnelseraden: type="blogg_publicerad",
+ *       severity="info", source="blogg",
+ *       message="[blogg] PUBLICERA <slug> v<n>",
+ *       details={paket:<BloggExportPost>, av} — main-agenten plockar raden
+ *       och fullföljer med fil-drop i data/blogg/<slug>.json + commit
+ *       (dagens flöde, oförändrat).
+ * P6: inga nya spår utöver event-raderna — ALDRIG IP.
+ */
+export async function publiceraMedPaket(
+  post: BloggUtkastPost,
+  tags: unknown = [],
+): Promise<{ paket: BloggExportPost }> {
+  // (1) 0-FEL-grinden + paketbygge (disclaimer tillagd om den saknas) —
+  //     kastar BloggValideringsFel vid minsta FEL: publicera nekas.
+  const { paket } = exporteraKlarPost(post, tags);
+  // (2) status=publicerad i lagret (kastar BloggSparningsFel vid fel).
+  await markeraPublicerad(post);
+
+  // (3) Agent-påminnelsen — hela paketet bärs i details så main-agenten
+  //     kan droppa filen utan att bygga om något.
+  const rest = getSupabaseRest();
+  if (!rest) {
+    throw new BloggSparningsFel("Supabase ej konfigurerat (NEXT_PUBLIC_SUPABASE_URL/nyckel saknas i miljön)");
+  }
+  const version = post.version + 1; // samma version som publicerad-raden skrev
+  try {
+    const res = await fetch(rest.origin + "/rest/v1/system_events", {
+      method: "POST",
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({
+        type: BLOGG_PUBLICERAD_EVENT_TYP,
+        severity: "info",
+        message: `[blogg] PUBLICERA ${post.slug} v${String(version)}`,
+        details: {
+          paket,
+          av: post.av,
+        },
+        source: BLOGG_KALLA,
+      }),
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!res.ok) {
+      throw new BloggSparningsFel("lagret svarade HTTP " + String(res.status));
+    }
+  } catch (e) {
+    if (e instanceof BloggSparningsFel) throw e;
+    throw new BloggSparningsFel(e instanceof Error ? e.name : "okänt fel");
+  }
+  return { paket };
 }

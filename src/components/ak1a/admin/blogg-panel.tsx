@@ -12,6 +12,7 @@ import {
   Pencil,
   Plus,
   RefreshCw,
+  Rocket,
   Save,
   SearchCheck,
   Send,
@@ -44,13 +45,19 @@ import { cn } from "@/lib/utils";
  * "Exportera klar post" ger JSON-paketet som main/agent droppar i
  * data/blogg/<slug>.json + commit → main-push → LIVE; bloggroutern
  * (/blogg/[slug]) renderar den automatiskt med metadata/OG). Läge B
- * (hot-path-läsning live) väntar på benchmark.
+ * (hot-path-läsning live) väntar på benchmark. VÅG 82 (B2): "Publicera
+ * (skickar till agent)" kör samma 0-FEL-grind men postar även en agent-
+ * påminnelse (blogg_publicerad) — filen landar vid nästa main-push; vyn
+ * "Väntar på agent" visar utkast med status=publicerad.
  *
  * KÄLLOR (x-admin-password via admin-klienten — samma lås-rad som
  * övriga admin-paneler):
  *   GET  /api/admin/blogg  (lista: status + kontrollstatus per utkast)
  *   POST /api/admin/blogg  ({action: "spara"|"kontrollera"|"status"|
  *                            "exportera"})
+ *   POST /api/admin/blogg/publicera  (B2, våg 82 del C: {slug, tags} →
+ *                            0-FEL-grind + status=publicerad + agent-
+ *                            påminnelse blogg_publicerad → {paket})
  *
  * GRINDEN är server-side (rutten + lib:en) — panelens lås ("Skicka till
  * granskad" avaktiverad tills senaste serverkontroll visar 0 FEL på EXAKT
@@ -113,6 +120,9 @@ type PostSvar = {
   filnamn?: string;
 };
 
+/** B2-publicera-ruttens svar (POST /api/admin/blogg/publicera — våg 82). */
+type PubliceraSvar = { paket?: Record<string, unknown>; fel?: string };
+
 // ── Hjälpare ─────────────────────────────────────────────────────────────────
 
 function tidSedan(iso: string | null | undefined): string {
@@ -163,6 +173,15 @@ type EditorState = {
 
 const TOM_EDITOR: EditorState = { slug: "", titel: "", ingress: "", bodyMarkdown: "", tags: "", omslagUrl: "", ny: true };
 
+/** Listans filteralternativ (våg 82 B2) — "Väntar på agent" = publicerad
+ *  i lagret: agenten droppar filen + pushar vid nästa main-push. */
+const FILTER_ALTERNATIV: Array<{ id: "alla" | Status; etikett: string }> = [
+  { id: "alla", etikett: "Alla" },
+  { id: "utkast", etikett: "Utkast" },
+  { id: "granskad", etikett: "Granskade" },
+  { id: "publicerad", etikett: "Väntar på agent" },
+];
+
 // ── Panelen ──────────────────────────────────────────────────────────────────
 
 export function BloggPanel() {
@@ -179,6 +198,14 @@ export function BloggPanel() {
   /** Senaste serverkontrollen + vilken text den gällde (stämpla = exakt text). */
   const [rapport, setRapport] = React.useState<Rapport | null>(null);
   const [rapportText, setRapportText] = React.useState("");
+
+  /** Listfilter (våg 82 B2): "Väntar på agent" = status=publicerad. */
+  const [filter, setFilter] = React.useState<"alla" | Status>("alla");
+  /** Senast publicerade paket (B2) — visas för hand-drop tills det stängs. */
+  const [publiceratPaket, setPubliceratPaket] = React.useState<{
+    slug: string;
+    paket: Record<string, unknown>;
+  } | null>(null);
 
   /** Omslagsväljaren (våg 81 §A4) — biblioteket hämtas LAZY vid första öppning. */
   const [bibliotekOppet, setBibliotekOppet] = React.useState(false);
@@ -301,6 +328,15 @@ export function BloggPanel() {
   const kanSkickaTillGranskad =
     editor !== null && !editor.ny && rapportArAktuell && rapport !== null && rapport.godkand;
 
+  /** Den SPARADE raden för editorns slug (B2-knappens underlag — serverns
+   *  status + kontroll på den sparade raden, inte editorns lokala text). */
+  const sparadRad =
+    editor !== null && !editor.ny ? poster.find((p) => p.slug === editor.slug) : undefined;
+  /** "Publicera (skickar till agent)" syns ENBART på granskade utkast med
+   *  godkänd kontroll (status=granskad + kontroll godkänd — våg 82 B2). */
+  const kanPubliceraTillAgent =
+    !!sparadRad && sparadRad.status === "granskad" && sparadRad.kontroll.godkand;
+
   const sparaUtkast = async () => {
     if (!editor) return;
     setArbetar(true);
@@ -400,6 +436,97 @@ export function BloggPanel() {
     await hamta();
   };
 
+  /** Publicera (B2, våg 82 del C): 0-FEL-grind + status=publicerad + agent-
+   *  påminnelse (blogg_publicerad) — paketet visas nedan som hand-drop-
+   *  reservväg. Bygger på den SPARADE raden (samma som exporten). */
+  const publicera = async () => {
+    if (!editor || !kanPubliceraTillAgent) return;
+    setArbetar(true);
+    let ok = false;
+    let svar: PubliceraSvar = {};
+    try {
+      const res = await fetch("/api/admin/blogg/publicera", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({
+          slug: editor.slug,
+          tags: editor.tags
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean),
+        }),
+      });
+      svar = (await res.json().catch(() => ({}))) as PubliceraSvar;
+      ok = res.ok && !!svar.paket;
+      if (!ok) {
+        toast({
+          variant: "destructive",
+          title: "Publiceringen misslyckades",
+          description: svar.fel || `Servern svarade HTTP ${res.status} utan meddelande.`,
+        });
+      }
+    } catch {
+      ok = false;
+      toast({
+        variant: "destructive",
+        title: "Publiceringen misslyckades",
+        description: "Nätverksfel — inget skickades till agenten. Försök igen.",
+      });
+    }
+    setArbetar(false);
+    if (!ok || !svar.paket) return;
+    setPubliceratPaket({ slug: editor.slug, paket: svar.paket });
+    toast({
+      title: "Skickat till agent — publiceras vid nästa main-push",
+      description:
+        `${editor.slug}: status satt till publicerad i lagret + agent-påminnelse (blogg_publicerad) postad. ` +
+        "Paketet visas nedan som reservväg (hand-drop).",
+    });
+    await hamta();
+  };
+
+  /** Hand-drop-reservvägen: kopiera det publicerade paketet till urklipp. */
+  const kopieraPubliceratPaket = async () => {
+    if (!publiceratPaket) return;
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(publiceratPaket.paket, null, 2));
+      toast({
+        title: "Paketet i urklipp",
+        description: `Klistra in som data/blogg/${publiceratPaket.slug}.json vid hand-drop.`,
+      });
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Kunde inte kopiera",
+        description: "Markera JSON:en i rutan och kopiera manuellt.",
+      });
+    }
+  };
+
+  /** Hand-drop-reservvägen: ladda ner det publicerade paketet som fil. */
+  const laddaNerPubliceratPaket = () => {
+    if (!publiceratPaket) return;
+    try {
+      const blob = new Blob([JSON.stringify(publiceratPaket.paket, null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${publiceratPaket.slug}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Nedladdningen misslyckades",
+        description: "Kopiera JSON:en i stället (knappen bredvid).",
+      });
+    }
+  };
+
   // ── Lås-vy (samma mönster som variabel-panelen) ───────────────────────────
   if (behoverLosen && poster.length === 0) {
     return (
@@ -433,6 +560,8 @@ export function BloggPanel() {
   const bibliotekPoster = bibliotek?.poster ?? [];
   const bibliotekFel = bibliotek?.fel || bibliotek?.error || "";
 
+  const filtreradePoster = filter === "alla" ? poster : poster.filter((p) => p.status === filter);
+
   return (
     <div className="space-y-5">
       {/* Rubrikrad */}
@@ -461,7 +590,9 @@ export function BloggPanel() {
         Utkast lever i Supabase (senaste-vinner per slug). <strong className="text-foreground">Läge A:</strong>{" "}
         "Exportera klar post" ger JSON-paketet — filen droppas i <code className="font-mono">data/blogg/</code> av
         main/agent + main-push → live (bloggroutern renderar den automatiskt med metadata/OG). Statusbyte till
-        granskad kräver 0 FEL i kontrolleraText; "publicerad" sätts enbart via exportvägen.
+        granskad kräver 0 FEL i kontrolleraText; "publicerad" sätts enbart via exportvägen.{" "}
+        <strong className="text-foreground">Våg 82 (B2):</strong> "Publicera (skickar till agent)" kör samma 0-FEL-grind
+        + postar en agent-påminnelse (blogg_publicerad) — vyn "Väntar på agent" visar utkast med status=publicerad.
       </p>
 
       {fel && <p className="text-xs text-red-600">{fel}</p>}
@@ -472,19 +603,54 @@ export function BloggPanel() {
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <div className="flex items-center gap-2">
             <History className="h-4 w-4 text-gold" />
-            <h4 className="font-serif text-sm font-bold">Utkast ({poster.length})</h4>
+            <h4 className="font-serif text-sm font-bold">Utkast ({filtreradePoster.length})</h4>
           </div>
           <Button size="sm" variant="outline" onClick={oppnaNy}>
             <Plus className="mr-1 h-3 w-3" /> Nytt utkast
           </Button>
         </div>
-        {poster.length === 0 ? (
+        {/* Filtersegment (våg 82 B2) — "Väntar på agent" = status=publicerad */}
+        <div className="mt-3 flex flex-wrap gap-1">
+          {FILTER_ALTERNATIV.map((alt) => {
+            const antal =
+              alt.id === "alla" ? poster.length : poster.filter((p) => p.status === alt.id).length;
+            const aktiv = filter === alt.id;
+            return (
+              <button
+                key={alt.id}
+                type="button"
+                onClick={() => setFilter(alt.id)}
+                aria-pressed={aktiv}
+                className={cn(
+                  "rounded-full border px-2.5 py-0.5 text-[10px] font-medium transition-colors",
+                  aktiv
+                    ? "border-gold/60 bg-gold/10 text-gold"
+                    : "border-border text-muted-foreground hover:border-gold/40 hover:text-foreground",
+                )}
+              >
+                {alt.etikett} ({antal})
+              </button>
+            );
+          })}
+        </div>
+        {filter === "publicerad" && (
+          <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
+            <Rocket className="mr-1 inline h-3 w-3 align-[-2px] text-bull" />
+            Status publicerad i lagret — agenten droppar filen i data/blogg/ och pushar vid nästa
+            main-push. Reservväg: öppna utkastet och "Exportera klar post" (hand-drop).
+          </p>
+        )}
+        {filtreradePoster.length === 0 ? (
           <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
-            Inga utkast i lagret än — skapa det första med "Nytt utkast".
+            {filter === "publicerad"
+              ? "Inget väntar på agenten just nu — publicera ett granskat utkast (0 FEL) först."
+              : filter === "alla"
+                ? 'Inga utkast i lagret än — skapa det första med "Nytt utkast".'
+                : "Inga utkast med denna status."}
           </p>
         ) : (
           <ul className="mt-3 space-y-1.5">
-            {poster.map((rad) => (
+            {filtreradePoster.map((rad) => (
               <li
                 key={rad.slug}
                 className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md border border-border bg-card px-3 py-2 text-[11px]"
@@ -517,6 +683,40 @@ export function BloggPanel() {
           </ul>
         )}
       </div>
+
+      {/* Publicerat paket (B2) — hand-drop-reservvägen tills agenten pushat */}
+      {publiceratPaket && (
+        <div className="rounded-lg border border-bull/40 bg-card p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <Rocket className="h-4 w-4 text-bull" />
+              <h4 className="font-serif text-sm font-bold">Skickat till agent: {publiceratPaket.slug}</h4>
+              <Badge variant="outline" className="border-bull/60 text-[10px] text-bull">
+                väntar på main-push
+              </Badge>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button size="sm" variant="outline" onClick={kopieraPubliceratPaket}>
+                <ClipboardCopy className="mr-1 h-3 w-3" /> Kopiera JSON
+              </Button>
+              <Button size="sm" variant="outline" onClick={laddaNerPubliceratPaket}>
+                <Download className="mr-1 h-3 w-3" /> {publiceratPaket.slug}.json
+              </Button>
+              <Button size="sm" variant="outline" onClick={() => setPubliceratPaket(null)}>
+                <X className="mr-1 h-3 w-3" /> Stäng
+              </Button>
+            </div>
+          </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+            Agent-påminnelsen (blogg_publicerad) är postad — agenten droppar filen i{" "}
+            <code className="font-mono">data/blogg/</code> och pushar vid nästa main-push. Reservväg
+            (hand-drop): kopiera/ladda ner paketet nedan och droppa det själv.
+          </p>
+          <pre className="mt-2 max-h-64 overflow-auto rounded-md border border-border bg-muted/40 p-2 font-mono text-[10px] leading-relaxed">
+            {JSON.stringify(publiceratPaket.paket, null, 2)}
+          </pre>
+        </div>
+      )}
 
       {/* Editorn */}
       {editor && (
@@ -690,6 +890,23 @@ export function BloggPanel() {
             >
               <Send className="mr-1 h-3 w-3" /> Skicka till granskad
             </Button>
+            {kanPubliceraTillAgent && (
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-bull/50 text-bull hover:bg-bull/10"
+                disabled={arbetar}
+                title="Publicerar den sparade raden: 0-FEL-grind + status=publicerad + agent-påminnelse (blogg_publicerad) — filen droppas av agenten vid nästa main-push"
+                onClick={publicera}
+              >
+                {arbetar ? (
+                  <RefreshCw className="mr-1 h-3 w-3 animate-spin" />
+                ) : (
+                  <Rocket className="mr-1 h-3 w-3" />
+                )}
+                Publicera (skickar till agent)
+              </Button>
+            )}
             <Button
               size="sm"
               variant="outline"
@@ -703,6 +920,8 @@ export function BloggPanel() {
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
             "Skicka till granskad" är låst tills senaste Kontrollera visar 0 FEL på exakt aktuell text ·
+            "Publicera (skickar till agent)" syns på granskade utkast (sparad status + godkänd kontroll)
+            och skickar paketet till agenten — filen landar vid nästa main-push ·
             "Exportera klar post" bygger på den <strong className="text-foreground">sparade</strong> raden (spara först),
             kör 0-FEL-grinden igen, lägger till disclaimer om den saknas, markerar utkastet publicerat och levererar
             JSON (urklipp + <code className="font-mono">&lt;slug&gt;.json</code>).

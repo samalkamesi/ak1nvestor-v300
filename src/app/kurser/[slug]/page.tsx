@@ -5,6 +5,7 @@ import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { kraverFas } from "@/lib/kurs-access";
+import { medKursOverrides } from "@/lib/kurs-metadata-live";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { Fas2Gate } from "@/components/ak1a/fas2-gate";
@@ -28,6 +29,15 @@ import { Kallkort } from "@/components/ak1a/kallkort";
  */
 export const dynamicParams = false;
 
+// VÅG 82 (ordförandebeslut): revalidate 3600 landar FÖRST NU, samtidigt
+// som metadata-lagret — samma bevisade combo som /en|/ar-speglarna.
+// Kompatibelt med dynamicParams=false ovan: kända sidor blir ISR (○ i
+// build-utskriften), okända slug:ar förblir ÄKTA 404 (våg 81 — RÖR EJ).
+// Kursens title/summary/learn/why läses live via medKursOverrides(course)
+// vid varje revalidation; strukturella fält (kapitel, XP-ekonomi, kategori)
+// kommer fortfarande från filen.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return Object.keys(getCourses()).map((slug) => ({ slug }));
 }
@@ -40,13 +50,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = getCourse(slug);
   if (!course) return {};
-  return courseMetadata(course);
+  // VÅG 82: title/summary (learn) live-mergas med panelens override —
+  // filvärdena är fallback (tombstone/miss saknas ⇒ filen gäller).
+  const kurs = await medKursOverrides(course);
+  return courseMetadata(kurs);
 }
 
 export default async function KursPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const course = getCourse(slug);
   if (!course) notFound();
+
+  // VÅG 82: kursens vitlistefält title/summary/learn/why live-mergas
+  // (kurs-metadata-live); allt strukturellt (kapitel, quiz, XP, kategori)
+  // är fortfarande filens — vitlåset garanteras av skrivvägen.
+  const kurs = await medKursOverrides(course);
 
   const siblings = Object.values(getCourses())
     .filter((c) => c.category === course.category && c.slug !== course.slug)
@@ -106,14 +124,14 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
   return (
     <SeoPageShell
       wide
-      breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: course.title }]}
+      breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: kurs.title }]}
     >
-      <JsonLd data={courseJsonLd(course)} />
+      <JsonLd data={courseJsonLd(kurs)} />
       <LasProgress />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Kurser", path: "/kurser" },
-          { name: course.title, path: `/kurser/${course.slug}` },
+          { name: kurs.title, path: `/kurser/${course.slug}` },
         ])}
       />
 
@@ -121,8 +139,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         <p className="text-xs uppercase tracking-widest text-gold">
           AKM1 · {course.category}
         </p>
-        <h1 className="mt-2 font-serif text-4xl font-bold">{course.title}</h1>
-        <p className="mt-3 text-muted-foreground leading-relaxed">{course.learn}</p>
+        <h1 className="mt-2 font-serif text-4xl font-bold">{kurs.title}</h1>
+        <p className="mt-3 text-muted-foreground leading-relaxed">{kurs.learn}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {[
             `📖 ${course.chapters.length} kapitel`,
@@ -141,11 +159,11 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
 
       <div className="mt-4"><NivaBar slug={slug} /></div>
 
-      {course.why && (
+      {kurs.why && (
         <section className="mt-8">
           <h2 className="font-serif text-2xl font-bold">Varför denna variabel är avgörande</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed whitespace-pre-line">
-            {course.why}
+            {kurs.why}
           </p>
         </section>
       )}
@@ -232,7 +250,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       {fas > 0 ? (
         <Fas2Gate
           slug={slug}
-          titel={course.title}
+          titel={kurs.title}
           kapitel={course.chapters.length}
           xp={intjanbarXp}
           intro={course.chapters[0]?.intro}
@@ -242,13 +260,13 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           fortsattning={forsattning}
         />
       ) : (
-      <KursGate slug={slug} titel={course.title}>
+      <KursGate slug={slug} titel={kurs.title}>
       {harQuiz ? (
         <KursSteg
           prenumNiva={prenumNiva}
           kurs={{
             slug: slug,
-            title: course.title,
+            title: kurs.title,
             chapters: (course.chapters as any[]).map((ch) => ({
               num: ch.num,
               title: ch.title,
@@ -274,7 +292,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
 
     {/* Källverk — upphovsrättslig transparens: visas för alla BOKMASTER-kurser,
         även låsta (transparensen ska inte sitta bakom betalväggen). */}
-    <Kallkort kurs={course} />
+    <Kallkort kurs={kurs} />
 
       {(course.lynchSection || course.grahamSection || course.ak1Section) && (
         <section className="mt-10">
@@ -312,20 +330,20 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         const num = ["v04", "v05", "v06", "v07", "v08", "v09", "v10", "v19"].includes(slug.slice(0, 3));
         const ovningar = [
           {
-            q: `Förklara med egna ord: vad mäter ${course.title} och varför väger den ${course.weight || "6%"} i AKM1?`,
-            a: course.learn || "",
+            q: `Förklara med egna ord: vad mäter ${kurs.title} och varför väger den ${course.weight || "6%"} i AKM1?`,
+            a: kurs.learn || "",
           },
           num
             ? {
-                q: `Räkneövning: hämta senaste siffrorna från ett bolags årsredovisning (se "Var hittar jag siffrorna" i kalkylatorn) och beräkna ${course.title}. Vilken poäng (0-5) ger din uträkning?`,
+                q: `Räkneövning: hämta senaste siffrorna från ett bolags årsredovisning (se "Var hittar jag siffrorna" i kalkylatorn) och beräkna ${kurs.title}. Vilken poäng (0-5) ger din uträkning?`,
                 a: "Facit är din egen uträkning — kontrollera mot kalkylatorns automatpoäng på /kalkylator.",
               }
             : {
-                q: `Tillämpning: hitta ett bolag där ${course.title.toLowerCase()} är starkt — och ett där den är svag. Vad skiljer dem?`,
+                q: `Tillämpning: hitta ett bolag där ${kurs.title.toLowerCase()} är starkt — och ett där den är svag. Vad skiljer dem?`,
                 a: `Ledning: se kapitel ${course.chapters?.[2]?.num ?? 3} ("${course.chapters?.[2]?.title ?? "beräkning i praktiken"}").`,
               },
           {
-            q: `Reflektion: hur skulle din portfölj påverkas om ditt största innehav svek på just ${course.title.toLowerCase()}?`,
+            q: `Reflektion: hur skulle din portfölj påverkas om ditt största innehav svek på just ${kurs.title.toLowerCase()}?`,
             a: "Testa i Min portfölj (/min-portfolj) eller diskutera i labbet.",
           },
         ];

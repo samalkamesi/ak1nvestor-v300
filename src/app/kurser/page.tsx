@@ -14,9 +14,15 @@ import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SocialProof } from "@/components/ak1a/social-proof";
-import { SIFFROR, tal } from "@/lib/siffror";
+import { SIFFROR, tal, type Siffror } from "@/lib/siffror";
+import { lasSiffror } from "@/lib/siffror-live";
 
 export const dynamic = "force-static";
+// VÅG 82 (ordförandebeslut): revalidate 3600 landar FÖRST NU, samtidigt
+// som metadata-lagret — samma bevisade combo som /en|/ar-speglarna
+// (force-static + revalidate 3600) ⇒ live-ändringar syns inom 1 h utan
+// redeploy. Talen på sidan läses live via lasSiffror() vid revalidation.
+export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
@@ -39,8 +45,9 @@ export const metadata: Metadata = pageMetadata({
  * FAQPage-schema (AI-SEO våg 50) — frågeformaterat och konkret med tal ur
  * guldkällan: GEO-forskningen (KDD 2024) visar att statistik + raka svar
  * är det som starkast ökar AI-citeringar. Se data/forskning/AI-SEO-2026-09-03.md.
+ * VÅG 82: talen levereras av lasSiffror() (live-räkning, SIFFROR-fallback).
  */
-function kurserFaqJsonLd() {
+function kurserFaqJsonLd(s: Siffror) {
   return faqJsonLd([
     {
       fraga: "Vad är AKM1 för metodik?",
@@ -49,7 +56,7 @@ function kurserFaqJsonLd() {
     },
     {
       fraga: "Hur många kurser finns på AK1A?",
-      svar: `${tal(SIFFROR.kurser)} kurser i ämnen som fundamentalanalys, värdering, teknisk analys, riskhantering och beteendeekonomi — plus ${tal(SIFFROR.bokmaster)} böcker som BOKMASTER-kurser, kapitel för kapitel.`,
+      svar: `${tal(s.kurser)} kurser i ämnen som fundamentalanalys, värdering, teknisk analys, riskhantering och beteendeekonomi — plus ${tal(s.bokmaster)} böcker som BOKMASTER-kurser, kapitel för kapitel.`,
     },
     {
       fraga: "Är kurserna gratis?",
@@ -208,8 +215,13 @@ function UtvaltSektion({
   );
 }
 
-export default function KurserPage() {
+export default async function KurserPage() {
   const courses = getCourseList();
+
+  // VÅG 82: talen räknas live (getCourses-memot ≈ 1 ms; statisk SIFFROR
+  // som fallback) — server-komponenten await:ar; klientkomponenterna
+  // (KursSok, SocialProof m.fl.) behåller sina statiska SIFFROR-tal.
+  const siffror = await lasSiffror();
 
   // Urval (deterministiskt — se urvalsprinciperna ovan):
   // Flaggskeppen = hårdkodad kanon; Nya = objektordningens slut (nyast först)
@@ -232,13 +244,13 @@ export default function KurserPage() {
     <SeoPageShell breadcrumb={[{ name: "Kurser" }]} wide>
       <JsonLd data={websiteJsonLd()} />
       <JsonLd data={educationalOrganizationJsonLd()} />
-      <JsonLd data={kurserFaqJsonLd()} />
+      <JsonLd data={kurserFaqJsonLd(siffror)} />
 
       {/* HERON — rubrik + kort intro; sökfältet bor stort och centralt i
           KursSok direkt nedan (våg 58: curated-först, registret paginerat) */}
       <h1 className="font-serif text-4xl font-bold">Kurser i institutionell aktieanalys</h1>
       <p className="mt-4 max-w-3xl text-muted-foreground leading-relaxed">
-        {tal(courses.length)} kurser som lär dig tänka som en analytiker — från AKM1:s 20
+        {tal(siffror.kurser)} kurser som lär dig tänka som en analytiker — från AKM1:s 20
         fundamentalvariabler till teknisk analys, riskhantering och praktiska case.
         Börja med ett flaggskepp eller följ stigen från noll.
       </p>

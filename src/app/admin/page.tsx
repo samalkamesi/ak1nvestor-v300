@@ -37,6 +37,7 @@ import { OversattningPanel } from "@/components/ak1a/admin/oversattning-panel";
 import { VariabelPanel } from "@/components/ak1a/admin/variabel-panel";
 import { BloggPanel } from "@/components/ak1a/admin/blogg-panel";
 import { MediaPanel } from "@/components/ak1a/admin/media-panel";
+import { KursPanel } from "@/components/ak1a/admin/kurs-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -364,6 +365,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="variabler" className="px-3 py-1.5 text-xs sm:text-sm">Variabler 📊</TabsTrigger>
             <TabsTrigger value="blogg" className="px-3 py-1.5 text-xs sm:text-sm">Blogg ✍️</TabsTrigger>
             <TabsTrigger value="media" className="px-3 py-1.5 text-xs sm:text-sm">Media 🖼️</TabsTrigger>
+            <TabsTrigger value="kurser" className="px-3 py-1.5 text-xs sm:text-sm">Kurser 🎓</TabsTrigger>
           </TabsList>
 
           {/* Overview */}
@@ -759,6 +761,14 @@ export default function AdminDashboard() {
           <TabsContent value="media" className="mt-6">
             <Card className="p-5">
               <MediaPanel />
+            </Card>
+          </TabsContent>
+
+          {/* Kurser 🎓 — admin-mega steg 4: kursmetadata live utan deploy (våg 82 §A3).
+              Panelen mountas först när fliken öppnas → GET sker lazy, inte vid sidladdning. */}
+          <TabsContent value="kurser" className="mt-6">
+            <Card className="p-5">
+              <KursPanel />
             </Card>
           </TabsContent>
         </Tabs>

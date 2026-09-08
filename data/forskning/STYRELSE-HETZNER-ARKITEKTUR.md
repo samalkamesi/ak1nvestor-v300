@@ -108,3 +108,33 @@ rescue → SSH-nyckel in → H1-provisionering + bucket-skapande via API +
 H2/H3. Alternativvägar: (a) kunden skapar en bucket i Console (namn t.ex.
 ak1nvestor-backup-prod, fsn1) → S3-nycklarna räcker för backup-pipelinen;
 (b) ssh-copy-id för servern enbart.
+
+## BESLUTSREVISION 2026-09-08 — PROD FLYTTAR FRÅN VERCEL (NÄR BOXEN FINNS)
+
+**Ny premiss:** kundens Vercel Hobby (gratis) rapporterar "full" — taket
+(100 GB bandbredd/mån el. liknande) är nått; risk att sajten suspenderas.
+Styrelsens tidigare avslag på self-host (våg 81: "0 kr + lastbärande CDN")
+vilade på premissen att gratis räcker — den är OGILTIG nu.
+
+**NYTT BESLUT: prod self-hostas på Contabo Cloud VPS 4 (4 vCPU/8 GB,
+månadsvis €6,88, Tyskland — kundval efter marknadsjämförelse; Hetzner
+utbytt av kund pga prishöjningar).** Migreringen STEGAD, Vercel kvar som
+rollback tills prod stabil:
+1. Provisionera boxen (setup-server.sh mönster + nginx + certbot + pm2).
+2. Klona repo, npm ci, next build (standalone), pm2 start, nginx reverse
+   proxy port 3000. Smoke-test mot IP:n (Host-header-trick).
+3. DNS: kund byter A-record lab.ak1nvestor.com → box-IP (EN kundhandling —
+   eller DNS-api-credentials om kunden vill automatisera). Tills dess:
+   Vercel orörd.
+4. Efter flippen: övervakning + bandbredd obegränsad (200 Mbit/s port,
+   unlimited traffic). Crons: Vercel-hobby-taket 1/dag ersätts av system-
+   crontab på boxen (BÄTTRE — kan köras oftare). next/image: sharp +
+   konfig (eller unoptimized + egna OG-bilders bredder). ISR/force-static:
+   fungerar oförändrat self-hostat.
+5. Deploy-flödet: main-push → main-agent bygger på boxen (ssh + bygg.sh)
+   istället för Vercel auto — dokumenteras i worklog vid drift.
+6. Rollback = DNS tillbaka till Vercel (sites kvar tills vidare, ev.
+   repository freeze på Vercel för kall reserv).
+
+Kostnad: €6,88/mån TOTALT för prod + byggmiljö + obegränsad bandbredd —
+mot Vercel Pro €19/mån. Kundens budget hålls.

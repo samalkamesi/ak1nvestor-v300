@@ -57,14 +57,20 @@ export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
   const forslag = React.useMemo(() => {
     if (!pathname) return [];
     const path = normalisera(pathname);
-    const match = path.match(/^\/kurser\/(.+?)\/?$/);
+    // VÅG 85 (STYRELSE-VAG85-FLYTT §A5 + KARTA §5.3): valfritt spegelprefix
+    // (en/|ar/) som fånggrupp — tidigare träffades endast ^/kurser/…, så
+    // spegel-404:ar (/en|/ar/kurser/…) fick [] förslag. Svenskt beteende är
+    // oförändrat (prefix = ""); på speglar behålls prefixet i länkarna.
+    const match = path.match(/^\/(en\/|ar\/)?kurser\/(.+?)\/?$/);
     if (!match) return [];
-    const sokt = match[1];
+    const prefix = match[1] ?? "";
+    const sokt = match[2];
     return kurser
       .map((k) => ({ ...k, d: avstand(sokt, k.slug) }))
       .sort((a, b) => a.d - b.d)
       .slice(0, 3)
-      .filter((k, i) => k.d <= Math.max(6, sokt.length / 2) || i === 0);
+      .filter((k, i) => k.d <= Math.max(6, sokt.length / 2) || i === 0)
+      .map((k) => ({ ...k, href: `/${prefix}kurser/${k.slug}` }));
   }, [kurser, pathname]);
 
   if (forslag.length === 0) return null;
@@ -81,7 +87,7 @@ export function KursForslag({ kurser }: { kurser: KursSlug[] }) {
         {forslag.map((k) => (
           <li key={k.slug}>
             <Link
-              href={`/kurser/${k.slug}`}
+              href={k.href}
               className="btn-marin group flex items-center justify-between gap-2 px-4 py-3"
             >
               <span className="font-serif text-sm font-bold text-[#EDE6D6]">{k.titel}</span>

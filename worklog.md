@@ -9278,3 +9278,21 @@ pm2 restart. Ingen GitHub-credential behövs på servern.
 **PÅGÅR:** npm ci + next build på servern (bakgrund) → pm2 start →
 smoke-test mot IP med Host-header → DNS-flip-instruktion till kund
 (lab.ak1nvestor.com A-record → 5.189.162.162; Vercel kvar som rollback).
+
+## 🏁 MIGRERINGEN VERCEL → CONTABO SLUTFÖRD (2026-09-08, kvällen)
+
+**lab.ak1nvestor.com servas nu från KUNDENS EGEN SERVER (5.189.162.162).**
+- Kund bytte DNS (A-record hos one.com) → certbot --nginx installerade
+  Let's Encrypt (HTTP→HTTPS-redirect) → **PRODVERIFIERING 10/10 PASS**:
+  startsida/kurser/äkta-404/EN-spegel med titel+Sign in/AR-rtl+kategorier/
+  variabler-API live/admin-API låst/blogg — allt grönt över HTTPS.
+- Cron-jobben flyttade till serverns crontab (vagscan 06:30 UTC,
+  nyheter 08:00 UTC, portfolj-uppfoljning mån 1:a 07:00 — lokala anrop
+  genom nginx, ersätter Vercel Hobby-cronerna).
+- **Vercel = kall rollback** (projekt ak-1 kvar tills vidare; DNS-flip
+  tillbaka = minuter om det någonsin behövs).
+- Deploy-flödet nytt: main-push GitHub + main-agent tar-pipe → npm ci +
+  build → pm2 restart på servern.
+
+**Kostnad: €6,88/mån totalt. Obegränsad bandbredd. Kundens dator avlastad
+(byggen sker på servern). Vercel-taket (100 GB) historia.**

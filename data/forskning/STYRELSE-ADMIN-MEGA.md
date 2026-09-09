@@ -322,3 +322,19 @@ korpus täckning (via /api/forskningslage-mönstret läs ur MÖS-kartan om
 billigt, annars räkna publicerade), senaste deploy-commit (git-log
 runtime är inte möjligt på Vercel — visa Senaste aktivitet ur events
 i stället). requireAdmin-läsning. Mobilanpassad (telefon först!).
+
+## TILLÄGG VÅG 81 — WEBCHAT-STUDIO (kunddirektiv "exceptionell design, uppmana allt — bilder till mappar, exakt som Z, max kapacitet")
+
+Kundens /chat (ttyd) är funktionell men ren terminal. BESLUT:
+1. SNABBVINST (klarat direkt): lrzsz installerat — ZMODEM-uppladdning i ttyd
+   (fil/zip via terminalmenyn Ctrl+Alt+Shift+U; mappar som zip).
+2. /studio = EGEN WEBCHAT på AK1-stacken: Next-sida som via en server-
+   brygga startar/pratar med `zcode app-server` (ZCode-protokollet över
+   stdio — samma runtime som TUI:n). V1-funktioner: meddelandechatt m
+   markdown, bildpaste/-drag (→ ~/agent/ak1/uploads + sökväg i prompten),
+   filuppladdning, mappuppladdning (webkitdirectory → zip → workspace),
+   sessionsliståterkomst (tmux-lös — bryggan håller sessionen vid liv),
+   uppgifts-/verktygsstatus. Admin-autentisering. Design: AK1A-DNA
+   (paper/guld/marin) — EXCEPTIONELL enligt kundens ord.
+3. Säkerhet: uploads ska 30 MB-filtak + filtypsvitlista + rensas > 7 dgr;
+   bryggan binder 127.0.0.1 endast; INGA hemligheter i klientsidan.

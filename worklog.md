@@ -9449,3 +9449,62 @@ node_modules (npm ci tömmer) — vänta ut främmande `next build`-process
 innan egen build; (3) studions session är DELAD state — "En prompt kör
 redan"-vägran är korrekt (speglar -32010); E2E får polla tills sessionen
 är ledig.
+
+## VÅG 83 B2 — PERMISSION- OCH INTERAKTIONSSKIKTET LEVER (2026-09-09, df78aab+c774633)
+
+**Z-portaLens godkännandeflöde** (protokollkarta §3 SERVER→KLIENT-REQUESTS,
+schemasäkrat rakt ur kartan):
+**TRANSPORT:** ProtokollKlient.serverRequestHanterare besvarar interaktions-
+domänen ASYNKRONT — interaction/requestPermission (options allow_once/
+allow_project/deny publiceras som StudioEvent "interaktion" på den AKTIVA
+promptens SSE-ström + i ett register; svaret blir protokollets z2-form:
+alternativets egna response om det finns, annars decision allow/deny +
+allow_project ⇒ permissionUpdates addRules för verktyget) + interaction/
+requestUserInput ({value}|{cancelled}) + requestOfficialMcpAuthHeaders (={}
+= hoppa över, LIVE ×6 i kartan). **KVD-DEFAULT 30 s: inget UI-svar ⇒
+escalate (permission) / cancelled (fråga) — sessionen hänger ALDRIG på en
+obesvarad dialog** (timer per request; re-announce av samma request-id
+re-notifierar bara). sattLage (session/setMode build|plan — LIVE i kartan)
++ sattTankeNiva (session/setThoughtLevel nothink|high|max — LIVE-nivåerna;
+KVD-textens "off/medium/high" är generisk terminologi, de ÄRLIGA nivåerna
+för zai/GLM står i kartan §1) — bägge följer med till session/create (mode+
+thoughtLevel är create-params) och resume (thoughtLevel) + persistensfilen,
+så modellbyte/ny session/pm2-omstart bevarar valet (bevisat: tankeNiva
+överlevde omstarten; mode kan överskrivas av workspace-default — kartans
+§1-not, ärligt dokumenterat).
+**API:** NY /api/studio/interaktion (GET väntande lista — samma data följer
+också med i GET /api/studio/stream så ett refreshat UI återfår dialogen;
+POST typ permission|fråga|fråga-avbryt → transportsvar, 409 = redan
+besvarad/eskalerad) + /api/studio/session action "läge"/"tankestyrka"
+(ASCII-alias lage/tankeniva — Windows-curl:mangler å/ä i bodyn, alias är
+skeletttryggt).
+**UI:** permission-dialog i chattflödet — marin kort (ShieldAlert + risk-
+badge low/medium/high/critical färgkodad + verktygsnamn + skäl + argument-
+summary i monospace) med knapparna UR EVENTETS OPTIONS etiketterade Tillåt
+en gång / Tillåt för projektet / Neka (deny=röd, allow_project=guldkant,
+allow_once=guldprimär) + "Svar inom 30 s"-notis; frågekort (choices →
+knappval, annars fritext + Svara/Avbryt); "interaktionsKlar" stänger kortet
+(eskaleringstoast vid timeout); LÄGESVÄXLARE (Build/Plan) + TANKESTYRKA-
+dropdown (av/hög/max) bredvid modellrullistan i headern (flex-wrap mobil),
+initsierade ur sessionens projektion/snapshot.
+**BONUSFIX (c774633) — latent dödläge funnet via E2E:** självläkningen
+efter -32031 (död modell) kallade nySession() som VÄGRAR när en prompt kör
+— retryn pågick ju = dödläge (bevisat live: "Kunde ej skicka… En prompt
+kör"). Intern skapaFriskSession() utan prompt-vakt för retryn; publika
+nySession behåller vakten (UI-knapp + modellbyte).
+**E2E PÅ PROD (lab.ak1nvestor.com):** setMode plan → {"lage":"plan"} OK ·
+setMode build (återställd) OK · setThoughtLevel high → {"niva":"high"} OK ·
+max OK · GET /api/studio/interaktion 200 {"interaktioner":[]} · HEL TUR med
+Bash-turn OK. **PERMISSION EJ TRIGGBAR I TEST (dokumenterat enligt KVD):**
+build-läge auto-godkänner låg/medel risk (kartan §3) — och en bunden sond
+i plan-läge (Bash echo, 2 min poll) gav heller ingen request: servern
+auto-godkänner även där för lågriskverktyg; dialogen visas när servern
+FACTISKT ber (riskigare verktyg/permission.mode-läge) — hela kedjan är
+bevisad i dev via mock-transportens simulerade dialog (permission+fråga+
+svar+svarvängor+30s-default-städning, tmp-körning 2026-09-09).
+**KVD:** tsc 36 = baslinjen (0 nya) · motorer 107/0/0 · vakten GRÖN ·
+deploy Contabo (npm ci+build+pm2 online, HTTPS 200).
+**Driftsfynd B2:** (1) parallella deploy-agenter kan krossa varandras
+node_modules (min rm -rf × deras npm ci → ENOTEMPTY + pm2 errored) — vänta
+ut främmande process, ÅTERSTÄLL, bygga om; (2) transporten är DELAD singel-
+ton — "En prompt kör"-vägran vid E2E under främmande tur är korrekt; polla.

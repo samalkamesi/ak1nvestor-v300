@@ -9,10 +9,13 @@ import {
   FileArchive,
   FileImage,
   FolderUp,
+  History,
   Loader2,
   Paperclip,
   Send,
   Sparkles,
+  Shrink,
+  SquarePen,
   UploadCloud,
 } from "lucide-react";
 
@@ -33,11 +36,22 @@ import { cn } from "@/lib/utils";
  * skriver kod). Mobil-först: sticky composer, kompakt marinrad.
  *
  * STRÖM: POST /api/studio/stream {prompt} → SSE-events (status/delta/
- * verktyg/klart/fel) läses med fetch+reader (EventSource kan ej POST).
- * UPLOADS: POST /api/studio/uppladdning multipart — drag-och-släpp på hela
- * ytan, paste-bild i skrivfältet, filknapp, mappknapp (webkitdirectory →
- * relativa sökvägar följer med → servern rekonstruerar mappstrukturen).
- * Klickbara chips infogar "Titta på uploads/..." i prompten.
+ * verktyg/klart/fel/kontext) läses med fetch+reader (EventSource kan ej
+ * POST). UPLOADS: POST /api/studio/uppladdning multipart — drag-och-släpp
+ * på hela ytan, paste-bild i skrivfältet, filknapp, mappknapp
+ * (webkitdirectory → relativa sökvägar följer med → servern
+ * rekonstruerar mappstrukturen). Klickbara chips infogar "Titta på
+ * uploads/..." i prompten.
+ *
+ * VÅG 82 STUDIO V2 ("Z-portalen i molnet"): MODELLRULLISTA i headern
+ * (GET/POST /api/studio/modeller — listan härledd ur zcode-config.json,
+ * aldrig hårdkodad; byte = kassera + session/create MED model-param,
+ * protokollväg bevisad i tool-results/v82-protokoll.md) + KONTEXTRAD
+ * "📊 X tkn denna runda · ~Y totalt · Z % av taket" (klart-eventets
+ * tokenCount + session/read-projektionen via kontext-SSE-eventet;
+ * protokollets contextWindow = taket, 1M endast reserv) med
+ * guld-varning ≥ 80 % + knappar "Ny session"/"Komprimera"
+ * (session/compact är bevisat stött) + sessionslista (session/list).
  *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
@@ -65,8 +79,32 @@ interface Uppladdning {
   storlek: number;
 }
 
+/** Modellpost ur GET /api/studio/modeller (härledd ur config.json — aldrig hårdkodad). */
+interface ModellPost {
+  id: string;
+  namn: string;
+}
+
+/** Kontextsanning ur session/read-projektionen (via /api/studio/stream). */
+interface KontextInfo {
+  modell?: string;
+  contextUsed?: number;
+  contextWindow?: number;
+  totalTokenCount?: number;
+  turnCount?: number;
+}
+
+/** Post ur GET /api/studio/session (session/list). */
+interface SessionPost {
+  sessionId: string;
+  titel?: string;
+  status?: string;
+  arbetsyta?: string;
+  uppdaterad?: string;
+}
+
 interface StreamEvent {
-  typ: "hej" | "status" | "delta" | "verktyg" | "klart" | "fel";
+  typ: "hej" | "status" | "delta" | "verktyg" | "klart" | "fel" | "kontext";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -75,6 +113,20 @@ interface StreamEvent {
   meddelande?: string;
   transport?: string;
   sessionId?: string | null;
+  tokenCount?: number;
+  kontext?: KontextInfo | null;
+}
+
+/** KVD-reservtak när protokollet tiger (zai/GLM svarade 200 000 vid v82-beviset). */
+const KONTEXT_TAK_RESERV = 1_000_000;
+/** Guld-varningströskel (KVD: kontext-optimering > 80 % av taket). */
+const KONTEXT_VARNING_PROCENT = 80;
+
+/** Formattera tokens kompakt (12 345 → "12,3k"). */
+function tkn(n: number): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".", ",")}M`;
+  if (n >= 1_000) return `${Math.round(n / 1_000)}k`;
+  return String(n);
 }
 
 // ── Markdown (bloggens tolkning + kodblock) ──────────────────────────────────
@@ -210,11 +262,56 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [laddarUpp, setLaddarUpp] = React.useState(false);
   const [draÖver, setDraÖver] = React.useState(false);
 
+  // ── V2 STUDIO: modellval + kontextrad + sessioner ─────────────────────────
+  const [modeller, setModeller] = React.useState<ModellPost[]>([]);
+  const [valdModell, setValdModell] = React.useState("");
+  const [byterModell, setByterModell] = React.useState(false);
+  const [kontext, setKontext] = React.useState<KontextInfo | null>(null);
+  const [rundaTkn, setRundaTkn] = React.useState<number | null>(null);
+  const [ackumulerat, setAckumulerat] = React.useState(0);
+  const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
+  const [visaSessioner, setVisaSessioner] = React.useState(false);
+  const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact">("");
+  const [toast, setToast] = React.useState<{ text: string; ton: "guld" | "fel" } | null>(null);
+
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const filInputRef = React.useRef<HTMLInputElement | null>(null);
   const mappInputRef = React.useRef<HTMLInputElement | null>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+
+  /** Bekräftelse-toast — försvinner av sig själv efter 4,5 s. */
+  const visaToast = React.useCallback((text: string, ton: "guld" | "fel" = "guld") => {
+    setToast({ text, ton });
+    window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
+  }, []);
+
+  /** Uppdatera sessionlistan (GET /api/studio/session). */
+  const lasSessioner = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/session", { headers: adminHeaders() });
+      if (res.ok) {
+        const data = (await res.json()) as { sessioner?: SessionPost[] };
+        if (data.sessioner) setSessioner(data.sessioner);
+      }
+    } catch {
+      // listan är lyx
+    }
+  }, []);
+
+  /** Uppdatera modellistan + aktuell modell (GET /api/studio/modeller). */
+  const lasModeller = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/modeller", { headers: adminHeaders() });
+      if (res.ok) {
+        const data = (await res.json()) as { modeller?: ModellPost[]; standard?: string; vald?: string };
+        if (data.modeller) setModeller(data.modeller);
+        setValdModell(data.vald ?? data.standard ?? "");
+      }
+    } catch {
+      // modellistan är lyx i dev (mock) — livsviktig på prod
+    }
+  }, []);
 
   // Auto-scroll vid nya bitar (mjukt — bara när användaren är nära botten).
   React.useEffect(() => {
@@ -224,7 +321,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     if (näraBotten) yta.scrollTop = yta.scrollHeight;
   }, [meddelanden, tankar, statusText]);
 
-  // Uppstart: status + historik + senaste uploads.
+  // Uppstart: status + historik + kontext + modeller + sessioner + uploads.
   React.useEffect(() => {
     let levande = true;
     (async () => {
@@ -235,6 +332,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             transport?: string;
             live?: boolean;
             historik?: { roll: "user" | "assistant"; text: string }[];
+            kontext?: KontextInfo | null;
           };
           if (!levande) return;
           setLive(data.live ? (data.transport === "mock" ? "demo" : "live") : "ned");
@@ -244,12 +342,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
               data.historik.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
             );
           }
+          if (data.kontext) {
+            setKontext(data.kontext);
+            if (typeof data.kontext.totalTokenCount === "number") {
+              setAckumulerat(data.kontext.totalTokenCount);
+            }
+          }
         } else if (res.status === 401) {
           if (levande) setStatusText("Logga in igen — sessionen har löpt ut.");
         }
       } catch {
         if (levande) setStatusText("Nätverksfel — agenten kunde ej nås.");
       }
+      void lasModeller();
+      void lasSessioner();
       try {
         const res = await fetch("/api/studio/uppladdning", { headers: adminHeaders() });
         if (res.ok) {
@@ -263,7 +369,109 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => {
       levande = false;
     };
-  }, []);
+  }, [lasModeller, lasSessioner]);
+
+  // ── V2 STUDIO: modellbyte / ny session / komprimering ─────────────────────
+
+  const bytModell = React.useCallback(
+    async (modellId: string) => {
+      if (!modellId || modellId === valdModell || byterModell || strömmar) return;
+      const namn = modeller.find((m) => m.id === modellId)?.namn ?? modellId;
+      setByterModell(true);
+      try {
+        const res = await fetch("/api/studio/modeller", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ modell: modellId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          sessionId?: string;
+          modell?: string;
+          fel?: string;
+        };
+        if (res.ok && data.sessionId) {
+          setValdModell(modellId);
+          setMeddelanden([]); // frisk session — historiken lever kvar i sessionslistan
+          setKontext(null);
+          setRundaTkn(null);
+          setAckumulerat(0);
+          visaToast(`Modell bytt till ${data.modell ?? namn} — ny session skapad`);
+          void lasSessioner();
+        } else {
+          visaToast(data.fel || "Modellbytet misslyckades.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel under modellbytet.", "fel");
+      } finally {
+        setByterModell(false);
+      }
+    },
+    [modeller, strömmar, visaToast, lasSessioner, valdModell, byterModell],
+  );
+
+  const startaNySession = React.useCallback(async () => {
+    if (sessionJobbar || strömmar) return;
+    setSessionJobbar("ny");
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "ny" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        sessionId?: string;
+        kontext?: KontextInfo | null;
+        fel?: string;
+      };
+      if (res.ok && data.sessionId) {
+        setMeddelanden([]);
+        setKontext(data.kontext ?? null);
+        setRundaTkn(null);
+        setAckumulerat(data.kontext?.totalTokenCount ?? 0);
+        visaToast("Ny session — frisk kontext (1M-fönstret börjar om)");
+        void lasSessioner();
+      } else {
+        visaToast(data.fel || "Kunde ej skapa ny session.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — kunde ej skapa ny session.", "fel");
+    } finally {
+      setSessionJobbar("");
+    }
+  }, [sessionJobbar, strömmar, visaToast, lasSessioner]);
+
+  const komprimera = React.useCallback(async () => {
+    if (sessionJobbar || strömmar) return;
+    setSessionJobbar("compact");
+    setStatusText("Komprimerar kontexten…");
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "compact" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        status?: "klar" | "redan_körs" | "tom";
+        meddelande?: string;
+        kontext?: KontextInfo | null;
+        fel?: string;
+      };
+      if (res.ok) {
+        if (data.kontext) {
+          setKontext(data.kontext);
+          setAckumulerat(data.kontext.totalTokenCount ?? 0);
+        }
+        visaToast(data.meddelande ?? "Kontexten komprimerad.");
+      } else {
+        visaToast(data.fel || "Komprimeringen misslyckades.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel under komprimeringen.", "fel");
+    } finally {
+      setSessionJobbar("");
+      setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
+    }
+  }, [sessionJobbar, strömmar, visaToast, live]);
 
   // ── Uppladdning ────────────────────────────────────────────────────────────
 
@@ -409,7 +617,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 text: event.svar && event.svar.trim() ? event.svar : m.text || "(tomt svar)",
                 strömmande: false,
               }));
+              if (typeof event.tokenCount === "number" && event.tokenCount > 0) {
+                setRundaTkn(event.tokenCount);
+                setAckumulerat((a) => (a > 0 ? a + event.tokenCount! : event.tokenCount!));
+              }
               färdig = true;
+              break;
+            case "kontext":
+              // V2: färsk projektion efter rundan — kontextradens sanning.
+              if (event.kontext) {
+                setKontext(event.kontext);
+                if (typeof event.kontext.totalTokenCount === "number") {
+                  setAckumulerat(event.kontext.totalTokenCount);
+                }
+              }
               break;
             case "fel":
               rörAgent((m) => ({
@@ -464,6 +685,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
     live === "live" ? "bg-emerald-500" : live === "demo" ? "bg-gold-soft" : "bg-red-500";
   const prickText = live === "live" ? "LIVE" : live === "demo" ? "DEMO" : "NED";
 
+  // Kontextberäkning (V2): protokollets ÄRLIGA contextWindow är taket
+  // (200 000 för zai/GLM vid v82-beviset); 1 000 000 endast som reserv.
+  const kontextTak =
+    typeof kontext?.contextWindow === "number" && kontext.contextWindow > 0
+      ? kontext.contextWindow
+      : KONTEXT_TAK_RESERV;
+  const kontextAnvänt =
+    typeof kontext?.contextUsed === "number" && kontext.contextUsed > 0
+      ? kontext.contextUsed
+      : ackumulerat;
+  const kontextProcent = kontextAnvänt > 0 ? Math.min(100, (kontextAnvänt / kontextTak) * 100) : null;
+
   return (
     <div
       className="paper-texture flex h-[100dvh] flex-col"
@@ -481,9 +714,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (filer.length > 0) void laddaUpp(filer);
       }}
     >
+      {/* Bekräftelse-toast (modellbyte / ny session / komprimering) */}
+      {toast && (
+        <div
+          role="status"
+          className={cn(
+            "fixed left-1/2 top-3 z-50 -translate-x-1/2 rounded-xl border px-4 py-2 text-xs font-medium shadow-lg backdrop-blur",
+            toast.ton === "fel"
+              ? "border-red-500/40 bg-red-950/90 text-red-100"
+              : "border-gold/50 bg-[#10233F]/95 text-[#EDE6D6]",
+          )}
+        >
+          {toast.ton === "guld" && <span className="mr-1.5 text-gold">✦</span>}
+          {toast.text}
+        </div>
+      )}
+
       {/* Marin rubrikrad */}
       <header className="marin-panel sticky top-0 z-20 border-b border-gold/25 shadow-md">
-        <div className="mx-auto flex w-full max-w-3xl items-center gap-3 px-3 py-2.5 sm:px-4 sm:py-3">
+        <div className="mx-auto flex w-full max-w-3xl items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3">
           <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
           <div className="min-w-0 flex-1">
             <h1 className="font-serif text-lg font-bold leading-tight text-[#EDE6D6] sm:text-xl">
@@ -493,10 +742,135 @@ export function StudioChat({ hem }: { hem: () => void }) {
               Din agent — samma hjärna som bygger sajten
             </p>
           </div>
-          <div className="flex items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
+          {/* MODELLRULLISTA (V2) — listan härledd ur config.json via API */}
+          <label className="relative shrink-0" title="Välj huvudmodell — ny session skapas med modellen">
+            <span className="sr-only">Välj modell</span>
+            <select
+              value={valdModell}
+              onChange={(e) => void bytModell(e.target.value)}
+              disabled={modeller.length === 0 || byterModell || strömmar}
+              className={cn(
+                "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
+                "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
+              )}
+            >
+              {modeller.length === 0 && <option value="">—</option>}
+              {modeller.map((m) => (
+                <option key={m.id} value={m.id} className="bg-[#10233F] text-[#EDE6D6]">
+                  {m.namn}
+                </option>
+              ))}
+            </select>
+            <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
+              {byterModell ? "…" : "▼"}
+            </span>
+          </label>
+          <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
             <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
             <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
           </div>
+        </div>
+
+        {/* KONTEXTRAD (V2): tokens denna runda · totalt · procent av taket */}
+        <div className="border-t border-gold/15 bg-black/15">
+          <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-1.5 sm:px-4">
+            <span className="text-[11px] text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
+              📊 {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda` : "— denna runda"} · ~
+              {tkn(ackumulerat)} totalt
+              {kontextProcent !== null && (
+                <span className={cn("ml-1 font-semibold", kontextProcent >= KONTEXT_VARNING_PROCENT ? "text-gold" : "text-[#EDE6D6]/60")}>
+                  · {kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av {tkn(kontextTak)}
+                </span>
+              )}
+            </span>
+            {kontextProcent !== null && (
+              <span className="relative h-1.5 w-24 overflow-hidden rounded-full bg-white/10 sm:w-32" aria-hidden>
+                <span
+                  className={cn(
+                    "absolute inset-y-0 left-0 rounded-full transition-all",
+                    kontextProcent >= KONTEXT_VARNING_PROCENT ? "bg-gold" : "bg-emerald-400/80",
+                  )}
+                  style={{ width: `${Math.min(100, kontextProcent)}%` }}
+                />
+              </span>
+            )}
+            {kontext?.modell && (
+              <span className="hidden text-[10px] uppercase tracking-wider text-[#EDE6D6]/50 sm:inline">
+                {kontext.modell}
+              </span>
+            )}
+            <span className="ml-auto flex items-center gap-1">
+              <button
+                onClick={() => void startaNySession()}
+                disabled={sessionJobbar !== "" || strömmar}
+                title="Kassera sessionen och börja en frisk kontext (1M-fönstret börjar om — gamla sessioner finns kvar i listan)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
+              >
+                {sessionJobbar === "ny" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <SquarePen className="h-3.5 w-3.5" />}
+                Ny session
+              </button>
+              <button
+                onClick={() => void komprimera()}
+                disabled={sessionJobbar !== "" || strömmar}
+                title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
+              >
+                {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
+                Komprimera
+              </button>
+              <button
+                onClick={() => setVisaSessioner((v) => !v)}
+                title="Tidigare sessioner (session/list)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <History className="h-3.5 w-3.5" />
+                Sessioner
+                {sessioner.length > 0 && <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{sessioner.length}</span>}
+              </button>
+            </span>
+          </div>
+
+          {/* Guld-varning: kontexten > 80 % av taket (KVD kontext-optimering) */}
+          {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
+            <div className="border-t border-gold/30 bg-gold/10">
+              <p className="mx-auto w-full max-w-3xl px-3 py-1.5 text-[11px] font-semibold text-gold sm:px-4">
+                ⚠ Överväg ny session — kontexten närmar sig taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)})
+              </p>
+            </div>
+          )}
+
+          {/* Sessionslista (V2): tidigare sessioner ur session/list */}
+          {visaSessioner && (
+            <div className="border-t border-gold/15 bg-black/25">
+              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
+                  Tidigare sessioner {sessioner.length === 0 && "— ingen lista ännu"}
+                </p>
+                <ul className="space-y-1">
+                  {sessioner.map((s) => (
+                    <li
+                      key={s.sessionId}
+                      className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
+                      title={s.sessionId}
+                    >
+                      <span
+                        className={cn(
+                          "h-1.5 w-1.5 shrink-0 rounded-full",
+                          s.status === "idle" ? "bg-emerald-400" : "bg-gold",
+                        )}
+                      />
+                      <span className="min-w-0 flex-1 truncate">
+                        {s.titel || s.sessionId.slice(0, 18) + "…"}
+                      </span>
+                      <span className="shrink-0 font-mono text-[9px] text-[#EDE6D6]/40">
+                        {s.sessionId.slice(5, 13)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 

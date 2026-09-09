@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
-import { hamtaStudioTransport, type StudioEvent } from "@/lib/studio/studio-transport";
+import { hamtaStudioTransport, type StudioEvent, type StudioKontext } from "@/lib/studio/studio-transport";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -10,9 +10,11 @@ export const dynamic = "force-dynamic";
  * /api/studio/stream — BRYGGAN mellan /studio-webchatten och ZCode-agenten
  * på servern (VÅG 81 WEBCHAT-STUDIO, STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 81").
  *
- * GET  → status + historik: {transport, sessionId, historik:[{roll,text}]}
- *        (200 även när agenten är otillgänglig — ärligt fel-fält, chatten
- *        renderar lås/vänt-läge; ALDRIG 500 för nedkopplad agent).
+ * GET  → status + historik + kontext: {transport, sessionId,
+ *        historik:[{roll,text}], kontext:{modell,contextUsed,
+ *        contextWindow,totalTokenCount,...}} (200 även när agenten är
+ *        otillgänglig — ärligt fel-fält, chatten renderar lås/vänt-läge;
+ *        ALDRIG 500 för nedkopplad agent).
  * POST → {prompt} → SSE (text/event-stream): en `data:`-rad per event
  *        {typ:"status"|"delta"|"verktyg"|"klart"|"fel", ...} och strömmen
  *        avslutas efter "klart"/"fel". Heartbeat-kommentvar 15:e sekund
@@ -50,7 +52,12 @@ function jsonSvar(kropp: unknown, status = 200): Response {
 }
 
 /** Tillförlitlig stringify av SSE-event (nya rader escapes automatiskt). */
-function sseRad(event: StudioEvent | { typ: "hej"; transport: string; sessionId: string | null }): string {
+function sseRad(
+  event:
+    | StudioEvent
+    | { typ: "hej"; transport: string; sessionId: string | null }
+    | { typ: "kontext"; kontext: StudioKontext | null },
+): string {
   return `data: ${JSON.stringify(event)}\n\n`;
 }
 
@@ -63,11 +70,12 @@ export async function GET(req: NextRequest) {
   const transport = hamtaStudioTransport();
   try {
     await transport.ensure();
-    const historik = await transport.historik();
+    const [historik, kontext] = await Promise.all([transport.historik(), transport.lasKontext()]);
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
       historik,
+      kontext,
       live: true,
     });
   } catch (fel) {
@@ -126,6 +134,9 @@ export async function POST(req: NextRequest) {
         await transport.ensure();
         skicka({ typ: "hej", transport: transport.namn, sessionId: transport.sessionId() });
         await transport.skicka(prompt, skicka, req.signal);
+        // V82: färsk kontextsanning efter rundan (session/read-projektionen)
+        // — updaterar kontextraden i UI:t utan extra hämtningsrunda.
+        skicka({ typ: "kontext", kontext: await transport.lasKontext() });
       } catch (fel) {
         skicka({
           typ: "fel",

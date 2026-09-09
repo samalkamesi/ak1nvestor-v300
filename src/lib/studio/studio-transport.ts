@@ -1,11 +1,22 @@
 import { spawn, type ChildProcess } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
 /**
  * STUDIO-TRANSPORT — injicerbart transportlager för /studio-bryggan
- * (VÅG 81 WEBCHAT-STUDIO, STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 81").
+ * (VÅG 81 WEBCHAT-STUDIO + VÅG 82 STUDIO V2 "Z-portalen i molnet",
+ * STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 81/82").
+ *
+ * VÅG 82-tillägg (protokollvägar FIRST-HAND bevisade 2026-09-09, se
+ * tool-results/v82-protokoll.md): bytModell (kassera + session/create MED
+ * model-param — sessionen föds med vald modell; session/setModel på levande
+ * session är också bevisat men KVD-valet är create-vägen), publik nySession,
+ * lasSessioner (session/list), compact (session/compact — kompakteringen
+ * kör som turn, metoden väntar på idle) + lasKontext (session/read:s
+ * projection {contextUsed, contextWindow, totalTokenCount} = kontextradens
+ * sanningskälla; contextWindow 200 000 för zai/GLM vid beviset, 1 000 000
+ * är endast reservvärde i UI när protokollet tiger).
  *
  * Två implementeringar bakom ETT gränssnitt:
  *
@@ -75,6 +86,44 @@ export interface StudioHistorikPost {
   text: string;
 }
 
+/** Post ur session/list (protokollfält mappade defensivt). */
+export interface StudioSessionPost {
+  sessionId: string;
+  titel?: string;
+  status?: string;
+  arbetsyta?: string;
+  uppdaterad?: string;
+}
+
+/**
+ * Kontextsanning ur session/read-projektionen (BEVISAT v82: projection =
+ * {contextUsed, contextWindow, totalTokenCount, turnCount, ...}). UI:t
+ * använder protokollets ÄRLIGA contextWindow som tak (200 000 för zai/GLM
+ * vid beviset) och 1 000 000 endast som reservvärde när protokollet tiger.
+ */
+export interface StudioKontext {
+  modell?: string;
+  contextUsed?: number;
+  contextWindow?: number;
+  totalTokenCount?: number;
+  turnCount?: number;
+}
+
+/** Svar från compact() — status enligt protokollets compact.state. */
+export interface StudioCompactSvar {
+  status: "klar" | "redan_körs" | "tom";
+  meddelande: string;
+  kontext?: StudioKontext | null;
+}
+
+/** Resultat från bytModell() — sessionId BYTER alltid (KVD/E2E-krav). */
+export interface StudioBytModellSvar {
+  sessionId: string;
+  /** "create" = kassera + session/create med model-param (huvudvägen). */
+  väg: "create";
+  modell: string;
+}
+
 export interface StudioTransport {
   /** "appserver" (riktig agent) eller "mock" (demo/test). */
   readonly namn: "appserver" | "mock";
@@ -90,6 +139,30 @@ export interface StudioTransport {
    * som fel-event så UI:t kan visa det ärligt).
    */
   skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void>;
+  // ── V82 STUDIO V2 (protokollvägar FIRST-HAND bevisade, se
+  // tool-results/v82-protokoll.md) ────────────────────────────────────────
+  /**
+   * Byt huvudmodell: kasserar sessionen och skapar en ny med
+   * session/create-param `model:{providerId:"zai",modelId}` (BEVISAT
+   * 2026-09-09: sessionen föds med vald modell). sessionId ändras alltid.
+   * (Protokollet har ÄVEN session/setModel på levande session — bevisat —
+   * men KVD:s arkitekturval är create-vägen så historik/kontext börjar
+   * friskt per modellbyte.)
+   */
+  bytModell(modellId: string): Promise<StudioBytModellSvar>;
+  /** Kassera + skapa frisk session (ev. med vald modell) — publikt för "Ny session"-knappen. */
+  nySession(modellId?: string): Promise<string>;
+  /** session/list (BEVISAT: {} → alla; {workspace,limit} filtrerar). */
+  lasSessioner(): Promise<StudioSessionPost[]>;
+  /**
+   * session/compact (BEVISAT v82: schema {sessionId, inputId?,
+   * instructions?, expectedRevision?}; svar compact.state "accepted"|
+   * "already_running"). Kompakteringen kör som en turn — metoden väntar
+   * på idle (max ~2 min) och returnerar färsk kontext.
+   */
+  compact(instruktioner?: string): Promise<StudioCompactSvar>;
+  /** session/read-projektionen — kontextsanning för kontextraden. */
+  lasKontext(): Promise<StudioKontext | null>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -259,7 +332,32 @@ class ProtokollKlient {
 
 /** Resultat från session/create|resume — nyckeln är result.session.sessionId. */
 interface SessionResult {
-  session?: { sessionId?: string };
+  session?: { sessionId?: string; model?: { providerId?: string; modelId?: string } };
+}
+
+/** session/read-svar (BEVISAT v82): {session, messages, projection, ...}. */
+interface SessionReadResult {
+  session?: { sessionId?: string; model?: { providerId?: string; modelId?: string } };
+  projection?: {
+    contextUsed?: number;
+    contextWindow?: number;
+    totalTokenCount?: number;
+    turnCount?: number;
+    status?: string;
+  };
+}
+
+/** session/list-svar (BEVISAT v82: {sessions:[{sessionId,status,title,workspace}]}). */
+interface SessionListResult {
+  sessions?: {
+    sessionId?: string;
+    status?: string;
+    title?: string;
+    updatedAt?: string;
+    updated?: string;
+    lastActiveAt?: string;
+    workspace?: { workspacePath?: string };
+  }[];
 }
 
 interface SessionEventParams {
@@ -301,6 +399,39 @@ function sessionUr(result: unknown): string | null {
 }
 
 /**
+ * Resolve en binärkandidat till en existerande sökväg: absolut sökväg
+ * kontrolleras rakt av, naket namn söks i PATH (separatorkompabil med
+ * ":"/";"). Returnerar null när kandidaten ej finns — startaKlient hoppar
+ * då till nästa (ENOENT är annars asynkront och osynligt för try/catch).
+ */
+function resolvorBinär(binär: string): string | null {
+  if (binär.includes("/") || binär.includes("\\")) {
+    return existsSync(binär) ? binär : null;
+  }
+  const pathSeparator = process.platform === "win32" ? ";" : ":";
+  for (const rot of (process.env.PATH ?? "").split(pathSeparator)) {
+    if (!rot) continue;
+    for (const ändelse of process.platform === "win32" ? ["", ".cmd", ".exe"] : [""]) {
+      const kandidat = path.join(rot, binär + ändelse);
+      try {
+        if (existsSync(kandidat) && !statIsKatalog(kandidat)) return kandidat;
+      } catch {
+        // vidare
+      }
+    }
+  }
+  return null;
+}
+
+function statIsKatalog(sokvag: string): boolean {
+  try {
+    return statSync(sokvag).isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+/**
  * -32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE (bevisat live 2026-09-09 STUDIO-2:
  * "历史任务使用的模型已不可用" när en session pin:ar glm-5.3-flash som tagits
  * bort ur .zcode) — sessionen kan ALDRIG svara igen och måste kasseras.
@@ -326,6 +457,8 @@ class AppServerTransport implements StudioTransport {
   private sid: string | null = null;
   private prenumererad = false;
   private aktiv: AktivPrompt | null = null;
+  /** Väntar på state.updated-idle efter session/compact (BEVISAT v82). */
+  private idleVakt: (() => void) | null = null;
 
   constructor(
     private readonly binärer: string[],
@@ -350,7 +483,7 @@ class AppServerTransport implements StudioTransport {
     }
     if (!this.sid) {
       const klient = this.klient!;
-      const sparad = this.lasSparadSession();
+      const { sessionId: sparad, modell } = this.lasSparadSession();
       let resumerad = false;
       if (sparad) {
         try {
@@ -364,7 +497,7 @@ class AppServerTransport implements StudioTransport {
           resumerad = false; // borta/ogiltig → skapa ny nedan
         }
       }
-      if (!resumerad) await this.skapa(klient);
+      if (!resumerad) await this.skapa(klient, modell);
     }
 
     if (this.sid && !this.prenumererad) {
@@ -382,7 +515,17 @@ class AppServerTransport implements StudioTransport {
   private startaKlient(): ProtokollKlient {
     let senasteFel: unknown = null;
     for (const binär of this.binärer) {
-      const klient = new ProtokollKlient(binär, this.arbetskatalog);
+      // V82-prodfix: ENOENT kommer ASYNKRONT (spawn 'error'-event) och
+      // undgår try/catch — resolve därför kandidaterna FÖRUT (bara "zcode"
+      // i PATH räcker inte när pm2-daemonens PATH saknar npm-global;
+      // bevisat 2026-09-09: "spawn zcode ENOENT" på prod trots att
+      // /home/ak1a/.npm-global/bin/zcode fanns som reserv i listan).
+      const sokvag = resolvorBinär(binär);
+      if (!sokvag) {
+        senasteFel = new Error(`${binär} finns ej (PATH + kända sökvägar)`);
+        continue;
+      }
+      const klient = new ProtokollKlient(sokvag, this.arbetskatalog);
       klient.händelseLyssnare = (m) => this.påNotis(m);
       try {
         klient.starta();
@@ -394,33 +537,67 @@ class AppServerTransport implements StudioTransport {
     throw new Error(`ingen zcode-binär kunde startas (${this.binärer.join(", ")}): ${String(senasteFel)}`);
   }
 
-  private async skapa(klient: ProtokollKlient): Promise<void> {
+  private async skapa(klient: ProtokollKlient, modellId?: string): Promise<void> {
     // BEVISAT params-form: workspace {workspaceKey, workspacePath} — INTE
     // kind:"local" (det är en annan union; strict zod refuserar kind här).
-    const resultat = await klient.request(
-      "session/create",
-      { workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog } },
-      60_000,
-    );
+    // V82 BEVISAT: model {providerId, modelId} accepteras och sessionen
+    // föds med vald modell (setModel finns också men KVD-val är create).
+    const params: Record<string, unknown> = {
+      workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog },
+    };
+    if (modellId) params.model = { providerId: "zai", modelId: modellId };
+    const resultat = await klient.request("session/create", params, 60_000);
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/create svarade utan sessionId");
     this.sid = sid;
+    this.sparaPersistens(sid, modellId);
+  }
+
+  /** Persistens: {sessionId, modell?, sparad} — modellen används av create-fallback. */
+  private sparaPersistens(sid: string, modellId?: string): void {
     try {
       mkdirSync(path.dirname(this.lagringsSökväg), { recursive: true });
-      writeFileSync(this.lagringsSökväg, JSON.stringify({ sessionId: sid, sparad: Date.now() }), "utf8");
+      writeFileSync(
+        this.lagringsSökväg,
+        JSON.stringify({ sessionId: sid, ...(modellId ? { modell: modellId } : {}), sparad: Date.now() }),
+        "utf8",
+      );
     } catch {
       // Persistens är best-effort — chatten funkar även utan.
     }
   }
 
+  // ── V2: modellbyte, ny session, session/list, compact, kontext ───────────
+
+  async bytModell(modellId: string): Promise<StudioBytModellSvar> {
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,80}$/.test(modellId)) {
+      throw new Error("Ogiltigt modell-id.");
+    }
+    // Kassera + skapa med model-param (BEVISAT v82 — sessionen föds med
+    // modellen; sessionId ändras alltid vilket E2E-kravet kontrollerar).
+    const sid = await this.nySession(modellId);
+    return { sessionId: sid, väg: "create", modell: `zai/${modellId}` };
+  }
+
   /**
-   * Självläkningsväg (bevisad nödvändig 2026-09-09 STUDIO-2): kassera den
-   * nuvarande sessionen — persistensfil tas bort så ingen annan process
-   * återupptar den döda — och skapa en färsk via ensure(). En nyskapad
-   * session plockar serverns AKTUELLA standardmodell (zai/glm-5.3 vid
-   * beviset), till skillnad från en återupptagen som pin:ar sin gamla.
+   * Kassera den nuvarande sessionen och skapa en frisk — med vald modell
+   * (bytModell-vägen) eller utan (självläkning efter -32031 + knappen
+   * "Ny session"). En nyskapad session plockar annars serverns aktuella
+   * standard/workspace-modell (zai/glm-5.3 vid v81-beviset).
    */
-  private async nySession(): Promise<void> {
+  async nySession(modellId?: string): Promise<string> {
+    // Pågående prompt får aldrig överlevas av en kasserad session.
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt kör — vänta tills agenten är klar.");
+    }
+    if (this.sid && this.klient?.lever) {
+      // Artigt stäng — sessionen finns kvar i session/list (historik).
+      try {
+        await this.klient.request("session/close", { sessionId: this.sid }, 10_000);
+      } catch {
+        // ej fatal — kasseras ändå nedan
+      }
+    }
     this.sid = null;
     this.prenumererad = false;
     try {
@@ -429,7 +606,106 @@ class AppServerTransport implements StudioTransport {
       // best-effort — en kvarvarande fil betyder bara att nästa omstart
       // får ett misslyckat resume-försök innan create fallback körs.
     }
+    if (!this.klient?.lever) {
+      this.klient = this.startaKlient();
+      this.prenumererad = false;
+    }
+    await this.skapa(this.klient, modellId);
     await this.ensure();
+    return this.sid!;
+  }
+
+  async lasSessioner(): Promise<StudioSessionPost[]> {
+    // session/list kräver LEVANDE klient men EGEN session — skapa aldrig
+    // en ny bara för att lista.
+    if (!this.klient?.lever) {
+      this.klient = this.startaKlient();
+      this.prenumererad = false;
+    }
+    try {
+      const svar = await this.klient!.request("session/list", {}, 30_000);
+      const lista = (svar as SessionListResult | null)?.sessions;
+      if (!Array.isArray(lista)) return [];
+      const ut: StudioSessionPost[] = [];
+      for (const s of lista) {
+        if (typeof s.sessionId !== "string" || !s.sessionId) continue;
+        ut.push({
+          sessionId: s.sessionId,
+          titel: typeof s.title === "string" ? s.title : undefined,
+          status: typeof s.status === "string" ? s.status : undefined,
+          arbetsyta: s.workspace?.workspacePath,
+          uppdaterad: s.updatedAt ?? s.updated ?? s.lastActiveAt,
+        });
+      }
+      return ut.slice(0, 25);
+    } catch {
+      return []; // listan är lyx, aldrig ett fel
+    }
+  }
+
+  async compact(instruktioner?: string): Promise<StudioCompactSvar> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt kör — vänta tills agenten är klar.");
+    }
+    // BEVISAT v82: schema {sessionId, inputId?, instructions?,
+    // expectedRevision?}; svar compact.state "accepted"|"already_running".
+    const svar = (await this.klient.request(
+      "session/compact",
+      {
+        sessionId: this.sid,
+        ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
+      },
+      60_000,
+    )) as { compact?: { state?: string }; response?: string } | null;
+
+    const state = svar?.compact?.state;
+    if (state === "already_running") {
+      return { status: "redan_körs", meddelande: "En komprimering körs redan — vänta några ögonblick." };
+    }
+    // "accepted": kompakteringen kör som en agentturn — vänta på idle
+    // (state.updated broadcastas även utan subscribe; tak 2 min).
+    await new Promise<void>((los) => {
+      const tak = setTimeout(() => {
+        this.idleVakt = null;
+        los();
+      }, 120_000);
+      this.idleVakt = () => {
+        clearTimeout(tak);
+        this.idleVakt = null;
+        los();
+      };
+    });
+    const kontext = await this.lasKontext();
+    const tom = !svar?.response && !kontext?.totalTokenCount;
+    return {
+      status: tom ? "tom" : "klar",
+      meddelande: tom ? "Ingenting att komprimera — kontexten är redan frisk." : "Kontexten komprimerad.",
+      kontext,
+    };
+  }
+
+  async lasKontext(): Promise<StudioKontext | null> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) return null;
+    try {
+      const r = (await this.klient.request("session/read", { sessionId: this.sid }, 30_000)) as
+        | SessionReadResult
+        | null;
+      const p = r?.projection;
+      const m = r?.session?.model;
+      const modell = m?.providerId && m?.modelId ? `${m.providerId}/${m.modelId}` : undefined;
+      return {
+        modell,
+        contextUsed: typeof p?.contextUsed === "number" ? p.contextUsed : undefined,
+        contextWindow: typeof p?.contextWindow === "number" ? p.contextWindow : undefined,
+        totalTokenCount: typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined,
+        turnCount: typeof p?.turnCount === "number" ? p.turnCount : undefined,
+      };
+    } catch {
+      return null;
+    }
   }
 
   /** Notis-mottagare: översätter protokollhändelser till StudioEvent. */
@@ -512,6 +788,9 @@ class AppServerTransport implements StudioTransport {
 
     if (m.method === "state.updated") {
       const status = (params as StateUpdatedParams | undefined)?.patch?.status;
+      // Compact-väckare: kompakteringsturnen slutar med idle (BEVISAT v82 —
+      // broadcasten kommer även utan pågående prompt).
+      if (status === "idle" && this.idleVakt) this.idleVakt();
       if (!aktiv || aktiv.färdig) return;
       if (status === "running") {
         aktiv.lyssnare({ typ: "status", text: "Agenten arbetar…" });
@@ -673,13 +952,15 @@ class AppServerTransport implements StudioTransport {
     });
   }
 
-  private lasSparadSession(): string | null {
+  private lasSparadSession(): { sessionId: string | null; modell?: string } {
     try {
       const rå = readFileSync(this.lagringsSökväg, "utf8");
-      const sid = (JSON.parse(rå) as { sessionId?: unknown }).sessionId;
-      return typeof sid === "string" && sid.startsWith("sess_") ? sid : null;
+      const pars = JSON.parse(rå) as { sessionId?: unknown; modell?: unknown };
+      const sid = typeof pars.sessionId === "string" && pars.sessionId.startsWith("sess_") ? pars.sessionId : null;
+      const modell = typeof pars.modell === "string" && pars.modell ? pars.modell : undefined;
+      return { sessionId: sid, modell };
     } catch {
-      return null;
+      return { sessionId: null };
     }
   }
 }
@@ -695,7 +976,11 @@ class AppServerTransport implements StudioTransport {
 class MockTransport implements StudioTransport {
   readonly namn = "mock" as const;
   private mockSid: string | null = null;
+  private mockModell: string | null = null;
+  private mockTotalt = 0;
+  private mockTurns = 0;
   private readonly historikPoster: StudioHistorikPost[] = [];
+  private readonly gamlaSessioner: StudioSessionPost[] = [];
 
   sessionId(): string | null {
     return this.mockSid;
@@ -707,6 +992,60 @@ class MockTransport implements StudioTransport {
 
   async historik(): Promise<StudioHistorikPost[]> {
     return [...this.historikPoster];
+  }
+
+  async bytModell(modellId: string): Promise<StudioBytModellSvar> {
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]{0,80}$/.test(modellId)) throw new Error("Ogiltigt modell-id.");
+    this.mockModell = modellId;
+    const sid = await this.nySession(modellId);
+    return { sessionId: sid, väg: "create", modell: `zai/${modellId}` };
+  }
+
+  async nySession(modellId?: string): Promise<string> {
+    if (modellId) this.mockModell = modellId;
+    if (this.mockSid) {
+      // "Tidigare sessioner" finns kvar i listan även efter kassering.
+      this.gamlaSessioner.unshift({
+        sessionId: this.mockSid,
+        titel: this.historikPoster[0]?.text.slice(0, 60) || "Mock-session",
+        status: "idle",
+      });
+    }
+    this.historikPoster.length = 0;
+    this.mockTotalt = 0;
+    this.mockTurns = 0;
+    this.mockSid = `sess_mock_${Date.now().toString(36)}`;
+    return this.mockSid;
+  }
+
+  async lasSessioner(): Promise<StudioSessionPost[]> {
+    await this.ensure();
+    return [
+      { sessionId: this.mockSid!, titel: "Aktiv mock-session", status: "idle" },
+      ...this.gamlaSessioner,
+    ].slice(0, 25);
+  }
+
+  async compact(): Promise<StudioCompactSvar> {
+    await this.ensure();
+    this.mockTotalt = Math.round(this.mockTotalt * 0.2);
+    return {
+      status: this.mockTurns === 0 ? "tom" : "klar",
+      meddelande: "Mock: kontexten nollställd till 20 % (deterministisk no-op).",
+      kontext: await this.lasKontext(),
+    };
+  }
+
+  async lasKontext(): Promise<StudioKontext | null> {
+    await this.ensure();
+    return {
+      modell: this.mockModell ? `mock/${this.mockModell}` : "mock/demo",
+      contextUsed: this.mockTotalt,
+      // KVD-reservtak 1M används i mock (protokollets ärliga tak saknas).
+      contextWindow: 1_000_000,
+      totalTokenCount: this.mockTotalt,
+      turnCount: this.mockTurns,
+    };
   }
 
   async skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void> {
@@ -748,6 +1087,8 @@ class MockTransport implements StudioTransport {
     }
     this.historikPoster.push({ roll: "user", text: prompt });
     this.historikPoster.push({ roll: "assistant", text: svar.trim() });
+    this.mockTotalt += 128;
+    this.mockTurns += 1;
     lyssnare({ typ: "klart", svar: svar.trim(), tokenCount: 128, varaktighetMs: rader.length * 35 + 270 });
   }
 }

@@ -1,7 +1,11 @@
 import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
-import { hamtaStudioTransport } from "@/lib/studio/studio-transport";
+import {
+  hamtaStudioTransport,
+  hamtaTransportMedInteraktion,
+  lasAllaInteraktioner,
+} from "@/lib/studio/studio-transport";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,7 +50,9 @@ function jsonSvar(kropp: unknown, status = 200): Response {
 export async function GET(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
-  return jsonSvar({ interaktioner: hamtaStudioTransport().vantaInteraktioner() });
+  // V84 B: ALLA transporters dialoger (default + per-session-tabbar) — ett
+  // refreshat UI återfår kortet oavsett vilken tabb som väntar.
+  return jsonSvar({ interaktioner: lasAllaInteraktioner() });
 }
 
 // ── POST — användarens val → protokollsvar ──────────────────────────────────
@@ -66,7 +72,10 @@ export async function POST(req: NextRequest) {
   const requestId = typeof kropp.requestId === "string" ? kropp.requestId : "";
   if (!requestId) return jsonSvar({ fel: "requestId saknas." }, 400);
 
-  const transport = hamtaStudioTransport();
+  // V84 B: dialogen kan komma från VILKEN tabb som helst — slå upp ägaren
+  // (per-session-register först av naturliga skäl), fall tillbaka på
+  // default-transporten (bakåtkompatibel ärlig 409 om id:t är okänt).
+  const transport = hamtaTransportMedInteraktion(requestId) ?? hamtaStudioTransport();
   try {
     if (typ === "permission") {
       const alternativ = typeof kropp.alternativ === "string" ? kropp.alternativ : "";

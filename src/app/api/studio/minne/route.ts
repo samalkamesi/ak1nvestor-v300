@@ -276,12 +276,19 @@ export async function GET(req: NextRequest) {
   const ut: MinnePost[] = [];
   try {
     const poster = await readdir(rot, { withFileTypes: true });
+    // Namn-vitlista på listnivå: endast regex-godkända .md-namn i roten
+    // (post.name kan aldrig innehålla sökvägsseparatorer från readdir).
+    const namnVitlista = /^[a-z0-9][a-z0-9\-]*\.md$/;
+    const rotResolvad = path.resolve(rot);
     for (const post of poster) {
       // Bara .md-filer; .minnes-backup och övriga dot-kataloger/filer listas ALDRIG.
       if (!post.isFile() || !post.name.endsWith(".md") || post.name.startsWith(".")) continue;
       if (post.name.startsWith("._")) continue; // macOS-metadata
+      if (!namnVitlista.test(post.name)) continue;
+      // Inneslutningsvakt: resolve + prefixkontroll på varje kandidatfil.
+      const hel = path.resolve(rot, post.name);
+      if (hel !== rotResolvad && !hel.startsWith(rotResolvad + path.sep)) continue;
       try {
-        const hel = path.join(rot, post.name);
         const info = await stat(hel);
         if (info.size > MAX_LAS_BYTE) {
           ut.push({

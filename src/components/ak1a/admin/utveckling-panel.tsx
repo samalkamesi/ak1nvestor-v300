@@ -2,13 +2,20 @@
 
 import * as React from "react";
 import {
+  Activity,
+  AlertTriangle,
   Clock,
   FileText,
+  HardDrive,
+  HeartPulse,
   History,
+  ListChecks,
   Lock,
+  MemoryStick,
   Radio,
   RefreshCw,
   ScrollText,
+  Server,
 } from "lucide-react";
 import {
   Accordion,
@@ -31,11 +38,20 @@ import { cn } from "@/lib/utils";
  *   (a) STATUSKORT — översättningsrader · variabeländringar · senaste
  *       händelse-tid (+ lagerrader när lagret nås billigt).
  *   (b) SENASTE HÄNDELSER — 40 senaste system_events med typ-badge
- *       (färgkodad), tid och meddelande — översättning/termbank/variabel-
+ *       (färgkodad), tid och meddelande — översättnings/termbank/variabel-
  *       rader är exkluderade server-side och räknas i stället i korten.
  *   (c) UTVECKLINGSLOGG — worklog.md:s senaste sektioner som accordion
  *       (markdown-light: fetstil/rubriker bevaras grovt, kod monospace),
  *       senaste sektionen öppen default.
+ *
+ * VÅG 84 BLOCK E (STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 84" §E — STUDIO 100x,
+ * observerbarhet): "Puls 📈"-sektionen ÖVERST — serverns puls mot GET
+ * /api/admin/puls (requireAdmin, EN delegation på servern, 60 s cache):
+ * statuskort per pm2-tjänst (grön/orange/röd prick + cpu/mem), RAM- och
+ * disk-gauge, load-sparkline (senaste 12 mätningarna i localStorage),
+ * cron-lista med senaste körningstider, och felloggen (senaste 20 raderna
+ * ur pm2:s ak1a-error-log) med RÖD badge när nya fel dyker upp sedan
+ * senaste visningen.
  *
  * MOBIL-FÖRST: korten staplas (grid-cols-1 → sm:grid-cols-3), stora
  * tryckytor (accordion-utlösare i full bredd, py-4), inga breda tabeller
@@ -68,6 +84,29 @@ type UtvecklingSvar = {
     lagret?: { rader: number } | null;
     senasteHandelse?: string | null;
   };
+};
+
+// ── Svartyper: serverns puls (API-kontraktet våg 84 block E) ────────────────
+
+type PulsTjanst = {
+  namn: string;
+  status: string;
+  cpu: number;
+  mem: number;
+  uppdaterad: string | null;
+  uptimeS: number | null;
+  restarts: number;
+};
+
+type PulsSvar = {
+  hamtat: string;
+  serverTid: string;
+  tjanster: PulsTjanst[] | null;
+  disk: { procent: number; anvant: string; totalt: string; tillgangligt: string } | null;
+  ram: { anvantMB: number; totaltMB: number; procent: number } | null;
+  load: { ett: number; fem: number; femton: number } | null;
+  crons: { rader: number; poster: string[]; senasteKorningar: string[] | null } | null;
+  fellogg: { rader: string[] } | null;
 };
 
 // ── Typ-badgar — färgkodade etiketter för kända eventtyper ─────────────────
@@ -289,6 +328,10 @@ export function UtvecklingPanel() {
   const [losenord, setLosenord] = React.useState("");
   const [losenFel, setLosenFel] = React.useState("");
 
+  // ── VÅG 84 E: serverns puls (egen route, egen 60 s-takt) ──────────────────
+  const [puls, setPuls] = React.useState<PulsSvar | null>(null);
+  const [pulsLaddar, setPulsLaddar] = React.useState(false);
+
   const hamta = React.useCallback(async () => {
     setLaddar(true);
     setFel("");
@@ -316,18 +359,47 @@ export function UtvecklingPanel() {
     }
   }, []);
 
+  /** Puls-hämtning — delar lås-vyn med utvecklingsvyn (401 ⇒ gemensam lås-rad). */
+  const hamtaPuls = React.useCallback(async () => {
+    setPulsLaddar(true);
+    try {
+      const res = await fetch("/api/admin/puls", { headers: adminHeaders() });
+      if (res.status === 401 || res.status === 403 || res.status === 429) {
+        const json = (await res.json().catch(() => ({}))) as { error?: string };
+        setBehoverLosen(true);
+        if (json.error) setLosenFel(json.error);
+        setPuls(null);
+        return;
+      }
+      if (res.ok) {
+        setPuls((await res.json()) as PulsSvar);
+        setBehoverLosen(false);
+      }
+      // Övriga fel: puls-rutten svarar null-fält per kommando — ett ej-ok
+      // svar lämnar föregående puls kvar (aldrig röd kraschvy för en blink).
+    } catch {
+      // nätverksfel ⇒ behåll senaste pulsen, tyst (nästa 60 s-takt tar om)
+    } finally {
+      setPulsLaddar(false);
+    }
+  }, []);
+
   // Hämta när fliken öppnas (Radix unmountar inaktiva TabsContent ⇒ lazy).
   React.useEffect(() => {
     void hamta();
-  }, [hamta]);
+    void hamtaPuls();
+  }, [hamta, hamtaPuls]);
 
   // 60 s auto-uppdatering — ENDAST när fliken syns (mobil: spara batteri/data).
   React.useEffect(() => {
     const timer = window.setInterval(() => {
-      if (document.visibilityState === "visible" && !behoverLosen) void hamta();
+      if (document.visibilityState === "visible" && !behoverLosen) {
+        void hamta();
+        void hamtaPuls();
+      }
     }, 60_000);
     return () => window.clearInterval(timer);
-  }, [hamta, behoverLosen]);
+  }, [hamta, hamtaPuls, behoverLosen]);
 
   const lasUpp = async () => {
     if (!losenord) return;
@@ -390,14 +462,26 @@ export function UtvecklingPanel() {
               Uppdaterad {new Date(data.hamtat).toLocaleTimeString("sv-SE")}
             </span>
           )}
-          <Button variant="outline" size="sm" onClick={() => hamta()} disabled={laddar}>
-            <RefreshCw className={cn("mr-1 h-3 w-3", laddar && "animate-spin")} /> Uppdatera
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              void hamta();
+              void hamtaPuls();
+            }}
+            disabled={laddar || pulsLaddar}
+          >
+            <RefreshCw className={cn("mr-1 h-3 w-3", (laddar || pulsLaddar) && "animate-spin")} /> Uppdatera
           </Button>
         </div>
       </div>
 
       {fel && <p className="text-xs text-red-600">{fel}</p>}
       {laddar && !data && <p className="text-xs text-muted-foreground">Hämtar utvecklingsvyn …</p>}
+
+      {/* (0) PULS 📈 (våg 84 E) — serverns puls, överst: kunden ser först
+          hur servern mår, sedan vad som händer i utvecklingen. */}
+      <PulsSektion puls={puls} laddar={pulsLaddar} />
 
       {/* (a) STATUSKORT — staplade på mobil, rad på större skärm */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -550,5 +634,473 @@ function StatusKort({
       <p className="mt-2 break-words font-serif text-2xl font-bold tabular-nums">{varde}</p>
       <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground">{sub}</p>
     </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// PULS 📈 — VÅG 84 BLOCK E: serverns puls synlig för kunden
+// ═══════════════════════════════════════════════════════════════════════════
+
+/** localStorage-nycklar (klienten äger historiken — servern är stateless). */
+const LS_LOAD = "ak1a-puls-load";
+const LS_FELLOGG = "ak1a-puls-fellogg-senast";
+/** Sparklinjens maxlängd — "senaste 12 mätningarna" (kontraktet). */
+const LOAD_MAX = 12;
+
+type LoadPunkt = { t: number; load: number };
+
+function lasLoadHistorik(): LoadPunkt[] {
+  try {
+    const rå = window.localStorage.getItem(LS_LOAD);
+    if (!rå) return [];
+    const parsed = JSON.parse(rå) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (p): p is LoadPunkt =>
+        typeof p === "object" && p !== null &&
+        typeof (p as LoadPunkt).t === "number" &&
+        typeof (p as LoadPunkt).load === "number",
+    );
+  } catch {
+    return [];
+  }
+}
+
+function sparaLoadHistorik(punkter: LoadPunkt[]) {
+  try {
+    window.localStorage.setItem(LS_LOAD, JSON.stringify(punkter.slice(-LOAD_MAX)));
+  } catch {
+    // privat läge/fullt utrymme ⇒ historiken är kosmetisk, aldrig fel
+  }
+}
+
+/** Signatur på felloggen — antal rader + sista raden räcker för "nya fel?". */
+function felloggSignatur(rader: string[]): string {
+  return `${rader.length}:${rader[rader.length - 1] ?? ""}`;
+}
+
+function lasSenasteSignatur(): string | null {
+  try {
+    return window.localStorage.getItem(LS_FELLOGG);
+  } catch {
+    return null;
+  }
+}
+
+function sparaSenasteSignatur(sig: string) {
+  try {
+    window.localStorage.setItem(LS_FELLOGG, sig);
+  } catch {
+    // se ovan — kosmetisk state
+  }
+}
+
+// ── Puls-delrenderare ───────────────────────────────────────────────────────
+
+/** Färgklass för andel (0–100): grönt < 60, orange < 85, rött ≥ 85. */
+function andelFarg(procent: number | null | undefined): string {
+  if (procent === null || procent === undefined) return "bg-muted-foreground/40";
+  if (procent < 60) return "bg-emerald-500";
+  if (procent < 85) return "bg-amber-500";
+  return "bg-red-500";
+}
+
+/** Statusfärg per tjänst: online = grön, död/stoppad = röd, övrigt = orange. */
+function statusFarg(status: string): string {
+  if (status === "online") return "bg-emerald-500";
+  if (status === "stopped" || status === "errored" || status === "stalled") return "bg-red-500";
+  return "bg-amber-500"; // launching / restarting / …
+}
+
+function formatUptime(sek: number | null): string {
+  if (sek === null || !Number.isFinite(sek)) return "—";
+  const d = Math.floor(sek / 86_400);
+  const t = Math.floor((sek % 86_400) / 3_600);
+  const m = Math.floor((sek % 3_600) / 60);
+  if (d > 0) return `${d}d ${t}h`;
+  if (t > 0) return `${t}h ${m}m`;
+  return `${m}m`;
+}
+
+/** Horisontell gauge (RAM/disk) — bred tryckyta krävs ej, ren visning. */
+function Gauge({
+  ikon,
+  etikett,
+  procent,
+  varde,
+  hinderText,
+}: {
+  ikon: React.ReactNode;
+  etikett: string;
+  procent: number | null;
+  varde: string;
+  hinderText: string;
+}) {
+  const p = procent !== null && Number.isFinite(procent) ? Math.min(100, Math.max(0, procent)) : null;
+  return (
+    <div className="rounded-lg border border-border bg-card p-4">
+      <div className="flex items-center gap-2">
+        {ikon}
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          {etikett}
+        </span>
+        {p !== null && (
+          <span className="ml-auto font-serif text-lg font-bold tabular-nums">{p}%</span>
+        )}
+      </div>
+      <div className="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-muted">
+        <div
+          className={cn("h-full rounded-full transition-all duration-500", andelFarg(p))}
+          style={p !== null ? { width: `${p}%` } : { width: "0%" }}
+        />
+      </div>
+      <p className="mt-1.5 text-[11px] text-muted-foreground">
+        {p !== null ? varde : hinderText}
+      </p>
+    </div>
+  );
+}
+
+/** Load-sparkline — ren inline-SVG, senaste 12 mätningarna (localStorage). */
+function LoadSparkline({ punkter, nuvarande }: { punkter: LoadPunkt[]; nuvarande: number | null }) {
+  const B = 240; // viewBox-bredd
+  const H = 48; // viewBox-höjd
+  const pad = 4;
+  const n = punkter.length;
+  const max = Math.max(1, ...punkter.map((p) => p.load));
+  const punkterStr =
+    n >= 2
+      ? punkter
+          .map((p, i) => {
+            const x = pad + (i / (n - 1)) * (B - pad * 2);
+            const y = H - pad - (p.load / max) * (H - pad * 2);
+            return `${x.toFixed(1)},${y.toFixed(1)}`;
+          })
+          .join(" ")
+      : "";
+  return (
+    <div className="rounded-lg border border-border bg-card p-4">
+      <div className="flex items-center gap-2">
+        <Activity className="h-4 w-4 text-gold" />
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          Load (1/5/15 min)
+        </span>
+        {nuvarande !== null && (
+          <span className="ml-auto font-serif text-lg font-bold tabular-nums">
+            {nuvarande.toLocaleString("sv-SE", { maximumFractionDigits: 2 })}
+          </span>
+        )}
+      </div>
+      {punkterStr ? (
+        <svg
+          viewBox={`0 0 ${B} ${H}`}
+          className="mt-2 h-12 w-full"
+          preserveAspectRatio="none"
+          role="img"
+          aria-label={`Load-sparkline, senaste ${n} mätningarna`}
+        >
+          <polyline
+            points={punkterStr}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="text-gold"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      ) : (
+        <p className="mt-3 text-[11px] text-muted-foreground">
+          Väntar på två mätningar — sparklinjen byggs en per puls (60 s).
+        </p>
+      )}
+      <p className="mt-1 text-[11px] text-muted-foreground">
+        {n > 0 ? `${n} mätning${n === 1 ? "" : "ar"} i minnet` : "Inga mätningar ännu"}
+        {nuvarande !== null && " · högsta värdet i fönstret skalar axeln"}
+      </p>
+    </div>
+  );
+}
+
+// ── PulsSektion — block E:s panel ───────────────────────────────────────────
+
+function PulsSektion({ puls, laddar }: { puls: PulsSvar | null; laddar: boolean }) {
+  // Load-historik + felloggs-signatur hålls i state så SSR aldrig rör localStorage.
+  const [loadHistorik, setLoadHistorik] = React.useState<LoadPunkt[]>([]);
+  const [nyaFel, setNyaFel] = React.useState(false);
+  const [felloggOppen, setFelloggOppen] = React.useState(false);
+  const [harSetFellogg, setHarSetFellogg] = React.useState(false);
+
+  // Läs localStorage vid montering (efter att fliken öppnats — klient-only).
+  React.useEffect(() => {
+    setLoadHistorik(lasLoadHistorik());
+  }, []);
+
+  // Varje ny puls: mata load-historiken + jämför fellogg-signaturen.
+  React.useEffect(() => {
+    if (!puls) return;
+    if (puls.load) {
+      setLoadHistorik((tidigare) => {
+        const nu = { t: Date.parse(puls.hamtat) || Date.now(), load: puls.load!.ett };
+        // de-dupe: aldrig två punkter från samma mätning (60 s-cachen)
+        if (tidigare.length > 0 && tidigare[tidigare.length - 1].t === nu.t) return tidigare;
+        const nästa = [...tidigare, nu].slice(-LOAD_MAX);
+        sparaLoadHistorik(nästa);
+        return nästa;
+      });
+    }
+    if (puls.fellogg) {
+      const sig = felloggSignatur(puls.fellogg.rader);
+      const sparad = lasSenasteSignatur();
+      if (sparad === null) {
+        sparaSenasteSignatur(sig); // första visningen — bara spara, inget larm
+      } else if (sparad !== sig) {
+        setNyaFel(true); // loggen har förändrats sedan senaste visningen
+        sparaSenasteSignatur(sig);
+      }
+    }
+  }, [puls]);
+
+  // När felloggen öppnas (visas) nollställs den röda badge:n.
+  React.useEffect(() => {
+    if (felloggOppen && !harSetFellogg) {
+      setNyaFel(false);
+      setHarSetFellogg(true);
+    }
+    if (!felloggOppen) setHarSetFellogg(false);
+  }, [felloggOppen, harSetFellogg]);
+
+  const tjanster = puls?.tjanster ?? null;
+  const felrader = puls?.fellogg?.rader ?? null;
+
+  return (
+    <section className="rounded-lg border border-gold/30 bg-card p-4" aria-label="Serverns puls">
+      {/* Rubrikrad */}
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <HeartPulse className="h-4 w-4 text-gold" />
+          <h4 className="font-serif text-sm font-bold">Puls 📈 — serverns hälsa</h4>
+          {nyaFel && (
+            <Badge
+              variant="outline"
+              className="animate-pulse border-red-300 bg-red-50 text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-300"
+            >
+              <AlertTriangle className="mr-1 h-3 w-3" /> Nya fel
+            </Badge>
+          )}
+        </div>
+        <span className="text-[10px] text-muted-foreground">
+          {laddar
+            ? "Mäter …"
+            : puls
+              ? `Mätt ${new Date(puls.hamtat).toLocaleTimeString("sv-SE")} · 60 s intervall`
+              : "Ingen mätning än"}
+        </span>
+      </div>
+
+      {!puls ? (
+        <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
+          Hämtar serverns puls …
+        </p>
+      ) : (
+        <div className="mt-3 space-y-3">
+          {/* (1) Statuskort per tjänst — prick + cpu/mem, staplade på mobil */}
+          {tjanster === null ? (
+            <p className="rounded-md border border-border bg-card px-3 py-3 text-[11px] text-muted-foreground">
+              <Server className="mr-1 inline h-3.5 w-3.5 align-[-3px]" />
+              pm2 svarar inte i denna miljö (t.ex. Vercel/dev) — tjänstekorten
+              finns på Contabo-servern där pm2 kör.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              {tjanster.map((tj) => (
+                <div
+                  key={tj.namn}
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-3"
+                >
+                  <span
+                    className={cn(
+                      "h-3 w-3 shrink-0 rounded-full",
+                      statusFarg(tj.status),
+                      tj.status === "online" && "shadow-[0_0_6px] shadow-emerald-500/60",
+                    )}
+                    title={tj.status}
+                    aria-label={`Status: ${tj.status}`}
+                  />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate font-mono text-[13px] font-semibold">{tj.namn}</p>
+                    <p className="text-[10px] text-muted-foreground">
+                      {tj.status} · uppe {formatUptime(tj.uptimeS)} · {tj.restarts} omstart
+                      {tj.restarts === 1 ? "" : "er"}
+                      {tj.uppdaterad && ` · sedan ${klockslag(tj.uppdaterad)}`}
+                    </p>
+                  </div>
+                  <div className="shrink-0 text-right font-mono text-[11px] tabular-nums">
+                    <p className={cn(tj.cpu >= 85 ? "text-red-600 dark:text-red-400" : tj.cpu >= 50 ? "text-amber-600 dark:text-amber-400" : "text-emerald-600 dark:text-emerald-400")}>
+                      cpu {tj.cpu}%
+                    </p>
+                    <p className="text-muted-foreground">mem {sv(tj.mem)} MB</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* (2) RAM + disk-gauges + load-sparkline — staplade på mobil */}
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+            <Gauge
+              ikon={<MemoryStick className="h-4 w-4 text-gold" />}
+              etikett="RAM"
+              procent={puls.ram ? puls.ram.procent : null}
+              varde={
+                puls.ram
+                  ? `${sv(puls.ram.anvantMB)} / ${sv(puls.ram.totaltMB)} MB`
+                  : ""
+              }
+              hinderText="free -m svarar inte i denna miljö."
+            />
+            <Gauge
+              ikon={<HardDrive className="h-4 w-4 text-gold" />}
+              etikett="Disk /"
+              procent={puls.disk ? puls.disk.procent : null}
+              varde={
+                puls.disk
+                  ? `${puls.disk.anvant} / ${puls.disk.totalt} (${puls.disk.tillgangligt} kvar)`
+                  : ""
+              }
+              hinderText="df -h / svarar inte i denna miljö."
+            />
+            <LoadSparkline punkter={loadHistorik} nuvarande={puls.load ? puls.load.ett : null} />
+          </div>
+
+          {/* (3) Cron-listan + senaste körningstider */}
+          {puls.crons === null ? (
+            <p className="rounded-md border border-border bg-card px-3 py-3 text-[11px] text-muted-foreground">
+              <ListChecks className="mr-1 inline h-3.5 w-3.5 align-[-3px]" />
+              crontab kunde inte läsas i denna miljö.
+            </p>
+          ) : (
+            <div className="rounded-lg border border-border bg-card p-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <ListChecks className="h-4 w-4 text-gold" />
+                  <h5 className="font-serif text-[13px] font-bold">
+                    Cron-jobb ({puls.crons.rader})
+                  </h5>
+                </div>
+                {puls.crons.senasteKorningar && puls.crons.senasteKorningar.length > 0 ? (
+                  <span className="text-[10px] text-muted-foreground">
+                    senaste körning: {puls.crons.senasteKorningar[0]}
+                  </span>
+                ) : (
+                  <span className="text-[10px] text-muted-foreground">
+                    hälso-loggen oläsbar — körningstider saknas
+                  </span>
+                )}
+              </div>
+              {puls.crons.poster.length === 0 ? (
+                <p className="mt-2 text-[11px] text-muted-foreground">
+                  Cron-tabellen är tom (0 rader).
+                </p>
+              ) : (
+                <ul className="mt-2 space-y-1">
+                  {puls.crons.poster.map((rad, i) => (
+                    <li
+                      key={`cron-${i}`}
+                      className="overflow-x-auto whitespace-pre rounded border border-border/60 bg-muted/40 px-2 py-1.5 font-mono text-[10.5px] leading-relaxed text-muted-foreground"
+                    >
+                      {rad}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {puls.crons.senasteKorningar && puls.crons.senasteKorningar.length > 1 && (
+                <p className="mt-2 text-[10px] text-muted-foreground">
+                  Tidigare körningar: {puls.crons.senasteKorningar.slice(1).join(" · ")}
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* (4) FELLOGGEN — senaste 20 raderna, röd badge vid nya fel */}
+          {felrader === null ? (
+            <p className="rounded-md border border-border bg-card px-3 py-3 text-[11px] text-muted-foreground">
+              <AlertTriangle className="mr-1 inline h-3.5 w-3.5 align-[-3px]" />
+              pm2:s fellogg kunde inte läsas i denna miljö.
+            </p>
+          ) : (
+            <div className="rounded-lg border border-border bg-card p-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <AlertTriangle
+                    className={cn(
+                      "h-4 w-4",
+                      felrader.length > 0 ? "text-red-500" : "text-emerald-500",
+                    )}
+                  />
+                  <h5 className="font-serif text-[13px] font-bold">Felloggen ({felrader.length})</h5>
+                  {nyaFel && (
+                    <Badge
+                      variant="outline"
+                      className="border-red-300 bg-red-50 text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-300"
+                    >
+                      nya sedan senaste visningen
+                    </Badge>
+                  )}
+                </div>
+                <span className="text-[10px] text-muted-foreground">
+                  ak1a-error.log · senaste 20 · max 200 tkn/rad
+                </span>
+              </div>
+              {felrader.length === 0 ? (
+                <p className="mt-2 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-[11px] text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300">
+                  Inga fel loggade — ak1a-error.log är tom.
+                </p>
+              ) : (
+                <Accordion
+                  type="single"
+                  collapsible
+                  value={felloggOppen ? "fellogg" : ""}
+                  onValueChange={(v) => setFelloggOppen(v === "fellogg")}
+                  className="mt-2 w-full"
+                >
+                  <AccordionItem value="fellogg" className="border-b-0">
+                    <AccordionTrigger className="min-h-11 py-3 text-left hover:no-underline">
+                      <span className="font-serif text-[13px] font-bold">
+                        {felloggOppen ? "Dölj raderna" : `Visa ${felrader.length} rader`}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3">
+                      <div className="max-h-72 space-y-1 overflow-y-auto">
+                        {felrader.map((rad, i) => (
+                          <p
+                            key={`fel-${i}`}
+                            className={cn(
+                              "whitespace-pre-wrap break-words rounded border px-2 py-1.5 font-mono text-[10.5px] leading-relaxed",
+                              i === felrader.length - 1
+                                ? "border-red-200 bg-red-50 text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300"
+                                : "border-border/60 bg-muted/40 text-muted-foreground",
+                            )}
+                          >
+                            {rad}
+                          </p>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              )}
+            </div>
+          )}
+
+          {/* Fotrad — serverns klocka + ärlig källadeklaration */}
+          <p className="text-[10px] leading-relaxed text-muted-foreground">
+            Mätt på servern i EN delegation (pm2 · df · free · uptime · crontab ·
+            hälso-logg) — fält som inte kan läsas i aktuell miljö visas ärligt som
+            saknade. Serverns tid:{" "}
+            {new Date(puls.serverTid).toLocaleString("sv-SE", { dateStyle: "short", timeStyle: "medium" })}.
+          </p>
+        </div>
+      )}
+    </section>
   );
 }

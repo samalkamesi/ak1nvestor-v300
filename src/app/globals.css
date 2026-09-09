@@ -304,6 +304,15 @@
       radial-gradient(circle at 20% 10%, rgba(201, 168, 76, 0.05), transparent 40%),
       radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
   }
+  /* VÅG 84 A (studio-tema): samma marin natt-textur när .dark sitter på
+     SJÄLVA paper-ytan (studions rotelement bär båda klasserna —
+     "dark"-klassen scope:ar hela studion utan att html berörs). */
+  .paper-texture.dark {
+    background-image:
+      radial-gradient(ellipse at 50% 50%, transparent 58%, rgba(8, 17, 32, 0.55) 100%),
+      radial-gradient(circle at 20% 10%, rgba(201, 168, 76, 0.05), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
+  }
 
   /* ── AK1A bläck-marin signaturklasser (kirurgiska) ── */
   .marin-panel {

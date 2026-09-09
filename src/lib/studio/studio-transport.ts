@@ -74,6 +74,36 @@ import path from "node:path";
  *     (kartan §3). Dialogen visas när läget kräver det (t.ex. plan);
  *     eskalerings-defaulten är tidsbestämt och körs i dev via mock.
  *
+ * VÅG 84 STUDIO 100x block C (PERMISSION-UPPGRADERING): interaction/
+ * requestPermission bär VERKTYGSARGUMENTEN i input-fältet ( Write/Edit/
+ * MultiEdit: file_path + content / old_string+new_string / edits[]) —
+ * transporten beräknar nu en DIFF-FÖRHANDSVISNING ur den RÅA inputen
+ * INNAN trunkeringen (sammanfattning-fältet förblir truncat): ny export-
+ * funktion diffUrInput(verktyg, input) → StudioFilandring (±N ÄRLIGA
+ * heltal, rader med samma tak som ändringspanelen) på interaktionens
+ * nya valfria fält "diff". UI:t renderar gröna +rader/röda −rader i
+ * dialogen INNAN användaren väljer; utan diff (andra verktyg / input
+ * saknas) visas argument-summary som förr. Mock-transportens simulerade
+ * permission är nu en EDIT med old/new så hela kedjan (diff i eventet →
+ * dialog → svar) bevisas deterministiskt i dev.
+ *
+ * VÅG 84 STUDIO 100x-tillägg B (MULTI-SESSION-TABBAR — Z-portaLens
+ * flerfönster): transporten blir SESSION-PARAMETRISERAD — export
+ * hamtaSessionTransport(sessionId? | nyckel?) håller ett register av
+ * PER-SESSION-transporter (varje AppServerTransport = EGEN zcode-app-
+ * server-barnprocess; N samtidiga tabbar = N barnprocesser — pm2 kör
+ * allt i EN Next-process, RAM-vakten är dokumenterad i STYRELSE-ADMIN-
+ * MEGA våg 84) + en SESSIONSKARTA sessionId → {senasteAktivitet,
+ * historik, aktiv} (lasStudioSessionskarta/markeraSessionStart/
+ * markeraSessionSlut) som GET /api/studio/stream listar så UI:t kan
+ * resume TIDLIGARE sessioner i nya tabbar och visa senaste aktivitet.
+ * Konstruktorparametern målSessionId tvingar ensure() att återuppta
+ * JUST den sessionen — misslyckad resume av ett mål är ett ÄRLIGT fel
+ * (ALDRIG tyst ny session, som vore en osynlig forgery av samtalet).
+ * Default-transporten (hamtaStudioTransport) är OFÖRÄNDRAD: huvudtabben
+ * och alla äldre rutter (modeller, session/list, mål, läge, tanke…) 
+ * fortsätter på den — bakåtkompatibilitet bevaras.
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -182,6 +212,12 @@ export type StudioInteraktion =
       /** Argument-summary (truncat JSON/text) — protokollets input-fält. */
       sammanfattning: string;
       alternativ: StudioPermissionAlternativ[];
+      /**
+       * V84 C: diff-förhandsvisning ur den RÅA inputen (Write/Edit/MultiEdit)
+       * — ±N rader innan godkännandet; samma form som ändringspanelen.
+       * Saknas för verktyg utan filargument (UI:t faller på sammanfattning).
+       */
+      diff?: StudioFilandring;
     }
   | {
       typ: "fråga";
@@ -258,6 +294,23 @@ export type StudioLyssnare = (event: StudioEvent) => void;
 export interface StudioHistorikPost {
   roll: "user" | "assistant";
   text: string;
+}
+
+/**
+ * VÅG 84 B: sessionskartans post — en rad per session som SERVERT sidan
+ * sett via /api/studio/stream (både huvudsessionen och egna tabbar).
+ * "aktiv" = en prompt strömmar JUST NUPP i sessionen (UI:t kan visa
+ * ON-GÅENDE-prick även efter refresh i en annan klient); "historik" är
+ * en MINSKAD spegling (senaste N) av prompt/svar-par i ankomstordning —
+ * full sanning lever i zcode-sessionen (session/messages).
+ */
+export interface StudioSessionsKort {
+  /** Date.now() vid senaste prompt-start/slut. */
+  senasteAktivitet: number;
+  /** Senaste prompt/svar-par i ankomstordning (cappad, senast först sist). */
+  historik: StudioHistorikPost[];
+  /** true medan en prompt strömmar i sessionen (via denna Next-process). */
+  aktiv: boolean;
 }
 
 /**
@@ -1061,6 +1114,47 @@ export function filandringarUrMessages(svar: unknown): StudioFilandring[] {
 }
 
 /**
+ * V84 C: diff-förhandsvisning ur en permission-requests RÅA input (ren
+ * funktion — deterministiskt testbar). Write bär file_path+content (+N),
+ * Edit bär old_string/new_string (EXAKT −N/+N), MultiEdit bär edits[] —
+ * samma tolkning som filandringarUrMessages men för EN kommande ändring
+ * (verktyget har inte körts än — det är precis poängen med förhandsvis-
+ * ningen). ±N är ÄRLIGA heltal även när radlistan kapats (MAX_RADER_PER_FIL
+ * som panelen); null = verktyget bär inga tolkbara filargument (UI:t
+ * visar argument-summary som förr).
+ */
+export function diffUrInput(verktyg: string, input: unknown): StudioFilandring | null {
+  if (!input || typeof input !== "object") return null;
+  const indata = input as Record<string, unknown>;
+  const sokvag =
+    typeof indata.file_path === "string" && indata.file_path
+      ? indata.file_path
+      : typeof indata.path === "string" && indata.path
+        ? indata.path
+        : null;
+  if (!sokvag) return null;
+  let minus: StudioRadandring[] = [];
+  let plus: StudioRadandring[] = [];
+  if (verktyg === "Write" && typeof indata.content === "string") {
+    plus = tillRader(indata.content, "+");
+  } else if (verktyg === "Edit") {
+    minus = tillRader(typeof indata.old_string === "string" ? indata.old_string : "", "-");
+    plus = tillRader(typeof indata.new_string === "string" ? indata.new_string : "", "+");
+  } else if (verktyg === "MultiEdit" && Array.isArray(indata.edits)) {
+    for (const e of indata.edits) {
+      const red = (e ?? {}) as { old_string?: unknown; new_string?: unknown };
+      minus.push(...tillRader(typeof red.old_string === "string" ? red.old_string : "", "-"));
+      plus.push(...tillRader(typeof red.new_string === "string" ? red.new_string : "", "+"));
+    }
+  } else {
+    return null; // Bash/Read/… — inga filargument att diffa
+  }
+  if (minus.length === 0 && plus.length === 0) return null;
+  const rader = [...minus, ...plus].slice(0, MAX_RADER_PER_FIL);
+  return { sokvag, plus: plus.length, minus: minus.length, rader };
+}
+
+/**
  * Kontext för den aktiva prompten — notiser utan aktiv prompt ignoreras
  * (broadcasten är bred: state.updated, telemetri m.m.).
  */
@@ -1086,12 +1180,25 @@ class AppServerTransport implements StudioTransport {
   /** V83 B2: senast satta läge/tankestyrka — följer med vid create/resume. */
   private lage: "build" | "plan" | null = null;
   private tankeNiva: string | null = null;
+  /**
+   * VÅG 84 B: mål-session (per-session-tabbar) — när satt tvingar ensure()
+   * resume av JUST denna session; misslyckad mål-resume är ett ÄRLIGT fel
+   * (aldrig tyst create — sessionen är klientens identitet på tabben).
+   * Undefined = default-transporten (persistensfilens resume-or-create).
+   */
+  private readonly målSessionId: string | undefined;
 
   constructor(
     private readonly binärer: string[],
     private readonly arbetskatalog: string,
     private readonly lagringsSökväg: string,
-  ) {}
+    målSessionId?: string,
+  ) {
+    this.målSessionId =
+      typeof målSessionId === "string" && /^sess_[A-Za-z0-9._-]+$/.test(målSessionId)
+        ? målSessionId
+        : undefined;
+  }
 
   sessionId(): string | null {
     return this.sid;
@@ -1114,13 +1221,17 @@ class AppServerTransport implements StudioTransport {
       if (lage === "build" || lage === "plan") this.lage = lage;
       if (tankeNiva) this.tankeNiva = tankeNiva;
       let resumerad = false;
-      if (sparad) {
+      // VÅG 84 B: mål-session (per-session-tabbar) vinner över persistens-
+      // filen — tabben ÄGER sin session; misslyckad mål-resume kastar ett
+      // ärligt fel (default-transporten faller tyst vidare på create).
+      const mal = this.målSessionId ?? sparad;
+      if (mal) {
         try {
           // V83 B2: resume bär thoughtLevel (kartan §1 — mode finns ej i
           // resume-schemat, det följer med vid nästa create istället).
           const resultat = await klient.request(
             "session/resume",
-            { sessionId: sparad, ...(this.tankeNiva ? { thoughtLevel: this.tankeNiva } : {}) },
+            { sessionId: mal, ...(this.tankeNiva ? { thoughtLevel: this.tankeNiva } : {}) },
             45_000,
           );
           const sid = sessionUr(resultat);
@@ -1128,7 +1239,13 @@ class AppServerTransport implements StudioTransport {
             this.sid = sid;
             resumerad = true;
           }
-        } catch {
+        } catch (fel) {
+          if (this.målSessionId) {
+            const text = fel instanceof Error ? fel.message : String(fel);
+            throw new Error(
+              `Sessionen ${this.målSessionId.slice(0, 13)}… kunde ej återupptas (${text.slice(0, 140)}) — stäng tabben eller öppna en ny.`,
+            );
+          }
           resumerad = false; // borta/ogiltig → skapa ny nedan
         }
       }
@@ -1820,6 +1937,9 @@ class AppServerTransport implements StudioTransport {
           skäl: typeof p.reason === "string" && p.reason ? p.reason : undefined,
           sammanfattning: sammanfattaInput(p.input),
           alternativ,
+          // V84 C: diff ur den RÅA inputen (Write/Edit/MultiEdit) — beräknas
+          // INNAN sammanfattaInput-trunkeringen så förhandsvisningen är hel.
+          diff: diffUrInput(verktyg, p.input) ?? undefined,
         },
         {
           fardigaSvar,
@@ -2451,11 +2571,24 @@ class AppServerTransport implements StudioTransport {
 class MockTransport implements StudioTransport {
   readonly namn = "mock" as const;
   private mockSid: string | null = null;
+  /**
+   * VÅG 84 B: mål-session (per-session-tabbar) — mocken ADOPTERAR id:t
+   * direkt i ensure() (dev-vänligt: dev-E2E kan resume "tidigare" sessioner
+   * som servern aldrig sett, historiken börjar tom och fylls av nya prompter).
+   */
+  private readonly målSessionId: string | undefined;
   private mockModell: string | null = null;
   private mockTotalt = 0;
   private mockTurns = 0;
   private readonly historikPoster: StudioHistorikPost[] = [];
   private readonly gamlaSessioner: StudioSessionPost[] = [];
+
+  constructor(målSessionId?: string) {
+    this.målSessionId =
+      typeof målSessionId === "string" && /^sess_[A-Za-z0-9._-]+$/.test(målSessionId)
+        ? målSessionId
+        : undefined;
+  }
   /** v83 B3: historik + metadata per avlagd session (resume i mock). */
   private readonly mockHistorik = new Map<string, StudioHistorikPost[]>();
   private readonly mockMeta = new Map<string, { turns: number; tokens: number }>();
@@ -2492,7 +2625,17 @@ class MockTransport implements StudioTransport {
   }
 
   async ensure(): Promise<void> {
-    if (!this.mockSid) this.mockSid = `sess_mock_${Date.now().toString(36)}`;
+    // VÅG 84 B: mål-session adopteras (per-session-tabbar i dev). Främmande
+    // id:n (icke sess_mock_*) nekas ÄRLIGT — speglar prod:ens resume-fel för
+    // en session som inte finns (E2E:testar borta-session-vägen i dev).
+    if (!this.mockSid) {
+      if (this.målSessionId && !this.målSessionId.startsWith("sess_mock_")) {
+        throw new Error(
+          `Sessionen ${this.målSessionId.slice(0, 13)}… kunde ej återupptas (Session not found — mock) — stäng tabben eller öppna en ny.`,
+        );
+      }
+      this.mockSid = this.målSessionId ?? `sess_mock_${Date.now().toString(36)}`;
+    }
   }
 
   async historik(): Promise<StudioHistorikPost[]> {
@@ -2811,24 +2954,32 @@ class MockTransport implements StudioTransport {
     await sov(90);
     lyssnare({ typ: "verktyg_kort", id: "mock-grep", namn: "Grep", steg: "fel", fel: "Ogiltigt regex: oavslutad grupp (mock-demo av fel-vägen)" });
 
-    // V83 B2: simulerad PERMISSION-DIALOG — bevisar hela kedjan i dev:
-    // interaktion-event → dialogkort → POST /api/studio/interaktion →
-    // svarPermission → interaktionsKlar. 30 s-default = escalate (samma
-    // KVD-regel som prod).
+    // V83 B2 + V84 C: simulerad PERMISSION-DIALOG — bevisar hela kedjan i
+    // dev: interaktion-event → dialogkort (med DIFF-FÖRHANDSVISNING för
+    // Write/Edit/MultiEdit) → POST /api/studio/interaktion → svarPermission
+    // → interaktionsKlar. 30 s-default = escalate (samma KVD-regel som prod).
     const permId = `mock-perm-${Date.now().toString(36)}`;
     const permBeslut = await new Promise<string>((los) => {
+      // V84 C: mocken använder en EDIT (skrivverktyg = orange riskklass +
+      // old/new-string ger EXAKT −N/+N i förhandsvisningen).
+      const permInput = {
+        file_path: "uploads/demo.txt",
+        old_string: "rad 2",
+        new_string: "rad 2 (redigerad av agenten)",
+      };
       const permInteraktion: Extract<StudioInteraktion, { typ: "permission" }> = {
         typ: "permission",
         requestId: permId,
-        verktyg: "LäsRepo",
-        risk: "medium",
-        skäl: "Mock: verifiera godkännandedialogen (Z-portaLens)",
-        sammanfattning: '{"sokvag":"uploads/demo.txt","radBegränsning":50}',
+        verktyg: "Edit",
+        risk: "high",
+        skäl: "Mock: verifiera godkännandedialogen med diff-förhandsvisning (V84 C)",
+        sammanfattning: sammanfattaInput(permInput),
         alternativ: [
           { optionId: "allow_once", namn: "Allow once" },
           { optionId: "allow_project", namn: "Allow for project" },
           { optionId: "deny", namn: "Deny" },
         ],
+        diff: diffUrInput("Edit", permInput) ?? undefined,
       };
       const timer = setTimeout(() => {
         this.mockVantan = null;
@@ -2839,6 +2990,24 @@ class MockTransport implements StudioTransport {
       lyssnare({ typ: "interaktion", interaktion: permInteraktion });
     });
     this.mockVantan = null;
+    // V84 C: tilläts mock-editen speglar ändringspanelen beslutet (−1/+1)
+    // — samma ärlighet som prod (nekad Write skall ALDRIG synas i panelen).
+    if (permBeslut === "allow_once" || permBeslut === "allow_project") {
+      this.mockAndringar = this.mockAndringar.map((f) =>
+        f.sokvag === "uploads/demo.txt"
+          ? {
+              ...f,
+              plus: f.plus + 1,
+              minus: f.minus + 1,
+              rader: [
+                ...f.rader,
+                { typ: "-" as const, text: "rad 2" },
+                { typ: "+" as const, text: "rad 2 (redigerad av agenten)" },
+              ],
+            }
+          : f,
+      );
+    }
 
     // V83 B2: simulerat FRÅGEKORT (requestUserInput — knappval eller fritext).
     const fragId = `mock-fraga-${Date.now().toString(36)}`;
@@ -2920,6 +3089,28 @@ export function studioArbetsyta(): string {
 let aktivTransport: StudioTransport | null = null;
 
 /**
+ * Transportnamn ur miljön — STUDIO_TRANSPORT=mock|appserver tvingar; annars
+ * mock på win32 (dev) och appserver annars (prod = Contabo, linux).
+ */
+function studioTransportNamn(): "appserver" | "mock" {
+  const tvingad = process.env.STUDIO_TRANSPORT;
+  return tvingad === "mock" || tvingad === "appserver"
+    ? tvingad
+    : process.platform === "win32"
+      ? "mock"
+      : "appserver";
+}
+
+/** zcode-binärkandidater (env → PATH → Contabo-hem). */
+function zcodeBinärer(): string[] {
+  return [
+    process.env.STUDIO_ZCODE_BIN,
+    "zcode",
+    "/home/ak1a/.npm-global/bin/zcode", // Contabo-installationens hem
+  ].filter((b): b is string => typeof b === "string" && b.length > 0);
+}
+
+/**
  * Miljöstyrd transport — injektionspunkten som dev-testet och framtida
  * tmux-fallback kopplar in sig på:
  *   STUDIO_TRANSPORT=mock|appserver tvingar; annars mock på win32 (dev)
@@ -2927,37 +3118,194 @@ let aktivTransport: StudioTransport | null = null;
  */
 export function hamtaStudioTransport(): StudioTransport {
   if (aktivTransport) return aktivTransport;
-  const tvingad = process.env.STUDIO_TRANSPORT;
-  const namn: "appserver" | "mock" =
-    tvingad === "mock" || tvingad === "appserver"
-      ? tvingad
-      : process.platform === "win32"
-        ? "mock"
-        : "appserver";
 
-  if (namn === "mock") {
+  if (studioTransportNamn() === "mock") {
     aktivTransport = new MockTransport();
     return aktivTransport;
   }
 
-  const binärer = [
-    process.env.STUDIO_ZCODE_BIN,
-    "zcode",
-    "/home/ak1a/.npm-global/bin/zcode", // Contabo-installationens hem
-  ].filter((b): b is string => typeof b === "string" && b.length > 0);
-
-  const arbetskatalog = studioArbetsyta();
-  const lagringsKatalog = process.env.STUDIO_LAGRING || os.tmpdir();
-
   aktivTransport = new AppServerTransport(
-    [...new Set(binärer)],
-    arbetskatalog,
-    path.join(lagringsKatalog, "ak1a-studio-session.json"),
+    [...new Set(zcodeBinärer())],
+    studioArbetsyta(),
+    path.join(process.env.STUDIO_LAGRING || os.tmpdir(), "ak1a-studio-session.json"),
   );
   return aktivTransport;
 }
 
-/** Test-krok: nollställ singletonen (används av verktyg/testa-studio.mjs). */
+// ── VÅG 84 B: MULTI-SESSION — sessionskarta + per-session-transporter ────────
+
+/** Sessionskartans tak — äldsta senasteAktivitet avlägsnas först (LRU). */
+const MAX_SESSIONER_I_KARTA = 50;
+/** Historik-tak per session i kartan (prompt/svar-par, ankomstordning). */
+const MAX_HISTORIK_I_KARTA = 100;
+
+/** sessionId → kort (senaste aktivitet + minskad historik + aktiv-flagga). */
+const sessionskartan = new Map<string, StudioSessionsKort>();
+/** sessionId (eller "ny:<tabbnyckel>" före första svaret) → transport. */
+const sessionTransporter = new Map<string, StudioTransport>();
+
+/** Sessionskartan som rent objekt — GET /api/studio/stream listar den. */
+export function lasStudioSessionskarta(): Record<string, StudioSessionsKort> {
+  const ut: Record<string, StudioSessionsKort> = {};
+  for (const [sid, kort] of sessionskartan) {
+    ut[sid] = { ...kort, historik: kort.historik.slice(-40) };
+  }
+  return ut;
+}
+
+/** Prompt startade i sessionen — historiken växer, aktiv=true. */
+export function markeraSessionStart(sessionId: string, prompt: string): void {
+  if (!sessionId) return;
+  const kort = sessionskartan.get(sessionId) ?? {
+    senasteAktivitet: Date.now(),
+    historik: [],
+    aktiv: false,
+  };
+  kort.senasteAktivitet = Date.now();
+  kort.aktiv = true;
+  kort.historik.push({ roll: "user", text: prompt.slice(0, 8_000) });
+  if (kort.historik.length > MAX_HISTORIK_I_KARTA) {
+    kort.historik = kort.historik.slice(-MAX_HISTORIK_I_KARTA);
+  }
+  sessionskartan.set(sessionId, kort);
+  städaKarta();
+}
+
+/** Prompten klar (klart/fel/abort) — svaret (om något) lagras, aktiv=false. */
+export function markeraSessionSlut(sessionId: string, svar: string): void {
+  if (!sessionId) return;
+  const kort = sessionskartan.get(sessionId);
+  if (!kort) return;
+  kort.senasteAktivitet = Date.now();
+  kort.aktiv = false;
+  if (svar) kort.historik.push({ roll: "assistant", text: svar.slice(0, 20_000) });
+  if (kort.historik.length > MAX_HISTORIK_I_KARTA) {
+    kort.historik = kort.historik.slice(-MAX_HISTORIK_I_KARTA);
+  }
+}
+
+/** Håll kartan under taket — avlägsna äldst aktivitet först. */
+function städaKarta(): void {
+  if (sessionskartan.size <= MAX_SESSIONER_I_KARTA) return;
+  const sorterade = [...sessionskartan.entries()].sort(
+    (a, b) => a[1].senasteAktivitet - b[1].senasteAktivitet,
+  );
+  for (const [sid] of sorterade.slice(0, sessionskartan.size - MAX_SESSIONER_I_KARTA)) {
+    sessionskartan.delete(sid);
+  }
+}
+
+/** Filnamnssäker nyckel för per-session-persistensfilen. */
+function persistensFilnamn(sessionId: string): string {
+  return `ak1a-studio-session-${sessionId.replace(/[^A-Za-z0-9._-]/g, "_").slice(0, 60)}.json`;
+}
+
+/**
+ * Skapa en transport för en session (mock: adopterar id:t; appserver: EGEN
+ * barnprocess med mål-session + EGEN persistensfil så tabbarna aldrig trampar
+ * på default-transportens ak1a-studio-session.json).
+ */
+function skapaSessionTransport(målSessionId?: string): StudioTransport {
+  if (studioTransportNamn() === "mock") return new MockTransport(målSessionId);
+  const lagringsKatalog = process.env.STUDIO_LAGRING || os.tmpdir();
+  return new AppServerTransport(
+    [...new Set(zcodeBinärer())],
+    studioArbetsyta(),
+    path.join(lagringsKatalog, målSessionId ? persistensFilnamn(målSessionId) : `ak1a-studio-session-ny-${Date.now().toString(36)}.json`),
+    målSessionId,
+  );
+}
+
+/**
+ * VÅG 84 B — per-session-transport för multi-session-tabbar.
+ *
+ *   sessionId given  → registerträff (levande transport för sessionen;
+ *                      delas om flera tabbar öppnar SAMMA session — zcode:s
+ *                      regel "en prompt i taget" gäller då per session) eller
+ *                      ny transport med mål-session (resume, ÄRLIGT fel om
+ *                      sessionen är borta).
+ *   nyckel given     → ny frisk transport för tabbens första prompt
+ *                      ("ny:<nyckel>" tills sessionId är känt — re-nycklas
+ *                      nedan så nästa prompt i tabben finner den igen).
+ *
+ * Returnerar transporten ENSURAD (resume/create + subscribe) + den
+ * lösta sessionens id.
+ */
+export async function hamtaSessionTransport(
+  sessionId?: string | null,
+  nyckel?: string | null,
+): Promise<{ transport: StudioTransport; sessionId: string }> {
+  // 1. Direktträff på session-id.
+  if (sessionId) {
+    if (!/^sess_[A-Za-z0-9._-]+$/.test(sessionId)) {
+      throw new Error("Ogiltigt sessions-id.");
+    }
+    const befintlig = sessionTransporter.get(sessionId);
+    if (befintlig) {
+      await befintlig.ensure();
+      const sid = befintlig.sessionId();
+      if (sid) return { transport: befintlig, sessionId: sid };
+      // Fallthrough — transporten tappade sin session (extremfall): ny nedan.
+    }
+    const transport = skapaSessionTransport(sessionId);
+    await transport.ensure(); // kastar ÄRLIGT om mål-resume misslyckas
+    const sid = transport.sessionId();
+    if (!sid) throw new Error("Transporten svarade utan sessionId.");
+    sessionTransporter.set(sid, transport);
+    return { transport, sessionId: sid };
+  }
+
+  // 2. Ny tabb (frisk session) — nycklad tills sessionen är löst.
+  if (nyckel) {
+    const tabbNyckel = `ny:${nyckel.slice(0, 80)}`;
+    const befintlig = sessionTransporter.get(tabbNyckel);
+    if (befintlig) {
+      await befintlig.ensure();
+      const sid = befintlig.sessionId();
+      if (sid) {
+        // Re-nyckla: nästa prompt i tabben bär det riktiga session-id:t.
+        sessionTransporter.delete(tabbNyckel);
+        if (!sessionTransporter.has(sid)) sessionTransporter.set(sid, befintlig);
+        return { transport: befintlig, sessionId: sid };
+      }
+    }
+    const transport = skapaSessionTransport();
+    await transport.ensure();
+    const sid = transport.sessionId();
+    if (!sid) throw new Error("Transporten svarade utan sessionId.");
+    sessionTransporter.set(sid, transport);
+    return { transport, sessionId: sid };
+  }
+
+  throw new Error("sessionId eller nyckel krävs för per-session-transport.");
+}
+
+/**
+ * VÅG 84 B: hitta transporten som äger en väntande interaktion (requestId)
+ * — söker default-transporten + per-session-registret (en dialog från en
+ * EGEN tabb måste besvaras i DEN tabbens transport). Null = okänd id.
+ */
+export function hamtaTransportMedInteraktion(requestId: string): StudioTransport | null {
+  if (aktivTransport?.vantaInteraktioner().some((i) => i.requestId === requestId)) {
+    return aktivTransport;
+  }
+  for (const t of sessionTransporter.values()) {
+    if (t.vantaInteraktioner().some((i) => i.requestId === requestId)) return t;
+  }
+  return null;
+}
+
+/** VÅG 84 B: väntande interaktioner från ALLA transporter (tabbar inkl.). */
+export function lasAllaInteraktioner(): StudioInteraktion[] {
+  const ut: StudioInteraktion[] = [];
+  if (aktivTransport) ut.push(...aktivTransport.vantaInteraktioner());
+  for (const t of sessionTransporter.values()) ut.push(...t.vantaInteraktioner());
+  return ut;
+}
+
+/** Test-krok: nollställ singletonen + multi-session-registret (verktyg/test). */
 export function _aterstallStudioTransport(): void {
   aktivTransport = null;
+  sessionskartan.clear();
+  sessionTransporter.clear();
 }

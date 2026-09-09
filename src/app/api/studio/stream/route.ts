@@ -2,10 +2,16 @@ import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
 import {
+  hamtaSessionTransport,
   hamtaStudioTransport,
+  lasAllaInteraktioner,
+  lasStudioSessionskarta,
+  markeraSessionSlut,
+  markeraSessionStart,
   type StudioEvent,
   type StudioFilandring,
   type StudioKontext,
+  type StudioTransport,
 } from "@/lib/studio/studio-transport";
 
 export const runtime = "nodejs";
@@ -18,11 +24,11 @@ export const dynamic = "force-dynamic";
  * GET  → status + historik + kontext: {transport, sessionId,
  *        historik:[{roll,text}], kontext:{modell,contextUsed,
  *        contextWindow,totalTokenCount,...}} (200 även när agenten är
- * otillgänglig — ärligt fel-fält, chatten renderar lås/vänt-läge;
+ *        otillgänglig — ärligt fel-fält, chatten renderar lås/vänt-läge;
  *        ALDRIG 500 för nedkopplad agent).
  * POST → {prompt} → SSE (text/event-stream): en `data:`-rad per event och
- *        strömmen avslutas efter "klart"/"fel". Heartbeat-kommentar 15:e
- *        sekund håller proxyn öppen.
+ *        strömmen avslutas efter "klart"/"fel". Heartbeat-kommentarer var
+ *        15:e sekund håller proxyn öppen.
  *
  * VÅG 83 MEGA B1 — KOMPLETT STREAMING-VISUALISERING + DIFF: event-typerna
  * utökade med "verktyg_kort" (tool.updated scheduled/started/progress/
@@ -35,23 +41,42 @@ export const dynamic = "force-dynamic";
  * fileChanges kräver v4-grenens egna subscribe-flöde och är dokumenterad
  * som uppgraderingsväg i studio-transport.ts). Äldre typer lever kvar.
  *
+ * VÅG 84 STUDIO 100x BLOCK B — MULTI-SESSION-TABBAR: hela flödet är
+ * SESSION-PARAMETRISERAT.
+ *   POST {prompt, sessionId}   → prompten körs i DEN sessionen via en
+ *        per-session-transport (hamtaSessionTransport — egen barnprocess
+ *        på prod; resume av sessionen, ÄRLIGT fel om den är borta).
+ *   POST {prompt, nyckel}      → första prompten i en NY tabb: frisk
+ *        transport/session skapas och nycklas till tabben ("hej"-eventet
+ *        bär sessionId så nästa prompt kan bära den).
+ *   POST {prompt}              → DEFAULT-transporten (huvudtabben —
+ *        oförändrat våg 81/82/83-beteende inkl. persistens-resume).
+ *   GET ?sessionId=X           → sideload för en tabb: den sessionens
+ *        historik + kontext (per-session-transport).
+ *   GET (utan param)          → default-sessionens sideload + ALLTID
+ *        "sessionskarta" (sessionId → {senasteAktivitet, historik,
+ *        aktiv}) — tabbar kan visa senaste aktivitet och en annan klient
+ *        kan se pågående arbete. Klientens abort (fetch AbortController)
+ *        eldar req.signal → transportens session/stop — "stäng tabb med
+ *        pågående arbete" blir ett ÄRLIGT avbrott, aldrig överlevande.
+ *
  * ARKITEKTUR (protokollet FIRST-HAND bevisat 2026-09-09, se
  * tool-results/v81-appserver.md): Next körs på Contabo (pm2 'ak1a') där
  * `zcode app-server` + workspace /home/ak1a/agent/ak1 lever LOKALT —
  * barnprocess-spawning är därför CORRECT på prod, ingen nätbrygga behövs.
- * Transporten är injicerbar (STUDIO_TRANSPORT=mock för dev/test —
- * deterministisk, ingen modell). RIKTIG end-to-end mot zcode sker vid
- * deploy; dev-testet (verktyg/testa-studio.mjs) bevisar SSE-logiken mot
- * mock + protokollkommandona är enhetstestade som bevisade strängar i
- * forskningsdokumentet. nginx: INGEN ändring — :3000 går genom befintlig
- * proxy (SSE är vanlig chunked text/event-stream).
+ * N tabbar = N per-session-barnprocesser + default-transporten; RAM-tak
+ * 8 GB på Contabo bevakas (3 parallella tabbar mäts i E2E). Transporten
+ * är injikerbar (STUDIO_TRANSPORT=mock för dev/test — deterministisk,
+ * ingen modell). nginx: INGEN ändring — :3000 går genom befintlig proxy
+ * (SSE är vanlig chunked text/event-stream).
  *
  * SKYDD: requireAdmin på BÅDA metoderna (sessionscookie ak1a_admin eller
  * x-admin-password; dev-fallback endast i development; rate-limit 10 fel/min
- * i admin-auth). En prompt i taget — transporten speglar zcode:s egna
- * -32010-vägran som fel-event. INGA hemligheter lämnar servern: events är
- * sanerade strängar, sessions-id:t är en offentlig zcode-identifierare,
- * trunceringsbudgeterna (600/1 500 tecken) håller SSE-raderna små.
+ * i admin-auth). En prompt i taget PER SESSION — varje transport speglar
+ * zcode:s egna -32010-vägran som fel-event. INGA hemligheter lämnar
+ * servern: events är sanerade strängar, sessions-id:t är en offentlig
+ * zcode-identifierare, trunkeringsbudgeterna (600/1 500 tecken) håller
+ * SSE-raderna små.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -78,11 +103,39 @@ function sseRad(
   return `data: ${JSON.stringify(event)}\n\n`;
 }
 
-// ── GET — status + historik (sidload) ────────────────────────────────────────
+// ── GET — status + historik (sidload; ?sessionId= för en specifik tabb) ──────
 
 export async function GET(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
+
+  // VÅG 84 B: per-session-sidaload — tabbens egen historik + kontext ur
+  // en per-session-transport (resume). Fel är ärliga (200 + fel-fält).
+  const sidPar = req.nextUrl.searchParams.get("sessionId")?.trim() ?? "";
+  if (sidPar) {
+    try {
+      const { transport, sessionId } = await hamtaSessionTransport(sidPar);
+      const [historik, kontext] = await Promise.all([transport.historik(), transport.lasKontext()]);
+      return jsonSvar({
+        transport: transport.namn,
+        sessionId,
+        historik,
+        kontext,
+        interaktioner: lasAllaInteraktioner(),
+        live: true,
+        sessionskarta: lasStudioSessionskarta(),
+      });
+    } catch (fel) {
+      return jsonSvar({
+        transport: hamtaStudioTransport().namn,
+        sessionId: sidPar,
+        historik: [],
+        live: false,
+        sessionskarta: lasStudioSessionskarta(),
+        fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas.",
+      });
+    }
+  }
 
   const transport = hamtaStudioTransport();
   try {
@@ -93,10 +146,12 @@ export async function GET(req: NextRequest) {
       sessionId: transport.sessionId(),
       historik,
       kontext,
-      // V83 B2: väntande interaktioner (permission/fråga) — ett refreshat
-      // UI återfår dialogkortet (samma lista som /api/studio/interaktion).
-      interaktioner: transport.vantaInteraktioner(),
+      // V83 B2 + V84 B: väntande interaktioner från ALLA transporter
+      // (permission/fråga — även egna tabbars dialoger återkommer här).
+      interaktioner: lasAllaInteraktioner(),
       live: true,
+      // VÅG 84 B: sessionskartan — alla sessioner denna process sett.
+      sessionskarta: lasStudioSessionskarta(),
     });
   } catch (fel) {
     return jsonSvar({
@@ -105,21 +160,26 @@ export async function GET(req: NextRequest) {
       historik: [],
       interaktioner: transport.vantaInteraktioner(),
       live: false,
+      sessionskarta: lasStudioSessionskarta(),
       fel: fel instanceof Error ? fel.message.slice(0, 300) : "Agenten kunde ej nås.",
     });
   }
 }
 
-// ── POST — prompt → SSE-ström ────────────────────────────────────────────────
+// ── POST — prompt → SSE-ström (per session eller default) ────────────────────
 
 export async function POST(req: NextRequest) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
 
   let prompt = "";
+  let sessionId = "";
+  let nyckel = "";
   try {
-    const kropp = (await req.json()) as { prompt?: unknown };
+    const kropp = (await req.json()) as { prompt?: unknown; sessionId?: unknown; nyckel?: unknown };
     if (typeof kropp.prompt === "string") prompt = kropp.prompt;
+    if (typeof kropp.sessionId === "string") sessionId = kropp.sessionId.trim();
+    if (typeof kropp.nyckel === "string") nyckel = kropp.nyckel.trim();
   } catch {
     return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
   }
@@ -129,7 +189,26 @@ export async function POST(req: NextRequest) {
     return jsonSvar({ fel: `Prompten är för lång (max ${MAX_PROMPT_TEEKEN} tecken).` }, 400);
   }
 
-  const transport = hamtaStudioTransport();
+  // VÅG 84 B: sessionsval — per-session-transport (resume/ny tabb) eller
+  // default-transporten (huvudtabben, oförändrat våg 81-beteende).
+  let transport: StudioTransport;
+  let sessionsId = "";
+  try {
+    if (sessionId) {
+      ({ transport, sessionId: sessionsId } = await hamtaSessionTransport(sessionId));
+    } else if (nyckel) {
+      ({ transport, sessionId: sessionsId } = await hamtaSessionTransport(null, nyckel));
+    } else {
+      transport = hamtaStudioTransport();
+      await transport.ensure();
+      sessionsId = transport.sessionId() ?? "";
+    }
+  } catch (fel) {
+    return jsonSvar(
+      { fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas." },
+      502,
+    );
+  }
 
   const stream = new ReadableStream<Uint8Array>({
     async start(kontroll) {
@@ -151,10 +230,19 @@ export async function POST(req: NextRequest) {
         }
       }, 15_000);
 
+      // VÅG 84 B: sessionskartan följer strömmen — aktiv under rundan,
+      // historik + aktiv=false efter klart/fel/abort. Lyssnar-wrapper
+      // fångar klart-svaret (kartans assistant-post) på vägen ut.
+      let svaret = "";
+      markeraSessionStart(sessionsId, prompt);
+      const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
+        if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
+        skicka(event);
+      };
+
       try {
-        await transport.ensure();
-        skicka({ typ: "hej", transport: transport.namn, sessionId: transport.sessionId() });
-        await transport.skicka(prompt, skicka, req.signal);
+        skicka({ typ: "hej", transport: transport.namn, sessionId: sessionsId || null });
+        await transport.skicka(prompt, skickaMedVakt, req.signal);
         // V82: färsk kontextsanning efter rundan (session/read-projektionen)
         // — updaterar kontextraden i UI:t utan extra hämtningsrunda.
         skicka({ typ: "kontext", kontext: await transport.lasKontext() });
@@ -172,6 +260,7 @@ export async function POST(req: NextRequest) {
           meddelande: fel instanceof Error ? fel.message.slice(0, 300) : "Okänt bryggfel.",
         });
       } finally {
+        markeraSessionSlut(sessionsId, svaret);
         clearInterval(hjarta);
         try {
           kontroll.close();

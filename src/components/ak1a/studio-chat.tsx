@@ -4089,7 +4089,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           arbetar — avbryta?" (ja = abort ⇒ session/stop). */}
       <nav
         aria-label="Sessionstabbbar"
-        className="sticky top-[var(--studio-tabbar-top,0)] z-10 border-b border-gold/20 bg-[#0D1B31]/95 backdrop-blur"
+        className="z-10 border-b border-gold/20 bg-[#0D1B31]/95 backdrop-blur"
       >
         <div className="mx-auto flex w-full max-w-3xl items-center gap-1 overflow-x-auto px-3 py-1.5 sm:px-4 [scrollbar-width:thin]">
           {tabbar.map((t) => {
@@ -4878,6 +4878,98 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         </div>
       </div>
+
+      {/* V84 A2: KOMMANDOPALETT (Ctrl/Cmd+K) — sök bland snabbkommandona,
+          "Byt modell X" och Tema. Registret STUDIO_KOMMANDON är källan;
+          ↑↓ navigerar, Enter kör, Esc stänger. Även knapp "⌘K" (mobil). */}
+      {palettOppen && (
+        <div
+          className="fixed inset-0 z-[70] flex items-start justify-center bg-black/50 p-4 pt-[12vh] backdrop-blur-[2px]"
+          onClick={() => setPalettOppen(false)}
+        >
+          <div
+            role="dialog"
+            aria-label="Kommandopalett"
+            className="w-full max-w-lg overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2 border-b border-gold/20 px-3.5 py-2.5">
+              <Command className="h-4 w-4 shrink-0 text-gold" />
+              <input
+                ref={palettInputRef}
+                value={palettFras}
+                onChange={(e) => setPalettFras(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    setPalettIndex((i) => Math.min(i + 1, palettPoster.length - 1));
+                  } else if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    setPalettIndex((i) => Math.max(i - 1, 0));
+                  } else if (e.key === "Enter") {
+                    e.preventDefault();
+                    const p = palettPoster[palettIndex];
+                    if (p) {
+                      setPalettOppen(false);
+                      p.kor();
+                    }
+                  }
+                }}
+                placeholder="Sök kommandon, modellbyten och tema…"
+                maxLength={80}
+                className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/60"
+              />
+              <kbd className="shrink-0 rounded border border-border px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground">
+                Esc
+              </kbd>
+            </div>
+            <ul className="max-h-72 overflow-y-auto py-1.5">
+              {palettPoster.length === 0 && (
+                <li className="px-4 py-3 text-xs text-muted-foreground">Inga träffar — prova "modell" eller "tema".</li>
+              )}
+              {palettPoster.map((p, i) => (
+                <li key={p.id}>
+                  <button
+                    ref={(el) => {
+                      if (el) palettRadRefs.current.set(p.id, el);
+                      else palettRadRefs.current.delete(p.id);
+                    }}
+                    onClick={() => {
+                      setPalettOppen(false);
+                      p.kor();
+                    }}
+                    onMouseEnter={() => setPalettIndex(i)}
+                    className={cn(
+                      "flex w-full items-center gap-2.5 px-3.5 py-2 text-left transition-colors",
+                      i === palettIndex ? "bg-gold/15" : "hover:bg-muted/60",
+                    )}
+                  >
+                    {p.ikon === "kommando" ? (
+                      <Terminal className="h-4 w-4 shrink-0 text-gold/80" />
+                    ) : p.ikon === "modell" ? (
+                      <Bot className="h-4 w-4 shrink-0 text-gold/80" />
+                    ) : morkLage ? (
+                      <Sun className="h-4 w-4 shrink-0 text-gold/80" />
+                    ) : (
+                      <Moon className="h-4 w-4 shrink-0 text-gold/80" />
+                    )}
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-xs font-semibold">{p.etikett}</span>
+                      <span className="block truncate text-[10px] text-muted-foreground/80">{p.beskrivning}</span>
+                    </span>
+                    <span className="shrink-0 rounded-full border border-border px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-muted-foreground/70">
+                      {p.grupp}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <p className="border-t border-gold/20 px-3.5 py-1.5 text-[10px] text-muted-foreground/70">
+              ↑↓ välj · Enter kör · Esc stänger — samma kommandon som /help
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

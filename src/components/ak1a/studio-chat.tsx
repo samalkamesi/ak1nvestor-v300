@@ -4,12 +4,17 @@ import * as React from "react";
 import Link from "next/link";
 
 import {
+  ArrowDown,
+  ArrowUp,
+  Bell,
+  BellRing,
   Bot,
   Brain,
   CheckCircle2,
   ChevronDown,
   ChevronRight,
   CircleStop,
+  Command,
   Diff,
   Download,
   FilePen,
@@ -25,15 +30,19 @@ import {
   ListChecks,
   Loader2,
   MessageCircleQuestion,
+  Moon,
   Paperclip,
   Pencil,
+  Plus,
   RefreshCw,
   Search,
   Send,
   ShieldAlert,
+  ShieldCheck,
   Sparkles,
   Shrink,
   SquarePen,
+  Sun,
   Target,
   Terminal,
   Trash2,
@@ -44,8 +53,9 @@ import {
 } from "lucide-react";
 
 import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
-import { kommandoHjalp, parsaKommando } from "@/lib/studio/kommandon";
+import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando } from "@/lib/studio/kommandon";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { StudioMinnePanel } from "@/components/ak1a/studio-minne-panel";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -122,6 +132,41 @@ import { cn } from "@/lib/utils";
  * det (t.ex. plan); hela kedjan är körbar i dev via mockens simulerade
  * dialog.
  *
+ * VÅG 84 STUDIO 100x block C (PERMISSION-UPPGRADERING):
+ * (1) DIFF-FÖRHANDSVISNING — interaktion-eventets nya fält "diff" (beräknat
+ * ur protokollets RÅA input i transportens diffUrInput: Write → +N, Edit →
+ * exakt −N/+N ur old_string/new_string, MultiEdit → edits[]) renderas i
+ * dialogen som FÄRGKODADE rader (gröna +/röda −, exakt som "Ändringar"-
+ * panelen) INNAN användaren väljer; verktyg utan filargument visar
+ * argument-summary som förr. (2) MINNESREGLER — localStorage
+ * "ak1a-studio-regler": [{verktyg, omfattning:"alltid"}]; en matchande
+ * permission besvaras automatiskt (allow_once) + notis i flödet
+ * "auto-godkänd enligt din regel"; hanteringspanel (lista + ta bort) +
+ * "Alltid tillåta <verktyg>"-knapp i dialogen. (3) NOTIS VID LÅNGA
+ * KÖRNINGAR — turn > 60 s ⇒ Web Notification (om tillåtet; klockknappen
+ * i verktygsraden begär rättigheten) + titelväxling "⏳ Agenten arbetar…";
+ * vid klart ⇒ "✓ Klar (N tkn)". (4) RISKBADGE — verktygsklassning
+ * (Bash/Write/Edit=orange "skrivande", Read/Glob/Grep=grön "läsande",
+ * WebSearch/WebFetch=gul "nät", övriga neutralt) visas bredvid protokoll-
+ * risk-badgen i dialogen.
+ *
+ * VÅG 84 STUDIO 100x BLOCK A (VISUELL Z-PARITET): TEMA-VÄXLARE — "dark"-klass
+ * på studions ROTELEMENT (class-strategin: @custom-variant dark (&:is(.dark *))
+ * + .dark-variablerna i globals.css ger marin natt + luminöst guld för hela
+ * subträdet utan att html berörs) med localStorage-persistens ("studio-tema"),
+ * knapp 🌙/☀️ i headern ELLER tangent T (ej i inmatningsfält). GENVÄGAR:
+ * Enter=skicka + Skift+Enter=nyrad (befintligt, verifierat) samt Ctrl/Cmd+K =
+ * KOMMANDOPALETT (sök bland /help /ny /modell /komprimera /filer + "Byt
+ * modell X" + "Tema" — registret STUDIO_KOMMANDON är källan). AUTO-SCROLL:
+ * flickerfri "vid botten"-spårning (onScroll + ref) — scrollar bara när
+ * användaren är vid botten; annars flytande "↓ Nytt"-knapp (hoppa ner +
+ * räknare av olästa). MEDDELANDESÖKNING: sökikon → fält i headern →
+ * highlight av träffar (även i StudioMarkdown + kodblock), räknare "x/y" +
+ * ↑/↓-pilnavigering (Enter nästa, Skift+Enter föregående, Esc stänger).
+ * EXPORTCHATT: "⬇ Exportera" laddar ner hela chatten som markdown (datum i
+ * filnamnet; agent-meddelanden som block, användare som blockcitat).
+ * TOKENRÄKNARE (A6): kontextradens 📊-rad är nowrap — syns på mobil.
+ *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
  * med automatiskt). INGA hemligheter renderas.
@@ -191,6 +236,144 @@ interface Uppladdning {
   storlek: number;
 }
 
+// ── VÅG 84 B: MULTI-SESSION-TABBAR (Z-portaLens flerfönster) ─────────────────
+
+/**
+ * En sessionstabb — huvudtabben (huvud=true) kör DEFAULT-transporten (alla
+ * header-kontroller: modell/läge/tankestyrka/ny session/komprimera/mål);
+ * egna tabbar (huvud=false) bär varsi per-session-transport på servern
+ * (POST {prompt, sessionId|nyckel} — egen zcode-barnprocess på prod).
+ * Buffrade meddelanden lever I tabben så inaktiva tabbar fortsätter samla
+ * SSE i bakgrunden (strömmens fetch-läsare skriver via rörTabb oavsett
+ * vilken tabb som är aktiv — vid tabbyte renderas tabbens buffert).
+ */
+interface Tabb {
+  /** Klient-side id ("tabb-huvud" för den första — sedan nyttId()). */
+  id: string;
+  /** true = huvudsessionen (default-transporten — våg 81/82/83-flödet). */
+  huvud: boolean;
+  /** zcode-sessionens id — null tills "hej"-eventet/resume-sidaloaden. */
+  sessionId: string | null;
+  /** Kortnamn — första orden i senaste prompten (tabbadgens text). */
+  titel: string;
+  /** Buffrad chatt (användare + agent + verktygskort + diff). */
+  meddelanden: Meddelande[];
+  /** Composer-utkastet (prompt-rutan är per tabb). */
+  utkast: string;
+  /** Agenten arbetar i DENNA tabben (ON-GÅENDE-pricken i tabbadgen). */
+  strömmar: boolean;
+  /** Strömstatus ("Agenten arbetar…") — tabbens tomma agentbubbla. */
+  status: string;
+  /** Senaste resonemangssvansen (reasoning_delta) per tabb. */
+  tankar: string;
+  /** Kontextsanning (session/read-projektionen) per tabb. */
+  kontext: KontextInfo | null;
+  rundaTkn: number | null;
+  ackumulerat: number;
+  /** Server-historik hämtad (resume-sidaload en gång per session). */
+  historikLasad: boolean;
+}
+
+/** Friska tabb-defaults (allt utom identiteten id/huvud/sessionId/titel). */
+function tabbGrund(): Pick<
+  Tabb,
+  "meddelanden" | "utkast" | "strömmar" | "status" | "tankar" | "kontext" | "rundaTkn" | "ackumulerat" | "historikLasad"
+> {
+  return {
+    meddelanden: [],
+    utkast: "",
+    strömmar: false,
+    status: "",
+    tankar: "",
+    kontext: null,
+    rundaTkn: null,
+    ackumulerat: 0,
+    historikLasad: false,
+  };
+}
+
+/** Kortnamn ur en prompt — första tre orden, max ~20 tecken. */
+function kortNamn(text: string): string {
+  const ren = text.trim().replace(/^\/\S+\s*/, "");
+  const ord = ren.split(/\s+/).filter(Boolean);
+  if (ord.length === 0) return "Ny tabb";
+  const namn = ord.slice(0, 3).join(" ");
+  return namn.length > 20 ? `${namn.slice(0, 20)}…` : namn;
+}
+
+/** Modellsuffix för tabbadgen — "zai/glm-5.3" → "glm-5.3", "mock/demo" → "demo". */
+function modellBadge(modell?: string): string {
+  if (!modell) return "—";
+  const delar = modell.split("/");
+  return (delar.length > 1 ? delar.slice(1).join("/") : modell).slice(0, 16);
+}
+
+/** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
+const TABB_LAGRING = "ak1a-studio-tabbar";
+
+/** Tak för det som persistas per tabb (sessionStorage-quota är öm). */
+const MAX_TABB_MEDDELANDEN = 200;
+const MAX_TABB_TEXT = 20_000;
+
+/** Serialisera tabbar — strömmar ALWAYS false (strömmar överlever ingen refresh). */
+function sparaTabbar(tabbar: Tabb[], aktivTabbId: string): void {
+  try {
+    sessionStorage.setItem(
+      TABB_LAGRING,
+      JSON.stringify({
+        version: 1,
+        sparad: Date.now(),
+        aktivTabbId,
+        tabbar: tabbar.map((t) => ({
+          ...t,
+          utkast: t.utkast.slice(0, 5_000),
+          strömmar: false,
+          status: "",
+          tankar: "",
+          meddelanden: t.meddelanden.slice(-MAX_TABB_MEDDELANDEN).map((m) => ({
+            ...m,
+            text: m.text.slice(0, MAX_TABB_TEXT),
+            verktygKort: m.verktygKort?.map((k) => ({
+              ...k,
+              argument: k.argument?.slice(0, 2_000),
+              resultat: k.resultat?.slice(0, 2_000),
+              fel: k.fel?.slice(0, 2_000),
+              liveInput: k.liveInput?.slice(-500),
+              öppen: false,
+            })),
+            ändringar: m.ändringar?.map((f) => ({ ...f, rader: f.rader.slice(0, 50), öppen: false })),
+          })),
+        })),
+      }),
+    );
+  } catch {
+    // quota/privat läge — tabbar lever i minnet, refresh börjar friskt
+  }
+}
+
+/** Återställ tabbar ur sessionStorage — null när inget/tomt/ogiltigt sparat. */
+function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
+  try {
+    const rå = sessionStorage.getItem(TABB_LAGRING);
+    if (!rå) return null;
+    const pars = JSON.parse(rå) as { version?: number; aktivTabbId?: string; tabbar?: Tabb[] };
+    if (pars.version !== 1 || !Array.isArray(pars.tabbar) || pars.tabbar.length === 0) return null;
+    const tabbar = pars.tabbar
+      .filter((t) => typeof t?.id === "string" && t.id)
+      .map((t) => ({ ...tabbGrund(), ...t, strömmar: false, status: "", tankar: "" }));
+    if (tabbar.length === 0) return null;
+    // Exakt EN huvudtabb — annars promotar den första sig (robusthet).
+    if (!tabbar.some((t) => t.huvud)) tabbar[0].huvud = true;
+    const aktiv =
+      typeof pars.aktivTabbId === "string" && tabbar.some((t) => t.id === pars.aktivTabbId)
+        ? pars.aktivTabbId
+        : tabbar[0].id;
+    return { aktivTabbId: aktiv, tabbar };
+  } catch {
+    return null;
+  }
+}
+
 /** Modellpost ur GET /api/studio/modeller (härledd ur config.json — aldrig hårdkodad). */
 interface ModellPost {
   id: string;
@@ -227,6 +410,8 @@ interface PermissionDialog {
   skäl?: string;
   sammanfattning: string;
   alternativ: PermissionAlternativ[];
+  /** V84 C: diff-förhandsvisning (Write/Edit/MultiEdit) — innan valet. */
+  diff?: Filandring;
 }
 
 /** Väntande frågekort (interaction/requestUserInput). */
@@ -259,6 +444,98 @@ function riskFarg(risk: string): string {
       return "bg-white/10 text-[#EDE6D6]/70";
   }
 }
+
+// ── VÅG 84 C: verktygsriskklassning + minnesregler + långkörningsnotis ──────
+
+/** Klassning per verktygstyp (dialogens andra badge — bredvid protokoll-risken). */
+interface Verktygsrisk {
+  etikett: string;
+  farg: string;
+  /** Kort förklaring i title-attributet. */
+  forklaring: string;
+}
+
+/**
+ * Klassa verktyget i risknivå (KVD block C): Bash/Write/Edit = orange
+ * "skrivande" (ändrar filer/kör kommandon), Read/Glob/Grep = grön "läsande"
+ * (bara läser), WebSearch/WebFetch = gul "nät" (lämnar maskinen), övriga
+ * (t.ex. mcp__*) = neutralt "annat". Matchar namnet gemener + kända alias.
+ */
+function verktygsriskKlass(verktyg: string): Verktygsrisk {
+  const n = verktyg.toLowerCase();
+  if (
+    n === "bash" ||
+    n === "write" ||
+    n === "edit" ||
+    n === "multiedit" ||
+    n === "notebookedit" ||
+    n === "notebookeditcell" ||
+    n.startsWith("bash")
+  ) {
+    return {
+      etikett: "skrivande",
+      farg: "bg-orange-400/15 text-orange-300",
+      forklaring: "Skrivande verktyg — ändrar filer eller kör kommandon (Bash/Write/Edit = orange)",
+    };
+  }
+  if (n === "read" || n === "glob" || n === "grep" || n === "ls" || n === "listfiles") {
+    return {
+      etikett: "läsande",
+      farg: "bg-emerald-400/15 text-emerald-300",
+      forklaring: "Läsande verktyg — ändrar ingenting (Read/Glob/Grep = grön)",
+    };
+  }
+  if (n === "websearch" || n === "webfetch" || n === "websearchquery" || n === "webreader") {
+    return {
+      etikett: "nät",
+      farg: "bg-gold/15 text-gold",
+      forklaring: "Nätverkverktyg — hämtar från webben (WebSearch/WebFetch = gul)",
+    };
+  }
+  return {
+    etikett: "annat",
+    farg: "bg-white/10 text-[#EDE6D6]/70",
+    forklaring: "Oklassat verktyg (t.ex. MCP) — klassas som varken läsande eller skrivande",
+  };
+}
+
+/** Minnesregel "alltid tillåt" (localStorage ak1a-studio-regler). */
+interface PermissionRegel {
+  /** Verktygsnamn EXAKT som protokollet bär det (matchas skiftlägesokänsligt). */
+  verktyg: string;
+  omfattning: "alltid";
+  /** Sparad tidpunkt (ms) — visas i hanteringspanelen. */
+  skapad: number;
+}
+
+/** localStorage-nyckel för "alltid tillåt"-reglerna (KVD block C). */
+const REGEL_NYCKEL = "ak1a-studio-regler";
+
+/**
+ * Läs reglerna ur localStorage — tolvfältsskyddad (ogiltig JSON/annat format
+ * ⇒ tomt register, ALDRIG krasch). Körs endast i effekter (klient).
+ */
+function lasReglerUrLagring(): PermissionRegel[] {
+  try {
+    const rader = window.localStorage.getItem(REGEL_NYCKEL);
+    if (!rader) return [];
+    const parsad = JSON.parse(rader) as unknown;
+    if (!Array.isArray(parsad)) return [];
+    const ut: PermissionRegel[] = [];
+    for (const r of parsad) {
+      const p = r as { verktyg?: unknown; omfattning?: unknown; skapad?: unknown };
+      if (typeof p?.verktyg === "string" && p.verktyg && p?.omfattning === "alltid") {
+        ut.push({ verktyg: p.verktyg, omfattning: "alltid", skapad: typeof p.skapad === "number" ? p.skapad : Date.now() });
+      }
+    }
+    return ut;
+  } catch {
+    return [];
+  }
+}
+
+/** Tröskel för långkörningsnotis (KVD block C: "om en turn pågår > 60 s"). */
+const TURN_NOTIS_TRAOSKEL_MS = 60_000;
 
 /** Post ur GET /api/studio/session (session/list, v83 B3-berikad). */
 interface SessionPost {
@@ -345,6 +622,8 @@ interface StreamEvent {
         skäl?: string;
         sammanfattning: string;
         alternativ: PermissionAlternativ[];
+        /** V84 C: diff-förhandsvisning ur verktygsargumenten (transportens diffUrInput). */
+        diff?: Filandring;
       } & { val?: undefined; fråga?: undefined; inputTyp?: undefined })
     | ({
         typ: "fråga";
@@ -454,6 +733,65 @@ interface FilVisning {
   fel?: string;
 }
 
+// ── VÅG 84 D: agentens minne (Minne 🧠-panelen) ─────────────────────────────
+
+/**
+ * Minnespost ur GET /api/studio/minne — agentens zcode-minne
+ * (MEMORY.md-index + faktafiler) + AGENTS.md som egen post. Listans
+ * innehåll är en ≤ 8 kB förhandsvisning (trunkerad-flaggan) — full text
+ * hämtas med GET ?namn= vid klick.
+ */
+interface MinnePost {
+  namn: string;
+  storlek: number;
+  uppdaterad?: number;
+  /** Ur frontmatter (description:) — VAD agenten minns om filen. */
+  beskrivning?: string;
+  /** "index" = MEMORY.md · "agents" = AGENTS.md · "minne" = faktafil. */
+  typ: "index" | "agents" | "minne";
+  innehåll: string;
+  trunkerad?: boolean;
+}
+
+/** Ny minnesfils frontmatter-mall (samma form som agentens egna filer). */
+const MINNES_MALL = (namn: string) =>
+  [
+    "---",
+    `name: ${namn}`,
+    "description: Kort beskrivning av vad agenten ska minnas",
+    "metadata:",
+    "  node_type: memory",
+    "  type: project",
+    "---",
+    "",
+    "Faktum/text som agenten ska minnas — kunden kan rätta rader här.",
+    "",
+  ].join("\n");
+
+/** Mall för AGENTS.md (skapas från panelen när filen saknas). */
+const AGENTS_MALL = [
+  "---",
+  "description: Stående instruktioner till agenten i denna arbetsyta",
+  "---",
+  "",
+  "# Instruktioner till agenten (AGENTS.md)",
+  "",
+  "Det agenten ska veta/lämna sig till i VARJE session — utan att kunden",
+  "behöver chatta fram det. Exempel:",
+  "",
+  "- Svara alltid på svenska.",
+  "- Pedagogisk plattform — aldrig investeringsråd.",
+  "",
+].join("\n");
+
+/** Minnesfilnamn i UI:t — samma mönster som servern validerar. */
+const MINNES_NAMN_RE = /^[a-z0-9][a-z0-9\-]*\.md$/;
+
+/** Frontmatter av för läsbar markdownvy (visar kroppen utan --- blocket). */
+function rensaFrontmatter(text: string): string {
+  return text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").trimStart();
+}
+
 /**
  * Bildreferenser i en text — matchar agentens upload-sökvägar
  * ("uploads/<datum>/<namn>.png"). Dedupe i tur- och ordning. Existens
@@ -474,10 +812,87 @@ function bildUrl(sokvag: string): string {
   return `/api/studio/filer?sokvag=${encodeURIComponent(sokvag)}&bild=1`;
 }
 
+// ── VÅG 84 A: kommandopalett + sök-highlight ───────────────────────────────
+
+/** Rad i kommandopaletten (Ctrl/Cmd+K) — kommando, modellbyte eller tema. */
+interface PalettPost {
+  id: string;
+  etikett: string;
+  beskrivning: string;
+  grupp: "Kommandon" | "Modeller" | "Utseende";
+  ikon: "kommando" | "modell" | "tema";
+  /** Sökbar text (lowercase) — frasen matchas mot denna. */
+  sokbar: string;
+  kor: () => void;
+}
+
+/** En träff i meddelandesökningen — vilken förekomst i vilket meddelande. */
+interface SokTräff {
+  meddelandeId: string;
+  /** 0-baserad förekomst-ordinal INOM meddelandet (i textordning). */
+  forekomst: number;
+}
+
+/** Räknare som följer mark-renderingens ordning (dokumentordning). */
+interface MarkRaknare {
+  n: number;
+}
+
+/**
+ * Text med sökträffar → noder med <mark>. Räknaren delas med anroparen så
+ * "aktiv förekomst" kan markeras starkt (bg-gold-chip med marin text —
+ * läsbart på cream-, marin- och natt-botten i båda temana).
+ */
+function markeraVanlig(
+  text: string,
+  fras: string,
+  aktivForekomst: number,
+  raknare?: MarkRaknare,
+): React.ReactNode[] | string {
+  if (!fras) return text;
+  const hojd = text.toLowerCase();
+  const f = fras.toLowerCase();
+  if (f === "" || !hojd.includes(f)) return text;
+  const ut: React.ReactNode[] = [];
+  let pos = 0;
+  let i = hojd.indexOf(f, pos);
+  while (i >= 0) {
+    if (i > pos) ut.push(text.slice(pos, i));
+    const nummer = raknare ? raknare.n++ : 0;
+    ut.push(
+      <mark
+        key={`mark-${i}`}
+        className={
+          nummer === aktivForekomst
+            ? "rounded-sm bg-[#c9a84c] px-0.5 font-semibold text-[#0E1B2E]"
+            : "rounded-sm bg-gold/35 px-0.5 text-inherit"
+        }
+      >
+        {text.slice(i, i + f.length)}
+      </mark>,
+    );
+    pos = i + f.length;
+    i = hojd.indexOf(f, pos);
+  }
+  if (pos < text.length) ut.push(text.slice(pos));
+  return ut;
+}
+
+/** Räkna förekomster (skiftlägesokänsligt) — sökindexets ground truth. */
+function raknaForekomster(text: string, fras: string): number {
+  if (!fras) return 0;
+  return text.toLowerCase().split(fras.toLowerCase()).length - 1;
+}
+
 // ── Markdown (bloggens tolkning + kodblock) ──────────────────────────────────
 
-/** Inline-markdown → noder (samma mönster som blogg-spegel-sida.tsx). */
-function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
+/** Inline-markdown → noder (samma mönster som blogg-spegel-sida.tsx).
+ * V84 A: valfri sökkontext highlightar träffar i vanlig löptext. */
+function renderInline(
+  text: string,
+  keyPrefix: string,
+  sok?: { fras: string; aktiv: number; raknare: MarkRaknare },
+): React.ReactNode[] {
   const ut: React.ReactNode[] = [];
   const segments = text.split(
     /(\[[^\]]+\]\([^)\s]+\)|\*\*[^*]+\*\*|`[^`]+`|_[^_]+_|\*[^*\n]+\*)/g,
@@ -508,6 +923,14 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
       );
     } else if ((seg.startsWith("_") && seg.endsWith("_")) || (seg.startsWith("*") && seg.endsWith("*"))) {
       ut.push(<em key={`${keyPrefix}-i${i}`}>{seg.slice(1, -1)}</em>);
+    } else if (sok && sok.fras) {
+      // V84 A: vanlig löptext — dela på sökfrasen och markera träffarna.
+      const markerad = markeraVanlig(seg, sok.fras, sok.aktiv, sok.raknare);
+      if (typeof markerad === "string") {
+        ut.push(markerad);
+      } else {
+        markerad.forEach((nod, j) => ut.push(<React.Fragment key={`${keyPrefix}-s${i}-${j}`}>{nod}</React.Fragment>));
+      }
     } else {
       ut.push(seg);
     }
@@ -515,10 +938,22 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
   return ut;
 }
 
-/** Block-markdown: kodblock, rubriker, listor, stycken. */
-function StudioMarkdown({ text }: { text: string }) {
+/** Block-markdown: kodblock, rubriker, listor, stycken.
+ * V84 A: markera highlightar sökträffar (även i kodblock) — aktiv-
+ * förekomstordinalen räknas i renderingsordning via delad räknare. */
+function StudioMarkdown({
+  text,
+  markera,
+}: {
+  text: string;
+  markera?: { fras: string; aktivForekomst: number };
+}): React.JSX.Element {
   const block = React.useMemo(() => {
     const delar: React.ReactNode[] = [];
+    const sok =
+      markera && markera.fras
+        ? { fras: markera.fras, aktiv: markera.aktivForekomst, raknare: { n: 0 } as MarkRaknare }
+        : undefined;
     // Dela på kodblock först (``` ... ```).
     const segment = text.split(/```/);
     segment.forEach((seg, i) => {
@@ -534,7 +969,7 @@ function StudioMarkdown({ text }: { text: string }) {
             className="mt-3 overflow-x-auto rounded-md border border-gold/20 bg-muted/70 p-3 font-mono text-xs leading-relaxed"
           >
             {sprak && <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-gold">{sprak}</div>}
-            <code>{kropp}</code>
+            <code>{sok ? markeraVanlig(kropp, sok.fras, sok.aktiv, sok.raknare) : kropp}</code>
           </pre>,
         );
         return;
@@ -548,7 +983,7 @@ function StudioMarkdown({ text }: { text: string }) {
           <ul key={nyckel} className="mt-3 list-disc space-y-1 pl-5">
             {listBuffert.map((l, j) => (
               <li key={j} className="leading-relaxed">
-                {renderInline(l, `${nyckel}-${j}`)}
+                {renderInline(l, `${nyckel}-${j}`, sok)}
               </li>
             ))}
           </ul>,
@@ -561,14 +996,14 @@ function StudioMarkdown({ text }: { text: string }) {
           spolaLista(`l${i}-${j}`);
           delar.push(
             <h3 key={`h-${i}-${j}`} className="mt-4 font-serif text-lg font-bold">
-              {renderInline(ren.slice(3), `h${i}-${j}`)}
+              {renderInline(ren.slice(3), `h${i}-${j}`, sok)}
             </h3>,
           );
         } else if (ren.startsWith("### ")) {
           spolaLista(`l${i}-${j}`);
           delar.push(
             <h4 key={`h4-${i}-${j}`} className="mt-3 font-serif text-base font-bold">
-              {renderInline(ren.slice(4), `h4${i}-${j}`)}
+              {renderInline(ren.slice(4), `h4${i}-${j}`, sok)}
             </h4>,
           );
         } else if (/^[-*] /.test(ren)) {
@@ -579,7 +1014,7 @@ function StudioMarkdown({ text }: { text: string }) {
           spolaLista(`l${i}-${j}`);
           delar.push(
             <p key={`p-${i}-${j}`} className="mt-3 leading-relaxed first:mt-0">
-              {renderInline(ren, `p${i}-${j}`)}
+              {renderInline(ren, `p${i}-${j}`, sok)}
             </p>,
           );
         }
@@ -587,7 +1022,7 @@ function StudioMarkdown({ text }: { text: string }) {
       spolaLista(`sista-${i}`);
     });
     return delar;
-  }, [text]);
+  }, [text, markera]);
   return <div className="text-sm">{block}</div>;
 }
 
@@ -854,17 +1289,59 @@ function AndringsPanel({
   );
 }
 
+/**
+ * V84 C: DIFF-FÖRHANDSVISNING i permission-dialogen — exakt vad Write/Edit
+ * kommer att ändra, FÄRGKODAT (gröna +rader/röda −rader, samma rendition som
+ * "Ändringar"-panelen) INNAN användaren väljer. Filrad + ärliga ±N i
+ * rubriken; raderlista med radlängdstak från transporten.
+ */
+function DiffForhandsvisning({ diff }: { diff: Filandring }): React.JSX.Element {
+  return (
+    <div className="mt-2 overflow-hidden rounded-lg border border-gold/30 bg-black/30">
+      <p className="flex items-center gap-1.5 border-b border-gold/20 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/80">
+        <Diff className="h-3.5 w-3.5 text-gold" />
+        Diff-förhandsvisning
+      </p>
+      <div className="flex items-center gap-1.5 border-b border-gold/10 bg-black/20 px-2.5 py-1.5" title={diff.sokvag}>
+        <FilePen className="h-3 w-3 shrink-0 text-gold/70" />
+        <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-[#EDE6D6]/90">
+          {diff.sokvag.split("/").slice(-2).join("/")}
+        </span>
+        <span className="shrink-0 font-mono text-[10px] font-bold text-emerald-400">+{diff.plus}</span>
+        <span className="shrink-0 font-mono text-[10px] font-bold text-red-400">−{diff.minus}</span>
+      </div>
+      <pre className="max-h-56 overflow-auto px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
+        {diff.rader.map((r, i) => (
+          <span
+            key={i}
+            className={cn(
+              "block whitespace-pre-wrap break-all",
+              r.typ === "+" ? "text-emerald-300" : "text-red-300",
+            )}
+          >
+            {r.typ === "+" ? "+" : "−"} {r.text || " "}
+          </span>
+        ))}
+      </pre>
+    </div>
+  );
+}
+
 // ── Huvudkomponent ───────────────────────────────────────────────────────────
 
 let idRäknare = 0;
 const nyttId = () => `m${++idRäknare}-${Date.now().toString(36)}`;
 
 export function StudioChat({ hem }: { hem: () => void }) {
-  const [meddelanden, setMeddelanden] = React.useState<Meddelande[]>([]);
+  // ── VÅG 84 B: MULTI-SESSION-TABBAR — per-tabb-livet lever i `tabbar` ─────
+  // (meddelanden/strömmar/tankar/kontext/rundaTkn/ackumulerat härleds ur den
+  // AKTIVA tabben nedan — JSX:ets gamla namn lever kvar oförändrade).
+  const [tabbar, setTabbar] = React.useState<Tabb[]>(() => [
+    { id: "tabb-huvud", huvud: true, sessionId: null, titel: "Huvudsession", ...tabbGrund() },
+  ]);
+  const [aktivTabbId, setAktivTabbId] = React.useState("tabb-huvud");
   const [prompt, setPrompt] = React.useState("");
-  const [strömmar, setStrömmar] = React.useState(false);
   const [statusText, setStatusText] = React.useState("Ansluter…");
-  const [tankar, setTankar] = React.useState("");
   const [live, setLive] = React.useState<"live" | "demo" | "ned">("ned");
   const [uppladdningar, setUppladdningar] = React.useState<Uppladdning[]>([]);
   const [laddarUpp, setLaddarUpp] = React.useState(false);
@@ -874,9 +1351,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [modeller, setModeller] = React.useState<ModellPost[]>([]);
   const [valdModell, setValdModell] = React.useState("");
   const [byterModell, setByterModell] = React.useState(false);
-  const [kontext, setKontext] = React.useState<KontextInfo | null>(null);
-  const [rundaTkn, setRundaTkn] = React.useState<number | null>(null);
-  const [ackumulerat, setAckumulerat] = React.useState(0);
   const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
   const [visaSessioner, setVisaSessioner] = React.useState(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
@@ -906,6 +1380,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [visningLaddar, setVisningLaddar] = React.useState(false);
   const [tommerUploads, setTommerUploads] = React.useState(false);
 
+  // ── VÅG 84 D: agentens minne — Minne 🧠-panelen (drawer som filträdet) ──
+  const [visaMinne, setVisaMinne] = React.useState(false);
+  const [minneFiler, setMinneFiler] = React.useState<MinnePost[] | null>(null);
+  const [minneLaddar, setMinneLaddar] = React.useState(false);
+  const [minneFel, setMinneFel] = React.useState("");
+  const [minneRotVisning, setMinneRotVisning] = React.useState("");
+  const [minneVald, setMinneVald] = React.useState<MinnePost | null>(null);
+  const [minneDetaljLaddar, setMinneDetaljLaddar] = React.useState(false);
+  const [minneRedigerar, setMinneRedigerar] = React.useState(false);
+  const [minneText, setMinneText] = React.useState("");
+  const [minneSparar, setMinneSparar] = React.useState(false);
+  const [minneRaderar, setMinneRaderar] = React.useState(false);
+  const [minneNy, setMinneNy] = React.useState(false);
+  const [minneNyttNamn, setMinneNyttNamn] = React.useState("");
+
   // ── VÅG 83 B2: Z-portaLens — dialoger + läge/tankestyrka ─────────────────
   const [permission, setPermission] = React.useState<PermissionDialog | null>(null);
   const [fraga, setFraga] = React.useState<FragaDialog | null>(null);
@@ -915,17 +1404,460 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [tanka, setTanka] = React.useState("");
   const [lageJobbar, setLageJobbar] = React.useState(false);
 
+  // ── VÅG 84 C: minnesregler + långkörningsnotiser ─────────────────────────
+  /** "alltid tillåt"-regler (localStorage ak1a-studio-regler). */
+  const [regler, setRegler] = React.useState<PermissionRegel[]>([]);
+  /** Regler som ref — auto-godkännandet läser färskt värde mitt i ström. */
+  const reglerRef = React.useRef<PermissionRegel[]>([]);
+  /** Hanteringspanelen (lista regler + ta bort). */
+  const [visaRegler, setVisaRegler] = React.useState(false);
+  /** Web Notification-rättigheten ("default"|"granted"|"denied"|"stöds ej"). */
+  const [notisRattighet, setNotisRattighet] = React.useState("default");
+  /** Turnens start (ms) — null när ingen turn pågår. */
+  const turnStartRef = React.useRef<number | null>(null);
+  /** True när långkörningsnotisen gått ut (styrräknare). */
+  const turnNotiseradRef = React.useRef(false);
+  /** Senaste turnens tokenantal (klart-notisens "✓ Klar (N tkn)"). */
+  const turnTknRef = React.useRef<number | null>(null);
+  /** Titelväxlarens interval-id (null = ingen växling pågår). */
+  const titleVaxlingRef = React.useRef<number | null>(null);
+  /** Dokumentets ordinarie titel (återställs när turnen klart). */
+  const grundTitelRef = React.useRef<string | null>(null);
+
+  // ── VÅG 84 A: VISUELL Z-PARITET — tema + palett + sök + auto-scroll ──────
+  /** Tema: "dark"-klass på ROTELEMENTET (localStorage "studio-tema"). SSR
+   *  startar ljus (ingen hydrationsskillnad) — persistens läses i effect. */
+  const [morkLage, setMorkLage] = React.useState(false);
+  /** Kommandopalett (Ctrl/Cmd+K) — sök + ↑↓ + Enter. */
+  const [palettOppen, setPalettOppen] = React.useState(false);
+  const [palettFras, setPalettFras] = React.useState("");
+  const [palettIndex, setPalettIndex] = React.useState(0);
+  /** Meddelandesökning — highlight + räknare + pilnavigering. */
+  const [sokOppen, setSokOppen] = React.useState(false);
+  const [sokFras, setSokFras] = React.useState("");
+  const [sokIndex, setSokIndex] = React.useState(0);
+  /** Auto-scroll: användaren vid botten? + olästa sedan uppscrollning. */
+  const [vidBotten, setVidBotten] = React.useState(true);
+  const [nyaSedanUpp, setNyaSedanUpp] = React.useState(0);
+
+  const sokInputRef = React.useRef<HTMLInputElement | null>(null);
+  const palettInputRef = React.useRef<HTMLInputElement | null>(null);
+  const vidBottenRef = React.useRef(true);
+  const foreLangdRef = React.useRef(0);
+  /** Element-refs per meddelande — sökträffar scrollas fram (block:center). */
+  const meddelandeRefs = React.useRef<Map<string, HTMLElement>>(new Map());
+  /** Element-refs per palettrad — tangentnavigering scrollar fram vald rad. */
+  const palettRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
+
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const filInputRef = React.useRef<HTMLInputElement | null>(null);
   const mappInputRef = React.useRef<HTMLInputElement | null>(null);
-  const abortRef = React.useRef<AbortController | null>(null);
+  /** V84 B: en AbortController per TABB (stäng tabb = abort ⇒ session/stop). */
+  const tabbAbortRef = React.useRef<Map<string, AbortController>>(new Map());
+  /** V84 B: aktiv tabb som ref — ström-closures läser färskt värde. */
+  const aktivTabbIdRef = React.useRef("tabb-huvud");
+  /** V84 B: senaste tabbar+aktiv för beforeunload-spolning. */
+  const tabbarRef = React.useRef<{ tabbar: Tabb[]; aktivTabbId: string }>({ tabbar: [], aktivTabbId: "tabb-huvud" });
+  /** V84 B: throttle-mätare för sessionStorage-sparningen. */
+  const senasteSparaRef = React.useRef(0);
+  const sparaTimerRef = React.useRef<number | null>(null);
+
+  // ── V84 B: TABB-MUTERING + HÄRLEDDA VY-VÄRDEN ─────────────────────────────
+  /** Rör en tabb funktionellt — strömmar skriver ofta, även i bakgrunden. */
+  const rörTabb = React.useCallback((id: string, rör: (t: Tabb) => Tabb) => {
+    setTabbar((alla) => alla.map((t) => (t.id === id ? rör(t) : t)));
+  }, []);
+
+  /** Aktiv + huvudtabb (huvud = default-transportens tabb). */
+  const aktivTabb = tabbar.find((t) => t.id === aktivTabbId) ?? tabbar[0];
+  const huvudTabb = tabbar.find((t) => t.huvud) ?? tabbar[0];
+  /** Härledda vy-värden — JSX:ets gamla namn (meddelanden, strömmar, …) lever kvar. */
+  const meddelanden = aktivTabb?.meddelanden ?? [];
+  const strömmar = aktivTabb?.strömmar ?? false;
+  const tankar = aktivTabb?.tankar ?? "";
+  const kontext = aktivTabb?.kontext ?? null;
+  const rundaTkn = aktivTabb?.rundaTkn ?? null;
+  const ackumulerat = aktivTabb?.ackumulerat ?? 0;
+  /** Huvudtabbens ström (header-kontroller vakar på DEFAULT-transporten). */
+  const strömmarHuvud = huvudTabb?.strömmar ?? false;
+  /** NÅGON tabb strömmar — långkörningsnotisen + titelväxlingens villkor. */
+  const nagotStrömmar = tabbar.some((t) => t.strömmar);
+  /** Den aktiva tabben är huvudtabben (kontroller som styr default-sessionen). */
+  const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+
+  // Ref-synk: ström-closures (skicka) + beforeunload ser färskt aktiv-tabbar.
+  React.useEffect(() => {
+    aktivTabbIdRef.current = aktivTabbId;
+    tabbarRef.current = { tabbar, aktivTabbId };
+  }, [aktivTabbId, tabbar]);
 
   /** Bekräftelse-toast — försvinner av sig själv efter 4,5 s. */
   const visaToast = React.useCallback((text: string, ton: "guld" | "fel" = "guld") => {
     setToast({ text, ton });
     window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
   }, []);
+
+  // ── V84 A1: TEMA — läs persistens, växla med knapp eller tangent T ──────
+  React.useEffect(() => {
+    try {
+      if (window.localStorage.getItem("studio-tema") === "mörk") setMorkLage(true);
+    } catch {
+      // privat läge m.fl. — temat blir ljus, allt fungerar
+    }
+  }, []);
+
+  const vaxlaTema = React.useCallback(() => {
+    setMorkLage((nu) => {
+      const ny = !nu;
+      try {
+        window.localStorage.setItem("studio-tema", ny ? "mörk" : "ljus");
+      } catch {
+        // sparning är lyx — växlingen lever i state
+      }
+      return ny;
+    });
+  }, []);
+
+  // ── VÅG 84 C: regler ur localStorage + notisrättighet + ref-synk ─────────
+
+  // Uppstart: läs "alltid tillåt"-reglerna + notisrättighetens nuläge.
+  React.useEffect(() => {
+    const lista = lasReglerUrLagring();
+    reglerRef.current = lista; // ref direkt — auto-godkännandet ser reglerna samma tick
+    setRegler(lista);
+    setNotisRattighet(typeof Notification === "undefined" ? "stöds ej" : Notification.permission);
+  }, []);
+
+  // Reglerna hålls även i ref — mottagenPermission läser färskt värde mitt
+  // i en pågående ström (state-closure blir annars gammal).
+  React.useEffect(() => {
+    reglerRef.current = regler;
+  }, [regler]);
+
+  /** V84 C: be om notisrättigheten (klockknappen i verktygsraden). */
+  const begraNotisRattighet = React.useCallback(async () => {
+    if (typeof Notification === "undefined") {
+      visaToast("Webbläsaren saknar stöd för notiser.", "fel");
+      return;
+    }
+    if (Notification.permission === "granted") {
+      visaToast("Notiser är redan påslagna — långa rundor (>60 s) pingar dig.");
+      return;
+    }
+    if (Notification.permission === "denied") {
+      visaToast("Notiser är blockerade — tillåt ak1nvestor.com i webbläsarens inställningar.", "fel");
+      return;
+    }
+    try {
+      const svar = await Notification.requestPermission();
+      setNotisRattighet(svar);
+      visaToast(
+        svar === "granted"
+          ? "Notiser på — du får veta när agenten arbetat över 60 s och när den är klar."
+          : "Inga notiser — titelväxlingen fungerar ändå.",
+      );
+    } catch {
+      visaToast("Notisrättigheten kunde ej begäras.", "fel");
+    }
+  }, [visaToast]);
+
+  /**
+   * V84 C: LÅNGKÖRNINGSVAKT — medan en turn strömmar: efter 60 s ⇒ Web
+   * Notification (om tillåtet) + titelväxling "⏳ Agenten arbetar…" var
+   * 1,5 s. Cleanup (turnen klart/avbruten/unmount): stoppa växlingen,
+   * återställ titeln och — OM notisen gått ut — "✓ Klar (N tkn)".
+   * V84 B: vakten lyssnar på NÅGON tabb (agenten arbetar även i bakgrunden).
+   */
+  React.useEffect(() => {
+    if (!nagotStrömmar) return;
+    turnStartRef.current = Date.now();
+    turnNotiseradRef.current = false;
+    turnTknRef.current = null;
+    grundTitelRef.current = document.title;
+    const vakt = window.setInterval(() => {
+      const start = turnStartRef.current;
+      if (!start || turnNotiseradRef.current) return;
+      if (Date.now() - start < TURN_NOTIS_TRAOSKEL_MS) return;
+      turnNotiseradRef.current = true;
+      if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+        try {
+          new Notification("⏳ Agenten arbetar…", {
+            body: "Rundan har pågått över 60 sekunder — studion fortsätter själv. Du kan lämna fliken öppen.",
+            tag: "ak1a-studio-turn",
+          });
+        } catch {
+          // vissa plattformar kräver ServiceWorker-registrering — tyst
+        }
+      }
+      if (titleVaxlingRef.current === null) {
+        const grund = grundTitelRef.current ?? "AK1A Studio";
+        let visaVaxel = false;
+        titleVaxlingRef.current = window.setInterval(() => {
+          visaVaxel = !visaVaxel;
+          document.title = visaVaxel ? "⏳ Agenten arbetar…" : grund;
+        }, 1_500);
+      }
+    }, 2_000);
+    return () => {
+      window.clearInterval(vakt);
+      const start = turnStartRef.current;
+      turnStartRef.current = null;
+      if (titleVaxlingRef.current !== null) {
+        window.clearInterval(titleVaxlingRef.current);
+        titleVaxlingRef.current = null;
+      }
+      if (grundTitelRef.current !== null) document.title = grundTitelRef.current;
+      const antal = turnTknRef.current;
+      const paminerad = turnNotiseradRef.current;
+      turnNotiseradRef.current = false;
+      if (start !== null && paminerad && typeof Notification !== "undefined" && Notification.permission === "granted") {
+        try {
+          new Notification(`✓ Klar${typeof antal === "number" ? ` (${tkn(antal)} tkn)` : ""}`, {
+            body: "Agenten är klar — öppna studion för att läsa svaret.",
+            tag: "ak1a-studio-turn",
+          });
+        } catch {
+          // tyst
+        }
+      }
+    };
+  }, [nagotStrömmar]);
+
+  // ── V84 B: TABBHANTERING — ny tabb, växla, stäng (confirm vid arbete) ────
+  // TAK: 8 tabbar (servern = 1 Next-process + N zcode-barnprocesser; RAM-
+  // taket på Contabo är 8 GB — beviset i STYRELSE-ADMIN-MEGA våg 84 block B).
+  const MAX_TABBAR = 8;
+
+  /** [+] — ny egen tabb (frisk session föds vid första prompten via nyckel). */
+  const nyTabb = () => {
+    if (tabbar.length >= MAX_TABBAR) {
+      visaToast(`Max ${MAX_TABBAR} tabbar — stäng en först (serverns RAM-tak).`, "fel");
+      return;
+    }
+    const ny: Tabb = { id: nyttId(), huvud: false, sessionId: null, titel: "Ny tabb", ...tabbGrund() };
+    setTabbar((alla) => [...alla, ny]);
+    setAktivTabbId(ny.id);
+    setPrompt("");
+    ytaRef.current?.focus();
+  };
+
+  /** Växla aktiv tabb — vyn byter buffert, utkastet följer med, scrolla ner. */
+  const valjTabb = (id: string) => {
+    if (id === aktivTabbId) return;
+    const t = tabbar.find((x) => x.id === id);
+    if (!t) return;
+    setAktivTabbId(id);
+    setPrompt(t.utkast);
+    requestAnimationFrame(() => {
+      const yta = blattraRef.current;
+      if (yta) yta.scrollTop = yta.scrollHeight;
+    });
+  };
+
+  /**
+   * Stäng tabb — pågående arbete ⇒ confirm "Agenten arbetar — avbryta?"
+   * (ja = abort ⇒ req.signal ⇒ session/stop på servern; nej = stanna kvar).
+   * Sista tabben stängd ⇒ en frisk huvudtabb föds.
+   */
+  const stangTabb = (id: string) => {
+    const t = tabbar.find((x) => x.id === id);
+    if (!t) return;
+    if (t.strömmar && !window.confirm("Agenten arbetar — avbryta?")) return;
+    tabbAbortRef.current.get(id)?.abort(); // ärligt avbrott (session/stop)
+    tabbAbortRef.current.delete(id);
+    const kvar = tabbar.filter((x) => x.id !== id);
+    if (kvar.length === 0) {
+      const ny: Tabb = { id: nyttId(), huvud: true, sessionId: null, titel: "Huvudsession", ...tabbGrund() };
+      setTabbar([ny]);
+      setAktivTabbId(ny.id);
+      setPrompt("");
+      return;
+    }
+    setTabbar(kvar);
+    if (aktivTabbId === id) {
+      setAktivTabbId(kvar[0].id);
+      setPrompt(kvar[0].utkast);
+    }
+  };
+
+  /**
+   * Öppna session ur listan i en NY TABB (resume — block B: "sessionslistan
+   * används för att resume tidigare sessioner i nya tabbar"). Redan öppen ⇒
+   * växla bara. Sidoloadseffekten hämtar historiken (GET ?sessionId=).
+   */
+  const oppnaITabb = (sessionId: string, titel?: string) => {
+    const befintlig = tabbar.find((t) => t.sessionId === sessionId);
+    if (befintlig) {
+      valjTabb(befintlig.id);
+      setVisaSessioner(false);
+      return;
+    }
+    if (tabbar.length >= MAX_TABBAR) {
+      visaToast(`Max ${MAX_TABBAR} tabbar — stäng en först (serverns RAM-tak).`, "fel");
+      return;
+    }
+    const ny: Tabb = {
+      id: nyttId(),
+      huvud: false,
+      sessionId,
+      titel: titel && titel.trim() ? kortNamn(titel) : `Session ${sessionId.slice(5, 13)}`,
+      ...tabbGrund(),
+    };
+    setTabbar((alla) => [...alla, ny]);
+    setAktivTabbId(ny.id);
+    setPrompt("");
+    setVisaSessioner(false);
+  };
+
+  // ── V84 B: PERSISTENS — tabbar + buffert i sessionStorage ─────────────────
+  // (överlever refresh; strömmar nollställs ärligt — en avbruten ström kan ej
+  // fortsätta i en ny sidad). Throtclad till ~1,5 s + spolning vid unload.
+  React.useEffect(() => {
+    const spara = () => {
+      senasteSparaRef.current = Date.now();
+      sparaTabbar(tabbar, aktivTabbId);
+    };
+    if (Date.now() - senasteSparaRef.current > 1_500) {
+      spara();
+      return;
+    }
+    if (sparaTimerRef.current !== null) return;
+    sparaTimerRef.current = window.setTimeout(() => {
+      sparaTimerRef.current = null;
+      spara();
+    }, 1_500);
+    return () => {
+      if (sparaTimerRef.current !== null) {
+        window.clearTimeout(sparaTimerRef.current);
+        sparaTimerRef.current = null;
+      }
+    };
+  }, [tabbar, aktivTabbId]);
+
+  React.useEffect(() => {
+    const vidStang = () => sparaTabbar(tabbarRef.current.tabbar, tabbarRef.current.aktivTabbId);
+    window.addEventListener("beforeunload", vidStang);
+    return () => window.removeEventListener("beforeunload", vidStang);
+  }, []);
+
+  // Composer-utkastet följer den aktiva tabben (per-tabb draft).
+  React.useEffect(() => {
+    if (!aktivTabb || aktivTabb.utkast === prompt) return;
+    rörTabb(aktivTabb.id, (t) => ({ ...t, utkast: prompt }));
+    // avsiktligt smal dep: endast prompt — tabbyte sätter prompt separat
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prompt]);
+
+  // ── VÅG 84 C: permission-svar + minnesregler + auto-godkännande ──────────
+  // (Ligger FÖRE uppstartseffekten — dess deps refererar mottagenPermission.)
+
+  /**
+   * Skicka permission-svar till bryggan (POST /api/studio/interaktion) —
+   * delad väg för knappen OCH auto-godkännandet (regler). tyst = ingen
+   * framgångs-toast (auto-fallet har sin egen notis i flödet); FEL tostar
+   * alltid (t.ex. 409 = redan besvarad/eskalerad).
+   */
+  const skickaPermissionSvar = React.useCallback(
+    async (requestId: string, alternativId: string, tyst = false) => {
+      try {
+        const res = await fetch("/api/studio/interaktion", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ typ: "permission", requestId, alternativ: alternativId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; beslut?: string; fel?: string };
+        // Stäng kortet oavsett — 409 = redan besvarad/eskalerad.
+        setPermission((p) => (p?.requestId === requestId ? null : p));
+        if (res.ok && data.ok) {
+          if (!tyst) visaToast(`Verktyget ${data.beslut ?? "besvarat"}`);
+        } else {
+          visaToast(data.fel || "Begäran var redan besvarad (30 s-gränsen).", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — svaret gick ej fram.", "fel");
+      }
+    },
+    [visaToast],
+  );
+
+  /** Svara permission-dialog (POST /api/studio/interaktion typ permission). */
+  const svaraPermission = React.useCallback(
+    async (requestId: string, alternativId: string) => {
+      if (svarJobbar) return;
+      setSvarJobbar(true);
+      try {
+        await skickaPermissionSvar(requestId, alternativId);
+      } finally {
+        setSvarJobbar(false);
+      }
+    },
+    [svarJobbar, skickaPermissionSvar],
+  );
+
+  /**
+   * V84 C: Spara en "alltid tillåt"-regel (localStorage ak1a-studio-regler)
+   * — dedupe på verktygsnamnet (skiftlägesokänsligt). Ref:en är sannings-
+   * källan (uppdateras direkt) så returvärdet är sant endast när regeln
+   * VERKLIGEN lades till och spårningar i snabb följd inte dubbellagrar.
+   */
+  const sparaRegel = React.useCallback((verktyg: string): boolean => {
+    const namn = verktyg.trim();
+    if (!namn) return false;
+    if (reglerRef.current.some((r) => r.verktyg.toLowerCase() === namn.toLowerCase())) return false;
+    const nya = [...reglerRef.current, { verktyg: namn, omfattning: "alltid" as const, skapad: Date.now() }];
+    reglerRef.current = nya;
+    setRegler(nya);
+    try {
+      window.localStorage.setItem(REGEL_NYCKEL, JSON.stringify(nya));
+    } catch {
+      // privat läge/utrymme — regeln lever bara denna session
+    }
+    return true;
+  }, []);
+
+  /** V84 C: Ta bort en regel (state + ref + localStorage). */
+  const tabortRegel = React.useCallback((verktyg: string) => {
+    const nya = reglerRef.current.filter((r) => r.verktyg !== verktyg);
+    reglerRef.current = nya;
+    setRegler(nya);
+    try {
+      window.localStorage.setItem(REGEL_NYCKEL, JSON.stringify(nya));
+    } catch {
+      // se sparaRegel
+    }
+  }, []);
+
+  /**
+   * V84 C: en permission anlände (SSE eller sidload) — matchar en
+   * "alltid tillåt"-regel ⇒ AUTO-GODKÄNN (allow_once) + liten notis i
+   * flödet; annars visas dialogen. Läser reglerna ur ref:en så ett beslut
+   * mitt i en ström ser färskt register (setState i callback är för sent).
+   */
+  const mottagenPermission = React.useCallback(
+    (p: PermissionDialog) => {
+      const match = reglerRef.current.find((r) => r.verktyg.toLowerCase() === p.verktyg.toLowerCase());
+      if (match) {
+        // V84 B: notisen landar i den AKTIVA tabben (permission-dialogerna är
+        // globala — svaret går till rätt transport oavsett tabb).
+        rörTabb(aktivTabbIdRef.current, (t) => ({
+          ...t,
+          meddelanden: [
+            ...t.meddelanden,
+            {
+              id: nyttId(),
+              roll: "assistant" as const,
+              text: `🛡 **${p.verktyg}** auto-godkänd enligt din regel (_alltid tillåt_${p.diff ? ` · diff: +${p.diff.plus}/−${p.diff.minus}` : ""}) — hantera regler via verktygsraden.`,
+            },
+          ],
+        }));
+        void skickaPermissionSvar(p.requestId, "allow_once", true);
+        return;
+      }
+      setPermission(p);
+    },
+    [skickaPermissionSvar, rörTabb],
+  );
 
   /**
    * Uppdatera sessionlistan (GET /api/studio/session) — v83 B3: bär även
@@ -965,17 +1897,66 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, []);
 
-  // Auto-scroll vid nya bitar (mjukt — bara när användaren är nära botten).
+  // ── V84 A3: AUTO-SCROLL — bara när användaren VILJEFRIA är vid botten.
+  // Ref = sanning under snabba scroll-event; state = knappens synlighet.
+  const paScrollChatt = React.useCallback(() => {
+    const yta = blattraRef.current;
+    if (!yta) return;
+    const nuVid = yta.scrollHeight - yta.scrollTop - yta.clientHeight < 90;
+    vidBottenRef.current = nuVid;
+    setVidBotten((nu) => (nu === nuVid ? nu : nuVid));
+  }, []);
+
   React.useEffect(() => {
     const yta = blattraRef.current;
     if (!yta) return;
-    const näraBotten = yta.scrollHeight - yta.scrollTop - yta.clientHeight < 220;
-    if (näraBotten) yta.scrollTop = yta.scrollHeight;
+    if (vidBottenRef.current) yta.scrollTop = yta.scrollHeight;
   }, [meddelanden, tankar, statusText, permission, fraga]);
 
-  // Uppstart: status + historik + kontext + modeller + sessioner + uploads.
+  // Olästa meddelanden sedan användaren lämnade botten ("↓ Nytt"-badgen).
+  React.useEffect(() => {
+    const nu = meddelanden.length;
+    const skillnad = nu - foreLangdRef.current;
+    foreLangdRef.current = nu;
+    if (skillnad > 0 && !vidBottenRef.current) {
+      setNyaSedanUpp((n) => n + skillnad);
+    } else if (vidBottenRef.current && skillnad !== 0) {
+      setNyaSedanUpp(0);
+    }
+  }, [meddelanden.length]);
+
+  /** "↓ Nytt"-klick: hoppa ner mjukt + återuppta autoscroll. */
+  const hoppaNerChatt = React.useCallback(() => {
+    const yta = blattraRef.current;
+    if (yta) yta.scrollTo({ top: yta.scrollHeight, behavior: "smooth" });
+    vidBottenRef.current = true;
+    setVidBotten(true);
+    setNyaSedanUpp(0);
+  }, []);
+
+  // Uppstart: ÅTERSTÄLL TABBAR + status + historik + kontext + modeller +
+  // sessioner + uploads. V84 B: tabbar ur sessionStorage hydreras FÖRST
+  // (synkront i denna effekt) så historiken landar i RÄTT tabb — huvudtabben
+  // får default-sessionens historik; egna tabbar hämtar sin via
+  // sidoloadseffekten (GET ?sessionId=) när de är aktiva/tomma.
   React.useEffect(() => {
     let levande = true;
+    // ── V84 B: hydrera sparade tabbar (sessionStorage → state) ──
+    const sparad = lasTabbar();
+    if (sparad) {
+      setTabbar(sparad.tabbar);
+      setAktivTabbId(sparad.aktivTabbId);
+      aktivTabbIdRef.current = sparad.aktivTabbId;
+      const aktiv = sparad.tabbar.find((t) => t.id === sparad.aktivTabbId) ?? sparad.tabbar[0];
+      setPrompt(aktiv?.utkast ?? "");
+    }
+    const malTabbId = sparad
+      ? (sparad.tabbar.find((t) => t.id === sparad.aktivTabbId) ?? sparad.tabbar[0]).id
+      : "tabb-huvud";
+    const malArHuvud = sparad
+      ? (sparad.tabbar.find((t) => t.id === malTabbId) ?? sparad.tabbar[0]).huvud
+      : true;
+    const huvudId = sparad ? (sparad.tabbar.find((t) => t.huvud) ?? sparad.tabbar[0]).id : "tabb-huvud";
     (async () => {
       try {
         const res = await fetch("/api/studio/stream", { headers: adminHeaders() });
@@ -994,6 +1975,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   skäl?: string;
                   sammanfattning: string;
                   alternativ: PermissionAlternativ[];
+                  /** V84 C: diff-förhandsvisning (Write/Edit/MultiEdit). */
+                  diff?: Filandring;
                 }
               | { typ: "fråga"; requestId: string; fråga: string; inputTyp?: string; val?: string[] }
             )[];
@@ -1001,15 +1984,22 @@ export function StudioChat({ hem }: { hem: () => void }) {
           if (!levande) return;
           setLive(data.live ? (data.transport === "mock" ? "demo" : "live") : "ned");
           setStatusText(data.live ? (data.transport === "mock" ? "Demo-läge (mock-transport)" : "Sessionen lever") : "Agenten kunde ej nås");
-          if (data.historik?.length) {
-            setMeddelanden(
-              data.historik.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
-            );
+          // Historik/kontext tillhör DEFAULT-sessionen — ENDAST huvudtabben
+          // (egna tabbar fylls av sidoloadseffekten per session, se nedan).
+          if (malArHuvud && data.historik?.length) {
+            rörTabb(malTabbId, (t) => ({
+              ...t,
+              meddelanden: data.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            }));
           }
           if (data.kontext) {
-            setKontext(data.kontext);
-            if (typeof data.kontext.totalTokenCount === "number") {
-              setAckumulerat(data.kontext.totalTokenCount);
+            if (malArHuvud) {
+              rörTabb(malTabbId, (t) => ({
+                ...t,
+                kontext: data.kontext ?? null,
+                ackumulerat:
+                  typeof data.kontext?.totalTokenCount === "number" ? data.kontext.totalTokenCount : t.ackumulerat,
+              }));
             }
             // V83 B2: läge + tankestyrka ur sessionens projektion/snapshot —
             // växlarna startar på protokollets sanning (fallback build/av).
@@ -1017,16 +2007,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
             setTanka(data.kontext.tankeNiva ?? "");
           }
           // V83 B2: väntande dialoger efter t.ex. en siduppdatering mitt i
-          // en permission-väntan — kortet återkommer direkt.
+          // en permission-väntan — kortet återkommer direkt. V84 C: reglerna
+          // får först titta (auto-godkännande innan dialogen ens syns).
           for (const i of data.interaktioner ?? []) {
             if (i.typ === "permission") {
-              setPermission({
+              mottagenPermission({
                 requestId: i.requestId,
                 verktyg: i.verktyg,
                 risk: i.risk,
                 skäl: i.skäl,
                 sammanfattning: i.sammanfattning,
                 alternativ: i.alternativ ?? [],
+                diff: i.diff,
               });
             } else {
               setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val });
@@ -1042,21 +2034,22 @@ export function StudioChat({ hem }: { hem: () => void }) {
       void lasModeller();
       void lasSessioner();
       // V83 B1: senaste turnens filändringar — visas på sista agentbubblan
-      // även efter omladdning (GET /api/studio/andringar).
+      // även efter omladdning (GET /api/studio/andringar — DEFAULT-sessionen,
+      // därför skrivs diffen till HUVUDTABBENS sista agentbubbla).
       try {
         const res = await fetch("/api/studio/andringar", { headers: adminHeaders() });
         if (res.ok) {
           const data = (await res.json()) as { filer?: Filandring[] };
           if (levande && Array.isArray(data.filer) && data.filer.length > 0) {
-            setMeddelanden((alla) => {
-              for (let i = alla.length - 1; i >= 0; i--) {
-                if (alla[i].roll === "assistant") {
-                  const kopia = [...alla];
-                  kopia[i] = { ...alla[i], ändringar: data.filer };
-                  return kopia;
+            rörTabb(huvudId, (t) => {
+              for (let i = t.meddelanden.length - 1; i >= 0; i--) {
+                if (t.meddelanden[i].roll === "assistant") {
+                  const kopia = [...t.meddelanden];
+                  kopia[i] = { ...t.meddelanden[i], ändringar: data.filer };
+                  return { ...t, meddelanden: kopia };
                 }
               }
-              return alla;
+              return t;
             });
           }
         }
@@ -1085,13 +2078,58 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => {
       levande = false;
     };
-  }, [lasModeller, lasSessioner]);
+  }, [lasModeller, lasSessioner, mottagenPermission, rörTabb]);
+
+  // ── V84 B: EGEN TABB-SIDALOAD — resume tidigare sessioner ─────────────────
+  // När en egen tabb med sessionId blir aktiv (eller föds ur sessionslistan)
+  // och är tom: hämta historiken + kontexten via GET /api/studio/stream
+  // ?sessionId= (per-session-transport — resume sker på servern).
+  React.useEffect(() => {
+    const t = tabbar.find((x) => x.id === aktivTabbId);
+    if (!t || t.huvud || !t.sessionId || t.historikLasad || t.meddelanden.length > 0) return;
+    rörTabb(t.id, (x) => ({ ...x, historikLasad: true })); // en gång räcker
+    let levande = true;
+    (async () => {
+      try {
+        const res = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(t.sessionId!)}`, {
+          headers: adminHeaders(),
+        });
+        if (!res.ok || !levande) return;
+        const data = (await res.json()) as {
+          historik?: { roll: "user" | "assistant"; text: string }[];
+          kontext?: KontextInfo | null;
+          fel?: string;
+        };
+        if (!levande) return;
+        if (Array.isArray(data.historik) && data.historik.length > 0) {
+          rörTabb(t.id, (x) => ({
+            ...x,
+            meddelanden: data.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+          }));
+        }
+        if (data.kontext) {
+          rörTabb(t.id, (x) => ({
+            ...x,
+            kontext: data.kontext ?? null,
+            ackumulerat:
+              typeof data.kontext?.totalTokenCount === "number" ? data.kontext.totalTokenCount : x.ackumulerat,
+          }));
+        }
+        if (data.fel) visaToast(data.fel, "fel");
+      } catch {
+        // nätverksfel — tabben börjar tom; nästa prompt resumear ändå
+      }
+    })();
+    return () => {
+      levande = false;
+    };
+  }, [aktivTabbId, tabbar, rörTabb, visaToast]);
 
   // ── V2 STUDIO: modellbyte / ny session / komprimering ─────────────────────
 
   const bytModell = React.useCallback(
     async (modellId: string) => {
-      if (!modellId || modellId === valdModell || byterModell || strömmar) return;
+      if (!modellId || modellId === valdModell || byterModell || strömmarHuvud) return;
       const namn = modeller.find((m) => m.id === modellId)?.namn ?? modellId;
       setByterModell(true);
       try {
@@ -1107,10 +2145,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
         };
         if (res.ok && data.sessionId) {
           setValdModell(modellId);
-          setMeddelanden([]); // frisk session — historiken lever kvar i sessionslistan
-          setKontext(null);
-          setRundaTkn(null);
-          setAckumulerat(0);
+          // V84 B: modellbytet kasserar DEFAULT-sessionen — huvudtabben
+          // börjar friskt (historiken lever kvar i sessionslistan).
+          rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+            ...t,
+            sessionId: null,
+            meddelanden: [],
+            kontext: null,
+            rundaTkn: null,
+            ackumulerat: 0,
+            historikLasad: false,
+          }));
           visaToast(`Modell bytt till ${data.modell ?? namn} — ny session skapad`);
           void lasSessioner();
         } else {
@@ -1122,11 +2167,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setByterModell(false);
       }
     },
-    [modeller, strömmar, visaToast, lasSessioner, valdModell, byterModell],
+    [modeller, strömmarHuvud, visaToast, lasSessioner, valdModell, byterModell, rörTabb, huvudTabb],
   );
 
   const startaNySession = React.useCallback(async () => {
-    if (sessionJobbar || strömmar) return;
+    if (sessionJobbar || strömmarHuvud) return;
     setSessionJobbar("ny");
     try {
       const res = await fetch("/api/studio/session", {
@@ -1140,10 +2185,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
         fel?: string;
       };
       if (res.ok && data.sessionId) {
-        setMeddelanden([]);
-        setKontext(data.kontext ?? null);
-        setRundaTkn(null);
-        setAckumulerat(data.kontext?.totalTokenCount ?? 0);
+        // V84 B: "Ny session" gäller DEFAULT-sessionen ⇒ HUVUDTABBEN börjar
+        // friskt med den nya sessionens kontext.
+        rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+          ...t,
+          sessionId: null,
+          meddelanden: [],
+          kontext: data.kontext ?? null,
+          rundaTkn: null,
+          ackumulerat: data.kontext?.totalTokenCount ?? 0,
+          historikLasad: false,
+        }));
         visaToast("Ny session — frisk kontext (1M-fönstret börjar om)");
         void lasSessioner();
       } else {
@@ -1157,7 +2209,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
   }, [sessionJobbar, strömmar, visaToast, lasSessioner]);
 
   const komprimera = React.useCallback(async () => {
-    if (sessionJobbar || strömmar) return;
+    if (sessionJobbar || strömmarHuvud) return;
     setSessionJobbar("compact");
     setStatusText("Komprimerar kontexten…");
     try {
@@ -1174,8 +2226,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
       };
       if (res.ok) {
         if (data.kontext) {
-          setKontext(data.kontext);
-          setAckumulerat(data.kontext.totalTokenCount ?? 0);
+          // V84 B: komprimeringen gäller DEFAULT-sessionen ⇒ huvudtabbens rad.
+          rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+            ...t,
+            kontext: data.kontext ?? null,
+            ackumulerat: data.kontext?.totalTokenCount ?? 0,
+          }));
         }
         visaToast(data.meddelande ?? "Kontexten komprimerad.");
       } else {
@@ -1187,55 +2243,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setSessionJobbar("");
       setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
     }
-  }, [sessionJobbar, strömmar, visaToast, live]);
+  }, [sessionJobbar, strömmarHuvud, visaToast, live, rörTabb, huvudTabb]);
 
   // ── VÅG 83 B3: sessions- och workspace-hantering (Z-portaLens) ──────────
-
-  /**
-   * Öppna session ur listan (session/resume) — chatten fylls med historiken
-   * via session/messages och kontextraden får sessionens projektion.
-   */
-  const oppnaSessionen = React.useCallback(
-    async (sessionId: string) => {
-      if (sessionJobbar || strömmar) return;
-      setSessionJobbar("resume");
-      try {
-        const res = await fetch("/api/studio/session", {
-          method: "POST",
-          headers: adminJsonHeaders(),
-          body: JSON.stringify({ action: "resume", sessionId }),
-        });
-        const data = (await res.json().catch(() => ({}))) as {
-          sessionId?: string;
-          historik?: { roll: "user" | "assistant"; text: string }[];
-          kontext?: KontextInfo | null;
-          fel?: string;
-        };
-        if (res.ok && data.sessionId) {
-          setMeddelanden(
-            (data.historik ?? []).map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
-          );
-          setKontext(data.kontext ?? null);
-          setRundaTkn(null);
-          setAckumulerat(data.kontext?.totalTokenCount ?? 0);
-          visaToast(`Sessionen öppnad — ${data.historik?.length ?? 0} meddelanden ur historiken`);
-          void lasSessioner();
-        } else {
-          visaToast(data.fel || "Kunde ej öppna sessionen.", "fel");
-        }
-      } catch {
-        visaToast("Nätverksfel — kunde ej öppna sessionen.", "fel");
-      } finally {
-        setSessionJobbar("");
-      }
-    },
-    [sessionJobbar, strömmar, visaToast, lasSessioner],
-  );
+  // V84 B: sessioner öppnas NUMERA I EGA TABBAR (oppnaITabb) — den gamla
+  // in-place-resumen är ersatt av tabbflödet (resume sker per-session på
+  // servern via GET/POST /api/studio/stream ?sessionId).
 
   /** Stäng session (session/close) — lever kvar i listan men svarar ej. */
   const stangSessionen = React.useCallback(
     async (sessionId: string) => {
-      if (sessionJobbar || strömmar) return;
+      if (sessionJobbar || strömmarHuvud) return;
       setSessionJobbar("stang");
       try {
         const res = await fetch("/api/studio/session", {
@@ -1245,14 +2263,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         const data = (await res.json().catch(() => ({}))) as { stangd?: boolean; fel?: string };
         if (res.ok && data.stangd) {
-          if (sessionId === aktivSession) {
-            // Den aktiva stängdes — chatten töms; nästa prompt föder frisk session.
-            setMeddelanden([]);
-            setKontext(null);
-            setRundaTkn(null);
-            setAckumulerat(0);
-            setMal(null);
-          }
+          // V84 B: sessioner som ÄR öppna i tabbar återställs (deras nästa
+          // prompt föder frisk session via nyckel-vägen); default-sessionen
+          // (huvudtabben) töms + målet rensas som förr.
+          if (sessionId === aktivSession) setMal(null);
+          setTabbar((alla) =>
+            alla.map((t) =>
+              t.sessionId === sessionId || (t.huvud && sessionId === aktivSession)
+                ? {
+                    ...t,
+                    sessionId: null,
+                    meddelanden: [],
+                    kontext: null,
+                    rundaTkn: null,
+                    ackumulerat: 0,
+                    historikLasad: false,
+                  }
+                : t,
+            ),
+          );
           visaToast("Sessionen stängd — finns kvar i listan (arkiverad).");
           void lasSessioner();
         } else {
@@ -1264,7 +2293,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setSessionJobbar("");
       }
     },
-    [sessionJobbar, strömmar, visaToast, lasSessioner, aktivSession],
+    [sessionJobbar, strömmarHuvud, visaToast, lasSessioner, aktivSession],
   );
 
   /** Spara målet (session/goal set — visas i headern om satt). */
@@ -1476,35 +2505,160 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => window.removeEventListener("keydown", påTangent);
   }, [visaFiler, filVisning]);
 
-  // ── VÅG 83 B2: dialogsvar + läges-/tankestyrkeväxlare ────────────────────
+  // ── VÅG 84 D: agentens minne — läs/redigera/radera ─────────────────────
 
-  /** Svara permission-dialog (POST /api/studio/interaktion typ permission). */
-  const svaraPermission = React.useCallback(
-    async (requestId: string, alternativId: string) => {
-      if (svarJobbar) return;
-      setSvarJobbar(true);
+  /** Hämta minneslistan (GET /api/studio/minne) — alla filer + AGENTS.md. */
+  const lasMinne = React.useCallback(async () => {
+    setMinneLaddar(true);
+    setMinneFel("");
+    try {
+      const res = await fetch(`/api/studio/minne?frisk=${Date.now()}`, { headers: adminHeaders() });
+      const data = (await res.json().catch(() => ({}))) as {
+        rot?: string;
+        filer?: MinnePost[];
+        agentsFinns?: boolean;
+        fel?: string;
+      };
+      if (res.ok && Array.isArray(data.filer)) {
+        setMinneFiler(data.filer);
+        setMinneRotVisning(data.rot ?? "");
+      } else {
+        setMinneFel(data.fel || "Minnet kunde ej hämtas.");
+      }
+    } catch {
+      setMinneFel("Nätverksfel — minnet kunde ej hämtas.");
+    } finally {
+      setMinneLaddar(false);
+    }
+  }, []);
+
+  /** Öppna Minne-drawern (laddar listan) — stänger filträdet först. */
+  const oppnaMinne = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setMinneVald(null);
+    setMinneRedigerar(false);
+    setMinneNy(false);
+    setVisaMinne(true);
+    void lasMinne();
+  }, [lasMinne]);
+
+  /** Klicka minnesfil → full text (GET ?namn= — listan bär bara 8 kB). */
+  const oppnaMinnesfil = React.useCallback(async (namn: string) => {
+    setMinneRedigerar(false);
+    setMinneNy(false);
+    setMinneVald(null);
+    setMinneDetaljLaddar(true);
+    try {
+      const res = await fetch(`/api/studio/minne?namn=${encodeURIComponent(namn)}`, {
+        headers: adminHeaders(),
+      });
+      const data = (await res.json().catch(() => ({}))) as MinnePost & { fel?: string };
+      if (res.ok && data.namn) {
+        setMinneVald(data);
+        setMinneText(data.innehåll);
+      } else {
+        visaToast(data.fel || "Minnesfilen kunde ej läsas.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — minnesfilen kunde ej hämtas.", "fel");
+    } finally {
+      setMinneDetaljLaddar(false);
+    }
+  }, [visaToast]);
+
+  /**
+   * Spara en minnesfil (PUT {namn, innehåll}) — gäller både redigering och
+   * "Ny minnesfil"/"Skapa AGENTS.md". Servern backar upp gammalt innehåll.
+   */
+  const sparaMinnesfil = React.useCallback(
+    async (namn: string, innehåll: string) => {
+      if (minneSparar || !namn) return false;
+      setMinneSparar(true);
       try {
-        const res = await fetch("/api/studio/interaktion", {
-          method: "POST",
+        const res = await fetch("/api/studio/minne", {
+          method: "PUT",
           headers: adminJsonHeaders(),
-          body: JSON.stringify({ typ: "permission", requestId, alternativ: alternativId }),
+          body: JSON.stringify({ namn, innehåll }),
         });
-        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; beslut?: string; fel?: string };
-        // Stäng kortet oavsett — 409 = redan besvarad/eskalerad.
-        setPermission((p) => (p?.requestId === requestId ? null : p));
-        if (res.ok && data.ok) {
-          visaToast(`Verktyget ${data.beslut ?? "besvarat"}`);
-        } else {
-          visaToast(data.fel || "Begäran var redan besvarad (30 s-gränsen).", "fel");
+        const data = (await res.json().catch(() => ({}))) as {
+          namn?: string;
+          skapad?: boolean;
+          backup?: string;
+          fel?: string;
+        };
+        if (res.ok && data.namn) {
+          visaToast(
+            data.skapad
+              ? `"${namn}" skapad i agentens minne.`
+              : `"${namn}" sparad${data.backup ? ` — backup: ${data.backup}` : ""}.`,
+          );
+          setMinneRedigerar(false);
+          setMinneNy(false);
+          void lasMinne();
+          // Uppdatera detaljvyn på plats (full text = det vi precis skrev).
+          setMinneVald((v) =>
+            v && v.namn === namn
+              ? { ...v, innehåll, trunkerad: false }
+              : v,
+          );
+          return true;
         }
+        visaToast(data.fel || "Minnesfilen kunde ej sparas.", "fel");
+        return false;
       } catch {
-        visaToast("Nätverksfel — svaret gick ej fram.", "fel");
+        visaToast("Nätverksfel — minnesfilen kunde ej sparas.", "fel");
+        return false;
       } finally {
-        setSvarJobbar(false);
+        setMinneSparar(false);
       }
     },
-    [svarJobbar, visaToast],
+    [minneSparar, visaToast, lasMinne],
   );
+
+  /** Radera en minnesfil (DELETE {namn}) — confirm + backup-notis. */
+  const raderaMinnesfil = React.useCallback(
+    async (namn: string) => {
+      if (minneRaderar || !minneVald || namn !== minneVald.namn) return;
+      if (namn === "MEMORY.md") {
+        visaToast("MEMORY.md-indexet kan inte raderas — agenten bygger om det automatiskt.", "fel");
+        return;
+      }
+      if (
+        !window.confirm(
+          `Radera "${namn}" ur agentens minne?\n\nEn backup-kopia sparas i .minnes-backup/ först — agenten glömmer fakten tills du återskapar den.`,
+        )
+      )
+        return;
+      setMinneRaderar(true);
+      try {
+        const res = await fetch("/api/studio/minne", {
+          method: "DELETE",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ namn }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { raderad?: boolean; backup?: string; fel?: string };
+        if (res.ok && data.raderad) {
+          setMinneVald(null);
+          setMinneRedigerar(false);
+          visaToast(`"${namn}" raderad — backup: ${data.backup ?? "?"} (.minnes-backup/).`);
+          void lasMinne();
+        } else {
+          visaToast(data.fel || "Minnesfilen kunde ej raderas.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — minnesfilen kunde ej raderas.", "fel");
+      } finally {
+        setMinneRaderar(false);
+      }
+    },
+    [minneRaderar, minneVald, visaToast, lasMinne],
+  );
+
+  // OBS: Escape-hantering för Minne 🧠-drawern ägs av studio-minne-panel.tsx.
+
+  // ── VÅG 83 B2: dialogsvar + läges-/tankestyrkeväxlare ────────────────────
+  // (V84 C:s permission-funktioner ligger FÖRE uppstartseffekten ovan.)
 
   /** Svara frågekortet — knappval/fritext eller avbryt. */
   const svaraFraga = React.useCallback(
@@ -1663,21 +2817,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── Skicka (SSE över fetch) ────────────────────────────────────────────────
 
-  const skicka = React.useCallback(async () => {
-    const text = prompt.trim();
-    if (!text || strömmar) return;
-
-    // ── VÅG 83 B4: snabbkommandon parsas LOKALT före sändning ──
-    // (rad som börjar med "/" lämnar ALDRIG browsern som prompt; de med
-    // API-väg anropar bryggan här, resten är lokal hjälp).
-    const kommando = parsaKommando(text);
-    if (kommando) {
-      setPrompt("");
-      if (!kommando.kommando) return; // bart "/" — avfärdat utan brus
+  /**
+   * V84 A2: kör ett snabbkommando — DELAD väg för skrivfältets "/"-rader
+   * och kommandopaletten (Ctrl/Cmd+K): samma echo i chatten, samma API-
+   * anrop. Registreringen lever i STUDIO_KOMMANDON (kommandon.ts).
+   * V84 B: echot landar i den AKTIVA TABBENS buffert.
+   */
+  const korKommando = React.useCallback(
+    async (kommando: string, argument = "") => {
+      const tabbId = aktivTabbIdRef.current;
       const pushAssistant = (t: string) =>
-        setMeddelanden((m) => [...m, { id: nyttId(), roll: "assistant", text: t }]);
-      setMeddelanden((m) => [...m, { id: nyttId(), roll: "user", text }]);
-      switch (kommando.kommando) {
+        rörTabb(tabbId, (tb) => ({
+          ...tb,
+          meddelanden: [...tb.meddelanden, { id: nyttId(), roll: "assistant" as const, text: t }],
+        }));
+      rörTabb(tabbId, (tb) => ({
+        ...tb,
+        meddelanden: [
+          ...tb.meddelanden,
+          { id: nyttId(), roll: "user" as const, text: `/${kommando}${argument ? ` ${argument}` : ""}` },
+        ],
+      }));
+      switch (kommando) {
         case "help":
           pushAssistant(kommandoHjalp());
           return;
@@ -1694,7 +2855,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           pushAssistant("Filträdet är öppet — klicka dig ner i arbetsytan och förhandsgranska filer.");
           return;
         case "modell": {
-          const id = kommando.argument.split(/\s+/)[0] ?? "";
+          const id = argument.split(/\s+/)[0] ?? "";
           const listaText =
             modeller.length > 0
               ? `Tillgängliga: ${modeller.map((m) => `\`${m.id}\``).join(", ")}.`
@@ -1716,51 +2877,90 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
         }
         default:
-          pushAssistant(`Okänt kommando \`${kommando.kommando}\` — skriv **/help** för alla kommandon.`);
+          pushAssistant(`Okänt kommando \`${kommando}\` — skriv **/help** för alla kommandon.`);
           return;
       }
-    }
+    },
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, rörTabb],
+  );
 
-    setPrompt("");
-    setTankar("");
-    setStatusText("Skickar…");
-    setStrömmar(true);
-    const agentId = nyttId();
-    setMeddelanden((m) => [...m, { id: nyttId(), roll: "user", text }, { id: agentId, roll: "assistant", text: "", strömmande: true, verktyg: [] }]);
-
-    const abort = new AbortController();
-    abortRef.current = abort;
-
-    /** Uppdatera agentbubblan funktionellt (strömmen skriver ofta). */
-    const rörAgent = (rör: (m: Meddelande) => Meddelande) => {
-      setMeddelanden((alla) => alla.map((m) => (m.id === agentId ? rör(m) : m)));
-    };
-
-    // ── V83 B1: verktygskort-merge (funktionell uppdatering på id) ──
-    const uppdateraKort = (id: string, rör: (k: VerktygKort) => VerktygKort) => {
-      rörAgent((m) => {
-        const korta = m.verktygKort ? [...m.verktygKort] : [];
-        const i = korta.findIndex((k) => k.id === id);
-        if (i >= 0) {
-          korta[i] = rör(korta[i]);
-        } else {
-          korta.push(rör({ id, namn: "verktyg", steg: "planerad" }));
-        }
-        return { ...m, verktygKort: korta };
-      });
-    };
-
-    try {
-      const res = await fetch("/api/studio/stream", {
-        method: "POST",
-        headers: adminJsonHeaders(),
-        body: JSON.stringify({ prompt: text }),
-        signal: abort.signal,
-      });
-      if (!res.ok || !res.body) {
-        const data = (await res.json().catch(() => ({}))) as { fel?: string };
-        throw new Error(data.fel || `Bryggan svarade ${res.status}.`);
+  // ── Skicka (SSE över fetch) — V84 B: PER TABB ─────────────────────────────
+  //
+  // skickaPrompt(tabbId, text) äger hela strömmen: ALLA skrivningar går via
+  // rörTabb(tabbId, …) så en INAKTIV tabb fortsätter buffra i bakgrunden —
+  // vid tabbyte renderas tabbens historik som den är. POST-kroppen väljer
+  // transport på servern:
+  //   huvudtabb          → {prompt}           (default-transporten)
+  //   egen tabb + session → {prompt, sessionId} (per-session-transport, resume)
+  //   egen tabb, första   → {prompt, nyckel}    (frisk session, re-nycklas)
+  const skickaPrompt = React.useCallback(
+    async (tabbId: string, text: string) => {
+      const tabb = tabbarRef.current.tabbar.find((t) => t.id === tabbId);
+      if (!tabb || tabb.strömmar) return;
+      const kropp: { prompt: string; sessionId?: string; nyckel?: string } = { prompt: text };
+      if (!tabb.huvud) {
+        if (tabb.sessionId) kropp.sessionId = tabb.sessionId;
+        else kropp.nyckel = tabb.id; // första prompten i en ny tabb
       }
+
+      // Agentbubblans id skapas FÖRST (stabilt genom hela strömmen — alla
+      // senare händelser merge:ar på detta id via rörAgent).
+      const agentId = nyttId();
+      rörTabb(tabbId, (t) => ({
+        ...t,
+        tankar: "",
+        status: "Skickar…",
+        strömmar: true,
+        // Tabbens kortnamn = första orden i senaste prompten (huvudtabben
+        // behåller sitt namn tills första egna prompten).
+        titel: t.huvud ? t.titel : kortNamn(text),
+        meddelanden: [
+          ...t.meddelanden,
+          { id: nyttId(), roll: "user" as const, text },
+          { id: agentId, roll: "assistant" as const, text: "", strömmande: true, verktygKort: [] },
+        ],
+      }));
+
+      const abort = new AbortController();
+      tabbAbortRef.current.set(tabbId, abort);
+
+      /** Uppdatera agentbubblan funktionellt (strömmen skriver ofta). */
+      const rörAgent = (rör: (m: Meddelande) => Meddelande) => {
+        rörTabb(tabbId, (t) => ({
+          ...t,
+          meddelanden: t.meddelanden.map((m) => (m.id === agentId ? rör(m) : m)),
+        }));
+      };
+      /** Tabbstatus (per-tabb "Agenten arbetar…" — den tomma bubblan). */
+      const sattStatus = (status: string) => {
+        rörTabb(tabbId, (t) => ({ ...t, status }));
+      };
+
+      // ── V83 B1: verktygskort-merge (funktionell uppdatering på id) ──
+      const uppdateraKort = (id: string, rör: (k: VerktygKort) => VerktygKort) => {
+        rörAgent((m) => {
+          const korta = m.verktygKort ? [...m.verktygKort] : [];
+          const i = korta.findIndex((k) => k.id === id);
+          if (i >= 0) {
+            korta[i] = rör(korta[i]);
+          } else {
+            korta.push(rör({ id, namn: "verktyg", steg: "planerad" }));
+          }
+          return { ...m, verktygKort: korta };
+        });
+      };
+
+      try {
+        const res = await fetch("/api/studio/stream", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify(kropp),
+          signal: abort.signal,
+        });
+        if (!res.ok || !res.body) {
+          const data = (await res.json().catch(() => ({}))) as { fel?: string };
+          throw new Error(data.fel || `Bryggan svarade ${res.status}.`);
+        }
 
       const läsare = res.body.getReader();
       const avkodare = new TextDecoder();
@@ -1786,22 +2986,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
           switch (event.typ) {
             case "hej":
               setLive(event.transport === "mock" ? "demo" : "live");
+              // V84 B: hej bär sessionens id — tabben minns sin session så
+              // nästa prompt (och sideload efter refresh) träffar rätt tabb.
+              if (event.sessionId && !tabb.sessionId) {
+                rörTabb(tabbId, (t) => ({ ...t, sessionId: event.sessionId ?? t.sessionId }));
+              }
               break;
             case "status":
-              setStatusText(event.text || "Agenten arbetar…");
+              sattStatus(event.text || "Agenten arbetar…");
               break;
             case "delta":
               if (event.kanal === "tankar") {
-                setTankar((t) => (t + (event.text ?? "")).slice(-260));
+                rörTabb(tabbId, (t) => ({ ...t, tankar: (t.tankar + (event.text ?? "")).slice(-260) }));
               } else {
                 rörAgent((m) => ({ ...m, text: m.text + (event.text ?? "") }));
-                setStatusText("Svarar…");
+                sattStatus("Svarar…");
               }
               break;
             case "verktyg":
-              // V83 B1: den gamla verktygs-raden lever bara som statusText —
+              // V83 B1: den gamla verktygs-raden lever bara som tabbstatus —
               // korten (med argument+resultat) kommer via "verktyg_kort".
-              setStatusText(`${event.händelse === "start" ? "Kör" : "Klart"}: ${event.namn ?? "verktyg"}`);
+              sattStatus(`${event.händelse === "start" ? "Kör" : "Klart"}: ${event.namn ?? "verktyg"}`);
               break;
             case "verktyg_kort":
               // tool.updated-kartläggningen: merge:a kortet på id (senare
@@ -1818,7 +3023,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   varaktighetMs: event.varaktighetMs ?? k.varaktighetMs,
                   framsteg: event.framsteg ?? k.framsteg,
                 }));
-                setStatusText(
+                sattStatus(
                   event.steg === "fel"
                     ? `${event.namn ?? "Verktyg"} misslyckades`
                     : event.steg === "resultat"
@@ -1836,7 +3041,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   ...k,
                   liveInput: (k.liveInput ?? "") + (event.text ?? ""),
                 }));
-                setStatusText(
+                sattStatus(
                   `Skriver verktygsargument: ${event.namn ?? (event.text ?? "").slice(0, 24)}`,
                 );
               }
@@ -1853,22 +3058,31 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   },
                 }));
               } else {
-                setStatusText("Agenten arbetar…");
+                sattStatus("Agenten arbetar…");
               }
               break;
             case "interaktion":
               // V83 B2: dialogkort väntar på användarens val — permission
-              // (godkännande) eller fråga (requestUserInput).
+              // (godkännande) eller fråga (requestUserInput). V84 C:
+              // mottagenPermission kör reglerna först (auto-godkännande
+              // med notis i flödet) — annars visas dialogen (med diff).
+              // V84 B: dialogerna är GLOBALA (syns i aktiv vy) — svaret går
+              // till rätt transport på servern oavsett tabb; en bakgrundstabb
+              // som drabbas tostar så användaren märker det.
+              if (tabbId !== aktivTabbIdRef.current) {
+                visaToast("En tabb i bakgrunden väntar på ditt svar…");
+              }
               if (event.interaktion?.typ === "permission") {
-                setPermission({
+                mottagenPermission({
                   requestId: event.interaktion.requestId,
                   verktyg: event.interaktion.verktyg,
                   risk: event.interaktion.risk,
                   skäl: event.interaktion.skäl,
                   sammanfattning: event.interaktion.sammanfattning,
                   alternativ: event.interaktion.alternativ ?? [],
+                  diff: event.interaktion.diff,
                 });
-                setStatusText("Väntar på ditt godkännande…");
+                sattStatus("Väntar på ditt godkännande…");
               } else if (event.interaktion?.typ === "fråga") {
                 setFraga({
                   requestId: event.interaktion.requestId,
@@ -1877,7 +3091,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val: event.interaktion.val,
                 });
                 setFragSvar("");
-                setStatusText("Agenten frågar…");
+                sattStatus("Agenten frågar…");
               }
               break;
             case "interaktionsKlar":
@@ -1897,18 +3111,30 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 strömmande: false,
               }));
               if (typeof event.tokenCount === "number" && event.tokenCount > 0) {
-                setRundaTkn(event.tokenCount);
-                setAckumulerat((a) => (a > 0 ? a + event.tokenCount! : event.tokenCount!));
+                // V84 C: klart-notisens "✓ Klar (N tkn)" (långa körningar).
+                turnTknRef.current = event.tokenCount;
+                rörTabb(tabbId, (t) => ({
+                  ...t,
+                  rundaTkn: event.tokenCount ?? null,
+                  ackumulerat:
+                    typeof event.tokenCount === "number"
+                      ? (t.ackumulerat > 0 ? t.ackumulerat + event.tokenCount : event.tokenCount)
+                      : t.ackumulerat,
+                }));
               }
               färdig = true;
               break;
             case "kontext":
-              // V2: färsk projektion efter rundan — kontextradens sanning.
+              // V2: färsk projektion efter rundan — TABBENS kontextrad.
               if (event.kontext) {
-                setKontext(event.kontext);
-                if (typeof event.kontext.totalTokenCount === "number") {
-                  setAckumulerat(event.kontext.totalTokenCount);
-                }
+                rörTabb(tabbId, (t) => ({
+                  ...t,
+                  kontext: event.kontext ?? null,
+                  ackumulerat:
+                    typeof event.kontext?.totalTokenCount === "number"
+                      ? event.kontext.totalTokenCount
+                      : t.ackumulerat,
+                }));
               }
               break;
             case "fel":
@@ -1922,7 +3148,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               break;
             case "ändringar":
               // V83 B1: senaste turnens filändringar (SSE efter klart +
-              // kontext) — "Ändringar"-panelen per turn.
+              // kontext) — "Ändringar"-panelen per turn (i DENNA tabben).
               if (Array.isArray(event.filer)) {
                 const filer = event.filer;
                 rörAgent((m) => ({ ...m, ändringar: filer }));
@@ -1932,34 +3158,237 @@ export function StudioChat({ hem }: { hem: () => void }) {
         }
       }
       rörAgent((m) => ({ ...m, strömmande: false }));
-    } catch (fel) {
-      if ((fel as Error).name !== "AbortError") {
-        rörAgent((m) => ({
-          ...m,
-          strömmande: false,
-          fel: true,
-          text: m.text || (fel instanceof Error ? fel.message : "Bryggfel."),
-        }));
-      } else {
-        rörAgent((m) => ({ ...m, strömmande: false, text: m.text || "(avbruten)" }));
+      } catch (fel) {
+        if ((fel as Error).name !== "AbortError") {
+          rörAgent((m) => ({
+            ...m,
+            strömmande: false,
+            fel: true,
+            text: m.text || (fel instanceof Error ? fel.message : "Bryggfel."),
+          }));
+        } else {
+          rörAgent((m) => ({ ...m, strömmande: false, text: m.text || "(avbruten)" }));
+        }
+      } finally {
+        rörTabb(tabbId, (t) => ({ ...t, strömmar: false, tankar: "", status: "" }));
+        tabbAbortRef.current.delete(tabbId);
+        setStatusText((nuvarande) =>
+          nuvarande.startsWith("Sessionen") || nuvarande.startsWith("Demo")
+            ? nuvarande
+            : live === "demo"
+              ? "Demo-läge (mock-transport)"
+              : "Sessionen lever",
+        );
       }
-    } finally {
-      setStrömmar(false);
-      setTankar("");
-      abortRef.current = null;
-      setStatusText((nuvarande) =>
-        nuvarande.startsWith("Sessionen") || nuvarande.startsWith("Demo")
-          ? nuvarande
-          : live === "demo"
-            ? "Demo-läge (mock-transport)"
-            : "Sessionen lever",
-      );
-    }
-  }, [prompt, strömmar, live, modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, visaToast]);
+    },
+    [live, visaToast, mottagenPermission, rörTabb],
+  );
 
+  /** Skicka från skrivfältet —Kommandon först, sedan prompten i AKTIVA tabben. */
+  const skicka = React.useCallback(async () => {
+    const text = prompt.trim();
+    if (!text || strömmar) return;
+
+    // ── VÅG 83 B4: snabbkommandon parsas LOKALT före sändning ──
+    // (rad som börjar med "/" lämnar ALDRIG browsern som prompt; de med
+    // API-väg anropar bryggan här, resten är lokal hjälp).
+    const kommando = parsaKommando(text);
+    if (kommando) {
+      setPrompt("");
+      if (!kommando.kommando) return; // bart "/" — avfärdat utan brus
+      await korKommando(kommando.kommando, kommando.argument);
+      return;
+    }
+
+    setPrompt("");
+    await skickaPrompt(aktivTabbIdRef.current, text);
+  }, [prompt, strömmar, korKommando, skickaPrompt]);
+
+  /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
-    abortRef.current?.abort();
+    tabbAbortRef.current.get(aktivTabbIdRef.current)?.abort();
   }, []);
+
+  // ── V84 A5: EXPORTCHATT — hela chatten som markdown-fil (datum i namnet;
+  // agent-meddelanden som block, användare som blockcitat) ─────────────────
+  const exporteraChat = React.useCallback(() => {
+    if (meddelanden.length === 0) {
+      visaToast("Chatten är tom — inget att exportera än.", "fel");
+      return;
+    }
+    const nu = new Date();
+    const pad = (n: number) => String(n).padStart(2, "0");
+    const datum = `${nu.getFullYear()}-${pad(nu.getMonth() + 1)}-${pad(nu.getDate())}`;
+    const tid = `${pad(nu.getHours())}${pad(nu.getMinutes())}`;
+    const rader: string[] = [
+      `# AK1A Studio — chatt ${datum}`,
+      "",
+      `- **Exporterad:** ${nu.toLocaleString("sv-SE")}`,
+      kontext?.modell ? `- **Modell:** ${kontext.modell}` : "",
+      `- **Meddelanden:** ${meddelanden.length}`,
+      "",
+      "---",
+      "",
+    ].filter((r) => r !== "");
+    for (const m of meddelanden) {
+      if (m.roll === "user") {
+        rader.push(m.text.split("\n").map((rad) => `> ${rad}`).join("\n") || ">");
+      } else {
+        rader.push(m.text || "_(tomt svar)_");
+      }
+      rader.push("");
+    }
+    const blob = new Blob([rader.join("\n")], { type: "text/markdown;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `studio-chatt-${datum}-${tid}.md`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 2_000);
+    visaToast("Chatten exporterad som markdown.");
+  }, [meddelanden, kontext, visaToast]);
+
+  // ── V84 A4: MEDDELANDESÖKNING — träfflista i dokumentordning ────────────
+  const sokTräffar = React.useMemo<SokTräff[]>(() => {
+    const fras = sokFras.trim();
+    if (!fras || !sokOppen) return [];
+    const ut: SokTräff[] = [];
+    for (const m of meddelanden) {
+      for (let f = 0; f < raknaForekomster(m.text, fras); f++) {
+        ut.push({ meddelandeId: m.id, forekomst: f });
+      }
+    }
+    return ut;
+  }, [meddelanden, sokFras, sokOppen]);
+
+  // Håll indexet inom intervallet när frasen/träffantalet ändras.
+  React.useEffect(() => {
+    setSokIndex((i) => Math.min(Math.max(0, i), Math.max(0, sokTräffar.length - 1)));
+  }, [sokTräffar.length]);
+
+  /** Aktiv träff — stark highlight + scroll till meddelandet (centrerat). */
+  const aktivTräff = sokTräffar.length > 0 ? sokTräffar[Math.min(sokIndex, sokTräffar.length - 1)] : null;
+  React.useEffect(() => {
+    if (!aktivTräff) return;
+    const el = meddelandeRefs.current.get(aktivTräff.meddelandeId);
+    el?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [aktivTräff]);
+
+  /** Pilnavigering bland träffar (cyklisk — som Z: runt, runt). */
+  const hoppaSok = React.useCallback(
+    (steg: 1 | -1) => {
+      if (sokTräffar.length === 0) return;
+      setSokIndex((i) => (i + steg + sokTräffar.length) % sokTräffar.length);
+    },
+    [sokTräffar.length],
+  );
+
+  // ── V84 A2: KOMMANDOPALETTEN (Ctrl/Cmd+K) — poster ur registret ─────────
+  const palettPoster = React.useMemo<PalettPost[]>(() => {
+    const poster: PalettPost[] = STUDIO_KOMMANDON.map((k) => ({
+      id: `cmd-${k.namn}`,
+      etikett: k.syntax,
+      beskrivning: k.beskrivning,
+      grupp: "Kommandon" as const,
+      ikon: "kommando" as const,
+      sokbar: `${k.syntax} ${k.namn} ${k.beskrivning}`.toLowerCase(),
+      kor: () => void korKommando(k.namn),
+    }));
+    for (const m of modeller) {
+      poster.push({
+        id: `modell-${m.id}`,
+        etikett: `Byt modell — ${m.namn}`,
+        beskrivning: `/modell ${m.id} — ny session skapas med modellen`,
+        grupp: "Modeller",
+        ikon: "modell",
+        sokbar: `byt modell ${m.id} ${m.namn} /modell`.toLowerCase(),
+        kor: () => void bytModell(m.id),
+      });
+    }
+    poster.push({
+      id: "tema",
+      etikett: morkLage ? "Tema — växla till ljus (paper)" : "Tema — växla till mörk (marin natt)",
+      beskrivning: "Studions tema med AK1A-guld på båda bottnarna — också tangent T",
+      grupp: "Utseende",
+      ikon: "tema",
+      sokbar: "tema mörk ljus dark light växla utseende t".toLowerCase(),
+      kor: vaxlaTema,
+    });
+    const f = palettFras.trim().toLowerCase();
+    if (!f) return poster;
+    return poster.filter((p) => p.sokbar.includes(f));
+  }, [modeller, palettFras, morkLage, korKommando, bytModell, vaxlaTema]);
+
+  // Nollställ markeringen när filtreringen ändras / paletten öppnas.
+  React.useEffect(() => {
+    setPalettIndex(0);
+  }, [palettFras, palettOppen]);
+
+  // Tangentnavigering i listan — vald rad scrollas fram (block:nearest).
+  React.useEffect(() => {
+    const p = palettPoster[palettIndex];
+    if (!p || !palettOppen) return;
+    palettRadRefs.current.get(p.id)?.scrollIntoView({ block: "nearest" });
+  }, [palettIndex, palettPoster, palettOppen]);
+
+  /** Öppna paletten (knapp eller Ctrl/Cmd+K). */
+  const oppnaPalett = React.useCallback(() => {
+    setPalettFras("");
+    setPalettIndex(0);
+    setPalettOppen(true);
+  }, []);
+
+  // ── V84 A1/A2: GLOBALA GENVÄGAR — Ctrl/Cmd+K (palett), T (tema),
+  // Esc (stäng palett/sök). T ignoreras i inmatningsfält + med modifier. ──
+  React.useEffect(() => {
+    const paTangent = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setPalettOppen((v) => {
+          if (v) return false;
+          setPalettFras("");
+          setPalettIndex(0);
+          return true;
+        });
+        return;
+      }
+      if (e.key === "Escape") {
+        if (palettOppen) {
+          setPalettOppen(false);
+        } else if (sokOppen) {
+          setSokOppen(false);
+          setSokFras("");
+        }
+        return;
+      }
+      const mal = e.target as HTMLElement | null;
+      const iRedigerbart =
+        !!mal &&
+        (mal.tagName === "INPUT" ||
+          mal.tagName === "TEXTAREA" ||
+          mal.tagName === "SELECT" ||
+          mal.isContentEditable);
+      if (iRedigerbart || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === "t" || e.key === "T") {
+        e.preventDefault();
+        vaxlaTema();
+      }
+    };
+    window.addEventListener("keydown", paTangent);
+    return () => window.removeEventListener("keydown", paTangent);
+  }, [palettOppen, sokOppen, vaxlaTema]);
+
+  // Fokus i sökfältet när det öppnas (autofocus räcker ej vid återöppning).
+  React.useEffect(() => {
+    if (sokOppen) sokInputRef.current?.focus();
+  }, [sokOppen]);
+
+  // Fokus i palettens sökrad när den öppnas (Ctrl/Cmd+K + knapp).
+  React.useEffect(() => {
+    if (palettOppen) palettInputRef.current?.focus();
+  }, [palettOppen]);
 
   /** Infoga en uppladdad sökväg i prompten ("Titta på …"). */
   const infogaSokvag = (sokvag: string, typ: string) => {
@@ -1986,7 +3415,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   return (
     <div
-      className="paper-texture flex h-[100dvh] flex-col"
+      className={cn("paper-texture flex h-[100dvh] flex-col", morkLage && "dark")}
       onDragOver={(e) => {
         e.preventDefault();
         setDraÖver(true);
@@ -2036,7 +3465,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <select
                 value={valdModell}
                 onChange={(e) => void bytModell(e.target.value)}
-                disabled={modeller.length === 0 || byterModell || strömmar}
+                disabled={modeller.length === 0 || byterModell || strömmarHuvud || !arHuvudAktiv}
                 className={cn(
                   "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
                   "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
@@ -2063,7 +3492,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <select
                 value={lage}
                 onChange={(e) => void byteLage(e.target.value)}
-                disabled={!lage || lageJobbar || strömmar}
+                disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                 className={cn(
                   "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
                   "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
@@ -2092,7 +3521,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <select
                 value={tanka}
                 onChange={(e) => void byteTanke(e.target.value)}
-                disabled={!tanka || lageJobbar || strömmar}
+                disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                 className={cn(
                   "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-2.5 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
                   "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
@@ -2115,16 +3544,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </span>
             </label>
           </div>
+          {/* V84 A1: TEMA-VÄXLARE — dark-klass på roten (marin natt + guld);
+              också tangent T utanför inmatningsfält. */}
+          <button
+            onClick={vaxlaTema}
+            title={morkLage ? "Växla till ljust tema (paper) — tangent T" : "Växla till mörkt tema (marin natt med guld) — tangent T"}
+            aria-label="Växla mörkt/ljust tema"
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
+          >
+            {morkLage ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+          </button>
           <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
             <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
             <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
           </div>
         </div>
 
-        {/* KONTEXTRAD (V2): tokens denna runda · totalt · procent av taket */}
+        {/* KONTEXTRAD (V2): tokens denna runda · totalt · procent av taket.
+            V84 A6: nowrap — raden bryts aldrig mitt i siffrorna (mobil först). */}
         <div className="border-t border-gold/15 bg-black/15">
           <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-1.5 sm:px-4">
-            <span className="text-[11px] text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
+            <span className="whitespace-nowrap text-[11px] text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
               📊 {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda` : "— denna runda"} · ~
               {tkn(ackumulerat)} totalt
               {kontextProcent !== null && (
@@ -2149,18 +3589,73 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {kontext.modell}
               </span>
             )}
-            <span className="ml-auto flex items-center gap-1">
+            <span className="ml-auto flex flex-wrap items-center gap-1">
+              {/* V84 A4: sök i chatten — highlight + räknare + pilnavigering */}
               <button
-                onClick={() => (visaFiler ? setVisaFiler(false) : oppnaFiltrad())}
+                onClick={() => {
+                  const ny = !sokOppen;
+                  setSokOppen(ny);
+                  if (!ny) setSokFras("");
+                }}
+                title="Sök i chatten (highlight + pilnavigering)"
+                className={cn(
+                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
+                  sokOppen ? "text-gold" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
+                )}
+              >
+                <Search className="h-3.5 w-3.5" />
+                Sök
+              </button>
+              {/* V84 A2: kommandopaletten — även på mobil (ingen Ctrl där) */}
+              <button
+                onClick={oppnaPalett}
+                title="Kommandopalett (Ctrl/Cmd+K)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Command className="h-3.5 w-3.5" />
+                ⌘K
+              </button>
+              {/* V84 A5: exportera chatten som markdown */}
+              <button
+                onClick={exporteraChat}
+                title="Exportera chatten som markdown-fil (datum i filnamnet)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Download className="h-3.5 w-3.5" />
+                Exportera
+              </button>
+              <button
+                onClick={() => {
+                  setVisaMinne(false);
+                  setMinneVald(null);
+                  setMinneRedigerar(false);
+                  setMinneNy(false);
+                  if (visaFiler) setVisaFiler(false);
+                  else oppnaFiltrad();
+                }}
                 title="Filträdet — agentens arbetsyta (förhandsgranska filer och bilder, töm uploads)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <FolderTree className="h-3.5 w-3.5" />
                 Filer
               </button>
+              {/* VÅG 84 D: Minne 🧠 — agentens minnesfiler, redigerbara */}
+              <button
+                onClick={() => (visaMinne ? setVisaMinne(false) : oppnaMinne())}
+                title="Minne — vad agenten kommer ihåg (minnesfiler + stående instruktioner, redigerbara)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Brain className="h-3.5 w-3.5" />
+                Minne
+                {minneFiler && minneFiler.length > 0 && (
+                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">
+                    {minneFiler.length}
+                  </span>
+                )}
+              </button>
               <button
                 onClick={() => void startaNySession()}
-                disabled={sessionJobbar !== "" || strömmar}
+                disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
                 title="Kassera sessionen och börja en frisk kontext (1M-fönstret börjar om — gamla sessioner finns kvar i listan)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
               >
@@ -2169,7 +3664,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </button>
               <button
                 onClick={() => void komprimera()}
-                disabled={sessionJobbar !== "" || strömmar}
+                disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
                 title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
               >
@@ -2214,8 +3709,151 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 Sessioner
                 {sessioner.length > 0 && <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{sessioner.length}</span>}
               </button>
+              {/* V84 C: REGLER — "alltid tillåt"-minnet (localStorage) med
+                  hanteringspanel; NOTISER — Web Notification vid >60 s-turner. */}
+              <button
+                onClick={() => setVisaRegler((v) => !v)}
+                title="Minnesregler — ”alltid tillåt” per verktyg (localStorage ak1a-studio-regler); matchande begäranden godkänns automatiskt"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <ShieldCheck className="h-3.5 w-3.5" />
+                Regler
+                {regler.length > 0 && (
+                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{regler.length}</span>
+                )}
+              </button>
+              <button
+                onClick={() => void begraNotisRattighet()}
+                disabled={notisRattighet === "stöds ej" || notisRattighet === "denied"}
+                title={
+                  notisRattighet === "granted"
+                    ? "Notiser på — rundor över 60 s pingar och ”✓ Klar (N tkn)” kommer när agenten är färdig"
+                    : notisRattighet === "denied"
+                      ? "Notiser blockerade i webbläsaren — tillåt dom i inställningarna"
+                      : notisRattighet === "stöds ej"
+                        ? "Webbläsaren saknar stöd för notiser"
+                        : "Slå på notiser — agentens långa rundor (>60 s) pingar när den är klar"
+                }
+                className={cn(
+                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10 disabled:opacity-40",
+                  notisRattighet === "granted" ? "text-emerald-300" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
+                )}
+              >
+                {notisRattighet === "granted" ? <BellRing className="h-3.5 w-3.5" /> : <Bell className="h-3.5 w-3.5" />}
+                Notiser
+              </button>
             </span>
           </div>
+
+          {/* V84 C: REGELPANEL — "alltid tillåt"-minnet (lista + ta bort). */}
+          {visaRegler && (
+            <div className="border-t border-gold/15 bg-black/25">
+              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
+                  Minnesregler — {regler.length === 0 ? "inga sparade" : `${regler.length} ${regler.length === 1 ? "regel" : "regler"}`}
+                </p>
+                {regler.length === 0 ? (
+                  <p className="text-[11px] leading-relaxed text-[#EDE6D6]/50">
+                    Inga ”alltid tillåt”-regler än — spara en direkt i godkännandedialogen
+                    (”⛨ Alltid tillåta &lt;verktyg&gt;”) så godkänns framtida begäranden för
+                    verktyget automatiskt med en notis i flödet. Reglerna lever i denna
+                    webbläsare (localStorage) och påverkar aldrig serverns egna regler.
+                  </p>
+                ) : (
+                  <ul className="space-y-1">
+                    {regler.map((r) => (
+                      <li
+                        key={r.verktyg}
+                        className="group flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
+                        title={`${r.verktyg} — sparad ${new Date(r.skapad).toLocaleString("sv-SE")}`}
+                      >
+                        {(() => {
+                          const klass = verktygsriskKlass(r.verktyg);
+                          return (
+                            <span
+                              className={cn("shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-wider", klass.farg)}
+                              title={klass.forklaring}
+                            >
+                              {klass.etikett}
+                            </span>
+                          );
+                        })()}
+                        <span className="min-w-0 flex-1 truncate font-mono">{r.verktyg}</span>
+                        <span className="shrink-0 text-[9px] uppercase tracking-wider text-emerald-300/80">alltid tillåt</span>
+                        <button
+                          onClick={() => {
+                            tabortRegel(r.verktyg);
+                            visaToast(`Regeln för ${r.verktyg} borttagen — framtida begäranden visar dialogen igen.`);
+                          }}
+                          title="Ta bort regeln"
+                          className="shrink-0 rounded p-0.5 text-[#EDE6D6]/40 transition-colors hover:bg-red-500/20 hover:text-red-300"
+                        >
+                          <Trash2 className="h-3 w-3" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* V84 A4: SÖKFÄLT — highlight i chatten + räknare + pilnavigering
+              (Enter = nästa träff, Skift+Enter = föregående, Esc = stäng). */}
+          {sokOppen && (
+            <div className="border-t border-gold/15 bg-black/25">
+              <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 px-3 py-1.5 sm:px-4">
+                <Search className="h-3.5 w-3.5 shrink-0 text-gold" />
+                <input
+                  ref={sokInputRef}
+                  value={sokFras}
+                  onChange={(e) => setSokFras(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      hoppaSok(e.shiftKey ? -1 : 1);
+                    }
+                  }}
+                  placeholder="Sök i chatten…"
+                  maxLength={120}
+                  className="min-w-0 flex-1 rounded-md border border-gold/40 bg-black/30 px-2.5 py-1 text-[11px] text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
+                />
+                <span className="shrink-0 font-mono text-[10px] tabular-nums text-[#EDE6D6]/60" aria-live="polite">
+                  {sokFras.trim()
+                    ? sokTräffar.length > 0
+                      ? `${Math.min(sokIndex, sokTräffar.length - 1) + 1}/${sokTräffar.length}`
+                      : "0 träffar"
+                    : ""}
+                </span>
+                <button
+                  onClick={() => hoppaSok(-1)}
+                  disabled={sokTräffar.length === 0}
+                  title="Föregående träff (Skift+Enter)"
+                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
+                >
+                  <ArrowUp className="h-3.5 w-3.5" />
+                </button>
+                <button
+                  onClick={() => hoppaSok(1)}
+                  disabled={sokTräffar.length === 0}
+                  title="Nästa träff (Enter)"
+                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
+                >
+                  <ArrowDown className="h-3.5 w-3.5" />
+                </button>
+                <button
+                  onClick={() => {
+                    setSokOppen(false);
+                    setSokFras("");
+                  }}
+                  title="Stäng sök (Esc)"
+                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* VÅG 83 B3: MÅL (session/goal) — visas i headern om satt, redigerbart */}
           {(malRedigerar || mal) && (
@@ -2295,7 +3933,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <div className="border-t border-gold/15 bg-black/25">
               <div className="mx-auto max-h-56 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
                 <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-                  Sessioner {sessioner.length === 0 && "— ingen lista ännu"} · klicka för att öppna
+                  Sessioner {sessioner.length === 0 && "— ingen lista ännu"} · klicka = öppna i NY TABB
                 </p>
                 {arbetsytaInfo && (
                   <p
@@ -2328,13 +3966,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         )}
                       />
                       <button
-                        onClick={() => void oppnaSessionen(s.sessionId)}
-                        disabled={sessionJobbar !== "" || strömmar || s.sessionId === aktivSession}
+                        onClick={() => oppnaITabb(s.sessionId, s.titel)}
+                        disabled={sessionJobbar !== ""}
                         className="flex min-w-0 flex-1 flex-col items-start text-left disabled:cursor-default"
                         title={
-                          s.sessionId === aktivSession
-                            ? "Aktiv session"
-                            : `Öppna ${s.sessionId} (session/resume) — historiken återkommer i chatten`
+                          tabbar.some((t) => t.sessionId === s.sessionId)
+                            ? "Sessionen är redan öppen i en tabb — växla dit"
+                            : `Öppna ${s.sessionId} i en NY TABB (resume) — historiken hämtas ur sessionen`
                         }
                       >
                         <span className="w-full truncate font-medium">
@@ -2359,7 +3997,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       </span>
                       <button
                         onClick={() => void stangSessionen(s.sessionId)}
-                        disabled={sessionJobbar !== "" || strömmar}
+                        disabled={sessionJobbar !== "" || strömmarHuvud}
                         title="Stäng sessionen (session/close) — finns kvar i listan men svarar ej"
                         className="shrink-0 rounded p-0.5 text-[#EDE6D6]/40 opacity-0 transition-all hover:bg-red-500/20 hover:text-red-300 focus:opacity-100 group-hover:opacity-100 disabled:opacity-30"
                       >
@@ -2440,6 +4078,112 @@ export function StudioChat({ hem }: { hem: () => void }) {
           )}
         </div>
       </header>
+
+      {/* VÅG 84 B: SESSIONSTABBAR — rad av tabbar ovanför chatten.
+          [+] = ny tabb (egen session på servern — frisk session föds vid
+          första prompten). Varje tabb = modell-badge + kortnamn (första
+          orden i senaste prompten) + stäng-X + ON-GÅENDE-prick (gul,
+          pulserande — agenten arbetar i tabben). Aktiv tabb = chattvyn;
+          INAKTIVA tabbar fortsätter samla SSE i bakgrunden (bufferten
+          renderas vid tabbyte). Stäng pågående tabb ⇒ confirm "Agenten
+          arbetar — avbryta?" (ja = abort ⇒ session/stop). */}
+      <nav
+        aria-label="Sessionstabbbar"
+        className="sticky top-[var(--studio-tabbar-top,0)] z-10 border-b border-gold/20 bg-[#0D1B31]/95 backdrop-blur"
+      >
+        <div className="mx-auto flex w-full max-w-3xl items-center gap-1 overflow-x-auto px-3 py-1.5 sm:px-4 [scrollbar-width:thin]">
+          {tabbar.map((t) => {
+            const arAktiv = t.id === (aktivTabb?.id ?? "");
+            return (
+              <div
+                key={t.id}
+                className={cn(
+                  "group flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 transition-colors",
+                  arAktiv
+                    ? "border-gold/60 bg-gold/15 text-[#EDE6D6]"
+                    : "border-transparent bg-white/5 text-[#EDE6D6]/70 hover:bg-white/10 hover:text-[#EDE6D6]",
+                )}
+                title={`${t.titel}${t.sessionId ? ` · ${t.sessionId}` : " · ingen session ännu"}${t.huvud ? " · huvudsessionen" : " · egen session"}${t.strömmar ? " · agenten arbetar…" : ""}`}
+              >
+                {/* ON-GÅENDE-prick: gul + pulserande medan agenten arbetar. */}
+                {t.strömmar ? (
+                  <span className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-gold" aria-label="Agenten arbetar" />
+                ) : (
+                  <span
+                    className={cn(
+                      "h-2 w-2 shrink-0 rounded-full",
+                      t.huvud ? "bg-emerald-400/80" : "bg-white/25",
+                    )}
+                  />
+                )}
+                <button
+                  onClick={() => valjTabb(t.id)}
+                  className="flex min-w-0 items-center gap-1.5 text-left"
+                  aria-current={arAktiv ? "page" : undefined}
+                >
+                  {/* Modell-badge — sessionens egen modell (kontext-projektionen). */}
+                  <span className="shrink-0 rounded-full bg-black/30 px-1.5 py-0.5 font-mono text-[8px] font-bold uppercase tracking-wider text-gold/90">
+                    {modellBadge(t.kontext?.modell)}
+                  </span>
+                  <span className="max-w-[110px] truncate text-[11px] font-medium">
+                    {t.titel}
+                    {t.huvud && <span className="ml-1 text-[9px] text-[#EDE6D6]/40">●</span>}
+                  </span>
+                </button>
+                <button
+                  onClick={() => stangTabb(t.id)}
+                  title={t.strömmar ? "Stäng tabben (agenten arbetar — avbryta?)" : "Stäng tabben"}
+                  className="shrink-0 rounded-full p-0.5 text-[#EDE6D6]/40 transition-colors hover:bg-red-500/25 hover:text-red-300"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </div>
+            );
+          })}
+          {/* [+] ny tabb — frisk session (max 8: RAM-taket på servern). */}
+          <button
+            onClick={nyTabb}
+            title={`Ny tabb — frisk agent-session (${tabbar.length}/${MAX_TABBAR} · egen zcode-process på servern)`}
+            className="flex shrink-0 items-center gap-1 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1 text-[11px] font-semibold text-gold transition-colors hover:border-gold/60 hover:bg-gold/10"
+          >
+            <Plus className="h-3 w-3" />
+            Ny tabb
+          </button>
+          {tabbar.length > 1 && (
+            <span className="ml-auto shrink-0 pl-2 text-[9px] italic text-[#EDE6D6]/35">
+              inaktiva tabbar fortsätter arbeta i bakgrunden
+            </span>
+          )}
+        </div>
+      </nav>
+
+      {/* VÅG 84 D: MINNE-PANEL 🧠 — agentens minnesfiler + AGENTS.md,
+          redigerbara (state/actions här, ytan i studio-minne-panel.tsx). */}
+      <StudioMinnePanel
+        oppen={visaMinne}
+        stang={() => setVisaMinne(false)}
+        lasa={lasMinne}
+        filer={minneFiler}
+        laddar={minneLaddar}
+        fel={minneFel}
+        rotVisning={minneRotVisning}
+        vald={minneVald}
+        detaljLaddar={minneDetaljLaddar}
+        redigerar={minneRedigerar}
+        text={minneText}
+        sparar={minneSparar}
+        raderar={minneRaderar}
+        ny={minneNy}
+        nyttNamn={minneNyttNamn}
+        setVald={setMinneVald}
+        setRedigerar={setMinneRedigerar}
+        setText={setMinneText}
+        setNy={setMinneNy}
+        setNyttNamn={setMinneNyttNamn}
+        oppnaFil={oppnaMinnesfil}
+        spara={sparaMinnesfil}
+        radera={raderaMinnesfil}
+      />
 
       {/* VÅG 83 B4: FILTRÄDSDRAWER — agentens arbetsyta, klicka dig ner */}
       {visaFiler && (
@@ -2627,8 +4371,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* Meddelandelista */}
-      <div ref={blattraRef} className="mx-auto w-full max-w-3xl flex-1 overflow-y-auto px-3 py-4 sm:px-4">
+      {/* Meddelandelista — V84 A3: relativ wrapper bär "↓ Nytt"-knappen. */}
+      <div className="relative min-h-0 flex-1">
+      <div
+        ref={blattraRef}
+        onScroll={paScrollChatt}
+        className="mx-auto h-full w-full max-w-3xl overflow-y-auto px-3 py-4 sm:px-4"
+      >
         {meddelanden.length === 0 && (
           <div className="mx-auto mt-10 max-w-md text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/30 bg-card">
@@ -2656,9 +4405,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
         <div className="space-y-4">
           {meddelanden.map((m) =>
             m.roll === "user" ? (
-              <div key={m.id} className="flex justify-start">
+              <div
+                key={m.id}
+                ref={(el) => {
+                  if (el) meddelandeRefs.current.set(m.id, el);
+                  else meddelandeRefs.current.delete(m.id);
+                }}
+                className="flex justify-start"
+              >
                 <div className="marin-panel marin-scope max-w-[85%] rounded-2xl rounded-tl-sm border border-gold/25 px-4 py-2.5 shadow-sm sm:max-w-[75%]">
-                  <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">{m.text}</p>
+                  <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">
+                    {sokFras.trim()
+                      ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
+                      : m.text}
+                  </p>
                   {/* VÅG 83 B4: uppladdade bilder som refereras i texten →
                       miniatyrer direkt i bubblan (säker serving &bild=1). */}
                   {bildRefsUrText(m.text).length > 0 && (
@@ -2683,7 +4443,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </div>
               </div>
             ) : (
-              <div key={m.id} className="flex justify-end">
+              <div
+                key={m.id}
+                ref={(el) => {
+                  if (el) meddelandeRefs.current.set(m.id, el);
+                  else meddelandeRefs.current.delete(m.id);
+                }}
+                className="flex justify-end"
+              >
                 <div
                   className={cn(
                     "max-w-[92%] rounded-2xl rounded-tr-sm border bg-card px-4 py-3 shadow-sm sm:max-w-[80%]",
@@ -2698,8 +4465,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           key={k.id}
                           kort={k}
                           onVaxla={(id) =>
-                            setMeddelanden((alla) =>
-                              alla.map((mm) =>
+                            rörTabb(aktivTabb?.id ?? "", (tb) => ({
+                              ...tb,
+                              meddelanden: tb.meddelanden.map((mm) =>
                                 mm.id === m.id
                                   ? {
                                       ...mm,
@@ -2709,18 +4477,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
                                     }
                                   : mm,
                               ),
-                            )
+                            }))
                           }
                         />
                       ))}
                     </div>
                   )}
                   {m.text ? (
-                    <StudioMarkdown text={m.text} />
+                    <StudioMarkdown
+                      text={m.text}
+                      markera={
+                        sokFras.trim()
+                          ? { fras: sokFras.trim(), aktivForekomst: aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1 }
+                          : undefined
+                      }
+                    />
                   ) : (
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <Loader2 className="h-3.5 w-3.5 animate-spin text-gold" />
-                      {statusText}
+                      {/* V84 B: strömstatus ur DEN AKTIVA TABBEN (fallback: global). */}
+                      {aktivTabb?.status || statusText}
                     </div>
                   )}
                   {m.strömmande && m.text && (
@@ -2728,11 +4504,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                   {/* V83 B1: ändringspanelen — +N/−N per fil, expanderbar diff. */}
                   {m.ändringar && m.ändringar.length > 0 && (
-                    <AndringsPanel
+                      <AndringsPanel
                       andringar={m.ändringar}
                       onVaxlaFil={(sokvag) =>
-                        setMeddelanden((alla) =>
-                          alla.map((mm) =>
+                        rörTabb(aktivTabb?.id ?? "", (tb) => ({
+                          ...tb,
+                          meddelanden: tb.meddelanden.map((mm) =>
                             mm.id === m.id
                               ? {
                                   ...mm,
@@ -2742,7 +4519,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                                 }
                               : mm,
                           ),
-                        )
+                        }))
                       }
                     />
                   )}
@@ -2777,8 +4554,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </div>
             ),
           )}
-          {/* VÅG 83 B2: PERMISSION-DIALOG (Z-portaLens) — marin kort med
-              verktygsnamn + risk-badge + argument-summary + options-knappar.
+          {/* VÅG 83 B2 + V84 C: PERMISSION-DIALOG (Z-portaLens) — marin kort
+              med verktygsnamn + protokollrisk-badge + VERKTYGSRISK-BADGE
+              (skrivande/läsande/nät) + DIFF-FÖRHANDSVISNING för Write/Edit
+              (annars argument-summary) + options-knappar + "Alltid tillåta".
               Byggd ur protokollets interaction/requestPermission-options
               (allow_once/allow_project/deny); svaret går via
               /api/studio/interaktion. 30 s utan svar ⇒ eskalering. */}
@@ -2795,10 +4574,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       "rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider",
                       riskFarg(permission.risk),
                     )}
-                    title={`Risknivå: ${permission.risk}`}
+                    title={`Protokollets risknivå: ${permission.risk}`}
                   >
                     {permission.risk}
                   </span>
+                  {/* V84 C: verktygsklassningen — Bash/Write/Edit=orange,
+                      Read/Glob/Grep=grön, WebSearch/WebFetch=gul, övrigt neutralt. */}
+                  {(() => {
+                    const klass = verktygsriskKlass(permission.verktyg);
+                    return (
+                      <span
+                        className={cn(
+                          "rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-wider",
+                          klass.farg,
+                        )}
+                        title={klass.forklaring}
+                      >
+                        {klass.etikett}
+                      </span>
+                    );
+                  })()}
                   {svarJobbar && <Loader2 className="h-3 w-3 animate-spin text-gold" />}
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-[#EDE6D6]">
@@ -2807,9 +4602,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {permission.skäl && (
                   <p className="mt-1 text-xs leading-relaxed text-[#EDE6D6]/70">{permission.skäl}</p>
                 )}
-                <pre className="mt-2 max-h-32 overflow-auto whitespace-pre-wrap break-words rounded-md border border-gold/20 bg-black/30 p-2 font-mono text-[10px] leading-relaxed text-[#EDE6D6]/85">
-                  {permission.sammanfattning}
-                </pre>
+                {/* V84 C: DIFF-FÖRHANDSVISNING — exakt vad Write/Edit ändrar,
+                    FÄRGKODAT innan valet; utan diff faller kortet på summary. */}
+                {permission.diff ? (
+                  <DiffForhandsvisning diff={permission.diff} />
+                ) : (
+                  <pre className="mt-2 max-h-32 overflow-auto whitespace-pre-wrap break-words rounded-md border border-gold/20 bg-black/30 p-2 font-mono text-[10px] leading-relaxed text-[#EDE6D6]/85">
+                    {permission.sammanfattning}
+                  </pre>
+                )}
                 <div className="mt-3 flex flex-wrap gap-2">
                   {permission.alternativ.map((a) => (
                     <button
@@ -2829,9 +4630,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       {PERMISSION_ETIKETT[a.optionId] ?? a.namn}
                     </button>
                   ))}
+                  {/* V84 C: spara minnesregel + tillåt — nästa request för
+                      verktyget godkänns automatiskt (notis i flödet). */}
+                  <button
+                    onClick={() => {
+                      const ny = sparaRegel(permission.verktyg);
+                      visaToast(
+                        ny
+                          ? `Regel sparad: ${permission.verktyg} tillåts alltid (ta bort under Regler).`
+                          : `En regel för ${permission.verktyg} finns redan.`,
+                      );
+                      void svaraPermission(permission.requestId, "allow_once");
+                    }}
+                    disabled={svarJobbar}
+                    title={`Spara en "alltid tillåt"-regel för ${permission.verktyg} i denna webbläsare (localStorage) och tillåt denna begäran`}
+                    className="rounded-full border border-emerald-400/50 px-3 py-1.5 text-xs font-semibold text-emerald-300 transition-colors hover:bg-emerald-400/15 disabled:opacity-50"
+                  >
+                    ⛨ Alltid tillåta {permission.verktyg}
+                  </button>
                 </div>
                 <p className="mt-2 text-[10px] leading-relaxed text-[#EDE6D6]/50">
                   Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
+                  {" "}Regler gäller i denna webbläsare och hanteras under Regler i verktygsraden.
                 </p>
               </div>
             </div>
@@ -2903,6 +4723,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </div>
           )}
         </div>
+        {/* V84 A3: "↓ Nytt" — flytande knapp när användaren scrollat upp
+            (klick = mjuk hopp ner + återupptagen autoscroll + badge med
+            antal olästa som anlände under uppehållet). */}
+        {!vidBotten && meddelanden.length > 0 && (
+          <button
+            onClick={hoppaNerChatt}
+            title="Hoppa till senaste — autoscrollen återupptas"
+            className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-gold/50 bg-[#10233F]/95 px-3.5 py-1.5 text-xs font-semibold text-[#EDE6D6] shadow-lg backdrop-blur transition-colors hover:border-gold"
+          >
+            <ArrowDown className="h-3.5 w-3.5 text-gold" />
+            Nytt
+            {nyaSedanUpp > 0 && (
+              <span className="rounded-full bg-[#c9a84c] px-1.5 text-[10px] font-bold text-[#0E1B2E]">
+                {nyaSedanUpp}
+              </span>
+            )}
+          </button>
+        )}
+      </div>
       </div>
 
       {/* Uppladdnings-chips */}

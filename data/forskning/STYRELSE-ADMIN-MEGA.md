@@ -338,3 +338,29 @@ Kundens /chat (ttyd) är funktionell men ren terminal. BESLUT:
    (paper/guld/marin) — EXCEPTIONELL enligt kundens ord.
 3. Säkerhet: uploads ska 30 MB-filtak + filtypsvitlista + rensas > 7 dgr;
    bryggan binder 127.0.0.1 endast; INGA hemligheter i klientsidan.
+
+## TILLÄGG VÅG 82 — STUDIO V2: "Z-PORTALEN I MOLNET" (kunddirektiv)
+
+Kundens önskan: terminalen/webchatten skall bli "super avancerad som Z" —
+modellval (glm-5.3/5.2/5.1/turbo), kontextoptimering (max 1M), bilder/
+filer/mappar (FINNS i v1), 24/7 molndrift utan datorn (FINNS — Contabo).
+
+BESLUT: UPPGRADERA /studio (ej ttyd — den är reserv):
+1. MODELLVÄLJARE: UI-dropdown i /studio som växlar huvudmodell — via
+   session/create-parametrar eller en "session/setModel"-metod i
+   protokollet (FORSKA i vendor/zcode.cjs på servern: sök "model" i
+   session/create-params-zod + runtimePreferences + /model-kommandot i
+   TUI-koden för exakt fältnamn). Kräver sannolikt ny session per modell
+   — transporten stödjer det (kassera + skapa).
+2. KONTEXTKONTROLL: visa tokenCount per turn (FINNS i klart-eventet) +
+   ackumulerat i headern; "/compact"-knapp om protokollet stödjer det
+   (sök "compact" i app-server-metoderna; annars "ny session"-knapp som
+   bevarar historiklistan i UI:t men börjar frisk kontext = 1M-kontoret).
+3. MODELLKORT: visa vald modell + context-ledigt i LIVE-raden.
+4. Sessionshantering: "Ny session"-knapp + lista tidigare (session/list
+   är bevisad metod).
+5. Deployas på Contabo (redan molnet — inget mer "ladda upp": det KÖR
+   redan 24/7 där; förklara detta för kunden).
+
+KVD: max parallella agenter, src via Write/Edit, protokollforskning
+FIRST (som våg 81 — dokumentera fynden), E2E-krav på prod.

@@ -215,7 +215,11 @@ export type StudioEvent =
       typ: "verktyg_kort";
       /** Protokollets toolCallId — UI:t samlar korten per id. */
       id: string;
-      namn: string;
+      /**
+       * Verktygsnamn — ENDAST när protokollet bär det (LIVE-sond: kind
+       * "result" saknar toolName; UI:t behåller då det tidigare namnet).
+       */
+      namn?: string;
       steg: StudioVerktygSteg;
       /** Argument som JSON-sträng, truncat. */
       argument?: string;
@@ -1987,33 +1991,45 @@ class AppServerTransport implements StudioTransport {
           aktiv.lyssnare({ typ: "status", text: "Agenten arbetar…" });
           return;
         case "tool.updated": {
-          // V83 B1 (kartan §4A): kinds scheduled/started/progress/result/
+          // V83 B1 (kartan §4A + LIVE-sond tool-results/v83-b1-toolupdated-
+          // sond.mjs 2026-09-09): kinds scheduled/started/progress/result/
           // error — varje verktygskall blir ett kort (merge på toolCallId).
+          // SONDFAKTA: kind "result" bär {toolCallId,result,duration} UTAN
+          // toolName — namn skickas DÄRFÖR bara när protokollet säger det,
+          // så UI:t:s merge (event.namn ?? befintligt.namn) aldrig skriver
+          // över "Bash" med "verktyg". Kind "scheduled" bär ENBART inputRef/
+          // inputByteLength (inputOmitted) — argumenten kommer via
+          // model.streaming tool_call (den mappningen lever kvar nedan).
           const kind = payload?.kind;
           const id =
             typeof payload?.toolCallId === "string" && payload.toolCallId
               ? payload.toolCallId
               : `tc-ingen-id-${this.okandaVerktyg++}`;
           const namn =
-            typeof payload?.toolName === "string" && payload.toolName ? payload.toolName : "verktyg";
+            typeof payload?.toolName === "string" && payload.toolName ? payload.toolName : undefined;
           if (kind === "scheduled") {
             aktiv.lyssnare({
               typ: "verktyg_kort",
               id,
-              namn,
+              ...(namn ? { namn } : {}),
               steg: "planerad",
               argument: argumentText(payload?.input),
               beskrivning: typeof payload?.description === "string" ? payload.description : undefined,
             });
             // Bakåtkompatibel chip-rad (v81-UI) lever kvar.
-            aktiv.lyssnare({ typ: "verktyg", namn, händelse: "start" });
+            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "start" });
           } else if (kind === "started") {
-            aktiv.lyssnare({ typ: "verktyg_kort", id, namn, steg: "startar" });
+            aktiv.lyssnare({
+              typ: "verktyg_kort",
+              id,
+              ...(namn ? { namn } : {}),
+              steg: "startar",
+            });
           } else if (kind === "progress") {
             aktiv.lyssnare({
               typ: "verktyg_kort",
               id,
-              namn,
+              ...(namn ? { namn } : {}),
               steg: "kör",
               framsteg: {
                 elapsedMs: typeof payload?.elapsedMs === "number" ? payload.elapsedMs : undefined,
@@ -2029,21 +2045,21 @@ class AppServerTransport implements StudioTransport {
             aktiv.lyssnare({
               typ: "verktyg_kort",
               id,
-              namn,
+              ...(namn ? { namn } : {}),
               steg: "resultat",
               resultat: resultatText(payload?.result),
               varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
             });
-            aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
+            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
           } else if (kind === "error") {
             aktiv.lyssnare({
               typ: "verktyg_kort",
               id,
-              namn,
+              ...(namn ? { namn } : {}),
               steg: "fel",
               fel: felText(payload?.error),
             });
-            aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
+            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
           }
           return;
         }

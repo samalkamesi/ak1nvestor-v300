@@ -1229,10 +1229,22 @@ class AppServerTransport implements StudioTransport {
    * standard/workspace-modell (zai/glm-5.3 vid v81-beviset).
    */
   async nySession(modellId?: string): Promise<string> {
-    // Pågående prompt får aldrig överlevas av en kasserad session.
+    // Pågående prompt får aldrig överlivas av en kasserad session (UI-knappen
+    // och modellbytet vägrar) — SJÄVLÄKNINGEN efter -32031 använder den
+    // interna vägen nedan (skapaFriskSession) som tillåter just det.
     if (this.aktiv && !this.aktiv.färdig) {
       throw new Error("En prompt kör — vänta tills agenten är klar.");
     }
+    return this.skapaFriskSession(modellId);
+  }
+
+  /**
+   * Intern frisk-session-väg UTAN prompt-vakten — självläkningsretryn efter
+   * -32031 (bevisad dödläge på prod 2026-09-09: nySession vägrade med
+   * "En prompt kör" MEDAN retryn pågick, så döda sessionen kunde aldrig
+   * kasseras och prompten dog). Städar väntande interaktioner + persistens.
+   */
+  private async skapaFriskSession(modellId?: string): Promise<string> {
     if (this.sid && this.klient?.lever) {
       // Artigt stäng — sessionen finns kvar i session/list (historik).
       try {
@@ -2275,7 +2287,9 @@ class AppServerTransport implements StudioTransport {
               typ: "status",
               text: "Sessionens modell är ej längre tillgänglig — skapar ny session…",
             });
-            await this.nySession();
+            // Intern frisk-session-väg (UTAN prompt-vakt) — dödlägesfix
+            // bevisad på prod 2026-09-09: nySession vägrade under retryn.
+            await this.skapaFriskSession();
             const svar = await this.klient!.request(
               "session/send",
               { sessionId: this.sid!, content: prompt },

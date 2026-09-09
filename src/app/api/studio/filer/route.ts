@@ -426,6 +426,10 @@ export async function DELETE(req: NextRequest) {
   let raderade = 0;
   const oppna = async (dir: string, djup: number): Promise<void> => {
     if (djup > 8) return;
+    // Inneslutningsvakt (försvar på djupet — rot är redan realpath:ad):
+    // varje katalog som öppnas MÅSTE ligga under uploads-roten.
+    const rotResolvad = path.resolve(rot);
+    if (!path.resolve(dir).startsWith(rotResolvad + path.sep)) return;
     let poster: import("node:fs").Dirent[];
     try {
       poster = await readdir(dir, { withFileTypes: true });

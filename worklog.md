@@ -9569,3 +9569,199 @@ driftsfynd).
 
 **KVD:** tsc 36 = baslinjen (0 nya) · motorer 107/0/0 · vakten GRÖN ·
 deploy Contabo (build ✓ 20,9 s, pm2 online, HTTPS 200 på / och /studio).
+
+## VÅG 84 E — SERVERNS PULS: OBSERVERBARHET LEVER (2026-09-09)
+
+**E1. API /api/admin/puls** (NY, requireAdmin, runtime nodejs): EN
+delegation på servern samlar hela hälsoläget — pm2 jlist (namn, status,
+cpu %, mem MB, uptime/start-tid, restarts) · df -h / (disk %, tolkat
+BAKIFRÅN så filsystemsnamn med mellanslag inte förskjuter kolumnerna) ·
+free -m (RAM använt/totalt via available-kolumnen) · uptime (load
+1/5/15 — svansen efter "load average:"/"belastningsgenomsnitt:" med
+decimalkomma-normalisering för sv_SE, aldrig dagar/användare-tal) ·
+crontab -l (radantal + poster) · senaste körningstider ur
+/var/log/ak1a-halsa.log via readFileSync (oläsbar ⇒ fältet saknas).
+SÄKERHET: samtliga shell-kommandon är KOMPILE-TIDS-KONSTANTER i
+KOMMANDON-objektet — INGEN interpolation når child_process någonsin
+(Mimosa: ruten accepterar inga parametrar, användardata når aldrig
+skalet); feletext loggas aldrig i svaret. Fel per kommando = null-fält
+(aldrig krasch), varje kommando takat 1,5 s, hela payloaden memo-cachas
+60 s (panelens poll-takt).
+
+**E2. Puls 📈-sektionen i Utvecklingspanelen** (utveckling-panel.tsx,
+bygger på våg 80c-panelen): statuskort per pm2-tjänst (grön/orange/röd
+prick — online/stopped+errored+stalled/övrigt — med cpu+mem, uptime,
+omstarter, starttid) · RAM- och disk-gauge (grönt <60/orange <85/rött
+≥85) · load-sparkline som ren inline-SVG med senaste 12 mätningarna i
+localStorage (ak1a-puls-load, de-dupe per mätning) · cron-lista
+(monospace, truncat) med senaste körningstider · mobil-först
+(grid-cols-1 → sm:grid-cols-2/3). 60 s auto-refresh ENDAST när fliken
+syns (document.visibilityState) — delar lås-vy/lösenord med
+utvecklingsvyn; Uppdatera-knappen triggar båda ruterna.
+
+**E3. FELLOGGEN**: senaste 20 raderna ur pm2:s ak1a-error-log (pm2 logs
+ak1a --err --nostream --lines 20 — fast sträng, truncat 200 tkn/rad,
+pm2:s "last N lines:"-rubriker bortfiltrerade) i accordion med RÖD
+badge "Nya fel" när signaturen (antal+sista rad, localStorage
+ak1a-puls-fellogg-senast) ändrats sedan senaste visningen — badge:n
+nollställs när loggen vecklas ut.
+
+**Verifiering:** dev-Windows bevisar null-vägen ärligt (pm2/free/
+uptime/crontab saknas ⇒ null-fält, df visar 23 %/425G/1.9T), GET
+/api/admin/puls: 401 utan lösenord, 200 med (0,10–0,16 s < 2 s,
+komplett JSON med 8 nycklar); parstest mot realistiska
+Contabo-utmatningar (pm2 jlist/free/uptime en+sv-locale/crontab/pm2
+logs/df med och utan mellanslag i filsystemnamn) — ALLA PASS
+(fixture-testet fångade en äkta sv-locale-bug i load-parsningen som
+rättades innan leverans; engångstestet raderat efteråt); panelens
+dev-chunk kompilerad med all Puls-kod (Serverns puls/Felloggen/
+sparkline/localStorage-nycklar) och /admin 200. **KVD:** tsc 0 nya i
+rörda filer (40 total = förhandsbefintliga + parallagenters) · motorer
+107/0/0 · vakten GRÖN (0 FEL/4 manuella) · next build exit 0 med
+/api/admin/puls med i ruttlistan. Src endast via Write/Edit;
+akm2/vagfundament/.env orörda. E2E på Contabo kräver deploy (pm2-fält
+fylls först där — dev/Vercel visar ärliga null-fält).
+
+## VÅG 84 C — PERMISSION-UPPGRADERING: DIFF-FÖRHANDSVISNING + MINNESREGLER + NOTISER + RISKBADGE (2026-09-09)
+
+**Block C (STUDIO 100x, STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 84" §C).** Fyra
+delar, alla mot protokollets EGENA fält (ingen gissning):
+
+**1. DIFF-FÖRHANDSVISNING I GODKÄNNANDET** — interaction/requestPermission
+bär verktygsargumenten i input-fältet (STÄMMER: protokollkartan §3 +
+kartläggningen i paServerRequest); transporten beräknar nu en diff ur den
+RÅA inputen INNAN sammanfattaInput-trunkeringen: ny EXPORTERAD ren funktion
+diffUrInput(verktyg, input) → StudioFilandring (Write → +N ur content; Edit
+→ EXAKT −N/+N ur old_string/new_string; MultiEdit → edits[]-ackumulerat;
+Bash/Read/övriga → null) med samma ärliga ±N + radtak som panelen. Fältet
+"diff" (valfritt) följer med StudioInteraktion → SSE + GET /api/studio/
+stream + /api/studio/interaktion; UI:t (DiffForhandsvisning) renderar
+FÄRGKODADE rader (gröna +/röda −, filrad + ±N i rubriken — exakt
+"Ändringar"-panelens rendition) INNAN användaren väljer; utan diff faller
+dialogen på argument-summary som förr (dokumenterat i filhuvudena).
+
+**2. MINNESREGLER "ALLTID TILLÅT"** — localStorage ak1a-studio-regler:
+[{verktyg, omfattning:"alltid", skapad}]; mottagenPermission (SSE +
+sidload) matchar skiftlägesokänsligt mot reglerna (lästa ur REF — färskt
+register mitt i ström) ⇒ AUTO-SVAR allow_once via delade
+skickaPermissionSvar (tyst läge) + liten notis i flödet "🛡 Edit
+auto-godkänd enligt din regel (alltid tillåt · diff: +N/−N)". Skapas via
+"⛨ Alltid tillåta <verktyg>"-knapp i dialogen; hanteringspanel i
+verktygsraden (Regler-knapp med antal-badge; lista med verktygsrisk-
+badge + skapad-tid + ta bort). Reglerna är KLIENTSIDIGA — protokollets
+allow_project/addRules-väg lever orörd bredvid.
+
+**3. NOTIS VID LÅNGA KÖRNINGAR** — turn > 60 s (TURN_NOTIS_TRAOSKEL_MS)
+⇒ Web Notification "⏳ Agenten arbetar…" (endast om permission=granted;
+Notiser-klocka i verktygsraden begär rättigheten, grön när aktiv) +
+titelväxling "⏳ Agenten arbetar…"/original var 1,5 s; cleanup vid klart/
+avbrott/unmount återställer titeln + "✓ Klar (N tkn)"-notis (N =
+klart-eventets tokenCount via turnTknRef). Allt i refs — ingen state-
+brus mitt i strömmen.
+
+**4. RISKBADGE-FÖRBÄTTRING** — verktygsriskKlass(): Bash/Write/Edit/
+MultiEdit=orange "skrivande", Read/Glob/Grep/LS=grön "läsande",
+WebSearch/WebFetch=gul "nät", övriga (mcp__*)=neutralt "annat" — visas
+som ANDRA badgen bredvid protokollets riskLevel i dialogen (med
+förklarande title) + i regelpanelen.
+
+**MOCK:** den simulerade permission-dialogen är nu en EDIT på uploads/
+demo.txt (old "rad 2" → new "rad 2 (redigerad av agenten)", risk high) —
+hela kedjan diff-i-event → dialog → svar bevisas deterministiskt i dev;
+tillåts editen speglas den i ändringspanelen (−1/+1 — nekad Write syns
+ALDRIG, samma ärlighet som prod).
+
+**PARALLMERGE (viktigt):** block B (multi-tabbar) omstrukturerade hela
+studio-chat.tsx MITT I mitt bygge — mina delar är anpassade/vidareutvecklade
+i deras tabb-arkitektur: auto-godkännande-notisen landar i AKTIVA tabben
+(rörTabb(aktivTabbIdRef)), långkörningsvakten lyssnar på NÅGON tabb
+(nagotStrömmar — bakgrundsfortsättning pingar också). tsc återställd till
+baslinjen 36 EFTER deras merge.
+
+**Verifiering:** tsc 36 = baslinjen (0 nya; ett kort transient-läge under
+B:s refactor observerades och löstes av deras merge) · motorer 107/0/0 ·
+vakten GRÖN (0 FEL/4 manuella) · next build exit 0 (918/918 sidor) ·
+MOCK-TEST AV DIALOGEN MED DIFF (tool-results/v84c-mock-dialog-test.mjs +
+v84c-mock-dialog-resultat.txt, dev :3523): 18/18 PASS — SSE-interaktionen
+bär diff {uploads/demo.txt, −1/+1, [−rad 2, +rad 2 (redigerad av
+agenten)]}, GET listar väntande, POST allow_once → {ok, "tillåtet en gång"},
+klart + ändringar +4/−1 · diffUrInput-enhetstest (tsx-engång): Write +2,
+Edit −2/+3, MultiEdit −3/+2, Bash/Read/null/utan sökväg → null ·
+/studio 200 · eslint 0 fel (1 ogiltig disable-varning är B:s utkast-effekt).
+Dev-instansen dödad efteråt, porten frigjord. Src endast via Write/Edit;
+akm2/vagfundament/.env* orörda.
+
+## VÅG 84 D — ARBETSMINNET LEVER: AGENTENS MINNE SYNGLIGT OCH REDIGERBART I STUDION (2026-09-09, 14d24a6)
+
+**D# RADRAPPORT — block D (STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 84" §D:
+arbetsminne + kunskapsbas):**
+
+Kunden ser nu VAD agenten kommer ihåg — och kan rätta rader utan att
+chatta. Agentens zcode-minne på Contabo
+(/home/ak1a/.zcode/cli/memories/projects/default-d3164043df3fd3bb/memory/,
+MEMORY.md-index + faktafiler med frontmatter name/description/type) är
+nu en förstaklass-yta i studion.
+
+**API /api/studio/minne (NY, src/app/api/studio/minne/route.ts):**
+requireAdmin på ALLA metoder (samma mönster som uppladdning). GET →
+{rot, filer:[{namn, storlek, uppdaterad, beskrivning (ur frontmatter —
+yaml-viktade fortsättningsrader stöds), typ index/minne/agents, innehåll
+(≤ 8 kB förhandsvisning), trunkerad}]} + agentsFinns; GET ?namn= → full
+post (lästak 1 MB). PUT {namn, innehåll} → skriver CONTABO-LOKAL fil med
+node:fs (Next + minneskatalog på samma maskin); överskrivning backas upp
+i .minnes-backup/ först (max 40 kopior, äldsta sopas). DELETE {namn} →
+backup-kopia först (radering VÄGRAR om backupen misslyckas — kunden
+förlorar aldrig agentkunskap utan kopia), SEDAN rm. NAMNVALIDERING
+(månglager, ingen sökvägsinmatning): ^[a-z0-9][a-z0-9\-]*\.md$ +
+specialnamn MEMORY.md/AGENTS.md → "../", ".env", versaler, snedstreck,
+backslash avvisas av mönstret FÖRE sökvägsbygge + path.resolve-prefix-
+kontroll på djupet. MEMORY.md-indexet kan ALDRIG raderas (agenten bygger
+om det automatiskt) — 400 med svensk klartext. AGENTS.md hanteras som
+egen post i arbetsytans rot (studioArbetsyta()) — skapas via PUT om den
+saknas. Rot styrbar via STUDIO_MINNE_ROT; dev faller tillbaka på
+~/.zcode-spegeln. Inläsning av .minnes-backup/ är omöjlig (dot-prefix +
+listfilter).
+
+**UI — Minne 🧠-panelen (src/components/ak1a/studio-minne-panel.tsx NY +
+studio-chat.tsx):** drawer i exakt filträdets stil (kontextradens "Minne"-
+knapp med räknar-badge, ömsesidig stängning mot filträdet). LISTA: alla
+minnesfiler med namn + frontmatter-beskrivning + relativ tid; MEMORY.md
+märkt INDEX, AGENTS.md märkt AGENTS.MD ("Instruktioner till agenten").
+DETALJ: klicka = läsbar markdown (eget registry: frontmatter avlägsnad,
+rubriker/listor/fet/kod/kursiv — panelen beroende­lös från studio-chats
+renderer) + trunkerad-notis; REDIGERA = textarea med RÅTEXT (frontmatter
+med) + Spara (backup-notis i foten) + RADERA med window.confirm + toast
+"backup: <filnamn> (.minnes-backup/)"; indexet visar "byggs om av
+agenten — kan ej raderas" i stället för radera-knapp. NY MINNESFIL:
+namnfält med client-sanering + live-valideringsikon + frontmatter-mall
+(samma form som agentens egna filer). AGENTS.md SAKNAS → guldprompts-
+ruta "Skapa AGENTS.md — stående instruktioner i varje session utan att
+chatta" (PUT + öppna). Escape: redigering → detalj → drawer (ägt av
+panelen). State + fetch ägs av studio-chat (lasMinne/oppnaMinnesfil/
+sparaMinnesfil/raderaMinnesfil) — panelen tar emot allt som props.
+
+**PARALLMERGE (viktigt):** block A/B/C/E byggde SAMTIDIGT i studio-chat.tsx
+(A: sök/⌘K/export/theme, B: tabb-omstrukturering, C: diff-permissions) —
+5 Edit-kollisioner ("modified since read") löstes genom att panelens yta
+bröts ut till egen fil (studio-minne-panel.tsx) + minimala infogningar
+(import + mount + knapp) som landade när skrivfönstret öppnades; ett
+transient-läge av B:s refactor (setTankar/setStrömmar-sökningar) löstes
+av deras merge — tsc återställd.
+
+**Verifiering:** tsc 0 nya (mina filer rena; 38 = förhands­befintlig
+baslinje i visuellt-bibliotek/interaktiva-verktyg/supabase-status/
+scripts) · motorer 107/0/0 · Kvalitetsvakten GRÖN (0 FEL/4 manuella —
+ett kort GUL-läge under ett samtidigt motorrapport-skriv var transient
+och försvann vid omkörning) · next build exit 0 · eslint avsaknad av nya
+fynd. **E2E PÅ PROD (Contabo 14d24a6, pm2 online):** GET → 200 {antal: 8,
+MEMORY.md[index] + ak1a-production-infra[213 795 B] + 6 faktafiler, alla
+med beskrivningar ur frontmatter} · GET ?namn= → fulltext med beskrivning
+· PUT {e2e-testfil-vag84d.md} → 200 {skapad: true, 152 B på disk} · PUT
+igen → 200 {backup: 20260910-010757-…} (överskrivnings-backup bevisad) ·
+DELETE → 200 {raderad: true, backup} + filen borta + listan tillbaka på
+8 + backupinnehåll verifierat på disk · namnvalidering: "../e2e-test.md"
+→ 400, ".env" → 400 · DELETE MEMORY.md → 400 (blockerad) · GET utan
+lösenord → 401 · /studio → 200 och panelen i prod-bundlen (chunk innehåller
+"Agentens minne"). Testfilen raderad efteråt; backup kvar som bevis.
+Src endast via Write/Edit; akm2/vagfundament/.env* orörda (lösenordet lästes
+endast i serverns eget shell för curl, aldrig loggat).

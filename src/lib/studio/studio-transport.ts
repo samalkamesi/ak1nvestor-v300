@@ -1536,7 +1536,12 @@ class AppServerTransport implements StudioTransport {
     if (!text || /\bno goal\b/i.test(text)) {
       return { mal: null, meddelande: "Inget mål är satt för sessionen." };
     }
-    return { mal: text, meddelande: text };
+    // LIVE-bevisat (prod-protokolexperiment /tmp/v83-b3-goal.mjs): aktivt
+    // mål svarar "Goal active" + raden "Objective: <text>" + förbrukning —
+    // plocka Objective-raden så headern visar själva målet, inte statistik.
+    const objRad = /objective:[ \t]*(.+)/i.exec(text);
+    const mal = objRad ? objRad[1].trim() : text;
+    return { mal, meddelande: mal };
   }
 
   async sattMal(mal: string): Promise<StudioMalSvar> {
@@ -1582,18 +1587,36 @@ class AppServerTransport implements StudioTransport {
       // aktiv prompt + pausar aktiv goal". KVD-vakt: stoppa ENDAST när
       // EGEN prompt INTE strömmar (this.aktiv) — klientens pågående svar
       // dödas ALDRIG av en målrensning.
-      if (/prompt is running|-32010/i.test(text) && !(this.aktiv && !this.aktiv.färdig)) {
-        try {
-          this.klient.notis("session/stop", { sessionId: this.sid });
-        } catch {
-          // eldränge — barnprocessen kan ha dött
+      if (/prompt is running|-32010/i.test(text)) {
+        // LIVE-bevisat (/tmp/v83-b3-goal.mjs): session/stop (ack {}) och
+        // goal pause är VERKNINGSLÖSA under mål-turnen — clear går igenom
+        // först när turnen SLUTFÖRT (experimentet: ~20 s). Rätt medicin:
+        // POLLA clear (icke-destruktivt — pågående agentarbete avbryts
+        // ALDRIG), tak ~75 s, därefter ärligt fel.
+        let rensad = false;
+        let sistaFel = fel instanceof Error ? fel : new Error(text);
+        for (let forsok = 0; forsok < 15; forsok += 1) {
+          await new Promise((los) => setTimeout(los, 5_000));
+          try {
+            await this.klient!.request(
+              "session/goal",
+              { sessionId: this.sid, action: "clear" },
+              30_000,
+            );
+            rensad = true;
+            break;
+          } catch (fel2) {
+            sistaFel = fel2 instanceof Error ? fel2 : new Error(String(fel2));
+            if (!/prompt is running|-32010/i.test(sistaFel.message)) throw sistaFel;
+          }
         }
-        await new Promise((los) => setTimeout(los, 1_500));
-        await this.klient.request(
-          "session/goal",
-          { sessionId: this.sid, action: "clear" },
-          30_000,
-        );
+        if (!rensad) {
+          throw new Error(
+            "Mål-turnen kör fortfarande efter 75 s — målet rensades ej. Försök igen om en stund. (" +
+              sistaFel.message.slice(0, 120) +
+              ")",
+          );
+        }
       } else {
         throw fel;
       }

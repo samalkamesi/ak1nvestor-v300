@@ -104,6 +104,10 @@ const nextConfig: NextConfig = {
     // G2-juridikpaketet (våg 66): DPA-mallen serveras som dokument av
     // /api/pro/dpa-mall — filen måste följa med i tracingen på prod.
     "/api/pro/dpa-mall": ["./data/forskning/B2B/DPA-MALL.md"],
+    // VÅG 80c (utvecklingspanelen): worklog.md parsas med readFileSync i
+    // /api/admin/utveckling — roten följs inte alltid med i tracingen på
+    // Vercel, så filen inkluderas explicit (samma mönster som data/-filerna).
+    "/api/admin/utveckling": ["./worklog.md"],
   },
 };
 

@@ -1,0 +1,554 @@
+"use client";
+
+import * as React from "react";
+import {
+  Clock,
+  FileText,
+  History,
+  Lock,
+  Radio,
+  RefreshCw,
+  ScrollText,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { adminHeaders, sparaAdminLosenord } from "@/lib/admin-klient";
+import { cn } from "@/lib/utils";
+
+/**
+ * UTVECKLINGSPANELN — VÅG 80c (STYRELSE-ADMIN-MEGA tillägget "VÅG 80c",
+ * kunddirektiv: "följa utvecklingen från TELEFONEN").
+ *
+ * Tre block mot GET /api/admin/utveckling (requireAdmin-läsning, 60 s
+ * memo-cache på servern):
+ *   (a) STATUSKORT — översättningsrader · variabeländringar · senaste
+ *       händelse-tid (+ lagerrader när lagret nås billigt).
+ *   (b) SENASTE HÄNDELSER — 40 senaste system_events med typ-badge
+ *       (färgkodad), tid och meddelande — översättning/termbank/variabel-
+ *       rader är exkluderade server-side och räknas i stället i korten.
+ *   (c) UTVECKLINGSLOGG — worklog.md:s senaste sektioner som accordion
+ *       (markdown-light: fetstil/rubriker bevaras grovt, kod monospace),
+ *       senaste sektionen öppen default.
+ *
+ * MOBIL-FÖRST: korten staplas (grid-cols-1 → sm:grid-cols-3), stora
+ * tryckytor (accordion-utlösare i full bredd, py-4), inga breda tabeller
+ * (worklog-tabellrader renderas som monospacerader).
+ *
+ * Lås-vyn + admin-klient-mönstret är variabel-panelens (våg 79):
+ * adminHeaders() bär x-admin-password; 401/403/429 ⇒ lås-rad, upplåsning
+ * sparar lösenordet i sessionStorage och försöker igen.
+ */
+
+// ── Svartyper (API-kontraktet våg 80c) ──────────────────────────────────────
+
+type WorklogSektion = { rubrik: string; dag: string | null; kropp: string };
+
+type HandelseRad = {
+  type: string;
+  severity: string | null;
+  created_at: string;
+  message: string;
+};
+
+type UtvecklingSvar = {
+  hamtat: string;
+  worklog: WorklogSektion[];
+  events: HandelseRad[];
+  stats: {
+    oversattningRader: number;
+    variabelAndringar: number;
+    exkluderadeTyper?: { oversattning?: number; termbank_tillagg?: number; variabel?: number };
+    lagret?: { rader: number } | null;
+    senasteHandelse?: string | null;
+  };
+};
+
+// ── Typ-badgar — färgkodade etiketter för kända eventtyper ─────────────────
+
+const TYPE_STIL: Record<string, string> = {
+  // AI-organ / autonomi — varumärkesguld
+  organ: "border-gold/40 bg-gold/10 text-gold",
+  organ_msg: "border-gold/40 bg-gold/10 text-gold",
+  autonom_report: "border-gold/40 bg-gold/10 text-gold",
+  ai_organ_autonom_proposal: "border-gold/40 bg-gold/10 text-gold",
+  ai_analys_genererad: "border-gold/40 bg-gold/10 text-gold",
+  // innehåll — blå ton
+  blogg_publicerad: "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-300",
+  blogg_utkast: "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-300",
+  kurs_metadata: "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-300",
+  media_fil: "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-300",
+  media_fil_raderad: "border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-300",
+  // medlemmar/konvertering — grön ton
+  medlem: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  medlem_andring: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  medlem_progress: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  fas2_ansokan: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  referral: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  referral_kod: "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300",
+  // prisvariabler — violett
+  "variabel-andring": "border-violet-300 bg-violet-50 text-violet-700 dark:border-violet-500/40 dark:bg-violet-500/10 dark:text-violet-300",
+  "kurs_metadata-andring": "border-violet-300 bg-violet-50 text-violet-700 dark:border-violet-500/40 dark:bg-violet-500/10 dark:text-violet-300",
+  // forskning/motorer — teal
+  akm2_snapshot: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  akm3_regime: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  akm3_prediktion: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  akm3_kalibrering: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  vagscan: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  vagvalidering: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  stock_data_updated: "border-teal-300 bg-teal-50 text-teal-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300",
+  // trafik/säkerhet/vakten — orange
+  trafik: "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-500/40 dark:bg-orange-500/10 dark:text-orange-300",
+  sakerhet: "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-500/40 dark:bg-orange-500/10 dark:text-orange-300",
+  api_error: "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-500/40 dark:bg-orange-500/10 dark:text-orange-300",
+};
+
+/** Severity-fallback när typen saknas i kartan — fel syns alltid rött. */
+function typStil(typ: string, severity: string | null): string {
+  const kand = TYPE_STIL[typ];
+  if (kand) return kand;
+  if (severity === "critical" || severity === "error")
+    return "border-red-300 bg-red-50 text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-300";
+  if (severity === "warning")
+    return "border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-300";
+  return "border-border bg-muted/60 text-muted-foreground";
+}
+
+// ── Hjälpare ─────────────────────────────────────────────────────────────────
+
+function tidSedan(iso: string | null | undefined): string {
+  if (!iso) return "—";
+  const t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return "—";
+  const sek = Math.floor((Date.now() - t) / 1000);
+  if (sek < 60) return `${sek}s sedan`;
+  const min = Math.floor(sek / 60);
+  if (min < 60) return `${min}m sedan`;
+  const tim = Math.floor(min / 60);
+  if (tim < 24) return `${tim}h sedan`;
+  return `${Math.floor(tim / 24)}d sedan`;
+}
+
+function klockslag(iso: string | null | undefined): string {
+  if (!iso) return "—";
+  const t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return "—";
+  return new Date(t).toLocaleString("sv-SE", { dateStyle: "short", timeStyle: "short" });
+}
+
+const sv = (n: number | null | undefined): string =>
+  typeof n === "number" && Number.isFinite(n) ? n.toLocaleString("sv-SE") : "—";
+
+// ── Markdown-light — fetstil/kod bevaras, rubriker grovt, tabeller mono ─────
+
+/** Inline-tokenisering: **fetstil** och `kod` — allt annat är plain text. */
+function renderaInline(text: string): React.ReactNode[] {
+  const ut: React.ReactNode[] = [];
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`/g;
+  let sist = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > sist) ut.push(text.slice(sist, m.index));
+    if (m[1] !== undefined) {
+      ut.push(
+        <strong key={i++} className="font-semibold text-foreground">
+          {m[1]}
+        </strong>,
+      );
+    } else {
+      ut.push(
+        <code key={i++} className="rounded bg-muted px-1 py-0.5 font-mono text-[0.85em]">
+          {m[2]}
+        </code>,
+      );
+    }
+    sist = m.index + m[0].length;
+  }
+  if (sist < text.length) ut.push(text.slice(sist));
+  return ut;
+}
+
+/**
+ * Markdown-light-renderare för en worklog-kropp: ### /#### -rubriker,
+ * > -citat (guldkant), - /* -listor, ``` -kodblock (monospace) och
+ * | -tabellrader som monospacerader (mobil: inga breda tabeller).
+ */
+function MarkdownLight({ text }: { text: string }) {
+  const rader = text.split("\n");
+  const ut: React.ReactNode[] = [];
+  let i = 0;
+  let nyckel = 0;
+  while (i < rader.length) {
+    const rad = rader[i];
+
+    // Kodblock — ``` ... ```
+    if (rad.trimStart().startsWith("```")) {
+      const block: string[] = [];
+      i += 1;
+      while (i < rader.length && !rader[i].trimStart().startsWith("```")) {
+        block.push(rader[i]);
+        i += 1;
+      }
+      i += 1; // avslutande ```
+      ut.push(
+        <pre
+          key={nyckel++}
+          className="my-2 overflow-x-auto rounded-md border border-border bg-muted/60 p-2.5 font-mono text-[11px] leading-relaxed"
+        >
+          {block.join("\n")}
+        </pre>,
+      );
+      continue;
+    }
+
+    // Tom rad — luft
+    if (rad.trim() === "") {
+      ut.push(<div key={nyckel++} className="h-2" />);
+      i += 1;
+      continue;
+    }
+
+    // Underrubrik (### / ####)
+    const rubrikMatch = /^#{3,4}\s+(.*)$/.exec(rad);
+    if (rubrikMatch) {
+      ut.push(
+        <p key={nyckel++} className="mt-2 font-serif text-sm font-bold">
+          {renderaInline(rubrikMatch[1])}
+        </p>,
+      );
+      i += 1;
+      continue;
+    }
+
+    // Citat
+    if (rad.startsWith("> ")) {
+      ut.push(
+        <p
+          key={nyckel++}
+          className="my-1.5 border-l-2 border-gold/50 pl-3 text-[13px] italic text-muted-foreground"
+        >
+          {renderaInline(rad.slice(2))}
+        </p>,
+      );
+      i += 1;
+      continue;
+    }
+
+    // Listrad
+    const listMatch = /^\s*[-*]\s+(.*)$/.exec(rad);
+    if (listMatch) {
+      ut.push(
+        <p key={nyckel++} className="my-0.5 flex gap-2 text-[13px] leading-relaxed">
+          <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-gold/70" />
+          <span className="min-w-0 break-words">{renderaInline(listMatch[1])}</span>
+        </p>,
+      );
+      i += 1;
+      continue;
+    }
+
+    // Tabellrad — monospace (mobil-först: aldrig en riktig tabell)
+    if (rad.trimStart().startsWith("|")) {
+      ut.push(
+        <p
+          key={nyckel++}
+          className="overflow-x-auto whitespace-pre font-mono text-[10.5px] leading-relaxed text-muted-foreground"
+        >
+          {rad}
+        </p>,
+      );
+      i += 1;
+      continue;
+    }
+
+    // Vanlig rad
+    ut.push(
+      <p key={nyckel++} className="my-1 text-[13px] leading-relaxed break-words">
+        {renderaInline(rad)}
+      </p>,
+    );
+    i += 1;
+  }
+  return <div className="text-muted-foreground">{ut}</div>;
+}
+
+// ── Panelen ─────────────────────────────────────────────────────────────────
+
+export function UtvecklingPanel() {
+  const [data, setData] = React.useState<UtvecklingSvar | null>(null);
+  const [fel, setFel] = React.useState("");
+  const [laddar, setLaddar] = React.useState(false);
+  const [behoverLosen, setBehoverLosen] = React.useState(false);
+  const [losenord, setLosenord] = React.useState("");
+  const [losenFel, setLosenFel] = React.useState("");
+
+  const hamta = React.useCallback(async () => {
+    setLaddar(true);
+    setFel("");
+    setLosenFel("");
+    try {
+      const res = await fetch("/api/admin/utveckling", { headers: adminHeaders() });
+      if (res.status === 401 || res.status === 403 || res.status === 429) {
+        const json = (await res.json().catch(() => ({}))) as { error?: string };
+        setBehoverLosen(true);
+        setLosenFel(json.error || "Admin-lösenord krävs.");
+        setData(null);
+        return;
+      }
+      if (res.ok) {
+        setData((await res.json()) as UtvecklingSvar);
+        setBehoverLosen(false);
+      } else {
+        const json = (await res.json().catch(() => ({}))) as { error?: string };
+        setFel(json.error || `Kunde inte hämta utvecklingsvyn (HTTP ${res.status}).`);
+      }
+    } catch {
+      setFel("Nätverksfel — kunde inte hämta utvecklingsvyn.");
+    } finally {
+      setLaddar(false);
+    }
+  }, []);
+
+  // Hämta när fliken öppnas (Radix unmountar inaktiva TabsContent ⇒ lazy).
+  React.useEffect(() => {
+    void hamta();
+  }, [hamta]);
+
+  // 60 s auto-uppdatering — ENDAST när fliken syns (mobil: spara batteri/data).
+  React.useEffect(() => {
+    const timer = window.setInterval(() => {
+      if (document.visibilityState === "visible" && !behoverLosen) void hamta();
+    }, 60_000);
+    return () => window.clearInterval(timer);
+  }, [hamta, behoverLosen]);
+
+  const lasUpp = async () => {
+    if (!losenord) return;
+    sparaAdminLosenord(losenord); // admin-klienten bär den på kommande anrop
+    await hamta();
+  };
+
+  // ── Lås-vy (variabel-panelens mönster, våg 79) ───────────────────────────
+  if (behoverLosen && !data) {
+    return (
+      <div className="rounded-xl border border-gold/30 bg-card px-5 py-6">
+        <div className="flex items-center gap-2">
+          <Lock className="h-4 w-4 text-gold" />
+          <h3 className="font-serif text-lg font-bold">Utveckling — låst</h3>
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Utvecklingsvyn skyddas av ADMIN_PASSWORD — lämnad i headern
+          x-admin-password, samma mönster som övriga admin-rutter.
+        </p>
+        <div className="mt-3 flex gap-2">
+          <Input
+            type="password"
+            value={losenord}
+            onChange={(e) => setLosenord(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && lasUpp()}
+            placeholder="Admin-lösenord"
+            className="max-w-xs"
+          />
+          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+            Lås upp
+          </Button>
+        </div>
+        {losenFel && <p className="mt-2 text-xs text-red-600">{losenFel}</p>}
+      </div>
+    );
+  }
+
+  const events = data?.events ?? [];
+  const worklog = data?.worklog ?? [];
+  const stats = data?.stats;
+  const senaste = stats?.senasteHandelse ?? events[0]?.created_at ?? null;
+
+  return (
+    <div className="space-y-5">
+      {/* Rubrikrad — LIVE + manuell uppdatering */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
+          </span>
+          <h3 className="font-serif text-lg font-bold">Utveckling 📡</h3>
+          <Badge variant="outline" className="text-[10px]">
+            <Clock className="mr-1 h-3 w-3" /> LIVE · 60 s
+          </Badge>
+        </div>
+        <div className="flex items-center gap-2">
+          {data && (
+            <span className="text-[10px] text-muted-foreground">
+              Uppdaterad {new Date(data.hamtat).toLocaleTimeString("sv-SE")}
+            </span>
+          )}
+          <Button variant="outline" size="sm" onClick={() => hamta()} disabled={laddar}>
+            <RefreshCw className={cn("mr-1 h-3 w-3", laddar && "animate-spin")} /> Uppdatera
+          </Button>
+        </div>
+      </div>
+
+      {fel && <p className="text-xs text-red-600">{fel}</p>}
+      {laddar && !data && <p className="text-xs text-muted-foreground">Hämtar utvecklingsvyn …</p>}
+
+      {/* (a) STATUSKORT — staplade på mobil, rad på större skärm */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <StatusKort
+          ikon={<Radio className="h-4 w-4 text-gold" />}
+          etikett="Översättningsrader"
+          varde={sv(stats?.oversattningRader ?? 0)}
+          sub="MÖS-korpusen · publicerade rader (count=exact)"
+        />
+        <StatusKort
+          ikon={<History className="h-4 w-4 text-gold" />}
+          etikett="Variabeländringar"
+          varde={sv(stats?.variabelAndringar ?? 0)}
+          sub={`prisvärden ändrade via panelen${stats?.exkluderadeTyper?.termbank_tillagg !== undefined ? ` · termbank: ${sv(stats.exkluderadeTyper.termbank_tillagg ?? 0)}` : ""}`}
+        />
+        <StatusKort
+          ikon={<Clock className="h-4 w-4 text-gold" />}
+          etikett="Senaste händelse"
+          varde={tidSedan(senaste)}
+          sub={klockslag(senaste)}
+        />
+      </div>
+
+      {/* Lagret + exkluderade typer — ärlig rad när lagret nås billigt */}
+      {stats?.lagret && (
+        <p className="rounded-md border border-gold/30 bg-gold/[0.03] px-3 py-2 text-[11px] leading-relaxed text-muted-foreground">
+          <FileText className="mr-1 inline h-3.5 w-3.5 align-[-2px] text-gold" />
+          Översättningslagret: <strong className="text-foreground">{sv(stats.lagret.rader)}</strong>{" "}
+          unika språknycklar. Översättnings-, termbank- och variabelrader listas inte i
+          händelseflödet (för stora/känsliga) — de räknas i korten ovan i stället.
+        </p>
+      )}
+
+      {/* (b) SENASTE HÄNDELSER — typ-badge, tid, meddelande */}
+      <div className="rounded-lg border border-gold/30 bg-card p-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <Radio className="h-4 w-4 text-gold" />
+            <h4 className="font-serif text-sm font-bold">Senaste händelser ({events.length})</h4>
+          </div>
+          <span className="text-[10px] text-muted-foreground">
+            system_events · meddelanden avklippta 120 tkn · inga detaljer
+          </span>
+        </div>
+        {events.length === 0 ? (
+          <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
+            Inga händelser loggade än — eller kunde inte nås just nu.
+          </p>
+        ) : (
+          <ul className="mt-3 space-y-1.5">
+            {events.map((e, i) => (
+              <li
+                key={`${e.created_at}:${e.type}:${i}`}
+                className="rounded-md border border-border bg-card p-3"
+              >
+                <div className="flex min-w-0 flex-wrap items-center gap-2">
+                  <Badge
+                    variant="outline"
+                    className={cn("max-w-full truncate text-[10px] lowercase", typStil(e.type, e.severity))}
+                  >
+                    {e.type}
+                  </Badge>
+                  {e.severity && e.severity !== "info" && (
+                    <span
+                      className={cn(
+                        "text-[10px] font-semibold uppercase",
+                        e.severity === "critical" || e.severity === "error"
+                          ? "text-red-600 dark:text-red-400"
+                          : e.severity === "warning"
+                            ? "text-amber-600 dark:text-amber-400"
+                            : "text-muted-foreground",
+                      )}
+                    >
+                      {e.severity}
+                    </span>
+                  )}
+                  <span className="ml-auto shrink-0 text-[10px] text-muted-foreground" title={klockslag(e.created_at)}>
+                    {tidSedan(e.created_at)}
+                  </span>
+                </div>
+                {e.message && (
+                  <p className="mt-1.5 min-w-0 text-[13px] leading-snug break-words">{e.message}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* (c) UTVECKLINGSLOGG — worklog-sektioner som accordion, senaste öppen */}
+      <div className="rounded-lg border border-gold/30 bg-card p-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <ScrollText className="h-4 w-4 text-gold" />
+            <h4 className="font-serif text-sm font-bold">Utvecklingslogg ({worklog.length})</h4>
+          </div>
+          <span className="text-[10px] text-muted-foreground">
+            worklog.md · senaste {worklog.length} sektionerna · trunkerat läsbart
+          </span>
+        </div>
+        {worklog.length === 0 ? (
+          <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
+            Worklog kunde inte läsas — filen saknas i denna miljö.
+          </p>
+        ) : (
+          <Accordion type="single" collapsible defaultValue="sektion-0" className="mt-2 w-full">
+            {worklog.map((sektion, i) => (
+              <AccordionItem key={`sektion-${i}`} value={`sektion-${i}`} className="border-b-0">
+                <AccordionTrigger className="min-h-11 flex-col items-start gap-1 py-3.5 text-left hover:no-underline">
+                  <span className="w-full pr-6 font-serif text-sm font-bold leading-snug break-words">
+                    {sektion.rubrik}
+                  </span>
+                  {sektion.dag && (
+                    <span className="text-[10px] font-normal text-muted-foreground">{sektion.dag}</span>
+                  )}
+                </AccordionTrigger>
+                <AccordionContent className="pb-4">
+                  <MarkdownLight text={sektion.kropp} />
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Statuskort — stort värde, liten etikett, staplad på mobil ───────────────
+
+function StatusKort({
+  ikon,
+  etikett,
+  varde,
+  sub,
+}: {
+  ikon: React.ReactNode;
+  etikett: string;
+  varde: string;
+  sub: string;
+}) {
+  return (
+    <div className="rounded-lg border border-gold/30 bg-card p-4">
+      <div className="flex items-center gap-2">
+        {ikon}
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          {etikett}
+        </span>
+      </div>
+      <p className="mt-2 break-words font-serif text-2xl font-bold tabular-nums">{varde}</p>
+      <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground">{sub}</p>
+    </div>
+  );
+}

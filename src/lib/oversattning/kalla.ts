@@ -18,6 +18,16 @@
  *     "<kurs-slug>:titel" (333 källor, en per kurs; kollisionssäkert i
  *     kursblock-domänen eftersom alla övriga nycklar har :kapN:-prefix).
  *     Det är nyckeln kurs-spegel-sida.tsx och spegel-listsidorna läser.
+ *     VÅG 86 (V86-LEARNFIX): kursens METADATA-texter som speglarna renderar
+ *     är också källor — nycklar "<slug>:learn" (kortbeskrivningen under
+ *     H1 + OG-description + övningsfacit), "<slug>:varfor" (why-sektionen)
+ *     och "<slug>:perspektiv:lynch|graham|ak1" (de tre perspektivkorten).
+ *     EXAKT de nycklar kurs-speglar.ts läser via nyckelKurs (de var våg 52B:s
+ *     "opportunistiska" nycklar — från våg 86 är de fullvärdiga källor).
+ *     OBS: "varfor" — inte "why" — är den överenskomna nyckelstammen
+ *     (nyckelKurs("varfor", …) i kurs-speglar.ts). Kortbeskrivningen
+ *     "Boken kapitel för kapitel …" läckte svenska på EN/AR-speglarna
+ *     exakt eftersom dessa nycklar saknades i registret.
  *   - data/blogg/*.json — varje textbärande fält (våg 55, kunddirektiv "inte
  *     kurser eller annat eller BLOG, ingen översätts" ⇒ bloggen IN i MÖS).
  *     Scope-typ "blogg", nyckel "<slug>:titel" | "<slug>:ingress" (=
@@ -86,7 +96,16 @@ export function raknaHash(kalltext: string): string {
 type DeepBlock = { type?: string; content?: unknown };
 type DeepQuiz = { q?: unknown; alternativ?: unknown; tips?: unknown };
 type DeepChapter = { num?: number; title?: unknown; intro?: unknown; blocks?: DeepBlock[]; quiz?: DeepQuiz[] };
-type DeepCourse = { title?: unknown; chapters?: DeepChapter[] };
+type DeepCourse = {
+  title?: unknown;
+  /** V86: speglarnas metadatafält (renderas av kurs-spegel-sida.tsx via byggKursSpegel). */
+  learn?: unknown;
+  why?: unknown;
+  lynchSection?: unknown;
+  grahamSection?: unknown;
+  ak1Section?: unknown;
+  chapters?: DeepChapter[];
+};
 type DeepCourses = Record<string, DeepCourse>;
 
 let kursCache: readonly KallaPost[] | null = null;
@@ -101,10 +120,28 @@ function pushKalla(poster: KallaPost[], slug: string, nyckelSuffix: string, text
   });
 }
 
+/**
+ * KursNIVÅ-fält (våg 86, V86-LEARNFIX): "{slug}:{del}" — learn/varfor/
+ * perspektiv:{lynch,graham,ak1}. pushKalla kan INTE användas (den vantar ett
+ * kapitelnummer och byggar "{slug}:kap<suffix>"), och titel-pushen nedan är
+ * specialfall med egen dokumentation. Delarna är EXAKT nyckelstammarna i
+ * kurs-speglar.ts nyckelKurs — "varfor", inte "why" — så importerade poster
+ * träffar speglarnas lageruppslag rakt.
+ */
+function pushKursFalt(poster: KallaPost[], slug: string, del: string, text: unknown): void {
+  if (typeof text !== "string" || !text) return;
+  poster.push({
+    scope: { typ: "kursblock", nyckel: slug + ":" + del },
+    text,
+    hash: raknaHash(text),
+  });
+}
+
 /** Läs + tolka deep-courses.json en gång (cachas — 17 MB ska bara parsas en gång per process).
  *
  * Per kurs registreras kursens EGEN titel (våg 80b del A — nyckel
- * "<slug>:titel", se lasKursblock nedan) och per kapitel: titel, intro,
+ * "<slug>:titel", se lasKursblock nedan), speglarnas metadatafält learn/
+ * varfor/perspektiv (våg 86 — se pushKursFalt) och per kapitel: titel, intro,
  * varje blocks-innehåll (1-baserat) och quiz (q / alternativ k=0.. / tips —
  * ratt-index är struktur och översätts aldrig). Detta gör att flaggskepps-
  * leveransernas titel/intro/quiz-poster kan importeras och att motorronden
@@ -136,6 +173,17 @@ function lasKursblock(): readonly KallaPost[] {
         hash: raknaHash(kurs.title),
       });
     }
+    // VÅG 86 (V86-LEARNFIX) — kursens METADATA-texter på speglarna, i samma
+    // deterministiska ordning som kurs-spegel-sida.tsx läser dem (titel →
+    // learn → why → perspektiv). KOLLISIONSSÄKRA i kursblock-domänen: alla
+    // övriga nycklar bär ":kapN:"- eller ":titel"-prefix, och perspektiv-
+    // stammarna ("perspektiv:lynch" …) kolliderar inte med learn/varfor.
+    // RÄKNAS EJ i speglarnas progressandel (den räknar block — taBlock).
+    pushKursFalt(poster, slug, "learn", kurs.learn);
+    pushKursFalt(poster, slug, "varfor", kurs.why);
+    pushKursFalt(poster, slug, "perspektiv:lynch", kurs.lynchSection);
+    pushKursFalt(poster, slug, "perspektiv:graham", kurs.grahamSection);
+    pushKursFalt(poster, slug, "perspektiv:ak1", kurs.ak1Section);
     for (const kap of kurs.chapters) {
       if (!kap) continue;
       const kapNum = typeof kap.num === "number" ? kap.num : 0;

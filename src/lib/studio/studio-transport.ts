@@ -1,5 +1,5 @@
 import { spawn, type ChildProcess } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
@@ -10,14 +10,21 @@ import path from "node:path";
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
- *      2026-09-09 på Contabo, se tool-results/v81-appserver.md): spawnar
- *      `zcode app-server` som långlivad barnprocess och talar ZCode
- *      Protocol: NDJSON på stdio, kuvert {"id"?,"method","params"} UTAN
- *      jsonrpc-fält. Metoder som bevisats live: session/create,
- *      session/resume, session/list, session/subscribe, session/send,
- *      session/messages, session/stop. Strömning sker via session/event-
- *      notiser med payload.type "model.streaming" (kind text_delta /
- *      reasoning_delta) och slutpixel "turn" {response}.
+ *      2026-09-09 på Contabo, se tool-results/v81-appserver.md + STUDIO-2-
+ *      korrigeringen i slutet av den filen): spawnar `zcode app-server`
+ *      som långlivad barnprocess och talar ZCode Protocol: NDJSON på
+ *      stdio, kuvert {"id"?,"method","params"} UTAN jsonrpc-fält. Metoder
+ *      som bevisats live: session/create, session/resume, session/list,
+ *      session/subscribe, session/send, session/messages, session/stop.
+ *      Strömning sker via session/event-notiser där HÄNDELSETYPEN ligger
+ *      på params-nivå i zcode ≥ 3.11.2-22 (params.type "model.streaming"
+ *      med payload.kind text_delta/reasoning_delta; slutpixel
+ *      "turn.completed" med payload.response) — äldre form med typen i
+ *      payload ("turn") stöds defensivt. session/send på en session vars
+ *      modell tagits bort svarar -32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE →
+ *      transporten kasserar sessionen, skapar en färsk (aktuell modell)
+ *      och försöker EN gång till (bevisat 2026-09-09 när glm-5.3-flash
+ *      stängdes av).
  *
  *   2. mockTransport — deterministisk utvecklings-/testtransport (ingen
  *      modell, inga kostnader): samma gränssnitt, strömmer ett canned
@@ -172,10 +179,15 @@ class ProtokollKlient {
         this.vantar.delete(m.id);
         clearTimeout(vantan.timer);
         if (m.error) {
-          const data = m.error.data as { message?: string } | undefined;
+          const data = m.error.data as { message?: string; code?: string } | undefined;
+          // data.code (t.ex. ZCODE_RUNTIME_MODEL_UNAVAILABLE) följer med i
+          // meddelandet — transportens självläkning matchar på den strängen.
+          const detaljer = [data?.code, data?.message]
+            .filter((d): d is string => typeof d === "string" && d.length > 0)
+            .join(": ");
           vantan.fel(
             new Error(
-              `${m.error.message ?? "protokollfel"}${data?.message ? ` — ${data.message}` : ""} (kod ${m.error.code ?? "?"})`,
+              `${m.error.message ?? "protokollfel"}${detaljer ? ` — ${detaljer}` : ""} (kod ${m.error.code ?? "?"})`,
             ),
           );
         } else {
@@ -252,6 +264,16 @@ interface SessionResult {
 
 interface SessionEventParams {
   sessionId?: string;
+  /**
+   * Händelsetypen ligger på PARAMS-nivå i zcode ≥ 3.11.2-22 (bevisat live
+   * 2026-09-09 STUDIO-2 på Contabo, /tmp/transport-create2.txt): t.ex.
+   * "turn.started" | "model.streaming" | "model.response.completed" |
+   * "turn.completed" | "session.updated" | "session.titleUpdated" |
+   * "model_request_started" | "model_request_completed". Den äldre
+   * dokumentationen (tool-results/v81-appserver.md) placerade den i
+   * payload — båda formerna stöds defensivt.
+   */
+  type?: string;
   payload?: {
     type?: string;
     kind?: string;
@@ -259,6 +281,7 @@ interface SessionEventParams {
     done?: boolean;
     response?: string;
     content?: string;
+    resultType?: string;
     tokenCount?: number;
     duration?: number;
     name?: string;
@@ -275,6 +298,15 @@ function sessionUr(result: unknown): string | null {
   const r = result as SessionResult | null;
   const sid = r?.session?.sessionId;
   return typeof sid === "string" && sid ? sid : null;
+}
+
+/**
+ * -32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE (bevisat live 2026-09-09 STUDIO-2:
+ * "历史任务使用的模型已不可用" när en session pin:ar glm-5.3-flash som tagits
+ * bort ur .zcode) — sessionen kan ALDRIG svara igen och måste kasseras.
+ */
+function arModellOtillganglig(meddelande: string): boolean {
+  return meddelande.includes("ZCODE_RUNTIME_MODEL_UNAVAILABLE") || meddelande.includes("(kod -32031");
 }
 
 /**
@@ -310,26 +342,29 @@ class AppServerTransport implements StudioTransport {
 
     // Persistens: återuppta förra sessionen när pm2/servern startat om
     // ("sessionsliståterkomst") — fall tillbaka på create om den är borta.
+    // OBS: resume-or-create körs också när klienten LEVER men sessionen
+    // saknas (självläkningsvägen nySession() efter -32031).
     if (!this.klient?.lever) {
-      const klient = this.startaKlient();
-      this.klient = klient;
+      this.klient = this.startaKlient();
       this.prenumererad = false;
+    }
+    if (!this.sid) {
+      const klient = this.klient!;
       const sparad = this.lasSparadSession();
+      let resumerad = false;
       if (sparad) {
         try {
           const resultat = await klient.request("session/resume", { sessionId: sparad }, 45_000);
           const sid = sessionUr(resultat);
           if (sid) {
             this.sid = sid;
-          } else {
-            await this.skapa(klient);
+            resumerad = true;
           }
         } catch {
-          await this.skapa(klient);
+          resumerad = false; // borta/ogiltig → skapa ny nedan
         }
-      } else {
-        await this.skapa(klient);
       }
+      if (!resumerad) await this.skapa(klient);
     }
 
     if (this.sid && !this.prenumererad) {
@@ -378,52 +413,96 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  /**
+   * Självläkningsväg (bevisad nödvändig 2026-09-09 STUDIO-2): kassera den
+   * nuvarande sessionen — persistensfil tas bort så ingen annan process
+   * återupptar den döda — och skapa en färsk via ensure(). En nyskapad
+   * session plockar serverns AKTUELLA standardmodell (zai/glm-5.3 vid
+   * beviset), till skillnad från en återupptagen som pin:ar sin gamla.
+   */
+  private async nySession(): Promise<void> {
+    this.sid = null;
+    this.prenumererad = false;
+    try {
+      rmSync(this.lagringsSökväg, { force: true });
+    } catch {
+      // best-effort — en kvarvarande fil betyder bara att nästa omstart
+      // får ett misslyckat resume-försök innan create fallback körs.
+    }
+    await this.ensure();
+  }
+
   /** Notis-mottagare: översätter protokollhändelser till StudioEvent. */
   private påNotis(m: ProtokollMeddelande): void {
     const aktiv = this.aktiv;
     const params = m.params as SessionEventParams | StateUpdatedParams | undefined;
 
     if (m.method === "session/event") {
-      const p = (params as SessionEventParams | undefined)?.payload;
-      if (!p?.type) return;
+      const p = params as SessionEventParams | undefined;
+      const payload = p?.payload;
+      // ROTORSAK v81-STUDIO-2 (bevisat live 2026-09-09): zcode ≥ 3.11.2-22
+      // lägger händelsetypen på PARAMS-nivå (params.type), inte i payload —
+      // gamla koden läste payload.type och tappade därmed ALLA events
+      // (deltas kom aldrig fram; strömmen stod stilla). Fallback till
+      // payload.type behålls för äldre protokollform.
+      const typ = p?.type ?? payload?.type;
+      if (!typ) return;
+      // Event från annan session än den aktva (t.ex. en kasserad session
+      // under självläknings-omskapandet) skall aldrig blandas in.
+      if (p?.sessionId && this.sid && p.sessionId !== this.sid) return;
       if (!aktiv || aktiv.färdig) return; // utanför pågående prompt: strunt
 
-      switch (p.type) {
+      switch (typ) {
         case "turn.started":
           aktiv.lyssnare({ typ: "status", text: "Agenten arbetar…" });
           return;
         case "model.streaming": {
-          if (typeof p.delta !== "string" || !p.delta) return;
+          if (typeof payload?.delta !== "string" || !payload.delta) return;
           aktiv.lyssnare({
             typ: "delta",
-            kanal: p.kind === "reasoning_delta" ? "tankar" : "text",
-            text: p.delta,
+            kanal: payload.kind === "reasoning_delta" ? "tankar" : "text",
+            text: payload.delta,
           });
-          if (p.kind !== "reasoning_delta") aktiv.senasteText += p.delta;
+          if (payload.kind !== "reasoning_delta") aktiv.senasteText += payload.delta;
           return;
         }
         case "model.response.completed":
-          // Helheten — sparas som fallback om "turn"-eventet uteblir.
-          if (typeof p.content === "string" && p.content) aktiv.senasteText = p.content;
+          // Helheten — sparas som fallback om sluteventet uteblir.
+          if (typeof payload?.content === "string" && payload.content) {
+            aktiv.senasteText = payload.content;
+          }
           return;
-        case "turn": {
-          // SLUTPIXEL (bevisat): payload.response = hela svaret.
+        case "turn":
+        case "turn.completed": {
+          // SLUTPIXEL (bevisat live 2026-09-09): params.type "turn.completed"
+          // med payload.response = hela svaret ("turn" = äldre form).
           aktiv.färdig = true;
-          aktiv.lyssnare({
-            typ: "klart",
-            svar: typeof p.response === "string" && p.response ? p.response : aktiv.senasteText,
-            tokenCount: typeof p.tokenCount === "number" ? p.tokenCount : undefined,
-            varaktighetMs: typeof p.duration === "number" ? p.duration : undefined,
-          });
+          if (typeof payload?.resultType === "string" && payload.resultType !== "success") {
+            // Ärligt fel i stället för tomt "klart" (ALDRIG tystnad).
+            aktiv.lyssnare({
+              typ: "fel",
+              meddelande: `Agentrundan avslutades utan lyckat resultat (${payload.resultType}).`,
+            });
+          } else {
+            aktiv.lyssnare({
+              typ: "klart",
+              svar:
+                typeof payload?.response === "string" && payload.response
+                  ? payload.response
+                  : aktiv.senasteText,
+              tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
+              varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
+            });
+          }
           aktiv.klar();
           return;
         }
         default: {
           // Verktygshändelser (tool.* — namn varierar mellan versioner):
           // start när typen inte slutar på finish/completed/ended.
-          if (p.type.startsWith("tool.")) {
-            const namn = p.name || p.toolName || "verktyg";
-            const slut = /finish|completed|ended|result$/i.test(p.type);
+          if (typ.startsWith("tool.")) {
+            const namn = payload?.name || payload?.toolName || "verktyg";
+            const slut = /finish|completed|ended|result$/i.test(typ);
             aktiv.lyssnare({ typ: "verktyg", namn, händelse: slut ? "slut" : "start" });
           }
           return;
@@ -541,35 +620,56 @@ class AppServerTransport implements StudioTransport {
         signal.addEventListener("abort", påAbort, { once: true });
       }
 
-      this.klient!
-        .request(
-          "session/send",
-          { sessionId: this.sid, content: prompt },
-          60_000,
-        )
-        .then((svar) => {
-          const accepterad = (svar as { accepted?: boolean } | null)?.accepted;
-          if (accepterad === false) {
-            if (this.aktiv === aktiv && !aktiv.färdig) {
-              aktiv.färdig = true;
-              lyssnare({ typ: "fel", meddelande: "Prompten avvisades av agenten." });
-            }
-            städa();
-            losa();
+      // Översändning med EN självläkningsretry: om sessionens modell
+      // tagits bort (-32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE — bevisat
+      // 2026-09-09 när glm-5.3-flash stängdes av på servern) kasseras
+      // sessionen, en färsk skapas med aktuell modell och send körs en
+      // gång till. Alla andra fel (även retryns) → tydligt fel-event.
+      const oversand = async (): Promise<void> => {
+        if (!this.klient?.lever || !this.sid) throw new Error("session ej tillgänglig");
+        try {
+          const svar = await this.klient.request(
+            "session/send",
+            { sessionId: this.sid, content: prompt },
+            60_000,
+          );
+          if ((svar as { accepted?: boolean } | null)?.accepted === false) {
+            throw new Error("Prompten avvisades av agenten.");
           }
-          // accepted:true → vänta på turn/idle-notiserna (taket vaktar).
-        })
-        .catch((fel: unknown) => {
-          if (this.aktiv === aktiv && !aktiv.färdig) {
-            aktiv.färdig = true;
+          return; // accepted:true → vänta på turn/idle-notiserna (taket vaktar)
+        } catch (fel) {
+          if (signal?.aborted) throw fel;
+          const text = fel instanceof Error ? fel.message : String(fel);
+          if (arModellOtillganglig(text) && this.aktiv === aktiv && !aktiv.färdig) {
             lyssnare({
-              typ: "fel",
-              meddelande: `Kunde ej skicka till agenten: ${fel instanceof Error ? fel.message : String(fel)}`,
+              typ: "status",
+              text: "Sessionens modell är ej längre tillgänglig — skapar ny session…",
             });
+            await this.nySession();
+            const svar = await this.klient!.request(
+              "session/send",
+              { sessionId: this.sid!, content: prompt },
+              60_000,
+            );
+            if ((svar as { accepted?: boolean } | null)?.accepted === false) {
+              throw new Error("Prompten avvisades av agenten.");
+            }
+            return; // vänta på events från den nya sessionen
           }
-          städa();
-          losa();
-        });
+          throw fel;
+        }
+      };
+      oversand().catch((fel: unknown) => {
+        if (this.aktiv === aktiv && !aktiv.färdig) {
+          aktiv.färdig = true;
+          lyssnare({
+            typ: "fel",
+            meddelande: `Kunde ej skicka till agenten: ${fel instanceof Error ? fel.message : String(fel)}`,
+          });
+        }
+        städa();
+        losa();
+      });
     });
   }
 

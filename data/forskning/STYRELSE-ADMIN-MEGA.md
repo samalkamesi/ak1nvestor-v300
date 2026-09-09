@@ -380,3 +380,33 @@ B. BYGG-blocken (efter kartan): sessionshantering (flera flikar, resume,
    i meddelanden.
 C. KVD: max parallella agenter, protokollforskning FIRST, E2E på prod
    per block, src via Write/Edit, deploy via tar-pipe (exkl .env*).
+
+## TILLÄGG VÅG 84 — STUDIO 100x: FULL Z-PARITET (kunddirektiv: "100x förbättring, max parallellt, ni har full access")
+
+Kunden vill ha STUDIO = exakt Z Code-upplevelsen, 100x bättre. Styrelsen
+beslutar FEM PARALLELLA BYGGBLOCK (varje block = egen agent, fria filer,
+E2E på prod krav):
+
+- A. **VISUELLA Z-PARITET**: mörkt/ljust-tema-växlare i studion (AK1A-guld
+  på båda), tangentbordsgenvägar (Enter=skicka, Shift+Enter=nyrad, Ctrl+K
+  = kommandopalett i studion), auto-scroll med "hoppa ner"-knapp,
+  meddelandesökning, exportchatt (markdown-fil), tokens/cost-räknare.
+- B. **MULTI-SESSION-TABBAR**: flera samtidiga agent-sessioner som
+  webbläsartabbar i studion (varje tab = egen session med egen modell),
+  badge med ongående arbete per tab, bakgrundsfortsättning (agenten
+  arbetar vidare i inaktiva tabbar — SSE per tab).
+- C. **VERKTYGSGODKÄNNANDE + RISKGRADER**: realtids-permissionsdialog
+  utbyggd med diff-förhandsvisning INNAN godkännande (se exakt vad
+  Write/Edit ändrar), minneslista "alltid tillåt"-regler per verktyg,
+  ljud/visuell notis vid långa körningar.
+- D. **ARBEDESMINNE + KUNSKAPSBAS**: agentens egna minnesfiler
+  (~/.zcode/cli/memories) läsbara/redigerbara i studion — kunden ser
+  VAD agenten kommer ihåg och kan rätta rader; + CLAUDE.md-konventionen
+  (AGENTS.md) visad och redigerbar.
+- E. **OBSERVERBARHET**: live-panel med CPU/RAM på Contabo (pm2-API),
+  token/kostnad-räknare per session och dag, felloggen, uppstartsstatus
+  för alla tjänster (pm2, crontab, nginx) — kunden ser serverns puls.
+
+REGLER: ingen agent rörs akm2/vagfundament/korstabell; .env.production.
+local HELIG; E2E per block på prod; max parallella agenter (5 st + ev.
+uppföljning); finslipning efter alla block.

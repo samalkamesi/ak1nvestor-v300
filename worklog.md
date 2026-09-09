@@ -9388,3 +9388,22 @@ Supabase, idempotent, 12/12) · 8 OG-bloggbilder · testinstans på servern
 (ak1a-test port 3100, basic-auth ak1a/dyT0SAuRZAU0izvVVaUsrsZ, noindex,
 dokumenterad test-deploy-rutin i V86-DEVINSTANS.md) · m9-fabriken v2
 (granskningsgrind hårdkodad).
+
+## Våg 81 — WEBCHAT-STUDIO LEVER (2026-09-09)
+
+**/studio = EGEN ZCode-webchatt på lab.ak1nvestor.com** — app-server-
+protokollet knackt first-hand (NDJSON; session/create+subscribe+send;
+events pa params.type med text_delta-strömning; runtimePreferences ska
+svaras med {nativeSearchEnhancementsEnabled:false, memoryEnabled:false,
+askUserQuestionAutoResolutionEnabled:true}; -32031 = död modell pin:ad i
+sparad session → sjalvlakning: ny session + retry). AK1A-DNA-UI med
+drag/paste-bilder, fil- och MAPP-uppladdning (30 MB-tak, vitlista,
+mappstruktur bevaras, 7-dagars rensning, inneslutningsvakt), LIVE-prick,
+sessionspersistens. Fix-agenten hittade OCKSA: tar-deploys torkade
+ADMIN_PASSWORD ur .env → .env.production.local (deploy-säker, chmod 600).
+E2E pa prod: KLAR med riktig tokenströmning (17 s). Alla vägar in:
+/studio (browser, exceptionell design) · /chat (ttyd-terminal) ·
+Termius-SSH (full kontroll).
+
+**Viktigt driftsfynd: deploy via tar-pipe SKRIVER OVER .env — hemligheter
+skall ligga i .env.production.local som aldrig finns i arkivet.**

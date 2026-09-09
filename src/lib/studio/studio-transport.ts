@@ -1588,15 +1588,27 @@ class AppServerTransport implements StudioTransport {
       // EGEN prompt INTE strömmar (this.aktiv) — klientens pågående svar
       // dödas ALDRIG av en målrensning.
       if (/prompt is running|-32010/i.test(text)) {
-        // LIVE-bevisat (/tmp/v83-b3-goal.mjs): session/stop (ack {}) och
-        // goal pause är VERKNINGSLÖSA under mål-turnen — clear går igenom
-        // först när turnen SLUTFÖRT (experimentet: ~20 s). Rätt medicin:
-        // POLLA clear (icke-destruktivt — pågående agentarbete avbryts
-        // ALDRIG), tak ~75 s, därefter ärligt fel.
+        // LIVE-BEVISAT 2026-09-09 (prod-protokolexperiment, 2 omgångar):
+        //   1) mål-set startar en mål-loop som FÖDER NYA turner — ren poll
+        //      räcker inte (75 s utan framgång på "bevisa sessionshanteringen").
+        //   2) session/stop (REQUEST, ack {}) PAUSAR målet — den pågående
+        //      turnen avbryter inom sekunder och clear går igenom (6 s i
+        //      experimentet med SAMMA måltext).
+        // KVD-vakt: stoppa ENDAST när EGEN prompt INTE strömmar (this.aktiv)
+        // — klientens pågående svar i chatten dödas ALDRIG av en målrensning
+        // (mål-turnen är en bakgrundsturn, inte klientens ström).
+        if (this.aktiv && !this.aktiv.färdig) {
+          throw new Error("En prompt strömmar i chatten — vänta tills agenten är klar innan målet rensas.");
+        }
+        try {
+          await this.klient!.request("session/stop", { sessionId: this.sid }, 15_000);
+        } catch {
+          // ej fatal — pollingen nedan avgör utfallet
+        }
         let rensad = false;
         let sistaFel = fel instanceof Error ? fel : new Error(text);
         for (let forsok = 0; forsok < 15; forsok += 1) {
-          await new Promise((los) => setTimeout(los, 5_000));
+          await new Promise((los) => setTimeout(los, 3_000));
           try {
             await this.klient!.request(
               "session/goal",
@@ -1612,7 +1624,7 @@ class AppServerTransport implements StudioTransport {
         }
         if (!rensad) {
           throw new Error(
-            "Mål-turnen kör fortfarande efter 75 s — målet rensades ej. Försök igen om en stund. (" +
+            "Mål-turnen kör fortfarande efter 45 s — målet rensades ej. Försök igen om en stund. (" +
               sistaFel.message.slice(0, 120) +
               ")",
           );

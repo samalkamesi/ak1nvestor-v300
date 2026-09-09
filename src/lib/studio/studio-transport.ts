@@ -1561,14 +1561,24 @@ class AppServerTransport implements StudioTransport {
   async lasSubagenter(): Promise<StudioSubagent[]> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
-    // BEVISAT schema v83-kartan §1: {sessionId, endedLimit≤100}. Studio-
-    // sessioner är persistenta ⇒ "Session not found"-felet (som gällde en
-    // ephemeral testsession) träffar ej normalflödet.
-    const r = (await this.klient.request(
-      "session/subagents",
-      { sessionId: this.sid, endedLimit: 20 },
-      30_000,
-    )) as SubagentsResult | null;
+    // BEVISAT schema v83-kartan §1: {sessionId, endedLimit≤100}.
+    // LIVE-BEVISAT 2026-09-09 (prod, B3-E2E): en NYSS skapad session utan
+    // turn-historik svarar -32004 "Session not found" — subagentregistret
+    // känner bara persistent materialiserade sessioner. Det är ÄRLIGT en
+    // tom lista (en session utan historik kan omöjligt ha barnagenter),
+    // aldrig ett fel för panelen.
+    let r: SubagentsResult | null;
+    try {
+      r = (await this.klient.request(
+        "session/subagents",
+        { sessionId: this.sid, endedLimit: 20 },
+        30_000,
+      )) as SubagentsResult | null;
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      if (/session not found|-32004/i.test(text)) return [];
+      throw fel;
+    }
     const körande = r?.running;
     const avslutade = r?.ended?.items;
     const ut: StudioSubagent[] = [];

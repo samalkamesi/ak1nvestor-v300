@@ -19,6 +19,7 @@ import { harFas2Access, harFas3Access } from "@/lib/kurs-access";
 import { useToast } from "@/hooks/use-toast";
 import { Vagvisare } from "@/components/ak1a/vagvisare";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { LarvagKort } from "@/components/ak1a/larvag-kort";
 import { DashFragaKort } from "@/components/ak1a/dashfraga-kort";
 import { KroppsvyKort } from "@/components/ak1a/kroppsvy-kort";
 import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
@@ -826,6 +827,14 @@ export function MinSida({
       {/* (a5) DAGENS VÅGKARTA — autonom mätning av fundamentalvågorna */}
       <section className="mt-6">
         <VagkartaKort />
+      </section>
+
+      {/* (a3c) DIN NÄSTA KURS — lärvägsmotorn (våg 88): kärnan på SERVERN
+          (raknaLarvag via /api/larvag — progress ur sessionen + anonym
+          svaghetsargmax), kortet hydreras klient-side och skickar ENDAST
+          sammanfattad kontext (fas/lästillstånd/streak). Fel ⇒ tyst viloläge. */}
+      <section className="mt-6">
+        <LarvagKort antal={1} />
       </section>
 
       {/* (a4) KURSTIPS — rätt kurs som ett tips, aldrig ett tvång */}

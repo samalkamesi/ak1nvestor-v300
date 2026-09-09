@@ -37,6 +37,9 @@ db/*.db-journal
 # upload (user uploads — don't deploy)
 upload/
 
+# uploads (VÅG 81 studio-chattens filuppladdningar — kundfiler, aldrig committa)
+uploads/
+
 # tool-results (temp files)
 tool-results/
 

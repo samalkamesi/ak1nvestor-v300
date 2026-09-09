@@ -46,6 +46,7 @@ import {
   type RullandeTillstand,
   type MomentumIndikator,
 } from "@/lib/vagvalidering";
+import { byggVagSpegelFranRullande } from "@/lib/dataset-nyckeltal";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -821,6 +822,15 @@ export async function GET(req: NextRequest) {
     mkdirSync(path.dirname(rapportSok), { recursive: true });
     writeFileSync(rapportSok, byggVagvalideringRapport(sammanstallning), "utf8");
     rapportSkrivad = true;
+    // VÅG 87 (A2-DATASET-KONTRAKT §3.2, källval a): spegla samma rond som JSON —
+    // /api/data/vagstatistik + /data/vagstatistik läser strukturerat utan att
+    // tolka MD:n. MD:n förblir byte-identisk; spegeln är additiv.
+    const spegelSok = path.join(process.cwd(), "data", "rapporter", "vagvalidering-SENASTE.json");
+    writeFileSync(
+      spegelSok,
+      JSON.stringify(byggVagSpegelFranRullande(sammanstallning), null, 2) + "\n",
+      "utf8",
+    );
   } catch {
     // read-only fs (t.ex. Vercel) — rapporten finns i system_events-raden
   }

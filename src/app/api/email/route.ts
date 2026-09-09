@@ -145,11 +145,15 @@ export async function POST(req: NextRequest) {
       );
       break;
     case "vecka":
+      // VÅG 88 (B1-LARVAG): valfri "Ditt nästa steg"-rad — avsändaren
+      // (autonomin/panelen) räknar lärvägen via raknaLarvag och skickar
+      // ren text; tom/utelämnad ⇒ brevet som före vågen.
       html = veckoRapport(
         plockaStr(data.namn, MAX_NAMN),
         plockaTal(data.klaraKurser, 0, 9999, 0),
         plockaTal(data.xp, 0, 99_999_999, 0),
         plockaStr(data.topRorelse, MAX_TEXT) || "Vågkartan vilar — mätningen körs enligt schema.",
+        plockaStr(data.nastaSteg, 300),
       );
       break;
     case "fas2nudge":

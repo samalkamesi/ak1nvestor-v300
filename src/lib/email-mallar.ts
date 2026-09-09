@@ -203,10 +203,24 @@ export function morgonMejl(namn: string, vagText: string, dagensAktie: string, s
  * veckoRapport — veckans räkenskap: klara kurser, samlat XP och vågkartans
  * topprörelse. Formen är privatbankens veckobrev: siffrorna först, värmen
  * alltid. Tipsar om nästa steg — tvingar aldrig.
+ *
+ * VÅG 88 (B1-LARVAG): `nastaSteg` (valfri, default "") — lärvägens rad,
+ * serverräknad ur raknaLarvag (/api/larvag) av avsändaren och passad som
+ * ren text. Tom ⇒ brevet är byte-identiskt med före vågen.
  */
-export function veckoRapport(namn: string, klaraKurser: number, xp: number, topRorelse: string): string {
+export function veckoRapport(
+  namn: string,
+  klaraKurser: number,
+  xp: number,
+  topRorelse: string,
+  nastaSteg = "",
+): string {
   const n = esc(namn.trim());
   const halsning = n ? `God vecka, ${n}.` : "God vecka.";
+  const stegRad =
+    typeof nastaSteg === "string" && nastaSteg.trim()
+      ? leadRad("Ditt nästa steg", esc(nastaSteg.trim().slice(0, 300)))
+      : "";
 
   const innehall =
     `<p style="margin:0 0 4px;font-family:${SERIF};font-size:19px;color:${BLACK};">${halsning}</p>` +
@@ -215,6 +229,7 @@ export function veckoRapport(namn: string, klaraKurser: number, xp: number, topR
     leadRad("Klara kurser", `${klaraKurser} ${klaraKurser === 1 ? "kurs" : "kurser"} — varje avslutad kurs är en stapel på resan.`) +
     leadRad("Samlat XP", `${xp} XP — nivån växer med dig, hundra XP i taget.`) +
     leadRad("Vågkartans topp", esc(topRorelse)) +
+    stegRad +
     `</table>` +
     ctaKnapp("Till Kommandocentralen →", "/") +
     `<p style="margin:14px 0 0;text-align:center;font-family:${SANS};font-size:11px;color:${MUTAD};">Fas 1 förblir gratis — alltid. Hela biblioteket förblir öppet, och det förblir så.</p>`;

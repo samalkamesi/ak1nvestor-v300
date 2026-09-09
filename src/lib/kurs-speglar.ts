@@ -318,6 +318,23 @@ export function kategoriEtikett(kategori: string, sprak: KursSpegelSprak): strin
   return rad ? rad[sprak] || rad.sv : kategori;
 }
 
+// ── V86 (agent V86-SPEGLAR2): viktetiketter på speglarna ─────────────────────
+//
+// kurs.weight ur public/deep-courses.json bär AKM1:s exakta etiketter:
+// procentnivåerna "8%"/"7%"/"6%"/"5%" (språkneutralt), "KRITISK" (109 kurser
+// — högsta pedagogiska riskvikten, se akm2/vikter.ts) samt "—" när ingen
+// vikt är satt (språkneutralt). ENDAST etiketter med vikt.*-rad i ordlistan
+// översätts; procent, "—" och okända framtida etiketter läcker aldrig — samma
+// fallback-form som kategoriEtikett. Svenska /kurser visar vikten rå som förr.
+
+/** Vektetikett på spegelspråket: rått datavärde → ordlistans vikt.<nyckel>-
+ *  rad om den finns, annars originalet oförändrat (procent/"—" passera råa). */
+export function viktEtikett(vikt: string, sprak: KursSpegelSprak): string {
+  const nyckel = ("vikt." + kategoriNyckel(vikt)) as OrdlistaNyckel;
+  const rad: SprakRad | undefined = ORDLISTA[nyckel];
+  return rad ? rad[sprak] || rad.sv : vikt;
+}
+
 // ── Tillämpning: svensk kurs + lager → speglad kurs + andel ──────────────────
 
 export type KursSpegel = {

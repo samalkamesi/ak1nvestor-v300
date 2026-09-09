@@ -155,6 +155,12 @@ export const ORDLISTA = {
   "kurs.totalt": { sv: "Totalt", en: "Total", ar: "الإجمالي" },
   "kurs.kursinnehall": { sv: "Kursinnehåll", en: "Course content", ar: "محتوى الدورة" },
   "kurs.vikt": { sv: "Vikt", en: "Weight", ar: "الوزن" },
+  // Viktnivåetiketter (V86, agent V86-SPEGLAR2): kurs.weight i deep-courses
+  // bär AKM1:s exakta etiketter — sv ordagrant. Procentnivåerna ("8%/7%/
+  // 6%/5%") och "—" (ej satt) är språkneutralt och passerar oöversatta;
+  // konsumeras av viktEtikett i kurs-speglar.ts — svenska /kurser visar
+  // etiketten rå som förr (samma filosofi som kategori.*).
+  "vikt.kritisk": { sv: "KRITISK", en: "CRITICAL", ar: "الحرِجة" },
   // Kursöversiktens låsta rader (kap 3+ på fas-kurser) — speglarna + originalet.
   "kurs.kapLas": {
     sv: "🔒 kapitel {num} — låses med Fas {fas}",

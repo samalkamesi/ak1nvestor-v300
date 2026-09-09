@@ -513,6 +513,62 @@ const llmsFragor = llmsFragorData as unknown as {
   fragor: LlmsFragaPost[];
 };
 
+// ── FAQPage per kurssida (FRONT A / A3-FAQSCHEMA) ───────────────────────────
+
+/** Deterministisk ranking av frågekorpusen: topp100 ↓, poäng ↓, slug ↑. */
+function rankFraga(a: LlmsFragaPost, b: LlmsFragaPost): number {
+  return (
+    Number(b.topp100) - Number(a.topp100) || b.poang - a.poang || a.slug.localeCompare(b.slug)
+  );
+}
+
+/**
+ * kursFaqFragor — 2–4 FAQ-par per kurs, ORDAGRADT ur data/llms-fragor.json
+ * (FRONT A / A3-FAQSCHEMA): kursens EGEN kanoniska fråga först, därefter
+ * syskonfrågor ur samma kategori. Urvalet är deterministiskt och spridande:
+ * kategorins frågor rankas (topp100 ↓, poäng ↓, slug ↑) i en ring och kursen
+ * plockar de två NÄSTA i ringen — därmed upprepar inte samtliga sidor i en
+ * stor kategori (t.ex. BOKMASTER, 103 kurser) samma två syskonfrågor.
+ * Kategoripar (2 kurser) ⇒ 2 par; singleton-kategori ⇒ sajtens högst
+ * rankade frågor overallt (exkl. den egna) som komplement — allt ur korpusen.
+ */
+export function kursFaqFragor(slug: string): Array<{ fraga: string; svar: string }> {
+  const egen = llmsFragor.fragor.find((f) => f.slug === slug);
+  if (!egen) return [];
+
+  const ring = llmsFragor.fragor.filter((f) => f.kategori === egen.kategori).sort(rankFraga);
+  const i = ring.findIndex((f) => f.slug === slug);
+  let syskon: LlmsFragaPost[];
+  if (ring.length >= 3) {
+    syskon = [ring[(i + 1) % ring.length], ring[(i + 2) % ring.length]];
+  } else if (ring.length === 2) {
+    syskon = [ring[1 - i]];
+  } else {
+    // Singleton-kategori — global fallback ur korpusen (aldrig påhittat).
+    syskon = llmsFragor.fragor.filter((f) => f.slug !== slug).sort(rankFraga).slice(0, 2);
+  }
+  // Defensiv dedupe på frågetext (korpusen är dupfri 2026-09, men generatorn
+  // kör om vid kurstillägg) — samma fråga får aldrig ligga två gånger i mainEntity.
+  return [egen, ...syskon.filter((s) => s.fraga !== egen.fraga)].map(({ fraga, svar }) => ({
+    fraga,
+    svar,
+  }));
+}
+
+/**
+ * courseFaqJsonLd — FAQPage-schema för en kurssida: kursens egna kanoniska
+ * fråga + 1–2 syskonfrågor (kursFaqFragor), ordagrant ur llms-fragor.json.
+ * Kompletterar courseJsonLd (Course) med fråga/svar-format AI-motorer och
+ * Google kan rikta in sig på — inget överlapp med Course-schemat.
+ * Next Metadata kan inte bära JSON-LD, därför returneras strukturen och
+ * renderas med <JsonLd> i sidan (samma mönster som courseJsonLd).
+ * null ⇒ kursen saknar fråga i korpusen ⇒ sidan renderar inget FAQ-schema.
+ */
+export function courseFaqJsonLd(course: Course) {
+  const fragor = kursFaqFragor(course.slug);
+  return fragor.length > 0 ? faqJsonLd(fragor) : null;
+}
+
 /** Fasta kanoniska frågor → svarssidor (icke-kurs). */
 const FRAGA_PER_SIDA: Array<{ fraga: string; sokvag: string; svar: string }> = [
   {

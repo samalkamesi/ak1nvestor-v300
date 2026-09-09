@@ -564,7 +564,8 @@ function sektionKursdata() {
 // SEKTION 6 — Sitemap-täckning
 // ════════════════════════════════════════════════════════════════════════════
 // Sidor som medvetet hålls utanför sitemap (auth/admin/interna).
-const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in"]);
+// VÅG 81: /studio är admin-låst webchat — medvetet EJ i publik sitemap.
+const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio"]);
 
 function sektionSitemap() {
   const fel = [];

@@ -10,7 +10,10 @@ import {
   kursSpegelMetadata,
   byggKursSpegel,
   hamtaKursLager,
+  hamtaKursTitelLager,
+  titelUrLager,
   kategoriEtikett,
+  viktEtikett,
 } from "@/lib/kurs-speglar";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
@@ -67,7 +70,7 @@ export type KursSpegelTexter = {
   relaterade: (kategori: string) => string;
 };
 
-export function KursSpegelSida({
+export async function KursSpegelSida({
   lang,
   spegel,
   texter,
@@ -84,6 +87,14 @@ export function KursSpegelSida({
   const siblings = Object.values(getCourses())
     .filter((c) => c.category === kurs.category && c.slug !== kurs.slug)
     .slice(0, 6);
+
+  // V86 (V86-SPEGLAR2): syskon-titlar ur våg 80b:s titel-sammalager —
+  // ÅTERANVÄNDNING av listvyternas lasPubliceradeKursTitlar-läsning
+  // (React cache ⇒ EN rundtur även när /{lang}/kurser läst samma lager).
+  const titelLager = await hamtaKursTitelLager();
+  // Viktetiketten ("KRITISK" m.m.) översätts via ordlistan (vikt.*);
+  // procent/"—" är språkneutralt och passerar — se viktEtikett.
+  const viktEtik = viktEtikett(kurs.weight || "6%", lang);
 
   const harQuiz = (kurs.chapters as unknown as Array<{ quiz?: unknown }>).some((ch) => ch.quiz);
 
@@ -114,9 +125,8 @@ export function KursSpegelSida({
 
   const ovningar = (() => {
     const num = ["v04", "v05", "v06", "v07", "v08", "v09", "v10", "v19"].includes(slug.slice(0, 3));
-    const vikt = kurs.weight || "6%";
     return [
-      { q: texter.ovning1(kurs.title, vikt), a: kurs.learn || "" },
+      { q: texter.ovning1(kurs.title, viktEtik), a: kurs.learn || "" },
       num
         ? { q: texter.ovning2Nummer(kurs.title), a: texter.ovning2NummerFacit }
         : {
@@ -173,7 +183,7 @@ export function KursSpegelSida({
               `📖 ${kurs.chapters.length} ${t("kurs.kapitelEnhet")}`,
               `⏱ ${totaltMin} ${t("kurs.minuter")}`,
               `⚡ ${intjanbarXp} XP`,
-              `⚖ ${t("kurs.vikt")}: ${kurs.weight || "6%"}`,
+              `⚖ ${t("kurs.vikt")}: ${viktEtik}`,
               `🏷 ${kategoriEtikett(kurs.category, lang)}`,
             ]
               .filter((chip): chip is string => Boolean(chip))
@@ -414,7 +424,7 @@ export function KursSpegelSida({
                       href={`/${lang}/kurser/${s.slug}`}
                       className="inline-block rounded-full border border-gold/30 px-3 py-1 text-xs hover:bg-gold/10"
                     >
-                      {s.title}
+                      {titelUrLager(titelLager, s.slug, s.title, lang)}
                     </Link>
                   </li>
                 ))}

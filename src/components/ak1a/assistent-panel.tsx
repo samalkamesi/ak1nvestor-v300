@@ -10,6 +10,7 @@ import {
   type ProaktivtForslag,
 } from "@/lib/assistent";
 import { lasKlientkontext, type KlientKontext } from "@/lib/klientkontext";
+import { berikaLarvag } from "@/lib/larvag-klient";
 import {
   lasKlientkontext as lasEkoKlientkontext,
   type EkoInsikt,
@@ -107,7 +108,15 @@ export function AssistentPanel() {
   const [ekoKallsystem, setEkoKallsystem] = useState<string[]>([]);
 
   useEffect(() => {
-    setKontext(lasKlientkontext());
+    const grund = lasKlientkontext();
+    setKontext(grund);
+
+    // VÅG 88 (B1-LARVAG): AI-Mentorns kontext berikas med lärvägens
+    // serverräknade nästa kurs (/api/larvag — raknaLarvag-kärnan: progress
+    // ur sessionen + hårt fas-filter + anonym svaghetsargmax). Vid motstånd
+    // förblir kontexten den lokala — mentorn gissar aldrig, han väntar tyst.
+    void berikaLarvag(grund).then((berikad) => setKontext(berikad));
+
     setTidsstampel(
       new Intl.DateTimeFormat("sv-SE", { hour: "2-digit", minute: "2-digit" }).format(new Date()),
     );
@@ -266,6 +275,40 @@ export function AssistentPanel() {
           <p className="mt-3 text-[11px] italic text-[#EDE6D6]/55">
             …och om jag har fel, berätta gärna — dina steg väljer du alltid själv.
           </p>
+
+          {/* VÅG 88 (B1-LARVAG): DIN NÄSTA KURS — mentorns kontext bär nu
+              lärvägens serverräknade topp-tips (berikaLarvag ovan). EN
+              diskret rad med varför-text; tyst vid viloläge — aldrig ett
+              tvång, alltid en inbjudan. */}
+          {kontext.larvag && (
+            <Link
+              href={`/kurser/${kontext.larvag.slug}`}
+              className="group mt-3 flex items-start gap-3 rounded-xl border border-gold/25 bg-gold/5 px-4 py-3 transition-all hover:border-gold/60 hover:bg-gold/10"
+            >
+              <span className="mt-0.5 shrink-0 text-lg" aria-hidden="true">
+                🧭
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-[#E8C766]/70">
+                  Din nästa kurs
+                </span>
+                <span className="mt-0.5 block text-sm font-bold text-[#EDE6D6]">
+                  {kontext.larvag.titel}
+                </span>
+                {kontext.larvag.varför && (
+                  <span className="mt-0.5 block text-xs leading-relaxed text-[#EDE6D6]/70">
+                    {kontext.larvag.varför}
+                  </span>
+                )}
+              </span>
+              <span
+                className="shrink-0 self-center text-sm font-semibold text-[#E8C766] transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </Link>
+          )}
         </div>
 
         {/* ── Ekot från ekosystemet — samverkansmotorn, DISKRET ──

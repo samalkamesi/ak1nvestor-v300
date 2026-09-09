@@ -2,7 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
-import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import {
+  courseMetadata,
+  courseJsonLd,
+  courseFaqJsonLd,
+  breadcrumbJsonLd,
+  JsonLd,
+} from "@/lib/seo";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { kraverFas } from "@/lib/kurs-access";
 import { medKursOverrides } from "@/lib/kurs-metadata-live";
@@ -14,6 +20,7 @@ import { KursSteg, KapitelOversiktLank } from "@/components/ak1a/kurs-steg";
 import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artiklar";
 import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { Kallkort } from "@/components/ak1a/kallkort";
+import { LarvagKort } from "@/components/ak1a/larvag-kort";
 
 /**
  * VÅG 81 (slutligt, prodmätt): dynamicParams=false = ÄKTA 404 på okända
@@ -113,6 +120,13 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
   }));
   const forsattning = course.chapters.map((ch) => ({ num: ch.num, title: ch.title }));
 
+  // FRONT A (A3-FAQSCHEMA): FAQPage-schema — kursens egna kanoniska fråga +
+  // syskonfrågor i samma kategori, ORDAGRADT ur data/llms-fragor.json
+  // (courseFaqJsonLd → faqJsonLd). null ⇒ ingen fråga i korpusen ⇒ inget
+  // schema. Renderas som eget <script type="application/ld+json"> bredvid
+  // Course-schemat — fråga/svar-form, inget överlapp med kursdatan där.
+  const faqSchema = courseFaqJsonLd(kurs);
+
   // Kursöversiktens intro-snuttar: kapitel 1–2 syns alltid (smakprov/SEO);
   // för fas-kurser visas ingen prosa från kapitel 3+ i den statiska HTML:n
   // (våg 78 B1) — titlar och tider får följa med (kurskorts-metadata).
@@ -128,6 +142,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: kurs.title }]}
     >
       <JsonLd data={courseJsonLd(kurs)} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <LasProgress />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -390,6 +405,17 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         <p className="mt-2 text-sm text-muted-foreground">
           Interaktiva övningar, vågmatriser och AI-tutor hittar du i labbet.
         </p>
+
+        {/* VÅG 88 (B1-LARVAG): "Fortsätt här" — lärvägsmotorns nästa steg,
+            räknat på SERVERN (raknaLarvag via /api/larvag: progress ur
+            sessionen + hårt fas-filter + anonym svaghetsargmax). Kortet är
+            en KLIENT-komponent som hämtar i useEffect: ISR-passet (○,
+            revalidate 3600) förblir orört — personliga värden når aldrig
+            sidans statiska HTML. Aktuell kurs exkluderas alltid. */}
+        <div className="mt-4">
+          <LarvagKort antal={2} rubrik="Fortsätt här" exkluderaSlug={slug} />
+        </div>
+
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/"

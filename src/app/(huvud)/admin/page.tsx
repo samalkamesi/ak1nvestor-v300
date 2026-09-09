@@ -41,6 +41,7 @@ import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
 import { EkosystemPanel } from "@/components/ak1a/admin/ekosystem-panel";
 import { BeteendePanel } from "@/components/ak1a/admin/beteende-panel";
 import { Utvecklingsradar } from "@/components/ak1a/admin/utvecklingsradar";
+import { UtvecklingPanel } from "@/components/ak1a/admin/utveckling-panel";
 import { OversattningPanel } from "@/components/ak1a/admin/oversattning-panel";
 import { VariabelPanel } from "@/components/ak1a/admin/variabel-panel";
 import { BloggPanel } from "@/components/ak1a/admin/blogg-panel";
@@ -164,6 +165,12 @@ const ALLA_FLIKAR: { id: string; etikett: string; endastAdmin?: boolean }[] = [
   { id: "beteende", etikett: "Beteende", endastAdmin: true },
   { id: "ai-organ", etikett: "AI-organ styrelse", endastAdmin: true },
   { id: "utveckling", etikett: "Utveckling 🔭", endastAdmin: true },
+  /**
+   * VÅG 80c (STYRELSE-ADMIN-MEGA tillägget, kunddirektiv "följa utvecklingen
+   * från telefonen"): worklog-sektioner + senaste systemhändelser + statuskort —
+   * mobil-först. Radarn (🔭) ovan består; denna flik är kundens live-fönster.
+   */
+  { id: "utveckling-live", etikett: "Utveckling 📡", endastAdmin: true },
   { id: "oversattning", etikett: "Översättning 🌍", endastAdmin: true },
   { id: "variabler", etikett: "Variabler 📊", endastAdmin: true },
   { id: "blogg", etikett: "Blogg ✍️" },
@@ -831,6 +838,15 @@ export default function AdminDashboard() {
           <TabsContent value="utveckling" className="mt-6">
             <Card className="p-5">
               <Utvecklingsradar />
+            </Card>
+          </TabsContent>
+
+          {/* Utveckling 📡 (våg 80c) — kundens mobil-först live-fönster:
+              worklog-accordion + senaste händelser + statuskort.
+              Panelen mountas först när fliken öppnas → GET sker lazy. */}
+          <TabsContent value="utveckling-live" className="mt-6">
+            <Card className="p-5">
+              <UtvecklingPanel />
             </Card>
           </TabsContent>
 

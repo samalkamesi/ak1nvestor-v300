@@ -52,6 +52,13 @@ export type KlientKontext = {
   senasteSida: string;
   /** Härleds ur allt ovan — ALDRIG satt för hand. */
   lasTillstand: LasTillstand;
+  /**
+   * Lärvägens serverräknade nästa kurs (våg 88 — AI-Mentorns kontext).
+   * Berikas ASYNKRONT via berikaLarvag (larvag-klient.ts): kärnan bor på
+   * servern (raknaLarvag via /api/larvag). Saknas tills svaret landat —
+   * ALDRIG gissad lokalt (en källa, en sanning).
+   */
+  larvag?: { slug: string; titel: string; varför: string } | null;
 };
 
 /** Nästa steg-assistentens gissning — ödmjuk (sakerhet 0–100 %), aldrig ett tvång. */

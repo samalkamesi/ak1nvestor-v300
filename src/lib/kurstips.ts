@@ -29,7 +29,7 @@ export type KursTips = {
 
 type SpårKurs = { slug: string; titel: string; kategori: Kategori; minuter: number };
 
-const KATEGORIER = [
+export const KATEGORIER = [
   "Tillväxt",
   "Värdering",
   "Lönsamhet",
@@ -40,9 +40,14 @@ const KATEGORIER = [
   "Kapitalstruktur",
 ] as const;
 
-type Kategori = (typeof KATEGORIER)[number];
+export type Kategori = (typeof KATEGORIER)[number];
 
-const V_SPÅR: SpårKurs[] = [
+/**
+ * V_SPÅR exporterad (våg 88): lärvägsmotorn (larvag.ts) återanvänder SAMMA
+ * spår, kategorier och trösklar — en källa, en sanning. Exporten ändrar
+ * inget beteende; raknaKurstips är orörd.
+ */
+export const V_SPÅR: SpårKurs[] = [
   { slug: "v01-forsaljningstillvaxt", titel: "Försäljningstillväxt", kategori: "Tillväxt", minuter: 29 },
   { slug: "v02-arr-tillvaxt", titel: "ARR-tillväxt (återkommande intäkter)", kategori: "Tillväxt", minuter: 31 },
   { slug: "v03-intaktsdiversifiering", titel: "Intäktsdiversifiering", kategori: "Tillväxt", minuter: 28 },
@@ -67,7 +72,8 @@ const V_SPÅR: SpårKurs[] = [
 
 // ── Flaggskeppen (BOKMASTER när grundlagt) ─────────────────────────────────
 
-const FLAGGSKEPP: { slug: string; titel: string; varför: (klara: number) => string }[] = [
+/** Flaggskeppen exporterade (våg 88 — lärvägens BOKMASTER-regel återanvänder). */
+export const FLAGGSKEPP: { slug: string; titel: string; varför: (klara: number) => string }[] = [
   {
     slug: "akm1-den-kontroversiella-modellen",
     titel: "AKM1 — Den Kontroversiella Modellen",
@@ -96,7 +102,8 @@ const FLAGGSKEPP: { slug: string; titel: string; varför: (klara: number) => str
 
 // ── Förberedelser inför Superanalysen (hög streak → nästa steg) ────────────
 
-const FORBEREDELSE: { slug: string; titel: string; minuter: number }[] = [
+/** Förberedelserna exporterade (våg 88 — lärvägens streak-regel återanvänder). */
+export const FORBEREDELSE: { slug: string; titel: string; minuter: number }[] = [
   { slug: "ts-10-ak1ts-25cellers-matris", titel: "AK1TS 25-cellers matris", minuter: 35 },
   { slug: "portfolj-ekosystemet", titel: "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken", minuter: 55 },
 ];
@@ -114,7 +121,8 @@ const IKONER: Record<Kategori, string> = {
   Kapitalstruktur: "🏦",
 };
 
-const VISOR: Record<Kategori, string> = {
+/** Kategori-visorna exporterade (våg 88 — lärvägens spår-varför-rad återanvänder). */
+export const VISOR: Record<Kategori, string> = {
   Tillväxt: "tillväxtens motor",
   Värdering: "värderingens vågskål",
   Lönsamhet: "lönsamhetens hjärta",
@@ -128,12 +136,10 @@ const VISOR: Record<Kategori, string> = {
 const BOK_IKON = "📕";
 const KOMPASS_IKON = "🧭";
 
-/** Tröskel för "grundlagt" — sedan öppnas bokhyllan med flaggskeppen. */
-const GRUNDLAGT_ANTAL = 8;
-/** Streak där nästa steg (superanalys-förberedelse) känns välkomnande. */
-const STREAK_NASTA_STEG = 5;
-/** Under denna XP är korta, konkreta kurssteg extra trevliga. */
-const LAG_XP_GRANS = 300;
+/** Trösklarna exporterade (våg 88 — lärvägen ÄRVER exakt samma ekonomi). */
+export const GRUNDLAGT_ANTAL = 8;
+export const STREAK_NASTA_STEG = 5;
+export const LAG_XP_GRANS = 300;
 
 /**
  * Räkna fram personliga kurstips — helt ur lokaldata.

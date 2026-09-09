@@ -80,6 +80,10 @@ const AI_CRAWLERS: Array<{ agents: string[]; vem: string }> = [
   },
 ];
 
+/** Stängda ytor: admin + VÅG 81 /studio (admin-låst agent-webchat — varken
+ *  sidan eller dess API-rutter ska indexeras eller crawlas). */
+const STANGDA_YTOR = ["/admin", "/pro/admin", "/studio", "/api/studio"];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -87,7 +91,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: PUBLIKA_YTOR,
-        disallow: ["/admin", "/pro/admin"],
+        disallow: STANGDA_YTOR,
         // crawlDelay: 0 är falsy och hopas över av Nexts generator —
         // skickas verbatim via "other" så att "Crawl-delay: 0" faktiskt emitas.
         crawlDelay: 0,
@@ -100,7 +104,7 @@ export default function robots(): MetadataRoute.Robots {
         agents.map((agent) => ({
           userAgent: agent,
           allow: PUBLIKA_YTOR,
-          disallow: ["/admin", "/pro/admin"],
+          disallow: STANGDA_YTOR,
         })),
       ),
     ],

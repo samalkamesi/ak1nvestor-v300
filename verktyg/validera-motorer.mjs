@@ -3141,7 +3141,7 @@ async function fasOversattning(): Promise<void> {
     if (titelSlugs.size !== kapSlugs.size) problem.push("kurs-titlar=" + String(kursTitlar.length) + " för " + String(titelSlugs.size) + " slugs ≠ " + String(kapSlugs.size) + " kurser med kapitel");
     const ovrigaFormat = block
       .filter((k) => !/:block\d+$/.test(k.scope.nyckel) && !/^[^:]+:titel$/.test(k.scope.nyckel))
-      .every((k) => /^[^:]+:kap\d+:(titel|intro|quiz\d+:(q|a\d+|tips))$/.test(k.scope.nyckel));
+      .every((k) => /^[^:]+:(kap\d+:(titel|intro|quiz\d+:(q|a\d+|tips))|learn|varfor|perspektiv:(lynch|graham|ak1))$/.test(k.scope.nyckel));
     if (!ovrigaFormat) problem.push("titel/intro/quiz-nycklar följer ej registrets konvention");
     const igen: any[] = KLL.listaKallor();
     if (igen.length !== kallor.length) problem.push("andra anropet ger annat antal (" + String(igen.length) + ")");

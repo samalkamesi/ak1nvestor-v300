@@ -364,3 +364,19 @@ BESLUT: UPPGRADERA /studio (ej ttyd — den är reserv):
 
 KVD: max parallella agenter, src via Write/Edit, protokollforskning
 FIRST (som våg 81 — dokumentera fynden), E2E-krav på prod.
+
+## TILLÄGG VÅG 83 — MEGA: STUDIO = EXAKT Z CODE (kunddirektiv: "ta alla koder i z code, jobba i dagar parallellt")
+
+MÅLBILD: /studio skall replikera Z Codes portal-FUNKTIONALITET (egen
+front-end på ZCodes runtime — vi kopierar INTE Z-kod, vi BYGGER mot
+samma protokoll). Delmoment (var och en = en agent):
+A. PROTOKOLLKARTA: extrahera ALLA app-server-metoder ur vendor/zcode.cjs
+   (session/*, permission/*, task/*, diff/*, memory, skills, plugins).
+B. BYGG-blocken (efter kartan): sessionshantering (flera flikar, resume,
+   arkiv) · diff-vy (filändringar per turn) · task-panel (agents/tasks) ·
+   permission-approvals (godkänn verktygskall från webben) · mode/model/
+   reasoning-level-väljare · minnespanel · verktygskalls-visualisering i
+   strömmen · filträd för workspacet · tangentkommandon · bildrendering
+   i meddelanden.
+C. KVD: max parallella agenter, protokollforskning FIRST, E2E på prod
+   per block, src via Write/Edit, deploy via tar-pipe (exkl .env*).

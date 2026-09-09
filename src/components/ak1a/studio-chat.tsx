@@ -4,22 +4,44 @@ import * as React from "react";
 import Link from "next/link";
 
 import {
+  CheckCircle2,
+  ChevronDown,
+  ChevronRight,
   CircleStop,
+  Diff,
+  Download,
+  FilePen,
   FileText,
   FileArchive,
   FileImage,
+  FolderSearch,
+  FolderTree,
   FolderUp,
+  Globe,
   History,
+  Link2,
+  ListChecks,
   Loader2,
   Paperclip,
+  RefreshCw,
+  Search,
   Send,
   Sparkles,
   Shrink,
   SquarePen,
+  Terminal,
+  Trash2,
+  Bot,
+  Pencil,
+  Target,
   UploadCloud,
+  Wrench,
+  X,
+  XCircle,
 } from "lucide-react";
 
 import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
+import { kommandoHjalp, parsaKommando } from "@/lib/studio/kommandon";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -53,6 +75,33 @@ import { cn } from "@/lib/utils";
  * guld-varning ≥ 80 % + knappar "Ny session"/"Komprimera"
  * (session/compact är bevisat stött) + sessionslista (session/list).
  *
+ * VÅG 83 MEGA B4 (STUDIO=Z — "Z-portaLens fysiska yta"): FILTRÄD över
+ * agentens arbetsyta (GET /api/studio/filer — maxdjup 3, 500 noder,
+ * node_modules/.next/.git/uploads exkludera) i höger drawer: klicka mapp
+ * = öppna/stäng, klicka fil = förhandsgranskning (text/kod monospace
+ * ≤ 20 kB, bilder som <img>, övrigt = nedladdningslänk) + uploads-sektion
+ * med datum och "Töm uploads" (DELETE /api/studio/filer). BILDER I
+ * CHATTEN: hänvisar ett användarmeddelande till en uppladdad bild
+ * ("uploads/<datum>/<namn>.png" — sökvägen finns i uploads/) visas
+ * miniatyrer direkt i bubblan via &bild=1 (säker serving, admin-cookie).
+ * SNABBKOMMANDON: rad som börjar med "/" parsas LOKALT före sändning
+ * (src/lib/studio/kommandon.ts) — /help /ny /modell <id> /komprimera
+ * /filer; API-vägarna anropar bryggan, resten är lokal hjälp.
+ *
+ * VÅG 83 MEGA B1 (STUDIO=Z — Z-portalens kärna): KOMPLETT STREAMING-
+ * VISUALISERING. Varje verktygskall = EXPANDBART KORT i chattflödet
+ * (SSE-typ "verktyg_kort" ur tool.updated: "▶ Bash: ls uploads/" → klicka
+ * ut för argument+resultat i monospace; ikon per verktyg; spinner medan
+ * verktyget kör (korts steg planerad/startar/kör); fel RÖTT). LIVE-INPUT
+ * ("verktyg_input" ur model.streaming tool_input_delta) visar agentens
+ * argument MEDAN de skrivs ("läser fil X…"). Rundstatistik ("runda" ur
+ * turn.started/completed: varaktighet + resultatTyp + verktygsantal) i
+ * bubblans fot. DIFF: "ändringar" (SSE efter klart + GET /api/studio/
+ * andringar) renderar "Ändringar"-panelen per turn — +N GRÖNT / −N RÖTT
+ * per fil, klicka ut filen för rad-diff (Write → +N rader, Edit → exakt
+ * −N/+N ur old_string/new_string; v4/conversation/fileChanges = dokumenterad
+ * uppgraderingsväg i studio-transport.ts).
+ *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
  * med automatiskt). INGA hemligheter renderas.
@@ -62,14 +111,57 @@ import { cn } from "@/lib/utils";
 
 // ── Typer ────────────────────────────────────────────────────────────────────
 
+// ── VÅG 83 B1: verktygskort + ändringar + rundstatistik ─────────────────────
+
+/** Ett verktygskalls livscykelkort i chattflödet (merge:as på id). */
+interface VerktygKort {
+  /** Protokollets toolCallId (eller transportens fallback-id). */
+  id: string;
+  namn: string;
+  steg: "planerad" | "startar" | "kör" | "resultat" | "fel";
+  /** Argument som JSON-sträng (truncat av transporten). */
+  argument?: string;
+  beskrivning?: string;
+  resultat?: string;
+  fel?: string;
+  varaktighetMs?: number;
+  /** Live-progress (elapsedMs + stdout/stderr-svans). */
+  framsteg?: { elapsedMs?: number; utdata?: string };
+  /** Ackumulerad live-input (model.streaming tool_input_delta). */
+  liveInput?: string;
+  /** Expanderat läge (klick på kortet). */
+  öppen?: boolean;
+}
+
+/** Filändring i turnens "Ändringar"-panel — ±N rader per fil. */
+interface Filandring {
+  sokvag: string;
+  plus: number;
+  minus: number;
+  rader: { typ: "+" | "-"; text: string }[];
+  /** Expanderat läge (klick på filraden). */
+  öppen?: boolean;
+}
+
+/** Rundstatistik ur turn.started/turn.completed (bubblans fot). */
+interface RundStatistik {
+  varaktighetMs?: number;
+  resultatTyp?: string;
+  verktygAntal?: number;
+}
+
 interface Meddelande {
   id: string;
   roll: "user" | "assistant";
   text: string;
   /** Strömmar pågående (agentbubbla utan guldkant-fade). */
   strömmande?: boolean;
-  /** Verktygsrad under agentens arbete. */
-  verktyg?: string[];
+  /** V83 B1: verktygskort i ankomstordning (merge på id). */
+  verktygKort?: VerktygKort[];
+  /** V83 B1: senaste turnens filändringar (ändringar-SSE/GET). */
+  ändringar?: Filandring[];
+  /** V83 B1: rundstatistik (varaktighet · resultat · verktyg). */
+  rundStatistik?: RundStatistik;
   fel?: boolean;
 }
 
@@ -94,17 +186,56 @@ interface KontextInfo {
   turnCount?: number;
 }
 
-/** Post ur GET /api/studio/session (session/list). */
+/** Post ur GET /api/studio/session (session/list, v83 B3-berikad). */
 interface SessionPost {
   sessionId: string;
   titel?: string;
   status?: string;
   arbetsyta?: string;
   uppdaterad?: string;
+  /** v83 B3: qBe.model ur session/list ("zai/glm-5.3"). */
+  modell?: string;
+  /** v83 B3: projection.turnCount (session/read-berikning). */
+  turns?: number;
+  /** v83 B3: projection.totalTokenCount (session/read-berikning). */
+  tokens?: number;
+}
+
+/** v83 B3: bakgrundsagent ur session/subagents (körande + avslutade). */
+interface SubagentPost {
+  barnSessionId: string;
+  titel: string;
+  typ?: string;
+  status: string;
+  startad?: string;
+  avslutad?: string;
+  sammanfattning?: string;
+}
+
+/** v83 B3: workspaceinfo ur workspace/readState (via GET /api/studio/session). */
+interface ArbetsytaInfo {
+  arbetsyta: string;
+  lage?: string;
+  modell?: string;
+  tankeNiva?: string;
+  behorighet?: string;
+  modellerTillgangliga?: number;
+  kommandon?: number;
 }
 
 interface StreamEvent {
-  typ: "hej" | "status" | "delta" | "verktyg" | "klart" | "fel" | "kontext";
+  typ:
+    | "hej"
+    | "status"
+    | "delta"
+    | "verktyg"
+    | "verktyg_kort"
+    | "verktyg_input"
+    | "runda"
+    | "klart"
+    | "fel"
+    | "kontext"
+    | "ändringar";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -115,6 +246,19 @@ interface StreamEvent {
   sessionId?: string | null;
   tokenCount?: number;
   kontext?: KontextInfo | null;
+  // ── V83 B1: verktygskort + live-input + runda + ändringar ──
+  id?: string;
+  steg?: "planerad" | "startar" | "kör" | "resultat" | "fel";
+  argument?: string;
+  beskrivning?: string;
+  resultat?: string;
+  fel?: string;
+  varaktighetMs?: number;
+  framsteg?: { elapsedMs?: number; utdata?: string };
+  fas?: "start" | "slut";
+  resultatTyp?: string;
+  verktygAntal?: number;
+  filer?: Filandring[];
 }
 
 /** KVD-reservtak när protokollet tiger (zai/GLM svarade 200 000 vid v82-beviset). */
@@ -125,8 +269,112 @@ const KONTEXT_VARNING_PROCENT = 80;
 /** Formattera tokens kompakt (12 345 → "12,3k"). */
 function tkn(n: number): string {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".", ",")}M`;
-  if (n >= 1_000) return `${Math.round(n / 1_000)}k`;
+  if (n >= 1_000) return `${Math.round(n / 1000)}k`;
   return String(n);
+}
+
+/** Formattera bytes läsbart (15 360 → "15 kB"). */
+function byteStorlek(n: number): string {
+  if (n >= 1024 * 1024) return `${(n / (1024 * 1024)).toFixed(1).replace(".", ",")} MB`;
+  if (n >= 1024) return `${Math.round(n / 1024)} kB`;
+  return `${n} B`;
+}
+
+// ── VÅG 83 B3: tidsformat + agentstatus-badge ──────────────────────────────
+
+/** Kompakt relativ tid ("nu" · "5 min" · "3 h" · "2 d" · annars datum). */
+function tidSen(iso?: string): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso.slice(0, 16).replace("T", " ");
+  const min = Math.floor((Date.now() - d.getTime()) / 60_000);
+  if (min < 1) return "nu";
+  if (min < 60) return `${min} min`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `${h} h`;
+  const dagar = Math.floor(h / 24);
+  if (dagar < 7) return `${dagar} d`;
+  return d.toLocaleDateString("sv-SE", { day: "numeric", month: "short" });
+}
+
+/** Badge-färg per subagent-status (session/subagents). */
+function agentStatusFarg(status: string): string {
+  switch (status) {
+    case "running":
+      return "bg-emerald-400/15 text-emerald-300";
+    case "waiting":
+      return "bg-gold/15 text-gold";
+    case "blocked":
+      return "bg-red-400/15 text-red-300";
+    case "success":
+      return "bg-emerald-400/10 text-emerald-300/80";
+    case "failed":
+    case "lost":
+      return "bg-red-500/10 text-red-300/80";
+    default:
+      return "bg-white/10 text-[#EDE6D6]/60"; // cancelled m.fl.
+  }
+}
+
+/** Svensk etikett per subagent-status. */
+function agentStatusText(status: string): string {
+  const tabell: Record<string, string> = {
+    running: "kör",
+    waiting: "väntar",
+    blocked: "blockerad",
+    success: "klar",
+    failed: "fel",
+    cancelled: "avbruten",
+    lost: "förlorad",
+  };
+  return tabell[status] ?? status;
+}
+
+// ── VÅG 83 B4: filträd + bildminiatyrer ─────────────────────────────────────
+
+/** Nod ur GET /api/studio/filer (trädgren 1). */
+interface TradNod {
+  namn: string;
+  typ: "mapp" | "fil";
+  storlek: number;
+  sokvag: string;
+  barn?: TradNod[];
+}
+
+/** Svar ur GET /api/studio/filer?sokvag=… (förhandsgranskningsgren). */
+interface FilVisning {
+  namn: string;
+  sokvag: string;
+  typ?: string;
+  storlek: number;
+  andrad?: number;
+  forhandsgranskning:
+    | { slag: "text"; innehåll: string }
+    | { slag: "bild"; url: string }
+    | { slag: "nedladdning"; url: string; orsak?: string }
+    | { slag: "blockerad"; meddelande: string }
+    | { slag: "mapp" };
+  fel?: string;
+}
+
+/**
+ * Bildreferenser i en text — matchar agentens upload-sökvägar
+ * ("uploads/<datum>/<namn>.png"). Dedupe i tur- och ordning. Existens
+ * verifieras av servern (trasig bild gömmer sig via onError).
+ */
+function bildRefsUrText(text: string): string[] {
+  const ut: string[] = [];
+  const re = /uploads\/[\w\-./ ]+?\.(?:png|jpe?g|webp|gif)\b/gi;
+  for (const träff of text.matchAll(re)) {
+    const sokvag = träff[0].trim().replace(/\/+$/, "");
+    if (sokvag && !ut.includes(sokvag)) ut.push(sokvag);
+  }
+  return ut;
+}
+
+/** Säker bild-URL mot filer-rutten (admin-cookien åker med automatiskt). */
+function bildUrl(sokvag: string): string {
+  return `/api/studio/filer?sokvag=${encodeURIComponent(sokvag)}&bild=1`;
 }
 
 // ── Markdown (bloggens tolkning + kodblock) ──────────────────────────────────
@@ -246,6 +494,269 @@ function StudioMarkdown({ text }: { text: string }) {
   return <div className="text-sm">{block}</div>;
 }
 
+// ── VÅG 83 B4: filträdsrad (rekursiv) ───────────────────────────────────────
+
+/** Filikon per ändelse (bilder/arkiv/text — guldtonad som resten av ytan). */
+function filIkon(namn: string): React.ReactNode {
+  const andelse = namn.toLowerCase().split(".").pop() ?? "";
+  if (["png", "jpg", "jpeg", "webp", "gif"].includes(andelse)) {
+    return <FileImage className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  }
+  if (andelse === "zip") return <FileArchive className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  return <FileText className="h-3.5 w-3.5 shrink-0 text-gold/60" />;
+}
+
+/** En rad i filträdet — mapp växlar öppen/stängd, fil öppnar förhandsgranskning. */
+function TradRad({
+  nod,
+  djup,
+  oppna,
+  onVaxla,
+  onFil,
+}: {
+  nod: TradNod;
+  djup: number;
+  oppna: Set<string>;
+  onVaxla: (sokvag: string) => void;
+  onFil: (sokvag: string) => void;
+}): React.JSX.Element {
+  if (nod.typ === "mapp") {
+    const arOppen = oppna.has(nod.sokvag);
+    return (
+      <div>
+        <button
+          onClick={() => onVaxla(nod.sokvag)}
+          className="flex w-full items-center gap-1 rounded-md px-1.5 py-1 text-left text-[12px] text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
+          style={{ paddingLeft: 6 + djup * 14 }}
+          title={nod.sokvag}
+        >
+          {arOppen ? (
+            <ChevronDown className="h-3.5 w-3.5 shrink-0 text-gold" />
+          ) : (
+            <ChevronRight className="h-3.5 w-3.5 shrink-0 text-gold" />
+          )}
+          <span className="truncate font-medium">{nod.namn}</span>
+        </button>
+        {arOppen &&
+          nod.barn?.map((b) => (
+            <TradRad key={b.sokvag} nod={b} djup={djup + 1} oppna={oppna} onVaxla={onVaxla} onFil={onFil} />
+          ))}
+      </div>
+    );
+  }
+  return (
+    <button
+      onClick={() => onFil(nod.sokvag)}
+      className="flex w-full items-center gap-1.5 rounded-md px-1.5 py-1 text-left text-[12px] text-[#EDE6D6]/75 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+      style={{ paddingLeft: 10 + djup * 14 }}
+      title={`${nod.sokvag} — ${byteStorlek(nod.storlek)}`}
+    >
+      {filIkon(nod.namn)}
+      <span className="min-w-0 flex-1 truncate">{nod.namn}</span>
+      <span className="shrink-0 font-mono text-[9px] text-[#EDE6D6]/35">{byteStorlek(nod.storlek)}</span>
+    </button>
+  );
+}
+
+// ── VÅG 83 B1: verktygskortets rubrik, ikon, tid + kort-/diff-komponenter ───
+
+/** Formattera millisekunder läsbart (1234 → "1,2 s"; 456 → "456 ms"). */
+function msText(ms: number): string {
+  if (ms >= 1000) return (ms / 1000).toFixed(1).replace(".", ",") + " s";
+  return Math.round(ms) + " ms";
+}
+
+/** Verktygsikon per namn (Bash=terminal, Read=filsymbol, Write=penndokument…). */
+function verktygsIkon(namn: string): React.ReactNode {
+  const n = namn.toLowerCase();
+  if (n === "bash" || n.includes("terminal")) return <Terminal className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.startsWith("read")) return <FileText className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.startsWith("write") || n === "edit" || n === "multiedit" || n.includes("notebook")) {
+    return <FilePen className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  }
+  if (n.includes("grep")) return <Search className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.includes("glob")) return <FolderSearch className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.includes("todo")) return <ListChecks className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.includes("websearch")) return <Globe className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  if (n.includes("webfetch") || n.includes("fetch")) return <Link2 className="h-3.5 w-3.5 shrink-0 text-gold/80" />;
+  return <Wrench className="h-3.5 w-3.5 shrink-0 text-gold/70" />;
+}
+
+/**
+ * Kortrubrik av argumenten: plockar det mest läsbara fältet ur JSON:en —
+ * "Bash: ls uploads/", "Read: src/lib/…", "Grep: finans*". Faller på
+ * beskrivning, sedan första raden, sedan bara namnet.
+ */
+function kortRubrik(kort: VerktygKort): string {
+  if (kort.argument) {
+    try {
+      const p = JSON.parse(kort.argument) as Record<string, unknown>;
+      for (const nyckel of ["command", "file_path", "path", "pattern", "url", "query", "prompt", "description"]) {
+        const v = p[nyckel];
+        if (typeof v === "string" && v) {
+          const kortV = v.length > 72 ? v.slice(0, 72) + "…" : v;
+          return kort.namn + ": " + kortV;
+        }
+      }
+    } catch {
+      // rå text — första raden nedan
+    }
+    const första = kort.argument.split("\n")[0];
+    if (första && första !== kort.argument) return kort.namn + ": " + (första.length > 72 ? första.slice(0, 72) + "…" : första);
+  }
+  if (kort.beskrivning) return kort.namn + ": " + kort.beskrivning.slice(0, 72);
+  return kort.namn;
+}
+
+/** Status-ikon höger i kortet: spinner kör / bock klar / kryss rött fel. */
+function kortStatus(kort: VerktygKort): React.ReactNode {
+  if (kort.steg === "fel") return <XCircle className="h-3.5 w-3.5 shrink-0 text-red-500" />;
+  if (kort.steg === "resultat") return <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500" />;
+  return <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-gold" />;
+}
+
+/**
+ * Verktygskortet — expanderbar rad i agentbubblan. Kollapsad: ▶ + ikon +
+ * rubrik + status; live-input syns guld-tonat även kollapsat ("läser fil
+ * X…"). Expanderad: argument + live-progress + resultat/fel i monospace.
+ */
+function VerktygsKortVy({
+  kort,
+  onVaxla,
+}: {
+  kort: VerktygKort;
+  onVaxla: (id: string) => void;
+}): React.JSX.Element {
+  const kör = kort.steg === "planerad" || kort.steg === "startar" || kort.steg === "kör";
+  return (
+    <div
+      className={cn(
+        "overflow-hidden rounded-lg border text-left",
+        kort.steg === "fel" ? "border-red-500/40 bg-red-500/5" : "border-gold/25 bg-muted/40",
+      )}
+    >
+      <button
+        onClick={() => onVaxla(kort.id)}
+        className="flex w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-muted/70"
+        title={kort.beskrivning ?? kortRubrik(kort)}
+      >
+        {kort.öppen ? (
+          <ChevronDown className="h-3 w-3 shrink-0 text-muted-foreground" />
+        ) : (
+          <ChevronRight className="h-3 w-3 shrink-0 text-muted-foreground" />
+        )}
+        {verktygsIkon(kort.namn)}
+        <span className="min-w-0 flex-1 truncate font-mono text-[11px] leading-tight text-foreground/90">
+          {kortRubrik(kort)}
+        </span>
+        {typeof kort.varaktighetMs === "number" && !kör && (
+          <span className="shrink-0 font-mono text-[9px] text-muted-foreground/70">{msText(kort.varaktighetMs)}</span>
+        )}
+        {kortStatus(kort)}
+      </button>
+      {/* Live-input medan agenten skriver argumenten — syns även kollapsat. */}
+      {kör && kort.liveInput && (
+        <p className="truncate border-t border-gold/15 px-2.5 py-1 font-mono text-[10px] leading-tight text-gold/90">
+          {kort.liveInput.slice(-96)}
+          <span className="ml-0.5 inline-block h-3 w-[2px] animate-pulse bg-gold align-text-bottom" />
+        </p>
+      )}
+      {kort.öppen && (
+        <div className="space-y-2 border-t border-gold/15 px-2.5 py-2">
+          {kort.argument && (
+            <div>
+              <p className="mb-0.5 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">Argument</p>
+              <pre className="max-h-40 overflow-auto whitespace-pre-wrap break-words rounded bg-muted/70 p-2 font-mono text-[10px] leading-relaxed">{kort.argument}</pre>
+            </div>
+          )}
+          {kör && kort.framsteg?.utdata && (
+            <div>
+              <p className="mb-0.5 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+                Live{typeof kort.framsteg.elapsedMs === "number" ? " · " + msText(kort.framsteg.elapsedMs) : ""}
+              </p>
+              <pre className="max-h-24 overflow-auto whitespace-pre-wrap break-words rounded bg-muted/70 p-2 font-mono text-[10px] leading-relaxed">{kort.framsteg.utdata}</pre>
+            </div>
+          )}
+          {kort.resultat && (
+            <div>
+              <p className="mb-0.5 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">Resultat</p>
+              <pre className="max-h-56 overflow-auto whitespace-pre-wrap break-words rounded bg-muted/70 p-2 font-mono text-[10px] leading-relaxed">{kort.resultat}</pre>
+            </div>
+          )}
+          {kort.fel && (
+            <div>
+              <p className="mb-0.5 text-[9px] font-semibold uppercase tracking-wider text-red-500/80">Fel</p>
+              <pre className="max-h-32 overflow-auto whitespace-pre-wrap break-words rounded bg-red-500/10 p-2 font-mono text-[10px] leading-relaxed text-red-600 dark:text-red-400">{kort.fel}</pre>
+            </div>
+          )}
+          {!kort.argument && !kort.resultat && !kort.fel && !kort.framsteg?.utdata && (
+            <p className="text-[10px] text-muted-foreground/60">Väntar på att verktyget ska börja…</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Ändringspanelen per turn — filrader med +N (grönt) / −N (rött), klicka
+ * ut filen för rad-diff i monospace (grönt/rött per rad).
+ */
+function AndringsPanel({
+  andringar,
+  onVaxlaFil,
+}: {
+  andringar: Filandring[];
+  onVaxlaFil: (sokvag: string) => void;
+}): React.JSX.Element {
+  return (
+    <div className="mt-2 overflow-hidden rounded-lg border border-gold/25 bg-muted/30">
+      <p className="flex items-center gap-1.5 border-b border-gold/15 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/80">
+        <Diff className="h-3.5 w-3.5 text-gold" />
+        Ändringar denna rundan ({andringar.length} {andringar.length === 1 ? "fil" : "filer"})
+      </p>
+      <ul>
+        {andringar.map((f) => (
+          <li key={f.sokvag} className="border-b border-gold/10 last:border-b-0">
+            <button
+              onClick={() => onVaxlaFil(f.sokvag)}
+              className="flex w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-muted/60"
+              title={f.sokvag}
+            >
+              {f.öppen ? (
+                <ChevronDown className="h-3 w-3 shrink-0 text-muted-foreground" />
+              ) : (
+                <ChevronRight className="h-3 w-3 shrink-0 text-muted-foreground" />
+              )}
+              <FilePen className="h-3 w-3 shrink-0 text-gold/70" />
+              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-foreground/90">
+                {f.sokvag.split("/").slice(-2).join("/")}
+              </span>
+              <span className="shrink-0 font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400">+{f.plus}</span>
+              <span className="shrink-0 font-mono text-[10px] font-bold text-red-600 dark:text-red-400">−{f.minus}</span>
+            </button>
+            {f.öppen && f.rader.length > 0 && (
+              <pre className="max-h-64 overflow-auto border-t border-gold/10 bg-muted/60 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
+                {f.rader.map((r, i) => (
+                  <span
+                    key={i}
+                    className={cn(
+                      "block whitespace-pre-wrap break-all",
+                      r.typ === "+" ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
+                    )}
+                  >
+                    {r.typ === "+" ? "+" : "−"} {r.text || " "}
+                  </span>
+                ))}
+              </pre>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 // ── Huvudkomponent ───────────────────────────────────────────────────────────
 
 let idRäknare = 0;
@@ -271,8 +782,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [ackumulerat, setAckumulerat] = React.useState(0);
   const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
   const [visaSessioner, setVisaSessioner] = React.useState(false);
-  const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact">("");
+  const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
   const [toast, setToast] = React.useState<{ text: string; ton: "guld" | "fel" } | null>(null);
+
+  // ── VÅG 83 B3: sessions- och workspace-hantering (Z-portaLens) ──────────
+  const [aktivSession, setAktivSession] = React.useState("");
+  const [mal, setMal] = React.useState<string | null>(null);
+  const [malRedigerar, setMalRedigerar] = React.useState(false);
+  const [malText, setMalText] = React.useState("");
+  const [malSparar, setMalSparar] = React.useState(false);
+  const [subagenter, setSubagenter] = React.useState<SubagentPost[]>([]);
+  const [visaAgenter, setVisaAgenter] = React.useState(false);
+  const [agenterLaddar, setAgenterLaddar] = React.useState(false);
+  const [agenterFel, setAgenterFel] = React.useState("");
+  const [arbetsytaInfo, setArbetsytaInfo] = React.useState<ArbetsytaInfo | null>(null);
+
+  // ── VÅG 83 B4: filträd + förhandsgranskning ──────────────────────────────
+  const [visaFiler, setVisaFiler] = React.useState(false);
+  const [trad, setTrad] = React.useState<TradNod[] | null>(null);
+  const [tradLaddar, setTradLaddar] = React.useState(false);
+  const [tradFel, setTradFel] = React.useState("");
+  const [tradTrunkerad, setTradTrunkerad] = React.useState(false);
+  const [arbetsytaNamn, setArbetsytaNamn] = React.useState("");
+  const [oppnaMappar, setOppnaMappar] = React.useState<Set<string>>(new Set());
+  const [filVisning, setFilVisning] = React.useState<FilVisning | null>(null);
+  const [visningLaddar, setVisningLaddar] = React.useState(false);
+  const [tommerUploads, setTommerUploads] = React.useState(false);
 
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
@@ -286,13 +821,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
     window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
   }, []);
 
-  /** Uppdatera sessionlistan (GET /api/studio/session). */
+  /**
+   * Uppdatera sessionlistan (GET /api/studio/session) — v83 B3: bär även
+   * aktiv session, målet (session/goal) och workspaceinfo (readState).
+   */
   const lasSessioner = React.useCallback(async () => {
     try {
       const res = await fetch("/api/studio/session", { headers: adminHeaders() });
       if (res.ok) {
-        const data = (await res.json()) as { sessioner?: SessionPost[] };
+        const data = (await res.json()) as {
+          sessioner?: SessionPost[];
+          aktiv?: string | null;
+          mal?: { mal: string | null; meddelande: string } | null;
+          arbetsyta?: ArbetsytaInfo | null;
+        };
         if (data.sessioner) setSessioner(data.sessioner);
+        if (typeof data.aktiv === "string") setAktivSession(data.aktiv);
+        if (data.mal) setMal(data.mal.mal);
+        if (data.arbetsyta) setArbetsytaInfo(data.arbetsyta);
       }
     } catch {
       // listan är lyx
@@ -356,11 +902,42 @@ export function StudioChat({ hem }: { hem: () => void }) {
       }
       void lasModeller();
       void lasSessioner();
+      // V83 B1: senaste turnens filändringar — visas på sista agentbubblan
+      // även efter omladdning (GET /api/studio/andringar).
+      try {
+        const res = await fetch("/api/studio/andringar", { headers: adminHeaders() });
+        if (res.ok) {
+          const data = (await res.json()) as { filer?: Filandring[] };
+          if (levande && Array.isArray(data.filer) && data.filer.length > 0) {
+            setMeddelanden((alla) => {
+              for (let i = alla.length - 1; i >= 0; i--) {
+                if (alla[i].roll === "assistant") {
+                  const kopia = [...alla];
+                  kopia[i] = { ...alla[i], ändringar: data.filer };
+                  return kopia;
+                }
+              }
+              return alla;
+            });
+          }
+        }
+      } catch {
+        // diff vid uppslag är lyx
+      }
       try {
         const res = await fetch("/api/studio/uppladdning", { headers: adminHeaders() });
         if (res.ok) {
-          const data = (await res.json()) as { filer?: Uppladdning[] };
-          if (levande && data.filer) setUppladdningar(data.filer);
+          const data = (await res.json()) as { filer?: (Uppladdning & { andrad?: number })[] };
+          // GET svarar med sökväg relativt uploads-roten ("<datum>/<namn>") —
+          // normalisera till agentens fulla relativa sökväg "uploads/…".
+          if (levande && data.filer) {
+            setUppladdningar(
+              data.filer.map((f) => ({
+                ...f,
+                sokvag: f.sokvag.startsWith("uploads/") ? f.sokvag : `uploads/${f.sokvag}`,
+              })),
+            );
+          }
         }
       } catch {
         // uploads-listan är lyx
@@ -473,6 +1050,293 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [sessionJobbar, strömmar, visaToast, live]);
 
+  // ── VÅG 83 B3: sessions- och workspace-hantering (Z-portaLens) ──────────
+
+  /**
+   * Öppna session ur listan (session/resume) — chatten fylls med historiken
+   * via session/messages och kontextraden får sessionens projektion.
+   */
+  const oppnaSessionen = React.useCallback(
+    async (sessionId: string) => {
+      if (sessionJobbar || strömmar) return;
+      setSessionJobbar("resume");
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ action: "resume", sessionId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          sessionId?: string;
+          historik?: { roll: "user" | "assistant"; text: string }[];
+          kontext?: KontextInfo | null;
+          fel?: string;
+        };
+        if (res.ok && data.sessionId) {
+          setMeddelanden(
+            (data.historik ?? []).map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+          );
+          setKontext(data.kontext ?? null);
+          setRundaTkn(null);
+          setAckumulerat(data.kontext?.totalTokenCount ?? 0);
+          visaToast(`Sessionen öppnad — ${data.historik?.length ?? 0} meddelanden ur historiken`);
+          void lasSessioner();
+        } else {
+          visaToast(data.fel || "Kunde ej öppna sessionen.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — kunde ej öppna sessionen.", "fel");
+      } finally {
+        setSessionJobbar("");
+      }
+    },
+    [sessionJobbar, strömmar, visaToast, lasSessioner],
+  );
+
+  /** Stäng session (session/close) — lever kvar i listan men svarar ej. */
+  const stangSessionen = React.useCallback(
+    async (sessionId: string) => {
+      if (sessionJobbar || strömmar) return;
+      setSessionJobbar("stang");
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ action: "stang", sessionId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { stangd?: boolean; fel?: string };
+        if (res.ok && data.stangd) {
+          if (sessionId === aktivSession) {
+            // Den aktiva stängdes — chatten töms; nästa prompt föder frisk session.
+            setMeddelanden([]);
+            setKontext(null);
+            setRundaTkn(null);
+            setAckumulerat(0);
+            setMal(null);
+          }
+          visaToast("Sessionen stängd — finns kvar i listan (arkiverad).");
+          void lasSessioner();
+        } else {
+          visaToast(data.fel || "Kunde ej stänga sessionen.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — kunde ej stänga sessionen.", "fel");
+      } finally {
+        setSessionJobbar("");
+      }
+    },
+    [sessionJobbar, strömmar, visaToast, lasSessioner, aktivSession],
+  );
+
+  /** Spara målet (session/goal set — visas i headern om satt). */
+  const sparaMal = React.useCallback(async () => {
+    const texten = malText.trim();
+    if (!texten || malSparar) return;
+    setMalSparar(true);
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malSatt", mal: texten }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        mal?: string | null;
+        meddelande?: string;
+        fel?: string;
+      };
+      if (res.ok) {
+        setMal(typeof data.mal === "string" ? data.mal : texten);
+        setMalRedigerar(false);
+        visaToast(data.meddelande || "Målet satt.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej sparas.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej sparas.", "fel");
+    } finally {
+      setMalSparar(false);
+    }
+  }, [malText, malSparar, visaToast]);
+
+  /** Rensa målet (session/goal clear). */
+  const rensaMaler = React.useCallback(async () => {
+    if (malSparar) return;
+    setMalSparar(true);
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malRensa" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { meddelande?: string; fel?: string };
+      if (res.ok) {
+        setMal(null);
+        setMalRedigerar(false);
+        visaToast(data.meddelande || "Målet rensat.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej rensas.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej rensas.", "fel");
+    } finally {
+      setMalSparar(false);
+    }
+  }, [malSparar, visaToast]);
+
+  /** Hämta bakgrundsagenter (session/subagents). */
+  const lasAgenter = React.useCallback(async () => {
+    setAgenterLaddar(true);
+    setAgenterFel("");
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "subagenter" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        subagenter?: SubagentPost[];
+        fel?: string;
+      };
+      if (res.ok && Array.isArray(data.subagenter)) {
+        setSubagenter(data.subagenter);
+      } else {
+        setAgenterFel(data.fel || "Bakgrundsagenterna kunde ej listas.");
+      }
+    } catch {
+      setAgenterFel("Nätverksfel — bakgrundsagenterna kunde ej listas.");
+    } finally {
+      setAgenterLaddar(false);
+    }
+  }, []);
+
+  /** Avbryt bakgrundstask (session/cancelBackgroundTask). */
+  const avbrytAgent = React.useCallback(
+    async (taskId: string) => {
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ action: "avbrytTask", taskId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          avbruten?: boolean;
+          meddelande?: string;
+          fel?: string;
+        };
+        if (res.ok && data.avbruten) {
+          visaToast(data.meddelande || "Tasken avbruten.");
+        } else {
+          visaToast(data.meddelande || data.fel || "Kunde ej avbryta tasken.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — kunde ej avbryta tasken.", "fel");
+      }
+      void lasAgenter();
+    },
+    [visaToast, lasAgenter],
+  );
+
+  // ── VÅG 83 B4: filträd + förhandsgranskning + töm uploads ────────────────
+
+  /** Hämta trädet (GET /api/studio/filer) — tvingas via ?frisk=1 vid uppdatering. */
+  const lasTrad = React.useCallback(async (frisk = false) => {
+    setTradLaddar(true);
+    setTradFel("");
+    try {
+      const res = await fetch(`/api/studio/filer${frisk ? `?frisk=${Date.now()}` : ""}`, {
+        headers: adminHeaders(),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        arbetsyta?: string;
+        trad?: TradNod[];
+        trunkerad?: boolean;
+        fel?: string;
+      };
+      if (res.ok && data.trad) {
+        setTrad(data.trad);
+        setTradTrunkerad(Boolean(data.trunkerad));
+        setArbetsytaNamn((data.arbetsyta ?? "").split("/").filter(Boolean).pop() ?? "");
+      } else {
+        setTradFel(data.fel || "Filträdet kunde ej hämtas.");
+      }
+    } catch {
+      setTradFel("Nätverksfel — filträdet kunde ej hämtas.");
+    } finally {
+      setTradLaddar(false);
+    }
+  }, []);
+
+  /** Öppna drawern (laddar trädet vid behov) — also /filer-kommandot. */
+  const oppnaFiltrad = React.useCallback(() => {
+    setVisaFiler(true);
+    void lasTrad();
+  }, [lasTrad]);
+
+  /** Klicka fil → hämta förhandsgranskning (GET ?sokvag=…). */
+  const visaFil = React.useCallback(async (sokvag: string) => {
+    setFilVisning(null);
+    setVisningLaddar(true);
+    try {
+      const res = await fetch(`/api/studio/filer?sokvag=${encodeURIComponent(sokvag)}`, {
+        headers: adminHeaders(),
+      });
+      const data = (await res.json().catch(() => ({}))) as FilVisning;
+      if (res.ok) {
+        setFilVisning(data);
+      } else {
+        setFilVisning({ namn: sokvag.split("/").pop() ?? sokvag, sokvag, storlek: 0, forhandsgranskning: { slag: "blockerad", meddelande: data.fel || "Filen kunde ej visas." } });
+      }
+    } catch {
+      setFilVisning({ namn: sokvag.split("/").pop() ?? sokvag, sokvag, storlek: 0, forhandsgranskning: { slag: "blockerad", meddelande: "Nätverksfel — filen kunde ej hämtas." } });
+    } finally {
+      setVisningLaddar(false);
+    }
+  }, []);
+
+  /** Töm uploads (DELETE /api/studio/filer) — rensar även chips-listan. */
+  const tomUploads = React.useCallback(async () => {
+    if (tommerUploads) return;
+    if (!window.confirm(`Tömma uploads? Alla ${uppladdningar.length ? `${uppladdningar.length}+ ` : ""}uppladdade filer raderas (äldre än 7 dagar rensas ändå automatiskt).`)) return;
+    setTommerUploads(true);
+    try {
+      const res = await fetch("/api/studio/filer", { method: "DELETE", headers: adminHeaders() });
+      const data = (await res.json().catch(() => ({}))) as { raderade?: number; fel?: string };
+      if (res.ok) {
+        setUppladdningar([]);
+        visaToast(`Uploads tömda — ${data.raderade ?? 0} filer raderade.`);
+      } else {
+        visaToast(data.fel || "Kunde ej tömma uploads.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — kunde ej tömma uploads.", "fel");
+    } finally {
+      setTommerUploads(false);
+    }
+  }, [tommerUploads, uppladdningar.length, visaToast]);
+
+  /** Klicka mapp = växla öppen/stängd (Set i state — ny referens varje gång). */
+  const vaxlaMapp = React.useCallback((sokvag: string) => {
+    setOppnaMappar((gamla) => {
+      const nya = new Set(gamla);
+      if (nya.has(sokvag)) nya.delete(sokvag);
+      else nya.add(sokvag);
+      return nya;
+    });
+  }, []);
+
+  // Escape stänger förhandsgranskning + drawern (mjuk lokal hjälppunkt).
+  React.useEffect(() => {
+    if (!visaFiler && !filVisning) return;
+    const påTangent = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setFilVisning(null);
+        setVisaFiler(false);
+      }
+    };
+    window.addEventListener("keydown", påTangent);
+    return () => window.removeEventListener("keydown", påTangent);
+  }, [visaFiler, filVisning]);
+
   // ── Uppladdning ────────────────────────────────────────────────────────────
 
   const laddaUpp = React.useCallback(async (filer: File[], relativa?: string[]) => {
@@ -539,6 +1403,61 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const skicka = React.useCallback(async () => {
     const text = prompt.trim();
     if (!text || strömmar) return;
+
+    // ── VÅG 83 B4: snabbkommandon parsas LOKALT före sändning ──
+    // (rad som börjar med "/" lämnar ALDRIG browsern som prompt; de med
+    // API-väg anropar bryggan här, resten är lokal hjälp).
+    const kommando = parsaKommando(text);
+    if (kommando) {
+      setPrompt("");
+      if (!kommando.kommando) return; // bart "/" — avfärdat utan brus
+      const pushAssistant = (t: string) =>
+        setMeddelanden((m) => [...m, { id: nyttId(), roll: "assistant", text: t }]);
+      setMeddelanden((m) => [...m, { id: nyttId(), roll: "user", text }]);
+      switch (kommando.kommando) {
+        case "help":
+          pushAssistant(kommandoHjalp());
+          return;
+        case "ny":
+          await startaNySession();
+          pushAssistant("Ny session — kontexten börjar om (gamla sessioner finns kvar i listan).");
+          return;
+        case "komprimera":
+          await komprimera();
+          pushAssistant("Komprimering körd — se kontextraden för färsk tokenräkning.");
+          return;
+        case "filer":
+          oppnaFiltrad();
+          pushAssistant("Filträdet är öppet — klicka dig ner i arbetsytan och förhandsgranska filer.");
+          return;
+        case "modell": {
+          const id = kommando.argument.split(/\s+/)[0] ?? "";
+          const listaText =
+            modeller.length > 0
+              ? `Tillgängliga: ${modeller.map((m) => `\`${m.id}\``).join(", ")}.`
+              : "Modellistan är ej hämtad (demo-läge) — modellbyte kräver riktig anslutning.";
+          if (!id) {
+            pushAssistant(`Använd: **/modell <id>** — ${listaText}`);
+            return;
+          }
+          if (modeller.length > 0 && !modeller.some((m) => m.id === id)) {
+            pushAssistant(`Okänd modell \`${id}\`. ${listaText}`);
+            return;
+          }
+          if (id === valdModell) {
+            pushAssistant(`\`${id}\` är redan vald — ingen session kasseras.`);
+            return;
+          }
+          await bytModell(id);
+          pushAssistant(`Modellbyte till **${id}** kört — ny session skapad med modellen.`);
+          return;
+        }
+        default:
+          pushAssistant(`Okänt kommando \`${kommando.kommando}\` — skriv **/help** för alla kommandon.`);
+          return;
+      }
+    }
+
     setPrompt("");
     setTankar("");
     setStatusText("Skickar…");
@@ -552,6 +1471,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
     /** Uppdatera agentbubblan funktionellt (strömmen skriver ofta). */
     const rörAgent = (rör: (m: Meddelande) => Meddelande) => {
       setMeddelanden((alla) => alla.map((m) => (m.id === agentId ? rör(m) : m)));
+    };
+
+    // ── V83 B1: verktygskort-merge (funktionell uppdatering på id) ──
+    const uppdateraKort = (id: string, rör: (k: VerktygKort) => VerktygKort) => {
+      rörAgent((m) => {
+        const korta = m.verktygKort ? [...m.verktygKort] : [];
+        const i = korta.findIndex((k) => k.id === id);
+        if (i >= 0) {
+          korta[i] = rör(korta[i]);
+        } else {
+          korta.push(rör({ id, namn: "verktyg", steg: "planerad" }));
+        }
+        return { ...m, verktygKort: korta };
+      });
     };
 
     try {
@@ -603,13 +1536,62 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }
               break;
             case "verktyg":
+              // V83 B1: den gamla verktygs-raden lever bara som statusText —
+              // korten (med argument+resultat) kommer via "verktyg_kort".
               setStatusText(`${event.händelse === "start" ? "Kör" : "Klart"}: ${event.namn ?? "verktyg"}`);
-              rörAgent((m) => {
-                if (event.händelse !== "start") return m;
-                const verktyg = m.verktyg ?? [];
-                if (verktyg.includes(event.namn ?? "verktyg")) return m;
-                return { ...m, verktyg: [...verktyg, event.namn ?? "verktyg"].slice(-6) };
-              });
+              break;
+            case "verktyg_kort":
+              // tool.updated-kartläggningen: merge:a kortet på id (senare
+              // events berikar — argument → resultat → varaktighet).
+              if (event.id) {
+                uppdateraKort(event.id, (k) => ({
+                  ...k,
+                  namn: event.namn ?? k.namn,
+                  steg: event.steg ?? k.steg,
+                  argument: event.argument ?? k.argument,
+                  beskrivning: event.beskrivning ?? k.beskrivning,
+                  resultat: event.resultat ?? k.resultat,
+                  fel: event.fel ?? k.fel,
+                  varaktighetMs: event.varaktighetMs ?? k.varaktighetMs,
+                  framsteg: event.framsteg ?? k.framsteg,
+                }));
+                setStatusText(
+                  event.steg === "fel"
+                    ? `${event.namn ?? "Verktyg"} misslyckades`
+                    : event.steg === "resultat"
+                      ? `${event.namn ?? "Verktyg"} klart${
+                          typeof event.varaktighetMs === "number" ? ` (${msText(event.varaktighetMs)})` : ""
+                        }`
+                      : `${event.steg === "kör" ? "Kör" : "Förbereder"}: ${event.namn ?? "verktyg"}`,
+                );
+              }
+              break;
+            case "verktyg_input":
+              // model.streaming tool_input_delta — argumenten strömmas LIVE.
+              if (event.id) {
+                uppdateraKort(event.id, (k) => ({
+                  ...k,
+                  liveInput: (k.liveInput ?? "") + (event.text ?? ""),
+                }));
+                setStatusText(
+                  `Skriver verktygsargument: ${event.namn ?? (event.text ?? "").slice(0, 24)}`,
+                );
+              }
+              break;
+            case "runda":
+              // turn.started/completed — rundstatistiken i bubblans fot.
+              if (event.fas === "slut") {
+                rörAgent((m) => ({
+                  ...m,
+                  rundStatistik: {
+                    varaktighetMs: event.varaktighetMs,
+                    resultatTyp: event.resultatTyp,
+                    verktygAntal: event.verktygAntal,
+                  },
+                }));
+              } else {
+                setStatusText("Agenten arbetar…");
+              }
               break;
             case "klart":
               rörAgent((m) => ({
@@ -641,6 +1623,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }));
               färdig = true;
               break;
+            case "ändringar":
+              // V83 B1: senaste turnens filändringar (SSE efter klart +
+              // kontext) — "Ändringar"-panelen per turn.
+              if (Array.isArray(event.filer)) {
+                const filer = event.filer;
+                rörAgent((m) => ({ ...m, ändringar: filer }));
+              }
+              break;
           }
         }
       }
@@ -668,7 +1658,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             : "Sessionen lever",
       );
     }
-  }, [prompt, strömmar, live]);
+  }, [prompt, strömmar, live, modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad]);
 
   const stoppa = React.useCallback(() => {
     abortRef.current?.abort();
@@ -801,6 +1791,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
             )}
             <span className="ml-auto flex items-center gap-1">
               <button
+                onClick={() => (visaFiler ? setVisaFiler(false) : oppnaFiltrad())}
+                title="Filträdet — agentens arbetsyta (förhandsgranska filer och bilder, töm uploads)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <FolderTree className="h-3.5 w-3.5" />
+                Filer
+              </button>
+              <button
                 onClick={() => void startaNySession()}
                 disabled={sessionJobbar !== "" || strömmar}
                 title="Kassera sessionen och börja en frisk kontext (1M-fönstret börjar om — gamla sessioner finns kvar i listan)"
@@ -818,9 +1816,38 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
                 Komprimera
               </button>
+              {/* VÅG 83 B3: MÅL (session/goal) + BAKGRUNDSAGENTER (subagents) */}
               <button
-                onClick={() => setVisaSessioner((v) => !v)}
-                title="Tidigare sessioner (session/list)"
+                onClick={() => {
+                  setMalText(mal ?? "");
+                  setMalRedigerar((v) => !v);
+                }}
+                title="Sessionens mål (session/goal) — visas i headern om satt, redigerbart"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Target className="h-3.5 w-3.5" />
+                Mål
+                {mal && <span className="h-1.5 w-1.5 rounded-full bg-gold" title="Mål satt" />}
+              </button>
+              <button
+                onClick={() => {
+                  const ny = !visaAgenter;
+                  setVisaAgenter(ny);
+                  if (ny) void lasAgenter();
+                }}
+                title="Bakgrundsagenter (session/subagents) — status + avbryt"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Bot className="h-3.5 w-3.5" />
+                Agenter
+              </button>
+              <button
+                onClick={() => {
+                  const ny = !visaSessioner;
+                  setVisaSessioner(ny);
+                  if (ny) void lasSessioner();
+                }}
+                title="Sessioner (session/list) — klicka en session för att öppna den (session/resume)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <History className="h-3.5 w-3.5" />
@@ -829,6 +1856,69 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </button>
             </span>
           </div>
+
+          {/* VÅG 83 B3: MÅL (session/goal) — visas i headern om satt, redigerbart */}
+          {(malRedigerar || mal) && (
+            <div className="border-t border-gold/15 bg-black/10">
+              <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-3 py-1.5 sm:px-4">
+                <Target className="h-3.5 w-3.5 shrink-0 text-gold" />
+                {malRedigerar ? (
+                  <>
+                    <input
+                      value={malText}
+                      onChange={(e) => setMalText(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") void sparaMal();
+                        if (e.key === "Escape") setMalRedigerar(false);
+                      }}
+                      placeholder="Sessionens mål — t.ex. &quot;Färdigställ våg 83-rapporten&quot;"
+                      maxLength={500}
+                      autoFocus
+                      className="min-w-0 flex-1 rounded-md border border-gold/40 bg-black/30 px-2.5 py-1 text-[11px] text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
+                    />
+                    <button
+                      onClick={() => void sparaMal()}
+                      disabled={malSparar || !malText.trim()}
+                      className="shrink-0 rounded-md border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold transition-colors hover:bg-gold/20 disabled:opacity-50"
+                    >
+                      {malSparar ? <Loader2 className="h-3 w-3 animate-spin" /> : "Spara"}
+                    </button>
+                    <button
+                      onClick={() => setMalRedigerar(false)}
+                      className="shrink-0 rounded-md px-2 py-0.5 text-[10px] text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                    >
+                      Avbryt
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-[#EDE6D6]/90" title={mal ?? undefined}>
+                      {mal}
+                    </span>
+                    {malSparar && <Loader2 className="h-3 w-3 shrink-0 animate-spin text-gold" />}
+                    <button
+                      onClick={() => {
+                        setMalText(mal ?? "");
+                        setMalRedigerar(true);
+                      }}
+                      title="Redigera målet (session/goal set)"
+                      className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                    >
+                      <Pencil className="h-3 w-3" />
+                    </button>
+                    <button
+                      onClick={() => void rensaMaler()}
+                      disabled={malSparar}
+                      title="Rensa målet (session/goal clear)"
+                      className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-red-500/20 hover:text-red-300 disabled:opacity-50"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Guld-varning: kontexten > 80 % av taket (KVD kontext-optimering) */}
           {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
@@ -839,40 +1929,343 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </div>
           )}
 
-          {/* Sessionslista (V2): tidigare sessioner ur session/list */}
+          {/* Sessionslista (V2 + V83 B3): modell · vändor · tokens · tid —
+              klicka = session/resume (historiken återkommer i chatten). */}
           {visaSessioner && (
             <div className="border-t border-gold/15 bg-black/25">
-              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
+              <div className="mx-auto max-h-56 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
                 <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-                  Tidigare sessioner {sessioner.length === 0 && "— ingen lista ännu"}
+                  Sessioner {sessioner.length === 0 && "— ingen lista ännu"} · klicka för att öppna
                 </p>
+                {arbetsytaInfo && (
+                  <p
+                    className="mb-1.5 truncate text-[10px] text-[#EDE6D6]/45"
+                    title={`${arbetsytaInfo.arbetsyta}${arbetsytaInfo.behorighet ? ` · behörighet ${arbetsytaInfo.behorighet}` : ""}${typeof arbetsytaInfo.kommandon === "number" ? ` · ${arbetsytaInfo.kommandon} kommandon` : ""}`}
+                  >
+                    Arbetsyta {arbetsytaInfo.arbetsyta.split("/").filter(Boolean).pop() ?? arbetsytaInfo.arbetsyta}
+                    {arbetsytaInfo.lage && ` · läge ${arbetsytaInfo.lage}`}
+                    {arbetsytaInfo.modell && ` · ${arbetsytaInfo.modell}`}
+                    {arbetsytaInfo.tankeNiva && ` · tanke ${arbetsytaInfo.tankeNiva}`}
+                    {typeof arbetsytaInfo.modellerTillgangliga === "number" &&
+                      ` · ${arbetsytaInfo.modellerTillgangliga} modeller`}
+                  </p>
+                )}
                 <ul className="space-y-1">
                   {sessioner.map((s) => (
                     <li
                       key={s.sessionId}
-                      className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
+                      className="group flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80 transition-colors hover:bg-white/10"
                       title={s.sessionId}
                     >
                       <span
                         className={cn(
                           "h-1.5 w-1.5 shrink-0 rounded-full",
-                          s.status === "idle" ? "bg-emerald-400" : "bg-gold",
+                          s.status === "idle"
+                            ? "bg-emerald-400"
+                            : s.status === "completed" || s.status === "error"
+                              ? "bg-red-400/80"
+                              : "bg-gold",
                         )}
                       />
-                      <span className="min-w-0 flex-1 truncate">
-                        {s.titel || s.sessionId.slice(0, 18) + "…"}
-                      </span>
+                      <button
+                        onClick={() => void oppnaSessionen(s.sessionId)}
+                        disabled={sessionJobbar !== "" || strömmar || s.sessionId === aktivSession}
+                        className="flex min-w-0 flex-1 flex-col items-start text-left disabled:cursor-default"
+                        title={
+                          s.sessionId === aktivSession
+                            ? "Aktiv session"
+                            : `Öppna ${s.sessionId} (session/resume) — historiken återkommer i chatten`
+                        }
+                      >
+                        <span className="w-full truncate font-medium">
+                          {s.titel || s.sessionId.slice(0, 18) + "…"}
+                          {s.sessionId === aktivSession && (
+                            <span className="ml-1.5 rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">AKTIV</span>
+                          )}
+                        </span>
+                        <span className="w-full truncate text-[9px] text-[#EDE6D6]/45">
+                          {[
+                            s.modell?.includes("/") ? s.modell.split("/").slice(1).join("/") : s.modell,
+                            typeof s.turns === "number" ? `${s.turns} vändor` : null,
+                            typeof s.tokens === "number" ? `${tkn(s.tokens)} tkn` : null,
+                            tidSen(s.uppdaterad) || null,
+                          ]
+                            .filter(Boolean)
+                            .join(" · ") || s.sessionId.slice(5, 13)}
+                        </span>
+                      </button>
                       <span className="shrink-0 font-mono text-[9px] text-[#EDE6D6]/40">
                         {s.sessionId.slice(5, 13)}
                       </span>
+                      <button
+                        onClick={() => void stangSessionen(s.sessionId)}
+                        disabled={sessionJobbar !== "" || strömmar}
+                        title="Stäng sessionen (session/close) — finns kvar i listan men svarar ej"
+                        className="shrink-0 rounded p-0.5 text-[#EDE6D6]/40 opacity-0 transition-all hover:bg-red-500/20 hover:text-red-300 focus:opacity-100 group-hover:opacity-100 disabled:opacity-30"
+                      >
+                        {sessionJobbar === "stang" ? (
+                          <Loader2 className="h-3 w-3 animate-spin" />
+                        ) : (
+                          <X className="h-3 w-3" />
+                        )}
+                      </button>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           )}
+
+          {/* VÅG 83 B3: BAKGRUNDSAGENTER (session/subagents) — badge + avbryt */}
+          {visaAgenter && (
+            <div className="border-t border-gold/15 bg-black/25">
+              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
+                <div className="mb-1.5 flex items-center gap-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
+                    Bakgrundsagenter {subagenter.length > 0 && `(${subagenter.length})`}
+                  </p>
+                  <button
+                    onClick={() => void lasAgenter()}
+                    disabled={agenterLaddar}
+                    title="Uppdatera (session/subagents)"
+                    className="rounded p-0.5 text-[#EDE6D6]/50 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
+                  >
+                    <RefreshCw className={cn("h-3 w-3", agenterLaddar && "animate-spin")} />
+                  </button>
+                </div>
+                {agenterFel && <p className="text-[11px] text-red-300">{agenterFel}</p>}
+                {!agenterFel && subagenter.length === 0 && !agenterLaddar && (
+                  <p className="text-[11px] leading-relaxed text-[#EDE6D6]/50">
+                    Inga bakgrundsagenter just nu — när agenten delegerar arbete i bakgrunden
+                    syns barnagenterna här med status och avbryt-knapp.
+                  </p>
+                )}
+                <ul className="space-y-1">
+                  {subagenter.map((a) => {
+                    const kör =
+                      a.status === "running" || a.status === "waiting" || a.status === "blocked";
+                    return (
+                      <li
+                        key={a.barnSessionId}
+                        className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
+                        title={`${a.barnSessionId}${a.startad ? ` · startad ${tidSen(a.startad)} sedan` : ""}${a.avslutad ? ` · avslutad ${tidSen(a.avslutad)} sedan` : ""}${a.sammanfattning ? ` — ${a.sammanfattning}` : ""}`}
+                      >
+                        <span
+                          className={cn(
+                            "shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider",
+                            agentStatusFarg(a.status),
+                          )}
+                        >
+                          {agentStatusText(a.status)}
+                        </span>
+                        <span className="min-w-0 flex-1 truncate">
+                          {a.titel}
+                          {a.typ && <span className="ml-1.5 text-[9px] text-[#EDE6D6]/40">{a.typ}</span>}
+                        </span>
+                        {kör && (
+                          <button
+                            onClick={() => void avbrytAgent(a.barnSessionId)}
+                            title="Avbryt (session/cancelBackgroundTask)"
+                            className="shrink-0 rounded-md border border-red-500/30 px-1.5 py-0.5 text-[10px] text-red-300 transition-colors hover:bg-red-500/15 hover:text-red-200"
+                          >
+                            Avbryt
+                          </button>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
       </header>
+
+      {/* VÅG 83 B4: FILTRÄDSDRAWER — agentens arbetsyta, klicka dig ner */}
+      {visaFiler && (
+        <>
+          <div
+            className="fixed inset-0 z-30 bg-black/40 backdrop-blur-[1px]"
+            onClick={() => setVisaFiler(false)}
+            aria-hidden
+          />
+          <aside
+            role="dialog"
+            aria-label="Filträd över agentens arbetsyta"
+            className="fixed right-0 top-0 z-40 flex h-[100dvh] w-full max-w-[380px] flex-col border-l border-gold/30 bg-[#0D1B31] shadow-2xl"
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-black/25 px-3 py-2.5">
+              <FolderTree className="h-4 w-4 shrink-0 text-gold" />
+              <div className="min-w-0 flex-1">
+                <h2 className="font-serif text-sm font-bold text-[#EDE6D6]">Filträdet</h2>
+                <p className="truncate text-[10px] text-[#EDE6D6]/55">
+                  {arbetsytaNamn ? `arbetsyta: ${arbetsytaNamn}` : "agentens arbetsyta"}
+                </p>
+              </div>
+              <button
+                onClick={() => void lasTrad(true)}
+                disabled={tradLaddar}
+                title="Uppdatera trädet"
+                className="rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
+              >
+                <RefreshCw className={cn("h-3.5 w-3.5", tradLaddar && "animate-spin")} />
+              </button>
+              <button
+                onClick={() => setVisaFiler(false)}
+                title="Stäng (Esc)"
+                className="rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 overflow-y-auto px-1.5 py-2 [scrollbar-width:thin]">
+              {tradLaddar && !trad && (
+                <div className="flex items-center gap-2 px-2 py-3 text-[11px] text-[#EDE6D6]/60">
+                  <Loader2 className="h-3.5 w-3.5 animate-spin text-gold" />
+                  Läser arbetsytan…
+                </div>
+              )}
+              {tradFel && <p className="px-2 py-3 text-[11px] text-red-300">{tradFel}</p>}
+              {trad && trad.length === 0 && !tradLaddar && (
+                <p className="px-2 py-3 text-[11px] text-[#EDE6D6]/60">Arbetsytan är tom.</p>
+              )}
+              {trad?.map((nod) => (
+                <TradRad
+                  key={nod.sokvag}
+                  nod={nod}
+                  djup={0}
+                  oppna={oppnaMappar}
+                  onVaxla={vaxlaMapp}
+                  onFil={(s) => void visaFil(s)}
+                />
+              ))}
+              {tradTrunkerad && (
+                <p className="mt-2 border-t border-gold/15 px-2 pt-2 text-[10px] leading-relaxed text-[#EDE6D6]/45">
+                  Trädet är avkortat vid 500 noder (maxdjup 3) — node_modules/.next/.git/uploads
+                  visas aldrig. Övriga filer når agenten via chatten.
+                </p>
+              )}
+            </div>
+
+            {/* Uploads-sektion: datum + töm-knapp (>7 dgr rensas automatiskt) */}
+            <div className="border-t border-gold/25 bg-black/25 px-3 py-2.5">
+              <div className="mb-1.5 flex items-center justify-between gap-2">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/55">
+                  Uploads {uppladdningar.length > 0 && `(${uppladdningar.length}${uppladdningar.length >= 50 ? "+" : ""})`}
+                </p>
+                <button
+                  onClick={() => void tomUploads()}
+                  disabled={tommerUploads || uppladdningar.length === 0}
+                  title="Töm uploads — filer äldre än 7 dagar rensas annars automatiskt"
+                  className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] text-red-300 transition-colors hover:bg-red-500/15 hover:text-red-200 disabled:opacity-40"
+                >
+                  {tommerUploads ? <Loader2 className="h-3 w-3 animate-spin" /> : <Trash2 className="h-3 w-3" />}
+                  Töm uploads
+                </button>
+              </div>
+              {uppladdningar.length === 0 ? (
+                <p className="text-[10px] leading-relaxed text-[#EDE6D6]/45">
+                  Inga filer de senaste 7 dagarna — släpp filer på chattytan eller använd
+                  filknappen. Filer äldre än 7 dagar rensas automatiskt.
+                </p>
+              ) : (
+                <ul className="max-h-28 space-y-1 overflow-y-auto [scrollbar-width:thin]">
+                  {uppladdningar.slice(0, 10).map((u) => {
+                    const andrad = (u as Uppladdning & { andrad?: number }).andrad;
+                    return (
+                      <li
+                        key={u.sokvag}
+                        className="flex items-center gap-1.5 text-[10px] text-[#EDE6D6]/70"
+                        title={u.sokvag}
+                      >
+                        {filIkon(u.sokvag)}
+                        <span className="min-w-0 flex-1 truncate">{u.sokvag.split("/").slice(2).join("/") || u.sokvag}</span>
+                        <span className="shrink-0 font-mono text-[9px] text-[#EDE6D6]/35">
+                          {andrad
+                            ? `${new Date(andrad).toLocaleDateString("sv-SE")} · ${byteStorlek(u.storlek)}`
+                            : byteStorlek(u.storlek)}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          </aside>
+        </>
+      )}
+
+      {/* VÅG 83 B4: FÖRHANDSGRANSKNING — text monospace, bild, nedladdning */}
+      {filVisning && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3"
+          onClick={() => setFilVisning(null)}
+        >
+          <div
+            className="flex max-h-[88dvh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-gold/30 bg-card shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-[#10233F] px-3 py-2">
+              <FileText className="h-4 w-4 shrink-0 text-gold" />
+              <div className="min-w-0 flex-1">
+                <p className="truncate font-mono text-xs font-semibold text-[#EDE6D6]">{filVisning.namn}</p>
+                <p className="truncate text-[10px] text-[#EDE6D6]/55">
+                  {filVisning.sokvag} · {byteStorlek(filVisning.storlek)}
+                </p>
+              </div>
+              <button
+                onClick={() => setFilVisning(null)}
+                title="Stäng (Esc)"
+                className="rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-auto">
+              {visningLaddar && (
+                <div className="flex items-center gap-2 px-4 py-6 text-xs text-muted-foreground">
+                  <Loader2 className="h-4 w-4 animate-spin text-gold" />
+                  Läser filen…
+                </div>
+              )}
+              {!visningLaddar && filVisning.forhandsgranskning.slag === "text" && (
+                <pre className="whitespace-pre-wrap break-words p-4 font-mono text-xs leading-relaxed">
+                  {filVisning.forhandsgranskning.innehåll}
+                </pre>
+              )}
+              {!visningLaddar && filVisning.forhandsgranskning.slag === "bild" && (
+                 
+                <img
+                  src={filVisning.forhandsgranskning.url}
+                  alt={filVisning.namn}
+                  className="mx-auto max-h-[72dvh] w-auto max-w-full object-contain"
+                />
+              )}
+              {!visningLaddar && filVisning.forhandsgranskning.slag === "nedladdning" && (
+                <div className="flex flex-col items-center gap-3 px-6 py-8 text-center">
+                  <Download className="h-8 w-8 text-gold" />
+                  <p className="max-w-md text-xs leading-relaxed text-muted-foreground">
+                    {filVisning.forhandsgranskning.orsak ?? "Binärt format — ladda ner för att öppna."}
+                  </p>
+                  <a
+                    href={filVisning.forhandsgranskning.url}
+                    download={filVisning.namn}
+                    className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold transition-colors hover:bg-gold/20"
+                  >
+                    Ladda ner {filVisning.namn} ({byteStorlek(filVisning.storlek)})
+                  </a>
+                </div>
+              )}
+              {!visningLaddar && filVisning.forhandsgranskning.slag === "blockerad" && (
+                <p className="px-4 py-6 text-center text-xs leading-relaxed text-muted-foreground">
+                  {filVisning.forhandsgranskning.meddelande}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Meddelandelista */}
       <div ref={blattraRef} className="mx-auto w-full max-w-3xl flex-1 overflow-y-auto px-3 py-4 sm:px-4">
@@ -887,7 +2280,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               mappknappen — sökvägarna hamnar i chatten så agenten kan läsa dem.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {["Vad är status i projektet just nu?", "Sammanfatta senaste worklog", "Titta på data/siffror.json och förklara treck"].map((förslag) => (
+              {["Vad är status i projektet just nu?", "Sammanfatta senaste worklog", "Titta på data/siffror.json och förklara treck", "/help — snabbkommandon"].map((förslag) => (
                 <button
                   key={förslag}
                   onClick={() => setPrompt(förslag)}
@@ -906,6 +2299,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <div key={m.id} className="flex justify-start">
                 <div className="marin-panel marin-scope max-w-[85%] rounded-2xl rounded-tl-sm border border-gold/25 px-4 py-2.5 shadow-sm sm:max-w-[75%]">
                   <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">{m.text}</p>
+                  {/* VÅG 83 B4: uppladdade bilder som refereras i texten →
+                      miniatyrer direkt i bubblan (säker serving &bild=1). */}
+                  {bildRefsUrText(m.text).length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {bildRefsUrText(m.text).map((sokvag) => (
+                         
+                        <img
+                          key={sokvag}
+                          src={bildUrl(sokvag)}
+                          alt={sokvag.split("/").pop() ?? sokvag}
+                          loading="lazy"
+                          className="h-24 w-24 cursor-pointer rounded-lg border border-gold/30 object-cover transition-opacity hover:opacity-90"
+                          onClick={() => void visaFil(sokvag)}
+                          onError={(e) => {
+                            // Filen finns inte (rensad/rensat) — göm stiligt.
+                            (e.currentTarget as HTMLImageElement).style.display = "none";
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (
@@ -916,12 +2330,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     m.fel ? "border-red-500/40" : "border-gold/40",
                   )}
                 >
-                  {m.verktyg && m.verktyg.length > 0 && (
-                    <div className="mb-2 flex flex-wrap gap-1">
-                      {m.verktyg.map((v) => (
-                        <span key={v} className="rounded-sm bg-gold/10 px-1.5 py-0.5 text-[10px] font-medium text-gold">
-                          {v}
-                        </span>
+                  {/* V83 B1: varje verktygskall = expanderbart kort i flödet. */}
+                  {m.verktygKort && m.verktygKort.length > 0 && (
+                    <div className="mb-2 space-y-1.5">
+                      {m.verktygKort.map((k) => (
+                        <VerktygsKortVy
+                          key={k.id}
+                          kort={k}
+                          onVaxla={(id) =>
+                            setMeddelanden((alla) =>
+                              alla.map((mm) =>
+                                mm.id === m.id
+                                  ? {
+                                      ...mm,
+                                      verktygKort: (mm.verktygKort ?? []).map((k2) =>
+                                        k2.id === id ? { ...k2, öppen: !k2.öppen } : k2,
+                                      ),
+                                    }
+                                  : mm,
+                              ),
+                            )
+                          }
+                        />
                       ))}
                     </div>
                   )}
@@ -935,6 +2365,53 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                   {m.strömmande && m.text && (
                     <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-gold align-text-bottom" />
+                  )}
+                  {/* V83 B1: ändringspanelen — +N/−N per fil, expanderbar diff. */}
+                  {m.ändringar && m.ändringar.length > 0 && (
+                    <AndringsPanel
+                      andringar={m.ändringar}
+                      onVaxlaFil={(sokvag) =>
+                        setMeddelanden((alla) =>
+                          alla.map((mm) =>
+                            mm.id === m.id
+                              ? {
+                                  ...mm,
+                                  ändringar: (mm.ändringar ?? []).map((f) =>
+                                    f.sokvag === sokvag ? { ...f, öppen: !f.öppen } : f,
+                                  ),
+                                }
+                              : mm,
+                          ),
+                        )
+                      }
+                    />
+                  )}
+                  {/* V83 B1: rundstatistik — varaktighet · resultat · verktyg. */}
+                  {m.rundStatistik && !m.strömmande && (
+                    <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-muted-foreground/70">
+                      {typeof m.rundStatistik.varaktighetMs === "number" && (
+                        <span title="Turnens varaktighet (turn.completed.duration)">
+                          ⏱ {msText(m.rundStatistik.varaktighetMs)}
+                        </span>
+                      )}
+                      {typeof m.rundStatistik.verktygAntal === "number" && (
+                        <span title="Verktygskall denna turn (turn.completed.toolCallCount)">
+                          🛠 {m.rundStatistik.verktygAntal}
+                        </span>
+                      )}
+                      {m.rundStatistik.resultatTyp && (
+                        <span
+                          className={cn(
+                            m.rundStatistik.resultatTyp === "success"
+                              ? "text-emerald-600 dark:text-emerald-400"
+                              : "text-red-600 dark:text-red-400",
+                          )}
+                          title="Turnens resultat (turn.completed.resultType)"
+                        >
+                          {m.rundStatistik.resultatTyp === "success" ? "✓ lyckad" : "⚠ " + m.rundStatistik.resultatTyp}
+                        </span>
+                      )}
+                    </p>
                   )}
                 </div>
               </div>
@@ -994,7 +2471,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 }
               }}
               rows={1}
-              placeholder="Skriv till agenten… (Enter skickar, Skift+Enter ny rad)"
+              placeholder="Skriv till agenten… (Enter skickar, Skift+Enter ny rad — /help visar kommandon)"
               className="max-h-40 min-h-[44px] flex-1 resize-none rounded-xl border border-gold/30 bg-card px-3.5 py-2.5 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
               style={{ height: "auto" }}
             />

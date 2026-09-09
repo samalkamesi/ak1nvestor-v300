@@ -4,6 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 
 import {
+  Bot,
+  Brain,
   CheckCircle2,
   ChevronDown,
   ChevronRight,
@@ -22,18 +24,19 @@ import {
   Link2,
   ListChecks,
   Loader2,
+  MessageCircleQuestion,
   Paperclip,
+  Pencil,
   RefreshCw,
   Search,
   Send,
+  ShieldAlert,
   Sparkles,
   Shrink,
   SquarePen,
+  Target,
   Terminal,
   Trash2,
-  Bot,
-  Pencil,
-  Target,
   UploadCloud,
   Wrench,
   X,
@@ -101,6 +104,23 @@ import { cn } from "@/lib/utils";
  * per fil, klicka ut filen för rad-diff (Write → +N rader, Edit → exakt
  * −N/+N ur old_string/new_string; v4/conversation/fileChanges = dokumenterad
  * uppgraderingsväg i studio-transport.ts).
+ *
+ * VÅG 83 MEGA B2 (STUDIO=Z — Z-portaLens GODKÄNANDEFLÖDE): PERMISSION-
+ * DIALOG i chattflödet (SSE-typ "interaktion" ur protokollets server→
+ * klient-request interaction/requestPermission): marin kort med verktygs-
+ * namn + risk-badge + argument-summary + knapparna ur eventets options —
+ * Tillåt en gång / Tillåt för projektet / Neka (allow_project ⇒ protokoll-
+ * svaret permissionUpdates addRules). Svaret går via POST /api/studio/
+ * interaktion; "interaktionsKlar" stänger kortet (t.ex. eskalering när
+ * inget svar kom inom 30 s — sessionen hänger aldrig). FRÅGEKORT (interaction/
+ * requestUserInput): prompt + svarsalternativ-knappar (choices) ELLER
+ * fritext + Svara/Avbryt. LÄGESVÄXLARE (session/setMode — build/plan) +
+ * TANKESTYRKA (session/setThoughtLevel — nothink/high/max) som dropdowns
+ * bredvid modellrullistan (POST /api/studio/session {action:"läge"|
+ * "tankestyrka"}). E2E-AVGRÄNSNING: i build-läge auto-godkänner servern
+ * låg/medel risk (protokollkartan §3) — dialogen visas när läget kräver
+ * det (t.ex. plan); hela kedjan är körbar i dev via mockens simulerade
+ * dialog.
  *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
@@ -184,6 +204,60 @@ interface KontextInfo {
   contextWindow?: number;
   totalTokenCount?: number;
   turnCount?: number;
+  /** V83 B2: projection.mode — lägesväxlarens sanning. */
+  lage?: string;
+  /** V83 B2: settings.thoughtLevel.current — tankestyrkans sanning. */
+  tankeNiva?: string;
+}
+
+// ── VÅG 83 B2: Z-portaLens interaktioner (permission + fråga) ────────────────
+
+/** Alternativ i permission-dialogens options[] (optionId + visningsnamn). */
+interface PermissionAlternativ {
+  optionId: string;
+  namn: string;
+  beskrivning?: string;
+}
+
+/** Väntande permission-dialog (interaction/requestPermission). */
+interface PermissionDialog {
+  requestId: string;
+  verktyg: string;
+  risk: string;
+  skäl?: string;
+  sammanfattning: string;
+  alternativ: PermissionAlternativ[];
+}
+
+/** Väntande frågekort (interaction/requestUserInput). */
+interface FragaDialog {
+  requestId: string;
+  fråga: string;
+  inputTyp?: string;
+  val?: string[];
+}
+
+/** UI-etiketter för protokollets bevisade optionId (kartan §3). */
+const PERMISSION_ETIKETT: Record<string, string> = {
+  allow_once: "Tillåt en gång",
+  allow_project: "Tillåt för projektet",
+  deny: "Neka",
+};
+
+/** Risk-badge-färg per riskLevel (low/medium/high/critical, kartan §3). */
+function riskFarg(risk: string): string {
+  switch (risk) {
+    case "low":
+      return "bg-emerald-400/15 text-emerald-300";
+    case "medium":
+      return "bg-gold/15 text-gold";
+    case "high":
+      return "bg-orange-400/15 text-orange-300";
+    case "critical":
+      return "bg-red-500/20 text-red-300";
+    default:
+      return "bg-white/10 text-[#EDE6D6]/70";
+  }
 }
 
 /** Post ur GET /api/studio/session (session/list, v83 B3-berikad). */
@@ -232,6 +306,8 @@ interface StreamEvent {
     | "verktyg_kort"
     | "verktyg_input"
     | "runda"
+    | "interaktion"
+    | "interaktionsKlar"
     | "klart"
     | "fel"
     | "kontext"
@@ -259,6 +335,27 @@ interface StreamEvent {
   resultatTyp?: string;
   verktygAntal?: number;
   filer?: Filandring[];
+  // ── V83 B2: interaktioner (permission + fråga) ──
+  interaktion?:
+    | ({
+        typ: "permission";
+        requestId: string;
+        verktyg: string;
+        risk: string;
+        skäl?: string;
+        sammanfattning: string;
+        alternativ: PermissionAlternativ[];
+      } & { val?: undefined; fråga?: undefined; inputTyp?: undefined })
+    | ({
+        typ: "fråga";
+        requestId: string;
+        fråga: string;
+        inputTyp?: string;
+        val?: string[];
+      } & { verktyg?: undefined; risk?: undefined; skäl?: undefined; sammanfattning?: undefined; alternativ?: undefined });
+  requestId?: string;
+  beslut?: string;
+  skäl?: string;
 }
 
 /** KVD-reservtak när protokollet tiger (zai/GLM svarade 200 000 vid v82-beviset). */
@@ -809,6 +906,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [visningLaddar, setVisningLaddar] = React.useState(false);
   const [tommerUploads, setTommerUploads] = React.useState(false);
 
+  // ── VÅG 83 B2: Z-portaLens — dialoger + läge/tankestyrka ─────────────────
+  const [permission, setPermission] = React.useState<PermissionDialog | null>(null);
+  const [fraga, setFraga] = React.useState<FragaDialog | null>(null);
+  const [fragSvar, setFragSvar] = React.useState("");
+  const [svarJobbar, setSvarJobbar] = React.useState(false);
+  const [lage, setLage] = React.useState("");
+  const [tanka, setTanka] = React.useState("");
+  const [lageJobbar, setLageJobbar] = React.useState(false);
+
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const filInputRef = React.useRef<HTMLInputElement | null>(null);
@@ -865,7 +971,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     if (!yta) return;
     const näraBotten = yta.scrollHeight - yta.scrollTop - yta.clientHeight < 220;
     if (näraBotten) yta.scrollTop = yta.scrollHeight;
-  }, [meddelanden, tankar, statusText]);
+  }, [meddelanden, tankar, statusText, permission, fraga]);
 
   // Uppstart: status + historik + kontext + modeller + sessioner + uploads.
   React.useEffect(() => {
@@ -879,6 +985,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
             live?: boolean;
             historik?: { roll: "user" | "assistant"; text: string }[];
             kontext?: KontextInfo | null;
+            interaktioner?: (
+              | {
+                  typ: "permission";
+                  requestId: string;
+                  verktyg: string;
+                  risk: string;
+                  skäl?: string;
+                  sammanfattning: string;
+                  alternativ: PermissionAlternativ[];
+                }
+              | { typ: "fråga"; requestId: string; fråga: string; inputTyp?: string; val?: string[] }
+            )[];
           };
           if (!levande) return;
           setLive(data.live ? (data.transport === "mock" ? "demo" : "live") : "ned");
@@ -892,6 +1010,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
             setKontext(data.kontext);
             if (typeof data.kontext.totalTokenCount === "number") {
               setAckumulerat(data.kontext.totalTokenCount);
+            }
+            // V83 B2: läge + tankestyrka ur sessionens projektion/snapshot —
+            // växlarna startar på protokollets sanning (fallback build/av).
+            setLage(data.kontext.lage ?? "build");
+            setTanka(data.kontext.tankeNiva ?? "");
+          }
+          // V83 B2: väntande dialoger efter t.ex. en siduppdatering mitt i
+          // en permission-väntan — kortet återkommer direkt.
+          for (const i of data.interaktioner ?? []) {
+            if (i.typ === "permission") {
+              setPermission({
+                requestId: i.requestId,
+                verktyg: i.verktyg,
+                risk: i.risk,
+                skäl: i.skäl,
+                sammanfattning: i.sammanfattning,
+                alternativ: i.alternativ ?? [],
+              });
+            } else {
+              setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val });
+              setFragSvar("");
             }
           }
         } else if (res.status === 401) {
@@ -1337,6 +1476,130 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => window.removeEventListener("keydown", påTangent);
   }, [visaFiler, filVisning]);
 
+  // ── VÅG 83 B2: dialogsvar + läges-/tankestyrkeväxlare ────────────────────
+
+  /** Svara permission-dialog (POST /api/studio/interaktion typ permission). */
+  const svaraPermission = React.useCallback(
+    async (requestId: string, alternativId: string) => {
+      if (svarJobbar) return;
+      setSvarJobbar(true);
+      try {
+        const res = await fetch("/api/studio/interaktion", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ typ: "permission", requestId, alternativ: alternativId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; beslut?: string; fel?: string };
+        // Stäng kortet oavsett — 409 = redan besvarad/eskalerad.
+        setPermission((p) => (p?.requestId === requestId ? null : p));
+        if (res.ok && data.ok) {
+          visaToast(`Verktyget ${data.beslut ?? "besvarat"}`);
+        } else {
+          visaToast(data.fel || "Begäran var redan besvarad (30 s-gränsen).", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — svaret gick ej fram.", "fel");
+      } finally {
+        setSvarJobbar(false);
+      }
+    },
+    [svarJobbar, visaToast],
+  );
+
+  /** Svara frågekortet — knappval/fritext eller avbryt. */
+  const svaraFraga = React.useCallback(
+    async (requestId: string, varde?: string, avbryt = false) => {
+      if (svarJobbar) return;
+      setSvarJobbar(true);
+      try {
+        const res = await fetch("/api/studio/interaktion", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify(
+            avbryt
+              ? { typ: "fråga-avbryt", requestId }
+              : { typ: "fråga", requestId, varde: varde ?? "" },
+          ),
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; fel?: string };
+        setFraga((f) => (f?.requestId === requestId ? null : f));
+        setFragSvar("");
+        if (res.ok && data.ok) {
+          visaToast(avbryt ? "Frågan avbröts." : "Svaret skickat till agenten.");
+        } else {
+          visaToast(data.fel || "Frågan var redan besvarad (30 s-gränsen).", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — svaret gick ej fram.", "fel");
+      } finally {
+        setSvarJobbar(false);
+      }
+    },
+    [svarJobbar, visaToast],
+  );
+
+  /** Byt agentläge (session/setMode — POST /api/studio/session action läge). */
+  const byteLage = React.useCallback(
+    async (nytt: string) => {
+      if (!nytt || nytt === lage || lageJobbar || strömmar) return;
+      const gammalt = lage;
+      setLage(nytt);
+      setLageJobbar(true);
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ action: "läge", lage: nytt }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { lage?: string; fel?: string };
+        if (res.ok && data.lage) {
+          setLage(data.lage);
+          visaToast(`Agentläge: ${data.lage}${data.lage === "plan" ? " — godkännandedialoger aktiveras" : ""}`);
+        } else {
+          setLage(gammalt);
+          visaToast(data.fel || "Läget kunde ej sättas.", "fel");
+        }
+      } catch {
+        setLage(gammalt);
+        visaToast("Nätverksfel — läget kunde ej sättas.", "fel");
+      } finally {
+        setLageJobbar(false);
+      }
+    },
+    [lage, lageJobbar, strömmar, visaToast],
+  );
+
+  /** Byt tankestyrka (session/setThoughtLevel — action tankestyrka). */
+  const byteTanke = React.useCallback(
+    async (ny: string) => {
+      if (!ny || ny === tanka || lageJobbar || strömmar) return;
+      const gammal = tanka;
+      setTanka(ny);
+      setLageJobbar(true);
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ action: "tankestyrka", niva: ny }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { niva?: string; fel?: string };
+        if (res.ok && data.niva) {
+          setTanka(data.niva);
+          visaToast(`Tankestyrka: ${data.niva}`);
+        } else {
+          setTanka(gammal);
+          visaToast(data.fel || "Tankestyrkan kunde ej sättas.", "fel");
+        }
+      } catch {
+        setTanka(gammal);
+        visaToast("Nätverksfel — tankestyrkan kunde ej sättas.", "fel");
+      } finally {
+        setLageJobbar(false);
+      }
+    },
+    [tanka, lageJobbar, strömmar, visaToast],
+  );
+
   // ── Uppladdning ────────────────────────────────────────────────────────────
 
   const laddaUpp = React.useCallback(async (filer: File[], relativa?: string[]) => {
@@ -1593,6 +1856,40 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 setStatusText("Agenten arbetar…");
               }
               break;
+            case "interaktion":
+              // V83 B2: dialogkort väntar på användarens val — permission
+              // (godkännande) eller fråga (requestUserInput).
+              if (event.interaktion?.typ === "permission") {
+                setPermission({
+                  requestId: event.interaktion.requestId,
+                  verktyg: event.interaktion.verktyg,
+                  risk: event.interaktion.risk,
+                  skäl: event.interaktion.skäl,
+                  sammanfattning: event.interaktion.sammanfattning,
+                  alternativ: event.interaktion.alternativ ?? [],
+                });
+                setStatusText("Väntar på ditt godkännande…");
+              } else if (event.interaktion?.typ === "fråga") {
+                setFraga({
+                  requestId: event.interaktion.requestId,
+                  fråga: event.interaktion.fråga,
+                  inputTyp: event.interaktion.inputTyp,
+                  val: event.interaktion.val,
+                });
+                setFragSvar("");
+                setStatusText("Agenten frågar…");
+              }
+              break;
+            case "interaktionsKlar":
+              // V83 B2: löst (svar/avbruten/eskalerad) — stäng kortet.
+              if (event.requestId) {
+                setPermission((p) => (p?.requestId === event.requestId ? null : p));
+                setFraga((f) => (f?.requestId === event.requestId ? null : f));
+                if (event.beslut === "eskal") {
+                  visaToast("Tidsgränsen löpte ut (30 s) — begäran eskalerades till agenten.", "fel");
+                }
+              }
+              break;
             case "klart":
               rörAgent((m) => ({
                 ...m,
@@ -1658,7 +1955,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             : "Sessionen lever",
       );
     }
-  }, [prompt, strömmar, live, modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad]);
+  }, [prompt, strömmar, live, modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, visaToast]);
 
   const stoppa = React.useCallback(() => {
     abortRef.current?.abort();

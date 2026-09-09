@@ -1,7 +1,12 @@
 import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
-import { hamtaStudioTransport, type StudioEvent, type StudioKontext } from "@/lib/studio/studio-transport";
+import {
+  hamtaStudioTransport,
+  type StudioEvent,
+  type StudioFilandring,
+  type StudioKontext,
+} from "@/lib/studio/studio-transport";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,12 +18,22 @@ export const dynamic = "force-dynamic";
  * GET  → status + historik + kontext: {transport, sessionId,
  *        historik:[{roll,text}], kontext:{modell,contextUsed,
  *        contextWindow,totalTokenCount,...}} (200 även när agenten är
- *        otillgänglig — ärligt fel-fält, chatten renderar lås/vänt-läge;
+ * otillgänglig — ärligt fel-fält, chatten renderar lås/vänt-läge;
  *        ALDRIG 500 för nedkopplad agent).
- * POST → {prompt} → SSE (text/event-stream): en `data:`-rad per event
- *        {typ:"status"|"delta"|"verktyg"|"klart"|"fel", ...} och strömmen
- *        avslutas efter "klart"/"fel". Heartbeat-kommentvar 15:e sekund
- *        håller proxyn öppen.
+ * POST → {prompt} → SSE (text/event-stream): en `data:`-rad per event och
+ *        strömmen avslutas efter "klart"/"fel". Heartbeat-kommentar 15:e
+ *        sekund håller proxyn öppen.
+ *
+ * VÅG 83 MEGA B1 — KOMPLETT STREAMING-VISUALISERING + DIFF: event-typerna
+ * utökade med "verktyg_kort" (tool.updated scheduled/started/progress/
+ * result/error: namn + argument/resultat-truncat + varaktighet + progress-
+ * svans), "verktyg_input" (model.streaming tool_input_delta — agenten
+ * skriver argumenten LIVE), "runda" (turn.started/completed: duration,
+ * resultType, toolCallCount) samt EFTER klart: "ändringar" (senaste
+ * turnens filändringar ur transport.lasFilandringar — Write/Edit/MultiEdit-
+ * härlett ±N per fil; den ursprungliga protokollkällan v4/conversation/
+ * fileChanges kräver v4-grenens egna subscribe-flöde och är dokumenterad
+ * som uppgraderingsväg i studio-transport.ts). Äldre typer lever kvar.
  *
  * ARKITEKTUR (protokollet FIRST-HAND bevisat 2026-09-09, se
  * tool-results/v81-appserver.md): Next körs på Contabo (pm2 'ak1a') där
@@ -35,7 +50,8 @@ export const dynamic = "force-dynamic";
  * x-admin-password; dev-fallback endast i development; rate-limit 10 fel/min
  * i admin-auth). En prompt i taget — transporten speglar zcode:s egna
  * -32010-vägran som fel-event. INGA hemligheter lämnar servern: events är
- * sanerade strängar, sessions-id:t är en offentlig zcode-identifierare.
+ * sanerade strängar, sessions-id:t är en offentlig zcode-identifierare,
+ * trunceringsbudgeterna (600/1 500 tecken) håller SSE-raderna små.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -56,7 +72,8 @@ function sseRad(
   event:
     | StudioEvent
     | { typ: "hej"; transport: string; sessionId: string | null }
-    | { typ: "kontext"; kontext: StudioKontext | null },
+    | { typ: "kontext"; kontext: StudioKontext | null }
+    | { typ: "ändringar"; filer: StudioFilandring[] },
 ): string {
   return `data: ${JSON.stringify(event)}\n\n`;
 }
@@ -76,6 +93,9 @@ export async function GET(req: NextRequest) {
       sessionId: transport.sessionId(),
       historik,
       kontext,
+      // V83 B2: väntande interaktioner (permission/fråga) — ett refreshat
+      // UI återfår dialogkortet (samma lista som /api/studio/interaktion).
+      interaktioner: transport.vantaInteraktioner(),
       live: true,
     });
   } catch (fel) {
@@ -83,6 +103,7 @@ export async function GET(req: NextRequest) {
       transport: transport.namn,
       sessionId: transport.sessionId(),
       historik: [],
+      interaktioner: transport.vantaInteraktioner(),
       live: false,
       fel: fel instanceof Error ? fel.message.slice(0, 300) : "Agenten kunde ej nås.",
     });
@@ -137,6 +158,14 @@ export async function POST(req: NextRequest) {
         // V82: färsk kontextsanning efter rundan (session/read-projektionen)
         // — updaterar kontextraden i UI:t utan extra hämtningsrunda.
         skicka({ typ: "kontext", kontext: await transport.lasKontext() });
+        // V83 B1: senaste turnens filändringar — ändringspanelen per turn.
+        // lasFilandringar är internt fel-tolerant ([] vid avbrott) men en
+        // extra vakt kostar inget och strömmen skall ALDRIG dö på lyx.
+        try {
+          skicka({ typ: "ändringar", filer: await transport.lasFilandringar() });
+        } catch {
+          // diff är lyx
+        }
       } catch (fel) {
         skicka({
           typ: "fel",

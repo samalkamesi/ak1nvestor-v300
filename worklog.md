@@ -9508,3 +9508,17 @@ deploy Contabo (npm ci+build+pm2 online, HTTPS 200).
 node_modules (min rm -rf × deras npm ci → ENOTEMPTY + pm2 errored) — vänta
 ut främmande process, ÅTERSTÄLL, bygga om; (2) transporten är DELAD singel-
 ton — "En prompt kör"-vägran vid E2E under främmande tur är korrekt; polla.
+
+**B1-sluträkning (efter två LIVE-fyndade fixar):** (1) tool.updated kind
+"result" bär {toolCallId,result,duration} UTAN toolName — namnfallbacken
+"verktyg" skrev över Bash i UI-mergen → namn skickas nu bara när protokollet
+bär det (sond: v83-b1-toolupdated-sond.mjs); kind "scheduled" bär ENBART
+inputRef — argumenten kommer via model.streaming tool_call. (2) VBe-state
+pending/running/error bär OCKSÅ input — en nekad/avbruten Write dök upp som
++4 i panelen utan fil på disk → diffen räknar nu ENDAST completed.
+**E2E PROD 16/16 PASS** (tool-results/v83-b1-e2e-resultat.txt): Bash-turn
+"ls uploads/" → verktygskort med namn+argument+resultat+varaktighet i
+SSE-strömmen + live-input + rundstatistik; Write-turn → permission-dialog
+besvarad allow_once via interaktions-API:t (UI-dialogens väg), ändringar
++4/−0 med diff-rader + GET /api/studio/andringar 200. v4-sond: bägge
+v4-metoderna svarar -32603 ZodError utan v4-flöde — dokumentationen håller.

@@ -9522,3 +9522,50 @@ SSE-strömmen + live-input + rundstatistik; Write-turn → permission-dialog
 besvarad allow_once via interaktions-API:t (UI-dialogens väg), ändringar
 +4/−0 med diff-rader + GET /api/studio/andringar 200. v4-sond: bägge
 v4-metoderna svarar -32603 ZodError utan v4-flöde — dokumentationen håller.
+
+## VÅG 83 B3 — SESSIONS- OCH WORKSPACE-HANTERING LEVER (2026-09-09, 852093b+67089a3+fbebd11+b0a152f+c35e4dd)
+
+**Z-portaLens projektnavigation:** /api/studio/session utbyggd med nio
+actions — resume (session/resume + subscribe; historiken via
+session/messages fyller CHATTEN), stang (session/close — sessionen lever
+kvar i listan men svarar ej), fork (latestCheckpoint; ärligt meddelande
+vid saknad checkpoint), malSatt/malRensa (session/goal), subagenter
+(session/subagents), avbrytTask (session/cancelBackgroundTask —
+childSessionId som taskId, dokumenterat), arbetsyta (workspace/readState)
++ GET berikad: aktiv session, mål, workspaceinfo; sessionerna bär modell
+(qBe.model) + turns/tokens (session/read-projektionen, topp-10,
+fel-tolerant parallellläsning).
+
+**UI:** sessionspanelen visar status + modell · vändor · tokens · tid per
+session, klicka = resume (historiken återkommer, AKTIV-märkt rad), X =
+stäng; MÅL-fält i headern (🎯 visas om satt, redigerbart, rensa-knapp);
+BAKGRUNDSAGENTER-panel (status-badge kör/väntar/blockerad/klar/fel/
+avbruten/förlorad + Avbryt på körande) + arbetsyterad (läge · modell ·
+tanke-nivå · behörighet · N modeller · N kommandon). Mock-transporten
+speglar allt deterministiskt (resume med sparad historik, subagenter,
+mål, fork) — dev-läge bevisar UI utan modell.
+
+**Tre LIVE-fynd på prod (protokolexperiment /tmp/v83-b3-goal.mjs, egen
+app-server):** (1) session/subagents svarar -32004 "Session not found"
+på NYSS skapad session utan turn-historik — subagentregistret känner bara
+persistent materialiserade sessioner ⇒ tolkas ärligt som tom lista.
+(2) session/goal set startar en ASYNKRON MÅL-LOOP som föder nya turner —
+under den vägrar clear/fork med -32010; session/stop OCH goal pause är
+verkningslösa på 2 s-sikt men stop PAUSAR målet så den pågående turnen
+avbryter och clear går igenom (6 s i experimentet, samma måltext) ⇒
+rensaMal kör stop(ENDAST när egen prompt inte strömmar — klientens svar
+dödas aldrig) + poll 15×3 s. (3) goal show-svaret bär raden
+"Objective: <text>" — lasMal plockar den så headern visar målet, inte
+förbrukningsstatistiken.
+
+**E2E PROD 9/9 PASS** (tool-results/v83-b3-e2e.mjs, körs på Contabo mot
+localhost med ADMIN_PASSWORD ur env — lösenordet aldrig utskrivet):
+skapa session → prompt med riktig tokenströmning (22 367 tkn) →
+sessionspanelens data (zai/glm-5.2 · 1 vända · 22 367 tkn · idle) →
+resume SAMMA session (2 meddelanden: prompt ✓ svar ✓) → stäng (stangd
+true) + rökprov arbetsyta/subagenter/fork/mål. Retry-tålig mot
+parallella agenters prompt-lås (delad transport-singleton — se B2:s
+driftsfynd).
+
+**KVD:** tsc 36 = baslinjen (0 nya) · motorer 107/0/0 · vakten GRÖN ·
+deploy Contabo (build ✓ 20,9 s, pm2 online, HTTPS 200 på / och /studio).

@@ -2019,7 +2019,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
       {/* Marin rubrikrad */}
       <header className="marin-panel sticky top-0 z-20 border-b border-gold/25 shadow-md">
-        <div className="mx-auto flex w-full max-w-3xl items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3">
+        <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3">
           <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
           <div className="min-w-0 flex-1">
             <h1 className="font-serif text-lg font-bold leading-tight text-[#EDE6D6] sm:text-xl">
@@ -2029,29 +2029,92 @@ export function StudioChat({ hem }: { hem: () => void }) {
               Din agent — samma hjärna som bygger sajten
             </p>
           </div>
-          {/* MODELLRULLISTA (V2) — listan härledd ur config.json via API */}
-          <label className="relative shrink-0" title="Välj huvudmodell — ny session skapas med modellen">
-            <span className="sr-only">Välj modell</span>
-            <select
-              value={valdModell}
-              onChange={(e) => void bytModell(e.target.value)}
-              disabled={modeller.length === 0 || byterModell || strömmar}
-              className={cn(
-                "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
-                "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
-              )}
+          <div className="flex shrink-0 flex-wrap items-center gap-1.5">
+            {/* MODELLRULLISTA (V2) — listan härledd ur config.json via API */}
+            <label className="relative shrink-0" title="Välj huvudmodell — ny session skapas med modellen">
+              <span className="sr-only">Välj modell</span>
+              <select
+                value={valdModell}
+                onChange={(e) => void bytModell(e.target.value)}
+                disabled={modeller.length === 0 || byterModell || strömmar}
+                className={cn(
+                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
+                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
+                )}
+              >
+                {modeller.length === 0 && <option value="">—</option>}
+                {modeller.map((m) => (
+                  <option key={m.id} value={m.id} className="bg-[#10233F] text-[#EDE6D6]">
+                    {m.namn}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
+                {byterModell ? "…" : "▼"}
+              </span>
+            </label>
+            {/* V83 B2: LÄGESVÄXLARE (session/setMode — build kör verktyg
+                fritt, plan kräver godkännanden => Z-portaLens-dialogen). */}
+            <label
+              className="relative shrink-0"
+              title="Agentläge (session/setMode) — build: köra fritt; plan: verktyg kräver godkännande i dialog"
             >
-              {modeller.length === 0 && <option value="">—</option>}
-              {modeller.map((m) => (
-                <option key={m.id} value={m.id} className="bg-[#10233F] text-[#EDE6D6]">
-                  {m.namn}
+              <span className="sr-only">Agentläge</span>
+              <select
+                value={lage}
+                onChange={(e) => void byteLage(e.target.value)}
+                disabled={!lage || lageJobbar || strömmar}
+                className={cn(
+                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
+                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
+                )}
+              >
+                {!lage && <option value="">Läge…</option>}
+                <option value="build" className="bg-[#10233F] text-[#EDE6D6]">
+                  Build
                 </option>
-              ))}
-            </select>
-            <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
-              {byterModell ? "…" : "▼"}
-            </span>
-          </label>
+                <option value="plan" className="bg-[#10233F] text-[#EDE6D6]">
+                  Plan
+                </option>
+              </select>
+              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
+                ▼
+              </span>
+            </label>
+            {/* V83 B2: TANKESTYRKA (session/setThoughtLevel — LIVE-nivåer
+                nothink/high/max; KVD-textens off/medium/high är generisk
+                terminologi, de ärliga nivåerna står i protokollkartan §1). */}
+            <label
+              className="relative shrink-0"
+              title="Tankestyrka (session/setThoughtLevel) — resonemangets djup: av (nothink), hög (high) eller max"
+            >
+              <span className="sr-only">Tankestyrka</span>
+              <select
+                value={tanka}
+                onChange={(e) => void byteTanke(e.target.value)}
+                disabled={!tanka || lageJobbar || strömmar}
+                className={cn(
+                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-2.5 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
+                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
+                )}
+              >
+                {!tanka && <option value="">Tanke…</option>}
+                <option value="nothink" className="bg-[#10233F] text-[#EDE6D6]">
+                  Tanke: av
+                </option>
+                <option value="high" className="bg-[#10233F] text-[#EDE6D6]">
+                  Tanke: hög
+                </option>
+                <option value="max" className="bg-[#10233F] text-[#EDE6D6]">
+                  Tanke: max
+                </option>
+              </select>
+              <Brain className="pointer-events-none absolute left-2 top-1/2 hidden h-3 w-3 -translate-y-1/2 text-gold/70 sm:block" />
+              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
+                ▼
+              </span>
+            </label>
+          </div>
           <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
             <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
             <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
@@ -2713,6 +2776,126 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </div>
               </div>
             ),
+          )}
+          {/* VÅG 83 B2: PERMISSION-DIALOG (Z-portaLens) — marin kort med
+              verktygsnamn + risk-badge + argument-summary + options-knappar.
+              Byggd ur protokollets interaction/requestPermission-options
+              (allow_once/allow_project/deny); svaret går via
+              /api/studio/interaktion. 30 s utan svar ⇒ eskalering. */}
+          {permission && (
+            <div className="flex justify-end">
+              <div className="marin-panel marin-scope max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/50 px-4 py-3 shadow-md sm:max-w-[80%]">
+                <div className="flex flex-wrap items-center gap-2">
+                  <ShieldAlert className="h-4 w-4 shrink-0 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold">
+                    Begäran om godkännande
+                  </span>
+                  <span
+                    className={cn(
+                      "rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider",
+                      riskFarg(permission.risk),
+                    )}
+                    title={`Risknivå: ${permission.risk}`}
+                  >
+                    {permission.risk}
+                  </span>
+                  {svarJobbar && <Loader2 className="h-3 w-3 animate-spin text-gold" />}
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-[#EDE6D6]">
+                  Verktyget <span className="font-semibold text-gold">{permission.verktyg}</span> vill köras
+                </p>
+                {permission.skäl && (
+                  <p className="mt-1 text-xs leading-relaxed text-[#EDE6D6]/70">{permission.skäl}</p>
+                )}
+                <pre className="mt-2 max-h-32 overflow-auto whitespace-pre-wrap break-words rounded-md border border-gold/20 bg-black/30 p-2 font-mono text-[10px] leading-relaxed text-[#EDE6D6]/85">
+                  {permission.sammanfattning}
+                </pre>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {permission.alternativ.map((a) => (
+                    <button
+                      key={a.optionId}
+                      onClick={() => void svaraPermission(permission.requestId, a.optionId)}
+                      disabled={svarJobbar}
+                      title={a.beskrivning || a.namn}
+                      className={cn(
+                        "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50",
+                        a.optionId === "deny"
+                          ? "border border-red-400/50 text-red-200 hover:bg-red-500/20"
+                          : a.optionId === "allow_project"
+                            ? "border border-gold/50 text-gold hover:bg-gold/15"
+                            : "bg-gold text-background hover:bg-gold/90",
+                      )}
+                    >
+                      {PERMISSION_ETIKETT[a.optionId] ?? a.namn}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-2 text-[10px] leading-relaxed text-[#EDE6D6]/50">
+                  Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* VÅG 83 B2: FRÅGEKORT (interaction/requestUserInput) — knappval
+              ur choices ELLER fritext + Svara/Avbryt. */}
+          {fraga && (
+            <div className="flex justify-end">
+              <div className="max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/40 bg-card px-4 py-3 shadow-sm sm:max-w-[80%]">
+                <div className="flex items-center gap-2">
+                  <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold">
+                    Agenten frågar
+                  </span>
+                  {svarJobbar && <Loader2 className="h-3 w-3 animate-spin text-gold" />}
+                </div>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">{fraga.fråga}</p>
+                {fraga.val && fraga.val.length > 0 ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {fraga.val.map((v) => (
+                      <button
+                        key={v}
+                        onClick={() => void svaraFraga(fraga.requestId, v)}
+                        disabled={svarJobbar}
+                        className="rounded-full border border-gold/50 px-3 py-1.5 text-xs font-semibold text-gold transition-colors hover:bg-gold/15 disabled:opacity-50"
+                      >
+                        {v}
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-3 flex items-end gap-2">
+                    <textarea
+                      value={fragSvar}
+                      onChange={(e) => setFragSvar(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && !e.shiftKey) {
+                          e.preventDefault();
+                          void svaraFraga(fraga.requestId, fragSvar.trim());
+                        }
+                      }}
+                      rows={1}
+                      placeholder="Svara agenten… (Enter skickar)"
+                      className="max-h-28 min-h-[38px] flex-1 resize-none rounded-lg border border-gold/30 bg-background px-2.5 py-2 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
+                    />
+                    <Button
+                      onClick={() => void svaraFraga(fraga.requestId, fragSvar.trim())}
+                      disabled={!fragSvar.trim() || svarJobbar}
+                      className="h-9 shrink-0 rounded-lg bg-gold px-3 text-xs text-background hover:bg-gold/90"
+                    >
+                      Svara
+                    </Button>
+                  </div>
+                )}
+                <button
+                  onClick={() => void svaraFraga(fraga.requestId, undefined, true)}
+                  disabled={svarJobbar}
+                  className="mt-2 text-[10px] text-muted-foreground underline transition-colors hover:text-foreground disabled:opacity-50"
+                >
+                  Avbryt frågan
+                </button>
+              </div>
+            </div>
           )}
           {tankar && (
             <div className="flex justify-end pr-1">

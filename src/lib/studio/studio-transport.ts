@@ -1022,8 +1022,13 @@ export function filandringarUrMessages(svar: unknown): StudioFilandring[] {
     const delar = (meddelanden[i] as { parts?: unknown[] } | null)?.parts;
     if (!Array.isArray(delar)) continue;
     for (const del of delar) {
-      const p = del as { type?: string; tool?: unknown; state?: { input?: unknown } } | null;
+      const p = del as { type?: string; tool?: unknown; state?: { status?: unknown; input?: unknown } } | null;
       if (p?.type !== "tool") continue;
+      // VBe §5: state är pending|running|completed|error — ENDAST completed
+      // är en ÄNDRING PÅ DISK. En planerad/avbruten/misslyckad Write får
+      // ALDRIG dyka upp i panelen (input finns i alla stater — LIVE-bevisat
+      // v83: nekad Write gav +4 i panelen utan att filen fanns).
+      if (p.state?.status !== "completed") continue;
       const verktyg = typeof p.tool === "string" ? p.tool : "";
       const indata =
         p.state && typeof p.state === "object" && p.state.input && typeof p.state.input === "object"
@@ -1504,6 +1509,15 @@ class AppServerTransport implements StudioTransport {
             "Ingen checkpoint ännu — fork kräver att agenten ändrat en fil först (checkpoints skapas vid filändringar). Kör en turn som skriver en fil och försök igen.",
         };
       }
+      // LIVE-BEVISAT 2026-09-09 (prod, B3-E2E): -32010 "Cannot fork while a
+      // prompt is running" — aktiv prompt ELLER aktiv mål-turn blockerar.
+      // Ärligt svar (session/stop här skulle kunna döda pågående arbete).
+      if (/prompt is running|-32010/i.test(text)) {
+        return {
+          meddelande:
+            "En prompt eller aktivt mål kör i sessionen — fork väntar tills agenten är ledig (stoppa agenten eller rensa målet först).",
+        };
+      }
       throw fel;
     }
   }
@@ -1554,11 +1568,36 @@ class AppServerTransport implements StudioTransport {
   async rensaMal(): Promise<StudioMalSvar> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
-    await this.klient.request(
-      "session/goal",
-      { sessionId: this.sid, action: "clear" },
-      30_000,
-    );
+    try {
+      await this.klient.request(
+        "session/goal",
+        { sessionId: this.sid, action: "clear" },
+        30_000,
+      );
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      // LIVE-BEVISAT 2026-09-09 (prod, B3-E2E): -32010 "Cannot manage goals
+      // while a prompt is running" — mål-set startar en ASYNKRON mål-turn
+      // som håller sessionen upptagen. Kartan §1: session/stop "avbryter
+      // aktiv prompt + pausar aktiv goal". KVD-vakt: stoppa ENDAST när
+      // EGEN prompt INTE strömmar (this.aktiv) — klientens pågående svar
+      // dödas ALDRIG av en målrensning.
+      if (/prompt is running|-32010/i.test(text) && !(this.aktiv && !this.aktiv.färdig)) {
+        try {
+          this.klient.notis("session/stop", { sessionId: this.sid });
+        } catch {
+          // eldränge — barnprocessen kan ha dött
+        }
+        await new Promise((los) => setTimeout(los, 1_500));
+        await this.klient.request(
+          "session/goal",
+          { sessionId: this.sid, action: "clear" },
+          30_000,
+        );
+      } else {
+        throw fel;
+      }
+    }
     return { mal: null, meddelande: "Målet rensat." };
   }
 

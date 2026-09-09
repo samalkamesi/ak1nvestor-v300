@@ -3,7 +3,7 @@
 Skriven 2026-09-08 av agent V86-DRIFTBOK. Fakta verifierade mot prod samma datum.
 Målgrupp: människor + framtida AI-sessioner. REGEL: denna bok innehåller ALDRIG
 hemliga värden — bara var nycklarna BOR. Sanningskällor: worklog.md (sista
-sektionerna), STYRELSE-HETZNER-ARKITEKTUR.md, data/infra/*, verktyg/*.
+sektionerna), STYRELSE-tidigare leverantör-ARKITEKTUR.md, data/infra/*, verktyg/*.
 
 ---
 
@@ -24,7 +24,7 @@ Nyckelfakta (alla verifierade 2026-09-08):
 - Server: Contabo Cloud VPS 4, 4 vCPU/8 GB, ~96 GB disk (5 % använt), Tyskland.
   Kostnad 6,88 EUR/man, obegränsad trafik.
 - IP: 5.189.162.162. Domän: lab.ak1nvestor.com (A-record hos one.com).
-- SSH: `ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162` (endast nycklar;
+- SSH: `ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162` (endast nycklar;
   PasswordAuthentication no; kontot ak1a har NOPASSWD-sudo).
 - App: pm2-process `ak1a` (kör `npm run start` i /home/ak1a/AK1, Next.js på
   port 3000). pm2-ak1a systemd-tjänsten är `enabled` (överlever omstart).
@@ -71,9 +71,9 @@ Nyckelfakta (alla verifierade 2026-09-08):
 
 ### Hälsokoll (från datorn, alla read-only)
 ```
-ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162 "pm2 ls"            # status ak1a = online
-ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162 "sudo tail -20 /var/log/ak1a-halsa.log"
-ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162 "pm2 logs ak1a --lines 30 --nostream"
+ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162 "pm2 ls"            # status ak1a = online
+ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162 "sudo tail -20 /var/log/ak1a-halsa.log"
+ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162 "pm2 logs ak1a --lines 30 --nostream"
 curl -s -o /dev/null -w '%{http_code}\n' https://lab.ak1nvestor.com/   # 200
 ```
 OBS pm2: processen ägs av användaren ak1a — som root kör `sudo -u ak1a pm2 ls`.
@@ -95,8 +95,8 @@ i sidinnehåll. Skriptet misslyckas högljutt om något steg faller.
 
 Manuell reserv (om skriptet ej kan köras):
 ```
-git -c core.sshCommand="ssh -i ~/.ssh/hetzner_key" push contabo develop
-ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162 "cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart ak1a --update-env"
+git -c core.sshCommand="ssh -i ~/.ssh/contabo_key" push contabo develop
+ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162 "cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart ak1a --update-env"
 ```
 
 Rollback:
@@ -146,7 +146,7 @@ c) DATA FÖRLORAT (t.ex. Supabase-tabell raderad): Supabase är levande
 
 ## 5. INLOGGNING & NYCKLAR (platser, ALDRIG värden)
 
-- ~/.ssh/hetzner_key (+ .pub) på DATORN — automationens ed25519-nyckel.
+- ~/.ssh/contabo_key (+ .pub) på DATORN — automationens ed25519-nyckel.
   Privata nyckeln lämnar ALDRIG datorn. Servern känner publikationen via
   /home/ak1a/.ssh/authorized_keys.
 - /home/ak1a/AK1/.env på SERVERN (chmod 600) — alla hemligheter:
@@ -233,7 +233,7 @@ testa-kurs-metadata.mjs, testa-mediabibliotek.mjs, testa-medlem-auth.mjs.
 |---|---|
 | Sajten nere | (1) `sudo tail -30 /var/log/ak1a-halsa.log` — har autoheal försökt? (2) `pm2 ls` — online? Annars `pm2 restart ak1a --update-env`. (3) `curl -s -o /dev/null -w '%{http_code}' -H "Host: lab.ak1nvestor.com" http://127.0.0.1/` — svarar appen lokalt? (4) `sudo nginx -t && systemctl status nginx`. (5) DNS/extern: `curl -sI https://lab.ak1nvestor.com/`. (6) Akut: Vercel-DNS-flipp. |
 | 502 Bad Gateway | pm2-processen nere/hänger: `pm2 ls` + `pm2 logs ak1a --lines 50 --nostream`; `pm2 restart ak1a`. Kontroll­UTFÖR som användare ak1a. |
-| Deploy failar | (1) `df -h /` — full disk? (2) `node -v` på servern = v22+. (3) Bygglogg: kör `npm run build` manuellt via ssh och läs fel. (4) git-push-fel: finns remote contabo + ~/.ssh/hetzner_key? |
+| Deploy failar | (1) `df -h /` — full disk? (2) `node -v` på servern = v22+. (3) Bygglogg: kör `npm run build` manuellt via ssh och läs fel. (4) git-push-fel: finns remote contabo + ~/.ssh/contabo_key? |
 | Cron kör inte | KÄNT FEL kap 2: /etc/crontab ignorerad (saknat användarfält). Kolla `sudo grep CRON /var/log/syslog | tail` — "Syntax error" = lägg `root` på curl-raderna. |
 | Admin 401/503 | .env på servern: ADMIN_PASSWORD satt? SESSION_SECRET satt ( annars sessionsväg av)? Ändrats den -> `pm2 restart ak1a --update-env`. |
 | SSL-fel | `sudo certbot certificates`; `sudo certbot renew --dry-run`; nginx -t. |

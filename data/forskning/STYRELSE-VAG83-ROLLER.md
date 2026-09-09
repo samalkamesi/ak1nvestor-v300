@@ -79,7 +79,7 @@ auktorisering är sekretesskänsligt — FÄRE, TÄTARE händer (4 agenter), adm
 commit-back-spegling alt C (Supabase→priser.json vid skrivning — risker,
 token, konflikt med agent-processen; rek). (c) EXPAND-COURSES/översättnings-
 systemets framtid nu när korpusen är 100 % (motorbatch-pensionering? termbank-
-underhållsläge?). (d) Hetzner H2-dev-instans design (pm2 + nginx + CDN-beslut
+underhållsläge?). (d) tidigare leverantör H2-dev-instans design (pm2 + nginx + CDN-beslut
 — aldrig publik utan beslut).
 
 ## KRITA: tsc 35 · motorer 107/0/0 · vakten GRÖN · build exit 0 · befintliga

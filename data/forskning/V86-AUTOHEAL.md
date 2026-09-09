@@ -36,7 +36,7 @@ Loggen självsänkas: växer den över 10 000 rader behålls senaste 5 000.
 `/var/log/ak1a-halsa.log` (root, skrivs av skriptet). Läs med:
 
 ```bash
-ssh -i ~/.ssh/hetzner_key ak1a@5.189.162.162 'sudo cat /var/log/ak1a-halsa.log'
+ssh -i ~/.ssh/contabo_key ak1a@5.189.162.162 'sudo cat /var/log/ak1a-halsa.log'
 # senaste ingreppen:  sudo tail -20 /var/log/ak1a-halsa.log
 # bara larm/ingrepp:  sudo grep -E "FEL|FÖREBYGGANDE|efter" /var/log/ak1a-halsa.log
 ```

@@ -1,7 +1,7 @@
 # STYRELSE — VÅG 84-PLAN (forskning, agent V83-FORSK 2026-09-07)
 
 Underlag: STYRELSE-VAG83-ROLLER.md DEL C · STYRELSE-SPEGLAR-P2.md §2 ·
-ADMIN-MEGA §2.2 alt C + §4.1 · HETZNER-ARKITEKTUR fas H2 · worklog våg 81-82.
+ADMIN-MEGA §2.2 alt C + §4.1 · tidigare leverantör-ARKITEKTUR fas H2 · worklog våg 81-82.
 Forskning — BYGG EJ. Källmätningar: ls/find mot src/app (2026-09-07).
 
 ## (a) HTML-LANG-ROUTE-GROUP — migreringsplan (SPEGLAR-P2 §2 → steg-för-steg)
@@ -56,7 +56,7 @@ flyttet = kontraktskrav). Filflytt utan datamigrering; URL:erna OFÖRÄNDADE
 **Omfattning:** 1 våg + spike; max 2 agenter (GlobaltSkal-agent steg 1 kan
 ske i förväg i annan våg; steg 2 SELVT ensamt). Prioritet: viktigt men ej
 brådskande — kompensations-signalerna gäller (Google läser språk främst ur
-innehåll); läggs efter admin-mega-avslut och Hetzner H1.
+innehåll); läggs efter admin-mega-avslut och tidigare leverantör H1.
 
 ## (b) COMMIT-BACK-SPEGLING — Supabase → priser.json (steg 5-rest)
 
@@ -67,8 +67,8 @@ som primär). Tre alternativ:
 - **ALT 1 — periodisk agent-synk (REKOMMENDERAD):** verktyg/synka-variabler
   .mjs (samma mönster som verktyg/synka-termbank.mjs våg 79): dra Supabase
   senaste-vinner → skriv priser.json → commit ENDAST vid diff. Körs (i) av
-  agent i varje vågs avslutningschecklista och (ii) när Hetzner H1/H2 lever:
-  schemalagt på Hetzner (cron) där git-autentisering redan finns. INGEN
+  agent i varje vågs avslutningschecklista och (ii) när tidigare leverantör H1/H2 lever:
+  schemalagt på tidigare leverantör (cron) där git-autentisering redan finns. INGEN
   Vercel-token någonsin. Panelen kan visa "gitSpeglad: tidpunkt".
 - **ALT 2 — Vercel deploy-hook-kedja:** panel-POST → deploy-hook → rebuild.
   Löser INTE spegling (bygger om ur Supabase; filen förblir stale) och är
@@ -115,10 +115,10 @@ Fakta: 69 857 källobjekt = 100 %, 139 745 rader, 2 dokumenterade AR-undantag.
   verktyget verktyg/oversatt-skuld.mjs (läser kö/status → genererar nästa
   importpaket-skelett) om main-agenten vill ha stöd. Kostnad: minuter.
 
-## (d) HETZNER H2-DESIGN — dev-instans (pm2 + nginx)
+## (d) tidigare leverantör H2-DESIGN — dev-instans (pm2 + nginx)
 
 **PUNKT FÖR PUNKTEN: H1 BLOCKAR fortfarande på KUNDSTEG 1 — ssh-copy-id -i
-~/.ssh/hetzner_key.pub root@65.108.241.93 (servern svarar men nekar:
+~/.ssh/contabo_key.pub root@65.108.241.93 (servern svarar men nekar:
 Permission denied publickey,password). Allt nedan är papper till dess.**
 
 Design (för sankning efter H1-verifiering):
@@ -127,7 +127,7 @@ Design (för sankning efter H1-verifiering):
   reconnects; en byggd server har inga sådana) + max_memory_restart ~700 MB
   (CX23 har 4 GB) + pm2 startup && pm2 save (boot-beständig). keepalive.sh:s
   curl-15s + kill/restart-mönster dör; pm2:s processvakt + minnesgräns
-  ersätter. Bygg via data/infra/hetzner/bygg.sh (git pull → npm ci → build).
+  ersätter. Bygg via data/infra/tidigare leverantör/bygg.sh (git pull → npm ci → build).
 - **nginx reverse proxy :80 → 3000** (beredd i H1) med TRE skydd:
   1. `X-Robots-Tag: noindex, nofollow` som nginx-header på ALLA svar —
      crawler-säkert utan att röra src/.

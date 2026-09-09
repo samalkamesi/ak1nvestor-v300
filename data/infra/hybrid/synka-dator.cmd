@@ -13,7 +13,7 @@ REM ─────────────────────────�
 setlocal
 set REPO=C:\Users\Workstation Z G4\.zcode\workspace\default\ak1
 set LOG=%REPO%\data\backups\hybrid-sync.log
-set NYCKEL=%USERPROFILE%\.ssh\hetzner_key
+set NYCKEL=%USERPROFILE%\.ssh\contabo_key
 
 echo [%date% %time%] hybrid-sync v2 start >> "%LOG%"
 cd /d "%REPO%"

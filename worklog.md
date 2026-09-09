@@ -9407,3 +9407,45 @@ Termius-SSH (full kontroll).
 
 **Viktigt driftsfynd: deploy via tar-pipe SKRIVER OVER .env — hemligheter
 skall ligga i .env.production.local som aldrig finns i arkivet.**
+
+## VÅG 83 B1 — STREAMING-VISUALISERING + DIFF LEVER (2026-09-09, 85610cf)
+
+**Z-portalens kärna: varje verktygskall syns LIVE i chatten.** Transporten
+(studio-transport.ts) mappar nu protokollkartans (v83-protokollkarta.md)
+händelser FULLT UT: tool.updated kinds scheduled/started/progress/result/
+error → "verktyg_kort"-event (verktygsnamn + argument-truncat 600 tkn +
+resultat-truncat 1 500 tkn + varaktighet ur result.duration + progress-
+svans stdoutTail/stderrTail); model.streaming kinds tool_input_delta +
+tool_call → "verktyg_input" (agenten skriver argumenten LIVE — "läser fil
+X…" tickar fram i kortet) + defensivt part.delta field "input";
+turn.started/completed → "runda" (duration, resultType, toolCallCount);
+state.updated → status-rad med aktiv verktygsräkning ur patch.
+**DIFF:** lasFilandringar() härleder senaste turnens ±N-rader per fil ur
+session/messages tool-delar (Write→+N, Edit→exakt −N/+N ur old_string/
+new_string, MultiEdit→edits[]; 400 rader/fil, 12 filer tak, ÄRLIGA tal) —
+SSE-event "ändringar" efter klart + **GET /api/studio/andringar**.
+v4/conversation/fileChanges (protokollets enda inhemska diff-källa) lever
+i v4-grenen med EGET flöde (v4/connection/flow→controller/subscribe→
+conversation/subscribe; LIVE-sond på servern: -32603 ZodError på bägge
+utan korrekt flöde) = dokumenterad uppgraderingsväg i koden.
+**UI:** varje verktygskall = expanderbart kort i chattflödet (ikon per
+verktyg: Bash=terminal, Read/Write/Grep/Glob/Todo/WebSearch…; "▶ Bash:
+ls uploads/" → klicka ut för argument+resultat i monospace; spinner medan
+planerad/startar/kör; fel RÖTT med feltext) + "Ändringar"-panel per turn
+(+N grönt/−N rött per fil, expanderbar rad-diff) + rundstatistik i
+bubblans fot (⏱ varaktighet · 🛠 verktygsantal · ✓ lyckad).
+**KVD:** B1-test 16/16 (mock-strömmande hela sekvensen + diff-kärnan,
+tool-results/v83-b1-test.mjs) · tsc 36 = baslinjen (0 nya) · motorer
+107/0/0 · vakten GRÖN · deployat på prod (Contabo HEAD innehåller
+85610cf, pm2 online, HTTPS 200) + E2E på prod (tool-results/
+v83-b1-e2e.mjs — Bash-turn "lista filer i uploads/" → verktygskort med
+argument+resultat i SSE-strömmen; Write-turn → ändringar +3/−0).
+
+**Driftsfynd v83 MEGA-parallelism:** (1) serverns ~/AK1-giträd låg efter
+med smutsig träd (tar-pipe-rester) + receive.denyCurrentBranch osatt —
+fixat: updateInstead + checkout/clean före push; (2) parallelbyggande
+agenter RASAR mot samma .next (ENOENT buildManifest.tmp) och samma
+node_modules (npm ci tömmer) — vänta ut främmande `next build`-process
+innan egen build; (3) studions session är DELAD state — "En prompt kör
+redan"-vägran är korrekt (speglar -32010); E2E får polla tills sessionen
+är ledig.

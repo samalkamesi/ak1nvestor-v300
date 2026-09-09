@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { addXP, lasXP } from "@/lib/member-local";
+import { synkaQuiz } from "@/lib/medlem-progress-klient";
 import { skapaT } from "@/lib/sprak";
 import type { SprakId } from "@/lib/sprak";
 
@@ -56,6 +57,10 @@ export function KursQuiz({
     if (val === fragor[i].ratt) {
       localStorage.setItem(nyckel(i), "1");
       addXP(10);
+      // VÅG 87 (L2): dubbel-skrivning — lokal cache + skugg-POST av
+      // quiz:<slug>:<kap>:<i> (servern fastställer 10 XP, aldrig klienten;
+      // gästens 401 sväljs tyst — gäst = bara lokal).
+      synkaQuiz(slug, kapitelNr, i);
       setXp(lasXP());
       setKlarade((n) => n + 1);
     }

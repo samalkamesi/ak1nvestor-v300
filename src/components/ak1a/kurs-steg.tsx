@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { addXP, addStjarna, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKursKlar } from "@/lib/member-local";
+import { synkaQuiz, synkaKursklar } from "@/lib/medlem-progress-klient";
 import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
@@ -123,6 +124,10 @@ export function KursSteg({
       const nivaFore = niva();
       localStorage.setItem(nyckel, "1");
       const nivaEfter = addXP(10);
+      // VÅG 87 (L2): dubbel-skrivning — lokal cache + skugg-POST av
+      // quiz:<slug>:<kap>:<qi> (servern fastställer 10 XP; gästens 401
+      // sväljs tyst — gäst = bara lokal).
+      synkaQuiz(kurs.slug, kap.num, qi);
       setXp(lasXP());
       if (nivaEfter > nivaFore) setNivaUpp(nivaEfter);
       [5, 10, 25, 50].forEach((n) => { if (nivaEfter >= n) geBadge(`niva-${n}`); });
@@ -149,6 +154,9 @@ export function KursSteg({
             // gång per kurs oavsett vilken stig som kommer först.
             const nivaEfterKlar = addXP(50);
             addStjarna();
+            // VÅG 87 (L2): skugg-POST kursklar:<slug> (+ stjarna:<slug>) —
+            // servern fastställer 50 XP + 1 ★; gästens 401 sväljs tyst.
+            synkaKursklar(kurs.slug);
             setXp(lasXP());
             setStjarnor(lasStjarnor());
             if (nivaEfterKlar > nivaFore) setNivaUpp(nivaEfterKlar);

@@ -450,13 +450,15 @@ const LANKKALLOR = [
   "src/components/ak1a/sidfooter.tsx",
 ];
 
-/** Alla rutter i src/app som segment-listor ("[slug]"-segment = dynamiska). */
+/** Alla rutter i src/app som segment-listor ("[slug]"-segment = dynamiska).
+ * Route-grupper (våg 85): parentessegment "(huvud)"/"(en)"/"(ar)" är
+ * organisatoriska — syns ej i URL:en, rensas bort här. */
 function appRutter() {
   const rutter = [];
   for (const sida of hittaFiler(path.join(REPO, "src", "app"), "page.tsx")) {
     const relSida = path.relative(path.join(REPO, "src", "app"), sida);
     const seg = relSida.split(path.sep).slice(0, -1); // ta bort "page.tsx"
-    rutter.push(seg.map((s) => s.replaceAll("\\", "/")));
+    rutter.push(seg.map((s) => s.replaceAll("\\", "/")).filter((s) => !/^\([a-zA-Z0-9_-]+\)$/.test(s)));
   }
   return rutter;
 }

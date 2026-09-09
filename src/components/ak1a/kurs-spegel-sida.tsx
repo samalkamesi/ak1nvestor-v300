@@ -276,7 +276,11 @@ export function KursSpegelSida({
         {/* ── VÅG 78 B1: SSR-säker Fas-gate (som svenska originalet) ──
             Fas 2/3-kurser: smakprov (kap 1–2) + låst vy i SSR; behöriga
             hämtar fullkursen via /api/kurs-spegel/[lang]/[slug] — kapitel 3+
-            skickas aldrig i statiskt HTML. Gratis-kurser: som förut. */}
+            skickas aldrig i statiskt HTML.
+            VÅG 87 (FAS L2): GRATIS-kurser via den generaliserade KursGate-
+            egisen — smakprov som SSR-bas + låst kort; medlemmen låser upp
+            på klienten mot server-verifierad session (ISR-basen förblir
+            gäst-vyn, §E kandidat 1). */}
         {fas > 0 ? (
           <Fas2Gate
             slug={slug}
@@ -290,7 +294,20 @@ export function KursSpegelSida({
             fortsattning={forsattning}
           />
         ) : (
-          <KursGate slug={slug} titel={kurs.title}>
+          <KursGate
+            slug={slug}
+            titel={kurs.title}
+            smakprov={
+              <KursArtiklar
+                slug={slug}
+                chapters={smakprov}
+                total={kurs.chapters.length}
+                lang={lang}
+                rubrik={t("fas.smakprovRubrik")}
+                fortsattning={forsattning}
+              />
+            }
+          >
             {harQuiz ? (
               <KursSteg
                 kurs={{

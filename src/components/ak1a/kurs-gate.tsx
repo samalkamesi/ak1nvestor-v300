@@ -2,35 +2,94 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { lasMedlem, lasXP, lasStjarnor, lasKlaraKurser, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
+import { lasXP, lasStjarnor, lasKlaraKurser, nivaFranXP, markeraKursKlar, addXP, addStjarna } from "@/lib/member-local";
+import { harLokalProgress, lasMedlemProgressKlient, synkaKursklar } from "@/lib/medlem-progress-klient";
 import { SIFFROR } from "@/lib/siffror";
 import { useSprak } from "@/components/ak1a/sprak-leverantor";
 
 /**
- * Kursportall — kapitel 1–2 är smakprov för alla (SEO + lockbete);
- * kapitel 3+ kräver GRATIS medlemskap. Inloggad: allt + XP/stjärnor.
- * V86: porten + nivåbaren via useSprak().t — på speglarna (våg 81) rätt
- * språk från första hydreringspasset; inloggningslänken följer spegeln.
+ * Kursportall — VÅG 87 (FAS L2, STYRELSE-V86-L2-GATING.md §A + §E kandidat 1):
+ * SERVERSTYRT KURSLÅS med ISR-låst bas + klient-hydrering-egis.
+ *
+ * KONTRAKT (generaliserar våg 78:s Fas2Gate-mönster till gratis-kurser):
+ *  1. SSR/first paint visar ALLTID gäst-vyn: smakprov (kapitel 1–2, prop) +
+ *     låst kort. Barnen (kapitel 3+) renderas ALDRIG i first paint — dagens
+ *     läcka (`medlem===null → children`) är sluten. Sidan förblir ISR-cachad
+ *     (den läser ALDRIG sessionen i SSR-passet — §E).
+ *  2. Klient-egis efter hydrering: EN tunn GET /api/medlem/progress (session +
+ *     progress i en rondtur, §C.4) → medlem: children renderas ur DET REDAN
+ *     LADDADE paketet (ingen hämtning — innehållet finns i flight-payloaden;
+ *     gating = pedagogik + betalmoral, ej DRM — §B GRÄNS 2, dokumenterat);
+ *     gäst: låsta vyn ÄR slutläget (inga fler nätverksanrop).
+ *  3. Knappen "Lås upp (medlem)" verifierar sessionen på begäran → renderar
+ *     fulltexten vid giltig session, lotsar annars till inloggningen
+ *     (return-URL-mönstret ?next=/kurser/<slug>, våg 63 O2 #1).
+ *
+ * Lokal medlem utan konto = gäst tills registrering (L1-beslutet) — men
+ * designens §A.2-banner ("Du har framsteg sparat på denna enhet…") visas i
+ * låskortet när enheten bär lokal progress.
+ *
+ * NivaBar: local-cache kvar (L2-linjen) + skugg-POST (fire-and-forget) vid
+ * varje belöning — gästens POST avvisas tyst av servern (§C.5).
  */
 export function KursGate({
   slug,
   titel,
+  smakprov = null,
   children,
 }: {
   slug: string;
   titel: string;
+  /** Kapitel 1–2 — det enda kapitelinnehåll gäst-vyn renderar (SEO/lockbete). */
+  smakprov?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const { t, sprak } = useSprak();
-  const [medlem, setMedlem] = useState<boolean | null>(null);
+  // "okand" = SSR/first paint (LÅST är default — children renderas ej);
+  // "gast" = server-verifierad gäst (slutläget); "medlem" = upplåst.
+  const [status, setStatus] = useState<"okand" | "gast" | "medlem">("okand");
+  const [verifierar, setVerifierar] = useState(false);
+  const [inteInloggad, setInteInloggad] = useState(false);
+  const [lokalProgress, setLokalProgress] = useState(false);
 
   useEffect(() => {
-    setMedlem(Boolean(lasMedlem()));
+    setLokalProgress(harLokalProgress());
+    let aktiv = true;
+    lasMedlemProgressKlient()
+      .then((svar) => {
+        if (aktiv) setStatus(svar.inloggad ? "medlem" : "gast");
+      })
+      .catch(() => {
+        if (aktiv) setStatus("gast"); // tyst nätverksfel ⇒ gäst-vyn står kvar
+      });
+    return () => {
+      aktiv = false;
+    };
   }, []);
 
-  if (medlem === null) return <>{children}</>; //SSR/first paint
+  /** Knappens verify: en ny session-fråga på begäran (§A.3-kontraktet). */
+  const lasUpp = async () => {
+    if (verifierar || status === "medlem") return;
+    setVerifierar(true);
+    try {
+      const svar = await lasMedlemProgressKlient();
+      if (svar.inloggad) {
+        setStatus("medlem");
+        setInteInloggad(false);
+      } else {
+        setStatus("gast");
+        setInteInloggad(true);
+      }
+    } catch {
+      setStatus("gast");
+      setInteInloggad(true);
+    } finally {
+      setVerifierar(false);
+    }
+  };
 
-  if (medlem) return <>{children}</>;
+  // ── Medlem: fulltexten ur det redan-laddade paketet (kap 1–2 ingår) ──────
+  if (status === "medlem") return <>{children}</>;
 
   // Speglarna: inloggning + retur-kurs på spegelns egna sökvägar.
   const inloggning =
@@ -38,37 +97,53 @@ export function KursGate({
       ? `/${sprak}/logga-in?next=${encodeURIComponent(`/${sprak}/kurser/${slug}`)}`
       : `/logga-in?next=${encodeURIComponent(`/kurser/${slug}`)}`;
 
+  // ── LÅST VY — SSR-default: smakprov + inbjudan vidare ─────────────────────
   return (
     <div className="relative">
-      {/* Textur av det låsta innehållet — suddig, urblekt, aldrig läsbar.
-          Tidigare halvtransparent gradient täckte första orden på texten
-          nedanför (kundrapport 2026-09-01); nu är ytan enhetligt ren papper. */}
-      <div aria-hidden="true" className="pointer-events-none select-none max-h-[420px] overflow-hidden blur-[6px] opacity-30">
-        {children}
-      </div>
-      <div className="absolute inset-0 flex items-center justify-center bg-paper p-6">
-        <div className="max-w-md rounded-2xl border-2 border-gold bg-paper p-8 text-center shadow-xl">
-          <p className="text-3xl">🔒</p>
-          <h3 className="mt-3 font-serif text-2xl font-bold">
-            {t("gate.fortsattGratis")}
-          </h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            {t("gate.skapaA")}
-            <strong>{t("gate.helaTitel", { titel })}</strong>
-            {t("gate.skapaB", { kurser: SIFFROR.kurser })}
-          </p>
-          {/* Return-URL (VÅG 63 O2 #1): eleven landar tillbaka i DENNA kurs
-              efter inloggningen — inte på ett generellt "Du är inloggad"-kort
-              som kräver 3 extra steg för att hitta tillbaka. */}
-          <Link
-            href={inloggning}
-            className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90"
-          >
-            {t("gate.lasUppGratis")}
-          </Link>
-          <p className="mt-3 text-[11px] text-muted-foreground">
-            {t("gate.sekunder")}
-          </p>
+      {smakprov}
+
+      <div className="relative mt-10">
+        <div className="flex items-center justify-center">
+          <div className="max-w-md rounded-2xl border-2 border-gold bg-paper p-8 text-center shadow-xl">
+            <p className="text-3xl" aria-hidden="true">🔒</p>
+            <h3 className="mt-3 font-serif text-2xl font-bold">
+              {t("gate.fortsattGratis")}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {t("gate.skapaA")}
+              <strong>{t("gate.helaTitel", { titel })}</strong>
+              {t("gate.skapaB", { kurser: SIFFROR.kurser })}
+            </p>
+            {/* Return-URL (VÅG 63 O2 #1): eleven landar tillbaka i DENNA kurs
+                efter inloggningen. */}
+            <button
+              type="button"
+              onClick={lasUpp}
+              disabled={verifierar}
+              className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90 disabled:opacity-60"
+            >
+              {verifierar ? t("gate.laserUpp") : t("gate.lasUppMedlem")}
+            </button>
+            <div className="mt-3">
+              <Link href={inloggning} className="text-xs font-semibold text-gold underline hover:opacity-80">
+                {t("gate.lasUppGratis")}
+              </Link>
+            </div>
+            {inteInloggad && (
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground" role="status">
+                {t("gate.inteInloggad")}
+              </p>
+            )}
+            {/* §A.2: lokal progress finns — mjuk migreringsinbjudan */}
+            {lokalProgress && status === "gast" && (
+              <p className="mt-3 rounded-lg bg-gold/10 px-3 py-2 text-xs leading-relaxed text-gold">
+                {t("gate.lokalProgress")}
+              </p>
+            )}
+            <p className="mt-3 text-[11px] text-muted-foreground">
+              {t("gate.sekunder")}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -122,6 +197,9 @@ export function NivaBar({ slug }: { slug: string }) {
           if (markeraKursKlar(slug)) {
             const niv = addXP(50);
             addStjarna();
+            // VÅG 87 (L2): skugg-POST — servern fastställer kursklar:<slug>=50
+            // + stjarna:<slug>=1 (fire-and-forget; gästens 401 sväljs tyst).
+            synkaKursklar(slug);
             setXP(lasXP());
             setStjarnor(lasStjarnor());
             setKlar(true);

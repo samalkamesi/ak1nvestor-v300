@@ -1649,6 +1649,68 @@ export const ORDLISTA = {
     en: "Congratulations — you reached level {niv}! 🎉",
     ar: "تهانينا — بلغت المستوى {niv}! 🎉",
   },
+
+  // ── VÅG 87 (FAS L2): KursGate-egis (serverstyrt kurslås) + XP/progress-
+  // synket. Låsvyn är SSR-default för GRATIS-kursernas kapitel 3+ — medlemmen
+  // låser upp på klienten mot server-verifierad session (en tunn GET-runda);
+  // gästar-läget renderas klart utan fler nätverksanrop.
+  "gate.lasUppMedlem": {
+    sv: "Lås upp (medlem)",
+    en: "Unlock (member)",
+    ar: "افتح (للأعضاء)",
+  },
+  "gate.laserUpp": {
+    sv: "Låser upp…",
+    en: "Unlocking…",
+    ar: "جارٍ الفتح…",
+  },
+  "gate.inteInloggad": {
+    sv: "Ingen aktiv inloggning hittades — skapa ett gratis konto eller logga in så låses hela kursen upp.",
+    en: "No active session found — create a free account or sign in and the whole course unlocks.",
+    ar: "لا توجد جلسة نشطة — أنشئ حسابًا مجانيًا أو سجّل الدخول لتُفتح الدورة كاملة.",
+  },
+  "gate.lokalProgress": {
+    sv: "Du har framsteg sparat på denna enhet — registrera dig gratis för att behålla det.",
+    en: "You have progress saved on this device — register for free to keep it.",
+    ar: "لديك تقدّم محفوظ على هذا الجهاز — سجّل مجانًا للاحتفاظ به.",
+  },
+
+  // Migreringsbannern (våg 87 §A.3): lokal progress → molnkonto + import.
+  "migrer.rubrik": {
+    sv: "Spara dina framsteg i molnet",
+    en: "Save your progress in the cloud",
+    ar: "احفظ تقدّمك في السحابة",
+  },
+  "migrer.textGast": {
+    sv: "Registrera dig för att spara framsteg i molnet + importera lokal progress — dina XP, stjärnor och klara kurser följer med till kontot.",
+    en: "Register to save your progress in the cloud and import your local progress — your XP, stars and completed courses follow you to the account.",
+    ar: "سجّل لحفظ تقدّمك في السحابة واستيراد تقدّمك المحلي — نقاطك ونجومك ودوراتك المكتملة تنتقل إلى حسابك.",
+  },
+  "migrer.textMedlem": {
+    sv: "Du har framsteg sparat på denna enhet. Importera dem till ditt konto — så följer de med mellan enheter.",
+    en: "You have progress saved on this device. Import it to your account and it follows you across devices.",
+    ar: "لديك تقدّم محفوظ على هذا الجهاز. استورده إلى حسابك ليلتزم بك بين الأجهزة.",
+  },
+  "migrer.importera": {
+    sv: "Importera lokal progress",
+    en: "Import local progress",
+    ar: "استورد التقدّم المحلي",
+  },
+  "migrer.importerad": {
+    sv: "✓ Importerad — din progress finns nu i kontot",
+    en: "✓ Imported — your progress now lives in your account",
+    ar: "✓ تم الاستيراد — تقدّمك الآن في حسابك",
+  },
+  "migrer.importFel": {
+    sv: "Importen misslyckades — försök igen.",
+    en: "The import failed — try again.",
+    ar: "فشل الاستيراد — حاول مجددًا.",
+  },
+  "migrer.loggaInLank": {
+    sv: "Logga in / skapa konto →",
+    en: "Sign in / create account →",
+    ar: "سجّل الدخول / أنشئ حسابًا ←",
+  },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

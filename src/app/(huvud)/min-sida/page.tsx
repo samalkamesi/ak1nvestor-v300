@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { MinSida } from "@/components/ak1a/min-sida";
+import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 
 export const metadata: Metadata = pageMetadata({
@@ -22,6 +23,11 @@ const prenumRabattProcent = priser ? Math.round(priser.rabattFas.fas2 * 100) : 0
 export default function MinSidaPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Min Sida" }]}>
+      {/* VÅG 87 (FAS L2 §A.3): migreringsbanner — lokal progress på enheten
+          ⇒ molnkonto + engångs-import (aggregat endast, GDPR-minimerat). */}
+      <div className="mb-6">
+        <MigreraProgressBanner />
+      </div>
       <MinSida prenumNiva={prenumNiva} prenumRabattProcent={prenumRabattProcent} />
     </SeoPageShell>
   );

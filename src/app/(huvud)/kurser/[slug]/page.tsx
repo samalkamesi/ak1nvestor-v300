@@ -6,6 +6,7 @@ import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/se
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { kraverFas } from "@/lib/kurs-access";
 import { medKursOverrides } from "@/lib/kurs-metadata-live";
+import { skapaT } from "@/lib/sprak";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { Fas2Gate } from "@/components/ak1a/fas2-gate";
@@ -245,8 +246,11 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       {/* ── VÅG 78 B1: SSR-säker Fas-gate ──
           Fas 2/3-kurser: Fas2Gate renderar smakprov (kap 1–2) + låst vy i
           SSR-passet och hämtar fullkursen på klienten för behöriga —
-          kapitel 3+ skickas aldrig i statiskt HTML. Gratis-kurser (fas 0):
-          som förut — hela innehållet direkt i KursGate (SSR/first paint). */}
+          kapitel 3+ skickas aldrig i statiskt HTML.
+          VÅG 87 (FAS L2): GRATIS-kurser går via den generaliserade KursGate-
+          egisen — samma smakprov som SSR-bas + låst kort; medlemmen låser
+          upp på klienten mot server-verifierad session (§E kandidat 1: sidan
+          läser ALDRIG session i SSR-passet, ISR-cachen förblir gäst-vyn). */}
       {fas > 0 ? (
         <Fas2Gate
           slug={slug}
@@ -260,7 +264,20 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           fortsattning={forsattning}
         />
       ) : (
-      <KursGate slug={slug} titel={kurs.title}>
+      <KursGate
+        slug={slug}
+        titel={kurs.title}
+        smakprov={
+          <KursArtiklar
+            slug={slug}
+            chapters={smakprov}
+            total={course.chapters.length}
+            lang="sv"
+            rubrik={skapaT("sv")("fas.smakprovRubrik")}
+            fortsattning={forsattning}
+          />
+        }
+      >
       {harQuiz ? (
         <KursSteg
           prenumNiva={prenumNiva}

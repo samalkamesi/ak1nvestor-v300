@@ -1,0 +1,3054 @@
+{
+  "_kalla": "public/deep-courses.json + data/siffror.json + data/blogg/vagkartan-traffprocent.json + data/motorregister.json — genererad av tool-results/llms-generera.mjs; servas av src/lib/seo.tsx (buildLlmsTxt) via /api/llms-txt",
+  "_obs": "Alla tal kommer från de citerade datafilerna — inga påhittade siffror. Kör verktyget igen efter kurstillägg.",
+  "genererat": "2026-09-08",
+  "sokvolymMetod": "Heuristiskt sökvolym-potentialindex (INTE mätdata): poäng = kategorivikt + största termträff (svensk sökvolym-ordning bland finansiella termer: P/E, ROE, EBITDA, ISK, utdelning, skatt, krypto, inflation, ränta, option, DCF …) + 2 p per ytterligare distinkt termträff (tak 8 p). Topp-100-markeringen rangordnar vilka kurser vars frågor har störst sökvolym-potential. Term- och kategorivikter dokumenteras i tool-results/llms-generera.mjs.",
+  "sidhuvud": {
+    "vemVadVarfor": [
+      "VEM: AK1A Research Lab — oberoende utbildningsaktör som lär ut institutionell aktieanalys till privatpersoner, på svenska.",
+      "VAD: 333 kurser i 27 ämnesområden, 102 kanonböcker lästa kapitel för kapitel som 103 BOKMASTER-kurser, 8 211 quiz — plus deterministiska motorer (AKM1, AK1TS, vågfundament, konfluens) och pedagogiska verktyg.",
+      "VARFÖR: ingen konkurrent erbjuder maskinläsbara egna datatillgångar (vågdata med öppet redovisad träffprocent) kombinerat med fullständig kurstäckning — och AK1A ger alltid utbildning, aldrig investeringsråd."
+    ],
+    "datapastanden": [
+      {
+        "text": "AK1A:s vågmotor: 52 % träff på 48 dömda mätningar (de 20 % osatta mätningarna döms aldrig som fel) — öppet redovisad metod, protokoll vagvalidering/1 v1, domdatum 2026-09-04.",
+        "kalla": "data/blogg/vagkartan-traffprocent.json"
+      },
+      {
+        "text": "333 kurser i 27 ämnesområden — varje kurs kapitel för kapitel med quiz.",
+        "kalla": "data/siffror.json"
+      },
+      {
+        "text": "8 211 quiz med sammanlagt 82 110 XP i kunskapstrappan.",
+        "kalla": "data/siffror.json"
+      },
+      {
+        "text": "102 kanonböcker i bokkanonen — 103 BOKMASTER-kurser läser dem kapitel för kapitel (96 kanonverk finns även som kanon-kurser).",
+        "kalla": "data/siffror.json"
+      },
+      {
+        "text": "AKM1: 20 fundamentalvariabler (V01–V20) — från försäljningstillväxt till återköp av egna aktier — var och en med egen kurs.",
+        "kalla": "public/deep-courses.json"
+      },
+      {
+        "text": "AK1TS: teknisk analys i 5 tidshorisonter × 5 teorier × 4 dimensioner — den 25-cellers matrisen har egen kurs.",
+        "kalla": "data/motorregister.json"
+      },
+      {
+        "text": "Vågfundamentmotorn klassar varje AKM1-variabels tidsserie (20 variabler × 5 horisonter per aktie) deterministiskt som impulsvåg, korrigering, basbygge eller osatt.",
+        "kalla": "data/motorregister.json"
+      },
+      {
+        "text": "Vågkartans dom-universum: 12 tickers × 5 horisonter; dom-protokollet fastställdes innan första domen och osatta döms aldrig.",
+        "kalla": "data/blogg/vagkartan-traffprocent.json"
+      },
+      {
+        "text": "Fas 1 är gratis för alltid; fördjupningen byggs ut med 18 Fas 2-kurser och 24 Fas 3-kurser.",
+        "kalla": "data/siffror.json"
+      },
+      {
+        "text": "333 kanoniska frågor med raka svar — exakt en per kurs, hela svaret hämtat ur kursens eget innehåll (aldrig påhittat).",
+        "kalla": "public/deep-courses.json"
+      }
+    ]
+  },
+  "fragor": [
+    {
+      "slug": "vm-03-multipelval",
+      "fraga": "Vilken värderingsmultipel ska man använda — och när?",
+      "svar": "P/E vs EV/EBITDA vs P/S. När vilken multipel är bäst.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-03-multipelval",
+      "poang": 164,
+      "topp100": true
+    },
+    {
+      "slug": "v06-ev-ebitda",
+      "fraga": "Vad är EV/EBITDA och hur räknar man det?",
+      "svar": "Företagsvärde-till-EBITDA. Den mest kompletta värderingsmultiplen — justerar för skulder, kassa och kapitalstruktur.",
+      "kategori": "VÄRDERING",
+      "sokvag": "/kurser/v06-ev-ebitda",
+      "poang": 162,
+      "topp100": true
+    },
+    {
+      "slug": "km-009-pe",
+      "fraga": "Hur räknar man ut P/E-talet — och vad är ett bra P/E?",
+      "svar": "Den mest citerade multiplen — dess styrkor, fällor och varför den varierar mellan sektorer.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-009-pe",
+      "poang": 160,
+      "topp100": true
+    },
+    {
+      "slug": "km-010-evebit",
+      "fraga": "Vad är EV/EBIT — och varför sägs den vara renare än P/E?",
+      "svar": "Företagsvärde över driftsresultat — ignorerar kapitalstruktur och ger jämförbarhet över bolag.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-010-evebit",
+      "poang": 160,
+      "topp100": true
+    },
+    {
+      "slug": "vm-04-cyklisk-justering",
+      "fraga": "Vad är Shiller P/E — cykliskt justerat P/E-tal?",
+      "svar": "CAPE (Cyclically Adjusted P/E). 10-års genomsnitt. Robert Shiller.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-04-cyklisk-justering",
+      "poang": 160,
+      "topp100": true
+    },
+    {
+      "slug": "vm-09-pricetocashflow",
+      "fraga": "Vad är Price-to-Cash-Flow — och varför används det?",
+      "svar": "P/CF — svårare att manipulera än P/E. Kassaflöde vs vinst.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-09-pricetocashflow",
+      "poang": 160,
+      "topp100": true
+    },
+    {
+      "slug": "km-027-pegratio",
+      "fraga": "Vad är PEG-ratio — och när är den bättre än P/E?",
+      "svar": "P/E / tillväxt. Lynchs favorit. När PEG fungerar och missleder.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-027-pegratio",
+      "poang": 158,
+      "topp100": true
+    },
+    {
+      "slug": "v08-ebitda-marginal",
+      "fraga": "Vad är EBITDA-marginal — och vad säger den om ett bolag?",
+      "svar": "EBITDA / omsättning. Hur mycket finns kvar efter driftskostnader (men före ränta, skatt, avskrivningar)?",
+      "kategori": "LÖNSAMHET",
+      "sokvag": "/kurser/v08-ebitda-marginal",
+      "poang": 158,
+      "topp100": true
+    },
+    {
+      "slug": "v09-roe",
+      "fraga": "Hur räknar man ut ROE (Return on Equity) — och vad är en bra nivå?",
+      "svar": "Avkastning på eget kapital. Hur mycket vinst skapar bolaget per krona eget kapital?",
+      "kategori": "LÖNSAMHET",
+      "sokvag": "/kurser/v09-roe",
+      "poang": 156,
+      "topp100": true
+    },
+    {
+      "slug": "km-007-dcf",
+      "fraga": "Hur räknar man ut ett DCF-värde — diskonterade kassaflöden?",
+      "svar": "Framtida kassaflöden diskonterade till idag — den mest teoretiskt rena värderingsmetoden.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-007-dcf",
+      "poang": 154,
+      "topp100": true
+    },
+    {
+      "slug": "vm-11-waccfallor",
+      "fraga": "Vilka fällor finns i WACC-beräkningen?",
+      "svar": "Vanliga misstag med WACC. Beta-instabilitet, riskpremie-debatt.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-11-waccfallor",
+      "poang": 154,
+      "topp100": true
+    },
+    {
+      "slug": "km-028-reverse-dcf",
+      "fraga": "Vad är Reverse DCF — och vad avslöjar det om marknadens förväntningar?",
+      "svar": "Vilken tillväxt implicerar dagens pris? Om marknaden är realistisk.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-028-reverse-dcf",
+      "poang": 150,
+      "topp100": true
+    },
+    {
+      "slug": "vm-06-dividend-discount-model-ddm",
+      "fraga": "Vad är Dividend Discount Model (DDM)?",
+      "svar": "Värdera bolag via framtida utdelningar. Gordon Growth Model.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-06-dividend-discount-model-ddm",
+      "poang": 148,
+      "topp100": true
+    },
+    {
+      "slug": "km-022-goodwill-och-immateriella-tillgangar",
+      "fraga": "Vad är goodwill — och hur ska aktieägaren tolka den?",
+      "svar": "Goodwill-bildning vid uppköp. Nedskrivningstester. Hur goodwill påverkar ROE.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-022-goodwill-och-immateriella-tillgangar",
+      "poang": 146,
+      "topp100": true
+    },
+    {
+      "slug": "km-052-isk",
+      "fraga": "Hur fungerar ISK-skatten — schablonskatt på investeringssparkonto?",
+      "svar": "ISK vs aktiedepå. När lönar det?",
+      "kategori": "SVENSK BOLAGSSKATT & JURIDIK",
+      "sokvag": "/kurser/km-052-isk",
+      "poang": 146,
+      "topp100": true
+    },
+    {
+      "slug": "km-054-ranta",
+      "fraga": "Vad är ränta — priset på pengar — och hur påverkar räntan aktier?",
+      "svar": "Centralbanker, styrränta, DCF och diskonteringsränta.",
+      "kategori": "MAKROEKONOMI & RÄNTA",
+      "sokvag": "/kurser/km-054-ranta",
+      "poang": 144,
+      "topp100": true
+    },
+    {
+      "slug": "v19-kapitalforbranning",
+      "fraga": "Vad är kapitalförbränning och emission-risk?",
+      "svar": "Hur snabbt bolaget bränner pengar — och risken för nyemission som utspäddar dina aktier.",
+      "kategori": "RISK",
+      "sokvag": "/kurser/v19-kapitalforbranning",
+      "poang": 144,
+      "topp100": true
+    },
+    {
+      "slug": "km-050-utdelningsskatt-30",
+      "fraga": "Hur beskattas utdelning — utdelningsskatt 30 %?",
+      "svar": "Beskattning av utdelning vs återköp. V20 i AKM1 1.1.",
+      "kategori": "SVENSK BOLAGSSKATT & JURIDIK",
+      "sokvag": "/kurser/km-050-utdelningsskatt-30",
+      "poang": 142,
+      "topp100": true
+    },
+    {
+      "slug": "ud-01-payout-ratio",
+      "fraga": "Vad är payout ratio — och hur tolkas utdelningsandelen?",
+      "svar": "Utdelning/vinst. Hög = risk.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-01-payout-ratio",
+      "poang": 142,
+      "topp100": true
+    },
+    {
+      "slug": "ud-04-utdelningsfallor",
+      "fraga": "Vilka utdelningsfällor ska aktieägaren se upp för?",
+      "svar": "Hög yield = risk. Sänkningar. Valeant, GE.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-04-utdelningsfallor",
+      "poang": 142,
+      "topp100": true
+    },
+    {
+      "slug": "v10-skuldsattningsgrad",
+      "fraga": "Vad är skuldsättningsgrad — och när är den farlig?",
+      "svar": "Hur mycket skuld bolaget har jämfört med eget kapital. Hög skuld = hög risk i kriser.",
+      "kategori": "STABILITET",
+      "sokvag": "/kurser/v10-skuldsattningsgrad",
+      "poang": 142,
+      "topp100": true
+    },
+    {
+      "slug": "km-002-forvaltningsberattelsen",
+      "fraga": "Vad står det i förvaltningsberättelsen — och varför ska man läsa den?",
+      "svar": "Årets händelser, risker och framtid i textform — och det styrelsen väljer att inte nämna.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-002-forvaltningsberattelsen",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "km-049-bolagsskatt-206",
+      "fraga": "Hur fungerar bolagsskatt 20,6 % i Sverige?",
+      "svar": "Svensk bolagsskatt. Vinst före/efter skatt.",
+      "kategori": "SVENSK BOLAGSSKATT & JURIDIK",
+      "sokvag": "/kurser/km-049-bolagsskatt-206",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "km-051-kapitalvinstskatt",
+      "fraga": "Hur fungerar kapitalvinstskatt vid aktieförsäljning?",
+      "svar": "30% på vinst. 70% avdrag för förlust.",
+      "kategori": "SVENSK BOLAGSSKATT & JURIDIK",
+      "sokvag": "/kurser/km-051-kapitalvinstskatt",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "km-064-utdelningstillvaxt",
+      "fraga": "Vad är utdelningstillväxt — och varför är den viktig?",
+      "svar": "Dividend Aristocrats. Växande utdelning slår hög yield.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/km-064-utdelningstillvaxt",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "ud-05-drip",
+      "fraga": "Vad är DRIP — automatisk återinvestering av utdelning?",
+      "svar": "Dividend Reinvestment Plan. Compounding utan beslut.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-05-drip",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "v03-intaktsdiversifiering",
+      "fraga": "Vad är intäktsdiversifiering och hur mäter man den?",
+      "svar": "Hur bred intäktsbasen är — beroende av en kund, en produkt, eller en marknad är riskfaktorer.",
+      "kategori": "TILLVÄXT",
+      "sokvag": "/kurser/v03-intaktsdiversifiering",
+      "poang": 140,
+      "topp100": true
+    },
+    {
+      "slug": "km-005-eget-kapital-utdelningar",
+      "fraga": "Hur hänger eget kapital och utdelningar ihop i balansräkningen?",
+      "svar": "Vart vinsten tar vägen: utdelning, återinvestering eller aktieåterköp — och hur det bokförs.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-005-eget-kapital-utdelningar",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-015-beta-capm",
+      "fraga": "Vad är beta i CAPM — och hur tolkar man betavärdet?",
+      "svar": "Mät systematisk risk mot marknaden — och varför CAPM är en förenkling som ändå används.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-015-beta-capm",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-016-sharpe-kvot",
+      "fraga": "Hur räknar man ut Sharpe-kvoten — avkastning per risk?",
+      "svar": "Avkastning per enhet risk — två portföljer kan ha samma avkastning, Sharpe skiljer den bättre.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-016-sharpe-kvot",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-017-position-sizing-kelly-kriteriet",
+      "fraga": "Vad är Kelly-kriteriet — och hur stor ska en position vara?",
+      "svar": "Hur stor del av kapitalet ska du satsa på en position? Kelly ger ett matematiskt svar — och dess varning.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-017-position-sizing-kelly-kriteriet",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-033-tailrisk-hedging",
+      "fraga": "Vad är tail-risk — och hur hedge:ar man svansrisken?",
+      "svar": "Skydd mot extrema händelser. Options som försäkring.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-033-tailrisk-hedging",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-057-konjunkturcykler",
+      "fraga": "Hur fungerar konjunkturcykler — och vilka aktier är cykliska?",
+      "svar": "Cykliska vs defensiva sektorer. Identifiera cykelfas.",
+      "kategori": "MAKROEKONOMI & RÄNTA",
+      "sokvag": "/kurser/km-057-konjunkturcykler",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-063-direktavkastning",
+      "fraga": "Vad är direktavkastning — och hur räknar man ut den?",
+      "svar": "Utdelning/kurs. Hög yield = bra eller value trap?",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/km-063-direktavkastning",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "pf-08-isk-vs-aktiedepa",
+      "fraga": "ISK eller aktiedepå — vad ska man välja?",
+      "svar": "Schablonskatt vs kapitalvinst.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-08-isk-vs-aktiedepa",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "pf-13-esgportfolj",
+      "fraga": "Hur bygger man en ESG-portfölj?",
+      "svar": "Bygg portfölj med ESG-fokus. Gröna bolag. Risker och möjligheter.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-13-esgportfolj",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "ud-06-svenska-utdelningsaktier",
+      "fraga": "Vilka svenska utdelningsaktier är klassiker — och varför?",
+      "svar": "Swedbank 6%, H&M 4%, Atlas Copco 2%. Svensk utdelningskultur.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-06-svenska-utdelningsaktier",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "v05-pb",
+      "fraga": "Vad betyder P/B-tal (Price-to-Book)?",
+      "svar": "Pris-till-bokfört värde. Hur mycket betalar du per krona av bolagets nettoförmögenhet?",
+      "kategori": "VÄRDERING",
+      "sokvag": "/kurser/v05-pb",
+      "poang": 138,
+      "topp100": true
+    },
+    {
+      "slug": "km-008-wacc",
+      "fraga": "Vad är WACC och hur räknar man ut den vägda kapitalkostnaden?",
+      "svar": "Beräkna avkastningskrav med hänsyn till både skuld- och equity-kostnad — DCF-motorns bränsle.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-008-wacc",
+      "poang": 136,
+      "topp100": true
+    },
+    {
+      "slug": "km-031-var",
+      "fraga": "Vad är VaR — Value at Risk?",
+      "svar": "Maximal förlust vid 95% konfidens. Begränsningar och fällor.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-031-var",
+      "poang": 136,
+      "topp100": true
+    },
+    {
+      "slug": "sj-05-kapitalforsakring-vs-isk",
+      "fraga": "Kapitalförsäkring eller ISK — vad ska man välja?",
+      "svar": "KF vs ISK. Skillnader, fördelar, nackdelar.",
+      "kategori": "SKATT & JURIDIK",
+      "sokvag": "/kurser/sj-05-kapitalforsakring-vs-isk",
+      "poang": 136,
+      "topp100": true
+    },
+    {
+      "slug": "ud-07-utdelningskalender",
+      "fraga": "Hur fungerar utdelningskalendern — när betalas utdelningen ut?",
+      "svar": "När bolag delar ut. Ex-datum, record date, betalningsdatum.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-07-utdelningskalender",
+      "poang": 136,
+      "topp100": true
+    },
+    {
+      "slug": "km-021-avskrivningsprinciper",
+      "fraga": "Hur fungerar avskrivningar — och hur påverkar de resultatet?",
+      "svar": "Linjär vs degressiv avskrivning. Hur avskrivningsval påverkar resultat och skatt.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-021-avskrivningsprinciper",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "km-066-utdelning-vs-aterkop",
+      "fraga": "Är utdelning eller återköp bäst för aktieägaren?",
+      "svar": "Två sätt att returnera kapital. V20 i AKM1 1.1.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/km-066-utdelning-vs-aterkop",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "pf-10-longshort",
+      "fraga": "Vad är long/short — och hur hedge:ar man en portfölj?",
+      "svar": "Hedga med puts eller short. Risk/reward.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-10-longshort",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "sj-01-utlandsk-kallskatt",
+      "fraga": "Hur fungerar utländsk källskatt på utdelningar?",
+      "svar": "15% källskatt. W-8BEN.",
+      "kategori": "SKATT & JURIDIK",
+      "sokvag": "/kurser/sj-01-utlandsk-kallskatt",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "sj-02-cryptobeskattning",
+      "fraga": "Hur beskattas krypto i Sverige?",
+      "svar": "30% på vinst. Varje affär skattepliktig.",
+      "kategori": "SKATT & JURIDIK",
+      "sokvag": "/kurser/sj-02-cryptobeskattning",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "sj-04-optionsbeskattning",
+      "fraga": "Hur beskattas optioner och pulsoptioner?",
+      "svar": "Personaloptioner: beskattning vid utnyttjande. Kvalificerade vs okvalificerade.",
+      "kategori": "SKATT & JURIDIK",
+      "sokvag": "/kurser/sj-04-optionsbeskattning",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "ud-02-aterinvestering",
+      "fraga": "Vad är återinvestering — utdelningens kraft i det fördolda?",
+      "svar": "Compounding. Rule of 72.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-02-aterinvestering",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "ud-08-speciella-utdelningar",
+      "fraga": "Vad är speciella utdelningar — extra utdelningar utanför ordningen?",
+      "svar": "Extra utdelningar vid uppköp, försäljning. Engångsposter.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-08-speciella-utdelningar",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "vm-05-realoptioner",
+      "fraga": "Vad är realoptioner i företagsvärdering?",
+      "svar": "Värdera flexibilitet. Optioner i verkliga tillgångar. R&D som option.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-05-realoptioner",
+      "poang": 134,
+      "topp100": true
+    },
+    {
+      "slug": "pf-05-utdelningsstrategi",
+      "fraga": "Hur bygger man en utdelningsstrategi steg för steg?",
+      "svar": "Inkomst vs tillväxt. Payout ratio.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-05-utdelningsstrategi",
+      "poang": 132,
+      "topp100": true
+    },
+    {
+      "slug": "km-048-halsovardsektorn",
+      "fraga": "Hur analyserar man hälsovårdsbolag?",
+      "svar": "Medtech: produkt-moat, regulatorisk. Demografisk tailwind.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-048-halsovardsektorn",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "km-070-natmaklare-i-sverige",
+      "fraga": "Hur väljer man nätmäklare i Sverige?",
+      "svar": "Välja nätmäklare. Courtage, ISK, valutakostnad.",
+      "kategori": "AKTIEMARKNADEN I PRAKTIKEN",
+      "sokvag": "/kurser/km-070-natmaklare-i-sverige",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "mk-08-omvand-yield-curve",
+      "fraga": "Vad betyder omvänd yield curve — inverterad räntekurva?",
+      "svar": "När korta räntor > långa. Historisk recession-signal.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-08-omvand-yield-curve",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "rk-15-cykelrisk",
+      "fraga": "Hur analyserar man cykelrisk hos konjunkturkänsliga bolag?",
+      "svar": "Industri, bank, lyx = cykliska. Bygg cykel-resistent portfölj.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-15-cykelrisk",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "v04-ps",
+      "fraga": "Vad betyder P/S-tal (Price-to-Sales) och när används det?",
+      "svar": "Pris-till-omsättning. Hur mycket betalar du per krona försäljning? Enkel värdering för bolag som inte går med vinst.",
+      "kategori": "VÄRDERING",
+      "sokvag": "/kurser/v04-ps",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "v13-patent-ip",
+      "fraga": "Hur värderar man patent och immateriella rättigheter?",
+      "svar": "Patent, varumärken, licenser, know-how — juridiskt skydd mot konkurrenter.",
+      "kategori": "MOAT",
+      "sokvag": "/kurser/v13-patent-ip",
+      "poang": 130,
+      "topp100": true
+    },
+    {
+      "slug": "km-056-centralbanker",
+      "fraga": "Vad gör en centralbank — och hur påverkar besluten börsen?",
+      "svar": "Styrränta, QE/QT, forward guidance.",
+      "kategori": "MAKROEKONOMI & RÄNTA",
+      "sokvag": "/kurser/km-056-centralbanker",
+      "poang": 128,
+      "topp100": true
+    },
+    {
+      "slug": "rk-01-kapitalforbranning",
+      "fraga": "Vad är kapitalförbränning — och hur räknar man runway?",
+      "svar": "Beräkna burn och runway. Emission-risk.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-01-kapitalforbranning",
+      "poang": 128,
+      "topp100": true
+    },
+    {
+      "slug": "km-055-inflation",
+      "fraga": "Vad är inflation — och varför är målet 2 %?",
+      "svar": "KPI, kärninflation. Prissättningsmakt som skydd.",
+      "kategori": "MAKROEKONOMI & RÄNTA",
+      "sokvag": "/kurser/km-055-inflation",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-02-emissionrisk",
+      "fraga": "Vad är emissionsrisk — och hur fungerar utspädning för ägarna?",
+      "svar": "Emissioner utspäder. TERP-beräkning.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-02-emissionrisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-07-valutarisk",
+      "fraga": "Vad är valutarisk för svenska investerare?",
+      "svar": "Exportbolag och svag krona.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-07-valutarisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-08-ranterisk",
+      "fraga": "Vad är ränterisk — och vad är duration?",
+      "svar": "Duration-mismatch. SVB-fallet.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-08-ranterisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-09-koncentrationsrisk",
+      "fraga": "Vad är koncentrationsrisk — kunder, produkter, marknader?",
+      "svar": "Max 5% per position. Kelly.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-09-koncentrationsrisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-10-korrelationsrisk",
+      "fraga": "Vad är korrelationsrisk i portföljen?",
+      "svar": "Korrelation i kriser. Tail-risk.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-10-korrelationsrisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "rk-14-esgrisk",
+      "fraga": "Vad är ESG-risk — miljö och sociala risker i aktier?",
+      "svar": "BP Deepwater, 3M PFAS. ESG → finansiell risk.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-14-esgrisk",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "se-02-halvledarsektorn",
+      "fraga": "Hur analyserar man halvledarbolag?",
+      "svar": "ASML monopol. Cyklisk men moat.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-02-halvledarsektorn",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "se-11-krypto",
+      "fraga": "Hur förhåller man sig till krypto som investering?",
+      "svar": "Volatilt, regulatorisk osäkerhet. V18, V19 dominerar. Anti-casino.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-11-krypto",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "se-12-spel",
+      "fraga": "Hur analyserar man spelbolag — licens och regulation?",
+      "svar": "Licens-moat, regulatorisk risk. Kambi som B2B.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-12-spel",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "v02-arr-tillvaxt",
+      "fraga": "Vad är ARR-tillväxt — återkommande intäkter?",
+      "svar": "Tillväxt i Annual Recurring Revenue — intäkter som kommer tillbaka varje år automatiskt (prenumerationer, licenser, serviceavtal).",
+      "kategori": "TILLVÄXT",
+      "sokvag": "/kurser/v02-arr-tillvaxt",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "v07-bruttomarginal",
+      "fraga": "Vad är bruttomarginal och hur tolkar man den?",
+      "svar": "Bruttovinst / omsättning. Hur mycket finns kvar efter att bolaget betalat för det sålda?",
+      "kategori": "LÖNSAMHET",
+      "sokvag": "/kurser/v07-bruttomarginal",
+      "poang": 126,
+      "topp100": true
+    },
+    {
+      "slug": "bull-a-history-of-boom-and-bust",
+      "fraga": "Vad är huvudbudskapet i boken Bull!?",
+      "svar": "Förstå den fulla bågen 1982–2004: hur en bölvåg föds ur knäckt inflation och fallande diskonteringsränta (V04–V06) · Läsa Volckers seger och augusti 1982 som cykelbottnens facit: maximal pessimism…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/bull-a-history-of-boom-and-bust",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "contrarian-investment-strategies",
+      "fraga": "Vad är huvudbudskapet i boken Contrarian Investment Strategies?",
+      "svar": "Köra Dremans decilbevis — varför lägsta P/E-, P/B- och P/CF-decilerna slog marknaden 1970–1996 med lägre beta · Förstå den psykologiska motorn: affect-heuristiken, anchoring, överreaktion och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/contrarian-investment-strategies",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "financial-statement-analysis-and-security-valuation",
+      "fraga": "Vad är huvudbudskapet i boken Financial Statement Analysis and Security Valuation?",
+      "svar": "Skilja pris från värde — fundamentalanalysens uppdrag enligt Penman och varför den spekulativa ansatsen analyserar marknaden medan den fundamentala analyserar verksamheten · Läsa bokslutet som…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/financial-statement-analysis-and-security-valuation",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "irrational-exuberance",
+      "fraga": "Vad är huvudbudskapet i boken Irrational Exuberance?",
+      "svar": "Efter kursen kan eleven redogöra för bokens kärnbevis: Shillers artikel från 1981 (»Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends?«), där det fullkomliga…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/irrational-exuberance",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "km-045-materialsektorn",
+      "fraga": "Hur analyserar man material- och gruvbolag?",
+      "svar": "Cyklisk, råvaru-exponerad. V03 dämpar volatilitet.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-045-materialsektorn",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "one-up-on-wall-street",
+      "fraga": "Vad är huvudbudskapet i boken One Up on Wall Street?",
+      "svar": "Förstå amatörens verkliga informationsfördel — närhet till vardagen före närhet till nyhetsflödet — och varför institutionella begränsningar öppnar fönster · Skilja produktkärlek från bolagskunskap…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/one-up-on-wall-street",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "rk-05-cykelrisk",
+      "fraga": "Vad är cykelrisk — konjunkturkänslighet hos aktier?",
+      "svar": "Cykliska billiga vid topp, dyra vid botten.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-05-cykelrisk",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "rk-06-regulatorisk-risk",
+      "fraga": "Vad är regulatorisk risk — och hur bedöms den?",
+      "svar": "AML, miljökrav. Bedöma sannolikhet.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-06-regulatorisk-risk",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "rk-11-bedrageririsk",
+      "fraga": "Hur upptäcker man bedrägeririsk i bolagets redovisning?",
+      "svar": "Wirecard, Enron. Red flags.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-11-bedrageririsk",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "rk-12-black-swanrisk",
+      "fraga": "Vad är black swan-risk — och kan man skydda sig?",
+      "svar": "Covid, krig. Antifragilitet.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-12-black-swanrisk",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "rk-13-gdpr-och-datarisk",
+      "fraga": "Hur väger man GDPR- och datarisk i en aktieanalys?",
+      "svar": "Dataintrång och GDPR-böter. Facebook-Cambridge Analytica.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-13-gdpr-och-datarisk",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "the-acquirers-multiple",
+      "fraga": "Vad är huvudbudskapet i boken The Acquirer's Multiple?",
+      "svar": "Förstå arvet från Graham via Greenblatts magiska formel till Carlisles djupvärde-tradition — och hur EN multipl blev en hel bok · Räkna ut EV (börsvärde plus skuld minus kassa) och EBIT steg för…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-acquirers-multiple",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "v18-regulatoriska",
+      "fraga": "Vad är regulatoriska katalysatorer?",
+      "svar": "Kommande lagändringar, godkännanden, eller regleringar som påverkar bolaget positivt eller negativt.",
+      "kategori": "KATALYSATOR",
+      "sokvag": "/kurser/v18-regulatoriska",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "valuation-measuring-managing",
+      "fraga": "Vad är huvudbudskapet i boken Valuation?",
+      "svar": "Efter kursen kan eleven beräkna enterprise value och bygga bryggan till aktievärde, härleda NOPLAT och investerat kapital ur råa rapporter, tillämpa ROIC-formeln och value driver-formeln V = NOPLAT…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/valuation-measuring-managing",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "vm-08-evsales",
+      "fraga": "När används EV/Sales som värderingsmultipel?",
+      "svar": "Företagsvärde / omsättning. När P/S inte räcker.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-08-evsales",
+      "poang": 124,
+      "topp100": true
+    },
+    {
+      "slug": "bf-02-sunk-cost",
+      "fraga": "Vad är sunk cost-felet — hur undviker man det?",
+      "svar": "Fatta beslut oberoende av tidigare kostnad.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-02-sunk-cost",
+      "poang": 122,
+      "topp100": true
+    },
+    {
+      "slug": "km-046-telekomsektorn",
+      "fraga": "Hur analyserar man telekombolag?",
+      "svar": "Infrastruktur-moat, kapitalintensiv, utdelning.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-046-telekomsektorn",
+      "poang": 122,
+      "topp100": true
+    },
+    {
+      "slug": "pf-06-aterinvestering",
+      "fraga": "Vad är återinvestering — portföljens ränta-på-ränta?",
+      "svar": "Rule of 72. Compounding.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-06-aterinvestering",
+      "poang": 122,
+      "topp100": true
+    },
+    {
+      "slug": "se-10-flyg",
+      "fraga": "Hur analyserar man flygbolag som aktier?",
+      "svar": "Extremt cykliska. Bränslekostnad. Låga marginaler.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-10-flyg",
+      "poang": 122,
+      "topp100": true
+    },
+    {
+      "slug": "vm-07-free-cash-flow-yield",
+      "fraga": "Vad är Free Cash Flow Yield — och hur tolkas den?",
+      "svar": "FCF / börsvärde. Buffetts favorit. Ägarens verkliga avkastning.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-07-free-cash-flow-yield",
+      "poang": 122,
+      "topp100": true
+    },
+    {
+      "slug": "analysis-for-financial-management",
+      "fraga": "Vad är huvudbudskapet i boken Analysis for Financial Management?",
+      "svar": "Läsa resultaträkning och balansräkning som en sammanhängande berättelse — och skilja bokförd vinst från ekonomisk vinst · Bygga det fria kassaflödet steg för steg: EBIT × (1 − skattesats) +…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/analysis-for-financial-management",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "competition-demystified",
+      "fraga": "Vad är huvudbudskapet i boken Competition Demystified?",
+      "svar": "Skilja de två böckerna åt: VIG-kursen är värderingsprocessen (EPV-trappan), Competition Demystified är moat-vetenskapen — barriärernas logik och testning i nio steg · Redogöra för strategitänkandets…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/competition-demystified",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "devil-take-the-hindmost",
+      "fraga": "Vad är huvudbudskapet i boken Devil Take the Hindmost?",
+      "svar": "Efter kursen kan eleven återberätta spekulationens historia från Rom till internetbubblan med dess äkta karaktärer och siffror — romerska societates publicanorum, tulpanmanins vindhandel och Semper…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/devil-take-the-hindmost",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "expectations-investing",
+      "fraga": "Vad är huvudbudskapet i boken Expectations Investing?",
+      "svar": "Efter kursen kan eleven förklara Rappaport och Mauboussins tes — att aktiepriset är marknadens samlade prognos och att analysens uppgift är att läsa ut price-implied expectations (PIE) och bedöma om…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/expectations-investing",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "flash-boys",
+      "fraga": "Vad är huvudbudskapet i boken Flash Boys?",
+      "svar": "Efter kursen kan eleven berätta Flash Boys-historien i dess rätta detaljer — Brad Katsuyamas väg från RBC i Toronto till New York, förvärvet av Carlin Financial 2007 som gjorde att hans order…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/flash-boys",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "good-to-great",
+      "fraga": "Vad är huvudbudskapet i boken Good to Great?",
+      "svar": "Förstå forskningsdesignen bakom boken — 1 435 bolag, tratten till elva, kriteriet tre gånger marknaden under femton år efter en övergångspunkt · Behärska jämförelsesettänkandet: direkta jämförelser…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/good-to-great",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "km-047-utilitysektorn",
+      "fraga": "Hur analyserar man bolag inom samhällsservice (utilities)?",
+      "svar": "Monopol, reglerad avkastning, stabil utdelning.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-047-utilitysektorn",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "km-062-blackscholes",
+      "fraga": "Hur fungerar Black-Scholes-formeln för optionsprissättning?",
+      "svar": "Matematiken bakom options-priser.",
+      "kategori": "OPTIONS & DERIVAT",
+      "sokvag": "/kurser/km-062-blackscholes",
+      "poang": 120,
+      "topp100": true
+    },
+    {
+      "slug": "made-in-america",
+      "fraga": "Vad är huvudbudskapet i boken Made in America?",
+      "svar": "Förstå Waltons kärntes — kunden är den ende chefen, och lågt pris är en process, inte en kampanj · Känna EDLP-ekonomin: bruttomarginal bytt mot omsättningshastighet och ROE (V07–V09) · Översätta…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/made-in-america",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "market-wizards",
+      "fraga": "Vad är huvudbudskapet i boken Market Wizards?",
+      "svar": "Efter kursen kan eleven redogöra för kärnslutsatsen i Jack Schwagers Market Wizards — att det inte finns någon enda väg till framgång, men att världens främsta traders delar en uppsättning…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/market-wizards",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "origins-of-the-crash",
+      "fraga": "Vad är huvudbudskapet i boken Origins of the Crash?",
+      "svar": "Efter kursen kan eleven berätta 1990-talets bubbla och 2000-2002 års nedsläpp i dess rätta siffror — Nasdaq 5 048,62 den 10 mars 2000 och 1 114,11 den 9 oktober 2002 (minus 78 procent), S&P 500 1…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/origins-of-the-crash",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "principles-of-corporate-finance",
+      "fraga": "Vad är huvudbudskapet i boken Principles of Corporate Finance?",
+      "svar": "Behärska NPV-regeln och dess filosofi: endast beslut som ökar nuvärdet skapar värde — allt annat är accounting · Diskontera som en andningsövning: nuvärde, annuitet, evighetsannuitet…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/principles-of-corporate-finance",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "stocks-for-the-long-run",
+      "fraga": "Vad är huvudbudskapet i boken Stocks for the Long Run?",
+      "svar": "Efter kursen kan eleven redogöra för kärnbeviset i Jeremy Siegels Stocks for the Long Run: den amerikanska totalavkastningsserien 1802–2020, där aktier realt (efter inflation) avkastat omkring 6,5–7…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/stocks-for-the-long-run",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "tanka-snabbt-och-langsamt",
+      "fraga": "Vad är huvudbudskapet i boken Tänka snabbt och långsamt?",
+      "svar": "Efter kursen kan eleven förklara Kahnemans kärnram — att tänkandet drivs av två system där System 1 är snabbt, automatiskt och associationsbildande medan System 2 är långsamt, medvetet och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/tanka-snabbt-och-langsamt",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "the-black-swan",
+      "fraga": "Vad är huvudbudskapet i boken The Black Swan?",
+      "svar": "Efter kursen kan eleven definiera svarta svanar enligt Talebs trippel — outlier, extrem effekt, retrospektiv förklarbarhet — och redogöra för bokens bärande berättelser med äkta detaljer: kalkonen…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-black-swan",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "the-great-crash-1929",
+      "fraga": "Vad är huvudbudskapet i boken The Great Crash 1929?",
+      "svar": "Efter kursen kan eleven berätta 1929-historien i dess rätta siffror — Dow 381,17 den 3 september 1929 och 41,22 den 8 juli 1932, minus 89 procent, 12,9 miljoner aktier den 24 oktober, 16,4 miljoner…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-great-crash-1929",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "the-psychology-of-money",
+      "fraga": "Vad är huvudbudskapet i boken The Psychology of Money?",
+      "svar": "Efter kursen kan eleven redogöra för Housels huvudtes — att göra bra ifrån sig med pengar har lite med hur smart du är och mycket med hur du beter dig att göra, för finans är ingen hård vetenskap…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-psychology-of-money",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "the-snowball",
+      "fraga": "Vad är huvudbudskapet i boken The Snowball?",
+      "svar": "Efter kursen kan eleven redogöra för Alice Schroeders projekt — fem års arbete, oinskränkt tillgång till arkiv och samtal, och villkoret att hon inte gav Buffett vetorätt över texten — och förklara…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-snowball",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "the-warren-buffett-way",
+      "fraga": "Vad är huvudbudskapet i boken The Warren Buffett Way?",
+      "svar": "Efter kursen kan eleven redogöra för Robert Hagstroms projekt — att ur brev, köp och offentligt material rekonstruera Buffetts process som en lärbart system, första gången 1994 och uppdaterat i två…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-warren-buffett-way",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "var-ekonomi",
+      "fraga": "Vad är huvudbudskapet i boken Vår ekonomi?",
+      "svar": "Förstå ekonomins grundproblem — knapphet, val och alternativkostnad — och marginaltänkandet som styr både hushåll och bolag · Läsa marknadens mekanik: utbud, efterfrågan, elasticitet och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/var-ekonomi",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "you-can-be-a-stock-market-genius",
+      "fraga": "Vad är huvudbudskapet i boken You Can Be a Stock Market Genius?",
+      "svar": "Efter kursen kan eleven förklara Greenblatts grundtes — att överavkastning finns där ingen tittar och att »geni« är kodord för läxan i ignorerade hörn — och identifiera de tvingade säljare som…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/you-can-be-a-stock-market-genius",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "your-money-and-your-brain",
+      "fraga": "Vad är huvudbudskapet i boken Your Money and Your Brain?",
+      "svar": "Efter kursen kan eleven redogöra för Jason Zweigs väg från finansjournalistik (Money magazine, senare Wall Street Journal och redaktör för Grahams The Intelligent Investor) till neuroekonomin, och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/your-money-and-your-brain",
+      "poang": 120,
+      "topp100": false
+    },
+    {
+      "slug": "distress-investing",
+      "fraga": "Vad är huvudbudskapet i boken Distress Investing: Principles and Technique?",
+      "svar": "Distressed investerings fulla logik från långsidan av konkursvärlden: Whitmans aggressive conservatism — kreditvärdighet och balansräkning före resultaträkning, bolaget som stående enhet och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/distress-investing",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "interpretation-of-financial-statements",
+      "fraga": "Vad är huvudbudskapet i boken The Interpretation of Financial Statements?",
+      "svar": "Efter kursen kan eleven öppna vilken svensk årsredovisning som helst och med Grahams metod beräkna netto cirkulerande medel, aktuellt förhållande (V11), snabbförhållandet, skuldsättningsgraden…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/interpretation-of-financial-statements",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "km-059-optionsgrunder",
+      "fraga": "Vad är optioner — och hur fungerar de?",
+      "svar": "Call och put. Premie, strike, förfall.",
+      "kategori": "OPTIONS & DERIVAT",
+      "sokvag": "/kurser/km-059-optionsgrunder",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "misbehaving",
+      "fraga": "Vad är huvudbudskapet i boken Misbehaving?",
+      "svar": "Efter kursen kan eleven berätta beteendekonomins historia med dess rätta årtal, experiment och människor — Thalers syndalista från 1970-talets Cornell (vinsamlaren som vägrade sälja flaskor värda…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/misbehaving",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "mk-02-arbetsloshet",
+      "fraga": "Vad säger arbetslösheten om ekonomin och aktierna?",
+      "svar": "Arbetslöshet, löneinflation, Phillips.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-02-arbetsloshet",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "mk-09-deflation-vs-inflation",
+      "fraga": "Vad är skillnaden mellan deflation och inflation?",
+      "svar": "Deflation farligare än inflation. Japan-exemplet.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-09-deflation-vs-inflation",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "mk-10-oljepris",
+      "fraga": "Hur påverkar oljepriset aktiemarknaden?",
+      "svar": "Oljeprisets påverkan på inflation, tillväxt, valutor.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-10-oljepris",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "quality-of-earnings",
+      "fraga": "Vad är huvudbudskapet i boken Quality of Earnings?",
+      "svar": "Efter kursen kan eleven förklara Thornton O'Gloves huvudtes från Quality of Earnings (1987) — att resultaträkningen aldrig får läsas ensam, utan alltid tillsammans med kassaflödesdata och de…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/quality-of-earnings",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "the-essays-of-warren-buffett",
+      "fraga": "Vad är huvudbudskapet i boken The Essays of Warren Buffett?",
+      "svar": "Efter kursen kan eleven förklara Lawrence Cunninghams projekt — att tematiskt omordna Buffetts ägarbrev från 1977 och framåt till en sammanhängande läxa för företags Amerika — och bokens nio delar…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-essays-of-warren-buffett",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "the-outsiders",
+      "fraga": "Vad är huvudbudskapet i boken The Outsiders?",
+      "svar": "Efter kursen kan eleven förklara Thorndikes tes — att kapitalallokering är VD:ns viktigaste jobb och att de åtta outsider-VD:arna sammanlagt slog S&P 500 med mer än tjugo gånger — och de fem…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-outsiders",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "v11-likviditet",
+      "fraga": "Vad är likviditet och kvickräkningsformeln?",
+      "svar": "Kan bolaget betala sina kortfristiga skulder? Kvickkvot = (omsättningstillgångar − varulager) / kortfristiga skulder.",
+      "kategori": "STABILITET",
+      "sokvag": "/kurser/v11-likviditet",
+      "poang": 118,
+      "topp100": false
+    },
+    {
+      "slug": "km-003-kassaflodesanalysen",
+      "fraga": "Hur läser man en kassaflödesanalys?",
+      "svar": "Kassaflödet visar pengarna som rör sig — obrukbara resultat visar sig här först.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-003-kassaflodesanalysen",
+      "poang": 116,
+      "topp100": false
+    },
+    {
+      "slug": "pc-18-case-oresund",
+      "fraga": "Vad lär fallet Öresund — investmentbolag om aktieanalys?",
+      "svar": "Deep value. V04 NAV-rabatt. Risk: value trap.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-18-case-oresund",
+      "poang": 116,
+      "topp100": false
+    },
+    {
+      "slug": "ts-20-harmoniska-monster",
+      "fraga": "Vad är harmoniska mönster — Gartley, Butterfly?",
+      "svar": "Gartley, Bat, Crab, Butterfly.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-20-harmoniska-monster",
+      "poang": 116,
+      "topp100": false
+    },
+    {
+      "slug": "vm-01-grahams-formel",
+      "fraga": "Hur räknar man med Grahams formel för aktievärde?",
+      "svar": "V = EPS × (8.5 + 2g).",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-01-grahams-formel",
+      "poang": 116,
+      "topp100": false
+    },
+    {
+      "slug": "vm-10-assetbased-valuation",
+      "fraga": "Hur gör man en asset-baserad värdering (substansvärde)?",
+      "svar": "Värdera baserat på nettoförmögenhet. Liquidationsvärde. Grahams cigar butt.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-10-assetbased-valuation",
+      "poang": 116,
+      "topp100": false
+    },
+    {
+      "slug": "a-random-walk-down-wall-street",
+      "fraga": "Vad är huvudbudskapet i boken A Random Walk Down Wall Street?",
+      "svar": "Malkiels bubbelpanorama (tulpaner 1637, South Sea 1720, Nifty Fifty, IT-bubblan 2000, bostadsbubblan 2008); hur tekniska mönster och backtests lurar dig; varför förväntningarna redan sitter i…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/a-random-walk-down-wall-street",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "against-the-gods",
+      "fraga": "Vad är huvudbudskapet i boken Against the Gods?",
+      "svar": "Efter kursen kan eleven berätta riskens historia med dess rätta årtal och människor — Cardanos spelarbok från 1564, Pascal–Fermat-breven sommaren och hösten 1654, Graunts dödslistor 1662, Halleys…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/against-the-gods",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "all-about-asset-allocation",
+      "fraga": "Vad är huvudbudskapet i boken All About Asset Allocation?",
+      "svar": "Planens hierarki: varför allokeringen, inte aktievalet, är portföljens ödesbeslut; riskens två ansikten — kortsiktig volatilitet mot långsiktig kortfallsrisk och inflationens tysta urgröpning av…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/all-about-asset-allocation",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "blue-ocean-strategy",
+      "fraga": "Vad är huvudbudskapet i boken Blue Ocean Strategy?",
+      "svar": "Skilja röda oceaner (kända gränser, kamp om befintlig efterfrågan) från blå (nytt marknadsrum, skapad efterfrågan, irrelevant konkurrens) och översätta skillnaden till AKM1:s V01, V07–V08 och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/blue-ocean-strategy",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "charlie-munger-complete-investor",
+      "fraga": "Vad är huvudbudskapet i boken Charlie Munger: The Complete Investor?",
+      "svar": "Du lär dig skillnaden mellan Almanackans tal-samling och Griffins systematik — och varför den senare är operationsmanualen · Mungers inversionsmetod (Jacobi via Munger: »man muss immer umkehren«)…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/charlie-munger-complete-investor",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "come-into-my-trading-room",
+      "fraga": "Vad är huvudbudskapet i boken Come Into My Trading Room?",
+      "svar": "Efter kursen kan eleven redogöra för Come Into My Trading Rooms plats i Elders författarskap — grunderna i Trading for a Living, den praktiska resan här — och för bokens tre deler: Financial Trading…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/come-into-my-trading-room",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "creative-cash-flow-reporting",
+      "fraga": "Vad är huvudbudskapet i boken Creative Cash Flow Reporting?",
+      "svar": "Efter kursen kan eleven förklara Charles Mulfords och Eugene Comiskeys huvudtes från Creative Cash Flow Reporting — att inte alla kassaflöden är skapade lika, och att den hållbara finansiella…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/creative-cash-flow-reporting",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "elliott-wave-principle",
+      "fraga": "Vad är huvudbudskapet i boken Elliott Wave Principle?",
+      "svar": "Efter kursen kan du: redogöra för Ralph Nelson Elliotts liv, upptäckt och förhållande till Dow-teorin; rita grundmönstret 5-3 med fem impulsvågor och en a-b-c-korrigering och förklara varför formen…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/elliott-wave-principle",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "fibonacci-applications",
+      "fraga": "Vad är huvudbudskapet i boken Fibonacci Applications and Strategies for Traders?",
+      "svar": "Känna historien: Leonardo of Pisa, Liber Abaci 1202 och kaninproblemet som av misstag skapade världens mest beresta talserie · Behärska matematiken: rekursionen, kvoternas konvergens mot 1,618 och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/fibonacci-applications",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "fooled-by-randomness",
+      "fraga": "Vad är huvudbudskapet i boken Fooled by Randomness?",
+      "svar": "Efter kursen kan eleven redogöra för Talebs kärntes — att vi ser utfallet men inte vägen, att överlevande är synliga medan ruinen är osynlig, att sannolikheten för det som INTE hände måste räknas in…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/fooled-by-randomness",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "fooling-some-of-the-people",
+      "fraga": "Vad är huvudbudskapet i boken Fooling Some of the People All of the Time?",
+      "svar": "Efter kursen kan eleven berätta Allied Capital-fallet i sin rätta kronologi — den 15 maj 2002, när den 33-årige Einhorn vid Ira Sohn-konferensen offentligt kortade Allied Capital, ett 1958 grundat…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/fooling-some-of-the-people",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "foretagsvardering-med-fundamental-analys",
+      "fraga": "Vad är huvudbudskapet i boken Företagsvärdering: med fundamental analys?",
+      "svar": "Efter kursen kan eleven läsa en svensk årsredovisning enligt K3/IFRS med kritiska ögon: plocka isär resultaträkning, balansräkning och kassaflödesanalys, beräkna justerat eget kapital (obeskattade…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/foretagsvardering-med-fundamental-analys",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "investment-valuation",
+      "fraga": "Vad är huvudbudskapet i boken Investment Valuation?",
+      "svar": "Efter kursen kan eleven bygga en komplett DCF i tre varianter (DDM, FCFE, FCFF), justera räkenskaper till verkliga kassaflöden (R&D-kapitalisering, arbetskapital, engångsposter), beräkna…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/investment-valuation",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "liars-poker",
+      "fraga": "Vad är huvudbudskapet i boken Liar's Poker?",
+      "svar": "Efter kursen kan eleven berätta Salomon-historien i dess rätta detaljer — Michael Lewis rekryterad 1984 via en London-middag och ett konstigt intervjupass, traineeprogrammet och »the board« där…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/liars-poker",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "manias-panics-and-crashes",
+      "fraga": "Vad är huvudbudskapet i boken Manias, Panics, and Crashes?",
+      "svar": "Efter kursen kan eleven redogöra för Minsky–Kindleberger-cykeln i dess fem faser — displacement, boom, eufori, vinsttagning och panik — och förklara varför krediten är bubblans gemensamma nämnare i…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/manias-panics-and-crashes",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "market-mind-games",
+      "fraga": "Vad är huvudbudskapet i boken Market Mind Games?",
+      "svar": "Efter kursen kan eleven redogöra för Denise Shulls väg från handelsgolvet i Chicago till neuropsykologin vid University of Chicago och konsultpraktiken (Trader Psyches, The Relevance Ring) — och för…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/market-mind-games",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "martin-pring-on-market-momentum",
+      "fraga": "Vad är huvudbudskapet i boken Martin Pring on Market Momentum?",
+      "svar": "Efter kursen kan du: skilja Prings projekt från grannkurserna — Murphy är grafens läsare, Elder är trading-rummet, Pring är BEGREPPET momentum · förklara fysiken: pris är läget, momentum är…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/martin-pring-on-market-momentum",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "of-permanent-value",
+      "fraga": "Vad är huvudbudskapet i boken Of Permanent Value?",
+      "svar": "Förstå Kilpatricks metod: hundra-plus episodkapitel som tillsammans bildar en kronologi — och varför destillation är nödvändig · Läsa Omahas compound-intuition: tid, återinvesteringsränta och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/of-permanent-value",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "reminiscences-of-a-stock-operator",
+      "fraga": "Vad är huvudbudskapet i boken Reminiscences of a Stock Operator?",
+      "svar": "Efter kursen kan eleven redogöra för Reminiscences of a Stock Operators kärna: hur unge Livermore lärde sig läsa bandet i bucket-shopparna och där födde mönstertänkandet; vad han menade med line of…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/reminiscences-of-a-stock-operator",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "se-14-livsmedel",
+      "fraga": "Hur analyserar man livsmedelsbolag?",
+      "svar": "Varumärke + distribution. Inflationsskydd.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-14-livsmedel",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "shoe-dog",
+      "fraga": "Vad är huvudbudskapet i boken Shoe Dog?",
+      "svar": "Förstå skillnaden mellan en framgångssaga och en överlevnadsberättelse — och varför den skillnaden avgör hur du läser grundarminnen som källor · Se kassacykeln inifrån: hur tillväxt äter kassa när…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/shoe-dog",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "technical-analysis-of-stock-trends",
+      "fraga": "Vad är huvudbudskapet i boken Technical Analysis of Stock Trends?",
+      "svar": "Du lär dig Edwards & Magees mönstersystem i dess helhet: chartkonstruktion och trendlinjelogik, vändmönster med exakta kriterier (huvud-och-skuldror, dubbel- och trippeltoppar och bottnar…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/technical-analysis-of-stock-trends",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "teknisk-analys-med-johnny-torssell",
+      "fraga": "Vad är huvudbudskapet i boken Teknisk analys med Johnny Torssell?",
+      "svar": "Förstå vad teknisk analys är och förväntas göra — tre premisser, timing och risk, inte spådom · Läsa trenden enligt definitionen: högre toppar och lågpunkter, tre trendtyper, tre faser och deras…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/teknisk-analys-med-johnny-torssell",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-alchemy-of-finance",
+      "fraga": "Vad är huvudbudskapet i boken The Alchemy of Finance?",
+      "svar": "Efter kursen kan eleven förklara reflexivitetens kärna — deltagarnas biased uppfattning driver beslut som förändrar det fundament uppfattningen gäller, i en sviktande loop istället för en jämvikt —…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-alchemy-of-finance",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-art-of-short-selling",
+      "fraga": "Vad är huvudbudskapet i boken The Art of Short Selling?",
+      "svar": "Kortförsäljningens fulla mekanik: låna, sälja, täcka — borrow-fee, utdelningsskyldighet, recall och buy-in, short squeeze och days to cover; vem som faktiskt kortar (research-drivna fundamental…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-art-of-short-selling",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-big-short",
+      "fraga": "Vad är huvudbudskapet i boken The Big Short?",
+      "svar": "Efter kursen kan eleven berätta The Big Short-historien i dess rätta siffror — Burrys första subprime-swappar i maj 2005 med Goldman Sachs som motpart, Scion Capitals 489 procent netto mellan…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-big-short",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-bogleheads-guide-to-investing",
+      "fraga": "Vad är huvudbudskapet i boken The Bogleheads' Guide to Investing?",
+      "svar": "Differentiera syskonen: Bogle = manifestet (produkten och kostnadsaritmetiken), Ellis = professionen (diagnosen av det aktiva spelet), Bogleheads = HANDBOKEN (ordningen på besluten för…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-bogleheads-guide-to-investing",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-complete-turtletrader",
+      "fraga": "Vad är huvudbudskapet i boken The Complete TurtleTrader?",
+      "svar": "Efter kursen kan eleven redogöra för Michael Covels The Complete TurtleTrader (2007) som den yttre, journalistiska biografin om Turtle-experimentet — och skilja den från Faiths inre…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-complete-turtletrader",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-everything-store",
+      "fraga": "Vad är huvudbudskapet i boken The Everything Store?",
+      "svar": "Förstå skillnaden mellan memoaren och den journalistiska biografin som källor — och hur man väger en enskild berättares version mot dokument och tredje parter · Se hur en affärsidé väljs: webbens 2…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-everything-store",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-five-rules-for-successful-stock-investing",
+      "fraga": "Vad är huvudbudskapet i boken The Five Rules for Successful Stock Investing?",
+      "svar": "Skilja en äkta ekonomisk vallgrav (struktur) från en fejkad (produkt, marknadsandel, lysande VD) med Dorseys fyra moatkällor som kartläggning · Mappa Morningstars fyra moatkällor mot AKM1:s V13…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-five-rules-for-successful-stock-investing",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-hour-between-dog-and-wolf",
+      "fraga": "Vad är huvudbudskapet i boken The Hour Between Dog and Wolf?",
+      "svar": "Efter kursen kan eleven redogöra för John Coates väg från handelsgolvet (Goldman Sachs, Deutsche Bank) till Cambridge-neurovetenskapen och tesen att bubblor och krascher börjar i traders kroppar…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-hour-between-dog-and-wolf",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-intelligent-asset-allocator",
+      "fraga": "Vad är huvudbudskapet i boken The Intelligent Asset Allocator?",
+      "svar": "Bernsteins riskhistoria (1929-1932, 1973-1974, 1966-1982, Japans decennium); geometrisk mot aritmetisk avkastning med räkneexempel; Gordon-ekvationen; standardavvikelsen som riskmått och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-intelligent-asset-allocator",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-little-book-of-value-investing",
+      "fraga": "Vad är huvudbudskapet i boken The Little Book of Value Investing?",
+      "svar": "Tillämpa matvarumentaliteten — betala matvarupris per enhet värde, aldrig parfymeriens berättelsepris · Känna arvet: hur firman Tweedy, Browne växte ur mäklarbud på Wall Street till förvaltare av…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-little-book-of-value-investing",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-master-swing-trader",
+      "fraga": "Vad är huvudbudskapet i boken The Master Swing Trader?",
+      "svar": "Efter kursen kan eleven redogöra för The Master Swing Traders plats i bokmasterns trading-hylla: skillnaden mot Elder (psykologi och regler) är att Farley äger ingenjörskonsten — setup-katalogen…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-master-swing-trader",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-money-game",
+      "fraga": "Vad är huvudbudskapet i boken The Money Game?",
+      "svar": "Efter kursen kan eleven redogöra för The Money Games kärna: bokens tes att börsen är ett spel som spelas mot dig själv — 'you are trying to beat yourself' — och varför 'If you don't know who you…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-money-game",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-most-important-thing",
+      "fraga": "Vad är huvudbudskapet i boken The Most Important Thing?",
+      "svar": "Efter kursen kan eleven skilja första- från andranivåtänkande och formulera icke-konsensusteser med definierad felmekanism; uppskatta inneboende värde som intervall och kräva säkerhetsmarginal…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-most-important-thing",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-new-science-of-technical-analysis",
+      "fraga": "Vad är huvudbudskapet i boken The New Science of Technical Analysis?",
+      "svar": "Efter kursen kan eleven redogöra för bokens ursprung och upphovsman — Thomas R. DeMark, karriär från National Investment Services 1971 via DeMark Investment Advisory 1982 till Market Studies 1994…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-new-science-of-technical-analysis",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-signal-and-the-noise",
+      "fraga": "Vad är huvudbudskapet i boken The Signal and the Noise?",
+      "svar": "Efter kursen kan eleven redogöra för Silvers huvudtes: vi lever i informationsexplosionens tidevarv, men mängden data ökar snabbare än mängden förståelse — »signalen är sanningen, bruset är det som…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-signal-and-the-noise",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-trend-following-bible",
+      "fraga": "Vad är huvudbudskapet i boken The Trend Following Bible?",
+      "svar": "Efter kursen kan eleven redogöra för bokens ursprung och upphovsman — Andrew Abraham, CTA och grundare av Abraham Investment Management, handlare sedan mitten av 1990-talet, med förord av David Druz…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-trend-following-bible",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "the-warren-buffett-portfolio",
+      "fraga": "Vad är huvudbudskapet i boken The Warren Buffett Portfolio?",
+      "svar": "Efter kursen kan eleven redogöra för Robert Hagstroms andra bokprojekt — att ur fokusinvesteringsstrategin göra en vetenskaplig helhet: portföljstrukturen är lika viktig som aktievalet — och skilja…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-warren-buffett-portfolio",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "this-time-is-different",
+      "fraga": "Vad är huvudbudskapet i boken This Time Is Different?",
+      "svar": "Förstå this-time-is-different-syndromet och varför de fyra orden är en kontraindikator · Skilja R&R:s kvantitativa ansats från Kindlebergers berättande cykel och Galbraiths enkelfallshistoria ·…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/this-time-is-different",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "trading-for-a-living",
+      "fraga": "Vad är huvudbudskapet i boken Trading for a Living?",
+      "svar": "Efter kursen kan eleven redogöra för Alexander Elders grundtes — att marknaden är en folkmassa och att trading är ett psykologiskt hantverk snarare än ett intellektuellt — samt för bokens tre M…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/trading-for-a-living",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "trading-in-the-zone",
+      "fraga": "Vad är huvudbudskapet i boken Trading in the Zone?",
+      "svar": "Efter kursen kan eleven redogöra för Trading in the Zones plats i bokmasterns psykologi-spår — differentierat mot Elder-kurserna (Elder äger systemet, Douglas sinnet) — och för Douglas historia…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/trading-in-the-zone",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "value-investing-from-graham-to-buffett",
+      "fraga": "Vad är huvudbudskapet i boken Value Investing: From Graham to Buffett and Beyond?",
+      "svar": "Förstå varför value fungerar — De Bondt–Thalers överreaktion, LSV:s extrapolering och karriärrisken som gör proffs till tvångssäljare · Behärska Grahams arv: Mr Market, säkerhetsmarginal, net-net…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/value-investing-from-graham-to-buffett",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "way-of-the-turtle",
+      "fraga": "Vad är huvudbudskapet i boken Way of the Turtle?",
+      "svar": "Efter kursen kan eleven redogöra för Turtle-experimentets upplägg och satsning — Richard Dennis påstående att trading kan läras ut till vem som helst mot William Eckhardts invändning om medfödd…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/way-of-the-turtle",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "what-works-on-wall-street",
+      "fraga": "Vad är huvudbudskapet i boken What Works on Wall Street?",
+      "svar": "Testa en faktor vetenskapligt med decilportföljer, årlig rebalansering och kontroll för survivorship bias · Köra V04 P/S som bokens starkaste enskilda faktor med äkta decilskillnader i klartext ·…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/what-works-on-wall-street",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "when-genius-failed",
+      "fraga": "Vad är huvudbudskapet i boken When Genius Failed?",
+      "svar": "Efter kursen kan eleven berätta LTCM-historien i dess rätta siffror — 1,25 miljarder dollar i startkapital 1994, nettoavkastningar kring 43 och 41 procent, en balansräkning på cirka 125 miljarder…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/when-genius-failed",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "winning-the-losers-game",
+      "fraga": "Vad är huvudbudskapet i boken Winning the Loser's Game?",
+      "svar": "Förstå loser's game-konceptet via Simon Ramos tennis — proffs vinner poäng, amatörer förlorar dem, och investering är amatör-tennis · Se varför institutionerna förlorar: kostnads-minusräkningen i…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/winning-the-losers-game",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "zero-to-one",
+      "fraga": "Vad är huvudbudskapet i boken Zero to One?",
+      "svar": "Skilja vertikal utveckling (0 till 1: ny teknologi, nya marknader) från horisontell (1 till n: kopiering, globalisering, andelskamper) och översätta skillnaden till V01-tillväxt och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/zero-to-one",
+      "poang": 114,
+      "topp100": false
+    },
+    {
+      "slug": "bf-10-dunningkruger",
+      "fraga": "Vad är Dunning-Kruger-effekten hos investerare?",
+      "svar": "Nybörjare överskattar, experter underskattar. Kunskap = osäkerhet.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-10-dunningkruger",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "encyclopedia-of-chart-patterns",
+      "fraga": "Vad är huvudbudskapet i boken Encyclopedia of Chart Patterns?",
+      "svar": "Du lär dig Bulkowskis hela statistiska system: hur han mätte mönster i bull- och björnmarknader och vad hans performanstabeller faktiskt säger; vändmönstren med siffror (huvud-och-skuldror topp och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/encyclopedia-of-chart-patterns",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "intermarket-analysis",
+      "fraga": "Vad är huvudbudskapet i boken Intermarket Analysis?",
+      "svar": "Efter kursen kan du: förklara Murphys tes — de fyra tillgångsslagen utgör ett system och varje marknad måste läsas i de andras ljus — och skilja den här boken från The Visual Investor (grafläsning…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/intermarket-analysis",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "km-025-pensionsataganden",
+      "fraga": "Hur tolkar man pensionsåtaganden i årsredovisningen?",
+      "svar": "Hur pensioner bokförs. Dolda skulder i pensionsnoter.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-025-pensionsataganden",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "konfluens-varde-moter-vagor",
+      "fraga": "Vad är konfluens — där värde möter vågor?",
+      "svar": "Efter kursen kan du: förklara varför en ensam faktor inte räcker — värdefällan utan vändsignal och prisvågen utan värdegolv · behärska de fem oberoende dimensionerna — värdegolvet, kvaliteten…",
+      "kategori": "EKOSYSTEM",
+      "sokvag": "/kurser/konfluens-varde-moter-vagor",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "pc-09-case-novo-nordisk",
+      "fraga": "Vad lär fallet Novo Nordisk om aktieanalys?",
+      "svar": "V13 + V14 extrem moat. GLP-1.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-09-case-novo-nordisk",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "pc-10-case-ericsson",
+      "fraga": "Vad lär fallet Ericsson om aktieanalys?",
+      "svar": "Cyklisk + teknologi-risk. 5G.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-10-case-ericsson",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "pc-11-case-boliden",
+      "fraga": "Vad lär fallet Boliden — gruvor om aktieanalys?",
+      "svar": "Cyklisk + råvaru. V03 dämpar volatilitet.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-11-case-boliden",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "pc-13-case-ssab",
+      "fraga": "Vad lär fallet SSAB — cyklisk stål om aktieanalys?",
+      "svar": "Nisch (Hardox). V13 moat i commoditiserad bransch.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-13-case-ssab",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "poor-charlies-almanack",
+      "fraga": "Vad är huvudbudskapet i boken Poor Charlie's Almanack?",
+      "svar": "Du lär dig Mungers latticework av mentalmodeller från många discipliner, inversionsprincipen (»Säg mig var jag dör, så går jag dit aldrig«), de viktigaste kognitiva tendenserna med mekanism och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/poor-charlies-almanack",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "the-dhandho-investor",
+      "fraga": "Vad är huvudbudskapet i boken The Dhandho Investor?",
+      "svar": "Efter kursen kan eleven förklara Dhandho-filosofin — asymmetrin mellan begränsad nedsida och stor uppsida — och tillämpa den nio steg stora ramverket: köp existerande bolag (inte startups, V19), i…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-dhandho-investor",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "the-theory-of-investment-value",
+      "fraga": "Vad är huvudbudskapet i boken The Theory of Investment Value?",
+      "svar": "Efter kursen kan eleven härleda och tillämpa Williams nuvärdesformel V0 = Σ Dt/(1+r)^t i alla varianter — evig utdelning V = D/r, evig tillväxt V = D1/(r - g), tvåfasmodellen med terminalvärde och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-theory-of-investment-value",
+      "poang": 112,
+      "topp100": false
+    },
+    {
+      "slug": "ak1ts-vaglarans-hierarki",
+      "fraga": "Hur hänger våglärans hierarki samman i AK1TS?",
+      "svar": "Efter kursen kan du: beräkna momentum på alla fem horisonterna för hand (5 dagar, 63 dagar, 252 dagar, 150 veckor, hela fönstret) och klassa vågen som impulsvåg, korrigering eller basbygge med…",
+      "kategori": "EKOSYSTEM",
+      "sokvag": "/kurser/ak1ts-vaglarans-hierarki",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "akm1-den-kontroversiella-modellen",
+      "fraga": "Vad är AKM1 — och varför kallas modellen kontroversiell?",
+      "svar": "Du lär dig sätta 0–5-poäng på alla 20 AKM1-variabler med konkreta formler och trösklar, redogöra rättvist och exakt för Fama-French-, O'Shaughnessy-, Damodaran- och Graham-positionerna, försvara…",
+      "kategori": "EKOSYSTEM",
+      "sokvag": "/kurser/akm1-den-kontroversiella-modellen",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "common-sense-on-mutual-funds",
+      "fraga": "Vad är huvudbudskapet i boken Common Sense on Mutual Funds?",
+      "svar": "Kostnads-determinismens matematik: hur 2 % avgift äter 44 % av real avkastning på 30 år och över 60 % på 50 år; Sharpes ödmjuka aritmetik (genomsnittet kan inte slå sig själv efter kostnader)…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/common-sense-on-mutual-funds",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "km-012-sum-of-the-parts-sotp",
+      "fraga": "Vad är Sum-of-the-Parts-värdering (SOTP)?",
+      "svar": "Värdera konglomerat och investmentbolag som summan av sina delar — och förstå varför rabatten uppstår.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-012-sum-of-the-parts-sotp",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "km-014-korrelation-diversifiering",
+      "fraga": "Vad är korrelation — och hur fungerar diversifiering?",
+      "svar": "Varför orelaterade tillgångar stabiliserar portföljen — och varför 'diversifiering' är missförstått.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-014-korrelation-diversifiering",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "km-030-margin-of-safety",
+      "fraga": "Vad är margin of safety — Grahams säkerhetsmarginal?",
+      "svar": "Köp under intrinsic value med 30% marginal. Hur beräkna och applicera.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-030-margin-of-safety",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "km-042-fastighetsektorn",
+      "fraga": "Hur analyserar man fastighetsaktier?",
+      "svar": "Fastighetsvärdering: direktavkastning, NAV, räntekänslighet.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-042-fastighetsektorn",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "pc-05-case-volvo-ab",
+      "fraga": "Vad lär fallet Volvo AB om aktieanalys?",
+      "svar": "Cyklisk industri. Elförskjutning.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-05-case-volvo-ab",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "pf-01-portfoljbyggande",
+      "fraga": "Hur bygger man en aktieportfölj från grunden?",
+      "svar": "Diversifierad portfölj. Sektorsfördelning.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-01-portfoljbyggande",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "the-innovators-dilemma",
+      "fraga": "Vad är huvudbudskapet i boken The Innovator's Dilemma?",
+      "svar": "Förstå det fina ledarskapets paradox — varför välskötta bolag dör av god management · Behärska kärndistinktionen sustaining mot disruptive innovation · Se hur value networks låser in…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-innovators-dilemma",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "vm-02-intrinsic-value",
+      "fraga": "Vad är intrinsic value — ett bolags inre värde?",
+      "svar": "Vad intrinsic value är. Margin of safety.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/vm-02-intrinsic-value",
+      "poang": 110,
+      "topp100": false
+    },
+    {
+      "slug": "financial-shenanigans",
+      "fraga": "Vad är huvudbudskapet i boken Financial Shenanigans?",
+      "svar": "Schilits sju shenanigan-kategorier: för tidiga intäkter (channel stuffing, bill-and-hold), fiktiva intäkter (Luckin, ZZZZ Best), intäktsöverföringar (engångsvinster som löpande intäkt)…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/financial-shenanigans",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "km-004-noter",
+      "fraga": "Varför är noterna den dolda informationen i årsredovisningen?",
+      "svar": "Avskrivningsprinciper, pensionsåtaganden, relaterade parter — noterna bär halva sanningen.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-004-noter",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "pf-03-diversifiering",
+      "fraga": "Hur diversifierar man en aktieportfölj på rätt sätt?",
+      "svar": "Orelaterade sektorer. 2008.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-03-diversifiering",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "quantitative-value",
+      "fraga": "Vad är huvudbudskapet i boken Quantitative Value?",
+      "svar": "Förstå varför aktiv förvaltning förlorar — Lake Wobegon-effekten, avgifternas aritmetik och dumb money-paradoxen · Känna igen dina egna kognitiva fällor (konservatism och sample-size neglect) och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/quantitative-value",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "the-little-book-that-beats-the-market",
+      "fraga": "Vad är huvudbudskapet i boken The Little Book That Beats the Market?",
+      "svar": "Räkna Enterprise Value, EBIT-avkastning (EBIT/EV) och ROIC i klartext · Köra magiska formelns rankning steg för steg på egna bolag · Värdera backtestens 30,8 %-siffra med ärliga förbehåll om…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-little-book-that-beats-the-market",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "ud-03-dividend-aristocrats",
+      "fraga": "Vad är Dividend Aristocrats — och finns svenska motsvarigheter?",
+      "svar": "25+ år av höjningar. Coca-Cola, P&G. Hållbarhet.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/ud-03-dividend-aristocrats",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "vagfundament-variablerna-som-tidsserier",
+      "fraga": "Varför är fundamentalvariabler tidsserier — inte nivåer?",
+      "svar": "Efter kursen kan du: förklara varför en poängsatt variabel är en stillbild och vad tidsserietänket tillför; använda de fem horisontnamnen mikro, kort, medellång, lång och mega som begrepp —…",
+      "kategori": "EKOSYSTEM",
+      "sokvag": "/kurser/vagfundament-variablerna-som-tidsserier",
+      "poang": 108,
+      "topp100": false
+    },
+    {
+      "slug": "km-006-kvartalsrapporten",
+      "fraga": "Hur läser man en kvartalsrapport — steg för steg?",
+      "svar": "Q1–Q4-rapporterna och varför säsongseffekter och engångsposter lurar den som bara läser årsredovisningen.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-006-kvartalsrapporten",
+      "poang": 106,
+      "topp100": false
+    },
+    {
+      "slug": "km-011-relativ-vardering",
+      "fraga": "Hur gör man en relativ värdering med jämförbara bolag (peer comps)?",
+      "svar": "Jämför bolagets multiplar mot direkta konkurrenter — och varför 'billig' inte alltid betyder 'köpvärd'.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-011-relativ-vardering",
+      "poang": 106,
+      "topp100": false
+    },
+    {
+      "slug": "km-023-leasing",
+      "fraga": "Hur påverkar IFRS 16 leasing bolagets balansräkning?",
+      "svar": "Hur leasingavtal kapitaliseras på balansräkningen. Påverkan på skuldsättningsgrad.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-023-leasing",
+      "poang": 106,
+      "topp100": false
+    },
+    {
+      "slug": "mk-06-penningpolitik",
+      "fraga": "Vad är penningpolitik — QE och QT?",
+      "svar": "Quantitative easing/tightening. Hur centralbanker expanderar/krymper penningmängd.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-06-penningpolitik",
+      "poang": 106,
+      "topp100": false
+    },
+    {
+      "slug": "km-060-covered-calls",
+      "fraga": "Vad är covered calls — och när ger de avkastning?",
+      "svar": "Sälj call på aktier du äger. Inkomst + capad uppsida.",
+      "kategori": "OPTIONS & DERIVAT",
+      "sokvag": "/kurser/km-060-covered-calls",
+      "poang": 104,
+      "topp100": false
+    },
+    {
+      "slug": "km-001-bokforingens-grunder",
+      "fraga": "Vad är bokföringens grunder — hur bokförs en verksamhet?",
+      "svar": "Dubbel italiensk bokföring, debet/kredit, och hur resultaträkningen knyter an till balansräkningen via eget kapital.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-001-bokforingens-grunder",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "km-053-312reglerna",
+      "fraga": "Vad är 3:12-reglerna för fåmansbolag?",
+      "svar": "Fåmansföretag. Gränsbelopp, huvudregel vs förenklingsregel.",
+      "kategori": "SVENSK BOLAGSSKATT & JURIDIK",
+      "sokvag": "/kurser/km-053-312reglerna",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "pc-20-case-essity",
+      "fraga": "Vad lär fallet Essity — hygienvaror om aktieanalys?",
+      "svar": "V14 + V12 inflationsskyddad moat.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-20-case-essity",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "pf-14-pensionssparande",
+      "fraga": "Hur sparar man till pension i aktier?",
+      "svar": "IPS, pensionsförsäkring. Långsiktigt sparande 30+ år.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-14-pensionssparande",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "the-visual-investor",
+      "fraga": "Vad är huvudbudskapet i boken The Visual Investor?",
+      "svar": "Efter kursen kan du: förklara Murphys tes — priset är den viktigaste informationen och diagrammet är dess naturliga språk — och skilja den här boken från hans lärobok · läsa vilket diagram som helst…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-visual-investor",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "v15-natverkseffekter",
+      "fraga": "Vad är nätverkseffekter i aktieanalys?",
+      "svar": "Betydelsen av bolaget ökar när fler använder det. (Meta, LinkedIn, betalningsnätverk.)",
+      "kategori": "MOAT",
+      "sokvag": "/kurser/v15-natverkseffekter",
+      "poang": 102,
+      "topp100": false
+    },
+    {
+      "slug": "extraordinary-popular-delusions",
+      "fraga": "Vad är huvudbudskapet i boken Extraordinary Popular Delusions?",
+      "svar": "Efter kursen kan eleven redogöra för bokens tre finansmanier i Mackays egen version — tulpanerna (Semper Augustus, värdshushandeln, domstolarnas hasard-domar efter kraschen), Mississippi (John Law…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/extraordinary-popular-delusions",
+      "poang": 100,
+      "topp100": false
+    },
+    {
+      "slug": "km-013-volatilitet-standardavvikelse",
+      "fraga": "Vad är volatilitet — och hur räknar man ut standardavvikelsen?",
+      "svar": "Den vanligaste mätaren på prisförändringars storlek — och varför den fångar bara halva bilden.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-013-volatilitet-standardavvikelse",
+      "poang": 100,
+      "topp100": false
+    },
+    {
+      "slug": "km-061-protective-puts",
+      "fraga": "Vad är protective puts — försäkring av portföljen?",
+      "svar": "Köp put som försäkring. Skyddar nedsida.",
+      "kategori": "OPTIONS & DERIVAT",
+      "sokvag": "/kurser/km-061-protective-puts",
+      "poang": 100,
+      "topp100": false
+    },
+    {
+      "slug": "km-065-dogs-of-the-dow",
+      "fraga": "Vad är Dogs of the Dow-strategin?",
+      "svar": "Köp 10 högsta yield. Filtrera med AKM1.",
+      "kategori": "UTDELNINGSSTRATEGI",
+      "sokvag": "/kurser/km-065-dogs-of-the-dow",
+      "poang": 100,
+      "topp100": false
+    },
+    {
+      "slug": "mk-11-kinaekonomin",
+      "fraga": "Hur fungerar Kina-ekonomin — och varför spelar den roll för svenska aktier?",
+      "svar": "Kinas påverkan på globala marknader. Tillväxt, skulder, geopolitik.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-11-kinaekonomin",
+      "poang": 96,
+      "topp100": false
+    },
+    {
+      "slug": "v16-produktlanseringar",
+      "fraga": "Hur analyserar man produktlanseringar som katalysatorer?",
+      "svar": "Kommande produktlanseringar som kan driva intäkter — nya produkter, nya marknader, nya versioner.",
+      "kategori": "KATALYSATOR",
+      "sokvag": "/kurser/v16-produktlanseringar",
+      "poang": 96,
+      "topp100": false
+    },
+    {
+      "slug": "mk-04-statsobligationer",
+      "fraga": "Vad är statsobligationer — och hur fungerar de tryggaste lånen?",
+      "svar": "Yield curve. Inverterad = recession?",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-04-statsobligationer",
+      "poang": 94,
+      "topp100": false
+    },
+    {
+      "slug": "pf-02-position-sizing",
+      "fraga": "Hur stor ska en enskild aktieposition vara — position sizing?",
+      "svar": "Max 5%. Rätt storlek.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-02-position-sizing",
+      "poang": 94,
+      "topp100": false
+    },
+    {
+      "slug": "km-018-forlustaversion",
+      "fraga": "Vad är förlustaversion — och hur påverkar den investerare?",
+      "svar": "Kahneman & Tverskys prospect theory — och varför vi klamrar oss fast vid förlorare.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-018-forlustaversion",
+      "poang": 92,
+      "topp100": false
+    },
+    {
+      "slug": "mk-07-fiscal-politik",
+      "fraga": "Vad är finanspolitik — och hur påverkar statsbudgeten aktier?",
+      "svar": "Regeringens budget. Underskott, statsskuld, stimulans.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-07-fiscal-politik",
+      "poang": 92,
+      "topp100": false
+    },
+    {
+      "slug": "km-040-banksektorn",
+      "fraga": "Hur analyserar man bankaktier?",
+      "svar": "Bank-specifik AKM1. Skuld är normalt. Kapitaltäckning.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-040-banksektorn",
+      "poang": 90,
+      "topp100": false
+    },
+    {
+      "slug": "km-067-investmentbolag",
+      "fraga": "Vad är investmentbolag — och hur ska man tolka NAV-rabatten?",
+      "svar": "Holding company discount. Varför under NAV.",
+      "kategori": "PRIVATE EQUITY & INVESTMENTBOLAG",
+      "sokvag": "/kurser/km-067-investmentbolag",
+      "poang": 90,
+      "topp100": false
+    },
+    {
+      "slug": "km-069-orderbok-och-prissattning",
+      "fraga": "Hur fungerar orderboken och prissättningen på börsen?",
+      "svar": "Börsen. Buy/sell orders, spread, likviditet.",
+      "kategori": "AKTIEMARKNADEN I PRAKTIKEN",
+      "sokvag": "/kurser/km-069-orderbok-och-prissattning",
+      "poang": 90,
+      "topp100": false
+    },
+    {
+      "slug": "technical-analysis-financial-markets",
+      "fraga": "Vad är huvudbudskapet i boken Technical Analysis of the Financial Markets?",
+      "svar": "Efter kursen kan du: konstruera och läsa stång- och candlestickdiagram med rätt skala per tidshorisont; identifiera trender, stöd/motstånd samt reversal- och fortsättningsmönster med mått och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/technical-analysis-financial-markets",
+      "poang": 90,
+      "topp100": false
+    },
+    {
+      "slug": "ts-13-rsi",
+      "fraga": "Vad är RSI — och hur tolkar man Relative Strength Index?",
+      "svar": "Overbought/oversold, divergens.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-13-rsi",
+      "poang": 90,
+      "topp100": false
+    },
+    {
+      "slug": "japanese-candlestick-charting",
+      "fraga": "Vad är huvudbudskapet i boken Japanese Candlestick Charting?",
+      "svar": "Efter kursen kan du: rita och läsa varje candlestick utifrån öppning, högsta, lägsta och stängning med kropp, skuggor och färg; identifiera och mäta doji-familjen (långbent, gravsten, rickshaw-man)…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/japanese-candlestick-charting",
+      "poang": 88,
+      "topp100": false
+    },
+    {
+      "slug": "rk-03-skuldfalla",
+      "fraga": "Vad är skuldfällan — när blir bolagets skulder farliga?",
+      "svar": "Identifiera ohållbar skuld. Räntetäckning.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-03-skuldfalla",
+      "poang": 88,
+      "topp100": false
+    },
+    {
+      "slug": "ts-14-macd",
+      "fraga": "Vad är MACD — och hur används indikatorn?",
+      "svar": "MACD-linje, signal-linje, histogram.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-14-macd",
+      "poang": 88,
+      "topp100": false
+    },
+    {
+      "slug": "ts-15-bollinger-bands",
+      "fraga": "Vad är Bollinger Bands — och hur används banden?",
+      "svar": "Squeeze, expansion. Volatilitet.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-15-bollinger-bands",
+      "poang": 88,
+      "topp100": false
+    },
+    {
+      "slug": "km-039-pharmasektorn",
+      "fraga": "Hur analyserar man läkemedelsaktier — pharma-sektorn?",
+      "svar": "Pharma-moat via patent. Pipeline-värdering.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-039-pharmasektorn",
+      "poang": 86,
+      "topp100": false
+    },
+    {
+      "slug": "km-043-energisektorn",
+      "fraga": "Hur analyserar man energibolag?",
+      "svar": "Olje-major vs förnybar. Oljepris som cykel-drivare.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-043-energisektorn",
+      "poang": 86,
+      "topp100": false
+    },
+    {
+      "slug": "mk-01-bnp-och-tillvaxt",
+      "fraga": "Vad är BNP — och vad säger tillväxten om aktiemarknaden?",
+      "svar": "BNP, recession. Makro och aktier.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-01-bnp-och-tillvaxt",
+      "poang": 86,
+      "topp100": false
+    },
+    {
+      "slug": "mk-03-handelsbalans",
+      "fraga": "Vad är handelsbalans — och varför spelar den roll för börsen?",
+      "svar": "Export/import. Valuta.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-03-handelsbalans",
+      "poang": 86,
+      "topp100": false
+    },
+    {
+      "slug": "pf-04-rebalansering",
+      "fraga": "Vad är rebalansering — och hur ofta ska man balansera om?",
+      "svar": "Sälj vinnare, köp förlorare.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-04-rebalansering",
+      "poang": 86,
+      "topp100": false
+    },
+    {
+      "slug": "km-032-stresstesting-portfoljen",
+      "fraga": "Hur stress-testar man en aktieportfölj?",
+      "svar": "Simulera kriser: räntehöjning, recession, branschchock.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-032-stresstesting-portfoljen",
+      "poang": 84,
+      "topp100": false
+    },
+    {
+      "slug": "mk-05-geopolitik",
+      "fraga": "Hur påverkar geopolitik aktiemarknaden?",
+      "svar": "Krig, sanktioner. Svenska bolag.",
+      "kategori": "MAKROEKONOMI",
+      "sokvag": "/kurser/mk-05-geopolitik",
+      "poang": 84,
+      "topp100": false
+    },
+    {
+      "slug": "rk-04-likviditetskris",
+      "fraga": "Vad är en likviditetskris — och hur ser den ut i siffrorna?",
+      "svar": "SVB, Credit Suisse. Early warning.",
+      "kategori": "RISKHANTERING",
+      "sokvag": "/kurser/rk-04-likviditetskris",
+      "poang": 84,
+      "topp100": false
+    },
+    {
+      "slug": "ts-11-candlestickmonster",
+      "fraga": "Vilka candlestick-mönster är starkast — och vad signalerar de?",
+      "svar": "Doji, Hammer, Engulfing, Morning Star.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-11-candlestickmonster",
+      "poang": 84,
+      "topp100": false
+    },
+    {
+      "slug": "bollinger-on-bollinger-bands",
+      "fraga": "Vad är huvudbudskapet i boken Bollinger on Bollinger Bands?",
+      "svar": "Efter kursen kan du: berätta historien om varför adaptiva band behövde uppfinnas — och exakt varför fasta procentsband felar · konstruera banden från grunden: 20-dagars enkelt medelvärde ± 2…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/bollinger-on-bollinger-bands",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "km-024-segmentrapportering",
+      "fraga": "Vad är segmentrapportering — och vad avslöjar den om bolaget?",
+      "svar": "Hur bolag delar upp intäkter per segment. Vad segmentnoten avslöjar om moat.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-024-segmentrapportering",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "pf-11-koncentrerad-portfolj",
+      "fraga": "Är en koncentrerad portfölj på 5–10 bolag försvarbar?",
+      "svar": "Buffett/Munger. Få bolag, djup förståelse.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-11-koncentrerad-portfolj",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "pf-12-arsrapportering",
+      "fraga": "Hur gör man en årsrapportering — portfölj-review?",
+      "svar": "Årlig genomgång. Uppdatera AKM1, sälj låg, köp hög.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-12-arsrapportering",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "ts-12-moving-averages",
+      "fraga": "Hur använder man moving averages — glidande medelvärden?",
+      "svar": "50-dagars, 200-dagars, golden cross, death cross.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-12-moving-averages",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "ts-18-chartmonster",
+      "fraga": "Vilka chart-mönster är mest tillförlitliga?",
+      "svar": "Huvud-och-skuldror, trianglar.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-18-chartmonster",
+      "poang": 82,
+      "topp100": false
+    },
+    {
+      "slug": "km-034-drawdownanalys",
+      "fraga": "Vad är drawdown — och hur analyserar man förlustperioder?",
+      "svar": "Maximal nedgång från topp. Psykologi och compounding.",
+      "kategori": "RISKHANTERING & PORTFÖLJTEORI",
+      "sokvag": "/kurser/km-034-drawdownanalys",
+      "poang": 80,
+      "topp100": false
+    },
+    {
+      "slug": "margin-of-safety",
+      "fraga": "Vad är huvudbudskapet i boken Margin of Safety?",
+      "svar": "Efter kursen kan eleven förklara värdeinvesteringens tre pelare — marginal of safety, bottoms-up-analys och konträrt tänkande — och tillämpa dem på verkliga situationer; skilja permanent…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/margin-of-safety",
+      "poang": 80,
+      "topp100": false
+    },
+    {
+      "slug": "se-03-forsvarssektorn",
+      "fraga": "Hur analyserar man försvarsaktier?",
+      "svar": "Långsiktiga kontrakt. Geopolitik.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-03-forsvarssektorn",
+      "poang": 80,
+      "topp100": false
+    },
+    {
+      "slug": "ts-01-elliott-wave",
+      "fraga": "Vad är Elliott Wave — 5-vågs impuls?",
+      "svar": "5-vågs impulsmönster och Fibonacci-retracements.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-01-elliott-wave",
+      "poang": 80,
+      "topp100": false
+    },
+    {
+      "slug": "km-068-wallenbergsfaren",
+      "fraga": "Vad är Wallenberg-sfären — och hur hänger bolagen ihop?",
+      "svar": "Investor AB, Industrivärden. Aktivt ägande.",
+      "kategori": "PRIVATE EQUITY & INVESTMENTBOLAG",
+      "sokvag": "/kurser/km-068-wallenbergsfaren",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "se-01-saassektorn",
+      "fraga": "Hur analyserar man SaaS-bolag?",
+      "svar": "ARR, net retention, Rule of 40.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-01-saassektorn",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "ts-03-fibonacciretracements",
+      "fraga": "Hur använder man Fibonacci-retracements?",
+      "svar": "38.2%, 50%, 61.8% — vilka nivåer som spelar roll.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-03-fibonacciretracements",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "ts-04-fibonacciextensions",
+      "fraga": "Hur använder man Fibonacci-extensions för prismål?",
+      "svar": "161.8%, 261.8% — prismål med Fibonacci.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-04-fibonacciextensions",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "ts-19-fibonaccitidszoner",
+      "fraga": "Vad är Fibonacci-tidszoner?",
+      "svar": "Tids-cykel: 5, 8, 13, 21, 34 dagar.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-19-fibonaccitidszoner",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "ts-21-fibonaccikluster",
+      "fraga": "Vad är Fibonacci-kluster — och varför stärker de zonerna?",
+      "svar": "När flera Fibonacci-nivåer konvergerar — starkare stöd/motstånd.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-21-fibonaccikluster",
+      "poang": 78,
+      "topp100": false
+    },
+    {
+      "slug": "km-038-techsektorn",
+      "fraga": "Hur analyserar man tech-aktier?",
+      "svar": "Nätverkseffekter, IP, skalbarhet, Rule of 40.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-038-techsektorn",
+      "poang": 76,
+      "topp100": false
+    },
+    {
+      "slug": "pc-04-case-investor-ab",
+      "fraga": "Vad lär fallet Investor AB om aktieanalys?",
+      "svar": "NAV-rabatt och aktivt ägande.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-04-case-investor-ab",
+      "poang": 76,
+      "topp100": false
+    },
+    {
+      "slug": "security-analysis",
+      "fraga": "Vad är huvudbudskapet i boken Security Analysis?",
+      "svar": "Efter kursen kan eleven tillämpa Graham & Dodds urvalsmetodik: beräkna räntetäckning, normalisera resultat över en konjunkturcykel, genomskåda intäktsredovisningens vanligaste trick, värdera…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/security-analysis",
+      "poang": 76,
+      "topp100": false
+    },
+    {
+      "slug": "the-intelligent-investor",
+      "fraga": "Vad är huvudbudskapet i boken The Intelligent Investor?",
+      "svar": "Boken kapitel för kapitel — komplett täckning av Grahams klassiker med quiz, insikter och utmaningar per kapitel.",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/the-intelligent-investor",
+      "poang": 74,
+      "topp100": false
+    },
+    {
+      "slug": "ts-16-stod-och-motstand",
+      "fraga": "Hur hittar man stöd och motstånd i en graf?",
+      "svar": "Varför priser studsar. Psykologi, orderbok.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-16-stod-och-motstand",
+      "poang": 74,
+      "topp100": false
+    },
+    {
+      "slug": "pc-02-case-astrazeneca",
+      "fraga": "Vad lär fallet AstraZeneca om aktieanalys?",
+      "svar": "Värdering av pharma-pipeline. V13 patent.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-02-case-astrazeneca",
+      "poang": 72,
+      "topp100": false
+    },
+    {
+      "slug": "ts-02-elliott-wave",
+      "fraga": "Vad är Elliott Wave — 3-vågs korrektion?",
+      "svar": "Korrektionsmönster: zigzag, flat, triangle.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-02-elliott-wave",
+      "poang": 72,
+      "topp100": false
+    },
+    {
+      "slug": "ts-17-trendlinjer",
+      "fraga": "Hur ritas och tolkas trendlinjer?",
+      "svar": "Rita giltiga trendlinjer.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-17-trendlinjer",
+      "poang": 72,
+      "topp100": false
+    },
+    {
+      "slug": "ts-22-elliott-wave",
+      "fraga": "Hur fungerar Elliott Wave över multipla tidshorisonter?",
+      "svar": "Hur Elliott-vågor på olika tidshorisonter relaterar till varandra.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-22-elliott-wave",
+      "poang": 72,
+      "topp100": false
+    },
+    {
+      "slug": "km-058-valutor",
+      "fraga": "Hur påverkar valutor svenska aktier och rapporter?",
+      "svar": "Valutor och svenska investeringar. Svag krona.",
+      "kategori": "MAKROEKONOMI & RÄNTA",
+      "sokvag": "/kurser/km-058-valutor",
+      "poang": 70,
+      "topp100": false
+    },
+    {
+      "slug": "se-07-detailhandel",
+      "fraga": "Hur analyserar man detaljhandel och e-handel som aktier?",
+      "svar": "Skala-moat. Category killer vs nisch. E-handel-disruption.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-07-detailhandel",
+      "poang": 70,
+      "topp100": false
+    },
+    {
+      "slug": "v14-varumarke",
+      "fraga": "Hur värderar man varumärke och kundlojalitet?",
+      "svar": "Styrkan i varumärket — kan bolaget ta högre pris än konkurrenterna?",
+      "kategori": "MOAT",
+      "sokvag": "/kurser/v14-varumarke",
+      "poang": 70,
+      "topp100": false
+    },
+    {
+      "slug": "bf-05-ankareffekt",
+      "fraga": "Vad är ankareffekten — när inköpspriset är irrelevant?",
+      "svar": "Första priset = referens. 'Averaging down' fara.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-05-ankareffekt",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "km-020-ankareffekt",
+      "fraga": "Vad är ankareffekt — och hur undviker man den?",
+      "svar": "Det första priset vi ser på en aktie blir en referenspunkt — även när det inte borde göra det.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-020-ankareffekt",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "km-041-industrisektorn",
+      "fraga": "Hur analyserar man industriaktier?",
+      "svar": "Industri-moat via process, skala, varumärke.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-041-industrisektorn",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "km-044-konsumentsektorn",
+      "fraga": "Hur analyserar man konsumentaktier?",
+      "svar": "Varumärke-moat, fast fashion vs premium, e-handel.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/km-044-konsumentsektorn",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "ts-08-volymanalys",
+      "fraga": "Hur tolkar man volym i teknisk analys?",
+      "svar": "Volym bekräftar pris. Wyckoff. OBV.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-08-volymanalys",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "ts-09-volymprofiler",
+      "fraga": "Vad är VPOC och volymprofiler?",
+      "svar": "Volume Profile, Point of Control, Value Area.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-09-volymprofiler",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "ts-23-volume-spread-analysis-vsa",
+      "fraga": "Vad är Volume Spread Analysis (VSA)?",
+      "svar": "Tom Williams metod. Hur spridning mellan volym och pris avslöjar institutionell aktivitet.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-23-volume-spread-analysis-vsa",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "ts-24-order-flow",
+      "fraga": "Vad är order flow — och hur läser man marknadsdjupet?",
+      "svar": "Läsa orderboken. Bid/ask-storlek, iceberg-ordrar, limit-ordrar.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-24-order-flow",
+      "poang": 68,
+      "topp100": false
+    },
+    {
+      "slug": "100-baggers",
+      "fraga": "Vad är huvudbudskapet i boken 100 Baggers?",
+      "svar": "Du lär dig Mayers 365-bolagsstudie (1962–2014), de två motorerna bakom varje 100-bagger (EPS-tillväxt och multipel-expansion), compounding-matematiken (100x ≈ 20 %/år i cirka 25 år) och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/100-baggers",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "pc-03-case-swedbank",
+      "fraga": "Vad lär fallet Swedbank om aktieanalys?",
+      "svar": "Bank-specifik AKM1. V10 för banker.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-03-case-swedbank",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "se-05-lyxsektorn",
+      "fraga": "Hur analyserar man lyxvarumärken som aktier?",
+      "svar": "Varumärke = allt. Konstgjord brist.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-05-lyxsektorn",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "se-06-finanssektorn",
+      "fraga": "Hur analyserar man försäkringsbolag?",
+      "svar": "Försäkring: float-moat. Asset management: AUM-nätverk.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-06-finanssektorn",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "se-08-media",
+      "fraga": "Hur analyserar man medieföretag och streaming-bolag?",
+      "svar": "Innehålls-moat (Disney, Netflix). Streaming-disruption.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-08-media",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "se-15-logistik",
+      "fraga": "Vad kännetecknar logistiksektorn — nätverk — som investering?",
+      "svar": "Nätverkseffekter (FedEx, UPS). Infrastruktur-moat.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-15-logistik",
+      "poang": 66,
+      "topp100": false
+    },
+    {
+      "slug": "pc-15-case-kambi",
+      "fraga": "Vad lär fallet Kambi — tech-nisch om aktieanalys?",
+      "svar": "V02 ARR + V13 process. V19 bränning.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-15-case-kambi",
+      "poang": 64,
+      "topp100": false
+    },
+    {
+      "slug": "bf-01-tillganglighetsfalla",
+      "fraga": "Vad är tillgänglighetsfällan i investerande?",
+      "svar": "Recency bias. Överviktar nylig info.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-01-tillganglighetsfalla",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "bf-04-investera-som-en-robot",
+      "fraga": "Hur investerar man som en robot — utan känslor?",
+      "svar": "Regler under stress. Buffett.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-04-investera-som-en-robot",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "bf-09-haloeffekt",
+      "fraga": "Vad är halo-effekten i aktieanalys?",
+      "svar": "En bra egenskap (t.ex. varumärke) gör oss positiva till allt om bolaget.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-09-haloeffekt",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "bf-11-kognitiv-bias",
+      "fraga": "Vilka kognitiva biases påverkar investerare — komplett lista?",
+      "svar": "Alla kognitiva biaser som påverkar investeringar. 20+ typer.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-11-kognitiv-bias",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "km-019-bekraftelsefalla",
+      "fraga": "Vad är bekräftelsefällan (confirmation bias)?",
+      "svar": "Konfirmationsbias: vi noterar bevis som stöder vår tes och ignorerar det som talar emot.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-019-bekraftelsefalla",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "portfolj-ekosystemet",
+      "fraga": "Hur går man från enskild aktie till portfölj — 5×5×4-ekosystemet?",
+      "svar": "Hur enskilda aktieanalyser vägs samman till en portföljsamlad bild med vågprofil per horisont.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/portfolj-ekosystemet",
+      "poang": 60,
+      "topp100": false
+    },
+    {
+      "slug": "km-029-scenarioanalys",
+      "fraga": "Hur gör man en scenarioanalys av en aktie?",
+      "svar": "Tre scenarier med sannolikheter. Vägt värde. Hantera osäkerhet.",
+      "kategori": "VÄRDERINGSMETODER",
+      "sokvag": "/kurser/km-029-scenarioanalys",
+      "poang": 56,
+      "topp100": false
+    },
+    {
+      "slug": "bf-07-framstegseffekt",
+      "fraga": "Vad är framstegseffekten — progress bias?",
+      "svar": "Vi fortsätter beteenden som belönats tidigare, även när de slutar fungera.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-07-framstegseffekt",
+      "poang": 54,
+      "topp100": false
+    },
+    {
+      "slug": "km-035-flockbeteende",
+      "fraga": "Vad är flockbeteende på börsen — herd behavior?",
+      "svar": "Herd mentality, FOMO. Dot-com, Bitcoin, GameStop.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-035-flockbeteende",
+      "poang": 54,
+      "topp100": false
+    },
+    {
+      "slug": "pc-12-case-skf",
+      "fraga": "Vad lär fallet SKF — industri-moat om aktieanalys?",
+      "svar": "V13 + V14. Premium-pris = stabil bruttomarginal.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-12-case-skf",
+      "poang": 54,
+      "topp100": false
+    },
+    {
+      "slug": "pc-19-case-hoganas",
+      "fraga": "Vad lär fallet Höganäs — järnpulver-monopol om aktieanalys?",
+      "svar": "V13 + V15 extrem moat i nisch.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-19-case-hoganas",
+      "poang": 54,
+      "topp100": false
+    },
+    {
+      "slug": "common-stocks-uncommon-profits",
+      "fraga": "Vad är huvudbudskapet i boken Common Stocks and Uncommon Profits?",
+      "svar": "Efter kursen kan eleven tillämpa Fishers femton punkter för att identifiera enastående tillväxtbolag, genomföra scuttlebutt-intervjuer med kunder, konkurrenter, leverantörer och före detta…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/common-stocks-uncommon-profits",
+      "poang": 50,
+      "topp100": false
+    },
+    {
+      "slug": "km-026-relaterade-parter",
+      "fraga": "Vad är relaterade parter — och varför är de en riskflagga?",
+      "svar": "Transaktioner med ägare, VD och dotterbolag. Red flags i relaterade-part-noten.",
+      "kategori": "BOKFÖRING & ÅRSREDOVISNING",
+      "sokvag": "/kurser/km-026-relaterade-parter",
+      "poang": 46,
+      "topp100": false
+    },
+    {
+      "slug": "v12-intaktsstabilitet",
+      "fraga": "Vad är intäktsstabilitet i fundamentalanalys?",
+      "svar": "Hur förutsägbara intäkterna är. Återkommande (ARR) > kontrakt > engångs.",
+      "kategori": "STABILITET",
+      "sokvag": "/kurser/v12-intaktsstabilitet",
+      "poang": 46,
+      "topp100": false
+    },
+    {
+      "slug": "sj-03-bolagsstamma-och-rostratt",
+      "fraga": "Vad händer på bolagsstämma — och vad betyder rösträtten?",
+      "svar": "A/B-aktier, rösträtt, stämmor.",
+      "kategori": "SKATT & JURIDIK",
+      "sokvag": "/kurser/sj-03-bolagsstamma-och-rostratt",
+      "poang": 44,
+      "topp100": false
+    },
+    {
+      "slug": "pf-07-krishantering",
+      "fraga": "Hur hanterar man en börskris som investerare?",
+      "svar": "Fall 30%: panik eller möjlighet?",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-07-krishantering",
+      "poang": 40,
+      "topp100": false
+    },
+    {
+      "slug": "pf-09-taxloss-harvesting",
+      "fraga": "Vad är tax-loss harvesting — och när lönar det sig?",
+      "svar": "Sälj förlorare före årsskiftet. 30-dagarsregeln.",
+      "kategori": "PORTFÖLJHANTERING",
+      "sokvag": "/kurser/pf-09-taxloss-harvesting",
+      "poang": 40,
+      "topp100": false
+    },
+    {
+      "slug": "v20-aterekop-egna-aktier",
+      "fraga": "Hur tolkar man återköp av egna aktier?",
+      "svar": "Hur du bedömer om återköp av egna aktier skapar värde eller förstör det — och varför V20 är AKM1:s 20:e indikator.",
+      "kategori": "KAPITALSTRUKTUR",
+      "sokvag": "/kurser/v20-aterekop-egna-aktier",
+      "poang": 40,
+      "topp100": false
+    },
+    {
+      "slug": "v01-forsaljningstillvaxt",
+      "fraga": "Vad är försäljningstillväxt och varför spelar den roll för en aktie?",
+      "svar": "Omsättningstillväxt jämfört med föregående år — den viktigaste tillväxtindikatorn.",
+      "kategori": "TILLVÄXT",
+      "sokvag": "/kurser/v01-forsaljningstillvaxt",
+      "poang": 34,
+      "topp100": false
+    },
+    {
+      "slug": "se-04-logistiksektorn",
+      "fraga": "Hur analyserar man logistikbolag?",
+      "svar": "Nätverkseffekter. E-handel.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-04-logistiksektorn",
+      "poang": 30,
+      "topp100": false
+    },
+    {
+      "slug": "se-09-bil",
+      "fraga": "Hur analyserar man bilaktier — el och disruption?",
+      "svar": "Disruption (Tesla), cykel, kapitalintensiv. Elförskjutning.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-09-bil",
+      "poang": 30,
+      "topp100": false
+    },
+    {
+      "slug": "se-13-utbildning",
+      "fraga": "Hur analyserar man utbildningsbolag?",
+      "svar": "ARR-modell, regering-kund. V12 stabilitet.",
+      "kategori": "SEKTORANALYS",
+      "sokvag": "/kurser/se-13-utbildning",
+      "poang": 30,
+      "topp100": false
+    },
+    {
+      "slug": "v17-avtal-partnerskap",
+      "fraga": "Hur värderar man avtal och partnerskap?",
+      "svar": "Stora kundavtal, partner-avtal, distribution-deals som kan driva intäkter.",
+      "kategori": "KATALYSATOR",
+      "sokvag": "/kurser/v17-avtal-partnerskap",
+      "poang": 30,
+      "topp100": false
+    },
+    {
+      "slug": "bf-03-mental-accounting",
+      "fraga": "Vad är mental accounting — mentala konton för pengar?",
+      "svar": "Olika fickor. Hus-pengar.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-03-mental-accounting",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "bf-06-tillganglighetsheuristik",
+      "fraga": "Vad är tillgänglighetsheuristiken?",
+      "svar": "Vi överviktar lättillgänglig information.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-06-tillganglighetsheuristik",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "bf-08-priming",
+      "fraga": "Vad är priming — omedvetna influenser vid beslut?",
+      "svar": "Hur miljön påverkar beslut utan att vi märker det.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/bf-08-priming",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "km-036-overconfidence",
+      "fraga": "Vad är overconfidence — övertro hos investerare?",
+      "svar": "90% tror de slår marknaden. Ödmjukhet som edge.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-036-overconfidence",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "km-037-disposition-effect",
+      "fraga": "Vad är disposition effect — varför behåller man förlorare?",
+      "svar": "Sälj vinnare, behåll förlorare. Vanligaste orsaken till underprestation.",
+      "kategori": "BETEENDEFINANS",
+      "sokvag": "/kurser/km-037-disposition-effect",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "ts-05-gannvinklar",
+      "fraga": "Vad är Gann-vinklar i teknisk analys?",
+      "svar": "1×1, 2×1 vinklar. Tid och pris konvergerar.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-05-gannvinklar",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "ts-06-ganncyklar",
+      "fraga": "Vad är Gann-cyklar — tidsanalyser?",
+      "svar": "60-årscykel, 20-årscykel, 90-dagarscykel.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-06-ganncyklar",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "ts-07-lucastalserie",
+      "fraga": "Vad är Lucas-talserien — och hur används den i trading?",
+      "svar": "Lucas-tal som tids-cykel-indikatorer.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-07-lucastalserie",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "ts-10-ak1ts-25cellers-matris",
+      "fraga": "Vad är AK1TS 25-cellers matris — 5 horisonter × 5 teorier?",
+      "svar": "5 teorier × 5 tidshorisonter = konfluens.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-10-ak1ts-25cellers-matris",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "ts-25-market-profile",
+      "fraga": "Vad är Market Profile — och hur används det?",
+      "svar": "TPO (Time Price Opportunity). Value area, POC, auction market theory.",
+      "kategori": "AK1TS FÖRDJUPNING",
+      "sokvag": "/kurser/ts-25-market-profile",
+      "poang": 24,
+      "topp100": false
+    },
+    {
+      "slug": "pc-01-case-atlas-copco",
+      "fraga": "Vad lär fallet Atlas Copco om aktieanalys?",
+      "svar": "Fyll i alla 20 AKM1 1.1-variabler för Atlas Copco.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-01-case-atlas-copco",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-06-case-hm",
+      "fraga": "Vad lär fallet H&M om aktieanalys?",
+      "svar": "V14 urholkas. V07 som indikator.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-06-case-hm",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-07-case-sinch",
+      "fraga": "Vad lär fallet Sinch om aktieanalys?",
+      "svar": "V19 + V10 = katastrof.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-07-case-sinch",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-08-case-precise-biometrics",
+      "fraga": "Vad lär fallet Precise Biometrics om aktieanalys?",
+      "svar": "Full reproducerbar analys. Alla 20 variabler.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-08-case-precise-biometrics",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-14-case-electrolux",
+      "fraga": "Vad lär fallet Electrolux — disruption om aktieanalys?",
+      "svar": "V14 hotas. V07 som varning.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-14-case-electrolux",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-16-case-beijer-ref",
+      "fraga": "Vad lär fallet Beijer Ref — kyl-distribution om aktieanalys?",
+      "svar": "V15 skala + V12 stabilitet = compounder.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-16-case-beijer-ref",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "pc-17-case-sandvik",
+      "fraga": "Vad lär fallet Sandvik — verktyg om aktieanalys?",
+      "svar": "V13 + V14. Premium-pris dämpar cykel.",
+      "kategori": "PRAKTISKA CASE",
+      "sokvag": "/kurser/pc-17-case-sandvik",
+      "poang": 18,
+      "topp100": false
+    },
+    {
+      "slug": "how-to-make-money-in-stocks",
+      "fraga": "Vad är huvudbudskapet i boken How to Make Money in Stocks?",
+      "svar": "Efter kursen kan eleven köra hela CAN SLIM-processen själv: skärma fram kandidater med kvartals- och årsvis vinsttillväxt (C och A), identifiera det nya som driver rusningen (N), bedöma utbud och…",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/how-to-make-money-in-stocks",
+      "poang": 14,
+      "topp100": false
+    },
+    {
+      "slug": "mina-basta-investeringar",
+      "fraga": "Vad är huvudbudskapet i boken Mina bästa investeringar?",
+      "svar": "Boken kapitel för kapitel — komplett täckning av Lynchs klassiker med quiz, insikter och utmaningar per kapitel.",
+      "kategori": "BOKMASTER",
+      "sokvag": "/kurser/mina-basta-investeringar",
+      "poang": 14,
+      "topp100": false
+    }
+  ]
+}

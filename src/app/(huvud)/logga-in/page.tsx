@@ -3,6 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { MedlemInloggning } from "@/components/ak1a/medlem-inloggning";
 import { LoggaIn } from "@/components/ak1a/logga-in";
+import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-dynamic";
@@ -33,6 +34,12 @@ export default function LoggaInPage() {
       <p className="mt-4 text-center text-sm text-muted-foreground">
         Ditt konto följer dig mellan enheter — logga in var som helst.
       </p>
+      {/* VÅG 87 (FAS L2 §A.3): migreringsbanner — lokal progress på enheten
+          ⇒ registrera/lås molnet + import-knapp (formuläret sitter på sidan,
+          därför ingen extra inloggningslänk). */}
+      <div className="mt-8">
+        <MigreraProgressBanner lankTillLoggaIn={false} />
+      </div>
       {/* Fall-back-sektion: gäster utan konto (mjuk migrering, styrelsens L1:
           gamla localStorage-medlemmar får gäst-läget kvar tills de registrerar). */}
       <section className="mt-14 border-t border-gold/15 pt-10">

@@ -311,3 +311,14 @@ spara→POST, toast, logg-lista. Materialstil = befintliga paneler.
 
 Båda delar: max parallella agenter, src via Write/Edit, grön svit+vakten
 + build krav, commit separat per del.
+
+## TILLÄGG VÅG 80c — UTVECKLINGSPANEL ("följa allt tillsammans", kunddirektiv)
+
+Kunden vill följa utvecklingen från telefonen utan dator. BESLUT: admin-
+flik "Utveckling 📡" — visar (1) worklog.md senaste sektionerna (läses
+server-side, renderas läsbart), (2) senaste systemhändelser (typ, tid,
+meddelande-truncat — inga hemligheter), (3) statuskort: lagerrader,
+korpus täckning (via /api/forskningslage-mönstret läs ur MÖS-kartan om
+billigt, annars räkna publicerade), senaste deploy-commit (git-log
+runtime är inte möjligt på Vercel — visa Senaste aktivitet ur events
+i stället). requireAdmin-läsning. Mobilanpassad (telefon först!).

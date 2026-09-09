@@ -9765,3 +9765,31 @@ lösenord → 401 · /studio → 200 och panelen i prod-bundlen (chunk innehåll
 "Agentens minne"). Testfilen raderad efteråt; backup kvar som bevis.
 Src endast via Write/Edit; akm2/vagfundament/.env* orörda (lösenordet lästes
 endast i serverns eget shell för curl, aldrig loggat).
+
+## VÅG 84 — STUDIO 100x LEVER (2026-09-09, 6ff0fb4): fem block, 5 agenter
+
+**A VISUELLT Z-PARITET:** tema-växlare (mörk marin/ljus paper, T-tangent),
+Ctrl/Cmd+K-kommandopalett (sök + kör), auto-scroll med "↓Nytt"-knapp +
+olästa-räknare, meddelandesökning med mark+navigation, chattexport till
+markdown, tokenräknare mobil-säkrad.
+
+**B MULTI-SESSION-TABBAR:** upp till 8 tabbar × egen session/modell,
+per-tab SSE i bakgrunden (inaktiva tabbar fortsätter samla), modell-badge
++ ON-GÅENDE-prick per tab, sessionStorage-persistens, sessionslistan kan
+resuma gamla sessioner i nya tabbar. RAM-mätt: +4,7 MB/3 SSE.
+
+**C PERMISSIONS 2.0:** diff-förhandsvisning INNAN godkännande (ur
+interaktion-eventets råa input: Write +N, Edit −N/+N, MultiEdit),
+"alltid tillåt"-regler (localStorage + hanteringspanel), notiser vid
+>60 s-körningar (Web Notification + flik-titel), riskbadge per verktyg.
+
+**D MINNE 🧠:** agentens minnesfiler synliga/redigerbara (lista,
+markdown-visning, redigera, ny, radera med backup), AGENTS.md =
+stående instruktioner redigerbara. .env-blockerat.
+
+**E PULS 📈:** pm2-tjänster (status/cpu/mem/uptime/restarts), RAM/disk-
+gauge, load-sparkline, cron-lista, fellogg med ny-fel-badge — i
+Utvecklingspanelen, 60 s auto-refresh.
+
+SAMTLIGA VERIFIERADE: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN ·
+build exit 0 · /studio / /chat(401=löst) / /admin 200 på prod.

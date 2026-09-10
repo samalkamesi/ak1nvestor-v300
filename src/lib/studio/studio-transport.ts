@@ -1888,6 +1888,7 @@ class AppServerTransport implements StudioTransport {
     this.malPausad = false;
     this.malIteration = 0;
     this.malSenasteText = "";
+    this.malTurnOppen = false;
     this.malBuffert.length = 0;
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     this.sid = null;
@@ -2192,7 +2193,13 @@ class AppServerTransport implements StudioTransport {
     // påNotis routerar starteventet direkt (annars tappades det och
     // mal_iteration slut kom med iteration 0). Vid request-fel återställs
     // föregående tillstånd (inget spök-mål-läge).
-    const fore: Pick<AppServerTransport, "malText" | "malAktiv" | "malPausad" | "malIteration" | "malTurnOppen"> = {
+    const fore: {
+      malText: string | null;
+      malAktiv: boolean;
+      malPausad: boolean;
+      malIteration: number;
+      malTurnOppen: boolean;
+    } = {
       malText: this.malText,
       malAktiv: this.malAktiv,
       malPausad: this.malPausad,
@@ -2306,6 +2313,7 @@ class AppServerTransport implements StudioTransport {
     this.malPausad = false;
     this.malIteration = 0;
     this.malSenasteText = "";
+    this.malTurnOppen = false;
     this.malBuffert.length = 0;
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     return { mal: null, meddelande: "Målet rensat." };
@@ -2387,13 +2395,25 @@ class AppServerTransport implements StudioTransport {
     }
     // session/goal action "resume" (kartan §1 — dokumenterad union-action;
     // paus-vägen session/stop är LIVE-bevisad, resume är dess motpol).
-    const r = (await this.klient.request(
-      "session/goal",
-      { sessionId: this.sid, action: "resume" },
-      45_000,
-    )) as { response?: string; startedTurn?: boolean } | null;
+    // VÅG 85 F1 E2E-FYND (samma race som sattMal): en återupptagen mål-turn
+    // kan starta MEDAN resume-requesten körs — aktiv sätts FÖRE requesten
+    // (med återställning vid fel) så starteventet routeras direkt.
+    const foreAktiv = this.malAktiv;
+    const forePausad = this.malPausad;
     this.malAktiv = true;
     this.malPausad = false;
+    let r: { response?: string; startedTurn?: boolean } | null;
+    try {
+      r = (await this.klient.request(
+        "session/goal",
+        { sessionId: this.sid, action: "resume" },
+        45_000,
+      )) as { response?: string; startedTurn?: boolean } | null;
+    } catch (fel) {
+      this.malAktiv = foreAktiv;
+      this.malPausad = forePausad;
+      throw fel;
+    }
     this.sändMalEvent({
       typ: "mal_status",
       aktiv: true,
@@ -3391,6 +3411,16 @@ class AppServerTransport implements StudioTransport {
       case "turn.completed": {
         // KVD-PIXELN: turn.completed i mål-loopen ⇒ mal_iteration(slut)
         // med iterationsnummer + rundstatistik ("turn" = äldre form).
+        // E2E-FYND (prod 2026-09-10): om starteventet missats (startedTurn-
+        // racet före mål-state:t sattes) räknas iterationen upp HÄR och en
+        // EFTERHANDS-syntetiserad start skickas FÖRE slut-pixeln — varje
+        // avslutad iteration får därmed alltid sitt start/slut-par (UI:t
+        // öppnar+färdigställer bubblan; svaret bär turn.completed.response).
+        if (!this.malTurnOppen) {
+          this.malIteration += 1;
+          this.sändMalEvent({ typ: "mal_iteration", fas: "start", iteration: this.malIteration });
+        }
+        this.malTurnOppen = false;
         this.sändMalEvent({
           typ: "runda",
           fas: "slut",

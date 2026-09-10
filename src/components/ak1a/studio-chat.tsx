@@ -3446,20 +3446,38 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* Marin rubrikrad */}
+      {/* Marin rubrikrad — V84 100x-mobilfix: compact tvåradig header,
+            ALDRIG vertikal textbrytning (kundens skärmdump: "A/K/1/A…"
+            en bokstav per rad). Rad 1 = logo+märke+status, rad 2 =
+            modell/läge/tanke/tema i horisontell scroll-rad. */}
       <header className="marin-panel sticky top-0 z-20 border-b border-gold/25 shadow-md">
-        <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-2.5 px-3 py-2.5 sm:px-4 sm:py-3">
-          <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
-          <div className="min-w-0 flex-1">
-            <h1 className="font-serif text-lg font-bold leading-tight text-[#EDE6D6] sm:text-xl">
-              AK1A <span className="text-gold">Studio</span>
-            </h1>
-            <p className="truncate text-[11px] text-[#EDE6D6]/70">
-              Din agent — samma hjärna som bygger sajten
-            </p>
+        <div className="mx-auto w-full max-w-3xl px-3 py-2 sm:px-4 sm:py-3">
+          <div className="flex items-center gap-2">
+            <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
+            <div className="min-w-0 flex-1">
+              <h1 className="whitespace-nowrap font-serif text-base font-bold leading-tight text-[#EDE6D6] sm:text-lg">
+                AK1A <span className="text-gold">Studio</span>
+              </h1>
+            </div>
+            <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
+              <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
+              <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
+            </div>
           </div>
-          <div className="flex shrink-0 flex-wrap items-center gap-1.5">
-            {/* MODELLRULLISTA (V2) — listan härledd ur config.json via API */}
+          <div className="mt-2 flex items-center gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="shrink-0">
+              <h1 className="whitespace-nowrap font-serif text-[11px] font-bold uppercase tracking-[0.18em] text-[#EDE6D6]/50">
+                {morkLage ? "Natt" : "Dag"}
+              </h1>
+            </div>
+            <button
+              onClick={vaxlaTema}
+              title={morkLage ? "Växla till ljust tema (paper) — tangent T" : "Växla till mörkt tema (marin natt med guld) — tangent T"}
+              aria-label="Växla mörkt/ljust tema"
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
+            >
+              {morkLage ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+            </button>
             <label className="relative shrink-0" title="Välj huvudmodell — ny session skapas med modellen">
               <span className="sr-only">Välj modell</span>
               <select
@@ -3482,12 +3500,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {byterModell ? "…" : "▼"}
               </span>
             </label>
-            {/* V83 B2: LÄGESVÄXLARE (session/setMode — build kör verktyg
-                fritt, plan kräver godkännanden => Z-portaLens-dialogen). */}
-            <label
-              className="relative shrink-0"
-              title="Agentläge (session/setMode) — build: köra fritt; plan: verktyg kräver godkännande i dialog"
-            >
+            <label className="relative shrink-0" title="Agentläge (session/setMode) — build: köra fritt; plan: verktyg kräver godkännande i dialog">
               <span className="sr-only">Agentläge</span>
               <select
                 value={lage}
@@ -3510,13 +3523,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 ▼
               </span>
             </label>
-            {/* V83 B2: TANKESTYRKA (session/setThoughtLevel — LIVE-nivåer
-                nothink/high/max; KVD-textens off/medium/high är generisk
-                terminologi, de ärliga nivåerna står i protokollkartan §1). */}
-            <label
-              className="relative shrink-0"
-              title="Tankestyrka (session/setThoughtLevel) — resonemangets djup: av (nothink), hög (high) eller max"
-            >
+            <label className="relative shrink-0" title="Tankestyrka (session/setThoughtLevel) — resonemangets djup: av (nothink), hög (high) eller max">
               <span className="sr-only">Tankestyrka</span>
               <select
                 value={tanka}
@@ -3543,20 +3550,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 ▼
               </span>
             </label>
-          </div>
-          {/* V84 A1: TEMA-VÄXLARE — dark-klass på roten (marin natt + guld);
-              också tangent T utanför inmatningsfält. */}
-          <button
-            onClick={vaxlaTema}
-            title={morkLage ? "Växla till ljust tema (paper) — tangent T" : "Växla till mörkt tema (marin natt med guld) — tangent T"}
-            aria-label="Växla mörkt/ljust tema"
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
-          >
-            {morkLage ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
-          </button>
-          <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
-            <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
-            <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
           </div>
         </div>
 
@@ -3589,7 +3582,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {kontext.modell}
               </span>
             )}
-            <span className="ml-auto flex flex-wrap items-center gap-1">
+            <span className="ml-auto flex items-center gap-0.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {/* V84 100x-mobilfix: horisontell ikonrad — text-etiketterna
+                  göms under sm (ikon + title kvar), raden scrollar aldrig
+                  sidan utan rullar i sig själv. */}
               {/* V84 A4: sök i chatten — highlight + räknare + pilnavigering */}
               <button
                 onClick={() => {
@@ -3604,7 +3600,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 )}
               >
                 <Search className="h-3.5 w-3.5" />
-                Sök
+                <span className="hidden sm:inline">Sök</span>
               </button>
               {/* V84 A2: kommandopaletten — även på mobil (ingen Ctrl där) */}
               <button
@@ -3613,7 +3609,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <Command className="h-3.5 w-3.5" />
-                ⌘K
+                <span className="hidden sm:inline">⌘K</span>
               </button>
               {/* V84 A5: exportera chatten som markdown */}
               <button
@@ -3622,7 +3618,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <Download className="h-3.5 w-3.5" />
-                Exportera
+                <span className="hidden sm:inline">Exportera</span>
               </button>
               <button
                 onClick={() => {
@@ -3637,7 +3633,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <FolderTree className="h-3.5 w-3.5" />
-                Filer
+                <span className="hidden sm:inline">Filer</span>
               </button>
               {/* VÅG 84 D: Minne 🧠 — agentens minnesfiler, redigerbara */}
               <button
@@ -3646,7 +3642,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <Brain className="h-3.5 w-3.5" />
-                Minne
+                <span className="hidden sm:inline">Minne</span>
                 {minneFiler && minneFiler.length > 0 && (
                   <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">
                     {minneFiler.length}
@@ -3660,7 +3656,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
               >
                 {sessionJobbar === "ny" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <SquarePen className="h-3.5 w-3.5" />}
-                Ny session
+                <span className="hidden sm:inline">Ny session</span>
               </button>
               <button
                 onClick={() => void komprimera()}
@@ -3669,7 +3665,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
               >
                 {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
-                Komprimera
+                <span className="hidden sm:inline">Komprimera</span>
               </button>
               {/* VÅG 83 B3: MÅL (session/goal) + BAKGRUNDSAGENTER (subagents) */}
               <button
@@ -3681,7 +3677,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <Target className="h-3.5 w-3.5" />
-                Mål
+                <span className="hidden sm:inline">Mål</span>
                 {mal && <span className="h-1.5 w-1.5 rounded-full bg-gold" title="Mål satt" />}
               </button>
               <button
@@ -3694,7 +3690,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <Bot className="h-3.5 w-3.5" />
-                Agenter
+                <span className="hidden sm:inline">Agenter</span>
               </button>
               <button
                 onClick={() => {
@@ -3706,7 +3702,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <History className="h-3.5 w-3.5" />
-                Sessioner
+                <span className="hidden sm:inline">Sessioner</span>
                 {sessioner.length > 0 && <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{sessioner.length}</span>}
               </button>
               {/* V84 C: REGLER — "alltid tillåt"-minnet (localStorage) med
@@ -3717,7 +3713,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
                 <ShieldCheck className="h-3.5 w-3.5" />
-                Regler
+                <span className="hidden sm:inline">Regler</span>
                 {regler.length > 0 && (
                   <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{regler.length}</span>
                 )}
@@ -3740,7 +3736,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 )}
               >
                 {notisRattighet === "granted" ? <BellRing className="h-3.5 w-3.5" /> : <Bell className="h-3.5 w-3.5" />}
-                Notiser
+                <span className="hidden sm:inline">Notiser</span>
               </button>
             </span>
           </div>

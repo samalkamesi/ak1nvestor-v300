@@ -410,3 +410,27 @@ E2E på prod krav):
 REGLER: ingen agent rörs akm2/vagfundament/korstabell; .env.production.
 local HELIG; E2E per block på prod; max parallella agenter (5 st + ev.
 uppföljning); finslipning efter alla block.
+
+## TILLÄGG VÅG 85 — STUDIO V3: FULL Z-PARITET + AUTONOM UTVECKLING
+
+Kundens vision: "varenda detalj som Z Code — live utveckling, autonomt,
+max parallella agenter, automatisk vidareutveckling". Kvarvarande gap
+ur protokollkartan (60+ metoder; vi exponerar ~35):
+
+- F1 **MÅL-LÄGE (Goal Mode)**: session/goal STARTAR en autonom loop —
+  agenten itererar själv mot målet (bevisat våg 83 B3). UI: stort
+  "Starta mål-läge"-flöde — beskriv utvecklingsmål → agenten kör
+  autonomt (turner matas automatiskt), kunden SER varje iteration live
+  (verktygskort + diff + streaming), kan pausa/stoppa när som helst.
+- F2 **SKILLS/PLUGINS-panel**: skills/referenceCatalog + plugins/list
+  (17 metoder dokumenterade) — visa vad agenten KAN (skills) och vilka
+  verktygsutbyggningar som är aktiva; toggla plugins på/av (updateProviderRegistry).
+- F3 **USAGE/COST-panel**: usage/stats (8,35M tkn/7d bevisat) — daglig/
+  veckovis tokenförbrukning, modellfördelning, kostnadsuppskattning.
+- F4 **V4-DIFF (filändringar i realtid)**: v4/conversation/fileChanges —
+  rikare än Write/Edit-parsningen (nya filer, namnbyten, batch).
+- F5 **INLINE KODVY**: syntaxmarkerad kodvisning + redigering i chattens
+  diff-kort (klicka en fil i "Ändringar" → kodvy med ±rader i kontext).
+
+KVD: 5 agenter parallellt, protokollmetoder ur kartan (v83-protokollkarta.md
+är LAGEN), E2E på prod, src via Write/Edit, deploy via tar-pipe.

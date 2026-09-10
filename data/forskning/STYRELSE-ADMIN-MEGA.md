@@ -684,3 +684,23 @@ A4-kartans topp-5 P0 byggs nu. Ägarskap krockfritt:
   för våg 93 (hooks/trustGrant, workspace-inställningar, plugins-drift).
 
 KVD: tsc 36-baslinje · build exit 0 · E2E grönt · deploy + prodcheck.
+
+### VÅG 92 LANDAD (2026-09-10, 940343c, prod 200 + LIVE-E2E)
+
+- **T1 BILDER LIVE-BEVISADE på prod**: uppladdning → stream med
+  bildreferens → riktiga agenten såg 1×1-pixeln och svarade "rött —
+  RGB (255,0,0)". Kundens "visa dig bilder" fungerar END-TO-END.
+  v4-attachment-flödet implementerat (begin/chunk/commit) men prod-
+  binären 3.11.2:s app-server valde referensvägen — båda vägarna
+  levande, uppgradering av binären aktiverar äkta bilagor tyst.
+- **T2/T3 SKIP = ÄRLIGA PROTKOLLGAP**: automation/create +
+  interaction/browserExecute → -32601 ("stöds ej av denna
+  agent-version") — metoder finns i A4:s kartsträng men app-server-
+  gränssnittet på 3.11.2 exponerar dem ej; UI döljer panelerna graciöst
+  (501-kontraktet). Återaktiveras vid binäruppgradering.
+- T4 bakgrundslista 200 · T5 regression 200 · halsa 1 barn.
+- TOTALT: 7 PASS · 0 FAIL · 2 SKIP av 9.
+- V93-P1-UNDERLAG.md = nästa vågs blockindelning (C1 workspace-
+  inställningar, C2 hooks/trustGrant, C3 plugins-drift, C4 events-
+  replay) — NOTERA: håll koll på om binäruppgradering frigör
+  automation/webbläsare först.

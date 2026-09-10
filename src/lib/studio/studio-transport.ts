@@ -1149,12 +1149,15 @@ interface McpListResult {
 // ── VÅG 85 F3: usage/stats-svar (kartan §2 — LIVE 8,35 M tokens/7d) ──────────
 
 /**
- * usage/stats-svar (kartan §2, LIVE-bevisat 2026-09-09: 8,35 M tokens/7d):
- * {range, generatedAt, timeZone, source:"agent-db", summary:{totalTokens,
- * inputTokens, outputTokens, reasoningTokens, cacheCreationTokens,
- * cacheReadTokens, cacheHitRate, totalSessions, totalTurns, toolCallCount,
- * toolErrorRate, modelErrorRate}, byModel?:[{modelId,totalTokens,share}]}.
- * Endast fält UI:t visar mappas — råa svaret följer med i `ratti`-fältet.
+ * usage/stats-svar — TVÅ bevisade former:
+ *   LIVE (prod-sond 2026-09-10, aktuellt zcode): {range, generatedAt,
+ *   timeZone, source:"agent-db", summary:{…}, models:[{modelId,totalTokens,
+ *   inputTokens,outputTokens,requestCount,share}], dailyModelUsage:[{date,
+ *   models:[{modelId,totalTokens}]}], heatmap, tools} — models bär RIKTIGA
+ *   requestCount (antal modellanrop) och dailyModelUsage tokens PER DAG.
+ *   Kartan §2 (2026-09-09): byModel?:[{modelId,totalTokens,share}] —
+ *   byModel behålls som defensiv fallback för äldre protokollversion.
+ * Endast fält UI:t visar mappas — råa svaret följer med i `råSvar`-fältet.
  */
 interface UsageStatsResult {
   range?: string;
@@ -1174,6 +1177,21 @@ interface UsageStatsResult {
     toolErrorRate?: number;
     modelErrorRate?: number;
   };
+  /** LIVE-form: modellrader MED requestCount (den ärliga antal-källan). */
+  models?: {
+    modelId?: string;
+    totalTokens?: number;
+    inputTokens?: number;
+    outputTokens?: number;
+    requestCount?: number;
+    share?: number;
+  }[];
+  /** LIVE-form: tokens per dag och modell (date-stigande, sista = idag). */
+  dailyModelUsage?: {
+    date?: string;
+    models?: { modelId?: string; totalTokens?: number }[];
+  }[];
+  /** Kartans äldre fallback-form (§2). */
   byModel?: {
     modelId?: string;
     totalTokens?: number;
@@ -1184,7 +1202,7 @@ interface UsageStatsResult {
   }[];
 }
 
-/** Rad i modellfördelningen (kartan §2 byModel + session/list-berikning). */
+/** Rad i modellfördelningen (LIVE models[] / kartans byModel + berikning). */
 export interface StudioUsageModell {
   /** Protokollets modelId (t.ex. "glm-5.3"). */
   modell: string;
@@ -1193,9 +1211,9 @@ export interface StudioUsageModell {
   /** Protokollets share (0–1) — beräknas om tokens/total när det saknas. */
   andel: number;
   /**
-   * Ärlig räknare: antal SESSIONER som körde modellen (session/list inom
-   * listans tak, 7 d-fönster). usage/stats bär INGA anropsantal per modell
-   * — 0 = protokollet räknade inga sådana sessioner i listan.
+   * Ärlig räknare: LIVE-formen bär requestCount = ANTAL MODELLANROP
+   * (prod-sond 2026-09-10: glm-5.2=235 · glm-5.3=61 · glm-5.3-flash=44);
+   * kartans äldre byModel-form bär inget räknefält — då 0, ALDRIG påhittat.
    */
   antal: number;
 }
@@ -1220,19 +1238,19 @@ export interface StudioUsageSvar {
   totalSessions?: number;
   totalTurns?: number;
   toolCallCount?: number;
-  /** byModel — störst först (stapelordning). */
+  /** Modellfördelning — störst först (stapelordning). */
   modeller: StudioUsageModell[];
   generatedAt?: string;
   timeZone?: string;
   /**
-   * 24 h-uppskattning. usage/stats stöder ENDAST all|7d|30d (kartan §2)
-   * — dygnsiffran beräknas som summan av session/usage över sessioner
-   * som var aktiva senaste 24 h (session/list-updatedAt), med ÄRLIG
-   * reserv: dygnsmedelvärdet 7d/7 ("snitt"). ALDRIG påhittade siffror.
+   * 24 h-siffra, ärligaste källa först (LIVE dailyModelUsage bär tokens
+   * PER DAG — sista dagsraden = "idag"; usage/stats har ingen rullande
+   * 24 h-period): "dagsrad" = protokollets senaste dagsrad · "sessioner"
+   * = summan av session/usage över sessioner aktiva senaste 24 h ·
+   * "snitt" = dygnsmedelvärdet 7d/7 (reserv) · "okand" = inga data.
    */
   totalTokens24h: number;
-  /** "sessioner" = räkning ur session/usage · "snitt" = 7d/7-reserv. */
-  kalla24h: "sessioner" | "snitt" | "okand";
+  kalla24h: "dagsrad" | "sessioner" | "snitt" | "okand";
 }
 
 interface SessionEventParams {
@@ -1594,6 +1612,15 @@ class AppServerTransport implements StudioTransport {
   private malIteration = 0;
   /** Senaste iterationens ackumulerade text (turn.completed-fallback). */
   private malSenasteText = "";
+  /**
+   * true = en mål-turn är ÖPPEN (turn.started sedd, turn.completed ej än).
+   * VÅG 85 F1 E2E-FYND (prod 2026-09-10): den FÖRSTA mål-turnens
+   * turn.started kan anlända MEDAN session/goal-set-requesten fortfarande
+   * körs (startedTurn-racet) — därför sätter sattMal mål-state:t FÖRE
+   * requesten, och turn.completed räknar UPP själv när starten missats
+   * (malTurnOppen=false) så räknaren förblir ärlig.
+   */
+  private malTurnOppen = false;
   /** Mål-loopens lyssnare (SSE-bryggan /api/studio/mal/stream). */
   private malLyssnare: StudioLyssnare | null = null;
   /**
@@ -2158,21 +2185,45 @@ class AppServerTransport implements StudioTransport {
     // v83 B3 (prod-experiment): mål-set startar en ASYNKRON mål-loop som
     // FÖDER NYA TURNER AUTOMATISKT — iterationerna strömmar via mål-
     // lyssnaren (prenumereraMal) utan att någon klientprompt körs.
-    const r = (await this.klient.request(
-      "session/goal",
-      { sessionId: this.sid, action: "set", objective: text },
-      45_000,
-    )) as { response?: string; startedTurn?: boolean } | null;
-    // VÅG 85 F1: mål-läget STARTAR här — räknaren börjar om och mål-
-    // lyssnaren (om strömmen redan är öppen) får snapshot direkt; annars
-    // fångar MAL_BUFFERT de första events så en senare öppnad ström
-    // aldrig missar iterationens start.
+    //
+    // VÅG 85 F1 E2E-FYND (prod 2026-09-10): den första mål-turnens
+    // turn.started anländer MEDAN session/goal-set-requesten körs
+    // (startedTurn-racet) — mål-state:t sätts därför FÖRE requesten så
+    // påNotis routerar starteventet direkt (annars tappades det och
+    // mal_iteration slut kom med iteration 0). Vid request-fel återställs
+    // föregående tillstånd (inget spök-mål-läge).
+    const fore: Pick<AppServerTransport, "malText" | "malAktiv" | "malPausad" | "malIteration" | "malTurnOppen"> = {
+      malText: this.malText,
+      malAktiv: this.malAktiv,
+      malPausad: this.malPausad,
+      malIteration: this.malIteration,
+      malTurnOppen: this.malTurnOppen,
+    };
     this.malText = text;
     this.malAktiv = true;
     this.malPausad = false;
     this.malIteration = 0;
     this.malSenasteText = "";
-    this.sändMalEvent({ typ: "mal_status", aktiv: true, pausad: false, iteration: 0, mal: text });
+    this.malTurnOppen = false;
+    let r: { response?: string; startedTurn?: boolean } | null;
+    try {
+      r = (await this.klient.request(
+        "session/goal",
+        { sessionId: this.sid, action: "set", objective: text },
+        45_000,
+      )) as { response?: string; startedTurn?: boolean } | null;
+    } catch (fel) {
+      this.malText = fore.malText;
+      this.malAktiv = fore.malAktiv;
+      this.malPausad = fore.malPausad;
+      this.malIteration = fore.malIteration;
+      this.malTurnOppen = fore.malTurnOppen;
+      throw fel;
+    }
+    // Räknaren började om vid mål-set — mål-lyssnaren (om strömmen redan
+    // är öppen) får snapshot direkt; annars fångar MAL_BUFFERT events så
+    // en senare öppnad ström aldrig missar iterationens start.
+    this.sändMalEvent({ typ: "mal_status", aktiv: true, pausad: false, iteration: this.malIteration, mal: text });
     return {
       mal: text,
       aktiv: true,
@@ -2637,34 +2688,52 @@ class AppServerTransport implements StudioTransport {
     const num = (v: unknown): number | undefined => (typeof v === "number" && Number.isFinite(v) ? v : undefined);
     const totalTokens = num(summa?.totalTokens) ?? 0;
 
-    // ── 24 h-uppskattning (usage/stats saknar 24 h-range — kartan §2):
-    // sessioner aktiva senaste dygnet ur session/list (updatedAt), tokens
-    // ur session/usage {sessionId} (BEVISAT kartan §1). Parallellt — NDJSON-
-    // klienten multiplexar requests via id-kartan. Tak: 12 nyaste sessioner
-    // (mätbar kostnad, dokumenterad approximation).
+    // ── 24 h-siffra — ärligaste källa först ─────────────────────────────────
+    // 1) LIVE dailyModelUsage (prod-sond 2026-09-10): tokens PER DAG — sista
+    //    dagsraden = senaste dagen ("idag" i protokollets dagsuppdelning;
+    //    usage/stats har INGEN rullande 24 h-period, därför är detta den
+    //    ärligaste närheten och märks "dagsrad" i UI:t).
+    // 2) session/usage-summa över sessioner aktiva senaste 24 h (session/
+    //    list-updatedAt; BEVISAT kartan §1) — tak 12 nyaste, parallellt.
+    // 3) ÄRLIG reserv: dygnsmedelvärdet 7d/7 ("snitt"). ALDRIG påhittat.
     let totalTokens24h = 0;
-    let kalla24h: "sessioner" | "snitt" | "okand" = "okand";
-    /** sessionId → modell + ålder — återanvänds även för antal-per-modell. */
-    let sessioner: { sid: string; modellId?: string; tid: number }[] = [];
-    try {
-      const lista = (await klient.request("session/list", { limit: 50 }, 30_000)) as
-        | SessionListResult
-        | null;
-      const rader = Array.isArray(lista?.sessions) ? lista!.sessions! : [];
+    let kalla24h: "dagsrad" | "sessioner" | "snitt" | "okand" = "okand";
+    const dagsrader = Array.isArray(råSvar?.dailyModelUsage) ? råSvar!.dailyModelUsage! : [];
+    const sistaDag = dagsrader.length > 0 ? dagsrader[dagsrader.length - 1] : null;
+    if (sistaDag && Array.isArray(sistaDag.models)) {
+      totalTokens24h = sistaDag.models.reduce(
+        (summa, m) => summa + (num(m?.totalTokens) ?? 0),
+        0,
+      );
+      if (totalTokens24h > 0) kalla24h = "dagsrad";
+    }
+    /** session/list → {sid, modellId, tid} (best-effort; tom vid fel). */
+    const lasSessioner = async (): Promise<{ sid: string; modellId?: string; tid: number }[]> => {
+      try {
+        const lista = (await klient.request("session/list", { limit: 50 }, 30_000)) as
+          | SessionListResult
+          | null;
+        const rader = Array.isArray(lista?.sessions) ? lista!.sessions! : [];
+        return rader
+          .map((s) => {
+            const sid = typeof s.sessionId === "string" && s.sessionId ? s.sessionId : "";
+            const tidRaw = s.updatedAt ?? s.updated ?? s.lastActiveAt;
+            const tid = typeof tidRaw === "string" ? Date.parse(tidRaw) : NaN;
+            return {
+              sid,
+              modellId:
+                typeof s.model?.modelId === "string" && s.model.modelId ? s.model.modelId : undefined,
+              tid,
+            };
+          })
+          .filter((s) => s.sid && Number.isFinite(s.tid));
+      } catch {
+        return [];
+      }
+    };
+    if (kalla24h === "okand") {
+      const sessioner = await lasSessioner();
       const nu = Date.now();
-      sessioner = rader
-        .map((s) => {
-          const sid = typeof s.sessionId === "string" && s.sessionId ? s.sessionId : "";
-          const tidRaw = s.updatedAt ?? s.updated ?? s.lastActiveAt;
-          const tid = typeof tidRaw === "string" ? Date.parse(tidRaw) : NaN;
-          return {
-            sid,
-            modellId:
-              typeof s.model?.modelId === "string" && s.model.modelId ? s.model.modelId : undefined,
-            tid,
-          };
-        })
-        .filter((s) => s.sid && Number.isFinite(s.tid));
       const aktiva24h = sessioner
         .filter((s) => nu - s.tid < 24 * 60 * 60 * 1000)
         .sort((a, b) => b.tid - a.tid)
@@ -2680,33 +2749,26 @@ class AppServerTransport implements StudioTransport {
                 ? u.totalTokens
                 : 0;
             } catch {
-              return 0; // enskild session får aldrig döda uppskattningen
+              return 0; // enskild session får aldrig döda uppskottningen
             }
           }),
         );
         totalTokens24h = delsummor.reduce((a, b) => a + b, 0);
         kalla24h = "sessioner";
       }
-    } catch {
-      // session/list otillgängligt → reserven nedan
     }
-    if (kalla24h !== "sessioner" && totalTokens > 0) {
-      // ÄRLIG reserv: dygnsmedelvärdet (7 d / 7) — märks "snitt" i UI:t.
+    if (kalla24h === "okand" && totalTokens > 0) {
       totalTokens24h = Math.round(totalTokens / 7);
       kalla24h = "snitt";
     }
 
-    // ── antal sessioner per modell (7 d-fönstret, listans tak 50) ──────────
-    const antalPerModell = new Map<string, number>();
-    for (const s of sessioner) {
-      if (!s.modellId) continue;
-      if (Date.now() - s.tid >= 7 * 24 * 60 * 60 * 1000) continue;
-      antalPerModell.set(s.modellId, (antalPerModell.get(s.modellId) ?? 0) + 1);
-    }
-
-    // ── modellfördelning ur byModel (störst först — stapelordningen) ────────
+    // ── modellfördelning: LIVE models[] först, kartans byModel fallback ────
     const modeller: StudioUsageModell[] = [];
-    const råModeller = Array.isArray(råSvar?.byModel) ? råSvar!.byModel! : [];
+    const råModeller = Array.isArray(råSvar?.models)
+      ? (råSvar!.models! as NonNullable<UsageStatsResult["models"]>)
+      : Array.isArray(råSvar?.byModel)
+        ? (råSvar!.byModel! as NonNullable<UsageStatsResult["byModel"]>)
+        : [];
     for (const m of råModeller) {
       const id = typeof m?.modelId === "string" && m.modelId ? m.modelId : "";
       if (!id) continue;
@@ -2721,13 +2783,13 @@ class AppServerTransport implements StudioTransport {
             : totalTokens > 0
               ? tokens / totalTokens
               : 0,
-        // Defensivt per-modell-anropsfält OM protokollet bär det (kartan
-        // dokumenterar endast {modelId,totalTokens,share}) — annars är
-        // antal = sessioner som körde modellen (ovan), aldrig påhittat.
+        // LIVE models[] bär requestCount = ANTAL MODELLANROP (prod-sond:
+        // glm-5.2=235 · glm-5.3=61 · glm-5.3-flash=44) — kartans äldre
+        // byModel-form bär inget räknefält: 0 (ALDRIG påhittat).
         antal:
-          num(m?.modelRequestCount) ??
           num(m?.requestCount) ??
-          (antalPerModell.get(id) ?? 0),
+          num((m as NonNullable<UsageStatsResult["byModel"]>[number]).modelRequestCount) ??
+          0,
       });
     }
     modeller.sort((a, b) => b.tokens - a.tokens);
@@ -3256,6 +3318,7 @@ class AppServerTransport implements StudioTransport {
   private hanteraMalEvent(typ: string, payload: SessionEventParams["payload"]): void {
     switch (typ) {
       case "turn.started":
+        this.malTurnOppen = true;
         this.malIteration += 1;
         this.malSenasteText = "";
         this.sändMalEvent({ typ: "mal_iteration", fas: "start", iteration: this.malIteration });
@@ -4276,13 +4339,16 @@ class MockTransport implements StudioTransport {
 
   async lasUsage(): Promise<StudioUsageSvar> {
     await this.ensure();
-    // Speglar protokollets svarform (kartan §2) med tydligt mock-märkta
+    // Speglar protokollets LIVE-form (prod-sond 2026-09-10: models[] MED
+    // requestCount + dailyModelUsage[] per dag) med tydligt mock-märkta
     // modellnamn + fasta siffror >0 — dev-E2E:t (GET svarar med usage-
     // siffror >0) går igenom utan modell; prod bär de ÄRLIGA siffrorna.
     const totalTokens = 1_048_576;
+    const idag = 149_796;
+    const igar = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
     const modeller: StudioUsageModell[] = [
-      { modell: "mock-glm-5.3", tokens: 786_432, andel: 0.75, antal: 6 },
-      { modell: "mock-glm-5.2", tokens: 262_144, andel: 0.25, antal: 2 },
+      { modell: "mock-glm-5.3", tokens: 786_432, andel: 0.75, antal: 214 },
+      { modell: "mock-glm-5.2", tokens: 262_144, andel: 0.25, antal: 58 },
     ];
     return {
       råSvar: {
@@ -4304,9 +4370,13 @@ class MockTransport implements StudioTransport {
           toolErrorRate: 0.01,
           modelErrorRate: 0,
         },
-        byModel: [
-          { modelId: "mock-glm-5.3", totalTokens: 786_432, share: 0.75 },
-          { modelId: "mock-glm-5.2", totalTokens: 262_144, share: 0.25 },
+        models: [
+          { modelId: "mock-glm-5.3", totalTokens: 786_432, inputTokens: 720_896, outputTokens: 65_536, requestCount: 214, share: 0.75 },
+          { modelId: "mock-glm-5.2", totalTokens: 262_144, inputTokens: 245_760, outputTokens: 16_384, requestCount: 58, share: 0.25 },
+        ],
+        dailyModelUsage: [
+          { date: igar, models: [{ modelId: "mock-glm-5.3", totalTokens: 96_512 }, { modelId: "mock-glm-5.2", totalTokens: 32_768 }] },
+          { date: new Date().toISOString().slice(0, 10), models: [{ modelId: "mock-glm-5.3", totalTokens: 112_347 }, { modelId: "mock-glm-5.2", totalTokens: 37_449 }] },
         ],
       },
       totalTokens,
@@ -4320,8 +4390,8 @@ class MockTransport implements StudioTransport {
       totalTurns: 96,
       toolCallCount: 240,
       modeller,
-      totalTokens24h: Math.round(totalTokens / 7),
-      kalla24h: "snitt",
+      totalTokens24h: idag,
+      kalla24h: "dagsrad",
     };
   }
 

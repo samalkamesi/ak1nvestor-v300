@@ -9793,3 +9793,66 @@ Utvecklingspanelen, 60 s auto-refresh.
 
 SAMTLIGA VERIFIERADE: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN ·
 build exit 0 · /studio / /chat(401=löst) / /admin 200 på prod.
+
+## VÅG 85 F2 — FÄRDIGHETER ⚡: VAD AGENTEN KAN, SYNGLIGT I STUDION (2026-09-09)
+
+**F# RADRAPPORT — F2 (STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 85" F2:
+SKILLS/PLUGINS-panel; protokollkälla tool-results/v83-protokollkarta.md
+§2, metoderna LIVE-testade 2026-09-09):**
+
+Kunden ser nu VAD agenten KAN — skills, aktiva plugins och anslutna
+MCP-servrar i en drawer i filträdets stil.
+
+**TRANSPORT (studio-transport.ts):** tre nya läsmetoder på
+StudioTransport-gränssnittet (båda implementationerna): lasSkills() →
+skills/referenceCatalog {workspace} (skills:[{id "glm:…", name,
+description, path, scope plugin|workspace|user, enabled}] — defensivt
+mappad till StudioSkill), lasPlugins() → plugins/list (StudioPlugin:
+aktiv=enabled, version, skillAntal; aktiva sorterade först) och lasMcp()
+→ mcp/list (StudioMcpServer: status/transport/toolCount/error —
+verktygsNAMN tolkas defensivt om ett framtida protokoll bär dem; kartan
+§2 dokumenterar endast toolCount). Alla tre kräver LEVANDE klient men
+EGEN session (lasSessioner-mönstret — metoden skapar ALDRIG en session
+bara för att lista); varje katalog är feletolerant (tom lista, aldrig
+fel). Mocken bär deterministiska demo-listor (3 skills/3 plugins/3
+MCP-servrar) så dev-kedjan bevisas utan barnprocess.
+
+**API /api/studio/fardigheter (NY):** GET, requireAdmin — de tre
+katalogerna körs PARALLELLT (NDJSON-klienten multiplexar) → {skills:[],
+plugins:[], mcp:[], transport, live, mcpVerktyg} där mcpVerktyg = Σ
+toolCount (E2E-kravets ">0 mcp-verktyg"). En trasig sektion ⇒ tom lista,
+ALDRIG 500 för hela panelen.
+
+**UI — Färdigheter ⚡-panelen (studio-fardigheter-panel.tsx NY +
+studio-chat.tsx minimala infogningar — våg 84 D:s parallellmerge-
+mönster):** knapp (Zap-ikon + räknar-badge) i verktygsraden → höger
+drawer i marin #0D1B31/guld med TRE sektioner: (a) SKILLS — varje skill
+som expanderbart kort med namn + beskrivning (referenceCatalog bär
+dem) + scope-badge (PLUGIN/ARBETSYTA/ANVÄNDARE), inaktiva gråmärke;
+(b) PLUGINS — aktiva med GRÖN PRICK (glödande emerald) + gul
+version-badge + skillantal/källa, tillgängliga grå utan prick under;
+(c) MCP-VERKTYG — anslutna tjänster med prick (grön=connected,
+röd=failed) + verktygsbadge, expanderbar med transport + verktygslista
+när namn finns (annars ärlig antalsnotis). Ömsesidig stängning mot
+filträdet + Minne 🧠; Escape hanteras av panelen; /fardigheter-
+kommandot (nytt i STUDIO_KOMMANDON, lokalt) öppnar samma drawer.
+
+**PARALLDEPLOY:** F1 (mål-läge) och F3 (usage) byggde SAMTIDIGT i samma
+träd — deploy väntade ut deras transient-lägen (tsc 44–65 under
+pågående skrivning) tills koherent snapshot (tsc 36 = baslinje, stabila
+md5 två på varandra följande poller) och tar-pipe:ade ENDAST src/
+(7,9 MB; .env* orörs på servern — driftsfyndet våg 83) → next build
+exit 0 → pm2 restart endast efter lyckat build.
+
+**Verifiering:** tsc 36 = baslinjen (0 nya) · motorer 107/0/0 ·
+Kvalitetsvakten GRÖN (0 FEL/4 manuella) · dev-E2E (mock): 401 utan
+auth, 200 med {skills:3, plugins:3, mcp:3, mcpVerktyg:24, live:true} ·
+/studio 200 i dev. **E2E PÅ PROD (lab.ak1nvestor.com, pm2 online,
+build exit 0):** GET utan auth → 401 · GET med admin → 200
+{transport:"appserver", live:true, skills:15, plugins:11 (9 aktiva),
+mcp:3 servrar, mcpVerktyg:43 — android-emulator "connected" med EXAKT
+23 verktyg som protokollkartan dokumenterade, exempel-skill bär
+SKILL.md-sökväg + beskrivning ur referenceCatalog} · /studio 200 +
+"Färdigheter" i prod-chunk (40m3vq930h5q-.js) · startsidan 200. Src
+endast via Write/Edit; akm2/vagfundament/.env* orörda (lösenordet lästes
+endast i serverns eget shell för curl, aldrig loggat).

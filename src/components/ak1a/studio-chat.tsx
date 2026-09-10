@@ -20,6 +20,7 @@ import {
   FilePen,
   FileText,
   FileArchive,
+  FileCode,
   FileImage,
   FolderSearch,
   FolderTree,
@@ -36,6 +37,7 @@ import {
   Play,
   Plus,
   RefreshCw,
+  Save,
   Search,
   Send,
   ShieldAlert,
@@ -186,6 +188,25 @@ import { cn } from "@/lib/utils";
  * lista visas när protokollet bär den). Ömsesidig stängning mot filträdet
  * + Minne 🧠; /fardigheter-kommandot (lokalt) öppnar samma drawer.
  *
+ * VÅG 85 STUDIO V3 F4+F5 (INLINE-KODVY — chattens diff-kort blir en FIL-
+ * VY): klicka en fil i "Ändringar"-panelen → EXPANDERAD KODVY som läser
+ * filen från disk via GET /api/studio/filer?sokvag=… (absolut agentsökväg
+ * görs relativ mot arbetsytan) —
+ *   · SYNTAXMARKERING (enkel tokenisering, kundspec-färger): nyckelord
+ *     GULD, strängar GRÖN, kommentarer GRÅ, tal LILA (JS/TS/JSON/CSS;
+ *     markdown: rubriker/fetstil guld, `kod`/länkar grönt);
+ *   · DE ÄNDRADE RADERNA GULA (bg-yellow): exakta positioner ur v4-
+ *     diffens patch-hunkar (transportens punkter, våg 85 F4 — filhuvudet
+ *     i studio-transport.ts dokumenterar hela v4-flödet); utan punkter
+ *     matchas diff-motorns +rader sekventiellt mot filen; rena
+ *     borttagningar (newLines 0) visas som RÖDA spökrader;
+ *   · max 200 rader ("… N rader till"), radnummer i gulmålat gutter;
+ *   · REDIGERA (ENDAST plan-läge — kontext.läge/arbetsyta-info):
+ *     textarea med koden → Spara → POST /api/studio/filer (inneslutnings-
+ *     vaktad, endast textändelser, ≤ 200 kB) → notis "filen sparad —
+ *     nästa agent-turn ser ändringen". Detta är kundens sätt att styra
+ *     koden UTAN TERMINAL: editorn skriver rakt in i agentens workspace.
+ *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
  * med automatiskt). INGA hemligheter renderas.
@@ -223,6 +244,13 @@ interface Filandring {
   plus: number;
   minus: number;
   rader: { typ: "+" | "-"; text: string }[];
+  /**
+   * VÅG 85 F4: v4/conversation/fileChanges patch-hunkar MED RADNUMMER
+   * (transportens rika källa) — kodvyn markerar newStart…(+newLines) GULT
+   * och visar rena borttagningar (newLines 0) som RÖD spökrad. Saknas för
+   * Write/Edit-parsad diff (kodvyn matchar då +radernas text mot filen).
+   */
+  punkter?: { oldStart: number; oldLines: number; newStart: number; newLines: number; rader: string[] }[];
   /** Expanderat läge (klick på filraden). */
   öppen?: boolean;
 }
@@ -362,7 +390,13 @@ function sparaTabbar(tabbar: Tabb[], aktivTabbId: string): void {
               liveInput: k.liveInput?.slice(-500),
               öppen: false,
             })),
-            ändringar: m.ändringar?.map((f) => ({ ...f, rader: f.rader.slice(0, 50), öppen: false })),
+            ändringar: m.ändringar?.map((f) => ({
+              ...f,
+              rader: f.rader.slice(0, 50),
+              // VÅG 85 F4/F5: v4-punkterna följer med (cap — quota är öm)
+              punkter: f.punkter?.slice(0, 20).map((p) => ({ ...p, rader: p.rader.slice(0, 40) })),
+              öppen: false,
+            })),
           })),
         })),
       }),
@@ -1263,16 +1297,381 @@ function VerktygsKortVy({
   );
 }
 
+// ── VÅG 85 F5: INLINE-KODVY — syntaxmarkering + ändringsmarkering ───────────
+
+/**
+ * Enkel tokenisering (kundspec F5: "nyckelord=guld, strängar=grön,
+ * kommentarer=grå, tal=lila") för JavaScript/TypeScript/JSON/CSS +
+ * markdown-rubriker/fetstil/kod. PER RAD (blockkommentarer markeras där
+ * de börjar/ändar — enkelhet är specen; inget tokenizer-bibliotek).
+ */
+const KOD_NYCKELORD = new Set([
+  "const", "let", "var", "function", "return", "if", "else", "for", "while", "do",
+  "import", "from", "export", "default", "async", "await", "class", "extends",
+  "new", "type", "interface", "enum", "public", "private", "protected", "readonly",
+  "static", "throw", "try", "catch", "finally", "switch", "case", "break",
+  "continue", "typeof", "instanceof", "in", "of", "as", "null", "undefined",
+  "true", "false", "void", "never", "this", "super", "yield", "implements",
+]);
+
+/** Färgklasser per token-slag (ljus + marin natt via dark:-varianterna). */
+const KOD_FARGER = {
+  nyckelord: "text-gold",
+  strang: "text-emerald-700 dark:text-emerald-400",
+  kommentar: "text-muted-foreground/70",
+  tal: "text-purple-700 dark:text-purple-400",
+  rubrik: "text-gold font-bold",
+} as const;
+
+/** Tokenisera EN kodrad till färgade React-noder (id + klass per träff). */
+function markeraKodRad(rad: string, typ: string, nyckel: string): React.ReactNode[] {
+  // Markdown: rubriker guld, `kod` + [länkar] gröna, **fetstil** guld.
+  if (typ === "md") {
+    if (/^\s*#{1,6}\s/.test(rad)) {
+      return [
+        <span key={`${nyckel}-h`} className={KOD_FARGER.rubrik}>
+          {rad}
+        </span>,
+      ];
+    }
+    const delar = rad.split(/(`[^`]*`|\*\*[^*]+\*\*|\[[^\]]*\]\([^)]*\))/g);
+    return delar.map((d, i) =>
+      d.startsWith("`") || d.startsWith("[") ? (
+        <span key={`${nyckel}-m${i}`} className={KOD_FARGER.strang}>
+          {d}
+        </span>
+      ) : d.startsWith("**") ? (
+        <span key={`${nyckel}-m${i}`} className={KOD_FARGER.rubrik}>
+          {d}
+        </span>
+      ) : (
+        <span key={`${nyckel}-m${i}`}>{d}</span>
+      ),
+    );
+  }
+  // JS/TS/JSON/CSS: kommentar → sträng → tal → nyckelord (första träff vinner).
+  const re =
+    /(\/\/.*$|\/\*.*?\*\/)|("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`(?:[^`\\]|\\.)*`)|(\b\d[\d_]*(?:\.\d+)?\b)|([A-Za-z_$][A-Za-z0-9_$]*)/g;
+  const ut: React.ReactNode[] = [];
+  let sist = 0;
+  let n = 0;
+  for (let m = re.exec(rad); m !== null; m = re.exec(rad)) {
+    if (m.index > sist) ut.push(<span key={`${nyckel}-t${n++}`}>{rad.slice(sist, m.index)}</span>);
+    const [träff, kommentar, strang, tal, ord] = m;
+    let klass: string | undefined;
+    if (kommentar) klass = KOD_FARGER.kommentar;
+    else if (strang) klass = KOD_FARGER.strang;
+    else if (tal) klass = KOD_FARGER.tal;
+    else if (ord && KOD_NYCKELORD.has(ord)) klass = KOD_FARGER.nyckelord;
+    ut.push(
+      klass ? (
+        <span key={`${nyckel}-k${n++}`} className={klass}>
+          {träff}
+        </span>
+      ) : (
+        <span key={`${nyckel}-k${n++}`}>{träff}</span>
+      ),
+    );
+    sist = m.index + träff.length;
+  }
+  if (sist < rad.length) ut.push(<span key={`${nyckel}-t${n++}`}>{rad.slice(sist)}</span>);
+  return ut;
+}
+
+/** Absolut agentsökväg → arbetsytans relativa (API:t kräver relativ form). */
+function relativSokvag(sokvag: string, arbetsyta?: string): string {
+  if (!sokvag.startsWith("/")) return sokvag;
+  const rot = arbetsyta?.replace(/\/+$/, "");
+  if (rot && sokvag.startsWith(`${rot}/`)) return sokvag.slice(rot.length + 1);
+  return sokvag; // utan känd rot: API:t svarar ärligt (avvisar absoluta)
+}
+
+/** Ändelse → kodvy-språk (tokeniseringens vägval). */
+function kodSprak(namn: string): string {
+  const ande = (namn.toLowerCase().split(".").pop() ?? "").trim();
+  return ande === "md" || ande === "markdown" ? "md" : "kod";
+}
+
+/**
+ * VÅG 85 F5: EXPANDERAD KODVY för en fil i "Ändringar"-panelen —
+ *   · hämtar filen via GET /api/studio/filer?sokvag=… (≤ 20 kB text);
+ *   · syntaxmarkerad (guld/grön/grå/lila enligt kundspec);
+ *   · DE ÄNDRADE RADERNA GULA: exakta positioner ur v4-punkterna
+ *     (newStart…+newLines); utan punkter matchas diff-motorns +rader
+ *     sekventiellt mot filen;
+ *   · rena borttagningar (newLines 0) visas som RÖDA spökrader;
+ *   · max 200 rader ("…" + antal gömda);
+ *   · REDIGERA (endast plan-läge): textarea → POST /api/studio/filer →
+ *     notis "filen sparad — nästa agent-turn ser ändringen" (kundens
+ *     sätt att styra koden UTAN TERMINAL — detta ÄR agentens workspace).
+ */
+function KodvyFil({
+  fil,
+  arbetsyta,
+  planLage,
+}: {
+  fil: Filandring;
+  arbetsyta?: string;
+  planLage: boolean;
+}): React.JSX.Element {
+  const relativ = relativSokvag(fil.sokvag, arbetsyta);
+  const [innehall, setInnehall] = React.useState<string | null>(null);
+  const [fel, setFel] = React.useState("");
+  const [laddar, setLaddar] = React.useState(true);
+  const [redigerar, setRedigerar] = React.useState(false);
+  const [utkast, setUtkast] = React.useState("");
+  const [sparar, setSparar] = React.useState(false);
+  const [notis, setNotis] = React.useState("");
+
+  React.useEffect(() => {
+    let aktiv = true;
+    setLaddar(true);
+    setFel("");
+    setNotis("");
+    (async () => {
+      try {
+        const res = await fetch(`/api/studio/filer?sokvag=${encodeURIComponent(relativ)}`, {
+          headers: adminHeaders(),
+        });
+        const data = (await res.json()) as {
+          fel?: string;
+          forhandsgranskning?: { slag?: string; innehåll?: string; meddelande?: string; orsak?: string };
+        };
+        if (!aktiv) return;
+        if (data.fel) {
+          setFel(data.fel);
+        } else if (
+          data.forhandsgranskning?.slag === "text" &&
+          typeof data.forhandsgranskning.innehåll === "string"
+        ) {
+          setInnehall(data.forhandsgranskning.innehåll);
+        } else {
+          setFel(
+            data.forhandsgranskning?.meddelande ??
+              data.forhandsgranskning?.orsak ??
+              "Filen kan inte förhandsgranskas.",
+          );
+        }
+      } catch (e) {
+        if (aktiv) setFel(e instanceof Error ? e.message.slice(0, 160) : "Filen kunde ej hämtas.");
+      } finally {
+        if (aktiv) setLaddar(false);
+      }
+    })();
+    return () => {
+      aktiv = false;
+    };
+  }, [relativ]);
+
+  /** Markera ändrade rader (1-baserade) + spök-borttagningar per position. */
+  const markerade = React.useMemo(() => {
+    const gula = new Set<number>();
+    const roda = new Map<number, number>(); // rad → antal borttagna före den
+    const rader = (innehall ?? "").split("\n");
+    if (fil.punkter && fil.punkter.length > 0) {
+      // V4-punkter: EXAKTA positioner (transportens rika diff, våg 85 F4).
+      for (const p of fil.punkter) {
+        if (p.newLines > 0) {
+          for (let i = 0; i < p.newLines; i++) gula.add(p.newStart + i);
+        } else if (p.oldLines > 0) {
+          roda.set(p.newStart, Math.max(roda.get(p.newStart) ?? 0, p.oldLines));
+        }
+      }
+    } else {
+      // Write/Edit-motorn: matcha +raderna sekventiellt mot filens rader
+      // (första opåverkade träffen vinner — ärlig heuristik utan positioner).
+      let pekare = 0;
+      for (const r of fil.rader) {
+        if (r.typ !== "+") continue;
+        const mal = r.text.trim();
+        if (!mal) continue;
+        for (let i = pekare; i < rader.length; i++) {
+          if (rader[i].trim() === mal) {
+            gula.add(i + 1);
+            pekare = i + 1;
+            break;
+          }
+        }
+      }
+    }
+    return { gula, roda };
+  }, [innehall, fil]);
+
+  const spara = async (): Promise<void> => {
+    setSparar(true);
+    setNotis("");
+    try {
+      const res = await fetch("/api/studio/filer", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ sokvag: relativ, innehall: utkast }),
+      });
+      const data = (await res.json()) as { fel?: string; spara?: string; storlek?: number };
+      if (data.fel) {
+        setNotis(`Kunde ej spara: ${data.fel}`);
+      } else {
+        setInnehall(utkast);
+        setRedigerar(false);
+        setNotis(`✓ Filen sparad (${data.storlek ?? utkast.length} B) — nästa agent-turn ser ändringen.`);
+      }
+    } catch (e) {
+      setNotis(`Kunde ej spara: ${e instanceof Error ? e.message.slice(0, 140) : "nätverksfel"}`);
+    } finally {
+      setSparar(false);
+    }
+  };
+
+  const sprak = kodSprak(fil.sokvag.split("/").pop() ?? "");
+  const allaRader = (innehall ?? "").split("\n");
+  const MAX_VISADE = 200;
+  const visade = allaRader.slice(0, MAX_VISADE);
+  const gömda = allaRader.length - visade.length;
+
+  return (
+    <div className="border-t border-gold/10 bg-muted/40">
+      {laddar ? (
+        <p className="flex items-center gap-1.5 px-2.5 py-2 text-[10px] text-muted-foreground">
+          <Loader2 className="h-3 w-3 animate-spin text-gold" /> Läser filen…
+        </p>
+      ) : fel ? (
+        <p className="px-2.5 py-2 text-[10px] leading-relaxed text-muted-foreground">
+          Kodvy ej tillgänglig: {fel}
+        </p>
+      ) : redigerar ? (
+        <div className="p-2">
+          <textarea
+            value={utkast}
+            onChange={(e) => setUtkast(e.target.value)}
+            spellCheck={false}
+            rows={14}
+            className="w-full resize-y rounded-md border border-gold/40 bg-black/20 px-2 py-1.5 font-mono text-[11px] leading-relaxed text-foreground outline-none focus:border-gold/70"
+          />
+          <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+            <button
+              onClick={() => void spara()}
+              disabled={sparar}
+              className="flex items-center gap-1 rounded-md border border-gold/50 bg-gold/10 px-2 py-1 text-[10px] font-semibold text-foreground transition-colors hover:bg-gold/20 disabled:opacity-50"
+            >
+              {sparar ? <Loader2 className="h-3 w-3 animate-spin" /> : <Save className="h-3 w-3" />}
+              Spara
+            </button>
+            <button
+              onClick={() => {
+                setRedigerar(false);
+                setNotis("");
+              }}
+              disabled={sparar}
+              className="rounded-md border border-border px-2 py-1 text-[10px] text-muted-foreground transition-colors hover:bg-muted/60 disabled:opacity-50"
+            >
+              Avbryt
+            </button>
+            <span className="text-[9px] text-muted-foreground/70">
+              Skrivs till agentens workspace — nästa turn ser ändringen.
+            </span>
+          </div>
+          {notis && (
+            <p
+              className={cn(
+                "mt-1.5 text-[10px]",
+                notis.startsWith("✓") ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
+              )}
+            >
+              {notis}
+            </p>
+          )}
+        </div>
+      ) : (
+        <>
+          <div className="flex items-center gap-1.5 border-b border-gold/10 px-2.5 py-1">
+            <FileCode className="h-3 w-3 shrink-0 text-gold/80" />
+            <span className="min-w-0 flex-1 truncate font-mono text-[10px] text-muted-foreground" title={relativ}>
+              {relativ}
+            </span>
+            <span className="shrink-0 text-[9px] text-muted-foreground/70">{allaRader.length} rader</span>
+            {planLage && innehall !== null && (
+              <button
+                onClick={() => {
+                  setUtkast(innehall);
+                  setNotis("");
+                  setRedigerar(true);
+                }}
+                className="flex shrink-0 items-center gap-1 rounded-md border border-gold/50 bg-gold/10 px-1.5 py-0.5 text-[9px] font-semibold text-foreground transition-colors hover:bg-gold/20"
+                title="Redigera filen (endast plan-läge) — sparas till agentens workspace"
+              >
+                <Pencil className="h-3 w-3" /> Redigera
+              </button>
+            )}
+          </div>
+          <pre className="max-h-72 overflow-auto px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
+            {visade.map((rad, i) => {
+              const nummer = i + 1;
+              const gul = markerade.gula.has(nummer);
+              return (
+                <span
+                  key={i}
+                  className={cn(
+                    "flex gap-2 whitespace-pre-wrap break-all rounded-sm px-1",
+                    gul && "bg-yellow-200/70 dark:bg-yellow-500/20",
+                  )}
+                >
+                  <span className="w-8 shrink-0 select-none text-right text-muted-foreground/50">{nummer}</span>
+                  <span className="min-w-0 flex-1">{markeraKodRad(rad, sprak, `r${i}`)}</span>
+                </span>
+              );
+            })}
+            {[...markerade.roda.entries()].map(([pos, antal]) =>
+              pos <= MAX_VISADE ? (
+                <span
+                  key={`ghost-${pos}`}
+                  className="flex gap-2 rounded-sm bg-red-200/60 px-1 text-red-700 dark:bg-red-500/20 dark:text-red-300"
+                  title={`${antal} borttagna rader (diff-motorn)`}
+                >
+                  <span className="w-8 shrink-0 select-none text-right opacity-60">{pos}</span>
+                  <span className="min-w-0 flex-1">
+                    − {antal} borttagen{antal > 1 ? "a rader" : " rad"} (existerar ej i filen)
+                  </span>
+                </span>
+              ) : null,
+            )}
+            {gömda > 0 && (
+              <span className="block px-1 pt-1 text-muted-foreground/60">
+                … {gömda} rader till (kodvyn visar max {MAX_VISADE})
+              </span>
+            )}
+          </pre>
+          {notis && (
+            <p
+              className={cn(
+                "border-t border-gold/10 px-2.5 py-1.5 text-[10px]",
+                notis.startsWith("✓") ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
+              )}
+            >
+              {notis}
+            </p>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
 /**
  * Ändringspanelen per turn — filrader med +N (grönt) / −N (rött), klicka
- * ut filen för rad-diff i monospace (grönt/rött per rad).
+ * ut filen för KODVY (VÅG 85 F5: filen på disk, syntaxmarkerad, ändrade
+ * rader GULA, borttagna RÖDA) + rad-diff i monospace under.
  */
 function AndringsPanel({
   andringar,
   onVaxlaFil,
+  arbetsyta,
+  planLage,
 }: {
   andringar: Filandring[];
   onVaxlaFil: (sokvag: string) => void;
+  /** Agentens arbetsyterot (absoluta diff-sökvägar → relativa API-sökvägar). */
+  arbetsyta?: string;
+  /** true = plan-läge (kontext.läge) — redigera-knappen visas bara då. */
+  planLage: boolean;
 }): React.JSX.Element {
   return (
     <div className="mt-2 overflow-hidden rounded-lg border border-gold/25 bg-muted/30">
@@ -1300,20 +1699,26 @@ function AndringsPanel({
               <span className="shrink-0 font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400">+{f.plus}</span>
               <span className="shrink-0 font-mono text-[10px] font-bold text-red-600 dark:text-red-400">−{f.minus}</span>
             </button>
-            {f.öppen && f.rader.length > 0 && (
-              <pre className="max-h-64 overflow-auto border-t border-gold/10 bg-muted/60 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
-                {f.rader.map((r, i) => (
-                  <span
-                    key={i}
-                    className={cn(
-                      "block whitespace-pre-wrap break-all",
-                      r.typ === "+" ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
-                    )}
-                  >
-                    {r.typ === "+" ? "+" : "−"} {r.text || " "}
-                  </span>
-                ))}
-              </pre>
+            {f.öppen && (
+              <>
+                {/* VÅG 85 F5: filen på disk — syntax + GULA ändringsrader. */}
+                <KodvyFil fil={f} arbetsyta={arbetsyta} planLage={planLage} />
+                {f.rader.length > 0 && (
+                  <pre className="max-h-64 overflow-auto border-t border-gold/10 bg-muted/60 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
+                    {f.rader.map((r, i) => (
+                      <span
+                        key={i}
+                        className={cn(
+                          "block whitespace-pre-wrap break-all",
+                          r.typ === "+" ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
+                        )}
+                      >
+                        {r.typ === "+" ? "+" : "−"} {r.text || " "}
+                      </span>
+                    ))}
+                  </pre>
+                )}
+              </>
             )}
           </li>
         ))}
@@ -2573,21 +2978,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
             }
             switch (event.typ) {
               case "mal_status":
-                setMalStatus({ aktiv: event.aktiv, pausad: event.pausad, iteration: event.iteration });
-                setMalIteration(event.iteration);
+                setMalStatus({
+                  aktiv: event.aktiv ?? false,
+                  pausad: event.pausad ?? false,
+                  iteration: event.iteration ?? 0,
+                });
+                setMalIteration(event.iteration ?? 0);
                 if (typeof event.mal === "string") setMal(event.mal);
                 else if (event.mal === null && !event.aktiv && !event.pausad) setMal(null);
                 break;
               case "mal_iteration":
                 if (event.fas === "start") {
                   // Ny autonom iteration = NY agentbubbla med iterations-badge.
-                  setMalIteration(event.iteration);
+                  const iteration = event.iteration ?? 0;
+                  setMalIteration(iteration);
                   const id = nyttId();
                   malBubblaRef.current = id;
                   rörTabb(huvudTabbIdRef.current, (t) => ({
                     ...t,
                     tankar: "",
-                    status: `Autonom iteration ${event.iteration}…`,
+                    status: `Autonom iteration ${iteration}…`,
                     meddelanden: [
                       ...t.meddelanden,
                       {
@@ -2596,13 +3006,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         text: "",
                         strömmande: true,
                         verktygKort: [],
-                        malIteration: event.iteration,
+                        malIteration: iteration,
                       },
                     ],
                   }));
                 } else {
                   // KVD-pixeln: iterationen klar — färdigställ bubblan.
-                  setMalIteration(event.iteration);
+                  setMalIteration(event.iteration ?? 0);
                   rörBubbla((m) => ({
                     ...m,
                     text: event.svar && event.svar.trim() ? event.svar : m.text || "(tom iteration)",
@@ -3605,9 +4015,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
       return;
     }
 
+    // VÅG 85 F1: mål-loopen kör — en manuell prompt kan kollidera med en
+    // pågående mål-turn (serverns -32010 "prompt already running"). Fråga
+    // ÄRLIGT i stället för att låta fel-eventet förklara.
+    if (malKör && !window.confirm("Mål-loopen kör — skicka prompten ändå? Agenten kan vara mitt i en iteration (vänta i så fall).")) {
+      return;
+    }
+
     setPrompt("");
     await skickaPrompt(aktivTabbIdRef.current, text);
-  }, [prompt, strömmar, korKommando, skickaPrompt]);
+  }, [prompt, strömmar, korKommando, skickaPrompt, malKör]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -4949,6 +5366,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     m.fel ? "border-red-500/40" : "border-gold/40",
                   )}
                 >
+                  {/* VÅG 85 F1: autonom iteration-badge — mål-loopens turner
+                      märks (🎯 Iteration N) så de skiljs från chattade svar. */}
+                  {typeof m.malIteration === "number" && (
+                    <p className="mb-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-gold">
+                      <Target className="h-3 w-3 shrink-0" />
+                      Autonom iteration {m.malIteration}
+                    </p>
+                  )}
                   {/* V83 B1: varje verktygskall = expanderbart kort i flödet. */}
                   {m.verktygKort && m.verktygKort.length > 0 && (
                     <div className="mb-2 space-y-1.5">
@@ -4994,9 +5419,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   {m.strömmande && m.text && (
                     <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-gold align-text-bottom" />
                   )}
-                  {/* V83 B1: ändringspanelen — +N/−N per fil, expanderbar diff. */}
+                  {/* V83 B1 + VÅG 85 F5: ändringspanelen — +N/−N per fil,
+                      expanderbar KODVY (syntax + gula ändringsrader) +
+                      redigering i plan-läge (kundens terminal-fria kontroll). */}
                   {m.ändringar && m.ändringar.length > 0 && (
-                      <AndringsPanel
+                    <AndringsPanel
                       andringar={m.ändringar}
                       onVaxlaFil={(sokvag) =>
                         rörTabb(aktivTabb?.id ?? "", (tb) => ({
@@ -5013,6 +5440,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           ),
                         }))
                       }
+                      arbetsyta={arbetsytaInfo?.arbetsyta}
+                      planLage={(aktivTabb?.kontext?.lage ?? arbetsytaInfo?.lage) === "plan"}
                     />
                   )}
                   {/* V83 B1: rundstatistik — varaktighet · resultat · verktyg. */}
@@ -5370,6 +5799,93 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         </div>
       </div>
+
+      {/* VÅG 85 F1: MÅL-DIALOG — det STORA "🎯 Mål-läge"-flödet (KVD 2):
+          textarea "Beskriv utvecklingsmålet…" → Starta ⇒ session/goal set ⇒
+          autonom loop börjar (badge + banner + iterationer i chatten). */}
+      {malDialogOppen && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-3 backdrop-blur-[2px]"
+          onClick={() => setMalDialogOppen(false)}
+        >
+          <div
+            role="dialog"
+            aria-label="Mål-läge — autonom utveckling"
+            className="flex max-h-[88dvh] w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-gold/40 bg-[#0D1B31] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-black/25 px-4 py-3">
+              <Target className="h-5 w-5 shrink-0 text-gold" />
+              <div className="min-w-0 flex-1">
+                <h2 className="font-serif text-base font-bold text-[#EDE6D6]">🎯 Mål-läge</h2>
+                <p className="text-[11px] text-[#EDE6D6]/60">
+                  Autonom utveckling — agenten itererar själv mot målet tills du pausar
+                </p>
+              </div>
+              <button
+                onClick={() => setMalDialogOppen(false)}
+                title="Stäng (Esc)"
+                className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
+              <label htmlFor="mal-dialog-text" className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wider text-[#EDE6D6]/60">
+                Beskriv utvecklingsmålet
+              </label>
+              <textarea
+                id="mal-dialog-text"
+                value={malDialogText}
+                onChange={(e) => setMalDialogText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+                    e.preventDefault();
+                    void startaMal();
+                  }
+                }}
+                rows={5}
+                maxLength={500}
+                autoFocus
+                placeholder="Beskriv utvecklingsmålet… t.ex. &quot;Lista alla .md-filer i workspacet och håll sammanfattningen uppdaterad&quot;"
+                className="w-full resize-none rounded-lg border border-gold/40 bg-black/30 px-3 py-2.5 text-sm leading-relaxed text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
+              />
+              <p className="mt-1.5 text-right text-[10px] tabular-nums text-[#EDE6D6]/40">{malDialogText.length}/500</p>
+              <p className="mt-2 text-[10px] leading-relaxed text-[#EDE6D6]/50">
+                När du startar börjar agenten arbeta mot målet på egen hand — protokollet
+                matar nya turner automatiskt (bevisat våg 83). Varje iteration syns LIVE i
+                chatten med verktygskort, diff och streaming, och headern visar en pulserande
+                <span className="mx-1 font-semibold text-gold">MÅL AKTIVT</span>-badge med
+                iterationsräknare. Pausa när du vill — sessionen och målet lever kvar.
+              </p>
+              {mal && (
+                <p className="mt-2 rounded-lg border border-gold/25 bg-gold/5 px-3 py-2 text-[10px] leading-relaxed text-[#EDE6D6]/70">
+                  Ett mål är redan satt{malKör ? " och loopen KÖR just nu" : malPausat ? " (pausat)" : ""} — att
+                  starta igen ersätter målet med texten ovan
+                  {malKör ? " (pausa först om agenten är mitt i en iteration)" : ""}.
+                </p>
+              )}
+            </div>
+            <div className="flex items-center justify-end gap-2 border-t border-gold/25 bg-black/20 px-4 py-3">
+              <button
+                onClick={() => setMalDialogOppen(false)}
+                className="rounded-full px-4 py-2 text-xs font-semibold text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                Avbryt
+              </button>
+              <button
+                onClick={() => void startaMal()}
+                disabled={!malDialogText.trim() || malStartar}
+                className="flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-xs font-bold text-[#0E1B2E] transition-colors hover:bg-gold/90 disabled:opacity-50"
+                title="Starta mål-läget (session/goal set) — den autonoma loopen börjar"
+              >
+                {malStartar ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Play className="h-3.5 w-3.5" />}
+                Starta mål-läge
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* V84 A2: KOMMANDOPALETT (Ctrl/Cmd+K) — sök bland snabbkommandona,
           "Byt modell X" och Tema. Registret STUDIO_KOMMANDON är källan;

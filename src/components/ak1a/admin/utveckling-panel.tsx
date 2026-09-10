@@ -127,7 +127,7 @@ type AnvandningSvar = {
   usage: unknown | null;
   totalTokens7d: number;
   totalTokens24h: number;
-  kalla24h?: "sessioner" | "snitt" | "okand";
+  kalla24h?: "dagsrad" | "sessioner" | "snitt" | "okand";
   modellFordelning: AnvandningModell[];
   sammanfattning?: {
     inputTokens?: number;
@@ -1221,11 +1221,13 @@ function AnvandSektion({
   const dygn = s?.totalTokens24h ?? 0;
   const fordelning = s?.modellFordelning ?? [];
   const kallaText =
-    s?.kalla24h === "sessioner"
-      ? "summerat ur sessioner aktiva senaste 24 h"
-      : s?.kalla24h === "snitt"
-        ? "dygnsmedelvärde (7 dagar ÷ 7)"
-        : "";
+    s?.kalla24h === "dagsrad"
+      ? "senaste dagen ur protokollets dagsuppdelning"
+      : s?.kalla24h === "sessioner"
+        ? "summerat ur sessioner aktiva senaste 24 h"
+        : s?.kalla24h === "snitt"
+          ? "dygnsmedelvärde (7 dagar ÷ 7)"
+          : "";
   const sum = s?.sammanfattning;
 
   return (
@@ -1281,7 +1283,7 @@ function AnvandSektion({
             </div>
             <div className="rounded-lg border border-border bg-card p-4">
               <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                Senaste 24 timmarna
+                {s.kalla24h === "dagsrad" ? "Tokens · senaste dagen" : "Senaste 24 timmarna"}
               </span>
               <p className="mt-1 break-words font-serif text-3xl font-bold tabular-nums">
                 {formatTokens(dygn)}
@@ -1322,8 +1324,8 @@ function AnvandSektion({
                         <span className="shrink-0 text-[10px] text-muted-foreground tabular-nums">
                           {formatTokens(m.tokens)} tokens · {procent}% ·{" "}
                           {m.antal > 0
-                            ? `${sv(m.antal)} session${m.antal === 1 ? "" : "er"}`
-                            : "inga sessioner i listan"}
+                            ? `${sv(m.antal)} anrop`
+                            : "inga anrop räknade"}
                         </span>
                       </div>
                       <div className="mt-1 h-2.5 w-full overflow-hidden rounded-full bg-muted">

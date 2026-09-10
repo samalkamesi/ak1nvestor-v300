@@ -52,7 +52,7 @@ interface AnvandningSvar {
   usage: unknown | null;
   totalTokens7d: number;
   totalTokens24h: number;
-  kalla24h: "sessioner" | "snitt" | "okand";
+  kalla24h: "dagsrad" | "sessioner" | "snitt" | "okand";
   modellFordelning: { modell: string; tokens: number; antal: number; andel: number }[];
   sammanfattning: {
     inputTokens?: number;

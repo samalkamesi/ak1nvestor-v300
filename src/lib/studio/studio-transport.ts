@@ -4,6 +4,8 @@ import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } 
 import os from "node:os";
 import path from "node:path";
 
+import { autoPolicySvar } from "./permissions-policy";
+
 /**
  * STUDIO-TRANSPORT — injicerbart transportlager för /studio-bryggan
  * (VÅG 81 WEBCHAT-STUDIO + VÅG 82 STUDIO V2 "Z-portalen i molnet",
@@ -371,6 +373,29 @@ import path from "node:path";
  *     C-block). NULL vid -32601 (och övriga protokollfel — replay är lyx,
  *     historik-vägen session/messages består; ALDRIG krasch).
  *
+ * VÅG 94 B (PERMISSIONS-AUTOPOLICY — "molnutvecklingens lås upp"; bevisat
+ * prod-problem: agentens Write/Bash-skärningar triggar interaction/
+ * requestPermission → transporten väntade på webbläsarsvar → headless/
+ * mål-läge/bakgrundsarbete fick "inget klient-svar inom 30 s" ⇒ NEKAT —
+ * kunden såg agenten stanna vid VARJE skrivning): paServerRequest kör
+ * REN auto-policy (src/lib/studio/permissions-policy.ts, STUDIO_AUTO_POLICY
+ * default PÅ) FÖRST för varje permission-request —
+ *   · allow (Write/Edit/MultiEdit INOM arbetsytan via rot-prefixkontroll —
+ *     Mimosa-receptet, ren strängkonkat; Read/Glob/Grep/LS/Task/Agent;
+ *     Bash vars varje led efter splittring på && ; | matchar vitlistan:
+ *     git-flöden, npm, npx tsc, node, ls/cat/pwd/date/mkdir/wc/head/tail/
+ *     grep, cp/mv inom arbetsytan, python3/pytest, pm2 list/restart ak1a,
+ *     curl till localhost/lab.ak1nvestor.com) ⇒ protokollsvaret {decision:
+ *     "allow"} DIREKT (samma z2-form som svarPermission:s allow_once) +
+ *     status-event "Auto-policy tillät: …";
+ *   · deny (rm -rf mot rot, sudo, .env-filer, id_rsa, .pem-certifikat,
+ *     authorized_keys, crontab/systemctl, curl|sh, chmod 777, dd, mkfs,
+ *     forkbomb, git push --force) ⇒ {decision:"deny"} + status-event
+ *     "Auto-policy nekade: …";
+ *   · frag/null ⇒ befintligt dialogflöde (pending interaktion + 30 s-
+ *     default) — policyn frågar när den inte kan bedöma anropet.
+ * Mocken är NEUTRAL (dess permission-demo bär inga riktiga server-requests).
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -410,6 +435,8 @@ import path from "node:path";
  *                        (default: /home/ak1a/agent/ak1 om den finns, annars cwd)
  *   STUDIO_LAGRING     = katalog för sessions-persistensfilen
  *                        (default: os.tmpdir())
+ *   STUDIO_AUTO_POLICY = "av" stänger av permission-auto-policyn (våg 94 B
+ *                        — default PÅ; allt blir då webbläsardialog igen)
  *
  * Säkerhet: transporten kör ENDAST server-side (Node runtime) och exponerar
  * ALDRIG hemligheter mot klienten — API-rutten (stream/route.ts) äger
@@ -4675,6 +4702,29 @@ class AppServerTransport implements StudioTransport {
           : `imp-${Date.now().toString(36)}`;
 
     if (metod === "interaction/requestPermission") {
+      // VÅG 94 B: AUTO-POLICY FÖRST — serversides snabbventil (se
+      // permissions-policy.ts). Bevisat prod-problem: agentens Write/Bash-
+      // skärningar fastnade i webbläsardialogen → headless/mål-läge/bak-
+      // grundsarbete nekades efter 30 s ("agenten stannar vid varje
+      // skrivning"). allow ⇒ protokollsvaret direkt (samma z2-form som
+      // svarPermission:s allow_once), deny ⇒ nekande svar + status-event
+      // till lyssnarna, frag/null ⇒ befintligt dialogflöde nedan.
+      const policy = autoPolicySvar(metod, parametrar, this.arbetskatalog);
+      if (policy?.beslut === "allow") {
+        this.notiferaInteraktion({
+          typ: "status",
+          text: `Auto-policy tillät: ${policy.skal ?? "vitlistat verktygsanrop"}`,
+        });
+        return { decision: "allow", reason: `allow_once via ak1a-studio auto-policy: ${policy.skal ?? "okänt skäl"}` };
+      }
+      if (policy?.beslut === "deny") {
+        this.notiferaInteraktion({
+          typ: "status",
+          text: `Auto-policy nekade: ${policy.skal ?? "otillåtet verktygsanrop"}`,
+        });
+        return { decision: "deny", reason: `ak1a-studio auto-policy nekade: ${policy.skal ?? "otillåtet verktygsanrop"}` };
+      }
+
       const fardigaSvar = new Map<string, unknown>();
       const alternativ: StudioPermissionAlternativ[] = [];
       if (Array.isArray(p.options)) {

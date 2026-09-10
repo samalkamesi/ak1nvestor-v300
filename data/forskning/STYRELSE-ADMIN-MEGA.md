@@ -704,3 +704,24 @@ KVD: tsc 36-baslinje · build exit 0 · E2E grönt · deploy + prodcheck.
   inställningar, C2 hooks/trustGrant, C3 plugins-drift, C4 events-
   replay) — NOTERA: håll koll på om binäruppgradering frigör
   automation/webbläsare först.
+
+## TILLÄGG VÅG 93 — P1-KLUSTER ENLIGT V93-P1-UNDERLAG (2026-09-10)
+
+Samma beprövade struktur som våg 92 (transport/rutter/UI, krockfritt):
+
+- C1 **TRANSPORT** (studio-transport.ts ENDAST): workspace/readState
+  full parsning + setDefaultModel/setDefaultThoughtLevel/setDefaultMode
+  (kundens preferenser persists i workspace), plugins/setEnabled +
+  plugins-drift-lista (aktiverad/version), session/events sonderad
+  replay (seq-cursor om formen tillåter). -32601 → 501-karta.
+- C2 **RUTTER** (api/studio/** NYA installningar + fardigheter-uppgr.):
+  GET/POST /api/studio/installningar {modell?, tankestyrka?, lage?}
+  → workspace-metoderna; /api/studio/fardigheter uppgraderas med
+  plugin-aktiveringsstatus; ALDRIG skriva config.json med API-nycklar —
+  endast preferensfälten via protokollets egna metoder.
+- C3 **UI** (studio-chat.tsx + kommandon.ts ENDAST): Inställningar-
+  drawern sparar till servern ("gäller nästa samtal"-ärlighet), plugin-
+  brytare (på/av) i Färdigheter-drawer, indikator när workspace-läge
+  avviker från sessionens.
+
+KVD: tsc 36 · build 0 · E2E (installningar roundtrip) · deploy.

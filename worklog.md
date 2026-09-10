@@ -9856,3 +9856,41 @@ SKILL.md-sökväg + beskrivning ur referenceCatalog} · /studio 200 +
 "Färdigheter" i prod-chunk (40m3vq930h5q-.js) · startsidan 200. Src
 endast via Write/Edit; akm2/vagfundament/.env* orörda (lösenordet lästes
 endast i serverns eget shell för curl, aldrig loggat).
+
+## VÅG 85 F3 — USAGE/COST-PANELEN (2026-09-10, 0e7587b): tokens, ärlighet, inga kronor
+
+**TRANSPORT:** lasUsage() → usage/stats {range:"7d"} (kartan §2). PROD-SOND
+(2026-09-10) upptäckte att aktuellt zcode bär en RIKARE live-form än kartan:
+`models:[{modelId,totalTokens,inputTokens,outputTokens,requestCount,share}]`
++ `dailyModelUsage:[{date,models:[{modelId,totalTokens}]}]` (byModel är äldre
+fallback) — modellfordelningen fick DÄRFÖR riktiga anropsantal (requestCount)
+och 24 h-siffran ÄRLIGASTE källa först: senaste dagsraden ("dagsrad"), reserv
+session/usage-summa över sessioner aktiva <24 h ("sessioner"), sista reserv
+dygnsmedel 7d/7 ("snitt"). Mock speglar live-formen (deterministisk, >0).
+
+**API:** GET /api/studio/anvandning (requireAdmin): usage-svaret RÅTT +
+{totalTokens7d, totalTokens24h, kalla24h, modellFordelning:[{modell,tokens,
+antal,andel}], sammanfattning} · 60 s promise-memo-cache (puls-mönstret) ·
+transportfel ⇒ 200 {live:false, fel} (aldrig krasch).
+
+**UI:** "Användning 📊"-sektion i Utvecklingspanelen (under Puls 📈): stor
+siffra "15,89 M / 7 dagar" + dags-/24 h-kort med källdeklaration ·
+modellfördelning som horisontella guldstaplar (andel % + anrop) ·
+kostnadskort med "Ingår i planen"-badge: GLM Coding Plan är PAUSPRIS (~$3/mo
+fast) — ALDRIG "du har betalat X kr", endast token-sanning + fördelning.
+
+**Verifiering:** tsc 38=baslinje (mina filer 0 nya) · motorer 107/0/0 ·
+Kvalitetsvakten GRÖN (0 FEL/4 manuella) · next build exit 0 · eslint 0 nya
+(mönstret setState-i-effect är förhandsbefintligt våg 84 E). **E2E PÅ PROD
+(0e7587b, pm2 online, riktig app-server):** GET + admin → 200 {live:true,
+transport:"appserver", totalTokens7d: 15 884 834 · totalTokens24h: 449 858
+(dagsrad) · glm-5.2 11,2 M tkn/70%/235 anrop · glm-5.3 3,6 M/22%/68 ·
+glm-5.3-flash 1,2 M/7%/44 · turns 59 · sessioner 37 · usage.source
+"agent-db"} · GET utan lösenord → 401 · "Användning 📊" + "Ingår i planen" i
+prod-chunk (334p46i9ac45n.js). PARALLMERGE: F1/F2/F4/F5 byggde samtidigt i
+studio-transport/studio-chat — 2 transienta Edit-kollisioner löstes genom
+omläsning; deploysynk: serverns untrackade tar-pipe-filer backades upp till
+/tmp/ak1a-untracked-backup-20260910-033836 före git-push (innehålls-identisk
+studio-chat verifierad med md5 före checkout). Src endast via Write/Edit;
+akm2/vagfundament/.env* orörda (lösenordet lästes endast i serverns eget
+shell för curl, aldrig loggat).

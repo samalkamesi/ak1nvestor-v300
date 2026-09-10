@@ -9964,3 +9964,35 @@ PRIMÄR diff-motor (fallback: befintlig Write/Edit-parsning).
 E2E: 12/12 på prod.
 
 ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · prod 200.
+
+## VÅG 86 — STUDIO COMPLETE (2026-09-10): 4 agenter, 7 byggblock
+
+**G1 SLASH-AUTOCOMPLETE:** "/" i skrivfältet → dropdown med alla
+kommandon (namn + beskrivning + kategoribadge); ↑↓ navigera, Enter
+kör, Tab kompletterar, Esc stänger. Mobil-mönster med 44px-rader.
+
+**G2 PROMPTBIBLIOTEK + HISTORIK:** ⭐-knapp sparar prompts (50-tak);
+pil-upp återkallar senaste (terminal-bläddring); /sparad-kommando.
+
+**G3 RIKTIG INPUT-EDITOR:** autoväxande höjd (1-8 rader), markdown-
+förhandsvisning (👁-toggle), teckenräknare (n/2000, guldböd >1800),
+roterande placeholders. Mobil-säkrad.
+
+**G4 WEB-VERKTYG VISUALISERING:** WebFetch → klickbar länk + favicon +
+resultat; WebSearch → "🔍 sökte efter: …"-chip; live-parsning av
+URL:er även under tool_input_delta (agenten skriver — länken syns direkt).
+
+**G5 CHECKPOINT/REWIND (KNÄCKT):** turn-fork upptäckt (protokollet har
+INGA checkpoints per turn men fork {kind:"turn",turnIndex} FUNGERAR —
+STARKARE än checkpoints då det kräver inga filändringar). ⟲-knapp på
+varje agentbubbla → confirm → sessionen forkas vid den punkten →
+chatten börjar om där. Föräldern kvar i Sessioner. Dev 17/17,
+prod 13/14 (sista blockerad av server-OOM under parallellagenter).
+
+**G6 NOTISHISTORIK + GENVEGAR:** 🔔-panel med alla notiser (localStorage,
+50-tak, Töm-knapp); "?"-tangent → overlay med alla genvägar i tabell.
+
+**G7 EXPORT HTML:** 🖨 → fristående HTML-fil i AK1A-stil (marin header,
+papper-bubblor, kodblock, diff grönt/rött) — printbar. 21/21 XSS-test.
+
+ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · /studio 200.

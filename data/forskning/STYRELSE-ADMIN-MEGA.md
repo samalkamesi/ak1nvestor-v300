@@ -754,3 +754,31 @@ Studions 501-graceful-kontrakt är därmed PERMANENT korrekt hållning.
 ÅTERKOMST: `npm view zcode-app-cli version` vid varje våg-start — ny
 version > 3.11.2-22 ⇒ kör v92-e2e.mjs omgående (T2/T3 vaknar tyst).
 Paritetens tak är nu ~39/91 tills Z.AI släpper metoderna.
+
+## VÅG 94 — KVALITETSKLYFTAN STÄNGD VID ROTEN (2026-09-10, f89888c)
+
+Kundens besked: "inte alls samma kvalitet ... inget fungerar som det skall".
+DIFFERENTIALDIAGNOS (inte mer UI — hjärnan):
+
+1. **Skrivbordsagenten vs studions agent = samma motor, olika hjärna**:
+   skrivbordet har AGENTS.md-briefing + 7 minnesfiler + färdigheter;
+   studions agent hade **TOM arbetsyta-briefing (ingen AGENTS.md) +
+   100 % tomt minne + arbetsyta fryst på våg 81** (12 vågar gammal —
+   agenten citerade UTDATERADE regler ur gamla MEGA_PLAN-docs).
+2. FIX PÅ SERVERN: (a) agentarbetsytan /home/ak1a/agent/ak1 uppdaterad
+   086833e→f89888c (dubblettrensning som deploy-fällan); (b) AGENTS.md
+   (91 r, versionerad i repo data/infra/agent-arbetsyta/ + kopiad till
+   arbetsytrot) med sanningshierarki (AGENTS.md > STYRELSE-*.md >
+   worklog > HISTORISKA MEGA-docs); (c) minnet sått (kundprofil,
+   projektstatus, juridik, styrelseregler i projekt-minnet ak1-80a87…).
+3. **A/B-BEVIS (samma fråga, prod)**: FÖRE = föråldrad våg-81-"sanning",
+   ingen juridik/kundprofil; EFTER = citerar briefing, kundprofil,
+   ALDRIG-investeringsråd, Contabo/develop/våg-93-aktualitet, R1-R4.
+   Arbetsprobe: läste STYRELSE-ADMIN-MEGA.md live och sammanfattade
+   våg 91 korrekt (tankar 2 182 tkn).
+4. KVAR-STÖRNING: -32031 vid första meddelandet efter omstart (gammal
+   karta-session fäster död modell) — självläkning slår efter sekunder,
+   engångskostnad per omstart; bevakas.
+5. **STÅENDE VÅG-START-RUTIN**: agentarbetsytan pullas + AGENTS.md
+   kopieras (cp data/infra/agent-arbetsyta/AGENTS.md ./AGENTS.md) vid
+   varje våg-deploy — annars glider hjärnan ifrån koden igen.

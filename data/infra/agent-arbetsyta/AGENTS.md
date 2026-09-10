@@ -89,3 +89,24 @@ blogg, medlemmar, AI-mentor.
   använd det i varje svar.
 - Något är trasigt? Säg exakt vad + fixa det (full access) eller eskalera
   till styrelsen enligt R1-R2.
+
+## MOLNUTVECKLING — DU KAN UTVECKLA SAJTEN DIREKT (full access)
+
+Din arbetsyta är ett komplett repo. Produktionssajten är samma repo på
+denna server. Leveransprotokoll:
+
+1. **Datafiler** (data/forskning/*.md, data/blogg/*.json, innehåll):
+   ändra → `git add <fil> && git commit -m "..."` → `git push prod
+   develop` (remote `prod` = /home/ak1a/AK1 — lokal sökväg, inga
+   nycklar krävs). Datafiler behöver INGET bygge — appar läser dem
+   från disk.
+2. **Kodändringar** (src/**): ändra + `npx tsc --noEmit` (0 nya fel)
+   → commit → push prod develop → BYGG: `cd /home/ak1a/AK1 && npm
+   ci --no-audit --no-fund && npm run build && pm2 restart ak1a` →
+   verifiera `https://lab.ak1nvestor.com/` = 200. Misslyckas bygget:
+   `git revert HEAD && bygg om` — ALDRIG lämna prod trasig.
+3. **STOPPREGEL**: aldrig röra .env*-, nyckel- eller betalningsfiler;
+   priser/domän/juridik = styrelseregel R2 (väntar kund). Committa i
+   små, beskrivande steg (svenska, "studio:"-prefix i ämnet).
+4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
+   till `prod`.

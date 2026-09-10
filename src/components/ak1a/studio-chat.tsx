@@ -42,6 +42,7 @@ import {
   Pencil,
   PanelLeft,
   PanelRight,
+  Pause,
   Play,
   Plus,
   Printer,
@@ -132,6 +133,23 @@ import { cn } from "@/lib/utils";
  *     toast "Agenten avslutade jobbet medan du var borta". Otillgänglig
  *     endpoint = tyst (graceful mot A1:s parallellbygge).
  *
+ * VÅG 92 (STUDIO-UI, block B3 — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 92"):
+ *   · WEBBLÄSAR-PANEL: URL-fält + "Öppna"-knapp → POST /api/studio/
+ *     tjanster/webblasare {url} → resultatkort (titel länkad #58A6FF,
+ *     url, utdrag ≤ 300 tkn — tolererande tolkat mot B2:s rodd) + lista
+ *     öppna sidor underåt (klick = kör igen). 501/saknas ⇒ sektion dold.
+ *   · AUTOMATION-HANTERAREN: lista (namn + schema + badge aktiv/pausad)
+ *     + "Ny automation"-form (namn, schema, prompt) → POST /tjanster/
+ *     automation; per rad Pausa/Återuppta → POST …/automation/pausa samt
+ *     Radera (confirm) → DELETE …/automation?id=. /automation-kommandot
+ *     öppnar panelen (sondar färskt — saknas endpoint ⇒ info-toast).
+ *   · BAKGRUNDSKORT FULL: varje jobb = kort med titel, status-färgs-badge
+ *     och startad relativ tid + befintlig Avbryt-knapp.
+ *   · BILAGE-PROGRESS: användarmeddelandet med bilder visar
+ *     "Laddar upp bilaga…" (spinner) tills POST /api/studio/stream svarat,
+ *     därefter "Bilaga ✓" (#3FB950) vid varje thumbnail — enkel variant
+ *     (skick-väntan = progress), inget nytt API.
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -185,6 +203,13 @@ interface Meddelande {
   fel?: boolean;
   /** VÅG 91 A3a: bildsökvägar (arbetsytan) som bifogades med prompten. */
   bilder?: string[];
+  /**
+   * VÅG 92 B3: bilage-progress — "laddar" från skick till att POST
+   * /api/studio/stream svarat, därefter "klar" (Bilaga ✓). Endastsett för
+   * meddelanden med `bilder`; återställd sessionsstate normaliseras till
+   * "klar" (skicket svarade för längesedan).
+   */
+  bilagaStatus?: "laddar" | "klar";
 }
 
 interface Uppladdning {
@@ -489,7 +514,19 @@ function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
     if (pars.version !== 1 || !Array.isArray(pars.tabbar) || pars.tabbar.length === 0) return null;
     const tabbar = pars.tabbar
       .filter((t) => typeof t?.id === "string" && t.id)
-      .map((t) => ({ ...tabbGrund(), ...t, uppdaterad: typeof t.uppdaterad === "number" ? t.uppdaterad : 0, strömmar: false, status: "", tankar: "" }));
+      .map((t) => ({
+        ...tabbGrund(),
+        ...t,
+        uppdaterad: typeof t.uppdaterad === "number" ? t.uppdaterad : 0,
+        strömmar: false,
+        status: "",
+        tankar: "",
+        // VÅG 92 B3: bilage-progress överlever ej en sidoladdning — ett
+        // sparat "laddar" (POST bröts av navigeringen) visas som klart.
+        meddelanden: t.meddelanden.map((m) =>
+          m?.bilagaStatus === "laddar" ? { ...m, bilagaStatus: "klar" as const } : m,
+        ),
+      }));
     if (tabbar.length === 0) return null;
     if (!tabbar.some((t) => t.huvud)) tabbar[0].huvud = true;
     const aktiv =
@@ -1126,6 +1163,14 @@ interface TjansteRad {
   id: string;
   titel: string;
   status: string;
+  /** VÅG 92 B3: automation — cron/schemauttrycket (t.ex. "0 7 * * *"). */
+  schema?: string;
+  /** VÅG 92 B3: automation — aktiverad-flaggan (false = pausad). */
+  aktiverad?: boolean;
+  /** VÅG 92 B3: bakgrund — startad (ISO-sträng) för relativ tidsstämpel. */
+  startad?: string;
+  /** VÅG 92 B3: kategori (taskKind/typ) — bakgrundskortets mono-etikett. */
+  typ?: string;
 }
 
 type TjansteNamn = "bakgrund" | "webblasare" | "automation";
@@ -1144,7 +1189,7 @@ const TJANSTE_NAMN: readonly TjansteNamn[] = ["bakgrund", "webblasare", "automat
 const TJANSTE_INFO: readonly { namn: TjansteNamn; etikett: string; ikon: "klocka" | "glob" | "zap"; tom: string }[] = [
   { namn: "bakgrund", etikett: "Bakgrundsjobb", ikon: "klocka", tom: "Inga bakgrundsjobb just nu." },
   { namn: "webblasare", etikett: "Webbläsare", ikon: "glob", tom: "Inga webbläsarsessioner just nu." },
-  { namn: "automation", etikett: "Automation", ikon: "zap", tom: "Inga automationer kör just nu." },
+  { namn: "automation", etikett: "Automation", ikon: "zap", tom: "Inga automationer körs just nu." },
 ];
 
 /** Normalisera okänt GET /api/studio/tjanster/*-svar → visningsrader. */
@@ -1154,7 +1199,18 @@ function tjansteRaderUr(data: unknown): TjansteRad[] {
     lista = data;
   } else if (data && typeof data === "object") {
     const d = data as Record<string, unknown>;
-    for (const nyckel of ["jobb", "poster", "lista", "sessioner", "rader", "tasks", "items", "floden"]) {
+    for (const nyckel of [
+      "jobb",
+      "poster",
+      "lista",
+      "sessioner",
+      "rader",
+      "tasks",
+      "items",
+      "floden",
+      "automationer", // VÅG 92 B3: /tjanster/automation GET {automationer}
+      "blasare", // VÅG 92 B3: /tjanster/webblasare GET {blasare}
+    ]) {
       if (Array.isArray(d[nyckel])) {
         lista = d[nyckel] as unknown[];
         break;
@@ -1169,14 +1225,85 @@ function tjansteRaderUr(data: unknown): TjansteRad[] {
     const titel = strUr(r, ["titel", "title", "namn", "name", "beskrivning", "description", "url", "mal"]) || id;
     const status = strUr(r, ["status", "typ", "lage", "state"]);
     if (!id && !titel) continue;
-    ut.push({ id: id || titel, titel, status });
+    // VÅG 92 B3: schemat (cron), aktiverad-flaggan, startad-tid + typ —
+    // tolererant mot både v91- och v92-form (B1/B2 bygger parallellt).
+    const schema = strUr(r, ["schema", "cron", "cronExpr", "schedule", "intervall"]);
+    const startad = strUr(r, ["startad", "startedAt", "startTime", "createdAt", "skapad", "nastaKorning"]);
+    const aktiverad = [r.aktiverad, r.enabled, r.aktiv].find((v) => typeof v === "boolean");
+    const typ = strUr(r, ["typ", "taskKind"]);
+    ut.push({
+      id: id || titel,
+      titel,
+      status,
+      ...(schema ? { schema } : {}),
+      ...(startad ? { startad } : {}),
+      ...(typeof aktiverad === "boolean" ? { aktiverad } : {}),
+      ...(typ ? { typ } : {}),
+    });
   }
   return ut;
 }
 
-/** Kör statusen fortfarande? (styr Avbryt-knappen i Bakgrundsjobb-panelen). */
+/** Körs statusen fortfarande? (styr Avbryt-knappen i Bakgrundsjobb-panelen). */
 function tjansteKor(status: string): boolean {
   return /run|kör|koer|pågå|pagar|väntar|vantar|wait|block|start|activ|live/i.test(status);
+}
+
+// ── VÅG 92 B3: WEBBLÄSAR-RESULTAT — tolererande tolkning av POST {url} ───────
+
+/** Resultatkortet för en öppnad sida (titel länkad + url + utdrag). */
+interface WebblasareResultat {
+  titel: string;
+  url: string;
+  utdrag: string;
+}
+
+/**
+ * Normalisera en URL för fältet — saknas schema sätts https:// (studion
+ * öppnar aldrig osäkra adresser avsiktligt).
+ */
+function normaliseraUrl(url: string): string {
+  const trimmad = url.trim();
+  if (!trimmad) return "";
+  return /^https?:\/\//i.test(trimmad) ? trimmad : `https://${trimmad}`;
+}
+
+/**
+ * Tolka POST /api/studio/tjanster/webblasare {url}-svaret (VÅG 92 B2/B3).
+ * B2:s v92-rodd sätter strukturerade fält; äldre/formlös form bär det hela
+ * i "resultat" — båda vägarna söks (ett djup), med url-fallback till den
+ * begärda adressen så kortet alltid blir klickbart.
+ */
+function webblasareResultatUr(data: unknown, begardUrl: string): WebblasareResultat | null {
+  if (!data || typeof data !== "object") return null;
+  const d = data as Record<string, unknown>;
+  const kallor: Record<string, unknown>[] = [d];
+  if (d.resultat && typeof d.resultat === "object") kallor.push(d.resultat as Record<string, unknown>);
+  for (const k of kallor) {
+    const titel = strUr(k, ["titel", "title", "namn", "name"]);
+    const url = strUr(k, ["url", "sida", "adress", "link", "href"]) || begardUrl;
+    const utdrag = strUr(k, ["utdrag", "excerpt", "sammanfattning", "summary", "beskrivning", "description", "text", "innehall", "innehåll"]);
+    if (titel || utdrag) {
+      return { titel: titel || url, url, utdrag: utdrag.slice(0, 300) };
+    }
+  }
+  // Ogenomskinligt svar (t.ex. {resultat:{…}} utan kända fält) — visa
+  // kortet med adressen + rå innehåll trunkat, så kunden ser att det körde.
+  const rå =
+    typeof d.resultat === "string"
+      ? d.resultat
+      : d.resultat !== undefined
+        ? JSON.stringify(d.resultat)
+        : "";
+  if (!rå && !begardUrl) return null;
+  return { titel: begardUrl, url: begardUrl, utdrag: rå.slice(0, 300) };
+}
+
+/** VÅG 92 B3: är automationen pausad? (status/lifecycleStatus + flaggan). */
+function automationPausad(rad: TjansteRad): boolean {
+  if (rad.aktiverad === false) return true;
+  if (rad.aktiverad === true) return false;
+  return /paus|pause|inaktiv|disable|suspend/i.test(rad.status);
 }
 
 // ── Kommandopalett + sök-highlight (våg 84 A) ────────────────────────────────
@@ -2404,26 +2531,78 @@ function StyrelseMoteVy({ mote, onNyFraga }: { mote: StyrelseMote; onNyFraga: ()
   );
 }
 
-// ── VÅG 91 A3c: TJÄNSTE-PANELER — kollapsbara sektioner under TERMINAL ───────
+// ── VÅG 91 A3c + VÅG 92 B3: TJÄNSTE-PANELER — kollapsbara sektioner ──────────
+
+/** VÅG 92 B3: webbläsar-vyns props (URL-fält + resultatkort + öppna sidor). */
+interface TjansteWebblasareProps {
+  url: string;
+  setUrl: (v: string) => void;
+  /** Kör POST /tjanster/webblasare {url} (form-submit eller sidlista-klick). */
+  kor: () => void;
+  /** true medan POST pågår (Öppna-knappens spinner). */
+  korPaga: boolean;
+  /** Fel/info-rad från senaste kör (tom = tyst). */
+  meddelande: string;
+  /** Senaste resultatkort (titel länkad + url + utdrag ≤ 300 tkn). */
+  resultat: WebblasareResultat | null;
+  /** Öppnade sidor denna session (under resultatkortet, klick = kör igen). */
+  sidor: WebblasareResultat[];
+  /** Kör en url ur listan igen. */
+  oppnaSida: (url: string) => void;
+}
+
+/** VÅG 92 B3: automation-hanterarens props (lista + ny-form + pausa/radera). */
+interface TjansteAutomationProps {
+  namn: string;
+  setNamn: (v: string) => void;
+  schema: string;
+  setSchema: (v: string) => void;
+  prompt: string;
+  setPrompt: (v: string) => void;
+  formOppen: boolean;
+  vaxlaForm: (oppenEfter: boolean) => void;
+  skapar: boolean;
+  skapa: () => void;
+  /** Pausa (aktiveradEfter=false) / Återuppta (true) en automation. */
+  pausa: (id: string, aktiveradEfter: boolean) => void;
+  /** Radera med confirm — hanteras hos ägaren. */
+  radera: (id: string, namn: string) => void;
+  /** Rad med pågående pausa/radera (spinner + disabled). */
+  jobbarId: string | null;
+}
 
 /**
- * Tjänste-panelerna (VÅG 91 A3c): BAKGRUNDSJOBB (lista + avbryt), WEBBLÄSARE
- * och AUTOMATION — renderas i höger panelens fot. Sektioner vars endpoint
- * svarat 501/saknas är helt dolda (finns=false i tillståndet hos ägaren).
+ * Tjänste-panelerna (VÅG 91 A3c + VÅG 92 B3): BAKGRUNDSKORT (titel +
+ * status-färg + startad relativ tid + Avbryt), WEBBLÄSAR-PANEL (URL-fält →
+ * resultatkort + öppna sidor) och AUTOMATION-HANTERAREN (lista + ny-form +
+ * pausa/återuppta + radera) — renderas i höger panelens fot. Sektioner vars
+ * endpoint svarat 501/saknas är helt dolda (finns=false hos ägaren).
  */
 function TjansteSektioner({
   tjanster,
   onVaxla,
   onAvbryt,
   avbryterId,
+  webblasare,
+  automation,
 }: {
   tjanster: Record<TjansteNamn, TjansteTillstand>;
   onVaxla: (namn: TjansteNamn, oppenEfter: boolean) => void;
   onAvbryt: (id: string) => void;
   avbryterId: string | null;
+  webblasare: TjansteWebblasareProps;
+  automation: TjansteAutomationProps;
 }): React.JSX.Element | null {
   const synliga = TJANSTE_INFO.filter((t) => tjanster[t.namn].finns);
   if (synliga.length === 0) return null;
+
+  /** Laddar-rad — visas när sektionen läser och ännu har inget innehåll. */
+  const lasRad = (etikett: string) => (
+    <p className="flex items-center gap-1.5 text-[10px] text-[#8B949E]">
+      <Loader2 className="h-3 w-3 animate-spin text-[#58A6FF]" /> Läser {etikett.toLowerCase()}…
+    </p>
+  );
+
   return (
     <>
       {synliga.map((t) => {
@@ -2460,52 +2639,317 @@ function TjansteSektioner({
             </button>
             {s.oppen && (
               <div className="px-3 pb-2.5">
-                {s.laddar && s.rader.length === 0 ? (
-                  <p className="flex items-center gap-1.5 text-[10px] text-[#8B949E]">
-                    <Loader2 className="h-3 w-3 animate-spin text-[#58A6FF]" /> Läser {t.etikett.toLowerCase()}…
-                  </p>
-                ) : s.rader.length === 0 ? (
-                  <p className="text-[10px] leading-relaxed text-[#484F58]">{t.tom}</p>
-                ) : (
-                  <ul className="space-y-1">
-                    {s.rader.map((r) => (
-                      <li
-                        key={r.id}
-                        className="flex items-center gap-1.5 rounded-md bg-[#161B22] px-2 py-1.5"
-                        title={`${r.id}${r.status ? ` · ${r.status}` : ""}`}
-                      >
-                        {r.status && (
-                          <span
-                            className={cn(
-                              "shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider",
-                              agentStatusFarg(r.status),
+                {/* ── BAKGRUNDSKORT (VÅG 92 B3): kort per jobb + Avbryt ── */}
+                {t.namn === "bakgrund" &&
+                  (s.laddar && s.rader.length === 0 ? (
+                    lasRad(t.etikett)
+                  ) : s.rader.length === 0 ? (
+                    <p className="text-[10px] leading-relaxed text-[#484F58]">{t.tom}</p>
+                  ) : (
+                    <ul className="space-y-1.5">
+                      {s.rader.map((r) => (
+                        <li
+                          key={r.id}
+                          className="rounded-md border border-[#30363D] bg-[#161B22] px-2 py-1.5"
+                          title={`${r.id}${r.status ? ` · ${r.status}` : ""}`}
+                        >
+                          <div className="flex items-center gap-1.5">
+                            {r.status && (
+                              <span
+                                className={cn(
+                                  "shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider",
+                                  agentStatusFarg(r.status),
+                                )}
+                              >
+                                {agentStatusText(r.status)}
+                              </span>
                             )}
-                          >
-                            {agentStatusText(r.status)}
-                          </span>
+                            {r.startad && (
+                              <span
+                                className="ml-auto shrink-0 font-mono text-[9px] text-[#484F58]"
+                                title={`Startad: ${r.startad}`}
+                              >
+                                {tidKort(r.startad)}
+                              </span>
+                            )}
+                          </div>
+                          <p className="mt-1 break-words font-mono text-[10px] leading-snug text-[#E6EDF3]/85">
+                            {r.titel}
+                          </p>
+                          {r.typ && r.typ !== r.status && (
+                            <p className="mt-0.5 truncate font-mono text-[9px] text-[#484F58]">{r.typ}</p>
+                          )}
+                          {tjansteKor(r.status) && (
+                            <div className="mt-1.5 flex justify-end">
+                              <button
+                                type="button"
+                                onClick={() => onAvbryt(r.id)}
+                                disabled={avbryterId === r.id}
+                                title="Avbryt bakgrundsjobbet (tjanster/bakgrund/avbryt)"
+                                aria-label="Avbryt jobbet"
+                                className="flex items-center gap-1 rounded-md border border-[#DA3633]/40 px-2 py-0.5 text-[9px] font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50"
+                              >
+                                {avbryterId === r.id ? (
+                                  <Loader2 className="h-3 w-3 animate-spin" />
+                                ) : (
+                                  <X className="h-3 w-3" />
+                                )}
+                                Avbryt
+                              </button>
+                            </div>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+
+                {/* ── WEBBLÄSAR-PANEL (VÅG 92 B3): URL-fält → kort + sidor ── */}
+                {t.namn === "webblasare" && (
+                  <div>
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        webblasare.kor();
+                      }}
+                      className="flex gap-1.5"
+                    >
+                      <input
+                        value={webblasare.url}
+                        onChange={(e) => webblasare.setUrl(e.target.value)}
+                        placeholder="https://example.se"
+                        maxLength={500}
+                        aria-label="Webbadress att öppna"
+                        title="Webbadress — agentens webbläsare öppnar och läser sidan"
+                        className="h-8 min-w-0 flex-1 rounded-md border border-[#30363D] bg-[#0D1117] px-2 font-mono text-[10px] text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                      />
+                      <button
+                        type="submit"
+                        disabled={webblasare.korPaga || !webblasare.url.trim()}
+                        title="Öppna adressen i agentens webbläsare (tjanster/webblasare)"
+                        className="flex h-8 shrink-0 items-center gap-1 rounded-md bg-[#238636] px-2.5 text-[10px] font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
+                      >
+                        {webblasare.korPaga ? (
+                          <Loader2 className="h-3 w-3 animate-spin" />
+                        ) : (
+                          <Globe className="h-3 w-3" />
                         )}
-                        <span className="min-w-0 flex-1 truncate font-mono text-[10px] text-[#E6EDF3]/85">
-                          {r.titel}
-                        </span>
-                        {t.namn === "bakgrund" && tjansteKor(r.status) && (
+                        Öppna
+                      </button>
+                    </form>
+                    {webblasare.meddelande && (
+                      <p className="mt-1.5 text-[10px] leading-relaxed text-[#F85149]" role="alert">
+                        {webblasare.meddelande}
+                      </p>
+                    )}
+                    {webblasare.korPaga && (
+                      <p className="mt-1.5 flex items-center gap-1.5 text-[10px] text-[#8B949E]">
+                        <Loader2 className="h-3 w-3 animate-spin text-[#58A6FF]" /> Öppnar sidan…
+                      </p>
+                    )}
+                    {webblasare.resultat && (
+                      <div className="mt-2 rounded-md border border-[#30363D] bg-[#161B22] p-2">
+                        <a
+                          href={webblasare.resultat.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={webblasare.resultat.url}
+                          className="block truncate text-[11px] font-semibold text-[#58A6FF] underline decoration-[#58A6FF]/40 underline-offset-2 hover:underline"
+                        >
+                          {webblasare.resultat.titel}
+                        </a>
+                        <p
+                          className="mt-0.5 truncate font-mono text-[9px] text-[#8B949E]"
+                          title={webblasare.resultat.url}
+                        >
+                          {webblasare.resultat.url}
+                        </p>
+                        {webblasare.resultat.utdrag && (
+                          <p className="mt-1 line-clamp-4 text-[10px] leading-relaxed text-[#8B949E]">
+                            {webblasare.resultat.utdrag}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    {webblasare.sidor.length > 0 && (
+                      <div className="mt-2">
+                        <p className="mb-1 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#484F58]">
+                          Öppna sidor
+                        </p>
+                        <ul className="space-y-1">
+                          {webblasare.sidor.map((sida, i) => (
+                            <li key={`${sida.url}-${i}`}>
+                              <button
+                                type="button"
+                                onClick={() => webblasare.oppnaSida(sida.url)}
+                                title={`Öppna igen: ${sida.url}`}
+                                className="flex w-full items-center gap-1.5 rounded-md bg-[#161B22] px-2 py-1 text-left transition-colors hover:bg-[#0D1117]"
+                              >
+                                <Globe className="h-3 w-3 shrink-0 text-[#8B949E]" aria-hidden />
+                                <span className="min-w-0 flex-1 truncate text-[10px] text-[#E6EDF3]/85">
+                                  {sida.titel}
+                                </span>
+                                <ExternalLink className="h-3 w-3 shrink-0 text-[#484F58]" aria-hidden />
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {s.laddar && s.rader.length === 0 && !webblasare.resultat && lasRad(t.etikett)}
+                  </div>
+                )}
+
+                {/* ── AUTOMATION-HANTERAREN (VÅG 92 B3): lista + ny + rad-knappar ── */}
+                {t.namn === "automation" && (
+                  <div>
+                    {s.laddar && s.rader.length === 0 ? (
+                      lasRad(t.etikett)
+                    ) : s.rader.length === 0 && !automation.formOppen ? (
+                      <p className="text-[10px] leading-relaxed text-[#484F58]">
+                        Inga automationer än — skapa en med "Ny automation".
+                      </p>
+                    ) : s.rader.length === 0 ? null : (
+                      <ul className="space-y-1.5">
+                        {s.rader.map((r) => {
+                          const pausad = automationPausad(r);
+                          return (
+                            <li
+                              key={r.id}
+                              className="rounded-md border border-[#30363D] bg-[#161B22] px-2 py-1.5"
+                              title={`${r.id}${r.status ? ` · ${r.status}` : ""}${r.schema ? ` · ${r.schema}` : ""}`}
+                            >
+                              <div className="flex items-center gap-1.5">
+                                <span
+                                  className={cn(
+                                    "shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider",
+                                    pausad
+                                      ? "bg-[#D29922]/15 text-[#D29922]"
+                                      : r.status
+                                        ? agentStatusFarg(r.status)
+                                        : "bg-[#238636]/15 text-[#3FB950]",
+                                  )}
+                                >
+                                  {pausad ? "pausad" : r.status ? agentStatusText(r.status) : "aktiv"}
+                                </span>
+                                <span className="min-w-0 flex-1 truncate text-[10px] font-medium text-[#E6EDF3]/90">
+                                  {r.titel}
+                                </span>
+                              </div>
+                              <p className="mt-0.5 truncate font-mono text-[9px] text-[#8B949E]">
+                                {r.schema ? `$ ${r.schema}` : r.id}
+                              </p>
+                              <div className="mt-1.5 flex items-center gap-1.5">
+                                <button
+                                  type="button"
+                                  onClick={() => automation.pausa(r.id, !pausad)}
+                                  disabled={automation.jobbarId === r.id}
+                                  title={pausad ? "Återuppta automationen (tjanster/automation/pausa)" : "Pausa automationen (tjanster/automation/pausa)"}
+                                  className={cn(
+                                    "flex items-center gap-1 rounded-md border px-2 py-0.5 text-[9px] font-semibold transition-colors disabled:opacity-50",
+                                    pausad
+                                      ? "border-[#238636]/50 text-[#3FB950] hover:bg-[#238636]/10"
+                                      : "border-[#D29922]/50 text-[#D29922] hover:bg-[#D29922]/10",
+                                  )}
+                                >
+                                  {automation.jobbarId === r.id ? (
+                                    <Loader2 className="h-3 w-3 animate-spin" />
+                                  ) : pausad ? (
+                                    <Play className="h-3 w-3" />
+                                  ) : (
+                                    <Pause className="h-3 w-3" />
+                                  )}
+                                  {pausad ? "Återuppta" : "Pausa"}
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => automation.radera(r.id, r.titel)}
+                                  disabled={automation.jobbarId === r.id}
+                                  title="Radera automationen (confirm krävs)"
+                                  className="flex items-center gap-1 rounded-md border border-[#DA3633]/40 px-2 py-0.5 text-[9px] font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50"
+                                >
+                                  {automation.jobbarId === r.id ? (
+                                    <Loader2 className="h-3 w-3 animate-spin" />
+                                  ) : (
+                                    <Trash2 className="h-3 w-3" />
+                                  )}
+                                  Radera
+                                </button>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                    {automation.formOppen ? (
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          automation.skapa();
+                        }}
+                        className="mt-2 space-y-1.5 rounded-md border border-[#30363D] bg-[#0D1117] p-2"
+                        aria-label="Ny automation"
+                      >
+                        <input
+                          value={automation.namn}
+                          onChange={(e) => automation.setNamn(e.target.value)}
+                          placeholder="Namn (t.ex. Morgonrapport)"
+                          maxLength={80}
+                          aria-label="Automationens namn"
+                          className="h-8 w-full rounded-md border border-[#30363D] bg-[#161B22] px-2 text-[10px] text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                        />
+                        <input
+                          value={automation.schema}
+                          onChange={(e) => automation.setSchema(e.target.value)}
+                          placeholder="Schema — cron (t.ex. 0 7 * * *)"
+                          maxLength={60}
+                          aria-label="Automationens schema"
+                          className="h-8 w-full rounded-md border border-[#30363D] bg-[#161B22] px-2 font-mono text-[10px] text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                        />
+                        <textarea
+                          value={automation.prompt}
+                          onChange={(e) => automation.setPrompt(e.target.value)}
+                          placeholder="Prompt — vad agenten kör varje gång"
+                          maxLength={2000}
+                          rows={3}
+                          aria-label="Automationens prompt"
+                          className="w-full resize-none rounded-md border border-[#30363D] bg-[#161B22] px-2 py-1.5 text-[10px] leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                        />
+                        <div className="flex items-center gap-1.5">
                           <button
-                            type="button"
-                            onClick={() => onAvbryt(r.id)}
-                            disabled={avbryterId === r.id}
-                            title="Avbryt bakgrundsjobbet (tjanster/bakgrund/avbryt)"
-                            aria-label="Avbryt jobbet"
-                            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[#DA3633]/40 text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50"
+                            type="submit"
+                            disabled={automation.skapar || !automation.namn.trim() || !automation.schema.trim() || !automation.prompt.trim()}
+                            title="Skapa automationen (POST tjanster/automation)"
+                            className="flex items-center gap-1 rounded-md bg-[#238636] px-2.5 py-1 text-[10px] font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
                           >
-                            {avbryterId === r.id ? (
+                            {automation.skapar ? (
                               <Loader2 className="h-3 w-3 animate-spin" />
                             ) : (
-                              <X className="h-3 w-3" />
+                              <Plus className="h-3 w-3" />
                             )}
+                            Skapa
                           </button>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                          <button
+                            type="button"
+                            onClick={() => automation.vaxlaForm(false)}
+                            title="Stäng formuläret"
+                            className="rounded-md border border-[#30363D] px-2.5 py-1 text-[10px] font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                          >
+                            Avbryt
+                          </button>
+                        </div>
+                      </form>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => automation.vaxlaForm(true)}
+                        title="Ny automation — namn, schema (cron) och prompt"
+                        className="mt-2 flex w-full items-center justify-center gap-1 rounded-md border border-[#238636]/50 px-2 py-1.5 text-[10px] font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10"
+                      >
+                        <Plus className="h-3 w-3" />
+                        Ny automation
+                      </button>
+                    )}
+                  </div>
                 )}
               </div>
             )}
@@ -2677,6 +3121,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
   });
   const tjansterRef = React.useRef(tjanster);
   const [avbryterJobb, setAvbryterJobb] = React.useState<string | null>(null);
+
+  /** VÅG 92 B3: WEBBLÄSAR-PANEL — URL-fält, kör-status, kort + öppna sidor. */
+  const [webUrl, setWebUrl] = React.useState("");
+  const [webKorPaga, setWebKorPaga] = React.useState(false);
+  const [webMeddelande, setWebMeddelande] = React.useState("");
+  const [webResultat, setWebResultat] = React.useState<WebblasareResultat | null>(null);
+  const [webSidor, setWebSidor] = React.useState<WebblasareResultat[]>([]);
+
+  /** VÅG 92 B3: AUTOMATION-HANTERAREN — ny-form + per-rad pausa/radera. */
+  const [autoFormOppen, setAutoFormOppen] = React.useState(false);
+  const [autoNamn, setAutoNamn] = React.useState("");
+  const [autoSchema, setAutoSchema] = React.useState("");
+  const [autoPrompt, setAutoPrompt] = React.useState("");
+  const [autoSkapar, setAutoSkapar] = React.useState(false);
+  const [autoJobbarId, setAutoJobbarId] = React.useState<string | null>(null);
 
   /** A3d: autonomi-signal — mål-motorn arbetar även när fliken vilat. */
   const [autonomiAktiv, setAutonomiAktiv] = React.useState(false);
@@ -4801,19 +5260,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── VÅG 91 A3c: TJÄNSTE-PANELER — bakgrundsjobb/webbläsare/automation ───────
 
-  /** Läs en tjänste-endpoint — 501/404/nätverksfel ⇒ sektionen döljs (graceful). */
-  const lasTjanst = React.useCallback(async (namn: TjansteNamn) => {
+  /**
+   * Läs en tjänste-endpoint — 501/404/nätverksfel ⇒ sektionen döljs
+   * (graceful). Returnerar om endpointen finns (VÅG 92 B3: /automation
+   * sonderar färskt innan panelen öppnas).
+   */
+  const lasTjanst = React.useCallback(async (namn: TjansteNamn): Promise<boolean> => {
     setTjanster((t) => ({ ...t, [namn]: { ...t[namn], laddar: true } }));
     try {
       const res = await fetch(`/api/studio/tjanster/${namn}`, { headers: adminHeaders() });
       if (res.ok) {
         const data: unknown = await res.json().catch(() => ({}));
         setTjanster((t) => ({ ...t, [namn]: { finns: true, laddar: false, rader: tjansteRaderUr(data) } }));
-      } else {
-        setTjanster((t) => ({ ...t, [namn]: { ...t[namn], finns: false, laddar: false, rader: [] } }));
+        return true;
       }
+      setTjanster((t) => ({ ...t, [namn]: { ...t[namn], finns: false, laddar: false, rader: [] } }));
+      return false;
     } catch {
       setTjanster((t) => ({ ...t, [namn]: { ...t[namn], finns: false, laddar: false, rader: [] } }));
+      return false;
     }
   }, []);
 
@@ -4856,6 +5321,165 @@ export function StudioChat({ hem }: { hem: () => void }) {
     },
     [visaToast, lasTjanst],
   );
+
+  // ── VÅG 92 B3: WEBBLÄSAR-PANEL — POST {url} → resultatkort + sidlista ──────
+
+  /**
+   * Öppna en URL i agentens webbläsare: POST /api/studio/tjanster/webblasare
+   * {url} → tolererant tolkat resultatkort (titel/url/utdrag ≤ 300 tkn) +
+   * sidan läggs i "öppna sidor"-listan. 501 ⇒ sektionen döljs (graceful).
+   */
+  const oppnaWebbsida = React.useCallback(
+    async (urlFalt?: string) => {
+      const begard = normaliseraUrl(urlFalt ?? webUrl);
+      if (!begard || webKorPaga) return;
+      setWebUrl(begard);
+      setWebKorPaga(true);
+      setWebMeddelande("");
+      try {
+        const res = await fetch("/api/studio/tjanster/webblasare", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ url: begard }),
+        });
+        if (res.status === 501 || res.status === 404) {
+          // Tjänsten saknas i agent-versionen — dölj sektionen helt.
+          setTjanster((t) => ({ ...t, webblasare: { ...t.webblasare, finns: false, oppen: false } }));
+          setWebMeddelande("Webbläsartjänsten stöds ej av denna agent-version.");
+          return;
+        }
+        const data = (await res.json().catch(() => ({}))) as { fel?: string };
+        if (!res.ok) {
+          setWebMeddelande(data.fel || `Sidan kunde ej öppnas (${res.status}).`);
+          return;
+        }
+        const resultat = webblasareResultatUr(data, begard);
+        if (!resultat) {
+          setWebMeddelande(data.fel || "Tomt svar från webbläsartjänsten.");
+          return;
+        }
+        setWebResultat(resultat);
+        setWebSidor((sidor) => [
+          resultat,
+          ...sidor.filter((s) => s.url !== resultat.url),
+        ].slice(0, 8));
+      } catch {
+        setWebMeddelande("Nätverksfel — sidan kunde ej öppnas.");
+      } finally {
+        setWebKorPaga(false);
+      }
+    },
+    [webUrl, webKorPaga],
+  );
+
+  // ── VÅG 92 B3: AUTOMATION-HANTERAREN — skapa/pausa/radera ──────────────────
+
+  /** Skapa automation: POST /api/studio/tjanster/automation {namn,schema,prompt}. */
+  const skapaAutomation = React.useCallback(async () => {
+    const namn = autoNamn.trim();
+    const schema = autoSchema.trim();
+    const prompt = autoPrompt.trim();
+    if (!namn || !schema || !prompt || autoSkapar) return;
+    setAutoSkapar(true);
+    try {
+      const res = await fetch("/api/studio/tjanster/automation", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ namn, schema, prompt }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; fel?: string; meddelande?: string };
+      if (res.ok && (data.ok === undefined || data.ok === true)) {
+        visaToast(data.meddelande || `Automationen "${namn}" skapad.`);
+        setAutoNamn("");
+        setAutoSchema("");
+        setAutoPrompt("");
+        setAutoFormOppen(false);
+      } else if (res.status === 501) {
+        visaToast("Automation-skapande stöds ej av denna agent-version (501).", "fel");
+      } else {
+        visaToast(data.fel || data.meddelande || `Automationen kunde ej skapas (${res.status}).`, "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — automationen kunde ej skapas.", "fel");
+    } finally {
+      setAutoSkapar(false);
+      void lasTjanst("automation");
+    }
+  }, [autoNamn, autoSchema, autoPrompt, autoSkapar, visaToast, lasTjanst]);
+
+  /** Pausa (aktiveradEfter=false) / Återuppta (true): POST …/automation/pausa. */
+  const vaxlaAutomationPaus = React.useCallback(
+    async (id: string, aktiveradEfter: boolean) => {
+      setAutoJobbarId(id);
+      try {
+        const res = await fetch("/api/studio/tjanster/automation/pausa", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ id, aktiverad: aktiveradEfter }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; fel?: string; meddelande?: string };
+        if (res.ok && (data.ok === undefined || data.ok === true)) {
+          visaToast(data.meddelande || (aktiveradEfter ? "Automationen återupptagen." : "Automationen pausad."));
+        } else if (res.status === 501) {
+          visaToast("Pausa/återuppta stöds ej av denna agent-version (501).", "fel");
+        } else {
+          visaToast(data.fel || data.meddelande || "Automationen kunde ej ändras.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — automationen kunde ej ändras.", "fel");
+      } finally {
+        setAutoJobbarId(null);
+        void lasTjanst("automation");
+      }
+    },
+    [visaToast, lasTjanst],
+  );
+
+  /** Radera automation (confirm krävs): DELETE …/automation?id= (+ id i kroppen). */
+  const raderaAutomation = React.useCallback(
+    async (id: string, namn: string) => {
+      if (!window.confirm(`Radera automationen "${namn}"? Detta kan ej ångras.`)) return;
+      setAutoJobbarId(id);
+      try {
+        const res = await fetch(`/api/studio/tjanster/automation?id=${encodeURIComponent(id)}`, {
+          method: "DELETE",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ id }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { ok?: boolean; fel?: string; meddelande?: string };
+        if (res.ok && (data.ok === undefined || data.ok === true)) {
+          visaToast(data.meddelande || `Automationen "${namn}" raderad.`);
+        } else if (res.status === 501) {
+          visaToast("Radering stöds ej av denna agent-version (501).", "fel");
+        } else {
+          visaToast(data.fel || data.meddelande || "Automationen kunde ej raderas.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — automationen kunde ej raderas.", "fel");
+      } finally {
+        setAutoJobbarId(null);
+        void lasTjanst("automation");
+      }
+    },
+    [visaToast, lasTjanst],
+  );
+
+  /**
+   * Öppna automation-hanteraren i höger panelen (/automation-kommandot):
+   * sonderar endpointen färskt — finns den fälls sektionen ut, annars
+   * info-toast (graceful mot B1/B2:s parallella byggen).
+   */
+  const oppnaAutomationPanel = React.useCallback(async (): Promise<boolean> => {
+    setPanelOppen(true);
+    setMobilPanel(true);
+    const finns = tjansterRef.current.automation.finns || (await lasTjanst("automation"));
+    if (finns) {
+      vaxlaTjanste("automation", true);
+      return true;
+    }
+    visaToast("Automation-tjänsten saknas på servern (501) — hanteraren är dold tills den finns.", "fel");
+    return false;
+  }, [lasTjanst, vaxlaTjanste, visaToast]);
 
   // Sond en gång vid mount — endpoint som svarar får sin sektion (annars dold).
   React.useEffect(() => {
@@ -4956,6 +5580,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
           );
           return;
         }
+        case "automation": {
+          // VÅG 92 B3: öppna automation-hanteraren i höger panelen —
+          // endpointen sonderas färskt; saknas den (501) kommer info-toast.
+          void oppnaAutomationPanel();
+          pushAssistant(
+            "⚡ Automation-hanteraren öppnas i panelen — lista över schemalagda jobb, \u201dNy automation\u201d (namn, schema/cron, prompt) samt pausa/återuppta och radera per rad. Saknas tjänsten på servern visas en notis.",
+          );
+          return;
+        }
         case "sparad": {
           const sparade = argument ? sparaPrompt(argument) : false;
           oppnaPrompter();
@@ -4993,7 +5626,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, sparaPrompt, oppnaPrompter, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, oppnaAutomationPanel, sparaPrompt, oppnaPrompter, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — PER TABB (våg 84 B) ──────────────────────────
@@ -5012,6 +5645,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
       let streamSessionId: string | null = tabb.sessionId;
 
       const agentId = nyttId();
+      // VÅG 92 B3: användarmeddelandet får id + bilage-status ("laddar"
+      // tills POST /api/studio/stream svarat — därefter "Bilaga ✓").
+      const userMsgId = nyttId();
       rörTabb(tabbId, (t) => ({
         ...t,
         tankar: "",
@@ -5022,10 +5658,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
         meddelanden: [
           ...t.meddelanden,
           {
-            id: nyttId(),
+            id: userMsgId,
             roll: "user" as const,
             text,
             ...(bilder && bilder.length > 0 ? { bilder } : {}),
+            ...(bilder && bilder.length > 0 ? { bilagaStatus: "laddar" as const } : {}),
           },
           { id: agentId, roll: "assistant" as const, text: "", strömmande: true, verktygKort: [] },
         ],
@@ -5063,6 +5700,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
           body: JSON.stringify(kropp),
           signal: abort.signal,
         });
+        // VÅG 92 B3: POST har svarat — bilage-progressen blir "Bilaga ✓"
+        // (enkel variant: skick-väntan = progress; även fel ger klart-läge,
+        // felet visas redan i flödet + toast nedan).
+        if (bilder && bilder.length > 0) {
+          rörTabb(tabbId, (t) => ({
+            ...t,
+            meddelanden: t.meddelanden.map((m) =>
+              m.id === userMsgId && m.bilagaStatus === "laddar" ? { ...m, bilagaStatus: "klar" as const } : m,
+            ),
+          }));
+        }
         if (!res.ok || !res.body) {
           const data = (await res.json().catch(() => ({}))) as { fel?: string };
           // VÅG 91 A3a: följde bilderna inte med (transporten stödjer ej bilden
@@ -5264,6 +5912,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
       }
       rörAgent((m) => ({ ...m, strömmande: false }));
       } catch (fel) {
+        // VÅG 92 B3: POST bröt fel/abort — bilage-progressen blir klar även
+        // här (felet visas i flödet); spinner fastnar aldrig.
+        if (bilder && bilder.length > 0) {
+          rörTabb(tabbId, (t) => ({
+            ...t,
+            meddelanden: t.meddelanden.map((m) =>
+              m.id === userMsgId && m.bilagaStatus === "laddar" ? { ...m, bilagaStatus: "klar" as const } : m,
+            ),
+          }));
+        }
         if ((fel as Error).name !== "AbortError") {
           rörAgent((m) => ({
             ...m,
@@ -6159,23 +6817,61 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
                             : m.text}
                         </p>
-                        {/* Bifogade + textrefererade bilder → miniatyrer (64px). */}
+                        {/* Bifogade + textrefererade bilder → miniatyrer (64px).
+                            VÅG 92 B3: bilage-progress — "Laddar upp bilaga…"
+                            (spinner) tills POST /stream svarat, därefter
+                            "Bilaga ✓" (#3FB950) vid varje thumbnail. */}
                         {userBilder.length > 0 && (
-                          <div className="mt-2 flex flex-wrap gap-1.5">
+                          <div className="mt-2 flex flex-wrap items-start gap-1.5">
                             {userBilder.map((sokvag) => (
-                              <img
-                                key={sokvag}
-                                src={bildUrl(sokvag)}
-                                alt={sokvag.split("/").pop() ?? sokvag}
-                                loading="lazy"
-                                className="h-16 w-16 cursor-pointer rounded-md border border-[#30363D] object-cover transition-opacity hover:opacity-90"
-                                onClick={() => void visaFil(sokvag)}
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                                }}
-                              />
+                              <span key={sokvag} className="relative shrink-0">
+                                <img
+                                  src={bildUrl(sokvag)}
+                                  alt={sokvag.split("/").pop() ?? sokvag}
+                                  loading="lazy"
+                                  className="h-16 w-16 cursor-pointer rounded-md border border-[#30363D] object-cover transition-opacity hover:opacity-90"
+                                  onClick={() => void visaFil(sokvag)}
+                                  onError={(e) => {
+                                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                                  }}
+                                />
+                                {m.bilagaStatus && (
+                                  <span
+                                    aria-hidden
+                                    title={m.bilagaStatus === "laddar" ? "Laddar upp bilaga…" : "Bilaga ✓"}
+                                    className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full border border-[#30363D] bg-[#0D1117]"
+                                  >
+                                    {m.bilagaStatus === "laddar" ? (
+                                      <Loader2 className="h-2.5 w-2.5 animate-spin text-[#D29922]" />
+                                    ) : (
+                                      <Check className="h-2.5 w-2.5 text-[#3FB950]" />
+                                    )}
+                                  </span>
+                                )}
+                              </span>
                             ))}
                           </div>
+                        )}
+                        {m.bilder && m.bilder.length > 0 && m.bilagaStatus && (
+                          <p
+                            role="status"
+                            className={cn(
+                              "mt-2 flex items-center gap-1.5 text-[10px] font-medium",
+                              m.bilagaStatus === "klar" ? "text-[#3FB950]" : "text-[#8B949E]",
+                            )}
+                          >
+                            {m.bilagaStatus === "laddar" ? (
+                              <>
+                                <Loader2 className="h-3 w-3 animate-spin text-[#D29922]" />
+                                Laddar upp bilaga…
+                              </>
+                            ) : (
+                              <>
+                                <CheckCircle2 className="h-3 w-3 text-[#3FB950]" />
+                                Bilaga ✓
+                              </>
+                            )}
+                          </p>
                         )}
                       </div>
                     ) : (
@@ -7091,13 +7787,38 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         </section>
 
-        {/* VÅG 91 A3c: TJÄNSTE-PANELER — kollapsbara sektioner under TERMINAL
-            (BAKGRUNDSJOBB · WEBBLÄSARE · AUTOMATION; dolda om endpoint 501). */}
+        {/* VÅG 91 A3c + VÅG 92 B3: TJÄNSTE-PANELER — kollapsbara sektioner under
+            TERMINAL (BAKGRUNDSKORT · WEBBLÄSARE · AUTOMATION; dolda om 501). */}
         <TjansteSektioner
           tjanster={tjanster}
           onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
           onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
           avbryterId={avbryterJobb}
+          webblasare={{
+            url: webUrl,
+            setUrl: setWebUrl,
+            kor: () => void oppnaWebbsida(),
+            korPaga: webKorPaga,
+            meddelande: webMeddelande,
+            resultat: webResultat,
+            sidor: webSidor,
+            oppnaSida: (url) => void oppnaWebbsida(url),
+          }}
+          automation={{
+            namn: autoNamn,
+            setNamn: setAutoNamn,
+            schema: autoSchema,
+            setSchema: setAutoSchema,
+            prompt: autoPrompt,
+            setPrompt: setAutoPrompt,
+            formOppen: autoFormOppen,
+            vaxlaForm: setAutoFormOppen,
+            skapar: autoSkapar,
+            skapa: () => void skapaAutomation(),
+            pausa: (id, aktiveradEfter) => void vaxlaAutomationPaus(id, aktiveradEfter),
+            radera: (id, namn) => void raderaAutomation(id, namn),
+            jobbarId: autoJobbarId,
+          }}
         />
       </aside>
 
@@ -7301,12 +8022,37 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                 </div>
               </section>
-              {/* VÅG 91 A3c: tjänste-paneler — samma sektioner som desktop-panelen. */}
+              {/* VÅG 91 A3c + VÅG 92 B3: tjänste-paneler — samma sektioner som desktop-panelen. */}
               <TjansteSektioner
                 tjanster={tjanster}
                 onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
                 onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
                 avbryterId={avbryterJobb}
+                webblasare={{
+                  url: webUrl,
+                  setUrl: setWebUrl,
+                  kor: () => void oppnaWebbsida(),
+                  korPaga: webKorPaga,
+                  meddelande: webMeddelande,
+                  resultat: webResultat,
+                  sidor: webSidor,
+                  oppnaSida: (url) => void oppnaWebbsida(url),
+                }}
+                automation={{
+                  namn: autoNamn,
+                  setNamn: setAutoNamn,
+                  schema: autoSchema,
+                  setSchema: setAutoSchema,
+                  prompt: autoPrompt,
+                  setPrompt: setAutoPrompt,
+                  formOppen: autoFormOppen,
+                  vaxlaForm: setAutoFormOppen,
+                  skapar: autoSkapar,
+                  skapa: () => void skapaAutomation(),
+                  pausa: (id, aktiveradEfter) => void vaxlaAutomationPaus(id, aktiveradEfter),
+                  radera: (id, namn) => void raderaAutomation(id, namn),
+                  jobbarId: autoJobbarId,
+                }}
               />
             </div>
           </aside>

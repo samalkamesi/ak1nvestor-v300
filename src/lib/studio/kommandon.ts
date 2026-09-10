@@ -4,6 +4,9 @@
  * samma logik kan köras av UI:t (studio-chat.tsx) och av deterministiska
  * tester (tool-results/v83-b4-kommandon-test.mjs).
  *
+ * VÅG 92 B3: /automation tillagt — öppnar automation-hanteraren i höger
+ * panelen (studio-chat.tsx äger hanteringen; kommandot är lokalt).
+ *
  * Kontrakt: ett kommando är en rad som BÖRJAR med "/" — allt annat är en
  * vanlig prompt till agenten och skickas aldrig hit. Kommandot parsas
  * LOKALT i UI:t FÖRE sändning (kunddirektiv B4 §3): kommandon med API-väg
@@ -68,6 +71,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     namn: "styrelsen",
     syntax: "/styrelsen [fråga]",
     beskrivning: "Konkallar AI-styrelsen — 5 roller diskuterar och beslutar",
+    kalla: "lokal",
+  },
+  {
+    namn: "automation",
+    syntax: "/automation",
+    beskrivning: "Hantera schemalagda automationsjobb (VÅG 92 B3 — lista, skapa, pausa/återuppta, radera)",
     kalla: "lokal",
   },
   {

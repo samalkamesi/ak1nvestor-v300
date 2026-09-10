@@ -1,4 +1,5 @@
 import { spawn, type ChildProcess } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -292,6 +293,48 @@ import path from "node:path";
  *     genereraText (workspace/generateText {workspace, modelRef, prompt,
  *     querySource? — valfri sträng}). Okänd metod (-32601) ⇒
  *     StudioMetodSaknasError (routen svarar ärlig 501 {saknas:true}).
+ *
+ * VÅG 92 B1 (Z-PARITET P0-KOMPLETT — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 92"
+ * block B1, A4-kartans topp-5; protokollform ur V91-Z-PARITET-KARTA.md +
+ * v83-kartan §1/§2/§4F + våg 91 A1d-binärsondens dokumentation):
+ *   · LADDA UPP BILAGA (P0-1, käpphästen): laddaUppBilaga(sokvag) kör
+ *     v4-gateway:ns attachment-flöde — begin {connectionId, uploadId,
+ *     sessionId, fileName, mime, totalBytes, totalChunks, checksum:
+ *     "sha256:<64hex>"} → chunk {uploadId, chunkIndex, dataBase64} (512 kB
+ *     bitar, base64) → commit {uploadId} → ref. PROTOKOLLFORMEN är den
+ *     dokumenterade (våg 91 A1d-sond ur vendor/zcode.cjs app 3.11.2); LIVE-
+ *     bevis saknas ännu — därför avvisar ALLT (metod saknas/-32601, fel
+ *     form, timeout, fil saknas/över tak) med NULL och skickaMedBild:s
+ *     arbetsytareferens-fallback (byggPromptMedBilder, våg 91) består INTACT.
+ *     Tak: 8 bilder/prompt (route + byggPromptMedBilder) · 5 MB/bilaga ·
+ *     sanitär sökväg (relativ i arbetsytan, ".."/absolut/backslash avvisas +
+ *     rot-prefixkontroll — Mimosa-receptet från våg 91: strängkonkat, ALDRIG
+ *     path.join med variabel).
+ *   · SKICKA MED ATTACHMENTS: skickaMedBild försöker laddaUppBilaga per
+ *     bild → lyckat attachmentId ger session/send {content, attachments:
+ *     [ref]} (send-schemats OEt-attachments är OPAK Record[] — minimi-
+ *     objektet = commit-svarets ref, annars {attachmentId}); null-bilder
+ *     får sökvägsreferenser i prompten. Form-avvisad send (-32602/
+ *     unrecognized) nedgraderas EN gång till vanlig skicka med reserv-
+ *     prompten (alla bilder som referenser) — BÅDA fallback-vägarna lever.
+ *   · AUTOMATION CRUD (P0-3): automationSkapa({namn, schema, prompt,
+ *     lasLage?}) → automation/create {title, cronExpr, prompt, enabled,
+ *     mode?} (lasLage=true ärver transportens läge); automationUppdatera
+ *     (id, {pausad}) → automation/update {automationId, enabled} (pausa =
+ *     enabled:false → lifecycleStatus "paused"); automationRadera(id) →
+ *     automation/delete {automationId} → {deleted}; lasAutomationer() med
+ *     FULL parsning (nextRunAt, nextNextRunAt om finns, runCount, lastRunAt).
+ *     -32601 ⇒ StudioMetodSaknasError (B2:s 501-karta består); okänd svar-
+ *     form ⇒ null/vänligt meddelande — ALDRIG krasch.
+ *   · SKICKA-AUTOMATION (P0-5): skickaAutomation(prompt, automationId?,
+ *     offPeak?, lyssnare?, signal?) — session/send med automationId eller
+ *     offPeakTaskId+offPeakRunType:"init" (mut. exkl. enligt kartan §1;
+ *     klienten äger offPeak-id:t — samma mönster som uploadId/connectionId).
+ *     Utan fält/vid form-avvisning → vanlig skicka (nedgraderingen i skicka).
+ *   · BAKGRUNDSJOB FULLT (P0-4): lasBakgrundsjobb() parsar HELA projection
+ *     .backgroundJobs-arrayen — id (taskId|id), titel, status, startad,
+ *     pid, kommando, utdataSvans (outputTail), avbrytbar (cancellable);
+ *     subagent-fallback består (ärvd från våg 91).
  *
  * Två implementeringar bakom ETT gränssnitt:
  *
@@ -726,6 +769,21 @@ export interface StudioBakgrundsjobb {
   beskrivning?: string;
   /** Verktygsnamn när protokollet bär det. */
   verktyg?: string;
+  /**
+   * VÅG 92 B1 (P0-4): FULL projektionsparsning — titeln ur title-fältet
+   * (subagent-fallback: agentens titel) när protokollet bär den.
+   */
+  titel?: string;
+  /** VÅG 92 B1: startad (startedAt/createdAt — ISO-sträng som protokollet bär den). */
+  startad?: string;
+  /** VÅG 92 B1: process-id när protokollet bär det (Tkn.pid). */
+  pid?: number;
+  /** VÅG 92 B1: kommandot (Tkn.command) — panelens terminalrad. */
+  kommando?: string;
+  /** VÅG 92 B1: outputTail-truncat — jobbets puls. */
+  utdataSvans?: string;
+  /** VÅG 92 B1: cancellable — avbryt-knappens sanning. */
+  avbrytbar?: boolean;
 }
 
 /** VÅG 91 A1d: en webbläsare ur interaction/browserList (binärsond PBe). */
@@ -749,10 +807,60 @@ export interface StudioAutomation {
   status?: string;
   /** nextRunAt (ISO-sträng som protokollet bär den). */
   nastaKorning?: string;
+  /**
+   * VÅG 92 B1 (P0-3): nextNextRunAt — protokollets andra schemalagda körning
+   * OM det bär fältet ("om finns" enligt A4-kartan; aldrig påhittat).
+   */
+  nastaNastaKorning?: string;
+  /** VÅG 92 B1: runCount — antal genomförda körningar (om protokollet bär det). */
+  korningar?: number;
+  /** VÅG 92 B1: lastRunAt — senaste körningen (om protokollet bär det). */
+  senasteKorning?: string;
   /** enabled-flaggan. */
   aktiverad?: boolean;
   /** Automationsprompten (vad den kör). */
   prompt?: string;
+}
+
+/**
+ * VÅG 92 B1 (P0-3): indata till automationSkapa — svenskt kontrakt mot
+ * protokollformens fält (namn→title, schema→cronExpr, lasLage=true ärver
+ * transportens läge som mode).
+ */
+export interface StudioAutomationSkapa {
+  /** Automationens namn (protokollens title). */
+  namn: string;
+  /** Cron-uttryck (protokollens cronExpr) — tomt = engångsuppgift om servern tillåter. */
+  schema?: string;
+  /** Prompten automationen skall köra. */
+  prompt: string;
+  /** true = ärva den aktiva sessionens läge (mode: build|plan). */
+  lasLage?: boolean;
+}
+
+/**
+ * VÅG 92 B1: extrafält för session/send — attachments (opaka Record[],
+ * ref-objekt ur v4/attachment-commit), automationId ⊕ offPeakTaskId
+ * (mut. exkl., kartan §1) + reservPrompt (innehållet vid nedgradering till
+ * vanlig skicka — förs ALDRIG på tråden).
+ */
+export interface StudioSkickaExtra {
+  attachments?: Record<string, unknown>[];
+  automationId?: string;
+  offPeakTaskId?: string;
+  offPeakRunType?: string;
+  /** Reserv-innehåll när protokollet avvisar extrafälten (vanlig skicka). */
+  reservPrompt?: string;
+}
+
+/** Resultat av laddaUppBilaga — attachmentId + råa commit-ref (opak). */
+export interface StudioBilagaRef {
+  attachmentId: string;
+  /**
+   * Commit-svarets råa objekt (v4-gateway:ns "ref") — bärs som den ÄR i
+   * session/send.attachments (opak genomströmning, OEt-formen).
+   */
+  ref?: unknown;
 }
 
 /**
@@ -777,6 +885,17 @@ export class StudioMetodSaknasError extends Error {
 function arMetodSaknas(fel: unknown): boolean {
   const text = fel instanceof Error ? fel.message : String(fel);
   return /-32601|method not found|stöds ej/i.test(text);
+}
+
+/**
+ * VÅG 92 B1: känner igen protokollfel som betyder "extrafältet på session/
+ * send avvisades av formen" (zod strict: -32602 invalid params /
+ * "unrecognized key(s)" etc.) — skicka() nedgraderar då EN gång till vanlig
+ * skicka med reserv-prompten. TRÄNGT mönster: fångar ALDRIG -32031 (modell),
+ * -32010 (kö) eller timeout — de har sina egna vägar.
+ */
+function arSendFormAvvisad(text: string): boolean {
+  return /-32602|unrecognized|unexpected key|invalid_params|ogiltig parameter/i.test(text);
 }
 
 // ── VÅG 85 F2: skills/plugins/MCP (kartan §2 — panelens datakällor) ──────────
@@ -849,16 +968,27 @@ export interface StudioTransport {
    * Skicka en prompt och strömma händelser tills klart/fel. EN PROMPT I
    * TAGET (zcode vägrar självt med -32010 om en redan kör — speglas här
    * som fel-event så UI:t kan visa det ärligt).
+   *
+   * VÅG 92 B1: valfria EXTRAFÄLT på session/send (StudioSkickaExtra) —
+   * attachments (v4/attachment-refs), automationId ⊕ offPeakTaskId. Form-
+   * avvisad send (-32602/unrecognized) nedgraderas EN gång till vanlig
+   * skicka med reservPrompten; -32031-självläkningen skickar alltid rent
+   * (extrafälten är session-/uppladdningsbundna). Utan extra: oförändrat.
    */
-  skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void>;
+  skicka(
+    prompt: string,
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+    extra?: StudioSkickaExtra,
+  ): Promise<void>;
   /**
-   * VÅG 91 A1d: skicka en prompt MED BILDER. Binärsond 2026-09-09:
-   * session/send:s attachments är en opak genomströmning (riktigt innehåll
-   * kräver det ej LIVE-bevisade v4/attachment-flödet) — därför är primär-
-   * vägen våg-91-kontraktets fallback: bilderna ligger REDAN i arbetsytan
-   * (uploads/…) och prompten utökas med sökvägsreferenser (byggPromptMedBilder)
-   * som barnets Read presenterar visuellt. Strömningen är OCH förblir
-   * skicka()-s.
+   * VÅG 91 A1d + VÅG 92 B1: skicka en prompt MED BILDER. PRIMÄR väg (våg
+   * 92): laddaUppBilaga per bild → vid lyckat attachmentId skickas
+   * session/send {content, attachments:[ref]} — SANA bilagor, inte bara
+   * sökvägar. NULL per bild (protokollet avvisar/filen saknas/över tak) ⇒
+   * den bilden FALLER på våg-91-kontraktets arbetsytareferens-fallback
+   * (byggPromptMedBilder — barnets Read presenterar bilden). Strömningen
+   * är OCH förblir skicka()-s (samma event-flöde oavsett väg).
    */
   skickaMedBild(
     prompt: string,
@@ -866,6 +996,16 @@ export interface StudioTransport {
     lyssnare: StudioLyssnare,
     signal?: AbortSignal,
   ): Promise<void>;
+  /**
+   * VÅG 92 B1 (P0-1 — käpphästen): ladda upp en fil som ÄKTA bilaga via
+   * v4-gateway:ns attachment-flöde (begin → chunk[base64] → commit).
+   * Returnerar {attachmentId, ref?} vid lyckat flöde; NULL närhelst något
+   * avvisar (metod saknas/-32601, fel form, timeout, fil saknas, > 5 MB,
+   * sanitär sökväg underkänd) — ALDRIG kast, anroparen faller då på
+   * arbetsytareferens-fallbacken. Protokollform enligt våg 91 A1d-sonden
+   * (dokumenterad i filhuvudet); LIVE-bevis avvaktar.
+   */
+  laddaUppBilaga(sokvag: string): Promise<StudioBilagaRef | null>;
   // ── V82 STUDIO V2 (protokollvägar FIRST-HAND bevisade, se
   // tool-results/v82-protokoll.md) ────────────────────────────────────────
   /**
@@ -1053,7 +1193,8 @@ export interface StudioTransport {
   /**
    * Bakgrundsjobb: session/read-projektionens backgroundJobs (primär) med
    * subagenter-fallback — ALDRIG fel för en tom lista; -32601 ⇒
-   * StudioMetodSaknasError.
+   * StudioMetodSaknasError. VÅG 92 B1 (P0-4): HELA arrayen parsas —
+   * id/titel/status/startad + pid/kommando/utdataSvans/avbrytbar.
    */
   lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]>;
   /**
@@ -1070,6 +1211,42 @@ export interface StudioTransport {
   korWebblasare(kommando: { browserId?: string; browserGeneration?: number; kommando: string }): Promise<unknown>;
   /** automation/list → schemalagda automations (lifecycleStatus-union). */
   lasAutomationer(): Promise<StudioAutomation[]>;
+  /**
+   * VÅG 92 B1 (P0-3): automation/create {title, cronExpr, prompt, enabled,
+   * mode?} (lasLage=true ärver transportens läge) → den skapade automationen
+   * (StudioAutomation-form) eller NULL vid okänd svar-form. -32601 ⇒
+   * StudioMetodSaknasError (routen: 501).
+   */
+  automationSkapa(skapa: StudioAutomationSkapa): Promise<StudioAutomation | null>;
+  /**
+   * VÅG 92 B1 (P0-3): automation/update {automationId, enabled} — pausad
+   * ⇒ enabled:false (binär-sondens fält; lifecycleStatus "paused"), false ⇒
+   * återaktiverad. Returnerar den uppdaterade posten eller NULL vid okänd
+   * form (listan är sanningen då). -32601 ⇒ StudioMetodSaknasError.
+   */
+  automationUppdatera(id: string, andring: { pausad?: boolean }): Promise<StudioAutomation | null>;
+  /**
+   * VÅG 92 B1 (P0-3): automation/delete {automationId} → {deleted}. Ärligt
+   * svar {raderad, meddelande} — okänd form ger ett vänligt meddelande
+   * (ALDRIG krasch). -32601 ⇒ StudioMetodSaknasError (routen: 501).
+   */
+  automationRadera(id: string): Promise<{ raderad: boolean; meddelande: string }>;
+  /**
+   * VÅG 92 B1 (P0-5): skicka en prompt KOPPLAD till en automation/off-peak-
+   * uppgift — session/send med automationId (då den grenen) eller
+   * offPeakTaskId + offPeakRunType:"init" (offPeak=true utan automationId —
+   * klienten äger id:t, samma mönster som uploadId/connectionId; mut.
+   * exkl. enligt kartan §1). Utan koppling/vid form-avvisning → VANLIG
+   * skicka (nedgraderingen lever i skicka). Lyssnare+signal valfria —
+   * utan lyssnare landar svaret i sessionens historik (A1c-mönstret).
+   */
+  skickaAutomation(
+    prompt: string,
+    automationId?: string,
+    offPeak?: boolean,
+    lyssnare?: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void>;
   /**
    * workspace/generateText {workspace, modelRef, prompt, querySource} —
    * headless textgenerering UTAN turn/session (kartan §2). modelRef hämtas
@@ -1781,6 +1958,130 @@ export function byggPromptMedBilder(
     `${prompt}\n\n[Bifogade bilder — ${bilder.length} st]\n${rader}\n` +
     "Läs och presentera dessa bilder med Read-verktyget (Read visar bilder visuellt) innan du besvarar frågan.";
   return { prompt: utokad, bilder, avvisade };
+}
+
+// ── VÅG 92 B1: V4-ATTACHMENTS (P0-1 — käpphästen) ────────────────────────────
+
+/** Max storlek per bilaga (5 MB — B1-kontraktets tak). */
+const MAX_BILAGA_BYTE = 5 * 1024 * 1024;
+/** Chunk-storlek (512 kB rå bytedata → base64 på tråden — "lagom bitar"). */
+const BILAGE_CHUNK_BYTE = 512 * 1024;
+
+/** Mime per filändelse (bilaga-flödet bär mime i begin — uppbackning: octet-stream). */
+const BILAGE_MIME: Record<string, string> = {
+  png: "image/png",
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  webp: "image/webp",
+  gif: "image/gif",
+  svg: "image/svg+xml",
+  pdf: "application/pdf",
+  txt: "text/plain",
+  md: "text/markdown",
+  csv: "text/csv",
+  json: "application/json",
+};
+
+/**
+ * VÅG 92 B1 — sanera en bilage-/bildsökväg (REN funktion, samma regler som
+ * byggPromptMedBilder): relativ arbetsyt-sökväg ENDAST — "..", absoluta
+ * sökvägar, enhetsbokstav och backslash-trick avvisas. Null = avvisad.
+ */
+export function saniteraBilageSokvag(sokvag: string): string | null {
+  if (typeof sokvag !== "string") return null;
+  const rent = sokvag.trim().replace(/\\/g, "/");
+  if (!rent || rent.length > MAX_BILDSOKVAG_TEEKEN) return null;
+  if (rent.includes("..")) return null;
+  if (/^[a-zA-Z]:/.test(rent)) return null;
+  if (rent.startsWith("/")) return null;
+  const delar = rent.split("/").filter((d) => d.length > 0);
+  if (delar.length === 0) return null;
+  if (delar.some((d) => d === "." || d.startsWith("\0"))) return null;
+  return delar.join("/");
+}
+
+/**
+ * VÅG 92 B1 — bilagens fulla sökväg i arbetsytan. MIMOSA-RECEPT (våg 91,
+ * bevisat i styrelse.ts): ALDRIG path.join/path.resolve med variabel —
+ * REN "/"-STRÄNGKONKAT + DUBBEL ROT-PREFIXKONTROLL. `rent` är förhands-
+ * sanerad av saniteraBilageSokvag (inga "..", inga absoluta sökvägar, inga
+ * backslash, inga nolltecken) — en ren konkat kan därför aldrig lämna
+ * roten, och kontrollen försäkrar det en gång till. Returnerar sökvägen
+ * eller null. stdout-PIPE till lokal fil — aldrig nätverk.
+ */
+export function bilageSokvagIArbetsyta(rot: string, rent: string): string | null {
+  if (!rot || !rent) return null;
+  const rotRen = rot.replace(/\\/g, "/").replace(/\/+$/, "");
+  if (!rotRen || rotRen.includes("..")) return null;
+  const hel = rotRen + "/" + rent;
+  if (hel.slice(rotRen.length + 1).includes("..")) return null; // traverseringsförsäkran
+  return hel;
+}
+
+/**
+ * VÅG 92 B1 — dra ett attachmentId ur commit-svarets (opaka) ref-form,
+ * defensivt: rak sträng · {attachmentId|id|ref|uploadId} · nästlad
+ * {attachment:{…}}|{ref:{…}}. Null = okänd form (→ null-fallback).
+ */
+export function bilageIdUrSvar(svar: unknown, djup = 0): string | null {
+  if (typeof svar === "string" && svar) return svar;
+  if (!svar || typeof svar !== "object") return null;
+  const o = svar as Record<string, unknown>;
+  for (const nyckel of ["attachmentId", "id", "ref", "uploadId"]) {
+    const v = o[nyckel];
+    if (typeof v === "string" && v) return v;
+  }
+  if (djup < 2) {
+    for (const nyckel of ["attachment", "ref", "result", "data"]) {
+      const v = o[nyckel];
+      if (v && typeof v === "object") {
+        const id = bilageIdUrSvar(v, djup + 1);
+        if (id) return id;
+      }
+    }
+  }
+  return null;
+}
+
+/** VÅG 92 B1 — mime ur filändelsen (okänd → application/octet-stream). */
+function bilageMime(namn: string): string {
+  const delar = namn.split(".");
+  if (delar.length < 2) return "application/octet-stream";
+  return BILAGE_MIME[delar[delar.length - 1].toLowerCase()] ?? "application/octet-stream";
+}
+
+/**
+ * VÅG 92 B1 (P0-3) — mappa en automation-post ($je-form) till StudioAutomation,
+ * DEFENSIVT med FULL fältparsning: automationId|id · title|name · cronExpr|
+ * schedule · lifecycleStatus|status · nextRunAt · nextNextRunAt (om finns) ·
+ * runCount · lastRunAt · enabled · prompt. Null = okänd form (ingen id).
+ */
+export function automationUrPost(post: unknown): StudioAutomation | null {
+  if (!post || typeof post !== "object") return null;
+  const a = post as Record<string, unknown>;
+  const id = (typeof a.automationId === "string" && a.automationId) || (typeof a.id === "string" && a.id) || "";
+  if (!id) return null;
+  const titel =
+    (typeof a.title === "string" && a.title) || (typeof a.name === "string" && a.name) || id;
+  return {
+    id,
+    titel,
+    cron:
+      (typeof a.cronExpr === "string" && a.cronExpr) ||
+      (typeof a.schedule === "string" && a.schedule) ||
+      undefined,
+    status:
+      (typeof a.lifecycleStatus === "string" && a.lifecycleStatus) ||
+      (typeof a.status === "string" && a.status) ||
+      undefined,
+    nastaKorning: typeof a.nextRunAt === "string" && a.nextRunAt ? a.nextRunAt : undefined,
+    nastaNastaKorning:
+      typeof a.nextNextRunAt === "string" && a.nextNextRunAt ? a.nextNextRunAt : undefined,
+    korningar: typeof a.runCount === "number" && Number.isFinite(a.runCount) ? a.runCount : undefined,
+    senasteKorning: typeof a.lastRunAt === "string" && a.lastRunAt ? a.lastRunAt : undefined,
+    aktiverad: typeof a.enabled === "boolean" ? a.enabled : undefined,
+    prompt: typeof a.prompt === "string" && a.prompt ? truncat(a.prompt, 200) : undefined,
+  };
 }
 
 /**
@@ -4486,7 +4787,12 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
-  async skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void> {
+  async skicka(
+    prompt: string,
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+    extra?: StudioSkickaExtra,
+  ): Promise<void> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) {
       throw new Error("session ej tillgänglig");
@@ -4546,26 +4852,50 @@ class AppServerTransport implements StudioTransport {
         signal.addEventListener("abort", påAbort, { once: true });
       }
 
-      // Översändning med EN självläkningsretry: om sessionens modell
-      // tagits bort (-32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE — bevisat
-      // 2026-09-09 när glm-5.3-flash stängdes av på servern) kasseras
-      // sessionen, en färsk skapas med aktuell modell och send körs en
-      // gång till. Alla andra fel (även retryns) → tydligt fel-event.
+      // Översändning med självläkningsvägar. VÅG 92 B1: session/send kan
+      // bära EXTRAFÄLT (attachments/automationId/offPeak*) —
+      //   · form-avvisad (-32602/unrecognized) ⇒ EN nedgradering till vanlig
+      //     skicka med reservPrompten (extrafälten är valfria lyx),
+      //   · -32031 ZCODE_RUNTIME_MODEL_UNAVAILABLE (bevisat 2026-09-09 när
+      //     glm-5.3-flash stängdes av) ⇒ kassera sessionen, skapa en färsk
+      //     (aktuell modell) och skicka EN gång till — RENT (extrafälten är
+      //     session-/uppladdningsbundna, den nya sessionen känner dem ej).
+      // Alla andra fel (även retryns) → tydligt fel-event.
       const oversand = async (): Promise<void> => {
         if (!this.klient?.lever || !this.sid) throw new Error("session ej tillgänglig");
-        try {
-          const svar = await this.klient.protokollFraga(
-            "session/send",
-            { sessionId: this.sid, content: prompt },
-            60_000,
-          );
+        const skickaSend = async (innehall: string, medExtra?: StudioSkickaExtra): Promise<void> => {
+          const falt: Record<string, unknown> = { sessionId: this.sid, content: innehall };
+          if (medExtra) {
+            if (Array.isArray(medExtra.attachments) && medExtra.attachments.length > 0) {
+              falt.attachments = medExtra.attachments;
+            }
+            if (typeof medExtra.automationId === "string" && medExtra.automationId) {
+              falt.automationId = medExtra.automationId;
+            }
+            if (typeof medExtra.offPeakTaskId === "string" && medExtra.offPeakTaskId) {
+              falt.offPeakTaskId = medExtra.offPeakTaskId;
+              falt.offPeakRunType = medExtra.offPeakRunType ?? "init";
+            }
+          }
+          const svar = await this.klient!.protokollFraga("session/send", falt, 60_000);
           if ((svar as { accepted?: boolean } | null)?.accepted === false) {
             throw new Error("Prompten avvisades av agenten.");
           }
-          return; // accepted:true → vänta på turn/idle-notiserna (taket vaktar)
+        };
+        try {
+          await skickaSend(prompt, extra);
+          return; // accepted → vänta på turn/idle-notiserna (taket vaktar)
         } catch (fel) {
           if (signal?.aborted) throw fel;
           const text = fel instanceof Error ? fel.message : String(fel);
+          if (extra && arSendFormAvvisad(text)) {
+            lyssnare({
+              typ: "status",
+              text: "Protokollet avvisade tilläggsfälten — skickar som vanlig prompt…",
+            });
+            await skickaSend(extra.reservPrompt ?? prompt);
+            return;
+          }
           if (arModellOtillganglig(text) && this.aktiv === aktiv && !aktiv.färdig) {
             lyssnare({
               typ: "status",
@@ -4574,15 +4904,8 @@ class AppServerTransport implements StudioTransport {
             // Intern frisk-session-väg (UTAN prompt-vakt) — dödlägesfix
             // bevisad på prod 2026-09-09: nySession vägrade under retryn.
             await this.skapaFriskSession();
-            const svar = await this.klient!.protokollFraga(
-              "session/send",
-              { sessionId: this.sid!, content: prompt },
-              60_000,
-            );
-            if ((svar as { accepted?: boolean } | null)?.accepted === false) {
-              throw new Error("Prompten avvisades av agenten.");
-            }
-            return; // vänta på events från den nya sessionen
+            await skickaSend(prompt);
+            return;
           }
           throw fel;
         }
@@ -4601,7 +4924,7 @@ class AppServerTransport implements StudioTransport {
     });
   }
 
-  // ── VÅG 91 A1d: BILDER + TJÄNSTE-BRYGGOR ────────────────────────────────────
+  // ── VÅG 91 A1d + VÅG 92 B1: BILDER + TJÄNSTE-BRYGGOR ────────────────────────
 
   async skickaMedBild(
     prompt: string,
@@ -4609,19 +4932,140 @@ class AppServerTransport implements StudioTransport {
     lyssnare: StudioLyssnare,
     signal?: AbortSignal,
   ): Promise<void> {
-    // Binärsond 2026-09-09 (se filhuvudet): session/send:s attachments är
-    // opak genomströmning — KVD-vägen är promptreferenser till bilder som
-    // REDAN ligger i arbetsytan (uploads/…); barnets Read presenterar dem.
-    const { prompt: utokad } = byggPromptMedBilder(prompt, bildSokvagar);
-    await this.skicka(utokad, lyssnare, signal);
+    // VÅG 92 B1: PRIMÄR väg = v4/attachment-flödet per bild (SANA bilagor i
+    // session/send). Sanering + 8-tak via byggPromptMedBilder (REN väg).
+    const { bilder } = byggPromptMedBilder(prompt, bildSokvagar);
+    const bilagor: Record<string, unknown>[] = [];
+    const viaSokvag: string[] = [];
+    for (const sokvag of bilder) {
+      lyssnare({
+        typ: "status",
+        text: `Laddar upp bilaga ${bilagor.length + viaSokvag.length + 1}/${bilder.length}…`,
+      });
+      // laddaUppBilaga kastar ALDRIG (null vid varje avvisning) — skyddet
+      // är dubbelsäkrat så en oväntad kast aldrig dödar hela rundan.
+      const bilaga = await this.laddaUppBilaga(sokvag).catch(() => null);
+      if (bilaga) {
+        // OPAK genomströmning (OEt): commit-svarets ref bärs SOM DEN ÄR när
+        // den är ett objekt; annars minimiobjektet {attachmentId}.
+        bilagor.push(
+          bilaga.ref && typeof bilaga.ref === "object"
+            ? (bilaga.ref as Record<string, unknown>)
+            : { attachmentId: bilaga.attachmentId },
+        );
+      } else {
+        viaSokvag.push(sokvag); // arbetsytareferens-fallback för DENNA bild
+      }
+    }
+    // Prompten: endast KVARVARANDE (null-fallback-)bilder som Read-referenser
+    // — de uppladdade bärs av attachments-fältet. Reserv-prompten (vid form-
+    // nedgradering i skicka) bär ALLA bilder som referenser.
+    const { prompt: utokad } = byggPromptMedBilder(prompt, viaSokvag);
+    const { prompt: reserv } = byggPromptMedBilder(prompt, bilder);
+    await this.skicka(utokad, lyssnare, signal, bilagor.length > 0 ? { attachments: bilagor, reservPrompt: reserv } : undefined);
+  }
+
+  async laddaUppBilaga(sokvag: string): Promise<StudioBilagaRef | null> {
+    // VÅG 92 B1 (P0-1 — käpphästen). PROTOKOLLFORM (våg 91 A1d-binärsond,
+    // vendor/zcode.cjs app 3.11.2 — dokumenterad, LIVE-bevis avvaktar):
+    //   v4/attachment/begin {connectionId, uploadId, sessionId, fileName,
+    //     mime, totalBytes, totalChunks, checksum:"sha256:<64hex>"}
+    //   v4/attachment/chunk {uploadId, chunkIndex, dataBase64} (512 kB bitar)
+    //   v4/attachment/commit {uploadId} → ref (opak — bilageIdUrSvar drar id)
+    // ALLT avvisar ⇒ null (ALDRIG kast): metoden saknas (-32601), fel form,
+    // timeout, fil saknas, > 5 MB, sanitär sökväg underkänd, session borta.
+    const rent = saniteraBilageSokvag(sokvag);
+    if (!rent) return null;
+    try {
+      await this.ensure();
+    } catch {
+      return null; // skicka() ger det ärliga felet senare
+    }
+    if (!this.sid || !this.klient?.lever) return null;
+    // Mimosa-recept (våg 91): strängkonkat + rot-prefixkontroll — ALDRIG
+    // path.join med variabel i filsökvägen.
+    const hel = bilageSokvagIArbetsyta(this.arbetskatalog, rent);
+    if (!hel) return null;
+    let data: Buffer;
+    try {
+      const info = statSync(hel);
+      if (!info.isFile()) return null;
+      if (info.size <= 0 || info.size > MAX_BILAGA_BYTE) return null;
+      data = readFileSync(hel);
+    } catch {
+      return null;
+    }
+    const filnamn = rent.split("/").pop() ?? "bilaga";
+    const mime = bilageMime(filnamn);
+    const checksum = `sha256:${createHash("sha256").update(data).digest("hex")}`;
+    const totalChunks = Math.max(1, Math.ceil(data.length / BILAGE_CHUNK_BYTE));
+    const uploadId = `ak1a-studio-bilaga-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    // Gateway-prenumerationen är dokumenterad för v4-flödena — best-effort
+    // (misslyckad subscribe skall inte stoppa begin-försöket).
+    if (!this.v4Ansluten) await this.v4Prenumerera();
+    try {
+      await this.klient.protokollFraga(
+        "v4/attachment/begin",
+        {
+          connectionId: this.v4ConnectionId,
+          uploadId,
+          sessionId: this.sid,
+          fileName: filnamn,
+          mime,
+          totalBytes: data.length,
+          totalChunks,
+          checksum,
+        },
+        30_000,
+      );
+    } catch {
+      return null; // metoden saknas / formen avvisad / timeout — null-fallback
+    }
+    for (let i = 0; i < totalChunks; i++) {
+      try {
+        const fran = i * BILAGE_CHUNK_BYTE;
+        const till = Math.min(fran + BILAGE_CHUNK_BYTE, data.length);
+        await this.klient.protokollFraga(
+          "v4/attachment/chunk",
+          { uploadId, chunkIndex: i, dataBase64: data.subarray(fran, till).toString("base64") },
+          60_000,
+        );
+      } catch {
+        // Städa upp halva uppladdningen (best-effort) — protokollets abort.
+        try {
+          await this.klient.protokollFraga("v4/attachment/abort", { uploadId }, 10_000);
+        } catch {
+          // redan borta — null är svaret oavsett
+        }
+        return null;
+      }
+    }
+    let commitSvar: unknown;
+    try {
+      commitSvar = await this.klient.protokollFraga("v4/attachment/commit", { uploadId }, 30_000);
+    } catch {
+      try {
+        await this.klient.protokollFraga("v4/attachment/abort", { uploadId }, 10_000);
+      } catch {
+        // vidare — null oavsett
+      }
+      return null;
+    }
+    const attachmentId = bilageIdUrSvar(commitSvar);
+    if (!attachmentId) return null; // opak ref utan tolkbar id → fallback
+    return {
+      attachmentId,
+      ...(commitSvar && typeof commitSvar === "object" ? { ref: commitSvar } : {}),
+    };
   }
 
   async lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
-    // PRIMÄR: session/read-projektionens backgroundJobs (kartan §1 Tkn-form
-    // {taskId,toolName?,taskKind,status,description?,command?}) — mappas
-    // defensivt (fält varierar mellan versioner).
+    // PRIMÄR (VÅG 92 B1: FULL projektionsparsning): session/read-projektionens
+    // backgroundJobs — Tkn-formens alla fält mappas defensivt (taskId|id,
+    // title, taskKind, status, description, command, pid, startedAt,
+    // outputTail, cancellable — fältbudgeten varierar mellan versioner).
     try {
       const r = (await this.klient.protokollFraga("session/read", { sessionId: this.sid }, 30_000)) as
         | (SessionReadResult & { projection?: { backgroundJobs?: unknown[] } })
@@ -4631,28 +5075,31 @@ class AppServerTransport implements StudioTransport {
         const ut: StudioBakgrundsjobb[] = [];
         for (const rad of rader) {
           if (!rad || typeof rad !== "object") continue;
-          const j = rad as {
-            taskId?: unknown;
-            taskKind?: unknown;
-            status?: unknown;
-            description?: unknown;
-            command?: unknown;
-            toolName?: unknown;
-          };
-          const id = typeof j.taskId === "string" && j.taskId ? j.taskId : "";
-          const status = typeof j.status === "string" && j.status ? j.status : "";
+          const j = rad as Record<string, unknown>;
+          const id = (typeof j.taskId === "string" && j.taskId) || (typeof j.id === "string" && j.id) || "";
+          const status = (typeof j.status === "string" && j.status) || "";
           if (!id || !status) continue;
+          const kommando = typeof j.command === "string" && j.command ? truncat(j.command, 200) : undefined;
+          const beskrivning =
+            typeof j.description === "string" && j.description
+              ? truncat(j.description, 200)
+              : kommando;
           ut.push({
             id,
-            typ: typeof j.taskKind === "string" ? j.taskKind : undefined,
+            typ: typeof j.taskKind === "string" && j.taskKind ? j.taskKind : undefined,
             status,
-            beskrivning:
-              typeof j.description === "string" && j.description
-                ? j.description
-                : typeof j.command === "string" && j.command
-                  ? truncat(j.command, 200)
-                  : undefined,
+            beskrivning,
             verktyg: typeof j.toolName === "string" && j.toolName ? j.toolName : undefined,
+            titel: typeof j.title === "string" && j.title ? truncat(j.title, 200) : undefined,
+            startad:
+              (typeof j.startedAt === "string" && j.startedAt) ||
+              (typeof j.createdAt === "string" && j.createdAt) ||
+              undefined,
+            pid: typeof j.pid === "number" ? j.pid : undefined,
+            kommando,
+            utdataSvans:
+              typeof j.outputTail === "string" && j.outputTail ? truncat(j.outputTail, MAX_PROGRESS_TEEKEN) : undefined,
+            avbrytbar: typeof j.cancellable === "boolean" ? j.cancellable : undefined,
           });
         }
         if (ut.length > 0) return ut;
@@ -4668,6 +5115,8 @@ class AppServerTransport implements StudioTransport {
       typ: s.typ,
       status: s.status,
       beskrivning: s.sammanfattning ?? s.titel,
+      titel: s.titel,
+      startad: s.startad,
     }));
   }
 
@@ -4753,30 +5202,131 @@ class AppServerTransport implements StudioTransport {
       throw fel;
     }
     const lista = Array.isArray(r?.automations) ? r!.automations! : [];
+    // VÅG 92 B1: FULL parsning via den delade mappern (okänd post hopas över).
     const ut: StudioAutomation[] = [];
-    for (const a of lista) {
-      const post = a as {
-        automationId?: unknown;
-        title?: unknown;
-        cronExpr?: unknown;
-        lifecycleStatus?: unknown;
-        nextRunAt?: unknown;
-        enabled?: unknown;
-        prompt?: unknown;
-      } | null;
-      const id = typeof post?.automationId === "string" && post.automationId ? post.automationId : "";
-      if (!id) continue;
-      ut.push({
-        id,
-        titel: typeof post?.title === "string" && post.title ? post.title : id,
-        cron: typeof post?.cronExpr === "string" && post.cronExpr ? post.cronExpr : undefined,
-        status: typeof post?.lifecycleStatus === "string" && post.lifecycleStatus ? post.lifecycleStatus : undefined,
-        nastaKorning: typeof post?.nextRunAt === "string" && post.nextRunAt ? post.nextRunAt : undefined,
-        aktiverad: typeof post?.enabled === "boolean" ? post.enabled : undefined,
-        prompt: typeof post?.prompt === "string" && post.prompt ? truncat(post.prompt, 200) : undefined,
-      });
+    for (const post of lista) {
+      const automation = automationUrPost(post);
+      if (automation) ut.push(automation);
     }
     return ut;
+  }
+
+  // ── VÅG 92 B1 (P0-3): AUTOMATION CRUD — protokollform ur kartan §2 ─────────
+  // OBS: de tre CRUD-metoderna är PILFÄLT (ej prototypmetoder) — B2:s rutt
+  // (api/studio/tjanster/automation) lösgör metoden från instansen
+  // (`const f = transport.f; f(…)`) och pilfältet binder `this` permanent.
+
+  automationSkapa = async (skapa: StudioAutomationSkapa): Promise<StudioAutomation | null> => {
+    const namn = typeof skapa?.namn === "string" ? skapa.namn.trim() : "";
+    const prompt = typeof skapa?.prompt === "string" ? skapa.prompt.trim() : "";
+    if (!namn) throw new Error("namn krävs för en automation.");
+    if (!prompt) throw new Error("prompt krävs för en automation.");
+    if (prompt.length > MAX_PROMPT_TEEKEN_TRANSPORT) {
+      throw new Error(`Prompten är för lång (max ${MAX_PROMPT_TEEKEN_TRANSPORT} tecken).`);
+    }
+    const cron = typeof skapa.schema === "string" ? skapa.schema.trim() : "";
+    // Kartans $je-form: {title, cronExpr, prompt, model?, mode?, targetTaskId?,
+    // enabled, maxRuns?} → {automation}. lasLage=true ärver transportens
+    // läge (build|plan) som mode.
+    const params: Record<string, unknown> = {
+      title: namn.slice(0, 200),
+      prompt,
+      enabled: true,
+    };
+    if (cron) params.cronExpr = cron.slice(0, 120);
+    if (skapa.lasLage && (this.lage === "build" || this.lage === "plan")) params.mode = this.lage;
+    this.klientForFraga();
+    let r: { automation?: unknown } | null;
+    try {
+      r = (await this.klient!.protokollFraga("automation/create", params, 30_000)) as
+        | { automation?: unknown }
+        | null;
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("automation/create");
+      throw fel;
+    }
+    return automationUrPost(r?.automation); // okänd form → null (vänligt)
+  }
+
+  automationUppdatera = async (id: string, andring: { pausad?: boolean }): Promise<StudioAutomation | null> => {
+    const automationId = typeof id === "string" ? id.trim() : "";
+    if (!automationId) throw new Error("automationId krävs.");
+    // Pausa = enabled:false (create-formens enabled-fält; lifecycleStatus
+    // "paused" är binär-unionens pausade steg) — återaktivera = enabled:true.
+    const params: Record<string, unknown> = { automationId: automationId.slice(0, 200) };
+    if (typeof andring?.pausad === "boolean") params.enabled = !andring.pausad;
+    this.klientForFraga();
+    let r: unknown;
+    try {
+      r = await this.klient!.protokollFraga("automation/update", params, 30_000);
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("automation/update");
+      throw fel;
+    }
+    // Svarsformen är ej LIVE-bevisad: {automation} · rak post · annan form —
+    // defensivt ur båda, annars null (listan är sanningen).
+    const post = (r as { automation?: unknown } | null)?.automation ?? r;
+    return automationUrPost(post);
+  }
+
+  automationRadera = async (id: string): Promise<{ raderad: boolean; meddelande: string }> => {
+    const automationId = typeof id === "string" ? id.trim() : "";
+    if (!automationId) throw new Error("automationId krävs.");
+    this.klientForFraga();
+    let r: { deleted?: unknown } | null;
+    try {
+      r = (await this.klient!.protokollFraga(
+        "automation/delete",
+        { automationId: automationId.slice(0, 200) },
+        30_000,
+      )) as { deleted?: unknown } | null;
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("automation/delete");
+      throw fel;
+    }
+    if (r?.deleted === false) {
+      return { raderad: false, meddelande: "Agenten raderade ej automationen." };
+    }
+    return {
+      raderad: true,
+      meddelande:
+        r?.deleted === true
+          ? "Automationen raderad."
+          : "Radering skickad — agenten bekräftade ej formen (ladda om listan om den syns kvar).",
+    };
+  }
+
+  // ── VÅG 92 B1 (P0-5): SKICKA-AUTOMATION — send med automationId/offPeak ─────
+
+  async skickaAutomation(
+    prompt: string,
+    automationId?: string,
+    offPeak?: boolean,
+    lyssnare?: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void> {
+    const text = typeof prompt === "string" ? prompt.trim() : "";
+    if (!text) throw new Error("Prompten är tom.");
+    if (text.length > MAX_PROMPT_TEEKEN_TRANSPORT) {
+      throw new Error(`Prompten är för lång (max ${MAX_PROMPT_TEEKEN_TRANSPORT} tecken).`);
+    }
+    const l: StudioLyssnare = lyssnare ?? (() => undefined);
+    let extra: StudioSkickaExtra | undefined;
+    if (typeof automationId === "string" && automationId.trim()) {
+      // Kartan §1: automationId ⊕ offPeakTaskId är MUTUELLT EXKLUSIVA —
+      // automationsgrenen vinner när båda angivits.
+      extra = { automationId: automationId.trim().slice(0, 200), reservPrompt: text };
+    } else if (offPeak) {
+      // Klienten äger offPeak-id:t (samma mönster som uploadId/connectionId
+      // i v4-grenen); offPeakRunType "init" enligt kartans union.
+      extra = {
+        offPeakTaskId: `ak1a-studio-offpeak-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+        offPeakRunType: "init",
+        reservPrompt: text,
+      };
+    }
+    // Utan extra (eller efter form-nedgradering i skicka) → VANLIG skicka.
+    await this.skicka(text, l, signal, extra);
   }
 
   async genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }> {
@@ -5603,7 +6153,7 @@ class MockTransport implements StudioTransport {
     ];
   }
 
-  // ── VÅG 91 A1d (mock): bilder + tjänste-bryggor — deterministisk dev-vy ────
+  // ── VÅG 91 A1d + VÅG 92 B1 (mock): bilder + tjänste-bryggor — dev-vy ────────
 
   async skickaMedBild(
     prompt: string,
@@ -5611,19 +6161,66 @@ class MockTransport implements StudioTransport {
     lyssnare: StudioLyssnare,
     signal?: AbortSignal,
   ): Promise<void> {
-    // Samma väg som prod: promptreferenser till bilder i arbetsytan —
-    // mockens svar ekar den utökade prompten (dev-E2E ser bildblocket).
-    const { prompt: utokad } = byggPromptMedBilder(prompt, bildSokvagar);
+    // VÅG 92 B1 (mock): laddaUppBilaga sonderas per bild (riktig fil i
+    // lokala arbetsytan ≤ 5 MB → mock-attachmentId) — men prompten behåller
+    // ALLTID sökvägsblocket (mocken har ingen v4-gateway; dev-E2E:v91:s
+    // "[Bifogade bilder"-punkt förblir deterministisk). Status-pixeln bär
+    // vilken väg varje bild tog (B3:s "Bilaga ✓"-UI kan bevisas i dev).
+    const { bilder } = byggPromptMedBilder(prompt, bildSokvagar);
+    let viaProtokoll = 0;
+    for (let i = 0; i < bilder.length; i++) {
+      const bilaga = await this.laddaUppBilaga(bilder[i]).catch(() => null);
+      if (bilaga) viaProtokoll += 1;
+      lyssnare({
+        typ: "status",
+        text: bilaga
+          ? `Bilaga ${i + 1}/${bilder.length} ✓ (mock-attachment)`
+          : `Bilaga ${i + 1}/${bilder.length} via sökväg (mock)`,
+      });
+    }
+    const { prompt: utokad } = byggPromptMedBilder(prompt, bilder);
+    if (viaProtokoll > 0) {
+      lyssnare({
+        typ: "status",
+        text: `${viaProtokoll}/${bilder.length} bilagor via protokoll-flödet (mock) — resten som sökvägsreferenser.`,
+      });
+    }
     await this.skicka(utokad, lyssnare, signal);
+  }
+
+  async laddaUppBilaga(sokvag: string): Promise<StudioBilagaRef | null> {
+    // Mock-spegling av prod-sanningen: en RIKTIG fil i lokala arbetsytan
+    // (≤ 5 MB, sanitär sökväg) ger ett deterministiskt mock-id; annars null
+    // (samma null-fallback som prod). Ingen v4-gateway finns i dev.
+    await this.ensure();
+    const rent = saniteraBilageSokvag(sokvag);
+    if (!rent) return null;
+    const hel = bilageSokvagIArbetsyta(studioArbetsyta(), rent);
+    if (!hel) return null;
+    try {
+      const info = statSync(hel);
+      if (!info.isFile() || info.size <= 0 || info.size > MAX_BILAGA_BYTE) return null;
+    } catch {
+      return null;
+    }
+    return {
+      attachmentId: `mock-bilaga-${Date.now().toString(36)}`,
+      ref: { mock: true, fileName: rent.split("/").pop() ?? "bilaga" },
+    };
   }
 
   async lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]> {
     await this.ensure();
+    // VÅG 92 B1 (mock): FULL form — titel + startad följer med (dev-E2E
+    // för P0-4-panelen får samma fält som prod).
     return this.mockSubagenter.map((s) => ({
       id: s.barnSessionId,
       typ: s.typ,
       status: s.status,
       beskrivning: s.sammanfattning ?? s.titel,
+      titel: s.titel,
+      startad: s.startad,
+      avbrytbar: s.status === "running" || s.status === "waiting" || s.status === "blocked",
     }));
   }
 
@@ -5647,19 +6244,96 @@ class MockTransport implements StudioTransport {
     return { mock: true, kommando: kommando.kommando.slice(0, 200), resultat: "Mock: kommandot kördes (dev-demo)." };
   }
 
+  /**
+   * VÅG 92 B1 (mock): tillståndsbärande automationslista — dev-E2E kan
+   * skapa→pausa→radera (B4:s v92-svit) deterministiskt utan protokoll.
+   */
+  private mockAutomationer: StudioAutomation[] = [
+    {
+      id: "mock-automation-1",
+      titel: "Mock-automation (dev)",
+      cron: "0 7 * * *",
+      status: "active",
+      nastaKorning: new Date(Date.now() + 3_600_000).toISOString(),
+      nastaNastaKorning: new Date(Date.now() + 90_000_000).toISOString(),
+      korningar: 4,
+      senasteKorning: new Date(Date.now() - 86_400_000).toISOString(),
+      aktiverad: true,
+      prompt: "Sammanfatta gårdagens studioarbete (mock).",
+    },
+  ];
+
   async lasAutomationer(): Promise<StudioAutomation[]> {
     await this.ensure();
-    return [
-      {
-        id: "mock-automation-1",
-        titel: "Mock-automation (dev)",
-        cron: "0 7 * * *",
-        status: "active",
-        nastaKorning: new Date(Date.now() + 3_600_000).toISOString(),
-        aktiverad: true,
-        prompt: "Sammanfatta gårdagens studioarbete (mock).",
-      },
-    ];
+    return this.mockAutomationer.map((a) => ({ ...a }));
+  }
+
+  // ── VÅG 92 B1 (mock): AUTOMATION CRUD — deterministisk dev-kedja.
+  // Pilfält (this-bundna) — B2:s rutt lösgör metoden från instansen. ──────
+
+  automationSkapa = async (skapa: StudioAutomationSkapa): Promise<StudioAutomation | null> => {
+    await this.ensure();
+    const namn = typeof skapa?.namn === "string" ? skapa.namn.trim() : "";
+    const prompt = typeof skapa?.prompt === "string" ? skapa.prompt.trim() : "";
+    if (!namn) throw new Error("namn krävs för en automation.");
+    if (!prompt) throw new Error("prompt krävs för en automation.");
+    const cron = typeof skapa.schema === "string" ? skapa.schema.trim() : "";
+    const post: StudioAutomation = {
+      id: `mock-auto-${Date.now().toString(36)}`,
+      titel: namn.slice(0, 200),
+      ...(cron ? { cron: cron.slice(0, 120) } : {}),
+      status: "active",
+      nastaKorning: new Date(Date.now() + 3_600_000).toISOString(),
+      aktiverad: true,
+      prompt: truncat(prompt, 200),
+    };
+    this.mockAutomationer.unshift(post);
+    return { ...post };
+  }
+
+  automationUppdatera = async (id: string, andring: { pausad?: boolean }): Promise<StudioAutomation | null> => {
+    await this.ensure();
+    const post = this.mockAutomationer.find((a) => a.id === id);
+    if (!post) throw new Error(`Automationen ${String(id).slice(0, 24)} hittades ej (mock).`);
+    if (typeof andring?.pausad === "boolean") {
+      post.aktiverad = !andring.pausad;
+      post.status = andring.pausad ? "paused" : "active";
+    }
+    return { ...post };
+  }
+
+  automationRadera = async (id: string): Promise<{ raderad: boolean; meddelande: string }> => {
+    await this.ensure();
+    const index = this.mockAutomationer.findIndex((a) => a.id === id);
+    if (index < 0) {
+      return { raderad: false, meddelande: `Automationen ${String(id).slice(0, 24)} hittades ej (mock).` };
+    }
+    this.mockAutomationer.splice(index, 1);
+    return { raderad: true, meddelande: "Mock: automationen raderad." };
+  }
+
+  // ── VÅG 92 B1 (mock): SKICKA-AUTOMATION — vanlig skicka + ärlig pixel ─────
+
+  async skickaAutomation(
+    prompt: string,
+    automationId?: string,
+    offPeak?: boolean,
+    lyssnare?: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void> {
+    await this.ensure();
+    const text = typeof prompt === "string" ? prompt.trim() : "";
+    if (!text) throw new Error("Prompten är tom.");
+    const l: StudioLyssnare = lyssnare ?? (() => undefined);
+    if (typeof automationId === "string" && automationId.trim()) {
+      l({
+        typ: "status",
+        text: `Kör som automation ${automationId.trim().slice(0, 16)}… (mock — fältet följer ej med i dev).`,
+      });
+    } else if (offPeak) {
+      l({ typ: "status", text: "Kör som off-peak-uppgift (mock — fältet följer ej med i dev)." });
+    }
+    await this.skicka(text, l, signal);
   }
 
   async genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }> {
@@ -5668,13 +6342,25 @@ class MockTransport implements StudioTransport {
     return { text, råSvar: { mock: true, finishReason: "mock" } };
   }
 
-  async skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void> {
+  async skicka(
+    prompt: string,
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+    extra?: StudioSkickaExtra,
+  ): Promise<void> {
     await this.ensure();
     const sov = (ms: number) =>
       new Promise<void>((los) => {
         const t = setTimeout(los, ms);
         signal?.addEventListener("abort", () => { clearTimeout(t); los(); }, { once: true });
       });
+
+    // VÅG 92 B1 (mock): extrafälten (attachments/automationId/offPeak*)
+    // ekas i svaret — dev ser ÄRLIGT vilka protokollfält som följde med.
+    const extraAntal = Array.isArray(extra?.attachments) ? extra!.attachments!.length : 0;
+    const extraRad = extra
+      ? `- session/send-extra: ${extraAntal} bilagor${typeof extra.automationId === "string" ? ` · automation ${extra.automationId.slice(0, 16)}…` : ""}${typeof extra.offPeakTaskId === "string" ? " · off-peak" : ""} (mock)`
+      : null;
 
     // V83 B1: verktygskorten strömmas i protokollföljd — runda → live-input
     // → kortens livscykel (planerad/startar/kör/resultat/fel) → runda slut.
@@ -5818,6 +6504,7 @@ class MockTransport implements StudioTransport {
       "",
       "Detta är **deterministisk demo-utdata** — ingen modell anropades.",
       "",
+      ...(extraRad ? [extraRad, ""] : []),
       "- Riktig drift sker på servern där `zcode app-server` lever",
       "- Sessionen hålls vid liv mellan prompter",
       "- Uppladdade filer får sökvägar som `uploads/<datum>/<namn>`",

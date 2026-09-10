@@ -10025,3 +10025,18 @@ men BROWSERN laddade inte historiken vid återkomst. FIX:
 
 **MIMOSA-FIXAR:** request→protokollFraga (39 anrop, stdin-IPC ej HTTP),
 resolvorBinär→hittaBinär (strängkonkatening ur PATH, ..-blockering).
+
+## VÅG 88 — MENY + ADMIN + CACHE (2026-09-10, 13e42f8, prod 200)
+
+3 agenter parallellt:
+- I1 MENY-KONSOLIDERING (bildens problem löst): 3 dropdowns + tema
+  → ⚙️ inställnings-drawer (radio-knappar 48px: modell, läge, tanke,
+  tema + kontext) — headern ENRADIG: logo | Studio · GLM-5.3 | prick | ⚙️
+- I2 ADMIN I STUDIO: 🔧 Verktyg-drawer — variabler (13 priser
+  redigerbara direkt) + blogg (utkast→kontrollera→granska→exportera
+  hela flödet) + minne-länk — HELA systemet styrs från /studio
+- I3 CACHE-OPTIMERING: reconnect-poll 15s vid aktivt mål / 30s annars,
+  kartflush 30s, IndexedDB-historik (överlever flikstängning) +
+  localStorage cache-meta + mount-jämförelse med toast
+
+ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · prod 200.

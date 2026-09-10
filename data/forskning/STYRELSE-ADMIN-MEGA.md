@@ -483,3 +483,19 @@ från frånvaron. Detta är studions STÖRSTA UX-brott.
 - H4 **MOBIL-POLISH**: safe-area-inset för iPhone-notch, svaj-indikator
   i input-fältet, tangentbords-aware layout (composer stannar ovanför
   keyboard), touch-feedback (active:scale-95).
+
+## TILLÄGG VÅG 88 — STUDIO FOKUSERAD + MENY-OPTIMERING (kunds bild + direktiv)
+
+- I1 **MENY-KONSOLIDERING (bildens problem)**: 3 dropdowns (modell/läge/
+  tanke) + tema + status = FÖR MÅNGT på mobil. Konsolidera: (a) alla 3
+  dropdowns i en "⚙️ Inställningar"-knapp → drawer med alla val (modell,
+  läge, tankestyrka, tema) stora tryckytor i lista; (b) status-pricken
+  flyttas in i headerns titelrad; (c) headern = logo + "Studio" +
+  status-prick + ⚙️ = ENRADIG och REN.
+- I2 **ADMIN I STUDIO**: admin-panelens kraftkommandon som drawer i
+  Studio ("🔧 Verktyg"-knapp): variabler (priser), blogg-publicering,
+  minnesfiler — kunden styr HELA systemet från ETT ställe.
+- I3 **CACHE-OPTIMERING**: reconnect-poll 30s→15s när mål aktivt;
+  sessionskarta flush 60s→30s; GET-historik cache 5-min i IndexedDB
+  (webbläsarens beständiga lagring — överlever flikstängning, inte bara
+  refresh).

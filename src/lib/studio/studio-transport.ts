@@ -1969,7 +1969,11 @@ class AppServerTransport implements StudioTransport {
       this.prenumererad = false;
     }
     try {
-      const svar = await this.klient!.request("session/list", {}, 30_000);
+      // VÅG 86 G5: explicit limit 50 (serverns tak — kartan §1 def 50) +
+      // paneltak 50 (f.d. 25): en fork (rewind) eller äldre session skall
+      // synas i Sessioner trots concurrent churn (LIVE-fynd: listan är
+      // updatedAt-desc och en nyligen forkad session kan annars trängas ut).
+      const svar = await this.klient!.request("session/list", { limit: 50 }, 30_000);
       const lista = (svar as SessionListResult | null)?.sessions;
       if (!Array.isArray(lista)) return [];
       const ut: StudioSessionPost[] = [];
@@ -1991,7 +1995,7 @@ class AppServerTransport implements StudioTransport {
                 : undefined,
         });
       }
-      const topp = ut.slice(0, 25);
+      const topp = ut.slice(0, 50);
       // V83-BERIKNING: turns + tokens ur session/read-projektionen för de
       // 10 första (kontextraden per session). Varje läsning fel-tolerant —
       // listan lever alltid, berikning är lyx. Kör parallellt (NDJSON-

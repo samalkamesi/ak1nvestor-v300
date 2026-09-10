@@ -25,7 +25,6 @@ import {
   FileText,
   FileArchive,
   FileCode,
-  FileDown,
   FileImage,
   FolderSearch,
   FolderTree,
@@ -4633,6 +4632,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
     visaToast("Chatten exporterad som markdown.");
   }, [meddelanden, kontext, visaToast]);
 
+  // ── V86 G7: EXPORTCHATT SOM HTML — fristående AK1A-stilad fil (printbar);
+  // motorn (byggChatHtml: marin header, agent-bubblor i papper-stil, kodblock
+  // monospace, diff grönt/rött) lever i studio-html-export.ts ────────────────
+  const exporteraChatHtml = React.useCallback(() => {
+    if (meddelanden.length === 0) {
+      visaToast("Chatten är tom — inget att exportera än.", "fel");
+      return;
+    }
+    const nu = new Date();
+    const pad = (n: number) => String(n).padStart(2, "0");
+    const datum = `${nu.getFullYear()}-${pad(nu.getMonth() + 1)}-${pad(nu.getDate())}`;
+    const tid = `${pad(nu.getHours())}${pad(nu.getMinutes())}`;
+    const blob = new Blob([byggChatHtml(meddelanden, kontext?.modell)], {
+      type: "text/html;charset=utf-8",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `studio-chatt-${datum}-${tid}.html`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 2_000);
+    visaToast("Chatten exporterad som HTML — öppna filen och skriv ut direkt.");
+  }, [meddelanden, kontext, visaToast]);
+
   // ── V84 A4: MEDDELANDESÖKNING — träfflista i dokumentordning ────────────
   const sokTräffar = React.useMemo<SokTräff[]>(() => {
     const fras = sokFras.trim();
@@ -4833,6 +4858,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
           // VÅG 86 G2: Esc stänger även promptbibliotekets dropdown
           setPrompterOppen(false);
         }
+        // V86 G6/G7: Esc stänger alltid öppna paneler/overlay/kebab (no-op
+        // när dom redan är stängda — samma mönster som paletten ovan).
+        setVisaGenvagar(false);
+        setVisaNotiser(false);
+        setKebabOppen(false);
         return;
       }
       const mal = e.target as HTMLElement | null;
@@ -4846,6 +4876,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
       if (e.key === "t" || e.key === "T") {
         e.preventDefault();
         vaxlaTema();
+      } else if (e.key === "?") {
+        // V86 G6: "?" visar tangentbordsgenvägarna (ovanför palett/sök i
+        // Esc-kedjan — samma skärm-tangent som Z:s hjälpkort).
+        e.preventDefault();
+        setVisaGenvagar((v) => !v);
       }
     };
     window.addEventListener("keydown", paTangent);
@@ -5113,14 +5148,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <Command className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">⌘K</span>
               </button>
-              {/* V84 A5: exportera chatten som markdown */}
+              {/* V84 A5 + V86 G7: exportera chatten — markdown + HTML.
+                  Mobil (<sm): knappen bor i kebabmenyn (⋮) i stället. */}
               <button
                 onClick={exporteraChat}
                 title="Exportera chatten som markdown-fil (datum i filnamnet)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                className="hidden items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:flex"
               >
                 <Download className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Exportera</span>
+              </button>
+              {/* V86 G7: HTML-exporten — snygg fristående fil, printbar */}
+              <button
+                onClick={exporteraChatHtml}
+                title="Exportera chatten som fristående HTML-fil i AK1A-stil (printbar — öppna och skriv ut)"
+                className="hidden items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:flex"
+              >
+                <Printer className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Exportera HTML</span>
+              </button>
+              {/* V86 G7: kebabmeny (⋮) — export-knapparna på mobil */}
+              <button
+                onClick={() => setKebabOppen((v) => !v)}
+                title="Exportera — markdown eller HTML (Genvägar finns också här)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:hidden"
+              >
+                <MoreVertical className="h-3.5 w-3.5" />
               </button>
               <button
                 onClick={() => {
@@ -5129,6 +5182,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   setMinneRedigerar(false);
                   setMinneNy(false);
                   setVisaFardigheter(false);
+                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
                   if (visaFiler) setVisaFiler(false);
                   else oppnaFiltrad();
                 }}
@@ -5140,7 +5194,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </button>
               {/* VÅG 84 D: Minne 🧠 — agentens minnesfiler, redigerbara */}
               <button
-                onClick={() => (visaMinne ? setVisaMinne(false) : oppnaMinne())}
+                onClick={() => {
+                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
+                  if (visaMinne) setVisaMinne(false);
+                  else oppnaMinne();
+                }}
                 title="Minne — vad agenten kommer ihåg (minnesfiler + stående instruktioner, redigerbara)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
@@ -5154,7 +5212,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </button>
               {/* VÅG 85 F2: Färdigheter ⚡ — skills/plugins/MCP ("vad agenten KAN") */}
               <button
-                onClick={() => (visaFardigheter ? setVisaFardigheter(false) : oppnaFardigheter())}
+                onClick={() => {
+                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
+                  if (visaFardigheter) setVisaFardigheter(false);
+                  else oppnaFardigheter();
+                }}
                 title="Färdigheter — vad agenten KAN (skills/referenceCatalog + plugins/list + mcp/list)"
                 className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
               >
@@ -5243,25 +5305,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{regler.length}</span>
                 )}
               </button>
+              {/* V86 G6: 🔔 öppnar NOTISPANELEN (historik + på/av + töm) —
+                  rättigheten begärs numera inuti panelen, inte på klicket. */}
               <button
-                onClick={() => void begraNotisRattighet()}
-                disabled={notisRattighet === "stöds ej" || notisRattighet === "denied"}
+                onClick={() => (visaNotiser ? setVisaNotiser(false) : oppnaNotiser())}
                 title={
                   notisRattighet === "granted"
-                    ? "Notiser på — rundor över 60 s pingar och ”✓ Klar (N tkn)” kommer när agenten är färdig"
-                    : notisRattighet === "denied"
-                      ? "Notiser blockerade i webbläsaren — tillåt dom i inställningarna"
-                      : notisRattighet === "stöds ej"
-                        ? "Webbläsaren saknar stöd för notiser"
-                        : "Slå på notiser — agentens långa rundor (>60 s) pingar när den är klar"
+                    ? `Notishistorik — rundor över 60 s pingar och ”✓ Klar (N tkn)” loggas (${notiser.length} i historiken)`
+                    : `Notishistorik (${notiser.length}) — slå på notiser inuti panelen: rundor över 60 s pingar när agenten är klar`
                 }
                 className={cn(
-                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10 disabled:opacity-40",
+                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
                   notisRattighet === "granted" ? "text-emerald-300" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
                 )}
               >
                 {notisRattighet === "granted" ? <BellRing className="h-3.5 w-3.5" /> : <Bell className="h-3.5 w-3.5" />}
                 <span className="hidden sm:inline">Notiser</span>
+                {notiser.length > 0 && (
+                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{notiser.length}</span>
+                )}
               </button>
             </span>
           </div>
@@ -6791,6 +6853,243 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* V86 G6: GENVÄGSÖVERSIKT — "?"-tangenten (utanför inmatningsfält)
+          visar ALLA kortkommandon i tabellform. Esc/klick utanför stänger. */}
+      {visaGenvagar && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-3 backdrop-blur-[2px]"
+          onClick={() => setVisaGenvagar(false)}
+        >
+          <div
+            role="dialog"
+            aria-label="Tangentbordsgenvägar"
+            className="w-full max-w-md overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2 border-b border-gold/20 px-3.5 py-2.5">
+              <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold" />
+              <h2 className="min-w-0 flex-1 font-serif text-sm font-bold">Tangentbordsgenvägar</h2>
+              <button
+                onClick={() => setVisaGenvagar(false)}
+                title="Stäng (Esc)"
+                className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <table className="w-full text-left text-xs">
+              <thead>
+                <tr className="border-b border-gold/15 text-[10px] uppercase tracking-wider text-muted-foreground/70">
+                  <th className="px-3.5 py-1.5 font-semibold">Tangent</th>
+                  <th className="px-3.5 py-1.5 font-semibold">Vad den gör</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(
+                  [
+                    ["Enter", "Skicka prompten till agenten"],
+                    ["Skift+Enter", "Ny rad i skrivfältet (flerradsprompt)"],
+                    ["Ctrl/Cmd+K", "Kommandopaletten — sök kommandon, modellbyten och tema"],
+                    ["T", "Växla tema (marin natt / paper) — ej i inmatningsfält"],
+                    ["/", "Kommandomenyn i skrivfältet (snabbkommandon med autocomplete)"],
+                    ["↑", "Föregående prompt ur historiken (i tomt skrivfält); ↑/↓ navigerar även palett och sök"],
+                    ["?", "Denna genvägsöversikt"],
+                    ["Esc", "Stäng palett, sök, paneler och dialoger"],
+                  ] as const
+                ).map(([tangent, beskrivning]) => (
+                  <tr key={tangent} className="border-b border-border/60 last:border-b-0">
+                    <td className="whitespace-nowrap px-3.5 py-1.5">
+                      <kbd className="rounded border border-border bg-muted/60 px-1.5 py-0.5 font-mono text-[10px] font-semibold">
+                        {tangent}
+                      </kbd>
+                    </td>
+                    <td className="px-3.5 py-1.5 text-muted-foreground">{beskrivning}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="border-t border-gold/20 px-3.5 py-1.5 text-[10px] text-muted-foreground/70">
+              Tryck ? igen eller Esc för att stänga — musen funkar förstås också.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* V86 G7: MOBIL-KEBAB (⋮) — export-knapparna (markdown + HTML) bor här
+          under sm; skrivbordet visar dom inline i verktygsraden. */}
+      {kebabOppen && (
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/30"
+            onClick={() => setKebabOppen(false)}
+            aria-hidden
+          />
+          <div
+            role="menu"
+            aria-label="Exportera"
+            className="fixed right-3 top-36 z-50 w-52 overflow-hidden rounded-xl border border-gold/40 bg-[#10233F] shadow-2xl sm:hidden"
+          >
+            <p className="border-b border-gold/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
+              Exportera chatten
+            </p>
+            <button
+              role="menuitem"
+              onClick={() => {
+                setKebabOppen(false);
+                exporteraChat();
+              }}
+              className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
+            >
+              <Download className="h-4 w-4 shrink-0 text-gold/80" />
+              Markdown (.md)
+            </button>
+            <button
+              role="menuitem"
+              onClick={() => {
+                setKebabOppen(false);
+                exporteraChatHtml();
+              }}
+              className="flex w-full items-center gap-2 border-t border-gold/10 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
+            >
+              <Printer className="h-4 w-4 shrink-0 text-gold/80" />
+              HTML (printbar)
+            </button>
+            <button
+              role="menuitem"
+              onClick={() => {
+                setKebabOppen(false);
+                setVisaGenvagar(true);
+              }}
+              className="flex w-full items-center gap-2 border-t border-gold/10 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
+            >
+              <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold/80" />
+              Genvägar (?)
+            </button>
+          </div>
+        </>
+      )}
+
+      {/* V86 G6: NOTISPANEL — drawer i filträdets stil. Historik ur
+          localStorage ak1a-studio-notiser (sista 50), typ-ikon + tidsstämpel,
+          "Slå på notiser" när rättigheten saknas, Töm-knapp. Esc stänger. */}
+      {visaNotiser && (
+        <>
+          <div
+            className="fixed inset-0 z-30 bg-black/40 backdrop-blur-[1px]"
+            onClick={() => setVisaNotiser(false)}
+            aria-hidden
+          />
+          <aside
+            role="dialog"
+            aria-label="Notishistorik"
+            className="fixed right-0 top-0 z-40 flex h-[100dvh] w-full max-w-[380px] flex-col border-l border-gold/30 bg-[#0D1B31] shadow-2xl"
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-black/25 px-3 py-2.5">
+              {notisRattighet === "granted" ? (
+                <BellRing className="h-4 w-4 shrink-0 text-emerald-300" />
+              ) : (
+                <Bell className="h-4 w-4 shrink-0 text-gold" />
+              )}
+              <div className="min-w-0 flex-1">
+                <h2 className="font-serif text-sm font-bold text-[#EDE6D6]">Notishistorik</h2>
+                <p className="truncate text-[10px] text-[#EDE6D6]/55">
+                  {notiser.length === 0 ? "inga notiser än" : `${notiser.length} ${notiser.length === 1 ? "notis" : "notiser"} (max 50)`}
+                </p>
+              </div>
+              <button
+                onClick={() => setVisaNotiser(false)}
+                title="Stäng (Esc)"
+                className="rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Rättighetsraden — begärs numera här (V86 G6), inte på 🔔-klicket */}
+            <div className="border-b border-gold/15 bg-black/15 px-3 py-2">
+              {notisRattighet === "granted" ? (
+                <p className="flex items-center gap-1.5 text-[10px] leading-relaxed text-emerald-300/85">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                  Notiser på — rundor över 60 s pingar och ”✓ Klar (N tkn)” kommer när agenten är färdig.
+                </p>
+              ) : notisRattighet === "denied" ? (
+                <p className="flex items-center gap-1.5 text-[10px] leading-relaxed text-red-300/85">
+                  <XCircle className="h-3.5 w-3.5 shrink-0" />
+                  Notiser blockerade — tillåt ak1nvestor.com i webbläsarens inställningar.
+                </p>
+              ) : notisRattighet === "stöds ej" ? (
+                <p className="text-[10px] leading-relaxed text-[#EDE6D6]/50">
+                  Webbläsaren saknar stöd för notiser — historiken lever ändå kvar här.
+                </p>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <p className="min-w-0 flex-1 text-[10px] leading-relaxed text-[#EDE6D6]/60">
+                    Slå på notiser — agentens långa rundor pingar när den är klar.
+                  </p>
+                  <button
+                    onClick={() => void begraNotisRattighet()}
+                    className="shrink-0 rounded-full bg-gold px-3 py-1 text-[10px] font-bold text-[#0E1B2E] transition-colors hover:bg-gold/90"
+                  >
+                    Slå på
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Historiken — nyast överst, typ-ikon + tidsstämpel */}
+            <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2 [scrollbar-width:thin]">
+              {notiser.length === 0 ? (
+                <p className="px-2 py-3 text-[11px] leading-relaxed text-[#EDE6D6]/60">
+                  Ingen historik än — varje Web Notification (⏳ rundor över 60 s, ✓ när agenten
+                  är klar, fel) loggas här och sparas i webbläsaren (sista 50).
+                </p>
+              ) : (
+                <ul className="space-y-1">
+                  {[...notiser].reverse().map((n) => (
+                    <li
+                      key={n.tid}
+                      className="flex items-start gap-2 rounded-md bg-white/5 px-2 py-1.5 text-[11px] text-[#EDE6D6]/85"
+                      title={new Date(n.tid).toLocaleString("sv-SE")}
+                    >
+                      {n.typ === "lang" ? (
+                        <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
+                      ) : n.typ === "klar" ? (
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-300" />
+                      ) : (
+                        <XCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-300" />
+                      )}
+                      <span className="min-w-0 flex-1 break-words leading-relaxed">{n.text}</span>
+                      <span className="shrink-0 whitespace-nowrap font-mono text-[9px] text-[#EDE6D6]/40">
+                        {new Date(n.tid).toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" })}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* Töm-knapp + förklaringsrad */}
+            <div className="flex items-center justify-between gap-2 border-t border-gold/25 bg-black/25 px-3 py-2.5">
+              <p className="text-[10px] leading-relaxed text-[#EDE6D6]/45">
+                Spelas i denna webbläsare (localStorage ak1a-studio-notiser, sista 50).
+              </p>
+              <button
+                onClick={() => {
+                  tomNotiser();
+                  visaToast("Notishistoriken tömd.");
+                }}
+                disabled={notiser.length === 0}
+                title="Töm notishistoriken"
+                className="flex shrink-0 items-center gap-1 rounded-md px-2 py-0.5 text-[10px] text-red-300 transition-colors hover:bg-red-500/15 hover:text-red-200 disabled:opacity-40"
+              >
+                <Trash2 className="h-3 w-3" />
+                Töm
+              </button>
+            </div>
+          </aside>
+        </>
       )}
 
       {/* V84 A2: KOMMANDOPALETT (Ctrl/Cmd+K) — sök bland snabbkommandona,

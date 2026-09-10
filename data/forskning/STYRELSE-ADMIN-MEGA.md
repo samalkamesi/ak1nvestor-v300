@@ -458,3 +458,28 @@ Sista Z-paritetsgaper — 7 parallella byggspår:
   (localStorage); "?"-tangent visar tangentbordsgenvägs-kort.
 - G7 **SESSION-EXPORT PDF/HTML**: exportera chatten som snygg HTML
   (AK1A-stil, printbar) utöver markdown.
+
+## TILLÄGG VÅG 87 — STUDIO MEGA PERSISTENS + DESIGN (kundrapport: "sparar ej info, fortsätter ej när jag är utanför sidan")
+
+ROTORSAK (kundens problem): sessionerna lever på SERVERN (transport-
+singleton + barnprocessen fortsätter arbeta) men BROWSERN tappar
+kopplingen vid navigering — när kunden återkommer laddas inte historiken
+från frånvaron. Detta är studions STÖRSTA UX-brott.
+
+- H1 **ÅTERKOPPLING (kritisk bugg)**: vid varje besök på /studio →
+  auto-detektera aktiv session → resume + visa ALL historik (även det
+  som hände medan borta) → reconnect SSE om agenten arbetar. localStorage
+  ak1a-studio-senaste-session som temperatur-pekare. Poll för pågående
+  mål-loop (GET /api/studio/stream?sessionId=… var 30:e sekund om fliken
+  öppen men SSE tappat).
+- H2 **OFFLINE-BUFFERT**: transportens sessionskarta (lasStudioSessions-
+  karta) skrivs till DISK på servern varje gång ett svar klart (inte
+  bara i minnet) → vid användarens återkomst läser GET hela kartan.
+- H3 **DESIGN-POLISH (Z-kvalitet)**: animations (message fade-in,
+  button hover-lift, streaming cursor-blink), bättre typografi (rubrik-
+  hierarki med letter-spacing), gradient-accenter på agent-bubblor,
+  empty-state med illustration + förslag, loading skeletons, smooth
+  scroll-beteende, focus-ring på interaktiva element.
+- H4 **MOBIL-POLISH**: safe-area-inset för iPhone-notch, svaj-indikator
+  i input-fältet, tangentbords-aware layout (composer stannar ovanför
+  keyboard), touch-feedback (active:scale-95).

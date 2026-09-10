@@ -725,3 +725,20 @@ Samma beprövade struktur som våg 92 (transport/rutter/UI, krockfritt):
   avviker från sessionens.
 
 KVD: tsc 36 · build 0 · E2E (installningar roundtrip) · deploy.
+
+### VÅG 93 LANDAD (2026-09-10, 4896219, prod LIVE-verifierad)
+
+- **INSTALLNINGAR LIVE**: GET → {modell:"zai/glm-5.3", tankestyrka:"max",
+  lage:"build"} ur ÄKTA workspace/readState; POST {lage} → {ok,
+  sparade:["lage"]} — workspace/setDefaultMode ACCEPTERAD av prod-
+  binären med eko-persistens. Kundens standardval lever nu i servern.
+- **PLUGINS LIVE**: 11 plugins med aktiverad-status (android-emulator,
+  browser-use, document-skills …) — plugins-listan bär driftstatus.
+- Events-replay-grund (lasEventsFranSeq) landad; wire-formen för
+  setDefault* + plugins/setEnabled NU PROD-BEVISADE (fyller A4-kartans
+  dokumenterade-form-gaps).
+- Paritet efter 91-93: av 91 tjänster är nu 31+8 ≈ 39 implementerade
+  (43 %) — resterande gap domineras av binärens -32601-metoder
+  (automation, webbläsare — väntar binäruppgradering) + v4-styre/
+  telemetri. NÄSTA: binäruppgraderingsutredning (frigör automation +
+  webbläsare + attachment-väg) → därefter V93-C4 events-replay-UI.

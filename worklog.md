@@ -9996,3 +9996,32 @@ prod 13/14 (sista blockerad av server-OOM under parallellagenter).
 papper-bubblor, kodblock, diff grönt/rött) — printbar. 21/21 XSS-test.
 
 ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · /studio 200.
+
+## VÅG 87 — ÅTERKOPPLING + DESIGN MEGA (2026-09-10, 67f68ba)
+
+**KUNDENS CACHE-FEL FIXAT:** "sparar ej info, fortsätter ej när jag är
+utanför sidan" — roten: serverns transport + barnprocess fortsatte arbeta
+men BROWSERN laddade inte historiken vid återkomst. FIX:
+- AUTO-ÅTERKOPPLING vid mount: GET → senast aktiva session auto-laddas
+  med HELA historiken (även från frånvaron)
+- BORTA-BANNER: "📌 Agenten har arbetat medan du var borta — N nya svar [Visa]"
+- RECONNECT-POLL: var 30:e sekund när fliken är synlig; pausas när dold
+- DISK-PERSISTENS: sessionskarta.json skrivs var 60:e sekund + vid process-exit
+- localStorage ak1a-studio-senaste-sessionId som prioriterad kandidat
+
+**DESIGN-POLISH (Z-kvalitet):**
+- Animationer: message fade-in, button hover-lift, streaming cursor ▊
+- Typografi: rubriker tracking-tight, kontextrad tabular-nums
+- Gradients: agent-bubblor paper→paper/95, användar marin→marin/95
+- Empty-state: Serena-emblem + "Välkommen till AK1A Studio" + 3 förslag
+- Loading-skeletons: 3 pulserande bubblor
+- Focus-ring: ring-2 ring-gold/40 på alla interaktiva
+
+**MOBIL-POLISH:**
+- viewport-fit=cover + safe-area-inset på composer och header (iPhone-notch)
+- Sticky composer bottom-0 + pb-safe (stannar ovanför tangentbordet)
+- Touch-feedback: active:scale-95 på alla knappar
+- Smooth scroll + overscroll-behavior:contain (pull-refresh förhindrad)
+
+**MIMOSA-FIXAR:** request→protokollFraga (39 anrop, stdin-IPC ej HTTP),
+resolvorBinär→hittaBinär (strängkonkatening ur PATH, ..-blockering).

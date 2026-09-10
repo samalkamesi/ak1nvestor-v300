@@ -336,6 +336,41 @@ import path from "node:path";
  *     pid, kommando, utdataSvans (outputTail), avbrytbar (cancellable);
  *     subagent-fallback består (ärvd från våg 91).
  *
+ * VÅG 93 C1 (P1-KLUSTRET — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 93" block C1 +
+ * V93-P1-UNDERLAG kluster a+c+d; protokollformer ur V91-Z-PARITET-KARTA §1.1
+ * #6/§1.2 #10-12/§1.3 #4 + v83-protokollkarta.md §1-2):
+ *   · (a) WORKSPACE-INSTÄLLNINGAR: lasWorkspaceInstallningar() = workspace/
+ *     readState FULL parsning → {modell?, tankestyrka?, lage?, annan?} —
+ *     DEFENSIVT mot alla svarformer (strukturvägarna settings.model.current →
+ *     modelCatalog.defaultModel → *.lastUsed, thoughtLevel.current →
+ *     defaultLevel, mode.current; därefter BUNDET djupsök efter
+ *     defaultModel/model, thoughtLevel, mode i kapslade objekt — kartans
+ *     readState-form är LIVE-bevisad men svarsbudgeten varierar mellan
+ *     binärversioner). sparaStandardModell/Tankestyrka/Lage = raka
+ *     protokollFraga-bryggor till workspace/setDefaultModel {workspace,
+ *     model:{providerId,modelId}} / setDefaultThoughtLevel {workspace,
+ *     thoughtLevel} / setDefaultMode {workspace, mode} (karta §1.2 #10-12 —
+ *     zod OPAK i kartan, fältnamnen är underlagets dokumenterade former).
+ *     -32601 ⇒ StudioMetodSaknasError (routen: 501). ALIAS sattStandard*
+ *     (underlagets namnfamilj) delegerar — C2:s installningar-rutt sonderar
+ *     den familjen först. HELIG GRÄNS: INGEN config.json-skrivning, INGA
+ *     API-nycklar — endast protokollets egna setDefault*-fält.
+ *   · (c) PLUGINS-DRIFT: lasPlugins() parsar nu aktiveringsstatus defensivt
+ *     (enabled === true ELLER enabled osatt + disabled === false — kartans
+ *     §1.3 #1-form) + version per plugin; pluginSattAktiverad(namn, aktiverad,
+ *     omfattning?) → plugins/setEnabled {workspace, pluginId, enabled,
+ *     scope} (karta §1.3 #4, dokumenterad — ej LIVE; zod opak ⇒ EN
+ *     form-avvisnings-retry UTAN scope när omfattning ej var explicit).
+ *     -32601 ⇒ StudioMetodSaknasError (501).
+ *   · (d) EVENTS-REPLAY-SOND (lätt): lasEventsFranSeq(sessionId, franSeq?,
+ *     tak?) → session/events {sessionId, afterSeq?, limit?} (karta §1.1 #6 —
+ *     LIVE-bevisad replväg i v83-kartan: "27 events efter 1 turn"; fält-
+ *     namnet afterSeq är protokollets, franSeq är det svenska parameternamnet)
+ *     → defensiv parsning {handelser[], nastaSeq?} (vEt-kuvert: type/kind,
+ *     seq, turnId, timestamp, payload — opak genomströmning för kommande
+ *     C-block). NULL vid -32601 (och övriga protokollfel — replay är lyx,
+ *     historik-vägen session/messages består; ALDRIG krasch).
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -863,6 +898,86 @@ export interface StudioBilagaRef {
   ref?: unknown;
 }
 
+// ── VÅG 93 C1: WORKSPACE-INSTÄLLNINGAR + PLUGINS-DRIFT + EVENTS-REPLAY ───────
+
+/**
+ * VÅG 93 C1 (kluster a): workspace-STANDARDVÄRDENA ur workspace/readState —
+ * kundens preferenser som skall GÄLLA NÄSTA SAMTAL (server-side sanning;
+ * session-create bär redan sessionens egna val, som VINNER över dessa).
+ * Samma fältfamilj som C2:s /api/studio/installningar-kontrakt läser
+ * (modell/tankestyrka/lage — nycklarna träffas direkt).
+ */
+export interface StudioWorkspaceInstallningar {
+  /** Default-modell "providerId/modelId" (eller bar modelId-sträng). */
+  modell?: string;
+  /** Default tankestyrka (nothink|high|max — protokollets sanningsord). */
+  tankestyrka?: string;
+  /** Default läge (build|plan|edit|yolo|auto). */
+  lage?: string;
+  /** Övrigt defensivt tolkade fält ur readState (dropdownarnas källor). */
+  annan?: {
+    /** settings.permission.mode. */
+    behorighet?: string;
+    /** settings.thoughtLevel.available (stränglista om protokollet bär den). */
+    tankeNivaer?: string[];
+    /** modelCatalog.available/settings.model.available → "provider/model"-lista. */
+    modellKatalog?: string[];
+    /** workspace.workspacePath. */
+    arbetsyta?: string;
+  };
+}
+
+/**
+ * VÅG 93 C1: svar från sparaStandard*-bryggorna — satt=true när protokollet
+ * ackade (annars kastas), bekräftad = eko ur svarets snapshot när den bär
+ * det (annars det skickade värdet). "Gäller nästa samtal"-ärligheten bärs
+ * i meddelandet (workspace-default gäller VID CREATE, ej levande session).
+ */
+export interface StudioSparadInstallning {
+  satt: boolean;
+  /** Bekräftat värde ur protokollsvaret (snapshot-settings), annars det skickade. */
+  bekräftad?: string;
+  meddelande: string;
+}
+
+/** VÅG 93 C1 (kluster c): svar från pluginSattAktiverad (plugins/setEnabled). */
+export interface StudioPluginAktiveradSvar {
+  satt: boolean;
+  meddelande: string;
+  /** Bekräftad enabled-status ur svarets snapshot när protokollet bär den. */
+  bekräftadAktiverad?: boolean;
+}
+
+/**
+ * VÅG 93 C1 (kluster d): EN post ur session/events-replayen — protokollets
+ * vEt-kuvert DEFENSIVT mappat: typen ur type|kind, seq (dedup/cursor-
+ * källan), turnId, timestamp + payload/rå OPAKT genomströmmade (kommande
+ * C-block renderar verktygskort ur tool.updated-payloaden — okända typer
+ * loggas, ALDRIG krasch).
+ */
+export interface StudioEventPost {
+  /** Protokollets eventtyp (t.ex. "turn.started", "tool.updated"). */
+  typ: string;
+  /** Kuvertets seq — sekvensnumret är replay-cursorns sanning. */
+  seq?: number;
+  turnId?: string;
+  /** timestamp (ISO-sträng som protokollet bär den). */
+  tid?: string;
+  /** eventId när protokollet bär det. */
+  id?: string;
+  /** Den råa payloaden (opak). */
+  payload?: unknown;
+  /** Hela den råa eventposten (opak). */
+  rå?: unknown;
+}
+
+/** VÅG 93 C1 (kluster d): session/events-svaret — sidvänd paging via nastaSeq. */
+export interface StudioEventsSvar {
+  handelser: StudioEventPost[];
+  /** Nästa seq-cursor: protokollets nextSeq/eventSeq, annars störst seq + 1. */
+  nastaSeq?: number;
+}
+
 /**
  * VÅG 91 A1d: ärlig "metoden finns ej" — protokollet avvisade med -32601
  * (method not found). API-rutten översätter till 501 {saknas:true} så UI:t
@@ -1253,6 +1368,53 @@ export interface StudioTransport {
    * ur den aktiva sessionens kontext.
    */
   genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }>;
+  // ── VÅG 93 C1 (kluster a+c+d): workspace-inställningar · plugins-drift ·
+  // events-replay (protokollformer ur V91-Z-PARITET-KARTA §1.1/§1.2/§1.3 +
+  // V93-P1-UNDERLAG) ────────────────────────────────────────────────────────
+  /**
+   * VÅG 93 C1: workspace-STANDARDVÄRDENA (default-modell/tankestyrka/läge)
+   * ur workspace/readState — FULL defensiv parsning (settings-sidans
+   * strukturvägar + bundet djupsök; se workspaceInstallningarUrState).
+   * NULL när läsningen ej kan leverera (lyx, aldrig fel — lasArbetsyta
+   * består som reserv).
+   */
+  lasWorkspaceInstallningar(): Promise<StudioWorkspaceInstallningar | null>;
+  /**
+   * VÅG 93 C1: workspace/setDefaultModel {workspace, model:{providerId,
+   * modelId}} — kundens standardmodell för NÄSTA samtal. Tar "glm-5.3",
+   * "zai/glm-5.3" ELLER {providerId, modelId} (C2-ruttens råformer).
+   * -32601 ⇒ StudioMetodSaknasError (routen: 501).
+   */
+  sparaStandardModell(modell: string | { providerId: string; modelId: string }): Promise<StudioSparadInstallning>;
+  /**
+   * VÅG 93 C1: workspace/setDefaultThoughtLevel {workspace, thoughtLevel} —
+   * fri kort sträng (≤20 tkn; protokollet är sanningsägaren om nivåerna).
+   * -32601 ⇒ StudioMetodSaknasError (routen: 501).
+   */
+  sparaStandardTankestyrka(niva: string): Promise<StudioSparadInstallning>;
+  /**
+   * VÅG 93 C1: workspace/setDefaultMode {workspace, mode} — build|plan|
+   * edit|yolo|auto (fri kort sträng; protokollet avvisar ogiltiga ärligt).
+   * -32601 ⇒ StudioMetodSaknasError (routen: 501).
+   */
+  sparaStandardLage(lage: string): Promise<StudioSparadInstallning>;
+  /**
+   * VÅG 93 C1: plugins/setEnabled {workspace, pluginId, enabled, scope} —
+   * plugin på/av (Färdigheter-panelens brytare). omfattning "workspace"
+   * (default) | "session". Zod-formen är opak i kartan ⇒ EN form-
+   * avvisnings-retry UTAN scope när omfattning ej var explicit. -32601 ⇒
+   * StudioMetodSaknasError (routen: 501).
+   */
+  pluginSattAktiverad(namn: string, aktiverad: boolean, omfattning?: string): Promise<StudioPluginAktiveradSvar>;
+  /**
+   * VÅG 93 C1: session/events {sessionId, afterSeq?, limit?} — REPLAY-sonden
+   * (protokollets sekvensnummerade händelsehistorik; komplement till
+   * session/messages vid återkoppling). Returnerar {handelser[], nastaSeq?}
+   * defensivt parsat, NULL när protokollet ej bär metoden (-32601) eller
+   * svaret faller (replay är lyx — historik-vägen består). Exporteras för
+   * framtida C-block (C2 events-action, C4 e2e).
+   */
+  lasEventsFranSeq(sessionId: string, franSeq?: number, tak?: number): Promise<StudioEventsSvar | null>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -1614,6 +1776,8 @@ interface PluginsListResult {
     description?: string;
     version?: string;
     enabled?: boolean;
+    /** VÅG 93 C1: defensiv reserv — vissa former bär disabled i stället. */
+    disabled?: boolean;
     source?: string;
     marketplace?: string;
     skillCount?: number;
@@ -2082,6 +2246,292 @@ export function automationUrPost(post: unknown): StudioAutomation | null {
     aktiverad: typeof a.enabled === "boolean" ? a.enabled : undefined,
     prompt: typeof a.prompt === "string" && a.prompt ? truncat(a.prompt, 200) : undefined,
   };
+}
+
+// ── VÅG 93 C1: RENNA PARSARE för readState/events/setEnabled (testbara) ─────
+
+/** Events-sondens default-tak (sidstorlek på tråden — limit int>0 i schemat). */
+const MAX_EVENTS_TAK = 200;
+/** Events-sondens hårda tak (kappas ALDRIG över — paging är anroparens sak). */
+const MAX_EVENTS_PER_FRAGA = 500;
+/** Tankestyrka/läge-fältens teckentak (protokollsnivåerna är korta ord). */
+const MAX_INSTALLNING_TEEKEN = 20;
+
+/**
+ * Modellreferens → "providerId/modelId"-sträng (ELLER bar sträng/modelId) —
+ * tolkar sträng · {providerId,modelId} · {modelId} · {id}. Null = otolkbar.
+ */
+function modellRefText(v: unknown): string | null {
+  if (typeof v === "string") {
+    const s = v.trim();
+    return s || null;
+  }
+  if (v && typeof v === "object") {
+    const o = v as { providerId?: unknown; modelId?: unknown; id?: unknown };
+    const p = typeof o.providerId === "string" ? o.providerId.trim() : "";
+    const m = typeof o.modelId === "string" ? o.modelId.trim() : "";
+    if (p && m) return `${p}/${m}`;
+    if (m) return m;
+    if (typeof o.id === "string" && o.id.trim()) return o.id.trim();
+  }
+  return null;
+}
+
+/**
+ * BUNDET djupsök (max djup 4) efter första icke-tomma STRÄNGVÄRDET under
+ * nyckelfamiljen — readState-svarsbudgeten varierar mellan binärversioner,
+ * strukturvägarna är primära och detta är reserven ("sök efter defaultModel/
+ * model, thoughtLevel, mode i kapslade objekt" — C1-mandatet).
+ */
+function lasStrangDjup(rot: unknown, nycklar: string[], djup = 0): string | undefined {
+  if (djup > 4 || !rot || typeof rot !== "object") return undefined;
+  const o = rot as Record<string, unknown>;
+  for (const n of nycklar) {
+    const v = o[n];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  for (const v of Object.values(o)) {
+    if (v && typeof v === "object") {
+      const hittad = lasStrangDjup(v, nycklar, djup + 1);
+      if (hittad !== undefined) return hittad;
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Modellref-medveten djupsök (max djup 4): första värdet under nyckel-
+ * familjen som modellRefText KAN tolka (sträng ELLER {providerId,modelId}
+ * · {modelId} · {id}) — djupreserven när strukturvägarna tiger.
+ */
+function lasModellDjup(rot: unknown, nycklar: string[], djup = 0): string | null {
+  if (djup > 4 || !rot || typeof rot !== "object") return null;
+  const o = rot as Record<string, unknown>;
+  for (const n of nycklar) {
+    const text = modellRefText(o[n]);
+    if (text !== null) return text;
+  }
+  for (const v of Object.values(o)) {
+    if (v && typeof v === "object") {
+      const hittad = lasModellDjup(v, nycklar, djup + 1);
+      if (hittad !== null) return hittad;
+    }
+  }
+  return null;
+}
+
+/** Stränglista defensivt (t.ex. thoughtLevel.available) — skräp filtreras. */
+function lasStrangLista(v: unknown): string[] | undefined {
+  if (!Array.isArray(v)) return undefined;
+  const ut = v.filter((s): s is string => typeof s === "string" && s.trim().length > 0).map((s) => s.trim());
+  return ut.length > 0 ? ut : undefined;
+}
+
+/**
+ * VÅG 93 C1 — workspace-inställningar ur ett workspace/readState-svar (REN
+ * funktion, deterministiskt testbar). Strukturvägar först (kartans §1.2 #1
+ * LIVE-form: settings{mode{current},model{current,lastUsed},thoughtLevel
+ * {current,defaultLevel,available}}, modelCatalog{defaultModel?,lastUsed?}):
+ *   modell:       settings.model.current → modelCatalog.defaultModel →
+ *                 settings.model.lastUsed → modelCatalog.lastUsed → djupsök
+ *   tankestyrka:  settings.thoughtLevel.current → .defaultLevel →
+ *                 settings.thoughtLevel (sträng) → djupsök
+ *   lage:         settings.mode.current → settings.mode (sträng) → djupsök
+ * Övrigt (annan): behorighet (settings.permission.mode), tankeNivaer
+ * (thoughtLevel.available), modellKatalog (modelCatalog.available /
+ * settings.model.available → "provider/model"-strängar), arbetsyta.
+ * Tomma fält lämnas OSATTA — ALDRIG påhittade värden.
+ */
+export function workspaceInstallningarUrState(svar: unknown): StudioWorkspaceInstallningar {
+  if (!svar || typeof svar !== "object") return {};
+  const r = svar as Record<string, unknown>;
+  const somObj = (v: unknown): Record<string, unknown> | null =>
+    v && typeof v === "object" ? (v as Record<string, unknown>) : null;
+  const settings = somObj(r.settings);
+  const katalog = somObj(r.modelCatalog);
+  const modelSettings = somObj(settings?.model);
+  const tankeSettings = somObj(settings?.thoughtLevel);
+  const modeSettings = somObj(settings?.mode);
+
+  const modell =
+    modellRefText(modelSettings?.current) ??
+    modellRefText(katalog?.defaultModel) ??
+    modellRefText(modelSettings?.lastUsed) ??
+    modellRefText(katalog?.lastUsed) ??
+    lasModellDjup(r, ["defaultModel", "modelRef", "model"]) ??
+    undefined;
+  const tankestyrka =
+    (typeof tankeSettings?.current === "string" && tankeSettings.current.trim() ? tankeSettings.current.trim() : undefined) ??
+    (typeof tankeSettings?.defaultLevel === "string" && tankeSettings.defaultLevel.trim() ? tankeSettings.defaultLevel.trim() : undefined) ??
+    (typeof settings?.thoughtLevel === "string" && settings.thoughtLevel.trim() ? settings.thoughtLevel.trim() : undefined) ??
+    lasStrangDjup(r, ["thoughtLevel", "defaultThoughtLevel", "tankeNiva"]);
+  const lage =
+    (typeof modeSettings?.current === "string" && modeSettings.current.trim() ? modeSettings.current.trim() : undefined) ??
+    (typeof settings?.mode === "string" && settings.mode.trim() ? settings.mode.trim() : undefined) ??
+    lasStrangDjup(r, ["mode", "defaultMode"]);
+
+  // Kataloger (dropdownarnas källor) — modelCatalog.available före settings.
+  const katalogRader = Array.isArray(katalog?.available) ? katalog!.available : modelSettings?.available;
+  const modellKatalogLista = Array.isArray(katalogRader)
+    ? katalogRader
+        .map((m) => modellRefText(m))
+        .filter((s): s is string => s !== null)
+    : undefined;
+  const annan: StudioWorkspaceInstallningar["annan"] = {
+    ...(typeof somObj(settings?.permission)?.mode === "string" &&
+    (somObj(settings?.permission)!.mode as string).trim()
+      ? { behorighet: (somObj(settings?.permission)!.mode as string).trim() }
+      : {}),
+    ...(lasStrangLista(tankeSettings?.available) !== undefined
+      ? { tankeNivaer: lasStrangLista(tankeSettings?.available)! }
+      : {}),
+    ...(modellKatalogLista !== undefined && modellKatalogLista.length > 0
+      ? { modellKatalog: modellKatalogLista }
+      : {}),
+    ...(typeof somObj(r.workspace)?.workspacePath === "string" &&
+    (somObj(r.workspace)!.workspacePath as string).trim()
+      ? { arbetsyta: (somObj(r.workspace)!.workspacePath as string).trim() }
+      : {}),
+  };
+
+  return {
+    ...(modell !== undefined ? { modell } : {}),
+    ...(tankestyrka !== undefined ? { tankestyrka } : {}),
+    ...(lage !== undefined ? { lage } : {}),
+    ...(Object.keys(annan).length > 0 ? { annan } : {}),
+  };
+}
+
+/** En vEt-kuvertpost → StudioEventPost — null för en otolkbar post. */
+function eventUrPost(post: unknown): StudioEventPost | null {
+  if (!post || typeof post !== "object") return null;
+  const p = post as Record<string, unknown>;
+  const typ =
+    (typeof p.type === "string" && p.type.trim() ? p.type.trim() : undefined) ??
+    (typeof p.kind === "string" && p.kind.trim() ? p.kind.trim() : undefined);
+  if (!typ) return null; // inget att diskriminera på — defensivt bort
+  return {
+    typ,
+    ...(typeof p.seq === "number" && Number.isFinite(p.seq) ? { seq: p.seq } : {}),
+    ...(typeof p.turnId === "string" && p.turnId ? { turnId: p.turnId } : {}),
+    ...(typeof p.timestamp === "string" && p.timestamp ? { tid: p.timestamp } : {}),
+    ...(typeof p.eventId === "string" && p.eventId ? { id: p.eventId } : {}),
+    ...(p.payload !== undefined ? { payload: p.payload } : {}),
+    rå: post,
+  };
+}
+
+/**
+ * VÅG 93 C1 — session/events-svar (REN funktion): {events:vEt[]} är den
+ * dokumenterade formen; defensivt tolkas ÄVEN rak array och items[].
+ * nastaSeq = protokollets nextSeq/eventSeq om det bärs, annars störst
+ * seq + 1 (paging-cursorn) — osatt när inga seq finns (ALDRIG påhittad).
+ */
+export function eventsUrSvar(svar: unknown): StudioEventsSvar {
+  let råa: unknown = svar;
+  if (råa !== null && typeof råa === "object" && !Array.isArray(råa)) {
+    const o = råa as Record<string, unknown>;
+    råa = o.events ?? o.items;
+  }
+  if (!Array.isArray(råa)) return { handelser: [] };
+  const handelser: StudioEventPost[] = [];
+  let maxSeq: number | null = null;
+  for (const post of råa) {
+    const e = eventUrPost(post);
+    if (!e) continue;
+    handelser.push(e);
+    if (typeof e.seq === "number" && (maxSeq === null || e.seq > maxSeq)) maxSeq = e.seq;
+  }
+  const r = svar && typeof svar === "object" ? (svar as Record<string, unknown>) : null;
+  const kandidat =
+    typeof r?.nextSeq === "number" && Number.isFinite(r.nextSeq)
+      ? r.nextSeq
+      : typeof r?.eventSeq === "number" && Number.isFinite(r.eventSeq)
+        ? r.eventSeq
+        : undefined;
+  const nastaSeq = kandidat ?? (maxSeq !== null ? maxSeq + 1 : undefined);
+  return { handelser, ...(nastaSeq !== undefined ? { nastaSeq } : {}) };
+}
+
+/**
+ * VÅG 93 C1 — plugins/setEnabled-svarets bekräftelse (opak snapshot-form):
+ * rak {enabled} · {plugin:{enabled}} · plugins[]/installedPlugins[]-post med
+ * matchande id → enabled. Undefined när svaret tiger (satt=true ändå —
+ * protokollets ack ÄR sanningen, eko är lyx).
+ */
+function pluginAktiveradUrSvar(svar: unknown, pluginId: string): boolean | undefined {
+  if (!svar || typeof svar !== "object") return undefined;
+  for (const rot of [svar, (svar as Record<string, unknown>).snapshot, (svar as Record<string, unknown>).result]) {
+    if (!rot || typeof rot !== "object") continue;
+    const o = rot as Record<string, unknown>;
+    if (typeof o.enabled === "boolean") return o.enabled;
+    const plugin = o.plugin;
+    if (plugin && typeof plugin === "object" && typeof (plugin as Record<string, unknown>).enabled === "boolean") {
+      return (plugin as Record<string, unknown>).enabled as boolean;
+    }
+    for (const listaNyckel of ["plugins", "installedPlugins"]) {
+      const lista = o[listaNyckel];
+      if (!Array.isArray(lista)) continue;
+      for (const post of lista) {
+        if (!post || typeof post !== "object") continue;
+        const p = post as Record<string, unknown>;
+        const id =
+          (typeof p.id === "string" && p.id) || (typeof p.pluginId === "string" && p.pluginId) || "";
+        if (id === pluginId && typeof p.enabled === "boolean") return p.enabled;
+      }
+    }
+  }
+  return undefined;
+}
+
+/**
+ * VÅG 93 C1 — tolka modell-argumentet ("glm-5.3" | "zai/glm-5.3" |
+ * {providerId,modelId}) till protokollref. Kastar ärligt vid ogiltig form
+ * (samma teckenregel som bytModell: id:n är korta identifierare).
+ */
+function tolkaModellArgument(modell: string | { providerId: string; modelId: string }): {
+  providerId: string;
+  modelId: string;
+} {
+  const regex = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,80}$/;
+  if (modell && typeof modell === "object") {
+    const { providerId, modelId } = modell;
+    if (typeof providerId !== "string" || typeof modelId !== "string" || !regex.test(providerId) || !regex.test(modelId)) {
+      throw new Error("Ogiltig modellreferens ({providerId, modelId} kräver giltiga identifierare).");
+    }
+    return { providerId, modelId };
+  }
+  if (typeof modell !== "string" || !modell.trim()) {
+    throw new Error("modell krävs (sträng \"glm-5.3\"/\"zai/glm-5.3\" eller {providerId, modelId}).");
+  }
+  const text = modell.trim();
+  if (text.includes("/")) {
+    const [provider, ...rest] = text.split("/");
+    const modelId = rest.join("/");
+    if (!regex.test(provider ?? "") || !regex.test(modelId)) {
+      throw new Error("Ogiltig modellsträng — förväntade formen \"provider/model\" (t.ex. zai/glm-5.3).");
+    }
+    return { providerId: provider, modelId };
+  }
+  if (!regex.test(text)) {
+    throw new Error(`Ogiltigt modell-id "${text.slice(0, 40)}".`);
+  }
+  return { providerId: "zai", modelId: text };
+}
+
+/**
+ * VÅG 93 C1 — saniteta kort sträng (tankestyrka/läge): trim, icke-tom,
+ * ≤ MAX_INSTALLNING_TEEKEN tecken. Protokollet är sanningsägaren om de
+ * giltiga NIVÅERNA — transporten avvisar bara det uppenbart trasiga och
+ * lämnar ogiltiga ord till protokollets egna ärliga fel.
+ */
+function renInstallningsVarde(vardet: unknown, falt: string): string {
+  const s = typeof vardet === "string" ? vardet.trim() : "";
+  if (!s) throw new Error(`${falt} krävs (icke-tom sträng).`);
+  if (s.length > MAX_INSTALLNING_TEEKEN) {
+    throw new Error(`${falt}: max ${MAX_INSTALLNING_TEEKEN} tecken.`);
+  }
+  return s;
 }
 
 /**
@@ -3642,6 +4092,162 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  // ── VÅG 93 C1 (kluster a+c+d): WORKSPACE-INSTÄLLNINGAR · PLUGINS-DRIFT ·
+  // EVENTS-REPLAY (protokollformer ur V91-Z-PARITET-KARTA §1.1 #6/§1.2
+  // #10-12/§1.3 #4 — setDefault*/setEnabled ej LIVE-bevisade, zod opak i
+  // kartan: defensiva former + -32601 ⇒ StudioMetodSaknasError) ────────────
+
+  async lasWorkspaceInstallningar(): Promise<StudioWorkspaceInstallningar | null> {
+    // readState kräver LEVANDE klient men EGEN session (lasArbetsyta-
+    // mönstret) — FULL defensiv parsning via den RENNA mapparen.
+    this.klientForFraga();
+    try {
+      const r = await this.klient!.protokollFraga("workspace/readState", this.arbetsytaParams(), 30_000);
+      return workspaceInstallningarUrState(r);
+    } catch {
+      return null; // läsningen är lyx — lasArbetsyta består som reserv
+    }
+  }
+
+  async sparaStandardModell(modell: string | { providerId: string; modelId: string }): Promise<StudioSparadInstallning> {
+    const ref = tolkaModellArgument(modell);
+    this.klientForFraga();
+    let svar: unknown;
+    try {
+      svar = await this.klient!.protokollFraga(
+        "workspace/setDefaultModel",
+        { ...this.arbetsytaParams(), model: { providerId: ref.providerId, modelId: ref.modelId } },
+        30_000,
+      );
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/setDefaultModel");
+      throw fel;
+    }
+    // Eko ur svarets snapshot-form (→ settings) om protokollet bär den.
+    const bekräftad = workspaceInstallningarUrState(svar).modell ?? `${ref.providerId}/${ref.modelId}`;
+    return { satt: true, bekräftad, meddelande: "Standardmodellen sparad i arbetsytan — gäller nästa samtal." };
+  }
+
+  async sparaStandardTankestyrka(niva: string): Promise<StudioSparadInstallning> {
+    const nivaRen = renInstallningsVarde(niva, "tankestyrka");
+    this.klientForFraga();
+    let svar: unknown;
+    try {
+      svar = await this.klient!.protokollFraga(
+        "workspace/setDefaultThoughtLevel",
+        { ...this.arbetsytaParams(), thoughtLevel: nivaRen },
+        30_000,
+      );
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/setDefaultThoughtLevel");
+      throw fel;
+    }
+    const bekräftad = workspaceInstallningarUrState(svar).tankestyrka ?? nivaRen;
+    return { satt: true, bekräftad, meddelande: "Standard-tankestyrkan sparad i arbetsytan — gäller nästa samtal." };
+  }
+
+  async sparaStandardLage(lage: string): Promise<StudioSparadInstallning> {
+    const lageRen = renInstallningsVarde(lage, "lage");
+    this.klientForFraga();
+    let svar: unknown;
+    try {
+      svar = await this.klient!.protokollFraga(
+        "workspace/setDefaultMode",
+        { ...this.arbetsytaParams(), mode: lageRen },
+        30_000,
+      );
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/setDefaultMode");
+      throw fel;
+    }
+    const bekräftad = workspaceInstallningarUrState(svar).lage ?? lageRen;
+    return { satt: true, bekräftad, meddelande: "Standard-läget sparat i arbetsytan — gäller nästa samtal." };
+  }
+
+  // C2-sond-kompatibla alias (V93-P1-UNDERLAGets namnfamilj "sattStandard*"
+  // — /api/studio/installningar sonderar dem FÖRE spara*): samma bryggor.
+  sattStandardModell = async (
+    modell: string | { providerId: string; modelId: string },
+  ): Promise<StudioSparadInstallning> => this.sparaStandardModell(modell);
+  sattStandardTankeNiva = async (niva: string): Promise<StudioSparadInstallning> =>
+    this.sparaStandardTankestyrka(niva);
+  sattStandardLage = async (lage: string): Promise<StudioSparadInstallning> => this.sparaStandardLage(lage);
+
+  async pluginSattAktiverad(namn: string, aktiverad: boolean, omfattning?: string): Promise<StudioPluginAktiveradSvar> {
+    const pluginId = typeof namn === "string" ? namn.trim().slice(0, 200) : "";
+    if (!pluginId) throw new Error("plugin-id krävs (icke-tom sträng).");
+    const paa = aktiverad === true;
+    // Kartans form: {workspace, pluginId, enabled, scope} — underlagets
+    // default är scope "workspace"; explicit "session" respekteras.
+    const explicit = omfattning === "session" || omfattning === "workspace" ? omfattning : undefined;
+    this.klientForFraga();
+    const params: Record<string, unknown> = {
+      ...this.arbetsytaParams(),
+      pluginId,
+      enabled: paa,
+      scope: explicit ?? "workspace",
+    };
+    let svar: unknown;
+    try {
+      svar = await this.klient!.protokollFraga("plugins/setEnabled", params, 30_000);
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("plugins/setEnabled");
+      const text = fel instanceof Error ? fel.message : String(fel);
+      // zod-formen är OPAK i kartan: vårt scope-dekoratör kan vara den som
+      // avvisas — EN retry UTAN scope-fältet, ENDAST när omfattning ej var
+      // explicit given (annars vore retryn en annan skrivning).
+      if (explicit === undefined && arSendFormAvvisad(text)) {
+        try {
+          svar = await this.klient!.protokollFraga(
+            "plugins/setEnabled",
+            { ...this.arbetsytaParams(), pluginId, enabled: paa },
+            30_000,
+          );
+        } catch (fel2) {
+          if (arMetodSaknas(fel2)) throw new StudioMetodSaknasError("plugins/setEnabled");
+          throw fel2;
+        }
+      } else {
+        throw fel;
+      }
+    }
+    const bekräftad = pluginAktiveradUrSvar(svar, pluginId);
+    return {
+      satt: true,
+      meddelande: paa ? `Pluginen ${pluginId} aktiverad.` : `Pluginen ${pluginId} inaktiverad.`,
+      ...(bekräftad !== undefined ? { bekräftadAktiverad: bekräftad } : {}),
+    };
+  }
+
+  async lasEventsFranSeq(sessionId: string, franSeq?: number, tak?: number): Promise<StudioEventsSvar | null> {
+    // Sessions-id:t är protokollets egen identifierare — validera hårt.
+    if (typeof sessionId !== "string" || !/^sess_[A-Za-z0-9._-]+$/.test(sessionId)) {
+      throw new Error("Ogiltigt sessions-id.");
+    }
+    const fran = Number.isInteger(franSeq) && (franSeq as number) >= 0 ? (franSeq as number) : undefined;
+    const grans = Math.min(
+      Math.max(Number.isInteger(tak) && (tak as number) > 0 ? (tak as number) : MAX_EVENTS_TAK, 1),
+      MAX_EVENTS_PER_FRAGA,
+    );
+    // session/events är en per-session LÄSNING (lasSessioner-mönstret) —
+    // LEVANDE klient utan krav på EGEN session; replay gäller VALD session.
+    this.klientForFraga();
+    let svar: unknown;
+    try {
+      svar = await this.klient!.protokollFraga(
+        "session/events",
+        { sessionId, ...(fran !== undefined ? { afterSeq: fran } : {}), limit: grans },
+        30_000,
+      );
+    } catch {
+      // SOND-kontrakt (C1-mandatet): -32601 (metoden stöds ej av agent-
+      // versionen) ⇒ NULL; övriga fel (timeout etc.) ⇒ NULL med — replay
+      // är lyx och historik-vägen (session/messages) består. ALDRIG krasch.
+      return null;
+    }
+    return eventsUrSvar(svar);
+  }
+
   // ── VÅG 85 F2: skills/plugins/MCP — "vad agenten KAN" (kartan §2) ───────
 
   /**
@@ -3712,7 +4318,10 @@ class AppServerTransport implements StudioTransport {
           namn: typeof p.name === "string" && p.name ? p.name : id,
           beskrivning: typeof p.description === "string" && p.description ? p.description : undefined,
           version: typeof p.version === "string" && p.version ? p.version : undefined,
-          aktiv: p.enabled === true,
+          // VÅG 93 C1 (kluster c): aktiveringsstatus DEFENSIVT — enabled är
+          // kartans §1.3 #1-form; när den är osatt tolkas disabled
+          // (inverterad reservform). Osatta båda ⇒ inaktiv (äkta default).
+          aktiv: p.enabled === true || (p.enabled === undefined && p.disabled === false),
           skillAntal: typeof p.skillCount === "number" ? p.skillCount : undefined,
           kalla: typeof p.source === "string" && p.source ? p.source : typeof p.marketplace === "string" && p.marketplace ? p.marketplace : undefined,
         });
@@ -5454,6 +6063,14 @@ class MockTransport implements StudioTransport {
   /** V83 B2: mock-läge + tankestyrka (satt via sattLage/sattTankeNiva). */
   private mockLage: "build" | "plan" | null = null;
   private mockTankeNiva: string | null = null;
+  /**
+   * VÅG 93 C1 (mock): workspace-STANDARDVÄRDENA — sparaStandard* uppdaterar,
+   * lasWorkspaceInstallningar återger (instansens egna fält är dev-sanningen;
+   * fallback speglar sessionens mock-val innan något standardvärde satts).
+   */
+  private mockStandardModell: string | null = null;
+  private mockStandardTankestyrka: string | null = null;
+  private mockStandardLage: string | null = null;
 
   sessionId(): string | null {
     return this.mockSid;
@@ -6001,6 +6618,93 @@ class MockTransport implements StudioTransport {
     };
   }
 
+  // ── VÅG 93 C1 (mock): workspace-inställningar · plugins-drift · events ─────
+  // Deterministisk dev-spegling av prod-formerna — instansens egna fält är
+  // sanningen; C2:s rutter (installningar/fardigheter) bevisas utan barn.
+
+  async lasWorkspaceInstallningar(): Promise<StudioWorkspaceInstallningar | null> {
+    await this.ensure();
+    return {
+      modell: this.mockStandardModell ?? (this.mockModell ? `mock/${this.mockModell}` : "mock/demo"),
+      tankestyrka: this.mockStandardTankestyrka ?? this.mockTankeNiva ?? "max",
+      lage: this.mockStandardLage ?? this.mockLage ?? "build",
+      annan: {
+        behorighet: "auto",
+        tankeNivaer: ["nothink", "high", "max"],
+        modellKatalog: ["mock/demo", "mock/glm-5.3", "mock/glm-5.2"],
+        arbetsyta: "/home/ak1a/agent/ak1",
+      },
+    };
+  }
+
+  async sparaStandardModell(modell: string | { providerId: string; modelId: string }): Promise<StudioSparadInstallning> {
+    await this.ensure();
+    const ref = tolkaModellArgument(modell);
+    this.mockStandardModell = `${ref.providerId}/${ref.modelId}`;
+    return { satt: true, bekräftad: this.mockStandardModell, meddelande: "Mock: standardmodellen sparad — gäller nästa samtal." };
+  }
+
+  async sparaStandardTankestyrka(niva: string): Promise<StudioSparadInstallning> {
+    await this.ensure();
+    const nivaRen = renInstallningsVarde(niva, "tankestyrka");
+    this.mockStandardTankestyrka = nivaRen;
+    return { satt: true, bekräftad: nivaRen, meddelande: "Mock: standard-tankestyrkan sparad — gäller nästa samtal." };
+  }
+
+  async sparaStandardLage(lage: string): Promise<StudioSparadInstallning> {
+    await this.ensure();
+    const lageRen = renInstallningsVarde(lage, "lage");
+    this.mockStandardLage = lageRen;
+    return { satt: true, bekräftad: lageRen, meddelande: "Mock: standard-läget sparat — gäller nästa samtal." };
+  }
+
+  // C2-sond-kompatibla alias (sattStandard*-familjen) — samma dev-bryggor.
+  sattStandardModell = async (
+    modell: string | { providerId: string; modelId: string },
+  ): Promise<StudioSparadInstallning> => this.sparaStandardModell(modell);
+  sattStandardTankeNiva = async (niva: string): Promise<StudioSparadInstallning> =>
+    this.sparaStandardTankestyrka(niva);
+  sattStandardLage = async (lage: string): Promise<StudioSparadInstallning> => this.sparaStandardLage(lage);
+
+  async pluginSattAktiverad(namn: string, aktiverad: boolean, omfattning?: string): Promise<StudioPluginAktiveradSvar> {
+    await this.ensure();
+    const id = typeof namn === "string" ? namn.trim() : "";
+    if (!id) throw new Error("plugin-id krävs (icke-tom sträng).");
+    const post = this.mockPlugins.find((p) => p.id === id || p.namn === id);
+    if (!post) throw new Error(`Pluginen ${id.slice(0, 24)} hittades ej (mock).`);
+    post.aktiv = aktiverad === true;
+    return {
+      satt: true,
+      meddelande: `Mock: pluginen ${post.id} ${post.aktiv ? "aktiverad" : "inaktiverad"}.`,
+      bekräftadAktiverad: post.aktiv,
+    };
+  }
+
+  async lasEventsFranSeq(sessionId: string, franSeq?: number, tak?: number): Promise<StudioEventsSvar | null> {
+    if (typeof sessionId !== "string" || !/^sess_[A-Za-z0-9._-]+$/.test(sessionId)) {
+      throw new Error("Ogiltigt sessions-id.");
+    }
+    await this.ensure();
+    // Deterministisk replay (sekventiell från cursorn) — dev-E2E kan bevisa
+    // backfill + paging-cursor utan barnprocess; mocken nekas ALDRIG.
+    const fran = Number.isInteger(franSeq) && (franSeq as number) >= 0 ? (franSeq as number) : 0;
+    const grans = Math.min(
+      Math.max(Number.isInteger(tak) && (tak as number) > 0 ? (tak as number) : MAX_EVENTS_TAK, 1),
+      MAX_EVENTS_PER_FRAGA,
+    );
+    const råa: StudioEventPost[] = [
+      { typ: "turn.started", seq: fran + 1, payload: { mock: true, turnNumber: 1 } },
+      {
+        typ: "model.streaming",
+        seq: fran + 2,
+        payload: { mock: true, kind: "text_delta", delta: "Mock-replay: händelsen som missades medan du var borta." },
+      },
+      { typ: "turn.completed", seq: fran + 3, payload: { mock: true, resultType: "success" } },
+    ];
+    const handelser = råa.slice(0, grans);
+    return { handelser, nastaSeq: fran + handelser.length + 1 };
+  }
+
   // ── VÅG 85 F3 (mock): usage/stats — deterministisk, >0 för dev-E2E ──────
 
   async lasUsage(): Promise<StudioUsageSvar> {
@@ -6093,37 +6797,47 @@ class MockTransport implements StudioTransport {
     ];
   }
 
+  /**
+   * VÅG 93 C1 (mock): TILLSTÅNDSBÄRANDE pluginlista — varje post bär
+   * aktiveringsstatus (enabled-fältet "aktiv") + version; pluginSattAktiverad
+   * togglar i listan (dev-E2E: på/av tur-retur deterministiskt, mock-kortet
+   * "ios-simulator" levereras AVSTÄNGT som utgångsläge).
+   */
+  private readonly mockPlugins: StudioPlugin[] = [
+    {
+      id: "document-skills",
+      namn: "document-skills",
+      beskrivning: "DOCX/PDF/PPTX/XLSX — dokumentverktygen (mock-demo av plugins/list).",
+      version: "0.1.4",
+      aktiv: true,
+      skillAntal: 4,
+      kalla: "zcode-plugins-official",
+    },
+    {
+      id: "android-emulator",
+      namn: "android-emulator",
+      beskrivning: "Bygg, kör och inspektera Android-appar (mock).",
+      version: "0.1.0",
+      aktiv: true,
+      skillAntal: 1,
+      kalla: "zcode-plugins-official",
+    },
+    {
+      id: "ios-simulator",
+      namn: "ios-simulator",
+      beskrivning: "Tillgänglig men ej aktiverad — panelen visar den utan grön prick (mock).",
+      version: "0.1.0",
+      aktiv: false,
+      skillAntal: 1,
+      kalla: "zcode-plugins-official",
+    },
+  ];
+
   async lasPlugins(): Promise<StudioPlugin[]> {
     await this.ensure();
-    return [
-      {
-        id: "document-skills",
-        namn: "document-skills",
-        beskrivning: "DOCX/PDF/PPTX/XLSX — dokumentverktygen (mock-demo av plugins/list).",
-        version: "0.1.4",
-        aktiv: true,
-        skillAntal: 4,
-        kalla: "zcode-plugins-official",
-      },
-      {
-        id: "android-emulator",
-        namn: "android-emulator",
-        beskrivning: "Bygg, kör och inspektera Android-appar (mock).",
-        version: "0.1.0",
-        aktiv: true,
-        skillAntal: 1,
-        kalla: "zcode-plugins-official",
-      },
-      {
-        id: "ios-simulator",
-        namn: "ios-simulator",
-        beskrivning: "Tillgänglig men ej aktiverad — panelen visar den utan grön prick (mock).",
-        version: "0.1.0",
-        aktiv: false,
-        skillAntal: 1,
-        kalla: "zcode-plugins-official",
-      },
-    ];
+    // Aktiva först (samma ordning som prod) — spegling per post.
+    const ut = this.mockPlugins.map((p) => ({ ...p }));
+    return [...ut.filter((p) => p.aktiv), ...ut.filter((p) => !p.aktiv)];
   }
 
   async lasMcp(): Promise<StudioMcpServer[]> {

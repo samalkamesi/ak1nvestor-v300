@@ -7,6 +7,10 @@
  * VÅG 92 B3: /automation tillagt — öppnar automation-hanteraren i höger
  * panelen (studio-chat.tsx äger hanteringen; kommandot är lokalt).
  *
+ * VÅG 93 C3: /installningar tillagt — öppnar Inställningar-drawern ⚙
+ * (modell/tankestyrka/läge + server-sparad standard; studio-chat.tsx äger
+ * både drawern och standard-sparningen — kommandot är lokalt).
+ *
  * Kontrakt: ett kommando är en rad som BÖRJAR med "/" — allt annat är en
  * vanlig prompt till agenten och skickas aldrig hit. Kommandot parsas
  * LOKALT i UI:t FÖRE sändning (kunddirektiv B4 §3): kommandon med API-väg
@@ -54,6 +58,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     syntax: "/komprimera",
     beskrivning: "Komprimera kontexten (agenten sammanfattar och fönstret frias)",
     kalla: "api",
+  },
+  {
+    namn: "installningar",
+    syntax: "/installningar",
+    beskrivning: "Standardinställningar för nya samtal — modell, tankestyrka, läge",
+    kalla: "lokal",
   },
   {
     namn: "filer",

@@ -150,6 +150,23 @@ import { cn } from "@/lib/utils";
  *     därefter "Bilaga ✓" (#3FB950) vid varje thumbnail — enkel variant
  *     (skick-väntan = progress), inget nytt API.
  *
+ * VÅG 93 (STUDIO-UI, block C3 — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 93"):
+ *   · SERVERN-SPARADE INSTÄLLNINGAR: Inställningar-drawern ⚙ läser
+ *     GET /api/studio/installningar vid öppning — en liten rad "Standard:
+ *     <modell/läge> (server)" visar serverns default för NYA samtal; varje
+ *     modell/läge/tankestyrke-val sparar till SESSIONEN (befintligt) OCH
+ *     skickar POST /api/studio/installningar (ENDAST ändrat fält) med diskret
+ *     toast "Sparat — gäller nästa samtal". Endpoint 501/saknas ⇒ raden
+ *     dold + ingen POST — sessionssparandet består opåverkat (graceful mot
+ *     C2:s parallella roddbygge). Gul prick (#D29922) vid drawer-rubriken när
+ *     sessionens modell/läge AVVIKER från server-standarden (title förklarar).
+ *   · PLUGIN-BRYTARE: Färdigheter ⚡-drawerns plugin-rader får på/av-brytare
+ *     (grön #238636 aktiv / grå av, 52 px-tryckyta) → POST /api/studio/
+ *     fardigheter {plugin, aktiverad} med OPTIMISTIC update + toast; fel ⇒
+ *     återställ + röd toast. GET utan plugins-fält ⇒ brytare dolda.
+ *   · /installningar-kommandot (kommandon.ts) öppnar drawern — registret
+ *     driver samtidigt slash-autocomplete + kommandopaletten.
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -3095,6 +3112,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [fardigheterVerktyg, setFardigheterVerktyg] = React.useState(0);
   const [fardigheterLaddar, setFardigheterLaddar] = React.useState(false);
   const [fardigheterFel, setFardigheterFel] = React.useState("");
+  /** VÅG 93 C3: plugin-rad som växlas just nu (id) — spinner + spärr, en i taget. */
+  const [pluginVaxlar, setPluginVaxlar] = React.useState<string | null>(null);
 
   // ── Verktyg/admin-drawern (våg 88 I2) — ytan ägs av studio-admin-panel.tsx ──
   const [visaAdmin, setVisaAdmin] = React.useState(false);
@@ -3171,6 +3190,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── Inställningar-drawern ⚙ (våg 88 I1; våg 90: temat är FAST mörkt) ───────
   const [installningarOppen, setInstallningarOppen] = React.useState(false);
+
+  /**
+   * VÅG 93 C3: serverns STANDARD för nya samtal (GET /api/studio/installningar).
+   * null = endpointen saknas/501/ej hämtad ⇒ "Standard:"-raden dold och inga
+   * POST-spar — sessionssparandet (befintligt) består opåverkat.
+   */
+  const [serverStandard, setServerStandard] = React.useState<{
+    modell: string;
+    lage: string;
+    tankestyrka: string;
+  } | null>(null);
 
   // ── Palett + sök + auto-scroll (våg 84 A) ──────────────────────────────────
   const [palettOppen, setPalettOppen] = React.useState(false);
@@ -3263,6 +3293,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const malKör = mal !== null && malStatus?.aktiv === true && !malStatus.pausad;
   const malPausat = mal !== null && malStatus !== null && !malStatus.aktiv;
 
+  /**
+   * VÅG 93 C3: avviker sessionens aktuella modell/läge från server-standarden?
+   * !=null ⇒ subtil gul prick vid Inställningar-drawerns rubrik (title-förklaring).
+   * Tomma standardfält/okänt session-läge jämförs aldrig (inga falska prickar).
+   */
+  const standardAvvik = React.useMemo(() => {
+    if (!serverStandard) return null;
+    const delar: string[] = [];
+    if (serverStandard.modell && valdModell && serverStandard.modell !== valdModell) {
+      delar.push(`modell: ${modellBadge(valdModell)} (standard ${modellBadge(serverStandard.modell)})`);
+    }
+    if (serverStandard.lage && lage && serverStandard.lage !== lage) {
+      delar.push(`läge: ${lage} (standard ${serverStandard.lage})`);
+    }
+    return delar.length > 0 ? delar : null;
+  }, [serverStandard, valdModell, lage]);
+
   React.useEffect(() => {
     aktivTabbIdRef.current = aktivTabbId;
     tabbarRef.current = { tabbar, aktivTabbId };
@@ -3323,6 +3370,81 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaNotiser(true);
   }, []);
 
+  /**
+   * VÅG 93 C3: läs serverns standard-inställningar (GET /api/studio/
+   * installningar). 501/404/nätverksfel ⇒ null (raden dold, sessionsspar
+   * består) — C2:s rutt är under parallellbygge, ALDRIG ett hårt UI-brott.
+   */
+  const lasServerInstallningar = React.useCallback(async () => {
+    try {
+      const res = await fetch(`/api/studio/installningar?frisk=${Date.now()}`, {
+        headers: adminHeaders(),
+      });
+      if (!res.ok) {
+        setServerStandard(null);
+        return;
+      }
+      const data = (await res.json().catch(() => ({}))) as {
+        modell?: string;
+        lage?: string;
+        tankestyrka?: string;
+        tankeNiva?: string;
+        fel?: string;
+      };
+      if (data.fel) {
+        setServerStandard(null);
+        return;
+      }
+      const standard = {
+        modell: typeof data.modell === "string" ? data.modell : "",
+        lage: typeof data.lage === "string" ? data.lage : "",
+        tankestyrka:
+          typeof data.tankestyrka === "string"
+            ? data.tankestyrka
+            : typeof data.tankeNiva === "string"
+              ? data.tankeNiva
+              : "",
+      };
+      // Helt tomt svar = endpointen har inga standarder att visa ⇒ dolt.
+      setServerStandard(
+        standard.modell || standard.lage || standard.tankestyrka ? standard : null,
+      );
+    } catch {
+      setServerStandard(null);
+    }
+  }, []);
+
+  /**
+   * VÅG 93 C3: spara ETT ändrat fält till server-standarden (POST /api/studio/
+   * installningar — endast ändrat fält i kroppen). Fire-and-forget efter
+   * lyckat SESSIONSSPAR: ok ⇒ diskret toast "Sparat — gäller nästa samtal" +
+   * lokal standard-bild uppdateras (gul prick släcks); fel ⇒ ärlig toast —
+   * sessionens val lever kvar opåverkat. Saknad endpoint (GET gav null) ⇒
+   * inget skickas alls.
+   */
+  const sparaServerInstallning = React.useCallback(
+    async (falt: "modell" | "lage" | "tankestyrka", varde: string) => {
+      if (!serverStandard) return; // endpointen saknas (501) — sessionssparet räcker
+      if (serverStandard[falt] === varde) return; // oförändrat värde — inget att skicka
+      try {
+        const res = await fetch("/api/studio/installningar", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ [falt]: varde }),
+        });
+        if (res.ok) {
+          setServerStandard((s) => (s ? { ...s, [falt]: varde } : s));
+          visaToast("Sparat — gäller nästa samtal");
+        } else {
+          visaToast("Standarden sparades ej — valet gäller bara detta samtal.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — standarden sparades ej (valet gäller detta samtal).", "fel");
+      }
+    },
+    [serverStandard, visaToast],
+  );
+
   const oppnaInstallningar = React.useCallback(() => {
     setVisaFiler(false);
     setFilVisning(null);
@@ -3332,7 +3454,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaAdmin(false);
     setMenyOppen(false);
     setInstallningarOppen(true);
-  }, []);
+    void lasServerInstallningar(); // VÅG 93 C3: färsk standard vid varje öppning
+  }, [lasServerInstallningar]);
 
   const oppnaMeny = React.useCallback(() => {
     setVisaFiler(false);
@@ -4071,9 +4194,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   }, []);
 
   // ── Modellbyte / ny session / komprimering (våg 82) ────────────────────────
+  /** true = sessionssparat ny modell (VÅG 93 C3: drawern sparar då standarden). */
   const bytModell = React.useCallback(
-    async (modellId: string) => {
-      if (!modellId || modellId === valdModell || byterModell || strömmarHuvud) return;
+    async (modellId: string): Promise<boolean> => {
+      if (!modellId || modellId === valdModell || byterModell || strömmarHuvud) return false;
       const namn = modeller.find((m) => m.id === modellId)?.namn ?? modellId;
       setByterModell(true);
       try {
@@ -4100,11 +4224,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
           }));
           visaToast(`Modell bytt till ${data.modell ?? namn} — ny session skapad`);
           void lasSessioner();
+          return true;
         } else {
           visaToast(data.fel || "Modellbytet misslyckades.", "fel");
+          return false;
         }
       } catch {
         visaToast("Nätverksfel under modellbytet.", "fel");
+        return false;
       } finally {
         setByterModell(false);
       }
@@ -4932,6 +5059,50 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, []);
 
+  /**
+   * VÅG 93 C3: PLUGIN-BRYTARE — växla plugin på/av (POST /api/studio/
+   * fardigheter {plugin, aktiverad}). OPTIMISTIC: flaggan vänds direkt i
+   * listan; svarar servern fel (eller nätverket dör) ⇒ återställs raden +
+   * röd toast. En växling i taget (pluginVaxlar-spärren). Saknar endpointen
+   * plugins-fältet visas aldrig några rader — och därmed inga brytare.
+   */
+  const vaxlaPlugin = React.useCallback(
+    async (pluginId: string, aktiverad: boolean) => {
+      if (pluginVaxlar) return;
+      const forut = fardigheterPlugins;
+      if (!forut) return;
+      const rad = forut.find((p) => p.id === pluginId);
+      if (!rad || rad.aktiv === aktiverad) return;
+      const namn = rad.namn || pluginId;
+      setFardigheterPlugins(forut.map((p) => (p.id === pluginId ? { ...p, aktiv: aktiverad } : p)));
+      setPluginVaxlar(pluginId);
+      try {
+        const res = await fetch("/api/studio/fardigheter", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ plugin: pluginId, aktiverad }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          ok?: boolean;
+          satt?: boolean;
+          fel?: string;
+        };
+        if (res.ok && data.ok !== false && data.satt !== false) {
+          visaToast(`${namn}: ${aktiverad ? "aktiverat" : "avstängt"} — gäller agentens nästa körning`);
+        } else {
+          setFardigheterPlugins(forut);
+          visaToast(data.fel || `Kunde ej ${aktiverad ? "aktivera" : "stänga av"} ${namn}.`, "fel");
+        }
+      } catch {
+        setFardigheterPlugins(forut);
+        visaToast(`Nätverksfel — ${namn} återställt (${aktiverad ? "av" : "på"}).`, "fel");
+      } finally {
+        setPluginVaxlar(null);
+      }
+    },
+    [fardigheterPlugins, pluginVaxlar, visaToast],
+  );
+
   const oppnaFardigheter = React.useCallback(() => {
     setVisaFiler(false);
     setFilVisning(null);
@@ -4987,8 +5158,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   );
 
   const byteLage = React.useCallback(
-    async (nytt: string) => {
-      if (!nytt || nytt === lage || lageJobbar || strömmar) return;
+    async (nytt: string): Promise<boolean> => {
+      if (!nytt || nytt === lage || lageJobbar || strömmar) return false;
       const gammalt = lage;
       setLage(nytt);
       setLageJobbar(true);
@@ -5002,13 +5173,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (res.ok && data.lage) {
           setLage(data.lage);
           visaToast(`Agentläge: ${data.lage}${data.lage === "plan" ? " — godkännandedialoger aktiveras" : ""}`);
+          return true;
         } else {
           setLage(gammalt);
           visaToast(data.fel || "Läget kunde ej sättas.", "fel");
+          return false;
         }
       } catch {
         setLage(gammalt);
         visaToast("Nätverksfel — läget kunde ej sättas.", "fel");
+        return false;
       } finally {
         setLageJobbar(false);
       }
@@ -5017,8 +5191,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   );
 
   const byteTanke = React.useCallback(
-    async (ny: string) => {
-      if (!ny || ny === tanka || lageJobbar || strömmar) return;
+    async (ny: string): Promise<boolean> => {
+      if (!ny || ny === tanka || lageJobbar || strömmar) return false;
       const gammal = tanka;
       setTanka(ny);
       setLageJobbar(true);
@@ -5032,18 +5206,45 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (res.ok && data.niva) {
           setTanka(data.niva);
           visaToast(`Tankestyrka: ${data.niva}`);
+          return true;
         } else {
           setTanka(gammal);
           visaToast(data.fel || "Tankestyrkan kunde ej sättas.", "fel");
+          return false;
         }
       } catch {
         setTanka(gammal);
         visaToast("Nätverksfel — tankestyrkan kunde ej sättas.", "fel");
+        return false;
       } finally {
         setLageJobbar(false);
       }
     },
     [tanka, lageJobbar, strömmar, visaToast],
+  );
+
+  // ── VÅG 93 C3: drawerns val = SESSIONSSPAR (befintligt) + STANDARD-SPAR ────
+  //    Endast när sessionssparat LYCKADES skickas det ändrade fältet vidare
+  //    till server-standarden ("gäller nästa samtal"-ärligheten).
+  const valjModellMedStandard = React.useCallback(
+    async (modellId: string) => {
+      if (await bytModell(modellId)) void sparaServerInstallning("modell", modellId);
+    },
+    [bytModell, sparaServerInstallning],
+  );
+
+  const valjLageMedStandard = React.useCallback(
+    async (nytt: string) => {
+      if (await byteLage(nytt)) void sparaServerInstallning("lage", nytt);
+    },
+    [byteLage, sparaServerInstallning],
+  );
+
+  const valjTankeMedStandard = React.useCallback(
+    async (ny: string) => {
+      if (await byteTanke(ny)) void sparaServerInstallning("tankestyrka", ny);
+    },
+    [byteTanke, sparaServerInstallning],
   );
 
   // ── Uppladdning (våg 81): multipart + drag/paste/mapp ──────────────────────
@@ -5561,6 +5762,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
           await komprimera();
           pushAssistant("Komprimering körd — se panelens KONTEXT-sektion för färsk tokenräkning.");
           return;
+        case "installningar": {
+          // VÅG 93 C3: öppna Inställningar-drawern ⚙ — modell/tankestyrka/läge
+          // för sessionen + serverns standard för nya samtal ( där stöds).
+          oppnaInstallningar();
+          pushAssistant(
+            "Inställningar ⚙ är öppna — modell, tankestyrka och läge. Valen gäller DETTA samtalet direkt; där servern stödjer det sparas de också som standard för nya samtal (”gäller nästa samtal”).",
+          );
+          return;
+        }
         case "filer":
           oppnaFiltrad();
           pushAssistant("Filträdet är öppet — klicka dig ner i arbetsytan och förhandsgranska filer.");
@@ -5626,7 +5836,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, oppnaAutomationPanel, sparaPrompt, oppnaPrompter, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, oppnaAutomationPanel, oppnaInstallningar, sparaPrompt, oppnaPrompter, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — PER TABB (våg 84 B) ──────────────────────────
@@ -8086,7 +8296,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
         radera={raderaMinnesfil}
       />
 
-      {/* FÄRDIGHETER-PANEL (våg 85 F2) — ytan i studio-fardigheter-panel.tsx. */}
+      {/* FÄRDIGHETER-PANEL (våg 85 F2) — ytan i studio-fardigheter-panel.tsx.
+          VÅG 93 C3: vaxlaPlugin aktiverar plugin-brytarna (POST /api/studio/
+          fardigheter) — logiken + statet ägs här, panelen är presentationsyta. */}
       <StudioFardigheterPanel
         oppen={visaFardigheter}
         stang={() => setVisaFardigheter(false)}
@@ -8097,6 +8309,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
         plugins={fardigheterPlugins}
         mcp={fardigheterMcp}
         mcpVerktyg={fardigheterVerktyg}
+        vaxlaPlugin={(id, aktiverad) => void vaxlaPlugin(id, aktiverad)}
+        pluginVaxlarId={pluginVaxlar}
       />
 
       {/* VERKTYG-PANEL (våg 88 I2) — admin-kommandon, egen yta + state. */}
@@ -8805,7 +9019,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <div className="flex items-center gap-2 border-b border-[#30363D] px-3 py-2.5">
               <Settings className="h-4 w-4 shrink-0 text-[#8B949E]" />
               <div className="min-w-0 flex-1">
-                <h2 className="text-sm font-semibold text-[#E6EDF3]">Inställningar</h2>
+                <h2 className="flex items-center gap-1.5 text-sm font-semibold text-[#E6EDF3]">
+                  Inställningar
+                  {/* VÅG 93 C3: sessionens modell/läge avviker från server-standarden. */}
+                  {standardAvvik && (
+                    <span
+                      className="inline-block h-2 w-2 shrink-0 rounded-full bg-[#D29922]"
+                      role="status"
+                      title={`Detta samtal avviker från server-standarden — ${standardAvvik.join(" · ")}. Valet gäller bara detta samtal; nya samtal börjar på standarden.`}
+                      aria-label="Detta samtal avviker från server-standarden"
+                    />
+                  )}
+                </h2>
                 <p className="truncate text-[10px] text-[#8B949E]">modell · läge · tankestyrka</p>
               </div>
               <button
@@ -8819,6 +9044,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </div>
 
             <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-2 py-3 [scrollbar-width:thin]">
+              {/* VÅG 93 C3: serverns standard för nya samtal (dold om endpoint
+                  saknas/501 — sessionssparandet består ändå). */}
+              {serverStandard && (
+                <p
+                  className="rounded-md bg-[#161B22] px-3 py-2 font-mono text-[10px] leading-relaxed text-[#8B949E]"
+                  title="Serverns standard för nya samtal — ur GET /api/studio/installningar"
+                >
+                  Standard: {modellBadge(serverStandard.modell)} / {serverStandard.lage || "—"} (server)
+                </p>
+              )}
               <section aria-label="Modell">
                 <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   Modell
@@ -8838,7 +9073,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       val={m.id}
                       jobbar={byterModell && m.id === valdModell}
                       disabled={byterModell || strömmarHuvud || !arHuvudAktiv}
-                      onClick={() => void bytModell(m.id)}
+                      onClick={() => void valjModellMedStandard(m.id)}
                     />
                   ))
                 )}
@@ -8864,7 +9099,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val="build"
                   disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                   jobbar={lageJobbar && lage === "build"}
-                  onClick={() => void byteLage("build")}
+                  onClick={() => void valjLageMedStandard("build")}
                 />
                 <InstallningarRad
                   vald={lage === "plan"}
@@ -8873,7 +9108,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val="plan"
                   disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                   jobbar={lageJobbar && lage === "plan"}
-                  onClick={() => void byteLage("plan")}
+                  onClick={() => void valjLageMedStandard("plan")}
                 />
               </section>
 
@@ -8893,7 +9128,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val="nothink"
                   disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                   jobbar={lageJobbar && tanka === "nothink"}
-                  onClick={() => void byteTanke("nothink")}
+                  onClick={() => void valjTankeMedStandard("nothink")}
                 />
                 <InstallningarRad
                   vald={tanka === "high"}
@@ -8902,7 +9137,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val="high"
                   disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                   jobbar={lageJobbar && tanka === "high"}
-                  onClick={() => void byteTanke("high")}
+                  onClick={() => void valjTankeMedStandard("high")}
                 />
                 <InstallningarRad
                   vald={tanka === "max"}
@@ -8911,7 +9146,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   val="max"
                   disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
                   jobbar={lageJobbar && tanka === "max"}
-                  onClick={() => void byteTanke("max")}
+                  onClick={() => void valjTankeMedStandard("max")}
                 />
               </section>
             </div>

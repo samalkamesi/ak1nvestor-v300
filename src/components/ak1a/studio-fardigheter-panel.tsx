@@ -37,6 +37,12 @@ import { cn } from "@/lib/utils";
  *     23 verktyg) med verktygslista när protokollet bär namnen (annars
  *     verktygsantal — kartan §2 dokumenterar endast toolCount).
  *
+ * VÅG 93 C3: PLUGIN-BRYTARE — när studio-chat.tsx skickar `vaxlaPlugin`
+ * får varje plugin-rad en på/av-brytare (grön #238636 aktiv / grå av,
+ * 52 px-tryckyta; POST /api/studio/fardigheter {plugin, aktiverad} +
+ * optimistic update ägs av studio-chat.tsx). Prop saknas/GET utan
+ * plugins-fält ⇒ inga brytare — befintligt läge består.
+ *
  * Pedagogisk plattform — inte investeringsråd.
  */
 
@@ -85,6 +91,14 @@ export interface FardigheterPanelProps {
   mcp: FardighetMcp[] | null;
   /** Summerad MCP-verktygsräkning (serverns mcpVerktyg). */
   mcpVerktyg: number;
+  /**
+   * VÅG 93 C3: växla plugin på/av — POST /api/studio/fardigheter
+   * {plugin, aktiverad} med optimistic update (logiken i studio-chat.tsx).
+   * undefined ⇒ plugin-brytare visas ej (befintligt läge består).
+   */
+  vaxlaPlugin?: (pluginId: string, aktiverad: boolean) => void;
+  /** Id på plugin-rad som växlas just nu (spinner + spärr), null = ingen. */
+  pluginVaxlarId?: string | null;
 }
 
 /** Sektionrubrik — ikon + rubrik + räknare (filträdets etikettsstil). */
@@ -127,6 +141,53 @@ function scopeBadge(omfattning?: string): { text: string; klass: string } | null
     default:
       return null;
   }
+}
+
+/**
+ * VÅG 93 C3: plugin-brytare — grön #238636 när aktiv, grå när av; spinner
+ * medan växlingen pågår (logik + POST ägs av studio-chat.tsx). Våg 90:s
+ * tryckytesspråk: 44×24 px-brytare på en 52 px-hög rad.
+ */
+function PluginBrytare({
+  aktiv,
+  jobbar,
+  namn,
+  onVaxla,
+}: {
+  aktiv: boolean;
+  jobbar: boolean;
+  namn: string;
+  onVaxla: () => void;
+}): React.JSX.Element {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={aktiv}
+      aria-label={`${aktiv ? "Stäng av" : "Aktivera"} pluginet ${namn}`}
+      disabled={jobbar}
+      onClick={(e) => {
+        e.stopPropagation();
+        onVaxla();
+      }}
+      title={aktiv ? `Stäng av ${namn}` : `Aktivera ${namn}`}
+      className={cn(
+        "relative h-6 w-11 shrink-0 rounded-full border transition-colors disabled:cursor-default disabled:opacity-60",
+        aktiv ? "border-[#238636] bg-[#238636]" : "border-[#30363D] bg-[#21262D]",
+      )}
+    >
+      {jobbar ? (
+        <Loader2 className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-spin text-[#EDE6D6]" />
+      ) : (
+        <span
+          className={cn(
+            "absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-white transition-all",
+            aktiv ? "left-6" : "left-1",
+          )}
+        />
+      )}
+    </button>
+  );
 }
 
 export function StudioFardigheterPanel(p: FardigheterPanelProps) {
@@ -279,11 +340,21 @@ export function StudioFardigheterPanel(p: FardigheterPanelProps) {
                 Inga plugins installerade i arbetsytan.
               </p>
             )}
+            {p.vaxlaPlugin && p.plugins && p.plugins.length > 0 && (
+              <p className="mb-1 px-1 text-[9px] leading-relaxed text-[#EDE6D6]/40">
+                Brytarna slår på/stänger av pluginet direkt mot servern — verkans
+                kommer agentens nästa körning.
+              </p>
+            )}
             <ul className="space-y-1">
               {aktivaPlugins.map((x) => (
                 <li
                   key={x.id}
-                  className="rounded-md bg-white/5 px-2 py-1.5"
+                  className={cn(
+                    "rounded-md bg-white/5 px-2 py-1.5",
+                    // VÅG 93 C3: 52 px-tryckyta när brytaren finns.
+                    p.vaxlaPlugin && "min-h-[52px]",
+                  )}
                   title={x.beskrivning ?? x.id}
                 >
                   <span className="flex items-center gap-1.5">
@@ -295,6 +366,14 @@ export function StudioFardigheterPanel(p: FardigheterPanelProps) {
                       <span className="shrink-0 rounded-full bg-gold/15 px-1.5 font-mono text-[9px] font-bold text-gold">
                         v{x.version}
                       </span>
+                    )}
+                    {p.vaxlaPlugin && (
+                      <PluginBrytare
+                        aktiv={x.aktiv}
+                        jobbar={p.pluginVaxlarId === x.id}
+                        namn={x.namn}
+                        onVaxla={() => p.vaxlaPlugin?.(x.id, !x.aktiv)}
+                      />
                     )}
                   </span>
                   <span className="mt-0.5 flex items-center gap-1.5 pl-3.5 text-[10px] text-[#EDE6D6]/55">
@@ -315,16 +394,29 @@ export function StudioFardigheterPanel(p: FardigheterPanelProps) {
               {tillgangligaPlugins.map((x) => (
                 <li
                   key={x.id}
-                  className="rounded-md px-2 py-1 opacity-55"
+                  className={cn(
+                    "rounded-md px-2 py-1",
+                    // VÅG 93 C3: brytare ⇒ raden är åtgärdsbar (full opacitet,
+                    // 52 px-tryckyta); annars befintlig dämpad visning.
+                    p.vaxlaPlugin ? "min-h-[52px] py-1.5" : "opacity-55",
+                  )}
                   title={`Tillgänglig men ej aktiverad — ${x.beskrivning ?? x.id}`}
                 >
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex min-h-[24px] items-center gap-1.5">
                     <span className="h-2 w-2 shrink-0 rounded-full border border-[#EDE6D6]/40" title="Ej aktiverad" />
                     <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-[#EDE6D6]/80">{x.namn}</span>
                     {x.version && (
                       <span className="shrink-0 rounded-full bg-white/10 px-1.5 font-mono text-[9px] text-[#EDE6D6]/60">
                         v{x.version}
                       </span>
+                    )}
+                    {p.vaxlaPlugin && (
+                      <PluginBrytare
+                        aktiv={x.aktiv}
+                        jobbar={p.pluginVaxlarId === x.id}
+                        namn={x.namn}
+                        onVaxla={() => p.vaxlaPlugin?.(x.id, !x.aktiv)}
+                      />
                     )}
                   </span>
                 </li>

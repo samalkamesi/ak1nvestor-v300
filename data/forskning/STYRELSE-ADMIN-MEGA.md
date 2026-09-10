@@ -434,3 +434,27 @@ ur protokollkartan (60+ metoder; vi exponerar ~35):
 
 KVD: 5 agenter parallellt, protokollmetoder ur kartan (v83-protokollkarta.md
 är LAGEN), E2E på prod, src via Write/Edit, deploy via tar-pipe.
+
+## TILLÄGG VÅG 86 — STUDIO COMPLETE (kunds direktiv: "fortsätt i timmar, Mega sätt, sluta aldrig")
+
+Sista Z-paritetsgaper — 7 parallella byggspår:
+
+- G1 **SLASH-AUTOCOMPLETE**: skriv "/" i skrivfältet → dropdown med
+  alla kommandon (från kommandon.ts) + beskrivningar + piltangenter —
+  som Z Code men INLINE.
+- G2 **PROMPTBIBLIOTEK**: spara återkommande prompts (localStorage),
+  kommando /sparad, autocomplete-införlivad; + prompthistorik (pil-upp
+  återkallar föregående prompt — som terminal).
+- G3 **RICHTIG INPUT-EDITOR**: markdown-förhandsvisning av skrivfältet
+  (toggle 👁), autoväxande höjd (min 1 rad, max 8), teckenräknare,
+  placeholder med tips.
+- G4 **WEB-VERKTYG VISUALISERING**: när agenten kör WebFetch/WebSearch —
+  visa hämtad URL + sammanfattning INLINE i verktygskortet (inte bara
+  "WebFetch kördes" utan faktisk länk + resultattruncat).
+- G5 **CHECKPOINT/REWIND**: Z Code har rewind — implementera via
+  session/fork med checkpoint (dokumenterat i kartan); UI: "⟲ Gå till-
+  baka-hit"-knapp på varje agentbubbla → forkar sessionen vid den punkten.
+- G6 **NOTISHISTORIK + SNABBMENY**: persistent lista av alla notiser
+  (localStorage); "?"-tangent visar tangentbordsgenvägs-kort.
+- G7 **SESSION-EXPORT PDF/HTML**: exportera chatten som snygg HTML
+  (AK1A-stil, printbar) utöver markdown.

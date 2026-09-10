@@ -499,3 +499,23 @@ från frånvaron. Detta är studions STÖRSTA UX-brott.
   sessionskarta flush 60s→30s; GET-historik cache 5-min i IndexedDB
   (webbläsarens beständiga lagring — överlever flikstängning, inte bara
   refresh).
+
+## TILLÄGG VÅG 90 — PIXELNÄRA Z CODE (kundens sanna vision)
+
+Kunden vill ha EXAKT Z Code-upplevelsen: 3-kolumners IDE-layout
+( sidebar: tasks | chatt: agent med tool-calls/diffs | panel: mål/terminal )
+— MÖRK VS Code-inspirerat tema, INTE bubbelfokus.
+
+- K1 **KÄRNSTABILITET**: (a) zcode-barnprocessens hållbarhet (minne,
+  auto-restart vid död); (b) SSE-anslutning utan avbrott (heartbeat +
+  reconnect); (c) sessions aldrig "tappa" (disk-persistens + auto-resume);
+  (d) respons-hastighet (cache historik, lazy panels).
+- K2 **Z CODE-LAYOUT**: mörkt tema (VS Code-palett), 3-kolumners på
+  desktop (sidebar 260px | chatt flex | panel 300px — kollapsbara),
+  mobil = chatt + hamburgermeny. Chatt-meddelanden = FULLBREDD (INTE
+  bubblor), agent-handlingar med statuschips (Utforskat ✓ / Körde ✓ /
+  Skrev ✓), diff-badges (+733 −7), verktygsanrop med $-prefix.
+- K3 **SIDEBAR**: sessions/tasks grupperade, relativa tidsstämplar,
+  "+ Nytt samtal"-knapp, aktiv markering. Klick = öppna/resume.
+- K4 **HÖGER PANEL**: mål-progress (checklist med bockar), kontext-
+  info (tokens, modell), terminal-visning (senaste verktygskörning).

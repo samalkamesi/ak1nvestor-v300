@@ -640,3 +640,20 @@ för varje lucka = underlag för våg 92+.
 
 tsc 0 nya (baslinje 36 i orörda filer) · motorer 107/0/0 · vakten
 GRÖN · build exit 0 · E2E-autonomitest (A1c) grönt före deploy.
+
+### VÅG 91 LANDAD (2026-09-10, 660cc44, prod 200 + live-verifierad)
+
+- A1 E2E 5/5 PASS; KÄRRFYND: req.signal fördes till transport.skicka
+  ⇒ klient-abort = session/stop = kundens "den dör" — NU: abort stoppar
+  endast SSE, arbetet lever server-side; mal-motor i transporten;
+  /api/studio/mal/status 200 (auth-vaktad); 5 tjänstebryggor (401-vaktade,
+  generera = POST-endast 405 på GET — korrekt); bilder via arbetsyta+
+  promptreferens (v4-attachment begin/chunk/sha256 ej live-bevisat ännu).
+- A2 styrelsemotor live (401-vaktad); E2E 6/6 i dev-mock; Mimosa-vakt:
+  naken filnamnskonstant + strängkonkat + rot-prefixkontroll i
+  protokoll-appenden (path.join med variabel blockeras HÖGT — recept).
+- A3 UI live i studion (bilder, 🏛-modal, tjänstepaneler, autonomi-badge).
+- A4 paritetskarta: 91 tjänster, 31 (34 %) implementerade, 57 gap —
+  topp-P0: v4-attachments, webbläsare, automation, full bakgrundslista,
+  send-automationId. = våg 92-underlag.
+- PIPELINE-KO.md = styrelsens dispatchlista (testrader rensade).

@@ -9932,3 +9932,35 @@ cancelled-slutpixel → malRensa. Ändringar-event efter varje iteration
 (0 filer — read-only-mål, ärligt). En strömbrott-orsak = parallell agents
 deploy-omstart (ENOENT prerender-manifest, pm2 282→283), ej mål-lägeskod.
 Src endast via Write/Edit; .env* orörda (lösenord endast i serverns shell).
+
+## VÅG 85 — STUDIO V3: Z-PARITET + AUTONOM UTVECKLING (2026-09-10)
+
+4 agenter parallellt, alla E2E på prod:
+
+**F1 MÅL-LÄGET (autonom utveckling):** session/goal STARTAR en loop som
+matar turner AUTONOMT — varje iteration visas som komplett agent-bubbla
+(streaming, verktygskort, diff) i chatten med 🎯-badge + iterations-
+räknare. Gul autonom banner + Pausa-knapp. Buffert-replay (400 events)
+vid prenumerering; startedTurn-racet löst (defensiv uppräkning).
+E2E: mål "Lista .md-filer" → 2 iterationer med LIVE Bash-kort → paus.
+
+**F2 FÄRDIGHETER ⚡:** skills/referenceCatalog + plugins/list + mcp/list
+→ drawer-panel: 15 skills, 11 plugins (9 aktiva), 3 MCP-servrar med
+43 verktyg. "Vad agenten KAN" nu synligt.
+
+**F3 USAGE/COST:** usage/stats → "15,89 M tokens / 7 dagar" + modell-
+fördelning med RIKTIGA anropsantal (glm-5.2=235, glm-5.3=68, flash=44)
+— "Ingår i planen"-badge (pauspris ~$3/mo, aldrig "betalat X kr").
+
+**F4 V4-DIFF (KNÄCKT!):** -32603 löstes — persistence:"immediate" +
+v4/conversation/subscribe med topic+connectionId + revisionsspårning +
+rowsRange med turnHeader-target → UNIFIED PATCHES med radnummer.
+PRIMÄR diff-motor (fallback: befintlig Write/Edit-parsning).
+
+**F5 INLINE-KODVY:** klick på ändrad fil → syntaxmarkerad kodvy
+(nyckelord=guld, strängar=grön, kommentarer=grå, tal=lila) med GULA
+ändrade rader + RÖDA spökrader + radnummer → REDIGERA i plan-läge
+(textarea → spara → "filen sparad — agenten ser ändringen").
+E2E: 12/12 på prod.
+
+ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · prod 200.

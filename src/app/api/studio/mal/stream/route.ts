@@ -3,8 +3,6 @@ import { NextRequest } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import {
   hamtaStudioTransport,
-  markeraMalIterationSlut,
-  markeraMalIterationStart,
   type StudioEvent,
   type StudioFilandring,
   type StudioKontext,
@@ -32,6 +30,16 @@ export const dynamic = "force-dynamic";
  * EFTER varje avslutad iteration skickas "kontext" (session/read) +
  * "ändringar" (senaste turnens Write/Edit/MultiEdit-diff) — ändrings-
  * panelen får samma underlag som efter en chattad turn.
+ *
+ * VÅG 91 A1a — REN VY: mål-MOTORNS state (aktivt mål, iteration, pågående
+ * turn, senaste event) + markeringen i sessionskartan (🎯-poster) lever i
+ * TRANSPORTEN/server-processen — denna routen prenumererar ENDAST. En
+ * klient som försvinner pausar strömningen men ALDRIG målet: iterationer
+ * fortsätter markeras i kartan (markeraMalIterationStart/Slut anropas av
+ * transportens mål-händelsehanterare) och MAL_BUFFERT+statusrådet
+ * (GET /api/studio/mal/status) fångar upp återvändaren. K1:s abort-vakter
+ * här stoppar bara nätverksströmning + efterspels-pollningen (kontext/
+ * diff) — ALDRIG arbetet.
  *
  * Självläkning: strömmen sondernar transportens mål-läge (sondMal —
  * session/goal show) vid öppning så ett LEVANDE mål efter en pm2-omstart
@@ -88,23 +96,14 @@ export async function POST(req: NextRequest) {
         }
       }, 15_000);
 
-      // Efterspel per avslutad iteration: färsk kontext + diff — samma
-      // underlag som /api/studio/stream skickar efter en chattad turn.
-      // VÅG 87 H1/H2: varje iteration markeras I SESSIONSKARTAN (som
-      // debouncat skrivs till disk) — autonomt arbete medan användaren är
-      // borta syns i historiken när hen återkommer (GET:s
-      // senastAktivSessionId + senastAktivHistorik + aktivtMal).
-      const malSid = transport.sessionId();
-      // VÅG 90 K1: abort-vakt — en borta klient (req.signal abort) får inga
-      // events OCH drar inga efterföljande kontext/diff-frågor: tidigare
-      // pollades protokollet vidare i onödan efter frånkopplingen.
+      // VÅG 91 A1a: iterationerna markeras i SESSIONSKARTAN av TRANSPORTENS
+      // mål-motor (hanteraMalEvent → markeraMalIterationStart/Slut) —
+      // ALDRIG här — så autonomt arbete synt i historiken ÄVEN utan
+      // ansluten klient. Detta EFTERSPEL (kontext + diff per avslutad
+      // iteration) är ren presentation för DEN ANSLUTNA klienten.
       const skickaMedEfterspel = (event: Parameters<typeof sseRad>[0]) => {
         if (req.signal.aborted) return;
         skicka(event);
-        if (event.typ === "mal_iteration") {
-          if (event.fas === "start") markeraMalIterationStart(malSid);
-          else markeraMalIterationSlut(malSid, event.iteration, event.svar ?? "");
-        }
         if (event.typ === "mal_iteration" && event.fas === "slut") {
           void transport
             .lasKontext()

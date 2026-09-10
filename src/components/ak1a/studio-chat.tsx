@@ -30,6 +30,8 @@ import {
   FolderSearch,
   FolderTree,
   Globe,
+  Info,
+  Landmark,
   Link2,
   ListChecks,
   Loader2,
@@ -109,6 +111,27 @@ import { cn } from "@/lib/utils";
  * växlaren (våg 84 A) är MEDVETET borttagen — våg 90:s tema är FAST
  * mörk; kodvägen (morkLage/vaxlaTema/T-genvägen) är därmed raderad.
  *
+ * VÅG 91 (STUDIO-UI, block A3 — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 91"):
+ *   · A3a BILDER I SAMTALET: uppladdade bilder (drag/paste/📎) väljs som
+ *     bilagor — 64px-thumbnails med X ovanför skrivfältet, följer med
+ *     POST /api/studio/stream {prompt, sessionId?, bilder?} (kontrakt A1d),
+ *     visas på det skickade meddelandet; agentens bildreferenser renderas
+ *     monospace. Transport utan bildstöd ⇒ toast.
+ *   · A3b STYRELSEN 🏛: Landmark-knapp i headern + /styrelsen-kommando →
+ *     fråga-fält → POST /api/studio/styrelse {fraga} → mötesvy med fem
+ *     rollkort (ORDFÖRANDE/TEKNIK/SÄKERHET/JURIDIK/TILLVÄXT) som tänds
+ *     allt eftersom (poll GET ?id=&senast= var 3:e s) → beslutskort med
+ *     badge KÖRS DIREKT (#238636) / VÄNTAR KUND (#D29922). 501/saknas ⇒
+ *     diskret info-rad (graceful mot A2:s parallellbygge).
+ *   · A3c TJÄNSTE-PANELER: kollapsbara sektioner under TERMINAL —
+ *     BAKGRUNDSJOBB (lista + avbryt), WEBBLÄSARE, AUTOMATION; varje
+ *     sektion dold om endpointen svarar 501/saknas; poll 30 s när öppen.
+ *   · A3d AUTONOMI-SIGNAL: GET /api/studio/mal/status pollas (20 s när
+ *     fliken syns + vid mount) — aktiv ⇒ pulserande header-badge
+ *     "⏱ Arbetar i bakgrunden" (#D29922); övergång aktiv→avslutat ⇒
+ *     toast "Agenten avslutade jobbet medan du var borta". Otillgänglig
+ *     endpoint = tyst (graceful mot A1:s parallellbygge).
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -160,6 +183,8 @@ interface Meddelande {
   rundStatistik?: RundStatistik;
   malIteration?: number;
   fel?: boolean;
+  /** VÅG 91 A3a: bildsökvägar (arbetsytan) som bifogades med prompten. */
+  bilder?: string[];
 }
 
 interface Uppladdning {
@@ -917,6 +942,241 @@ function bildRefsUrText(text: string): string[] {
 
 function bildUrl(sokvag: string): string {
   return `/api/studio/filer?sokvag=${encodeURIComponent(sokvag)}&bild=1`;
+}
+
+// ── VÅG 91 A3b: STYRELSEN 🏛 — typer + tolererande tolkning av A2:s API ──────
+
+/** En händelse i styrelsemötet (roll + inlägg) — rollId = matchad av de fem. */
+interface StyrelseHandelse {
+  roll: string;
+  rollId: string | null;
+  text: string;
+  /** Motorns händelsetyp (mote_startad/roll_start/… ) — för visningstext. */
+  typ: string;
+  /** Löpnummer (A2:s kontrakt) — dedupe-identitet när det finns. */
+  i: number | null;
+}
+
+/** Beslutskortet: BESLUT / MOTIVERING / ÅTGÄRDER + existential-flaggan (R2). */
+interface StyrelseBeslutVy {
+  beslut: string;
+  motivering: string;
+  atgarder: string[];
+  existential: boolean;
+}
+
+/** Ett pågående/kört möte — pollas var 3:e s tills beslutet landar. */
+interface StyrelseMote {
+  id: string;
+  fraga: string;
+  händelser: StyrelseHandelse[];
+  beslut: StyrelseBeslutVy | null;
+}
+
+/** De fem rollerna (A2:s rollagenter) — tänds allt eftersom de rapporterar. */
+const STYRELSE_ROLLER = [
+  { id: "ordforande", etikett: "ORDFÖRANDE", match: ["ordforande", "ordf", "ceo"] },
+  { id: "teknik", etikett: "TEKNIK", match: ["teknik", "cto"] },
+  { id: "sakerhet", etikett: "SÄKERHET", match: ["sakerhet", "security"] },
+  { id: "juridik", etikett: "JURIDIK", match: ["juridik", "compliance"] },
+  { id: "tillvaxt", etikett: "TILLVÄXT", match: ["tillvaxt", "growth", "seo"] },
+] as const;
+
+/** Första sträng i ett okänt objekt som matchar någon av nycklarna ("" annars). */
+function strUr(obj: Record<string, unknown>, nycklar: string[]): string {
+  for (const n of nycklar) {
+    const v = obj[n];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  return "";
+}
+
+/** Normalisera svensk text för matchning (åäö→aao, gemener). */
+function styrelseNorm(text: string): string {
+  return text.toLowerCase().replace(/[åä]/g, "a").replace(/ö/g, "o");
+}
+
+/** Matcha en händelsetext mot de fem rollerna → rollId eller null. */
+function styrelseRoll(text: string): string | null {
+  const norm = styrelseNorm(text);
+  if (!norm) return null;
+  for (const r of STYRELSE_ROLLER) {
+    for (const m of r.match) {
+      if (norm.includes(m)) return r.id;
+    }
+  }
+  return null;
+}
+
+/** Motorns händelsetyper → kort visningstext (monoraden i mötesvyn). */
+const STYRELSE_TYP_TEXT: Record<string, string> = {
+  mote_startad: "mötet startat",
+  vag_start: "vågen kör",
+  roll_start: "diskuterar",
+  roll_klar: "har redovisat",
+  roll_ute: "kunde ej delta",
+  vag_slut: "vågen klar",
+  ordforande_start: "ordföranden syntetiserar",
+  beslut_klart: "beslut fattat",
+  mote_slut: "mötet avslutat",
+  fel: "fel i mötet",
+};
+
+/** Åtgärdslista ur okänd JSON — strängar eller objekt med text-fält. */
+function atgarderUr(rå: unknown): string[] {
+  if (!Array.isArray(rå)) return [];
+  const ut: string[] = [];
+  for (const a of rå) {
+    if (typeof a === "string" && a.trim()) {
+      ut.push(a.trim());
+    } else if (a && typeof a === "object") {
+      const t = strUr(a as Record<string, unknown>, ["text", "atgard", "beskrivning", "titel", "title"]);
+      if (t) ut.push(t);
+    }
+  }
+  return ut.slice(0, 20);
+}
+
+/** Beslut ur ett okänt GET-svar — objekt, sträng eller fält på roten. */
+function beslutUr(d: Record<string, unknown>): StyrelseBeslutVy | null {
+  const rå = d.beslut ?? d.beslutKort ?? d.slutsats;
+  if (rå && typeof rå === "object") {
+    const b = rå as Record<string, unknown>;
+    const text = strUr(b, ["beslut", "text", "slutsats"]);
+    if (!text) return null;
+    return {
+      beslut: text,
+      motivering: strUr(b, ["motivering", "skal", "motiv"]),
+      atgarder: atgarderUr(b.atgarder ?? b["åtgärder"]),
+      existential:
+        b.existential === true ||
+        b.existentiell === true ||
+        /vantar\s*kund/i.test(strUr(b, ["status"])) ||
+        strUr(d, ["atgardsStatus"]) === "VANTAR_KUND",
+    };
+  }
+  if (typeof rå === "string" && rå.trim()) {
+    return {
+      beslut: rå.trim(),
+      motivering: strUr(d, ["motivering", "skal"]),
+      atgarder: atgarderUr(d.atgarder ?? d["åtgärder"]),
+      existential: d.existential === true || d.atgardsStatus === "VANTAR_KUND",
+    };
+  }
+  return null;
+}
+
+/** Tolka GET /api/studio/styrelse-svaret (händelser + beslut), tolererande. */
+function tolkaStyrelseSvar(data: unknown): { händelser: StyrelseHandelse[]; beslut: StyrelseBeslutVy | null } {
+  const d = (data && typeof data === "object" ? data : {}) as Record<string, unknown>;
+  const råLista = Array.isArray(d.handelser)
+    ? d.handelser
+    : Array.isArray(d["händelser"])
+      ? d["händelser"]
+      : Array.isArray(d.events)
+        ? d.events
+        : [];
+  const händelser: StyrelseHandelse[] = [];
+  for (const rå of råLista) {
+    if (!rå || typeof rå !== "object") continue;
+    const e = rå as Record<string, unknown>;
+    const roll = strUr(e, ["roll", "role", "agent", "namn"]);
+    const text = strUr(e, ["text", "meddelande", "inlagg", "analys", "sammanfattning", "innehall", "innehåll"]);
+    const typ = strUr(e, ["typ", "type"]);
+    if (!roll && !text && !typ) continue;
+    händelser.push({ roll, rollId: styrelseRoll(`${roll} ${text}`), text, typ, i: typeof e.i === "number" ? e.i : null });
+  }
+  return { händelser, beslut: beslutUr(d) };
+}
+
+/** Dedupe-signatur för en händelse (löpnummer om motorn ger det, annars innehåll). */
+function handelseSignatur(h: StyrelseHandelse): string {
+  if (typeof h.i === "number") return `#${h.i}`;
+  return `${h.typ}|${h.roll}|${h.text}`.slice(0, 160);
+}
+
+/** Slå ihop mottagna händelser med befintliga (dedupe, tak 100). */
+function slagIhopHandelser(befintliga: StyrelseHandelse[], nya: StyrelseHandelse[]): StyrelseHandelse[] {
+  if (nya.length === 0) return befintliga;
+  const sett = new Set(befintliga.map(handelseSignatur));
+  const ut = [...befintliga];
+  for (const h of nya) {
+    const sig = handelseSignatur(h);
+    if (sig === "|" || sig === "||" || sett.has(sig)) continue;
+    sett.add(sig);
+    ut.push(h);
+  }
+  return ut.slice(-100);
+}
+
+/** Rollens läge i mötesvyn: väntar → talar (något inlägg) → klar (beslut). */
+function styrelseRollStatus(
+  rollId: string,
+  händelser: StyrelseHandelse[],
+  beslut: StyrelseBeslutVy | null,
+): "vantar" | "talar" | "klar" {
+  if (beslut) return "klar";
+  return händelser.some((h) => h.rollId === rollId) ? "talar" : "vantar";
+}
+
+// ── VÅG 91 A3c: TJÄNSTE-PANELER — typer + tolererande normalisering ──────────
+
+/** En rad i en tjänste-panel (bakgrundsjobb/webbläsare/automation). */
+interface TjansteRad {
+  id: string;
+  titel: string;
+  status: string;
+}
+
+type TjansteNamn = "bakgrund" | "webblasare" | "automation";
+
+/** Panelens tillstånd — finns=false döljer sektionen (endpoint 501/saknas). */
+interface TjansteTillstand {
+  finns: boolean;
+  oppen: boolean;
+  laddar: boolean;
+  rader: TjansteRad[];
+}
+
+const TJANSTE_NAMN: readonly TjansteNamn[] = ["bakgrund", "webblasare", "automation"];
+
+/** Panel-metadata: etikett + ikon + vad raderna visar. */
+const TJANSTE_INFO: readonly { namn: TjansteNamn; etikett: string; ikon: "klocka" | "glob" | "zap"; tom: string }[] = [
+  { namn: "bakgrund", etikett: "Bakgrundsjobb", ikon: "klocka", tom: "Inga bakgrundsjobb just nu." },
+  { namn: "webblasare", etikett: "Webbläsare", ikon: "glob", tom: "Inga webbläsarsessioner just nu." },
+  { namn: "automation", etikett: "Automation", ikon: "zap", tom: "Inga automationer kör just nu." },
+];
+
+/** Normalisera okänt GET /api/studio/tjanster/*-svar → visningsrader. */
+function tjansteRaderUr(data: unknown): TjansteRad[] {
+  let lista: unknown[] = [];
+  if (Array.isArray(data)) {
+    lista = data;
+  } else if (data && typeof data === "object") {
+    const d = data as Record<string, unknown>;
+    for (const nyckel of ["jobb", "poster", "lista", "sessioner", "rader", "tasks", "items", "floden"]) {
+      if (Array.isArray(d[nyckel])) {
+        lista = d[nyckel] as unknown[];
+        break;
+      }
+    }
+  }
+  const ut: TjansteRad[] = [];
+  for (const rå of lista.slice(0, 30)) {
+    if (!rå || typeof rå !== "object") continue;
+    const r = rå as Record<string, unknown>;
+    const id = strUr(r, ["id", "taskId", "jobId", "sessionId"]);
+    const titel = strUr(r, ["titel", "title", "namn", "name", "beskrivning", "description", "url", "mal"]) || id;
+    const status = strUr(r, ["status", "typ", "lage", "state"]);
+    if (!id && !titel) continue;
+    ut.push({ id: id || titel, titel, status });
+  }
+  return ut;
+}
+
+/** Kör statusen fortfarande? (styr Avbryt-knappen i Bakgrundsjobb-panelen). */
+function tjansteKor(status: string): boolean {
+  return /run|kör|koer|pågå|pagar|väntar|vantar|wait|block|start|activ|live/i.test(status);
 }
 
 // ── Kommandopalett + sök-highlight (våg 84 A) ────────────────────────────────
@@ -2002,6 +2262,260 @@ function DiffForhandsvisning({ diff }: { diff: Filandring }): React.JSX.Element 
   );
 }
 
+// ── VÅG 91 A3b: STYRELSENS MÖTESVY — 5 rollkort + beslutskort ────────────────
+
+/**
+ * Mötesvyn (VÅG 91 A3b): ärendet, fem rollkort som tänds allt eftersom rollerna
+ * rapporterar (väntar → talar → klar) och — när motorn är färdig — beslutskortet:
+ * BESLUT (fet #E6EDF3) · MOTIVERING · ÅTGÄRDER som checklista · badge KÖRS
+ * DIREKT (#238636) eller VÄNTAR KUND (#D29922).
+ */
+function StyrelseMoteVy({ mote, onNyFraga }: { mote: StyrelseMote; onNyFraga: () => void }): React.JSX.Element {
+  const senaste = mote.händelser[mote.händelser.length - 1];
+  return (
+    <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 [scrollbar-width:thin]">
+      {/* Ärendet */}
+      <p className="flex items-start gap-2 text-xs leading-relaxed">
+        <span className="shrink-0 pt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">
+          Ärende
+        </span>
+        <span className="min-w-0 flex-1 text-[#E6EDF3]">{mote.fraga}</span>
+      </p>
+      {/* Rollkorten — tänds allt eftersom (poll var 3:e s). */}
+      <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-3">
+        {STYRELSE_ROLLER.map((r) => {
+          const status = styrelseRollStatus(r.id, mote.händelser, mote.beslut);
+          return (
+            <div
+              key={r.id}
+              title={`${r.etikett} — ${status === "vantar" ? "har ej rapporterat ännu" : status === "talar" ? "diskuterar just nu" : "har redovisat"}`}
+              className={cn(
+                "rounded-md border px-2.5 py-2 transition-colors",
+                status === "vantar" && "border-[#30363D] bg-[#0D1117]",
+                status === "talar" && "border-[#D29922]/50 bg-[#D29922]/5",
+                status === "klar" && "border-[#238636]/50 bg-[#238636]/5",
+              )}
+            >
+              <p className="text-[10px] font-bold tracking-wider text-[#E6EDF3]">{r.etikett}</p>
+              <p
+                className={cn(
+                  "mt-1 flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wider",
+                  status === "vantar" && "text-[#484F58]",
+                  status === "talar" && "text-[#D29922]",
+                  status === "klar" && "text-[#3FB950]",
+                )}
+              >
+                {status === "vantar" ? (
+                  "väntar"
+                ) : status === "talar" ? (
+                  <>
+                    <Loader2 className="h-2.5 w-2.5 animate-spin" /> talar…
+                  </>
+                ) : (
+                  <>
+                    <Check className="h-2.5 w-2.5" /> klar
+                  </>
+                )}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      {/* Senaste händelsen — mono-terminalrad ($-prefix). */}
+      <p
+        className="mt-3 truncate font-mono text-[10px] text-[#484F58]"
+        title={senaste ? `${senaste.roll}${senaste.text ? ` — ${senaste.text}` : ""}` : undefined}
+      >
+        <span className="text-[#3FB950]" aria-hidden>
+          ${" "}
+        </span>
+        {mote.beslut
+          ? "styrelsen är enig — beslut fattat"
+          : senaste
+            ? `${senaste.roll || "styrelsen"}: ${senaste.text || STYRELSE_TYP_TEXT[senaste.typ] || "…"}`.slice(0, 120)
+            : "styrelsen sammanträder…"}
+      </p>
+      {/* Beslutskortet. */}
+      {mote.beslut && (
+        <div className="mt-2 overflow-hidden rounded-md border border-[#30363D] bg-[#0D1117]">
+          <div className="flex flex-wrap items-center gap-2 border-b border-[#21262D] px-3 py-2">
+            <Landmark className="h-3.5 w-3.5 shrink-0 text-[#3FB950]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#8B949E]">Beslut</span>
+            <span
+              className={cn(
+                "ml-auto rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider",
+                mote.beslut.existential ? "bg-[#D29922] text-[#0D1117]" : "bg-[#238636] text-white",
+              )}
+              title={
+                mote.beslut.existential
+                  ? "Existentiell åtgärd (R2) — väntar på kundens godkännande"
+                  : "Tillämpas omedelbart av agentpipelinen (R2)"
+              }
+            >
+              {mote.beslut.existential ? "Väntar kund" : "Körs direkt"}
+            </span>
+          </div>
+          <div className="px-3 py-2.5">
+            <p className="text-sm font-bold leading-relaxed text-[#E6EDF3]">{mote.beslut.beslut}</p>
+            {mote.beslut.motivering && (
+              <p className="mt-2 text-xs leading-relaxed text-[#8B949E]">
+                <span className="mr-1 text-[10px] font-semibold uppercase tracking-wider">Motivering</span>
+                {mote.beslut.motivering}
+              </p>
+            )}
+            {mote.beslut.atgarder.length > 0 && (
+              <div className="mt-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">Åtgärder</p>
+                <ul className="mt-1 space-y-1">
+                  {mote.beslut.atgarder.map((a, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs leading-relaxed text-[#E6EDF3]/90">
+                      <span
+                        className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[#238636] text-[#3FB950]"
+                        aria-hidden
+                      >
+                        <Check className="h-3 w-3" />
+                      </span>
+                      <span className="min-w-0 flex-1">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      {!mote.beslut ? (
+        <p className="mt-2 flex items-center gap-1.5 text-[10px] leading-relaxed text-[#8B949E]">
+          <Loader2 className="h-3 w-3 shrink-0 animate-spin text-[#D29922]" />
+          Fem roller diskuterar — korten tänds allt eftersom de rapporterar (uppdateras var 3:e sekund).
+        </p>
+      ) : (
+        <button
+          type="button"
+          onClick={onNyFraga}
+          className="mt-3 flex items-center gap-1.5 rounded-md bg-[#238636] px-3.5 py-2 text-xs font-bold text-white transition-colors hover:bg-[#2EA043]"
+          title="Lägg ett nytt ärende till styrelsen"
+        >
+          <Landmark className="h-3.5 w-3.5" />
+          Ny fråga
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ── VÅG 91 A3c: TJÄNSTE-PANELER — kollapsbara sektioner under TERMINAL ───────
+
+/**
+ * Tjänste-panelerna (VÅG 91 A3c): BAKGRUNDSJOBB (lista + avbryt), WEBBLÄSARE
+ * och AUTOMATION — renderas i höger panelens fot. Sektioner vars endpoint
+ * svarat 501/saknas är helt dolda (finns=false i tillståndet hos ägaren).
+ */
+function TjansteSektioner({
+  tjanster,
+  onVaxla,
+  onAvbryt,
+  avbryterId,
+}: {
+  tjanster: Record<TjansteNamn, TjansteTillstand>;
+  onVaxla: (namn: TjansteNamn, oppenEfter: boolean) => void;
+  onAvbryt: (id: string) => void;
+  avbryterId: string | null;
+}): React.JSX.Element | null {
+  const synliga = TJANSTE_INFO.filter((t) => tjanster[t.namn].finns);
+  if (synliga.length === 0) return null;
+  return (
+    <>
+      {synliga.map((t) => {
+        const s = tjanster[t.namn];
+        return (
+          <section key={t.namn} aria-label={t.etikett} className="shrink-0 border-b border-[#30363D]">
+            <button
+              type="button"
+              onClick={() => onVaxla(t.namn, !s.oppen)}
+              aria-expanded={s.oppen}
+              title={`${t.etikett} — ${s.oppen ? "fäll ihop" : "fäll ut och läs färskt"} (uppdateras var 30:e s medan öppen)`}
+              className="flex w-full items-center gap-1.5 px-3 py-2 text-left transition-colors hover:bg-[#161B22]"
+            >
+              {s.oppen ? (
+                <ChevronDown className="h-3 w-3 shrink-0 text-[#8B949E]" />
+              ) : (
+                <ChevronRight className="h-3 w-3 shrink-0 text-[#8B949E]" />
+              )}
+              {t.ikon === "klocka" ? (
+                <Clock className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />
+              ) : t.ikon === "glob" ? (
+                <Globe className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />
+              ) : (
+                <Zap className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />
+              )}
+              <span className="min-w-0 flex-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                {t.etikett}
+              </span>
+              {s.rader.length > 0 && (
+                <span className="shrink-0 rounded-full bg-[#21262D] px-1.5 font-mono text-[9px] font-bold text-[#8B949E]">
+                  {s.rader.length}
+                </span>
+              )}
+            </button>
+            {s.oppen && (
+              <div className="px-3 pb-2.5">
+                {s.laddar && s.rader.length === 0 ? (
+                  <p className="flex items-center gap-1.5 text-[10px] text-[#8B949E]">
+                    <Loader2 className="h-3 w-3 animate-spin text-[#58A6FF]" /> Läser {t.etikett.toLowerCase()}…
+                  </p>
+                ) : s.rader.length === 0 ? (
+                  <p className="text-[10px] leading-relaxed text-[#484F58]">{t.tom}</p>
+                ) : (
+                  <ul className="space-y-1">
+                    {s.rader.map((r) => (
+                      <li
+                        key={r.id}
+                        className="flex items-center gap-1.5 rounded-md bg-[#161B22] px-2 py-1.5"
+                        title={`${r.id}${r.status ? ` · ${r.status}` : ""}`}
+                      >
+                        {r.status && (
+                          <span
+                            className={cn(
+                              "shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider",
+                              agentStatusFarg(r.status),
+                            )}
+                          >
+                            {agentStatusText(r.status)}
+                          </span>
+                        )}
+                        <span className="min-w-0 flex-1 truncate font-mono text-[10px] text-[#E6EDF3]/85">
+                          {r.titel}
+                        </span>
+                        {t.namn === "bakgrund" && tjansteKor(r.status) && (
+                          <button
+                            type="button"
+                            onClick={() => onAvbryt(r.id)}
+                            disabled={avbryterId === r.id}
+                            title="Avbryt bakgrundsjobbet (tjanster/bakgrund/avbryt)"
+                            aria-label="Avbryt jobbet"
+                            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[#DA3633]/40 text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50"
+                          >
+                            {avbryterId === r.id ? (
+                              <Loader2 className="h-3 w-3 animate-spin" />
+                            ) : (
+                              <X className="h-3 w-3" />
+                            )}
+                          </button>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
+          </section>
+        );
+      })}
+    </>
+  );
+}
+
 // ── Skrivfältets mått + placeholder-rotation (våg 86 G3) ─────────────────────
 
 const YTA_MIN_HOJD = 44;
@@ -2140,6 +2654,33 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── Verktyg/admin-drawern (våg 88 I2) — ytan ägs av studio-admin-panel.tsx ──
   const [visaAdmin, setVisaAdmin] = React.useState(false);
+
+  // ── VÅG 91 A3: BILDER I SAMTALET + STYRELSEN + TJÄNSTER + AUTONOMI ─────────
+  /** A3a: valda bildbilagor (sökvägar i arbetsytan) — skickas med nästa prompt. */
+  const [valdaBilder, setValdaBilder] = React.useState<string[]>([]);
+
+  /** A3b: styrelsen 🏛 — dialog + pågående möte (pollas mot A2:s motor). */
+  const [styrelseOppen, setStyrelseOppen] = React.useState(false);
+  const [styrelseFraga, setStyrelseFraga] = React.useState("");
+  const [styrelseStartar, setStyrelseStartar] = React.useState(false);
+  const [styrelseMote, setStyrelseMote] = React.useState<StyrelseMote | null>(null);
+  /** true när POST svarade 501/404 — dialogen visar diskret info-rad istället. */
+  const [styrelseSaknas, setStyrelseSaknas] = React.useState(false);
+  /** Pekare in i mötet för poll-loopen (antalet mottagna händelser + beslut). */
+  const styrelseRef = React.useRef<{ id: string; antal: number; beslut: boolean }>({ id: "", antal: 0, beslut: false });
+
+  /** A3c: tjänste-paneler — varje sektion dold om endpointen svarar 501/saknas. */
+  const [tjanster, setTjanster] = React.useState<Record<TjansteNamn, TjansteTillstand>>({
+    bakgrund: { finns: false, oppen: false, laddar: false, rader: [] },
+    webblasare: { finns: false, oppen: false, laddar: false, rader: [] },
+    automation: { finns: false, oppen: false, laddar: false, rader: [] },
+  });
+  const tjansterRef = React.useRef(tjanster);
+  const [avbryterJobb, setAvbryterJobb] = React.useState<string | null>(null);
+
+  /** A3d: autonomi-signal — mål-motorn arbetar även när fliken vilat. */
+  const [autonomiAktiv, setAutonomiAktiv] = React.useState(false);
+  const autonomiForutRef = React.useRef<boolean | null>(null);
 
   // ── Dialoger + läge/tankestyrka (våg 83 B2) ────────────────────────────────
   const [permission, setPermission] = React.useState<PermissionDialog | null>(null);
@@ -4047,33 +4588,46 @@ export function StudioChat({ hem }: { hem: () => void }) {
   );
 
   // ── Uppladdning (våg 81): multipart + drag/paste/mapp ──────────────────────
-  const laddaUpp = React.useCallback(async (filer: File[], relativa?: string[]) => {
-    if (filer.length === 0) return;
-    setLaddarUpp(true);
-    try {
-      const form = new FormData();
-      for (const fil of filer) form.append("fil", fil);
-      if (relativa) for (const sok of relativa) form.append("sokvag", sok);
-      const res = await fetch("/api/studio/uppladdning", {
-        method: "POST",
-        headers: adminHeaders(),
-        body: form,
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        sokvagar?: Uppladdning[];
-        fel?: string;
-      };
-      if (res.ok && data.sokvagar) {
-        setUppladdningar((gamla) => [...data.sokvagar!, ...gamla].slice(0, 50));
-      } else {
-        setStatusText(data.fel || "Uppladdningen misslyckades.");
-      }
-    } catch {
-      setStatusText("Nätverksfel under uppladdningen.");
-    } finally {
-      setLaddarUpp(false);
-    }
+
+  /** VÅG 91 A3a: bildfiler ur ett uppladdningssvar → valda bilagor (tak 8). */
+  const valjBilderUrUpload = React.useCallback((sokvagar: Uppladdning[]) => {
+    const bilder = sokvagar.filter((u) => u.typ === "bild").map((u) => u.sokvag);
+    if (bilder.length === 0) return;
+    setValdaBilder((gamla) => [...gamla, ...bilder.filter((b) => !gamla.includes(b))].slice(0, 8));
   }, []);
+
+  const laddaUpp = React.useCallback(
+    async (filer: File[], relativa?: string[]) => {
+      if (filer.length === 0) return;
+      setLaddarUpp(true);
+      try {
+        const form = new FormData();
+        for (const fil of filer) form.append("fil", fil);
+        if (relativa) for (const sok of relativa) form.append("sokvag", sok);
+        const res = await fetch("/api/studio/uppladdning", {
+          method: "POST",
+          headers: adminHeaders(),
+          body: form,
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          sokvagar?: Uppladdning[];
+          fel?: string;
+        };
+        if (res.ok && data.sokvagar) {
+          setUppladdningar((gamla) => [...data.sokvagar!, ...gamla].slice(0, 50));
+          // VÅG 91 A3a: enstaka bildfiler (ej mapp-uppladdning) blir bilagor.
+          if (!relativa) valjBilderUrUpload(data.sokvagar);
+        } else {
+          setStatusText(data.fel || "Uppladdningen misslyckades.");
+        }
+      } catch {
+        setStatusText("Nätverksfel under uppladdningen.");
+      } finally {
+        setLaddarUpp(false);
+      }
+    },
+    [valjBilderUrUpload],
+  );
 
   const påPaste = React.useCallback(
     async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
@@ -4095,14 +4649,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
       })();
       if (res.sokvagar?.length) {
         setUppladdningar((gamla) => [...res.sokvagar!, ...gamla].slice(0, 50));
-        const sista = res.sokvagar[res.sokvagar.length - 1];
-        setPrompt((p) => `${p}${p && !p.endsWith(" ") ? " " : ""}Titta på bilden ${sista.sokvag} — `);
+        // VÅG 91 A3a: inklistrade bilder blir bilagor — prompten slipper sökvägen.
+        valjBilderUrUpload(res.sokvagar);
         ytaRef.current?.focus();
       } else {
         setStatusText(res.fel || "Uppladdningen misslyckades.");
       }
     },
-    [],
+    [valjBilderUrUpload],
   );
 
   // ── Skrivfältets minne (våg 86 G1/G2) ──────────────────────────────────────
@@ -4146,6 +4700,213 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [promptHistorik]);
 
+  // ── VÅG 91 A3b: STYRELSEN 🏛 — konkalla, polla mötet, visa beslutskort ──────
+
+  /** Starta mötet: POST /api/studio/styrelse {fraga} → {id} → mötesvy. */
+  const startaStyrelse = React.useCallback(
+    async (fragatext?: string) => {
+      const fraga = (fragatext ?? styrelseFraga).trim();
+      if (!fraga || styrelseStartar) return;
+      setStyrelseStartar(true);
+      setStyrelseSaknas(false);
+      try {
+        const res = await fetch("/api/studio/styrelse", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ fraga }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { id?: string; fel?: string };
+        if (res.ok && data.id) {
+          styrelseRef.current = { id: data.id, antal: 0, beslut: false };
+          setStyrelseMote({ id: data.id, fraga, händelser: [], beslut: null });
+          visaToast("🏛 Styrelsen är samlad — fem roller diskuterar nu.");
+        } else if (res.status === 501 || res.status === 404) {
+          // A2:s motor är ej igång ännu — diskret info-rad, ingen mötesvy.
+          setStyrelseSaknas(true);
+        } else {
+          visaToast(data.fel || `Styrelsen kunde ej konkallas (${res.status}).`, "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — styrelsen kunde ej konkallas.", "fel");
+      } finally {
+        setStyrelseStartar(false);
+      }
+    },
+    [styrelseFraga, styrelseStartar, visaToast],
+  );
+
+  /** Öppna styrelse-dialogen — med fråga: konkallas mötet direkt (knapp + /styrelsen). */
+  const oppnaStyrelseDialog = React.useCallback(
+    (fraga?: string) => {
+      const text = fraga?.trim();
+      if (text) setStyrelseFraga(text);
+      setStyrelseOppen(true);
+      if (text) void startaStyrelse(text);
+    },
+    [startaStyrelse],
+  );
+
+  const stangStyrelse = React.useCallback(() => {
+    setStyrelseOppen(false);
+  }, []);
+
+  /** Tillbaka till fråge-fältet (mötet glöms — nytt id vid nästa konkall). */
+  const nyStyrelseFraga = React.useCallback(() => {
+    styrelseRef.current = { id: "", antal: 0, beslut: false };
+    setStyrelseMote(null);
+    setStyrelseFraga("");
+  }, []);
+
+  /** Polla mötet: GET /api/studio/styrelse?id=&senast= → händelser + beslut. */
+  const lasStyrelseStatus = React.useCallback(
+    async (id: string) => {
+      try {
+        const res = await fetch(
+          `/api/studio/styrelse?id=${encodeURIComponent(id)}&senast=${styrelseRef.current.antal}`,
+          { headers: adminHeaders() },
+        );
+        if (!res.ok) return;
+        const data: unknown = await res.json().catch(() => null);
+        if (!data || typeof data !== "object") return;
+        const pekare = styrelseRef.current;
+        if (pekare.id !== id) return;
+        const tolkat = tolkaStyrelseSvar(data);
+        setStyrelseMote((m) => {
+          if (!m || m.id !== id) return m;
+          return {
+            ...m,
+            händelser: slagIhopHandelser(m.händelser, tolkat.händelser),
+            beslut: tolkat.beslut ?? m.beslut,
+          };
+        });
+        pekare.antal += tolkat.händelser.length;
+        if (tolkat.beslut && !pekare.beslut) {
+          pekare.beslut = true;
+          visaToast("🏛 Styrelsen har beslutat — beslutskortet är klart.");
+        }
+      } catch {
+        // tyst — nästa poll (3 s) försöker igen
+      }
+    },
+    [visaToast],
+  );
+
+  /** Mötes-poll: var 3:e s tills beslutet landat (mötet lever även om dialogen stängs). */
+  React.useEffect(() => {
+    if (!styrelseMote || styrelseMote.beslut) return;
+    const id = styrelseMote.id;
+    const tid = window.setInterval(() => void lasStyrelseStatus(id), 3_000);
+    return () => window.clearInterval(tid);
+  }, [styrelseMote, lasStyrelseStatus]);
+
+  // ── VÅG 91 A3c: TJÄNSTE-PANELER — bakgrundsjobb/webbläsare/automation ───────
+
+  /** Läs en tjänste-endpoint — 501/404/nätverksfel ⇒ sektionen döljs (graceful). */
+  const lasTjanst = React.useCallback(async (namn: TjansteNamn) => {
+    setTjanster((t) => ({ ...t, [namn]: { ...t[namn], laddar: true } }));
+    try {
+      const res = await fetch(`/api/studio/tjanster/${namn}`, { headers: adminHeaders() });
+      if (res.ok) {
+        const data: unknown = await res.json().catch(() => ({}));
+        setTjanster((t) => ({ ...t, [namn]: { finns: true, laddar: false, rader: tjansteRaderUr(data) } }));
+      } else {
+        setTjanster((t) => ({ ...t, [namn]: { ...t[namn], finns: false, laddar: false, rader: [] } }));
+      }
+    } catch {
+      setTjanster((t) => ({ ...t, [namn]: { ...t[namn], finns: false, laddar: false, rader: [] } }));
+    }
+  }, []);
+
+  /** Fäll upp/ihop en sektion — uppfällning läser direkta färskt. */
+  const vaxlaTjanste = React.useCallback(
+    (namn: TjansteNamn, oppenEfter: boolean) => {
+      setTjanster((t) => ({ ...t, [namn]: { ...t[namn], oppen: oppenEfter } }));
+      if (oppenEfter) void lasTjanst(namn);
+    },
+    [lasTjanst],
+  );
+
+  /** Avbryt ett bakgrundsjobb: POST /api/studio/tjanster/bakgrund/avbryt {id}. */
+  const avbrytBakgrundsjobb = React.useCallback(
+    async (id: string) => {
+      setAvbryterJobb(id);
+      try {
+        const res = await fetch("/api/studio/tjanster/bakgrund/avbryt", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ id }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          ok?: boolean;
+          avbruten?: boolean;
+          meddelande?: string;
+          fel?: string;
+        };
+        if (res.ok && (data.ok === true || data.avbruten === true)) {
+          visaToast(data.meddelande || "Bakgrundsjobbet avbrutet.");
+        } else {
+          visaToast(data.meddelande || data.fel || "Jobbet kunde ej avbrytas.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — jobbet kunde ej avbrytas.", "fel");
+      } finally {
+        setAvbryterJobb(null);
+        void lasTjanst("bakgrund");
+      }
+    },
+    [visaToast, lasTjanst],
+  );
+
+  // Sond en gång vid mount — endpoint som svarar får sin sektion (annars dold).
+  React.useEffect(() => {
+    for (const n of TJANSTE_NAMN) void lasTjanst(n);
+  }, [lasTjanst]);
+
+  React.useEffect(() => {
+    tjansterRef.current = tjanster;
+  }, [tjanster]);
+
+  /** Poll 30 s — ENDAST öppna, existerande sektioner och bara när fliken syns. */
+  React.useEffect(() => {
+    const tid = window.setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      const t = tjansterRef.current;
+      for (const n of TJANSTE_NAMN) {
+        if (t[n].oppen && t[n].finns) void lasTjanst(n);
+      }
+    }, 30_000);
+    return () => window.clearInterval(tid);
+  }, [lasTjanst]);
+
+  // ── VÅG 91 A3d: AUTONOMI-SIGNAL — mål-motorn lever trots att fliken vilat ──
+
+  /** Läs GET /api/studio/mal/status {aktiv} — otillgänglig endpoint = tyst. */
+  const lasAutonomiStatus = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/mal/status", { headers: adminHeaders() });
+      if (!res.ok) return; // 404/501/etc ⇒ ingen badge, ingen toast (graceful)
+      const data = (await res.json().catch(() => ({}))) as { aktiv?: boolean };
+      const aktiv = data.aktiv === true;
+      const forut = autonomiForutRef.current;
+      autonomiForutRef.current = aktiv;
+      setAutonomiAktiv(aktiv);
+      if (forut === true && !aktiv) {
+        visaToast("Agenten avslutade jobbet medan du var borta.");
+      }
+    } catch {
+      // tyst
+    }
+  }, [visaToast]);
+
+  /** Poll 20 s när fliken syns + en gång vid mount. */
+  React.useEffect(() => {
+    void lasAutonomiStatus();
+    const tid = window.setInterval(() => {
+      if (document.visibilityState === "visible") void lasAutonomiStatus();
+    }, 20_000);
+    return () => window.clearInterval(tid);
+  }, [lasAutonomiStatus]);
+
   /** Kör ett snabbkommando (våg 84 A2) — delad väg för "/"-rader + paletten. */
   const korKommando = React.useCallback(
     async (kommando: string, argument = "") => {
@@ -4186,6 +4947,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
             "Färdigheter ⚡ är öppna — agentens skills, aktiva plugins och anslutna MCP-verktyg.",
           );
           return;
+        case "styrelsen": {
+          oppnaStyrelseDialog(argument);
+          pushAssistant(
+            argument
+              ? "🏛 Styrelsen konkallas — fem roller (Ordföranden, Teknik, Säkerhet, Juridik, Tillväxt) diskuterar ärendet och beslutar. Mötesvyn öppnas."
+              : "🏛 Styrelse-dialogen är öppen — skriv ärendet och konkalla de fem rollerna (de tänds allt eftersom de rapporterar).",
+          );
+          return;
+        }
         case "sparad": {
           const sparade = argument ? sparaPrompt(argument) : false;
           oppnaPrompter();
@@ -4223,19 +4993,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, sparaPrompt, oppnaPrompter, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, sparaPrompt, oppnaPrompter, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — PER TABB (våg 84 B) ──────────────────────────
   const skickaPrompt = React.useCallback(
-    async (tabbId: string, text: string) => {
+    async (tabbId: string, text: string, bilder?: string[]) => {
       const tabb = tabbarRef.current.tabbar.find((t) => t.id === tabbId);
       if (!tabb || tabb.strömmar) return;
-      const kropp: { prompt: string; sessionId?: string; nyckel?: string } = { prompt: text };
+      const kropp: { prompt: string; sessionId?: string; nyckel?: string; bilder?: string[] } = { prompt: text };
       if (!tabb.huvud) {
         if (tabb.sessionId) kropp.sessionId = tabb.sessionId;
         else kropp.nyckel = tabb.id;
       }
+      // VÅG 91 A3a: bildbilagor följer med prompten (kontrakt A1d — bilder?: string[]).
+      if (bilder && bilder.length > 0) kropp.bilder = bilder;
       if (tabb.sessionId) sparaSenasteSessionId(tabb.sessionId);
       let streamSessionId: string | null = tabb.sessionId;
 
@@ -4249,7 +5021,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
         titel: t.huvud ? t.titel : kortNamn(text),
         meddelanden: [
           ...t.meddelanden,
-          { id: nyttId(), roll: "user" as const, text },
+          {
+            id: nyttId(),
+            roll: "user" as const,
+            text,
+            ...(bilder && bilder.length > 0 ? { bilder } : {}),
+          },
           { id: agentId, roll: "assistant" as const, text: "", strömmande: true, verktygKort: [] },
         ],
       }));
@@ -4288,6 +5065,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         if (!res.ok || !res.body) {
           const data = (await res.json().catch(() => ({}))) as { fel?: string };
+          // VÅG 91 A3a: följde bilderna inte med (transporten stödjer ej bilden
+          // ännu) — säg det tydligt via toast; prompten redan visad med fel i flödet.
+          if (bilder && bilder.length > 0) {
+            visaToast(`Bilden följde inte med: ${data.fel || `bryggan svarade ${res.status}.`}`, "fel");
+          }
           throw new Error(data.fel || `Bryggan svarade ${res.status}.`);
         }
 
@@ -4529,8 +5311,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
     setPrompt("");
     pushaHistorik(text);
-    await skickaPrompt(aktivTabbIdRef.current, text);
-  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik]);
+    // VÅG 91 A3a: bildbilagorna följer med prompten och rensas ur fältet.
+    const bilder = valdaBilder;
+    if (bilder.length > 0) setValdaBilder([]);
+    await skickaPrompt(aktivTabbIdRef.current, text, bilder);
+  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -4775,6 +5560,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setVisaNotiser(false);
         setInstallningarOppen(false);
         setMenyOppen(false);
+        setStyrelseOppen(false); // VÅG 91 A3b: styrelse-dialogen stängs (mötet lever kvar)
         setMobilSidebar(false); // VÅG 90: mobil-drawers stängs
         setMobilPanel(false);
         return;
@@ -5085,12 +5871,31 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {aktivTabb?.status || statusText}
             </p>
           </div>
+          {/* VÅG 91 A3d: autonomi-signal — mål-motorn arbetar i bakgrunden. */}
+          {autonomiAktiv && (
+            <span
+              role="status"
+              title="Mål-motorn kör — agenten arbetar vidare även om du lämnar fliken"
+              className="mr-1 hidden shrink-0 animate-pulse items-center gap-1 rounded-full border border-[#D29922]/50 bg-[#D29922]/15 px-2 py-0.5 text-[10px] font-semibold text-[#D29922] sm:flex"
+            >
+              ⏱ Arbetar i bakgrunden
+            </span>
+          )}
           <span
             className={cn("mr-1 h-2 w-2 shrink-0 animate-pulse rounded-full md:hidden", prickFärg)}
             role="status"
             aria-label={`${prickText}: ${statusText}`}
             title={`${prickText} — ${statusText}`}
           />
+          {/* VÅG 91 A3b: styrelsen 🏛 — konkalla de fem rollerna. */}
+          <button
+            onClick={() => oppnaStyrelseDialog()}
+            title="Styrelsen 🏛 — konkalla AI-styrelsen (5 roller diskuterar och beslutar)"
+            aria-label="Styrelsen"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+          >
+            <Landmark className="h-4 w-4" />
+          </button>
           <button
             onClick={() => setSokOppen(true)}
             title="Sök i chatten (highlight + pilnavigering)"
@@ -5328,6 +6133,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             {/* Meddelandena — divide-y = tunn separator mellan blocken. */}
             <div className="divide-y divide-[#21262D]">
               {meddelanden.map((m) => {
+                // VÅG 91 A3a: bifogade bilder + sökvägar i texten → thumbnails.
+                const userBilder = [...(m.bilder ?? []), ...bildRefsUrText(m.text)].filter(
+                  (b, i, a) => a.indexOf(b) === i,
+                );
                 return (
                   <React.Fragment key={m.id}>
                     {m.roll === "user" ? (
@@ -5350,16 +6159,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
                             : m.text}
                         </p>
-                        {/* Uppladdade bilder som refereras i texten → miniatyrer. */}
-                        {bildRefsUrText(m.text).length > 0 && (
+                        {/* Bifogade + textrefererade bilder → miniatyrer (64px). */}
+                        {userBilder.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1.5">
-                            {bildRefsUrText(m.text).map((sokvag) => (
+                            {userBilder.map((sokvag) => (
                               <img
                                 key={sokvag}
                                 src={bildUrl(sokvag)}
                                 alt={sokvag.split("/").pop() ?? sokvag}
                                 loading="lazy"
-                                className="h-24 w-24 cursor-pointer rounded-md border border-[#30363D] object-cover transition-opacity hover:opacity-90"
+                                className="h-16 w-16 cursor-pointer rounded-md border border-[#30363D] object-cover transition-opacity hover:opacity-90"
                                 onClick={() => void visaFil(sokvag)}
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
@@ -5439,6 +6248,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             aria-hidden
                             className="studio-cursor ml-0.5 inline-block h-4 w-[9px] rounded-[1.5px] bg-[#E6EDF3] align-text-bottom"
                           />
+                        )}
+                        {/* VÅG 91 A3a: agentens bildreferenser → monospace-chips. */}
+                        {bildRefsUrText(m.text).length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-1.5">
+                            {bildRefsUrText(m.text).map((sokvag) => (
+                              <span
+                                key={sokvag}
+                                title={sokvag}
+                                className="flex max-w-[220px] items-center gap-1 rounded-md border border-[#30363D] bg-[#0D1117] px-1.5 py-0.5 font-mono text-[10px] text-[#8B949E]"
+                              >
+                                <FileImage className="h-3 w-3 shrink-0" aria-hidden />
+                                <span className="min-w-0 truncate">
+                                  {sokvag.split("/").slice(2).join("/") || sokvag}
+                                </span>
+                              </span>
+                            ))}
+                          </div>
                         )}
                         {/* Diff-inline: filer + gröna/röda badges → kodvy. */}
                         {m.ändringar && m.ändringar.length > 0 && (
@@ -5718,6 +6544,38 @@ export function StudioChat({ hem }: { hem: () => void }) {
             {draÖver && (
               <div className="mb-2 rounded-md border-2 border-dashed border-[#58A6FF]/60 bg-[#58A6FF]/5 px-3 py-2 text-center text-xs text-[#58A6FF]">
                 Släpp filerna här — de hamnar i uploads/ och agenten kan läsa dem
+              </div>
+            )}
+            {/* VÅG 91 A3a: valda bilder — 64px thumbnails med X, bifogas nästa prompt. */}
+            {valdaBilder.length > 0 && (
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                {valdaBilder.map((sokvag) => (
+                  <span key={sokvag} className="relative shrink-0">
+                    <img
+                      src={bildUrl(sokvag)}
+                      alt={sokvag.split("/").pop() ?? sokvag}
+                      loading="lazy"
+                      className="h-16 w-16 cursor-pointer rounded-md border border-[#30363D] object-cover transition-opacity hover:opacity-90"
+                      onClick={() => void visaFil(sokvag)}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.opacity = "0.25";
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setValdaBilder((v) => v.filter((b) => b !== sokvag))}
+                      title={`Ta bort ${sokvag.split("/").pop() ?? "bilden"} ur bilagorna`}
+                      aria-label="Ta bort bilden"
+                      className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[#30363D] bg-[#0D1117] text-[#8B949E] transition-colors hover:border-[#DA3633] hover:text-[#F85149]"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </span>
+                ))}
+                <p className="min-w-0 text-[10px] leading-tight text-[#484F58]">
+                  {valdaBilder.length} {valdaBilder.length === 1 ? "bild" : "bilder"} bifogas nästa prompt
+                  <span className="mt-0.5 block">agenten ser dem direkt — ingen sökväg behövs i texten</span>
+                </p>
               </div>
             )}
             <div className="relative">
@@ -6232,6 +7090,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
             )}
           </div>
         </section>
+
+        {/* VÅG 91 A3c: TJÄNSTE-PANELER — kollapsbara sektioner under TERMINAL
+            (BAKGRUNDSJOBB · WEBBLÄSARE · AUTOMATION; dolda om endpoint 501). */}
+        <TjansteSektioner
+          tjanster={tjanster}
+          onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
+          onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
+          avbryterId={avbryterJobb}
+        />
       </aside>
 
       {/* ══ MOBIL: höger panelen som drawer (PanelRight-knappen i headern) ══ */}
@@ -6434,6 +7301,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                 </div>
               </section>
+              {/* VÅG 91 A3c: tjänste-paneler — samma sektioner som desktop-panelen. */}
+              <TjansteSektioner
+                tjanster={tjanster}
+                onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
+                onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
+                avbryterId={avbryterJobb}
+              />
             </div>
           </aside>
         </>
@@ -7381,6 +8255,111 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 Starta mål-läge
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* STYRELSEN 🏛 (VÅG 91 A3b) — fråga-fält → mötesvy → beslutskort.
+          Mötet pollas var 3:e s och lever även om dialogen stängs. */}
+      {styrelseOppen && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-3"
+          onClick={stangStyrelse}
+        >
+          <div
+            role="dialog"
+            aria-label="AI-styrelsen"
+            className="flex max-h-[88dvh] w-full max-w-2xl flex-col overflow-hidden rounded-md border border-[#30363D] bg-[#0D1117] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2 border-b border-[#30363D] px-4 py-3">
+              <Landmark className="h-5 w-5 shrink-0 text-[#3FB950]" />
+              <div className="min-w-0 flex-1">
+                <h2 className="text-base font-semibold text-[#E6EDF3]">Styrelsen 🏛</h2>
+                <p className="truncate text-[11px] text-[#8B949E]">
+                  fem roller diskuterar och beslutar — varje ärende tas på största allvar
+                </p>
+              </div>
+              <button
+                onClick={stangStyrelse}
+                title="Stäng (Esc)"
+                aria-label="Stäng styrelsen"
+                className="shrink-0 rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {styrelseSaknas ? (
+              /* A2:s motor saknas (501/404) — diskret info-rad, mötesvyn dold. */
+              <div className="px-4 py-4">
+                <p className="flex items-start gap-2 text-xs leading-relaxed text-[#484F58]">
+                  <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  Styrelsemotorn är inte aktiverad på servern ännu — mötesvyn dyker upp här
+                  så snart rutten <span className="mx-1 font-mono">/api/studio/styrelse</span> svarar.
+                </p>
+              </div>
+            ) : styrelseMote ? (
+              <StyrelseMoteVy mote={styrelseMote} onNyFraga={nyStyrelseFraga} />
+            ) : (
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
+                <label
+                  htmlFor="styrelse-fraga"
+                  className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wider text-[#8B949E]"
+                >
+                  Ärende till styrelsen
+                </label>
+                <textarea
+                  id="styrelse-fraga"
+                  value={styrelseFraga}
+                  onChange={(e) => setStyrelseFraga(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+                      e.preventDefault();
+                      void startaStyrelse();
+                    }
+                  }}
+                  rows={4}
+                  maxLength={800}
+                  autoFocus
+                  placeholder="Vad ska styrelsen besluta om? T.ex. &quot;Ska vi bygga om prenumerationsflödet till årlig debitering?&quot;"
+                  className="w-full resize-none rounded-md border border-[#30363D] bg-[#161B22] px-3 py-2.5 text-sm leading-relaxed text-[#E6EDF3] outline-none placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                />
+                <p className="mt-1.5 text-right font-mono text-[10px] tabular-nums text-[#484F58]">
+                  {styrelseFraga.length}/800
+                </p>
+                <p className="mt-2 text-[10px] leading-relaxed text-[#8B949E]">
+                  Ordföranden, Teknik, Säkerhet, Juridik och Tillväxt konkallas och diskuterar i
+                  parallella vågor. Beslut tillämpas OMEDELBART av agentpipelinen — utom
+                  existentiella åtgärder (domänflytt, prissättning, betalningsflöden, extern
+                  publicering, juridik/GDPR, radering, API-nycklar) som får badge
+                  <span className="mx-1 rounded-full bg-[#D29922] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#0D1117]">
+                    Väntar kund
+                  </span>
+                  och väntar på dig.
+                </p>
+              </div>
+            )}
+
+            {!styrelseMote && !styrelseSaknas && (
+              <div className="flex items-center justify-end gap-2 border-t border-[#30363D] px-4 py-3">
+                <button
+                  onClick={stangStyrelse}
+                  className="rounded-md px-4 py-2 text-xs font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                >
+                  Avbryt
+                </button>
+                <button
+                  onClick={() => void startaStyrelse()}
+                  disabled={!styrelseFraga.trim() || styrelseStartar}
+                  title="Konkalla styrelsen — fem roller diskuterar och beslutar (Ctrl+Enter)"
+                  className="flex items-center gap-1.5 rounded-md bg-[#238636] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
+                >
+                  {styrelseStartar ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Landmark className="h-3.5 w-3.5" />}
+                  Konkalla styrelsen
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

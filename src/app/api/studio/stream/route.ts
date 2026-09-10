@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
 import {
+  byggPromptMedBilder,
   hamtaSessionTransport,
   hamtaStudioTransport,
   lasAllaInteraktioner,
@@ -54,12 +55,13 @@ export const dynamic = "force-dynamic";
  *        oförändrat våg 81/82/83-beteende inkl. persistens-resume).
  *   GET ?sessionId=X           → sideload för en tabb: den sessionens
  *        historik + kontext (per-session-transport).
- *   GET (utan param)          → default-sessionens sideload + ALLTID
+ *   GET (utan param)          → default-sessionens sidoload + ALLTID
  *        "sessionskarta" (sessionId → {senasteAktivitet, historik,
  *        aktiv}) — tabbar kan visa senaste aktivitet och en annan klient
- *        kan se pågående arbete. Klientens abort (fetch AbortController)
- *        eldar req.signal → transportens session/stop — "stäng tabb med
- *        pågående arbete" blir ett ÄRLIGT avbrott, aldrig överlevande.
+ *        kan se pågående arbete. VÅG 91 A1c: klientens abort (fetch
+ *        AbortController) stänger ENDAST SSE:n — arbetet i barnprocessen
+ *        lever kvar och svaret sparas i kartan/historiken ("stäng tabb
+ *        mitt i jobbet" = jobbet fortsätter, HELA svaret vid återkomst).
  *
  * ARKITEKTUR (protokollet FIRST-HAND bevisat 2026-09-09, se
  * tool-results/v81-appserver.md): Next körs på Contabo (pm2 'ak1a') där
@@ -81,6 +83,19 @@ export const dynamic = "force-dynamic";
  * sessionen vid mount (resume via GET ?sessionId=) så användaren SER
  * vad som hände under frånvaron utan att klicka något; en reconnect-poll
  * (30 s, pausad när fliken är dold) håller vyn sann när SSE:t tappats.
+ *
+ * VÅG 91 A1 — SANN BAKGRUNDSAUTONOMI (kundklagomål "den dör när jag
+ * hoppar till nästa sida"): POST-avtalen utökas/ändras —
+ *   · POST {prompt, sessionId?, nyckel?, bilder?} — bilder = sökvägar I
+ *     arbetsytan (uploads/…); transport.skickaMedBild utökar prompten med
+ *     referenser (binärsond: session/send:s attachments är opak genom-
+ *     strömning — v4/attachment-flödet är uppgraderingsväg, se transporten).
+ *   · Klient-abort (fliken stängs/nätet tappas) stoppar ENDAST nätverks-
+ *     strömmen — req.signal förs ALDRIG till transport.skicka, så barn-
+ *     processens session/send-arbete fortsätter HELT autonomt server-side.
+ *     Svaret sparas i sessionskartan (markeraSessionSlut körs i finally
+ *     när rundan klart) och återges HELT vid GET (historik + återkoppling).
+ *     Mål-status för återvändare: GET /api/studio/mal/status (A1b).
  *
  * SKYDD: requireAdmin på BÅDA metoderna (sessionscookie ak1a_admin eller
  * x-admin-password; dev-fallback endast i development; rate-limit 10 fel/min
@@ -200,11 +215,23 @@ export async function POST(req: NextRequest) {
   let prompt = "";
   let sessionId = "";
   let nyckel = "";
+  let bilder: string[] = [];
   try {
-    const kropp = (await req.json()) as { prompt?: unknown; sessionId?: unknown; nyckel?: unknown };
+    const kropp = (await req.json()) as {
+      prompt?: unknown;
+      sessionId?: unknown;
+      nyckel?: unknown;
+      bilder?: unknown;
+    };
     if (typeof kropp.prompt === "string") prompt = kropp.prompt;
     if (typeof kropp.sessionId === "string") sessionId = kropp.sessionId.trim();
     if (typeof kropp.nyckel === "string") nyckel = kropp.nyckel.trim();
+    // VÅG 91 A1d: bilder = sökvägar I arbetsytan (uploads/…) — transportens
+    // skickaMedBild utökar prompten med referenser (barnets Read presenterar
+    // dem visuellt; se studio-transport.ts binärsond för v4-uppgraderingsvägen).
+    if (Array.isArray(kropp.bilder)) {
+      bilder = kropp.bilder.filter((b): b is string => typeof b === "string" && b.trim().length > 0);
+    }
   } catch {
     return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
   }
@@ -212,6 +239,9 @@ export async function POST(req: NextRequest) {
   if (!prompt) return jsonSvar({ fel: "Prompten är tom." }, 400);
   if (prompt.length > MAX_PROMPT_TEEKEN) {
     return jsonSvar({ fel: `Prompten är för lång (max ${MAX_PROMPT_TEEKEN} tecken).` }, 400);
+  }
+  if (bilder.length > 8) {
+    return jsonSvar({ fel: "Max 8 bilder per prompt." }, 400);
   }
 
   // VÅG 84 B: sessionsval — per-session-transport (resume/ny tabb) eller
@@ -260,10 +290,13 @@ export async function POST(req: NextRequest) {
       // historik + aktiv=false efter klart/fel/abort. Lyssnar-wrapper
       // fångar klart-svaret (kartans assistant-post) på vägen ut.
       let svaret = "";
-      markeraSessionStart(sessionsId, prompt);
-      // VÅG 90 K1: abort-medveten lyssnar-wrapper — efter klient-frånkoppling
-      // (req.signal abort) SPARAS svaret för sessionskartan men SKICKAS inget
-      // (lyssnaren är i praktiken avregistrerad), och polling nedan pausas.
+      // Kartans user-post speglar den UTÖKADE prompten när bilder följde med
+      // (samma sanning som barnet fick — byggPromptMedBilder är ren + delad).
+      markeraSessionStart(sessionsId, bilder.length > 0 ? byggPromptMedBilder(prompt, bilder).prompt : prompt);
+      // VÅG 90 K1 + VÅG 91 A1c: abort-medveten lyssnar-wrapper — efter
+      // klient-frånkoppling (req.signal abort) SPARAS svaret för sessions-
+      // kartan men SKICKAS inget (lyssnaren är i praktiken avregistrerad),
+      // och polling nedan pausas.
       const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
         if (req.signal.aborted) return;
@@ -272,7 +305,20 @@ export async function POST(req: NextRequest) {
 
       try {
         skicka({ typ: "hej", transport: transport.namn, sessionId: sessionsId || null });
-        await transport.skicka(prompt, skickaMedVakt, req.signal);
+        // VÅG 91 A1c — SANN BAKGRUNDSAUTONOMI: klientens abort-signal förs
+        // ALDRIG ned till transport.skicka. Ett request-abort (kunden lämnar
+        // /studio, stänger fliken, tappar nätet) skall ENDAST stänga
+        // nätverksströmningen — barnprocessens session/send-arbete fortsätter
+        // HELT autonomt server-side och svaret samlas i historiken
+        // (session/messages + sessionskartan) så en återvändande klient får
+        // HELA svaret via GET. (Tidigare beteende: abort ⇒ session/stop =
+        // arbetet dog — kundens "den dör när jag hoppar till nästa sida".)
+        // Transportens EV. signal förblir dess interna sak (10-min-taket).
+        if (bilder.length > 0) {
+          await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
+        } else {
+          await transport.skicka(prompt, skickaMedVakt);
+        }
         // VÅG 90 K1: polling BARA för en levande klient — efter abort ställer
         // servern inga fler protokollsfrågor (kontext/diff) i onödan.
         if (req.signal.aborted) return;

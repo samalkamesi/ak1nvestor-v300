@@ -252,6 +252,47 @@ import path from "node:path";
  *     barn via /proc, sessioner i kartan, senaste omstart + senaste fel
  *     (öppen route men inga hemligheter, inga session-id:n).
  *
+ * VÅG 91 A1 (SANN BAKGRUNDSAUTONOMI — kundklagomål "den dör när jag hoppar
+ * till nästa sida"; STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 91" block A1):
+ *   · A1a MÅL-MOTORN ÄR SERVER-SIDE: mål-loopens state (aktivt mål,
+ *     iteration, pågående turn, senaste event) lever i TRANSPORTEN —
+ *     mal/stream-routen är en ren VY som prenumererar. Klient-frånkoppling
+ *     pausar ENDAST nätverksströmningen; protokollet matar mål-turner i
+ *     barnprocessen oavsett lyssnare (v83 B3-bevis) och MAL_BUFFERT + kör-
+ *     kort håller historiken hel. Sedan våg 91 Märks iterationerna i
+ *     SESSIONSKARTAN (markeraMalIterationStart/Slut) av TRANSPORTEN — inte
+ *     av SSE-routen — så autonomt arbete syns i historiken ÄVEN när ingen
+ *     klient är ansluten. Idle-städningen (VÅG 90 K1) rörs ALDRIG ett
+ *     aktivt mål: arIdle() kräver !malAktiv (verifierat).
+ *   · A1c ARBETE ÖVERLEVER KLIENT-ABORT: API-routen skicka-prompten till
+ *     transport.skicka UTAN klientens abort-signal — klient-abort stoppar
+ *     bara nätverksströmningen (SSE:t), ALDRIG session/send-arbetet i
+ *     barnprocessen. Svaret samlas i historiken (session/messages +
+ *     sessionskartan) och levereras HELT vid återanslutning (GET). En ev.
+ *     signal till skicka() förblir transportens interna sak (10-min-taket).
+ *   · A1b malStatus() utökas: {pagaendeTurn, senasteEvent, uppdaterad} —
+ *     GET /api/studio/mal/status ger återvändande flikar snabb catch-up.
+ *   · A1d skickaMedBild(prompt, bildSokvagar[]): BINÄRSOND 2026-09-09
+ *     (vendor/zcode.cjs, app 3.11.2): session/send-bär attachments?:
+ *     Record<string,unknown>[] — en OPAK genomströmning; RIKTIGT binärinnehåll
+ *     kräver v4-gateway:ns attachment-flöde (v4/attachment/begin
+ *     {connectionId,uploadId,sessionId,fileName,mime,totalBytes,totalChunks,
+ *     checksum:"sha256:<64hex>"} → chunk {uploadId,chunkIndex,dataBase64} →
+ *     commit {uploadId} → ref) — ej LIVE-bevisat. KVD-VALET är därför våg-
+ *     91-kontraktets fallback: bilderna ligger REDAN i arbetsytan (uppladdade
+ *     till uploads/…) och prompten utökas med sökvägsreferenser (barnets
+ *     Read presenterar bilder visuellt) — byggPromptMedBilder(). V4-flödet
+ *     är dokumenterad uppgraderingsväg när det sonderats LIVE.
+ *   · A1d TJÄNSTE-BRYGGOR (tunna transportmetoder → /api/studio/tjanster/*):
+ *     lasBakgrundsjobb (session/read projection.backgroundJobs +
+ *     subagenter-fallback), lasWebblasare/korWebblasare (interaction/
+ *     browserList|browserExecute — binärsond: kräver requestId+sessionId+
+ *     workspace+clientMode+sessionContext), lasAutomationer (automation/
+ *     list, lifecycleStatus-union active|completed|failed|paused) och
+ *     genereraText (workspace/generateText {workspace, modelRef, prompt,
+ *     querySource? — valfri sträng}). Okänd metod (-32601) ⇒
+ *     StudioMetodSaknasError (routen svarar ärlig 501 {saknas:true}).
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -614,6 +655,15 @@ export interface StudioMalStatus {
   iteration: number;
   /** Måltexten — null när inget mål är satt. */
   mal: string | null;
+  /**
+   * VÅG 91 A1b: true = en mål-turn är ÖPPEN just nu (turn.started sedd,
+   * turn.completed ej än) — GET /api/studio/mal/status "pagaendeTurn".
+   */
+  pagaendeTurn?: boolean;
+  /** VÅG 91 A1b: kort beskrivning av SENASTE mål-event (statuspollens rad). */
+  senasteEvent?: string;
+  /** VÅG 91 A1b: epoch ms när senaste mål-event sågs (statuspollens "uppdaterad"). */
+  uppdaterad?: number;
 }
 
 /** Status-badge för en bakgrundsagent (session/subagents running+ended). */
@@ -655,6 +705,78 @@ export interface StudioArbetsytaInfo {
   behorighet?: string;
   modellerTillgangliga?: number;
   kommandon?: number;
+}
+
+// ── VÅG 91 A1d: TJÄNSTE-BRYGGOR — bakgrundsjobb/webbläsare/automation ────────
+
+/**
+ * VÅG 91 A1d: ett bakgrundsjobb — session/read-projektionens backgroundJobs
+ * (Tkn-form, kartan §1: {taskId,toolName?,taskKind,status,description?,…})
+ * mappat defensivt; när projektionen tiger faller bryggan på session/
+ * subagents (barnSessionId som id). Panelen renderar id + status + beskrivning.
+ */
+export interface StudioBakgrundsjobb {
+  /** Protokollets taskId (eller childSessionId ur subagent-fallback). */
+  id: string;
+  /** "bash" | "subagent" | … (taskKind). */
+  typ?: string;
+  /** "running" | "completed" | "failed" | "cancelled" | … */
+  status: string;
+  /** description/command ur Tkn — panelens huvudrad. */
+  beskrivning?: string;
+  /** Verktygsnamn när protokollet bär det. */
+  verktyg?: string;
+}
+
+/** VÅG 91 A1d: en webbläsare ur interaction/browserList (binärsond PBe). */
+export interface StudioWebblasare {
+  id: string;
+  /** Protokollets generation (räknas upp per omstart — krävs i execute). */
+  generation: number;
+  /** Protokollets type (t.ex. engine-typ). */
+  typ?: string;
+  /** Visningsnamn. */
+  namn?: string;
+}
+
+/** VÅG 91 A1d: en automation ur automation/list ($je-form, kartan §2). */
+export interface StudioAutomation {
+  id: string;
+  titel: string;
+  /** cronExpr (eller intervall-form). */
+  cron?: string;
+  /** lifecycleStatus: active|completed|failed|paused (binär-union). */
+  status?: string;
+  /** nextRunAt (ISO-sträng som protokollet bär den). */
+  nastaKorning?: string;
+  /** enabled-flaggan. */
+  aktiverad?: boolean;
+  /** Automationsprompten (vad den kör). */
+  prompt?: string;
+}
+
+/**
+ * VÅG 91 A1d: ärlig "metoden finns ej" — protokollet avvisade med -32601
+ * (method not found). API-rutten översätter till 501 {saknas:true} så UI:t
+ * kan dölja panelen i stället för att visa ett fel.
+ */
+export class StudioMetodSaknasError extends Error {
+  /** Typad markör — rutten känner igen den utan import-gymnastik. */
+  readonly saknas = true as const;
+  constructor(metod: string) {
+    super(`Protokollmetoden "${metod}" stöds ej av denna agent-version (-32601).`);
+    this.name = "StudioMetodSaknasError";
+  }
+}
+
+/**
+ * VÅG 91 A1d: -32601-kännare — protokollfelet bär koden i meddelandetexten
+ * (transportens fel-form "… (kod -32601)"), och klientens egna artiga nej
+ * bär "stöds ej".
+ */
+function arMetodSaknas(fel: unknown): boolean {
+  const text = fel instanceof Error ? fel.message : String(fel);
+  return /-32601|method not found|stöds ej/i.test(text);
 }
 
 // ── VÅG 85 F2: skills/plugins/MCP (kartan §2 — panelens datakällor) ──────────
@@ -729,6 +851,21 @@ export interface StudioTransport {
    * som fel-event så UI:t kan visa det ärligt).
    */
   skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void>;
+  /**
+   * VÅG 91 A1d: skicka en prompt MED BILDER. Binärsond 2026-09-09:
+   * session/send:s attachments är en opak genomströmning (riktigt innehåll
+   * kräver det ej LIVE-bevisade v4/attachment-flödet) — därför är primär-
+   * vägen våg-91-kontraktets fallback: bilderna ligger REDAN i arbetsytan
+   * (uploads/…) och prompten utökas med sökvägsreferenser (byggPromptMedBilder)
+   * som barnets Read presenterar visuellt. Strömningen är OCH förblir
+   * skicka()-s.
+   */
+  skickaMedBild(
+    prompt: string,
+    bildSokvagar: string[],
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void>;
   // ── V82 STUDIO V2 (protokollvägar FIRST-HAND bevisade, se
   // tool-results/v82-protokoll.md) ────────────────────────────────────────
   /**
@@ -912,6 +1049,33 @@ export interface StudioTransport {
    * valet följer med till session/create + session/resume.
    */
   sattTankeNiva(niva: string): Promise<{ niva: string }>;
+  // ── VÅG 91 A1d: TJÄNSTE-BRYGGOR — "varenda tjänst i z code i studion" ─────
+  /**
+   * Bakgrundsjobb: session/read-projektionens backgroundJobs (primär) med
+   * subagenter-fallback — ALDRIG fel för en tom lista; -32601 ⇒
+   * StudioMetodSaknasError.
+   */
+  lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]>;
+  /**
+   * interaction/browserList (binärsond Okn: kräver requestId+sessionId+
+   * workspace+clientMode+sessionContext) → anslutna webbläsare. Metoden
+   * saknas i agent-versionen ⇒ StudioMetodSaknasError (routen: 501).
+   */
+  lasWebblasare(): Promise<StudioWebblasare[]>;
+  /**
+   * interaction/browserExecute {requestId, sessionId, browserId?,
+   * browserGeneration?, command, workspace…} — kör ett webbläsarkommando.
+   * Svaret är protokollets råa form (opak) — panelen renderar defensivt.
+   */
+  korWebblasare(kommando: { browserId?: string; browserGeneration?: number; kommando: string }): Promise<unknown>;
+  /** automation/list → schemalagda automations (lifecycleStatus-union). */
+  lasAutomationer(): Promise<StudioAutomation[]>;
+  /**
+   * workspace/generateText {workspace, modelRef, prompt, querySource} —
+   * headless textgenerering UTAN turn/session (kartan §2). modelRef hämtas
+   * ur den aktiva sessionens kontext.
+   */
+  genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -1568,6 +1732,93 @@ function arModellOtillganglig(meddelande: string): boolean {
   return meddelande.includes("ZCODE_RUNTIME_MODEL_UNAVAILABLE") || meddelande.includes("(kod -32031");
 }
 
+// ── VÅG 91 A1d: BILDER I PROMPTEN (kontraktets fallback-väg) ─────────────────
+
+/** Max bilder per prompt (UI:t kan tjuta mer — transporten håller taket). */
+const MAX_BILDER_PER_PROMPT = 8;
+/** Max tecken per bildsökväg (uploads/<datum>/<namn>-form är kort). */
+const MAX_BILDSOKVAG_TEEKEN = 500;
+
+/**
+ * VÅG 91 A1d — sanera + utöka prompten med bildreferenser (REN funktion,
+ * deterministiskt testbar). Bilderna förväntas ligga I ARBETSYTAN (uppladdade
+ * till uploads/… — /api/studio/uppladdning skriver dit); barnets Read
+ * presenterar bilder visuellt, därför räcker sökvägsreferenser i prompten.
+ * SÄKERHET: "..", absoluta sökvägar och backslash-trick avvisas (sökvägen
+ * går till barnets Read i SAMMA arbetsyta — ingen traversal), dubbletter
+ * slås samman, listan kapas vid MAX_BILDER_PER_PROMPT. Avvisade sökvägar
+ * returneras ärligt så routen kan berätta det.
+ */
+export function byggPromptMedBilder(
+  prompt: string,
+  bildSokvagar: string[],
+): { prompt: string; bilder: string[]; avvisade: string[] } {
+  const bilder: string[] = [];
+  const avvisade: string[] = [];
+  for (const rå of Array.isArray(bildSokvagar) ? bildSokvagar : []) {
+    if (typeof rå !== "string") continue;
+    const sokvag = rå.trim().replace(/\\/g, "/");
+    if (!sokvag || sokvag.length > MAX_BILDSOKVAG_TEEKEN) {
+      if (sokvag) avvisade.push(sokvag.slice(0, 80));
+      continue;
+    }
+    // Relativ arbetsyt-sökväg ENDAST: ingen "..", ingen enhetsbokstav/rot.
+    if (
+      sokvag.includes("..") ||
+      /^[a-zA-Z]:/.test(sokvag) ||
+      sokvag.startsWith("/") ||
+      /^\\\\/.test(rå.trim())
+    ) {
+      avvisade.push(sokvag.slice(0, 80));
+      continue;
+    }
+    if (!bilder.includes(sokvag)) bilder.push(sokvag);
+    if (bilder.length >= MAX_BILDER_PER_PROMPT) break;
+  }
+  if (bilder.length === 0) return { prompt, bilder: [], avvisade };
+  const rader = bilder.map((sokvag, i) => `${i + 1}. ${sokvag}`).join("\n");
+  const utokad =
+    `${prompt}\n\n[Bifogade bilder — ${bilder.length} st]\n${rader}\n` +
+    "Läs och presentera dessa bilder med Read-verktyget (Read visar bilder visuellt) innan du besvarar frågan.";
+  return { prompt: utokad, bilder, avvisade };
+}
+
+/**
+ * VÅG 91 A1b — kort svensk beskrivning av ett mål-event (REN funktion,
+ * delad av appserver- och mock-transport): statuspollens "senasteEvent"-rad.
+ * Aldrig längre än ~120 tecken — raden är en PIXEL, inte en rapport.
+ */
+export function beskrivMalEvent(event: StudioEvent): string {
+  switch (event.typ) {
+    case "mal_status":
+      return event.aktiv
+        ? `Mål aktivt (iteration ${event.iteration})`
+        : event.pausad
+          ? `Mål pausat (iteration ${event.iteration})`
+          : "Inget mål aktivt";
+    case "mal_iteration":
+      return event.fas === "start"
+        ? `Iteration ${event.iteration} startar`
+        : `Iteration ${event.iteration} klar${event.resultatTyp ? ` (${event.resultatTyp})` : ""}`;
+    case "mal_pausad":
+      return `Målet pausat vid iteration ${event.iteration}`;
+    case "delta":
+      return event.kanal === "tankar" ? "Agenten resonerar…" : "Agenten skriver svaret…";
+    case "verktyg_kort":
+      return `Verktyg ${event.namn ?? ""} (${event.steg})`.trim();
+    case "verktyg_input":
+      return "Agenten skriver verktygsargument…";
+    case "runda":
+      return event.fas === "start" ? "Turn startar" : "Turn slut";
+    case "status":
+      return truncat(event.text, 120);
+    case "fel":
+      return truncat(`Fel: ${event.meddelande}`, 120);
+    default:
+      return event.typ;
+  }
+}
+
 // ── V83 B1: truncering + filändringar ur session/messages ────────────────────
 
 /** Argument-/resultat-budgeter: SSE-raderna skall förblir små och snabba. */
@@ -1577,6 +1828,8 @@ const MAX_PROGRESS_TEEKEN = 240;
 const MAX_RADLANGD = 200;
 const MAX_RADER_PER_FIL = 400;
 const MAX_FILER = 12;
+/** VÅG 91 A1d: generateText-prompens tak (samma budget som API-routen). */
+const MAX_PROMPT_TEEKEN_TRANSPORT = 50_000;
 
 /** Ärlig trunkering med räkneverkonsruta. */
 function truncat(text: string, max: number): string {
@@ -1787,6 +2040,13 @@ class AppServerTransport implements StudioTransport {
    * (malTurnOppen=false) så räknaren förblir ärlig.
    */
   private malTurnOppen = false;
+  /**
+   * VÅG 91 A1b: senaste mål-eventets korta beskrivning + tidpunkt —
+   * GET /api/studio/mal/status rad (statuspollens "senasteEvent"/"uppdaterad").
+   * Skrivs av sändMalEvent (MOTORN) — lever ALLTID, även utan lyssnare.
+   */
+  private malSenasteEvent: string | null = null;
+  private malSenasteEventTid: number | null = null;
   /** Mål-loopens lyssnare (SSE-bryggan /api/studio/mal/stream). */
   private malLyssnare: StudioLyssnare | null = null;
   /**
@@ -2199,6 +2459,8 @@ class AppServerTransport implements StudioTransport {
     this.malIteration = 0;
     this.malSenasteText = "";
     this.malTurnOppen = false;
+    this.malSenasteEvent = null;
+    this.malSenasteEventTid = null;
     this.malBuffert.length = 0;
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     if (sid) {
@@ -2342,6 +2604,8 @@ class AppServerTransport implements StudioTransport {
     this.malIteration = 0;
     this.malSenasteText = "";
     this.malTurnOppen = false;
+    this.malSenasteEvent = null;
+    this.malSenasteEventTid = null;
     this.malBuffert.length = 0;
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     this.sid = null;
@@ -2817,6 +3081,8 @@ class AppServerTransport implements StudioTransport {
     this.malIteration = 0;
     this.malSenasteText = "";
     this.malTurnOppen = false;
+    this.malSenasteEvent = null;
+    this.malSenasteEventTid = null;
     this.malBuffert.length = 0;
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     return { mal: null, meddelande: "Målet rensat." };
@@ -2830,6 +3096,10 @@ class AppServerTransport implements StudioTransport {
       pausad: this.malPausad,
       iteration: this.malIteration,
       mal: this.malText,
+      // VÅG 91 A1b: motor-state för statuspollen — lever oavsett lyssnare.
+      pagaendeTurn: this.malTurnOppen,
+      senasteEvent: this.malSenasteEvent ?? undefined,
+      uppdaterad: this.malSenasteEventTid ?? undefined,
     };
   }
 
@@ -2956,9 +3226,12 @@ class AppServerTransport implements StudioTransport {
    * Mål-event ut: levereras till mål-lyssnaren OM en ström är öppen, och
    * buffras ALWAYS (rullande fönster) så en senare prenumereraMal kan
    * spola en påbörjad iteration HEL (ras-skyddet mellan mål-set och
-   * ström-öppning).
+   * ström-öppning). VÅG 91 A1b: senaste-event-rad + tidpunkt skrivs ALWAYS
+   * — MOTORN lever oavsett lyssnare (statuspollen läser den).
    */
   private sändMalEvent(event: StudioEvent): void {
+    this.malSenasteEvent = beskrivMalEvent(event);
+    this.malSenasteEventTid = Date.now();
     this.malBuffert.push(event);
     if (this.malBuffert.length > AppServerTransport.MAL_BUFFERT_TAK) {
       this.malBuffert.shift();
@@ -3840,6 +4113,10 @@ class AppServerTransport implements StudioTransport {
         this.malTurnOppen = true;
         this.malIteration += 1;
         this.malSenasteText = "";
+        // VÅG 91 A1a: MOTORN markerar iterationen i sessionskartan — inte
+        // SSE-routen — så autonomt arbete syns i historiken ÄVEN när ingen
+        // klient är ansluten (kartan debounce-skrivs till disk, H2).
+        markeraMalIterationStart(this.sid);
         this.sändMalEvent({ typ: "mal_iteration", fas: "start", iteration: this.malIteration });
         this.sändMalEvent({ typ: "runda", fas: "start" });
         this.sändMalEvent({
@@ -3917,6 +4194,9 @@ class AppServerTransport implements StudioTransport {
         // öppnar+färdigställer bubblan; svaret bär turn.completed.response).
         if (!this.malTurnOppen) {
           this.malIteration += 1;
+          // VÅG 91 A1a: den EFTERHANDS-syntetiserade starten markeras i
+          // kartan också (startedTurn-racet — se ovan).
+          markeraMalIterationStart(this.sid);
           this.sändMalEvent({ typ: "mal_iteration", fas: "start", iteration: this.malIteration });
         }
         this.malTurnOppen = false;
@@ -3928,14 +4208,19 @@ class AppServerTransport implements StudioTransport {
           verktygAntal: typeof payload?.toolCallCount === "number" ? payload.toolCallCount : undefined,
           tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
         });
+        const malSvar =
+          typeof payload?.response === "string" && payload.response
+            ? payload.response
+            : this.malSenasteText || "";
+        // VÅG 91 A1a: MOTORN sparar iterationens svar i kartan (assistant-
+        // post med 🎯-prefix) — historiken vid återkomst är komplett även
+        // om klienten lämnat sidan mitt i jobbet.
+        markeraMalIterationSlut(this.sid, this.malIteration, malSvar);
         this.sändMalEvent({
           typ: "mal_iteration",
           fas: "slut",
           iteration: this.malIteration,
-          svar:
-            typeof payload?.response === "string" && payload.response
-              ? payload.response
-              : this.malSenasteText || undefined,
+          svar: malSvar || undefined,
           resultatTyp: typeof payload?.resultType === "string" ? payload.resultType : undefined,
           verktygAntal: typeof payload?.toolCallCount === "number" ? payload.toolCallCount : undefined,
           tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
@@ -4316,6 +4601,218 @@ class AppServerTransport implements StudioTransport {
     });
   }
 
+  // ── VÅG 91 A1d: BILDER + TJÄNSTE-BRYGGOR ────────────────────────────────────
+
+  async skickaMedBild(
+    prompt: string,
+    bildSokvagar: string[],
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void> {
+    // Binärsond 2026-09-09 (se filhuvudet): session/send:s attachments är
+    // opak genomströmning — KVD-vägen är promptreferenser till bilder som
+    // REDAN ligger i arbetsytan (uploads/…); barnets Read presenterar dem.
+    const { prompt: utokad } = byggPromptMedBilder(prompt, bildSokvagar);
+    await this.skicka(utokad, lyssnare, signal);
+  }
+
+  async lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    // PRIMÄR: session/read-projektionens backgroundJobs (kartan §1 Tkn-form
+    // {taskId,toolName?,taskKind,status,description?,command?}) — mappas
+    // defensivt (fält varierar mellan versioner).
+    try {
+      const r = (await this.klient.protokollFraga("session/read", { sessionId: this.sid }, 30_000)) as
+        | (SessionReadResult & { projection?: { backgroundJobs?: unknown[] } })
+        | null;
+      const rader = r?.projection?.backgroundJobs;
+      if (Array.isArray(rader)) {
+        const ut: StudioBakgrundsjobb[] = [];
+        for (const rad of rader) {
+          if (!rad || typeof rad !== "object") continue;
+          const j = rad as {
+            taskId?: unknown;
+            taskKind?: unknown;
+            status?: unknown;
+            description?: unknown;
+            command?: unknown;
+            toolName?: unknown;
+          };
+          const id = typeof j.taskId === "string" && j.taskId ? j.taskId : "";
+          const status = typeof j.status === "string" && j.status ? j.status : "";
+          if (!id || !status) continue;
+          ut.push({
+            id,
+            typ: typeof j.taskKind === "string" ? j.taskKind : undefined,
+            status,
+            beskrivning:
+              typeof j.description === "string" && j.description
+                ? j.description
+                : typeof j.command === "string" && j.command
+                  ? truncat(j.command, 200)
+                  : undefined,
+            verktyg: typeof j.toolName === "string" && j.toolName ? j.toolName : undefined,
+          });
+        }
+        if (ut.length > 0) return ut;
+      }
+    } catch (fel) {
+      // FALLBACK nedan — subagenterna är också bakgrundsarbete.
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("session/read");
+    }
+    // FALLBACK: session/subagents (körande + avslutade barnagenter) —
+    // childSessionId som id (samma val som avbrytBakgrundsTask).
+    return (await this.lasSubagenter()).map((s) => ({
+      id: s.barnSessionId,
+      typ: s.typ,
+      status: s.status,
+      beskrivning: s.sammanfattning ?? s.titel,
+    }));
+  }
+
+  /**
+   * Binärsond-form (Okn): {requestId, sessionId, turnId?, workspaceKey,
+   * workspacePath, clientMode, sessionContext} — strict. requestId är vår
+   * egen (server-<n>-formen är för serverns egna requests; klienten äger
+   * sin id här).
+   */
+  private webblasareParams(): Record<string, unknown> {
+    return {
+      requestId: `ak1a-studio-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+      sessionId: this.sid,
+      workspaceKey: this.arbetskatalog,
+      workspacePath: this.arbetskatalog,
+      clientMode: "web-remote-replayable",
+      sessionContext: "live",
+    };
+  }
+
+  async lasWebblasare(): Promise<StudioWebblasare[]> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    let r: { browsers?: unknown[] } | null;
+    try {
+      r = (await this.klient.protokollFraga(
+        "interaction/browserList",
+        this.webblasareParams(),
+        30_000,
+      )) as { browsers?: unknown[] } | null;
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("interaction/browserList");
+      throw fel;
+    }
+    const lista = Array.isArray(r?.browsers) ? r!.browsers! : [];
+    const ut: StudioWebblasare[] = [];
+    for (const b of lista) {
+      const post = b as { id?: unknown; generation?: unknown; type?: unknown; name?: unknown } | null;
+      const id = typeof post?.id === "string" && post.id ? post.id : "";
+      if (!id) continue;
+      ut.push({
+        id,
+        generation: typeof post?.generation === "number" ? post.generation : 0,
+        typ: typeof post?.type === "string" && post.type ? post.type : undefined,
+        namn: typeof post?.name === "string" && post.name ? post.name : undefined,
+      });
+    }
+    return ut;
+  }
+
+  async korWebblasare(kommando: { browserId?: string; browserGeneration?: number; kommando: string }): Promise<unknown> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (typeof kommando?.kommando !== "string" || !kommando.kommando.trim()) {
+      throw new Error("kommando krävs (webbläsarkommandot som sträng).");
+    }
+    // Binärsond-form (Dkn): browserId/browserGeneration valfria, workspace +
+    // clientMode + sessionContext valfria här — vi bär dem ändå (samma form
+    // som browserList är bevisat i kartans unionsregister).
+    const params: Record<string, unknown> = {
+      ...this.webblasareParams(),
+      command: kommando.kommando.slice(0, 4_000),
+    };
+    if (kommando.browserId) params.browserId = kommando.browserId;
+    if (typeof kommando.browserGeneration === "number") params.browserGeneration = kommando.browserGeneration;
+    try {
+      return await this.klient.protokollFraga("interaction/browserExecute", params, 60_000);
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("interaction/browserExecute");
+      throw fel;
+    }
+  }
+
+  async lasAutomationer(): Promise<StudioAutomation[]> {
+    this.klientForFraga(); // automation/list kräver levande klient, ej session
+    let r: { automations?: unknown[] } | null;
+    try {
+      r = (await this.klient!.protokollFraga("automation/list", {}, 30_000)) as
+        | { automations?: unknown[] }
+        | null;
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("automation/list");
+      throw fel;
+    }
+    const lista = Array.isArray(r?.automations) ? r!.automations! : [];
+    const ut: StudioAutomation[] = [];
+    for (const a of lista) {
+      const post = a as {
+        automationId?: unknown;
+        title?: unknown;
+        cronExpr?: unknown;
+        lifecycleStatus?: unknown;
+        nextRunAt?: unknown;
+        enabled?: unknown;
+        prompt?: unknown;
+      } | null;
+      const id = typeof post?.automationId === "string" && post.automationId ? post.automationId : "";
+      if (!id) continue;
+      ut.push({
+        id,
+        titel: typeof post?.title === "string" && post.title ? post.title : id,
+        cron: typeof post?.cronExpr === "string" && post.cronExpr ? post.cronExpr : undefined,
+        status: typeof post?.lifecycleStatus === "string" && post.lifecycleStatus ? post.lifecycleStatus : undefined,
+        nastaKorning: typeof post?.nextRunAt === "string" && post.nextRunAt ? post.nextRunAt : undefined,
+        aktiverad: typeof post?.enabled === "boolean" ? post.enabled : undefined,
+        prompt: typeof post?.prompt === "string" && post.prompt ? truncat(post.prompt, 200) : undefined,
+      });
+    }
+    return ut;
+  }
+
+  async genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }> {
+    const text = prompt.trim();
+    if (!text) throw new Error("Prompten är tom.");
+    if (text.length > MAX_PROMPT_TEEKEN_TRANSPORT) {
+      throw new Error(`Prompten är för lång (max ${MAX_PROMPT_TEEKEN_TRANSPORT} tecken).`);
+    }
+    // modelRef:xc ur den aktiva sessionens kontext ("zai/glm-5.3"-form) —
+    // utan session/läsbar modell vägrar metoden ärligt (generateText kräver
+    // modelRef enligt kartan §2).
+    const kontext = await this.lasKontext();
+    const modell = kontext?.modell;
+    const [providerId, modelId] = modell && modell.includes("/") ? modell.split("/") : [null, null];
+    if (!providerId || !modelId) {
+      throw new Error("Ingen modell känd för textgenerering — öppna sessionen först.");
+    }
+    let r: { text?: unknown } | null;
+    try {
+      r = (await this.klient!.protokollFraga(
+        "workspace/generateText",
+        {
+          workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog },
+          modelRef: { providerId, modelId },
+          prompt: text,
+          querySource: "ak1a-studio",
+        },
+        120_000,
+      )) as { text?: unknown } | null;
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/generateText");
+      throw fel;
+    }
+    return { text: typeof r?.text === "string" ? r.text : "", råSvar: r };
+  }
+
   private lasSparadSession(): { sessionId: string | null; modell?: string; lage?: string; tankeNiva?: string } {
     try {
       const rå = readFileSync(this.lagringsSökväg, "utf8");
@@ -4376,6 +4873,9 @@ class MockTransport implements StudioTransport {
   private mockMalAktiv = false;
   private mockMalPausad = false;
   private mockMalIteration = 0;
+  /** VÅG 91 A1b (mock): senaste mål-event-rad + tidpunkt (statuspollen). */
+  private mockMalSenasteEvent: string | null = null;
+  private mockMalSenasteEventTid: number | null = null;
   private mockMalLyssnare: StudioLyssnare | null = null;
   private mockMalTimer: ReturnType<typeof setTimeout> | null = null;
   private readonly mockSubagenter: StudioSubagent[] = [
@@ -4443,6 +4943,8 @@ class MockTransport implements StudioTransport {
     this.mockMalAktiv = false;
     this.mockMalPausad = false;
     this.mockMalIteration = 0;
+    this.mockMalSenasteEvent = null;
+    this.mockMalSenasteEventTid = null;
     this.mockMalLyssnare?.({
       typ: "mal_status",
       aktiv: false,
@@ -4738,6 +5240,8 @@ class MockTransport implements StudioTransport {
     this.mockMalAktiv = false;
     this.mockMalPausad = false;
     this.mockMalIteration = 0;
+    this.mockMalSenasteEvent = null;
+    this.mockMalSenasteEventTid = null;
     this.mockMalLyssnare?.({
       typ: "mal_status",
       aktiv: false,
@@ -4756,6 +5260,10 @@ class MockTransport implements StudioTransport {
       pausad: this.mockMalPausad,
       iteration: this.mockMalIteration,
       mal: this.mockMal,
+      // VÅG 91 A1b (mock): samma motor-fält som prod (statuspollen).
+      pagaendeTurn: this.mockMalAktiv && this.mockMalTimer !== null,
+      senasteEvent: this.mockMalSenasteEvent ?? undefined,
+      uppdaterad: this.mockMalSenasteEventTid ?? undefined,
     };
   }
 
@@ -4823,6 +5331,11 @@ class MockTransport implements StudioTransport {
       }
       const n = this.mockMalIteration + 1;
       this.mockMalIteration = n;
+      // VÅG 91 A1a (mock): MOTORN markerar iterationerna i kartan (samma
+      // väg som prod) — autonomt arbete syns i historiken utan lyssnare.
+      markeraMalIterationStart(this.mockSid);
+      this.mockMalSenasteEvent = beskrivMalEvent({ typ: "mal_iteration", fas: "start", iteration: n });
+      this.mockMalSenasteEventTid = Date.now();
       l({ typ: "mal_iteration", fas: "start", iteration: n });
       l({ typ: "runda", fas: "start" });
       l({ typ: "status", text: `Agenten utvecklar autonomt — iteration ${n}… (mock)` });
@@ -4885,6 +5398,15 @@ class MockTransport implements StudioTransport {
         tokenCount: 96 + n,
         varaktighetMs: 900 + n * 10,
       });
+      // VÅG 91 A1a/A1b (mock): svaret sparas i kartan + senaste-event-raden.
+      markeraMalIterationSlut(this.mockSid, n, svar);
+      this.mockMalSenasteEvent = beskrivMalEvent({
+        typ: "mal_iteration",
+        fas: "slut",
+        iteration: n,
+        resultatTyp: "success",
+      });
+      this.mockMalSenasteEventTid = Date.now();
       this.mockMalTimer = setTimeout(kör, 7_000);
     };
     this.mockMalTimer = setTimeout(kör, 1_200);
@@ -5079,6 +5601,71 @@ class MockTransport implements StudioTransport {
         fel: "anslutningen nekades (mock-demo av fel-vägen)",
       },
     ];
+  }
+
+  // ── VÅG 91 A1d (mock): bilder + tjänste-bryggor — deterministisk dev-vy ────
+
+  async skickaMedBild(
+    prompt: string,
+    bildSokvagar: string[],
+    lyssnare: StudioLyssnare,
+    signal?: AbortSignal,
+  ): Promise<void> {
+    // Samma väg som prod: promptreferenser till bilder i arbetsytan —
+    // mockens svar ekar den utökade prompten (dev-E2E ser bildblocket).
+    const { prompt: utokad } = byggPromptMedBilder(prompt, bildSokvagar);
+    await this.skicka(utokad, lyssnare, signal);
+  }
+
+  async lasBakgrundsjobb(): Promise<StudioBakgrundsjobb[]> {
+    await this.ensure();
+    return this.mockSubagenter.map((s) => ({
+      id: s.barnSessionId,
+      typ: s.typ,
+      status: s.status,
+      beskrivning: s.sammanfattning ?? s.titel,
+    }));
+  }
+
+  async lasWebblasare(): Promise<StudioWebblasare[]> {
+    await this.ensure();
+    return [
+      {
+        id: "mock-browser-1",
+        generation: 1,
+        typ: "chromium",
+        namn: "Mock-webbläsare (dev)",
+      },
+    ];
+  }
+
+  async korWebblasare(kommando: { browserId?: string; browserGeneration?: number; kommando: string }): Promise<unknown> {
+    await this.ensure();
+    if (typeof kommando?.kommando !== "string" || !kommando.kommando.trim()) {
+      throw new Error("kommando krävs (webbläsarkommandot som sträng).");
+    }
+    return { mock: true, kommando: kommando.kommando.slice(0, 200), resultat: "Mock: kommandot kördes (dev-demo)." };
+  }
+
+  async lasAutomationer(): Promise<StudioAutomation[]> {
+    await this.ensure();
+    return [
+      {
+        id: "mock-automation-1",
+        titel: "Mock-automation (dev)",
+        cron: "0 7 * * *",
+        status: "active",
+        nastaKorning: new Date(Date.now() + 3_600_000).toISOString(),
+        aktiverad: true,
+        prompt: "Sammanfatta gårdagens studioarbete (mock).",
+      },
+    ];
+  }
+
+  async genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }> {
+    await this.ensure();
+    const text = `Mock-generering (ingen modell): ${prompt.trim().slice(0, 300)}`;
+    return { text, råSvar: { mock: true, finishReason: "mock" } };
   }
 
   async skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void> {

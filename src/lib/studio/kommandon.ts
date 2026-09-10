@@ -65,6 +65,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     kalla: "lokal",
   },
   {
+    namn: "styrelsen",
+    syntax: "/styrelsen [fråga]",
+    beskrivning: "Konkallar AI-styrelsen — 5 roller diskuterar och beslutar",
+    kalla: "lokal",
+  },
+  {
     namn: "sparad",
     syntax: "/sparad [text]",
     beskrivning: "Promptbiblioteket ⭐ — sparade prompts (utan argument: visa biblioteket, med text: spara den)",

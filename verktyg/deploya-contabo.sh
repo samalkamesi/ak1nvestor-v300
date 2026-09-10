@@ -8,7 +8,7 @@
 # datorn är på (servern är självförsörjande mellan sessioner).
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
-NYCKEL=~/.ssh/hetzner_key
+NYCKEL=~/.ssh/contabo_key
 SERVER=ak1a@5.189.162.162
 cd "$(dirname "$0")/.."
 

@@ -218,9 +218,10 @@ import path from "node:path";
  * /studio — men historiken från frånvaron laddades inte vid återkomsten.
  *   · H2 DISK-PERSISTENS: sessionskartan skrivs till DISK (prod:
  *     /home/ak1a/.zcode/studio-sessions/karta.json; dev-reserv STUDIO_LAGRING/
- *     tmpdir) med 60 s debounce varje gång ett svar klart (markeraSessionSlut
- *     + mål-iterationer) ⇒ KARTAN ÖVERLEVER PM2-OMSTART. Vid uppstart läses
- *     den tillbaka (engångs-hydrering — lasKartaFranDisk).
+ *     tmpdir) med 30 s debounce (VÅG 88 I3: sänkt från 60 s — snabbare
+ *     flush, fortfarande rusningsskydd) varje gång ett svar klart
+ *     (markeraSessionSlut + mål-iterationer) ⇒ KARTAN ÖVERLEVER PM2-OMSTART.
+ *     Vid uppstart läses den tillbaka (engångs-hydrering — lasKartaFranDisk).
  *   · H1 ÅTERKOPPLING: lasAterkoppling() → {senastAktivSessionId,
  *     senastAktivHistorik, aktivtMal} — GET /api/studio/stream (utan
  *     sessionId) svarar DEN SENAST AKTIVA sessionen + hela dess historik
@@ -5035,8 +5036,13 @@ function städaKarta(): void {
 
 // ── VÅG 87 H2: SESSIONSKARTAN PÅ DISK — överlever pm2-omstart ────────────────
 
-/** Skriv-debounce (ms) — svaret-klart-trigger samlas upp, max en skrivning/min. */
-const KARTSKRIV_DEBOUNCE_MS = 60_000;
+/**
+ * Skriv-debounce (ms) — svaret-klart-trigger samlas upp, max en skrivning/
+ * 30 s (VÅG 88 I3: sänkt från 60 s — ett pm2-hål i historiken krymper till
+ * halva samtidigt som en rusande mål-loop fortfarande aldrig skriver mer
+ * än en gång per 30 s).
+ */
+const KARTSKRIV_DEBOUNCE_MS = 30_000;
 
 /** Kartans filnamn i katalogen nedan. */
 const KARTA_FILNAMN = "karta.json";
@@ -5048,7 +5054,7 @@ let kartaLäst = false;
 let kartaSkrivTimer: ReturnType<typeof setTimeout> | null = null;
 
 // Best-effort spolning när Node stänger ned (pm2 SIGTERM → "exit") —
-// debounce-fönstrets 60 s får aldrig bli ett hål i historiken. Registreras
+// debounce-fönstrets 30 s får aldrig bli ett hål i historiken. Registreras
 // EN gång per process; skriver bara när en skrivning verkligen väntar.
 process.on("exit", () => {
   if (kartaSkrivTimer !== null) {
@@ -5093,8 +5099,8 @@ function skrivKartaTillDisk(): void {
 }
 
 /**
- * Debounce-schemaläggning (60 s trailer): varje markering flyttar fram
- * skrivningen så en rusande mål-loop aldrig skriver mer än en gång/min.
+ * Debounce-schemaläggning (30 s trailer, VÅG 88 I3): varje markering flyttar
+ * fram skrivningen så en rusande mål-loop aldrig skriver mer än en gång/30 s.
  */
 function schemalaggKartskrivning(): void {
   if (kartaSkrivTimer !== null) clearTimeout(kartaSkrivTimer);

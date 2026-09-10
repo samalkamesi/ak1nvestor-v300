@@ -46,6 +46,7 @@ import {
   Save,
   Search,
   Send,
+  Settings,
   ShieldAlert,
   ShieldCheck,
   Sparkles,
@@ -68,6 +69,7 @@ import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando, type StudioKommando } f
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { byggChatHtml } from "@/components/ak1a/studio-html-export";
 import { StudioMinnePanel } from "@/components/ak1a/studio-minne-panel";
+import { StudioAdminPanel } from "@/components/ak1a/studio-admin-panel";
 import {
   StudioFardigheterPanel,
   type FardighetMcp,
@@ -294,7 +296,8 @@ import { cn } from "@/lib/utils";
  * klicka. BORTA-BANNER "📌 Agenten har arbetat medan du var borta — N nya
  * svar [Visa]" (antalet = nya assistant-poster mot den lokala bufferten;
  * [Visa] = mjuk scroll till senaste). RECONNECT-POLL: är fliken öppen men
- * SSE:t tappat ⇒ GET var 30:e sekund (visibilitychange + setInterval,
+ * SSE:t tappat ⇒ GET var 15:e sekund vid AKTIVT mål, annars var 30:e
+ * (VÅG 88 I3; visibilitychange + självgenererande timer,
  * PAUSAD när fliken är dold) — en session som arbetar på SERVERN utan
  * levande lokal ström markeras i sin tabb och synkas (GET ?sessionId=)
  * när den slutar; ett aktivt mål återöppnar mål-strömmen själv.
@@ -327,6 +330,32 @@ import { cn } from "@/lib/utils";
  * chattytan = smooth scroll + overscroll-behavior:contain (pull-refresh
  * förhindras) — programmatiska ström-scrollar använder behavior:"instant"
  * så mjukheten aldrig kampar mot delta-flödet.
+ *
+ * VÅG 88 I2 (ADMIN I STUDIO — "kunden styr HELA systemet från ETT ställe"):
+ * "Verktyg"-knappen (🔧, guldtonad) i ikonraden öppnar VERKTYG-DRAWERN
+ * (studio-admin-panel.tsx — helt egen yta + state, drawer i filträdets
+ * stil) med TRE sektioner: VARIABLER 📊 (alla 13 kanoniska prisnycklar,
+ * grupperade som i admin-panelen, nu-värde + filvärde + inline-edit via
+ * GET/POST /api/admin/variabler — våg 79-kontraktet), BLOGG ✍️ (utkast-
+ * listan + ny/redigera med flödet Kontrollera → Skicka till granskning
+ * (0-FEL-grinden) → Exportera (Läge A-paketet) via /api/admin/blogg) och
+ * MINNE 🧠 (navigering till studions befintliga Minne-panel — inget
+ * dubbeldriv). Studion kräver redan admin ⇒ sektionen alltid synlig;
+ * ömsesidig stängning mot alla övriga drawers.
+ *
+ * VÅG 88 I3 (CACHE-OPTIMERING — STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 88"):
+ * (1) RECONNECT-POLLENS TAKT är målberoende — AKTIVT mål ⇒ GET var 15:e
+ * sekund, annars var 30:e (självomarmande setTimeout-länk som läser
+ * malStatusRef vid varje omarming; se poll-effekten). (2) CHATT-HISTORIK
+ * cachas i IndexedDB (db "ak1a-studio", store "historik", key = sessionId —
+ * RÅA API:et, inget lib) vid VARJE "klart"-event: sessionens meddelanden
+ * (ström-closurens snapshot + rundan) skrivs + CACHE-META {sessionId,
+ * sistSparad, antalMeddelanden} i localStorage ("ak1a-studio-historik-meta")
+ * för snabb lookup utan att öppna IndexedDB. (3) VID MOUNT: localStorage
+ * pekar på en session OCH GET svarade ⇒ jämför antal meddelanden — cachen
+ * har FLER (agenten svarade medan användaren var borta + GET:s spegel är
+ * kortare) ⇒ DEN CACHADE versionen renderas + toast "Visar cachad historik".
+ * Allt fel-tolerant: privat läge/quota = ingen cache, chatten oförändrad.
  *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
@@ -478,6 +507,22 @@ function modellBadge(modell?: string): string {
   return (delar.length > 1 ? delar.slice(1).join("/") : modell).slice(0, 16);
 }
 
+/**
+ * VÅG 88 I1: kort beskrivning per modell i Inställningar-drawern. Listan är
+ * HÄRLEDD ur config.json (aldrig hårdkodad) — kända id:n får sin etikett,
+ * okända en neutral fallback så nya modeller alltid renderas prydligt.
+ */
+function modellBeskrivning(id: string): string {
+  const lag = id.toLowerCase();
+  if (lag.includes("5.3-flash")) return "Snabb och lätt — vardagsuppgifter till lägsta kostnad";
+  if (lag.includes("5.3")) return "Kraftfullaste — max resonemang för krävande arbete";
+  if (lag.includes("5.2")) return "Föregående generation — stabil fullstor modell";
+  if (lag.includes("5.1")) return "Äldre generation — pålitlig och beprövad";
+  if (lag.includes("turbo")) return "Turbo — fart före djup, bra för enkla jobb";
+  if (lag.includes("mock") || lag.includes("demo")) return "Demonstration — ingen riktig modell ansluten";
+  return "zai-modell";
+}
+
 /** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
 const TABB_LAGRING = "ak1a-studio-tabbar";
 
@@ -507,6 +552,124 @@ function sparaSenasteSessionId(sessionId: string | null): void {
     else window.localStorage.removeItem(SENASTE_SESSION_LAGRING);
   } catch {
     // privat läge — pekaren lever bara denna sidad
+  }
+}
+
+// ── VÅG 88 I3: INDEXEDDB-HISTORIK + CACHE-META ───────────────────────────────
+// Chatt-historiken cachas i webbläsarens BESTÄNDIGA lagring (db "ak1a-studio",
+// store "historik", key = sessionId) vid varje "klart"-event — IndexedDB
+// överlever FLIKSTÄNGNING (sessionStorage överlever bara refresh). Vid mount
+// jämförs antalet meddelanden mot GET-svaret: cachen har FLER ⇒ agenten
+// svarade medan vi var borta och serverns spegel är kortare (GET:s
+// historik-hämtning misslyckades där) ⇒ den cachade versionen visas + toast
+// "visar cachad historik". RÅA IndexedDB-API:et — inget bibliotek. Allt är
+// valfri lyx: varje steg är tyst fel-tolerant (privat läge/quota = ingen
+// cache, chatten fungerar ändå).
+
+/** localStorage-nyckel: cache-metadata (snabb lookup utan att öppna IndexedDB). */
+const HISTORIK_META_LAGRING = "ak1a-studio-historik-meta";
+
+/** Cache-posten i store "historik" (keyPath "sessionId"). */
+interface HistorikCachePost {
+  sessionId: string;
+  meddelanden: { roll: "user" | "assistant"; text: string }[];
+  sistSparad: number;
+}
+
+/** I3.4 CACHE-META: {sessionId, sistSparad, antalMeddelanden} i localStorage. */
+interface HistorikMeta {
+  sessionId: string;
+  sistSparad: number;
+  antalMeddelanden: number;
+}
+
+/** Öppna (eller skapa) db "ak1a-studio" v1 med store "historik" — null vid fel. */
+function oppnaHistorikDb(): Promise<IDBDatabase | null> {
+  return new Promise((los) => {
+    try {
+      const req = indexedDB.open("ak1a-studio", 1);
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains("historik")) {
+          req.result.createObjectStore("historik", { keyPath: "sessionId" });
+        }
+      };
+      req.onsuccess = () => los(req.result);
+      req.onerror = () => los(null);
+      req.onblocked = () => los(null);
+    } catch {
+      los(null); // Ingen IndexedDB (äldre webbläsare m.m.) — cachen är lyx
+    }
+  });
+}
+
+/** Skriv sessionens meddelanden till IndexedDB + CACHE-META till localStorage. */
+async function sparaHistorikCache(
+  sessionId: string,
+  meddelanden: { roll: "user" | "assistant"; text: string }[],
+): Promise<void> {
+  if (!sessionId || meddelanden.length === 0) return;
+  const db = await oppnaHistorikDb();
+  if (!db) return;
+  try {
+    await new Promise<void>((los, avvisa) => {
+      const tx = db.transaction("historik", "readwrite");
+      tx.objectStore("historik").put({ sessionId, meddelanden, sistSparad: Date.now() });
+      tx.oncomplete = () => los();
+      tx.onerror = () => avvisa(tx.error ?? new Error("IndexedDB-skrivning misslyckades"));
+      tx.onabort = () => avvisa(tx.error ?? new Error("IndexedDB-transaktionen avbröts"));
+    });
+    try {
+      window.localStorage.setItem(
+        HISTORIK_META_LAGRING,
+        JSON.stringify({ sessionId, sistSparad: Date.now(), antalMeddelanden: meddelanden.length }),
+      );
+    } catch {
+      // privat läge/quota — metan är lyx, IndexedDB-posten räcker
+    }
+  } catch {
+    // skrivskyddad lagring — cachen är lyx, chatten fungerar ändå
+  } finally {
+    db.close();
+  }
+}
+
+/** Läs sessionens cachade meddelanden — null vid fel/saknad/tom post. */
+async function lasHistorikCache(sessionId: string): Promise<HistorikCachePost | null> {
+  if (!sessionId) return null;
+  const db = await oppnaHistorikDb();
+  if (!db) return null;
+  try {
+    return await new Promise<HistorikCachePost | null>((los) => {
+      const req = db.transaction("historik", "readonly").objectStore("historik").get(sessionId);
+      req.onsuccess = () => {
+        const post = req.result as HistorikCachePost | undefined;
+        los(post && Array.isArray(post.meddelanden) && post.meddelanden.length > 0 ? post : null);
+      };
+      req.onerror = () => los(null);
+    });
+  } catch {
+    return null;
+  } finally {
+    db.close();
+  }
+}
+
+/** Läs CACHE-META ur localStorage — tolvfältsskyddad, null vid ogiltigt. */
+function lasHistorikMeta(): HistorikMeta | null {
+  try {
+    const rå = window.localStorage.getItem(HISTORIK_META_LAGRING);
+    if (!rå) return null;
+    const m = JSON.parse(rå) as Partial<HistorikMeta>;
+    if (
+      typeof m.sessionId !== "string" ||
+      typeof m.sistSparad !== "number" ||
+      typeof m.antalMeddelanden !== "number"
+    ) {
+      return null;
+    }
+    return m as HistorikMeta;
+  } catch {
+    return null;
   }
 }
 
@@ -1335,6 +1498,66 @@ function StudioMarkdown({
 }
 
 // ── VÅG 83 B4: filträdsrad (rekursiv) ───────────────────────────────────────
+
+// ── VÅG 88 I1: Inställningar-drawerns radioregel (48 px tryckyta) ───────────
+
+/**
+ * En valbar rad i Inställningar-drawern (⚙️) — radio-cirkel + titel +
+ * beskrivning. min-h-12 = 48 px tryckyta (kundens mobilbild: klickmålen i
+ * headerns dropdowns var för små — här är varje alternativ en hel rad).
+ */
+function InstallningarRad({
+  vald,
+  titel,
+  beskrivning,
+  val,
+  onClick,
+  disabled,
+  jobbar,
+}: {
+  vald: boolean;
+  titel: string;
+  beskrivning?: string;
+  val?: string;
+  onClick: () => void;
+  disabled?: boolean;
+  jobbar?: boolean;
+}): React.JSX.Element {
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={vald}
+      onClick={onClick}
+      disabled={disabled}
+      title={val ? `${titel} (${val})` : titel}
+      className={cn(
+        "flex min-h-12 w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors",
+        vald ? "bg-gold/15" : "hover:bg-white/10",
+        disabled && "cursor-default opacity-50",
+      )}
+    >
+      <span
+        className={cn(
+          "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2",
+          vald ? "border-gold" : "border-[#EDE6D6]/30",
+        )}
+        aria-hidden
+      >
+        {vald && <span className="h-2 w-2 rounded-full bg-gold" />}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className={cn("block truncate text-sm font-semibold", vald ? "text-gold" : "text-[#EDE6D6]")}>
+          {titel}
+        </span>
+        {beskrivning && (
+          <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">{beskrivning}</span>
+        )}
+      </span>
+      {jobbar && <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-gold" />}
+    </button>
+  );
+}
 
 /** Filikon per ändelse (bilder/arkiv/text — guldtonad som resten av ytan). */
 function filIkon(namn: string): React.ReactNode {
@@ -2260,6 +2483,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [malStrömOppen, setMalStrömOppen] = React.useState(false);
   /** Transportens snapshot (mal_status-eventet) — badge/banner-tilståndet. */
   const [malStatus, setMalStatus] = React.useState<{ aktiv: boolean; pausad: boolean; iteration: number } | null>(null);
+  /** VÅG 88 I3: mål-status som ref — reconnect-pollens takt läser färskt
+   * värde vid varje omarming (aktivt mål ⇒ 15 s, annars 30 s). */
+  const malStatusRef = React.useRef<{ aktiv: boolean; pausad: boolean; iteration: number } | null>(null);
+  React.useEffect(() => {
+    malStatusRef.current = malStatus;
+  }, [malStatus]);
   /** Iterationsräknaren (SSE mal_iteration/mal_status). */
   const [malIteration, setMalIteration] = React.useState(0);
   const [malPausar, setMalPausar] = React.useState(false);
@@ -2306,6 +2535,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [fardigheterLaddar, setFardigheterLaddar] = React.useState(false);
   const [fardigheterFel, setFardigheterFel] = React.useState("");
 
+  // ── VÅG 88 I2: Verktyg 🔧 — ADMIN-KOMMANDON (drawer som filträdet). Ytan +
+  //    allt admin-state (variabler/priser, blogg-publicering, minne-navigering)
+  //    ägs av studio-admin-panel.tsx — hit kommer endast öppna/stäng/navigera.
+  const [visaAdmin, setVisaAdmin] = React.useState(false);
+
   // ── VÅG 83 B2: Z-portaLens — dialoger + läge/tankestyrka ─────────────────
   const [permission, setPermission] = React.useState<PermissionDialog | null>(null);
   const [fraga, setFraga] = React.useState<FragaDialog | null>(null);
@@ -2344,6 +2578,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [visaGenvagar, setVisaGenvagar] = React.useState(false);
   /** Mobil-kebabmenyn (⋮) — export-knapparna bor där under sm. */
   const [kebabOppen, setKebabOppen] = React.useState(false);
+
+  // ── VÅG 88 I1: MENY-KONSOLIDERING — ⚙️ Inställningar-drawer ────────────────
+  /** Inställnings-drawern (modell/läge/tankestyrka/tema i LISTA-form —
+   *  headerns scroll-rad med 3 dropdowns + tema-knapp är borttagen). */
+  const [installningarOppen, setInstallningarOppen] = React.useState(false);
 
   // ── VÅG 84 A: VISUELL Z-PARITET — tema + palett + sök + auto-scroll ──────
   /** Tema: "dark"-klass på ROTELEMENTET (localStorage "studio-tema"). SSR
@@ -2544,7 +2783,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setFilVisning(null);
     setVisaFardigheter(false);
     setVisaMinne(false);
+    setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
     setVisaNotiser(true);
+  }, []);
+
+  /** VÅG 88 I1: Öppna Inställningar-drawern (stänger övriga drawers först). */
+  const oppnaInstallningar = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setVisaFardigheter(false);
+    setVisaMinne(false);
+    setVisaNotiser(false);
+    setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setInstallningarOppen(true);
   }, []);
 
   /** V84 C: be om notisrättigheten (klockknappen i verktygsraden). */
@@ -3089,12 +3341,37 @@ export function StudioChat({ hem }: { hem: () => void }) {
           const senastAktivHistorik = Array.isArray(data.senastAktivHistorik) ? data.senastAktivHistorik : [];
           const sparadSid = lasSenasteSessionId();
           const kandidat = sparadSid && sparadSid === senastAktivSessionId ? sparadSid : senastAktivSessionId;
-          if (levande && kandidat && senastAktivHistorik.length > 0) {
+          // ── VÅG 88 I3: INDEXEDDB-JÄMFÖRELSE — localStorage pekar på en
+          // session OCH GET svarade ⇒ jämför antal meddelanden mot IndexedDB-
+          // cachen (CACHE-META först — snabb lookup, IndexedDB öppnas bara
+          // när metan pekar på samma session). Cachen har FLER ⇒ agenten
+          // svarade medan vi var borta och serverns spegel är kortare (GET:s
+          // historik-hämtning misslyckades där) ⇒ den CACHADE versionen
+          // används + toast "visar cachad historik" (ALDRIG tyst byte).
+          // Jämförelsen sker mot listan GET:s historik tillhör: default-
+          // sessionens historik (data.historik) eller senast-aktivas spegel.
+          let aktivHistorik = senastAktivHistorik;
+          let cacheTrumfar = false;
+          if (levande && sparadSid && sparadSid === kandidat) {
+            const meta = lasHistorikMeta();
+            if (meta && meta.sessionId === sparadSid) {
+              const serverLista =
+                typeof data.sessionId === "string" && sparadSid === data.sessionId
+                  ? (Array.isArray(data.historik) ? data.historik : [])
+                  : senastAktivHistorik;
+              const cache = await lasHistorikCache(sparadSid);
+              if (cache && cache.meddelanden.length > serverLista.length) {
+                aktivHistorik = cache.meddelanden;
+                cacheTrumfar = true;
+              }
+            }
+          }
+          if (levande && kandidat && aktivHistorik.length > 0) {
             sparaSenasteSessionId(kandidat);
             const arDefault = typeof data.sessionId === "string" && kandidat === data.sessionId;
             const tillMeddelanden = (lista: { roll: "user" | "assistant"; text: string }[]) =>
               lista.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text }));
-            const nyaSvar = senastAktivHistorik.filter((h) => h.roll === "assistant").length;
+            const nyaSvar = aktivHistorik.filter((h) => h.roll === "assistant").length;
             if (arDefault) {
               // Default-sessionen ägs av HUVUDTABBEN — fyll den (även när en
               // annan tabb var aktiv vid mount) + visa den direkt. Prompt-
@@ -3103,7 +3380,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               const forrSvar = forr ? forr.meddelanden.filter((m) => m.roll === "assistant").length : 0;
               rörTabb(huvudId, (t) => ({
                 ...t,
-                meddelanden: tillMeddelanden(senastAktivHistorik),
+                meddelanden: tillMeddelanden(aktivHistorik),
                 historikLasad: true,
               }));
               setAktivTabbId(huvudId);
@@ -3119,7 +3396,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               if (äger) {
                 rörTabb(äger.id, (t) => ({
                   ...t,
-                  meddelanden: tillMeddelanden(senastAktivHistorik),
+                  meddelanden: tillMeddelanden(aktivHistorik),
                   historikLasad: true,
                 }));
                 setAktivTabbId(äger.id);
@@ -3134,7 +3411,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     sessionId: kandidat,
                     titel: `Åter ${kandidat.slice(5, 13)}`,
                     ...tabbGrund(),
-                    meddelanden: tillMeddelanden(senastAktivHistorik),
+                    meddelanden: tillMeddelanden(aktivHistorik),
                     historikLasad: true,
                   },
                 ]);
@@ -3145,6 +3422,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: kandidat, malKorer: aktivtMal?.aktiv === true });
               }
             }
+          }
+          if (cacheTrumfar) {
+            visaToast("Visar cachad historik — webbläsarens kopia hade fler meddelanden än servern.");
           }
         } else if (res.status === 401) {
           if (levande) setStatusText("Logga in igen — sessionen har löpt ut.");
@@ -3202,7 +3482,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => {
       levande = false;
     };
-  }, [lasModeller, lasSessioner, mottagenPermission, rörTabb]);
+  }, [lasModeller, lasSessioner, mottagenPermission, rörTabb, visaToast]);
 
   // ── V84 B: EGEN TABB-SIDALOAD — resume tidigare sessioner ─────────────────
   // När en egen tabb med sessionId blir aktiv (eller föds ur sessionslistan)
@@ -3253,7 +3533,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   // Servern fortsätter arbeta när strömmen dör (nätverksblippa, proxy-timeout
   // — chattens POST-läsare kan sluta medan transporten + barnprocessen lever).
   // Så länge fliken är SYNLIG: GET /api/studio/stream (utan sessionId) var
-  // 30:e sekund — sessionskartan + mål-snapshot håller vyn sann. En session
+  // 15:e sekund vid AKTIVT mål (VÅG 88 I3 — autonoma iterationer syns
+  // snabbare), annars var 30:e — sessionskartan + mål-snapshot håller vyn
+  // sann. En session
   // som arbetar på SERVERN utan levande lokal ström markeras i sin tabb
   // (spinner + status) och synkas (GET ?sessionId= — resume) när den slutar;
   // ett aktivt mål återöppnar mål-strömmen själv. DOLD flik ⇒ paus
@@ -3334,14 +3616,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
   }, [pollAterkoppling]);
 
   // Interval + visibilitychange: pollar ENDAST när fliken syns (dold = paus).
+  // VÅG 88 I3 CACHE-OPTIMERING: takten är MÅLBEROENDE — ett AKTIVT mål
+  // (malStatusRef: aktiv + ej pausad) ⇒ 15 s (autonoma iterationer ska synas
+  // snabbt), annars 30 s (vila). Timern är SJÄLV-OMARMANDE (setTimeout-länk
+  // som läser malStatusRef vid VARJE omarming) så mål-start/paus byter takt
+  // vid nästa cykel utan att effekten kör om eller state behövs i deps.
   React.useEffect(() => {
     const kanske = () => {
       if (document.visibilityState === "visible") void pollAterkopplingRef.current();
     };
-    const tid = window.setInterval(kanske, 30_000);
+    let tid: number | undefined;
+    const arma = () => {
+      const aktivtMal = malStatusRef.current?.aktiv === true && malStatusRef.current.pausad !== true;
+      tid = window.setTimeout(() => {
+        kanske();
+        arma();
+      }, aktivtMal ? 15_000 : 30_000);
+    };
+    arma();
     document.addEventListener("visibilitychange", kanske);
     return () => {
-      window.clearInterval(tid);
+      if (tid !== undefined) window.clearTimeout(tid);
       document.removeEventListener("visibilitychange", kanske);
     };
   }, []);
@@ -4019,6 +4314,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   /** Öppna drawern (laddar trädet vid behov) — also /filer-kommandot. */
   const oppnaFiltrad = React.useCallback(() => {
+    setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
     setVisaFiler(true);
     void lasTrad();
   }, [lasTrad]);
@@ -4115,11 +4412,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, []);
 
-  /** Öppna Minne-drawern (laddar listan) — stänger filträdet först. */
+  /** Öppna Minne-drawern (laddar listan) — stänger filträdet först.
+   *  VÅG 88 I2: anropas även av Verktyg 🔧-drawerns Minne-sektion. */
   const oppnaMinne = React.useCallback(() => {
     setVisaFiler(false);
     setFilVisning(null);
     setVisaFardigheter(false);
+    setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
     setMinneVald(null);
     setMinneRedigerar(false);
     setMinneNy(false);
@@ -4278,9 +4578,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaFiler(false);
     setFilVisning(null);
     setVisaMinne(false);
+    setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
     setVisaFardigheter(true);
     void lasFardigheter();
   }, [lasFardigheter]);
+
+  /** VÅG 88 I2: Öppna Verktyg 🔧-drawern (admin-kommandon — stänger övriga
+   *  drawers först). Datat hämtas lasy av panelen per sektion. */
+  const oppnaAdmin = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setVisaMinne(false);
+    setVisaFardigheter(false);
+    setVisaNotiser(false);
+    setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setVisaAdmin(true);
+  }, []);
 
   // ── VÅG 83 B2: dialogsvar + läges-/tankestyrkeväxlare ────────────────────
   // (V84 C:s permission-funktioner ligger FÖRE uppstartseffekten ovan.)
@@ -4596,6 +4910,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
       // VÅG 87 H1: sessions-pekaren skrivs vid varje sändning (huvudtabben
       // får sitt id i "hej"-eventet nedan) — mount-återkopplingens kandidat.
       if (tabb.sessionId) sparaSenasteSessionId(tabb.sessionId);
+      // VÅG 88 I3: sessionens id i ström-closuren — "hej" berikar (huvudtabben
+      // föds utan id), "klart" skriver IndexedDB-cachen med det.
+      let streamSessionId: string | null = tabb.sessionId;
 
       // Agentbubblans id skapas FÖRST (stabilt genom hela strömmen — alla
       // senare händelser merge:ar på detta id via rörAgent).
@@ -4685,6 +5002,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               // VÅG 87 H1: pekaren skrivs även (localStorage) — huvudtabbens
               // session blir mount-återkopplingens prioriterade kandidat.
               if (event.sessionId) sparaSenasteSessionId(event.sessionId);
+              if (event.sessionId) streamSessionId = event.sessionId; // VÅG 88 I3
               if (event.sessionId && !tabb.sessionId) {
                 rörTabb(tabbId, (t) => ({ ...t, sessionId: event.sessionId ?? t.sessionId }));
               }
@@ -4818,6 +5136,22 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       ? (t.ackumulerat > 0 ? t.ackumulerat + event.tokenCount : event.tokenCount)
                       : t.ackumulerat,
                 }));
+              }
+              // VÅG 88 I3: skriv sessionens meddelanden till IndexedDB vid
+              // varje klart — beständig cache som överlever flikstängning +
+              // CACHE-META ({sessionId, sistSparad, antalMeddelanden}) i
+              // localStorage. Historiken byggs ur ström-closuren (sänd-
+              // tidens tabb-snapshot + denna runda) — INTE ur React-state
+              // som ej hunnit commit:as. Fire-and-forget: cachen är lyx.
+              if (streamSessionId) {
+                void sparaHistorikCache(streamSessionId, [
+                  ...tabb.meddelanden.map((m) => ({ roll: m.roll, text: m.text })),
+                  { roll: "user" as const, text },
+                  {
+                    roll: "assistant" as const,
+                    text: event.svar && event.svar.trim() ? event.svar : "(tomt svar)",
+                  },
+                ]);
               }
               färdig = true;
               break;
@@ -5188,6 +5522,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         // när dom redan är stängda — samma mönster som paletten ovan).
         setVisaGenvagar(false);
         setVisaNotiser(false);
+        setInstallningarOppen(false); // VÅG 88 I1: inställnings-drawern
         setKebabOppen(false);
         return;
       }
@@ -5233,6 +5568,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const prickFärg =
     live === "live" ? "bg-emerald-500" : live === "demo" ? "bg-gold-soft" : "bg-red-500";
   const prickText = live === "live" ? "LIVE" : live === "demo" ? "DEMO" : "NED";
+
+  // VÅG 88 I1: vald modells VISNINGSNAMN — headerns etikett ("AK1A Studio ·
+  // GLM-5.3") + Inställningar-drawerns radio-etikett. Listan bär namnet ur
+  // config.json; utan träff faller modellBadge (id:t trimmat).
+  const modellEtikett = React.useMemo(
+    () =>
+      modeller.find((m) => m.id === valdModell)?.namn ??
+      (valdModell ? modellBadge(valdModell) : "—"),
+    [modeller, valdModell],
+  );
 
   // Kontextberäkning (V2): protokollets ÄRLIGA contextWindow är taket
   // (200 000 för zai/GLM vid v82-beviset); 1 000 000 endast som reserv.
@@ -5284,10 +5629,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* Marin rubrikrad — V84 100x-mobilfix: compact tvåradig header,
-            ALDRIG vertikal textbrytning (kundens skärmdump: "A/K/1/A…"
-            en bokstav per rad). Rad 1 = logo+märke+status, rad 2 =
-            modell/läge/tanke/tema i horisontell scroll-rad. */}
+      {/* Marin rubrikrad — VÅG 88 I1 MENY-KONSOLIDERING: headern är ENRADIG
+            och REN (logo | Studio-titel + modell | status-prick | ⚙️) —
+            dropdowns (modell/läge/tanke) + tema-knapp bor numera i
+            Inställningar-drawern (stora tryckytor på mobil). Kontextraden
+            (tokens + verktygsrad) lever kvar under. */}
       {/* VÅG 87 H4 1: studio-safe-top = pt-safe (env(safe-area-inset-top) —
           viewport-fit=cover i page.tsx ger env() värden under notch/statusrad). */}
       <header className="marin-panel studio-safe-top sticky top-0 z-20 border-b border-gold/25 shadow-md">
@@ -5295,14 +5641,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
           <div className="flex items-center gap-2">
             <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
             <div className="min-w-0 flex-1">
-              <h1 className="whitespace-nowrap font-serif text-base font-bold leading-tight tracking-tight text-[#EDE6D6] sm:text-lg">
+              {/* VÅG 88 I1: vald modell som etikett vid titeln — "AK1A Studio · GLM-5.3". */}
+              <h1 className="min-w-0 truncate font-serif text-base font-bold leading-tight tracking-tight text-[#EDE6D6] sm:text-lg">
                 AK1A <span className="text-gold">Studio</span>
+                <span
+                  className="ml-1.5 whitespace-nowrap align-middle font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-[#EDE6D6]/55 sm:text-[11px]"
+                  title={`Vald modell: ${modellEtikett} — byt under ⚙️ Inställningar`}
+                >
+                  · {modellEtikett}
+                </span>
               </h1>
             </div>
-            <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-black/20 px-2.5 py-1" title={statusText}>
-              <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
-              <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
-            </div>
+            {/* VÅG 88 I1: status-pricken — liten prick i titelraden, ingen egen
+                badge-rad (title/aria-label bär LIVE/DEMO/NED-texten). */}
+            <span
+              className={cn("h-2 w-2 shrink-0 animate-pulse rounded-full", prickFärg)}
+              role="status"
+              aria-label={`${prickText}: ${statusText}`}
+              title={`${prickText} — ${statusText}`}
+            />
             {/* VÅG 85 F1: MÅL-BADGE — guldpulserande när loopen kör +
                 iterationsräknare; klick öppnar mål-dialogen. */}
             {mal && (
@@ -5333,125 +5690,37 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </span>
               </button>
             )}
-          </div>
-          <div className="mt-2 flex items-center gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <div className="shrink-0">
-              <h1 className="whitespace-nowrap font-serif text-[11px] font-bold uppercase tracking-[0.18em] text-[#EDE6D6]/50">
-                {morkLage ? "Natt" : "Dag"}
-              </h1>
-            </div>
+            {/* VÅG 88 I1: ⚙️ Inställningar — ALLA kontroller (modell, läge,
+                tankestyrka, tema) i EN drawer med stora tryckytor. h-9 w-9 =
+                mobilvänligt klickmål i headerns enda rad. */}
             <button
-              onClick={vaxlaTema}
-              title={morkLage ? "Växla till ljust tema (paper) — tangent T" : "Växla till mörkt tema (marin natt med guld) — tangent T"}
-              aria-label="Växla mörkt/ljust tema"
-              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
+              onClick={() => (installningarOppen ? setInstallningarOppen(false) : oppnaInstallningar())}
+              title="Inställningar — modell, läge, tankestyrka och tema"
+              aria-label="Inställningar (modell, läge, tankestyrka, tema)"
+              aria-expanded={installningarOppen}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
             >
-              {morkLage ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+              <Settings className="h-4 w-4" />
             </button>
-            <label className="relative shrink-0" title="Välj huvudmodell — ny session skapas med modellen">
-              <span className="sr-only">Välj modell</span>
-              <select
-                value={valdModell}
-                onChange={(e) => void bytModell(e.target.value)}
-                disabled={modeller.length === 0 || byterModell || strömmarHuvud || !arHuvudAktiv}
-                className={cn(
-                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
-                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
-                )}
-              >
-                {modeller.length === 0 && <option value="">—</option>}
-                {modeller.map((m) => (
-                  <option key={m.id} value={m.id} className="bg-[#10233F] text-[#EDE6D6]">
-                    {m.namn}
-                  </option>
-                ))}
-              </select>
-              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
-                {byterModell ? "…" : "▼"}
-              </span>
-            </label>
-            <label className="relative shrink-0" title="Agentläge (session/setMode) — build: köra fritt; plan: verktyg kräver godkännande i dialog">
-              <span className="sr-only">Agentläge</span>
-              <select
-                value={lage}
-                onChange={(e) => void byteLage(e.target.value)}
-                disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                className={cn(
-                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-3 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
-                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
-                )}
-              >
-                {!lage && <option value="">Läge…</option>}
-                <option value="build" className="bg-[#10233F] text-[#EDE6D6]">
-                  Build
-                </option>
-                <option value="plan" className="bg-[#10233F] text-[#EDE6D6]">
-                  Plan
-                </option>
-              </select>
-              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
-                ▼
-              </span>
-            </label>
-            <label className="relative shrink-0" title="Tankestyrka (session/setThoughtLevel) — resonemangets djup: av (nothink), hög (high) eller max">
-              <span className="sr-only">Tankestyrka</span>
-              <select
-                value={tanka}
-                onChange={(e) => void byteTanke(e.target.value)}
-                disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                className={cn(
-                  "appearance-none rounded-full border border-gold/30 bg-black/25 py-1 pl-2.5 pr-7 text-[11px] font-semibold text-[#EDE6D6] outline-none transition-colors",
-                  "hover:border-gold/60 focus:border-gold/60 disabled:opacity-50",
-                )}
-              >
-                {!tanka && <option value="">Tanke…</option>}
-                <option value="nothink" className="bg-[#10233F] text-[#EDE6D6]">
-                  Tanke: av
-                </option>
-                <option value="high" className="bg-[#10233F] text-[#EDE6D6]">
-                  Tanke: hög
-                </option>
-                <option value="max" className="bg-[#10233F] text-[#EDE6D6]">
-                  Tanke: max
-                </option>
-              </select>
-              <Brain className="pointer-events-none absolute left-2 top-1/2 hidden h-3 w-3 -translate-y-1/2 text-gold/70 sm:block" />
-              <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[9px] text-gold">
-                ▼
-              </span>
-            </label>
           </div>
         </div>
 
-        {/* KONTEXTRAD (V2): tokens denna runda · totalt · procent av taket.
-            V84 A6: nowrap — raden bryts aldrig mitt i siffrorna (mobil först). */}
+        {/* KONTEXTRAD (V2 → VÅG 88 I1 förenklad): "📊 X tkn · Y%" — inget mer.
+            Progressbaren och totalen bor i Inställningar-drawern (⚙️) —
+            headerns rad ska läsas på en sekund även på mobil. */}
         <div className="border-t border-gold/15 bg-black/15">
           <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-1.5 sm:px-4">
-            <span className="whitespace-nowrap text-[11px] tabular-nums text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
-              📊 {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda` : "— denna runda"} · ~
-              {tkn(ackumulerat)} totalt
+            <span
+              className="whitespace-nowrap text-[11px] tabular-nums text-[#EDE6D6]/85"
+              title={`Denna runda: ${rundaTkn !== null ? `${tkn(rundaTkn)} tkn` : "—"} · totalt ~${tkn(ackumulerat)} tkn${kontextProcent !== null ? ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av taket (${tkn(kontextTak)})` : ""} — detaljer under ⚙️ Inställningar`}
+            >
+              📊 {tkn(ackumulerat)} tkn
               {kontextProcent !== null && (
                 <span className={cn("ml-1 font-semibold", kontextProcent >= KONTEXT_VARNING_PROCENT ? "text-gold" : "text-[#EDE6D6]/60")}>
-                  · {kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av {tkn(kontextTak)}
+                  · {kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}%
                 </span>
               )}
             </span>
-            {kontextProcent !== null && (
-              <span className="relative h-1.5 w-24 overflow-hidden rounded-full bg-white/10 sm:w-32" aria-hidden>
-                <span
-                  className={cn(
-                    "absolute inset-y-0 left-0 rounded-full transition-all",
-                    kontextProcent >= KONTEXT_VARNING_PROCENT ? "bg-gold" : "bg-emerald-400/80",
-                  )}
-                  style={{ width: `${Math.min(100, kontextProcent)}%` }}
-                />
-              </span>
-            )}
-            {kontext?.modell && (
-              <span className="hidden text-[10px] uppercase tracking-wider text-[#EDE6D6]/50 sm:inline">
-                {kontext.modell}
-              </span>
-            )}
             <span className="ml-auto flex items-center gap-0.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {/* V84 100x-mobilfix: horisontell ikonrad — text-etiketterna
                   göms under sm (ikon + title kvar), raden scrollar aldrig
@@ -5560,6 +5829,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     {fardigheterSkills.length}
                   </span>
                 )}
+              </button>
+              {/* VÅG 88 I2: Verktyg 🔧 — admin-kommandon (variabler/priser,
+                  blogg-publicering, minne) — kunden styr hela systemet
+                  från ETT ställe; studion kräver redan admin ⇒ alltid synlig. */}
+              <button
+                onClick={() => {
+                  if (visaAdmin) setVisaAdmin(false);
+                  else oppnaAdmin();
+                }}
+                title="Verktyg — admin-kommandon (variabler/priser, blogg-publicering, minne)"
+                aria-label="Verktyg (admin-kommandon)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-gold/90 transition-colors hover:bg-gold/15 hover:text-gold"
+              >
+                <Wrench className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Verktyg</span>
               </button>
               <button
                 onClick={() => void startaNySession()}
@@ -6137,6 +6421,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
         plugins={fardigheterPlugins}
         mcp={fardigheterMcp}
         mcpVerktyg={fardigheterVerktyg}
+      />
+
+      {/* VÅG 88 I2: VERKTYG-PANEL 🔧 — admin-kommandon (variabler/priser,
+          blogg-publicering, minne-navigering). HELT egen yta + state i
+          studio-admin-panel.tsx (självbärande — äger sina fetch-anrop mot
+          /api/admin/variabler + /api/admin/blogg med admin-sessionen). */}
+      <StudioAdminPanel
+        oppen={visaAdmin}
+        stang={() => setVisaAdmin(false)}
+        oppnaMinne={() => {
+          setVisaAdmin(false);
+          oppnaMinne();
+        }}
       />
 
       {/* VÅG 83 B4: FILTRÄDSDRAWER — agentens arbetsyta, klicka dig ner */}
@@ -7501,6 +7798,215 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <Trash2 className="h-3 w-3" />
                 Töm
               </button>
+            </div>
+          </aside>
+        </>
+      )}
+
+      {/* VÅG 88 I1: INSTÄLLNINGAR-DRAWER ⚙️ — modell/läge/tankestyrka/tema i
+          LISTA-form (48 px tryckytor) i stället för headerns dropdowns.
+          Esc stänger; öppning stänger övriga drawers (ömsesidigt). Kontextens
+          progressbar bor här (kontextraden visar bara "📊 X tkn · Y%"). */}
+      {installningarOppen && (
+        <>
+          <div
+            className="fixed inset-0 z-30 bg-black/40 backdrop-blur-[1px]"
+            onClick={() => setInstallningarOppen(false)}
+            aria-hidden
+          />
+          <aside
+            role="dialog"
+            aria-label="Inställningar"
+            className="fixed right-0 top-0 z-40 flex h-[100dvh] w-full max-w-[380px] flex-col border-l border-gold/30 bg-[#0D1B31] shadow-2xl"
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-black/25 px-3 py-2.5">
+              <Settings className="h-4 w-4 shrink-0 text-gold" />
+              <div className="min-w-0 flex-1">
+                <h2 className="font-serif text-sm font-bold text-[#EDE6D6]">Inställningar</h2>
+                <p className="truncate text-[10px] text-[#EDE6D6]/55">modell · läge · tankestyrka · tema</p>
+              </div>
+              <button
+                onClick={() => setInstallningarOppen(false)}
+                title="Stäng (Esc)"
+                className="rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-2 py-3 [scrollbar-width:thin]">
+              {/* MODELL — radio-knappar för hela listan (härledd ur config.json,
+                  aldrig hårdkodad). Byte = kassera + session/create med modellen. */}
+              <section aria-label="Modell">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/50">
+                  Modell
+                </p>
+                {modeller.length === 0 ? (
+                  <p className="px-3 py-2 text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                    Ingen modellista ännu (GET /api/studio/modeller) — listan härleds ur
+                    zcode-config.json på servern.
+                  </p>
+                ) : (
+                  modeller.map((m) => (
+                    <InstallningarRad
+                      key={m.id}
+                      vald={m.id === valdModell}
+                      titel={m.namn}
+                      beskrivning={modellBeskrivning(m.id)}
+                      val={m.id}
+                      jobbar={byterModell && m.id === valdModell}
+                      disabled={byterModell || strömmarHuvud || !arHuvudAktiv}
+                      onClick={() => void bytModell(m.id)}
+                    />
+                  ))
+                )}
+                <p className="mt-1 px-3 text-[10px] leading-relaxed text-[#EDE6D6]/40">
+                  Byte skapar en ny session med modellen — gamla sessioner lever kvar
+                  i Sessioner-listan.
+                </p>
+              </section>
+
+              {/* LÄGE — build (kör fritt) / plan (godkännandedialoger). */}
+              <section aria-label="Agentläge" className="border-t border-gold/15 pt-3">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/50">
+                  Läge
+                </p>
+                {!lage && (
+                  <p className="px-3 py-2 text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                    Läser sessionens läge (session/setMode)…
+                  </p>
+                )}
+                <InstallningarRad
+                  vald={lage === "build"}
+                  titel="Build"
+                  beskrivning="Agenten kör fritt — låg/medel risk godkänns automatiskt"
+                  val="build"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "build"}
+                  onClick={() => void byteLage("build")}
+                />
+                <InstallningarRad
+                  vald={lage === "plan"}
+                  titel="Plan"
+                  beskrivning="Verktyg kräver godkännande — diff förhandsvisas i dialogen"
+                  val="plan"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "plan"}
+                  onClick={() => void byteLage("plan")}
+                />
+              </section>
+
+              {/* TANKESTYRKA — resonemangets djup (session/setThoughtLevel). */}
+              <section aria-label="Tankestyrka" className="border-t border-gold/15 pt-3">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/50">
+                  Tankestyrka
+                </p>
+                {!tanka && (
+                  <p className="px-3 py-2 text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                    Läser tankestyrkan (session/setThoughtLevel)…
+                  </p>
+                )}
+                <InstallningarRad
+                  vald={tanka === "nothink"}
+                  titel="Av"
+                  beskrivning="Snabbast — inget synligt resonemang"
+                  val="nothink"
+                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && tanka === "nothink"}
+                  onClick={() => void byteTanke("nothink")}
+                />
+                <InstallningarRad
+                  vald={tanka === "high"}
+                  titel="Hög"
+                  beskrivning="Djupt resonemang för krävande uppgifter"
+                  val="high"
+                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && tanka === "high"}
+                  onClick={() => void byteTanke("high")}
+                />
+                <InstallningarRad
+                  vald={tanka === "max"}
+                  titel="Max"
+                  beskrivning="Maximalt resonemang — långsammare men grundligast"
+                  val="max"
+                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && tanka === "max"}
+                  onClick={() => void byteTanke("max")}
+                />
+              </section>
+
+              {/* TEMA — switch (mörk/ljus); tangent T växlar även utanför. */}
+              <section aria-label="Tema" className="border-t border-gold/15 pt-3">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/50">
+                  Tema
+                </p>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={morkLage}
+                  onClick={vaxlaTema}
+                  title="Växla mörkt/ljust tema — tangent T"
+                  className="flex min-h-12 w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors hover:bg-white/10"
+                >
+                  {morkLage ? (
+                    <Moon className="h-4 w-4 shrink-0 text-gold" />
+                  ) : (
+                    <Sun className="h-4 w-4 shrink-0 text-gold" />
+                  )}
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-[#EDE6D6]">
+                      {morkLage ? "Mörkt tema" : "Ljust tema"}
+                    </span>
+                    <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                      {morkLage ? "Marin natt med luminöst guld" : "Paper med guldkant"}
+                    </span>
+                  </span>
+                  <span
+                    className={cn(
+                      "relative h-6 w-11 shrink-0 rounded-full transition-colors",
+                      morkLage ? "bg-gold" : "bg-white/20",
+                    )}
+                    aria-hidden
+                  >
+                    <span
+                      className={cn(
+                        "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all",
+                        morkLage ? "left-[22px]" : "left-0.5",
+                      )}
+                    />
+                  </span>
+                </button>
+              </section>
+
+              {/* KONTEXT — progressbaren + totalerna (flyttad från kontextraden). */}
+              <section aria-label="Kontext" className="border-t border-gold/15 pt-3">
+                <p className="mb-1.5 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/50">
+                  Kontext
+                </p>
+                <div className="rounded-lg bg-black/25 px-3 py-2.5">
+                  <p className="text-[11px] tabular-nums leading-relaxed text-[#EDE6D6]/80">
+                    {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
+                    ~{tkn(ackumulerat)} totalt
+                    {kontextProcent !== null &&
+                      ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av taket (${tkn(kontextTak)})`}
+                    {kontext?.modell && ` · ${kontext.modell}`}
+                  </p>
+                  {kontextProcent !== null && (
+                    <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden>
+                      <span
+                        className={cn(
+                          "absolute inset-y-0 left-0 rounded-full transition-all",
+                          kontextProcent >= KONTEXT_VARNING_PROCENT ? "bg-gold" : "bg-emerald-400/80",
+                        )}
+                        style={{ width: `${Math.min(100, kontextProcent)}%` }}
+                      />
+                    </span>
+                  )}
+                  <p className="mt-1.5 text-[10px] leading-relaxed text-[#EDE6D6]/40">
+                    Kontextraden i headern visar bara "📊 X tkn · Y%" — detaljerna bor här.
+                  </p>
+                </div>
+              </section>
             </div>
           </aside>
         </>

@@ -38,10 +38,12 @@ export const dynamic = "force-dynamic";
  *   {raderade} — knappen "Töm uploads" i filträdsdrawern.
  *
  * POST {sokvag, innehall} (VÅG 85 F5 INLINE-KODVY — kundens väg att styra
- *   agentens KOD UTAN TERMINAL): skriver en TEXT-fil i arbetsytan. UI:t
- *   visar redigeringsläget ENDAST i plan-läge (KVD: granskande läge) —
- *   servern litar inte på det: samma inneslutningsvakt som GET (segment →
- *   resolve → realpath-prefix) + hårda tak:
+ *   agentens KOD UTAN TERMINAL): skriver en TEXT-fil i arbetsytan (BEFINTLIG
+ *   fil realpath-vaktas direkt; NY fil vaktas via förälderns realpath +
+ *   resolvad prefix och realpath-VERIFIERAS efter skrivningen — symlinks
+ *   kan aldrig smita ut). UI:t visar redigeringsläget ENDAST i plan-läge
+ *   (KVD: granskande läge) — servern litar inte på det: samma inneslutnings-
+ *   vakt som GET + hårda tak:
  *     · ENDAST kända textändelser/namn (TEXT_ANDANDER/TEXT_NAMN) — aldrig
  *       godtyckliga binärer eller ändelselösa nya filer.
  *     · Känsliga filer (.env*, *.pem, *.key, …) NEKAS skrivning.
@@ -162,8 +164,13 @@ async function lasRot(): Promise<Rot> {
  * svensk klartext vid varje brott (fångas av rutten → 400). Returnerar den
  * HELA sökvägen ( läsning/ärenden görs mot denna — den ligger garanterat
  * under roten eftersom kontrollen gjordes mot realpath).
+ *
+ * VÅG 85 F5 (tillatNy): POST-editorn skapar ÄVEN nya filer — för en icke
+ * existerande fil finns ingen realpath, då kontrolleras istället den
+ * RESOLVADE sökvägen + förälderns realpath (fångar symlink-kataloger);
+ * den fullständiga realpath-kontrollen körs EFTER skrivningen (se POST).
  */
-async function vaktaSokvag(sokvag: string, rot: Rot): Promise<string> {
+async function vaktaSokvag(sokvag: string, rot: Rot, tillatNy = false): Promise<string> {
   if (!sokvag || sokvag.length > 400) throw new Error("Ogiltig sökväg.");
   if (sokvag.includes("\0") || sokvag.includes("\\")) throw new Error("Ogiltiga tecken i sökvägen.");
   if (sokvag.startsWith("/") || /^[a-zA-Z]:/.test(sokvag)) {
@@ -178,18 +185,46 @@ async function vaktaSokvag(sokvag: string, rot: Rot): Promise<string> {
     if (/[\u0000-\u001f]/.test(s)) throw new Error("Ogiltiga tecken i sökvägen.");
   }
   const hel = path.resolve(rot.hel, ...segment);
+  // Prefixkontroll på REALPATH:erna (win32 är okänslig för skiftläge).
+  const jamfor = process.platform === "win32" ? (p: string) => p.toLowerCase() : (p: string) => p;
+  const underRot = (verklig: string): boolean =>
+    jamfor(verklig) === jamfor(rot.verklig) || jamfor(verklig).startsWith(jamfor(rot.verklig) + path.sep);
   let verklig: string;
   try {
     verklig = await realpath(hel);
-  } catch {
+  } catch (fel) {
+    // VÅG 85 F5: ny fil? Förälderns realpath + den resolvade sökvägen är
+    // vaktens grund; total-verifikationen körs efter skrivningen.
+    if (tillatNy && (fel as NodeJS.ErrnoException).code === "ENOENT") {
+      const foralder = path.dirname(hel);
+      let foralderVerklig = foralder;
+      try {
+        foralderVerklig = await realpath(foralder);
+      } catch {
+        // Föräldern finns ej heller (nya djupare kataloger) — klättra upp
+        // tills en existerande förfader realpath:as, kontrollera DEN, och
+        // kräv att hela resolvade vägen ligger under roten.
+        let upp = foralder;
+        while (true) {
+          const nasta = path.dirname(upp);
+          if (nasta === upp) break;
+          try {
+            upp = await realpath(nasta);
+            break;
+          } catch {
+            upp = nasta;
+          }
+        }
+        foralderVerklig = upp;
+      }
+      if (!underRot(foralderVerklig) || !underRot(hel)) {
+        throw new Error("Sökvägen lämnar arbetsytan — avvisad.");
+      }
+      return hel; // ny fil — total-kontroll efter skrivningen
+    }
     throw new Error("Filen finns inte i arbetsytan.");
   }
-  // Prefixkontroll på REALPATH:erna (win32 är okänslig för skiftläge).
-  const jamfor = process.platform === "win32" ? (p: string) => p.toLowerCase() : (p: string) => p;
-  const under =
-    jamfor(verklig) === jamfor(rot.verklig) ||
-    jamfor(verklig).startsWith(jamfor(rot.verklig) + path.sep);
-  if (!under) throw new Error("Sökvägen lämnar arbetsytan — avvisad.");
+  if (!underRot(verklig)) throw new Error("Sökvägen lämnar arbetsytan — avvisad.");
   return hel;
 }
 
@@ -504,11 +539,14 @@ export async function POST(req: NextRequest) {
     return jsonSvar({ fel: "Filen är större än 200 kB — spara mindre filer via editorn." }, 413);
   }
 
-  // Inneslutningsvakten — IDENTISKA lager som GET-grenarna.
+  // Inneslutningsvakten — IDENTISKA lager som GET-grenarna + tillatNy:
+  // en BEFINTLIG fil realpath-kontrolleras direkt; en NY fil kontrolleras
+  // via förälderns realpath + resolvad prefix, och realpath-verifieras
+  // EFTER skrivningen (nedan) — symlinks kan aldrig smita igenom.
   let hel: string;
   try {
     const rot = await lasRot();
-    hel = await vaktaSokvag(sokvag, rot);
+    hel = await vaktaSokvag(sokvag, rot, true);
   } catch (fel) {
     return jsonSvar({ fel: fel instanceof Error ? fel.message : "Ogiltig sökväg." }, 400);
   }
@@ -530,11 +568,9 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Existerar filen redan (via symlink?) — vaktaSokvag realpath:ade den;
-  // en NY fil saknar realpath tills den finns: kontrollen ovan kastade då
-  // "Filen finns inte" — skapa den under roten och realpath-kontrollera
-  // EFTER skapandet (lagenlig dua: resolve inom roten → skriv → verifiera).
   try {
+    // Föräldrakatalog skapas vid behov (nya filer i nya kataloger) — fortfarande
+    // under roten (vakten resolve:ade hela vägen + efterverifierar nedan).
     await mkdir(path.dirname(hel), { recursive: true });
     await writeFile(hel, innehall, "utf8");
     // Efterhandskontroll: den verkliga sökvägen MÅSTE fortfarande ligga

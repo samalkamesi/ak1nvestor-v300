@@ -14,13 +14,18 @@ import {
   ChevronDown,
   ChevronRight,
   CircleStop,
+  Clock,
   Command,
   Diff,
   Download,
+  ExternalLink,
+  Eye,
+  EyeOff,
   FilePen,
   FileText,
   FileArchive,
   FileCode,
+  FileDown,
   FileImage,
   FolderSearch,
   FolderTree,
@@ -32,10 +37,12 @@ import {
   Loader2,
   MessageCircleQuestion,
   Moon,
+  MoreVertical,
   Paperclip,
   Pencil,
   Play,
   Plus,
+  Printer,
   RefreshCw,
   Save,
   Search,
@@ -45,6 +52,7 @@ import {
   Sparkles,
   Shrink,
   SquarePen,
+  Star,
   Sun,
   Target,
   Terminal,
@@ -57,8 +65,9 @@ import {
 } from "lucide-react";
 
 import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
-import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando } from "@/lib/studio/kommandon";
+import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando, type StudioKommando } from "@/lib/studio/kommandon";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { byggChatHtml } from "@/components/ak1a/studio-html-export";
 import { StudioMinnePanel } from "@/components/ak1a/studio-minne-panel";
 import {
   StudioFardigheterPanel,
@@ -206,6 +215,73 @@ import { cn } from "@/lib/utils";
  *     vaktad, endast textändelser, ≤ 200 kB) → notis "filen sparad —
  *     nästa agent-turn ser ändringen". Detta är kundens sätt att styra
  *     koden UTAN TERMINAL: editorn skriver rakt in i agentens workspace.
+ *
+ * VÅG 86 G1/G2 (STUDIO COMPLETE — SKRIVFÄLTETS MINNE): G1 SLASH-
+ * AUTOCOMPLETE — "/" som första tecken öppnar en dropdown OVANFÖR
+ * skrivfältet med ALLA matchande kommandon ur STUDIO_KOMMANDON (prefix på
+ * namnet): syntax + beskrivning + kategoribadge (API/lokal); ↑↓ navigerar,
+ * Enter infogar + KÖR kommandot, Tab kompletterar namnet (med argument-
+ * plats), Esc stänger tills frasen ändras, mus över highlightar, klick
+ * väljer; första mellanslaget (argumentet börjar) stänger listan. G2
+ * PROMPTBIBLIOTEK ⭐ — knappen bredvid skicka sparar fältets text i
+ * localStorage "ak1a-studio-prompter" [{text, skapad}] (tomt fält öppnar
+ * biblioteket istället); dropdownen visar sista 10 — klick infogar i
+ * fältet, papperskorgen tar bort; /sparad [text] gör samma sak. G2
+ * PROMPTHISTORIK — pil-upp i tomt fält återkallar senaste skickade raden
+ * (bläddra upp/ned som terminalen; redigering avslutar bläddringen),
+ * sista 50 i localStorage "ak1a-studio-prompthistorik". Mobil-först:
+ * max-h-48-scroll och ≥44 px tryckytor i alla listor.
+ *
+ * VÅG 86 STUDIO COMPLETE G6 (NOTISHISTORIK + SNABBMENY): varje Web
+ * Notification (⏳ >60 s-påminnelsen + "✓ Klar (N tkn)" + fel) loggas i
+ * localStorage "ak1a-studio-notiser": [{text, typ:"lang"|"klar"|"fel",
+ * tid}] — sista 50. 🔔-knappen öppnar NOTISPANELEN (drawer i filträdets
+ * stil): lista med typ-ikon + tidsstämpel, "Slå på notiser" när
+ * rättigheten saknas, Töm-knapp. "?"-TANGENT (utanför inmatningsfält)
+ * öppnar GENVÄGSÖVERSIKTEN — tabell med alla kortkommandon (Enter,
+ * Skift+Enter, Ctrl/Cmd+K, T, /, ↑, ?, Esc).
+ *
+ * VÅG 86 STUDIO COMPLETE G7 (SESSION-EXPORT HTML): "🖨 Exportera HTML"
+ * bredvid ⬇ Exportera genererar en FRISTÅENDE HTML-fil (AK1A-CSS inline:
+ * marin header med logo-ordmärke, användare marin / agent paper med
+ * guldkant, kodblock monospace, diff-sektioner grönt/rött, rundstatistik
+ * i foten) via Blob-download — printbar (@media print: brytningar +
+ * färgbevarande). MOBIL: export-knapparna bor i kebabmenyn (⋮).
+ *
+ * VÅG 86 STUDIO COMPLETE G3+G4 (INPUT-EDITOR + WEBB-VISUALISERING):
+ * G3 RIKTIG INPUT-EDITOR — skrivfältet växer automatiskt (min 1 rad
+ * = 44 px, max 8 rader ≈ 205 px, därefter intern överscroll; hojdpassaYta
+ * körs direkt i onChange + en prompt-effekt som även fångar program-
+ * matiska setPrompt: send-tömning, tabbyte, chip-infogning), 👁-toggle
+ * renderar utkastet som markdown (StudioMarkdown — rubriker, **fetstil**,
+ * ```-kodblock) i en scrollbar preview-yta OVANFÖR fältet, teckenräknare
+ * "n/2000" diskret i hörnet (guld ≥ 1800, rött vid taket; maxLength
+ * 2000) och placeholdern ROTERAR på focus ("Fråga agenten…", "Beskriv
+ * en uppgift…", "Klistra in en länk…" + tangent-hinten). G4 WEBB-VERKTYG
+ * VISUALISERING — verktygskorten för WebFetch/WebSearch parsar argu-
+ * menten (webVerktygInfo: JSON-fält url/query med regex-fallback på råa/
+ * partiella argument + live-input): WebFetch visar KLICKBAR länk +
+ * domän-ikon (Google s2-favicon, Globe-fallback vid motstånd) och
+ * WebSearch ett "🔍 sökte efter: …"-chip; resultatet truncas 300 tkn med
+ * "hela resultatet"-knapp → kortets vanliga expander-visning. Webb-raden
+ * syns även kollapsat (samma filosofi som live-input-raden).
+ *
+ * VÅG 86 STUDIO COMPLETE G5 (CHECKPOINT/REWIND — "⟲ Gå tillbaka hit"):
+ * varje FÄRDIG agentbubbla bär en liten ⟲-knapp (title: "Gå tillbaka hit —
+ * sessionen forkas vid denna punkt"). Klick ⇒ confirm-dialog ⇒ POST
+ * /api/studio/session {action:"rewind", turnIndex} (huvudtabben) eller
+ * {action:"rewind", turnIndex, sessionId} (egen tabb) ⇒ transport.
+ * rewindTillTurn: session/fork {kind:"turn", turnIndex} (LIVE-bevisat
+ * 2026-09-09, sond tool-results/v86-g5-forksond.mjs: turn-target löses
+ * internt till turnens SISTA assistant-meddelande och kräver INGEN
+ * workspace-checkpoint — protokollet bär INGET checkpoint-id per turn,
+ * turn-forken är dess motsvarighet och dokumenteras i studio-transport.ts)
+ * + den forkade sessionen ÖPPNAS och blir den aktiva. Toast "Sessionen
+ * har forkats från iteration N" + chatten börjar om från punkten (serverns
+ * historik bär en synthetisk user-notis om forken); föräldern lever kvar
+ * i Sessioner-listan. turnIndex räknas i turnIndexKarta (user-poster
+ * räknar upp — protokollets egna e8i-räkning). latestCheckpoint-forken
+ * (kräver filändring) lever kvar som action "fork" i API:t.
  *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
@@ -359,6 +435,59 @@ function modellBadge(modell?: string): string {
 
 /** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
 const TABB_LAGRING = "ak1a-studio-tabbar";
+
+// ── VÅG 86 G1/G2: skrivfältets minne — promptbibliotek + prompthistorik ─────
+
+/** localStorage-nyckel: promptbiblioteket ⭐ (sista 50, dropdown visar 10). */
+const PROMPT_LAGRING = "ak1a-studio-prompter";
+
+/** localStorage-nyckel: prompthistoriken (sista 50 skickade — pil-upp bläddrar). */
+const PROMPT_HISTORIK_LAGRING = "ak1a-studio-prompthistorik";
+
+/** Tak för prompt-minnena (bibliotek + historik — localStorage-quota är öm). */
+const MAX_PROMPTER = 50;
+const MAX_PROMPT_HISTORIK = 50;
+
+/** En sparad prompt i biblioteket (VÅG 86 G2: {text, skapad}). */
+interface SparadPrompt {
+  text: string;
+  skapad: number;
+}
+
+/** Läs promptbiblioteket ur localStorage — tyst [] vid ogiltigt/privat läge. */
+function lasPrompter(): SparadPrompt[] {
+  try {
+    const rå = localStorage.getItem(PROMPT_LAGRING);
+    if (!rå) return [];
+    const pars = JSON.parse(rå) as unknown;
+    if (!Array.isArray(pars)) return [];
+    return pars
+      .filter(
+        (p): p is SparadPrompt =>
+          !!p && typeof (p as SparadPrompt).text === "string" && (p as SparadPrompt).text.trim() !== "",
+      )
+      .map((p) => ({ text: p.text, skapad: typeof p.skapad === "number" ? p.skapad : 0 }))
+      .slice(0, MAX_PROMPTER);
+  } catch {
+    return [];
+  }
+}
+
+/** Läs prompthistoriken ur localStorage — tyst [] vid ogiltigt/privat läge. */
+function lasPromptHistorik(): string[] {
+  try {
+    const rå = localStorage.getItem(PROMPT_HISTORIK_LAGRING);
+    if (!rå) return [];
+    const pars = JSON.parse(rå) as unknown;
+    if (!Array.isArray(pars)) return [];
+    return pars
+      .filter((t): t is string => typeof t === "string" && t.trim() !== "")
+      .map((t) => t.trim())
+      .slice(0, MAX_PROMPT_HISTORIK);
+  } catch {
+    return [];
+  }
+}
 
 /** Tak för det som persistas per tabb (sessionStorage-quota är öm). */
 const MAX_TABB_MEDDELANDEN = 200;
@@ -591,6 +720,44 @@ function lasReglerUrLagring(): PermissionRegel[] {
 
 /** Tröskel för långkörningsnotis (KVD block C: "om en turn pågår > 60 s"). */
 const TURN_NOTIS_TRAOSKEL_MS = 60_000;
+
+// ── VÅG 86 G6: NOTISHISTORIK — persistent lista av alla Web Notifications ────
+
+/** En skickad notis i historiken (localStorage ak1a-studio-notiser). */
+interface NotisPost {
+  /** Notisens rubrik/text ("Agenten arbetar… (>60 s)", "✓ Klar (12,4k tkn)"). */
+  text: string;
+  /** Kategori: "lang" = >60 s-påminnelse, "klar" = rundan klar, "fel" = fel. */
+  typ: "lang" | "klar" | "fel";
+  /** Unix-ms när notisen skickades. */
+  tid: number;
+}
+
+/** localStorage-nyckel för notishistoriken (V86 G6). */
+const NOTIS_LAGRING = "ak1a-studio-notiser";
+
+/** Tak för notishistoriken (KVD: "längst till 50"). */
+const MAX_NOTISER = 50;
+
+/** Läs notishistoriken ur localStorage — tolvfältsskyddad (ogiltigt ⇒ tomt). */
+function lasNotiserUrLagring(): NotisPost[] {
+  try {
+    const rader = window.localStorage.getItem(NOTIS_LAGRING);
+    if (!rader) return [];
+    const parsad = JSON.parse(rader) as unknown;
+    if (!Array.isArray(parsad)) return [];
+    const ut: NotisPost[] = [];
+    for (const r of parsad) {
+      const p = r as { text?: unknown; typ?: unknown; tid?: unknown };
+      if (typeof p?.text === "string" && p.text && (p?.typ === "lang" || p?.typ === "klar" || p?.typ === "fel")) {
+        ut.push({ text: p.text, typ: p.typ, tid: typeof p.tid === "number" ? p.tid : Date.now() });
+      }
+    }
+    return ut.slice(-MAX_NOTISER);
+  } catch {
+    return [];
+  }
+}
 
 /** Post ur GET /api/studio/session (session/list, v83 B3-berikad). */
 interface SessionPost {
@@ -1214,6 +1381,72 @@ function kortStatus(kort: VerktygKort): React.ReactNode {
   return <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-gold" />;
 }
 
+// ── VÅG 86 G4: WEBB-VERKTYGENS VISUALISERING (WebFetch/WebSearch) ────────────
+
+/**
+ * Plocka webb-info ur ett verktygskorts argument: WebFetch → {typ:"fetch",
+ * url}, WebSearch → {typ:"search", fråga}, annars null. Läser JSON-fälten
+ * url/link/uri/href resp. query/q/fråga/search; faller på regex i råa
+ * texten (argumentet truncas av transporten ⇒ JSON:en kan vara partial)
+ * och till sist på live-inputen så raden växer fram MEDAN agenten skriver.
+ */
+function webVerktygInfo(kort: VerktygKort): { typ: "fetch"; url: string } | { typ: "search"; fråga: string } | null {
+  const n = kort.namn.toLowerCase();
+  // "Search" i Z Code är FILSÖKNING — endast "websearch" räknas som nät.
+  const arSok = n.includes("websearch");
+  const arFetch = n.includes("webfetch") || n.includes("fetch") || n.includes("webreader");
+  if (!arSok && !arFetch) return null;
+  const kalla = kort.argument || kort.liveInput || "";
+  if (!kalla) return null;
+  let url = "";
+  let fråga = "";
+  try {
+    const p = JSON.parse(kalla) as Record<string, unknown>;
+    const falt = (...nycklar: string[]): string => {
+      for (const k of nycklar) {
+        const v = p[k];
+        if (typeof v === "string" && v.trim()) return v.trim();
+      }
+      return "";
+    };
+    url = falt("url", "link", "uri", "href");
+    fråga = falt("query", "q", "fråga", "search");
+  } catch {
+    // Rå/partiell text — regexa ut det läsbara (sökfrågan får gärna vara
+    // halvfärdig: raden uppdateras allteftersom live-inputen växer).
+    const um = kalla.match(/https?:\/\/[^\s"'<>)]+/i);
+    if (um) url = um[0];
+    const qm = kalla.match(/"query"\s*:\s*"([^"]*)/i);
+    if (qm) fråga = qm[1];
+  }
+  if (arSok) return fråga ? { typ: "search", fråga } : null;
+  return url ? { typ: "fetch", url } : null;
+}
+
+/** Domän-ikon för en URL — Google s2-favicon (32 px, skalad 18) med
+ *  Globe-fallback när bilden saknas/inte kan laddas. VÅG 86 G4. */
+function FaviconIkon({ url }: { url: string }): React.JSX.Element {
+  const [fel, setFel] = React.useState(false);
+  let domän = "";
+  try {
+    domän = new URL(/^https?:\/\//i.test(url) ? url : `https://${url}`).hostname;
+  } catch {
+    domän = "";
+  }
+  if (fel || !domän) return <Globe className="h-[18px] w-[18px] shrink-0 text-gold/80" aria-hidden />;
+  return (
+    <img
+      src={`https://www.google.com/s2/favicons?domain=${encodeURIComponent(domän)}&sz=32`}
+      alt={domän}
+      width={18}
+      height={18}
+      loading="lazy"
+      onError={() => setFel(true)}
+      className="h-[18px] w-[18px] shrink-0 rounded-sm"
+    />
+  );
+}
+
 /**
  * Verktygskortet — expanderbar rad i agentbubblan. Kollapsad: ▶ + ikon +
  * rubrik + status; live-input syns guld-tonat även kollapsat ("läser fil
@@ -1227,6 +1460,16 @@ function VerktygsKortVy({
   onVaxla: (id: string) => void;
 }): React.JSX.Element {
   const kör = kort.steg === "planerad" || kort.steg === "startar" || kort.steg === "kör";
+  // VÅG 86 G4: webb-verktyg (WebFetch/WebSearch) — länk+favicon / sök-chip
+  // + resultattruncat (300 tkn) medan kortet är kollapsat; expanderat visas
+  // hela resultatet som vanligt nedan.
+  const web = webVerktygInfo(kort);
+  const webResultat =
+    web && kort.resultat && !kort.öppen
+      ? kort.resultat.length > 300
+        ? kort.resultat.slice(0, 300) + "…"
+        : kort.resultat
+      : "";
   return (
     <div
       className={cn(
@@ -1259,6 +1502,54 @@ function VerktygsKortVy({
           {kort.liveInput.slice(-96)}
           <span className="ml-0.5 inline-block h-3 w-[2px] animate-pulse bg-gold align-text-bottom" />
         </p>
+      )}
+      {/* VÅG 86 G4: webb-verktygets visualisering — syns även kollapsat
+          (samma filosofi som live-input-raden ovan). WebFetch: KLICKBAR
+          länk + domän-ikon (Google s2-favicon, Globe-fallback). WebSearch:
+          chip "🔍 sökte efter: …". Resultatet truncas 300 tkn — "hela
+          resultatet"-knappen (eller kortets egen ▶-vron) expanderar. */}
+      {web && (
+        <div className="space-y-1 border-t border-gold/15 px-2.5 py-1.5">
+          {web.typ === "fetch" ? (
+            <a
+              href={web.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={web.url}
+              className="flex min-w-0 items-center gap-1.5 rounded-md py-0.5"
+            >
+              <FaviconIkon url={web.url} />
+              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-gold underline decoration-gold/40 underline-offset-2">
+                {web.url}
+              </span>
+              <ExternalLink className="h-3 w-3 shrink-0 text-gold/60" />
+            </a>
+          ) : (
+            <p className="flex min-w-0 items-center gap-1.5" title={web.fråga}>
+              <span className="shrink-0 text-[11px]" aria-hidden>
+                🔍
+              </span>
+              <span className="shrink-0 text-[10px] uppercase tracking-wider text-muted-foreground/70">sökte efter:</span>
+              <span className="min-w-0 flex-1 truncate rounded-full border border-gold/25 bg-gold/5 px-2 py-0.5 font-mono text-[11px] text-gold/90">
+                {web.fråga}
+              </span>
+            </p>
+          )}
+          {webResultat && (
+            <p className="whitespace-pre-wrap break-words font-mono text-[10px] leading-relaxed text-muted-foreground/80">
+              {webResultat}{" "}
+              {(kort.resultat?.length ?? 0) > 300 && (
+                <button
+                  onClick={() => onVaxla(kort.id)}
+                  className="font-sans font-semibold text-gold underline underline-offset-2"
+                  title="Expandera kortet (samma växling som ▶-vronen)"
+                >
+                  hela resultatet
+                </button>
+              )}
+            </p>
+          )}
+        </div>
       )}
       {kort.öppen && (
         <div className="space-y-2 border-t border-gold/15 px-2.5 py-2">
@@ -1765,6 +2056,33 @@ function DiffForhandsvisning({ diff }: { diff: Filandring }): React.JSX.Element 
   );
 }
 
+// ── VÅG 86 G3: SKRIVFÄLTETS INPUT-EDITOR — mått + placeholder-rotation ──────
+
+/** Min-höjd 1 rad = 44 px (text-sm × leading-relaxed + py-2.5 + ram);
+ *  tak 8 rader ≈ 205 px — därefter scrollar fältet internt (overflowY). */
+const YTA_MIN_HOJD = 44;
+const YTA_MAX_HOJD = 205;
+
+/** Höjdpassa skrivytan: resize:none i CSS + denna funktion i onChange
+ *  (och i en prompt-effekt — programmatiska setPrompt som send-tömning,
+ *  tabbyte och chip-infogning passerar aldrig onChange). */
+function hojdpassaYta(yta: HTMLTextAreaElement | null): void {
+  if (!yta) return;
+  yta.style.height = "auto";
+  const behov = yta.scrollHeight;
+  yta.style.height = `${Math.max(YTA_MIN_HOJD, Math.min(YTA_MAX_HOJD, behov))}px`;
+  yta.style.overflowY = behov > YTA_MAX_HOJD ? "auto" : "hidden";
+}
+
+/** Placeholdern ROTERAR på focus — tips i stället för en statisk rad
+ *  (sista varianten behåller tangent-hinten så den återkommer). */
+const SKRIV_PLACEHOLDERS = [
+  "Fråga agenten…",
+  "Beskriv en uppgift…",
+  "Klistra in en länk…",
+  "Skriv till agenten… (Enter skickar, Skift+Enter ny rad — / visar kommandon, ↑ återkallar)",
+];
+
 // ── Huvudkomponent ───────────────────────────────────────────────────────────
 
 let idRäknare = 0;
@@ -1784,6 +2102,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [uppladdningar, setUppladdningar] = React.useState<Uppladdning[]>([]);
   const [laddarUpp, setLaddarUpp] = React.useState(false);
   const [draÖver, setDraÖver] = React.useState(false);
+  // ── VÅG 86 G3: INPUT-EDITOR — 👁 markdown-förhandsvisning + roterande
+  // placeholder (index växlar på varje focus av skrivfältet).
+  const [previewOppen, setPreviewOppen] = React.useState(false);
+  const [placeholderIx, setPlaceholderIx] = React.useState(0);
 
   // ── V2 STUDIO: modellval + kontextrad + sessioner ─────────────────────────
   const [modeller, setModeller] = React.useState<ModellPost[]>([]);
@@ -1793,6 +2115,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [visaSessioner, setVisaSessioner] = React.useState(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
   const [toast, setToast] = React.useState<{ text: string; ton: "guld" | "fel" } | null>(null);
+  /** VÅG 86 G5: en rewind (fork) kör — låser ⟲-knapparna under rundan. */
+  const [rewindJobbar, setRewindJobbar] = React.useState(false);
 
   // ── VÅG 83 B3: sessions- och workspace-hantering (Z-portaLens) ──────────
   const [aktivSession, setAktivSession] = React.useState("");
@@ -1891,6 +2215,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** Dokumentets ordinarie titel (återställs när turnen klart). */
   const grundTitelRef = React.useRef<string | null>(null);
 
+  // ── VÅG 86 G6: NOTISHISTORIK + SNABBMENY — paneler + genvägs-overlay ──────
+  /** Notishistoriken (localStorage ak1a-studio-notiser, sista 50). */
+  const [notiser, setNotiser] = React.useState<NotisPost[]>([]);
+  /** Notispanelen — drawer i filträdets stil (🔔-knappen). */
+  const [visaNotiser, setVisaNotiser] = React.useState(false);
+  /** Tangentbordsgenvägs-översikten ("?"-tangenten). */
+  const [visaGenvagar, setVisaGenvagar] = React.useState(false);
+  /** Mobil-kebabmenyn (⋮) — export-knapparna bor där under sm. */
+  const [kebabOppen, setKebabOppen] = React.useState(false);
+
   // ── VÅG 84 A: VISUELL Z-PARITET — tema + palett + sök + auto-scroll ──────
   /** Tema: "dark"-klass på ROTELEMENTET (localStorage "studio-tema"). SSR
    *  startar ljus (ingen hydrationsskillnad) — persistens läses i effect. */
@@ -1907,6 +2241,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [vidBotten, setVidBotten] = React.useState(true);
   const [nyaSedanUpp, setNyaSedanUpp] = React.useState(0);
 
+  // ── VÅG 86 G1/G2: SKRIVFÄLTETS MINNE — slash-autocomplete + bibliotek ────
+  /** G1: Esc stänger slash-dropdownen tills frasen ändras (true = stängd). */
+  const [slashStangd, setSlashStangd] = React.useState(false);
+  /** G1: markerad rad i slash-dropdownen (↑↓ navigerar, Enter kör, Tab fyller). */
+  const [slashIndex, setSlashIndex] = React.useState(0);
+  /** G2: promptbiblioteket ⭐ (localStorage ak1a-studio-prompter) + dropdown. */
+  const [prompter, setPrompter] = React.useState<SparadPrompt[]>(() => lasPrompter());
+  const [prompterOppen, setPrompterOppen] = React.useState(false);
+  /** G2: prompthistoriken (localStorage, sista 50) — pil-upp i tomt fält bläddrar. */
+  const [promptHistorik, setPromptHistorik] = React.useState<string[]>(() => lasPromptHistorik());
+
   const sokInputRef = React.useRef<HTMLInputElement | null>(null);
   const palettInputRef = React.useRef<HTMLInputElement | null>(null);
   const vidBottenRef = React.useRef(true);
@@ -1915,6 +2260,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const meddelandeRefs = React.useRef<Map<string, HTMLElement>>(new Map());
   /** Element-refs per palettrad — tangentnavigering scrollar fram vald rad. */
   const palettRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
+  /** G1: element-refs per slash-rad — vald rad scrollas fram (block:nearest). */
+  const slashRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
+  /** G2: var i historiken bläddringen står (null = ej i bläddringsläge). */
+  const historikIndexRef = React.useRef<number | null>(null);
+  /** G2: fältets innehåll innan historikbläddringen (återställs vid pil-ner-på-sista). */
+  const historikUtkastRef = React.useRef("");
 
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
@@ -1952,6 +2303,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   /** Den aktiva tabben är huvudtabben (kontroller som styr default-sessionen). */
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+  // ── VÅG 86 G5: CHECKPOINT/REWIND — turnIndex per agentbubbla ───────────────
+  // Protokollets räkning (vendor/zcode.cjs fn e8i, LIVE-sond v86-g5-forksond):
+  // user-meddelanden räknar upp turnen (0-baserad); en agentbubbla tillhör
+  // den SENASTE user-posten framför den. Kartan är serverns spegelbild —
+  // samma sekvens renderas som session/messages returnerar (historik + nya
+  // turner i ankomstordning), så turnIndex stämmer med session/fork.
+  const turnIndexKarta = React.useMemo(() => {
+    const karta = new Map<string, number>();
+    let turn = -1;
+    for (const m of meddelanden) {
+      if (m.roll === "user") turn += 1;
+      else karta.set(m.id, turn);
+    }
+    return karta;
+  }, [meddelanden]);
   // ── VÅG 85 F1: mål-lägets härledda vy-värden ─────────────────────────────
   /** Mål-loopen KÖR (badge pulserar + bannern visas). */
   const malKör = mal !== null && malStatus?.aktiv === true && !malStatus.pausad;
@@ -2010,6 +2376,47 @@ export function StudioChat({ hem }: { hem: () => void }) {
     reglerRef.current = regler;
   }, [regler]);
 
+  // ── VÅG 86 G6: NOTISHISTORIK — läs upp + appenda varje skickad notis ──────
+  React.useEffect(() => {
+    setNotiser(lasNotiserUrLagring());
+  }, []);
+
+  /**
+   * Appenda en notis till historiken (state + localStorage, längst till 50).
+   * Anropas VARJE GÅNG en Web Notification skickas (⏳ >60 s, ✓ Klar) samt
+   * när en ström felar (typ "fel" — historiken samlar även utan OS-notis).
+   */
+  const loggaNotis = React.useCallback((text: string, typ: NotisPost["typ"]) => {
+    setNotiser((gamla) => {
+      const nya = [...gamla, { text, typ, tid: Date.now() }].slice(-MAX_NOTISER);
+      try {
+        window.localStorage.setItem(NOTIS_LAGRING, JSON.stringify(nya));
+      } catch {
+        // privat läge — historiken lever bara i state
+      }
+      return nya;
+    });
+  }, []);
+
+  /** V86 G6: Töm notishistoriken (state + localStorage). */
+  const tomNotiser = React.useCallback(() => {
+    setNotiser([]);
+    try {
+      window.localStorage.removeItem(NOTIS_LAGRING);
+    } catch {
+      // tyst
+    }
+  }, []);
+
+  /** V86 G6: Öppna notispanelen (stänger övriga drawers först — som Filer). */
+  const oppnaNotiser = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setVisaFardigheter(false);
+    setVisaMinne(false);
+    setVisaNotiser(true);
+  }, []);
+
   /** V84 C: be om notisrättigheten (klockknappen i verktygsraden). */
   const begraNotisRattighet = React.useCallback(async () => {
     if (typeof Notification === "undefined") {
@@ -2061,6 +2468,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             body: "Rundan har pågått över 60 sekunder — studion fortsätter själv. Du kan lämna fliken öppen.",
             tag: "ak1a-studio-turn",
           });
+          loggaNotis("Agenten arbetar… (rundan >60 s)", "lang"); // V86 G6
         } catch {
           // vissa plattformar kräver ServiceWorker-registrering — tyst
         }
@@ -2092,12 +2500,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
             body: "Agenten är klar — öppna studion för att läsa svaret.",
             tag: "ak1a-studio-turn",
           });
+          loggaNotis(`Klar${typeof antal === "number" ? ` (${tkn(antal)} tkn)` : ""}`, "klar"); // V86 G6
         } catch {
           // tyst
         }
       }
     };
-  }, [nagotStrömmar]);
+  }, [nagotStrömmar, loggaNotis]);
 
   // ── V84 B: TABBHANTERING — ny tabb, växla, stäng (confirm vid arbete) ────
   // TAK: 8 tabbar (servern = 1 Next-process + N zcode-barnprocesser; RAM-
@@ -2222,6 +2631,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
     rörTabb(aktivTabb.id, (t) => ({ ...t, utkast: prompt }));
     // avsiktligt smal dep: endast prompt — tabbyte sätter prompt separat
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prompt]);
+
+  // VÅG 86 G3: höjdpassa skrivytan (1–8 rader) — onChange sköter tangent-
+  // trycken; denna effekt fångar ÄVEN programmatiska setPrompt (send-
+  // tömning, tabbyte, bild-chip-infogning) som onChange aldrig ser.
+  React.useEffect(() => {
+    hojdpassaYta(ytaRef.current);
   }, [prompt]);
 
   // ── VÅG 84 C: permission-svar + minnesregler + auto-godkännande ──────────
@@ -2693,6 +3109,87 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setSessionJobbar("");
     }
   }, [sessionJobbar, strömmar, visaToast, lasSessioner]);
+
+  // ── VÅG 86 G5: CHECKPOINT/REWIND — "⟲ Gå tillbaka hit" ──────────────────────
+
+  /**
+   * Forka sessionen vid DENNA agentbubbla (confirm → POST action "rewind"
+   * {turnIndex, sessionId?} → session/fork {kind:"turn"} på servern, LIVE-
+   * bevisat utan checkpoint-krav). Svaret bär den FORKADE sessionens
+   * historik + kontext — tabben byter till den (chatten börjar om från
+   * punkten, nästa prompt fortsätter där) och föräldern lever kvar i
+   * Sessioner. Huvudtabben rewind:ar DEFAULT-transporten (ingen sessionId
+   * i anropet); egna tabbar bär sitt sessionId (per-session-transport).
+   */
+  const gaTillbakaHit = React.useCallback(
+    async (bubblaId: string) => {
+      const tabb = aktivTabb;
+      if (!tabb || rewindJobbar) return;
+      if (tabb.strömmar) {
+        visaToast("Agenten arbetar i tabben — vänta tills den är klar.", "fel");
+        return;
+      }
+      const turnIndex = turnIndexKarta.get(bubblaId) ?? -1;
+      if (turnIndex < 0) return; // bubbla utan föregående user-post — ingen turn att fork:a
+      const iteration = turnIndex + 1;
+      if (
+        !window.confirm(
+          `Gå tillbaka till iteration ${iteration}?\n\nSessionen forkas vid denna punkt — den nya sessionen börjar från detta svar och nästa prompt fortsätter där. Den gamla sessionen finns kvar i Sessioner.`,
+        )
+      ) {
+        return;
+      }
+      setRewindJobbar(true);
+      setStatusText("Forkar sessionen…");
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({
+            action: "rewind",
+            turnIndex,
+            ...(tabb.huvud ? {} : tabb.sessionId ? { sessionId: tabb.sessionId } : {}),
+          }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          sessionId?: string;
+          iteration?: number;
+          historik?: { roll: "user" | "assistant"; text: string }[];
+          kontext?: KontextInfo | null;
+          meddelande?: string;
+          fel?: string;
+        };
+        if (res.ok && data.sessionId) {
+          // Den nya (forkade) sessionen blir AKTIV i tabben — chatten börjar
+          // om från fork-punkten (serverns historik inkluderar en synthetisk
+          // user-notis om forken — ärlig spårbarhet).
+          rörTabb(tabb.id, (t) => ({
+            ...t,
+            sessionId: data.sessionId!,
+            titel: t.titel === "Ny tabb" ? `Fork ${data.iteration ?? iteration}` : t.titel,
+            meddelanden: (data.historik ?? []).map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            kontext: data.kontext ?? null,
+            rundaTkn: null,
+            ackumulerat:
+              typeof data.kontext?.totalTokenCount === "number" ? data.kontext.totalTokenCount : 0,
+            historikLasad: true,
+          }));
+          visaToast(`Sessionen har forkats från iteration ${data.iteration ?? iteration}`);
+          setStatusText("");
+          void lasSessioner(); // föräldern + forken syns i Sessioner-listan
+        } else {
+          setStatusText("");
+          visaToast(data.fel || "Rewinden misslyckades.", "fel");
+        }
+      } catch {
+        setStatusText("");
+        visaToast("Nätverksfel under rewinden.", "fel");
+      } finally {
+        setRewindJobbar(false);
+      }
+    },
+    [aktivTabb, rewindJobbar, turnIndexKarta, rörTabb, visaToast, lasSessioner],
+  );
 
   const komprimera = React.useCallback(async () => {
     if (sessionJobbar || strömmarHuvud) return;
@@ -3626,6 +4123,53 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── Skicka (SSE över fetch) ────────────────────────────────────────────────
 
+  // ── VÅG 86 G1/G2: SKRIVFÄLTETS MINNE ───────────────────────────────────────
+
+  /** G2: spara en prompt i biblioteket (dublett = flytt överst, tak 50). */
+  const sparaPrompt = React.useCallback((text: string): boolean => {
+    const t = text.trim();
+    if (!t) return false;
+    setPrompter((lista) => [{ text: t, skapad: Date.now() }, ...lista.filter((p) => p.text !== t)].slice(0, MAX_PROMPTER));
+    return true;
+  }, []);
+
+  /** G2: ta bort en sparad prompt (identifierad av skapad-tidsstämpeln). */
+  const tabortPrompt = React.useCallback((skapad: number) => {
+    setPrompter((lista) => lista.filter((p) => p.skapad !== skapad));
+  }, []);
+
+  /** G2: öppna bibliotekets dropdown (mutuellt uteslutande med slash-listan). */
+  const oppnaPrompter = React.useCallback(() => {
+    setSlashStangd(true);
+    setPrompterOppen(true);
+  }, []);
+
+  /** G2: bokför en skickad rad i prompthistoriken (dedupe påföljd, tak 50). */
+  const pushaHistorik = React.useCallback((text: string) => {
+    const t = text.trim();
+    if (!t) return;
+    historikIndexRef.current = null; // ny sändning avslutar pågående bläddring
+    historikUtkastRef.current = "";
+    setPromptHistorik((lista) => (lista[0] === t ? lista : [t, ...lista.filter((h) => h !== t)].slice(0, MAX_PROMPT_HISTORIK)));
+  }, []);
+
+  // Persistens: biblioteket + historiken lever kvar över refresh (tyst vid quota).
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(PROMPT_LAGRING, JSON.stringify(prompter));
+    } catch {
+      // privat läge/quota — minnet lever bara i denna session
+    }
+  }, [prompter]);
+
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(PROMPT_HISTORIK_LAGRING, JSON.stringify(promptHistorik));
+    } catch {
+      // privat läge/quota — minnet lever bara i denna session
+    }
+  }, [promptHistorik]);
+
   /**
    * V84 A2: kör ett snabbkommando — DELAD väg för skrivfältets "/"-rader
    * och kommandopaletten (Ctrl/Cmd+K): samma echo i chatten, samma API-
@@ -3669,6 +4213,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
             "Färdigheter ⚡ är öppet — agentens skills, aktiva plugins och anslutna MCP-verktyg.",
           );
           return;
+        case "sparad": {
+          // VÅG 86 G2: /sparad = promptbiblioteket. Utan argument öppnas
+          // dropdownen; med text sparas texten OCH dropdownen öppnas så
+          // sparandet syns direkt (⭐-knappen gör samma sak).
+          const sparade = argument ? sparaPrompt(argument) : false;
+          oppnaPrompter();
+          pushAssistant(
+            sparade
+              ? "Prompten sparad i biblioteket ⭐ — klicka en rad för att infoga den i skrivfältet."
+              : "Promptbiblioteket ⭐ är öppet — klicka en sparad prompt för att infoga den, papperskorgen tar bort. Spara nya med ⭐-knappen bredvid skicka.",
+          );
+          return;
+        }
         case "modell": {
           const id = argument.split(/\s+/)[0] ?? "";
           const listaText =
@@ -3696,7 +4253,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, sparaPrompt, oppnaPrompter, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — V84 B: PER TABB ─────────────────────────────
@@ -3959,6 +4516,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 fel: true,
                 text: m.text || event.meddelande || "Okänt fel.",
               }));
+              loggaNotis(`Fel: ${event.meddelande || "okänt fel"}`.slice(0, 120), "fel"); // V86 G6
               färdig = true;
               break;
             case "ändringar":
@@ -3996,13 +4554,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
         );
       }
     },
-    [live, visaToast, mottagenPermission, rörTabb],
+    [live, visaToast, mottagenPermission, rörTabb, loggaNotis],
   );
 
   /** Skicka från skrivfältet —Kommandon först, sedan prompten i AKTIVA tabben. */
   const skicka = React.useCallback(async () => {
     const text = prompt.trim();
     if (!text || strömmar) return;
+    setPrompterOppen(false); // G2: skickad rad = bibliotekets dropdown stängs
 
     // ── VÅG 83 B4: snabbkommandon parsas LOKALT före sändning ──
     // (rad som börjar med "/" lämnar ALDRIG browsern som prompt; de med
@@ -4011,6 +4570,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     if (kommando) {
       setPrompt("");
       if (!kommando.kommando) return; // bart "/" — avfärdat utan brus
+      pushaHistorik(text); // G2: även kommandon återkallas med pil-upp (som terminal)
       await korKommando(kommando.kommando, kommando.argument);
       return;
     }
@@ -4023,8 +4583,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
 
     setPrompt("");
+    pushaHistorik(text); // G2: prompthistoriken (pil-upp återkallar)
     await skickaPrompt(aktivTabbIdRef.current, text);
-  }, [prompt, strömmar, korKommando, skickaPrompt, malKör]);
+  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -4155,6 +4716,92 @@ export function StudioChat({ hem }: { hem: () => void }) {
     palettRadRefs.current.get(p.id)?.scrollIntoView({ block: "nearest" });
   }, [palettIndex, palettPoster, palettOppen]);
 
+  // ── VÅG 86 G1: SLASH-AUTOCOMPLETE — "/" som första tecken i skrivfältet
+  // öppnar en dropdown ovanför fältet med ALLA matchande kommandon ur
+  // STUDIO_KOMMANDON (prefix på namnet). Första mellanslaget (argumentet
+  // börjar) stänger listan; Esc stänger tills frasen ändras igen. ─────────
+  const slashFras = React.useMemo(() => {
+    if (!prompt.startsWith("/")) return null;
+    const rest = prompt.slice(1);
+    if (rest.includes(" ")) return null; // argumentet skrivs — listan stängd
+    return rest.toLowerCase();
+  }, [prompt]);
+
+  const slashPoster = React.useMemo(
+    () => (slashFras === null ? [] : STUDIO_KOMMANDON.filter((k) => k.namn.startsWith(slashFras))),
+    [slashFras],
+  );
+
+  // Ömsesidigt uteslutande: bibliotekets dropdown vinner över slash-listan.
+  const slashSynlig = slashFras !== null && !slashStangd && !prompterOppen && slashPoster.length > 0;
+
+  // Ny fras = listan börjar om: Esc-låset glöms och markeringen återgår till topp.
+  React.useEffect(() => {
+    setSlashIndex(0);
+    setSlashStangd(false);
+  }, [slashFras]);
+
+  // Vald slash-rad scrollas fram när piltangenterna rör sig (mobil: max-h-48).
+  React.useEffect(() => {
+    if (!slashSynlig) return;
+    const k = slashPoster[slashIndex];
+    if (k) slashRadRefs.current.get(k.namn)?.scrollIntoView({ block: "nearest" });
+  }, [slashIndex, slashPoster, slashSynlig]);
+
+  /** G1: välj en slash-träff (Enter/klick) — infogar kommandot OCH kör det. */
+  const valjSlash = React.useCallback(
+    (k: StudioKommando) => {
+      setSlashStangd(true);
+      setPrompt("");
+      void korKommando(k.namn);
+    },
+    [korKommando],
+  );
+
+  /** G1: Tab kompletterar markerad träff till fältet (med argumentplats, utan att köra). */
+  const kompletteraSlash = React.useCallback((k: StudioKommando) => {
+    historikIndexRef.current = null; // G2: programmatisk ifyllning avslutar historikbläddring
+    setPrompt(`/${k.namn} `);
+    setSlashStangd(true); // första ordet klart — argumentet skrivs utan listan
+    ytaRef.current?.focus();
+  }, []);
+
+  /**
+   * G2: bläddra i prompthistoriken — som terminalen. riktning 1 = upp mot
+   * äldre (startar bara från tomt fält), -1 = ner mot nyare (förbi senaste
+   * återställs fältets innehåll före bläddringen). false = pilen får flytta
+   * markören som vanligt (fältet har text / historiken är tom).
+   */
+  const blattraHistorik = React.useCallback(
+    (riktning: 1 | -1): boolean => {
+      if (promptHistorik.length === 0) return false;
+      const nu = historikIndexRef.current;
+      if (riktning === 1) {
+        if (nu === null) {
+          if (prompt.trim() !== "") return false; // endast tomt fält startar
+          historikUtkastRef.current = prompt;
+          historikIndexRef.current = 0;
+          setPrompt(promptHistorik[0]);
+          return true;
+        }
+        if (nu + 1 >= promptHistorik.length) return true; // redan äldst — stanna
+        historikIndexRef.current = nu + 1;
+        setPrompt(promptHistorik[nu + 1]);
+        return true;
+      }
+      if (nu === null) return false;
+      if (nu - 1 < 0) {
+        historikIndexRef.current = null;
+        setPrompt(historikUtkastRef.current);
+        return true;
+      }
+      historikIndexRef.current = nu - 1;
+      setPrompt(promptHistorik[nu - 1]);
+      return true;
+    },
+    [promptHistorik, prompt],
+  );
+
   /** Öppna paletten (knapp eller Ctrl/Cmd+K). */
   const oppnaPalett = React.useCallback(() => {
     setPalettFras("");
@@ -4182,6 +4829,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
         } else if (sokOppen) {
           setSokOppen(false);
           setSokFras("");
+        } else if (prompterOppen) {
+          // VÅG 86 G2: Esc stänger även promptbibliotekets dropdown
+          setPrompterOppen(false);
         }
         return;
       }
@@ -4200,7 +4850,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     };
     window.addEventListener("keydown", paTangent);
     return () => window.removeEventListener("keydown", paTangent);
-  }, [palettOppen, sokOppen, vaxlaTema]);
+  }, [palettOppen, sokOppen, prompterOppen, vaxlaTema]);
 
   // Fokus i sökfältet när det öppnas (autofocus räcker ej vid återöppning).
   React.useEffect(() => {
@@ -5471,6 +6121,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       )}
                     </p>
                   )}
+                  {/* VÅG 86 G5: CHECKPOINT/REWIND — "⟲ Gå tillbaka hit" på varje
+                      FÄRDIG agentbubbla (ej under strömning, ej utan turn).
+                      Klick ⇒ confirm ⇒ POST rewind {kind:"turn"} ⇒ sessionen
+                      forkas vid punkten och den nya blir aktiv. */
+                  (() => {
+                    const ti = turnIndexKarta.get(m.id);
+                    if (m.strömmande || ti === undefined || ti < 0) return null;
+                    return (
+                      <div className="mt-1.5 flex justify-end">
+                        <button
+                          onClick={() => void gaTillbakaHit(m.id)}
+                          disabled={rewindJobbar}
+                          title={`Gå tillbaka hit — sessionen forkas vid denna punkt (iteration ${ti + 1})`}
+                          aria-label={`Gå tillbaka till iteration ${ti + 1} — fork:a sessionen här`}
+                          className="rounded-full border border-gold/25 px-2 py-0.5 text-[11px] leading-none text-muted-foreground/80 transition-colors hover:border-gold/60 hover:text-gold disabled:opacity-50"
+                        >
+                          ⟲
+                        </button>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             ),
@@ -5698,23 +6369,224 @@ export function StudioChat({ hem }: { hem: () => void }) {
               Släpp filerna här — de hamnar i uploads/ och agenten kan läsa dem
             </div>
           )}
+          {/* VÅG 86 G1/G2: SKRIVFÄLTETS MINNE — dropdownerna svävar ovanför
+              fältet (absolute bottom-full): slash-autocomplete + bibliotek. */}
+          <div className="relative">
+          {slashSynlig && (
+            <div
+              role="listbox"
+              aria-label="Kommandoautocomplete"
+              className="absolute bottom-full left-0 right-0 z-20 mb-2 overflow-hidden rounded-xl border border-gold/40 bg-card shadow-2xl"
+            >
+              <ul className="max-h-48 overflow-y-auto py-1">
+                {slashPoster.map((k, i) => (
+                  <li key={k.namn}>
+                    <button
+                      type="button"
+                      ref={(el) => {
+                        if (el) slashRadRefs.current.set(k.namn, el);
+                        else slashRadRefs.current.delete(k.namn);
+                      }}
+                      onMouseDown={(e) => e.preventDefault()} // behåll fokus i skrivfältet
+                      onMouseEnter={() => setSlashIndex(i)}
+                      onClick={() => valjSlash(k)}
+                      className={cn(
+                        "flex min-h-[44px] w-full items-center gap-2.5 px-3 py-2.5 text-left transition-colors",
+                        i === slashIndex ? "bg-gold/15" : "hover:bg-muted/60",
+                      )}
+                    >
+                      <Terminal className="h-4 w-4 shrink-0 text-gold/80" />
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate font-mono text-xs font-semibold text-foreground">{k.syntax}</span>
+                        <span className="block truncate text-[11px] leading-snug text-muted-foreground/80">{k.beskrivning}</span>
+                      </span>
+                      <span className="shrink-0 rounded-full border border-border px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-muted-foreground/70">
+                        {k.kalla === "api" ? "API" : "lokal"}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p className="border-t border-gold/20 px-3 py-1.5 text-[10px] text-muted-foreground/70">
+                ↑↓ välj · Enter infogar + kör · Tab fyller i · Esc stänger
+              </p>
+            </div>
+          )}
+
+          {prompterOppen && (
+            <>
+              {/* Klick-utanför stänger biblioteket (mobil: tappa var som helst). */}
+              <div className="fixed inset-0 z-10" aria-hidden onClick={() => setPrompterOppen(false)} />
+              <div
+                role="dialog"
+                aria-label="Promptbiblioteket"
+                className="absolute bottom-full left-0 right-0 z-20 mb-2 overflow-hidden rounded-xl border border-gold/40 bg-card shadow-2xl"
+              >
+                <div className="flex items-center gap-2 border-b border-gold/20 px-3 py-2">
+                  <Star className="h-3.5 w-3.5 shrink-0 text-gold" />
+                  <span className="min-w-0 flex-1 truncate text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    Promptbiblioteket{prompter.length > 0 ? ` — ${Math.min(prompter.length, 10)} av ${prompter.length}` : ""}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setPrompterOppen(false)}
+                    title="Stäng (Esc)"
+                    className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+                {prompter.length === 0 ? (
+                  <p className="px-3 py-3 text-xs leading-relaxed text-muted-foreground">
+                    Inga sparade prompts än — skriv något i fältet och tryck ⭐ (eller kör{" "}
+                    <span className="font-mono">/sparad din text</span>) för att spara det här.
+                  </p>
+                ) : (
+                  <ul className="max-h-48 overflow-y-auto py-1">
+                    {prompter.slice(0, 10).map((p, i) => (
+                      <li key={`${p.skapad}-${i}`} className="flex items-stretch">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            historikIndexRef.current = null; // G2: infogad prompt = ny redigering
+                            setPrompt(p.text);
+                            setPrompterOppen(false);
+                            ytaRef.current?.focus();
+                          }}
+                          title={p.text}
+                          className="flex min-h-[44px] min-w-0 flex-1 items-center px-3 py-2 text-left transition-colors hover:bg-muted/60"
+                        >
+                          <span className="line-clamp-2 min-w-0 flex-1 whitespace-pre-wrap break-words text-xs leading-snug text-foreground">
+                            {p.text}
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => tabortPrompt(p.skapad)}
+                          title="Ta bort prompten ur biblioteket"
+                          aria-label="Ta bort prompten"
+                          className="flex w-11 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <p className="border-t border-gold/20 px-3 py-1.5 text-[10px] text-muted-foreground/70">
+                  klicka = infoga i skrivfältet · papperskorg = ta bort — sista 10 visas
+                </p>
+              </div>
+            </>
+          )}
+
+          {/* VÅG 86 G3: 👁 markdown-förhandsvisning — skrivfältets innehåll
+              renderat som markdown (rubriker, **fetstil**, kodblock) i en
+              scrollbar yta OVANFÖR fältet (mobil: max-h + överscrollning). */}
+          {previewOppen && (
+            <div className="mb-2 max-h-44 overflow-y-auto overscroll-contain rounded-lg border border-gold/25 bg-muted/50 px-3 py-2">
+              <p className="mb-1 flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+                <Eye className="h-3 w-3" />
+                Förhandsvisning (markdown)
+              </p>
+              {prompt.trim() ? (
+                <div className="text-sm">
+                  <StudioMarkdown text={prompt} />
+                </div>
+              ) : (
+                <p className="text-xs italic leading-relaxed text-muted-foreground/60">
+                  Skriv i fältet — **fetstil**, ## rubriker och kodblock förhandsvisas här medan du skriver.
+                </p>
+              )}
+            </div>
+          )}
+
           <div className="flex items-end gap-2">
             <textarea
               ref={ytaRef}
               value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
+              maxLength={2000}
+              onChange={(e) => {
+                historikIndexRef.current = null; // G2: redigering avslutar historikbläddringen
+                setPrompt(e.target.value);
+                hojdpassaYta(e.target); // G3: auto-växande höjd direkt i onChange
+              }}
+              onFocus={() => {
+                // VÅG 86 G3: placeholdern roterar på focus — nytt tips varje gång
+                setPlaceholderIx((i) => (i + 1) % SKRIV_PLACEHOLDERS.length);
+              }}
               onPaste={(e) => void påPaste(e)}
               onKeyDown={(e) => {
+                // VÅG 86 G1: slash-dropdownen äger pilar/Enter/Tab/Esc först
+                if (slashSynlig) {
+                  if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    setSlashIndex((i) => Math.min(i + 1, slashPoster.length - 1));
+                    return;
+                  }
+                  if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    setSlashIndex((i) => Math.max(i - 1, 0));
+                    return;
+                  }
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    const k = slashPoster[slashIndex];
+                    if (k) valjSlash(k);
+                    return;
+                  }
+                  if (e.key === "Tab") {
+                    e.preventDefault();
+                    const k = slashPoster[slashIndex];
+                    if (k) kompletteraSlash(k);
+                    return;
+                  }
+                  if (e.key === "Escape") {
+                    e.preventDefault();
+                    e.stopPropagation(); // den globala Esc-hanteraren får inte blanda sig i
+                    setSlashStangd(true);
+                    return;
+                  }
+                }
+                // VÅG 86 G2: prompthistoriken — pil-upp i tomt fält återkallar,
+                // pil-ner bläddrar framåt (samma känsla som terminalen)
+                if (e.key === "ArrowUp" && !e.shiftKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                  if (blattraHistorik(1)) e.preventDefault();
+                  return;
+                }
+                if (e.key === "ArrowDown" && !e.shiftKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                  if (blattraHistorik(-1)) e.preventDefault();
+                  return;
+                }
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
                   void skicka();
                 }
               }}
               rows={1}
-              placeholder="Skriv till agenten… (Enter skickar, Skift+Enter ny rad — /help visar kommandon)"
-              className="max-h-40 min-h-[44px] flex-1 resize-none rounded-xl border border-gold/30 bg-card px-3.5 py-2.5 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
-              style={{ height: "auto" }}
+              placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
+              title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten"
+              className="min-h-[44px] flex-1 resize-none rounded-xl border border-gold/30 bg-card px-3.5 py-2.5 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
             />
+            {/* VÅG 86 G2: ⭐ Spara prompt — med text i fältet sparas texten,
+                tomt fält öppnar biblioteket (samma som /sparad). */}
+            <Button
+              onClick={() => {
+                if (prompt.trim()) {
+                  if (sparaPrompt(prompt)) {
+                    visaToast("Prompten sparad i biblioteket ⭐ — den ligger nu överst i listan.");
+                    oppnaPrompter();
+                  }
+                } else {
+                  oppnaPrompter();
+                }
+              }}
+              variant="outline"
+              className="h-11 w-11 shrink-0 rounded-xl border-gold/40 p-0 text-gold hover:bg-gold/10 hover:text-gold"
+              title={prompt.trim() ? "Spara prompten i biblioteket (⭐)" : "Visa promptbiblioteket ⭐ (samma som /sparad)"}
+            >
+              <Star className="h-5 w-5" />
+            </Button>
             {strömmar ? (
               <Button
                 onClick={stoppa}
@@ -5734,6 +6606,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <Send className="h-5 w-5" />
               </Button>
             )}
+          </div>
           </div>
           <div className="mt-1.5 flex items-center gap-1">
             <input
@@ -5789,12 +6662,45 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <FolderUp className="h-3.5 w-3.5" />
               Mapp
             </button>
+            {/* VÅG 86 G3: 👁-toggle — markdown-förhandsvisning av skrivfältet. */}
+            <button
+              type="button"
+              onClick={() => setPreviewOppen((v) => !v)}
+              aria-pressed={previewOppen}
+              title={
+                previewOppen
+                  ? "Stäng markdown-förhandsvisningen"
+                  : "Förhandsvisning: rendera skrivfältet som markdown (rubriker, fetstil, kodblock)"
+              }
+              className={cn(
+                "flex items-center gap-1 rounded-md px-2 py-1 text-[11px] transition-colors hover:bg-muted",
+                previewOppen ? "font-semibold text-gold" : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              {previewOppen ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+              <span className="hidden sm:inline">Förhandsvisning</span>
+            </button>
             <span className="ml-auto hidden items-center gap-1 text-[10px] text-muted-foreground/70 sm:flex">
               <UploadCloud className="h-3 w-3" />
-              dra & släpp eller klistra en bild
+              dra & släpp eller klistra in en bild
             </span>
             <span className="ml-auto max-w-[45%] truncate text-[10px] text-muted-foreground/70 sm:hidden">
               {statusText}
+            </span>
+            {/* VÅG 86 G3: teckenräknare — diskret i hörnet (tak 2000 tkn;
+                guld-varning ≥ 1800, rött vid taket). */}
+            <span
+              className={cn(
+                "shrink-0 font-mono text-[10px] tabular-nums",
+                prompt.length >= 2000
+                  ? "font-bold text-red-500"
+                  : prompt.length >= 1800
+                    ? "text-gold"
+                    : "text-muted-foreground/60",
+              )}
+              title="Tecken i skrivfältet (tak 2000)"
+            >
+              {prompt.length}/2000
             </span>
           </div>
         </div>

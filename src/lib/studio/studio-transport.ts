@@ -185,6 +185,33 @@ import path from "node:path";
  * oldStart/newStart) för GUL radmarkering i filvisningen (se
  * studio-chat.tsx + POST /api/studio/filer).
  *
+ * VÅG 86 G5 (CHECKPOINT/REWIND — "⟲ Gå tillbaka hit" på agentbubblorna;
+ * LIVE-bevisat 2026-09-09 på Contabo, sond tool-results/v86-g5-forksond.mjs):
+ * ny transportmetod rewindTillTurn(turnIndex) = session/fork med target
+ * {kind:"turn", turnIndex}. FÄLTFORM UR vendor/zcode.cjs (app 3.11.2): target
+ * är en strict zod-discriminatedUnion — {kind:"turn",turnIndex:int≥0} |
+ * {kind:"message",messageId} | {kind:"checkpoint",checkpointId} |
+ * {kind:"latestCheckpoint"} — och servern löser INTERN (fn XLi) turn →
+ * targetMessageId = SISTA assistant-meddelandet i den 0-baserade turnen.
+ * SONDFAKTA (2 turner, ingen filändring):
+ *   · fork turn:0 → {forkedSessionId, parentSessionId, targetMessageId,
+ *     response, snapshot} — forken FUNGERAR UTAN CHECKPOINT (message-vägen;
+ *     endast kind checkpoint/latestCheckpoint kräver workspace-checkpoint,
+ *     som skapas vid filändringar — kartan §1).
+ *   · Forked sessionens meddelanden: [user#1, assistant#1, assistant(""),
+ *     user("This session was forked from a…")] — en SYNTHETISK user-notis
+ *     om forken + en tom assistant-post (historik()-filtret tystar tomma).
+ *   · Ogiltigt turnIndex → -32004 "Cannot resolve assistant message for
+ *     turnIndex=5" (ärligt fel — UI:t kan lita på felkoden).
+ *   · latestCheckpoint utan filändring → -32603 "No workspace checkpoint
+ *     is available yet" (känd sedan v83 — forka() behåller den vägen).
+ * rewindTillTurn forkar ALLTSÅ vid valfri agentbubbla (checkpoint-id per
+ * turn saknas i protokollet — dokumenterat; turn-forken är dess motsvarighet
+ * och STARKARE: kräver inga filändringar), öppnar sedan forked-sessionen
+ * (resume + subscribe + historik — oppnaSession-vägen) så DEN blir
+ * transportens aktiva session: nästa prompt fortsätter från fork-punkten.
+ * Parent-sessionen stängs artigt och lever kvar i session/list.
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -500,6 +527,23 @@ export interface StudioForkSvar {
   meddelande: string;
 }
 
+/**
+ * VÅG 86 G5: resultat från rewindTillTurn() — sessionen forkad vid en SPECIFIK
+ * turn och forked-sessionen är NU transportens aktiva (nästa prompt fortsätter
+ * från fork-punkten; chatten börjar om från historiken här).
+ */
+export interface StudioRewindSvar {
+  /** Forked-sessionens id (session/fork → forkedSessionId). */
+  sessionId: string;
+  /** 1-baserat iterationsnummer = turnIndex+1 (toastens sanning). */
+  iteration: number;
+  /** Chattens historik FRÅN BÖRJAN till fork-punkten (forked-sessionens). */
+  historik: StudioHistorikPost[];
+  /** Färsk kontext för forked-sessionen (kontextraden). */
+  kontext: StudioKontext | null;
+  meddelande: string;
+}
+
 /** Resultat från lasMal()/sattMal() (session/goal — LIVE-bevisat "show"). */
 export interface StudioMalSvar {
   /** null = inget mål satt (LIVE: response "No goal is set…"). */
@@ -682,6 +726,15 @@ export interface StudioTransport {
    * tvinga fram filändringar; KVD-beslut: ingen auto-Write.
    */
   forka(): Promise<StudioForkSvar>;
+  /**
+   * VÅG 86 G5 (LIVE-bevisat — se filhuvudet): fork sessionen vid turn
+   * turnIndex (0-baserad; kind:"turn" löses internt till turnens SISTA
+   * assistant-meddelande — kräver INGEN checkpoint) och ÖPPNA sedan den
+   * forkade sessionen (resume + subscribe + historik) så den blir den
+   * AKTIVA — "Gå tillbaka hit". Parent-sessionen lever kvar i
+   * session/list (Sessioner). Ogiltigt turnIndex ⇒ ärligt fel.
+   */
+  rewindTillTurn(turnIndex: number): Promise<StudioRewindSvar>;
   /** session/goal action "show" (LIVE-bevisat: "No goal is set…" tomt). */
   lasMal(): Promise<StudioMalSvar>;
   /**
@@ -2147,6 +2200,64 @@ class AppServerTransport implements StudioTransport {
       }
       throw fel;
     }
+  }
+
+  // ── VÅG 86 G5: CHECKPOINT/REWIND — fork vid valfri agentbubbla ────────────
+
+  async rewindTillTurn(turnIndex: number): Promise<StudioRewindSvar> {
+    // turnIndex är protokollets EGNA 0-baserade turn-räknare (vendor/zcode.cjs
+    // fn e8i: user-meddelanden räknar upp, turnens SISTA assistant-post är
+    // målet) — validera hårt innan den går till app-servern.
+    if (!Number.isInteger(turnIndex) || turnIndex < 0) {
+      throw new Error("Ogiltigt iterationsnummer för rewind.");
+    }
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt kör — vänta tills agenten är klar.");
+    }
+    // LIVE-BEVISAT (v86-g5-forksond.mjs 2026-09-09): {kind:"turn",turnIndex}
+    // fungerar UTAN checkpoint (löses till targetMessageId = turnens sista
+    // assistant-meddelande). Svaret bär forkedSessionId + snapshot.
+    let forkedSessionId: string;
+    try {
+      const r = (await this.klient.request(
+        "session/fork",
+        { sessionId: this.sid, target: { kind: "turn", turnIndex } },
+        60_000,
+      )) as { forkedSessionId?: unknown } | null;
+      const sid = typeof r?.forkedSessionId === "string" && r.forkedSessionId ? r.forkedSessionId : "";
+      if (!sid) throw new Error("session/fork svarade utan forkedSessionId");
+      forkedSessionId = sid;
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      // LIVE-BEVISAT: ogiltigt turnIndex ⇒ -32004 "Cannot resolve assistant
+      // message for turnIndex=N" — ärligt meddelande (bubblan kan ha hunnit
+      // åldras ur serverns meddelandelista).
+      if (/turnIndex=|target_message_not_found|-32004/i.test(text)) {
+        throw new Error(
+          `Iterationen ${turnIndex + 1} finns ej längre i sessionen — öppna en tidigare iteration ur Sessioner i stället.`,
+        );
+      }
+      // LIVE-BEVISAT (B3): -32010 "Cannot fork while a prompt is running".
+      if (/prompt is running|-32010/i.test(text)) {
+        throw new Error("En prompt eller aktivt mål kör i sessionen — vänta tills agenten är ledig.");
+      }
+      throw fel;
+    }
+    // ÖPPNA forked-sessionen — samma väg som Sessioner-listans resume (artigt
+    // session/close på parent som LEVER KVAR i session/list, resume +
+    // subscribe + v4 + historik ur session/messages). Efter detta är den
+    // forkade sessionen transportens AKTIVA: nästa prompt fortsätter från
+    // fork-punkten ("chatten börjar om från den punkten").
+    const oppnad = await this.oppnaSession(forkedSessionId);
+    return {
+      sessionId: oppnad.sessionId,
+      iteration: turnIndex + 1,
+      historik: oppnad.historik,
+      kontext: oppnad.kontext,
+      meddelande: `Sessionen forkad vid iteration ${turnIndex + 1} — föräldern lever kvar i Sessioner.`,
+    };
   }
 
   async lasMal(): Promise<StudioMalSvar> {
@@ -4134,6 +4245,70 @@ class MockTransport implements StudioTransport {
     return {
       forkedSessionId,
       meddelande: `Mock: fork skapad (${forkedSessionId}) — riktigt läge kräver checkpoint.`,
+    };
+  }
+
+  /**
+   * VÅG 86 G5 (mock): deterministisk rewind — historiken klipps vid den
+   * (turnIndex+1):e user-posten (protokollets e8i-räkning: user räknar upp,
+   * turnen avslutas vid nästa user) och den förkortade historiken blir en NY
+   * mock-session (föräldern läggs undan i gamlaSessioner — dev-E2E bevisar
+   * "föräldern lever kvar i Sessioner + chatten börjar om från punkten").
+   */
+  async rewindTillTurn(turnIndex: number): Promise<StudioRewindSvar> {
+    await this.ensure();
+    if (!Number.isInteger(turnIndex) || turnIndex < 0) {
+      throw new Error("Ogiltigt iterationsnummer för rewind.");
+    }
+    // Protokoll-räkningen: hitta SLUTET på turn turnIndex = index FÖRE den
+    // (turnIndex+2):te user-posten (den (turnIndex+1):e user-posten öppnar
+    // turnen; nästa user-post stänger den — sista turnen slutar vid slutet).
+    let userSett = 0;
+    let klipp = this.historikPoster.length;
+    for (let i = 0; i < this.historikPoster.length; i++) {
+      if (this.historikPoster[i].roll === "user") {
+        if (userSett === turnIndex + 1) {
+          klipp = i; // nästa user-post = turnen är slut
+          break;
+        }
+        userSett += 1;
+      }
+    }
+    if (userSett < turnIndex + 1) {
+      throw new Error(
+        `Iterationen ${turnIndex + 1} finns ej i sessionen (mock) — välj en tidigare agentbubbla.`,
+      );
+    }
+    // Föräldern undan (samma mönster som nySession — listan behåller den).
+    if (this.mockSid) {
+      this.mockHistorik.set(this.mockSid, [...this.historikPoster]);
+      this.mockMeta.set(this.mockSid, { turns: this.mockTurns, tokens: this.mockTotalt });
+      if (!this.gamlaSessioner.some((s) => s.sessionId === this.mockSid)) {
+        this.gamlaSessioner.unshift({
+          sessionId: this.mockSid,
+          titel: this.historikPoster[0]?.text.slice(0, 60) || "Mock-session",
+          status: "idle",
+          modell: this.mockModell ? `mock/${this.mockModell}` : "mock/demo",
+          turns: this.mockTurns,
+          tokens: this.mockTotalt,
+          uppdaterad: new Date().toISOString(),
+        });
+      }
+    }
+    // Forkad session: förkortad historik + ärliga räknare.
+    const forkedSessionId = `sess_mock_fork_${Date.now().toString(36)}`;
+    const historik = this.historikPoster.slice(0, klipp);
+    this.mockSid = forkedSessionId;
+    this.historikPoster.length = 0;
+    this.historikPoster.push(...historik.map((h) => ({ ...h })));
+    this.mockTurns = turnIndex + 1;
+    this.mockTotalt = Math.max(0, this.mockTotalt);
+    return {
+      sessionId: forkedSessionId,
+      iteration: turnIndex + 1,
+      historik: [...this.historikPoster],
+      kontext: await this.lasKontext(),
+      meddelande: `Mock: sessionen forkad vid iteration ${turnIndex + 1}.`,
     };
   }
 

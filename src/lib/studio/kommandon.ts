@@ -64,6 +64,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     beskrivning: "Öppna Färdigheter ⚡ — agentens skills, aktiva plugins och anslutna MCP-verktyg",
     kalla: "lokal",
   },
+  {
+    namn: "sparad",
+    syntax: "/sparad [text]",
+    beskrivning: "Promptbiblioteket ⭐ — sparade prompts (utan argument: visa biblioteket, med text: spara den)",
+    kalla: "lokal",
+  },
 ];
 
 /** Resultat av parsaKommando — kommando utan skrå + resten som argument. */

@@ -1,7 +1,12 @@
 import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
-import { hamtaStudioTransport, type StudioArbetsytaInfo } from "@/lib/studio/studio-transport";
+import {
+  hamtaSessionTransport,
+  hamtaStudioTransport,
+  type StudioArbetsytaInfo,
+  type StudioTransport,
+} from "@/lib/studio/studio-transport";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,6 +33,14 @@ export const dynamic = "force-dynamic";
  *   "fork"      → session/fork latestCheckpoint → {forkedSessionId?} ELLER
  *                ärligt meddelande: fork kräver checkpoint (skapas vid
  *                FILÄNDRINGAR — LIVE-bevisat v83, se protokollkarta §1).
+ *   "rewind"    {turnIndex, sessionId?} → VÅG 86 G5 CHECKPOINT/REWIND:
+ *                transport.rewindTillTurn — session/fork {kind:"turn",
+ *                turnIndex} (LIVE-bevisat: kräver INGEN checkpoint) + den
+ *                forkade sessionen ÖPPNAS och blir den aktiva → {sessionId,
+ *                iteration, historik, kontext} så chatten börjar om från
+ *                punkten; föräldern lever kvar i Sessioner. sessionId given
+ *                ⇒ DEN sessionens per-session-transport (egen tabb);
+ *                annars default-transporten (huvudtabben).
  *   "malSatt"   {mal} → session/goal set → {mal, meddelande}.
  *   "malRensa"  → session/goal clear → {mal:null, meddelande}.
  *   "malPausa"  → VÅG 85 F1: pausa den autonoma mål-loopen (session/stop —
@@ -105,6 +118,7 @@ export async function POST(req: NextRequest) {
   let taskId = "";
   let lage = "";
   let niva = "";
+  let turnIndex = -1;
   try {
     const kropp = (await req.json()) as {
       action?: unknown;
@@ -114,6 +128,7 @@ export async function POST(req: NextRequest) {
       taskId?: unknown;
       lage?: unknown;
       niva?: unknown;
+      turnIndex?: unknown;
     };
     if (typeof kropp.action === "string") action = kropp.action.trim();
     if (typeof kropp.instruktioner === "string" && kropp.instruktioner.trim()) {
@@ -124,11 +139,32 @@ export async function POST(req: NextRequest) {
     if (typeof kropp.taskId === "string") taskId = kropp.taskId.trim();
     if (typeof kropp.lage === "string") lage = kropp.lage.trim();
     if (typeof kropp.niva === "string") niva = kropp.niva.trim();
+    if (typeof kropp.turnIndex === "number" && Number.isInteger(kropp.turnIndex)) {
+      turnIndex = kropp.turnIndex;
+    }
   } catch {
     return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
   }
 
-  const transport = hamtaStudioTransport();
+  // VÅG 86 G5: rewind (och övriga sessioner) skall träffa DEN session klienten
+  // ser — sessionId given ⇒ per-session-transporten (egen tabb), annars
+  // default-transporten (huvudtabben äger den).
+  let transport: StudioTransport;
+  if (action === "rewind" && sessionId) {
+    if (!/^sess_[A-Za-z0-9._-]+$/.test(sessionId)) {
+      return jsonSvar({ fel: "Ogiltigt sessions-id." }, 400);
+    }
+    try {
+      ({ transport } = await hamtaSessionTransport(sessionId));
+    } catch (fel) {
+      return jsonSvar(
+        { fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas." },
+        502,
+      );
+    }
+  } else {
+    transport = hamtaStudioTransport();
+  }
 
   try {
     if (action === "ny") {
@@ -152,6 +188,17 @@ export async function POST(req: NextRequest) {
     }
     if (action === "fork") {
       const svar = await transport.forka();
+      return jsonSvar(svar);
+    }
+    // ── VÅG 86 G5: CHECKPOINT/REWIND — "⟲ Gå tillbaka hit" ──────────────────
+    if (action === "rewind") {
+      if (turnIndex < 0) {
+        return jsonSvar({ fel: "turnIndex (0-baserat heltal ≥ 0) krävs för rewind." }, 400);
+      }
+      // transport.rewindTillTurn: session/fork {kind:"turn",turnIndex} +
+      // öppnar forked-sessionen (den blir AKTIV) + historik/kontext.
+      // Fel är ÄRLIGA (prompt kör / iterationen finns ej) — 502 med texten.
+      const svar = await transport.rewindTillTurn(turnIndex);
       return jsonSvar(svar);
     }
     if (action === "malSatt") {
@@ -206,7 +253,7 @@ export async function POST(req: NextRequest) {
     return jsonSvar(
       {
         fel:
-          'Okänd action — använd "ny", "compact", "resume", "stang", "fork", "malSatt", "malRensa", "malPausa", "malAteruppta", "subagenter", "avbrytTask", "arbetsyta", "läge" eller "tankestyrka".',
+          'Okänd action — använd "ny", "compact", "resume", "stang", "fork", "rewind", "malSatt", "malRensa", "malPausa", "malAteruppta", "subagenter", "avbrytTask", "arbetsyta", "läge" eller "tankestyrka".',
       },
       400,
     );

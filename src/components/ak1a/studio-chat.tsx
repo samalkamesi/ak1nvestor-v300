@@ -3217,7 +3217,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
     antalTurner: number;
     sessionId: string | null;
     malKorer: boolean;
+    /** VÅG 93 C4: verktygsaktiviteten under frånvaron (session/events-replay). */
+    kort?: VerktygKort[];
   } | null>(null);
+  /** VÅG 93 C4: bannerns verktygslista expanderad + vilka kort som är öppna. */
+  const [bortaKortOppet, setBortaKortOppet] = React.useState(false);
+  const [bortaOppnaKort, setBortaOppnaKort] = React.useState<Set<string>>(new Set());
   const serverSynkRef = React.useRef<Set<string>>(new Set());
 
   // ── Skrivfältets minne (våg 86 G1/G2) ──────────────────────────────────────
@@ -3953,6 +3958,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
           }
           if (levande && kandidat && aktivHistorik.length > 0) {
             sparaSenasteSessionId(kandidat);
+            // VÅG 93 C4: verktygsaktiviteten under frånvaron — replay ur
+            // session/events via den nya rutten. Fire-and-forget: bannern
+            // visar svaren direkt, korten droppar in när replayen landar
+            // (501/timeout/nätverksfel = tyst — replay är lyx).
+            const hamtaBortaKort = async (sid: string) => {
+              try {
+                const res = await fetch(`/api/studio/session/events?sessionId=${encodeURIComponent(sid)}`, {
+                  headers: adminHeaders(),
+                });
+                if (!res.ok) return;
+                const data = (await res.json()) as { kort?: VerktygKort[] };
+                if (!Array.isArray(data.kort) || data.kort.length === 0) return;
+                setBortaBanner((b) => (b ? { ...b, kort: data.kort } : b));
+              } catch {
+                // replay är lyx — bannern räcker utan kort
+              }
+            };
             const arDefault = typeof data.sessionId === "string" && kandidat === data.sessionId;
             const tillMeddelanden = (lista: { roll: "user" | "assistant"; text: string }[]) =>
               lista.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text }));
@@ -3970,6 +3992,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               setPrompt(forr?.utkast ?? "");
               if (nyaSvar > forrSvar) {
                 setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: kandidat, malKorer: aktivtMal?.aktiv === true });
+                void hamtaBortaKort(kandidat);
               }
             } else {
               const äger = sparad?.tabbar.find((t) => t.sessionId === kandidat) ?? null;
@@ -4003,6 +4026,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }
               if (nyaSvar > forrSvar) {
                 setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: kandidat, malKorer: aktivtMal?.aktiv === true });
+                void hamtaBortaKort(kandidat);
               }
             }
           }
@@ -6905,31 +6929,79 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
         {/* Meddelandelista — fullbredd-block med tunn separator (INGA bubblor). */}
         <div className="relative min-h-0 flex-1">
-          {/* Borta-banner (våg 87 H1): agenten arbetade medan du var borta. */}
+          {/* Borta-banner (våg 87 H1 + 93 C4): svaren + verktygsaktiviteten. */}
           {bortaBanner && (
             <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex justify-center px-3">
-              <div className="studio-fade-in pointer-events-auto flex max-w-full items-center gap-2 rounded-md border border-[#30363D] bg-[#0D1117] px-4 py-2 text-xs font-medium text-[#E6EDF3] shadow-lg">
-                <span className="truncate">
-                  Agenten har arbetat medan du var borta — {bortaBanner.antalTurner} nya svar
-                  {bortaBanner.malKorer ? " · mål-loopen kör fortfarande" : ""}
-                </span>
-                <button
-                  onClick={() => {
-                    setBortaBanner(null);
-                    hoppaNerChatt();
-                  }}
-                  className="shrink-0 rounded-md bg-[#238636] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#2EA043]"
-                >
-                  Visa
-                </button>
-                <button
-                  onClick={() => setBortaBanner(null)}
-                  title="Stäng notisen"
-                  aria-label="Stäng notisen"
-                  className="shrink-0 text-[#8B949E] transition-colors hover:text-[#E6EDF3]"
-                >
-                  <X className="h-3.5 w-3.5" />
-                </button>
+              <div className="studio-fade-in pointer-events-auto flex max-w-full flex-col rounded-md border border-[#30363D] bg-[#0D1117] text-xs font-medium text-[#E6EDF3] shadow-lg">
+                <div className="flex items-center gap-2 px-4 py-2">
+                  <span className="truncate">
+                    Agenten har arbetat medan du var borta — {bortaBanner.antalTurner} nya svar
+                    {bortaBanner.malKorer ? " · mål-loopen kör fortfarande" : ""}
+                    {bortaBanner.kort && bortaBanner.kort.length > 0
+                      ? ` · ${bortaBanner.kort.length} verktygskall`
+                      : ""}
+                  </span>
+                  {bortaBanner.kort && bortaBanner.kort.length > 0 && (
+                    <button
+                      onClick={() => setBortaKortOppet((o) => !o)}
+                      title={bortaKortOppet ? "Dölj verktygsaktiviteten" : "Visa verktygsaktiviteten"}
+                      aria-label={bortaKortOppet ? "Dölj verktygsaktiviteten" : "Visa verktygsaktiviteten"}
+                      aria-expanded={bortaKortOppet}
+                      className="shrink-0 rounded-md bg-[#21262D] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-[#E6EDF3] transition-colors hover:bg-[#30363D]"
+                    >
+                      {bortaKortOppet ? (
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      ) : (
+                        <ChevronRight className="h-3.5 w-3.5" />
+                      )}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      setBortaBanner(null);
+                      setBortaKortOppet(false);
+                      hoppaNerChatt();
+                    }}
+                    className="shrink-0 rounded-md bg-[#238636] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#2EA043]"
+                  >
+                    Visa
+                  </button>
+                  <button
+                    onClick={() => {
+                      setBortaBanner(null);
+                      setBortaKortOppet(false);
+                    }}
+                    title="Stäng notisen"
+                    aria-label="Stäng notisen"
+                    className="shrink-0 text-[#8B949E] transition-colors hover:text-[#E6EDF3]"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+                {/* VÅG 93 C4: verktygsaktiviteten under frånvaron — samma kortvy
+                    som i chatten (VerktygsKortVy), aggregerad till slutstatus. */}
+                {bortaKortOppet && bortaBanner.kort && bortaBanner.kort.length > 0 && (
+                  <div
+                    role="region"
+                    aria-label="Verktygsaktivitet under frånvaron"
+                    className="max-h-64 space-y-1 overflow-y-auto border-t border-[#30363D] p-2"
+                  >
+                    {bortaBanner.kort.map((k) => (
+                      <VerktygsKortVy
+                        key={k.id}
+                        kort={{ ...k, namn: k.namn || "verktyg", öppen: bortaOppnaKort.has(k.id) }}
+                        onVaxla={(id) =>
+                          setBortaOppnaKort((s) => {
+                            const n = new Set(s);
+                            if (n.has(id)) n.delete(id);
+                            else n.add(id);
+                            return n;
+                          })
+                        }
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           )}

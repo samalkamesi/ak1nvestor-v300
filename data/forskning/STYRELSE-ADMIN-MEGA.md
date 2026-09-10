@@ -657,3 +657,30 @@ GRÖN · build exit 0 · E2E-autonomitest (A1c) grönt före deploy.
   topp-P0: v4-attachments, webbläsare, automation, full bakgrundslista,
   send-automationId. = våg 92-underlag.
 - PIPELINE-KO.md = styrelsens dispatchlista (testrader rensade).
+
+## TILLÄGG VÅG 92 — Z-PARITET P0-KOMPLETT (2026-09-10, kunddirektiv "Mega projektet, jobba hårt/länge")
+
+A4-kartans topp-5 P0 byggs nu. Ägarskap krockfritt:
+
+- B1 **TRANSPORT** (studio-transport.ts + api/studio/stream/route.ts):
+  (a) v4/attachment begin/chunk/commit — laddaUppBilaga(sokvag) →
+  {attachmentId} (sha256+base64 enligt binärform; 501-fallback =
+  arbetsytareferens kvar); (b) skicka med attachments; (c) automation
+  CRUD: automationSkapa/Uppdatera(pausa)/Radera + lasAutomationer;
+  (d) skickaAutomation (send med automationId/offPeakTaskId);
+  (e) lasBakgrundsjobb full projektionsparsning (id/titel/status/startad).
+- B2 **TJÄNSTER-RODDAR** (api/studio/tjanster/** ENDAST): webblasare
+  POST {url} → korWebblasare med full kontext (requestId/sessionId/
+  workspace/clientMode); automation GET/POST/DELETE + /pausa; bakgrund
+  GET full lista. 401-vaktade; StudioMetodSaknasError → 501 {saknas}.
+- B3 **STUDIO-UI** (studio-chat.tsx + kommandon.ts ENDAST): webbläsar-
+  panel (URL-fält → kör → titel+url+utdrag; lista öppna sidor),
+  automationshanterare (lista + skapa namn/cron/prompt + pausa/radera),
+  bakgrundskort med Avbryt, bilage-progress ("Laddar upp bilaga…" →
+  "Bilaga ✓"). Våg 90-språk. Graceful vid 501.
+- B4 **E2E-SVIT** (tool-results/ ENDAST, read-only mot src): v92-e2e.mjs
+  — attachment-uppladdning, automation skapa→pausa→radera, webbläsare
+  kör, bakgrundslista — körbar efter integration; + P1-designunderlag
+  för våg 93 (hooks/trustGrant, workspace-inställningar, plugins-drift).
+
+KVD: tsc 36-baslinje · build exit 0 · E2E grönt · deploy + prodcheck.

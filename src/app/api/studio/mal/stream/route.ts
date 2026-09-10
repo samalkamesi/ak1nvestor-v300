@@ -3,6 +3,8 @@ import { NextRequest } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import {
   hamtaStudioTransport,
+  markeraMalIterationSlut,
+  markeraMalIterationStart,
   type StudioEvent,
   type StudioFilandring,
   type StudioKontext,
@@ -86,8 +88,17 @@ export async function POST(req: NextRequest) {
 
       // Efterspel per avslutad iteration: färsk kontext + diff — samma
       // underlag som /api/studio/stream skickar efter en chattad turn.
+      // VÅG 87 H1/H2: varje iteration markeras I SESSIONSKARTAN (som
+      // debouncat skrivs till disk) — autonomt arbete medan användaren är
+      // borta syns i historiken när hen återkommer (GET:s
+      // senastAktivSessionId + senastAktivHistorik + aktivtMal).
+      const malSid = transport.sessionId();
       const skickaMedEfterspel = (event: Parameters<typeof sseRad>[0]) => {
         skicka(event);
+        if (event.typ === "mal_iteration") {
+          if (event.fas === "start") markeraMalIterationStart(malSid);
+          else markeraMalIterationSlut(malSid, event.iteration, event.svar ?? "");
+        }
         if (event.typ === "mal_iteration" && event.fas === "slut") {
           void transport
             .lasKontext()

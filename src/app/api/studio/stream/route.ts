@@ -5,6 +5,7 @@ import {
   hamtaSessionTransport,
   hamtaStudioTransport,
   lasAllaInteraktioner,
+  lasAterkoppling,
   lasStudioSessionskarta,
   markeraSessionSlut,
   markeraSessionStart,
@@ -69,6 +70,17 @@ export const dynamic = "force-dynamic";
  * är injikerbar (STUDIO_TRANSPORT=mock för dev/test — deterministisk,
  * ingen modell). nginx: INGEN ändring — :3000 går genom befintlig proxy
  * (SSE är vanlig chunked text/event-stream).
+ *
+ * VÅG 87 H1 — ÅTERKOPPLING (kundrapport: "sparar ej info, fortsätter ej
+ * när jag är utanför sidan"): GET UTAN sessionId svarar utöver det gamla
+ * (default-sessionens historik + sessionskarta) även {senastAktivSessionId,
+ * senastAktivHistorik, aktivtMal} — den SENAST AKTIVA sessionen (kartan,
+ * som nu lever på DISK och överlever pm2-omstart — H2) + HELA dess
+ * historik (levande transport ur registret > kartan; ALDRIG ny
+ * barnprocess här) + mål-snapshot om mål-loopen kör. UI:t auto-laddar
+ * sessionen vid mount (resume via GET ?sessionId=) så användaren SER
+ * vad som hände under frånvaron utan att klicka något; en reconnect-poll
+ * (30 s, pausad när fliken är dold) håller vyn sann när SSE:t tappats.
  *
  * SKYDD: requireAdmin på BÅDA metoderna (sessionscookie ak1a_admin eller
  * x-admin-password; dev-fallback endast i development; rate-limit 10 fel/min
@@ -140,7 +152,11 @@ export async function GET(req: NextRequest) {
   const transport = hamtaStudioTransport();
   try {
     await transport.ensure();
-    const [historik, kontext] = await Promise.all([transport.historik(), transport.lasKontext()]);
+    const [historik, kontext, aterkoppling] = await Promise.all([
+      transport.historik(),
+      transport.lasKontext(),
+      lasAterkoppling(), // VÅG 87 H1: senast aktiva session + historik + mål
+    ]);
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
@@ -152,6 +168,11 @@ export async function GET(req: NextRequest) {
       live: true,
       // VÅG 84 B: sessionskartan — alla sessioner denna process sett.
       sessionskarta: lasStudioSessionskarta(),
+      // VÅG 87 H1: återkopplingen — den senast aktiva sessionen + HELA
+      // dess historik (levande transport > kartan/disk) + mål-snapshot.
+      senastAktivSessionId: aterkoppling.senastAktivSessionId,
+      senastAktivHistorik: aterkoppling.senastAktivHistorik,
+      aktivtMal: aterkoppling.aktivtMal,
     });
   } catch (fel) {
     return jsonSvar({
@@ -161,6 +182,10 @@ export async function GET(req: NextRequest) {
       interaktioner: transport.vantaInteraktioner(),
       live: false,
       sessionskarta: lasStudioSessionskarta(),
+      // VÅG 87 H1: även när agenten är nede svarar kartan (disken!) —
+      // historiken från frånvaron förloras inte bara för att barnprocessen
+      // är nere; lasAterkoppling kastar aldrig.
+      ...(await lasAterkoppling()),
       fel: fel instanceof Error ? fel.message.slice(0, 300) : "Agenten kunde ej nås.",
     });
   }

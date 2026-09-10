@@ -282,6 +282,52 @@ import { cn } from "@/lib/utils";
  * räknar upp — protokollets egna e8i-räkning). latestCheckpoint-forken
  * (kräver filändring) lever kvar som action "fork" i API:t.
  *
+ * VÅG 87 H1 (ÅTERKOPPLING — studions största UX-brott; kundrapporten
+ * "sparar ej info, fortsätter ej när jag är utanför sidan"): servern +
+ * barnprocessen fortsätter ARBETA när användaren lämnar /studio — VID MOUNT
+ * anropas GET /api/studio/stream UTAN sessionId, som nu bär
+ * {senastAktivSessionId, senastAktivHistorik, aktivtMal} (kartan lever på
+ * DISK på servern — H2 — och överlever pm2-omstart). Finns en senast aktiv
+ * session MED historik AUTO-LADDAS den: huvudtabben om det är default-
+ * sessionen, annars tabben som äger den (ur sessionStorage) eller en ny
+ * "Åter …"-tabb — användaren ser ALLT som hände under frånvaron utan att
+ * klicka. BORTA-BANNER "📌 Agenten har arbetat medan du var borta — N nya
+ * svar [Visa]" (antalet = nya assistant-poster mot den lokala bufferten;
+ * [Visa] = mjuk scroll till senaste). RECONNECT-POLL: är fliken öppen men
+ * SSE:t tappat ⇒ GET var 30:e sekund (visibilitychange + setInterval,
+ * PAUSAD när fliken är dold) — en session som arbetar på SERVERN utan
+ * levande lokal ström markeras i sin tabb och synkas (GET ?sessionId=)
+ * när den slutar; ett aktivt mål återöppnar mål-strömmen själv.
+ * localStorage "ak1a-studio-senaste-sessionId" skrivs vid varje sändning
+ * och läses vid mount som PRIORITERAD kandidat (om den matchar serverns
+ * senast aktiva).
+ *
+ * VÅG 87 H3 (DESIGN-POLISH — Z-kvalitet): animationslager i globals.css
+ * under studio-*-klasser — (1a) .studio-fade-in på VARJE meddelandebubbla
+ * (opacity 0→1 + translateY 8→0, 200ms ease-out — mount-tid, streaming-
+ * re-renders startar aldrig om den), (1b) .studio-lift hover-lift på
+ * primära knappar (translateY(-1px) + shadow-md, active:scale-95; i
+ * pekläge scale-0.97), (1c) .studio-cursor — blinkande ▊-block i agentens
+ * sista delta-rad (1 s oändlig blink). Typografi: rubriker tracking-tight,
+ * brödtext leading-relaxed, småetiketter uppercase tracking-[0.15em],
+ * siffror tabular-nums (kontextraden). Gradient-accenter: agent-bubblor
+ * .studio-bubbla-agent (card→paper ≈ paper/95-känsla; natt lager-på-lager
+ * marin), användar-bubblor bibehåller marin-panel-gradienten (marin→
+ * marin/95) + .studio-grupp-divider guld-våglinje mellan turgrupper.
+ * Empty-state: Serena-emblem 64px guld + "Välkommen till AK1A Studio" +
+ * 3 klickbara förslag (mål-dialog / filväljare / fokus i fältet).
+ * Loading-skeletons: 3 animerade paper/50-bubblor (animate-pulse, olika
+ * bredder + stagger) medan den första GET /api/studio/stream laddar.
+ *
+ * VÅG 87 H4 (MOBIL-POLISH): viewport-fit=cover i studio-page.tsx +
+ * .studio-safe-top på headern / .studio-safe-bottom på composern (env
+ * (safe-area-inset-*)); composern är sticky bottom-0 och sitter alltid
+ * ovanför tangentbordet; .studio-root ger tap-highlight transparent +
+ * tryck-skala på ALLA knappar i pekläge (hover:none); .studio-chatt på
+ * chattytan = smooth scroll + overscroll-behavior:contain (pull-refresh
+ * förhindras) — programmatiska ström-scrollar använder behavior:"instant"
+ * så mjukheten aldrig kampar mot delta-flödet.
+ *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
  * med automatiskt). INGA hemligheter renderas.
@@ -434,6 +480,35 @@ function modellBadge(modell?: string): string {
 
 /** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
 const TABB_LAGRING = "ak1a-studio-tabbar";
+
+// ── VÅG 87 H1: ÅTERKOPPLINGSPEKARE — senaste session i localStorage ──────────
+
+/** localStorage-nyckel: senaste session-id (mount-återkopplingens kandidat). */
+const SENASTE_SESSION_LAGRING = "ak1a-studio-senaste-sessionId";
+
+/**
+ * Läs senaste-session-pekaren — null vid ogiltigt/privat läge. Skrivs vid
+ * varje sändning (+ "hej") och vid öppnad/återkopplad session; läses vid
+ * mount som PRIORITERAD kandidat (om den matchar serverns senast aktiva).
+ */
+function lasSenasteSessionId(): string | null {
+  try {
+    const v = window.localStorage.getItem(SENASTE_SESSION_LAGRING);
+    return typeof v === "string" && v.startsWith("sess_") ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Skriv senaste-session-pekaren (tyst vid privat läge/quota). */
+function sparaSenasteSessionId(sessionId: string | null): void {
+  try {
+    if (sessionId) window.localStorage.setItem(SENASTE_SESSION_LAGRING, sessionId);
+    else window.localStorage.removeItem(SENASTE_SESSION_LAGRING);
+  } catch {
+    // privat läge — pekaren lever bara denna sidad
+  }
+}
 
 // ── VÅG 86 G1/G2: skrivfältets minne — promptbibliotek + prompthistorik ─────
 
@@ -2082,6 +2157,48 @@ const SKRIV_PLACEHOLDERS = [
   "Skriv till agenten… (Enter skickar, Skift+Enter ny rad — / visar kommandon, ↑ återkallar)",
 ];
 
+// ── VÅG 87 H3 4: SERENA-EMBLEM — empty-state:ns illustration ────────────────
+
+/**
+ * SERENA — studions agent-emblem (VÅG 87 H3: empty-state "stor illustration
+ * 64px guld"). Två koncentriska guldringar + en fyruddig gnista med
+ * cream-hjärtpunkt och två banade prickar — AK1A:s guld-familj i SVG, ingen
+ * extern fil, skalar fritt (standard 64px).
+ */
+function SerenaEmblem({ storlek = 64 }: { storlek?: number }): React.JSX.Element {
+  return (
+    <svg
+      width={storlek}
+      height={storlek}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label="Serena — AK1A Studio-agenten"
+      className="mx-auto block"
+    >
+      <defs>
+        <linearGradient id="serena-guld" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#E8C766" />
+          <stop offset="100%" stopColor="#a8862a" />
+        </linearGradient>
+      </defs>
+      {/* Yttre hårlinje-ring */}
+      <circle cx="32" cy="32" r="30" fill="none" stroke="url(#serena-guld)" strokeWidth="1" opacity="0.55" />
+      {/* Inre ring */}
+      <circle cx="32" cy="32" r="24" fill="none" stroke="url(#serena-guld)" strokeWidth="0.75" opacity="0.35" />
+      {/* Central fyruddig gnista (Serena) */}
+      <path
+        d="M32 12 C34.5 24 40 29.5 52 32 C40 34.5 34.5 40 32 52 C29.5 40 24 34.5 12 32 C24 29.5 29.5 24 32 12 Z"
+        fill="url(#serena-guld)"
+      />
+      {/* Hjärtpunkt */}
+      <circle cx="32" cy="32" r="3" fill="#fffdf7" opacity="0.9" />
+      {/* Banade prickar */}
+      <circle cx="32" cy="5.5" r="1.4" fill="#E8C766" opacity="0.8" />
+      <circle cx="58.5" cy="32" r="1" fill="#E8C766" opacity="0.5" />
+    </svg>
+  );
+}
+
 // ── Huvudkomponent ───────────────────────────────────────────────────────────
 
 let idRäknare = 0;
@@ -2101,6 +2218,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [uppladdningar, setUppladdningar] = React.useState<Uppladdning[]>([]);
   const [laddarUpp, setLaddarUpp] = React.useState(false);
   const [draÖver, setDraÖver] = React.useState(false);
+  // ── VÅG 87 H3 5: LOADING-SKELETONS — true tills den första GET
+  // /api/studio/stream (historiken) besvarats; tom chatt + laddar ⇒ 3
+  // animerade paper/50-bubblor i stället för tomrum (Z-känsla direkt).
+  const [laddarHistorik, setLaddarHistorik] = React.useState(true);
   // ── VÅG 86 G3: INPUT-EDITOR — 👁 markdown-förhandsvisning + roterande
   // placeholder (index växlar på varje focus av skrivfältet).
   const [previewOppen, setPreviewOppen] = React.useState(false);
@@ -2239,6 +2360,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** Auto-scroll: användaren vid botten? + olästa sedan uppscrollning. */
   const [vidBotten, setVidBotten] = React.useState(true);
   const [nyaSedanUpp, setNyaSedanUpp] = React.useState(0);
+
+  // ── VÅG 87 H1: ÅTERKOPPLING — borta-banner + server-arbetar-synk ──────────
+  /** "Agenten har arbetat medan du var borta"-banner (nya assistant-svar). */
+  const [bortaBanner, setBortaBanner] = React.useState<{
+    antalTurner: number;
+    sessionId: string | null;
+    malKorer: boolean;
+  } | null>(null);
+  /** Sessioner där SERVERN arbetar men den lokala SSE-strömmen är borta. */
+  const serverSynkRef = React.useRef<Set<string>>(new Set());
 
   // ── VÅG 86 G1/G2: SKRIVFÄLTETS MINNE — slash-autocomplete + bibliotek ────
   /** G1: Esc stänger slash-dropdownen tills frasen ändras (true = stängd). */
@@ -2534,7 +2665,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setPrompt(t.utkast);
     requestAnimationFrame(() => {
       const yta = blattraRef.current;
-      if (yta) yta.scrollTop = yta.scrollHeight;
+      // VÅG 87 H4 4: instant — tabbytet skall visa botten direkt.
+      if (yta) yta.scrollTo({ top: yta.scrollHeight, behavior: "instant" as ScrollBehavior });
     });
   };
 
@@ -2570,6 +2702,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
    * växla bara. Sidoloadseffekten hämtar historiken (GET ?sessionId=).
    */
   const oppnaITabb = (sessionId: string, titel?: string) => {
+    sparaSenasteSessionId(sessionId); // VÅG 87 H1: öppnad session = nya pekaren
     const befintlig = tabbar.find((t) => t.sessionId === sessionId);
     if (befintlig) {
       valjTabb(befintlig.id);
@@ -2811,7 +2944,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
   React.useEffect(() => {
     const yta = blattraRef.current;
     if (!yta) return;
-    if (vidBottenRef.current) yta.scrollTop = yta.scrollHeight;
+    // VÅG 87 H4 4: chattytan har CSS scroll-behavior:smooth — strömmens
+    // delta-scrollar tvingas "instant" så varje delta landar direkt
+    // (mjukheten syns bara där den hör hemma: ↓ Nytt-knappen m.fl.).
+    if (vidBottenRef.current) {
+      yta.scrollTo({ top: yta.scrollHeight, behavior: "instant" as ScrollBehavior });
+    }
   }, [meddelanden, tankar, statusText, permission, fraga]);
 
   // Olästa meddelanden sedan användaren lämnade botten ("↓ Nytt"-badgen).
@@ -2865,8 +3003,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
           const data = (await res.json()) as {
             transport?: string;
             live?: boolean;
+            sessionId?: string | null;
             historik?: { roll: "user" | "assistant"; text: string }[];
             kontext?: KontextInfo | null;
+            // ── VÅG 87 H1: återkopplingen (GET utan sessionId bär nu den
+            // senast aktiva sessionen + hela dess historik + mål-snapshot). ──
+            senastAktivSessionId?: string | null;
+            senastAktivHistorik?: { roll: "user" | "assistant"; text: string }[];
+            aktivtMal?: { aktiv: boolean; pausad: boolean; iteration: number; mal: string | null } | null;
             interaktioner?: (
               | {
                   typ: "permission";
@@ -2926,12 +3070,91 @@ export function StudioChat({ hem }: { hem: () => void }) {
               setFragSvar("");
             }
           }
+          // ── VÅG 87 H1: ÅTERKOPPLING — auto-ladda senast aktiva session ──
+          // Servern + barnprocessen fortsatte arbeta under frånvaron; GET
+          // bär den senast aktiva sessionen + HELA dess historik + mål-
+          // snapshot. localStorage-pekaren är PRIORITERAD kandidat när den
+          // matchar serverns senast aktiva (annars vinner serverns sanning).
+          const aktivtMal = data.aktivtMal ?? null;
+          if (aktivtMal) {
+            setMal(aktivtMal.mal);
+            setMalStatus({ aktiv: aktivtMal.aktiv, pausad: aktivtMal.pausad, iteration: aktivtMal.iteration });
+            setMalIteration(aktivtMal.iteration);
+            // Ett LEVANDE mål ⇒ mål-strömmen öppnas direkt (iterationerna
+            // fortsätter renderas; sonden på servern självläker pm2-omstart).
+            if (aktivtMal.mal) setMalStrömOppen(true);
+          }
+          const senastAktivSessionId =
+            typeof data.senastAktivSessionId === "string" && data.senastAktivSessionId ? data.senastAktivSessionId : null;
+          const senastAktivHistorik = Array.isArray(data.senastAktivHistorik) ? data.senastAktivHistorik : [];
+          const sparadSid = lasSenasteSessionId();
+          const kandidat = sparadSid && sparadSid === senastAktivSessionId ? sparadSid : senastAktivSessionId;
+          if (levande && kandidat && senastAktivHistorik.length > 0) {
+            sparaSenasteSessionId(kandidat);
+            const arDefault = typeof data.sessionId === "string" && kandidat === data.sessionId;
+            const tillMeddelanden = (lista: { roll: "user" | "assistant"; text: string }[]) =>
+              lista.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text }));
+            const nyaSvar = senastAktivHistorik.filter((h) => h.roll === "assistant").length;
+            if (arDefault) {
+              // Default-sessionen ägs av HUVUDTABBEN — fyll den (även när en
+              // annan tabb var aktiv vid mount) + visa den direkt. Prompt-
+              // fältet följer måltabbens utkast (samma som valjTabb gör).
+              const forr = sparad?.tabbar.find((t) => t.huvud) ?? null;
+              const forrSvar = forr ? forr.meddelanden.filter((m) => m.roll === "assistant").length : 0;
+              rörTabb(huvudId, (t) => ({
+                ...t,
+                meddelanden: tillMeddelanden(senastAktivHistorik),
+                historikLasad: true,
+              }));
+              setAktivTabbId(huvudId);
+              setPrompt(forr?.utkast ?? "");
+              if (nyaSvar > forrSvar) {
+                setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: kandidat, malKorer: aktivtMal?.aktiv === true });
+              }
+            } else {
+              // Egen session (per-session-tabb): tabben som äger den (ur
+              // sessionStorage) uppdateras; annars föds en ÅTERKOPPLAD tabb.
+              const äger = sparad?.tabbar.find((t) => t.sessionId === kandidat) ?? null;
+              const forrSvar = äger ? äger.meddelanden.filter((m) => m.roll === "assistant").length : 0;
+              if (äger) {
+                rörTabb(äger.id, (t) => ({
+                  ...t,
+                  meddelanden: tillMeddelanden(senastAktivHistorik),
+                  historikLasad: true,
+                }));
+                setAktivTabbId(äger.id);
+                setPrompt(äger.utkast);
+              } else {
+                const nyTabbId = nyttId();
+                setTabbar((alla) => [
+                  ...alla,
+                  {
+                    id: nyTabbId,
+                    huvud: false,
+                    sessionId: kandidat,
+                    titel: `Åter ${kandidat.slice(5, 13)}`,
+                    ...tabbGrund(),
+                    meddelanden: tillMeddelanden(senastAktivHistorik),
+                    historikLasad: true,
+                  },
+                ]);
+                setAktivTabbId(nyTabbId);
+                setPrompt("");
+              }
+              if (nyaSvar > forrSvar) {
+                setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: kandidat, malKorer: aktivtMal?.aktiv === true });
+              }
+            }
+          }
         } else if (res.status === 401) {
           if (levande) setStatusText("Logga in igen — sessionen har löpt ut.");
         }
       } catch {
         if (levande) setStatusText("Nätverksfel — agenten kunde ej nås.");
       }
+      // VÅG 87 H3 5: historik-GET:en är besvarad (oavsett utfall) —
+      // skeletons släcks, ev. empty-state/tom chat visas ärligt.
+      if (levande) setLaddarHistorik(false);
       void lasModeller();
       void lasSessioner();
       // V83 B1: senaste turnens filändringar — visas på sista agentbubblan
@@ -3025,6 +3248,103 @@ export function StudioChat({ hem }: { hem: () => void }) {
       levande = false;
     };
   }, [aktivTabbId, tabbar, rörTabb, visaToast]);
+
+  // ── VÅG 87 H1: RECONNECT-POLL — SSE tappat men fliken öppen ────────────────
+  // Servern fortsätter arbeta när strömmen dör (nätverksblippa, proxy-timeout
+  // — chattens POST-läsare kan sluta medan transporten + barnprocessen lever).
+  // Så länge fliken är SYNLIG: GET /api/studio/stream (utan sessionId) var
+  // 30:e sekund — sessionskartan + mål-snapshot håller vyn sann. En session
+  // som arbetar på SERVERN utan levande lokal ström markeras i sin tabb
+  // (spinner + status) och synkas (GET ?sessionId= — resume) när den slutar;
+  // ett aktivt mål återöppnar mål-strömmen själv. DOLD flik ⇒ paus
+  // (visibilitychange pollar direkt vid återkomst — "pausa när dold").
+  const pollAterkopplingRef = React.useRef<() => Promise<void>>(async () => undefined);
+  const pollAterkoppling = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/stream", { headers: adminHeaders() });
+      if (!res.ok) return;
+      const data = (await res.json()) as {
+        sessionId?: string | null;
+        senastAktivSessionId?: string | null;
+        aktivtMal?: { aktiv: boolean; pausad: boolean; iteration: number; mal: string | null } | null;
+        sessionskarta?: Record<string, { aktiv?: boolean }>;
+      };
+      // Mål-reconnect: aktivt mål men mål-strömmen är stängd ⇒ öppna igen
+      // (transportens MAL_BUFFERT spolar det som missades under avbrottet).
+      if (data.aktivtMal) {
+        setMal(data.aktivtMal.mal);
+        setMalStatus({
+          aktiv: data.aktivtMal.aktiv,
+          pausad: data.aktivtMal.pausad,
+          iteration: data.aktivtMal.iteration,
+        });
+        setMalIteration(data.aktivtMal.iteration);
+        if (data.aktivtMal.aktiv && !malStrömOppen) setMalStrömOppen(true);
+      }
+      const karta = data.sessionskarta ?? {};
+      const malPaDefault = data.aktivtMal?.aktiv === true;
+      // Sessioner där SERVERN arbetar men inga lokala strömmar lever ⇒
+      // markera tabben (spinner + status) så användaren ser att agenten
+      // inte är klar. Mål-loopen på default-sessionen hoppas över — mål-
+      // strömmen (som återöppnades ovan) äger huvudtabben där.
+      for (const [sid, kort] of Object.entries(karta)) {
+        if (!kort?.aktiv) continue;
+        if (malPaDefault && sid === data.sessionId) continue;
+        const tb = tabbarRef.current.tabbar.find((t) => t.sessionId === sid);
+        if (tb && !tb.strömmar && !serverSynkRef.current.has(sid)) {
+          serverSynkRef.current.add(sid);
+          rörTabb(tb.id, (t) => ({ ...t, strömmar: true, status: "Agenten arbetar (återkopplad)…" }));
+        }
+      }
+      // Markerade sessioner som SLUTAT arbeta ⇒ avmarkera + synka historiken
+      // (GET ?sessionId= — resume på servern) + borta-banner vid nya svar.
+      for (const sid of [...serverSynkRef.current]) {
+        const kort = karta[sid];
+        if (kort?.aktiv) continue;
+        serverSynkRef.current.delete(sid);
+        const tb = tabbarRef.current.tabbar.find((t) => t.sessionId === sid);
+        if (!tb) continue;
+        rörTabb(tb.id, (t) => ({ ...t, strömmar: false, status: "" }));
+        try {
+          const r2 = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(sid)}`, {
+            headers: adminHeaders(),
+          });
+          if (!r2.ok) continue;
+          const d2 = (await r2.json()) as { historik?: { roll: "user" | "assistant"; text: string }[] };
+          if (!Array.isArray(d2.historik) || d2.historik.length === 0) continue;
+          const forrSvar = tb.meddelanden.filter((m) => m.roll === "assistant").length;
+          const nyaSvar = d2.historik.filter((h) => h.roll === "assistant").length;
+          rörTabb(tb.id, (t) => ({
+            ...t,
+            meddelanden: d2.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            historikLasad: true,
+          }));
+          if (nyaSvar > forrSvar) setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: sid, malKorer: false });
+        } catch {
+          // nästa poll (30 s) försöker igen
+        }
+      }
+    } catch {
+      // nätverksfel — nästa poll försöker igen
+    }
+  }, [malStrömOppen, rörTabb]);
+
+  React.useEffect(() => {
+    pollAterkopplingRef.current = pollAterkoppling;
+  }, [pollAterkoppling]);
+
+  // Interval + visibilitychange: pollar ENDAST när fliken syns (dold = paus).
+  React.useEffect(() => {
+    const kanske = () => {
+      if (document.visibilityState === "visible") void pollAterkopplingRef.current();
+    };
+    const tid = window.setInterval(kanske, 30_000);
+    document.addEventListener("visibilitychange", kanske);
+    return () => {
+      window.clearInterval(tid);
+      document.removeEventListener("visibilitychange", kanske);
+    };
+  }, []);
 
   // ── V2 STUDIO: modellbyte / ny session / komprimering ─────────────────────
 
@@ -4273,6 +4593,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
         if (tabb.sessionId) kropp.sessionId = tabb.sessionId;
         else kropp.nyckel = tabb.id; // första prompten i en ny tabb
       }
+      // VÅG 87 H1: sessions-pekaren skrivs vid varje sändning (huvudtabben
+      // får sitt id i "hej"-eventet nedan) — mount-återkopplingens kandidat.
+      if (tabb.sessionId) sparaSenasteSessionId(tabb.sessionId);
 
       // Agentbubblans id skapas FÖRST (stabilt genom hela strömmen — alla
       // senare händelser merge:ar på detta id via rörAgent).
@@ -4359,6 +4682,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
               setLive(event.transport === "mock" ? "demo" : "live");
               // V84 B: hej bär sessionens id — tabben minns sin session så
               // nästa prompt (och sideload efter refresh) träffar rätt tabb.
+              // VÅG 87 H1: pekaren skrivs även (localStorage) — huvudtabbens
+              // session blir mount-återkopplingens prioriterade kandidat.
+              if (event.sessionId) sparaSenasteSessionId(event.sessionId);
               if (event.sessionId && !tabb.sessionId) {
                 rörTabb(tabbId, (t) => ({ ...t, sessionId: event.sessionId ?? t.sessionId }));
               }
@@ -4922,7 +5248,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   return (
     <div
-      className={cn("paper-texture flex h-[100dvh] flex-col", morkLage && "dark")}
+      className={cn(
+        // VÅG 87 H3+H4: .studio-root scope:ar focus-ring (guld/40) +
+        // touch-feedback (tap-highlight transparent + tryck-skala).
+        "studio-root paper-texture flex h-[100dvh] flex-col",
+        morkLage && "dark",
+      )}
       onDragOver={(e) => {
         e.preventDefault();
         setDraÖver(true);
@@ -4957,12 +5288,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
             ALDRIG vertikal textbrytning (kundens skärmdump: "A/K/1/A…"
             en bokstav per rad). Rad 1 = logo+märke+status, rad 2 =
             modell/läge/tanke/tema i horisontell scroll-rad. */}
-      <header className="marin-panel sticky top-0 z-20 border-b border-gold/25 shadow-md">
+      {/* VÅG 87 H4 1: studio-safe-top = pt-safe (env(safe-area-inset-top) —
+          viewport-fit=cover i page.tsx ger env() värden under notch/statusrad). */}
+      <header className="marin-panel studio-safe-top sticky top-0 z-20 border-b border-gold/25 shadow-md">
         <div className="mx-auto w-full max-w-3xl px-3 py-2 sm:px-4 sm:py-3">
           <div className="flex items-center gap-2">
             <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
             <div className="min-w-0 flex-1">
-              <h1 className="whitespace-nowrap font-serif text-base font-bold leading-tight text-[#EDE6D6] sm:text-lg">
+              <h1 className="whitespace-nowrap font-serif text-base font-bold leading-tight tracking-tight text-[#EDE6D6] sm:text-lg">
                 AK1A <span className="text-gold">Studio</span>
               </h1>
             </div>
@@ -5094,7 +5427,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             V84 A6: nowrap — raden bryts aldrig mitt i siffrorna (mobil först). */}
         <div className="border-t border-gold/15 bg-black/15">
           <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-1.5 sm:px-4">
-            <span className="whitespace-nowrap text-[11px] text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
+            <span className="whitespace-nowrap text-[11px] tabular-nums text-[#EDE6D6]/85" title="Tokens denna runda · ackumulerat · andel av kontextfönstret">
               📊 {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda` : "— denna runda"} · ~
               {tkn(ackumulerat)} totalt
               {kontextProcent !== null && (
@@ -5994,45 +6327,114 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
       {/* Meddelandelista — V84 A3: relativ wrapper bär "↓ Nytt"-knappen. */}
       <div className="relative min-h-0 flex-1">
+      {/* VÅG 87 H1: BORTA-BANNER — agenten arbetade medan du var borta
+          (historiken är redan auto-laddad; [Visa] scrollar mjukt till
+          senaste svaret — användaren kan sitta kvar uppe i läsandet). */}
+      {bortaBanner && (
+        <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex justify-center px-3">
+          <div className="studio-fade-in pointer-events-auto flex max-w-full items-center gap-2 rounded-full border border-gold/50 bg-[#10233F]/95 px-4 py-2 text-xs font-semibold text-[#EDE6D6] shadow-lg backdrop-blur">
+            <span className="truncate">
+              📌 Agenten har arbetat medan du var borta — {bortaBanner.antalTurner} nya svar
+              {bortaBanner.malKorer ? " · mål-loopen kör fortfarande" : ""}
+            </span>
+            <button
+              onClick={() => {
+                setBortaBanner(null);
+                hoppaNerChatt();
+              }}
+              className="studio-lift shrink-0 rounded-full bg-[#c9a84c] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#0E1B2E] transition-colors hover:bg-gold"
+            >
+              Visa
+            </button>
+            <button
+              onClick={() => setBortaBanner(null)}
+              title="Stäng notisen"
+              className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
       <div
         ref={blattraRef}
         onScroll={paScrollChatt}
-        className="mx-auto h-full w-full max-w-3xl overflow-y-auto px-3 py-4 sm:px-4"
+        className="studio-chatt mx-auto h-full w-full max-w-3xl overflow-y-auto px-3 py-4 sm:px-4"
       >
-        {meddelanden.length === 0 && (
-          <div className="mx-auto mt-10 max-w-md text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/30 bg-card">
-              <Sparkles className="h-6 w-6 text-gold" />
+        {/* VÅG 87 H3 5: LOADING-SKELETONS — 3 animerade bubblor (bg-paper/50
+            animate-pulse, olika bredder + staggerad delay) medan den första
+            historik-GET:en laddar — aldrig ett blinkande tomrum. */}
+        {meddelanden.length === 0 && laddarHistorik && (
+          <div role="status" aria-label="Laddar chatten" className="mx-auto mt-10 max-w-md space-y-3">
+            <div className="flex justify-end">
+              <div className="h-10 w-3/5 animate-pulse rounded-2xl bg-paper/50" />
             </div>
-            <h2 className="mt-4 font-serif text-xl font-bold">Prata med agenten</h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Skriv, klistra in en bild eller släpp filer här. Mappar laddas upp med
-              mappknappen — sökvägarna hamnar i chatten så agenten kan läsa dem.
+            <div className="flex justify-end">
+              <div className="h-16 w-5/6 animate-pulse rounded-2xl bg-paper/50 [animation-delay:150ms]" />
+            </div>
+            <div className="flex justify-start">
+              <div className="h-12 w-2/5 animate-pulse rounded-2xl bg-paper/50 [animation-delay:300ms]" />
+            </div>
+          </div>
+        )}
+        {/* VÅG 87 H3 4: EMPTY-STATE — Serena-emblem 64px guld + välkomstord
+            + 3 KICKBARA förslag (mål-dialogen, filväljaren, fokus i fältet). */}
+        {meddelanden.length === 0 && !laddarHistorik && (
+          <div className="studio-fade-in mx-auto mt-8 max-w-md text-center">
+            <SerenaEmblem storlek={64} />
+            <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">
+              Din agent i molnet
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {["Vad är status i projektet just nu?", "Sammanfatta senaste worklog", "Titta på data/siffror.json och förklara treck", "/help — snabbkommandon"].map((förslag) => (
-                <button
-                  key={förslag}
-                  onClick={() => setPrompt(förslag)}
-                  className="rounded-full border border-gold/30 bg-card px-3 py-1.5 text-xs text-foreground transition-colors hover:border-gold/60"
-                >
-                  {förslag}
-                </button>
-              ))}
+            <h2 className="mt-1.5 font-serif text-2xl font-bold tracking-tight">Välkommen till AK1A Studio</h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Skriv, klistra in en bild eller släpp filer här — agenten bygger, läser
+              och utvecklar rakt i arbetsytan. Mappar laddas upp med mappknappen.
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              <button
+                onClick={() => setMalDialogOppen(true)}
+                title="Öppna mål-dialogen — beskriv ett utvecklingsmål och agenten itererar autonomt"
+                className="studio-lift flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3.5 py-2 text-xs font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20"
+              >
+                <Target className="h-3.5 w-3.5" />
+                Sätt ett mål
+              </button>
+              <button
+                onClick={() => filInputRef.current?.click()}
+                title="Ladda upp filer (png/jpg/pdf/zip/txt/md/json/csv, max 30 MB/fil)"
+                className="studio-lift flex items-center gap-1.5 rounded-full border border-gold/30 bg-card px-3.5 py-2 text-xs font-semibold text-foreground transition-colors hover:border-gold/60"
+              >
+                <UploadCloud className="h-3.5 w-3.5 text-gold" />
+                Ladda upp en fil
+              </button>
+              <button
+                onClick={() => ytaRef.current?.focus()}
+                title="Fokusera skrivfältet — fråga agenten vad som helst"
+                className="studio-lift flex items-center gap-1.5 rounded-full border border-gold/30 bg-card px-3.5 py-2 text-xs font-semibold text-foreground transition-colors hover:border-gold/60"
+              >
+                <MessageCircleQuestion className="h-3.5 w-3.5 text-gold" />
+                Fråga agenten
+              </button>
             </div>
           </div>
         )}
 
         <div className="space-y-4">
-          {meddelanden.map((m) =>
-            m.roll === "user" ? (
+          {meddelanden.map((m, ix) => {
+            // VÅG 87 H3 3: GULD-DIVIDER MELLAN GRUPPER — tunn guld-våglinje
+            // när turordningen växlar (user-grupp → agent-grupp och omvänt);
+            // aldrig före det första meddelandet.
+            const nyGrupp = ix > 0 && meddelanden[ix - 1].roll !== m.roll;
+            return (
+              <React.Fragment key={m.id}>
+                {nyGrupp && <div className="studio-grupp-divider" aria-hidden />}
+                {m.roll === "user" ? (
               <div
-                key={m.id}
                 ref={(el) => {
                   if (el) meddelandeRefs.current.set(m.id, el);
                   else meddelandeRefs.current.delete(m.id);
                 }}
-                className="flex justify-start"
+                className="studio-fade-in flex justify-start"
               >
                 <div className="marin-panel marin-scope max-w-[85%] rounded-2xl rounded-tl-sm border border-gold/25 px-4 py-2.5 shadow-sm sm:max-w-[75%]">
                   <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">
@@ -6065,23 +6467,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </div>
             ) : (
               <div
-                key={m.id}
                 ref={(el) => {
                   if (el) meddelandeRefs.current.set(m.id, el);
                   else meddelandeRefs.current.delete(m.id);
                 }}
-                className="flex justify-end"
+                className="studio-fade-in flex justify-end"
               >
                 <div
                   className={cn(
-                    "max-w-[92%] rounded-2xl rounded-tr-sm border bg-card px-4 py-3 shadow-sm sm:max-w-[80%]",
+                    // VÅG 87 H3 3: GRADIENT-ACCENT — agent-bubblan får subtil
+                    // card→paper-lutning (globals.css; natt: marin-lager).
+                    "studio-bubbla-agent max-w-[92%] rounded-2xl rounded-tr-sm border px-4 py-3 shadow-sm sm:max-w-[80%]",
                     m.fel ? "border-red-500/40" : "border-gold/40",
                   )}
                 >
                   {/* VÅG 85 F1: autonom iteration-badge — mål-loopens turner
                       märks (🎯 Iteration N) så de skiljs från chattade svar. */}
                   {typeof m.malIteration === "number" && (
-                    <p className="mb-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-gold">
+                    <p className="mb-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-gold">
                       <Target className="h-3 w-3 shrink-0" />
                       Autonom iteration {m.malIteration}
                     </p>
@@ -6128,8 +6531,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       {aktivTabb?.status || statusText}
                     </div>
                   )}
+                  {/* VÅG 87 H3 1c: STREAMING CURSOR — blinkande ▊-block (1 s
+                      oändlig blink) i agentens sista delta-rad; syns bara på
+                      den strömmande bubblan (m.strömmande). */}
                   {m.strömmande && m.text && (
-                    <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-gold align-text-bottom" />
+                    <span
+                      aria-hidden
+                      className="studio-cursor ml-0.5 inline-block h-4 w-[9px] rounded-[1.5px] bg-gold align-text-bottom"
+                    />
                   )}
                   {/* V83 B1 + VÅG 85 F5: ändringspanelen — +N/−N per fil,
                       expanderbar KODVY (syntax + gula ändringsrader) +
@@ -6206,8 +6615,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   })()}
                 </div>
               </div>
-            ),
-          )}
+                )}
+              </React.Fragment>
+            );
+          })}
           {/* VÅG 83 B2 + V84 C: PERMISSION-DIALOG (Z-portaLens) — marin kort
               med verktygsnamn + protokollrisk-badge + VERKTYGSRISK-BADGE
               (skrivande/läsande/nät) + DIFF-FÖRHANDSVISNING för Write/Edit
@@ -6220,7 +6631,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <div className="marin-panel marin-scope max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/50 px-4 py-3 shadow-md sm:max-w-[80%]">
                 <div className="flex flex-wrap items-center gap-2">
                   <ShieldAlert className="h-4 w-4 shrink-0 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold">
                     Begäran om godkännande
                   </span>
                   <span
@@ -6273,7 +6684,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       disabled={svarJobbar}
                       title={a.beskrivning || a.namn}
                       className={cn(
-                        "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50",
+                        // VÅG 87 H3 1b: hover-lift på godkännande-valen.
+                        "studio-lift rounded-full px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50",
                         a.optionId === "deny"
                           ? "border border-red-400/50 text-red-200 hover:bg-red-500/20"
                           : a.optionId === "allow_project"
@@ -6318,7 +6730,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <div className="max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/40 bg-card px-4 py-3 shadow-sm sm:max-w-[80%]">
                 <div className="flex items-center gap-2">
                   <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gold">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold">
                     Agenten frågar
                   </span>
                   {svarJobbar && <Loader2 className="h-3 w-3 animate-spin text-gold" />}
@@ -6407,7 +6819,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 key={u.sokvag}
                 onClick={() => infogaSokvag(u.sokvag, u.typ)}
                 title={`${u.sokvag} — klicka för att infoga i prompten`}
-                className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-card px-2.5 py-1 text-[11px] transition-colors hover:border-gold/60"
+                className="studio-lift flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 bg-card px-2.5 py-1 text-[11px] transition-colors hover:border-gold/60"
               >
                 {u.typ === "bild" ? (
                   <FileImage className="h-3.5 w-3.5 text-gold" />
@@ -6423,8 +6835,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* Skrivfält */}
-      <div className="sticky bottom-0 z-10 border-t border-gold/20 bg-paper/95 backdrop-blur">
+      {/* Skrivfält — VÅG 87 H4 2: sticky bottom-0 (sitter alltid ovanför
+          tangentbordet) + studio-safe-bottom = pb-[env(safe-area-inset-bottom)]
+          så iOS-hem-rad aldrig täcker skicka-knappen (viewport-fit=cover). */}
+      <div className="studio-safe-bottom sticky bottom-0 z-10 border-t border-gold/20 bg-paper/95 backdrop-blur">
         <div className="mx-auto w-full max-w-3xl px-3 py-2.5 sm:px-4 sm:py-3">
           {draÖver && (
             <div className="mb-2 rounded-lg border-2 border-dashed border-gold/60 bg-gold/5 px-3 py-2 text-center text-xs text-gold">
@@ -6644,7 +7058,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 }
               }}
               variant="outline"
-              className="h-11 w-11 shrink-0 rounded-xl border-gold/40 p-0 text-gold hover:bg-gold/10 hover:text-gold"
+              className="studio-lift h-11 w-11 shrink-0 rounded-xl border-gold/40 p-0 text-gold hover:bg-gold/10 hover:text-gold"
               title={prompt.trim() ? "Spara prompten i biblioteket (⭐)" : "Visa promptbiblioteket ⭐ (samma som /sparad)"}
             >
               <Star className="h-5 w-5" />
@@ -6653,7 +7067,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <Button
                 onClick={stoppa}
                 variant="outline"
-                className="h-11 w-11 shrink-0 rounded-xl border-red-500/40 p-0 text-red-600 hover:bg-red-500/10 dark:text-red-400"
+                className="studio-lift h-11 w-11 shrink-0 rounded-xl border-red-500/40 p-0 text-red-600 hover:bg-red-500/10 dark:text-red-400"
                 title="Stoppa agenten"
               >
                 <CircleStop className="h-5 w-5" />
@@ -6662,7 +7076,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <Button
                 onClick={() => void skicka()}
                 disabled={!prompt.trim()}
-                className="h-11 w-11 shrink-0 rounded-xl bg-gold p-0 text-background hover:bg-gold/90"
+                className="studio-lift h-11 w-11 shrink-0 rounded-xl bg-gold p-0 text-background hover:bg-gold/90"
                 title="Skicka"
               >
                 <Send className="h-5 w-5" />

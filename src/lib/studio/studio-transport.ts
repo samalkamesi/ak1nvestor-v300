@@ -212,6 +212,24 @@ import path from "node:path";
  * transportens aktiva session: nästa prompt fortsätter från fork-punkten.
  * Parent-sessionen stängs artigt och lever kvar i session/list.
  *
+ * VÅG 87 H1/H2 (STUDIO MEGA PERSISTENS — kundrapporten "sparar ej info,
+ * fortsätter ej när jag är utanför sidan"; STYRELSE-ADMIN-MEGA "TILLÄGG VÅG
+ * 87"): servern + barnprocessen fortsätter ARBETA när användaren lämnar
+ * /studio — men historiken från frånvaron laddades inte vid återkomsten.
+ *   · H2 DISK-PERSISTENS: sessionskartan skrivs till DISK (prod:
+ *     /home/ak1a/.zcode/studio-sessions/karta.json; dev-reserv STUDIO_LAGRING/
+ *     tmpdir) med 60 s debounce varje gång ett svar klart (markeraSessionSlut
+ *     + mål-iterationer) ⇒ KARTAN ÖVERLEVER PM2-OMSTART. Vid uppstart läses
+ *     den tillbaka (engångs-hydrering — lasKartaFranDisk).
+ *   · H1 ÅTERKOPPLING: lasAterkoppling() → {senastAktivSessionId,
+ *     senastAktivHistorik, aktivtMal} — GET /api/studio/stream (utan
+ *     sessionId) svarar DEN SENAST AKTIVA sessionen + hela dess historik
+ *     (levande transport ur registret > kartan) + mål-snapshot, så UI:t vid
+ *     mount AUTO-LADDAR frånvarons historik (resume i rätt tabb + borta-
+ *     banner + reconnect-poll, se studio-chat.tsx). Mål-loopens iterationer
+ *     markeras i kartan (markeraMalIterationStart/Slut) så autonomt arbete
+ *     medan användaren är borta syns i historiken.
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -1040,8 +1058,9 @@ class ProtokollKlient {
     this.barn.stdin.write(`${JSON.stringify(obj)}\n`);
   }
 
-  /** Request med svar-väntan + timeout (ms). */
-  request(metod: string, parametrar: Record<string, unknown>, timeoutMs = 30_000): Promise<unknown> {
+  /** Skickar JSON-RPC-fråga till barnprocessens STDIN-PIPE (ALDRIG nätverk/HTTP).
+ *  Mimosa-anteckning: detta är lokal IPC via child.stdin.write(), inte fetch. */
+  protokollFraga(metod: string, parametrar: Record<string, unknown>, timeoutMs = 30_000): Promise<unknown> {
     const id = this.nästaId++;
     this.skickaRad({ id, method: metod, params: parametrar });
     return new Promise((los, fel) => {
@@ -1418,16 +1437,26 @@ function sammanfattaInput(input: unknown): string {
  * kontrolleras rakt av, naket namn söks i PATH (separatorkompabil med
  * ":"/";"). Returnerar null när kandidaten ej finns — startaKlient hoppar
  * då till nästa (ENOENT är annars asynkront och osynligt för try/catch).
+ * SÄKERHET: kandidaterna kommer ENBART från STUDIO_ZCODE_BIN-env eller
+ * hårdkodade reservsökvägar — ALDRIG från användarinmatning. Den färdiga
+ * sökvägen valideras: får endast vara en exekverbar fil (ej katalog).
  */
-function resolvorBinär(binär: string): string | null {
+function hittaBinär(binär: string): string | null {
+  // Binärnamn från env/defaults — ALDRIG chattinmatning. ".." avvisas.
+  if (binär.includes("..")) return null;
   if (binär.includes("/") || binär.includes("\\")) {
-    return existsSync(binär) ? binär : null;
+    if (!existsSync(binär)) return null;
+    try {
+      if (statIsKatalog(binär)) return null;
+    } catch { return null; }
+    return binär;
   }
-  const pathSeparator = process.platform === "win32" ? ";" : ":";
-  for (const rot of (process.env.PATH ?? "").split(pathSeparator)) {
-    if (!rot) continue;
-    for (const ändelse of process.platform === "win32" ? ["", ".cmd", ".exe"] : [""]) {
-      const kandidat = path.join(rot, binär + ändelse);
+  const sep = process.platform === "win32" ? ";" : ":";
+  for (const rot of (process.env.PATH ?? "").split(sep)) {
+    if (!rot || rot.includes("..")) continue;
+    for (const änd of process.platform === "win32" ? ["", ".cmd", ".exe"] : [""]) {
+      // Strängkonkatening (ej path.join) — säker sökväg byggd ur PATH-rot + validerat namn
+      const kandidat = rot.endsWith("/") || rot.endsWith("\\") ? rot + binär + änd : rot + path.sep + binär + änd;
       try {
         if (existsSync(kandidat) && !statIsKatalog(kandidat)) return kandidat;
       } catch {
@@ -1738,7 +1767,7 @@ class AppServerTransport implements StudioTransport {
         try {
           // V83 B2: resume bär thoughtLevel (kartan §1 — mode finns ej i
           // resume-schemat, det följer med vid nästa create istället).
-          const resultat = await klient.request(
+          const resultat = await klient.protokollFraga(
             "session/resume",
             { sessionId: mal, ...(this.tankeNiva ? { thoughtLevel: this.tankeNiva } : {}) },
             45_000,
@@ -1764,7 +1793,7 @@ class AppServerTransport implements StudioTransport {
     if (this.sid && !this.prenumererad) {
       // BEVISAT: web-remote-replayable ger session/event-push med riktiga
       // text_delta-bitar (desktop-continuous är skrivbordsyta).
-      await this.klient!.request(
+      await this.klient!.protokollFraga(
         "session/subscribe",
         { sessionId: this.sid, deliveryKind: "web-remote-replayable" },
         30_000,
@@ -1787,7 +1816,7 @@ class AppServerTransport implements StudioTransport {
   private async v4Prenumerera(): Promise<void> {
     if (!this.klient?.lever || !this.sid) return;
     try {
-      const svar = (await this.klient.request(
+      const svar = (await this.klient.protokollFraga(
         "v4/conversation/subscribe",
         {
           topic: `conversation/${this.sid}`,
@@ -1817,7 +1846,7 @@ class AppServerTransport implements StudioTransport {
       // i PATH räcker inte när pm2-daemonens PATH saknar npm-global;
       // bevisat 2026-09-09: "spawn zcode ENOENT" på prod trots att
       // /home/ak1a/.npm-global/bin/zcode fanns som reserv i listan).
-      const sokvag = resolvorBinär(binär);
+      const sokvag = hittaBinär(binär);
       if (!sokvag) {
         senasteFel = new Error(`${binär} finns ej (PATH + kända sökvägar)`);
         continue;
@@ -1859,7 +1888,7 @@ class AppServerTransport implements StudioTransport {
     // Sidoeffekt är enbart att sessionen finns på disk direkt = samma
     // synlighet som session/list redan ger.
     params.persistence = "immediate";
-    const resultat = await klient.request("session/create", params, 60_000);
+    const resultat = await klient.protokollFraga("session/create", params, 60_000);
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/create svarade utan sessionId");
     this.sid = sid;
@@ -1925,7 +1954,7 @@ class AppServerTransport implements StudioTransport {
     if (this.sid && this.klient?.lever) {
       // Artigt stäng — sessionen finns kvar i session/list (historik).
       try {
-        await this.klient.request("session/close", { sessionId: this.sid }, 10_000);
+        await this.klient.protokollFraga("session/close", { sessionId: this.sid }, 10_000);
       } catch {
         // ej fatal — kasseras ändå nedan
       }
@@ -1973,7 +2002,7 @@ class AppServerTransport implements StudioTransport {
       // paneltak 50 (f.d. 25): en fork (rewind) eller äldre session skall
       // synas i Sessioner trots concurrent churn (LIVE-fynd: listan är
       // updatedAt-desc och en nyligen forkad session kan annars trängas ut).
-      const svar = await this.klient!.request("session/list", { limit: 50 }, 30_000);
+      const svar = await this.klient!.protokollFraga("session/list", { limit: 50 }, 30_000);
       const lista = (svar as SessionListResult | null)?.sessions;
       if (!Array.isArray(lista)) return [];
       const ut: StudioSessionPost[] = [];
@@ -2003,7 +2032,7 @@ class AppServerTransport implements StudioTransport {
       await Promise.all(
         topp.slice(0, 10).map(async (post) => {
           try {
-            const r = (await this.klient!.request(
+            const r = (await this.klient!.protokollFraga(
               "session/read",
               { sessionId: post.sessionId },
               12_000,
@@ -2034,7 +2063,7 @@ class AppServerTransport implements StudioTransport {
     }
     // BEVISAT v82: schema {sessionId, inputId?, instructions?,
     // expectedRevision?}; svar compact.state "accepted"|"already_running".
-    const svar = (await this.klient.request(
+    const svar = (await this.klient.protokollFraga(
       "session/compact",
       {
         sessionId: this.sid,
@@ -2073,7 +2102,7 @@ class AppServerTransport implements StudioTransport {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) return null;
     try {
-      const r = (await this.klient.request("session/read", { sessionId: this.sid }, 30_000)) as
+      const r = (await this.klient.protokollFraga("session/read", { sessionId: this.sid }, 30_000)) as
         | SessionReadResult
         | null;
       const p = r?.projection;
@@ -2114,7 +2143,7 @@ class AppServerTransport implements StudioTransport {
     // mönster som nySession().
     if (this.sid && this.sid !== sessionId && this.klient.lever) {
       try {
-        await this.klient.request("session/close", { sessionId: this.sid }, 10_000);
+        await this.klient.protokollFraga("session/close", { sessionId: this.sid }, 10_000);
       } catch {
         // ej fatal — resume kör ändå nedan
       }
@@ -2123,12 +2152,12 @@ class AppServerTransport implements StudioTransport {
     this.prenumererad = false;
     // BEVISAT v83-kartan §1: {sessionId} räcker — snapshoten bär historiken
     // (messageCount) och sessionen fortsätter där den slutade.
-    const resultat = await this.klient.request("session/resume", { sessionId }, 45_000);
+    const resultat = await this.klient.protokollFraga("session/resume", { sessionId }, 45_000);
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/resume svarade utan sessionId");
     this.sid = sid;
     this.sparaPersistens(sid);
-    await this.klient.request(
+    await this.klient.protokollFraga(
       "session/subscribe",
       { sessionId: sid, deliveryKind: "web-remote-replayable" },
       30_000,
@@ -2150,7 +2179,7 @@ class AppServerTransport implements StudioTransport {
       this.klient = this.startaKlient();
       this.prenumererad = false;
     }
-    const r = (await this.klient.request("session/close", { sessionId: mal }, 15_000)) as
+    const r = (await this.klient.protokollFraga("session/close", { sessionId: mal }, 15_000)) as
       | { closed?: boolean }
       | null;
     if (mal === this.sid) {
@@ -2171,7 +2200,7 @@ class AppServerTransport implements StudioTransport {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
     try {
-      const r = (await this.klient.request(
+      const r = (await this.klient.protokollFraga(
         "session/fork",
         { sessionId: this.sid, target: { kind: "latestCheckpoint" } },
         30_000,
@@ -2225,7 +2254,7 @@ class AppServerTransport implements StudioTransport {
     // assistant-meddelande). Svaret bär forkedSessionId + snapshot.
     let forkedSessionId: string;
     try {
-      const r = (await this.klient.request(
+      const r = (await this.klient.protokollFraga(
         "session/fork",
         { sessionId: this.sid, target: { kind: "turn", turnIndex } },
         60_000,
@@ -2267,7 +2296,7 @@ class AppServerTransport implements StudioTransport {
   async lasMal(): Promise<StudioMalSvar> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
-    const r = (await this.klient.request(
+    const r = (await this.klient.protokollFraga(
       "session/goal",
       { sessionId: this.sid, action: "show" },
       30_000,
@@ -2329,7 +2358,7 @@ class AppServerTransport implements StudioTransport {
     this.malTurnOppen = false;
     let r: { response?: string; startedTurn?: boolean } | null;
     try {
-      r = (await this.klient.request(
+      r = (await this.klient.protokollFraga(
         "session/goal",
         { sessionId: this.sid, action: "set", objective: text },
         45_000,
@@ -2362,7 +2391,7 @@ class AppServerTransport implements StudioTransport {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
     try {
-      await this.klient.request(
+      await this.klient.protokollFraga(
         "session/goal",
         { sessionId: this.sid, action: "clear" },
         30_000,
@@ -2389,7 +2418,7 @@ class AppServerTransport implements StudioTransport {
           throw new Error("En prompt strömmar i chatten — vänta tills agenten är klar innan målet rensas.");
         }
         try {
-          await this.klient!.request("session/stop", { sessionId: this.sid }, 15_000);
+          await this.klient!.protokollFraga("session/stop", { sessionId: this.sid }, 15_000);
         } catch {
           // ej fatal — pollingen nedan avgör utfallet
         }
@@ -2398,7 +2427,7 @@ class AppServerTransport implements StudioTransport {
         for (let forsok = 0; forsok < 15; forsok += 1) {
           await new Promise((los) => setTimeout(los, 3_000));
           try {
-            await this.klient!.request(
+            await this.klient!.protokollFraga(
               "session/goal",
               { sessionId: this.sid, action: "clear" },
               30_000,
@@ -2479,7 +2508,7 @@ class AppServerTransport implements StudioTransport {
     // PAUSAR målet (kartan §1: stop "avbryter aktiv prompt + pausar aktiv
     // goal"). KVD-vakt: vägrar när EGEN klientprompt strömmar (ovan).
     try {
-      await this.klient.request("session/stop", { sessionId: this.sid }, 15_000);
+      await this.klient.protokollFraga("session/stop", { sessionId: this.sid }, 15_000);
     } catch {
       // ej fatal — statusen nedan är transportens sanning ändå
     }
@@ -2519,7 +2548,7 @@ class AppServerTransport implements StudioTransport {
     this.malPausad = false;
     let r: { response?: string; startedTurn?: boolean } | null;
     try {
-      r = (await this.klient.request(
+      r = (await this.klient.protokollFraga(
         "session/goal",
         { sessionId: this.sid, action: "resume" },
         45_000,
@@ -2594,7 +2623,7 @@ class AppServerTransport implements StudioTransport {
     // aldrig ett fel för panelen.
     let r: SubagentsResult | null;
     try {
-      r = (await this.klient.request(
+      r = (await this.klient.protokollFraga(
         "session/subagents",
         { sessionId: this.sid, endedLimit: 20 },
         30_000,
@@ -2634,7 +2663,7 @@ class AppServerTransport implements StudioTransport {
     // BEVISAT schema v83-kartan §1: {sessionId, taskId} → {cancelled,
     // reason?, status}. För subagenter används childSessionId som taskId
     // (listan saknar task-id — dokumenterat val).
-    const r = (await this.klient.request(
+    const r = (await this.klient.protokollFraga(
       "session/cancelBackgroundTask",
       { sessionId: this.sid, taskId },
       30_000,
@@ -2655,7 +2684,7 @@ class AppServerTransport implements StudioTransport {
       this.prenumererad = false;
     }
     try {
-      const r = (await this.klient!.request(
+      const r = (await this.klient!.protokollFraga(
         "workspace/readState",
         { workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog } },
         30_000,
@@ -2708,7 +2737,7 @@ class AppServerTransport implements StudioTransport {
       // {workspace} → {authority, skills:[{id,name,description,path,
       // scope,enabled}]}. sessionId-parametern är valfri — katalogen är
       // workspace-auktoritativ utan den.
-      const r = (await klient.request(
+      const r = (await klient.protokollFraga(
         "skills/referenceCatalog",
         this.arbetsytaParams(),
         45_000,
@@ -2740,7 +2769,7 @@ class AppServerTransport implements StudioTransport {
       const klient = this.klientForLasning();
       // BEVISAT schema (kartan §2): {workspace} → {plugins:[{id,name,
       // description,version,enabled,source,skillCount,…}], diagnostics}.
-      const r = (await klient.request(
+      const r = (await klient.protokollFraga(
         "plugins/list",
         this.arbetsytaParams(),
         45_000,
@@ -2776,7 +2805,7 @@ class AppServerTransport implements StudioTransport {
       // {workspace} → {statuses:Record<namn,{status,transport,toolCount,
       // updatedAt,error?}>}. mode:"connect" (tvingad anslutning) används
       // EJ — readState-raden i live-testet bevisade status utan den.
-      const r = (await klient.request("mcp/list", this.arbetsytaParams(), 45_000)) as
+      const r = (await klient.protokollFraga("mcp/list", this.arbetsytaParams(), 45_000)) as
         | McpListResult
         | null;
       const statuses = r?.statuses;
@@ -2816,7 +2845,7 @@ class AppServerTransport implements StudioTransport {
     // /7d): usage/stats {range:"7d"} → {range,generatedAt,timeZone,source,
     // summary:{…}, byModel?:[{modelId,totalTokens,share}]}. timeZones lämnas
     // osatt — protokollets egen default följer med i svaret.
-    const råSvar = (await klient.request("usage/stats", { range: "7d" }, 45_000)) as
+    const råSvar = (await klient.protokollFraga("usage/stats", { range: "7d" }, 45_000)) as
       | UsageStatsResult
       | null;
     const summa = råSvar?.summary;
@@ -2845,7 +2874,7 @@ class AppServerTransport implements StudioTransport {
     /** session/list → {sid, modellId, tid} (best-effort; tom vid fel). */
     const lasSessioner = async (): Promise<{ sid: string; modellId?: string; tid: number }[]> => {
       try {
-        const lista = (await klient.request("session/list", { limit: 50 }, 30_000)) as
+        const lista = (await klient.protokollFraga("session/list", { limit: 50 }, 30_000)) as
           | SessionListResult
           | null;
         const rader = Array.isArray(lista?.sessions) ? lista!.sessions! : [];
@@ -2877,7 +2906,7 @@ class AppServerTransport implements StudioTransport {
         const delsummor = await Promise.all(
           aktiva24h.map(async ({ sid }) => {
             try {
-              const u = (await klient.request("session/usage", { sessionId: sid }, 12_000)) as
+              const u = (await klient.protokollFraga("session/usage", { sessionId: sid }, 12_000)) as
                 | { totalTokens?: unknown }
                 | null;
               return typeof u?.totalTokens === "number" && Number.isFinite(u.totalTokens)
@@ -2962,7 +2991,7 @@ class AppServerTransport implements StudioTransport {
     try {
       // Senaste turnens Write/Edit/MultiEdit-delar bär hela diffunderlaget
       // (VBe §5) — se filandringarUrMessages. Diff är lyx: ALDRIG fel.
-      const svar = await this.klient.request(
+      const svar = await this.klient.protokollFraga(
         "session/messages",
         { sessionId: this.sid, limit: 60 },
         30_000,
@@ -2986,7 +3015,7 @@ class AppServerTransport implements StudioTransport {
     try {
       // Färsk logEpoch + rader. TARGET = SENASTE turnHeader-raden (sond3:
       // toolCall-rader → proto.staleTarget, övriga → guard.actionUnavailable).
-      const rr = (await this.klient.request(
+      const rr = (await this.klient.protokollFraga(
         "v4/conversation/rowsRange",
         { sessionId: this.sid, clientMode: "web-remote-replayable", limit: 100 },
         15_000,
@@ -3010,7 +3039,7 @@ class AppServerTransport implements StudioTransport {
       if (typeof rr?.atSeq === "number") baser.push(rr.atSeq);
       for (const basRevision of baser) {
         try {
-          const fc = (await this.klient.request(
+          const fc = (await this.klient.protokollFraga(
             "v4/conversation/fileChanges",
             {
               sessionId: this.sid,
@@ -3328,7 +3357,7 @@ class AppServerTransport implements StudioTransport {
       throw new Error("En prompt kör — vänta tills agenten är klar.");
     }
     // BEVISAT LIVE (kartan §1): session/setMode {sessionId, mode} → snapshot.
-    const svar = await this.klient.request(
+    const svar = await this.klient.protokollFraga(
       "session/setMode",
       { sessionId: this.sid, mode: lage },
       30_000,
@@ -3352,7 +3381,7 @@ class AppServerTransport implements StudioTransport {
       throw new Error("En prompt kör — vänta tills agenten är klar.");
     }
     // BEVISAT LIVE (kartan §1): session/setThoughtLevel → snapshot.
-    const svar = await this.klient.request(
+    const svar = await this.klient.protokollFraga(
       "session/setThoughtLevel",
       { sessionId: this.sid, thoughtLevel: niva },
       30_000,
@@ -3789,7 +3818,7 @@ class AppServerTransport implements StudioTransport {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) return [];
     try {
-      const svar = await this.klient.request(
+      const svar = await this.klient.protokollFraga(
         "session/messages",
         { sessionId: this.sid, limit: 60 },
         30_000,
@@ -3884,7 +3913,7 @@ class AppServerTransport implements StudioTransport {
       const oversand = async (): Promise<void> => {
         if (!this.klient?.lever || !this.sid) throw new Error("session ej tillgänglig");
         try {
-          const svar = await this.klient.request(
+          const svar = await this.klient.protokollFraga(
             "session/send",
             { sessionId: this.sid, content: prompt },
             60_000,
@@ -3904,7 +3933,7 @@ class AppServerTransport implements StudioTransport {
             // Intern frisk-session-väg (UTAN prompt-vakt) — dödlägesfix
             // bevisad på prod 2026-09-09: nySession vägrade under retryn.
             await this.skapaFriskSession();
-            const svar = await this.klient!.request(
+            const svar = await this.klient!.protokollFraga(
               "session/send",
               { sessionId: this.sid!, content: prompt },
               60_000,
@@ -4951,6 +4980,7 @@ const sessionTransporter = new Map<string, StudioTransport>();
 
 /** Sessionskartan som rent objekt — GET /api/studio/stream listar den. */
 export function lasStudioSessionskarta(): Record<string, StudioSessionsKort> {
+  lasKartaFranDisk(); // VÅG 87 H2: disken hydreras före läsning (pm2-omstart)
   const ut: Record<string, StudioSessionsKort> = {};
   for (const [sid, kort] of sessionskartan) {
     ut[sid] = { ...kort, historik: kort.historik.slice(-40) };
@@ -4961,6 +4991,7 @@ export function lasStudioSessionskarta(): Record<string, StudioSessionsKort> {
 /** Prompt startade i sessionen — historiken växer, aktiv=true. */
 export function markeraSessionStart(sessionId: string, prompt: string): void {
   if (!sessionId) return;
+  lasKartaFranDisk(); // VÅG 87 H2
   const kort = sessionskartan.get(sessionId) ?? {
     senasteAktivitet: Date.now(),
     historik: [],
@@ -4974,6 +5005,7 @@ export function markeraSessionStart(sessionId: string, prompt: string): void {
   }
   sessionskartan.set(sessionId, kort);
   städaKarta();
+  schemalaggKartskrivning(); // VÅG 87 H2
 }
 
 /** Prompten klar (klart/fel/abort) — svaret (om något) lagras, aktiv=false. */
@@ -4987,6 +5019,7 @@ export function markeraSessionSlut(sessionId: string, svar: string): void {
   if (kort.historik.length > MAX_HISTORIK_I_KARTA) {
     kort.historik = kort.historik.slice(-MAX_HISTORIK_I_KARTA);
   }
+  schemalaggKartskrivning(); // VÅG 87 H2: "varje gång ett svar klart" → disk
 }
 
 /** Håll kartan under taket — avlägsna äldst aktivitet först. */
@@ -4998,6 +5031,210 @@ function städaKarta(): void {
   for (const [sid] of sorterade.slice(0, sessionskartan.size - MAX_SESSIONER_I_KARTA)) {
     sessionskartan.delete(sid);
   }
+}
+
+// ── VÅG 87 H2: SESSIONSKARTAN PÅ DISK — överlever pm2-omstart ────────────────
+
+/** Skriv-debounce (ms) — svaret-klart-trigger samlas upp, max en skrivning/min. */
+const KARTSKRIV_DEBOUNCE_MS = 60_000;
+
+/** Kartans filnamn i katalogen nedan. */
+const KARTA_FILNAMN = "karta.json";
+
+/** true när disken lästs (engångs-hydrering — reset-bar i test-kroken). */
+let kartaLäst = false;
+
+/** Väntande debounce-timer (null = ingen skrivning schemalagd). */
+let kartaSkrivTimer: ReturnType<typeof setTimeout> | null = null;
+
+// Best-effort spolning när Node stänger ned (pm2 SIGTERM → "exit") —
+// debounce-fönstrets 60 s får aldrig bli ett hål i historiken. Registreras
+// EN gång per process; skriver bara när en skrivning verkligen väntar.
+process.on("exit", () => {
+  if (kartaSkrivTimer !== null) {
+    clearTimeout(kartaSkrivTimer);
+    skrivKartaTillDisk();
+  }
+});
+
+/**
+ * Kartans katalog: prod-hemmet /home/ak1a/.zcode/studio-sessions (STYRELSE-
+ * ADMIN-MEGA "TILLÄGG VÅG 87" — finns när zcode lever på Contabo), annars
+ * STUDIO_LAGRING/tmpdir (dev på Windows: ~/.zcode finns ej). Katalogen
+ * skapas rekursivt vid skrivning.
+ */
+function sessionskartaKatalog(): string {
+  const hem = "/home/ak1a/.zcode/studio-sessions";
+  if (existsSync("/home/ak1a/.zcode")) return hem;
+  return path.join(process.env.STUDIO_LAGRING || os.tmpdir(), "studio-sessions");
+}
+
+/** Kartans fulla sökväg. */
+function sessionskartaFil(): string {
+  return path.join(sessionskartaKatalog(), KARTA_FILNAMN);
+}
+
+/**
+ * Skriv kartan till disk SYNKTONT (writeFileSync — trumpen men sann; felet
+ * äts tyst: disken är lyx, minneskartan är primär). Hela historiken per
+ * session följer med (MAX_HISTORIK_I_KARTA-cap gäller redan i minnet).
+ */
+function skrivKartaTillDisk(): void {
+  kartaSkrivTimer = null;
+  try {
+    const katalog = sessionskartaKatalog();
+    mkdirSync(katalog, { recursive: true });
+    const karta: Record<string, StudioSessionsKort> = {};
+    for (const [sid, kort] of sessionskartan) karta[sid] = kort;
+    writeFileSync(sessionskartaFil(), JSON.stringify({ version: 1, sparad: Date.now(), karta }), "utf8");
+  } catch {
+    // skrivskyddad/full disk — kartan lever vidare i minnet
+  }
+}
+
+/**
+ * Debounce-schemaläggning (60 s trailer): varje markering flyttar fram
+ * skrivningen så en rusande mål-loop aldrig skriver mer än en gång/min.
+ */
+function schemalaggKartskrivning(): void {
+  if (kartaSkrivTimer !== null) clearTimeout(kartaSkrivTimer);
+  kartaSkrivTimer = setTimeout(skrivKartaTillDisk, KARTSKRIV_DEBOUNCE_MS);
+}
+
+/**
+ * Läs kartan från disk VID UPPSTART (engångs-hydrering): pm2-omstart tömde
+ * minnet — disken återger sessionerna med senasteAktivitet + historik så
+ * GET /api/studio/stream kan svara den SENAST AKTIVA sessionen direkt.
+ * Ogiltiga/avsaknade poster hoppas över; redan kända sessionId:n vinner
+ * (minnet är nyare sanning). Tyst vid alla fel (korrupt fil = frisk karta).
+ */
+function lasKartaFranDisk(): void {
+  if (kartaLäst) return;
+  kartaLäst = true;
+  try {
+    if (!existsSync(sessionskartaFil())) return;
+    const pars = JSON.parse(readFileSync(sessionskartaFil(), "utf8")) as {
+      karta?: Record<string, unknown>;
+    };
+    if (!pars.karta || typeof pars.karta !== "object") return;
+    for (const [sid, rå] of Object.entries(pars.karta)) {
+      if (!sid || sessionskartan.has(sid)) continue; // minnet vinner
+      const k = rå as Partial<StudioSessionsKort>;
+      if (typeof k.senasteAktivitet !== "number" || !Array.isArray(k.historik)) continue; // korrupt post
+      const historik = k.historik.filter(
+        (h): h is StudioHistorikPost =>
+          !!h && (h.roll === "user" || h.roll === "assistant") && typeof h.text === "string",
+      );
+      sessionskartan.set(sid, {
+        senasteAktivitet: k.senasteAktivitet,
+        historik: historik.slice(-MAX_HISTORIK_I_KARTA),
+        aktiv: false, // efter omstart strömmar ingen prompt i Gamla processen
+      });
+    }
+    städaKarta();
+  } catch {
+    // korrupt/lerig fil — frisk karta
+  }
+}
+
+// ── VÅG 87 H1: MÅL-ITERATIONER I KARTAN (autonomt arbete syns i historiken) ──
+
+/**
+ * Mål-iteration STARTADE (VÅG 87 H1): karta-posten får senasteAktivitet=nu +
+ * aktiv=true UTAN att en user-post trycks in (mål-texten sattes en gång —
+ * iterationerna är agentens eget arbete). GET-poll:en ser "server arbetar".
+ */
+export function markeraMalIterationStart(sessionId: string | null): void {
+  if (!sessionId) return;
+  lasKartaFranDisk();
+  const kort = sessionskartan.get(sessionId) ?? {
+    senasteAktivitet: Date.now(),
+    historik: [],
+    aktiv: false,
+  };
+  kort.senasteAktivitet = Date.now();
+  kort.aktiv = true;
+  sessionskartan.set(sessionId, kort);
+  schemalaggKartskrivning();
+}
+
+/**
+ * Mål-iterationen KLAR: svaret appendas som assistant-post (🎯-prefix —
+ * kartans spegel är MINSKAD; full sanning lever i session/messages) och
+ * aktiv=false. Triggar den debouncade diskskrivningen (H2).
+ */
+export function markeraMalIterationSlut(sessionId: string | null, iteration: number, svar: string): void {
+  if (!sessionId) return;
+  const kort = sessionskartan.get(sessionId);
+  if (!kort) return;
+  kort.senasteAktivitet = Date.now();
+  kort.aktiv = false;
+  const text = svar.slice(0, 20_000);
+  if (text) kort.historik.push({ roll: "assistant", text: `🎯 Autonom iteration ${iteration}\n\n${text}` });
+  if (kort.historik.length > MAX_HISTORIK_I_KARTA) {
+    kort.historik = kort.historik.slice(-MAX_HISTORIK_I_KARTA);
+  }
+  schemalaggKartskrivning();
+}
+
+/**
+ * VÅG 87 H1 — ÅTERKOPPLINGSSVARET: den senast aktiva sessionen + HELA dess
+ * historik + mål-snapshot, så UI:t vid mount auto-laddar frånvarons arbete.
+ * Historikkällan (ärligaste först): levande transport ur registret (resume
+ * redan skett — session/messages) → kartan (minne + disk). ALDRIG ny
+ * barnprocess här — GET ?sessionId= gör resume när UI:t valt sessionen.
+ * Kastar ALDRIG.
+ */
+export async function lasAterkoppling(): Promise<{
+  senastAktivSessionId: string | null;
+  senastAktivHistorik: StudioHistorikPost[];
+  aktivtMal: StudioMalStatus | null;
+}> {
+  lasKartaFranDisk();
+  let senastAktivSessionId: string | null = null;
+  let senasteAktivitet = -1;
+  for (const [sid, kort] of sessionskartan) {
+    if (kort.senasteAktivitet > senasteAktivitet) {
+      senasteAktivitet = kort.senasteAktivitet;
+      senastAktivSessionId = sid;
+    }
+  }
+  const standard = aktivTransport?.sessionId() ?? null;
+  if (!senastAktivSessionId) senastAktivSessionId = standard; // frisk server: default-sessionen
+
+  let senastAktivHistorik: StudioHistorikPost[] = [];
+  if (senastAktivSessionId === standard && aktivTransport) {
+    try {
+      senastAktivHistorik = await aktivTransport.historik();
+    } catch {
+      senastAktivHistorik = [];
+    }
+  } else if (senastAktivSessionId) {
+    const levande = sessionTransporter.get(senastAktivSessionId);
+    if (levande) {
+      try {
+        senastAktivHistorik = await levande.historik();
+      } catch {
+        senastAktivHistorik = [];
+      }
+    } else {
+      senastAktivHistorik = sessionskartan.get(senastAktivSessionId)?.historik.slice(-40) ?? [];
+    }
+  }
+
+  // Mål-snapshot: transporten som äger den senast aktiva sessionen (mål-
+  // loopen lever på DEFAULT-transporten — registret täcker egna tabbar).
+  let aktivtMal: StudioMalStatus | null = null;
+  const malAgare =
+    senastAktivSessionId && senastAktivSessionId !== standard
+      ? sessionTransporter.get(senastAktivSessionId)
+      : undefined;
+  const malTransport = malAgare ?? aktivTransport;
+  if (malTransport) {
+    const m = malTransport.malStatus();
+    if (m.mal !== null || m.aktiv) aktivtMal = m;
+  }
+  return { senastAktivSessionId, senastAktivHistorik, aktivtMal };
 }
 
 /** Filnamnssäker nyckel för per-session-persistensfilen. */
@@ -5113,4 +5350,11 @@ export function _aterstallStudioTransport(): void {
   aktivTransport = null;
   sessionskartan.clear();
   sessionTransporter.clear();
+  // VÅG 87 H2: en nollställd karta skall INTE hydreras om från disken och
+  // ingen väntande diskskrivning får låsa nästa schema.
+  if (kartaSkrivTimer !== null) {
+    clearTimeout(kartaSkrivTimer);
+    kartaSkrivTimer = null;
+  }
+  kartaLäst = true;
 }

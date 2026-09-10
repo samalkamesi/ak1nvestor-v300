@@ -915,3 +915,164 @@ h1, h2, h3, h4, h5, h6 {
     transparent 100%
   );
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VÅG 87 H3+H4 — STUDIO DESIGN-POLISH (Z-kvalitet) + MOBIL-POLISH
+   (STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 87" H3+H4; allt scope:at under
+   .studio-root / egna studio-*-klasser — övriga sajten orörd)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── H3 1a: MESSAGE FADE-IN — opacity 0→1 + translateY 8→0, 200ms ease-out.
+   Klassen sitter på meddelandebubblorna (animerar vid mount — streaming-
+   re-renders startar ALDRIG om animationen då elementet lever kvar). ── */
+@keyframes studio-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.studio-fade-in {
+  animation: studio-fade-in 200ms ease-out both;
+}
+
+/* ── H3 1c: STREAMING CURSOR — blinkande ▊ i agentens sista delta-rad
+   (1 s oändlig blink — mjukare än Tailwinds animate-pulse). ── */
+@keyframes studio-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.studio-cursor {
+  animation: studio-blink 1s step-end infinite;
+}
+
+/* ── H3 1b: BUTTON HOVER-LIFT — translateY(-1px) + shadow-md på hover,
+   active:scale-95 (peka). H4 3: touch-ytor (hover:none) får scale(0.97)
+   i stället — mjukare tryckåterkoppling utan mus-läge. ── */
+.studio-lift {
+  transition:
+    transform 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+.studio-lift:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 16px -8px rgba(14, 27, 46, 0.35),
+    0 4px 8px -4px rgba(14, 27, 46, 0.2);
+}
+.studio-lift:active:not(:disabled) {
+  transform: scale(0.95);
+}
+@media (hover: none) {
+  .studio-lift:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+/* ── H3 3: GRADIENT-ACCENTER — subtil djupkänsla i bubblorna.
+   Agent (paper-höger): paper → card ≈ paper/95-känsla; natt: lager-på-
+   lager marin. Användare (marin-vänster): marin → marin-mörkare (den
+   befintliga marin-panel-gradienten är just "marin→marin/95"-känslan). ── */
+.studio-bubbla-agent {
+  background-image: linear-gradient(
+    165deg,
+    var(--card, #fffdf7) 0%,
+    var(--paper, #f5f1e8) 100%
+  );
+}
+.dark .studio-bubbla-agent,
+.paper-texture.dark .studio-bubbla-agent {
+  background-image: linear-gradient(
+    165deg,
+    var(--card, #101b2b) 0%,
+    var(--secondary, #152236) 100%
+  );
+}
+
+/* ── H3 3: GULD-DIVIDER MELLAN GRUPPER — tunn våglinje som andas ut
+   när turordningen växlar (user→agent / agent→user). ── */
+.studio-grupp-divider {
+  display: block;
+  height: 1px;
+  margin: 0.5rem 12%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.45) 50%,
+    transparent 100%
+  );
+}
+.dark .studio-grupp-divider {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(232, 199, 102, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* ── H3 6: FOCUS-RING — alla interaktiva element i studion får
+   focus-visible ring-2 ring-gold/40 (box-shadow följer border-radius;
+   ersätter den globala koppar-outlineen INOM studion). ── */
+.studio-root :is(a, button, input, select, textarea, [role="button"], [tabindex]):focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 2px rgba(201, 168, 76, 0.4),
+    0 0 0 4px rgba(201, 168, 76, 0.15);
+}
+
+/* ── H4 3: TOUCH-FEEDBACK — genomskinlig tap-highlight (grå fläck borta)
+   + tryck-skala 0.97 på ALLA knappar i pekläge. ── */
+.studio-root,
+.studio-root button,
+.studio-root [role="button"],
+.studio-root a,
+.studio-root input,
+.studio-root select,
+.studio-root textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: none) {
+  .studio-root button:not(:disabled):not(.studio-inget-tryck):active {
+    transform: scale(0.97);
+  }
+}
+
+/* ── H4 1: SAFE-AREA — hjälpare för iPhone-notch/hem-rad. Kräver
+   viewport-fit=cover (sätts i studio-sidans viewport-export) för att
+   env() ska ge värden; utan notch är inset 0px = ingen förändring. ── */
+.studio-safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.studio-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── H4 4: SCROLL — mjukt scrollbeteende + overscroll-behavior: contain
+   på chattytan (pull-to-refresh förhindras — strömmande deltas scrollas
+   programmatiskt med "instant" i komponenten så CSS-mjukheten aldrig
+   kampar mot strömmen). ── */
+.studio-chatt {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-chatt {
+    scroll-behavior: auto;
+  }
+  .studio-fade-in,
+  .studio-cursor {
+    animation: none;
+  }
+}

@@ -10040,3 +10040,20 @@ resolvorBinär→hittaBinär (strängkonkatening ur PATH, ..-blockering).
   localStorage cache-meta + mount-jämförelse med toast
 
 ALLT: tsc 36=baslinje · motorer 107/0/0 · vakten GRÖN · prod 200.
+
+## VÅG 89 — STUDIO RENSNING (2026-09-10, bee04da, prod 200)
+
+Kundens klagomål (5 bilder): "bubblor kvar, menyn är bara punkter,
+inställningar går ej ändra, allt funka ej vertikalt på telefon".
+
+LÖSNING — TOTAL OMMÖBLERING:
+- Header: logo + "Studio" + LIVE-prick + ☰ — INGET annat (h-12)
+- Chatt: STORA luftiga block (användare marin max-w-85% p-4, agent
+  fullbredd papper p-4, mb-6 luft) — INGA små bubblor
+- ALLA 16 små ikonknappar BORT → ☰ meny-drawer med stora 52px-rader
+  (ikon + text + beskrivning + chevron — som iPhone-inställningslista)
+- Inställningar i menyn: modell/läge/tankestyrka/tema som stora rader
+- Input: ren textarea + STOR gul skicka-knapp — ingen verktygsrad
+- Kontextrad (📊 X tkn) BORT ur huvudvyn → i menyn
+
+ALLA funktioner bevarade — bara UI:t reorganiserat.

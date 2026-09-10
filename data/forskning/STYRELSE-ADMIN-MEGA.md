@@ -742,3 +742,15 @@ KVD: tsc 36 · build 0 · E2E (installningar roundtrip) · deploy.
   (automation, webbläsare — väntar binäruppgradering) + v4-styre/
   telemetri. NÄSTA: binäruppgraderingsutredning (frigör automation +
   webbläsare + attachment-väg) → därefter V93-C4 events-replay-UI.
+
+### VÅG 93 TILLÄGG — BINÄRUPPGRADERINGSUTREDNINGEN STÄNGD (2026-09-10)
+
+Serverns zcode-app-cli = **3.11.2-22** = npm `latest` (utgiven
+2026-09-07; -19/-20/-21/-22 kom 5-7 sep). INGEN uppgradering finns —
+automation/create + interaction/browserExecute är ej exponerade i
+NÅGON utgiven version (strängar i bunten, metoder ej registrerade i
+app-servergränssnittet — troligen gating för framtida/desktop-byggen).
+Studions 501-graceful-kontrakt är därmed PERMANENT korrekt hållning.
+ÅTERKOMST: `npm view zcode-app-cli version` vid varje våg-start — ny
+version > 3.11.2-22 ⇒ kör v92-e2e.mjs omgående (T2/T3 vaknar tyst).
+Paritetens tak är nu ~39/91 tills Z.AI släpper metoderna.

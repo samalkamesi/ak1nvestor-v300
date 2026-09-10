@@ -77,10 +77,12 @@ export async function POST(req: NextRequest) {
         }
       };
 
-      // Heartbeat var 15:e s (håller nginx/proxy-bufferten öppen).
+      // Heartbeat var 15:e s (VÅG 90 K1: ": ping" — håller nginx/proxy/
+      // lastbalanserare från att döda anslutningen TYST; samma mönster som
+      // /api/studio/stream).
       const hjarta = setInterval(() => {
         try {
-          kontroll.enqueue(skrivare.encode(": hjarta\n\n"));
+          kontroll.enqueue(skrivare.encode(": ping\n\n"));
         } catch {
           // tyst
         }
@@ -93,7 +95,11 @@ export async function POST(req: NextRequest) {
       // borta syns i historiken när hen återkommer (GET:s
       // senastAktivSessionId + senastAktivHistorik + aktivtMal).
       const malSid = transport.sessionId();
+      // VÅG 90 K1: abort-vakt — en borta klient (req.signal abort) får inga
+      // events OCH drar inga efterföljande kontext/diff-frågor: tidigare
+      // pollades protokollet vidare i onödan efter frånkopplingen.
       const skickaMedEfterspel = (event: Parameters<typeof sseRad>[0]) => {
+        if (req.signal.aborted) return;
         skicka(event);
         if (event.typ === "mal_iteration") {
           if (event.fas === "start") markeraMalIterationStart(malSid);
@@ -118,6 +124,7 @@ export async function POST(req: NextRequest) {
       // protokollets goal lever kvar i sessionen). Sondens mal_status
       // korrigeringar skickas till klienten om läget ändrades.
       const sond = setTimeout(() => {
+        if (req.signal.aborted) return; // VÅG 90 K1: borta klient — ingen sond-polling
         void transport
           .sondMal()
           .then((status) => {

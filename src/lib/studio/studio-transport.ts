@@ -231,6 +231,27 @@ import path from "node:path";
  *     markeras i kartan (markeraMalIterationStart/Slut) så autonomt arbete
  *     medan användaren är borta syns i historiken.
  *
+ * VÅG 90 K1 (KÄRNSTABILITET — kundklagomål "de är sega, jobbar ej i timmar
+ * om det behövs, stänger av sig"; STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 90" K1):
+ *   · BARNPROCESS-OVERLEKSAKTER (ProtokollKlient): ovillkorlig exit/error
+ *     → dödsnotis → pågående prompt får ett ÄRLIGT fel direkt (ALDRIG
+ *     10-minuters-tystnad) och transporten startar om automatiskt (max 3
+ *     försök, exponentiell backoff 2 s/8 s/32 s, därefter tydligt fel).
+ *     Radbufferten kappas vid 1 MB (ett kaotiskt barn äter ALDRIG RAM),
+ *     timers dödas/unref:as vid död, avsiktlig stang() triggar ALDRIG
+ *     omstartskedjan.
+ *   · SESSIONS-HUSHÅLLNING: max MAX_AKTIVA_BARN=3 levande zcode-barn — en
+ *     ny tabb stänger först den ÄLDSTA idle-sessionen (inga lyssnare +
+ *     inget mål → session/stang + barnprocess-död); sessioner idle >2 h
+ *     stängs automatiskt (5-min-hushållning — RAM tillbaka till Contabos
+ *     8 GB-budget, historiken lever i kartan + session/list); kartan
+ *     spolas TVINGAT till disk vid stäng/död (30 s-debounce behålls för
+ *     vanliga tweaks); pm2-SIGTERM stänger ALLA barn synkront så inga
+ *     zombie-zcode-processer lämnas efter deploy/omstart.
+ *   · HÄLSA: lasStudioHalsa() → GET /api/studio/halsa — barnantal, RAM per
+ *     barn via /proc, sessioner i kartan, senaste omstart + senaste fel
+ *     (öppen route men inga hemligheter, inga session-id:n).
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -478,6 +499,13 @@ export interface StudioSessionsKort {
   historik: StudioHistorikPost[];
   /** true medan en prompt strömmar i sessionen (via denna Next-process). */
   aktiv: boolean;
+  /**
+   * VÅG 90 K1: true när sessionen STÄNGTS (session/close — idle-städning
+   * eller användar-stängning); resume vägrar då ärligt. Bevaras över disk-
+   * hydreringen så en stängd/död session inte återbjuds som levande efter
+   * omstart (känt problem: döda sessioner stannade kvar i kartan).
+   */
+  stangd?: boolean;
 }
 
 /**
@@ -930,6 +958,16 @@ class ProtokollKlient {
     | ((metod: string, parametrar: unknown) => unknown | Promise<unknown | null> | null)
     | null = null;
   lever = false;
+  /**
+   * VÅG 90 K1: dödsnotis — eldas EN gång när barnprocessen dör OVILLKORLIGT
+   * ('exit'/'error'); avsiktlig nedstängning (stang()) notiseras ALDRIG så
+   * transportens omstartskedja inte triggas av egen städning.
+   */
+  dodsLyssnare: ((fel: Error) => void) | null = null;
+  /** true efter avsiktlig stang() — dödsnotis/omstart undertrycks. */
+  private stängdAvsiktligen = false;
+  /** VÅG 90 K1: radbuffertens tak (1 MB) — ett kaotiskt barn äter ALDRIG RAM. */
+  private static readonly MAX_RADBUFFERT_TEEKEN = 1_048_576;
 
   constructor(
     private readonly binär: string,
@@ -959,6 +997,13 @@ class ProtokollKlient {
   /** Radbuffrad JSON-tolkning — en rad = ett meddelande. */
   private matad(text: string): void {
     this.buffert += text;
+    // VÅG 90 K1: kapa radbufferten vid >1 MB — en kaotisk barnprocess som
+    // skriver utan radbrytningar får ALDRIG äta RAM i sig (äldsta bytena
+    // slängs; en eventuell halv rad i kanten tolereras av tolkningens
+    // skräprads-filter som redan äter icke-JSON-rader).
+    if (this.buffert.length > ProtokollKlient.MAX_RADBUFFERT_TEEKEN) {
+      this.buffert = this.buffert.slice(-ProtokollKlient.MAX_RADBUFFERT_TEEKEN);
+    }
     let ny = this.buffert.indexOf("\n");
     while (ny >= 0) {
       const rad = this.buffert.slice(0, ny).trim();
@@ -1081,12 +1126,50 @@ class ProtokollKlient {
   private stäng(fel: Error): void {
     if (!this.lever) return;
     this.lever = false;
+    // VÅG 90 K1: alla väntande timers dödas (clearTimeout) och bufferten
+    // släpps — inget läcker från ett dött barn.
     for (const [, v] of this.vantar) {
       clearTimeout(v.timer);
       v.fel(fel);
     }
     this.vantar.clear();
+    this.buffert = "";
     this.barn = null;
+    // VÅG 90 K1: ovillkorlig död → notis EN gång (transportens omstartskedja
+    // med backoff börjar). Avsiktlig nedstängning tiger (stang()).
+    if (!this.stängdAvsiktligen) this.dodsLyssnare?.(fel);
+  }
+
+  /**
+   * VÅG 90 K1 — avsiktlig nedstängning: väntande requests felas, barnet
+   * får SIGTERM (SIGKILL efter 3 s om det ignorerar) och DEN DÖDSNOTIS
+   * som annars triggade omstarten undertrycks. Används av hushållningen
+   * (idle >2 h / max-barn-vakten) och pm2-SIGTERM-nedstängningen.
+   */
+  stang(): void {
+    this.stängdAvsiktligen = true;
+    const barn = this.barn;
+    this.stäng(new Error("app-server stängdes avsiktligt (ak1a-studio)"));
+    if (barn && typeof barn.kill === "function") {
+      try {
+        barn.kill("SIGTERM");
+      } catch {
+        // redan borta
+      }
+      const tvång = setTimeout(() => {
+        try {
+          barn.kill("SIGKILL");
+        } catch {
+          // redan borta
+        }
+      }, 3_000);
+      tvång.unref(); // tvångsdöden får ALDRIG hålla processen vid liv
+    }
+  }
+
+  /** VÅG 90 K1: barnprocessens pid (hälsoruttens /proc-RAM-läsning) — null utan barn. */
+  pid(): number | null {
+    return this.barn?.pid ?? null;
   }
 }
 
@@ -1726,6 +1809,29 @@ class AppServerTransport implements StudioTransport {
   private v4LogEpoch: string | null = null;
   private v4Revision = 0;
   private v4Ansluten = false;
+  // ── VÅG 90 K1: STABILITET — omstartskedja, idle-spårning, hälsa ────────────
+  /** Misslyckade omstartsförsök sedan senaste LYCKADE etablering (0–3). */
+  private omstartForsok = 0;
+  /** true under omstarts-backoff OCH pågående försök — spärrar ensure(). */
+  private omstartPaga = false;
+  /** Väntande omstarts-backoff-timer (null = ingen schemalagd). */
+  private omstarTimer: ReturnType<typeof setTimeout> | null = null;
+  /** Senaste fel (död/omstart) — hälsorutten /api/studio/halsa. */
+  private senasteFel: { tid: number; text: string } | null = null;
+  /** Senaste LYCKADE barnomstart (epoch ms) — hälsorutten. */
+  private senasteOmstart: number | null = null;
+  /** Senaste aktivitet (epoch ms) — hushållningens 2 h-idle-klocka. */
+  private senasteAktivTid = Date.now();
+  /**
+   * true när en ny död inträffade MITT I en pågående omstartskedja — den
+   * köas och triggar en FRÄSCH kedja när den pågående avslutar (annars kunde
+   * den tyst försvinna i sista mikrosekundfönstret innan omstartPaga=false).
+   */
+  private dodVantarPaOmstart = false;
+  /** Max omstartsförsök per död — därefter tydligt uppgivet fel. */
+  private static readonly MAX_OMSTARTER = 3;
+  /** Exponentiell backoff: 2 s → 8 s → 32 s (KVD ur våg 90-block K1). */
+  private static readonly OMSTART_BACKOFF_MS = [2_000, 8_000, 32_000] as const;
 
   constructor(
     private readonly binärer: string[],
@@ -1745,15 +1851,15 @@ class AppServerTransport implements StudioTransport {
 
   async ensure(): Promise<void> {
     if (this.klient?.lever && this.sid && this.prenumererad) return;
+    // VÅG 90 K1: varje ensure = intresse för sessionen (GET-poll från ett
+    // öppet UI räknas som aktivitet) — idle-klockan slår aldrig fel.
+    this.senasteAktivTid = Date.now();
 
     // Persistens: återuppta förra sessionen när pm2/servern startat om
     // ("sessionsliståterkomst") — fall tillbaka på create om den är borta.
     // OBS: resume-or-create körs också när klienten LEVER men sessionen
     // saknas (självläkningsvägen nySession() efter -32031).
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
+    this.klientForFraga(); // VÅG 90 K1: omstartsvakt — kastar under backoff
     if (!this.sid) {
       const klient = this.klient!;
       const { sessionId: sparad, modell, lage, tankeNiva } = this.lasSparadSession();
@@ -1806,6 +1912,9 @@ class AppServerTransport implements StudioTransport {
       // subscribe är ALDRIG fatal för chatten (diffen faller på motorn).
       await this.v4Prenumerera();
     }
+    // VÅG 90 K1: LYCKAD etablering nollställer omstartsräknaren — nästa
+    // ovillkorliga död får ett fräscht försöksfönster (max 3, backoff 2/8/32 s).
+    this.omstartForsok = 0;
   }
 
   /**
@@ -1854,6 +1963,9 @@ class AppServerTransport implements StudioTransport {
       }
       const klient = new ProtokollKlient(sokvag, this.arbetskatalog);
       klient.händelseLyssnare = (m) => this.påNotis(m);
+      // VÅG 90 K1: ovillkorlig barnprocess-död → transportens omstartskedja
+      // (meddela lyssnare + auto-omstart med backoff; avsiktlig stang() tiger).
+      klient.dodsLyssnare = (fel) => this.vidKlientDöd(fel);
       // V83 B2: interaktionsdomänen (permission/fråga) besvaras asynkront
       // via transportens register — klienten skriver {id, result} när
       // användaren svarat (eller 30 s-defaulten löst).
@@ -1866,6 +1978,264 @@ class AppServerTransport implements StudioTransport {
       }
     }
     throw new Error(`ingen zcode-binär kunde startas (${this.binärer.join(", ")}): ${String(senasteFel)}`);
+  }
+
+  /**
+   * VÅG 90 K1: klient-start med OMPSTARTSVAKT — returnerar en levande klient
+   * eller startar en ny, MEN under en pågående automatisk omstart (backoff-
+   * fönstret) kastas ett ärligt "pröva igen"-fel i stället för att en ANDRA
+   * klient startas bredvid omstarten (dubbla barn = dubbel RAM på Contabo).
+   */
+  private klientForFraga(): ProtokollKlient {
+    if (this.klient?.lever) return this.klient;
+    if (this.omstartPaga) {
+      throw new Error(
+        `Agent-processen startar om automatiskt (försök ${Math.min(this.omstartForsok + 1, AppServerTransport.MAX_OMSTARTER)}/${AppServerTransport.MAX_OMSTARTER}) — pröva igen om några sekunder.`,
+      );
+    }
+    this.klient = this.startaKlient();
+    this.prenumererad = false;
+    return this.klient;
+  }
+
+  // ── VÅG 90 K1: BARNPROCESS-DÖD → meddela + automatisk omstart ───────────────
+
+  /**
+   * Barnprocessen dog OVILLKORLIGT (exit/error — typiskt OOM när flera
+   * sessioner + Next + pm2 delar Contabos 8 GB): den pågående prompten får
+   * ett ÄRLIGT fel DIREKT (ALDRIG 10-minuters-tystnad), mål-lyssnaren
+   * meddelas, kartan spolas TVINGAT till disk och omstartskedjan börjar
+   * (max 3 försök, exponentiell backoff 2 s/8 s/32 s — därefter tydligt fel).
+   */
+  private vidKlientDöd(fel: Error): void {
+    this.prenumererad = false;
+    this.v4Ansluten = false;
+    this.malTurnOppen = false; // den döda turnen completas aldrig — räknaren börjar friskt
+    this.senasteFel = { tid: Date.now(), text: `barnprocess död: ${fel.message}`.slice(0, 300) };
+    const aktiv = this.aktiv;
+    if (aktiv && !aktiv.färdig) {
+      aktiv.färdig = true;
+      try {
+        aktiv.lyssnare({
+          typ: "fel",
+          meddelande: `Agent-processen dog (${fel.message.slice(0, 140)}) — servern startar om den automatiskt; pröva igen om en stund.`,
+        });
+      } catch {
+        // brutet SSE — omstarten fortsätter ändå
+      }
+      aktiv.klar();
+    }
+    this.sändMalEvent({
+      typ: "status",
+      text: `Agent-processen dog — automatisk omstart pågår (${fel.message.slice(0, 120)}).`,
+    });
+    spolaKartaTillDisk(); // VÅG 90 K1: tvingad flush vid död — debounce är lyx här
+    this.startaOmAutomatiskt(fel);
+  }
+
+  /**
+   * Schemalägg omstart — en pågående kedja dubblas ALDRIG; en död som
+   * inträffar MITT I en pågående omstart KÖAS (dodVantarPaOmstart) och får
+   * en ny kedja när den pågående avslutar.
+   */
+  private startaOmAutomatiskt(fel: Error): void {
+    if (this.omstartPaga) {
+      this.dodVantarPaOmstart = true;
+      return;
+    }
+    this.omstartPaga = true;
+    this.stegOmstart(fel);
+  }
+
+  /** Efter avslutad omstart: en köad död (mitt i kedjan) startar en ny kedja. */
+  private fangaVantandeDod(): void {
+    if (!this.dodVantarPaOmstart) return;
+    this.dodVantarPaOmstart = false;
+    this.startaOmAutomatiskt(new Error("barnprocessen dog under pågående omstart"));
+  }
+
+  /**
+   * Ett steg i omstartscykeln: backoff 2 s → 8 s → 32 s, max 3 försök —
+   * därefter ge upp med tydligt fel (mål-strömmen + hälsorutten bär det).
+   */
+  private stegOmstart(fel: Error): void {
+    if (this.omstartForsok >= AppServerTransport.MAX_OMSTARTER) {
+      const text =
+        `Agent-processen dog och ${AppServerTransport.MAX_OMSTARTER} omstartsförsök misslyckades ` +
+        `(${fel.message.slice(0, 160)}) — kontrollera serverns minne (pm2 logs ak1a) och ladda om /studio.`;
+      this.senasteFel = { tid: Date.now(), text };
+      this.sändMalEvent({ typ: "fel", meddelande: text });
+      // Lås upp: nästa användartryck (ensure) får försöka etablera manuellt.
+      this.omstartPaga = false;
+      this.fangaVantandeDod();
+      return;
+    }
+    const backoff =
+      AppServerTransport.OMSTART_BACKOFF_MS[
+        Math.min(this.omstartForsok, AppServerTransport.OMSTART_BACKOFF_MS.length - 1)
+      ];
+    this.omstartForsok += 1;
+    this.omstarTimer = setTimeout(() => {
+      this.omstarTimer = null;
+      void this.korOmstart();
+    }, backoff);
+    this.omstarTimer.unref(); // omstarts-timern får ALDRIG hålla processen vid liv
+  }
+
+  /** Genomför ETT omstartsförsök: ny klient + resume + subscribe + sond. */
+  private async korOmstart(): Promise<void> {
+    try {
+      const klient = this.startaKlient();
+      this.klient = klient;
+      // Sessionen återupptas i det NYA barnet (protokolls-state dog med det
+      // gamla; sessionerna själva lever på disk — persistence "immediate").
+      if (this.sid) {
+        const resultat = await klient.protokollFraga(
+          "session/resume",
+          { sessionId: this.sid, ...(this.tankeNiva ? { thoughtLevel: this.tankeNiva } : {}) },
+          45_000,
+        );
+        const sid = sessionUr(resultat);
+        if (!sid) throw new Error("session/resume svarade utan sessionId vid omstart");
+        this.sid = sid;
+        await klient.protokollFraga(
+          "session/subscribe",
+          { sessionId: this.sid, deliveryKind: "web-remote-replayable" },
+          30_000,
+        );
+        this.prenumererad = true;
+        await this.v4Prenumerera();
+      }
+      // LYCKAD etablering: räknaren börjar om vid nästa död.
+      this.omstartForsok = 0;
+      this.senasteOmstart = Date.now();
+      this.senasteAktivTid = Date.now();
+      // Mål-självläkning: ett LEVANDE mål i protokollet återaktiverar mål-
+      // läget så den autonoma loopen fortsätter mata turner (sondMal är
+      // best-effort — statusen är sanningen).
+      await this.sondMal();
+      this.sändMalEvent({ typ: "status", text: "Agent-processen återstartad — sessionen återupptagen." });
+    } catch (fel) {
+      const felet = fel instanceof Error ? fel : new Error(String(fel));
+      this.senasteFel = { tid: Date.now(), text: `omstart misslyckades: ${felet.message}`.slice(0, 300) };
+      this.stegOmstart(felet); // nästa backoff-steg (omstartPaga förblir true)
+      return;
+    }
+    this.omstartPaga = false; // klar — ensure() låses upp
+    this.fangaVantandeDod(); // en död mitt i kedjan? → fräsch kedja nu
+  }
+
+  /** Avbryt pågående omstart (vid avsiktlig nedstängning). */
+  private omstartAvbryt(): void {
+    this.omstartPaga = false;
+    this.dodVantarPaOmstart = false;
+    if (this.omstarTimer !== null) {
+      clearTimeout(this.omstarTimer);
+      this.omstarTimer = null;
+    }
+  }
+
+  /**
+   * VÅG 90 K1 — idle? true = ingen pågående prompt, inget aktivt mål, inga
+   * väntande interaktioner. Hushållningen (max-barn-vakten + 2 h-idle)
+   * stänger ENDAST idle-transporter — pågående arbete rörs ALDRIG.
+   */
+  arIdle(): boolean {
+    return !(this.aktiv && !this.aktiv.färdig) && !this.malAktiv && this.interaktioner.size === 0;
+  }
+
+  /** VÅG 90 K1: senaste aktivitet (epoch ms) — hushållningens idle-klocka. */
+  senasteAktivitetTid(): number {
+    return this.senasteAktivTid;
+  }
+
+  /** VÅG 90 K1: barnprocessinfo till hälsorutten (/api/studio/halsa). */
+  barnInfo(): {
+    pid: number | null;
+    lever: boolean;
+    ramMB: number | null;
+    omstartForsok: number;
+    senasteOmstart: number | null;
+    senasteFel: { tid: number; text: string } | null;
+  } {
+    const pid = this.klient?.pid() ?? null;
+    return {
+      pid,
+      lever: this.klient?.lever === true,
+      ramMB: pid !== null ? lasBarnRamMB(pid) : null,
+      omstartForsok: this.omstartForsok,
+      senasteOmstart: this.senasteOmstart,
+      senasteFel: this.senasteFel,
+    };
+  }
+
+  /**
+   * VÅG 90 K1 — stäng HELT: session/close (protokollet) + barnprocessen dödas
+   * AVSIKTLIGT (ingen omstart triggas) + all state rensas. Används av
+   * hushållningen (idle >2 h / max-barn-vakten). Nästa ensure() föder en
+   * frisk klient + session; historiken lever i sessionskartan + session/list.
+   */
+  async stangHelt(): Promise<void> {
+    this.omstartAvbryt();
+    const sid = this.sid;
+    if (sid && this.klient?.lever) {
+      try {
+        await this.klient.protokollFraga("session/close", { sessionId: sid }, 8_000);
+      } catch {
+        // best-effort — barnet dödas nedan ändå
+      }
+    }
+    this.klient?.stang();
+    this.klient = null;
+    this.sid = null;
+    this.prenumererad = false;
+    this.v4Ansluten = false;
+    this.v4LogEpoch = null;
+    this.rensaVantandeInteraktioner();
+    // Mål-läget dör med sessionen — mål-lyssnaren får ärlig snapshot.
+    this.malText = null;
+    this.malAktiv = false;
+    this.malPausad = false;
+    this.malIteration = 0;
+    this.malSenasteText = "";
+    this.malTurnOppen = false;
+    this.malBuffert.length = 0;
+    this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
+    if (sid) {
+      try {
+        rmSync(this.lagringsSökväg, { force: true });
+      } catch {
+        // best-effort
+      }
+    }
+  }
+
+  /**
+   * VÅG 90 K1: döda BARNPROCESSEN avsiktligt UTAN session/close (SIGTERM-
+   * nedstängning — pm2:s kill-timeout hinner inte med protokollsroundtrips).
+   * Ingen omstart triggas; transportens state rensas som i stangHelt().
+   */
+  dodaBarnAvsiktligt(): void {
+    this.omstartAvbryt();
+    const klient = this.klient;
+    this.klient = null;
+    this.prenumererad = false;
+    this.v4Ansluten = false;
+    const aktiv = this.aktiv;
+    if (aktiv && !aktiv.färdig) {
+      aktiv.färdig = true;
+      try {
+        aktiv.lyssnare({ typ: "fel", meddelande: "Servern stänger ned — agent-processen avslutades." });
+      } catch {
+        // strömmen redan borta
+      }
+      try {
+        aktiv.klar();
+      } catch {
+        // resolve av en redan löst promise är harmlöst
+      }
+    }
+    klient?.stang(); // avsiktlig: SIGTERM till barnet, dödsnotis undertrycks
   }
 
   private async skapa(klient: ProtokollKlient, modellId?: string): Promise<void> {
@@ -1982,11 +2352,8 @@ class AppServerTransport implements StudioTransport {
       // best-effort — en kvarvarande fil betyder bara att nästa omstart
       // får ett misslyckat resume-försök innan create fallback körs.
     }
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
-    await this.skapa(this.klient, modellId);
+    this.klientForFraga(); // VÅG 90 K1: omstartsvakt
+    await this.skapa(this.klient!, modellId);
     await this.ensure();
     return this.sid!;
   }
@@ -1994,10 +2361,7 @@ class AppServerTransport implements StudioTransport {
   async lasSessioner(): Promise<StudioSessionPost[]> {
     // session/list kräver LEVANDE klient men EGEN session — skapa aldrig
     // en ny bara för att lista.
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
+    this.klientForFraga(); // VÅG 90 K1: omstartsvakt gäller även listningar
     try {
       // VÅG 86 G5: explicit limit 50 (serverns tak — kartan §1 def 50) +
       // paneltak 50 (f.d. 25): en fork (rewind) eller äldre session skall
@@ -2136,15 +2500,12 @@ class AppServerTransport implements StudioTransport {
     if (this.aktiv && !this.aktiv.färdig) {
       throw new Error("En prompt kör — vänta tills agenten är klar.");
     }
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
+    const klient = this.klientForFraga(); // VÅG 90 K1: omstartsvakt
     // Artigt stäng den nuvarande (den lever kvar i session/list) — samma
     // mönster som nySession().
-    if (this.sid && this.sid !== sessionId && this.klient.lever) {
+    if (this.sid && this.sid !== sessionId && klient.lever) {
       try {
-        await this.klient.protokollFraga("session/close", { sessionId: this.sid }, 10_000);
+        await klient.protokollFraga("session/close", { sessionId: this.sid }, 10_000);
       } catch {
         // ej fatal — resume kör ändå nedan
       }
@@ -2153,12 +2514,12 @@ class AppServerTransport implements StudioTransport {
     this.prenumererad = false;
     // BEVISAT v83-kartan §1: {sessionId} räcker — snapshoten bär historiken
     // (messageCount) och sessionen fortsätter där den slutade.
-    const resultat = await this.klient.protokollFraga("session/resume", { sessionId }, 45_000);
+    const resultat = await klient.protokollFraga("session/resume", { sessionId }, 45_000);
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/resume svarade utan sessionId");
     this.sid = sid;
     this.sparaPersistens(sid);
-    await this.klient.protokollFraga(
+    await klient.protokollFraga(
       "session/subscribe",
       { sessionId: sid, deliveryKind: "web-remote-replayable" },
       30_000,
@@ -2176,11 +2537,8 @@ class AppServerTransport implements StudioTransport {
     // ingen lever. Valdigt mål = parametern eller den aktiva sessionen.
     const mal = sessionId && /^sess_[A-Za-z0-9._-]+$/.test(sessionId) ? sessionId : this.sid;
     if (!mal) throw new Error("Ingen session att stänga.");
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
-    const r = (await this.klient.protokollFraga("session/close", { sessionId: mal }, 15_000)) as
+    const klient = this.klientForFraga(); // VÅG 90 K1: omstartsvakt
+    const r = (await klient.protokollFraga("session/close", { sessionId: mal }, 15_000)) as
       | { closed?: boolean }
       | null;
     if (mal === this.sid) {
@@ -2476,6 +2834,7 @@ class AppServerTransport implements StudioTransport {
   }
 
   prenumereraMal(lyssnare: StudioLyssnare): () => void {
+    this.senasteAktivTid = Date.now(); // VÅG 90 K1: öppen mål-ström = intresse
     this.malLyssnare = lyssnare;
     // Snapshot först (räknarens sanning), därefter spolas bufferten — en
     // påbörjad iteration (mal_iteration start + deltas + kort) återges HEL.
@@ -2680,10 +3039,7 @@ class AppServerTransport implements StudioTransport {
 
   async lasArbetsyta(): Promise<StudioArbetsytaInfo | null> {
     // readState kräver LEVANDE klient men EGEN session — som lasSessioner.
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
+    this.klientForFraga(); // VÅG 90 K1: omstartsvakt
     try {
       const r = (await this.klient!.protokollFraga(
         "workspace/readState",
@@ -2719,11 +3075,7 @@ class AppServerTransport implements StudioTransport {
    * session (lasSessioner-mönstret — metoden skapar ALDRIG en session).
    */
   private klientForLasning(): ProtokollKlient {
-    if (!this.klient?.lever) {
-      this.klient = this.startaKlient();
-      this.prenumererad = false;
-    }
-    return this.klient;
+    return this.klientForFraga(); // VÅG 90 K1: omstartsvakten gäller läsningar med
   }
 
   /** Arbetsyta i protokollets Yo-form (workspaceKey = workspacePath, §0). */
@@ -3306,6 +3658,7 @@ class AppServerTransport implements StudioTransport {
     if (!post || post.besvarad || post.interaktion.typ !== "permission") {
       return { ok: false, beslut: "okänd", skäl: "begäran finns ej eller är redan besvarad" };
     }
+    this.senasteAktivTid = Date.now(); // VÅG 90 K1: användarsvar = aktivitet
     // Bygg z2-svaret: protokollets förslagade response vinner om den finns,
     // annars mappas de bevisade optionId:n till beslutsformerna (kartan §3:
     // allow_project motsvaras av permissionUpdates addRules allow).
@@ -3344,6 +3697,7 @@ class AppServerTransport implements StudioTransport {
   async svarFraga(requestId: string, svar: { varde?: string; avbruten?: boolean }): Promise<{ ok: boolean }> {
     const post = this.interaktioner.get(requestId);
     if (!post || post.besvarad || post.interaktion.typ !== "fråga") return { ok: false };
+    this.senasteAktivTid = Date.now(); // VÅG 90 K1: användarsvar = aktivitet
     const result = svar.avbruten
       ? { cancelled: true }
       : { value: typeof svar.varde === "string" ? svar.varde : "" };
@@ -3603,6 +3957,7 @@ class AppServerTransport implements StudioTransport {
 
   /** Notis-mottagare: översätter protokollhändelser till StudioEvent. */
   private påNotis(m: ProtokollMeddelande): void {
+    this.senasteAktivTid = Date.now(); // VÅG 90 K1: protokollpuls = aktivitet
     const aktiv = this.aktiv;
     const params = m.params as SessionEventParams | StateUpdatedParams | undefined;
 
@@ -5055,7 +5410,11 @@ let kartaSkrivTimer: ReturnType<typeof setTimeout> | null = null;
 
 // Best-effort spolning när Node stänger ned (pm2 SIGTERM → "exit") —
 // debounce-fönstrets 30 s får aldrig bli ett hål i historiken. Registreras
-// EN gång per process; skriver bara när en skrivning verkligen väntar.
+// i våg-90-guard-blocket nedan (EN gång per process); skriver bara när en
+// skrivning verkligen väntar.
+//
+// VÅG 90 K1: se stangAllaBarnSynkront() — SIGTERM spolar kartan TVINGAT
+// FÖRE barn-dödandet; detta är den sista nätdelen om processen dör utan signal.
 process.on("exit", () => {
   if (kartaSkrivTimer !== null) {
     clearTimeout(kartaSkrivTimer);
@@ -5108,6 +5467,19 @@ function schemalaggKartskrivning(): void {
 }
 
 /**
+ * VÅG 90 K1 — TVINGAD flush: skriv kartan till disk NU (avbryt ev. debounce).
+ * Körs vid session-stängning och barnprocess-död — där får 30 s-debounce-
+ * fönstret ALDRIG bli ett hål i historiken om pm2 startar om mitt i.
+ */
+function spolaKartaTillDisk(): void {
+  if (kartaSkrivTimer !== null) {
+    clearTimeout(kartaSkrivTimer);
+    kartaSkrivTimer = null;
+  }
+  skrivKartaTillDisk();
+}
+
+/**
  * Läs kartan från disk VID UPPSTART (engångs-hydrering): pm2-omstart tömde
  * minnet — disken återger sessionerna med senasteAktivitet + historik så
  * GET /api/studio/stream kan svara den SENAST AKTIVA sessionen direkt.
@@ -5135,6 +5507,9 @@ function lasKartaFranDisk(): void {
         senasteAktivitet: k.senasteAktivitet,
         historik: historik.slice(-MAX_HISTORIK_I_KARTA),
         aktiv: false, // efter omstart strömmar ingen prompt i Gamla processen
+        // VÅG 90 K1: en STÄNGD session förblir stängd efter omstart —
+        // annars återbjuds döda sessioner som levande (känt problem).
+        ...(k.stangd === true ? { stangd: true } : {}),
       });
     }
     städaKarta();
@@ -5295,6 +5670,7 @@ export async function hamtaSessionTransport(
       if (sid) return { transport: befintlig, sessionId: sid };
       // Fallthrough — transporten tappade sin session (extremfall): ny nedan.
     }
+    await vaktaMaxBarn(); // VÅG 90 K1: aldrig ett (MAX+1):e barn på Contabo
     const transport = skapaSessionTransport(sessionId);
     await transport.ensure(); // kastar ÄRLIGT om mål-resume misslyckas
     const sid = transport.sessionId();
@@ -5317,6 +5693,7 @@ export async function hamtaSessionTransport(
         return { transport: befintlig, sessionId: sid };
       }
     }
+    await vaktaMaxBarn(); // VÅG 90 K1: aldrig ett (MAX+1):e barn på Contabo
     const transport = skapaSessionTransport();
     await transport.ensure();
     const sid = transport.sessionId();
@@ -5349,6 +5726,267 @@ export function lasAllaInteraktioner(): StudioInteraktion[] {
   if (aktivTransport) ut.push(...aktivTransport.vantaInteraktioner());
   for (const t of sessionTransporter.values()) ut.push(...t.vantaInteraktioner());
   return ut;
+}
+
+// ── VÅG 90 K1: SESSIONS-HUSHÅLLNING — max-barn, idle-stängning, shutdown ─────
+
+/** Max AKTIVA zcode-barnprocesser (default + tabbar) — Contabos 8 GB-budget. */
+const MAX_AKTIVA_BARN = 3;
+/** Idle-tak (ms): en session utan lyssnare/mål i 2 h stängs (RAM frigörs). */
+const IDLE_STANG_MS = 2 * 60 * 60 * 1000;
+/** Hushållningsinterval (ms) — idle-stängning + över-tak-städning. */
+const HUSHALL_INTERVALL_MS = 5 * 60 * 1000;
+
+/** Alla kända transporter (default + per-session-registret, unika). */
+function allaTransporter(): StudioTransport[] {
+  const ut: StudioTransport[] = [];
+  if (aktivTransport) ut.push(aktivTransport);
+  for (const t of sessionTransporter.values()) if (!ut.includes(t)) ut.push(t);
+  return ut;
+}
+
+/** Registernyckel för en transport (null = default-transporten/oregistrerad). */
+function transportNyckel(t: StudioTransport): string | null {
+  for (const [nyckel, tr] of sessionTransporter) if (tr === t) return nyckel;
+  return null;
+}
+
+/** Hushållnings-ytan på en appserver-transport (mock saknar den → null). */
+interface HushallbarTransport extends StudioTransport {
+  arIdle(): boolean;
+  senasteAktivitetTid(): number;
+  stangHelt(): Promise<void>;
+  dodaBarnAvsiktligt(): void;
+  barnInfo(): {
+    pid: number | null;
+    lever: boolean;
+    ramMB: number | null;
+    omstartForsok: number;
+    senasteOmstart: number | null;
+    senasteFel: { tid: number; text: string } | null;
+  };
+}
+
+/** Typad vy — ALDRIG instancecheck (AppServerTransport är inte exporterad). */
+function somHushallbar(t: StudioTransport): HushallbarTransport | null {
+  const k = t as Partial<HushallbarTransport>;
+  return typeof k.stangHelt === "function" &&
+    typeof k.arIdle === "function" &&
+    typeof k.barnInfo === "function" &&
+    typeof k.dodaBarnAvsiktligt === "function"
+    ? (t as HushallbarTransport)
+    : null;
+}
+
+/** Antal transporter med LEVANDE barnprocess (mock räknas ej — inget barn). */
+function antalLevandeBarn(): number {
+  let n = 0;
+  for (const t of allaTransporter()) {
+    const h = somHushallbar(t);
+    if (h?.barnInfo().lever) n += 1;
+  }
+  return n;
+}
+
+/**
+ * Stäng en transport fullständigt (session/stang + barnprocess-död via
+ * transportens egen stangHelt) + städa registret + markera kart-posten
+ * stängd + TVINGA karta-flush. Historiken lever kvar i kartan + session/list.
+ */
+async function stangTransport(h: HushallbarTransport, t: StudioTransport): Promise<void> {
+  const nyckel = transportNyckel(t);
+  const sid = t.sessionId();
+  await h.stangHelt().catch(() => undefined);
+  if (nyckel) sessionTransporter.delete(nyckel);
+  if (sid) {
+    const kort = sessionskartan.get(sid);
+    if (kort) {
+      kort.stangd = true; // VÅG 90 K1: stängd session återbjuds ej som levande
+      kort.aktiv = false;
+    }
+  }
+  spolaKartaTillDisk(); // tvingad flush vid stäng — ALDRIG ett 30 s-hål
+}
+
+/**
+ * Stäng den ÄLDSTA idle-sessionen (inga lyssnare + inget mål + inga väntande
+ * dialoger) — returnerar true när någon stängdes (false = alla är aktiva).
+ */
+async function stangAldstaIdle(): Promise<boolean> {
+  let kandidat: { h: HushallbarTransport; t: StudioTransport; tid: number } | null = null;
+  for (const t of allaTransporter()) {
+    const h = somHushallbar(t);
+    if (!h || !h.barnInfo().lever || !h.arIdle()) continue;
+    const tid = h.senasteAktivitetTid();
+    if (!kandidat || tid < kandidat.tid) kandidat = { h, t, tid };
+  }
+  if (!kandidat) return false;
+  await stangTransport(kandidat.h, kandidat.t);
+  return true;
+}
+
+/**
+ * VAKT: en NY tabb som skulle föda barnprocess nummer MAX+1 stänger först
+ * den äldsta idle-sessionen; är ALLA aktiva kastas ett ärligt fel (kunden
+ * får veta VARFÖR — ALDRIG en tyst fjärde barnprocess som OOM:ar servern).
+ */
+async function vaktaMaxBarn(): Promise<void> {
+  if (studioTransportNamn() === "mock") return; // dev: inga barn alls
+  while (antalLevandeBarn() >= MAX_AKTIVA_BARN) {
+    if (!(await stangAldstaIdle())) {
+      throw new Error(
+        `Max ${MAX_AKTIVA_BARN} aktiva agent-sessioner — stäng en ledig session (Sessioner → stäng) eller vänta tills en blir klar.`,
+      );
+    }
+  }
+}
+
+/**
+ * Hushållningsloop (5 min): (1) sessioner idle >2 h stängs automatiskt —
+ * session/stang + barnprocess-död frigör RAM (ett zcode-barn är ~0,5–1 GB
+ * på Contabos 8 GB) och historiken lever kvar i kartan + session/list så
+ * nästa besök resume:ar via GET:s återkoppling; (2) städning om tabbar
+ * läckt över max-taket.
+ */
+function hushallning(): void {
+  void (async () => {
+    const nu = Date.now();
+    for (const t of allaTransporter()) {
+      const h = somHushallbar(t);
+      if (!h || !h.barnInfo().lever || !h.arIdle()) continue;
+      if (nu - h.senasteAktivitetTid() < IDLE_STANG_MS) continue;
+      await stangTransport(h, t);
+    }
+    let vakt = 0;
+    while (antalLevandeBarn() > MAX_AKTIVA_BARN && vakt < 10) {
+      vakt += 1;
+      if (!(await stangAldstaIdle())) break;
+    }
+  })().catch(() => undefined); // bakgrundens arbetare — fel äts tyst (hälsan bär dem)
+}
+
+// ── VÅG 90 K1: HÄLSA — /api/studio/halsa ─────────────────────────────────────
+
+/** En barnprocesspost i hälsosvaret (inga session-id:n, inga hemligheter). */
+export interface StudioHalsaBarn {
+  /** true = default-transporten (huvudtabben). */
+  standard: boolean;
+  /** Barnprocessens pid (null innan första start/efter död). */
+  pid: number | null;
+  /** false = barnet dött / omstart pågår. */
+  lever: boolean;
+  /** RAM (MB) ur /proc/<pid>/statm — null på icke-Linux/död process. */
+  ramMB: number | null;
+  /** Pågående omstartsförsök (0–3). */
+  omstartForsok: number;
+}
+
+/** Hälsosvaret — öppen route men MINIMALT: räknare + tillstånd, aldrig hemligheter. */
+export interface StudioHalsa {
+  transport: "appserver" | "mock";
+  /** Hushållningens tak (MAX_AKTIVA_BARN). */
+  maxAktivaBarn: number;
+  barn: StudioHalsaBarn[];
+  /** Levande barn just nu. */
+  antalBarnprocesser: number;
+  /** Sessioner i sessionskartan (minne/disk-hydrering). */
+  sessionerIKarta: number;
+  /** Per-session-tabbar i registret. */
+  tabbar: number;
+  /** Senaste LYCKADE barnomstart (epoch ms; null = ingen ägt rum). */
+  senasteOmstart: number | null;
+  /** Senaste fel (död/omstart) — trunkerad text, aldrig hemligheter. */
+  senasteFel: { tid: number; text: string } | null;
+  /** Processens uppstart (epoch ms). */
+  processUppstartad: number;
+  /** Plattform + Node-version (debug; inga sökvägar). */
+  plattform: string;
+  node: string;
+}
+
+/** RAM (MB) för en pid ur /proc — null när det ej går (Windows/dev/borta). */
+function lasBarnRamMB(pid: number): number | null {
+  try {
+    const falt = readFileSync(`/proc/${pid}/statm`, "utf8").trim().split(/\s+/);
+    const rssSidor = Number(falt[1]);
+    if (!Number.isFinite(rssSidor) || rssSidor < 0) return null;
+    return Math.round(((rssSidor * 4096) / (1024 * 1024)) * 10) / 10; // sida = 4 kB (x86_64)
+  } catch {
+    return null;
+  }
+}
+
+/** Hälsosnapshot — ren läsning (endast karta-hydrering som sidoeffekt). */
+export function lasStudioHalsa(): StudioHalsa {
+  lasKartaFranDisk();
+  const barn: StudioHalsaBarn[] = [];
+  let senasteOmstart: number | null = null;
+  let senasteFel: { tid: number; text: string } | null = null;
+  for (const t of allaTransporter()) {
+    const h = somHushallbar(t);
+    if (!h) continue;
+    const info = h.barnInfo();
+    barn.push({
+      standard: t === aktivTransport,
+      pid: info.pid,
+      lever: info.lever,
+      ramMB: info.ramMB,
+      omstartForsok: info.omstartForsok,
+    });
+    if (typeof info.senasteOmstart === "number") {
+      if (senasteOmstart === null || info.senasteOmstart > senasteOmstart) {
+        senasteOmstart = info.senasteOmstart;
+      }
+    }
+    const felet = info.senasteFel;
+    if (felet && (!senasteFel || felet.tid > senasteFel.tid)) senasteFel = felet;
+  }
+  return {
+    transport: studioTransportNamn(),
+    maxAktivaBarn: MAX_AKTIVA_BARN,
+    barn,
+    antalBarnprocesser: barn.filter((b) => b.lever).length,
+    sessionerIKarta: sessionskartan.size,
+    tabbar: sessionTransporter.size,
+    senasteOmstart,
+    senasteFel,
+    processUppstartad: Date.now() - Math.round(process.uptime() * 1000),
+    plattform: process.platform,
+    node: process.version,
+  };
+}
+
+// ── VÅG 90 K1: PROCESS-SHUTDOWN — pm2-SIGTERM lämnar inga zombie-zcode ───────
+
+/**
+ * Synkron nedstängning: kartan spolas TVINGAT först (writeFileSync — klar
+ * före exit), därefter SIGTERM till VARJE barn (pm2:s kill-timeout ~1,6 s
+ * hinner inte med protokollsroundtrips som session/close; utan detta lever
+ * zcode-barnen kvar som föräldralösa processer och äter RAM vid varje
+ * deploy/omstart).
+ */
+function stangAllaBarnSynkront(): void {
+  spolaKartaTillDisk();
+  for (const t of allaTransporter()) {
+    somHushallbar(t)?.dodaBarnAvsiktligt();
+  }
+}
+
+// Registrera hushållning + shutdown EN gång per process (global guard —
+// Next dev-hot-reload kan evaluera modulen flera gånger).
+const hushallGuard = globalThis as { __ak1aStudioVag90Hushall?: boolean };
+if (!hushallGuard.__ak1aStudioVag90Hushall) {
+  hushallGuard.__ak1aStudioVag90Hushall = true;
+  const hushallTimer = setInterval(hushallning, HUSHALL_INTERVALL_MS);
+  hushallTimer.unref(); // timern får ALDRIG hålla processen vid liv
+  for (const signaln of ["SIGTERM", "SIGINT"] as const) {
+    process.once(signaln, () => {
+      stangAllaBarnSynkront();
+      // Kort grace så stderr/stdout-pipes hinner flusha innan utgången
+      // (pm2:s kill-timeout slår SIGKILL efter ~1,6 s — 250 ms är säkert).
+      setTimeout(() => process.exit(0), 250);
+    });
+  }
 }
 
 /** Test-krok: nollställ singletonen + multi-session-registret (verktyg/test). */

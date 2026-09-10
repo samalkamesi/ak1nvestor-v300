@@ -246,10 +246,11 @@ export async function POST(req: NextRequest) {
         }
       };
 
-      // Heartbeat: kommentar var 15:e s (håller nginx/proxy-bufferten öppen).
+      // Heartbeat: SSE-kommentar var 15:e s (VÅG 90 K1: ": ping" — håller
+      // nginx/proxy/lastbalanserare från att döda anslutningen TYST).
       const hjarta = setInterval(() => {
         try {
-          kontroll.enqueue(skrivare.encode(": hjarta\n\n"));
+          kontroll.enqueue(skrivare.encode(": ping\n\n"));
         } catch {
           // tyst
         }
@@ -260,14 +261,21 @@ export async function POST(req: NextRequest) {
       // fångar klart-svaret (kartans assistant-post) på vägen ut.
       let svaret = "";
       markeraSessionStart(sessionsId, prompt);
+      // VÅG 90 K1: abort-medveten lyssnar-wrapper — efter klient-frånkoppling
+      // (req.signal abort) SPARAS svaret för sessionskartan men SKICKAS inget
+      // (lyssnaren är i praktiken avregistrerad), och polling nedan pausas.
       const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
+        if (req.signal.aborted) return;
         skicka(event);
       };
 
       try {
         skicka({ typ: "hej", transport: transport.namn, sessionId: sessionsId || null });
         await transport.skicka(prompt, skickaMedVakt, req.signal);
+        // VÅG 90 K1: polling BARA för en levande klient — efter abort ställer
+        // servern inga fler protokollsfrågor (kontext/diff) i onödan.
+        if (req.signal.aborted) return;
         // V82: färsk kontextsanning efter rundan (session/read-projektionen)
         // — updaterar kontextraden i UI:t utan extra hämtningsrunda.
         skicka({ typ: "kontext", kontext: await transport.lasKontext() });

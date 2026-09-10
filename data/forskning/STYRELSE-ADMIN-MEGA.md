@@ -519,3 +519,25 @@ Kunden vill ha EXAKT Z Code-upplevelsen: 3-kolumners IDE-layout
   "+ Nytt samtal"-knapp, aktiv markering. Klick = öppna/resume.
 - K4 **HÖGER PANEL**: mål-progress (checklist med bockar), kontext-
   info (tokens, modell), terminal-visning (senaste verktygskörning).
+
+### VÅG 90 K1 — KÄRNSTABILITET LANDAD (2026-09-09)
+
+Rotorsaker till "sega, stänger av sig" åtgärdade i
+`src/lib/studio/studio-transport.ts` (~+700 rader):
+
+1. **Barnprocess-overleksakter**: döds-lyssnare ger omedelbart fel-event
+   till pågående prompt (slut på 10-min-tystnad); auto-omstart max 3
+   försök med backoff 2/8/32 s; race-skydd `omstartPaga` spärrar
+   dubbelstart (ingen dubbel RAM); radbuffert kappas vid 1 MB;
+   SIGTERM→SIGKILL(3 s) vid avsiktlig nedstängning.
+2. **Sessionshushållning**: MAX_AKTIVA_BARN=3 (äldsta idle stängs först);
+   idle-städning >2 h (levande UI-flikar räknas som aktiva); tvungen
+   karta-flush vid stäng/död; `stangd`-flagga bevaras på disk så döda
+   sessioner inte återbjuds som levande; global SIGTERM/SIGINT-guard →
+   inga zombie-zcode efter pm2-omstart.
+3. **SSE-hjärtslag**: `: ping` var 15:e s i båda strömrutterna;
+   abort-vakter stoppar polling/sonder när klienten försvunnit.
+4. **Hälsa**: ny `GET /api/studio/halsa` — barnantal, RAM per barn via
+   /proc/statm, sessioner, senaste fel (inga hemligheter).
+
+tsc: 0 nya fel (egna filer typrena). KVD-skydd: studio-chat.tsx orördes.

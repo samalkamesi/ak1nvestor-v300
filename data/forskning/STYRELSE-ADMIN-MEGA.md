@@ -541,3 +541,102 @@ Rotorsaker till "sega, stänger av sig" åtgärdade i
    /proc/statm, sessioner, senaste fel (inga hemligheter).
 
 tsc: 0 nya fel (egna filer typrena). KVD-skydd: studio-chat.tsx orördes.
+
+## TILLÄGG VÅG 91 — HELA Z CODE I STUDION + SANN AUTONOMI + STYRELSEN SOM LAG (2026-09-10)
+
+Kunddirektiv (ordagrant): "Jag vill ... visa dig bilder och allt möjligt
+starta nya konversationer göra samma sak där, alltså ... gå igenom
+bokstavligen varenda tjänst som finns i z code och implementera där,
+men ... den ej dör [när] jag hoppar vidare till nästa sida eller gör
+annat, den ska göra jobbet helt autonomt ... jag vill att AI styrelse
+organen träffas som lag varje gång jag frågar och diskutera och alltid
+tar allt på störst allvar med högst och max vilja nyttja max parallella
+agenter ... Mega stora projekt och jobba på de helt autonomt utan mitt
+närvarande med full access och finns det frågor ... gå till styrelse
+och ... bestämma ... beslut som ska tillämpas omedelbart förutom saker
+som kan stöda hela sidans karriär och framgång totalt."
+
+### STÅENDE STYRELSEREGLER (permanent governance från våg 91)
+
+- R1 Varje kundfråga i studion kan konkallera styrelsen (multibot-session).
+- R2 Styrelsens beslut tillämpas OMEDELBART av agentpipelinen — utom
+  existentiella åtgärder (domänflytt, prissättning, betalningsflöden,
+  extern publicering, juridik/GDPR, radering av data, API-nycklar) som
+  VÄNTAR KUND. Klassning sker automatiskt i styrelsemotorn.
+- R3 Mega-projekt körs autonout full access utan kundnärvaro; frågor
+  beslutas av styrelsen enligt R2.
+- R4 Max parallella agenter gäller som tak (~9 i dator-pipelinen;
+  studions zcode-barn max 3 + styrelsevågor inom taket).
+
+### BLOCK A1 — SANN BAKGRUNDSAUTONOMI (ägarfiler: studio-transport.ts, api/studio/mal/**, api/studio/stream/route.ts, api/studio/session/route.ts)
+
+Princip: ARBETET lever i zcode-barnprocessen + en server-side
+mål-motor i Next-processen — SSE är ENDAST en vy. K1:s abort-vakter
+får ALDRIG stoppa arbete, bara nätverkstvätten mot borta klienter.
+
+- A1a Mål-motor fristående från SSE: mål-loop/state bor i transporten
+  (server-processen), mal/stream prenumererar; klient som försvinner
+  pausar strömning men ALDRIG målet. Verifiera att session/goal-loop
+  matas av barnprocessen (v85 F1) och att sond-abort (K1) inte dödar
+  loopen — sondera bara status, drives av motor.
+- A1b GET /api/studio/mal/status → {aktiv, iteration, paagarandeTurn,
+  senasteEvent, sessionId} — återvändande flik pollar denna + befintlig
+  återkoppling (v87) = komplett catch-up.
+- A1c Köade prompts: skicka-prompt returnerar direkt {accepted} även om
+  klienten lämnar; svar samlas i historiken (redan fallet via session/
+  messages) — verifiera E2E: skicka → stäng SSE → vänta klar → öppna →
+  HELA svaret syns.
+- A1d skickaMedBild(prompt, bildSokvagar[]): sondera live hur
+  session/send tar bildinnehåll (attachments/content-blocks i kartan;
+  annars fallback: bilder i workspace + prompt refererar sökvägar —
+  barnets Read presenterar bilder visuellt). Kontrakt i stream-routen:
+  POST {prompt, bilder?: string[]}.
+- A1d TJÄNSTE-BRYGGOR (tunna transportmetoder + API-ytor enligt
+  kontrakt nedan): bakgrundsjobb (projection.backgroundJobs +
+  cancelBackgroundTask), webbläsare (interaction/browserList,
+  browserExecute), automation (automation/* enligt kartan),
+  workspace/generateText. Endpoints under /api/studio/tjanster/*.
+
+### BLOCK A2 — STYRELSEMOTORN (ägarfiler: NY src/lib/studio/styrelse.ts, NY api/studio/styrelse/**)
+
+- sammanstyrelsen(fraga): 5 rollagenter (Ordförande/CEO, Teknik/CTO,
+  Säkerhet, Juridik&Compliance, Tillväxt/SEO) — körs i VÅGOR inom
+  MAX_AKTIVA_BARN=3 (3 + 2) med korta analyser; Ordföranden syntetiserar
+  BESLUT {beslut, motivering, atgarder[], existential: boolean}.
+- POST /api/studio/styrelse {fraga} → {id}; GET .../styrelse?id=&senast=
+  → händelser + beslut (poll, ingen SSE nödvändig v1).
+- Beslut skrivs till data/forskning/STYRELSE-BESLUT.md (append, daterat)
+  + system_events type=styrelse_beslut.
+- existential=true → status VÄNTAR KUND (chat-badge + köad påminnelse);
+  annars KÖRS DIREKT: åtgärder matas till pipelinen (worklog-kö i
+  data/forskning/PIPELINE-KO.md som huvudagentens dispatchlista).
+- Klassningsregel R2 hårdkodad + utökningsbar lista.
+
+### BLOCK A3 — STUDIO-UI (ägarfiler: studio-chat.tsx, kommandon.ts)
+
+Behåller våg 90:s visuella språk exakt:
+
+- A3a BILDER I SAMTALET: thumbnails på skickat meddelande, bifoga innan
+  send (drag/paste/📎 redan finns), POST {prompt, bilder}; agent-svar
+  refererar dem. Ny konversation = befintlig "+ Nytt samtal".
+- A3b STYRELSEN 🏛: knapp + /styrelsen-kommando → fråga → mötes-vy
+  (5 rollkort tänds allt eftersom) → beslutskort (BESLUT/MOTIVERING/
+  ÅTGÄRDER/badge KÖRS DIREKT|VÄNTAR KUND). Poll mot A2:s API; dold om
+  API saknas (graceful).
+- A3c TJÄNSTE-PANELER: Bakgrundsjobb (lista+avbryt), Webbläsare, Auto-
+  mation — drawer i höger panel; varje panel dold om endpoint 501.
+- A3d Autonomi-signal: "⏱ Agenten arbetar i bakgrunden" i header +
+  statuspoll (A1b) — kunden SER att jobbet lever när hen återkommer.
+
+### BLOCK A4 — Z-PARITETS-KARTA (read-only; ägarfil: NY data/forskning/V91-Z-PARITET-KARTA.md)
+
+Inventera BOKLAVLIGEN varenda tjänst i zcode-binären (v83-kartan +
+live-sond mot app-servern): session/*, workspace/*, interaction/*,
+plugins/skills/mcp, automation, usage, v4-grenen — jämför med studion,
+ranka luckor (P0 kundnära/P1 kraft/P2 sen), dokumentera protokollform
+för varje lucka = underlag för våg 92+.
+
+### KVD-vakt
+
+tsc 0 nya (baslinje 36 i orörda filer) · motorer 107/0/0 · vakten
+GRÖN · build exit 0 · E2E-autonomitest (A1c) grönt före deploy.

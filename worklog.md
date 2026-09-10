@@ -9894,3 +9894,41 @@ omläsning; deploysynk: serverns untrackade tar-pipe-filer backades upp till
 studio-chat verifierad med md5 före checkout). Src endast via Write/Edit;
 akm2/vagfundament/.env* orörda (lösenordet lästes endast i serverns eget
 shell för curl, aldrig loggat).
+
+**F1 MÅL-LÄGET (våg 85 STUDIO V3):** kundens "live utveckling som Z" —
+session/goal STARTAR en autonom loop; protokollet matar nya turner självt
+(bevisat v83 B3), session/stop PAUSAR. TRANSPORT (studio-transport.ts):
+mål-läge utan klientprompt äger session/event-flödet — varje autonom turn
+blir mal_iteration(start) → samma delta/verktyg_kort/verktyg_input/runda-
+events som en chattad turn → mal_iteration(slut) MED iterationsnummer
+(räknaren i transporten); mal_status-snapshot; mal_pausad vid goal-pause;
+MAL_BUFFERT (400) buffrar+spolar så en sen öppnad ström aldrig missar en
+påbörjad iteration; pausaMal (session/stop), aterupptaMal (goal resume),
+sondMal (mål-läge ur goal show — självläkning efter pm2-omstart); mocken
+simulerar loopen deterministiskt. API: POST /api/studio/mal/stream (SSE,
+kontext+ändringar efter varje iteration) + session-actions malPausa/
+malAteruppta. UI (studio-chat.tsx): STOR "🎯 Mål-läge"-dialog (textarea
+"Beskriv utvecklingsmålet…" → Starta) · guldpulserande MÅL AKTIVT-badge +
+iterationsräknare i headern · gul autonom banner "🎯 Agenten utvecklar
+autonomt — iteration N · [Pausa]" ovanför chatten · varje iteration = komplett
+agentbubbla (🎯-badge + verktygskort + diff + streaming) i huvudtabben via
+mål-SSE:n · mål-raden: Pausa/Återuppta/Redigera/Rensa · prompt-vakt med
+confirm när loopen kör.
+
+**F1-rättelse (70a0e5b):** E2E fynd — första mål-turnens turn.started
+anländer under session/goal-set-requesten (startedTurn-racet) ⇒ mal-state
+sätts FÖRE requesten (återställning vid fel) + turn.completed räknar upp
+defensivt med syntetiserad start-pixel när starten missats (malTurnOppen).
+
+**F1-verifiering:** tsc 36=förhands­befintlig baslinje (0 nya) · motorer
+107/0/0 · Kvalitetsvakten GRÖN (0 FEL/4 manuella) · next build exit 0 ·
+eslint mina filer 0 (1 error i F2:s färdighetsblock + 1 förhandsbefintlig
+warning är ej mina). **E2E PÅ PROD** (tool-results/v85-f1-mal-e2e.md):
+malSatt "Lista alla .md-filer i workspacet" → SSE 200 → mal_status →
+mal_iteration start/slut iter 1 (bokföringsturn, success) → iter 2 med
+LIVE verktyg_input + Bash-kort (planerad/startar/kör/resultat =
+fillistan) → malPausa → "pausat efter 2 iterationer" + mal_pausad +
+cancelled-slutpixel → malRensa. Ändringar-event efter varje iteration
+(0 filer — read-only-mål, ärligt). En strömbrott-orsak = parallell agents
+deploy-omstart (ENOENT prerender-manifest, pm2 282→283), ej mål-lägeskod.
+Src endast via Write/Edit; .env* orörda (lösenord endast i serverns shell).

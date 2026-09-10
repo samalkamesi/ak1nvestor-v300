@@ -4,6 +4,7 @@ import * as React from "react";
 import {
   Activity,
   AlertTriangle,
+  BarChart3,
   Clock,
   FileText,
   HardDrive,
@@ -107,6 +108,39 @@ type PulsSvar = {
   load: { ett: number; fem: number; femton: number } | null;
   crons: { rader: number; poster: string[]; senasteKorningar: string[] | null } | null;
   fellogg: { rader: string[] } | null;
+};
+
+// ── Svartyper: AI-användning (API-kontraktet våg 85 F3) ─────────────────────
+
+type AnvandningModell = {
+  modell: string;
+  tokens: number;
+  antal: number;
+  andel: number;
+};
+
+type AnvandningSvar = {
+  hamtat: string;
+  transport: string;
+  live: boolean;
+  /** Det RÅA usage/stats-svaret (bevis för protokollsform — visas ej rått). */
+  usage: unknown | null;
+  totalTokens7d: number;
+  totalTokens24h: number;
+  kalla24h?: "sessioner" | "snitt" | "okand";
+  modellFordelning: AnvandningModell[];
+  sammanfattning?: {
+    inputTokens?: number;
+    outputTokens?: number;
+    reasoningTokens?: number;
+    cacheReadTokens?: number;
+    cacheCreationTokens?: number;
+    cacheHitRate?: number;
+    totalSessions?: number;
+    totalTurns?: number;
+    toolCallCount?: number;
+  };
+  fel?: string;
 };
 
 // ── Typ-badgar — färgkodade etiketter för kända eventtyper ─────────────────
@@ -332,6 +366,10 @@ export function UtvecklingPanel() {
   const [puls, setPuls] = React.useState<PulsSvar | null>(null);
   const [pulsLaddar, setPulsLaddar] = React.useState(false);
 
+  // ── VÅG 85 F3: AI-användning (usage/stats — egen route, egen 60 s-takt) ───
+  const [anvandning, setAnvandning] = React.useState<AnvandningSvar | null>(null);
+  const [anvandningLaddar, setAnvandningLaddar] = React.useState(false);
+
   const hamta = React.useCallback(async () => {
     setLaddar(true);
     setFel("");
@@ -384,11 +422,37 @@ export function UtvecklingPanel() {
     }
   }, []);
 
+  /** VÅG 85 F3: användnings-hämtning — samma lås-mönster som pulsen. */
+  const hamtaAnvandning = React.useCallback(async () => {
+    setAnvandningLaddar(true);
+    try {
+      const res = await fetch("/api/studio/anvandning", { headers: adminHeaders() });
+      if (res.status === 401 || res.status === 403 || res.status === 429) {
+        const json = (await res.json().catch(() => ({}))) as { error?: string };
+        setBehoverLosen(true);
+        if (json.error) setLosenFel(json.error);
+        setAnvandning(null);
+        return;
+      }
+      if (res.ok) {
+        setAnvandning((await res.json()) as AnvandningSvar);
+        setBehoverLosen(false);
+      }
+      // Ej-ok svar: rutten svarar själv live:false + fel — ett ej-ok svar
+      // lämnar föregående mätning kvar (aldrig kraschvy för en blink).
+    } catch {
+      // nätverksfel ⇒ behåll senaste mätningen, tyst (60 s-takten tar om)
+    } finally {
+      setAnvandningLaddar(false);
+    }
+  }, []);
+
   // Hämta när fliken öppnas (Radix unmountar inaktiva TabsContent ⇒ lazy).
   React.useEffect(() => {
     void hamta();
     void hamtaPuls();
-  }, [hamta, hamtaPuls]);
+    void hamtaAnvandning();
+  }, [hamta, hamtaPuls, hamtaAnvandning]);
 
   // 60 s auto-uppdatering — ENDAST när fliken syns (mobil: spara batteri/data).
   React.useEffect(() => {
@@ -396,10 +460,11 @@ export function UtvecklingPanel() {
       if (document.visibilityState === "visible" && !behoverLosen) {
         void hamta();
         void hamtaPuls();
+        void hamtaAnvandning();
       }
     }, 60_000);
     return () => window.clearInterval(timer);
-  }, [hamta, hamtaPuls, behoverLosen]);
+  }, [hamta, hamtaPuls, hamtaAnvandning, behoverLosen]);
 
   const lasUpp = async () => {
     if (!losenord) return;
@@ -468,10 +533,17 @@ export function UtvecklingPanel() {
             onClick={() => {
               void hamta();
               void hamtaPuls();
+              void hamtaAnvandning();
             }}
-            disabled={laddar || pulsLaddar}
+            disabled={laddar || pulsLaddar || anvandningLaddar}
           >
-            <RefreshCw className={cn("mr-1 h-3 w-3", (laddar || pulsLaddar) && "animate-spin")} /> Uppdatera
+            <RefreshCw
+              className={cn(
+                "mr-1 h-3 w-3",
+                (laddar || pulsLaddar || anvandningLaddar) && "animate-spin",
+              )}
+            />{" "}
+            Uppdatera
           </Button>
         </div>
       </div>
@@ -482,6 +554,10 @@ export function UtvecklingPanel() {
       {/* (0) PULS 📈 (våg 84 E) — serverns puls, överst: kunden ser först
           hur servern mår, sedan vad som händer i utvecklingen. */}
       <PulsSektion puls={puls} laddar={pulsLaddar} />
+
+      {/* (0b) ANVÄNDNING 📊 (våg 85 F3) — AI-agentens tokenförbrukning
+          direkt under pulsen: serverns hälsa → agentens kostnad. */}
+      <AnvandSektion anvandning={anvandning} laddar={anvandningLaddar} />
 
       {/* (a) STATUSKORT — staplade på mobil, rad på större skärm */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -1099,6 +1175,204 @@ function PulsSektion({ puls, laddar }: { puls: PulsSvar | null; laddar: boolean 
             saknade. Serverns tid:{" "}
             {new Date(puls.serverTid).toLocaleString("sv-SE", { dateStyle: "short", timeStyle: "medium" })}.
           </p>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ANVÄNDNING 📊 — VÅG 85 F3: AI-agentens tokenförbrukning + kostnads-ärlighet
+// ═══════════════════════════════════════════════════════════════════════════
+
+/** Token-tal → läsbar svensk förkortning: 8 350 000 → "8,35 M". */
+function formatTokens(n: number | null | undefined): string {
+  if (n === null || n === undefined || !Number.isFinite(n) || n <= 0) return "0";
+  if (n >= 1_000_000) {
+    return `${(n / 1_000_000).toLocaleString("sv-SE", { maximumFractionDigits: 2 })} M`;
+  }
+  if (n >= 1_000) {
+    return `${(n / 1_000).toLocaleString("sv-SE", { maximumFractionDigits: 1 })} k`;
+  }
+  return String(Math.round(n));
+}
+
+/** Stapelfärg per modell — guldfamiljen, index-cyklat (inga röda = inga larm). */
+const MODELL_STAPPEL = [
+  "bg-gold",
+  "bg-gold/70",
+  "bg-gold/50",
+  "bg-gold/35",
+  "bg-gold/25",
+];
+
+// ── AnvandSektion — F3:s panel ──────────────────────────────────────────────
+
+function AnvandSektion({
+  anvandning,
+  laddar,
+}: {
+  anvandning: AnvandningSvar | null;
+  laddar: boolean;
+}) {
+  const s = anvandning;
+  const live = s?.live === true;
+  const total = s?.totalTokens7d ?? 0;
+  const dygn = s?.totalTokens24h ?? 0;
+  const fordelning = s?.modellFordelning ?? [];
+  const kallaText =
+    s?.kalla24h === "sessioner"
+      ? "summerat ur sessioner aktiva senaste 24 h"
+      : s?.kalla24h === "snitt"
+        ? "dygnsmedelvärde (7 dagar ÷ 7)"
+        : "";
+  const sum = s?.sammanfattning;
+
+  return (
+    <section
+      className="rounded-lg border border-gold/30 bg-card p-4"
+      aria-label="AI-agentens användning"
+    >
+      {/* Rubrikrad */}
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <BarChart3 className="h-4 w-4 text-gold" />
+          <h4 className="font-serif text-sm font-bold">Användning 📊 — AI-agenten</h4>
+          <Badge
+            variant="outline"
+            className="border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300"
+          >
+            Ingår i planen
+          </Badge>
+        </div>
+        <span className="text-[10px] text-muted-foreground">
+          {laddar
+            ? "Hämtar …"
+            : s
+              ? `usage/stats · ${new Date(s.hamtat).toLocaleTimeString("sv-SE")} · 60 s intervall`
+              : "Ingen mätning än"}
+        </span>
+      </div>
+
+      {!s ? (
+        <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
+          Hämtar agentens tokenförbrukning …
+        </p>
+      ) : !live ? (
+        <p className="mt-3 rounded-md border border-border bg-card px-3 py-4 text-center text-xs text-muted-foreground">
+          usage/stats kunde ej hämtas{s.fel ? ` — ${s.fel}` : "."} Panelen återkommer
+          vid nästa mätning (60 s).
+        </p>
+      ) : (
+        <div className="mt-3 space-y-3">
+          {/* (1) STORA SIFFROR — 7 dagar + senaste dygnet */}
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <div className="rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Tokens · 7 dagar
+              </span>
+              <p className="mt-1 break-words font-serif text-3xl font-bold tabular-nums">
+                {formatTokens(total)}
+              </p>
+              <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground">
+                {sv(total)} tokens totalt · {sv(sum?.totalTurns ?? 0)} agentrundor ·{" "}
+                {sv(sum?.toolCallCount ?? 0)} verktygskall
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Senaste 24 timmarna
+              </span>
+              <p className="mt-1 break-words font-serif text-3xl font-bold tabular-nums">
+                {formatTokens(dygn)}
+              </p>
+              <p className="mt-0.5 text-[10px] leading-snug text-muted-foreground">
+                {kallaText || "usage/stats bär ingen 24 h-period"} ·{" "}
+                {sv(sum?.totalSessions ?? 0)} sessioner i perioden
+              </p>
+            </div>
+          </div>
+
+          {/* (2) MODELLFÖRDELNING — horisontella staplar per modell */}
+          <div className="rounded-lg border border-border bg-card p-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h5 className="font-serif text-[13px] font-bold">
+                Modellfördelning ({fordelning.length})
+              </h5>
+              <span className="text-[10px] text-muted-foreground">
+                usage/stats byModel · andel av periodens tokens
+              </span>
+            </div>
+            {fordelning.length === 0 ? (
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                Ingen modellfördelning i svaret — protokollet räknade inga modeller
+                för perioden.
+              </p>
+            ) : (
+              <ul className="mt-2.5 space-y-2.5">
+                {fordelning.map((m, i) => {
+                  const procent = Math.round((m.andel ?? 0) * 100);
+                  const bredd = Math.min(100, Math.max(m.tokens > 0 ? 2 : 0, procent));
+                  return (
+                    <li key={m.modell}>
+                      <div className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-2">
+                        <span className="min-w-0 truncate font-mono text-[12px] font-semibold">
+                          {m.modell}
+                        </span>
+                        <span className="shrink-0 text-[10px] text-muted-foreground tabular-nums">
+                          {formatTokens(m.tokens)} tokens · {procent}% ·{" "}
+                          {m.antal > 0
+                            ? `${sv(m.antal)} session${m.antal === 1 ? "" : "er"}`
+                            : "inga sessioner i listan"}
+                        </span>
+                      </div>
+                      <div className="mt-1 h-2.5 w-full overflow-hidden rounded-full bg-muted">
+                        <div
+                          className={cn(
+                            "h-full rounded-full transition-all duration-500",
+                            MODELL_STAPPEL[i % MODELL_STAPPEL.length],
+                          )}
+                          style={{ width: `${bredd}%` }}
+                          role="img"
+                          aria-label={`${m.modell}: ${procent}% av tokens`}
+                        />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+
+          {/* (3) KOSTNADSUPPSKATTNING — ÄRLIGHET: pauspris, ALDRIG kronor */}
+          <div className="rounded-lg border border-emerald-200 bg-emerald-50/60 p-3 dark:border-emerald-500/30 dark:bg-emerald-500/[0.06]">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h5 className="font-serif text-[13px] font-bold">Kostnad</h5>
+              <Badge
+                variant="outline"
+                className="border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300"
+              >
+                fast pris
+              </Badge>
+            </div>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+              All förbrukning ovan <strong className="text-foreground">ingår i GLM Coding
+              Plan</strong> (fast månadspris, ingen token-räkning) — staplarna visar
+              hur användningen fördelar sig mellan modeller (t.ex. GLM-5.3 vs 5.2),
+              inte vad något kostar. AK1A uppger därför aldrig "du har betalat X kr"
+              för agentdriften.
+            </p>
+            {sum && (
+              <p className="mt-1.5 text-[10px] leading-relaxed text-muted-foreground">
+                Sanningen ur protokollet: {sv(sum.inputTokens ?? 0)} in- ·{" "}
+                {sv(sum.outputTokens ?? 0)} ut-tokens ·{" "}
+                {sv(sum.reasoningTokens ?? 0)} resonemang · cache läs{" "}
+                {formatTokens(sum.cacheReadTokens ?? 0)} (träff{" "}
+                {Math.round((sum.cacheHitRate ?? 0) * 100)}%) · källa{" "}
+                {s.transport === "mock" ? "mock (dev)" : "usage/stats · agent-db"}.
+              </p>
+            )}
+          </div>
         </div>
       )}
     </section>

@@ -30,6 +30,10 @@ export const dynamic = "force-dynamic";
  *                FILÄNDRINGAR — LIVE-bevisat v83, se protokollkarta §1).
  *   "malSatt"   {mal} → session/goal set → {mal, meddelande}.
  *   "malRensa"  → session/goal clear → {mal:null, meddelande}.
+ *   "malPausa"  → VÅG 85 F1: pausa den autonoma mål-loopen (session/stop —
+ *                LIVE-bevisat v83 B3) → mål-strömmen (POST /api/studio/
+ *                mal/stream) får "mal_pausad" + färsk "mal_status".
+ *   "malAteruppta" → session/goal resume (kartan §1) — pausens motpol.
  *   "subagenter" → session/subagents → {subagenter:[{barnSessionId,titel,
  *                status,…}]} (körande + avslutade barnagenter).
  *   "avbrytTask" {taskId} → session/cancelBackgroundTask → {avbruten,
@@ -159,6 +163,18 @@ export async function POST(req: NextRequest) {
       const svar = await transport.rensaMal();
       return jsonSvar(svar);
     }
+    // ── VÅG 85 F1: MÅL-LÄGET — pausa/återuppta den autonoma loopen ──────────
+    if (action === "malPausa" || action === "malpausa" || action === "malPaus") {
+      // session/stop (LIVE-bevisat v83 B3: stop avbryter mål-turnen inom
+      // sekunder och PAUSAR målet) → mål-lyssnaren får mal_pausad.
+      const svar = await transport.pausaMal();
+      return jsonSvar(svar);
+    }
+    if (action === "malAteruppta" || action === "malateruppta" || action === "malResume") {
+      // session/goal action "resume" (kartan §1) — pausens motpol.
+      const svar = await transport.aterupptaMal();
+      return jsonSvar(svar);
+    }
     if (action === "subagenter") {
       const subagenter = await transport.lasSubagenter();
       return jsonSvar({ subagenter });
@@ -190,7 +206,7 @@ export async function POST(req: NextRequest) {
     return jsonSvar(
       {
         fel:
-          'Okänd action — använd "ny", "compact", "resume", "stang", "fork", "malSatt", "malRensa", "subagenter", "avbrytTask", "arbetsyta", "läge" eller "tankestyrka".',
+          'Okänd action — använd "ny", "compact", "resume", "stang", "fork", "malSatt", "malRensa", "malPausa", "malAteruppta", "subagenter", "avbrytTask", "arbetsyta", "läge" eller "tankestyrka".',
       },
       400,
     );

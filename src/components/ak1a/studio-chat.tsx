@@ -33,6 +33,7 @@ import {
   Moon,
   Paperclip,
   Pencil,
+  Play,
   Plus,
   RefreshCw,
   Search,
@@ -50,12 +51,19 @@ import {
   Wrench,
   X,
   XCircle,
+  Zap,
 } from "lucide-react";
 
 import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
 import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando } from "@/lib/studio/kommandon";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { StudioMinnePanel } from "@/components/ak1a/studio-minne-panel";
+import {
+  StudioFardigheterPanel,
+  type FardighetMcp,
+  type FardighetPlugin,
+  type FardighetSkill,
+} from "@/components/ak1a/studio-fardigheter-panel";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -167,6 +175,17 @@ import { cn } from "@/lib/utils";
  * filnamnet; agent-meddelanden som block, användare som blockcitat).
  * TOKENRÄKNARE (A6): kontextradens 📊-rad är nowrap — syns på mobil.
  *
+ * VÅG 85 STUDIO V3 F2 (FÄRDIGHETER ⚡ — "vad agenten KAN"): knappen i
+ * verktygsraden öppnar en drawer i filträdets stil (ytan i studio-
+ * fardigheter-panel.tsx, state/fetch här — våg 84 D:s parallellmerge-
+ * mönster) med TRE sektioner ur GET /api/studio/fardigheter: SKILLS
+ * (skills/referenceCatalog — varje skill som kort med namn + beskrivning
+ * + scope-badge), PLUGINS (plugins/list — aktiva med GRÖN PRICK +
+ * version, tillgängliga grå under) och MCP-VERKTYG (mcp/list — anslutna
+ * tjänster med verktygsantal, t.ex. android-emulator 23 verktyg; namn-
+ * lista visas när protokollet bär den). Ömsesidig stängning mot filträdet
+ * + Minne 🧠; /fardigheter-kommandot (lokalt) öppnar samma drawer.
+ *
  * SKYDD: sidan (page.tsx) visar lås-vy; API-rutterna kräver admin — här
  * bär adminHeaders() lösenordet i lösenordsläget (session-cookien åker
  * med automatiskt). INGA hemligheter renderas.
@@ -227,6 +246,8 @@ interface Meddelande {
   ändringar?: Filandring[];
   /** V83 B1: rundstatistik (varaktighet · resultat · verktyg). */
   rundStatistik?: RundStatistik;
+  /** VÅG 85 F1: autonom iteration (mål-loopen) — badge i agentbubblan. */
+  malIteration?: number;
   fel?: boolean;
 }
 
@@ -588,7 +609,11 @@ interface StreamEvent {
     | "klart"
     | "fel"
     | "kontext"
-    | "ändringar";
+    | "ändringar"
+    // ── VÅG 85 F1: mål-läget (POST /api/studio/mal/stream) ──
+    | "mal_status"
+    | "mal_iteration"
+    | "mal_pausad";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -612,6 +637,14 @@ interface StreamEvent {
   resultatTyp?: string;
   verktygAntal?: number;
   filer?: Filandring[];
+  // ── VÅG 85 F1: mål-lägets fält (mal_status/mal_iteration/mal_pausad) ──
+  /** mal_status: loopen KÖR / målet är pausat. */
+  aktiv?: boolean;
+  pausad?: boolean;
+  /** Transportens iterationsräknare. */
+  iteration?: number;
+  /** mal_status: måltexten (null = rensat). */
+  mal?: string | null;
   // ── V83 B2: interaktioner (permission + fråga) ──
   interaktion?:
     | ({
@@ -1359,14 +1392,34 @@ export function StudioChat({ hem }: { hem: () => void }) {
   // ── VÅG 83 B3: sessions- och workspace-hantering (Z-portaLens) ──────────
   const [aktivSession, setAktivSession] = React.useState("");
   const [mal, setMal] = React.useState<string | null>(null);
-  const [malRedigerar, setMalRedigerar] = React.useState(false);
-  const [malText, setMalText] = React.useState("");
   const [malSparar, setMalSparar] = React.useState(false);
   const [subagenter, setSubagenter] = React.useState<SubagentPost[]>([]);
   const [visaAgenter, setVisaAgenter] = React.useState(false);
   const [agenterLaddar, setAgenterLaddar] = React.useState(false);
   const [agenterFel, setAgenterFel] = React.useState("");
   const [arbetsytaInfo, setArbetsytaInfo] = React.useState<ArbetsytaInfo | null>(null);
+
+  // ── VÅG 85 F1: MÅL-LÄGET — autonom utvecklingsloop ("live utveckling
+  // som Z": dialog → Starta → gul badge "MÅL AKTIVT" + iterationsräknare
+  // i headern, gul autonom banner ovanför chatten, varje iteration = en
+  // KOMPLETT turn i chatten via mål-SSE-strömmen POST /api/studio/mal/stream). ──
+  /** Den STORA mål-dialogen (textarea "Beskriv utvecklingsmålet…"). */
+  const [malDialogOppen, setMalDialogOppen] = React.useState(false);
+  const [malDialogText, setMalDialogText] = React.useState("");
+  const [malStartar, setMalStartar] = React.useState(false);
+  /** true = mål-strömmen SKA vara öppen (efter Starta tills rensa). */
+  const [malStrömOppen, setMalStrömOppen] = React.useState(false);
+  /** Transportens snapshot (mal_status-eventet) — badge/banner-tilståndet. */
+  const [malStatus, setMalStatus] = React.useState<{ aktiv: boolean; pausad: boolean; iteration: number } | null>(null);
+  /** Iterationsräknaren (SSE mal_iteration/mal_status). */
+  const [malIteration, setMalIteration] = React.useState(0);
+  const [malPausar, setMalPausar] = React.useState(false);
+  /** Den PÅGÅENDE iterationens agentbubbla-id (huvudtabben). */
+  const malBubblaRef = React.useRef<string | null>(null);
+  /** Mål-strömmens AbortController. */
+  const malAbortRef = React.useRef<AbortController | null>(null);
+  /** Huvudtabbens id som ref — mål-effektens closures ser färskt värde. */
+  const huvudTabbIdRef = React.useRef("tabb-huvud");
 
   // ── VÅG 83 B4: filträd + förhandsgranskning ──────────────────────────────
   const [visaFiler, setVisaFiler] = React.useState(false);
@@ -1394,6 +1447,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [minneRaderar, setMinneRaderar] = React.useState(false);
   const [minneNy, setMinneNy] = React.useState(false);
   const [minneNyttNamn, setMinneNyttNamn] = React.useState("");
+
+  // ── VÅG 85 F2: Färdigheter ⚡ — skills/plugins/MCP (drawer som filträdet) ──
+  const [visaFardigheter, setVisaFardigheter] = React.useState(false);
+  const [fardigheterSkills, setFardigheterSkills] = React.useState<FardighetSkill[] | null>(null);
+  const [fardigheterPlugins, setFardigheterPlugins] = React.useState<FardighetPlugin[] | null>(null);
+  const [fardigheterMcp, setFardigheterMcp] = React.useState<FardighetMcp[] | null>(null);
+  const [fardigheterVerktyg, setFardigheterVerktyg] = React.useState(0);
+  const [fardigheterLaddar, setFardigheterLaddar] = React.useState(false);
+  const [fardigheterFel, setFardigheterFel] = React.useState("");
 
   // ── VÅG 83 B2: Z-portaLens — dialoger + läge/tankestyrka ─────────────────
   const [permission, setPermission] = React.useState<PermissionDialog | null>(null);
@@ -1485,11 +1547,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   /** Den aktiva tabben är huvudtabben (kontroller som styr default-sessionen). */
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+  // ── VÅG 85 F1: mål-lägets härledda vy-värden ─────────────────────────────
+  /** Mål-loopen KÖR (badge pulserar + bannern visas). */
+  const malKör = mal !== null && malStatus?.aktiv === true && !malStatus.pausad;
+  /** Målet finns men är pausat (raden visar Återuppta). */
+  const malPausat = mal !== null && malStatus !== null && !malStatus.aktiv;
 
   // Ref-synk: ström-closures (skicka) + beforeunload ser färskt aktiv-tabbar.
+  // VÅG 85 F1: huvudtabbens id som ref — mål-strömmens iterationer landar
+  // ALLTID i huvudtabben (målet äger default-sessionen) oavsett aktiv tabb.
   React.useEffect(() => {
     aktivTabbIdRef.current = aktivTabbId;
     tabbarRef.current = { tabbar, aktivTabbId };
+    huvudTabbIdRef.current = tabbar.find((t) => t.huvud)?.id ?? "tabb-huvud";
   }, [aktivTabbId, tabbar]);
 
   /** Bekräftelse-toast — försvinner av sig själv efter 4,5 s. */
@@ -1870,12 +1940,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
         const data = (await res.json()) as {
           sessioner?: SessionPost[];
           aktiv?: string | null;
-          mal?: { mal: string | null; meddelande: string } | null;
+          mal?: { mal: string | null; meddelande: string; aktiv?: boolean } | null;
           arbetsyta?: ArbetsytaInfo | null;
         };
         if (data.sessioner) setSessioner(data.sessioner);
         if (typeof data.aktiv === "string") setAktivSession(data.aktiv);
-        if (data.mal) setMal(data.mal.mal);
+        if (data.mal) {
+          setMal(data.mal.mal);
+          // VÅG 85 F1: ett LEVANDE mål efter refresh ⇒ mål-strömmen öppnas
+          // (iterationerna fortsätter renderas; sonden på servern åter-
+          // aktiverar transportens mål-läge efter pm2-omstart).
+          if (data.mal.mal) {
+            setMalStrömOppen(true);
+            if (typeof data.mal.aktiv === "boolean") {
+              setMalStatus((s) => (s ? s : { aktiv: data.mal!.aktiv === true, pausad: false, iteration: 0 }));
+            }
+          }
+        }
         if (data.arbetsyta) setArbetsytaInfo(data.arbetsyta);
       }
     } catch {
@@ -2296,11 +2377,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
     [sessionJobbar, strömmarHuvud, visaToast, lasSessioner, aktivSession],
   );
 
-  /** Spara målet (session/goal set — visas i headern om satt). */
-  const sparaMal = React.useCallback(async () => {
-    const texten = malText.trim();
-    if (!texten || malSparar) return;
-    setMalSparar(true);
+  // ── VÅG 85 F1: MÅL-LÄGET — dialog → Starta → autonom loop ────────────────
+  // (sattMal/rensaMaler anropar /api/studio/session; loopens events lever
+  // via mål-SSE-strömmen POST /api/studio/mal/stream — se lyssnaMal-effekten.)
+
+  /** Öppna den stora mål-dialogen (textarea förhandsfylls med nuvarande mål). */
+  const oppnaMalDialog = React.useCallback(() => {
+    setMalDialogText(mal ?? "");
+    setMalDialogOppen(true);
+  }, [mal]);
+
+  /**
+   * STARTA MÅL-LÄGET (dialogens knapp): session/goal set — protokollet
+   * börjar mata turner AUTOMATISKT (v83 B3-bevis). malStrömOppen slås på
+   * FÖRE requesten så SSE-strömmen hinner öppna (transportens buffert
+   * fångar startens event även i ras-fallet).
+   */
+  const startaMal = React.useCallback(async () => {
+    const texten = malDialogText.trim();
+    if (!texten || malStartar) return;
+    setMalStartar(true);
+    setMalStrömOppen(true);
     try {
       const res = await fetch("/api/studio/session", {
         method: "POST",
@@ -2314,21 +2411,72 @@ export function StudioChat({ hem }: { hem: () => void }) {
       };
       if (res.ok) {
         setMal(typeof data.mal === "string" ? data.mal : texten);
-        setMalRedigerar(false);
-        visaToast(data.meddelande || "Målet satt.");
+        setMalStatus({ aktiv: true, pausad: false, iteration: 0 });
+        setMalIteration(0);
+        setMalDialogOppen(false);
+        visaToast(data.meddelande || "Målet satt — agenten börjar arbeta mot det.");
       } else {
         visaToast(data.fel || "Målet kunde ej sparas.", "fel");
       }
     } catch {
       visaToast("Nätverksfel — målet kunde ej sparas.", "fel");
     } finally {
-      setMalSparar(false);
+      setMalStartar(false);
     }
-  }, [malText, malSparar, visaToast]);
+  }, [malDialogText, malStartar, visaToast]);
 
-  /** Rensa målet (session/goal clear). */
+  /** PAUSA MÅLLOOPEN (session/stop — LIVE-bevisat v83 B3). */
+  const pausaMal = React.useCallback(async () => {
+    if (malPausar) return;
+    setMalPausar(true);
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malPausa" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { meddelande?: string; fel?: string };
+      if (res.ok) {
+        setMalStatus((s) => ({ aktiv: false, pausad: true, iteration: s?.iteration ?? 0 }));
+        visaToast(data.meddelande || "Målet pausat — iterationerna stannar.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej pausas.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej pausas.", "fel");
+    } finally {
+      setMalPausar(false);
+    }
+  }, [malPausar, visaToast]);
+
+  /** ÅTERUPPTA pausat mål (session/goal resume). */
+  const aterupptaMal = React.useCallback(async () => {
+    if (malPausar) return;
+    setMalPausar(true);
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malAteruppta" }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { meddelande?: string; fel?: string };
+      if (res.ok) {
+        setMalStatus((s) => ({ aktiv: true, pausad: false, iteration: s?.iteration ?? 0 }));
+        visaToast(data.meddelande || "Målet återupptaget — loopen fortsätter.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej återupptas.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej återupptas.", "fel");
+    } finally {
+      setMalPausar(false);
+    }
+  }, [malPausar, visaToast]);
+
+  /** Rensa målet (session/goal clear) — mål-läget släcks HELT. */
   const rensaMaler = React.useCallback(async () => {
     if (malSparar) return;
+    if (malKör && !window.confirm("Mål-loopen kör — rensa målet och stoppa agenten?")) return;
     setMalSparar(true);
     try {
       const res = await fetch("/api/studio/session", {
@@ -2339,7 +2487,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
       const data = (await res.json().catch(() => ({}))) as { meddelande?: string; fel?: string };
       if (res.ok) {
         setMal(null);
-        setMalRedigerar(false);
+        setMalStatus(null);
+        setMalIteration(0);
+        setMalStrömOppen(false);
         visaToast(data.meddelande || "Målet rensat.");
       } else {
         visaToast(data.fel || "Målet kunde ej rensas.", "fel");
@@ -2349,7 +2499,214 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } finally {
       setMalSparar(false);
     }
-  }, [malSparar, visaToast]);
+  }, [malSparar, malKör, visaToast]);
+
+  /**
+   * VÅG 85 F1: MÅL-STRÖMMEN — den autonoma loopens SSE (POST
+   * /api/studio/mal/stream, fetch+reader som chatten). Öppnas så snart
+   * mål-läget startas (malStrömOppen — slås på FÖRE mål-set i startaMal)
+   * och stängs vid rensa/unmount. Varje iteration blir en KOMPLETT agent-
+   * bubbla I HUVUDTABBEN (målet äger default-sessionen): mal_iteration
+   * (start) öppnar bubblan med iterations-badge → delta/verktyg_kort/
+   * verktyg_input/runda strömmar in (samma renderare som chattade turner)
+   * → mal_iteration (slut) färdigställer + kontext/ändringar (diff) följer
+   * efter. mal_status håter badge/banner-tilståndet ärligt mot servern.
+   */
+  React.useEffect(() => {
+    if (!malStrömOppen) {
+      malAbortRef.current?.abort();
+      malAbortRef.current = null;
+      return;
+    }
+    const abort = new AbortController();
+    malAbortRef.current = abort;
+
+    /** Rör iterationens bubbla i huvudtabben (malBubblaRef pekar ut den). */
+    const rörBubbla = (rör: (m: Meddelande) => Meddelande) => {
+      const id = malBubblaRef.current;
+      if (!id) return;
+      rörTabb(huvudTabbIdRef.current, (t) => ({
+        ...t,
+        meddelanden: t.meddelanden.map((m) => (m.id === id ? rör(m) : m)),
+      }));
+    };
+    /** Verktygskorts-merge på id (samma logik som skickaPrompt). */
+    const uppdateraKort = (id: string, rör: (k: VerktygKort) => VerktygKort) => {
+      rörBubbla((m) => {
+        const korta = m.verktygKort ? [...m.verktygKort] : [];
+        const i = korta.findIndex((k) => k.id === id);
+        if (i >= 0) korta[i] = rör(korta[i]);
+        else korta.push(rör({ id, namn: "verktyg", steg: "planerad" }));
+        return { ...m, verktygKort: korta };
+      });
+    };
+
+    (async () => {
+      try {
+        const res = await fetch("/api/studio/mal/stream", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          signal: abort.signal,
+        });
+        if (!res.ok || !res.body) return;
+        const läsare = res.body.getReader();
+        const avkodare = new TextDecoder();
+        let buffert = "";
+        // Strömmen lever TILLS målet rensas/klienten lämnar (abort) —
+        // läs-loopen har ingen "färdig": nya iterationer kommer av sig själva.
+        for (;;) {
+          const { done, value } = await läsare.read();
+          if (done) break;
+          buffert += avkodare.decode(value, { stream: true });
+          let gräns = buffert.indexOf("\n\n");
+          while (gräns >= 0) {
+            const block = buffert.slice(0, gräns);
+            buffert = buffert.slice(gräns + 2);
+            gräns = buffert.indexOf("\n\n");
+            const dataRad = block.split("\n").find((r) => r.startsWith("data: "));
+            if (!dataRad) continue; // heartbeat-kommentarer osv.
+            let event: StreamEvent;
+            try {
+              event = JSON.parse(dataRad.slice(6)) as StreamEvent;
+            } catch {
+              continue;
+            }
+            switch (event.typ) {
+              case "mal_status":
+                setMalStatus({ aktiv: event.aktiv, pausad: event.pausad, iteration: event.iteration });
+                setMalIteration(event.iteration);
+                if (typeof event.mal === "string") setMal(event.mal);
+                else if (event.mal === null && !event.aktiv && !event.pausad) setMal(null);
+                break;
+              case "mal_iteration":
+                if (event.fas === "start") {
+                  // Ny autonom iteration = NY agentbubbla med iterations-badge.
+                  setMalIteration(event.iteration);
+                  const id = nyttId();
+                  malBubblaRef.current = id;
+                  rörTabb(huvudTabbIdRef.current, (t) => ({
+                    ...t,
+                    tankar: "",
+                    status: `Autonom iteration ${event.iteration}…`,
+                    meddelanden: [
+                      ...t.meddelanden,
+                      {
+                        id,
+                        roll: "assistant" as const,
+                        text: "",
+                        strömmande: true,
+                        verktygKort: [],
+                        malIteration: event.iteration,
+                      },
+                    ],
+                  }));
+                } else {
+                  // KVD-pixeln: iterationen klar — färdigställ bubblan.
+                  setMalIteration(event.iteration);
+                  rörBubbla((m) => ({
+                    ...m,
+                    text: event.svar && event.svar.trim() ? event.svar : m.text || "(tom iteration)",
+                    strömmande: false,
+                    rundStatistik: {
+                      varaktighetMs: event.varaktighetMs,
+                      resultatTyp: event.resultatTyp,
+                      verktygAntal: event.verktygAntal,
+                    },
+                  }));
+                  malBubblaRef.current = null;
+                }
+                break;
+              case "delta":
+                if (event.kanal === "tankar") {
+                  rörTabb(huvudTabbIdRef.current, (t) => ({ ...t, tankar: (t.tankar + (event.text ?? "")).slice(-260) }));
+                } else {
+                  rörBubbla((m) => ({ ...m, text: m.text + (event.text ?? "") }));
+                }
+                break;
+              case "verktyg_kort":
+                if (event.id) {
+                  uppdateraKort(event.id, (k) => ({
+                    ...k,
+                    namn: event.namn ?? k.namn,
+                    steg: event.steg ?? k.steg,
+                    argument: event.argument ?? k.argument,
+                    beskrivning: event.beskrivning ?? k.beskrivning,
+                    resultat: event.resultat ?? k.resultat,
+                    fel: event.fel ?? k.fel,
+                    varaktighetMs: event.varaktighetMs ?? k.varaktighetMs,
+                    framsteg: event.framsteg ?? k.framsteg,
+                  }));
+                }
+                break;
+              case "verktyg_input":
+                if (event.id) {
+                  uppdateraKort(event.id, (k) => ({
+                    ...k,
+                    liveInput: (k.liveInput ?? "") + (event.text ?? ""),
+                  }));
+                }
+                break;
+              case "runda":
+                if (event.fas === "slut") {
+                  rörBubbla((m) => ({
+                    ...m,
+                    rundStatistik: {
+                      varaktighetMs: event.varaktighetMs,
+                      resultatTyp: event.resultatTyp,
+                      verktygAntal: event.verktygAntal,
+                    },
+                  }));
+                }
+                break;
+              case "status":
+                rörTabb(huvudTabbIdRef.current, (t) => ({
+                  ...t,
+                  status: event.text || "Agenten utvecklar autonomt…",
+                }));
+                break;
+              case "kontext":
+                if (event.kontext) {
+                  rörTabb(huvudTabbIdRef.current, (t) => ({
+                    ...t,
+                    kontext: event.kontext ?? null,
+                    ackumulerat:
+                      typeof event.kontext?.totalTokenCount === "number"
+                        ? event.kontext.totalTokenCount
+                        : t.ackumulerat,
+                  }));
+                }
+                break;
+              case "ändringar":
+                if (Array.isArray(event.filer)) {
+                  const filer = event.filer;
+                  rörBubbla((m) => ({ ...m, ändringar: filer }));
+                }
+                break;
+              case "mal_pausad":
+                rörBubbla((m) => ({ ...m, strömmande: false, text: m.text || "(pausad)" }));
+                malBubblaRef.current = null;
+                setMalStatus((s) => (s ? { ...s, aktiv: false, pausad: true } : s));
+                visaToast("Målet pausat — den autonoma loopen stannar.");
+                break;
+              case "fel":
+                visaToast(event.meddelande || "Mål-strömmen felade.", "fel");
+                break;
+              default:
+                break;
+            }
+          }
+        }
+      } catch {
+        // AbortError vid nedstängning är tyst; nätverksfel återförs av
+        // användarens näppa (Starta/Återuppta) — mal_status-tystnad visar.
+      }
+    })();
+
+    return () => {
+      abort.abort();
+      if (malAbortRef.current === abort) malAbortRef.current = null;
+    };
+  }, [malStrömOppen, rörTabb, visaToast]);
 
   /** Hämta bakgrundsagenter (session/subagents). */
   const lasAgenter = React.useCallback(async () => {
@@ -2536,6 +2893,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const oppnaMinne = React.useCallback(() => {
     setVisaFiler(false);
     setFilVisning(null);
+    setVisaFardigheter(false);
     setMinneVald(null);
     setMinneRedigerar(false);
     setMinneNy(false);
@@ -2656,6 +3014,47 @@ export function StudioChat({ hem }: { hem: () => void }) {
   );
 
   // OBS: Escape-hantering för Minne 🧠-drawern ägs av studio-minne-panel.tsx.
+
+  // ── VÅG 85 F2: Färdigheter ⚡ — skills/plugins/MCP ur bryggan ───────────
+
+  /** Hämta färdigheterna (GET /api/studio/fardigheter) — tre sektioner. */
+  const lasFardigheter = React.useCallback(async () => {
+    setFardigheterLaddar(true);
+    setFardigheterFel("");
+    try {
+      const res = await fetch(`/api/studio/fardigheter?frisk=${Date.now()}`, {
+        headers: adminHeaders(),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        skills?: FardighetSkill[];
+        plugins?: FardighetPlugin[];
+        mcp?: FardighetMcp[];
+        mcpVerktyg?: number;
+        fel?: string;
+      };
+      if (res.ok) {
+        setFardigheterSkills(Array.isArray(data.skills) ? data.skills : []);
+        setFardigheterPlugins(Array.isArray(data.plugins) ? data.plugins : []);
+        setFardigheterMcp(Array.isArray(data.mcp) ? data.mcp : []);
+        setFardigheterVerktyg(typeof data.mcpVerktyg === "number" ? data.mcpVerktyg : 0);
+      } else {
+        setFardigheterFel(data.fel || "Färdigheterna kunde ej hämtas.");
+      }
+    } catch {
+      setFardigheterFel("Nätverksfel — färdigheterna kunde ej hämtas.");
+    } finally {
+      setFardigheterLaddar(false);
+    }
+  }, []);
+
+  /** Öppna Färdigheter-drawern (laddar listan) — stänger filträdet först. */
+  const oppnaFardigheter = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setVisaMinne(false);
+    setVisaFardigheter(true);
+    void lasFardigheter();
+  }, [lasFardigheter]);
 
   // ── VÅG 83 B2: dialogsvar + läges-/tankestyrkeväxlare ────────────────────
   // (V84 C:s permission-funktioner ligger FÖRE uppstartseffekten ovan.)
@@ -2854,6 +3253,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
           oppnaFiltrad();
           pushAssistant("Filträdet är öppet — klicka dig ner i arbetsytan och förhandsgranska filer.");
           return;
+        case "fardigheter":
+          oppnaFardigheter();
+          pushAssistant(
+            "Färdigheter ⚡ är öppet — agentens skills, aktiva plugins och anslutna MCP-verktyg.",
+          );
+          return;
         case "modell": {
           const id = argument.split(/\s+/)[0] ?? "";
           const listaText =
@@ -2881,7 +3286,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — V84 B: PER TABB ─────────────────────────────
@@ -3463,6 +3868,36 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <span className={cn("h-2 w-2 animate-pulse rounded-full", prickFärg)} />
               <span className="text-[10px] font-semibold tracking-wider text-[#EDE6D6]/90">{prickText}</span>
             </div>
+            {/* VÅG 85 F1: MÅL-BADGE — guldpulserande när loopen kör +
+                iterationsräknare; klick öppnar mål-dialogen. */}
+            {mal && (
+              <button
+                onClick={oppnaMalDialog}
+                title={
+                  malKör
+                    ? `MÅL AKTIVT — agenten utvecklar autonomt (iteration ${malIteration}) · klicka för att se/ändra målet`
+                    : malPausat
+                      ? `MÅL PAUSAT efter ${malIteration} iterationer · klicka för att återuppta`
+                      : "Mål satt — klicka för att öppna mål-läget"
+                }
+                className={cn(
+                  "flex shrink-0 items-center gap-1 rounded-full border px-2 py-1 transition-colors",
+                  malKör
+                    ? "animate-pulse border-gold/70 bg-gold/20 text-gold"
+                    : malPausat
+                      ? "border-gold/30 bg-black/20 text-[#EDE6D6]/75"
+                      : "border-gold/40 bg-gold/10 text-gold/90",
+                )}
+              >
+                <Target className="h-3 w-3 shrink-0" />
+                <span className="text-[9px] font-bold tracking-wider">
+                  {malKör ? "MÅL AKTIVT" : malPausat ? "MÅL PAUSAT" : "MÅL"}
+                </span>
+                <span className="rounded-full bg-black/40 px-1.5 text-[9px] font-bold tabular-nums text-gold">
+                  {malIteration}
+                </span>
+              </button>
+            )}
           </div>
           <div className="mt-2 flex items-center gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="shrink-0">
@@ -3626,6 +4061,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   setMinneVald(null);
                   setMinneRedigerar(false);
                   setMinneNy(false);
+                  setVisaFardigheter(false);
                   if (visaFiler) setVisaFiler(false);
                   else oppnaFiltrad();
                 }}
@@ -3649,6 +4085,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   </span>
                 )}
               </button>
+              {/* VÅG 85 F2: Färdigheter ⚡ — skills/plugins/MCP ("vad agenten KAN") */}
+              <button
+                onClick={() => (visaFardigheter ? setVisaFardigheter(false) : oppnaFardigheter())}
+                title="Färdigheter — vad agenten KAN (skills/referenceCatalog + plugins/list + mcp/list)"
+                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <Zap className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Färdigheter</span>
+                {fardigheterSkills && fardigheterSkills.length > 0 && (
+                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">
+                    {fardigheterSkills.length}
+                  </span>
+                )}
+              </button>
               <button
                 onClick={() => void startaNySession()}
                 disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
@@ -3667,18 +4117,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
                 <span className="hidden sm:inline">Komprimera</span>
               </button>
-              {/* VÅG 83 B3: MÅL (session/goal) + BAKGRUNDSAGENTER (subagents) */}
+              {/* VÅG 83 B3 + VÅG 85 F1: MÅL (session/goal — öppnar den STORA
+                  mål-dialogen: beskriv utvecklingsmålet → Starta → autonom
+                  loop) + BAKGRUNDSAGENTER (subagents) */}
               <button
-                onClick={() => {
-                  setMalText(mal ?? "");
-                  setMalRedigerar((v) => !v);
-                }}
-                title="Sessionens mål (session/goal) — visas i headern om satt, redigerbart"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                onClick={oppnaMalDialog}
+                title="Mål-läge (session/goal) — beskriv ett utvecklingsmål och agenten itererar autonomt tills du pausar"
+                className={cn(
+                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
+                  malKör ? "text-gold" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
+                )}
               >
                 <Target className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">Mål</span>
-                {mal && <span className="h-1.5 w-1.5 rounded-full bg-gold" title="Mål satt" />}
+                {malKör ? (
+                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold tabular-nums text-gold" title={`Autonom iteration ${malIteration} kör`}>
+                    {malIteration}
+                  </span>
+                ) : (
+                  mal && <span className="h-1.5 w-1.5 rounded-full bg-gold" title="Mål satt" />
+                )}
               </button>
               <button
                 onClick={() => {
@@ -3851,65 +4309,63 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </div>
           )}
 
-          {/* VÅG 83 B3: MÅL (session/goal) — visas i headern om satt, redigerbart */}
-          {(malRedigerar || mal) && (
+          {/* VÅG 85 F1: MÅL-RADEN (headerns meny) — målet visas när det finns
+              med iterationsräknare + Pausa/Återuppta + Redigera (dialog) +
+              Rensa. När loopen kör bygger den autonoma bannern (ovanför
+              chatten) vidare på samma status. */}
+          {mal && (
             <div className="border-t border-gold/15 bg-black/10">
               <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-3 py-1.5 sm:px-4">
                 <Target className="h-3.5 w-3.5 shrink-0 text-gold" />
-                {malRedigerar ? (
-                  <>
-                    <input
-                      value={malText}
-                      onChange={(e) => setMalText(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter") void sparaMal();
-                        if (e.key === "Escape") setMalRedigerar(false);
-                      }}
-                      placeholder="Sessionens mål — t.ex. &quot;Färdigställ våg 83-rapporten&quot;"
-                      maxLength={500}
-                      autoFocus
-                      className="min-w-0 flex-1 rounded-md border border-gold/40 bg-black/30 px-2.5 py-1 text-[11px] text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
-                    />
-                    <button
-                      onClick={() => void sparaMal()}
-                      disabled={malSparar || !malText.trim()}
-                      className="shrink-0 rounded-md border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold transition-colors hover:bg-gold/20 disabled:opacity-50"
-                    >
-                      {malSparar ? <Loader2 className="h-3 w-3 animate-spin" /> : "Spara"}
-                    </button>
-                    <button
-                      onClick={() => setMalRedigerar(false)}
-                      className="shrink-0 rounded-md px-2 py-0.5 text-[10px] text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-                    >
-                      Avbryt
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-[#EDE6D6]/90" title={mal ?? undefined}>
-                      {mal}
-                    </span>
-                    {malSparar && <Loader2 className="h-3 w-3 shrink-0 animate-spin text-gold" />}
-                    <button
-                      onClick={() => {
-                        setMalText(mal ?? "");
-                        setMalRedigerar(true);
-                      }}
-                      title="Redigera målet (session/goal set)"
-                      className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-                    >
-                      <Pencil className="h-3 w-3" />
-                    </button>
-                    <button
-                      onClick={() => void rensaMaler()}
-                      disabled={malSparar}
-                      title="Rensa målet (session/goal clear)"
-                      className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-red-500/20 hover:text-red-300 disabled:opacity-50"
-                    >
-                      <X className="h-3 w-3" />
-                    </button>
-                  </>
-                )}
+                <span
+                  className="min-w-0 flex-1 truncate text-[11px] font-medium text-[#EDE6D6]/90"
+                  title={mal}
+                >
+                  {mal}
+                </span>
+                <span
+                  className={cn(
+                    "shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold tabular-nums",
+                    malKör ? "bg-gold/20 text-gold" : "bg-white/10 text-[#EDE6D6]/70",
+                  )}
+                  title={`Iterationer sedan målet sattes: ${malIteration}`}
+                >
+                  iter {malIteration}
+                </span>
+                {malSparar || malPausar ? (
+                  <Loader2 className="h-3 w-3 shrink-0 animate-spin text-gold" />
+                ) : malKör ? (
+                  <button
+                    onClick={() => void pausaMal()}
+                    title="Pausa målet (session/stop — den pågående iterationen avbryts)"
+                    className="shrink-0 rounded-md border border-gold/40 px-1.5 py-0.5 text-[10px] font-semibold text-gold transition-colors hover:bg-gold/15"
+                  >
+                    Pausa
+                  </button>
+                ) : malPausat ? (
+                  <button
+                    onClick={() => void aterupptaMal()}
+                    title="Återuppta målet (session/goal resume) — agenten fortsätter mot målet"
+                    className="shrink-0 rounded-md border border-emerald-400/40 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-300 transition-colors hover:bg-emerald-400/15"
+                  >
+                    Återuppta
+                  </button>
+                ) : null}
+                <button
+                  onClick={oppnaMalDialog}
+                  title="Redigera målet (mål-dialogen — session/goal set)"
+                  className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                >
+                  <Pencil className="h-3 w-3" />
+                </button>
+                <button
+                  onClick={() => void rensaMaler()}
+                  disabled={malSparar}
+                  title="Rensa målet (session/goal clear)"
+                  className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-red-500/20 hover:text-red-300 disabled:opacity-50"
+                >
+                  <X className="h-3 w-3" />
+                </button>
               </div>
             </div>
           )}
@@ -4153,6 +4609,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       </nav>
 
+      {/* VÅG 85 F1: AUTONOM BANNER — gul, ovanför chatten, medan mål-loopen
+          kör: "🎯 Agenten utvecklar autonomt — iteration N · [Pausa]". Ny
+          turn matas av protokollet självt (v83 B3); paus = session/stop. */}
+      {malKör && (
+        <div role="status" aria-live="polite" className="z-10 border-b border-gold/40 bg-gold/15">
+          <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-3 py-2 sm:px-4">
+            <Target className="h-4 w-4 shrink-0 animate-pulse text-gold" />
+            <p className="min-w-0 flex-1 truncate text-[12px] font-semibold text-gold">
+              🎯 Agenten utvecklar autonomt — iteration {malIteration}
+              <span className="ml-1.5 hidden font-normal text-[#EDE6D6]/70 sm:inline">
+                nya turner matas automatiskt mot målet
+              </span>
+            </p>
+            <button
+              onClick={() => void pausaMal()}
+              disabled={malPausar}
+              title="Pausa målet (session/stop) — den pågående iterationen avbryts inom sekunder"
+              className="flex shrink-0 items-center gap-1 rounded-full border border-gold/50 bg-black/25 px-2.5 py-1 text-[11px] font-semibold text-gold transition-colors hover:bg-gold/20 disabled:opacity-50"
+            >
+              {malPausar ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <CircleStop className="h-3.5 w-3.5" />}
+              Pausa
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* VÅG 84 D: MINNE-PANEL 🧠 — agentens minnesfiler + AGENTS.md,
           redigerbara (state/actions här, ytan i studio-minne-panel.tsx). */}
       <StudioMinnePanel
@@ -4179,6 +4661,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
         oppnaFil={oppnaMinnesfil}
         spara={sparaMinnesfil}
         radera={raderaMinnesfil}
+      />
+
+      {/* VÅG 85 F2: FÄRDIGHETER-PANEL ⚡ — skills/plugins/MCP ("vad agenten
+          KAN"; state/actions här, ytan i studio-fardigheter-panel.tsx). */}
+      <StudioFardigheterPanel
+        oppen={visaFardigheter}
+        stang={() => setVisaFardigheter(false)}
+        lasa={lasFardigheter}
+        laddar={fardigheterLaddar}
+        fel={fardigheterFel}
+        skills={fardigheterSkills}
+        plugins={fardigheterPlugins}
+        mcp={fardigheterMcp}
+        mcpVerktyg={fardigheterVerktyg}
       />
 
       {/* VÅG 83 B4: FILTRÄDSDRAWER — agentens arbetsyta, klicka dig ner */}

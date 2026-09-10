@@ -104,6 +104,87 @@ import path from "node:path";
  * och alla äldre rutter (modeller, session/list, mål, läge, tanke…) 
  * fortsätter på den — bakåtkompatibilitet bevaras.
  *
+ * VÅG 85 STUDIO V3 F2 (SKILLS/PLUGINS/TOOLS-panelen — "vad agenten KAN";
+ * protokollkälla: tool-results/v83-protokollkarta.md §2, metoderna är
+ * LIVE-testade 2026-09-09): tre nya läsmetoder på transporten —
+ *   · lasSkills()  → skills/referenceCatalog {workspace} → {authority,
+ *     skills:[{id:"glm:…", name, description, path, scope:"plugin"|
+ *     "workspace"|"user", enabled}]} — panelens SEKTION SKILLS (varje
+ *     skill som kort med namn + beskrivning; referenceCatalog BÄR dem).
+ *   · lasPlugins() → plugins/list {workspace} → {plugins:[{id, name,
+ *     description, version, enabled, source, skillCount, components[]}],
+ *     diagnostics[]} — SEKTION PLUGINS (aktiva med grön prick + version).
+ *   · lasMcp()     → mcp/list {workspace} → {statuses: Record<serverNamn,
+ *     {status:"connected"|"failed", transport:"stdio"|"http"|"sse",
+ *     toolCount, updatedAt, error?}>} — SEKTION MCP-VERKTYG (anslutna
+ *     tjänster med verktygsantal; LIVE-bevis: android-emulator med 23
+ *     verktyg connected). Alla tre kräver LEVANDE klient men EGEN session
+ *     (samma mönster som lasSessioner/lasArbetsyta) — panelen skapar
+ *     ALDRIG en session bara för att lista.
+ *
+ * VÅG 85 STUDIO V3 F1 (MÅL-LÄGET — kundens "live utveckling som Z":
+ * session/goal STARTAR en autonom loop; protokollkälla tool-results/
+ * v83-protokollkarta.md §1 + v83 B3:s prod-bevis: mål-set föder NYA
+ * turner AUTOMATISKT, session/stop PAUSAR): transporten får ett
+ * MÅL-LÄGE — när ett mål är satt och INGEN klientprompt strömmar äger
+ * mål-loopen session/event-flödet: påNotis dirigerar turnerna till
+ * mål-lyssnaren (prenumereraMal — SSE-bryggan /api/studio/mal/stream)
+ * och varje autonom iteration renderas som en KOMPLETT turn (samma
+ * delta-/verktyg_kort-/verktyg_input-/runda-event som en chattad turn).
+ * Nya StudioEvent-typer:
+ *   · "mal_status"   {aktiv, pausad, iteration, mal} — snapshot vid
+ *     prenumerera + vid set/paus/återuppta/rensa (räknaren lever i
+ *     transporten — KVD).
+ *   · "mal_iteration" {fas:"start"|"slut", iteration, svar?, …} —
+ *     turn.started/turn.completed i mål-loopen; SLUT-pixeln bär
+ *     iteration-numret + rundstatistik (KVD: turn.completed ⇒ nytt
+ *     SSE-event "mal_iteration" med iteration-nummer).
+ *   · "mal_pausad"   {iteration} — goal-pause (session/stop — LIVE-
+ *     bevisat v83 B3: stop avbryter mål-turnen inom sekunder).
+ * Event FÖRE prenumerering buffras (MAL_BUFFERT — en SEN öppnad ström
+ * missar aldrig en påbörjad iteration) och spolas vid prenumereraMal.
+ * Nya transportmetoder: malStatus()/prenumereraMal()/pausaMal()/
+ * aterupptaMal()/sondMal() (självläkning efter processomstart: sond ur
+ * session/goal show återaktiverar mål-läget för ett LEVANDE mål).
+ *
+ * VÅG 85 STUDIO V3 F4 (V4-DIFF — FILÄNDRINGAR UR PROTOKOLLETS EGEN KÄLLA;
+ * LIVE-bevisat 2026-09-09 på Contabo, sondskript tool-results/
+ * v85-f4-v4-sond{,2,3}.mjs): lasFilandringar() frågar nu FÖRST v4-grenen
+ * — v4/conversation/fileChanges (kartan §4F) — och faller tillbaka på
+ * Write/Edit-parsningen när v4-flödet ej svarar. BEVISAT V4-FLOW (sond3,
+ * session med Write-turn):
+ *   1. session/create MED persistence:"immediate" (sond1 utan: rows=0 —
+ *      v4-raderna kräver persistent session).
+ *   2. v4/conversation/subscribe {topic:"conversation/<sid>", connectionId:
+ *      <EGEN sträng>, clientMode:"web-remote-replayable"} → ack
+ *      {subscriptionId, mode:"snapshot", logEpoch}. OBS: v4/connection/flow
+ *      är ENDAST flödeskontroll {connectionId, state:saturated|drained|
+ *      closed} — INGEN handskakning; den tidigare våg-85-sondens -32603
+ *      berodde på saknad logEpoch/revision (proto.stale*), ej gateway:en.
+ *   3. Turn kör → notiser v4/conversation/frame {kind:"complete", topic,
+ *      frame:{payload:{kind:"deltas", deltas:[{op:"state.updated",
+ *      patch:{revision:N}}, {op:"row.appended", row:{…}}]}}} — revision
+ *      spåras live (state.updated-patchens revision ≠ rowsRange.atSeq —
+ *      sond2: revision 1 vs atSeq 4; sond3: 16 vs 83).
+ *   4. v4/conversation/rowsRange {sessionId, clientMode, limit} →
+ *      {rows:[{rowId, entityId, kind:"turnHeader"|…}], atSeq, atLogEpoch}.
+ *      TARGET = SENASTE raden med kind "turnHeader" (sond3: turnHeader ✓,
+ *      toolCall → proto.staleTarget, övriga → guard.actionUnavailable).
+ *   5. v4/conversation/fileChanges {sessionId, target:{rowId, entityId},
+ *      baseRevision:<spårad revision>, baseLogEpoch:<atLogEpoch>} →
+ *      {files, additions, deletions, items:[{path, additions, deletions,
+ *      writeCount, toolNames, patches:[{oldStart, oldLines, newStart,
+ *      newLines, lines:["+A","+B","-C"]}]}]} — unified-patches MED
+ *      RADNUMMER (rikare än Write/Edit-parsningen: exakta positioner,
+ *      flerfilssanning via writeCount/toolNames). Fel på target/base →
+ *      -32603 proto.staleRevision|proto.staleLogEpoch|proto.staleTarget.
+ * KVD-val: v4 är PRIMÄR källa när hela kedjan lyckas; VARJE fel (ingen
+ * prenumeration, rows tomma, stale, timeout) ⇒ befintlig Write/Edit-motor
+ * (bevisat bra) — panelen renderar samma StudioFilandring-form oavsett.
+ * F5 INLINE-KODVY konsumerar fältet "punkter" (patch-hunkar med
+ * oldStart/newStart) för GUL radmarkering i filvisningen (se
+ * studio-chat.tsx + POST /api/studio/filer).
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -182,6 +263,14 @@ export interface StudioFilandring {
   plus: number;
   minus: number;
   rader: StudioRadandring[];
+  /**
+   * VÅG 85 F4: v4/conversation/fileChanges patch-hunkar MED RADNUMMER
+   * (unified form) — fylls endast när v4-grenen levererade diffen.
+   * newStart är 1-baserat i den NYA filversionen (kodvyn markerar
+   * newStart…newStart+newLines−1); newLines===0 = ren borttagning
+   * (kodvyn visar röd spökrad). Saknas för Write/Edit-parsad diff.
+   */
+  punkter?: { oldStart: number; oldLines: number; newStart: number; newLines: number; rader: string[] }[];
 }
 
 /**
@@ -286,6 +375,38 @@ export type StudioEvent =
       tokenCount?: number;
     }
   | { typ: "klart"; svar: string; tokenCount?: number; varaktighetMs?: number }
+  // ── VÅG 85 F1: MÅL-LÄGET (autonom utvecklingsloop — se filhuvudet) ──────────
+  | {
+      /** Snapshot av mål-läget: vid prenumerera + vid set/paus/rensa. */
+      typ: "mal_status";
+      /** true = den autonoma loopen KÖR (turner matas automatiskt). */
+      aktiv: boolean;
+      /** true = målet finns men är pausat (session/stop). */
+      pausad: boolean;
+      /** Transportens iterationsräknare (KVD: räknaren lever här). */
+      iteration: number;
+      /** Måltexten — null när inget mål är satt. */
+      mal: string | null;
+    }
+  | {
+      /** turn.started/turn.completed i mål-loopen (KVD-pixeln: SLUT bär
+       * iteration-numret + rundstatistiken — en autonom iteration = en
+       * KOMPLETT turn i chatten). */
+      typ: "mal_iteration";
+      fas: "start" | "slut";
+      iteration: number;
+      /** SLUT: hela iterationens svar (turn.completed.response). */
+      svar?: string;
+      resultatTyp?: string;
+      verktygAntal?: number;
+      tokenCount?: number;
+      varaktighetMs?: number;
+    }
+  | {
+      /** Goal-pause (session/stop — LIVE-bevisat v83 B3). */
+      typ: "mal_pausad";
+      iteration: number;
+    }
   | { typ: "fel"; meddelande: string };
 
 export type StudioLyssnare = (event: StudioEvent) => void;
@@ -384,6 +505,24 @@ export interface StudioMalSvar {
   /** null = inget mål satt (LIVE: response "No goal is set…"). */
   mal: string | null;
   meddelande: string;
+  /**
+   * VÅG 85 F1: true = mål-loopen LEVER (LIVE-format på show: "Goal active"
+   * + "Objective:"-rad). false/undefined = pausat eller okänt format —
+   * UI:t visar badge/banner först när sanningen finns.
+   */
+  aktiv?: boolean;
+}
+
+/** VÅG 85 F1: mål-lägets snapshot (transportens sanning för badge/banner). */
+export interface StudioMalStatus {
+  /** true = den autonoma loopen KÖR (protokollet matar turner). */
+  aktiv: boolean;
+  /** true = målet finns men är pausat (session/stop). */
+  pausad: boolean;
+  /** Antal AVSLUTADE/PÅGÅENDE iterationer sedan mål-set (räknaren här). */
+  iteration: number;
+  /** Måltexten — null när inget mål är satt. */
+  mal: string | null;
 }
 
 /** Status-badge för en bakgrundsagent (session/subagents running+ended). */
@@ -425,6 +564,63 @@ export interface StudioArbetsytaInfo {
   behorighet?: string;
   modellerTillgangliga?: number;
   kommandon?: number;
+}
+
+// ── VÅG 85 F2: skills/plugins/MCP (kartan §2 — panelens datakällor) ──────────
+
+/**
+ * En skill ur skills/referenceCatalog (kartan §2: {id:"glm:…", name,
+ * description, path, scope, enabled}). "vad agenten KAN" — panelens
+ * SEKTION SKILLS renderar namn + beskrivning per kort.
+ */
+export interface StudioSkill {
+  id: string;
+  namn: string;
+  beskrivning?: string;
+  /** "plugin" | "workspace" | "user" (kartan §2 scope-union). */
+  omfattning?: string;
+  /** Sökväg till SKILL.md — visas i panelens title-attribut. */
+  sokvag?: string;
+  /** false = registrerad men avstängd (panelen gråmar). */
+  aktiv?: boolean;
+}
+
+/**
+ * En plugin ur plugins/list (kartan §2: {id, name, description, version,
+ * enabled, source, skillCount, components[]}). Aktiva visas med grön
+ * prick + version; alla listas (aktiva + tillgängliga).
+ */
+export interface StudioPlugin {
+  id: string;
+  namn: string;
+  beskrivning?: string;
+  version?: string;
+  /** true = protokollets enabled (panelens grön prick). */
+  aktiv: boolean;
+  /** pluginens skillCount (kartan §2). */
+  skillAntal?: number;
+  /** source/marketplace (t.ex. "zcode-plugins-official"). */
+  kalla?: string;
+}
+
+/**
+ * En MCP-server ur mcp/list:s statuses-post (kartan §2: {status:
+ * "connected"|"failed", transport:"stdio"|"http"|"sse", toolCount,
+ * updatedAt, error?}). LIVE-bevis: android-emulator, 23 verktyg,
+ * connected. VerktygsNAMN bär protokollet ej i denna metod — namnlista
+ * tolkas defensivt om ett framtida zcode bär den (tools[]/toolNames[]).
+ */
+export interface StudioMcpServer {
+  namn: string;
+  /** "connected" | "failed" (kartan §2). */
+  status: string;
+  transport?: string;
+  /** toolCount — panelens "N verktyg". */
+  verktygAntal: number;
+  fel?: string;
+  uppdaterad?: string;
+  /** Defensiv: verktygsnamn OM protokollet bär dem (annars osatt). */
+  verktyg?: string[];
 }
 
 export interface StudioTransport {
@@ -496,6 +692,37 @@ export interface StudioTransport {
   sattMal(mal: string): Promise<StudioMalSvar>;
   /** session/goal action "clear". */
   rensaMal(): Promise<StudioMalSvar>;
+  // ── VÅG 85 F1: MÅL-LÄGET — autonom utvecklingsloop ("live utveckling
+  // som Z"; kartan §1 + v83 B3:s prod-bevis: mål-set föder turner
+  // AUTOMATISKT, session/stop PAUSAR) ────────────────────────────────────────
+  /** Mål-lägets snapshot — badge/banner-tilståndets sanning. */
+  malStatus(): StudioMalStatus;
+  /**
+   * Prenumerera på mål-loopens events (mal_status-snapshot direkt, därefter
+   * mal_iteration/delta/verktyg_kort/runda/… — varje autonom iteration är
+   * en KOMPLETT turn). Returnerar avprenumerering. Event som anländer utan
+   * lyssnare buffras och spolas vid nästa prenumerering (MAL_BUFFERT).
+   */
+  prenumereraMal(lyssnare: StudioLyssnare): () => void;
+  /**
+   * Pausa mål-loopen: session/stop (LIVE-bevisat v83 B3 — stop avbryter
+   * den pågående mål-turnen inom sekunder och pausar målet). mål-
+   * lyssnaren får "mal_pausad" + färsk "mal_status".
+   */
+  pausaMal(): Promise<StudioMalSvar>;
+  /**
+   * Återuppta pausat mål: session/goal action "resume" (kartan §1 —
+   * schemat dokumenterat; stop-vägen för paus är LIVE-bevisad, resume är
+   * dess motpol). Ärligt fel om servern avvisar.
+   */
+  aterupptaMal(): Promise<StudioMalSvar>;
+  /**
+   * Sond → mål-läge ur session/goal show (självläkning efter process-
+   * omstart: persistens-resumen återupptar sessionen men transportens
+   * mål-state börjar tomt). Ett LEVANDE mål ("Goal active") aktiverar
+   * mål-läget så iterationerna strömmar igen.
+   */
+  sondMal(): Promise<StudioMalStatus>;
   /**
    * session/subagents — körande (running/waiting/blocked) + avslutade
    * (success/failed/cancelled/lost) barnagenter. Kräver persistent
@@ -510,6 +737,34 @@ export interface StudioTransport {
   avbrytBakgrundsTask(taskId: string): Promise<StudioAvbrytSvar>;
   /** workspace/readState — arbetsytans läge/modell/tanke-nivå/behörighet. */
   lasArbetsyta(): Promise<StudioArbetsytaInfo | null>;
+  // ── VÅG 85 F2: SKILLS/PLUGINS/TOOLS — "vad agenten KAN" (kartan §2) ───────
+  /**
+   * skills/referenceCatalog {workspace} → agentens skills (namn +
+   * beskrivning per post). Kräver LEVANDE klient men EGEN session —
+   * skapar ALDRIG en session bara för att lista (lasSessioner-mönstret).
+   */
+  lasSkills(): Promise<StudioSkill[]>;
+  /**
+   * plugins/list {workspace} → aktiva + tillgängliga plugins (aktiva med
+   * enabled=true — panelens grön prick + version).
+   */
+  lasPlugins(): Promise<StudioPlugin[]>;
+  /**
+   * mcp/list {workspace} → anslutna MCP-servrar med verktygsantal
+   * (statuses Record — LIVE-bevis: android-emulator 23 verktyg).
+   */
+  lasMcp(): Promise<StudioMcpServer[]>;
+  // ── VÅG 85 F3: USAGE/COST — "vad agenten KOSTAR (i tokens)" (kartan §2) ────
+  /**
+   * usage/stats {range:"7d"} (LIVE-bevisat: 8,35 M tokens/7d, kartan §2)
+   * → råa svaret + mappade sammanfattningar + modellfördelning (byModel)
+   * + 24 h-uppskattning (session/usage över sessioner aktiva senaste
+   * dygnet; reserv dygnsmedel 7d/7 — usage/stats har ingen 24 h-range).
+   * Kräver LEVANDE klient men EGEN session — skapar ALDRIG en session
+   * bara för att läsa statistik (lasSessioner-mönstret). KVD-ÄRLIGHET:
+   * tokens räknas, kronor PÅSTÅS ALDRIG (planen är pauspris).
+   */
+  lasUsage(): Promise<StudioUsageSvar>;
   // ── V83 MEGA B1: STREAMING-VISUALISERING + DIFF (Z-portalens kärna) ──────
   /**
    * Senaste turnens filändringar som ±N-rader per fil. Härleds ur
@@ -837,6 +1092,147 @@ interface WorkspaceStateResult {
     thoughtLevel?: { current?: string };
   };
   slashCommands?: unknown[];
+}
+
+// ── VÅG 85 F2: skills/plugins/MCP-svar (kartan §2 — defensivt mappade) ───────
+
+/** skills/referenceCatalog-svar (LIVE-testat i v83-protokoll-live-test.mjs). */
+interface SkillsCatalogResult {
+  authority?: string;
+  skills?: {
+    id?: string;
+    name?: string;
+    description?: string;
+    path?: string;
+    scope?: string;
+    enabled?: boolean;
+  }[];
+}
+
+/** plugins/list-svar (LIVE-testat — aktiva + tillgängliga + diagnostics). */
+interface PluginsListResult {
+  plugins?: {
+    id?: string;
+    name?: string;
+    description?: string;
+    version?: string;
+    enabled?: boolean;
+    source?: string;
+    marketplace?: string;
+    skillCount?: number;
+  }[];
+  diagnostics?: unknown[];
+}
+
+/**
+ * mcp/list-svar (LIVE-bevis: statuses Record med android-emulator
+ * connected + toolCount 23). Verktygsnamn tolkas defensivt — kartan §2
+ * dokumenterar endast toolCount, men ett tools[]/toolNames[]-fält bärs
+ * fram utan att kräva ny protokollversion.
+ */
+interface McpListResult {
+  statuses?: Record<
+    string,
+    {
+      status?: string;
+      transport?: string;
+      toolCount?: number;
+      updatedAt?: string;
+      error?: string;
+      failureKind?: string;
+      tools?: unknown;
+      toolNames?: unknown;
+    }
+  >;
+}
+
+// ── VÅG 85 F3: usage/stats-svar (kartan §2 — LIVE 8,35 M tokens/7d) ──────────
+
+/**
+ * usage/stats-svar (kartan §2, LIVE-bevisat 2026-09-09: 8,35 M tokens/7d):
+ * {range, generatedAt, timeZone, source:"agent-db", summary:{totalTokens,
+ * inputTokens, outputTokens, reasoningTokens, cacheCreationTokens,
+ * cacheReadTokens, cacheHitRate, totalSessions, totalTurns, toolCallCount,
+ * toolErrorRate, modelErrorRate}, byModel?:[{modelId,totalTokens,share}]}.
+ * Endast fält UI:t visar mappas — råa svaret följer med i `ratti`-fältet.
+ */
+interface UsageStatsResult {
+  range?: string;
+  generatedAt?: string;
+  timeZone?: string;
+  summary?: {
+    totalTokens?: number;
+    inputTokens?: number;
+    outputTokens?: number;
+    reasoningTokens?: number;
+    cacheCreationTokens?: number;
+    cacheReadTokens?: number;
+    cacheHitRate?: number;
+    totalSessions?: number;
+    totalTurns?: number;
+    toolCallCount?: number;
+    toolErrorRate?: number;
+    modelErrorRate?: number;
+  };
+  byModel?: {
+    modelId?: string;
+    totalTokens?: number;
+    share?: number;
+    /** Defensivt: räknefält OM ett framtida zcode bär det per modell. */
+    requestCount?: number;
+    modelRequestCount?: number;
+  }[];
+}
+
+/** Rad i modellfördelningen (kartan §2 byModel + session/list-berikning). */
+export interface StudioUsageModell {
+  /** Protokollets modelId (t.ex. "glm-5.3"). */
+  modell: string;
+  /** Modellens totalTokens i perioden. */
+  tokens: number;
+  /** Protokollets share (0–1) — beräknas om tokens/total när det saknas. */
+  andel: number;
+  /**
+   * Ärlig räknare: antal SESSIONER som körde modellen (session/list inom
+   * listans tak, 7 d-fönster). usage/stats bär INGA anropsantal per modell
+   * — 0 = protokollet räknade inga sådana sessioner i listan.
+   */
+  antal: number;
+}
+
+/**
+ * VÅG 85 F3 — användning/svar ur usage/stats (range "7d"):
+ * råa protokollsvaret + mappade fält + den berikade 24 h-siffran.
+ * KOSTNADS-ÄRLIGHET (KVD): planen är pauspris (~$3/mo) — svaret bär
+ * ENDAST token-räkningar, ALDRIG påstådda kronor.
+ */
+export interface StudioUsageSvar {
+  /** Det RÅA usage/stats-svaret (range "7d") — oförändrat vidare. */
+  råSvar: unknown;
+  /** summary.totalTokens (7 d) — panelens stora siffra. */
+  totalTokens: number;
+  inputTokens?: number;
+  outputTokens?: number;
+  reasoningTokens?: number;
+  cacheReadTokens?: number;
+  cacheCreationTokens?: number;
+  cacheHitRate?: number;
+  totalSessions?: number;
+  totalTurns?: number;
+  toolCallCount?: number;
+  /** byModel — störst först (stapelordning). */
+  modeller: StudioUsageModell[];
+  generatedAt?: string;
+  timeZone?: string;
+  /**
+   * 24 h-uppskattning. usage/stats stöder ENDAST all|7d|30d (kartan §2)
+   * — dygnsiffran beräknas som summan av session/usage över sessioner
+   * som var aktiva senaste 24 h (session/list-updatedAt), med ÄRLIG
+   * reserv: dygnsmedelvärdet 7d/7 ("snitt"). ALDRIG påhittade siffror.
+   */
+  totalTokens24h: number;
+  /** "sessioner" = räkning ur session/usage · "snitt" = 7d/7-reserv. */
+  kalla24h: "sessioner" | "snitt" | "okand";
 }
 
 interface SessionEventParams {
@@ -1187,6 +1583,39 @@ class AppServerTransport implements StudioTransport {
    * Undefined = default-transporten (persistensfilens resume-or-create).
    */
   private readonly målSessionId: string | undefined;
+  // ── VÅG 85 F1: MÅL-LÄGET — autonom utvecklingsloop ──────────────────────────
+  /** Måltexten (session/goal objective) — null = inget mål. */
+  private malText: string | null = null;
+  /** true = den autonoma loopen KÖR (protokollet matar turner). */
+  private malAktiv = false;
+  /** true = målet finns men är pausat (session/stop). */
+  private malPausad = false;
+  /** Iterationsräknaren (KVD: räknaren lever i transporten). */
+  private malIteration = 0;
+  /** Senaste iterationens ackumulerade text (turn.completed-fallback). */
+  private malSenasteText = "";
+  /** Mål-loopens lyssnare (SSE-bryggan /api/studio/mal/stream). */
+  private malLyssnare: StudioLyssnare | null = null;
+  /**
+   * Buffrade mål-events — anlände utan lyssnare (strömmen öppnas EFTER
+   * mål-set: ras-skydd så första iterationens start ALDRIG tappas; även
+   * reconnects läks). Spolas vid prenumereraMal och glöms då.
+   */
+  private readonly malBuffert: StudioEvent[] = [];
+  /** Buffertens tak — äldst event kastas först (rullande fönster). */
+  private static readonly MAL_BUFFERT_TAK = 400;
+  // ── VÅG 85 F4: V4-GRENEN — filändringar ur protokollets egen källa ────────
+  /**
+   * V4-prenumerationens tillstånd (BEVISAT sond2/3 2026-09-09): EGEN
+   * connectionId (gateway:en byter ut äldre prenumeration på samma id),
+   * logEpoch ur subscribe-ack:et, revision spårad live ur ramarnas
+   * state.updated-patchar (≠ rowsRange.atSeq!). v4Ansluten = false efter
+   * misslyckad subscribe ⇒ lasFilandringar faller på Write/Edit-motorn.
+   */
+  private readonly v4ConnectionId = `ak1a-studio-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  private v4LogEpoch: string | null = null;
+  private v4Revision = 0;
+  private v4Ansluten = false;
 
   constructor(
     private readonly binärer: string[],
@@ -1261,6 +1690,42 @@ class AppServerTransport implements StudioTransport {
         30_000,
       );
       this.prenumererad = true;
+      // VÅG 85 F4 (BEVISAT sond2/3): v4-grenen prenumereras i SAMBAND med
+      // sessionen — FÖRE kommande turner (raderna materialiseras bara för
+      // en prenumererad + persistent session). Best-effort: misslyckad
+      // subscribe är ALDRIG fatal för chatten (diffen faller på motorn).
+      await this.v4Prenumerera();
+    }
+  }
+
+  /**
+   * VÅG 85 F4: v4/conversation/subscribe på "conversation/<sid>" (BEVISAT
+   * sond2/3: topic-prefix "conversation/" + sessions-id, EGEN connectionId,
+   * clientMode "web-remote-replayable"; ack bär logEpoch). Fel ⇒ v4Ansluten
+   * false — lasFilandringar() använder då Write/Edit-motorn.
+   */
+  private async v4Prenumerera(): Promise<void> {
+    if (!this.klient?.lever || !this.sid) return;
+    try {
+      const svar = (await this.klient.request(
+        "v4/conversation/subscribe",
+        {
+          topic: `conversation/${this.sid}`,
+          connectionId: this.v4ConnectionId,
+          clientMode: "web-remote-replayable",
+        },
+        20_000,
+      )) as { ack?: { logEpoch?: unknown } } | null;
+      const epoch = svar?.ack?.logEpoch;
+      if (typeof epoch === "string" && epoch) {
+        this.v4LogEpoch = epoch;
+        this.v4Ansluten = true;
+        this.v4Revision = 0; // nollställ — den nya prenumerationen börjar friskt
+      } else {
+        this.v4Ansluten = false;
+      }
+    } catch {
+      this.v4Ansluten = false;
     }
   }
 
@@ -1308,6 +1773,12 @@ class AppServerTransport implements StudioTransport {
     // sanningen, detta är bara intentionen.
     if (this.lage) params.mode = this.lage;
     if (this.tankeNiva) params.thoughtLevel = this.tankeNiva;
+    // VÅG 85 F4 (BEVISAT sond1 vs sond2/3 2026-09-09): persistence
+    // "immediate" — v4-grenens samtalsrader (rowsRange) materialiseras
+    // ENDAST för persistenta sessioner (sond1 utan: rows=0 trots turn).
+    // Sidoeffekt är enbart att sessionen finns på disk direkt = samma
+    // synlighet som session/list redan ger.
+    params.persistence = "immediate";
     const resultat = await klient.request("session/create", params, 60_000);
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/create svarade utan sessionId");
@@ -1383,6 +1854,15 @@ class AppServerTransport implements StudioTransport {
     // väntande interaktioner ärligt (permission→deny, fråga→cancelled)
     // innan registret glöms.
     this.rensaVantandeInteraktioner();
+    // VÅG 85 F1: målet tillhör DEN KASSERADE sessionen — en frisk session
+    // föds utan mål (mål-läget stängs ärligt så badge/banner släcks).
+    this.malText = null;
+    this.malAktiv = false;
+    this.malPausad = false;
+    this.malIteration = 0;
+    this.malSenasteText = "";
+    this.malBuffert.length = 0;
+    this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     this.sid = null;
     this.prenumererad = false;
     try {
@@ -1569,6 +2049,8 @@ class AppServerTransport implements StudioTransport {
       30_000,
     );
     this.prenumererad = true;
+    // VÅG 85 F4: v4-prenumerationen följer sessionen (nya topic = nya rader).
+    await this.v4Prenumerera();
     // Historiken ur session/messages — det är DENNA som fyller chatten.
     const [historik, kontext] = await Promise.all([this.historik(), this.lasKontext()]);
     return { sessionId: sid, historik, kontext };
@@ -1658,7 +2140,10 @@ class AppServerTransport implements StudioTransport {
     // plocka Objective-raden så headern visar själva målet, inte statistik.
     const objRad = /objective:[ \t]*(.+)/i.exec(text);
     const mal = objRad ? objRad[1].trim() : text;
-    return { mal, meddelande: mal };
+    // VÅG 85 F1: "Goal active" ⇒ loopen LEVER (pausat mål antas sakna
+    // den frasen — ärligt: okänt format ⇒ aktiv=false, badge:t tiger).
+    const aktiv = /goal active/i.test(text);
+    return { mal, meddelande: mal, aktiv };
   }
 
   async sattMal(mal: string): Promise<StudioMalSvar> {
@@ -1669,15 +2154,28 @@ class AppServerTransport implements StudioTransport {
     if (this.aktiv && !this.aktiv.färdig) {
       throw new Error("En prompt kör — vänta tills agenten är klar.");
     }
-    // BEVISAT schema v83-kartan §1: action "set" + objective. startedTurn
-    // i svaret kan innebära att agenten börjar arbeta mot målet asynkront.
+    // BEVISAT schema v83-kartan §1: action "set" + objective. LIVE-BEVISAT
+    // v83 B3 (prod-experiment): mål-set startar en ASYNKRON mål-loop som
+    // FÖDER NYA TURNER AUTOMATISKT — iterationerna strömmar via mål-
+    // lyssnaren (prenumereraMal) utan att någon klientprompt körs.
     const r = (await this.klient.request(
       "session/goal",
       { sessionId: this.sid, action: "set", objective: text },
       45_000,
     )) as { response?: string; startedTurn?: boolean } | null;
+    // VÅG 85 F1: mål-läget STARTAR här — räknaren börjar om och mål-
+    // lyssnaren (om strömmen redan är öppen) får snapshot direkt; annars
+    // fångar MAL_BUFFERT de första events så en senare öppnad ström
+    // aldrig missar iterationens start.
+    this.malText = text;
+    this.malAktiv = true;
+    this.malPausad = false;
+    this.malIteration = 0;
+    this.malSenasteText = "";
+    this.sändMalEvent({ typ: "mal_status", aktiv: true, pausad: false, iteration: 0, mal: text });
     return {
       mal: text,
+      aktiv: true,
       meddelande:
         typeof r?.response === "string" && r.response.trim()
           ? r.response.trim()
@@ -1750,7 +2248,153 @@ class AppServerTransport implements StudioTransport {
         throw fel;
       }
     }
+    // VÅG 85 F1: rensat mål = mål-läget AV — lyssnaren får snapshot direkt
+    // så badge/banner/iterationer stängs samma sekund.
+    this.malText = null;
+    this.malAktiv = false;
+    this.malPausad = false;
+    this.malIteration = 0;
+    this.malSenasteText = "";
+    this.malBuffert.length = 0;
+    this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     return { mal: null, meddelande: "Målet rensat." };
+  }
+
+  // ── VÅG 85 F1: MÅL-LÄGET — autonom utvecklingsloop ──────────────────────────
+
+  malStatus(): StudioMalStatus {
+    return {
+      aktiv: this.malAktiv,
+      pausad: this.malPausad,
+      iteration: this.malIteration,
+      mal: this.malText,
+    };
+  }
+
+  prenumereraMal(lyssnare: StudioLyssnare): () => void {
+    this.malLyssnare = lyssnare;
+    // Snapshot först (räknarens sanning), därefter spolas bufferten — en
+    // påbörjad iteration (mal_iteration start + deltas + kort) återges HEL.
+    lyssnare({
+      typ: "mal_status",
+      aktiv: this.malAktiv,
+      pausad: this.malPausad,
+      iteration: this.malIteration,
+      mal: this.malText,
+    });
+    if (this.malBuffert.length > 0) {
+      for (const event of this.malBuffert) lyssnare(event);
+      this.malBuffert.length = 0;
+    }
+    return () => {
+      if (this.malLyssnare === lyssnare) this.malLyssnare = null;
+    };
+  }
+
+  async pausaMal(): Promise<StudioMalSvar> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt strömmar i chatten — vänta tills agenten är klar.");
+    }
+    if (!this.malText) {
+      return { mal: null, meddelande: "Inget mål är satt — inget att pausa." };
+    }
+    // LIVE-BEVISAT 2026-09-09 (v83 B3, prod-experiment ×2): session/stop
+    // (REQUEST, ack {}) avbryter den pågående mål-turnen inom sekunder och
+    // PAUSAR målet (kartan §1: stop "avbryter aktiv prompt + pausar aktiv
+    // goal"). KVD-vakt: vägrar när EGEN klientprompt strömmar (ovan).
+    try {
+      await this.klient.request("session/stop", { sessionId: this.sid }, 15_000);
+    } catch {
+      // ej fatal — statusen nedan är transportens sanning ändå
+    }
+    this.sändMalEvent({ typ: "mal_pausad", iteration: this.malIteration });
+    this.malAktiv = false;
+    this.malPausad = true;
+    this.sändMalEvent({
+      typ: "mal_status",
+      aktiv: false,
+      pausad: true,
+      iteration: this.malIteration,
+      mal: this.malText,
+    });
+    return {
+      mal: this.malText,
+      meddelande: `Målet pausat efter ${this.malIteration} iteration${this.malIteration === 1 ? "" : "er"} — återuppta när du vill.`,
+    };
+  }
+
+  async aterupptaMal(): Promise<StudioMalSvar> {
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt kör — vänta tills agenten är klar.");
+    }
+    if (!this.malText) {
+      return { mal: null, meddelande: "Inget mål är satt — inget att återuppta." };
+    }
+    // session/goal action "resume" (kartan §1 — dokumenterad union-action;
+    // paus-vägen session/stop är LIVE-bevisad, resume är dess motpol).
+    const r = (await this.klient.request(
+      "session/goal",
+      { sessionId: this.sid, action: "resume" },
+      45_000,
+    )) as { response?: string; startedTurn?: boolean } | null;
+    this.malAktiv = true;
+    this.malPausad = false;
+    this.sändMalEvent({
+      typ: "mal_status",
+      aktiv: true,
+      pausad: false,
+      iteration: this.malIteration,
+      mal: this.malText,
+    });
+    return {
+      mal: this.malText,
+      aktiv: true,
+      meddelande:
+        typeof r?.response === "string" && r.response.trim()
+          ? r.response.trim()
+          : r?.startedTurn
+            ? "Målet återupptaget — agenten fortsätter arbeta mot det."
+            : "Målet återupptaget — loopen fortsätter.",
+    };
+  }
+
+  async sondMal(): Promise<StudioMalStatus> {
+    // Självläkning: persistens-resumen (pm2-omstart) återupptar sessionen
+    // men mål-state:t börjar tomt — sonden läser session/goal show och ett
+    // LEVANDE mål ("Goal active") återaktiverar mål-läget så iterationerna
+    // strömmar igen. Aldrig fel — statusen är sanningen.
+    try {
+      const svar = await this.lasMal();
+      if (svar.mal && !this.malText) this.malText = svar.mal;
+      if (svar.aktiv && !this.malPausad) this.malAktiv = true;
+    } catch {
+      // sonden är lyx — malStatus() är sanningen
+    }
+    return this.malStatus();
+  }
+
+  /**
+   * Mål-event ut: levereras till mål-lyssnaren OM en ström är öppen, och
+   * buffras ALWAYS (rullande fönster) så en senare prenumereraMal kan
+   * spola en påbörjad iteration HEL (ras-skyddet mellan mål-set och
+   * ström-öppning).
+   */
+  private sändMalEvent(event: StudioEvent): void {
+    this.malBuffert.push(event);
+    if (this.malBuffert.length > AppServerTransport.MAL_BUFFERT_TAK) {
+      this.malBuffert.shift();
+    }
+    const lyssnare = this.malLyssnare;
+    if (!lyssnare) return;
+    try {
+      lyssnare(event);
+    } catch {
+      // strömmen bruten — bufferten lever, nästa prenumerant får replay
+    }
   }
 
   async lasSubagenter(): Promise<StudioSubagent[]> {
@@ -1852,11 +2496,272 @@ class AppServerTransport implements StudioTransport {
     }
   }
 
+  // ── VÅG 85 F2: skills/plugins/MCP — "vad agenten KAN" (kartan §2) ───────
+
+  /**
+   * Gemensam vakt för katalogläsningarna: LEVANDE klient utan krav på
+   * session (lasSessioner-mönstret — metoden skapar ALDRIG en session).
+   */
+  private klientForLasning(): ProtokollKlient {
+    if (!this.klient?.lever) {
+      this.klient = this.startaKlient();
+      this.prenumererad = false;
+    }
+    return this.klient;
+  }
+
+  /** Arbetsyta i protokollets Yo-form (workspaceKey = workspacePath, §0). */
+  private arbetsytaParams(): Record<string, unknown> {
+    return { workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog } };
+  }
+
+  async lasSkills(): Promise<StudioSkill[]> {
+    try {
+      const klient = this.klientForLasning();
+      // BEVISAT schema (kartan §2 + v83-protokoll-live-test.mjs):
+      // {workspace} → {authority, skills:[{id,name,description,path,
+      // scope,enabled}]}. sessionId-parametern är valfri — katalogen är
+      // workspace-auktoritativ utan den.
+      const r = (await klient.request(
+        "skills/referenceCatalog",
+        this.arbetsytaParams(),
+        45_000,
+      )) as SkillsCatalogResult | null;
+      const lista = r?.skills;
+      if (!Array.isArray(lista)) return [];
+      const ut: StudioSkill[] = [];
+      for (const s of lista) {
+        // id är nyckeln ("glm:…" / "plugin:skill"); namn faller på id:t.
+        const id = typeof s?.id === "string" && s.id ? s.id : "";
+        if (!id) continue;
+        ut.push({
+          id,
+          namn: typeof s.name === "string" && s.name ? s.name : id,
+          beskrivning: typeof s.description === "string" && s.description ? s.description : undefined,
+          omfattning: typeof s.scope === "string" && s.scope ? s.scope : undefined,
+          sokvag: typeof s.path === "string" && s.path ? s.path : undefined,
+          aktiv: typeof s.enabled === "boolean" ? s.enabled : undefined,
+        });
+      }
+      return ut;
+    } catch {
+      return []; // katalogen är lyx, aldrig ett fel för panelen
+    }
+  }
+
+  async lasPlugins(): Promise<StudioPlugin[]> {
+    try {
+      const klient = this.klientForLasning();
+      // BEVISAT schema (kartan §2): {workspace} → {plugins:[{id,name,
+      // description,version,enabled,source,skillCount,…}], diagnostics}.
+      const r = (await klient.request(
+        "plugins/list",
+        this.arbetsytaParams(),
+        45_000,
+      )) as PluginsListResult | null;
+      const lista = r?.plugins;
+      if (!Array.isArray(lista)) return [];
+      const ut: StudioPlugin[] = [];
+      for (const p of lista) {
+        const id = typeof p?.id === "string" && p.id ? p.id : "";
+        if (!id) continue;
+        ut.push({
+          id,
+          namn: typeof p.name === "string" && p.name ? p.name : id,
+          beskrivning: typeof p.description === "string" && p.description ? p.description : undefined,
+          version: typeof p.version === "string" && p.version ? p.version : undefined,
+          aktiv: p.enabled === true,
+          skillAntal: typeof p.skillCount === "number" ? p.skillCount : undefined,
+          kalla: typeof p.source === "string" && p.source ? p.source : typeof p.marketplace === "string" && p.marketplace ? p.marketplace : undefined,
+        });
+      }
+      // Aktiva först (grön prick-sektionen), sedan tillgängliga — stabil
+      // ordning inom grupperna (protokollordning bevaras).
+      return [...ut.filter((p) => p.aktiv), ...ut.filter((p) => !p.aktiv)];
+    } catch {
+      return []; // pluginlistan är lyx, aldrig ett fel för panelen
+    }
+  }
+
+  async lasMcp(): Promise<StudioMcpServer[]> {
+    try {
+      const klient = this.klientForLasning();
+      // BEVISAT schema (kartan §2, LIVE: 23 android-emulator-verktyg):
+      // {workspace} → {statuses:Record<namn,{status,transport,toolCount,
+      // updatedAt,error?}>}. mode:"connect" (tvingad anslutning) används
+      // EJ — readState-raden i live-testet bevisade status utan den.
+      const r = (await klient.request("mcp/list", this.arbetsytaParams(), 45_000)) as
+        | McpListResult
+        | null;
+      const statuses = r?.statuses;
+      if (!statuses || typeof statuses !== "object") return [];
+      const ut: StudioMcpServer[] = [];
+      for (const [namn, s] of Object.entries(statuses)) {
+        if (!namn || !s || typeof s !== "object") continue;
+        // Defensiv verktygsnamnslista — kartan dokumenterar endast
+        // toolCount; bär svaret namn (tools[]/toolNames[]) tolkas de.
+        const namnLista = Array.isArray(s.tools)
+          ? (s.tools as unknown[]).filter((t): t is string => typeof t === "string")
+          : Array.isArray(s.toolNames)
+            ? (s.toolNames as unknown[]).filter((t): t is string => typeof t === "string")
+            : undefined;
+        ut.push({
+          namn,
+          status: typeof s.status === "string" && s.status ? s.status : "unknown",
+          transport: typeof s.transport === "string" && s.transport ? s.transport : undefined,
+          verktygAntal: typeof s.toolCount === "number" ? s.toolCount : 0,
+          fel: typeof s.error === "string" && s.error ? s.error : undefined,
+          uppdaterad: typeof s.updatedAt === "string" && s.updatedAt ? s.updatedAt : undefined,
+          ...(namnLista && namnLista.length > 0 ? { verktyg: namnLista } : {}),
+        });
+      }
+      // Anslutna först, sedan misslyckade — panelens grön/röd ordning.
+      return [...ut.filter((s) => s.status === "connected"), ...ut.filter((s) => s.status !== "connected")];
+    } catch {
+      return []; // MCP-listan är lyx, aldrig ett fel för panelen
+    }
+  }
+
+  // ── VÅG 85 F3: usage/stats — "vad agenten KOSTAR (i tokens)" ─────────────
+
+  async lasUsage(): Promise<StudioUsageSvar> {
+    const klient = this.klientForLasning();
+    // BEVISAT LIVE (kartan §2 + v83-protokoll-live-test.mjs: 8,35 M tokens
+    // /7d): usage/stats {range:"7d"} → {range,generatedAt,timeZone,source,
+    // summary:{…}, byModel?:[{modelId,totalTokens,share}]}. timeZones lämnas
+    // osatt — protokollets egen default följer med i svaret.
+    const råSvar = (await klient.request("usage/stats", { range: "7d" }, 45_000)) as
+      | UsageStatsResult
+      | null;
+    const summa = råSvar?.summary;
+    const num = (v: unknown): number | undefined => (typeof v === "number" && Number.isFinite(v) ? v : undefined);
+    const totalTokens = num(summa?.totalTokens) ?? 0;
+
+    // ── 24 h-uppskattning (usage/stats saknar 24 h-range — kartan §2):
+    // sessioner aktiva senaste dygnet ur session/list (updatedAt), tokens
+    // ur session/usage {sessionId} (BEVISAT kartan §1). Parallellt — NDJSON-
+    // klienten multiplexar requests via id-kartan. Tak: 12 nyaste sessioner
+    // (mätbar kostnad, dokumenterad approximation).
+    let totalTokens24h = 0;
+    let kalla24h: "sessioner" | "snitt" | "okand" = "okand";
+    /** sessionId → modell + ålder — återanvänds även för antal-per-modell. */
+    let sessioner: { sid: string; modellId?: string; tid: number }[] = [];
+    try {
+      const lista = (await klient.request("session/list", { limit: 50 }, 30_000)) as
+        | SessionListResult
+        | null;
+      const rader = Array.isArray(lista?.sessions) ? lista!.sessions! : [];
+      const nu = Date.now();
+      sessioner = rader
+        .map((s) => {
+          const sid = typeof s.sessionId === "string" && s.sessionId ? s.sessionId : "";
+          const tidRaw = s.updatedAt ?? s.updated ?? s.lastActiveAt;
+          const tid = typeof tidRaw === "string" ? Date.parse(tidRaw) : NaN;
+          return {
+            sid,
+            modellId:
+              typeof s.model?.modelId === "string" && s.model.modelId ? s.model.modelId : undefined,
+            tid,
+          };
+        })
+        .filter((s) => s.sid && Number.isFinite(s.tid));
+      const aktiva24h = sessioner
+        .filter((s) => nu - s.tid < 24 * 60 * 60 * 1000)
+        .sort((a, b) => b.tid - a.tid)
+        .slice(0, 12);
+      if (aktiva24h.length > 0) {
+        const delsummor = await Promise.all(
+          aktiva24h.map(async ({ sid }) => {
+            try {
+              const u = (await klient.request("session/usage", { sessionId: sid }, 12_000)) as
+                | { totalTokens?: unknown }
+                | null;
+              return typeof u?.totalTokens === "number" && Number.isFinite(u.totalTokens)
+                ? u.totalTokens
+                : 0;
+            } catch {
+              return 0; // enskild session får aldrig döda uppskattningen
+            }
+          }),
+        );
+        totalTokens24h = delsummor.reduce((a, b) => a + b, 0);
+        kalla24h = "sessioner";
+      }
+    } catch {
+      // session/list otillgängligt → reserven nedan
+    }
+    if (kalla24h !== "sessioner" && totalTokens > 0) {
+      // ÄRLIG reserv: dygnsmedelvärdet (7 d / 7) — märks "snitt" i UI:t.
+      totalTokens24h = Math.round(totalTokens / 7);
+      kalla24h = "snitt";
+    }
+
+    // ── antal sessioner per modell (7 d-fönstret, listans tak 50) ──────────
+    const antalPerModell = new Map<string, number>();
+    for (const s of sessioner) {
+      if (!s.modellId) continue;
+      if (Date.now() - s.tid >= 7 * 24 * 60 * 60 * 1000) continue;
+      antalPerModell.set(s.modellId, (antalPerModell.get(s.modellId) ?? 0) + 1);
+    }
+
+    // ── modellfördelning ur byModel (störst först — stapelordningen) ────────
+    const modeller: StudioUsageModell[] = [];
+    const råModeller = Array.isArray(råSvar?.byModel) ? råSvar!.byModel! : [];
+    for (const m of råModeller) {
+      const id = typeof m?.modelId === "string" && m.modelId ? m.modelId : "";
+      if (!id) continue;
+      const tokens = num(m?.totalTokens) ?? 0;
+      const share = num(m?.share);
+      modeller.push({
+        modell: id,
+        tokens,
+        andel:
+          share !== undefined && share >= 0 && share <= 1
+            ? share
+            : totalTokens > 0
+              ? tokens / totalTokens
+              : 0,
+        // Defensivt per-modell-anropsfält OM protokollet bär det (kartan
+        // dokumenterar endast {modelId,totalTokens,share}) — annars är
+        // antal = sessioner som körde modellen (ovan), aldrig påhittat.
+        antal:
+          num(m?.modelRequestCount) ??
+          num(m?.requestCount) ??
+          (antalPerModell.get(id) ?? 0),
+      });
+    }
+    modeller.sort((a, b) => b.tokens - a.tokens);
+
+    return {
+      råSvar,
+      totalTokens,
+      inputTokens: num(summa?.inputTokens),
+      outputTokens: num(summa?.outputTokens),
+      reasoningTokens: num(summa?.reasoningTokens),
+      cacheReadTokens: num(summa?.cacheReadTokens),
+      cacheCreationTokens: num(summa?.cacheCreationTokens),
+      cacheHitRate: num(summa?.cacheHitRate),
+      totalSessions: num(summa?.totalSessions),
+      totalTurns: num(summa?.totalTurns),
+      toolCallCount: num(summa?.toolCallCount),
+      modeller,
+      generatedAt: typeof råSvar?.generatedAt === "string" ? råSvar.generatedAt : undefined,
+      timeZone: typeof råSvar?.timeZone === "string" ? råSvar.timeZone : undefined,
+      totalTokens24h,
+      kalla24h,
+    };
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) return [];
+    // VÅG 85 F4: v4-grenen är PRIMÄR (rikare: patch-hunkar med radnummer).
+    // Hela kedjan måste lyckas (prenumeration + rader + fileChanges) —
+    // VARJE fel ⇒ Write/Edit-motorn (bevisat bra, oförändrad v83-flöde).
+    const v4 = await this.lasFilandringarV4();
+    if (v4 !== null) return v4;
     try {
       // Senaste turnens Write/Edit/MultiEdit-delar bär hela diffunderlaget
       // (VBe §5) — se filandringarUrMessages. Diff är lyx: ALDRIG fel.
@@ -1868,6 +2773,109 @@ class AppServerTransport implements StudioTransport {
       return filandringarUrMessages(svar);
     } catch {
       return [];
+    }
+  }
+
+  /**
+   * VÅG 85 F4: filändringar ur v4-grenen (BEVISAT sond3 2026-09-09):
+   * rowsRange → senaste "turnHeader"-raden → fileChanges med spårad
+   * revision + färsk logEpoch. Returnerar null när v4-flödet ej kan
+   * leverera (inte ansluten, inga rader, stale/timeout) — anroparen
+   * faller då på Write/Edit-motorn. En tom lista är ett ÄRLIGT svar
+   * ("inga ändringar denna turnen") — ALDRIG null.
+   */
+  private async lasFilandringarV4(): Promise<StudioFilandring[] | null> {
+    if (!this.klient?.lever || !this.sid || !this.v4Ansluten || !this.v4LogEpoch) return null;
+    try {
+      // Färsk logEpoch + rader. TARGET = SENASTE turnHeader-raden (sond3:
+      // toolCall-rader → proto.staleTarget, övriga → guard.actionUnavailable).
+      const rr = (await this.klient.request(
+        "v4/conversation/rowsRange",
+        { sessionId: this.sid, clientMode: "web-remote-replayable", limit: 100 },
+        15_000,
+      )) as { rows?: unknown[]; atLogEpoch?: unknown; atSeq?: unknown } | null;
+      const logEpoch =
+        typeof rr?.atLogEpoch === "string" && rr.atLogEpoch ? rr.atLogEpoch : this.v4LogEpoch;
+      const rader = Array.isArray(rr?.rows) ? (rr!.rows as unknown[]) : [];
+      let target: { rowId: number; entityId: string } | null = null;
+      for (let i = rader.length - 1; i >= 0; i--) {
+        const r = rader[i] as { kind?: unknown; rowId?: unknown; entityId?: unknown } | null;
+        if (r?.kind === "turnHeader" && typeof r.rowId === "number" && typeof r.entityId === "string" && r.entityId) {
+          target = { rowId: r.rowId, entityId: r.entityId };
+          break;
+        }
+      }
+      if (!target) return null; // inga samtalsrader ⇒ v4 har ingen diff att ge
+      // baseRevision: den LIVE-spårade revisionen (state.updated-ramar).
+      // Stale (revisionen hunnit gå vidare) ⇒ EN retry med atSeq som
+      // kandidat — annars null (motorn tar över).
+      const baser = [this.v4Revision];
+      if (typeof rr?.atSeq === "number") baser.push(rr.atSeq);
+      for (const basRevision of baser) {
+        try {
+          const fc = (await this.klient.request(
+            "v4/conversation/fileChanges",
+            {
+              sessionId: this.sid,
+              target,
+              baseRevision: basRevision,
+              baseLogEpoch: logEpoch,
+            },
+            15_000,
+          )) as {
+            items?: {
+              path?: unknown;
+              additions?: unknown;
+              deletions?: unknown;
+              patches?: { oldStart?: unknown; oldLines?: unknown; newStart?: unknown; newLines?: unknown; lines?: unknown }[];
+            }[];
+          } | null;
+          const items = Array.isArray(fc?.items) ? fc!.items! : [];
+          const ut: StudioFilandring[] = [];
+          for (const item of items.slice(0, MAX_FILER)) {
+            const sokvag = typeof item.path === "string" && item.path ? item.path : null;
+            if (!sokvag) continue;
+            const raderUt: StudioRadandring[] = [];
+            const punkter: { oldStart: number; oldLines: number; newStart: number; newLines: number; rader: string[] }[] = [];
+            for (const p of Array.isArray(item.patches) ? item.patches : []) {
+              const oldStart = typeof p.oldStart === "number" ? p.oldStart : 0;
+              const oldLines = typeof p.oldLines === "number" ? p.oldLines : 0;
+              const newStart = typeof p.newStart === "number" ? p.newStart : 0;
+              const newLines = typeof p.newLines === "number" ? p.newLines : 0;
+              const lines: string[] = [];
+              for (const linje of Array.isArray(p.lines) ? p.lines : []) {
+                if (typeof linje !== "string") continue;
+                lines.push(linje.length > MAX_RADLANGD ? `${linje.slice(0, MAX_RADLANGD)}…` : linje);
+                // Unified form: "+x" = tillagd, "−x" = borttagen, " x" =
+                // kontext (ej med i ±-panelen).
+                if (linje.startsWith("+")) {
+                  raderUt.push({ typ: "+", text: linje.slice(1).slice(0, MAX_RADLANGD) });
+                } else if (linje.startsWith("-")) {
+                  raderUt.push({ typ: "-", text: linje.slice(1).slice(0, MAX_RADLANGD) });
+                }
+              }
+              if (lines.length > 0) {
+                punkter.push({ oldStart, oldLines, newStart, newLines, rader: lines.slice(0, 120) });
+              }
+            }
+            ut.push({
+              sokvag,
+              plus: typeof item.additions === "number" ? item.additions : raderUt.filter((r) => r.typ === "+").length,
+              minus: typeof item.deletions === "number" ? item.deletions : raderUt.filter((r) => r.typ === "-").length,
+              rader: raderUt.slice(0, MAX_RADER_PER_FIL),
+              ...(punkter.length > 0 ? { punkter: punkter.slice(0, 40) } : {}),
+            });
+          }
+          return ut; // ÄRLIGT v4-svar (tom lista = inga ändringar)
+        } catch (fel) {
+          const text = fel instanceof Error ? fel.message : String(fel);
+          if (!text.includes("stale")) throw fel; // ej ett stale-fel → ge upp v4
+          // stale → pröva nästa base-kandidat (sista varvet = ge upp → null)
+        }
+      }
+      return null;
+    } catch {
+      return null; // v4 otillgängligt/timeout — Write/Edit-motorn tar över
     }
   }
 
@@ -2158,10 +3166,224 @@ class AppServerTransport implements StudioTransport {
     return { niva: bekräftad };
   }
 
+  /**
+   * V83 B1 (kartan §4A + LIVE-sond tool-results/v83-b1-toolupdated-sond.mjs
+   * 2026-09-09) — VÅG 85 F1: UTBRUTEN ur påNotis så mål-loopen delar EXAKT
+   * samma verktygskorts-mappning: kinds scheduled/started/progress/result/
+   * error, merge på toolCallId. SONDFAKTA: kind "result" bär {toolCallId,
+   * result, duration} UTAN toolName — namnet skickas DÄRFÖR bara när
+   * protokollet säger det (UI:t:s merge skriver aldrig över "Bash" med
+   * "verktyg"); kind "scheduled" bär enbart inputRef (inputOmitted) —
+   * argumenten kommer via model.streaming tool_call.
+   */
+  private sändVerktygKort(
+    payload: SessionEventParams["payload"],
+    lyssnare: StudioLyssnare,
+  ): void {
+    const kind = payload?.kind;
+    const id =
+      typeof payload?.toolCallId === "string" && payload.toolCallId
+        ? payload.toolCallId
+        : `tc-ingen-id-${this.okandaVerktyg++}`;
+    const namn =
+      typeof payload?.toolName === "string" && payload.toolName ? payload.toolName : undefined;
+    if (kind === "scheduled") {
+      lyssnare({
+        typ: "verktyg_kort",
+        id,
+        ...(namn ? { namn } : {}),
+        steg: "planerad",
+        argument: argumentText(payload?.input),
+        beskrivning: typeof payload?.description === "string" ? payload.description : undefined,
+      });
+      // Bakåtkompatibel chip-rad (v81-UI) lever kvar.
+      if (namn) lyssnare({ typ: "verktyg", namn, händelse: "start" });
+    } else if (kind === "started") {
+      lyssnare({
+        typ: "verktyg_kort",
+        id,
+        ...(namn ? { namn } : {}),
+        steg: "startar",
+      });
+    } else if (kind === "progress") {
+      lyssnare({
+        typ: "verktyg_kort",
+        id,
+        ...(namn ? { namn } : {}),
+        steg: "kör",
+        framsteg: {
+          elapsedMs: typeof payload?.elapsedMs === "number" ? payload.elapsedMs : undefined,
+          utdata:
+            typeof payload?.stdoutTail === "string" && payload.stdoutTail
+              ? truncat(payload.stdoutTail, MAX_PROGRESS_TEEKEN)
+              : typeof payload?.stderrTail === "string" && payload.stderrTail
+                ? truncat(payload.stderrTail, MAX_PROGRESS_TEEKEN)
+                : undefined,
+        },
+      });
+    } else if (kind === "result") {
+      lyssnare({
+        typ: "verktyg_kort",
+        id,
+        ...(namn ? { namn } : {}),
+        steg: "resultat",
+        resultat: resultatText(payload?.result),
+        varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
+      });
+      if (namn) lyssnare({ typ: "verktyg", namn, händelse: "slut" });
+    } else if (kind === "error") {
+      lyssnare({
+        typ: "verktyg_kort",
+        id,
+        ...(namn ? { namn } : {}),
+        steg: "fel",
+        fel: felText(payload?.error),
+      });
+      if (namn) lyssnare({ typ: "verktyg", namn, händelse: "slut" });
+    }
+  }
+
+  /**
+   * VÅG 85 F1: händelsehanterare för MÅL-LOOPEN (påNotis dirigerar hit när
+   * målet är aktivt och ingen klientprompt strömmar). Varje protokoll-turn
+   * blir: mal_iteration(start) → SAMMA streaming-/verktygskort-event som en
+   * chattad turn → runda(slut) + mal_iteration(slut) med iterationsnumret
+   * (KVD: räknaren lever i transporten; turn.completed ⇒ mal_iteration).
+   * SLUT-pixeln ger ALDRIG "klart" — loopen fortsätter tills paus/rensa;
+   * en misslyckad iteration (resultType ≠ success) markeras ärligt i
+   * eventet men dödar inte loopen.
+   */
+  private hanteraMalEvent(typ: string, payload: SessionEventParams["payload"]): void {
+    switch (typ) {
+      case "turn.started":
+        this.malIteration += 1;
+        this.malSenasteText = "";
+        this.sändMalEvent({ typ: "mal_iteration", fas: "start", iteration: this.malIteration });
+        this.sändMalEvent({ typ: "runda", fas: "start" });
+        this.sändMalEvent({
+          typ: "status",
+          text: `Agenten utvecklar autonomt — iteration ${this.malIteration}…`,
+        });
+        return;
+      case "tool.updated":
+        this.sändVerktygKort(payload, (event) => this.sändMalEvent(event));
+        return;
+      case "part.delta":
+        // Defensivt (kartan §4A): field "input" = verktygsargument strömmas.
+        if (payload?.field === "input" && typeof payload?.delta === "string" && payload.delta) {
+          this.sändMalEvent({
+            typ: "verktyg_input",
+            id: typeof payload?.partId === "string" && payload.partId ? payload.partId : "live",
+            text: payload.delta,
+          });
+        }
+        return;
+      case "model.streaming": {
+        // tool_input_delta strömmar argumenten MEDAN modellen skriver dem;
+        // tool_call lever hela paketet (samma tolkning som promptvägen).
+        const kind = typeof payload?.kind === "string" ? payload.kind : "";
+        if (kind === "tool_input_delta" && typeof payload?.delta === "string" && payload.delta) {
+          this.sändMalEvent({
+            typ: "verktyg_input",
+            id:
+              typeof payload?.toolCallId === "string" && payload.toolCallId
+                ? payload.toolCallId
+                : "live",
+            text: payload.delta,
+          });
+          return;
+        }
+        if (kind === "tool_call") {
+          this.sändMalEvent({
+            typ: "verktyg_kort",
+            id:
+              typeof payload?.toolCallId === "string" && payload.toolCallId
+                ? payload.toolCallId
+                : `tc-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+            namn:
+              typeof payload?.toolName === "string" && payload.toolName
+                ? payload.toolName
+                : "verktyg",
+            steg: "planerad",
+            argument: argumentText(payload?.input),
+          });
+          return;
+        }
+        if (typeof payload?.delta !== "string" || !payload.delta) return;
+        this.sändMalEvent({
+          typ: "delta",
+          kanal: payload.kind === "reasoning_delta" ? "tankar" : "text",
+          text: payload.delta,
+        });
+        if (payload.kind !== "reasoning_delta") this.malSenasteText += payload.delta;
+        return;
+      }
+      case "model.response.completed":
+        // Helheten — fallback om turn.completed bär tom response.
+        if (typeof payload?.content === "string" && payload.content) {
+          this.malSenasteText = payload.content;
+        }
+        return;
+      case "turn":
+      case "turn.completed": {
+        // KVD-PIXELN: turn.completed i mål-loopen ⇒ mal_iteration(slut)
+        // med iterationsnummer + rundstatistik ("turn" = äldre form).
+        this.sändMalEvent({
+          typ: "runda",
+          fas: "slut",
+          varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
+          resultatTyp: typeof payload?.resultType === "string" ? payload.resultType : undefined,
+          verktygAntal: typeof payload?.toolCallCount === "number" ? payload.toolCallCount : undefined,
+          tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
+        });
+        this.sändMalEvent({
+          typ: "mal_iteration",
+          fas: "slut",
+          iteration: this.malIteration,
+          svar:
+            typeof payload?.response === "string" && payload.response
+              ? payload.response
+              : this.malSenasteText || undefined,
+          resultatTyp: typeof payload?.resultType === "string" ? payload.resultType : undefined,
+          verktygAntal: typeof payload?.toolCallCount === "number" ? payload.toolCallCount : undefined,
+          tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
+          varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
+        });
+        return;
+      }
+      default: {
+        // Verktygshändelser (tool.* — namn varierar mellan versioner).
+        if (typ.startsWith("tool.")) {
+          const namn = payload?.name || payload?.toolName || "verktyg";
+          const slut = /finish|completed|ended|result$/i.test(typ);
+          this.sändMalEvent({ typ: "verktyg", namn, händelse: slut ? "slut" : "start" });
+        }
+        return;
+      }
+    }
+  }
+
   /** Notis-mottagare: översätter protokollhändelser till StudioEvent. */
   private påNotis(m: ProtokollMeddelande): void {
     const aktiv = this.aktiv;
     const params = m.params as SessionEventParams | StateUpdatedParams | undefined;
+
+    // VÅG 85 F4: v4-grenens ramar (BEVISAT sond2/3) — kommer SOM EGNA
+    // notiser (ej i session/event-strömmen, kartan §4F). En "complete"-ram
+    // bär frame.payload.deltas[] där op "state.updated" + patch.revision
+    // är KÄLLAN för fileChanges baseRevision (≠ rowsRange.atSeq!). Spåras
+    // ALWAYS (även utan pågående prompt — revisionen lever mellan turner).
+    if (m.method === "v4/conversation/frame") {
+      const p = m.params as { topic?: unknown; kind?: unknown; frame?: { payload?: { deltas?: unknown[] } } } | undefined;
+      if (p?.topic === `conversation/${this.sid}` && p?.frame?.payload?.deltas) {
+        for (const d of p.frame.payload.deltas as { op?: unknown; patch?: { revision?: unknown } }[]) {
+          if (d?.op === "state.updated" && typeof d.patch?.revision === "number") {
+            this.v4Revision = Math.max(this.v4Revision, d.patch.revision);
+          }
+        }
+      }
+      return; // v4-ramar konsumeras här — aldrig vidare till chattströmmen
+    }
 
     if (m.method === "session/event") {
       const p = params as SessionEventParams | undefined;
@@ -2176,6 +3398,16 @@ class AppServerTransport implements StudioTransport {
       // Event från annan session än den aktva (t.ex. en kasserad session
       // under självläknings-omskapandet) skall aldrig blandas in.
       if (p?.sessionId && this.sid && p.sessionId !== this.sid) return;
+      // VÅG 85 F1: MÅL-LOOPEN — utan pågående KLIENVPROMPT äger ett AKTIVT
+      // mål strömmen: protokollet matar nya turner av sig självt (v83 B3-
+      // bevis) och ALLA händelser (streaming, verktygskort, rundor) går
+      // till mål-lyssnaren så varje autonom iteration renderas som en
+      // KOMPLETT turn i chatten. En pågående klientprompt vinner ALWAYS
+      // (mål-turner körs inte samtidigt — serverns -32010-serialisering).
+      if (this.malAktiv && !this.malPausad && (!aktiv || aktiv.färdig)) {
+        this.hanteraMalEvent(typ, payload);
+        return;
+      }
       if (!aktiv || aktiv.färdig) return; // utanför pågående prompt: strunt
 
       switch (typ) {
@@ -2188,73 +3420,13 @@ class AppServerTransport implements StudioTransport {
           // V83 B1 (kartan §4A + LIVE-sond tool-results/v83-b1-toolupdated-
           // sond.mjs 2026-09-09): kinds scheduled/started/progress/result/
           // error — varje verktygskall blir ett kort (merge på toolCallId).
-          // SONDFAKTA: kind "result" bär {toolCallId,result,duration} UTAN
-          // toolName — namn skickas DÄRFÖR bara när protokollet säger det,
-          // så UI:t:s merge (event.namn ?? befintligt.namn) aldrig skriver
-          // över "Bash" med "verktyg". Kind "scheduled" bär ENBART inputRef/
-          // inputByteLength (inputOmitted) — argumenten kommer via
-          // model.streaming tool_call (den mappningen lever kvar nedan).
-          const kind = payload?.kind;
-          const id =
-            typeof payload?.toolCallId === "string" && payload.toolCallId
-              ? payload.toolCallId
-              : `tc-ingen-id-${this.okandaVerktyg++}`;
-          const namn =
-            typeof payload?.toolName === "string" && payload.toolName ? payload.toolName : undefined;
-          if (kind === "scheduled") {
-            aktiv.lyssnare({
-              typ: "verktyg_kort",
-              id,
-              ...(namn ? { namn } : {}),
-              steg: "planerad",
-              argument: argumentText(payload?.input),
-              beskrivning: typeof payload?.description === "string" ? payload.description : undefined,
-            });
-            // Bakåtkompatibel chip-rad (v81-UI) lever kvar.
-            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "start" });
-          } else if (kind === "started") {
-            aktiv.lyssnare({
-              typ: "verktyg_kort",
-              id,
-              ...(namn ? { namn } : {}),
-              steg: "startar",
-            });
-          } else if (kind === "progress") {
-            aktiv.lyssnare({
-              typ: "verktyg_kort",
-              id,
-              ...(namn ? { namn } : {}),
-              steg: "kör",
-              framsteg: {
-                elapsedMs: typeof payload?.elapsedMs === "number" ? payload.elapsedMs : undefined,
-                utdata:
-                  typeof payload?.stdoutTail === "string" && payload.stdoutTail
-                    ? truncat(payload.stdoutTail, MAX_PROGRESS_TEEKEN)
-                    : typeof payload?.stderrTail === "string" && payload.stderrTail
-                      ? truncat(payload.stderrTail, MAX_PROGRESS_TEEKEN)
-                      : undefined,
-              },
-            });
-          } else if (kind === "result") {
-            aktiv.lyssnare({
-              typ: "verktyg_kort",
-              id,
-              ...(namn ? { namn } : {}),
-              steg: "resultat",
-              resultat: resultatText(payload?.result),
-              varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
-            });
-            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
-          } else if (kind === "error") {
-            aktiv.lyssnare({
-              typ: "verktyg_kort",
-              id,
-              ...(namn ? { namn } : {}),
-              steg: "fel",
-              fel: felText(payload?.error),
-            });
-            if (namn) aktiv.lyssnare({ typ: "verktyg", namn, händelse: "slut" });
-          }
+          // VÅG 85 F1: mappningen är DELAD med mål-loopen (sändVerktygKort)
+          // så en autonom iteration får EXAKT samma kort som en chattad
+          // turn. SONDFAKTOR kvarstår: kind "result" bär {toolCallId,
+          // result, duration} UTAN toolName; kind "scheduled" bär enbart
+          // inputRef (inputOmitted) — argumenten kommer via model.streaming
+          // tool_call.
+          this.sändVerktygKort(payload, aktiv.lyssnare);
           return;
         }
         case "part.delta": {
@@ -2369,6 +3541,20 @@ class AppServerTransport implements StudioTransport {
       // Compact-väckare: kompakteringsturnen slutar med idle (BEVISAT v82 —
       // broadcasten kommer även utan pågående prompt).
       if (status === "idle" && this.idleVakt) this.idleVakt();
+      // VÅG 85 F1: mål-loopens puls — running utan klientprompt blir ett
+      // status-event på mål-strömmen (bannerns "arbetar"-text mellan
+      // turn-pixlar). idle tigs STILLA (mellan iterationer vilar loopen).
+      if (
+        status === "running" &&
+        this.malAktiv &&
+        !this.malPausad &&
+        (!this.aktiv || this.aktiv.färdig)
+      ) {
+        this.sändMalEvent({
+          typ: "status",
+          text: `Agenten utvecklar autonomt — iteration ${Math.max(1, this.malIteration)}…`,
+        });
+      }
       if (!aktiv || aktiv.färdig) return;
       if (status === "running") {
         // V83 B1: state.updated-patchen kan bära projektionen (tasks) —
@@ -2593,6 +3779,12 @@ class MockTransport implements StudioTransport {
   private readonly mockHistorik = new Map<string, StudioHistorikPost[]>();
   private readonly mockMeta = new Map<string, { turns: number; tokens: number }>();
   private mockMal: string | null = null;
+  /** VÅG 85 F1 (mock): mål-lägets state + loop-lyssnare + timer. */
+  private mockMalAktiv = false;
+  private mockMalPausad = false;
+  private mockMalIteration = 0;
+  private mockMalLyssnare: StudioLyssnare | null = null;
+  private mockMalTimer: ReturnType<typeof setTimeout> | null = null;
   private readonly mockSubagenter: StudioSubagent[] = [
     {
       barnSessionId: "sess_mock_sub_1",
@@ -2651,6 +3843,20 @@ class MockTransport implements StudioTransport {
 
   async nySession(modellId?: string): Promise<string> {
     if (modellId) this.mockModell = modellId;
+    // VÅG 85 F1 (mock): en frisk session föds utan mål — loopen stannar
+    // och mål-läget släcks (samma ärlighet som prod:s skapaFriskSession).
+    this.stoppaMockMalLoop();
+    this.mockMal = null;
+    this.mockMalAktiv = false;
+    this.mockMalPausad = false;
+    this.mockMalIteration = 0;
+    this.mockMalLyssnare?.({
+      typ: "mal_status",
+      aktiv: false,
+      pausad: false,
+      iteration: 0,
+      mal: null,
+    });
     if (this.mockSid) {
       // "Tidigare sessioner" finns kvar i listan även efter kassering —
       // v83 B3: historik + turns/tokens sparas så resume kan återge dem.
@@ -2841,7 +4047,7 @@ class MockTransport implements StudioTransport {
   async lasMal(): Promise<StudioMalSvar> {
     await this.ensure();
     return this.mockMal
-      ? { mal: this.mockMal, meddelande: this.mockMal }
+      ? { mal: this.mockMal, meddelande: this.mockMal, aktiv: this.mockMalAktiv }
       : { mal: null, meddelande: "Inget mål är satt för sessionen." };
   }
 
@@ -2849,14 +4055,189 @@ class MockTransport implements StudioTransport {
     const malText = mal.trim().slice(0, 500);
     if (!malText) throw new Error("Målet är tomt.");
     await this.ensure();
+    // VÅG 85 F1: mål-set STARTAR den simulerade autonoma loopen (dev) —
+    // samma eventföljd som prod (mal_iteration start → verktygskort →
+    // streaming → runda/mal_iteration slut), om och om igen tills paus/
+    // rensa. Deterministisk: ~7 s mellan iterationer, ingen modell.
     this.mockMal = malText;
-    return { mal: malText, meddelande: "Mock: målet satt." };
+    this.mockMalAktiv = true;
+    this.mockMalPausad = false;
+    this.mockMalIteration = 0;
+    this.mockMalLyssnare?.({
+      typ: "mal_status",
+      aktiv: true,
+      pausad: false,
+      iteration: 0,
+      mal: malText,
+    });
+    this.startaMockMalLoop();
+    return { mal: malText, meddelande: "Mock: målet satt — autonoma iterationer simuleras." };
   }
 
   async rensaMal(): Promise<StudioMalSvar> {
     await this.ensure();
+    this.stoppaMockMalLoop();
     this.mockMal = null;
+    this.mockMalAktiv = false;
+    this.mockMalPausad = false;
+    this.mockMalIteration = 0;
+    this.mockMalLyssnare?.({
+      typ: "mal_status",
+      aktiv: false,
+      pausad: false,
+      iteration: 0,
+      mal: null,
+    });
     return { mal: null, meddelande: "Mock: målet rensat." };
+  }
+
+  // ── VÅG 85 F1 (mock): mål-läget — deterministisk loop-simulering ──────────
+
+  malStatus(): StudioMalStatus {
+    return {
+      aktiv: this.mockMalAktiv,
+      pausad: this.mockMalPausad,
+      iteration: this.mockMalIteration,
+      mal: this.mockMal,
+    };
+  }
+
+  prenumereraMal(lyssnare: StudioLyssnare): () => void {
+    this.mockMalLyssnare = lyssnare;
+    lyssnare({
+      typ: "mal_status",
+      aktiv: this.mockMalAktiv,
+      pausad: this.mockMalPausad,
+      iteration: this.mockMalIteration,
+      mal: this.mockMal,
+    });
+    return () => {
+      if (this.mockMalLyssnare === lyssnare) this.mockMalLyssnare = null;
+    };
+  }
+
+  async pausaMal(): Promise<StudioMalSvar> {
+    await this.ensure();
+    if (!this.mockMal) return { mal: null, meddelande: "Mock: inget mål att pausa." };
+    this.stoppaMockMalLoop();
+    this.mockMalLyssnare?.({ typ: "mal_pausad", iteration: this.mockMalIteration });
+    this.mockMalAktiv = false;
+    this.mockMalPausad = true;
+    this.mockMalLyssnare?.({
+      typ: "mal_status",
+      aktiv: false,
+      pausad: true,
+      iteration: this.mockMalIteration,
+      mal: this.mockMal,
+    });
+    return { mal: this.mockMal, meddelande: "Mock: målet pausat — iterationerna stannar." };
+  }
+
+  async aterupptaMal(): Promise<StudioMalSvar> {
+    await this.ensure();
+    if (!this.mockMal) return { mal: null, meddelande: "Mock: inget mål att återuppta." };
+    this.mockMalAktiv = true;
+    this.mockMalPausad = false;
+    this.mockMalLyssnare?.({
+      typ: "mal_status",
+      aktiv: true,
+      pausad: false,
+      iteration: this.mockMalIteration,
+      mal: this.mockMal,
+    });
+    this.startaMockMalLoop();
+    return { mal: this.mockMal, meddelande: "Mock: målet återupptaget — loopen fortsätter." };
+  }
+
+  async sondMal(): Promise<StudioMalStatus> {
+    await this.ensure();
+    return this.malStatus();
+  }
+
+  /** Starta den simulerade mål-loopen (timer-driven — städas i stoppa…). */
+  private startaMockMalLoop(): void {
+    this.stoppaMockMalLoop();
+    const kör = (): void => {
+      if (!this.mockMalAktiv || !this.mockMal) return;
+      const l = this.mockMalLyssnare;
+      if (!l) {
+        this.mockMalTimer = setTimeout(kör, 3_000);
+        return;
+      }
+      const n = this.mockMalIteration + 1;
+      this.mockMalIteration = n;
+      l({ typ: "mal_iteration", fas: "start", iteration: n });
+      l({ typ: "runda", fas: "start" });
+      l({ typ: "status", text: `Agenten utvecklar autonomt — iteration ${n}… (mock)` });
+      // Verktygskort 1: Bash med resultat (sökverktygets puls).
+      l({
+        typ: "verktyg_kort",
+        id: `mock-mal-bash-${n}`,
+        namn: "Bash",
+        steg: "planerad",
+        beskrivning: `Iteration ${n}: letar filer mot målet`,
+      });
+      l({
+        typ: "verktyg_kort",
+        id: `mock-mal-bash-${n}`,
+        namn: "Bash",
+        steg: "resultat",
+        argument: '{"command":"find . -name \\"*.md\\" | head -20"}',
+        resultat: "README.md\nworklog.md\nMEGA_PLAN.md",
+        varaktighetMs: 120 + n,
+      });
+      // Verktygskort 2: Write — ändringspanelens diff (per iteration).
+      this.mockAndringar = [
+        {
+          sokvag: `data/mal-iteration-${n}.md`,
+          plus: 2,
+          minus: 0,
+          rader: [
+            { typ: "+", text: `# Autonom iteration ${n}` },
+            { typ: "+", text: "Steg mot målet (mock-simulering)" },
+          ],
+        },
+      ];
+      l({
+        typ: "verktyg_kort",
+        id: `mock-mal-write-${n}`,
+        namn: "Write",
+        steg: "resultat",
+        argument: `{"file_path":"data/mal-iteration-${n}.md"}`,
+        resultat: "Filen skapad (2 rader).",
+        varaktighetMs: 40,
+      });
+      // Streaming: iterationens svar.
+      const svar = `**Iteration ${n} mot målet klar (mock).** Loopen fortsätter — pausa när du vill.`;
+      l({ typ: "delta", kanal: "text", text: svar });
+      l({
+        typ: "runda",
+        fas: "slut",
+        varaktighetMs: 900 + n * 10,
+        resultatTyp: "success",
+        verktygAntal: 2,
+        tokenCount: 96 + n,
+      });
+      l({
+        typ: "mal_iteration",
+        fas: "slut",
+        iteration: n,
+        svar,
+        resultatTyp: "success",
+        verktygAntal: 2,
+        tokenCount: 96 + n,
+        varaktighetMs: 900 + n * 10,
+      });
+      this.mockMalTimer = setTimeout(kör, 7_000);
+    };
+    this.mockMalTimer = setTimeout(kör, 1_200);
+  }
+
+  private stoppaMockMalLoop(): void {
+    if (this.mockMalTimer !== null) {
+      clearTimeout(this.mockMalTimer);
+      this.mockMalTimer = null;
+    }
   }
 
   async lasSubagenter(): Promise<StudioSubagent[]> {
@@ -2889,6 +4270,151 @@ class MockTransport implements StudioTransport {
       modellerTillgangliga: 5,
       kommandon: 12,
     };
+  }
+
+  // ── VÅG 85 F3 (mock): usage/stats — deterministisk, >0 för dev-E2E ──────
+
+  async lasUsage(): Promise<StudioUsageSvar> {
+    await this.ensure();
+    // Speglar protokollets svarform (kartan §2) med tydligt mock-märkta
+    // modellnamn + fasta siffror >0 — dev-E2E:t (GET svarar med usage-
+    // siffror >0) går igenom utan modell; prod bär de ÄRLIGA siffrorna.
+    const totalTokens = 1_048_576;
+    const modeller: StudioUsageModell[] = [
+      { modell: "mock-glm-5.3", tokens: 786_432, andel: 0.75, antal: 6 },
+      { modell: "mock-glm-5.2", tokens: 262_144, andel: 0.25, antal: 2 },
+    ];
+    return {
+      råSvar: {
+        range: "7d",
+        generatedAt: new Date().toISOString(),
+        timeZone: "UTC",
+        source: "mock",
+        summary: {
+          totalTokens,
+          inputTokens: 917_504,
+          outputTokens: 131_072,
+          reasoningTokens: 65_536,
+          cacheCreationTokens: 40_960,
+          cacheReadTokens: 311_296,
+          cacheHitRate: 0.31,
+          totalSessions: 8,
+          totalTurns: 96,
+          toolCallCount: 240,
+          toolErrorRate: 0.01,
+          modelErrorRate: 0,
+        },
+        byModel: [
+          { modelId: "mock-glm-5.3", totalTokens: 786_432, share: 0.75 },
+          { modelId: "mock-glm-5.2", totalTokens: 262_144, share: 0.25 },
+        ],
+      },
+      totalTokens,
+      inputTokens: 917_504,
+      outputTokens: 131_072,
+      reasoningTokens: 65_536,
+      cacheReadTokens: 311_296,
+      cacheCreationTokens: 40_960,
+      cacheHitRate: 0.31,
+      totalSessions: 8,
+      totalTurns: 96,
+      toolCallCount: 240,
+      modeller,
+      totalTokens24h: Math.round(totalTokens / 7),
+      kalla24h: "snitt",
+    };
+  }
+
+  // ── VÅG 85 F2: skills/plugins/MCP — deterministisk dev-simulering ────────
+  // Speglar prod-formerna (referenceCatalog/plugins/list/mcp/list) så
+  // panelen, API-rutten och dev-E2E:kedjan bevisas utan barnprocess.
+
+  async lasSkills(): Promise<StudioSkill[]> {
+    await this.ensure();
+    return [
+      {
+        id: "mock:ak1a-analys",
+        namn: "ak1a-analys",
+        beskrivning: "Användarens eget ekosystem-ramverk (5 horisonter × 5 teorier × 4 dimensioner) med Monte Carlo och Kelly (mock-demo av skills/referenceCatalog).",
+        omfattning: "user",
+        sokvag: "C:/Users/…/.agents/skills/ak1a-analys/SKILL.md",
+        aktiv: true,
+      },
+      {
+        id: "mock:pdf",
+        namn: "pdf",
+        beskrivning: "Professionell PDF-verktygslåda — rapporter, affischer, uppsatser, extrahering och sammanslagning (mock).",
+        omfattning: "plugin",
+        aktiv: true,
+      },
+      {
+        id: "mock:presentation",
+        namn: "presentation",
+        beskrivning: "Avstängd demo-skill — panelen gråmar scope inaktiva (mock).",
+        omfattning: "workspace",
+        aktiv: false,
+      },
+    ];
+  }
+
+  async lasPlugins(): Promise<StudioPlugin[]> {
+    await this.ensure();
+    return [
+      {
+        id: "document-skills",
+        namn: "document-skills",
+        beskrivning: "DOCX/PDF/PPTX/XLSX — dokumentverktygen (mock-demo av plugins/list).",
+        version: "0.1.4",
+        aktiv: true,
+        skillAntal: 4,
+        kalla: "zcode-plugins-official",
+      },
+      {
+        id: "android-emulator",
+        namn: "android-emulator",
+        beskrivning: "Bygg, kör och inspektera Android-appar (mock).",
+        version: "0.1.0",
+        aktiv: true,
+        skillAntal: 1,
+        kalla: "zcode-plugins-official",
+      },
+      {
+        id: "ios-simulator",
+        namn: "ios-simulator",
+        beskrivning: "Tillgänglig men ej aktiverad — panelen visar den utan grön prick (mock).",
+        version: "0.1.0",
+        aktiv: false,
+        skillAntal: 1,
+        kalla: "zcode-plugins-official",
+      },
+    ];
+  }
+
+  async lasMcp(): Promise<StudioMcpServer[]> {
+    await this.ensure();
+    return [
+      {
+        namn: "android-emulator",
+        status: "connected",
+        transport: "stdio",
+        verktygAntal: 23,
+        uppdaterad: new Date().toISOString(),
+      },
+      {
+        namn: "web-reader",
+        status: "connected",
+        transport: "http",
+        verktygAntal: 1,
+        uppdaterad: new Date().toISOString(),
+      },
+      {
+        namn: "demo-nere",
+        status: "failed",
+        transport: "stdio",
+        verktygAntal: 0,
+        fel: "anslutningen nekades (mock-demo av fel-vägen)",
+      },
+    ];
   }
 
   async skicka(prompt: string, lyssnare: StudioLyssnare, signal?: AbortSignal): Promise<void> {

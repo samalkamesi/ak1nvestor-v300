@@ -58,6 +58,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     beskrivning: "Öppna filträdet över agentens arbetsyta (förhandsgranska filer och bilder)",
     kalla: "lokal",
   },
+  {
+    namn: "fardigheter",
+    syntax: "/fardigheter",
+    beskrivning: "Öppna Färdigheter ⚡ — agentens skills, aktiva plugins och anslutna MCP-verktyg",
+    kalla: "lokal",
+  },
 ];
 
 /** Resultat av parsaKommando — kommando utan skrå + resten som argument. */

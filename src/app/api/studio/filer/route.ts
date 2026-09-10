@@ -1,4 +1,4 @@
-import { readFile, readdir, realpath, rm, stat } from "node:fs/promises";
+import { mkdir, readFile, readdir, realpath, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { NextRequest } from "next/server";
@@ -37,6 +37,19 @@ export const dynamic = "force-dynamic";
  * DELETE → töm uploads-roten (samma rot som /api/studio/uppladdning) →
  *   {raderade} — knappen "Töm uploads" i filträdsdrawern.
  *
+ * POST {sokvag, innehall} (VÅG 85 F5 INLINE-KODVY — kundens väg att styra
+ *   agentens KOD UTAN TERMINAL): skriver en TEXT-fil i arbetsytan. UI:t
+ *   visar redigeringsläget ENDAST i plan-läge (KVD: granskande läge) —
+ *   servern litar inte på det: samma inneslutningsvakt som GET (segment →
+ *   resolve → realpath-prefix) + hårda tak:
+ *     · ENDAST kända textändelser/namn (TEXT_ANDANDER/TEXT_NAMN) — aldrig
+ *       godtyckliga binärer eller ändelselösa nya filer.
+ *     · Känsliga filer (.env*, *.pem, *.key, …) NEKAS skrivning.
+ *     · Max 200 kB innehåll (kodvy-editorn visar ändå bara ≤ 20 kB).
+ *     · Föräldrakatalog skapas (recursive) — fortfarande under roten.
+ *   → {spara:"sparad", sokvag, storlek}. Agentens NÄSTA turn ser filen
+ *   på disk (notisen i UI:t talar om det).
+ *
  * PROTOKOLLKARTAN (tool-results/v83-protokollkarta.md §6): det FINNS ingen
  * filläsningsmetod i session/*-protokollet (fil-diffar finns endast i
  * v4-grenen) → läsning sker med node:fs — men ALDRIG utanför arbetsytan:
@@ -67,6 +80,8 @@ const MAX_NODER = 500;
 const MAX_TEXT_BYTE = 20 * 1024;
 /** Binär serving-tak (samma som uppladdningens per-fil-tak). */
 const MAX_BINAR_BYTE = 30 * 1024 * 1024;
+/** VÅG 85 F5: skriv-tak för POST (kodvy-editorn) — 200 kB text räcker gott. */
+const MAX_SPARA_BYTE = 200 * 1024;
 /** Max segment i en begärd sökväg. */
 const MAX_SEGMENT = 10;
 
@@ -465,4 +480,81 @@ export async function DELETE(req: NextRequest) {
     );
   }
   return jsonSvar({ raderade });
+}
+
+// ── POST — VÅG 85 F5: spara textfil ur kodvy-editorn ─────────────────────────
+
+export async function POST(req: NextRequest) {
+  const skydd = requireAdmin(req);
+  if (skydd) return skydd;
+
+  // Kropp: {sokvag, innehall} — båda måste vara strängar (tom innehåll
+  // är LAGLIGT: en fil kan rensas).
+  let kropp: { sokvag?: unknown; innehall?: unknown };
+  try {
+    kropp = (await req.json()) as { sokvag?: unknown; innehall?: unknown };
+  } catch {
+    return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
+  }
+  const sokvag = typeof kropp.sokvag === "string" ? kropp.sokvag.trim() : "";
+  const innehall = typeof kropp.innehall === "string" ? kropp.innehall : null;
+  if (!sokvag) return jsonSvar({ fel: "Parameter sokvag krävs." }, 400);
+  if (innehall === null) return jsonSvar({ fel: "Parameter innehall (sträng) krävs." }, 400);
+  if (Buffer.byteLength(innehall, "utf8") > MAX_SPARA_BYTE) {
+    return jsonSvar({ fel: "Filen är större än 200 kB — spara mindre filer via editorn." }, 413);
+  }
+
+  // Inneslutningsvakten — IDENTISKA lager som GET-grenarna.
+  let hel: string;
+  try {
+    const rot = await lasRot();
+    hel = await vaktaSokvag(sokvag, rot);
+  } catch (fel) {
+    return jsonSvar({ fel: fel instanceof Error ? fel.message : "Ogiltig sökväg." }, 400);
+  }
+
+  // Känsliga filer skrivs ALDRIG (samma lista som förhandsgranskningen).
+  const namn = path.basename(hel);
+  if (arKanslig(namn)) {
+    return jsonSvar({ fel: "Känslig fil (miljö/nyckel) — skrivning är blockerad i studion." }, 403);
+  }
+
+  // ENDAST kända textformat (GET:s förhandsgranskningsvillkor) — editorn
+  // ska aldrig kunna skapa godtyckliga binärer/ändelselösa filer.
+  const ande = andelse(namn);
+  const arText = TEXT_ANDANDER.has(ande) || (!ande && TEXT_NAMN.has(namn.toLowerCase()));
+  if (!arText) {
+    return jsonSvar(
+      { fel: "Endast text-/kodfiler (md, ts, tsx, js, json, css, …) kan sparas via editorn." },
+      400,
+    );
+  }
+
+  // Existerar filen redan (via symlink?) — vaktaSokvag realpath:ade den;
+  // en NY fil saknar realpath tills den finns: kontrollen ovan kastade då
+  // "Filen finns inte" — skapa den under roten och realpath-kontrollera
+  // EFTER skapandet (lagenlig dua: resolve inom roten → skriv → verifiera).
+  try {
+    await mkdir(path.dirname(hel), { recursive: true });
+    await writeFile(hel, innehall, "utf8");
+    // Efterhandskontroll: den verkliga sökvägen MÅSTE fortfarande ligga
+    // under roten (fångar symlink-kataloger i en nyskapad gren).
+    const rot = await lasRot();
+    const verklig = await realpath(hel);
+    const jamfor = process.platform === "win32" ? (p: string) => p.toLowerCase() : (p: string) => p;
+    const under =
+      jamfor(verklig) === jamfor(rot.verklig) ||
+      jamfor(verklig).startsWith(jamfor(rot.verklig) + path.sep);
+    if (!under) {
+      await rm(hel, { force: true });
+      return jsonSvar({ fel: "Sökvägen lämnar arbetsytan — avvisad." }, 400);
+    }
+    const info = await stat(hel);
+    return jsonSvar({ spara: "sparad", sokvag, storlek: info.size });
+  } catch (fel) {
+    return jsonSvar(
+      { fel: fel instanceof Error ? fel.message.slice(0, 200) : "Filen kunde ej sparas." },
+      500,
+    );
+  }
 }

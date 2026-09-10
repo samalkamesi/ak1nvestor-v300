@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import {
+  Activity,
   ArrowDown,
   ArrowUp,
   Bell,
@@ -19,8 +20,6 @@ import {
   Diff,
   Download,
   ExternalLink,
-  Eye,
-  EyeOff,
   FilePen,
   FileText,
   FileArchive,
@@ -28,16 +27,14 @@ import {
   FileImage,
   FolderSearch,
   FolderTree,
-  FolderUp,
   Globe,
   History,
   Link2,
   ListChecks,
   Loader2,
+  Menu,
   MessageCircleQuestion,
   Moon,
-  MoreVertical,
-  Paperclip,
   Pencil,
   Play,
   Plus,
@@ -49,7 +46,6 @@ import {
   Settings,
   ShieldAlert,
   ShieldCheck,
-  Sparkles,
   Shrink,
   SquarePen,
   Star,
@@ -1503,8 +1499,8 @@ function StudioMarkdown({
 
 /**
  * En valbar rad i Inställningar-drawern (⚙️) — radio-cirkel + titel +
- * beskrivning. min-h-12 = 48 px tryckyta (kundens mobilbild: klickmålen i
- * headerns dropdowns var för små — här är varje alternativ en hel rad).
+ * beskrivning. VÅG 89 J1: min-h-[52px] = STOR tryckyta (mission: 52px-knappar
+ * med beskrivning per rad — kundens mobilbild: alla klickmål ska kännas).
  */
 function InstallningarRad({
   vald,
@@ -1532,7 +1528,7 @@ function InstallningarRad({
       disabled={disabled}
       title={val ? `${titel} (${val})` : titel}
       className={cn(
-        "flex min-h-12 w-full items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors",
+        "flex min-h-[52px] w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
         vald ? "bg-gold/15" : "hover:bg-white/10",
         disabled && "cursor-default opacity-50",
       )}
@@ -2445,9 +2441,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   // /api/studio/stream (historiken) besvarats; tom chatt + laddar ⇒ 3
   // animerade paper/50-bubblor i stället för tomrum (Z-känsla direkt).
   const [laddarHistorik, setLaddarHistorik] = React.useState(true);
-  // ── VÅG 86 G3: INPUT-EDITOR — 👁 markdown-förhandsvisning + roterande
-  // placeholder (index växlar på varje focus av skrivfältet).
-  const [previewOppen, setPreviewOppen] = React.useState(false);
+  // ── VÅG 86 G3: INPUT-EDITOR — roterande placeholder (index växlar på
+  // varje focus av skrivfältet). VÅG 89 J1: 👁-förhandsvisningen är borttagen
+  // (ren textarea + skicka-knapp).
   const [placeholderIx, setPlaceholderIx] = React.useState(0);
 
   // ── V2 STUDIO: modellval + kontextrad + sessioner ─────────────────────────
@@ -2455,7 +2451,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [valdModell, setValdModell] = React.useState("");
   const [byterModell, setByterModell] = React.useState(false);
   const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
-  const [visaSessioner, setVisaSessioner] = React.useState(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
   const [toast, setToast] = React.useState<{ text: string; ton: "guld" | "fel" } | null>(null);
   /** VÅG 86 G5: en rewind (fork) kör — låser ⟲-knapparna under rundan. */
@@ -2466,7 +2461,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [mal, setMal] = React.useState<string | null>(null);
   const [malSparar, setMalSparar] = React.useState(false);
   const [subagenter, setSubagenter] = React.useState<SubagentPost[]>([]);
-  const [visaAgenter, setVisaAgenter] = React.useState(false);
   const [agenterLaddar, setAgenterLaddar] = React.useState(false);
   const [agenterFel, setAgenterFel] = React.useState("");
   const [arbetsytaInfo, setArbetsytaInfo] = React.useState<ArbetsytaInfo | null>(null);
@@ -2554,8 +2548,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [regler, setRegler] = React.useState<PermissionRegel[]>([]);
   /** Regler som ref — auto-godkännandet läser färskt värde mitt i ström. */
   const reglerRef = React.useRef<PermissionRegel[]>([]);
-  /** Hanteringspanelen (lista regler + ta bort). */
-  const [visaRegler, setVisaRegler] = React.useState(false);
   /** Web Notification-rättigheten ("default"|"granted"|"denied"|"stöds ej"). */
   const [notisRattighet, setNotisRattighet] = React.useState("default");
   /** Turnens start (ms) — null när ingen turn pågår. */
@@ -2577,7 +2569,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** Tangentbordsgenvägs-översikten ("?"-tangenten). */
   const [visaGenvagar, setVisaGenvagar] = React.useState(false);
   /** Mobil-kebabmenyn (⋮) — export-knapparna bor där under sm. */
-  const [kebabOppen, setKebabOppen] = React.useState(false);
+  /** VÅG 89 J1: STOR MENY-DRAWER (☰ i headern) — ALLT som en gång satt i
+   *  verktygsraden bor här som stora listrader (ikon + text + chevron).
+   *  Undersidor (sessioner/mål/kontext/agenter/regler) fälls ut på plats. */
+  const [menyOppen, setMenyOppen] = React.useState(false);
+  const [menySessionerOppen, setMenySessionerOppen] = React.useState(false);
+  const [menyMalOppen, setMenyMalOppen] = React.useState(false);
+  const [menyKontextOppen, setMenyKontextOppen] = React.useState(false);
+  const [menyAgenterOppen, setMenyAgenterOppen] = React.useState(false);
+  const [menyReglerOppen, setMenyReglerOppen] = React.useState(false);
 
   // ── VÅG 88 I1: MENY-KONSOLIDERING — ⚙️ Inställningar-drawer ────────────────
   /** Inställnings-drawern (modell/läge/tankestyrka/tema i LISTA-form —
@@ -2785,6 +2785,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaMinne(false);
     setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
     setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setVisaNotiser(true);
   }, []);
 
@@ -2796,10 +2797,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaMinne(false);
     setVisaNotiser(false);
     setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setInstallningarOppen(true);
   }, []);
 
-  /** V84 C: be om notisrättigheten (klockknappen i verktygsraden). */
+  /** VÅG 89 J1: Öppna STORA meny-drawern (☰) — stänger alla övriga drawers
+   *  först (ömsesidig stängning, samma mönster som övriga drawers). */
+  const oppnaMeny = React.useCallback(() => {
+    setVisaFiler(false);
+    setFilVisning(null);
+    setVisaFardigheter(false);
+    setVisaMinne(false);
+    setVisaNotiser(false);
+    setVisaAdmin(false);
+    setInstallningarOppen(false);
+    setMenyOppen(true);
+  }, []);
+
+  /** V84 C: be om notisrättigheten (Notiser-raden i menyn / panelen). */
   const begraNotisRattighet = React.useCallback(async () => {
     if (typeof Notification === "undefined") {
       visaToast("Webbläsaren saknar stöd för notiser.", "fel");
@@ -2958,7 +2973,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     const befintlig = tabbar.find((t) => t.sessionId === sessionId);
     if (befintlig) {
       valjTabb(befintlig.id);
-      setVisaSessioner(false);
+      setMenyOppen(false); // VÅG 89 J1: sessionslistan bor i menyn
       return;
     }
     if (tabbar.length >= MAX_TABBAR) {
@@ -2975,7 +2990,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setTabbar((alla) => [...alla, ny]);
     setAktivTabbId(ny.id);
     setPrompt("");
-    setVisaSessioner(false);
+    setMenyOppen(false); // VÅG 89 J1: sessionslistan bor i menyn
   };
 
   // ── V84 B: PERSISTENS — tabbar + buffert i sessionStorage ─────────────────
@@ -3122,7 +3137,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             {
               id: nyttId(),
               roll: "assistant" as const,
-              text: `🛡 **${p.verktyg}** auto-godkänd enligt din regel (_alltid tillåt_${p.diff ? ` · diff: +${p.diff.plus}/−${p.diff.minus}` : ""}) — hantera regler via verktygsraden.`,
+              text: `🛡 **${p.verktyg}** auto-godkänd enligt din regel (_alltid tillåt_${p.diff ? ` · diff: +${p.diff.plus}/−${p.diff.minus}` : ""}) — hantera regler via Meny → Minnesregler.`,
             },
           ],
         }));
@@ -4316,6 +4331,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const oppnaFiltrad = React.useCallback(() => {
     setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
     setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setVisaFiler(true);
     void lasTrad();
   }, [lasTrad]);
@@ -4420,6 +4436,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaFardigheter(false);
     setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
     setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setMinneVald(null);
     setMinneRedigerar(false);
     setMinneNy(false);
@@ -4580,6 +4597,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaMinne(false);
     setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
     setVisaAdmin(false); // VÅG 88 I2: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setVisaFardigheter(true);
     void lasFardigheter();
   }, [lasFardigheter]);
@@ -4593,6 +4611,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setVisaFardigheter(false);
     setVisaNotiser(false);
     setInstallningarOppen(false); // VÅG 88 I1: ömsesidig stängning
+    setMenyOppen(false); // VÅG 89 J1: menyn stängs
     setVisaAdmin(true);
   }, []);
 
@@ -4834,7 +4853,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
         case "komprimera":
           await komprimera();
-          pushAssistant("Komprimering körd — se kontextraden för färsk tokenräkning.");
+          pushAssistant("Komprimering körd — se Meny → Kontext för färsk tokenräkning.");
           return;
         case "filer":
           oppnaFiltrad();
@@ -4849,13 +4868,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
         case "sparad": {
           // VÅG 86 G2: /sparad = promptbiblioteket. Utan argument öppnas
           // dropdownen; med text sparas texten OCH dropdownen öppnas så
-          // sparandet syns direkt (⭐-knappen gör samma sak).
+          // sparandet syns direkt (samma som att köra /sparad med text).
           const sparade = argument ? sparaPrompt(argument) : false;
           oppnaPrompter();
           pushAssistant(
             sparade
               ? "Prompten sparad i biblioteket ⭐ — klicka en rad för att infoga den i skrivfältet."
-              : "Promptbiblioteket ⭐ är öppet — klicka en sparad prompt för att infoga den, papperskorgen tar bort. Spara nya med ⭐-knappen bredvid skicka.",
+              : "Promptbiblioteket ⭐ är öppet — klicka en sparad prompt för att infoga den, papperskorgen tar bort. Spara nya med /sparad + din text.",
           );
           return;
         }
@@ -5518,12 +5537,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
           // VÅG 86 G2: Esc stänger även promptbibliotekets dropdown
           setPrompterOppen(false);
         }
-        // V86 G6/G7: Esc stänger alltid öppna paneler/overlay/kebab (no-op
-        // när dom redan är stängda — samma mönster som paletten ovan).
+        // V86 G6/G7: Esc stänger alltid öppna paneler/overlay (no-op när dom
+        // redan är stängda — samma mönster som paletten ovan).
         setVisaGenvagar(false);
         setVisaNotiser(false);
         setInstallningarOppen(false); // VÅG 88 I1: inställnings-drawern
-        setKebabOppen(false);
+        setMenyOppen(false); // VÅG 89 J1: meny-drawern (☰)
         return;
       }
       const mal = e.target as HTMLElement | null;
@@ -5568,16 +5587,6 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const prickFärg =
     live === "live" ? "bg-emerald-500" : live === "demo" ? "bg-gold-soft" : "bg-red-500";
   const prickText = live === "live" ? "LIVE" : live === "demo" ? "DEMO" : "NED";
-
-  // VÅG 88 I1: vald modells VISNINGSNAMN — headerns etikett ("AK1A Studio ·
-  // GLM-5.3") + Inställningar-drawerns radio-etikett. Listan bär namnet ur
-  // config.json; utan träff faller modellBadge (id:t trimmat).
-  const modellEtikett = React.useMemo(
-    () =>
-      modeller.find((m) => m.id === valdModell)?.namn ??
-      (valdModell ? modellBadge(valdModell) : "—"),
-    [modeller, valdModell],
-  );
 
   // Kontextberäkning (V2): protokollets ÄRLIGA contextWindow är taket
   // (200 000 för zai/GLM vid v82-beviset); 1 000 000 endast som reserv.
@@ -5629,653 +5638,101 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* Marin rubrikrad — VÅG 88 I1 MENY-KONSOLIDERING: headern är ENRADIG
-            och REN (logo | Studio-titel + modell | status-prick | ⚙️) —
-            dropdowns (modell/läge/tanke) + tema-knapp bor numera i
-            Inställningar-drawern (stora tryckytor på mobil). Kontextraden
-            (tokens + verktygsrad) lever kvar under. */}
+      {/* VÅG 89 J1 STUDIO RENSNING: headern = ENkel rad (h-12) — logo +
+            "Studio" + LIVE-prick + ☰-menyknapp (h-10 w-10). ALLT annat
+            (modell-etikett, kontext, verktyg, export) bor i meny-drawern. */}
       {/* VÅG 87 H4 1: studio-safe-top = pt-safe (env(safe-area-inset-top) —
           viewport-fit=cover i page.tsx ger env() värden under notch/statusrad). */}
       <header className="marin-panel studio-safe-top sticky top-0 z-20 border-b border-gold/25 shadow-md">
-        <div className="mx-auto w-full max-w-3xl px-3 py-2 sm:px-4 sm:py-3">
-          <div className="flex items-center gap-2">
-            <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
-            <div className="min-w-0 flex-1">
-              {/* VÅG 88 I1: vald modell som etikett vid titeln — "AK1A Studio · GLM-5.3". */}
-              <h1 className="min-w-0 truncate font-serif text-base font-bold leading-tight tracking-tight text-[#EDE6D6] sm:text-lg">
-                AK1A <span className="text-gold">Studio</span>
-                <span
-                  className="ml-1.5 whitespace-nowrap align-middle font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-[#EDE6D6]/55 sm:text-[11px]"
-                  title={`Vald modell: ${modellEtikett} — byt under ⚙️ Inställningar`}
-                >
-                  · {modellEtikett}
-                </span>
-              </h1>
-            </div>
-            {/* VÅG 88 I1: status-pricken — liten prick i titelraden, ingen egen
-                badge-rad (title/aria-label bär LIVE/DEMO/NED-texten). */}
-            <span
-              className={cn("h-2 w-2 shrink-0 animate-pulse rounded-full", prickFärg)}
-              role="status"
-              aria-label={`${prickText}: ${statusText}`}
-              title={`${prickText} — ${statusText}`}
-            />
-            {/* VÅG 85 F1: MÅL-BADGE — guldpulserande när loopen kör +
-                iterationsräknare; klick öppnar mål-dialogen. */}
-            {mal && (
-              <button
-                onClick={oppnaMalDialog}
-                title={
-                  malKör
-                    ? `MÅL AKTIVT — agenten utvecklar autonomt (iteration ${malIteration}) · klicka för att se/ändra målet`
-                    : malPausat
-                      ? `MÅL PAUSAT efter ${malIteration} iterationer · klicka för att återuppta`
-                      : "Mål satt — klicka för att öppna mål-läget"
+        <div className="mx-auto flex h-12 w-full max-w-3xl items-center gap-2 px-3 sm:px-4">
+          <VarumarkesLogo storlek="sm" medText={false} onClick={hem} />
+          <div className="min-w-0 flex-1">
+            <h1 className="min-w-0 truncate font-serif text-base font-bold leading-tight tracking-tight text-[#EDE6D6]">
+              AK1A <span className="text-gold">Studio</span>
+            </h1>
+          </div>
+          {/* VÅG 85 F1/88 I1: status-pricken — liten prick i titelraden
+              (title/aria-label bär LIVE/DEMO/NED-texten). */}
+          <span
+            className={cn("h-2 w-2 shrink-0 animate-pulse rounded-full", prickFärg)}
+            role="status"
+            aria-label={`${prickText}: ${statusText}`}
+            title={`${prickText} — ${statusText}`}
+          />
+          {/* VÅG 89 J1: ☰ MENY — ENDAST knappen i headern (h-10 w-10) — öppnar
+              STORA meny-drawern: inställningar, sessioner, mål, filer, minne,
+              färdigheter, verktyg, export och kontext-info. Inga små
+              ikonknapper i chattvyn längre. */}
+          <button
+            onClick={() => (menyOppen ? setMenyOppen(false) : oppnaMeny())}
+            title="Meny — inställningar, sessioner, mål, filer, export m.m."
+            aria-label="Meny"
+            aria-expanded={menyOppen}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
+      </header>
+
+      {/* VÅG 89 J1: SÖK-RAD — visas ENDAST när sök är påslaget (från menyn).
+          Ingen permanent verktygsrad i chattvyn — detta är en tillfällig rad
+          som försvinner igen (Esc / X). Highlight + räknare + pilnavigering
+          (Enter = nästa träff, Skift+Enter = föregående). */}
+      {sokOppen && (
+        <div className="z-10 border-b border-gold/20 bg-[#0D1B31]/95 backdrop-blur">
+          <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 px-3 py-2 sm:px-4">
+            <Search className="h-4 w-4 shrink-0 text-gold" />
+            <input
+              ref={sokInputRef}
+              value={sokFras}
+              onChange={(e) => setSokFras(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  hoppaSok(e.shiftKey ? -1 : 1);
                 }
-                className={cn(
-                  "flex shrink-0 items-center gap-1 rounded-full border px-2 py-1 transition-colors",
-                  malKör
-                    ? "animate-pulse border-gold/70 bg-gold/20 text-gold"
-                    : malPausat
-                      ? "border-gold/30 bg-black/20 text-[#EDE6D6]/75"
-                      : "border-gold/40 bg-gold/10 text-gold/90",
-                )}
-              >
-                <Target className="h-3 w-3 shrink-0" />
-                <span className="text-[9px] font-bold tracking-wider">
-                  {malKör ? "MÅL AKTIVT" : malPausat ? "MÅL PAUSAT" : "MÅL"}
-                </span>
-                <span className="rounded-full bg-black/40 px-1.5 text-[9px] font-bold tabular-nums text-gold">
-                  {malIteration}
-                </span>
-              </button>
-            )}
-            {/* VÅG 88 I1: ⚙️ Inställningar — ALLA kontroller (modell, läge,
-                tankestyrka, tema) i EN drawer med stora tryckytor. h-9 w-9 =
-                mobilvänligt klickmål i headerns enda rad. */}
+              }}
+              placeholder="Sök i chatten…"
+              maxLength={120}
+              className="min-h-11 min-w-0 flex-1 rounded-lg border border-gold/40 bg-black/30 px-3 py-2 text-sm text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
+            />
+            <span className="shrink-0 font-mono text-[11px] tabular-nums text-[#EDE6D6]/60" aria-live="polite">
+              {sokFras.trim()
+                ? sokTräffar.length > 0
+                  ? `${Math.min(sokIndex, sokTräffar.length - 1) + 1}/${sokTräffar.length}`
+                  : "0 träffar"
+                : ""}
+            </span>
             <button
-              onClick={() => (installningarOppen ? setInstallningarOppen(false) : oppnaInstallningar())}
-              title="Inställningar — modell, läge, tankestyrka och tema"
-              aria-label="Inställningar (modell, läge, tankestyrka, tema)"
-              aria-expanded={installningarOppen}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-black/25 text-gold transition-colors hover:border-gold/60 hover:bg-black/40"
+              onClick={() => hoppaSok(-1)}
+              disabled={sokTräffar.length === 0}
+              title="Föregående träff (Skift+Enter)"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
             >
-              <Settings className="h-4 w-4" />
+              <ArrowUp className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => hoppaSok(1)}
+              disabled={sokTräffar.length === 0}
+              title="Nästa träff (Enter)"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
+            >
+              <ArrowDown className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => {
+                setSokOppen(false);
+                setSokFras("");
+              }}
+              title="Stäng sök (Esc)"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+            >
+              <X className="h-4 w-4" />
             </button>
           </div>
         </div>
-
-        {/* KONTEXTRAD (V2 → VÅG 88 I1 förenklad): "📊 X tkn · Y%" — inget mer.
-            Progressbaren och totalen bor i Inställningar-drawern (⚙️) —
-            headerns rad ska läsas på en sekund även på mobil. */}
-        <div className="border-t border-gold/15 bg-black/15">
-          <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-1.5 sm:px-4">
-            <span
-              className="whitespace-nowrap text-[11px] tabular-nums text-[#EDE6D6]/85"
-              title={`Denna runda: ${rundaTkn !== null ? `${tkn(rundaTkn)} tkn` : "—"} · totalt ~${tkn(ackumulerat)} tkn${kontextProcent !== null ? ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av taket (${tkn(kontextTak)})` : ""} — detaljer under ⚙️ Inställningar`}
-            >
-              📊 {tkn(ackumulerat)} tkn
-              {kontextProcent !== null && (
-                <span className={cn("ml-1 font-semibold", kontextProcent >= KONTEXT_VARNING_PROCENT ? "text-gold" : "text-[#EDE6D6]/60")}>
-                  · {kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}%
-                </span>
-              )}
-            </span>
-            <span className="ml-auto flex items-center gap-0.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {/* V84 100x-mobilfix: horisontell ikonrad — text-etiketterna
-                  göms under sm (ikon + title kvar), raden scrollar aldrig
-                  sidan utan rullar i sig själv. */}
-              {/* V84 A4: sök i chatten — highlight + räknare + pilnavigering */}
-              <button
-                onClick={() => {
-                  const ny = !sokOppen;
-                  setSokOppen(ny);
-                  if (!ny) setSokFras("");
-                }}
-                title="Sök i chatten (highlight + pilnavigering)"
-                className={cn(
-                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
-                  sokOppen ? "text-gold" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
-                )}
-              >
-                <Search className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Sök</span>
-              </button>
-              {/* V84 A2: kommandopaletten — även på mobil (ingen Ctrl där) */}
-              <button
-                onClick={oppnaPalett}
-                title="Kommandopalett (Ctrl/Cmd+K)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <Command className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">⌘K</span>
-              </button>
-              {/* V84 A5 + V86 G7: exportera chatten — markdown + HTML.
-                  Mobil (<sm): knappen bor i kebabmenyn (⋮) i stället. */}
-              <button
-                onClick={exporteraChat}
-                title="Exportera chatten som markdown-fil (datum i filnamnet)"
-                className="hidden items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:flex"
-              >
-                <Download className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Exportera</span>
-              </button>
-              {/* V86 G7: HTML-exporten — snygg fristående fil, printbar */}
-              <button
-                onClick={exporteraChatHtml}
-                title="Exportera chatten som fristående HTML-fil i AK1A-stil (printbar — öppna och skriv ut)"
-                className="hidden items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:flex"
-              >
-                <Printer className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Exportera HTML</span>
-              </button>
-              {/* V86 G7: kebabmeny (⋮) — export-knapparna på mobil */}
-              <button
-                onClick={() => setKebabOppen((v) => !v)}
-                title="Exportera — markdown eller HTML (Genvägar finns också här)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] sm:hidden"
-              >
-                <MoreVertical className="h-3.5 w-3.5" />
-              </button>
-              <button
-                onClick={() => {
-                  setVisaMinne(false);
-                  setMinneVald(null);
-                  setMinneRedigerar(false);
-                  setMinneNy(false);
-                  setVisaFardigheter(false);
-                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
-                  if (visaFiler) setVisaFiler(false);
-                  else oppnaFiltrad();
-                }}
-                title="Filträdet — agentens arbetsyta (förhandsgranska filer och bilder, töm uploads)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <FolderTree className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Filer</span>
-              </button>
-              {/* VÅG 84 D: Minne 🧠 — agentens minnesfiler, redigerbara */}
-              <button
-                onClick={() => {
-                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
-                  if (visaMinne) setVisaMinne(false);
-                  else oppnaMinne();
-                }}
-                title="Minne — vad agenten kommer ihåg (minnesfiler + stående instruktioner, redigerbara)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <Brain className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Minne</span>
-                {minneFiler && minneFiler.length > 0 && (
-                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">
-                    {minneFiler.length}
-                  </span>
-                )}
-              </button>
-              {/* VÅG 85 F2: Färdigheter ⚡ — skills/plugins/MCP ("vad agenten KAN") */}
-              <button
-                onClick={() => {
-                  setVisaNotiser(false); // V86 G6: ömsesidig stängning
-                  if (visaFardigheter) setVisaFardigheter(false);
-                  else oppnaFardigheter();
-                }}
-                title="Färdigheter — vad agenten KAN (skills/referenceCatalog + plugins/list + mcp/list)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <Zap className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Färdigheter</span>
-                {fardigheterSkills && fardigheterSkills.length > 0 && (
-                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">
-                    {fardigheterSkills.length}
-                  </span>
-                )}
-              </button>
-              {/* VÅG 88 I2: Verktyg 🔧 — admin-kommandon (variabler/priser,
-                  blogg-publicering, minne) — kunden styr hela systemet
-                  från ETT ställe; studion kräver redan admin ⇒ alltid synlig. */}
-              <button
-                onClick={() => {
-                  if (visaAdmin) setVisaAdmin(false);
-                  else oppnaAdmin();
-                }}
-                title="Verktyg — admin-kommandon (variabler/priser, blogg-publicering, minne)"
-                aria-label="Verktyg (admin-kommandon)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-gold/90 transition-colors hover:bg-gold/15 hover:text-gold"
-              >
-                <Wrench className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Verktyg</span>
-              </button>
-              <button
-                onClick={() => void startaNySession()}
-                disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
-                title="Kassera sessionen och börja en frisk kontext (1M-fönstret börjar om — gamla sessioner finns kvar i listan)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
-              >
-                {sessionJobbar === "ny" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <SquarePen className="h-3.5 w-3.5" />}
-                <span className="hidden sm:inline">Ny session</span>
-              </button>
-              <button
-                onClick={() => void komprimera()}
-                disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
-                title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
-              >
-                {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
-                <span className="hidden sm:inline">Komprimera</span>
-              </button>
-              {/* VÅG 83 B3 + VÅG 85 F1: MÅL (session/goal — öppnar den STORA
-                  mål-dialogen: beskriv utvecklingsmålet → Starta → autonom
-                  loop) + BAKGRUNDSAGENTER (subagents) */}
-              <button
-                onClick={oppnaMalDialog}
-                title="Mål-läge (session/goal) — beskriv ett utvecklingsmål och agenten itererar autonomt tills du pausar"
-                className={cn(
-                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
-                  malKör ? "text-gold" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
-                )}
-              >
-                <Target className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Mål</span>
-                {malKör ? (
-                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold tabular-nums text-gold" title={`Autonom iteration ${malIteration} kör`}>
-                    {malIteration}
-                  </span>
-                ) : (
-                  mal && <span className="h-1.5 w-1.5 rounded-full bg-gold" title="Mål satt" />
-                )}
-              </button>
-              <button
-                onClick={() => {
-                  const ny = !visaAgenter;
-                  setVisaAgenter(ny);
-                  if (ny) void lasAgenter();
-                }}
-                title="Bakgrundsagenter (session/subagents) — status + avbryt"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <Bot className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Agenter</span>
-              </button>
-              <button
-                onClick={() => {
-                  const ny = !visaSessioner;
-                  setVisaSessioner(ny);
-                  if (ny) void lasSessioner();
-                }}
-                title="Sessioner (session/list) — klicka en session för att öppna den (session/resume)"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <History className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Sessioner</span>
-                {sessioner.length > 0 && <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{sessioner.length}</span>}
-              </button>
-              {/* V84 C: REGLER — "alltid tillåt"-minnet (localStorage) med
-                  hanteringspanel; NOTISER — Web Notification vid >60 s-turner. */}
-              <button
-                onClick={() => setVisaRegler((v) => !v)}
-                title="Minnesregler — ”alltid tillåt” per verktyg (localStorage ak1a-studio-regler); matchande begäranden godkänns automatiskt"
-                className="flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-              >
-                <ShieldCheck className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Regler</span>
-                {regler.length > 0 && (
-                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{regler.length}</span>
-                )}
-              </button>
-              {/* V86 G6: 🔔 öppnar NOTISPANELEN (historik + på/av + töm) —
-                  rättigheten begärs numera inuti panelen, inte på klicket. */}
-              <button
-                onClick={() => (visaNotiser ? setVisaNotiser(false) : oppnaNotiser())}
-                title={
-                  notisRattighet === "granted"
-                    ? `Notishistorik — rundor över 60 s pingar och ”✓ Klar (N tkn)” loggas (${notiser.length} i historiken)`
-                    : `Notishistorik (${notiser.length}) — slå på notiser inuti panelen: rundor över 60 s pingar när agenten är klar`
-                }
-                className={cn(
-                  "flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] transition-colors hover:bg-white/10",
-                  notisRattighet === "granted" ? "text-emerald-300" : "text-[#EDE6D6]/85 hover:text-[#EDE6D6]",
-                )}
-              >
-                {notisRattighet === "granted" ? <BellRing className="h-3.5 w-3.5" /> : <Bell className="h-3.5 w-3.5" />}
-                <span className="hidden sm:inline">Notiser</span>
-                {notiser.length > 0 && (
-                  <span className="rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">{notiser.length}</span>
-                )}
-              </button>
-            </span>
-          </div>
-
-          {/* V84 C: REGELPANEL — "alltid tillåt"-minnet (lista + ta bort). */}
-          {visaRegler && (
-            <div className="border-t border-gold/15 bg-black/25">
-              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-                  Minnesregler — {regler.length === 0 ? "inga sparade" : `${regler.length} ${regler.length === 1 ? "regel" : "regler"}`}
-                </p>
-                {regler.length === 0 ? (
-                  <p className="text-[11px] leading-relaxed text-[#EDE6D6]/50">
-                    Inga ”alltid tillåt”-regler än — spara en direkt i godkännandedialogen
-                    (”⛨ Alltid tillåta &lt;verktyg&gt;”) så godkänns framtida begäranden för
-                    verktyget automatiskt med en notis i flödet. Reglerna lever i denna
-                    webbläsare (localStorage) och påverkar aldrig serverns egna regler.
-                  </p>
-                ) : (
-                  <ul className="space-y-1">
-                    {regler.map((r) => (
-                      <li
-                        key={r.verktyg}
-                        className="group flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
-                        title={`${r.verktyg} — sparad ${new Date(r.skapad).toLocaleString("sv-SE")}`}
-                      >
-                        {(() => {
-                          const klass = verktygsriskKlass(r.verktyg);
-                          return (
-                            <span
-                              className={cn("shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-wider", klass.farg)}
-                              title={klass.forklaring}
-                            >
-                              {klass.etikett}
-                            </span>
-                          );
-                        })()}
-                        <span className="min-w-0 flex-1 truncate font-mono">{r.verktyg}</span>
-                        <span className="shrink-0 text-[9px] uppercase tracking-wider text-emerald-300/80">alltid tillåt</span>
-                        <button
-                          onClick={() => {
-                            tabortRegel(r.verktyg);
-                            visaToast(`Regeln för ${r.verktyg} borttagen — framtida begäranden visar dialogen igen.`);
-                          }}
-                          title="Ta bort regeln"
-                          className="shrink-0 rounded p-0.5 text-[#EDE6D6]/40 transition-colors hover:bg-red-500/20 hover:text-red-300"
-                        >
-                          <Trash2 className="h-3 w-3" />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* V84 A4: SÖKFÄLT — highlight i chatten + räknare + pilnavigering
-              (Enter = nästa träff, Skift+Enter = föregående, Esc = stäng). */}
-          {sokOppen && (
-            <div className="border-t border-gold/15 bg-black/25">
-              <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 px-3 py-1.5 sm:px-4">
-                <Search className="h-3.5 w-3.5 shrink-0 text-gold" />
-                <input
-                  ref={sokInputRef}
-                  value={sokFras}
-                  onChange={(e) => setSokFras(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault();
-                      hoppaSok(e.shiftKey ? -1 : 1);
-                    }
-                  }}
-                  placeholder="Sök i chatten…"
-                  maxLength={120}
-                  className="min-w-0 flex-1 rounded-md border border-gold/40 bg-black/30 px-2.5 py-1 text-[11px] text-[#EDE6D6] outline-none placeholder:text-[#EDE6D6]/40 focus:border-gold/70"
-                />
-                <span className="shrink-0 font-mono text-[10px] tabular-nums text-[#EDE6D6]/60" aria-live="polite">
-                  {sokFras.trim()
-                    ? sokTräffar.length > 0
-                      ? `${Math.min(sokIndex, sokTräffar.length - 1) + 1}/${sokTräffar.length}`
-                      : "0 träffar"
-                    : ""}
-                </span>
-                <button
-                  onClick={() => hoppaSok(-1)}
-                  disabled={sokTräffar.length === 0}
-                  title="Föregående träff (Skift+Enter)"
-                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
-                >
-                  <ArrowUp className="h-3.5 w-3.5" />
-                </button>
-                <button
-                  onClick={() => hoppaSok(1)}
-                  disabled={sokTräffar.length === 0}
-                  title="Nästa träff (Enter)"
-                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-40"
-                >
-                  <ArrowDown className="h-3.5 w-3.5" />
-                </button>
-                <button
-                  onClick={() => {
-                    setSokOppen(false);
-                    setSokFras("");
-                  }}
-                  title="Stäng sök (Esc)"
-                  className="shrink-0 rounded-md p-1 text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-                >
-                  <X className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* VÅG 85 F1: MÅL-RADEN (headerns meny) — målet visas när det finns
-              med iterationsräknare + Pausa/Återuppta + Redigera (dialog) +
-              Rensa. När loopen kör bygger den autonoma bannern (ovanför
-              chatten) vidare på samma status. */}
-          {mal && (
-            <div className="border-t border-gold/15 bg-black/10">
-              <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-3 py-1.5 sm:px-4">
-                <Target className="h-3.5 w-3.5 shrink-0 text-gold" />
-                <span
-                  className="min-w-0 flex-1 truncate text-[11px] font-medium text-[#EDE6D6]/90"
-                  title={mal}
-                >
-                  {mal}
-                </span>
-                <span
-                  className={cn(
-                    "shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold tabular-nums",
-                    malKör ? "bg-gold/20 text-gold" : "bg-white/10 text-[#EDE6D6]/70",
-                  )}
-                  title={`Iterationer sedan målet sattes: ${malIteration}`}
-                >
-                  iter {malIteration}
-                </span>
-                {malSparar || malPausar ? (
-                  <Loader2 className="h-3 w-3 shrink-0 animate-spin text-gold" />
-                ) : malKör ? (
-                  <button
-                    onClick={() => void pausaMal()}
-                    title="Pausa målet (session/stop — den pågående iterationen avbryts)"
-                    className="shrink-0 rounded-md border border-gold/40 px-1.5 py-0.5 text-[10px] font-semibold text-gold transition-colors hover:bg-gold/15"
-                  >
-                    Pausa
-                  </button>
-                ) : malPausat ? (
-                  <button
-                    onClick={() => void aterupptaMal()}
-                    title="Återuppta målet (session/goal resume) — agenten fortsätter mot målet"
-                    className="shrink-0 rounded-md border border-emerald-400/40 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-300 transition-colors hover:bg-emerald-400/15"
-                  >
-                    Återuppta
-                  </button>
-                ) : null}
-                <button
-                  onClick={oppnaMalDialog}
-                  title="Redigera målet (mål-dialogen — session/goal set)"
-                  className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
-                >
-                  <Pencil className="h-3 w-3" />
-                </button>
-                <button
-                  onClick={() => void rensaMaler()}
-                  disabled={malSparar}
-                  title="Rensa målet (session/goal clear)"
-                  className="shrink-0 rounded p-0.5 text-[#EDE6D6]/60 transition-colors hover:bg-red-500/20 hover:text-red-300 disabled:opacity-50"
-                >
-                  <X className="h-3 w-3" />
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Guld-varning: kontexten > 80 % av taket (KVD kontext-optimering) */}
-          {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
-            <div className="border-t border-gold/30 bg-gold/10">
-              <p className="mx-auto w-full max-w-3xl px-3 py-1.5 text-[11px] font-semibold text-gold sm:px-4">
-                ⚠ Överväg ny session — kontexten närmar sig taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)})
-              </p>
-            </div>
-          )}
-
-          {/* Sessionslista (V2 + V83 B3): modell · vändor · tokens · tid —
-              klicka = session/resume (historiken återkommer i chatten). */}
-          {visaSessioner && (
-            <div className="border-t border-gold/15 bg-black/25">
-              <div className="mx-auto max-h-56 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-                  Sessioner {sessioner.length === 0 && "— ingen lista ännu"} · klicka = öppna i NY TABB
-                </p>
-                {arbetsytaInfo && (
-                  <p
-                    className="mb-1.5 truncate text-[10px] text-[#EDE6D6]/45"
-                    title={`${arbetsytaInfo.arbetsyta}${arbetsytaInfo.behorighet ? ` · behörighet ${arbetsytaInfo.behorighet}` : ""}${typeof arbetsytaInfo.kommandon === "number" ? ` · ${arbetsytaInfo.kommandon} kommandon` : ""}`}
-                  >
-                    Arbetsyta {arbetsytaInfo.arbetsyta.split("/").filter(Boolean).pop() ?? arbetsytaInfo.arbetsyta}
-                    {arbetsytaInfo.lage && ` · läge ${arbetsytaInfo.lage}`}
-                    {arbetsytaInfo.modell && ` · ${arbetsytaInfo.modell}`}
-                    {arbetsytaInfo.tankeNiva && ` · tanke ${arbetsytaInfo.tankeNiva}`}
-                    {typeof arbetsytaInfo.modellerTillgangliga === "number" &&
-                      ` · ${arbetsytaInfo.modellerTillgangliga} modeller`}
-                  </p>
-                )}
-                <ul className="space-y-1">
-                  {sessioner.map((s) => (
-                    <li
-                      key={s.sessionId}
-                      className="group flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80 transition-colors hover:bg-white/10"
-                      title={s.sessionId}
-                    >
-                      <span
-                        className={cn(
-                          "h-1.5 w-1.5 shrink-0 rounded-full",
-                          s.status === "idle"
-                            ? "bg-emerald-400"
-                            : s.status === "completed" || s.status === "error"
-                              ? "bg-red-400/80"
-                              : "bg-gold",
-                        )}
-                      />
-                      <button
-                        onClick={() => oppnaITabb(s.sessionId, s.titel)}
-                        disabled={sessionJobbar !== ""}
-                        className="flex min-w-0 flex-1 flex-col items-start text-left disabled:cursor-default"
-                        title={
-                          tabbar.some((t) => t.sessionId === s.sessionId)
-                            ? "Sessionen är redan öppen i en tabb — växla dit"
-                            : `Öppna ${s.sessionId} i en NY TABB (resume) — historiken hämtas ur sessionen`
-                        }
-                      >
-                        <span className="w-full truncate font-medium">
-                          {s.titel || s.sessionId.slice(0, 18) + "…"}
-                          {s.sessionId === aktivSession && (
-                            <span className="ml-1.5 rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">AKTIV</span>
-                          )}
-                        </span>
-                        <span className="w-full truncate text-[9px] text-[#EDE6D6]/45">
-                          {[
-                            s.modell?.includes("/") ? s.modell.split("/").slice(1).join("/") : s.modell,
-                            typeof s.turns === "number" ? `${s.turns} vändor` : null,
-                            typeof s.tokens === "number" ? `${tkn(s.tokens)} tkn` : null,
-                            tidSen(s.uppdaterad) || null,
-                          ]
-                            .filter(Boolean)
-                            .join(" · ") || s.sessionId.slice(5, 13)}
-                        </span>
-                      </button>
-                      <span className="shrink-0 font-mono text-[9px] text-[#EDE6D6]/40">
-                        {s.sessionId.slice(5, 13)}
-                      </span>
-                      <button
-                        onClick={() => void stangSessionen(s.sessionId)}
-                        disabled={sessionJobbar !== "" || strömmarHuvud}
-                        title="Stäng sessionen (session/close) — finns kvar i listan men svarar ej"
-                        className="shrink-0 rounded p-0.5 text-[#EDE6D6]/40 opacity-0 transition-all hover:bg-red-500/20 hover:text-red-300 focus:opacity-100 group-hover:opacity-100 disabled:opacity-30"
-                      >
-                        {sessionJobbar === "stang" ? (
-                          <Loader2 className="h-3 w-3 animate-spin" />
-                        ) : (
-                          <X className="h-3 w-3" />
-                        )}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
-
-          {/* VÅG 83 B3: BAKGRUNDSAGENTER (session/subagents) — badge + avbryt */}
-          {visaAgenter && (
-            <div className="border-t border-gold/15 bg-black/25">
-              <div className="mx-auto max-h-44 w-full max-w-3xl overflow-y-auto px-3 py-2 sm:px-4">
-                <div className="mb-1.5 flex items-center gap-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-                    Bakgrundsagenter {subagenter.length > 0 && `(${subagenter.length})`}
-                  </p>
-                  <button
-                    onClick={() => void lasAgenter()}
-                    disabled={agenterLaddar}
-                    title="Uppdatera (session/subagents)"
-                    className="rounded p-0.5 text-[#EDE6D6]/50 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
-                  >
-                    <RefreshCw className={cn("h-3 w-3", agenterLaddar && "animate-spin")} />
-                  </button>
-                </div>
-                {agenterFel && <p className="text-[11px] text-red-300">{agenterFel}</p>}
-                {!agenterFel && subagenter.length === 0 && !agenterLaddar && (
-                  <p className="text-[11px] leading-relaxed text-[#EDE6D6]/50">
-                    Inga bakgrundsagenter just nu — när agenten delegerar arbete i bakgrunden
-                    syns barnagenterna här med status och avbryt-knapp.
-                  </p>
-                )}
-                <ul className="space-y-1">
-                  {subagenter.map((a) => {
-                    const kör =
-                      a.status === "running" || a.status === "waiting" || a.status === "blocked";
-                    return (
-                      <li
-                        key={a.barnSessionId}
-                        className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
-                        title={`${a.barnSessionId}${a.startad ? ` · startad ${tidSen(a.startad)} sedan` : ""}${a.avslutad ? ` · avslutad ${tidSen(a.avslutad)} sedan` : ""}${a.sammanfattning ? ` — ${a.sammanfattning}` : ""}`}
-                      >
-                        <span
-                          className={cn(
-                            "shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider",
-                            agentStatusFarg(a.status),
-                          )}
-                        >
-                          {agentStatusText(a.status)}
-                        </span>
-                        <span className="min-w-0 flex-1 truncate">
-                          {a.titel}
-                          {a.typ && <span className="ml-1.5 text-[9px] text-[#EDE6D6]/40">{a.typ}</span>}
-                        </span>
-                        {kör && (
-                          <button
-                            onClick={() => void avbrytAgent(a.barnSessionId)}
-                            title="Avbryt (session/cancelBackgroundTask)"
-                            className="shrink-0 rounded-md border border-red-500/30 px-1.5 py-0.5 text-[10px] text-red-300 transition-colors hover:bg-red-500/15 hover:text-red-200"
-                          >
-                            Avbryt
-                          </button>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
+      )}
 
       {/* VÅG 84 B: SESSIONSTABBAR — rad av tabbar ovanför chatten.
           [+] = ny tabb (egen session på servern — frisk session föds vid
@@ -6354,6 +5811,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
           )}
         </div>
       </nav>
+
+      {/* Guld-varning (VÅG 89 J1 flyttad ur headern): kontexten > 80 % av
+          taket — passiv varningsrad, detaljer under Meny → Kontext. */}
+      {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
+        <div className="z-10 border-b border-gold/30 bg-gold/10">
+          <p className="mx-auto w-full max-w-3xl px-3 py-1.5 text-[11px] font-semibold text-gold sm:px-4">
+            ⚠ Överväg ny session — kontexten närmar sig taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)})
+          </p>
+        </div>
+      )}
 
       {/* VÅG 85 F1: AUTONOM BANNER — gul, ovanför chatten, medan mål-loopen
           kör: "🎯 Agenten utvecklar autonomt — iteration N · [Pausa]". Ny
@@ -6716,15 +6183,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         )}
 
-        <div className="space-y-4">
-          {meddelanden.map((m, ix) => {
-            // VÅG 87 H3 3: GULD-DIVIDER MELLAN GRUPPER — tunn guld-våglinje
-            // när turordningen växlar (user-grupp → agent-grupp och omvänt);
-            // aldrig före det första meddelandet.
-            const nyGrupp = ix > 0 && meddelanden[ix - 1].roll !== m.roll;
+        {/* VÅG 89 J1: STORA LUFTIGA BLOCK — space-y-6 ger mycket luft mellan
+            meddelandena; INGEN guld-divider mellan turns (endast luft). */}
+        <div className="space-y-6">
+          {meddelanden.map((m) => {
             return (
               <React.Fragment key={m.id}>
-                {nyGrupp && <div className="studio-grupp-divider" aria-hidden />}
                 {m.roll === "user" ? (
               <div
                 ref={(el) => {
@@ -6733,7 +6197,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 }}
                 className="studio-fade-in flex justify-start"
               >
-                <div className="marin-panel marin-scope max-w-[85%] rounded-2xl rounded-tl-sm border border-gold/25 px-4 py-2.5 shadow-sm sm:max-w-[75%]">
+                <div className="marin-panel marin-scope max-w-[85%] rounded-2xl rounded-tl-sm border border-gold/25 p-4 shadow-sm">
                   <p className="whitespace-pre-wrap break-words text-sm leading-relaxed">
                     {sokFras.trim()
                       ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
@@ -6768,13 +6232,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   if (el) meddelandeRefs.current.set(m.id, el);
                   else meddelandeRefs.current.delete(m.id);
                 }}
-                className="studio-fade-in flex justify-end"
+                className="studio-fade-in flex"
               >
                 <div
                   className={cn(
-                    // VÅG 87 H3 3: GRADIENT-ACCENT — agent-bubblan får subtil
-                    // card→paper-lutning (globals.css; natt: marin-lager).
-                    "studio-bubbla-agent max-w-[92%] rounded-2xl rounded-tr-sm border px-4 py-3 shadow-sm sm:max-w-[80%]",
+                    // VÅG 89 J1: agenten = STORT fullbredd papper-block (p-4,
+                    // ingen max-w) — inga små bubblor. Gradient-accenten
+                    // (card→paper; natt marin-lager) bibehålls.
+                    "studio-bubbla-agent w-full rounded-2xl border p-4 shadow-sm",
                     m.fel ? "border-red-500/40" : "border-gold/40",
                   )}
                 >
@@ -6924,8 +6389,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
               (allow_once/allow_project/deny); svaret går via
               /api/studio/interaktion. 30 s utan svar ⇒ eskalering. */}
           {permission && (
-            <div className="flex justify-end">
-              <div className="marin-panel marin-scope max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/50 px-4 py-3 shadow-md sm:max-w-[80%]">
+            <div className="flex">
+              <div className="marin-panel marin-scope w-full rounded-2xl border border-gold/50 p-4 shadow-md">
                 <div className="flex flex-wrap items-center gap-2">
                   <ShieldAlert className="h-4 w-4 shrink-0 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold">
@@ -7014,7 +6479,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </div>
                 <p className="mt-2 text-[10px] leading-relaxed text-[#EDE6D6]/50">
                   Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
-                  {" "}Regler gäller i denna webbläsare och hanteras under Regler i verktygsraden.
+                  {" "}Regler gäller i denna webbläsare och hanteras under Minnesregler i menyn (☰).
                 </p>
               </div>
             </div>
@@ -7023,8 +6488,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
           {/* VÅG 83 B2: FRÅGEKORT (interaction/requestUserInput) — knappval
               ur choices ELLER fritext + Svara/Avbryt. */}
           {fraga && (
-            <div className="flex justify-end">
-              <div className="max-w-[92%] rounded-2xl rounded-tr-sm border border-gold/40 bg-card px-4 py-3 shadow-sm sm:max-w-[80%]">
+            <div className="flex">
+              <div className="w-full rounded-2xl border border-gold/40 bg-card p-4 shadow-sm">
                 <div className="flex items-center gap-2">
                   <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold">
@@ -7253,27 +6718,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </>
           )}
 
-          {/* VÅG 86 G3: 👁 markdown-förhandsvisning — skrivfältets innehåll
-              renderat som markdown (rubriker, **fetstil**, kodblock) i en
-              scrollbar yta OVANFÖR fältet (mobil: max-h + överscrollning). */}
-          {previewOppen && (
-            <div className="mb-2 max-h-44 overflow-y-auto overscroll-contain rounded-lg border border-gold/25 bg-muted/50 px-3 py-2">
-              <p className="mb-1 flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground/70">
-                <Eye className="h-3 w-3" />
-                Förhandsvisning (markdown)
-              </p>
-              {prompt.trim() ? (
-                <div className="text-sm">
-                  <StudioMarkdown text={prompt} />
-                </div>
-              ) : (
-                <p className="text-xs italic leading-relaxed text-muted-foreground/60">
-                  Skriv i fältet — **fetstil**, ## rubriker och kodblock förhandsvisas här medan du skriver.
-                </p>
-              )}
-            </div>
-          )}
-
+          {/* VÅG 89 J1: REN INPUT — endast textarea + STOR guld skicka-knapp
+              (h-11). Ingen verktygsrad ovanför, inga extra ikonknappar.
+              Promptbiblioteket nås via /sparad; filer via dra & släpp,
+              klistra eller Meny → Filer. */}
           <div className="flex items-end gap-2">
             <textarea
               ref={ytaRef}
@@ -7339,27 +6787,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
               rows={1}
               placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
               title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten"
-              className="min-h-[44px] flex-1 resize-none rounded-xl border border-gold/30 bg-card px-3.5 py-2.5 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
+              className="min-h-11 flex-1 resize-none rounded-xl border border-gold/30 bg-card px-3.5 py-2.5 text-base leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60"
             />
-            {/* VÅG 86 G2: ⭐ Spara prompt — med text i fältet sparas texten,
-                tomt fält öppnar biblioteket (samma som /sparad). */}
-            <Button
-              onClick={() => {
-                if (prompt.trim()) {
-                  if (sparaPrompt(prompt)) {
-                    visaToast("Prompten sparad i biblioteket ⭐ — den ligger nu överst i listan.");
-                    oppnaPrompter();
-                  }
-                } else {
-                  oppnaPrompter();
-                }
-              }}
-              variant="outline"
-              className="studio-lift h-11 w-11 shrink-0 rounded-xl border-gold/40 p-0 text-gold hover:bg-gold/10 hover:text-gold"
-              title={prompt.trim() ? "Spara prompten i biblioteket (⭐)" : "Visa promptbiblioteket ⭐ (samma som /sparad)"}
-            >
-              <Star className="h-5 w-5" />
-            </Button>
             {strömmar ? (
               <Button
                 onClick={stoppa}
@@ -7381,101 +6810,44 @@ export function StudioChat({ hem }: { hem: () => void }) {
             )}
           </div>
           </div>
-          <div className="mt-1.5 flex items-center gap-1">
-            <input
-              ref={filInputRef}
-              type="file"
-              multiple
-              className="hidden"
-              accept=".png,.jpg,.jpeg,.webp,.gif,.pdf,.zip,.txt,.md,.json,.csv"
-              onChange={(e) => {
-                const filer = Array.from(e.target.files ?? []);
-                if (filer.length) void laddaUpp(filer);
-                e.target.value = "";
-              }}
-            />
-            <input
-              ref={(el) => {
-                mappInputRef.current = el;
-                if (el) {
-                  el.setAttribute("webkitdirectory", "");
-                  el.setAttribute("directory", "");
-                }
-              }}
-              type="file"
-              multiple
-              className="hidden"
-              onChange={(e) => {
-                const input = e.target;
-                const filer = Array.from(input.files ?? []);
-                // webkitRelativePath sitter på varje File — servern bygger om
-                // mappstrukturen ur de relativa sökvägarna.
-                const relativa = filer.map(
-                  (f) => (f as File & { webkitRelativePath?: string }).webkitRelativePath || f.name,
-                );
-                if (filer.length) void laddaUpp(filer, relativa);
-                input.value = "";
-              }}
-            />
-            <button
-              onClick={() => filInputRef.current?.click()}
-              disabled={laddarUpp}
-              className="flex items-center gap-1 rounded-md px-2 py-1 text-[11px] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
-              title="Ladda upp filer (png/jpg/webp/gif/pdf/zip/txt/md/json/csv, max 30 MB/fil)"
-            >
-              {laddarUpp ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Paperclip className="h-3.5 w-3.5" />}
-              Fil
-            </button>
-            <button
-              onClick={() => mappInputRef.current?.click()}
-              disabled={laddarUpp}
-              className="flex items-center gap-1 rounded-md px-2 py-1 text-[11px] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
-              title="Ladda upp en hel mapp (strukturen bevaras)"
-            >
-              <FolderUp className="h-3.5 w-3.5" />
-              Mapp
-            </button>
-            {/* VÅG 86 G3: 👁-toggle — markdown-förhandsvisning av skrivfältet. */}
-            <button
-              type="button"
-              onClick={() => setPreviewOppen((v) => !v)}
-              aria-pressed={previewOppen}
-              title={
-                previewOppen
-                  ? "Stäng markdown-förhandsvisningen"
-                  : "Förhandsvisning: rendera skrivfältet som markdown (rubriker, fetstil, kodblock)"
+          {/* VÅG 89 J1: dolda filinmatningar lever kvar — tomrumsknappen
+              "Ladda upp en fil" och dra-&-släpp använder dom. Synliga
+              Fil/Mapp-knappar är borttagna (ren textarea + skicka). */}
+          <input
+            ref={filInputRef}
+            type="file"
+            multiple
+            className="hidden"
+            accept=".png,.jpg,.jpeg,.webp,.gif,.pdf,.zip,.txt,.md,.json,.csv"
+            onChange={(e) => {
+              const filer = Array.from(e.target.files ?? []);
+              if (filer.length) void laddaUpp(filer);
+              e.target.value = "";
+            }}
+          />
+          <input
+            ref={(el) => {
+              mappInputRef.current = el;
+              if (el) {
+                el.setAttribute("webkitdirectory", "");
+                el.setAttribute("directory", "");
               }
-              className={cn(
-                "flex items-center gap-1 rounded-md px-2 py-1 text-[11px] transition-colors hover:bg-muted",
-                previewOppen ? "font-semibold text-gold" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {previewOppen ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-              <span className="hidden sm:inline">Förhandsvisning</span>
-            </button>
-            <span className="ml-auto hidden items-center gap-1 text-[10px] text-muted-foreground/70 sm:flex">
-              <UploadCloud className="h-3 w-3" />
-              dra & släpp eller klistra in en bild
-            </span>
-            <span className="ml-auto max-w-[45%] truncate text-[10px] text-muted-foreground/70 sm:hidden">
-              {statusText}
-            </span>
-            {/* VÅG 86 G3: teckenräknare — diskret i hörnet (tak 2000 tkn;
-                guld-varning ≥ 1800, rött vid taket). */}
-            <span
-              className={cn(
-                "shrink-0 font-mono text-[10px] tabular-nums",
-                prompt.length >= 2000
-                  ? "font-bold text-red-500"
-                  : prompt.length >= 1800
-                    ? "text-gold"
-                    : "text-muted-foreground/60",
-              )}
-              title="Tecken i skrivfältet (tak 2000)"
-            >
-              {prompt.length}/2000
-            </span>
-          </div>
+            }}
+            type="file"
+            multiple
+            className="hidden"
+            onChange={(e) => {
+              const input = e.target;
+              const filer = Array.from(input.files ?? []);
+              // webkitRelativePath sitter på varje File — servern bygger om
+              // mappstrukturen ur de relativa sökvägarna.
+              const relativa = filer.map(
+                (f) => (f as File & { webkitRelativePath?: string }).webkitRelativePath || f.name,
+              );
+              if (filer.length) void laddaUpp(filer, relativa);
+              input.value = "";
+            }}
+          />
         </div>
       </div>
 
@@ -7628,59 +7000,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </div>
       )}
 
-      {/* V86 G7: MOBIL-KEBAB (⋮) — export-knapparna (markdown + HTML) bor här
-          under sm; skrivbordet visar dom inline i verktygsraden. */}
-      {kebabOppen && (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-black/30"
-            onClick={() => setKebabOppen(false)}
-            aria-hidden
-          />
-          <div
-            role="menu"
-            aria-label="Exportera"
-            className="fixed right-3 top-36 z-50 w-52 overflow-hidden rounded-xl border border-gold/40 bg-[#10233F] shadow-2xl sm:hidden"
-          >
-            <p className="border-b border-gold/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
-              Exportera chatten
-            </p>
-            <button
-              role="menuitem"
-              onClick={() => {
-                setKebabOppen(false);
-                exporteraChat();
-              }}
-              className="flex w-full items-center gap-2 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
-            >
-              <Download className="h-4 w-4 shrink-0 text-gold/80" />
-              Markdown (.md)
-            </button>
-            <button
-              role="menuitem"
-              onClick={() => {
-                setKebabOppen(false);
-                exporteraChatHtml();
-              }}
-              className="flex w-full items-center gap-2 border-t border-gold/10 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
-            >
-              <Printer className="h-4 w-4 shrink-0 text-gold/80" />
-              HTML (printbar)
-            </button>
-            <button
-              role="menuitem"
-              onClick={() => {
-                setKebabOppen(false);
-                setVisaGenvagar(true);
-              }}
-              className="flex w-full items-center gap-2 border-t border-gold/10 px-3 py-2.5 text-left text-xs text-[#EDE6D6]/90 transition-colors hover:bg-white/10"
-            >
-              <MessageCircleQuestion className="h-4 w-4 shrink-0 text-gold/80" />
-              Genvägar (?)
-            </button>
-          </div>
-        </>
-      )}
+      {/* V86 G7 → VÅG 89 J1: mobil-kebaben (⋮) är BORTA — export-knapparna
+          (markdown + HTML) och Genvägar bor i meny-drawern (☰). */}
 
       {/* V86 G6: NOTISPANEL — drawer i filträdets stil. Historik ur
           localStorage ak1a-studio-notiser (sista 50), typ-ikon + tidsstämpel,
@@ -7803,10 +7124,651 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </>
       )}
 
-      {/* VÅG 88 I1: INSTÄLLNINGAR-DRAWER ⚙️ — modell/läge/tankestyrka/tema i
-          LISTA-form (48 px tryckytor) i stället för headerns dropdowns.
-          Esc stänger; öppning stänger övriga drawers (ömsesidigt). Kontextens
-          progressbar bor här (kontextraden visar bara "📊 X tkn · Y%"). */}
+      {/* VÅG 89 J1: STOR MENY-DRAWER (☰ i headern) — ALLT som en gång satt i
+          chattvyns verktygsrad som stora listrader (ikon + text + chevron,
+          iPhone-inställningslista): inga små ikonpunkter på mobil. Undersidor
+          (Sessioner/Mål/Kontext/Agenter/Regler) fälls ut på plats; övriga
+          rader öppnar sina drawers/dialoger och stänger menyn. Esc stänger. */}
+      {menyOppen && (
+        <>
+          <div
+            className="fixed inset-0 z-30 bg-black/40 backdrop-blur-[1px]"
+            onClick={() => setMenyOppen(false)}
+            aria-hidden
+          />
+          <aside
+            role="dialog"
+            aria-label="Meny"
+            className="fixed right-0 top-0 z-40 flex h-[100dvh] w-full max-w-[400px] flex-col border-l border-gold/30 bg-[#0D1B31] shadow-2xl"
+          >
+            <div className="flex items-center gap-2 border-b border-gold/25 bg-black/25 px-3 py-3">
+              <Menu className="h-5 w-5 shrink-0 text-gold" />
+              <div className="min-w-0 flex-1">
+                <h2 className="font-serif text-base font-bold text-[#EDE6D6]">Meny</h2>
+                <p className="truncate text-[11px] text-[#EDE6D6]/55">allt studio gör — på stora knappar</p>
+              </div>
+              <button
+                onClick={() => setMenyOppen(false)}
+                title="Stäng (Esc)"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[#EDE6D6]/70 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 overflow-y-auto px-2 py-3 [scrollbar-width:thin]">
+              {/* ── GRUPP 1: huvudraderna (mission-listan) ─────────────────── */}
+              <button
+                type="button"
+                onClick={() => oppnaInstallningar()}
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+                title="Inställningar — modell, läge, tankestyrka och tema"
+              >
+                <Settings className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Inställningar</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">modell, läge, tankestyrka, tema</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  void startaNySession();
+                }}
+                disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
+                title="Kassera sessionen och börja en frisk kontext — gamla sessioner finns kvar i listan"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10 disabled:opacity-50"
+              >
+                {sessionJobbar === "ny" ? (
+                  <Loader2 className="h-5 w-5 shrink-0 animate-spin text-gold" />
+                ) : (
+                  <SquarePen className="h-5 w-5 shrink-0 text-gold" />
+                )}
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Ny session</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">frisk kontext — fönstret börjar om</span>
+                </span>
+              </button>
+
+              {/* Sessioner — expanderbar lista (resume i ny tabb + stäng). */}
+              <button
+                type="button"
+                onClick={() => {
+                  const ny = !menySessionerOppen;
+                  setMenySessionerOppen(ny);
+                  if (ny) void lasSessioner();
+                }}
+                aria-expanded={menySessionerOppen}
+                title="Sessioner (session/list) — klicka en session för att öppna den (session/resume)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <History className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Sessioner</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    {sessioner.length > 0 ? `${sessioner.length} sparade — klicka = öppna i ny tabb` : "öppna en tidigare session"}
+                  </span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-[#EDE6D6]/40 transition-transform", menySessionerOppen && "rotate-180")} />
+              </button>
+              {menySessionerOppen && (
+                <div className="mb-2 rounded-xl border border-gold/15 bg-black/25 px-2 py-2">
+                  {arbetsytaInfo && (
+                    <p
+                      className="mb-1.5 truncate px-1 text-[10px] text-[#EDE6D6]/45"
+                      title={`${arbetsytaInfo.arbetsyta}${arbetsytaInfo.behorighet ? ` · behörighet ${arbetsytaInfo.behorighet}` : ""}${typeof arbetsytaInfo.kommandon === "number" ? ` · ${arbetsytaInfo.kommandon} kommandon` : ""}`}
+                    >
+                      Arbetsyta {arbetsytaInfo.arbetsyta.split("/").filter(Boolean).pop() ?? arbetsytaInfo.arbetsyta}
+                      {arbetsytaInfo.lage && ` · läge ${arbetsytaInfo.lage}`}
+                      {arbetsytaInfo.modell && ` · ${arbetsytaInfo.modell}`}
+                      {arbetsytaInfo.tankeNiva && ` · tanke ${arbetsytaInfo.tankeNiva}`}
+                    </p>
+                  )}
+                  {sessioner.length === 0 && (
+                    <p className="px-1 py-2 text-[11px] leading-relaxed text-[#EDE6D6]/55">Ingen lista ännu.</p>
+                  )}
+                  <ul className="space-y-1">
+                    {sessioner.map((s) => (
+                      <li
+                        key={s.sessionId}
+                        className="group flex items-center gap-1.5 rounded-lg bg-white/5 px-2 py-1.5 text-[11px] text-[#EDE6D6]/80 transition-colors hover:bg-white/10"
+                        title={s.sessionId}
+                      >
+                        <span
+                          className={cn(
+                            "h-1.5 w-1.5 shrink-0 rounded-full",
+                            s.status === "idle"
+                              ? "bg-emerald-400"
+                              : s.status === "completed" || s.status === "error"
+                                ? "bg-red-400/80"
+                                : "bg-gold",
+                          )}
+                        />
+                        <button
+                          onClick={() => oppnaITabb(s.sessionId, s.titel)}
+                          disabled={sessionJobbar !== ""}
+                          className="flex min-h-11 min-w-0 flex-1 flex-col items-start text-left disabled:cursor-default"
+                          title={
+                            tabbar.some((t) => t.sessionId === s.sessionId)
+                              ? "Sessionen är redan öppen i en tabb — växla dit"
+                              : `Öppna ${s.sessionId} i en NY TABB (resume) — historiken hämtas ur sessionen`
+                          }
+                        >
+                          <span className="w-full truncate font-medium">
+                            {s.titel || s.sessionId.slice(0, 18) + "…"}
+                            {s.sessionId === aktivSession && (
+                              <span className="ml-1.5 rounded-full bg-gold/20 px-1.5 text-[9px] font-bold text-gold">AKTIV</span>
+                            )}
+                          </span>
+                          <span className="w-full truncate text-[9px] text-[#EDE6D6]/45">
+                            {[
+                              s.modell?.includes("/") ? s.modell.split("/").slice(1).join("/") : s.modell,
+                              typeof s.turns === "number" ? `${s.turns} vändor` : null,
+                              typeof s.tokens === "number" ? `${tkn(s.tokens)} tkn` : null,
+                              tidSen(s.uppdaterad) || null,
+                            ]
+                              .filter(Boolean)
+                              .join(" · ") || s.sessionId.slice(5, 13)}
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => void stangSessionen(s.sessionId)}
+                          disabled={sessionJobbar !== "" || strömmarHuvud}
+                          title="Stäng sessionen (session/close) — finns kvar i listan men svarar ej"
+                          className="flex h-11 w-9 shrink-0 items-center justify-center rounded-md text-[#EDE6D6]/40 transition-all hover:bg-red-500/20 hover:text-red-300 disabled:opacity-30"
+                        >
+                          {sessionJobbar === "stang" ? (
+                            <Loader2 className="h-3 w-3 animate-spin" />
+                          ) : (
+                            <X className="h-3 w-3" />
+                          )}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Mål — sätt/pausa/återuppta/redigera/rensa (expandabel). */}
+              <button
+                type="button"
+                onClick={() => setMenyMalOppen((v) => !v)}
+                aria-expanded={menyMalOppen}
+                title="Mål (session/goal) — beskriv ett utvecklingsmål och agenten itererar autonomt tills du pausar"
+                className={cn(
+                  "flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10",
+                  malKör && "bg-gold/10",
+                )}
+              >
+                <Target className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">
+                    Mål
+                    {malKör && (
+                      <span className="ml-2 rounded-full bg-gold/20 px-1.5 py-0.5 text-[9px] font-bold tabular-nums text-gold" title={`Autonom iteration ${malIteration} kör`}>
+                        AKTIVT · {malIteration}
+                      </span>
+                    )}
+                  </span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    {mal ? (malKör ? "agenten utvecklar autonomt" : malPausat ? "pausat — återuppta när du vill" : "mål satt") : "sätt ett autonomt utvecklingsmål"}
+                  </span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-[#EDE6D6]/40 transition-transform", menyMalOppen && "rotate-180")} />
+              </button>
+              {menyMalOppen && (
+                <div className="mb-2 rounded-xl border border-gold/15 bg-black/25 px-3 py-3">
+                  {mal ? (
+                    <>
+                      <p className="text-[11px] leading-relaxed text-[#EDE6D6]/90" title={mal}>
+                        {mal}
+                      </p>
+                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                        <span
+                          className="rounded-full bg-white/10 px-1.5 py-0.5 text-[9px] font-bold tabular-nums text-[#EDE6D6]/70"
+                          title={`Iterationer sedan målet sattes: ${malIteration}`}
+                        >
+                          iter {malIteration}
+                        </span>
+                        {malSparar || malPausar ? (
+                          <Loader2 className="h-4 w-4 animate-spin text-gold" />
+                        ) : malKör ? (
+                          <button
+                            onClick={() => void pausaMal()}
+                            title="Pausa målet (session/stop) — den pågående iterationen avbryts"
+                            className="min-h-11 rounded-lg border border-gold/40 px-3 text-xs font-semibold text-gold transition-colors hover:bg-gold/15"
+                          >
+                            Pausa
+                          </button>
+                        ) : malPausat ? (
+                          <button
+                            onClick={() => void aterupptaMal()}
+                            title="Återuppta målet (session/goal resume) — agenten fortsätter mot målet"
+                            className="min-h-11 rounded-lg border border-emerald-400/40 px-3 text-xs font-semibold text-emerald-300 transition-colors hover:bg-emerald-400/15"
+                          >
+                            Återuppta
+                          </button>
+                        ) : null}
+                        <button
+                          onClick={() => {
+                            setMenyOppen(false);
+                            oppnaMalDialog();
+                          }}
+                          title="Redigera målet (mål-dialogen — session/goal set)"
+                          className="flex h-11 items-center gap-1.5 rounded-lg border border-gold/30 px-3 text-xs font-semibold text-[#EDE6D6]/85 transition-colors hover:bg-white/10 hover:text-[#EDE6D6]"
+                        >
+                          <Pencil className="h-3.5 w-3.5" />
+                          Redigera
+                        </button>
+                        <button
+                          onClick={() => void rensaMaler()}
+                          disabled={malSparar}
+                          title="Rensa målet (session/goal clear)"
+                          className="flex h-11 items-center gap-1.5 rounded-lg border border-red-400/30 px-3 text-xs font-semibold text-red-300 transition-colors hover:bg-red-500/15 disabled:opacity-50"
+                        >
+                          <X className="h-3.5 w-3.5" />
+                          Rensa
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                      Inget mål satt — agenten arbetar bara när du chattar.
+                    </p>
+                  )}
+                  <button
+                    onClick={() => {
+                      setMenyOppen(false);
+                      oppnaMalDialog();
+                    }}
+                    className="mt-2 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg bg-gold px-3 text-xs font-bold text-[#0E1B2E] transition-colors hover:bg-gold/90"
+                    title="Öppna mål-dialogen — beskriv utvecklingsmålet och starta autonom loop"
+                  >
+                    <Target className="h-4 w-4" />
+                    {mal ? "Sätt / ändra målet" : "Sätt ett mål"}
+                  </button>
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={() => oppnaFiltrad()}
+                title="Filer — agentens arbetsyta (förhandsgranska filer och bilder, töm uploads)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <FolderTree className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Filer</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">agentens arbetsyta + uploads</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => oppnaMinne()}
+                title="Minne — vad agenten kommer ihåg (minnesfiler + stående instruktioner, redigerbara)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Brain className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Minne</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    minnesfiler + stående instruktioner
+                    {minneFiler && minneFiler.length > 0 ? ` (${minneFiler.length})` : ""}
+                  </span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => oppnaFardigheter()}
+                title="Färdigheter — vad agenten KAN (skills/plugins/MCP)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Zap className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Färdigheter</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    skills, plugins och MCP-verktyg
+                    {fardigheterSkills && fardigheterSkills.length > 0 ? ` (${fardigheterSkills.length})` : ""}
+                  </span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => oppnaAdmin()}
+                title="Verktyg — admin-kommandon (variabler/priser, blogg-publicering, minne)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-gold/10"
+              >
+                <Wrench className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-gold">Verktyg</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">admin — variabler, blogg, minne</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  exporteraChat();
+                }}
+                title="Exportera chatten som markdown-fil (datum i filnamnet)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Download className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Exportera markdown</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">chatten som .md-fil</span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  exporteraChatHtml();
+                }}
+                title="Exportera chatten som fristående HTML-fil i AK1A-stil (printbar)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Printer className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Exportera HTML</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">fristående, printbar fil</span>
+                </span>
+              </button>
+
+              {/* Kontext-info — token-info visas ENDAST här (och i
+                  Inställningar) — inte i chattvyns huvudvy. */}
+              <button
+                type="button"
+                onClick={() => setMenyKontextOppen((v) => !v)}
+                aria-expanded={menyKontextOppen}
+                title="Kontext — tokenräkning för sessionen"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Activity className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Kontext</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] tabular-nums text-[#EDE6D6]/55">
+                    ~{tkn(ackumulerat)} tkn
+                    {kontextProcent !== null && ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av taket`}
+                  </span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-[#EDE6D6]/40 transition-transform", menyKontextOppen && "rotate-180")} />
+              </button>
+              {menyKontextOppen && (
+                <div className="mb-2 rounded-xl border border-gold/15 bg-black/25 px-3 py-3">
+                  <p className="text-[11px] tabular-nums leading-relaxed text-[#EDE6D6]/80">
+                    {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
+                    ~{tkn(ackumulerat)} totalt
+                    {kontextProcent !== null && ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av taket (${tkn(kontextTak)})`}
+                    {kontext?.modell && ` · ${kontext.modell}`}
+                  </p>
+                  {kontextProcent !== null && (
+                    <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden>
+                      <span
+                        className={cn(
+                          "absolute inset-y-0 left-0 rounded-full transition-all",
+                          kontextProcent >= KONTEXT_VARNING_PROCENT ? "bg-gold" : "bg-emerald-400/80",
+                        )}
+                        style={{ width: `${Math.min(100, kontextProcent)}%` }}
+                      />
+                    </span>
+                  )}
+                  <div className="mt-2 flex flex-col gap-2">
+                    <button
+                      onClick={() => void komprimera()}
+                      disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
+                      title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
+                      className="flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-gold/40 px-3 text-xs font-semibold text-gold transition-colors hover:bg-gold/15 disabled:opacity-50"
+                    >
+                      {sessionJobbar === "compact" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Shrink className="h-4 w-4" />}
+                      Komprimera kontexten
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* ── GRUPP 2: övriga funktioner (sök, palett, agenter, notiser,
+                      regler, genvägar) — alla kvar, bara större tryckytor. ── */}
+              <p className="mt-4 mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#EDE6D6]/40">
+                Fler verktyg
+              </p>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  setSokOppen(true);
+                }}
+                title="Sök i chatten (highlight + pilnavigering)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Search className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Sök i chatten</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">highlight + pilnavigering</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  oppnaPalett();
+                }}
+                title="Kommandopalett (Ctrl/Cmd+K)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Command className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Kommandopalett</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">Ctrl/Cmd+K — snabbkommandon</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  const ny = !menyAgenterOppen;
+                  setMenyAgenterOppen(ny);
+                  if (ny) void lasAgenter();
+                }}
+                aria-expanded={menyAgenterOppen}
+                title="Bakgrundsagenter (session/subagents) — status + avbryt"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <Bot className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Bakgrundsagenter</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    {subagenter.length > 0 ? `${subagenter.length} agent(er) — status + avbryt` : "status + avbryt"}
+                  </span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-[#EDE6D6]/40 transition-transform", menyAgenterOppen && "rotate-180")} />
+              </button>
+              {menyAgenterOppen && (
+                <div className="mb-2 rounded-xl border border-gold/15 bg-black/25 px-2 py-2">
+                  <div className="mb-1.5 flex items-center gap-2">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#EDE6D6]/50">
+                      Bakgrundsagenter {subagenter.length > 0 && `(${subagenter.length})`}
+                    </p>
+                    <button
+                      onClick={() => void lasAgenter()}
+                      disabled={agenterLaddar}
+                      title="Uppdatera (session/subagents)"
+                      className="flex h-9 w-9 items-center justify-center rounded-md text-[#EDE6D6]/50 transition-colors hover:bg-white/10 hover:text-[#EDE6D6] disabled:opacity-50"
+                    >
+                      <RefreshCw className={cn("h-3.5 w-3.5", agenterLaddar && "animate-spin")} />
+                    </button>
+                  </div>
+                  {agenterLaddar && subagenter.length === 0 && (
+                    <p className="px-1 py-1.5 text-[11px] text-[#EDE6D6]/60">Läser agenter…</p>
+                  )}
+                  {!agenterLaddar && subagenter.length === 0 && (
+                    <p className="px-1 py-1.5 text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                      Inga bakgrundsagenter just nu.
+                    </p>
+                  )}
+                  <ul className="space-y-1">
+                    {subagenter.map((a) => {
+                      const kör =
+                        a.status === "running" || a.status === "waiting" || a.status === "blocked";
+                      return (
+                        <li
+                          key={a.barnSessionId}
+                          className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1.5 text-[11px] text-[#EDE6D6]/80"
+                          title={`${a.barnSessionId}${a.startad ? ` · startad ${tidSen(a.startad)} sedan` : ""}${a.avslutad ? ` · avslutad ${tidSen(a.avslutad)} sedan` : ""}${a.sammanfattning ? ` — ${a.sammanfattning}` : ""}`}
+                        >
+                          <span
+                            className={cn(
+                              "shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider",
+                              agentStatusFarg(a.status),
+                            )}
+                          >
+                            {agentStatusText(a.status)}
+                          </span>
+                          <span className="min-w-0 flex-1 truncate">
+                            {a.titel}
+                            {a.typ && <span className="ml-1.5 text-[9px] text-[#EDE6D6]/40">{a.typ}</span>}
+                          </span>
+                          {kör && (
+                            <button
+                              onClick={() => void avbrytAgent(a.barnSessionId)}
+                              title="Avbryt (session/cancelBackgroundTask)"
+                              className="flex min-h-11 shrink-0 items-center rounded-md border border-red-500/30 px-2 text-[10px] text-red-300 transition-colors hover:bg-red-500/15 hover:text-red-200"
+                            >
+                              Avbryt
+                            </button>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={() => oppnaNotiser()}
+                title="Notiser — historik + på/av (rundor över 60 s pingar när agenten är klar)"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                {notisRattighet === "granted" ? (
+                  <BellRing className="h-5 w-5 shrink-0 text-emerald-300" />
+                ) : (
+                  <Bell className="h-5 w-5 shrink-0 text-gold" />
+                )}
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Notiser</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    {notisRattighet === "granted"
+                      ? "på — långa rundor pingar"
+                      : `${notiser.length} i historiken — slå på inuti panelen`}
+                  </span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setMenyReglerOppen((v) => !v)}
+                aria-expanded={menyReglerOppen}
+                title="Minnesregler — ”alltid tillåt” per verktyg (localStorage); matchande begäranden godkänns automatiskt"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <ShieldCheck className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Minnesregler</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">
+                    {regler.length === 0 ? "”alltid tillåt” per verktyg" : `${regler.length} ${regler.length === 1 ? "regel" : "regler"} — alltid tillåt`}
+                  </span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-[#EDE6D6]/40 transition-transform", menyReglerOppen && "rotate-180")} />
+              </button>
+              {menyReglerOppen && (
+                <div className="mb-2 rounded-xl border border-gold/15 bg-black/25 px-2 py-2">
+                  {regler.length === 0 ? (
+                    <p className="px-1 py-2 text-[11px] leading-relaxed text-[#EDE6D6]/55">
+                      Inga ”alltid tillåt”-regler än — spara en direkt i godkännandedialogen
+                      (”⛨ Alltid tillåta &lt;verktyg&gt;”) så godkänns framtida begäranden för
+                      verktyget automatiskt med en notis i flödet. Reglerna lever i denna
+                      webbläsare (localStorage) och påverkar aldrig serverns egna regler.
+                    </p>
+                  ) : (
+                    <ul className="space-y-1">
+                      {regler.map((r) => (
+                        <li
+                          key={r.verktyg}
+                          className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1 text-[11px] text-[#EDE6D6]/80"
+                          title={`${r.verktyg} — sparad ${new Date(r.skapad).toLocaleString("sv-SE")}`}
+                        >
+                          {(() => {
+                            const klass = verktygsriskKlass(r.verktyg);
+                            return (
+                              <span
+                                className={cn("shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-wider", klass.farg)}
+                                title={klass.forklaring}
+                              >
+                                {klass.etikett}
+                              </span>
+                            );
+                          })()}
+                          <span className="min-w-0 flex-1 truncate font-mono">{r.verktyg}</span>
+                          <button
+                            onClick={() => {
+                              tabortRegel(r.verktyg);
+                              visaToast(`Regeln för ${r.verktyg} borttagen — framtida begäranden visar dialogen igen.`);
+                            }}
+                            title="Ta bort regeln"
+                            className="flex h-11 w-9 shrink-0 items-center justify-center rounded text-[#EDE6D6]/40 transition-colors hover:bg-red-500/20 hover:text-red-300"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMenyOppen(false);
+                  setVisaGenvagar(true);
+                }}
+                title="Genvägar (?) — tangentbordsgenvägarna"
+                className="flex min-h-14 w-full items-center gap-3.5 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/10"
+              >
+                <MessageCircleQuestion className="h-5 w-5 shrink-0 text-gold" />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-[#EDE6D6]">Genvägar</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#EDE6D6]/55">tangentbordet (?)</span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-[#EDE6D6]/40" />
+              </button>
+            </div>
+          </aside>
+        </>
+      )}
+
+      {/* VÅG 88 I1 → VÅG 89 J1: INSTÄLLNINGAR-DRAWER ⚙️ — modell/läge/
+          tankestyrka/tema i LISTA-form (52 px tryckytor). Öppnas från
+          Meny (☰). Esc stänger; öppning stänger övriga drawers (ömsesidigt).
+          Kontextens progressbar bor här + under Meny → Kontext. */}
       {installningarOppen && (
         <>
           <div
@@ -8003,7 +7965,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     </span>
                   )}
                   <p className="mt-1.5 text-[10px] leading-relaxed text-[#EDE6D6]/40">
-                    Kontextraden i headern visar bara "📊 X tkn · Y%" — detaljerna bor här.
+                    Token-info visas ENDAST här och under Meny → Kontext — chattvyn är ren.
                   </p>
                 </div>
               </section>

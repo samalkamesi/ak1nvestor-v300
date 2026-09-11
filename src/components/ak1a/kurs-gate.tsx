@@ -46,8 +46,10 @@ export function KursGate({
 }) {
   const { t, sprak } = useSprak();
   // "okand" = SSR/first paint (LÅST är default — children renderas ej);
-  // "gast" = server-verifierad gäst (slutläget); "medlem" = upplåst.
-  const [status, setStatus] = useState<"okand" | "gast" | "medlem">("okand");
+  // "gast" = server-verifierad gäst (slutläget); "medlem" = upplåst;
+  // "fel" = sessionen kunde INTE kontrolleras (nätverksfel — LOGIN-2.0:
+  // aldrig mer låst gästvy av en flackande förbindelse).
+  const [status, setStatus] = useState<"okand" | "gast" | "medlem" | "fel">("okand");
   const [verifierar, setVerifierar] = useState(false);
   const [inteInloggad, setInteInloggad] = useState(false);
   const [lokalProgress, setLokalProgress] = useState(false);
@@ -60,7 +62,7 @@ export function KursGate({
         if (aktiv) setStatus(svar.inloggad ? "medlem" : "gast");
       })
       .catch(() => {
-        if (aktiv) setStatus("gast"); // tyst nätverksfel ⇒ gäst-vyn står kvar
+        if (aktiv) setStatus("fel"); // nätverksfel ⇒ återförsöksbart, ej gästvy
       });
     return () => {
       aktiv = false;
@@ -81,8 +83,7 @@ export function KursGate({
         setInteInloggad(true);
       }
     } catch {
-      setStatus("gast");
-      setInteInloggad(true);
+      setStatus("fel"); // nätverksfel ⇒ ALDRIG "inte inloggad"-ursäkt
     } finally {
       setVerifierar(false);
     }
@@ -129,9 +130,17 @@ export function KursGate({
                 {t("gate.lasUppGratis")}
               </Link>
             </div>
-            {inteInloggad && (
+            {inteInloggad && status !== "fel" && (
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground" role="status">
                 {t("gate.inteInloggad")}
+              </p>
+            )}
+            {status === "fel" && (
+              <p className="mt-3 text-xs leading-relaxed text-red-600 dark:text-red-400" role="alert">
+                {t("gate.kundeInteKolla")}{" "}
+                <button type="button" onClick={lasUpp} disabled={verifierar} className="font-semibold underline disabled:opacity-60">
+                  {t("gate.forsokIgen")}
+                </button>
               </p>
             )}
             {/* §A.2: lokal progress finns — mjuk migreringsinbjudan */}

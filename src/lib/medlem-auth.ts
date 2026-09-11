@@ -197,6 +197,51 @@ export const MEDLEM_SIGNUP_FEL = "Kontot kunde inte skapas.";
 /** Generisk signin-feltext — avslöjar ALDRIG om kontot finns. */
 export const MEDLEM_SIGNIN_FEL = "Fel e-post eller lösenord.";
 
+// ── LOGIN-2.0 (våg 101): felkoder utan läckage ───────────────────────────────
+// KRITA-regeln består: kontoexistens avslöjas ALDRIG (dublett förblir
+// supprimerad). Däremot är tre orsaker säkra att SKILJA UT — de läcker
+// inget om konton och var tidigare oskiljbara från "fel lösenord":
+//   "ej_bekraftad" — GoTrue svarar email_not_confirmed ENDAST när e-post +
+//                    lösenord var KORREKTA (kontoexists + rätt lösenord är
+//                    redan bevisat hos anroparen) → säker att säga högt.
+//   "rate"         — throttling (vår eller GoTrues) → retrySek till räknaren.
+//   "natverk"      — tjänsten nåddes ej (avslöjar inget om konton).
+
+/** Typad felkod för klienten (mappas mot texter i UI:t; okänd ⇒ generisk). */
+export type MedlemFelKod = "ej_bekraftad" | "rate" | "natverk" | "tjanst";
+
+/** Nätverksfel-texten (säker — läcker inget om konton). */
+export const MEDLEM_NATVERK_FEL = "Tjänsten kunde inte nås — kontrollera anslutningen och försök igen.";
+/** Rate-limit-texten (fönstret bär retrySek — räknaren i UI:t visar nedräkning). */
+export const MEDLEM_RATE_FEL = "För många försök — vänta en stund och försök igen.";
+/** Ej-bekräftad-e-post-texten (endast vid korrekta inloggningsuppgifter). */
+export const MEDLEM_EJ_BEKRAFTAD_FEL =
+  "Din e-post är inte bekräftad ännu — kolla inkorgen (och skräpposten) efter bekräftelselänken.";
+
+/** Tolka en GoTrue-felskropp till {kod?, retrySek?} — okänt ⇒ null (generisk text).
+ *  Läser ENDAST kända throttling-/bekräftelse-koder; övriga (dublett, ogiltiga
+ *  uppgifter, sårbarhetsblock) förblir supprimerade enligt KRITA. */
+function tolkaGoTrueFel(kropp: unknown, status: number): { kod: MedlemFelKod; retrySek?: number } | null {
+  if (typeof kropp !== "object" || kropp === null) return null;
+  const errorKod = typeof (kropp as Record<string, unknown>).error_code === "string"
+    ? ((kropp as Record<string, unknown>).error_code as string)
+    : "";
+  if (errorKod === "email_not_confirmed") return { kod: "ej_bekraftad" };
+  if (errorKod === "over_request_rate_limit" || errorKod === "over_email_send_rate_limit" || status === 429) {
+    return { kod: "rate", retrySek: 60 };
+  }
+  return null;
+}
+
+/** Läs felkroppen tåligt (trasig JSON ⇒ null — då gäller generisk text). */
+async function lasFelKropp(res: Response): Promise<unknown> {
+  try {
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
 /** GoTrue-sessionsvararetur (signup/token) — tolerant för båda formerna. */
 type GoTrueSession = {
   access_token?: unknown;
@@ -218,10 +263,12 @@ function plockaUser(kropp: GoTrueSession): { authId: string; epost: string } | n
 // ── signup ───────────────────────────────────────────────────────────────────
 
 /** medlemSignup-resultat: ok + (vid lyckat) authId — eller generisk feltext.
- *  orsak "validering" (400-värd) vs "tjanst" (Supabase-fel, supprimerat). */
+ *  orsak "validering" (400-värd) vs "tjanst" (Supabase-fel, supprimerat).
+ *  LOGIN-2.0: kod "rate"/"natverk" får bäras (läcker inget om konton);
+ *  dublett förblir supprimerad (KRITA — kontoexistens avslöjas aldrig). */
 export type MedlemSignupResultat =
   | { ok: true; authId: string }
-  | { ok: false; fel: string; orsak: "validering" | "tjanst" };
+  | { ok: false; fel: string; orsak: "validering" | "tjanst"; kod?: MedlemFelKod; retrySek?: number };
 
 /**
  * medlemSignup — POST {origin}/auth/v1/signup (VERIFIERAD LIVE-endpoint).
@@ -254,22 +301,30 @@ export async function medlemSignup(epost: unknown, losenord: unknown): Promise<M
       signal: AbortSignal.timeout(10_000),
       cache: "no-store",
     });
-    if (!res.ok) return { ok: false, fel: MEDLEM_SIGNUP_FEL, orsak: "tjanst" }; // supprimerat — även dublett
+    if (!res.ok) {
+      // LOGIN-2.0: rate/natverk skiljs ut; dublett m.m. förblir supprimerad.
+      const tolkat = tolkaGoTrueFel(await lasFelKropp(res), res.status);
+      if (tolkat?.kod === "rate") return { ok: false, fel: MEDLEM_RATE_FEL, orsak: "tjanst", kod: "rate", retrySek: tolkat.retrySek };
+      return { ok: false, fel: MEDLEM_SIGNUP_FEL, orsak: "tjanst" };
+    }
     const kropp = (await res.json()) as GoTrueSession;
     const user = plockaUser(kropp);
     if (!user) return { ok: false, fel: MEDLEM_SIGNUP_FEL, orsak: "tjanst" };
     return { ok: true, authId: user.authId };
   } catch {
-    return { ok: false, fel: MEDLEM_SIGNUP_FEL, orsak: "tjanst" };
+    return { ok: false, fel: MEDLEM_NATVERK_FEL, orsak: "tjanst", kod: "natverk" };
   }
 }
 
 // ── signin / signout / session / refresh ─────────────────────────────────────
 
-/** medlemSignIn-resultat: tokens + user — eller generisk feltext (ALDRIG orsak). */
+/** medlemSignIn-resultat: tokens + user — eller feltext (ALDRIG kontoexistens).
+ *  LOGIN-2.0: kod "ej_bekraftad" (endast vid KORREKTA uppgifter — säkert),
+ *  "rate" (+retrySek) och "natverk" skiljs ut; ogiltiga uppgifter förblir
+ *  den generella texten (inexistens läcker aldrig). */
 export type MedlemSignInResultat =
   | { ok: true; access: string; refresh: string; user: { authId: string; epost: string } }
-  | { ok: false; fel: string };
+  | { ok: false; fel: string; kod?: MedlemFelKod; retrySek?: number };
 
 /**
  * medlemSignIn — POST {origin}/auth/v1/token?grant_type=password (VERIFIERAD
@@ -295,7 +350,14 @@ export async function medlemSignIn(epost: unknown, losenord: unknown): Promise<M
       signal: AbortSignal.timeout(10_000),
       cache: "no-store",
     });
-    if (!res.ok) return { ok: false, fel: MEDLEM_SIGNIN_FEL };
+    if (!res.ok) {
+      // LOGIN-2.0: email_not_confirmed kommer ENDAST med korrekta uppgifter —
+      // säker att säga högt; rate skiljs ut med fönster; övrigt ⇒ generisk.
+      const tolkat = tolkaGoTrueFel(await lasFelKropp(res), res.status);
+      if (tolkat?.kod === "ej_bekraftad") return { ok: false, fel: MEDLEM_EJ_BEKRAFTAD_FEL, kod: "ej_bekraftad" };
+      if (tolkat?.kod === "rate") return { ok: false, fel: MEDLEM_RATE_FEL, kod: "rate", retrySek: tolkat.retrySek };
+      return { ok: false, fel: MEDLEM_SIGNIN_FEL };
+    }
     const kropp = (await res.json()) as GoTrueSession;
     const user = plockaUser(kropp);
     if (!user || typeof kropp.access_token !== "string" || typeof kropp.refresh_token !== "string") {
@@ -303,7 +365,49 @@ export async function medlemSignIn(epost: unknown, losenord: unknown): Promise<M
     }
     return { ok: true, access: kropp.access_token, refresh: kropp.refresh_token, user };
   } catch {
-    return { ok: false, fel: MEDLEM_SIGNIN_FEL };
+    return { ok: false, fel: MEDLEM_NATVERK_FEL, kod: "natverk" };
+  }
+}
+
+// ── glömt lösenord (LOGIN-2.0): recover-länk UTAN kontoexistens-läckage ──────
+
+/** medlemGlomtLosenord-resultat: ok är ALLTID sant när begäran gick iväg —
+ *  svaret avslöjar ALDRIG om kontot finns (samma neutrala text oavsett). */
+export type MedlemGlomtResultat =
+  | { ok: true }
+  | { ok: false; fel: string; kod: MedlemFelKod };
+
+/**
+ * medlemGlomtLosenord — POST {origin}/auth/v1/recover (GoTrue skickar ett
+ * återställningsmejl OM kontot finns). KRITA: anroparen svarar ALLTID samma
+ * neutrala text vid ok — kontots existens läcker aldrig. Endast transport-
+ * fel (tjänsten nere) skiljs ut som kod "natverk"/"tjanst". E-posten
+ * normaliseras och valideras lokalt FÖRE sändning (inga skräp-anrop).
+ */
+export async function medlemGlomtLosenord(epost: unknown): Promise<MedlemGlomtResultat> {
+  const normaliseradEpost = valideraEpost(epost);
+  if (normaliseradEpost === null) return { ok: false, fel: "Ogiltig e-postadress.", kod: "tjanst" };
+
+  if (arByggFas()) return { ok: false, fel: MEDLEM_SIGNUP_FEL, kod: "tjanst" };
+  const auth = getSupabaseAuth();
+  if (!auth) return { ok: false, fel: MEDLEM_SIGNUP_FEL, kod: "tjanst" };
+
+  try {
+    const res = await fetch(auth.origin + "/auth/v1/recover", {
+      method: "POST",
+      headers: { ...auth.headers, "Content-Type": "application/json" },
+      body: JSON.stringify({ email: normaliseradEpost }),
+      signal: AbortSignal.timeout(10_000),
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      const tolkat = tolkaGoTrueFel(await lasFelKropp(res), res.status);
+      if (tolkat?.kod === "rate") return { ok: false, fel: MEDLEM_RATE_FEL, kod: "rate" };
+      return { ok: false, fel: "Begäran kunde inte skickas — försök igen om en stund.", kod: "tjanst" };
+    }
+    return { ok: true }; // neutralt — GoTrue-mejlet (om kontot finns) är på väg
+  } catch {
+    return { ok: false, fel: MEDLEM_NATVERK_FEL, kod: "natverk" };
   }
 }
 

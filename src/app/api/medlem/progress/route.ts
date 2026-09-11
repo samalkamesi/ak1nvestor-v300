@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { lasMedlemSession, utvarderaRateLimit } from "@/lib/medlem-auth";
+import { fornyaMedlemSession, lasMedlemSession, sattMedlemKakor, utvarderaRateLimit } from "@/lib/medlem-auth";
 import { getCourses } from "@/lib/content";
 import {
   datumIdag,
@@ -53,13 +53,35 @@ export const dynamic = "force-dynamic";
 const progressAnrop = new Map<string, number[]>();
 const MAX_POST_PER_MIN = 60;
 
-export async function GET(req: NextRequest) {
+/**
+ * Session MED refresh-rotation (LOGIN-2.0, våg 101): läs access-kakan; är
+ * den utgången (1 h) FÖRSÖK rotation med refresh-kakan (30 d) — samma
+ * kontrakt som /api/medlem {action:"session"} — och sätt om kakorna på
+ * svaret. Utan detta låste läs-sidorna (kurs-gate, min-sida) eleven efter
+ * 1 h trots en giltig 30-dagars-refresh-kaka.
+ */
+async function sessionMedRotation(req: NextRequest): Promise<{
+  session: { authId: string; epost: string } | null;
+  fornyad?: { access: string; refresh: string };
+}> {
   const session = await lasMedlemSession(req);
+  if (session !== null) return { session };
+  const fornyad = await fornyaMedlemSession(req);
+  if (fornyad !== null) {
+    return { session: fornyad.session, fornyad: { access: fornyad.access, refresh: fornyad.refresh } };
+  }
+  return { session: null };
+}
+
+export async function GET(req: NextRequest) {
+  const { session, fornyad } = await sessionMedRotation(req);
   if (session === null) {
     return NextResponse.json({ inloggad: false });
   }
   const progress = await lasMedlemProgress(session.authId);
-  return NextResponse.json({ inloggad: true, progress });
+  const res = NextResponse.json({ inloggad: true, progress });
+  if (fornyad) sattMedlemKakor(res, fornyad.access, fornyad.refresh);
+  return res;
 }
 
 export async function POST(req: NextRequest) {
@@ -73,7 +95,7 @@ export async function POST(req: NextRequest) {
     kropp && typeof kropp === "object" && !Array.isArray(kropp) ? (kropp as Record<string, unknown>) : {};
 
   // ── 1. Session — utan den finns inget att skriva (401, generell text) ─────
-  const session = await lasMedlemSession(req);
+  const { session, fornyad } = await sessionMedRotation(req);
   if (session === null) {
     return NextResponse.json({ fel: "Inloggning krävs." }, { status: 401 });
   }
@@ -111,7 +133,9 @@ export async function POST(req: NextRequest) {
     if (!skrivning.ok) {
       return NextResponse.json({ fel: skrivning.fel }, { status: 502 });
     }
-    return NextResponse.json({ ok: true, import: validering.varde });
+    const resImport = NextResponse.json({ ok: true, import: validering.varde });
+    if (fornyad) sattMedlemKakor(resImport, fornyad.access, fornyad.refresh);
+    return resImport;
   }
 
   // ── quiz/kursklar/stjarna — servern fastställer nyckel + värde ────────────
@@ -126,5 +150,7 @@ export async function POST(req: NextRequest) {
   if (!skrivning.ok) {
     return NextResponse.json({ fel: skrivning.fel }, { status: 502 });
   }
-  return NextResponse.json({ ok: true, nycklar: validering.rader.map((r) => r.nyckel) });
+  const resSkrivning = NextResponse.json({ ok: true, nycklar: validering.rader.map((r) => r.nyckel) });
+  if (fornyad) sattMedlemKakor(resSkrivning, fornyad.access, fornyad.refresh);
+  return resSkrivning;
 }

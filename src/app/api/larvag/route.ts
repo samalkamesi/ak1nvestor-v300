@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { lasMedlemSession } from "@/lib/medlem-auth";
+import { fornyaMedlemSession, lasMedlemSession, sattMedlemKakor } from "@/lib/medlem-auth";
 import { lasMedlemProgress, TOM_MEDLEM_PROGRESS } from "@/lib/medlem-progress";
 import { getCourses } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
@@ -104,7 +104,18 @@ export async function GET(req: NextRequest) {
   const exkluderaSlug = /^[a-z0-9-]{1,200}$/i.test(exkluderaRaw) ? exkluderaRaw : undefined;
 
   // ── Session → progress (gäst ⇒ TOM — tippedekonomin gäller alla) ──────────
-  const session = await lasMedlemSession(req);
+  // LOGIN-2.0: utgången access-kaka (1 h) FÖRSÖKER roteras med refresh-kakan
+  // (30 d) — samma kontrakt som /api/medlem {action:"session"} — så lärvägen
+  // inte visar gäst-vy trots giltig refresh-session.
+  let session = await lasMedlemSession(req);
+  let fornyad: { access: string; refresh: string } | undefined;
+  if (session === null) {
+    const f = await fornyaMedlemSession(req);
+    if (f !== null) {
+      session = f.session;
+      fornyad = { access: f.access, refresh: f.refresh };
+    }
+  }
   const progress = session ? await lasMedlemProgress(session.authId) : TOM_MEDLEM_PROGRESS;
 
   // ── Svagheterna (anonym mängd) + kärnan ────────────────────────────────────
@@ -128,5 +139,7 @@ export async function GET(req: NextRequest) {
     };
   });
 
-  return NextResponse.json({ inloggad: session !== null, rek: rekBerikad });
+  const res = NextResponse.json({ inloggad: session !== null, rek: rekBerikad });
+  if (fornyad) sattMedlemKakor(res, fornyad.access, fornyad.refresh);
+  return res;
 }

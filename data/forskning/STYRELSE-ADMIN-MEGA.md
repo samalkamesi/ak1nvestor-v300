@@ -817,3 +817,18 @@ DIFFERENTIALDIAGNOS (inte mer UI — hjärnan):
 - **STYRELSEFIX**: appendera()-vakten kastade vid varje protokoll-append
   (separerar-självmotsägelse) — exakt rot+'/'+namn-kontroll nu.
 - tsc 36=baslinje · build exit 0 · regressioner gröna · deploy 200.
+
+## VÅG 96 — BREDD + DJUP (2026-09-11, styrelsebeslut per R1-R3)
+
+- D1 **PRESTANDA VÅG 3**: prod-mätning (TTFB/LCP-grund, buntar, bilder)
+  + topp-5 åtgärder inom tillåtna ytor (nginx/Next-konfig, bild-
+  optimering, font/laddningsordning) — ALDRIG pm2-filer på servern.
+- D2 **STUDIO MOBIL-POLISH**: telefon-först-förbättringar av
+  studio-chat.tsx (tryckytor ≥52px, läsbarhet, drawer-ergonomi,
+  tangentbordshantering) — våg 90-språket består.
+- D3 **M9 SERIE 4-6**: tre nya evergreen-serier i fabriken (kassa-
+  flödesanalys, utdelningar-101, boerspsykologi) → kundens
+  granskningskö — samma harda grindar (utkast-status, kontrolleraText,
+  md5-kvitton, ALDRIG investeringsråd).
+
+KVD: tsc 36 · build 0 · E2E-regressioner gröna · deploy + prodcheck.

@@ -928,3 +928,18 @@ KVD: tsc 36 · build 0 · deploy + prodcheck.
   mot-universum med delta-pilar, sortering, kurslankar, 20 nycklar x3,
   permanent lekagevakt (222 filer, 0 traffar).
 - tsc 36 · build 0 (951 sidor) · deploy 200.
+
+## VÅG 99 — DJUPT: SCHEMA-KOMPLETT + PRISSTEGE-REDskap (2026-09-11)
+
+- G1 **A3 SLUTFÖRD**: FAQPage-schema (genererat ur varje kurs learn/
+  why-innehåll, 3-4 frågor/svar) + Course-schema komplett (provider,
+  educationalLevel, timeRequired, inLanguage, offers) + BreadcrumbList
+  — på alla 333 kurser × 3 språk; validerat mot Googles rika resultat-
+  krav (inga tomma fält, inga påhittade frågor).
+- G2 **PRISSTEGE BAKOM FLAGGA**: portfölj-tier-sidorna (249/499→799;
+  kundens slutliga priser väntar — EXISTS-kravet: sidorna bygger klara
+  men oåtkomliga tills kundens beslut; env-flagga + 404-grind enligt
+  b2bAktiv-mönstret). ALDRIG aktiverad autonomt (R2: prissättning =
+  kundens).
+
+KVD: tsc 36 · build 0 · schema-validering · deploy.

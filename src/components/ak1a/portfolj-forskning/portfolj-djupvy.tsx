@@ -579,7 +579,7 @@ export function PortfoljDjupvy({
           )}
 
           {/* Pedagogisk fotnot */}
-          <p className="rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+          <p className="marin-unscope rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
             Forskningsbaserad analys — inte investeringsrådgivning.
           </p>
         </div>

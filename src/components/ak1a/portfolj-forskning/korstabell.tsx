@@ -692,7 +692,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
         )}
 
         {/* Disclaimer */}
-        <p className="mt-6 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+        <p className="marin-unscope mt-6 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
           Pedagogisk forskning — inte investeringsrådgivning. Tabellen är ett studieunderlag, aldrig
           en köp- eller säljsignal.
         </p>

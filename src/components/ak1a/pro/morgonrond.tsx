@@ -429,7 +429,7 @@ export function Morgonrond({ traff }: { traff: TraffUtsnitt | null }) {
           <ScreeningKort antalSparade={antalSparade} />
         </div>
 
-        <p className="mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+        <p className="marin-unscope mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
           Pedagogisk forskning — inte investeringsrådgivning (2007:528). Korten beskriver
           daterade underlag; regimen och träff-% är kvitto, aldrig signal.
         </p>

@@ -99,18 +99,21 @@ const KLASS_IKON: Record<VagKlass, string> = {
 };
 
 const KLASS_STIL: Record<VagKlass, string> = {
-  "impulsvåg": "border-bull/30 bg-bull/15 text-bull",
-  korrigering: "border-bear/30 bg-bear/15 text-bear",
-  basbygge: "border-gold/40 bg-gold/15 text-gold",
+  /* Fasta marin-familjens ljusvärden — figuren är alltid mörk (bg-[#081120]/40
+     över marin-panel), temavariabler blev mörk-på-mörk i ljust läge (våg 105:
+     impulsvåg 3.16:1, övriga ännu lägre). Mönstret följer osatt-posten. */
+  "impulsvåg": "border-[#34D399]/30 bg-[#34D399]/15 text-[#34D399]",
+  korrigering: "border-[#F87171]/30 bg-[#F87171]/15 text-[#F87171]",
+  basbygge: "border-[#E8C766]/40 bg-[#E8C766]/15 text-[#E8C766]",
   osatt: "border-[#EDE6D6]/15 bg-[#0E1B2E]/60 text-[#EDE6D6]/70",
 };
 
-/** Streckfärg i SVG:n per klass (CSS-variabler som resten av ekosystemet). */
+/** Streckfärg i SVG:n per klass — fasta ljusvärden, figuren är alltid mörk. */
 const KLASS_STREAK: Record<VagKlass, string> = {
-  "impulsvåg": "var(--bull)",
-  korrigering: "var(--bear)",
-  basbygge: "var(--gold)",
-  osatt: "var(--muted-foreground)",
+  "impulsvåg": "#34D399",
+  korrigering: "#F87171",
+  basbygge: "#E8C766",
+  osatt: "#EDE6D6",
 };
 
 // ── Ren matematik: klass ur helhetstalet (spegling av motorns egna
@@ -323,18 +326,18 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
   return (
     <figure className="rounded-xl border border-[#EDE6D6]/15 bg-[#081120]/40 p-2.5">
       <figcaption className="font-serif text-xs font-bold">
-        {vy.namn} <span className="font-normal text-muted-foreground">· {vy.span}</span>
+        {vy.namn} <span className="font-normal text-[#EDE6D6]/75">· {vy.span}</span>
       </figcaption>
 
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="mt-1 w-full" role="img" aria-label={aria}>
         {/* Ljus vågrät referens — formen ska vara läsbar utan färgseende */}
-        <line x1={PLOT_X0} x2={PLOT_X1} y1={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2} y2={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2} stroke="var(--muted-foreground)" strokeWidth="0.5" strokeDasharray="2 5" opacity="0.25" />
+        <line x1={PLOT_X0} x2={PLOT_X1} y1={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2} y2={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2} stroke="#EDE6D6" strokeWidth="0.5" strokeDasharray="2 5" opacity="0.25" />
 
         {vy.klass === "osatt" ? (
           /* OSATT — streckad nästan-platt linje; motorn gissar aldrig en form */
           <g>
             <line x1={PLOT_X0 + 4} x2={PLOT_X1 - 4} y1={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2} y2={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2 - 1} stroke={farg} strokeWidth="1.75" strokeDasharray="5 4" />
-            <text x={(PLOT_X0 + PLOT_X1) / 2} y={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2 - 8} textAnchor="middle" fontSize="8" fontWeight="700" fill="var(--muted-foreground)">
+            <text x={(PLOT_X0 + PLOT_X1) / 2} y={(KURVA_Y_TOPP + KURVA_Y_BOTTEN) / 2 - 8} textAnchor="middle" fontSize="8" fontWeight="700" fill="#EDE6D6" opacity="0.75">
               osatt
             </text>
           </g>
@@ -365,7 +368,7 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
                     textAnchor="middle"
                     fontSize="8"
                     fontWeight="700"
-                    fill="var(--foreground)"
+                    fill="#EDE6D6"
                     opacity="0.85"
                   >
                     {e.text}
@@ -380,13 +383,13 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
         <span className={"inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-bold " + KLASS_STIL[vy.klass]}>
           <span aria-hidden>{KLASS_IKON[vy.klass]}</span> {vy.klass}
         </span>
-        <span className="tabular text-[10px] text-muted-foreground">
+        <span className="tabular text-[10px] text-[#EDE6D6]/75">
           styrka {styrkaProcent === null ? "—" : `${styrkaProcent} %`}
         </span>
         {/* Enighetsscore 0–100 (VÅG 56): 40 % medel-bekräftelse + 30 % tröskel-
             marginal + 30 % celltäckning — en tunn mätning ser tunn ut. */}
         <span
-          className="tabular text-[10px] text-muted-foreground"
+          className="tabular text-[10px] text-[#EDE6D6]/75"
           title="Enighet 0–100 = 40 % medel-bekräftelse + 30 % tröskelmarginal (tak vid 6 %) + 30 % celltäckning bland variablerna"
         >
           enighet {vy.enighet === null ? "—" : `${vy.enighet}/100`}
@@ -521,7 +524,7 @@ export function VagkurvaGraf({
         ) : fel || !data ? (
           /* Fel/viloläge — motorn sover, aldrig dömande */
           <div className="rounded-lg border border-bear/30 bg-bear/5 p-5">
-            <p className="font-serif text-sm font-bold text-bear">Vågmotorn sover — försök igen</p>
+            <p className="font-serif text-sm font-bold text-[#F87171]">Vågmotorn sover — försök igen</p>
             <p className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/60">
               {fel || "Inget underlag kunde hämtas"} — utan data finns ingen våg att rita, och
               motorn gissar aldrig.

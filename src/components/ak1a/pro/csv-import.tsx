@@ -718,7 +718,7 @@ export function CsvImport() {
             </p>
 
             {/* B2B-disclaimer — mal-låst ton från forskning-b2b 4.2 */}
-            <p className="mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+            <p className="marin-unscope mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
               {svar.disclaimer ?? "Pedagogisk analys — inte investeringsråd."}
             </p>
           </>

@@ -7,6 +7,7 @@ import {
   klientIp,
   lasKakaVarde,
   lasMedlemSession,
+  medlemGlomtLosenord,
   medlemSignIn,
   medlemSignOut,
   medlemSignup,
@@ -38,6 +39,8 @@ export const dynamic = "force-dynamic";
  *           10 FEL per minut per IP-hash (sha256 av proxy-IP — raw-IP:n lagras
  *           aldrig). 401-texten GENERELL: "Fel e-post eller lösenord."
  *   signout {} → best-effort /auth/v1/logout + kakorna rensas; idempotent.
+ *   glomt   {epost} → POST /auth/v1/recover; svaret är ALLTID neutralt
+ *           (kontoexistens läcker aldrig); rate-limit 5/min per IP-hash.
  *   session {} → lasMedlemSession, vid utgången access FÖRSÖK refresh-
  *           rotation (fornyaMedlemSession) och sätt om kakorna — svaret bär
  *           {inloggad, epost}, ALDRIG tokens.
@@ -51,6 +54,16 @@ export const dynamic = "force-dynamic";
  *  nycklat per sha256(IP) i stället för per process). Map:en töms av fönstret. */
 const misslyckadeSignin = new Map<string, number[]>();
 const MAX_SIGNIN_FEL_PER_MIN = 10;
+/** Rate-limit för recover-begäranden (glömt lösenord): 5 per IP per minut —
+ *  spärrar mejlbombning; GoTrue har dessutom egna tak. */
+const glomtAnrop = new Map<string, number[]>();
+const MAX_GLOMT_PER_MIN = 5;
+
+/** Sekunder till fönstrets äldsta stansade försök släpper (429-räknaren). */
+function retrySekUrFonster(stansade: number[], nu: number): number {
+  const aldsta = Math.min(...stansade);
+  return Math.max(1, Math.min(60, Math.ceil((aldsta + 60_000 - nu) / 1000)));
+}
 
 export async function POST(req: NextRequest) {
   let kropp: unknown = null;
@@ -68,7 +81,10 @@ export async function POST(req: NextRequest) {
     const resultat = await medlemSignup(body.epost, body.losenord);
     if (!resultat.ok) {
       const status = resultat.orsak === "validering" ? 400 : 502;
-      return NextResponse.json({ fel: resultat.fel }, { status });
+      const svar: Record<string, unknown> = { fel: resultat.fel };
+      if (resultat.kod) svar.kod = resultat.kod;
+      if (resultat.retrySek) svar.retrySek = resultat.retrySek;
+      return NextResponse.json(svar, { status });
     }
     // Auth-kontot finns nu — profilraden är best-effort och misslyckanden
     // döljs inte (profilSkriven:false) men kraschar ALDRIG registreringen.
@@ -86,21 +102,57 @@ export async function POST(req: NextRequest) {
     const nu = Date.now();
     const bedomning = utvarderaRateLimit(misslyckadeSignin.get(nyckel) ?? [], nu, MAX_SIGNIN_FEL_PER_MIN);
     if (bedomning.limitad) {
-      return NextResponse.json(
-        { fel: "För många försök — vänta en minut." },
+      // LOGIN-2.0: exakt nedräkning + Retry-After (mönstret ur middleware).
+      const retrySek = retrySekUrFonster(bedomning.stansade, nu);
+      const res = NextResponse.json(
+        { fel: "För många försök — vänta en stund och försök igen.", kod: "rate", retrySek },
         { status: 429 },
       );
+      res.headers.set("Retry-After", String(retrySek));
+      return res;
     }
 
     const resultat = await medlemSignIn(body.epost, body.losenord);
     if (!resultat.ok) {
       misslyckadeSignin.set(nyckel, [...bedomning.stansade, nu]); // ENDAST fel räknas
-      return NextResponse.json({ fel: resultat.fel }, { status: 401 });
+      const svar: Record<string, unknown> = { fel: resultat.fel };
+      if (resultat.kod) svar.kod = resultat.kod;
+      if (resultat.retrySek) svar.retrySek = resultat.retrySek;
+      return NextResponse.json(svar, { status: 401 });
     }
 
     const res = NextResponse.json({ ok: true, epost: resultat.user.epost });
     sattMedlemKakor(res, resultat.access, resultat.refresh);
     return res;
+  }
+
+  // ── glömt lösenord: recover-mejl UTAN kontoexistens-läckage ────────────────
+  if (action === "glomt") {
+    const nyckel = ipHash(klientIp(req));
+    const nu = Date.now();
+    const bedomning = utvarderaRateLimit(glomtAnrop.get(nyckel) ?? [], nu, MAX_GLOMT_PER_MIN);
+    if (bedomning.limitad) {
+      const retrySek = retrySekUrFonster(bedomning.stansade, nu);
+      const res = NextResponse.json(
+        { fel: "För många begäranden — vänta en stund och försök igen.", kod: "rate", retrySek },
+        { status: 429 },
+      );
+      res.headers.set("Retry-After", String(retrySek));
+      return res;
+    }
+    glomtAnrop.set(nyckel, [...bedomning.stansade, nu]);
+
+    const resultat = await medlemGlomtLosenord(body.epost);
+    if (!resultat.ok) {
+      const svar: Record<string, unknown> = { fel: resultat.fel };
+      if (resultat.kod) svar.kod = resultat.kod;
+      return NextResponse.json(svar, { status: 502 });
+    }
+    // NEUTRAL talkart: samma text oavsett om kontot finns (KRITA).
+    return NextResponse.json({
+      ok: true,
+      meddelande: "Om kontot finns har en återställningslänk skickats till din e-post — kolla inkorgen (och skräpposten).",
+    });
   }
 
   // ── signout: best-effort revoke + kakor bort ────────────────────────────────

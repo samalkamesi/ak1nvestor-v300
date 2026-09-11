@@ -13,6 +13,17 @@ import { Input } from "@/components/ui/input";
  * ALDRIG en token). Mjuk migrering: den gamla lokala vyn (logga-in.tsx)
  * lever kvar som fall-back-sektion på samma sida.
  *
+ * LOGIN-2.0 (våg 101 — "specifika fel + live-räknare"):
+ *   · Servern bär {fel, kod?, retrySek?}: ej_bekraftad/rate/natverk visas
+ *     med SIN text (kontoexistens avslöjas aldrig — koderna läcker inget),
+ *     okänd kod ⇒ generisk text som förr.
+ *   · Rate-limit (429) startar en LIVE-NEDRÄKNING: knappen låses och visar
+ *     "Försök igen om N s" (1-s-intervall; mönstret kroppsvy-kort.tsx).
+ *   · Fel visas nu som role="alert" i rött (tydligt skilt från info-guldet);
+ *     info/lyckat behåller text-gold + role="status".
+ *   · "Glömt lösenord?"-läge: POST {action:"glomt"} → NEUTRAL talkart
+ *     (kontoexistens läcker aldrig), rate-limitad med egen räknare.
+ *
  * Flöde:
  *   · Mount → POST {action:"session"} (EN kontroll, ingen polling): redan
  *     inloggad ⇒ roll-meddelande + Logga ut direkt — SSR renderar formuläret
@@ -23,15 +34,13 @@ import { Input } from "@/components/ui/input";
  *     eleven lotsas vidare till inloggningsläget med kvarhållen e-post.
  *   · signout ⇒ kakorna rensas server-side; lösenordet kastas ur state.
  *
- * Feltexter: serverns generella texter ("Fel e-post eller lösenord.",
- * "Kontot kunde inte skapas.") visas ordagrant; nätverksfel ⇒ egen text.
  * Copy: sansad + pedagogisk — ALDRIG FOMO (varumärkesregeln).
  */
 
-/** Läges-växeln: befintligt konto vs nytt konto. */
-type Lage = "loggain" | "skapa";
+/** Läges-växeln: befintligt konto vs nytt konto vs glömt lösenord. */
+type Lage = "loggain" | "skapa" | "glomt";
 
-/** Tolerant JSON-läsning av /api/medlem-svar (form: {ok?, epost?, fel?, inloggad?}). */
+/** Tolerant JSON-läsning av /api/medlem-svar (form: {ok?, epost?, fel?, kod?, retrySek?, ...}). */
 async function lasSvar(res: Response): Promise<Record<string, unknown> | null> {
   try {
     const kropp = await res.json();
@@ -57,8 +66,12 @@ export function MedlemInloggning() {
   const [epost, setEpost] = useState("");
   const [losenord, setLosenord] = useState("");
   const [status, setStatus] = useState("");
+  /** true = fel (röd, role="alert") · false = info/lyckat (guld, status). */
+  const [arFel, setArFel] = useState(false);
   const [busy, setBusy] = useState(false);
   const [inloggadEpost, setInloggadEpost] = useState<string | null>(null);
+  /** LIVE-RÄKNAREN: sekunder kvar tills nästa försök tillåts (429-rate). */
+  const [retrySek, setRetrySek] = useState(0);
 
   // Redan inloggad från ett tidigare besök (httpOnly-kakorna)? EN kontroll
   // vid mount — ingen polling. Tyst vid fel: SSR-vyn (formuläret) står kvar.
@@ -76,21 +89,45 @@ export function MedlemInloggning() {
     };
   }, []);
 
-  /** Skicka formuläret: signin eller signup mot /api/medlem. */
+  // LIVE-NEDRÄKNINGEN: 1-s-intervall medan retrySek > 0 (mönstret ur
+  // kroppsvy-kort.tsx — intervall rensas alltid vid unmount/noll).
+  useEffect(() => {
+    if (retrySek <= 0) return;
+    const id = setInterval(() => {
+      setRetrySek((n) => (n > 0 ? n - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, [retrySek > 0]);
+
+  /** Sätt fel-text + ev. räknare ur ett API-svar ({fel, kod?, retrySek?}). */
+  const visaFel = (data: Record<string, unknown> | null) => {
+    setArFel(true);
+    if (data && typeof data.retrySek === "number" && data.retrySek > 0) {
+      setRetrySek(Math.min(3600, Math.floor(data.retrySek)));
+    }
+    setStatus(
+      data && typeof data.fel === "string" && data.fel !== "" ? data.fel : "Något gick fel — försök igen.",
+    );
+  };
+
+  /** Skicka formuläret: signin/signup/glomt mot /api/medlem. */
   const skicka = async () => {
-    if (!epost.trim() || !losenord || busy) return;
+    if (!epost.trim() || busy || retrySek > 0) return;
+    if (lage !== "glomt" && !losenord) return;
     setBusy(true);
     setStatus("");
-    const action = lage === "skapa" ? "signup" : "signin";
+    const action = lage === "skapa" ? "signup" : lage === "glomt" ? "glomt" : "signin";
     try {
-      const { res, data } = await medlemApi({ action, epost: epost.trim(), losenord });
+      const { res, data } = await medlemApi(
+        action === "glomt"
+          ? { action, epost: epost.trim() }
+          : { action, epost: epost.trim(), losenord },
+      );
 
       if (!res.ok || !data || data.ok !== true) {
-        // Serverns generella feltexter är redan sansade — visa ordagrant,
-        // med egen fallback om kroppen var tom/ovidkommande.
-        setStatus(
-          data && typeof data.fel === "string" ? data.fel : "Något gick fel — försök igen.",
-        );
+        // LOGIN-2.0: serverns texter är kodstyrda (ej_bekraftad/rate/natverk
+        // har sina egna) — visa ordagrant + starta räknaren vid retrySek.
+        visaFel(data);
         return;
       }
 
@@ -101,12 +138,21 @@ export function MedlemInloggning() {
         return;
       }
 
+      if (action === "glomt") {
+        // NEUTRAL talkart — samma text oavsett om kontot finns.
+        setArFel(false);
+        setStatus(typeof data.meddelande === "string" ? data.meddelande : "Kolla din e-post.");
+        return;
+      }
+
       // Signup: kontot är skapat men rutten sätter inga kakor (L1-kontraktet)
       // — lotsa vidare till inloggningsläget, e-posten får stanna kvar.
+      setArFel(false);
       setStatus("Kontot är skapat. Logga in nedan för att komma igång.");
       setLage("loggain");
     } catch {
-      setStatus("Nätverksfel — försök igen.");
+      setArFel(true);
+      setStatus("Nätverksfel — kontrollera anslutningen och försök igen.");
     } finally {
       setBusy(false);
     }
@@ -123,6 +169,7 @@ export function MedlemInloggning() {
     }
     setInloggadEpost(null);
     setLosenord("");
+    setArFel(false);
     setStatus("Du är utloggad. Välkommen åter!");
     setBusy(false);
   };
@@ -158,18 +205,21 @@ export function MedlemInloggning() {
     );
   }
 
-  // ── Formulär: två lägen på samma kort ───────────────────────────────────────
+  // ── Formulär: tre lägen på samma kort ───────────────────────────────────────
   const skaparKonto = lage === "skapa";
+  const glomtLage = lage === "glomt";
   return (
     <div className="mx-auto max-w-md">
       <div className="rounded-2xl border-2 border-gold bg-card p-8">
         <h2 className="font-serif text-2xl font-bold">
-          {skaparKonto ? "Skapa konto" : "Logga in"}
+          {skaparKonto ? "Skapa konto" : glomtLage ? "Glömt lösenord" : "Logga in"}
         </h2>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           {skaparKonto
             ? "E-post och lösenord — det är allt som krävs. Alla kurser är gratis, och du kan logga in på valfri enhet."
-            : "E-post och lösenord. Saknar du konto kan du skapa ett gratis på en minut."}
+            : glomtLage
+              ? "Skriv din e-post — om kontot finns skickar vi en återställningslänk."
+              : "E-post och lösenord. Saknar du konto kan du skapa ett gratis på en minut."}
         </p>
         <div className="mt-5 space-y-3">
           <Input
@@ -180,39 +230,69 @@ export function MedlemInloggning() {
             autoComplete="email"
             onKeyDown={(e) => e.key === "Enter" && skicka()}
           />
-          <Input
-            type="password"
-            value={losenord}
-            onChange={(e) => setLosenord(e.target.value)}
-            placeholder="Ditt lösenord"
-            onKeyDown={(e) => e.key === "Enter" && skicka()}
-          />
+          {!glomtLage && (
+            <Input
+              type="password"
+              value={losenord}
+              onChange={(e) => setLosenord(e.target.value)}
+              placeholder="Ditt lösenord"
+              autoComplete={skaparKonto ? "new-password" : "current-password"}
+              onKeyDown={(e) => e.key === "Enter" && skicka()}
+            />
+          )}
           {skaparKonto && (
             <p className="text-xs text-muted-foreground">Minst 10 tecken.</p>
           )}
           <Button
             className="w-full bg-gold text-background hover:bg-gold/90"
             onClick={skicka}
-            disabled={busy || !epost.trim() || !losenord}
+            disabled={busy || !epost.trim() || retrySek > 0 || (!glomtLage && !losenord)}
           >
-            {busy ? "Ett ögonblick…" : skaparKonto ? "Skapa konto" : "Logga in"}
+            {busy
+              ? "Ett ögonblick…"
+              : retrySek > 0
+                ? `Försök igen om ${retrySek} s`
+                : glomtLage
+                  ? "Skicka återställningslänk"
+                  : skaparKonto
+                    ? "Skapa konto"
+                    : "Logga in"}
           </Button>
         </div>
         {status && (
-          <p className="mt-3 text-sm text-gold" role="status">
+          <p
+            className={`mt-3 text-sm ${arFel ? "text-red-600 dark:text-red-400" : "text-gold"}`}
+            role={arFel ? "alert" : "status"}
+          >
             {status}
           </p>
         )}
-        <button
-          type="button"
-          onClick={() => {
-            setLage(skaparKonto ? "loggain" : "skapa");
-            setStatus("");
-          }}
-          className="mt-4 text-sm underline hover:text-gold"
-        >
-          {skaparKonto ? "Redan medlem? Logga in i stället" : "Ny här? Skapa ett gratis konto"}
-        </button>
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <button
+            type="button"
+            onClick={() => {
+              setLage(skaparKonto || glomtLage ? "loggain" : "skapa");
+              setStatus("");
+              setRetrySek(0);
+            }}
+            className="text-sm underline hover:text-gold"
+          >
+            {skaparKonto || glomtLage ? "Redan medlem? Logga in i stället" : "Ny här? Skapa ett gratis konto"}
+          </button>
+          {!glomtLage && (
+            <button
+              type="button"
+              onClick={() => {
+                setLage("glomt");
+                setStatus("");
+                setRetrySek(0);
+              }}
+              className="text-xs text-muted-foreground underline hover:text-gold"
+            >
+              Glömt lösenord?
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

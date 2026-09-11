@@ -103,8 +103,9 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ member: newMember[0] || newMember, isNew: true });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+  } catch {
+    // LOGIN-2.0: rå e.message läcker ALDRIG ut (kunde bära Supabase-detaljer).
+    return NextResponse.json({ error: "Registreringen misslyckades — försök igen." }, { status: 500 });
   }
 }
 
@@ -124,7 +125,8 @@ export async function GET(req: NextRequest) {
     );
     const data = await res.json();
     return NextResponse.json({ member: data?.[0] || null });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+  } catch {
+    // LOGIN-2.0: generell text — rå felmeddelanden läcker aldrig ut.
+    return NextResponse.json({ error: "Kunde inte läsa medlem just nu." }, { status: 500 });
   }
 }

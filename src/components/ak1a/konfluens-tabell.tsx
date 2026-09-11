@@ -180,7 +180,7 @@ function demoHistorik(ticker: string): number[] {
 function VagkonRad({ ticker }: { ticker: string }) {
   return (
     <details>
-      <summary className="cursor-pointer select-none text-[11px] font-bold uppercase tracking-widest text-gold">
+      <summary className="marin-unscope cursor-pointer select-none text-[11px] font-bold uppercase tracking-widest gold-text">
         Vågkon ▾
       </summary>
       <div className="mt-2">
@@ -482,8 +482,10 @@ export function KonfluensTabell() {
           )
         )}
 
-        {/* Disclaimer */}
-        <p className="mt-6 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+        {/* Disclaimer — marin-unscope: bg-card-ytan är ljus, guld-löptext hämtar
+            rotens WCAG-brons (#7A5E14, 5.4:1) i stället för marin-flippens
+            #c9a84c (2.25:1 på cream — våg 105-fynd). */}
+        <p className="marin-unscope mt-6 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
           Pedagogisk analys — inte investeringsråd. Poängen är ett studieunderlag, aldrig en köp-
           eller säljsignal.
         </p>

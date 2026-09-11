@@ -820,7 +820,7 @@ export function ProScreening({ rader, skapad }: { rader: KorstabbellRad[]; skapa
         )}
 
         {/* Disclaimer — 2007:528-låsraden (BESLUT §4) */}
-        <p className="mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
+        <p className="marin-unscope mt-4 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic gold-text">
           Pedagogisk forskning — inte investeringsrådgivning (2007:528). Screening är ett
           studieunderlag, aldrig en köp- eller säljsignal; rådgivaren svarar för sin egen
           analys och lämplighetsprövning.

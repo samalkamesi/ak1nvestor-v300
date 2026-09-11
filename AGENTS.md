@@ -78,6 +78,8 @@ blogg, medlemmar, AI-mentor.
   dem) innan du svarar om dem.
 - Filträd, minne, färdigheter, mål-läge (autonom loop), permissions —
   allt finns i UI:t.
+- Färdigheter: .zcode/skills/ (ak1a-analys = kundens metodik — kör vid
+  analysönskemål)
 - Tala om vad du gör (verktygskorten syns för kunden). Var ärlig med
   osäkerhet. Avsluta aldrig med löften du inte utför — GÖR jobbet.
 
@@ -101,23 +103,26 @@ denna server. Leveransprotokoll:
    nycklar krävs). Datafiler behöver INGET bygge — appar läser dem
    från disk.
 2. **Kodändringar** (src/**): ändra + `npx tsc --noEmit` (0 nya fel)
-   → commit → push prod develop → BYGG: `cd /home/ak1a/AK1 && npm
-   ci --no-audit --no-fund && npm run build && pm2 restart ak1a` →
-   verifiera `https://lab.ak1nvestor.com/` = 200. Misslyckas bygget:
-   `git revert HEAD && bygg om` — ALDRIG lämna prod trasig.
+   → commit → push prod develop → BYGG under LÅS: `exec flock -n
+   /tmp/ak1a-deploy.lock bash -c 'cd /home/ak1a/AK1 && npm ci --no-audit
+   --no-fund && npm run build && pm2 restart ak1a'` — om låset är upptaget
+   (deploy-skriptet bygger) → VÄNTA 3 min och försök igen, ALDRIG bygga
+   olåst (våg 100-incidenten: två parallella byggen raderade .next →
+   sajten nere). Verifiera `https://lab.ak1nvestor.com/` = 200 efteråt.
+   Misslyckas bygget: `git revert HEAD && bygg om` — ALDRIG lämna prod trasig.
 3. **STOPPREGEL**: aldrig röra .env*-, nyckel- eller betalningsfiler;
    priser/domän/juridik = styrelseregel R2 (väntar kund). Committa i
    små, beskrivande steg (svenska, "studio:"-prefix i ämnet).
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
 
-## VERKTYGSBÄLTET (våg 100) — min egen kapacitet, paketerad
+## GRÄNSSNITTSVAKTEN (våg 105 — kunddirektiv "aldrig igen nå kundens ögon")
 
-Mina operativa procedurer finns som färdigheter i `.zcode/skills/`:
-`sessionstart`, `leverera-kod`, `leverera-data`, `leveranskontroll`
-(KVD), `styrelsemote`, `parallell-dispatch`, `juridikgrind`, `drift-ops`
-— plus kommandon `/status`, `/kvd`, `/deploy` (`.zcode/commands/`).
-Snabbläge: `node verktyg/agent-status.mjs` (git + våg + prod + pm2 +
-kvalitet i ett kommando). Använd dem istället för att återhärleda
-protokollen — men denna fil förblir sanningshierarkins topp.
-
+`verktyg/granssnittsvakt.mjs` mäter ALLA publika sidor i båda teman × mobil/dator:
+WCAG-kontrast, horisontell överflöd, element utanför viewport, klippt text, konsolfel.
+Cron (var 6:e timme, `data/infra/contabo/granssnittsvakt-cron.sh`) larmar DIN session vid
+fynd med full sammanfattning. Uppdrag vid larm: diagnostisera roten → rätta src/ (Write/Edit,
+Mimosa-regler) → tsc (baslinje 36) → bygg under `flock /tmp/ak1a-deploy.lock` → deploy via
+egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback är whitelistat i
+middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
+gränsnittsändringar; ett defekt som når kunden = vaktsystemfel, inte bara kodfel.

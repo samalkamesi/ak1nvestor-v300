@@ -27,7 +27,7 @@ const KATEGORIER: Record<string, { etikett: string; ikon: string }> = {
 // Kurser som redan levererar motsvarande bok
 const KURS_MAP: Record<string, string> = {
   "The Intelligent Investor": "the-intelligent-investor",
-  "One Up on Wall Street": "mina-basta-investringar",
+  "One Up on Wall Street": "mina-basta-investeringar",
   "Zero to One": "zero-to-one",
   "Blue Ocean Strategy": "blue-ocean-strategy",
   "Security Analysis": "security-analysis",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
-import { MinSida } from "@/components/ak1a/min-sida";
+import { Portal } from "@/components/ak1a/portal";
 import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 
@@ -28,7 +28,9 @@ export default function MinSidaPage() {
       <div className="mb-6">
         <MigreraProgressBanner />
       </div>
-      <MinSida prenumNiva={prenumNiva} prenumRabattProcent={prenumRabattProcent} />
+      {/* VÅG 102: PORTALEN — en sessionskontroll styr navet (PortalNav i
+          marin-familjen) + Min Sida med kontots server-progress som talgivare. */}
+      <Portal prenumNiva={prenumNiva} prenumRabattProcent={prenumRabattProcent} />
     </SeoPageShell>
   );
 }

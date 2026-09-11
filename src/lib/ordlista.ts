@@ -1675,6 +1675,16 @@ export const ORDLISTA = {
     en: "No active session found — create a free account or sign in and the whole course unlocks.",
     ar: "لا توجد جلسة نشطة — أنشئ حسابًا مجانيًا أو سجّل الدخول لتُفتح الدورة كاملة.",
   },
+  "gate.kundeInteKolla": {
+    sv: "Din inloggning kunde inte kontrolleras just nu — kontrollera anslutningen och försök igen.",
+    en: "Your session could not be verified right now — check your connection and try again.",
+    ar: "تعذّر التحقق من تسجيل دخولك الآن — تحقّق من اتصالك وحاول مرة أخرى.",
+  },
+  "gate.forsokIgen": {
+    sv: "Försök igen",
+    en: "Try again",
+    ar: "حاول مرة أخرى",
+  },
   "gate.lokalProgress": {
     sv: "Du har framsteg sparat på denna enhet — registrera dig gratis för att behålla det.",
     en: "You have progress saved on this device — register for free to keep it.",

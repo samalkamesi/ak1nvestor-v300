@@ -167,6 +167,25 @@ import { cn } from "@/lib/utils";
  *   · /installningar-kommandot (kommandon.ts) öppnar drawern — registret
  *     driver samtidigt slash-autocomplete + kommandopaletten.
  *
+ * VÅG 97 (STUDIO-UI, block E2 — STYRELSE-ADMIN-MEGA "VÅG 97"):
+ *   · TANKAR-VY: agentens resonemang (ström-kanal "tankar", model.streaming
+ *     kind reasoning_delta) samlas PER MEDDELANDE (m.tankar) och renderas
+ *     som KOLLAPSBAR sektion OVANFÖR svaret — rubrik "💭 Tankar" (mono,
+ *     #8B949E) + chevron. Under streaming: senaste ~2 raderna + "tänker…"-
+ *     indikator (spinner); efter klart: kollapsad som standard, klick =
+ *     expandera (max-h-60 overflow-auto, kursiv grå 13 px). ALDRIG
+ *     tankar-texten i huvudsvaret (kanalen hålls strikt åtskild från
+ *     m.text). Historik-inläsning: bär sessionen/meddelandena tankar-fält
+ *     (sessionStorage-persistens + ev. framtida server-fält) visas samma
+ *     sektion.
+ *   · BORTA-REPLAY-RIKARE: borta-bannern ("Agenten har arbetat medan du
+ *     var borta") visar upp till 5 SENASTE verktygskörningar direkt i
+ *     bannern ($-prefix-mono-rader + ✓/✗ + varaktighet) ur GET
+ *     /api/studio/session/events (V93 C4:s replay — aggregerade kort);
+ *     fetchen körs nu ÄVEN via reconnect-pollen (återkomst utan reload).
+ *     Endpoint 404/501/nätverksfel ⇒ befintligt beteende (graceful —
+ *     replay är lyx, historik-vägen består ALWAYS).
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -227,12 +246,32 @@ interface Meddelande {
    * "klar" (skicket svarade för längesedan).
    */
   bilagaStatus?: "laddar" | "klar";
+  /**
+   * VÅG 97 E2: agentens resonemang (ström-kanal "tankar") samlas PER
+   * MEDDELANDE och renderas i TankarVy OVANFÖR svaret — ALDRIG i m.text.
+   * Taks vid strömning (TANKAR_TAK) + vid persistens (sparaTabbar).
+   */
+  tankar?: string;
+  /** VÅG 97 E2: tankar-sektionens expanderade tillstånd (kollapsad default). */
+  tankarOppen?: boolean;
 }
 
 interface Uppladdning {
   sokvag: string;
   typ: string;
   storlek: number;
+}
+
+/**
+ * VÅG 97 E2: historik-post ur GET /api/studio/stream (session/messages).
+ * Servern bär idag {roll, text}; `tankar` följer med NÄR källan har det
+ * (klientens IndexedDB-cachar + ev. framtida server-fält) — samma sektion
+ * renderas oavsett väg.
+ */
+interface HistorikPost {
+  roll: "user" | "assistant";
+  text: string;
+  tankar?: string;
 }
 
 // ── Multi-session-tabbar (våg 84 B) — renderas som sidebar-tasklista (våg 90) ─
@@ -338,7 +377,8 @@ const HISTORIK_META_LAGRING = "ak1a-studio-historik-meta";
 
 interface HistorikCachePost {
   sessionId: string;
-  meddelanden: { roll: "user" | "assistant"; text: string }[];
+  /** VÅG 97 E2: tankar följer med i cachen så återkopplingen kan visa sektionen. */
+  meddelanden: HistorikPost[];
   sistSparad: number;
 }
 
@@ -366,10 +406,7 @@ function oppnaHistorikDb(): Promise<IDBDatabase | null> {
   });
 }
 
-async function sparaHistorikCache(
-  sessionId: string,
-  meddelanden: { roll: "user" | "assistant"; text: string }[],
-): Promise<void> {
+async function sparaHistorikCache(sessionId: string, meddelanden: HistorikPost[]): Promise<void> {
   if (!sessionId || meddelanden.length === 0) return;
   const db = await oppnaHistorikDb();
   if (!db) return;
@@ -500,6 +537,9 @@ function sparaTabbar(tabbar: Tabb[], aktivTabbId: string): void {
           meddelanden: t.meddelanden.slice(-MAX_TABB_MEDDELANDEN).map((m) => ({
             ...m,
             text: m.text.slice(0, MAX_TABB_TEXT),
+            // VÅG 97 E2: tankar överlever refresh (kollapsad, svans-budget).
+            ...(m.tankar !== undefined ? { tankar: m.tankar.slice(-8_000) } : {}),
+            tankarOppen: false,
             verktygKort: m.verktygKort?.map((k) => ({
               ...k,
               argument: k.argument?.slice(0, 2_000),
@@ -540,8 +580,15 @@ function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
         tankar: "",
         // VÅG 92 B3: bilage-progress överlever ej en sidoladdning — ett
         // sparat "laddar" (POST bröts av navigeringen) visas som klart.
+        // VÅG 97 E2: tankar-sektionen startar KOLLAPSAD efter läsning.
         meddelanden: t.meddelanden.map((m) =>
-          m?.bilagaStatus === "laddar" ? { ...m, bilagaStatus: "klar" as const } : m,
+          m
+            ? {
+                ...m,
+                ...(m.bilagaStatus === "laddar" ? { bilagaStatus: "klar" as const } : {}),
+                tankarOppen: false,
+              }
+            : m,
         ),
       }));
     if (tabbar.length === 0) return null;
@@ -1958,6 +2005,81 @@ function VerktygsKortVy({
   );
 }
 
+// ── VÅG 97 E2: TANKAR-VY — agentens resonemang som kollapsbar sektion ────────
+
+/** Tak per meddelande (tecken) — svansen behålls när resonemanget är långt. */
+const TANKAR_TAK = 16_000;
+
+/**
+ * Tankar-sektionen (VÅG 97 E2): agentens resonemang (ström-kanal "tankar")
+ * samlas PER MEDDELANDE och visas OVANFÖR svaret — ALDRIG i själva
+ * svartexten (kanalen hålls strikt åtskild i stream-hanterarna).
+ *   · Under streaming: senaste ~2 raderna + "tänker…"-indikator (spinner).
+ *   · Efter klart: kollapsad som standard — klick = expandera
+ *     (max-h-60 overflow-auto, kursiv grå 13 px-text).
+ * Tryckyta: 52 px på mobil (sm:min-h-0 på desktop) — VerktygsKort-mönstret.
+ */
+function TankarVy({
+  tankar,
+  strömmande,
+  oppen,
+  onVaxla,
+}: {
+  tankar: string;
+  strömmande: boolean;
+  oppen: boolean;
+  onVaxla: () => void;
+}): React.JSX.Element {
+  if (strömmande) {
+    // Peek-läge: senaste ~2 icke-tomma raderna (fallback: svansens tecken).
+    const rader = tankar.split("\n").filter((r) => r.trim() !== "");
+    const peek = rader.slice(-2).join("\n") || tankar.slice(-160);
+    return (
+      <div
+        className="mb-2 rounded-md border border-[#30363D] bg-[#0D1117] px-2.5 py-1.5"
+        title="Agenten resonerar — resonemanget samlas här och blir kollapsbart när svaret är klart"
+      >
+        <p className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">
+          <Loader2 className="h-3 w-3 shrink-0 animate-spin text-[#D29922]" aria-hidden />
+          💭 Tankar <span className="font-normal normal-case tracking-normal">— tänker…</span>
+        </p>
+        {peek && (
+          <p className="mt-1 line-clamp-2 whitespace-pre-wrap break-words text-[13px] italic leading-snug text-[#8B949E]">
+            {peek}
+          </p>
+        )}
+      </div>
+    );
+  }
+  const antalRader = tankar.split("\n").filter((r) => r.trim() !== "").length;
+  return (
+    <div className="mb-2 overflow-hidden rounded-md border border-[#30363D] bg-[#0D1117]">
+      <button
+        type="button"
+        onClick={onVaxla}
+        aria-expanded={oppen}
+        title={oppen ? "Fäll ihop agentens resonemang" : "Visa agentens resonemang (samlades medan svaret byggdes)"}
+        className="flex min-h-[52px] w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-[#161B22] sm:min-h-0"
+      >
+        {oppen ? (
+          <ChevronDown className="h-3 w-3 shrink-0 text-[#8B949E]" aria-hidden />
+        ) : (
+          <ChevronRight className="h-3 w-3 shrink-0 text-[#8B949E]" aria-hidden />
+        )}
+        <span className="font-mono text-[11px] text-[#8B949E]">💭 Tankar</span>
+        <span className="ml-auto shrink-0 font-mono text-[9px] text-[#484F58]">
+          {antalRader} {antalRader === 1 ? "rad" : "rader"}
+        </span>
+      </button>
+      {oppen && (
+        <p className="max-h-60 overflow-auto whitespace-pre-wrap break-words border-t border-[#21262D] px-2.5 py-2 text-[13px] italic leading-relaxed text-[#8B949E]">
+          {tankar}
+        </p>
+      )}
+    </div>
+  );
+}
+
 // ── Inline-kodvy (våg 85 F5): syntax + ändringsmarkering ─────────────────────
 
 /**
@@ -3022,6 +3144,22 @@ function ZcEmblem(): React.JSX.Element {
 let idRäknare = 0;
 const nyttId = () => `m${++idRäknare}-${Date.now().toString(36)}`;
 
+/**
+ * VÅG 97 E2: historik-post → chattmeddelande. tankar-fältet följer med när
+ * källan bär det (IndexedDB-cachen + ev. framtida server-fält) så samma
+ * TankarVy-sektion renderas vid historik-inläsning som under streaming.
+ */
+function meddelandeUrHistorik(h: HistorikPost): Meddelande {
+  return {
+    id: nyttId(),
+    roll: h.roll,
+    text: h.text,
+    ...(typeof h.tankar === "string" && h.tankar.trim() !== ""
+      ? { tankar: h.tankar.slice(0, TANKAR_TAK) }
+      : {}),
+  };
+}
+
 export function StudioChat({ hem }: { hem: () => void }) {
   // ── Multi-session-tabbar (våg 84 B) — per-tabb-livet i `tabbar` ────────────
   const [tabbar, setTabbar] = React.useState<Tabb[]>(() => [
@@ -3846,6 +3984,29 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setNyaSedanUpp(0);
   }, []);
 
+  /**
+   * VÅG 97 E2 (borta-replay): hämta verktygsaktiviteten för borta-bannern —
+   * GET /api/studio/session/events?sessionId= (V93 C4:s replay-kort,
+   * aggregerade per toolCallId till slutstatus). Anropas BOTH vid mount-
+   * återkopplingen AND reconnect-pollen (återkomst utan sidreload).
+   * Fire-and-forget: bannern visar svaren direkt, verktygsraderna droppar
+   * in när replayen landar. 404/501/502/timeout/nätverksfel = TYST —
+   * replay är lyx, historik-vägen (svaren) består ALWAYS (graceful).
+   */
+  const hamtaBortaKort = React.useCallback(async (sessionId: string) => {
+    try {
+      const res = await fetch(`/api/studio/session/events?sessionId=${encodeURIComponent(sessionId)}`, {
+        headers: adminHeaders(),
+      });
+      if (!res.ok) return; // 404/501/502 ⇒ befintligt beteende utan kort
+      const data = (await res.json().catch(() => ({}))) as { kort?: VerktygKort[] };
+      if (!Array.isArray(data.kort) || data.kort.length === 0) return;
+      setBortaBanner((b) => (b ? { ...b, kort: data.kort } : b));
+    } catch {
+      // replay är lyx — bannern räcker utan kort
+    }
+  }, []);
+
   // ── Uppstart: hydrera tabbar + historik + kontext + modeller + sessioner ───
   React.useEffect(() => {
     let levande = true;
@@ -3872,10 +4033,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             transport?: string;
             live?: boolean;
             sessionId?: string | null;
-            historik?: { roll: "user" | "assistant"; text: string }[];
+            historik?: HistorikPost[];
             kontext?: KontextInfo | null;
             senastAktivSessionId?: string | null;
-            senastAktivHistorik?: { roll: "user" | "assistant"; text: string }[];
+            senastAktivHistorik?: HistorikPost[];
             aktivtMal?: { aktiv: boolean; pausad: boolean; iteration: number; mal: string | null } | null;
             interaktioner?: (
               | {
@@ -3898,7 +4059,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             rörTabb(malTabbId, (t) => ({
               ...t,
               uppdaterad: Date.now(),
-              meddelanden: data.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+              meddelanden: data.historik!.map(meddelandeUrHistorik),
             }));
           }
           if (data.kontext) {
@@ -3961,26 +4122,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
           }
           if (levande && kandidat && aktivHistorik.length > 0) {
             sparaSenasteSessionId(kandidat);
-            // VÅG 93 C4: verktygsaktiviteten under frånvaron — replay ur
-            // session/events via den nya rutten. Fire-and-forget: bannern
-            // visar svaren direkt, korten droppar in när replayen landar
-            // (501/timeout/nätverksfel = tyst — replay är lyx).
-            const hamtaBortaKort = async (sid: string) => {
-              try {
-                const res = await fetch(`/api/studio/session/events?sessionId=${encodeURIComponent(sid)}`, {
-                  headers: adminHeaders(),
-                });
-                if (!res.ok) return;
-                const data = (await res.json()) as { kort?: VerktygKort[] };
-                if (!Array.isArray(data.kort) || data.kort.length === 0) return;
-                setBortaBanner((b) => (b ? { ...b, kort: data.kort } : b));
-              } catch {
-                // replay är lyx — bannern räcker utan kort
-              }
-            };
+            // VÅG 93 C4 + VÅG 97 E2: verktygsaktiviteten under frånvaron —
+            // replay ur session/events (lyftad hamtaBortaKort, även i
+            // reconnect-pollen). Fire-and-forget: bannern visar svaren
+            // direkt, verktygsraderna droppar in när replayen landar.
             const arDefault = typeof data.sessionId === "string" && kandidat === data.sessionId;
-            const tillMeddelanden = (lista: { roll: "user" | "assistant"; text: string }[]) =>
-              lista.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text }));
+            const tillMeddelanden = (lista: HistorikPost[]) => lista.map(meddelandeUrHistorik);
             const nyaSvar = aktivHistorik.filter((h) => h.roll === "assistant").length;
             if (arDefault) {
               const forr = sparad?.tabbar.find((t) => t.huvud) ?? null;
@@ -4086,7 +4233,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => {
       levande = false;
     };
-  }, [lasModeller, lasSessioner, mottagenPermission, rörTabb, visaToast]);
+  }, [lasModeller, lasSessioner, mottagenPermission, rörTabb, visaToast, hamtaBortaKort]);
 
   // ── EGEN TABB-SIDALOAD — resume tidigare sessioner (våg 84 B) ──────────────
   React.useEffect(() => {
@@ -4101,7 +4248,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         if (!res.ok || !levande) return;
         const data = (await res.json()) as {
-          historik?: { roll: "user" | "assistant"; text: string }[];
+          historik?: HistorikPost[];
           kontext?: KontextInfo | null;
           fel?: string;
         };
@@ -4110,7 +4257,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           rörTabb(t.id, (x) => ({
             ...x,
             uppdaterad: Date.now(),
-            meddelanden: data.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            meddelanden: data.historik!.map(meddelandeUrHistorik),
           }));
         }
         if (data.kontext) {
@@ -4176,17 +4323,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
             headers: adminHeaders(),
           });
           if (!r2.ok) continue;
-          const d2 = (await r2.json()) as { historik?: { roll: "user" | "assistant"; text: string }[] };
+          const d2 = (await r2.json()) as { historik?: HistorikPost[] };
           if (!Array.isArray(d2.historik) || d2.historik.length === 0) continue;
           const forrSvar = tb.meddelanden.filter((m) => m.roll === "assistant").length;
           const nyaSvar = d2.historik.filter((h) => h.roll === "assistant").length;
           rörTabb(tb.id, (t) => ({
             ...t,
-            meddelanden: d2.historik!.map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            meddelanden: d2.historik!.map(meddelandeUrHistorik),
             historikLasad: true,
             uppdaterad: Date.now(),
           }));
-          if (nyaSvar > forrSvar) setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: sid, malKorer: false });
+          if (nyaSvar > forrSvar) {
+            // VÅG 97 E2: även poll-upptäckt frånvaro berikas med replay-kort.
+            setBortaBanner({ antalTurner: nyaSvar - forrSvar, sessionId: sid, malKorer: false });
+            void hamtaBortaKort(sid);
+          }
         } catch {
           // nästa poll (30 s) försöker igen
         }
@@ -4194,7 +4345,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } catch {
       // nätverksfel — nästa poll försöker igen
     }
-  }, [malStrömOppen, rörTabb]);
+  }, [malStrömOppen, rörTabb, hamtaBortaKort]);
 
   React.useEffect(() => {
     pollAterkopplingRef.current = pollAterkoppling;
@@ -4336,7 +4487,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         const data = (await res.json().catch(() => ({}))) as {
           sessionId?: string;
           iteration?: number;
-          historik?: { roll: "user" | "assistant"; text: string }[];
+          historik?: HistorikPost[];
           kontext?: KontextInfo | null;
           meddelande?: string;
           fel?: string;
@@ -4346,7 +4497,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             ...t,
             sessionId: data.sessionId!,
             titel: t.titel === "Ny tabb" ? `Fork ${data.iteration ?? iteration}` : t.titel,
-            meddelanden: (data.historik ?? []).map((h) => ({ id: nyttId(), roll: h.roll, text: h.text })),
+            meddelanden: (data.historik ?? []).map(meddelandeUrHistorik),
             kontext: data.kontext ?? null,
             rundaTkn: null,
             ackumulerat:
@@ -4674,7 +4825,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 break;
               case "delta":
                 if (event.kanal === "tankar") {
+                  // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (bubblan) —
+                  // tab-fältet lever kvar som status-spegel; ALDRIG i m.text.
                   rörTabb(huvudTabbIdRef.current, (t) => ({ ...t, tankar: (t.tankar + (event.text ?? "")).slice(-260) }));
+                  rörBubbla((m) => ({ ...m, tankar: ((m.tankar ?? "") + (event.text ?? "")).slice(-TANKAR_TAK) }));
                 } else {
                   rörBubbla((m) => ({ ...m, text: m.text + (event.text ?? "") }));
                 }
@@ -5993,7 +6147,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
               break;
             case "delta":
               if (event.kanal === "tankar") {
+                // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (agent-
+                // bubblan) — ALDRIG i m.text; tab-fältet är status-spegel.
                 rörTabb(tabbId, (t) => ({ ...t, tankar: (t.tankar + (event.text ?? "")).slice(-260) }));
+                rörAgent((m) => ({ ...m, tankar: ((m.tankar ?? "") + (event.text ?? "")).slice(-TANKAR_TAK) }));
               } else {
                 rörAgent((m) => ({ ...m, text: m.text + (event.text ?? "") }));
                 sattStatus("Svarar…");
@@ -6106,7 +6263,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }
               if (streamSessionId) {
                 void sparaHistorikCache(streamSessionId, [
-                  ...tabb.meddelanden.map((m) => ({ roll: m.roll, text: m.text })),
+                  // VÅG 97 E2: tankar följer med i cachen (återkopplings-vägen).
+                  ...tabb.meddelanden.map((m) => ({
+                    roll: m.roll,
+                    text: m.text,
+                    ...(m.tankar ? { tankar: m.tankar } : {}),
+                  })),
                   { roll: "user" as const, text },
                   {
                     roll: "assistant" as const,
@@ -6998,6 +7160,44 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     <X className="h-3.5 w-3.5" />
                   </button>
                 </div>
+                {/* VÅG 97 E2: upp till 5 SENASTE verktygskörningar direkt i
+                    bannern — $-prefix-mono-rader + ✓/✗/spinner + varaktighet
+                    (replay-kortens slutbild; tiden = körningens varaktighet —
+                    protokollets kort bär ingen klockstämpel). Icke-tryckbara
+                    informationsrader; fulla korten fälls ut med vronen ovan. */}
+                {bortaBanner.kort && bortaBanner.kort.length > 0 && (
+                  <ul
+                    aria-label="Senaste verktygskörningar under frånvaron"
+                    className="max-w-full space-y-px border-t border-[#30363D] px-3 py-1.5"
+                  >
+                    {bortaBanner.kort.slice(-5).map((k) => (
+                      <li
+                        key={k.id}
+                        title={`${kortRubrik({ ...k, namn: k.namn || "verktyg" })}${
+                          typeof k.varaktighetMs === "number" ? ` · ${msText(k.varaktighetMs)}` : ""
+                        }${k.fel ? ` · fel: ${k.fel.slice(0, 120)}` : ""}`}
+                        className="flex min-w-0 items-center gap-1.5 font-mono text-[10px] leading-relaxed"
+                      >
+                        <span className="shrink-0 text-[#3FB950]" aria-hidden>
+                          $
+                        </span>
+                        <span className="min-w-0 flex-1 truncate text-[#E6EDF3]/85">
+                          {kortRubrik({ ...k, namn: k.namn || "verktyg" })}
+                        </span>
+                        {k.steg === "fel" ? (
+                          <XCircle className="h-3 w-3 shrink-0 text-[#F85149]" aria-label="misslyckades" />
+                        ) : k.steg === "resultat" ? (
+                          <Check className="h-3 w-3 shrink-0 text-[#3FB950]" aria-label="klar" />
+                        ) : (
+                          <Loader2 className="h-3 w-3 shrink-0 animate-spin text-[#D29922]" aria-label="pågår" />
+                        )}
+                        {typeof k.varaktighetMs === "number" && (
+                          <span className="shrink-0 text-[9px] text-[#484F58]">{msText(k.varaktighetMs)}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {/* VÅG 93 C4: verktygsaktiviteten under frånvaron — samma kortvy
                     som i chatten (VerktygsKortVy), aggregerad till slutstatus. */}
                 {bortaKortOppet && bortaBanner.kort && bortaBanner.kort.length > 0 && (
@@ -7199,6 +7399,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             <StatusChipPill key={chip.etikett} chip={chip} />
                           ))}
                         </div>
+                        {/* VÅG 97 E2: TANKAR — resonemanget som kollapsbar sektion
+                            OVANFÖR svaret (streaming: peek + "tänker…"; klart:
+                            kollapsad, klick = expandera). ALDRIG i m.text. */}
+                        {m.tankar && m.tankar.trim() !== "" && (
+                          <TankarVy
+                            tankar={m.tankar}
+                            strömmande={m.strömmande === true}
+                            oppen={m.tankarOppen === true}
+                            onVaxla={() =>
+                              rörTabb(aktivTabb?.id ?? "", (tb) => ({
+                                ...tb,
+                                meddelanden: tb.meddelanden.map((mm) =>
+                                  mm.id === m.id ? { ...mm, tankarOppen: !(mm.tankarOppen === true) } : mm,
+                                ),
+                              }))
+                            }
+                          />
+                        )}
                         {/* Verktygskort — mono, $-prefix, grå bakgrund, expandera. */}
                         {m.verktygKort && m.verktygKort.length > 0 && (
                           <div className="mb-2 space-y-1.5">
@@ -7484,13 +7702,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </div>
               )}
 
-              {tankar && (
-                <div className="py-2">
-                  <p className="max-w-[80%] truncate text-right font-mono text-[10px] italic text-[#484F58]" title={tankar}>
-                    {tankar}
-                  </p>
-                </div>
-              )}
+              {/* VÅG 97 E2: den gamla tab-nivå-tankar-raden är BORTTAGEN —
+                  resonemanget renderas nu per meddelande i TankarVy ovan
+                  (peek under streaming, kollapsbar efter klart). */}
             </div>
           </div>
           {/* "↓ Nytt" — flytande knapp när användaren scrollat upp. */}

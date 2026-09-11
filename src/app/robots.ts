@@ -38,6 +38,7 @@ const PUBLIKA_YTOR = [
   "/medlemskap/",
   "/prenumeration/",
   "/kallor/",
+  "/dataset/",
   ...(process.env.NEXT_PUBLIC_B2B_AKTIV === "1" ? ["/pro/"] : []),
   "/llms.txt",
   "/api/llms-txt",

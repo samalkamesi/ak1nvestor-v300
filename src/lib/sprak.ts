@@ -129,6 +129,9 @@ export const OVERSATTA_ROUTES: Record<string, SpegelVagar> = {
   "/fas3": { en: "/en/fas3", ar: "/ar/fas3" },
   "/prenumeration": { en: "/en/prenumeration", ar: "/ar/prenumeration" },
   "/transparens": { en: "/en/transparens", ar: "/ar/transparens" },
+  // VÅG 97 E1: datasetmenyn (branschmedianer) har fulla speglar — index
+  // registrerad här, detaljsidorna via OVERSATTA_MONSTER nedan.
+  "/dataset": { en: "/en/dataset", ar: "/ar/dataset" },
 };
 
 /**
@@ -139,7 +142,7 @@ export const OVERSATTA_ROUTES: Record<string, SpegelVagar> = {
  * typer läggs till här först när deras rutter är monterade — annars navigerar
  * växlaren till en 404.
  */
-const OVERSATTA_MONSTER: readonly string[] = ["/kurser/", "/blogg/"];
+const OVERSATTA_MONSTER: readonly string[] = ["/kurser/", "/blogg/", "/dataset/"];
 
 /**
  * Spegel-vägar för en svensk bas-sökväg: registrerad rad först, därefter

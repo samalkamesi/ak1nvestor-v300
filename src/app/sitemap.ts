@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/content";
 import { lasAnalyser } from "@/lib/analysfabrik";
 import { b2bAktiv } from "@/lib/b2b-status";
+import { branschSlugs, lasBranschMedianer } from "@/lib/dataset-medianer";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const courses = getCourses();
   const courseSlugs = Object.keys(courses);
+
+  // VÅG 97 E1: datasetmenyernas lastModified ägs av rådatans hämtdatum
+  // (bolagsunivers.json "hamtat"), inte av genereringstillfället — ogiltigt
+  // eller saknat datum faller ärligt tillbaka på "nu".
+  const datasetHamtat = lasBranschMedianer().hamtat;
+  const datasetDatumParse = typeof datasetHamtat === "string" ? new Date(datasetHamtat) : null;
+  const datasetDatum = datasetDatumParse && !isNaN(datasetDatumParse.getTime()) ? datasetDatumParse : now;
 
   // ── Flaggskepp (1.0) + statiska sidor + alla verktygssidor ────────────────
   const entries: MetadataRoute.Sitemap = [
@@ -82,6 +90,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
     { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/transparens`, changeFrequency: "yearly", priority: 0.4, lastModified: now },
+
+    // ── Dataset — branschmedianer (VÅG 97 E1, citeringsmagneter): index +
+    //    en detaljsida per bransch, svenska + EN/AR-speglar. lastModified =
+    //    rådatans hämtdatum (sidorna bär ISR men TALEN ägs av universumet).
+    { url: `${BASE_URL}/dataset`, changeFrequency: "daily", priority: 0.9, lastModified: datasetDatum },
+    ...branschSlugs(lasBranschMedianer()).map((bransch) => ({
+      url: `${BASE_URL}/dataset/${bransch}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      lastModified: datasetDatum,
+    })),
+    ...["en", "ar"].flatMap((lang) => [
+      { url: `${BASE_URL}/${lang}/dataset`, changeFrequency: "daily" as const, priority: 0.7, lastModified: datasetDatum },
+      ...branschSlugs(lasBranschMedianer()).map((bransch) => ({
+        url: `${BASE_URL}/${lang}/dataset/${bransch}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+        lastModified: datasetDatum,
+      })),
+    ]),
 
     // Språkspeglar EN/AR (våg 51) — hreflang-klustren pekar mot svensk original
     { url: `${BASE_URL}/en`, changeFrequency: "monthly", priority: 0.9, lastModified: now },

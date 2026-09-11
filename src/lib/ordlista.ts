@@ -1714,8 +1714,252 @@ export const ORDLISTA = {
   },
   "migrer.loggaInLank": {
     sv: "Logga in / skapa konto →",
-    en: "Sign in / create account →",
+    en: "Sign in / create an account →",
     ar: "سجّل الدخول / أنشئ حسابًا ←",
+  },
+
+  // ── Dataset-sidorna (VÅG 97 E1 — /dataset + speglar): ALL sidtext lever
+  // här, svenska först, så att MÖS-källregistret (kalla.ts lasUiKallor)
+  // täcker domänen "dataset" automatiskt och cron-ronden håller översätt-
+  // ningarna aktuella när en sv-källa ändras. {param}-interpolering via
+  // oversatt() i sprak.ts — talen matas in formaterade per språk.
+  "dataset.brodsmula": { sv: "Dataset", en: "Dataset", ar: "مجموعة البيانات" },
+  "dataset.titel": {
+    sv: "Dataset — branschmedianer för nyckeltal",
+    en: "Dataset — industry medians for key ratios",
+    ar: "مجموعة البيانات — وسيطات القطاع للمؤشرات المالية",
+  },
+  "dataset.ingress": {
+    sv: "AK1A:s publika referensdataset: medianvärden för nyckeltal per bransch, räknade ur vårt fasta universum av {nBolag} noterade bolag — 10 branscher × 10 bolag. Aggregat av offentliga marknadsdata, redovisade med observationsantal och hämtdatum. Pedagogisk analys — aldrig investeringsråd.",
+    en: "AK1A's public reference dataset: median values for key ratios per industry, computed from our fixed universe of {nBolag} listed companies — 10 industries × 10 companies. Aggregates of public market data, reported with observation counts and a retrieval date. Educational analysis — never investment advice.",
+    ar: "مجموعة البيانات المرجعية العامة من AK1A: وسيطات المؤشرات المالية لكل قطاع، محسوبة من عالمنا الثابت المكوَّن من {nBolag} شركة مدرجة — 10 قطاعات × 10 شركات. تجميعات لبيانات سوق عامة، تُعرض مع أعداد المشاهدات وتاريخ الاسترجاع. تحليل تعليمي — وليس أبدًا نصيحة استثمارية.",
+  },
+  "dataset.datering": {
+    sv: "Rådata hämtad {hamtat} · medianerna räknas om när universumet underhålls · sidan uppdateras dagligen",
+    en: "Raw data retrieved {hamtat} · medians are recomputed when the universe is maintained · page refreshes daily",
+    ar: "استُرجعت البيانات الخام {hamtat} · يُعاد حساب الوسيطات عند صيانة العالم · تتحدث الصفحة يوميًا",
+  },
+  "dataset.tabell.rubrik": {
+    sv: "Medianer per bransch",
+    en: "Medians per industry",
+    ar: "الوسيطات لكل قطاع",
+  },
+  "dataset.tabell.bransch": { sv: "Bransch", en: "Industry", ar: "القطاع" },
+  "dataset.tabell.medianPe": {
+    sv: "Median P/E",
+    en: "Median P/E",
+    ar: "وسيط P/E",
+  },
+  "dataset.tabell.antal": {
+    sv: "Antal bolag",
+    en: "Companies",
+    ar: "عدد الشركات",
+  },
+  "dataset.tabell.detaljer": {
+    sv: "Alla medianer →",
+    en: "All medians →",
+    ar: "جميع الوسيطات ←",
+  },
+  "dataset.tabell.totalt": {
+    sv: "Totalt — alla branscher",
+    en: "Total — all industries",
+    ar: "الإجمالي — جميع القطاعات",
+  },
+  "dataset.tabell.kalla": {
+    sv: "Universum och aggregering: AK1A Research Lab · rådata: offentliga marknadskällor ({kallor})",
+    en: "Universe and aggregation: AK1A Research Lab · raw data: public market sources ({kallor})",
+    ar: "العالم والتجميع: AK1A Research Lab · البيانات الخام: مصادر سوق عامة ({kallor})",
+  },
+  "dataset.metod.rubrik": {
+    sv: "Hur medianen räknas",
+    en: "How the median is computed",
+    ar: "كيف يُحسب الوسيط",
+  },
+  "dataset.metod.text": {
+    sv: "För varje bransch sorteras bolagens värden för nyckeltalet; medianen är det mittersta värdet (vid jämnt antal: medelvärdet av de två mittersta). Medianen väljs i stället för snittet eftersom enstaka extrembolag inte drar iväg talet. Saknad data räknas aldrig som noll — därför redovisar varje nyckeltal sitt eget observationsantal (n), och en median utan enda observation redovisas som saknad. P/E och P/B är multipler; EBIT-marginal, FCF-marginal och omsättningstillväxt är andelar av omsättningen, redovisade i procent. Rådatan hämtas från offentliga marknadskällor och dateras per hämtdatum.",
+    en: "For each industry, the companies' values for the ratio are sorted; the median is the middle value (with an even count: the average of the two middle values). The median is chosen over the mean because single outlier companies cannot drag the number away. Missing data is never counted as zero — each ratio therefore reports its own observation count (n), and a median without a single observation is reported as missing. P/E and P/B are multiples; EBIT margin, FCF margin and revenue growth are shares of revenue, reported in percent. Raw data is retrieved from public market sources and dated by retrieval date.",
+    ar: "لكل قطاع تُرتَّب قيم الشركات للمؤشر؛ الوسيط هو القيمة الوسطى (وعند عدد زوجي: متوسط القيمتين الوسطيين). اختير الوسيط بدل المتوسط لأن الشركة الشاذة الواحدة لا تستطيع سحب الرقم بعيدًا. البيانات المفقودة لا تُحسب أبدًا صفرًا — لذلك يعرض كل مؤشر عدد مشاهداته الخاص (n)، والوسيط بلا أي مشاهدة يُعرض كمفقود. P/E وP/B مضاعفات؛ أما هامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات فهي حصص من الإيرادات تُعرض بالنسبة المئوية. تُسترجع البيانات الخام من مصادر سوق عامة وتُؤرَّخ بتاريخ الاسترجاع.",
+  },
+  "dataset.disclaimer.rubrik": {
+    sv: "Vad detta är — och inte är",
+    en: "What this is — and is not",
+    ar: "ما هذا — وما ليس هو",
+  },
+  "dataset.disclaimer.text": {
+    sv: "Detta dataset är pedagogisk referens och analysunderlag: aggregat av offentliga marknadsdata ur ett fast, redovisat universum. Det är inte investeringsrådgivning (lagen 2007:528), ingen uppmaning att köpa eller sälja någon aktie, och inget mått på framtida avkastning. Kontrollera alltid primärkällorna — bolagens egna rapporter — innan du drar slutsatser.",
+    en: "This dataset is an educational reference and analysis aid: aggregates of public market data from a fixed, documented universe. It is not investment advice, not an invitation to buy or sell any stock, and not a measure of future returns. Always check the primary sources — the companies' own reports — before drawing conclusions.",
+    ar: "هذه المجموعة مرجع تعليمي ووسيلة تحليلية: تجميعات لبيانات سوق عامة من عالم ثابت وموثَّق. ليست نصيحة استثمارية، وليست دعوة لشراء أو بيع أي سهم، وليست مقياسًا للعوائد المستقبلية. تحقق دائمًا من المصادر الأولية — تقارير الشركات نفسها — قبل استخلاص النتائج.",
+  },
+  "dataset.detalj.titel": {
+    sv: "Branschmedianer — {bransch}",
+    en: "Industry medians — {bransch}",
+    ar: "وسيطات القطاع — {bransch}",
+  },
+  "dataset.detalj.ingress": {
+    sv: "Medianer för branschen {bransch} i AK1A:s {nBolag}-bolagsuniversum (data hämtad {hamtat}). {nBransch} bolag i branschen — varje nyckeltal redovisar sitt observationsantal. Pedagogisk analys — aldrig investeringsråd.",
+    en: "Medians for the {bransch} industry in AK1A's {nBolag}-company universe (data retrieved {hamtat}). {nBransch} companies in the industry — each ratio reports its observation count. Educational analysis — never investment advice.",
+    ar: "وسيطات قطاع {bransch} في عالم AK1A المكوَّن من {nBolag} شركة (استُرجعت البيانات {hamtat}). {nBransch} شركة في القطاع — كل مؤشر يعرض عدد مشاهداته. تحليل تعليمي — وليس أبدًا نصيحة استثمارية.",
+  },
+  "dataset.detalj.tabell.rubrik": {
+    sv: "Alla medianer för {bransch}",
+    en: "All medians for {bransch}",
+    ar: "جميع الوسيطات لقطاع {bransch}",
+  },
+  "dataset.detalj.tabell.nyckeltal": {
+    sv: "Nyckeltal",
+    en: "Key ratio",
+    ar: "المؤشر المالي",
+  },
+  "dataset.detalj.tabell.median": { sv: "Median", en: "Median", ar: "الوسيط" },
+  "dataset.detalj.tabell.antal": {
+    sv: "Observationer (n)",
+    en: "Observations (n)",
+    ar: "المشاهدات (n)",
+  },
+  "dataset.detalj.tillbaka": {
+    sv: "← Alla branscher",
+    en: "← All industries",
+    ar: "→ جميع القطاعات",
+  },
+  "dataset.detalj.andra.rubrik": {
+    sv: "Andra branscher",
+    en: "Other industries",
+    ar: "قطاعات أخرى",
+  },
+  "dataset.mat.pe": {
+    sv: "P/E — pris per vinst",
+    en: "P/E — price to earnings",
+    ar: "P/E — السعر إلى الأرباح",
+  },
+  "dataset.mat.pe.beskrivning": {
+    sv: "Aktiekurs delat med vinst per aktie. Medianen visar branschens typiska värderingsnivå.",
+    en: "Share price divided by earnings per share. The median shows the industry's typical valuation level.",
+    ar: "سعر السهم مقسومًا على ربحية السهم. يُظهر الوسيط مستوى التقييم النمطي للقطاع.",
+  },
+  "dataset.mat.pb": {
+    sv: "P/B — pris per bokfört värde",
+    en: "P/B — price to book",
+    ar: "P/B — السعر إلى القيمة الدفترية",
+  },
+  "dataset.mat.pb.beskrivning": {
+    sv: "Aktiekurs delat med bokfört eget kapital per aktie. Medianen visar hur marknaden prissätter branschens nettoförmögenhet.",
+    en: "Share price divided by book equity per share. The median shows how the market prices the industry's net assets.",
+    ar: "سعر السهم مقسومًا على حقوق الملكية الدفترية للسهم. يُظهر الوسيط كيف يسعّر السوق صافي أصول القطاع.",
+  },
+  "dataset.mat.ebit": {
+    sv: "EBIT-marginal",
+    en: "EBIT margin",
+    ar: "هامش EBIT",
+  },
+  "dataset.mat.ebit.beskrivning": {
+    sv: "Rörelseresultatet (EBIT) som andel av omsättningen, i procent.",
+    en: "Operating profit (EBIT) as a share of revenue, in percent.",
+    ar: "ربح التشغيل (EBIT) كحصة من الإيرادات، بالنسبة المئوية.",
+  },
+  "dataset.mat.fcf": {
+    sv: "FCF-marginal",
+    en: "FCF margin",
+    ar: "هامش التدفق النقدي الحر",
+  },
+  "dataset.mat.fcf.beskrivning": {
+    sv: "Fritt kassaflöde som andel av omsättningen, i procent.",
+    en: "Free cash flow as a share of revenue, in percent.",
+    ar: "التدفق النقدي الحر كحصة من الإيرادات، بالنسبة المئوية.",
+  },
+  "dataset.mat.tillvaxt": {
+    sv: "Omsättningstillväxt (TTM)",
+    en: "Revenue growth (TTM)",
+    ar: "نمو الإيرادات (آخر 12 شهرًا)",
+  },
+  "dataset.mat.tillvaxt.beskrivning": {
+    sv: "Senaste tolvmånadersperiodens omsättningstillväxt, i procent.",
+    en: "Revenue growth over the latest twelve months, in percent.",
+    ar: "نمو الإيرادات خلال آخر اثني عشر شهرًا، بالنسبة المئوية.",
+  },
+  "dataset.bransch.teknik": {
+    sv: "Teknik",
+    en: "Technology",
+    ar: "التكنولوجيا",
+  },
+  "dataset.bransch.industri": {
+    sv: "Industri",
+    en: "Industry",
+    ar: "الصناعة",
+  },
+  "dataset.bransch.halso": {
+    sv: "Hälsa",
+    en: "Health care",
+    ar: "الرعاية الصحية",
+  },
+  "dataset.bransch.konsument": {
+    sv: "Konsument",
+    en: "Consumer",
+    ar: "الاستهلاك",
+  },
+  "dataset.bransch.fastighet": {
+    sv: "Fastighet",
+    en: "Real estate",
+    ar: "العقارات",
+  },
+  "dataset.bransch.finans": {
+    sv: "Finans",
+    en: "Financials",
+    ar: "الخدمات المالية",
+  },
+  "dataset.bransch.material": {
+    sv: "Material",
+    en: "Materials",
+    ar: "المواد",
+  },
+  "dataset.bransch.energi": {
+    sv: "Energi",
+    en: "Energy",
+    ar: "الطاقة",
+  },
+  "dataset.bransch.kommunikation": {
+    sv: "Kommunikation",
+    en: "Communication",
+    ar: "الاتصالات",
+  },
+  "dataset.bransch.tillvaxt": {
+    sv: "Tillväxt",
+    en: "Growth",
+    ar: "النمو",
+  },
+  "dataset.meta.titel": {
+    sv: "Branschmedianer — median P/E, P/B och marginaler per bransch | AK1A",
+    en: "Industry medians — median P/E, P/B and margins per industry | AK1A",
+    ar: "وسيطات القطاع — وسيط P/E وP/B والهوامش لكل قطاع | AK1A",
+  },
+  "dataset.meta.beskrivning": {
+    sv: "Median P/E per bransch i AK1A:s {nBolag}-bolagsuniversum (10 branscher × 10 bolag, rådata {hamtat}). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt — observationsantal redovisas per nyckeltal. Pedagogisk referens, inte investeringsrådgivning.",
+    en: "Median P/E per industry in AK1A's {nBolag}-company universe (10 industries × 10 companies, raw data {hamtat}). With P/B, EBIT margin, FCF margin and revenue growth — observation counts reported per ratio. Educational reference, not investment advice.",
+    ar: "وسيط P/E لكل قطاع في عالم AK1A المكوَّن من {nBolag} شركة (10 قطاعات × 10 شركات، البيانات الخام {hamtat}). مع P/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات — تُعرض أعداد المشاهدات لكل مؤشر. مرجع تعليمي، وليس نصيحة استثمارية.",
+  },
+  "dataset.meta.detalj.titel": {
+    sv: "{bransch} — median P/E {pe} (n={n}) | AK1A",
+    en: "{bransch} — median P/E {pe} (n={n}) | AK1A",
+    ar: "{bransch} — وسيط P/E {pe} (n={n}) | AK1A",
+  },
+  "dataset.meta.detalj.beskrivning": {
+    sv: "Medianer för {bransch} i AK1A:s {nBolag}-bolagsuniversum (rådata {hamtat}): P/E {pe} · P/B {pb} · EBIT-marginal {ebit} % · FCF-marginal {fcf} % · tillväxt {tillvaxt} %. Observationsantal redovisas. Pedagogisk referens, inte investeringsrådgivning.",
+    en: "Medians for {bransch} in AK1A's {nBolag}-company universe (raw data {hamtat}): P/E {pe} · P/B {pb} · EBIT margin {ebit}% · FCF margin {fcf}% · growth {tillvaxt}%. Observation counts reported. Educational reference, not investment advice.",
+    ar: "وسيطات {bransch} في عالم AK1A المكوَّن من {nBolag} شركة (البيانات الخام {hamtat}): P/E {pe} · P/B {pb} · هامش EBIT {ebit}% · هامش التدفق النقدي الحر {fcf}% · النمو {tillvaxt}%. تُعرض أعداد المشاهدات. مرجع تعليمي، وليس نصيحة استثمارية.",
+  },
+  "dataset.jsonld.namn": {
+    sv: "AK1A branschmedianer — nyckeltalsaggregat för 100-bolagsuniversumet",
+    en: "AK1A industry medians — key ratio aggregates for the 100-company universe",
+    ar: "وسيطات القطاع من AK1A — تجميعات المؤشرات المالية لعالم المئة شركة",
+  },
+  "dataset.jsonld.beskrivning": {
+    sv: "Median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur AK1A:s fasta universum av {nBolag} noterade bolag (10 branscher × 10 bolag). Rådata hämtad {hamtat} från offentliga marknadskällor; observationsantal (n) redovisas per nyckeltal. Pedagogiskt aggregat — inte investeringsrådgivning.",
+    en: "Median P/E, P/B, EBIT margin, FCF margin and revenue growth per industry, computed from AK1A's fixed universe of {nBolag} listed companies (10 industries × 10 companies). Raw data retrieved {hamtat} from public market sources; observation counts (n) reported per ratio. Educational aggregate — not investment advice.",
+    ar: "وسيط P/E وP/B وهامش EBIT وهامش التدفق النقدي الحر ونمو الإيرادات لكل قطاع، محسوبة من عالم AK1A الثابت المكوَّن من {nBolag} شركة مدرجة (10 قطاعات × 10 شركات). استُرجعت البيانات الخام {hamtat} من مصادر سوق عامة؛ ويُعرض عدد المشاهدات (n) لكل مؤشر. تجميع تعليمي — ليس نصيحة استثمارية.",
+  },
+  "dataset.jsonld.licens": {
+    sv: "CC BY 4.0 — citera fritt med källangivelse \"AK1A Research Lab\" och hämtdatum.",
+    en: "CC BY 4.0 — cite freely with attribution to \"AK1A Research Lab\" and the retrieval date.",
+    ar: "CC BY 4.0 — اقتبس بحرية مع الإشارة إلى \"AK1A Research Lab\" وتاريخ الاسترجاع.",
   },
 } as const satisfies Record<string, SprakRad>;
 

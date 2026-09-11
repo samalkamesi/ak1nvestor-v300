@@ -9,36 +9,41 @@
  * naturliga navigering/nytt besök. sw.js ska heller ALDRIG få någon
  * reload-logik (varken direkt eller via postMessage till sidan).
  */
-const VERSION = "ak1a-v4";
+const VERSION = "ak1a-v5";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
+// VÅG 100-INCIDENTENS NÖDLÄGE: efter dagens många deployer sitter besökare
+// fast på STALA JS-delar (v3-väntande SW + gamla chunk-cachear → "Något gick
+// fel"-felgränsen). v5 bryter den försiktiga vänta-på-navigering-policyn EN
+// gång: skipWaiting + clientsClaim tar över omedelbart och activate städar
+// ALLA äldre versioners cachear. Sidan som redan lever laddas om vid nästa
+// klick — inget tvångs-omladdningsloopande. NÄSTA version (v6) återgår till
+// den tålmodiga policyn (våg 78-beslutet består som norm).
 self.addEventListener("install", (event) => {
-  // Ingen skipWaiting(): uppdateringen aktiveras vid naturlig navigering,
-  // aldrig mitt i ett pågående besök (det som kan kännas som reload-loop).
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(OFFLINE_URLS)));
+  event.waitUntil(
+    (async () => {
+      self.skipWaiting();
+      const cache = await caches.open(VERSION);
+      await cache.addAll(OFFLINE_URLS);
+    })()
+  );
 });
 
 self.addEventListener("activate", (event) => {
-  // Hygienen behålls (raderar gamla versioners cachear + ev. felstatussvar),
-  // men ingen clients.claim(): en sida som redan lever lämnas helt ifred.
   event.waitUntil(
-    caches
-      .keys()
-      .then((nycklar) => Promise.all(nycklar.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
-      // Hygien: radera ev. felstatussvar (404/5xx) som gamla versioner cachat
-      .then(() =>
-        caches.open(VERSION).then((cache) =>
-          cache.keys().then((reqs) =>
-            Promise.all(
-              reqs.map((req) =>
-                cache.match(req).then((res) => {
-                  if (res && res.status >= 400) return cache.delete(req);
-                })
-              )
-            )
-          )
-        )
-      )
+    (async () => {
+      await self.clients.claim();
+      const nycklar = await caches.keys();
+      await Promise.all(nycklar.filter((k) => k !== VERSION).map((k) => caches.delete(k)));
+      const cache = await caches.open(VERSION);
+      const reqs = await cache.keys();
+      await Promise.all(
+        reqs.map(async (req) => {
+          const res = await cache.match(req);
+          if (res && res.status >= 400) await cache.delete(req);
+        })
+      );
+    })()
   );
 });
 

@@ -10057,3 +10057,27 @@ LÖSNING — TOTAL OMMÖBLERING:
 - Kontextrad (📊 X tkn) BORT ur huvudvyn → i menyn
 
 ALLA funktioner bevarade — bara UI:t reorganiserat.
+
+## MOLNUTVECKLINGEN LEVER — STUDION UTVECKLAR PROD DIREKT (2026-09-10→11)
+
+Fortlopp (våg 90-94 documented i STYRELSE-ADMIN-MEGA.md — detta
+kompletterar worklog-tråden från våg 89):
+
+- **Våg 94b (e4f336c9):** permissions-autopolicy = molnutvecklingens
+  lås upp — studions agent får köra git/npm/pm2 utan kortslutna
+  tillståndsdialoger.
+- **Protokoll (e3baa2ab, data/infra/agent-arbetsyta/AGENTS.md §MOLN-
+  UTVECKLING):** datafiler = commit + `git push prod develop` DIREKT
+  (ingen build — appar läser från disk); kod = dessutom tsc + npm ci +
+  build + pm2 restart på /home/ak1a/AK1 med revert-stoppregeln.
+- **BEVIS (ab08bd28, 2026-09-10 23:14):** MOLN-DEV-BEVIS.md pushad
+  till prod — pipelinen studio→prod verifierad. Mekanismen: prod-repot
+  (lokal sökväg) har receive.denyCurrentBranch=updateInstead ⇒ pushen
+  uppdaterar arbets trädet på en gång (rent träd krävs).
+- **MOLNLEVERANS 1 (7f79f02b, 2026-09-11):** tre backloggade filer på
+  plats i prod: STYRELSE-HETZNER-ARKITEKTUR.md (besluten H1-H3 +
+  revisionen prod Vercel→Contabo 2026-09-08), data/infra/hetzner/
+  {setup-server,bygg}.sh (styrelsens granskningskontrakt §5: fasta
+  https-literaler, idempotenta, inga hemligheter — kontrollmässigt
+  verifierade före commit) + AGENTS.md-kopian i arbetsytroten (diffad
+  identisk med versionerad källa — git status rent framöver).

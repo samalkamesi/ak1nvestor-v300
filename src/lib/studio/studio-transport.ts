@@ -2481,6 +2481,83 @@ export function eventsUrSvar(svar: unknown): StudioEventsSvar {
 }
 
 /**
+ * VÅG 93 C4: AGGREGERAT verktygskort ur replay-events — samma fält som
+ * chattens VerktygKort (UI:t renderar med VerktygsKortVy) men merge:at
+ * PER toolCallId till slutstatus: live-deltana (verktyg_input/progress)
+ * är redan spelade, replay visar SLUTBILDEN per verktygskall. REN +
+ * testbar — inget beroende på aktiv lyssnare eller barnprocess.
+ */
+export interface StudioReplayKort {
+  id: string;
+  namn: string;
+  steg: StudioVerktygSteg;
+  argument?: string;
+  beskrivning?: string;
+  resultat?: string;
+  fel?: string;
+  varaktighetMs?: number;
+}
+
+/**
+ * VÅG 93 C4: replay-events → sammanfattning. tool.updated mappas med
+ * SAMMA fältparsning som sändVerktygKort (scheduled→argument/beskrivning,
+ * result→resultat/duration, error→fel); model.streaming kind tool_call
+ * bidrar argument när protokollet bär dem; turn.started räknar rundor.
+ * Okända eventtyper ignoreras tyst (ALDRIG krasch — replay är lyx).
+ */
+export function replayTillKort(handelser: StudioEventPost[]): {
+  kort: StudioReplayKort[];
+  antalRundor: number;
+  antalEvents: number;
+} {
+  const karta = new Map<string, StudioReplayKort>();
+  let antalRundor = 0;
+  let okanda = 0;
+  for (const post of handelser) {
+    const p = (post.payload ?? {}) as Record<string, unknown>;
+    if (post.typ === "turn.started") {
+      antalRundor += 1;
+      continue;
+    }
+    if (post.typ === "tool.updated") {
+      const id =
+        typeof p.toolCallId === "string" && p.toolCallId ? p.toolCallId : `replay-ingen-id-${okanda++}`;
+      const nu = karta.get(id) ?? { id, namn: "", steg: "kör" as StudioVerktygSteg };
+      if (typeof p.toolName === "string" && p.toolName) nu.namn = p.toolName;
+      const kind = typeof p.kind === "string" ? p.kind : "";
+      if (kind === "scheduled") {
+        nu.steg = "planerad";
+        const arg = argumentText(p.input);
+        if (arg) nu.argument = arg;
+        if (typeof p.description === "string" && p.description) nu.beskrivning = p.description;
+      } else if (kind === "result") {
+        nu.steg = "resultat";
+        const res = resultatText(p.result);
+        if (res) nu.resultat = res;
+        if (typeof p.duration === "number") nu.varaktighetMs = p.duration;
+      } else if (kind === "error") {
+        nu.steg = "fel";
+        nu.fel = felText(p.error);
+      } else if (kind === "started") {
+        nu.steg = "kör";
+      } // progress: behåll nuvarande steg (slutbilden kommer med result/error)
+      karta.set(id, nu);
+      continue;
+    }
+    if (post.typ === "model.streaming" && p.kind === "tool_call") {
+      const id =
+        typeof p.toolCallId === "string" && p.toolCallId ? p.toolCallId : `replay-ingen-id-${okanda++}`;
+      const nu = karta.get(id) ?? { id, namn: "", steg: "kör" as StudioVerktygSteg };
+      if (typeof p.toolName === "string" && p.toolName) nu.namn = p.toolName;
+      const arg = argumentText(p.input ?? p.arguments);
+      if (arg && !nu.argument) nu.argument = arg;
+      karta.set(id, nu);
+    }
+  }
+  return { kort: [...karta.values()], antalRundor, antalEvents: handelser.length };
+}
+
+/**
  * VÅG 93 C1 — plugins/setEnabled-svarets bekräftelse (opak snapshot-form):
  * rak {enabled} · {plugin:{enabled}} · plugins[]/installedPlugins[]-post med
  * matchande id → enabled. Undefined när svaret tiger (satt=true ändå —

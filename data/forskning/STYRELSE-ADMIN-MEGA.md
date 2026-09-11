@@ -916,3 +916,15 @@ KVD: tsc 36 · build 0 · deploy + prodcheck.
   återställningstid dokumenteras i DRIFTSBOKEN.
 
 KVD: tsc 36 · build 0 · deploy + prodcheck.
+
+### VAG 98 LANDAD (2026-09-11, 7a04259 + c9cded9 + 151b5a9, prod 200)
+
+- F1 ISR-VARMARE LIVE: cron kl 03:10 (versionerad i repot data/infra/
+  contabo/); testkorning 12/44 — sokvagslista finslipas successivt.
+- F3 DR-PROV GODKANT: 20 s · 60 tabeller · 1 187 291 rader; 768 fel =
+  Supabase-roller (ofarliga GRANT-satser); lokal PG17 installerad +
+  stoppad for framtida prov (start: sudo pg_ctlcluster 17 main start).
+- F2 DATASET-DJUP LIVE (prodverifierad): kvartilsspridning, bransch-
+  mot-universum med delta-pilar, sortering, kurslankar, 20 nycklar x3,
+  permanent lekagevakt (222 filer, 0 traffar).
+- tsc 36 · build 0 (951 sidor) · deploy 200.

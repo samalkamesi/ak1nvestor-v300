@@ -61,6 +61,17 @@
  *                                             # TABORTERAR dem + verifierar 0 kvar
  *   node verktyg/m9-fabrik.mjs --stadja-sond # desperat-rengöring: ta bort ALLA
  *                                             # Sond-M9-Test-rader (felsäker spärr)
+ *   node verktyg/m9-fabrik.mjs --skriv --tvinga
+ *                                           # BOOTSTRAP-UNDANTAG (våg 95): skriv
+ *                                           # utkast ÄVEN för OFÖRÄNDRAT-under-
+ *                                           # lag. Evergreen-regeln jämför mot
+ *                                           # data/blogg/<slug>.json — men våg
+ *                                           # 66:s pilot publicerade september-
+ *                                           # utgåvorna RAKT i filträdet utanför
+ *                                           # granskningskön, så kön kan aldrig
+ *                                           # fyllas första gången utan detta
+ *                                           # medvetna override (kundens första
+ *                                           # riktiga granskningskö, m9 LED 3).
  * Avslutskod 0 = ok, 1 = blockerad/fel.
  *
  * ENV: process.loadEnvFile('.env') + '.env.local' (värden loggas ALDRIG).
@@ -86,6 +97,7 @@ const BLOGG_KAT = path.join(REPO, "data", "blogg");
 const ARG_SKRIV = process.argv.includes("--skriv");
 const ARG_SOND = process.argv.includes("--sond");
 const ARG_STADJA = process.argv.includes("--stadja-sond");
+const ARG_TVINGA = process.argv.includes("--tvinga"); // våg 95: bootstrap-override av evergreen-skip (endast --skriv)
 const ARG_VISA = process.argv.includes("--visa"); // --visa [slug] — skriv ut hela bodyn/erna
 const ARG_VISA_IX = process.argv.indexOf("--visa");
 const ARG_VISA_SLUG = ARG_VISA_IX >= 0 && process.argv[ARG_VISA_IX + 1]?.match(/^[a-z0-9-]+$/) ? process.argv[ARG_VISA_IX + 1] : null;
@@ -138,7 +150,11 @@ function kortNamn(namn) {
     .replace(/^\s*AB\s+/i, "")
     .replace(/\s+AB$/i, "")
     .trim();
-  const suffix = /\s+(Inc\.|Corporation|A\/S|Abp|Oyj|ASA|NV|S\.A\.|PLC|LLC|Aktiengesellschaft|SE & Co\. KGaA)$/i;
+  // Våg 95 buggfix (dokumenterad): "Warner Bros. Discovery, Inc." lämnade ett
+  // ensamt kvarvarande komma när suffixet ströks ("Discovery,,") — polsk-commit
+  // b375518 fixade samma sak i de publicerade filerna; här fixas mallen. ,? äter
+  // kommat framför suffixet.
+  const suffix = /\s*,?\s+(Inc\.|Corporation|A\/S|Abp|Oyj|ASA|NV|S\.A\.|PLC|LLC|Aktiengesellschaft|SE & Co\. KGaA)$/i;
   while (suffix.test(n)) n = n.replace(suffix, "").trim();
   return n;
 }
@@ -995,9 +1011,12 @@ async function main() {
   if (ARG_SKRIV) {
     console.log(`── PRODUCTIONSSKRIVNING (av=${AV_PRODUKTION}) ─────────────────`);
     for (const p of fardiga) {
-      if (p.oforandrad) {
+      if (p.oforandrad && !ARG_TVINGA) {
         console.log(`- ${p.slug} — OFÖRÄNDRAT: statistiken rörde sig ej sedan publicerad utgåva — inget nytt utkast i kön (evergreen-regeln).`);
         continue;
+      }
+      if (p.oforandrad && ARG_TVINGA) {
+        console.log(`- ${p.slug} — OFÖRÄNDRAT men --tvinga: medvetet bootstrap-undantag (våg 66-pilotens utgåva gick aldrig genom kön) — utkast skrivs ändå.`);
       }
       const version = (versioner.get(p.slug) ?? 0) + 1;
       await skrivUtkastRad(rest, byggRad(p, AV_PRODUKTION, version));

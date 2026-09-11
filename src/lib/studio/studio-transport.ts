@@ -396,6 +396,36 @@ import { autoPolicySvar } from "./permissions-policy";
  *     default) — policyn frågar när den inte kan bedöma anropet.
  * Mocken är NEUTRAL (dess permission-demo bär inga riktiga server-requests).
  *
+ * VÅG 95 (STUDINS UPPLEVDA HASTIGHET — kundklagomålet "sega"; tre kända
+ * källor, STYRELSE-ADMIN-MEGA våg 94 punkt 4 + våg 95-uppdraget):
+ *   · -32031-STÄDNING (källa 1: "-32031 vid första meddelandet efter
+ *     omstart" — en sparad/kartlagd session fäster en död modell, resume
+ *     LYCKAS men första session/send kastar -32031 → självläkningen
+ *     kasserar + skapar ny = en extra dubbeltur SEKUNDER fram till
+ *     svaret): en session är FRISKGÅNG när dess senaste aktivitet (kartans
+ *     senasteAktivitet; persistensfilens sparad-tid som reserv) är äldre
+ *     än 24 h ELLER den flaggats modellDod (satt av självläkningen vid
+ *     varje -32031 — bevaras på disk via kartan). ETT NYTT MEDDELANDE mot
+ *     en friskgång-session startar FRISK session DIREKT (hamtaSession-
+ *     transport med alternativ.nyttMeddelande; default-transportens
+ *     persistens-resume skippas i ensure()) — historik-previews FÖRLORAS
+ *     ej (kartposten lever kvar oförändrad + session/list bär arkivet).
+ *     VY-vägen (GET ?sessionId=) resumed oförändrat ärligt — läsning av
+ *     en gammal session är harmlöst, -32031 sitter i send.
+ *   · VARMFÖRHÅLLANDE (källa 2: kall-start av zcode-barnprocessen — spawn
+ *     + session/create tar sekunder första gången efter pm2-omstart):
+ *     varmStudioTransport() — best-effort, idempotent (MAX en gång per
+ *     process via globalThis-vakt), tyst fel, STUDIO_VARM=av-brytare,
+ *     hoppas över i `next build`-fasen + på mock — startar standard-
+ *     transporten + en session i BAKGRUNDEN vid transport-init (modulens
+ *     första evaluering, 8 s förskjuten så Next-boot får gå före) så
+ *     första kundmeddelandet träffar en varm transport. Hushållningens
+ *     2 h-idle-städning stänger barnet om ingen kund kom — värmen kostar
+ *     aldrig mer än startfönstret.
+ *   · TTFB-MÄTNING (källa 3: SSE-strömningens tid-till-första-tecken):
+ *     verktyg/testa-studio-ttfb.mjs mäter POST → första delta + total
+ *     tid mot lokal dev (mock); prod-baslinje mäts efter deploy av main.
+ *
  * Två implementeringar bakom ETT gränssnitt:
  *
  *   1. appServerTransport — PRIMÄR (protokollet FIRST-HAND bevisat
@@ -652,6 +682,14 @@ export interface StudioSessionsKort {
    * omstart (känt problem: döda sessioner stannade kvar i kartan).
    */
   stangd?: boolean;
+  /**
+   * VÅG 95: true när sessionen EN GÅNG drabbats av -32031 (ZCODE_RUNTIME_
+   * MODEL_UNAVAILABLE — självläkningen flaggar vid kasseringen). En
+   * modellDod-session resumed ALDRIG igen för NYA meddelanden (frisk
+   * session direkt) — -32031-upprepningsloopen efter omstart bryts.
+   * Bevaras över disk-hydreringen; historik-previews lever kvar.
+   */
+  modellDod?: boolean;
 }
 
 /**
@@ -2977,7 +3015,7 @@ class AppServerTransport implements StudioTransport {
     this.klientForFraga(); // VÅG 90 K1: omstartsvakt — kastar under backoff
     if (!this.sid) {
       const klient = this.klient!;
-      const { sessionId: sparad, modell, lage, tankeNiva } = this.lasSparadSession();
+      const { sessionId: sparad, modell, lage, tankeNiva, sparadTid } = this.lasSparadSession();
       if (lage === "build" || lage === "plan") this.lage = lage;
       if (tankeNiva) this.tankeNiva = tankeNiva;
       let resumerad = false;
@@ -2985,7 +3023,16 @@ class AppServerTransport implements StudioTransport {
       // filen — tabben ÄGER sin session; misslyckad mål-resume kastar ett
       // ärligt fel (default-transporten faller tyst vidare på create).
       const mal = this.målSessionId ?? sparad;
-      if (mal) {
+      // VÅG 95 (-32031-STÄDNING): DEFAULT-transportens persistens-session
+      // som är FRISKGÅNG (>24 h sedan senaste aktivitet ELLER en gång
+      // drabbad av -32031) resumed ALDRIG — rakt mot frisk create, så det
+      // första meddelandet efter omstart slipper resume → -32031 →
+      // kassera → ny-dubbelturen. MÅL-sessioner (tabbar) undantas — deras
+      // resume-fel är ÄRLIGA enligt våg 84 B:s kontrakt (registry-nivån
+      // i hamtaSessionTransport äger friskgångsbeslutet för tabbar).
+      const friskgang =
+        !this.målSessionId && !!sparad && arFrigangSession(sparad, sparadTid);
+      if (mal && !friskgang) {
         try {
           // V83 B2: resume bär thoughtLevel (kartan §1 — mode finns ej i
           // resume-schemat, det följer med vid nästa create istället).
@@ -3009,7 +3056,14 @@ class AppServerTransport implements StudioTransport {
           resumerad = false; // borta/ogiltig → skapa ny nedan
         }
       }
-      if (!resumerad) await this.skapa(klient, modell);
+      if (!resumerad) {
+        // VÅG 95: friskgång ⇒ FRISKT create UTAN den sparade modell-parametern
+        // — modellDod/ålder betyder just att den sparade modellen (eller en
+        // slumpmässigt borttagen) är misstänkt död; sessionen föds med
+        // serverns AKTUELLA standardmodell i stället (resume-fallbacken
+        // oförändrad: där var sessionen bara borta, modellen oskyldig).
+        await this.skapa(klient, friskgang ? undefined : modell);
+      }
     }
 
     if (this.sid && !this.prenumererad) {
@@ -5637,6 +5691,12 @@ class AppServerTransport implements StudioTransport {
               typ: "status",
               text: "Sessionens modell är ej längre tillgänglig — skapar ny session…",
             });
+            // VÅG 95 (-32031-STÄDNING): flagga den döda sessionen i kartan
+            // INNAN kasseringen — den resumed ALDRIG igen (frisk session
+            // direkt vid nästa meddelande, även efter omstart: flaggan
+            // lever på disk). Bryter upprepningsloopen "omstart → resume
+            // av död modell → -32031 → dubbeltur".
+            if (this.sid) markeraModellDod(this.sid);
             // Intern frisk-session-väg (UTAN prompt-vakt) — dödlägesfix
             // bevisad på prod 2026-09-09: nySession vägrade under retryn.
             await this.skapaFriskSession();
@@ -6099,7 +6159,14 @@ class AppServerTransport implements StudioTransport {
     return { text: typeof r?.text === "string" ? r.text : "", råSvar: r };
   }
 
-  private lasSparadSession(): { sessionId: string | null; modell?: string; lage?: string; tankeNiva?: string } {
+  private lasSparadSession(): {
+    sessionId: string | null;
+    modell?: string;
+    lage?: string;
+    tankeNiva?: string;
+    /** VÅG 95: när sessionen SPARADES (födelsen) — friskgångs-reservtid. */
+    sparadTid?: number | null;
+  } {
     try {
       const rå = readFileSync(this.lagringsSökväg, "utf8");
       const pars = JSON.parse(rå) as {
@@ -6107,6 +6174,7 @@ class AppServerTransport implements StudioTransport {
         modell?: unknown;
         lage?: unknown;
         tankeNiva?: unknown;
+        sparad?: unknown;
       };
       const sid = typeof pars.sessionId === "string" && pars.sessionId.startsWith("sess_") ? pars.sessionId : null;
       const modell = typeof pars.modell === "string" && pars.modell ? pars.modell : undefined;
@@ -6115,9 +6183,10 @@ class AppServerTransport implements StudioTransport {
         typeof pars.tankeNiva === "string" && ["nothink", "high", "max"].includes(pars.tankeNiva)
           ? pars.tankeNiva
           : undefined;
-      return { sessionId: sid, modell, lage, tankeNiva };
+      const sparadTid = typeof pars.sparad === "number" && pars.sparad > 0 ? pars.sparad : null;
+      return { sessionId: sid, modell, lage, tankeNiva, sparadTid };
     } catch {
-      return { sessionId: null };
+      return { sessionId: null, sparadTid: null };
     }
   }
 }
@@ -7437,6 +7506,51 @@ export function hamtaStudioTransport(): StudioTransport {
   return aktivTransport;
 }
 
+// ── VÅG 95: VARMFÖRHÅLLANDE — kallstarten betald vid serverstart ─────────────
+
+/** Varmförhållnings-förskjutning (ms): Next-boot/kompilering får gå före. */
+const VARM_FORSJUTNING_MS = 8_000;
+
+/**
+ * VÅG 95 — best-effort VARMFÖRHÅLLANDE av standard-transporten (kund-
+ * problemet "sega", källa 2: kall-start av zcode-barnprocessen — spawn +
+ * session/create tar sekunder första gången efter pm2-omstart, och kost-
+ * naden landade tidigare på FÖRSTA kundmeddelandet). Startar standard-
+ * barnprocessen + en session I BAKGRUNDEN (ej blockerande) så första
+ * kundmeddelandet träffar en varm transport.
+ *
+ *   · Idempotent: globalThis-vakt ⇒ MAX EN GÅNG per process (även vid
+ *     Next dev-hot-reload som evaluera modulen flera gånger).
+ *   · Tyst fel: ensure-fel äts (ingen logg, inget kast) — misslyckad
+ *     varmning är exakt dagens nuläge (första meddelandet betalar).
+ *   · Mock-neutral: mock (dev/test) värmer ALDRIG — inget barn finns.
+ *   · `next build`-fasen hoppas över (NEXT_PHASE) — inga zcode-barn
+ *     föds under bygget; STUDIO_VARM=av är driftbrytaren.
+ *   · RAM: ETT barn (default-transporten); hushållningens 2 h-idle-
+ *     städning stänger det om ingen kund kom — värmen kostar aldrig
+ *     mer än startfönstret. VAKT: friskgångs-persistensen (ovan) gör att
+ *     varmningen resume:ar en FRISK session när den sparade är >24 h /
+ *     modellDod — själva -32031-dubbelturen betalas alltså OCKSÅ vid
+ *     serverstart i stället för i kundens första meddelande.
+ */
+export function varmStudioTransport(): void {
+  if (studioTransportNamn() === "mock") return; // dev/test: inget barn att värma
+  if (process.env.STUDIO_VARM === "av") return; // driftbrytare (default PÅ)
+  if (process.env.NEXT_PHASE === "phase-production-build") return; // ej i build
+  const vakt = globalThis as { __ak1aStudioVag95VarmKor?: boolean };
+  if (vakt.__ak1aStudioVag95VarmKor) return; // MAX en gång per process
+  vakt.__ak1aStudioVag95VarmKor = true;
+  const varmTimer = setTimeout(() => {
+    try {
+      const transport = hamtaStudioTransport();
+      void transport.ensure().catch(() => undefined); // TYST fel — se ovan
+    } catch {
+      // tyst — t.o.m. binär-saknad är accepterat (dagens nuläge)
+    }
+  }, VARM_FORSJUTNING_MS);
+  varmTimer.unref(); // varmnings-timern får ALDRIG hålla processen vid liv
+}
+
 // ── VÅG 84 B: MULTI-SESSION — sessionskarta + per-session-transporter ────────
 
 /** Sessionskartans tak — äldsta senasteAktivitet avlägsnas först (LRU). */
@@ -7491,6 +7605,59 @@ export function markeraSessionSlut(sessionId: string, svar: string): void {
     kort.historik = kort.historik.slice(-MAX_HISTORIK_I_KARTA);
   }
   schemalaggKartskrivning(); // VÅG 87 H2: "varje gång ett svar klart" → disk
+}
+
+// ── VÅG 95: -32031-STÄDNING — friskgång-regeln + modellDod-flaggan ───────────
+
+/** Friskgångsgräns (ms): senaste aktivitet äldre än 24 h ⇒ aldrig resume. */
+const GAMMAL_SESSION_GRANS_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * VÅG 95 — flagga en session som modellDod vid -32031-självläkningen
+ * (ZCODE_RUNTIME_MODEL_UNAVAILABLE: sessionen pin:ar en borttagen modell
+ * och kan ALDRIG svara igen). Nästa NYA meddelande mot sessionId:t startar
+ * FRISK session direkt (se arFrigangSession) i stället för resume →
+ * -32031 → kassera → ny (dubbelturen). Historik-previews i kartposten
+ * bevaras OFÖRÄNDRADE — kunden förlorar ingen vy. Skapas-kort-om-saknas:
+ * flaggan är poängen (sid:t är giftigt), historiken känner vi ej till.
+ */
+export function markeraModellDod(sessionId: string): void {
+  if (!sessionId) return;
+  lasKartaFranDisk();
+  const kort = sessionskartan.get(sessionId) ?? {
+    senasteAktivitet: Date.now(),
+    historik: [],
+    aktiv: false,
+  };
+  kort.modellDod = true;
+  kort.aktiv = false;
+  sessionskartan.set(sessionId, kort);
+  schemalaggKartskrivning(); // disk via debounce — flaggan överlever omstart
+}
+
+/**
+ * VÅG 95 — är sessionen FRISKGÅNG? true ⇒ ett NYTT meddelande skall starta
+ * en FRISK session direkt i stället för resume (resume lyckas tekniskt men
+ * första session/send kastar -32031 när modellen dött → självläknings-
+ * dubbeltur). Regel: modellDod-flaggan SATT (drabbats en gång) ELLER
+ * senaste aktivitet äldre än 24 h. Åldern tas ur KARTANS senasteAktivitet
+ * (uppdateras vid VARJE prompt — sanningskällan), med reservTid (t.ex.
+ * persistensfilens sparad-tid = sessionens födelse) när kartan saknar
+ * posten. Okänd session (ingen post, ingen reservtid) ⇒ false — ärlig
+ * resume precis som förut (inget beteendeändras för det okända).
+ */
+function arFrigangSession(sessionId: string, reservTid?: number | null): boolean {
+  lasKartaFranDisk();
+  const kort = sessionskartan.get(sessionId);
+  if (kort?.modellDod === true) return true;
+  const aktivitet =
+    typeof kort?.senasteAktivitet === "number"
+      ? kort.senasteAktivitet
+      : typeof reservTid === "number"
+        ? reservTid
+        : null;
+  if (aktivitet === null) return false;
+  return Date.now() - aktivitet > GAMMAL_SESSION_GRANS_MS;
 }
 
 /** Håll kartan under taket — avlägsna äldst aktivitet först. */
@@ -7625,6 +7792,9 @@ function lasKartaFranDisk(): void {
         // VÅG 90 K1: en STÄNGD session förblir stängd efter omstart —
         // annars återbjuds döda sessioner som levande (känt problem).
         ...(k.stangd === true ? { stangd: true } : {}),
+        // VÅG 95: modellDod överlever omstart — en session som EN gång
+        // drabbats av -32031 resumed aldrig igen (frisk session direkt).
+        ...(k.modellDod === true ? { modellDod: true } : {}),
       });
     }
     städaKarta();
@@ -7766,12 +7936,23 @@ function skapaSessionTransport(målSessionId?: string): StudioTransport {
  *                      ("ny:<nyckel>" tills sessionId är känt — re-nycklas
  *                      nedan så nästa prompt i tabben finner den igen).
  *
+ *   alternativ.nyttMeddelande=true (VÅG 95, -32031-STÄDNING — stream-
+ *   routens POST) ⇒ en FRISKGÅNG-session (>24 h sedan senaste aktivitet
+ *   ELLER en gång drabbad av -32031, enligt arFrigangSession) resumed
+ *   ALDRIG: en FRISK session skapas direkt och DET nya sessionId:t
+ *   returneras ("hej"-eventet bär det — klienten omnycklar tabben).
+ *   Historik-previews förloras ej: gamla kartposten + session/list lever
+ *   kvar ("Äldre sessioner"). UTAN flaggan (GET-sidaload, rewind) är
+ *   beteendet OFÖRÄNDRAT ärligt resume — läsning av en gammal session är
+ *   harmlös, -32031 sitter i send.
+ *
  * Returnerar transporten ENSURAD (resume/create + subscribe) + den
  * lösta sessionens id.
  */
 export async function hamtaSessionTransport(
   sessionId?: string | null,
   nyckel?: string | null,
+  alternativ?: { nyttMeddelande?: boolean },
 ): Promise<{ transport: StudioTransport; sessionId: string }> {
   // 1. Direktträff på session-id.
   if (sessionId) {
@@ -7784,6 +7965,18 @@ export async function hamtaSessionTransport(
       const sid = befintlig.sessionId();
       if (sid) return { transport: befintlig, sessionId: sid };
       // Fallthrough — transporten tappade sin session (extremfall): ny nedan.
+    }
+    // VÅG 95: friskgång-session + NYTT MEDDELANDE ⇒ FRISK session direkt
+    // (hoppa över resume → -32031 → kassera → ny-dubbelturen). Okänd
+    // session (ingen kartpost) resumed ärligt som förut.
+    if (alternativ?.nyttMeddelande && arFrigangSession(sessionId)) {
+      await vaktaMaxBarn(); // VÅG 90 K1: aldrig ett (MAX+1):e barn på Contabo
+      const transport = skapaSessionTransport();
+      await transport.ensure();
+      const sid = transport.sessionId();
+      if (!sid) throw new Error("Transporten svarade utan sessionId.");
+      sessionTransporter.set(sid, transport);
+      return { transport, sessionId: sid };
     }
     await vaktaMaxBarn(); // VÅG 90 K1: aldrig ett (MAX+1):e barn på Contabo
     const transport = skapaSessionTransport(sessionId);
@@ -8102,6 +8295,10 @@ if (!hushallGuard.__ak1aStudioVag90Hushall) {
       setTimeout(() => process.exit(0), 250);
     });
   }
+  // VÅG 95: varmförhållning vid transport-init (pm2-start/första modul-
+  // evaluering) — standard-barnprocessen + en session värms i bakgrunden
+  // så första kundmeddelandet träffar en varm transport (mock/build: no-op).
+  varmStudioTransport();
 }
 
 /** Test-krok: nollställ singletonen + multi-session-registret (verktyg/test). */

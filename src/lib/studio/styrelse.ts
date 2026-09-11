@@ -414,11 +414,13 @@ function appendera(filNamn: string, text: string, rubrikOmNy?: string): void {
     throw new Error(`Ogiltigt filnamn i styrelsens protokoll: ${filNamn}`);
   }
   // Strängkonkat (ALDRIG path.join med variabeln): filNamn är verifierad
-  // naket ovan och resultatet dubbelkontrolleras mot forskningsroten —
-  // stdout-PIPE till lokal fil, ingen nätverks- eller användar-sökväg.
-  const rot = forskningKatalog();
-  const sokvag = rot.endsWith("/") ? rot + filNamn : rot + "/" + filNamn;
-  if (!sokvag.startsWith(rot) || sokvag.slice(rot.length).includes("/")) {
+  // naket ovan — normalisera roten till "/"-form och försäkra att resultat
+  // är EXAKT rot + "/" + filNamn (V95-fix: den gamla kontrollen kollar
+  // segmentet EFTER roten utan att räkna med själva separeraren "/" och
+  // kastade därmed vid VARJE protokoll-append).
+  const rot = forskningKatalog().replace(/\\/g, "/").replace(/\/+$/, "");
+  const sokvag = rot + "/" + filNamn;
+  if (!sokvag.startsWith(rot + "/") || sokvag.slice(rot.length + 1) !== filNamn) {
     throw new Error("Protokollsökvägen lämnade data/forskning");
   }
   mkdirSync(forskningKatalog(), { recursive: true });

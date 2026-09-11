@@ -246,11 +246,21 @@ export async function POST(req: NextRequest) {
 
   // VÅG 84 B: sessionsval — per-session-transport (resume/ny tabb) eller
   // default-transporten (huvudtabben, oförändrat våg 81-beteende).
+  // VÅG 95 (-32031-STÄDNING): POST = NYTT MEDDELANDE ⇒ hamtaSession-
+  // transport får nyttMeddelande:true — en FRISKGÅNG-session (>24 h sedan
+  // senaste aktivitet ELLER en gång drabbad av -32031) startar FRISK
+  // session direkt i stället för resume → -32031 → kassera → ny
+  // (dubbelturen vid första meddelandet efter omstand försvinner). Det
+  // nya sessionId:t följer "hej"-eventet så klienten omnycklar tabben;
+  // den gamla sessionens historik lever kvar i sessionskartan + "Äldre
+  // sessioner"-listan. GET-sidaloaden (vy) resumed oförändrat ärligt.
   let transport: StudioTransport;
   let sessionsId = "";
   try {
     if (sessionId) {
-      ({ transport, sessionId: sessionsId } = await hamtaSessionTransport(sessionId));
+      ({ transport, sessionId: sessionsId } = await hamtaSessionTransport(sessionId, null, {
+        nyttMeddelande: true,
+      }));
     } else if (nyckel) {
       ({ transport, sessionId: sessionsId } = await hamtaSessionTransport(null, nyckel));
     } else {

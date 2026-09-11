@@ -113,7 +113,8 @@ export function TrafficStatsPanel() {
             {data.topPages.map((p) => (
               <div key={p.page} className="flex items-center gap-3 text-sm">
                 <span className="min-w-0 flex-1 truncate font-mono text-xs">{p.page}</span>
-                <div className="h-2 w-28 overflow-hidden rounded-full bg-gold/15">
+                {/* våg 104: smalare stapel på mobil så sökvägen får plats */}
+                <div className="h-2 w-16 overflow-hidden rounded-full bg-gold/15 sm:w-28">
                   <div className="h-full rounded-full bg-gold" style={{ width: `${(p.views / maxSida) * 100}%` }} />
                 </div>
                 <span className="w-10 text-right font-mono text-xs">{p.views}</span>

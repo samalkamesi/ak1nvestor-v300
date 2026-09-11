@@ -250,7 +250,7 @@ export function KursPanel() {
     return (
       <div className="rounded-xl border border-gold/30 bg-card px-5 py-6">
         <div className="flex items-center gap-2">
-          <Lock className="h-4 w-4 text-gold" />
+          <Lock className="h-4 w-4 shrink-0 text-gold" />
           <h3 className="font-serif text-lg font-bold">Kurser — låst</h3>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
@@ -264,9 +264,10 @@ export function KursPanel() {
             onChange={(e) => setLosenord(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && lasUpp()}
             placeholder="Admin-lösenord"
-            className="max-w-xs"
+            className="min-w-0 max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          {/* våg 104: 44px touch-mål på mobil, återställs på sm */}
+          <Button onClick={lasUpp} className="min-h-[44px] shrink-0 bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -303,15 +304,15 @@ export function KursPanel() {
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
           </span>
           <h3 className="font-serif text-lg font-bold">Kurser 🎓</h3>
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             ADMIN-MEGA STEG 4
           </Badge>
-          <Badge variant="outline" className="text-[10px]">
+          <Badge variant="outline" className="shrink-0 text-[10px]">
             4 VITLISTE-FÄLT
           </Badge>
         </div>
@@ -346,8 +347,8 @@ export function KursPanel() {
       {hamtat && (
         <div className="rounded-lg border border-gold/30 bg-card p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <GraduationCap className="h-4 w-4 text-gold" />
+          <div className="flex items-center gap-2">
+            <GraduationCap className="h-4 w-4 shrink-0 text-gold" />
               <h4 className="font-serif text-sm font-bold">Kurser ({kurser.length})</h4>
             </div>
             <span className="text-[10px] text-muted-foreground">
@@ -405,7 +406,7 @@ export function KursPanel() {
       {hamtat && !fel && (
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="flex items-center gap-2">
-            <History className="h-4 w-4 text-gold" />
+            <History className="h-4 w-4 shrink-0 text-gold" />
             <h4 className="font-serif text-sm font-bold">Spårhistorik (senaste 20)</h4>
           </div>
           {logg.length === 0 ? (
@@ -516,7 +517,7 @@ function KursRadKomponent({
         </span>
         <span className="truncate font-mono text-[10px] text-muted-foreground">{rad.slug}</span>
         {overridar > 0 && (
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             ändrad ×{overridar}
           </Badge>
         )}
@@ -546,7 +547,7 @@ function KursRadKomponent({
                       {f.etikett}
                     </span>
                     {overrid && (
-                      <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+                      <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
                         ändrad
                       </Badge>
                     )}
@@ -587,7 +588,7 @@ function KursRadKomponent({
                 <div className="mt-2 flex flex-wrap gap-2">
                   <Button
                     size="sm"
-                    className="bg-gold text-background hover:bg-gold/90"
+                    className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
                     disabled={sparar || overTak || oforandrad || !konfigureratOk}
                     title={
                       overTak
@@ -611,7 +612,7 @@ function KursRadKomponent({
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-gold/40 text-gold hover:bg-gold/10"
+                      className="min-h-[44px] border-gold/40 text-gold hover:bg-gold/10 sm:min-h-0"
                       disabled={sparar || !konfigureratOk}
                       title={`Radera överriden — filvärdet gäller igen (${fält})`}
                       onClick={() => sparaFalt(rad, fält, null)}

@@ -251,7 +251,7 @@ export function MediaPanel() {
     return (
       <div className="rounded-xl border border-gold/30 bg-card px-5 py-6">
         <div className="flex items-center gap-2">
-          <Lock className="h-4 w-4 text-gold" />
+          <Lock className="h-4 w-4 shrink-0 text-gold" />
           <h3 className="font-serif text-lg font-bold">Media — låst</h3>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
@@ -265,9 +265,10 @@ export function MediaPanel() {
             onChange={(e) => setLosenord(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && lasUpp()}
             placeholder="Admin-lösenord"
-            className="max-w-xs"
+            className="min-w-0 max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          {/* våg 104: 44px touch-mål på mobil, återställs på sm */}
+          <Button onClick={lasUpp} className="min-h-[44px] shrink-0 bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -284,16 +285,17 @@ export function MediaPanel() {
     <div className="space-y-5">
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
+        {/* våg 104: wrap även i inre raden — badges får inte svämma på 320px */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
           </span>
           <h3 className="font-serif text-lg font-bold">Media 🖼️</h3>
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             ADMIN-MEGA STEG 3
           </Badge>
-          <Badge variant="outline" className="text-[10px]">
+          <Badge variant="outline" className="shrink-0 text-[10px]">
             SUPABASE STORAGE
           </Badge>
         </div>
@@ -326,7 +328,7 @@ export function MediaPanel() {
       <div className="rounded-lg border border-gold/30 bg-card p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <Upload className="h-4 w-4 text-gold" />
+            <Upload className="h-4 w-4 shrink-0 text-gold" />
             <h4 className="font-serif text-sm font-bold">Ladda upp bild</h4>
           </div>
           <span className="text-[10px] text-muted-foreground">jpg · png · webp · avif · max 2 MB</span>
@@ -340,9 +342,11 @@ export function MediaPanel() {
           aria-label="Välj bildfil att ladda upp"
         />
         <div className="mt-3 flex flex-wrap items-center gap-2">
+          {/* våg 104: 44px touch-mål på mobil, återställs på sm */}
           <Button
             size="sm"
             variant="outline"
+            className="min-h-[44px] sm:min-h-0"
             disabled={!konfigureratOk || laddarUpp}
             title={!konfigureratOk ? "Kräver konfigurerad Supabase Storage" : "Välj en bildfil"}
             onClick={() => filRef.current?.click()}
@@ -356,7 +360,7 @@ export function MediaPanel() {
               </span>
               <Button
                 size="sm"
-                className="bg-gold text-background hover:bg-gold/90"
+                className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
                 disabled={laddarUpp}
                 onClick={laddaUpp}
               >
@@ -415,7 +419,7 @@ export function MediaPanel() {
       )}
 
       <p className="flex items-center gap-1 text-[10px] text-muted-foreground">
-        <ClipboardCopy className="h-3 w-3" />
+        <ClipboardCopy className="h-3 w-3 shrink-0" />
         Varje uppladdning/radering loggas som system_event (revisbart) — inga IP-adresser spåras.
       </p>
     </div>
@@ -457,14 +461,14 @@ function MediaKort({
           {formateraStorlek(post.bytes)} · {datumKort(post.skapad)}
         </p>
         <div className="mt-auto flex flex-wrap gap-1.5 pt-1.5">
-          <Button size="sm" variant="outline" onClick={kopiera} aria-label={`Kopiera URL till ${namn}`}>
+          <Button size="sm" variant="outline" className="min-h-[44px] sm:min-h-0" onClick={kopiera} aria-label={`Kopiera URL till ${namn}`}>
             <ClipboardCopy className="mr-1 h-3 w-3" /> Kopiera URL
           </Button>
           {!bekrafta ? (
             <Button
               size="sm"
               variant="outline"
-              className="border-red-500/40 text-red-600 hover:bg-red-500/10"
+              className="min-h-[44px] border-red-500/40 text-red-600 hover:bg-red-500/10 sm:min-h-0"
               disabled={raderar}
               onClick={() => setBekrafta(true)}
               aria-label={`Ta bort ${namn}`}
@@ -476,7 +480,7 @@ function MediaKort({
               <Button
                 size="sm"
                 variant="outline"
-                className="border-red-500/60 text-red-600 hover:bg-red-500/10"
+                className="min-h-[44px] border-red-500/60 text-red-600 hover:bg-red-500/10 sm:min-h-0"
                 disabled={raderar}
                 onClick={radera}
                 aria-label={`Bekräfta borttagning av ${namn}`}

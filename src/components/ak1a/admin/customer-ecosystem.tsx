@@ -74,7 +74,12 @@ export function CustomerEcosystem() {
       <div>
         <div className="flex items-center gap-2">
           <Input value={sok} onChange={(e) => setSok(e.target.value)} placeholder="Sök medlem…" className="h-8 text-xs" />
-          <Button variant="ghost" size="sm" onClick={() => medlemmar.length && oppna(medlemmar[0].id)}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0"
+            onClick={() => medlemmar.length && oppna(medlemmar[0].id)}
+          >
             <RefreshCw className="h-3 w-3" />
           </Button>
         </div>
@@ -110,8 +115,8 @@ export function CustomerEcosystem() {
           <div className="space-y-4">
             <div className="rounded-xl border border-gold/20 bg-card p-4">
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Kundbild A-Ö</p>
-              <h3 className="mt-1 font-serif text-xl font-bold">{bild.medlem.namn || bild.medlem.email}</h3>
-              <div className="mt-2 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2">
+              <h3 className="mt-1 break-words font-serif text-xl font-bold">{bild.medlem.namn || bild.medlem.email}</h3>
+              <div className="mt-2 grid gap-2 break-words text-xs text-muted-foreground sm:grid-cols-2">
                 <span>📧 {bild.medlem.email}</span>
                 <span>🏅 Nivå: {bild.medlem.niva}</span>
                 <span>📅 Medlem sedan {new Date(bild.medlem.medlemSedan).toLocaleDateString("sv-SE")}</span>
@@ -155,10 +160,11 @@ export function CustomerEcosystem() {
               <div className="rounded-xl border border-gold/20 bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Portföljer</p>
                 <div className="mt-2 space-y-1">
+                  {/* våg 104: wrap + värden shrink-0 — portföljnamn min-w-0 på mobil */}
                   {bild.portfoljer.map((p) => (
-                    <div key={p.id} className="flex justify-between text-xs">
-                      <span>{p.name}</span>
-                      <span className="text-muted-foreground">
+                    <div key={p.id} className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs">
+                      <span className="min-w-0 flex-1">{p.name}</span>
+                      <span className="shrink-0 text-muted-foreground">
                         {p.total_value.toLocaleString("sv-SE")} · {p.analysis_status}
                       </span>
                     </div>

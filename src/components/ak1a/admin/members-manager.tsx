@@ -116,10 +116,10 @@ export function MembersManager() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Sök e-post eller namn…"
-            className="h-8 w-52 text-xs"
+            className="h-8 w-52 max-w-full min-h-[44px] text-xs sm:min-h-0"
           />
           <Select value={tierFilter} onValueChange={setTierFilter}>
-            <SelectTrigger className="h-8 w-36 text-xs">
+            <SelectTrigger className="h-8 w-36 max-w-full min-h-[44px] text-xs sm:min-h-0">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -129,7 +129,12 @@ export function MembersManager() {
               <SelectItem value="pro">Pro ({counts.pro})</SelectItem>
             </SelectContent>
           </Select>
-          <Button variant="outline" size="sm" onClick={() => load(true)}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => load(true)}
+            className="min-h-[44px] sm:min-h-0"
+          >
             <RefreshCw className="mr-1 h-3 w-3" /> Ladda om
           </Button>
         </div>
@@ -147,11 +152,14 @@ export function MembersManager() {
               className="flex flex-wrap items-center gap-3 rounded-lg border border-gold/20 bg-card p-3"
             >
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${TIER_STYLE[m.member_type] || TIER_STYLE.free}`}>
+                {/* våg 104: nivå-badge krymper ej, namnet truncate:ar på smal skärm */}
+                <div className="flex min-w-0 items-center gap-2">
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${TIER_STYLE[m.member_type] || TIER_STYLE.free}`}
+                  >
                     {m.member_type}
                   </span>
-                  <span className="truncate text-sm font-medium">{m.name || m.email}</span>
+                  <span className="min-w-0 truncate text-sm font-medium">{m.name || m.email}</span>
                 </div>
                 <p className="mt-0.5 truncate text-xs text-muted-foreground">
                   {m.email}
@@ -162,7 +170,8 @@ export function MembersManager() {
                     : ""}
                 </p>
               </div>
-              <div className="text-xs text-muted-foreground">
+              {/* våg 104: e-post/tidstämpel-rad har redan truncate; select håller bredd men max-w-full */}
+              <div className="min-w-0 text-xs text-muted-foreground">
                 {m.portfolioCount} portfölj{m.portfolioCount === 1 ? "" : "er"}
                 {m.pendingCount > 0 ? ` (${m.pendingCount} väntar)` : ""}
               </div>
@@ -171,7 +180,7 @@ export function MembersManager() {
                 onValueChange={(v) => setTier(m.id, v)}
                 disabled={busyId === m.id}
               >
-                <SelectTrigger className="h-8 w-32 text-xs">
+                <SelectTrigger className="h-8 w-32 max-w-full min-h-[44px] text-xs sm:min-h-0">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

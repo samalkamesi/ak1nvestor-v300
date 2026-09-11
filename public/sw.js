@@ -19,7 +19,7 @@
  * avregistreras SW:n, ALLA cachear raderas och sidan laddas om EN gång per
  * session — applikationen läker sig själv, SW:n tvingar aldrig omladdning.
  */
-const VERSION = "ak1a-v6";
+const VERSION = "ak1a-v7";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
 self.addEventListener("install", (event) => {

@@ -334,7 +334,7 @@ export function OversattningPanel() {
           Granskningskön och termbanken skyddas av ADMIN_PASSWORD — lämnad i
           headern x-admin-password, samma mönster som övriga admin-rutter.
         </p>
-        <div className="mt-3 flex gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Input
             type="password"
             value={losenord}
@@ -343,7 +343,7 @@ export function OversattningPanel() {
             placeholder="Admin-lösenord"
             className="max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button onClick={lasUpp} className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -359,7 +359,7 @@ export function OversattningPanel() {
     <div className="space-y-5">
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
@@ -400,8 +400,8 @@ export function OversattningPanel() {
       {/* Konfigurationskort — tabellen saknas: aldrig krasch, alltid instruktion */}
       {data?.konfigurationKravs && (
         <div className="rounded-lg border border-orange-500/40 bg-orange-500/[0.04] p-4">
-          <div className="flex items-center gap-2">
-            <Database className="h-4 w-4 text-orange-500" />
+          <div className="flex flex-wrap items-center gap-2">
+            <Database className="h-4 w-4 shrink-0 text-orange-500" />
             <h4 className="font-serif text-sm font-bold">{data.konfigurationKravs.rubrik}</h4>
           </div>
           <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{data.konfigurationKravs.instruktion}</p>
@@ -423,8 +423,8 @@ export function OversattningPanel() {
           return (
             <div key={s.id} className="rounded-lg border border-gold/30 bg-card p-4">
               <div className="flex items-center gap-1.5">
-                <Globe className="h-4 w-4 text-gold" />
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                <Globe className="h-4 w-4 shrink-0 text-gold" />
+                <span className="min-w-0 truncate text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {s.namn} ({s.id.toUpperCase()}){s.dir === "rtl" ? " · RTL" : ""}
                 </span>
               </div>
@@ -472,8 +472,9 @@ export function OversattningPanel() {
               {sv(data.sammanfattning.oversattningsobjekt)} översättningsobjekt
             </span>
           </div>
+          {/* våg 104: minsta bredd — tabellen scrollar horisontellt på mobil i stället för att klämmas */}
           <div className="mt-2 overflow-x-auto">
-            <table className="w-full text-left text-[11px]">
+            <table className="w-full min-w-[480px] text-left text-[11px]">
               <thead>
                 <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
                   <th className="py-1.5 pr-3 font-semibold">Kategori</th>
@@ -564,20 +565,22 @@ export function OversattningPanel() {
         </div>
       )}
 
-      {/* Underflikar: granskning + termbank */}
+      {/* Underflikar: granskning + termbank (våg 104: horisontell scroll på mobil) */}
       <Tabs defaultValue="granskning" className="w-full">
-        <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
-          <TabsTrigger value="granskning" className="px-3 py-1.5 text-xs sm:text-sm">Granskningskö</TabsTrigger>
-          <TabsTrigger value="termbank" className="px-3 py-1.5 text-xs sm:text-sm">Termbank ({sv(termbank?.antalStatiska)} + {sv(termbank?.antalTillagg)})</TabsTrigger>
-          <TabsTrigger value="rond" className="px-3 py-1.5 text-xs sm:text-sm">Senaste rond</TabsTrigger>
-        </TabsList>
+        <div className="-mx-5 overflow-x-auto px-5 pb-1 [scrollbar-width:thin] sm:mx-0 sm:px-0">
+          <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
+            <TabsTrigger value="granskning" className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm">Granskningskö</TabsTrigger>
+            <TabsTrigger value="termbank" className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm">Termbank ({sv(termbank?.antalStatiska)} + {sv(termbank?.antalTillagg)})</TabsTrigger>
+            <TabsTrigger value="rond" className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm">Senaste rond</TabsTrigger>
+          </TabsList>
+        </div>
 
         {/* ── Granskningskön ── */}
         <TabsContent value="granskning" className="mt-4 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               <Select value={sprakFilter} onValueChange={(v) => bytFilter(v, undefined)}>
-                <SelectTrigger className="h-8 w-36 text-xs">
+                <SelectTrigger className="h-8 w-36 max-w-full text-xs">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -588,7 +591,7 @@ export function OversattningPanel() {
                 </SelectContent>
               </Select>
               <Select value={statusFilter} onValueChange={(v) => bytFilter(undefined, v)}>
-                <SelectTrigger className="h-8 w-56 text-xs">
+                <SelectTrigger className="h-8 w-56 max-w-full text-xs">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -604,7 +607,7 @@ export function OversattningPanel() {
               </Select>
             </div>
             {data?.koSidinfo && data.koSidinfo.totalt > 0 && (
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                 <Button
                   variant="outline"
                   size="sm"
@@ -666,8 +669,8 @@ export function OversattningPanel() {
         {/* ── Senaste rond-rapporten ── */}
         <TabsContent value="rond" className="mt-4">
           <div className="rounded-lg border border-gold/30 bg-card p-4">
-            <div className="flex items-center gap-2">
-              <Languages className="h-4 w-4 text-gold" />
+            <div className="flex min-w-0 items-center gap-2">
+              <Languages className="h-4 w-4 shrink-0 text-gold" />
               <h4 className="font-serif text-sm font-bold">
                 Senaste översättningsrond {senasteRond?.datum ? "— " + datumKort(senasteRond.datum) : ""}
               </h4>
@@ -813,7 +816,7 @@ function GranskningsKort({
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 <Button
                   size="sm"
-                  className="bg-gold text-background hover:bg-gold/90"
+                  className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
                   disabled={arbetar || !text.trim()}
                   onClick={() => kör({ action: "redigera", ...ident, text })}
                 >
@@ -851,7 +854,7 @@ function GranskningsKort({
               </Button>
               <Button
                 size="sm"
-                className="bg-gold text-background hover:bg-gold/90"
+                className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
                 disabled={arbetar}
                 onClick={() => kör({ action: "publicera", ...ident })}
               >
@@ -873,13 +876,13 @@ function GranskningsKort({
           {forceFraga && resultat?.kraverForce && (
             <div className="rounded-md border border-orange-500/40 bg-orange-500/[0.04] p-3">
               <div className="flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 text-orange-500" />
+                <AlertTriangle className="h-4 w-4 shrink-0 text-orange-500" />
                 <p className="text-xs font-semibold text-orange-600 dark:text-orange-400">{resultat.varning}</p>
               </div>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex flex-wrap gap-2">
                 <Button
                   size="sm"
-                  className="bg-orange-600 text-white hover:bg-orange-700"
+                  className="min-h-[44px] bg-orange-600 text-white hover:bg-orange-700 sm:min-h-0"
                   disabled={arbetar}
                   onClick={() => kör({ action: "publicera", ...ident, force: true })}
                 >
@@ -1020,7 +1023,7 @@ function TermbankVy({
           />
           <Button
             size="sm"
-            className="bg-gold text-background hover:bg-gold/90"
+            className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
             disabled={arbetar || !ny.sv.trim() || !ny.en.trim() || !ny.ar.trim()}
             onClick={async () => {
               const ok = await posta({ action: "laggTill", ...ny });
@@ -1043,13 +1046,14 @@ function TermbankVy({
       {(termbank?.tillagg ?? []).length > 0 && (
         <div className="rounded-lg border border-orange-500/40 bg-card p-4">
           <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-orange-500" />
+            <Clock className="h-4 w-4 shrink-0 text-orange-500" />
             <h4 className="font-serif text-sm font-bold">
               Tillägg — {sv(termbank?.antalTillagg)} termer väntar sammanslagning in i banken
             </h4>
           </div>
+          {/* våg 104: minsta bredd — sju kolumner scrollar horisontellt på mobil */}
           <div className="mt-2 overflow-x-auto">
-            <table className="w-full text-left text-[11px]">
+            <table className="w-full min-w-[560px] text-left text-[11px]">
               <thead>
                 <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
                   <th className="py-1.5 pr-3 font-semibold">Svenska</th>
@@ -1103,8 +1107,9 @@ function TermbankVy({
             className="h-8 max-w-xs text-xs"
           />
         </div>
+        {/* våg 104: minsta bredd — fyra termkolumner scrollar horisontellt på mobil */}
         <div className="mt-2 overflow-x-auto">
-          <table className="w-full text-left text-[11px]">
+          <table className="w-full min-w-[420px] text-left text-[11px]">
             <thead>
               <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
                 <th className="py-1.5 pr-3 font-semibold">Svenska</th>

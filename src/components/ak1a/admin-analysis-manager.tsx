@@ -638,14 +638,17 @@ export function AdminAnalysisManager() {
       )}
 
       <Tabs value={subTab} onValueChange={(v) => setSubTab(v as "analysis" | "bookings")}>
-        <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
-          <TabsTrigger value="analysis" className="px-3 py-1.5 text-xs sm:text-sm">
-            <FileText className="mr-1.5 h-3.5 w-3.5" /> Analys-uppladdning
-          </TabsTrigger>
-          <TabsTrigger value="bookings" className="px-3 py-1.5 text-xs sm:text-sm">
-            <Calendar className="mr-1.5 h-3.5 w-3.5" /> Bokningar
-          </TabsTrigger>
-        </TabsList>
+        {/* Våg 104: horisontell scroll på mobil (våg 104-mönstret), tryckytor ≥44 px */}
+        <div className="-mx-1 overflow-x-auto px-1 pb-1 [scrollbar-width:thin]">
+          <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
+            <TabsTrigger value="analysis" className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm">
+              <FileText className="mr-1.5 h-3.5 w-3.5" /> Analys-uppladdning
+            </TabsTrigger>
+            <TabsTrigger value="bookings" className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm">
+              <Calendar className="mr-1.5 h-3.5 w-3.5" /> Bokningar
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="analysis" className="mt-4">
           <div className="grid gap-4 lg:grid-cols-12">

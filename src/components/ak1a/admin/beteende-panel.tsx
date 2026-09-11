@@ -203,7 +203,8 @@ export function BeteendePanel() {
               inte investeringsråd.
             </p>
           </div>
-          <div className="flex shrink-0 items-center gap-2">
+          {/* våg 104: badge + mätt-tid + knapp wrappar på mobil; desktop som förut */}
+          <div className="flex max-w-full shrink-0 flex-wrap items-center gap-2">
             <Badge variant="outline" className={cn("text-[10px] uppercase tracking-wider", kalla.cls)}>
               {kalla.text}
             </Badge>
@@ -275,7 +276,8 @@ export function BeteendePanel() {
             {mönster.map((m) => (
               <div key={m.namn}>
                 <div className="flex items-baseline justify-between gap-3">
-                  <span className="text-sm font-semibold">{m.namn}</span>
+                  {/* våg 104: mönsternamnet får krympa och brytas; siffran låses */}
+                  <span className="min-w-0 break-words text-sm font-semibold">{m.namn}</span>
                   <span className="tabular-nums shrink-0 font-serif text-2xl font-bold text-gold">
                     {svTal(m.frekvens)}
                   </span>
@@ -307,7 +309,7 @@ export function BeteendePanel() {
             {senasteInsikter.map((i, ix) => (
               <div key={`${i.rubrik}-${ix}`} className="rounded-lg border border-border bg-card p-3">
                 <div className="flex items-baseline justify-between gap-2">
-                  <p className="text-sm font-semibold">
+                  <p className="min-w-0 text-sm font-semibold">
                     <span className="mr-1.5" aria-hidden="true">{i.ikon}</span>
                     {i.rubrik}
                   </p>
@@ -345,7 +347,8 @@ export function BeteendePanel() {
               <span className="tabular-nums mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-gold/40 font-serif text-xs font-bold text-gold">
                 {ix + 1}
               </span>
-              <p className="text-sm leading-relaxed">{t}</p>
+              {/* våg 104: tipstexten får krympa (radbryt) bredvid nummercirkeln */}
+              <p className="min-w-0 text-sm leading-relaxed">{t}</p>
             </li>
           ))}
           {optimeringsTips.length === 0 && (

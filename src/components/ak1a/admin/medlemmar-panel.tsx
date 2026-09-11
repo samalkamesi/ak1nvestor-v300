@@ -342,16 +342,20 @@ export function MedlemmarPanel() {
           Medlemsregistret skyddas av ADMIN_PASSWORD — lämnad i headern x-admin-password,
           samma mönster som övriga admin-rutter.
         </p>
-        <div className="mt-3 flex gap-2">
+        {/* våg 104: wrappa på mobil + 44px-mål; desktop som förut */}
+        <div className="mt-3 flex flex-wrap gap-2">
           <Input
             type="password"
             value={losenord}
             onChange={(e) => setLosenord(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && lasUpp()}
             placeholder="Admin-lösenord"
-            className="max-w-xs"
+            className="min-h-[44px] max-w-xs sm:min-h-0"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button
+            onClick={lasUpp}
+            className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
+          >
             Lås upp
           </Button>
         </div>
@@ -364,16 +368,17 @@ export function MedlemmarPanel() {
     <div className="space-y-5">
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
+        {/* våg 104: rubrikgruppen wrappar på mobil */}
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
           </span>
           <h3 className="font-serif text-lg font-bold">Medlemmar 👥</h3>
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             FAS L3
           </Badge>
-          <Badge variant="outline" className="text-[10px]">
+          <Badge variant="outline" className="shrink-0 text-[10px]">
             SUPABASE AUTH
           </Badge>
         </div>
@@ -385,6 +390,7 @@ export function MedlemmarPanel() {
             void hamta(sida, sokAktiv);
             void hamtaLogg(loggFilter);
           }}
+          className="min-h-[44px] sm:min-h-0"
         >
           <RefreshCw className={cn("mr-1 h-3 w-3", laddar && "animate-spin")} /> Uppdatera
         </Button>
@@ -407,10 +413,16 @@ export function MedlemmarPanel() {
             onChange={(e) => setSok(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && sokNu()}
             placeholder="Sök hash, namn eller authId…"
-            className="h-8 w-56 text-xs"
+            className="h-8 w-56 max-w-full min-h-[44px] text-xs sm:min-h-0"
             aria-label="Sök medlemmar"
           />
-          <Button variant="outline" size="sm" onClick={sokNu} disabled={laddar}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={sokNu}
+            disabled={laddar}
+            className="min-h-[44px] sm:min-h-0"
+          >
             Sök
           </Button>
           {sokAktiv !== "" && (
@@ -423,20 +435,34 @@ export function MedlemmarPanel() {
                 setSida(1);
                 void hamta(1, "");
               }}
+              className="min-h-[44px] sm:min-h-0"
             >
               Rensa sök
             </Button>
           )}
         </div>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <Button variant="outline" size="sm" disabled={sida <= 1 || laddar} onClick={() => bytSida(sida - 1)}>
+        {/* våg 104: pagineringen wrappar på mobil; sidtexten får krympa */}
+        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={sida <= 1 || laddar}
+            onClick={() => bytSida(sida - 1)}
+            className="min-h-[44px] sm:min-h-0"
+          >
             Föregående
           </Button>
-          <span>
+          <span className="min-w-0">
             Sida {sida}
             {total > 0 ? ` · ≈${total.toLocaleString("sv-SE")} medlemmar` : ""}
           </span>
-          <Button variant="outline" size="sm" disabled={nastaSida === null || laddar} onClick={() => bytSida(nastaSida ?? sida)}>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={nastaSida === null || laddar}
+            onClick={() => bytSida(nastaSida ?? sida)}
+            className="min-h-[44px] sm:min-h-0"
+          >
             Nästa
           </Button>
         </div>
@@ -486,10 +512,10 @@ export function MedlemmarPanel() {
       {/* Underpanel: Granskningslogg (§C) */}
       <div className="rounded-lg border border-border bg-card p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-gold" />
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-gold" />
             <h4 className="font-serif text-sm font-bold">Granskningslogg</h4>
-            <Badge variant="outline" className="text-[10px]">
+            <Badge variant="outline" className="shrink-0 text-[10px]">
               SENASTE {loggEvents.length}
             </Badge>
           </div>
@@ -501,7 +527,10 @@ export function MedlemmarPanel() {
                 void hamtaLogg(v);
               }}
             >
-              <SelectTrigger className="h-8 w-48 text-xs" aria-label="Filtrera granskningsloggen">
+              <SelectTrigger
+                className="h-8 w-48 max-w-full min-h-[44px] text-xs sm:min-h-0"
+                aria-label="Filtrera granskningsloggen"
+              >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -518,6 +547,7 @@ export function MedlemmarPanel() {
               size="sm"
               disabled={loggLaddar}
               onClick={() => void hamtaLogg(loggFilter)}
+              className="min-h-[44px] sm:min-h-0"
             >
               <RefreshCw className={cn("mr-1 h-3 w-3", loggLaddar && "animate-spin")} /> Ladda om
             </Button>
@@ -532,7 +562,7 @@ export function MedlemmarPanel() {
             {loggEvents.map((e, i) => (
               <div key={`${e.created_at ?? i}-${i}`} className="rounded-md border border-border bg-card p-2.5 text-xs">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex min-w-0 items-center gap-2">
+                  <div className="flex min-w-0 flex-1 items-center gap-2">
                     <Badge variant="outline" className="shrink-0 text-[10px]">
                       {e.type ?? "okänd"}
                     </Badge>
@@ -565,8 +595,8 @@ export function MedlemmarPanel() {
         </ScrollArea>
       </div>
 
-      <p className="flex items-center gap-1 text-[10px] text-muted-foreground">
-        <Eye className="h-3 w-3" />
+      <p className="flex flex-wrap items-center gap-1 text-[10px] text-muted-foreground">
+        <Eye className="h-3 w-3 shrink-0" />
         Klartext-epost visas endast per rad (ögon-knappen), finns aldrig i list-payloaden och
         loggas aldrig — GDPR art. 5-minimering.
       </p>
@@ -614,7 +644,10 @@ function MedlemRadVy({
         key={action}
         size="sm"
         variant="outline"
-        className={cn(destruktiv && "border-red-500/40 text-red-600 hover:bg-red-500/10")}
+        className={cn(
+          "min-h-[44px] sm:min-h-0",
+          destruktiv && "border-red-500/40 text-red-600 hover:bg-red-500/10",
+        )}
         disabled={actionPagar || skyddad}
         title={skyddad ? "Rollbärare (admin/redaktör) kan inte stängas av" : etikett}
         onClick={() => setBekrafta(action)}
@@ -622,11 +655,14 @@ function MedlemRadVy({
         {ikon} {etikett}
       </Button>
     ) : (
-      <span key={action} className="flex items-center gap-1">
+      <span key={action} className="flex flex-wrap items-center gap-1">
         <Button
           size="sm"
           variant="outline"
-          className={cn(destruktiv && "border-red-500/60 text-red-600 hover:bg-red-500/10")}
+          className={cn(
+            "min-h-[44px] sm:min-h-0",
+            destruktiv && "border-red-500/60 text-red-600 hover:bg-red-500/10",
+          )}
           disabled={actionPagar}
           onClick={() => {
             setBekrafta(null);
@@ -635,7 +671,13 @@ function MedlemRadVy({
         >
           {actionPagar ? <RefreshCw className="mr-1 h-3 w-3 animate-spin" /> : ikon} Bekräfta {etikett.toLowerCase()}
         </Button>
-        <Button size="sm" variant="ghost" disabled={actionPagar} onClick={() => setBekrafta(null)}>
+        <Button
+          size="sm"
+          variant="ghost"
+          disabled={actionPagar}
+          onClick={() => setBekrafta(null)}
+          className="min-h-[44px] sm:min-h-0"
+        >
           Avbryt
         </Button>
       </span>
@@ -660,21 +702,21 @@ function MedlemRadVy({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-1.5">
             {m.fas !== null && (
-              <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+              <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
                 {m.fas.toUpperCase()}
               </Badge>
             )}
             {m.roll !== null && (
-              <Badge variant="secondary" className="text-[10px] uppercase">
+              <Badge variant="secondary" className="shrink-0 text-[10px] uppercase">
                 {m.roll}
               </Badge>
             )}
             {m.banned && (
-              <Badge variant="outline" className="border-red-500/50 text-[10px] text-red-600">
+              <Badge variant="outline" className="shrink-0 border-red-500/50 text-[10px] text-red-600">
                 AVSTÄNGD
               </Badge>
             )}
-            <span className="truncate text-sm font-medium">{m.namn ?? m.epostMaskerad}</span>
+            <span className="min-w-0 truncate text-sm font-medium">{m.namn ?? m.epostMaskerad}</span>
           </div>
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
             {m.epostMaskerad}
@@ -691,14 +733,15 @@ function MedlemRadVy({
       {/* Expanderad vy: profil + åtgärder (kontrakt §A) */}
       {expanderad && (
         <div className="mt-3 space-y-3 border-t border-border pt-3">
+          {/* våg 104: långa UUID/hash bryts med break-all — aldrig horisontell scroll */}
           <div className="grid gap-1 text-[11px] text-muted-foreground sm:grid-cols-2">
             <p>
               <span className="font-semibold">authId:</span>{" "}
-              <code className="font-mono">{m.authId}</code>
+              <code className="break-all font-mono">{m.authId}</code>
             </p>
             <p>
               <span className="font-semibold">epostHash:</span>{" "}
-              <code className="font-mono">{m.epostHash ?? "—"}</code>
+              <code className="break-all font-mono">{m.epostHash ?? "—"}</code>
             </p>
             <p>
               <span className="font-semibold">Skapad:</span> {datumKort(m.skapad)}
@@ -717,7 +760,13 @@ function MedlemRadVy({
 
           {/* Klartext-epost: per-rad, visas här endast (§A-GDPR) */}
           <div className="flex flex-wrap items-center gap-2">
-            <Button size="sm" variant="outline" disabled={epostPagar} onClick={onVisaEpost}>
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={epostPagar}
+              onClick={onVisaEpost}
+              className="min-h-[44px] sm:min-h-0"
+            >
               {epostPagar ? (
                 <RefreshCw className="mr-1 h-3 w-3 animate-spin" />
               ) : (
@@ -726,7 +775,9 @@ function MedlemRadVy({
               {klarEpost ? "Visa e-post igen" : "Visa e-post"}
             </Button>
             {klarEpost && (
-              <code className="rounded bg-muted px-2 py-1 font-mono text-xs">{klarEpost}</code>
+              <code className="min-w-0 max-w-full break-all rounded bg-muted px-2 py-1 font-mono text-xs">
+                {klarEpost}
+              </code>
             )}
           </div>
 
@@ -739,9 +790,12 @@ function MedlemRadVy({
             {actionKnapp("fas3-grant", "Ge Fas 3", <Crown className="mr-1 h-3 w-3" />)}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <UserCog className="h-3.5 w-3.5 text-muted-foreground" />
+            <UserCog className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
             <Select value={rollVal} onValueChange={setRollVal}>
-              <SelectTrigger className="h-8 w-36 text-xs" aria-label="Välj ny roll">
+              <SelectTrigger
+                className="h-8 w-36 max-w-full min-h-[44px] text-xs sm:min-h-0"
+                aria-label="Välj ny roll"
+              >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -760,6 +814,7 @@ function MedlemRadVy({
                     : "Sätt medlemmens roll"
                 }
                 onClick={() => setBekrafta("role")}
+                className="min-h-[44px] sm:min-h-0"
               >
                 Sätt roll
               </Button>
@@ -773,6 +828,7 @@ function MedlemRadVy({
                     setBekrafta(null);
                     onUtfor("role", rollVal);
                   }}
+                  className="min-h-[44px] sm:min-h-0"
                 >
                   {actionPagar ? (
                     <RefreshCw className="mr-1 h-3 w-3 animate-spin" />
@@ -781,7 +837,13 @@ function MedlemRadVy({
                   )}
                   Bekräfta roll = {rollVal === "redaktor" ? "redaktör" : "medlem"}
                 </Button>
-                <Button size="sm" variant="ghost" disabled={actionPagar} onClick={() => setBekrafta(null)}>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  disabled={actionPagar}
+                  onClick={() => setBekrafta(null)}
+                  className="min-h-[44px] sm:min-h-0"
+                >
                   Avbryt
                 </Button>
               </>

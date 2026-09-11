@@ -141,19 +141,19 @@ function tidSedan(iso: string | null | undefined): string {
 function statusBadge(status: Status) {
   if (status === "publicerad") {
     return (
-      <Badge variant="outline" className="border-bull/60 text-[10px] text-bull">
+      <Badge variant="outline" className="shrink-0 border-bull/60 text-[10px] text-bull">
         publicerad
       </Badge>
     );
   }
   if (status === "granskad") {
     return (
-      <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+      <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
         granskad
       </Badge>
     );
   }
-  return <Badge variant="outline" className="text-[10px] text-muted-foreground">utkast</Badge>;
+  return <Badge variant="outline" className="shrink-0 text-[10px] text-muted-foreground">utkast</Badge>;
 }
 
 /** Redaktörens editor-state — "ny" styrs av om utkastet redan finns i listan. */
@@ -532,7 +532,7 @@ export function BloggPanel() {
     return (
       <div className="rounded-xl border border-gold/30 bg-card px-5 py-6">
         <div className="flex items-center gap-2">
-          <Lock className="h-4 w-4 text-gold" />
+          <Lock className="h-4 w-4 shrink-0 text-gold" />
           <h3 className="font-serif text-lg font-bold">Blogg — låst</h3>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
@@ -546,9 +546,10 @@ export function BloggPanel() {
             onChange={(e) => setLosenord(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && lasUpp()}
             placeholder="Admin-lösenord"
-            className="max-w-xs"
+            className="min-w-0 max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          {/* våg 104: 44px touch-mål på mobil, återställs på sm */}
+          <Button onClick={lasUpp} className="min-h-[44px] shrink-0 bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -567,15 +568,15 @@ export function BloggPanel() {
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
           </span>
           <h3 className="font-serif text-lg font-bold">Blogg ✍️</h3>
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             ADMIN-MEGA STEG 2
           </Badge>
-          <Badge variant="outline" className="text-[10px]">
+          <Badge variant="outline" className="shrink-0 text-[10px]">
             LÄGE A · PAKETEXPORT
           </Badge>
         </div>
@@ -602,10 +603,10 @@ export function BloggPanel() {
       <div className="rounded-lg border border-gold/30 bg-card p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <div className="flex items-center gap-2">
-            <History className="h-4 w-4 text-gold" />
+            <History className="h-4 w-4 shrink-0 text-gold" />
             <h4 className="font-serif text-sm font-bold">Utkast ({filtreradePoster.length})</h4>
           </div>
-          <Button size="sm" variant="outline" onClick={oppnaNy}>
+          <Button size="sm" variant="outline" className="min-h-[44px] sm:min-h-0" onClick={oppnaNy}>
             <Plus className="mr-1 h-3 w-3" /> Nytt utkast
           </Button>
         </div>
@@ -663,7 +664,7 @@ export function BloggPanel() {
                 <Badge
                   variant="outline"
                   className={cn(
-                    "text-[10px] tabular-nums",
+                    "shrink-0 text-[10px] tabular-nums",
                     rad.kontroll.felAntal > 0 ? "border-red-500/40 text-red-600" : "border-bull/40 text-bull",
                   )}
                 >
@@ -671,11 +672,11 @@ export function BloggPanel() {
                     ? `${rad.kontroll.felAntal} FEL`
                     : `0 fel · ${rad.kontroll.varningAntal} varn`}
                 </Badge>
-                <span className="text-muted-foreground">v{rad.version}</span>
+                <span className="shrink-0 text-muted-foreground">v{rad.version}</span>
                 <span className="ml-auto text-[10px] text-muted-foreground">
                   {rad.av} · {tidSedan(rad.uppdaterad)}
                 </span>
-                <Button size="sm" variant="outline" onClick={() => oppna(rad)}>
+                <Button size="sm" variant="outline" className="shrink-0" onClick={() => oppna(rad)}>
                   <Pencil className="mr-1 h-3 w-3" /> Öppna
                 </Button>
               </li>
@@ -689,17 +690,18 @@ export function BloggPanel() {
         <div className="rounded-lg border border-bull/40 bg-card p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
-              <Rocket className="h-4 w-4 text-bull" />
-              <h4 className="font-serif text-sm font-bold">Skickat till agent: {publiceratPaket.slug}</h4>
-              <Badge variant="outline" className="border-bull/60 text-[10px] text-bull">
+              <Rocket className="h-4 w-4 shrink-0 text-bull" />
+              {/* våg 104: slug-rubrik bryts istället för att svämma på smal skärm */}
+              <h4 className="min-w-0 max-w-full break-words font-serif text-sm font-bold">Skickat till agent: {publiceratPaket.slug}</h4>
+              <Badge variant="outline" className="shrink-0 border-bull/60 text-[10px] text-bull">
                 väntar på main-push
               </Badge>
             </div>
             <div className="flex flex-wrap gap-2">
-              <Button size="sm" variant="outline" onClick={kopieraPubliceratPaket}>
+              <Button size="sm" variant="outline" className="min-h-[44px] sm:min-h-0" onClick={kopieraPubliceratPaket}>
                 <ClipboardCopy className="mr-1 h-3 w-3" /> Kopiera JSON
               </Button>
-              <Button size="sm" variant="outline" onClick={laddaNerPubliceratPaket}>
+              <Button size="sm" variant="outline" className="min-h-[44px] sm:min-h-0" onClick={laddaNerPubliceratPaket}>
                 <Download className="mr-1 h-3 w-3" /> {publiceratPaket.slug}.json
               </Button>
               <Button size="sm" variant="outline" onClick={() => setPubliceratPaket(null)}>
@@ -722,7 +724,8 @@ export function BloggPanel() {
       {editor && (
         <div className="rounded-lg border border-gold/30 bg-card p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h4 className="font-serif text-sm font-bold">
+            {/* våg 104: slug-rubrik bryts istället för att svämma på smal skärm */}
+            <h4 className="min-w-0 max-w-full break-words font-serif text-sm font-bold">
               {editor.ny ? "Nytt utkast" : `Redigerar: ${editor.slug}`}
             </h4>
             <Button
@@ -805,18 +808,19 @@ export function BloggPanel() {
                 Omslagsbild (valfri URL — sparas i utkastet som omslagUrl)
               </label>
               <div className="flex flex-wrap gap-2">
+                {/* våg 104: min-bredd på mobil tvingar väljarknappen att radbrytas */}
                 <Input
                   id="blogg-omslag"
                   value={editor.omslagUrl}
                   onChange={(e) => setEditor({ ...editor, omslagUrl: e.target.value.trim() })}
                   placeholder="https://…supabase.co/storage/v1/object/public/media/…"
-                  className="min-w-0 flex-1 font-mono text-xs"
+                  className="min-w-[10rem] flex-1 font-mono text-xs sm:min-w-0"
                   inputMode="url"
                 />
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-gold/40 text-gold hover:bg-gold/10"
+                  className="min-h-[44px] border-gold/40 text-gold hover:bg-gold/10 sm:min-h-0"
                   onClick={oppnaBibliotek}
                 >
                   <ImagePlus className="mr-1 h-3 w-3" /> Välj från mediebiblioteket
@@ -827,7 +831,7 @@ export function BloggPanel() {
                   <img
                     src={editor.omslagUrl}
                     alt=""
-                    className="h-6 w-10 rounded border border-border object-cover"
+                    className="h-6 w-10 shrink-0 rounded border border-border object-cover"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}
@@ -862,20 +866,20 @@ export function BloggPanel() {
           <div className="mt-4 flex flex-wrap gap-2">
             <Button
               size="sm"
-              className="bg-gold text-background hover:bg-gold/90"
+              className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
               disabled={arbetar || editor.slug === "" || editor.titel.trim() === ""}
               onClick={sparaUtkast}
             >
               {arbetar ? <RefreshCw className="mr-1 h-3 w-3 animate-spin" /> : <Save className="mr-1 h-3 w-3" />}
               Spara utkast
             </Button>
-            <Button size="sm" variant="outline" disabled={arbetar} onClick={kolla}>
+            <Button size="sm" variant="outline" className="min-h-[44px] sm:min-h-0" disabled={arbetar} onClick={kolla}>
               <SearchCheck className="mr-1 h-3 w-3" /> Kontrollera
             </Button>
             <Button
               size="sm"
               variant="outline"
-              className="border-gold/40 text-gold hover:bg-gold/10"
+              className="min-h-[44px] border-gold/40 text-gold hover:bg-gold/10 sm:min-h-0"
               disabled={arbetar || !kanSkickaTillGranskad}
               title={
                 editor.ny
@@ -894,7 +898,7 @@ export function BloggPanel() {
               <Button
                 size="sm"
                 variant="outline"
-                className="border-bull/50 text-bull hover:bg-bull/10"
+                className="min-h-[44px] border-bull/50 text-bull hover:bg-bull/10 sm:min-h-0"
                 disabled={arbetar}
                 title="Publicerar den sparade raden: 0-FEL-grind + status=publicerad + agent-påminnelse (blogg_publicerad) — filen droppas av agenten vid nästa main-push"
                 onClick={publicera}
@@ -910,7 +914,7 @@ export function BloggPanel() {
             <Button
               size="sm"
               variant="outline"
-              className="border-bull/50 text-bull hover:bg-bull/10"
+              className="min-h-[44px] border-bull/50 text-bull hover:bg-bull/10 sm:min-h-0"
               disabled={arbetar || editor.ny}
               title={editor.ny ? "Spara utkastet först (exporten bygger på den sparade raden)" : "Exportera klar post (Läge A)"}
               onClick={exportera}
@@ -932,22 +936,22 @@ export function BloggPanel() {
             <div className="mt-4 rounded-md border border-border bg-card p-3">
               <div className="flex flex-wrap items-center gap-2">
                 {rapport.godkand ? (
-                  <Badge variant="outline" className="border-bull/60 text-[10px] text-bull">
+                  <Badge variant="outline" className="shrink-0 border-bull/60 text-[10px] text-bull">
                     <Check className="mr-1 h-3 w-3" /> 0 FEL — godkänd
                   </Badge>
                 ) : (
-                  <Badge variant="outline" className="border-red-500/50 text-[10px] text-red-600">
+                  <Badge variant="outline" className="shrink-0 border-red-500/50 text-[10px] text-red-600">
                     <X className="mr-1 h-3 w-3" /> {rapport.fel.length + rapport.strukturFel.length} FEL — nekas
                   </Badge>
                 )}
-                <Badge variant="outline" className="text-[10px] tabular-nums text-muted-foreground">
+                <Badge variant="outline" className="shrink-0 text-[10px] tabular-nums text-muted-foreground">
                   {rapport.varningar.length + rapport.strukturVarningar.length} varningar
                 </Badge>
                 <span className="text-[10px] text-muted-foreground">
                   {rapport.ord} ord · ~{rapport.readingMinutes} min läsning
                 </span>
                 {!rapportArAktuell && (
-                  <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+                  <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
                     texten ändrad efter kontrollen — kör igen
                   </Badge>
                 )}
@@ -1061,12 +1065,12 @@ export function BloggPanel() {
       {/* Panelens minnesanteckning om städning av editor (UI-komfort) */}
       {editor === null && (
         <p className="flex items-center gap-1 text-[10px] text-muted-foreground">
-          <Trash2 className="h-3 w-3" />
+          <Trash2 className="h-3 w-3 shrink-0" />
           Utkasthistoriken är revisbar (senaste-vinner per slug) — radering sköts av main via REST, inte av panelen.
         </p>
       )}
       <p className="flex items-center gap-1 text-[10px] text-muted-foreground">
-        <ClipboardCopy className="h-3 w-3" />
+        <ClipboardCopy className="h-3 w-3 shrink-0" />
         Exporten kopierar paketet till urklipp <em>och</em> laddar ner filen — samma JSON som droppas i data/blogg/.
       </p>
     </div>

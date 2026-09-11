@@ -45,6 +45,8 @@ export async function generateMetadata({
       nBolag: MEDIANER.totalt.nBolag,
       hamtat: MEDIANER.hamtat ?? "—",
       pe: datasetTal(rad.medianPe, "ar"),
+      p25pe: datasetTal(rad.p25Pe, "ar"),
+      p75pe: datasetTal(rad.p75Pe, "ar"),
       pb: datasetTal(rad.medianPb, "ar"),
       ebit: datasetTal(rad.medianEbitMarginal, "ar"),
       fcf: datasetTal(rad.medianFcfMarginal, "ar"),

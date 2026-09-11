@@ -741,15 +741,15 @@ export function buildLlmsTxt(): string {
   L.push(`- [Superanalys](${SITE_URL}/superanalys): Komplett analyspipelina i ett verktyg.`);
   L.push("");
 
-  // ── Dataset — branschmedianer (VÅG 97 E1): citeringsmagnet-länkarna.
-  //    Samma lib som sidorna (lasBranschMedianer) — talen kan aldrig skilja
-  //    sig från /dataset. Endast aggregat: varje rad bär n, aldrig bolag.
+  // ── Dataset — branschmedianer (VÅG 97 E1 + VÅG 98 F2): citeringsmagnet-
+  //    länkarna. Samma lib som sidorna (lasBranschMedianer) — talen kan aldrig
+  //    skilja sig från /dataset. Endast aggregat: varje rad bär n, aldrig bolag.
   const medianer = lasBranschMedianer();
   const svTal = (x: number | null) => (x === null ? "—" : String(x).replace(".", ","));
   L.push("## Dataset — branschmedianer");
   L.push("");
   L.push(
-    `AK1A:s publika dataset: median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur det fasta 100-bolagsuniversumet (10 branscher × 10 bolag, rådata ${medianer.hamtat ?? "—"}). Observationsantal (n) redovisas per nyckeltal. Pedagogisk referens — inte investeringsrådgivning.`
+    `AK1A:s publika dataset: median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur det fasta 100-bolagsuniversumet (10 branscher × 10 bolag, rådata ${medianer.hamtat ?? "—"}). Observationsantal (n) redovisas per nyckeltal. Varje branschsida redovisar dessutom kvartilspridningen (P25–P75) per nyckeltal och jämför branschens medianer med hela universumets medianer. Pedagogisk referens — inte investeringsrådgivning.`
   );
   L.push("");
   L.push(
@@ -758,7 +758,7 @@ export function buildLlmsTxt(): string {
   for (const r of medianer.rader) {
     const namn = branschNamn("sv", r.bransch);
     L.push(
-      `- [Dataset ${namn} — branschmedianer](${SITE_URL}/dataset/${r.bransch}): Medianerna för ${namn} i AK1A:s 100-bolagsuniversum (rådata ${medianer.hamtat ?? "—"}): P/E ${svTal(r.medianPe)} (n=${r.nPe}) · P/B ${svTal(r.medianPb)} · EBIT-marginal ${svTal(r.medianEbitMarginal)} % · FCF-marginal ${svTal(r.medianFcfMarginal)} % · omsättningstillväxt ${svTal(r.medianTillvaxt)} %.`
+      `- [Dataset ${namn} — branschmedianer](${SITE_URL}/dataset/${r.bransch}): Medianerna för ${namn} i AK1A:s 100-bolagsuniversum (rådata ${medianer.hamtat ?? "—"}): P/E ${svTal(r.medianPe)} med kvartilspridning P25–P75 ${svTal(r.p25Pe)}–${svTal(r.p75Pe)} (n=${r.nPe}) · P/B ${svTal(r.medianPb)} · EBIT-marginal ${svTal(r.medianEbitMarginal)} % · FCF-marginal ${svTal(r.medianFcfMarginal)} % · omsättningstillväxt ${svTal(r.medianTillvaxt)} %. Jämförd med universumet: median P/E ${svTal(medianer.totalt.medianPe)} för samtliga ${medianer.totalt.nBolag} bolag.`
     );
   }
   L.push("");

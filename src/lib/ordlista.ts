@@ -1942,9 +1942,9 @@ export const ORDLISTA = {
     ar: "{bransch} — وسيط P/E {pe} (n={n}) | AK1A",
   },
   "dataset.meta.detalj.beskrivning": {
-    sv: "Medianer för {bransch} i AK1A:s {nBolag}-bolagsuniversum (rådata {hamtat}): P/E {pe} · P/B {pb} · EBIT-marginal {ebit} % · FCF-marginal {fcf} % · tillväxt {tillvaxt} %. Observationsantal redovisas. Pedagogisk referens, inte investeringsrådgivning.",
-    en: "Medians for {bransch} in AK1A's {nBolag}-company universe (raw data {hamtat}): P/E {pe} · P/B {pb} · EBIT margin {ebit}% · FCF margin {fcf}% · growth {tillvaxt}%. Observation counts reported. Educational reference, not investment advice.",
-    ar: "وسيطات {bransch} في عالم AK1A المكوَّن من {nBolag} شركة (البيانات الخام {hamtat}): P/E {pe} · P/B {pb} · هامش EBIT {ebit}% · هامش التدفق النقدي الحر {fcf}% · النمو {tillvaxt}%. تُعرض أعداد المشاهدات. مرجع تعليمي، وليس نصيحة استثمارية.",
+    sv: "Medianer för {bransch} i AK1A:s {nBolag}-bolagsuniversum (rådata {hamtat}): P/E {pe} (kvartilspridning {p25pe}–{p75pe}) · P/B {pb} · EBIT-marginal {ebit} % · FCF-marginal {fcf} % · tillväxt {tillvaxt} %. Spridning (P25–P75) och jämförelse mot hela universumet redovisas per nyckeltal. Pedagogisk referens, inte investeringsrådgivning.",
+    en: "Medians for {bransch} in AK1A's {nBolag}-company universe (raw data {hamtat}): P/E {pe} (quartile spread {p25pe}–{p75pe}) · P/B {pb} · EBIT margin {ebit}% · FCF margin {fcf}% · growth {tillvaxt}%. Spread (P25–P75) and comparison against the whole universe are reported per ratio. Educational reference, not investment advice.",
+    ar: "وسيطات {bransch} في عالم AK1A المكوَّن من {nBolag} شركة (البيانات الخام {hamtat}): P/E {pe} (انتشار ربيعي {p25pe}–{p75pe}) · P/B {pb} · هامش EBIT {ebit}% · هامش التدفق النقدي الحر {fcf}% · النمو {tillvaxt}%. يُعرض الانتشار (P25–P75) والمقارنة مع العالم بأكمله لكل مؤشر. مرجع تعليمي، وليس نصيحة استثمارية.",
   },
   "dataset.jsonld.namn": {
     sv: "AK1A branschmedianer — nyckeltalsaggregat för 100-bolagsuniversumet",
@@ -1960,6 +1960,115 @@ export const ORDLISTA = {
     sv: "CC BY 4.0 — citera fritt med källangivelse \"AK1A Research Lab\" och hämtdatum.",
     en: "CC BY 4.0 — cite freely with attribution to \"AK1A Research Lab\" and the retrieval date.",
     ar: "CC BY 4.0 — اقتبس بحرية مع الإشارة إلى \"AK1A Research Lab\" وتاريخ الاسترجاع.",
+  },
+
+  // ── Dataset-djup (VÅG 98 F2): kvartilspridning, universumjämförelse,
+  //    index-sortering och guide-länkning. Samma domändisciplin: sv först,
+  //    en+ar ifyllda direkt (fas 1-stil) — MÖS-ronden håller dem aktuella.
+  "dataset.spridning.rubrik": {
+    sv: "Median och spridning",
+    en: "Median and spread",
+    ar: "الوسيط والانتشار",
+  },
+  "dataset.spridning.p25p75": {
+    sv: "P25 {p25} — P75 {p75}",
+    en: "P25 {p25} — P75 {p75}",
+    ar: "P25 {p25} — P75 {p75}",
+  },
+  "dataset.spridning.sronly": {
+    sv: "Spridningsstapel: nedre kvartilen P25 {p25}, median {median}, övre kvartilen P75 {p75}.",
+    en: "Spread bar: lower quartile P25 {p25}, median {median}, upper quartile P75 {p75}.",
+    ar: "شريط الانتشار: الربيع الأدنى P25 {p25}، الوسيط {median}، الربيع الأعلى P75 {p75}.",
+  },
+  "dataset.spridning.salarader": {
+    sv: "Så läser du spridningen: stapeln visar intervallet där de mittersta hälften av branschens bolag ligger — från nedre kvartilen (P25) till övre kvartilen (P75), med markering vid medianen. Smal stapel betyder att bolagen ligger tätt kring medianen; bred stapel betyder spridda nivåer inom branschen. Alla staplar för ett nyckeltal har samma skala över hela universumet, så de går att jämföra nedåt i tabellen.",
+    en: "How to read the spread: each bar shows the interval containing the middle half of the industry's companies — from the lower quartile (P25) to the upper quartile (P75), with a mark at the median. A narrow bar means the companies cluster tightly around the median; a wide bar means scattered levels within the industry. The bars share a common scale per ratio across all industries, so they can be compared down the table.",
+    ar: "كيف تقرأ الانتشار: يُظهر كل شريط المدى الذي يضم النصف الأوسط من شركات القطاع — من الربيع الأدنى (P25) إلى الربيع الأعلى (P75)، مع علامة عند الوسيط. الشريط الضيق يعني أن الشركات متجمعة بكثافة حول الوسيط؛ والشريط العريض يعني مستويات متباعدة داخل القطاع. الأشرطة تستخدم مقياسًا موحدًا لكل مؤشر عبر جميع القطاعات، فيمكن مقارنتها على طول الجدول.",
+  },
+  "dataset.jamforelse.rubrik": {
+    sv: "{bransch} mot hela universumet",
+    en: "{bransch} versus the whole universe",
+    ar: "{bransch} مقابل العالم بأكمله",
+  },
+  "dataset.jamforelse.ingress": {
+    sv: "Branschens medianer jämförda med universumets medianer (alla {nBolag} bolag). ↑ betyder högre än marknaden som helhet, ↓ lägre, ≈ i nivå — en beskrivning av läget, inte ett omdöme: hög P/E kan spegla förväntad tillväxt likaväl som övervärdering.",
+    en: "The industry's medians compared with the universe medians (all {nBolag} companies). ↑ means above the market as a whole, ↓ below, ≈ in line — a description, not a verdict: a high P/E can reflect expected growth just as well as overvaluation.",
+    ar: "وسيطات القطاع مقارنة بوسيطات العالم (جميع الشركات البالغ عددها {nBolag}). ↑ تعني أعلى من السوق ككل، و↓ أدنى، و≈ في المستوى نفسه — وصفٌ للحال وليس حكمًا: فمضاعف P/E المرتفع قد يعكس نموًا متوقعًا كما قد يعكس مبالغة في التقييم.",
+  },
+  "dataset.jamforelse.branschmedian": {
+    sv: "Branschens median",
+    en: "Industry median",
+    ar: "وسيط القطاع",
+  },
+  "dataset.jamforelse.universummedian": {
+    sv: "Universumets median",
+    en: "Universe median",
+    ar: "وسيط العالم",
+  },
+  "dataset.jamforelse.kolumn": {
+    sv: "Mot universumet",
+    en: "Versus universe",
+    ar: "مقابل العالم",
+  },
+  "dataset.jamforelse.hogre": {
+    sv: "↑ {delta} % över universumet",
+    en: "↑ {delta} % above the universe",
+    ar: "↑ {delta} % أعلى من العالم",
+  },
+  "dataset.jamforelse.lagre": {
+    sv: "↓ {delta} % under universumet",
+    en: "↓ {delta} % below the universe",
+    ar: "↓ {delta} % أدنى من العالم",
+  },
+  "dataset.jamforelse.niva": {
+    sv: "≈ i nivå med universumet",
+    en: "≈ in line with the universe",
+    ar: "≈ في مستوى العالم",
+  },
+  "dataset.sortera.rubrik": {
+    sv: "Sortera",
+    en: "Sort",
+    ar: "ترتيب",
+  },
+  "dataset.sortera.bransch": {
+    sv: "Bransch A–Ö",
+    en: "Industry A–Z",
+    ar: "القطاع أ–ي",
+  },
+  "dataset.sortera.peHogst": {
+    sv: "Högst median P/E",
+    en: "Highest median P/E",
+    ar: "أعلى وسيط P/E",
+  },
+  "dataset.sortera.peLagst": {
+    sv: "Lägst median P/E",
+    en: "Lowest median P/E",
+    ar: "أدنى وسيط P/E",
+  },
+  "dataset.sortera.notis": {
+    sv: "Sorteringen väljs i adressen (?sortera=) och länkas som vanliga länkar — sidan förblir samma cachade sidversion.",
+    en: "The sort order lives in the address (?sortera=) and is linked like ordinary links — the page remains the same cached version.",
+    ar: "الترتيب يظهر في العنوان (?sortera=) ويُربط كروابط عادية — وتبقى الصفحة النسخة المخزنة نفسها.",
+  },
+  "dataset.kurser.rubrik": {
+    sv: "Lär dig mer — kurserna bakom nyckeltalen",
+    en: "Learn more — the courses behind the ratios",
+    ar: "تعلّم المزيد — الدورات التي تقف خلف المؤشرات",
+  },
+  "dataset.kurser.ingress": {
+    sv: "Siffrorna blir verktyg först med metod. Dessa kurser fördjupar nyckeltalen och branscherna i tabellen ovan — med quiz och kapitel för kapitel.",
+    en: "Numbers become tools only with method. These courses go deeper on the ratios and industries in the table above — with quizzes and chapter by chapter.",
+    ar: "تصبح الأرقام أدوات فقط مع المنهجية. تعمّقك هذه الدورات في المؤشرات والقطاعات الواردة في الجدول أعلاه — مع اختبارات وفصلًا بعد فصل.",
+  },
+  "dataset.kurser.meta": {
+    sv: "{antal} kapitel · {minuter} min · {niva} nivå",
+    en: "{antal} chapters · {minuter} min · {niva} level",
+    ar: "{antal} فصول · {minuter} دقيقة · مستوى {niva}",
+  },
+  "dataset.kurser.oppna": {
+    sv: "Öppna kursen →",
+    en: "Open the course →",
+    ar: "افتح الدورة ←",
   },
 } as const satisfies Record<string, SprakRad>;
 

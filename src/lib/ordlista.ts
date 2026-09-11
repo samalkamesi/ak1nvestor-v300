@@ -2070,6 +2070,85 @@ export const ORDLISTA = {
     en: "Open the course →",
     ar: "افتح الدورة ←",
   },
+
+  // ── Schema-kurser (VÅG 99 G1, A3 SLUTFÖRD): frågetexter + fas-svar för
+  //    kurssidornas FAQPage/Course/BreadcrumbList-JSON-LD (src/lib/
+  //    schema-kurser.ts). Svaren på innehållsfrågorna (learn/why/längd)
+  //      kommer ordagrant ur kursdatan — här bor ENDAST de fasta formuleringarna.
+  //    ALDRIG investeringsråd i svaren; ALDRIG priser (fas-svaren talar om
+  //    medlemskap, inte kronor — kundens priser väntar i G2:s prissteges-flagga).
+  "schema.kurs.brodsmula.start": {
+    sv: "Startsida",
+    en: "Home",
+    ar: "الرئيسية",
+  },
+  "schema.kurs.fragaVad": {
+    sv: "Vad lär jag mig i {titel}?",
+    en: "What will I learn in {titel}?",
+    ar: "ماذا أتعلّم في «{titel}»؟",
+  },
+  "schema.kurs.fragaLangd": {
+    sv: "Hur lång är kursen?",
+    en: "How long is the course?",
+    ar: "كم من الوقت تستغرق الدورة؟",
+  },
+  "schema.kurs.fragaPassar": {
+    sv: "Vad passar kursen för?",
+    en: "What is the course suitable for?",
+    ar: "لمن تناسب هذه الدورة؟",
+  },
+  "schema.kurs.fragaGratis": {
+    sv: "Är kursen gratis?",
+    en: "Is the course free?",
+    ar: "هل الدورة مجانية؟",
+  },
+  "schema.kurs.svarLangd": {
+    sv: "{kapitel} kapitel · {minuter} minuter",
+    en: "{kapitel} chapters · {minuter} minutes",
+    ar: "{kapitel} فصول · {minuter} دقيقة",
+  },
+  "schema.kurs.svarLangdNiva": {
+    sv: "{kapitel} kapitel · {minuter} minuter · nivå: {niva}",
+    en: "{kapitel} chapters · {minuter} minutes · level: {niva}",
+    ar: "{kapitel} فصول · {minuter} دقيقة · المستوى: {niva}",
+  },
+  "schema.kurs.svarGratisFas1": {
+    sv: "Ja. Kursen ingår i Fas 1 — AK1A:s grundutbildning, som är gratis för alltid.",
+    en: "Yes. The course is part of Phase 1 — AK1A's foundation education, which is free forever.",
+    ar: "نعم. الدورة جزء من المرحلة 1 — التعليم الأساسي من AK1A، وهو مجاني للأبد.",
+  },
+  "schema.kurs.svarGratisFas2": {
+    sv: "Kursen ingår i Fas 2 — AK1A:s fördjupade steg inom fundamental analys. Kursens två första kapitel läsas gratis som smakprov; resten öppnas med Fas 2-medlemskap.",
+    en: "The course belongs to Phase 2 — AK1A's advanced step in fundamental analysis. The first two chapters are free to read as a preview; the rest opens with Phase 2 membership.",
+    ar: "الدورة ضمن المرحلة 2 — الخطوة المتقدمة من AK1A في التحليل الأساسي. الفصلان الأولان متاحان للقراءة مجانًا كعينة؛ ويُفتح الباقي بعضوية المرحلة 2.",
+  },
+  "schema.kurs.svarGratisFas3": {
+    sv: "Kursen ingår i Fas 3 — AK1A:s dynamiska ekosystem med vågor, teknisk analys och integration med AKM1. Kursens två första kapitel läsas gratis som smakprov; resten öppnas med Fas 3-medlemskap.",
+    en: "The course belongs to Phase 3 — AK1A's dynamic ecosystem of waves, technical analysis and integration with AKM1. The first two chapters are free to read as a preview; the rest opens with Phase 3 membership.",
+    ar: "الدورة ضمن المرحلة 3 — النظام الديناميكي من AK1A بالموجات والتحليل الفني والتكامل مع AKM1. الفصلان الأولان متاحان للقراءة مجانًا كعينة؛ ويُفتح الباقي بعضوية المرحلة 3.",
+  },
+  // Nivåetiketter — sv-raderna ÄR datavärdena i public/deep-courses.json
+  // (kurs.level) ordagrant; en/ar översätter (nivaEtikett i schema-kurser.ts).
+  "schema.kurs.niva.nyborjare": {
+    sv: "Nybörjare",
+    en: "Beginner",
+    ar: "مبتدئ",
+  },
+  "schema.kurs.niva.intermediar": {
+    sv: "Intermediär",
+    en: "Intermediate",
+    ar: "متوسط",
+  },
+  "schema.kurs.niva.avancerad": {
+    sv: "Avancerad",
+    en: "Advanced",
+    ar: "متقدّم",
+  },
+  "schema.kurs.niva.alla": {
+    sv: "Alla",
+    en: "All",
+    ar: "الكل",
+  },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

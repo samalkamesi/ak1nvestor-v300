@@ -4,11 +4,9 @@ import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
 import {
   courseMetadata,
-  courseJsonLd,
-  courseFaqJsonLd,
-  breadcrumbJsonLd,
   JsonLd,
 } from "@/lib/seo";
+import { byggKursSchema } from "@/lib/schema-kurser";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { kraverFas } from "@/lib/kurs-access";
 import { medKursOverrides } from "@/lib/kurs-metadata-live";
@@ -120,12 +118,17 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
   }));
   const forsattning = course.chapters.map((ch) => ({ num: ch.num, title: ch.title }));
 
-  // FRONT A (A3-FAQSCHEMA): FAQPage-schema — kursens egna kanoniska fråga +
-  // syskonfrågor i samma kategori, ORDAGRADT ur data/llms-fragor.json
-  // (courseFaqJsonLd → faqJsonLd). null ⇒ ingen fråga i korpusen ⇒ inget
-  // schema. Renderas som eget <script type="application/ld+json"> bredvid
-  // Course-schemat — fråga/svar-form, inget överlapp med kursdatan där.
-  const faqSchema = courseFaqJsonLd(kurs);
+  // VÅG 99 (G1 — A3 SLUTFÖRD): KOMPLETTA strukturerade data ur ett bygge
+  // (src/lib/schema-kurser.ts) — Course (provider, educationalLevel,
+  // timeRequired, inLanguage, isAccessibleForFree enligt fas, teaches,
+  // courseMode, about) + FAQPage (3–4 ÄKTA par genererade ur kursens eget
+  // learn/why/kapitel/min/nivå/fas-innehåll — frågetexterna i ordlistans
+  // schema-domän) + BreadcrumbList (Startsida > Kurser > {kategori} >
+  // {titel}, 4 nivåer). Ersätter de partiella schemana (våg 82:s
+  // courseJsonLd, FRONT A:s courseFaqJsonLd ur frågekorpusen och den
+  // 2-nivå-brödsmulan): EN Course + EN FAQPage + EN BreadcrumbList per
+  // sida — inga dubbletter, inga tomma fält, ALDRIG offers/priser.
+  const schema = byggKursSchema(kurs, "sv");
 
   // Kursöversiktens intro-snuttar: kapitel 1–2 syns alltid (smakprov/SEO);
   // för fas-kurser visas ingen prosa från kapitel 3+ i den statiska HTML:n
@@ -141,15 +144,10 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       wide
       breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: kurs.title }]}
     >
-      <JsonLd data={courseJsonLd(kurs)} />
-      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={schema.course} />
+      <JsonLd data={schema.faq} />
+      <JsonLd data={schema.breadcrumb} />
       <LasProgress />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Kurser", path: "/kurser" },
-          { name: kurs.title, path: `/kurser/${course.slug}` },
-        ])}
-      />
 
       <header className="border-b border-gold/30 pb-6">
         <p className="text-xs uppercase tracking-widest text-gold">

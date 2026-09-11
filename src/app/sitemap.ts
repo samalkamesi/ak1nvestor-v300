@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/content";
 import { lasAnalyser } from "@/lib/analysfabrik";
 import { b2bAktiv } from "@/lib/b2b-status";
+import { tierAktiv } from "@/lib/tier-status";
 import { branschSlugs, lasBranschMedianer } from "@/lib/dataset-medianer";
 
 export const dynamic = "force-dynamic";
@@ -80,6 +81,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : []),
     { url: `${BASE_URL}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/prenumeration`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+
+    // VÅG 99 (G2): portfölj-tier-sidorna (prisstegens tre nivåer) grindas
+    // mot tierAktiv() — sitemap får aldrig bjuda in crawlerar till URL:er
+    // som notFound()-grinden håller 404:ade (spegel av /pro-blocket ovan).
+    // Listas endast när NEXT_PUBLIC_TIER_AKTIV=1.
+    ...(tierAktiv()
+      ? ([
+          { url: `${BASE_URL}/portfolj-grund`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
+          { url: `${BASE_URL}/portfolj-plus`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
+          { url: `${BASE_URL}/portfolj-hyra`, changeFrequency: "monthly" as const, priority: 0.7, lastModified: now },
+        ] satisfies MetadataRoute.Sitemap)
+      : []),
     { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${BASE_URL}/fas3`, changeFrequency: "monthly", priority: 0.6, lastModified: now },
     { url: `${BASE_URL}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },

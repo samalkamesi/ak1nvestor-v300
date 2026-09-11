@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { lasMedlemSession } from "@/lib/medlem-auth";
 import { lasMedlemProgress, TOM_MEDLEM_PROGRESS } from "@/lib/medlem-progress";
+import { getCourses } from "@/lib/content";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 import { raknaLarvag, type LarvagRek, type LasandeKontext } from "@/lib/larvag";
 
@@ -24,6 +25,10 @@ export const dynamic = "force-dynamic";
  * Personliga värden når ALDRIG en CDN-cache (force-dynamic; ISR-låsta
  * kurssidor läser denna ALDRIG i SSR-passet — korten hydreras klient-side).
  * Fel/tömhet ⇒ tomt rek-array (200) — ett tips får aldrig krascha en yta.
+ *
+ * VÅG 99 (H1): varje rek berikas med kapitel (coursedata) + minuter (kartan)
+ * — bakåtkompatibla tilläggsfält för "Din lärväg"-kortens kap/min-rad.
+ * `inloggad` bärs med som förut och styr gästens låsta vy (våg 78-mönstret).
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -110,5 +115,18 @@ export async function GET(req: NextRequest) {
     { antal },
   );
 
-  return NextResponse.json({ inloggad: session !== null, rek });
+  // ── KAPITEL-BERIKNING (våg 99): "Din lärväg"-kortens kap/min-rad ──────────
+  // Bakåtkompatibelt: fält LÄGGS TILL per rek (minuter bär motorn redan ur
+  // kartan); konsumenter som inte känner dem påverkas aldrig. getCourses är
+  // modul-cache:ad fil-läsning (ingen persondata, ren kursmetadata).
+  const kurser = getCourses();
+  const rekBerikad = rek.map((r) => {
+    const kap = kurser[r.slug]?.chapterCount;
+    return {
+      ...r,
+      kapitel: typeof kap === "number" && Number.isFinite(kap) && kap > 0 ? Math.min(999, Math.floor(kap)) : undefined,
+    };
+  });
+
+  return NextResponse.json({ inloggad: session !== null, rek: rekBerikad });
 }

@@ -26,6 +26,16 @@ export type LarvagRekKlient = {
   varför: string;
   ikon: string;
   regel?: string;
+  /** Kapitelantal ur coursedata (våg 99 — kap/min-raden; saknas ⇒ okänt). */
+  kapitel?: number;
+  /** Speltid i minuter ur lärvägskartan (våg 99 — kap/min-raden). */
+  minuter?: number;
+};
+
+/** Hela GET-svaret, sanerat — inloggad styr gästens låsta vy (våg 78-mönstret). */
+export type LarvagSvar = {
+  inloggad: boolean;
+  rek: LarvagRekKlient[];
 };
 
 // ── Query-byggaren (sammanfattad kontext — ALDRIG rådata) ────────────────────
@@ -75,33 +85,55 @@ function renRek(rå: unknown): LarvagRekKlient | null {
   const r = rå as Partial<LarvagRekKlient>;
   if (typeof r.slug !== "string" || !/^[a-z0-9-]{1,200}$/i.test(r.slug)) return null;
   if (typeof r.titel !== "string" || !r.titel.trim()) return null;
+  const sanit = (v: unknown): number | undefined =>
+    typeof v === "number" && Number.isFinite(v) && v > 0 ? Math.min(9999, Math.floor(v)) : undefined;
   return {
     slug: r.slug,
     titel: r.titel.trim().slice(0, 200),
     varför: typeof r.varför === "string" ? r.varför.trim().slice(0, 400) : "",
     ikon: typeof r.ikon === "string" && r.ikon.trim() ? r.ikon.trim().slice(0, 16) : "📚",
     regel: typeof r.regel === "string" ? r.regel.slice(0, 40) : undefined,
+    kapitel: sanit(r.kapitel),
+    minuter: sanit(r.minuter),
   };
+}
+
+/**
+ * lasLarvagSvar — GET /api/larvag med den sammanfattade kontexten (våg 99):
+ * sanerat SVAR (inloggad + rek) — inloggad är serverns sanning och styr
+ * "Din lärväg"-sektionens låsta gästvy (våg 78-mönstret; klienten förhandlar
+ * ALDRIG). Ogiltigt svar/nätverksfel ⇒ { inloggad: false, rek: [] } (TYST).
+ */
+export async function lasLarvagSvar(
+  k: Pick<KlientKontext, "lasTillstand" | "streak">,
+  antal = 1,
+  exkluderaSlug?: string,
+): Promise<LarvagSvar> {
+  try {
+    const res = await fetch(`/api/larvag?${larvagQuery(k, antal, exkluderaSlug)}`, { cache: "no-store" });
+    if (!res.ok) return { inloggad: false, rek: [] };
+    const kropp = (await res.json()) as Record<string, unknown> | null;
+    if (!kropp || typeof kropp !== "object" || !Array.isArray(kropp.rek)) return { inloggad: false, rek: [] };
+    return {
+      inloggad: kropp.inloggad === true,
+      rek: kropp.rek.map(renRek).filter((r): r is LarvagRekKlient => r !== null),
+    };
+  } catch {
+    return { inloggad: false, rek: [] };
+  }
 }
 
 /**
  * lasLarvag — GET /api/larvag med den sammanfattade kontexten. Ogiltigt
  * svar/nätverksfel ⇒ [] (TYST — ytan renderar bara inget kort).
+ * (Bakåtkompatibel rek-only-vy ovanpå lasLarvagSvar — våg 99.)
  */
 export async function lasLarvag(
   k: Pick<KlientKontext, "lasTillstand" | "streak">,
   antal = 1,
   exkluderaSlug?: string,
 ): Promise<LarvagRekKlient[]> {
-  try {
-    const res = await fetch(`/api/larvag?${larvagQuery(k, antal, exkluderaSlug)}`, { cache: "no-store" });
-    if (!res.ok) return [];
-    const kropp = (await res.json()) as Record<string, unknown> | null;
-    if (!kropp || typeof kropp !== "object" || !Array.isArray(kropp.rek)) return [];
-    return kropp.rek.map(renRek).filter((r): r is LarvagRekKlient => r !== null);
-  } catch {
-    return [];
-  }
+  return (await lasLarvagSvar(k, antal, exkluderaSlug)).rek;
 }
 
 // ── POST: den anonyma svaghetsradixen (fire-and-forget) ──────────────────────

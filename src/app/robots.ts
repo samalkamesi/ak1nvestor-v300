@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { tierAktiv } from "@/lib/tier-status";
+
 /**
  * /robots.txt — maximal indexering hos SÅVÄL sökmotorer som AI-assistenter
  * (kunddirektiv: "nr 1 hos alla AI, bokstavligen").
@@ -40,6 +42,10 @@ const PUBLIKA_YTOR = [
   "/kallor/",
   "/dataset/",
   ...(process.env.NEXT_PUBLIC_B2B_AKTIV === "1" ? ["/pro/"] : []),
+  // VÅG 99 (G2): portfölj-tier-sidorna är färdigbyggda men AVSTÄNGDA —
+  // bjuds in först när NEXT_PUBLIC_TIER_AKTIV=1 (annars svarar de 404 och
+  // hålls borta även ur sitemap).
+  ...(tierAktiv() ? ["/portfolj-grund/", "/portfolj-plus/", "/portfolj-hyra/"] : []),
   "/llms.txt",
   "/api/llms-txt",
   "/sitemap.xml",

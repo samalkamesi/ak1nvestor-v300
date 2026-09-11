@@ -1,22 +1,30 @@
 /**
- * LÄRVÄGSMOTORN (våg 88 — B1-LARVAG): raknaLarvag — "rätt kurs till rätt
- * människa, som ett tips aldrig ett tvång", nu på SERVERN ur medlemmens
- * progress + läsandekontext.
+ * LÄRVÄGSMOTORN (våg 88 B1-LARVAG · våg 99 H1): raknaLarvag/raknaNastaSteg —
+ * "rätt kurs till rätt människa, som ett tips aldrig ett tvång", nu på
+ * SERVERN ur medlemmens progress + läsandekontext.
  *
  * ── KONTRAKTET (rekonstruerat ur uppdragsspec — B1-filen saknades) ──────────
  * REK-FORMELN: poäng = BAS (ÄRVD ur kurstips.ts — samma ekonomi, samma
  * trösklar, samma spår) + PÅSLAG +4 (nivåmatch: kursens level-tolkning
  * matchar läsarens lästillstånd) och +2 (V-spåret — fundamentet först).
  *
- * SEX REGLER (nomineringsordning = regelprioritet; första nomineringen
+ * ÅTTA REGLER (nomineringsordning = regelprioritet; första nomineringen
  * vinner per slug — varför-raden kommer från den VINNANDE regeln):
- *   1. spar-nasta        BAS 100 — nästa oklara i V-spåret (kurstips regel 1)
- *   2. svagheten         BAS  90 — quiz-svaghetens argmax-kurs (≥ 3 delar;
- *                              anonym räknare, se /api/quiz/svaghet)
- *   3. kategori-balans   BAS  82 — minst trampad kategori (kurstips regel 2)
- *   4. bokmaster         BAS  70 — flaggskeppen när grundlagt ≥ 8 (regel 3)
- *   5. streak-forberedelse BAS 58 — superanalys-förberedelse vid streak ≥ 5
- *   6. kortast-kurs      BAS  56 — spårets mest kompakta steg vid låg XP
+ *   1. spar-nasta          BAS 100 — nästa oklara i V-spåret (kurstips regel 1)
+ *   2. svagheten           BAS  90 — quiz-svaghetens argmax-kurs (≥ 3 delar;
+ *                                anonym räknare, se /api/quiz/svaghet) — våg 99 källa (b)
+ *   3. kategori-fortsattning BAS 86 — PÅBÖRJAD kategori → nästa oklara kurs i
+ *                                SAMMA kategori — våg 99 källa (a)
+ *   4. kategori-balans     BAS  82 — minst trampad kategori (kurstips regel 2)
+ *   5. bokmaster           BAS  70 — flaggskeppen när grundlagt ≥ 8 (regel 3)
+ *   6. niva-steg           BAS  62 — läsarens målnivå ur lästillståndet →
+ *                                första oklara kursen på nästa nivå — våg 99 källa (c)
+ *   7. streak-forberedelse BAS  58 — superanalys-förberedelse vid streak ≥ 5
+ *   8. kortast-kurs        BAS  56 — spårets mest kompakta steg vid låg XP
+ *
+ * DEFENSIV DEFAULT (våg 99): ingen progress ⇒ reglerna 3 + 6 vilar tyst och
+ * motorn lämnar tre STARTER-kurser (V-spårets första steg + balans +
+ * kortast) med välkomnande varför-rader — aldrig tom lista, aldrig krasch.
  *
  * HÅRT FAS-FILTER: kraverFas > läsarens fas ⇒ kandidaten UTESLUTS helt
  * (aldrig nedviktad, aldrig synlig) — gaten tipsar, den stänger inte.
@@ -27,6 +35,11 @@
  *
  * REN KÄRNA: deps = larvag-karta.ts + kurstips.ts (återanvändning, ALDRIG
  * duplikat) — inget nät, ingen fs, ingen localStorage. SSR-/test-säker.
+ *
+ * VÅG 99-API:ET: raknaNastaSteg(progress) — det namn våg 99:s kontrakt
+ * anger — är en DEFENSIV omslutning kring raknaLarvag (sanerar progress +
+ * kontext, kompletterar tyst med defaults). raknaLarvag behålls oförändrad
+ * i signatur och beteende (bakåtkompatibelt: e-post, assistent, kurssidor).
  *
  * Tonen ALWAYS personlig + uppmuntrande i du-form (kurstips-DNA:t).
  * Pedagogisk plattform — inte investeringsråd.
@@ -69,12 +82,15 @@ export type LasandeKontext = {
 export type LarvagRegel =
   | "spar-nasta"
   | "svagheten"
+  | "kategori-fortsattning"
   | "kategori-balans"
   | "bokmaster"
+  | "niva-steg"
   | "streak-forberedelse"
   | "kortast-kurs";
 
-/** Ett lärvägstips — samma form som KursTips + regel (spårbarhet). */
+/** Ett lärvägstips — samma form som KursTips + regel (spårbarhet).
+ *  minuter (våg 99): kartans speltid, för "Din lärväg"-kortens kap/min-rad. */
 export type LarvagRek = {
   slug: string;
   titel: string;
@@ -82,6 +98,7 @@ export type LarvagRek = {
   poäng: number;
   ikon: string;
   regel: LarvagRegel;
+  minuter?: number;
 };
 
 // ── BAS-ekonomin (ÄRVS från kurstips — samma tal, en källa) ─────────────────
@@ -89,8 +106,10 @@ export type LarvagRek = {
 const BAS = {
   sparNasta: 100,
   svagheten: 90,
+  kategoriFortsattning: 86,
   kategoriBalans: 82,
   bokmaster: 70,
+  nivaSteg: 62,
   streakForberedelse: 58,
   kortastKurs: 56,
 } as const;
@@ -180,6 +199,15 @@ function varforSvaghet(titel: string, delar: number): string {
   return `Quiz-signalen lyser just nu på ${titel} — ${String(delar)} delar väntar på en omgång till, och sedan sitter kunskapen.`;
 }
 
+function varforFortsattning(titel: string, kategori: string, antal: number): string {
+  const stegText = antal === 1 ? "ditt första steg" : `${String(antal)} steg`;
+  return `Du är igång i ${kategori.toLowerCase()} — ${stegText} ligger bakom dig, och ${titel} fortsätter i samma spår. Det du redan kan bär dig en bit på vägen.`;
+}
+
+function varforNivaSteg(titel: string): string {
+  return `Ditt läsande är redo för nästa nivå — ${titel} möter dig precis där, varken för lätt eller för brant.`;
+}
+
 function varforBalans(slug: string, titel: string, mestKategori: string | undefined): string {
   const kategori = V_SPÅR.find((v) => v.slug === slug)?.kategori;
   const katText = kategori ? kategori.toLowerCase() : "grunden";
@@ -240,6 +268,7 @@ export function raknaLarvag(
       poäng: raknaPoang(bas, k, malniva),
       ikon: ikonFranKurs(k),
       regel,
+      minuter: k.minuter,
     });
   };
 
@@ -276,7 +305,42 @@ export function raknaLarvag(
     lamna(svaghetSlug, BAS.svagheten, "svagheten", varforSvaghet(k?.titel ?? svaghetSlug, svaghetDelar));
   }
 
-  // 3 ── Balans efter kategori (BAS 82): minst trampad kategori först
+  // 3 ── KATEGORI-FORTSÄTTNING (BAS 86 — våg 99 källa a): den kategori
+  //      medlemmen PÅBÖRJAT (flest klarade; oavgång → först påbörjade, dvs.
+  //      första i klaraKurser-ordningen — Map-iterationsordningen) → nästa
+  //      oklara kurs i SAMMA kategori (lägsta kartindex). Vilar tyst utan
+  //      progress — en kategori kan inte vara påbörjad av en ny läsare.
+  {
+    const katRaknare = new Map<string, number>();
+    for (const slug of progress.klaraKurser) {
+      const k = kursUrKarta(slug);
+      if (!k) continue;
+      katRaknare.set(k.kategori, (katRaknare.get(k.kategori) ?? 0) + 1);
+    }
+    let paborjadKategori: string | null = null;
+    let paborjadAntal = 0;
+    for (const [kat, antal] of katRaknare) {
+      if (antal > paborjadAntal) {
+        paborjadKategori = kat;
+        paborjadAntal = antal;
+      }
+    }
+    if (paborjadKategori) {
+      const fortsattning = LARVAG_KARTA.filter(
+        (k) => k.kategori === paborjadKategori && kanNomineras(k.slug) && !nominerade.has(k.slug),
+      )[0]; // kartordning ⇒ lägst kartindex vinner (deterministiskt)
+      if (fortsattning) {
+        lamna(
+          fortsattning.slug,
+          BAS.kategoriFortsattning,
+          "kategori-fortsattning",
+          varforFortsattning(fortsattning.titel, paborjadKategori, paborjadAntal),
+        );
+      }
+    }
+  }
+
+  // 4 ── Balans efter kategori (BAS 82): minst trampad kategori först
   const perKategori = new Map<string, number>();
   for (const v of klaraV) perKategori.set(v.kategori, (perKategori.get(v.kategori) ?? 0) + 1);
   const mestKategori = [...perKategori.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
@@ -302,7 +366,20 @@ export function raknaLarvag(
     }
   }
 
-  // 5 ── Streak → superanalys-förberedelse (BAS 58)
+  // 6 ── NIVÅ-STEG (BAS 62 — våg 99 källa c): läsarens MÅLNIVÅ ur lästillståndet
+  //      (nybörjare→1, växande→2, avancerad/fas2-redo→3) → första oklara kurs
+  //      på just den nivån (lägsta kartindex, niva > 0 — allmän matchar aldrig).
+  //      Vilar tyst utan progress: en nivå-resa börjar vid första klara steget.
+  if (klaraSet.size >= 1) {
+    const nivaKandidat = LARVAG_KARTA.filter(
+      (k) => k.niva > 0 && k.niva === malniva && kanNomineras(k.slug) && !nominerade.has(k.slug),
+    )[0];
+    if (nivaKandidat) {
+      lamna(nivaKandidat.slug, BAS.nivaSteg, "niva-steg", varforNivaSteg(nivaKandidat.titel));
+    }
+  }
+
+  // 7 ── Streak → superanalys-förberedelse (BAS 58)
   if (lasande.streak >= STREAK_NASTA_STEG) {
     const f = FORBEREDELSE.find((x) => kanNomineras(x.slug));
     if (f) {
@@ -310,7 +387,7 @@ export function raknaLarvag(
     }
   }
 
-  // 6 ── Låg XP → kortaste steget (BAS 56)
+  // 8 ── Låg XP → kortaste steget (BAS 56)
   if (progress.xp < LAG_XP_GRANS) {
     const kortast = V_SPÅR.filter((v) => kanNomineras(v.slug) && !nominerade.has(v.slug)).sort(
       (a, b) => a.minuter - b.minuter || V_SPÅR.indexOf(a) - V_SPÅR.indexOf(b),
@@ -328,4 +405,54 @@ export function raknaLarvag(
         (LARVAG_KARTA_INDEX.get(a.slug) ?? 0) - (LARVAG_KARTA_INDEX.get(b.slug) ?? 0),
     )
     .slice(0, max);
+}
+
+// ── raknaNastaSteg — VÅG 99:S ENTRY POINT (defensiv omslutning) ──────────────
+
+/**
+ * raknaNastaSteg(progress) — våg 99:s kontraktsnamn: upp till 3 kurs-
+ * rekommendationer med varför-rader ur tre källor — (a) påbörjad kategori →
+ * nästa kurs i samma kategori som ej klarad, (b) quiz-svaghet → kurs som
+ * lär ut det området (när svaghetsdata bär det), (c) Fas-steg → nästa
+ * nivå-kurs — på RaknaLarvag-banan (V-spåret + balans + flaggskepp +
+ * streak + kortast fördjupar listan bakom källorna).
+ *
+ * DEFENSIV: progress/lärande-kontext får vara null, partiell eller felaktig
+ * — varje fält saneras och kompletteras tyst med defaults (kap 0-världen ⇒
+ * tre STARTER-kurser med välkomstande varför-rader). saknad kontext ⇒
+ * nybörjare på Fas 1 (motorn nedvärderar ALDRIG — det tipsar, det dömer ej).
+ *
+ * Deterministisk: samma indata ⇒ samma svar (raknaLarvag-kärnan, orörd).
+ */
+export function raknaNastaSteg(
+  progress?: Partial<LarvagProgress> | null,
+  lasande?: Partial<LasandeKontext> | null,
+  begränsning?: { antal?: number; exkluderaSlug?: string },
+): LarvagRek[] {
+  const p: LarvagProgress = {
+    xp:
+      typeof progress?.xp === "number" && Number.isFinite(progress.xp)
+        ? Math.max(0, Math.floor(progress.xp))
+        : 0,
+    klaraKurser: Array.isArray(progress?.klaraKurser)
+      ? progress!.klaraKurser.filter((s): s is string => typeof s === "string" && s !== "").slice(0, 1000)
+      : [],
+  };
+  const l: LasandeKontext = {
+    lasTillstand:
+      lasande?.lasTillstand !== undefined && MALNIVA[lasande.lasTillstand] !== undefined
+        ? lasande.lasTillstand
+        : "nybörjare",
+    fas: lasande?.fas === 2 || lasande?.fas === 3 ? lasande.fas : 1,
+    streak:
+      typeof lasande?.streak === "number" && Number.isFinite(lasande.streak)
+        ? Math.max(0, Math.min(9999, Math.floor(lasande.streak)))
+        : 0,
+    svagheter:
+      lasande?.svagheter && typeof lasande.svagheter === "object" && !Array.isArray(lasande.svagheter)
+        ? lasande.svagheter
+        : {},
+    exkluderaSlug: lasande?.exkluderaSlug,
+  };
+  return raknaLarvag(p, l, begränsning);
 }

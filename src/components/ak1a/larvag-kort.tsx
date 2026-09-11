@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { lasKlientkontext } from "@/lib/klientkontext";
-import { lasLarvag, type LarvagRekKlient } from "@/lib/larvag-klient";
+import { lasLarvagSvar, type LarvagRekKlient, type LarvagSvar } from "@/lib/larvag-klient";
+import { harLokalProgress } from "@/lib/medlem-progress-klient";
 
 /**
  * DIN NÄSTA KURS — lärvägsmotorn synliggjord (våg 88, B1-LARVAG).
@@ -33,8 +34,8 @@ export function LarvagKort({
     let aktiv = true;
     // Kontexten läses ENDAST här (localStorage — aldrig under render).
     const k = lasKlientkontext();
-    void lasLarvag(k, antal, exkluderaSlug).then((r) => {
-      if (aktiv) setRek(r);
+    void lasLarvagSvar(k, antal, exkluderaSlug).then((s) => {
+      if (aktiv) setRek(s.rek);
     });
     return () => {
       aktiv = false;

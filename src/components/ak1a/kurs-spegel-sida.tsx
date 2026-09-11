@@ -2,11 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourse, getCourses, type CourseChapter } from "@/lib/content";
 import { skapaT } from "@/lib/sprak";
-import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { JsonLd } from "@/lib/seo";
+import { byggKursSchema } from "@/lib/schema-kurser";
 import {
   KursSpegel,
   KursSpegelSprak,
-  kursSpegelJsonLd,
   kursSpegelMetadata,
   byggKursSpegel,
   hamtaKursLager,
@@ -123,6 +123,15 @@ export async function KursSpegelSida({
     return ch.intro.slice(0, langd);
   };
 
+  // VÅG 99 (G1 — A3 SLUTFÖRD): samma kompletta schema-trio som svenska
+  // originalet, via lang-param — Course (provider, educationalLevel,
+  // timeRequired, isAccessibleForFree per fas, teaches, courseMode) +
+  // FAQPage (3–4 ÄKTA par ur kursens learn/why/längd/fas — frågetexter i
+  // ordlistans schema-domän) + BreadcrumbList (Startsida > Kurser >
+  // {kategori} > {titel}, spegel-prefix-aware). Ersätter våg 52:s
+  // partiella Course + 2-nivå-brödsmula.
+  const schema = byggKursSchema(kurs, lang);
+
   const ovningar = (() => {
     const num = ["v04", "v05", "v06", "v07", "v08", "v09", "v10", "v19"].includes(slug.slice(0, 3));
     return [
@@ -146,13 +155,9 @@ export async function KursSpegelSida({
       breadcrumb={[{ name: t("nav.kurser"), href: `/${lang}/kurser` }, { name: kurs.title }]}
     >
       <div lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
-        <JsonLd data={kursSpegelJsonLd(spegel, lang)} />
-        <JsonLd
-          data={breadcrumbJsonLd([
-            { name: t("nav.kurser"), path: `/${lang}/kurser` },
-            { name: kurs.title, path: `/${lang}/kurser/${slug}` },
-          ])}
-        />
+        <JsonLd data={schema.course} />
+        <JsonLd data={schema.faq} />
+        <JsonLd data={schema.breadcrumb} />
         <LasProgress />
 
         {/* Översättnings-notis — EN per sida (block markeras ej): andel klart

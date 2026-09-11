@@ -18,7 +18,9 @@ import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
  *      därutur tas BORT ur layout.tsx när flyttet sker (en sanning).
  *   3. Ingen ändring i konfigurationen (subsets/weights/preload) får ske här
  *      utan eget beslut — grunden är "906 = 906 förbyggda sidor, visuellt
- *      identisk" (VAG84-PLAN steg 3).
+ *      identisk" (VAG84-PLAN steg 3). Undantag som BESLUTATS: jetbrainsMono
+ *      preload:false (VÅG 96 D1 — styrelsebeslutet ger D1 font/laddnings-
+ *      ordning; se kommentaren vid instansen nedan).
  */
 
 const inter = Inter({
@@ -53,6 +55,14 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
+  // VÅG 96 D1 (prestanda våg 3): mono preloads INTE längre. Prod-mätning
+  // 2026-09-11: 3 woff2 preloadades på ALLA sidor (50+47+40 kB opak) men
+  // startsidans HTML har 0 font-mono/verify-stamp-förekomster — monospace
+  // används först i verktyg/kodblock långt under vecket. preload:false
+  // skär ~40 kB ur den kritiska bandbredden per kall sidvisning; filen
+  // hämtas on demand med display:swap (samma mönster som serif-kursiv,
+  // o1 #9/våg 68). Visuellt oförändrat efter swap.
+  preload: false,
 });
 
 /** Body-klassraden — identisk med dagens src/app/layout.tsx:210-212. */

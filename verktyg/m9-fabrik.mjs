@@ -26,15 +26,37 @@
  * "Granskningsunderlag"-avsnitt inuti bodyMarkdown (människan ser det i
  * editorn; avsnittet tas bort av granskaren före export).
  *
- * ── DE TRE EVERGREEN-SERIERNA (våg 66:s design, oförändrad) ────────────────
+ * ── DE SEX EVERGREEN-SERIERNA (våg 66:s design + våg 96 D3) ──────────────────
  *   (a) branschmedianer-akm2        — peer.ts:s median-logik över akm2
  *   (b) forskningslaget-grona-av-100 — statusfördelning + regim (fasta
  *                                      trösklar, lägestexter ordagrant)
  *   (c) vagkartan-traffprocent      — vågvalideringens rullande kvitto
+ *   (d) kassaflodesanalys-101       — bolagsuniversets FCF-fält: fcfMarginal,
+ *                                      fcfYield + HÄRLEDD konverteringsgrad
+ *                                      (fcfMarginal ÷ nettoMarginal — båda
+ *                                      mätta fält med omsättning som nämnare);
+ *                                      deskriptiva rankningar, ALDRIG råd
+ *   (e) utdelningar-101             — utdelningsandel + direktavkastning som
+ *                                      BEGREPP; dataurdraget är det som FINNS:
+ *                                      FCF-taket (fcfYield) + ärlighetsröstan
+ *                                      om att per-bolags utdelningsdata saknas
+ *                                      i källorna (aterkop-fält 0/100 mätta)
+ *   (f) boerspsykologi-fallstugor   — undervisningscase ur vågvalideringens
+ *                                      dömda historik (vagvalidering-SENASTE.
+ *                                      json): uträknade binomialexempel på när
+ *                                      antaganden faller (n=2-fällan, 0/12-
+ *                                      basbygget, osatt döms aldrig). Inga
+ *                                      personnamn — datan bär bara tickers.
  *
  * ── DETERMINISM (md5-stabil, dokumenterad seed) ────────────────────────────
  * SEED = md5(md5(korstabell) + md5(vagvalidering) + md5(varumarke) + ":" +
  *         månadsnyckel ur underlagens egna datum)
+ * Fabriken bär EN global seed (ovansatta tre filer + månadsnyckel) — oför-
+ * ändrad sedan våg 95 så att redan skrivna kö-rader förblir verifierbara.
+ * Serierna (d)-(f) läser YTTERLIGARE två läs-only-filer (bolagsunivers.json,
+ * vagvalidering-SENASTE.json) som redovisas i varje series EGNA käll-array
+ * (fil+md5, ingår i kandidat-md5) och färskhetsvakten — deras md5 bär samma
+ * determinismbevis även om de inte ingår i det globala seedet.
  * Samma källfiler ⇒ samma seed ⇒ byte-identiska kandidater (md5 av
  * {slug,titel,ingress,bodyMarkdown,statistik,urdrag,källor} är oflyttnings-
  * stabilt — kandidat-hashen i rapporten ska vara identisk mellan körningar).
@@ -54,11 +76,13 @@
  *
  * ── KÖRNING ────────────────────────────────────────────────────────────────
  *   node verktyg/m9-fabrik.mjs               # torr: generera + grind + rapport
- *   node verktyg/m9-fabrik.mjs --skriv       # produktion: 3 utkast-rader,
+ *   node verktyg/m9-fabrik.mjs --skriv       # produktion: ett utkast PER
+ *                                             # serie (våg 96: sex stycken),
  *                                             # av="m9-fabriken", till granskningskön
- *   node verktyg/m9-fabrik.mjs --sond        # testomgång: skriver 3 rader med
- *                                             # av="Sond-M9-Test", läser TILLBAKA,
- *                                             # TABORTERAR dem + verifierar 0 kvar
+ *   node verktyg/m9-fabrik.mjs --sond        # testomgång: skriver kandidat-
+ *                                             # rader med av="Sond-M9-Test",
+ *                                             # läser TILLBAKA, TABORTERAR
+ *                                             # dem + verifierar 0 kvar
  *   node verktyg/m9-fabrik.mjs --stadja-sond # desperat-rengöring: ta bort ALLA
  *                                             # Sond-M9-Test-rader (felsäker spärr)
  *   node verktyg/m9-fabrik.mjs --skriv --tvinga
@@ -79,9 +103,11 @@
  * NEXT_PUBLIC_SUPABASE_ANON_KEY). REST-validering som supabase-rest.ts:
  * ENBAST https mot <ref>.supabase.co (fasta https-literaler i koden).
  *
- * Äger: agent V86-M9PREP. Rör ALDRIG src/ eller data/. Läs-only källor:
- * korstabell-grund.json · vagvalidering-SENASTE.md · varumarke.json ·
- * data/blogg/<slug>.json (förra utgåvans statistik).
+ * Äger: agent V86-M9PREP (serier a-c) / våg 96 agent D3 (serier d-f). Rör
+ * ALDRIG src/ eller data/. Läs-only källor: korstabell-grund.json ·
+ * vagvalidering-SENASTE.md · varumarke.json · bolagsunivers.json ·
+ * vagvalidering-SENASTE.json · data/blogg/<slug>.json (förra utgåvans
+ * statistik).
  */
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
@@ -92,6 +118,8 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FIL_KORSTABELL = path.join(REPO, "data", "portfolj-system", "korstabell-grund.json");
 const FIL_RAPPORT = path.join(REPO, "data", "rapporter", "vagvalidering-SENASTE.md");
 const FIL_VARUMARKE = path.join(REPO, "data", "varumarke.json");
+const FIL_UNIVERS = path.join(REPO, "data", "portfolj-system", "bolagsunivers.json"); // våg 96 D3: serierna (d)+(e)
+const FIL_VAGJSON = path.join(REPO, "data", "rapporter", "vagvalidering-SENASTE.json"); // våg 96 D3: serien (f)
 const BLOGG_KAT = path.join(REPO, "data", "blogg");
 
 const ARG_SKRIV = process.argv.includes("--skriv");
@@ -455,6 +483,36 @@ function publiceradStatistik(slug) {
   } catch {
     return null;
   }
+}
+
+/**
+ * våg 96 D3 — de två nya läskällorna (läs-only, deterministiska):
+ * bolagsunivers.json = kartlagd array (100 rader) med nyckeltalsblocken
+ * lonsamhet (fcfMarginal, nettoMarginal), vardering (fcfYield), aterkop;
+ * vagvalidering-SENASTE.json = spegeln av md-rapporten med STRUKTURERADE
+ * dömda celler per (horisont, klass) — fallstuge-seriens historik.
+ * Datum ur data (aldrig klockan): filens egna hämtnings-/domdatum.
+ */
+function lasUnivers() {
+  const rader = Object.values(lasJson(FIL_UNIVERS));
+  if (rader.length === 0) throw new Error("bolagsunivers.json innehöll inga rader — fabriken hittar aldrig på tal");
+  const datum = rader.reduce(
+    (senast, r) => (typeof r.hamtat === "string" && r.hamtat > (senast ?? "") ? r.hamtat : senast),
+    null,
+  );
+  return { rader, datum };
+}
+
+function lasVagJson() {
+  const j = lasJson(FIL_VAGJSON);
+  return {
+    domdatum: typeof j.domdatum === "string" ? j.domdatum : null,
+    totalt: j.totalt ?? null,
+    perHorisontKlass: Array.isArray(j.perHorisontKlass) ? j.perHorisontKlass : [],
+    protokollText: typeof j.domProtokollText === "string" ? j.domProtokollText : null,
+    universum: j.universumAntal ?? null,
+    sedan: j.rullandeSedan ?? null,
+  };
 }
 
 // ── Mall-pjäser ──────────────────────────────────────────────────────────────
@@ -842,6 +900,331 @@ function byggVagkartan(rapport, seed, kallor) {
   return k;
 }
 
+// ════════════════════════════════════════════════════════════════════════════
+// (d) Kassaflödesanalys 101 — fria kassaflöden + konverteringsgrad (våg 96 D3)
+//     Källa: bolagsunivers.json (fcfMarginal, fcfYield, nettoMarginal).
+//     Konverteringsgraden är HÄRLEND ur två mätta fält (fcfMarginal ÷
+//     nettoMarginal — omsättningen är gemensam nämnare) och härledningen
+//     redovisas öppet i texten. Deskriptiva rankningar, ALDRIG råd.
+// ════════════════════════════════════════════════════════════════════════════
+
+function raknaKassaflode(rader) {
+  const fcf = rader
+    .filter((r) => typeof r.lonksamhet?.fcfMarginal === "number")
+    .sort((a, b) => b.lonksamhet.fcfMarginal - a.lonksamhet.fcfMarginal || (a.ticker < b.ticker ? -1 : 1));
+  const fy = rader
+    .filter((r) => typeof r.vardering?.fcfYield === "number")
+    .sort((a, b) => b.vardering.fcfYield - a.vardering.fcfYield || (a.ticker < b.ticker ? -1 : 1));
+  const konv = rader
+    .filter(
+      (r) =>
+        typeof r.lonksamhet?.fcfMarginal === "number" &&
+        typeof r.lonksamhet?.nettoMarginal === "number" &&
+        r.lonksamhet.nettoMarginal > 0,
+    )
+    .map((r) => ({ ticker: r.ticker, namn: r.namn, konvertering: r.lonksamhet.fcfMarginal / r.lonksamhet.nettoMarginal }))
+    .sort((a, b) => b.konvertering - a.konvertering || (a.ticker < b.ticker ? -1 : 1));
+  if (fcf.length === 0 || fy.length === 0 || konv.length === 0) {
+    throw new Error("kassaflödesunderlaget saknar mätta fcf-fält — fabriken gissar aldrig");
+  }
+  return {
+    antal: rader.length,
+    fcfMatta: fcf.length,
+    fcfMedian: median(fcf.map((r) => r.lonksamhet.fcfMarginal)),
+    fcfTopp: fcf.slice(0, 5),
+    fcfBotten: fcf.slice(-5),
+    fyMatta: fy.length,
+    fyMedian: median(fy.map((r) => r.vardering.fcfYield)),
+    fyOverFem: fy.filter((r) => r.vardering.fcfYield > 0.05).length,
+    fyTvaFem: fy.filter((r) => r.vardering.fcfYield > 0.02 && r.vardering.fcfYield <= 0.05).length,
+    fyUnderTva: fy.filter((r) => r.vardering.fcfYield <= 0.02).length,
+    fyNegativa: fy.filter((r) => r.vardering.fcfYield < 0).length,
+    konvMatta: konv.length,
+    konvMedian: median(konv.map((r) => r.konvertering)),
+    konvOverEtt: konv.filter((r) => r.konvertering > 1).length,
+    konvTopp: konv.slice(0, 3),
+  };
+}
+
+function byggKassaflodesanalys(univers, seed, kallor) {
+  const s = raknaKassaflode(univers.rader);
+  const datum = univers.datum;
+  const manad = manadArsNamn(datum);
+  const statistik = { ...s, datum, referens: `${datum} · ${s.antal}-bolagsuniversum` };
+  const forra = publiceradStatistik("kassaflodesanalys-101");
+
+  const rad = [];
+  rad.push(
+    `Bolagsuniverset bär tre kassaflödesfält, och underlaget hämtat ${datum} ser ut så: **FCF-marginal** är mätt för ${s.fcfMatta} av ${s.antal} bolag (median ${pct(s.fcfMedian)}), **FCF-avkastning** för ${s.fyMatta} (median ${pct(s.fyMedian)}), och **konverteringsgraden** kan härledas för ${s.konvMatta}. Det här är en genomgång av vad måtten betyder och hur universum ser ut just nu — en deskriptiv översikt, inte en värdering.`,
+  );
+  rad.push(`## Tre mått på samma kassa`);
+  rad.push(
+    `**FCF-marginal** = fritt kassaflöde ÷ omsättning — hur stor del av intäkterna som blir pengar att röra sig med. **FCF-avkastning** (fcfYield) = fritt kassaflöde ÷ marknadsvärde — kassaflödet satt mot bolagets prislapp. **Konverteringsgrad** = fritt kassaflöde ÷ nettoresultat — hur mycket av den redovisade vinsten som syns i kassan. Universet bär inte konverteringsgraden som eget fält, men eftersom fcfMarginal och nettoMarginal båda har omsättningen som nämnare ger kvoten mellan dem exakt FCF ÷ nettoresultat — härledningen är aritmetik och redovisas öppet, inget fält hittas på.`,
+  );
+  rad.push(`## Fria kassaflöden per bolag — spridningen`);
+  rad.push(
+    `Högst och lägst FCF-marginal i underlaget (sortering av data, inte omdömen):`,
+  );
+  rad.push(
+    s.fcfTopp
+      .map((r) => `- **${kortNamn(r.namn)}** (${r.ticker}, ${branschNamn(r.bransch)}) — FCF-marginal ${pct(r.lonksamhet.fcfMarginal)}`)
+      .join("\n"),
+  );
+  rad.push(
+    s.fcfBotten
+      .map((r) => `- **${kortNamn(r.namn)}** (${r.ticker}, ${branschNamn(r.bransch)}) — FCF-marginal ${pct(r.lonksamhet.fcfMarginal)}`)
+      .join("\n"),
+  );
+  rad.push(
+    `En hög marginal i en kapitallätt verksamhet och en låg i en kapitaltung är olika företeelser; ett negativt värde betyder att bolaget förbrukade kassa under mätperioden. Talen är urvalsberoende — universum är ${s.antal} bolag i tio branscher, och inget sägs om bolag utanför det.`,
+  );
+  rad.push(`## Konverteringsgraden — när vinsten inte är pengar`);
+  rad.push(
+    `Bland ${s.konvMatta} bolag med båda fälten mätta (och positivt nettoresultat) ligger medianen på ${tal(s.konvMedian, 2)}, och ${String(s.konvOverEtt)} av ${String(s.konvMatta)} omsluter mer kassa än de redovisar i vinst. En konverteringsgrad över 1 kan till exempel komma av att bokförda avskrivningar (som inte är kontanta) överstiger de verkliga investeringarna; under 1 kan komma av att arbetande kapital eller investeringar binder kassa. Det är läsningar av redovisningens skillnad mot kassan — vad som gäller i det enskilda bolaget avgörs i den manuella analysen. Högst konverteringsgrad i underlaget: ${s.konvTopp.map((k) => `${kortNamn(k.namn)} (${k.ticker}, ${tal(k.konvertering, 2)})`).join(", ")}.`,
+  );
+  rad.push(`## FCF-avkastningens fördelning`);
+  rad.push(
+    `Bland ${s.fyMatta} mätta bolag har ${String(s.fyOverFem)} FCF-avkastning över 5 %, ${String(s.fyTvaFem)} mellan 2 och 5 %, ${String(s.fyUnderTva)} under 2 % — och ${String(s.fyNegativa)} är negativa, det vill säga bolag som för närvarande förbrukar kassa i förhållande till sitt marknadsvärde. Fördelningen är ett ögonblick ur underlaget (${datum}); den beskriver utfall, inte framtida hållbarhet.`,
+  );
+  rad.push(`## Ändringen sedan senaste publicerade utgåvan`);
+  if (!forra) {
+    rad.push(`Seriens första maskinutkast i utkastsystemet — ingen tidigare publicerad statistik att jämföra med i data/blogg/.`);
+  } else {
+    const delar = [];
+    if (forra.fcfMedian !== s.fcfMedian) delar.push(`FCF-marginal-medianen ${deltaText(forra.fcfMedian * 100, s.fcfMedian * 100)}`);
+    if (forra.fyMedian !== s.fyMedian) delar.push(`FCF-avkastning-medianen ${deltaText(forra.fyMedian * 100, s.fyMedian * 100)}`);
+    if (forra.konvOverEtt !== s.konvOverEtt) delar.push(`antalet över 1,0 i konvertering ${deltaText(forra.konvOverEtt, s.konvOverEtt, 0)}`);
+    rad.push(
+      delar.length > 0
+        ? delar.join(" · ") + "."
+        : `Kassaflödesmåtten oförändrade sedan den publicerade utgåvan (median FCF-marginal ${pct(s.fcfMedian)}).`,
+    );
+  }
+  rad.push(`## Fördjupa dig`);
+  rad.push(
+    `- [Kursen Kassaflödesanalysen](/kurser/km-003-kassaflodesanalysen) — kassaflödesanalysen från bokföringens grunder\n- [Forskningsbiblioteket](/forskningsbiblioteket) — bolagsanalyserna med fullständigt AKM1/AKM2-underlag\n- [Kapitalförbränkning (V19)](/blogg/v19-kapitalforbranning-analys) — vad negativa kassaflöden betyder i modellen`,
+  );
+
+  const urdrag = [
+    { varde: `FCF-marginal median ${pct(s.fcfMedian)}`, datum, notering: `n=${String(s.fcfMatta)} mätta av ${String(s.antal)} (lonksamhet.fcfMarginal)` },
+    { varde: `FCF-avkastning median ${pct(s.fyMedian)}`, datum, notering: `n=${String(s.fyMatta)} mätta (vardering.fcfYield)` },
+    { varde: `konverteringsgrad median ${tal(s.konvMedian, 2)} · ${String(s.konvOverEtt)} över 1,0`, datum, notering: `n=${String(s.konvMatta)} — HÄRLEND som fcfMarginal ÷ nettoMarginal` },
+    { varde: `fördelning FCF-avkastning: >5 % ${String(s.fyOverFem)} · 2–5 % ${String(s.fyTvaFem)} · <2 % ${String(s.fyUnderTva)} · negativ ${String(s.fyNegativa)}`, datum, notering: "av " + String(s.fyMatta) + " mätta" },
+    ...s.fcfTopp.map((r) => ({ varde: `${r.ticker} FCF-marginal ${pct(r.lonksamhet.fcfMarginal)}`, datum, notering: `högst rankade (${branschNamn(r.bransch)})` })),
+    ...s.fcfBotten.map((r) => ({ varde: `${r.ticker} FCF-marginal ${pct(r.lonksamhet.fcfMarginal)}`, datum, notering: `lägst rankade (${branschNamn(r.bransch)})` })),
+  ];
+
+  const k = {
+    slug: "kassaflodesanalys-101",
+    serie: "kassaflodesanalys",
+    titel: `Kassaflödesanalys 101 ${manad} — fria kassaflöden och konverteringsgrad (utkast)`,
+    ingress: `Kassaflödesgrunderna med riktiga tal: FCF-marginal mätt för ${String(s.fcfMatta)} av ${String(s.antal)} bolag (median ${pct(s.fcfMedian)}), FCF-avkastning för ${String(s.fyMatta)} (median ${pct(s.fyMedian)}) och härledd konverteringsgrad för ${String(s.konvMatta)}. Underlag hämtat ${datum}.`,
+    statistik,
+    urdrag,
+    kallor,
+    seed,
+    manad: datum.slice(0, 7),
+  };
+  k.bodyForGrind = rad;
+  return k;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// (e) Utdelningar 101 — begreppen + det underlag som FINNS (våg 96 D3)
+//     Källorna levererar INGA per-bolags utdelningsfält (aterkop 0/100 mätta)
+//     — därför: utdelningsandel + direktavkastning som BEGREPP (räkneexempel
+//     med tydligt märkta pedagogiska tal) + FCF-taket som deskriptivt
+//     dataurdrag (fcfYield) + ärlighetsredovisning av luckorna.
+// ════════════════════════════════════════════════════════════════════════════
+
+function raknaUtdelningsunderlag(rader) {
+  const fy = rader.filter((r) => typeof r.vardering?.fcfYield === "number");
+  if (fy.length === 0) throw new Error("utdelningsunderlaget saknar mätt fcfYield — fabriken gissar aldrig");
+  const sorterade = [...fy].sort((a, b) => b.vardering.fcfYield - a.vardering.fcfYield || (a.ticker < b.ticker ? -1 : 1));
+  return {
+    antal: rader.length,
+    fyMatta: fy.length,
+    fyMedian: median(fy.map((r) => r.vardering.fcfYield)),
+    fyOverFem: fy.filter((r) => r.vardering.fcfYield > 0.05).length,
+    fyTvaFem: fy.filter((r) => r.vardering.fcfYield > 0.02 && r.vardering.fcfYield <= 0.05).length,
+    fyUnderTva: fy.filter((r) => r.vardering.fcfYield <= 0.02).length,
+    fyNegativa: fy.filter((r) => r.vardering.fcfYield < 0).length,
+    fyTopp: sorterade.slice(0, 5),
+    aterkopMatta: rader.filter((r) => typeof r.aterkop?.senasteArMdr === "number").length,
+    insiderMatta: rader.filter((r) => typeof r.aterkop?.insiderkopSenaste6man === "number").length,
+  };
+}
+
+function byggUtdelningar(univers, seed, kallor) {
+  const s = raknaUtdelningsunderlag(univers.rader);
+  const datum = univers.datum;
+  const manad = manadArsNamn(datum);
+  const statistik = { ...s, datum, referens: `${datum} · ${s.antal}-bolagsuniversum` };
+  const forra = publiceradStatistik("utdelningar-101");
+
+  const rad = [];
+  rad.push(
+    `Utdelningsandel och direktavkastning är två av börsens mest citerade nyckeltal — men AK1A:s underlag bär ingen per-bolags utdelningsdata: återköpsfältet (aterkop.senasteArMdr) är mätt i ${String(s.aterkopMatta)} av ${String(s.antal)} rader och utdelningsbelopp levereras inte av källorna alls. Serien gör därför två saker: den lär ut begreppen, och den redovisar det som finns — taket på långsiktig utdelningsförmåga som de fria kassaflödena beskriver. Underlag hämtat ${datum}.`,
+  );
+  rad.push(`## Utdelningsanden — andelen av vinsten som delas ut`);
+  rad.push(
+    `Utdelningsandel (payout) = utdelning ÷ nettoresultat. Pedagogiskt räkneexempel med valda tal (inte ur underlaget): ett bolag med 10 kr i vinst per aktie som delar ut 4 kr har utdelningsandel 40 %. En andel under 100 % lämnar plats att behålla och bygga; en andel över 100 % betyder att bolaget delar ut mer än det tjänar — det kan bäras en tid av kassabehållning eller skuld, men inte obegränsat. Vad en rimlig andel är skiljer sig mellan branscher och faser, och avgörs per bolag i den manuella analysen.`,
+  );
+  rad.push(`## Direktavkastningen — utdelningen satt mot kursen`);
+  rad.push(
+    `Direktavkastning = utdelning per aktie ÷ aktiekurs. Samma räkneexempel: 4 kr i utdelning på en kurs av 100 kr ger 4 %. Fallgropen är inbyggd i kvoten: en stigande direktavkastning kan komma av en stigande utdelning — eller av en fallande kurs. Kvoten säger vilket av de två som hände, inte varför, och den högsta direktavkastningen i en lista är ofta den bolag där marknaden prissatt något den är osäker på. Direktavkastning är alltså en fråga att ställa, inte ett svar.`,
+  );
+  rad.push(`## Taket: utdelningar betalas med kassa`);
+  rad.push(
+    `Långsiktigt kan utdelningar och återköp inte överstiga de fria kassaflödena utan att finansieras av ny skuld eller nytt eget kapital. Därför ger FCF-avkastningen (fcfYield) ett grovt tak på hur hög direktavkastningen kan bli hållbart. I universum är fältet mätt för ${String(s.fyMatta)} av ${String(s.antal)} bolag (underlag ${datum}): medianen ${pct(s.fyMedian)}, ${String(s.fyOverFem)} bolag över 5 %, ${String(s.fyTvaFem)} mellan 2 och 5 %, ${String(s.fyUnderTva)} under 2 % och ${String(s.fyNegativa)} negativa. Högst FCF-avkastning: ${s.fyTopp.map((r) => `${kortNamn(r.namn)} (${r.ticker}, ${pct(r.vardering.fcfYield)})`).join(", ")}. Ett utrymme är inte ett löfte — många bolag behåller kassan av goda skäl, och listan är en sortering av data, ingen värdering.`,
+  );
+  rad.push(`## Vad källorna inte levererar — och vad serien gör åt det`);
+  rad.push(
+    `Ärlighetsredovisningen: ${String(s.aterkopMatta)} av ${String(s.antal)} rader har mätta återköpsbelopp; utdelningsandel och direktavkastning per bolag finns inte i filerna. Insiderköp senaste 6 månader är däremot mätt (${String(s.insiderMatta)} av ${String(s.antal)} rader) — men det är en notering om ägarbeteende, inte något utdelningsmått. Fabriken upprepar aldrig utdelningstal den inte har; när källorna börjar leverera fältet kan serien redovisa riktiga andelar i stället för taket.`,
+  );
+  rad.push(`## Ändringen sedan senaste publicerade utgåvan`);
+  if (!forra) {
+    rad.push(`Seriens första maskinutkast i utkastsystemet — ingen tidigare publicerad statistik att jämföra med i data/blogg/.`);
+  } else {
+    const delar = [];
+    if (forra.fyMedian !== s.fyMedian) delar.push(`FCF-avkastning-medianen ${deltaText(forra.fyMedian * 100, s.fyMedian * 100)}`);
+    if (forra.fyOverFem !== s.fyOverFem) delar.push(`antalet över 5 % ${deltaText(forra.fyOverFem, s.fyOverFem, 0)}`);
+    rad.push(
+      delar.length > 0
+        ? delar.join(" · ") + "."
+        : `Utdelningsunderlaget oförändrat sedan den publicerade utgåvan (FCF-avkastning-median ${pct(s.fyMedian)}).`,
+    );
+  }
+  rad.push(`## Fördjupa dig`);
+  rad.push(
+    `- [Kursen Direktavkastning](/kurser/km-063-direktavkastning) — kvoten, dess fallgropar och dess användning\n- [Kursen Utdelningstillväxt](/kurser/km-064-utdelningstillvaxt) — när växande utdelningar bär information\n- [Kursen Eget kapital och utdelningar](/kurser/km-005-eget-kapital-utdelningar) — hur utdelningen vandrar genom balansräkningen`,
+  );
+
+  const urdrag = [
+    { varde: `FCF-avkastning median ${pct(s.fyMedian)}`, datum, notering: `n=${String(s.fyMatta)} mätta av ${String(s.antal)} (vardering.fcfYield) — tak på hållbar direktavkastning` },
+    { varde: `fördelning: >5 % ${String(s.fyOverFem)} · 2–5 % ${String(s.fyTvaFem)} · <2 % ${String(s.fyUnderTva)} · negativ ${String(s.fyNegativa)}`, datum, notering: "av " + String(s.fyMatta) + " mätta" },
+    { varde: `återköp mätta ${String(s.aterkopMatta)}/${String(s.antal)} · insiderköp mätta ${String(s.insiderMatta)}/${String(s.antal)}`, datum, notering: "aterkop-fältens täckning — utdelningsdata saknas i källorna" },
+    ...s.fyTopp.map((r) => ({ varde: `${r.ticker} FCF-avkastning ${pct(r.vardering.fcfYield)}`, datum, notering: `högst rankade (${branschNamn(r.bransch)})` })),
+  ];
+
+  const k = {
+    slug: "utdelningar-101",
+    serie: "utdelningar",
+    titel: `Utdelningar 101 ${manad} — begreppen och utdelningsutrymmet (utkast)`,
+    ingress: `Utdelningsandel och direktavkastning som begrepp, med det underlag som finns: FCF-avkastning mätt för ${String(s.fyMatta)} av ${String(s.antal)} bolag (median ${pct(s.fyMedian)}) som tak på hållbar utdelning — per-bolags utdelningsdata levereras inte av källorna och påhittas aldrig. Underlag hämtat ${datum}.`,
+    statistik,
+    urdrag,
+    kallor,
+    seed,
+    manad: datum.slice(0, 7),
+  };
+  k.bodyForGrind = rad;
+  return k;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// (f) Börspsykologi: fallstugor — undervisningscase ur våghistoriken (våg 96 D3)
+//     Källa: vagvalidering-SENASTE.json (dömda celler per horisont×klass).
+//     Utfallet bärs av UT RÄKNADE binomialexempel på antaganden som faller
+//     (n=2-fällan, basbyggots 0/12, osatt döms aldrig). Vågdata bär bara
+//     tickers och horisonter — inga personnamn förekommer och inga hittas på.
+// ════════════════════════════════════════════════════════════════════════════
+
+function byggBoerspsykologi(vagj, seed, kallor) {
+  if (!vagj.domdatum || !vagj.totalt || typeof vagj.totalt.traffProcent !== "number") {
+    throw new Error("vagvalidering-SENASTE.json saknar domdatum/totalt — fabriken hittar aldrig på tal");
+  }
+  const cell = (h, klass) =>
+    vagj.perHorisontKlass.find((r) => r.horisont === h && r.klass === klass) ?? null;
+  const tvaTraffar = cell("kort", "impulsvåg");
+  const basMedellang = cell("medellång", "basbygge");
+  const basMega = cell("mega", "basbygge");
+  const impMedellang = cell("medellång", "impulsvåg");
+  const impMega = cell("mega", "impulsvåg");
+  if (!tvaTraffar || tvaTraffar.nDomda !== 2 || !basMedellang || !basMega) {
+    throw new Error("fallstugecellerna saknas/ändrat utfall i vågvalideringen — mallen vägrar skriva om sig själv");
+  }
+  const t = vagj.totalt;
+  const datum = vagj.domdatum;
+  const manad = manadArsNamn(datum);
+  const basSumma = basMedellang.nDomda + basMega.nDomda;
+  const slantTvaa = Math.pow(0.5, 2); // P(2/2 | p=0,5)
+  const slantTolv = Math.pow(0.5, basSumma); // P(0/n | p=0,5)
+  const statistik = {
+    domdatum: datum,
+    traffProcent: t.traffProcent,
+    domda: t.nDomda,
+    osattaAndel: t.osattAndelProcent,
+    universum: vagj.universum,
+    sedan: vagj.sedan,
+    fall: {
+      tvaTraffar: { horisont: "kort", klass: "impulsvåg", traffProcent: tvaTraffar.traffProcent, nDomda: tvaTraffar.nDomda, slantsingling: slantTvaa },
+      basbygge: { celler: [basMedellang, basMega], nDomdaSumma: basSumma, slantsingling: slantTolv },
+      impulsvagKontrast: [impMedellang, impMega].filter((x) => x !== null),
+    },
+  };
+  const forra = publiceradStatistik("boerspsykologi-fallstugor");
+
+  const rad = [];
+  rad.push(
+    `Vågvalideringen dömer varje rond: förra rondens vågklass per (ticker, horisont) mäts mot dagens faktiska fundamentmomentum. Hittills har motorn dömt ${String(t.nDomda)} mätningar med ${String(t.traffProcent)} % träff, och ${String(t.osattAndelProcent)} % av mätningarna är osatta och döms aldrig — inte ens som fel (räknare sedan ${vagj.sedan ?? "okänt datum"}, ${String(vagj.universum ?? "?")} tickers). Historiken är mer än ett kvitto: den är undervisningsmaterial. Tre fall ur domdatum ${datum}, räknade på motorns egna utfall.`,
+  );
+  rad.push(`## Fallet med de två träffarna`);
+  rad.push(
+    `Horisonten kort, klassen impulsvåg: ${String(tvaTraffar.traffProcent)} % träff — på exakt n = ${String(tvaTraffar.nDomda)} dömda mätningar. Räkneexemplet: vore den sanna träffchansen 50 %, som en slantsingling, är sannolikheten att träffa båda 0,5 × 0,5 = ${pct(slantTvaa, 0)} — alltså förklarar slumpen resultatet mer än väl. Tumregeln 3/n säger att noll missar på n observationer bara sätter taket på missfrekvensen vid ungefär 3/n; med n = 2 blir det 150 %, vilket betyder ingen begränsning alls. Hjärnan läser mönster i små urval — det är själva fallgropen, och därför redovisar motorn n bredvid varje procent.`,
+  );
+  rad.push(`## Fallet med basbygget som gick sönder`);
+  rad.push(
+    `Två celler visar 0 %: medellång basbygge (${String(basMedellang.nDomda)} dömda) och mega basbygge (${String(basMega.nDomda)} dömda) — sammanlagt 0 träffar på ${String(basSumma)} mätningar. Protokollet dömer basbygge som träff när fundamentmomentumet håller sig inom ± 6 % — antagandet är "en period av liten rörelse". Vore det en slantsingling vore sannolikheten ${String(basSumma)} raka missar 0,5 upphöjt till ${String(basSumma)}, ungefär ${pct(slantTolv, 2)} — sällsynt nog att granska antagandet i stället för att skylla på otur. Trolig läsning: när motorn klassat basbygge har momentumet ofta rört sig mer än tröskeln; etiketten "lugn period" var antagandet som föll. Kontrasten i samma data: impulsvåg på medellång och mega träffar ${String(impMedellang?.traffProcent ?? "?")} % (n = ${String(impMedellang?.nDomda ?? "?")}) respektive ${String(impMega?.traffProcent ?? "?")} % (n = ${String(impMega?.nDomda ?? "?")}) — riktning har fångats bättre än stillhet. Vad det betyder är en fråga till kommande ronder, inte en slutsats att handla på.`,
+  );
+  rad.push(`## Fallet med att inte döma`);
+  rad.push(
+    `${String(t.osattAndelProcent)} % av mätningarna är osatta, och protokollet dömer ALDRIG en osatt klass. Psykologiskt är det motståndskraftens kärna: impulsen att fylla varje lucka i datan med en tolkning ("den är osatt för att det nog är positivt") är samma instinkt som tillverkar slutsatser ur ingenting. Osatt är information — tidsserien räcker inte än, och att vänta är ett beslut, inte passivitet.`,
+  );
+  rad.push(`## Vad träffprocenten inte är`);
+  rad.push(
+    `Enheten ${String(t.traffProcent)} % är ett öppet kvitto om det förflutna — aldrig en sannolikhet om framtiden. Dom-protokollet, ordagrant ur rapporten: "${vagj.protokollText ?? "—"}" Binomialtalen ovan är räknade på motorns redovisade n och utfall; de förklarar vad datan KAN säga, inte vad den kommer att göra.`,
+  );
+  rad.push(`## Ändringen sedan senaste publicerade utgåvan`);
+  if (!forra) {
+    rad.push(`Seriens första maskinutkast i utkastsystemet — räknarna är unga (sedan ${vagj.sedan ?? "okänt datum"}) och varje ny rond väger tyngre än den förra.`);
+  } else {
+    const delar = [];
+    if (forra.traffProcent !== t.traffProcent) delar.push(`träffprocent ${deltaText(forra.traffProcent, t.traffProcent, 0)}`);
+    if (forra.domda !== t.nDomda) delar.push(`dömda mätningar ${deltaText(forra.domda, t.nDomda, 0)}`);
+    rad.push(
+      delar.length > 0
+        ? delar.join(" · ") + "."
+        : `Fallstugeunderlaget oförändrat sedan den publicerade utgåvan (${String(t.traffProcent)} % på ${String(t.nDomda)} dömda mätningar).`,
+    );
+  }
+  rad.push(`## Fördjupa dig`);
+  rad.push(
+    `- [Kursen Bekräftelsefälla](/kurser/km-019-bekraftelsefalla) — varför vi söker det vi redan tror\n- [Kursen Övertro](/kurser/km-036-overconfidence) — små urval, stor säkerhet\n- [Mr Market och psykologin på börsen](/blogg/mr-market-psykologi-svenska-borsen) — klassikern om humörets pris`,
+  );
+
+  const urdrag = [
+    { varde: `totalt ${String(t.traffProcent)} % (n=${String(t.nDomda)} dömda, osatta ${String(t.osattAndelProcent)} %)`, datum, notering: "rapportens totalt-block (JSON-spegeln)" },
+    { varde: `kort/impulsvåg ${String(tvaTraffar.traffProcent)} % på n=${String(tvaTraffar.nDomda)}`, datum, notering: `fallstudie 1 — P(2/2 | slant) = ${pct(slantTvaa, 0)}` },
+    { varde: `medellång+mega/basbygge 0 träffar på n=${String(basSumma)}`, datum, notering: `fallstudie 2 — P(0/${String(basSumma)} | slant) ≈ ${pct(slantTolv, 2)}` },
+    { varde: `osatta ${String(t.osattAndelProcent)} % döms aldrig`, datum, notering: "fallstudie 3 — protokollregel, ordagrant i texten" },
+  ];
+
+  const k = {
+    slug: "boerspsykologi-fallstugor",
+    serie: "boerspsykologi",
+    titel: `Börspsykologi: fallstudier ${manad} — när antaganden faller (utkast)`,
+    ingress: `Tre undervisningscase ur vågvalideringens dömda historik (domdatum ${datum}): två träffar av två möjliga, basbyggen som missade samtliga tolv domar, och disciplinen att inte döma det osatta. Utfallen räknas fram ur motorns egna tal — utbildning, aldrig rådgivning.`,
+    statistik,
+    urdrag,
+    kallor,
+    seed,
+    manad: datum.slice(0, 7),
+  };
+  k.bodyForGrind = rad;
+  return k;
+}
+
 // ── Montering: body = mall + granskningsunderlag + disclaimer ───────────────
 
 function montera(k) {
@@ -911,7 +1294,7 @@ async function main() {
   }
 
   // 1) Källor + färskhetsvakt
-  for (const fil of [FIL_KORSTABELL, FIL_RAPPORT, FIL_VARUMARKE]) {
+  for (const fil of [FIL_KORSTABELL, FIL_RAPPORT, FIL_VARUMARKE, FIL_UNIVERS, FIL_VAGJSON]) {
     if (!existsSync(fil)) {
       console.error(`[FEL] ${path.relative(REPO, fil)} saknas — fabriken avbryter.`);
       return 1;
@@ -919,9 +1302,13 @@ async function main() {
   }
   const korstabell = lasJson(FIL_KORSTABELL);
   const rapport = lasVagvalidering();
+  const univers = lasUnivers(); // våg 96 D3: serierna (d)+(e)
+  const vagj = lasVagJson(); // våg 96 D3: serien (f)
   for (const k of [
     { namn: "korstabell-grund.json", datum: korstabell.skapad },
     { namn: "vagvalidering-SENASTE.md", datum: rapport.domdatum },
+    { namn: "bolagsunivers.json", datum: univers.datum },
+    { namn: "vagvalidering-SENASTE.json", datum: vagj.domdatum },
   ].filter((k) => k.datum)) {
     const alder = alderDagar(k.datum);
     if (alder > MAX_ALDER_DAGAR) {
@@ -930,24 +1317,38 @@ async function main() {
     }
   }
 
-  // 2) Determinism-seed (dokumenterad): källfilernas md5 + månadsnyckel ur data
+  // 2) Determinism-seed (dokumenterad): källfilernas md5 + månadsnyckel ur data.
+  //    Våg 96 D3: det GLOBALA seedet är oförändrat (våg 95:s kö-rader skall
+  //    förbli verifierbara) — serierna (d)-(f) bär sina EGNA käll-arrayer
+  //    (fil+md5, ingår i kandidat-md5) utöver det globala kvittot.
   const kallor = [
     { fil: "data/portfolj-system/korstabell-grund.json", md5: md5Fil(FIL_KORSTABELL), datum: korstabell.skapad },
     { fil: "data/rapporter/vagvalidering-SENASTE.md", md5: md5Fil(FIL_RAPPORT), datum: rapport.domdatum },
     { fil: "data/varumarke.json", md5: md5Fil(FIL_VARUMARKE) },
   ];
+  const kallorUnivers = [
+    { fil: "data/portfolj-system/bolagsunivers.json", md5: md5Fil(FIL_UNIVERS), datum: univers.datum },
+    { fil: "data/varumarke.json", md5: md5Fil(FIL_VARUMARKE) },
+  ];
+  const kallorVagJson = [
+    { fil: "data/rapporter/vagvalidering-SENASTE.json", md5: md5Fil(FIL_VAGJSON), datum: vagj.domdatum },
+    { fil: "data/varumarke.json", md5: md5Fil(FIL_VARUMARKE) },
+  ];
   const manadsnyckel = `${korstabell.skapad.slice(0, 7)}|${rapport.domdatum.slice(0, 7)}`;
   const seed = md5(kallor.map((k) => k.md5).join(":") + ":" + manadsnyckel);
 
-  // 3) Tre evergreen-kandidater (fasta serier — urvalet ÄR deterministiskt)
+  // 3) Sex evergreen-kandidater (fasta serier — urvalet ÄR deterministiskt)
   const kandidater = [
     byggBranschmedianer(korstabell, seed, kallor),
     byggForskningslaget(korstabell, seed, kallor),
     byggVagkartan(rapport, seed, kallor),
+    byggKassaflodesanalys(univers, seed, kallorUnivers),
+    byggUtdelningar(univers, seed, kallorUnivers),
+    byggBoerspsykologi(vagj, seed, kallorVagJson),
   ];
 
   console.log(
-    `Färskhet: korstabell ${korstabell.skapad} (${String(alderDagar(korstabell.skapad))} d) · vågvalidering ${rapport.domdatum} (${String(alderDagar(rapport.domdatum))} d) — gräns ${String(MAX_ALDER_DAGAR)} d`,
+    `Färskhet: korstabell ${korstabell.skapad} (${String(alderDagar(korstabell.skapad))} d) · vågvalidering ${rapport.domdatum} (${String(alderDagar(rapport.domdatum))} d) · bolagsunivers ${univers.datum ?? "?"} (${univers.datum ? String(alderDagar(univers.datum)) : "?"} d) · våg-JSON ${vagj.domdatum ?? "?"} (${vagj.domdatum ? String(alderDagar(vagj.domdatum)) : "?"} d) — gräns ${String(MAX_ALDER_DAGAR)} d`,
   );
   console.log(`Seed: ${seed} (md5 av käll-md5:arna + månadsnyckel "${manadsnyckel}" ur underlagens egna datum)`);
   console.log("");
@@ -992,7 +1393,7 @@ async function main() {
       }
       return 0;
     }
-    console.log(`TORR: 3 kandidater genererade, 0 rader skrivna. Kör med --skriv för produktion (av=${AV_PRODUKTION}), --sond för testomgång eller --visa [slug] för hela bodyn.`);
+    console.log(`TORR: ${String(fardiga.length)} kandidater genererade, 0 rader skrivna. Kör med --skriv för produktion (av=${AV_PRODUKTION}), --sond för testomgång eller --visa [slug] för hela bodyn.`);
     console.log(`GRANSKNINGSGRINDEN: samtliga kandidater bär status "utkast" + granskningsunderlag (källor fil+md5, dataurdrag värde+datum, kontrollresultat) — publicering sker ENBART av människan via exportvägen.`);
     return 0;
   }
@@ -1026,7 +1427,7 @@ async function main() {
     return 0;
   }
 
-  // --sond: EN testomgång — skriv 3 rader av=Sond-M9-Test, läs TILLBAKA, städa, verifiera 0.
+  // --sond: EN testomgång — skriv alla kandidatrader av=Sond-M9-Test, läs TILLBAKA, städa, verifiera 0.
   console.log(`── TESTOMGÅNG (av=${AV_SOND}) — skriv → återläs → städa → verifiera ──`);
   const totaltFore = await raknaRader(rest);
   const skrivna = [];

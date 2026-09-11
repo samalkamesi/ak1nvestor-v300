@@ -25,6 +25,9 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // VÅG 96 D1 (prestanda våg 3): skickar inte X-Powered-By: Next.js —
+  // ett par header-bytes mindre per svar + mindre fingeravtryck av servern.
+  poweredByHeader: false,
   // VÅG 86 (KARTA §5, flytt-avvikelse #2): aktiverar src/app/global-not-found.js
   // som global 404 för HELT omatchade URL:er — nödvändigt med flera rot-layouter
   // ((huvud)/(en)/(ar)) där ingen gemensam rot-layout finns. Flaggnamn verifierat

@@ -1464,7 +1464,7 @@ function StudioMarkdown({
         delar.push(
           <pre
             key={`kod-${i}`}
-            className="mt-3 overflow-x-auto rounded-md border border-[#30363D] bg-[#0D1117] p-3 font-mono text-xs leading-relaxed text-[#E6EDF3]"
+            className="mt-3 overflow-x-auto rounded-md border border-[#30363D] bg-[#0D1117] p-3 font-mono text-xs leading-relaxed text-[#E6EDF3] [-webkit-overflow-scrolling:touch]"
           >
             {sprak && <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">{sprak}</div>}
             <code>{sok ? markeraVanlig(kropp, sok.fras, sok.aktiv, sok.raknare) : kropp}</code>
@@ -1520,7 +1520,10 @@ function StudioMarkdown({
     });
     return delar;
   }, [text, markera]);
-  return <div className="text-sm text-[#E6EDF3]">{block}</div>;
+  /* VÅG 96 D2 (b): telefon-läsbarhet — 15 px + rymlig radhöjd på mobil
+     (sm:text-sm återställer), brödtext max 65 ch (max-w-prose, sm: full
+     bredd) och kodblock scrollas horisontellt med touch-momentum ovan. */
+  return <div className="max-w-prose text-[15px] leading-relaxed text-[#E6EDF3] sm:max-w-none sm:text-sm">{block}</div>;
 }
 
 // ── Inställningar-drawerns radioregel (52 px tryckyta) ───────────────────────
@@ -1847,7 +1850,7 @@ function VerktygsKortVy({
     >
       <button
         onClick={() => onVaxla(kort.id)}
-        className="flex w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-[#161B22]"
+        className="flex min-h-[52px] w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-[#161B22] sm:min-h-0"
         title={kort.beskrivning ?? kortRubrik(kort)}
       >
         {kort.öppen ? (
@@ -2315,7 +2318,7 @@ function AndringsPanel({
           <li key={f.sokvag} className="border-b border-[#21262D] last:border-b-0">
             <button
               onClick={() => onVaxlaFil(f.sokvag)}
-              className="flex w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-[#161B22]"
+              className="flex min-h-[52px] w-full items-center gap-1.5 px-2.5 py-1.5 text-left transition-colors hover:bg-[#161B22] sm:min-h-0"
               title={f.sokvag}
             >
               {f.öppen ? (
@@ -2631,7 +2634,7 @@ function TjansteSektioner({
               onClick={() => onVaxla(t.namn, !s.oppen)}
               aria-expanded={s.oppen}
               title={`${t.etikett} — ${s.oppen ? "fäll ihop" : "fäll ut och läs färskt"} (uppdateras var 30:e s medan öppen)`}
-              className="flex w-full items-center gap-1.5 px-3 py-2 text-left transition-colors hover:bg-[#161B22]"
+              className="flex min-h-[52px] w-full items-center gap-1.5 px-3 py-2 text-left transition-colors hover:bg-[#161B22] sm:min-h-0"
             >
               {s.oppen ? (
                 <ChevronDown className="h-3 w-3 shrink-0 text-[#8B949E]" />
@@ -6482,6 +6485,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
     if (palettOppen) palettInputRef.current?.focus();
   }, [palettOppen]);
 
+  /* ── VÅG 96 D2 (c): iOS-tangentbord — när skrivfältet fokuseras och det
+     visuella fönstret krymper (tangentbordet öppnas) hålls fältet synligt
+     via visualViewport-resize + scrollIntoView("nearest"). Skonsamt: rör
+     bara scrollen, aldrig layouten; desktop (utan resize-event) orörd. ── */
+  React.useEffect(() => {
+    const vy = window.visualViewport;
+    if (!vy) return;
+    const justera = () => {
+      const yta = ytaRef.current;
+      if (yta && document.activeElement === yta) {
+        yta.scrollIntoView({ block: "nearest", behavior: "auto" });
+      }
+    };
+    vy.addEventListener("resize", justera);
+    return () => vy.removeEventListener("resize", justera);
+  }, []);
+
   /** Infoga en uppladdad sökväg i prompten ("Titta på …"). */
   const infogaSokvag = (sokvag: string, typ: string) => {
     const led = typ === "bild" ? `Titta på bilden ${sokvag} — ` : `Läs filen ${sokvag} — `;
@@ -6531,7 +6551,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         <button
           onClick={nyTabb}
           title={`Nytt samtal — frisk agent-session (${tabbar.length}/${MAX_TABBAR} · egen zcode-process på servern)`}
-          className="flex h-9 w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#2EA043]"
+          className="flex h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#2EA043] sm:h-9"
         >
           <Plus className="h-4 w-4" />
           Nytt samtal
@@ -6556,7 +6576,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             >
               <button
                 onClick={() => valjTabb(t.id)}
-                className="flex min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left"
+                className="flex min-h-[52px] min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left sm:min-h-0"
                 aria-current={arAktiv ? "page" : undefined}
               >
                 <span className="flex w-full items-center gap-1.5">
@@ -6589,7 +6609,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         })}
 
         {/* Äldre sessioner (server-listan) — klick = resume i nytt samtal */}
-        <div className="flex items-center justify-between px-3 pb-1 pt-3">
+        <div className="mt-2 flex items-center justify-between border-t border-[#21262D] px-3 pb-1 pt-3 sm:mt-0 sm:border-t-0">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
             Äldre sessioner
           </p>
@@ -6617,7 +6637,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <button
                 onClick={() => oppnaITabb(s.sessionId, s.titel)}
                 disabled={sessionJobbar !== ""}
-                className="flex min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left disabled:cursor-default"
+                className="flex min-h-[52px] min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left disabled:cursor-default sm:min-h-0"
               >
                 <span className="w-full truncate text-[13px] leading-snug text-[#8B949E]">
                   {s.titel || s.sessionId.slice(0, 18) + "…"}
@@ -6715,18 +6735,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
           <aside
             role="dialog"
             aria-label="Samtalsmeny"
-            className="fixed inset-y-0 left-0 z-50 flex w-[280px] flex-col border-r border-[#30363D] bg-[#010409] shadow-2xl md:hidden"
+            className="fixed inset-y-0 left-0 z-50 flex w-[85vw] flex-col border-r border-[#30363D] bg-[#010409] shadow-2xl md:hidden"
           >
-            <div className="flex items-center justify-end px-2 py-2">
-              <button
-                onClick={() => setMobilSidebar(false)}
-                title="Stäng (Esc)"
-                aria-label="Stäng menyn"
-                className="flex h-9 w-9 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#0D1117] hover:text-[#E6EDF3]"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
+            {/* VÅG 96 D2 (d): STÄNG-rad överst — tydlig fullbreddstryckyta
+                (kunden är telefon-först: menyn ska gå att stänga utan jakt). */}
+            <button
+              onClick={() => setMobilSidebar(false)}
+              title="Stäng (Esc)"
+              className="flex min-h-[52px] w-full items-center justify-between gap-2 border-b border-[#30363D] px-3 text-sm font-semibold text-[#8B949E] transition-colors hover:bg-[#0D1117] hover:text-[#E6EDF3]"
+            >
+              Stäng menyn
+              <X className="h-4 w-4" aria-hidden />
+            </button>
             {sidebarInnehall}
           </aside>
         </>
@@ -6736,13 +6756,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
       <div className="flex min-w-0 flex-1 flex-col bg-[#161B22]">
         {/* Header: hamburger (mobil) + sidebar-toggle (desktop) + titel + status
             + sök/palett/panel/inställningar/mer. */}
-        <header className="studio-safe-top z-20 flex h-12 shrink-0 items-center gap-1 border-b border-[#30363D] bg-[#0D1117] px-2 sm:px-3">
+        <header className="studio-safe-top z-20 flex h-[52px] shrink-0 items-center gap-1 border-b border-[#30363D] bg-[#0D1117] px-2 sm:h-12 sm:px-3">
           <button
             onClick={() => setMobilSidebar(true)}
             title="Samtalsmeny"
             aria-label="Öppna samtalsmenyn"
             aria-expanded={mobilSidebar}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] md:hidden"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8 md:hidden"
           >
             <Menu className="h-4 w-4" />
           </button>
@@ -6784,7 +6804,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             onClick={() => oppnaStyrelseDialog()}
             title="Styrelsen 🏛 — konkalla AI-styrelsen (5 roller diskuterar och beslutar)"
             aria-label="Styrelsen"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <Landmark className="h-4 w-4" />
           </button>
@@ -6792,7 +6812,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             onClick={() => setSokOppen(true)}
             title="Sök i chatten (highlight + pilnavigering)"
             aria-label="Sök i chatten"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <Search className="h-4 w-4" />
           </button>
@@ -6812,7 +6832,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             title="Mål · kontext · terminal (höger panel)"
             aria-label="Växla höger panel"
             aria-expanded={panelOppen || mobilPanel}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <PanelRight className={cn("h-4 w-4", !panelOppen && "text-[#484F58]")} />
           </button>
@@ -6820,7 +6840,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             onClick={oppnaInstallningar}
             title="Inställningar — modell, läge, tankestyrka"
             aria-label="Inställningar"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <Settings className="h-4 w-4" />
           </button>
@@ -6829,7 +6849,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             title="Mer — filer, minne, färdigheter, verktyg, export m.m."
             aria-label="Mer"
             aria-expanded={menyOppen}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <MoreHorizontal className="h-4 w-4" />
           </button>
@@ -6866,7 +6886,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 disabled={sokTräffar.length === 0}
                 title="Föregående träff (Skift+Enter)"
                 aria-label="Föregående träff"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] disabled:opacity-40"
+                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
               >
                 <ArrowUp className="h-4 w-4" />
               </button>
@@ -6875,7 +6895,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 disabled={sokTräffar.length === 0}
                 title="Nästa träff (Enter)"
                 aria-label="Nästa träff"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] disabled:opacity-40"
+                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
               >
                 <ArrowDown className="h-4 w-4" />
               </button>
@@ -6886,7 +6906,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 }}
                 title="Stäng sök (Esc)"
                 aria-label="Stäng sök"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -6962,7 +6982,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       setBortaKortOppet(false);
                       hoppaNerChatt();
                     }}
-                    className="shrink-0 rounded-md bg-[#238636] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#2EA043]"
+                    className="min-h-[44px] shrink-0 rounded-md bg-[#238636] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#2EA043] sm:min-h-0"
                   >
                     Visa
                   </button>
@@ -7094,7 +7114,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           </span>
                           DU
                         </p>
-                        <p className="whitespace-pre-wrap break-words text-sm leading-relaxed text-[#E6EDF3]">
+                        <p className="whitespace-pre-wrap break-words text-[15px] leading-relaxed text-[#E6EDF3] sm:text-sm">
                           {sokFras.trim()
                             ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
                             : m.text}
@@ -7368,7 +7388,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           disabled={svarJobbar}
                           title={a.beskrivning || a.namn}
                           className={cn(
-                            "rounded-md px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50",
+                            "min-h-[52px] rounded-md px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50 sm:min-h-0",
                             a.optionId === "deny"
                               ? "border border-[#DA3633]/50 text-[#F85149] hover:bg-[#DA3633]/10"
                               : a.optionId === "allow_project"
@@ -7391,7 +7411,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         }}
                         disabled={svarJobbar}
                         title={`Spara en "alltid tillåt"-regel för ${permission.verktyg} i denna webbläsare (localStorage) och tillåt denna begäran`}
-                        className="rounded-md border border-[#238636]/40 px-3 py-1.5 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
+                        className="min-h-[52px] rounded-md border border-[#238636]/40 px-3 py-1.5 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50 sm:min-h-0"
                       >
                         ⛨ Alltid tillåta {permission.verktyg}
                       </button>
@@ -7423,7 +7443,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             key={v}
                             onClick={() => void svaraFraga(fraga.requestId, v)}
                             disabled={svarJobbar}
-                            className="rounded-md border border-[#238636]/60 px-3 py-1.5 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
+                            className="min-h-[52px] rounded-md border border-[#238636]/60 px-3 py-1.5 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50 sm:min-h-0"
                           >
                             {v}
                           </button>
@@ -7442,12 +7462,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           }}
                           rows={1}
                           placeholder="Svara agenten… (Enter skickar)"
-                          className="max-h-28 min-h-[38px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#161B22] px-2.5 py-2 text-sm leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                          className="max-h-28 min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#161B22] px-2.5 py-2 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] sm:min-h-[38px] sm:text-sm"
                         />
                         <button
                           onClick={() => void svaraFraga(fraga.requestId, fragSvar.trim())}
                           disabled={!fragSvar.trim() || svarJobbar}
-                          className="h-9 shrink-0 rounded-md bg-[#238636] px-3 text-xs font-semibold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
+                          className="h-[52px] shrink-0 rounded-md bg-[#238636] px-3 text-xs font-semibold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50 sm:h-9"
                         >
                           Svara
                         </button>
@@ -7478,7 +7498,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <button
               onClick={hoppaNerChatt}
               title="Hoppa till senaste — autoscrollen återupptas"
-              className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-1.5 text-xs font-semibold text-[#E6EDF3] shadow-lg transition-colors hover:border-[#58A6FF]"
+              className="absolute bottom-4 left-1/2 z-20 flex min-h-[44px] -translate-x-1/2 items-center gap-1.5 rounded-md border border-[#30363D] bg-[#0D1117] px-4 py-2 text-xs font-semibold text-[#E6EDF3] shadow-lg transition-colors hover:border-[#58A6FF] sm:bottom-3 sm:min-h-0 sm:px-3.5 sm:py-1.5"
             >
               <ArrowDown className="h-3.5 w-3.5 text-[#58A6FF]" />
               Nytt
@@ -7516,7 +7536,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         )}
 
-        {/* ══ INPUT — STICKY BOTTOM (#0D1117, "Skriv här…", grön →-knapp) ══ */}
+        {/* ══ INPUT — STICKY BOTTOM (#0D1117, "Skriv här…", grön →-knapp).
+            VÅG 96 D2 (c): studio-safe-bottom = env(safe-area-inset-bottom),
+            text-base på mobil (16 px — iOS zoomar ej fältet vid fokus) och
+            visualViewport-lyssnaren ovan håller fältet ovanför tangent-
+            bordet. Auto-grow (hojdpassaYta) består. ══ */}
         <div className="studio-safe-bottom z-10 shrink-0 border-t border-[#30363D] bg-[#0D1117]">
           <div className="mx-auto w-full max-w-3xl px-3 py-2.5 sm:px-4 sm:py-3">
             {draÖver && (
@@ -7577,7 +7601,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           onMouseEnter={() => setSlashIndex(i)}
                           onClick={() => valjSlash(k)}
                           className={cn(
-                            "flex min-h-[44px] w-full items-center gap-2.5 px-3 py-2.5 text-left transition-colors",
+                            "flex min-h-[52px] w-full items-center gap-2.5 px-3 py-2.5 text-left transition-colors sm:min-h-[44px]",
                             i === slashIndex ? "bg-[#58A6FF]/10" : "hover:bg-[#0D1117]",
                           )}
                         >
@@ -7641,7 +7665,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                                 ytaRef.current?.focus();
                               }}
                               title={p.text}
-                              className="flex min-h-[44px] min-w-0 flex-1 items-center px-3 py-2 text-left transition-colors hover:bg-[#0D1117]"
+                              className="flex min-h-[52px] min-w-0 flex-1 items-center px-3 py-2 text-left transition-colors hover:bg-[#0D1117] sm:min-h-[44px]"
                             >
                               <span className="line-clamp-2 min-w-0 flex-1 whitespace-pre-wrap break-words text-xs leading-snug text-[#E6EDF3]">
                                 {p.text}
@@ -7682,7 +7706,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         setUploadMenyOppen(false);
                         filInputRef.current?.click();
                       }}
-                      className="flex min-h-11 w-full items-center gap-2.5 px-3 py-2 text-left text-sm text-[#E6EDF3] transition-colors hover:bg-[#0D1117]"
+                      className="flex min-h-[52px] w-full items-center gap-2.5 px-3 py-2 text-left text-sm text-[#E6EDF3] transition-colors hover:bg-[#0D1117] sm:min-h-11"
                     >
                       <FileText className="h-4 w-4 shrink-0 text-[#8B949E]" />
                       Fil…
@@ -7694,7 +7718,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         setUploadMenyOppen(false);
                         mappInputRef.current?.click();
                       }}
-                      className="flex min-h-11 w-full items-center gap-2.5 px-3 py-2 text-left text-sm text-[#E6EDF3] transition-colors hover:bg-[#0D1117]"
+                      className="flex min-h-[52px] w-full items-center gap-2.5 px-3 py-2 text-left text-sm text-[#E6EDF3] transition-colors hover:bg-[#0D1117] sm:min-h-11"
                     >
                       <FolderTree className="h-4 w-4 shrink-0 text-[#8B949E]" />
                       Mapp…
@@ -7712,7 +7736,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   title="Ladda upp fil eller mapp"
                   aria-label="Ladda upp"
                   aria-expanded={uploadMenyOppen}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
+                  className="flex h-[52px] w-11 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
                 >
                   {laddarUpp ? <Loader2 className="h-4 w-4 animate-spin" /> : <Paperclip className="h-4 w-4" />}
                 </button>
@@ -7776,7 +7800,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   rows={1}
                   placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
                   title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten"
-                  className="min-h-11 flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-sm leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                  className="min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] sm:min-h-11 sm:text-sm"
                 />
                 <button
                   type="button"
@@ -7789,7 +7813,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   }}
                   title={prompt.trim() ? "Spara prompten i biblioteket ⭐" : "Öppna promptbiblioteket ⭐"}
                   aria-label="Promptbiblioteket"
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#D29922] hover:text-[#D29922]"
+                  className="flex h-[52px] w-11 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-md border border-[#30363D] text-[#8B949E] transition-colors hover:border-[#D29922] hover:text-[#D29922]"
                 >
                   <Star className="h-4 w-4" />
                 </button>
@@ -7799,7 +7823,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     onClick={stoppa}
                     title="Stoppa agenten"
                     aria-label="Stoppa agenten"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#DA3633] p-0 text-white transition-colors hover:bg-[#B62324]"
+                    className="flex h-[52px] w-11 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-md bg-[#DA3633] p-0 text-white transition-colors hover:bg-[#B62324]"
                   >
                     <CircleStop className="h-5 w-5" />
                   </button>
@@ -7810,7 +7834,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     disabled={!prompt.trim()}
                     title="Skicka (Enter)"
                     aria-label="Skicka"
-                    className="flex h-11 w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40"
+                    className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40 sm:h-11 sm:w-12"
                   >
                     <ArrowRight className="h-5 w-5" />
                   </button>
@@ -8125,7 +8149,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setMobilPanel(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng panelen"
-                className="flex h-9 w-9 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -8184,7 +8208,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           <button
                             onClick={() => void pausaMal()}
                             disabled={malPausar}
-                            className="min-h-11 rounded-md border border-[#D29922]/50 px-3 text-xs font-semibold text-[#D29922] transition-colors hover:bg-[#D29922]/10 disabled:opacity-50"
+                            className="min-h-[52px] rounded-md border border-[#D29922]/50 px-3 text-xs font-semibold text-[#D29922] transition-colors hover:bg-[#D29922]/10 disabled:opacity-50 sm:min-h-11"
                           >
                             Pausa
                           </button>
@@ -8192,14 +8216,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           <button
                             onClick={() => void aterupptaMal()}
                             disabled={malPausar}
-                            className="min-h-11 rounded-md border border-[#238636]/60 px-3 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
+                            className="min-h-[52px] rounded-md border border-[#238636]/60 px-3 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50 sm:min-h-11"
                           >
                             Återuppta
                           </button>
                         ) : null}
                         <button
                           onClick={oppnaMalDialog}
-                          className="flex min-h-11 items-center gap-1 rounded-md border border-[#30363D] px-3 text-xs font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22]"
+                          className="flex min-h-[52px] items-center gap-1 rounded-md border border-[#30363D] px-3 text-xs font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22] sm:min-h-11"
                         >
                           <Pencil className="h-3 w-3" />
                           Redigera
@@ -8207,7 +8231,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         <button
                           onClick={() => void rensaMaler()}
                           disabled={malSparar}
-                          className="flex min-h-11 items-center gap-1 rounded-md border border-[#DA3633]/40 px-3 text-xs font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50"
+                          className="flex min-h-[52px] items-center gap-1 rounded-md border border-[#DA3633]/40 px-3 text-xs font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50 sm:min-h-11"
                         >
                           <X className="h-3 w-3" />
                           Rensa
@@ -8221,7 +8245,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       </p>
                       <button
                         onClick={() => setMalDialogOppen(true)}
-                        className="mt-2 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043]"
+                        className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] sm:min-h-11"
                       >
                         <Target className="h-3.5 w-3.5" />
                         Sätt ett mål
@@ -8258,7 +8282,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <button
                     onClick={() => void komprimera()}
                     disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
-                    className="mt-2 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-md border border-[#238636]/50 px-3 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
+                    className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md border border-[#238636]/50 px-3 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50 sm:min-h-11"
                   >
                     {sessionJobbar === "compact" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Shrink className="h-4 w-4" />}
                     Komprimera
@@ -8421,7 +8445,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 disabled={tradLaddar}
                 title="Uppdatera trädet"
                 aria-label="Uppdatera trädet"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] disabled:opacity-50"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-50"
               >
                 <RefreshCw className={cn("h-3.5 w-3.5", tradLaddar && "animate-spin")} />
               </button>
@@ -8429,7 +8453,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setVisaFiler(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng filträdet"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -8534,7 +8558,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setFilVisning(null)}
                 title="Stäng (Esc)"
                 aria-label="Stäng förhandsgranskningen"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -8612,7 +8636,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setVisaNotiser(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng notishistoriken"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -8723,7 +8747,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setMenyOppen(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng menyn"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-10 sm:w-10"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -8915,7 +8939,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       disabled={agenterLaddar}
                       title="Uppdatera (session/subagents)"
                       aria-label="Uppdatera agenter"
-                      className="flex h-9 w-9 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] disabled:opacity-50"
+                      className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-50"
                     >
                       <RefreshCw className={cn("h-3.5 w-3.5", agenterLaddar && "animate-spin")} />
                     </button>
@@ -8955,7 +8979,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             <button
                               onClick={() => void avbrytAgent(a.barnSessionId)}
                               title="Avbryt (session/cancelBackgroundTask)"
-                              className="flex min-h-11 shrink-0 items-center rounded-md border border-[#DA3633]/40 px-2 text-[10px] text-[#F85149] transition-colors hover:bg-[#DA3633]/10"
+                              className="flex min-h-[52px] shrink-0 items-center rounded-md border border-[#DA3633]/40 px-2 text-[10px] text-[#F85149] transition-colors hover:bg-[#DA3633]/10 sm:min-h-11"
                             >
                               Avbryt
                             </button>
@@ -9109,7 +9133,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setInstallningarOppen(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng inställningarna"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -9250,7 +9274,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setMalDialogOppen(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng mål-dialogen"
-                className="shrink-0 rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="shrink-0 flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -9337,7 +9361,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={stangStyrelse}
                 title="Stäng (Esc)"
                 aria-label="Stäng styrelsen"
-                className="shrink-0 rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="shrink-0 flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -9398,7 +9422,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <div className="flex items-center justify-end gap-2 border-t border-[#30363D] px-4 py-3">
                 <button
                   onClick={stangStyrelse}
-                  className="rounded-md px-4 py-2 text-xs font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                  className="min-h-[52px] rounded-md px-4 py-2 text-xs font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:min-h-0"
                 >
                   Avbryt
                 </button>
@@ -9406,7 +9430,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   onClick={() => void startaStyrelse()}
                   disabled={!styrelseFraga.trim() || styrelseStartar}
                   title="Konkalla styrelsen — fem roller diskuterar och beslutar (Ctrl+Enter)"
-                  className="flex items-center gap-1.5 rounded-md bg-[#238636] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
+                  className="flex min-h-[52px] items-center gap-1.5 rounded-md bg-[#238636] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50 sm:min-h-0"
                 >
                   {styrelseStartar ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Landmark className="h-3.5 w-3.5" />}
                   Konkalla styrelsen
@@ -9436,7 +9460,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onClick={() => setVisaGenvagar(false)}
                 title="Stäng (Esc)"
                 aria-label="Stäng genvägarna"
-                className="rounded-md p-1 text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+                className="flex h-[52px] w-11 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
               >
                 <X className="h-4 w-4" />
               </button>

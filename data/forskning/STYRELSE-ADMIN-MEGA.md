@@ -832,3 +832,29 @@ DIFFERENTIALDIAGNOS (inte mer UI — hjärnan):
   md5-kvitton, ALDRIG investeringsråd).
 
 KVD: tsc 36 · build 0 · E2E-regressioner gröna · deploy + prodcheck.
+
+### VÅG 96 TILLÄGG — R2-SKÄRPNING + AUTONOM VERKSTÄLLNAD (2026-09-11)
+
+Kunddirektiv: "ai styrelse agenter teamet bestämmer allt och helt
+autonomt jobbar, jag har ej [behövt] beslutet att göra, ni har full
+access till allt." → R2 SKÄRPS: styrelsen beslutar OCH verkställer
+ALLT verkställbart autonomt. Enda undantaget = fysiska handlingar i
+system som kräver kundens inloggning/hand Underskrift (registrar-DNS,
+bank/Stripe-identitet, juristavtal, kundens egna Z.AI-konto) — dessa
+listas som "KUNDENS HÄNDER" (handlinger, EJ beslut) med färdigpackad
+instruktion.
+
+VERKSTÄLLT AUTONOMT (2026-09-11):
+- SQL-tabellen: REDAN KLAR (system_events lever, m9 skriver till den;
+  den gamla påminnelsen var inaktuell — INLOGGNING-ADMIN §"städades
+  med service-nyckel").
+- REDAKTOR_PASSWORD: genererad + satt i serverns .env.production.local
+  (chmod 600) + verifierad: redaktörslogin 200 med signerad kaka.
+- SESSION_SECRET: fanns sedan tidigare våg — verifierad aktiv.
+
+KUNDENS HÄNDER (färdigpackat, väntar på fysisk åtgärd — INGA beslut):
+- Domänen lab.→ak1nvestor.com: DNS A-record hos one.com (styrelsen
+  förbereder certbot+nginx samma timme som kunden flippar).
+- API-nyckelrotation: kundens Z.AI-konto (nyckeln lever ENDAST där +
+  serverns config.json chmod 600).
+- Stripe/betalning + jurist K-B2B: kräver kundens bank-ID/underskrift.

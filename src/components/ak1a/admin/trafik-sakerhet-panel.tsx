@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   Activity,
+  AlertTriangle,
   CheckCircle2,
   Eye,
   Flame,
@@ -47,6 +48,7 @@ type TrafikSvar = {
   senaste30d?: { visningar: number; unika: number; perDag: { dag: string; visningar: number; unika: number }[] };
   topSidor?: { namn: string; antal: number }[];
   topKallor?: { namn: string; antal: number }[];
+  felgranser24h?: { totalt: number; chunk: number; ovriga: number; topSidor?: { namn: string; antal: number }[] };
   botAndel?: number;
   stickprovsfaktor?: number;
   urvalNotering?: string;
@@ -108,7 +110,8 @@ function StatTabell({ rader, tomt }: { rader: { namn: string; antal: number }[];
     <div className="space-y-1.5">
       {rader.map((r) => (
         <div key={r.namn} className="flex items-center gap-2">
-          <span className="w-40 truncate font-mono text-[11px] text-muted-foreground" title={r.namn}>
+          {/* våg 104: relativ bredd på mobil, fast w-40 från sm och uppåt */}
+          <span className="w-[45%] truncate font-mono text-[11px] text-muted-foreground sm:w-40" title={r.namn}>
             {r.namn}
           </span>
           <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
@@ -191,7 +194,7 @@ export function TrafikSakerhetPanel() {
           Live-statistiken och säkerhetsloggen skyddas av ADMIN_PASSWORD — lämnad i
           headern x-admin-password, samma mönster som övriga admin-rutter.
         </p>
-        <div className="mt-3 flex gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Input
             type="password"
             value={losenord}
@@ -200,7 +203,7 @@ export function TrafikSakerhetPanel() {
             placeholder="Admin-lösenord"
             className="max-w-xs bg-white/10 text-[#EDE6D6]"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button onClick={lasUpp} className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -216,7 +219,7 @@ export function TrafikSakerhetPanel() {
     <div className="space-y-5">
       {/* ── Rubrikrad: live-indikator + manuell uppdatering ── */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
@@ -226,7 +229,7 @@ export function TrafikSakerhetPanel() {
             LIVE · 60 s
           </Badge>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           {senasteUppdatering && (
             <span className="text-[10px] text-muted-foreground tabular-nums">
               uppdaterad {tidSedan(new Date(senasteUppdatering).toISOString())}
@@ -291,7 +294,7 @@ export function TrafikSakerhetPanel() {
       <div className="grid gap-4 lg:grid-cols-2">
         {/* ── Trafik: sparkline + 7/30 d ── */}
         <div className="rounded-lg border border-gold/30 bg-card p-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h4 className="font-serif text-sm font-bold">Sidvisningar per timme — senaste 24 h</h4>
             <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
               bot-andel {sv(trafik?.botAndel)} %
@@ -303,7 +306,8 @@ export function TrafikSakerhetPanel() {
             <span>−12 h</span>
             <span>nu</span>
           </div>
-          <div className="mt-3 grid grid-cols-2 gap-3 border-t border-border pt-3 text-xs">
+          {/* våg 104: en kolumn på mobil — talraderna är för långa för halv bredd */}
+          <div className="mt-3 grid grid-cols-1 gap-3 border-t border-border pt-3 text-xs sm:grid-cols-2">
             <div>
               <p className="font-semibold">7 dagar</p>
               <p className="text-muted-foreground tabular-nums">
@@ -338,6 +342,48 @@ export function TrafikSakerhetPanel() {
         </div>
       </div>
 
+      {/* ── Felgränser — telemetri från fel-ytorna (VÅG 101) ── */}
+      {(() => {
+        const fg = trafik?.felgranser24h;
+        const totalt = fg?.totalt ?? 0;
+        return (
+          <div className={cn("rounded-lg border bg-card p-4", totalt > 0 ? "border-orange-500/40" : "border-gold/30")}>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5">
+                <AlertTriangle className={cn("h-4 w-4", totalt > 0 ? "text-orange-500" : "text-gold")} />
+                <h4 className="font-serif text-sm font-bold">Felgränser — senaste 24 h</h4>
+              </div>
+              {totalt > 0 ? (
+                <Badge variant="outline" className="border-orange-500/40 text-[10px] text-orange-600 dark:text-orange-400">
+                  {sv(totalt)} felgräns{totalt === 1 ? "" : "er"}
+                </Badge>
+              ) : (
+                <Badge variant="outline" className="border-bull/40 text-[10px] text-green-700 dark:text-green-400">
+                  Inga fel inrapporterade
+                </Badge>
+              )}
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground tabular-nums">
+              {sv(fg?.chunk)} chunk-fel (självläkande) · {sv(fg?.ovriga)} övriga app-fel
+            </p>
+            {(fg?.topSidor ?? []).length > 0 && (
+              <div className="mt-3">
+                <h5 className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  Topp-felsidor (24 h)
+                </h5>
+                <div className="mt-2">
+                  <StatTabell rader={fg?.topSidor ?? []} tomt="" />
+                </div>
+              </div>
+            )}
+            <p className="mt-3 border-t border-border pt-2 text-[10px] leading-relaxed text-muted-foreground">
+              PII-fri telemetri: endast kategori (chunk/övrigt) + sökväg — ingen session, IP eller fel-text.
+              Chunk-fel självläker automatiskt hos besökaren (SW + cachear raderas, en omladdning per session).
+            </p>
+          </div>
+        );
+      })()}
+
       {/* ── Säkerhetspanelen ── */}
       <div className={cn("rounded-lg border bg-card p-4", alltKlart ? "border-bull/40" : "border-orange-500/40")}>
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -369,8 +415,9 @@ export function TrafikSakerhetPanel() {
         ) : (
           <>
             {/* Senaste blockeringar */}
+            {/* våg 104: minsta bredd — fem kolumner scrollar horisontellt på mobil */}
             <div className="mt-3 overflow-x-auto">
-              <table className="w-full text-left text-[11px]">
+              <table className="w-full min-w-[520px] text-left text-[11px]">
                 <thead>
                   <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
                     <th className="py-1.5 pr-3 font-semibold">Tid</th>

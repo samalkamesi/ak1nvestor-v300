@@ -102,7 +102,7 @@ const KLASS_STIL: Record<VagKlass, string> = {
   "impulsvåg": "border-bull/30 bg-bull/15 text-bull",
   korrigering: "border-bear/30 bg-bear/15 text-bear",
   basbygge: "border-gold/40 bg-gold/15 text-gold",
-  osatt: "border-border bg-muted/30 text-muted-foreground",
+  osatt: "border-[#EDE6D6]/15 bg-[#0E1B2E]/60 text-[#EDE6D6]/70",
 };
 
 /** Streckfärg i SVG:n per klass (CSS-variabler som resten av ekosystemet). */
@@ -321,7 +321,7 @@ function KurvaKort({ vy }: { vy: HorisontVy }) {
     ". Kurvformen är en pedagogisk Elliott-visualisering av vågklassen.";
 
   return (
-    <figure className="rounded-xl border border-border bg-paper/40 p-2.5">
+    <figure className="rounded-xl border border-[#EDE6D6]/15 bg-[#081120]/40 p-2.5">
       <figcaption className="font-serif text-xs font-bold">
         {vy.namn} <span className="font-normal text-muted-foreground">· {vy.span}</span>
       </figcaption>
@@ -481,7 +481,9 @@ export function VagkurvaGraf({
       </header>
       <div className="hjarlinje" aria-hidden />
 
-      <div className="bg-card p-4 sm:p-6">
+      {/* VÅG 105: marin-familjens mörka kort — temavariabeln bg-card blev LJUS
+          i ljust läge under marin-panelens cream-text = osynlig text (1.2:1). */}
+      <div className="bg-[#101b2b] p-4 sm:p-6">
         {/* Ticker-väljare — tryckytor minst 44 px */}
         {valdaAlternativ.length > 1 ? (
           <div className="mb-4 flex flex-wrap gap-1.5">
@@ -495,7 +497,7 @@ export function VagkurvaGraf({
                   "min-h-[44px] rounded-lg border px-3 text-xs font-bold transition-colors " +
                   (vald === t
                     ? "border-gold/60 bg-gold/15 text-gold"
-                    : "border-border bg-muted/30 text-muted-foreground hover:border-gold/40")
+                    : "border-[#EDE6D6]/15 bg-[#0E1B2E]/60 text-[#EDE6D6]/70 hover:border-gold/40")
                 }
               >
                 {t}
@@ -509,10 +511,10 @@ export function VagkurvaGraf({
           <div className="space-y-3" aria-busy="true">
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-5">
               {HORIZONTER.map((h) => (
-                <div key={h.id} className="h-[168px] animate-pulse rounded-xl bg-muted/50" />
+                <div key={h.id} className="h-[168px] animate-pulse rounded-xl bg-[#0E1B2E]/50" />
               ))}
             </div>
-            <p className="text-sm italic text-muted-foreground">
+            <p className="text-sm italic text-[#EDE6D6]/60">
               Läser vågmotorens läge för {vald} på fem tidshorisonter …
             </p>
           </div>
@@ -520,7 +522,7 @@ export function VagkurvaGraf({
           /* Fel/viloläge — motorn sover, aldrig dömande */
           <div className="rounded-lg border border-bear/30 bg-bear/5 p-5">
             <p className="font-serif text-sm font-bold text-bear">Vågmotorn sover — försök igen</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/60">
               {fel || "Inget underlag kunde hämtas"} — utan data finns ingen våg att rita, och
               motorn gissar aldrig.
             </p>
@@ -535,7 +537,7 @@ export function VagkurvaGraf({
         ) : (
           <div className="space-y-3">
             {data.dataPer ? (
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-[11px] text-[#EDE6D6]/60">
                 Senaste rapport i underlaget: {data.dataPer}
               </p>
             ) : null}
@@ -548,7 +550,7 @@ export function VagkurvaGraf({
             </div>
 
             {/* Källärlighet — exakt formulering, alltid synlig */}
-            <p className="border-t border-border pt-2 text-[11px] leading-relaxed text-muted-foreground">
+            <p className="border-t border-[#EDE6D6]/15 pt-2 text-[11px] leading-relaxed text-[#EDE6D6]/60">
               {VAGKURVA_KALLA_TEXT}
             </p>
           </div>

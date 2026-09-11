@@ -64,3 +64,6 @@ keepalive.sh
 .env*
 .mimosa/
 data/backups/
+
+# Våg 105: gränsnittsvaktens lokalrapporter (servern skriver sina egna)
+data/vakten/

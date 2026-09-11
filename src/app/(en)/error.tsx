@@ -2,16 +2,21 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { hanteraFelgransFel, rensaOchHem } from "@/components/ak1a/felgrans-sjalvlakning";
 import { RefreshCw, Home } from "lucide-react";
 
 /**
  * (en)-gruppens error-gräns (VÅG 85 — KARTA §5.4): KOPIA av (huvud)/error.tsx
  * (sv texter i v1 — fel-ytor är noindex-zoner; översättning = frivillig
- * förbättring efter 906=906-grinden). "use client" + window/localStorage ⇒
- * kopia, ingen delning via GlobaltSkal (server-komponent).
+ * förbättring efter 906=906-grinden). "use client" + window ⇒ kopia, ingen
+ * delning via GlobaltSkal (server-komponent) — men självläkning + rensning
+ * (VÅG 101) delas via den rena klientmodulen felgrans-sjalvlakning.ts.
  */
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
-  React.useEffect(() => { console.error(error); }, [error]);
+  React.useEffect(() => {
+    console.error(error);
+    hanteraFelgransFel(error);
+  }, [error]);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center paper-texture px-4">
       <VarumarkesLogo storlek="lg" onClick={() => window.location.href = "/"} />
@@ -23,7 +28,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
         <Button onClick={reset} className="bg-gold text-background hover:bg-gold/90">
           <RefreshCw className="mr-1 h-4 w-4" /> Försök igen
         </Button>
-        <Button variant="outline" onClick={() => { if(typeof window!=="undefined"){ localStorage.clear(); window.location.href="/"; } }}>
+        <Button variant="outline" onClick={() => { if (typeof window !== "undefined") void rensaOchHem(); }}>
           <Home className="mr-1 h-4 w-4" /> Rensa & hem
         </Button>
       </div>

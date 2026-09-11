@@ -121,7 +121,12 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
 
   const path = sannyaPath(req.nextUrl.pathname);
   const ua = sannyaUa(req.headers.get("user-agent"));
-  const ipHash = await hashIp(utvinnIp(req));
+  const ip = utvinnIp(req);
+  const ipHash = await hashIp(ip);
+  // VÅG 105: loopback = serverns egna vårdnadskällor (gränsnittsvakten,
+  // ISR-värmaren, crons via localhost) — frekvensvakten ska aldrig 429:a dem.
+  // DNA-blockeringen och övriga grenar berörs ej (loopback når aldrig dem).
+  const arLokal = ip === "127.0.0.1" || ip === "::1" || ip === "::ffff:127.0.0.1";
 
   // 1) DNA-blockering: kända scanner-mönster → 403.
   const { klass, monster } = klassificeraRequest(path, ua);
@@ -170,7 +175,7 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
   }
 
   // 2) Frekvensvakten: sekvens i glidande fönster per IP-hash.
-  const antal = registreraFlod(ipHash, nu);
+  const antal = arLokal ? 0 : registreraFlod(ipHash, nu);
   const troskel = uaKlass === "dator" || uaKlass === "mobil" ? FLOD_TROSHEL_NORMAL : FLOD_TROSHEL_BOT;
   if (antal > troskel) {
     if (farLogga(ipHash, FLOD_LOGG_MIN_MS, nu)) {

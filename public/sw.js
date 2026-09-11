@@ -2,43 +2,50 @@
  * Strategi: nätverksförst för sidor (alltid färskt innehåll), cache-först för
  * statiska assets. Offline: senast cachad sida + offline-fallback.
  *
- * VÅG 78 TELEFON-BUGGEN (styrelsens beslut): en SW-uppdatering får ALDRIG
- * tvinga fram en sidladdning eller avbryta ett pågående besök. Därför finns
- * INGEN skipWaiting() och INGEN clients.claim() här — en ny SW-version blir
- * väntande och börjar gälla först när gamla flikar stängs, dvs. vid nästa
- * naturliga navigering/nytt besök. sw.js ska heller ALDRIG få någon
- * reload-logik (varken direkt eller via postMessage till sidan).
+ * VÅG 78 TELEFON-BUGGEN (styrelsens beslut — GÄLLANDE NORM): en SW-uppdatering
+ * får ALDRIG tvinga fram en sidladdning eller avbryta ett pågående besök.
+ * Därför finns INGEN skipWaiting() och INGEN clients.claim() här — en ny
+ * SW-version blir väntande och börjar gälla först när gamla flikar stängs,
+ * dvs. vid nästa naturliga navigering/nytt besök. sw.js ska heller ALDRIG få
+ * någon reload-logik (varken direkt eller via postMessage till sidan).
+ *
+ * HISTORIK — v5:S NÖDLÄGE (VÅG 100-incidenten, AVSLUTAT): efter många
+ * deployer satt besökare fast på stala JS-delar (v3-väntande SW + gamla
+ * chunk-cachear → "Något gick fel"-felgränsen). v5 bröt EN gång den
+ * tålmodiga policyn med skipWaiting + clientsClaim för att städa ut allt
+ * omedelbart. Nödläget är över: v6 ÅTERGÅR till våg 78-normen ovan.
+ * Skyddet mot stala chunkar sköts i stället av felgränsernas SJÄLVLÄKNING
+ * (src/components/ak1a/felgrans-sjalvlakning.ts): vid chunk-laddningsfel
+ * avregistreras SW:n, ALLA cachear raderas och sidan laddas om EN gång per
+ * session — applikationen läker sig själv, SW:n tvingar aldrig omladdning.
  */
-const VERSION = "ak1a-v4";
+const VERSION = "ak1a-v7";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
 self.addEventListener("install", (event) => {
-  // Ingen skipWaiting(): uppdateringen aktiveras vid naturlig navigering,
-  // aldrig mitt i ett pågående besök (det som kan kännas som reload-loop).
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(OFFLINE_URLS)));
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(VERSION);
+      await cache.addAll(OFFLINE_URLS);
+    })()
+  );
 });
 
 self.addEventListener("activate", (event) => {
-  // Hygienen behålls (raderar gamla versioners cachear + ev. felstatussvar),
-  // men ingen clients.claim(): en sida som redan lever lämnas helt ifred.
   event.waitUntil(
-    caches
-      .keys()
-      .then((nycklar) => Promise.all(nycklar.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
-      // Hygien: radera ev. felstatussvar (404/5xx) som gamla versioner cachat
-      .then(() =>
-        caches.open(VERSION).then((cache) =>
-          cache.keys().then((reqs) =>
-            Promise.all(
-              reqs.map((req) =>
-                cache.match(req).then((res) => {
-                  if (res && res.status >= 400) return cache.delete(req);
-                })
-              )
-            )
-          )
-        )
-      )
+    (async () => {
+      // Städa ALLA äldre versioners cachear (även v5-nödlagrets "ak1a-v5").
+      const nycklar = await caches.keys();
+      await Promise.all(nycklar.filter((k) => k !== VERSION).map((k) => caches.delete(k)));
+      const cache = await caches.open(VERSION);
+      const reqs = await cache.keys();
+      await Promise.all(
+        reqs.map(async (req) => {
+          const res = await cache.match(req);
+          if (res && res.status >= 400) await cache.delete(req);
+        })
+      );
+    })()
   );
 });
 

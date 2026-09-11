@@ -24,6 +24,7 @@ import { TracerMount } from "@/components/ak1a/tracer-mount";
 import { CookieConsent } from "@/components/ak1a/cookie-consent";
 import { TrafikRapportor } from "@/components/ak1a/trafik-rapportor";
 import { typografiKlasser } from "@/lib/typografi";
+import { VersionVakt } from "@/components/ak1a/version-vakt";
 
 /**
  * GLOBALT SKAL — VÅG 84 SPIKE (agent V84-SPIKE; STYRELSE-VAG84-PLAN steg 1 +
@@ -327,6 +328,9 @@ export function GlobaltSkal({
       >
         <StagingBanner />
         <PageViewBeacon />
+        {/* VÅG 105: upptäcker stalt app-skal efter deploy (SPA-flik som aldrig
+            laddar om) — bakgrundsflikar uppdateras tyst, synliga får banner. */}
+        <VersionVakt />
         {spegel === null ? (
           <>
             <script

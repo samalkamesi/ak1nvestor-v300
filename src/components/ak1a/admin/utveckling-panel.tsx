@@ -476,7 +476,7 @@ export function UtvecklingPanel() {
   if (behoverLosen && !data) {
     return (
       <div className="rounded-xl border border-gold/30 bg-card px-5 py-6">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Lock className="h-4 w-4 text-gold" />
           <h3 className="font-serif text-lg font-bold">Utveckling — låst</h3>
         </div>
@@ -493,7 +493,7 @@ export function UtvecklingPanel() {
             placeholder="Admin-lösenord"
             className="max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button onClick={lasUpp} className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -511,7 +511,7 @@ export function UtvecklingPanel() {
     <div className="space-y-5">
       {/* Rubrikrad — LIVE + manuell uppdatering */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
@@ -521,7 +521,7 @@ export function UtvecklingPanel() {
             <Clock className="mr-1 h-3 w-3" /> LIVE · 60 s
           </Badge>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {data && (
             <span className="text-[10px] text-muted-foreground">
               Uppdaterad {new Date(data.hamtat).toLocaleTimeString("sv-SE")}
@@ -530,6 +530,7 @@ export function UtvecklingPanel() {
           <Button
             variant="outline"
             size="sm"
+            className="min-h-[44px] sm:min-h-0"
             onClick={() => {
               void hamta();
               void hamtaPuls();
@@ -594,7 +595,7 @@ export function UtvecklingPanel() {
       {/* (b) SENASTE HÄNDELSER — typ-badge, tid, meddelande */}
       <div className="rounded-lg border border-gold/30 bg-card p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Radio className="h-4 w-4 text-gold" />
             <h4 className="font-serif text-sm font-bold">Senaste händelser ({events.length})</h4>
           </div>
@@ -650,7 +651,7 @@ export function UtvecklingPanel() {
       {/* (c) UTVECKLINGSLOGG — worklog-sektioner som accordion, senaste öppen */}
       <div className="rounded-lg border border-gold/30 bg-card p-4">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <ScrollText className="h-4 w-4 text-gold" />
             <h4 className="font-serif text-sm font-bold">Utvecklingslogg ({worklog.length})</h4>
           </div>
@@ -701,7 +702,7 @@ function StatusKort({
 }) {
   return (
     <div className="rounded-lg border border-gold/30 bg-card p-4">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         {ikon}
         <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           {etikett}
@@ -815,7 +816,7 @@ function Gauge({
   const p = procent !== null && Number.isFinite(procent) ? Math.min(100, Math.max(0, procent)) : null;
   return (
     <div className="rounded-lg border border-border bg-card p-4">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         {ikon}
         <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           {etikett}
@@ -856,7 +857,7 @@ function LoadSparkline({ punkter, nuvarande }: { punkter: LoadPunkt[]; nuvarande
       : "";
   return (
     <div className="rounded-lg border border-border bg-card p-4">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <Activity className="h-4 w-4 text-gold" />
         <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           Load (1/5/15 min)
@@ -952,7 +953,7 @@ function PulsSektion({ puls, laddar }: { puls: PulsSvar | null; laddar: boolean 
     <section className="rounded-lg border border-gold/30 bg-card p-4" aria-label="Serverns puls">
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <HeartPulse className="h-4 w-4 text-gold" />
           <h4 className="font-serif text-sm font-bold">Puls 📈 — serverns hälsa</h4>
           {nyaFel && (
@@ -1057,7 +1058,7 @@ function PulsSektion({ puls, laddar }: { puls: PulsSvar | null; laddar: boolean 
           ) : (
             <div className="rounded-lg border border-border bg-card p-3">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <ListChecks className="h-4 w-4 text-gold" />
                   <h5 className="font-serif text-[13px] font-bold">
                     Cron-jobb ({puls.crons.rader})
@@ -1106,7 +1107,7 @@ function PulsSektion({ puls, laddar }: { puls: PulsSvar | null; laddar: boolean 
           ) : (
             <div className="rounded-lg border border-border bg-card p-3">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <AlertTriangle
                     className={cn(
                       "h-4 w-4",
@@ -1237,7 +1238,7 @@ function AnvandSektion({
     >
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <BarChart3 className="h-4 w-4 text-gold" />
           <h4 className="font-serif text-sm font-bold">Användning 📊 — AI-agenten</h4>
           <Badge

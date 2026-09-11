@@ -719,7 +719,7 @@ export function EkosystemPanel() {
         )}
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             <span
               className={cn(
                 "h-3 w-3 rounded-full",
@@ -806,7 +806,7 @@ export function EkosystemPanel() {
           {/* (a) Kroppsvyn — alla organs puls */}
           <div className="rounded-xl border border-gold/20 bg-card p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <HeartPulse className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Kroppsvyn — alla organs puls</h4>
               </div>
@@ -883,7 +883,7 @@ export function EkosystemPanel() {
           <div className="grid gap-4 lg:grid-cols-2">
             {/* (b) Datacentralen — cache-statistik */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Database className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Datacentralen — cachen</h4>
               </div>
@@ -920,7 +920,7 @@ export function EkosystemPanel() {
 
             {/* (c) Kurs-statistik */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <BookOpen className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Kurs-statistik</h4>
               </div>
@@ -949,7 +949,7 @@ export function EkosystemPanel() {
           {/* (d) Kvalitetsvakten — kodbokens väktare */}
           <div className="rounded-xl border border-gold/20 bg-card p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Kvalitetsvakten</h4>
                 {kvalitet?.lagge !== null && kvalitet?.lagge !== undefined ? (
@@ -1020,11 +1020,11 @@ export function EkosystemPanel() {
             <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
               <p className="text-[10px] leading-relaxed text-muted-foreground">
                 Senaste rapport på disk:{" "}
-                <code className="rounded bg-muted px-1 py-0.5 font-mono">
+                <code className="rounded bg-muted px-1 py-0.5 font-mono break-all">
                   data/rapporter/kvalitetsrapport-SENASTE.md
                 </code>{" "}
                 · manuell körning:{" "}
-                <code className="rounded bg-muted px-1 py-0.5 font-mono">node verktyg/kvalitetsvakt.mjs</code>
+                <code className="rounded bg-muted px-1 py-0.5 font-mono break-all">node verktyg/kvalitetsvakt.mjs</code>
               </p>
               <Button
                 size="sm"
@@ -1042,7 +1042,7 @@ export function EkosystemPanel() {
           {/* (e) Kvalitetsrapporter — historik (datum + typ + status) */}
           <div className="rounded-xl border border-gold/20 bg-card p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <ClipboardList className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Kvalitetsrapporter — historik</h4>
               </div>
@@ -1091,7 +1091,7 @@ export function EkosystemPanel() {
             ) : (
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 Inga kvalitetsrapporter inlästa ännu — kör vakten (
-                <code className="rounded bg-muted px-1 py-0.5 font-mono">node verktyg/kvalitetsvakt.mjs</code>)
+                <code className="rounded bg-muted px-1 py-0.5 font-mono break-all">node verktyg/kvalitetsvakt.mjs</code>)
                 eller trigga kontrollen via direktlänken. Historiken visas även ur systemflödet
                 så snart vakten loggat sina körningar.
               </p>
@@ -1105,7 +1105,7 @@ export function EkosystemPanel() {
           {/* (f) Senaste systemevents — 20 rader */}
           <div className="rounded-xl border border-gold/20 bg-card p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Activity className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Senaste systemevents</h4>
               </div>
@@ -1122,7 +1122,7 @@ export function EkosystemPanel() {
                     key={e.id ?? i}
                     className="rounded-md border border-border bg-card p-2 text-[11px]"
                   >
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex min-w-0 items-center gap-1.5">
                         <Badge variant="outline" className="shrink-0 text-[9px]">
                           {e.type || "okänd"}
@@ -1162,7 +1162,7 @@ export function EkosystemPanel() {
           <div className="grid gap-4 lg:grid-cols-2">
             {/* (a) B2B-sammanfattning — analys-anrop */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Activity className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">B2B-sammanfattning — analys-anrop</h4>
               </div>
@@ -1210,7 +1210,7 @@ export function EkosystemPanel() {
 
             {/* (b) Fas2-ansökningar */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <FileText className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Fas 2-ansökningar</h4>
               </div>
@@ -1231,7 +1231,7 @@ export function EkosystemPanel() {
 
             {/* (c) Aktiva seats / medlemmar per member_type */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Users className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Aktiva seats och medlemmar</h4>
               </div>
@@ -1241,7 +1241,8 @@ export function EkosystemPanel() {
                   aktiva seats (premium + pro)
                 </span>
               </p>
-              <div className="mt-2 grid grid-cols-4 gap-2">
+              {/* våg 104: 2 kolumner på mobil (sifferkort), 4 från sm: — desktop oförändrad */}
+              <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 <Miniraknare etikett="Free" varde={medlemmar.free ?? null} />
                 <Miniraknare etikett="Premium" varde={medlemmar.premium ?? null} />
                 <Miniraknare etikett="Pro" varde={medlemmar.pro ?? null} />
@@ -1257,7 +1258,7 @@ export function EkosystemPanel() {
 
             {/* (d) Rapportmallar-status */}
             <div className="rounded-xl border border-gold/20 bg-card p-4">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <FileText className="h-4 w-4 text-gold" />
                 <h4 className="font-serif text-base font-bold">Rapportmallar</h4>
               </div>

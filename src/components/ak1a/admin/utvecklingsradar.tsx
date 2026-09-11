@@ -86,7 +86,7 @@ export function Utvecklingsradar() {
             <button
               onClick={hamta}
               disabled={laddar || !pwd}
-              className="rounded-md bg-[#0E1B2E] px-4 py-2 text-sm font-medium text-[#E8C766] disabled:opacity-50"
+              className="min-h-[44px] rounded-md bg-[#0E1B2E] px-4 py-2 text-sm font-medium text-[#E8C766] disabled:opacity-50 sm:min-h-0"
             >
               {laddar ? "Läser…" : "Läs in"}
             </button>
@@ -97,13 +97,14 @@ export function Utvecklingsradar() {
 
       {data && (
         <>
-          <div className="flex items-center justify-between">
+          {/* våg 104: wrap på mobil — rubrik och uppdatering får egna rader */}
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="font-serif text-lg font-bold">Utvecklingsradarn 🔭</h3>
             <div className="flex items-center gap-2">
               <span className="text-xs text-muted-foreground">
                 Uppdaterad {new Date(data.hamtat).toLocaleTimeString("sv-SE")}
               </span>
-              <button onClick={hamta} disabled={laddar} className="text-xs underline disabled:opacity-50">
+              <button onClick={hamta} disabled={laddar} className="min-h-[44px] text-xs underline disabled:opacity-50 sm:min-h-0">
                 Uppdatera
               </button>
             </div>
@@ -150,10 +151,11 @@ export function Utvecklingsradar() {
             <div className="rounded-lg border border-gold/30 bg-card p-4">
               <h4 className="font-serif font-bold">Fasplanen (MEGA-projektet)</h4>
               <div className="mt-2 space-y-1">
+                {/* våg 104: status shrink-0, fasnamn min-w-0 — wrappar på mobil */}
                 {data.faser.map((f) => (
-                  <div key={f.fas} className="flex items-center justify-between text-sm">
-                    <span className="text-foreground">{f.fas}</span>
-                    <span className="text-xs text-muted-foreground">{f.status}</span>
+                  <div key={f.fas} className="flex flex-wrap items-center justify-between gap-x-2 text-sm">
+                    <span className="min-w-0 flex-1 text-foreground">{f.fas}</span>
+                    <span className="shrink-0 text-xs text-muted-foreground">{f.status}</span>
                   </div>
                 ))}
               </div>
@@ -168,8 +170,8 @@ export function Utvecklingsradar() {
             ) : (
               <ul className="mt-2 space-y-1 text-sm">
                 {data.forskning.map((f) => (
-                  <li key={f.namn} className="flex items-center justify-between">
-                    <span className="text-foreground">{f.namn}</span>
+                  <li key={f.namn} className="flex items-center justify-between gap-x-2">
+                    <span className="min-w-0 flex-1 truncate text-foreground">{f.namn}</span>
                     <span className="text-xs text-muted-foreground">
                       {f.dag} · {f.kb} kB
                     </span>
@@ -208,8 +210,8 @@ export function Utvecklingsradar() {
             <h4 className="font-serif font-bold">Senaste rapporter</h4>
             <ul className="mt-2 space-y-1 text-sm">
               {data.rapporter.map((r) => (
-                <li key={r.namn} className="flex items-center justify-between">
-                  <span className="truncate text-foreground">{r.namn}</span>
+                <li key={r.namn} className="flex items-center justify-between gap-x-2">
+                  <span className="min-w-0 flex-1 truncate text-foreground">{r.namn}</span>
                   <span className="shrink-0 text-xs text-muted-foreground">{r.dag}</span>
                 </li>
               ))}

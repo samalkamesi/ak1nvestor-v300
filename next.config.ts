@@ -28,6 +28,14 @@ const nextConfig: NextConfig = {
   // VÅG 96 D1 (prestanda våg 3): skickar inte X-Powered-By: Next.js —
   // ett par header-bytes mindre per svar + mindre fingeravtryck av servern.
   poweredByHeader: false,
+  // VÅG 105 (gränsnittsvakt-paketet): BYGGESTÄMPEL — inlinas i klientbunten
+  // vid byggstart OCH läsas av /api/version på servern vid körning. En flik
+  // som lever kvar efter deploy (SPA-skal utan omladdning) upptäcker
+  // stämpel-skillnaden via VersionVakten och erbjuder uppdatering —
+  // kundens "samma fel igen"-klass (stala assets) dör vid roten.
+  env: {
+    NEXT_PUBLIC_BYGGE: new Date().toISOString(),
+  },
   // VÅG 86 (KARTA §5, flytt-avvikelse #2): aktiverar src/app/global-not-found.js
   // som global 404 för HELT omatchade URL:er — nödvändigt med flera rot-layouter
   // ((huvud)/(en)/(ar)) där ingen gemensam rot-layout finns. Flaggnamn verifierat

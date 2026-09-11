@@ -123,16 +123,20 @@ export function KonverteringsPanel() {
           Konverteringsvyn skyddas av ADMIN_PASSWORD — lämnad i headern
           x-admin-password, samma mönster som Trafik &amp; Säkerhet.
         </p>
-        <div className="mt-3 flex gap-2">
+        {/* våg 104: wrappa på mobil + 44px-mål; desktop som förut */}
+        <div className="mt-3 flex flex-wrap gap-2">
           <Input
             type="password"
             value={losenord}
             onChange={(e) => setLosenord(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && lasUpp()}
             placeholder="Admin-lösenord"
-            className="max-w-xs bg-white/10 text-[#EDE6D6]"
+            className="min-h-[44px] max-w-xs bg-white/10 text-[#EDE6D6] sm:min-h-0"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button
+            onClick={lasUpp}
+            className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
+          >
             Lås upp
           </Button>
         </div>
@@ -150,20 +154,28 @@ export function KonverteringsPanel() {
     <div className="space-y-5">
       {/* ── Rubrikrad ── */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <BarChart3 className="h-4 w-4 text-gold" />
+        {/* våg 104: rubrikgruppen wrappar på mobil */}
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
+          <BarChart3 className="h-4 w-4 shrink-0 text-gold" />
           <h3 className="font-serif text-lg font-bold">Konvertering 📊</h3>
-          <Badge variant="outline" className="border-gold/40 text-[10px] text-gold">
+          <Badge variant="outline" className="shrink-0 border-gold/40 text-[10px] text-gold">
             SEX STEG · NOLL NYA SPÅR
           </Badge>
         </div>
-        <div className="flex items-center gap-3">
+        {/* våg 104: datumspann + knapp wrappar på mobil */}
+        <div className="flex flex-wrap items-center gap-3">
           {data?.spann && (
-            <span className="text-[10px] text-muted-foreground tabular-nums">
+            <span className="min-w-0 text-[10px] text-muted-foreground tabular-nums">
               datumspann {datum(data.spann.fran)} → {datum(data.spann.till)}
             </span>
           )}
-          <Button variant="outline" size="sm" onClick={() => hamta()} disabled={laddar}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => hamta()}
+            disabled={laddar}
+            className="min-h-[44px] sm:min-h-0"
+          >
             <RefreshCw className={cn("mr-1 h-3 w-3", laddar && "animate-spin")} /> Uppdatera
           </Button>
         </div>
@@ -185,8 +197,12 @@ export function KonverteringsPanel() {
             return (
               <React.Fragment key={s.id}>
                 {i > 0 && grad && (
-                  <div className="flex items-center gap-2 pl-2 text-[10px] text-muted-foreground" aria-label={`Konverteringsgrad ${grad.fran} till ${grad.till}`}>
-                    <span className="text-gold">↓</span>
+                  // våg 104: grad-rad wrappar på mobil — procent och bråk får egna rader
+                  <div
+                    className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pl-2 text-[10px] text-muted-foreground"
+                    aria-label={`Konverteringsgrad ${grad.fran} till ${grad.till}`}
+                  >
+                    <span className="shrink-0 text-gold">↓</span>
                     {grad.procent !== null ? (
                       <span className="font-semibold tabular-nums text-foreground/80">
                         {grad.procent.toLocaleString("sv-SE", { maximumFractionDigits: 1 })} %{" "}
@@ -194,7 +210,7 @@ export function KonverteringsPanel() {
                     ) : (
                       <span className="font-semibold">— </span>
                     )}
-                    <span className="tabular-nums">
+                    <span className="min-w-0 tabular-nums">
                       ({sv(grad.taljare)}/{sv(grad.namnare)} · {grad.fonster})
                     </span>
                   </div>
@@ -229,7 +245,7 @@ export function KonverteringsPanel() {
                     />
                   </div>
                   <p className="mt-1.5 ml-7 text-[10px] leading-relaxed text-muted-foreground">
-                    {s.notering} <span className="font-mono">Källa: {s.kalla}</span>
+                    {s.notering} <span className="break-words font-mono">Källa: {s.kalla}</span>
                   </p>
                 </div>
               </React.Fragment>
@@ -251,7 +267,7 @@ export function KonverteringsPanel() {
           {(data?.luckor ?? []).map((l, i) => (
             <li key={i} className="flex gap-2 text-[11px] leading-relaxed text-muted-foreground">
               <span className="shrink-0 text-gold" aria-hidden="true">·</span>
-              <span>{l}</span>
+              <span className="min-w-0">{l}</span>
             </li>
           ))}
           {!data && <li className="text-[11px] text-muted-foreground">Väntar på data…</li>}

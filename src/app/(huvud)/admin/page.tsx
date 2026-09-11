@@ -351,10 +351,10 @@ export default function AdminDashboard() {
   return (
     <div className="paper-texture min-h-screen">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
+        {/* Header — våg 104: mobilförst (wrappar logo + knapprad på smala skärmar) */}
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <VarumarkesLogo storlek="md" onClick={() => setSection("hem")} />
-          <div className="flex items-center gap-2">
+          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
             {/* Roll-chip (våg 83 §A2): Redaktör efter session-inloggning,
                 ADMIN annars (lösenordsläget motsvarar admin). */}
             {arRedaktor ? (
@@ -366,20 +366,28 @@ export default function AdminDashboard() {
               <Button
                 variant="outline"
                 size="sm"
+                className="min-h-[44px] flex-1 justify-center sm:flex-none"
                 onClick={() => setAutoRefresh((v) => !v)}
               >
                 <RefreshCw className={cn("mr-1 h-3.5 w-3.5", autoRefresh && "animate-spin")} />
-                {autoRefresh ? "Auto-uppdaterar" : "Pausad"}
+                <span className="hidden sm:inline">{autoRefresh ? "Auto-uppdaterar" : "Pausad"}</span>
+                <span className="sm:hidden">{autoRefresh ? "Auto" : "Paus"}</span>
               </Button>
             )}
             {!arRedaktor && (
-              <Button variant="outline" size="sm" onClick={() => { fetchStats(); fetchActivities(); }}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="min-h-[44px] flex-1 justify-center sm:flex-none"
+                onClick={() => { fetchStats(); fetchActivities(); }}
+              >
                 <RefreshCw className="mr-1 h-3.5 w-3.5" /> Uppdatera
               </Button>
             )}
             <Button
               variant="outline"
               size="sm"
+              className="min-h-[44px] flex-1 justify-center sm:flex-none"
               onClick={async () => {
                 await loggaUt(); // POST /api/admin/logout + rensar lösenord/roll lokalt
                 setAuthed(false);
@@ -458,13 +466,22 @@ export default function AdminDashboard() {
           onValueChange={setActiveTab}
           className="mt-8"
         >
-          <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
-            {ALLA_FLIKAR.filter((f) => !arRedaktor || !f.endastAdmin).map((f) => (
-              <TabsTrigger key={f.id} value={f.id} className="px-3 py-1.5 text-xs sm:text-sm">
-                {f.etikett}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          {/* VÅG 104: flikraden scrollas horisontellt på mobil (21 flikar ≈
+              2000 px får ALDRIG breda ut sidan); tryckytor ≥44 px, etiketter
+              bryts ej (whitespace-nowrap + shrink-0) — skrivbordet oförändrat. */}
+          <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:thin] sm:mx-0 sm:px-0">
+            <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
+              {ALLA_FLIKAR.filter((f) => !arRedaktor || !f.endastAdmin).map((f) => (
+                <TabsTrigger
+                  key={f.id}
+                  value={f.id}
+                  className="min-h-[44px] shrink-0 whitespace-nowrap px-3 py-2 text-xs sm:min-h-0 sm:py-1.5 sm:text-sm"
+                >
+                  {f.etikett}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           {/* Overview */}
           <TabsContent value="overview" className="mt-6 space-y-6">

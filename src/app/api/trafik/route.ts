@@ -32,6 +32,9 @@ export const dynamic = "force-dynamic";
  *   Raderna samlas i en minnesbuffer och spolas till system_events
  *   (type=trafik) var 10:e händelse — skrivningen försenar aldrig svaret
  *   i onödan (klienten beacon:ar fire-and-forget).
+ *   Special-form (VÅG 101): { typ:"felgrans", kategori, url } — felgränsernas
+ *   PII-fria felrapport (chunk- vs övrigt-fel, endast sökväg); loggas med
+ *   details.fel och räknas INTE som sidvisning i aggregaten.
  *
  * GET — aggregat. UTAN admin-lösenord: publik minimal rad för
  *   Sidfooterns status ("🔒 skyddad · N besökare idag"). MED
@@ -101,6 +104,30 @@ export async function POST(req: NextRequest) {
   const refHost = sannyaRefHost(typeof body.ref === "string" ? body.ref : req.headers.get("referer"));
   const uaKlass = klassificeraUa(ua);
 
+  // FELGRÄNS-TELEMETRI (VÅG 101): felgränserna beacon:ar
+  // { typ:"felgrans", kategori:"chunk"|"ovrig", url } — en gång per fel.
+  // PII-fritt: endast sökväg (sannyad, query avlägsnad) + kategori + UA-klass;
+  // session/ip/fel-text loggas ALDRIG. Räknas ej som sidvisning i aggregaten.
+  if (body.typ === "felgrans") {
+    const event: TrafikEvent = {
+      dag: new Date().toISOString().slice(0, 10),
+      path: sannyaPath(typeof body.url === "string" ? body.url : "/"),
+      refHost: "direkt",
+      uaKlass,
+      sprak: null,
+      land: null,
+      sessionHash: null,
+      puls: false,
+      urval: "felgrans",
+      fel: body.kategori === "chunk" ? "chunk" : "ovrigt",
+    };
+    buffra(trafikRad(event));
+    if (buffer.length >= 10 || (aldstaIbuffer > 0 && Date.now() - aldstaIbuffer >= 10_000)) {
+      await spola();
+    }
+    return NextResponse.json({ ok: true });
+  }
+
   // Samtyckes-stegring: utan ANALYS-samtycke skickar klienten inget
   // session-fält → servern loggar enbart path + UA-klass (minimal-läge).
   const sessionRå = typeof body.session === "string" ? body.session.slice(0, 64) : "";
@@ -168,6 +195,7 @@ type TrafikRad = {
     s?: string | null;
     puls?: boolean | null;
     urval?: string | null;
+    fel?: string | null;
   } | null;
 };
 
@@ -208,9 +236,11 @@ export async function GET(req: NextRequest) {
 
   const nu = Date.now();
   const idag = new Date(nu).toISOString().slice(0, 10);
-  const visningarIdag = rader.filter((r) => !r.details?.puls && r.details?.dag === idag).length;
+  // VÅG 101: felgräns-rader (details.fel) är telemetri — aldrig sidvisningar.
+  const vanliga = rader.filter((r) => !r.details?.fel);
+  const visningarIdag = vanliga.filter((r) => !r.details?.puls && r.details?.dag === idag).length;
   const unikaIdag = new Set(
-    rader.filter((r) => r.details?.dag === idag && r.details?.s).map((r) => r.details!.s)
+    vanliga.filter((r) => r.details?.dag === idag && r.details?.s).map((r) => r.details!.s)
   ).size;
 
   // Publik minimal rad (Sidfooterns status) — inga sökvägar, inga källor.
@@ -223,13 +253,13 @@ export async function GET(req: NextRequest) {
 
   // ── Fullt aggregat (admin) ──────────────────────────────────────────────
   const unika = (sedan: number) =>
-    new Set(rader.filter((r) => Date.parse(r.created_at || "") >= nu - sedan && r.details?.s).map((r) => r.details!.s)).size;
+    new Set(vanliga.filter((r) => Date.parse(r.created_at || "") >= nu - sedan && r.details?.s).map((r) => r.details!.s)).size;
   const visningar = (sedan: number) =>
-    rader.filter((r) => !r.details?.puls && Date.parse(r.created_at || "") >= nu - sedan).length;
+    vanliga.filter((r) => !r.details?.puls && Date.parse(r.created_at || "") >= nu - sedan).length;
 
   // Senaste 24 h per timme (äldst → nyast, 24 hinkar).
   const perTimme24: number[] = new Array(24).fill(0);
-  for (const r of rader) {
+  for (const r of vanliga) {
     if (r.details?.puls) continue;
     const t = Date.parse(r.created_at || "");
     const idx = 23 - Math.floor((nu - t) / 3_600_000);
@@ -241,7 +271,7 @@ export async function GET(req: NextRequest) {
     const out: { dag: string; visningar: number; unika: number }[] = [];
     for (let i = dagar - 1; i >= 0; i--) {
       const dag = new Date(nu - i * 86_400_000).toISOString().slice(0, 10);
-      const dagens = rader.filter((r) => r.details?.dag === dag);
+      const dagens = vanliga.filter((r) => r.details?.dag === dag);
       out.push({
         dag,
         visningar: dagens.filter((r) => !r.details?.puls).length,
@@ -253,7 +283,7 @@ export async function GET(req: NextRequest) {
 
   const topp = (falt: "path" | "ref", sedan: number, grans: number) => {
     const karta = new Map<string, number>();
-    for (const r of rader) {
+    for (const r of vanliga) {
       if (r.details?.puls) continue;
       if (Date.parse(r.created_at || "") < nu - sedan) continue;
       const nyckel = String((r.details?.[falt] as string | undefined) ?? "ovrigt");
@@ -265,8 +295,20 @@ export async function GET(req: NextRequest) {
       .map(([namn, antal]) => ({ namn, antal }));
   };
 
-  const botRader = rader.filter((r) => r.details?.ua === "bot" && !r.details?.puls).length;
-  const manskliga = rader.filter((r) => !r.details?.puls).length;
+  const botRader = vanliga.filter((r) => r.details?.ua === "bot" && !r.details?.puls).length;
+  const manskliga = vanliga.filter((r) => !r.details?.puls).length;
+
+  // ── Felgräns-telemetri (VÅG 101): chunk- vs övriga-fel 24 h + topp-sidor ──
+  const fel24 = rader.filter((r) => !!r.details?.fel && Date.parse(r.created_at || "") >= nu - 86_400_000);
+  const felKarta = new Map<string, number>();
+  for (const r of fel24) {
+    const nyckel = String(r.details?.path ?? "ovrigt");
+    felKarta.set(nyckel, (felKarta.get(nyckel) ?? 0) + 1);
+  }
+  const topFelSidor = [...felKarta.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([namn, antal]) => ({ namn, antal }));
 
   return NextResponse.json(
     {
@@ -282,6 +324,12 @@ export async function GET(req: NextRequest) {
       senaste30d: { visningar: visningar(30 * 86_400_000), unika: unika(30 * 86_400_000), perDag: perDag(30) },
       topSidor: topp("path", 7 * 86_400_000, 10),
       topKallor: topp("ref", 7 * 86_400_000, 8),
+      felgranser24h: {
+        totalt: fel24.length,
+        chunk: fel24.filter((r) => r.details?.fel === "chunk").length,
+        ovriga: fel24.filter((r) => r.details?.fel !== "chunk").length,
+        topSidor: topFelSidor,
+      },
       botAndel: manskliga > 0 ? Math.round((botRader / manskliga) * 100) : 0,
       stickprovsfaktor: 0.3,
       urvalNotering:

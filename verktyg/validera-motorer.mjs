@@ -25,7 +25,9 @@
  *      (skannaKonfluens + motorns EGEN sjalvkontroll), portfolj-vagor
  *      (viktat medel omräknat ur perAktie-profilerna).
  *   B) DETERMINISM: vagfundament, analys, netnet OCH konfluens körs 2× på
- *      samma ticker — JSON måste vara identisk (närmarknad = frusen data).
+ *      samma ticker — JSON måste vara identisk. Källfrusning: körning 2 körs
+ *      mot körning 1:s INSPELADE https-svar (vakten körs 07:00 UTC =
+ *      börsöppning i Stockholm — live-priser tickar annars mellan körningarna).
  *   C) GRÄNSER: ogiltig ticker => snyggt fel, ALDRIG krasch; tomma listor
  *      => tomt svar (även konfluens).
  *   D) FIXTURTEST (rena beräkningskärnor, INGET nät): chatbot-nlu, omtanke-,
@@ -57,9 +59,10 @@
  * Nätverksberoende delar mockas ALDRIG med riktiga anrop: alla fixturtest
  * kör rena beräkningskärnor; dashfraga:s enda nätberoende (vågkarta-fetch)
  * testas via sin dokumenterade graceful-degradering (relativ URL i Node =>
- * fallback-svar). Kvartetti vagfundament/analys/netnet/konfluens körs på
- * frusen närmarknadsdata (VOLV-B.ST, SAAB-B.ST) — samma villkor som tidigare
- * vågor; deras matematik verifieras oberoende för hand.
+ * fallback-svar). Kvartetti vagfundament/analys/netnet/konfluens körs mot
+ * LIVE-data i fas A (VOLV-B.ST, SAAB-B.ST); fas B:s determinism-körning
+ * spelar upp fas A:s inspelade https-svar (källfrusning — se shim 0b); deras
+ * matematik verifieras oberoende för hand.
  *
  * Användning:  node verktyg/validera-motorer.mjs [--kör-motorer]
  * Avslutskod:  0 OM OCH ENDAST OM 0 FAIL och 0 SKIP. Annars 1.
@@ -96,6 +99,70 @@ const LS_DATA = new Map<string, string>();
 (globalThis as any).window = globalThis;
 function lsRensa(): void { LS_DATA.clear(); }
 function lsSatt(k: string, v: string): void { LS_DATA.set(k, v); }
+
+// ── 0b) KÄLLFRYSNING (fas B) ─────────────────────────────────────────────────
+// Motorkvartetten (vagfundament/analys/netnet/konfluens) hämtar LIVE Yahoo-data
+// under fas A. Determinism-fas B antog tidigare att "närmarknaden är frusen"
+// (börsen stängd) — men kvalitetsvakten körs 07:00 UTC = 09:00 Stockholm =
+// exakt börsöppning, och quoteSummary:s regularMarketPrice tickar mellan de
+// två körningarna (rapportarkivets historik: kurs 349.4 != 349.5, 340.9 !=
+// 340.8). Därför spelas ALLA https-svar in under körningen och fas B spelar
+// UPP dem: samma källa ⇒ samma utdata. Detta testar determinism-kontraktet
+// DIREKT i stället för att lita på börsens öppettider — INGEN försvagning:
+// fas A verifierar fortfarande live-data och NCAV/nyckeltals-matematiken
+// omräknas för hand. Uppspelning av en url som ej fanns i inspelningen kastar
+// → motorn fångar → fel-rad → FAIL — aldrig ett tyst pass.
+// NYCKEL-NORMALISERING: två parametrar är process-instabila och identifierar
+// INTE resursen — de rensas ur nyckeln vid BÅDE inspelning och uppspelning:
+//   period2=<unix-sekunder>  (vagfundament tidsstämplar sin url)
+//   crumb=<auth-token>       (fas A:s parallella kallstarter gör att flera
+//                             crumb-värden cirkulerar; crumb autentiserar
+//                             bara — samma resurs + olika crumb = samma svar)
+type FysSvar = { status: number; headers: Array<[string, string]>; kropp: string };
+const FYS_UPPSPELNING = new Map<string, FysSvar>();
+let fysLage = "inspelning";
+const FYS_RIKTIG_FETCH = (globalThis as any).fetch.bind(globalThis);
+function fysNyckel(input: unknown): string | null {
+  try {
+    let u: string;
+    if (typeof input === "string") u = input;
+    else if (input && typeof (input as any).url === "string") u = (input as any).url;
+    else return null;
+    if (u.indexOf("https://") !== 0) return null; // endast absoluta https-url:er fryses
+    return u
+      .replace(/([?&])period2=\d+/, "$1period2=FRYS")
+      .replace(/([?&])crumb=[^&]*/, "$1crumb=FRYS");
+  } catch {
+    return null;
+  }
+}
+(globalThis as any).fetch = async function fysFetch(input: any, init?: any): Promise<Response> {
+  const nyckel = fysNyckel(input);
+  if (nyckel !== null && fysLage === "uppspelning") {
+    const svar = FYS_UPPSPELNING.get(nyckel);
+    if (!svar) throw new Error("KALLFRYS: uppspelning av ej inspelad url: " + nyckel.slice(0, 140));
+    return new Response(svar.kropp, { status: svar.status, headers: svar.headers });
+  }
+  const r = await FYS_RIKTIG_FETCH(input, init);
+  if (nyckel !== null && fysLage === "inspelning" && !FYS_UPPSPELNING.has(nyckel)) {
+    try {
+      const klon = r.clone();
+      const headers: Array<[string, string]> = [];
+      const sc = (r.headers as any).getSetCookie;
+      if (typeof sc === "function") {
+        const kakor = (r.headers as any).getSetCookie() as string[];
+        for (const kaka of kakor) headers.push(["set-cookie", kaka]);
+      }
+      for (const par of r.headers.entries()) {
+        if (par[0].toLowerCase() !== "set-cookie") headers.push([par[0], par[1]]);
+      }
+      FYS_UPPSPELNING.set(nyckel, { status: r.status, headers, kropp: await klon.text() });
+    } catch {
+      /* inspelningsfel får aldrig påverka själva svaret */
+    }
+  }
+  return r;
+};
 
 type Status = "PASS" | "FAIL" | "SKIP";
 type Rad = { motor: string; kontroll: string; status: Status; detalj: string; varden: string; tid_ms: number };
@@ -667,7 +734,7 @@ async function fasA(): Promise<void> {
 }
 function expectedVigtatBuild(x: number): string { return x.toFixed(6); }
 
-// ══ FAS B: DETERMINISM — varje motor 2× på samma ticker (frusen data) ════════
+// ══ FAS B: DETERMINISM — varje motor 2× på samma ticker (källfrusna svar) ════
 function firstDiff(a: unknown, b: unknown, vag: string): string | null {
   if (a === b) return null;
   if (a === null || b === null || typeof a !== "object" || typeof b !== "object") {
@@ -684,6 +751,14 @@ function firstDiff(a: unknown, b: unknown, vag: string): string | null {
 }
 
 async function fasB(): Promise<void> {
+  // KÄLLFRYSNING: körning 2 körs mot fas A:s INSPELADE https-svar (shim 0b) —
+  // "frusen källa" i stället för "frusen marknad" (vakten körs 07:00 UTC =
+  // börsöppning i Stockholm; annars tickar regularMarketPrice mellan
+  // körningarna — historik: kurs 349.4 != 349.5). En skillnad här Är motorns
+  // EGEN icke-determinism, exakt vad fasen ska fånga.
+  const fysSparad = fysLage;
+  fysLage = "uppspelning";
+  try {
   // vagfundament
   {
     const v2 = await körVagfundament({ tickers: ["VOLV-B.ST"] });
@@ -693,7 +768,7 @@ async function fasB(): Promise<void> {
     const s2 = JSON.stringify(r2);
     if (s1 === s2) {
       rad("vagfundament", "DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt)", "PASS",
-        "två separata körningar gav byte-identisk JSON (" + s1.length + " tecken) — konsistent med frusen marknadsdata", "längd=" + s1.length);
+        "två separata körningar gav byte-identisk JSON (" + s1.length + " tecken) — körning 2 mot källfrusna (inspelade) svar", "längd=" + s1.length);
     } else {
       rad("vagfundament", "DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt)", "FAIL",
         "utdata skiljer mellan körningar. Första skillnad: " + String(firstDiff(r1, r2, "rot")), "längd " + s1.length + " vs " + s2.length);
@@ -739,6 +814,9 @@ async function fasB(): Promise<void> {
       rad("konfluens", "DETERMINISM 2 körningar VOLV-B.ST (JSON identiskt)", "FAIL",
         "utdata skiljer mellan körningar. Första skillnad: " + String(firstDiff(kon1 && kon1[0], k2 && k2[0], "rot")), "längd " + s1.length + " vs " + s2.length);
     }
+  }
+  } finally {
+    fysLage = fysSparad; // leva live igen för efterföljande faser (fas C m.fl.)
   }
 }
 
@@ -3297,16 +3375,31 @@ async function fasOversattning(): Promise<void> {
     if (!MOT.myMemoryKvot("200", 429)) problem.push("HTTP 429 detekteras ej");
     if (MOT.myMemoryKvot(200, 200)) problem.push("normal respons flaggas som kvot");
     if (!MOT.myMemoryKvot("ok", 200, "MYMEMORY WARNING: daily limit")) problem.push("varning i translatedText detekteras ej");
-    // kvotvakter: 5000 ord/dag + 400 anrop
+    // kvotvakter: dokumenterade nivåer — anonym 5 000 ord + 400 anrop per dag,
+    // med MYMEMORY_EMAIL (de-param, höjd gratis-kvot) 45 000 + 3 000. Gränserna
+    // fryses vid modul-laddning ur processens env: prod/vakten kör MED e-post-
+    // kvot, lokal svit oftast utan (tsx laddar inte .env.local) — tidigare
+    // hardkodade testet 5000/400 och FAILADE därför i prod-miljö. Testet
+    // verifierar nu BÅDE nivå-kontraktet (mot ambient env) OCH gränslogiken
+    // vid den aktiva nivåns exakta kant (ord: avslag först vid ÖVERSKRIDANDE
+    // sum, anrop: avslag vid >= tak) — starkare än innan, deterministiskt i
+    // båda miljöerna.
+    const mmEpost = process.env.MYMEMORY_EMAIL ? true : false;
+    const mmMaxOrd = MOT.MYMEMORY_MAX_ORD_PER_DAG as number;
+    const mmMaxAnrop = MOT.MYMEMORY_MAX_ANROP_PER_DAG as number;
+    if (mmMaxOrd !== (mmEpost ? 45000 : 5000)) problem.push("MAX_ORD_PER_DAG=" + String(mmMaxOrd) + " följer ej MYMEMORY_EMAIL-nivån (väntat " + (mmEpost ? "45000" : "5000") + ")");
+    if (mmMaxAnrop !== (mmEpost ? 3000 : 400)) problem.push("MAX_ANROP_PER_DAG=" + String(mmMaxAnrop) + " följer ej MYMEMORY_EMAIL-nivån (väntat " + (mmEpost ? "3000" : "400") + ")");
     if (!MOT.myMemoryFarKora(10, { ord: 0, anrop: 0 })) problem.push("normal körning nekas");
-    if (MOT.myMemoryFarKora(10, { ord: 4995, anrop: 0 })) problem.push("ordgräns 5000 respekteras ej");
-    if (MOT.myMemoryFarKora(1, { ord: 0, anrop: 400 })) problem.push("anropstak 400 respekteras ej");
+    if (MOT.myMemoryFarKora(10, { ord: mmMaxOrd - 5, anrop: 0 })) problem.push("ordgräns " + String(mmMaxOrd) + " respekteras ej (" + String(mmMaxOrd - 5) + "+10 ord ska avslås)");
+    if (!MOT.myMemoryFarKora(mmMaxOrd, { ord: 0, anrop: 0 })) problem.push("exakt ord-tak (" + String(mmMaxOrd) + ") nekas — gränsen är > ej >=");
+    if (MOT.myMemoryFarKora(1, { ord: 0, anrop: mmMaxAnrop })) problem.push("anropstak " + String(mmMaxAnrop) + " respekteras ej");
+    if (!MOT.myMemoryFarKora(1, { ord: 0, anrop: mmMaxAnrop - 1 })) problem.push("sista tillåtna anropet (tak-1) nekas");
     rad(
       "mos-oversattning",
       "MYMEMORY payload (URL-kodning %20/%7C) + bitdelning ≤500B + kvot-vakter",
       problem.length === 0 ? "PASS" : "FAIL",
       problem.length === 0
-        ? "GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv|en/sv|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter 5000 ord + 400 anrop per dag"
+        ? "GET /get med q (åäö och ? korrekt %-kodade, inga råa mellanslag) + langpair sv|en/sv|ar; lång text delas i bitar ≤ 500 byte vars join är byte-identisk med originalet (radbrytningar bevarade); MYMEMORY WARNING/429/varning-i-text ⇒ kvot; vakter mot AKTIV nivå (" + String(mmMaxOrd) + " ord + " + String(mmMaxAnrop) + " anrop/dag; anonym 5000/400, med MYMEMORY_EMAIL 45000/3000)"
         : problem.slice(0, 6).join("; "),
       "bitar=" + String(bitar.length) + " langd=" + String(langText.length),
     );
@@ -3862,7 +3955,7 @@ function byggRapport(payload, meta) {
   linjer.push("---\n");
   linjer.push("# Motorervalidering — 100%-väktaren — " + ts + "\n");
   linjer.push("- **Skript:** `verktyg/validera-motorer.mjs` (genererar `tmp_motor_koll.ts`, kör via `npx --yes tsx`, städar efteråt)");
-  linjer.push("- **Miljö:** node " + process.version + " på " + process.platform + "; tickers: VOLV-B.ST, SAAB-B.ST (närmarknad — frusen data)");
+  linjer.push("- **Miljö:** node " + process.version + " på " + process.platform + "; tickers: VOLV-B.ST, SAAB-B.ST (fas A live-data; fas B källfrusen uppspelning)");
   linjer.push("- **Körtid:** " + meta.totalS.toFixed(1) + " s (budget 90 s" + (meta.timeout ? " — **ÖVERSKRIDEN, process dödad**" : ", inom budget") + ")");
   const intern = payload && typeof payload.total_ms === "number" ? payload.total_ms : null;
   if (intern !== null) linjer.push("- **Internt (tsx):** " + (intern / 1000).toFixed(1) + " s; startad " + String(payload.startad) + ", klar " + String(payload.klar));
@@ -3895,7 +3988,7 @@ function byggRapport(payload, meta) {
   }
   linjer.push("");
   linjer.push("## Täckningsgrad (våg 49 + våg 52 + våg 59 + våg 60)\n");
-  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser; VÅG 66 r6 tillägg: kalkylatorreglagets geometri-svep låtsas-t 0→100 % — golvet K orubbligt, övre monotont icke-ökande, t=100 % ⇒ [K;K] — samt låtsas-t-klämning utanför [0,1] och ärlighetsnot-kontrakt) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). (VÅG 61 bygg-2, B2B steg 2/K5) pro/tenant — white-label-kontraktets mal-låsta disclaimer-kärna: tre lager (metoddeklaration, ansvarsdeklaration 2007:528, data-t.o.m.-rad+falsifierbarhet) alltid närvarande oavsett tenant (negativt test: fientligt tillägg som försöker stryka dem), kärnan byte-identiskt prefix (P1), ansvarsskjutande tillägg avvisas (b4 lager 2), pro-admin-v1 → TenantConfig-mappning med URL-vakt. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs på frusen närmarknadsdata med matematiken omräknad för hand.");
+  linjer.push("Deterministiska motorer med egen testrad ovan: vagfundament, analys, netnet, konfluens, portfolj-vagor, chatbot-nlu, omtanke-, kurstips-, dashfraga-, vagkon-, spaced-repetition-, veckoplan-, briefing-, badges-, analysbank-, assistent-motorerna, akm2/kärna, riskportfolj (ägen poängbas AKM1|AKM2, våg 57 D2), (våg 57 D2) akm2-koppling (berikaRadMedAkm2 — korstabellens AKM2-berikning), fundamental-vagmotor, uppföljning, (våg 56 M3) forskningslaget samt (våg 56 bygg-A) vagvalidering (dom-protokoll, enighetsscore, rullande träff-%, rapportbyggare) — och (våg 52) MÖS-översättningssystemet: termbank, källregister, 4 kvalitetskontroller och motorstatusflödet. (VÅG 59, AKM3 steg 3+4) akm3/osakerhet (intervallformel [K, min(100,K+100(1−t))] med porttak 45, fullviktsrad, determinism, osatt-gränser; VÅG 66 r6 tillägg: kalkylatorreglagets geometri-svep låtsas-t 0→100 % — golvet K orubbligt, övre monotont icke-ökande, t=100 % ⇒ [K;K] — samt låtsas-t-klämning utanför [0,1] och ärlighetsnot-kontrakt) och portfolj-forskning/peer (midrank-percentil med delade värden, rank utan namnbrytning, median jämnt/udda, osatt vid grupp<5/saknad akm2/osatt variabel, per-variabel hållning ±0,5, lässlager-garanti: kompositen oförändrad). (VÅG 60 bygg-A, AKM3 steg 5) akm3/regim (deskriptiv regimebeskrivning: forskningslagets kanoniska trösklar 0,10/0,08/0,35/0,30, genesis magert mot 2026-09-03-data, N-vakt 12<30 ⇒ osatt-degradering, hysteres G 0,07↔0,08 byter aldrig, 2-snapshots-bekräftelse + Σu-gate 3 vid >25 %, kandidatreset, frysningskontrakt per snapshot-datering, determinism + hash-kedjad append-only regime-logg med tamper-vakter). (VÅG 61 bygg-2, B2B steg 2/K5) pro/tenant — white-label-kontraktets mal-låsta disclaimer-kärna: tre lager (metoddeklaration, ansvarsdeklaration 2007:528, data-t.o.m.-rad+falsifierbarhet) alltid närvarande oavsett tenant (negativt test: fientligt tillägg som försöker stryka dem), kärnan byte-identiskt prefix (P1), ansvarsskjutande tillägg avvisas (b4 lager 2), pro-admin-v1 → TenantConfig-mappning med URL-vakt. Nätverksberoende delar har mockats ALDRIG — fixturtesten kör rena beräkningskärnor, och kvartetten vagfundament/analys/netnet/konfluens körs i fas A mot live-data med matematiken omräknad för hand; fas B:s determinism-körning spelar upp fas A:s inspelade https-svar (källfrusning — vakten körs vid börsöppning, live-priser tickar annars mellan körningarna).");
   linjer.push("");
   linjer.push("### Kravlista på main\n");
   linjer.push("- (tom) — alla deterministiska motorer har ren beräkningskärna nåbar från verktygslager; ingen motor kräver utbrytning.");
@@ -3920,6 +4013,12 @@ async function main() {
   try {
     process.stdout.write("[validera-motorer] kör npx --yes tsx tmp_motor_koll.ts (budget 90 s) ...\n");
     const r = await kørTsx();
+    // Källfrysnings-diagnostik: om uppspelningen saknade en url syns det här
+    // (motorn sväljer felet → enda spåret är stderr) — skrivs vid < 100% PASS.
+    const frysspor = (r.felutdata || "").split("\n").filter((l) => l.indexOf("KALLFRYS") >= 0).slice(0, 10);
+    if (frysspor.length > 0) {
+      process.stdout.write("[källfrys] uppspelningen saknade url:er (orsak till ev. determinism-FAIL):\n" + frysspor.join("\n") + "\n");
+    }
     const totalS = (Date.now() - t0) / 1000;
     const payload = parsaMarkorer(r.utdata);
     const rapport = byggRapport(payload, { totalS, timeout: r.timeout, kod: r.kod, stderr: r.felutdata });

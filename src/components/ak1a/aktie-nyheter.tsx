@@ -357,8 +357,8 @@ export function AktieNyheter() {
   if (!hydrerad) {
     return (
       <div className="space-y-3" aria-hidden="true">
-        <div className="h-10 animate-pulse rounded-xl border border-gold/20 bg-card" />
-        <div className="h-40 animate-pulse rounded-2xl border border-gold/20 bg-card" />
+        <div className="h-10 animate-pulse rounded-xl border border-gold/20 bg-[#101b2b]" />
+        <div className="h-40 animate-pulse rounded-2xl border border-gold/20 bg-[#101b2b]" />
       </div>
     );
   }
@@ -397,15 +397,16 @@ export function AktieNyheter() {
             <div className="h-11 animate-pulse rounded-lg border border-gold/20 bg-white/5" />
           </div>
         ) : nyheter.length === 0 ? (
-          /* UTAN NYHETER — viloläget */
-          <div className="mt-5 rounded-xl border border-gold/25 bg-card/60 p-6 text-center">
+          /* UTAN NYHETER — viloläget (våg 105: marin-familjens mörka kort —
+             bg-card blev ljus under marin-panelens cream-text i ljust läge) */
+          <div className="mt-5 rounded-xl border border-gold/25 bg-[#101b2b]/60 p-6 text-center">
             <p className="text-2xl" aria-hidden="true">
               🌊
             </p>
-            <p className="mt-2 text-sm font-semibold text-foreground">
+            <p className="mt-2 text-sm font-semibold text-[#EDE6D6]">
               Inga aktuella nyheter — marknaden andas.
             </p>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-1 text-xs leading-relaxed text-[#EDE6D6]/60">
               Ibland är tystnaden själva nyheten. Vila i den — din Vågkarta
               mäter vidare under ytan.
             </p>

@@ -379,9 +379,9 @@ function ProposalCard({ proposal }: { proposal: AutonomProposal }) {
           <div className="text-[9px] uppercase tracking-wider text-muted-foreground">Aktiviteter</div>
           <div className="font-mono font-bold">{proposal.dataSnapshot?.totalActivities || 0}</div>
         </div>
-        <div className="rounded-md border border-border bg-muted/20 p-2 col-span-2">
+        <div className="col-span-2 min-w-0 rounded-md border border-border bg-muted/20 p-2">
           <div className="text-[9px] uppercase tracking-wider text-muted-foreground">Topp sektioner</div>
-          <div className="font-mono text-[10px]">
+          <div className="font-mono text-[10px] break-words">
             {(proposal.dataSnapshot?.topSections || []).map(([s, c]) => `${s} (${c})`).join(", ")}
           </div>
         </div>

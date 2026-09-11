@@ -1011,3 +1011,21 @@ framtida session (och varje parallell agent) startar på max, utan att
 KVD: tsc = baslinjen (kontrollkörd, se worklogkvitto) · leveransen är
 datafiler/konfig (inget appbygge) · deploy + prodcheck.
 
+
+## VÅG 103 — HARMONI-PROGRAMMET (2026-09-11, kundens universumsdirektiv)
+
+"Jobba hand i hand med andra agenter... alla system djupt med full
+harmoni och integration... rätt system som förstår naturen så som
+när jag analyserar tack vare våra system."
+
+- K-A **AGENT-TILL-AGENT-KOORDINATION**: main ↔ molnagenten kommuni-
+  cerar via studions session (meddelanden + gemensam dispatchlista);
+  molnagenten äger portal-vågen (102+), main äger plattform-systemen —
+  låset skyddar byggen, speglarna håller koden samlad.
+- K-B **METODIKEN HEM**: ak1a-analys-skillen (5×5×4, Monte Carlo,
+  bayesiansk omviktning, Kelly) portas versionerat till molnarbetsytan
+  → kunden kan be studion "kör en AK1A-analys" och få METODIKENS djup,
+  inte generiska svar — systemen som förstår naturen.
+- K-C **DJUPET**: analysdjupet (analysfabrik + AKM2 + data) integreras
+  i portalens dashboard (molnagentens våg) + publika analysytor
+  fördjupas (main) — harmoni mellan medlem/portfölj/analys/kurser.

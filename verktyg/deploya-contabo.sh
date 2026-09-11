@@ -18,8 +18,11 @@ git push origin develop
 ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && git checkout -- . 2>/dev/null; git clean -fd data/cache 2>/dev/null; true"
 git -c core.sshCommand="ssh -i \"$NYCKEL\" -o BatchMode=yes" push contabo develop
 
-echo "── 2/4 server: npm ci + build ──"
-ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && git log --oneline -1 && npm ci --no-audit --no-fund >/dev/null 2>&1 && npm run build 2>&1 | tail -2"
+echo "── 2/4 server: npm ci + build (med deploylås) ──"
+# VÅG 100-incidenten: molnagentens egna bygge krockade med deploy-skriptets
+# → .next raderades mitt i → crashloop/502. flock = ömsesidig uteslutning:
+# agentens protokoll (AGENTS.md) kräver samma låsfil för sina byggen.
+ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && exec flock -n /tmp/ak1a-deploy.lock bash -c 'git log --oneline -1 && npm ci --no-audit --no-fund >/dev/null 2>&1 && npm run build 2>&1 | tail -2' || echo 'LÅS UPPTAGET — annat bygge pågår; avbryter deploy (försök igen)'"
 
 echo "── 3/4 server: pm2 restart ──"
 ssh -i "$NYCKEL" -o BatchMode=yes "$SERVER" "cd /home/ak1a/AK1 && pm2 restart ak1a --update-env && sleep 6 && pm2 ls | grep -o 'ak1a.*online' | head -1"

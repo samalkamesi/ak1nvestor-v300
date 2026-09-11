@@ -275,7 +275,7 @@ export function VariabelPanel() {
           Prisvärdena skyddas av ADMIN_PASSWORD — lämnad i headern x-admin-password,
           samma mönster som övriga admin-rutter.
         </p>
-        <div className="mt-3 flex gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
           <Input
             type="password"
             value={losenord}
@@ -284,7 +284,7 @@ export function VariabelPanel() {
             placeholder="Admin-lösenord"
             className="max-w-xs"
           />
-          <Button onClick={lasUpp} className="bg-gold text-background hover:bg-gold/90">
+          <Button onClick={lasUpp} className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0">
             Lås upp
           </Button>
         </div>
@@ -299,7 +299,7 @@ export function VariabelPanel() {
     <div className="space-y-5">
       {/* Rubrikrad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
@@ -490,7 +490,7 @@ function VariabelRad({
             <span className="text-[10px] text-muted-foreground">{info.enhet}</span>
             <Button
               size="sm"
-              className="bg-gold text-background hover:bg-gold/90"
+              className="min-h-[44px] bg-gold text-background hover:bg-gold/90 sm:min-h-0"
               disabled={arbetar || !giltigt}
               onClick={sparaRad}
             >

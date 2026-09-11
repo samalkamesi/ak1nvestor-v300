@@ -110,3 +110,14 @@ denna server. Leveransprotokoll:
    små, beskrivande steg (svenska, "studio:"-prefix i ämnet).
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
+
+## VERKTYGSBÄLTET (våg 100) — min egen kapacitet, paketerad
+
+Mina operativa procedurer finns som färdigheter i `.zcode/skills/`:
+`sessionstart`, `leverera-kod`, `leverera-data`, `leveranskontroll`
+(KVD), `styrelsemote`, `parallell-dispatch`, `juridikgrind`, `drift-ops`
+— plus kommandon `/status`, `/kvd`, `/deploy` (`.zcode/commands/`).
+Snabbläge: `node verktyg/agent-status.mjs` (git + våg + prod + pm2 +
+kvalitet i ett kommando). Använd dem istället för att återhärleda
+protokollen — men denna fil förblir sanningshierarkins topp.
+

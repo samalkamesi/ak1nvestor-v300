@@ -943,3 +943,17 @@ KVD: tsc 36 · build 0 · deploy + prodcheck.
   kundens).
 
 KVD: tsc 36 · build 0 · schema-validering · deploy.
+
+## VÅG 99 TILLÄGG — SYSTEM FÖR SYSTEM (2026-09-11, kunddirektiv "bygg i timmar system för system")
+
+- H1 **LÄRVÄGS-SYSTEMET KLART** (front B): statusrevision av B1-LARVAG +
+  fullbordan — personlig nästa-kurs-rekommendation med varför-rad ur
+  medlemmens progress/kategori/quiz-svaghet; visas på min-sida.
+- H2 **AI-MENTORN 2.0** (front B): publikchatt-widgeten grundas i ÄKTA
+  data (kursregistret + dataset-medianer) med AK1A-röst + juridikgrind —
+  aldrig generiska svar.
+- H3 **KVARTALSRAPPORT-SYSTEMET** (front A sista biten): pedagogiska
+  kvartalssammanfattningar ("vad resultatensäsongen lärde oss") som
+  citeringsmagnet-serie i granskningskön.
+
+KVD: tsc 36 · build 0 · deploy per system när klart.

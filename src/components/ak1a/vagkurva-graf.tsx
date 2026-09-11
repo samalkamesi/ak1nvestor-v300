@@ -514,7 +514,7 @@ export function VagkurvaGraf({
                 <div key={h.id} className="h-[168px] animate-pulse rounded-xl bg-[#0E1B2E]/50" />
               ))}
             </div>
-            <p className="text-sm italic text-muted-foreground">
+            <p className="text-sm italic text-[#EDE6D6]/60">
               Läser vågmotorens läge för {vald} på fem tidshorisonter …
             </p>
           </div>
@@ -522,7 +522,7 @@ export function VagkurvaGraf({
           /* Fel/viloläge — motorn sover, aldrig dömande */
           <div className="rounded-lg border border-bear/30 bg-bear/5 p-5">
             <p className="font-serif text-sm font-bold text-bear">Vågmotorn sover — försök igen</p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-1 text-sm leading-relaxed text-[#EDE6D6]/60">
               {fel || "Inget underlag kunde hämtas"} — utan data finns ingen våg att rita, och
               motorn gissar aldrig.
             </p>
@@ -537,7 +537,7 @@ export function VagkurvaGraf({
         ) : (
           <div className="space-y-3">
             {data.dataPer ? (
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-[11px] text-[#EDE6D6]/60">
                 Senaste rapport i underlaget: {data.dataPer}
               </p>
             ) : null}
@@ -550,7 +550,7 @@ export function VagkurvaGraf({
             </div>
 
             {/* Källärlighet — exakt formulering, alltid synlig */}
-            <p className="border-t border-border pt-2 text-[11px] leading-relaxed text-muted-foreground">
+            <p className="border-t border-[#EDE6D6]/15 pt-2 text-[11px] leading-relaxed text-[#EDE6D6]/60">
               {VAGKURVA_KALLA_TEXT}
             </p>
           </div>

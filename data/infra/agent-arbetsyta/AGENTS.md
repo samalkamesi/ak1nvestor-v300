@@ -101,10 +101,13 @@ denna server. Leveransprotokoll:
    nycklar krävs). Datafiler behöver INGET bygge — appar läser dem
    från disk.
 2. **Kodändringar** (src/**): ändra + `npx tsc --noEmit` (0 nya fel)
-   → commit → push prod develop → BYGG: `cd /home/ak1a/AK1 && npm
-   ci --no-audit --no-fund && npm run build && pm2 restart ak1a` →
-   verifiera `https://lab.ak1nvestor.com/` = 200. Misslyckas bygget:
-   `git revert HEAD && bygg om` — ALDRIG lämna prod trasig.
+   → commit → push prod develop → BYGG under LÅS: `exec flock -n
+   /tmp/ak1a-deploy.lock bash -c 'cd /home/ak1a/AK1 && npm ci --no-audit
+   --no-fund && npm run build && pm2 restart ak1a'` — om låset är upptaget
+   (deploy-skriptet bygger) → VÄNTA 3 min och försök igen, ALDRIG bygga
+   olåst (våg 100-incidenten: två parallella byggen raderade .next →
+   sajten nere). Verifiera `https://lab.ak1nvestor.com/` = 200 efteråt.
+   Misslyckas bygget: `git revert HEAD && bygg om` — ALDRIG lämna prod trasig.
 3. **STOPPREGEL**: aldrig röra .env*-, nyckel- eller betalningsfiler;
    priser/domän/juridik = styrelseregel R2 (väntar kund). Committa i
    små, beskrivande steg (svenska, "studio:"-prefix i ämnet).

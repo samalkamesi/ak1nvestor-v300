@@ -193,8 +193,14 @@ export type TrafikEvent = {
   sessionHash: string | null;
   /** true = sidvisning, false = keepalive-puls för "besökare just nu". */
   puls: boolean;
-  /** "forsta" | "stickprov" | "bot" | "minimal" — hur raden blev vald. */
+  /** "forsta" | "stickprov" | "bot" | "minimal" | "felgrans" — hur raden blev vald. */
   urval: string;
+  /**
+   * Felgräns-telemetri (VÅG 101): "chunk" (modul-laddningsfel → självläkning)
+   * eller "ovrigt" (riktigt app-fel) — null för vanliga sidvisningar/pulsar.
+   * PII-fritt: raden bär endast kategori + sökväg (utan query).
+   */
+  fel?: "chunk" | "ovrigt" | null;
 };
 
 /** Bygger en system_events-rad (type=trafik) — HEL payload i details. */
@@ -202,7 +208,9 @@ export function trafikRad(t: TrafikEvent) {
   return {
     type: "trafik",
     severity: "info",
-    message: `[trafik] ${t.puls ? "puls" : "sidvisning"} → ${t.path} (${t.uaKlass}${t.urval ? `, ${t.urval}` : ""})`,
+    message: `[trafik] ${
+      t.puls ? "puls" : t.fel ? `felgräns (${t.fel})` : "sidvisning"
+    } → ${t.path} (${t.uaKlass}${t.urval ? `, ${t.urval}` : ""})`,
     details: {
       schema: "ak1a-trafik/1",
       dag: t.dag,
@@ -214,6 +222,7 @@ export function trafikRad(t: TrafikEvent) {
       s: t.sessionHash,
       puls: t.puls,
       urval: t.urval,
+      fel: t.fel ?? null,
     },
     source: "trafik",
   };

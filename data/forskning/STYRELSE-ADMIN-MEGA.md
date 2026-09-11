@@ -980,3 +980,34 @@ KVD: tsc 36 · build 0 · deploy per system när klart.
   (ej redigera ordlista.ts parallellt med G1!).
 - I2 **SYSTEMKARTAN**: read-only inventering av ALLA system med
   kvalitetscore + gap — våg 100+dispatchlista.
+
+## VÅG 100 — AGENTENS VERKTYGSBÄLTE (2026-09-11, kunddirektiv "bygg dig själv vidare autonomt … absolut maximala kapacitet")
+
+Agenten bygger ut SIG SJÄLV — operativ kunskap paketerad så att varje
+framtida session (och varje parallell agent) startar på max, utan att
+återhärleda protokoll ur 10 000 worklog-rader:
+
+- J1 **FÄRDIGHETSBIBLIOTEKET** (`.zcode/skills/`, 8 st, frontmatter
+  validerad 8/8): `sessionstart` (läge + sanningshierarki + dokument-
+  karta), `leverera-kod` (deployprotokoll + revert-stoppregeln),
+  `leverera-data` (datapush utan bygge), `leveranskontroll` (KVD: tsc-36
+  · motorer 107/0/0 · vakten GRÖN · prod 200), `styrelsemote` (R1-R4 +
+  styrelsemotorn + protokollgång), `parallell-dispatch` (R4-tak ~9,
+  promptmall, huvudagentens build-ensamrätt — OOM-lärdomen våg 85),
+  `juridikgrind` (utbildning ALDRIG rådgivning + lagrumsträd som ej
+  blandas), `drift-ops` (backup, DR-prov, ISR-varmare, pm2-ordning).
+- J2 **LÄGESVERKTYGET** `verktyg/agent-status.mjs`: ETT kommando →
+  git-läge + senaste våg (worklog och styrelsedokument sammanslagna) +
+  prod-HTTPS + prod-commit + pm2 + vakten/motorer + bältets skick.
+  Maskinläsbar RESULTAT_JSON-sista-rad (samma mönster som vakten).
+  Parserfälla hittad och skärpt vid test: dokumentraden "Statusregler:
+  RÖD = …" fick ALDRIG tolkas som status — enbart STATUS-rader parsas.
+  Testat GRÖNT: prod 200 · pm2 online · vakten GRÖN · motorer 107/0/0.
+- J3 **KOMMANDON** (`.zcode/commands/`): `/status`, `/kvd`, `/deploy` —
+  snabbåtkomst i Z-Code-ytan (studiens "/"-meny + skrivbordsklienten).
+- J4 **AGENTS.md**: ny sektion "VERKTYGSBÄLTET (våg 100)" — briefingens
+  pekare in i bältet; AGENTS.md förblir sanningshierarkins topp.
+
+KVD: tsc = baslinjen (kontrollkörd, se worklogkvitto) · leveransen är
+datafiler/konfig (inget appbygge) · deploy + prodcheck.
+

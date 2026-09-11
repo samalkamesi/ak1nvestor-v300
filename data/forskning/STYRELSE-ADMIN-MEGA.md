@@ -800,3 +800,20 @@ DIFFERENTIALDIAGNOS (inte mer UI — hjärnan):
   hela kedjan i molnet utan dator. AGENTS.md bar leveransprotokollet
   (data = push direkt; kod = tsc+bygg+pm2 med revert-stoppregel;
   prod-remote = lokal sodkvag).
+
+### VÅG 95 LANDAD (2026-09-11, 6776bda + 430dcf6, prod 200)
+
+- **M9-FABRIKEN**: 3 evergreen-utkast i kundens Supabase-granskningskö
+  (kontrolleraText 0 FEL, md5-kvitton, determinism bevisad, 57/57 oberoende
+  kontroller) + M9-GRANSKNING-2026-09.md-guiden + fabrikbootstrap (--tvinga)
+  + kortNamn-buggfix. KUNDENS FÖRSTA GRANSKNINGSKÖ ÄR LEVERERAD.
+- **8 SEO-GUIDER**: granskningskö data/forskning/SEO-GUIDER-2026-09.md;
+  JSON-utkast i data/blogg-utkast/ (EJ live-mappen — main-agentens
+  add -A-fel fångat och åtgärdat innan deploy; prod oförändrad
+  55 poster verifierad).
+- **HASTIGHET**: friskgangsregel (24 h/modellDod → FRISK session vid nytt
+  meddelande, E2E 5/5) + varmStudioTransport (PROD-BEVISAD: barnprocess
+  född utan kund efter omstart) + TTFB-verktyg (brygg-overhead 36 ms).
+- **STYRELSEFIX**: appendera()-vakten kastade vid varje protokoll-append
+  (separerar-självmotsägelse) — exakt rot+'/'+namn-kontroll nu.
+- tsc 36=baslinje · build exit 0 · regressioner gröna · deploy 200.

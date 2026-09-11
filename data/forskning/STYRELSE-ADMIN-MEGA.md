@@ -782,3 +782,21 @@ DIFFERENTIALDIAGNOS (inte mer UI — hjärnan):
 5. **STÅENDE VÅG-START-RUTIN**: agentarbetsytan pullas + AGENTS.md
    kopieras (cp data/infra/agent-arbetsyta/AGENTS.md ./AGENTS.md) vid
    varje våg-deploy — annars glider hjärnan ifrån koden igen.
+
+### VÅG 94B — AUTO-POLICY + MOLNUTVECKLING BEVISAD (2026-09-10, e4f336c + agent-commit ab08bd2)
+
+- FYND (E2E-test 1): molnagentens ALLA skrivningar fastnade i
+  30 s-permissionsvantan ("inget klient-svar") = kundens "inget
+  fungerar"-kansla vid varje filandring; lasning verkade fri.
+- FIX: permissions-policyn (lib/studio, ny modul) — allow (Write/Edit
+  i arbetsytan, Bash-vitlista per led: git/npm/npx/node/pm2 ak1a/curl
+  localhost+lab), deny (.env/nycklar/sudo/destruktivt/force-push),
+  frag (ovrigt -> dialog). Transportkoppling i requestPermission-
+  grenen; STUDIO_AUTO_POLICY=av-brytare. Test 63/63.
+- BEVIS 2 (prod, oberoende verifierad): agenten skapade
+  data/forskning/MOLN-DEV-BEVIS.md, committade (ab08bd2) och pushade
+  till prod-repot VIA EGEN GIT — statusraderna visade auto-policyens
+  tillstand; prod-HEAD = agentens commit. CHAT -> UTVECKLA -> LEVERERA,
+  hela kedjan i molnet utan dator. AGENTS.md bar leveransprotokollet
+  (data = push direkt; kod = tsc+bygg+pm2 med revert-stoppregel;
+  prod-remote = lokal sodkvag).

@@ -858,3 +858,18 @@ KUNDENS HÄNDER (färdigpackat, väntar på fysisk åtgärd — INGA beslut):
 - API-nyckelrotation: kundens Z.AI-konto (nyckeln lever ENDAST där +
   serverns config.json chmod 600).
 - Stripe/betalning + jurist K-B2B: kräver kundens bank-ID/underskrift.
+
+### VÅG 96 LANDAD (2026-09-11, bf9e06a, prod 200 + nginx-cacher live)
+
+- D2 MOBIL: ~35 tryckytor ≥52px (sm:-reset), läsbarhet 15px, iOS-zoom-
+  bort (16px fält), visualViewport-lyssnare, drawer 85vw + Stäng-rad.
+- D1 PRESTANDA: mono-font preload av (2 preload = -40 kB kritiskt),
+  X-Powered-By borta, PROD-MÄTNING: / TTFB median 47,8 ms · /kurser
+  50,9 · blogg 53,4 · speglar ISR-svans 0,5-3,6 s (kunddirektiv
+  oförändrat); nginx public/-cacher LIVE (og/ak1a 30 d · index 1 h ·
+  llms 24 h — blocken flyttades till 443-servern; backup
+  /tmp/nginx-ak1a.bak-v96).
+- D3 M9: 4 nya utkast i kön (kassaflödesanalys-101 · utdelningar-101 ·
+  börspsykologi-fallstugor · branschmedianer v2-legitimt) — nyckeltal
+  omräknade mot källfiler, 0 FEL. Kundens kö = 7 utkast + 8 SEO-guider.
+- tsc 36 · build 0 · deploy 200 · arbetsyta synkad.

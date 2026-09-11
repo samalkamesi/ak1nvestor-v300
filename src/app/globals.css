@@ -387,6 +387,17 @@
     --guld-djup: #7A5E14;
     --gold-deep: #7A5E14;
   }
+  /* ══ NÄSTLADE LJUSA YTOR I MARIN (VÅG 105) ══
+     ROT-ORSAK: .marin-panel sätter cream-text (#EDE6D6) på hela subträdet —
+     men temavariabeln bg-card är LJUS (#fffdf7) i ljust läge. Ett bg-card-
+     kort inuti en marin-panel fick alltså cream-på-vitt = 1.2:1 OSYNLIGT
+     (vagfundament/vagkurvor + nyhetslistorna — kundens "grå utsolkning"
+     2026-09-11). Säkerhetsnet: exakt bg-card-token inuti marin → ink-text.
+     Komponenterna använder i första hand marin-familjens bg-[#101b2b]
+     direkt (rätt design); denna regel fångar kvarvarande/nya bg-card. */
+  html:not(.dark) :is(.marin-panel, .marin-scope) [class~="bg-card"] {
+    color: var(--ink, #0a0b0d);
+  }
   /* LJUSA TEMAT (2026-09-02): Garanterad kant mot paper-botten — brons-
      hårlinje #8a6d1f syns mot både paper (4.3:1) och marin (3.5:1) ✓,
      plus lyft-skugga så panelen aldrig flyter ihop med pappret.

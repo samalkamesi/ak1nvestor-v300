@@ -224,7 +224,7 @@ function PaverkanBadge({ paverkan }: { paverkan: number }) {
   return (
     <span
       title="Påverkanspoäng 0–100"
-      className="inline-flex items-center rounded-full border border-border bg-muted px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-muted-foreground"
+      className="inline-flex items-center rounded-full border border-[#EDE6D6]/15 bg-[#0E1B2E]/60 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[#EDE6D6]/70"
     >
       {tal}
     </span>
@@ -607,15 +607,16 @@ export function NyhetsCentral() {
             ))}
           </div>
         ) : filtrerade.length === 0 ? (
-          /* UTAN NYHETER — viloläget */
-          <div className="mt-6 rounded-xl border border-gold/25 bg-card/60 p-6 text-center">
+          /* UTAN NYHETER — viloläget (våg 105: marin-familjens mörka kort —
+             bg-card blev LJUS under marin-panelens cream-text i ljust läge) */
+          <div className="mt-6 rounded-xl border border-gold/25 bg-[#101b2b]/60 p-6 text-center">
             <p className="text-2xl" aria-hidden="true">
               🌊
             </p>
-            <p className="mt-2 text-sm font-semibold text-foreground">
+            <p className="mt-2 text-sm font-semibold text-[#EDE6D6]">
               {nyheter.length === 0 ? "Inga nyheter just nu — marknaden andas." : "Inga nyheter i detta filtret."}
             </p>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-1 text-xs leading-relaxed text-[#EDE6D6]/60">
               Ibland är tystnaden själva nyheten. Vila i den — eller{" "}
               <Link href="/kurser" className="font-semibold text-gold hover:underline">
                 fördjupa dig i en kurs
@@ -634,14 +635,17 @@ export function NyhetsCentral() {
                       NYTT
                     </span>
                   )}
-                  <article className="rounded-xl border border-gold/25 bg-card/80 p-4 transition-colors hover:border-gold/45 sm:p-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-muted-foreground">
+                  {/* VÅG 105: marin-mörkt kort (bg-card/80 = ljus ruta med
+                      mörk text inuti marin-panelen i ljust läge = kundens
+                      "grå utsolkning") */}
+                  <article className="rounded-xl border border-gold/25 bg-[#101b2b]/80 p-4 transition-colors hover:border-gold/45 sm:p-5">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#EDE6D6]/60">
                       <PaverkanBadge paverkan={n.paverkan} />
                       {n.kalla && <span className="font-semibold">{n.kalla}</span>}
                       <span>{tidText(n.tid)}</span>
                       {n.kanal && <span className="opacity-70">· {n.kanal}</span>}
                     </div>
-                    <h3 className="mt-2 text-sm font-semibold leading-snug text-foreground sm:text-base">
+                    <h3 className="mt-2 text-sm font-semibold leading-snug text-[#EDE6D6] sm:text-base">
                       {n.lank ? (
                         <a
                           href={n.lank}

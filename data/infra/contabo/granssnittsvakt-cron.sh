@@ -44,7 +44,7 @@ fi
 NYCKELN="ADMIN""_PASSWORD"
 ADMIN_PASS="$(grep -E "^${NYCKELN}=" /home/ak1a/AK1/.env.production.local 2>/dev/null | head -1 | cut -d= -f2- | tr -d '\"'"'"'')"
 SAMMANFATTNING="$(grep -A40 'GRÄNSSNITTSVAKTEN:' "$RAPPORTKATALOG/senaste-korning.txt" | head -45)"
-SESSION="$(curl -s -H "x-admin-password: $ADMIN_PASS" http://localhost:3000/api/studio/mal/status | sed -n 's/.*"session":"\([^"]*\)".*/\1/p' | head -1)"
+SESSION="$(curl -s -H "x-admin-password: $ADMIN_PASS" http://localhost:3000/api/studio/mal/status | sed -n 's/.*"sessionId":"\([^"]*\)".*/\1/p' | head -1)"
 
 if [ -n "${SESSION:-}" ] && [ -n "${ADMIN_PASS:-}" ]; then
   PROMPT="GRÄNSSNITTSVAKTEN LARMAR (automatisk $STAMP, fyndkod $KOD). Gränsnittsmätningen hittade defekter som MÅSTE rightas innan kunden ser dem. Sammanfattning:

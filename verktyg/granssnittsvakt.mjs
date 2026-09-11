@@ -170,27 +170,32 @@ const MAT_SKRIPT = () => {
     // Returnera lista möjliga effektiva bakgrunder (worst-case ur läsbarhetssynpunkt)
     // VÅG 105: börja på ELEMENTET EGENT (knappar har egen opak bakgrund —
     // guldknapp med marin text är läsbart även ovanpå marin-gradient).
+    // Semi-transparenta lager (t.ex. bg-card/80 = 80 %-vitt kort på marin-
+    // gradienten) KOMPOSITERAS ner på det första opaka underlaget — annars
+    // mäts texten mot gradienten och kortet felsignaleras (nyhetslist-fällan).
     const kandidater = [];
+    const halvtransparenta = []; // topp → botten
     let nod = el;
-    let ackumuleradAlpha = null; // närmaste halvtransparenta färg ovanpå
     while (nod && nod !== document.documentElement) {
       const st = getComputedStyle(nod);
       const bg = parseFarg(st.backgroundColor);
       const grad = st.backgroundImage && st.backgroundImage !== "none" ? st.backgroundImage : null;
       const nodRect = nod.getBoundingClientRect();
-      const täcker = grad && rect.left >= nodRect.left - 1 && rect.right <= nodRect.right + 1 && rect.top >= nodRect.top - 1 && rect.bottom <= nodRect.bottom + 1;
+      const täcker = rect.left >= nodRect.left - 1 && rect.right <= nodRect.right + 1 && rect.top >= nodRect.top - 1 && rect.bottom <= nodRect.bottom + 1;
       if (bg && bg.a > 0) {
-        if (bg.a >= 0.95) { kandidater.push({ farg: bg, gradient: null }); return kandidater; }
-        if (!ackumuleradAlpha) ackumuleradAlpha = bg;
+        if (bg.a >= 0.95) {
+          kandidater.push({ farg: kompositStack(halvtransparenta, bg), gradient: null });
+          return kandidater;
+        }
+        halvtransparenta.push(bg);
       }
       if (grad && täcker) {
         const stopp = gradientStopp(grad);
         if (stopp.length) {
-          // worst-case: minsta kontrasten mot något stopp (i tur komponerat
-          // på detta lagers egen bakgrundsfärg om stoppet har alpha)
           for (const s of stopp) {
-            const effektiv = s.a >= 0.95 ? s : komposit(s, bg && bg.a > 0 ? bg : { r: 255, g: 255, b: 255, a: 1 });
-            kandidater.push({ farg: effektiv, gradient: grad.slice(0, 120) });
+            const botten = bg && bg.a > 0 ? bg : { r: 255, g: 255, b: 255, a: 1 };
+            const effektiv = s.a >= 0.95 ? s : komposit(s, botten);
+            kandidater.push({ farg: kompositStack(halvtransparenta, effektiv), gradient: grad.slice(0, 120) });
           }
           return kandidater;
         }
@@ -198,8 +203,17 @@ const MAT_SKRIPT = () => {
       nod = nod.parentElement;
     }
     const rootBg = parseFarg(getComputedStyle(document.documentElement).backgroundColor) || { r: 255, g: 255, b: 255, a: 1 };
-    kandidater.push({ farg: rootBg, gradient: null });
+    kandidater.push({ farg: kompositStack(halvtransparenta, rootBg), gradient: null });
     return kandidater;
+  }
+
+  // komponera en stack (topp först) av halvtransparenta färger ner på ett opakt underlag
+  function kompositStack(stack, underlag) {
+    let acc = { ...underlag, a: 1 };
+    for (let i = stack.length - 1; i >= 0; i--) {
+      acc = komposit(stack[i], acc);
+    }
+    return acc;
   }
 
   const textNoder = [];
@@ -262,9 +276,20 @@ const MAT_SKRIPT = () => {
     if (!avsiktligEllips && el.scrollWidth > el.clientWidth + 3 && st.overflow !== "visible") {
       resultat.klippt.push({ text: txt, tagg: el.tagName.toLowerCase(), klass: klassStr.slice(0, 80) });
     }
-    // utanför högerkanten (synligt element)
+    // utanför högerkanten — MEN ej inuti en avsiktlig horisontell scroll-
+    // container (vagfundament-matrisens sticky-kolumner = design, ej fel)
+    const iScrollare = (() => {
+      let nod2 = el.parentElement;
+      while (nod2 && nod2 !== document.documentElement) {
+        const s2 = getComputedStyle(nod2);
+        const ox = s2.overflowX;
+        if ((ox === "auto" || ox === "scroll") && nod2.scrollWidth > nod2.clientWidth + 3) return true;
+        nod2 = nod2.parentElement;
+      }
+      return false;
+    })();
     const r = el.getBoundingClientRect();
-    if (r.right > vw + 3 && r.width < vw * 0.98) {
+    if (!iScrollare && r.right > vw + 3 && r.width < vw * 0.98) {
       resultat.utanfor.push({ text: txt, hoger: Math.round(r.right), bredd: Math.round(r.width) });
     }
   }

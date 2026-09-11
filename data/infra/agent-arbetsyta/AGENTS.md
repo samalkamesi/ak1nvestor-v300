@@ -115,3 +115,14 @@ denna server. Leveransprotokoll:
    små, beskrivande steg (svenska, "studio:"-prefix i ämnet).
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
+
+## GRÄNSSNITTSVAKTEN (våg 105 — kunddirektiv "aldrig igen nå kundens ögon")
+
+`verktyg/granssnittsvakt.mjs` mäter ALLA publika sidor i båda teman × mobil/dator:
+WCAG-kontrast, horisontell överflöd, element utanför viewport, klippt text, konsolfel.
+Cron (var 6:e timme, `data/infra/contabo/granssnittsvakt-cron.sh`) larmar DIN session vid
+fynd med full sammanfattning. Uppdrag vid larm: diagnostisera roten → rätta src/ (Write/Edit,
+Mimosa-regler) → tsc (baslinje 36) → bygg under `flock /tmp/ak1a-deploy.lock` → deploy via
+egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback är whitelistat i
+middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
+gränsnittsändringar; ett defekt som når kunden = vaktsystemfel, inte bara kodfel.

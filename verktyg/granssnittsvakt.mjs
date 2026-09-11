@@ -309,6 +309,19 @@ try {
         page.on("pageerror", (fel) => konsolFel.push(String(fel).slice(0, 160)));
         try {
           const svar = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 25000 });
+          // VÅG 105: icke-HTML-svar (t.ex. middleware-429 som Chrome visar som
+          // JSON-<pre>) är ALDRIG ett gränsnittsdefekt — notera status och hoppa
+          // mätningen. 429 = egen throttle, 5xx = driftfel (räknas).
+          const httpKod = svar ? svar.status() : 0;
+          const contentType = (svar && svar.headers()["content-type"]) || "";
+          if (contentType.includes("application/json")) {
+            status = httpKod === 429 ? "icke-sida (429 egen throttle)" : `icke-sida (json ${httpKod})`;
+            if (httpKod >= 500) rapport.fel += 1;
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: httpKod >= 500 ? 1 : 0, konsolFel: [], matning: null });
+            console.log(`· [${tema}/${skarm.namn}] ${sida} — ${status}`);
+            await new Promise((r) => setTimeout(r, 350));
+            continue;
+          }
           await new Promise((r) => setTimeout(r, 1200)); // hydrering + late-lazy
 
           // VÅG 105: autoscroll — lazy-monterade sektioner (IntersectionObserver)

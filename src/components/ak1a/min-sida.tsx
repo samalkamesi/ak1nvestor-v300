@@ -153,10 +153,15 @@ function fasEtikett(fas: 1 | 2 | 3): { ikon: string; text: string } {
 export function MinSida({
   prenumNiva = null,
   prenumRabattProcent = 0,
+  serverProgress = null,
 }: {
   /** Exempelnivå ur priser.json för prenum-CTA-kortet (VÅG 63 O2 #2). */
   prenumNiva?: PrenumerationNiva | null;
   prenumRabattProcent?: number;
+  /** VÅG 102: kontots SERVER-progress — när den finns är DEN sanningskällan
+   *  för XP/stjärnor/klara kurser (localStorage förblir offline-cache,
+   *  L2-linjen; streak förblir lokal, v1-scope). null = gäst-läge. */
+  serverProgress?: { xp: number; stjarnor: number; klaraKurser: string[] } | null;
 }) {
   const [hydrerad, setHydrerad] = useState(false);
   const [medlem, setMedlem] = useState<Medlem | null>(null);
@@ -183,13 +188,28 @@ export function MinSida({
   const { toast } = useToast();
 
   useEffect(() => {
-    setMedlem(lasMedlem());
-    setXp(lasXP());
-    setStjarnor(lasStjarnor());
+    // VÅG 102: riktig server-session ⇒ KONTOTS progress vinner över
+    // enhetens cache. Utan lokalt gäst-konto visar portalen ändå full
+    // dashboard (kontot Är inloggningen) — PORTAL_MEDLEM bär minsta
+    // möjliga lokala vy (delning av insikter förblir frivillig, tracerns
+    // elevId är en lokal etikett).
+    const lokal = lasMedlem();
+    if (serverProgress) {
+      setMedlem(
+        lokal ?? { id: "portal", email: "elev@portal.ak1a", namn: "Elev" },
+      );
+      setXp(serverProgress.xp);
+      setStjarnor(serverProgress.stjarnor);
+      setKlara(serverProgress.klaraKurser);
+    } else {
+      setMedlem(lokal);
+      setXp(lasXP());
+      setStjarnor(lasStjarnor());
+      setKlara(lasKlaraKurser());
+    }
     const streakData = lasStreak();
     setStreak(streakData.antal);
     setStreakBasta(streakData.basta);
-    setKlara(lasKlaraKurser());
     setSr(srStatistik());
     setBadges(badgeStatus());
     setFas(harFas3Access() ? 3 : harFas2Access() ? 2 : 1);
@@ -198,7 +218,7 @@ export function MinSida({
     const profil = lasBeteende();
     setSammanfattning({ aktivTid: profil.aktivTid, toppIntresse: lasToppIntresse(profil) });
     setHydrerad(true);
-  }, []);
+  }, [serverProgress]);
 
   // ── Härledda värden (SSR-säkra: defaults räcker tills hydrering) ──
   const elevNiva = nivaFranXP(xp);

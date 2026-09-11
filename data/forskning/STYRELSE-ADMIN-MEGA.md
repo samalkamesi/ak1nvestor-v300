@@ -873,3 +873,20 @@ KUNDENS HÄNDER (färdigpackat, väntar på fysisk åtgärd — INGA beslut):
   börspsykologi-fallstugor · branschmedianer v2-legitimt) — nyckeltal
   omräknade mot källfiler, 0 FEL. Kundens kö = 7 utkast + 8 SEO-guider.
 - tsc 36 · build 0 · deploy 200 · arbetsyta synkad.
+
+## VÅG 97 — CITERINGSMAGNETER + STUDIO-TANKAR (2026-09-11, R2-skarpt)
+
+- E1 **DATASET-SIDOR** (front A i AI-innovationsprogrammet): publika
+  citeringsmagnetsidor ur AKM2-datan — branschmedianer (P/E, direkt-
+  avkastning, marginaler) som strukturerade sidor + JSON-LD + llms.txt-
+  länkning. KONTRAKT: endast publika medianer/aggregat — per-bolag-
+  poäng ALDRIG (V86-dataset-kontraktet). Trespråkigt enligt speglarnas
+  mönster.
+- E2 **STUDIO TANKAR-VY + BORTA-REPLAY**: agentens resonemang (kanal
+  "tankar") renderas som kollapsbar sektion under svaret; borta-bannern
+  berikas ur /api/studio/session/events (C4) — "vad agenten gjorde
+  medan du var borta" med verktygsaktivitet.
+- Backup-verifiering: dumpens slutmarkör + 710 objekt bevisade; nattlig
+  cron verifierad installerad.
+
+KVD: tsc 36 · build 0 · deploy + prodcheck.

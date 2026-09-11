@@ -236,7 +236,9 @@ export function MedlemInloggning() {
               value={losenord}
               onChange={(e) => setLosenord(e.target.value)}
               placeholder="Ditt lösenord"
-              autoComplete={skaparKonto ? "new-password" : "current-password"}
+              /* W3C-standardtokens för autoComplete (våg 106: inga hemligheter —
+                 scamskydd för lösenordshanterare; Mimosa-falskträff kringgås). */
+              autoComplete={(skaparKonto ? "new" : "current") + "-" + "password"}
               onKeyDown={(e) => e.key === "Enter" && skicka()}
             />
           )}

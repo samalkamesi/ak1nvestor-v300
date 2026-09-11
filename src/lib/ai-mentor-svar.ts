@@ -1,0 +1,609 @@
+/**
+ * AI-MENTORN 2.0 — SVARMOTOR (våg 106 H2, beslut D3).
+ *
+ * Regelbaserad motor som svarar på nybörjarfrågor UTAN API-kostnad: ~15
+ * förhandsfrågor + generiskt V01–V20-uppslag, allt källmärkt ur kursregistret
+ * (ai-mentor-register.ts). chat-widget.tsx frågar motorn FÖRE nätanropet —
+ * matchar den svarar vi lokalt (0 kr), annars faller vi tillbaka på
+ * /api/chatbot precis som förr.
+ *
+ * ── JURIDIKGRINDEN (lagen 2007:528) ─────────────────────────────────────────
+ * All formulering är PEDAGOGISK utbildning. Motorn innehåller aldrig och kan
+ * aldrig producera investeringsråd ("köp", "sälj", "detta är värt att äga") —
+ * frågan "ger ni råd?" besvaras med ett ärligt nej + laghänvisning.
+ *
+ * ── DETERMINISM (våg 106 H2) ────────────────────────────────────────────────
+ * Inga slumpval, inga tidsberoenden, ingen miljöberoende sortering (kodpunkts-
+ * ordning). Samma fråga ⇒ bitidentiskt svar, i webbläsaren som i testet.
+ *
+ * ── DEPENDENCY-INJECTION (våg 106 H2) ───────────────────────────────────────
+ * Registret skickas IN som parameter (ingen värdeimport av registermodulen —
+ * endast `import type` — så att verktyg/testa-ai-mentor.mjs kan köra denna
+ * fil direkt i Node utan bundlar).
+ */
+
+import type { RegisterRad } from "./ai-mentor-register";
+
+// ── Typer (speglar widgetens Meddelande-form) ───────────────────────────────
+
+export type LokalHandling = { text: string; lank: string; ikon: string; beskrivning?: string };
+export type LokalMotfraga = { text: string; kategori: string };
+export type LokalKalla = { slug?: string; titel: string; lagrow: string };
+
+export type LokaltSvar = {
+  text: string;
+  /** Ämnes-id — sätts som senasteAmne i widgeten (förstås av /api/chatbot). */
+  amne: string;
+  /** Källmärke: kursslug och/eller läge i läroplanen — på varje svar. */
+  kalla: LokalKalla;
+  handlings: LokalHandling[];
+  motfraga: LokalMotfraga;
+  fordjupa: { text: string; lank: string };
+};
+
+// ── Normalisering ───────────────────────────────────────────────────────────
+
+/**
+ * Normalisera till jämförbart plan: gemener, skiljetecken → mellanslag,
+ * kollapsade mellanrum. Åäö BEVARAS (de är bokstäver, \p{L}) — det svenska
+ * alfabetet ska inte söndras av normaliseringen (våg 106 H2).
+ */
+function normalisera(s: string): string {
+  return s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim();
+}
+
+/**
+ * Diakritikafritt plan (å→a, ä→a, ö→o, é→e …) för felstavningstolerans:
+ * "impulsvag" och "impulsvåg" ska jämföras som samma ord. NFD-sönderdelning
+ * + strippning av kombinerande tecken (\p{M}) — standard, ingen miljöosa.
+ */
+function diafri(s: string): string {
+  return normalisera(s).normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+}
+
+/**
+ * Klassiskt redigeringstavstånd (Levenshtein) — iterativ tvåraders-DP,
+ * deterministisk. Används som "enkel likhetspoäng": ett felstavat ord ska
+ * fortfarande träffa sitt nyckelord.
+ */
+function redigeringstavstand(a: string, b: string): number {
+  if (a === b) return 0;
+  const n = a.length;
+  const m = b.length;
+  if (n === 0) return m;
+  if (m === 0) return n;
+  let fore = Array.from({ length: m + 1 }, (_, j) => j);
+  const nu = new Array<number>(m + 1);
+  for (let i = 1; i <= n; i++) {
+    nu[0] = i;
+    for (let j = 1; j <= m; j++) {
+      const kostnad = a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1;
+      nu[j] = Math.min(nu[j - 1] + 1, fore[j] + 1, fore[j - 1] + kostnad);
+    }
+    fore = [...nu];
+  }
+  return fore[m];
+}
+
+/** Träffar nyckelordet frågans ord? (våg 106 H2: redigeringstavstånd tillåtet) */
+function traff(fragaOrd: string[], fragaStr: string, nyckelord: string): boolean {
+  const nk = diafri(nyckelord);
+  if (!nk) return false;
+  if (nk.includes(" ")) return fragaStr.includes(nk); // flerordsfras
+  if (nk.length <= 3) return fragaOrd.includes(nk); // korta ord: exakt (annars träffar "ps" i "tips")
+  const max = nk.length <= 7 ? 1 : 2; // längre ord tål 1–2 fel
+  return fragaOrd.some((o) => redigeringstavstand(o, nk) <= max);
+}
+
+// ── Närmaste kurser (fallback + boktips) ────────────────────────────────────
+
+/** Vanliga svenska frågeord som aldrig ska rangordna kurser. */
+const STOPPORD = new Set([
+  "vad", "är", "en", "ett", "och", "hur", "jag", "det", "den", "de", "dem",
+  "ska", "skall", "till", "med", "for", "fran", "om", "pa", "av", "i", "vi",
+  "ni", "man", "kan", "vill", "har", "mitt", "min", "din", "dig", "mig",
+  "börjar", "borjar", "lära", "lara", "mig", "snälla", "snalla", "tack",
+  "fungerar", "betyder", "förklara", "forklara", "explain", "please",
+]);
+
+/**
+ * De n kurser som ligger närmast frågans ord — deterministisk poäng:
+ * ordöverlapp mot titel+kategori+slug (redigeringstavstånd tillåtet), ties
+ * bryts på slug (kodpunktsordning). Ur kursregistret, aldrig gissat.
+ */
+export function narmasteKurser(fraga: string, register: RegisterRad[], n = 3): RegisterRad[] {
+  const alla = diafri(fraga).split(" ").filter((o) => o.length >= 3 && !STOPPORD.has(o));
+  if (alla.length === 0) return register.slice(0, n); // tom fråga → registrets börn
+  const poang = register.map((r) => {
+    const indexOrd = diafri(`${r.titel} ${r.kategori} ${r.slug.replace(/-/g, " ")}`).split(" ");
+    let p = 0;
+    for (const f of alla) {
+      for (const k of indexOrd) {
+        if (k.length < 3) continue;
+        const max = k.length <= 7 ? 1 : 2;
+        if (f === k) p += 2;
+        else if (redigeringstavstand(f, k) <= max) p += 1;
+      }
+    }
+    return { r, p };
+  });
+  return poang
+    .sort((a, b) => b.p - a.p || (a.r.slug < b.r.slug ? -1 : a.r.slug > b.r.slug ? 1 : 0))
+    .slice(0, n)
+    .map((x) => x.r);
+}
+
+// ── Hjälpbyggare ────────────────────────────────────────────────────────────
+
+/** Källrad som avslutar varje svar — KÄLLMÄRKT (våg 106 H2-krav). */
+function kallrad(k: LokalKalla): string {
+  return `\n\n📖 Källa: ${k.titel}${k.slug ? ` (${k.slug})` : ""} — ${k.lagrow}.`;
+}
+
+function kursKalla(register: RegisterRad[], slug: string, lagrow: string): LokalKalla {
+  const r = register.find((x) => x.slug === slug);
+  return r
+    ? { slug: r.slug, titel: r.titel, lagrow }
+    : { titel: "Läroplanen", lagrow };
+}
+
+// ── De 15 förhandsfrågorna ──────────────────────────────────────────────────
+
+type FragMonster = {
+  id: string;
+  /** Kärnord: minst EN träff krävs för att mönstret ska vara kandidat. */
+  karnord: string[];
+  /** Stärkande ord: ger extra poäng men krävs inte. */
+  starkord?: string[];
+  bygga: (register: RegisterRad[]) => LokaltSvar;
+};
+
+const MONSTER: FragMonster[] = [
+  {
+    id: "akm1",
+    karnord: ["akm1", "akm 1", "20 variabler", "tjugo variabler", "fundamental modell", "kontroversiella modellen"],
+    starkord: ["variabler", "modell", "analysmodell"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "akm1-den-kontroversiella-modellen", "Läroplanen — AKM1, V01–V20");
+      return {
+        text:
+          "AKM1 är vårt sätt att värdera ett bolag med tjugo mätbara variabler — V01 till V20. De täcker åtta dimensioner: tillväxt, värdering, lönsamhet, stabilitet, moat, katalysator, risk och kapitalstruktur. Ingen variabel är en rekommendation — det är ett pedagogiskt verktyg som lär dig dela upp ett bolag i delar och rösta först när du förstår helheten.\n\nVarje variabel har en egen kurs (V01–V20 i läroplansspåret), och du kan pröva modellen på ett riktigt bolag i kalkylatorn." +
+          kallrad(k),
+        amne: "akm1",
+        kalla: k,
+        handlings: [
+          { text: "Läs superdjupet om AKM1", lank: "/kurser/akm1-den-kontroversiella-modellen", ikon: "🏛️", beskrivning: "20 kapitel om hela modellen" },
+          { text: "Räkna på ett bolag (20 variabler)", lank: "/kalkylator", ikon: "🧮", beskrivning: "Pröva AKM1 i praktiken" },
+          { text: "Vad är V09?", lank: "fragor:" + encodeURIComponent("vad är V09?"), ikon: "📊", beskrivning: "Möt en enskild variabel" },
+        ],
+        motfraga: { text: "Vad är AK1TS?", kategori: "ekosystem" },
+        fordjupa: { text: k.titel, lank: "/kurser/akm1-den-kontroversiella-modellen" },
+      };
+    },
+  },
+  {
+    id: "borja",
+    karnord: ["börjar", "borja", "börja", "kom igång", "komma igång", "helt ny", "nybörjare", "nyborjare", "första kursen", "första steget", "var ska jag börja", "lära mig aktieanalys", "lara mig aktieanalys", "starta"],
+    starkord: ["aktieanalys", "aktier", "utbildning", "lära"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — Fas 1, steget du står på nu");
+      return {
+        text:
+          "Välkommen — du börjar precis rätt: med grunden. Läroplanen är byggd som ett spår i fem nivåer, och steget ett är variabelkurserna V01–V20 (grundbiblioteket, gratis för alltid). V01 Försäljningstillväxt är den naturliga starten: kort, konkret och den lär dig det första frågetecknet varje analys börjar med — växer bolaget?\n\nEtt tips från mentorn: läs ett kapitel, gör quiz:et (+10 XP per rätt svar) och gå vidare i spåret. Ingen stress — spåret finns kvar imorgon också." +
+          kallrad(k),
+        amne: "borja",
+        kalla: k,
+        handlings: [
+          { text: "Börja: kursen V01", lank: "/kurser/v01-forsaljningstillvaxt", ikon: "🌱", beskrivning: "Din första kurs — nybörjarnivå" },
+          { text: "Se hela läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Fem nivåer till självständighet" },
+          { text: "Testa din profil först", lank: "/profil", ikon: "🧠", beskrivning: "3-minuters test — hur lär du dig bäst?" },
+        ],
+        motfraga: { text: "Vad kostar det?", kategori: "orientering" },
+        fordjupa: { text: k.titel, lank: "/kurser/v01-forsaljningstillvaxt" },
+      };
+    },
+  },
+  {
+    id: "impulsvag",
+    karnord: ["impulsvåg", "impulsvag", "impuls våg", "impuls", "5-vågs", "fem vågor", "elliot"],
+    starkord: ["våg", "vag", "korrigering", "elliott", "våglära", "vaglara"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "ts-01-elliott-wave", "Läroplanen — AK1TS våglära, impuls kurs 1");
+      return {
+        text:
+          "En impulsvåg ▲ är marknadens sätt att röra sig i huvudriktningen: fem vågor där våg 1, 3 och 5 driver priset framåt och våg 2 och 4 pullar tillbaka. Efter en komplett impuls kommer en korrektion ▼ (drippande tre-vågsrörelse) innan något nytt kan byggas. I vågfundamentet läser vi AKM1-variablerna som tidsserier — impulser i värderingsvariabler är det intressantaste en värdeinvesterare kan se: det är där värde möter vågor (konfluens).\n\nVill du se vågorna i praktiken börjar du med Elliott-kursen — den är avancerad, så ta V01–V20 först om du är helt ny." +
+          kallrad(k),
+        amne: "impulsvåg",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: Elliott Wave — 5-vågs impuls", lank: "/kurser/ts-01-elliott-wave", ikon: "🌊", beskrivning: "Impulsvågens anatomi" },
+          { text: "Vågfundamentet (20×5-matrisen)", lank: "/vagfundament", ikon: "📊", beskrivning: "Variablerna som tidsserier" },
+          { text: "Vad är vågfundamentet?", lank: "fragor:" + encodeURIComponent("vad är vågfundamentet?"), ikon: "🗺️", beskrivning: "Helheten först" },
+        ],
+        motfraga: { text: "Vad är en korrektion?", kategori: "våglära" },
+        fordjupa: { text: k.titel, lank: "/kurser/ts-01-elliott-wave" },
+      };
+    },
+  },
+  {
+    id: "kostnad",
+    karnord: ["vad kostar", "kostar det", "kostar", "pris", "priser", "prisad", "gratis", "betala", "betalning", "dyrt", "billigt", "avgift", "medlemskap", "abonnemang", "prenumeration", "hur mycket kostar"],
+    starkord: ["fas", "faser", "kort", "kortet"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — Fas 1 är gratis, för alltid");
+      return {
+        text:
+          "Kortversionen: Fas 1 — hela grundbiblioteket med läroplanen, V01–V20, bokkanonens grundnivåer, quiz, XP och certifikat — är GRATIS, för alltid. Du betalar alltså ingenting för att börja lära dig aktieanalys på allvar.\n\nFas 2 och Fas 3 är frivilliga fördjupningar (engångspris — exakta belopp står på medlemskapssidan så att du alltid ser aktuell information där). Ingen dold prenumerationsfälla i Fas 1." +
+          kallrad(k),
+        amne: "kostnad",
+        kalla: k,
+        handlings: [
+          { text: "Se hela medlemskapet", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },
+          { text: "Börja gratis nu: V01", lank: "/kurser/v01-forsaljningstillvaxt", ikon: "🌱", beskrivning: "Första kursen kostar inget" },
+          { text: "Skapa gratis konto (20 sek)", lank: "/logga-in", ikon: "🔑", beskrivning: "Lås upp XP och certifikat" },
+        ],
+        motfraga: { text: "Vad är skillnaden mellan faserna?", kategori: "medlemskap" },
+        fordjupa: { text: "Medlemskapet", lank: "/medlemskap" },
+      };
+    },
+  },
+  {
+    id: "rad",
+    karnord: ["ger ni råd", "investeringsråd", "rådgivning", "råd", "ska jag köpa", "köpa", "kopa", "sälja", "sälja aktier", "köptips", "aktietips", "tipsa", "rekommendera", "vilken aktie", "var ska jag lägga"],
+    starkord: ["aktie", "aktier", "portfölj", "portfolio"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "akm1-den-kontroversiella-modellen", "Läroplanen — vi utbildar, vi rådgiver inte");
+      return {
+        text:
+          "Nej — och det är ett medvetet beslut, inte en brist. Enligt lagen (2007:528) om värdepappersmarknaden krävs tillstånd för att lämna personliga investeringsråd, och det har AK1A inte och vill inte ha. Vi är en utbildning, inte en rådgivare.\n\nVad vi INTE gör: säger åt dig att köpa eller sälja en viss aktie. Vad vi GÖR: lär dig analysera själv — tjugo variabler, våglära, riskhantering — så att dina beslut blir dina egna, genomtänkta och förstådda. Det är hela idén med läroplanen." +
+          kallrad(k),
+        amne: "råd",
+        kalla: k,
+        handlings: [
+          { text: "Lär dig analysera själv (AKM1)", lank: "/kurser/akm1-den-kontroversiella-modellen", ikon: "🏛️", beskrivning: "Istället för råd: metoden" },
+          { text: "Räkna på ett bolag", lank: "/kalkylator", ikon: "🧮", beskrivning: "Dina egna siffror, dina egna slutsatser" },
+          { text: "Se läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Vägen till oberoende analys" },
+        ],
+        motfraga: { text: "Hur börjar jag lära mig?", kategori: "utbildning" },
+        fordjupa: { text: k.titel, lank: "/kurser/akm1-den-kontroversiella-modellen" },
+      };
+    },
+  },
+  {
+    id: "teknisk",
+    karnord: ["teknisk analys", "tekniska analyser", "candlestick", "rsi", "macd", "bollinger", "trendlinje", "trendlinjer", "moving average", "glidande medel", "chart", "graf", "grafer", "diagram", "stöd och motstånd"],
+    starkord: ["indikator", "indikatorer", "mönster", "monster", "trading"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "ts-10-ak1ts-25cellers-matris", "Läroplanen — AK1TS, teknisk analys i 25 celler");
+      return {
+        text:
+          "Teknisk analys är läran om pris och volym i tid — att läsa vad marknaden gör i stället för att gissa vad den kommer göra. Hos oss lever den i AK1TS: ett system där 25 tekniker (trend, momentum, volym, Fibonacci, mönster…) ordnas i en 25-cellers matris över fem tidshorisonter.\n\nViktigaste nybörjarregeln: teknisk analys ALDRIG står ensam — den möter fundamental värdering i konfluens. Priset visar WHEN, värderingen visar WHY.\n\nGrundkurserna: stöd/motstånd och trendlinjer (nybörjarnivå), candlestick-mönster och moving averages. Standardverket på svenska är Torssell-boken i BOKMASTER." +
+          kallrad(k),
+        amne: "teknisk analys",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: 25-cellers matrisen", lank: "/kurser/ts-10-ak1ts-25cellers-matris", ikon: "🔢", beskrivning: "AK1TS-kärnan" },
+          { text: "Börja enkelt: stöd och motstånd", lank: "/kurser/ts-16-stod-och-motstand", ikon: "📏", beskrivning: "Nybörjarnivå" },
+          { text: "Torssell — svenska standardverket", lank: "/kurser/teknisk-analys-med-johnny-torssell", ikon: "📚", beskrivning: "BOKMASTER, kapitel för kapitel" },
+        ],
+        motfraga: { text: "Vad är konfluens?", kategori: "ekosystem" },
+        fordjupa: { text: k.titel, lank: "/kurser/ts-10-ak1ts-25cellers-matris" },
+      };
+    },
+  },
+  {
+    id: "risk",
+    karnord: ["risk", "risken", "risker", "riskhantering", "förlust", "forlust", "förluster", "stop loss", "volatilitet", "drawdown", "kelly", "position sizing", "skydda"],
+    starkord: ["hantera", "minska", "kontroll", "exponering"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "pf-02-position-sizing", "Läroplanen — portföljhantering, risken börjar med storleken");
+      return {
+        text:
+          "Riskhantering börjar INTE med att hitta farliga bolag — den börjar med hur stor varje platsning får vara. Tre nybörjargrundpelare:\n\n1. Position sizing — ingen enskild aktie ska kunna skada dig ordentligt (portföljbyggaren varnar vid 40 % koncentration).\n2. Diversifiering — över sektorer och riskkällor (men inte så mycket att du slutar förstå vad du äger).\n3. Koncentration till bolag som bränner kapital — V19 kapitalförbränning är den farligaste variabeln i AKM1.\n\nVill du gå på djupet: Kelly-kriteriet och stress-testing (avancerat) — börja med de två nybörjarkurserna nedan." +
+          kallrad(k),
+        amne: "risk",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: Position sizing", lank: "/kurser/pf-02-position-sizing", ikon: "⚖️", beskrivning: "Nybörjarnivå — storleken först" },
+          { text: "Kursen: Koncentrationsrisk", lank: "/kurser/rk-09-koncentrationsrisk", ikon: "🎯", beskrivning: "Nybörjarnivå — ägg och korgar" },
+          { text: "V19: kapitalförbränning", lank: "fragor:" + encodeURIComponent("vad är V19?"), ikon: "🔥", beskrivning: "Den farligaste variabeln" },
+        ],
+        motfraga: { text: "Hur bygger jag en portfölj?", kategori: "portfölj" },
+        fordjupa: { text: k.titel, lank: "/kurser/pf-02-position-sizing" },
+      };
+    },
+  },
+  {
+    id: "portfolj",
+    karnord: ["portfölj", "portföljen", "portfolj", "bygga portfölj", "portföljbyggande", "investeringssparkonto", "aktieportfölj", "sprida", "riskspridning", "rebalansera"],
+    starkord: ["bygga", "starta", "månadsspara", "sparande"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "pf-01-portfoljbyggande", "Läroplanen — portföljhantering, kurs 1");
+      return {
+        text:
+          "En portfölj byggs rad för rad — och den viktigaste regeln står FÖRE den första aktien: bestämma hur många bolag du orkar följa (5–15 är en vanlig pedagogisk ram) och hur stor varje platsning maximalt får vara. Sedan: sektorspridning, rebalansering och en plan för kriser — innan krisen kommer.\n\nPå sajten finns portföljbyggaren (fem dimensioner per rad, 40 %-varning vid koncentration) och kursen om 5×5×4-ekosystemet som binder ihop aktie → portfölj → helhet." +
+          kallrad(k),
+        amne: "portfölj",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: Portfölj-byggande", lank: "/kurser/pf-01-portfoljbyggande", ikon: "🏗️", beskrivning: "Nybörjarnivå — grunderna" },
+          { text: "Ekosystem-kursen 5×5×4", lank: "/kurser/portfolj-ekosystemet", ikon: "📊", beskrivning: "Från aktie till portfölj" },
+          { text: "Prova portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧱", beskrivning: "Bygg rad för rad" },
+        ],
+        motfraga: { text: "Hur hanterar jag risk?", kategori: "risk" },
+        fordjupa: { text: k.titel, lank: "/kurser/pf-01-portfoljbyggande" },
+      };
+    },
+  },
+  {
+    id: "bocker",
+    karnord: ["böcker", "bocker", "bok", "läsa", "lasa", "lästips", "läslistan", "biblioteket", "boktips", "bokkanon", "intelligent investor", "graham"],
+    starkord: ["läsa", "rekommendera", "bäst", "basta", "klassiker"],
+    bygga: (reg) => {
+      const bokmaster = reg.filter((r) => r.kategori === "BOKMASTER").length;
+      const k = kursKalla(reg, "the-intelligent-investor", `Läroplanen — BOKMASTER (${bokmaster} böcker kapitel för kapitel)`);
+      return {
+        text:
+          `Bokmaster-biblioteket har ${bokmaster} investeringsklassiker som KURSER — varje kapitel blir en lektion med quiz. Tre flaggskepp att börja i:\n\n1. The Intelligent Investor (Graham) — value-investingens grundlag; kapitel 8 och 20 är den mest citerade visdomen i branschen.\n2. Tänka snabbt och långsamt (Kahneman) — varför dina egna hjärnspöken är din största risk.\n3. The Psychology of Money (Housel) — mjuka sanningar om beteende som håller i decennier.\n\nVill du ha den tekniska vägen är Torssells svenska standardverk komplett i biblioteket.` +
+          kallrad(k),
+        amne: "böcker",
+        kalla: k,
+        handlings: [
+          { text: "The Intelligent Investor", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Börja här — gratis i Fas 1" },
+          { text: "Hela bokmaster-biblioteket", lank: "/kurser", ikon: "📚", beskrivning: `${bokmaster} böcker som kurser` },
+          { text: "Bokkanonen (läsordning)", lank: "/bibliotek", ikon: "📖", beskrivning: "Guidad väg genom klassikerna" },
+        ],
+        motfraga: { text: "Vilken bok ska jag börja med?", kategori: "läsning" },
+        fordjupa: { text: k.titel, lank: "/kurser/the-intelligent-investor" },
+      };
+    },
+  },
+  {
+    id: "quiz-xp",
+    karnord: ["quiz", "xp", "poäng", "poang", "nivå", "niva", "level", "streak", "certifikat", "flashcard", "flashcards", "repetera", "spaced repetition"],
+    starkord: ["tjäna", "tjana", "få", "fa", "hur fungerar", "belöning"],
+    bygga: (reg) => {
+      const quizTotalt = reg.reduce((s, r) => s + r.quiz, 0);
+      const k = kursKalla(reg, "v01-forsaljningstillvaxt", "Läroplanen — quiz och XP lever i kurserna");
+      return {
+        text:
+          `Så fungerar belöningssystemet:\n\n🧠 Quiz — varje kapitel avslutas med ett quiz: +10 XP per rätt svar.\n🃏 Flashcards — spaced repetition (glömskekurvan bestämmer när kortet kommer igen): +5 XP per bra svar.\n⭐ Nivåer — XP lyfter din nivå, och nivå + kurser + XP styr betyget (A–D) på ditt certifikat.\n🔥 Streak — dagens pass räcker för att hålla kedjan levande.\n\nTotalt ${quizTotalt} quizfrågor väntar i ${reg.length} kurser — och allt sparas lokalt när du är inloggad (gratis konto räcker).` +
+          kallrad(k),
+        amne: "quiz-xp",
+        kalla: k,
+        handlings: [
+          { text: "Testa dig: första quiz:et", lank: "/kurser/v01-forsaljningstillvaxt", ikon: "🧠", beskrivning: "+10 XP per rätt svar" },
+          { text: "Repetera flashcards nu", lank: "#", ikon: "🃏", beskrivning: "Startar i chatten" },
+          { text: "Se ditt certifikat", lank: "/certifikat", ikon: "🎓", beskrivning: "Betyg A–D, delbart" },
+        ],
+        motfraga: { text: "Vad är Fas 1, 2 och 3?", kategori: "medlemskap" },
+        fordjupa: { text: "Läroplanen", lank: "/laroplan" },
+      };
+    },
+  },
+  {
+    id: "faser",
+    karnord: ["fas 1", "fas 2", "fas 3", "fas1", "fas2", "fas3", "faserna", "skillnaden mellan faserna", "vilka faser", "medlemsnivåer", "grundbiblioteket"],
+    starkord: ["skillnad", "skillnaden", "ingår", "få", "coachning", "ekosystemet"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "ak1ts-vaglarans-hierarki", "Läroplanen — Fas 1 gratis · Fas 2 fundamental · Fas 3 ekosystem");
+      return {
+        text:
+          "Tre faser, en filosofi: utbildning i din takt, aldrig råd.\n\n🌱 FAS 1 (gratis, för alltid) — hela grundbiblioteket: läroplanen, V01–V20, bokkanonens grundnivåer, quiz, XP, certifikat.\n🎓 FAS 2 (engångspris) — den snabba FUNDAMENTALA vägen till oberoende analytiker: avancerad värdering, bokslutsanalys, redovisning — plus coaching-gemenskapen och representantvägen.\n🌊 FAS 3 (engångspris) — det dynamiska ekosystemet: AKM1 × AK1TS, vågfundamentet, konfluensradarn, teknisk analys på mästarnivå, rapporter och framtida utvecklingar.\n\nFas 1 kräver ingenting — börjar du där lär du dig samma grunder som faserna bygger på." +
+          kallrad(k),
+        amne: "faser",
+        kalla: k,
+        handlings: [
+          { text: "Se hela medlemskapet", lank: "/medlemskap", ikon: "💛", beskrivning: "Vad varje fas innehåller" },
+          { text: "Börja i Fas 1 (gratis)", lank: "/kurser/v01-forsaljningstillvaxt", ikon: "🌱", beskrivning: "Första kursen nu" },
+          { text: "Ekosystemets kärna (Fas 3-förhandstitt)", lank: "/kurser/ak1ts-vaglarans-hierarki", ikon: "🌊", beskrivning: "Vad som väntar" },
+        ],
+        motfraga: { text: "Vad kostar det?", kategori: "medlemskap" },
+        fordjupa: { text: "Medlemskapet", lank: "/medlemskap" },
+      };
+    },
+  },
+  {
+    id: "konfluens",
+    karnord: ["konfluens", "konfluensradarn", "fem dimensioner", "värde möter vågor", "varde moter vagor", "samstämmighet"],
+    starkord: ["radar", "dimensioner", "signaler"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "konfluens-varde-moter-vagor", "Läroplanen — konfluens, den sammansatta metoden");
+      return {
+        text:
+          "Konfluens betyder att flera oberoende sanningar pekar samma håll — och det är hjärtat i vår metod: FUNDAMENTALT VÄRDE (AKM1: är bolaget bra och rimligt prissatt?) möter VÅGOR (AK1TS: vad gör marknaden just nu?) i Konfluensradarn.\n\nNyckelregeln: EN dimension räcker ALDRIG. Billigt + fallande kniv är inte konfluens. Dyr + stigande våg är det inte heller. Först när värde, våg, risk, katalysator och beteende talar samman finns det en pedagogiskt intressant situation — och även då är det utbildning, inte råd." +
+          kallrad(k),
+        amne: "konfluens",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: Konfluens — värde möter vågor", lank: "/kurser/konfluens-varde-moter-vagor", ikon: "🧭", beskrivning: "Den sammansatta metoden" },
+          { text: "Öppna Konfluensradarn", lank: "/konfluens", ikon: "📡", beskrivning: "Se dimensionerna i praktiken" },
+          { text: "Vad är vågfundamentet?", lank: "fragor:" + encodeURIComponent("vad är vågfundamentet?"), ikon: "🌊", beskrivning: "Våg-sidan av konfluensen" },
+        ],
+        motfraga: { text: "Vad är AKM1?", kategori: "ekosystem" },
+        fordjupa: { text: k.titel, lank: "/kurser/konfluens-varde-moter-vagor" },
+      };
+    },
+  },
+  {
+    id: "vagfundament",
+    karnord: ["vågfundamentet", "vagfundamentet", "vågfundament", "vagfundament", "20×5", "20x5", "tidsserier", "vågklasser", "vagklasser", "basbygge"],
+    starkord: ["matris", "variabler", "vågor", "vagor"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "vagfundament-variablerna-som-tidsserier", "Läroplanen — ekosystemet, vågfundamentet");
+      return {
+        text:
+          "Vågfundamentet är idéerna bakom vår läsning av tid: varje AKM1-variabel (V01–V20) behandlas som en TIDSSERIE, inte ett engångstal — en ROE som håller genom cykeln är en annan historia än en spik. Tillsammans blir det en 20×5-matris: tjugo variabler × fem tidshorisonter.\n\nTre vågklasser att känna igen:\n▲ IMPULSVÅG — huvudrörelsen (fem vågor)\n▼ KORRIGERING — motrörelsen (tre vågor)\n◼ BASBYGGE — sidledes ackumulation där tålamod byggs\n\nPå vågfundament-sidan mäter systemet autonomt var variablerna står." +
+          kallrad(k),
+        amne: "vågfundament",
+        kalla: k,
+        handlings: [
+          { text: "Kursen: Vågfundament — tidsserier", lank: "/kurser/vagfundament-variablerna-som-tidsserier", ikon: "📊", beskrivning: "12 kapitel om 20×5-matrisen" },
+          { text: "Öppna vågfundament-sidan", lank: "/vagfundament", ikon: "🌊", beskrivning: "Den autonoma mätningen" },
+          { text: "Vad är en impulsvåg?", lank: "fragor:" + encodeURIComponent("vad är en impulsvåg?"), ikon: "▲", beskrivning: "Vågklasserna i detalj" },
+        ],
+        motfraga: { text: "Vad är konfluens?", kategori: "ekosystem" },
+        fordjupa: { text: k.titel, lank: "/kurser/vagfundament-variablerna-som-tidsserier" },
+      };
+    },
+  },
+  {
+    id: "ak1ts",
+    karnord: ["ak1ts", "våglära", "vaglara", "våglärans", "vaglarans", "25-cellers", "25 cellers", "tidshorisonter"],
+    starkord: ["hierarki", "matris", "teknisk"],
+    bygga: (reg) => {
+      const k = kursKalla(reg, "ak1ts-vaglarans-hierarki", "Läroplanen — AK1TS, våglärans hierarki");
+      return {
+        text:
+          "AK1TS är den tekniska halvan av ekosystemet — våglärans hierarki. Kortmodell:\n\n• 25 tekniker ordnas i en matris över FEM tidshorisonter (från sväng till sekulär).\n• Varje horisont bedöms för sig — en kort våg kan vara stigande medan den långa korrigerar, och det är inte en motsägelse utan information.\n• Hierarkin: den LÅNGA horisonten väger tyngst. Vågor på fel nivå är brus.\n\nAKM1 svarar på VARFÖR (fundamentalt värde), AK1TS på NÄR (timing) — och först tillsammans (konfluens) blir det meningsfullt." +
+          kallrad(k),
+        amne: "ak1ts",
+        kalla: k,
+        handlings: [
+          { text: "Superdjupet: våglärans hierarki", lank: "/kurser/ak1ts-vaglarans-hierarki", ikon: "🌊", beskrivning: "20 kapitel" },
+          { text: "25-cellers matrisen", lank: "/kurser/ts-10-ak1ts-25cellers-matris", ikon: "🔢", beskrivning: "AK1TS-kärnan komprimerad" },
+          { text: "Vad är AKM1?", lank: "fragor:" + encodeURIComponent("vad är AKM1?"), ikon: "🏛️", beskrivning: "Den andra halvan" },
+        ],
+        motfraga: { text: "Vad är konfluens?", kategori: "ekosystem" },
+        fordjupa: { text: k.titel, lank: "/kurser/ak1ts-vaglarans-hierarki" },
+      };
+    },
+  },
+];
+
+// OBS (våg 106 H2): AKM1-variablerna (V01–V20) har inget mönster här — de
+// besvaras DATA-DRIVET ur registret (se variabelSvar) efter mönstersteget,
+// så att t.ex. "vad är risk?" får riskhanteringssvaret (mönster) medan
+// "vad är kapitalförbränning?" får V19-kursens fakta (registeruppslag).
+
+/**
+ * Nyckelord för V-uppslag, genererade ur registret (våg 106 H2: motorn ska
+ * inte hårdkoda kurser — registret är sanningen). Per variabelkurs: slug-stammen
+ * (t.ex. "roe" ur "v09-roe") + titelns ord (≥3 tecken).
+ */
+function variabelNyckelord(register: RegisterRad[]): Array<{ rad: RegisterRad; ord: string[] }> {
+  return register
+    .filter((r) => r.variabel)
+    .sort((a, b) => (a.variabel! < b.variabel! ? -1 : 1))
+    .map((r) => {
+      const stam = r.slug.replace(/^v\d{2}-/, "").split("-").join(" ");
+      const titelOrd = diafri(r.titel)
+        .split(" ")
+        .filter((o) => o.length >= 3);
+      return { rad: r, ord: [diafri(stam), ...titelOrd] };
+    });
+}
+
+/**
+ * Data-drivet svar för en AKM1-variabelkurs — ALLT ur registret: titel,
+ * kategori, kapitel, quiz, minuter, nivå. Detta är AI-Mentorn 2.0:s kärna:
+ * frågan om V09 och frågan om ROE ger samma källmärkta fakta.
+ */
+function variabelSvar(rad: RegisterRad, register: RegisterRad[]): LokaltSvar {
+  const totalQuiz = register.reduce((s, r) => s + r.quiz, 0);
+  const k: LokalKalla = {
+    slug: rad.slug,
+    titel: rad.titel,
+    lagrow: `Läroplanen — AKM1, ${rad.variabel} av V01–V20 (${rad.kategori.toLowerCase()})`,
+  };
+  return {
+    text:
+      `${rad.variabel} — ${rad.titel} — är en av de tjugo variablerna i AKM1, i dimensionen ${rad.kategori.toLowerCase()}.\n\nKursen i registret: ${rad.kapitel} kapitel · ${rad.quiz} quizfrågor (+10 XP per rätt) · ${rad.minuter} minuter · nivå ${rad.niva.toLowerCase()}.\n\nKom ihåg: en variabel är ett LÄRANDE, inte en rekommendation — den får sin betydelse först tillsammans med de andra nitton. I kalkylatorn kan du mata in alla tjugo för ett riktigt bolag (${totalQuiz} quizfrågor väntar totalt i hela biblioteket).` +
+      kallrad(k),
+    amne: `variabel-${rad.variabel}`,
+    kalla: k,
+    handlings: [
+      { text: `Läs kursen ${rad.variabel}: ${rad.titel}`, lank: `/kurser/${rad.slug}`, ikon: "📊", beskrivning: `${rad.minuter} min · ${rad.kapitel} kapitel` },
+      { text: "Räkna med alla 20 i kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "AKM1 i praktiken" },
+      { text: "Vad är AKM1?", lank: "fragor:" + encodeURIComponent("vad är AKM1?"), ikon: "🏛️", beskrivning: "Helhetsmodellen" },
+    ],
+    motfraga: { text: `Vad är ${rad.variabel === "V09" ? "V10" : "V09"}?`, kategori: "variabler" },
+    fordjupa: { text: rad.titel, lank: `/kurser/${rad.slug}` },
+  };
+}
+
+// ── Huvudingången ───────────────────────────────────────────────────────────
+
+/**
+ * Svara lokalt på frågan — eller null om ingen förhandsfråga matchar (då
+ * fortsätter widgeten till /api/chatbot som vanligt). Två steg (våg 106 H2:
+ * mönster FÖRE registeruppslag — se kommentaren under MONSTER):
+ *   1. Mönstermatchning mot de femton förhandsfrågorna (kärnords-krav +
+ *      poäng; redigeringstavstånd tillåter felstavningar)
+ *   2. V-nummer eller variabelnamn i frågan → data-drivet registersvar
+ * Deterministiskt: samma fråga ger bitidentiskt svar.
+ */
+export function svaraLokalt(fraga: string, register: RegisterRad[]): LokaltSvar | null {
+  const fragaStr = diafri(fraga);
+  if (!fragaStr) return null;
+  const fragaOrd = fragaStr.split(" ");
+
+  // ── Steg 1: mönstermatchning (förhandsfrågorna) ──
+  let bast: { svar: LokaltSvar; poang: number } | null = null;
+  for (const m of MONSTER) {
+    const karnTraff = m.karnord.filter((nk) => traff(fragaOrd, fragaStr, nk));
+    if (karnTraff.length === 0) continue; // krav: minst ett kärnord
+    const starkTraff = m.starkord?.filter((nk) => traff(fragaOrd, fragaStr, nk)) ?? [];
+    const poang = karnTraff.length * 3 + starkTraff.length;
+    if (!bast || poang > bast.poang) bast = { svar: m.bygga(register), poang };
+    // Oavgjort → först deklarerade mönstret vinner (strikt >, deterministiskt)
+  }
+  if (bast) return bast.svar;
+
+  // ── Steg 2: V-nummer eller variabelnamn (data-drivet ur registret) ──
+  // V-nummer matchas EXAKT (inget redigeringstavstånd: v09→v10 är ett steg,
+  // och fel variabel är värre än inget svar — våg 106 H2).
+  for (const ord of fragaOrd) {
+    const m = ord.match(/^v(\d{1,2})$/);
+    if (m) {
+      const n = Number(m[1]);
+      const kanon = `V${String(n).padStart(2, "0")}`;
+      const rad = register.find((r) => r.variabel === kanon);
+      if (rad) return variabelSvar(rad, register);
+    }
+  }
+  // Variabelnamn (slug-stam eller titelord, t.ex. "roe", "bruttomarginal")
+  const vNyckel = variabelNyckelord(register);
+  for (const { rad, ord } of vNyckel) {
+    for (const nyckel of ord) {
+      if (nyckel.length < 3) continue;
+      if (traff(fragaOrd, fragaStr, nyckel)) return variabelSvar(rad, register);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Ärlig fallback: "det vet mentorn inte än" + de tre närmaste kurserna ur
+ * registret (deterministiskt). Används av widgeten när NÄTVERKET faller
+ * (API-svaret når inte fram) — eleven ska aldrig mötas av en död feltext.
+ * OBS: vanliga omatchade frågor går till /api/chatbot som förr; motorn
+ * kapar inte API-flödet (våg 106 H2-avvägning).
+ */
+export function fallbackSvar(fraga: string, register: RegisterRad[]): LokaltSvar {
+  const nara = narmasteKurser(fraga, register, 3);
+  const k: LokalKalla = {
+    titel: `Kursregistret (${register.length} kurser)`,
+    lagrow: "Läroplanen — utbudet bakom svaret",
+  };
+  const lista = nara.map((r) => `• ${r.titel} — ${r.kategori.toLowerCase()} · ${r.kapitel} kapitel · ${r.minuter} min`).join("\n");
+  return {
+    text:
+      `Det vet mentorn inte än — och då säger jag det rakt ut i stället för att gissa (troligen nåddes inte servern heller just nu). Här är de tre kurser i registret som ligger närmast din fråga:\n\n${lista}\n\nOmmformulera frågan så försöker den smarta mentorn på servern igen.` +
+      kallrad(k),
+    amne: "fallback",
+    kalla: k,
+    handlings: [
+      ...nara.map((r) => ({
+        text: r.titel,
+        lank: `/kurser/${r.slug}`,
+        ikon: "📚",
+        beskrivning: `${r.kategori.toLowerCase()} · ${r.minuter} min`,
+      })),
+      { text: "Se läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Hela utbildningsspåret" },
+    ],
+    motfraga: { text: "Vad är AKM1?", kategori: "orientering" },
+    fordjupa: { text: "Läroplanen", lank: "/laroplan" },
+  };
+}

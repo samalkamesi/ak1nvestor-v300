@@ -21,6 +21,9 @@ import {
   raknaElevFragor,
   HISTORIK_FONSTER,
 } from "@/lib/chat-minne";
+// AI-MENTORN 2.0 (våg 106 H2): regel+datamotor — svarar lokalt före nätanrop
+import { KURSREGISTER } from "@/lib/ai-mentor-register";
+import { svaraLokalt, fallbackSvar } from "@/lib/ai-mentor-svar";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -711,6 +714,31 @@ export function ChatWidget() {
     }
 
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
+
+    // ── AI-MENTORN 2.0 (våg 106 H2): LOKALT SVAR FÖRE NÄTANROP ──────────────
+    // Regel+datamotorn (ai-mentor-svar.ts + kursregistret) svarar på de van-
+    // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
+    // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
+    // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
+    const lokalt = svaraLokalt(q, KURSREGISTER);
+    if (lokalt) {
+      setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
+      sparaChatTur(
+        "mentor",
+        lokalt.motfraga
+          ? `${lokalt.text}\n\n💬 Motfråga (${lokalt.motfraga.kategori}): ${lokalt.motfraga.text}`
+          : lokalt.text
+      );
+      setMeddelanden((p) => [...p, {
+        fran: "ai",
+        text: lokalt.text,
+        handlings: lokalt.handlings,
+        motfraga: lokalt.motfraga,
+        fordjupa: lokalt.fordjupa,
+      }]);
+      return; // 0 API-kostnad — nådde aldrig nätverket
+    }
+
     setBusy(true);
 
     try {
@@ -771,7 +799,19 @@ export function ChatWidget() {
         }]);
       }
     } catch {
-      setMeddelanden((p) => [...p, { fran: "ai", text: "Nätverksfel — försök igen." }]);
+      // AI-MENTORN 2.0 (våg 106 H2): nätverksfel → ärlig lokal fallback i
+      // stället för en död feltext — "det vet mentorn inte än" + de tre
+      // närmaste kurserna ur registret (deterministiskt, fortfarande 0 API)
+      const fb = fallbackSvar(q, KURSREGISTER);
+      sparaChatTur("mentor", fb.text);
+      setMeddelanden((p) => [...p, {
+        fran: "ai",
+        ikon: "🛟",
+        text: fb.text,
+        handlings: fb.handlings,
+        motfraga: fb.motfraga,
+        fordjupa: fb.fordjupa,
+      }]);
     } finally {
       setBusy(false);
     }

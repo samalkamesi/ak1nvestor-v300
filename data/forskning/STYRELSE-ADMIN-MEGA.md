@@ -900,3 +900,19 @@ KVD: tsc 36 · build 0 · deploy + prodcheck.
   streaming, persistens session+IndexedDB) + borta-banner med upp till
   5 verktygsrader ur session/events även vid reconnect.
 - tsc 36 · build 0 (951 sidor) · arbetsyta synkad.
+
+## VÅG 98 — DATASET-DJUP + DRIFTSTYRKEPROV (2026-09-11)
+
+- F1 **ISR-UPPVÄRMNING** (server-ops, ej byggändring): vardagar 03:00
+  värmer cron ~65 vägar (/, /kurser, /dataset ×3 språk, topp-blogg +
+  speglar) genom localhost — kapar förstagångs-svansen 0,5-3,6 s.
+  Kunddirektivet "INGET förbygge" (=byggtid) respekteras: detta är
+  runtime-cachelukring.
+- F2 **DATASET-DJUP** (repo): kvartil-spridning (aggregat — kontraktet
+  tillåter medianer+aggregat, ALDRIG per-bolag) + jämförelsevy + guide-
+  länkning till kurserna.
+- F3 **BACKUP-DR-PROV** (server-ops): full återställning av gårdagens
+  dump i skrap-postgres på servern — tabell-/radräknings-jämförelse +
+  återställningstid dokumenteras i DRIFTSBOKEN.
+
+KVD: tsc 36 · build 0 · deploy + prodcheck.

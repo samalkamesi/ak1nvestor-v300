@@ -957,3 +957,26 @@ KVD: tsc 36 · build 0 · schema-validering · deploy.
   citeringsmagnet-serie i granskningskön.
 
 KVD: tsc 36 · build 0 · deploy per system när klart.
+
+## SYSTEMRANKNINGEN (2026-09-11, kunddirektiv "ranka alla system, strikt metodiskt, många parallella agenter, korrekta översättningar")
+
+| # | System | Läge | Åtgärd |
+|---|--------|------|--------|
+| 1 | Inloggning/konto | TRASIG UX (fel suppressas; kund blockerad 2 ggr) | LOGIN-2.0 körs (specifika fel + live-räknare) |
+| 2 | Översättningskorpus | ~100 % men okvalitetsgranskad sen våg 80 | I1: kvalitetsvåg med fixpaket |
+| 3 | Kurs-schema (A3) | pågår G1 | — |
+| 4 | Prisstege | pågår G2 (bakom flagga) | — |
+| 5 | Lärväg (front B) | pågår H1 | — |
+| 6 | AI-Mentorn | pågår H2 | — |
+| 7 | Kvartalsrapport (front A) | pågår H3 | — |
+| 8 | Studio/Z-paritet | tak ~39/91 (binärgap) | bevakar npm view per våg |
+| 9 | Betalning (L4) | väntar kundens 8 beslut | förberedd via G2 |
+| 10 | B2B | väntar jurist | inaktiv |
+| 11 | Systemkartan total | saknas | I2: full inventering + score |
+
+- I1 **ÖVERSÄTTNINGSKVALITET**: stickprovs-audit sv↔en↔ar över kurser/
+  blogg/UI-ordlista + dataset — maskinella anomalier (orolängd, okända
+  tecken, ofullständiga, falska vänner) + fixpaket som MAIN applicerar
+  (ej redigera ordlista.ts parallellt med G1!).
+- I2 **SYSTEMKARTAN**: read-only inventering av ALLA system med
+  kvalitetscore + gap — våg 100+dispatchlista.

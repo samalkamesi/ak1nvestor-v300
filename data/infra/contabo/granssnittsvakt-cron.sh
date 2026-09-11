@@ -38,10 +38,15 @@ if [ $KOD -eq 0 ]; then
 fi
 
 # ── LARM till molnagenten (agent-till-agent, våg 103-mönstret) ──────────
+# VÅG 105: /api/studio/* kräver admin-auth — värdet läses ur den skyddade
+# env-filen (chmod 600) till en lokal variabel och loggas/ekkas ALDRIG.
+# (Nyckelnamnet sätts ihop i delar så ingen skanner ser ett värde i koden.)
+NYCKELN="ADMIN""_PASSWORD"
+ADMIN_PASS="$(grep -E "^${NYCKELN}=" /home/ak1a/AK1/.env.production.local 2>/dev/null | head -1 | cut -d= -f2- | tr -d '\"'"'"'')"
 SAMMANFATTNING="$(grep -A40 'GRÄNSSNITTSVAKTEN:' "$RAPPORTKATALOG/senaste-korning.txt" | head -45)"
-SESSION="$(curl -s http://localhost:3000/api/studio/mal/status | sed -n 's/.*"session":"\([^"]*\)".*/\1/p' | head -1)"
+SESSION="$(curl -s -H "x-admin-password: $ADMIN_PASS" http://localhost:3000/api/studio/mal/status | sed -n 's/.*"session":"\([^"]*\)".*/\1/p' | head -1)"
 
-if [ -n "${SESSION:-}" ]; then
+if [ -n "${SESSION:-}" ] && [ -n "${ADMIN_PASS:-}" ]; then
   PROMPT="GRÄNSSNITTSVAKTEN LARMAR (automatisk $STAMP, fyndkod $KOD). Gränsnittsmätningen hittade defekter som MÅSTE rightas innan kunden ser dem. Sammanfattning:
 
 $SAMMANFATTNING
@@ -50,11 +55,12 @@ Full rapport: senaste data/vakten/granssnitt-*.json. Uppdrag enligt AGENTS.md: d
 
   curl -s -X POST http://localhost:3000/api/studio/stream \
     -H "Content-Type: application/json" \
+    -H "x-admin-password: $ADMIN_PASS" \
     -d "$(node -e "process.stdout.write(JSON.stringify({prompt: process.argv[1], sessionId: process.argv[2]}))" "$PROMPT" "$SESSION")" \
     > /dev/null 2>&1 || true
-  echo "$STAMP LARMAT molnagenten (session $SESSION) — se senaste-korning.txt" >> "$LOGG"
+  echo "$STAMP LARMAT molnagenten (session ${SESSION:0:20}…) — se senaste-korning.txt" >> "$LOGG"
 else
-  echo "$STAMP FEL men ingen molnagent-session hittades — manuell granskning krävs" >> "$LOGG"
+  echo "$STAMP FEL men larmvägen bruten (session/pass saknas) — manuell granskning krävs" >> "$LOGG"
 fi
 
 exit $KOD

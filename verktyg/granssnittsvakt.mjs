@@ -49,27 +49,48 @@ const SKARMVAGGAR = lasArg("skarmvagnar", "390x844,1280x800")
 const SIDOR_ARG = lasArg("sidor", null);
 const SKARMBILD = lasArg("skarmbild", "nej") === "ja";
 
-// Sidlista — publika ytor + speglar (snabb-läge: kärnan)
-const SIDOR_ALLA = [
-  "/",
-  "/kurser",
-  "/kurser/v01-legal-med-vinst-for-eyes-only",
-  "/labbet",
-  "/aktier",
-  "/analyser",
-  "/blogg",
-  "/dataset",
-  "/dataset-aktieanalys-sverige",
-  "/om-oss",
-  "/vanliga-fragor",
-  "/en/kurser",
-  "/ar/kurser",
-];
+// Sidlista — VÅG 105: härleds ur sajtens EGEN sitemap (aldrig gissade
+// sökvägar — /labbet vs /labb-fällan gav 20 skenfynd i första serverkörningen).
+// Urval: roten + djup-0/1-sidor först, sedan maximalt UTTAG djupare sidor.
+const SIDOR_MAX = 16;
+const FALLBACK_SIDOR = ["/", "/kurser", "/labb", "/blogg", "/dataset", "/om-oss"];
+
+async function lasSidor(bas) {
+  try {
+    const res = await fetch(`${bas}/sitemap.xml`, {
+      headers: { "User-Agent": "AK1A-Granssnittsvakt/1.0" },
+    });
+    if (!res.ok) throw new Error(`sitemap ${res.status}`);
+    const xml = await res.text();
+    const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => {
+      try {
+        return decodeURIComponent(new URL(m[1]).pathname);
+      } catch {
+        return null;
+      }
+    }).filter(Boolean);
+    const unika = [...new Set(locs)];
+    // prioritera grunda sökvägar (färre "/"), fyll på med djupare
+    const grunda = unika.filter((p) => p.split("/").filter(Boolean).length <= 1);
+    const djupa = unika
+      .filter((p) => p.split("/").filter(Boolean).length > 1)
+      .sort((a, b) => a.length - b.length);
+    const urval = [...new Set(["/", ...grunda, ...djupa])].slice(0, SIDOR_MAX);
+    return { sidor: urval, kalla: `sitemap (${unika.length} url:ar)` };
+  } catch (fel) {
+    return { sidor: FALLBACK_SIDOR, kalla: `fallback (${String(fel).slice(0, 60)})` };
+  }
+}
+
+// Ignorera resurser som aldrig är sajtfel (VÅG 105: favicon-404 på localhost)
+const IGNORERA_KONSOL = (text, url) =>
+  text.includes("favicon") || (url || "").includes("favicon");
+
 const SIDOR = SNABB
-  ? ["/", "/kurser", "/labbet"]
+  ? ["/", "/kurser", "/labb"]
   : SIDOR_ARG
     ? SIDOR_ARG.split(",")
-    : SIDOR_ALLA;
+    : null; // löses mot sitemap i huvudloopen
 
 // ── Chrome-sökvägar ──────────────────────────────────────────────────────────
 const CHROME_KANDIDATER = [
@@ -282,7 +303,13 @@ const browser = await puppeteer.launch({
   args: ["--no-sandbox", "--disable-dev-shm-usage", "--font-render-hinting=none"],
 });
 
+let SIDOR_LISTA = [];
 try {
+  const { sidor, kalla } = SIDOR
+    ? { sidor: SIDOR, kalla: "argument" }
+    : await lasSidor(BAS);
+  SIDOR_LISTA = sidor;
+  console.log(`Gränsnittsvakten: sidkälla ${kalla}, ${sidor.length} sidor`);
   for (const tema of teman) {
     for (const skarm of SKARMVAGGAR) {
       const context = await browser.createBrowserContext();
@@ -292,7 +319,7 @@ try {
         try { localStorage.setItem("theme", t); } catch {}
       }, tema);
 
-      for (const sida of SIDOR) {
+      for (const sida of SIDOR_LISTA) {
         const url = BAS + sida;
         let status = "ok";
         let matning = null;
@@ -300,11 +327,14 @@ try {
         page.on("console", (msg) => {
           if (msg.type() !== "error") return;
           const text = msg.text();
+          const loc = msg.location && msg.location();
+          const locUrl = loc && loc.url ? loc.url : "";
           // VÅG 105: 429 = sajtens egen hastighetsgräns som triggas av svepet
           // självt (eller crawlers) — inte en defekt. Loggas, räknas ej.
+          // favicon-404 på localhost =miljöbrus, ej sajtfel.
           if (text.includes("429")) return;
-          const loc = msg.location && msg.location();
-          konsolFel.push((loc && loc.url ? `[${loc.url.slice(0, 80)}] ` : "") + text.slice(0, 160));
+          if (IGNORERA_KONSOL(text, locUrl)) return;
+          konsolFel.push((locUrl ? `[${locUrl.slice(0, 80)}] ` : "") + text.slice(0, 160));
         });
         page.on("pageerror", (fel) => konsolFel.push(String(fel).slice(0, 160)));
         try {

@@ -256,3 +256,18 @@ testa-kurs-metadata.mjs, testa-mediabibliotek.mjs, testa-medlem-auth.mjs.
 
 SLUT. Boken uppdateras av kommande sessioner när fakta ändras — lämna en
 rad i worklog när du redigerar.
+
+## VÅG 98 F3 — BACKUP-DR-PROV (2026-09-11, GODKÄNT)
+
+- Full återställning av natt-dumpen (29,4 MB gz) i lokal PG17-skrap-DB:
+  **20 sekunder · 60 publika tabeller · 1 187 291 rader**.
+- 768 "fel" = samtliga saknade Supabase-roller (authenticated/service_
+  role/anon) + extensions i vanilla-PG — GRANT/ALTER-satser, ofarliga;
+  vid ÄKTA katastrof: återskapa roller/extensions först (Supabase-miljö)
+  eller kör dumpen mot ett nytt Supabase-projekt.
+- Återställningskommando: zcat db-DATUM.sql.gz | psql -d MALDB
+- Lokal PG17 lämnad INSTALLERAD men stoppad (sudo pg_ctlcluster 17
+  main start vid nästa prov). Skrap-DB ak1a_dr_test raderad efter provet.
+- F1 ISR-uppvärmare: cron 10 3 * * * bash data/infra/contabo/ak1a-varm.sh
+  (versionerad i repot; logg /tmp/ak1a-varm.log; testkörning 12/44 —
+  sökvägslistan finslipas).

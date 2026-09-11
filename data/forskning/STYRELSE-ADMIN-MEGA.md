@@ -890,3 +890,13 @@ KUNDENS HÄNDER (färdigpackat, väntar på fysisk åtgärd — INGA beslut):
   cron verifierad installerad.
 
 KVD: tsc 36 · build 0 · deploy + prodcheck.
+
+### VÅG 97 LANDAD (2026-09-11, 80085c1, prod 200 + live-verifierad)
+
+- E1 DATASET LIVE: /dataset + 10 branscher × 3 språk (33 URL:er) alla
+  200 med Dataset-JSON-LD + korrekta canonicals; llms.txt-sektion live;
+  sitemap 33 rader; 0 bolagsläckage (programmatiskt bevisat).
+- E2 STUDIO: TankarVy (kollapsbar 💭 per meddelande, peek under
+  streaming, persistens session+IndexedDB) + borta-banner med upp till
+  5 verktygsrader ur session/events även vid reconnect.
+- tsc 36 · build 0 (951 sidor) · arbetsyta synkad.

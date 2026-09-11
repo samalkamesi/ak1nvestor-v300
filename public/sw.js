@@ -9,7 +9,7 @@
  * naturliga navigering/nytt besök. sw.js ska heller ALDRIG få någon
  * reload-logik (varken direkt eller via postMessage till sidan).
  */
-const VERSION = "ak1a-v3";
+const VERSION = "ak1a-v4";
 const OFFLINE_URLS = ["/", "/laroplan", "/kurser"];
 
 self.addEventListener("install", (event) => {

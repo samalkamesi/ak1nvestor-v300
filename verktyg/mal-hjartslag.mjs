@@ -87,6 +87,20 @@ async function main() {
   const nu = Date.now();
 
   if (!status.aktiv || status.pausad || !status.mal) {
+    // VÅG 112: målet kan försvinna vid pm2-omstart/trädsynk (processminne).
+    // Helt borta (null, ej pausat) ⇒ återställ stående mål direkt — men
+    // ALDRIG om en prompt kör (rondens egen turn) eller kunden pausat.
+    if (!status.mal && !status.pausad) {
+      const resatt = await fetch(`${BAS}/api/studio/session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ action: "malSatt", mal: STANDE_MAL_TEXT }),
+      });
+      if (resatt.ok) return logga("MÅL återställt av hjärtslaget (var borta)");
+      const felText = await resatt.clone().text().catch(() => "");
+      if (felText.includes("prompt")) return logga("mål borta men prompt kör — väntar");
+      return logga("mål återställning FEL " + resatt.status);
+    }
     return logga("mål ej aktivt — tyst");
   }
 

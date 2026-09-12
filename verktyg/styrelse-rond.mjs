@@ -147,6 +147,31 @@ HÅRT LEVERANSPROTOKOLL (strikt):
     body: JSON.stringify({ prompt }),
   });
   logga(`ROND skickad: ${res.ok ? "OK" : "FEL " + res.status}`);
+  // VÅG 112 — KOSTNADS-FITNESS: fånga kontext-eventets totalTokenCount ur
+  // strömmens första chunken (det anländer tidigt) → kostnads-loggen.
+  // Tokens per landad commit = organismens ekonomi (arXiv 2408.11198:
+  // evolutionär kostnadseffektivitet; ACL 2025: LLM som svart låda).
+  try {
+    if (res.body) {
+      const lasare = res.body.getReader();
+      const { value } = await Promise.race([
+        lasare.read(),
+        new Promise((_, av) => setTimeout(() => av(new Error("tidsgräns")), 10_000)),
+      ]);
+      const rad = new TextDecoder().decode(value || new Uint8Array());
+      const m = rad.match(/"totalTokenCount":(\d+)/);
+      if (m) {
+        const logFil = path.join(KATALOG, "kostnad-log.json");
+        let logg = [];
+        try { logg = JSON.parse(fs.readFileSync(logFil, "utf8")); } catch {}
+        logg.push({ ts: Date.now(), totalTokens: Number(m[1]) });
+        fs.mkdirSync(KATALOG, { recursive: true });
+        fs.writeFileSync(logFil, JSON.stringify(logg.slice(-200)));
+        logga(`KOSTNAD: totalTokenCount ${m[1]} loggad`);
+      }
+      await lasare.cancel().catch(() => {});
+    }
+  } catch { /* kontext-eventet kom ej inom 10 s — kostnaden loggas nästa rond */ }
   // Håll strömmen öppen ~25 s (meddelandet bearbetas server-sidigt), stäng
   // sedan försiktigt — meddelandet landar även om stängningen brusar.
   await new Promise((sov) => setTimeout(sov, 25_000));

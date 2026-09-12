@@ -95,6 +95,19 @@ function evolvera() {
   const commits = lasCommitsSedan(reg.senasteRondTs || Date.now() - 3 * 3600_000);
   const aktiva = reg.organ.filter((o) => o.status === "aktiv");
 
+  // VÅG 112 — KOSTNADS-FITNESS (arXiv 2408.11198 / ACL 2025): tokens per
+  // landad commit denna rond ur kostnads-loggen (rondens kontext-event).
+  let tokensDennaRond = 0;
+  try {
+    const logg = JSON.parse(fs.readFileSync(path.join(ROT, "data", "vakten", "kostnad-log.json"), "utf8"));
+    const forra = logg.filter((l) => l.ts <= reg.senasteRondTs).slice(-1)[0];
+    const nu = logg.slice(-1)[0];
+    if (forra && nu && nu.totalTokens >= forra.totalTokens) {
+      tokensDennaRond = nu.totalTokens - forra.totalTokens;
+    }
+  } catch { /* loggen byggs upp — första ronden saknar delta */ }
+  const tokensPerLeverans = commits.length > 0 ? Math.round(tokensDennaRond / commits.length) : null;
+
   // 1) Räkna leveranser (taggade direkt; otaggade jämnt på aktiva)
   const otaggade = commits.filter((c) => !c.organ);
   for (const o of reg.organ) {
@@ -143,9 +156,15 @@ function evolvera() {
 
   reg.rond += 1;
   reg.senasteRondTs = Date.now();
+  reg.kostnad = {
+    tokensSistaRond: tokensDennaRond,
+    tokensPerLeverans: tokensPerLeverans,
+    tokensTotalt: (reg.kostnad?.tokensTotalt ?? 0) + tokensDennaRond,
+  };
   reg.historik.push({
     rond: reg.rond,
     commits: commits.length,
+    tokens: tokensDennaRond,
     doda: doda.map((o) => o.bokstav),
     fodd: fodd.map((o) => o.bokstav),
   });
@@ -170,7 +189,10 @@ const aktiva = reg.organ.filter((o) => o.status === "aktiv");
 const totalt = commits.length;
 
 const sammanfattning = [
-  `ROND ${reg.rond} · ${totalt} commits landade sedan förra ronden`,
+  `ROND ${reg.rond} · ${totalt} commits landade sedan förra ronden` +
+    (reg.kostnad?.tokensPerLeverans
+      ? ` · ekonomi: ${reg.kostnad.tokensSistaRond.toLocaleString("sv-SE")} tokens ≈ ${reg.kostnad.tokensPerLeverans.toLocaleString("sv-SE")} tokens/leverans`
+      : ""),
   ...commits.slice(0, 6).map((c) => `  ${c.hash} ${c.organ ? "[" + c.organ + "] " : ""}${c.amne}`),
   doda.length ? `DÖDA denna evolution: ${doda.map((o) => o.bokstav + " " + o.namn).join(", ")}` : "Inga döda (grundnåd första ronden)",
   fodd.length ? `FÖDDA: ${fodd.map((o) => o.bokstav + " " + o.namn).join(", ")}` : "Inga födda (ingen leverans att dela av)",

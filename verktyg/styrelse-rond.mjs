@@ -8,7 +8,7 @@
  * färsk statusmatning (mål + vakt + worklog) — agenten sammanträder då
  * styrelsen, beslutar nästa agentvåg och verkställer (R2).
  *
- * Logg: data/vakten/styrelse-rond.log · Cron: 43 */3 * * *
+ * Logg: data/vakten/styrelse-rond.log · Cron: kl 43 var 3:e timme
  * Skonsam design: skickar ALDRIG om en turn redan pågår (mål-status).
  */
 import fs from "node:fs";

@@ -97,6 +97,18 @@ async function main() {
   const vakt = sistRader("data/vakten/senaste-korning.txt", 3);
   const worklog = sistRader("worklog.md", 8);
 
+  // VÅG 110 — BYGG-LÄGES-VAKT: nya sessioner (friskgången) kan landa i
+  // PLAN-läge där ExitPlanMode-godkännande krävs = i autonomt läge SKRIV-
+  // BLOCKERAT (bevisat 2026-09-12: "fick inte köra skrivkommandon").
+  // Ronden tvingar ALLTID bygg-läge före befallningen.
+  try {
+    await fetch(`${BAS}/api/studio/session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-password": pass },
+      body: JSON.stringify({ action: "lage", lage: "build" }),
+    });
+  } catch { /* ej fatal — befallningen går ändå */ }
+
   // VÅG 109: ORGAN-EVOLUTIONEN — kör fabriken och mata in resultatet.
   // (Döda organ = mindreativitet men härdare leverans; bästa organet föder
   // barn A-Ö. Commit-tagg [organ:X] = organets leveransbevis.)

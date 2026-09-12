@@ -49,6 +49,19 @@ per konto). Koppling: bevakat bolag → aktuell analys → relaterad kurs.
 Bevakning lagras per authId (system_events-mönstret eller egen tabell om
 styrelsen beslutar det — beslut tas när faktakartan landat).
 
+**LEVERERAD 2026-09-12 (commit c64914bc):** system_events-mönstret valt
+(ingen ny tabell — faktakartan visade att medlem_progress-kontraktet
+täcker allt: senaste-vinner, requestskopad läsning, GDPR-minimering).
+Nyckel `bevaka:<ticker>` varde "1"/"0" serverfastställt; ticker MÅSTE
+finnas i biblioteket; tak 20 aktiva; /api/medlem/bevakning (GET tyst för
+gäst, POST med session-rotation + rate-limit 60/min). AnalysNavet på
+Min Sida (senaste 3 ur disk i build-passet — ingen per-medlems-cache,
+sidan förblir statisk; ☆ slår på/av utan att lämna dashboarden) +
+BevakaKnapp på analysdetaljsidan (gäst ⇒ inloggningslänk). Kurskopplingen
+bärs av fotraden: AKM1-modellen + våglärans hierarki — kurserna bakom
+ALLA analyser, därför alltid sanna (sektor-mappning avförd: skör,
+Kontra-intuitivt förändringsbenägen). tsc 36 = baslinjen, 0 nya.
+
 ### VÅG 105 — PORTFÖLJEN (utbildningsportfölj)
 Virtuella innehav (bolag, antal, imaginär inköpskurs — kunden matar in),
 utveckling + utfall i utbildningstermer, kopplade till analyserna och

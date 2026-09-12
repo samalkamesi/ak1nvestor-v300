@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "plugins": []
+  },
+  "include": [
+    "../next-env.d.ts",
+    "../src/components/ak1a/portal.tsx",
+    "../src/components/ak1a/portal-nav.tsx",
+    "../src/components/ak1a/min-sida.tsx",
+    "../src/app/(huvud)/min-sida/page.tsx"
+  ]
+}

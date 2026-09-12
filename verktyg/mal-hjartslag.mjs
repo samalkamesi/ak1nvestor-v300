@@ -22,12 +22,20 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KATALOG = path.join(ROT, "data", "vakten");
 const LOGG = path.join(KATALOG, "hjartslag.log");
 const STATE = path.join(KATALOG, "hjartslag-state.json");
+
+/** Stående mål — självläkningen återställer det efter pm2-omstart. */
+const STANDE_MAL_TEXT =
+  "24/7-STANDBY enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md): " +
+  "arbeta kontinuerligt system för system — landa minst en commit per rond taggad " +
+  "[organ:X], färdigställ portalen (våg 102), kör vakten till 0 fynd, rapportera i " +
+  "worklog och TA NÄSTA UPPGIFT — repetera tills kunden pausar.";
 
 // (Nyckelnamnet sätts ihop i delar så ingen skanner ser ett värde i koden.)
 const NYCKELN = "ADMIN" + "_PASSWORD";
@@ -109,6 +117,38 @@ async function main() {
   if (sedanKickMs < MIN_MELLAN_KICK_MS)
     return logga(`kickades för ${Math.round(sedanKickMs / 60000)} min sedan — väntar`);
 
+  // VÅG 109 — SJÄLVHEALNING mot KILADE TURNS (den dolda mördaren):
+  // om kickarna studsar på "En prompt kör redan" fast inget händer är
+  // transportens aktiv-turn DÖD men olåst → allt blockerar. Kur: pm2-
+  // omstart (transport-state är processminne) + målet återställs direkt.
+  // Vakter: endast efter 2 studsade kickar (>=25 min) och max 1 omstart/2h.
+  if (state.studsadeKicker >= 2 && nu - (state.senasteOmstart || 0) > 2 * 60 * 60 * 1000) {
+    logga(
+      `SJÄLVHEALNING: kilad turn (${state.studsadeKicker} studsade kickar) — pm2-omstartar ak1a och återställer målet`,
+    );
+    try {
+      execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
+      await new Promise((sov) => setTimeout(sov, 12_000));
+      await fetch(`${BAS}/api/studio/session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ action: "malSatt", mal: STANDE_MAL_TEXT }),
+      });
+      logga("SJÄLVHEALNING: omstart klar + stående mål återställt");
+    } catch (e) {
+      logga("SJÄLVHEALNING FEL: " + String(e).slice(0, 150));
+    }
+    skrivState({
+      senasteKick: nu,
+      senasteProgressTs: nu,
+      senasteOmstart: nu,
+      studsadeKicker: 0,
+      iteration: status.iteration,
+      senasteEvent: status.senasteEvent || "",
+    });
+    return;
+  }
+
   // 4) HJÄRTSLAG-KICK: väcker loopen + driver kön
   logga(`HJÄRTSLAG: kickar (stilla ${Math.round(stillaMs / 60000)} min, iter ${status.iteration})`);
   const res = await fetch(`${BAS}/api/studio/stream`, {
@@ -123,16 +163,30 @@ async function main() {
     }),
   });
   const okText = res.ok ? "OK" : `FEL ${res.status}`;
-  // Håll strömmen öppen ~25 s, stäng sedan försiktigt.
-  await new Promise((sov) => setTimeout(sov, 25_000));
-  try { await res.body?.cancel(); } catch { /* redan stängd */ }
+  // VÅG 109: läs FÖRSTA chunken (hej/fel kommer direkt) för att upptäcka
+  // studsad kick ("En prompt kör redan"). Klient-abort dödar ALDRIG
+  // serverns turn (våg 91 A1c) — svaret sparas i sessionen ändå.
+  let studsad = false;
+  try {
+    if (res.body) {
+      const lasare = res.body.getReader();
+      const { value } = await Promise.race([
+        lasare.read(),
+        new Promise((_, avvisa) => setTimeout(() => avvisa(new Error("tidsgräns")), 8_000)),
+      ]);
+      studsad = new TextDecoder().decode(value || new Uint8Array()).includes("En prompt kör redan");
+      await lasare.cancel().catch(() => {});
+    }
+  } catch { /* ingen chunk på 8 s = normal pågående turn */ }
   skrivState({
     senasteKick: nu,
     senasteProgressTs: nu,
+    senasteOmstart: state.senasteOmstart || 0,
+    studsadeKicker: studsad ? (state.studsadeKicker || 0) + 1 : 0,
     iteration: status.iteration,
     senasteEvent: status.senasteEvent || "",
   });
-  logga(`HJÄRTSLAG skickat: ${okText}`);
+  logga(`HJÄRTSLAG skickat: ${okText}${studsad ? " (STUDSADE — kilad turn misstänkt)" : ""}`);
 }
 
 main().catch((fel) => logga("FEL: " + String(fel).slice(0, 200)));

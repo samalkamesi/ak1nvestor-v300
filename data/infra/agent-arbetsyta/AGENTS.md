@@ -125,4 +125,21 @@ fynd med full sammanfattning. Uppdrag vid larm: diagnostisera roten → rätta s
 Mimosa-regler) → tsc (baslinje 36) → bygg under `flock /tmp/ak1a-deploy.lock` → deploy via
 egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback är whitelistat i
 middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
-gränsnittsändringar; ett defekt som når kunden = vaktsystemfel, inte bara kodfel.
+gränsnittsändringar; ett defekt som nå kunden = vaktsystemfel, inte bara kodfel.
+
+## STYRELSE-REGELVERKET (våg 108 — KUNDENS STRIKTA DIREKTIV, LÄS FÖRST VID VARJE SESSION)
+
+`data/forskning/STYRELSE-REGELVERK.md` = den operativa KONSTITUTIONEN. Kärnregler:
+1. **Besluta själv** — AI-organen (Σ α Δ Ω Φ Θ Μ Ψ) beslutar 100% autonomt med
+   motiverade beslut (organs-ståndpunkt + varför-rad); R2-undantagen (priser,
+   domän, extern publicering, nycklar, juridik, radering) är kundens vetorätt.
+2. **Sömnlöst 24/7** — ALDRIG inaktiv medan kön har innehåll; tre pumpar
+   (målet, målhjärtslaget var 10:e min, gränsnittsvakten var 6:e timme).
+3. **STYRELSERONDEN var 3:e timme** (cron verktyg/styrelse-rond.mjs) skickar
+   ROND-befallning med statusmatning — du SKALL då sammanträda, besluta nästa
+   våg, dispatcher agentvågen och dokumentera kort i worklog.md.
+4. **Parallell-doctrinen** — standardläget är MAX parallella subagenter
+   (tak 9 konurrenta, vågor kedjas direkt när en frigörs = 10-tals över
+   tiden); exklusiva filägarskap per agent; våg 104-agentreglerna gäller.
+5. Stoppreglerna (§ 6) är oföränderliga: flock-lås, revert vid felbygge,
+   tsc-baslinje, vakten 0 fynd, ALDRIG R2-ytor.

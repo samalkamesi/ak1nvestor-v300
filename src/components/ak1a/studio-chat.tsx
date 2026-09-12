@@ -3170,6 +3170,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [statusText, setStatusText] = React.useState("Ansluter…");
   const [live, setLive] = React.useState<"live" | "demo" | "ned">("ned");
   const [uppladdningar, setUppladdningar] = React.useState<Uppladdning[]>([]);
+  /** VÅG 108: kundens "bubblor stör mig" — chip-radan ovanför skrivfältet
+   *  går att stänga med × (kvarstår sessionen ut; 📎-knappen återöppnar). */
+  const [chipsDolda, setChipsDolda] = React.useState(false);
+  React.useEffect(() => {
+    try { setChipsDolda(sessionStorage.getItem("ak1a-studio-chips-dolda") === "1"); } catch {}
+  }, []);
+  const doljChips = React.useCallback(() => {
+    setChipsDolda(true);
+    try { sessionStorage.setItem("ak1a-studio-chips-dolda", "1"); } catch {}
+  }, []);
+  const visaChips = React.useCallback(() => {
+    setChipsDolda(false);
+    try { sessionStorage.removeItem("ak1a-studio-chips-dolda"); } catch {}
+  }, []);
   const [laddarUpp, setLaddarUpp] = React.useState(false);
   const [draÖver, setDraÖver] = React.useState(false);
   const [laddarHistorik, setLaddarHistorik] = React.useState(true);
@@ -7725,9 +7739,34 @@ export function StudioChat({ hem }: { hem: () => void }) {
           )}
         </div>
 
-        {/* Uppladdnings-chips — mono-rader ovanför skrivfältet. */}
-        {uppladdningar.length > 0 && (
+        {/* Uppladdnings-chips — mono-rader ovanför skrivfältet. VÅG 108: ×
+            stänger raden (sessionen ut) så chatten blir fri på mobil. */}
+        {uppladdningar.length > 0 && chipsDolda && (
+          <div className="mx-auto flex w-full max-w-3xl items-center px-3 pb-1.5 sm:px-4">
+            <button
+              onClick={visaChips}
+              title="Visa uppladdnings-chipsen igen"
+              className="flex h-6 items-center gap-1 rounded-md border border-[#30363D] bg-[#0D1117] px-2 font-mono text-[11px] text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
+            >
+              <Paperclip className="h-3 w-3" aria-hidden /> {uppladdningar.length}
+            </button>
+          </div>
+        )}
+        {uppladdningar.length > 0 && !chipsDolda && (
           <div className="shrink-0">
+            <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 px-3 pb-1 sm:px-4">
+              <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">
+                Uppladdningar
+              </span>
+              <button
+                onClick={doljChips}
+                aria-label="Dölj uppladdnings-chipsen"
+                title="Dölj chipsen (📎-knappen visar dem igen)"
+                className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[#30363D] bg-[#0D1117] text-sm text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
+              >
+                ×
+              </button>
+            </div>
             <div className="mx-auto flex w-full max-w-3xl gap-1.5 overflow-x-auto px-3 pb-1.5 sm:px-4 [scrollbar-width:thin]">
               {uppladdningar.slice(0, 12).map((u) => (
                 <button

@@ -11,11 +11,12 @@
  *     sträng "1" är ENDAST sant värde; unset/"0"/"true"/"yes"/"TRUE"/" 1"
  *     är AV. Värdet läses LAZY (i funktionskroppen) — runtime-växling OK.
  *
- *   NIVÅ 2 — DIREKTIMPORT (typimporter raderas av type stripping):
- *     src/app/robots.ts — Allow "/pro/" endast när NEXT_PUBLIC_B2B_AKTIV=1
- *     VID MODULINLÄSNING (PUBLIKA_YTOR är top-level) → två färska
- *     importer (query-bust ?lage=av / ?lage=pa). Disallow "/pro/admin"
- *     gäller ALLTID (även PÅ).
+ *   NIVÅ 2 — IMPORTBRO (våg 99 la till runtime-import av @/lib/tier-status
+ *     i robots.ts — Node-native typstripping kan inte lösa @/-alias, därför
+ *     bro på NIVÅ 3-mönstret): src/app/robots.ts — Allow "/pro/" endast när
+ *     NEXT_PUBLIC_B2B_AKTIV=1 VID MODULINLÄSNING (PUBLIKA_YTOR är top-level)
+ *     → bron importeras två gånger (query-bust ?lage=av / ?lage=pa). Disallow
+ *     "/pro/admin" gäller ALLTID (även PÅ).
  *
  *   NIVÅ 3 — IMPORTBRO (mönstret från verktyg/testa-mediabibliotek.mjs):
  *     src/lib/meny-register.ts — @/-alias skrivs om till absoluta file://-
@@ -32,9 +33,9 @@
  *     i pro/layout.tsx (early-return av Under-uppbyggnad + noindex),
  *     toppvaxel.tsx (endast Privatperson när AV), chat-widget.tsx (Pro-
  *     förslag bakom b2bAktiv) och sokindex.ts (b2b-filter på STATISKA).
- *     Plus GAP-dokumentation: sitemap.ts + under-sidornas egna robots-
- *     metadata är INTE grindade (känt avvikelse, se
- *     data/forskning/V86-B2B-AKTIVERING.md § Kända residualer).
+ *     Plus RESIDUAL-VAKTER: V86:s två kända residualer (sitemap.ts +
+ *     /pro/priser robots) är STÄNGDA av senare våg — kontrollerna
+ *     bevakar att grindningen består (se V86-B2B-AKTIVERING.md).
  *
  * Användning:  node verktyg/testa-b2b-grind.mjs   (node ≥ 22.18)
  * Avslutskod:  0 om inga FAIL, 1 annars.
@@ -93,9 +94,29 @@ async function main() {
     pa1 === true && av1 === false,
   );
 
-  // ═══ NIVÅ 2 — robots.ts: Allow /pro/ endast vid PÅ (DIREKTIMPORT) ════════
-  // PUBLIKA_YTOR evalueras vid modulinläsning → två färska importlägen.
-  const robotsUrl = pathToFileURL(path.join(REPO, "src", "app", "robots.ts")).href;
+  // ═══ NIVÅ 2 — robots.ts: Allow /pro/ endast vid PÅ (IMPORTBRO) ═══════════
+  // PUBLIKA_YTOR evalueras vid modulinläsning → bron importeras två gånger
+  // (query-bust). Bron skriver om @/-alias till absoluta file://-URL:er i en
+  // gitignorad hjälpfil under tool-results/ (ALDRIG i src/), tas bort efteråt.
+  // (Fix 2026-09-12, våg-agent V2: våg 99:s `import { tierAktiv } from
+  // "@/lib/tier-status"` i robots.ts gav ERR_MODULE_NOT_FOUND vid direkt-
+  // import — bro är samma mönster som NIVÅ 3 redan använder.)
+  const robotsBroSokvag = path.join(REPO, "tool-results", "v2-b2b-robots-bro.ts");
+  let robotsUrl;
+  try {
+    mkdirSync(path.dirname(robotsBroSokvag), { recursive: true });
+    let robotsKalla = las(path.join("src", "app", "robots.ts"));
+    robotsKalla = robotsKalla.replaceAll(
+      /"@\/lib\/([a-zA-Z0-9_-]+)"/g,
+      (_hela, modul) => JSON.stringify(pathToFileURL(path.join(REPO, "src", "lib", modul + ".ts")).href),
+    );
+    writeFileSync(robotsBroSokvag, robotsKalla);
+    robotsUrl = pathToFileURL(robotsBroSokvag).href;
+  } catch (e) {
+    console.error("[testa-b2b-grind] KUNDE INTE BYGGA ROBOTS-BRON: " + (e && e.message ? e.message : String(e)));
+    process.exitCode = 1;
+    return;
+  }
 
   setEnv(undefined);
   const robotsAv = (await import(robotsUrl + "?lage=av")).default();
@@ -116,6 +137,8 @@ async function main() {
   kolla("N2 robots PÅ: Allow /pro/ tillbaka", stjarnaPa.allow.includes("/pro/"));
   kolla("N2 robots PÅ: Disallow /pro/admin kvar (admin aldrig crawlbar)", stjarnaPa.disallow.includes("/pro/admin"));
   kolla("N2 robots PÅ: sitemap-host pekar på lab.ak1nvestor.com", robotsPa.sitemap === "https://lab.ak1nvestor.com/sitemap.xml");
+  // Bron är färdiganvänd — städa direkt (gitignorad hjälpfil, ALDRIG i src/).
+  try { unlinkSync(robotsBroSokvag); } catch { /* redan borta */ }
 
   // ═══ NIVÅ 3 — meny-register.ts via importbro (RUNTIME-växling) ═══════════
   // Bron skriver om @/-importer till absoluta file://-URL:er och cachedunkas
@@ -179,17 +202,20 @@ async function main() {
   const sok = las(path.join("src", "lib", "sokindex.ts"));
   kolla("N4 sokindex.ts: STATISKA filtrerar (!p.b2b || b2bAktiv())", sok.includes('(!p.b2b || b2bAktiv())'));
 
-  // GAP-dokumentation (V86 § Kända residualer — saneras i nästa våg eller
-  // självlöser vid aktivering): dokumenterar NULÄGET deterministiskt.
+  // RESIDUAL-VAKTER (V86 § Kända residualer — STÄNGDA av senare våg:
+  // sitemap grindar numera /pro bakom b2bAktiv() och /pro/priser har ingen
+  // egen robots-rad. Uppdaterad 2026-09-12 av våg-agent V2: kontrollerna
+  // bevakar ATT grindningen består — regression som återinför ogratade
+  // /pro-URL:er eller hardcodad robots failar här.)
   const sitemap = las(path.join("src", "app", "sitemap.ts"));
   kolla(
-    "N4 GAP kvarstår: sitemap.ts listar /pro-URL:er OGINDRAT (ej b2bAktiv-gated)",
-    sitemap.includes("${BASE_URL}/pro") && !sitemap.includes("b2bAktiv"),
+    "N4 residual STÄNGD: sitemap.ts grindar /pro-URL:er bakom b2bAktiv()",
+    sitemap.includes("b2bAktiv(") && sitemap.includes("${BASE_URL}/pro"),
   );
   const priserSida = las(path.join("src", "app", "(huvud)", "pro", "priser", "page.tsx"));
   kolla(
-    'N4 GAP kvarstår: /pro/priser hardcodar robots index:true (överrider grindens noindex)',
-    priserSida.includes('robots: { index: true, follow: true }'),
+    "N4 residual STÄNGD: /pro/priser hardcodar INTE robots index:true (grindens noindex gäller)",
+    !priserSida.includes("robots: { index: true"),
   );
 
   // ── Rapport ────────────────────────────────────────────────────────────────

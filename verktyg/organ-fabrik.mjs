@@ -132,16 +132,27 @@ function evolvera() {
   }
 
   // 3) FÖDELSE: bästa aktiva organet föder barn i nästa lediga bokstav
+  // VÅG 113 — PROMPT-EVOLUTION (ACL 2025, LLM som svart låda): barnet ärver
+  // förälderns uppdrag + en DETERMINISTISK mutation (rotation per rond) —
+  // populationen söker uppdragsrummet, inte bara arbetskön.
+  const MUTATIONER = [
+    "prioritera snabbhet — landa leveransen med minsta möjliga turn",
+    "prioritera kostnad — minst tokens per landad commit",
+    "prioritera integration — samverka med övriga organs system",
+    "prioritera belägg — varje leverans med test/kvitto i worklog",
+    "prioritera djup — ett system grundligt hellre än tre halvt",
+  ];
   const levande = reg.organ.filter((o) => o.status === "aktiv");
   const bokstavslag = levande.map((o) => o.bokstav);
   const foralder = [...levande].sort((a, b) => b.leveranserSista2[0] - a.leveranserSista2[0])[0];
   const nyBokstav = BOKSTAVER.find((b) => !reg.organ.some((o) => o.bokstav === b));
   const fodd = [];
   if (foralder && foralder.leveranserSista2[0] > 0 && nyBokstav && levande.length < 12) {
+    const mutation = MUTATIONER[(reg.rond - 1) % MUTATIONER.length];
     const barn = {
       bokstav: nyBokstav,
       namn: `${nyBokstav}-${foralder.namn.split("-")[1]}-barn`,
-      uppdrag: `Deluppdrag ur ${foralder.namn}: ${foralder.uppdrag.split(";")[0]} — mikrofokuserat`,
+      uppdrag: `Ärv: ${foralder.uppdrag.split(";")[0]} · Mutation: ${mutation}`,
       status: "aktiv",
       fodd: new Date().toISOString().slice(0, 10),
       dod: null,

@@ -13,6 +13,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -96,14 +97,37 @@ async function main() {
   const vakt = sistRader("data/vakten/senaste-korning.txt", 3);
   const worklog = sistRader("worklog.md", 8);
 
-  const prompt = `STYRELSEROND (automatisk ${new Date().toISOString().slice(11, 16)}) — sammanträda enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md, § 5): granska, besluta, verkställa, dokumentera.
+  // VÅG 109: ORGAN-EVOLUTIONEN — kör fabriken och mata in resultatet.
+  // (Döda organ = mindreativitet men härdare leverans; bästa organet föder
+  // barn A-Ö. Commit-tagg [organ:X] = organets leveransbevis.)
+  let organRapport = "(fabriken kunde inte köras)";
+  try {
+    const ut = execSync("node verktyg/organ-fabrik.mjs --evolvera", {
+      cwd: ROT,
+      encoding: "utf8",
+      timeout: 30_000,
+    });
+    organRapport = ut.trim().slice(0, 900);
+  } catch (e) {
+    organRapport = "FEL: " + String(e).slice(0, 120);
+  }
+
+  const prompt = `STYRELSEROND ${"(automatisk " + new Date().toISOString().slice(11, 16) + ")"} — sammanträda enligt STYRELSE-REGELVERKET § 5 (granska→besluta→verkställa→dokumentera).
+
+ORGAN-EVOLUTIONEN (våg 109 — KUNDENS DIREKTIV: celler föds, celler dör, bäst överlever):
+${organRapport}
 
 STATUSMATNING:
 • MÅL: ${malStatus}
 • VAKTEN (senaste): ${vakt}
 • WORKLOG (slutet): ${worklog}
 
-BEFALLNING: (1) Granska statusen + öppna trådar. (2) STYRELSEN BESLUTAR nu — med organs-ståndpunkter och varför-rader — nästa arbetsvåg. (3) Dispatcheragenterna PARALLELLT (§ 4: max konurrenta subagenter, exklusiva filägarskap, våg 104-reglerna). (4) Verkställ autonomt enligt § 2 (R2-undantagen okränkta). (5) Kort rond-protokoll i worklog.md. Svar KORT: vågens beslut + dispatcherade agenter.`;
+HÅRT LEVERANSPROTOKOLL (strikt):
+1. Denna rond MÅSTE landa MINST EN commit i prod — taggad [organ:X] i commit-ämnet (X = ditt organs bokstav) — ELLER rapportera EXAKT blocker (en mening) i worklog. Prat utan commit = dött organ nästa evolution.
+2. PARALLELL-DOCTRIN (§ 4): dispatcher upp till 9 samtidiga mikroagenter med TIGHT avgränsade uppgifter (EN fil/EN funktion var) och exklusivt filägarskap — vågor kedjas direkt när en frigörs.
+3. FART: rutinuppdrag körs med tankestyrka "nothink" (POST session tankestyrka) — reservera "high" för arkitekturbeslut.
+4. Självhelning: fastnar en pump (mål/hjärtslag/vakt) är reparationen rondens HÖGSTA prioritet (§ 3).
+5. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
 
   const res = await fetch(`${BAS}/api/studio/stream`, {
     method: "POST",

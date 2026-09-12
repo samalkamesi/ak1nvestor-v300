@@ -77,4 +77,20 @@ statusmatning. Agenten SKALL då, utan att vänta på kunden:
 
 Endast kunden skriftligen. Styrelsen kan FÖRESLÅ ändringar i rond-protokollen.
 
+## § 8 — Organ-evolutionen (våg 109 — kundens celldirektiv)
+
+"Cell föds och cell dör, de bästa cellerna överlever längst":
+
+1. **Fitness = LANDADE leveranser.** En leverans = en commit i prod, taggad
+   `[organ:X]` i commit-ämnet. Prat, planer och rapporter UTAN commit räknas ej.
+2. **Registret** (data/forskning/organ-registret.json) uppdateras av
+   `verktyg/organ-fabrik.mjs --evolvera` vid varje rond.
+3. **Död**: 0 leveranser två ronder i rad ⇒ organet dör (arkiveras med
+   obduktionsrad). **Födelse**: rondens bästa organ föder ett barn (nästa
+   bokstav A-Ö) med ett mikrofokuserat deluppdrag. Max 12 aktiva organ.
+4. **Data-hygien**: varje rond kör `git gc --auto`, håller vaktrapporter ≤30
+   dagar och komprimerar (städregeln i § 6 gäller).
+5. Admin-panelen får organsystemet INNÄRAT när registret mognat (agenten
+   bygger sektionen autonomt — kundens direktiv 2026-09-12).
+
 *Fastställt av kunden 2026-09-12; protokollfört av huvudagenten.*

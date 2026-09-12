@@ -25,6 +25,9 @@ export type MedlemProgressAggregat = {
   xp: number;
   stjarnor: number;
   klaraKurser: string[];
+  /** Våg 103 ("Mina kurser"): quiz-nycklar utan kursklar, + quiz-räknare. */
+  paborjadeKurser: string[];
+  quizRatta: Record<string, number>;
   importGjord: boolean;
 };
 
@@ -49,12 +52,25 @@ export async function lasMedlemProgressKlient(): Promise<MedlemProgressSvar> {
     }
     const p = kropp.progress as Partial<MedlemProgressAggregat> | undefined;
     if (!p || typeof p !== "object") return { inloggad: false };
+    // Sanering av quizRatta (våg 103): string-nycklar med ändliga tal ≥ 0.
+    const ratta: Record<string, number> = {};
+    if (p.quizRatta && typeof p.quizRatta === "object" && !Array.isArray(p.quizRatta)) {
+      for (const [slug, n] of Object.entries(p.quizRatta)) {
+        if (slug !== "" && typeof n === "number" && Number.isFinite(n) && n > 0) {
+          ratta[slug] = Math.floor(n);
+        }
+      }
+    }
     return {
       inloggad: true,
       progress: {
         xp: typeof p.xp === "number" && Number.isFinite(p.xp) ? Math.max(0, Math.floor(p.xp)) : 0,
         stjarnor: typeof p.stjarnor === "number" && Number.isFinite(p.stjarnor) ? Math.max(0, Math.floor(p.stjarnor)) : 0,
         klaraKurser: Array.isArray(p.klaraKurser) ? p.klaraKurser.filter((s): s is string => typeof s === "string") : [],
+        paborjadeKurser: Array.isArray(p.paborjadeKurser)
+          ? p.paborjadeKurser.filter((s): s is string => typeof s === "string")
+          : [],
+        quizRatta: ratta,
         importGjord: p.importGjord === true,
       },
     };

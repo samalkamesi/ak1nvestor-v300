@@ -259,12 +259,24 @@ export type MedlemProgress = {
   xp: number;
   stjarnor: number;
   klaraKurser: string[];
+  /** Kurs-slugs med quiz-rader men ej kursklar, sorterad ("Mina kurser",
+   *  portal-våg 103 — härlett ur samma karta, ingen ny läsning). */
+  paborjadeKurser: string[];
+  /** Antal klarade quiz per slug (progress-mätaren på påbörjade kort). */
+  quizRatta: Record<string, number>;
   /** import:<authId>:<datum> finns redan ⇒ engångs-importen är förbrukad. */
   importGjord: boolean;
 };
 
 /** Tomma profilvärdet (gäst, fel, byggfas — aldrig null i kontraktet). */
-export const TOM_MEDLEM_PROGRESS: MedlemProgress = { xp: 0, stjarnor: 0, klaraKurser: [], importGjord: false };
+export const TOM_MEDLEM_PROGRESS: MedlemProgress = {
+  xp: 0,
+  stjarnor: 0,
+  klaraKurser: [],
+  paborjadeKurser: [],
+  quizRatta: {},
+  importGjord: false,
+};
 
 /**
  * rader (nyest först) → karta nyckel → gällande värde (FÖREKOMST vinner —
@@ -288,14 +300,28 @@ export function senasteVinnerProgress(rader: readonly ProgressLasRad[]): Map<str
  *   stjarna:<slug>          → +1 stjärna
  *   import:<authId>:<datum> → värdeobjektets {xp, stjarnor, klaraKurser}
  *     (union med per-nyckel-raderna; importGjord = true)
+ * Härlett (våg 103, "Mina kurser"): quiz-räknare per slug → quizRatta;
+ * slug med quiz men utan kursklar → paborjadeKurser (importen bär bara
+ * klara kurser — den kan aldrig markera en påbörjad kurs, korrekt ärligt).
  * Främmande/okända nycklar ignoreras — de kan aldrig påverka aggregatet.
  */
 export function aggredereaProgress(karta: ReadonlyMap<string, string>): MedlemProgress {
-  const ut: MedlemProgress = { xp: 0, stjarnor: 0, klaraKurser: [], importGjord: false };
+  const ut: MedlemProgress = {
+    xp: 0,
+    stjarnor: 0,
+    klaraKurser: [],
+    paborjadeKurser: [],
+    quizRatta: {},
+    importGjord: false,
+  };
   const klara = new Set<string>();
+  const quizRatta: Record<string, number> = {};
   for (const [nyckel, vardeText] of karta) {
     if (nyckel.startsWith("quiz:")) {
       ut.xp += XP_PER_QUIZ;
+      // quiz:<slug>:<kap>:<i> — slug fram till nästa kolon (inga kolon i slug:ar)
+      const slug = nyckel.slice("quiz:".length).split(":")[0];
+      if (slug !== "") quizRatta[slug] = (quizRatta[slug] ?? 0) + 1;
       continue;
     }
     if (nyckel.startsWith("kursklar:")) {
@@ -324,6 +350,10 @@ export function aggredereaProgress(karta: ReadonlyMap<string, string>): MedlemPr
     }
   }
   ut.klaraKurser = [...klara].sort();
+  ut.quizRatta = quizRatta;
+  ut.paborjadeKurser = Object.keys(quizRatta)
+    .filter((slug) => !klara.has(slug))
+    .sort();
   return ut;
 }
 

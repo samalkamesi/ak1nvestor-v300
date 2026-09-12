@@ -10118,3 +10118,29 @@ en handelslista; analysens slutsatser visas aldrig uppmanande — biblioteket
 
 KVD: tsc 36 = baslinjen (0 nya) · motorer/vakt/prod: se leveransrapporten
 i STYRELSE-PORTAL-MEGA.md.
+
+## VÅG 106-ROND 1 (PORTAL-SPÅRET) — SLUTBITEN VÅG 103: MINA KURSER-GRIDET (2026-09-13) [organ:P]
+
+Hjärtslagsrond (målet aktivt, rond 4 landade 0 commits — alla organ hotade
+av död enligt § 8; denna leverans är Psi-utbildningens). Portal-spårets
+våg 103 saknade sin sista bit ("Mina kurser"-gridet) — nu levererat:
+
+- **Kontraktstillägg (bakåtkompatibelt)**: MedlemProgress += paborjadeKurser
+  (quiz-nycklar utan kursklar) + quizRatta (räknare per slug) — härlett ur
+  SAMMA system_events-karta i aggredereaProgress, ingen ny läsning/tabell.
+  Import-raden kan ärligt nog aldrig markera påbörjad kurs (den bär bara
+  klara kurser) — dokumenterat. GET /api/medlem/progress bär fältet gratis.
+- **KursNavet** (src/components/ak1a/kurs-navet.tsx): "Mina kurser" på Min
+  Sida — PÅBÖRJADE (flest quiz-rätt först, "X rätt quiz · Y kapitel",
+  Fortsätt-knapp) + KLARA (★ + repetera-länk), tak 6 kort/sektion med
+  ihopräkning, gäst ⇒ stillsam inloggningsrad (AnalysNavet-mönstret).
+  Marin-familjens fasta palett (våg 105 KO-regler), tryckytor ≥ 44 px.
+- **Koppling**: page.tsx mappar getCourseList() → kursKort (statisk diskdata
+  vid build — sidan förblir statisk, medlemens data via klientens egna
+  rundturor); Portal renderar KursNavet mellan AnalysNavet och MinSida.
+  Nästa-steg-tipset bärs alltjämt av LarvagKort + quiz-svagheterna av
+  /api/quiz/svaghet (våg 88/99) — navet visar DET SOM PÅGÅR + avslutat.
+
+KVD: tsc exakt 34 = baslinjen, 0 nya (subagent-verifierat; inga fel i de
+fem berörda filerna) · bygge under flock-lås + prod-verifiering + vakten:
+se commit-meddelandets leveranskvitto.

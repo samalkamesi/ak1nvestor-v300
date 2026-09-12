@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { AnalysNavet, type AnalysKortInfo } from "@/components/ak1a/analys-navet";
+import { KursNavet, type KursKortInfo } from "@/components/ak1a/kurs-navet";
 import { MinSida } from "@/components/ak1a/min-sida";
 import { PortalNav } from "@/components/ak1a/portal-nav";
 import { lasMedlemProgressKlient, type MedlemProgressAggregat } from "@/lib/medlem-progress-klient";
@@ -27,11 +28,14 @@ export function Portal({
   prenumNiva = null,
   prenumRabattProcent = 0,
   analysKort = [],
+  kursKort = [],
 }: {
   prenumNiva?: PrenumerationNiva | null;
   prenumRabattProcent?: number;
   /** VÅG 104: biblioteket (senaste först) ur serverkomponenten — statisk diskdata. */
   analysKort?: readonly AnalysKortInfo[];
+  /** VÅG 103: kursuniversumet ur serverkomponenten — statisk diskdata. */
+  kursKort?: readonly KursKortInfo[];
 }) {
   const [session, setSession] = useState<{
     kontrollerad: boolean;
@@ -71,6 +75,9 @@ export function Portal({
       {/* VÅG 104: analyserna i navet — senaste ur biblioteket (alla) +
           "Din bevakning" (inloggade, system_events per konto). */}
       <AnalysNavet analyser={analysKort} inloggad={session.progress !== null} />
+      {/* VÅG 103 sista biten: Mina kurser — påbörjade + klara ur
+          server-progressen (system_events), samma sanningskälla. */}
+      <KursNavet kurser={kursKort} progress={session.progress} />
       <MinSida
         prenumNiva={prenumNiva}
         prenumRabattProcent={prenumRabattProcent}

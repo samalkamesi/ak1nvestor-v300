@@ -10081,3 +10081,40 @@ kompletterar worklog-tråden från våg 89):
   https-literaler, idempotenta, inga hemligheter — kontrollmässigt
   verifierade före commit) + AGENTS.md-kopian i arbetsytroten (diffad
   identisk med versionerad källa — git status rent framöver).
+
+## VÅG 104 (PORTAL-SPÅRET) — ANALYSERNA I NAVET (2026-09-12, c64914bc)
+
+Portal-megaplanens våg 104 (STYRELSE-PORTAL-MEGA.md, kundkrav #2 "se
+analyser i portalen") levererad av studions huvudagent. NOTIS om spåren:
+admin-spårets våg 103-106 (harmoni, admin-mobil, login-E2E/H2/H3) ligger i
+STYRELSE-ADMIN-MEGA.md/STYRELSE-2026-09-11-V106.md — portal-spårets
+vågnummer följer PORTAL-MEGA-dokumentet (102 dashboard ✓, 103 utbildning
+[delvis: läroplan+fortsatt-panel finns, "Mina kurser"-grid kvar], 104
+analyser ✓ nedan, 105 portfölj ✓ [portfolio-system + KO-rättningar],
+106 integration+polish [kvar]).
+
+LEVERANS:
+- **Bevakning per konto i system_events** (type=medlem_bevakning,
+  medlem-progress-kontraktet rakt av: senaste-vinner per nyckel,
+  requestskopad läsning §B.4, våg 79-hermetik, Mimosa-receptet).
+  Nyckel `bevaka:<ticker>`, varde "1"/"0" SERVERFASTSTÄLLT; ticker
+  valideras mot analysbiblioteket; tak 20 aktiva (409 vid full lista).
+- **/api/medlem/bevakning** — GET tyst för gäst (200 {inloggad:false}),
+  POST med session-rotation (LOGIN-2.0) + rate-limit 60/min per authId.
+- **AnalysNavet** på Min Sida (portal.tsx): senaste 3 analyserna ur
+  disk i SERVER-passet (MinSidaPage mappar getAnalyses() → props — ingen
+  per-medlems-cache, /min-sida förblir statisk + klientens egna rundturor)
+  + ☆-toggle utan navigering + "Din bevakning"-kort (länk in i analysen)
+  + metodkurskoppling i fotraden (AKM1-modellen, våglärans hierarki —
+  kurserna bakom ALLA analyser; sektor-mappning avförd som skör).
+  Marin-familjens fasta palett (våg 105:s KO-regler), 44px-tryckytor.
+- **BevakaKnapp** på /analyser/[ticker] (tema-stil, gäst ⇒ logga in,
+  aria-pressed + aria-live; sidan förblir force-static — knappen bär
+  sina egna rundturor).
+
+Juridik: bevakningen är en LÄSNINGSLISTA ("följ bolagets analys"), aldrig
+en handelslista; analysens slutsatser visas aldrig uppmanande — biblioteket
+är studiematerial. Pedagogisk plattform — inte investeringsråd.
+
+KVD: tsc 36 = baslinjen (0 nya) · motorer/vakt/prod: se leveransrapporten
+i STYRELSE-PORTAL-MEGA.md.

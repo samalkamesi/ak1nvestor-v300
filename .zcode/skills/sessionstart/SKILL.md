@@ -44,7 +44,8 @@ verktygsbältets skick.
 - Prod = Contabo-servern (5.189.162.162): Next.js (pm2 `ak1a`, port 3000)
   + app-server + nginx. Gren: **develop**. Remote `prod` = `/home/ak1a/AK1`.
 - Kundens priser/domän/juridik = R2 (väntar kund) — ALDRIG autonomt.
-- TSC-baslinje: 36 befintliga fel = OK; endast 0 **nya** fel accepteras.
+- TSC-baslinje: 34 befintliga fel = OK (korrigerad 2026-09-12; 36 var
+  totalrader inkl. 2 fortsättningsrader); endast 0 **nya** fel accepteras.
 
 ## När läget avviker
 

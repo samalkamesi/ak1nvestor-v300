@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
+import { getAnalyses } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Portal } from "@/components/ak1a/portal";
 import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
@@ -20,6 +21,18 @@ const prenumNiva =
   priser?.nivaer.find((n) => n.id === "forskning") ?? priser?.nivaer[0] ?? null;
 const prenumRabattProcent = priser ? Math.round(priser.rabattFas.fas2 * 100) : 0;
 
+// VÅG 104 (STYRELSE-PORTAL-MEGA.md): biblioteket ur DISK vid build (statisk
+// data — ingen cache mellan medlemmar) → AnalysNavet på dashboarden.
+const analysKort = getAnalyses()
+  .map((a) => ({
+    ticker: a.ticker,
+    company: a.company,
+    sector: a.sector || "Okänd sektor",
+    datum: a.analysisDate || a.verified || "—",
+    status: a.status || "",
+  }))
+  .sort((x, y) => y.datum.localeCompare(x.datum));
+
 export default function MinSidaPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Min Sida" }]}>
@@ -29,8 +42,13 @@ export default function MinSidaPage() {
         <MigreraProgressBanner />
       </div>
       {/* VÅG 102: PORTALEN — en sessionskontroll styr navet (PortalNav i
-          marin-familjen) + Min Sida med kontots server-progress som talgivare. */}
-      <Portal prenumNiva={prenumNiva} prenumRabattProcent={prenumRabattProcent} />
+          marin-familjen) + Min Sida med kontots server-progress som talgivare.
+          VÅG 104: AnalysNavet — senaste analyserna + din bevakning. */}
+      <Portal
+        prenumNiva={prenumNiva}
+        prenumRabattProcent={prenumRabattProcent}
+        analysKort={analysKort}
+      />
     </SeoPageShell>
   );
 }

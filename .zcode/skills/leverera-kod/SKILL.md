@@ -10,7 +10,7 @@ Kodändringar kräver FULL kedja. Prod lämnas ALDRIG trasig.
 ## Protokoll (steg för steg)
 
 ```bash
-# 1. Typkontroll — 36 befintliga fel är baslinjen, 0 NYA tillåts
+# 1. Typkontroll — 34 befintliga fel är baslinjen, 0 NYA tillåts
 npx tsc --noEmit
 
 # 2. Commit (svenska, "studio:"-prefix, små steg)

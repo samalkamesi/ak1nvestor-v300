@@ -23,6 +23,16 @@ const LOGG = path.join(KATALOG, "styrelse-rond.log");
 const NYCKELN = "ADMIN" + "_PASSWORD";
 const BAS = process.env.AK1A_BAS_URL || "http://localhost:3000";
 
+/** STÅENDE MÅL (§ 3) — ronden återaktiverar det om en pm2-omstart raderat
+ *  mål-state:t (det bor i processminnet). Kunden PAUSAR via studions knapp;
+ *  aktiv paus (pausad=true med mål) respekteras alltid — bara HELT saknat
+ *  mål (null, t.ex. efter deploy) återställs. */
+const STANDE_MAL =
+  "24/7-STANDBY enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md): " +
+  "arbeta kontinuerligt system för system — färdigställ portalen (våg 102), utred öppna " +
+  "trådar, förbättra granskningskön (publicering väntar kunden — R2), kör vakten till 0 " +
+  "fynd, rapportera i worklog och TA NÄSTA UPPGIFT — repetera tills kunden pausar.";
+
 function lasPass() {
   try {
     const rad = fs
@@ -66,6 +76,19 @@ async function main() {
       headers: { "x-admin-password": pass },
     });
     const j = await r.json();
+    // § 3: målet bor i processminnet — pm2-omstart raderar det. Ronden
+    // återaktiverar STÅENDE MÅL om det är HELT borta (null), men respekterar
+    // alltid kundens aktiva paus (pausad=true med mål kvar).
+    if (!j.mal && !j.pausad) {
+      const s = await fetch(`${BAS}/api/studio/session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ action: "malSatt", mal: STANDE_MAL }),
+      });
+      logga(s.ok ? "MÅL återaktiverat (var borta — pm2-omstart?)" : "MÅL-återaktivering FEL " + s.status);
+      j.mal = STANDE_MAL;
+      j.aktiv = true;
+    }
     malStatus = `aktiv=${j.aktiv} pausad=${j.pausad} iteration=${j.iteration} turn=${j.pagaendeTurn} mål="${(j.mal || "").slice(0, 120)}…"`;
   } catch (e) {
     malStatus = "FEL: " + String(e).slice(0, 80);

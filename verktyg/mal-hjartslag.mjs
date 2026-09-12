@@ -125,7 +125,7 @@ async function main() {
   const okText = res.ok ? "OK" : `FEL ${res.status}`;
   // läs strömmen kort så meddelandet landar (max 30 s)
   try {
-    const timer = setTimeout(() => res.body?.destroy(), 30_000);
+    const timer = setTimeout(() => res.body?.cancel?.(), 30_000);
     for await (const _ of res.body || []) {
       if (_ !== undefined) { /* konsumera */ }
     }

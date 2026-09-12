@@ -89,7 +89,7 @@ BEFALLNING: (1) Granska statusen + öppna trådar. (2) STYRELSEN BESLUTAR nu —
   });
   logga(`ROND skickad: ${res.ok ? "OK" : "FEL " + res.status}`);
   try {
-    const timer = setTimeout(() => res.body?.destroy(), 30_000);
+    const timer = setTimeout(() => res.body?.cancel?.(), 30_000);
     for await (const _ of res.body || []) {
       if (_ !== undefined) { /* konsumera strömmen kort */ }
     }

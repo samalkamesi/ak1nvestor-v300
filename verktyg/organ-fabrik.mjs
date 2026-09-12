@@ -23,7 +23,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -65,23 +65,26 @@ function lasRegister() {
   }
 }
 
-/** Commits i prod sedan UNIX-ms; tillskrivning via [organ:X]-tagg. */
+/** Commits i prod sedan UNIX-ms; tillskrivning via [organ:X]-tagg.
+ *  (execFileSync = skal-fritt: %-koder i --pretty klarar cmd.exe.) */
 function lasCommitsSedan(sedanMs) {
   const sedanIso = new Date(sedanMs).toISOString();
   try {
-    const rader = execSync(
-      `git log --since="${sedanIso}" --pretty=format:%h|%s`,
+    const ut = execFileSync(
+      "git",
+      ["log", `--since=${sedanIso}`, "--pretty=format:%h|%s"],
       { cwd: ROT, encoding: "utf8", timeout: 10_000 },
-    )
+    );
+    return ut
       .trim()
       .split("\n")
-      .filter(Boolean);
-    return rader.map((rad) => {
-      const [hash, ...amne] = rad.split("|");
-      const amneStr = amne.join("|");
-      const tagg = amneStr.match(/\[organ:([A-ZÅÄÖ])\]/i);
-      return { hash, organ: tagg ? tagg[1].toUpperCase() : null, amne: amneStr.slice(0, 100) };
-    });
+      .filter(Boolean)
+      .map((rad) => {
+        const [hash, ...amne] = rad.split("|");
+        const amneStr = amne.join("|");
+        const tagg = amneStr.match(/\[organ:([A-ZÅÄÖ])\]/i);
+        return { hash, organ: tagg ? tagg[1].toUpperCase() : null, amne: amneStr.slice(0, 100) };
+      });
   } catch {
     return [];
   }

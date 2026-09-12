@@ -1,0 +1,258 @@
+{
+  "rond": 6,
+  "senasteRondTs": 1789252984006,
+  "organ": [
+    {
+      "bokstav": "A",
+      "namn": "Alfa-strategi",
+      "uppdrag": "Prioritera nästa våg efter affärsvärde; äger målkön",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "B",
+      "namn": "Beta-analys",
+      "uppdrag": "AKM1/AK1TS-metodikens djup; analysmotorer",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "D",
+      "namn": "Delta-data",
+      "uppdrag": "Datasidor, datakvalitet, insamling",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "O",
+      "namn": "Omega-vision",
+      "uppdrag": "Arkitektur och långsiktig integration (kroppen)",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "F",
+      "namn": "Fi-innovation",
+      "uppdrag": "Nya system; portalen och organtekniken",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        2
+      ],
+      "totaltLeveranser": 3.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "T",
+      "namn": "Theta-kvalitet",
+      "uppdrag": "Vakt, tester, tsc, kontrahällning",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "M",
+      "namn": "My-marknad",
+      "uppdrag": "SEO, granskningskö, konvertering",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 2.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "P",
+      "namn": "Psi-utbildning",
+      "uppdrag": "Kurser, mentor, lärvägar",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        1.1818181818181819,
+        2
+      ],
+      "totaltLeveranser": 4.267929292929293,
+      "foralder": null,
+      "obduktion": null
+    },
+    {
+      "bokstav": "C",
+      "namn": "C-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 1.392929292929293,
+      "foralder": "A",
+      "obduktion": null
+    },
+    {
+      "bokstav": "E",
+      "namn": "E-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        1
+      ],
+      "totaltLeveranser": 1.281818181818182,
+      "foralder": "A",
+      "obduktion": null
+    },
+    {
+      "bokstav": "G",
+      "namn": "G-strategi-barn",
+      "uppdrag": "Deluppdrag ur Alfa-strategi: Prioritera nästa våg efter affärsvärde — mikrofokuserat",
+      "status": "död",
+      "fodd": "2026-09-12",
+      "dod": "2026-09-12",
+      "leveranserSista2": [
+        0,
+        0
+      ],
+      "totaltLeveranser": 0,
+      "foralder": "A",
+      "obduktion": "0 leveranser under rond 2-3 — döden enligt § evolution"
+    },
+    {
+      "bokstav": "H",
+      "namn": "H-innovation-barn",
+      "uppdrag": "Deluppdrag ur Fi-innovation: Nya system — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0.18181818181818182,
+        0
+      ],
+      "totaltLeveranser": 0.18181818181818182,
+      "foralder": "F",
+      "obduktion": null
+    },
+    {
+      "bokstav": "I",
+      "namn": "I-utbildning-barn",
+      "uppdrag": "Deluppdrag ur Psi-utbildning: Kurser, mentor, lärvägar — mikrofokuserat",
+      "status": "aktiv",
+      "fodd": "2026-09-12",
+      "dod": null,
+      "leveranserSista2": [
+        0,
+        0
+      ],
+      "totaltLeveranser": 0,
+      "foralder": "P",
+      "obduktion": null
+    }
+  ],
+  "historik": [
+    {
+      "rond": 1,
+      "commits": 8,
+      "doda": [],
+      "fodd": [
+        "C"
+      ]
+    },
+    {
+      "rond": 2,
+      "commits": 1,
+      "doda": [],
+      "fodd": [
+        "E"
+      ]
+    },
+    {
+      "rond": 3,
+      "commits": 1,
+      "doda": [],
+      "fodd": [
+        "G"
+      ]
+    },
+    {
+      "rond": 4,
+      "commits": 0,
+      "doda": [
+        "G"
+      ],
+      "fodd": []
+    },
+    {
+      "rond": 5,
+      "commits": 12,
+      "tokens": 0,
+      "doda": [],
+      "fodd": [
+        "H"
+      ]
+    },
+    {
+      "rond": 6,
+      "commits": 3,
+      "tokens": 0,
+      "doda": [],
+      "fodd": [
+        "I"
+      ]
+    }
+  ],
+  "kostnad": {
+    "tokensSistaRond": 0,
+    "tokensPerLeverans": 0,
+    "tokensTotalt": 0
+  }
+}

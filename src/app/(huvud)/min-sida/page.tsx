@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
-import { getAnalyses } from "@/lib/content";
+import { getAnalyses, getCourseList } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Portal } from "@/components/ak1a/portal";
 import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
@@ -33,6 +33,16 @@ const analysKort = getAnalyses()
   }))
   .sort((x, y) => y.datum.localeCompare(x.datum));
 
+// VÅG 103 ("Mina kurser"-gridet): kursuniversumet ur DISK vid build →
+// KursNavet. Titlar/kapitel är statiska — medlemmens påbörjade/klara bär
+// klientens egna rundturor (sidan förblir statisk).
+const kursKort = getCourseList().map((k) => ({
+  slug: k.slug,
+  titel: k.title,
+  kategori: k.category || "Läroplanen",
+  kapitel: k.chapterCount,
+}));
+
 export default function MinSidaPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Min Sida" }]}>
@@ -43,11 +53,13 @@ export default function MinSidaPage() {
       </div>
       {/* VÅG 102: PORTALEN — en sessionskontroll styr navet (PortalNav i
           marin-familjen) + Min Sida med kontots server-progress som talgivare.
-          VÅG 104: AnalysNavet — senaste analyserna + din bevakning. */}
+          VÅG 104: AnalysNavet — senaste analyserna + din bevakning.
+          VÅG 103: KursNavet — Mina kurser (påbörjade + klara). */}
       <Portal
         prenumNiva={prenumNiva}
         prenumRabattProcent={prenumRabattProcent}
         analysKort={analysKort}
+        kursKort={kursKort}
       />
     </SeoPageShell>
   );

@@ -123,14 +123,9 @@ async function main() {
     }),
   });
   const okText = res.ok ? "OK" : `FEL ${res.status}`;
-  // läs strömmen kort så meddelandet landar (max 30 s)
-  try {
-    const timer = setTimeout(() => res.body?.cancel?.(), 30_000);
-    for await (const _ of res.body || []) {
-      if (_ !== undefined) { /* konsumera */ }
-    }
-    clearTimeout(timer);
-  } catch { /* strömmen stängs — meddelandet är redan skickat */ }
+  // Håll strömmen öppen ~25 s, stäng sedan försiktigt.
+  await new Promise((sov) => setTimeout(sov, 25_000));
+  try { await res.body?.cancel(); } catch { /* redan stängd */ }
   skrivState({
     senasteKick: nu,
     senasteProgressTs: nu,

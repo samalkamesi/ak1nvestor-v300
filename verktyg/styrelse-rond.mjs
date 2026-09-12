@@ -135,13 +135,10 @@ HÅRT LEVERANSPROTOKOLL (strikt):
     body: JSON.stringify({ prompt }),
   });
   logga(`ROND skickad: ${res.ok ? "OK" : "FEL " + res.status}`);
-  try {
-    const timer = setTimeout(() => res.body?.cancel?.(), 30_000);
-    for await (const _ of res.body || []) {
-      if (_ !== undefined) { /* konsumera strömmen kort */ }
-    }
-    clearTimeout(timer);
-  } catch { /* strömmen stängs — meddelandet är skickat */ }
+  // Håll strömmen öppen ~25 s (meddelandet bearbetas server-sidigt), stäng
+  // sedan försiktigt — meddelandet landar även om stängningen brusar.
+  await new Promise((sov) => setTimeout(sov, 25_000));
+  try { await res.body?.cancel(); } catch { /* redan stängd */ }
 }
 
 main().catch((fel) => logga("FEL: " + String(fel).slice(0, 200)));

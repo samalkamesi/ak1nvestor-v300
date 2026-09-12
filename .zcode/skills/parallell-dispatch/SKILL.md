@@ -27,7 +27,7 @@ STYRELSE-*.md > worklog.md. Läs AGENTS.md först.
 UPPGIFT: <blockets mål, exakta sökvägar, filformat>
 REGLER: rör INTE <andra blockets filer>. svenska UI-texter. tre språk.
 Juridik: utbildningsformuleringar alltid.
-KVD: npx tsc --noEmit (0 nya fel; baslinje 36) + <blockets test-skript>.
+KVD: npx tsc --noEmit (0 nya fel; baslinje 34) + <blockets test-skript>.
 LEVERANS: commit "studio: <block> — <vad>" UTAN push; huvudagenten
 pushar och bygger. Rapportera klart/fel i slutmeddelandet.
 ```
@@ -44,7 +44,7 @@ pushar och bygger. Rapportera klart/fel i slutmeddelandet.
 1. Verifiera varje agents KVD-lovande i MAIN (lita inte blint):
    kör `leveranskontroll`-färdigheten.
 2. Bunta commits, ÉN push `git push prod develop`, ÉN build per våg
-   (KVD: tsc 36 · motorer 107/0/0 · vakten GRÖN · prod 200).
+   (KVD: tsc 34 · motorer 107/0/0 · vakten GRÖN · prod 200).
 3. Uppdatera PIPELINE-KO (stryk färdiga rader) + worklog + STYRELSE-
    ADMIN-MEGA.md (vågsektion).
 

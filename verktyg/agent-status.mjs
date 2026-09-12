@@ -7,7 +7,9 @@
  *   git-läge · senaste våg · prod-hälsa · pm2 · kvalitetsvakt · verktygsbälte.
  *
  * Användning:  node verktyg/agent-status.mjs [--djup]
- *   --djup kör även npx tsc --noEmit (~40 s) och räknar mot baslinjen 36.
+ *   --djup kör även npx tsc --noEmit (~40 s) och räknar mot baslinjen
+ *   TSC_BASLINJE (34 — korrigerad 2026-09-12 av våg-agent V2 [organ:Θ];
+ *   gamla talet 36 var totalrader: 34 fel + 2 fortsättningsrader).
  * Sista stdout-raden "RESULTAT_JSON={...}" är maskinläsbar (samma mönster
  * som kvalitetsvakten).
  * Avslutskod: 0 = läget rapporterat (rapport, ej grind).
@@ -125,14 +127,17 @@ const kommandon = (() => {
 })();
 
 // ── 6. DJUP: tsc mot baslinjen ────────────────────────────────────────────
+// TSC_BASLINJE = exakt antal rader med "error TS" (2026-09-12 21:20 UTC,
+// commit 436ad6f7; räkna ALDRIG totalrader — 2 av dem är fortsättningsrader).
+const TSC_BASLINJE = 34;
 let tsc = null;
 if (DJUP) {
   const ut = await skal("npx", ["tsc", "--noEmit"], 150_000);
   if (ut !== null) {
     const n = (ut.match(/error TS/g) || []).length;
-    tsc = { fel: n, baslinje: 36, nya: Math.max(0, n - 36) };
+    tsc = { fel: n, baslinje: TSC_BASLINJE, nya: Math.max(0, n - TSC_BASLINJE) };
   } else {
-    tsc = { fel: null, baslinje: 36, nya: null };
+    tsc = { fel: null, baslinje: TSC_BASLINJE, nya: null };
   }
 }
 

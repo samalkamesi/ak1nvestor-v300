@@ -4,7 +4,7 @@ description: Leverera AK1A-kod till prod (typkontroll → commit → push → by
 
 Följ leverera-kod-färdigheten exakt:
 
-1. `npx tsc --noEmit` — 0 nya fel mot baslinjen 36
+1. `npx tsc --noEmit` — 0 nya fel mot baslinjen 34
 2. Commit:a ändringar (svenskt meddelande, "studio:"-prefix, små steg)
 3. `git push prod develop`
 4. Bygg på servern: `cd /home/ak1a/AK1 && npm ci --no-audit --no-fund && npm run build && pm2 restart ak1a`

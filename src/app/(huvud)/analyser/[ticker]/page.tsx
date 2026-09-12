@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { getAnalyses, getAnalysis } from "@/lib/content";
 import { analysisMetadata, analysisJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
-import { BevakaKnapp } from "@/components/ak1a/bevaka-knapp";
 
 export const dynamic = "force-static";
 
@@ -99,8 +98,6 @@ export default async function AnalysisPage({
             {rec.mainSub && <span className="text-xs text-muted-foreground">{rec.mainSub}</span>}
           </div>
         )}
-        {/* VÅG 104: bevakningsdörren — "Din bevakning" på Min Sida */}
-        <BevakaKnapp ticker={a.ticker} company={a.company} />
       </header>
 
       <section className="mt-8 grid gap-4 md:grid-cols-3">

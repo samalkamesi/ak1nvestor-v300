@@ -524,6 +524,8 @@ function halsning(ctx: elevContext, minneAntal = 0): string {
 
 export function ChatWidget() {
   const [oppnad, setOppnad] = useState(false);
+  // VÅG 108: /studio döljer den flytande 💬-knappen — där ÄR chatten.
+  const widgetPathname = usePathname() ?? "";
   const [meddelanden, setMeddelanden] = useState<Meddelande[]>([]);
   const [fragor, setFraga] = useState("");
   const [busy, setBusy] = useState(false);
@@ -1163,15 +1165,18 @@ export function ChatWidget() {
       )}
 
       {/* Trigger-knapp — nedre hörnet med safe-area (Short-Seller staplas ovanpå med gap-3), marin-guldidentitet.
-          Mobil: h-10 w-10 (mindre fotavtryck — täcker ej kortens →-pilar); desktop: h-14 w-14. */}
-      <button
-        onClick={() => setOppnad(!oppnad)}
-        className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl"
-        aria-label="AI-Mentor"
-        title="AI-Mentor — din personliga guide"
-      >
-        {oppnad ? "×" : "💬"}
-      </button>
+          Mobil: h-10 w-10 (mindre fotavtryck — täcker ej kortens →-pilar); desktop: h-14 w-14.
+          VÅG 108: DÖLJS på /studio — där ÄR chatten (kundens "bubblor stör mig"). */}
+      {!widgetPathname.startsWith("/studio") && (
+        <button
+          onClick={() => setOppnad(!oppnad)}
+          className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-xl text-gold shadow-xl transition-transform hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl"
+          aria-label="AI-Mentor"
+          title="AI-Mentor — din personliga guide"
+        >
+          {oppnad ? "×" : "💬"}
+        </button>
+      )}
     </>
   );
 }

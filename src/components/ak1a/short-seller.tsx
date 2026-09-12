@@ -422,17 +422,45 @@ export function ShortSeller() {
 
   // ── Render ────────────────────────────────────────────────────────────────
 
+  // VÅG 108 (kundens "bubblor stör mig"): 🎯-bubblan döljs HELT på /studio
+  // (chatt-ytan ska vara fri) och kan stängas med × i 24 h på övriga sidor.
+  // (pathname deklarerad vid komponentens topp — rad ~203.)
+  const arStudioSida = pathname.startsWith("/studio");
+  const [doldStempel, setDoldStempel] = useState<number | null>(null);
+  useEffect(() => {
+    try {
+      const v = Number(localStorage.getItem("ak1a-shortseller-dold") || 0);
+      setDoldStempel(v > 0 ? v : null);
+    } catch {}
+  }, []);
+  const dold24h = doldStempel !== null && Date.now() - doldStempel < 24 * 60 * 60 * 1000;
+
   if (!visar) {
+    if (arStudioSida || dold24h) return null;
     return (
-      // Trigger-knapp — vertikalt staplad ovanför AI-mentorn (gap-3) med safe-area undertill, djupare röd identitet
-      <button
-        onClick={() => setVisar(true)}
-        className="fixed bottom-[calc(5.25rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-red-800 bg-[#7A1F1F] text-2xl text-white shadow-xl transition-transform hover:scale-105"
-        aria-label="Utmana mig — Short-Seller"
-        title="Short-Seller: Sokratisk grillning"
-      >
-        🎯
-      </button>
+      <span className="fixed bottom-[calc(5.25rem_+_env(safe-area-inset-bottom))] right-4 z-40">
+        {/* Trigger-knapp — vertikalt staplad ovanför AI-mentorn (gap-3) med safe-area undertill, djupare röd identitet */}
+        <button
+          onClick={() => setVisar(true)}
+          className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-red-800 bg-[#7A1F1F] text-2xl text-white shadow-xl transition-transform hover:scale-105"
+          aria-label="Utmana mig — Short-Seller"
+          title="Short-Seller: Sokratisk grillning"
+        >
+          🎯
+        </button>
+        <button
+          onClick={() => {
+            const nu = Date.now();
+            setDoldStempel(nu);
+            try { localStorage.setItem("ak1a-shortseller-dold", String(nu)); } catch {}
+          }}
+          aria-label="Dölj Short-Seller-bubblan i 24 timmar"
+          title="Dölj i 24 h"
+          className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[#30363D] bg-[#0D1117] text-xs font-bold leading-none text-[#8B949E] transition-colors hover:border-[#58A6FF] hover:text-[#E6EDF3]"
+        >
+          ×
+        </button>
+      </span>
     );
   }
 

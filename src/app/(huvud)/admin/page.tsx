@@ -47,6 +47,7 @@ import { VariabelPanel } from "@/components/ak1a/admin/variabel-panel";
 import { BloggPanel } from "@/components/ak1a/admin/blogg-panel";
 import { MediaPanel } from "@/components/ak1a/admin/media-panel";
 import { KursPanel } from "@/components/ak1a/admin/kurs-panel";
+import { OrganPanel } from "@/components/ak1a/admin/organ-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -176,6 +177,8 @@ const ALLA_FLIKAR: { id: string; etikett: string; endastAdmin?: boolean }[] = [
   { id: "blogg", etikett: "Blogg ✍️" },
   { id: "media", etikett: "Media 🖼️" },
   { id: "kurser", etikett: "Kurser 🎓" },
+  /** VÅG 110: organismsystemets kontrollrum — registret + 24/7-pumparna. */
+  { id: "organen", etikett: "Organismen 🧬", endastAdmin: true },
 ];
 
 function timeAgo(iso: string | null | undefined): string {
@@ -901,6 +904,15 @@ export default function AdminDashboard() {
           <TabsContent value="kurser" className="mt-6">
             <Card className="p-5">
               <KursPanel />
+            </Card>
+          </TabsContent>
+
+          {/* Organismen 🧬 (våg 110) — organsystemets kontrollrum: registret
+              (fitness = landade commits, födslar/dödsfall) + 24/7-pumparnas
+              live-loggar. Kundens direktiv: systemet i admin, autonomt. */}
+          <TabsContent value="organen" className="mt-6">
+            <Card className="p-5">
+              <OrganPanel />
             </Card>
           </TabsContent>
         </Tabs>

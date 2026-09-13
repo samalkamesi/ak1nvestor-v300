@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getBlogPosts, getBlogPost, getCourses } from "@/lib/content";
-import { blogMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { blogMetadata, articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { parseFaqFragor } from "@/lib/blogg-faq";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { DelRad } from "@/components/ak1a/del-rad";
 import { StrukturData } from "@/components/seo/StrukturData";
@@ -115,10 +116,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const related = getBlogPosts().filter((p) => p.slug !== post.slug).slice(0, 3);
   const kurser = kurserIArtikeln(post.body);
+  const faq = parseFaqFragor(post.body);
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Blogg", href: "/blogg" }, { name: post.title }]}>
-      {/* VÅG 122F: StrukturData — ETT Article + ETT BreadcrumbList per post. */}
+      {/* VÅG 122F: StrukturData — ETT Article + ETT BreadcrumbList per post.
+          VÅG 137: FAQPage läggs till när posten har en FAQ-sektion —
+          schema och synligt innehåll ur EN källa (post.body). */}
       <StrukturData data={articleJsonLd(post)} id="jsonld-artikel" />
       <StrukturData
         data={breadcrumbJsonLd([
@@ -127,6 +131,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         ])}
         id="jsonld-brodsmula"
       />
+      {faq.length > 0 && (
+        <StrukturData data={faqJsonLd(faq)} id="jsonld-faq" />
+      )}
 
       <article>
         <header className="border-b border-gold/30 pb-6">

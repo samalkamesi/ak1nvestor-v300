@@ -129,7 +129,24 @@ async function main() {
     organRapport = "FEL: " + String(e).slice(0, 120);
   }
 
+  // VÅG 123 D2 — HÄLSOPROVET (Θ): ronden matar organismens vitalvärden;
+  // RAD-rader = rondens HÖGSTA prioritet (självläkningen självläker).
+  let halsorad = "(hälsoprovet kunde inte köras)";
+  try {
+    const ut = execSync("node verktyg/organism-halsa.mjs", {
+      cwd: ROT,
+      encoding: "utf8",
+      timeout: 45_000,
+    });
+    halsorad = ut.trim().split("\n").slice(0, 6).join("\n").slice(0, 700);
+  } catch (e) {
+    halsorad = "RAD? " + String(e.stdout || e).slice(0, 300);
+  }
+
   const prompt = `STYRELSEROND ${"(automatisk " + new Date().toISOString().slice(11, 16) + ")"} — sammanträda enligt STYRELSE-REGELVERKET § 5 (granska→besluta→verkställa→dokumentera).
+
+ORGANISMENS HÄLSOPROV (våg 123 D2 — RAD-rader är HÖGSTA prioritet denna rond):
+${halsorad}
 
 ORGAN-EVOLUTIONEN (våg 109 — KUNDENS DIREKTIV: celler föds, celler dör, bäst överlever):
 ${organRapport}

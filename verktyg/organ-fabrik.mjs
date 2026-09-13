@@ -27,7 +27,11 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const REGISTER = path.join(ROT, "data", "forskning", "organ-registret.json");
+// VÅG 116: runtime-tillstånd i data/vakten/ (gitignore:ad) — deployernas
+// träduppdatering skrev ÖVER det git-spårade registret med äldre committar
+// och raderade evolutionens tillstånd (bevisat 2026-09-13: rond 7 → 6).
+// Versionering sköts av data-hygienens veckoarkiv i stället.
+const REGISTER = path.join(ROT, "data", "vakten", "organ-registret.json");
 const EVOLVERA = process.argv.includes("--evolvera");
 
 // Svenska alfabetet A-Ö (organ-namnslag enligt kundens "från a till ö")
@@ -175,7 +179,7 @@ function evolvera() {
   // själv; deterministiska rotationer från v1 blir fallback).
   let muterade = 0;
   try {
-    const fil = path.join(ROT, "data", "forskning", "organ-mutationer.json");
+    const fil = path.join(ROT, "data", "vakten", "organ-mutationer.json");
     const forslag = JSON.parse(fs.readFileSync(fil, "utf8"));
     for (const f of forslag) {
       const o = reg.organ.find((x) => x.bokstav === f.bokstav && x.status === "aktiv");

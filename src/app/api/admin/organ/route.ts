@@ -53,8 +53,10 @@ export async function GET(req: NextRequest) {
   const nej = requireAdmin(req);
   if (nej) return nej;
   const rot = process.cwd();
+  // VÅG 116: registret lever i data/vakten/ (deploy-säkert runtime-tillstånd;
+  // versionering sköts av data-hygienens veckoarkiv).
   const registret = lasJson(
-    path.join(rot, "data", "forskning", "organ-registret.json"),
+    path.join(rot, "data", "vakten", "organ-registret.json"),
   ) as { rond?: number; organ?: OrganRad[]; historik?: { rond: number; commits: number; doda: string[]; fodd: string[] }[] } | null;
 
   return NextResponse.json(

@@ -154,20 +154,27 @@ HÅRT LEVERANSPROTOKOLL (strikt):
   try {
     if (res.body) {
       const lasare = res.body.getReader();
-      const { value } = await Promise.race([
-        lasare.read(),
-        new Promise((_, av) => setTimeout(() => av(new Error("tidsgräns")), 10_000)),
-      ]);
-      const rad = new TextDecoder().decode(value || new Uint8Array());
-      const m = rad.match(/"totalTokenCount":(\d+)/);
-      if (m) {
-        const logFil = path.join(KATALOG, "kostnad-log.json");
-        let logg = [];
-        try { logg = JSON.parse(fs.readFileSync(logFil, "utf8")); } catch {}
-        logg.push({ ts: Date.now(), totalTokens: Number(m[1]) });
-        fs.mkdirSync(KATALOG, { recursive: true });
-        fs.writeFileSync(logFil, JSON.stringify(logg.slice(-200)));
-        logga(`KOSTNAD: totalTokenCount ${m[1]} loggad`);
+      // Läs chunken i LOOP tills totalTokenCount hittas (hej→kontext kommer
+      // i separata chuckar) eller 10 s tak.
+      const dead = Date.now() + 10_000;
+      while (Date.now() < dead) {
+        const { value, done } = await Promise.race([
+          lasare.read(),
+          new Promise((_, av) => setTimeout(() => av(new Error("tidsgräns")), dead - Date.now())),
+        ]);
+        if (done) break;
+        const rad = new TextDecoder().decode(value || new Uint8Array());
+        const m = rad.match(/"totalTokenCount":(\d+)/);
+        if (m) {
+          const logFil = path.join(KATALOG, "kostnad-log.json");
+          let logg = [];
+          try { logg = JSON.parse(fs.readFileSync(logFil, "utf8")); } catch {}
+          logg.push({ ts: Date.now(), totalTokens: Number(m[1]) });
+          fs.mkdirSync(KATALOG, { recursive: true });
+          fs.writeFileSync(logFil, JSON.stringify(logg.slice(-200)));
+          logga(`KOSTNAD: totalTokenCount ${m[1]} loggad`);
+          break;
+        }
       }
       await lasare.cancel().catch(() => {});
     }

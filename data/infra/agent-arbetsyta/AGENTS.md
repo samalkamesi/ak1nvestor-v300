@@ -121,6 +121,17 @@ denna server. Leveransprotokoll:
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
 
+## KVALITETSGRINDEN (våg 138 — mekanisk, körs på varje commit)
+
+`verktyg/hooks/pre-commit` är AKTIVERAD på servern (core.hooksPath): den
+blockerar ALL commit med (a) tsc-fel — typnollen 0 är mekanisk, ingen
+disciplin — och (b) .env*/pem/key/rsa-filer (R2). Regler:
+1. **ALDRIG `git commit --no-verify`** — grinden är kundens kvalitetslag.
+2. Blir du blockerad av tsc: fixa felen, committa igen (felet är din
+   leverans Vaccination — nästa gång skriver du rätt från början).
+3. Merge-committar passerar (grenarnas kod granskades); arbetsstationen
+   kör tsc efter varje merge — 0 fel gäller hela vägen till prod.
+
 ## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
 
 Huvudagentens studio-skal har två kända svagheter (app-server 3.11.2-22):

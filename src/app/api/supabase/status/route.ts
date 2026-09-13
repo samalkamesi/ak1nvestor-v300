@@ -20,7 +20,7 @@ export async function GET() {
 
   // Testa anslutning endast om konfigurerad (med kort timeout)
   // I sandbox: nätverksbegränsning förväntas — returnera konfigurerad status
-  let connectionStatus = null;
+  let connectionStatus: { connected: boolean; error: string } | null = null;
   if (configured) {
     connectionStatus = {
       connected: false,

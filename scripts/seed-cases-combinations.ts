@@ -5,8 +5,8 @@
 import { db } from "@/lib/db";
 
 // ── 210+ lyckade fallstudier ──
-const SUCCESS_CASES: Array<[string, string, string, string, number, string, string, number, string, string]> = [
-  // [company, ticker, title, description, akm1Score, decisiveVars, sector, year, outcome, lesson]
+const SUCCESS_CASES: Array<[string, string, string, string, number, string, string, number, string, string, boolean?]> = [
+  // [company, ticker, title, description, akm1Score, decisiveVars, sector, year, outcome, lesson, isIllustrative?]
   ["Apple", "AAPL", "Moat-stack — varumärke + ekosystem + services", "Apple kombinerar tre moats: varumärke (premium-pris), ekosystem (iPhone→Mac→iPad→Watch lås-in) och services (App Store 30% take rate). AKM1: hög på nästan alla variabler, särskilt V14 (varumärke), V15 (nätverk), V20 (buybacks).", 88, "V14,V15,V20", "Teknologi", 2012, "+1500% på 10 år", "Tre moats tillsammans är starkare än summan av delarna."],
   ["Microsoft", "MSFT", "Cloud-transformation under Nadella", "Microsoft 2014: stagnerande, värt 300 Mdr USD. Satya Nadella blev VD → satsade på Azure, Office 365, GitHub. 2024: värt 3,1 biljoner USD. Cloud-intäkter 100+ Mdr USD/år. AKM1: V13 (ledning) avgörande.", 85, "V13,V16,V20", "Teknologi", 2014, "+900% på 10 år", "Rätt VD kan vända ett stagnerande bolag — ledning (V13) betyder allt."],
   ["Amazon", "AMZN", "Långsiktig tänkande — Bezos 'det är dag 1'", "Amazon 1997-2024: Bezos brände pengar i 7 år, växte 30%/år. AWS lanserades 2006 = moln-industrin skapades. Long-term thinking + reinvestment. AKM1: V01 (tillväxt) 5, V19 (burn) 1, men 'bra bränning'.", 82, "V01,V15,V19", "Konsument", 1997, "+200000% på 25 år", "Långsiktigt tänkande slår kortsiktig vinst — om tillväxten är äkta."],
@@ -274,6 +274,10 @@ function combinationTitle(a: string, b: string): { title: string; pattern: strin
 }
 
 async function seed() {
+  if (!db) {
+    console.error("LEGACY-SCRIPT: src/lib/db.ts är null sedan Supabase-migreringen — migrera till @/lib/supabase-rest innan detta script körs.");
+    process.exit(1);
+  }
   console.log("Seeding case studies + indicator combinations...");
 
   // 1. Seed case studies
@@ -335,4 +339,4 @@ async function seed() {
 
 seed()
   .catch((e) => { console.error("Seed failed:", e); process.exit(1); })
-  .finally(async () => { await db.$disconnect(); });
+  .finally(async () => { await db?.$disconnect(); });

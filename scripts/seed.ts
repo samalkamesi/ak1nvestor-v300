@@ -98,6 +98,10 @@ const MEGA_TASKS = [
 ];
 
 async function seed() {
+  if (!db) {
+    console.error("LEGACY-SCRIPT: src/lib/db.ts är null sedan Supabase-migreringen — migrera till @/lib/supabase-rest innan detta script körs.");
+    process.exit(1);
+  }
   console.log("Seeding AK1A mega-project database...");
 
   // 1. Save styrelse meeting protocol
@@ -165,5 +169,5 @@ seed()
     process.exit(1);
   })
   .finally(async () => {
-    await db.$disconnect();
+    await db?.$disconnect();
   });

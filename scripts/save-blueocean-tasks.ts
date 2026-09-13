@@ -73,6 +73,10 @@ function parseTasks(): TaskRow[] {
 }
 
 async function main() {
+  if (!db) {
+    console.error("LEGACY-SCRIPT: src/lib/db.ts är null sedan Supabase-migreringen — migrera till @/lib/supabase-rest innan detta script körs.");
+    process.exit(1);
+  }
   const tasks = parseTasks();
   console.log(`Parsed ${tasks.length} Blue Ocean Purity-uppgifter`);
 
@@ -105,4 +109,4 @@ async function main() {
   console.log(`Total mega-tasks i databasen: ${(await db.megaTask.count())}`);
 }
 
-main().finally(() => db.$disconnect());
+main().finally(() => db?.$disconnect());

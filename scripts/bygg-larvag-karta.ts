@@ -23,7 +23,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { kraverFas } from "../src/lib/kurs-access.ts";
+import { kraverFas } from "../src/lib/kurs-access";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KURSJSON = path.join(REPO, "public", "deep-courses.json");

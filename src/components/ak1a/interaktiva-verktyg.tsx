@@ -220,7 +220,7 @@ export function InflationsJamforare() {
   const kassaVerde = belopp * Math.pow(1 + 0 / 100, ar);
 
   const data = useMemo(() => {
-    const ut = [];
+    const ut: { ar: number; investerat: number; kassa: number; behov: number }[] = [];
     for (let i = 0; i <= ar; i++) {
       ut.push({
         ar: i,

@@ -155,7 +155,7 @@ export function srStatistik(): SRStatistik {
   const status = ALLA_KORT.map((k) => s[k.id]).filter(Boolean) as SRKortStatus[];
   const framtida = status
     .map((st) => st.nastRepetition)
-    .filter((n): n is string => Boolean(n) && n > d)
+    .filter((n): n is string => n !== null && n > d)
     .sort();
   return {
     totalt: ALLA_KORT.length,

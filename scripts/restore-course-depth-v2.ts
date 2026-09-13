@@ -107,7 +107,7 @@ async function main() {
 
     try {
       // Expand each chapter
-      const expandedChapters = [];
+      const expandedChapters: (typeof course.chapters)[number][] = [];
       for (const ch of course.chapters) {
         const expandedCh = await expandChapter(zai, course, slug, ch);
         expandedChapters.push(expandedCh);

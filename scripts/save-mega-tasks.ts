@@ -4,6 +4,10 @@ import { readFileSync } from "fs";
 const tasks = JSON.parse(readFileSync("./strategy/mega-tasks.json", "utf-8")).tasks;
 
 async function main() {
+  if (!db) {
+    console.error("LEGACY-SCRIPT: src/lib/db.ts är null sedan Supabase-migreringen — migrera till @/lib/supabase-rest innan detta script körs.");
+    process.exit(1);
+  }
   let created = 0;
   let updated = 0;
   for (const t of tasks) {
@@ -32,4 +36,4 @@ async function main() {
   console.log(`Created ${created}, updated ${updated} mega tasks (total: ${tasks.length})`);
 }
 
-main().finally(() => db.$disconnect());
+main().finally(() => db?.$disconnect());

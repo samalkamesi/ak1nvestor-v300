@@ -8,4 +8,20 @@
  * Dessa scripts är själva trasiga tills de migreras — importera ALDRIG
  * denna modul i ny kod.
  */
-export const db = null;
+
+/** Minimal Prisma-form som legacy-scripts typar mot — runtime är alltid null. */
+type LegacyDelegate = Record<
+  "findFirst" | "upsert" | "create" | "update" | "count",
+  (args?: unknown) => Promise<any>
+>;
+
+export interface LegacyPrismaClient {
+  megaTask: LegacyDelegate;
+  meetingProtocol: LegacyDelegate;
+  ak1Indicator: LegacyDelegate;
+  caseStudy: LegacyDelegate;
+  indicatorCombination: LegacyDelegate;
+  $disconnect: () => Promise<void>;
+}
+
+export const db: LegacyPrismaClient | null = null;

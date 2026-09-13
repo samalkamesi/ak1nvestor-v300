@@ -14,7 +14,7 @@ export function CompoundChart({ startBelopp = 10000, ranta = 7, ar = 30 }) {
   const [n, setN] = useState(ar);
 
   const punkter = useMemo(() => {
-    const ut = [];
+    const ut: { ar: number; varde: number }[] = [];
     for (let i = 0; i <= n; i++) {
       ut.push({ ar: i, varde: belopp * Math.pow(1 + r / 100, i) });
     }

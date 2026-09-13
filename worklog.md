@@ -10173,6 +10173,29 @@ levererade — planen därmed SLUTLEVERERAD:
 - Notering: vakten MÅSTE köras ur /home/ak1a/AK1 (arbetsytan saknar
   puppeteer-core) — dokumenterat i systemkartan.
 
+## VÅG 128 (SEO-SPÅRET) — STYRELSEROND C: CANONICAL SJÄLVSTÄMPLAR, KONSTATERAT OK (2026-09-13) [organ:Ψ]
+
+Hjärtslagsrond (målet aktivt, zombie-kicken våg 127 väckte sessionen —
+hela cron→kick→session-kedjan bevisad levande). Första dedikerade
+SEO-ronden enligt check-listans mekanik (ett avsnitt per rond, beslut
+mtzou25g åtgärd 7). OBS vågnummer: lokal gren sov medan prod levererade
+våg 123-127 (prod-synk, pumpor-daemon, observatoriet, web-vakten,
+zombie-kick) — denna rond märks 128.
+
+- **C — Canonical granskad kod + prod, KONSTATERAT OK utan kodändring:**
+  sond (.zcode/v128-canonical-sond.mjs, 8 URL:er mot localhost =
+  prod-kod) visar att ?q=/?tag=/?filter=/?sort=/?visa=-varianter på
+  /kurser, /blogg, /en/kurser, /analyser, /forskningsbiblioteket, /labb
+  ALLA självstämplar canonical mot den rena URL:n. Rot: pageMetadata
+  bygger canonical ur statisk path (src/lib/seo.tsx:144+171) — query-
+  parametrar kan aldrig nå canonical. Q-raden (?q-dubletter) därmed
+  verifierad samma rond.
+- **SEO-A-O.md**: rond C loggad, C+Q → OK, ▶ NÄSTA flyttad till H
+  (hreflang-städning: same-URL-kluster på spegellösa sidor → sv-SE+
+  x-default), kvar-listan omnumrerad (6 kvar).
+- Sessionfynd: förgrunds-curl/cat-heredoc/git hänger i studio-wrappern
+  (känt sedan våg 121) — allt kört via node-skript + Edit-verktyget.
+
 Juridik: oförändrad — navets portfölj/bevakning förblir studielista/
 läsningslista, aldrig värde eller råd.
 

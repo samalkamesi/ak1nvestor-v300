@@ -21,7 +21,8 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | Datum | Avsnitt | Fynd | Åtgärdat |
 |---|---|---|---|
 | 2026-09-13 | Genomgång A–Ö (våg 122F) | Sitemap 1 712 URL:er × sv/en/ar = OK. Hreflang sv-SE+en+ar+x-default korrekt på kurser/blogg/start (obs: Next 16 renderar `hrefLang` kamelnotation — skilj på bugg och regex-fel). Robots OK med sitemap-rad + AI-crawlers. JSON-LD komplett på kurser (×3 språk) och blogg (sv+speglar). **BUGG:** analyssidornas Article-description = "[object Object]" (String på motivation-objekt) + metabeskrivning bar ordet "Rekommendation" (rådgivningsspråk). | JA (våg 122F): analysisJsonLd/analysisMetadata omskrivna till utbildningsformulering + typsäker objektläsning; scripts/seo-generate.mjs omformulerad; 11 analys-metafiler regenererade; ny generisk renderer src/components/seo/StrukturData.tsx applicerad på 4 rutter |
-| — | ▶ NÄSTA: C — Canonical | (väntar på rond) | — |
+| 2026-09-13 | C — Canonical (våg 128, organ Ψ) | Sond (8 URL:er, localhost=prod-kod): /kurser?q=rgb, /blogg?tag=…, /en/kurser?q=…, /analyser?filter=…, /forskningsbiblioteket?visa=…, /labb?sort=… — ALLA självstämplar canonical mot den rena URL:n (query följer aldrig med). Rot: pageMetadata bygger canonical ur statisk path (src/lib/seo.tsx:144,171) — sökparametrar kan inte nå canonical. Q-raden (?q-dubletter) därmed också verifierad. | Ingen kodändring behövs — konstaterat OK (våg 128) |
+| — | ▶ NÄSTA: H — Hreflang-städning | (väntar på rond) | — |
 
 ---
 
@@ -43,7 +44,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| pageMetadata sätter canonical på ALLT; speglar under tröskel canonicalar mot sv-original (medvetet); B2B/tier-sidor grindas ur sitemap | ▶ NÄSTA AVSNITT: inventera dublett-risk för query-parametrar (?q= sök) — canonical bör självstämpla | KVAR | Rond näst |
+| pageMetadata sätter canonical på ALLT; speglar under tröskel canonicalar mot sv-original (medvetet); B2B/tier-sidor grindas ur sitemap; ?query-parametrar självstämplar (bevisat våg 128: canonical byggs ur statisk path, seo.tsx:144) | Håll regelverket vid liv vid nya sidtyper | OK | våg 78 / rond C (våg 128) |
 
 ## D — Data-struktur (strukturerade data, översikt)
 
@@ -79,7 +80,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
 | Kurser/blogg/start + speglar: sv-SE+en+ar+x-default, ömsesidigt (våg 78 C #4) — prodmätet OK | — | OK | våg 78 |
-| Sidor UTAN speglar (analyser, labb m.fl.): pageMetadata-default deklarerar sv-SE/en/x-default som alla pekar på SAMMA URL — brus, inte fel, men städas bäst bort | Ändra default till enbart sv-SE+x-default (självhänvisning) när speglar saknas — kirurgiskt i pageMetadata, testa alla anropare | KVAR | Rond näst+1 |
+| Sidor UTAN speglar (analyser, labb m.fl.): pageMetadata-default deklarerar sv-SE/en/x-default som alla pekar på SAMMA URL — brus, inte fel, men städas bäst bort | ▶ NÄSTA AVSNITT: ändra default till enbart sv-SE+x-default (självhänvisning) när speglar saknas — kirurgiskt i pageMetadata, testa alla anropare | KVAR | Rond näst |
 
 ## I — Indexering
 
@@ -135,7 +136,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| SearchAction-schema pekar på /kurser?q= (WebSite-potentialAction ×3 språk) | Verifiera att ?q-sidor inte indexeras som dubletter (kanon i C) | KVAR | Rond C |
+| SearchAction-schema pekar på /kurser?q= (WebSite-potentialAction ×3 språk); ?q-varianter självstämplar canonical (bevisat rond C våg 128 — inga dubletter) | — | OK | Rond C (våg 128) |
 
 ## R — Robots
 
@@ -213,10 +214,11 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 ## Kvar-lista nästa ronder (sammanfattning)
 
-1. **C — Canonical** (▶ NÄSTA): query-parametrar ?q= självstämplar?
-2. **H — Hreflang-städning**: sidor utan speglar deklarerar same-URL-kluster — städa till sv-SE+x-default.
-3. **A — Alt-texter** + data/seo-korpusen: kör generatorn medvetet, committa hela korpusen.
-4. **J — JSON-LD-migration**: återstående JsonLd-anropare → StrukturData.
-5. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
-6. **B — Brödsmulor**: labb + forskningsbiblioteket.
-7. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
+1. **H — Hreflang-städning** (▶ NÄSTA): sidor utan speglar deklarerar same-URL-kluster — städa till sv-SE+x-default.
+2. **A — Alt-texter** + data/seo-korpusen: kör generatorn medvetet, committa hela korpusen.
+3. **J — JSON-LD-migration**: återstående JsonLd-anropare → StrukturData.
+4. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
+5. **B — Brödsmulor**: labb + forskningsbiblioteket.
+6. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
+
+Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128).

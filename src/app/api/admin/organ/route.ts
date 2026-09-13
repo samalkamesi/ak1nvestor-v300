@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "node:fs";
 import path from "node:path";
 import { requireAdmin } from "@/lib/admin-auth";
+import { parsPipelineKo, utdatafilVagar, type VagRad } from "@/lib/observatoriet";
 
 /**
  * /api/admin/organ (VÅG 110) — organsystemets läs-API för admin-panelen.
@@ -81,6 +82,53 @@ export async function GET(req: NextRequest) {
       });
   } catch { /* git ej tillgängligt — panelen visar registret ändå */ }
   const beslut = svans(path.join(rot, "data", "vakten", "beslutsminne.jsonl"), 3);
+
+  // VÅG 139 — OBSERVATORIET v3 (kunddirektiv: planeringsvy i Organismen-
+  // panelen): pågående våg ur PIPELINE-KO:s dispatchlista, berikad med
+  // FILBEVIS (finns utdatafilen på disk? är den committad? av vem/när?)
+  // samt kön nästa 5 med varför-rader. Statusen kontrolleras mot
+  // verkligheten — aldrig bara ett påstående i en tabell.
+  interface VagRadBevisad extends VagRad {
+    filFinns: boolean;
+    commit: string | null;
+    commitTid: string | null;
+  }
+  let planering: {
+    vagTitel: string;
+    vagRader: VagRadBevisad[];
+    nasta: { markering: string; uppdrag: string; varfor: string }[];
+  } = { vagTitel: "", vagRader: [], nasta: [] };
+  try {
+    const koText = fs.readFileSync(
+      path.join(rot, "data", "forskning", "PIPELINE-KO.md"),
+      "utf8",
+    );
+    const p = parsPipelineKo(koText);
+    const { execFileSync: exec2 } = await import("node:child_process");
+    const vagRader: VagRadBevisad[] = p.vagRader.map((r) => {
+      const vagar = utdatafilVagar(r.utdatafil);
+      const befintliga = vagar.filter((v) => fs.existsSync(path.join(rot, v)));
+      const filFinns = befintliga.length > 0;
+      let commit: string | null = null;
+      let commitTid: string | null = null;
+      if (filFinns) {
+        try {
+          const ut = exec2(
+            "git",
+            ["log", "-1", "--pretty=format:%h|%ad", "--date=short", "--", befintliga[0]],
+            { cwd: rot, encoding: "utf8", timeout: 5_000 },
+          ).trim();
+          const [h, d] = ut.split("|");
+          if (h !== undefined && h !== "") {
+            commit = h;
+            commitTid = d ?? null;
+          }
+        } catch { /* ny fil ännu ej committad */ }
+      }
+      return { ...r, filFinns, commit, commitTid };
+    });
+    planering = { vagTitel: p.vagTitel, vagRader, nasta: p.nasta.slice(0, 5) };
+  } catch { /* PIPELINE-KO ej läsbar — panelen visar övrigt */ }
 
   // VÅG 122: organismens TOTALA tokenförbrukning (kostnad-loggens sista punkt)
   // — kunden vill se hur den nyttjar sitt 1M-kontext.

@@ -2159,6 +2159,587 @@ export const ORDLISTA = {
     en: "All",
     ar: "الكل",
   },
+
+  // ── VÅG 113: Utbildningsytorna på tre språk (certifikat + läroplanen +
+  // dagens pass). sv-raderna är komponenternas exakta originalsträngar;
+  // en/ar enligt ordlistans riktlinjer (latinska varumärken behålls). ──
+  "cert.rubrikVantar": {
+    sv: "Ditt certifikat väntar",
+    en: "Your certificate awaits",
+    ar: "شهادتك في انتظارك",
+  },
+  "cert.loggaInText": {
+    sv: "Logga in och klara kurser för att tjäna ditt officiella AK1A-certifikat.",
+    en: "Log in and complete courses to earn your official AK1A certificate.",
+    ar: "سجّل الدخول وأكمل الدورات لتحصل على شهادة AK1A الرسمية.",
+  },
+  "cert.intygRubrik": {
+    sv: "Intyg på Kompetens",
+    en: "Certificate of Competence",
+    ar: "شهادة كفاءة",
+  },
+  "cert.intygUnderrubrik": {
+    sv: "Institutionell Aktieanalys — AKM1 & AK1TS Ekosystemet",
+    en: "Institutional Stock Analysis — The AKM1 & AK1TS Ecosystem",
+    ar: "التحليل المؤسسي للأسهم — منظومة AKM1 وAK1TS",
+  },
+  "cert.dettaIntygs": {
+    sv: "Detta intygs att",
+    en: "This certifies that",
+    ar: "تشهد هذه الشهادة بأن",
+  },
+  "cert.betygA": {
+    sv: "Master — Exceptionell förståelse för institutionell aktieanalys",
+    en: "Master — Exceptional understanding of institutional stock analysis",
+    ar: "ماستر — فهم استثنائي للتحليل المؤسسي للأسهم",
+  },
+  "cert.betygB": {
+    sv: "Avancerad — Djup förståelse för AKM1-metodiken",
+    en: "Advanced — Deep understanding of the AKM1 methodology",
+    ar: "متقدّم — فهم عميق لمنهجية AKM1",
+  },
+  "cert.betygC": {
+    sv: "Certifierad — Behärskar grunderna i fundamental analys",
+    en: "Certified — Commands the fundamentals of fundamental analysis",
+    ar: "معتمد — يُتقن أساسيات التحليل الأساسي",
+  },
+  "cert.betygD": {
+    sv: "Grundläggande — På god väg mot självständighet",
+    en: "Foundational — Well on the way to independence",
+    ar: "أساسي — في طريق جيد نحو الاستقلالية",
+  },
+  "cert.kurser": {
+    sv: "Kurser",
+    en: "Courses",
+    ar: "الدورات",
+  },
+  "cert.nivaEtikett": {
+    sv: "Nivå",
+    en: "Level",
+    ar: "المستوى",
+  },
+  "cert.av100": {
+    sv: "Av 100",
+    en: "Out of 100",
+    ar: "من 100",
+  },
+  "cert.grundare": {
+    sv: "Grundare, AK1A Research Lab",
+    en: "Founder, AK1A Research Lab",
+    ar: "المؤسس، AK1A Research Lab",
+  },
+  "cert.certifikatId": {
+    sv: "Certifikat-ID",
+    en: "Certificate ID",
+    ar: "معرّف الشهادة",
+  },
+  "cert.delaKnapp": {
+    sv: "📤 Dela certifikat",
+    en: "📤 Share certificate",
+    ar: "📤 مشاركة الشهادة",
+  },
+  "cert.skrivUt": {
+    sv: "🖨️ Skriv ut / PDF",
+    en: "🖨️ Print / PDF",
+    ar: "🖨️ طباعة / PDF",
+  },
+  "cert.kopierat": {
+    sv: "Kopierat till urklipp!",
+    en: "Copied to clipboard!",
+    ar: "تم النسخ إلى الحافظة!",
+  },
+  "cert.pagaende": {
+    sv: "Pågående",
+    en: "In progress",
+    ar: "قيد التقدّم",
+  },
+  "cert.delaText": {
+    sv: "🏆 AK1A Certifikat — {betyg}\n{namn}\n{kurser} kurser · {xp} XP · Nivå {niva}/100\nVerifiera: lab.ak1nvestor.com/certifikat/{certId}",
+    en: "🏆 AK1A Certificate — {betyg}\n{namn}\n{kurser} courses · {xp} XP · Level {niva}/100\nVerify: lab.ak1nvestor.com/certifikat/{certId}",
+    ar: "🏆 شهادة AK1A — {betyg}\n{namn}\n{kurser} دورة · {xp} XP · المستوى {niva}/100\nالتحقق: lab.ak1nvestor.com/certifikat/{certId}",
+  },
+  "cert.delaTitel": {
+    sv: "AK1A Certifikat",
+    en: "AK1A Certificate",
+    ar: "شهادة AK1A",
+  },
+  "cert.kvalificerad": {
+    sv: "🎓 Du är kvalificerad för Fas 2 — utbildning medgrundaren!",
+    en: "🎓 You are qualified for Phase 2 — education with the founder!",
+    ar: "🎓 أنت مؤهَّل للمرحلة 2 — التعليم مع المؤسس!",
+  },
+  "cert.ansokFas2": {
+    sv: "Ansök om Fas 2 →",
+    en: "Apply for Phase 2 →",
+    ar: "التقدّم للمرحلة 2 ←",
+  },
+  "cert.nivaMotFas2": {
+    sv: "Nivå {niva}/100 — {procent} % mot Fas 2-kvalificering",
+    en: "Level {niva}/100 — {procent} % toward Phase 2 qualification",
+    ar: "المستوى {niva}/100 — {procent}٪ نحو التأهل للمرحلة 2",
+  },
+  "cert.xpKvar": {
+    sv: "{xp} XP kvar — ≈ {antal} rätt quiz-svar (10 XP per svar)",
+    en: "{xp} XP to go — ≈ {antal} correct quiz answers (10 XP each)",
+    ar: "بقي {xp} XP — ≈ {antal} إجابة صحيحة في الاختبار (10 XP لكل إجابة)",
+  },
+  "cert.mellanmilstenare": {
+    sv: "Mellanmilstenare på vägen: nivå 15 ger D-certifikatet.",
+    en: "Milestones along the way: level 15 earns the D certificate.",
+    ar: "محطات على الطريق: المستوى 15 يمنح شهادة D.",
+  },
+  "laro.intro": {
+    sv: "Från nybörjare till oberoende aktieanalytiker. {kurser} kurser i 5 nivåer — varje kurs bygger mot målet: att du kan analysera, värdera och förvalta på egen hand.",
+    en: "From beginner to independent stock analyst. {kurser} courses in 5 levels — every course builds toward the goal: that you can analyze, value and manage portfolios on your own.",
+    ar: "من المبتدئ إلى محلل الأسهم المستقل. {kurser} دورة في 5 مستويات — كل دورة تبني نحو الهدف: أن تحلّل وتقيّم وتدير المحفظة بنفسك.",
+  },
+  "laro.dinResa": {
+    sv: "Din resa",
+    en: "Your journey",
+    ar: "رحلتك",
+  },
+  "laro.kurserRaknare": {
+    sv: "{klara}/{total} kurser ({procent}%)",
+    en: "{klara}/{total} courses ({procent}%)",
+    ar: "{klara}/{total} دورة ({procent}٪)",
+  },
+  "laro.nivaXp": {
+    sv: "Nivå {niva}/100 · {xp} XP",
+    en: "Level {niva}/100 · {xp} XP",
+    ar: "المستوى {niva}/100 · {xp} XP",
+  },
+  "laro.inloggad": {
+    sv: "✅ Inloggad",
+    en: "✅ Signed in",
+    ar: "✅ مسجَّل الدخول",
+  },
+  "laro.inteInloggad": {
+    sv: "⚠️ Inte inloggad",
+    en: "⚠️ Not signed in",
+    ar: "⚠️ غير مسجَّل الدخول",
+  },
+  "laro.loggaInGratis": {
+    sv: "Logga in gratis för att spara din progress →",
+    en: "Sign in free to save your progress →",
+    ar: "سجّل الدخول مجانًا لحفظ تقدّمك ←",
+  },
+  "laro.vadArFas": {
+    sv: "Vad är Fas 2 och Fas 3?",
+    en: "What are Phase 2 and Phase 3?",
+    ar: "ما هي المرحلة 2 والمرحلة 3؟",
+  },
+  "laro.fasForklaring": {
+    sv: "Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18 mästarverks-kurser). Fas 3 — det dynamiska ekosystemet: vågor, teknisk analys på mästarnivå och psykologi (24 kurser). Öppnas med medlemskap.",
+    en: "Phase 2 — weighing the 20 indicators into your own judgment (18 masterwork courses). Phase 3 — the dynamic ecosystem: waves, technical analysis at master level and psychology (24 courses). Both open with membership.",
+    ar: "المرحلة 2 — الموازنة بين المؤشرات العشرين لتكوين حكمك الخاص (18 دورة من الأعمال الكبرى). المرحلة 3 — النظام الديناميكي: الموجات والتحليل الفني بمستوى الأساتذة وعلم النفس (24 دورة). تُفتحان بالعضوية.",
+  },
+  "laro.fas2Lank": {
+    sv: "Fas 2 →",
+    en: "Phase 2 →",
+    ar: "المرحلة 2 ←",
+  },
+  "laro.fas3Lank": {
+    sv: "Fas 3 →",
+    en: "Phase 3 →",
+    ar: "المرحلة 3 ←",
+  },
+  "laro.dinaNasta": {
+    sv: "Dina nästa kurser i läroplanen",
+    en: "Your next courses in the curriculum",
+    ar: "دوراتك التالية في المنهج",
+  },
+  "laro.nivaRubrik": {
+    sv: "Nivå {id}: {namn}",
+    en: "Level {id}: {namn}",
+    ar: "المستوى {id}: {namn}",
+  },
+  "laro.niva1.namn": { sv: "Grunderna", en: "The Fundamentals", ar: "الأساسيات" },
+  "laro.niva1.beskrivning": {
+    sv: "Bygg din fundamentala bas — de 20 byggstenarna i AKM1",
+    en: "Build your fundamental base — the 20 building blocks of AKM1",
+    ar: "ابنِ قاعدتك الأساسية — لبنات AKM1 العشرون",
+  },
+  "laro.niva1.mal": {
+    sv: "Du förstår vad varje variabel mäter och varför den finns",
+    en: "You understand what each variable measures and why it exists",
+    ar: "تفهم ما يقيسه كل متغير ولماذا وُجد",
+  },
+  "laro.niva2.namn": { sv: "Fördjupning", en: "Deepening", ar: "التعمّق" },
+  "laro.niva2.beskrivning": {
+    sv: "Gå djupare på värdering och riskhantering — med grundläggande orientering i teknisk analys (ej utbildning i ämnet)",
+    en: "Go deeper on valuation and risk management — with a basic orientation in technical analysis (not a course in the subject)",
+    ar: "تعمّق أكثر في التقييم وإدارة المخاطر — مع تعريف أساسي بالتحليل الفني (ليس تعليمًا في الموضوع)",
+  },
+  "laro.niva2.mal": {
+    sv: "Du kan kombinera variabler till en helhetsbild",
+    en: "You can combine variables into a whole picture",
+    ar: "تستطيع دمج المتغيرات في صورة كاملة",
+  },
+  "laro.niva3.namn": { sv: "Bokmaster", en: "BOKMASTER", ar: "BOKMASTER" },
+  "laro.niva3.beskrivning": {
+    sv: "Läs mästarna — {bokmaster} kompletta böckers visdom, kapitel för kapitel",
+    en: "Read the masters — the wisdom of {bokmaster} complete books, chapter by chapter",
+    ar: "اقرأ كبار الأساتذة — حكمة {bokmaster} كتابًا كاملًا، فصلًا بعد فصل",
+  },
+  "laro.niva3.mal": {
+    sv: "Du har böckernas visdom integrerad i ditt eget tänkande",
+    en: "The wisdom of the books is integrated into your own thinking",
+    ar: "حكمة الكتب صارت جزءًا من تفكيرك الخاص",
+  },
+  "laro.niva4.namn": { sv: "Praktik", en: "Practice", ar: "التطبيق" },
+  "laro.niva4.beskrivning": {
+    sv: "Tillämpa på riktiga bolag och din egen portfölj",
+    en: "Apply to real companies and your own portfolio",
+    ar: "طبّق على شركات حقيقية وعلى محفظتك الخاصة",
+  },
+  "laro.niva4.mal": {
+    sv: "Du kan genomföra en komplett analys på egen hand",
+    en: "You can carry out a complete analysis on your own",
+    ar: "تستطيع إجراء تحليل كامل بنفسك",
+  },
+  "laro.niva5.namn": { sv: "Självständighet", en: "Independence", ar: "الاستقلالية" },
+  "laro.niva5.beskrivning": {
+    sv: "Bli en oberoende aktieanalytiker — Fas 2 och bortom",
+    en: "Become an independent stock analyst — Phase 2 and beyond",
+    ar: "كن محلل أسهم مستقلًا — المرحلة 2 وما بعدها",
+  },
+  "laro.niva5.mal": {
+    sv: "Du kan analysera, värdera och bygga portföljer helt på egen hand",
+    en: "You can analyze, value and build portfolios entirely on your own",
+    ar: "تستطيع التحليل والتقييم وبناء المحافظ تمامًا بنفسك",
+  },
+  "laro.min": {
+    sv: "min",
+    en: "min",
+    ar: "دقيقة",
+  },
+  "laro.oppnasI": {
+    sv: "Öppnas i Fas {fas}",
+    en: "Opens in Phase {fas}",
+    ar: "يُفتح في المرحلة {fas}",
+  },
+  "laro.kraverMedlemskap": {
+    sv: "Öppnas i Fas {fas} — kräver Fas {fas}-medlemskap",
+    en: "Opens in Phase {fas} — requires Phase {fas} membership",
+    ar: "يُفتح في المرحلة {fas} — يتطلب عضوية المرحلة {fas}",
+  },
+  "laro.fasBadge": {
+    sv: "🔒 Fas {fas}",
+    en: "🔒 Phase {fas}",
+    ar: "🔒 المرحلة {fas}",
+  },
+  "laro.certifieringRubrik": {
+    sv: "Målet: Oberoende aktieanalytiker",
+    en: "The Goal: Independent Stock Analyst",
+    ar: "الهدف: محلل أسهم مستقل",
+  },
+  "laro.certifieringText": {
+    sv: "När du klarat alla 5 nivåer har du verktygen för att analysera bolag, värdera aktier, bygga portföljer och fatta egna beslut — utan att bero av andras tips eller rekommendationer.",
+    en: "When you have completed all 5 levels you have the tools to analyze companies, value stocks, build portfolios and make your own decisions — without depending on anyone else's tips or recommendations.",
+    ar: "عندما تكمل المستويات الخمسة كلها تملك الأدوات لتحليل الشركات وتقييم الأسهم وبناء المحافظ واتخاذ قراراتك الخاصة — دون الاعتماد على نصائح الآخرين أو توصياتهم.",
+  },
+  "laro.fas1Fot": {
+    sv: "Detta är Fas 1 — alltid gratis, alltid öppet. Fundamental-analys är en rättighet.",
+    en: "This is Phase 1 — always free, always open. Fundamental analysis is a right.",
+    ar: "هذه هي المرحلة 1 — مجانية دائمًا، مفتوحة دائمًا. التحليل الأساسي حقٌّ للجميع.",
+  },
+  "pass.heroEtikett": {
+    sv: "Daglig ritual · 5 minuter · Riktig marknadsdata",
+    en: "Daily ritual · 5 minutes · Real market data",
+    ar: "طقس يومي · 5 دقائق · بيانات سوق حقيقية",
+  },
+  "pass.hamtarLive": {
+    sv: "Analysmotorn hämtar live-data för dagens aktie…",
+    en: "The analysis engine is fetching live data for today's stock…",
+    ar: "محرك التحليل يجلب البيانات الحية لسهم اليوم…",
+  },
+  "pass.kundeInteLadda": {
+    sv: "Passet kunde inte laddas",
+    en: "The session could not load",
+    ar: "تعذّر تحميل الجلسة",
+  },
+  "pass.okantFel": {
+    sv: "Okänt fel.",
+    en: "Unknown error.",
+    ar: "خطأ غير معروف.",
+  },
+  "pass.motorUpptagen": {
+    sv: "{fel} Analysmotorn kan vara upptagen — ladda om sidan om en stund.",
+    en: "{fel} The analysis engine may be busy — reload the page in a little while.",
+    ar: "{fel} قد يكون محرك التحليل مشغولًا — أعد تحميل الصفحة بعد قليل.",
+  },
+  "pass.forsokIgen": {
+    sv: "Försök igen",
+    en: "Try again",
+    ar: "حاول مجددًا",
+  },
+  "pass.xpFortjanade": {
+    sv: "+{xp} XP förtjänade — bra jobbat!",
+    en: "+{xp} XP earned — well done!",
+    ar: "+{xp} XP مكتسبة — أحسنت!",
+  },
+  "pass.veckansAktie": {
+    sv: "Veckans aktie",
+    en: "Stock of the Week",
+    ar: "سهم الأسبوع",
+  },
+  "pass.veckansAktieUnder": {
+    sv: "Läs marknaden först — motorn avslöjar sitt svar efteråt",
+    en: "Read the market first — the engine reveals its answer afterwards",
+    ar: "اقرأ السوق أولًا — يكشف المحرك إجابته بعد ذلك",
+  },
+  "pass.senasteYahoo": {
+    sv: "Senaste (Yahoo): {pris}",
+    en: "Latest (Yahoo): {pris}",
+    ar: "الأحدث (Yahoo): {pris}",
+  },
+  "pass.52vLag": {
+    sv: "52v-låg {pris}",
+    en: "52w low {pris}",
+    ar: "أدنى 52 أسبوعًا {pris}",
+  },
+  "pass.52vHog": {
+    sv: "52v-hög {pris}",
+    en: "52w high {pris}",
+    ar: "أعلى 52 أسبوعًا {pris}",
+  },
+  "pass.52vPosition": {
+    sv: "52v-position: {procent}% av spannet",
+    en: "52w position: {procent}% of the range",
+    ar: "موضع 52 أسبوعًا: {procent}٪ من النطاق",
+  },
+  "pass.dinGissning": {
+    sv: "Din gissning — vilken vågklass är aktien i just nu?",
+    en: "Your call — which wave class is the stock in right now?",
+    ar: "تقديرك — في أي فئة موجية يقع السهم الآن؟",
+  },
+  "pass.klassImpulsEtikett": {
+    sv: "Impulsvåg",
+    en: "Impulse wave",
+    ar: "موجة دافعة",
+  },
+  "pass.klassImpulsNot": {
+    sv: "Motorn ser momentum över +6% på horisonten och pris ovanför glidande medelvärde — köparna är i kontroll.",
+    en: "The engine sees momentum above +6% on the horizon and price above the moving average — buyers are in control.",
+    ar: "يرى المحرك زخمًا يتجاوز +6٪ على الأفق وسعرًا فوق المتوسط المتحرك — المشترون في السيطرة.",
+  },
+  "pass.klassKorrigeringEtikett": {
+    sv: "Korrigering",
+    en: "Correction",
+    ar: "تصحيح",
+  },
+  "pass.klassKorrigeringNot": {
+    sv: "Motorn ser momentum under −6% och pris under medelvärdet — en motvåg där säljarna trycker tillbaka.",
+    en: "The engine sees momentum below −6% and price below the average — a counter-wave where sellers push back.",
+    ar: "يرى المحرك زخمًا دون −6٪ وسعرًا تحت المتوسط — موجة معاكسة يضغط فيها البائعون.",
+  },
+  "pass.klassBasEtikett": {
+    sv: "Basbygge",
+    en: "Base building",
+    ar: "بناء قاعدة",
+  },
+  "pass.klassBasNot": {
+    sv: "Motorn ser momentum inom ±6% — en sidledes bas där köpare och säljare är i balans.",
+    en: "The engine sees momentum within ±6% — a sideways base where buyers and sellers are in balance.",
+    ar: "يرى المحرك زخمًا ضمن ±6٪ — قاعدة عرضية يتوازن فيها المشترون والبائعون.",
+  },
+  "pass.motornsSvar": {
+    sv: "Motorns svar (KORT horisont)",
+    en: "The engine's answer (SHORT horizon)",
+    ar: "إجابة المحرك (أفق قصير)",
+  },
+  "pass.osattData": {
+    sv: "Osatt — insufficient data",
+    en: "Undetermined — insufficient data",
+    ar: "غير محدد — بيانات غير كافية",
+  },
+  "pass.motorKundeInte": {
+    sv: "Motorn kunde inte klassificera vågen säkert på kort horisont.",
+    en: "The engine could not classify the wave with confidence on the short horizon.",
+    ar: "لم يستطع المحرك تصنيف الموجة بثقة على الأفق القصير.",
+  },
+  "pass.matchar": {
+    sv: "✓ Din läsning matchar motorn — du läser momentum och trend rätt.",
+    en: "✓ Your reading matches the engine — you read momentum and trend correctly.",
+    ar: "✓ قراءتك تطابق المحرك — تقرأ الزخم والاتجاه بشكل صحيح.",
+  },
+  "pass.matcharInte": {
+    sv: "⚠ Du gissade {gissning}, motorn säger {svar}. Fråga dig: vilka data stödjer DIN läsning — och vad ser motorn som du missar?",
+    en: "⚠ You guessed {gissning}; the engine says {svar}. Ask yourself: which data supports YOUR reading — and what does the engine see that you missed?",
+    ar: "⚠ خمّنت {gissning}، والمحرك يقول {svar}. اسأل نفسك: أي البيانات تدعم قراءتك — وما الذي يراه المحرك مما فاتك؟",
+  },
+  "pass.hMikro": { sv: "Mikro", en: "Micro", ar: "ميكرو" },
+  "pass.hKort": { sv: "Kort", en: "Short", ar: "قصير" },
+  "pass.hMedellang": { sv: "Medellång", en: "Medium", ar: "متوسط" },
+  "pass.hLang": { sv: "Lång", en: "Long", ar: "طويل" },
+  "pass.hMega": { sv: "Mega", en: "Mega", ar: "ميجا" },
+  "pass.osatt": {
+    sv: "osatt",
+    en: "undetermined",
+    ar: "غير محدد",
+  },
+  "pass.matris25": {
+    sv: "25-cellers-matrisen: {bull} bull · {neutrala} neutrala · {bear} bear",
+    en: "The 25-cell matrix: {bull} bull · {neutrala} neutral · {bear} bear",
+    ar: "مصفوفة الخلايا الـ25: {bull} صاعدة · {neutrala} محايدة · {bear} هابطة",
+  },
+  "pass.kallor": {
+    sv: " · {kallor} källor",
+    en: " · {kallor} sources",
+    ar: " · {kallor} مصادر",
+  },
+  "pass.utdelning": {
+    sv: "Utdelning",
+    en: "Dividend",
+    ar: "التوزيعات",
+  },
+  "pass.vinstmarginal": {
+    sv: "Vinstmarginal",
+    en: "Profit margin",
+    ar: "هامش الربح",
+  },
+  "pass.gissaIgen": {
+    sv: "Gissa igen",
+    en: "Guess again",
+    ar: "خمّن مرة أخرى",
+  },
+  "pass.dagensFraga": {
+    sv: "Dagens fråga",
+    en: "Today's question",
+    ar: "سؤال اليوم",
+  },
+  "pass.dagensFragaUnder": {
+    sv: "+10 XP per rätt svar (en gång per dag och fråga)",
+    en: "+10 XP per correct answer (once per day and question)",
+    ar: "+10 XP لكل إجابة صحيحة (مرة واحدة يوميًا لكل سؤال)",
+  },
+  "pass.inteRiktigt": {
+    sv: "Inte riktigt — titta på vågprofilen i steg 1 igen: går marknaden trendmässigt upp, ned eller sidledes på kort horisont? Försök igen.",
+    en: "Not quite — look at the wave profile in step 1 again: is the market trending up, down or sideways on the short horizon? Try again.",
+    ar: "ليست تمامًا — انظر إلى الملف الموجي في الخطوة 1 مجددًا: هل يتحرك السوق صاعدًا أم هابطًا أم عرضيًا على الأفق القصير؟ حاول مرة أخرى.",
+  },
+  "pass.rattVag": {
+    sv: "✓ Rätt — motorns klassificering på KORT horisont är {svar}.",
+    en: "✓ Correct — the engine's classification on the SHORT horizon is {svar}.",
+    ar: "✓ صحيح — تصنيف المحرك على الأفق القصير هو {svar}.",
+  },
+  "pass.akm1Etikett": {
+    sv: "AKM1 · grundmur-variabeln",
+    en: "AKM1 · the foundation variable",
+    ar: "AKM1 · متغير الأساس",
+  },
+  "pass.coachning": {
+    sv: "Coachning: {tips} — följ spåret och försök igen.",
+    en: "Coaching: {tips} — follow the trail and try again.",
+    ar: "توجيه: {tips} — اتبع الأثر وحاول مجددًا.",
+  },
+  "pass.ratt": {
+    sv: "✓ Rätt.",
+    en: "✓ Correct.",
+    ar: "✓ صحيح.",
+  },
+  "pass.repetera": {
+    sv: "Repetera",
+    en: "Review",
+    ar: "المراجعة",
+  },
+  "pass.repeteraUnder": {
+    sv: "Glömskekurvan bestämmer — korten bor i AI-Mentorn",
+    en: "The forgetting curve decides — the cards live in the AI Mentor",
+    ar: "منحنى النسيان هو الحكم — البطاقات تسكن في الموجّه الذكي",
+  },
+  "pass.repStatistik": {
+    sv: "Dagens repetitionsstatistik",
+    en: "Today's review statistics",
+    ar: "إحصاءات مراجعة اليوم",
+  },
+  "pass.forfallnaIdag": {
+    sv: "förfallna idag",
+    en: "due today",
+    ar: "مستحقة اليوم",
+  },
+  "pass.langtMinne": {
+    sv: "i långt minne",
+    en: "in long-term memory",
+    ar: "في الذاكرة طويلة المدى",
+  },
+  "pass.avSedda": {
+    sv: "av {totalt} sedda",
+    en: "of {totalt} seen",
+    ar: "من {totalt} شاهدها",
+  },
+  "pass.repetitionerTotalt": {
+    sv: "repetitioner totalt",
+    en: "total reviews",
+    ar: "إجمالي المراجعات",
+  },
+  "pass.kortVantar": {
+    sv: '{antal} kort väntar på dig idag — varje "Bra"-svar förtjänar +5 XP.',
+    en: '{antal} cards are waiting for you today — every "Good" answer earns +5 XP.',
+    ar: "{antal} بطاقة بانتظارك اليوم — كل إجابة «جيدة» تكسب +5 XP.",
+  },
+  "pass.ingaForfallna": {
+    sv: "Inga kort förfallna idag — perfekt discipl. Nästa kort förfaller {nar}.",
+    en: "No cards due today — perfect discipline. The next card is due {nar}.",
+    ar: "لا بطاقات مستحقة اليوم — انتظام مثالي. البطاقة التالية تُستحق {nar}.",
+  },
+  "pass.fortsattMentorn": {
+    sv: "Fortsätt i AI-Mentorn",
+    en: "Continue in the AI Mentor",
+    ar: "تابع في الموجّه الذكي",
+  },
+  "pass.mentorPlats": {
+    sv: "AI-Mentorn finns i chat-bubblan nere till höger — där bor flashcardsen.",
+    en: "The AI Mentor is in the chat bubble at the bottom right — that's where the flashcards live.",
+    ar: "الموجّه الذكي في فقاعة المحادثة أسفل اليمين — هناك تسكن البطاقات التعليمية.",
+  },
+  "pass.streak": {
+    sv: "Streak",
+    en: "Streak",
+    ar: "سلسلة الأيام",
+  },
+  "pass.streakUnder": {
+    sv: "Kunskap älskar närvaro",
+    en: "Knowledge loves presence",
+    ar: "المعرفة تحب المواظبة",
+  },
+  "pass.dagarIRad": {
+    sv: "dagar i rad",
+    en: "days in a row",
+    ar: "يومًا متتاليًا",
+  },
+  "pass.streakText": {
+    sv: "Bästa streak: {basta} dagar. Gör dagens pass imorgon också — streaken lever så länge du gör.",
+    en: "Best streak: {basta} days. Do tomorrow's session too — the streak lives as long as you do.",
+    ar: "أفضل سلسلة: {basta} يومًا. أدِّ جلسة الغد أيضًا — السلسلة تعيش ما دمت تواظب.",
+  },
+  "pass.komImorgon": {
+    sv: "Kom tillbaka imorgon.",
+    en: "Come back tomorrow.",
+    ar: "عُد غدًا.",
+  },
+  "pass.fotnot": {
+    sv: "Dagens Pass är pedagogisk träning på riktig marknadsdata — inte råd. Signaler: {notering}",
+    en: "Today's Session is educational training on real market data — not advice. Signals: {notering}",
+    ar: "جلسة اليوم تدريب تعليمي على بيانات سوق حقيقية — ليست نصيحة. الإشارات: {notering}",
+  },
+  "pass.standardNotering": {
+    sv: "heuristiska proxy-mätare — pedagogiskt verktyg, inte investeringsråd.",
+    en: "heuristic proxy measures — an educational tool, not investment advice.",
+    ar: "مقاييس تقريبية استرشادية — أداة تعليمية، وليست نصيحة استثمارية.",
+  },
+  "pass.manad1": { sv: "januari", en: "January", ar: "يناير" },
+  "pass.manad2": { sv: "februari", en: "February", ar: "فبراير" },
+  "pass.manad3": { sv: "mars", en: "March", ar: "مارس" },
+  "pass.manad4": { sv: "april", en: "April", ar: "أبريل" },
+  "pass.manad5": { sv: "maj", en: "May", ar: "مايو" },
+  "pass.manad6": { sv: "juni", en: "June", ar: "يونيو" },
+  "pass.manad7": { sv: "juli", en: "July", ar: "يوليو" },
+  "pass.manad8": { sv: "augusti", en: "August", ar: "أغسطس" },
+  "pass.manad9": { sv: "september", en: "September", ar: "سبتمبر" },
+  "pass.manad10": { sv: "oktober", en: "October", ar: "أكتوبر" },
+  "pass.manad11": { sv: "november", en: "November", ar: "نوفمبر" },
+  "pass.manad12": { sv: "december", en: "December", ar: "ديسمبر" },
 } as const satisfies Record<string, SprakRad>;
 
 export type OrdlistaNyckel = keyof typeof ORDLISTA;

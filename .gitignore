@@ -67,3 +67,11 @@ data/backups/
 
 # Våg 105: gränsnittsvaktens lokalrapporter (servern skriver sina egna)
 data/vakten/
+
+# Våg 121: datacentralens runtime-cache är en accelerator, aldrig ett beroende
+# (src/lib/datacache.ts: läs/skriv-fel kastar ALDRIG; cron 06:00 UTC + on-demand
+# fyller på). Appen/cronerna skriver filerna löpande — tracking gjorde varje
+# omskrivning till "unstaged changes" som blockerade push (receive.
+# denyCurrentBranch=updateInstead kräver rent worktree). .gitkeep behåller katalogen.
+data/cache/*
+!data/cache/.gitkeep

@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAnalyses, getAnalysis } from "@/lib/content";
-import { analysisMetadata, analysisJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { analysisMetadata, analysisJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { BevakaKnapp } from "@/components/ak1a/bevaka-knapp";
 
 export const dynamic = "force-static";
@@ -72,12 +73,16 @@ export default async function AnalysisPage({
       wide
       breadcrumb={[{ name: "Analyser", href: "/analyser" }, { name: a.ticker }]}
     >
-      <JsonLd data={analysisJsonLd(a)} />
-      <JsonLd
+      {/* VÅG 122F: StrukturData (generisk JSON-LD-renderer) — ETT Article-
+          block + ETT BreadcrumbList-block per analyssida, inga dubbletter.
+          Beskrivningen är utbildningsformulerad (analysisJsonLd). */}
+      <StrukturData data={analysisJsonLd(a)} id="jsonld-artikel" />
+      <StrukturData
         data={breadcrumbJsonLd([
           { name: "Analyser", path: "/analyser" },
           { name: a.ticker, path: `/analyser/${encodeURIComponent(a.ticker)}` },
         ])}
+        id="jsonld-brodsmula"
       />
 
       <header className="border-b border-gold/30 pb-6">

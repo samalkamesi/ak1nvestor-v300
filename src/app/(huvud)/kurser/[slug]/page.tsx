@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
 import {
   courseMetadata,
-  JsonLd,
 } from "@/lib/seo";
 import { byggKursSchema } from "@/lib/schema-kurser";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
@@ -19,6 +18,7 @@ import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artik
 import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { Kallkort } from "@/components/ak1a/kallkort";
 import { LarvagKort } from "@/components/ak1a/larvag-kort";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 /**
  * VÅG 81 (slutligt, prodmätt): dynamicParams=false = ÄKTA 404 på okända
@@ -144,9 +144,12 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       wide
       breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: kurs.title }]}
     >
-      <JsonLd data={schema.course} />
-      <JsonLd data={schema.faq} />
-      <JsonLd data={schema.breadcrumb} />
+      {/* VÅG 122F: StrukturData (generisk JSON-LD-renderer) — samma tre
+          block som våg 99 (Course + FAQPage + BreadcrumbList), ETT per
+          sidtyp, inga dubbletter. */}
+      <StrukturData data={schema.course} id="jsonld-kurs" />
+      <StrukturData data={schema.faq} id="jsonld-faq" />
+      <StrukturData data={schema.breadcrumb} id="jsonld-brodsmula" />
       <LasProgress />
 
       <header className="border-b border-gold/30 pb-6">

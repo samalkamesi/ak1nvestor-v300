@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-13)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -21,9 +21,38 @@ Lägesord: **LEVER** (fungerar i prod) · **PÅGÅR** (byggs/revideras) · **FLA
 **INAKTIV** (avstängt bakom flagga). Score 1–10 är KODMÄSSIG (tester,
 validering, felhantering, dokumentation) — inte kommersiell mognad.
 
+## UPPDATERING 2026-09-13 (portal-spåret våg 102–106 + organism-spåret 113–120)
+
+K1-inventeringen kompletteras efter portal-megaplanens slutleverans
+(STYRELSE-PORTAL-MEGA.md §VÅG 106) och organism-spårets vågor. Ändrade
+rader markeras nedan; övriga 31 rader oförändrade sedan 2026-09-11.
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B11 | FLAGGA 5 → **LEVER 6** | DETERMINISM-felet (VOLV-B.ST) är borta: motorvalideringen 107/0/0 (2026-09-13, se KVD nedan). Kvar: egen testsvit saknas |
+| D20 | FLAGGA 6 → **LEVER 7** | LOGIN-2.0 E2E-verifierad på prod (STYRELSE-2026-09-11-V106 § 3 D1 "KLART — specifika feltexter live"); rank #1-åtgärden därmed landad. Kvar: återställ lösenord, egen E2E-svit |
+| D21 | LEVER 8 → **LEVER 8** | Kontraktet bär nu även paborjadeKurser + quizRatta (våg 106-rond 1) — ingen ny läsning/tabell, samma system_events-karta |
+| E29 | LEVER 6 → **LEVER 7** | Prompt-evolution v1+v2 (våg 113/115), organ-registret deploy-säkrat (våg 116), organism-panel + senaste landningar i studion (våg 114/118), beslutsminne.jsonl påbörjad 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats — nu igång) |
+| E31 | PÅGÅR 7 → **PÅGÅR 7** | Portalens sista trespråksgap stängt (cert/pass/läroplan sv/en/ar + 6 spegelsidor, våg 113); MÖS-kvalitetsaudit fortfarande ej gjord |
+| E33 | LEVER 8 → **LEVER 8** | system_events-mönstret bevisat i TRE system: progress + bevakning (våg 104) + portfölj (våg 119) — senaste-vinner, serverfastställda värden, tak-regler |
+| E35 | FLAGGA 7 → **LEVER 7** | Motorvalideringen 107/0/0 (båda inventeringsfelen borta) + gränssnittsvakten cron-driven GRÖN. Kvar: testtäckning 32/42 motorer, ingen CI |
+| E37 | LEVER 7 → **LEVER 7** | Min Sida uppgraderad till medlemens nav — lyft till ny rad D38 |
+| **D38** | **NY: LEVER 8** | Medlemsnavet (se detaljblock) — kundkrav #1–#6 i portal-megaplanen lever |
+
+**KVD-verifiering 2026-09-13 (subagent, efter våg 120-deployen 09:02):**
+tsc exakt 34 = baslinjen (0 nya) · `validera-motorer.mjs` **107 PASS /
+0 FAIL / 0 SKIP (6,4 s)** · gränssnittsvakten GRÖN (cron-fullsvep 0 fynd/144
+kombinationer 07:17 + snabbsvep 0/12 efter deployen) · prod 200 på både
+loopback och HTTPS. Vakten MÅSTE köras ur /home/ak1a/AK1 (arbetsytan saknar
+puppeteer-core — annars ERR_MODULE_NOT_FOUND).
+
+Snittscore **7,4** (269 → 280 poäng / 38 system; B11 +1, D20 +1, E29 +1,
+D38 +8).
+
 ---
 
-## ÖVERSIKT — 37 system
+
+## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
@@ -37,7 +66,7 @@ validering, felhantering, dokumentation) — inte kommersiell mognad.
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Kalibreringsloopen cron-driven men beslut delvis ouppfyllt |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Fast 12-ticker-universum; träff-% publikt oklart |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
-| B11 | Net-net-skannern | Analys | **FLAGGA** | 5 | DETERMINISM FAIL: VOLV-B.ST kurs 340.3≠340.4 mellan körningar |
+| B11 | Net-net-skannern | Analys | LEVER | 6 | Determinismfelet rättat (107/0/0, 2026-09-13); egen testsvit saknas |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Månads-cron fast; peer-jämförelse ytlig |
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | Inga tester; externa beroenden (MarketStack/Yahoo) utan fallback-test |
@@ -46,27 +75,28 @@ validering, felhantering, dokumentation) — inte kommersiell mognad.
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Kvartalsrapport H3: kontrakt klart, src EJ PÅBÖRJAD |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
-| D20 | Inloggning & konto (L1) | Medlem | **FLAGGA** | 6 | Rank #1: fel suppressas någonstans i flödet — LOGIN-2.0 (K3) körs |
+| D20 | Inloggning & konto (L1) | Medlem | LEVER | 7 | LOGIN-2.0 E2E-verifierad (specifika feltexter live); återställ lösenord + E2E-svit saknas |
 | D21 | Medlemsdata & progress (molnet) | Medlem | LEVER | 8 | Gäst→moln-migrering en enkelriktning |
 | D22 | Betalning & prenumerationsstomme | Medlem | **VÄNTAR** | 5 | Ingen betalmotor alls (Stripe saknas); kundens 8 beslut |
 | D23 | Prisstegen (portfölj-tier) | Medlem | VÄNTAR (flagga) | 7 | NEXT_PUBLIC_TIER_AKTIV ej satt — väntar kundens prisbeslut |
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | E-post/notiser utan tester; driftstatus overifierad |
+| D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester; pass.namn-API-texter svenska; gäst-flödet enklare |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Spegling Supabase→fil manuell (synka-*); session-cookie framför lösenord = steg 5 |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Ordförandesvar ej JSON-tolkbart → tomma beslut (åtgärder "(inga)") |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 6 | 28/42 motorer utan autonomi (register 2026-09-03) |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 7 | Prompt-evolution + deploy-säkert register lever; beslutsminnet nytt (2026-09-13) |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 5 | Väntar jurist; testsvit testa-b2b-grind TRASIG |
-| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Kvalitetsaudit sedan våg 80 ej gjord; MÖS-kvoter FAIL |
+| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Portalens sista trespråksgap stängt (våg 113); MÖS-kvalitetsaudit kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
-| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Tabellen `oversattningar` kräver kund-SQL; retention-regeln ej per typ |
+| E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system (progress/bevakning/portfölj); `oversattningar` kräver kund-SQL |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | Datorns hybrid-sync overifierad; main efter develop (reserv-slack) |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | **FLAGGA** | 7 | GUL nu (105/2/0); 32/42 motorer utan test; ingen CI |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 7 | Motorer 107/0/0 + vakten cron-GRÖN; kvar: testtäckning 32/42, ingen CI |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 7 | Inga tester; sökindexet manuellt genererat |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 7 | Inga tester; sökindexet manuellt genererat; Min Sida-navet → se D38 |
 
-Snittscore: **7,3/10**. Sämst: netnet (5), betalning (5), B2B (5). Bäst:
-AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
+Snittscore: **7,4/10** (38 system efter D38, uppdaterad 2026-09-13). Sämst:
+betalning (5), B2B (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 
 ---
 
@@ -252,7 +282,12 @@ AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
   konfluenser setts/utfall) lagras ej; (3) koppling till portföljforskningens
   korstabell (B13) är läsbar men ej testad.
 
-## B11. Net-net-skannern — FLAGGA — 5/10
+## B11. Net-net-skannern — LEVER — 6/10 *(uppdaterad 2026-09-13)*
+
+*Uppdatering 2026-09-13: motorvalideringen kör nu 107 PASS / 0 FAIL /
+0 SKIP (6,4 s) — determinismfelet (VOLV-B.ST 340.3≠340.4) är borta och
+skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
+25-bolagslista.*
 
 - **Vad:** Skär 25 svenska/nordiska bolag mot Grahams net-net-kriterium
   (kurs < 2/3 × NCAV), sorterad på kurs/NCAV med NET-NET/NÄRA-markering.
@@ -420,7 +455,12 @@ AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 
 # D. MEDLEM & KOMMERS
 
-## D20. Inloggning & konto (FAS L1) — FLAGGA — 6/10
+## D20. Inloggning & konto (FAS L1) — LEVER — 7/10 *(uppdaterad 2026-09-13)*
+
+*Uppdatering 2026-09-13: LOGIN-2.0 landat och E2E-verifierat på prod
+(specifika feltexter + live-räknare; STYRELSE-2026-09-11-V106 § 3 D1).
+FLAGGAN upphävd — kvar som gap: återställ lösenord, E2E-svit, oklart
+e-postverifieringsläge.*
 
 - **Vad:** Medlemsautentisering via Supabase Auth (GoTrue v2) genom server-
   proxy: signup/signin/signout/session, tokens ENDAST i httpOnly-kakor
@@ -528,6 +568,33 @@ AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
   historik); (3) referral-utlösning (vem fick vilken kod) utan uppföljning-
   vy i admin.
 
+## D38. Medlemsnavet — Min Sida-portalen — LEVER — 8/10 (NY 2026-09-13)
+
+- **Vad:** Portal-megaplanens kärnleverans (STYRELSE-PORTAL-MEGA.md,
+  kundens sex krav → en yta): Min Sida som plattformens nav med Dashboarden
+  (våg 102), LarvagKort + Fortsatt-panel + KursNavet "Mina kurser"
+  (påbörjade/kurser med quiz-rätt, våg 103), AnalysNavet med ☆-bevakning
+  per konto i system_events (våg 104), PortfoljNavet — utbildningsportföljen
+  med antal/inprisad kurs, aldrig värde/råd (våg 119) — och korskopplingarna
+  bevakning→portfölj→analys→metodkurs med one-click (våg 120). Tre språk
+  fullt via useSprak + speglarna (våg 113).
+- **Nyckelfiler:** src/components/ak1a/portal.tsx, src/components/ak1a/
+  {analys-navet,kurs-navet,portfolj-navet,larvag-kort}.tsx, src/lib/
+  {medlem-bevakning,medlem-portfolj}.ts + -klient.ts, src/app/api/medlem/
+  {bevakning,portfolj}/route.ts, src/app/(huvud)/min-sida.
+- **Observation:** KONSISTENT mönster genom hela navet: serverfastställda
+  värden (§B.3), senaste-vinner, session-rotation + rate-limit på alla
+  API:er, sidorna statiska (data via klientens rundturor), marin palett
+  med 44 px-tryckytor (våg 105 KO-regler), gränssnittsvakten GRÖN i alla
+  mätningar sedan leverans. Juridikgrinden genomförd: bevakning =
+  läsningslista, portfölj = studielista — aldrig värde eller råd.
+- **GAP (till 10/10):** (1) inga egna E2E-tester (KVD-måttets manuella
+  flöden gäst/inloggad/tre språk körs för hand); (2) pass.namn-API-texter
+  fortfarande svenska (motorpipelinen översätts separat); (3) portföljens
+  djupanalys-yta reserverad som tier-yta (R2 — väntar kundens prisbeslut);
+  (4) antal/kurs-fält vid one-click-bevakning→portfölj valfria att fylla
+  i efteråt (kunna förhandsfyllas ur senaste analys).
+
 ---
 
 # E. STYRNING, VERKTYG & GRUND
@@ -610,7 +677,15 @@ AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
   kräver åtgärder.length > 0 på en enkel fråga; (4) protokollens läsbarhet
   (markerade originalsvars-texter).
 
-## E29. Autonoma organet + cron-pipeline — LEVER — 6/10
+## E29. Autonoma organet + cron-pipeline — LEVER — 7/10 *(uppdaterad 2026-09-13)*
+
+*Uppdatering 2026-09-13: våg 113–120 stärkt organet: prompt-evolution v1+v2
+(barnorgan ärver uppdrag + deterministisk mutation → organ-mutationer.json),
+organ-registret deploy-säkrat (runtime-tillstånd i data/vakten/, gitignore —
+deployerna skrev över evolutionens ronder), organism-panel + senaste
+prod-commit landningar synliga i studion (våg 114/118), styrelse-rond-cron
+verifierad levande (senaste ROND 2026-09-13 05:43), beslutsminne.jsonl
+påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
 
 - **Vad:** Organbussen + organrundor (autonoma ronder), 8 cron-motorer
   (vagscan, nyheter, autonom, kvalitet, oversatt, email, expand-courses,

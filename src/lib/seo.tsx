@@ -246,10 +246,23 @@ export function courseMetadata(course: Course) {
 export function analysisMetadata(a: Analysis) {
   const gen = loadGeneratedMeta("analyser", a.ticker);
   const title = gen?.title ?? clamp(`${a.company} (${a.ticker}) analys | ${SITE_NAME}`, 60);
+  // VÅG 122F (juridikgrind + objekt-bugg): beskrivningen är UTBILDNING —
+  // "så fungerar analysmodellen för X" — ALDRIG rådgivningsspråk som
+  // "Rekommendation: …" (lagen 2007:528). a.recommendation är dessutom ett
+  // OBJEKT ({main, mainSub, …}) sedan analysfabrikens format — den gamla
+  // mallen `${a.recommendation}` renderade "[object Object]" i metabeskriv-
+  // ningen när genererad meta saknades. Nu läses objektets main-fält
+  // typsäkert, och modellens signalläge beskrivs som just modell-utdata.
+  const recMain =
+    typeof a.recommendation === "object" && a.recommendation !== null
+      ? String((a.recommendation as { main?: unknown }).main ?? "").trim()
+      : typeof a.recommendation === "string"
+        ? a.recommendation.trim()
+        : "";
   const description =
     gen?.description ??
     clamp(
-      `Institutionell analys av ${a.company}. ${a.recommendation ? `Rekommendation: ${a.recommendation}. ` : ""}AKM1 20 variabler, scenarier och prisnivåer.`,
+      `Utbildningsgenomgång av analysmodellen för ${a.company}: AKM1 20 variabler, scenarier, prisnivåer och vågmatris.${recMain ? ` Modellens signalläge: ${recMain}.` : ""} Pedagogisk finansanalys — inte investeringsråd.`,
       158
     );
   return pageMetadata({
@@ -451,11 +464,29 @@ export function articleJsonLd(post: BlogPost & { ogBild?: string; omslagUrl?: st
 }
 
 export function analysisJsonLd(a: Analysis) {
+  // VÅG 122F: a.motivation är ett OBJEKT ({del, body}) — String(objekt)
+  // renderade "[object Object]" i prodens Article.description. Typsäker
+  // utläsning av body-strängen, med a.status som rak fallback.
+  const motivationBody =
+    typeof a.motivation === "object" && a.motivation !== null
+      ? String((a.motivation as { body?: unknown }).body ?? "").trim()
+      : typeof a.motivation === "string"
+        ? a.motivation.trim()
+        : "";
+  const statusText = typeof a.status === "string" ? a.status.trim() : "";
+  // Juridikgrind: UTBILDNINGSformulering — "utbildningsgenomgång av
+  // analysmodellen för X" — aldrig rådgivningsspråk i schema-texter.
+  const beskrivning = [
+    `Utbildningsgenomgång av analysmodellen för ${a.company} (${a.ticker}) med AKM1: 20 variabler, scenarier, prisnivåer och vågmatris — pedagogisk finansanalys, inte investeringsråd.`,
+  ]
+    .concat(motivationBody || statusText ? [motivationBody || statusText] : [])
+    .join(" ")
+    .slice(0, 300);
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${a.company} (${a.ticker}) — institutionell analys`,
-    description: String(a.motivation || a.status || `Analys av ${a.company}`).slice(0, 300),
+    headline: `${a.company} (${a.ticker}) — utbildningsgenomgång av analysmodellen`,
+    description: beskrivning,
     inLanguage: "sv-SE",
     image: `${SITE_URL}/og/analys/${analysOgStam(a.ticker)}.png`,
     datePublished: a.analysisDate || a.verified,

@@ -64,8 +64,12 @@ function generateAnalyses() {
       if (!a.ticker || seen.has(a.ticker)) continue;
       seen.add(a.ticker);
       const title = clamp(`${a.company} (${a.ticker}) — aktieanalys | AK1A`, 60);
+      // VÅG 122F (juridikgrind): UTBILDNINGSformulering — modellens
+      // signalläge beskrivs som modell-utdata, ALDRIG "Rekommendation: …"
+      // (rådgivningsspråk, lagen 2007:528). Speglar analysisMetadata i
+      // src/lib/seo.tsx.
       const description = clamp(
-        `Institutionell analys av ${a.company}: AKM1 20 variabler, scenarier (bull/base/bear), prisnivåer och vågmatris. ${a.recommendation?.main ? `Rekommendation: ${a.recommendation.main}.` : ""}`,
+        `Utbildningsgenomgång av analysmodellen för ${a.company}: AKM1 20 variabler, scenarier, prisnivåer och vågmatris.${a.recommendation?.main ? ` Modellens signalläge: ${a.recommendation.main}.` : ""} Pedagogisk finansanalys — inte investeringsråd.`,
         158
       );
       const keywords = [

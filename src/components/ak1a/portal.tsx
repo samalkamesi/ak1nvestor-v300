@@ -6,6 +6,7 @@ import { AnalysNavet, type AnalysKortInfo } from "@/components/ak1a/analys-navet
 import { KursNavet, type KursKortInfo } from "@/components/ak1a/kurs-navet";
 import { MinSida } from "@/components/ak1a/min-sida";
 import { PortalNav } from "@/components/ak1a/portal-nav";
+import { PortfoljNavet } from "@/components/ak1a/portfolj-navet";
 import { lasMedlemProgressKlient, type MedlemProgressAggregat } from "@/lib/medlem-progress-klient";
 import type { PrenumerationNiva } from "@/lib/prenumeration";
 
@@ -23,6 +24,8 @@ import type { PrenumerationNiva } from "@/lib/prenumeration";
  *                     lokal, v1-scope — dokumenterat i medlem-progress.ts)
  *
  * Pedagogisk plattform — inte investeringsråd.
+ *
+ * VÅG 119: PortfoljNavet — utbildningsportföljen per konto.
  */
 export function Portal({
   prenumNiva = null,
@@ -78,6 +81,8 @@ export function Portal({
       {/* VÅG 103 sista biten: Mina kurser — påbörjade + klara ur
           server-progressen (system_events), samma sanningskälla. */}
       <KursNavet kurser={kursKort} progress={session.progress} />
+      {/* VÅG 119: PortfoljNavet — utbildningsportföljen (system_events per konto, legacy-import vid första besöket). */}
+      <PortfoljNavet analyser={analysKort.map((a) => ({ ticker: a.ticker, company: a.company }))} inloggad={session.progress !== null} />
       <MinSida
         prenumNiva={prenumNiva}
         prenumRabattProcent={prenumRabattProcent}

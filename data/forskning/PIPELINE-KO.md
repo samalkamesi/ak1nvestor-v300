@@ -31,3 +31,28 @@ senaste-vinner, serverfastställda värden (§B.3), NEXT_PHASE-fas, request-
 skopad läsning. Premiumtiers: Grundlistning = gratis-fas; djupanalys-yta
 reserveras som tier-yta via tier-status.ts-mönstret senare (R2: aldrig
 autonomt aktiverat). MinPortfoljKort + /min-portfolj orörda (legacy lever).
+
+**STATUS 2026-09-13 (våg 121):** P1 LEVERERAD (våg 119 + korskopplingarna
+våg 120, deployad 09:02) och hela portal-spåret slutlevererat med KVD full
+(tsc 34 · motorer 107/0/0 · vakten GRÖN · prod 200) + systemkarta 38
+system — se STYRELSE-PORTAL-MEGA.md §VÅG 106. Kön härmed tom; nästa våg
+väljs av styrelseronden.
+
+## VÅG 122 — "100 % ONLINE-SPÅRET" (2026-09-13, beslut styrelse-mtzou25g-yjq73l)
+
+Förgrodda av huvudagenten: push-blockeringen permanent fixad (7f496757,
+data/cache ur indexet, prod = develop, säkringsgren raderad, prod 200).
+
+| Block | Agent | Uppgift (beslutets åtgärd) | Äger (EXKLUSIVT) | Status |
+|---|---|---|---|---|
+| A PULSVAKT | V122A | Åtgärd 1+10: pm2-pulsvakt var 60 s, autoåterstart pm2 ak1a, larm till sessionen; utred om cron-pumparna lever | verktyg/pulsvakt.mjs, data/infra/contabo/pulsvakt-start.sh, data/infra/contabo/crontab-korrekt.txt | DISPATCHAD |
+| B EXTERN VAKT | V122B | Åtgärd 2: publik status-endpoint + webhook-larm-endpoint + kundinstruktion (konto väntar kund = R2) | src/app/api/overvaking/**, src/lib/overvaking.ts, data/forskning/EXTERN-OVERVAKNING.md | DISPATCHAD |
+| C HTTPS/START | V122C | Åtgärd 3: bevisa certförnyelse + självstart via läsbara bevis; sudo-steg dokumenteras som väntar kund | data/forskning/HTTPS-SJALVSTART-PROV.md | DISPATCHAD |
+| D DR-PROV | V122D | Åtgärd 4: färsk Supabase-backup + integritetsbevis + restore-procedur; fullt PG-restore väntar sudo (bevis 2026-09-11 finns) | data/forskning/DR-PROV-2026-09-13.md | DISPATCHAD |
+| E SÖK | V122E | Åtgärd 5: server-side sök med cache + reservlösning, kontrakt för pulsvakten | src/app/api/sok/**, src/lib/sok/**, verktyg/testa-sok.mjs (ny) | DISPATCHAD |
+| F SEO | V122F | Åtgård 7+8: SEO-A-Ö-checklista (levande) + hreflang/sitemap-granskning sv/en/ar + JSON-LD (Course/Article/FAQ) | data/forskning/SEO-A-O.md, src/app/sitemap.ts, src/components/seo/**, JSON-LD i sidfiler | DISPATCHAD |
+| G BESLUTSLOGG | V122G | Åtgärd 6+9: BESLUTSLOGG.md + juridikgrinds-rad i STYRELSE-REGELVERK.md + commita STYRELSE-BESLUT.md | data/forskning/BESLUTSLOGG.md, STYRELSE-REGELVERK.md, STYRELSE-BESLUT.md | DISPATCHAD |
+
+Gemensamma regler: commit UTAN push (huvudagenten pushar+bygger, ETT bygg/våg).
+sudo/behörighetspromptar får INTE köras (de hänger sessionen) — dokumentera istället.
+Baslinje tsc = 34 fel. Bygg sker ENDAST i /home/ak1a/AK1 under flock-lås av huvudagenten.

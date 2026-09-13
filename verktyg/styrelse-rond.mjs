@@ -96,6 +96,11 @@ async function main() {
   }
   const vakt = sistRader("data/vakten/senaste-korning.txt", 3);
   const worklog = sistRader("worklog.md", 8);
+  // VÅG 122 — pulsvakt + externa larm i statusmatningen (100 %-online-målet):
+  // rond-prompten ska se both skikt utan extra verktygskall.
+  const pulsvaktStatus = sistRader("data/vakten/pulsvakt-status.json", 1);
+  const pulsvaktLarm = sistRader("data/vakten/pulsvakt-larm.log", 3);
+  const externaLarm = sistRader("data/vakten/externa-larm.log", 3);
 
   // VÅG 110 — BYGG-LÄGES-VAKT: nya sessioner (friskgången) kan landa i
   // PLAN-läge där ExitPlanMode-godkännande krävs = i autonomt läge SKRIV-
@@ -132,6 +137,9 @@ ${organRapport}
 STATUSMATNING:
 • MÅL: ${malStatus}
 • VAKTEN (senaste): ${vakt}
+• PULSVAKTEN (våg 122 — 100 %-online): ${pulsvaktStatus}
+• PULSVAKTENS LARM (senaste — TOM/OK = inga larm): ${pulsvaktLarm}
+• EXTERNA LARM (bevakare utanför servern — TOM/OK = inga): ${externaLarm}
 • WORKLOG (slutet): ${worklog}
 
 HÅRT LEVERANSPROTOKOLL (strikt):

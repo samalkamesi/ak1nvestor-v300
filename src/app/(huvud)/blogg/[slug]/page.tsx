@@ -2,9 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getBlogPosts, getBlogPost, getCourses } from "@/lib/content";
-import { blogMetadata, articleJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { blogMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { DelRad } from "@/components/ak1a/del-rad";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
 
@@ -117,12 +118,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Blogg", href: "/blogg" }, { name: post.title }]}>
-      <JsonLd data={articleJsonLd(post)} />
-      <JsonLd
+      {/* VÅG 122F: StrukturData — ETT Article + ETT BreadcrumbList per post. */}
+      <StrukturData data={articleJsonLd(post)} id="jsonld-artikel" />
+      <StrukturData
         data={breadcrumbJsonLd([
           { name: "Blogg", path: "/blogg" },
           { name: post.title, path: `/blogg/${post.slug}` },
         ])}
+        id="jsonld-brodsmula"
       />
 
       <article>

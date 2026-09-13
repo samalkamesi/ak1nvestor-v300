@@ -1,0 +1,68 @@
+# ============================================================================
+# /etc/crontab — KORREKT FRAMTIDA INNEHÅLL (våg 122A, 2026-09-13)
+# ============================================================================
+#
+# !!! APPLICERING KRÄVER KUND-GODKÄNND SUDO — FÅR EJ GÖRAS AUTONOMT !!!
+#
+#   sudo cp data/infra/contabo/crontab-korrekt.txt /etc/crontab
+#   sudo chown root:root /etc/crontab && sudo chmod 644 /etc/crontab
+#   (cron läser om filen inom en minut; valfritt: sudo systemctl restart cron)
+#   Verifiera: sudo grep CRON /var/log/syslog | tail
+#
+# ── LÄGESFYND 2026-09-13 (viktigt — uppdaterar DRIFTSBOKEN kap 2) ────────────
+# 1. Filen /etc/crontab på servern är REDAN korrigerad: samtliga fyra AK1A-
+#    rader (3 curl + ak1a-halsa) HAR användarfältet `root` (verifierad genom
+#    filläsning 2026-09-13; hälso-loggen /var/log/ak1a-halsa.log är färsk
+#    med rader var 5:e minut). DRIFTSBOKENS "kända fel" gäller alltså inte
+#    längre i skrivande stund — men dokumentet behålls som sann källbild.
+# 2. Sedan våg 113 (2026-09-13) schemalägger pm2-processen `ak1a-pumpor`
+#    (verktyg/pumpor-daemon.mjs) agentens pumpar: målhjärtslag, styrelserond,
+#    gränssnittsvakt, data-hygien, ISR-värmare. DE SKA STÅ I /etc/crontab
+#    ENDAST OM pumpor-daemonen dras ner — annars DUBBELKÖRS de (därför
+#    utkommenterade nedan).
+# 3. Kvalitetsvakten saknar fortfarande automatisk drift PÅ SERVERN: senaste
+#    rapport i prod (data/rapporter/kvalitetsrapport-SENASTE.md) är en kopia
+#    från kundens dator (2026-09-10, win32). Därför tillhör raden nedan det
+#    ENDA verkliga tillägget mot nuvarande /etc/crontab.
+# 4. Pulsvakten (våg 122A, verktyg/pulsvakt.mjs) är en pm2-process — ALDRIG
+#    cron (se data/infra/contabo/pulsvakt-start.sh).
+# ============================================================================
+
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+# You can also override PATH, but by default, newer versions inherit it from the environment
+#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |   .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |   |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |   |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root	cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }
+47 6	* * 7	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }
+52 6	1 * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }
+#
+# ── AK1A innehålls-pumpar ( befintliga tider bevarade; root = krav) ──────────
+30 6 * * * root curl -s -m 300 -H "Host: lab.ak1nvestor.com" http://127.0.0.1/api/cron/vagscan >/dev/null 2>&1
+0 8 * * * root curl -s -m 300 -H "Host: lab.ak1nvestor.com" http://127.0.0.1/api/cron/nyheter >/dev/null 2>&1
+0 7 1 * * root curl -s -m 300 -H "Host: lab.ak1nvestor.com" http://127.0.0.1/api/cron/portfolj-uppfoljning >/dev/null 2>&1
+# ── AK1A hälsoskydd ──────────────────────────────────────────────────────────
+*/5 * * * * root /usr/local/bin/ak1a-halsa >/dev/null 2>&1
+# ── NY (våg 122A): kvalitetsvakten dagligen — 09:00 lokal Berlin-tid ≈ 07:00
+#    UTC sommartid (skriptets dokumenterade tid); vintertid ca 08:00 lokal.
+#    Kör PÅ SERVERN (i dag är rapporten bara en dator-kopia i repot).
+0 9 * * * root curl -s -m 600 -H "Host: lab.ak1nvestor.com" http://127.0.0.1/api/cron/kvalitet >/dev/null 2>&1
+
+# ── MEDVETET UTKOMMENTERADE (körs sedan våg 113 av pm2 `ak1a-pumpor`) ───────
+# Aktivera ENDAST om pumpor-daemonen stängs av — annars dubbelkörning.
+# 17 1,7,13,19 * * * ak1a cd /home/ak1a/AK1 && node verktyg/vakt-cron.mjs >> data/vakten/cron-ut.log 2>&1
+# 10 3 * * * ak1a bash /home/ak1a/AK1/data/infra/contabo/ak1a-varm.sh

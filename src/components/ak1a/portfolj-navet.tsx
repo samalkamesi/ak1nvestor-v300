@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState, type JSX } from "react";
 
+import { lasBevakning } from "@/lib/medlem-bevakning-klient";
 import {
   lasPortfolj,
   skrivPortfolj,
@@ -22,6 +23,13 @@ import {
  * aldrig fel innehåll först. Skrivfel (t.ex. 409 full portfölj) visas som
  * serverns egen text i en aria-live-rad.
  *
+ * VÅG 120 — KORSKOPPLINGEN (portal-spårets våg 106: "korskopplingar alla
+ * ytor"): bevakade bolag (☆ i AnalysNavet) som ännu saknas i studielistan
+ * erbjuds som one-click-rader — tryck ⇒ bolaget hamnar i portföljen utan
+ * antal/kurs (fylls i senare, frivilligt). Fotraden längar metodkurserna
+ * (samma always-true-koppling som AnalysNavet: kurserna bakom ALLA
+ * analyser). Ringen sluten: ☆ → studielista → analys → kurs.
+ *
  * DESIGN (våg 105:s KO-regler): marin-familjens FASTA palett — panel
  * #0E1B2E, kort #101b2b, cream #EDE6D6, guld #E8C766 — ALDRIG tema-
  * variabler inuti marin-panelen. Tryckytor ≥ 44 px, flex-wrap.
@@ -35,6 +43,16 @@ export type PortfoljAnalysInfo = {
 
 /** Visa max så många holdings — resten räknas ihop (aldrig oändlig vägg). */
 const MAX_SYNLIGA = 6;
+
+/**
+ * Metodkurserna bakom varje analys (KURSREGISTER-slug:ar) — speglar
+ * AnalysNavets konstant: kurserna bakom ALLA analyser, därför alltid sanna
+ * kopplingar (våg 104:s beslut: sektor-mappning avförd som skör).
+ */
+const METOD_KURSER = [
+  { slug: "akm1-den-kontroversiella-modellen", text: "AKM1-modellen — 20 variabler" },
+  { slug: "ak1ts-vaglarans-hierarki", text: "Våglärans hierarki" },
+] as const;
 
 /** Svenskt talformat för antal/kurs — studieunderlag, aldrig värde i kronor. */
 const talFmt = new Intl.NumberFormat("sv-SE");
@@ -58,6 +76,7 @@ export function PortfoljNavet({
 }): JSX.Element | null {
   const [holdings, setHoldings] = useState<PortfoljHoldings[] | null>(null);
   const [legacyImporterad, setLegacyImporterad] = useState(false);
+  const [bevakade, setBevakade] = useState<string[] | null>(null);
   const [felText, setFelText] = useState("");
   const [valdTicker, setValdTicker] = useState("");
   const [antalText, setAntalText] = useState("");
@@ -79,6 +98,15 @@ export function PortfoljNavet({
       .catch(() => {
         if (aktiv) setHoldings([]);
       });
+    // Korskopplingen (våg 120): bevakningen läses parallellt — den driver
+    // "bevakade bolag som saknas i studielistan" (eko-mönstret: fel ⇒ tomt).
+    lasBevakning()
+      .then((svar) => {
+        if (aktiv) setBevakade(svar.inloggad ? svar.tickers : []);
+      })
+      .catch(() => {
+        if (aktiv) setBevakade([]);
+      });
     return () => {
       aktiv = false;
     };
@@ -91,6 +119,29 @@ export function PortfoljNavet({
       const förra = holdings;
       setHoldings(förra.filter((h) => h.ticker !== ticker));
       const svar = await skrivPortfolj(ticker, false);
+      if (!svar.ok) {
+        setHoldings(förra);
+        setFelText(svar.fel);
+      } else {
+        setFelText("");
+      }
+    },
+    [holdings],
+  );
+
+  /**
+   * Lyft ett bevakat bolag (☆) in i studielistan — one-click, utan antal/
+   * kurs (fylls i senare, frivilligt). Optimistic update + tillbakarullning,
+   * samma kontrakt som taBort.
+   */
+  const lyftTillPortfolj = useCallback(
+    async (ticker: string) => {
+      if (holdings === null) return;
+      const förra = holdings;
+      setHoldings(
+        [...förra.filter((h) => h.ticker !== ticker), { ticker, antal: null, kurs: null }],
+      );
+      const svar = await skrivPortfolj(ticker, true);
       if (!svar.ok) {
         setHoldings(förra);
         setFelText(svar.fel);
@@ -132,6 +183,10 @@ export function PortfoljNavet({
   const sorterade = (holdings ?? [])
     .slice()
     .sort((a, b) => a.ticker.localeCompare(b.ticker));
+
+  // Korskopplingen: bevakade (☆) som ännu inte finns i studielistan.
+  const iPortfoljen = new Set(sorterade.map((h) => h.ticker));
+  const bevakadeSaknas = (bevakade ?? []).filter((t) => !iPortfoljen.has(t));
 
   return (
     <section
@@ -224,6 +279,35 @@ export function PortfoljNavet({
               </p>
             )}
 
+            {/* Korskopplingen (våg 120): bevakade (☆) → studielistan, one-click */}
+            {bevakade !== null && bevakadeSaknas.length > 0 && (
+              <div className="mt-4 rounded-xl bg-[#101b2b] p-4">
+                <p className="text-xs font-semibold">
+                  Bevakade bolag som saknas i studielistan
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {bevakadeSaknas.map((t) => {
+                    const namn = namnFranTicker.get(t) ?? t;
+                    return (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => void lyftTillPortfolj(t)}
+                        aria-label={`Lägg till ${namn} (${t}) i portföljen`}
+                        className="flex min-h-[44px] items-center gap-2 rounded-lg border border-[#EDE6D6]/20 px-3 py-2 text-xs font-semibold text-[#EDE6D6] transition-colors hover:border-[#E8C766]/50 hover:text-[#E8C766] active:scale-[0.98]"
+                      >
+                        <span aria-hidden="true" className="text-[#E8C766]">+</span> {t}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-2 text-[11px] leading-relaxed text-[#EDE6D6]/75">
+                  Tryck på en ticker — bolaget hamnar i listan ovan utan antal eller
+                  kurs, som du fyller i när du vill.
+                </p>
+              </div>
+            )}
+
             {/* Lägg till — infälld väljare + frivilliga Antal/Kurs som studieunderlag */}
             <form
               onSubmit={(e) => {
@@ -289,13 +373,27 @@ export function PortfoljNavet({
           </p>
         )}
 
-        {/* Fotrad: studielistan — utbildning, aldrig investeringsråd */}
+        {/* Fotrad: studielistan — utbildning, aldrig investeringsråd; metod-
+            kurserna = kurskopplingen (samma always-true som AnalysNavet) */}
         <p className="mt-5 border-t border-[#EDE6D6]/10 pt-4 text-[11px] leading-relaxed text-[#EDE6D6]/75">
           Portföljen är din studielista i utbildningen — inte investeringsråd.{" "}
           <Link href="/analyser" className="font-semibold text-[#E8C766] underline underline-offset-2">
             Biblioteket
           </Link>{" "}
-          bär analyserna bakom varje bolag du följer.
+          bär analyserna bakom varje bolag du följer. Så använder du listan i
+          utbildningen:{" "}
+          {METOD_KURSER.map((k, i) => (
+            <span key={k.slug}>
+              {i > 0 && " · "}
+              <Link
+                href={`/kurser/${k.slug}`}
+                className="font-semibold text-[#E8C766] underline underline-offset-2"
+              >
+                {k.text}
+              </Link>
+            </span>
+          ))}
+          .
         </p>
       </div>
     </section>

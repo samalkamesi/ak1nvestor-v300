@@ -61,28 +61,25 @@ async function httpsOk() {
 }
 
 async function main() {
-  // 1) hämta — inget nytt ⇒ tyst
-  git(["fetch", "origin", "develop"]);
+  // 1) VÅG 123b: hämtning från GitHub kräver autentisering (repo privat,
+  //    servern saknar PAT) — BEHÖVS EJ: huvudagentens och agentens pushar
+  //    levererar trädet DIREKT till servern (updateInstead). Synken jämför
+  //    HEAD mot senaste DEPLOYADE hash och bygger vid skillnad.
   const lokal = git(["rev-parse", "HEAD"]);
-  const fjarr = git(["rev-parse", "origin/develop"]);
-  if (lokal === fjarr) return; // inget att göra (loggas ej — 99 % tystnad)
+  const senasteFil = path.join(VAKT, "senaste-deployad.txt");
+  let senaste = "";
+  try { senaste = fs.readFileSync(senasteFil, "utf8").trim(); } catch { /* första körningen */ }
+  if (lokal === senaste) return; // inget nytt — tyst (99 % av runsen)
 
-  logga(`NY KOD: ${lokal.slice(0, 8)} → ${fjarr.slice(0, 8)}`);
+  logga(`NY KOD: ${senaste.slice(0, 8) || "(första)"} → ${lokal.slice(0, 8)}`);
 
   // 2) rent träd (data/vakten = runtime, orörd; data/cache = runtime-artefakter)
   try { git(["checkout", "--", "."]); } catch { /* inget att återställa */ }
   try { git(["clean", "-fd", "data/cache"]); } catch { /* fanns ej */ }
 
-  // 3) merge — konflikt avbryter (prod orörd)
-  const goodHead = lokal;
-  try {
-    git(["merge", "origin/develop", "--no-edit"]);
-  } catch {
-    git(["merge", "--abort"]);
-    logga(`AVBRUTEN: merge-konflikt — prod orörd; kräver manuell synk`);
-    return;
-  }
-  const nya = git(["log", "--oneline", `${lokal}..HEAD`]);
+  // 3) good-HEAD = senaste deployade (eller nuvarande om aldrig deployat)
+  const goodHead = senaste || lokal;
+  const nya = git(["log", "--oneline", `${goodHead}..HEAD`]);
 
   // 4-5) bygg under flock med stoppregler
   const bygg = "npm ci --no-audit --no-fund > /tmp/synk-npmci.log 2>&1 && npm run build > /tmp/synk-build.log 2>&1";
@@ -117,7 +114,9 @@ async function main() {
     try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
     await new Promise((s) => setTimeout(s, 6000));
     if (await httpsOk()) {
-      logga(`DEPLOYAD automatiskt: ${nya.split("\n").length} commits — prod 200`);
+      const deployadHash = git(["rev-parse", "HEAD"]);
+      try { fs.writeFileSync(senasteFil, deployadHash + "\n"); } catch { /* markör får vänta */ }
+      logga(`DEPLOYAD automatiskt: ${nya.split("\n").length} commits (${deployadHash.slice(0, 8)}) — prod 200`);
       // Version-meddelandet (tyst, icke-störande — panelen visar det)
       try {
         const vfil = path.join(VAKT, "versionsloggen.jsonl");

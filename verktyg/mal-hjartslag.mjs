@@ -105,6 +105,34 @@ async function main() {
   const status = await svar.json();
   const nu = Date.now();
 
+  // VÅG 131 — FRUSNA TURNS: turn=true utan puls i 30+ min = hängd turn
+  // (bevisat 2026-09-13: iteration fryst 2,5 h; zombie-kicken vägrar när
+  // turn=sant). Två fynd i rad (20 min) ⇒ självläkningsomstart.
+  if (status.pagaendeTurn && status.uppdaterad && nu - status.uppdaterad > 30 * 60_000) {
+    const stallna = (state.frusnaTurns || 0) + 1;
+    if (stallna >= 2 && nu - (state.senasteOmstart || 0) > 2 * 60 * 60_000) {
+      logga(
+        `SJÄLVHEALNING: frusen turn (${Math.round((nu - status.uppdaterad) / 60000)} min utan puls) — pm2-omstartar + mål återställs`,
+      );
+      try {
+        execSync("pm2 restart ak1a", { encoding: "utf8", timeout: 60_000 });
+        await new Promise((sov) => setTimeout(sov, 12_000));
+        await fetch(`${BAS}/api/studio/session`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-password": pass },
+          body: JSON.stringify({ action: "malSatt", mal: STANDE_MAL_TEXT }),
+        });
+        logga("SJÄLVHEALNING: frusen turn rensad + stående mål återställt");
+      } catch (e) {
+        logga("SJÄLVHEALNING FEL: " + String(e).slice(0, 150));
+      }
+      skrivState({ ...state, senasteOmstart: nu, frusnaTurns: 0, senasteKick: nu, senasteProgressTs: nu });
+      return;
+    }
+    skrivState({ ...state, frusnaTurns: stallna });
+    return logga(`FRUSEN TURN misstänkt (${stallna}/2): ${Math.round((nu - status.uppdaterad) / 60000)} min utan puls`);
+  }
+
   if (!status.aktiv || status.pausad || !status.mal) {
     // VÅG 112: målet kan försvinna vid pm2-omstart/trädsynk (processminne).
     // Helt borta (null, ej pausat) ⇒ återställ stående mål direkt — men
@@ -160,6 +188,9 @@ async function main() {
     skrivState({
       senasteKick: state.senasteKick,
       senasteProgressTs: nu,
+      senasteOmstart: state.senasteOmstart || 0,
+      frusnaTurns: 0,
+      studsadeKicker: state.studsadeKicker || 0,
       iteration: status.iteration,
       senasteEvent: status.senasteEvent || "",
     });

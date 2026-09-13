@@ -22,7 +22,8 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 |---|---|---|---|
 | 2026-09-13 | Genomgång A–Ö (våg 122F) | Sitemap 1 712 URL:er × sv/en/ar = OK. Hreflang sv-SE+en+ar+x-default korrekt på kurser/blogg/start (obs: Next 16 renderar `hrefLang` kamelnotation — skilj på bugg och regex-fel). Robots OK med sitemap-rad + AI-crawlers. JSON-LD komplett på kurser (×3 språk) och blogg (sv+speglar). **BUGG:** analyssidornas Article-description = "[object Object]" (String på motivation-objekt) + metabeskrivning bar ordet "Rekommendation" (rådgivningsspråk). | JA (våg 122F): analysisJsonLd/analysisMetadata omskrivna till utbildningsformulering + typsäker objektläsning; scripts/seo-generate.mjs omformulerad; 11 analys-metafiler regenererade; ny generisk renderer src/components/seo/StrukturData.tsx applicerad på 4 rutter |
 | 2026-09-13 | C — Canonical (våg 128, organ Ψ) | Sond (8 URL:er, localhost=prod-kod): /kurser?q=rgb, /blogg?tag=…, /en/kurser?q=…, /analyser?filter=…, /forskningsbiblioteket?visa=…, /labb?sort=… — ALLA självstämplar canonical mot den rena URL:n (query följer aldrig med). Rot: pageMetadata bygger canonical ur statisk path (src/lib/seo.tsx:144,171) — sökparametrar kan inte nå canonical. Q-raden (?q-dubletter) därmed också verifierad. | Ingen kodändring behövs — konstaterat OK (våg 128) |
-| — | ▶ NÄSTA: H — Hreflang-städning | (väntar på rond) | — |
+| 2026-09-13 | H — Hreflang-städning (våg 129, organ Ψ) | pageMetadata-default deklarerade sv-SE+en+x-default som ALLA pekade på samma URL för speglolösa sidor (analyser, labb, forskningsbiblioteket, verktygssidor) — same-URL-brus som kunde läsas som en engelsk version som inte finns. harSpeglar-klustret (kurser/blogg/start/nyckelsidor) var korrekt och orört. | JA (våg 129): default = enbart sv-SE+x-default som självhänvisning; kirurgiskt i pageMetadata; kommentarer sanningsenliga i seo.tsx + spegel-metadata.ts; tsc 34 = baslinje, 0 nya fel |
+| — | ▶ NÄSTA: A — Alt-texter + data/seo-korpusen | (väntar på rond) | — |
 
 ---
 
@@ -80,7 +81,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
 | Kurser/blogg/start + speglar: sv-SE+en+ar+x-default, ömsesidigt (våg 78 C #4) — prodmätet OK | — | OK | våg 78 |
-| Sidor UTAN speglar (analyser, labb m.fl.): pageMetadata-default deklarerar sv-SE/en/x-default som alla pekar på SAMMA URL — brus, inte fel, men städas bäst bort | ▶ NÄSTA AVSNITT: ändra default till enbart sv-SE+x-default (självhänvisning) när speglar saknas — kirurgiskt i pageMetadata, testa alla anropare | KVAR | Rond näst |
+| Sidor UTAN speglar (analyser, labb m.fl.): städat våg 129 — default deklarerar enbart sv-SE+x-default som självhänvisning; den falska 'en'-raden borta | Håll regeln vid nya sidtyper: speglolös sida = sv-SE+x-default, aldrig same-URL-kluster | OK (våg 129) | våg 129 / rond H |
 
 ## I — Indexering
 
@@ -214,11 +215,10 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 ## Kvar-lista nästa ronder (sammanfattning)
 
-1. **H — Hreflang-städning** (▶ NÄSTA): sidor utan speglar deklarerar same-URL-kluster — städa till sv-SE+x-default.
-2. **A — Alt-texter** + data/seo-korpusen: kör generatorn medvetet, committa hela korpusen.
-3. **J — JSON-LD-migration**: återstående JsonLd-anropare → StrukturData.
-4. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
-5. **B — Brödsmulor**: labb + forskningsbiblioteket.
-6. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
+1. **A — Alt-texter** (▶ NÄSTA) + data/seo-korpusen: kör generatorn medvetet, committa hela korpusen.
+2. **J — JSON-LD-migration**: återstående JsonLd-anropare → StrukturData.
+3. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
+4. **B — Brödsmulor**: labb + forskningsbiblioteket.
+5. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
 
-Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128).
+Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129).

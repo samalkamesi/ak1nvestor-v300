@@ -286,6 +286,14 @@ interface Tabb {
   id: string;
   huvud: boolean;
   sessionId: string | null;
+  /**
+   * VÅG 140 — TRÅDKEDJAN: sessioner som fliken VUXIT IGENOM (äldst först,
+   * exklusive nuvarande sessionId). Spara/töm vid sessionsbyte (hej-eventet)
+   * gör att en refresh kan återskapa HELA tråden: kandidatens historia +
+   * alla föregångares — kunden ser chatten fortsätta i oändlighet, som
+   * desktop-Z: en tråd, många sessioner under huven.
+   */
+  kedja?: string[];
   titel: string;
   meddelanden: Meddelande[];
   utkast: string;
@@ -4301,6 +4309,38 @@ export function StudioChat({ hem }: { hem: () => void }) {
               } catch { /* nätverksfel — tabben börjar tom; nästa prompt resumear */ }
             }
           }
+          // VÅG 140 — TRÅDKEDJAN VID ÖPPNING/REFRESH: kandidaten kan vara
+          // trådens SENASTE session; föregångarna (sessionsbyten) hämtas och
+          // konkateneras FÖRE kandidatens historia ⇒ hela tråden syns igen.
+          if (kandidat) {
+            const trådTabb =
+              sparad?.tabbar.find(
+                (t) => t.sessionId === kandidat || (t.kedja ?? []).includes(kandidat),
+              ) ?? null;
+            const kedja = [...(trådTabb?.kedja ?? [])].filter(
+              (sid, i, alla) => alla.indexOf(sid) === i && sid !== kandidat,
+            );
+            if (kedja.length > 0) {
+              const delar = await Promise.all(
+                kedja.map(async (sid) => {
+                  try {
+                    const r = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(sid)}`, {
+                      headers: adminHeaders(),
+                    });
+                    if (!r.ok) return [] as HistorikPost[];
+                    const d = (await r.json()) as { historik?: HistorikPost[] };
+                    return Array.isArray(d.historik) ? d.historik : [];
+                  } catch {
+                    return [] as HistorikPost[];
+                  }
+                }),
+              );
+              const gamlaTråden = delar.flat();
+              if (gamlaTråden.length > 0) {
+                aktivHistorik = [...gamlaTråden, ...aktivHistorik];
+              }
+            }
+          }
           // ── IndexedDB-jämförelse (våg 88 I3): cachen FLER ⇒ cachad vinner ──
           let cacheTrumfar = false;
           if (levande && sparadSid && sparadSid === kandidat) {
@@ -4331,6 +4371,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
               const forrSvar = forr ? forr.meddelanden.filter((m) => m.roll === "assistant").length : 0;
               rörTabb(huvudId, (t) => ({
                 ...t,
+                // VÅG 140: huvudfliken binder trådens SENASTE session — och
+                // minler föregångaren om nyckeln byts (kedjan lever vid nästa
+                // refresh).
+                sessionId: kandidat,
+                kedja: [
+                  ...(t.kedja ?? []).filter((sid) => sid !== kandidat),
+                  ...(t.sessionId && t.sessionId !== kandidat ? [t.sessionId] : []),
+                ].filter((sid, i, alla) => alla.indexOf(sid) === i),
                 meddelanden: tillMeddelanden(aktivHistorik),
                 historikLasad: true,
                 uppdaterad: Date.now(),
@@ -6333,10 +6381,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
           switch (event.typ) {
             case "hej":
               setLive(event.transport === "mock" ? "demo" : "live");
-              if (event.sessionId) sparaSenasteSessionId(event.sessionId);
-              if (event.sessionId) streamSessionId = event.sessionId;
-              if (event.sessionId && !tabb.sessionId) {
-                rörTabb(tabbId, (t) => ({ ...t, sessionId: event.sessionId ?? t.sessionId }));
+              if (event.sessionId) {
+                // VÅG 140 — TRÅDKEDJAN: byte av session (friskgång/omstart/
+                // -32031-läkning) får ALDRIG bryta tråden i vyn. Fliken
+                // behåller sin historia (strömmen fortsätter rakt in) och
+                // minner föregångaren i kedjan — refresh syr sedan ihop allt.
+                const gammal = tabb.sessionId;
+                if (gammal && gammal !== event.sessionId) {
+                  rörTabb(tabbId, (t) => {
+                    const bas = t.kedja ?? [];
+                    return {
+                      ...t,
+                      sessionId: event.sessionId ?? t.sessionId,
+                      kedja: [...bas, gammal].filter(
+                        (sid, i, alla) => alla.indexOf(sid) === i && sid !== (event.sessionId ?? sid),
+                      ),
+                    };
+                  });
+                } else if (!gammal) {
+                  rörTabb(tabbId, (t) => ({ ...t, sessionId: event.sessionId ?? t.sessionId }));
+                }
+                sparaSenasteSessionId(event.sessionId);
+                streamSessionId = event.sessionId;
               }
               break;
             case "status":

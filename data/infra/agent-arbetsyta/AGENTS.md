@@ -127,6 +127,23 @@ egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback �
 middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
 gränsnittsändringar; ett defekt som nå kunden = vaktsystemfel, inte bara kodfel.
 
+## MAXIMAL PARALLELLISM (våg 132 — kundens direktiv "max antal agenter, dagar ska ta mindre än timmar")
+
+`subagents.maxConcurrent = 12` är SATT i app-serverns konfiguration (RAM-tak:
+~350 MB/agent på 8 GB + 4 GB swap = 12 säkra). Verktygstäthet 16.
+**STRIKT REGEL**: varje MEGA-projekt dispatcherar ALLTID 8–12 parallella
+subagenter med exklusiva filägarskap (våg 104-mönstret) — sekventiellt
+arbete på oberoende delar är FÖRBUDET (slöseri med organismens kapacitet).
+Vågor kedjas: när en agent frigörs startar nästa uppgift DIREKT.
+
+## HUVUDAGENT-RAPPORTER I STUDION (våg 132 — kunden ska se allt "exakt som i desktop-Z")
+
+Huvudagenten (datorn, när öppen) skickar sina fulla utvecklingsrapporter till
+din session via POST /api/studio/stream — de visas i konversationen som vanliga
+meddelanden. Molnagenten gör likadant: varje avslutad våg AVSLUTAS med en
+rik rapports-rad i worklog + beslutsminne (mekaniskt) + en KORT berättelse i
+sessionen (vad, varför, bevis, nästa steg) — transparensen är inte valfri.
+
 ## STYRELSE-REGELVERKET (våg 108 — KUNDENS STRIKTA DIREKTIV, LÄS FÖRST VID VARJE SESSION)
 
 `data/forskning/STYRELSE-REGELVERK.md` = den operativa KONSTITUTIONEN. Kärnregler:

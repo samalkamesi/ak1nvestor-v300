@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { addXP, lasStreak, type Streak } from "@/lib/member-local";
 import { BADGE_MAP, geBadge } from "@/lib/badges";
 import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
+import { oversatt, type SprakId } from "@/lib/sprak";
+import type { OrdlistaNyckel } from "@/lib/ordlista";
 
 /**
  * DAGENS PASS — den dagliga 5-minutersritualen på RIKTIG marknadsdata.
@@ -49,55 +52,63 @@ type PassData = {
 
 type VagKlass = "impulsvåg" | "korrigering" | "basbygge";
 
-const KLASSER: Array<{ id: VagKlass; ikon: string; etikett: string; not: string }> = [
-  {
-    id: "impulsvåg",
-    ikon: "▲",
-    etikett: "Impulsvåg",
-    not: "Motorn ser momentum över +6% på horisonten och pris ovanför glidande medelvärde — köparna är i kontroll.",
-  },
-  {
-    id: "korrigering",
-    ikon: "▼",
-    etikett: "Korrigering",
-    not: "Motorn ser momentum under −6% och pris under medelvärdet — en motvåg där säljarna trycker tillbaka.",
-  },
-  {
-    id: "basbygge",
-    ikon: "◼",
-    etikett: "Basbygge",
-    not: "Motorn ser momentum inom ±6% — en sidledes bas där köpare och säljare är i balans.",
-  },
+// VÅG 113 — trespråkighet: etiketter/notar bor i ordlistan (pass.klass*),
+// id + ikon är språkneutralt. Typad lookup tvingar fram giltiga nycklar.
+const KLASSER: Array<{ id: VagKlass; ikon: string }> = [
+  { id: "impulsvåg", ikon: "▲" },
+  { id: "korrigering", ikon: "▼" },
+  { id: "basbygge", ikon: "◼" },
 ];
 
-const HORIZONTER: Array<{ key: string; etikett: string }> = [
-  { key: "mikro", etikett: "Mikro" },
-  { key: "kort", etikett: "Kort" },
-  { key: "medellang", etikett: "Medellång" },
-  { key: "lang", etikett: "Lång" },
-  { key: "mega", etikett: "Mega" },
+const KLASS_TEXT: Record<VagKlass, { etikett: OrdlistaNyckel; not: OrdlistaNyckel }> = {
+  impulsvåg: { etikett: "pass.klassImpulsEtikett", not: "pass.klassImpulsNot" },
+  korrigering: { etikett: "pass.klassKorrigeringEtikett", not: "pass.klassKorrigeringNot" },
+  basbygge: { etikett: "pass.klassBasEtikett", not: "pass.klassBasNot" },
+};
+
+// VÅG 113 — horisontetiketterna hämtas ur ordlistan (pass.h*) per språk.
+const HORIZONTER: Array<{ key: string; etikett: OrdlistaNyckel }> = [
+  { key: "mikro", etikett: "pass.hMikro" },
+  { key: "kort", etikett: "pass.hKort" },
+  { key: "medellang", etikett: "pass.hMedellang" },
+  { key: "lang", etikett: "pass.hLang" },
+  { key: "mega", etikett: "pass.hMega" },
 ];
 
-const MANADER = [
-  "januari", "februari", "mars", "april", "maj", "juni",
-  "juli", "augusti", "september", "oktober", "november", "december",
+// VÅG 113 — månadsnamnen bor i ordlistan (pass.manad1–12), typat via array.
+const MANAD_NYCKLAR: OrdlistaNyckel[] = [
+  "pass.manad1", "pass.manad2", "pass.manad3", "pass.manad4", "pass.manad5", "pass.manad6",
+  "pass.manad7", "pass.manad8", "pass.manad9", "pass.manad10", "pass.manad11", "pass.manad12",
 ];
 
-/** Deterministisk svensk datumtext (inga tidszons-race mellan server och klient). */
-function dagText(datum: string): string {
+/** Månadsnamn (0-indexat) på aktuellt språk. */
+function manadNamn(sprak: SprakId, index: number): string {
+  return oversatt(MANAD_NYCKLAR[index], sprak);
+}
+
+/** Deterministisk datumtext per språk (inga tidszons-race mellan server och klient).
+ *  EXAKT samma datumlogik som originalet: y/m/d-split, ingen Date-konstruktion. */
+function dagText(datum: string, sprak: SprakId): string {
   const [y, m, d] = datum.split("-").map(Number);
   if (!y || !m || !d) return datum;
-  return `${d} ${MANADER[m - 1]} ${y}`;
+  return `${d} ${manadNamn(sprak, m - 1)} ${y}`;
 }
 
-function tal(n: number | null | undefined, decimaler = 2): string {
-  if (n == null || Number.isNaN(n)) return "–";
-  return n.toLocaleString("sv-SE", { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler });
+/** Talformat per språk (VÅG 113, mönster från fortsatt-panel) — sv-SE = originalet. */
+function talLocale(sprak: SprakId): string {
+  if (sprak === "en") return "en-GB";
+  if (sprak === "ar") return "ar-EG";
+  return "sv-SE";
 }
 
-function procent(n: number | null | undefined, decimaler = 1): string {
+function tal(n: number | null | undefined, decimaler = 2, locale = "sv-SE"): string {
   if (n == null || Number.isNaN(n)) return "–";
-  return `${(n * 100).toLocaleString("sv-SE", { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler })} %`;
+  return n.toLocaleString(locale, { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler });
+}
+
+function procent(n: number | null | undefined, decimaler = 1, locale = "sv-SE"): string {
+  if (n == null || Number.isNaN(n)) return "–";
+  return `${(n * 100).toLocaleString(locale, { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler })} %`;
 }
 
 /** Lås-nyckel enligt quiz-konventionen (räknas även i badge-statistiken). */
@@ -150,6 +161,9 @@ function Sektion({ nr, titel, undertext, children }: { nr: number; titel: string
 // ── Huvudkomponent ───────────────────────────────────────────────────────────
 
 export function DagensPass() {
+  // VÅG 113 — trespråkighet: alla statiska UI-strängar via t() (pass.*-nycklarna).
+  const { t, sprak } = useSprak();
+  const locale = talLocale(sprak);
   const [laddar, setLaddar] = useState(true);
   const [fel, setFel] = useState<string | null>(null);
   const [pass, setPass] = useState<PassData | null>(null);
@@ -180,7 +194,10 @@ export function DagensPass() {
         if (aktiv) setPass(j);
       })
       .catch((e: Error) => {
-        if (aktiv) setFel(e.message || "Kunde inte hämta dagens pass.");
+        // VÅG 113: endast teknikfelmeddelandet (e.message) sparas i state —
+        // den läsbara fallback-texten översätts vid RENDER via t() så att den
+        // alltid följer aktuellt språk (pass.okantFel/pass.motorUpptagen).
+        if (aktiv) setFel(e.message || "");
       })
       .finally(() => {
         if (aktiv) setLaddar(false);
@@ -247,11 +264,11 @@ export function DagensPass() {
       {/* DNA: marin topp-rad som panel-aksent — guldbandet nedtill får sällskap */}
       <div className="marin-panel absolute inset-x-0 top-0 h-1" />
       <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-gold">
-        Daglig ritual · 5 minuter · Riktig marknadsdata
+        {t("pass.heroEtikett")}
       </p>
-      <h1 className="mt-2 font-serif text-4xl font-bold sm:text-5xl">Dagens Pass</h1>
+      <h1 className="mt-2 font-serif text-4xl font-bold sm:text-5xl">{t("nav.dagensPassMeny")}</h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        {pass ? dagText(pass.datum) : laddar ? "…" : "—"}
+        {pass ? dagText(pass.datum, sprak) : laddar ? "…" : "—"}
       </p>
       <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
     </div>
@@ -266,7 +283,7 @@ export function DagensPass() {
           <div className="h-10 w-2/3 rounded bg-muted" />
           <div className="h-4 w-1/2 rounded bg-muted" />
           <p className="pt-2 text-center text-xs text-muted-foreground">
-            Analysmotorn hämtar live-data för dagens aktie…
+            {t("pass.hamtarLive")}
           </p>
         </div>
       </div>
@@ -278,15 +295,15 @@ export function DagensPass() {
       <div className="space-y-6">
         {hero}
         <div className="rounded-2xl border border-bear/30 bg-bear/5 p-6 text-center">
-          <p className="font-serif text-lg font-bold text-bear">Passet kunde inte laddas</p>
+          <p className="font-serif text-lg font-bold text-bear">{t("pass.kundeInteLadda")}</p>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            {fel || "Okänt fel."} Analysmotorn kan vara upptagen — ladda om sidan om en stund.
+            {t("pass.motorUpptagen", { fel: fel || t("pass.okantFel") })}
           </p>
           <button
             onClick={() => window.location.reload()}
             className="mt-4 rounded-lg border border-gold/50 bg-gold/10 px-4 py-2 text-xs font-bold text-gold hover:bg-gold/20"
           >
-            Försök igen
+            {t("pass.forsokIgen")}
           </button>
         </div>
       </div>
@@ -303,15 +320,19 @@ export function DagensPass() {
       {hero}
       {xpKick > 0 && (
         <div className="rounded-lg border border-gold/40 bg-gold/10 px-4 py-2 text-center text-xs font-bold text-gold">
-          +{xpKick} XP förtjänade — bra jobbat!
+          {t("pass.xpFortjanade", { xp: xpKick })}
         </div>
       )}
 
       {/* 1 · VECKANS AKTIE */}
-      <Sektion nr={1} titel="Veckans aktie" undertext="Läs marknaden först — motorn avslöjar sitt svar efteråt">
+      <Sektion nr={1} titel={t("pass.veckansAktie")} undertext={t("pass.veckansAktieUnder")}>
         <div className="rounded-xl border border-gold/20 bg-paper/60 p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
+              {/* API-texter (pass.namn, ticker, bors, valuta) kommer från
+                  /api/dagens-pass och förblir svenska denna våg — motor-
+                  pipelinen översätts i en senare våg, samma princip som
+                  UI:t före språkleverantören. */}
               <p className="font-serif text-2xl font-bold leading-tight">{pass.namn}</p>
               <p className="font-mono text-xs text-muted-foreground">
                 {pass.ticker}
@@ -320,11 +341,11 @@ export function DagensPass() {
             </div>
             <div className="text-right">
               <p className="font-serif text-2xl font-bold text-gold">
-                {tal(d?.pris)} {pass.valuta || "SEK"}
+                {tal(d?.pris, 2, locale)} {pass.valuta || "SEK"}
               </p>
               {pass.senaste && (
                 <p className="text-[10px] text-muted-foreground">
-                  Senaste (Yahoo): {tal(pass.senaste.pris)}
+                  {t("pass.senasteYahoo", { pris: tal(pass.senaste.pris, 2, locale) })}
                 </p>
               )}
             </div>
@@ -333,9 +354,9 @@ export function DagensPass() {
           {/* 52-veckors spannet */}
           <div className="mt-4">
             <div className="flex justify-between text-[10px] text-muted-foreground">
-              <span>52v-låg {tal(d?.lag52)}</span>
-              <span className="font-bold text-foreground">52v-position: {pos52Procent}% av spannet</span>
-              <span>52v-hög {tal(d?.hojd52)}</span>
+              <span>{t("pass.52vLag", { pris: tal(d?.lag52, 2, locale) })}</span>
+              <span className="font-bold text-foreground">{t("pass.52vPosition", { procent: pos52Procent })}</span>
+              <span>{t("pass.52vHog", { pris: tal(d?.hojd52, 2, locale) })}</span>
             </div>
             <div className="relative mt-1 h-2.5 rounded-full bg-gradient-to-r from-bear/40 via-gold/40 to-bull/40">
               <div
@@ -349,7 +370,7 @@ export function DagensPass() {
           {!avslujad ? (
             <div className="mt-5">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Din gissning — vilken vågklass är aktien i just nu?
+                {t("pass.dinGissning")}
               </p>
               <div className="mt-2 grid gap-2 sm:grid-cols-3">
                 {KLASSER.map((k) => (
@@ -358,7 +379,7 @@ export function DagensPass() {
                     onClick={() => gissa(k.id)}
                     className="rounded-lg border border-border bg-card px-3 py-3 text-sm font-bold transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:bg-gold/5"
                   >
-                    <span className="mr-1.5 text-base">{k.ikon}</span> {k.etikett}
+                    <span className="mr-1.5 text-base">{k.ikon}</span> {t(KLASS_TEXT[k.id].etikett)}
                   </button>
                 ))}
               </div>
@@ -366,20 +387,24 @@ export function DagensPass() {
           ) : (
             <div className="mt-5 space-y-3">
               <div className="rounded-lg border border-gold/40 bg-gold/5 p-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-gold">Motorns svar (KORT horisont)</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-gold">{t("pass.motornsSvar")}</p>
                 <p className="mt-1 font-serif text-xl font-bold">
                   {kortVag
-                    ? `${KLASSER.find((k) => k.id === kortVag)?.ikon} ${KLASSER.find((k) => k.id === kortVag)?.etikett}`
-                    : "Osatt — insufficient data"}
+                    ? `${KLASSER.find((k) => k.id === kortVag)?.ikon} ${t(KLASS_TEXT[kortVag].etikett)}`
+                    : t("pass.osattData")}
                 </p>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                  {kortVag ? KLASSER.find((k) => k.id === kortVag)?.not : "Motorn kunde inte klassificera vågen säkert på kort horisont."}
+                  {kortVag ? t(KLASS_TEXT[kortVag].not) : t("pass.motorKundeInte")}
                 </p>
                 {gissning && kortVag && (
                   <p className={`mt-2 rounded border px-2.5 py-1.5 text-xs leading-snug ${gissning === kortVag ? "border-bull/40 bg-bull/10 text-bull" : "border-gold/40 bg-paper text-foreground"}`}>
                     {gissning === kortVag
-                      ? "✓ Din läsning matchar motorn — du läser momentum och trend rätt."
-                      : `⚠ Du gissade ${KLASSER.find((k) => k.id === gissning)?.etikett.toLowerCase()}, motorn säger ${KLASSER.find((k) => k.id === kortVag)?.etikett.toLowerCase()}. Fråga dig: vilka data stödjer DIN läsning — och vad ser motorn som du missar?`}
+                      ? t("pass.matchar")
+                      : // lowercase-matchar originalmallen; no-op på arabiska (ofarligt).
+                        t("pass.matcharInte", {
+                          gissning: t(KLASS_TEXT[gissning].etikett).toLowerCase(),
+                          svar: t(KLASS_TEXT[kortVag].etikett).toLowerCase(),
+                        })}
                   </p>
                 )}
               </div>
@@ -399,8 +424,8 @@ export function DagensPass() {
                             : "border-border bg-muted text-muted-foreground";
                     return (
                       <div key={h.key} className={`rounded border px-2 py-1.5 text-center ${styl}`}>
-                        <div className="text-[9px] font-bold uppercase tracking-wider opacity-80">{h.etikett}</div>
-                        <div className="text-[11px] font-bold capitalize">{v || "osatt"}</div>
+                        <div className="text-[9px] font-bold uppercase tracking-wider opacity-80">{t(h.etikett)}</div>
+                        <div className="text-[11px] font-bold capitalize">{v || t("pass.osatt")}</div>
                       </div>
                     );
                   })}
@@ -414,8 +439,8 @@ export function DagensPass() {
                     <div className="bg-bear" style={{ width: `${(samman.bear / 25) * 100}%` }} title={`${samman.bear} bear-celler`} />
                   </div>
                   <p className="mt-1 text-[10px] text-muted-foreground">
-                    25-cellers-matrisen: {samman.bull} bull · {samman.neutral} neutrala · {samman.bear} bear
-                    {pass.kallor ? ` · ${pass.kallor} källor` : ""}
+                    {t("pass.matris25", { bull: samman.bull, neutrala: samman.neutral, bear: samman.bear })}
+                    {pass.kallor ? t("pass.kallor", { kallor: pass.kallor }) : ""}
                   </p>
                 </div>
               )}
@@ -423,19 +448,19 @@ export function DagensPass() {
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                   <div className="rounded border border-border bg-card p-2 text-center">
                     <div className="text-[9px] uppercase tracking-wider text-muted-foreground">P/E</div>
-                    <div className="text-sm font-bold">{tal(f.pe)}</div>
+                    <div className="text-sm font-bold">{tal(f.pe, 2, locale)}</div>
                   </div>
                   <div className="rounded border border-border bg-card p-2 text-center">
-                    <div className="text-[9px] uppercase tracking-wider text-muted-foreground">Utdelning</div>
-                    <div className="text-sm font-bold">{procent(f.utdelning)}</div>
+                    <div className="text-[9px] uppercase tracking-wider text-muted-foreground">{t("pass.utdelning")}</div>
+                    <div className="text-sm font-bold">{procent(f.utdelning, 1, locale)}</div>
                   </div>
                   <div className="rounded border border-border bg-card p-2 text-center">
                     <div className="text-[9px] uppercase tracking-wider text-muted-foreground">ROE</div>
-                    <div className="text-sm font-bold">{procent(f.roe)}</div>
+                    <div className="text-sm font-bold">{procent(f.roe, 1, locale)}</div>
                   </div>
                   <div className="rounded border border-border bg-card p-2 text-center">
-                    <div className="text-[9px] uppercase tracking-wider text-muted-foreground">Vinstmarginal</div>
-                    <div className="text-sm font-bold">{procent(f.vinstmarginal)}</div>
+                    <div className="text-[9px] uppercase tracking-wider text-muted-foreground">{t("pass.vinstmarginal")}</div>
+                    <div className="text-sm font-bold">{procent(f.vinstmarginal, 1, locale)}</div>
                   </div>
                 </div>
               )}
@@ -446,7 +471,7 @@ export function DagensPass() {
                 }}
                 className="text-[11px] text-muted-foreground underline hover:text-foreground"
               >
-                Gissa igen
+                {t("pass.gissaIgen")}
               </button>
             </div>
           )}
@@ -454,8 +479,8 @@ export function DagensPass() {
       </Sektion>
 
       {/* 2 · DAGENS FRÅGA */}
-      <Sektion nr={2} titel="Dagens fråga" undertext="+10 XP per rätt svar (en gång per dag och fråga)">
-        {/* Vågklass-frågan */}
+      <Sektion nr={2} titel={t("pass.dagensFraga")} undertext={t("pass.dagensFragaUnder")}>
+        {/* Vågklass-frågan — fraga/alternativ är API-texter (svenska denna våg). */}
         <div className="rounded-xl border border-gold/20 bg-paper/60 p-4">
           <p className="text-sm font-medium leading-snug">{pass.dagensFraga.fraga}</p>
           <div className="mt-3 space-y-1.5">
@@ -482,20 +507,19 @@ export function DagensPass() {
           </div>
           {vagVal !== null && !vagKlar && (
             <p className="mt-2 rounded border border-gold/40 bg-gold/5 px-2.5 py-1.5 text-[11px] leading-snug text-muted-foreground">
-              Inte riktigt — titta på vågprofilen i steg 1 igen: går marknaden trendmässigt upp, ned eller sidledes på kort
-              horisont? Försök igen.
+              {t("pass.inteRiktigt")}
             </p>
           )}
           {vagKlar && (
             <p className="mt-2 text-[11px] font-bold text-bull">
-              ✓ Rätt — motorns klassificering på KORT horisont är {pass.dagensFraga.alternativ[pass.dagensFraga.rattIndex]}.
+              {t("pass.rattVag", { svar: pass.dagensFraga.alternativ[pass.dagensFraga.rattIndex] })}
             </p>
           )}
         </div>
 
-        {/* AKM1-frågan */}
+        {/* AKM1-frågan — fraga/alternativ/tips är API-texter (svenska denna våg). */}
         <div className="mt-4 rounded-xl border border-gold/20 bg-paper/60 p-4">
-          <p className="text-[10px] font-bold uppercase tracking-wider text-gold">AKM1 · grundmur-variabeln</p>
+          <p className="text-[10px] font-bold uppercase tracking-wider text-gold">{t("pass.akm1Etikett")}</p>
           <p className="mt-1 text-sm font-medium leading-snug">{pass.akm1Fraga.fraga}</p>
           <div className="mt-3 space-y-1.5">
             {pass.akm1Fraga.alternativ.map((alt, j) => {
@@ -521,55 +545,57 @@ export function DagensPass() {
           </div>
           {akm1Val !== null && !akm1Klar && (
             <p className="mt-2 rounded border border-gold/40 bg-gold/5 px-2.5 py-1.5 text-[11px] leading-snug text-muted-foreground">
-              Coachning: {pass.akm1Fraga.tips} — följ spåret och försök igen.
+              {t("pass.coachning", { tips: pass.akm1Fraga.tips })}
             </p>
           )}
           {akm1Klar && (
             <p className="mt-2 text-[11px] leading-snug text-muted-foreground">
-              <span className="font-bold text-bull">✓ Rätt.</span> {pass.akm1Fraga.tips}
+              <span className="font-bold text-bull">{t("pass.ratt")}</span> {pass.akm1Fraga.tips}
             </p>
           )}
         </div>
       </Sektion>
 
       {/* 3 · REPETERA */}
-      <Sektion nr={3} titel="Repetera" undertext="Glömskekurvan bestämmer — korten bor i AI-Mentorn">
+      <Sektion nr={3} titel={t("pass.repetera")} undertext={t("pass.repeteraUnder")}>
         <div className="rounded-xl border border-gold/20 bg-paper/60 p-4">
-          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Dagens repetitionsstatistik</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t("pass.repStatistik")}</p>
           {hydrerad && sr ? (
             <>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 <div className="rounded border border-border bg-card p-2.5 text-center">
                   <div className="font-serif text-2xl font-bold text-gold">{sr.forfallna}</div>
-                  <div className="text-[10px] text-muted-foreground">förfallna idag</div>
+                  <div className="text-[10px] text-muted-foreground">{t("pass.forfallnaIdag")}</div>
                 </div>
                 <div className="rounded border border-border bg-card p-2.5 text-center">
                   <div className="font-serif text-2xl font-bold">{sr.beharskade}</div>
-                  <div className="text-[10px] text-muted-foreground">i långt minne</div>
+                  <div className="text-[10px] text-muted-foreground">{t("pass.langtMinne")}</div>
                 </div>
                 <div className="rounded border border-border bg-card p-2.5 text-center">
                   <div className="font-serif text-2xl font-bold">{sr.sedda}</div>
-                  <div className="text-[10px] text-muted-foreground">av {sr.totalt} sedda</div>
+                  <div className="text-[10px] text-muted-foreground">{t("pass.avSedda", { totalt: sr.totalt })}</div>
                 </div>
                 <div className="rounded border border-border bg-card p-2.5 text-center">
                   <div className="font-serif text-2xl font-bold">{sr.repetitionerTotalt}</div>
-                  <div className="text-[10px] text-muted-foreground">repetitioner totalt</div>
+                  <div className="text-[10px] text-muted-foreground">{t("pass.repetitionerTotalt")}</div>
                 </div>
               </div>
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                {/* nastaNasta är en svensk datumsträng från repetitions-libben (API-nivå,
+                    svenska denna våg); "snart"-fallback saknar ordlistenyckel. */}
                 {sr.forfallna > 0
-                  ? `${sr.forfallna} kort väntar på dig idag — varje "Bra"-svar förtjänar +5 XP.`
-                  : "Inga kort förfallna idag — perfekt discipl. Nästa kort förfaller " + (sr.nastaNasta || "snart") + "."}
+                  ? t("pass.kortVantar", { antal: sr.forfallna })
+                  : t("pass.ingaForfallna", { nar: sr.nastaNasta || "snart" })}
               </p>
               {/* DNA: primär knapp i marin med guldtext */}
               <button
                 onClick={oppnaMentorn}
                 className="btn-marin mt-3 inline-flex items-center gap-2 px-4 py-2 text-xs"
               >
-                Fortsätt i AI-Mentorn <span aria-hidden>→</span>
+                {t("pass.fortsattMentorn")} <span aria-hidden>→</span>
               </button>
               <p className="mt-1.5 text-[10px] text-muted-foreground">
-                AI-Mentorn finns i chat-bubblan nere till höger — där bor flashcardsen.
+                {t("pass.mentorPlats")}
               </p>
             </>
           ) : (
@@ -579,7 +605,7 @@ export function DagensPass() {
       </Sektion>
 
       {/* 4 · STREAK */}
-      <Sektion nr={4} titel="Streak" undertext="Kunskap älskar närvaro">
+      <Sektion nr={4} titel={t("pass.streak")} undertext={t("pass.streakUnder")}>
         <div className="rounded-xl border border-gold/20 bg-paper/60 p-6 text-center">
           {hydrerad ? (
             <>
@@ -588,10 +614,10 @@ export function DagensPass() {
               <div className="marin-panel mx-auto mt-3 w-fit rounded-full px-6 py-1">
                 <p className="font-serif text-5xl font-bold text-gold">{streak.antal}</p>
               </div>
-              <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">dagar i rad</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">{t("pass.dagarIRad")}</p>
               <p className="mx-auto mt-3 max-w-sm text-xs leading-relaxed text-muted-foreground">
-                Bästa streak: {streak.basta} dagar. Gör dagens pass imorgon också — streaken lever så länge du gör.
-                <span className="mt-1 block font-bold text-foreground">Kom tillbaka imorgon.</span>
+                {t("pass.streakText", { basta: streak.basta })}{" "}
+                <span className="mt-1 block font-bold text-foreground">{t("pass.komImorgon")}</span>
               </p>
             </>
           ) : (
@@ -600,9 +626,9 @@ export function DagensPass() {
         </div>
       </Sektion>
 
+      {/* Fotnot — pass.notering är API-text (svensk denna våg), fallback översätts. */}
       <p className="pb-2 text-center text-[10px] leading-relaxed text-muted-foreground">
-        Dagens Pass är pedagogisk träning på riktig marknadsdata — inte råd. Signaler:{" "}
-        {pass.notering || "heuristiska proxy-mätare — pedagogiskt verktyg, inte investeringsråd."}
+        {t("pass.fotnot", { notering: pass.notering || t("pass.standardNotering") })}
       </p>
     </div>
   );

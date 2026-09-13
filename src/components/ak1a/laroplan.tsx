@@ -6,6 +6,8 @@ import Link from "next/link";
 import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
 import { kraverFas, harFas2Access, harFas3Access, arAdmin } from "@/lib/kurs-access";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { useSprak } from "@/components/ak1a/sprak-leverantor";
+import type { OrdlistaNyckel } from "@/lib/ordlista";
 
 /**
  * Läroplanen — resan från nybörjare till oberoende aktieanalytiker.
@@ -15,14 +17,38 @@ import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
  * /fas2-ansok resp. /fas3.
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, aktiv accordion får marin vänsterkant.
+ *
+ * VÅG 113 — TRE SPRÅK (sv/en/ar): alla UI-strängar körs via useSprak().t
+ * med nycklarna laro.* (ordlistan, sektionen VÅG 113). Nivåernas namn/
+ * beskrivning/mål ligger i den typade lookup-tabellen NIVA_TEXT nedan —
+ * inga template-strings mot OrdlistaNyckel (typsystemet kräver exakta
+ * nycklar). Svenska sidan renderar oförändrat (sv-raderna är komponentens
+ * exakta originalsträngar); speglarna /en/laroplan + /ar/laroplan skickar
+ * lankPrefix så interna länkar följer spegeln.
+ *
+ * Kurs-SYFTENA (kurser[].syfte) är medvetet kvar på svenska: syftena är
+ * KURSINNEHÅLL som översätts av fas 3-pipelinen (kurs-översättningslagret,
+ * "{slug}:titel" m.m.) — samma fallback-princip som kurstitlarna hade före
+ * våg 80b. De rörs inte här.
  */
+
+/**
+ * Typad lookup-tabell för nivåtexterna (våg 113): exakta nycklar från
+ * ordlistan istället för template-strings — OrdlistaNyckel är ett union-
+ * literaltyp och `laro.niva${id}.namn` vore inte typbar. laro.niva3.
+ * beskrivning tar parametern {bokmaster} (SIFFROR.bokmaster) — se render.
+ */
+const NIVA_TEXT: Record<number, { namn: OrdlistaNyckel; beskrivning: OrdlistaNyckel; mal: OrdlistaNyckel }> = {
+  1: { namn: "laro.niva1.namn", beskrivning: "laro.niva1.beskrivning", mal: "laro.niva1.mal" },
+  2: { namn: "laro.niva2.namn", beskrivning: "laro.niva2.beskrivning", mal: "laro.niva2.mal" },
+  3: { namn: "laro.niva3.namn", beskrivning: "laro.niva3.beskrivning", mal: "laro.niva3.mal" },
+  4: { namn: "laro.niva4.namn", beskrivning: "laro.niva4.beskrivning", mal: "laro.niva4.mal" },
+  5: { namn: "laro.niva5.namn", beskrivning: "laro.niva5.beskrivning", mal: "laro.niva5.mal" },
+};
 
 const NIVAER = [
   {
     id: 1,
-    namn: "Grunderna",
-    beskrivning: "Bygg din fundamentala bas — de 20 byggstenarna i AKM1",
-    mal: "Du förstår vad varje variabel mäter och varför den finns",
     badge: "🌱",
     kurser: [
       { slug: "v01-forsaljningstillvaxt", syfte: "Lär dig den viktigaste tillväxtindikatorn", tid: 15 },
@@ -49,9 +75,6 @@ const NIVAER = [
   },
   {
     id: 2,
-    namn: "Fördjupning",
-    beskrivning: "Gå djupare på värdering och riskhantering — med grundläggande orientering i teknisk analys (ej utbildning i ämnet)",
-    mal: "Du kan kombinera variabler till en helhetsbild",
     badge: "📖",
     kurser: [
       { slug: "km-001-arsredovisningens-grunder", syfte: "Läs en årsredovisning från pärm till pärm", tid: 20 },
@@ -70,9 +93,6 @@ const NIVAER = [
   },
   {
     id: 3,
-    namn: "Bokmaster",
-    beskrivning: `Läs mästarna — ${SIFFROR.bokmaster} kompletta böckers visdom, kapitel för kapitel`, // hela BOKMASTER-stocken ur siffror.ts
-    mal: "Du har böckernas visdom integrerad i ditt eget tänkande",
     badge: "🏛️",
     kurser: [
       { slug: "akm1-den-kontroversiella-modellen", syfte: "EKOSYSTEMET: alla 20 variabler superdjupt — vad mainstream säger och varför vi avviker", tid: 240, xp: 2500 },
@@ -110,9 +130,6 @@ const NIVAER = [
   },
   {
     id: 4,
-    namn: "Praktik",
-    beskrivning: "Tillämpa på riktiga bolag och din egen portfölj",
-    mal: "Du kan genomföra en komplett analys på egen hand",
     badge: "🔬",
     kurser: [
       { slug: "pc-002-case-hm", syfte: "Analysera ett konsumentbolag steg för steg", tid: 20 },
@@ -124,9 +141,6 @@ const NIVAER = [
   },
   {
     id: 5,
-    namn: "Självständighet",
-    beskrivning: "Bli en oberoende aktieanalytiker — Fas 2 och bortom",
-    mal: "Du kan analysera, värdera och bygga portföljer helt på egen hand",
     badge: "🎓",
     kurser: [
       { slug: "se-001-sektoranalys-grunder", syfte: "Förstå en hel bransch", tid: 16 },
@@ -138,7 +152,8 @@ const NIVAER = [
   },
 ];
 
-export function Laroplan() {
+export function Laroplan({ lankPrefix = "" }: { lankPrefix?: string }) {
+  const { t } = useSprak();
   const [medlem, setMedlem] = useState(false);
   const [klara, setKlara] = useState<string[]>([]);
   const [xp, setXp] = useState(0);
@@ -165,32 +180,34 @@ export function Laroplan() {
       {/* Sidhuvud — marin axel-rad som institutionell signatur ovanför rubriken */}
       <div className="text-center">
         <div className="mx-auto h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
-        <h1 className="mt-3 font-serif text-4xl font-bold">Läroplanen</h1>
+        {/* H1 via nav-nyckeln — "Läroplanen" / "The Curriculum" / "المنهج" */}
+        <h1 className="mt-3 font-serif text-4xl font-bold">{t("nav.laroplanen")}</h1>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Från nybörjare till oberoende aktieanalytiker. {totalKurser} kurser i 5 nivåer —
-          varje kurs bygger mot målet: att du kan analysera, värdera och förvalta på egen hand.
+          {t("laro.intro", { kurser: totalKurser })}
         </p>
       </div>
 
       {/* Progress — kortstandard, marin spår med behållen guldfyllnad */}
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-gold/25 bg-card p-5">
         <div className="flex items-center justify-between text-xs">
-          <span className="font-bold text-gold">Din resa</span>
-          <span className="tabular-nums text-muted-foreground">{klaraKurser}/{totalKurser} kurser ({procent}%)</span>
+          <span className="font-bold text-gold">{t("laro.dinResa")}</span>
+          <span className="tabular-nums text-muted-foreground">
+            {t("laro.kurserRaknare", { klara: klaraKurser, total: totalKurser, procent })}
+          </span>
         </div>
         <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#0E1B2E]/10">
           <div className="h-full rounded-full bg-gold transition-all" style={{ width: `${procent}%` }} />
         </div>
         <p className="mt-2 text-center text-xs tabular-nums text-muted-foreground">
-          Nivå {niva()}/100 · {xp} XP · {medlem ? "✅ Inloggad" : "⚠️ Inte inloggad"}
+          {t("laro.nivaXp", { niva: niva(), xp })} · {medlem ? t("laro.inloggad") : t("laro.inteInloggad")}
         </p>
         {/* Primär action — marin knapp med guldstext (ej guldknapp) */}
         {!medlem && (
           <Link
-            href="/logga-in"
+            href={`${lankPrefix}/logga-in`}
             className="mt-2 block rounded-lg bg-[#0E1B2E] px-4 py-2 text-center text-xs font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"
           >
-            Logga in gratis för att spara din progress →
+            {t("laro.loggaInGratis")}
           </Link>
         )}
       </div>
@@ -198,23 +215,19 @@ export function Laroplan() {
       {/* Vad är Fas 2 och Fas 3? — förklarar 🔒-markeringen i nivåerna (inbjudan, aldrig stopp) */}
       <p className="mx-auto mt-3 flex max-w-xl flex-wrap items-center justify-center gap-1.5 text-center text-[11px] leading-relaxed text-muted-foreground">
         <span aria-hidden>🔒</span>
-        <span className="font-bold text-gold">Vad är Fas 2 och Fas 3?</span>
-        <span>
-          Fas 2 — sammanvägningen av de 20 indikatorerna till ett eget omdöme (18
-          mästarverks-kurser). Fas 3 — det dynamiska ekosystemet: vågor, teknisk
-          analys på mästarnivå och psykologi (24 kurser). Öppnas med medlemskap.
-        </span>
+        <span className="font-bold text-gold">{t("laro.vadArFas")}</span>
+        <span>{t("laro.fasForklaring")}</span>
         <Link
-          href="/fas2-ansok"
+          href={`${lankPrefix}/fas2-ansok`}
           className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
         >
-          Fas 2 →
+          {t("laro.fas2Lank")}
         </Link>
         <Link
-          href="/fas3"
+          href={`${lankPrefix}/fas3`}
           className="underline decoration-gold/50 underline-offset-2 hover:text-foreground"
         >
-          Fas 3 →
+          {t("laro.fas3Lank")}
         </Link>
       </p>
 
@@ -223,10 +236,11 @@ export function Laroplan() {
           kategoribalans, BOKMASTER, tidssuggestioner) återanvänds här så
           läroplanen öppnar med elevens egna nästa steg. Endast för inloggade —
           gäster ser den klassiska nivåstrukturen oreducerad. Komponenten är
-          hydration-säker och tyst om den inte hittar tips. */}
+          hydration-säker och tyst om den inte hittar tips. Rubriken översätts
+          här (KurstipsKorts default är svensk text utan egen översättning). */}
       {medlem && (
         <div className="mt-8">
-          <KurstipsKort antal={3} rubrik="Dina nästa kurser i läroplanen" />
+          <KurstipsKort antal={3} rubrik={t("laro.dinaNasta")} />
         </div>
       )}
 
@@ -236,6 +250,7 @@ export function Laroplan() {
           const klaraINivan = niv.kurser.filter((k) => klara.includes(k.slug)).length;
           const procentNiva = Math.round((klaraINivan / niv.kurser.length) * 100);
           const oppen = oppnadNiva === niv.id;
+          const text = NIVA_TEXT[niv.id];
 
           return (
             <section
@@ -257,14 +272,20 @@ export function Laroplan() {
                   <div className="h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
                   <div className="mt-2 flex items-baseline justify-between">
                     <h2 className="font-serif text-xl font-bold">
-                      Nivå {niv.id}: {niv.namn}
+                      {t("laro.nivaRubrik", { id: niv.id, namn: t(text.namn) })}
                     </h2>
                     <span className="text-xs font-bold tabular-nums text-muted-foreground">
                       {klaraINivan}/{niv.kurser.length} ✓
                     </span>
                   </div>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{niv.beskrivning}</p>
-                  <p className="mt-1 text-[11px] italic text-gold">🎯 {niv.mal}</p>
+                  {/* Nivå 3:s beskrivning bär {bokmaster} (SIFFROR.bokmaster,
+                      hela BOKMASTER-stocken ur siffror.ts) — övriga parametrlösa */}
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {niv.id === 3
+                      ? t(text.beskrivning, { bokmaster: SIFFROR.bokmaster })
+                      : t(text.beskrivning)}
+                  </p>
+                  <p className="mt-1 text-[11px] italic text-gold">🎯 {t(text.mal)}</p>
                   {/* Nivå-progress — guldfyllnad behållen, spår i marin ton */}
                   <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#0E1B2E]/10">
                     <div className="h-full rounded-full bg-gold" style={{ width: `${procentNiva}%` }} />
@@ -285,8 +306,8 @@ export function Laroplan() {
                     return (
                       <Link
                         key={kurs.slug}
-                        href={last ? (fas === 3 ? "/fas3" : "/fas2-ansok") : `/kurser/${kurs.slug}`}
-                        title={last ? `Öppnas i Fas ${fas} — kräver Fas ${fas}-medlemskap` : undefined}
+                        href={last ? (fas === 3 ? `${lankPrefix}/fas3` : `${lankPrefix}/fas2-ansok`) : `${lankPrefix}/kurser/${kurs.slug}`}
+                        title={last ? t("laro.kraverMedlemskap", { fas }) : undefined}
                         className={`flex items-center gap-3 rounded-xl border bg-card px-3 py-2.5 transition hover:shadow-md ${
                           klar ? "border-bull/40" : "border-gold/25 hover:border-gold/50"
                         }`}
@@ -299,8 +320,8 @@ export function Laroplan() {
                         <div className="min-w-0 flex-1">
                           <p className="truncate font-serif text-sm font-semibold">{kurs.syfte}</p>
                           <p className="text-[10px] tabular-nums text-muted-foreground">
-                            {kurs.tid} min {kurs.xp ? `· ${kurs.xp} XP` : ""}
-                            {last ? ` · 🔒 Öppnas i Fas ${fas}` : ""}
+                            {kurs.tid} {t("laro.min")} {kurs.xp ? `· ${kurs.xp} XP` : ""}
+                            {last ? ` · 🔒 ${t("laro.oppnasI", { fas })}` : ""}
                           </p>
                         </div>
                         {last ? (
@@ -311,7 +332,7 @@ export function Laroplan() {
                                 : "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
                             }`}
                           >
-                            🔒 Fas {fas}
+                            {t("laro.fasBadge", { fas })}
                           </span>
                         ) : (
                           <span className="text-muted-foreground">→</span>
@@ -330,14 +351,12 @@ export function Laroplan() {
       <div className="mt-10 rounded-xl border border-gold/25 bg-card p-6 text-center">
         <div className="mx-auto h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
         <p className="mt-3 text-3xl">🎓</p>
-        <h2 className="mt-2 font-serif text-2xl font-bold">Målet: Oberoende aktieanalytiker</h2>
+        <h2 className="mt-2 font-serif text-2xl font-bold">{t("laro.certifieringRubrik")}</h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-          När du klarat alla 5 nivåer har du verktygen för att analysera bolag,
-          värdera aktier, bygga portföljer och fatta egna beslut — utan att
-          bero av andras tips eller rekommendationer.
+          {t("laro.certifieringText")}
         </p>
         <p className="mt-3 text-xs font-bold text-gold">
-          Detta är Fas 1 — alltid gratis, alltid öppet. Fundamental-analys är en rättighet.
+          {t("laro.fas1Fot")}
         </p>
       </div>
     </div>

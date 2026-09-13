@@ -43,6 +43,18 @@ Mina kurser-grid: påbörjade (progress per kurs), klara (stjärnor), nästa
 rekommenderade (lärvägen), quiz-svagheter → övningstips. Allt ur befintlig
 progress-data (system_events) — ingen ny tabell i första steget.
 
+**SLUTBITEN LEVERERAD 2026-09-13 (hjärtslagsrond, commit adc95a33
+[organ:P]):** "Mina kurser"-gridet (KursNavet) på Min Sida — läroplanen +
+Fortsatt-panel + LarvagKort + quiz-svagheterna fanns sedan våg 88/99; det
+som saknades var gridet. MedlemProgress utökat bakåtkompatibelt med
+paborjadeKurser + quizRatta (härletts ur samma system_events-karta i
+aggredereaProgress — ingen ny läsning; import-raden kan ärligt aldrig
+markera påbörjad kurs). KursNavet: PÅBÖRJADE (quiz-räknare, flest rätt
+först + Fortsätt-knapp) + KLARA (★ + repetera), tak 6 kort/sektion,
+gäst ⇒ inloggningsrad; marin-familjens fasta palett, ≥ 44 px tryckytor.
+kursKort props ur getCourseList() vid build — /min-sida förblir statisk.
+KVD: tsc exakt 34 = baslinjen (0 nya, inga i de fem filerna).
+
 ### VÅG 104 — ANALYSERNA I NAVET
 Senaste AKM2-analyser (ur analysbiblioteket) + "din bevakning" (watchlist
 per konto). Koppling: bevakat bolag → aktuell analys → relaterad kurs.
@@ -73,6 +85,19 @@ migrera-progress (våg 87). Premium-tiers bakom flagga.
 Korskopplingar alla ytor, tre språk fullt, hastighet (ISR där möjligt),
 KVD full (tsc-baslinje · motorer · vakten · prod 200), systemkartan
 uppdaterad med nya scores.
+
+**TRE SPRÅK FULLT — LEVERERAT 2026-09-13 (portal-spårets våg 113,
+huvudagenten):** sista trespråksgapet i portalen stängt — Certifikat,
+Dagens Pass och Läroplan är nu sv/en/ar via useSprak + ordlistans 133 nya
+nycklar (cert.*/pass.*/laro.*, typad SprakRad = tre språk per post,
+tsc-verifierat). Sex nya spegelsidor: /en+/{certifikat,dagens-pass,
+laroplan} enligt våg 51-mönstret (spegelMetadata + force-static + ISR 1 h;
+Certifikat/Laroplan tar lankPrefix så interna länkar följer spegeln).
+Datum/tal per locale (en-GB/ar-EG, sv-SE = originalet); latinska
+varumärken (AK1A/AKM1/AK1TS/XP) förblir latinska även på arabiska enligt
+ordlistans riktlinjer; API-texter (pass.namn m.m.) förblir svenska denna
+våg — motorpipelinen översätts separat. Svenska originalsidor oförändrade
+(default-props). KVD: tsc exakt 34 = baslinjen (0 nya, 0 i våg-filerna).
 
 ## DRIFTEN — 24/7 ONLINE
 

@@ -121,6 +121,19 @@ denna server. Leveransprotokoll:
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
 
+## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
+
+Huvudagentens studio-skal har två kända svagheter (app-server 3.11.2-22):
+sammansatta bash-kommandon (flock/redirect/heredoc/långa rader) triggar
+~30 s-häng i direktsändningen, och bakgrundskörningar startar EJ via
+studio-shellet. KUR (sessionen bevisade den själv under rond F):
+1. Sammansatta kommandon → Write skriptfil först + kort `bash <fil>`
+   (ALDRIG flock/redirekt/heredoc/långa rader direkt i huvud-shellet).
+2. Byggen och tunga körningar → DISPATCHA SUBAGENT — deras skal är
+   felfria (dataagenterna körde alla kommandon utan problem).
+3. Långa commit-meddelanden → `git commit -F <fil>`-mönstret.
+4. Enkla korta kommandon + Read/Write/Edit går alltid igenom direkt.
+
 ## GRÄNSSNITTSVAKTEN (våg 105 — kunddirektiv "aldrig igen nå kundens ögon")
 
 `verktyg/granssnittsvakt.mjs` mäter ALLA publika sidor i båda teman × mobil/dator:

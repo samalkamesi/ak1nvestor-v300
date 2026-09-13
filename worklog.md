@@ -10179,3 +10179,36 @@ läsningslista, aldrig värde eller råd.
 KVD: dataleverans (data/forskning + worklog) — inget bygge krävs; kod
 orörd denna våg. tsc 34 + motorer 107/0/0 + vakten GRÖN + prod 200
 ämndå verifierade som slutkvitto för hela portal-spåret.
+
+### VÅG 121 — PUSH-EFTERSPEL (2026-09-13 ~10:20, huvudagenten)
+
+Pushen till prod-develop NEKADES: "Working directory has unstaged
+changes" — EN enda bov (belagd av drift-subagent, tre bevislinjer):
+`data/cache/analys-nyh_e406a84d.json` i /home/ak1a/AK1, appens egna
+on-demand-omskrivning kl 09:33 (trammad fast den BORDE vara runtime).
+receive.denyCurrentBranch=updateInstead kräver helt rent worktree.
+
+**Säkrat:** hela våg 121 (2c1184ec) finns I PROD-REPOT via sidogren
+`vag121-vantar` (pushad 10:1x — sidogrenar kollar inte worktreet).
+Ingen data går förlorad; appen opåverkad (docs-only-våg).
+
+**ÅTGÄRD för nästa session/rond (två rader, snabb följd):**
+1. `git -C /home/ak1a/AK1 checkout -- data/cache/analys-nyh_e406a84d.json`
+2. `git -C /home/ak1a/agent/ak1 push prod develop`
+3. Verifiera lika HEAD (2c1184ec) → rensa: `git push prod --delete vag121-vantar`
+
+**PERMANENT FIX (nästa våg):** `data/cache/` är runtime-cache som råkar
+vara trammat — lägg i .gitignore + `git rm -r --cached data/cache/`
+(analys först: vilka cache-filer är build-genererade vs runtime).
+Annars återkommer blockeringen vid varje push efter sidbesök.
+
+**Sessionens blockeringar (viktigt för vakten):** i Denna session
+blockerar studio-klienten (30 s-häng, obesvarade behörighetsfrågor):
+nätverk (curl/ssh), node-exekvering, /tmp-skrivningar, git -C mot
+prod — medan workspace-skrivningar, git i arbetsytan och push TILL
+prod fungerar. Auto-policyn NEKAR omedelbart: nyckelfiler, crontab
+(rätt spärr). Subagenter (3 st testade) drabbas likadant. Trolig rot:
+klientkö med väntande promptar + HJÄRTSLOGS-/ROND-PUMPARNA: rondloggen
+saknar 08:43-ronden, hjärtslagsloggen tyst sedan 08:41 — nästa session
+bör först kontrollera pumparnas hälsa (data/vakten/*.log) före nytt
+större arbete. beslutsminne.jsonl är IGÅNG (rond 9-raden skriven).

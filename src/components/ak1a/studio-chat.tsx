@@ -4225,9 +4225,31 @@ export function StudioChat({ hem }: { hem: () => void }) {
             typeof data.senastAktivSessionId === "string" && data.senastAktivSessionId ? data.senastAktivSessionId : null;
           const senastAktivHistorik = Array.isArray(data.senastAktivHistorik) ? data.senastAktivHistorik : [];
           const sparadSid = lasSenasteSessionId();
-          const kandidat = sparadSid && sparadSid === senastAktivSessionId ? sparadSid : senastAktivSessionId;
-          // ── IndexedDB-jämförelse (våg 88 I3): cachen FLER ⇒ cachad vinner ──
+          let kandidat = sparadSid && sparadSid === senastAktivSessionId ? sparadSid : senastAktivSessionId;
+          // VÅG 128 — "STUDION ÄR INTE HELT ÖPPEN"-BOTEN: transporten kan ha
+          // tappat sin sessionsbindning (pm2-omstart/session-churn) medan
+          // ALLA sessioner lever kvar i listan ⇒ kandidat=null ⇒ TOM vy.
+          // Fallback: senaste sessionen i listan + dess historik ⇒ studion
+          // öppnar ALLTID med det senaste samtalet synligt.
           let aktivHistorik = senastAktivHistorik;
+          if (!kandidat) {
+            const sessionerLista =
+              (data as { sessioner?: { sessionId: string }[] }).sessioner ?? [];
+            const s0 = sessionerLista[0];
+            if (s0?.sessionId) {
+              kandidat = s0.sessionId;
+              try {
+                const r2 = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(s0.sessionId)}`, {
+                  headers: adminHeaders(),
+                });
+                if (r2.ok) {
+                  const d2 = (await r2.json()) as { historik?: HistorikPost[] };
+                  if (Array.isArray(d2.historik)) aktivHistorik = d2.historik;
+                }
+              } catch { /* nätverksfel — tabben börjar tom; nästa prompt resumear */ }
+            }
+          }
+          // ── IndexedDB-jämförelse (våg 88 I3): cachen FLER ⇒ cachad vinner ──
           let cacheTrumfar = false;
           if (levande && sparadSid && sparadSid === kandidat) {
             const meta = lasHistorikMeta();

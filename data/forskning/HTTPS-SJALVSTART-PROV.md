@@ -185,7 +185,7 @@ WantedBy=multi-user.target
 **Slutsats (BEVISAT):** pm2-ak1a.service är symlinkad i multi-user.target.wants
 (aktiverad vid boot, se bevis 4) och dess ExecStart är `pm2 resurrect` — dvs
 vid boot återuppväcker pm2 exakt de processer som senast sparats i dumpen
-(bevis 6). Restart=on-ffall ger dessutom omstart vid krasch. PM2_HOME pekar
+(bevis 6). Restart=on-failure ger dessutom omstart vid krasch. PM2_HOME pekar
 på /home/ak1a/.pm2, alltså samma hemvist som dumpen nedan. (Enheten skapad
 Sep 8 20:43 lokal — setup-kvällen; stämmer med DRIFTSBOKEN kap 1
 "pm2-ak1a systemd-tjänsten är enabled".)

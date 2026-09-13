@@ -26,7 +26,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
-const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url), "..");
+const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
 const LOGG = path.join(VAKT, "prod-synk.log");
 

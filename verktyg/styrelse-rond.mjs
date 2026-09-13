@@ -174,18 +174,37 @@ HÅRT LEVERANSPROTOKOLL (strikt):
    Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
 7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
 
-  const res = await fetch(`${BAS}/api/studio/stream`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-admin-password": pass },
-    body: JSON.stringify({ prompt }),
-  });
-  logga(`ROND skickad: ${res.ok ? "OK" : "FEL " + res.status}`);
+  // VÅG 133c — FETCH-RETRY: en transient app-server-blipp (deploy-omstart,
+  // tillfällig belastning) ska ALDRIG kosta en hel 3-timmarsrond. Bevis:
+  // 2026-09-13 17:43 UTC-ronden dog på "TypeError: fetch failed" och
+  // agenten fick ingen befallning på ~6 h (hjärtat höll målet levande,
+  // men besluts-/evolutionsspiran tystnade). 3 försök, 30 s mellanrum.
+  let res = null;
+  let senasteFel = "";
+  for (let forsok = 1; forsok <= 3; forsok++) {
+    try {
+      res = await fetch(`${BAS}/api/studio/stream`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ prompt }),
+      });
+      if (res.ok) break;
+      senasteFel = "HTTP " + res.status;
+    } catch (e) {
+      senasteFel = String(e);
+    }
+    if (forsok < 3) {
+      logga(`sändningsförsök ${forsok}/3 misslyckades (${senasteFel}) — väntar 30 s`);
+      await new Promise((los) => setTimeout(los, 30_000));
+    }
+  }
+  logga(`ROND skickad: ${res && res.ok ? "OK" : "FEL " + senasteFel}`);
   // VÅG 112 — KOSTNADS-FITNESS: fånga kontext-eventets totalTokenCount ur
   // strömmens första chunken (det anländer tidigt) → kostnads-loggen.
   // Tokens per landad commit = organismens ekonomi (arXiv 2408.11198:
   // evolutionär kostnadseffektivitet; ACL 2025: LLM som svart låda).
   try {
-    if (res.body) {
+    if (res && res.body) {
       const lasare = res.body.getReader();
       // Läs chunken i LOOP tills totalTokenCount hittas (hej→kontext kommer
       // i separata chuckar) eller 10 s tak.

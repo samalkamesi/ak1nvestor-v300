@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { PortfolioSystem } from "@/components/ak1a/portfolio-system";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
@@ -23,7 +24,7 @@ export const metadata: Metadata = pageMetadata({
 export default function MinPortfoljPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Min portfölj" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Din portfölj — institutionellt genomlyst</h1>
       <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
         Lägg in vad du äger — bolag, antal aktier, kurs. Systemet analyserar varje

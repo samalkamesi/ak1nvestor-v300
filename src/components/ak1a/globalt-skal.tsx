@@ -25,6 +25,7 @@ import { CookieConsent } from "@/components/ak1a/cookie-consent";
 import { TrafikRapportor } from "@/components/ak1a/trafik-rapportor";
 import { typografiKlasser } from "@/lib/typografi";
 import { VersionVakt } from "@/components/ak1a/version-vakt";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 /**
  * GLOBALT SKAL — VÅG 84 SPIKE (agent V84-SPIKE; STYRELSE-VAG84-PLAN steg 1 +
@@ -333,42 +334,20 @@ export function GlobaltSkal({
         <VersionVakt />
         {spegel === null ? (
           <>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(organizationJsonLd()).replace(/</g, "\\u003c"),
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(websiteJsonLd()).replace(/</g, "\\u003c"),
-              }}
-            />
+            <StrukturData data={organizationJsonLd()} id="jsonld-organisation" />
+            <StrukturData data={websiteJsonLd()} id="jsonld-webbsajt" />
           </>
         ) : (
           <>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(spegelWebsiteJsonLd(spegel)).replace(
-                  /</g,
-                  "\\u003c",
-                ),
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(
-                  spegelUtbildningsOrganisationJsonLd(
-                    spegel,
-                    spegel === "en"
-                      ? "Institutional stock-analysis methodology for private individuals"
-                      : "منهجية مؤسسية في تحليل الأسهم للأفراد",
-                  ),
-                ).replace(/</g, "\\u003c"),
-              }}
+            <StrukturData data={spegelWebsiteJsonLd(spegel)} id="jsonld-webbsajt" />
+            <StrukturData
+              data={spegelUtbildningsOrganisationJsonLd(
+                spegel,
+                spegel === "en"
+                  ? "Institutional stock-analysis methodology for private individuals"
+                  : "منهجية مؤسسية في تحليل الأسهم للأفراد",
+              )}
+              id="jsonld-organisation"
             />
           </>
         )}

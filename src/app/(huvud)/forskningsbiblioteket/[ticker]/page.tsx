@@ -13,8 +13,9 @@ import {
 } from "@/lib/akm3/osakerhet";
 import { lasKorstabellGrund } from "@/lib/portfolj-forskning/korstabell-data";
 import { peerDragText, peerRankText, PEER_HALLNING_TEXT } from "@/lib/portfolj-forskning/peer";
-import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { DelRad } from "@/components/ak1a/del-rad";
 import { DelaKort } from "@/components/ak1a/dela-kort";
 import { Akm2Dashboard, ProfilEnsembleVy } from "@/components/ak1a/akm2-dashboard";
@@ -156,7 +157,7 @@ export default async function AnalysfabrikDetaljPage({
       ]}
       wide
     >
-      <JsonLd data={jsonLd} />
+      <StrukturData data={jsonLd} />
 
       <p className="text-xs uppercase tracking-widest text-gold">
         {a.land || "—"} · {a.bransch} · {a.valuta || ""}

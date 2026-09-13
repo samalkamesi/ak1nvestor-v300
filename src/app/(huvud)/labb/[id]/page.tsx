@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCaseStudies, getCaseStudy } from "@/lib/content";
-import { caseMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { caseMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
 
@@ -33,7 +34,8 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Labbet", href: "/labb" }, { name: c.company }]}>
-      <JsonLd
+      <StrukturData
+        id="jsonld-brodsmula"
         data={breadcrumbJsonLd([
           { name: "Labbet", path: "/labb" },
           { name: c.title, path: `/labb/${c.id}` },

@@ -4,6 +4,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SIFFROR } from "@/lib/siffror";
 import { hamtaKursTitelLager, titelUrLager, kategoriEtikett } from "@/lib/kurs-speglar";
 import {
@@ -12,7 +13,6 @@ import {
   spegelUtbildningsOrganisationJsonLd,
   spegelFaqJsonLd,
 } from "@/lib/spegel-metadata";
-import { JsonLd } from "@/lib/seo";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -81,12 +81,12 @@ export default async function KurserPageEn() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Courses" }]} wide>
-      <JsonLd data={spegelWebsiteJsonLd("en")} />
-      <JsonLd data={spegelUtbildningsOrganisationJsonLd(
+      <StrukturData data={spegelWebsiteJsonLd("en")} id="jsonld-webbsajt" />
+      <StrukturData data={spegelUtbildningsOrganisationJsonLd(
         "en",
         `AKM1 — ${SIFFROR.kurser} courses, ${SIFFROR.kanonBocker} canon books, ${SIFFROR.quiz} quiz questions`
-      )} />
-      <JsonLd data={coursesFaqJsonLd()} />
+      )} id="jsonld-organisation" />
+      <StrukturData data={coursesFaqJsonLd()} id="jsonld-faq" />
 
       <h1 className="font-serif text-4xl font-bold">
         Courses in Institutional Stock Analysis

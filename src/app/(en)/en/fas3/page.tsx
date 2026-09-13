@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas3Cert } from "@/components/ak1a/fas3-cert";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { getCourseList } from "@/lib/content";
 import { spegelMetadata, spegelWebsiteJsonLd } from "@/lib/spegel-metadata";
-import { JsonLd } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -234,7 +234,7 @@ export default function Fas3PageEn() {
       breadcrumb={[{ name: "Home", href: "/en" }, { name: "Phase 3 — The Ecosystem" }]}
       wide
     >
-      <JsonLd data={spegelWebsiteJsonLd("en")} />
+      <StrukturData data={spegelWebsiteJsonLd("en")} id="jsonld-webbsajt" />
 
       {/* ── HERO — marine panel: fundamental analysis starts to move ──────── */}
       <section className="marin-panel relative overflow-hidden rounded-3xl border-2 border-gold/60 p-7 shadow-2xl sm:p-12">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { Akm1Calculator } from "@/components/ak1a/akm1-calculator";
 import { Akm2DemoStrip } from "@/components/ak1a/akm2-dashboard";
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = pageMetadata({
 export default function KalkylatorPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Kalkylator" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">AKM1-kalkylatorn</h1>
       <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
         Så arbetar analytiker: poängsätt varje variabel 0–5, se helheten förändras.

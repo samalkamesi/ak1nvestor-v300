@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { Korstabell } from "@/components/ak1a/portfolj-forskning/korstabell";
 import { ByggPortfoljKort } from "@/components/ak1a/portfolj-forskning/bygg-portfolj-kort";
 import { KorstabellLeverantor } from "@/components/ak1a/portfolj-forskning/korstabell-leverantor";
@@ -93,7 +94,7 @@ export default function PortfoljForskningPage() {
 
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Portföljforskning" }]}>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
 
       {/* VÅG 63 bygg-2 (optimering #1): raderkedjan levereras EN gång via
           kontext-leverantören — Korstabell och ByggPortfoljKort läser den

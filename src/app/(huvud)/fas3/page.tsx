@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas3Cert } from "@/components/ak1a/fas3-cert";
 import { getCourseList } from "@/lib/content";
@@ -226,7 +227,7 @@ export default function Fas3Page() {
       breadcrumb={[{ name: "Hem", href: "/" }, { name: "Fas 3 — Ekosystemet" }]}
       wide
     >
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
 
       {/* ── HERO — marin panel: fundamentalanalysen börjar röra sig ──────── */}
       <section className="marin-panel relative overflow-hidden rounded-3xl border-2 border-gold/60 p-7 shadow-2xl sm:p-12">

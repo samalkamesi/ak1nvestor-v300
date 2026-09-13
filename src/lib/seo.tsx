@@ -117,8 +117,9 @@ function clamp(s: string, max: number): string {
  * - Open Graph-typ per sidklass: website | article | course
  *
  * JSON-LD kan inte bäras av Next Metadata-objektet — schema.org-data
- * renderas som <JsonLd>-element i sidan. Vill du metadata + schema i ett
- * svep: använd sidaMetadata() nedan ( OPTIONAL jsonLd-stöd).
+ * renderas som <StrukturData>-element i sidan (src/components/seo/StrukturData).
+ * Vill du metadata + schema i ett svep: använd sidaMetadata() nedan
+ * ( OPTIONAL jsonLd-stöd).
  */
 export function pageMetadata(opts: {
   path: string;
@@ -325,11 +326,11 @@ export function blogMetadata(post: BlogPost & { ogBild?: string; omslagUrl?: str
 /**
  * sidaMetadata — metadata + VALFRRI JSON-LD i ett svep (AI-SEO våg 50).
  * Next Metadata kan inte bära schema.org — därför returneras JSON-LD:n
- * separat och renderas med <JsonLd> i sidan:
+ * separat och renderas med <StrukturData> i sidan:
  *
  *   const SIDA = sidaMetadata({ ..., jsonLd: [faqJsonLd(...)] });
  *   export const metadata: Metadata = SIDA.metadata;
- *   // i komponenten: {SIDA.jsonLd.map((s, i) => <JsonLd key={i} data={s} />)}
+ *   // i komponenten: {SIDA.jsonLd.map((s, i) => <StrukturData key={i} data={s} />)}
  */
 export function sidaMetadata(
   opts: Parameters<typeof pageMetadata>[0] & { jsonLd?: object | object[] | null },
@@ -500,15 +501,11 @@ export function analysisJsonLd(a: Analysis) {
   };
 }
 
-/** Renderar en JSON-LD-struktur som <script>-element (server components). */
-export function JsonLd({ data }: { data: object }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
-    />
-  );
-}
+/**
+ * JSON-LD-renderern JsonLd är PENSIONERAD (våg 134, SEO-rond J): samtliga
+ * anropare renderar via <StrukturData> (src/components/seo/StrukturData) —
+ * samma output med utökad escape (U+2028/2029) och valfritt DOM-id.
+ */
 
 // ── llms.txt (AI-chattbotarnas rekommendationsfil) ───────────────────────────
 
@@ -596,7 +593,7 @@ export function kursFaqFragor(slug: string): Array<{ fraga: string; svar: string
  * Kompletterar courseJsonLd (Course) med fråga/svar-format AI-motorer och
  * Google kan rikta in sig på — inget överlapp med Course-schemat.
  * Next Metadata kan inte bära JSON-LD, därför returneras strukturen och
- * renderas med <JsonLd> i sidan (samma mönster som courseJsonLd).
+ * renderas med <StrukturData> i sidan (samma mönster som courseJsonLd).
  * null ⇒ kursen saknar fråga i korpusen ⇒ sidan renderar inget FAQ-schema.
  */
 export function courseFaqJsonLd(course: Course) {

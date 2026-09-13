@@ -4,7 +4,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Fas3Cert } from "@/components/ak1a/fas3-cert";
 import { getCourseList } from "@/lib/content";
 import { spegelMetadata, spegelWebsiteJsonLd } from "@/lib/spegel-metadata";
-import { JsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
 
@@ -234,7 +234,7 @@ export default function Fas3PageAr() {
       breadcrumb={[{ name: "الرئيسية", href: "/ar" }, { name: "المرحلة 3 — النظام البيئي" }]}
       wide
     >
-      <JsonLd data={spegelWebsiteJsonLd("ar")} />
+      <StrukturData id="jsonld-webbsajt" data={spegelWebsiteJsonLd("ar")} />
 
       <div dir="rtl">
         {/* ── البطل — لوحة مارين: التحليل الأساسي يبدأ بالحركة ─────────── */}

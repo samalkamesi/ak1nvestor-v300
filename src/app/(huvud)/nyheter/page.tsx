@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { NyhetsCentral } from "@/components/ak1a/nyhets-central";
 
@@ -51,7 +52,7 @@ const LANKAR = [
 export default function NyheterPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Hem", href: "/" }, { name: "Nyhetscentralen" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Nyhetscentralen</h1>
       <p className="mt-2 font-serif text-lg italic text-gold">— senaste nytt, intelligent rangerat</p>
 

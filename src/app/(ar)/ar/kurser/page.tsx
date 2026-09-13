@@ -12,7 +12,7 @@ import {
   spegelUtbildningsOrganisationJsonLd,
   spegelFaqJsonLd,
 } from "@/lib/spegel-metadata";
-import { JsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -83,12 +83,12 @@ export default async function KurserPageAr() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "الدورات" }]} wide>
-      <JsonLd data={spegelWebsiteJsonLd("ar")} />
-      <JsonLd data={spegelUtbildningsOrganisationJsonLd(
+      <StrukturData id="jsonld-webbsajt" data={spegelWebsiteJsonLd("ar")} />
+      <StrukturData id="jsonld-organisation" data={spegelUtbildningsOrganisationJsonLd(
         "ar",
         `AKM1 — ${SIFFROR.kurser} courses, ${SIFFROR.kanonBocker} canon books, ${SIFFROR.quiz} quiz questions`
       )} />
-      <JsonLd data={coursesFaqJsonLd()} />
+      <StrukturData id="jsonld-faq" data={coursesFaqJsonLd()} />
 
       <div dir="rtl">
         <h1 className="font-serif text-4xl font-bold">

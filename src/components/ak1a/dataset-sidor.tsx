@@ -3,11 +3,12 @@ import { Suspense } from "react";
 
 import { getCourses } from "@/lib/content";
 import { type OrdlistaNyckel } from "@/lib/ordlista";
-import { SITE_URL, JsonLd } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
 import { skapaT, type SprakId } from "@/lib/sprak";
 import { branschNamn as branschNamnFranLib, type BranschMedianer, type DatasetMedianRad } from "@/lib/dataset-medianer";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { DatasetSorteradLista } from "@/components/ak1a/dataset-sortering";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 /**
  * DATASET-SIDORNA — delade serverkomponenter för /dataset, /dataset/[bransch]
@@ -353,7 +354,7 @@ export function DatasetIndexVy({
 
   return (
     <SeoPageShell breadcrumb={[{ name: t("dataset.brodsmula") }]} wide>
-      <JsonLd data={datasetJsonLd(lang, medianer)} />
+      <StrukturData data={datasetJsonLd(lang, medianer)} id="jsonld-dataset" />
 
       <h1 className="font-serif text-4xl font-bold">{t("dataset.titel")}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
@@ -492,7 +493,7 @@ export function DatasetBranschVy({
     <SeoPageShell
       breadcrumb={[{ name: t("dataset.brodsmula"), href: prefix + "/dataset" }, { name: namn }]}
     >
-      <JsonLd data={datasetBranschJsonLd(lang, rad, medianer)} />
+      <StrukturData data={datasetBranschJsonLd(lang, rad, medianer)} id="jsonld-dataset-bransch" />
 
       <h1 className="font-serif text-4xl font-bold">
         {t("dataset.detalj.titel", { bransch: namn })}

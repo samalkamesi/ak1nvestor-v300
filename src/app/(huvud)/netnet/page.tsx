@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { NetnetSkanner } from "@/components/ak1a/netnet-skanner";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = pageMetadata({
 export default function NetnetPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Net-net-skannern" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Net-net-skannern</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Benjamin Grahams mest extrema värdekriterium: köp bolag som handlas under två tredjedelar

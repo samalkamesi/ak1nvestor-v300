@@ -7,8 +7,8 @@ import {
   websiteJsonLd,
   faqJsonLd,
   educationalOrganizationJsonLd,
-  JsonLd,
 } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
@@ -242,9 +242,9 @@ export default async function KurserPage() {
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Kurser" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
-      <JsonLd data={educationalOrganizationJsonLd()} />
-      <JsonLd data={kurserFaqJsonLd(siffror)} />
+      <StrukturData data={websiteJsonLd()} id="jsonld-webbsajt" />
+      <StrukturData data={educationalOrganizationJsonLd()} id="jsonld-organisation" />
+      <StrukturData data={kurserFaqJsonLd(siffror)} id="jsonld-faq" />
 
       {/* HERON — rubrik + kort intro; sökfältet bor stort och centralt i
           KursSok direkt nedan (våg 58: curated-först, registret paginerat) */}

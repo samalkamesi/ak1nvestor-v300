@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KonfluensTabell } from "@/components/ak1a/konfluens-tabell";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
@@ -86,7 +87,7 @@ const DEMO_VOLVO_B_PRIS = [
 export default function KonfluensPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Hem", href: "/" }, { name: "Konfluensradarn" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Konfluensradarn</h1>
       <p className="mt-2 font-serif text-lg italic text-gold">— där värde möter vågor</p>
 

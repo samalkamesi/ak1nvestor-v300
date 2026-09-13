@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getBlogPosts, getBlogPost } from "@/lib/content";
 import { skapaT } from "@/lib/sprak";
-import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import {
   BloggSpegel,
   BloggSpegelSprak,
@@ -12,6 +12,7 @@ import {
   hamtaBloggLager,
 } from "@/lib/blogg-speglar";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 /**
  * BLOGGSPEGEL-SIDA (våg 55, agent L2) — gemensam server-renderare för de
@@ -62,12 +63,13 @@ export function BloggSpegelSida({
   return (
     <SeoPageShell breadcrumb={[{ name: t("nav.blogg"), href: `/${lang}/blogg` }, { name: post.title }]}>
       <div lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
-        <JsonLd data={bloggSpegelJsonLd(spegel, lang)} />
-        <JsonLd
+        <StrukturData data={bloggSpegelJsonLd(spegel, lang)} id="jsonld-artikel" />
+        <StrukturData
           data={breadcrumbJsonLd([
             { name: t("nav.blogg"), path: `/${lang}/blogg` },
             { name: post.title, path: `/${lang}/blogg/${slug}` },
           ])}
+          id="jsonld-brodsmula"
         />
 
         {/* Översättnings-notis — EN per sida (fält markeras ej): andel klart

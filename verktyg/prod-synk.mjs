@@ -81,25 +81,27 @@ async function main() {
   const goodHead = senaste || lokal;
   const nya = git(["log", "--oneline", `${goodHead}..HEAD`]);
 
-  // 4-5) bygg under flock med stoppregler
+  // 4-5) bygg under flock med stoppregler — VÅG 123c: låskollisioner med
+  // agentens egna byggen är NORMALA: vänta upp till 15 min på låset, total
+  // budget 21 min (execSync-tak 1 260 s).
   const bygg = "npm ci --no-audit --no-fund > /tmp/synk-npmci.log 2>&1 && npm run build > /tmp/synk-build.log 2>&1";
-  const flockBygg = ["bash", "-c", `exec flock -w 480 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(bygg)}`];
+  const flockBygg = ["bash", "-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(bygg)}`];
   let ok = false;
   try {
-    execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 600_000, stdio: "ignore" });
+    execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
     ok = true;
   } catch {
-    logga("bygg MISSLYCKADES — revert + ombygge");
+    logga("bygg MISSLYCKADES (låsväntan upp till 15 min medräknad) — revert + ombygge");
     try {
       git(["revert", "HEAD", "--no-edit"]);
-      execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 600_000, stdio: "ignore" });
+      execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
       ok = true;
       logga("revert+ombygge OK — prod bygger på föregående commit");
     } catch {
       logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
       try {
         git(["reset", "--hard", goodHead]);
-        execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 600_000, stdio: "ignore" });
+        execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
         ok = true;
         logga("good-HEAD återställd + ombyggd");
       } catch {

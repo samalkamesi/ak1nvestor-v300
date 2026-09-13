@@ -3464,7 +3464,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           if (done) break;
           for (const rad of dekod.decode(value).split("\n")) {
             if (!rad.startsWith("data:")) continue;
-            let j: { typ?: string; fas?: string; iteration?: number; namn?: string; kanal?: string; text?: string; pagaendeTurn?: boolean } | null = null;
+            let j: { typ?: string; fas?: string; iteration?: number; namn?: string; kanal?: string; text?: string; pagaendeTurn?: boolean; argument?: string; beskrivning?: string } | null = null;
             try { j = JSON.parse(rad.slice(5).trim()); } catch { continue; }
             if (!j?.typ) continue;
             let text = "";
@@ -3476,9 +3476,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 text = j.fas === "start" ? "▸ Agenten börjar en runda" : "▸ Rundan klar";
                 break;
               case "verktyg_kort":
-              case "verktyg_input":
-                text = `🔧 ${j.namn ?? "verktyg"}`;
+              case "verktyg_input": {
+                // VÅG 129 — OBSERVATORIET v2: verktygets MÅL syns (filvägar,
+                // kommandon) — kunden ser VAD som röras, som i desktop-Z.
+                let detalj = j.beskrivning ?? "";
+                if (!detalj && j.argument) {
+                  try {
+                    const a = JSON.parse(j.argument) as Record<string, unknown>;
+                    const kandidat =
+                      (typeof a.file_path === "string" && a.file_path) ||
+                      (typeof a.path === "string" && a.path) ||
+                      (typeof a.command === "string" && a.command) ||
+                      (typeof a.pattern === "string" && a.pattern) ||
+                      "";
+                    detalj = String(kandidat).slice(0, 70);
+                  } catch {
+                    detalj = j.argument.slice(0, 60);
+                  }
+                }
+                text = `🔧 ${j.namn ?? "verktyg"}${detalj ? ` — ${detalj}` : ""}`;
                 break;
+              }
               case "delta": {
                 const t = (j.text ?? "").trim();
                 if (t.length > 2) text = `… ${t.slice(0, 60)}`;

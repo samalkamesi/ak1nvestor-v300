@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Rapportbyggare } from "@/components/ak1a/rapportbyggare";
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = pageMetadata({
 export default function RapporterPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Dina rapporter" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Dina rapporter — redovisningsverkstan</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Här blir ditt arbete ett dokument att vara stolt över. Välj ut analyserna

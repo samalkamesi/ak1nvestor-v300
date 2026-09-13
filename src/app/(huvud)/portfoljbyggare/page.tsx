@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { Portfoljbyggare } from "@/components/ak1a/portfoljbyggare";
 
 export const dynamic = "force-static";
@@ -25,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 export default function PortfoljbyggarePage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Portföljbyggaren" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Portföljbyggaren</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Ett interaktivt verktyg där du komponerar en tänkt portfölj och SER risken förändras.

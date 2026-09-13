@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
-import { JsonLd, SITE_URL, SITE_NAME } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
+import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
@@ -141,7 +142,7 @@ const SEKTIONER = [
 export default function EnStartPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Start", href: "/en" }, { name: "English" }]}>
-      <JsonLd
+      <StrukturData
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -152,6 +153,7 @@ export default function EnStartPage() {
             "Server-rendered English welcome page: institutional-grade stock analysis education for private individuals. Educational financial analysis — never investment advice.",
           isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
         }}
+        id="jsonld-webbsida"
       />
 
       {/* ── 1 · HERO — marine certificate opening ─────────────────────────── */}

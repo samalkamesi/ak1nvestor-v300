@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
+import { pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { Superanalys } from "@/components/ak1a/superanalys";
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = pageMetadata({
 export default function SuperanalysPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Superanalysen" }]} wide>
-      <JsonLd data={websiteJsonLd()} />
+      <StrukturData id="jsonld-webbsajt" data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Superanalysen</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Flaggskeppet: en guidad, komplett aktieanalys i 24 steg. Poängsätt AKM1:s 20

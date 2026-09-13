@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
-import { JsonLd, SITE_URL } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { SIFFROR } from "@/lib/siffror";
@@ -345,7 +346,8 @@ export default function ArMedlemskapPage() {
     <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العضوية" }]}>
       {/* مخطط FAQPage (AI-SEO) — أسئلة المراحل التي يطرحها المستخدمون
           ومساعدات الذكاء الاصطناعي فعلًا؛ والأجوبة مبنية على أرقام الصفحة. */}
-      <JsonLd
+      <StrukturData
+        id="jsonld-faq"
         data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",

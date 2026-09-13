@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourse, getCourses, type CourseChapter } from "@/lib/content";
 import { skapaT } from "@/lib/sprak";
-import { JsonLd } from "@/lib/seo";
 import { byggKursSchema } from "@/lib/schema-kurser";
 import {
   KursSpegel,
@@ -22,6 +21,7 @@ import { KursArtiklar, type SmakprovKapitel } from "@/components/ak1a/kurs-artik
 import { LasProgress } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
 import { Kallkort } from "@/components/ak1a/kallkort";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { kraverFas } from "@/lib/kurs-access";
 
 /**
@@ -155,9 +155,9 @@ export async function KursSpegelSida({
       breadcrumb={[{ name: t("nav.kurser"), href: `/${lang}/kurser` }, { name: kurs.title }]}
     >
       <div lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
-        <JsonLd data={schema.course} />
-        <JsonLd data={schema.faq} />
-        <JsonLd data={schema.breadcrumb} />
+        <StrukturData data={schema.course} id="jsonld-kurs" />
+        <StrukturData data={schema.faq} id="jsonld-faq" />
+        <StrukturData data={schema.breadcrumb} id="jsonld-brodsmula" />
         <LasProgress />
 
         {/* Översättnings-notis — EN per sida (block markeras ej): andel klart

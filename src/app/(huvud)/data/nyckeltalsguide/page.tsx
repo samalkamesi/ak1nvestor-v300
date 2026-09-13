@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { sidaMetadata, faqJsonLd, JsonLd } from "@/lib/seo";
+import { sidaMetadata, faqJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import {
   raknaNyckeltalsmedianer,
   byggNyckeltalsguideSvar,
@@ -77,7 +78,7 @@ export default function NyckeltalsguidePage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Data" }, { name: "Nyckeltalsguide" }]}>
       {SIDA.jsonLd.map((s, i) => (
-        <JsonLd key={i} data={s} />
+        <StrukturData key={i} data={s} />
       ))}
       <h1 className="font-serif text-4xl font-bold">
         Nyckeltalsguide — median P/E per bransch

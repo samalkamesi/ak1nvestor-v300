@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
-import { JsonLd, SITE_URL, SITE_NAME } from "@/lib/seo";
+import { SITE_URL, SITE_NAME } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
@@ -141,7 +142,8 @@ const SEKTIONER = [
 export default function ArStartPage() {
   return (
     <SeoPageShell wide breadcrumb={[{ name: "البداية", href: "/ar" }, { name: "العربية" }]}>
-      <JsonLd
+      <StrukturData
+        id="jsonld-webbsida"
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",

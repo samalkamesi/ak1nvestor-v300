@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
-import { JsonLd, SITE_URL } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
@@ -351,7 +352,7 @@ export default function EnMedlemskapPage() {
     <SeoPageShell breadcrumb={[{ name: "Start", href: "/en" }, { name: "Membership" }]} wide>
       {/* FAQPage schema (AI-SEO) — the phase questions users and AI assistants
           actually ask; the answers build on the page's own figures. */}
-      <JsonLd
+      <StrukturData
         data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -399,6 +400,7 @@ export default function EnMedlemskapPage() {
             },
           ],
         }}
+        id="jsonld-faq"
       />
       <h1 className="font-serif text-4xl font-bold">
         Our vision: knowledge is a right

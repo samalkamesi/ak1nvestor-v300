@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
-import { pageMetadata, faqJsonLd, JsonLd } from "@/lib/seo";
+import { pageMetadata, faqJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SocialProof } from "@/components/ak1a/social-proof";
 import { SIFFROR, tal } from "@/lib/siffror";
 import { PRISER, kr } from "@/lib/variabler";
@@ -204,7 +205,8 @@ export default async function MedlemskapPage() {
     <SeoPageShell breadcrumb={[{ name: "Medlemskap" }]} wide>
       {/* FAQPage-schema (AI-SEO våg 50) — fas-frågorna är vad användare (och
           AI-assistenter) faktiskt frågar; svaren bygger på sidans egna tal. */}
-      <JsonLd
+      <StrukturData
+        id="jsonld-faq"
         data={faqJsonLd([
           {
             fraga: "Vad är skillnaden mellan Fas 1, Fas 2 och Fas 3?",

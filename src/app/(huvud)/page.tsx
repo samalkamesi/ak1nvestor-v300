@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SpaHem } from "@/components/ak1a/spa-hem";
 import { sidaMetadata, faqJsonLd, educationalOrganizationJsonLd } from "@/lib/seo";
-import { JsonLd } from "@/lib/seo";
+import { StrukturData } from "@/components/seo/StrukturData";
 import { SIFFROR, tal } from "@/lib/siffror";
 
 /**
@@ -57,7 +57,7 @@ export default function Page() {
   return (
     <>
       {SIDA.jsonLd.map((schema, i) => (
-        <JsonLd key={i} data={schema} />
+        <StrukturData key={i} data={schema} />
       ))}
       <SpaHem />
     </>

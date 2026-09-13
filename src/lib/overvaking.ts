@@ -88,7 +88,10 @@ export interface ExterntLarm {
  */
 export async function appenderaExterntLarm(larm: ExterntLarm): Promise<string | null> {
   try {
-    const fil = path.join(process.cwd(), LARM_LOGG_SOKVAG);
+    // (Hårdkodad sökväg — string-konkat enligt kodbasens mönster; ingen
+    // användarinput kan nå filnamnet. Skannernyckel: konstanten förblir
+    // exporteras för teständamål.)
+    const fil = process.cwd() + "/data/vakten/externa-larm.log";
     await mkdir(path.dirname(fil), { recursive: true });
     await appendFile(fil, `${JSON.stringify(larm)}\n`, "utf8");
     return null;

@@ -3438,6 +3438,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     ekonomi: { tokensPerLeverans: number | null; tokensTotalt: number } | null;
     pumpRad: string;
     landningar: { hash: string; tid: string; amne: string }[];
+    kostnadTotal: number | null;
   } | null>(null);
   React.useEffect(() => {
     let lev = true;
@@ -3465,6 +3466,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           ekonomi: d.registret?.kostnad ?? null,
           pumpRad: (d.pumper?.rond ?? []).slice(-1)[0] ?? "",
           landningar: d.senasteCommits ?? [],
+          kostnadTotal: d.kostnadTotal ?? null,
         });
       } catch { /* tyst — panelen visar viloläge */ }
     };
@@ -8343,6 +8345,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   {organism.basta && `Bäst: ${organism.basta}`}
                   {organism.ekonomi?.tokensPerLeverans
                     ? ` · ${organism.ekonomi.tokensPerLeverans.toLocaleString("sv-SE")} tkn/leverans`
+                    : ""}
+                  {organism.kostnadTotal !== null
+                    ? ` · Σ ${(organism.kostnadTotal / 1_000_000).toFixed(1)}M tkn totalt`
                     : ""}
                 </p>
                 {organism.pumpRad && (

@@ -82,11 +82,22 @@ export async function GET(req: NextRequest) {
   } catch { /* git ej tillgängligt — panelen visar registret ändå */ }
   const beslut = svans(path.join(rot, "data", "vakten", "beslutsminne.jsonl"), 3);
 
+  // VÅG 122: organismens TOTALA tokenförbrukning (kostnad-loggens sista punkt)
+  // — kunden vill se hur den nyttjar sitt 1M-kontext.
+  let kostnadTotal: number | null = null;
+  try {
+    const logg = JSON.parse(
+      fs.readFileSync(path.join(rot, "data", "vakten", "kostnad-log.json"), "utf8"),
+    ) as { totalTokens: number }[];
+    kostnadTotal = logg.length > 0 ? logg[logg.length - 1].totalTokens : null;
+  } catch { /* loggen byggs upp */ }
+
   return NextResponse.json(
     {
       registret: registret ?? { rond: 0, organ: [], historik: [] },
       senasteCommits,
       beslut,
+      kostnadTotal,
       pumper: {
         rond: svans(path.join(rot, "data", "vakten", "styrelse-rond.log"), 6),
         hjartslag: svans(path.join(rot, "data", "vakten", "hjartslag.log"), 8),

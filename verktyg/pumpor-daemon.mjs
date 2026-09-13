@@ -109,8 +109,24 @@ function planeraDagligen() {
   logga(`daglig värmare nästa: ${nast.toISOString().slice(0, 16)}`);
 }
 
+/** Prod-synken var 10:e minut (offset :07) — allt nytt på GitHub landar
+ *  automatiskt i produktionen (våg 122, kundens automatkoppling). */
+function planeraProdSynk() {
+  const nu = NU();
+  const nast = new Date(nu);
+  nast.setSeconds(0, 0);
+  nast.setMinutes(Math.floor(nu.getMinutes() / 10) * 10 + 7);
+  if (nast <= nu) nast.setMinutes(nast.getMinutes() + 10);
+  setTimeout(() => {
+    kör("prod-synk.mjs");
+    planeraProdSynk();
+  }, nast - nu);
+  logga(`prod-synk nästa: ${nast.toISOString().slice(11, 16)}`);
+}
+
 logga("PUMPOR-DAEMONEN startar — fem scheman, pm2-superviserad");
 planeraHjartslag();
 planeraRond();
 planeraVakt();
 planeraDagligen();
+planeraProdSynk();

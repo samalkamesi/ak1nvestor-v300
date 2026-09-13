@@ -172,6 +172,27 @@ function evolvera() {
   reg.rond += 1;
   reg.senasteRondTs = Date.now();
 
+  // VÅG 121 — MEKANISKT BESLUTSMINNE: agenten skriver (av erfarenhet) inte
+  // alltid beslutsrader själv ⇒ fabriken appendar FAKTARADEN mekaniskt ur
+  // git (vad som VERKLIGEN landade denna rond) — långtidsminnet kan aldrig
+  // bli tomt. Agentens egna rader (rikare) kompletterar frivilligt.
+  try {
+    const minneFil = path.join(ROT, "data", "vakten", "beslutsminne.jsonl");
+    const rad = {
+      ts: new Date().toISOString(),
+      rond: reg.rond,
+      beslut:
+        commits.length > 0
+          ? commits.map((c) => `${c.hash} ${c.organ ? "[" + c.organ + "] " : ""}${c.amne.slice(0, 60)}`).join(" | ")
+          : "tyst rond — inga landningar",
+      landat: commits.length > 0 ? commits.map((c) => c.hash).join(",") : "nej",
+    };
+    fs.appendFileSync(minneFil, JSON.stringify(rad) + "\n");
+    // tak 500 rader (~2 månader ronder)
+    const rader = fs.readFileSync(minneFil, "utf8").trim().split("\n");
+    if (rader.length > 500) fs.writeFileSync(minneFil, rader.slice(-500).join("\n") + "\n");
+  } catch { /* minnet får vila en rond om skrivning faller */ }
+
   // VÅG 115 — PROMPT-EVOLUTION v2 (LLM-muterade uppdrag): ronden ber
   // agenten skriva förädlade uppdrag för (nya) organ till
   // data/forskning/organ-mutationer.json [{bokstav, uppdrag}] — fabriken

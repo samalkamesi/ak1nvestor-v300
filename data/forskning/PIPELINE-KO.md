@@ -56,3 +56,31 @@ data/cache ur indexet, prod = develop, säkringsgren raderad, prod 200).
 Gemensamma regler: commit UTAN push (huvudagenten pushar+bygger, ETT bygg/våg).
 sudo/behörighetspromptar får INTE köras (de hänger sessionen) — dokumentera istället.
 Baslinje tsc = 34 fel. Bygg sker ENDAST i /home/ak1a/AK1 under flock-lås av huvudagenten.
+
+## VÅG 138 — SÖKORDSINVENTERINGEN (2026-09-13, dispatched av huvudagenten; kunddirektiv "fortsätt bygga vidare i djupet" + styrelsebeslut mu098wjw åtgärd 2+3)
+
+Full sökordsinventering sv/en/ar mappad mot 333 kurser + analysbiblioteket →
+täckningsglapp → plan för programmatiska long-tail-landningssidor. NIO
+parallella subagenter (R4-tak 12, ~9 aktiva), exklusiva utdatafiler under
+data/forskning/sokord/ — INGA kodändringar (ren dataleverans, inget bygge).
+Syntesen (täckningsmatris + long-tail-plan) ägs av HUVUDAGENTEN efteråt:
+data/forskning/SOKORDSINVENTERING-2026.md → styrelseronden beslutar
+implementationen.
+
+| Block | Agent | Uppgift | Utdatafil (EXKLUSIVT) | Status |
+|---|---|---|---|---|
+| S1 KURSORPUS SV | subagent | Extrahera svenska nyckelfraser ur data/seo/kurser (333 JSON: titlar, ämnen, begrepp) | data/forskning/sokord/kurser-sv.md | dispatchad |
+| S2 KURSORPUS EN | subagent | Engelska nyckelfraser ur samma källas en-fält | data/forskning/sokord/kurser-en.md | dispatchad |
+| S3 KURSORPUS AR | subagent | Arabiska nyckelfraser ur samma källas ar-fält | data/forskning/sokord/kurser-ar.md | dispatchad |
+| S4 ANALYSBIBLIOTEKET | subagent | data/analyses (11) + data/forskningsbiblioteket (22) + cacher → ticker/bransch/tema-nyckelord | data/forskning/sokord/analysbibliotek.md | dispatchad |
+| S5 BLOGGKORPUS | subagent | data/blogg (55) → befintlig ämnestäckning × 3 språk | data/forskning/sokord/blogg.md | dispatchad |
+| S6 INDEX-INVENTORY | subagent | src/app/sitemap.ts + rutter (huvud/en/ar) → vad är indexerbart idag, URL-mönster, strukturella glapp | data/forskning/sokord/inventory.md | dispatchad |
+| S7 BRANSCH/DATASET | subagent | branschmedianer-akm2.json, data/stocks, dataset-ytorna → branschteman för programmatiska sidor | data/forskning/sokord/bransch-teman.md | dispatchad |
+| S8 FRÅGEMÖNSTER | subagent | Pedagogiska sökmönster sv/en/ar ("hur X", "vad är X", "X för nybörjare") + juridikgrinds-flaggning | data/forskning/sokord/fragemonster.md | dispatchad |
+| S9 EXTERNA SIGNALER | subagent | WebSearch: verkliga sökfrågor inom finansiell utbildning (sv först, en/ar-ekvivalenter), relaterade sökningar | data/forskning/sokord/externa-signaler.md | dispatchad |
+
+Gemensamma regler: LÄSA får alla allt; SKRIVA endast egen utdatafil (+ ev.
+sondskript i .zcode/). Ingen agent rör src/**, ingen bygger, ingen pushar —
+commit "studio: våg 138 <block> — <vad>" UTAN push. Juridikgrind i alla
+formuleringar (utbildning, aldrig råd). tsc-baslinje 0 (våg 133) skall
+förbli 0 — inga kodändringar alls i denna våg.

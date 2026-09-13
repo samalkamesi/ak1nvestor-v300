@@ -3437,6 +3437,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     basta: string | null;
     ekonomi: { tokensPerLeverans: number | null; tokensTotalt: number } | null;
     pumpRad: string;
+    landningar: { hash: string; tid: string; amne: string }[];
   } | null>(null);
   React.useEffect(() => {
     let lev = true;
@@ -3463,6 +3464,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           basta: bastaKandidat ? `${bastaKandidat.bokstav} (${bastaKandidat.lev})` : null,
           ekonomi: d.registret?.kostnad ?? null,
           pumpRad: (d.pumper?.rond ?? []).slice(-1)[0] ?? "",
+          landningar: d.senasteCommits ?? [],
         });
       } catch { /* tyst — panelen visar viloläge */ }
     };
@@ -8351,6 +8353,26 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   >
                     ⟳ {organism.pumpRad}
                   </p>
+                )}
+                {organism.landningar.length > 0 && (
+                  <div className="mt-2 border-t border-[#21262D] pt-2">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                      Senaste landningar
+                    </p>
+                    <ul className="mt-1 space-y-0.5">
+                      {organism.landningar.slice(0, 5).map((l) => (
+                        <li
+                          key={l.hash}
+                          title={l.amne}
+                          className="flex items-baseline gap-1.5 font-mono text-[10px] leading-snug"
+                        >
+                          <span className="shrink-0 text-[#3FB950]">{l.hash.slice(0, 7)}</span>
+                          <span className="shrink-0 text-[#6E7681]">{l.tid.slice(5)}</span>
+                          <span className="min-w-0 truncate text-[#8B949E]">{l.amne}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </>
             ) : (

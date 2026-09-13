@@ -53,15 +53,40 @@ export async function GET(req: NextRequest) {
   const nej = requireAdmin(req);
   if (nej) return nej;
   const rot = process.cwd();
-  // VÅG 116: registret lever i data/vakten/ (deploy-säkert runtime-tillstånd;
+  // VÅG 118: registret lever i data/vakten/ (deploy-säkert runtime-tillstånd;
   // versionering sköts av data-hygienens veckoarkiv).
   const registret = lasJson(
     path.join(rot, "data", "vakten", "organ-registret.json"),
   ) as { rond?: number; organ?: OrganRad[]; historik?: { rond: number; commits: number; doda: string[]; fodd: string[] }[] } | null;
 
+  // VÅG 118 — SENASTE LANDNINGAR (kunden ser resultat direkt i studion):
+  // de sex senaste commitarna ur prod-trädet (hash · tid · ämne) + besluts-
+  // minnets tre senaste rader — organismens faktiska leveranser, inte dess
+  // påståenden.
+  let senasteCommits: { hash: string; tid: string; amne: string }[] = [];
+  try {
+    const { execFileSync } = await import("node:child_process");
+    const ut = execFileSync(
+      "git",
+      ["log", "-6", "--pretty=format:%h|%ad|%s", "--date=short"],
+      { cwd: rot, encoding: "utf8", timeout: 10_000 },
+    );
+    senasteCommits = ut
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .map((rad) => {
+        const [hash, tid, ...amne] = rad.split("|");
+        return { hash, tid, amne: amne.join("|").slice(0, 120) };
+      });
+  } catch { /* git ej tillgängligt — panelen visar registret ändå */ }
+  const beslut = svans(path.join(rot, "data", "vakten", "beslutsminne.jsonl"), 3);
+
   return NextResponse.json(
     {
       registret: registret ?? { rond: 0, organ: [], historik: [] },
+      senasteCommits,
+      beslut,
       pumper: {
         rond: svans(path.join(rot, "data", "vakten", "styrelse-rond.log"), 6),
         hjartslag: svans(path.join(rot, "data", "vakten", "hjartslag.log"), 8),

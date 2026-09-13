@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { readFileSync } from "node:fs";
 
 import { requireAdmin } from "@/lib/admin-auth";
 import {
@@ -18,6 +19,45 @@ import {
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+// ── VÅG 141 — STÅENDE MÅL + TRÅDENS ARV ──────────────────────────────────────
+// Kundbevis 2026-09-14 (tre skärmbilder): panelen "Inget mål satt — agenten
+// arbetar bara när du chattar" + kort historikalös tråd + agent som lovar och
+// stannar. ROT: varje pm2-omstart (deploy) nollställer målet i processminnet
+// — upp till 10 min innan hjärtat återställer — och en NY session föds utan
+// trådens minne. KUR (mekanisk, i denna rutt): när huvudtrådens prompt kommer
+// och målet är HELT borta (null, ej pausat) ⇒ (a) stående mål återaktiveras
+// DIREKT, (b) prompten prefixas en gång med TRÅDENS ARV (worklog-svans +
+// beslutsminne-svans) och agenten ombeds inleda med "MINNE LADDAT".
+const STANDE_MAL_141 =
+  "24/7-STANDBY enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md): " +
+  "arbeta kontinuerligt system för system — landa minst en commit per rond taggad " +
+  "[organ:X], verkställ kön (PIPELINE-KO), kör vakten till 0 fynd, rapportera i " +
+  "worklog och TA NÄSTA UPPGIFT — repetera tills kunden pausar.";
+
+function lasArvSvans(sokvag: string, antalRader: number): string {
+  try {
+    const rader = readFileSync(`${process.cwd()}/${sokvag}`, "utf8")
+      .split("\n")
+      .filter((r) => r.trim().length > 0);
+    return rader.slice(-antalRader).join("\n").slice(0, 2_500);
+  } catch {
+    return "";
+  }
+}
+
+function byggArvBlock(): string {
+  const worklog = lasArvSvans("worklog.md", 6);
+  const beslut = lasArvSvans("data/vakten/beslutsminne.jsonl", 3);
+  return [
+    "TRÅDENS MINNE (automatiskt injicerat — du har arbetat före detta; fortsätt tråden, repetera inte klart arbete):",
+    worklog ? `SENASTE WORKLOG:\n${worklog}` : "",
+    beslut ? `SENASTE BESLUT (beslutsminnet):\n${beslut}` : "",
+    "Börja svaret med 'MINNE LADDAT' + en rad om var tråden står; verkställ sedan uppdraget.",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+}
 
 /**
  * /api/studio/stream — BRYGGAN mellan /studio-webchatten och ZCode-agenten
@@ -273,6 +313,23 @@ export async function POST(req: NextRequest) {
       { fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas." },
       502,
     );
+  }
+
+  // VÅG 141 — MÅLET DÖR ALDRIG MED OMSTARTEN: prompt mot huvudtråden (ingen
+  // sessionId) + målet HELT borta (null, ej pausat av kunden) ⇒ stående mål
+  // aktiveras DIREKT (gapet till hjärtats :x1 stängs) och trådens arv
+  // injiceras EN gång i prompten — agenten minns och fortsätter.
+  try {
+    const st = transport.malStatus();
+    if (!sessionId && st.mal === null && !st.pausad) {
+      await transport.sattMal(STANDE_MAL_141);
+      const arv = byggArvBlock();
+      if (arv) {
+        prompt = `${arv}\n\n───\n\n${prompt}`;
+      }
+    }
+  } catch {
+    /* sattMal kan vägra vid pågående turn — hjärtat täcker då */
   }
 
   const stream = new ReadableStream<Uint8Array>({

@@ -75,7 +75,9 @@ async function lasSidor(bas) {
     const djupa = unika
       .filter((p) => p.split("/").filter(Boolean).length > 1)
       .sort((a, b) => a.length - b.length);
-    const urval = [...new Set(["/", ...grunda, ...djupa])].slice(0, SIDOR_MAX);
+    // VÅG 117 (Θ): studion + admin ALLTID i svepet — kundens primära ytor;
+    // inloggningsflödet (lösenordsfältet) fångar båda.
+    const urval = [...new Set(["/", "/studio", "/admin", ...grunda, ...djupa])].slice(0, SIDOR_MAX);
     return { sidor: urval, kalla: `sitemap (${unika.length} url:ar)` };
   } catch (fel) {
     return { sidor: FALLBACK_SIDOR, kalla: `fallback (${String(fel).slice(0, 60)})` };

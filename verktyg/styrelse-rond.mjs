@@ -144,7 +144,10 @@ HÅRT LEVERANSPROTOKOLL (strikt):
    till data/vakten/organ-mutationer.json som [{"bokstav":"X","uppdrag":"…"}].
    Fabriken applicerar det vid nästa evolution — organismens instruktioner
    utvecklas av sig själv. Döda organs bokstav återanvänds av nästa barn.
-6. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
+6. LÅNGTIDSMINNE (våg 117): appenda ÉN rad till data/vakten/beslutsminne.jsonl
+   — {"ts":"<iso>","rond":<n>,"beslut":"<vågens kärnbeslut i en mening>","landat":"<commit-hash ELLER 'nej'>"}.
+   Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
+7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
 
   const res = await fetch(`${BAS}/api/studio/stream`, {
     method: "POST",

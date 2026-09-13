@@ -75,4 +75,18 @@ try {
   logga(`zcode-cli-processer: ${n}${n > 20 ? " — VARNING: zombie-mängd, överväg städning" : " (hälsosamt)"}`);
 } catch { /* ps ej tillgängligt */ }
 
+// 5) VÅG 116 — organismens veckoarkiv: registret (runtime i data/vakten/)
+// arkiveras versionerat till data/forskning/ — evolutionens historia bevaras
+// i git utan att deployernas träduppdatering kan radera live-tillståndet.
+try {
+  const kalla = path.join(VAKT, "organ-registret.json");
+  const arkiv = path.join(ROT, "data", "forskning", "organ-arkiv-SENASTE.json");
+  if (fs.existsSync(kalla)) {
+    fs.copyFileSync(kalla, arkiv);
+    logga("organ-registret arkiverat → data/forskning/organ-arkiv-SENASTE.json");
+  }
+} catch (e) {
+  logga("organ-arkiv FEL: " + String(e).slice(0, 100));
+}
+
 logga("data-hygien KLAR");

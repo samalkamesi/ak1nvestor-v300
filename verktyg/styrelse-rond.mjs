@@ -139,7 +139,12 @@ HÅRT LEVERANSPROTOKOLL (strikt):
 2. PARALLELL-DOCTRIN (§ 4): dispatcher upp till 9 samtidiga mikroagenter med TIGHT avgränsade uppgifter (EN fil/EN funktion var) och exklusivt filägarskap — vågor kedjas direkt när en frigörs.
 3. FART: rutinuppdrag körs med tankestyrka "nothink" (POST session tankestyrka) — reservera "high" för arkitekturbeslut.
 4. Självhelning: fastnar en pump (mål/hjärtslag/vakt) är reparationen rondens HÖGSTA prioritet (§ 3).
-5. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
+5. PROMPT-EVOLUTION v2: om ett organ FÖDDES denna rond — skriv ett FÖRÄDLAT
+   uppdrag för barnet (en mening, mikrofokuserat, ärvt fokus + tydlig vinkel)
+   till data/vakten/organ-mutationer.json som [{"bokstav":"X","uppdrag":"…"}].
+   Fabriken applicerar det vid nästa evolution — organismens instruktioner
+   utvecklas av sig själv. Döda organs bokstav återanvänds av nästa barn.
+6. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
 
   const res = await fetch(`${BAS}/api/studio/stream`, {
     method: "POST",
@@ -154,20 +159,27 @@ HÅRT LEVERANSPROTOKOLL (strikt):
   try {
     if (res.body) {
       const lasare = res.body.getReader();
-      const { value } = await Promise.race([
-        lasare.read(),
-        new Promise((_, av) => setTimeout(() => av(new Error("tidsgräns")), 10_000)),
-      ]);
-      const rad = new TextDecoder().decode(value || new Uint8Array());
-      const m = rad.match(/"totalTokenCount":(\d+)/);
-      if (m) {
-        const logFil = path.join(KATALOG, "kostnad-log.json");
-        let logg = [];
-        try { logg = JSON.parse(fs.readFileSync(logFil, "utf8")); } catch {}
-        logg.push({ ts: Date.now(), totalTokens: Number(m[1]) });
-        fs.mkdirSync(KATALOG, { recursive: true });
-        fs.writeFileSync(logFil, JSON.stringify(logg.slice(-200)));
-        logga(`KOSTNAD: totalTokenCount ${m[1]} loggad`);
+      // Läs chunken i LOOP tills totalTokenCount hittas (hej→kontext kommer
+      // i separata chuckar) eller 10 s tak.
+      const dead = Date.now() + 10_000;
+      while (Date.now() < dead) {
+        const { value, done } = await Promise.race([
+          lasare.read(),
+          new Promise((_, av) => setTimeout(() => av(new Error("tidsgräns")), dead - Date.now())),
+        ]);
+        if (done) break;
+        const rad = new TextDecoder().decode(value || new Uint8Array());
+        const m = rad.match(/"totalTokenCount":(\d+)/);
+        if (m) {
+          const logFil = path.join(KATALOG, "kostnad-log.json");
+          let logg = [];
+          try { logg = JSON.parse(fs.readFileSync(logFil, "utf8")); } catch {}
+          logg.push({ ts: Date.now(), totalTokens: Number(m[1]) });
+          fs.mkdirSync(KATALOG, { recursive: true });
+          fs.writeFileSync(logFil, JSON.stringify(logg.slice(-200)));
+          logga(`KOSTNAD: totalTokenCount ${m[1]} loggad`);
+          break;
+        }
       }
       await lasare.cancel().catch(() => {});
     }

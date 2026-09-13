@@ -13,6 +13,7 @@ import {
   Bot,
   Brain,
   Check,
+  Dna,
   CheckCircle2,
   ChevronDown,
   ChevronRight,
@@ -3425,6 +3426,53 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const strömmarHuvud = huvudTabb?.strömmar ?? false;
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+
+  /** VÅG 114 — ORGANISM-PANELEN (kunden bygger via studion ⇒ maskinens
+   *  puls ska synas här): registret + pumparnas senaste rader ur
+   *  /api/admin/organ, uppdateras var 60:e s. */
+  const [organism, setOrganism] = React.useState<{
+    rond: number;
+    aktiva: { bokstav: string; namn: string; lev: number }[];
+    döda: string[];
+    basta: string | null;
+    ekonomi: { tokensPerLeverans: number | null; tokensTotalt: number } | null;
+    pumpRad: string;
+  } | null>(null);
+  React.useEffect(() => {
+    let lev = true;
+    const hamta = async () => {
+      try {
+        const res = await fetch("/api/admin/organ", { headers: adminHeaders() });
+        if (!res.ok) return;
+        const d = await res.json();
+        if (!lev) return;
+        const aktiva = (d.registret?.organ ?? [])
+          .filter((o: { status: string }) => o.status === "aktiv")
+          .map((o: { bokstav: string; namn: string; leveranserSista2: number[] }) => ({
+            bokstav: o.bokstav,
+            namn: o.namn,
+            lev: o.leveranserSista2?.[0] ?? 0,
+          }));
+        const bastaKandidat = [...aktiva].sort((a: { lev: number }, b: { lev: number }) => b.lev - a.lev)[0];
+        setOrganism({
+          rond: d.registret?.rond ?? 0,
+          aktiva,
+          döda: (d.registret?.organ ?? [])
+            .filter((o: { status: string }) => o.status === "död")
+            .map((o: { bokstav: string }) => o.bokstav),
+          basta: bastaKandidat ? `${bastaKandidat.bokstav} (${bastaKandidat.lev})` : null,
+          ekonomi: d.registret?.kostnad ?? null,
+          pumpRad: (d.pumper?.rond ?? []).slice(-1)[0] ?? "",
+        });
+      } catch { /* tyst — panelen visar viloläge */ }
+    };
+    hamta();
+    const i = setInterval(hamta, 60_000);
+    return () => {
+      lev = false;
+      clearInterval(i);
+    };
+  }, []);
 
   /** VÅG 90 K4: senaste verktygskörningar — panelens TERMINAL-sektion. */
   const senasteVerktyg = React.useMemo(() => {
@@ -8255,6 +8303,58 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   Sätt ett mål
                 </button>
               </>
+            )}
+          </div>
+        </section>
+
+        {/* ORGANISMEN (våg 114) — kundens kontrollrum i studion: evolutionen
+            + 24/7-pumparnas puls (registret live ur /api/admin/organ). */}
+        <section aria-label="Organismen" className="border-b border-[#30363D]">
+          <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+            <Dna className="h-3.5 w-3.5 shrink-0" aria-hidden />
+            Organismen
+          </p>
+          <div className="px-3 pb-3">
+            {organism ? (
+              <>
+                <p className="font-mono text-[10px] leading-relaxed text-[#8B949E]">
+                  Rond {organism.rond} · {organism.aktiva.length}/12 aktiva
+                  {organism.döda.length > 0 && ` · döda: ${organism.döda.join(" ")}`}
+                </p>
+                <p className="mt-1 flex flex-wrap gap-1" aria-label="Aktiva organ">
+                  {organism.aktiva.map((o) => (
+                    <span
+                      key={o.bokstav}
+                      title={`${o.namn} — ${o.lev} leveranser senaste ronden`}
+                      className={
+                        "inline-flex h-5 min-w-5 items-center justify-center rounded border px-1 font-mono text-[10px] font-bold tabular-nums " +
+                        (o.lev > 0
+                          ? "border-[#D29922]/60 text-[#E3B341]"
+                          : "border-[#30363D] text-[#8B949E]")
+                      }
+                    >
+                      {o.bokstav}
+                    </span>
+                  ))}
+                </p>
+                <p className="mt-1.5 font-mono text-[10px] leading-relaxed text-[#8B949E]">
+                  {organism.basta && `Bäst: ${organism.basta}`}
+                  {organism.ekonomi?.tokensPerLeverans
+                    ? ` · ${organism.ekonomi.tokensPerLeverans.toLocaleString("sv-SE")} tkn/leverans`
+                    : ""}
+                </p>
+                {organism.pumpRad && (
+                  <p
+                    className="mt-1.5 truncate font-mono text-[10px] text-[#30363D]"
+                    style={{ color: "#6E7681" }}
+                    title={organism.pumpRad}
+                  >
+                    ⟳ {organism.pumpRad}
+                  </p>
+                )}
+              </>
+            ) : (
+              <p className="font-mono text-[10px] text-[#8B949E]">läser registret…</p>
             )}
           </div>
         </section>

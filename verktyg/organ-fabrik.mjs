@@ -27,7 +27,11 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const REGISTER = path.join(ROT, "data", "forskning", "organ-registret.json");
+// VÅG 116: runtime-tillstånd i data/vakten/ (gitignore:ad) — deployernas
+// träduppdatering skrev ÖVER det git-spårade registret med äldre committar
+// och raderade evolutionens tillstånd (bevisat 2026-09-13: rond 7 → 6).
+// Versionering sköts av data-hygienens veckoarkiv i stället.
+const REGISTER = path.join(ROT, "data", "vakten", "organ-registret.json");
 const EVOLVERA = process.argv.includes("--evolvera");
 
 // Svenska alfabetet A-Ö (organ-namnslag enligt kundens "från a till ö")
@@ -132,16 +136,27 @@ function evolvera() {
   }
 
   // 3) FÖDELSE: bästa aktiva organet föder barn i nästa lediga bokstav
+  // VÅG 113 — PROMPT-EVOLUTION (ACL 2025, LLM som svart låda): barnet ärver
+  // förälderns uppdrag + en DETERMINISTISK mutation (rotation per rond) —
+  // populationen söker uppdragsrummet, inte bara arbetskön.
+  const MUTATIONER = [
+    "prioritera snabbhet — landa leveransen med minsta möjliga turn",
+    "prioritera kostnad — minst tokens per landad commit",
+    "prioritera integration — samverka med övriga organs system",
+    "prioritera belägg — varje leverans med test/kvitto i worklog",
+    "prioritera djup — ett system grundligt hellre än tre halvt",
+  ];
   const levande = reg.organ.filter((o) => o.status === "aktiv");
   const bokstavslag = levande.map((o) => o.bokstav);
   const foralder = [...levande].sort((a, b) => b.leveranserSista2[0] - a.leveranserSista2[0])[0];
   const nyBokstav = BOKSTAVER.find((b) => !reg.organ.some((o) => o.bokstav === b));
   const fodd = [];
   if (foralder && foralder.leveranserSista2[0] > 0 && nyBokstav && levande.length < 12) {
+    const mutation = MUTATIONER[(reg.rond - 1) % MUTATIONER.length];
     const barn = {
       bokstav: nyBokstav,
       namn: `${nyBokstav}-${foralder.namn.split("-")[1]}-barn`,
-      uppdrag: `Deluppdrag ur ${foralder.namn}: ${foralder.uppdrag.split(";")[0]} — mikrofokuserat`,
+      uppdrag: `Ärv: ${foralder.uppdrag.split(";")[0]} · Mutation: ${mutation}`,
       status: "aktiv",
       fodd: new Date().toISOString().slice(0, 10),
       dod: null,
@@ -156,6 +171,27 @@ function evolvera() {
 
   reg.rond += 1;
   reg.senasteRondTs = Date.now();
+
+  // VÅG 115 — PROMPT-EVOLUTION v2 (LLM-muterade uppdrag): ronden ber
+  // agenten skriva förädlade uppdrag för (nya) organ till
+  // data/forskning/organ-mutationer.json [{bokstav, uppdrag}] — fabriken
+  // APPLICERAR dem här (organismens egna instruktioner utvecklas av sig
+  // själv; deterministiska rotationer från v1 blir fallback).
+  let muterade = 0;
+  try {
+    const fil = path.join(ROT, "data", "vakten", "organ-mutationer.json");
+    const forslag = JSON.parse(fs.readFileSync(fil, "utf8"));
+    for (const f of forslag) {
+      const o = reg.organ.find((x) => x.bokstav === f.bokstav && x.status === "aktiv");
+      if (o && typeof f.uppdrag === "string" && f.uppdrag.trim().length > 10 && f.uppdrag.length < 300) {
+        o.uppdrag = f.uppdrag.trim();
+        o.muteradAv = "LLM-rond " + reg.rond;
+        muterade++;
+      }
+    }
+    if (muterade > 0) fs.writeFileSync(fil, "[]"); // förslagen konsumerade
+  } catch { /* filen saknas = inga förslag denna rond */ }
+
   reg.kostnad = {
     tokensSistaRond: tokensDennaRond,
     tokensPerLeverans: tokensPerLeverans,

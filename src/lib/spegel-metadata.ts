@@ -5,8 +5,9 @@ import type { Metadata } from "next";
  * under /en/ och /ar/ (våg 51, agent S3 — kunddirektiv: "vi måste vara 100 %
  * arabiska och engelska på exakt samma sätt").
  *
- * Skillnad mot pageMetadata() i seo.tsx (som pekar ALLA hreflang-varianter
- * på den svenska URL:n): här är varje språkversion en egen indexerbar sida —
+ * Skillnad mot pageMetadata() i seo.tsx (där sidor utan speglar sedan
+ * rond H/våg 129 bara deklarerar sv-SE+x-default mot egen URL): här är
+ * varje språkversion en egen indexerbar sida —
  *
  *   canonical  = spegel-sidans egen URL (/en/... eller /ar/...)
  *   hreflang   = sv-SE → svensk originalsida, en → /en/…, ar → /ar/…

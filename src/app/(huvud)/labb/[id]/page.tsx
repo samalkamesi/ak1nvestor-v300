@@ -7,6 +7,9 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
+// Okända params ⇒ 404 FÖRE render (force-static ensam serverar annars
+// layout-skalet med 200 = soft-404; samma rad som blogg/[slug] och kurserna).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getCaseStudies().map((c) => ({ id: c.id }));

@@ -15,6 +15,9 @@ import { skapaT } from "@/lib/sprak";
  * Text: ordlistans "dataset"-domän; talen interpoleras per språk i metan.
  */
 export const dynamic = "force-static";
+// Okända params ⇒ 404 FÖRE render (force-static ensam serverar annars
+// layout-skalet med 200 = soft-404; samma rad som blogg/[slug] och kurserna).
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 const MEDIANER = lasBranschMedianer();

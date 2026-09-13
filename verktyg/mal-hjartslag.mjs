@@ -120,6 +120,31 @@ async function main() {
       if (felText.includes("prompt")) return logga("mål borta men prompt kör — väntar");
       return logga("mål återställning FEL " + resatt.status);
     }
+    // VÅG 127 — ZOMBIE-MÅL: målet FINNS men loopen sover (aktiv=false,
+    // pausad=false; bevisat 2026-09-13 16:41). Friskgångsregeln väcker vid
+    // NYTT MEDDELANDE ⇒ hjärtat kickar (max 1/20 min via senasteKick).
+    if (status.mal && !status.aktiv && !status.pausad) {
+      if (nu - lasState().senasteKick > MIN_MELLAN_KICK_MS) {
+        logga("ZOMBIE-MÅL: målet finns men loopen sover — kickar liv i den");
+        try {
+          const kick = await fetch(`${BAS}/api/studio/stream`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-admin-password": pass },
+            body: JSON.stringify({
+              prompt:
+                "HJÄRTSLAG (zombie-väckare): målet är satt men loopen sover. Fortsätt NÄSTA uppgift i målets kö — landa en commit taggad [organ:X] och rapportera kort.",
+            }),
+          });
+          try { await kick.body?.cancel(); } catch { /* ström lämnad */ }
+          const st = lasState();
+          skrivState({ ...st, senasteKick: Date.now(), senasteProgressTs: Date.now() });
+          return;
+        } catch (e) {
+          return logga("ZOMBIE-kick FEL: " + String(e).slice(0, 80));
+        }
+      }
+      return logga("ZOMBIE-MÅL: nyligen kickad — väntar");
+    }
     return logga("mål ej aktivt — tyst");
   }
 

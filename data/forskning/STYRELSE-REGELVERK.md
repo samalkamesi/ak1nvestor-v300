@@ -93,4 +93,17 @@ Endast kunden skriftligen. Styrelsen kan FÖRESLÅ ändringar i rond-protokollen
 5. Admin-panelen får organsystemet INNÄRAT när registret mognat (agenten
    bygger sektionen autonomt — kundens direktiv 2026-09-12).
 
+## § 9 — Spårbarhet och juridikgrind (våg 122; beslut styrelse-mtzou25g-yjq73l, kundens direktiv 2026-09-13)
+
+1. **Juridikgrinds-check är OBLIGATORISK i varje styrelsebeslut om ny
+   funktion INNAN implementering**: utbildningsformulering enligt lagen
+   (2007:528), GDPR art 13-informering vid insamling, kakregler
+   LEK 2022:482.
+2. **Varje autonomt beslut och ändring loggas i
+   data/forskning/BESLUTSLOGG.md** (datum-tid, våg/agent, organ, beslut,
+   juridikgrinds-check, filer + commit, KVD-kvitto).
+3. **'100 % online' är ett INTERNT servicemål** — det mäts, larmar och
+   återställs automatiskt. I kundsynliga löften formuleras det som
+   'hög tillgänglighet med planerat underhåll'.
+
 *Fastställt av kunden 2026-09-12; protokollfört av huvudagenten.*

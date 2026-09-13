@@ -3440,6 +3440,63 @@ export function StudioChat({ hem }: { hem: () => void }) {
     landningar: { hash: string; tid: string; amne: string }[];
     kostnadTotal: number | null;
   } | null>(null);
+  /** VÅG 125 — OBSERVATORIET: mål-strömmens senaste händelser LIVE (verk-
+   *  tyg, iterationer, deltas) — kunden ser utvecklingen som i desktop-Z,
+   *  oavsett vilken session chatten visar. */
+  const [liveFeed, setLiveFeed] = React.useState<{ ts: number; rad: string; aktiv: boolean }[]>([]);
+  const [livePa, setLivePa] = React.useState(false);
+  React.useEffect(() => {
+    if (!livePa) return;
+    const kontroll = new AbortController();
+    (async () => {
+      try {
+        const res = await fetch("/api/studio/mal/stream", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({}),
+          signal: kontroll.signal,
+        });
+        const lasare = res.body?.getReader();
+        if (!lasare) return;
+        const dekod = new TextDecoder();
+        for (;;) {
+          const { value, done } = await lasare.read();
+          if (done) break;
+          for (const rad of dekod.decode(value).split("\n")) {
+            if (!rad.startsWith("data:")) continue;
+            let j: { typ?: string; fas?: string; iteration?: number; namn?: string; kanal?: string; text?: string; pagaendeTurn?: boolean } | null = null;
+            try { j = JSON.parse(rad.slice(5).trim()); } catch { continue; }
+            if (!j?.typ) continue;
+            let text = "";
+            switch (j.typ) {
+              case "mal_iteration":
+                text = j.fas === "start" ? `▶ Iteration ${j.iteration} börjar` : `✓ Iteration ${j.iteration} klar`;
+                break;
+              case "runda":
+                text = j.fas === "start" ? "▸ Agenten börjar en runda" : "▸ Rundan klar";
+                break;
+              case "verktyg_kort":
+              case "verktyg_input":
+                text = `🔧 ${j.namn ?? "verktyg"}`;
+                break;
+              case "delta": {
+                const t = (j.text ?? "").trim();
+                if (t.length > 2) text = `… ${t.slice(0, 60)}`;
+                break;
+              }
+              case "status":
+                text = `⌁ ${(j.text ?? "").slice(0, 60)}`;
+                break;
+              default:
+                continue;
+            }
+            setLiveFeed((f) => [...f.slice(-7), { ts: Date.now(), rad: text, aktiv: j.typ !== "mal_iteration" || j.fas !== "slut" }]);
+          }
+        }
+      } catch { /* strömmen stängd — knappen startar om */ }
+    })();
+    return () => kontroll.abort();
+  }, [livePa]);
   React.useEffect(() => {
     let lev = true;
     const hamta = async () => {
@@ -8312,12 +8369,46 @@ export function StudioChat({ hem }: { hem: () => void }) {
         </section>
 
         {/* ORGANISMEN (våg 114) — kundens kontrollrum i studion: evolutionen
-            + 24/7-pumparnas puls (registret live ur /api/admin/organ). */}
+            + 24/7-pumparnas puls (registret live ur /api/admin/organ).
+            VÅG 125 — OBSERVATORIET: LIVE-knappen strömmar mål-arbetets
+            händelser (iterationer, verktyg, resonemang) i realtid här. */}
         <section aria-label="Organismen" className="border-b border-[#30363D]">
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
             <Dna className="h-3.5 w-3.5 shrink-0" aria-hidden />
             Organismen
+            <button
+              onClick={() => setLivePa((p) => !p)}
+              title={livePa ? "Stäng direktsändningen" : "Följ utvecklingen LIVE — varje verktyg och iteration i realtid"}
+              className={
+                "ml-auto flex items-center gap-1 rounded-full border px-2 py-0.5 text-[9px] font-bold transition-colors " +
+                (livePa
+                  ? "border-[#F85149]/60 bg-[#F85149]/10 text-[#F85149]"
+                  : "border-[#30363D] text-[#8B949E] hover:border-[#58A6FF] hover:text-[#E6EDF3]")
+              }
+            >
+              {livePa ? "● LIVE — stäng" : "▶ FÖLJ LIVE"}
+            </button>
           </p>
+          {livePa && (
+            <div className="mx-3 mb-2 rounded-md border border-[#30363D] bg-[#0D1117] p-2">
+              {liveFeed.length === 0 ? (
+                <p className="animate-pulse font-mono text-[10px] text-[#8B949E]">
+                  ansluter till organismens direktsändning…
+                </p>
+              ) : (
+                <ul className="space-y-0.5">
+                  {liveFeed.map((h, i) => (
+                    <li
+                      key={h.ts + "-" + i}
+                      className={"font-mono text-[10px] leading-snug " + (i === liveFeed.length - 1 ? "text-[#E6EDF3]" : "text-[#8B949E]")}
+                    >
+                      {h.rad}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
           <div className="px-3 pb-3">
             {organism ? (
               <>

@@ -4243,16 +4243,50 @@ export function StudioChat({ hem }: { hem: () => void }) {
             typeof data.senastAktivSessionId === "string" && data.senastAktivSessionId ? data.senastAktivSessionId : null;
           const senastAktivHistorik = Array.isArray(data.senastAktivHistorik) ? data.senastAktivHistorik : [];
           const sparadSid = lasSenasteSessionId();
-          let kandidat = sparadSid && sparadSid === senastAktivSessionId ? sparadSid : senastAktivSessionId;
+          // VÅG 139 — SESSIONS-PREFERENS VID ÖPPNING/REFRESH ("chatten tappas
+          // när jag uppdaterar"): tidigare trumfade serverns "senast aktiva"
+          // kundens sparade flik — men efter varje styrelserond/testprompt är
+          // "senast aktiva" = ROND-sessionen, och kundens egen chatt försvann
+          // ur vyn. Ny ordning: (1) kundens sparade session om den lever,
+          // (2) MÅL-sessionen (pågående arbetet — chatten fortsätter synas),
+          // (3) transportens senast aktiva, (4) listans senaste (v128).
+          const sessionerLista =
+            (data as { sessioner?: { sessionId: string }[] }).sessioner ?? [];
+          const leverIListan = (id: string | null): id is string =>
+            !!id && sessionerLista.some((s) => s.sessionId === id);
+          const malSid =
+            (aktivtMal as unknown as { sessionId?: string } | null)?.sessionId ?? null;
+          let kandidat: string | null = leverIListan(sparadSid)
+            ? sparadSid
+            : leverIListan(malSid)
+              ? malSid
+              : senastAktivSessionId;
+          let aktivHistorik = senastAktivHistorik;
+          // Kandidaten är inte transportens egna session ⇒ hämta dess historik
+          const transportSid = typeof data.sessionId === "string" ? data.sessionId : "";
+          if (
+            kandidat &&
+            kandidat !== senastAktivSessionId &&
+            kandidat !== transportSid
+          ) {
+            try {
+              const r2 = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(kandidat)}`, {
+                headers: adminHeaders(),
+              });
+              if (r2.ok) {
+                const d2 = (await r2.json()) as { historik?: HistorikPost[] };
+                if (Array.isArray(d2.historik) && d2.historik.length > 0) {
+                  aktivHistorik = d2.historik;
+                }
+              }
+            } catch { /* nätverksfel — tabben börjar tom; nästa prompt resumear */ }
+          }
           // VÅG 128 — "STUDION ÄR INTE HELT ÖPPEN"-BOTEN: transporten kan ha
           // tappat sin sessionsbindning (pm2-omstart/session-churn) medan
           // ALLA sessioner lever kvar i listan ⇒ kandidat=null ⇒ TOM vy.
           // Fallback: senaste sessionen i listan + dess historik ⇒ studion
           // öppnar ALLTID med det senaste samtalet synligt.
-          let aktivHistorik = senastAktivHistorik;
           if (!kandidat) {
-            const sessionerLista =
-              (data as { sessioner?: { sessionId: string }[] }).sessioner ?? [];
             const s0 = sessionerLista[0];
             if (s0?.sessionId) {
               kandidat = s0.sessionId;

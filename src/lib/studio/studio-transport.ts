@@ -807,6 +807,11 @@ export interface StudioMalStatus {
   senasteEvent?: string;
   /** VÅG 91 A1b: epoch ms när senaste mål-event sågs (statuspollens "uppdaterad"). */
   uppdaterad?: number;
+  /**
+   * VÅG 139: mål-sessionens id — så studions öppningsval kan prioritera
+   * PÅGÅENDE arbete (kunden ser chatten fortsätta efter refresh).
+   */
+  sessionId?: string;
 }
 
 /** Status-badge för en bakgrundsagent (session/subagents running+ended). */
@@ -4009,6 +4014,8 @@ class AppServerTransport implements StudioTransport {
       pagaendeTurn: this.malTurnOppen,
       senasteEvent: this.malSenasteEvent ?? undefined,
       uppdaterad: this.malSenasteEventTid ?? undefined,
+      // VÅG 139: mål-sessionens id — studions öppningspreferens (refresh).
+      sessionId: this.sid ?? undefined,
     };
   }
 

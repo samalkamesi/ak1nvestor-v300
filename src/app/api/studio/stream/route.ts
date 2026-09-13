@@ -364,7 +364,21 @@ export async function POST(req: NextRequest) {
       // klient-frånkoppling (req.signal abort) SPARAS svaret för sessions-
       // kartan men SKICKAS inget (lyssnaren är i praktiken avregistrerad),
       // och polling nedan pausas.
+      // VÅG 142 — PROMPT-KÖN: mål-loopen arbetar nästan alltid (24/7) på
+      // huvudtrådens session — kundens prompt kan studsas med -32010 ("en
+      // prompt kör redan") som FEL-EVENT (transporten kastar ej). Tidigare:
+      // studsen nådde klienten som ett tyst fel och meddelandet "låg
+      // obesvarat" = kundens "allt stannar när jag går ifrån". Nu: studsen
+      // fångas, klienten får kö-status, och prompten skickas OM (15 s
+      // intervall, tak 8 min) tills agenten är ledig — svaret kommer ALLTID.
+      let upptagenStuds = false;
+      const arUpptagen = (m: string) =>
+        m.includes("-32010") || m.toLowerCase().includes("kör redan") || m.toLowerCase().includes("pågår redan");
       const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
+        if (event.typ === "fel" && typeof event.meddelande === "string" && arUpptagen(event.meddelande)) {
+          upptagenStuds = true;
+          return; // studsen syns ej — prompt-kön tar över
+        }
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
         if (req.signal.aborted) return;
         skicka(event);
@@ -381,11 +395,23 @@ export async function POST(req: NextRequest) {
         // HELA svaret via GET. (Tidigare beteende: abort ⇒ session/stop =
         // arbetet dog — kundens "den dör när jag hoppar till nästa sida".)
         // Transportens EV. signal förblir dess interna sak (10-min-taket).
-        if (bilder.length > 0) {
-          await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
-        } else {
-          await transport.skicka(prompt, skickaMedVakt);
-        }
+        const KO_TAK_MS = 8 * 60_000;
+        const koStart = Date.now();
+        do {
+          upptagenStuds = false;
+          if (bilder.length > 0) {
+            await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
+          } else {
+            await transport.skicka(prompt, skickaMedVakt);
+          }
+          if (upptagenStuds && Date.now() - koStart < KO_TAK_MS) {
+            skickaMedVakt({
+              typ: "status",
+              text: "Agenten avslutar sitt pågående arbete — din prompt är köad och körs strax (automatiskt)…",
+            });
+            await new Promise((r) => setTimeout(r, 15_000));
+          }
+        } while (upptagenStuds && Date.now() - koStart < KO_TAK_MS);
         // VÅG 90 K1: polling BARA för en levande klient — efter abort ställer
         // servern inga fler protokollsfrågor (kontext/diff) i onödan.
         if (req.signal.aborted) return;

@@ -51,6 +51,7 @@ function tick() {
   const dag = d.getDay();
 
   if (min % 10 === 1) korEnGang("hjärtslag", "node", ["verktyg/mal-hjartslag.mjs"]);
+  if (min % 10 === 4) korEnGang("kraschvakt", "node", ["verktyg/kraschvakt.mjs"]);
   if (min % 10 === 7) korEnGang("prod-synk", "node", ["verktyg/prod-synk.mjs"]);
   if (min === 43 && tim % 3 === 1) korEnGang("styrelserond", "node", ["verktyg/styrelse-rond.mjs"]);
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);
@@ -58,6 +59,6 @@ function tick() {
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
 }
 
-logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · synk :x7 · rond xx:43/3h · vakt xx:17/6h · värmare 03:10 · hygien sö 03:33");
+logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · synk :x7 · rond xx:43/3h · vakt xx:17/6h · värmare 03:10 · hygien sö 03:33");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

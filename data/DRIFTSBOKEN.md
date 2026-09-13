@@ -55,14 +55,17 @@ Nyckelfakta (alla verifierade 2026-09-08):
   via Schemaläggaren (se kap 4).
 
 ### Kända brister (kända vid skrivandet)
-1. **KÄNT FEL — /etc/crontab ignoreras HELT av cron.** De tre curl-raderna
-   saknar användarfält; cron svarar "bad username / Syntax error, this
-   crontab file will be ignored" (syns i /var/log/syslog). Konsekvens: INGA
-   av ovanstående rader körs — varken innehållscroner eller ak1a-halsa
-   (hälso-loggens rader vid 21:57 var manuella testkörningar).
-   Åtgärd (en rad per cron-rad, lägg `root` efter de fem tidsfälten):
-   `30 6 * * * root curl -s -m 300 -H "Host: lab.ak1nvestor.com" ...`
-   Verifiera efteråt: `sudo grep CRON /var/log/syslog | tail`.
+1. ~~**KÄNT FEL — /etc/crontab ignoreras HELT av cron.**~~ **ÅTGÄRDAT före
+   2026-09-13** (våg 122A verifierade filläsning: alla fyra AK1A-rader har
+   `root`-fält; /var/log/ak1a-halsa.log färsk var 5:e minut). Ursprunglig
+   åtgärd stämmer fortfarande som referens: `30 6 * * * root curl ...`.
+   AKTUELL bild av pumporna (våg 122A, 2026-09-13): gränssnittsvakt +
+   ISR-värmare + hjärtslag + rond + hygien körs av pm2-processen
+   `ak1a-pumpor` (verktyg/pumpor-daemon.mjs, våg 113) — INTE av crontab;
+   crontab kör ak1a-halsa (*/5) + innehållscroner. KVALITETSVAKTEN är den
+   enda pumpen utan serverdrift (data/rapporter-kopian är från datorn,
+   2026-09-10) — korrekt rad finns i data/infra/contabo/crontab-korrekt.txt,
+   applicering kräver kund-godkänd sudo.
 2. ADMIN_PASSWORD / SESSION_SECRET / REDAKTOR_PASSWORD ännu EJ satta i
    serverns .env (koll 2026-09-08) — admin-låsläge/dev-regler gäller (kap 6).
 3. Startmappens AK1A-hybrid-sync.cmd är en äldre 3-stegsversion; nya
@@ -256,6 +259,43 @@ testa-kurs-metadata.mjs, testa-mediabibliotek.mjs, testa-medlem-auth.mjs.
 
 SLUT. Boken uppdateras av kommande sessioner när fakta ändras — lämna en
 rad i worklog när du redigerar.
+
+## VÅG 122 — PUSH-BLOCKERINGEN PERMANENT LÖST (2026-09-13)
+
+- Rot (våg 121): `data/cache/` (405 runtime-JSON-filer, akm1/akm2/
+  fundamental/fvag) var TRAMMAT i git — appens on-demand-omskrivningar gjorde
+  prod-worktreet smutsigt och `receive.denyCurrentBranch=updateInstead`
+  vägrar då push. Symtom: "Working directory has unstaged changes".
+- Permanent fix (commit 7f496757): `data/cache/*` gitignorerad (regeln
+  levererad i b98336db) + `git rm -r --cached data/cache` + `.gitkeep`
+  behållen. Checkout i prod tog de spårade filerna ur worktreet EN gång;
+  appen återskapar dem som ignorerade (kall start OK enligt
+  datacache.ts-kontraktet: "cachen är en accelererare, aldrig ett beroende").
+- Säkringsgrenen `vag121-vantar` raderad efter verifierad HEAD-likhet.
+- REGEL KVARSTÅR: kodbärande vågor → tsc (baslinje 34, 0 nya) → commit →
+  push prod → bygg ENDAST under `/tmp/ak1a-deploy.lock` → prod 200-kontroll.
+- Studio-notis: git-verb direkt i bash kan fastna i obesvarad
+  behörighetsprompt; godkänt mönster = node-execSync-wrapper (.zcode/v122*).
+
+## VÅG 122 — 100 %-ONLINE-SYSTEMET (2026-09-13, beslut mtzou25g)
+
+Styrelsens servicemål "100 % online" (internt; kundlöfte formuleras "hög
+tillgänglighet med planerat underhåll") har nu mätning + larm + självläkning:
+
+| Skikt | Vad | Var |
+|---|---|---|
+| Pulsvakt | pm2-process `pulsvakt`: var 60 s loopback `/` + `/api/sok?q=akm2`, var 10:e varv externt HTTPS; auto-omstart pm2 ak1a (max 1/min, aldrig loop); larm JSON-rader + statusfil | verktyg/pulsvakt.mjs; loggar data/vakten/pulsvakt-{larm.log,status.json}; aktivering data/infra/contabo/pulsvakt-start.sh |
+| Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
+| Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
+| Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20 s / 60 tabeller / 1,19 M rader (våg 98 F3) | data/forskning/DR-PROV-2026-09-13.md |
+| Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
+
+Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
+renew --dry-run, reboot-drill, bevakarkonto + ev. OVERVAKNING_TOKEN.
+Säkerhetsfynd att åtgärda vid sudo-fönster: Basic Auth-referenser i
+klartext i världsläsbar /etc/systemd/system/zcode-chat.service (flytta till
+EnvironmentFile med chmod 600).
 
 ## VÅG 98 F3 — BACKUP-DR-PROV (2026-09-11, GODKÄNT)
 

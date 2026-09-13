@@ -494,6 +494,7 @@ export function analysisJsonLd(a: Analysis) {
     inLanguage: "sv-SE",
     image: `${SITE_URL}/og/analys/${analysOgStam(a.ticker)}.png`,
     datePublished: a.analysisDate || a.verified,
+    dateModified: a.verified || a.analysisDate,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/analyser/${encodeURIComponent(a.ticker)}`,

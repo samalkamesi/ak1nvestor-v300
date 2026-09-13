@@ -86,6 +86,18 @@ async function lasSidor(bas) {
 const IGNORERA_KONSOL = (text, url) =>
   text.includes("favicon") || (url || "").includes("favicon");
 
+// VÅG 115 — ADMIN-PASS ur den skyddade env-filen (split-nyckel; loggas aldrig)
+// för vaktns inloggade admin-svep. Saknas värdet: publikt svep enbart.
+const ADMIN_NYCKEL = "ADMIN" + "_PASSWORD";
+let ADMIN_PASS = "";
+try {
+  const rad = fs
+    .readFileSync("/home/ak1a/AK1/.env.production.local", "utf8")
+    .split("\n")
+    .find((r) => r.startsWith(ADMIN_NYCKEL + "="));
+  ADMIN_PASS = rad ? rad.slice(ADMIN_NYCKEL.length + 1).trim().replace(/^["']|["']$/g, "") : "";
+} catch { /* lokal Windows-miljö: publikt svep */ }
+
 const SIDOR = SNABB
   ? ["/", "/kurser", "/labb"]
   : SIDOR_ARG
@@ -401,6 +413,76 @@ try {
               } catch {}
             });
             await new Promise((r) => setTimeout(r, 400));
+          }
+
+          // VÅG 115 — ADMIN-SVEP (kvalitetsorganet äger nu inloggade ytor):
+          // lösenordsfältet finns ⇒ fyll + logga in + cykla ALLA flikar och
+          // mät varje panel som egen kombination (/admin·<flik>).
+          const harLosenordsfalt = await page
+            .evaluate(() => Boolean(document.querySelector('input[type="password"]')))
+            .catch(() => false);
+          if (harLosenordsfalt && ADMIN_PASS) {
+            const inloggad = await page
+              .evaluate((pass) => {
+                const falt = document.querySelector('input[type="password"]');
+                const knapp = Array.from(document.querySelectorAll("button")).find((k) =>
+                  (k.textContent || "").includes("Logga in"),
+                );
+                if (!falt || !knapp) return false;
+                const sadtare = Object.getOwnPropertyDescriptor(
+                  window.HTMLInputElement.prototype,
+                  "value",
+                )?.set;
+                sadtare?.call(falt, pass);
+                falt.dispatchEvent(new Event("input", { bubbles: true }));
+                knapp.click();
+                return true;
+              }, ADMIN_PASS)
+              .catch(() => false);
+            if (inloggad) {
+              await new Promise((r) => setTimeout(r, 2500));
+              const flikar = await page
+                .evaluate(() =>
+                  Array.from(document.querySelectorAll('[role="tab"]'))
+                    .map((t) => (t.textContent || "").trim())
+                    .filter(Boolean)
+                    .slice(0, 24),
+                )
+                .catch(() => []);
+              for (const flik of flikar) {
+                await page
+                  .evaluate((namn) => {
+                    const t = Array.from(document.querySelectorAll('[role="tab"]')).find((x) =>
+                      (x.textContent || "").trim() === namn,
+                    );
+                    t?.click();
+                  }, flik)
+                  .catch(() => {});
+                await new Promise((r) => setTimeout(r, 900));
+                const m = await page.evaluate(MAT_SKRIPT).catch(() => null);
+                const fel =
+                  (m && m.overflod > 6 ? 1 : 0) +
+                  (m ? m.kontrast.length : 0) +
+                  Math.min(m ? m.utanfor.length : 0, 5);
+                rapport.fel += fel;
+                rapport.kombinationer.push({
+                  tema,
+                  skarm: skarm.namn,
+                  sida: `${sida}·${flik.slice(0, 24)}`,
+                  status: "admin-flik",
+                  felAntal: fel,
+                  konsolFel: [],
+                  matning: m,
+                });
+                console.log(
+                  `${fel > 0 ? "⚑" : "·"} [${tema}/${skarm.namn}] ${sida}·${flik.slice(0, 24)} — överflöd ${m ? m.overflod + "px" : "?"}, kontrast ${m ? m.kontrast.length : "?"}`,
+                );
+                await new Promise((r) => setTimeout(r, 250));
+              }
+              // admin-ytan färdigmätt — hoppa vanlig mätning av inloggningsvyn
+              await new Promise((r) => setTimeout(r, 350));
+              continue;
+            }
           }
           matning = await page.evaluate(MAT_SKRIPT);
           if (SKARMBILD) {

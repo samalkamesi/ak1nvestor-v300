@@ -139,7 +139,12 @@ HÅRT LEVERANSPROTOKOLL (strikt):
 2. PARALLELL-DOCTRIN (§ 4): dispatcher upp till 9 samtidiga mikroagenter med TIGHT avgränsade uppgifter (EN fil/EN funktion var) och exklusivt filägarskap — vågor kedjas direkt när en frigörs.
 3. FART: rutinuppdrag körs med tankestyrka "nothink" (POST session tankestyrka) — reservera "high" för arkitekturbeslut.
 4. Självhelning: fastnar en pump (mål/hjärtslag/vakt) är reparationen rondens HÖGSTA prioritet (§ 3).
-5. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
+5. PROMPT-EVOLUTION v2: om ett organ FÖDDES denna rond — skriv ett FÖRÄDLAT
+   uppdrag för barnet (en mening, mikrofokuserat, ärvt fokus + tydlig vinkel)
+   till data/forskning/organ-mutationer.json som [{"bokstav":"X","uppdrag":"…"}].
+   Fabriken applicerar det vid nästa evolution — organismens instruktioner
+   utvecklas av sig själv. Döda organs bokstav återanvänds av nästa barn.
+6. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
 
   const res = await fetch(`${BAS}/api/studio/stream`, {
     method: "POST",

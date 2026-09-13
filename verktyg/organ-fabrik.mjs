@@ -167,6 +167,27 @@ function evolvera() {
 
   reg.rond += 1;
   reg.senasteRondTs = Date.now();
+
+  // VÅG 115 — PROMPT-EVOLUTION v2 (LLM-muterade uppdrag): ronden ber
+  // agenten skriva förädlade uppdrag för (nya) organ till
+  // data/forskning/organ-mutationer.json [{bokstav, uppdrag}] — fabriken
+  // APPLICERAR dem här (organismens egna instruktioner utvecklas av sig
+  // själv; deterministiska rotationer från v1 blir fallback).
+  let muterade = 0;
+  try {
+    const fil = path.join(ROT, "data", "forskning", "organ-mutationer.json");
+    const forslag = JSON.parse(fs.readFileSync(fil, "utf8"));
+    for (const f of forslag) {
+      const o = reg.organ.find((x) => x.bokstav === f.bokstav && x.status === "aktiv");
+      if (o && typeof f.uppdrag === "string" && f.uppdrag.trim().length > 10 && f.uppdrag.length < 300) {
+        o.uppdrag = f.uppdrag.trim();
+        o.muteradAv = "LLM-rond " + reg.rond;
+        muterade++;
+      }
+    }
+    if (muterade > 0) fs.writeFileSync(fil, "[]"); // förslagen konsumerade
+  } catch { /* filen saknas = inga förslag denna rond */ }
+
   reg.kostnad = {
     tokensSistaRond: tokensDennaRond,
     tokensPerLeverans: tokensPerLeverans,

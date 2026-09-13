@@ -121,6 +121,18 @@ denna server. Leveransprotokoll:
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
 
+## KVALITETSGRINDEN (våg 139 — kunddirektiv 2026-09-14: "MEKANISK, ALDRIG --no-verify")
+
+`verktyg/kvalitetsgrind.mjs` körs som `.git/hooks/pre-commit` (installeras
+med `node verktyg/installa-kvalitetsgrind.mjs` — arbetsyta OCH prod-repot
+/home/ak1a/AK1). Två grindar: (1) R2-hemlighetsskydd — ALDRIG .env*,
+nyckel-/pem-filer eller hemlighetsexponenter i innehållet; (2) tsc 0 —
+när kod är staged körs `npx tsc --noEmit` mot baslinjen 0 (rena
+dataleveranser hoppar över tsc för snabbhet). Commit avslås vid brott.
+**`--no-verify` är FÖRBJUDET** — rätta felet i stället för att gå förbi
+grinden. Git-hooks versioneras ej; förbättringar av grinden landar i
+verktyg/kvalitetsgrind.mjs som vanlig commit och ominstallation vid behov.
+
 ## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
 
 Huvudagentens studio-skal har två kända svagheter (app-server 3.11.2-22):

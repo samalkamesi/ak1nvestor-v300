@@ -69,18 +69,26 @@ implementationen.
 
 | Block | Agent | Uppgift | Utdatafil (EXKLUSIVT) | Status |
 |---|---|---|---|---|
-| S1 KURSORPUS SV | subagent | Extrahera svenska nyckelfraser ur data/seo/kurser (333 JSON: titlar, ämnen, begrepp) | data/forskning/sokord/kurser-sv.md | dispatchad |
-| S2 KURSORPUS EN | subagent | Engelska nyckelfraser ur samma källas en-fält | data/forskning/sokord/kurser-en.md | dispatchad |
-| S3 KURSORPUS AR | subagent | Arabiska nyckelfraser ur samma källas ar-fält | data/forskning/sokord/kurser-ar.md | dispatchad |
-| S4 ANALYSBIBLIOTEKET | subagent | data/analyses (11) + data/forskningsbiblioteket (22) + cacher → ticker/bransch/tema-nyckelord | data/forskning/sokord/analysbibliotek.md | dispatchad |
-| S5 BLOGGKORPUS | subagent | data/blogg (55) → befintlig ämnestäckning × 3 språk | data/forskning/sokord/blogg.md | dispatchad |
-| S6 INDEX-INVENTORY | subagent | src/app/sitemap.ts + rutter (huvud/en/ar) → vad är indexerbart idag, URL-mönster, strukturella glapp | data/forskning/sokord/inventory.md | dispatchad |
-| S7 BRANSCH/DATASET | subagent | branschmedianer-akm2.json, data/stocks, dataset-ytorna → branschteman för programmatiska sidor | data/forskning/sokord/bransch-teman.md | dispatchad |
-| S8 FRÅGEMÖNSTER | subagent | Pedagogiska sökmönster sv/en/ar ("hur X", "vad är X", "X för nybörjare") + juridikgrinds-flaggning | data/forskning/sokord/fragemonster.md | dispatchad |
-| S9 EXTERNA SIGNALER | subagent | WebSearch: verkliga sökfrågor inom finansiell utbildning (sv först, en/ar-ekvivalenter), relaterade sökningar | data/forskning/sokord/externa-signaler.md | dispatchad |
+| S1 KURSORPUS SV | subagent | Extrahera svenska nyckelfraser ur data/seo/kurser (333 JSON: titlar, ämnen, begrepp) | data/forskning/sokord/kurser-sv.md | LEVERERAD 5f9248a1 |
+| S2 KURSORPUS EN | subagent | Engelska nyckelfraser ur samma källas en-fält | data/forskning/sokord/kurser-en.md | LEVERERAD 0c7287b5 |
+| S3 KURSORPUS AR | subagent | Arabiska nyckelfraser ur samma källas ar-fält | data/forskning/sokord/kurser-ar.md | LEVERERAD 86d663f5 |
+| S4 ANALYSBIBLIOTEKET | subagent | data/analyses (11) + data/forskningsbiblioteket (22) + cacher → ticker/bransch/tema-nyckelord | data/forskning/sokord/analysbibliotek.md | LEVERERAD 0d278b42 |
+| S5 BLOGGKORPUS | subagent | data/blogg (55) → befintlig ämnestäckning × 3 språk | data/forskning/sokord/blogg.md | LEVERERAD 73dfaf25 |
+| S6 INDEX-INVENTORY | subagent | src/app/sitemap.ts + rutter (huvud/en/ar) → vad är indexerbart idag, URL-mönster, strukturella glapp | data/forskning/sokord/inventory.md | LEVERERAD 77aed5dd |
+| S7 BRANSCH/DATASET | subagent | branschmedianer-akm2.json, data/stocks, dataset-ytorna → branschteman för programmatiska sidor | data/forskning/sokord/bransch-teman.md | LEVERERAD 0c47fabe |
+| S8 FRÅGEMÖNSTER | subagent | Pedagogiska sökmönster sv/en/ar ("hur X", "vad är X", "X för nybörjare") + juridikgrinds-flaggning | data/forskning/sokord/fragemonster.md | LEVERERAD f5c8a7dd |
+| S9 EXTERNA SIGNALER | subagent | WebSearch: verkliga sökfrågor inom finansiell utbildning (sv först, en/ar-ekvivalenter), relaterade sökningar | data/forskning/sokord/externa-signaler.md | LEVERERAD 76b40143 |
 
 Gemensamma regler: LÄSA får alla allt; SKRIVA endast egen utdatafil (+ ev.
 sondskript i .zcode/). Ingen agent rör src/**, ingen bygger, ingen pushar —
 commit "studio: våg 138 <block> — <vad>" UTAN push. Juridikgrind i alla
 formuleringar (utbildning, aldrig råd). tsc-baslinje 0 (våg 133) skall
 förbli 0 — inga kodändringar alls i denna våg.
+
+## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
+
+- ▶ NÄSTA: Våg 138 syntes → SOKORDSINVENTERING-2026.md + våg 139 kodleverans (Observatoriet v3 + mekanisk kvalitetsgrind) — kunddirektiv 2026-09-14: planeringsvy i Organismen-panelen, pre-commit tsc 0 + R2-skydd
+- · Våg 140 — MAX-PARALLELL BEVISVÅG: 12 subagenter × FAQ-utökning (41 bloggposter utan "## FAQ" får 3–4 par each, exklusiva postfiler) — kunddirektiv: bevisa 12-parallellismen, mät commits/timme + tid per leverans i worklog
+- · Long-tail-sidor: programmatisk landningsside-plan grundad på sökordsinventeringens täckningsmatris — S9 bevisade glapp (Reddit rankar på fundamental analys; "skillnaden X vs Y" svagt täckt; arabiska strukturella glappet)
+- · Sökordsvolym-validering — S1 noterar att LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
+- · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)

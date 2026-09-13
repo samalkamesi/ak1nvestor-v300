@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { adminHeaders } from "@/lib/admin-klient";
-import { Dna, HeartPulse, ShieldCheck, RefreshCw, Skull, Baby, Trophy } from "lucide-react";
+import { Dna, HeartPulse, ShieldCheck, RefreshCw, Skull, Baby, Trophy, Radar, GitCommitHorizontal } from "lucide-react";
 
 /**
  * ORGAN-PANELEN (våg 110) — organsystemets kontrollrum i admin.
@@ -39,8 +39,34 @@ interface HistorikRad {
   fodd: string[];
 }
 
+/** Våg 139 — Observatoriet v3: en agent-rad i pågående våg, med filbevis. */
+interface VagRadUI {
+  block: string;
+  agent: string;
+  uppdrag: string;
+  utdatafil: string;
+  status: string;
+  filFinns: boolean;
+  commit: string | null;
+  commitTid: string | null;
+}
+
+interface NastaRadUI {
+  markering: string;
+  uppdrag: string;
+  varfor: string;
+}
+
+interface LandningUI {
+  hash: string;
+  tid: string;
+  amne: string;
+}
+
 interface Data {
   registret: { rond: number; organ: OrganRad[]; historik: HistorikRad[] };
+  senasteCommits?: LandningUI[];
+  planering?: { vagTitel: string; vagRader: VagRadUI[]; nasta: NastaRadUI[] };
   pumper: { rond: string[]; hjartslag: string[]; vakt: string[] };
 }
 
@@ -78,6 +104,9 @@ export function OrganPanel() {
   )[0];
   const historik = [...(data?.registret.historik ?? [])].reverse().slice(0, 8);
   const totaltCommits = historik.reduce((s, h) => s + h.commits, 0);
+  const planering = data?.planering ?? { vagTitel: "", vagRader: [], nasta: [] };
+  const landningar = data?.senasteCommits ?? [];
+  const vagLevererade = planering.vagRader.filter((r) => r.commit !== null).length;
 
   return (
     <div className="space-y-4">
@@ -118,6 +147,105 @@ export function OrganPanel() {
         Organ utan leverans i två ronder dör; rondens bästa organ föder ett barn (A-Ö).
         Cell föds, cell dör — de bästa överlever längst.
       </p>
+
+      {/* OBSERVATORIET v3 (våg 139) — planeringsvyn: pågående våg, nästa i kön */}
+      {(planering.vagRader.length > 0 || planering.nasta.length > 0) && (
+        <Card className="p-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <Radar className="h-4 w-4 text-gold" aria-hidden />
+            <h4 className="font-serif font-bold">Observatoriet v3 — planering</h4>
+            {planering.vagRader.length > 0 && (
+              <Badge variant="secondary" className="text-[10px] tabular-nums">
+                våg: {vagLevererade}/{planering.vagRader.length} levererade
+              </Badge>
+            )}
+          </div>
+
+          {/* Pågående våg — agenter, filer, status med filbevis */}
+          {planering.vagRader.length > 0 && (
+            <>
+              <p className="mt-2 text-sm font-semibold leading-snug">{planering.vagTitel}</p>
+              <div className="mt-2 overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead>
+                    <tr className="border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
+                      <th className="py-1.5 pr-3">Block</th>
+                      <th className="py-1.5 pr-3">Uppgift</th>
+                      <th className="py-1.5 pr-3">Utdatafil</th>
+                      <th className="py-1.5">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {planering.vagRader.map((r) => (
+                      <tr key={r.block} className="border-b border-border/50 align-top">
+                        <td className="py-1.5 pr-3 font-semibold whitespace-nowrap">{r.block}</td>
+                        <td className="max-w-[16rem] py-1.5 pr-3 leading-snug text-foreground/80">
+                          <span className="line-clamp-2">{r.uppdrag}</span>
+                        </td>
+                        <td className="py-1.5 pr-3 font-mono text-[10px] leading-snug text-muted-foreground">
+                          {r.utdatafil.split(/[,+]/)[0]?.trim() ?? r.utdatafil}
+                        </td>
+                        <td className="py-1.5 whitespace-nowrap">
+                          {r.commit !== null ? (
+                            <Badge className="bg-emerald-600 text-[10px] text-white">
+                              LEVERERAD {r.commit}
+                            </Badge>
+                          ) : r.filFinns ? (
+                            <Badge className="bg-amber-500 text-[10px] text-background">
+                              fil på disk
+                            </Badge>
+                          ) : (
+                            <span className="text-[10px] text-muted-foreground">{r.status}</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
+          {/* Nästa i kön — med varför-rader */}
+          {planering.nasta.length > 0 && (
+            <div className="mt-4">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                Nästa i kön
+              </p>
+              <ul className="mt-1.5 space-y-1.5">
+                {planering.nasta.map((n, i) => (
+                  <li key={i} className="text-xs leading-relaxed">
+                    <span className="mr-1">{n.markering}</span>
+                    <span className="font-semibold">{n.uppdrag}</span>
+                    {n.varfor !== "" && (
+                      <span className="text-muted-foreground"> — {n.varfor}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </Card>
+      )}
+
+      {/* Senaste landningar — organismens faktiska leveranser */}
+      {landningar.length > 0 && (
+        <Card className="p-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <GitCommitHorizontal className="h-4 w-4 text-gold" aria-hidden />
+            <h4 className="font-serif font-bold">Senaste landningar</h4>
+          </div>
+          <ul className="mt-2 space-y-1">
+            {landningar.map((l) => (
+              <li key={l.hash} className="flex flex-wrap items-baseline gap-x-2 text-xs">
+                <span className="font-mono text-[10px] text-gold">{l.hash}</span>
+                <span className="text-[10px] tabular-nums text-muted-foreground">{l.tid}</span>
+                <span className="min-w-0 flex-1 leading-snug">{l.amne}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      )}
 
       {/* Bästa organet */}
       {basta && (

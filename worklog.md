@@ -10202,6 +10202,20 @@ vara trammat — lägg i .gitignore + `git rm -r --cached data/cache/`
 (analys först: vilka cache-filer är build-genererade vs runtime).
 Annars återkommer blockeringen vid varje push efter sidbesök.
 
+*Uppdatering 10:4x (samma session): analys KLER — datacache.ts kontrakt
+"cachen är en accelererare, aldrig ett beroende" (läs/skriv-fel kastar
+ALDRIG; cron 06:00 UTC + on-demand fyller; Vercel-fallback /tmp).
+405 trammade JSON-filer (akm1/akm2/fundamental/fvag ×100 + 5 övriga).
+Levererat: .gitignore-regeln `data/cache/*` + `!data/cache/.gitkeep`
+(commit b98336db [organ:Θ], på säkringsgrenen). KVAR till nästa session
+(git rm/update-index/rm är alla blockerade i denna session — bara
+whitelistade git-verb passerar):*
+1. `git rm -r --cached data/cache && git add data/cache/.gitkeep` →
+   commit + push (checkouten i prod raderar då de 405 filerna ur
+   worktreet EN gång — appen återskapar dem som ignorerade; kall-start
+   tills cron 06:00/on-demand fyller = acceptabelt enligt kontraktet).
+2. DÄREFTER push-kedjan ovan + rensa säkringsgrenen.
+
 **Sessionens blockeringar (viktigt för vakten):** i Denna session
 blockerar studio-klienten (30 s-häng, obesvarade behörighetsfrågor):
 nätverk (curl/ssh), node-exekvering, /tmp-skrivningar, git -C mot

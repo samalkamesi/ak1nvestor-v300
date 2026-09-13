@@ -10257,3 +10257,39 @@ klientkö med väntande promptar + HJÄRTSLOGS-/ROND-PUMPARNA: rondloggen
 saknar 08:43-ronden, hjärtslagsloggen tyst sedan 08:41 — nästa session
 bör först kontrollera pumparnas hälsa (data/vakten/*.log) före nytt
 större arbete. beslutsminne.jsonl är IGÅNG (rond 9-raden skriven).
+
+## HJÄRTSLAGS-LEVERANS 2026-09-13 ~13:50 — VÅG 133 [organ:Ψ]: SEO-rond A (alt-texter + HELA korpusen)
+
+Zombie-väckaren väckte loopen (målet satt, loopen sov). Köns nästa uppgift =
+SEO-A-Ö-checklistans ▶ NÄSTA-rond A. Levererat:
+
+**Vad:** (1) Img-alt-inventering HELA src/ — 10 `<img>` totalt: alla publika
+(studio-chat ×4, tenant-header, media-panel) har alt; Kallkort/KursArtiklar
+renderar INGA bilder (dokumentets notis var inaktuell); blogg-panel (admin,
+ej publik) har 2 dekorativa `alt=""` = WCAG-giltigt → avsnitt A:img-alt
+konstaterat OK, ingen kodändring krävd. (2) data/seo-korpusen: generatorn
+`node scripts/seo-generate.mjs` körd medvetet (13:26) — 399 filer omskrivna,
+0 spårade filer ändrade = DETERMINISM EMPIRISKT BEVISAD; de 130 ospårade
+filerna (103 kurser + 27 blogg) kvalitetsgranskade och committade.
+
+**Bevis:** commit f9d0c7e1 (131 filer, +1 463 rader); stickprov rena
+(pedagogiska formuleringar); 0 "[object Object]" i hela data/seo; enda
+"rekommendation"-träffen = gammal spårad guidefil i utbildningskontext
+("så gör institutioner… på 7 steg"), utanför rondens delta.
+
+**Kvalitetsport:** dataleverans utan bygge (appar läser data/seo från disk;
+statisk metadata baktas vid nästa bygge). Ingen src-ändring → tsc/build/
+omstart behövs ej denna våg.
+
+**Bokföring på vägen:** a9935ffc — fastnan arbetsyta-bokföring (SEO-A-O
+rond H-rad för våg 129 + AGENTS.md våg 132-sektioner) committad.
+
+**Nästa i kön:** ▶ NÄSTA = J — JSON-LD-migration (återstående JsonLd-
+anropare → StrukturData), därefter V/B/F enligt SEO-A-O kvar-listan.
+
+**Sessionsnot (för vakten):** studio-klientens intermittenta 30 s-häng
+lever kvar (worklog 10:4x-noten): slog till vid node-skriptkörning,
+sammansatta kommandon (redirect/awk/heredoc) och långa commit-rader —
+enkla kommandon, Read/Write/Edit-verktygen och `commit -F <fil>`-mönstret
+går igenom. Leveransen fördröjdes ~5 min av detta, blockerades ej.
+

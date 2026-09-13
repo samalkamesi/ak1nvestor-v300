@@ -45,13 +45,13 @@ data/cache ur indexet, prod = develop, säkringsgren raderad, prod 200).
 
 | Block | Agent | Uppgift (beslutets åtgärd) | Äger (EXKLUSIVT) | Status |
 |---|---|---|---|---|
-| A PULSVAKT | V122A | Åtgärd 1+10: pm2-pulsvakt var 60 s, autoåterstart pm2 ak1a, larm till sessionen; utred om cron-pumparna lever | verktyg/pulsvakt.mjs, data/infra/contabo/pulsvakt-start.sh, data/infra/contabo/crontab-korrekt.txt | DISPATCHAD |
-| B EXTERN VAKT | V122B | Åtgärd 2: publik status-endpoint + webhook-larm-endpoint + kundinstruktion (konto väntar kund = R2) | src/app/api/overvaking/**, src/lib/overvaking.ts, data/forskning/EXTERN-OVERVAKNING.md | DISPATCHAD |
-| C HTTPS/START | V122C | Åtgärd 3: bevisa certförnyelse + självstart via läsbara bevis; sudo-steg dokumenteras som väntar kund | data/forskning/HTTPS-SJALVSTART-PROV.md | DISPATCHAD |
-| D DR-PROV | V122D | Åtgärd 4: färsk Supabase-backup + integritetsbevis + restore-procedur; fullt PG-restore väntar sudo (bevis 2026-09-11 finns) | data/forskning/DR-PROV-2026-09-13.md | DISPATCHAD |
-| E SÖK | V122E | Åtgärd 5: server-side sök med cache + reservlösning, kontrakt för pulsvakten | src/app/api/sok/**, src/lib/sok/**, verktyg/testa-sok.mjs (ny) | DISPATCHAD |
-| F SEO | V122F | Åtgård 7+8: SEO-A-Ö-checklista (levande) + hreflang/sitemap-granskning sv/en/ar + JSON-LD (Course/Article/FAQ) | data/forskning/SEO-A-O.md, src/app/sitemap.ts, src/components/seo/**, JSON-LD i sidfiler | DISPATCHAD |
-| G BESLUTSLOGG | V122G | Åtgärd 6+9: BESLUTSLOGG.md + juridikgrinds-rad i STYRELSE-REGELVERK.md + commita STYRELSE-BESLUT.md | data/forskning/BESLUTSLOGG.md, STYRELSE-REGELVERK.md, STYRELSE-BESLUT.md | DISPATCHAD |
+| A PULSVAKT | V122A | Åtgärd 1+10: pm2-pulsvakt var 60 s, autoåterstart pm2 ak1a, larm till sessionen; utred om cron-pumparna lever | verktyg/pulsvakt.mjs, data/infra/contabo/pulsvakt-start.sh, data/infra/contabo/crontab-korrekt.txt | LEVERERAD 48e4c0a6 |
+| B EXTERN VAKT | V122B | Åtgärd 2: publik status-endpoint + webhook-larm-endpoint + kundinstruktion (konto väntar kund = R2) | src/app/api/overvaking/**, src/lib/overvaking.ts, data/forskning/EXTERN-OVERVAKNING.md | LEVERERAD 4a7ac845 |
+| C HTTPS/START | V122C | Åtgärd 3: bevisa certförnyelse + självstart via läsbara bevis; sudo-steg dokumenteras som väntar kund | data/forskning/HTTPS-SJALVSTART-PROV.md | LEVERERAD 9bc6b111+e4ddc470 |
+| D DR-PROV | V122D | Åtgärd 4: färsk Supabase-backup + integritetsbevis + restore-procedur; fullt PG-restore väntar sudo (bevis 2026-09-11 finns) | data/forskning/DR-PROV-2026-09-13.md | LEVERERAD 58605348 (+rättelse 2056cb9c) |
+| E SÖK | V122E | Åtgärd 5: server-side sök med cache + reservlösning, kontrakt för pulsvakten | src/app/api/sok/**, src/lib/sok/**, verktyg/testa-sok.mjs (ny) | LEVERERAD 5d51c8b8 (test 19/19) |
+| F SEO | V122F | Åtgård 7+8: SEO-A-Ö-checklista (levande, ett avsnitt per rond) + hreflang/sitemap-granskning sv/en/ar + JSON-LD (Course/Article/FAQ) | data/forskning/SEO-A-O.md, src/app/sitemap.ts, src/components/seo/**, JSON-LD i sidfiler | LEVERERAD ec4fde90 |
+| G BESLUTSLOGG | V122G | Åtgärd 6+9: BESLUTSLOGG.md + juridikgrinds-rad i STYRELSE-REGELVERK.md + commita STYRELSE-BESLUT.md | data/forskning/BESLUTSLOGG.md, STYRELSE-REGELVERK.md, STYRELSE-BESLUT.md | LEVERERAD f9cf082d |
 
 Gemensamma regler: commit UTAN push (huvudagenten pushar+bygger, ETT bygg/våg).
 sudo/behörighetspromptar får INTE köras (de hänger sessionen) — dokumentera istället.

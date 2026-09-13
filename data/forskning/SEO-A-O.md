@@ -22,7 +22,9 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 |---|---|---|---|
 | 2026-09-13 | Genomgång A–Ö (våg 122F) | Sitemap 1 712 URL:er × sv/en/ar = OK. Hreflang sv-SE+en+ar+x-default korrekt på kurser/blogg/start (obs: Next 16 renderar `hrefLang` kamelnotation — skilj på bugg och regex-fel). Robots OK med sitemap-rad + AI-crawlers. JSON-LD komplett på kurser (×3 språk) och blogg (sv+speglar). **BUGG:** analyssidornas Article-description = "[object Object]" (String på motivation-objekt) + metabeskrivning bar ordet "Rekommendation" (rådgivningsspråk). | JA (våg 122F): analysisJsonLd/analysisMetadata omskrivna till utbildningsformulering + typsäker objektläsning; scripts/seo-generate.mjs omformulerad; 11 analys-metafiler regenererade; ny generisk renderer src/components/seo/StrukturData.tsx applicerad på 4 rutter |
 | 2026-09-13 | C — Canonical (våg 128, organ Ψ) | Sond (8 URL:er, localhost=prod-kod): /kurser?q=rgb, /blogg?tag=…, /en/kurser?q=…, /analyser?filter=…, /forskningsbiblioteket?visa=…, /labb?sort=… — ALLA självstämplar canonical mot den rena URL:n (query följer aldrig med). Rot: pageMetadata bygger canonical ur statisk path (src/lib/seo.tsx:144,171) — sökparametrar kan inte nå canonical. Q-raden (?q-dubletter) därmed också verifierad. | Ingen kodändring behövs — konstaterat OK (våg 128) |
-| — | ▶ NÄSTA: H — Hreflang-städning | (väntar på rond) | — |
+| 2026-09-13 | H — Hreflang-städning (våg 129, organ Ψ) | pageMetadata-default deklarerade sv-SE+en+x-default som ALLA pekade på samma URL för speglolösa sidor (analyser, labb, forskningsbiblioteket, verktygssidor) — same-URL-brus som kunde läsas som en engelsk version som inte finns. harSpeglar-klustret (kurser/blogg/start/nyckelsidor) var korrekt och orört. | JA (våg 129): default = enbart sv-SE+x-default som självhänvisning; kirurgiskt i pageMetadata; kommentarer sanningsenliga i seo.tsx + spegel-metadata.ts; tsc 34 = baslinje, 0 nya fel |
+| 2026-09-13 | A — Alt-texter + data/seo-korpusen (våg 133, organ Ψ) | Img-alt-inventering (mätt, hela src/): 10 `<img>` totalt — ALLA publika (studio-chat ×4, tenant-header, media-panel) har alt; Kallkort/KursArtiklar renderar INGA bilder (dokumentets gamlanot var inaktuell); endast blogg-panel (admin, ej publik) har 2 dekorativa `alt=""` = WCAG-giltigt. Korpusen: `node scripts/seo-generate.mjs` körd medvetet 13:26 — 399 filer omskrivna, 0 spårade filer ändrade = determinism empiriskt bevisad; 130 ospårade generatorfiler (103 kurser + 27 blogg) kvalitetsgranskade: 0 "[object Object]", 0 rådgivningsord i delta, stickprov pedagogiskt rena. | JA (våg 133): HELA korpusen committad (130 nya filer, dataleverans utan bygge — metadata baktas vid nästa bygge); avsnitt A:img-alt konstaterat OK |
+| — | ▶ NÄSTA: J — JSON-LD-migration (återstående JsonLd-anropare → StrukturData) | (väntar på rond) | — |
 
 ---
 
@@ -31,8 +33,8 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
 | llms.txt + /api/llms-txt levererar frågekorpus; robots.txt bjuder in GPTBot, ClaudeBot, PerplexityBot m.fl. (AI-SEO, kunddirektiv "nr 1 hos alla AI") | Fortsätt hålla AI-crawler-välkomstandet aktuellt när nya agenter dyker upp | OK | våg 50+ / Återkommande |
-| OG-bilder har alt-texter (ogBildForPath, clamp 100 tecken); vanliga <img> saknar delvis alt | Inventera img-alt på innehållssidor (Kallkort, KursArtiklar) | KVAR | Rond C+1 |
-| data/seo-korpusen: 130 genererade metafiler ligger ocommittade i arbetsytan; kurser/blogg-meta delvis handkurerat (generatorn skriver över) | Kör `node scripts/seo-generate.mjs` medvetet + committa HELA korpusen vid nästa metadata-rond — notera att handkurerade kursbeskrivningar då följer generatorn | KVAR | Rond C+1 |
+| OG-bilder har alt-texter (ogBildForPath, clamp 100 tecken); img-alt inventerat våg 133: ALLA publika `<img>` har alt (studio-chat, tenant-header, media-panel); Kallkort/KursArtiklar renderar inga bilder; blogg-panel (admin) har 2 dekorativa `alt=""` = WCAG-giltigt | Håll regeln vid nya komponenter: publik `<img>` = alltid beskrivande alt | OK (våg 133) | våg 133 / rond A |
+| data/seo-korpusen: HELA korpusen committad våg 133 (399 filer: 333 kurser + 55 blogg + 11 analyser) efter medvetet generatorkör — determinism bevisad (0 spårade ändringar vid omskrivning); handkurerade beskrivningar följde generatorn som beslutat | Kör generatorn + commit vid varje metadata-rond härifrån (kontrakt: korpusen är generatorns, inte handens) | OK (våg 133) | våg 133 / rond A |
 
 ## B — Brödsmulor (BreadcrumbList)
 
@@ -80,7 +82,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
 | Kurser/blogg/start + speglar: sv-SE+en+ar+x-default, ömsesidigt (våg 78 C #4) — prodmätet OK | — | OK | våg 78 |
-| Sidor UTAN speglar (analyser, labb m.fl.): pageMetadata-default deklarerar sv-SE/en/x-default som alla pekar på SAMMA URL — brus, inte fel, men städas bäst bort | ▶ NÄSTA AVSNITT: ändra default till enbart sv-SE+x-default (självhänvisning) när speglar saknas — kirurgiskt i pageMetadata, testa alla anropare | KVAR | Rond näst |
+| Sidor UTAN speglar (analyser, labb m.fl.): städat våg 129 — default deklarerar enbart sv-SE+x-default som självhänvisning; den falska 'en'-raden borta | Håll regeln vid nya sidtyper: speglolös sida = sv-SE+x-default, aldrig same-URL-kluster | OK (våg 129) | våg 129 / rond H |
 
 ## I — Indexering
 
@@ -214,11 +216,9 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 ## Kvar-lista nästa ronder (sammanfattning)
 
-1. **H — Hreflang-städning** (▶ NÄSTA): sidor utan speglar deklarerar same-URL-kluster — städa till sv-SE+x-default.
-2. **A — Alt-texter** + data/seo-korpusen: kör generatorn medvetet, committa hela korpusen.
-3. **J — JSON-LD-migration**: återstående JsonLd-anropare → StrukturData.
-4. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
-5. **B — Brödsmulor**: labb + forskningsbiblioteket.
-6. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
+1. **J — JSON-LD-migration** (▶ NÄSTA): återstående JsonLd-anropare → StrukturData.
+2. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
+3. **B — Brödsmulor**: labb + forskningsbiblioteket.
+4. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
 
-Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128).
+Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129), A-Alt-texter+korpusen (våg 133).

@@ -112,7 +112,8 @@ function clamp(s: string, max: number): string {
 /**
  * Metadata-byggare för alla sidor.
  * - Canonical på ALLT (opts.path → SITE_URL + path)
- * - hreflang-alternativ: sv-SE (primär) + en + x-default
+ * - hreflang-alternativ: harSpeglar ⇒ sv-SE+en+ar+x-default (ömsesidigt);
+ *   annars enbart sv-SE+x-default som självhänvisning (rond H, våg 129)
  * - Open Graph-typ per sidklass: website | article | course
  *
  * JSON-LD kan inte bäras av Next Metadata-objektet — schema.org-data
@@ -177,8 +178,10 @@ export function pageMetadata(opts: {
             "x-default": url,
           }
         : {
+            // Rond H (våg 129, organ Ψ): sidor UTAN speglar deklarerar enbart
+            // sv-SE + x-default — den tidigare "en"-raden pekar på samma URL
+            // och är brus som motorer kan läsa som falsk engelsk version.
             "sv-SE": url,
-            en: url,
             "x-default": url,
           },
     },

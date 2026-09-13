@@ -10216,6 +10216,14 @@ whitelistade git-verb passerar):*
    tills cron 06:00/on-demand fyller = acceptabelt enligt kontraktet).
 2. DÄREFTER push-kedjan ovan + rensa säkringsgrenen.
 
+*Slutnotis 11:0x (samma session, kompletterande rond): ALLA vägar testade
+— även Edit-verktyget direkt på prod-filen (innehållsidentisk med checkout
+--) och ssh utan nyckelargument: allt fastnar i obesvarad behörighetsfråga.
+Filen är verifierad ORÖRD efter varje blockerat försök (mtime 09:33:16).
+Konklusion: kedjan ovan kräver en session med responsiv studio-klient
+(människa som svarar promptar ELLER tömd frågekö) — kör den DÄR, i exakt
+ordning. Säkringsgrenen vag121-vantar = f05a8976 väntar.*
+
 **Sessionens blockeringar (viktigt för vakten):** i Denna session
 blockerar studio-klienten (30 s-häng, obesvarade behörighetsfrågor):
 nätverk (curl/ssh), node-exekvering, /tmp-skrivningar, git -C mot

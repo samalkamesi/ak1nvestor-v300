@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAnalyses, getCourses } from "@/lib/content";
-import { pageMetadata, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { StrukturData } from "@/components/seo/StrukturData";
 
 export const dynamic = "force-static";
 
@@ -92,12 +93,15 @@ export default async function VariabelSida({
         { name: `${vnum} ${namn}` },
       ]}
     >
-      <JsonLd
+      {/* VÅG 122F: StrukturData — variabelsidan bär ETT BreadcrumbList-block
+          (ingen Article här: huvudartikeln på /analyser/[ticker] äger den). */}
+      <StrukturData
         data={breadcrumbJsonLd([
           { name: "Analyser", path: "/analyser" },
           { name: a.ticker, path: `/analyser/${encodeURIComponent(a.ticker)}` },
           { name: `${vnum} ${namn}`, path: `/analyser/${ticker}/${variabel}` },
         ])}
+        id="jsonld-brodsmula"
       />
 
       <header className="border-b border-gold/30 pb-6">

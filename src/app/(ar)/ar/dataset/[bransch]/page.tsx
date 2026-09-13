@@ -14,6 +14,9 @@ import { skapaT } from "@/lib/sprak";
  * generateStaticParams + ISR 24 h. Okänd bransch ⇒ 404.
  */
 export const dynamic = "force-static";
+// Okända params ⇒ 404 FÖRE render (force-static ensam serverar annars
+// layout-skalet med 200 = soft-404; samma rad som blogg/[slug] och kurserna).
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 const MEDIANER = lasBranschMedianer();

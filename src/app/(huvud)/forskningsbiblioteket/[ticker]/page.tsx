@@ -21,6 +21,9 @@ import { DelaKort } from "@/components/ak1a/dela-kort";
 import { Akm2Dashboard, ProfilEnsembleVy } from "@/components/ak1a/akm2-dashboard";
 
 export const dynamic = "force-static";
+// Okända params ⇒ 404 FÖRE render (force-static ensam serverar annars
+// layout-skalet med 200 = soft-404; samma rad som blogg/[slug] och kurserna).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return lasAnalyser().map((a) => ({ ticker: encodeURIComponent(a.ticker) }));

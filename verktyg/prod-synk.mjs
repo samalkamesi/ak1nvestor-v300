@@ -81,29 +81,42 @@ async function main() {
   const goodHead = senaste || lokal;
   const nya = git(["log", "--oneline", `${goodHead}..HEAD`]);
 
-  // 4-5) bygg under flock med stoppregler — VÅG 123c: låskollisioner med
-  // agentens egna byggen är NORMALA: vänta upp till 15 min på låset, total
-  // budget 21 min (execSync-tak 1 260 s).
-  const bygg = "npm ci --no-audit --no-fund > /tmp/synk-npmci.log 2>&1 && npm run build > /tmp/synk-build.log 2>&1";
-  const flockBygg = ["bash", "-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(bygg)}`];
+  // 4-5) bygg under flock — VÅG 123d: UTAN node-timeout (execSync-tak dödade
+  // byggprocessen med SIGTERM; deploylåset serialiserar ändå, daemonen
+  // övervakar). Logg till eigen fil för efteranalys.
+  const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
+  const { spawn } = await import("node:child_process");
+  const korBygg = () =>
+    new Promise((lyckas) => {
+      const barn = spawn(
+        "bash",
+        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(bygg)}`],
+        { cwd: ROT, stdio: "ignore", detached: false },
+      );
+      barn.on("exit", (kod) => lyckas(kod === 0));
+      barn.on("error", () => lyckas(false));
+    });
   let ok = false;
-  try {
-    execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
+  try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
+  try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
+  if (await korBygg()) {
     ok = true;
-  } catch {
-    logga("bygg MISSLYCKADES (låsväntan upp till 15 min medräknad) — revert + ombygge");
+  } else {
+    logga("bygg MISSLYCKADES (se /tmp/synk-*.log) — revert + ombygge");
     try {
       git(["revert", "HEAD", "--no-edit"]);
-      execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
-      ok = true;
-      logga("revert+ombygge OK — prod bygger på föregående commit");
+      if (await korBygg()) {
+        ok = true;
+        logga("revert+ombygge OK — prod bygger på föregående commit");
+      } else throw new Error("revert-bygget failade");
     } catch {
       logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
       try {
         git(["reset", "--hard", goodHead]);
-        execFileSync(flockBygg[0], flockBygg[1], { cwd: ROT, timeout: 1_260_000, stdio: "ignore" });
-        ok = true;
-        logga("good-HEAD återställd + ombyggd");
+        if (await korBygg()) {
+          ok = true;
+          logga("good-HEAD återställd + ombyggd");
+        } else throw new Error("good-HEAD-bygget failade");
       } catch {
         logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
         return;

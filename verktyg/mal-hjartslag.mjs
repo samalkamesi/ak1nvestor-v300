@@ -78,6 +78,25 @@ async function main() {
   const pass = lasPass();
   if (!pass) return logga("PASS SAKNAS — hjärtslaget sover");
 
+  // VÅG 126 — WEB-VAKTEN: appen svarar den? 502/nej ⇒ pm2-restart av ak1a
+  // (kurerar byggkollisioner där node_modules försvann under omstart —
+  // bevisat 2026-09-13: 10 min nere innan manuell räddning).
+  try {
+    const r = await fetch(`${BAS}/api/studio/mal/status`, {
+      headers: { "x-admin-password": pass },
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (r.status >= 500 || r.status === 502) {
+      logga(`WEB-VAKT: appen svarar ${r.status} — pm2-restartar ak1a`);
+      try { execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 avgör */ }
+      await new Promise((sov) => setTimeout(sov, 10_000));
+    }
+  } catch (e) {
+    logga("WEB-VAKT: appen osvarar (" + String(e).slice(0, 60) + ") — pm2-restartar ak1a");
+    try { execSync("pm2 restart ak1a --update-env", { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 avgör */ }
+    await new Promise((sov) => setTimeout(sov, 10_000));
+  }
+
   // 1) läs mål-status
   const svar = await fetch(`${BAS}/api/studio/mal/status`, {
     headers: { "x-admin-password": pass },

@@ -89,4 +89,13 @@ try {
   logga("organ-arkiv FEL: " + String(e).slice(0, 100));
 }
 
+// 6) VÅG 130 — organism-DR (bevisbaserad): veckans bevisläge per
+// återhämtningsväg; OEVD-vägar eskaleras via dr-rapporten.
+try {
+  execFileSync("node", ["verktyg/organism-dr.mjs"], { cwd: ROT, timeout: 30_000, stdio: "ignore" });
+  logga("organism-DR körd — se data/vakten/dr-rapport.md");
+} catch (e) {
+  logga("organism-DR FEL: " + String(e).slice(0, 100));
+}
+
 logga("data-hygien KLAR");

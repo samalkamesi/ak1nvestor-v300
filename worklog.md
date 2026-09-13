@@ -10144,3 +10144,38 @@ våg 103 saknade sin sista bit ("Mina kurser"-gridet) — nu levererat:
 KVD: tsc exakt 34 = baslinjen, 0 nya (subagent-verifierat; inga fel i de
 fem berörda filerna) · bygge under flock-lås + prod-verifiering + vakten:
 se commit-meddelandets leveranskvitto.
+
+## VÅG 121 (PORTAL-SPÅRET) — VÅG 106 SLUTSTYCKE: KVD FULL + SYSTEMKARTAN (2026-09-13) [organ:P]
+
+Hjärtslagsrond (målet aktivt). Portal-megaplanens två sista våg-106-punkter
+levererade — planen därmed SLUTLEVERERAD:
+
+- **KVD full, subagent-verifierat EFTER våg 120-deployen** (commit 08:59 →
+  bygge 09:01:53 → pm2-omstart 09:02, port 3000 ägs av nya servern PID
+  292548): tsc exakt 34 = baslinjen (0 nya) · `validera-motorer.mjs`
+  **107 PASS / 0 FAIL / 0 SKIP (6,4 s)** — inventeringens båda motorfel
+  är borta (B11 netnet-determinism rättat) · gränssnittsvakten GRÖN
+  (cron-fullsvep 0 fynd/144 kombinationer 07:17 + snabbsvep 0/12) · prod
+  200 på loopback OCH HTTPS.
+- **SYSTEMKARTAN uppdaterad** (2026-09-11 → 2026-09-13): 38 system (NY
+  rad D38 Medlemsnavet — Min Sida-portalen LEVER 8), B11 FLAGGA→LEVER 6,
+  D20 FLAGGA→LEVER 7 (LOGIN-2.0 E2E enligt V106-protokollet D1), E29 6→7
+  (prompt-evolution + deploy-säkert register + beslutsminnet igång), E35
+  FLAGGA→LEVER 7 (motorer+vakt gröna; testtäckning/CI kvar), E31/E33/E37
+  noterar. Snitt 7,3 → 7,4.
+- **Våg 117:s långtidsminne IGÅNG**: beslutsminne.jsonl saknades helt —
+  rond-promptens steg 6 hade aldrig exekverats. Skapad med rond 9-raden
+  (denna våg). Organismens minne lever härifrån.
+- **Sessionfynd (ej prod)**: nätverks-I/O i förgrunds-bash hänger i denna
+  session (curl/node-fetch, återskapat 5 ggr) medan bakgrundskörning
+  fungerar — subagenten verifierade allt via bakgrund. Uppreps det i
+  andra sessioner = studio-/infrastrukturärende, inte prod.
+- Notering: vakten MÅSTE köras ur /home/ak1a/AK1 (arbetsytan saknar
+  puppeteer-core) — dokumenterat i systemkartan.
+
+Juridik: oförändrad — navets portfölj/bevakning förblir studielista/
+läsningslista, aldrig värde eller råd.
+
+KVD: dataleverans (data/forskning + worklog) — inget bygge krävs; kod
+orörd denna våg. tsc 34 + motorer 107/0/0 + vakten GRÖN + prod 200
+ämndå verifierade som slutkvitto för hela portal-spåret.

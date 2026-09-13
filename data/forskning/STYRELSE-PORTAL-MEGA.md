@@ -99,6 +99,19 @@ ordlistans riktlinjer; API-texter (pass.namn m.m.) förblir svenska denna
 våg — motorpipelinen översätts separat. Svenska originalsidor oförändrade
 (default-props). KVD: tsc exakt 34 = baslinjen (0 nya, 0 i våg-filerna).
 
+**VÅG 106 KLAR — PORTAL-MEGAPLANEN SLUTLEVERERAD (2026-09-13, våg 121,
+hjärtslagsrond [organ:P]):** korskopplingarna landade i våg 120 (bevakade
+bolag one-click in i portföljen + metodkurslänkar — ringen bevakning →
+portfölj → analys → kurs sluten), tre språk ovan, och nu även de två
+sista punkterna: **KVD full** — tsc exakt 34 = baslinjen · motorer
+107/0/0 · gränssnittsvakten GRÖN (cron 0/144 07:17 + snabbsvep 0/12
+efter våg 120-deployen 09:02) · prod 200 (loopback + HTTPS), allt
+subagent-verifierat efter deployen — och **systemkartan uppdaterad**
+(SYSTEMKARTAN.md 2026-09-13: 38 system, snitt 7,4; ny rad D38
+Medlemsnavet; B11/D20 avflaggade; E29/E35/E31/E33/E37 reviderade).
+Kundens sex krav i målbilden lever: navet, utbildningen, analyserna,
+portföljen, integrationen, kvaliteten.
+
 ## DRIFTEN — 24/7 ONLINE
 
 - Cron-automation varje timme: fortsätt nästa block per PIPELINE-KO +

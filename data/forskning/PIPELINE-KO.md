@@ -31,3 +31,9 @@ senaste-vinner, serverfastställda värden (§B.3), NEXT_PHASE-fas, request-
 skopad läsning. Premiumtiers: Grundlistning = gratis-fas; djupanalys-yta
 reserveras som tier-yta via tier-status.ts-mönstret senare (R2: aldrig
 autonomt aktiverat). MinPortfoljKort + /min-portfolj orörda (legacy lever).
+
+**STATUS 2026-09-13 (våg 121):** P1 LEVERERAD (våg 119 + korskopplingarna
+våg 120, deployad 09:02) och hela portal-spåret slutlevererat med KVD full
+(tsc 34 · motorer 107/0/0 · vakten GRÖN · prod 200) + systemkarta 38
+system — se STYRELSE-PORTAL-MEGA.md §VÅG 106. Kön härmed tom; nästa våg
+väljs av styrelseronden.

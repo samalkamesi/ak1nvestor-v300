@@ -68,7 +68,7 @@ blogg, medlemmar, AI-mentor.
   (domän, priser, betalning, extern publicering, juridik/GDPR, radering,
   API-nycklar) = VÄNTAR KUND.
 - R3: Mega-projekt körs autonomt med full access.
-- R4: ~9 parallella agenter max.
+- R4: 12 parallella agenter max (subagents.maxConcurrent=12, våg 132).
 
 ## DIN ARBETSPLIT I STUDION
 
@@ -102,8 +102,13 @@ denna server. Leveransprotokoll:
    develop` (remote `prod` = /home/ak1a/AK1 — lokal sökväg, inga
    nycklar krävs). Datafiler behöver INGET bygge — appar läser dem
    från disk.
-2. **Kodändringar** (src/**): ändra + `npx tsc --noEmit` (0 nya fel)
-   → commit → push prod develop → BYGG under LÅS: `exec flock -n
+2. **Kodändringar** (src/**): ändra + `npx tsc --noEmit` — **0 FEL, baslinjen
+   är NOLL sedan våg 133** (inte "0 nya fel"; hela repet typar grönt). Kända
+   typfällor: `const x = []` evolverar EJ i useMemo-callbacks (typa explicit:
+   `const x: { ar: number; varde: number }[] = []`); `Boolean(n)` smalnar EJ
+   av unionstyp (skriv `n !== null`); `let x = null` felhärdleder till
+   null-typ (typa unionen explicit) → commit → push prod develop → BYGG
+   under LÅS: `exec flock -n
    /tmp/ak1a-deploy.lock bash -c 'cd /home/ak1a/AK1 && npm ci --no-audit
    --no-fund && npm run build && pm2 restart ak1a'` — om låset är upptaget
    (deploy-skriptet bygger) → VÄNTA 3 min och försök igen, ALDRIG bygga
@@ -122,7 +127,7 @@ denna server. Leveransprotokoll:
 WCAG-kontrast, horisontell överflöd, element utanför viewport, klippt text, konsolfel.
 Cron (var 6:e timme, `data/infra/contabo/granssnittsvakt-cron.sh`) larmar DIN session vid
 fynd med full sammanfattning. Uppdrag vid larm: diagnostisera roten → rätta src/ (Write/Edit,
-Mimosa-regler) → tsc (baslinje 36) → bygg under `flock /tmp/ak1a-deploy.lock` → deploy via
+Mimosa-regler) → tsc (baslinje 0 sedan våg 133) → bygg under `flock /tmp/ak1a-deploy.lock` → deploy via
 egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback är whitelistat i
 middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
 gränsnittsändringar; ett defekt som nå kunden = vaktsystemfel, inte bara kodfel.
@@ -156,7 +161,7 @@ sessionen (vad, varför, bevis, nästa steg) — transparensen är inte valfri.
    ROND-befallning med statusmatning — du SKALL då sammanträda, besluta nästa
    våg, dispatcher agentvågen och dokumentera kort i worklog.md.
 4. **Parallell-doctrinen** — standardläget är MAX parallella subagenter
-   (tak 9 konurrenta, vågor kedjas direkt när en frigörs = 10-tals över
+   (tak 12 konurrenta, vågor kedjas direkt när en frigörs = 10-tals över
    tiden); exklusiva filägarskap per agent; våg 104-agentreglerna gäller.
 5. Stoppreglerna (§ 6) är oföränderliga: flock-lås, revert vid felbygge,
    tsc-baslinje, vakten 0 fynd, ALDRIG R2-ytor.

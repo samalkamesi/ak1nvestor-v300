@@ -24,7 +24,10 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 | 2026-09-13 | C — Canonical (våg 128, organ Ψ) | Sond (8 URL:er, localhost=prod-kod): /kurser?q=rgb, /blogg?tag=…, /en/kurser?q=…, /analyser?filter=…, /forskningsbiblioteket?visa=…, /labb?sort=… — ALLA självstämplar canonical mot den rena URL:n (query följer aldrig med). Rot: pageMetadata bygger canonical ur statisk path (src/lib/seo.tsx:144,171) — sökparametrar kan inte nå canonical. Q-raden (?q-dubletter) därmed också verifierad. | Ingen kodändring behövs — konstaterat OK (våg 128) |
 | 2026-09-13 | H — Hreflang-städning (våg 129, organ Ψ) | pageMetadata-default deklarerade sv-SE+en+x-default som ALLA pekade på samma URL för speglolösa sidor (analyser, labb, forskningsbiblioteket, verktygssidor) — same-URL-brus som kunde läsas som en engelsk version som inte finns. harSpeglar-klustret (kurser/blogg/start/nyckelsidor) var korrekt och orört. | JA (våg 129): default = enbart sv-SE+x-default som självhänvisning; kirurgiskt i pageMetadata; kommentarer sanningsenliga i seo.tsx + spegel-metadata.ts; tsc 34 = baslinje, 0 nya fel |
 | 2026-09-13 | A — Alt-texter + data/seo-korpusen (våg 133, organ Ψ) | Img-alt-inventering (mätt, hela src/): 10 `<img>` totalt — ALLA publika (studio-chat ×4, tenant-header, media-panel) har alt; Kallkort/KursArtiklar renderar INGA bilder (dokumentets gamlanot var inaktuell); endast blogg-panel (admin, ej publik) har 2 dekorativa `alt=""` = WCAG-giltigt. Korpusen: `node scripts/seo-generate.mjs` körd medvetet 13:26 — 399 filer omskrivna, 0 spårade filer ändrade = determinism empiriskt bevisad; 130 ospårade generatorfiler (103 kurser + 27 blogg) kvalitetsgranskade: 0 "[object Object]", 0 rådgivningsord i delta, stickprov pedagogiskt rena. | JA (våg 133): HELA korpusen committad (130 nya filer, dataleverans utan bygge — metadata baktas vid nästa bygge); avsnitt A:img-alt konstaterat OK |
-| — | ▶ NÄSTA: J — JSON-LD-migration (återstående JsonLd-anropare → StrukturData) | (väntar på rond) | — |
+| 2026-09-13 | J — JSON-LD-migration (våg 134, organ Ψ) | Samtliga JsonLd-KOMPONENTANROP migrerade till StrukturData: 0 `<JsonLd` kvar i hela src/, 34 filer renderar via `<StrukturData` (30 sidfiler + komponenter), JsonLd-renderern PENSIONERAD ur seo.tsx (dokumenterad i koden). Levererad av molnagent-session, commit 0fe32c6c + merge f4d2e657, deployad. | JA (våg 134) |
+| 2026-09-13 | V — Verifiering Article-JSON-LD (våg 135, organ Ψ, hjärtslags-rond) | Sond (6 URL:er, localhost = prod-kod): giltig JSON i ALLA ld+json-block, 0 "[object Object]", 0 rådgivningsord, inLanguage "sv-SE" korrekt i alla Article-block. **FYND:** analys-Article saknade `dateModified` (bloggen hade det redan). | JA (våg 135): dateModified = verified \|\| analysisDate i analysisJsonLd, deployad; Search Console-täckning kvar = R2 (API-nyckel väntar kund) |
+| 2026-09-13 | B — Brödsmulor (våg 136, organ Ψ, styrelserond) | Sond (9 steg, node/fetch mot localhost=prod): /labb/[id] och /forskningsbiblioteket/[ticker] renderar BreadcrumbList korrekt för giltiga params — avsnittets KVAR-rad var inaktuell (samma mönster som rond J). **SIDOFYND (större än brödsmulan):** ogiltiga URL:er på 6 force-static-[param]-rutter serverade layout-SKALET med HTTP 200 (skal-defaulttitel "Från utbildning till inkomst" + organisation/webbsajt-JSON-LD) i stället för 404-sidan = soft-404. Rot: force-static utan dynamicParams=false (blogg/[slug] + kurser/speglar hade raden sedan tidigare). | JA (våg 136): dynamicParams = false i 6 sidor (labb/[id], analyser/[ticker], forskningsbiblioteket/[ticker], dataset/[bransch] ×3 språk); tsc 0, deployad + prodmätt: ogiltig → 404, giltig → 200 med brödsmula |
+| 2026-09-13 | F — Blogg-FAQ (våg 137 + 137-b, organ Ψ, hjärtslags-rond) | Implementering (våg 137, alternativ B): parser src/lib/blogg-faq.ts ("## FAQ"-sektion + **fråga**/svar-block) → villkorat FAQPage-block (id="jsonld-faq") via StrukturData — synligt innehåll + schema ur EN källa; 10 pelarposter × 3–4 utbildningsformulerade par; tsc 0. Verifiering (våg 137-b): prod-sond (node, localhost=prod) — komplett-guiden renderar synlig FAQ-rubrik + giltig FAQPage med 4 frågor (alla svar > 20 tecken, 0 rådgivningsord); kontrollpost utan FAQ renderar 0 block (villkoret håller). | JA (våg 137, prod-verifierad 137-b) |
 
 ---
 
@@ -40,7 +43,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| Kurssidor ×3 språk: 4 nivåer via byggKursSchema; blogg/analyser: 2–3 nivåer; renderade via StrukturData/JsonLd | Kontrollera att även /labb/[id] och /forskningsbiblioteket/[ticker] har BreadcrumbList | KVAR | Rond C+2 |
+| Kurssidor ×3 språk: 4 nivåer via byggKursSchema; blogg/analyser: 2–3 nivåer; labb/[id] + forskningsbiblioteket/[ticker]: 2 nivåer via breadcrumbJsonLd + StrukturData, verifierade i prod våg 136 (sond: "Labbet" / "Forskningsbiblioteket \| <bolag>" renderas i ld+json) | Håll regeln vid nya detaljsidor: BreadcrumbList via StrukturData | OK (våg 136) | Rond B (våg 136) |
 
 ## C — Canonical
 
@@ -54,8 +57,8 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 |---|---|---|---|
 | Kurser ×3 språk: Course+FAQPage+BreadcrumbList (byggKursSchema, våg 99 G1) — komplett, ett block per typ | Bevara "ett block per sidtyp"-regeln vid nya sidtyper | OK | våg 99/122F |
 | Blogg sv: Article+Breadcrumb; speglar en/ar: Article via bloggSpegelJsonLd (author Person = E-E-A-T-starkare än Organization — medvetet val) | — | OK | våg 122F |
-| Analyser sv: Article — våg 122F fixade "[object Object]"-buggen + utbildningsformulering ("utbildningsgenomgång av analysmodellen för X") | Verifiera Rich Results-status i Search Console efter deploy | OK (kod) / KVAR (verifiering) | våg 122F |
-| En/ar-speglar för analyser finns inte (404) — av design, metadatan är sv-only | Besluta (styrelsen) om analys-speglar är värda 22 × 2 sidor | KVAR | Beslut |
+| Analyser sv: Article — våg 122F fixade "[object Object]"-buggen + utbildningsformulering; våg 135 la till dateModified (verified \|\| analysisDate) och sonderade Article-kompletthet = grön | Search Console-status kvar (R2-nyckel) | OK (kod + sond våg 135) | våg 122F/135 |
+| En/ar-speglar för analyser finns inte (404) — av design, metadatan är sv-only. BESLUTAT (våg 136, R2-neutralt): AVSTÅ — motiveringar citeras ordagrant på svenska (maskinöversättning av citerat forskningsmaterial riskerar feltolkning), speglolösa sidor deklarerar redan korrekt hreflang (våg 129), 44 extra sidor underhåll utan motsvarande söktryck; omprövas om AI-SEO-målet kräver det | — | AVGJORT: nej (våg 136) | Beslut (våg 136) |
 
 ## E — E-E-A-T-signaler
 
@@ -69,7 +72,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 |---|---|---|---|
 | Kurser ×3 språk: FAQPage med 3–4 äkta par ur kursens eget innehåll (byggKursSchema) | — | OK | våg 99 |
 | Startsidan: FAQPage (llms-fragor) | — | OK | FRONT A |
-| Bloggposter: ingen FAQ-data i BlogPost-strukturen (slug/title/description/pillar/author/dates/tags/body) | Kräver innehållsbeslut: FAQ-block i bloggmarkdown (`## FAQ`?) + spegling till FAQPage — ta till styrelsen, R2-neutral | KVAR | Beslut + rond |
+| Bloggposter: "## FAQ"-sektion i body + parser (src/lib/blogg-faq.ts) speglar till FAQPage via StrukturData — EN källa för synligt innehåll och schema. Våg 137: 10 pelarposter × 3–4 par, utbildningsformulerade. Våg 137-b prod-verifierad: synlig rubrik + giltig FAQPage (4 frågor på sondpost), kontrollpost utan FAQ = 0 block | Utöka inkrementellt ur frömaterialet (41/55 poster har ≥2 naturliga frågor i body), prioritera söktryck | OK (våg 137, prod-verifierad 137-b) | Rond F (våg 136 beslut → 137 levererad) |
 
 ## G — Generering/sitemap
 
@@ -94,8 +97,8 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|
-| StrukturData (våg 122F) = sajtens generiska renderer — escape:ar < samt U+2028/2029, ett block per anrop | Migrera övriga JsonLd-användare (startsidan, dataset, verktygssidor) stegvis till StrukturData | KVAR | Rond D+1 |
-| JsonLd i seo.tsx lever kvar som bakåtkompatibel renderer (samma output) | Behåll tills alla anropare migrerats, därefter pensionera | KVAR | senare |
+| StrukturData = sajtens ENDA JSON-LD-renderer (våg 134): samtliga anropare migrerade (30 sidfiler + komponenter), escape:ar < samt U+2028/2029, ett block per anrop, valfritt DOM-id | Håll regeln: nya sidor renderar via StrukturData, aldrig egna script-block | OK (våg 134) | våg 134 / rond J |
+| JsonLd-renderern i seo.tsx PENSIONERAD (våg 134) — borta ur koden, dokumenterad i seo.tsx-kommentar | — | OK (våg 134) | våg 134 / rond J |
 
 ## K — Kärnbusiness-mätning
 
@@ -120,7 +123,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| Externa länkar (källor, böcker) följs — transparens > länkjuice | Inventera ev. otillförlitliga utgående länkar (user-genererat i labbet?) | KVAR | Rond U |
+| Externa länkar (källor, böcker) följs — transparens > länkjuice. Inventering våg 136 (mikroagent, hela src/): INGA user-genererade URL:er når publika crawlbara sidor (meetingLink + medlemmars RSS-flöden renderas inloggat; studio-chatt har eget schema-filter) → nofollow behövs ej; Bokus/Adlibris/Amazon = kuraterade domäner med datadriven query; 0 externa URL:er i data/blogg idag | Märk rel="sponsored" OM affiliation tillkommer. Följdåtgärder (säkerhet, ej SEO): schema-filter i blogg-markdown-renderare + https-validering av meetingLink | OK (våg 136) | Rond N (våg 136) |
 
 ## O — Orgånisation-data + OG-bilder
 
@@ -150,7 +153,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| Rutgrupper (huvud)/(en)/(ar); speglar dyn. med 80 %-tröskel; html-lang korrekt i prod (sv/en/ar prodmätt); inLanguage i allt JSON-LD | Analyser + labb + forskningsbiblioteket saknar speglar — se D | OK (kärna) / KVAR (analyser) | våg 51–78 |
+| Rutgrupper (huvud)/(en)/(ar); speglar dyn. med 80 %-tröskel; html-lang korrekt i prod (sv/en/ar prodmätt); inLanguage i allt JSON-LD | Analyser + labb + forskningsbiblioteket saknar speglar — se D (avgjort våg 136: avstå) | OK (kärna) | våg 51–78/136 |
 
 ## T — Titel-taggar
 
@@ -168,7 +171,7 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 | Läge | Åtgärd | Status | Ägare |
 |---|---|---|---|
-| Sitemap rapporteras via robots; Rich Results ej systematiskt verifierade | Efter deploy av våg 122F: kontrollera Article-validitet för /analyser/* i Rich Results Test (nu giltig JSON, inte "[object Object]") | KVAR | Efter deploy |
+| Sitemap rapporteras via robots; Article-validitet SONDERAD våg 135 (efter våg 134-deploy): giltig JSON, 0 "[object Object]", alla obligatiska Article-fält nu kompletta (dateModified-fyndet rättat samma våg); inLanguage "sv-SE" överallt | Search Console-täckning ("Submitted vs Indexed" + Rich Results-status) = R2: kräver API-nyckel, väntar kund | OK (sond våg 135) / KVAR (Search Console = R2) | våg 135 / R2 |
 
 ## W — WWW/kanon (domänkanon)
 
@@ -216,9 +219,10 @@ ronden om från A (SEO är aldrig "klart" — konkurrenter och Google rör sig).
 
 ## Kvar-lista nästa ronder (sammanfattning)
 
-1. **J — JSON-LD-migration** (▶ NÄSTA): återstående JsonLd-anropare → StrukturData.
-2. **V — Verifiering**: Rich Results Test på analyser efter deploy; Search Console täckning.
-3. **B — Brödsmulor**: labb + forskningsbiblioteket.
-4. **F — Blogg-FAQ**: innehållsbeslut till styrelsen.
+1. **Sökordsinventering sv/en/ar** (▶ NÄSTA): styrelsens beslut 2026-09-13 20:19, åtgärd 3 — full inventering mappad mot de 333 kurserna + analysbiblioteket; identifiera täckningsglapp som plan för programmatiska long-tail-landningssidor.
+2. **F — Blogg-FAQ-utökning**: 41/55 poster har frömaterial (≥2 naturliga frågor i body); nya par läggs inkrementellt, prioriterat efter söktryck.
+3. **E — E-E-A-T-mätning**: manuell spot-check av citattecken i AI-svar (månadsvis).
+4. **V — Search Console-täckning**: R2, väntar kundens API-nyckel.
+5. Säkerhetsföljdåtgärder från rond N (ej SEO men bokförda): schema-filter i blogg-renderare; https-validering av meetingLink.
 
-Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129), A-Alt-texter+korpusen (våg 133).
+Klar ronder: A–Ö-genomgång (122F), C-Canonical (våg 128), H-Hreflang (våg 129), A-Alt-texter+korpusen (våg 133), J-JSON-LD-migration+pensionering (våg 134), V-Verifiering Article-sond+dateModified (våg 135), B-Brödsmulor verifierade + soft-404-fix (våg 136), N-nofollow-inventering (våg 136), D-analys-speglar avgjort: nej (våg 136), F-Blogg-FAQ top-10 levererad + prod-verifierad (våg 137/137-b).

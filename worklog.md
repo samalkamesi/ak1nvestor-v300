@@ -10293,3 +10293,64 @@ sammansatta kommandon (redirect/awk/heredoc) och långa commit-rader —
 enkla kommandon, Read/Write/Edit-verktygen och `commit -F <fil>`-mönstret
 går igenom. Leveransen fördröjdes ~5 min av detta, blockerades ej.
 
+## HJÄRTSLAGS-LEVERANS 2026-09-13 ~22:20 — VÅG 135 [organ:Ψ]: SEO-rond V (Article-sond) + efter bokförd våg 134
+
+Zombie-väckaren väckte loopen igen. Köns nästa uppgift per SEO-A-O-kvar-
+listan var J — men granskning visade att **våg 134 (rond J) redan var
+levererad i kod** (commit 0fe32c6c, mergad f4d2e657, deployad) utan att
+rond-loggen/kvar-listan/worklog bokförts. Denna våg:
+
+**Efter bokförd våg 134 (rond J):** verifierad i src/ — 0 `<JsonLd`-
+komponentanrop kvar, 34 filer renderar via `<StrukturData`, gamla JsonLd-
+renderern PENSIONERAD ur seo.tsx (kommentar på plats). Rond-loggrad J +
+J-avsnittets två OK-rader bokförda.
+
+**Våg 135 (rond V — Verifiering):** sond (.zcode/v135-jsonld-sond.mjs)
+mot localhost=prod-kod, 6 URL:er (3 analyser + kurs + blogg + start):
+ALLA ld+json-block giltiga, 0 "[object Object]", 0 rådgivningsord,
+inLanguage "sv-SE" korrekt (sondens "sv"-jämförelse gav falskt larm —
+konstaterat giltigt BCP-47). **FYND:** analys-Article saknade
+`dateModified` (Google Article-rekommendation; bloggen hade det).
+**Fix:** `dateModified: a.verified || a.analysisDate` i analysisJsonLd
+(src/lib/seo.tsx) — verifiering = dokumentrevidering, speglar bloggens
+updatedAt-mönster. tsc 0 fel (baslinje 0). Commit 42a40a19, push prod,
+bygg under flock-lås, pm2-omstart, prod-verifiering.
+
+**Rester i V:** Search Console-täckning = R2 (API-nyckel väntar kund).
+
+**Nästa i kön:** ▶ NÄSTA = B — Brödsmulor (/labb/[id] +
+/forskningsbiblioteket/[ticker] saknar BreadcrumbList), därefter F
+(blogg-FAQ = styrelsebeslut).
+
+## HJÄRTSLAGS-LEVERANS 2026-09-13 ~23:3x — VÅG 137-b [organ:Ψ]: rond F verifierad i prod + bokförd (dok släpade efter kod)
+
+Zombie-väckaren väckte loopen. Lägessond visade: **våg 137 (rond F:
+blogg-FAQ) var levererad i kod** (commit 4458cb26: parser blogg-faq.ts +
+villkorat FAQPage-block + 10 poster × 3–4 par, pushad till prod-remote
+och byggd 23:08) **men obokförd** — SEO-A-O.md:s rond-logg, F-avsnitt
+och kvar-lista stannade på "▶ NÄSTA: F", och bokföringarna för ronderna
+J/V/B (våg 134–136) låg ocommittade i trädet sedan tidigare sessioner.
+
+**Denna våg (endast datafiler — inget bygge):**
+
+1. **Prod-verifiering av våg 137** (sond .zcode/v137b-faq-verifiera.mjs,
+   node mot localhost=prod): komplett-guiden renderar synlig FAQ-rubrik +
+   1 giltigt FAQPage-block med 4 frågor, alla svar > 20 tecken, 0 rådgiv-
+   ningsord (juridikgrinden ren). Kontrollpost utan FAQ (H&M-analysen)
+   renderar 0 block + ingen synlig FAQ → villkoret i page.tsx håller.
+   Tidigare grep-fynd "1 Question" var falskt larm (escape:ad HTML);
+   tolkad JSON = 4 frågor.
+2. **Bokförd våg 137**: rond F → OK (SEO-A-O.md rond-logg + F-avsnitt +
+   kvar-listan).
+3. **▶ NÄSTA omkastad mot styrelsens beslut 20:19** (åtgärd 3):
+   sökordsinventering sv/en/ar mappad mot 333 kurser + analysbiblioteket
+   → täckningsglapp → plan för programmatiska long-tail-sidor. F-utökning
+   (41/55 poster har frömaterial) blir pump 2 i kön.
+4. **Efterbokfört det som legat ocommittat**: SEO-A-O-rader för våg
+   134–136, worklog-posten för våg 135, AGENTS.md-synk (R4=12 agenter,
+   tsc-baslinje 0 sedan våg 133 — filinnehållet speglade redan verklig-
+   heten, repot gjorde det inte).
+
+**Bevis:** sond-output ovan; commit = denna leverans.
+
+

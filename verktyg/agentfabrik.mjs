@@ -44,6 +44,7 @@ import {
 } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { skrivAudit } from "./audit-logg.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ROTT = path.join(ROT, "data", "vakten", "agentfabrik");
@@ -127,6 +128,8 @@ function korUppgift(manifestId, uppgift) {
     let buffer = "";
     const start = Date.now();
     logga(`▶ ${manifestId}/${uppgift.id} "${uppgift.titel.slice(0, 60)}"`);
+    // MEGA G3 — audit: varje fabriksuppgift är en autonom skrivning.
+    skrivAudit(`fabriken:${manifestId}:${uppgift.id}`, "uppgift_start", uppgift.titel, `manifest: ${manifestId}`);
 
     const barn = spawn(
       ZCODE,
@@ -156,6 +159,13 @@ function korUppgift(manifestId, uppgift) {
       }
       const leverans = buffer.match(/LEVERANS:\s*(.+)$/m)?.[1]?.trim() ?? null;
       logga(`■ ${manifestId}/${uppgift.id} kod=${kod ?? "?"} på ${Math.round((Date.now() - start) / 1000)}s`);
+      // MEGA G3 — audit: kvitto per avslutad uppgift (leveransrader = artefakten).
+      skrivAudit(
+        `fabriken:${manifestId}:${uppgift.id}`,
+        "uppgift_klar",
+        leverans ?? `utdata/${manifestId}-${uppgift.id}.log`,
+        `kod=${kod ?? "?"} sekunder=${Math.round((Date.now() - start) / 1000)}`,
+      );
       resolve({ id: uppgift.id, kod: kod ?? -1, sekunder: Math.round((Date.now() - start) / 1000), leverans });
     });
   });

@@ -5572,7 +5572,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         body: JSON.stringify({ action: "compact" }),
       });
       const data = (await res.json().catch(() => ({}))) as {
-        status?: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad";
+        status?: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad" | "modell_dod_arv";
         meddelande?: string;
         kontext?: KontextInfo | null;
         fel?: string;

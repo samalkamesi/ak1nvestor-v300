@@ -780,7 +780,7 @@ export interface StudioCompactSvar {
    * "modell_lakad" = sessionens modell var död (-32031), läktes via
    * session/setModel och komprimeringen körde därefter.
    */
-  status: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad";
+  status: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad" | "modell_dod_arv";
   meddelande: string;
   kontext?: StudioKontext | null;
 }
@@ -4077,9 +4077,25 @@ class AppServerTransport implements StudioTransport {
         }
       }
       if (!svar) {
-        throw new Error(
-          "Komprimeringen gick inte att köra: sessionens modell är inte tillgänglig och kunde inte bytas automatiskt. Prova att byta modell (Ctrl+N / modellväljaren) och försök igen.",
-        );
+        // VÅG 160 — TIER 3 (djupaste roten, ur feltexten: HISTORISKA turer
+        // bär den döda modellen; setModel läker bara nuet): markera sessionen
+        // modellDöd — det BEVISADE v95-maskineriet startar då en FRISK
+        // session med TRÅDMINNET vid nästa meddelande (frisk kontext =
+        // komprimeringens effekt, tråden bevaras). Ärlig vägledning ut.
+        if (this.sid) {
+          try {
+            markeraModellDod(this.sid);
+          } catch {
+            /* flaggan är stöd */
+          }
+        }
+        return {
+          status: "modell_dod_arv",
+          meddelande:
+            "Sessionens historik innehåller en avstängd modell och kan inte komprimeras. " +
+            "Nästa meddelande startar automatiskt en frisk session MED trådens minne " +
+            "(samma effekt som komprimering), eller tryck Nytt samtal direkt.",
+        };
       }
     }
     // VÅG 160 — MEGA-KUR 2: "already_running" skall OCKSÅ vänta klart (annars

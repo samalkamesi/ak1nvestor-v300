@@ -106,6 +106,69 @@ async function main() {
   const nu = Date.now();
   const state = lasState();
 
+  // ── VÅG 156 — UPPDRAGSMOTORENS HJÄRTDEL ────────────────────────────────
+  // (a) KUNDENS ORDER BLIR MÅLET: agenten registrerar orders som
+  //     data/vakten/kunduppdrag.json (KUNDUPPDRAGSPROTOKOLLET i AGENTS.md)
+  //     — hjärtat låser den som sessionens mål inom 10 min (hela
+  //     maskineriet jobbar på KUNDENS order till den är klar, online
+  //     och offline). (b) KLART-markören återställer stående drift.
+  try {
+    const uppdragFil = path.join(KATALOG, "kunduppdrag.json");
+    if (fs.existsSync(uppdragFil)) {
+      const u = JSON.parse(fs.readFileSync(uppdragFil, "utf8"));
+      if (u && typeof u.mal === "string" && u.mal.trim()) {
+        const malText =
+          `KUNDUPPDRAG (prioriterat — arbetas tills 100 % klart): ${u.mal.trim()}`.slice(0, 400) +
+          " || Definition-of-done: fullständigt levererat, KVD grön (tsc 0, bygg, deploy, prod 200). " +
+          "När HELT klart: skriv data/vakten/uppdrag-klart.json {sammanfattning,bevis} och avsluta med raden UPPDRAG KLART.";
+        const r = await fetch(`${BAS}/api/studio/session`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-password": pass },
+          body: JSON.stringify({ action: "malSatt", mal: malText }),
+        });
+        if (r.ok) {
+          fs.renameSync(uppdragFil, path.join(KATALOG, `kunduppdrag-lasad-${Date.now()}.json`));
+          fs.appendFileSync(
+            path.join(KATALOG, "uppdragslogg.jsonl"),
+            JSON.stringify({ ts: new Date().toISOString(), händelse: "order-lasad-som-mal", order: String(u.order || u.mal).slice(0, 300) }) + "\n",
+          );
+          return logga("KUNDUPPDRAG låst som mål — maskineriet jobbar på kundens order");
+        }
+        const felText = await r.clone().text().catch(() => "");
+        if (felText.includes("prompt")) return logga("kunduppdrag väntar — prompt kör");
+        return logga("kunduppdrag-malSatt FEL " + r.status);
+      }
+      // Ogiltig fil — arkivera så den inte snurrar
+      fs.renameSync(uppdragFil, path.join(KATALOG, `kunduppdrag-ogiltig-${Date.now()}.json`));
+    }
+  } catch (e) {
+    logga("kunduppdrag-läsning fel: " + String(e).slice(0, 80));
+  }
+  try {
+    const klarFil = path.join(KATALOG, "uppdrag-klart.json");
+    if (fs.existsSync(klarFil)) {
+      const k = JSON.parse(fs.readFileSync(klarFil, "utf8"));
+      fs.renameSync(klarFil, path.join(KATALOG, `uppdrag-klart-${Date.now()}.json`));
+      fs.appendFileSync(
+        path.join(KATALOG, "uppdragslogg.jsonl"),
+        JSON.stringify({
+          ts: new Date().toISOString(),
+          händelse: "UPPDRAG KLART",
+          sammanfattning: String((k && k.sammanfattning) || "").slice(0, 300),
+          bevis: String((k && k.bevis) || "").slice(0, 200),
+        }) + "\n",
+      );
+      const rk = await fetch(`${BAS}/api/studio/session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ action: "malSatt", mal: STANDE_MAL_TEXT }),
+      });
+      return logga("UPPDRAG KLART bokfört — stående mål återställt (" + (rk.ok ? "OK" : rk.status) + ")");
+    }
+  } catch (e) {
+    logga("uppdrag-klart-läsning fel: " + String(e).slice(0, 80));
+  }
+
   // VÅG 131 — FRUSNA TURNS: turn=true utan puls i 30+ min = hängd turn
   // (bevisat 2026-09-13: iteration fryst 2,5 h; zombie-kicken vägrar när
   // turn=sant). Två fynd i rad (20 min) ⇒ självläkningsomstart.

@@ -490,12 +490,24 @@ export async function POST(req: NextRequest) {
       // fångas, klienten får kö-status, och prompten skickas OM (15 s
       // intervall, tak 8 min) tills agenten är ledig — svaret kommer ALLTID.
       let upptagenStuds = false;
+      // VÅG 156 — TIDSGRÄNSEN BLIR FORTSÄTTNING: transportens hårtak (10 min)
+      // dödade långa arbeten mitt i med "svaret kan vara ofullständigt" —
+      // kundens ord: "får den order då ska den jobba tills den är helt klar".
+      // Nu: tidsgräns-fel => AUTOMATISK FORTSÄTT-prompt (samma uppdrag,
+      // max 3 fortsättningar) — arbetet rullar tills klart eller taket.
+      let tidsgransStuds = false;
+      let fortsattningar = 0;
       const arUpptagen = (m: string) =>
         m.includes("-32010") || m.toLowerCase().includes("kör redan") || m.toLowerCase().includes("pågår redan");
+      const arTidsgrans = (m: string) => m.includes("Tidsgränsen nåddes");
       const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
         if (event.typ === "fel" && typeof event.meddelande === "string" && arUpptagen(event.meddelande)) {
           upptagenStuds = true;
           return; // studsen syns ej — prompt-kön tar över
+        }
+        if (event.typ === "fel" && typeof event.meddelande === "string" && arTidsgrans(event.meddelande)) {
+          tidsgransStuds = true;
+          return; // talets död syns ej — fortsättning tar över
         }
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
         // R6: svaret LANDADE ⇒ journalposten löses (även efter klient-abort —
@@ -518,12 +530,30 @@ export async function POST(req: NextRequest) {
         // Transportens EV. signal förblir dess interna sak (10-min-taket).
         const KO_TAK_MS = 8 * 60_000;
         const koStart = Date.now();
+        let aktivPrompt = prompt;
         do {
           upptagenStuds = false;
-          if (bilder.length > 0) {
-            await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
+          tidsgransStuds = false;
+          if (bilder.length > 0 && aktivPrompt === prompt) {
+            await transport.skickaMedBild(aktivPrompt, bilder, skickaMedVakt);
           } else {
-            await transport.skicka(prompt, skickaMedVakt);
+            await transport.skicka(aktivPrompt, skickaMedVakt);
+          }
+          if (
+            tidsgransStuds &&
+            fortsattningar < 3 &&
+            Date.now() - koStart < KO_TAK_MS + 3 * 11 * 60_000
+          ) {
+            fortsattningar += 1;
+            aktivPrompt =
+              "FORTSÄTT (automatisk fortsättning efter tidsgränsen): arbetet bröts mitt i — " +
+              "fortsätt EXAKT där du slutade, samma uppdrag, repetera inget klart arbete, " +
+              "tills uppdraget är helt klart eller du behöver kundens beslut.";
+            skickaMedVakt({
+              typ: "status",
+              text: `Rundan nådde tidsgränsen — fortsätter automatiskt (fortsättning ${fortsattningar}/3)…`,
+            });
+            continue;
           }
           if (upptagenStuds && Date.now() - koStart < KO_TAK_MS) {
             skickaMedVakt({
@@ -532,7 +562,10 @@ export async function POST(req: NextRequest) {
             });
             await new Promise((r) => setTimeout(r, 15_000));
           }
-        } while (upptagenStuds && Date.now() - koStart < KO_TAK_MS);
+        } while (
+          (upptagenStuds && Date.now() - koStart < KO_TAK_MS) ||
+          (tidsgransStuds && fortsattningar < 3 && Date.now() - koStart < KO_TAK_MS + 3 * 11 * 60_000)
+        );
         // R6 — köns tak: agenten upptagen i 8 minuter ⇒ prompten kom ALDRIG
         // fram. Tidigare tystnade strömmen helt (inget klart/fel). Nu: ett
         // ÄRLIGT fel-event + journalstatus "tappad". Omsändning sker ALDRIG

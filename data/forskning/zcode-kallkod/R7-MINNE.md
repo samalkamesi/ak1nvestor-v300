@@ -1,6 +1,6 @@
 # R7 — MINNESSYSTEMET (persistent agent memory i zcode-runtimen)
 
-Forskningsrapport 7 av källkordskartläggningen. Källa: den INSTALLERADE
+Forskningsrapport 7 av källkodskartläggningen. Källa: den INSTALLERADE
 runtimes `vendor/zcode.cjs` (13 MB bundle, cliVersion 0.16.5, app 3.11.2)
 i `/home/ak1a/.npm-global/lib/node_modules/zcode-app-cli/` + den levande
 strukturen under `~/.zcode/cli/memories/` + CLI-källan i
@@ -8,6 +8,20 @@ strukturen under `~/.zcode/cli/memories/` + CLI-källan i
 och verifierade mot bunten; minifierade namn (Yre, Uqr, $pi …) anges för
 spårbarhet. Syfte: förstå hur runtime konsoliderar minne automatiskt och
 vad studions min-panel (p6-leveransen, våg 84 D) bör spegla.
+
+> **VERIFIKATIONSPASS 2 (2026-09-14, oberoende omgång — rättar tre fel):**
+> (1) Rot-attributionerna i §2.1/§7 var omkastade: sha256-bevis +
+> runtime-logg (bootstrap `runtime_config.completed` 2026-09-12:
+> workingDirectory `/home/ak1a/agent/ak1` → memoryRoot `ak1-80a87d64…`)
+> visar att **`ak1-80a87d64` = STUDIOTS levande rot** och
+> `ak1-b5bd22b` = repot `/home/ak1a/AK1` (fabriksagenter). (2) §5.4:
+> `pendingMemoryUpdate` tilldelas ALDRIG i build 3.11.2-24 (3 träffar i
+> bunten: deklaration, läsning, nollställning) — `memory_update`-notisen
+> är VILANDE, se rättelsen. (3) §6: recall-grenen "semantic-recall" är
+> kompilerad men AVSTÄNGD — modulkonstanten `sR=CUo(!1)` är hårdkodad
+> till `"default-index"` och BÅDE prefetchen (`u7r`) och konsumenten
+> (`l7r(this,sR)`) returnerar direkt om läget ≠ "semantic-recall".
+> Aktiv återkallning = MEMORY.md-indexet i systemprompten (§4).
 
 ---
 
@@ -19,9 +33,10 @@ vad studions min-panel (p6-leveransen, våg 84 D) bör spegla.
 - **Två motorer**: (1) EXTRAKTION — efter varje avslutad vända (`turn.completed`)
   kör runtime en dold "memory extraction subagent" (samma modell, max 5 vändor,
   endast Write/Edit/rm i minneskatalogen) som uppdaterar minnet från det senaste
-  sagda; (2) RECALL — vid varje ny tur väljer en **liten modell** (glm-5.3 i vår
-  config) upp till 5 minnesfiler via JSON-schema-svar, som läses in som ambient
-  `relevant_memory`-kontext.
+  sagda; (2) RECALL — **maskineri för "semantic-recall" är kompilerat men
+  AVSTÄNGT** i build 3.11.2-24 (`sR=CUo(!1)` hårdkodat): aktiv återkallning
+  sker via MEMORY.md-indexet i systemprompten + agentens egna Read-anrop
+  (verifierat i pass 2; detaljer §6).
 - **Konfigurationsnycklarna `write`, `autoConsolidate`, `summaryMaxBytes`
   konsumeras INTE av denna runtime-build** (strängarna finns ej i bunten).
   Verkliga reglage: `features.memory` + `memory.use` (båda `true` på servern) samt
@@ -63,15 +78,20 @@ finns OCH tasktypen är huvudspåret (`interactive | fork | selection_side_chat 
 workflow_parent | undefined`) OCH workspacet inte är remote. Subagenter och
 bakgrunds-executors får alltså INTE eget projektminne via denna väg.
 
-### 2.1 Serverns levande träd (verifierat 2026-09-14)
+### 2.1 Serverns levande träd (verifierat 2026-09-14, hash-bevisade attributioner)
 
 ```
 ~/.zcode/cli/memories/projects/
-├── ak1-80a87d64ac98991b/memory/        ← ttyd-sessionens /home/ak1a/AK1
+├── ak1-80a87d64ac98991b/memory/        ← /home/ak1a/agent/ak1 = STUDIOTS
+│   arbetsyta (studioArbetsyta()) — LEVANDE studio-minne
 │   MEMORY.md + kundprofil.md + projektstatus.md + juridik.md + styrelseregler.md
-├── ak1-b5bd22b38c8cc801/memory/        ← studiens session (skapat 2026-09-14, TOMT)
-├── ak1nvestor.com-6a904021b3b74c30/memory/   (6 filer)
-├── default-d3164043df3fd3bb/memory/    ← p6-panelens hårdkodade rot
+│   (sha256("/home/ak1a/agent/ak1")[0:16] = 80a87d64ac98991b ✓; loggbevis §7.1)
+├── ak1-b5bd22b38c8cc801/memory/        ← /home/ak1a/AK1 = repot (fabriks-
+│   agenter); skapat 2026-09-14 03:45 vid sessionsinit, TOMT ännu
+│   (sha256("/home/ak1a/AK1")[0:16] = b5bd22b38c8cc801 ✓)
+├── ak1nvestor.com-6a904021b3b74c30/memory/   (äldre yta, 6 filer)
+├── default-d3164043df3fd3bb/memory/    ← p6-panelens hårdkodade rot —
+│   FRÄMMANDE äldre rot (engelska minnen 2026-09-09/10)
 │   MEMORY.md + 7 faktafiler + .minnes-backup/ (studio-backupper, våg 84)
 └── project-8a5edab282632443/memory/    (workspaceIdentity-läget)
 ```
@@ -155,9 +175,17 @@ verkliga sökvägen + `<SCOPE_GUIDANCE>` per scope (`mci`):
 - project: "shared with your team via version control, tailor to this project"
 - local: "not checked into version control, tailor to this project and machine"
 
-(Scopes user/project/local används för SUBAGENTERNAS egna minnen:
+**Verifikationspass 2-precisering**: `# Persistent Agent Memory` (FUr) är
+prompten för NAMNGIVNA AGENTPROFILERS egna minnen (scopes ovan; rötter
 `<storageRoot>/agent-memory/<agent>`, `<ws>/.zcode/agent-memory/<agent>`,
-`<ws>/.zcode/agent-memory-local/<agent>` — separat från projektminnet.)
+`<ws>/.zcode/agent-memory-local/<agent>` — aktiveras av
+`memory.enabled && memory.use && storageRoot` via `UUr`/`_ci`). HUVUDAGENTENS
+projektminne får i stället sektionen **`# Memory`** (`Klt`/`TUo`): rot-sökvägen
+("This directory already exists — write to it directly"), frontmattermallen
+(name/description/metadata.type), [[wikilänk]]-regeln,
+typdefinitionerna user/feedback/project/reference, "uppdatera före dubblett /
+radera fel minnen / spara inte det repot vet"-reglerna och (default-index-läget)
+påminnelsen att `MEMORY.md` är indexet som laddas varje session.
 
 Därpå följer `## MEMORY.md` + indexets innehåll. Indexet passerar
 `formatProjectMemoryIndexContent` (`Ike`→`Hlt`): frontmatter strippas
@@ -279,12 +307,15 @@ trigger: "scheduler"`:
 5. **Loop** (`b_t`): max **5 vändor** (`zpi`), samma modell som huvudsessionen
    (`snapshot.model`). Returvärde: `"success" | "aborted" | "error"`.
 
-### 5.4 Konsolideringsnotisen — `memory_update`
+### 5.4 Konsolideringsnotisen — `memory_update` (VILANDE i 3.11.2-24)
 
-Filändringar upptäcks ( watchers/paths) och sätts som `pendingMemoryUpdate`;
-nästa turbörja konsumerar `consumePendingProjectMemoryUpdate` (`xqr`) som
-emitterar ett **`memory_update`-event** i meddelandehistoriken
-(`rpi`-formatet):
+**Verifikationspass 2 (rättelse):** originalrapporten hävdade att
+filändringar "upptäcks (watchers/paths) och sätts som pendingMemoryUpdate".
+Det stämmer INTE i denna build: `pendingMemoryUpdate` har exakt 3 träffar i
+bunten — fältdeklarationen, läsningen i `consumePendingProjectMemoryUpdate`
+(`xqr`) och nollställningen. **Ingen kod tilldelar fältet**, så notisen
+emitteras aldrig. Maskineriet är dock helt byggt och anropas vid varje
+turbörjan (`p = t ? void 0 : xqr(this)`); formatet (`rpi`) är:
 
 > "Background memory consolidation updated your memory directory: <summary>
 > Files changed: <paths>
@@ -295,15 +326,32 @@ emitterar ett **`memory_update`-event** i meddelandehistoriken
 
 `memory_update` tillhör protokollets **ambienta event-klass** (system-
 reminder-typ, visas ej som chattflöde) — notisen riktar sig till AGENTEN,
-inte till användaren. Detta är den korrekta kroken för studion att lyfta in
-i UI:t (se §9).
+inte till användaren. Konsekvens för studion: i DAGENS build är
+**max(mtime) i minnesroten** den enda "senast konsoliderade"-signalen (se
+§9.2); event-kortet blir aktuellt först när en framtida runtime börjar
+tilldela `pendingMemoryUpdate`.
 
 ---
 
-## 6. Återkallning — RECALL-FLÖDET (per tur)
+## 6. Återkallning — RECALL-FLÖDET (maskineri beskrivet; grenen är AVSTÄNGD i 3.11.2-24)
 
-`prefetchProjectMemories` (`mdi`, `operation: "project_memory_recall",
-trigger: "turn"`) + prefetch-kedjan:
+**Verifikationspass 2 (rättelse):** originalrapporten beskrev flödet nedan
+som aktivt ("vid varje ny tur väljer en liten modell upp till 5
+minnesfiler … läses in som `relevant_memory`"). Det är **kompilerat men
+aldrig valt**: modulkonstanten `sR = CUo(!1)` är hårdkodad till
+`"default-index"` (`resolveProjectMemoryRetrievalBranch`), och både
+prefetchen (`u7r`: `if (r !== "semantic-recall" || …) return`) och
+konsumenten (turloopen: `l7r(this, sR)` med samma guard) kortsluter.
+**Inga `relevant_memory`-event och inga selector-anrop körs i denna
+build.** Den AKTIVA återkallningen är default-index-grenen (§4): MEMORY.md
+läses vid sessionens start in i systempromptens Memory-sektion och
+huvudagenten väljer själv minnesfiler med Read-verktyget (skrivarighet
+utan tillståndsdialog — `mSe` tvingar allow för Write/Edit på `.md` i
+minnesroten i varje permission-läge, `ruleId: "memory.file.markdown"`).
+
+Flödet nedan är korrekt dokumenterat för framtida builds (samt som
+förklaring av varför minnesfilernas description/type måste hållas korrekt
+— manifestet (`EAe`) bygs och indexeras oavsett gren):
 
 1. **Frågeport** (`Jgt`): senaste användarfrågan måste innehålla whitespace
    (dvs vara faktisk text) — annars ingen recall.
@@ -346,18 +394,35 @@ kommande runtime-versioner.
 
 ## 7. Serverobservationer (viktiga för studion)
 
-### 7.1 Fem projektrötter = fem "hjärnor"
+### 7.1 Fem projektrötter = fem "hjärnor" (rättad i pass 2)
 
-Runtime plockar katalog per arbetsyta (hash av sökväg/identity). Studio-sessionen
-(`ak1-b5bd22b38c8cc801`) skapade sin TOMMA rot 2026-09-14 03:45 — sessionen
-startar alltså utan minne tills extraktion/agent fyller den. ttyd-sessionens
-rot (`ak1-80a87d64ac98991b`) har det befolkade minnet.
+Runtime plockar katalog per arbetsyta (hash av sökväg/identity).
+**Studiots sessioner (cwd `/home/ak1a/agent/ak1`) minner i
+`ak1-80a87d64ac98991b`** — det BEFOLKADE minnet (kundprofil, projektstatus,
+juridik, styrelseregler). Beviskedja 2026-09-10: alla 5 filer skrevs i EN
+parallel batch 22:26:26 CEST (mtime-signatur: 5 skrivningar inom 18 ms —
+antingen extraktorns "turn 2 — issue all Write/Edit calls in parallel"
+eller huvudagentens egen Write-batch), och loggen visar därefter 6 logiska
+`project_memory_extract`-modellanrop 22:36–22:38 CEST (12 rader =
+generate.completed+request.completed-par) — extraktorn KÖR alltså i
+studiots rot. Loggbevis för rotkopplingen: `zcode-2026-09-12.jsonl`
+bootstrap-rader med `memoryRoot: …ak1-80a87d64…` +
+`workingDirectory: /home/ak1a/agent/ak1` + `memoryUse: true` +
+`memoryExtractionEnabled: true`.
+**Repots rot `/home/ak1a/AK1` → `ak1-b5bd22b38c8cc801`** skapades
+2026-09-14 03:45 av fabriksagenternas sessioner och är fortfarande TOM
+(research-uppgifter har inte (än) gett extraktorn något värt att spara).
 
-### 7.2 Två agenter, två minnen
+### 7.2 Panelen läser en tredje, främmande rot (rättad i pass 2)
 
-Kundens chatt i /studio och agenten i ttyd-terminalen har (per automatik)
-OLIKA projektminnen eftersom workspace-key skiljer sig åt trots samma repo —
-det är rot-orsak till att studion ibland "glömmer" det terminalen vet.
+Slutsatsen "studion glömmer det terminalen vet" byggde på omkastade
+attributioner och stämmer inte: studion HAR det befolkade minnet
+(`ak1-80a87d64`). Det verkliga gapet är att **min-panelen hardkodat läser
+`default-d3164043df3fd3bb`** (route.ts `CONTABO_MINNE_ROT`, rad 67) — en
+äldre rot med engelska minnen som varken studio- eller fabriks-agenterna
+använder. Kunden ser alltså minnen agenten ALDRIG läser, och redigerar
+dem utan effekt. Fix: beräkna roten ur `studioArbetsyta()` (slug +
+sha16-hash) — se §9.1.
 
 ### 7.3 `.minnes-backup/` läcker in i manifestet
 
@@ -394,20 +459,28 @@ Leverans våg 84 D (STUDIO 100x byggblock D), verifierad i koden:
   stående instruktioner" med Skapa-ruta.
 - **Rot: HÅRDKODAD** `default-d3164043df3fd3bb` (const `CONTABO_MINNE_ROT`
   + fallback via sökvägsmatchning) — dvs EJ den rot studio-sessionen själv
-  använder (`ak1-b5bd22b38c8cc801`), och de övriga tre projekten syns inte.
+  använder (`ak1-80a87d64ac98991b`, rättat i pass 2), och de övriga
+  projekten syns inte.
 
 ---
 
 ## 9. Vad panelen bör spegla (rekommendationer, sorterade)
 
-1. **Projektväxlare (viktigast).** Lista hela `~/.zcode/cli/memories/
-   projects/`-trädet med human-vänliga namn (slug + filantal + senaste
-   mtime + "aktiv"-markering för aktuell sessions rot enligt samma hashregel
-   som `Yre`). Utan detta redigerar kunden ett minne agenten inte läser.
-2. **`memory_update`-kort i flödet.** Ambient-eventet (§5.4) redan i
-   streamen/protokollet — visa som tyst status-kort i panelen eller
-   aktivitetsloggen: "Bakgrundskonsolidering ändrade: kundprofil.md" +
-   ändrad-tid. Runtime ber agenten inte berätta det; studion kan och bör.
+1. **Projektväxlare + RÄTT ROT (viktigast).** Default-vyn ska vara den rot
+   som studio-sessionerna faktiskt använder: `ak1-80a87d64ac98991b` =
+   `studioArbetsyta()` (`/home/ak1a/agent/ak1`) — beräkna dynamiskt med
+   samma hashregel som `Yre` (slug = katalognamn, sha256(sökväg)[0:16])
+   i stället för hardkodad konstant. Därutöver: lista hela
+   `~/.zcode/cli/memories/projects/`-trädet med human-vänliga namn
+   (slug + filantal + senaste mtime + "aktiv"-markering). Utan detta
+   redigerar kunden ett minne agenten inte läser — fallet är redan här:
+   panelen visar `default-d316…` som ingen agent läser.
+2. **"Senast uppdaterat" ur mtime (bygger i DAGENS build).**
+   `memory_update`-eventet är vilande i 3.11.2-24 (§5.4) — visa i stället
+   max(mtime) i roten i panelens header: "Minnet senast uppdaterat:
+   X min sedan". När en framtida runtime börjar emittera `memory_update`
+   kan samma yta visa filnivå-kort ("Bakgrundskonsolidering ändrade:
+   kundprofil.md") — ambient-klassen är redan i protokollet.
 3. **Indexbudget-mätare.** MEMORY.md rad/teckennivå mot tak 200 rader/25 000
    tecken (runtimes verkliga gränser) + Hlt-varningstexten när sprängd —
    INTE `summaryMaxBytes: 8192` som är död nyckel i denna build.
@@ -422,9 +495,12 @@ Leverans våg 84 D (STUDIO 100x byggblock D), verifierad i koden:
    `memory.use` (av/på) och ev. kommande `extractionEnabled`. Visa
    `write/autoConsolidate/summaryMaxBytes` som "reserverade (verksamma i
    framtida runtime)" — aldrig som aktiva.
-8. **Recall-transparens (bonus).** `relevant_memory`-eventen talar om VILKA
-   minnen som lämnades in i turen — en "Använt denna tur"-indikator per fil
-   ger kunden synlighet i "vad agenten kom ihåg" utan jargon.
+8. **Recall-transparens (bonus — kräver framtida runtime).** I 3.11.2-24
+   skickas inga `relevant_memory`-event (semantic-recall avstängd, §6), så
+   en "Använd denna tur"-indikator har ingen datakälla ännu. När grenen
+   aktiveras talar eventen om VILKA minnen som lämnades in i turen —
+   bygg indikatorn då. I dag syns agentens minnesläsningar i stället som
+   vanliga Read-verktygskort i konversationen.
 
 ---
 
@@ -452,11 +528,26 @@ Leverans våg 84 D (STUDIO 100x byggblock D), verifierad i koden:
 | `ldi`/`cdi` | filläsning + trunkering (200 r/4 kB) | 10 936 594 |
 | `Xgt` | relevant_memory-format | 10 936 594 |
 | `hR`/`d7o`/`XCr` | memory-path-guard + förbjudna kataloger | 7 843 941 |
+| `CUo`/`sR` | recall-grensval — `sR=CUo(!1)` HÅRDKODAT "default-index" | ~10 938 800 |
+| `Klt`/`TUo` | systemprompt-sektionen `# Memory` (projektminnet) | ~10 936 300 |
+| `Lci` | MEMORY.md-läsning vid init (endast default-index-läget) | ~10 865 000 |
+| `gdi`/`hdi` | selector-modell = liteModelRef ?? defaultModelRef | ~10 939 000 |
+| `mSe` | auto-tillåt Write/Edit i minnesroten ("Memory Markdown writes are allowed") | ~7 846 500 |
+| `gci`/`UUr`/`_ci` | agent-memory-scopes (user/project/local) + verktygsregistrering | ~10 863 000 |
 
 Källor: `vendor/zcode.cjs` (alla citat), `vendor/extraction.json`,
 `bin/zcode.js` + `config.example.json` (configmall), `@zcode/tui/dist/
 index.js` (mall), `test/runtime/network-retry.test.ts` (schema),
 `~/.zcode/cli/memories/` (levande struktur), `src/app/api/studio/minne/
-route.ts` + `src/components/ak1a/studio-minne-panel.tsx` (p6).
+route.ts` + `src/components/ak1a/studio-minne-panel.tsx` (p6),
+`src/lib/studio/studio-transport.ts:7534` (studioArbetsyta),
+`~/.zcode/cli/log/zcode-2026-09-1*.jsonl` (bootstrap-raderna 2026-09-12
+med memoryRoot ak1-80a87d64 + workingDirectory /home/ak1a/agent/ak1;
+12 project_memory_extract-anrop 2026-09-10) — samt sha256-verifierade
+sökvägshashar för alla rot-attributioner.
 
 — R7 skriven av fabriksagent (uppdrag Minnessystemet), 2026-09-14.
+Rättad + utökad av oberoende verifikationsomgång (pass 2) samma dag:
+rot-attributioner (hash+loggbevis), vilande `memory_update` (3-träffars-
+bevis), avstängd semantic-recall (`sR=CUo(!1)`-bevis), `# Memory`-sektionen
+(`Klt`/`TUo`), `mSe`-auto-tillståndet och funktionskartans nya rader.

@@ -913,11 +913,21 @@ interface StreamEvent {
 const KONTEXT_TAK_RESERV = 1_000_000;
 const KONTEXT_VARNING_PROCENT = 80;
 
+/** 10X p3: det stående målet — mål-panelens envägskur mot dödläget
+ *  (mal=null). Exakt samma text som styrelsens 24/7-standardläge. */
+const STALANDE_MAL = "24/7-STANDBY enligt STYRELSE-REGELVERKET";
+
 /** Formattera tokens kompakt (12 345 → "12,3k"). */
 function tkn(n: number): string {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".", ",")}M`;
   if (n >= 1_000) return `${Math.round(n / 1000)}k`;
   return String(n);
+}
+
+/** Kontextprocent ärlig: Math.round över 1 %, minst en decimal under —
+ *  verklig kontextväxt ska syns ("0,4%"), aldrig en platt "0%". */
+function kontextProcentText(p: number): string {
+  return p < 1 ? p.toFixed(1).replace(".", ",") : String(Math.round(p));
 }
 
 /** Formattera bytes läsbart (15 360 → "15 kB"). */
@@ -5131,6 +5141,40 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [malSparar, malKör, visaToast]);
 
+  /** 10X p3 — DÖDLÄGETS ENVÄGSKNAPP: mal=null-lägets kur. POSTar det
+   *  stående 24/7-målet utan dialog (action malSatt) och uppdaterar vyn
+   *  direkt ur svaret; poll-varvet efter bekräftar målet på servern. */
+  const ateraktiveraStalandeMal = React.useCallback(async () => {
+    if (malSparar) return;
+    setMalSparar(true);
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malSatt", mal: STALANDE_MAL }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        mal?: string | null;
+        meddelande?: string;
+        aktiv?: boolean;
+        fel?: string;
+      };
+      if (res.ok) {
+        setMal(typeof data.mal === "string" ? data.mal : STALANDE_MAL);
+        setMalStatus({ aktiv: data.aktiv ?? true, pausad: false, iteration: 0 });
+        setMalIteration(0);
+        setMalStrömOppen(true);
+        visaToast(data.meddelande || "Stående mål återaktiverat — agenten vaknar.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej återaktiveras.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej återaktiveras.", "fel");
+    } finally {
+      setMalSparar(false);
+    }
+  }, [malSparar, visaToast]);
+
   /**
    * MÅL-STRÖMMEN (våg 85 F1) — autonom loopens SSE (POST
    * /api/studio/mal/stream). Varje iteration = KOMPLETT agentblock i
@@ -7127,7 +7171,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
     typeof kontext?.contextUsed === "number" && kontext.contextUsed > 0
       ? kontext.contextUsed
       : ackumulerat;
-  const kontextProcent = kontextAnvänt > 0 ? Math.min(100, (kontextAnvänt / kontextTak) * 100) : null;
+  // Ärlig mätare: procenten visas alltid när taket är känt (även "0,0%") —
+  // kunden ska se fönstrets skala och verklig växt, inte en dold mätare vid vila.
+  const kontextProcent =
+    Number.isFinite(kontextTak) && kontextTak > 0 && Number.isFinite(kontextAnvänt)
+      ? Math.min(100, (Math.max(0, kontextAnvänt) / kontextTak) * 100)
+      : null;
 
   // ── VÅG 90 K3: SIDEBAR-INNEHÅLL — delas av desktop-kolumnen + mobil-drawern.
   const sidebarInnehall = (
@@ -8681,7 +8730,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   {malIteration > 0 ? `${malIteration}${malKör ? `/${malIteration + 1}` : ""} iter` : "startar…"}
                   {" · "}
                   {tkn(ackumulerat)} tkn
-                  {kontextProcent !== null && ` · ${kontextProcent.toFixed(0)}%`}
+                  {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}%`}
                 </p>
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
                   {malSparar || malPausar ? (
@@ -8728,12 +8777,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   Inget mål satt — agenten arbetar bara när du chattar.
                 </p>
                 <button
+                  onClick={() => void ateraktiveraStalandeMal()}
+                  disabled={malSparar}
+                  title="Återaktivera det stående målet (24/7-STANDBY) — ett klick, agenten vaknar utan dialog"
+                  className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50 sm:min-h-11"
+                >
+                  {malSparar ? <Loader2 className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
+                  Återaktivera stående mål
+                </button>
+                <button
                   onClick={() => setMalDialogOppen(true)}
-                  className="mt-2 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-[11px] font-bold text-white transition-colors hover:bg-[#2EA043]"
+                  className="mt-1.5 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-xs font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22] sm:min-h-11"
                   title="Öppna mål-dialogen — beskriv utvecklingsmålet och starta autonom loop"
                 >
                   <Target className="h-3.5 w-3.5" />
-                  Sätt ett mål
+                  Sätt ett eget mål
                 </button>
               </>
             )}
@@ -8862,7 +8920,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
               {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
               {tkn(ackumulerat)} totalt
-              {kontextProcent !== null && ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av ${tkn(kontextTak)}`}
+              {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
             </p>
             {kontextProcent !== null && (
               <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>
@@ -9087,11 +9145,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         Inget mål satt — agenten arbetar bara när du chattar.
                       </p>
                       <button
+                        onClick={() => void ateraktiveraStalandeMal()}
+                        disabled={malSparar}
+                        title="Återaktivera det stående målet (24/7-STANDBY) — ett klick, agenten vaknar utan dialog"
+                        className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50 sm:min-h-11"
+                      >
+                        {malSparar ? <Loader2 className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
+                        Återaktivera stående mål
+                      </button>
+                      <button
                         onClick={() => setMalDialogOppen(true)}
-                        className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] sm:min-h-11"
+                        className="mt-1.5 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-xs font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22] sm:min-h-11"
                       >
                         <Target className="h-3.5 w-3.5" />
-                        Sätt ett mål
+                        Sätt ett eget mål
                       </button>
                     </>
                   )}
@@ -9109,7 +9176,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
                     {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
                     {tkn(ackumulerat)} totalt
-                    {kontextProcent !== null && ` · ${kontextProcent.toFixed(kontextProcent < 10 ? 1 : 0)}% av ${tkn(kontextTak)}`}
+                    {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
                   </p>
                   {kontextProcent !== null && (
                     <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>

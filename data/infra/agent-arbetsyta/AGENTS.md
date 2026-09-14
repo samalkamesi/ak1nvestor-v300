@@ -207,6 +207,21 @@ Manifest-prompts: varje uppgift SJÄLVSTÄNDIG (exklusivt filägarskap,
 våg 104-reglerna gäller), konkreta filvägar, testbara leveranskriterier.
 12-agentsvisionen = manifest med 12 uppgifter (4 omgångar om 3).
 
+## EVIGHETSMOTORN (våg 147 — kunddirektivet "bygga vidare så den aldrig slocknar igen")
+
+Organismen FÅR ALDRIG stå utan nästa våg. Tre skydd:
+1. **Evighetskatalogen** `data/infra/evighetskatalog.md` = bränslet: 10
+   eviga kundvärdespår (granskningskön, dataset-djup, SEO, kvartalsrapporter,
+   lärvägar, AI-Mentorn, prestanda, kvalitet, dokumentation, DR) — välj
+   därifrån när PIPELINE-KO.md är tom/tunn; rotera spår; R2-reglerna gäller.
+2. **Motorn** `verktyg/evighetsmotor.mjs` (pumpor :x8, var 10:e minut):
+   mäter RÖRELSE (iteration + uppdaterad); stillastående 20 min utan turn ⇒
+   vaktprompt som kickar dig (tak 1/25 min; kundens paus är heligt).
+3. **Ronden punkt 8**: varje rond kontrollerar ≥3 kommande vågar i
+   PIPELINE-KO.md innan verkställning.
+Vid vaktprompt: fortsätt pågående våg ELLER boka 3 nya ur katalogen —
+verkställ, bokför (worklog + beslutsminne), aldrig sysslolös.
+
 ## HUVUDAGENT-RAPPORTER I STUDION (våg 132 — kunden ska se allt "exakt som i desktop-Z")
 
 Huvudagenten (datorn, när öppen) skickar sina fulla utvecklingsrapporter till

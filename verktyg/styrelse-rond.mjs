@@ -172,7 +172,8 @@ HÅRT LEVERANSPROTOKOLL (strikt):
 6. LÅNGTIDSMINNE (våg 117): appenda ÉN rad till data/vakten/beslutsminne.jsonl
    — {"ts":"<iso>","rond":<n>,"beslut":"<vågens kärnbeslut i en mening>","landat":"<commit-hash ELLER 'nej'>"}.
    Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
-7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
+7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.
+8. EVIGHETSMOTORN (våg 147 — kunddirektiv "bygga vidare så den aldrig slocknar igen"): kontrollera att PIPELINE-KO.md har MINST 3 KOMMANDE vågar bokade; om tunn/tom — fyll på ur data/infra/evighetskatalog.md (rotera spår, aldrig samma två ronder i rad; granskningskön = förstahandsval när aktuell) FÖRE du verkställer. Organismen får aldrig stå utan nästa våg.`;
 
   // VÅG 133c — FETCH-RETRY: en transient app-server-blipp (deploy-omstart,
   // tillfällig belastning) ska ALDRIG kosta en hel 3-timmarsrond. Bevis:

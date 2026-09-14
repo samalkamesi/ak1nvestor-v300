@@ -10511,6 +10511,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   onClick={() => void valjLageMedStandard("build")}
                 />
                 <InstallningarRad
+                  vald={lage === "edit"}
+                  titel="Edit"
+                  beskrivning="Redigeringsläge — kodändringar i fokus (källans cykel build → edit → yolo → plan)"
+                  val="edit"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "edit"}
+                  onClick={() => void valjLageMedStandard("edit")}
+                />
+                <InstallningarRad
+                  vald={lage === "yolo"}
+                  titel="Yolo"
+                  beskrivning="Allt godkänns automatiskt — inga dialoger. Använd med omsorg: agenten kan köra vilket verktyg som helst utan att fråga"
+                  val="yolo"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "yolo"}
+                  onClick={() => void valjLageMedStandard("yolo")}
+                />
+                <InstallningarRad
                   vald={lage === "plan"}
                   titel="Plan"
                   beskrivning="Verktyg kräver godkännande — diff förhandsvisas i dialogen"

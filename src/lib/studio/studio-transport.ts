@@ -827,6 +827,9 @@ export type StudioSubagentStatus =
   | "lost";
 
 /** Bakgrundsagent ur session/subagents (running[] ∪ ended.items[]). */
+/** VÅG 153 R1: källans mode-union — build → edit → yolo → plan. */
+type StudioLage = "build" | "edit" | "yolo" | "plan";
+
 export interface StudioSubagent {
   barnSessionId: string;
   titel: string;
@@ -1369,7 +1372,7 @@ export interface StudioTransport {
    * (workspace-default kan överskriva, kartan §1 not). Valet följer med
    * till framtida session/create-param `mode`.
    */
-  sattLage(lage: "build" | "plan"): Promise<{ lage: string }>;
+  sattLage(lage: StudioLage): Promise<{ lage: string }>;
   /**
    * session/setThoughtLevel {sessionId, thoughtLevel} (BEVISAT LIVE, kartan
    * §1 — nivåer: nothink|high|max). Tankestyrkan för resonemangsmodellen;
@@ -1567,6 +1570,21 @@ class ProtokollKlient {
     // stderr läses och glöms — protokollet svarar med strukturerade fel;
     // rå stderr ska ALDRIG läckas vidare (kan innehålla sökvägar).
     barn.stderr?.on("data", () => undefined);
+    // VÅG 153 R3 P0-1 (expeditionens fynd, källans watchStreamErrors-mönster):
+    // en EPIPE/ECONNRESET på barnets strömmar kastar annars på NEXT-processens
+    // eventloop och kan döda VÄRDEN (Hela sajten) — dirigera strömfelen till
+    // samma stäng-väg som processdöd (omstartskedjan tar över), och svälj
+    // alltid felet EFTERåt så det ALDRIG propagerar ohanterat.
+    for (const ström of [barn.stdin, barn.stdout, barn.stderr]) {
+      ström?.on("error", (fel) => {
+        try {
+          const text = (fel instanceof Error ? fel.message : String(fel)).slice(0, 140);
+          this.stäng(new Error(`app-server-ström bruten (${text})`));
+        } catch {
+          // stäng() får aldrig kasta från en error-lyssnare
+        }
+      });
+    }
   }
 
   /** Radbuffrad JSON-tolkning — en rad = ett meddelande. */
@@ -2911,7 +2929,7 @@ class AppServerTransport implements StudioTransport {
   /** V83 B2: väntande server→klient-interaktioner (permission/fråga). */
   private readonly interaktioner = new Map<string, VantanInteraktion>();
   /** V83 B2: senast satta läge/tankestyrka — följer med vid create/resume. */
-  private lage: "build" | "plan" | null = null;
+  private lage: StudioLage | null = null;
   private tankeNiva: string | null = null;
   /**
    * VÅG 84 B: mål-session (per-session-tabbar) — när satt tvingar ensure()
@@ -5116,7 +5134,7 @@ class AppServerTransport implements StudioTransport {
     return { ok: true };
   }
 
-  async sattLage(lage: "build" | "plan"): Promise<{ lage: string }> {
+  async sattLage(lage: StudioLage): Promise<{ lage: string }> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
     if (this.aktiv && !this.aktiv.färdig) {
@@ -6315,7 +6333,7 @@ class MockTransport implements StudioTransport {
   /** V83 B2: väntande simulerat frågekort (requestUserInput). */
   private mockVantanFraga: { interaktion: Extract<StudioInteraktion, { typ: "fråga" }>; los: (varde: string) => void } | null = null;
   /** V83 B2: mock-läge + tankestyrka (satt via sattLage/sattTankeNiva). */
-  private mockLage: "build" | "plan" | null = null;
+  private mockLage: StudioLage | null = null;
   private mockTankeNiva: string | null = null;
   /**
    * VÅG 93 C1 (mock): workspace-STANDARDVÄRDENA — sparaStandard* uppdaterar,
@@ -6480,7 +6498,7 @@ class MockTransport implements StudioTransport {
     return { ok: true };
   }
 
-  async sattLage(lage: "build" | "plan"): Promise<{ lage: string }> {
+  async sattLage(lage: StudioLage): Promise<{ lage: string }> {
     this.mockLage = lage;
     return { lage };
   }

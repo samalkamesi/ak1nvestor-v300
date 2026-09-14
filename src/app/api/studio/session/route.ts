@@ -238,8 +238,13 @@ export async function POST(req: NextRequest) {
     }
     // ── V83 B2: Z-portaLens läges- + tankestyrkeväxlare ─────────────────────
     if (action === "läge" || action === "lage") {
-      if (lage !== "build" && lage !== "plan") {
-        return jsonSvar({ fel: 'Okänt läge — använd "build" eller "plan" (kartans mode-union).' }, 400);
+      // VÅG 153 R1: officiella runtimen stödjer FYRA lägen (källans
+      // shortcuts.ts: build → edit → yolo → plan) — kartans mode-union breddas.
+      if (lage !== "build" && lage !== "edit" && lage !== "yolo" && lage !== "plan") {
+        return jsonSvar(
+          { fel: 'Okänt läge — använd "build", "edit", "yolo" eller "plan" (källans mode-union).' },
+          400,
+        );
       }
       const svar = await transport.sattLage(lage);
       return jsonSvar({ ...svar, kontext: await transport.lasKontext() });

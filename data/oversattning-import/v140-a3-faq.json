@@ -1,0 +1,255 @@
+{
+  "kurs": "v140-a3-faq",
+  "poster": [
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p39",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p40",
+      "en": "**What is a balance sheet — and why isn't the income statement enough?**",
+      "ar": "**ما هي الميزانية العمومية — ولماذا لا تكفي قائمة الدخل وحدها؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p41",
+      "en": "The balance sheet reports what the company owns (assets) and what it owes (liabilities and equity) at a given moment, under mandatory rules. The income statement is the company's story; the balance sheet is its documentation. That is why careful analysis often begins where others stop — in debts and assets, not in the profit.",
+      "ar": "تعرض الميزانية العمومية ما تملكه الشركة (الأصول) وما عليها من التزامات (الخصوم وحقوق الملكية) في لحظة معينة، وفق قواعد إلزامية. قائمة الدخل هي قصة الشركة، أما الميزانية العمومية فهي وثيقتها. لهذا يبدأ التحليل الدقيق غالبًا حيث يتوقف الآخرون — في الديون والأصول، لا في الربح."
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p42",
+      "en": "**How do I calculate the equity ratio?**",
+      "ar": "**كيف أحسب نسبة حقوق الملكية؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p43",
+      "en": "Equity ratio = equity ÷ balance sheet total, where the balance sheet total is the sum of everything the company owns and finances. The figure shows how large a share of the company has been paid for by the owners. For Swedish listed companies outside banking and finance, above 40 per cent counts as solid financing and below 25 per cent as a reason to pause and study the trend.",
+      "ar": "نسبة حقوق الملكية = حقوق الملكية ÷ إجمالي الميزانية، حيث يمثل إجمالي الميزانية مجموع كل ما تملكه الشركة وتموّله. يُظهر الرقم أي نسبة من الشركة دفعها المالكون. بالنسبة للشركات السويدية المدرجة خارج القطاع المصرفي والمالي، تُعد نسبة تزيد على 40 بالمائة تمويلًا متينًا، ونسبة تقل عن 25 بالمائة سببًا للتوقف ودراسة الاتجاه."
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p44",
+      "en": "**What is net debt — and why is it compared with EBITDA?**",
+      "ar": "**ما هو صافي الدين — ولماذا يُقارن بـ EBITDA؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p45",
+      "en": "Net debt = interest-bearing liabilities − liquid assets, in other words the capital the company actually owes banks and bondholders, net. Divided by EBITDA it shows how many years of operating result before depreciation are needed to repay the debt. As a rule of thumb, above 3× is considerable leverage — but the industry sets the scale, and for cyclical companies EBITDA should be normalised over the business cycle.",
+      "ar": "صافي الدين = الالتزامات المترتبة عليها فوائد − الأصول السائلة، أي رأس المال الذي تدين به الشركة فعليًا للبنوك وحاملي السندات بصورة صافية. وعند قسمته على EBITDA يُظهر كم سنة من نتيجة التشغيل قبل الاستهلاكات يلزم لسداد الدين. كقاعدة عامة، تعد نسبة تزيد على 3× رافعة مالية كبيرة — لكن القطاع هو من يحدد المقياس، وينبغي للشركات الدورية تسوية EBITDA على مدار الدورة الاقتصادية."
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p46",
+      "en": "**Is goodwill always a warning signal?**",
+      "ar": "**هل الشهرة (Goodwill) دائمًا إشارة تحذير؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p47",
+      "en": "No — goodwill arises every time a company buys another for more than the value of its identifiable assets, so the item exists in almost every acquisition-grown company. The question is its size relative to equity: a goodwill share above 50 per cent means that a single large write-down can blow a hole in the solidity. Read the acquisition note and check that the acquired companies' results are still present in the report.",
+      "ar": "لا — تنشأ الشهرة في كل مرة تشتري فيها شركة أخرى بأكثر من قيمة أصولها القابلة للتحديد، لذا توجد هذه المقالة في كل شركة تقريبًا نمت عبر الاستحواذات. السؤال هو حجمها نسبة إلى حقوق الملكية: حصة شهرة تزيد على 50 بالمائة تعني أن تخفيضًا واحدًا كبيرًا يمكن أن يثقب الملاءة المالية. اقرأ ملاحظة الاستحواذ وتحقق من أن نتائج الشركات المستحوذ عليها ما زالت قائمة في التقرير."
+    },
+    {
+      "nyckel": "sa-laser-du-en-balansrakning-pa-15-minuter:p48",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p26",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p27",
+      "en": "**What is the difference between an annual report and an interim report?**",
+      "ar": "**ما الفرق بين التقرير السنوي وتقرير الفترة؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p28",
+      "en": "The annual report is the complete report for the entire financial year — directors' report, income statement, balance sheet, cash flow analysis and notes — and it is reviewed by auditors. The interim report is shorter and less detailed. A 20-minute route through the annual report therefore gives a more solid basis than the same route through a quarterly report.",
+      "ar": "التقرير السنوي هو التقرير الكامل للسنة المالية بأكملها — تقرير الإدارة وقائمة الدخل والميزانية العمومية وتحليل التدفقات النقدية والملاحظات — وهو خاضع لتدقيق المراجعين. أما تقرير الفترة فأقصر وأقل تفصيلًا. لذلك فإن جولة العشرين دقيقة عبر التقرير السنوي تمنح أساسًا أكثر متانة من الجولة نفسها عبر تقرير ربع سنوي."
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p29",
+      "en": "**How do I find a company's annual report?**",
+      "ar": "**كيف أجد التقرير السنوي لشركة ما؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p30",
+      "en": "Go to the company's investor relations page or the exchange's presentation page and download the PDF with annual report in the title — not the press release or the presentation, which are marketing. A genuine annual report is often at least 40 pages; a thin 15-page summary deserves the question of why.",
+      "ar": "اذهب إلى صفحة علاقات المستثمرين لدى الشركة أو صفحة العرض في البورصة ونزّل ملف PDF الذي يحمل عنوان التقرير السنوي — لا البيان الصحفي ولا العرض التقديمي، فهما تسويق. التقرير السنوي الحقيقي غالبًا لا يقل عن 40 صفحة؛ أما ملخص نحيل من 15 صفحة فيستحق السؤال عن السبب."
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p31",
+      "en": "**Which notes should I read first — there are hundreds?**",
+      "ar": "**أي الملاحظات ينبغي أن أقرأها أولًا — فهي بالمئات؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p32",
+      "en": "Three notes go a long way: the accounting policies (usually note 1) reveal changed rules, the segment report shows which parts of the company make money, and the major-customer note shows customer concentration — a customer above 10 per cent of revenue must be disclosed. The notes are where the company must explain itself, which is why they are called the report's zone of truth.",
+      "ar": "ثلاث ملاحظات تقطع شوطًا طويلًا: سياسات المحاسبة (عادة الملاحظة 1) تكشف القواعد المتغيرة، وتقرير القطاعات يوضح أي أجزاء من الشركة تحقق المال، وملاحظة العملاء الكبار تُظهر تركّز العملاء — إذ يجب الإفصاح عن أي عميل تتجاوز حصته 10 بالمائة من الإيرادات. الملاحظات هي المكان الذي يجب على الشركة أن تشرح نفسها فيه، ولهذا تُسمى منطقة الحقيقة في التقرير."
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p33",
+      "en": "**Can I trust the figures in an annual report?**",
+      "ar": "**هل يمكنني الوثوق بأرقام التقرير السنوي؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p34",
+      "en": "The figures follow mandatory rules and are reviewed by auditors, but accounting leaves room for choices — depreciation periods, revenue recognition and changed principles can all affect the result. That is why the income statement is always compared with the cash flow analysis: cash flow is harder to dress up than earnings. Companies reporting profits year after year with negative operating cash flow deserve an extra read.",
+      "ar": "الأرقام تخضع لقواعد إلزامية ويُدققها مراجعون، لكن المحاسبة تترك مجالًا للاختيارات — فترات الاستهلاك والاعتراف بالإيرادات وتغيير المبادئ تؤثر جميعها على النتيجة. لهذا تُقارن قائمة الدخل دائمًا بتحليل التدفقات النقدية: فالتدفق النقدي أصعب تجميلًا من النتيجة. والشركات التي تُظهر أرباحًا عامًا بعد عام مع تدفق نقدي تشغيلي سالب تستحق قراءة إضافية."
+    },
+    {
+      "nyckel": "sa-laser-du-en-svensk-arsredovisning:p35",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p26",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p27",
+      "en": "**What kind of multiple is EV/EBITDA?**",
+      "ar": "**ما طبيعة مضاعف EV/EBITDA؟**"
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p28",
+      "en": "EV/EBITDA stands for enterprise value divided by operating profit before interest, taxes, depreciation and amortisation. The multiple answers the question of how many years of operating profit the whole company costs — including the debt — and thereby makes companies with different capital structures comparable. The logic is walked through step by step in [the V06 course](/kurser/v06-ev-ebitda).",
+      "ar": "يرمز EV/EBITDA إلى قيمة المؤسسة مقسومة على نتيجة التشغيل قبل الفوائد والضرائب والاستهلاكات والإطفاءات. يجيب المضاعف على السؤال: كم سنة من نتيجة التشغيل تكلف الشركة بأكملها — بما في ذلك الدين — وبذلك يجعل الشركات ذات هياكل رأس المال المختلفة قابلة للمقارنة. ويُشرح المنطق خطوة بخطوة في [دورة V06](/kurser/v06-ev-ebitda)."
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p29",
+      "en": "**How do I calculate EV and EBITDA in practice?**",
+      "ar": "**كيف أحسب EV و EBITDA عمليًا؟**"
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p30",
+      "en": "EV = market capitalisation + net debt (+ minority interests), where market capitalisation is all share series multiplied by the share price, and net debt is interest-bearing liabilities minus liquid assets. EBITDA = operating profit plus depreciation and amortisation; both figures are found in the income statement and the notes. Divide EV by EBITDA and you have the multiple — [the calculator](/kalkylator) does every step automatically.",
+      "ar": "EV = القيمة السوقية + صافي الدين (+ حصص الأقلية)، حيث القيمة السوقية هي جميع فئات الأسهم مضروبة في سعر السهم، وصافي الدين هو الالتزامات المترتبة عليها فوائد ناقص الأصول السائلة. أما EBITDA = نتيجة التشغيل زائد الاستهلاكات والإطفاءات؛ وكلا الرقمين موجود في قائمة الدخل والملاحظات. اقسم EV على EBITDA فتحصل على المضاعف — و[الحاسبة](/kalkylator) تنفذ جميع الخطوات تلقائيًا."
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p31",
+      "en": "**When is EV/EBITDA better than P/E?**",
+      "ar": "**متى يكون EV/EBITDA أفضل من P/E؟**"
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p32",
+      "en": "When comparing companies with different leverage, tax regimes or depreciation policies. P/E compares price with profit after interest and depreciation, which punishes highly indebted companies and rewards debt-free ones regardless of how the business is doing. EV/EBITDA lifts the comparison one level up, to the operation itself.",
+      "ar": "عند مقارنة شركات ذات مستويات رافعة مالية أو أنظمة ضريبية أو سياسات استهلاك مختلفة. فنسبة P/E تقارن السعر بالربح بعد الفوائد والاستهلاكات، مما يعاقب الشركات عالية المديونية ويكافئ الخالية من الديون بغض النظر عن حالة النشاط. أما EV/EBITDA فيرفع المقارنة مستوى واحدًا إلى الأعلى، إلى التشغيل نفسه."
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p33",
+      "en": "**What is the most common misconception about EV/EBITDA?**",
+      "ar": "**ما هو أشهر المفاهيم الخاطئة حول EV/EBITDA؟**"
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p34",
+      "en": "That EBITDA would be the same as cash flow. It is not: depreciation is no cash expense this year, but investments are — and depreciation is only investments spread over time. A company that must reinvest its entire EBITDA in machinery and development does not have the free cash the multiple implies. Therefore always compare EBITDA with free cash flow.",
+      "ar": "أن EBITDA هو نفسه التدفق النقدي. وليس الأمر كذلك: فالاستهلاكات ليست نفقة نقدية هذا العام، لكن الاستثمارات كذلك — والاستهلاكات ليست سوى استثمارات موزعة على الزمن. الشركة التي يجب أن تعيد استثمار EBITDA بأكمله في الآلات والتطوير لا تملك النقد الحر الذي يوحي به المضاعف. لذا قارن دائمًا EBITDA بالتدفق النقدي الحر."
+    },
+    {
+      "nyckel": "sa-raknar-du-ev-ebitda:p35",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p25",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p26",
+      "en": "**What is the debt-to-equity ratio — and how is it calculated?**",
+      "ar": "**ما هو معدل المديونية — وكيف يُحسب؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p27",
+      "en": "Debt-to-equity ratio = total liabilities ÷ equity. A company with SEK 600 million in liabilities and SEK 400 million in equity has a debt-to-equity ratio of 1.5: one and a half kronor of borrowed capital per owner krona invested. Its mirror image is the equity ratio — equity ÷ total assets — which most Swedish annual reports disclose.",
+      "ar": "معدل المديونية = إجمالي الالتزامات ÷ حقوق الملكية. فالشركة التي عليها 600 مليون كرونة من الالتزامات ولها 400 مليون كرونة من حقوق الملكية يكون معدل مديونيتها 1.5: أي كرونة ونصف من رأس المال المقترض مقابل كل كرونة يستثمرها المالك. ومرآته هي نسبة الملاءة — حقوق الملكية ÷ إجمالي الأصول — التي تفصح عنها معظم التقارير السنوية السويدية."
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p28",
+      "en": "**Is there a dangerous level that applies to all companies?**",
+      "ar": "**هل توجد مستوى خطرة تنطبق على جميع الشركات؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p29",
+      "en": "No. The same ratio is everyday life for a property company with long maturities and rental income, and alarming for a consulting firm without heavy assets. The industry, the interest coverage and the debt's maturity structure determine whether the debt is manageable. That is why [the V10 course](/kurser/v10-skuldsattningsgrad) works with industry comparisons instead of universal thresholds.",
+      "ar": "لا. فالمعدل نفسه أمر اعتيادي لشركة عقارية بآجال استحقاق طويلة وإيرادات إيجار، ومقلق لشركة استشارات بلا أصول ثقيلة. القطاع وتغطية الفوائد وهيكل استحقاق الدين هي ما يحدد ما إذا كان الدين قابلًا للإدارة. لهذا تعمل [دورة V10](/kurser/v10-skuldsattningsgrad) بمقارنات قطاعية بدلًا من عتبات شمولية."
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p30",
+      "en": "**What is interest coverage — and why does it matter so much?**",
+      "ar": "**ما هي تغطية الفوائد — ولماذا هي بهذه الأهمية؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p31",
+      "en": "Interest coverage = operating profit ÷ interest expenses, and it is the single most important check of how dangerous a debt is. At 8, the result can fall to an eighth before interest becomes a problem; at 2, a normal downturn is enough for the company to end up negotiating with its banks. Below 1, interest is paid with borrowed money — a time-limited situation by definition.",
+      "ar": "تغطية الفوائد = نتيجة التشغيل ÷ نفقات الفوائد، وهي أهم فحص منفرد لخطورة الدين. عند 8 يمكن للنتيجة أن تهبط إلى الثمن قبل أن تصبح الفوائد مشكلة؛ وعند 2 تكفي دورة ركود عادية لتجد الشركة نفسها تتفاوض مع البنوك. وتحت 1 تُدفع الفوائد بأموال مقترضة — وهي وضعية محدودة الزمن بحكم التعريف."
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p32",
+      "en": "**Are trade payables included in the debt-to-equity ratio?**",
+      "ar": "**هل تُحتسب ديون الموردين ضمن معدل المديونية؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p33",
+      "en": "In the standard accounting form, yes — total liabilities include trade payables, accrued expenses and tax liabilities. But only interest-bearing debt costs money and can be called in, so many analysts complement with net debt to equity or net debt ÷ EBITDA. Always state which definition you use, otherwise the comparisons become misleading.",
+      "ar": "في الصيغة المحاسبية القياسية، نعم — يشمل إجمالي الالتزامات ديون الموردين والمصروفات المستحقة والتزامات الضرائب. لكن الدين المترتب عليه فوائد وحده هو ما يكلف مالًا ويمكن المطالبة بسداده، لذا يكمل كثير من المحللين بصافي الدين إلى حقوق الملكية أو صافي الدين ÷ EBITDA. اذكر دائمًا التعريف الذي تستخدمه، وإلا صارت المقارنات مضللة."
+    },
+    {
+      "nyckel": "skuldsattningsgrad-vilken-niva-ar-farlig:p34",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p21",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p22",
+      "en": "**Why isn't looking at the level of the debt-to-equity ratio enough?**",
+      "ar": "**لماذا لا يكفي النظر إلى مستوى معدل المديونية وحده؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p23",
+      "en": "Two companies with the same ratio of 0.8 can have entirely different risk pictures: one borrowed its way there during three years of rising prices, the other stood at 1.4 two years ago and is now amortising quarter by quarter. A fundamental variable is a time series with a direction, not a still image — that is the core of [the Wave Foundation](/vagfundament).",
+      "ar": "شركتان لهما المعدل نفسه 0.8 قد تختلف صورة المخاطرة لديهما اختلافًا كليًا: إحداهما وصلت إلى هناك بالاقتراض خلال ثلاث سنوات من الأسعار الصاعدة، والأخرى كانت عند 1.4 قبل عامين وتسدد دينها الآن ربعًا بعد ربع. فالمتغير الأساسي سلسلة زمنية لها اتجاه، لا صورة ثابتة — وهذا جوهر [أساس الموجة](/vagfundament)."
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p24",
+      "en": "**What do the wave classes on V10 mean?**",
+      "ar": "**ماذا تعني أصناف الموجات على V10؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p25",
+      "en": "Impulse wave ▲ means that the debt-to-equity ratio is falling or that the balance sheet is systematically strengthening; correction ▼ means that borrowing is growing and refinancing risk is building up; base building ◼ means that the ratio is moving sideways. Note that the symbols describe the fundamental's movement — not the share price's.",
+      "ar": "الموجة الدافعة ▲ تعني أن معدل المديونية يهبط أو أن الميزانية العمومية تتعزز بشكل منهجي؛ والتصحيح ▼ يعني أن الاقتراض ينمو وأن مخاطر إعادة التمويل تتراكم؛ وبناء القاعدة ◼ يعني أن المعدل يتحرك جانبيًا. ولاحظ أن الرموز تصف حركة المتغير الأساسي — لا حركة سعر السهم."
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p26",
+      "en": "**Which pattern is most worth studying?**",
+      "ar": "**أي نمط هو الأجدى بالدراسة؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p27",
+      "en": "The combination of a rising debt-to-equity ratio at the same time as profitability (V09) corrects and margins (V07, V08) are squeezed. High debt alone rarely kills companies — high debt meeting falling revenues does. The opposite pattern, amortisation against the wind, looks dull in a table but like character in a time series.",
+      "ar": "الجمع بين صعود معدل المديونية في الوقت نفسه الذي تتراجع فيه الربحية (V09) وتنضغط فيه الهوامش (V07 وV08). فالمديونية العالية وحدها نادرًا ما تُسقط الشركات — لكن المديونية العالية عند هبوط الإيرادات تفعل. والنمط المعاكس، السداد عكس الريح، يبدو مملًّا في جدول لكنه يبدو كطباع راسخة في سلسلة زمنية."
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p28",
+      "en": "**What does undetermined mean in the 20×5 matrix?**",
+      "ar": "**ماذا يعني غير محدد في مصفوفة 20×5؟**"
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p29",
+      "en": "That the data is not sufficient for a reliable classification at that horizon — quarterly data on balance sheet items is noisy, some companies report rarely, and the data providers' history is short. Then undetermined is written, and nothing else: gaps are never filled with stitched-together half-truths. The honesty principle is the foundation of the entire AKM1 model.",
+      "ar": "أن البيانات لا تكفي لتصنيف موثوق عند تلك الأفق الزمنية — فالبيانات الفصلية لبنود الميزانية العمومية مشوشة، وبعض الشركات نادرًا ما تنشر تقاريرها، وتاريخ موردي البيانات قصير. عندها يُكتب غير محدد ولا شيء آخر: فالثغرات لا تُملأ أبدًا بأنصاف حقائق مؤلفة. ومبدأ الصدق هو أساس نموذج AKM1 بأكمله."
+    },
+    {
+      "nyckel": "skuldsattningsgraden-som-vag:p30",
+      "en": "Educational analysis, not investment advice — V10's wave is a question for you, never a decision made for you.",
+      "ar": "تحليل تعليمي، لا نصيحة استثمارية — موجة V10 سؤال يُطرح عليك، ولا تكون أبدًا قرارًا يُتَّخذ عنك."
+    }
+  ]
+}

@@ -191,6 +191,19 @@ import { cn } from "@/lib/utils";
  *     Endpoint 404/501/nätverksfel ⇒ befintligt beteende (graceful —
  *     replay är lyx, historik-vägen består ALWAYS).
  *
+ * M2 §8 (FORSKNING→KOD, 2026-09-14 — KONTROLLERAD AUTO-KOMPAKTERING):
+ *   · TRÖSKELMARKÖR: runtimens auto-tröskel beräknas LOKALT med
+ *     preflight-v1-formeln contextWindow − min(maxOut ?? 32k, 21k) − 13k
+ *     (protokollet rapporterar den som null) och visas som RÖD markör i
+ *     kontextmätaren + "auto-gräns ~83 %" i kontextraden (desktop + mobil).
+ *   · STUDIO-AUTO vid 80 % av contextWindow (FÖRE runtimens ~83 %): POST
+ *     /api/studio/session {action:"compact", instruktioner} med HÅRDA
+ *     begränsningar — ENDAST när agenten är idle (ej strömmande, ingen
+ *     öppen permission/fråga = pågående prompt), cooldown 30 min/session,
+ *     max en gång per våg (vakt återarmas när kontexten < 80 % igen),
+ *     ALDRIG under mål-loop. Toast + trådpost vid avfyrning; knappen
+ *     behålls manuell med ärlig tooltip (bevarar EJ senaste rundan).
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -310,12 +323,35 @@ interface Tabb {
   historikLasad: boolean;
   /** VÅG 90: senaste aktivitet (ms) — sidbarens relativa tidsstämpel. */
   uppdaterad: number;
+  /**
+   * M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades) ur schemat
+   * model.request.status. null = inget att visa; text:"" från completed =
+   * dölj (transportens kontrakt). Väntar-rester räknas ned i UI:t.
+   */
+  modellStatus: ModellStatusChip | null;
+}
+
+/** M3 §7.1 — chippets data (speglar transportens modell_status-event). */
+interface ModellStatusChip {
+  läge: "kör" | "väntar" | "misslyckades";
+  /** Kompakt människotext (M3 §6-tabellen) — "" = dölj raden. */
+  text: string;
+  /** VÄNTAR: ms till omförsöket vid event-ankomst. */
+  aterForsokOmMs?: number;
+  /** VÄNTAR: nästa försöksnummer (visas bara när >1). */
+  nastaForsok?: number;
+  /** MISSLYCKADES: leverantörens/protokollets felkod. */
+  felKod?: string;
+  /** MISSLYCKADES: protokollets anledning (reason). */
+  anledning?: string;
+  /** Event-ankomst (ms) — nedräkning: kvar = aterForsokOmMs − (nu − ts). */
+  ts: number;
 }
 
 /** Friska tabb-defaults (allt utom identiteten id/huvud/sessionId/titel). */
 function tabbGrund(): Pick<
   Tabb,
-  "meddelanden" | "utkast" | "strömmar" | "status" | "tankar" | "kontext" | "rundaTkn" | "ackumulerat" | "historikLasad" | "uppdaterad"
+  "meddelanden" | "utkast" | "strömmar" | "status" | "tankar" | "kontext" | "rundaTkn" | "ackumulerat" | "historikLasad" | "uppdaterad" | "modellStatus"
 > {
   return {
     meddelanden: [],
@@ -328,6 +364,7 @@ function tabbGrund(): Pick<
     ackumulerat: 0,
     historikLasad: false,
     uppdaterad: 0,
+    modellStatus: null,
   };
 }
 
@@ -974,7 +1011,8 @@ interface StreamEvent {
     | "ändringar"
     | "mal_status"
     | "mal_iteration"
-    | "mal_pausad";
+    | "mal_pausad"
+    | "modell_status";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -1001,6 +1039,16 @@ interface StreamEvent {
   pausad?: boolean;
   iteration?: number;
   mal?: string | null;
+  // ── M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades) ────────────
+  läge?: "kör" | "väntar" | "misslyckades";
+  /** VÄNTAR: ms till omförsöket vid event-ankomst — nedräkningens bas. */
+  aterForsokOmMs?: number;
+  /** VÄNTAR: nästa försöksnummer (visas bara när >1). */
+  nastaForsok?: number;
+  /** MISSLYCKADES: leverantörens/protokollets felkod (t.ex. "1316"). */
+  felKod?: string;
+  /** MISSLYCKADES: protokollets anledning (reason, t.ex. "rate_limited"). */
+  anledning?: string;
   interaktion?:
     | ({
         typ: "permission";
@@ -1026,6 +1074,33 @@ interface StreamEvent {
 
 const KONTEXT_TAK_RESERV = 1_000_000;
 const KONTEXT_VARNING_PROCENT = 80;
+
+// ── M2 §8 (zcode-kallkod 2026-09-14): KONTROLLERAD AUTO-KOMPAKTERING ────────
+// Runtimens EGEN auto (strategi preflight-v1) komprimerar vid
+// contextWindow − min(maxOutputTokens ?? 32 000, 21 000) − 13 000 token
+// (GLM 200k/32k ⇒ 166 000 token = 83 %). Protokollet rapporterar tröskeln
+// som null i snapshot — studion BERÄKNAR den (nedan) och visar den som
+// markör i mätaren. Studio-auto avfyras LÄGRE (80 %) för kontrollerad
+// tidpunkt mellan vågor; runtimens auto + reaktiva spåret täcker fallet
+// "fönstret sprängs mitt i ett jobb".
+const AUTO_KOMPAKT_PROCENT = 80;
+const AUTO_KOMPAKT_COOLDOWN_MS = 30 * 60_000;
+/** §8.1:3 — kompakteringen skickar ALLTID instructions: kundens
+ *  standardfokus landar i sommarpromptens Additional Instructions-block. */
+const AUTO_KOMPAKT_INSTRUKTIONER =
+  "Bevara: aktuell våg + PIPELINE-KO-läge, filägarskap, pågående uppgifter, juridikregler (aldrig investeringsråd, lagen 2007:528). Svenska.";
+
+/** Runtimens auto-tröskel i token ur preflight-v1-formeln (M2 §3/§8.1).
+ *  maxOutputTokens ur modellkatalogen (ModellPost.maxSvar); reserv 32k,
+ *  tak 21k, buffer 13k. null = fönstret okänt ⇒ ingen markör, ingen auto. */
+function autoKompaktTroskel(contextWindow: number, maxOutputTokens?: number): number | null {
+  if (!Number.isFinite(contextWindow) || contextWindow <= 0) return null;
+  const reserv = Math.min(
+    typeof maxOutputTokens === "number" && maxOutputTokens > 0 ? maxOutputTokens : 32_000,
+    21_000,
+  );
+  return Math.max(0, contextWindow - reserv - 13_000);
+}
 
 /** 10X p3: det stående målet — mål-panelens envägskur mot dödläget
  *  (mal=null). Exakt samma text som styrelsens 24/7-standardläge. */
@@ -3461,6 +3536,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const malAbortRef = React.useRef<AbortController | null>(null);
   const huvudTabbIdRef = React.useRef("tabb-huvud");
 
+  // ── M2 §8.2: AUTO-KOMPAKTERINGENS VAKTER ───────────────────────────────────
+  // senasteAutoKompaktRef: cooldown 30 min PER SESSION (sessionId → epoch-ms,
+  // bokförs vid varje avfyrning — även misslyckad). autoKompaktVagRef: max
+  // en auto per våg — återarmas när kontexten sjunker under 80 % igen.
+  const senasteAutoKompaktRef = React.useRef<Map<string, number>>(new Map());
+  const autoKompaktPagarRef = React.useRef(false);
+  const autoKompaktVagRef = React.useRef(false);
+
   // ── Filträd + förhandsgranskning (våg 83 B4) ───────────────────────────────
   const [visaFiler, setVisaFiler] = React.useState(false);
   const [trad, setTrad] = React.useState<TradNod[] | null>(null);
@@ -5336,6 +5419,108 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
     }
   }, [sessionJobbar, strömmarHuvud, visaToast, live, rörTabb, huvudTabb]);
+
+  // ── M2 §8.2: AUTO-KOMPAKTERING — 80 % av fönstret, KONTROLLERAD ──────────
+  // Hårdbegränsningar enligt forskningsrapporten: ENDAST när agenten är
+  // idle (protokollet vägrar "while a prompt is running"), cooldown 30 min
+  // per session, max en gång per våg, ALDRIG under mål-loop (iterationer
+  // bygger på kontinuitet). Skickar alltid instructions (§8.1:3) — vågstatus
+  // + juridikregler överlever sammanfattningen.
+  const autoKompaktera = React.useCallback(
+    async (procent: number) => {
+      const sid = huvudTabb?.sessionId ?? null;
+      if (!sid || autoKompaktPagarRef.current || sessionJobbar) return;
+      autoKompaktPagarRef.current = true;
+      autoKompaktVagRef.current = true;
+      senasteAutoKompaktRef.current.set(sid, Date.now());
+      setSessionJobbar("compact");
+      setStatusText(`Komprimerar kontexten automatiskt (${Math.round(procent)} % av fönstret nått)…`);
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({
+            action: "compact",
+            instruktioner: AUTO_KOMPAKT_INSTRUKTIONER,
+          }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          status?: "klar" | "redan_körs" | "tom";
+          meddelande?: string;
+          kontext?: KontextInfo | null;
+          fel?: string;
+        };
+        if (res.ok) {
+          if (data.kontext) {
+            rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+              ...t,
+              kontext: data.kontext ?? null,
+              ackumulerat: data.kontext?.totalTokenCount ?? 0,
+            }));
+          }
+          // §8.1:2 — tydlig post i tråden: kompakteringen ersätter det
+          //  äldre samtalet med en sammanfattning; kunden ska förstå varför.
+          const klockan = new Date().toLocaleTimeString("sv-SE", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+            ...t,
+            uppdaterad: Date.now(),
+            meddelanden: [
+              ...t.meddelanden,
+              {
+                id: nyttId(),
+                roll: "assistant" as const,
+                text: `♻ Auto-komprimering ${klockan} — kontexten nådde ${Math.round(
+                  procent,
+                )} % av fönstret och det äldre samtalet sammanfattades. Pågående våg, filägarskap och juridikregler bevaras via komprimeringsinstruktionen; hela tråden finns kvar i serverns sessionsdatabas.`,
+              },
+            ],
+          }));
+          visaToast(`Kontexten komprimerades automatiskt (${Math.round(procent)} % av fönstret)`);
+        } else {
+          visaToast(data.fel || "Den automatiska komprimeringen misslyckades.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel under den automatiska komprimeringen.", "fel");
+      } finally {
+        autoKompaktPagarRef.current = false;
+        setSessionJobbar("");
+        setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
+      }
+    },
+    [sessionJobbar, huvudTabb, rörTabb, visaToast, live],
+  );
+
+  /** Triggaren: körs när huvudtabbens kontext förändras (ström/poll) —
+   *  alla vakter utvärderas vid VARJE förändring, avfyrning max en gång. */
+  React.useEffect(() => {
+    const huvudKontext = huvudTabb?.kontext ?? null;
+    const sid = huvudTabb?.sessionId ?? null;
+    const fonstret =
+      typeof huvudKontext?.contextWindow === "number" && huvudKontext.contextWindow > 0
+        ? huvudKontext.contextWindow
+        : null;
+    const anvant =
+      typeof huvudKontext?.contextUsed === "number" && huvudKontext.contextUsed > 0
+        ? huvudKontext.contextUsed
+        : null;
+    if (!sid || !fonstret || anvant === null) return;
+    const procent = (anvant / fonstret) * 100;
+    if (procent < AUTO_KOMPAKT_PROCENT) {
+      autoKompaktVagRef.current = false; // kontexten friad ⇒ nästa våg återarmeras
+      return;
+    }
+    if (autoKompaktVagRef.current) return; // max en auto-kompaktering per våg
+    if (autoKompaktPagarRef.current || sessionJobbar !== "" || strömmarHuvud) return; // ENDAST idle
+    if (permission || fraga) return; // öppen interaktion = pågående prompt
+    if (malStatusRef.current?.aktiv === true && malStatusRef.current.pausad !== true) return; // aldrig under mål-loop
+    const senaste = senasteAutoKompaktRef.current.get(sid) ?? 0;
+    if (Date.now() - senaste < AUTO_KOMPAKT_COOLDOWN_MS) return; // 30 min/session
+    if (live !== "live") return; // mock-transporten kan inte komprimera
+    void autoKompaktera(procent);
+  }, [huvudTabb, sessionJobbar, strömmarHuvud, permission, fraga, live, autoKompaktera]);
 
   /** Stäng session (session/close) — lever kvar i listan men svarar ej. */
   const stangSessionen = React.useCallback(
@@ -7608,6 +7793,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
     Number.isFinite(kontextTak) && kontextTak > 0 && Number.isFinite(kontextAnvänt)
       ? Math.min(100, (Math.max(0, kontextAnvänt) / kontextTak) * 100)
       : null;
+  // M2 §8.1: runtimens auto-tröskel (preflight-v1-formeln) — markör i
+  // mätaren. Beräknas ENDAST på ett ÄKLART fönster (reserv-tak 1M ⇒ ingen
+  // markör); maxOutputTokens ur modellkatalogens maxSvar för vald modell.
+  const riktigtFonster =
+    typeof kontext?.contextWindow === "number" && kontext.contextWindow > 0
+      ? kontext.contextWindow
+      : null;
+  const modellSvar = modeller.find((m) => m.id === (kontext?.modell ?? valdModell));
+  const autoTroskelToken =
+    riktigtFonster !== null
+      ? autoKompaktTroskel(
+          riktigtFonster,
+          typeof modellSvar?.maxSvar === "number" && modellSvar.maxSvar > 0
+            ? modellSvar.maxSvar
+            : undefined,
+        )
+      : null;
+  const autoTroskelProcent =
+    autoTroskelToken !== null && riktigtFonster !== null
+      ? Math.min(100, (autoTroskelToken / riktigtFonster) * 100)
+      : null;
 
   // ── VÅG 90 K3: SIDEBAR-INNEHÅLL — delas av desktop-kolumnen + mobil-drawern.
   const sidebarInnehall = (
@@ -8035,11 +8241,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         )}
 
-        {/* Kontext-varning (≥ 80 % av taket) — gul varningsrad. */}
+        {/* Kontext-varning (≥ 80 % av taket) — gul varningsrad. M2 §8: vid
+            ledig agent komprimerar studion automatiskt här (80 %) — banderollen
+            säger vad som händer i stället för att bara kräva ny session. */}
         {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
           <div className="z-10 border-b border-[#D29922]/30 bg-[#D29922]/10">
             <p className="mx-auto w-full max-w-3xl px-3 py-1.5 text-[11px] font-semibold text-[#D29922] sm:px-4">
-              ⚠ Överväg ny session — kontexten närmar sig taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)})
+              ⚠ Kontexten når taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)}) — auto-komprimering
+              väntar på att agenten blir ledig{autoTroskelProcent !== null &&
+                `; runtimens egen gräns ~${kontextProcentText(autoTroskelProcent)} % är markerad i mätaren`}
             </p>
           </div>
         )}
@@ -9394,6 +9604,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
               {tkn(ackumulerat)} totalt
               {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
+              {autoTroskelProcent !== null &&
+                ` · auto-gräns ~${kontextProcentText(autoTroskelProcent)}%`}
             </p>
             {kontextProcent !== null && (
               <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>
@@ -9404,12 +9616,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                   style={{ width: `${Math.min(100, kontextProcent)}%` }}
                 />
+                {autoTroskelProcent !== null && autoTroskelToken !== null && (
+                  <span
+                    className="absolute inset-y-0 w-[2px] bg-[#F85149]"
+                    style={{ left: `calc(${Math.min(100, autoTroskelProcent)}% - 1px)` }}
+                    title={`Runtimens auto-gräns ~${kontextProcentText(
+                      autoTroskelProcent,
+                    )}% (${tkn(autoTroskelToken)} tkn) — där komprimerar agenten av sig själv; studion gör det tidigare (80 %) när agenten är ledig`}
+                  />
+                )}
               </span>
             )}
             <button
               onClick={() => void komprimera()}
               disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
-              title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
+              title="Komprimera kontexten manuellt (session/compact — hela samtalet utom kontextprefixet sammanfattas). Bäst läge mellan vågor: till skillnad från agentens egen auto bevarar den manuella INTE senaste rundan ordagrant. Auto-komprimering sker från 80 % när agenten är ledig."
               className="mt-2 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md border border-[#238636]/50 px-3 text-[11px] font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
             >
               {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
@@ -9417,7 +9638,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </button>
             <p className="mt-1.5 text-[9px] leading-relaxed text-[#484F58]">
               {lage ? `Läge ${lage}` : "Läser läge…"}
-              {tanka ? ` · tanke ${tanka}` : ""} · komprimering gäller huvudsessionen.
+              {tanka ? ` · tanke ${tanka}` : ""} · komprimering gäller huvudsessionen · auto vid{" "}
+              {AUTO_KOMPAKT_PROCENT} % när agenten är ledig (max 1/våg, 30 min mellan).
             </p>
           </div>
         </section>
@@ -9666,6 +9888,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
                     {tkn(ackumulerat)} totalt
                     {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
+                    {autoTroskelProcent !== null &&
+                      ` · auto-gräns ~${kontextProcentText(autoTroskelProcent)}%`}
                   </p>
                   {kontextProcent !== null && (
                     <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>
@@ -9676,6 +9900,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         )}
                         style={{ width: `${Math.min(100, kontextProcent)}%` }}
                       />
+                      {autoTroskelProcent !== null && autoTroskelToken !== null && (
+                        <span
+                          className="absolute inset-y-0 w-[2px] bg-[#F85149]"
+                          style={{ left: `calc(${Math.min(100, autoTroskelProcent)}% - 1px)` }}
+                          title={`Runtimens auto-gräns ~${kontextProcentText(
+                            autoTroskelProcent,
+                          )}% (${tkn(autoTroskelToken)} tkn) — där komprimerar agenten av sig själv; studion gör det tidigare (80 %) när agenten är ledig`}
+                        />
+                      )}
                     </span>
                   )}
                   <button

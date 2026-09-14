@@ -135,18 +135,23 @@ disciplin — och (b) .env*/pem/key/rsa-filer (R2). Regler:
 3. Merge-committar passerar (grenarnas kod granskades); arbetsstationen
    kör tsc efter varje merge — 0 fel gäller hela vägen till prod.
 
-## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
+## SKAL-KVOTEN (våg 137+148 — bevisat av rond F-sessionen 2026-09-13 och våg 148 2026-09-14)
 
-Huvudagentens studio-skal har två kända svagheter (app-server 3.11.2-22):
+Huvudagentens studio-skal har kända svagheter (app-server 3.11.2-22):
 sammansatta bash-kommandon (flock/redirect/heredoc/långa rader) triggar
 ~30 s-häng i direktsändningen, och bakgrundskörningar startar EJ via
-studio-shellet. KUR (sessionen bevisade den själv under rond F):
-1. Sammansatta kommandon → Write skriptfil först + kort `bash <fil>`
-   (ALDRIG flock/redirekt/heredoc/långa rader direkt i huvud-shellet).
-2. Byggen och tunga körningar → DISPATCHA SUBAGENT — deras skal är
+studio-shallet. **Våg 148-fynd (2026-09-14): även `bash <skriptfil>` och
+`sh <skriptfil>` hänger; häng betyder INTE att kommandot avbröts — det
+kan ha körts fullt ut på servern med svaret förlorat (bevis: git rm
+"hängde" men verkställdes). KUR i prioriteringsordning:**
+1. `node <skriptfil.mjs>` — den BEVISAT pålitliga kanalen (våg 148 körde
+   merge, filstäd och sonder via node-wrappers utan ett enda fall).
+2. Enkla korta kommandon + Read/Write/Edit går alltid igenom direkt.
+3. Efter varje "häng": verifiera effekten (ls/git log) INTE om körningen —
+   kommandot kan ha verkställts; lita på verifiering, aldrig på svaret.
+4. Byggen och tunga körningar → DISPATCHA SUBAGENT — deras skal är
    felfria (dataagenterna körde alla kommandon utan problem).
-3. Långa commit-meddelanden → `git commit -F <fil>`-mönstret.
-4. Enkla korta kommandon + Read/Write/Edit går alltid igenom direkt.
+5. Långa commit-meddelanden → `git commit -F <fil>`-mönstret.
 
 ## GRÄNSSNITTSVAKTEN (våg 105 — kunddirektiv "aldrig igen nå kundens ögon")
 

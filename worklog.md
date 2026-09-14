@@ -2332,7 +2332,7 @@ Work Log:
   • NEXT_PUBLIC_SUPABASE_URL
   • NEXT_PUBLIC_SUPABASE_ANON_KEY
   • NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-  • SUPABASE_SERVICE_ROLE_KEY (server-side only)
+  • Supabases server-side service-nyckel [exakt namn raderat ur loggen av R2-skäl, våg 148] (server-side only)
 - Installerade @supabase/supabase-js@2.112.2
 - Uppdaterade src/lib/supabase.ts:
   • isSupabaseConfigured = true
@@ -2510,7 +2510,7 @@ Task: Final checkpoint before new conversation
 ### Environment Variables needed in Vercel:
 1. NEXT_PUBLIC_SUPABASE_URL = https://aufrvmesyzsfshvhlsbp.supabase.co
 2. NEXT_PUBLIC_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1...
-3. SUPABASE_SERVICE_ROLE_KEY = sb_secret_s2hbh9p82b...
+3. Supabases server-side service-nyckel [namn + trunkerat värde raderade ur loggen av R2-skäl, våg 148]
 - DO NOT add DATABASE_URL!
 
 ### For next conversation:
@@ -10352,5 +10352,76 @@ J/V/B (våg 134–136) låg ocommittade i trädet sedan tidigare sessioner.
    heten, repot gjorde det inte).
 
 **Bevis:** sond-output ovan; commit = denna leverans.
+
+## VÅG 140 — BOKFÖRD 2026-09-14 (av våg 148): FAQ PÅ 42+10 POSTER LEVERERAD; NATTENS PARALLELLISMPROV KOSTADE FEM DISPATCHER
+
+Kunddirektiv 2026-09-14 punkt 2: bevisa 12-parallellismen och mäta
+commits/timme. Utfall i korthet:
+
+**Nattens fem dödsfall:** dispatch 01:34 (död), redispatch 02:03 (död),
+02:56 + 03:07 (frusna, dödade 03:32), rond 17:s övertag 03:33 (dog
+~03:4x, app-server omstartad 03:51). Mönster: 12 SAMTIDIGA agenter dödar
+sessionen (OOM-misstankt bevisad i våg 146: ~0,8 GB/barn × 12 ≈ 10 GB
+på 8 GB-servern) — medan våg 138:s 9 parallella höll hela natten.
+
+**Övertag rond 18 (hjärtslagssession 04:05):** gropar à 6 enligt
+PIPELINE-KO-notisen. Leverans: **13 commits 04:20–05:01** — A1–A9
+(FAQ-sektioner i 42 svenska blogg-JSON, "## FAQ"-format ur våg 137:s
+ur-en-källa-parser), B1–B3 (en/ar-importfiler för 10 befintliga
+FAQ-poster), + termfix (ar-rubrik kortform; A6-fynd: långa formen nekas
+av MÖS längdkvot 2,57x).
+
+**Mätning (kunddirektivet):** dispatch 04:07 → sista commit 05:01 =
+54 min för 12 block + 1 termfix ≈ **13,3 leveranser/timme inkl ramp**;
+commit-täthet 04:20–05:01 = **19 commits/timme**. Slutsats: innehålls-
+vågor i gropar om ≤6 levererar snabbt och stabilt; storskalighet över
+6 kräver agentfabrikens server-ägsda omgångar (våg 146).
+
+**Slutled (huvudagenten, våg 148):** nattsessionen dog innan push —
+våg 148 förenade grenarna (merge b99869e4), pushade prod och byggde
+(FAQ-rendering verifierad). Import av de 12 v140-filerna + spegel-
+mätning dispatchad — resultat bokförs i våg 148-raderna nedan.
+
+**Bevis:** git log 163bc6a9^..db4150d2 (13 commits med tidsstämplar);
+.v140-*-kontrollskript i .zcode/; PIPELINE-KO våg 140-tabell.
+
+## EFTERBOKFÖRING 2026-09-14 (av våg 148) — VÅG 141–147: STUDIO-TRÅDENS INFRASTRUKTURVÅGOR (levererade av parallellsessionen, committad direkt mot prod, worklog skuldade efter)
+
+En session på plats (trådkedja + mål-loopen) levererade sju vågor med
+commits rakt mot prod utan worklog-rader — bokförs här av våg 148 för
+sanningshierarkins skull (worklog = historik):
+
+- **Våg 140-trådkedjan (2e15bb8b):** chatten fortsätter i oändlighet
+  över sessionsbyten — fliken memorerar sina föregångare (kedja[]),
+  refresh syr ihop hela tråden; kundens "fortsättningen försvinner vid
+  uppdatering" botad.
+- **Våg 141 (36bd72e1):** målet dör aldrig med omstarten — prompt mot
+  huvudtråden + mal===null ⇒ stående mål aktiveras direkt; trådens arv
+  (worklog-svans + beslutsminne + MINNE LADDAT) injiceras en gång.
+- **Våg 142 (0d109879):** prompt-kön — -32010-studsen ("en prompt körs
+  redan") nådde aldrig klienten = "allt stannar när jag går iväg";
+  nu: kö-status till klienten + autoskicka var 15:e s upp till 8 min.
+- **Våg 143 (a4df20b1):** trådval + arv vid ALL ny trådsession (inte
+  bara mal=null); senast-aktiva tråden vinner när den bär mer historia.
+- **Våg 144 (009828da):** mål-tråden strömmar i chatten — flik som
+  visar mål-sessionen hämtar historik vid varje poll (15 s vid mål).
+- **Våg 145 (5fdc361e):** GRUNDFIXEN — aktivtMal lästes ur kart-
+  transporten (dör vid omstarter) medan mål-loopen lever på DEFAULT-
+  transporten; sanningen läses nu ur LEVANDE transport + tråd-
+  preferens + live-poll. Huvudtrådens bok data/vakten/huvudtrad.json:
+  servern = trådens sanningsägare (tak 12).
+- **Våg 146 (b236badf+):** AGENTFABRIKEN — server-ägd storskalig
+  parallellism (manifest i data/vakten/agentfabrik/ko/, omgångar om 3,
+  RAM-vakt 1 500 MB, timeout 25 min, leveransbevis per uppgift);
+  R4-omskriven: ≤3 Agent-tool direkt, 4+ = fabriksmanifest —
+  "12 parallella direkt" AVSKAFFAT (bevisat dödligt samma natt).
+- **Våg 147 (a7a6e670+a7012060):** EVIGHETSMOTORN (kunddirektiv "så
+  den aldrig slocknar igen") — evighetskatalogen 10 spår, motorn ropar
+  pumpor :x8, stillastående 20 min ⇒ vaktprompt; fix: loggen föds vid
+  första raden (läsning av saknad fil kastade, skrivningen hoppades över).
+
+**Bevis:** git log prod/develop e2fb2e54..a7012060; src/app/api/studio/
+stream/route.ts + src/components/ak1a/studio-chat.tsx (våg 141–145),
+verktyg/agentfabrik.mjs + evighetsmotor.mjs (146–147), pumpor-daemon.mjs.
 
 

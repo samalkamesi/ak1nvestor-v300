@@ -5,6 +5,7 @@ import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 
+import { skrivAudit } from "./audit-logg";
 import { autoPolicySvar } from "./permissions-policy";
 
 /**
@@ -4089,6 +4090,14 @@ class AppServerTransport implements StudioTransport {
             /* flaggan är stöd */
           }
         }
+        // MEGA G3 — audit: tier 3-kuren är en autonom systemskrivning
+        // (sessionsstatus ändras); spårbar utan att läcka sessionens innehåll.
+        skrivAudit(
+          "transport",
+          "komprimering_tier3",
+          `session:${this.sid ?? "?"}`,
+          "modell_dod_arv — historik bär död modell, frisk session med trådminne vid nästa meddelande (v95)",
+        );
         return {
           status: "modell_dod_arv",
           meddelande:

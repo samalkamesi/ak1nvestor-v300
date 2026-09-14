@@ -60,6 +60,7 @@ import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path";
 import { getSupabaseRest } from "../supabase-rest";
 import { kontrolleraText } from "../varumarke";
+import { skrivAudit } from "./audit-logg";
 import { hamtaSessionTransport, studioArbetsyta, type StudioInteraktion, type StudioTransport } from "./studio-transport";
 
 // ── Konstanter ───────────────────────────────────────────────────────────────
@@ -723,6 +724,14 @@ async function verkstallBeslut(mote: StyrelseMote, beslut: StyrelseBeslut): Prom
   skrivProtokoll(mote, rentBeslut, status);
   mote.pipelineRader = status === "KORS_DIREKT" ? skrivPipelineRader(mote, rentBeslut) : 0;
   await skrivStyrelseEvent(mote, rentBeslut, status);
+  // MEGA G3 — audit: styrelsens beslut är en autonom skrivning (protokoll +
+  // pipeline + event); kvittot bär status och beslutskärnan, aldrig hemligheter.
+  skrivAudit(
+    "styrelsen",
+    "beslut",
+    "data/forskning/STYRELSE-BESLUT.md",
+    `${mote.id} | ${status} | existential=${String(rentBeslut.existential)} | ${trunk(rentBeslut.beslut.replace(/\r?\n/g, " "), 300)}`,
+  );
   mote.beslut = rentBeslut;
   mote.atgardsStatus = status;
   return status;

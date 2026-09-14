@@ -39,6 +39,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { skrivAudit } from "./audit-logg.mjs";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
@@ -190,6 +191,7 @@ async function korSynk() {
       if (await korBygg()) {
         ok = true;
         logga("revert+ombygge OK — prod bygger på föregående commit");
+        skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
       } else throw new Error("revert-bygget failade");
     } catch {
       logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
@@ -201,6 +203,7 @@ async function korSynk() {
         } else throw new Error("good-HEAD-bygget failade");
       } catch {
         logga("KRITISKT: även good-HEAD-bygget failar — pm2 orörd, kräver manuell granskning");
+        skrivAudit("prod-synk", "deploy_avbruten", "good-HEAD", "även good-HEAD-bygget misslyckades — pm2 orörd, manuell granskning krävs");
         return;
       }
     }
@@ -214,6 +217,8 @@ async function korSynk() {
       const deployadHash = git(["rev-parse", "HEAD"]);
       try { fs.writeFileSync(senasteFil, deployadHash + "\n"); } catch { /* markör får vänta */ }
       logga(`DEPLOYAD automatiskt: ${nya.split("\n").length} commits (${deployadHash.slice(0, 8)}) — prod 200`);
+      // MEGA G3 — audit: varje autonom deploy är en spårbar händelse.
+      skrivAudit("prod-synk", "deploy", `prod@${deployadHash.slice(0, 8)}`, `${nya.split("\n").length} commits — HTTPS 200 verifierad`);
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills

@@ -77,6 +77,10 @@ import {
   type FardighetPlugin,
   type FardighetSkill,
 } from "@/components/ak1a/studio-fardigheter-panel";
+import {
+  StudioForbrukningPanel,
+  type ForbrukningSvar,
+} from "@/components/ak1a/studio-forbrukning-panel";
 import { cn } from "@/lib/utils";
 
 /**
@@ -353,6 +357,51 @@ function modellBeskrivning(id: string): string {
   if (lag.includes("turbo")) return "Turbo — fart före djup, bra för enkla jobb";
   if (lag.includes("mock") || lag.includes("demo")) return "Demonstration — ingen riktig modell ansluten";
   return "zai-modell";
+}
+
+// ── 10X p8: modellkatalogs-metadata i drawern + paletten ────────────────────
+
+/** Svensk etikett per tankestyrka-nivå (katalogens low/high/max + reserverna). */
+const TANKE_ETIKETT: Record<string, string> = {
+  nothink: "Av",
+  low: "Låg",
+  medium: "Medel",
+  high: "Hög",
+  max: "Max",
+};
+
+/** Beskrivning per tankestyrka-nivå — okända nivåer får en neutral text. */
+const TANKE_BESKRIVNING: Record<string, string> = {
+  nothink: "Snabbast — inget synligt resonemang",
+  low: "Kort resonemang — snabb men genomtänkt",
+  medium: "Medeldjupt resonemang — balans mellan fart och djup",
+  high: "Djupt resonemang för krävande uppgifter",
+  max: "Maximalt resonemang — långsammare men grundligast",
+};
+
+/** Kompakt tokenformat ur katalogen: 1 000 000 → "1 M", 128 000 → "128 K". */
+function formateraToken(antal?: number): string {
+  if (typeof antal !== "number" || !Number.isFinite(antal) || antal <= 0) return "";
+  if (antal >= 1_000_000) return `${(antal / 1_000_000).toLocaleString("sv-SE")} M`;
+  if (antal >= 1_000) return `${Math.round(antal / 1_000)} K`;
+  return String(antal);
+}
+
+/** Drawerns modellradsbeskrivning — text + katalogens metadata (10X p8). */
+function modellRadBeskrivning(m: ModellPost): string {
+  const delar: string[] = [modellBeskrivning(m.id)];
+  const kontext = formateraToken(m.kontextFonster);
+  const svar = formateraToken(m.maxSvar);
+  if (kontext) delar.push(`${kontext}${svar ? ` × ${svar}` : ""} tkn`);
+  if (m.modaliteter && m.modaliteter.length > 0) delar.push(`förstår även ${m.modaliteter.join(" + ")}`);
+  if (m.tankeNivaer) {
+    delar.push(
+      m.tankeNivaer.length === 0
+        ? "utan tankestyrka"
+        : `tankestyrka ${m.tankeNivaer.map((n) => TANKE_ETIKETT[n] ?? n).join("/")}`,
+    );
+  }
+  return delar.join(" · ");
 }
 
 /** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
@@ -633,10 +682,21 @@ function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
   }
 }
 
-/** Modellpost ur GET /api/studio/modeller (härledd ur config.json). */
+/**
+ * Modellpost ur GET /api/studio/modeller — config.json BERIKAD ur zcode:s
+ * modellkatalog (model-catalog.json, 10X p8). Metadata-fälten är osatta
+ * när modellen saknas i katalogen (t.ex. glm-5.1) — UI:t klarar båda.
+ */
 interface ModellPost {
   id: string;
   namn: string;
+  kontextFonster?: number;
+  maxSvar?: number;
+  /** Input-modaliteter utöver text, svenska ("bild", "video"). */
+  modaliteter?: string[];
+  /** Katalogens nivåer — [] = modellen stödjer INGEN tankestyrka; osatt = okänt. */
+  tankeNivaer?: string[];
+  standardTankeNiva?: string;
 }
 
 /** Kontextsanning ur session/read-projektionen (via /api/studio/stream). */
@@ -666,6 +726,8 @@ interface PermissionDialog {
   sammanfattning: string;
   alternativ: PermissionAlternativ[];
   diff?: Filandring;
+  /** 10X p7: när dialogen togs emot (ms) — underlag för 60 s-tidsgränsen. */
+  sedan?: number;
 }
 
 interface FragaDialog {
@@ -673,6 +735,8 @@ interface FragaDialog {
   fråga: string;
   inputTyp?: string;
   val?: string[];
+  /** 10X p7: när dialogen togs emot (ms) — underlag för 60 s-tidsgränsen. */
+  sedan?: number;
 }
 
 const PERMISSION_ETIKETT: Record<string, string> = {
@@ -695,6 +759,56 @@ function riskFarg(risk: string): string {
     default:
       return "bg-[#30363D] text-[#8B949E]";
   }
+}
+
+// ── Interaktionsköns tidsgräns (10X p7) ─────────────────────────────────────
+
+/** 10X p7: en obesvarad dialog (permission/fråga) får en tidsgräns på 60 s.
+ *  Serverns 30 s-eskalering når inte alltid klienten (död SSE ⇒ kortet
+ *  återställs först av reconnect-pollen) — då står chatten i
+ *  "$ väntar på verktyg…" för evigt. Efter gränsen visar varje dialogkort
+ *  en varningsrad + Avvisa-knapp som POST:ar neka/avbryt via
+ *  /api/studio/interaktion, så tråden aldrig låser. */
+const INTERAKTION_TIDSGRANS_MS = 60_000;
+
+/** Varningsrad + Avvisa-knapp som visar sig först när tidsgränsen passerats.
+ *  Egen sekundtickare — huvudrenderingen belastas bara så länge kortet syns. */
+function InteraktionsVarning({
+  sedan,
+  jobbar,
+  titel,
+  paAvvisa,
+}: {
+  sedan?: number;
+  jobbar: boolean;
+  titel: string;
+  paAvvisa: () => void;
+}) {
+  const [nu, setNu] = React.useState(() => Date.now());
+  React.useEffect(() => {
+    const t = window.setInterval(() => setNu(Date.now()), 1_000);
+    return () => window.clearInterval(t);
+  }, []);
+  const forflutenMs = nu - (sedan ?? nu);
+  if (forflutenMs <= INTERAKTION_TIDSGRANS_MS) return null;
+  const s = Math.max(1, Math.floor(forflutenMs / 1_000));
+  const tidText = s < 60 ? `${s} s` : `${Math.floor(s / 60)} min ${s % 60} s`;
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-2 rounded-md border border-[#D29922]/40 bg-[#D29922]/10 px-2.5 py-2">
+      <Clock className="h-4 w-4 shrink-0 text-[#D29922]" />
+      <p className="min-w-0 flex-1 text-xs leading-relaxed text-[#D29922]">
+        Obesvarad i {tidText} — agenten står stilla tills någon svarar.
+      </p>
+      <button
+        onClick={paAvvisa}
+        disabled={jobbar}
+        title={titel}
+        className="min-h-[52px] shrink-0 rounded-md border border-[#DA3633]/50 px-3 py-1.5 text-xs font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50 sm:min-h-0"
+      >
+        Avvisa
+      </button>
+    </div>
+  );
 }
 
 // ── Verktygsriskklassning + minnesregler + långkörningsnotis (våg 84 C) ──────
@@ -2776,6 +2890,9 @@ function TjansteSektioner({
   avbryterId,
   webblasare,
   automation,
+  subagenter,
+  onAvbrytSubagent,
+  avbryterSubagentId,
 }: {
   tjanster: Record<TjansteNamn, TjansteTillstand>;
   onVaxla: (namn: TjansteNamn, oppenEfter: boolean) => void;
@@ -2783,6 +2900,10 @@ function TjansteSektioner({
   avbryterId: string | null;
   webblasare: TjansteWebblasareProps;
   automation: TjansteAutomationProps;
+  /** VÅG 152 R1: levande subagent-barn (GET /api/studio/subagenter). */
+  subagenter: SubagentPost[];
+  onAvbrytSubagent: (barnSessionId: string) => void;
+  avbryterSubagentId: string | null;
 }): React.JSX.Element | null {
   const synliga = TJANSTE_INFO.filter((t) => tjanster[t.namn].finns);
   if (synliga.length === 0) return null;
@@ -2893,6 +3014,62 @@ function TjansteSektioner({
                       ))}
                     </ul>
                   ))}
+
+                {/* ── VÅG 152 R1: LEVANDE SUBAGENTER (session/subagents) ──
+                    barn-processer som kör JUST NUPP: prick grön=running,
+                    gul=annat; Avbryt POSTar {taskId: barnSessionId}. */}
+                {t.namn === "bakgrund" && subagenter.length > 0 && (
+                  <div className="mt-2 border-t border-[#30363D] pt-2">
+                    <p className="mb-1.5 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#3FB950]" aria-hidden />
+                      Levande subagenter ({subagenter.length})
+                    </p>
+                    <ul className="space-y-1.5">
+                      {subagenter.map((a) => (
+                        <li
+                          key={a.barnSessionId}
+                          className="rounded-md border border-[#30363D] bg-[#161B22] px-2 py-1.5"
+                          title={`${a.barnSessionId} · ${a.status}`}
+                        >
+                          <div className="flex items-start gap-1.5">
+                            <span
+                              className={cn(
+                                "mt-1 h-2 w-2 shrink-0 rounded-full",
+                                a.status === "running" ? "bg-[#3FB950]" : "bg-[#D29922]",
+                              )}
+                              title={`Status: ${a.status}`}
+                            />
+                            <div className="min-w-0 flex-1">
+                              <p className="break-words font-mono text-[10px] leading-snug text-[#E6EDF3]/85">
+                                {a.titel || a.barnSessionId}
+                              </p>
+                              {a.typ && (
+                                <p className="mt-0.5 truncate font-mono text-[9px] text-[#484F58]">{a.typ}</p>
+                              )}
+                            </div>
+                            {tjansteKor(a.status) && (
+                              <button
+                                type="button"
+                                onClick={() => onAvbrytSubagent(a.barnSessionId)}
+                                disabled={avbryterSubagentId === a.barnSessionId}
+                                title="Avbryt subagenten (studio/subagenter)"
+                                aria-label="Avbryt subagenten"
+                                className="flex min-h-[52px] shrink-0 items-center gap-1 rounded-md border border-[#DA3633]/40 px-2 py-0.5 text-[9px] font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50 sm:min-h-0"
+                              >
+                                {avbryterSubagentId === a.barnSessionId ? (
+                                  <Loader2 className="h-3 w-3 animate-spin" />
+                                ) : (
+                                  <X className="h-3 w-3" />
+                                )}
+                                Avbryt
+                              </button>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* ── WEBBLÄSAR-PANEL (VÅG 92 B3): URL-fält → kort + sidor ── */}
                 {t.namn === "webblasare" && (
@@ -3348,6 +3525,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const tjansterRef = React.useRef(tjanster);
   const [avbryterJobb, setAvbryterJobb] = React.useState<string | null>(null);
 
+  /**
+   * VÅG 152 R1: LEVANDE SUBAGENTER — GET /api/studio/subagenter (15 s-poll).
+   * Renderas som egen delsektion i BAKGRUNDSJOBB-panelen; tom lista = dold.
+   */
+  const [levandeSubagenter, setLevandeSubagenter] = React.useState<SubagentPost[]>([]);
+  const [avbryterSubagent, setAvbryterSubagent] = React.useState<string | null>(null);
+
   /** VÅG 92 B3: WEBBLÄSAR-PANEL — URL-fält, kör-status, kort + öppna sidor. */
   const [webUrl, setWebUrl] = React.useState("");
   const [webKorPaga, setWebKorPaga] = React.useState(false);
@@ -3478,6 +3662,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
 
+  /** VÅG 152 R1-UI — Organismens "Levande barn"-rad: barn som lever just
+   *  nu (running/waiting/blocked) ur DELADE levandeSubagenter (s1:s 15
+   *  s-poll av GET /api/studio/subagenter — ingen egen fetch här). */
+  const barnKör = levandeSubagenter.filter(
+    (b) => b.status === "running" || b.status === "waiting" || b.status === "blocked",
+  );
+  /** Tooltip: full lista med status, körande (●) före avslutade (·). */
+  const barnTitelLista = [
+    ...barnKör.map((b) => `● ${b.titel} — ${agentStatusText(b.status)}`),
+    ...levandeSubagenter
+      .filter((b) => b.status !== "running" && b.status !== "waiting" && b.status !== "blocked")
+      .map((b) => `· ${b.titel} — ${agentStatusText(b.status)}`),
+  ].join("\n");
+
   /** VÅG 114 — ORGANISM-PANELEN (kunden bygger via studion ⇒ maskinens
    *  puls ska synas här): registret + pumparnas senaste rader ur
    *  /api/admin/organ, uppdateras var 60:e s. */
@@ -3603,6 +3801,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
       clearInterval(i);
     };
   }, []);
+
+  // ── 10X p9: FÖRBRUKNING (tokens/dag · modellfördelning) — sektionen under
+  //    Kontext i höger panelen. EN pollare här, presentationskomponenten
+  //    monteras i både desktop-panel + mobil-drawer. Routen memo-cachar
+  //    60 s — pollen matchar (våg 85 F3).
+  const [forbrukning, setForbrukning] = React.useState<ForbrukningSvar | null>(null);
+  const [forbrukningLaddar, setForbrukningLaddar] = React.useState(true);
+  const [forbrukningFel, setForbrukningFel] = React.useState("");
+  const hamtaForbrukning = React.useCallback(async () => {
+    setForbrukningLaddar(true);
+    try {
+      const res = await fetch(`/api/studio/anvandning?frisk=${Date.now()}`, { headers: adminHeaders() });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setForbrukning((await res.json()) as ForbrukningSvar);
+      setForbrukningFel("");
+    } catch (e) {
+      setForbrukningFel(e instanceof Error ? e.message : "okänt fel");
+    } finally {
+      setForbrukningLaddar(false);
+    }
+  }, []);
+  React.useEffect(() => {
+    void hamtaForbrukning();
+    const i = setInterval(() => void hamtaForbrukning(), 60_000);
+    return () => clearInterval(i);
+  }, [hamtaForbrukning]);
 
   /** VÅG 90 K4: senaste verktygskörningar — panelens TERMINAL-sektion. */
   const senasteVerktyg = React.useMemo(() => {
@@ -4103,7 +4327,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         void skickaPermissionSvar(p.requestId, "allow_once", true);
         return;
       }
-      setPermission(p);
+      setPermission({ ...p, sedan: Date.now() });
     },
     [skickaPermissionSvar, rörTabb],
   );
@@ -4307,7 +4531,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 diff: i.diff,
               });
             } else {
-              setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val });
+              setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val, sedan: Date.now() });
               setFragSvar("");
             }
           }
@@ -4666,6 +4890,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
         senastAktivSessionId?: string | null;
         aktivtMal?: { aktiv: boolean; pausad: boolean; iteration: number; mal: string | null } | null;
         sessionskarta?: Record<string, { aktiv?: boolean }>;
+        interaktioner?: (
+          | {
+              typ: "permission";
+              requestId: string;
+              verktyg: string;
+              risk: string;
+              skäl?: string;
+              sammanfattning: string;
+              alternativ: PermissionAlternativ[];
+              diff?: Filandring;
+            }
+          | { typ: "fråga"; requestId: string; fråga: string; inputTyp?: string; val?: string[] }
+        )[];
       };
       if (data.aktivtMal) {
         setMal(data.aktivtMal.mal);
@@ -4676,6 +4913,36 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         setMalIteration(data.aktivtMal.iteration);
         if (data.aktivtMal.aktiv && !malStrömOppen) setMalStrömOppen(true);
+      }
+      // ── 10X p7 — POLL-ÅTERSTÄLLNING AV DIALOGER ───────────────────────
+      // Dör SSE-strömmen efter en permission/fråga når kortet ALDRIG
+      // klienten — chatten låser tyst ("$ väntar på verktyg…"). Pollen
+      // (15/30 s) läser lasAllaInteraktioner via samma GET och återställer
+      // kortet så tidsgränsen + Avvisa-knappen kan nå kunden. Endast
+      // tillägg: redan visat requestId rörs ej (inga race-stängningar —
+      // ett avverkat kort stängs av sitt eget POST-svar eller Avvisningen).
+      const vantaPermission =
+        (data.interaktioner ?? []).find((i) => i.typ === "permission" && i.requestId) ?? null;
+      const vantaFraga = (data.interaktioner ?? []).find((i) => i.typ === "fråga" && i.requestId) ?? null;
+      if (vantaPermission?.typ === "permission" && permission?.requestId !== vantaPermission.requestId) {
+        mottagenPermission({
+          requestId: vantaPermission.requestId,
+          verktyg: vantaPermission.verktyg,
+          risk: vantaPermission.risk,
+          skäl: vantaPermission.skäl,
+          sammanfattning: vantaPermission.sammanfattning,
+          alternativ: vantaPermission.alternativ ?? [],
+          diff: vantaPermission.diff,
+        });
+      }
+      if (vantaFraga?.typ === "fråga" && fraga?.requestId !== vantaFraga.requestId) {
+        setFraga({
+          requestId: vantaFraga.requestId,
+          fråga: vantaFraga.fråga,
+          inputTyp: vantaFraga.inputTyp,
+          val: vantaFraga.val,
+          sedan: Date.now(),
+        });
       }
       // VÅG 144 — MÅL-TRÅDEN STRÖMMAR I CHATTEN ("den stannar i chatten när
       // jag uppdaterar"): mål-loopens turns syns EJ i sessionskartans
@@ -4773,7 +5040,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } catch {
       // nätverksfel — nästa poll försöker igen
     }
-  }, [malStrömOppen, rörTabb, hamtaBortaKort]);
+  }, [malStrömOppen, rörTabb, hamtaBortaKort, permission, fraga, mottagenPermission]);
 
   React.useEffect(() => {
     pollAterkopplingRef.current = pollAterkoppling;
@@ -5890,6 +6157,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
     [byteTanke, sparaServerInstallning],
   );
 
+  // ── 10X p8: DEN VALDA modellens katalog-metadata (tankestyrka per modell).
+  //    tankeNivaerVald: null = katalogen vet ej (fallback nothink/high/max),
+  //    [] = modellen stödjer INGEN nivå (GLM-5.2/5-Turbo/5.1) — sektionen
+  //    förklarar och låser istället för att erbjuda omöjliga val.
+  const valdModellPost = React.useMemo(
+    () => modeller.find((m) => m.id === valdModell) ?? null,
+    [modeller, valdModell],
+  );
+  const tankeNivaerVald = valdModellPost?.tankeNivaer ?? null;
+  const tankeRader = React.useMemo(() => {
+    const rå = tankeNivaerVald ?? ["nothink", "high", "max"];
+    const ordning = ["nothink", "low", "medium", "high", "max"];
+    return [...rå].sort((a, b) => {
+      const ia = ordning.indexOf(a);
+      const ib = ordning.indexOf(b);
+      return (ia === -1 ? ordning.length : ia) - (ib === -1 ? ordning.length : ib);
+    });
+  }, [tankeNivaerVald]);
+
   // ── Uppladdning (våg 81): multipart + drag/paste/mapp ──────────────────────
 
   /** VÅG 91 A3a: bildfiler ur ett uppladdningssvar → valda bilagor (tak 8). */
@@ -6164,6 +6450,64 @@ export function StudioChat({ hem }: { hem: () => void }) {
       }
     },
     [visaToast, lasTjanst],
+  );
+
+  /**
+   * VÅG 152 R1: Läs levande subagent-barn — GET /api/studio/subagenter
+   * (transportens lasSubagenter, session/subagents). Tyst vid fel — nästa
+   * poll (15 s) försöker igen.
+   */
+  const lasLevandeSubagenter = React.useCallback(async (): Promise<void> => {
+    try {
+      const res = await fetch("/api/studio/subagenter", { headers: adminHeaders() });
+      if (!res.ok) return;
+      const data = (await res.json().catch(() => ({}))) as { subagenter?: SubagentPost[] };
+      if (Array.isArray(data.subagenter)) setLevandeSubagenter(data.subagenter);
+    } catch {
+      // tyst — nästa poll försöker igen
+    }
+  }, []);
+
+  /** Poll 15 s — ENDAST när fliken syns; sektionen lever utan manuell öppning. */
+  React.useEffect(() => {
+    void lasLevandeSubagenter();
+    const tid = window.setInterval(() => {
+      if (document.visibilityState === "visible") void lasLevandeSubagenter();
+    }, 15_000);
+    return () => window.clearInterval(tid);
+  }, [lasLevandeSubagenter]);
+
+  /**
+   * Avbryt ett subagent-barn: POST /api/studio/subagenter {taskId:
+   * barnSessionId} → toast + listan uppdateras ur ett färskt GET-svar.
+   */
+  const avbrytLevandeSubagent = React.useCallback(
+    async (barnSessionId: string) => {
+      setAvbryterSubagent(barnSessionId);
+      try {
+        const res = await fetch("/api/studio/subagenter", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ taskId: barnSessionId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          avbrutet?: boolean;
+          meddelande?: string;
+          fel?: string;
+        };
+        if (res.ok && data.avbrutet === true) {
+          visaToast(data.meddelande || "Subagenten avbruten.");
+        } else {
+          visaToast(data.meddelande || data.fel || "Subagenten kunde ej avbrytas.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — subagenten kunde ej avbrytas.", "fel");
+      } finally {
+        setAvbryterSubagent(null);
+        void lasLevandeSubagenter();
+      }
+    },
+    [visaToast, lasLevandeSubagenter],
   );
 
   // ── VÅG 92 B3: WEBBLÄSAR-PANEL — POST {url} → resultatkort + sidlista ──────
@@ -6709,6 +7053,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   fråga: event.interaktion.fråga,
                   inputTyp: event.interaktion.inputTyp,
                   val: event.interaktion.val,
+                  sedan: Date.now(),
                 });
                 setFragSvar("");
                 sattStatus("Agenten frågar…");
@@ -6973,10 +7318,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
       kor: () => void korKommando(k.namn),
     }));
     for (const m of modeller) {
+      // 10X p8: katalogens kontext-tak i palettraden ("1 M tkn") när den finns.
+      const kontext = formateraToken(m.kontextFonster);
       poster.push({
         id: `modell-${m.id}`,
         etikett: `Byt modell — ${m.namn}`,
-        beskrivning: `/modell ${m.id} — ny session skapas med modellen`,
+        beskrivning: `/modell ${m.id} — ny session skapas med modellen${kontext ? ` · ${kontext} tkn kontext` : ""}`,
         grupp: "Modeller",
         ikon: "modell",
         sokbar: `byt modell ${m.id} ${m.namn} /modell`.toLowerCase(),
@@ -8166,6 +8513,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
                       {" "}Regler gäller i denna webbläsare och hanteras under Minnesregler i Mer-menyn (⋯).
                     </p>
+                    <InteraktionsVarning
+                      sedan={permission.sedan}
+                      jobbar={svarJobbar}
+                      titel="Neka verktygsbegäran nu så agenten kan gå vidare"
+                      paAvvisa={() => void skickaPermissionSvar(permission.requestId, "deny")}
+                    />
                   </div>
                 </div>
               )}
@@ -8226,6 +8579,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     >
                       Avbryt frågan
                     </button>
+                    <InteraktionsVarning
+                      sedan={fraga.sedan}
+                      jobbar={svarJobbar}
+                      titel="Avbryt frågan nu så agenten kan gå vidare"
+                      paAvvisa={() => void svaraFraga(fraga.requestId, undefined, true)}
+                    />
                   </div>
                 </div>
               )}
@@ -8862,6 +9221,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     </span>
                   ))}
                 </p>
+                {/* VÅG 152 R1-UI — LEVANDE BARN: sessionens subagent-barn ur
+                    GET /api/studio/subagenter. Läser DELADE levandeSubagenter
+                    (s1:s 15 s-poll) — ingen egen hämtning, inga dubbla anrop. */}
+                <p
+                  className="mt-1.5 truncate font-mono text-[10px] leading-relaxed text-[#8B949E]"
+                  aria-label="Levande barn"
+                  title={barnTitelLista || undefined}
+                >
+                  Barn:{" "}
+                  {barnKör.length === 0 ? (
+                    <span className="text-[#6E7681]">
+                      inga lever just nu
+                      {levandeSubagenter.length > 0 ? ` (${levandeSubagenter.length} avslutade)` : ""}
+                    </span>
+                  ) : (
+                    <>
+                      <span className="font-bold text-[#3FB950]">{barnKör.length} lever</span>
+                      <span className="text-[#6E7681]"> — </span>
+                      {barnKör.map((b) => b.titel).join(" · ")}
+                    </>
+                  )}
+                </p>
                 <p className="mt-1.5 font-mono text-[10px] leading-relaxed text-[#8B949E]">
                   {organism.basta && `Bäst: ${organism.basta}`}
                   {organism.ekonomi?.tokensPerLeverans
@@ -8949,6 +9330,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         </section>
 
+        {/* FÖRBRUKNING (10X p9) — tokens/dag + modellfördelning under Kontext. */}
+        <StudioForbrukningPanel
+          data={forbrukning}
+          laddar={forbrukningLaddar}
+          fel={forbrukningFel}
+          uppdatera={() => void hamtaForbrukning()}
+        />
+
         {/* TERMINAL — senaste verktygskörningar (mini-terminal). */}
         <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
@@ -9001,6 +9390,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
           onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
           onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
           avbryterId={avbryterJobb}
+          subagenter={levandeSubagenter}
+          onAvbrytSubagent={(id) => void avbrytLevandeSubagent(id)}
+          avbryterSubagentId={avbryterSubagent}
           webblasare={{
             url: webUrl,
             setUrl: setWebUrl,
@@ -9199,6 +9591,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   </button>
                 </div>
               </section>
+              {/* FÖRBRUKNING (10X p9) — samma sektion som desktop-panelen. */}
+              <StudioForbrukningPanel
+                data={forbrukning}
+                laddar={forbrukningLaddar}
+                fel={forbrukningFel}
+                uppdatera={() => void hamtaForbrukning()}
+              />
               <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
                 <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   <Terminal className="h-3.5 w-3.5 shrink-0" />
@@ -9244,6 +9643,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
                 onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
                 avbryterId={avbryterJobb}
+                subagenter={levandeSubagenter}
+                onAvbrytSubagent={(id) => void avbrytLevandeSubagent(id)}
+                avbryterSubagentId={avbryterSubagent}
                 webblasare={{
                   url: webUrl,
                   setUrl: setWebUrl,
@@ -10057,7 +10459,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   className="rounded-md bg-[#161B22] px-3 py-2 font-mono text-[10px] leading-relaxed text-[#8B949E]"
                   title="Serverns standard för nya samtal — ur GET /api/studio/installningar"
                 >
-                  Standard: {modellBadge(serverStandard.modell)} / {serverStandard.lage || "—"} (server)
+                  Standard: {modellBadge(serverStandard.modell)} / {serverStandard.lage || "—"} /{" "}
+                  {serverStandard.tankestyrka ? TANKE_ETIKETT[serverStandard.tankestyrka] ?? serverStandard.tankestyrka : "—"} (server)
                 </p>
               )}
               <section aria-label="Modell">
@@ -10067,7 +10470,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {modeller.length === 0 ? (
                   <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
                     Ingen modellista ännu (GET /api/studio/modeller) — listan härleds ur
-                    zcode-config.json på servern.
+                    zcode-config.json + modellkatalogen på servern.
                   </p>
                 ) : (
                   modeller.map((m) => (
@@ -10075,7 +10478,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       key={m.id}
                       vald={m.id === valdModell}
                       titel={m.namn}
-                      beskrivning={modellBeskrivning(m.id)}
+                      beskrivning={modellRadBeskrivning(m)}
                       val={m.id}
                       jobbar={byterModell && m.id === valdModell}
                       disabled={byterModell || strömmarHuvud || !arHuvudAktiv}
@@ -10108,6 +10511,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   onClick={() => void valjLageMedStandard("build")}
                 />
                 <InstallningarRad
+                  vald={lage === "edit"}
+                  titel="Edit"
+                  beskrivning="Redigeringsläge — kodändringar i fokus (källans cykel build → edit → yolo → plan)"
+                  val="edit"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "edit"}
+                  onClick={() => void valjLageMedStandard("edit")}
+                />
+                <InstallningarRad
+                  vald={lage === "yolo"}
+                  titel="Yolo"
+                  beskrivning="Allt godkänns automatiskt — inga dialoger. Använd med omsorg: agenten kan köra vilket verktyg som helst utan att fråga"
+                  val="yolo"
+                  disabled={!lage || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                  jobbar={lageJobbar && lage === "yolo"}
+                  onClick={() => void valjLageMedStandard("yolo")}
+                />
+                <InstallningarRad
                   vald={lage === "plan"}
                   titel="Plan"
                   beskrivning="Verktyg kräver godkännande — diff förhandsvisas i dialogen"
@@ -10122,38 +10543,40 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   Tankestyrka
                 </p>
-                {!tanka && (
+                {/* 10X p8: nivåerna följer DEN VALDA modellens katalogpost —
+                    [] = modellen stödjer ingen nivå (GLM-5.2/5-Turbo/5.1):
+                    sektionen förklarar istället för att erbjuda omöjliga val. */}
+                {tankeNivaerVald?.length === 0 ? (
                   <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
-                    Läser tankestyrkan (session/setThoughtLevel)…
+                    {valdModellPost?.namn ?? "Modellen"} stödjer ingen tankestyrka enligt
+                    modellkatalogen — byt till en resonemangsmodell (t.ex. GLM-5.3) för att
+                    välja nivå.
                   </p>
+                ) : (
+                  <>
+                    {!tanka && (
+                      <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
+                        Läser tankestyrkan (session/setThoughtLevel)…
+                      </p>
+                    )}
+                    {tankeRader.map((niva) => (
+                      <InstallningarRad
+                        key={niva}
+                        vald={tanka === niva}
+                        titel={TANKE_ETIKETT[niva] ?? niva}
+                        beskrivning={
+                          valdModellPost?.standardTankeNiva === niva
+                            ? `${TANKE_BESKRIVNING[niva] ?? "Resonemangsnivå"} — standard för modellen`
+                            : TANKE_BESKRIVNING[niva] ?? "Resonemangsnivå"
+                        }
+                        val={niva}
+                        disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                        jobbar={lageJobbar && tanka === niva}
+                        onClick={() => void valjTankeMedStandard(niva)}
+                      />
+                    ))}
+                  </>
                 )}
-                <InstallningarRad
-                  vald={tanka === "nothink"}
-                  titel="Av"
-                  beskrivning="Snabbast — inget synligt resonemang"
-                  val="nothink"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "nothink"}
-                  onClick={() => void valjTankeMedStandard("nothink")}
-                />
-                <InstallningarRad
-                  vald={tanka === "high"}
-                  titel="Hög"
-                  beskrivning="Djupt resonemang för krävande uppgifter"
-                  val="high"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "high"}
-                  onClick={() => void valjTankeMedStandard("high")}
-                />
-                <InstallningarRad
-                  vald={tanka === "max"}
-                  titel="Max"
-                  beskrivning="Maximalt resonemang — långsammare men grundligast"
-                  val="max"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "max"}
-                  onClick={() => void valjTankeMedStandard("max")}
-                />
               </section>
             </div>
           </aside>

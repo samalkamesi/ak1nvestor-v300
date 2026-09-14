@@ -311,3 +311,130 @@ EnvironmentFile med chmod 600).
 - F1 ISR-uppvärmare: cron 10 3 * * * bash data/infra/contabo/ak1a-varm.sh
   (versionerad i repot; logg /tmp/ak1a-varm.log; testkörning 12/44 —
   sökvägslistan finslipas).
+
+## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
+
+Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,
+kan ej fortsätta där jag började" (rapporterad 6 ggr) — kuras I ROTTEN
+över våg 148→150. Programram: STUDIO-10X-PROGRAMmet (data/forskning/),
+FAS 0 = kundens tre akuta smärtor MINNET + MÅLET + UTKASTET (pelare 1–4).
+DENNA sektion = on-call-introt: läs den (5 min) INNAN du rör studio-tråden.
+
+### Sanningstabell — var trådens delar lever
+
+| Del | Sanningsägare | Kod / fil |
+|---|---|---|
+| Trådens vy (tradHistorik) | SERVERN — zcode:s egna sessionsdb `~/.zcode/cli/db/db.sqlite` (readOnly-öppning, WAL gör samtidig läsning säker) + levande svans | studio-transport.ts: v148OppnaDb ~8021, lasTradHistorik ~8192; GET stream/route.ts:255 |
+| Trådens bok (sessionernas ordning) | `data/vakten/huvudtrad.json` (sessionerna äldst→nyast) | lasHuvudtradSessioner ~7994 |
+| Modellens minne | TRÅDMINNET — injiceras i TRANSPORTEN vid sessionsfödelsen (ALDRIG i rutten) | nyFoddTrad ~2928, konsumeraTradsminne ~3467, byggTradsminnePrefix ~8157 |
+| Målet | DISKEN `data/vakten/mal-state.json` + GET/POST-arm | skrivMalStateTillDisk ~8126, GET-arm route.ts ~205, POST-arm ~356 |
+| Utkastet | KLIENTEN — sessionStorage (samma flik) + localStorage (överlever flikåtervinning) | sparaTabbar studio-chat.tsx ~581 |
+
+### DEL 1 — VYN: hela tråden ur db.sqlite (v148, pelare 1)
+
+- **Rot:** klienten sydde ihop tråden själv — ett `?sessionId`-anrop PER
+  LÄNK = ett zcode-barnprocess-anrop per session per refresh; tråden på
+  346 meddelanden visade 26 efter refresh.
+- **Kur:** servern är trådens sanningsägare. GET /api/studio/stream
+  svarar `tradHistorik` = HELA huvudtråden (bokens sessioner i kronologisk
+  ordning, läs ur db.sqlite — SAMMA källa som desktop-Z läser vid resume)
+  + aktuell sessions levande svans. Klienten renderar ETT fält. Tråden
+  lever ÄVEN med agenten nere (db kräver ingen barnprocess; skrivfältet
+  låses av live="ned", v148F u2).
+- **Två prod-fällor, båda kurade samma våg:** (a) pm2-processer saknar
+  HOME i env — GET svarade tradHistorik=0 i prod; kur: fallback-kedja
+  HOME→USERPROFILE→/home/ak1a (2a84a3ab). (b) Turbopack-bundlern skrev om
+  require-SYNTAX till en extern Url-referens den ej kan ladda ("Unsupported
+  external type Url"); kur: `createRequire(process.execPath)` = ren
+  funktionsref bundlern aldrig rör (01385080).
+- **Bevis:** 143/143 meddelanden bevisat vid refresh (pelare 1 GRÖN).
+  Mobilpayload-tak (v148F u3): mätning 172 kB → db-lästa poster kapas
+  1 500 tkn, levande svans 3 000 — fulltext lever kvar i sessionens egna
+  vy (historik-fältet), ENDAST tradHistorik-fältet trunkeras.
+
+### DEL 2 — POLLEN: "tråden är helig" (v148)
+
+- **Rot:** v144-pollen skrev ÖVER den sammanslagna trådvyn med EN sessions
+  korta svans (158→26 meddelanden) — "mordvapnet" i försvinnandet.
+- **Kur (PERMANENT REGEL):** klientens poll ERSÄTTER aldrig en fliks vy
+  med en enskild sessions `historik` — ersättning får ENDAST ske med
+  serverns `tradHistorik` (hela tråden), vilket alltid är korrekt.
+  Implementerat i mål-pollen (studio-chat.tsx ~4881 "TRÅDEN ÄR HELIG")
+  och återkopplings-pollen (~4934), med fallback till historik ENDAST när
+  servern saknar tradHistorik.
+- **Bevis:** poll + refresh bibehåller kedjan oförändrad (143/143 ovan).
+
+### DEL 3 — MINNET: trådsminnet vid sessionsfödelse (v150, pelare 2)
+
+- **Rot:** sessionsrotationer (omstart, modellDöd, friskgång) födde TOMMA
+  sessioner — VYN visade hela tråden (v148) men MODELLEN började på noll
+  (kundbevis: kontextrad "~1 % av 1M" + "den kommer inte ihåg vad vi
+  skrev innan").
+- **Kur fix 1 (96c85bb1):** injektionen sitter VID FÖDELSEN i TRANSPORTEN:
+  `skapa()` sätter `nyFoddTrad=true` (endast huvudtråden — mål-sessioner/
+  tabbar föds utan), och `skicka()` + `skickaMedBild()` konsumerar flaggan
+  via `konsumeraTradsminne()` som prefixar prompten EN gång. Täcker ALLA
+  födelser inkl modellDöd MITT I en sändning — ruttens POST-detektion
+  hade redan passerat då (bevisat E2E: kick svarade "INGA MINNE").
+  Ruttens egen injektion är BORT (dubbelrisk).
+- **Kur fix 2 (a982a500):** modellDöd-rotationen (-32031:
+  `arModellOtillganglig` → `markeraModellDod` → `skapaFriskSession` →
+  åter-sändning) prefixar ÅTER-SÄNDNINGEN med TRÅDMINNET — rotation mitt
+  i sändningen tappar inte minnet.
+- **Minnet innehåller** (byggTradsminnePrefix): 60 senaste posterna ur
+  huvudtråden (tak 100 000 tkn) + worklog-svans (6 rader) + beslutsminne
+  (3 rader ur data/vakten/beslutsminne.jsonl) + instruktion att börja
+  svaret med "MINNE LADDAT" + en rad om var tråden står.
+- **Bevis E2E (kundens testserie 2026-09-14):** test 1+2 = "INGA MINNE"
+  (före fix 2), test 3 = "MINNE LADDAT" med citering ur äldsta
+  kundmeddelandet — rent före/efter-bevis på rotationstäckningen.
+
+### DEL 4 — MÅLET: diskpersistens + återarm (v148C + v150, pelare 3)
+
+- **Rot:** mål-state dog med processminnet vid varje pm2-omstart (789+
+  omstarter; hjärtloggen visar cykeln "MÅL återställt" → "mål borta").
+- **Kur (tre lager):** (1) `sattMal` persistar målet till
+  `data/vakten/mal-state.json` (stöd-lager, fel är ALDRIG fatala);
+  (2) GET-armen (v148C) + POST-armen (v141) återarmar vid första anropet:
+  mal=null (ej pausat, ingen pågående turn) ⇒ DISK-målet först (kundens
+  eget) annars stående mål STANDE_MAL_141 som skydd — kundens refresh
+  väntar INTE på hjärtat (10 min); (3) `rensaMal` städar OCKSÅ filen —
+  ett medvetet rensat KUNDMÅL ska ALDRIG återuppstå (det stående målet
+  är separat och återarmas medvetet som skydd).
+- **Bevis:** målet var null 04:31, aktivt iteration 2+ strax därefter;
+  GET svarar mål inom samma anrop (< 1 s, pelare 3-måttet).
+
+### DEL 5 — UTKASTET: dubbel persistens (v150, pelare 4)
+
+- **Rot (kundbevis):** "text jag skriver så jag uppdaterar försvinner" —
+  mobilen återvann fliken, sessionStorage var tomt.
+- **Kur:** `sparaTabbar` skriver DUBBELT — sessionStorage (samma flik) +
+  localStorage (överlever flikåtervinning och hemskärmsgenväg, ~5 MB).
+  Tak per tabb (quota-skydd): utkast 5 000 tkn, 200 meddelanden,
+  20 000 tkn/meddelande; strömstatus/tankar nollställs vid persistens.
+- **Bevis:** oskickad text överlever flikåtervinning (pelare 4-måttet).
+
+### V149:s roll i kedjan (brovågen)
+
+v148F-fabriksleveranserna mergade in (ba43e980): u1 sessionslistan ur
+db.sqlite (desktop-Z:s sessionsvy), u2 tråden renderas i huvudfliken
+ÄVEN utan session-bindning när agenten är nere, u3 mobilpayload-taket.
+Kallstartskuren src/instrumentation.ts (servern självvärmande vid varje
+start) höll dessutom vyns växtmätningar gröna genom omstarterna — en
+kall /studio ska ALDRIG träffa kund eller vakt.
+
+### ON-CALL — felsökningsträd för tråden (2 min)
+
+| Symtom | Kolla detta (i ordning) |
+|---|---|
+| Tom tråd efter refresh, live=true | (1) `pm2 logs ak1a --nostream \| grep V148` — raden "[V148] db.sqlite kunde ej öppnas" = db-vägen bruten: kolla att `/home/ak1a/.zcode/cli/db/db.sqlite` finns (HOME-fallback). (2) `data/vakten/huvudtrad.json` — listar den sessionerna? |
+| Tråden "krymper" efter aktivitet | Någon ersatt vy med `historik` i stället för `tradHistorik` — REGELN bruten (del 2): endast tradHistorik får ersätta en trådvy |
+| Första svaret efter rotation utan "MINNE LADDAT" | Injektionen ska sitta i TRANSPORTEN (skapa→nyFoddTrad; skicka/skickaMedBild/modellDöd-åter-sändning konsumerar) — läggs den i rutten igen uppstår dubbelrisk + rotationsglipp |
+| Mål borta efter omstart | `data/vakten/mal-state.json` finns? GET-arm: mal=null && !pausad && !pagaendeTurn ⇒ återarmar disk-målet direkt i svaret |
+| Rensat kundmål återuppstår | Filen ska vara BORTA efter rensaMal (rmSync). OBS: det STÅENDE målet (v141) är separat och återarmas medvetet som skydd |
+| Utkast borta trots localStorage | Taket: utkast > 5 000 tkn kapas; kontrollera att sparaTabbar-kören inte kastat (devtools → Application → localStorage) |
+
+Arvsregler (bryt ALDRIG): tråden är helig (del 2); TRÅDMINNET injiceras
+endast i transporten (del 3); fulltext trunkeras ENDAST i tradHistorik-
+fältet, aldrig i sessionens egna vy; disk-målet är stöd-lager — fel där
+får ALDRIG krascha sattMal/rensaMal.

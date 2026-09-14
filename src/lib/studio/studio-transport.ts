@@ -69,8 +69,9 @@ import { autoPolicySvar } from "./permissions-policy";
  *   · interaction/requestOfficialMcpAuthHeaders → {} (hoppa över — LIVE
  *     ×6 i kartan §3).
  *   · session/setMode {sessionId, mode:"build"|"plan"} (LIVE i kartan §1)
- *     + session/setThoughtLevel {sessionId, thoughtLevel:"nothink"|
- *     "high"|"max"} (LIVE-nivåer §1) — bägge sparas i transporten och
+ *     + session/setThoughtLevel {sessionId, thoughtLevel:"nothink"|"low"|
+ *       "medium"|"high"|"max" — modellkatalogens nivåer} (LIVE §1) — bägge
+ *       sparas i transporten och
  *     följer med till session/create (mode+thoughtLevel är create-params)
  *     så modellbyte/ny session bevarar valet; resume bär tanke-nivån.
  *     E2E-AVGRÄNSNING (dokumenterad enligt KVD): permission-flödet kan
@@ -826,6 +827,9 @@ export type StudioSubagentStatus =
   | "lost";
 
 /** Bakgrundsagent ur session/subagents (running[] ∪ ended.items[]). */
+/** VÅG 153 R1: källans mode-union — build → edit → yolo → plan. */
+type StudioLage = "build" | "edit" | "yolo" | "plan";
+
 export interface StudioSubagent {
   barnSessionId: string;
   titel: string;
@@ -981,7 +985,7 @@ export interface StudioBilagaRef {
 export interface StudioWorkspaceInstallningar {
   /** Default-modell "providerId/modelId" (eller bar modelId-sträng). */
   modell?: string;
-  /** Default tankestyrka (nothink|high|max — protokollets sanningsord). */
+  /** Default tankestyrka (nothink|low|medium|high|max — protokollets sanningsord). */
   tankestyrka?: string;
   /** Default läge (build|plan|edit|yolo|auto). */
   lage?: string;
@@ -1368,7 +1372,7 @@ export interface StudioTransport {
    * (workspace-default kan överskriva, kartan §1 not). Valet följer med
    * till framtida session/create-param `mode`.
    */
-  sattLage(lage: "build" | "plan"): Promise<{ lage: string }>;
+  sattLage(lage: StudioLage): Promise<{ lage: string }>;
   /**
    * session/setThoughtLevel {sessionId, thoughtLevel} (BEVISAT LIVE, kartan
    * §1 — nivåer: nothink|high|max). Tankestyrkan för resonemangsmodellen;
@@ -1566,6 +1570,21 @@ class ProtokollKlient {
     // stderr läses och glöms — protokollet svarar med strukturerade fel;
     // rå stderr ska ALDRIG läckas vidare (kan innehålla sökvägar).
     barn.stderr?.on("data", () => undefined);
+    // VÅG 153 R3 P0-1 (expeditionens fynd, källans watchStreamErrors-mönster):
+    // en EPIPE/ECONNRESET på barnets strömmar kastar annars på NEXT-processens
+    // eventloop och kan döda VÄRDEN (Hela sajten) — dirigera strömfelen till
+    // samma stäng-väg som processdöd (omstartskedjan tar över), och svälj
+    // alltid felet EFTERåt så det ALDRIG propagerar ohanterat.
+    for (const ström of [barn.stdin, barn.stdout, barn.stderr]) {
+      ström?.on("error", (fel) => {
+        try {
+          const text = (fel instanceof Error ? fel.message : String(fel)).slice(0, 140);
+          this.stäng(new Error(`app-server-ström bruten (${text})`));
+        } catch {
+          // stäng() får aldrig kasta från en error-lyssnare
+        }
+      });
+    }
   }
 
   /** Radbuffrad JSON-tolkning — en rad = ett meddelande. */
@@ -2910,7 +2929,7 @@ class AppServerTransport implements StudioTransport {
   /** V83 B2: väntande server→klient-interaktioner (permission/fråga). */
   private readonly interaktioner = new Map<string, VantanInteraktion>();
   /** V83 B2: senast satta läge/tankestyrka — följer med vid create/resume. */
-  private lage: "build" | "plan" | null = null;
+  private lage: StudioLage | null = null;
   private tankeNiva: string | null = null;
   /**
    * VÅG 84 B: mål-session (per-session-tabbar) — när satt tvingar ensure()
@@ -5115,7 +5134,7 @@ class AppServerTransport implements StudioTransport {
     return { ok: true };
   }
 
-  async sattLage(lage: "build" | "plan"): Promise<{ lage: string }> {
+  async sattLage(lage: StudioLage): Promise<{ lage: string }> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
     if (this.aktiv && !this.aktiv.färdig) {
@@ -5134,11 +5153,12 @@ class AppServerTransport implements StudioTransport {
   }
 
   async sattTankeNiva(niva: string): Promise<{ niva: string }> {
-    // LIVE-bevisade nivåer (kartan §1): nothink | high | max. KVD-texten
-    // "off/medium/high" är generisk protokollterminologi — de ÄRLIGA,
-    // first-hand bevisade nivåerna för zai/GLM är dessa tre.
-    if (!["nothink", "high", "max"].includes(niva)) {
-      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, high eller max.`);
+    // Nivåer ur modellkatalogen (10X p8): nothink (avstängd) + katalogens
+    // low/medium/high/max — GLM-5.3-familjen bevisar low/high/max (reasoning
+    // .levels), medium är protokollets reservord som accepteras och sänds
+    // vidare till session/setThoughtLevel.
+    if (!["nothink", "low", "medium", "high", "max"].includes(niva)) {
+      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, low, medium, high eller max.`);
     }
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
@@ -6235,7 +6255,8 @@ class AppServerTransport implements StudioTransport {
       const modell = typeof pars.modell === "string" && pars.modell ? pars.modell : undefined;
       const lage = typeof pars.lage === "string" && (pars.lage === "build" || pars.lage === "plan") ? pars.lage : undefined;
       const tankeNiva =
-        typeof pars.tankeNiva === "string" && ["nothink", "high", "max"].includes(pars.tankeNiva)
+        typeof pars.tankeNiva === "string" &&
+        ["nothink", "low", "medium", "high", "max"].includes(pars.tankeNiva)
           ? pars.tankeNiva
           : undefined;
       const sparadTid = typeof pars.sparad === "number" && pars.sparad > 0 ? pars.sparad : null;
@@ -6312,7 +6333,7 @@ class MockTransport implements StudioTransport {
   /** V83 B2: väntande simulerat frågekort (requestUserInput). */
   private mockVantanFraga: { interaktion: Extract<StudioInteraktion, { typ: "fråga" }>; los: (varde: string) => void } | null = null;
   /** V83 B2: mock-läge + tankestyrka (satt via sattLage/sattTankeNiva). */
-  private mockLage: "build" | "plan" | null = null;
+  private mockLage: StudioLage | null = null;
   private mockTankeNiva: string | null = null;
   /**
    * VÅG 93 C1 (mock): workspace-STANDARDVÄRDENA — sparaStandard* uppdaterar,
@@ -6477,14 +6498,14 @@ class MockTransport implements StudioTransport {
     return { ok: true };
   }
 
-  async sattLage(lage: "build" | "plan"): Promise<{ lage: string }> {
+  async sattLage(lage: StudioLage): Promise<{ lage: string }> {
     this.mockLage = lage;
     return { lage };
   }
 
   async sattTankeNiva(niva: string): Promise<{ niva: string }> {
-    if (!["nothink", "high", "max"].includes(niva)) {
-      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, high eller max.`);
+    if (!["nothink", "low", "medium", "high", "max"].includes(niva)) {
+      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, low, medium, high eller max.`);
     }
     this.mockTankeNiva = niva;
     return { niva };
@@ -6881,7 +6902,7 @@ class MockTransport implements StudioTransport {
       lage: this.mockStandardLage ?? this.mockLage ?? "build",
       annan: {
         behorighet: "auto",
-        tankeNivaer: ["nothink", "high", "max"],
+        tankeNivaer: ["nothink", "low", "medium", "high", "max"],
         modellKatalog: ["mock/demo", "mock/glm-5.3", "mock/glm-5.2"],
         arbetsyta: "/home/ak1a/agent/ak1",
       },

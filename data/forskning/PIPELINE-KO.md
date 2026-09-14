@@ -137,16 +137,23 @@ Agent-anrop, 4+ via fabriksmanifest.
   akrbp-ol/cvx 200 med SEO-titlar · prod 200 · vakten GRÖN · motorer
   107/0/0. Slutled + worklog bokat av hjärtslagssessionen 09:0x;
   SOKORDSINVENTERING-2026.md committad (våg 138-syntesen).
-- ▶ NÄSTA VÅG 150 (störst i kön): programmatiska dataset-teman (S7) —
-  ~240–253 sidor, /dataset/[bransch]/[nyckeltal] m.fl.; storskaligt =
-  AGENTFABRIKSmanifest (omgångar om 3), huvudagenten äger ETT bygg.
-  ROND 20-RÄDDNING (2026-09-14 ~13:50): manifestet v150-dataset-aspekter
-  + kontraktsfilen skrevs 10:59 ENDAST i agentarbetsytan — prod:s ko/ var
-  tom och fabriken idle sedan 11:05 (vågen dog tyst vid förberedelsen).
-  Kontraktet committat+pushat till prod; manifestet cp:at till prod:s
-  ko/; fabrikens 6 barn (u1–u6) startar vid nästa rop :x5.
-- ▶ VÅG 151 (bokad rond 20): granskningskön — 7 m9-utkast + 8 SEO-guider
-  (guide-kassaflöde m.fl.) = fabriksspekt; spårrotation enligt
+- ✓ LEVERERAT våg 150 (2026-09-14): dataset-aspekter fas A — fabrikens
+  u1–u6 (moduler + värderingshub + vit-test + fas A-rapport) 12:25–12:50
+  + slutledet u7–u8 (3c2d703f vit-test 37 fel → 0; 9dee0971 register,
+  rutt, vy, sitemap) + molnagentens merge fc48a588 + TRÅDMINNE-fixar
+  (96c85bb1, a982a500). KVD: sitemap exakt 130 aspekt-URL:er · stickprov
+  5 finns = 200, 4 uteslutna = 404 · vit-test 0 fel (4 moduler, 15
+  aspekter, 130 sidkontroller, 20 rätt uteslutna) · prod 200 (byggd
+  15:21 under flock). TRÅDENS MINNE E2E-BEVIST: test 3 = MINNE LADDAT
+  (60 meddelanden nådde sessionen; test 1–2 INGA MINNE före fix 2 =
+  före/efter-bevis). Fas B (AKM-poäng-ytor) väntar A2-omprövning.
+- ▶ NÄSTA VÅG 151 (dispatchad 15:59): granskningskön — manifest
+  v151-granskningsko i PROD:s ko/ (14 uppgifter: m1–m6 = 6 m9-utkast,
+  branschmedianer v2 gäller, + g1–g8 = 8 SEO-guider) → rapport per slug
+  i data/blogg-utkast/granskning/ med bedömning FLYTTKLAR/EFTER
+  RÄTTNING/UNDERKÄND; publicering förblir kundens (R2). Fabrikskön:
+  studio-10x-fas1 (molnagentens 12-uppgiftersmanifest, plockas 16:05)
+  → v151 därefter (ETT manifest per rop). Spårrotation enligt
   evighetskatalogen (149 SEO-sidor → 150 dataset → 151 granskning).
 - ▶ VÅG 152 (bokad rond 20): kvartalsrapportserien förbereds (Q3-
   rapporterna anländer oktober) — mallar + automationsunderlag; fas B

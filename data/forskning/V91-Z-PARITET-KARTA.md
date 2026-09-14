@@ -1,404 +1,380 @@
-# V91 Z-PARITETSKARTA — A4-granskning (READ-ONLY mot src/)
+# V91 Z-PARITETSKARTA — A4-granskning + LEVANDE RE-MÄTNING 2026-09-14
 
 **Uppdrag** (STYRELSE-ADMIN-MEGA "TILLÄGG VÅG 91" block A4): "Inventera
-BOKSTAVLIGEN varenda tjänst i zcode-binären (v83-kartan + live-sond mot
-app-servern): session/\*, workspace/\*, interaction/\*, plugins/skills/mcp,
-automation, usage, v4-grenen — jämför med studion, ranka luckor (P0
-kundnära / P1 kraft / P2 sen), dokumentera protokollform för varje lucka =
-underlag för våg 92+."
+BOGSTAVLIGEN varenda tjänst i zcode-binären … jämför med studion, ranka
+luckor (P0 kundnära / P1 kraft / P2 sen), dokumentera protokollform."
 
-**Källor:** `tool-results/v83-protokollkarta.md` (LAGEN — komplett metodkarta,
-LIVE-testad 2026-09-09) · `src/lib/studio/studio-transport.ts` (6 004 r,
-faktiska wire-anrop) · `src/components/ak1a/studio-chat.tsx` (7 536 r, UI-ytor)
-· `src/lib/studio/kommandon.ts` · samtliga 12 rutter under
-`src/app/api/studio/`. **Mätmetod:** deterministiskt skript
-`tool-results/v91-paritetskontroll.mjs` (grep:ar varje wire-metod i
-transporten) + manuell kodläsning av UI-ytor. Inget i src/ ändrades.
-**ÖGONBLICKSBILD:** mätningen är tagen MITT I våg 91 — block A1/A2/A3
-byggs parallellt av andra agenter (transporten/chat-filerna ändras under
-granskningen); A1d/A1b/A2-ytor som landar efter detta tillfälle syns
-alltså som SAKNAS ovan och skall mätas om med skriptet före våg 92.
+**DOKUMENTETS TVÅ LÄGEN:** §1–§5 är våg 91-granskningen (2026-09-09,
+oförändrad grund) där varje rad nu bär kolumnen **läge 2026-09-14** =
+re-mätning mot FAKTISK kod i repet (10X p1, "paritetsmatrisen levande").
+Protokollform-kolumnen från originalet är borttrimmad här — den lever
+oförändrad i `tool-results/v83-protokollkarta.md` (LAGEN) och i gamla
+revisionen av denna fil (git-historik).
 
-**Lägesord:** ✓ = IMPLEMENTERAD (transportmetod + API-rutt + UI-yta) ·
-~ = DELVIS (metod finnes men parameter-/täckningsgap, eller ersatt av annan
-väg) · ✗ = SAKNAS.Statuskolumnen är grundad i kod, inte gissning.
+**Källor 2026-09-14:** `src/app/api/studio/**` (23 route-filer, räkning
+nedan) · `src/lib/studio/studio-transport.ts` (8 663 rader, StudioTransport
+= 51 publika metoder + 1 egenskap) · `src/components/ak1a/studio-chat.tsx`
+(10 502 rader) · `src/lib/studio/kommandon.ts` (10 kommandon). Metod:
+direkt kodläsning + grep-verifiering av varje wire-koppling (transportmetod
+↔ rutt ↔ UI). Inget i src/ ändrades (READ-ONLY).
 
-**MÅTTBAT RESULTAT: 91 tjänster totalt (85 wire-metoder + 6 notiskanaler) —
-31 ✓ (34 %) · 3 ~ · 57 ✗ (63 %).** Detaljer per domän nedan.
+**Lägesord:** ✓ = IMPLEMENTERAD (transport + rutt + UI) · ~ = DELVIS
+(brygga/byggd del lever, men gap kvar) · ✗ = SAKNAS.
+
+**MÅTTBAT RESULTAT 2026-09-14: 91 tjänster — 43 ✓ (47 %) · 6 ~ (7 %) ·
+42 ✗ (46 %).** (Våg 91:s egen mätning: 31 ✓ / 3 ~ / 57 ✗ — netto +12
+implementerade sedan dess; vinnarna: hela v4-attachmentsgrenen, hela
+automation-trion create/list/delete, workspace-standardvärdena ×3,
+generateText, plugins/setEnabled, session/events-replay.)
+
+---
+
+## 0. FAKTISK KODINVENTERING 2026-09-14 (ny — sanningsägaren)
+
+### 0.1 Alla rutter under src/app/api/studio/ (23 st)
+
+| Rutt | Metoder | Gör | Landad i |
+|------|---------|-----|----------|
+| /api/studio/andringar | GET | Senaste turnens filändringar ±N | v83 |
+| /api/studio/anvandning | GET | usage/stats + session/usage (admin) | v85 F3 |
+| /api/studio/fardigheter | GET, POST | Skills/plugins/MCP-listor; POST = plugins/setEnabled | v85 F2 + v93 C1 |
+| /api/studio/filer | GET, POST, DELETE | Filträd + bildserving + nedladdning + tömning | v83 |
+| /api/studio/halsa | GET | Studions hälsa (KVD-yta) | v90 K1 |
+| /api/studio/installningar | GET, POST | Workspace-standardvärden (modell/tankestyrka/läge) | v93 C2 |
+| /api/studio/interaktion | GET, POST | Väntande interaktioner; svar permission/fråga | v83 B2 |
+| /api/studio/mal/status | GET | Mål-lägets snapshot (badge-sanning) | v91 A1b |
+| /api/studio/mal/stream | POST | Mål-loopens SSE (autonoma iterationer) | v85 F1 |
+| /api/studio/minne | GET, PUT, DELETE | Memories-filer (fs-väg, EJ protokoll) | v84 |
+| /api/studio/modeller | GET, POST | Modellkatalog; POST = bytModell (create-väg) | v82 |
+| /api/studio/session | GET, POST | Sessionsvy + 16 actions (ny/resume/stang/fork/rewind/compact/malSatt/malPausa/malRensa/malAteruppta/subagenter/avbrytTask/arbetsyta/lage/tankeniva …) | v82+ |
+| /api/studio/session/events | GET | session/events-replay (afterSeq) | v93 C2 |
+| /api/studio/sessions/disk | GET | tradHistorik — HELA huvudtråden ur zcodes egna sessions-DB | v148 |
+| /api/studio/stream | GET, POST | SSE-bryggan + prompt-sändning + bilder (skickaMedBild) | v81+ |
+| /api/studio/styrelse | GET, POST | AI-styrelsen som lag (motorn) | v91 A2 |
+| /api/studio/tjanster/automation | GET, POST, DELETE | automation/list + create + delete | v92 B1 |
+| /api/studio/tjanster/automation/pausa | POST | automation/update {enabled:false/true} | v92 B2 |
+| /api/studio/tjanster/bakgrund | GET | projection.backgroundJobs — HELA listan | v92 B1 |
+| /api/studio/tjanster/bakgrund/avbryt | POST | session/cancelBackgroundTask | v92 B1 |
+| /api/studio/tjanster/generera | POST | workspace/generateText (headless) | v91 A1d |
+| /api/studio/tjanster/webblasare | GET, POST | interaction/browserList + browserExecute | v91 A1d |
+| /api/studio/uppladdning | POST, GET | Multipart-uppladdning (30 MB-tak, 7 d rensning) | v91 |
+
+### 0.2 StudioTransport-interfacet — alla publika metoder (51 + 1 egenskap)
+
+`namn` ("appserver"|"mock") · sessionId · ensure · historik · skicka
+(extra: attachments/automationId/offPeak — StudioSkickaExtra) ·
+skickaMedBild · laddaUppBilaga (v4 begin→chunk→commit) · bytModell ·
+nySession · lasSessioner · compact · lasKontext · oppnaSession ·
+stangSession · forka · rewindTillTurn · lasMal · sattMal · rensaMal ·
+malStatus · prenumereraMal · pausaMal · aterupptaMal · sondMal ·
+lasSubagenter · avbrytBakgrundsTask · lasArbetsyta · lasSkills ·
+lasPlugins · lasMcp · lasUsage · lasFilandringar · vantaInteraktioner ·
+svarPermission · svarFraga · sattLage ("build"|"plan") · sattTankeNiva ·
+lasBakgrundsjobb (hela arrayen) · lasWebblasare · korWebblasare ·
+lasAutomationer · automationSkapa · automationUppdatera ·
+automationRadera · skickaAutomation · genereraText ·
+lasWorkspaceInstallningar · sparaStandardModell ·
+sparaStandardTankestyrka · sparaStandardLage · pluginSattAktiverad ·
+lasEventsFranSeq.
 
 ---
 
 ## 1. TJÄNSTEINVENTERING + PARITETSMÄTNING
 
-### 1.1 session/* — 21 tjänster (kartan §1 + handskakningen)
+### 1.1 session/* — 21 tjänster (18 ✓ · 2 ~ · 1 ✗)
 
-| # | Tjänst | Gör (1 rad) | Protokollform (ur kartan) | Status | Var i studion |
-|---|--------|-------------|---------------------------|--------|----------------|
-| 1 | session/create | Skapar session med modell/läge/tanke/persistens | {workspace, model?:xc, mode?, persistence?, thoughtLevel?, mcpServers?, toolAllow/Denylist?, importedHistory?} → snapshot `pce` | ✓ (param-gap, se §2) | transport `skapa()`; UI: "+ Nytt samtal", modellbytare, Inställningar-drawer |
-| 2 | session/resume | Återupptar persistent session | {sessionId, workspace?, runtimeModel?…} → snapshot | ✓ | transport `oppnaSession()`; UI: sidebar-klick på session (v84 B) |
-| 3 | session/list | Listar sessioner (+arkiv, limit) | {workspace?, includeArchived?, limit?} → {sessions:qBe[]} | ✓ | transport `lasSessioner()`; UI: sidebar-listan (v90 K3) |
-| 4 | session/read | Snapshot + projektion (kontext, pending, bakgrundsjobb) | {sessionId, messageLimit?, afterSeq?} → snapshot {projection:{contextUsed, backgroundJobs[], …}} | ✓ (bakgrundsjobbs-listan = bara räknare, se P0-4) | transport `lasKontext()`; UI: LIVE-raden/kontextrad i höger panel |
-| 5 | session/messages | Meddelandehistorik med delar (text/tool/file) | {sessionId, afterMessageId?, limit?} → {messages:[{info,parts:VBe}]} | ✓ | transport `historik()`; UI: chattflödet + återkoppling H1 (frånvarons historik) |
-| 6 | session/events | Händelsehistorik efter sekvensnummer | {sessionId, afterSeq?, limit?} → {events:vEt[]} | ✗ (P1) | — (ersatt av messages+subscribe-afterSeq; replay-vägen saknas) |
-| 7 | session/subscribe | Aktiverar live-flödet av session/event | {sessionId, deliveryKind:"desktop-continuous"\|"web-remote-replayable", afterSeq?, includeSnapshot?} | ✓ | transport `ensure()/oppnaSession()`; SSE-bryggan /api/studio/stream |
-| 8 | session/send | Skickar prompt (ASYNKRON — svar = turn.completed) | {sessionId, content, attachments?, browserAmbientContext?, expectedRevision?, automationId? ⊕ offPeakTaskId?…} → {accepted, stateRevision} | ✓ (param-gap, se §2) | transport `skicka()`; UI: composer (Enter), POST /api/studio/stream |
-| 9 | session/stop | Avbryter prompt + pausar mål | {sessionId} → {} | ✓ | transport `pausaMal()`/stäng ström; UI: "Pausa målet"-knappen |
-| 10 | session/cancelBackgroundTask | Avbryter bakgrundsjobb/subagent-task | {sessionId, taskId} → {cancelled, status, snapshot?} (Tkn-form i kartan) | ✓ | transport `avbrytBakgrundsTask()`; UI: Bakgrundsagenter-listans avbryt-knapp |
-| 11 | session/fork | Forkar vid turn/message/checkpoint | {sessionId, target:{kind…}, expectedRevision?} → {forkedSessionId, snapshot} | ✓ | transport `forka()`+`rewindTillTurn()` (v86 G5); UI: "⟲ Gå tillbaka hit" |
-| 12 | session/compact | Komprimerar kontext (kör som turn) | {sessionId, inputId?, instructions?, expectedRevision?} → {compact:{state}} | ✓ | transport `compact()`; UI: /komprimera + kontextknapp |
-| 13 | session/goal | Autonom mål-loop: show/set/replace/pause/resume/clear | {sessionId, action, objective?…} → {response, snapshot, startedTurn?} | ✓ | transport `lasMal/sattMal/rensaMal/pausaMal/aterupptaMal` (v85 F1); UI: mål-dialog, mål-panel, autonom banner |
-| 14 | session/close | Stänger session | {sessionId, expectedPersistence?} → {closed} | ✓ | transport `stangSession()`; UI: "Stäng samtal" + hushållning (v90 K1) |
-| 15 | session/setModel | Byter modell på LEVANDE session | {sessionId, model:xc, expectedRevision?…} → snapshot | ~ (P1) | metoden anropas EJ — `bytModell()` kasserar+skapar (create-väg, KVD-val v82); modellbyte = nytt sessionId, historiken lämnas |
-| 16 | session/setThoughtLevel | Tankestyrka (nothink/high/max bevisat) | {sessionId, thoughtLevel?, expectedRevision?…} → snapshot | ✓ | transport `sattTankeNiva()`; UI: Inställningar-drawer ⚙ |
-| 17 | session/setMode | Läge (protokollet: plan/build/edit/yolo/auto) | {sessionId, mode, expectedRevision?} → snapshot | ~ (P2) | transport `sattLage()` — typning "build"\|"plan" ENDAST; edit/yolo/auto exponeras ej |
-| 18 | session/updateRuntimeModelConfig | Byter runtime-modellkonfig levande | {sessionId, runtimeModel:$f, applyModelSelection?} → {changed} | ✗ (P2) | — |
-| 19 | session/subagents | Listar underagenter (kräver persistent session) | {sessionId, endedCursor?, endedLimit?} → {running[], ended{items[],nextCursor}} | ✓ | transport `lasSubagenter()` (ärlig tom-lista vid -32004); UI: Bakgrundsagenter-panelen |
-| 20 | session/usage | Tokenräkning per session | {sessionId} → {totalTokens, input/output/reasoning/cache…} | ✓ | transport `lasUsage()` (slås samman med usage/stats); UI: kontext/token-ytor + admin Utveckling |
-| 21 | session/requestRuntimePreferences | SERVER→KLIENT handskakning (MÅSTE svaras, 15 s) | {sessionId, scope} → {nativeSearchEnhancementsEnabled:false, memoryEnabled:false, askUserQuestionAutoResolutionEnabled:true, …} | ✓ | transport ProtokollKlientens autosvar (rad ~1058) |
+| # | Tjänst | Gör (1 rad) | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|-------------|--------|------------------|----------|
+| 1 | session/create | Skapar session med modell/läge/tanke/persistens | ✓ | ✓ | param-gap kvar (se §2) |
+| 2 | session/resume | Återupptar persistent session | ✓ | ✓ | oppnaSession; + v148: tråd-permanens återarmar mål |
+| 3 | session/list | Listar sessioner | ✓ | ✓ | + v148 sessions/disk (tradHistorik ur zcodes egen DB) |
+| 4 | session/read | Snapshot + projektion | ✓ | ✓ | P0-4 LÖST: hela backgroundJobs-arrayen parsas (lasBakgrundsjobb) |
+| 5 | session/messages | Meddelandehistorik med delar | ✓ | ✓ | även källa till lasFilandringar-fallback |
+| 6 | session/events | Händelsehistorik efter sekvensnummer | ✗ | ✓ | v93 C1/C2: lasEventsFranSeq + GET /session/events + replayTillKort i återkopplingen |
+| 7 | session/subscribe | Aktiverar live-flödet | ✓ | ✓ | SSE-brytgan /stream |
+| 8 | session/send | Skickar prompt asynkront | ✓ | ✓ | v92 B1: StudioSkickaExtra — attachments[] + automationId ⊕ offPeakTaskId lever; kvar: browserAmbientContext/expectedRevision/botDeliveryTarget |
+| 9 | session/stop | Avbryter prompt + pausar mål | ✓ | ✓ | |
+| 10 | session/cancelBackgroundTask | Avbryter bakgrundsjobb | ✓ | ✓ | nu även egen rutt: POST /tjanster/bakgrund/avbryt |
+| 11 | session/fork | Forkar vid turn/checkpoint | ✓ | ✓ | forka + rewindTillTurn (v86 G5) |
+| 12 | session/compact | Komprimerar kontext | ✓ | ✓ | expectedRevision fortfarande ej med (§2) |
+| 13 | session/goal | Autonom mål-loop (5 actions) | ✓ | ✓ | alla actions + sondMal (självläkning) + /mal/status + /mal/stream |
+| 14 | session/close | Stänger session | ✓ | ✓ | |
+| 15 | session/setModel | Byter modell på LEVANDE session | ~ | ~ | fortfarande create-väg (bytModell kasserar) — se P0-2 |
+| 16 | session/setThoughtLevel | Tankestyrka | ✓ | ✓ | + v93: sparaStandardTankestyrka (workspace-default) |
+| 17 | session/setMode | Läge build/plan/edit/yolo/auto | ~ | ~ | sattLage bär fortfarande endast "build"\|"plan"; men setDefaultMode (workspace) bär alla 5 via v93 C1 |
+| 18 | session/updateRuntimeModelConfig | Byter runtime-modellkonfig levande | ✗ | ✗ (P2) | orörd |
+| 19 | session/subagents | Listar underagenter | ✓ | ✓ | |
+| 20 | session/usage | Tokenräkning per session | ✓ | ✓ | |
+| 21 | session/requestRuntimePreferences | Handsskakning (måste svaras) | ✓ | ✓ | ProtokollKlientens autosvar |
 
-### 1.2 workspace/* — 12 tjänster (kartan §2)
+### 1.2 workspace/* — 12 tjänster (5 ✓ · 0 ~ · 7 ✗)
 
-| # | Tjänst | Gör | Protokollform | Status | Var i studion |
-|---|--------|-----|---------------|--------|----------------|
-| 1 | workspace/readState | Läges/modell/permission/tanke-inställningar + katalog + slash-kommandon | {workspace, runtimeModel?, preferWorkspaceDefaults?} → {settings, modelCatalog, slashCommands[]} | ✓ | transport `lasArbetsyta()`; UI: GET /api/studio/session (arbetsyta-info), modellrullistan (config.json + "vald" via session/read) |
-| 2 | workspace/generateText | Headless textgenerering UTAN session (ABORT-bara) | {workspace, modelRef, prompt ⊕ messages, tools?, maxOutputTokens?, operationId?} → {text, toolCalls?, usage?} | ✗ (P1) | — (A1d-lovat i våg 91; ej i kodbasen vid granskningstillfället) |
-| 3 | workspace/cancelGenerateText | Avbryter generateText-operation | {operationId} → {operationId, cancelled} | ✗ (P1) | — |
-| 4 | workspace/hooks/trustGrant | Godkänner workspace-hooks-bundle (digest-låst) | {workspace, bundleDigest:64hex, hookDeclarationDigest} → {accepted, reasonCode?} | ✗ (P1) | — |
-| 5 | workspace/updateProviderRegistry | Uppdaterar providerregistret | {workspace, registry:{revision, providers[]}} → {appliedProviderRevision, status} | ✗ (P2) | — |
-| 6 | workspace/updateInteractionPreferences | Interaktionsinställningar | (zod @~465k i källan) → snapshot | ✗ (P2) | — |
-| 7 | workspace/updateModelIoPreferences | Modell-IO-inställningar | — " — | ✗ (P2) | — |
-| 8 | workspace/upsertModelProvider | Lägg/uppdatera provider | — " — | ✗ (P2, begränsad se §5) | — |
-| 9 | workspace/removeModelProvider | Ta bort provider | — " — | ✗ (P2) | — |
-| 10 | workspace/setDefaultModel | Default-modell för workspacet | — " — | ✗ (P2) | — |
-| 11 | workspace/setDefaultThoughtLevel | Default-tankestyrka | — " — | ✗ (P2) | — |
-| 12 | workspace/setDefaultMode | Default-läge | — " — | ✗ (P2) | — |
+| # | Tjänst | Gör | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|-----|--------|------------------|----------|
+| 1 | workspace/readState | Läges-/modell-/behörighetsinställningar | ✓ | ✓ | + v93 C1: lasWorkspaceInstallningar (standardvärden, defensiv parsning) |
+| 2 | workspace/generateText | Headless textgenerering | ✗ | ✓ | v91 A1d + v92: genereraText + POST /tjanster/generera (styrelsemotorn använder) |
+| 3 | workspace/cancelGenerateText | Avbryter generateText-operation | ✗ | ✗ (P2) | nedgraderad — genereringen körs kort/synkront, operationId-behov ej påvisat |
+| 4 | workspace/hooks/trustGrant | Godkänner workspace-hooks-bundle | ✗ | ✗ (P1) | se P1-1 |
+| 5 | workspace/updateProviderRegistry | Uppdaterar providerregistret | ✗ | ✗ (P2) | orörd |
+| 6 | workspace/updateInteractionPreferences | Interaktionsinställningar | ✗ | ✗ (P2) | orörd |
+| 7 | workspace/updateModelIoPreferences | Modell-IO-inställningar | ✗ | ✗ (P2) | orörd |
+| 8 | workspace/upsertModelProvider | Lägg/uppdatera provider | ✗ | ✗ (P2, R2) | nycklar = kundens veto (se §5.2) |
+| 9 | workspace/removeModelProvider | Ta bort provider | ✗ | ✗ (P2) | orörd |
+| 10 | workspace/setDefaultModel | Default-modell | ✗ | ✓ | v93 C1/C2: sparaStandardModell + POST /installningar |
+| 11 | workspace/setDefaultThoughtLevel | Default-tankestyrka | ✗ | ✓ | v93 C1/C2: sparaStandardTankestyrka |
+| 12 | workspace/setDefaultMode | Default-läge | ✗ | ✓ | v93 C1/C2: sparaStandardLage — bär alla 5 lägen (build/plan/edit/yolo/auto) |
 
-### 1.3 plugins/* — 17 tjänster (kartan §2)
+### 1.3 plugins/* — 17 tjänster (2 ✓ · 0 ~ · 15 ✗)
 
-| # | Tjänst | Gör | Protokollform | Status | Var i studion |
-|---|--------|-----|---------------|--------|----------------|
-| 1 | plugins/list | Installerade plugins + komponenter + diagnostik | {workspace, configScope?} → {plugins:[{id,version,enabled,skillCount,components[]}], diagnostics[]} | ✓ | transport `lasPlugins()` (v85 F2); UI: Färdigheter ⚡-panelen, /fardigheter |
-| 2 | plugins/overview | Marknadsplatser, tillgängliga/aktuella/återställbara | {workspace, configScope?} → {marketplaces[], available/installed/restorableBuiltins[], capability} | ✗ (P2) | — |
-| 3 | plugins/referenceCatalog | Full referenskatalog plugins (authority session/workspace) | {workspace, sessionId?} → {authority, plugins[]} | ✗ (P2) | — |
-| 4 | plugins/setEnabled | Toggla plugin på/av | {workspace, pluginId, enabled, scope} → snapshot | ✗ (P1 — v85 F2-lovade toggling) | — |
-| 5 | plugins/marketplace/add | Lägg till marknadsplats | (zod kring `rr`) → driftresultat | ✗ (P2, begränsad se §5) | — |
-| 6 | plugins/marketplace/remove | Ta bort marknadsplats | — " — | ✗ (P2) | — |
-| 7 | plugins/marketplace/update | Uppdatera marknadsplats | — " — | ✗ (P2) | — |
-| 8 | plugins/install | Installera plugin | — " — | ✗ (P1) | — |
-| 9 | plugins/uninstall | Avinstallera | — " — | ✗ (P1) | — |
-| 10 | plugins/update | Uppdatera plugin | — " — | ✗ (P2) | — |
-| 11 | plugins/restoreBuiltin | Återställ inbyggt plugin | — " — | ✗ (P2) | — |
-| 12 | plugins/configure | Konfigurera plugin | — " — | ✗ (P2) | — |
-| 13 | plugins/resetConfig | Nollställ konfig | — " — | ✗ (P2) | — |
-| 14 | plugins/validate | Validera konfig | — " — | ✗ (P2) | — |
-| 15 | plugins/describe | Beskriv konfig-yta | — " — | ✗ (P2) | — |
-| 16 | plugins/cancelOperation | Avbryt pågående driftoperation | {operationId} → — | ✗ (P2) | — |
-| 17 | plugins/resolveSuggestedReference | Lös referens → plugin/skill | — " — | ✗ (P2) | — |
+| # | Tjänst | Gör | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|-----|--------|------------------|----------|
+| 1 | plugins/list | Installerade plugins + diagnostik | ✓ | ✓ | Färdigheter-panelen |
+| 2 | plugins/overview | Marknadsplatser + tillgängliga | ✗ | ✗ (P2; källa för P0-3) | behövs som "tillgängliga"-källa vid install |
+| 3 | plugins/referenceCatalog | Full referenskatalog | ✗ | ✗ (P2) | orörd |
+| 4 | plugins/setEnabled | Toggla plugin på/av | ✗ | ✓ | v93 C1: pluginSattAktiverad + POST /fardigheter (form-retry utan scope) |
+| 5 | plugins/marketplace/add | Lägg till marknadsplats | ✗ | ✗ (P2) | orörd |
+| 6 | plugins/marketplace/remove | Ta bort marknadsplats | ✗ | ✗ (P2) | orörd |
+| 7 | plugins/marketplace/update | Uppdatera marknadsplats | ✗ | ✗ (P2) | orörd |
+| 8 | plugins/install | Installera plugin | ✗ | ✗ (P1) | se P0-3 |
+| 9 | plugins/uninstall | Avinstallera | ✗ | ✗ (P1) | se P0-3 |
+| 10 | plugins/update | Uppdatera plugin | ✗ | ✗ (P2) | orörd |
+| 11 | plugins/restoreBuiltin | Återställ inbyggt plugin | ✗ | ✗ (P2) | orörd |
+| 12 | plugins/configure | Konfigurera plugin | ✗ | ✗ (P2) | orörd |
+| 13 | plugins/resetConfig | Nollställ konfig | ✗ | ✗ (P2) | orörd |
+| 14 | plugins/validate | Validera konfig | ✗ | ✗ (P2) | orörd |
+| 15 | plugins/describe | Beskriv konfig-yta | ✗ | ✗ (P2) | orörd |
+| 16 | plugins/cancelOperation | Avbryt driftoperation | ✗ | ✗ (P2) | orörd |
+| 17 | plugins/resolveSuggestedReference | Lös referens | ✗ | ✗ (P2) | orörd |
 
-### 1.4 skills + mcp + usage — 3 tjänster (kartan §2)
+### 1.4 skills + mcp + usage — 3 tjänster (3 ✓)
 
-| # | Tjänst | Gör | Protokollform | Status | Var i studion |
-|---|--------|-----|---------------|--------|----------------|
-| 1 | skills/referenceCatalog | Agentens alla skills (id "glm:…", scope, enabled) | {workspace, sessionId?} → {authority, skills[]} | ✓ | transport `lasSkills()`; UI: Färdigheter ⚡ (v85 F2) |
-| 2 | mcp/list | MCP-serverstatus + verktygsantal | {workspace, mcpServers?, mode?} → {statuses:Record<namn,{status,transport,toolCount…}>} | ✓ | transport `lasMcp()`; UI: Färdigheter-MCP-sektion |
-| 3 | usage/stats | Förbrukning per range (bevisat 8,35 M tkn/7d) | {range:"all"\|"7d"\|"30d", timeZone?} → {summary{totalTokens, toolCallCount…}, byModel?} | ✓ | transport `lasUsage()` (merge med session/usage); UI: /api/studio/anvandning → admin Utveckling-panelen |
+| # | Tjänst | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|--------|------------------|----------|
+| 1 | skills/referenceCatalog | ✓ | ✓ | lasSkills (Färdigheter ⚡) |
+| 2 | mcp/list | ✓ | ✓ | lasMcp |
+| 3 | usage/stats | ✓ | ✓ | lasUsage → /anvandning (admin) |
 
-### 1.5 automation/* — 5 tjänster (kartan §2) — ALLA SAKNAS
+### 1.5 automation/* — 5 tjänster (3 ✓ · 1 ~ · 1 ✗)
 
-| # | Tjänst | Gör | Protokollform | Status |
-|---|--------|-----|---------------|--------|
-| 1 | automation/create | Skapa cron-styrd autonom uppgift ($je: title, cronExpr, prompt, model?, mode?, targetTaskId?, enabled, maxRuns?) | → {automation} | ✗ (P0) |
-| 2 | automation/update | Uppdatera (t.ex. targetTaskId-bindning) | {…automationfält, targetTaskId} → — | ✗ (P0) |
-| 3 | automation/checkTaskBinding | Är uppgiften bunden? | → {bound:bool} | ✗ (P0) |
-| 4 | automation/list | Lista automatons (nextRunAt, runCount, lifecycleStatus) | → {automations[]} | ✗ (P0) |
-| 5 | automation/delete | Ta bort automation | {automationId} → {deleted} | ✗ (P0) |
+| # | Tjänst | Gör | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|-----|--------|------------------|----------|
+| 1 | automation/create | Skapa cron-styrd autonom uppgift | ✗ | ✓ | v92 B1: automationSkapa + POST /tjanster/automation; -32601 ⇒ ärlig 501 |
+| 2 | automation/update | Uppdatera (targetTaskId m.fl.) | ✗ | ~ | endast enabled-paus/återaktivering (/tjanster/automation/pausa); övriga fält ej exponerade — se P1-4 |
+| 3 | automation/checkTaskBinding | Är uppgiften bunden? | ✗ | ✗ (P2) | hjälptjänst; listans lifecycleStatus täcker kundvärdet |
+| 4 | automation/list | Lista automatons (nextRunAt, runCount) | ✗ | ✓ | lasAutomationer + GET; UI-panel lever (92 träffar i studio-chat.tsx) |
+| 5 | automation/delete | Ta bort automation | ✗ | ✓ | automationRadera + DELETE ?id= |
 
-### 1.6 interaction/* — server→klient-requests, 6 tjänster utöver handskakningen (kartan §3)
+### 1.6 interaction/* — 6 tjänster (3 ✓ · 2 ~ · 1 ✗)
 
-| # | Tjänst | Gör | Svar-form (result) | Status | Var i studion |
-|---|--------|-----|--------------------|--------|----------------|
-| 1 | interaction/requestPermission | Verktygsgodkännande (riskgraded, options färdiga) | z2: {decision:"allow"\|"deny"\|"escalate"\|"modify", reason?, modifiedInput?, permissionUpdates?} | ✓ | transport `svarPermission()` + 30 s-eskalationsdefault; UI: godkännandedialog MED diff-förhandsvisning (v84 C), POST /api/studio/interaktion |
-| 2 | interaction/requestUserInput | Fråga användaren (text/choice/confirm) | {value?} \| {cancelled:true} | ✓ | transport `svarFraga()`; UI: frågekort i chatten |
-| 3 | interaction/requestProviderRuntimeHeaders | Provider-relay-headers | {headers} | ✗ (P1 robusthet — obesvarad request kan hänga) | transporten svarar EJ idag (endast MCP-varianten besvaras) |
-| 4 | interaction/requestOfficialMcpAuthHeaders | OAuth-headers för officiell MCP | {} = hoppa över | ✓ | transportens autosvar {} (LIVE ×6 i kartan) |
-| 5 | interaction/browserList | Lista agentens webbläsarflikar | {sessionId?} → {browsers[]} | ✗ (P0) | — |
-| 6 | interaction/browserExecute | Kör kommando i webbläsaren | {browserId, browserGeneration, command, sessionId?} → _Z | ✗ (P0) | — |
+| # | Tjänst | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|--------|------------------|----------|
+| 1 | interaction/requestPermission | ✓ | ✓ | svarPermission + dialog med diff (v84 C) |
+| 2 | interaction/requestUserInput | ✓ | ✓ | svarFraga + frågekort |
+| 3 | interaction/requestProviderRuntimeHeaders | ✗ | ✗ (P0) | fortfarande 0 träffar i transporten (grep 2026-09-14) — obesvarad request riskerar 15 s-häng — se P0-1 |
+| 4 | interaction/requestOfficialMcpAuthHeaders | ✓ | ✓ | autosvar {} |
+| 5 | interaction/browserList | ✗ | ~ | bryggan BYGGD (lasWebblasare + GET /tjanster/webblasare + UI), men aktuell agent-binär saknar metoden ⇒ 501 i drift (A3c-kontraktet: UI dold) — se P1-5 |
+| 6 | interaction/browserExecute | ✗ | ~ | samma: korWebblasare + POST lever, binären svarar -32601 ⇒ 501 |
 
-### 1.7 Notiskanaler — 6 st (kartan §4)
+### 1.7 Notiskanaler — 6 st (2 ✓ · 1 ~ · 3 ✗)
 
-| # | Kanal | Gör | Status | Var i studion |
-|---|-------|-----|--------|----------------|
-| 1 | session/event (24 eventtyper) | Helhet: turner, delar, streaming, verktyg, permission… | ✓ (live-konsumtion av ~8 typer: turn.started/completed, tool.updated, model.streaming, part.delta + tool.*/model.response.completed-legacy; permission/userInput hanteras på server-request-vägen i stället; titleUpdated/steer*/checkpoint/rewind/streamRecovery/message-part-upsert konsumeras ej — historik hämtas via session/messages efter turn) | transport `påNotis()`-switch (rad ~4042); UI: verktygskort, streaming, rundstatistik (v83 B1) |
-| 2 | state.updated | Revision/patch (status, activeToolCalls, backgroundJobs-räknare) | ✓ | transport status-mappning (rad ~4131); UI: statusraden |
-| 3 | computer-use/operation-event | Computer-use-operationer | ✗ (P2, se §5 — kanalen finns ej i deploymenten) | — |
-| 4 | process/mcpTelemetry | MCP-processtelemetri | ✗ (P2) | — |
-| 5 | v4/telemetry/event | Detaljerad telemetri (kommer ÄVEN i legacy-läge) | ✗ (P2) | — |
-| 6 | v4/conversation/frame (server-push) | Ops row.appended/upserted/removed/delta/state.updated | ~ | mottas; op "state.updated" spåras för v4-revision (v85 F4); rader hämtas via rowsRange i stället för att renderas ur frame-op |
+| # | Kanal | våg 91 | läge 2026-09-14 | Notering |
+|---|-------|--------|------------------|----------|
+| 1 | session/event (24 typer) | ✓ | ✓ | bredare nu: mål-loopens mal_iteration/verktyg_kort/runda via prenumereraMal (v85 F1) + streaming (v83 B1); titleUpdated/steer*/checkpoint fortfarande okonsumerade |
+| 2 | state.updated | ✓ | ✓ | + v4-revisionsspårning (v85 F4) |
+| 3 | computer-use/operation-event | ✗ | ✗ (P2) | kanalen finns ej i deploymenten (§5.3) |
+| 4 | process/mcpTelemetry | ✗ | ✗ (P2) | orörd |
+| 5 | v4/telemetry/event | ✗ | ✗ (P2) | orörd |
+| 6 | v4/conversation/frame | ~ | ~ | mottas; state.updated-op spåras; rader hämtas via rowsRange |
 
-### 1.8 v4-grenen — 21 klientmetoder (kartan §4F)
+### 1.8 v4-grenen — 21 klientmetoder (7 ✓ · 0 ~ · 14 ✗)
 
-| # | Tjänst | Gör | Status | Var i studion |
-|---|--------|-----|--------|----------------|
-| 1 | v4/connection/flow | Flödeskontroll (saturated/drained/closed) — INTE handskakning | ✗ (P2) | — (dokumenterad i transportens header v85 F4) |
-| 2 | v4/controller/subscribe | Prenumerera styrenhet | ✗ (P2) | — |
-| 3 | v4/controller/resync | Synka om styrenhet | ✗ (P2) | — |
-| 4 | v4/controller/unsubscribe | Avsluta prenumeration | ✗ (P2) | — |
-| 5 | v4/conversation/subscribe | Prenumerera samtalsrader (kräver persistent session) | ✓ | transport v4-kedjan (v85 F4, LIVE-bevisad) |
-| 6 | v4/conversation/resync | Synka om konversation | ✗ (P2) | — |
-| 7 | v4/conversation/unsubscribe | Avsluta samtalsprenumeration | ✗ (P2) | — |
-| 8 | v4/conversation/rowsRange | Samtalsrader (turnHeader-target) | ✓ | transport `lasFilandringar()` steg 4 |
-| 9 | v4/conversation/plans | Plandata (plan-lägets struktur) | ✗ (P2) | — |
-| 10 | v4/conversation/fileChanges | Filändringar MED unified-patches/radnummer | ✓ (PRIMÄR med Write/Edit-fallback) | transport `lasFilandringar()`; UI: Ändringspanel + F5 inline-kodvy |
-| 11 | v4/conversation/fileRewindPreview | Förhandsvisning före fil-rewind | ✗ (P1) | — |
-| 12 | v4/usage/stats | Förbrukning (v4-form) | ✗ (P2) | — |
-| 13 | v4/conversation/usage | Förbrukning per konversation | ✗ (P2) | — |
-| 14 | v4/attachment/begin | Påbörja bilagauppladdning | ✗ (P0) | — |
-| 15 | v4/attachment/chunk | Strömma bilagebyten | ✗ (P0) | — |
-| 16 | v4/attachment/commit | Slutför bilaga | ✗ (P0) | — |
-| 17 | v4/attachment/abort | Avbryt bilaga | ✗ (P0) | — |
-| 18 | v4/attachment/read | Läs bilaga | ✗ (P0) | — |
-| 19 | v4/attachment/previewSource | Förhandsgranska bilagkälla | ✗ (P0) | — |
-| 20 | v4/command | Kör kommando (v4-väg) | ✗ (P2) | — |
-| 21 | v4/commands/query | Fråga kommandon | ✗ (P2) | — |
+| # | Tjänst | våg 91 | läge 2026-09-14 | Notering |
+|---|--------|--------|------------------|----------|
+| 1 | v4/connection/flow | ✗ | ✗ (P2) | orörd |
+| 2 | v4/controller/subscribe | ✗ | ✗ (P2) | orörd |
+| 3 | v4/controller/resync | ✗ | ✗ (P2) | orörd |
+| 4 | v4/controller/unsubscribe | ✗ | ✗ (P2) | orörd |
+| 5 | v4/conversation/subscribe | ✓ | ✓ | v4-kedjan (v85 F4) |
+| 6 | v4/conversation/resync | ✗ | ✗ (P2) | orörd |
+| 7 | v4/conversation/unsubscribe | ✗ | ✗ (P2) | orörd |
+| 8 | v4/conversation/rowsRange | ✓ | ✓ | target = senaste turnHeader-raden (sond3-bevisat) |
+| 9 | v4/conversation/plans | ✗ | ✗ (P2) | orörd |
+| 10 | v4/conversation/fileChanges | ✓ | ✓ | lasFilandringarV4 = PRIMÄR väg (revision + logEpoch + retry) med Write/Edit-fallback-motor |
+| 11 | v4/conversation/fileRewindPreview | ✗ | ✗ (P1) | se P1-2 |
+| 12 | v4/usage/stats | ✗ | ✗ (P2) | orörd |
+| 13 | v4/conversation/usage | ✗ | ✗ (P2) | orörd |
+| 14 | v4/attachment/begin | ✗ | ✓ | v92 B1 (P0-1 LÖST): laddaUppBilaga — bilder ÄKTA bilagor, E2E-bevisade (våg 92) |
+| 15 | v4/attachment/chunk | ✗ | ✓ | 512 kB base64-bitar i samma flöde |
+| 16 | v4/attachment/commit | ✗ | ✓ | svar → bilageIdUrSvar → session/send attachments[] |
+| 17 | v4/attachment/abort | ✗ | ✓ | anropas vid chunk-fel (transport rad ~5887) |
+| 18 | v4/attachment/read | ✗ | ✗ (P2) | läs-sidan; barnets Read täcker kundvärdet |
+| 19 | v4/attachment/previewSource | ✗ | ✗ (P2) | orörd |
+| 20 | v4/command | ✗ | ✗ (P2) | orörd |
+| 21 | v4/commands/query | ✗ | ✗ (P2) | orörd |
 
-**Kartan §4G (övriga strängar: todo.read/write, task.upserted, compact.\*,
-hook.run.failed, agent.message.send m.fl.)** = interna/telemetri-strängar utan
-wire-garanti enligt kartans egen not — räknas INTE som tjänster här. Fakta §6.1
-bekräftad i kod: ingen task/*- eller memory/*-domän finns; "minne" i studion
-är filesystem-läsning av ~/.zcode/cli/memories (se §3).
-
----
-
-## 2. PARAMETARNIVÅ-GAP PÅ IMPLEMENTERADE METODER (fynd ur kodläsning)
-
-Följande protokollfält finns i kartan men används EJ av transporten (grep:
-förekommer bara i kommentarer eller inte alls):
-
-- **session/send**: `attachments`, `browserAmbientContext`, `automationId`,
-  `offPeakTaskId`/`offPeakRunType`, `expectedRevision` (optimistisk
-  låsning), `botDeliveryTarget` — transporten skickar {sessionId, content}
-  ENDAST (studio-transport.ts rad ~4273).
-- **session/create**: `importedHistory` (claudeCode-import), `mcpServers`,
-  `toolAllowlist`/`toolDenylist`, `titleGenerationEnabled`, `parentSessionId`
-  — create anropas med workspace/model/mode/thoughtLevel/persistence endast.
-- **session/compact**: `expectedRevision` saknas i anropet.
-- **session/setMode**: UI/typning bär "build"|"plan" — protokollets
-  edit/yolo/auto går ej att välja.
-
-## 3. STUDIO-STÖDTJÄNSTER (icke-protokoll — komplett lägesbild)
-
-Byggda och levande (stödjer ovan): `/api/studio/session` (GET + 15 POST-actions
-inkl. malSatt/malPausa/subagenter/avbrytTask/arbetsyta/läge/tankestyrka),
-`/api/studio/stream` (SSE + historik + H1-återkoppling), `/modeller`,
-`/interaktion`, `/fardigheter`, `/minne` (memories-filer: lista/läs/skriv/
-radera med backup — EJ protokoll, fs-väg), `/filer` (filträd + bildserving +
-nedladdning + tömning), `/uppladdning` (multipart, 30 MB-tak, 7 d rensning),
-`/andringar` (GET senaste turnens ±N), `/anvandning`, `/halsa` (v90 K1),
-`/mal/stream` (mål-SSE). Kommandon: /help /ny /modell /komprimera /filer
-/fardigheter /sparad (kommandon.ts).
-
-**Pågående våg 91 (annat block — SAKNAS i kodbasen vid detta
-granskningstillfälle):** `/api/studio/tjanster/*` (A1d: bakgrundsjobb,
-webbläsare, automation, generateText-bryggor), `/api/studio/mal/status` (A1b),
-`/api/studio/styrelse` (A2). OBS: `src/app/api/styrelse/*` (agendas/autonom/
-beslut/djup/kommunikation) är det ÄLDRE AI-organ-API:et — skilt från A2:s
-studio-styrelsemotor.
+**Kartan §4G** (interna/telemetri-strängar utan wire-garanti) räknas
+fortfarande INTE som tjänster. Fakta oförändrad: ingen task/*- eller
+memory/*-domän finns; "minne" i studion är filesystem-läsning av
+~/.zcode/cli/memories (rutt /api/studio/minne).
 
 ---
 
-## 4. GAP-RANKNING — saknade tjänster med implementeringsskiss (våg 92+)
+## 2. PARAMETARNIVÅ-GAP PÅ IMPLEMENTERADE METODER (re-mätt 2026-09-14)
 
-### P0 — kundvärde direkt (bilder, bakgrundsjobb, webbläsare, automation)
-
-**P0-1. BILDER I PROTOKOLLET — v4/attachment/{begin,chunk,commit,abort,read,
-previewSource} (6 st) + session/send.attachments.**
-Transport: `skickaBilaga(sokvag)`: läs fil → begin → chunk-a (bas64, t.ex.
-512 kB) → commit → attachmentId; `skicka()` utökas med attachments[] när
-dylikt id finns (A1d:s fs-fallback-sökvägsreferens blir reserv).
-Endpoint: POST /api/studio/tjanster/bilaga {sokvag} → {attachmentId};
-UI: composerens 📎-knapp + drag/paste går först protokollvägen, miniatyrer
-visar källa "protokoll|fs" (same thumbnail-rendering som today).
-
-**P0-2. WEBBLÄSARE — interaction/browserList + browserExecute (+ send.
-browserAmbientContext {tabCount,currentUrl}).**
-Transport: hantera de bägge server-requesterna i serverRequestHanteraren
-(svara mot en intern kö) + egna anrop för list/exec; browserGeneration-cache.
-Endpoint: GET /api/studio/tjanster/webblasare (list), POST …/webblasare/
-kör {browserId, command}; UI: "Webbläsare"-drawer i höger panelen (fliklist,
-kommandofält, resultattruncat) — dold om 501 (A3c-kontraktet).
-
-**P0-3. AUTOMATION — automation/{create,update,checkTaskBinding,list,delete} (5 st).**
-Transport: `lasAutomationer()`, `skapaAutomation({title,cronExpr,prompt,
-model?,mode?})`, `uppdateraAutomation`, `raderaAutomation` — raka
-protokollFraga-bryggor; kräver LEVANDE klient men egen session (samma mönster
-som lasSkills).
-Endpoint: GET/POST/PATCH/DELETE /api/studio/tjanster/automation;
-UI: "Automation"-drawer: lista (nextRunAt, runCount, lifecycleStatus),
-skapa-formulär med cron-förklaring, enable/disable-toggle, ta bort.
-
-**P0-4. BAKGRUNDSJOBB-FULLVY — projection.backgroundJobs (Tkn-listan:
-taskId, command, pid, status, outputTail, cancellable…).**
-Transport: `lasBakgrundsjobb()` ur session/read-projektionen (fältet finns
-redan i patch-hanteraren som räknare rad ~4156) + poll vid tool.updated
-progress; avbryt via befintlig cancelBackgroundTask.
-Endpoint: GET /api/studio/tjanster/bakgrundsjobb {sessionId?};
-UI: "Bakgrundsjobb"-drawer: kort per jobb (PID/kommando/outputTail/
-stderrTail), avbryt-knapp, fästa i höger panelens terminal-vy.
-
-**P0-5. AUTONOMI-KOPLING — session/send {automationId ⊕ offPeakTaskId,
-offPeakRunType} (param-gap på implementerad metod).**
-Transport: `skicka(prompt, {automationId?, offPeak?})` — mutual-exclusive-
-validering enligt kartan §1; kopplas till P0-3:s execution-spår.
-Endpoint: POST /api/studio/stream {prompt, automationId?};
-UI: automatons körningar syns i sessionslistan (badge "auto"), A1b-status
-visar vilken automation som äger pågående turn.
-
-### P1 — kraft (hooks/trust, generateText, events-replay m.m.)
-
-**P1-1. workspace/generateText + cancelGenerateText.** Transport:
-`genereraText({prompt|messages, modelRef, tools?, maxOutputTokens?})` med
-operationId + `avbrytGenerering(operationId)`; Endpoint: POST /api/studio/
-tjanster/textgen (+ DELETE ?operationId); UI: styrelsemotorn A2 anropar
-intern väg; panel "Snartext" för engångssammanfattningar utan session.
-
-**P1-2. workspace/hooks/trustGrant.** Transport: `litaHooks(bundleDigest,
-hookDeclarationDigest)` — digesterna måste hämtas ur aktuellt fel/diagnostik;
-Endpoint: POST /api/studio/tjanster/hooks-trust; UI: godkännandekort i
-interaktionsflödet ("Förtroende för workspace-hooks: [digest-förkort]")
-med reasonCode-mappning till svenska förklaringar.
-
-**P1-3. session/events (replay).** Transport: `lasEvents(afterSeq, limit)` —
-kompletterar messages vid reconnect (H1-förbättring: exakta tool.updated/
-streaming-händelser från frånvaron, inte bara färdiga delar); Endpoint: GET
-/api/studio/session?action=events&afterSeq=; UI: återkopplingens
-"frånvaro-banner" bygger på events i stället för enbart historik-rader.
-
-**P1-4. plugins/setEnabled + install + uninstall.** Transport:
-`sattPluginAktig(pluginId, enabled, scope)`, `installeraPlugin`,
-`avinstalleraPlugin` (driftsvar kommer som operation/snapshot); Endpoint:
-POST /api/studio/tjanster/plugins {action}; UI: Färdigheter-panelens plugin-
-kort får på/av-switch + installera-knapp (v85 F2:s lösta löfte).
-
-**P1-5. interaction/requestProviderRuntimeHeaders — svara (robusthet).**
-Transport: autosvar {} (samma mönster som MCP-varianten) tills äkta headers
-finns; Endpoint: ingen (transport-intern); UI: ingen — hindrar 15 s-häng
-när servern frågar.
-
-**P1-6. session/setModel på levande session + mode edit/yolo/auto.**
-Transport: `bytModellLevande(model)` (behåll sessionId+historik) + bredda
-`sattLage`-typningen; Endpoint: POST /api/studio/modeller {levande:true};
-UI: Inställningar-drawern: "byt utan att tappa historiken"-läge + lägesval
-edit/yolo/auto med varningstext för yolo.
-
-**P1-7. v4/conversation/fileRewindPreview.** Transport: `forhandsvisningRewind
-(target)` före fork; Endpoint: ingår i /api/studio/session action=rewind som
-?option=preview; UI: "⟲ Gå tillbaka hit"-dialogen visar ±diff-förhands-
-granskningen INNAN fork (natural par till v84 C:s permission-diff).
-
-### P2 — sen (telemetri, inställningar, övrigt)
-
-- **Workspace-inställningar (8 st):** setDefaultModel/setDefaultThoughtLevel/
-  setDefaultMode/updateProviderRegistry/upsertModelProvider/removeModelProvider/
-  updateInteractionPreferences/updateModelIoPreferences. Skiss: transport-
-  bryggor + POST /api/studio/tjanster/installningar; UI: "Standardvärden"-
-  sektion i Inställningar-drawern (gäller NEXT session; create bär redan
-  valen).
-- **Plugins-drift övrigt (13 st):** marketplace/add|remove|update, update,
-  restoreBuiltin, configure, resetConfig, validate, describe, cancelOperation,
-  resolveSuggestedReference, overview, referenceCatalog. Skiss: en gemensam
-  POST /api/studio/tjanster/plugins {action} dispatch + "Marknadsplatser"-
-  flik i Färdigheter (overview-källa), cancelOperation kopplas till en
-  global avbryt-knapp.
-- **v4-övrigt (14 st):** command, commands/query, plans, usage/stats,
-  conversation/usage, controller/subscribe|resync|unsubscribe, connection/
-  flow, conversation/resync|unsubscribe, attachment/read (läs-sidan av P0-1).
-  Skiss: när v4-grenen gått i produktion stabilt: v4/command-brygga till
-  kommandon.ts (server-side validering), plans → plan-lägets trädvy i höger
-  panelen.
-- **Telemetrikanaler (3 st):** computer-use/operation-event, process/
-  mcpTelemetry, v4/telemetry/event. Skiss: påNotis-loggning + GET /api/
-  studio/halsa?telemetry=1 (sista N händelser) — observability-utökning av
-  v90 K1; ingen egen UI nödvändig (diagnostik-yta).
-- **session/updateRuntimeModelConfig:** skiss: ersättningsväg när provider-
-  revision ändrats (kopplas till P2-providerregistret ovan).
+- **session/send** — ✅ LÖST till största delen (v92 B1): `attachments[]`
+  (v4-refs) samt `automationId ⊕ offPeakTaskId + offPeakRunType` bärs via
+  StudioSkickaExtra, med form-avvisnings-nedgradering (-32602 → vanlig
+  skicka en gång). **Kvar:** `browserAmbientContext`, `expectedRevision`,
+  `botDeliveryTarget`.
+- **session/create** — oförändrat gap: `importedHistory`, `mcpServers`,
+  `toolAllowlist`/`toolDenylist`, `titleGenerationEnabled`,
+  `parentSessionId` används ej (create bär workspace/model/mode/
+  thoughtLevel/persistence).
+- **session/compact** — `expectedRevision` saknas fortfarande i anropet.
+- **session/setMode** — `sattLage` bär fortfarande endast "build"|"plan"
+  (protokollets edit/yolo/auto går endast via workspace/setDefaultMode).
 
 ---
 
-## 5. TJÄNSTER SOM INTE (fullt) KAN BYGGAS — ärlig lista med orsak
+## 3. STUDIO-STÖDTJÄNSTER (icke-protokoll — komplett lägesbild 2026-09-14)
 
-1. **plugins/marketplace/add för autentiserade källor + OAuth-MCP-servrar**
-   (t.ex. anslutning av gmail/slack-MCP:er via ZCode-konto): kräver ZCode-
-   relay-autentisering — autentiseringsheadrarna produceras av Z:s konto-
-   upplevelse (requestProviderRuntimeHeaders/requestOfficialMcpAuthHeaders
-   bär äkta tokens). Studion svarar {} = "hoppa över" ( rätt default):
-   publika källor (zcode-plugins-official) fungerar, auth-krävande kan EJ
-   aktiveras härifrån.
-2. **workspace/upsertModelProvider för icke-zai-providers**: protokollvägen
-   finns men relayer utan API-nycklar är oanvändbara; nycklar ägs av ZCode-
-   kontot/leverantören. zai är förkonfigurerat på servern (5 GLM-modeller) —
-   därav fungerar modellbytandet. Att lägga tredjepartsproviders kräver
-   kundägda nycklar + säker hantering = styrelsebeslut (R2: API-nycklar =
-   existentiellt, VÄNTAR KUND).
-3. **computer-use/operation-event**: kräver computer-use-backend aktiv i
-   ZCode-klienten (fjärrstyrningssession). I app-server-läge på Contabo
-   finns ingen sådan session — kanalen förblir tyst oavsett vad studion
-   lyssnar efter. Kan bara passivt loggas om den dyker upp.
-4. **Kostnad i valuta (SEK/USD) ur usage-stats**: protokollet ger tokens/
-   räknare, ALDRIG priser. En kostnadsrad = egen pristabell i studion
-   (uppskattning, tydligt märkt) — byggbar approximativt, inte protokoll-
-   sanning.
-5. **importedHistory (claudeCode-import)**: metoden är byggbar men kräver
-   exportfiler från kundens claudeCode-installation — datan ägs utanför
-   systemet; en engångsimportväg, inte en tjänst studion kan självständigt
-   fylla.
-6. **Off-peak-schemaläggning på ZCode Cloud**: automation/körning sker i
-   app-server-processen på Contabo (fungerar lokalt där barnet lever), men
-   molnside-funktioner (t.ex. nextRunAt-beräkning om servern sover, ev.
-   Z-kontobundna off-peak-kvoter) kan avvika — hanteras med ärlig status-
-   visning i P0-3 snarare än löftestext.
+Alla lever: `/session` (GET + 16 POST-actions), `/stream` (SSE + historik +
+bilder), `/modeller`, `/interaktion`, `/fardigheter` (GET+POST-toggle),
+`/minne` (fs-väg), `/filer`, `/uppladdning`, `/andringar`, `/anvandning`,
+`/halsa`, `/mal/stream`, `/mal/status` (v91 A1b), `/session/events`
+(v93 C2), `/installningar` (v93 C2), `/sessions/disk` (v148 —
+tradHistorik, trådens permanens), `/styrelse` (v91 A2), `/tjanster/*`
+(automation + pausa, bakgrund + avbryt, generera, webblasare).
+Kommandon (kommandon.ts, 10 st): /help /ny /modell /komprimera /filer
+/fardigheter /sparad /installningar /automation /styrelsen.
+Våg 91:s "pågående block"-varning är HISTORIK — samtliga A1b/A1d/A2-ytor
+landade och lever.
 
 ---
 
-## EXECUTIVE SUMMARY
+## 4. GAP-RANKNING 2026-09-14 — kvarvarande luckor med skiss (3 rader per tjänst)
 
-**MÅTTBAT (skript tool-results/v91-paritetskontroll.mjs + kodläsning):**
-- **Tjänster totalt: 91** (85 wire-metoder ur v83-kartan + 6 notiskanaler).
-- **IMPLEMENTERADE: 31 (34 %)** — session-kärnan (create/resume/list/read/
-  messages/subscribe/send/stop/fork/compact/goal/close/subagents/usage/
-  setThoughtLevel/cancelBackgroundTask + handskakningen), readState,
-  skills/plugins/mcp-listor, usage/stats, permission+fråga+MCP-auth-svar,
-  session/event + state.updated-kanalerna, samt v4-trion subscribe/rowsRange/
-  fileChanges.
-- **DELVIS: 3** (setModel = create-väg, setMode = endast build/plan,
-  v4-frame = mottagen men rader hämtas via rowsRange).
-- **SAKNAS: 57 (63 %)** — tyngst: hela automation-domänen (5), hela
-  v4-attachmentgrenen (6), webbläsarparet (2), generateText-paret (2),
-  hooks/trustGrant, plugins-drift (16 av 17), workspace-inställningar (11 av
-  12), v4-styre/telemetri (14) + 3 param-gap-kanaler.
+### P0 — kundvärde/robusthet direkt (3 st)
 
-**DE 5 HÖGSTA P0-ÅTGÄRDERNA (våg 92-underlag):**
-1. **Bilder i protokollet** — v4/attachment/* ×6 + send.attachments (kundens
-   "visa dig bilder": sanna bilagor, inte bara fs-sökvägsreferens).
-2. **Webbläsare** — interaction/browserList + browserExecute + send.
-   browserAmbientContext (kundens "allt möjligt": agentens webbläsarsession
-   synlig/styrbar från studion).
-3. **Automation** — automation/* ×5 (kundens "gör jobbet helt autonomt":
-   schemalagda cron-uppgifter utan närvaro, nextRunAt/runCount synligt).
-4. **Bakgrundsjobb-fullvy** — projection.backgroundJobs Tkn-lista (PID/
-   kommando/outputTail + avbryt — avbryt-metoden finns redan, listan är bara
-   en räknare idag).
-5. **Autonomi-koppling** — send {automationId ⊕ offPeakTaskId} + offPeak-
-   RunType (automationernas turner märks och spåras i sessionlistan).
+**P0-1. interaction/requestProviderRuntimeHeaders — autosvar.**
+Transport: serverRequestHanteraren svarar {} (identiskt mönster med
+requestOfficialMcpAuthHeaders — LIVE ×6 i v83-kartan); ingen egen endpoint
+(transport-intern); ingen UI — vinsten är att en provider-fråga aldrig
+låser sessionen i 15 s.
 
-**Insikt för våg 92:** studion är stark på SAMTALS-kärnan (chatt, strömning,
-verktyg, mål-loop, persistens — 100 % av de LIVE-bevisade kärnmetoderna) men
-har inte rört SYSTEM-familjerna (automation, attachments, browser, plugins-
-drift, workspace-inställningar). Samtliga P0-gap har färdig protokollform i
-v83-kartan (parametrar + svar dokumenterade) och färdiga byggmönster i
-kodbasen (lasSkills-mönstret för lästjänster, interaktionshanteraren för
-server-requests) — ingen våg-92-byggare behöver göra ny protokollforskning
-för P0/P1; endast attachment-chunking och browserExecute-svaret (_Z-formen)
-behöver live-sonder för exakta fält.
+**P0-2. session/setModel på LEVANDE session + lägesbredd i sattLage.**
+Transport: `bytModellLevande(model)` → session/setModel {sessionId, model,
+expectedRevision?} + bredda sattLage till protokollets 5 lägen; Endpoint:
+POST /api/studio/modeller {levande:true} (bytModell create-vägen kvar som
+default); UI: "behåll sessionen"-kryss i modellbytaren + lägesväljare
+edit/yolo/auto med yolo-varning. Motivering: med v148:s trådens permanens
+är sessionId-hoppen (bytModell kasserar) onaturliga — historiken skall
+fortsätta i SAMMA session.
 
-— Granskningsagent A4, våg 91, 2026-09-09. READ-ONLY mot src/ har respekterats;
-enda skrivningar: denna fil + tool-results/v91-paritetskontroll.mjs.
+**P0-3. plugins/install + plugins/uninstall (+ overview som källa).**
+Transport: installeraPlugin(pluginId)/avinstalleraPlugin via protokollFraga
+(driftsvar = operation/snapshot) + lasPluginsOverview för "tillgängliga";
+Endpoint: POST /api/studio/fardigheter {action:"installera"|"avinstallera",
+pluginId}; UI: installera-knapp per tillgängligt kort + avinstallera på
+installerade. Motivering: studion kan lista+togglare men inte FÖRBOKA
+nya förmågor — "vad agenten kan" växer via installationer.
+
+### P1 — kraft (5 st)
+
+**P1-1. workspace/hooks/trustGrant.** Transport: litaHooks(bundleDigest,
+hookDeclarationDigest) — digesterna hämtas ur aktuellt diagnostikfel;
+Endpoint: POST /api/studio/tjanster/hooks-trust; UI: godkännandekort med
+digest-förkortning + svenska reasonCode-förklaringar.
+
+**P1-2. v4/conversation/fileRewindPreview.** Transport:
+forhandsvisningRewind(target) före fork; Endpoint: /api/studio/session
+action=rewind?option=preview; UI: ±diff-dialog INNAN "Gå tillbaka hit"
+(naturlig par till v84 C:s permission-diff).
+
+**P1-3. Exponera skickaAutomation (P0-5-resten).** Transportmetoden lever
+men har 0 rutt-/UI-konsumenter (grep 2026-09-14); Endpoint: POST
+/api/studio/tjanster/automation {action:"kor", id} → skickaAutomation;
+UI: "Kör nu"-knapp per automation (manuell trigger, turnen märks
+automationId i historiken).
+
+**P1-4. automation/update-full + checkTaskBinding.** Transport:
+automationUppdatera bär hela uppdateringsformen (cronExpr, prompt,
+targetTaskId) + lasTaskbindning(id); Endpoint: PATCH
+/api/studio/tjanster/automation; UI: redigera-formulär per automation +
+bindningsstatus-badge.
+
+**P1-5. Webbläsarparet i DRIFT (binäruppgradering — ej kodgap).** Bryggor
+lever (lasWebblasare/korWebblasare + rutt + UI) men aktuell agent-binär
+svarar -32601 ⇒ 501. Åtgärd: uppgradera zcode-app-server till version med
+interaction/browser*; verifiera GET /tjanster/webblasare ≠ 501; UI:n döljer
+redan ärligt vid 501 (A3c-kontraktet).
+
+### P2 — sen (oförändrad grund, omräknad)
+
+- **Workspace-inställningar övrigt (6 st):** updateProviderRegistry,
+  updateInteractionPreferences, updateModelIoPreferences,
+  upsertModelProvider/removeModelProvider (R2-gräns kvar), +
+  session/updateRuntimeModelConfig. Skiss: transport-bryggor + POST
+  /api/studio/installningar {fält}; UI: "Standardvärden"-sektion —
+  create bär redan valen till nästa session.
+- **Plugins-drift övrigt (13 st):** overview, referenceCatalog,
+  marketplace/add|remove|update, update, restoreBuiltin, configure,
+  resetConfig, validate, describe, cancelOperation,
+  resolveSuggestedReference. Skiss: gemensam dispatch POST /fardigheter
+  {action} + "Marknadsplatser"-flik; cancelOperation → global avbryt-knapp.
+- **v4-övrigt (14 st):** command, commands/query, plans, v4/usage/stats,
+  conversation/usage, controller/subscribe|resync|unsubscribe,
+  connection/flow, conversation/resync|unsubscribe, attachment/read,
+  previewSource, + workspace/cancelGenerateText. Skiss: när v4-grenen
+  stabiliserats: v4/command-brygga till kommandon.ts; plans → plan-trädvy
+  i höger panelen.
+- **Telemetrikanaler (3 st):** computer-use/operation-event (tyst i denna
+  deploymenten, §5.3), process/mcpTelemetry, v4/telemetry/event. Skiss:
+  påNotis-loggning + GET /halsa?telemetry=1 (sista N händelser).
+
+---
+
+## 5. TJÄNSTER SOM INTE (fullt) KAN BYGGAS — oförändrat giltig (våg 91)
+
+1. **plugins/marketplace/add för autentiserade källor + OAuth-MCP:**
+   kräver ZCode-relay-autentisering (äkta tokens produceras av Z:s
+   konto-upplevelse). Studion svarar {} = hoppa över — publika källor
+   fungerar, auth-krävande kan ej aktiveras härifrån.
+2. **workspace/upsertModelProvider för icke-zai-providers:** relayer utan
+   API-nycklar är oanvändbara; kundägda nycklar + säker hantering =
+   R2 (VÄNTAR KUND).
+3. **computer-use/operation-event:** kräver computer-use-backend i
+   ZCode-klienten — finns ej i app-server-läge på Contabo.
+4. **Kostnad i valuta ur usage-stats:** protokollet ger tokens, aldrig
+   priser — egen pristabell = approximation, aldrig protokollsanning.
+5. **importedHistory (claudeCode-import):** kräver exportfiler utanför
+   systemet — engångsimportväg, inte en tjänst studion fyller själv.
+6. **Off-peak-schemaläggning på ZCode Cloud:** automation kör i
+   app-server-processen lokalt; molnside-funktioner kan avvika — ärlig
+   statusvisning i UI:t.
+
+---
+
+## EXECUTIVE SUMMARY (2026-09-14)
+
+- **Tjänster totalt: 91** — **43 ✓ (47 %) · 6 ~ (7 %) · 42 ✗ (46 %)**
+  (våg 91: 31 ✓ / 3 ~ / 57 ✗ — netto +12 implementerade).
+- **Våg 91:s samtliga fem P0 är levererade eller brolagda:** bilder
+  (v4/attachment ×4 + send.attachments — våg 92 E2E-bevisat), automation
+  (create/list/delete + paus), bakgrundsjobb-fullvy (hela
+  projection-listan), webbläsare (bryggor + UI; väntar agent-binär),
+  autonomi-koppling (StudioSkickaExtra lever i skicka).
+- **Också lösta sedan våg 91:** workspace-standardvärden ×3 (v93 C1/C2 +
+  /installningar), plugins/setEnabled (v93 C1), workspace/generateText,
+  session/events-replay (v93 C1/C2).
+- **Nya topp-3 (P0):** providerRuntimeHeaders-autosvar (hängrisk),
+  setModel på levande session + full lägesbredd (trådens permanens gör
+  sessionId-hop onaturliga), plugins/install+uninstall (växa förmågor).
+- **Insikt:** samtals-kärnan OCH system-familjernas första våning
+  (automation/bilagor/bakgrund/inställningar) är nu paritetstäckta; det
+  som återstår är drifts-djupet (plugins-marknadsplatser,
+  provider-inställningar, v4-styre/telemetri) — inga P0 kräver ny
+  protokollforskning; alla former står i v83-kartan.
+
+— Re-mätning 10X p1 ("paritetsmatrisen levande"), 2026-09-14.
+READ-ONLY mot src/ respekterat; enda skrivningen: denna fil.

@@ -4313,12 +4313,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
           // trådens SENASTE session; föregångarna (sessionsbyten) hämtas och
           // konkateneras FÖRE kandidatens historia ⇒ hela tråden syns igen.
           if (kandidat) {
+            const kand = kandidat;
             const trådTabb =
               sparad?.tabbar.find(
-                (t) => t.sessionId === kandidat || (t.kedja ?? []).includes(kandidat),
+                (t) => t.sessionId === kand || (t.kedja ?? []).includes(kand),
               ) ?? null;
             const kedja = [...(trådTabb?.kedja ?? [])].filter(
-              (sid, i, alla) => alla.indexOf(sid) === i && sid !== kandidat,
+              (sid, i, alla) => alla.indexOf(sid) === i && sid !== kand,
             );
             if (kedja.length > 0) {
               const delar = await Promise.all(
@@ -4340,6 +4341,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 aktivHistorik = [...gamlaTråden, ...aktivHistorik];
               }
             }
+          }
+          // VÅG 143 — TRÅDVALET: den PÅGÅENDE tråden vinner när den bär MER
+          // historia än den valda kandidaten. Kundbevis: refresh visade 1–2
+          // meddelanden fast tråden hade 21 — den korta sparade sessionen
+          // skrev över den långa pågående (ditt "12 agenter"-meddelande
+          // fanns hela tiden i tråden, vyn valde fel).
+          if (
+            senastAktivSessionId &&
+            kandidat !== senastAktivSessionId &&
+            senastAktivHistorik.length > aktivHistorik.length
+          ) {
+            kandidat = senastAktivSessionId;
+            aktivHistorik = senastAktivHistorik;
           }
           // ── IndexedDB-jämförelse (våg 88 I3): cachen FLER ⇒ cachad vinner ──
           let cacheTrumfar = false;

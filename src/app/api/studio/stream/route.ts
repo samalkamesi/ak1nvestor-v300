@@ -315,14 +315,32 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // VÅG 141 — MÅLET DÖR ALDRIG MED OMSTARTEN: prompt mot huvudtråden (ingen
-  // sessionId) + målet HELT borta (null, ej pausat av kunden) ⇒ stående mål
-  // aktiveras DIREKT (gapet till hjärtats :x1 stängs) och trådens arv
-  // injiceras EN gång i prompten — agenten minns och fortsätter.
+  // VÅG 141+143 — MÅLET DÖR ALDRIG + ALL NY TRÅDSESSION FÖDS MED MINNE:
+  // (a) prompt mot huvudtråden + målet HELT borta (null, ej pausat) ⇒ stående
+  //     mål aktiveras DIREKT (gapet till hjärtats :x1 stängs).
+  // (b) VÅG 143: är transportens session NY för tråden (omstart/churn — dvs.
+  //     inte den senast kända aktiva) ⇒ prompten prefixas med TRÅDENS ARV
+  //     (worklog-svans + beslutsminne + 'MINNE LADDAT') — kundbevis: nya
+  //     sessioner var historikalösa så länge målet råkade leva, och agenten
+  //     "visste inget" fast allt fanns på disk.
   try {
     const st = transport.malStatus();
+    let nyTradSession = false;
+    if (!sessionId) {
+      try {
+        const atk = await lasAterkoppling();
+        nyTradSession =
+          typeof atk.senastAktivSessionId === "string" &&
+          atk.senastAktivSessionId.length > 0 &&
+          atk.senastAktivSessionId !== sessionsId;
+      } catch {
+        nyTradSession = false;
+      }
+    }
     if (!sessionId && st.mal === null && !st.pausad) {
       await transport.sattMal(STANDE_MAL_141);
+    }
+    if (nyTradSession) {
       const arv = byggArvBlock();
       if (arv) {
         prompt = `${arv}\n\n───\n\n${prompt}`;

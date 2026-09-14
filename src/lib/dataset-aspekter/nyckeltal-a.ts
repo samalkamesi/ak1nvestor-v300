@@ -13,7 +13,8 @@
  * läses aldrig. Alla siffror i texterna interpoleras ur sammanfatta —
  * modulen hårdkodar ingen statistik. Gränsregeln (matta < MIN_MATTA ⇒
  * opublicerad) fattas av slutledet; generera räknar alltid ärligt och
- * returnerar null endast för okänd bransch (404).
+ * returnerar null för okänd bransch (404) SAMT sedan u5:s vit-test även
+ * när matta < MIN_MATTA (dubbelgrind mot få-observations-medianer).
  *
  * Universumets notering om ROIC (approximerad proxy: EBIT före skatt /
  * (skuld + bokfört EK); finansbolag lämnas osatta) återges i roic-modulens
@@ -22,6 +23,7 @@
 import {
   hittaKurslankar,
   lasAspektUniversum,
+  MIN_MATTA,
   sammanfatta,
   type AspektModule,
   type AspektSida,
@@ -90,6 +92,10 @@ function nyckeltalsModul(
       const rader = lasAspektUniversum().rader.filter((r) => r.bransch === branschSlug);
       if (rader.length === 0) return null; // okänd bransch ⇒ rutten svarar 404
       const stat = sammanfatta(rader.map(hamtaVarde), iProcent);
+      // Dubbelgrind (u5:s vit-test): under MIN_MATTA mätta returneras ingen
+      // sida — slutledet publicerar den heller inte, och få-observations-
+      // medianer kan aldrig nå utdata från denna modul.
+      if (stat.matta < MIN_MATTA) return null;
       const namn = branschVisningsnamn("sv", branschSlug);
       return {
         aspekt: slug,

@@ -125,7 +125,9 @@ export type AspektModule = {
   slug: string;
   /** Sidtitel för en bransch (parametern = branschens visningsnamn). */
   titel: (branschNamn: string) => string;
-  /** null = okänd bransch (rutten svarar 404). matta < MIN_MATTA ⇒ opublicerad. */
+  /** null = okänd bransch (404) eller matta < MIN_MATTA (opublicerad —
+   *  dubbelgrind inför u5:s vit-test; SLUTLED-registret fattar ändå
+   *  publiceringsbeslutet via matta + MIN_MATTA). */
   generera: (branschSlug: string) => AspektSida | null;
 };
 

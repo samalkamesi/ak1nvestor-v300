@@ -25,8 +25,9 @@
  * gäller för tema 1-sidorna — u2:s fcf-avkastning/finans publiceras inte
  * alls vid n = 3, så hubben ska inte heller kunna visa en 3-observations-
  * median som den egna sidan vägrar publicera (i dagsläget: FCF-avkastning
- * inom finans). Sidnivåns gränsregel (matta < MIN_MATTA ⇒ opublicerad)
- * fattas fortfarande av SLUTLED-registret på huvudmåttet P/E.
+ * inom finans). Sidnivåns gränsregel fattas av SLUTLED-registret på
+ * huvudmåttet P/E — och sedan u5:s vit-test returnerar generera dessutom
+ * null när P/E-mattan < MIN_MATTA (dubbelgrind).
  *
  * Källans egen notering om dubbelmåttet: egenKapitalMultipl räknas som
  * börsvärde / bokfört eget kapital — samma beräkningsgrund som P/B, och
@@ -115,6 +116,9 @@ export const aspekter: AspektModule[] = [
       // u1 (ev-ebit, peg), u2 (fcf-avkastning, egenkapitalmultipl) och
       // branschmedianerna (pe, pb). fcfYield är rå andel ⇒ procent.
       const pe = sammanfatta(bolag.map((r) => r.vardering?.pe ?? null), false);
+      // Sidnivåns gränsregel (dubbelgrind sedan u5:s vit-test): huvudmåttet
+      // P/E under MIN_MATTA mätta ⇒ ingen sida alls returneras.
+      if (pe.matta < MIN_MATTA) return null;
       const pb = sammanfatta(bolag.map((r) => r.vardering?.pb ?? null), false);
       const evEbit = sammanfatta(bolag.map((r) => r.vardering?.evEbit ?? null), false);
       const peg = sammanfatta(bolag.map((r) => r.vardering?.peg ?? null), false);

@@ -23,13 +23,15 @@
  *    som lasAspektUniversum: kastar vid oläslig fil, svensk kollation).
  *  - Gränsregeln (< 5 mätta ⇒ opublicerad) fattas av SLUTLED-registret —
  *    modulen räknar alltid ärligt (matta = antal mätta P/E-bolag) och
- *    returnerar null ENDAST för okänd bransch.
+ *    returnerar null för okänd bransch SAMT sedan u5:s vit-test även när
+ *    huvudmåttets matta < MIN_MATTA (dubbelgrind: ett enbolags-P/E kan
+ *    aldrig läcka ut som gruppmedian oavsett vem som anropar).
  */
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import type { AspektModule, AspektSida, AspektStat } from "../dataset-aspekter-kontrakt";
-import { hittaKurslankar, sammanfatta } from "../dataset-aspekter-kontrakt";
+import { hittaKurslankar, MIN_MATTA, sammanfatta } from "../dataset-aspekter-kontrakt";
 import { branschNamn, type DatasetUniversumRad } from "../dataset-medianer";
 
 // ── Universumet — publikt land-utsnitt (EN källa, modulcache) ───────────────
@@ -136,6 +138,10 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
       // De FEM publika dataset-nyckeltalen — samma fält och samma hjälpare
       // (sammanfatta) som /dataset:s branschmedianer, men på landets bolag.
       const pe = sammanfatta(bolag.map((b) => b.vardering?.pe ?? null), false);
+      // Sidnivåns gränsregel (u5:s vit-test): under MIN_MATTA mätta P/E-bolag
+      // returneras ingen sida alls — slutledet publicerar den heller inte, och
+      // ett enstaka bolags P/E kan aldrig läcka ut som gruppens "median".
+      if (pe.matta < MIN_MATTA) return null;
       const pb = sammanfatta(bolag.map((b) => b.vardering?.pb ?? null), false);
       const ebit = sammanfatta(bolag.map((b) => b.lonksamhet?.ebitMarginal ?? null), true);
       const fcf = sammanfatta(bolag.map((b) => b.lonksamhet?.fcfMarginal ?? null), true);
@@ -214,7 +220,9 @@ function byggLandAspekt(k: LandKonfig): AspektModule {
         saRaknas,
         saLaserDu,
         fellerAttUndvika,
-        kurslankar: hittaKurslankar(["svenska aktier", "nyckeltal", "jämföra"]),
+        // Fem sökord (VÅG150-RAPPORT §4): de tre smala gav bara 2 träffar —
+        // "aktier" + "balansräkning" breddar till 4 pedagogiskt rimliga kurser.
+        kurslankar: hittaKurslankar(["svenska aktier", "nyckeltal", "jämföra", "aktier", "balansräkning"]),
         matTabell,
       };
       return sida;

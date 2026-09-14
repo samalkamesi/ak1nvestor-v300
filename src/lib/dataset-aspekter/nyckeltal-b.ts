@@ -13,7 +13,9 @@
  * läsare (lasAspektUniversum); data/stocks/** är osynlig och förblir den.
  *
  * Gränsregeln fattas av SLUTLED-registret via matta + MIN_MATTA (se
- * kontraktet) — dessa moduler räknar alltid ärligt och gissar aldrig.
+ * kontraktet) — dessa moduler räknar alltid ärligt och gissar aldrig,
+ * och returnerar sedan u5:s vit-test dessutom null när huvudmåttets
+ * matta < MIN_MATTA (dubbelgrind mot få-observations-medianer).
  * Gränslägen vid leverans (2026-09-14, 10 branscher × 10 bolag):
  *  - fcf-avkastning:        finans 3 mätta  ⇒ opublicerad
  *  - skuldsattning:         finans 0 mätta  ⇒ opublicerad
@@ -28,6 +30,7 @@
 import {
   hittaKurslankar,
   lasAspektUniversum,
+  MIN_MATTA,
   sammanfatta,
   type AspektModule,
   type AspektSida,
@@ -84,6 +87,10 @@ function skapaAspekt(k: AspektKonfig): AspektModule {
       if (bolag.length === 0) return null;
       const namn = branschNamn("sv", branschSlug);
       const stat = sammanfatta(bolag.map((r) => k.las(r)), k.enhet === "procent");
+      // Dubbelgrind (u5:s vit-test): under MIN_MATTA mätta returneras ingen
+      // sida — slutledet publicerar den heller inte, och få-observations-
+      // medianer kan aldrig nå utdata från denna modul.
+      if (stat.matta < MIN_MATTA) return null;
       const sida: AspektSida = {
         aspekt: k.slug,
         bransch: branschSlug,

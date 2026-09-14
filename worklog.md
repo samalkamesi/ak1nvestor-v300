@@ -10482,4 +10482,47 @@ https://lab.ak1nvestor.com/bolag = 200 · vakten GRÖN · motorer
 SOKORDSINVENTERING-2026.md (våg 138-syntesen = våg 149:s underlag)
 committas nu — den låg otrackad sedan 2026-09-14 tidig morgon.
 
+## STYRELSEROND 20 (2026-09-14 13:45–14:00) — VÅG 150 RÄDDAD UR TYST DÖD [organ:Θ]
+
+**Fynd:** våg 150 var förberett 10:59 (manifest 14 KB, 6 uppgifter +
+kontraktsfil 247 rader) men dog vid förberedelsen: manifestet skrevs i
+agentarbetsytans ko/ — som är .gitignore:ad (data/vakten/) och ALDRIG
+når prod-trädet — och kontraktsfilen lämnades ocommittad. Prod:s ko/
+stod tom; fabriken ropade tom kärl varje :x5 sedan 11:05 (13 st
+LOCK.skrotad som fingeravtryck). Utan räddning hade sex barn kraschat
+på saknad import (kontraktet) i prod-trädet de arbetar i.
+
+**Beslut:** rädda i stället för omboka — våg 150 är köns största post
+(~150 URL:er /dataset/[bransch]/[aspekt]) och helt förberedd.
+
+**Verkställt:**
+1. Kontraktet src/lib/dataset-aspekter-kontrakt.ts committat + pushat
+   till prod (7ba25d68; kroken körde tsc = 0 fel, vilket även besvarade
+   rondens tappade tsc-svar).
+2. Manifestet cp:at till PROD:s ko/ via node-kanalen — sha256 källa=mål
+   verifierad, 6 uppgifter u1–u6 (studioskalets cp verkställde sig ej
+   på första försöket; verifiera-efter-häng-regeln räddade oss från en
+   blind omkopiering).
+3. PIPELINE-KO: våg 151 (granskningskön: 7 m9-utkast + 8 SEO-guider)
+   + våg 152 (kvartalsrapportseriens förberedelse) bokade —
+   evighetsmotorns ≥3-kommande-vågor-krav uppfyllt (28d02090).
+4. Hygien: sub-steg3/12-skript, sub-steg12-resultat + rond19-meddelande-
+   filen arkiverade till .zcode/; .tmp/ gitignore:ad (fabriksbarnens
+   KVD-engångsskript). Ytan ren.
+5. Ingen build denna rond: kontraktet importeras av ingen rutt ännu
+   (ligger utanför bygggrafen) — ETT bygg per våg vid slutledet
+   (våg 149-lärdomen).
+
+**Fabriken efteråt:** nästa rop plockar v150 → omgång 1 = u1+u2+u3
+(nyckeltal A + B + land), omgång 2 = u4+u5+u6-väntan (värderingshub +
+vit-test + fas A-rapport). Slutled (nästa rond/hjärtslag): modulregistret,
+rutten, sitemap + ETT bygg under flock.
+
+**Kanal-lärdom (permanent):** fabriksbeställningar skrivs DIREKT i
+PROD:s ko/ — arbetsytans ko/ är git-ignorerad och når aldrig fabriken;
+kodberoenden (kontraktet) MÅSTE vara pushade till prod FÖRE
+fabriksstart. Pulsvakten verifierad levande under ronden (lever=true,
+179 varv, 0 fel — rundens "kunde inte läsas" läste fel träd).
+
+
 

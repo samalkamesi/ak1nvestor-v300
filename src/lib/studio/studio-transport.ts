@@ -69,8 +69,9 @@ import { autoPolicySvar } from "./permissions-policy";
  *   · interaction/requestOfficialMcpAuthHeaders → {} (hoppa över — LIVE
  *     ×6 i kartan §3).
  *   · session/setMode {sessionId, mode:"build"|"plan"} (LIVE i kartan §1)
- *     + session/setThoughtLevel {sessionId, thoughtLevel:"nothink"|
- *     "high"|"max"} (LIVE-nivåer §1) — bägge sparas i transporten och
+ *     + session/setThoughtLevel {sessionId, thoughtLevel:"nothink"|"low"|
+ *       "medium"|"high"|"max" — modellkatalogens nivåer} (LIVE §1) — bägge
+ *       sparas i transporten och
  *     följer med till session/create (mode+thoughtLevel är create-params)
  *     så modellbyte/ny session bevarar valet; resume bär tanke-nivån.
  *     E2E-AVGRÄNSNING (dokumenterad enligt KVD): permission-flödet kan
@@ -981,7 +982,7 @@ export interface StudioBilagaRef {
 export interface StudioWorkspaceInstallningar {
   /** Default-modell "providerId/modelId" (eller bar modelId-sträng). */
   modell?: string;
-  /** Default tankestyrka (nothink|high|max — protokollets sanningsord). */
+  /** Default tankestyrka (nothink|low|medium|high|max — protokollets sanningsord). */
   tankestyrka?: string;
   /** Default läge (build|plan|edit|yolo|auto). */
   lage?: string;
@@ -6235,7 +6236,8 @@ class AppServerTransport implements StudioTransport {
       const modell = typeof pars.modell === "string" && pars.modell ? pars.modell : undefined;
       const lage = typeof pars.lage === "string" && (pars.lage === "build" || pars.lage === "plan") ? pars.lage : undefined;
       const tankeNiva =
-        typeof pars.tankeNiva === "string" && ["nothink", "high", "max"].includes(pars.tankeNiva)
+        typeof pars.tankeNiva === "string" &&
+        ["nothink", "low", "medium", "high", "max"].includes(pars.tankeNiva)
           ? pars.tankeNiva
           : undefined;
       const sparadTid = typeof pars.sparad === "number" && pars.sparad > 0 ? pars.sparad : null;

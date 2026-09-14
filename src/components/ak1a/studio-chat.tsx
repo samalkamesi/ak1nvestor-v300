@@ -666,6 +666,8 @@ interface PermissionDialog {
   sammanfattning: string;
   alternativ: PermissionAlternativ[];
   diff?: Filandring;
+  /** 10X p7: när dialogen togs emot (ms) — underlag för 60 s-tidsgränsen. */
+  sedan?: number;
 }
 
 interface FragaDialog {
@@ -673,6 +675,8 @@ interface FragaDialog {
   fråga: string;
   inputTyp?: string;
   val?: string[];
+  /** 10X p7: när dialogen togs emot (ms) — underlag för 60 s-tidsgränsen. */
+  sedan?: number;
 }
 
 const PERMISSION_ETIKETT: Record<string, string> = {
@@ -695,6 +699,56 @@ function riskFarg(risk: string): string {
     default:
       return "bg-[#30363D] text-[#8B949E]";
   }
+}
+
+// ── Interaktionsköns tidsgräns (10X p7) ─────────────────────────────────────
+
+/** 10X p7: en obesvarad dialog (permission/fråga) får en tidsgräns på 60 s.
+ *  Serverns 30 s-eskalering når inte alltid klienten (död SSE ⇒ kortet
+ *  återställs först av reconnect-pollen) — då står chatten i
+ *  "$ väntar på verktyg…" för evigt. Efter gränsen visar varje dialogkort
+ *  en varningsrad + Avvisa-knapp som POST:ar neka/avbryt via
+ *  /api/studio/interaktion, så tråden aldrig låser. */
+const INTERAKTION_TIDSGRANS_MS = 60_000;
+
+/** Varningsrad + Avvisa-knapp som visar sig först när tidsgränsen passerats.
+ *  Egen sekundtickare — huvudrenderingen belastas bara så länge kortet syns. */
+function InteraktionsVarning({
+  sedan,
+  jobbar,
+  titel,
+  paAvvisa,
+}: {
+  sedan?: number;
+  jobbar: boolean;
+  titel: string;
+  paAvvisa: () => void;
+}) {
+  const [nu, setNu] = React.useState(() => Date.now());
+  React.useEffect(() => {
+    const t = window.setInterval(() => setNu(Date.now()), 1_000);
+    return () => window.clearInterval(t);
+  }, []);
+  const forflutenMs = nu - (sedan ?? nu);
+  if (forflutenMs <= INTERAKTION_TIDSGRANS_MS) return null;
+  const s = Math.max(1, Math.floor(forflutenMs / 1_000));
+  const tidText = s < 60 ? `${s} s` : `${Math.floor(s / 60)} min ${s % 60} s`;
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-2 rounded-md border border-[#D29922]/40 bg-[#D29922]/10 px-2.5 py-2">
+      <Clock className="h-4 w-4 shrink-0 text-[#D29922]" />
+      <p className="min-w-0 flex-1 text-xs leading-relaxed text-[#D29922]">
+        Obesvarad i {tidText} — agenten står stilla tills någon svarar.
+      </p>
+      <button
+        onClick={paAvvisa}
+        disabled={jobbar}
+        title={titel}
+        className="min-h-[52px] shrink-0 rounded-md border border-[#DA3633]/50 px-3 py-1.5 text-xs font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50 sm:min-h-0"
+      >
+        Avvisa
+      </button>
+    </div>
+  );
 }
 
 // ── Verktygsriskklassning + minnesregler + långkörningsnotis (våg 84 C) ──────
@@ -4103,7 +4157,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         void skickaPermissionSvar(p.requestId, "allow_once", true);
         return;
       }
-      setPermission(p);
+      setPermission({ ...p, sedan: Date.now() });
     },
     [skickaPermissionSvar, rörTabb],
   );
@@ -4307,7 +4361,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 diff: i.diff,
               });
             } else {
-              setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val });
+              setFraga({ requestId: i.requestId, fråga: i.fråga, inputTyp: i.inputTyp, val: i.val, sedan: Date.now() });
               setFragSvar("");
             }
           }
@@ -4666,6 +4720,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
         senastAktivSessionId?: string | null;
         aktivtMal?: { aktiv: boolean; pausad: boolean; iteration: number; mal: string | null } | null;
         sessionskarta?: Record<string, { aktiv?: boolean }>;
+        interaktioner?: (
+          | {
+              typ: "permission";
+              requestId: string;
+              verktyg: string;
+              risk: string;
+              skäl?: string;
+              sammanfattning: string;
+              alternativ: PermissionAlternativ[];
+              diff?: Filandring;
+            }
+          | { typ: "fråga"; requestId: string; fråga: string; inputTyp?: string; val?: string[] }
+        )[];
       };
       if (data.aktivtMal) {
         setMal(data.aktivtMal.mal);
@@ -4676,6 +4743,36 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         setMalIteration(data.aktivtMal.iteration);
         if (data.aktivtMal.aktiv && !malStrömOppen) setMalStrömOppen(true);
+      }
+      // ── 10X p7 — POLL-ÅTERSTÄLLNING AV DIALOGER ───────────────────────
+      // Dör SSE-strömmen efter en permission/fråga når kortet ALDRIG
+      // klienten — chatten låser tyst ("$ väntar på verktyg…"). Pollen
+      // (15/30 s) läser lasAllaInteraktioner via samma GET och återställer
+      // kortet så tidsgränsen + Avvisa-knappen kan nå kunden. Endast
+      // tillägg: redan visat requestId rörs ej (inga race-stängningar —
+      // ett avverkat kort stängs av sitt eget POST-svar eller Avvisningen).
+      const vantaPermission =
+        (data.interaktioner ?? []).find((i) => i.typ === "permission" && i.requestId) ?? null;
+      const vantaFraga = (data.interaktioner ?? []).find((i) => i.typ === "fråga" && i.requestId) ?? null;
+      if (vantaPermission?.typ === "permission" && permission?.requestId !== vantaPermission.requestId) {
+        mottagenPermission({
+          requestId: vantaPermission.requestId,
+          verktyg: vantaPermission.verktyg,
+          risk: vantaPermission.risk,
+          skäl: vantaPermission.skäl,
+          sammanfattning: vantaPermission.sammanfattning,
+          alternativ: vantaPermission.alternativ ?? [],
+          diff: vantaPermission.diff,
+        });
+      }
+      if (vantaFraga?.typ === "fråga" && fraga?.requestId !== vantaFraga.requestId) {
+        setFraga({
+          requestId: vantaFraga.requestId,
+          fråga: vantaFraga.fråga,
+          inputTyp: vantaFraga.inputTyp,
+          val: vantaFraga.val,
+          sedan: Date.now(),
+        });
       }
       // VÅG 144 — MÅL-TRÅDEN STRÖMMAR I CHATTEN ("den stannar i chatten när
       // jag uppdaterar"): mål-loopens turns syns EJ i sessionskartans
@@ -4773,7 +4870,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     } catch {
       // nätverksfel — nästa poll försöker igen
     }
-  }, [malStrömOppen, rörTabb, hamtaBortaKort]);
+  }, [malStrömOppen, rörTabb, hamtaBortaKort, permission, fraga, mottagenPermission]);
 
   React.useEffect(() => {
     pollAterkopplingRef.current = pollAterkoppling;
@@ -6709,6 +6806,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   fråga: event.interaktion.fråga,
                   inputTyp: event.interaktion.inputTyp,
                   val: event.interaktion.val,
+                  sedan: Date.now(),
                 });
                 setFragSvar("");
                 sattStatus("Agenten frågar…");
@@ -8166,6 +8264,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
                       {" "}Regler gäller i denna webbläsare och hanteras under Minnesregler i Mer-menyn (⋯).
                     </p>
+                    <InteraktionsVarning
+                      sedan={permission.sedan}
+                      jobbar={svarJobbar}
+                      titel="Neka verktygsbegäran nu så agenten kan gå vidare"
+                      paAvvisa={() => void skickaPermissionSvar(permission.requestId, "deny")}
+                    />
                   </div>
                 </div>
               )}
@@ -8226,6 +8330,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     >
                       Avbryt frågan
                     </button>
+                    <InteraktionsVarning
+                      sedan={fraga.sedan}
+                      jobbar={svarJobbar}
+                      titel="Avbryt frågan nu så agenten kan gå vidare"
+                      paAvvisa={() => void svaraFraga(fraga.requestId, undefined, true)}
+                    />
                   </div>
                 </div>
               )}

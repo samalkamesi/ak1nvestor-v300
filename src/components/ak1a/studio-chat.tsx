@@ -355,6 +355,51 @@ function modellBeskrivning(id: string): string {
   return "zai-modell";
 }
 
+// ── 10X p8: modellkatalogs-metadata i drawern + paletten ────────────────────
+
+/** Svensk etikett per tankestyrka-nivå (katalogens low/high/max + reserverna). */
+const TANKE_ETIKETT: Record<string, string> = {
+  nothink: "Av",
+  low: "Låg",
+  medium: "Medel",
+  high: "Hög",
+  max: "Max",
+};
+
+/** Beskrivning per tankestyrka-nivå — okända nivåer får en neutral text. */
+const TANKE_BESKRIVNING: Record<string, string> = {
+  nothink: "Snabbast — inget synligt resonemang",
+  low: "Kort resonemang — snabb men genomtänkt",
+  medium: "Medeldjupt resonemang — balans mellan fart och djup",
+  high: "Djupt resonemang för krävande uppgifter",
+  max: "Maximalt resonemang — långsammare men grundligast",
+};
+
+/** Kompakt tokenformat ur katalogen: 1 000 000 → "1 M", 128 000 → "128 K". */
+function formateraToken(antal?: number): string {
+  if (typeof antal !== "number" || !Number.isFinite(antal) || antal <= 0) return "";
+  if (antal >= 1_000_000) return `${(antal / 1_000_000).toLocaleString("sv-SE")} M`;
+  if (antal >= 1_000) return `${Math.round(antal / 1_000)} K`;
+  return String(antal);
+}
+
+/** Drawerns modellradsbeskrivning — text + katalogens metadata (10X p8). */
+function modellRadBeskrivning(m: ModellPost): string {
+  const delar: string[] = [modellBeskrivning(m.id)];
+  const kontext = formateraToken(m.kontextFonster);
+  const svar = formateraToken(m.maxSvar);
+  if (kontext) delar.push(`${kontext}${svar ? ` × ${svar}` : ""} tkn`);
+  if (m.modaliteter && m.modaliteter.length > 0) delar.push(`förstår även ${m.modaliteter.join(" + ")}`);
+  if (m.tankeNivaer) {
+    delar.push(
+      m.tankeNivaer.length === 0
+        ? "utan tankestyrka"
+        : `tankestyrka ${m.tankeNivaer.map((n) => TANKE_ETIKETT[n] ?? n).join("/")}`,
+    );
+  }
+  return delar.join(" · ");
+}
+
 /** sessionStorage-nyckel: tabbar + buffrade meddelanden (överlever refresh). */
 const TABB_LAGRING = "ak1a-studio-tabbar";
 
@@ -633,10 +678,21 @@ function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
   }
 }
 
-/** Modellpost ur GET /api/studio/modeller (härledd ur config.json). */
+/**
+ * Modellpost ur GET /api/studio/modeller — config.json BERIKAD ur zcode:s
+ * modellkatalog (model-catalog.json, 10X p8). Metadata-fälten är osatta
+ * när modellen saknas i katalogen (t.ex. glm-5.1) — UI:t klarar båda.
+ */
 interface ModellPost {
   id: string;
   namn: string;
+  kontextFonster?: number;
+  maxSvar?: number;
+  /** Input-modaliteter utöver text, svenska ("bild", "video"). */
+  modaliteter?: string[];
+  /** Katalogens nivåer — [] = modellen stödjer INGEN tankestyrka; osatt = okänt. */
+  tankeNivaer?: string[];
+  standardTankeNiva?: string;
 }
 
 /** Kontextsanning ur session/read-projektionen (via /api/studio/stream). */
@@ -5987,6 +6043,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
     [byteTanke, sparaServerInstallning],
   );
 
+  // ── 10X p8: DEN VALDA modellens katalog-metadata (tankestyrka per modell).
+  //    tankeNivaerVald: null = katalogen vet ej (fallback nothink/high/max),
+  //    [] = modellen stödjer INGEN nivå (GLM-5.2/5-Turbo/5.1) — sektionen
+  //    förklarar och låser istället för att erbjuda omöjliga val.
+  const valdModellPost = React.useMemo(
+    () => modeller.find((m) => m.id === valdModell) ?? null,
+    [modeller, valdModell],
+  );
+  const tankeNivaerVald = valdModellPost?.tankeNivaer ?? null;
+  const tankeRader = React.useMemo(() => {
+    const rå = tankeNivaerVald ?? ["nothink", "high", "max"];
+    const ordning = ["nothink", "low", "medium", "high", "max"];
+    return [...rå].sort((a, b) => {
+      const ia = ordning.indexOf(a);
+      const ib = ordning.indexOf(b);
+      return (ia === -1 ? ordning.length : ia) - (ib === -1 ? ordning.length : ib);
+    });
+  }, [tankeNivaerVald]);
+
   // ── Uppladdning (våg 81): multipart + drag/paste/mapp ──────────────────────
 
   /** VÅG 91 A3a: bildfiler ur ett uppladdningssvar → valda bilagor (tak 8). */
@@ -7071,10 +7146,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
       kor: () => void korKommando(k.namn),
     }));
     for (const m of modeller) {
+      // 10X p8: katalogens kontext-tak i palettraden ("1 M tkn") när den finns.
+      const kontext = formateraToken(m.kontextFonster);
       poster.push({
         id: `modell-${m.id}`,
         etikett: `Byt modell — ${m.namn}`,
-        beskrivning: `/modell ${m.id} — ny session skapas med modellen`,
+        beskrivning: `/modell ${m.id} — ny session skapas med modellen${kontext ? ` · ${kontext} tkn kontext` : ""}`,
         grupp: "Modeller",
         ikon: "modell",
         sokbar: `byt modell ${m.id} ${m.namn} /modell`.toLowerCase(),
@@ -10167,7 +10244,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   className="rounded-md bg-[#161B22] px-3 py-2 font-mono text-[10px] leading-relaxed text-[#8B949E]"
                   title="Serverns standard för nya samtal — ur GET /api/studio/installningar"
                 >
-                  Standard: {modellBadge(serverStandard.modell)} / {serverStandard.lage || "—"} (server)
+                  Standard: {modellBadge(serverStandard.modell)} / {serverStandard.lage || "—"} /{" "}
+                  {serverStandard.tankestyrka ? TANKE_ETIKETT[serverStandard.tankestyrka] ?? serverStandard.tankestyrka : "—"} (server)
                 </p>
               )}
               <section aria-label="Modell">
@@ -10177,7 +10255,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {modeller.length === 0 ? (
                   <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
                     Ingen modellista ännu (GET /api/studio/modeller) — listan härleds ur
-                    zcode-config.json på servern.
+                    zcode-config.json + modellkatalogen på servern.
                   </p>
                 ) : (
                   modeller.map((m) => (
@@ -10185,7 +10263,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       key={m.id}
                       vald={m.id === valdModell}
                       titel={m.namn}
-                      beskrivning={modellBeskrivning(m.id)}
+                      beskrivning={modellRadBeskrivning(m)}
                       val={m.id}
                       jobbar={byterModell && m.id === valdModell}
                       disabled={byterModell || strömmarHuvud || !arHuvudAktiv}
@@ -10232,38 +10310,40 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   Tankestyrka
                 </p>
-                {!tanka && (
+                {/* 10X p8: nivåerna följer DEN VALDA modellens katalogpost —
+                    [] = modellen stödjer ingen nivå (GLM-5.2/5-Turbo/5.1):
+                    sektionen förklarar istället för att erbjuda omöjliga val. */}
+                {tankeNivaerVald?.length === 0 ? (
                   <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
-                    Läser tankestyrkan (session/setThoughtLevel)…
+                    {valdModellPost?.namn ?? "Modellen"} stödjer ingen tankestyrka enligt
+                    modellkatalogen — byt till en resonemangsmodell (t.ex. GLM-5.3) för att
+                    välja nivå.
                   </p>
+                ) : (
+                  <>
+                    {!tanka && (
+                      <p className="px-3 py-2 text-[11px] leading-relaxed text-[#8B949E]">
+                        Läser tankestyrkan (session/setThoughtLevel)…
+                      </p>
+                    )}
+                    {tankeRader.map((niva) => (
+                      <InstallningarRad
+                        key={niva}
+                        vald={tanka === niva}
+                        titel={TANKE_ETIKETT[niva] ?? niva}
+                        beskrivning={
+                          valdModellPost?.standardTankeNiva === niva
+                            ? `${TANKE_BESKRIVNING[niva] ?? "Resonemangsnivå"} — standard för modellen`
+                            : TANKE_BESKRIVNING[niva] ?? "Resonemangsnivå"
+                        }
+                        val={niva}
+                        disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
+                        jobbar={lageJobbar && tanka === niva}
+                        onClick={() => void valjTankeMedStandard(niva)}
+                      />
+                    ))}
+                  </>
                 )}
-                <InstallningarRad
-                  vald={tanka === "nothink"}
-                  titel="Av"
-                  beskrivning="Snabbast — inget synligt resonemang"
-                  val="nothink"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "nothink"}
-                  onClick={() => void valjTankeMedStandard("nothink")}
-                />
-                <InstallningarRad
-                  vald={tanka === "high"}
-                  titel="Hög"
-                  beskrivning="Djupt resonemang för krävande uppgifter"
-                  val="high"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "high"}
-                  onClick={() => void valjTankeMedStandard("high")}
-                />
-                <InstallningarRad
-                  vald={tanka === "max"}
-                  titel="Max"
-                  beskrivning="Maximalt resonemang — långsammare men grundligast"
-                  val="max"
-                  disabled={!tanka || lageJobbar || strömmarHuvud || !arHuvudAktiv}
-                  jobbar={lageJobbar && tanka === "max"}
-                  onClick={() => void valjTankeMedStandard("max")}
-                />
               </section>
             </div>
           </aside>

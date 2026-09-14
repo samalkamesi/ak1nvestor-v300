@@ -129,7 +129,9 @@ function lasKatalog(): Map<string, KatalogPost> {
                   .map((x) => (x === "image" ? "bild" : x === "video" ? "video" : x)),
               }
             : {}),
-          ...(nivaObjekt ? { tankeNivaer: Object.keys(nivaObjekt) } : {}),
+          // Katalogen är sanningsägare: modeller UTAN reasoning får EXPLICIT
+          // tom lista ([] = stödjer ingen nivå) — osatt betyder "ej i katalog".
+          tankeNivaer: nivaObjekt ? Object.keys(nivaObjekt) : [],
           ...(resonemang && typeof resonemang.defaultLevel === "string" && resonemang.defaultLevel.trim()
             ? { standardTankeNiva: resonemang.defaultLevel.trim() }
             : {}),

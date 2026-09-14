@@ -26,6 +26,7 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
+import { execSync } from "node:child_process";
 import puppeteer from "puppeteer-core";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -105,6 +106,44 @@ const SIDOR = SNABB
   : SIDOR_ARG
     ? SIDOR_ARG.split(",")
     : null; // löses mot sitemap i huvudloopen
+
+// ── DEPLOY-MEDVETENHET (våg 142/Σ, rond 15) ──────────────────────────────────
+// Fallet 2026-09-13 23:17–23:22: vakten mätte mitt i ett deploy-bygge +
+// pm2-omstart → 49 transienta skenfynd (500-felsidor, chunk-404,
+// ERR_CONNECTION_REFUSED) medan prod var frisk före och efter. Regler:
+//   A. FÖRE mätning: vänta ut /tmp/ak1a-deploy.lock + hälsokoll 200 på basen.
+//      Ej frisk inom taket ⇒ rapport "uppskjuten" + exit 0 (inget cron-larm).
+//   B. MITT I svepet: HTTP 5xx/goto-fel SAMTIDIGT som deploy-tecken ⇒ avbryt
+//      med status "avbruten — deploy pågår" + exit 0. Enstaka 5xx med frisk
+//      bas = verkligt fel och larmar som tidigare.
+function deployLasUpptaget() {
+  // flock -n speglar exakt deploy-skriptens semantik (låset, inte filen)
+  try {
+    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { stdio: "ignore", timeout: 5000 });
+    return false;
+  } catch {
+    return true;
+  }
+}
+async function basHalsa() {
+  try {
+    const r = await fetch(BAS + "/", { headers: { "User-Agent": "AK1A-Granssnittsvakt/1.0" }, signal: AbortSignal.timeout(10000) });
+    return r.status;
+  } catch {
+    return 0;
+  }
+}
+async function deployPagar() {
+  return deployLasUpptaget() || (await basHalsa()) !== 200;
+}
+async function vantaPaFriskBas(maxMs = 12 * 60 * 1000) {
+  const start = Date.now();
+  while (Date.now() - start < maxMs) {
+    if (!deployLasUpptaget() && (await basHalsa()) === 200) return true;
+    await new Promise((r) => setTimeout(r, 30000));
+  }
+  return !deployLasUpptaget() && (await basHalsa()) === 200;
+}
 
 // ── Chrome-sökvägar ──────────────────────────────────────────────────────────
 const CHROME_KANDIDATER = [
@@ -332,9 +371,24 @@ const rapport = {
   bas: BAS,
   chrome: CHROME_SOKVAG,
   tid: new Date().toISOString(),
+  status: "ok", // "ok" | "uppskjuten — deploy pågår" | "avbruten — deploy pågår"
   kombinationer: [],
   fel: 0,
 };
+let avbruten = false;
+
+// Deploy-medvetenhet A: mät ALDRIG inuti ett deploy-fönster — vänta ut det.
+const friskFranStart = await vantaPaFriskBas();
+if (!friskFranStart) {
+  rapport.status = "uppskjuten — deploy pågår";
+  const katalog = path.join(ROT, "data", "vakten");
+  fs.mkdirSync(katalog, { recursive: true });
+  const fil = path.join(katalog, `granssnitt-${new Date().toISOString().slice(0, 16).replaceAll(":", "")}.json`);
+  fs.writeFileSync(fil, JSON.stringify(rapport, null, 2));
+  console.log(`GRÄNSSNITTSVAKTEN: UPPSKJUTEN — deploy pågår efter 12 min väntan, inga fynd bokförda (nästa cron-körning mäter).`);
+  console.log(`Rapport: ${fil}`);
+  process.exit(0);
+}
 
 const browser = await puppeteer.launch({
   executablePath: CHROME_SOKVAG,
@@ -378,10 +432,20 @@ try {
         page.on("pageerror", (fel) => konsolFel.push(String(fel).slice(0, 160)));
         try {
           const svar = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 25000 });
-          // VÅG 105: icke-HTML-svar (t.ex. middleware-429 som Chrome visar som
-          // JSON-<pre>) är ALDRIG ett gränsnittsdefekt — notera status och hoppa
-          // mätningen. 429 = egen throttle, 5xx = driftfel (räknas).
+          // VÅG 142 (Σ): 5xx = driftfel, ALDRIG en gränsnittsyta (Next default-
+          // felsidas <pre> gav skenfyndet svart-på-svart 2026-09-13). Pågår
+          // deploy ⇒ avbryt svepet utan larm; frisk bas ⇒ verkligt fel som
+          // larmar (räknas via status != ok).
           const httpKod = svar ? svar.status() : 0;
+          if (httpKod >= 500) {
+            if (await deployPagar()) { avbruten = true; break; }
+            status = `http ${httpKod} (serverfel)`;
+            rapport.fel += 1;
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: 1, konsolFel: [], matning: null });
+            console.log(`⚑ [${tema}/${skarm.namn}] ${sida} — ${status}`);
+            await new Promise((r) => setTimeout(r, 350));
+            continue;
+          }
           const contentType = (svar && svar.headers()["content-type"]) || "";
           if (contentType.includes("application/json")) {
             status = httpKod === 429 ? "icke-sida (429 egen throttle)" : `icke-sida (json ${httpKod})`;
@@ -494,7 +558,14 @@ try {
             await page.screenshot({ path: fil, fullPage: false });
           }
         } catch (fel) {
-          status = `fel: ${String(fel).slice(0, 120)}`;
+          // VÅG 142 (Σ): nerkoppling/anslutningsvägran under deploy = drift-
+          // avbrott, inte gränsnittsdefekt — avbryt utan larm om deploy pågår.
+          const strFel = String(fel);
+          if ((strFel.includes("ERR_CONNECTION_REFUSED") || strFel.includes("net::ERR_")) && (await deployPagar())) {
+            avbruten = true;
+            break;
+          }
+          status = `fel: ${strFel.slice(0, 120)}`;
         }
         const felAntal =
           (matning && matning.overflod > 6 ? 1 : 0) +
@@ -512,11 +583,14 @@ try {
         await new Promise((r) => setTimeout(r, 350)); // respektera hastighetsgränsen
       }
       await context.close();
+      if (avbruten) break; // VÅG 142: deploy startade mitt i svepet — avbryt
     }
+    if (avbruten) break;
   }
 } finally {
   await browser.close();
 }
+if (avbruten) rapport.status = "avbruten — deploy pågår";
 
 // ── Rapport ──────────────────────────────────────────────────────────────────
 const katalog = path.join(ROT, "data", "vakten");
@@ -537,4 +611,10 @@ if (felrader.length) {
   }
 }
 console.log(`Rapport: ${fil}`);
+// VÅG 142 (Σ): uppskjuten/avbruten för deploy = driftavbrott, inte defekt —
+// exit 0 så cron inte larmar; nästa 6-timmarskörning mäter i lugnt läge.
+if (rapport.status !== "ok") {
+  console.log(`GRÄNSSNITTSVAKTEN: ${rapport.status.toUpperCase()} — transienta driftfel under deploy räknas ej som fynd (nästa körning mäter).`);
+  process.exit(0);
+}
 process.exit(rapport.fel > 0 ? 1 : 0);

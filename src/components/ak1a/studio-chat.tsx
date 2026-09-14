@@ -793,6 +793,15 @@ interface SessionPost {
   tokens?: number;
 }
 
+/** Post ur GET /api/studio/sessions/disk (db.sqlite, v148F u1). */
+interface DiskSessionPost {
+  sessionId: string;
+  title: string | null;
+  timeUpdated: number;
+  directory: string | null;
+  messageCount: number;
+}
+
 interface SubagentPost {
   barnSessionId: string;
   titel: string;
@@ -3212,6 +3221,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [valdModell, setValdModell] = React.useState("");
   const [byterModell, setByterModell] = React.useState(false);
   const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
+  // V148F u1: sessioner ur db.sqlite — visas när levande listan är tom.
+  const [diskSessioner, setDiskSessioner] = React.useState<DiskSessionPost[]>([]);
+  const diskSoktRef = React.useRef(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
   const [toast, setToast] = React.useState<{ text: string; ton: "gron" | "fel" } | null>(null);
   const [rewindJobbar, setRewindJobbar] = React.useState(false);
@@ -4084,6 +4096,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, []);
 
+  // V148F u1: levande sessionslista tom (omstart/okänd session) ⇒ hämta
+  // listan ur zcode:s sessionsdatabas i stället — "Äldre sessioner" visar
+  // då titel + datum ur db.sqlite med samma öppna-flöde som förut.
+  React.useEffect(() => {
+    if (sessioner.length > 0 || diskSoktRef.current) return;
+    diskSoktRef.current = true;
+    (async () => {
+      try {
+        const res = await fetch("/api/studio/sessions/disk", { headers: adminHeaders() });
+        if (res.ok) {
+          const data = (await res.json()) as { sessioner?: DiskSessionPost[] };
+          if (Array.isArray(data.sessioner)) setDiskSessioner(data.sessioner);
+        }
+      } catch {
+        // db-listan är lika mycket lyx som den levande
+      }
+    })();
+  }, [sessioner.length]);
+
   const lasModeller = React.useCallback(async () => {
     try {
       const res = await fetch("/api/studio/modeller", { headers: adminHeaders() });
@@ -4279,6 +4310,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
             ? ((data as { tradHistorik?: HistorikPost[] }).tradHistorik as HistorikPost[])
             : [];
           if (serverTrad.length > aktivHistorik.length) aktivHistorik = serverTrad;
+          // VÅG 148F u2 — TRÅDEN LEVER ÄVEN NÄR AGENTEN ÄR NERE: live=false
+          // med icke-tom tradHistorik är en OMSTART, ej tom vy — status-texten
+          // (footer + prickens aria) säger det; bannern vid skrivfältet detsamma.
+          if (!data.live && serverTrad.length > 0) {
+            setStatusText("Agenten startar om — tråden är intakt (hela historiken syns)");
+          }
           // Kandidaten är inte transportens egna session ⇒ hämta dess historik
           // (VÅG 148: hoppas över när servern redan levererade hela tråden)
           const transportSid = typeof data.sessionId === "string" ? data.sessionId : "";
@@ -4392,6 +4429,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 cacheTrumfar = true;
               }
             }
+          }
+          // VÅG 148F u2 — SKRIVSKYDDAD TRÅD VID NERLADDAD AGENT: kandidaten
+          // kan vara null när barnprocessen är nere (kartan utan senast-aktiv
+          // efter omstart) — väkten nedan krävde kandidat ⇒ hela renderingen
+          // hoppades över ⇒ KUNDEN MÖTTE EN TOM VY. Nu: HELA tråden ur
+          // serverns db (tradHistorik kräver ingen barnprocess) renderas i
+          // huvudfliken ÄVEN utan session-bindning; skrivfältet låses av
+          // live="ned" tills agenten är tillbaka (nästa prompt binder om).
+          if (levande && !kandidat && aktivHistorik.length > 0) {
+            const forr = sparad?.tabbar.find((t) => t.huvud) ?? null;
+            rörTabb(huvudId, (t) => ({
+              ...t,
+              meddelanden: aktivHistorik.map(meddelandeUrHistorik),
+              historikLasad: true,
+              uppdaterad: Date.now(),
+            }));
+            setAktivTabbId(huvudId);
+            setPrompt(forr?.utkast ?? "");
           }
           if (levande && kandidat && aktivHistorik.length > 0) {
             sparaSenasteSessionId(kandidat);
@@ -6700,6 +6755,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const skicka = React.useCallback(async () => {
     const text = prompt.trim();
     if (!text || strömmar) return;
+    // VÅG 148F u2: agenten nere ⇒ skrivskyddat läge — släpp INGEN prompt
+    // igenom (fältet är disabled, detta är race-skyddet om ett anrop
+    // hann iväg innan live flippade till "ned").
+    if (live === "ned") {
+      visaToast("Agenten startar om — tråden är intakt. Skrivfältet öppnas när agenten är tillbaka.");
+      return;
+    }
     setPrompterOppen(false);
     setUploadMenyOppen(false);
 
@@ -6722,7 +6784,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
     const bilder = valdaBilder;
     if (bilder.length > 0) setValdaBilder([]);
     await skickaPrompt(aktivTabbIdRef.current, text, bilder);
-  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder]);
+  }, [prompt, strömmar, korKommando, skickaPrompt, malKör, pushaHistorik, valdaBilder, live, visaToast]);
 
   /** Stoppa DEN AKTIVA TABBENS ström (session/stop via serverns abort-signal). */
   const stoppa = React.useCallback(() => {
@@ -7133,10 +7195,46 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <RefreshCw className="h-3 w-3" />
           </button>
         </div>
-        {sessioner.length === 0 && (
+        {sessioner.length === 0 && diskSessioner.length === 0 && (
           <p className="px-3 py-1.5 text-[11px] leading-relaxed text-[#484F58]">
             Inga sparade sessioner än.
           </p>
+        )}
+        {/* V148F u1: levande listan tom ⇒ listan ur zcode:s sessionsdatabas */}
+        {sessioner.length === 0 && diskSessioner.length > 0 && (
+          <>
+            <p className="px-3 pb-1 pt-0.5 text-[10px] text-[#484F58]" title="Ur ~/.zcode/cli/db/db.sqlite — samma källa som desktop-Z:s sessionsvy">
+              Ur sessionsdatabasen ({diskSessioner.length} st)
+            </p>
+            {diskSessioner.map((s) => {
+              const arOppnad = tabbar.some((t) => t.sessionId === s.sessionId);
+              return (
+                <div
+                  key={s.sessionId}
+                  className="group flex items-center gap-1 border-l-2 border-transparent pr-1 transition-colors hover:bg-[#0D1117]"
+                  title={`${s.sessionId}${s.directory ? ` · ${s.directory}` : ""}${arOppnad ? " · redan öppen — klicka växlar dit" : " · klicka = resume i nytt samtal"}`}
+                >
+                  <button
+                    onClick={() => oppnaITabb(s.sessionId, s.title ?? undefined)}
+                    disabled={sessionJobbar !== ""}
+                    className="flex min-h-[52px] min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left disabled:cursor-default sm:min-h-0"
+                  >
+                    <span className="w-full truncate text-[13px] leading-snug text-[#8B949E]">
+                      {s.title || s.sessionId.slice(0, 18) + "…"}
+                    </span>
+                    <span className="mt-0.5 flex w-full items-center gap-1.5 truncate font-mono text-[9px] text-[#484F58]">
+                      {[
+                        s.timeUpdated > 0 ? new Date(s.timeUpdated).toLocaleString("sv-SE", { dateStyle: "short", timeStyle: "short" }) : null,
+                        typeof s.messageCount === "number" ? `${s.messageCount} medd.` : null,
+                      ]
+                        .filter(Boolean)
+                        .join(" · ") || s.sessionId.slice(5, 13)}
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
+          </>
         )}
         {sessioner.map((s) => {
           const arOppnad = tabbar.some((t) => t.sessionId === s.sessionId);
@@ -8131,6 +8229,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
             visualViewport-lyssnaren ovan håller fältet ovanför tangent-
             bordet. Auto-grow (hojdpassaYta) består. ══ */}
         <div className="studio-safe-bottom z-10 shrink-0 border-t border-[#30363D] bg-[#0D1117]">
+          {/* VÅG 148F u2 — SKRIVSKYDDAD TRÅD VID NERLADDAD AGENT: live="ned"
+              med renderad tråd ⇒ banner + låst skrivfält (ALDRIG tom vy). */}
+          {live === "ned" && meddelanden.length > 0 && (
+            <div role="status" aria-live="polite" className="border-b border-[#F85149]/40 bg-[#F85149]/10">
+              <div className="mx-auto flex w-full max-w-3xl items-center gap-2 px-3 py-2 sm:px-4">
+                <Loader2 className="h-4 w-4 shrink-0 animate-spin text-[#F85149]" />
+                <p className="min-w-0 flex-1 truncate text-[12px] font-semibold text-[#F85149]">
+                  Agenten startar om — tråden är intakt (hela historiken syns)
+                  <span className="ml-1.5 hidden font-normal text-[#8B949E] sm:inline">
+                    · skrivskyddat läge tills agenten är tillbaka
+                  </span>
+                </p>
+              </div>
+            </div>
+          )}
           <div className="mx-auto w-full max-w-3xl px-3 py-2.5 sm:px-4 sm:py-3">
             {draÖver && (
               <div className="mb-2 rounded-md border-2 border-dashed border-[#58A6FF]/60 bg-[#58A6FF]/5 px-3 py-2 text-center text-xs text-[#58A6FF]">
@@ -8333,6 +8446,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   ref={ytaRef}
                   value={prompt}
                   maxLength={2000}
+                  disabled={live === "ned"}
                   onChange={(e) => {
                     historikIndexRef.current = null;
                     setPrompt(e.target.value);
@@ -8389,7 +8503,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   rows={1}
                   placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
                   title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten"
-                  className="min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] sm:min-h-11 sm:text-sm"
+                  className="min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-11 sm:text-sm"
                 />
                 <button
                   type="button"
@@ -8420,7 +8534,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <button
                     type="button"
                     onClick={() => void skicka()}
-                    disabled={!prompt.trim()}
+                    disabled={!prompt.trim() || live === "ned"}
                     title="Skicka (Enter)"
                     aria-label="Skicka"
                     className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40 sm:h-11 sm:w-12"

@@ -1,102 +1,101 @@
 # Granskning: sa-laser-du-en-kvartalsrapport
 
-**Datum:** 2026-09-14 · **Granskare:** Agentfabrik-agent · **Spec:** data/forskning/SEO-GUIDER-2026-09.md §7
-**Utkast:** data/blogg-utkast/sa-laser-du-en-kvartalsrapport.json (v1, 2026-09-09)
+**Datum:** 2026-09-14 · **Granskare:** Agentfabrik-agent (omgranskning #2 — fullständig oberoende verifiering)
+**Spec:** data/forskning/SEO-GUIDER-2026-09.md §7
+**Utkast:** data/blogg-utkast/sa-laser-du-en-kvartalsrapport.json (v1, 2026-09-09 + rättning från granskning #1, commit 41e4ba3a)
 
-## Bedömning: FLYTTKLAR EFTER RÄTTNING (1 fynd, 1 rättning — verkställd)
+## Bedömning: FLYTTKLAR (0 nya fynd, 0 rättningar denna omgång)
 
-Publicering förblir kundens beslut (R2). Utkastet är i övrigt felfritt genom
-samtliga fem kontroller; den enda bristen var en begreppsterm, rättad i
-utkast-JSON:en.
+Publicering förblir kundens beslut (R2). Granskning #1 (2026-09-14, commit
+41e4ba3a) gav FLYTTKLAR EFTER RÄTTNING med ett fynd — "träffkvot" i fel
+betydelse — rättat till "konverteringsgrad". Denna omgranskning har verifierat
+rättningen verkställd och kört samtliga fem kontroller om från noll: allt grönt,
+inga nya fynd. Utkastet är redo att flyttas när kunden godkänner.
 
 ## Fyndlista
 
-### FYND 1 — MEDEL (RÄTTAT): "träffkvot" i fel betydelse
+Inga nya fynd. Tidigare fynd, status:
 
-- **Läge:** Body, sektion "Ett exempel: från intäkt till marginal": "vilket ger
-  träffkvoten 120 ÷ 147 ≈ 0,8. En träffkvot under ett är i sig inte fel …"
-- **Problem:** Termen används om kvoten kassaflöde från löpande verksamhet ÷
-  rörelseresultat. På sajten är "träffkvot" redan en etablerad term i **annan**
-  betydelse — andelen vinnande affärer i trading-sammanhang (Tharp-expectancy-,
-  Turtle- och Fibonacci-kurserna i public/deep-courses.json, t.ex. "ett system
-  som träffar fyra gånger av tio", "35 procent träffkvot"). Samma ord för två
-  olika begrepp missleder läsaren som gått trading-spåret.
-- **Fakta i sak:** Räkningen är korrekt (120 ÷ 147 = 0,82 ≈ 0,8). Kursen
-  km-003 Kassaflödesanalysen beskriver samma kvot utan termen träffkvot:
-  "kassaflödet från den löpande verksamheten som en procentandel av operativ
-  vinst".
-- **Rättning (verkställd i utkast-JSON):** "träffkvoten" → "konverteringsgraden"
-  och "En träffkvot under ett" → "En konverteringsgrad under ett" —
-  etablerad svensk term för kassaflödeskvoten, konsekvent med km-003:s
-  beskrivning. Ordantalet opåverkat (815).
+- **FYND 1 (granskning #1) — MEDEL, RÄTTAT + VERIFIERAT:** "träffkvoten" →
+  "konverteringsgraden" i sektionen "Ett exempel: från intäkt till marginal".
+  Verifierat i JSON: "träffkvot" förekommer 0 gånger, "konverteringsgrad" 2
+  gånger (båda i samma mening), ordantalet 815 bevarat, giltig JSON.
 
-## Kontrollprotokoll
+## Kontrollprotokoll (omgranskning #2 — alla mätvärden omräknade maskinellt)
 
 ### 1. SPEC — GRÖN
 
 | Krav | Krav enligt plan | Faktiskt | OK |
 |---|---|---|---|
 | Slug | sa-laser-du-en-kvartalsrapport | samma | ✓ |
-| Ord i body | 815 (mål 800–1400) | 815 | ✓ |
-| Title | ≤ 60 tkn, "kvartalsrapport" | 57 tkn, innehåller | ✓ |
+| Ord i body | 800–1400 | 815 (whitespace-split, maskinellt) | ✓ |
+| Title | ≤ 60 tkn, sökord i H1 | 57 tkn, "kvartalsrapport" i title (=H1) | ✓ |
 | OG-beskrivning | ≤ 155 tkn | 154 tkn | ✓ |
-| Primärt sökord | H1 + ingress + 1 H2 | Title + ingress + H2 "Kvartalsrapporten steg för steg" | ✓ |
-| Sekundära sökord | delårsrapport, rörelseresultat, jämförelsestörande poster | samtliga naturligt förekommande | ✓ |
+| Primärt sökord | H1 + ingress + 1 H2 | Title + rad 1 i body + H2 "Kvartalsrapporten steg för steg" | ✓ |
+| Sekundära sökord | delårsrapport, rörelseresultat, jämförelsestörande poster | samtliga påträffade i body | ✓ |
 | Pillar/Author | Institutionell metodik / AK1A Research Lab | samma | ✓ |
-| Tags | kvartalsrapport, delårsrapport, rapportanalys, nyckeltal, fundamentalanalys | samma 5 | ✓ |
+| Tags | kvartalsrapport, delårsrapport, rapportanalys, nyckeltal, fundamentalanalys | samma 5, i planens ordning | ✓ |
 | readingMinutes | 1 | 1 | ✓ |
-| SEO-kollision | inga kollisioner mot befintliga 55 poster | 0 titlar med "kvartals" | ✓ |
-| Strukturgrind (blogg-utkast.ts) | ≥ 800 tkn, ≥ 2 H2, disclaimer sist | 6 H2, disclaimer sist | ✓ |
+| BlogPost-form | slug, title, description, pillar, author, publishedAt, readingMinutes, tags, body | exakt de 9 fälten, inga extra | ✓ |
+| Disclaimer sist | identisk med befintliga poster | sista raden "_Detta är pedagogisk finansanalys, inte investeringsråd._" — 40/55 publicerade poster bär identisk rad | ✓ |
 
-### 2. FAKTA — GRÖN (ruta för ruta verifierad)
+### 2. FAKTA — GRÖN (alla räkneexempel omräknade till 4 decimaler)
 
-- Tillväxt: 60 ÷ 940 = 6,38 % → "6,4 procent" ✓
-- Rörelsemarginal: 147 ÷ 1 000 = 14,70 % → "14,7" ✓; förra året 131 ÷ 940 =
-  13,94 % → "13,9" ✓; utvidgning 0,76 → "0,8 procentenheter" ✓
-- Kassaflöde/rörelseresultat: 120 ÷ 147 = 0,82 → "≈ 0,8" ✓ (termen rättad, se fynd 1)
-- Nettoskuld/EBITDA: 310 ÷ 210 = 1,48 → "≈ 1,5" ✓
-- Ordlistan (src/lib/ordlista.ts): guidebegreppen ligger utanför ordlistans
-  deklarerade omfattning (UI-ord). Närmaste definition — "EBIT-marginal =
-  rörelseresultatet (EBIT) som andel av omsättningen" — är samma mått som
-  guidens rörelsemarginal; ingen motstridighet.
-- Rapportläsningsmekaniken (resultaträkning → kassaflöde → balansräkning →
-  segment → noter) stämmer med svensk praxis och sajten km-006.
+- Tillväxt: 60 ÷ 940 = 6,3830 % → texten "6,4 procent" ✓
+- Rörelsemarginal i år: 147 ÷ 1 000 = 14,700 % → "14,7" ✓
+- Rörelsemarginal förra året: 131 ÷ 940 = 13,9362 % → "13,9" ✓
+- Marginalutvidgning: 0,7638 procentenheter → "0,8 procentenheter" ✓
+- Kassaflöde/rörelseresultat: 120 ÷ 147 = 0,8163 → "≈ 0,8" ✓ (term: konverteringsgraden — se fynd 1)
+- Nettoskuld/EBITDA: 310 ÷ 210 = 1,4762 → "≈ 1,5" ✓
+- **Ordlista (src/lib/ordlista.ts):** guidebegreppen (kvartalsrapport, delårsrapport,
+  rörelsemarginal, nettoskuld, EBITDA, jämförelsestörande poster, konverteringsgrad)
+  ligger utanför ordlistans deklarerade omfattning (UI-ord) — ingen motstridighet
+  möjlig. Närmaste granne "EBIT-marginal = rörelseresultatet (EBIT) som andel av
+  omsättningen" (ordlista.ts:1865) är exakt samma mått som guidens
+  rörelsemarginal = rörelseresultat ÷ intäkter ✓
+- Rapportläsningsmekaniken (intäkter → marginal → kassaflöde → balansräkning →
+  segment → ledningskommentar → jämförelsestörande poster) stämmer med svensk
+  praxis och länkade kursen km-006 Kvartalsrapporten.
 
-### 3. LÄNKAR — GRÖN (5/5 = HTTP 200 mot localhost:3000)
+### 3. LÄNKAR — GRÖN (5/5 = HTTP 200 mot localhost:3000, omcurlade denna omgång)
 
-| Länk | Svar | Mål |
-|---|---|---|
-| /kurser/km-006-kvartalsrapporten | 200 | publicerad kurs |
-| /kurser/km-003-kassaflodesanalysen | 200 | publicerad kurs (finns i public/deep-courses.json) |
-| /kurser/km-004-noter | 200 | publicerad kurs |
-| /blogg/sa-laser-du-en-svensk-arsredovisning | 200 | publicerad post (data/blogg/) |
-| /blogg/sa-laser-du-en-balansrakning-pa-15-minuter | 200 | publicerad post (data/blogg/) |
+| Länk | Svar |
+|---|---|
+| /kurser/km-006-kvartalsrapporten | 200 |
+| /kurser/km-003-kassaflodesanalysen | 200 |
+| /kurser/km-004-noter | 200 |
+| /blogg/sa-laser-du-en-svensk-arsredovisning | 200 |
+| /blogg/sa-laser-du-en-balansrakning-pa-15-minuter | 200 |
 
-Inga länkar mellan utkast; partiell publicering skapar inga 404:or ✓
+Inga länkar mellan utkast — partiell publicering skapar inga 404:or ✓
 
 ### 4. JURISTEN — GRÖN
 
-- Varumärkesgrindens samtliga FEL/VARNING-regexar (data/varumarke.json via
-  kontrolleraText-logiken) körda mot titel+beskrivning+body: **0 FEL, 0 VARNING**.
-- Disclaimer sista rad, identisk med befintliga poster:
-  "_Detta är pedagogisk finansanalys, inte investeringsråd._" (40/55 publicerade
-  poster bär samma rad) ✓
+- Varumärkesgrinden kördes som exakt replik av kontrolleraText
+  (src/lib/varumarke.ts:141 — samtliga 26 FORBJUDNA_FRASER ur
+  data/varumarke.json, regex "giu", mot title+description+body):
+  **0 FEL, 0 VARNINGAR**.
+- Disclaimer sista raden i body, identisk med befintliga poster (se SPEC) ✓
 - Inga lagrum nämns alls → inga blandade lagrum ✓
-- Genomgående utbildningsformuleringar ("Så räknar du", exempelbolag utan
-  namn); inga uppmaningar om köp/sälj av enskilda aktier ✓
+- Genomgående utbildningsformuleringar ("Så räknar du", "Kontrollen: läs …",
+  namnlöst exempelbolag); inga uppmaningar om köp/sälj av enskilda aktier ✓
+  Notera: "inte investeringsråd" i disclaimern är själva tillåtna formen —
+  grindens regex träffar endast onegerat "investeringsråd".
 
 ### 5. SPRÅK — GRÖN
 
-Svenska, rak pedagogisk ton, konsekvent du-tilltal, ingen jargon utan
-förklaring. H2-strukturen är logisk (innehåll → läsordning → exempel →
-två fallgropar → sammanfattning).
+Svenska, rak pedagogisk ton, konsekvent du-tilltal, jargon förklarad vid
+första förekomst ("träffkvot"-fallgropen borta; "konverteringsgrad" används
+självförklarande i kontext). H2-strukturen logisk: innehåll → läsordning →
+genomräknat exempel → två fallgropar → sammanfattning → nästa steg.
 
-## Diff-rapport (rättning i data/blogg-utkast/sa-laser-du-en-kvartalsrapport.json)
+## Diff-rapport
+
+Inga rättningar denna omgång — utkast-JSON:en orörd av granskning #2.
+(Förra omgångens rättning, verkställd i commit 41e4ba3a:
 
 ```diff
 -vilket ger träffkvoten 120 ÷ 147 ≈ 0,8. En träffkvot under ett är i sig inte fel
 +vilket ger konverteringsgraden 120 ÷ 147 ≈ 0,8. En konverteringsgrad under ett är i sig inte fel
 ```
-
-Ett redigeringstillfälle, två termbyten i samma mening. Ingen annan ändring i
-JSON:en — ordantal 815 bevarat, giltig JSON verifierad efter rättning.
+)

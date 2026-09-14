@@ -4879,8 +4879,24 @@ export function StudioChat({ hem }: { hem: () => void }) {
     };
   }, [aktivTabbId, tabbar, rörTabb, visaToast]);
 
-  // ── RECONNECT-POLL (våg 87 H1 + våg 88 I3: 15 s vid mål, annars 30 s) ──────
+  // ── RECONNECT-POLL (våg 87 H1 + våg 88 I3; R2-FAS 2 våg 156: triggas av
+  //    pulsen vid ändring, säkerhetsnät 120 s / fallback 15-30 s) ────────────
   const pollAterkopplingRef = React.useRef<() => Promise<void>>(async () => undefined);
+  // ── R2-FAS 2 (våg 156): LÄTTVIKTSPULS-STATE ─────────────────────────────────
+  // pulsen (GET /api/studio/puls — mikrosekunder server-side) är poll-klockan;
+  // den tunga GET:en körs ENDAST när revisionen ändras. tungPollPagarRef =
+  // koalesceringsvakt (R2-POLL fas 1): aldrig överlappande tunga GET:ar.
+  const pulsRevisionRef = React.useRef<string | null>(null);
+  const pulsOkTidRef = React.useRef<number>(0);
+  const tungPollPagarRef = React.useRef(false);
+  /** Koalescerad körning av den tunga pollen — en i taget, alltid. */
+  const korTungPoll = React.useCallback(() => {
+    if (tungPollPagarRef.current) return;
+    tungPollPagarRef.current = true;
+    void pollAterkopplingRef.current().finally(() => {
+      tungPollPagarRef.current = false;
+    });
+  }, []);
   const pollAterkoppling = React.useCallback(async () => {
     try {
       const res = await fetch("/api/studio/stream", { headers: adminHeaders() });
@@ -5046,17 +5062,85 @@ export function StudioChat({ hem }: { hem: () => void }) {
     pollAterkopplingRef.current = pollAterkoppling;
   }, [pollAterkoppling]);
 
+  // ── R2-FAS 2 (våg 156) — LÄTTVIKTSPULSEN: 5 s-versionsfråga, tung GET på diff ──
+  // TUI:ns runtime-poll-mönster (R2-POLL.md §1-2, §7 fas 2): fråga OFTA efter
+  // en billig versionstupp (mikrosekunder server-side: processminnets karta +
+  // mål-flagga + interaktionsräknare — ingen sqlite, ingen barnprocess) och
+  // betala den TUNGA hel-GET:en (mätt på prod: 0,7–30 s!) ENDAST när
+  // revisionen ändras. Självschemaläggande setTimeout (aldrig setInterval —
+  // index.ts:5428-mönstret: nästa poll planeras FÖRST när föregående klar),
+  // pausad dold flik, in-flight-vakt, fel-backoff 5→10→20 s. Vid pågående
+  // tung GET sparas revisionen INTE — nästa puls ser diffen kvar och triggar
+  // när platsen är fri (förlustfri koalescering, inget tappat event).
+  React.useEffect(() => {
+    let levande = true;
+    let tur: number | undefined;
+    let pulsTar = false;
+    let felIrad = 0;
+    const tick = async () => {
+      if (!levande) return;
+      if (document.visibilityState !== "visible") {
+        schemalagg(5_000);
+        return;
+      }
+      if (pulsTar) {
+        schemalagg(1_000);
+        return;
+      }
+      pulsTar = true;
+      try {
+        const res = await fetch("/api/studio/puls", { headers: adminHeaders() });
+        if (!levande) return;
+        if (!res.ok) throw new Error(String(res.status));
+        const data = (await res.json()) as { revision?: string };
+        felIrad = 0;
+        pulsOkTidRef.current = Date.now();
+        if (typeof data.revision === "string" && data.revision !== pulsRevisionRef.current) {
+          if (!tungPollPagarRef.current) {
+            pulsRevisionRef.current = data.revision;
+            korTungPoll();
+          }
+        }
+        schemalagg(5_000);
+      } catch {
+        // server Fel/otillgänglig — backoff (R2-POLL fas 4); den tunga
+        // fallback-loopen nedan tar över om pulsen håller sig borta > 45 s.
+        felIrad = Math.min(felIrad + 1, 2);
+        schemalagg(5_000 * 2 ** felIrad);
+      } finally {
+        pulsTar = false;
+      }
+    };
+    const schemalagg = (ms: number) => {
+      if (levande) tur = window.setTimeout(() => void tick(), ms);
+    };
+    schemalagg(5_000);
+    return () => {
+      levande = false;
+      if (tur !== undefined) window.clearTimeout(tur);
+    };
+  }, [korTungPoll]);
+
   React.useEffect(() => {
     const kanske = () => {
-      if (document.visibilityState === "visible") void pollAterkopplingRef.current();
+      if (document.visibilityState === "visible") korTungPoll();
     };
     let tid: number | undefined;
     const arma = () => {
       const aktivtMal = malStatusRef.current?.aktiv === true && malStatusRef.current.pausad !== true;
-      tid = window.setTimeout(() => {
-        kanske();
-        arma();
-      }, aktivtMal ? 15_000 : 30_000);
+      // R2-FAS 2: FRISK puls (svar < 45 s sedan) ⇒ den tunga GET:en är
+      // ändringsdriven (puls-triggad ovan) och denna loop är ett DJUPT
+      // säkerhetsnät (120 s — fångar revision-källor utanför kartan, t.ex.
+      // historikväxt i barnet mellan kartmarkeringar). Död/äldre puls
+      // (deploy-gap, gammal server) ⇒ EXAKT gamla beteendet 15/30 s.
+      const pulsFrisk = pulsOkTidRef.current > 0 && Date.now() - pulsOkTidRef.current < 45_000;
+      tid = window.setTimeout(
+        () => {
+          kanske();
+          arma();
+        },
+        pulsFrisk ? 120_000 : aktivtMal ? 15_000 : 30_000,
+      );
     };
     arma();
     document.addEventListener("visibilitychange", kanske);
@@ -5064,7 +5148,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       if (tid !== undefined) window.clearTimeout(tid);
       document.removeEventListener("visibilitychange", kanske);
     };
-  }, []);
+  }, [korTungPoll]);
 
   // ── Modellbyte / ny session / komprimering (våg 82) ────────────────────────
   /** true = sessionssparat ny modell (VÅG 93 C3: drawern sparar då standarden). */

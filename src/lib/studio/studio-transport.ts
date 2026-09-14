@@ -7706,6 +7706,33 @@ export function lasStudioSessionskarta(): Record<string, StudioSessionsKort> {
   return ut;
 }
 
+/**
+ * VÅG 156 — R2-FAS 2: LÄTTVIKTSPULS-UNDERLAG ur sessionskartan. Itererar
+ * kartan UTAN att kopiera historik (lasStudioSessionskarta slice:ar varje
+ * posts historik — onödigt för en versionsfråga). Källan är processminnet
+ * (lasKartaFranDisk är engångs-hydrering, no-op efter första anropet) —
+ * mikrosekunder, INGEN sqlite-läsning, INGEN barnprocess-fråga.
+ * GET /api/studio/puls svarar ur detta; klienten pollar pulsen var 5:e s
+ * och betalar den tunga hel-GET:en ENDAST när revisionen ändras (TUI:ns
+ * "polla ofta, arbeta bara på diff" — R2-POLL.md §6-7).
+ */
+export function lasStudioPulsUnderlag(): {
+  senasteAktivitet: number;
+  turnCount: number;
+  aktivaSessioner: number;
+} {
+  lasKartaFranDisk();
+  let senasteAktivitet = 0;
+  let turnCount = 0;
+  let aktivaSessioner = 0;
+  for (const kort of sessionskartan.values()) {
+    if (kort.senasteAktivitet > senasteAktivitet) senasteAktivitet = kort.senasteAktivitet;
+    turnCount += kort.historik.length;
+    if (kort.aktiv) aktivaSessioner += 1;
+  }
+  return { senasteAktivitet, turnCount, aktivaSessioner };
+}
+
 /** Prompt startade i sessionen — historiken växer, aktiv=true. */
 export function markeraSessionStart(sessionId: string, prompt: string): void {
   if (!sessionId) return;

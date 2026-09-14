@@ -13,10 +13,13 @@
  * R4-HOOKS §8.6 GDPR-minimi) och POSTa till loopback-rutten
  * /api/studio/sessionstart med hemlig query-param.
  *
- * Nyckelkälla: ADMIN_PASSWORD ur process-miljön; om den saknas (cron-barn
- * startade utan env) läses .env med process.loadEnvFile — ETABLERAT mönster
- * från verktyg/backup-fran-molnet.mjs ("ENDAST env — Mimosa-kontraktet").
- * Värdet loggas ALDRIG och skickas ENDAST till 127.0.0.1:3000.
+ * Nyckelkälla: ADMIN_PASSWORD ur process-miljön (ärvd i app-serverns
+ * process-träd); om den saknas (cron-/fabriksbarn utan env) läses Next:s
+ * env-filer med process.loadEnvFile — ETABLERAT mönster från verktyg/
+ * backup-fran-molnet.mjs ("ENDAST env — Mimosa-kontraktet"). Filerna läses
+ * ENDAST som env-källa och ändras ALDRIG; på servern bor nyckeln i
+ * .env.production.local (Next:s production-laddning). Värdet loggas ALDRIG
+ * och skickas ENDAST till 127.0.0.1:3000.
  *
  * Felhantering: ALLT tyst + exit 0 (R4-HOOKS §7.2, §8 risk 2/5/9) — vid
  * nätverksfel, ogiltig JSON, saknad nyckel eller nere-api avslutas stilla.
@@ -54,10 +57,13 @@ async function main() {
   if (body.hook_event_name !== "SessionStart") return;
 
   if (!process.env.ADMIN_PASSWORD) {
-    try {
-      process.loadEnvFile("/home/ak1a/AK1/.env");
-    } catch {
-      /* dev eller saknad fil — nyckel saknas, tyst hemma */
+    for (const envfil of ["/home/ak1a/AK1/.env", "/home/ak1a/AK1/.env.production.local"]) {
+      try {
+        process.loadEnvFile(envfil);
+      } catch {
+        /* saknad fil i denna miljö — nästa källa */
+      }
+      if (process.env.ADMIN_PASSWORD) break;
     }
   }
   const nyckel = process.env.ADMIN_PASSWORD;

@@ -4270,12 +4270,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
               ? malSid
               : senastAktivSessionId;
           let aktivHistorik = senastAktivHistorik;
+          // VÅG 148 — SERVERNS TRÅD ("z code 100% samma"): GET svarar HELA
+          // huvudtråden sammanslagen ur zcode:s egna sessionsdatabas —
+          // klienten renderar detta som PRIMÄR källa. Kedje-sysandet per
+          // länk (ett zcode-barnprocess-anrop per session vid VARJE refresh)
+          // behövs ENDAST när servern saknar tradHistorik (fallback).
+          const serverTrad = Array.isArray((data as { tradHistorik?: HistorikPost[] }).tradHistorik)
+            ? ((data as { tradHistorik?: HistorikPost[] }).tradHistorik as HistorikPost[])
+            : [];
+          if (serverTrad.length > aktivHistorik.length) aktivHistorik = serverTrad;
           // Kandidaten är inte transportens egna session ⇒ hämta dess historik
+          // (VÅG 148: hoppas över när servern redan levererade hela tråden)
           const transportSid = typeof data.sessionId === "string" ? data.sessionId : "";
           if (
             kandidat &&
             kandidat !== senastAktivSessionId &&
-            kandidat !== transportSid
+            kandidat !== transportSid &&
+            serverTrad.length === 0
           ) {
             try {
               const r2 = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(kandidat)}`, {
@@ -4312,7 +4323,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
           // VÅG 140 — TRÅDKEDJAN VID ÖPPNING/REFRESH: kandidaten kan vara
           // trådens SENASTE session; föregångarna (sessionsbyten) hämtas och
           // konkateneras FÖRE kandidatens historia ⇒ hela tråden syns igen.
-          if (kandidat) {
+          // (VÅG 148: ren fallback — serverns tradHistorik ur zcode:s db är
+          // primär; detta skyddar bara när db-läsning saknades.)
+          if (kandidat && serverTrad.length === 0) {
             const kand = kandidat;
             const trådTabb =
               sparad?.tabbar.find(
@@ -4363,8 +4376,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             aktivHistorik = senastAktivHistorik;
           }
           // ── IndexedDB-jämförelse (våg 88 I3): cachen FLER ⇒ cachad vinner ──
+          // (VÅG 148: aldrig när serverns hela tråd lever — db-sanningen
+          // övertrumfar en lokal cachelik av en ENDA session.)
           let cacheTrumfar = false;
-          if (levande && sparadSid && sparadSid === kandidat) {
+          if (levande && sparadSid && sparadSid === kandidat && serverTrad.length === 0) {
             const meta = lasHistorikMeta();
             if (meta && meta.sessionId === sparadSid) {
               const serverLista =
@@ -4583,15 +4598,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
               headers: adminHeaders(),
             });
             if (rMal.ok) {
-              const dMal = (await rMal.json()) as { historik?: HistorikPost[] };
-              if (Array.isArray(dMal.historik)) {
+              const dMal = (await rMal.json()) as { historik?: HistorikPost[]; tradHistorik?: HistorikPost[] };
+              // VÅG 148 — TRÅDEN ÄR HELIG: ersätt ALDRIG flikens vy med EN
+              // sessions historik. Detta var roten till "allt försvinner när
+              // jag uppdaterar": denna poll skrev över v145:s sammanslagna
+              // tråd med mål-sessionens korta svans (158 → 26 meddelanden).
+              // tradHistorik = HELA tråden från servern (zcode:s egna db) —
+              // att ersätta med DEN är alltid korrekt.
+              const malVy =
+                Array.isArray(dMal.tradHistorik) && dMal.tradHistorik.length > 0
+                  ? dMal.tradHistorik
+                  : dMal.historik;
+              if (Array.isArray(malVy)) {
                 const forrSvar = malFlik.meddelanden.filter((m) => m.roll === "assistant").length;
                 const forrAntal = malFlik.meddelanden.length;
-                const nyaSvar = dMal.historik.filter((h) => h.roll === "assistant").length;
-                if (dMal.historik.length !== forrAntal || nyaSvar !== forrSvar) {
+                const nyaSvar = malVy.filter((h) => h.roll === "assistant").length;
+                if (malVy.length !== forrAntal || nyaSvar !== forrSvar) {
                   rörTabb(malFlik.id, (t) => ({
                     ...t,
-                    meddelanden: dMal.historik!.map(meddelandeUrHistorik),
+                    meddelanden: malVy.map(meddelandeUrHistorik),
                     historikLasad: true,
                     uppdaterad: Date.now(),
                   }));
@@ -4626,13 +4651,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
             headers: adminHeaders(),
           });
           if (!r2.ok) continue;
-          const d2 = (await r2.json()) as { historik?: HistorikPost[] };
-          if (!Array.isArray(d2.historik) || d2.historik.length === 0) continue;
+          const d2 = (await r2.json()) as { historik?: HistorikPost[]; tradHistorik?: HistorikPost[] };
+          // VÅG 148 — TRÅDEN ÄR HELIG (samma kur som mål-pollen): hela tråden
+          // från servern när den finns — aldrig en enskild sessions svans.
+          const vy2 =
+            Array.isArray(d2.tradHistorik) && d2.tradHistorik.length > 0 ? d2.tradHistorik : d2.historik;
+          if (!Array.isArray(vy2) || vy2.length === 0) continue;
           const forrSvar = tb.meddelanden.filter((m) => m.roll === "assistant").length;
-          const nyaSvar = d2.historik.filter((h) => h.roll === "assistant").length;
+          const nyaSvar = vy2.filter((h) => h.roll === "assistant").length;
           rörTabb(tb.id, (t) => ({
             ...t,
-            meddelanden: d2.historik!.map(meddelandeUrHistorik),
+            meddelanden: vy2.map(meddelandeUrHistorik),
             historikLasad: true,
             uppdaterad: Date.now(),
           }));

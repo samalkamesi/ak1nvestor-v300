@@ -140,6 +140,29 @@ async function main() {
           JSON.stringify({ ts: new Date().toISOString(), commits: nya.split("\n").slice(0, 6) }) + "\n",
         );
       } catch { /* logg får vänta */ }
+
+      // VÅG 148D — STÅENDE RUTIN AUTONOM ("agentens hjärna får aldrig glida
+      // ifrån koden"): varje deploy synkar OCKSÅ agentens arbetsyta
+      // (/home/ak1a/agent/ak1) mot prod-trädet + färskt AGENTS.md. Bevisat
+      // behov 2026-09-14: arbetsytan stod kvar på våg 140 medan prod nått 147
+      // — agenten levde i en gammal kodvärld och gjorde om redan levererat
+      // arbete. --ff-only skyddar agentens ev. pågående ocommittade arbete;
+      // misslyckande LARMAR i loggen (ALDRIG tyst — det var så glidet uppstod).
+      try {
+        const AGENT_YTA = "/home/ak1a/agent/ak1";
+        execFileSync(
+          "git",
+          ["-C", AGENT_YTA, "pull", "--ff-only", "/home/ak1a/AK1", "develop"],
+          { timeout: 120_000, encoding: "utf8", stdio: "pipe" },
+        );
+        fs.copyFileSync(
+          path.join(ROT, "data", "infra", "agent-arbetsyta", "AGENTS.md"),
+          path.join(AGENT_YTA, "AGENTS.md"),
+        );
+        logga("AGENTARBETSYTA synkad (pull --ff-only + AGENTS.md) — agenten lever i aktuell kod");
+      } catch (e) {
+        logga("AGENTARBETSYTA-SYNK MISSLYCKADES (smutsigt träd? åtgärda nästa rond): " + String(e).slice(0, 120));
+      }
     } else {
       logga("VARNING: deployad men HTTPS ej verifierad — kontrollera manuellt");
     }

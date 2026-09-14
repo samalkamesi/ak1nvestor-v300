@@ -1,6 +1,7 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 
@@ -7953,6 +7954,115 @@ export function lasHuvudtradSessioner(): string[] {
   } catch {
     return [];
   }
+}
+
+// ── VÅG 148 — TRÅDENS PERMANENS ("z code 100% samma", kunddirektiv ──────────
+// 2026-09-14): HELA tråden läses ur zcode:s EGNA sessionsdatabas
+// (~/.zcode/cli/db/db.sqlite) — samma källa som Z-code-desktop läser vid
+// session/resume. Tidigare sydde KLIENTEN ihop kedjan med en ?sessionId-
+// hämtning per länk (= ett zcode-barnprocess per session per refresh) och
+// v144-pollen skrev därefter ÖVER den sammanslagna vyn med EN sessions
+// historik — kundbevis: tråd på 346 meddelanden visade 26 efter refresh.
+// Nu: servern = trådens sanningsägare; GET svarar tradHistorik (bokens
+// sessioner i kronologisk ordning, aktuell sessions svans ur LEVANDE
+// transport). WAL-läget gör samtidig läsning säker; readOnly öppning.
+interface V148SqliteRad {
+  mid: string;
+  mdata: string;
+  pdata: string | null;
+}
+type V148Databas = { prepare(sql: string): { all(...args: unknown[]): unknown[] } };
+let v148Db: V148Databas | null | undefined; // undefined = oläst, null = ej tillgänglig
+
+function v148OppnaDb(): V148Databas | null {
+  if (v148Db !== undefined) return v148Db;
+  v148Db = null;
+  try {
+    const hem = process.env.HOME || process.env.USERPROFILE || "";
+    if (!hem) return v148Db;
+    const sokvag = path.join(hem, ".zcode", "cli", "db", "db.sqlite");
+    if (!existsSync(sokvag)) return v148Db;
+    // node:sqlite är experimental i Node 22 — createRequire håller TS-typningen
+    // lokal (ingen @types/node-versionskoppling) och laddning lat till första läsning.
+    const nodRequire = createRequire(import.meta.url);
+    const mod = nodRequire("node:sqlite") as {
+      DatabaseSync: new (fil: string, alternativ?: { readOnly?: boolean }) => V148Databas;
+    };
+    v148Db = new mod.DatabaseSync(sokvag, { readOnly: true });
+  } catch {
+    v148Db = null; // dev/maskin utan db — tråden faller tillbaka på levande läsning
+  }
+  return v148Db;
+}
+
+/** En sessions fulla user/assistant-text ur db.sqlite (tom lista = okänd). */
+function v148SessionFranDb(db: V148Databas, sessionId: string): StudioHistorikPost[] {
+  const rader = db
+    .prepare(
+      "SELECT m.id AS mid, m.data AS mdata, p.data AS pdata " +
+        "FROM message m LEFT JOIN part p ON p.message_id = m.id " +
+        "WHERE m.session_id = ? ORDER BY m.sequence, p.sequence",
+    )
+    .all(sessionId) as V148SqliteRad[];
+  const ut: StudioHistorikPost[] = [];
+  let aktuell: { roll: "user" | "assistant"; text: string[] } | null = null;
+  for (const rad of rader) {
+    let roll: unknown = null;
+    try {
+      roll = (JSON.parse(rad.mdata) as { role?: unknown }).role;
+    } catch {
+      roll = null;
+    }
+    if (roll !== "user" && roll !== "assistant") {
+      aktuell = null;
+      continue;
+    }
+    if (!aktuell || aktuell.roll !== roll) {
+      if (aktuell) v148Pusha(ut, aktuell);
+      aktuell = { roll, text: [] };
+    }
+    if (!rad.pdata) continue;
+    try {
+      const pd = JSON.parse(rad.pdata) as { type?: unknown; text?: unknown };
+      if (pd.type === "text" && typeof pd.text === "string" && pd.text.trim()) {
+        aktuell.text.push(pd.text);
+      }
+    } catch {
+      /* skadad part-rad — hoppa över */
+    }
+  }
+  if (aktuell) v148Pusha(ut, aktuell);
+  return ut;
+}
+
+function v148Pusha(ut: StudioHistorikPost[], m: { roll: "user" | "assistant"; text: string[] }): void {
+  const text = m.text.join("\n").trim();
+  if (text) ut.push({ roll: m.roll, text });
+}
+
+/**
+ * HELA huvudtråden sammanslagen (äldst→nyst) ur databasen + levande svans.
+ * bokSessioner kommer nyast-först (registreraHuvudtradSession) — reverseras
+ * här. externLive = aktuell sessions LEVANDE historik (färskare än db:n under
+ * pågående turn) ersätter den sessionens db-skiva.
+ */
+export function lasTradHistorik(
+  bokSessioner: string[],
+  externLive: { sessionId: string | null; historik: StudioHistorikPost[] },
+): StudioHistorikPost[] {
+  const db = v148OppnaDb();
+  if (!db) return [];
+  const kronologisk = [...bokSessioner].reverse();
+  const ut: StudioHistorikPost[] = [];
+  for (const sid of kronologisk) {
+    if (!sid.startsWith("sess_")) continue;
+    if (externLive.historik.length > 0 && sid === externLive.sessionId) {
+      ut.push(...externLive.historik.slice(-120));
+      continue;
+    }
+    ut.push(...v148SessionFranDb(db, sid).slice(-120));
+  }
+  return ut.slice(-500);
 }
 
 /**

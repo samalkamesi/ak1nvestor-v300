@@ -10,6 +10,7 @@ import {
   lasAterkoppling,
   lasHuvudtradSessioner,
   lasStudioSessionskarta,
+  lasTradHistorik,
   markeraSessionSlut,
   markeraSessionStart,
   type StudioEvent,
@@ -184,10 +185,18 @@ export async function GET(req: NextRequest) {
     try {
       const { transport, sessionId } = await hamtaSessionTransport(sidPar);
       const [historik, kontext] = await Promise.all([transport.historik(), transport.lasKontext()]);
+      // VÅG 148: även sidoloaden bär HELA tråden (boken + denna sessions
+      // levande svans) — klientens poll kan ersätta flikens vy med tradHistorik
+      // utan att någonsin radera kedjan ("tråden är helig").
+      const tradHistorik = lasTradHistorik(lasHuvudtradSessioner(), {
+        sessionId,
+        historik,
+      });
       return jsonSvar({
         transport: transport.namn,
         sessionId,
         historik,
+        tradHistorik,
         kontext,
         interaktioner: lasAllaInteraktioner(),
         live: true,
@@ -208,6 +217,20 @@ export async function GET(req: NextRequest) {
   const transport = hamtaStudioTransport();
   try {
     await transport.ensure();
+    // VÅG 148C — MÅLET FÖDS OM VID FÖRSTA ANROPET (refresh/poll): pm2-
+    // omstarter raderar mål-state ur processminnet (hjärtloggen bevisar
+    // cykeln "MÅL återställt" → "mål borta" × 789 omstarter); hjärtat
+    // återställer inom 10 min men kundens refresh skall inte vänta —
+    // mal=null (ej pausat, ingen pågående turn) ⇒ stående mål återarmas
+    // direkt. POST-grenen (v141) och hjärtat (v112) kvarstår som skydd.
+    try {
+      const m0 = transport.malStatus();
+      if (m0.mal === null && !m0.pausad && !m0.pagaendeTurn) {
+        await transport.sattMal(STANDE_MAL_141);
+      }
+    } catch {
+      /* pågående turn vägrar sattMal — hjärtat/POST täcker */
+    }
     const [historik, kontext, aterkoppling] = await Promise.all([
       transport.historik(),
       transport.lasKontext(),
@@ -246,6 +269,15 @@ export async function GET(req: NextRequest) {
       // serverns sanna sessionlista för tråden (klienten behöver inte gissa).
       aktivtMal: aktivtMalSanning,
       tradSessioner: lasHuvudtradSessioner(),
+      // VÅG 148 — TRÅDENS PERMANENS: HELA huvudtråden sammanslagen (äldst→
+      // nyast) ur zcode:s egna sessionsdatabas + default-sessionens levande
+      // svans. Klienten renderar detta ETT fält — kedje-sysandet på klientsidan
+      // (ett barnprocess-anrop per länk) och poll-utraderingen av kedjan är
+      // därmed historia: "z code 100% samma" — tråden kan aldrig försvinna.
+      tradHistorik: lasTradHistorik(lasHuvudtradSessioner(), {
+        sessionId: transport.sessionId(),
+        historik,
+      }),
     });
   } catch (fel) {
     return jsonSvar({
@@ -259,6 +291,9 @@ export async function GET(req: NextRequest) {
       // historiken från frånvaron förloras inte bara för att barnprocessen
       // är nere; lasAterkoppling kastar aldrig.
       ...(await lasAterkoppling()),
+      // VÅG 148: tråden lever ÄVEN med agenten nere — db.sqlite kräver ingen
+      // barnprocess (svansen saknas men historien står kvar = aldrig tomt).
+      tradHistorik: lasTradHistorik(lasHuvudtradSessioner(), { sessionId: null, historik: [] }),
       fel: fel instanceof Error ? fel.message.slice(0, 300) : "Agenten kunde ej nås.",
     });
   }

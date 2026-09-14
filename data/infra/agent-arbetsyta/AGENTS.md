@@ -222,6 +222,26 @@ Organismen FÅR ALDRIG stå utan nästa våg. Tre skydd:
 Vid vaktprompt: fortsätt pågående våg ELLER boka 3 nya ur katalogen —
 verkställ, bokför (worklog + beslutsminne), aldrig sysslolös.
 
+## TRÅDENS PERMANENS (våg 148 — kunddirektivet "z code 100% samma")
+
+Kundens mest återkommande smärta ("allt försvinner när jag uppdaterar,
+kan ej fortsätta där jag började") är KURAD I ROTTEN:
+- **Servern är trådens sanningsägare**: GET /api/studio/stream svarar
+  `tradHistorik` = HELA huvudtråden (bokens alla sessioner, äldst→nyast)
+  läst ur zcode:s EGENNA sessionsdatabas (~/.zcode/cli/db/db.sqlite —
+  samma källa som desktop-Z läser vid resume). Klienten renderar detta
+  ETT fält; ingen kedje-sysning, inga barnprocesser per länk.
+- **Tråden är helig**: klientens poll ERSÄTTER aldrig vyn med en enskild
+  sessions historik (det var mordvapnet: v144-pollen skrev över den
+  sammanslagna tråden med mål-sessionens korta svans).
+- **Målet föds om vid första anropet** efter omstart (mal=null ⇒ stående
+  mål återarmas direkt i GET; hjärtat + POST-grenen kvarstår som skydd).
+- **Din arbetsyta synkas autonomt**: varje deploy (prod-synken) kör
+  `git pull --ff-only /home/ak1a/AK1 develop` + färskt AGENTS.md här.
+  Håll trädet COMMITTAT — en smutsig yta larmar i prod-synk.loggen och
+  du lever i gammal kod (bevisat 2026-09-14: våg 140-hjärna vid våg
+  147-prod = omgjort klart arbete).
+
 ## HUVUDAGENT-RAPPORTER I STUDION (våg 132 — kunden ska se allt "exakt som i desktop-Z")
 
 Huvudagenten (datorn, när öppen) skickar sina fulla utvecklingsrapporter till

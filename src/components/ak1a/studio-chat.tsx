@@ -272,6 +272,13 @@ interface Meddelande {
   tankar?: string;
   /** VÅG 97 E2: tankar-sektionens expanderade tillstånd (kollapsad default). */
   tankarOppen?: boolean;
+  /**
+   * M5 (b): serverns assistant-meddelande-ID för denna bubbla (sätts vid
+   * strömsslut via "meddelande_id"-eventet, eller ur historikens
+   * meddelandeId) — {kind:"message"}-forkens ankare (åldras ALDRIG ur
+   * serverns turnIndex-vy, rek 6).
+   */
+  serverId?: string;
 }
 
 interface Uppladdning {
@@ -290,6 +297,9 @@ interface HistorikPost {
   roll: "user" | "assistant";
   text: string;
   tankar?: string;
+  /** M5 (b): assistant-postens server-id (session/messages) — historikens
+   *  bubblor får {kind:"message"}-forkankare som live-strömmade. */
+  meddelandeId?: string;
 }
 
 // ── Multi-session-tabbar (våg 84 B) — renderas som sidebar-tasklista (våg 90) ─
@@ -1012,7 +1022,8 @@ interface StreamEvent {
     | "mal_status"
     | "mal_iteration"
     | "mal_pausad"
-    | "modell_status";
+    | "modell_status"
+    | "meddelande_id";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -1024,6 +1035,9 @@ interface StreamEvent {
   tokenCount?: number;
   kontext?: KontextInfo | null;
   id?: string;
+  /** M5 (b): senaste assistant-meddelandets server-id (vid strömsslut) —
+   *  {kind:"message"}-forkens ankare på bubblan (rek 6). */
+  meddelandeId?: string;
   steg?: "planerad" | "startar" | "kör" | "resultat" | "fel";
   argument?: string;
   beskrivning?: string;
@@ -3458,6 +3472,12 @@ function meddelandeUrHistorik(h: HistorikPost): Meddelande {
     ...(typeof h.tankar === "string" && h.tankar.trim() !== ""
       ? { tankar: h.tankar.slice(0, TANKAR_TAK) }
       : {}),
+    // M5 (b): serverns meddelande-id följer med — rewind-knappen på en
+    // historik-bubbla kan forka via {kind:"message"} (robustet på långa
+    // trådar där turnIndex åldrats ur serverns vy).
+    ...(h.roll === "assistant" && typeof h.meddelandeId === "string" && h.meddelandeId
+      ? { serverId: h.meddelandeId }
+      : {}),
   };
 }
 
@@ -3931,6 +3951,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
     for (const m of meddelanden) {
       if (m.roll === "user") turn += 1;
       else karta.set(m.id, turn);
+    }
+    return karta;
+  }, [meddelanden]);
+
+  /**
+   * M5 (b): serverns meddelande-ID per agentbubbla — fork-target-kartans
+   * PRIMÄRA form {kind:"message", messageId} (rek 6): id:t åldras ALDRIG ur
+   * serverns vy (e8i), till skillnad från turnIndex som kan bli för gammalt
+   * på långa/komprimerade trådar. Bubblor utan id faller tillbaka på
+   * turnIndex-kartan ovan.
+   */
+  const serverIdKarta = React.useMemo(() => {
+    const karta = new Map<string, string>();
+    for (const m of meddelanden) {
+      if (m.roll === "assistant" && m.serverId) karta.set(m.id, m.serverId);
     }
     return karta;
   }, [meddelanden]);
@@ -5315,6 +5350,43 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [sessionJobbar, strömmar, visaToast, lasSessioner, rörTabb, huvudTabb]);
 
+  // ── M5 (a): MÅL-KONTINUITET VID FORK — läs om målstatusen så det klonade
+  //    målet syns i nya tabben direkt. Bakgrund (M5-FORK §3+§9.5): RPC-forken
+  //    ärvr förälderns mål till barnet (inheritLatestTarget) och status kan
+  //    bli "active" trots "complete" i föräldern (Bmi) — panelen/badgen får
+  //    ALDRIG visa förälderns gamla sanning efter tabbytet.
+  const lasMalStatus = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/mal/status", { headers: adminHeaders() });
+      if (!res.ok) return; // endpoint borta ⇒ tyst (20 s-pollen tar vid)
+      const data = (await res.json().catch(() => ({}))) as {
+        aktiv?: boolean;
+        pausad?: boolean;
+        iteration?: number;
+        mal?: string | null;
+      };
+      setAutonomiAktiv(data.aktiv === true);
+      if (typeof data.mal === "string" && data.mal) {
+        setMal(data.mal);
+        setMalStatus({
+          aktiv: data.aktiv === true,
+          pausad: data.pausad === true,
+          iteration: data.iteration ?? 0,
+        });
+        setMalIteration(data.iteration ?? 0);
+        setMalStrömOppen(true);
+      } else {
+        // Ärligt tomt läge — klonat mål saknas/rensat: panelen tigs, strömmen
+        // stängs (pollarna återöppnar om målet återkommer).
+        setMal(null);
+        setMalStatus(null);
+        setMalStrömOppen(false);
+      }
+    } catch {
+      // tyst — pollarna (20 s) tar vid
+    }
+  }, []);
+
   // ── CHECKPOINT/REWIND (våg 86 G5): "⟲ Gå tillbaka hit" ──────────────────────
   const gaTillbakaHit = React.useCallback(
     async (bubblaId: string) => {
@@ -5325,11 +5397,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
         return;
       }
       const turnIndex = turnIndexKarta.get(bubblaId) ?? -1;
-      if (turnIndex < 0) return;
+      // M5 (b): {kind:"message"}-ankaret VINNAR när bubblan bär sitt server-id
+      // (åldras aldrig ur serverns vy); turnIndex förblir fallback för bubblor
+      // utan id (äldre historik/klient-cachar).
+      const serverId = serverIdKarta.get(bubblaId);
+      if (turnIndex < 0 && !serverId) return;
       const iteration = turnIndex + 1;
+      const iterationText = turnIndex >= 0 ? `iteration ${iteration}` : "denna punkt";
       if (
         !window.confirm(
-          `Gå tillbaka till iteration ${iteration}?\n\nSessionen forkas vid denna punkt — den nya sessionen börjar från detta svar och nästa prompt fortsätter där. Den gamla sessionen finns kvar i samtalslistan.`,
+          `Gå tillbaka till ${iterationText}?\n\nSessionen forkas vid denna punkt — den nya sessionen börjar från detta svar och nästa prompt fortsätter där. Den gamla sessionen finns kvar i samtalslistan.`,
         )
       ) {
         return;
@@ -5342,7 +5419,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           headers: adminJsonHeaders(),
           body: JSON.stringify({
             action: "rewind",
-            turnIndex,
+            ...(serverId ? { meddelandeId: serverId } : { turnIndex }),
             ...(tabb.huvud ? {} : tabb.sessionId ? { sessionId: tabb.sessionId } : {}),
           }),
         });
@@ -5355,10 +5432,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
           fel?: string;
         };
         if (res.ok && data.sessionId) {
+          const etikett = data.iteration ?? (turnIndex >= 0 ? iteration : 0);
           rörTabb(tabb.id, (t) => ({
             ...t,
             sessionId: data.sessionId!,
-            titel: t.titel === "Ny tabb" ? `Fork ${data.iteration ?? iteration}` : t.titel,
+            titel: t.titel === "Ny tabb" ? (etikett > 0 ? `Fork ${etikett}` : "Fork") : t.titel,
             meddelanden: (data.historik ?? []).map(meddelandeUrHistorik),
             kontext: data.kontext ?? null,
             rundaTkn: null,
@@ -5367,9 +5445,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
             historikLasad: true,
             uppdaterad: Date.now(),
           }));
-          visaToast(`Sessionen har forkats från iteration ${data.iteration ?? iteration}`);
+          visaToast(
+            etikett > 0
+              ? `Sessionen har forkats från iteration ${etikett}`
+              : "Sessionen har forkats vid meddelandet",
+          );
           setStatusText("");
           void lasSessioner();
+          // M5 (a): barnet ärvde förälderns mål (inheritLatestTarget) — läs
+          // om målstatusen så badge/panel visar BARNETS sanning direkt (den
+          // kan vara "active" trots förälderns "complete", Bmi).
+          void lasMalStatus();
         } else {
           setStatusText("");
           visaToast(data.fel || "Rewinden misslyckades.", "fel");
@@ -5381,7 +5467,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setRewindJobbar(false);
       }
     },
-    [aktivTabb, rewindJobbar, turnIndexKarta, rörTabb, visaToast, lasSessioner],
+    [aktivTabb, rewindJobbar, turnIndexKarta, serverIdKarta, rörTabb, visaToast, lasSessioner, lasMalStatus],
   );
 
   const komprimera = React.useCallback(async () => {
@@ -5821,6 +5907,33 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   malBubblaRef.current = null;
                 }
                 break;
+              case "meddelande_id": {
+                // M5 (b): iterationens server-id landar strax efter slut-pixeln
+                // (malBubblaRef är redan nollställd) — iterationnumret i eventet
+                // pekar ut rätt bubbla även om nästa iteration hunnit öppna;
+                // första id:t vinner (aldrig skriv över ett bevisat ankare).
+                const serverId = event.meddelandeId;
+                if (!serverId) break;
+                const malIt = event.iteration;
+                let satt = false;
+                rörTabb(huvudTabbIdRef.current, (t) => ({
+                  ...t,
+                  uppdaterad: Date.now(),
+                  meddelanden: t.meddelanden.map((m) => {
+                    if (
+                      satt ||
+                      m.serverId ||
+                      m.roll !== "assistant" ||
+                      (typeof malIt === "number" ? m.malIteration !== malIt : m.strömmande)
+                    ) {
+                      return m;
+                    }
+                    satt = true;
+                    return { ...m, serverId };
+                  }),
+                }));
+                break;
+              }
               case "delta":
                 if (event.kanal === "tankar") {
                   // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (bubblan) —
@@ -7393,6 +7506,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }));
               loggaNotis(`Fel: ${event.meddelande || "okänt fel"}`.slice(0, 120), "fel");
               färdig = true;
+              break;
+            case "meddelande_id":
+              // M5 (b): strömsslut — serverns id på DENNA agent-bubbla
+              // ({kind:"message"}-forkens ankare). Anländer strax efter
+              // klart; första id:t vinner (aldrig skriv över ett bevisat).
+              if (event.meddelandeId) {
+                rörAgent((m) => (m.serverId ? m : { ...m, serverId: event.meddelandeId! }));
+              }
               break;
             case "ändringar":
               if (Array.isArray(event.filer)) {

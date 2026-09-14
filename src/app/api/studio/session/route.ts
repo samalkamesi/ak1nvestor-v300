@@ -33,14 +33,18 @@ export const dynamic = "force-dynamic";
  *   "fork"      → session/fork latestCheckpoint → {forkedSessionId?} ELLER
  *                ärligt meddelande: fork kräver checkpoint (skapas vid
  *                FILÄNDRINGAR — LIVE-bevisat v83, se protokollkarta §1).
- *   "rewind"    {turnIndex, sessionId?} → VÅG 86 G5 CHECKPOINT/REWIND:
- *                transport.rewindTillTurn — session/fork {kind:"turn",
- *                turnIndex} (LIVE-bevisat: kräver INGEN checkpoint) + den
- *                forkade sessionen ÖPPNAS och blir den aktiva → {sessionId,
- *                iteration, historik, kontext} så chatten börjar om från
- *                punkten; föräldern lever kvar i Sessioner. sessionId given
- *                ⇒ DEN sessionens per-session-transport (egen tabb);
- *                annars default-transporten (huvudtabben).
+ *   "rewind"    {turnIndex | meddelandeId, sessionId?} → VÅG 86 G5
+ *                CHECKPOINT/REWIND + M5 (rek 6): meddelandeId given ⇒
+ *                transport.rewindTillMeddelande — session/fork {kind:
+ *                "message", messageId} (åldras ALDRIG ur serverns vy —
+ *                robustet på långa trådar); annars rewindTillTurn —
+ *                {kind:"turn", turnIndex} (LIVE-bevisat: kräver INGEN
+ *                checkpoint) + den forkade sessionen ÖPPNAS och blir den
+ *                aktiva → {sessionId, iteration?, historik, kontext} så
+ *                chatten börjar om från punkten; föräldern lever kvar i
+ *                Sessioner. sessionId given ⇒ DEN sessionens per-session-
+ *                transport (egen tabb); annars default-transporten
+ *                (huvudtabben).
  *   "malSatt"   {mal} → session/goal set → {mal, meddelande}.
  *   "malRensa"  → session/goal clear → {mal:null, meddelande}.
  *   "malPausa"  → VÅG 85 F1: pausa den autonoma mål-loopen (session/stop —
@@ -120,6 +124,7 @@ export async function POST(req: NextRequest) {
   let lage = "";
   let niva = "";
   let turnIndex = -1;
+  let meddelandeId = "";
   try {
     const kropp = (await req.json()) as {
       action?: unknown;
@@ -130,6 +135,7 @@ export async function POST(req: NextRequest) {
       lage?: unknown;
       niva?: unknown;
       turnIndex?: unknown;
+      meddelandeId?: unknown;
     };
     if (typeof kropp.action === "string") action = kropp.action.trim();
     if (typeof kropp.instruktioner === "string" && kropp.instruktioner.trim()) {
@@ -143,6 +149,9 @@ export async function POST(req: NextRequest) {
     if (typeof kropp.turnIndex === "number" && Number.isInteger(kropp.turnIndex)) {
       turnIndex = kropp.turnIndex;
     }
+    // M5 (rek 6): assistant-meddelandets protokoll-id — {kind:"message"}-
+    // forkens ankare (vinner över turnIndex när båda följer med).
+    if (typeof kropp.meddelandeId === "string") meddelandeId = kropp.meddelandeId.trim();
   } catch {
     return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
   }
@@ -193,6 +202,18 @@ export async function POST(req: NextRequest) {
     }
     // ── VÅG 86 G5: CHECKPOINT/REWIND — "⟲ Gå tillbaka hit" ──────────────────
     if (action === "rewind") {
+      // M5 (rek 6): {kind:"message", messageId}-formen VINNAR — meddelandets
+      // protokoll-id åldras aldrig ur serverns turnIndex-vy (e8i). Validerad
+      // hårt (transporten dubbelkollar); turnIndex förblir fallback för
+      // bubblor utan id (äldre historik).
+      if (meddelandeId) {
+        if (!/^[A-Za-z0-9._:-]{1,200}$/.test(meddelandeId)) {
+          return jsonSvar({ fel: "Ogiltigt meddelande-id för rewind." }, 400);
+        }
+        // Fel är ÄRLIGA (prompt kör / meddelandet borta) — 502 med texten.
+        const svar = await transport.rewindTillMeddelande(meddelandeId);
+        return jsonSvar(svar);
+      }
       if (turnIndex < 0) {
         return jsonSvar({ fel: "turnIndex (0-baserat heltal ≥ 0) krävs för rewind." }, 400);
       }

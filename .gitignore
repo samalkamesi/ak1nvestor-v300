@@ -78,13 +78,9 @@ data/cache/*
 
 # Våg 149-hygien: sessionens hjälpskript/utdata i .zcode-roten är arbetsavfall,
 # aldrig leverans (287 otrackade filer = alltid-smutsig yta). Trackade verktyg
-# (.zcode/prod-bygg.mjs m.fl.) förblir trackade; nya delade verktyg/skills
-# adderas med git add -f. Katalogerna commands/ och skills/ påverkas ej (djupare).
-.zcode/*.mjs
-.zcode/*.cjs
-.zcode/*.js
-.zcode/*.txt
-.zcode/*.json
-.zcode/*.log
-.zcode/*.sh
+# (.zcode/prod-bygg.mjs m.fl.) förblir trackade; commands/ och skills/ är
+# undantagna (nya delade verktyg i roten adderas med git add -f).
+.zcode/*
+!.zcode/commands/
+!.zcode/skills/
 .tmp-*/

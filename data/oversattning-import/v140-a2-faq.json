@@ -1,0 +1,255 @@
+{
+  "kurs": "v140-a2-faq",
+  "poster": [
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p29",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p30",
+      "en": "**What is ARR growth, and how does it differ from ordinary revenue growth?**",
+      "ar": "**ما هو نمو ARR، وكيف يختلف عن نمو الإيرادات العادي؟**"
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p31",
+      "en": "ARR growth is the annual growth rate (CAGR) of recurring revenue — contracted money that comes back even if the company signs nothing new. Booked revenue spreads a subscription over the delivery period (IFRS 15), so ARR development leads the income statement by typically one to two years. Revenue growth is history; ARR growth is the order book on its way in. The [ARR growth (V02) course](/kurser/v02-arr-tillvaxt) walks through the difference chapter by chapter.",
+      "ar": "نمو ARR هو معدل النمو السنوي (CAGR) للإيرادات المتكررة — أموال متعاقد عليها تعود حتى لو لم تُبرم الشركة أي عقد جديد. أما الإيرادات المحاسبية فتوزّع الاشتراك على فترة تقديم الخدمة (IFRS 15)، ولذلك يتطور ARR عادةً متقدمًا على قائمة الدخل بسنة إلى سنتين. نمو الإيرادات هو تاريخ؛ أما نمو ARR فهو دفتر الطلبات في طريقه إلى الدخل. يشرح [كتاب نمو ARR (V02)](/kurser/v02-arr-tillvaxt) هذا الفرق فصلًا بعد فصل."
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p32",
+      "en": "**How do I calculate ARR growth with the CAGR formula?**",
+      "ar": "**كيف أحسب نمو ARR باستخدام صيغة CAGR؟**"
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p33",
+      "en": "The formula is (ARR_n ÷ ARR_0)^(1/number of years) − 1, where ARR_0 is the starting value and ARR_n the ending value. A company going from SEK 120 million to SEK 300 million in ARR over three years has grown (300 ÷ 120)^(1/3) − 1 ≈ 35.7 percent per year. Remember that companies define ARR themselves among their alternative key figures — read the definition section in the report before comparing two companies, and test your own numbers in the [calculator](/kalkylator).",
+      "ar": "الصيغة هي (ARR_n ÷ ARR_0)^(1/عدد السنوات) − 1، حيث ARR_0 رقم البداية وARR_n رقم النهاية. فشركة تنتقل من 120 إلى 300 مليون كرونة في ARR خلال ثلاث سنوات تكون قد نمت بمعدل (300 ÷ 120)^(1/3) − 1 أي نحو 35.7 بالمئة سنويًا. وتذكّر أن الشركات تحدد تعريف ARR بنفسها ضمن مؤشراتها البديلة — اقرأ قسم التعريفات في التقرير قبل مقارنة شركتين، وجرّب أرقامك في [الحاسبة](/kalkylator)."
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p34",
+      "en": "**What is NRR, and why does it matter for ARR growth?**",
+      "ar": "**ما هو NRR، ولماذا يهم لنمو ARR؟**"
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p35",
+      "en": "NRR (net revenue retention) measures how much of the starting year's ARR remains one year later, with expansion, churn and downgrades included. An NRR of 112 percent means the base grows 12 percent per year without a single new contract. Two companies with the same ARR growth are therefore not the same quality: growth at NRR 105 percent rests on new sales that constantly have to be replaced, while at NRR 125 percent the base feeds itself.",
+      "ar": "يقيس NRR (صافي الاحتفاظ بالإيرادات) النسبة المتبقية من ARR في سنة البداية بعد مرور سنة، شاملًا التوسع والانسحاب والتخفيضات. فـ NRR بنسبة 112 بالمئة يعني أن القاعدة تنمو 12 بالمئة سنويًا دون أي عقد جديد. لذلك فإن شركتين بنفس نمو ARR ليستا بنفس الجودة: فالنمو مع NRR بنسبة 105 بالمئة يقوم على مبيعات جديدة يلزم استبدالها باستمرار، بينما يجعل NRR بنسبة 125 بالمئة القاعدة تُغذّي نفسها."
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p36",
+      "en": "**What is the Rule of 40, and what does it say about ARR growth?**",
+      "ar": "**ما هي قاعدة 40، وماذا تقول عن نمو ARR؟**"
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p37",
+      "en": "The Rule of 40 is a rule of thumb from the SaaS world: ARR growth in percent plus the EBITDA margin in percent should together reach at least 40. The point is the trade-off between speed and profitability — the more the growth rate falls over the years, the more the margin has to fill in. The rule is intended as a starting point for the analysis, not a verdict, and should be read together with gross margin (V07) and capital burn (V19).",
+      "ar": "قاعدة 40 هي قاعدة استرشادية من عالم برمجيات الخدمات (SaaS): نمو ARR بالنسبة المئوية زائد هامش EBITDA بالنسبة المئوية ينبغي أن يبلغا معًا 40 على الأقل. والغاية هي الموازنة بين السرعة والربحية — فكلما انخفض معدل النمو عبر السنوات، وجب على الهامش أن يسد الفرق. والقاعدة مقصودة كنقطة انطلاق للتحليل لا كحكم نهائي، وتُقرأ مع هامش الربح الإجمالي (V07) ومعدل حرق رأس المال (V19)."
+    },
+    {
+      "nyckel": "arr-tillvaxt-vad-atkommande-intakter-sager:p38",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p21",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p22",
+      "en": "**How does a complete equity analysis work, step by step?**",
+      "ar": "**كيف يُجرى تحليل أسهم كامل خطوة بخطوة؟**"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p23",
+      "en": "The work follows five steps: gather the source material (quarterly reports, the annual report, prospectuses, industry data), structure it with AKM1's 20 variables where each variable is scored 0–5 with a motivated comment, build three scenarios with probabilities, check technical confluence against the price chart, and formulate a conclusion with horizon and position logic. Every figure is logged with its source — reproducibility is the difference between analysis and opinion.",
+      "ar": "يتبع العمل خمس خطوات: جمع المادة المصدرية (التقارير الفصلية والتقرير السنوي ونشرة الإصدار وبيانات القطاع)، ثم الهيكلة بمتغيرات AKM1 العشرين حيث يُقيَّم كل متغير من 0 إلى 5 مع تعليل موثق، ثم بناء ثلاثة سيناريوهات مع احتمالاتها، ثم فحص التوافق الفني مقابل حركة السعر، وأخيرًا صياغة خلاصة مع أفق زمني ومنطق للمراكز. ويُسجَّل كل رقم مع مصدره — فقابلية إعادة الإنتاج هي الفرق بين التحليل والرأي."
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p24",
+      "en": "**What are the wave matrix's 25 cells?**",
+      "ar": "**ما هي خلايا مصفوفة الموجات الخمس والعشرون؟**"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p25",
+      "en": "The wave matrix combines five theories (Elliott, Fibonacci, GANN, Lucas and volume) with five time horizons — 5 × 5 = 25 cells. In a single-company analysis the variables are weighted differently depending on wave type (impulse, correction and base variables), and in the portfolio system the cells are summarized into the portfolio's bias. The guide [How to read your portfolio report](/blogg/sa-laser-du-din-portfoljrapport) shows how the cells are read in practice.",
+      "ar": "تجمع مصفوفة الموجات خمس نظريات (إليوت وفيبوناتشي وغان ولوكاس والحجم) مع خمسة آفاق زمنية — أي 5 × 5 = 25 خلية. وفي تحليل الشركة الواحدة تُوزن المتغيرات بشكل مختلف حسب نوع الموجة (متغيرات الدفع والتصحيح والقاعدة)، أما في نظام المحفظة فتُلخَّص الخلايا في انحياز المحفظة. ويعرض دليل [هكذا تقرأ تقرير محفظتك](/blogg/sa-laser-du-din-portfoljrapport) كيفية قراءة الخلايا عمليًا."
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p26",
+      "en": "**Can I use the same method on companies other than Volvo Cars?**",
+      "ar": "**هل يمكنني استخدام الطريقة نفسها على شركات غير فولفو كارز؟**"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p27",
+      "en": "Yes — that is the very point of the case. The methodology is company-independent: the same steps and the same 20 variables apply to any listed company. The industry only determines which adjustments are needed — for carmakers, the financing operations of the vehicle division make the debt picture more complex. Start with the [guide to Swedish equity analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) and practice on 201 cases in the [lab](/labb).",
+      "ar": "نعم — وهذا هو جوهر هذه الحالة العملية. فالمنهجية مستقلة عن الشركة: الخطوات نفسها والمتغيرات العشرون نفسها تنطبق على أي شركة مدرجة. والقطاع وحده يحدد التعديلات اللازمة — ففي صناعة السيارات تجعل عمليات تمويل قسم المركبات صورة الدين أكثر تعقيدًا. ابدأ بـ [دليل تحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) وتدرّب على 201 حالة في [المختبر](/labb)."
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p28",
+      "en": "**Why is the analysis built on three scenarios instead of a single forecast?**",
+      "ar": "**لماذا يُبنى التحليل على ثلاثة سيناريوهات بدلاً من توقع واحد؟**"
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p29",
+      "en": "A common misconception is that an analysis ends in a single point estimate. Bull, base and bear scenarios force you to state what must be true for each path, with a probability and price target per path. The bear path matters most because it defines the risk exposure rather than the upside. Scenario thinking is pedagogy: it trains you to think in preconditions instead of a single truth.",
+      "ar": "من المفاهيم الخاطئة الشائعة أن التحليل ينتهي بتقدير نقطي واحد. فسيناريوهات الصعود والأساس والهبوط تُلزمك بتحديد ما يجب أن يتحقق في كل مسار، مع احتمال وهدف سعري لكل مسار. ومسار الهبوط هو الأهم لأنه يحدد درجة التعرض للمخاطر لا الجانب الصاعد. والتفكير بالسيناريوهات تربية منهجية: فهو يدرّبك على التفكير بالشروط المسبقة بدلاً من حقيقة واحدة."
+    },
+    {
+      "nyckel": "hur-vi-analyserade-volvo-cars:p30",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p29",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p30",
+      "en": "**What is revenue diversification, and why doesn't it show up in the P/E?**",
+      "ar": "**ما هو تنويع الإيرادات، ولماذا لا يظهر في مكرر الربحية P/E؟**"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p31",
+      "en": "Revenue diversification measures how spread out a company's revenues are across customers, products and geographies — usually expressed as HHI or the largest customer's share of revenue. The P/E discounts this year's earnings but says nothing about the probability distribution of future earnings: two companies with identical profit and identical multiple can carry entirely different risk if one of them rests 40 percent of its revenues on a single customer relationship. That is why revenue diversification is a risk variable (V03), not a valuation variable.",
+      "ar": "يقيس تنويع الإيرادات مدى توزيع إيرادات الشركة على العملاء والمنتجات والأسواق الجغرافية — ويُعبَّر عنه عادةً بمؤشر HHI أو بحصة أكبر عميل من الإيرادات. فمكرر الربحية يخصم أرباح السنة الحالية لكنه لا يقول شيئًا عن التوزيع الاحتمالي للأرباح المستقبلية: فشركتان بربح متطابق ومضاعف متطابق قد تحملان مخاطر مختلفة تمامًا إذا كانت إحداهما تستند بـ 40 بالمئة من إيراداتها إلى علاقة مع عميل واحد. ولهذا فإن تنويع الإيرادات متغير مخاطرة (V03) لا متغير تقييم."
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p32",
+      "en": "**How do I calculate a company's HHI?**",
+      "ar": "**كيف أحسب مؤشر HHI لشركة ما؟**"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p33",
+      "en": "Square each revenue share expressed in percent and sum them: HHI = Σ (share_i × 100)². Eight equal shares of 12.5 percent give 8 × 12.5² = 1,250, while a single customer relationship at 100 percent gives 10,000. The thresholds are below 1,500 for low concentration, 1,500–2,500 for moderate and above 2,500 for high. The [calculator](/kalkylator) converts the shares and shows the position against industry-typical levels.",
+      "ar": "ربّع كل حصة إيراد معبَّر عنها بالنسبة المئوية ثم اجمعها: HHI = Σ (الحصة × 100)². فثماني حصص متساوية بواقع 12.5 بالمئة تعطي 8 × 12.5² = 1250، بينما علاقة عميل واحدة بنسبة 100 بالمئة تعطي 10000. والعتبات هي: أقل من 1500 تركيز منخفض، ومن 1500 إلى 2500 تركيز متوسط، وأكثر من 2500 تركيز مرتفع. و[الحاسبة](/kalkylator) تحوّل الحصص وتُظهر الموقع مقابل المستويات النمطية للقطاع."
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p34",
+      "en": "**What is a normal HHI level — and what counts as high concentration?**",
+      "ar": "**ما هو المستوى الطبيعي لمؤشر HHI — وما الذي يُعد تركيزًا مرتفعًا؟**"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p35",
+      "en": "It depends on the industry's structure. Project-based industries such as construction, contracting and systems delivery naturally live with HHI above 2,500, while retail and consumer goods often sit below 1,000 and are instead carried by product and channel risk. B2B suppliers fall in between. The same HHI can thus be normal for a contracting company and high for a consumer company — in the AKM1 model, V03 is therefore scored against industry type.",
+      "ar": "يعتمد ذلك على هيكل القطاع. فالقطاعات القائمة على المشاريع مثل البناء والمقاولات وتسليم الأنظمة تعيش بطبيعتها مع HHI يتجاوز 2500، بينما تقع تجارة التجزئة والسلع الاستهلاكية غالبًا تحت 1000 وتحملها بدلاً من ذلك مخاطر المنتج وقناة البيع. ويقع موردو الشركات (B2B) في المنطقة الوسطى. وهكذا يمكن لقيمة HHI نفسها أن تكون طبيعية لشركة مقاولات ومرتفعة لشركة استهلاكية — ولهذا يُقيَّم المتغير V03 في نموذج AKM1 مقابل نوع القطاع."
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p36",
+      "en": "**Why isn't counting the number of customers enough?**",
+      "ar": "**لماذا لا يكفي عدّ عدد العملاء؟**"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p37",
+      "en": "A common misconception is that many customers automatically mean diversification. HHI counts heads, not co-movement: ten customers all selling into the same end market are correlated and fall at the same time in a downturn. Moreover, reported segments are not counterparties — a segment labelled Europe 55 percent can rest internally on a single distributor. The better question: if the customers' own market buys 20 percent less next year, how large a share of revenues is affected?",
+      "ar": "من المفاهيم الخاطئة الشائعة أن كثرة العملاء تعني تنويعًا تلقائيًا. فمؤشر HHI يعدّ الرؤوس لا الحركة المشتركة: فعشرة عملاء يبيعون جميعًا في السوق النهائية نفسها مترابطون ويسقطون في الوقت نفسه عند الانكماش. كما أن القطاعات المُبلَّغ عنها في التقارير ليست أطرافًا مقابلة — فالقطاع المسمى أوروبا 55 بالمئة قد يستند في داخله إلى موزّع واحد. والسؤال الأفضل: إذا اشترى سوق هؤلاء العملاء نفسها أقل بـ 20 بالمئة في السنة القادمة، فما نسبة الإيرادات المتأثرة؟"
+    },
+    {
+      "nyckel": "intaktsdiversifiering-risken-som-inte-syns-i-pe:p38",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p32",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p33",
+      "en": "**What is ROIC, and how does it differ from ROE?**",
+      "ar": "**ما هو ROIC، وكيف يختلف عن ROE؟**"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p34",
+      "en": "ROIC (return on invested capital) is the return on the entire capital base: NOPAT divided by invested capital (equity plus interest-bearing debt minus cash). ROE measures only the return on equity and can be pumped up by leverage — two companies with identical operations can show the same ROE while one of the businesses in fact returns less than the cost of capital. ROIC cleans away the financing and shows the operation's own merit, and should always be read together with V09 (ROE) and V10 (debt ratio).",
+      "ar": "العائد على رأس المال المستثمر (ROIC) هو العائد على قاعدة رأس المال بأكملها: صافي الربح التشغيلي بعد الضريبة (NOPAT) مقسومًا على رأس المال المستثمر (حقوق الملكية زائد الديون الحاملة للفائدة ناقص النقدية السائلة). أما ROE فيقيس العائد على حقوق الملكية فقط ويمكن نفخه بالرافعة المالية — فشركتان بعمليات متطابقة قد تظهران ROE نفسه بينما تعيد إحدى العمليتين في الحقيقة أقل من تكلفة رأس المال. يُزيل ROIC أثر التمويل ويُظهر استحقاق النشاط التشغيلي بذاته، ويجب دائمًا قراءته مع V09 (العائد على حقوق الملكية) وV10 (نسبة المديونية)."
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p35",
+      "en": "**How do I calculate ROIC in practice?**",
+      "ar": "**كيف أحسب ROIC عمليًا؟**"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p36",
+      "en": "Two steps: NOPAT = operating profit × (1 − effective tax rate), and invested capital = equity + interest-bearing debt − cash (alternatively net working capital + fixed assets). In the worked example, operating profit of SEK 2,000 m, a 20 percent tax rate and invested capital of SEK 7,000 m give a ROIC of about 23 percent. Calculate five years in the [calculator](/kalkylator) — both the level and the trend are information.",
+      "ar": "خطوتان: NOPAT = الربح التشغيلي × (1 − نسبة الضريبة الفعلية)، ورأس المال المستثمر = حقوق الملكية + الديون الحاملة للفائدة − النقدية السائلة (أو بدلاً من ذلك: رأس المال العامل الصافي + الأصول الثابتة). في المثال المحسوب يعطي ربح تشغيلي قدره 2000 مليون كرونة ونسبة ضريبة 20 بالمئة ورأس مال مستثمر قدره 7000 مليون كرونة عائدًا على رأس المال المستثمر نحو 23 بالمئة. احسب خمس سنوات في [الحاسبة](/kalkylator) — فالمستوى والاتجاه كلاهما معلومة."
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p37",
+      "en": "**What is a good ROIC level?**",
+      "ar": "**ما هو المستوى الجيد لـ ROIC؟**"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p38",
+      "en": "The question only becomes meaningful against a reference point: the cost of capital (WACC), often 8–10 percent for mid-cap Swedish listed companies. ROIC above WACC means every reinvested krona earns more than it costs; ROIC below WACC means growth destroys value. An average ROIC of 15–20 percent through an entire business cycle is also a symptom of a moat — the diagnoses are found in variables V13–V15.",
+      "ar": "لا يصبح السؤال ذا معنى إلا مقابل نقطة مرجعية: تكلفة رأس المال (WACC)، وكثيرًا ما تتراوح بين 8 و10 بالمئة لشركات السوق السويدية المتوسطة المدرجة. فـ ROIC فوق WACC يعني أن كل كرونة معاد استثمارها تكسب أكثر مما تكلف؛ وROIC تحت WACC يعني أن النمو يدمر القيمة. ومتوسط ROIC بين 15 و20 بالمئة عبر دورة اقتصادية كاملة هو أيضًا عرض من أعراض الخندق التنافسي — أما التشخيصات فتوجد في المتغيرات V13–V15."
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p39",
+      "en": "**What does the difference between ROIC and WACC mean for value creation?**",
+      "ar": "**ماذا يعني الفرق بين ROIC وWACC لخلق القيمة؟**"
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p40",
+      "en": "The value engine can be summarized as reinvested capital × (ROIC − cost of capital) × time. With ROIC at 23 percent against a 9 percent cost of capital, every reinvested krona earns about 14 öre more than it costs, year after year; with ROIC at 6 percent against 9 percent, growth destroys about 3 öre per krona per year. That is why high ROIC with good reinvestment opportunities belongs in reinvestment, while capital without use above the cost of capital belongs to the owners — dividends or buybacks (V20).",
+      "ar": "يمكن تلخيص محرك القيمة على النحو التالي: رأس المال المعاد استثماره × (ROIC − تكلفة رأس المال) × الزمن. فمع ROIC بنسبة 23 بالمئة مقابل تكلفة رأس مال 9 بالمئة تكسب كل كرونة معاد استثمارها نحو 14 أورًا أكثر مما تكلفه، سنة بعد سنة؛ ومع ROIC بنسبة 6 بالمئة مقابل 9 بالمئة يدمر النمو نحو 3 أور لكل كرونة سنويًا. لهذا ينتمي ROIC المرتفع مع فرص إعادة استثمار جيدة إلى إعادة الاستثمار، بينما ينتمي رأس المال الذي لا استخدام له فوق تكلفة رأس المال إلى الملاك — توزيعات أو إعادة شراء أسهم (V20)."
+    },
+    {
+      "nyckel": "roic-den-glomda-nyckeltalen-v11:p41",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p15",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p16",
+      "en": "**What does the bias verdict in the portfolio report mean?**",
+      "ar": "**ماذا يعني حكم الانحياز في تقرير المحفظة؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p17",
+      "en": "The bias verdict — BULLISH, BEARISH or NEUTRAL — summarizes the matrix's 25 cells (five theories × five time horizons) weighted by the size of each holding. BEARISH BIAS 24/25 ▼ means the engine sees correction signals in practically every combination across the holdings. The verdict is a summary of signals, not a trading order: it describes where the portfolio stands, not what you should do with it.",
+      "ar": "حكم الانحياز — صاعد (BULLISH) أو هابط (BEARISH) أو محايد (NEUTRAL) — يلخص خلايا المصفوفة الخمس والعشرين (خمس نظريات × خمسة آفاق زمنية) مرجَّحة بحجم كل مركز. فعبارة «انحياز هابط 24/25 ▼» تعني أن المحرك يرى إشارات تصحيح في كل التركيبات تقريبًا لدى الملكيات. والحكم ملخص للإشارات لا أمر تداول: فهو يصف أين تقف المحفظة، لا ما ينبغي أن تفعله بها."
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p18",
+      "en": "**How do I interpret differences between the time horizons?**",
+      "ar": "**كيف أفسّر الاختلافات بين الآفاق الزمنية؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p19",
+      "en": "The bias can look different per row of the matrix. A strong picture on the long horizon with a weak one on the short is a question of patience rather than an alarm, while a split picture on the medium horizon argues for waiting. Your savings horizon determines which row is yours — which is why the report shows all five windows separately. The course [From stock to portfolio](/kurser/portfolj-ekosystemet) covers the horizons in depth.",
+      "ar": "قد يبدو الانحياز مختلفًا من صف لآخر في المصفوفة. فصورة قوية على المدى الطويل مع صورة ضعيفة على المدى القصير مسألة صبر أكثر منها إنذارًا، بينما تدفع الصورة المنقسمة على المدى المتوسط نحو الانتظار. وأفق ادخارك هو الذي يحدد أي صف هو صفك — ولهذا يعرض التقرير النوافذ الخمس كلها على حدة. ويغطي كتاب [من السهم إلى المحفظة](/kurser/portfolj-ekosystemet) الآفاق الزمنية بعمق."
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p20",
+      "en": "**What is weighted volatility, and why is it shown?**",
+      "ar": "**ما هي التقلبانية المرجّحة، ولماذا تُعرض؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p21",
+      "en": "Weighted σ is the portfolio's combined volatility in percent per year, calculated with regard to the size of the holdings. A portfolio at 78 percent swings considerably harder than the OMX30's typical 15–20 percent — that sets the frame for how large movements the portfolio is exposed to. Together with concentration (the largest holding's share) and coverage (the share of value with a calculated analysis), the measure describes the risk structure, which is worth addressing before acting on signals.",
+      "ar": "التقلبانية المرجّحة (σ) هي التقلبانية الإجمالية للمحفظة بالنسبة المئوية سنويًا، محسوبة بمراعاة حجم كل مركز. فمحفظة عند 78 بالمئة تتأرجح بقوة أكبر بكثير من النطاق النموذجي لمؤشر OMX30 البالغ 15–20 بالمئة — وهذا يحدد الإطار لحجم الحركات التي تتعرض لها المحفظة. ومع التركيز (حصة أكبر مركز) والتغطية (نسبة القيمة ذات التحليل المحسوب)، يصف هذا المقياس هيكل المخاطر، وهو ما يستحق معالجته قبل التصرف بناءً على الإشارات."
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p22",
+      "en": "**Can I trust the report's signals?**",
+      "ar": "**هل يمكنني الوثوق بإشارات التقرير؟**"
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p23",
+      "en": "The signals are calculated by the Python engine from price and volume data at independent sources, but the theories — Elliott, Fibonacci, GANN, Lucas and volume — are heuristic structuring tools presented as proxy measures, not proof. Every step is auditable, and the routine in step 5 (write down the thesis, which signals confirm it and exactly what would invalidate it) lets you test the method against reality each quarter. That is how educational financial analysis works — structured grounding instead of ready-made answers.",
+      "ar": "تُحسب الإشارات بواسطة محرك بايثون من بيانات الأسعار وأحجام التداول لدى مصادر مستقلة، لكن النظريات — إليوت وفيبوناتشي وغان ولوكاس والحجم — أدوات هيكلية استدلالية تُعرض كمقاييس بديلة لا كبراهين. وكل خطوة قابلة للتدقيق، والروتين في الخطوة الخامسة (اكتب الفرضية، والإشارات التي تؤكدها، وما الذي ينقضها تحديدًا) يتيح لك اختبار الطريقة مقابل الواقع كل ربع سنة. هكذا يعمل التحليل المالي التعليمي — تأصيل منظم بدلاً من إجابات جاهزة."
+    },
+    {
+      "nyckel": "sa-laser-du-din-portfoljrapport:p24",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    }
+  ]
+}

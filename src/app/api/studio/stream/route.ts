@@ -191,6 +191,41 @@ export async function GET(req: NextRequest) {
   }
 
   const transport = hamtaStudioTransport();
+  // VÅG 154 — TRÅDEN FÖRST, VÄRMEN I BAKGRUNDEN ("samma som z code"): en
+  // kall agent (efter omstart/deploy) får ALDRIG hänga kundens refresh i
+  // spawn-tiden (~15-20 s). ensure kapas vid 6 s; under tiden svarar GET
+  // med HELA tråden ur zcode:s db (lever utan barnprocess) + live:false +
+  // "värms"-status — klienten (u2-beteende) renderar tråden DIREKT och
+  // pollen tar den live när värmen landat. Spawnen fortsätter orörd i
+  // bakgrunden (lovet lever — inget avbrott, ingen dubbelstart: ensure:s
+  // samtalsvakt delar samma löfte).
+  const VARM_TAK_MS = 6_000;
+  let varmar = false;
+  try {
+    await Promise.race([
+      transport.ensure(),
+      new Promise<never>((_, avvisa) =>
+        setTimeout(() => avvisa(new Error("__varmar__")), VARM_TAK_MS).unref?.(),
+      ),
+    ]);
+  } catch (fel) {
+    const text = fel instanceof Error ? fel.message : String(fel);
+    if (text !== "__varmar__") throw fel;
+    varmar = true;
+  }
+  if (varmar) {
+    return jsonSvar({
+      transport: transport.namn,
+      sessionId: transport.sessionId(),
+      historik: [],
+      interaktioner: lasAllaInteraktioner(),
+      live: false,
+      sessionskarta: lasStudioSessionskarta(),
+      ...(await lasAterkoppling()),
+      tradHistorik: lasTradHistorik(lasHuvudtradSessioner(), { sessionId: null, historik: [] }),
+      fel: "Agenten värms efter omstart — tråden är hel; chatten går live automatiskt inom cirka en halv minut.",
+    });
+  }
   try {
     await transport.ensure();
     // VÅG 148C — MÅLET FÖDS OM VID FÖRSTA ANROPET (refresh/poll): pm2-

@@ -3033,7 +3033,21 @@ class AppServerTransport implements StudioTransport {
     return this.sid;
   }
 
+  // VÅG 154 — ENSURE-SAMTALSVAKT: flera samtidiga ensure() (GET-poll +
+  // bakgrundsvärmning + POST efter omstart) kunde dubbla resume/create-
+  // rundor; nu delar alla anrop samma pågående löfte.
+  private ensurePaga: Promise<void> | null = null;
+
   async ensure(): Promise<void> {
+    if (this.klient?.lever && this.sid && this.prenumererad) return;
+    if (this.ensurePaga) return this.ensurePaga;
+    this.ensurePaga = this.ensureKarna().finally(() => {
+      this.ensurePaga = null;
+    });
+    return this.ensurePaga;
+  }
+
+  private async ensureKarna(): Promise<void> {
     if (this.klient?.lever && this.sid && this.prenumererad) return;
     // VÅG 90 K1: varje ensure = intresse för sessionen (GET-poll från ett
     // öppet UI räknas som aktivitet) — idle-klockan slår aldrig fel.

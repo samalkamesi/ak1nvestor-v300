@@ -4559,6 +4559,43 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setMalIteration(data.aktivtMal.iteration);
         if (data.aktivtMal.aktiv && !malStrömOppen) setMalStrömOppen(true);
       }
+      // VÅG 144 — MÅL-TRÅDEN STRÖMMAR I CHATTEN ("den stannar i chatten när
+      // jag uppdaterar"): mål-loopens turns syns EJ i sessionskartans
+      // aktiv-flagga (de går via transportens interna send, inte POST) ⇒
+      // pollen uppdaterade aldrig flikens meddelanden under/efter mål-
+      // arbete — agenten arbetade (målrutan visade det) men chatt-texten
+      // frös. Nu: flik som visar MÅL-sessionen får sin historik hämtad vid
+      // VARJE poll och nya assistant-svar droppar in direkt — som
+      // desktop-Z:s live-tråd. (Fältet sessionId på aktivtMal = våg 139.)
+      const malSid = (data.aktivtMal as { sessionId?: string } | null)?.sessionId ?? null;
+      if (malSid) {
+        const malFlik = tabbarRef.current.tabbar.find((t) => t.sessionId === malSid);
+        if (malFlik && !malFlik.strömmar) {
+          try {
+            const rMal = await fetch(`/api/studio/stream?sessionId=${encodeURIComponent(malSid)}`, {
+              headers: adminHeaders(),
+            });
+            if (rMal.ok) {
+              const dMal = (await rMal.json()) as { historik?: HistorikPost[] };
+              if (Array.isArray(dMal.historik)) {
+                const forrSvar = malFlik.meddelanden.filter((m) => m.roll === "assistant").length;
+                const forrAntal = malFlik.meddelanden.length;
+                const nyaSvar = dMal.historik.filter((h) => h.roll === "assistant").length;
+                if (dMal.historik.length !== forrAntal || nyaSvar !== forrSvar) {
+                  rörTabb(malFlik.id, (t) => ({
+                    ...t,
+                    meddelanden: dMal.historik!.map(meddelandeUrHistorik),
+                    historikLasad: true,
+                    uppdaterad: Date.now(),
+                  }));
+                }
+              }
+            }
+          } catch {
+            /* poll-fel — nästa varv försöker igen */
+          }
+        }
+      }
       const karta = data.sessionskarta ?? {};
       const malPaDefault = data.aktivtMal?.aktiv === true;
       for (const [sid, kort] of Object.entries(karta)) {

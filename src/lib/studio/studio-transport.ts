@@ -5135,11 +5135,12 @@ class AppServerTransport implements StudioTransport {
   }
 
   async sattTankeNiva(niva: string): Promise<{ niva: string }> {
-    // LIVE-bevisade nivåer (kartan §1): nothink | high | max. KVD-texten
-    // "off/medium/high" är generisk protokollterminologi — de ÄRLIGA,
-    // first-hand bevisade nivåerna för zai/GLM är dessa tre.
-    if (!["nothink", "high", "max"].includes(niva)) {
-      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, high eller max.`);
+    // Nivåer ur modellkatalogen (10X p8): nothink (avstängd) + katalogens
+    // low/medium/high/max — GLM-5.3-familjen bevisar low/high/max (reasoning
+    // .levels), medium är protokollets reservord som accepteras och sänds
+    // vidare till session/setThoughtLevel.
+    if (!["nothink", "low", "medium", "high", "max"].includes(niva)) {
+      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, low, medium, high eller max.`);
     }
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
@@ -6485,8 +6486,8 @@ class MockTransport implements StudioTransport {
   }
 
   async sattTankeNiva(niva: string): Promise<{ niva: string }> {
-    if (!["nothink", "high", "max"].includes(niva)) {
-      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, high eller max.`);
+    if (!["nothink", "low", "medium", "high", "max"].includes(niva)) {
+      throw new Error(`Okänd tankestyrka "${niva.slice(0, 30)}" — använd nothink, low, medium, high eller max.`);
     }
     this.mockTankeNiva = niva;
     return { niva };
@@ -6883,7 +6884,7 @@ class MockTransport implements StudioTransport {
       lage: this.mockStandardLage ?? this.mockLage ?? "build",
       annan: {
         behorighet: "auto",
-        tankeNivaer: ["nothink", "high", "max"],
+        tankeNivaer: ["nothink", "low", "medium", "high", "max"],
         modellKatalog: ["mock/demo", "mock/glm-5.3", "mock/glm-5.2"],
         arbetsyta: "/home/ak1a/agent/ak1",
       },

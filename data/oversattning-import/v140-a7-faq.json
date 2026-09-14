@@ -1,0 +1,186 @@
+{
+  "kurs": "v140-a7-faq",
+  "beskrivning": "Våg 140 A7: FAQ-sektioner på v15–v18 (nätverkseffekter, produktlanseringar, avtal & partnerskap, regulatoriska katalysatorer) — arvkontroll v15/v16 (3 par bevarade) + nya FAQ v17/v18 (4 par) + skiftade disclaimers, en+ar, MÖS-kontrollerade",
+  "poster": [
+    {
+      "nyckel": "v15-natverkseffekter-analys:p18",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p19",
+      "en": "**What are network effects?**",
+      "ar": "**ما هي تأثيرات الشبكة؟**"
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p20",
+      "en": "Network effects arise when the value of a product increases for existing users every time someone new joins — the telephone is the classic example: a single phone is useless, a million are indispensable. According to Metcalfe's law, the value of a network grows roughly as the square of the number of users, which explains why network companies can grow exponentially.",
+      "ar": "تنشأ تأثيرات الشبكة عندما ترتفع قيمة المنتج للمستخدمين الحاليين في كل مرة ينضم فيها مستخدم جديد — والهاتف هو المثال الكلاسيكي: هاتف واحد لا قيمة له، ومليون هاتف لا غنى عنها. ووفقًا لقانون ميتكالف تنمو قيمة الشبكة تقريبًا كمربّع عدد المستخدمين، وهو ما يفسر كيف يمكن لشركات الشبكات أن تنمو نموًا أُسّيًا."
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p21",
+      "en": "**How do you test whether a company has a genuine network effect?**",
+      "ar": "**كيف تختبر ما إذا كانت الشركة تملك تأثير شبكة حقيقيًا؟**"
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p22",
+      "en": "Use the leave test: if one user leaves the platform, does the value decrease for everyone else? ICA can have five million loyal customers without a network effect — if one customer leaves, the others are unaffected. On Blocket, the offering for buyers shrinks if a seller disappears, which makes it a genuine network effect. Big is not the same thing as a network.",
+      "ar": "استخدم اختبار المغادرة: إذا غادر مستخدم واحد المنصة، هل تنخفض القيمة للبقية؟ يمكن لـ ICA أن تملك خمسة ملايين عميل مخلص دون أي تأثير شبكة — فمغادرة عميل واحد لا تمس بقية العملاء. أما على Blocket فيتراجع العرض المتاح للمشترين إذا اختفى بائع، وهذا تأثير شبكة حقيقي. فالحجم الكبير ليس الشيء نفسه كالشبكة."
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p23",
+      "en": "**How does AKM1 weigh network effects in equity analysis?**",
+      "ar": "**كيف تُدخِل AKM1 تأثيرات الشبكة في تحليل الأسهم؟**"
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p24",
+      "en": "The variable carries a 6 percent weight and distinguishes between direct networks, indirect two-sided platforms and data networks. The model warns against network illusions — companies that look like networks but whose switching costs are so low that users could leave tomorrow. Practice further in the course [Network Effects (V15)](/kurser/v15-natverkseffekter).",
+      "ar": "يحمل هذا المتغير وزنًا قدره 6 بالمئة ويفرّق بين الشبكات المباشرة والمنصات ثنائية الجانب غير المباشرة وشبكات البيانات. ويحذّر النموذج من أوهام الشبكة — شركات تبدو كشبكات لكن تكاليف التحول لديها منخفضة إلى حدّ يمكن للمستخدمين معه المغادرة غدًا. تدرّب أكثر في دورة [تأثيرات الشبكة (V15)](/kurser/v15-natverkseffekter)."
+    },
+    {
+      "nyckel": "v15-natverkseffekter-analys:p25",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p16",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p17",
+      "en": "**What is a product launch as a catalyst?**",
+      "ar": "**ما هو إطلاق المنتج بوصفه محفزًا؟**"
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p18",
+      "en": "A launch is a discrete, time-bound event that changes the market's expectations about future revenues — the price often adjusts within days instead of creeping in quarter by quarter. When AstraZeneca's vaccine was approved in the EU in January 2021, the stock rose 8 percent in a week while guidance was raised.",
+      "ar": "الإطلاق حدث منفصل ومحدد زمنيًا يغيّر توقعات السوق بشأن الإيرادات المستقبلية — إذ يتكيّف السعر غالبًا خلال أيام بدلًا من التسلل ربعًا بعد ربع. وعندما تمت الموافقة على لقاح AstraZeneca في الاتحاد الأوروبي في يناير 2021 ارتفع السهم 8 بالمئة في أسبوع واحد مع رفع التوجيهات."
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p19",
+      "en": "**How do you calculate the value of an upcoming launch?**",
+      "ar": "**كيف تحسب قيمة إطلاق قادم؟**"
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p20",
+      "en": "Four steps: identify the event and the market's current expectation, quantify potential revenue as addressable market × penetration × price × duration, weigh the outcomes with probabilities, and compare the result with what the market has already priced in. Feel free to test your own numbers in the [calculator](/kalkylator) before drawing conclusions.",
+      "ar": "أربع خطوات: حدّد الحدث والتوقع الحالي للسوق، وكمّم الإيراد المحتمل كحجم سوق قابل للاستهداف × نسبة الاختراق × السعر × المدة، ووازن النتائج بالاحتمالات، ثم قارن النتيجة بما سعّره السوق بالفعل. جرّب أرقامك الخاصة في [الآلة الحاسبة](/kalkylator) قبل أن تستخلص النتائج."
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p21",
+      "en": "**What is a catalyst trap?**",
+      "ar": "**ما هو فخ المحفزات؟**"
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p22",
+      "en": "A catalyst trap is a company whose entire valuation rests on a single upcoming event — if it fails, no business remains to carry the price. AKM1 therefore weighs concreteness (a fixed date beats a vague promise), probability and size, and wants to see the catalyst combined with growth that is already underway.",
+      "ar": "فخ المحفزات هو شركة تستند قيمتها بالكامل إلى حدث قادم واحد — فإذا فشل لم يبقَ نشاط يحمل السعر. لذلك تُقيّم AKM1 مدى التحديد (التاريخ الثابت يتفوق على الوعد الغامض) والاحتمال والحجم، وتريد رؤية المحفز مقترنًا بنمو جارٍ بالفعل."
+    },
+    {
+      "nyckel": "v16-produktlanseringar-analys:p23",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p16",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p17",
+      "en": "**What are agreements and partnerships as catalysts?**",
+      "ar": "**ما هي الاتفاقيات والشراكات بوصفها محفزات؟**"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p18",
+      "en": "An agreement is a contracted, verifiable event that changes the market's picture of future revenues — a signed deal can validate the technology, open a market and secure cash flow for years. The difference from a product launch is that the value is written down in a contract with volume, price and duration, while a launch still has to win its customers in open competition.",
+      "ar": "الاتفاقية حدث مُتعاقَد عليه وقابل للتحقق يغيّر صورة السوق عن الإيرادات المستقبلية — فالعقد الموقّع يمكن أن يُثبت جدوى التقنية ويفتح سوقًا ويؤمّن التدفق النقدي لسنوات. والفرق عن إطلاق المنتج أن القيمة مثبتة في عقد يتضمن الحجم والسعر والمدة، بينما لا يزال على الإطلاق أن يكسب عملاءه في منافسة مفتوحة."
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p19",
+      "en": "**What is merger arbitrage and how does the method work?**",
+      "ar": "**ما هي المراجحة على الاندماجات وكيف تعمل هذه الطريقة؟**"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p20",
+      "en": "Merger arbitrage is an event-driven strategy that studies the gap between the target company's share price and the bid price after a public offer. The gap reflects the market's aggregated probability assessment: a narrow gap is read as strong belief that the deal will close, a wide one as doubt or a lengthy review process. Textbooks describe the return as the risk-free rate plus a premium, but failed bids produce heavy losses — hence the name risk arbitrage.",
+      "ar": "المراجحة على الاندماجات استراتيجية مدفوعة بالأحداث تدرس الفجوة بين سعر سهم الشركة المستهدفة وسعر العرض بعد عرضٍ عام. وتعكس هذه الفجوة التقييم الاحتمالي الإجمالي للسوق: فالفجوة الضيقة تُقرأ كثقة قوية في إتمام الصفقة، والواسعة كشك أو كعملية مراجعة طويلة. تصف الكتب الدراسية العائد بأنه معدل الفائدة الخالي من المخاطر مضافًا إليه علاوة، لكن العروض الفاشلة تسبب خسائر فادحة — ومن هنا جاء اسم «مراجحة المخاطر»."
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p21",
+      "en": "**How do you calculate the value of an agreement?**",
+      "ar": "**كيف تحسب قيمة الاتفاقية؟**"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p22",
+      "en": "With the same reasoning as for other catalysts: relate the contract value to annual revenue, calculate the duration of the revenues, assess the probability that the contract is fulfilled — Graham's rule is that a signed agreement counts while a verbal one is worthless — and weigh exclusivity, since an exclusive contract with a market leader is worth more than a non-exclusive one with the same volume.",
+      "ar": "بالمنطق نفسه المتبع مع المحفزات الأخرى: انسب قيمة العقد إلى الإيرادات السنوية، واحسب مدة بقاء الإيرادات، وقدّر احتمال الوفاء بالعقد — وقاعدة غراهم أن الاتفاقية الموقّعة تُحسب أما الشفهية فلا قيمة لها — ووازن حصرية التعامل، لأن عقدًا حصريًا مع شركة رائدة في السوق يساوي أكثر من عقد غير حصري بالحجم نفسه."
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p23",
+      "en": "**What is an agreement trap?**",
+      "ar": "**ما هو فخ الاتفاقيات؟**"
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p24",
+      "en": "An agreement trap is a company where a single contract accounts for more than 30 percent of revenues — if the main agreement is lost, no carrying revenue stream remains and the share price often falls sharply. AKM1 therefore always weighs V17 together with revenue diversification (V03): a large contract in a company with a narrow customer base is flagged as concentration risk. Practice further in the course [Agreements & Partnerships (V17)](/kurser/v17-avtal-partnerskap).",
+      "ar": "فخ الاتفاقيات هو شركة يشكّل فيها عقد واحد أكثر من 30 بالمئة من الإيرادات — فإذا فُقد العقد الرئيسي لم يبقَ تدفق إيرادات يحمل الشركة، وكثيرًا ما يهبط السهم بقوة. لذلك توازن AKM1 دائمًا V17 مع تنويع الإيرادات (V03): فالعقد الكبير في شركة ذات قاعدة عملاء ضيقة يُعلَّم كمخاطرة تركيز. تدرّب أكثر في دورة [الاتفاقيات والشراكات (V17)](/kurser/v17-avtal-partnerskap)."
+    },
+    {
+      "nyckel": "v17-avtal-partnerskap-analys:p25",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p18",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p19",
+      "en": "**What is a regulatory catalyst?**",
+      "ar": "**ما هو المحفز التنظيمي؟**"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p20",
+      "en": "A regulatory catalyst is an upcoming authority decision that can create or destroy markets overnight — a drug approval can open a billion-dollar market, a rejection can render years of development costs worthless. The difference from product launches is that the timing and outcome rest with the authority, not the company, and the decision calendar is usually public.",
+      "ar": "المحفز التنظيمي قرار جهة رقابية قادم يمكن أن يخلق أسواقًا أو يدمرها بين عشية وضحاها — فموافقة دواء قد تفتح سوقًا بمليارات، ورفضُها قد يجعل سنوات من تكاليف التطوير بلا قيمة. والفرق عن إطلاق المنتجات أن التوقيت والنتيجة بيد الجهة الرقابية لا الشركة، وأن جدول القرارات علني في الغالب."
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p21",
+      "en": "**What types of regulatory catalysts are there?**",
+      "ar": "**ما أنواع المحفزات التنظيمية؟**"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p22",
+      "en": "Three main types: approvals (medicines at the FDA and EMA, financial products at ESMA), auctions and permits (5G spectrum, environmental permits for mines and hydropower), and new rules that change the playing field (anti-money-laundering directives, competition law, environmental requirements). The first two are tied to dates and are therefore the easiest to analyse systematically, while new rules are often rolled out over several years.",
+      "ar": "ثلاثة أنواع رئيسية: الموافقات (الأدوية لدى هيئة الدواء الأمريكية FDA والوكالة الأوروبية EMA، والمنتجات المالية لدى ESMA)، والمزادات والتراخيص (طيف 5G، والتصاريح البيئية للمناجم والطاقة المائية)، والقواعد الجديدة التي تغيّر قواعد اللعبة (توجيهات مكافحة غسل الأموال، وقانون المنافسة، والمتطلبات البيئية). والنوعان الأولان مرتبطان بتواريخ محددة مما يجعلهما الأسهل في التحليل المنهجي، بينما تُطرح القواعد الجديدة غالبًا على مدى سنوات."
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p23",
+      "en": "**How do you monitor regulatory decisions systematically?**",
+      "ar": "**كيف تتابع القرارات التنظيمية بصورة منهجية؟**"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p24",
+      "en": "With a regulatory calendar: list upcoming decisions with the authority, the date, what is at stake and what the market has already priced in. It is the gap between expectation and outcome that moves prices — an approval that is already priced in barely moves the stock, while an unexpected rejection can halve it. Practice further in the course [Regulatory Catalysts (V18)](/kurser/v18-regulatoriska).",
+      "ar": "بجدول تنظيمي: اسرد القرارات القادمة مع الجهة الرقابية والتاريخ وما هو معلّق عليها وما سعّره السوق بالفعل. فالفارق بين التوقع والنتيجة هو ما يحرك الأسعار — فموافقة مسعّرة سلفًا لا تكاد تحرك السهم، بينما رفض غير متوقع قد يُنصّفه. تدرّب أكثر في دورة [المحفزات التنظيمية (V18)](/kurser/v18-regulatoriska)."
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p25",
+      "en": "**What is regulatory blackjack?**",
+      "ar": "**ما هو «البلاك جاك التنظيمي»؟**"
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p26",
+      "en": "AKM1's warning label for companies whose entire valuation rests on a single approval — like betting everything on one card. The model assesses regulatory risk on two axes, negative (upcoming regulation that can cause harm) and positive (upcoming approvals), and combines it with capital burn (V19): a company burning cash while the decision drags on can empty its reserves before the answer arrives.",
+      "ar": "هو تحذير AKM1 من الشركات التي تستند قيمتها بالكامل إلى موافقة واحدة — كمن يراهن بكل شيء على ورقة واحدة. يقيّم النموذج المخاطرة التنظيمية على محورين: سالب (تنظيمات قادمة قد تضر) وإيجابي (موافقات قادمة)، ويجمعها مع حرق رأس المال (V19): فالشركة التي تحرق سيولها بينما يتأخر القرار قد تفرغ خزينتها قبل أن يأتي الجواب."
+    },
+    {
+      "nyckel": "v18-regulatoriska-analys:p27",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    }
+  ]
+}

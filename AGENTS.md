@@ -68,7 +68,10 @@ blogg, medlemmar, AI-mentor.
   (domän, priser, betalning, extern publicering, juridik/GDPR, radering,
   API-nycklar) = VÄNTAR KUND.
 - R3: Mega-projekt körs autonomt med full access.
-- R4: 12 parallella agenter max (subagents.maxConcurrent=12, våg 132).
+- R4: Parallellism via rätt kanal (våg 146): ≤3 Agent-tool direkt,
+  4+ uppgifter = agentfabriks-manifest (12-agentsvisionen = 12 uppgifter
+  i manifest, omgångar om 3). "12 parallella direkt" är AVSKAFFAT —
+  det dör tyst (bevisad 2026-09-14).
 
 ## DIN ARBETSPLIT I STUDION
 
@@ -121,17 +124,16 @@ denna server. Leveransprotokoll:
 4. GitHub-spegling sköts av kundens arbetsstation — DU pushar endast
    till `prod`.
 
-## KVALITETSGRINDEN (våg 139 — kunddirektiv 2026-09-14: "MEKANISK, ALDRIG --no-verify")
+## KVALITETSGRINDEN (våg 138 — mekanisk, körs på varje commit)
 
-`verktyg/kvalitetsgrind.mjs` körs som `.git/hooks/pre-commit` (installeras
-med `node verktyg/installa-kvalitetsgrind.mjs` — arbetsyta OCH prod-repot
-/home/ak1a/AK1). Två grindar: (1) R2-hemlighetsskydd — ALDRIG .env*,
-nyckel-/pem-filer eller hemlighetsexponenter i innehållet; (2) tsc 0 —
-när kod är staged körs `npx tsc --noEmit` mot baslinjen 0 (rena
-dataleveranser hoppar över tsc för snabbhet). Commit avslås vid brott.
-**`--no-verify` är FÖRBJUDET** — rätta felet i stället för att gå förbi
-grinden. Git-hooks versioneras ej; förbättringar av grinden landar i
-verktyg/kvalitetsgrind.mjs som vanlig commit och ominstallation vid behov.
+`verktyg/hooks/pre-commit` är AKTIVERAD på servern (core.hooksPath): den
+blockerar ALL commit med (a) tsc-fel — typnollen 0 är mekanisk, ingen
+disciplin — och (b) .env*/pem/key/rsa-filer (R2). Regler:
+1. **ALDRIG `git commit --no-verify`** — grinden är kundens kvalitetslag.
+2. Blir du blockerad av tsc: fixa felen, committa igen (felet är din
+   leverans Vaccination — nästa gång skriver du rätt från början).
+3. Merge-committar passerar (grenarnas kod granskades); arbetsstationen
+   kör tsc efter varje merge — 0 fel gäller hela vägen till prod.
 
 ## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
 
@@ -157,14 +159,68 @@ egen git → kör vakten tills GRÖN (`--bas=http://localhost:3000`). Loopback �
 middleware — använd alltid localhost som bas. Mellanlarm: kör gärna vakten själv efter egna
 gränsnittsändringar; ett defekt som nå kunden = vaktsystemfel, inte bara kodfel.
 
-## MAXIMAL PARALLELLISM (våg 132 — kundens direktiv "max antal agenter, dagar ska ta mindre än timmar")
+## MAXIMAL PARALLELLISM (våg 132+146 — kundens direktiv "max antal agenter, dagar ska ta mindre än timmar")
 
-`subagents.maxConcurrent = 12` är SATT i app-serverns konfiguration (RAM-tak:
-~350 MB/agent på 8 GB + 4 GB swap = 12 säkra). Verktygstäthet 16.
-**STRIKT REGEL**: varje MEGA-projekt dispatcherar ALLTID 8–12 parallella
-subagenter med exklusiva filägarskap (våg 104-mönstret) — sekventiellt
-arbete på oberoende delar är FÖRBUDET (slöseri med organismens kapacitet).
-Vågor kedjas: när en agent frigörs startar nästa uppgift DIREKT.
+**SANNING våg 146 (bevisad 2026-09-14): 12 direkta Agent-tool-anrop DÖR TYST.**
+Verklig kostnad per barn = zcode-cli ~400–470 MB + node-repl-mcp ~390 MB ≈
+0,8 GB; 12 st ≈ 10 GB på en 8 GB-server — minnestaket dödar vågen innan
+något levereras (bevis: "döda 01:34-dispatchen" + redispatch 02:03 = 0
+spår, subagent-registret []). Gamla kalkylen (350 MB/agent = 12 säkra) var FEL.
+
+**NY ARKITEKTUR — två spår:**
+1. **Småskaligt (≤3 parallella Agent-tool-anrop)** — tillåtet direkt i
+   sessionen; bevisat säkert och levererar (rond F-mönstret).
+2. **Storskaligt (4+ agenter)** — ALLTID via **AGENTFABRIKEN** (se nästa
+   sektion); direkta större vågor är FÖRBUDET (de dör tyst).
+
+Verktygstäthet 16. Vågor kedjas: när en omgång frigörs startar nästa DIREKT
+(fabriken gör detta automatiskt). Sekventiellt arbete på oberoende delar
+förblir förbjudet — parallellismen är oförändrad, bara en säkrare kanal.
+
+## AGENTFABRIKEN (våg 146 — storskalig parallellism som ÖVERLEVER)
+
+Server-ägd verkställare: `verktyg/agentfabrik.mjs`, ropas av pumpor-daemonen
+min%10==5 (xx:05, :15, :25, …). Fabriken ger det modellen saknar: RAM-vakt
+(vägrar ny omgång under 1 500 MB tillgängligt), omgångar om 3 parallella
+zcode-barn, timeout 25 min/uppgift (döda barn LOGGAS — aldrig tyst död),
+leveransbevis per uppgift (utdata-logg + commit-hash + LEVERANS-rad).
+
+**DU SKRIVER MANIFEST — fabriken föder barnen:**
+1. Skriv `data/vakten/agentfabrik/ko/<din-id>.json` (Write eller bash):
+```json
+{ "id": "v147-exempel", "titel": "8 SEO-guider", "skapad": 1234567890,
+  "uppgifter": [
+    { "id": "u1", "titel": "Guide: kassaflödesanalys", "prompt": "Skriv data/blogg-utkast/guide-kassaflode.md enligt SEO-GUIDER-2026-09.md. 1200 ord, svenska, källor, ALDRIG råd." },
+    { "id": "u2", "titel": "…", "prompt": "…" }
+  ] }
+```
+2. Fabriken plockar ETT manifest per rop (atomärt lås), kör omgångar om 3,
+   skriver status + loggar. Varje uppgift får fabriks-prefix (regler +
+   commit-instruktion + "LEVERANS:"-kvitto).
+3. LÄS TILLBAKA: `data/vakten/agentfabrik/status/<id>.json` (progress,
+   klara med exit-koder och leveransrader) och
+   `data/vakten/agentfabrik/utdata/<manifest>-<uppgift>.log` (fulla svar).
+   RAM-avbrott = status "vantar-ram"; klara uppgifter körs ALDRIG om.
+4. Sammanfatta i sessionen + worklog när status.status === "klar".
+
+Manifest-prompts: varje uppgift SJÄLVSTÄNDIG (exklusivt filägarskap,
+våg 104-reglerna gäller), konkreta filvägar, testbara leveranskriterier.
+12-agentsvisionen = manifest med 12 uppgifter (4 omgångar om 3).
+
+## EVIGHETSMOTORN (våg 147 — kunddirektivet "bygga vidare så den aldrig slocknar igen")
+
+Organismen FÅR ALDRIG stå utan nästa våg. Tre skydd:
+1. **Evighetskatalogen** `data/infra/evighetskatalog.md` = bränslet: 10
+   eviga kundvärdespår (granskningskön, dataset-djup, SEO, kvartalsrapporter,
+   lärvägar, AI-Mentorn, prestanda, kvalitet, dokumentation, DR) — välj
+   därifrån när PIPELINE-KO.md är tom/tunn; rotera spår; R2-reglerna gäller.
+2. **Motorn** `verktyg/evighetsmotor.mjs` (pumpor :x8, var 10:e minut):
+   mäter RÖRELSE (iteration + uppdaterad); stillastående 20 min utan turn ⇒
+   vaktprompt som kickar dig (tak 1/25 min; kundens paus är heligt).
+3. **Ronden punkt 8**: varje rond kontrollerar ≥3 kommande vågar i
+   PIPELINE-KO.md innan verkställning.
+Vid vaktprompt: fortsätt pågående våg ELLER boka 3 nya ur katalogen —
+verkställ, bokför (worklog + beslutsminne), aldrig sysslolös.
 
 ## HUVUDAGENT-RAPPORTER I STUDION (våg 132 — kunden ska se allt "exakt som i desktop-Z")
 
@@ -185,8 +241,9 @@ sessionen (vad, varför, bevis, nästa steg) — transparensen är inte valfri.
 3. **STYRELSERONDEN var 3:e timme** (cron verktyg/styrelse-rond.mjs) skickar
    ROND-befallning med statusmatning — du SKALL då sammanträda, besluta nästa
    våg, dispatcher agentvågen och dokumentera kort i worklog.md.
-4. **Parallell-doctrinen** — standardläget är MAX parallella subagenter
-   (tak 12 konurrenta, vågor kedjas direkt när en frigörs = 10-tals över
-   tiden); exklusiva filägarskap per agent; våg 104-agentreglerna gäller.
+4. **Parallell-doktrinen** — standardläget är MAX parallellism, men via
+   RÄTT KANAL (våg 146): ≤3 Agent-tool direkt; 4+ = AGENTFABRIKENS
+   manifest (omgångar om 3 kedjas automatiskt = 10-tals över tiden);
+   exklusiva filägarskap per agent; våg 104-agentreglerna gäller.
 5. Stoppreglerna (§ 6) är oföränderliga: flock-lås, revert vid felbygge,
    tsc-baslinje, vakten 0 fynd, ALDRIG R2-ytor.

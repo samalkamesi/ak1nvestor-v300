@@ -1,0 +1,130 @@
+{
+  "kurs": "v140-b2-gamlafaq",
+  "poster": [
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p25",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p26",
+      "en": "**How do you perform a fundamental stock analysis?**",
+      "ar": "**كيف تُجرى عملية تحليل أساسي للأسهم؟**"
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p27",
+      "en": "A fundamental analysis follows the same seven steps as the institutions: start with the business model instead of the share price chart, read the annual report, take the growth apart, work through margins and capital efficiency, value with multiples, build scenarios instead of point estimates, and finish with a technical confluence check. AKM1 packages the method into 20 measurable variables.",
+      "ar": "يتبع التحليل الأساسي الخطوات السبع نفسها التي تتبعها المؤسسات: ابدأ بنموذج العمل بدلًا من الرسم البياني للسعر، واقرأ التقرير السنوي، وفكّك عناصر النمو، واعمل على الهوامش وكفاءة رأس المال، وقيّم بالمضاعفات، وابْنِ سيناريوهات بدلًا من تقديرات نقطية، واختم بفحص التقاطع الفني. يُغلف AKM1 هذه المنهجية في 20 متغيرًا قابلًا للقياس."
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p28",
+      "en": "**How do you read an annual report the way an analyst does?**",
+      "ar": "**كيف تقرأ التقرير السنوي كما يقرأه المحلل؟**"
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p29",
+      "en": "Go straight to note 1 (accounting policies), the appropriation of earnings, the segment report and the risk section — and compare \"Listed and other liabilities\" year on year. If you are looking for dishonesty, follow four trails: bouncing revenue items, capitalised costs, accounting policies changed in good times, and \"one-off items\" that come back every year.",
+      "ar": "اذهب مباشرة إلى الإيضاح 1 (مبادئ المحاسبة)، وتوزيع النتيجة، وتقرير القطاعات، وقسم المخاطر — وقارن «الالتزامات المدرجة وغيرها» سنة بعد سنة. وإذا كنت تبحث عن مظاهر عدم الأمانة فتتبّع أربعة مسارات: بنود إيرادات متقلبة، وتكاليف مُرسملة، ومبادئ محاسبية تُغيَّر في الأوقات الجيدة، و«بنود استثنائية» تعود كل عام."
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p30",
+      "en": "**Why does ROE carry such weight in stock analysis?**",
+      "ar": "**لماذا يحظى ROE بوزن كبير في تحليل الأسهم؟**"
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p31",
+      "en": "ROE — return on equity — reveals whether growth creates value. A company can grow 20 percent a year and still destroy value if ROE is 5 percent and the cost of capital is 8 percent. That is why ROE (V09) is one of the heaviest variables in AKM1.",
+      "ar": "ROE — العائد على حقوق الملكية — يكشف ما إذا كان النمو يخلق قيمة. يمكن لشركة أن تنمو 20 بالمئة سنويًا ومع ذلك تدمّر القيمة إذا كان ROE يساوي 5 بالمئة وتكلفة رأس المال 8 بالمئة. لهذا يُعد ROE (V09) أحد أثقل المتغيرات وزنًا في AKM1."
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p32",
+      "en": "**What is the difference between fundamental and technical analysis?**",
+      "ar": "**ما الفرق بين التحليل الأساسي والتحليل الفني؟**"
+    },
+    {
+      "nyckel": "komplett-guide-svensk-aktieanalys-2026:p33",
+      "en": "Fundamental analysis explains the company — the business, the numbers and the valuation — while technical analysis reads the wave structure of the price. In the institutional method, the technique serves as a confluence check: when fundamental scenarios and the price point in the same direction, confidence is high, and when they split, the method is to wait.",
+      "ar": "التحليل الأساسي يفسّر الشركة — الأعمال والأرقام والتقييم — بينما يقرأ التحليل الفني البنية الموجية للسعر. في المنهج المؤسسي تُستخدم التقنية كفحص للتقاطع: حين تشير السيناريوهات الأساسية والسعر إلى الاتجاه نفسه تكون الثقة عالية، وحين يفترقان تكون المنهجية هي الانتظار."
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p20",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p21",
+      "en": "**What is the quick ratio formula?**",
+      "ar": "**ما هو قانون حساب النسبة السريعة؟**"
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p22",
+      "en": "The quick ratio is calculated as (current assets − inventory) ÷ current liabilities and measures a company's short-term ability to pay — not its profitability or its valuation. In the worked example, 200 million in trade receivables and cash, 50 million in inventory and 150 million in current liabilities give a quick ratio of (200 − 50) ÷ 150 = 1.0.",
+      "ar": "تُحسب النسبة السريعة كما يلي: (الأصول المتداولة − المخزون) ÷ الالتزامات قصيرة الأجل، وهي تقيس قدرة الشركة على سداد التزاماتها قصيرة الأجل — لا ربحيتها ولا تقييمها. في المثال الحسابي يعطي 200 مليون من الذمم المدينة التجارية والنقد، و50 مليونًا من المخزون، و150 مليونًا من الالتزامات قصيرة الأجل نسبة سريعة قدرها (200 − 50) ÷ 150 = 1,0."
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p23",
+      "en": "**What level should the quick ratio be at?**",
+      "ar": "**ما المستوى الذي ينبغي أن تقف عنده النسبة السريعة؟**"
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p24",
+      "en": "The rule of thumb says above 1.0, but interpretation belongs to the industry: in retail and food, 0.3–0.8 is normal; in manufacturing and construction, 0.8–1.2 is a common corridor; and SaaS companies often sit above 1.5. For banks and insurance companies the key ratio is meaningless — capital adequacy measures are used there instead.",
+      "ar": "تقول القاعدة التقريبية فوق 1,0، لكن التفسير يخص القطاع: في تجارة التجزئة والأغذية يُعد 0,3–0,8 مستوى طبيعيًا، وفي التصنيع والبناء يكون 0,8–1,2 نطاقًا شائعًا، وشركات SaaS كثيرًا ما تقف فوق 1,5. أما البنوك وشركات التأمين فالنسبة لا معنى لها لديها — إذ تُستخدم هناك مقاييس كفاية رأس المال بدلًا منها."
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p25",
+      "en": "**Why is inventory deducted in the quick ratio?**",
+      "ar": "**لماذا يُطرح المخزون في النسبة السريعة؟**"
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p26",
+      "en": "Inventory must first be sold — at an uncertain time and at an uncertain price — before it becomes cash, while trade receivables fall due within 30–90 days and cash is already a means of payment. The quick ratio measures what can become money _quickly_, hence the name — but as Company A in the example shows (quick ratio 0.4 with inventory turning over eight times a year), the speed of the inventory must also be read before the number is judged.",
+      "ar": "لا بد أولًا من بيع المخزون — في وقت غير مؤكد وبسعر غير مؤكد — قبل أن يتحول إلى نقد، بينما تستحق الذمم المدينة التجارية السداد خلال 30–90 يومًا والنقدية هي أصلًا وسيلة دفع. تقيس النسبة السريعة ما يمكن أن يصبح مالًا _بسرعة_، ومن هنا جاء اسمها — لكن كما تُظهر الشركة A في المثال (نسبة سريعة 0,4 ومعدل دوران مخزون ثماني مرات في السنة) يجب أيضًا قراءة سرعة المخزون قبل إصدار الحكم على الرقم."
+    },
+    {
+      "nyckel": "kvickrakningsformeln-sa-mater-du-likviditet:p27",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p27",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p28",
+      "en": "**Who is Mr Market?**",
+      "ar": "**من هو السيد السوق؟**"
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p29",
+      "en": "Mr Market is an allegory almost a hundred years old in which the stock market appears as a business partner of peculiar temperament: every day he offers to buy your share of the company or sell you more, at a price that varies with his mood — euphoric, he bids high; depressed, far below what the business is worth. His most important property is that you are free to say no: the price is an offer, not a verdict.",
+      "ar": "السيد السوق استعارة عمرها قريب من مئة عام تُصوِّر البورصة شريكًا في العمل غريب الطباع: كل يوم يعرض أن يشتري حصتك في الشركة أو يبيعك المزيد، بسعر يتغير مع مزاجه — في نشوته يعرض سعرًا مرتفعًا، وفي اكتئابه سعرًا أدنى بكثير مما تستحقه الأعمال. أهم خصائصه أنك حر في أن ترفض: السعر عرض سعري لا حكم."
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p30",
+      "en": "**How do you measure market sentiment without guessing?**",
+      "ar": "**كيف تُقاس معنويات السوق دون تخمين؟**"
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p31",
+      "en": "With observable market data: issuance volume, the spread between small caps and large caps, interest rate sensitivity, and the pattern of analyst recommendations. None of these is a buy or sell signal in itself — together they work as a thermometer showing where the pendulum between greed and fear currently stands.",
+      "ar": "ببيانات سوق قابلة للرصد: حجم الإصدارات، والفارق بين الشركات الصغيرة والكبيرة، وحساسية أسعار الفائدة، وصورة التوصيات. لا شيء منها في حد ذاته إشارة شراء أو بيع — لكنها معًا تعمل كمقياس حرارة يُظهر أين يقف البندول بين الطمع والخوف."
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p32",
+      "en": "**What does mechanical rebalancing mean?**",
+      "ar": "**ماذا تعني إعادة التوازن الميكانيكية؟**"
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p33",
+      "en": "Setting written ranges for the weight of each holding — for example that an active weight may deviate by at most five percentage points from the target weight — and letting the bands, not the mood, decide when you trim back or top up. Calendar-based quarterly review works as a complement: that is when you look, but the bands decide.",
+      "ar": "أن تضع نطاقات مكتوبة لوزن كل حيازة — مثلًا ألّا يتجاوز انحراف الوزن الفعلي خمس نقاط مئوية عن الوزن المستهدف — وأن تدع النطاقات، لا المزاج، هي التي تقرر متى تقلّص ومتى تضيف. المراجعة التقويمية الفصلية تعمل كتكملة: حينها تنظر أنت، لكن النطاقات هي التي تحكم."
+    },
+    {
+      "nyckel": "mr-market-psykologi-svenska-borsen:p34",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليس نصيحة استثمارية._"
+    }
+  ]
+}

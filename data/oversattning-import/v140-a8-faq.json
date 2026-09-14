@@ -1,0 +1,205 @@
+{
+  "kurs": "v140-a8-faq",
+  "poster": [
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p18",
+      "en": "**What is capital burn (burn rate)?**",
+      "ar": "**ما هو احتراق رأس المال (burn rate)؟**"
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p19",
+      "en": "Capital burn is how much cash a company consumes each month when the business costs more than it brings in. The figure comes from the operating section of the cash flow statement in the annual report and is fundamentally a measure of survival time: a company burning cash needs new capital — through loans or a share issue — within a set period. The course [Capital Burn & Emission Risk](/kurser/v19-kapitalforbranning) walks through the calculation step by step.",
+      "ar": "احتراق رأس المال هو مقدار النقد الذي تستهلكه الشركة شهريًا عندما تكون تكاليف النشاط أكبر مما يدرّه. يُستخرج الرقم من قسم التشغيل في قائمة التدفقات النقدية في التقرير السنوي، وهو في جوهره مقياس لمدة البقاء: الشركة التي تحرق النقد تحتاج إلى رأس مال جديد — عبر قروض أو إصدار أسهم — خلال مدة محددة. تشرح دورة [احتراق رأس المال ومخاطر الإصدار](/kurser/v19-kapitalforbranning) الحساب خطوة بخطوة."
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p20",
+      "en": "**How do I calculate a company's runway?**",
+      "ar": "**كيف أحسب مدرج الشركة النقدي (runway)؟**"
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p21",
+      "en": "Runway is the time the cash lasts: divide the company's cash by the monthly capital burn. A company with 60 million kronor in cash that burns 5 million per month has 12 months of runway. In AKM1's V19 analysis the rules of thumb are: above 18 months = safe, below 12 months = warning, and below 6 months = acute issue risk.",
+      "ar": "المدرج النقدي (runway) هو المدة التي يكفي فيها النقد: اقسم نقد الشركة على الاحتراق الشهري لرأس المال. شركة لديها 60 مليون كرونة نقدًا وتحرق 5 ملايين شهريًا لديها مدرج 12 شهرًا. في تحليل V19 لدى AKM1 تكون قواعد الإبهام: أكثر من 18 شهرًا = آمن، وأقل من 12 شهرًا = تحذير، وأقل من 6 أشهر = خطر إصدار حاد."
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p22",
+      "en": "**Is every new share issue bad for shareholders?**",
+      "ar": "**هل كل إصدار أسهم جديد سيئ للمساهمين؟**"
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p23",
+      "en": "No — the purpose decides. An issue that finances profitable growth and is carried out at a reasonable price can create value, while a life-sustaining issue only fills a leaking cash balance and dilutes the owners without solving the underlying problem in the business model. That is why V19 examines both the number of issues over the past three years, their purpose, and how much the share count has grown over five years.",
+      "ar": "لا — الغرض هو الفيصل. الإصدار الذي يموّل نموًا مربحًا ويُنفَّذ بسعر معقول يمكن أن يخلق قيمة، بينما الإصدار المُمسك بالحياة لا يفعل سوى ملء خزينة تتسرّب ويُميّع الملاك دون حل المشكلة الجوهرية في نموذج العمل. لهذا يفحص V19 عدد الإصدارات خلال السنوات الثلاث الماضية وغرضها ومقدار نمو عدد الأسهم خلال خمس سنوات."
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p24",
+      "en": "**What is the most common misconception about issue risk?**",
+      "ar": "**ما هو أشهر سوء فهم حول مخاطر الإصدار؟**"
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p25",
+      "en": "That bankruptcy would be the biggest risk in small caps. In practice, recurring issues dilute more shareholders' value than bankruptcy does — the share rarely falls to zero, but every issue shrinks the share of earnings and cash per share. The Sinch case in the post, with a 95 percent value loss between 2021 and 2024, shows how dilution strikes slowly but destructively. The [complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026) shows how V19 interacts with the other variables.",
+      "ar": "وهو الظن أن الإفلاس هو أكبر خطر في شركات القيمة الصغيرة. عمليًا، تُميّع الإصدارات المتكررة قيمة عدد أكبر من المساهمين مقارنة بالإفلاس — السهم نادرًا ما يهبط إلى الصفر، لكن كل إصدار يقلّص الحصة من الأرباح والنقد لكل سهم. حالة Sinch في المقال، بخسارة 95 بالمئة من القيمة بين 2021 و2024، تُظهر كيف يضرب التمييع ببطء لكن بضرر بالغ. [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026) يوضح كيف يتفاعل V19 مع بقية المتغيرات."
+    },
+    {
+      "nyckel": "v19-kapitalforbranning-analys:p26",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليست نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p18",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p19",
+      "en": "**What does a buyback of own shares mean?**",
+      "ar": "**ماذا يعني إعادة شراء الأسهم الخاصة؟**"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p20",
+      "en": "That the company buys back its own shares on the stock exchange. The shares are retired or kept as treasury stock, and the number of outstanding shares falls. Each remaining share thereby represents a larger share of the company's earnings and cash. The course [Buybacks of Own Shares (V20)](/kurser/v20-aterekop-egna-aktier) explains the mechanics with worked examples.",
+      "ar": "أن تشتري الشركة أسهمها الخاصة في البورصة. تُسترد الأسهم أو تُحفظ كأسهم خزانة (treasury stock)، وينخفض عدد الأسهم القائمة. وبذلك يمثل كل سهم متبقٍّ حصة أكبر من أرباح الشركة ونقدها. تشرح دورة [إعادة شراء الأسهم الخاصة (V20)](/kurser/v20-aterekop-egna-aktier) الآلية بأمثلة حسابية."
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p21",
+      "en": "**How can buybacks raise earnings per share without higher earnings?**",
+      "ar": "**كيف يمكن لإعادات الشراء أن ترفع ربحية السهم دون زيادة الأرباح؟**"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p22",
+      "en": "Through the arithmetic of division. A company with 100 million shares and 100 million kronor in earnings has EPS of 1.00 krona. If 10 million shares are bought back, the same earnings are spread over 90 million shares and EPS rises to 1.11 — eleven percent \"growth\" that comes from fewer shares, not from the business earning more. That is why buybacks can mask weak organic growth.",
+      "ar": "عبر حساب القسمة. شركة لديها 100 مليون سهم و100 مليون كرونة من الأرباح لديها ربحية سهم 1.00 كرونة. إذا أُعيد شراء 10 ملايين سهم، تُوزَّع الأرباح نفسها على 90 مليون سهم فترتفع ربحية السهم إلى 1.11 — «نمو» بنسبة أحد عشر بالمئة يأتي من نقص عدد الأسهم لا من زيادة أرباح النشاط. لهذا يمكن لإعادات الشراء أن تحجب ضعف النمو العضوي."
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p23",
+      "en": "**When do buybacks create value — and when do they destroy it?**",
+      "ar": "**متى تخلق إعادات الشراء قيمة — ومتى تدمرها؟**"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p24",
+      "en": "AKM1 judges buybacks on three criteria: they should be financed with free cash flow rather than debt, carried out at a price below the company's estimated value, and not crowd out necessary development investment. When the criteria are met, the buyback is value-creating capital allocation; when done with debt at high prices while the business deteriorates — as in the Boeing case 2010–2019 — it is EPS manipulation.",
+      "ar": "تحكم AKM1 على إعادات الشراء بثلاثة معايير: أن تُموَّل بالتدفق النقدي الحر لا بالدين، وأن تُنفَّذ بسعر أقل من القيمة المقدَّرة للشركة، وألا تزاحم الاستثمارات التطويرية الضرورية. عند استيفاء المعايير تكون إعادة الشراء تخصيصًا للرأس مال يخلق قيمة؛ وعندما تُنفَّذ بالدين وبأسعار مرتفعة بينما يتدهور النشاط — كما في حالة Boeing بين 2010 و2019 — فهي تلاعب بربحية السهم."
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p25",
+      "en": "**Where do I find buybacks in the annual report?**",
+      "ar": "**أين أجد إعادات الشراء في التقرير السنوي؟**"
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p26",
+      "en": "In the cash flow statement, on lines about \"share repurchase program\" under financing activities, and in the balance sheet as \"treasury shares\". Also compare the number of outstanding shares year against year — a falling share count reveals buybacks even when they are not marketed. AKM1's 1–5 score scale is applied to exactly these figures.",
+      "ar": "في قائمة التدفقات النقدية، على بنود «share repurchase program» ضمن الأنشطة التمويلية، وفي الميزانية كـ«أسهم خزانة». وقارن كذلك عدد الأسهم القائمة سنة بسنة — انخفاض عدد الأسهم يكشف إعادات الشراء حتى عندما لا يُعلن عنها. يُطبَّق مقياس النقاط 1–5 لدى AKM1 على هذه الأرقام بالضبط."
+    },
+    {
+      "nyckel": "v20-aterekop-egna-aktier-analys:p27",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليست نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p27",
+      "en": "**What does EV/EBITDA mean in simple terms?**",
+      "ar": "**ماذا يعني EV/EBITDA ببساطة؟**"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p28",
+      "en": "The multiple compares what the whole company costs to buy — market capitalization plus interest-bearing debt minus cash (enterprise value, EV) — with operating earnings before depreciation, interest and tax (EBITDA). A multiple of 10x means a buyer of the whole company pays ten years of operating surplus. In the AKM1 model this is variable V06, and the course [EV/EBITDA — Valuation](/kurser/v06-ev-ebitda) covers it step by step.",
+      "ar": "يقارن هذا المضاعف كلفة شراء الشركة كاملة — القيمة السوقية زائد الدين المحمّل بفوائد ناقص النقد (قيمة المنشأة EV) — بالربح التشغيلي قبل الاستهلاك والفوائد والضريبة (EBITDA). مضاعف 10x يعني أن مشتري الشركة كاملة يدفع عشر سنوات من الفائض التشغيلي. في نموذج AKM1 هذا هو المتغير V06، وتغطي دورة [EV/EBITDA — التقييم](/kurser/v06-ev-ebitda) الموضوع خطوة بخطوة."
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p29",
+      "en": "**What is the difference from P/E?**",
+      "ar": "**ما الفرق عن P/E؟**"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p30",
+      "en": "P/E divides the market capitalization by net income and never sees the debt. EV/EBITDA puts interest-bearing debt in the numerator and subtracts cash, so two companies with the same earnings but different debt loads get different multiples. EV/EBITDA is also unaffected by depreciation policy and tax differences between countries — two accounting choices that distort P/E.",
+      "ar": "يقسم P/E القيمة السوقية على صافي الربح ولا يرى الدين أبدًا. أما EV/EBITDA فيضع الدين المحمّل بفوائد في البسط ويطرح النقد، فتحصل شركتان لهما الأرباح نفسها لكن بديون مختلفة على مضاعفين مختلفين. كما لا يتأثر EV/EBITDA بسياسة الاستهلاك ولا باختلافات الضرائب بين الدول — وهما اختياران محاسبيان يشوّهان P/E."
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p31",
+      "en": "**What counts as a good EV/EBITDA multiple?**",
+      "ar": "**ما الذي يُعد مضاعف EV/EBITDA جيدًا؟**"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p32",
+      "en": "In AKM1's score scale, 4–6x earns the top score, 6–10x the next highest, and above 20x the lowest — but no number is good or bad in itself. Multiples below 4x require a second piece of evidence: that cash coverage (V19) holds at least 3 points, since an apparently cheap share often prices in a hidden risk. Always compare within the same industry and across the full business cycle.",
+      "ar": "في مقياس النقاط لدى AKM1، يحصل النطاق 4–6x على أعلى النقاط، و6–10x على ما يليه، وفوق 20x على الأدنى — لكن لا يوجد رقم جيد أو سيئ في ذاته. المضاعفات دون 4x تتطلب دليلًا ثانيًا: أن تغطية النقد (V19) تحتفظ بثلاث نقاط على الأقل، لأن السهم الذي يبدو رخيصًا كثيرًا ما يسعّر خطرًا خفيًا. قارن دائمًا داخل القطاع نفسه وعبر دورة الأعمال كاملة."
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p33",
+      "en": "**What are the multiple's weaknesses?**",
+      "ar": "**ما نقاط ضعف هذا المضاعف؟**"
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p34",
+      "en": "Three known blind spots: cyclical companies look cheapest right before the downturn when EBITDA is at its highest, capital-intensive companies look too good because depreciation is a real cost for a factory, and growing receivables can let revenue be booked while the cash lags. That is why V06 is always read together with cash flow, debt and profitability — never alone.",
+      "ar": "ثلاث نقاط عمياء معروفة: الشركات الدورية تبدو الأرخص تمامًا قبل الانكماش حين يكون EBITDA في ذروته، والشركات كثيفة رأس المال تبدو أفضل مما هي لأن الاستهلاك تكلفة حقيقية لمصنع، وتنامي الذمم المدينة قد يسمح بإثبات الإيرادات بينما يتأخر النقد. لهذا يُقرأ V06 دائمًا مع التدفق النقدي والدين والربحية — لا وحده أبدًا."
+    },
+    {
+      "nyckel": "vad-ar-ev-ebitda:p35",
+      "en": "_Educational analysis — not investment advice._",
+      "ar": "_تحليل تعليمي — وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p18",
+      "en": "**What is institutional stock analysis?**",
+      "ar": "**ما هو تحليل الأسهم المؤسسي؟**"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p19",
+      "en": "A structured process applied identically to every company: assumptions written down before the result, a checklist followed mechanically, and scenarios with probabilities instead of a single point estimate. What separates the institution from the private individual is therefore not secret data but discipline and structure — the process can be learned and applied on your own.",
+      "ar": "عملية منظمة تُطبَّق بالطريقة نفسها على كل شركة: افتراضات مكتوبة قبل ظهور النتيجة، وقائمة تحقق تُتبع ميكانيكيًا، وسيناريوهات باحتمالات بدلًا من تقدير نقطي واحد. ما يفصل المؤسسة عن الفرد إذن ليس بيانات سرية بل الانضباط والبنية — يمكن تعلّم العملية وتطبيقها بشكل مستقل."
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p20",
+      "en": "**Can a private individual work institutionally?**",
+      "ar": "**هل يستطيع الفرد أن يعمل بأسلوب مؤسسي؟**"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p21",
+      "en": "Yes — nothing in the institutional process costs money in itself. What is required is a checklist, for example AKM1's [20 variables](/kurser) where each variable has its own course, mechanical scoring motivated with figures from the annual report, three scenarios with probabilities summing to one hundred percent, and a thesis written in advance about what would change the assessment.",
+      "ar": "نعم — لا شيء في العملية المؤسسية يكلّف مالًا في ذاته. المطلوب قائمة تحقق، مثل [المتغيرات العشرين](/kurser) لدى AKM1 حيث لكل متغير دورته الخاصة، وتقييم ميكانيكي مبرَّر بأرقام من التقرير السنوي، وثلاثة سيناريوهات باحتمالات مجموعها مئة بالمئة، وأطروحة مكتوبة مسبقًا عما قد يغيّر التقييم."
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p22",
+      "en": "**What weaknesses do institutional analysts have?**",
+      "ar": "**ما نقاط ضعف المحللين المؤسسيين؟**"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p23",
+      "en": "Three common ones: a short time horizon because bonus and quarterly logic punish patience, coverage logic that leaves companies below a certain market-cap limit entirely without analysis, and conformity where no analyst wants to deviate from consensus. In those gaps a methodical private analyst can work with the same tools but a longer time horizon.",
+      "ar": "ثلاث نقاط شائعة: أفق زمني قصير لأن منطق المكافآت والأرباع الفصلية يعاقب الصبر، ومنطق التغطية الذي يترك الشركات دون حد معين من القيمة السوقية بلا أي تحليل، والامتثال للجماعة حيث لا يريد أي محلل أن يحيد عن الإجماع. في هذه الفجوات يستطيع محلل خاص منظم أن يعمل بالأدوات نفسها ولكن بأفق زمني أطول."
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p24",
+      "en": "**How do I start applying the method in practice?**",
+      "ar": "**كيف أبدأ بتطبيق المنهجية عمليًا؟**"
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p25",
+      "en": "Start with the checklist: score each variable 0–5 with motivation from the annual report, build three scenarios with probabilities that sum to 100 percent, and write down what would make you change the assessment — before a decision is made. The [calculator](/kalkylator) works through your own figures and [membership](/medlemskap) gives access to the tools; the method itself is published openly.",
+      "ar": "ابدأ بقائمة التحقق: قيّم كل متغير من 0 إلى 5 بتبرير من التقرير السنوي، وابنِ ثلاثة سيناريوهات باحتمالات مجموعها 100 بالمئة، واكتب ما قد يجعلك تغيّر التقييم — قبل اتخاذ أي قرار. [الآلة الحاسبة](/kalkylator) تعمل على أرقامك الخاصة، و[العضوية](/medlemskap) تتيح الأدوات؛ أما المنهجية نفسها فمنشورة علنًا."
+    },
+    {
+      "nyckel": "vad-ar-institutionell-aktieanalys:p26",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي، وليست نصيحة استثمارية._"
+    }
+  ]
+}

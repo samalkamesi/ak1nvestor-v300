@@ -1,0 +1,255 @@
+{
+  "kurs": "v140-a1-faq",
+  "poster": [
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p27",
+      "en": "**What is AKM1 and how should the score be read?**",
+      "ar": "**ما هو AKM1 وكيف تُقرأ نقاطه؟**"
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p28",
+      "en": "AKM1 is AK1A's foundational model for structuring research on Swedish stocks. The model measures up to 20 variables in five categories and adds up the points — here 46,6 of 71,1 possible (65,5 %). The score describes how well the data meets the model's criteria; it is a pedagogical mapping tool, not a decision to buy or sell. The method is explained from the ground up in the [complete guide to Swedish stock analysis](/blogg/komplett-guide-svensk-aktieanalys-2026).",
+      "ar": "AKM1 هو النموذج الأساسي لدى AK1A لهيكلة الأبحاث حول الأسهم السويدية. يقيس النموذج ما يصل إلى 20 متغيرًا في خمس فئات ويجمع النقاط — هنا 46,6 من أصل 71,1 ممكنة (65,5 %). تصف النقاط مدى وفاء البيانات بمعايير النموذج؛ فهي أداة تعليمية لرسم الصورة، لا قرارًا بالشراء أو البيع. تُشرح المنهجية من الأساس في [الدليل الكامل لتحليل الأسهم السويدية](/blogg/komplett-guide-svensk-aktieanalys-2026)."
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p29",
+      "en": "**What does yellow status in the research library mean?**",
+      "ar": "**ماذا تعني الحالة الصفراء في مكتبة الأبحاث؟**"
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p30",
+      "en": "The colour shows how strong the data is: green requires a relative AKM1 of at least 70 percent, while yellow sits between 50 and 70. H&M's 65,5 percent places the company in the middle tier — enough for candidate status, but one weak measurement can move the row towards red. The status is updated when new data is delivered to the [research library](/forskningsbiblioteket).",
+      "ar": "يعبّر اللون عن قوة البيانات: الأخضر يتطلب AKM1 نسبيًا بنسبة 70 بالمئة على الأقل، بينما تقف الحالة الصفراء بين 50 و70. تضع نسبة 65,5 بالمئة لدى H&M الشركة في الطبقة الوسطى — بما يكفي لحالة الترشيح، لكن قياسًا ضعيفًا واحدًا إضافيًا قد يدفع الصف نحو الأحمر. تُحدَّث الحالة عند وصول بيانات جديدة إلى [مكتبة الأبحاث](/forskningsbiblioteket)."
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p31",
+      "en": "**How is V12 revenue stability calculated?**",
+      "ar": "**كيف يُحسب استقرار الإيرادات V12؟**"
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p32",
+      "en": "The variable measures how much the company's annual revenue swings, expressed as the standard deviation (σ) of the year-over-year rate of change. H&M's volatility of 3,5 percent lands in the most stable band, 5/5 — but note that the series is only four years, a short basis. The course [v12-intaktsstabilitet](/kurser/v12-intaktsstabilitet) walks through the calculation step by step.",
+      "ar": "يقيس المتغير مقدار تذبذب مبيعات الشركة السنوية، معبَّرًا عنه بالانحراف المعياري (σ) لمعدل التغير من سنة إلى أخرى. تذبذب H&M البالغ 3,5 بالمئة يقع في أكثر النطاقات استقرارًا 5/5 — لكن لاحظ أن السلسلة أربع سنوات فقط، وهو أساس قصير. تشرح دورة [v12-intaktsstabilitet](/kurser/v12-intaktsstabilitet) الحساب خطوة بخطوة."
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p33",
+      "en": "**Why are some variables unset?**",
+      "ar": "**لماذا تكون بعض المتغيرات غير محددة؟**"
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p34",
+      "en": "Unset means the data sources have not yet delivered material sufficient for measurement — the model never guesses. For H&M, 9 of 20 variables are unset, including liquidity (V11) where balance sheet data is missing. Unset items can be filled in as the sources deliver, giving a more reliable overall picture.",
+      "ar": "غير محدد يعني أن مصادر البيانات لم تقدّم بعد ما يكفي من الأساس للقياس — النموذج لا يخمّن أبدًا. لدى H&M هناك 9 من أصل 20 متغيرًا غير محددة، ومنها السيولة (V11) حيث تنقص بيانات الميزانية العمومية. يمكن ملء البنود غير المحددة مع تسليم المصادر، مما يعطي صورة كلية أوثق."
+    },
+    {
+      "nyckel": "analys-h-och-m-hennes-och-mauritz-2026:p35",
+      "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. Research material — not advice. Educational research, never investment advice (law 2007:528)._",
+      "ar": "_هذه نظرة عامة على الأبحاث مولَّدة آليًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. مادة بحثية — لا استشارة. بحث تعليمي، لا نصيحة استثمارية أبدًا (القانون 2007:528)._"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p27",
+      "en": "**What is an investment company and how does it differ from an operating company?**",
+      "ar": "**ما هي الشركة الاستثمارية وكيف تختلف عن الشركة التشغيلية؟**"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p28",
+      "en": "An investment company like Industrivärden owns stakes in other companies instead of running its own operations. The accounts therefore reflect the market value of the holdings — often called net asset value — and the result swings with the stock market. That is why ratios such as P/E and margins are not directly comparable with operating companies, something the model flags explicitly in the profile.",
+      "ar": "الشركة الاستثمارية مثل Industrivärden تملك حصصًا في شركات أخرى بدلاً من تشغيل نشاطها الخاص. لذلك تعكس دفاترها القيمة السوقية للحصص — ما يُسمى غالبًا صافي قيمة الأصول — ويتأرجح النتيج مع سوق الأسهم. لهذا ليست النسب مثل P/E والهوامش قابلة للمقارنة مباشرة بالشركات التشغيلية، وهو ما يشير إليه النموذج صراحةً في الملف."
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p29",
+      "en": "**What does green status with the low coverage warning label mean?**",
+      "ar": "**ماذا تعني الحالة الخضراء مع ملصق تحذير التغطية المنخفضة؟**"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p30",
+      "en": "Green status requires a relative AKM1 of at least 70 percent and data coverage of at least 60 percent. Industrivärden sits at 86,7 percent in points but 67,0 percent in coverage — above the D1 rule but below the library floor of 70 percent. The warning label reminds the reader that the data is thinner than the library's standard.",
+      "ar": "تتطلب الحالة الخضراء AKM1 نسبيًا بنسبة 70 بالمئة على الأقل وتغطية بيانات بنسبة 60 بالمئة على الأقل. تقف Industrivärden عند 86,7 بالمئة في النقاط لكن 67,0 بالمئة في التغطية — فوق قاعدة D1 لكن تحت أرضية المكتبة البالغة 70 بالمئة. يذكّر ملصق التحذير القارئ بأن البيانات أرقّ من معيار المكتبة."
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p31",
+      "en": "**How is EV/EBIT read as a lower-bound proxy for EV/EBITDA?**",
+      "ar": "**كيف يُقرأ EV/EBIT كحدّ أدنى بديل عن EV/EBITDA؟**"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p32",
+      "en": "When the source only provides EV/EBIT, it is used as a lower bound for EV/EBITDA, since EV/EBIT is always greater than or equal to EV/EBITDA. Industrivärden's EV/EBIT of 3,6x therefore yields the top score on the convex curve — but only because V19 sits at least 3 points. The logic is explained in the course [v06-ev-ebitda](/kurser/v06-ev-ebitda).",
+      "ar": "عندما يقدم المصدر EV/EBIT فقط يُستخدم كحدّ أدنى لـ EV/EBITDA، لأن EV/EBIT أكبر من EV/EBITDA أو يساويه دائمًا. نسبة EV/EBIT البالغة 3,6x لدى Industrivärden تعطي لذلك أعلى النقاط على المنحنى المحدب — لكن فقط لأن V19 يبلغ 3 نقاط على الأقل. يُشرح هذا المنطق في دورة [v06-ev-ebitda](/kurser/v06-ev-ebitda)."
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p33",
+      "en": "**Is this investment advice?**",
+      "ar": "**هل هذه استشارة استثمارية؟**"
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p34",
+      "en": "No. The text is educational finance instruction: it shows how the model measures and which conditions would change the picture. Under the law (2007:528) on securities business, advice requires a licence, and AK1A never issues such recommendations. The library and the courses exist to teach the method — not to make decisions for the reader.",
+      "ar": "لا. النص تعليم مالي: يُظهر كيف يقيس النموذج وأي الشروط قد تغيّر الصورة. بموجب قانون الأوراق المالية (2007:528) تتطلب الاستشارة ترخيصًا، وAK1A لا تقدم مثل هذه التوصيات أبدًا. المكتبة والدورات موجودة لتعليم المنهجية — لا لاتخاذ القرارات نيابة عن القارئ."
+    },
+    {
+      "nyckel": "analys-industrivarden-2026:p35",
+      "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. Research material — not advice. Educational research, never investment advice (law 2007:528)._",
+      "ar": "_هذه نظرة عامة على الأبحاث مولَّدة آليًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. مادة بحثية — لا استشارة. بحث تعليمي، لا نصيحة استثمارية أبدًا (القانون 2007:528)._"
+    },
+    {
+      "nyckel": "analys-investor-2026:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "analys-investor-2026:p27",
+      "en": "**What is net asset value and why does it matter for Investor?**",
+      "ar": "**ما المقصود بصافي قيمة الأصول ولماذا يهم Investor؟**"
+    },
+    {
+      "nyckel": "analys-investor-2026:p28",
+      "en": "The net asset value is the sum of the investment company's holdings, often measured at market value. For Investor, P/E, margins and P/B reflect the value of the holdings rather than an operating business — the further the price sits from net asset value, the more the ratios reflect market expectations. That is why the model flags that such figures are not compared with operating companies straight off.",
+      "ar": "صافي قيمة الأصول هو مجموع حصص الشركة الاستثمارية، ويُقاس غالبًا بالقيمة السوقية. لدى Investor تعكس P/E والهوامش وP/B قيم الحصص بدل نشاط تشغيلي — وكلما ابتعد السعر عن صافي قيمة الأصول زادت عكس النسب لتوقعات السوق. لهذا يشير النموذج إلى أن هذه الأرقام لا تُقارن مباشرة بالشركات التشغيلية."
+    },
+    {
+      "nyckel": "analys-investor-2026:p29",
+      "en": "**What does V19 cash coverage and dilution risk measure?**",
+      "ar": "**ماذا يقيس V19 — التغطية النقدية ومخاطر الإصدار الجديد؟**"
+    },
+    {
+      "nyckel": "analys-investor-2026:p30",
+      "en": "V19 examines whether the company funds its own operations or risks having to issue new capital. Investor's FCF margin of 50,6 percent yields the top score of 5/5 — the cash flow is positive, so no burn rate is calculated. The course [v19-kapitalforbranning](/kurser/v19-kapitalforbranning) walks through the table that governs the assessment.",
+      "ar": "يفحص V19 ما إذا كانت الشركة تموّل عملياتها بنفسها أو أنها معرّضة لخطر إصدار رأس مال جديد. هامش التدفق النقدي الحر لدى Investor البالغ 50,6 بالمئة يعطي أعلى النقاط 5/5 — التدفق النقدي موجب، فلا يُحسب معدل الاحتراق. تشرح دورة [v19-kapitalforbranning](/kurser/v19-kapitalforbranning) الجدول الذي يحكم التقييم."
+    },
+    {
+      "nyckel": "analys-investor-2026:p31",
+      "en": "**How should the measurable falsification conditions be read?**",
+      "ar": "**كيف تُقرأ شروط التكذيب القابلة للقياس؟**"
+    },
+    {
+      "nyckel": "analys-investor-2026:p32",
+      "en": "The falsification conditions are the core of the method: a research picture without conditions that could kill it is not research. If, for example, V06 EV/EBITDA rises above 12x or data coverage drops below 60 percent, the status basis changes — and this is documented openly. The idea is that the picture can be checked, not merely believed.",
+      "ar": "شروط التكذيب هي جوهر المنهجية: صورة بحثية بلا شروط قادرة على قتلها ليست بحثًا. فإذا ارتفع مثلًا V06 EV/EBITDA فوق 12x أو هبطت تغطية البيانات تحت 60 بالمئة تغيّر أساس الحالة — ويُوثَّق ذلك علنًا. الفكرة أن الصورة قابلة للفحص، لا مجرد أن يُصدَّق بها."
+    },
+    {
+      "nyckel": "analys-investor-2026:p33",
+      "en": "**What does it mean that all fundamental waves are unset?**",
+      "ar": "**ماذا يعني أن تكون جميع الموجات الأساسية غير محددة؟**"
+    },
+    {
+      "nyckel": "analys-investor-2026:p34",
+      "en": "The wave engine requires time series — revenue, margins and multiples over time — to classify a wave, and Investor's data has classifiable wave data for zero of twenty variables. Unset is therefore an honest marker: the engine never guesses, and no trend is inserted into the picture where data is missing.",
+      "ar": "يحتاج محرك الموجات إلى سلاسل زمنية — إيرادات وهوامش ومضاعفات عبر الزمن — لتصنيف موجة، وبيانات Investor فيها بيانات موجات قابلة للتصنيف لصفر من عشرين متغيرًا. غير محدد لذلك علامة صدق: المحرك لا يخمّن أبدًا، ولا تُضاف أي اتجاهية إلى الصورة حيث تنقص البيانات."
+    },
+    {
+      "nyckel": "analys-investor-2026:p35",
+      "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. Research material — not advice. Educational research, never investment advice (law 2007:528)._",
+      "ar": "_هذه نظرة عامة على الأبحاث مولَّدة آليًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. مادة بحثية — لا استشارة. بحث تعليمي، لا نصيحة استثمارية أبدًا (القانون 2007:528)._"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p27",
+      "en": "**What is a NAV proxy and why is it used for property companies?**",
+      "ar": "**ما هو وكيل NAV ولماذا يُستخدم لشركات العقارات؟**"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p28",
+      "en": "NAV (net asset value) is the value of the company's assets minus its debts. The sources deliver no direct NAV data for NP3, so the model uses book equity per share as a proxy — with the property caveat that booked values can sit below market values. The margin of -42,2 percent describes where the price stands relative to the proxy, not any target level.",
+      "ar": "صافي قيمة الأصول (NAV) هو قيمة أصول الشركة مطروحًا منها الديون. لا تقدم المصادر بيانات NAV مباشرة لـ NP3، فيستخدم النموذج حقوق الملكية الدفترية للسهم بوصفها وكيلًا — مع استثناء العقارات بأن القيم الدفترية قد تقف دون القيم السوقية. يصف هامش -42,2 بالمئة موقع السعر مقابل الوكيل، لا أي مستوى مستهدف."
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p29",
+      "en": "**How do interest rates affect a property company's value floor?**",
+      "ar": "**كيف تؤثر الفوائد على أرضية قيمة شركة العقارات؟**"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p30",
+      "en": "The property values behind the NAV proxy fall when the required return rises, since a given rental stream is then discounted harder. That is why interest rate sensitivity is noted as its own risk in the profile — the floor moves with the rate level. It is an example of how the model ties macro conditions to the variables' measurements.",
+      "ar": "تنخفض قيم العقارات خلف وكيل NAV عندما يرتفع متطلب العائد، لأن تدفق إيجارات معينًا يُخصم عندئذ بصرامة أكبر. لهذا تُدوَّن حساسية الفائدة كخطر مستقل في الملف — الأرضية تتحرك مع مستوى الفائدة. وهو مثال على كيف يربط النموذج الظروف الكلية بقياسات المتغيرات."
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p31",
+      "en": "**What does the improving dynamic in the wave position mean?**",
+      "ar": "**ماذا تعني ديناميكية التحسّن في وضع الموجة؟**"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p32",
+      "en": "Among the variables with classifiable wave data, the fundamental dynamic points upward — improving rather than stable or weakening. It is the only wave trace in the data and covers just one of twenty variables, so a weak signal rather than a full trend picture. If the dynamic changes to weakening, the candidacy is re-examined immediately.",
+      "ar": "بين المتغيرات ذات بيانات الموجات القابلة للتصنيف تشير الديناميكية الأساسية إلى الأعلى — تحسّن بدل الاستقرار أو الضعف. وهي أثر الموجة الوحيد في البيانات وتغطي متغيرًا واحدًا من عشرين، أي إشارة ضعيفة أكثر منها صورة اتجاه كاملة. وإذا تحولت الديناميكية إلى الضعف يُعاد فحص الترشيح فورًا."
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p33",
+      "en": "**How is the EBITDA margin calculated with EBIT as a proxy?**",
+      "ar": "**كيف يُحسب هامش EBITDA باستخدام EBIT كوكيل؟**"
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p34",
+      "en": "When the source provides the EBIT margin, it is used as a lower bound for the EBITDA margin, since EBITDA is always at least as large as EBIT. NP3's EBIT margin of 74,9 percent therefore yields the top score in the linear band. The calculation is explained step by step in the course [v08-ebitda-marginal](/kurser/v08-ebitda-marginal).",
+      "ar": "عندما يقدم المصدر هامش EBIT يُستخدم كحدّ أدنى لهامش EBITDA، لأن EBITDA دائمًا أكبر من EBIT أو يساويه. هامش EBIT البالغ 74,9 بالمئة لدى NP3 يعطي لذلك أعلى النقاط في النطاق الخطي. يُشرح الحساب خطوة بخطوة في دورة [v08-ebitda-marginal](/kurser/v08-ebitda-marginal)."
+    },
+    {
+      "nyckel": "analys-np3-fastigheter-2026:p35",
+      "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. Research material — not advice. Educational research, never investment advice (law 2007:528)._",
+      "ar": "_هذه نظرة عامة على الأبحاث مولَّدة آليًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. مادة بحثية — لا استشارة. بحث تعليمي، لا نصيحة استثمارية أبدًا (القانون 2007:528)._"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p27",
+      "en": "**What does V10 debt-to-equity measure and how is the value read?**",
+      "ar": "**ماذا يقيس V10 نسبة المديونية وكيف يُقرأ الرقم؟**"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p28",
+      "en": "V10 compares the company's debts with its equity — Truecaller's ratio of 0,04 means very low debt relative to the capital base and yields 5/5 in the linear band where lower is better. The course [v10-skuldsattningsgrad](/kurser/v10-skuldsattningsgrad) shows how the figure is calculated and read. Like all variables, it is one building block in the overall picture, not a stand-alone signal.",
+      "ar": "يقارن V10 ديون الشركة برأس مالها الخاص — نسبة Truecaller البالغة 0,04 تعني مديونية منخفضة جدًا مقابل قاعدة رأس المال وتعطي 5/5 في النطاق الخطي حيث الأدنى أفضل. تعرض دورة [v10-skuldsattningsgrad](/kurser/v10-skuldsattningsgrad) كيف يُحسب الرقم ويُقرأ. وككل المتغيرات هو لبنة واحدة في الصورة الكلية، لا إشارة مستقلة بذاتها."
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p29",
+      "en": "**What does yellow status mean for Truecaller in the library?**",
+      "ar": "**ماذا تعني الحالة الصفراء لـ Truecaller في المكتبة؟**"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p30",
+      "en": "Yellow status means the relative AKM1 sits between 50 and 70 percent of max — Truecaller is at 66,4 percent. That is enough for candidate status under the selection rule, but the status is sensitive: if the share drops below 50 percent in the next measurement, the row turns red under the D1 rule.",
+      "ar": "الحالة الصفراء تعني أن AKM1 النسبي يقف بين 50 و70 بالمئة من الحد الأقصى — Truecaller عند 66,4 بالمئة. هذا يكفي لحالة الترشيح وفق قاعدة الاختيار، لكن الحالة حساسة: إذا هبطت النسبة تحت 50 بالمئة في القياس التالي يصبح الصف أحمر وفق قاعدة D1."
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p31",
+      "en": "**Why is revenue stability interesting for a technology company?**",
+      "ar": "**لماذا يهم استقرار الإيرادات شركة تقنية؟**"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p32",
+      "en": "Revenue stability shows how evenly the company's revenues stream in — technology services with subscription revenues tend to be more even than ad-funded ones. Truecaller's volatility σ(yoy) of 4,2 percent sits in the most stable band, 5/5, though the measurement builds on a four-year series, a short basis. In the course [v12-intaktsstabilitet](/kurser/v12-intaktsstabilitet) we walk through how the volatility is calculated.",
+      "ar": "يُظهر استقرار الإيرادات مدى انتظام تدفق إيرادات الشركة — الخدمات التقنية ذات إيرادات الاشتراك تميل إلى انتظام أكبر من المموّلة بالإعلانات. تذبذب Truecaller σ(yoy) البالغ 4,2 بالمئة يقع في أكثر النطاقات استقرارًا 5/5، غير أن القياس يقوم على سلسلة من أربع سنوات، وهو أساس قصير. في دورة [v12-intaktsstabilitet](/kurser/v12-intaktsstabilitet) نستعرض كيف يُحسب التذبذب."
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p33",
+      "en": "**Can the analysis be used as a basis for one's own decisions?**",
+      "ar": "**هل يمكن استخدام التحليل أساسًا لقرارات شخصية؟**"
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p34",
+      "en": "The analysis is educational material: it shows how AKM1 measures Truecaller's data and which conditions would change the picture. It is not investment advice under the law (2007:528), and AK1A never takes a position on what an individual person should do. The purpose is for you to learn the method and be able to apply it yourself.",
+      "ar": "التحليل مادة تعليمية: يُظهر كيف يقيس AKM1 بيانات Truecaller وأي الشروط قد تغيّر الصورة. وهو ليس استشارة استثمارية بموجب القانون (2007:528)، وAK1A لا تتخذ أبدًا موقفًا مما ينبغي لشخص بعينه أن يفعل. الغرض أن تتعلم المنهجية وتقدر على تطبيقها بنفسك."
+    },
+    {
+      "nyckel": "analys-truecaller-2026:p35",
+      "en": "_This is an automatically generated research overview; the full AK1A analysis is produced manually. Research material — not advice. Educational research, never investment advice (law 2007:528)._",
+      "ar": "_هذه نظرة عامة على الأبحاث مولَّدة آليًا؛ أما تحليل AK1A الكامل فيُصنع يدويًا. مادة بحثية — لا استشارة. بحث تعليمي، لا نصيحة استثمارية أبدًا (القانون 2007:528)._"
+    }
+  ]
+}

@@ -10569,5 +10569,24 @@ ko/ + node-wrapper med fs.copyFileSync + sha-jämförelse.
 hjärtslag/rond när mätningen landat (senaste cronrapport 11:24 är från
 FÖRE våg 150-bygget).
 
+**Fabriksfix (samma session):** låsläcka i agentfabrik.mjs — grenarna
+"kön tom" och "ogiltigt manifest" exiterade UTAN släppLås(), vilket
+lät varje tomt rop blockera fabriken i 35 min (bevis: studio-10x lagt
+i ko/ 15:50 plockades ej av 15:55/16:05-ropen pga läckta låset från
+15:35). Båda grenarna släpper nu låset; nästa rop läser fixad kod
+(skriptet laddas färskt per rop — ingen omstart).
+
+**ROND 20 slut (16:45):** läckfixen verifierad (node --check 0; släppLås
+definierad rad 186; ALLA sex exit-stigar granskade — endast de två
+buggade saknade släpp) → committad [organ:Θ] + merge av arbetsstationens
+10X p4–p6 + push prod (prod-tree-fil uppdateras; löpande fabrik opåverkad
+— node läser skriptet vid start). **Vakten efter våg 150:** subagentens
+standardsvep 14:08Z = GRÖNT, 0 fynd/144 kombinationer — MEN sweepen
+täcker ej de 130 nya aspektsidorna (vakten har statisk sidlista, 0
+dataset-träffar) → riktat svep (8 URL:er) dispatchas; sidlista-från-
+sitemap = bokad kandidat. **Fabriken:** studio-10x-fas1 PÅGÅR (PID
+455978, LOCK 16:15, statusfil levande 16:44); v151-granskningsko köar
+därefter (ETT manifest/rop). Beslutsminne: rond 20-tillägg.
+
 
 

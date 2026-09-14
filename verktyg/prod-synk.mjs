@@ -96,6 +96,37 @@ async function httpsOk() {
 }
 
 async function main() {
+  // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
+  // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
+  // varandras installation = "next: not found"-kraschloop (bevisat
+  // 2026-09-14 17:22-17:29: prod nere ~7 min, 1 309 omstarter). Ett
+  // processlås (mkdir, atomärt) ser till att ENDAST EN synkinstans lever;
+  // kvarlämnade lås (>12 min) städas som övergivna.
+  const lasSokvag = path.join(VAKT, ".synk-instans.lock");
+  try {
+    fs.mkdirSync(lasSokvag, { recursive: false });
+  } catch {
+    try {
+      const statistik = fs.statSync(lasSokvag);
+      if (Date.now() - statistik.mtimeMs > 12 * 60_000) {
+        fs.rmSync(lasSokvag, { recursive: true, force: true });
+        fs.mkdirSync(lasSokvag, { recursive: false });
+      } else {
+        console.log("annan synkinstans lever — lämnar över");
+        return;
+      }
+    } catch {
+      return;
+    }
+  }
+  try {
+    await korSynk();
+  } finally {
+    try { fs.rmSync(lasSokvag, { recursive: true, force: true }); } catch {}
+  }
+}
+
+async function korSynk() {
   // 1) VÅG 123b: hämtning från GitHub kräver autentisering (repo privat,
   //    servern saknar PAT) — BEHÖVS EJ: huvudagentens och agentens pushar
   //    levererar trädet DIREKT till servern (updateInstead). Synken jämför

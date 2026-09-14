@@ -734,7 +734,12 @@ export interface StudioKontext {
 
 /** Svar från compact() — status enligt protokollets compact.state. */
 export interface StudioCompactSvar {
-  status: "klar" | "redan_körs" | "tom";
+  /**
+   * VÅG 160 — MEGA-komprimeringen: statusfältet är den ärliga tillståndsmaskinen.
+   * "modell_lakad" = sessionens modell var död (-32031), läktes via
+   * session/setModel och komprimeringen körde därefter.
+   */
+  status: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad";
   meddelande: string;
   kontext?: StudioKontext | null;
 }
@@ -3718,44 +3723,123 @@ class AppServerTransport implements StudioTransport {
   async compact(instruktioner?: string): Promise<StudioCompactSvar> {
     await this.ensure();
     if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    // VÅG 160 — MEGA: upptagen är ett TILLSTÅND, inte ett fel (mål-loopens
+    // iterationer gör knappen "död" annars — kundens "många fel"-lista).
     if (this.aktiv && !this.aktiv.färdig) {
-      throw new Error("En prompt kör — vänta tills agenten är klar.");
+      return {
+        status: "upptagen",
+        meddelande: "Agenten arbetar just nu — komprimering körs när iterationen är klar. Försök igen om en liten stund.",
+      };
     }
     // BEVISAT v82: schema {sessionId, inputId?, instructions?,
     // expectedRevision?}; svar compact.state "accepted"|"already_running".
-    const svar = (await this.klient.protokollFraga(
-      "session/compact",
-      {
-        sessionId: this.sid,
-        ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
-      },
-      60_000,
-    )) as { compact?: { state?: string }; response?: string } | null;
-
-    const state = svar?.compact?.state;
-    if (state === "already_running") {
-      return { status: "redan_körs", meddelande: "En komprimering körs redan — vänta några ögonblick." };
+    let svar: { compact?: { state?: string }; response?: string } | null = null;
+    let modellLakad = false;
+    try {
+      svar = (await this.klient.protokollFraga(
+        "session/compact",
+        {
+          sessionId: this.sid,
+          ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
+        },
+        60_000,
+      )) as { compact?: { state?: string }; response?: string } | null;
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      // VÅG 160 — MEGA-KUR 1 (LIVE-FÅNGAT 2026-09-15): -32031
+      // ZCODE_RUNTIME_MODEL_UNAVAILABLE — sessionen bär en död modell och
+      // compact-vägen saknade chatt-vägens självläkning (rå kinesisk feltext
+      // nådde kunden). Kur: session/setModel på LEVANDE session (BEVISAT
+      // v82) till känd-levande katalogmodell — historiken BEVARAS — därefter
+      // körs komprimeringen OM en gång.
+      if (arModellOtillganglig(text)) {
+        const bytt = await this.lakSessionensModell();
+        if (bytt) {
+          modellLakad = true;
+          svar = (await this.klient.protokollFraga(
+            "session/compact",
+            {
+              sessionId: this.sid,
+              ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
+            },
+            60_000,
+          )) as { compact?: { state?: string }; response?: string } | null;
+        }
+      }
+      if (!svar) {
+        throw new Error(
+          "Komprimeringen gick inte att köra: sessionens modell är inte tillgänglig och kunde inte bytas automatiskt. Prova att byta modell (Ctrl+N / modellväljaren) och försök igen.",
+        );
+      }
     }
-    // "accepted": kompakteringen kör som en agentturn — vänta på idle
-    // (state.updated broadcastas även utan subscribe; tak 2 min).
-    await new Promise<void>((los) => {
-      const tak = setTimeout(() => {
-        this.idleVakt = null;
-        los();
-      }, 120_000);
-      this.idleVakt = () => {
-        clearTimeout(tak);
-        this.idleVakt = null;
-        los();
-      };
-    });
+    // VÅG 160 — MEGA-KUR 2: "already_running" skall OCKSÅ vänta klart (annars
+    // returnerades kontexten o-friskoch kunden trodde komprimeringen tvärstannade).
+    // VÅG 160 — MEGA-KUR 3: tidsgränsen är ÄRLIG — efter taket rapporteras
+    // "pågår" i stället för låtsas-"klar".
+    const fardigFranVakt = await this.vantaIdleEfterCompact();
     const kontext = await this.lasKontext();
+    if (!fardigFranVakt) {
+      return {
+        status: "pågår",
+        meddelande: modellLakad
+          ? "Modellen läktes (död modell byttes automatiskt) — komprimeringen pågår fortfarande, kontrollen gav sig efter 2 minuter. Kontexten uppdateras av sig själv."
+          : "Komprimeringen pågår fortfarande (mer än 2 minuter) — kontexten uppdateras av sig själv när den är klar.",
+        kontext,
+      };
+    }
     const tom = !svar?.response && !kontext?.totalTokenCount;
     return {
-      status: tom ? "tom" : "klar",
-      meddelande: tom ? "Ingenting att komprimera — kontexten är redan frisk." : "Kontexten komprimerad.",
+      status: tom ? "tom" : modellLakad ? "modell_lakad" : "klar",
+      meddelande: tom
+        ? "Ingenting att komprimera — kontexten är redan frisk."
+        : modellLakad
+          ? "Sessionens döda modell byttes automatiskt och kontexten komprimerad — historiken bevarad."
+          : "Kontexten komprimerad.",
       kontext,
     };
+  }
+
+  /**
+   * VÅG 160 — läk en session vars modell dött (-32031): session/setModel på
+   * den LEVANDE sessionen (BEVISAT v82 — historik/turns bevaras, till skillnad
+   * från bytModell-vägen som skapar ny session). Känd-levande förstahand =
+   * glm-5.3 (katalogens primära); om även den avvisas prövas glm-5.2.
+   */
+  private async lakSessionensModell(): Promise<boolean> {
+    for (const modellId of ["glm-5.3", "glm-5.2"]) {
+      try {
+        await this.klient!.protokollFraga(
+          "session/setModel",
+          { sessionId: this.sid, model: { providerId: "zai", modelId: modellId } },
+          30_000,
+        );
+        return true;
+      } catch {
+        // nästa kandidat
+      }
+    }
+    return false;
+  }
+
+  /** VÅG 160: compact-väntet — true om idle-signalen kom innan taket. */
+  private vantaIdleEfterCompact(): Promise<boolean> {
+    return new Promise<boolean>((losa) => {
+      let fardig = false;
+      const tak = setTimeout(() => {
+        if (!fardig) {
+          fardig = true;
+          this.idleVakt = null;
+          losa(false);
+        }
+      }, 120_000);
+      this.idleVakt = () => {
+        if (fardig) return;
+        fardig = true;
+        clearTimeout(tak);
+        this.idleVakt = null;
+        losa(true);
+      };
+    });
   }
 
   async lasKontext(): Promise<StudioKontext | null> {

@@ -5312,7 +5312,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         body: JSON.stringify({ action: "compact" }),
       });
       const data = (await res.json().catch(() => ({}))) as {
-        status?: "klar" | "redan_körs" | "tom";
+        status?: "klar" | "redan_körs" | "tom" | "upptagen" | "pågår" | "modell_lakad";
         meddelande?: string;
         kontext?: KontextInfo | null;
         fel?: string;
@@ -5325,7 +5325,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
             ackumulerat: data.kontext?.totalTokenCount ?? 0,
           }));
         }
-        visaToast(data.meddelande ?? "Kontexten komprimerad.");
+        // VÅG 160 — MEGA: tillståndsmaskinen är ärlig — "modell_lakad" är
+        // framgång (död modell byttes + komprimering körde), "upptagen" en
+        // vägledning, "pågår" ett pågående arbete (INTE fel).
+        const allvarlig = data.status === "upptagen";
+        visaToast(
+          data.meddelande ?? "Kontexten komprimerad.",
+          allvarlig ? "fel" : undefined,
+        );
       } else {
         visaToast(data.fel || "Komprimeringen misslyckades.", "fel");
       }

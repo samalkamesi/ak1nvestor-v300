@@ -3096,6 +3096,18 @@ class AppServerTransport implements StudioTransport {
           if (sid) {
             this.sid = sid;
             resumerad = true;
+            // VÅG 158 (M6-avvikelse 7): läget återställs ur resume-svarets
+            // SNAPSHOT (settings.mode.current) — sanningen från runtimen,
+            // inte bara persistensfilens intention (avvikelsen kunde visa
+            // build i UI trots plan-session efter omstart).
+            try {
+              const franSnapshot = lasLageUrSnapshot(resultat);
+              if (franSnapshot === "build" || franSnapshot === "edit" || franSnapshot === "yolo" || franSnapshot === "plan") {
+                this.lage = franSnapshot;
+              }
+            } catch {
+              /* snapshot är stöd */
+            }
             // VÅG 145: resumead huvudtråds-session finns kvar i boken
             // (idempotent — omstart kan ha tappat den).
             if (!this.målSessionId) registreraHuvudtradSession(sid);

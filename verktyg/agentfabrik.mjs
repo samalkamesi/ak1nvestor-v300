@@ -120,8 +120,12 @@ function prefix(titel) {
   ].join("\n");
 }
 
-/** Kör ETT zcode-barn (-p = engångsprompt, ej interaktiv) med timeout+vakt. */
-function korUppgift(manifestId, uppgift) {
+/** Kör ETT zcode-barn (-p = engångsprompt, ej interaktiv) med timeout+vakt.
+ *  ROND 25: vidKlar anropas i close-hantlern — klara bokförs PER UPPGIFT i
+ *  statusfilen, så en fabrikspågående-död mitt i omgången aldrig förlorar
+ *  avslutade posters bokföring (bevis: mega g3 2026-09-15 — utdata + commit
+ *  levererade men klara:[] förblev tom; återupptagningen körde om den). */
+function korUppgift(manifestId, uppgift, vidKlar) {
   return new Promise((resolve) => {
     const loggSökväg = path.join(UTDATA, `${manifestId}-${uppgift.id}.log`);
     mkdirSync(UTDATA, { recursive: true });
@@ -166,7 +170,13 @@ function korUppgift(manifestId, uppgift) {
         leverans ?? `utdata/${manifestId}-${uppgift.id}.log`,
         `kod=${kod ?? "?"} sekunder=${Math.round((Date.now() - start) / 1000)}`,
       );
-      resolve({ id: uppgift.id, kod: kod ?? -1, sekunder: Math.round((Date.now() - start) / 1000), leverans });
+      const resultat = { id: uppgift.id, kod: kod ?? -1, sekunder: Math.round((Date.now() - start) / 1000), leverans };
+      try {
+        vidKlar?.(resultat); // ROND 25: per-uppgiftsbokföring FÖRE resolve — överlever omgångsdöd
+      } catch {
+        /* bokföring får aldrig döda exit-vägen */
+      }
+      resolve(resultat);
     });
   });
 }
@@ -273,9 +283,17 @@ try {
     }
     const omgång = köade.splice(0, PARALLELL_TAK);
     logga(`omgång: ${omgång.map((u) => u.id).join(", ")} (ram ${ram ?? "?"} MB)`);
-    const resultat = await Promise.all(omgång.map((u) => korUppgift(manifest.id, u)));
-    status.klara.push(...resultat);
-    skrivStatus(manifest, status);
+    // ROND 25: vidKlar bokför varje avslutad uppgift direkt i statusfilen —
+    // dog fabriken mitt i omgången plockar återupptagningen upp alla klara.
+    const resultat = await Promise.all(
+      omgång.map((u) =>
+        korUppgift(manifest.id, u, (r) => {
+          status.klara.push(r);
+          skrivStatus(manifest, status);
+        }),
+      ),
+    );
+    skrivStatus(manifest, status); // säkerhetsnät om en vidKlar svalt ett fel
     for (const r of resultat) {
       loggrad({ händelse: "uppgift-klar", manifest: manifest.id, ...r });
     }

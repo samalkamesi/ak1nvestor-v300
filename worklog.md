@@ -10672,3 +10672,34 @@ driftbeviset saknas: vakt-sidjournal.json skapas först vid nästa cron-
 vaktkörning ~03:01 — PIPELINE-KO markerar ◐ (kod levererad, bevis
 väntar) i stället för att stänga vågen på löfte. Pipeline: 152◐ + 157◐
 + 158▶ + g1–g7 pågår = djup. Beslutsminne: rond 24.
+
+## Rond 25 (2026-09-15 ~01:50) — [organ:Θ] fabrikspågående-död: diagnos, kirurgi, förlustlös återupptagning
+
+**Fynd (§ 3 självhelning):** 01:05-ropets fabriksprocess dog mitt i mega-
+omgång 1 (g1-g3) under nattens RAM-kris (375 MB tillgängligt, 2,5 GB swap).
+Bevis: processen borta (pgrep), LOCK kvar (42 min), logg.jsonl tyst, g1/g2-
+barn döda utan utdata-loggar — men g3 hann leverera (commit f2589675 + full
+utdata-logg skriven i close-hantlern). Status klara:[] förblev tom: buggen
+var att klara bokfördes PER OMGÅNG ( efter Promise.all) — dog processen under
+omgången förlorades även avslutade posters bokföring, och återupptagningen
+(statusfilens klara-lista = sanningen) skulle köra om allt.
+
+**Kurer (denna commit + kirurgi):**
+1. Kirurgi FÖRE 01:55-ropet: g3 bokförd i status/mega-beslut-styrelsen.json
+   med leveransrad ur dess egen utdata-logg + audit-rad (huvudagent:rond25).
+   Nästa rop kör g1,g2,g4-g7 (6) i stället för alla 7.
+2. Kodfix — korUppgift får vidKlar-callback: klara bokförs PER UPPGIFT i
+   statusfilen (i close-hantlern, FÖRE resolve). En framtida fabriksdöd mitt
+   i en omgång förlorar aldrig igen avslutad bokföring. node --check OK.
+3. Pumpor-daemonen lev (omstartad 01:44) — ropkedjan intakt; LOCK:ets
+   35-min-skrotning rensar det döda låset automatiskt vid nästa :x5-rop.
+
+**v157-journalinsikt (driftbevis väntar):** 23:26-vaktkörningen (journalens
+födsel) valde alfabetiskt bland aldrig-mätta — grunda + /analyser/* fyllda
+kvoten före /dataset/*. Ej bugg: nästa körning (~05:26) sorterar ts=0-
+sidor (aspekterna) FÖRST. Självkorrigerande; PIPELINE-KO står kvar ◐ till
+driftbevis.
+
+Rondens commits: denna + kirurgi/audit i runtime-ytan. Pipeline: 152◐
+157◐ 158▶ + mega 1/7 (g3 klar kirurgiskt) + v152-fas2 i kö = djup.
+

@@ -12,6 +12,7 @@
  *   · målhjärtslag    min%10==1  (xx:01, :11, :21, :31, :41, :51)
  *   · prod-synk       min%10==7  (xx:07, :17, :27, :37, :47, :57)
  *   · styrelserond    min==43 && timme%3==1  (01:43, 04:43, … 22:43)
+ *   · juridikgrind    min==37      (varje timme — före styrelserondens :43)
  *   · gränssnittsvakt min==17 && timme%6==1  (01:17, 07:17, 13:17, 19:17)
  *   · ISR-värmare     03:10 dagligen · data-hygien 03:33 söndagar
  *
@@ -55,6 +56,7 @@ function tick() {
   if (min % 10 === 5) korEnGang("agentfabrik", "node", ["verktyg/agentfabrik.mjs"]);
   if (min % 10 === 7) korEnGang("prod-synk", "node", ["verktyg/prod-synk.mjs"]);
   if (min % 10 === 8) korEnGang("evighetsmotor", "node", ["verktyg/evighetsmotor.mjs"]);
+  if (min === 37) korEnGang("juridikgrind", "node", ["verktyg/juridikgrind-vakt.mjs"]); // rådsförbudsscan FÖRE FLYTTKLAR (mega g2) — körs alltid före rondens :43
   if (min === 43 && tim % 3 === 1) korEnGang("styrelserond", "node", ["verktyg/styrelse-rond.mjs"]);
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);
   if (min === 23 && tim % 6 === 4) korEnGang("minnesberedare", "node", ["verktyg/minnesberedare.mjs"]);
@@ -62,6 +64,6 @@ function tick() {
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
 }
 
-logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · rond xx:43/3h · vakt xx:17/6h · minnesberedare xx:23/6h · värmare 03:10 · hygien sö 03:33");
+logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · minnesberedare xx:23/6h · värmare 03:10 · hygien sö 03:33");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

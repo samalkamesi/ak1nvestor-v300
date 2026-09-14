@@ -5058,6 +5058,44 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [malDialogText, malStartar, visaToast]);
 
+  // VÅG 150 (10X p3) — ÅTERAKTIVERA STÅENDE MÅL: när målet försvann (omstart
+  // osv.) skall kunden kunna återfå 24/7-loopen med ETT tryck — ingen dialog.
+  const ateraktiveraStåendeMal = React.useCallback(async () => {
+    if (malStartar) return;
+    setMalStartar(true);
+    setMalStrömOppen(true);
+    const standeMal =
+      "24/7-STANDBY enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md): " +
+      "arbeta kontinuerligt system för system — landa minst en commit per rond taggad " +
+      "[organ:X], verkställ kön (PIPELINE-KO), kör vakten till 0 fynd, rapportera i " +
+      "worklog och TA NÄSTA UPPGIFT — repetera tills kunden pausar.";
+    try {
+      const res = await fetch("/api/studio/session", {
+        method: "POST",
+        headers: adminJsonHeaders(),
+        body: JSON.stringify({ action: "malSatt", mal: standeMal }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        mal?: string | null;
+        meddelande?: string;
+        fel?: string;
+      };
+      if (res.ok) {
+        setMal(typeof data.mal === "string" ? data.mal : standeMal);
+        setMalStatus({ aktiv: true, pausad: false, iteration: 0 });
+        setMalIteration(0);
+        setMobilPanel(false);
+        visaToast(data.meddelande || "Stående mål återaktiverat — 24/7-loopen kör igen.");
+      } else {
+        visaToast(data.fel || "Målet kunde ej återaktiveras.", "fel");
+      }
+    } catch {
+      visaToast("Nätverksfel — målet kunde ej återaktiveras.", "fel");
+    } finally {
+      setMalStartar(false);
+    }
+  }, [malStartar, visaToast]);
+
   const pausaMal = React.useCallback(async () => {
     if (malPausar) return;
     setMalPausar(true);
@@ -8728,12 +8766,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   Inget mål satt — agenten arbetar bara när du chattar.
                 </p>
                 <button
+                  onClick={() => void ateraktiveraStåendeMal()}
+                  disabled={malStartar}
+                  className="mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-[12px] font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50"
+                  title="Återaktivera stående 24/7-mål — ett tryck, agenten fortsätter autonoma ronderingen (våg 150)"
+                >
+                  {malStartar ? <Loader2 className="h-4 w-4 animate-spin" /> : <Target className="h-4 w-4" />}
+                  Återaktivera 24/7-målet
+                </button>
+                <button
                   onClick={() => setMalDialogOppen(true)}
-                  className="mt-2 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-[11px] font-bold text-white transition-colors hover:bg-[#2EA043]"
+                  className="mt-2 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-[11px] font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22]"
                   title="Öppna mål-dialogen — beskriv utvecklingsmålet och starta autonom loop"
                 >
-                  <Target className="h-3.5 w-3.5" />
-                  Sätt ett mål
+                  <Pencil className="h-3 w-3" />
+                  Sätt ett eget mål
                 </button>
               </>
             )}
@@ -9087,11 +9134,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         Inget mål satt — agenten arbetar bara när du chattar.
                       </p>
                       <button
-                        onClick={() => setMalDialogOppen(true)}
-                        className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] sm:min-h-11"
+                        onClick={() => void ateraktiveraStåendeMal()}
+                        disabled={malStartar}
+                        className="mt-2 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md bg-[#238636] px-3 text-xs font-bold text-white transition-colors hover:bg-[#2EA043] disabled:opacity-50 sm:min-h-11"
+                        title="Återaktivera stående 24/7-mål — ett tryck (våg 150)"
                       >
-                        <Target className="h-3.5 w-3.5" />
-                        Sätt ett mål
+                        {malStartar ? <Loader2 className="h-4 w-4 animate-spin" /> : <Target className="h-4 w-4" />}
+                        Återaktivera 24/7-målet
+                      </button>
+                      <button
+                        onClick={() => setMalDialogOppen(true)}
+                        className="mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-[11px] font-semibold text-[#E6EDF3] transition-colors hover:bg-[#161B22] sm:min-h-9"
+                      >
+                        Sätt ett eget mål
                       </button>
                     </>
                   )}

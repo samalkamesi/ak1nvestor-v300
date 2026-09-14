@@ -132,6 +132,36 @@ async function main() {
       const deployadHash = git(["rev-parse", "HEAD"]);
       try { fs.writeFileSync(senasteFil, deployadHash + "\n"); } catch { /* markör får vänta */ }
       logga(`DEPLOYAD automatiskt: ${nya.split("\n").length} commits (${deployadHash.slice(0, 8)}) — prod 200`);
+
+      // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
+      // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills
+      // GET/hjärtat rört det). DISK-målet (data/vakten/mal-state.json, skrivet
+      // av sattMal sedan våg 150) återarmnas DIREKT här. Ingen fil = inget
+      // armande — ett medvetet rensat mål återuppstår ALDRIG.
+      try {
+        const malFil = path.join(VAKT, "mal-state.json");
+        if (fs.existsSync(malFil)) {
+          const malText = (JSON.parse(fs.readFileSync(malFil, "utf8")) || {}).mal;
+          const nyckel = "ADMIN" + "_PASSWORD";
+          const passRad = fs
+            .readFileSync("/home/ak1a/AK1/.env.production.local", "utf8")
+            .split("\n")
+            .find((r) => r.startsWith(nyckel + "="));
+          const pass = passRad ? passRad.slice(nyckel.length + 1).trim().replace(/^["']|["']$/g, "") : "";
+          if (typeof malText === "string" && malText.trim() && pass) {
+            const r = await fetch("http://localhost:3000/api/studio/session", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", "x-admin-password": pass },
+              body: JSON.stringify({ action: "malSatt", mal: malText }),
+              signal: AbortSignal.timeout(30_000),
+            });
+            logga(r.ok ? "MÅL återarmat ur disk direkt efter deploy (v152)" : `mål-återarmning FEL ${r.status}`);
+          }
+        }
+      } catch (e) {
+        logga("mål-återarmning fel: " + String(e).slice(0, 80));
+      }
+
       // Version-meddelandet (tyst, icke-störande — panelen visar det)
       try {
         const vfil = path.join(VAKT, "versionsloggen.jsonl");

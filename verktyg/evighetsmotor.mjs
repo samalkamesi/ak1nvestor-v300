@@ -61,9 +61,16 @@ function logga(rad) {
   const stampel = new Date().toISOString().slice(11, 19);
   console.log(`${stampel} ${rad}`);
   try {
-    const svans = fs.readFileSync(LOGG, "utf8").split("\n");
-    svans.push(`${new Date().toISOString()} ${rad}`);
-    fs.writeFileSync(LOGG, svans.slice(-200).join("\n") + "\n");
+    let tidigare = "";
+    try {
+      tidigare = fs.readFileSync(LOGG, "utf8");
+    } catch {
+      /* första raden — filen föds nu */
+    }
+    const rader = tidigare.split("\n");
+    rader.push(`${new Date().toISOString()} ${rad}`);
+    fs.mkdirSync(`${ROT}/data/vakten`, { recursive: true });
+    fs.writeFileSync(LOGG, rader.slice(-200).join("\n") + "\n");
   } catch {
     /* logg är bäst-förmåga */
   }

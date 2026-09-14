@@ -85,7 +85,7 @@ commit "studio: våg 138 <block> — <vad>" UTAN push. Juridikgrind i alla
 formuleringar (utbildning, aldrig råd). tsc-baslinje 0 (våg 133) skall
 förbli 0 — inga kodändringar alls i denna våg.
 
-## VÅG 140 — MAX-PARALLELL BEVISVÅG: FAQ PÅ 42 POSTER + FAQ-ÖVERSÄTTNING (2026-09-14; dispatch 01:34 DÖD med sessionen — endast A7:s v15/v16 hann; REDISPATCH 02:03 av samtliga 12)
+## VÅG 140 — MAX-PARALLELL BEVISVÅG: FAQ PÅ 42 POSTER + FAQ-ÖVERSÄTTNING (2026-09-14; dispatch 01:34 DÖD · redispatch 02:03 DÖD · redispatch 3 02:56 + 4 03:07 FRUSNA-dödade 03:32 — ÖVERTAG AV STUDION-HUVUDSESSIONEN rond 17, dispatch 03:33, 12 agenter I FÖRGRUND inom levande session)
 
 Kunddirektiv 2026-09-14 punkt 2: bevisa 12-parallellismen, mät commits/timme
 + tid per leverans. Underlag: data/forskning/sokord/v140-faq-plan.md (slugar
@@ -100,18 +100,31 @@ orphanade) — agenterna instruerade om detta + ar-rubrik "## الأسئلة ا�
 
 | Block | Agent | Uppgift | Äger (EXKLUSIVT) | Status |
 |---|---|---|---|---|
-| A1 FAQ | V140A1 | 5 analysposter H&M/Industrivärden/Investor/NP3/Truecaller | 5 blogg-JSON + v140-a1-faq.json | DISPATCHAD |
-| A2 FAQ | V140A2 | 5 metodikposter ARR/Volvo Cars/diversifiering/ROIC/portföljrapport | 5 blogg-JSON + v140-a2-faq.json | DISPATCHAD |
-| A3 FAQ | V140A3 | 5 rapportposter balansräkning/arsredovisning/EV-EBITDA/skuld ×2 | 5 blogg-JSON + v140-a3-faq.json | DISPATCHAD |
-| A4 FAQ | V140A4 | v01–v05 (försäljning, ARR, diversifiering, P/S, P/B) | 5 blogg-JSON + v140-a4-faq.json | DISPATCHAD |
-| A5 FAQ | V140A5 | v06–v09 + v09-roe-avkastning (EV/EBITDA, marginaler, ROE ×2) | 5 blogg-JSON + v140-a5-faq.json | DISPATCHAD |
-| A6 FAQ | V140A6 | v10–v14 (skuld, likviditet, stabilitet, patent, varumärke) | 5 blogg-JSON + v140-a6-faq.json | DISPATCHAD |
-| A7 FAQ | V140A7 | v15–v18 (nätverkseffekter, lanseringar, avtal, regulatorik) | 4 blogg-JSON + v140-a7-faq.json | DISPATCHAD |
-| A8 FAQ | V140A8 | v19–v20 + vad-ar-ev-ebitda + institutionell analys | 4 blogg-JSON + v140-a8-faq.json | DISPATCHAD |
-| A9 FAQ | V140A9 | vad-ar-roe + vad-ar-skuldsattningsgrad + vågfundament + veckans marknad w34 | 4 blogg-JSON + v140-a9-faq.json | DISPATCHAD |
-| B1 FAQ-ÖVERS | V140B1 | en/ar för FAQ-blocken på 4 befintliga FAQ-poster | v140-b1-gamlafaq.json | DISPATCHAD |
-| B2 FAQ-ÖVERS | V140B2 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b2-gamlafaq.json | DISPATCHAD |
-| B3 FAQ-ÖVERS | V140B3 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b3-gamlafaq.json | DISPATCHAD |
+| A1 FAQ | V140A1 | 5 analysposter H&M/Industrivärden/Investor/NP3/Truecaller | 5 blogg-JSON + v140-a1-faq.json | DISPATCHAD (rond 18) |
+| A2 FAQ | V140A2 | 5 metodikposter ARR/Volvo Cars/diversifiering/ROIC/portföljrapport | 5 blogg-JSON + v140-a2-faq.json | DISPATCHAD (rond 18) |
+| A3 FAQ | V140A3 | 5 rapportposter balansräkning/arsredovisning/EV-EBITDA/skuld ×2 | 5 blogg-JSON + v140-a3-faq.json | DISPATCHAD (rond 18) |
+| A4 FAQ | V140A4 | v01–v05 (försäljning, ARR, diversifiering, P/S, P/B) | 5 blogg-JSON + v140-a4-faq.json | DISPATCHAD (rond 18) |
+| A5 FAQ | V140A5 | v06–v09 + v09-roe-avkastning (EV/EBITDA, marginaler, ROE ×2) | 5 blogg-JSON + v140-a5-faq.json | DISPATCHAD (rond 18) |
+| A6 FAQ | V140A6 | v10–v14 (skuld, likviditet, stabilitet, patent, varumärke) | 5 blogg-JSON + v140-a6-faq.json | DISPATCHAD (rond 18) |
+| A7 FAQ | V140A7 | v15–v18 (nätverkseffekter, lanseringar, avtal, regulatorik) — v15/v16 redan levererade 01:34, KONTROLLERA + färdigställ v17/v18 | 4 blogg-JSON + v140-a7-faq.json | DISPATCHAD (rond 18) |
+| A8 FAQ | V140A8 | v19–v20 + vad-ar-ev-ebitda + institutionell analys | 4 blogg-JSON + v140-a8-faq.json | DISPATCHAD (rond 18) |
+| A9 FAQ | V140A9 | vad-ar-roe + vad-ar-skuldsattningsgrad + vågfundament + veckans marknad w34 | 4 blogg-JSON + v140-a9-faq.json | DISPATCHAD (rond 18) |
+| B1 FAQ-ÖVERS | V140B1 | en/ar för FAQ-blocken på 4 befintliga FAQ-poster | v140-b1-gamlafaq.json | DISPATCHAD (rond 18) |
+| B2 FAQ-ÖVERS | V140B2 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b2-gamlafaq.json | DISPATCHAD (rond 18) |
+| B3 FAQ-ÖVERS | V140B3 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b3-gamlafaq.json | DISPATCHAD (rond 18) |
+
+**ÖVERTAGNOTIS (2026-09-14 04:05, rond 18 — hjärtslagssession):** rond 17:s
+dispatch 03:33 dog ~03:4x–03:51 (femte dödsfallet i natt; agenternas sonder
+skrev 03:38–03:40, sedan tystnad; app-server omstartad 03:51). Mönstret:
+12 SAMTIDIGA agenter dödar sessionen (OOM-misstänkt) — våg 138:s 9 parallella
+fungerade hela natten. Rond 18 tar över med GROPAR à 6: grop 1 = A1–A6
+(dispatch ~04:07), grop 2 = A7–A9 + B1–B3 startar när grop 1 levererat.
+Mätning (kunddirektiv): dispatch-tid per grop + commit-tidsstämplar → tid
+per leverans + commits/timme i worklog. ÖVRIGA INSTANSER: AVSTÅ tills denna
+notis säger LEVERERAD. Studions skal fortfarande degraderat (bash-script,
+kill, node -e, sammansatta kommandon hänger) — enkla korta kommandon samt
+`node <skriptfil>` fungerar; subagent-skal är felfria. v15/v16 ligger
+smutsiga i trädet sedan 01:34-leveransen (A7 kontrollerar + färdigställer).
 
 ## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
 

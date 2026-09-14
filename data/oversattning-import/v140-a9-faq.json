@@ -1,0 +1,200 @@
+{
+  "kurs": "v140-a9-faq",
+  "poster": [
+    {
+      "nyckel": "vad-ar-roe:p25",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "vad-ar-roe:p26",
+      "en": "**What is a good ROE level?**",
+      "ar": "**ما هو المستوى الجيد لعائد حقوق الملكية ROE؟**"
+    },
+    {
+      "nyckel": "vad-ar-roe:p27",
+      "en": "It depends on the sector — but the threshold sits at the cost of capital. Below roughly 9 % the company earns less than its capital costs and creates no added value, while 18–25 % counts as strong on AKM1's scoring scale. Always compare the level with the sector median and the company's own five-year history, never in a vacuum. The course [ROE — Profitability](/kurser/v09-roe) walks through every step of the scale.",
+      "ar": "يعتمد على القطاع — لكن الحد الفاصل يقع عند تكلفة رأس المال. فتحت نحو 9 ٪ تكسب الشركة أقل مما يكلفها رأس المال فلا تخلق قيمة مضافة، بينما يُعد نطاق 18–25 ٪ قويًا على مقياس درجات AKM1. قارن المستوى دائمًا بوسيط القطاع وبسجل الشركة لخمس سنوات، وليس أبدًا بمعزل عن السياق. يشرح الدرس [عائد حقوق الملكية — الربحية](/kurser/v09-roe) درجات المقياس كاملة."
+    },
+    {
+      "nyckel": "vad-ar-roe:p28",
+      "en": "**How do I calculate ROE myself?**",
+      "ar": "**كيف أحسب عائد حقوق الملكية ROE بنفسي؟**"
+    },
+    {
+      "nyckel": "vad-ar-roe:p29",
+      "en": "Divide profit after tax by equity — but use the average of opening and closing equity, since equity grows during the year, and strip one-off items such as a property sale from the profit. Every figure is found in the annual report, and the [calculator](/kalkylator) performs the same calculation on your own numbers. That is how the method works — the interpretation is then yours.",
+      "ar": "اقسم صافي الربح بعد الضريبة على حقوق الملكية — لكن استخدم متوسط حقوق الملكية في بداية العام ونهايته لأنها تنمو خلال العام، واستبعد من الربح البنود لمرة واحدة مثل بيع عقار. كل الأرقام موجودة في التقرير السنوي، وتقوم [الآلة الحاسبة](/kalkylator) بنفس الحساب على أرقامك. هكذا تعمل الطريقة — أما التفسير فيبقى لك."
+    },
+    {
+      "nyckel": "vad-ar-roe:p30",
+      "en": "**Why can a high ROE be misleading?**",
+      "ar": "**لماذا قد يكون ROE المرتفع مضللًا؟**"
+    },
+    {
+      "nyckel": "vad-ar-roe:p31",
+      "en": "Because leverage can carry it. ROE driven by debt is borrowed, not created — break the number apart with the Du Pont equation (profit margin × asset turnover × leverage) to see where the return comes from. Always check the debt-to-equity ratio alongside; that is why V10 is calculated before V09 in AKM1. Negative equity also renders the measure unassigned.",
+      "ar": "لأن الرافعة المالية قد تكون حاملة له. فالعائد المدفوع بالدين اقتراض لا خلق — ففكك الرقم بمعادلة دوبونت (هامش الربح × معدل دوران الأصول × الرافعة المالية) لترى من أين يأتي العائد. وتحقق دائمًا من نسبة الدين إلى حقوق الملكية بجانبه؛ ولهذا يُحسب V10 قبل V09 في AKM1. كما أن حقوق الملكية السالبة تجعل المقياس غير محدد."
+    },
+    {
+      "nyckel": "vad-ar-roe:p32",
+      "en": "**What is the difference between ROE and shareholder return?**",
+      "ar": "**ما الفرق بين عائد حقوق الملكية وعائد المساهم؟**"
+    },
+    {
+      "nyckel": "vad-ar-roe:p33",
+      "en": "ROE measures the company's capital productivity — how much profit is created per krona of equity. Shareholder return measures your return as an owner: the change in share price plus dividends. A company with a 20 % ROE can still be an expensive stock if you pay five times book value. Different questions, different answers — both belong in the analysis.",
+      "ar": "يقيس ROE إنتاجية رأس مال الشركة — أي كم ربحًا يُخلق لكل كرونا من حقوق الملكية. أما عائد المساهم فيقيس عائدك بصفتك مالكًا: تغير سعر السهم زائد التوزيعات. فقد تكون شركة ذات ROE 20 ٪ سهمًا مكلفًا إذا دفعت خمسة أضعاف القيمة الدفترية. أسئلة مختلفة وأجوبة مختلفة — وكلاهما ضروري في التحليل."
+    },
+    {
+      "nyckel": "vad-ar-roe:p34",
+      "en": "This is educational analysis, not investment advice.",
+      "ar": "هذا تحليل تعليمي وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p26",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p27",
+      "en": "**What is a dangerous debt-to-equity ratio?**",
+      "ar": "**ما هي نسبة الدين إلى حقوق الملكية الخطرة؟**"
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p28",
+      "en": "It depends on the sector and business model. Property companies and banks carry structurally high debt because their assets can be pledged and revenues are contract-bound, while a growth company with fragile cash reserves tolerates far less. In AKM1's linear thresholds, a ratio below 0.5 earns the top score and above 3 only 1 point — and together with cash coverage (V19), the risk becomes visible in a way a single ratio never shows.",
+      "ar": "يعتمد على القطاع ونموذج العمل. فشركات العقارات والبنوك تتحمل ديونًا مرتفعة هيكليًا لأن أصولها قابلة للرهن وإيراداتها مقيدة بعقود، بينما تتحمل شركة نمو ذات سيولة هشة قدرًا أقل بكثير. في عتبات AKM1 الخطية، تمنح النسبة دون 0.5 أعلى درجة، وفوق 3 درجة واحدة فقط — ومع تغطية النقد (V19) تصبح المخاطر مرئية بطريقة لا تظهرها النسبة منفردة أبدًا."
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p29",
+      "en": "**How do I calculate the debt-to-equity ratio?**",
+      "ar": "**كيف أحسب نسبة الدين إلى حقوق الملكية؟**"
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p30",
+      "en": "Divide debt by equity — but be aware that three conventions circulate: total liabilities, interest-bearing debt and net debt. Example: equity of SEK 4 bn and total liabilities of SEK 9 bn give a ratio of 2.25, while interest-bearing debt of SEK 6 bn gives 1.5. No convention is wrong — but choose one and keep it throughout the comparison. The course [Debt-to-equity ratio — Stability](/kurser/v10-skuldsattningsgrad) practises the thresholds step by step.",
+      "ar": "اقسم الدين على حقوق الملكية — لكن انتبه إلى أن ثلاثة اصطلاحات متداولة: إجمالي الالتزامات، والدين حامل الفوائد، وصافي الدين. مثال: حقوق ملكية بقيمة 4 مليارات كرونة وإجمالي التزامات 9 مليارات تعطي نسبة 2.25، بينما دين حامل فوائد بقيمة 6 مليارات يعطي 1.5. لا يوجد اصطلاح خاطئ — لكن اختر واحدًا والتزم به في المقارنة كلها. يتدرب الدرس [نسبة الدين إلى حقوق الملكية — الاستقرار](/kurser/v10-skuldsattningsgrad) على العتبات خطوة بخطوة."
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p31",
+      "en": "**Why is the debt-to-equity ratio calculated before ROE in AKM1?**",
+      "ar": "**لماذا تُحسب نسبة الدين إلى حقوق الملكية قبل ROE في AKM1؟**"
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p32",
+      "en": "Because it is the leverage control. For an ROE above 35 % to earn the fifth point at all, the debt-to-equity ratio must be at most 2 — a high return on a large pile of debt is not capital productivity but a balancing act. The engine's order of calculation makes the difference visible in the scores immediately. It is an example of how AKM1's variables check each other.",
+      "ar": "لأنها رقابة الرافعة المالية. حتى تحصل نسبة ROE فوق 35 ٪ على الدرجة الخامسة أصلًا، يجب ألا تتجاوز نسبة الدين إلى حقوق الملكية 2 — فالعائد المرتفع فوق كومة ديون كبيرة ليس إنتاجية رأسمال بل لعبة توازن. ترتيب الحساب في المحرك يجعل الفرق مرئيًا في الدرجات فورًا. إنه مثال على كيفية رقابة متغيرات AKM1 بعضها البعض."
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p33",
+      "en": "**Is it enough to look at the debt-to-equity ratio?**",
+      "ar": "**هل يكفي النظر إلى نسبة الدين إلى حقوق الملكية؟**"
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p34",
+      "en": "No — the ratio says how much debt, never how it is carried. Always calculate it together with interest coverage, the share of floating-rate debt and the debt's maturity: SEK 9 bn in debt costs around SEK 180 million per year at 2 per cent interest but SEK 540 million at 6. Read the notes too — pension commitments and lease commitments (IFRS 16) are obligations paid before the owners.",
+      "ar": "لا — تقول النسبة مقدار الدين، لا كيف يُحمل أبدًا. احسبها دائمًا مع تغطية الفوائد ونسبة الدين ذي الفائدة المتغيرة وأجل استحقاق الدين: ديون بقيمة 9 مليارات كرونة تكلف نحو 180 مليونًا سنويًا بفائدة 2 في المئة لكن 540 مليونًا بفائدة 6. واقرأ الإيضاحات أيضًا — فالتزامات المعاشات والتزامات التأجير (IFRS 16) هي التزامات تُدفع قبل الملاك."
+    },
+    {
+      "nyckel": "vad-ar-skuldsattningsgrad:p35",
+      "en": "This is educational analysis, not investment advice.",
+      "ar": "هذا تحليل تعليمي وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p18",
+      "en": "**What is a wave class?**",
+      "ar": "**ما هو الصنف الموجي؟**"
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p19",
+      "en": "A classification of how a fundamental variable moves over time: impulse wave (moving forcefully in its direction), correction (pulling in the opposite direction), base building (moving sideways and gathering strength) or unassigned (the data is insufficient). Each AKM1 variable is classified on each of the five time horizons — micro, short, medium, long and mega — so the question becomes \"where is the variable heading?\" instead of only \"how large is it?\".",
+      "ar": "تصنيف لكيفية تحرك متغير أساسي عبر الزمن: موجة دافعة (تتحرك بقوة في اتجاهها)، أو تصحيح (تتحرك عكسًا)، أو بناء قاعدة (تتحرك جانبيًا وتجمع قوتها)، أو غير محدد (البيانات غير كافية). يُصنف كل متغير من متغيرات AKM1 على كل من الآفاق الزمنية الخمسة — الميكرو والقصير والمتوسط والطويل والضخم — حتى يصبح السؤال «إلى أين يتجه المتغير؟» بدلًا من «ما حجمه؟» فقط."
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p20",
+      "en": "**Why does the class \"unassigned\" exist?**",
+      "ar": "**لماذا يوجد صنف «غير محدد»؟**"
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p21",
+      "en": "Because most services guess when data is missing — and we prefer silence. An unassigned cell is more honest than a fabricated number, and in the long run honesty is the only thing that works in analysis. When the data providers' history is too short or quarterly data too noisy, the tool says nothing rather than stretching the data.",
+      "ar": "لأن معظم الخدمات تخمن عندما تنقص البيانات — ونحن نفضّل الصمت. فالخلية غير المحددة أصدق من رقم مُختلق، وعلى المدى الطويل الصدق هو وحده ما ينجح في التحليل. وعندما يكون تاريخ مزوّدي البيانات قصيرًا جدًا أو البيانات الفصلية مشوشة للغاية، لا تقول الأداة شيئًا بدلًا من تمطيط البيانات."
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p22",
+      "en": "**What does the divergence between price and fundamentals mean?**",
+      "ar": "**ماذا يعني التباعد بين السعر والأساسيات؟**"
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p23",
+      "en": "That the price (which AK1TS reads) and the fundamentals (which Vågfundamentet reads) say different things about the same company — for example that the share price rises while sales growth corrects. The divergence is not a buy or sell signal; it is a question to study. That is how the method works: the tool teaches you to think, it never decides for you.",
+      "ar": "أن السعر (الذي يقرأه AK1TS) والأساسيات (التي يقرأها Vågfundamentet) يقولان شيئين مختلفين عن نفس الشركة — مثلًا أن سعر السهم يرتفع بينما يصحح نمو المبيعات مساره. والتباعد ليس إشارة شراء أو بيع؛ بل سؤال يستحق الدراسة. هكذا تعمل الطريقة: الأداة تعلّمك التفكير، ولا تقرر عنك أبدًا."
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p24",
+      "en": "**How do I get started with Vågfundamentet?**",
+      "ar": "**كيف أبدأ باستخدام Vågfundamentet؟**"
+    },
+    {
+      "nyckel": "vagfundament-indikatorer-ar-tidsserier:p25",
+      "en": "The tool is free, like everything in Phase 1. The [demo page](/vagfundament) shows fundamental waves for a real share, and in the portfolio section your holdings are aggregated cell by cell into a shared matrix. If you want to understand the model behind it first, the [AKM1 course](/kurser/akm1-den-kontroversiella-modellen) covers the foundations variable by variable.",
+      "ar": "الأداة مجانية، مثل كل شيء في المرحلة الأولى. تعرض [صفحة العرض التجريبي](/vagfundament) الموجات الأساسية لسهم حقيقي، وفي قسم المحفظة تُجمَّع حيازاتك خليةً خلية في مصفوفة واحدة. وإذا أردت أولًا فهم النموذج الكامن وراء ذلك، يشرح [دورة AKM1](/kurser/akm1-den-kontroversiella-modellen) الأساسيات متغيرًا بعد متغير."
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p14",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p15",
+      "en": "**What is TERP and how is it calculated?**",
+      "ar": "**ما هو TERP وكيف يُحسب؟**"
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p16",
+      "en": "TERP — Theoretical Ex-Rights Price — is the theoretical share price after a rights issue: (market value before the issue + new capital) ÷ number of shares after. It is pure arithmetic, not feeling. In the commentary's example from Precise Biometrics, TERP came to SEK 1.27 against a subscription price of 0.82 — the numbers show why dilution should be calculated, not sensed.",
+      "ar": "TERP — السعر النظري بعد حقوق الاكتتاب — هو السعر النظري للسهم بعد زيادة رأس المال: (القيمة السوقية قبل الإصدار + رأس المال الجديد) ÷ عدد الأسهم بعده. إنه حساب بحت لا شعور. في مثال التعليق من شركة Precise Biometrics بلغ TERP 1.27 كرونة سويدية مقابل سعر اكتتاب 0.82 — تُظهر الأرقام لماذا يجب حساب التخفيف لا استشعاره."
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p17",
+      "en": "**How should I read this type of market commentary?**",
+      "ar": "**كيف ينبغي أن أقرأ هذا النوع من مراجعات السوق؟**"
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p18",
+      "en": "As a methodology exercise, not as tips. The text offers three lessons in analysing mergers: TERP arithmetic, a variable checklist instead of a story, and what patience requires to be an edge. The numbers — synergies 12–18 months away, a 5–15 percentage point difference between pro forma and organic growth — illustrate the method, so you apply the checklist to companies you study yourself.",
+      "ar": "كتمرين على المنهجية، لا كنصائح. يقدم النص ثلاث دروس في تحليل عمليات الاندماج: حسابات TERP، وقائمة تحقق من المتغيرات بدلًا من القصة، وما يتطلبه الصبر ليكون ميزة. الأرقام — أوجه التآزر على بعد 12–18 شهرًا، وفرق 5–15 نقطة مئوية بين النمو المُعد pro forma والنمو العضوي — تُوضّح المنهج، فتطبق أنت قائمة التحقق على الشركات التي تدرسها بنفسك."
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p19",
+      "en": "**What does the \"comfortless zone\" mean for small caps?**",
+      "ar": "**ماذا تعني «المنطقة الموحشة» للشركات الصغيرة؟**"
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p20",
+      "en": "The situation after a completed issue: synergies are 12–18 months away, no catalyst is expected for a couple of quarters, institutions drop coverage and the share price drifts regardless of fundamentals. The point is that process only beats sentiment if you log every assumption and know what would change your view — otherwise it is not patience but hope.",
+      "ar": "الوضع بعد إصدار مكتمل: أوجه التآزر على بعد 12–18 شهرًا، ولا يُتوقع أي محفّز لربعين أو ثلاثة، وتسقط المؤسسات تغطيتها للسهم، وينزلق السعر بمعزل عن الأساسيات. والخلاصة أن المنهجية لا تتغلب على المزاج إلا إذا دوّنت كل افتراض وعرفت ما الذي سيغير رأيك — وإلا فليس ذلك صبرًا بل رجاءً."
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p21",
+      "en": "**What is the difference between pro forma and organic growth?**",
+      "ar": "**ما الفرق بين النمو المُعد pro forma والنمو العضوي؟**"
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p22",
+      "en": "Pro forma shows combined revenue as if the merger had been in place for the whole period; organic shows the underlying growth excluding acquisitions. The difference can be 5–15 percentage points, which is why the measure used is always stated when V01 is scored. The course [V01 Sales growth](/kurser/v01-forsaljningstillvaxt) shows how to tell them apart in a report.",
+      "ar": "يُظهر النمو المُعد pro forma الإيرادات المدمجة كما لو أن الاندماج كان قائمًا طوال الفترة؛ بينما يُظهر النمو العضوي النمو الكامن باستثناء الاستحواذات. وقد يبلغ الفرق 5–15 نقطة مئوية، ولهذا يُذكر دائمًا المقياس المستخدم عند تقييم V01. يوضح الدرس [V01 نمو المبيعات](/kurser/v01-forsaljningstillvaxt) كيف تفرّق بينهما في تقرير."
+    },
+    {
+      "nyckel": "veckans-marknad-2026-w34:p23",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي وليس نصيحة استثمارية."
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { lasAnalyser } from "@/lib/analysfabrik";
 import { b2bAktiv } from "@/lib/b2b-status";
 import { tierAktiv } from "@/lib/tier-status";
 import { branschSlugs, lasBranschMedianer } from "@/lib/dataset-medianer";
+import { bolagSlugs } from "@/lib/bolags-sidor";
 
 export const dynamic = "force-dynamic";
 
@@ -123,6 +124,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: datasetDatum,
       })),
     ]),
+
+    // ── Bolagssidorna (VÅG 149, B1 i SOKORDSINVENTERING-2026): register +
+    //    en statisk sida per universumsbolag (100 st, "ABB nyckeltal"-
+    //    longtailet). lastModified = rådatans hämtdatum (samma källa som
+    //    datasetmenyerna); svenska först — speglar följer som egen våg.
+    { url: `${BASE_URL}/bolag`, changeFrequency: "daily", priority: 0.8, lastModified: datasetDatum },
+    ...bolagSlugs().map((slug) => ({
+      url: `${BASE_URL}/bolag/${slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      lastModified: datasetDatum,
+    })),
 
     // Språkspeglar EN/AR (våg 51) — hreflang-klustren pekar mot svensk original
     { url: `${BASE_URL}/en`, changeFrequency: "monthly", priority: 0.9, lastModified: now },

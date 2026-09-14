@@ -85,10 +85,39 @@ commit "studio: våg 138 <block> — <vad>" UTAN push. Juridikgrind i alla
 formuleringar (utbildning, aldrig råd). tsc-baslinje 0 (våg 133) skall
 förbli 0 — inga kodändringar alls i denna våg.
 
+## VÅG 140 — MAX-PARALLELL BEVISVÅG: FAQ PÅ 42 POSTER + FAQ-ÖVERSÄTTNING (2026-09-14; dispatch 01:34 DÖD med sessionen — endast A7:s v15/v16 hann; REDISPATCH 02:03 av samtliga 12)
+
+Kunddirektiv 2026-09-14 punkt 2: bevisa 12-parallellismen, mät commits/timme
++ tid per leverans. Underlag: data/forskning/sokord/v140-faq-plan.md (slugar
+verifierade 01:34 — 42 + 10 = 52, 0 saknade). Spår A: "## FAQ" (3–4 par) sist i
+bodyn + en/ar-importfil per agent. Spår B: en/ar för befintliga FAQ-block.
+Självkontroll per agent: korKontroller 100p via tsx-skript. Huvudagenten:
+central kontrollera → importera endast v140-filer → push prod → speglar ≥ 80 %.
+Kontraktsfynd vid redispatch: block EFTER "## FAQ" (disclaimer-raden) får nya
+p{n}-nummer ⇒ deras nya nycklar ingår i importfilerna (gamla översättningar
+orphanade) — agenterna instruerade om detta + ar-rubrik "## الأسئلة الشائعة"
+(termbanken saknar FAQ-term; enhetlig term styrdd centralt).
+
+| Block | Agent | Uppgift | Äger (EXKLUSIVT) | Status |
+|---|---|---|---|---|
+| A1 FAQ | V140A1 | 5 analysposter H&M/Industrivärden/Investor/NP3/Truecaller | 5 blogg-JSON + v140-a1-faq.json | DISPATCHAD |
+| A2 FAQ | V140A2 | 5 metodikposter ARR/Volvo Cars/diversifiering/ROIC/portföljrapport | 5 blogg-JSON + v140-a2-faq.json | DISPATCHAD |
+| A3 FAQ | V140A3 | 5 rapportposter balansräkning/arsredovisning/EV-EBITDA/skuld ×2 | 5 blogg-JSON + v140-a3-faq.json | DISPATCHAD |
+| A4 FAQ | V140A4 | v01–v05 (försäljning, ARR, diversifiering, P/S, P/B) | 5 blogg-JSON + v140-a4-faq.json | DISPATCHAD |
+| A5 FAQ | V140A5 | v06–v09 + v09-roe-avkastning (EV/EBITDA, marginaler, ROE ×2) | 5 blogg-JSON + v140-a5-faq.json | DISPATCHAD |
+| A6 FAQ | V140A6 | v10–v14 (skuld, likviditet, stabilitet, patent, varumärke) | 5 blogg-JSON + v140-a6-faq.json | DISPATCHAD |
+| A7 FAQ | V140A7 | v15–v18 (nätverkseffekter, lanseringar, avtal, regulatorik) | 4 blogg-JSON + v140-a7-faq.json | DISPATCHAD |
+| A8 FAQ | V140A8 | v19–v20 + vad-ar-ev-ebitda + institutionell analys | 4 blogg-JSON + v140-a8-faq.json | DISPATCHAD |
+| A9 FAQ | V140A9 | vad-ar-roe + vad-ar-skuldsattningsgrad + vågfundament + veckans marknad w34 | 4 blogg-JSON + v140-a9-faq.json | DISPATCHAD |
+| B1 FAQ-ÖVERS | V140B1 | en/ar för FAQ-blocken på 4 befintliga FAQ-poster | v140-b1-gamlafaq.json | DISPATCHAD |
+| B2 FAQ-ÖVERS | V140B2 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b2-gamlafaq.json | DISPATCHAD |
+| B3 FAQ-ÖVERS | V140B3 | en/ar för FAQ-blocken på 3 befintliga FAQ-poster | v140-b3-gamlafaq.json | DISPATCHAD |
+
 ## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
 
-- ▶ NÄSTA: Våg 138 syntes → SOKORDSINVENTERING-2026.md + våg 139 kodleverans (Observatoriet v3 + mekanisk kvalitetsgrind) — kunddirektiv 2026-09-14: planeringsvy i Organismen-panelen, pre-commit tsc 0 + R2-skydd
-- · Våg 140 — MAX-PARALLELL BEVISVÅG: 12 subagenter × FAQ-utökning (41 bloggposter utan "## FAQ" får 3–4 par each, exklusiva postfiler) — kunddirektiv: bevisa 12-parallellismen, mät commits/timme + tid per leverans i worklog
-- · Long-tail-sidor: programmatisk landningsside-plan grundad på sökordsinventeringens täckningsmatris — S9 bevisade glapp (Reddit rankar på fundamental analys; "skillnaden X vs Y" svagt täckt; arabiska strukturella glappet)
-- · Sökordsvolym-validering — S1 noterar att LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
+- ▶ PÅGÅR: Våg 140 (se ovan) — bokföring sker vid vågens slut
+- ✓ LEVERERAT våg 139 (commit b2aa5972, rebasad på dator-agentens fcefa714): Observatoriet v3 — planeringsvy i Organismen-panelen (src/lib/observatoriet.ts parsar denna fil, API:t berikar med FILBEVIS, panelen visar pågående våg + nästa i kön + senaste landningar) · mekanisk kvalitetsgrind verktyg/kvalitetsgrind.mjs (.git/hooks/pre-commit, DUBBELBEVISAD: avslag vid R2-självreferens + genomslag efter fix med tsc 0) · S1–S9 bokförda LEVERERADE · juridikgrinds-titelfix Volvo Cars ("rekommendation"→"slutsats", sv+en+ar) · våg 138-syntes data/forskning/SOKORDSINVENTERING-2026.md (täckningsmatris + trespårsplan). NOTA BENE: dator-agentens parallella grindvariant lever i verktyg/hooks/pre-commit (core.hooksPath-modell) — två aktiveringsmodeller sida vid sida, konsolidering = styrelsefråga.
+- · Våg 141-förslag: /bolag/{slug} — 100 bolagssidor på befintlig data (SOKORDSINVENTERING-2026 glapp 1: störst sökvolym-täckning per kodrad; "ABB nyckeltal"-longtail)
+- · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
+- · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
 - · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)

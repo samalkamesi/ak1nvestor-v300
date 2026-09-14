@@ -75,3 +75,16 @@ data/vakten/
 # denyCurrentBranch=updateInstead kräver rent worktree). .gitkeep behåller katalogen.
 data/cache/*
 !data/cache/.gitkeep
+
+# Våg 149-hygien: sessionens hjälpskript/utdata i .zcode-roten är arbetsavfall,
+# aldrig leverans (287 otrackade filer = alltid-smutsig yta). Trackade verktyg
+# (.zcode/prod-bygg.mjs m.fl.) förblir trackade; nya delade verktyg/skills
+# adderas med git add -f. Katalogerna commands/ och skills/ påverkas ej (djupare).
+.zcode/*.mjs
+.zcode/*.cjs
+.zcode/*.js
+.zcode/*.txt
+.zcode/*.json
+.zcode/*.log
+.zcode/*.sh
+.tmp-*/

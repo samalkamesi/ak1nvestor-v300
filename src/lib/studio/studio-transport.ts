@@ -1,6 +1,7 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 
@@ -7982,14 +7983,11 @@ function v148OppnaDb(): V148Databas | null {
     const hem = process.env.HOME || process.env.USERPROFILE || "/home/ak1a";
     const sokvag = path.join(hem, ".zcode", "cli", "db", "db.sqlite");
     if (!existsSync(sokvag)) return v148Db;
-    // node:sqlite är experimental i Node 22. Next bygger server-koden som
-    // CJS — globala require finns i runtime (import.meta.url skrivs om av
-    // bundlern och är opålitlig här).
-    const nodRequire = typeof require === "function" ? require : null;
-    if (!nodRequire) {
-      console.warn("[V148] global require saknas — db.sqlite kan ej läsas");
-      return v148Db;
-    }
+    // node:sqlite är experimental i Node 22. Bundlern (Turbopack) skriver om
+    // require/import-SYNTAX till externa referenser den själv ej kan ladda
+    // (bevisat: "Unsupported external type Url") — createRequire är en ren
+    // funktionsref den aldrig rör, och node:-moduler löser sig oavsett bas.
+    const nodRequire = createRequire(process.execPath);
     const mod = nodRequire("node:sqlite") as {
       DatabaseSync: new (fil: string, alternativ?: { readOnly?: boolean }) => V148Databas;
     };

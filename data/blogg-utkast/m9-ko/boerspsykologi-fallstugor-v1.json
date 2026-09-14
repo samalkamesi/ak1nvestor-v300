@@ -1,0 +1,61 @@
+{
+  "id": "86eed916-3450-4f13-9183-8c547c5eb929",
+  "created_at": "2026-09-11T10:16:34.755304+00:00",
+  "av": "m9-fabriken",
+  "slug": "boerspsykologi-fallstugor",
+  "titel": "Börspsykologi: fallstudier september 2026 — när antaganden faller (utkast)",
+  "fabrik": {
+    "seed": "904e0fcc917798642aa9bd0a1c44d04b",
+    "manad": "2026-09",
+    "serie": "boerspsykologi",
+    "kallor": [
+      {
+        "fil": "data/rapporter/vagvalidering-SENASTE.json",
+        "md5": "42970c1a777eefe45791ad8839eae282",
+        "datum": "2026-09-04"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "urdrag": [
+      {
+        "datum": "2026-09-04",
+        "varde": "totalt 52 % (n=48 dömda, osatta 20 %)",
+        "notering": "rapportens totalt-block (JSON-spegeln)"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "kort/impulsvåg 100 % på n=2",
+        "notering": "fallstudie 1 — P(2/2 | slant) = 25 %"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "medellång+mega/basbygge 0 träffar på n=12",
+        "notering": "fallstudie 2 — P(0/12 | slant) ≈ 0,02 %"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "osatta 20 % döms aldrig",
+        "notering": "fallstudie 3 — protokollregel, ordagrant i texten"
+      }
+    ],
+    "version": "m9-fabrik-v2",
+    "kontroll": {
+      "rubriker": 7,
+      "strukturFel": 0,
+      "disclaimerSist": true,
+      "kontrolleraTextFel": 0,
+      "kontrolleraTextVarningar": 0
+    },
+    "notering": "m9-fabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING via panelen före statusbyte/publicering (våg 66-regeln). Granskningsunderlag = urdrag (värde+datum) + källor (fil+md5) + detta kvitto.",
+    "genereradUr": "verktyg/m9-fabrik.mjs",
+    "kandidatMd5": "b90e7b95b8f260c731ef668b952bbe9e"
+  },
+  "status": "utkast",
+  "ingress": "Tre undervisningscase ur vågvalideringens dömda historik (domdatum 2026-09-04): två träffar av två möjliga, basbyggen som missade samtliga tolv domar, och disciplinen att inte döma det osatta. Utfallen räknas fram ur motorns egna tal — utbildning, aldrig rådgivning.",
+  "version": 1,
+  "omslagUrl": null,
+  "bodyMarkdown": "Vågvalideringen dömer varje rond: förra rondens vågklass per (ticker, horisont) mäts mot dagens faktiska fundamentmomentum. Hittills har motorn dömt 48 mätningar med 52 % träff, och 20 % av mätningarna är osatta och döms aldrig — inte ens som fel (räknare sedan 2026-09-04, 12 tickers). Historiken är mer än ett kvitto: den är undervisningsmaterial. Tre fall ur domdatum 2026-09-04, räknade på motorns egna utfall.\n\n## Fallet med de två träffarna\n\nHorisonten kort, klassen impulsvåg: 100 % träff — på exakt n = 2 dömda mätningar. Räkneexemplet: vore den sanna träffchansen 50 %, som en slantsingling, är sannolikheten att träffa båda 0,5 × 0,5 = 25 % — alltså förklarar slumpen resultatet mer än väl. Tumregeln 3/n säger att noll missar på n observationer bara sätter taket på missfrekvensen vid ungefär 3/n; med n = 2 blir det 150 %, vilket betyder ingen begränsning alls. Hjärnan läser mönster i små urval — det är själva fallgropen, och därför redovisar motorn n bredvid varje procent.\n\n## Fallet med basbygget som gick sönder\n\nTvå celler visar 0 %: medellång basbygge (6 dömda) och mega basbygge (6 dömda) — sammanlagt 0 träffar på 12 mätningar. Protokollet dömer basbygge som träff när fundamentmomentumet håller sig inom ± 6 % — antagandet är \"en period av liten rörelse\". Vore det en slantsingling vore sannolikheten 12 raka missar 0,5 upphöjt till 12, ungefär 0,02 % — sällsynt nog att granska antagandet i stället för att skylla på otur. Trolig läsning: när motorn klassat basbygge har momentumet ofta rört sig mer än tröskeln; etiketten \"lugn period\" var antagandet som föll. Kontrasten i samma data: impulsvåg på medellång och mega träffar 100 % (n = 6) respektive 100 % (n = 6) — riktning har fångats bättre än stillhet. Vad det betyder är en fråga till kommande ronder, inte en slutsats att handla på.\n\n## Fallet med att inte döma\n\n20 % av mätningarna är osatta, och protokollet dömer ALDRIG en osatt klass. Psykologiskt är det motståndskraftens kärna: impulsen att fylla varje lucka i datan med en tolkning (\"den är osatt för att det nog är positivt\") är samma instinkt som tillverkar slutsatser ur ingenting. Osatt är information — tidsserien räcker inte än, och att vänta är ett beslut, inte passivitet.\n\n## Vad träffprocenten inte är\n\nEnheten 52 % är ett öppet kvitto om det förflutna — aldrig en sannolikhet om framtiden. Dom-protokollet, ordagrant ur rapporten: \"förra rondens vågklass per (ticker, horisont) döms mot dagens faktiska fundamentmomentum — impulsvåg → träff vid positiv momentum; korrigering → träff vid negativ; basbygge → träff vid |momentum| ≤ 6 % (motorns egen tröskel, hedervändig symmetri); exakt nollrörelse dömer inte riktning; osatt klass döms ALDRIG. Osatta räknas i täckningsbråket, aldrig som fel.\" Binomialtalen ovan är räknade på motorns redovisade n och utfall; de förklarar vad datan KAN säga, inte vad den kommer att göra.\n\n## Ändringen sedan senaste publicerade utgåvan\n\nSeriens första maskinutkast i utkastsystemet — räknarna är unga (sedan 2026-09-04) och varje ny rond väger tyngre än den förra.\n\n## Fördjupa dig\n\n- [Kursen Bekräftelsefälla](/kurser/km-019-bekraftelsefalla) — varför vi söker det vi redan tror\n- [Kursen Övertro](/kurser/km-036-overconfidence) — små urval, stor säkerhet\n- [Mr Market och psykologin på börsen](/blogg/mr-market-psykologi-svenska-borsen) — klassikern om humörets pris\n\n## Granskningsunderlag — maskinens kvitto\n\n_Verifiera talen mot källorna nedan och ta sedan BORT detta avsnitt före export — granskaren äger publiceringen, maskinen levererar bara kvittot._\n- **Determinism:** fabrik m9-fabrik-v2 · seed `904e0fcc917798642aa9bd0a1c44d04b` (md5 av källfilernas md5 + månadsnyckel) · mall-md5 `fc608a6d6b4c2a84e5ef0e8b86103d2d` (md5 av titel+ingress+mall-body — samma underlag ger byte-identiskt utkast).\n- **Källor (läs-only):** data/rapporter/vagvalidering-SENASTE.json (md5 42970c1a777eefe45791ad8839eae282, daterad 2026-09-04) · data/varumarke.json (md5 9b906e4204a759db24c2c78b4b332e18).\n- **Dataurdrag (värde · datum · notering):**\n  - totalt 52 % (n=48 dömda, osatta 20 %) · 2026-09-04 · rapportens totalt-block (JSON-spegeln)\n  - kort/impulsvåg 100 % på n=2 · 2026-09-04 · fallstudie 1 — P(2/2 | slant) = 25 %\n  - medellång+mega/basbygge 0 träffar på n=12 · 2026-09-04 · fallstudie 2 — P(0/12 | slant) ≈ 0,02 %\n  - osatta 20 % döms aldrig · 2026-09-04 · fallstudie 3 — protokollregel, ordagrant i texten\n- **kontrolleraText-förkontroll (skript-sida, spegel av varumarke.ts, körd på mall-bodyn — det som blir kvar när kvittot tas bort):** FEL 0 · VARNINGAR 0 · struktur: 6 \"##\"-rubriker (krav ≥ 2), body ≥ 800 tecken uppfyllt, disclaimer sista rad ja.\n- **Status:** utkast i granskningskön — maskinen kan inte sätta \"granskad\" eller \"publicerad\" (statusbyte kräver människan via panelen; publicering endast via exportvägen).\n\n_Automatiskt utkast ur m9-fabrikens evergreen-serier; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._"
+}

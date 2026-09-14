@@ -1,0 +1,71 @@
+{
+  "id": "d746f78e-5c07-494a-96e0-aebebf51a3df",
+  "created_at": "2026-09-11T08:44:30.442992+00:00",
+  "av": "m9-fabriken",
+  "slug": "forskningslaget-grona-av-100",
+  "titel": "Forskningsläget september 2026 — 7 gröna av 100 (utkast)",
+  "fabrik": {
+    "seed": "904e0fcc917798642aa9bd0a1c44d04b",
+    "manad": "2026-09",
+    "serie": "forskningslaget",
+    "kallor": [
+      {
+        "fil": "data/portfolj-system/korstabell-grund.json",
+        "md5": "33fe62a0c617e8339024851c6361bd6a",
+        "datum": "2026-09-03"
+      },
+      {
+        "fil": "data/rapporter/vagvalidering-SENASTE.md",
+        "md5": "b7194627c055d2ddb5503009a544cff8",
+        "datum": "2026-09-04"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "urdrag": [
+      {
+        "datum": "2026-09-03",
+        "varde": "7 gröna · 76 gula · 17 röda · 0 osatta",
+        "notering": "statusfördelning, korstabellens rader"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "andel gröna 7 %, andel röda 17 %",
+        "notering": "regim magert (trösklar: rikt ≥10 % och ≤30 %; magert <8 % eller >35 %)"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "INDU-C.ST AKM1 58,1/67",
+        "notering": "grönt toppbolag (industri)"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "NEM AKM1 55,1/71,1",
+        "notering": "grönt toppbolag (material)"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "INVE-B.ST AKM1 54/62,9",
+        "notering": "grönt toppbolag (finans)"
+      }
+    ],
+    "version": "m9-fabrik-v2",
+    "kontroll": {
+      "rubriker": 6,
+      "strukturFel": 0,
+      "disclaimerSist": true,
+      "kontrolleraTextFel": 0,
+      "kontrolleraTextVarningar": 0
+    },
+    "notering": "m9-fabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING via panelen före statusbyte/publicering (våg 66-regeln). Granskningsunderlag = urdrag (värde+datum) + källor (fil+md5) + detta kvitto.",
+    "genereradUr": "verktyg/m9-fabrik.mjs",
+    "kandidatMd5": "60d18ca6c0ae272c95555c6dd18f891d"
+  },
+  "status": "utkast",
+  "ingress": "Forskningsläget i korstabellens 100-bolagsuniversum: 7 gröna, 76 gula, 17 röda — regimen är magert enligt fasta trösklar. Underlag daterat 2026-09-03.",
+  "version": 1,
+  "omslagUrl": null,
+  "bodyMarkdown": "7 av 100 bolag i korstabellens universum är gröna just nu. Regimen är **magert**: \"Forskningsläget är magert — 7 av 100 bolag klarar de strikta kraven, selektion avgör.\" — lägestexten ordagrant ur forskningsläges-motorn, som räknar ur fasta trösklar, inte tycke. Fördelningen: 7 gröna · 76 gula · 17 röda · 0 osatta. Underlag daterat 2026-09-03.\n\n## Vad färgerna betyder\n\nStatusklassningen är korstabellens egen regelverk, citerat ordagrant ur underlaget (2026-09-03):\n\n- **grön:** AKM1 ≥ 70 % av akm1MaxMojligt OCH datatackning ≥ 60 % OCH inget port-brott (D1-skalning — låg täckning kan aldrig bli grön)\n- **gul:** AKM1 50–70 % av akm1MaxMojligt OCH inget port-brott\n- **röd:** AKM1 < 50 % av akm1MaxMojligt ELLER port-brott (V19 < 12 mån)\n\n## Regimen och dess trösklar\n\nRegimen räknas ur fasta trösklar: rikt kräver andel gröna ≥ 10 % OCH andel röda ≤ 30 %; magert inträffar när andel gröna < 8 % ELLER andel röda > 35 %; däremellan är läget balanserat. I detta underlag: andel gröna 7 % och andel röda 17 % — utfallet blir magert. Samma underlag ger alltid samma text; trösklarna är skrivna före datan.\n\n## De tre högt rankade gröna bolagen\n\nBland de gröna bolagen har dessa tre högst AKM1-poäng i underlaget (daterat 2026-09-03) — en deskriptiv rankning ur data, inte en värdering:\n\n- **Industrivärden** (INDU-C.ST, industri) — AKM1 58,1 av 67 möjliga poäng (86,7 %)\n- **Newmont** (NEM, material) — AKM1 55,1 av 71,1 möjliga poäng (77,5 %)\n- **Investor** (INVE-B.ST, finans) — AKM1 54 av 62,9 möjliga poäng (85,9 %)\n\nUrvalet är korstabellens 100-bolagsuniversum (10 branscher × 10 bolag) — talen är urvalsberoende och säger inget om bolag utanför universum. Dateringen kommer ur underlaget själv (skapad 2026-09-03), aldrig ur klockan.\n\n## Ändringen sedan senaste publicerade utgåvan\n\nFördelningen oförändrad sedan den publicerade utgåvan: 7 gröna, 76 gula, 17 röda.\n\n## Fördjupa dig\n\n- [Forskningsbiblioteket](/forskningsbiblioteket) — bolagen som klarade kandidatregeln, med urvalsregel och utfall\n- [Kursen V09 ROE](/kurser/v09-roe) — variabeln bakom lönsamhetspoängen\n- [Komplett guide till svensk aktieanalys](/blogg/komplett-guide-svensk-aktieanalys-2026) — metodiken från grunden\n\n## Granskningsunderlag — maskinens kvitto\n\n_Verifiera talen mot källorna nedan och ta sedan BORT detta avsnitt före export — granskaren äger publiceringen, maskinen levererar bara kvittot._\n- **Determinism:** fabrik m9-fabrik-v2 · seed `904e0fcc917798642aa9bd0a1c44d04b` (md5 av källfilernas md5 + månadsnyckel) · mall-md5 `f095edf7541c259ad560e7faa60d3d22` (md5 av titel+ingress+mall-body — samma underlag ger byte-identiskt utkast).\n- **Källor (läs-only):** data/portfolj-system/korstabell-grund.json (md5 33fe62a0c617e8339024851c6361bd6a, daterad 2026-09-03) · data/rapporter/vagvalidering-SENASTE.md (md5 b7194627c055d2ddb5503009a544cff8, daterad 2026-09-04) · data/varumarke.json (md5 9b906e4204a759db24c2c78b4b332e18).\n- **Dataurdrag (värde · datum · notering):**\n  - 7 gröna · 76 gula · 17 röda · 0 osatta · 2026-09-03 · statusfördelning, korstabellens rader\n  - andel gröna 7 %, andel röda 17 % · 2026-09-03 · regim magert (trösklar: rikt ≥10 % och ≤30 %; magert <8 % eller >35 %)\n  - INDU-C.ST AKM1 58,1/67 · 2026-09-03 · grönt toppbolag (industri)\n  - NEM AKM1 55,1/71,1 · 2026-09-03 · grönt toppbolag (material)\n  - INVE-B.ST AKM1 54/62,9 · 2026-09-03 · grönt toppbolag (finans)\n- **kontrolleraText-förkontroll (skript-sida, spegel av varumarke.ts, körd på mall-bodyn — det som blir kvar när kvittot tas bort):** FEL 0 · VARNINGAR 0 · struktur: 5 \"##\"-rubriker (krav ≥ 2), body ≥ 800 tecken uppfyllt, disclaimer sista rad ja.\n- **Status:** utkast i granskningskön — maskinen kan inte sätta \"granskad\" eller \"publicerad\" (statusbyte kräver människan via panelen; publicering endast via exportvägen).\n\n_Automatiskt utkast ur m9-fabrikens evergreen-serier; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._"
+}

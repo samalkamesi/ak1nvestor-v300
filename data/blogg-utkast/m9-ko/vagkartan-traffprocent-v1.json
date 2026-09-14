@@ -1,0 +1,81 @@
+{
+  "id": "4c33851c-d311-4b9f-987c-c381af6106df",
+  "created_at": "2026-09-11T08:44:30.485169+00:00",
+  "av": "m9-fabriken",
+  "slug": "vagkartan-traffprocent",
+  "titel": "Vågkartan september 2026 — träffprocenten 52 % (utkast)",
+  "fabrik": {
+    "seed": "904e0fcc917798642aa9bd0a1c44d04b",
+    "manad": "2026-09",
+    "serie": "vagkartan",
+    "kallor": [
+      {
+        "fil": "data/portfolj-system/korstabell-grund.json",
+        "md5": "33fe62a0c617e8339024851c6361bd6a",
+        "datum": "2026-09-03"
+      },
+      {
+        "fil": "data/rapporter/vagvalidering-SENASTE.md",
+        "md5": "b7194627c055d2ddb5503009a544cff8",
+        "datum": "2026-09-04"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "urdrag": [
+      {
+        "datum": "2026-09-04",
+        "varde": "träff 52 % (n=48 dömda, osatta 20 %)",
+        "notering": "rapportens Totalt-rad"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "12 tickers, 5 horisonter",
+        "notering": "räknare sedan 2026-09-04"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "mikro: impulsvåg 75 % (n=4) · basbygge 63 % (n=8)",
+        "notering": "rapportens horisonttabell"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "kort: impulsvåg 100 % (n=2) · basbygge 30 % (n=10)",
+        "notering": "rapportens horisonttabell"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "medellång: impulsvåg 100 % (n=6) · basbygge 0 % (n=6)",
+        "notering": "rapportens horisonttabell"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "lång: inga dömda",
+        "notering": "rapportens horisonttabell"
+      },
+      {
+        "datum": "2026-09-04",
+        "varde": "mega: impulsvåg 100 % (n=6) · basbygge 0 % (n=6)",
+        "notering": "rapportens horisonttabell"
+      }
+    ],
+    "version": "m9-fabrik-v2",
+    "kontroll": {
+      "rubriker": 6,
+      "strukturFel": 0,
+      "disclaimerSist": true,
+      "kontrolleraTextFel": 0,
+      "kontrolleraTextVarningar": 0
+    },
+    "notering": "m9-fabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING via panelen före statusbyte/publicering (våg 66-regeln). Granskningsunderlag = urdrag (värde+datum) + källor (fil+md5) + detta kvitto.",
+    "genereradUr": "verktyg/m9-fabrik.mjs",
+    "kandidatMd5": "2cf06db04af679b2d8b54e228aabdf98"
+  },
+  "status": "utkast",
+  "ingress": "Vågmotorns rullande träffprocent: 52 % på 48 dömda mätningar (osatta 20 % räknas aldrig som fel) — ett öppet kvitto om det förflutna, aldrig en garanti om framtiden. Domdatum 2026-09-04.",
+  "version": 1,
+  "omslagUrl": null,
+  "bodyMarkdown": "Vågmotorns rullande träffprocent är **52 %** — 48 dömda mätningar sedan 2026-09-04, 20 % av mätningarna är osatta och räknas aldrig som fel. Universum: 12 tickers, fem horisonter. Domdatum 2026-09-04, protokoll vagvalidering/1 v1.\n\n## Så dömer protokollet\n\n**Dom-protokoll v1 (fastställt innan första domen):** förra rondens vågklass per (ticker, horisont) döms mot dagens faktiska fundamentmomentum — impulsvåg → träff vid positiv momentum; korrigering → träff vid negativ; basbygge → träff vid |momentum| ≤ 6 % (motorns egen tröskel, hedervändig symmetri); exakt nollrörelse dömer inte riktning; osatt klass döms ALDRIG. Osatta räknas i täckningsbråket, aldrig som fel.\n\n## Träffprocenten per horisont och vågklass\n\nn = antal dömda mätningar (träff + miss); klasser utan dömda mätningar redovisas inte.\n\n- **mikro** — impulsvåg 75 % (n=4) · basbygge 63 % (n=8)\n- **kort** — impulsvåg 100 % (n=2) · basbygge 30 % (n=10)\n- **medellång** — impulsvåg 100 % (n=6) · basbygge 0 % (n=6)\n- **lång** — inga dömda mätningar\n- **mega** — impulsvåg 100 % (n=6) · basbygge 0 % (n=6)\n\n## Vad siffran är — och inte är\n\nTräffprocenten är ett öppet kvitto om det förflutna — aldrig en garanti om framtiden. Motorn beskriver rytm och läge i fundamentalserier; \"osatt\" är information, inte fel, och därför räknas osatta mätningar i täckningsbråket men aldrig som fel. Enhetssiffran 52 % säger inte vilken horisont eller klass som bär den — listan ovan gör det.\n\n## Ändringen sedan senaste publicerade utgåvan\n\nTräffprocenten oförändrad sedan den publicerade utgåvan (52 % på 48 dömda mätningar).\n\n## Fördjupa dig\n\n- [Kursen AK1TS 25 cellers matris](/kurser/ts-10-ak1ts-25cellers-matris) — vågmatrisen bakom horisonterna\n- [Vågfundament — indikatorer är tidsserier](/blogg/vagfundament-indikatorer-ar-tidsserier) — varför motorn kräver serier, inte nivåer\n- [Forskningsbiblioteket](/forskningsbiblioteket) — bolagsanalyserna vågscannens universum hämtar ifrån\n\n## Granskningsunderlag — maskinens kvitto\n\n_Verifiera talen mot källorna nedan och ta sedan BORT detta avsnitt före export — granskaren äger publiceringen, maskinen levererar bara kvittot._\n- **Determinism:** fabrik m9-fabrik-v2 · seed `904e0fcc917798642aa9bd0a1c44d04b` (md5 av källfilernas md5 + månadsnyckel) · mall-md5 `e5ada75e66fc9a243dc16860c8c2abbd` (md5 av titel+ingress+mall-body — samma underlag ger byte-identiskt utkast).\n- **Källor (läs-only):** data/portfolj-system/korstabell-grund.json (md5 33fe62a0c617e8339024851c6361bd6a, daterad 2026-09-03) · data/rapporter/vagvalidering-SENASTE.md (md5 b7194627c055d2ddb5503009a544cff8, daterad 2026-09-04) · data/varumarke.json (md5 9b906e4204a759db24c2c78b4b332e18).\n- **Dataurdrag (värde · datum · notering):**\n  - träff 52 % (n=48 dömda, osatta 20 %) · 2026-09-04 · rapportens Totalt-rad\n  - 12 tickers, 5 horisonter · 2026-09-04 · räknare sedan 2026-09-04\n  - mikro: impulsvåg 75 % (n=4) · basbygge 63 % (n=8) · 2026-09-04 · rapportens horisonttabell\n  - kort: impulsvåg 100 % (n=2) · basbygge 30 % (n=10) · 2026-09-04 · rapportens horisonttabell\n  - medellång: impulsvåg 100 % (n=6) · basbygge 0 % (n=6) · 2026-09-04 · rapportens horisonttabell\n  - lång: inga dömda · 2026-09-04 · rapportens horisonttabell\n  - mega: impulsvåg 100 % (n=6) · basbygge 0 % (n=6) · 2026-09-04 · rapportens horisonttabell\n- **kontrolleraText-förkontroll (skript-sida, spegel av varumarke.ts, körd på mall-bodyn — det som blir kvar när kvittot tas bort):** FEL 0 · VARNINGAR 0 · struktur: 5 \"##\"-rubriker (krav ≥ 2), body ≥ 800 tecken uppfyllt, disclaimer sista rad ja.\n- **Status:** utkast i granskningskön — maskinen kan inte sätta \"granskad\" eller \"publicerad\" (statusbyte kräver människan via panelen; publicering endast via exportvägen).\n\n_Automatiskt utkast ur m9-fabrikens evergreen-serier; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._"
+}

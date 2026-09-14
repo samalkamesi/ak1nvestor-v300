@@ -2066,6 +2066,95 @@ function StatusChipPill({ chip }: { chip: StatusChip }): React.JSX.Element {
   );
 }
 
+/**
+ * M3 §7.1 (zcode-kallkod) — MODELLSTATUS TRI-STATE: kompakt rad i
+ * Kontext-sektionen. kör (grön prick) / väntar (gul, pulserande + nedräkning
+ * ur delayMs) / misslyckades (röd + felkod + människotext ur kap. §6).
+ * Transportens kontrakt: text:"" (completed/cancelled) = dölj raden —
+ * modellanropet är då klart och verktygen/turnen fortsätter synas där.
+ * En misslyckades-rad står kvar efter turnens slut (förklarar VARFÖR)
+ * tills nästa prompt/iteration nollställer fältet.
+ */
+function ModellStatusRad({ status }: { status: ModellStatusChip | null }): React.JSX.Element | null {
+  const [nu, setNu] = React.useState(() => Date.now());
+  const raknaNer = status !== null && status.läge === "väntar" && typeof status.aterForsokOmMs === "number";
+  React.useEffect(() => {
+    if (!raknaNer) return;
+    const t = setInterval(() => setNu(Date.now()), 1_000);
+    return () => clearInterval(t);
+  }, [raknaNer, status?.aterForsokOmMs, status?.ts]);
+
+  if (status === null) return null;
+  const kör = status.läge === "kör";
+  const väntar = status.läge === "väntar";
+  const misslyckades = status.läge === "misslyckades";
+  if (!status.text && !misslyckades) return null; // completed-kontraktet
+
+  let detalj = status.text;
+  if (raknaNer) {
+    const kvarMs = (status.aterForsokOmMs ?? 0) - (nu - status.ts);
+    const försök = typeof status.nastaForsok === "number" ? ` ${status.nastaForsok}` : "";
+    if (kvarMs > 0) {
+      const s = Math.ceil(kvarMs / 1000);
+      const tidText = s >= 60 ? `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, "0")} s` : `${s} s`;
+      detalj = `omförsök${försök} om ${tidText}`;
+    } else {
+      detalj = `omförsök${försök} startar…`;
+    }
+  }
+
+  const titel = [
+    `Modellstatus: ${status.läge}`,
+    typeof status.felKod === "string" ? `felkod ${status.felKod}` : "",
+    typeof status.anledning === "string" ? `anledning ${status.anledning}` : "",
+    status.text,
+    "Källa: model.request.status (M3-FELYTA §7.1) — runtimen äger retry-policyn",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return (
+    <p
+      className={cn(
+        "mt-1.5 flex items-start gap-1.5 rounded-md border px-2 py-1.5 font-mono text-[10px] leading-snug",
+        kör && "border-[#238636]/40 bg-[#238636]/10 text-[#3FB950]",
+        väntar && "border-[#D29922]/40 bg-[#D29922]/10 text-[#D29922]",
+        misslyckades && "border-[#DA3633]/40 bg-[#DA3633]/10 text-[#F85149]",
+      )}
+      role="status"
+      title={titel}
+    >
+      <span
+        className={cn(
+          "mt-[3px] h-1.5 w-1.5 shrink-0 rounded-full",
+          kör && "bg-[#3FB950]",
+          väntar && "animate-pulse bg-[#D29922]",
+          misslyckades && "bg-[#F85149]",
+        )}
+        aria-hidden
+      />
+      <span className="min-w-0">
+        <span className="font-sans font-semibold">Modell: {status.läge}</span>
+        {detalj ? ` — ${detalj}` : ""}
+        {misslyckades && typeof status.felKod === "string" ? ` (kod ${status.felKod})` : ""}
+      </span>
+    </p>
+  );
+}
+
+/** M3 §7.1 — modell_status-eventet → tabbens chip-post (ts = nedräkningsbas). */
+function chipUrModellEvent(event: StreamEvent): ModellStatusChip {
+  return {
+    läge: event.läge ?? "kör",
+    text: event.text ?? "",
+    ...(typeof event.aterForsokOmMs === "number" ? { aterForsokOmMs: event.aterForsokOmMs } : {}),
+    ...(typeof event.nastaForsok === "number" ? { nastaForsok: event.nastaForsok } : {}),
+    ...(typeof event.felKod === "string" ? { felKod: event.felKod } : {}),
+    ...(typeof event.anledning === "string" ? { anledning: event.anledning } : {}),
+    ts: Date.now(),
+  };
+}
+
 // ── Webb-verktygens visualisering (våg 86 G4) ────────────────────────────────
 
 function webVerktygInfo(kort: VerktygKort): { typ: "fetch"; url: string } | { typ: "search"; fråga: string } | null {
@@ -3759,6 +3848,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const strömmar = aktivTabb?.strömmar ?? false;
   const tankar = aktivTabb?.tankar ?? "";
   const kontext = aktivTabb?.kontext ?? null;
+  /** M3 §7.1: aktivt samtals modellstatus-tri-state (kontextradens chip). */
+  const modellStatus = aktivTabb?.modellStatus ?? null;
   const rundaTkn = aktivTabb?.rundaTkn ?? null;
   const ackumulerat = aktivTabb?.ackumulerat ?? 0;
   const strömmarHuvud = huvudTabb?.strömmar ?? false;
@@ -5879,6 +5970,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     ...t,
                     tankar: "",
                     status: `Autonom iteration ${iteration}…`,
+                    // M3 §7.1: ny iteration = färsk modellstatus.
+                    modellStatus: null,
                     uppdaterad: Date.now(),
                     meddelanden: [
                       ...t.meddelanden,
@@ -5983,6 +6076,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 rörTabb(huvudTabbIdRef.current, (t) => ({
                   ...t,
                   status: event.text || "Agenten utvecklar autonomt…",
+                }));
+                break;
+              case "modell_status":
+                // M3 §7.1 — tri-state-chippet även för den autonoma loopen.
+                rörTabb(huvudTabbIdRef.current, (t) => ({
+                  ...t,
+                  modellStatus: chipUrModellEvent(event),
                 }));
                 break;
               case "kontext":
@@ -7231,6 +7331,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
         ...t,
         tankar: "",
         status: "Skickar…",
+        // M3 §7.1: ny prompt = färsk modellstatus (gammal misslyckades-rad
+        // från förra turnen lämnar vyn).
+        modellStatus: null,
         strömmar: true,
         uppdaterad: Date.now(),
         titel: t.huvud ? t.titel : kortNamn(text),
@@ -7351,6 +7454,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             case "status":
               sattStatus(event.text || "Agenten arbetar…");
               break;
+            case "modell_status":
+              // M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades).
+              rörTabb(tabbId, (t) => ({ ...t, modellStatus: chipUrModellEvent(event) }));
+              break;
             case "delta":
               if (event.kanal === "tankar") {
                 // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (agent-
@@ -7456,6 +7563,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 text: event.svar && event.svar.trim() ? event.svar : m.text || "(tomt svar)",
                 strömmande: false,
               }));
+              // M3 §7.1: lyckad turn tömmer kör/väntar-läget; en misslyckades-
+              // rad FÅR stå kvar efter klart (turn ≠ session — felet förklarar
+              // varför svaret ser ut som det gör) tills nästa prompt.
+              rörTabb(tabbId, (t) =>
+                t.modellStatus !== null && t.modellStatus.läge !== "misslyckades"
+                  ? { ...t, modellStatus: null }
+                  : t,
+              );
               if (typeof event.tokenCount === "number" && event.tokenCount > 0) {
                 turnTknRef.current = event.tokenCount;
                 rörTabb(tabbId, (t) => ({
@@ -9721,6 +9836,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <p className="truncate font-mono text-[11px] text-[#E6EDF3]" title={kontext?.modell ?? valdModell}>
               {kontext?.modell ?? (valdModell || "— ingen modell ännu")}
             </p>
+            {/* M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades). */}
+            <ModellStatusRad status={modellStatus} />
             <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
               {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
               {tkn(ackumulerat)} totalt
@@ -10005,6 +10122,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <p className="truncate font-mono text-[11px] text-[#E6EDF3]">
                     {kontext?.modell ?? (valdModell || "— ingen modell ännu")}
                   </p>
+                  {/* M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades). */}
+                  <ModellStatusRad status={modellStatus} />
                   <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
                     {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
                     {tkn(ackumulerat)} totalt

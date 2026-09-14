@@ -1,7 +1,6 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 
@@ -7978,19 +7977,26 @@ function v148OppnaDb(): V148Databas | null {
   if (v148Db !== undefined) return v148Db;
   v148Db = null;
   try {
-    const hem = process.env.HOME || process.env.USERPROFILE || "";
-    if (!hem) return v148Db;
+    // pm2-processer saknar ofta HOME i env (bevisat 2026-09-14: prod läste
+    // tom tråd) — prod-sökvägen är sista fallbacken; existsSync vaktar.
+    const hem = process.env.HOME || process.env.USERPROFILE || "/home/ak1a";
     const sokvag = path.join(hem, ".zcode", "cli", "db", "db.sqlite");
     if (!existsSync(sokvag)) return v148Db;
-    // node:sqlite är experimental i Node 22 — createRequire håller TS-typningen
-    // lokal (ingen @types/node-versionskoppling) och laddning lat till första läsning.
-    const nodRequire = createRequire(import.meta.url);
+    // node:sqlite är experimental i Node 22. Next bygger server-koden som
+    // CJS — globala require finns i runtime (import.meta.url skrivs om av
+    // bundlern och är opålitlig här).
+    const nodRequire = typeof require === "function" ? require : null;
+    if (!nodRequire) {
+      console.warn("[V148] global require saknas — db.sqlite kan ej läsas");
+      return v148Db;
+    }
     const mod = nodRequire("node:sqlite") as {
       DatabaseSync: new (fil: string, alternativ?: { readOnly?: boolean }) => V148Databas;
     };
     v148Db = new mod.DatabaseSync(sokvag, { readOnly: true });
-  } catch {
+  } catch (fel) {
     v148Db = null; // dev/maskin utan db — tråden faller tillbaka på levande läsning
+    console.warn("[V148] db.sqlite kunde ej öppnas: " + String(fel).slice(0, 120));
   }
   return v148Db;
 }

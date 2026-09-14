@@ -204,6 +204,7 @@ try {
     .sort();
   if (manifestFiler.length === 0) {
     logga("kön tom");
+    släppLås(); // töm inte kön-svaret på låset: annars blockerar varje tom rop fabriken 35 min
     process.exit(0);
   }
   const fil = manifestFiler[0]; // ETT manifest per omgång — resten väntar
@@ -217,6 +218,7 @@ try {
     logga(`ogiltigt manifest ${fil}: ${String(e).slice(0, 120)} — flyttas till klara/ som FEL`);
     loggrad({ händelse: "manifest-fel", fil, fel: String(e).slice(0, 200) });
     renameSync(manifestSökväg, path.join(KLARA, `FEL-${Date.now()}-${fil}`));
+    släppLås(); // samma låsläcka som kön tom-grenen
     process.exit(0);
   }
 

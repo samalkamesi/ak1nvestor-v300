@@ -793,6 +793,15 @@ interface SessionPost {
   tokens?: number;
 }
 
+/** Post ur GET /api/studio/sessions/disk (db.sqlite, v148F u1). */
+interface DiskSessionPost {
+  sessionId: string;
+  title: string | null;
+  timeUpdated: number;
+  directory: string | null;
+  messageCount: number;
+}
+
 interface SubagentPost {
   barnSessionId: string;
   titel: string;
@@ -3212,6 +3221,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [valdModell, setValdModell] = React.useState("");
   const [byterModell, setByterModell] = React.useState(false);
   const [sessioner, setSessioner] = React.useState<SessionPost[]>([]);
+  // V148F u1: sessioner ur db.sqlite — visas när levande listan är tom.
+  const [diskSessioner, setDiskSessioner] = React.useState<DiskSessionPost[]>([]);
+  const diskSoktRef = React.useRef(false);
   const [sessionJobbar, setSessionJobbar] = React.useState<"" | "ny" | "compact" | "resume" | "stang">("");
   const [toast, setToast] = React.useState<{ text: string; ton: "gron" | "fel" } | null>(null);
   const [rewindJobbar, setRewindJobbar] = React.useState(false);
@@ -4083,6 +4095,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
       // listan är lyx
     }
   }, []);
+
+  // V148F u1: levande sessionslista tom (omstart/okänd session) ⇒ hämta
+  // listan ur zcode:s sessionsdatabas i stället — "Äldre sessioner" visar
+  // då titel + datum ur db.sqlite med samma öppna-flöde som förut.
+  React.useEffect(() => {
+    if (sessioner.length > 0 || diskSoktRef.current) return;
+    diskSoktRef.current = true;
+    (async () => {
+      try {
+        const res = await fetch("/api/studio/sessions/disk", { headers: adminHeaders() });
+        if (res.ok) {
+          const data = (await res.json()) as { sessioner?: DiskSessionPost[] };
+          if (Array.isArray(data.sessioner)) setDiskSessioner(data.sessioner);
+        }
+      } catch {
+        // db-listan är lika mycket lyx som den levande
+      }
+    })();
+  }, [sessioner.length]);
 
   const lasModeller = React.useCallback(async () => {
     try {
@@ -7164,10 +7195,46 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <RefreshCw className="h-3 w-3" />
           </button>
         </div>
-        {sessioner.length === 0 && (
+        {sessioner.length === 0 && diskSessioner.length === 0 && (
           <p className="px-3 py-1.5 text-[11px] leading-relaxed text-[#484F58]">
             Inga sparade sessioner än.
           </p>
+        )}
+        {/* V148F u1: levande listan tom ⇒ listan ur zcode:s sessionsdatabas */}
+        {sessioner.length === 0 && diskSessioner.length > 0 && (
+          <>
+            <p className="px-3 pb-1 pt-0.5 text-[10px] text-[#484F58]" title="Ur ~/.zcode/cli/db/db.sqlite — samma källa som desktop-Z:s sessionsvy">
+              Ur sessionsdatabasen ({diskSessioner.length} st)
+            </p>
+            {diskSessioner.map((s) => {
+              const arOppnad = tabbar.some((t) => t.sessionId === s.sessionId);
+              return (
+                <div
+                  key={s.sessionId}
+                  className="group flex items-center gap-1 border-l-2 border-transparent pr-1 transition-colors hover:bg-[#0D1117]"
+                  title={`${s.sessionId}${s.directory ? ` · ${s.directory}` : ""}${arOppnad ? " · redan öppen — klicka växlar dit" : " · klicka = resume i nytt samtal"}`}
+                >
+                  <button
+                    onClick={() => oppnaITabb(s.sessionId, s.title ?? undefined)}
+                    disabled={sessionJobbar !== ""}
+                    className="flex min-h-[52px] min-w-0 flex-1 flex-col items-start px-2.5 py-2 text-left disabled:cursor-default sm:min-h-0"
+                  >
+                    <span className="w-full truncate text-[13px] leading-snug text-[#8B949E]">
+                      {s.title || s.sessionId.slice(0, 18) + "…"}
+                    </span>
+                    <span className="mt-0.5 flex w-full items-center gap-1.5 truncate font-mono text-[9px] text-[#484F58]">
+                      {[
+                        s.timeUpdated > 0 ? new Date(s.timeUpdated).toLocaleString("sv-SE", { dateStyle: "short", timeStyle: "short" }) : null,
+                        typeof s.messageCount === "number" ? `${s.messageCount} medd.` : null,
+                      ]
+                        .filter(Boolean)
+                        .join(" · ") || s.sessionId.slice(5, 13)}
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
+          </>
         )}
         {sessioner.map((s) => {
           const arOppnad = tabbar.some((t) => t.sessionId === s.sessionId);

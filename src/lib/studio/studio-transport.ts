@@ -8084,6 +8084,56 @@ export function lasTradHistorik(
   return ut.slice(-500);
 }
 
+// ── VÅG 148F u1 — SESSIONSLISTAN ur db.sqlite (desktop-Z:s sessionsvy) ──────
+// Klientens "Äldre sessioner" bygger på session/list via den LEVANDE
+// transporten — när den är tom/okänd finns ändå HELA historiken kvar i
+// zcode:s egna sessionsdatabas. Denna lista speglar samma källa som
+// desktop-Z:s sessionsvy: titel, tid, katalog + antal meddelanden.
+// Subagent-barn (prefix "sess_suba…") hålls borta — listan visar trådar.
+export interface DiskSessionPost {
+  sessionId: string;
+  title: string | null;
+  timeUpdated: number;
+  directory: string | null;
+  messageCount: number;
+}
+
+interface V148FRad {
+  sessionId: unknown;
+  title: unknown;
+  timeUpdated: unknown;
+  directory: unknown;
+  messageCount: unknown;
+}
+
+/** Sessionerna nyast-först (tak 50) ur ~/.zcode/cli/db/db.sqlite, readOnly. */
+export function lasSessionerFranDisk(): DiskSessionPost[] {
+  const db = v148OppnaDb();
+  if (!db) return [];
+  // substr-prefix i stället för LIKE — undviker jokerteckenfällan i 'sess_'.
+  const rader = db
+    .prepare(
+      "SELECT s.id AS sessionId, s.title AS title, s.time_updated AS timeUpdated, " +
+        "s.directory AS directory, COUNT(m.id) AS messageCount " +
+        "FROM session s LEFT JOIN message m ON m.session_id = s.id " +
+        "WHERE substr(s.id,1,5) = 'sess_' AND substr(s.id,1,9) <> 'sess_suba' " +
+        "GROUP BY s.id ORDER BY s.time_updated DESC LIMIT 50",
+    )
+    .all() as V148FRad[];
+  const ut: DiskSessionPost[] = [];
+  for (const rad of rader) {
+    if (typeof rad.sessionId !== "string") continue;
+    ut.push({
+      sessionId: rad.sessionId,
+      title: typeof rad.title === "string" ? rad.title : null,
+      timeUpdated: typeof rad.timeUpdated === "number" ? rad.timeUpdated : 0,
+      directory: typeof rad.directory === "string" ? rad.directory : null,
+      messageCount: typeof rad.messageCount === "number" ? rad.messageCount : 0,
+    });
+  }
+  return ut;
+}
+
 /**
  * Skapa en transport för en session (mock: adopterar id:t; appserver: EGEN
  * barnprocess med mål-session + EGEN persistensfil så tabbarna aldrig trampar

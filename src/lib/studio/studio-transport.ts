@@ -5747,9 +5747,13 @@ class AppServerTransport implements StudioTransport {
             // av död modell → -32031 → dubbeltur".
             if (this.sid) markeraModellDod(this.sid);
             // Intern frisk-session-väg (UTAN prompt-vakt) — dödlägesfix
-            // bevisad på prod 2026-09-09: nySession vägrade under retryn.
+            // bevisat på prod 2026-09-09: nySession vägrade under retryn.
             await this.skapaFriskSession();
-            await skickaSend(prompt);
+            // VÅG 150A: den nyfödda sessionen bär TRÅDMINNET — åter-
+            // sändningen prefixas (flaggan sattes av skapa via
+            // skapaFriskSession; konsumtionen sker HÄR, vid själva sändningen
+            // till den nya sessionen — rot-fix för modellDöd-rotationer).
+            await skickaSend(this.konsumeraTradsminne(prompt));
             return;
           }
           throw fel;

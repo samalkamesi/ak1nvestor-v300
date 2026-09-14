@@ -161,7 +161,7 @@ STATUSMATNING:
 
 HÅRT LEVERANSPROTOKOLL (strikt):
 1. Denna rond MÅSTE landa MINST EN commit i prod — taggad [organ:X] i commit-ämnet (X = ditt organs bokstav) — ELLER rapportera EXAKT blocker (en mening) i worklog. Prat utan commit = dött organ nästa evolution.
-2. PARALLELL-DOCTRIN (§ 4): dispatcher upp till 9 samtidiga mikroagenter med TIGHT avgränsade uppgifter (EN fil/EN funktion var) och exklusivt filägarskap — vågor kedjas direkt när en frigörs.
+2. PARALLELL-ARKITEKTUR (våg 146, § 4): ≤3 Agent-tool-anrop direkt i sessionen; ALL storskalig parallellism (4+) går via AGENTFABRIKEN — skriv manifest i data/vakten/agentfabrik/ko/<id>.json (se AGENTS.md § AGENTFABRIKEN) med EN fil/EN funktion per uppgift + exklusivt filägarskap; fabriken kör omgångar om 3 och kedjar automatiskt. ALDRIG direkta vågor över 3 — de dör tyst (bevisat 2026-09-14).
 3. FART: rutinuppdrag körs med tankestyrka "nothink" (POST session tankestyrka) — reservera "high" för arkitekturbeslut.
 4. Självhelning: fastnar en pump (mål/hjärtslag/vakt) är reparationen rondens HÖGSTA prioritet (§ 3).
 5. PROMPT-EVOLUTION v2: om ett organ FÖDDES denna rond — skriv ett FÖRÄDLAT

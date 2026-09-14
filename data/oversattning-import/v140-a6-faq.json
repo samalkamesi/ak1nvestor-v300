@@ -1,0 +1,256 @@
+{
+  "kurs": "v140-a6-faq",
+  "beskrivning": "Våg 140 A6: FAQ-sektioner på v10–v14 (skuld, likviditet, stabilitet, patent, varumärke) — nya block + skiftad disclaimer + position-recycles (FAQ-rubrik övertar gammalt disclaimer-blocknummer), en+ar, MÖS-kontrollerade",
+  "poster": [
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p18",
+      "en": "**What is the debt-to-equity ratio — and what does it say about a company?**",
+      "ar": "**ما هي نسبة الدين إلى حقوق الملكية، وماذا تقول عن الشركة؟**"
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p19",
+      "en": "The debt-to-equity ratio (D/E) compares a company's interest-bearing debt (liabilities) with its equity: Interest-bearing debt / Equity × 100. A figure of 100 percent means the company is financed equally by loans and equity. The measure is a fundamental part of fundamental analysis because it shows how much leverage the company carries — and thus how sensitive it is to interest rates and falling revenues.",
+      "ar": "تقارن نسبة الدين إلى حقوق الملكية (D/E) الديون بفوائد (أي الالتزامات ذات الفائدة) لدى الشركة برأس مالها الخاص: الديون بفوائد ÷ حقوق الملكية × 100. ويعني المعدل 100 بالمئة أن الشركة ممولة بالتساوي من القروض ومن حقوق الملكية. هذا المقياس جزء أساسي من التحليل الأساسي لأنه يُظهر حجم الرافعة المالية للشركة — وبالتالي مدى حساسيتها لأسعار الفائدة وتراجع الإيرادات."
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p20",
+      "en": "**How do I calculate the debt-to-equity ratio myself?**",
+      "ar": "**كيف أحسب نسبة الدين إلى حقوق الملكية بنفسي؟**"
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p21",
+      "en": "Open the balance sheet in the annual report and add long-term and short-term interest-bearing debt. Divide the sum by equity and multiply by 100. Remember that a rigorous analysis also adds IFRS 16 lease commitments, pension liabilities and drawn credit facilities — otherwise you underestimate the true debt burden. The course [Debt-to-Equity Ratio (V10)](/kurser/v10-skuldsattningsgrad) walks through the calculation step by step with worked examples.",
+      "ar": "افتح الميزانية العمومية في التقرير السنوي واجمع الديون بفوائد طويلة الأجل وقصيرة الأجل. اقسم المجموع على حقوق الملكية واضربه في 100. وتذكّر أن التحليل الدقيق يضيف أيضًا التزامات التأجير بموجب المعيار IFRS 16 والالتزامات المتعلقة بالمعاشات وحدود الائتمان المسحوبة — وإلا فستُقلّل من تقديرك لعبء الدين الحقيقي. تستعرض الدورة التدريبية [نسبة الدين إلى حقوق الملكية (V10)](/kurser/v10-skuldsattningsgrad) الحساب خطوة بخطوة مع أمثلة محلولة."
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p22",
+      "en": "**What counts as a good debt-to-equity ratio?**",
+      "ar": "**ما هي نسبة الدين إلى حقوق الملكية الجيدة؟**"
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p23",
+      "en": "There is no universal threshold — the industry decides. Benjamin Graham's rule for the defensive investor was a debt-to-equity ratio below 50 percent, while Peter Lynch avoided companies above 100 percent. But for a bank, high debt is part of the business model, while the same level at a technology company is very risky. The AKM1 model therefore always assesses indebtedness in its industry context, combining it with liquidity (V11) and EBITDA margin (V08).",
+      "ar": "لا توجد عتبة عالمية واحدة — القطاع هو الذي يحدد. كانت قاعدة بنجامين غراهام للمستثمر الدفاعي أن تكون نسبة الدين إلى حقوق الملكية أقل من 50 بالمئة، بينما كان بيتر لينش يتجنب الشركات التي تتجاوز 100 بالمئة. لكن بالنسبة للبنك يُعد الدين المرتفع جزءًا من نموذج العمل، في حين أن المستوى نفسه لدى شركة تقنية محفوف بالمخاطر للغاية. لذلك يقيّم نموذج AKM1 المديونية دائمًا في سياق قطاعها، ويجمعها مع السيولة (V11) وهامش EBITDA (V08)."
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p24",
+      "en": "**What is the most common mistake when interpreting the debt-to-equity ratio?**",
+      "ar": "**ما هو أشهر خطأ عند تفسير نسبة الدين إلى حقوق الملكية؟**"
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p25",
+      "en": "The most common mistake is forgetting IFRS 16 lease commitments, which since 2019 appear as liabilities on the balance sheet — retail chains and airlines thus look more indebted than they really are. Another is the net-cash illusion: a large cash pile is not always free to use; it can be locked in foreign subsidiaries or earmarked for a specific investment. Always read the notes to the accounts on liquid funds before drawing conclusions.",
+      "ar": "الخطأ الأكثر شيوعًا هو نسيان التزامات التأجير بموجب IFRS 16، والتي تظهر منذ عام 2019 ضمن الالتزامات في الميزانية العمومية — فتبدو سلاسل التجزئة وشركات الطيران أكثر مديونية مما هي عليه فعلًا. وخطأ آخر هو وهم صافي النقد: الكمية الكبيرة من النقد ليست دائمًا حرة الاستخدام، فقد تكون محتجزة في شركات تابعة أجنبية أو مخصصة لاستثمار بعينه. اقرأ دائمًا الإيضاحات المتممة للقوائم المالية الخاصة بالأصول السائلة قبل استخلاص النتائج."
+    },
+    {
+      "nyckel": "v10-skuldsattningsgrad-analys:p26",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p18",
+      "en": "**What is the quick ratio — and why is inventory excluded?**",
+      "ar": "**ما هي نسبة السيولة السريعة، ولماذا يُستثنى المخزون؟**"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p19",
+      "en": "The quick ratio (acid test ratio) measures whether a company can pay its short-term liabilities with assets that quickly become cash: (current assets − inventory) / short-term liabilities. Inventory is excluded because it often takes time to sell, and then at a discount — clothes, semi-finished goods and construction in progress cannot be converted into cash overnight. The measure answers the question: if revenues stopped tomorrow, could the company pay its bills?",
+      "ar": "تقيس نسبة السيولة السريعة (اختبار الحمض) قدرة الشركة على سداد الالتزامات قصيرة الأجل بالأصول التي تتحول إلى النقد بسرعة: (الأصول المتداولة − المخزون) ÷ الالتزامات قصيرة الأجل. ويُستثنى المخزون لأن بيعه غالبًا ما يستغرق وقتًا وبخصم — فالملابس والمنتجات نصف المصنّعة والمشاريع قيد التنفيذ لا يمكن تحويلها إلى نقد في ليلة واحدة. يجيب هذا المقياس على السؤال: لو توقفت الإيرادات غدًا، هل تستطيع الشركة دفع فواتيرها؟"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p20",
+      "en": "**How do I calculate the quick ratio in practice?**",
+      "ar": "**كيف أحسب نسبة السيولة السريعة عمليًا؟**"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p21",
+      "en": "Go to the balance sheet and pick three items: current assets (cash, accounts receivable, inventory and other), inventory, and short-term liabilities. Subtract inventory from current assets and divide by short-term liabilities. As a complement, many also calculate the current ratio (current assets / short-term liabilities), which is less conservative. The course [Liquidity (Quick) (V11)](/kurser/v11-likviditet) demonstrates the calculation with concrete worked examples.",
+      "ar": "اذهب إلى الميزانية العمومية واختر ثلاثة بنود: الأصول المتداولة (النقد، الذمم المدينة، المخزون وغيرها)، والمخزون، والالتزامات قصيرة الأجل. اطرح المخزون من الأصول المتداولة واقسم الناتج على الالتزامات قصيرة الأجل. وكإجراء مكمل يحسب كثيرون أيضًا نسبة التداول (الأصول المتداولة ÷ الالتزامات قصيرة الأجل) وهي أقل تحفظًا. تعرض الدورة التدريبية [السيولة السريعة (V11)](/kurser/v11-likviditet) الحساب بأمثلة محلولة ملموسة."
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p22",
+      "en": "**What do different quick-ratio levels mean?**",
+      "ar": "**ماذا يعني اختلاف المستوى في نسبة السيولة السريعة؟**"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p23",
+      "en": "As a rule of thumb, a quick ratio above 1,0 is considered safe — the company then has more fast assets than short-term liabilities. Below 0,5 is regarded as an acute situation, and Peter Lynch warned that companies under 1,0 live dangerously close to the edge. But interpretation depends on the industry: a retailer with fast revenue turnover can manage on lower levels than an industrial company with long credit periods. Always compare with the industry average.",
+      "ar": "كقاعدة عامة، تُعد نسبة السيولة السريعة فوق 1,0 آمنة — إذ تمتلك الشركة حينها من الأصول السريعة أكثر مما لديها من الالتزامات قصيرة الأجل. وتُعتبر النسبة دون 0,5 وضعًا حادًا، وقد حذّر بيتر لينش من أن الشركات دون 1,0 تعيش على حافة الخطر بفارق ضئيل. لكن التفسير يعتمد على القطاع: فشركة تجزئة سريعة دوران الإيرادات قد تتعايش مع المستوى الأدنى من شركة صناعية ذات آجال تحصيل طويلة. قارن دائمًا بمتوسط القطاع."
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p24",
+      "en": "**Can a profitable company end up in bankruptcy because of poor liquidity?**",
+      "ar": "**هل يمكن لشركة رابحة أن تنتهي إلى الإفلاس بسبب ضعف السيولة؟**"
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p25",
+      "en": "Yes — that is the difference between solvency and liquidity. A company can have assets exceeding its liabilities yet still end up in bankruptcy if the liabilities fall due before the assets can be sold. During the Great Depression, thousands of companies went into bankruptcy for precisely this reason: they were solvent on paper but lacked cash when the banks demanded repayment. Liquidity is therefore regarded as the most acute form of financial risk.",
+      "ar": "نعم — هذا هو الفرق بين الملاءة والسيولة. قد تتجاوز الأصول لدى الشركة الالتزامات ومع ذلك تنهار إذا حلّت آجال السداد قبل أن تتمكن من بيع الأصول. خلال الكساد الكبير انتهت آلاف الشركات إلى الإفلاس لهذا السبب بالذات: كانت ماهولة على الورق لكنها افتقرت إلى النقد عندما طالبت البنوك بالسداد. لذلك تُعد السيولة أكثر أشكال المخاطر المالية إلحاحًا."
+    },
+    {
+      "nyckel": "v11-likviditet-analys:p26",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p17",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p18",
+      "en": "**What is revenue stability — and why does it matter?**",
+      "ar": "**ما هو استقرار الإيرادات، ولماذا يهم؟**"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p19",
+      "en": "Revenue stability is about how predictable a company's revenues and operating cash flow are over time. Stable revenues let the company plan, invest and grow without issuing new stocks, while volatile revenues require buffers and reduce efficiency. In fundamental analysis, stability is a measure of business-model quality — it determines the safety of dividends and the ability to carry debt through an economic cycle.",
+      "ar": "يتعلق استقرار الإيرادات بمدى قابلية توقع إيرادات الشركة وتدفقها النقدي التشغيلي عبر الزمن. فالإيرادات المستقرة تتيح للشركة التخطيط والاستثمار والنمو دون إصدار المزيد من الأسهم الجديدة، بينما تتطلب الإيرادات المتقلبة احتياطيات وتقلّل الكفاءة. في التحليل الأساسي يُعد الاستقرار مقياسًا لجودة نموذج العمل — فهو يحدد أمان التوزيعات والقدرة على تحمّل الدين عبر الدورة الاقتصادية."
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p20",
+      "en": "**What is ARR and how does it differ from regular revenue?**",
+      "ar": "**ما هو المؤشر ARR وكيف يختلف عن الإيرادات العادية؟**"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p21",
+      "en": "ARR (Annual Recurring Revenue) is revenue that recurs automatically every year, usually through subscriptions or contracts — the model that made software companies like Salesforce and Adobe famous. Regular one-off revenue must be earned anew with every sale, while ARR accumulates. In the stability hierarchy, recurring revenue (ARR) ranks strongest, then contract revenue, and finally one-off sales. The higher the ARR share, the more predictable the cash flow becomes.",
+      "ar": "المؤشر ARR (الإيرادات السنوية المتكررة) هو إيراد يتكرر تلقائيًا كل عام، عادةً عبر الاشتراكات أو العقود — وهو النموذج الذي اشتهرت به شركات البرمجيات مثل سيلزفورس وأدوبي. أما الإيرادات العادية لمرة واحدة فيجب كسبها من جديد مع كل عملية بيع، بينما يتراكم المؤشر ARR. في تراتب الاستقرار تحتل الإيرادات المتكررة المرتبة الأقوى، ثم إيرادات العقود، وأخيرًا المبيعات لمرة واحدة. كلما ارتفعت حصة ARR أصبح التدفق النقدي أكثر قابلية للتوقع."
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p22",
+      "en": "**How do I assess whether revenues are genuinely stable?**",
+      "ar": "**كيف أقيّم ما إذا كانت الإيرادات مستقرة فعلًا؟**"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p23",
+      "en": "Combine several metrics: the share of recurring revenue, contract lengths, churn (customer attrition) and NRR (net revenue retention). A high ARR share means little if churn is 30 percent — customers then leave as fast as they arrive. Read the notes to the accounts on revenue structure, retention and customer relationships in the annual report, and compare operating cash flow between economic boom and recession to gauge cyclicality. The course [Revenue Stability (V12)](/kurser/v12-intaktsstabilitet) practises the method step by step.",
+      "ar": "اجمع بين عدة مقاييس: حصة الإيرادات المتكررة، وأطوال العقود، ومعدل فقدان العملاء، وصافي الاحتفاظ بالإيرادات (NRR). فحصة ARR المرتفعة لا تعني الكثير إذا كان معدل الفقدان 30 بالمئة — إذ يغادر العملاء بالسرعة نفسها التي يأتون بها. اقرأ الإيضاحات المتممة للقوائم المالية حول هيكل الإيرادات والاحتفاظ والعلاقات مع العملاء في التقرير السنوي، وقارن التدفق النقدي التشغيلي بين فترات الرواج والركود لقياس الحساسية الدورية. تدربك الدورة التدريبية [استقرار الإيرادات (V12)](/kurser/v12-intaktsstabilitet) على هذه الطريقة خطوة بخطوة."
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p24",
+      "en": "**Are there companies where volatile revenues are still normal?**",
+      "ar": "**هل هناك شركات يكون تقلب الإيرادات فيها أمرًا طبيعيًا؟**"
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p25",
+      "en": "Yes — cyclical industries such as mining, steel and construction naturally swing with the economic cycle, and that is part of their business model. There the question becomes how the company handles the swings: does it keep debt low and build cash buffers in good years? The AKM1 model therefore adjusts the stability assessment for cyclicality — a steel company with 30 percent revenue variation can be stable in its context, while the same variation at a pharmaceutical company would be a warning sign.",
+      "ar": "نعم — القطاعات الدورية مثل التعدين والصلب والإنشاءات تتأرجح الإيرادات فيها بطبيعتها مع الدورة الاقتصادية، وهذا جزء من نموذج عملها. وهناك يصبح السؤال: كيف تدير الشركة هذه التأرجحات؟ هل تحافظ على دين منخفض وتبني احتياطيات نقدية في السنوات الجيدة؟ لذلك يعدّل نموذج AKM1 تقييم الاستقرار وفق الحساسية الدورية — فشركة صلب بتفاوت إيرادات 30 بالمئة قد تكون مستقرة في سياقها، بينما كان التفاوت نفسه لدى شركة أدوية علامة تحذير."
+    },
+    {
+      "nyckel": "v12-intaktsstabilitet-analys:p26",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p18",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p19",
+      "en": "**What makes a patent a competitive advantage — a moat?**",
+      "ar": "**ما الذي يجعل البراءة تمثل الميزة التنافسية — أي الخندق التنافسي؟**"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p20",
+      "en": "A patent gives the company exclusive legal rights to a solution for up to 20 years, making it the most concrete form of economic moat — the protection that stops competitors from eroding the company's profitability. Pharmaceutical companies build entire business models on patent protection. The difference from brands is that a patent is written into law and time-limited, while a brand can last for decades but lacks the same legal protection.",
+      "ar": "تمنح البراءة الشركة حقًا قانونيًا حصريًا في حلٍّ ما لمدة تصل إلى 20 عامًا، ما يجعلها أكثر أشكال الخندق التنافسي ملموسية — أي الحماية التي تمنع المنافسين من التآكل في ربحية الشركة. تبني شركات الأدوية نماذج عملها بأكملها على حماية البراءات. والفرق عن العلامات التجارية أن البراءة مدوّنة في القانون ومحددة زمنيًا، بينما قد تدوم العلامة التجارية عقودًا لكنها تفتقر إلى الحماية القانونية نفسها."
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p21",
+      "en": "**Where do I find information about a company's patents in the annual report?**",
+      "ar": "**أين أجد معلومات عن براءات الشركة في التقرير السنوي؟**"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p22",
+      "en": "Look in three places. The balance sheet shows intangible non-current assets — but note that internally developed patents are rarely capitalised, so the balance sheet often understates the value of intellectual property. The note on intangible assets shows depreciation and remaining values by category. The CEO statement and investor presentations often report patent counts, geographic coverage and pipeline status in running text.",
+      "ar": "انظر في ثلاثة مواضع. تعرض الميزانية العمومية الأصول الثابتة غير الملموسة — لكن لاحظ أن البراءات المطوّرة داخليًا نادرًا ما تُرسمل، لذا تقلل الميزانية غالبًا من قيمة الملكية الفكرية. ويبيّن إيضاح الأصول غير الملموسة الإهلاكات والقيم المتبقية حسب الفئة. أما كلمة الرئيس التنفيذي وتقديمات المستثمرين فتذكر غالبًا عدد البراءات والتغطية الجغرافية وحالة خط المنتجات في النص الجاري."
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p23",
+      "en": "**What is the difference between patent applications and granted patents?**",
+      "ar": "**ما الفرق بين طلبات البراءات والبراءات الممنوحة؟**"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p24",
+      "en": "A big difference — and a common rhetorical trick is to count applications as patents. Of all applications, 30–60 percent are granted, and of those granted, 30–50 percent are invalidated if challenged in court. A company talking about 500 patent applications may in reality have 200 granted, of which 100 would hold up in court. Always ask for granted patents and the grant rate — the share of applications that are granted.",
+      "ar": "فرق كبير — والحيلة البلاغية الشائعة هي عدّ الطلبات بوصفها براءات. من إجمالي الطلبات يُمنح 30–60 بالمئة، ومن البراءات الممنوحة يُبطل 30–50 بالمئة إذا طُعن فيها أمام المحاكم. فقد تتحدث شركة عن 500 طلب براءة بينما لديها في الواقع 200 براءة ممنوحة، منها 100 فقط قد تصمد في المحكمة. اسأل دائمًا عن البراءات الممنوحة ومعدل المنح — أي نسبة الممنوح من الطلبات."
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p25",
+      "en": "**How long does patent protection last — and what happens when it expires?**",
+      "ar": "**كم تدوم حماية البراءة، وماذا يحدث عندما تنتهي؟**"
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p26",
+      "en": "Patent protection lasts in principle 20 years from filing, but the effective life is often shorter because approval processes, such as drug approvals, take several years. When the patent expires, competitors can launch copies — in pharmaceuticals this leads to sharp price falls when generics arrive. AKM1 therefore assesses patents by remaining lifespan and breadth, and warns of the patent-moat illusion: companies with many patents expiring within just a few years. The course [Patents & Intangible Rights (V13)](/kurser/v13-patent-ip) explores the reasoning further.",
+      "ar": "تدوم حماية البراءة من حيث المبدأ 20 عامًا من تاريخ الطلب، لكن العمر الفعلي غالبًا أقصر لأن عمليات الموافقة، مثل اعتماد الأدوية، تستغرق سنوات. وعندما تنتهي البراءة يمكن للمنافسين إطلاق نسخ مقلدة — وفي قطاع الأدوية يقود ذلك إلى هبوط حاد في الأسعار عند دخول الأدوية الجنيسة. لذلك يقيّم نموذج AKM1 البراءات حسب العمر المتبقي والاتساع، ويحذّر من وهم الخندق التنافسي للبراءات: الشركات ذات البراءات الكثيرة التي تنتهي خلال سنوات قليلة. ويتعمق مقرر الدورة التدريبية [البراءات والحقوق غير الملموسة (V13)](/kurser/v13-patent-ip) في هذا التحليل."
+    },
+    {
+      "nyckel": "v13-patent-ip-analys:p27",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p18",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p19",
+      "en": "**What makes a brand a competitive advantage?**",
+      "ar": "**كيف تصبح العلامة التجارية الميزة التنافسية للشركة؟**"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p20",
+      "en": "A strong brand gives pricing power — the ability to charge more than competitors without losing customers. When customers choose the brand again and again despite cheaper alternatives, as with Apple or Coca-Cola, the company's margins are protected in a way that neither factories nor patents can achieve. The brand is cognitively protected: it lives in customers' associations rather than in statute, and can therefore outlast a patent — but also vanish faster in a crisis.",
+      "ar": "تمنح العلامة التجارية القوية القوة التسعيرية — أي القدرة على تحصيل سعر أعلى من المنافسين دون فقدان العملاء. عندما يختار العملاء العلامة التجارية مرارًا رغم وجود بدائل أرخص، كما مع آبل أو كوكاكولا، تُحمى هوامش الشركة بطريقة لا تستطيعها المصانع ولا البراءات. فالعلامة التجارية محمية إدراكيًا: تعيش في ذهن العملاء لا في النصوص القانونية، ولذلك قد تعيش أطول من براءة اختراع — لكنها قد تختفي أسرع في الأزمات."
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p21",
+      "en": "**How do you measure brand strength in practice?**",
+      "ar": "**كيف تُقاس قوة العلامة التجارية عمليًا؟**"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p22",
+      "en": "The brand is partly hidden in the accounting — internally developed brands are not capitalised, so Coca-Cola's brand is booked at only a fraction of its estimated value. Look for indicators instead: pricing power (can the company charge a premium?), customer loyalty (low churn, high revenue retention), NPS and brand awareness in the CEO statement and investor presentations. AKM1 combines the brand assessment with gross margin (V07) — a strong brand together with a high gross margin suggests genuine pricing power.",
+      "ar": "العلامة التجارية مخفية جزئيًا في المحاسبة — فالعلامات المطوّرة داخليًا لا تُرسمل، لذا تُسجَّل علامة كوكاكولا بجزء يسير فقط من قيمتها المقدرة. ابحث عن المؤشرات بدلًا من ذلك: القوة التسعيرية (هل تستطيع الشركة تحصيل علاوة سعر؟)، وولاء العملاء (تدنّي فقدان العملاء وارتفاع الاحتفاظ بالإيرادات)، ومؤشر NPS والوعي بالعلامة في كلمة الرئيس التنفيذي وتقديمات المستثمرين. يجمع نموذج AKM1 بين تقييم العلامة التجارية والهامش الإجمالي (V07) — فالعلامة القوية مع الهامش الإجمالي المرتفع يشير إلى قدرة تسعير حقيقية."
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p23",
+      "en": "**What is brand erosion — and how do I detect it?**",
+      "ar": "**ما هو تآكل العلامة التجارية، وكيف أكتشفه؟**"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p24",
+      "en": "Brand erosion means the brand's power quietly weakens over several years. Three warning signs: falling NPS over time, shrinking price premium (the company must cut prices to keep volume) and shifting customer demographics. H&M's development in 2015–2018 is a classic example: satisfaction scores fell, the premium over low-price competitors narrowed and loyal customers switched to Zara — the brand eroded while the company still saw itself as a fashion giant.",
+      "ar": "تآكل العلامة التجارية يعني أن تضعف قوة العلامة التجارية بصمت على مدى سنوات. ثلاث علامات تحذيرية: تراجع مؤشر NPS مع الوقت، وتقلّص علاوة السعر (اضطرار الشركة لخفض الأسعار للحفاظ على الحجم)، وتحوّل التركيبة السكانية للعملاء. وتطوّر شركة H&M بين 2015 و2018 مثال كلاسيكي: انخفضت مؤشرات الرضا وضاقت علاوة السعر على المنافسين رخيصي السعر وانتقل العملاء المخلصون إلى زارا — تآكلت العلامة التجارية بينما كانت الشركة لا تزال ترى نفسها عملاق أزياء."
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p25",
+      "en": "**Is a strong brand always better than other moats?**",
+      "ar": "**هل العلامة التجارية القوية دائمًا أفضل من الخندق التنافسي الآخر؟**"
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p26",
+      "en": "No — every moat has its own nature. Patents are legally strongest but expire; network effects grow stronger with size; brands are the hardest to build because it takes decades, but can last for generations. Peter Lynch disliked relying solely on patents precisely because they are time-limited, while Benjamin Graham preferred measurable assets over intangible ones. In an educational context, the point is to identify which type of moat a company has — and whether it holds over time. The course [Brand & Customer Loyalty (V14)](/kurser/v14-varumarke) shows how.",
+      "ar": "لا — فطبيعة الخندق التنافسي تختلف من نوع لآخر. فالبراءات أقوى قانونيًا لكنها تنتهي، وأثر الشبكة يتقوى مع الحجم، والعلامة التجارية أصعب ما يُبنى لأنها تستغرق عقودًا لكنها قد تدوم أجيالًا. لم يحب بيتر لينش الاعتماد على البراءات وحدها لأنها محدودة زمنيًا، بينما فضّل بنجامين غراهم الأصول القابلة للقياس على غير الملموسة. في السياق التعليمي، الغاية هي تحديد نوع الخندق التنافسي الذي تملكه الشركة — وهل يصمد عبر الزمن. وتعرض الدورة التدريبية [العلامة التجارية وولاء العملاء (V14)](/kurser/v14-varumarke) كيفية ذلك."
+    },
+    {
+      "nyckel": "v14-varumarke-analys:p27",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا هو التحليل المالي التعليمي، لا نصيحة استثمارية._"
+    }
+  ]
+}

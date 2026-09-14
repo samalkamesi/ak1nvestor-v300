@@ -154,15 +154,19 @@ Agent-anrop, 4+ via fabriksmanifest.
   SAMMANSTALLNING-2026-09-14.md. Publicering förblir kundens (R2).
   Spårrotation enligt evighetskatalogen (149 SEO-sidor → 150 dataset →
   151 granskning).
-- ▶ VÅG 152 (bokad rond 20): kvartalsrapportserien förbereds (Q3-
-  rapporterna anländer oktober) — mallar + automationsunderlag; fas B
-  av dataset-teman (AKM-poäng-ytor) väntar fortfarande A2-omprövning.
-- ▶ VÅG 157 (bokad rond 22, spår 8 kvalitet): gränssnittsvaktens sidlista
-  genereras ur sitemap.xml i stället för statisk lista — rotorsaksfix
-  (bevisat gap: 130 nya /dataset-aspektsidor mäts aldrig av cron-svepet);
-  bokför även rond-21-subagentens riktade aspektsvep om rapport finns i
-  data/vakten/. Bevis: svep som täcker aspektsidorna + 0 fynd (eller
-  fynd fixade till grön).
+- ◐ VÅG 152 (fas 1 klar, fas 2 DISPATCHAT 2026-09-15 ~01:20): kvartals-
+  rapportserien — kartan (194e463a) + fabriksmanifestet v152-fas2-kalender
+  i prod ko/ (10 branschuppgifter à 10 bolag = 100 bolag, verifierad
+  täckning; rappFÖNSTER endast, aldrig siffror/råd). Köas automatiskt
+  efter mega-manifestet (g1–g7). Fas 3 (läsårt-paket per rapportdag)
+  startar när fas 2-kalendern levererar.
+- ◐ VÅG 157 (kod LEVERERAD 73c4d6b3, driftbevis väntar): mätjournal i
+  granssnittsvakt.mjs — aldrig-mätta sidor väljs först, SIDOR_MAX 16→24;
+  koden lever i prod (JOURNAL_FIL-logiken verifierad i prod-trädet
+  2026-09-15). Återstående bevis: data/vakten/vakt-sidjournal.json skapas
+  vid nästa cron-vaktkörning (~03:01) + fulltäckande svep över 130
+  aspektsidor = 0 fynd (eller fixade). Stäng vågen först när journalen
+  bevisar aspekt-täckning.
 - ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
   (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
   API-kostnad; regressionstest mot befintliga svar. R2-säker.

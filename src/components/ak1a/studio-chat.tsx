@@ -9130,6 +9130,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
             <Target className="h-3.5 w-3.5 shrink-0" />
             Mål
+            {mal?.startsWith("KUNDUPPDRAG") && (
+              <span
+                className="rounded-full bg-[#58A6FF]/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-[#58A6FF]"
+                title="Din order är maskinens prioriterade mål — arbetas tills 100 % klart (uppdragsmotorn, våg 156); klart bokförs i uppdragsloggen"
+              >
+                📋 ORDER AKTIV
+              </span>
+            )}
             {malKör && (
               <span className="ml-auto rounded-full bg-[#238636]/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-[#3FB950]" title={`Autonom iteration ${malIteration} kör`}>
                 AKTIVT · {malIteration}
@@ -9538,6 +9546,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   <Target className="h-3.5 w-3.5 shrink-0" />
                   Mål
+                  {mal?.startsWith("KUNDUPPDRAG") && (
+                    <span className="rounded-full bg-[#58A6FF]/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-[#58A6FF]">
+                      📋 ORDER AKTIV
+                    </span>
+                  )}
                   {malKör && (
                     <span className="ml-auto rounded-full bg-[#238636]/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-[#3FB950]">
                       AKTIVT · {malIteration}

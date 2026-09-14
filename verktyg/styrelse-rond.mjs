@@ -161,7 +161,7 @@ STATUSMATNING:
 
 HÅRT LEVERANSPROTOKOLL (strikt):
 1. Denna rond MÅSTE landa MINST EN commit i prod — taggad [organ:X] i commit-ämnet (X = ditt organs bokstav) — ELLER rapportera EXAKT blocker (en mening) i worklog. Prat utan commit = dött organ nästa evolution.
-2. PARALLELL-DOCTRIN (§ 4): dispatcher upp till 9 samtidiga mikroagenter med TIGHT avgränsade uppgifter (EN fil/EN funktion var) och exklusivt filägarskap — vågor kedjas direkt när en frigörs.
+2. PARALLELL-ARKITEKTUR (våg 146, § 4): ≤3 Agent-tool-anrop direkt i sessionen; ALL storskalig parallellism (4+) går via AGENTFABRIKEN — skriv manifest i data/vakten/agentfabrik/ko/<id>.json (se AGENTS.md § AGENTFABRIKEN) med EN fil/EN funktion per uppgift + exklusivt filägarskap; fabriken kör omgångar om 3 och kedjar automatiskt. ALDRIG direkta vågor över 3 — de dör tyst (bevisat 2026-09-14).
 3. FART: rutinuppdrag körs med tankestyrka "nothink" (POST session tankestyrka) — reservera "high" för arkitekturbeslut.
 4. Självhelning: fastnar en pump (mål/hjärtslag/vakt) är reparationen rondens HÖGSTA prioritet (§ 3).
 5. PROMPT-EVOLUTION v2: om ett organ FÖDDES denna rond — skriv ett FÖRÄDLAT
@@ -172,7 +172,8 @@ HÅRT LEVERANSPROTOKOLL (strikt):
 6. LÅNGTIDSMINNE (våg 117): appenda ÉN rad till data/vakten/beslutsminne.jsonl
    — {"ts":"<iso>","rond":<n>,"beslut":"<vågens kärnbeslut i en mening>","landat":"<commit-hash ELLER 'nej'>"}.
    Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
-7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.`;
+7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.
+8. EVIGHETSMOTORN (våg 147 — kunddirektiv "bygga vidare så den aldrig slocknar igen"): kontrollera att PIPELINE-KO.md har MINST 3 KOMMANDE vågar bokade; om tunn/tom — fyll på ur data/infra/evighetskatalog.md (rotera spår, aldrig samma två ronder i rad; granskningskön = förstahandsval när aktuell) FÖRE du verkställer. Organismen får aldrig stå utan nästa våg.`;
 
   // VÅG 133c — FETCH-RETRY: en transient app-server-blipp (deploy-omstart,
   // tillfällig belastning) ska ALDRIG kosta en hel 3-timmarsrond. Bevis:

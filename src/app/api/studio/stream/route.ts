@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { readFileSync } from "node:fs";
 
 import { requireAdmin } from "@/lib/admin-auth";
 import {
@@ -7,6 +8,7 @@ import {
   hamtaStudioTransport,
   lasAllaInteraktioner,
   lasAterkoppling,
+  lasHuvudtradSessioner,
   lasStudioSessionskarta,
   markeraSessionSlut,
   markeraSessionStart,
@@ -18,6 +20,45 @@ import {
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+// ── VÅG 141 — STÅENDE MÅL + TRÅDENS ARV ──────────────────────────────────────
+// Kundbevis 2026-09-14 (tre skärmbilder): panelen "Inget mål satt — agenten
+// arbetar bara när du chattar" + kort historikalös tråd + agent som lovar och
+// stannar. ROT: varje pm2-omstart (deploy) nollställer målet i processminnet
+// — upp till 10 min innan hjärtat återställer — och en NY session föds utan
+// trådens minne. KUR (mekanisk, i denna rutt): när huvudtrådens prompt kommer
+// och målet är HELT borta (null, ej pausat) ⇒ (a) stående mål återaktiveras
+// DIREKT, (b) prompten prefixas en gång med TRÅDENS ARV (worklog-svans +
+// beslutsminne-svans) och agenten ombeds inleda med "MINNE LADDAT".
+const STANDE_MAL_141 =
+  "24/7-STANDBY enligt STYRELSE-REGELVERKET (data/forskning/STYRELSE-REGELVERK.md): " +
+  "arbeta kontinuerligt system för system — landa minst en commit per rond taggad " +
+  "[organ:X], verkställ kön (PIPELINE-KO), kör vakten till 0 fynd, rapportera i " +
+  "worklog och TA NÄSTA UPPGIFT — repetera tills kunden pausar.";
+
+function lasArvSvans(sokvag: string, antalRader: number): string {
+  try {
+    const rader = readFileSync(`${process.cwd()}/${sokvag}`, "utf8")
+      .split("\n")
+      .filter((r) => r.trim().length > 0);
+    return rader.slice(-antalRader).join("\n").slice(0, 2_500);
+  } catch {
+    return "";
+  }
+}
+
+function byggArvBlock(): string {
+  const worklog = lasArvSvans("worklog.md", 6);
+  const beslut = lasArvSvans("data/vakten/beslutsminne.jsonl", 3);
+  return [
+    "TRÅDENS MINNE (automatiskt injicerat — du har arbetat före detta; fortsätt tråden, repetera inte klart arbete):",
+    worklog ? `SENASTE WORKLOG:\n${worklog}` : "",
+    beslut ? `SENASTE BESLUT (beslutsminnet):\n${beslut}` : "",
+    "Börja svaret med 'MINNE LADDAT' + en rad om var tråden står; verkställ sedan uppdraget.",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+}
 
 /**
  * /api/studio/stream — BRYGGAN mellan /studio-webchatten och ZCode-agenten
@@ -172,6 +213,20 @@ export async function GET(req: NextRequest) {
       transport.lasKontext(),
       lasAterkoppling(), // VÅG 87 H1: senast aktiva session + historik + mål
     ]);
+    // VÅG 145 — KÄLLFIX: aktivtMal lästes ur KART-transports (som dör vid
+    // omstarter) medan mål-loopen lever på DEFAULT-transporten — kundbevis:
+    // GET svarade aktivtMal=null samtidigt som /mal/status var grön, vilket
+    // dödade både tråd-preferensen och live-pollen. Sanningen läses nu från
+    // den LEVANDE transporten (bär sessionId sedan våg 139).
+    let aktivtMalSanning = aterkoppling.aktivtMal;
+    try {
+      const m = transport.malStatus();
+      if (m.mal !== null || m.aktiv) {
+        aktivtMalSanning = { ...m, sessionId: transport.sessionId() ?? undefined };
+      }
+    } catch {
+      /* kart-värdet kvarstår */
+    }
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
@@ -187,7 +242,10 @@ export async function GET(req: NextRequest) {
       // dess historik (levande transport > kartan/disk) + mål-snapshot.
       senastAktivSessionId: aterkoppling.senastAktivSessionId,
       senastAktivHistorik: aterkoppling.senastAktivHistorik,
-      aktivtMal: aterkoppling.aktivtMal,
+      // VÅG 145: mål-sanningen ur levande transport + HUVUDTRÅDENS BOK —
+      // serverns sanna sessionlista för tråden (klienten behöver inte gissa).
+      aktivtMal: aktivtMalSanning,
+      tradSessioner: lasHuvudtradSessioner(),
     });
   } catch (fel) {
     return jsonSvar({
@@ -275,6 +333,41 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // VÅG 141+143 — MÅLET DÖR ALDRIG + ALL NY TRÅDSESSION FÖDS MED MINNE:
+  // (a) prompt mot huvudtråden + målet HELT borta (null, ej pausat) ⇒ stående
+  //     mål aktiveras DIREKT (gapet till hjärtats :x1 stängs).
+  // (b) VÅG 143: är transportens session NY för tråden (omstart/churn — dvs.
+  //     inte den senast kända aktiva) ⇒ prompten prefixas med TRÅDENS ARV
+  //     (worklog-svans + beslutsminne + 'MINNE LADDAT') — kundbevis: nya
+  //     sessioner var historikalösa så länge målet råkade leva, och agenten
+  //     "visste inget" fast allt fanns på disk.
+  try {
+    const st = transport.malStatus();
+    let nyTradSession = false;
+    if (!sessionId) {
+      try {
+        const atk = await lasAterkoppling();
+        nyTradSession =
+          typeof atk.senastAktivSessionId === "string" &&
+          atk.senastAktivSessionId.length > 0 &&
+          atk.senastAktivSessionId !== sessionsId;
+      } catch {
+        nyTradSession = false;
+      }
+    }
+    if (!sessionId && st.mal === null && !st.pausad) {
+      await transport.sattMal(STANDE_MAL_141);
+    }
+    if (nyTradSession) {
+      const arv = byggArvBlock();
+      if (arv) {
+        prompt = `${arv}\n\n───\n\n${prompt}`;
+      }
+    }
+  } catch {
+    /* sattMal kan vägra vid pågående turn — hjärtat täcker då */
+  }
+
   const stream = new ReadableStream<Uint8Array>({
     async start(kontroll) {
       const skrivare = new TextEncoder();
@@ -307,7 +400,21 @@ export async function POST(req: NextRequest) {
       // klient-frånkoppling (req.signal abort) SPARAS svaret för sessions-
       // kartan men SKICKAS inget (lyssnaren är i praktiken avregistrerad),
       // och polling nedan pausas.
+      // VÅG 142 — PROMPT-KÖN: mål-loopen arbetar nästan alltid (24/7) på
+      // huvudtrådens session — kundens prompt kan studsas med -32010 ("en
+      // prompt kör redan") som FEL-EVENT (transporten kastar ej). Tidigare:
+      // studsen nådde klienten som ett tyst fel och meddelandet "låg
+      // obesvarat" = kundens "allt stannar när jag går ifrån". Nu: studsen
+      // fångas, klienten får kö-status, och prompten skickas OM (15 s
+      // intervall, tak 8 min) tills agenten är ledig — svaret kommer ALLTID.
+      let upptagenStuds = false;
+      const arUpptagen = (m: string) =>
+        m.includes("-32010") || m.toLowerCase().includes("kör redan") || m.toLowerCase().includes("pågår redan");
       const skickaMedVakt = (event: Parameters<typeof sseRad>[0]) => {
+        if (event.typ === "fel" && typeof event.meddelande === "string" && arUpptagen(event.meddelande)) {
+          upptagenStuds = true;
+          return; // studsen syns ej — prompt-kön tar över
+        }
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
         if (req.signal.aborted) return;
         skicka(event);
@@ -324,11 +431,23 @@ export async function POST(req: NextRequest) {
         // HELA svaret via GET. (Tidigare beteende: abort ⇒ session/stop =
         // arbetet dog — kundens "den dör när jag hoppar till nästa sida".)
         // Transportens EV. signal förblir dess interna sak (10-min-taket).
-        if (bilder.length > 0) {
-          await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
-        } else {
-          await transport.skicka(prompt, skickaMedVakt);
-        }
+        const KO_TAK_MS = 8 * 60_000;
+        const koStart = Date.now();
+        do {
+          upptagenStuds = false;
+          if (bilder.length > 0) {
+            await transport.skickaMedBild(prompt, bilder, skickaMedVakt);
+          } else {
+            await transport.skicka(prompt, skickaMedVakt);
+          }
+          if (upptagenStuds && Date.now() - koStart < KO_TAK_MS) {
+            skickaMedVakt({
+              typ: "status",
+              text: "Agenten avslutar sitt pågående arbete — din prompt är köad och körs strax (automatiskt)…",
+            });
+            await new Promise((r) => setTimeout(r, 15_000));
+          }
+        } while (upptagenStuds && Date.now() - koStart < KO_TAK_MS);
         // VÅG 90 K1: polling BARA för en levande klient — efter abort ställer
         // servern inga fler protokollsfrågor (kontext/diff) i onödan.
         if (req.signal.aborted) return;

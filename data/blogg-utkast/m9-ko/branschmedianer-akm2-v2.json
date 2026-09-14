@@ -1,0 +1,101 @@
+{
+  "id": "4cb5cb0f-1f31-4f20-aabc-6883305fbee9",
+  "created_at": "2026-09-11T10:16:34.604876+00:00",
+  "av": "m9-fabriken",
+  "slug": "branschmedianer-akm2",
+  "titel": "Branschmedianer september 2026 — varje branschs AKM2-profil (utkast)",
+  "fabrik": {
+    "seed": "904e0fcc917798642aa9bd0a1c44d04b",
+    "manad": "2026-09",
+    "serie": "branschmedianer",
+    "kallor": [
+      {
+        "fil": "data/portfolj-system/korstabell-grund.json",
+        "md5": "33fe62a0c617e8339024851c6361bd6a",
+        "datum": "2026-09-03"
+      },
+      {
+        "fil": "data/rapporter/vagvalidering-SENASTE.md",
+        "md5": "b7194627c055d2ddb5503009a544cff8",
+        "datum": "2026-09-04"
+      },
+      {
+        "fil": "data/varumarke.json",
+        "md5": "9b906e4204a759db24c2c78b4b332e18"
+      }
+    ],
+    "urdrag": [
+      {
+        "datum": "2026-09-03",
+        "varde": "100 bolag",
+        "notering": "korstabellens universum (10 branscher × 10)"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "teknik median 61",
+        "notering": "n=10 mätta; spridning 37–78"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "konsument median 60,5",
+        "notering": "n=10 mätta; spridning 19–70"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "industri median 60",
+        "notering": "n=10 mätta; spridning 51–85"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "kommunikation median 60",
+        "notering": "n=10 mätta; spridning 39–68"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "energi median 58",
+        "notering": "n=10 mätta; spridning 31–77"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "hälsa median 56,5",
+        "notering": "n=10 mätta; spridning 46–66"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "fastighet median 50",
+        "notering": "n=10 mätta; spridning 42–60"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "tillväxt median 43",
+        "notering": "n=10 mätta; spridning 25–58"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "material median 42",
+        "notering": "n=10 mätta; spridning 31–79"
+      },
+      {
+        "datum": "2026-09-03",
+        "varde": "finans median 41",
+        "notering": "n=10 mätta; spridning 30–80"
+      }
+    ],
+    "version": "m9-fabrik-v2",
+    "kontroll": {
+      "rubriker": 5,
+      "strukturFel": 0,
+      "disclaimerSist": true,
+      "kontrolleraTextFel": 0,
+      "kontrolleraTextVarningar": 0
+    },
+    "notering": "m9-fabrikens granskningskö: automatiskt utkast — MÄNSKLIG GRANSKNING via panelen före statusbyte/publicering (våg 66-regeln). Granskningsunderlag = urdrag (värde+datum) + källor (fil+md5) + detta kvitto.",
+    "genereradUr": "verktyg/m9-fabrik.mjs",
+    "kandidatMd5": "0431dd6c885861fa3b03fc1c70f6eb8a"
+  },
+  "status": "utkast",
+  "ingress": "AKM2-medianen per bransch i 100-bolagsuniversum, underlag 2026-09-03: teknik 61, konsument 60,5, industri 60, kommunikation 60 med flera — antal mätta, spridning och gränsregeln redovisas öppet.",
+  "version": 2,
+  "omslagUrl": null,
+  "bodyMarkdown": "Medianen per bransch i korstabellens 100-bolagsuniversum, underlag skapat 2026-09-03: **teknik 61** · **konsument 60,5** · **industri 60** · **kommunikation 60** · **energi 58** · **hälsa 56,5** · **fastighet 50** · **tillväxt 43** · **material 42** · **finans 41** (AKM2-poäng, median över gruppens mätta bolag). Högst median: teknik 61. Lägst: finans 41.\n\n## Så räknas medianen\n\nAKM2 är AKM1:s 20 variabler omviktade enligt viktprofilen akm2-2026 — samma komposit som korstabellens rader bär. Medianen följer peer-motorns kontrakt: gruppen är korstabellens kanoniska branscher (10 bolag var), medianen räknas över gruppens mätta bolag, jämnt antal ger medelvärdet av de två mittersta, och en grupp under 5 mätta bolag redovisas aldrig. Urvalsberoendet syns i referensen: 2026-09-03 · 100-bolagsuniversum.\n\n## Varje bransch — median, spridning och ytterligheter\n\n- **teknik** — median **61** · 10 mätta av 10 · spridning 37–78 (lägst Sinch, högst Logitech International)\n- **konsument** — median **60,5** · 10 mätta av 10 · spridning 19–70 (lägst Electrolux, högst H & M Hennes & Mauritz)\n- **industri** — median **60** · 10 mätta av 10 · spridning 51–85 (lägst ASSA ABLOY, högst Industrivärden)\n- **kommunikation** — median **60** · 10 mätta av 10 · spridning 39–68 (lägst Warner Bros. Discovery, högst Tele2)\n- **energi** — median **58** · 10 mätta av 10 · spridning 31–77 (lägst RWE, högst Chevron)\n- **hälsa** — median **56,5** · 10 mätta av 10 · spridning 46–66 (lägst Fresenius, högst Novo Nordisk)\n- **fastighet** — median **50** · 10 mätta av 10 · spridning 42–60 (lägst Prologis, högst Diös Fastigheter)\n- **tillväxt** — median **43** · 10 mätta av 10 · spridning 25–58 (lägst Polestar Automotive Holding UK, högst Truecaller)\n- **material** — median **42** · 10 mätta av 10 · spridning 31–79 (lägst Stora Enso, högst Newmont)\n- **finans** — median **41** · 10 mätta av 10 · spridning 30–80 (lägst Nordea Bank, högst Investor)\n\nEn jämförbarhetsnot: Industrivärden (industri) och Investor (finans) är investmentbolag — deras nyckeltal speglar innehavens marknadsvärden, inte en driftsrörelse, så finansgruppens median blandar två bolagsformer. Det är information, inte fel.\n\n## Ändringen sedan senaste publicerade utgåvan\n\nIngen branschmedian rörde sig sedan den publicerade utgåvan — oförändrat (att inget rörde sig är också ett utfall).\n\n## Fördjupa dig\n\n- [Forskningsbiblioteket](/forskningsbiblioteket) — varje kandidatbolags AKM2-profil och urvalsregel\n- [Kursen V07 bruttomarginal](/kurser/v07-bruttomarginal) — lönsamhetsvariabeln bakom kompositen\n- [Kursen V09 ROE](/kurser/v09-roe) — avkastning på eget kapital\n\n## Granskningsunderlag — maskinens kvitto\n\n_Verifiera talen mot källorna nedan och ta sedan BORT detta avsnitt före export — granskaren äger publiceringen, maskinen levererar bara kvittot._\n- **Determinism:** fabrik m9-fabrik-v2 · seed `904e0fcc917798642aa9bd0a1c44d04b` (md5 av källfilernas md5 + månadsnyckel) · mall-md5 `7b4a313a35ac6fb77204db4e176eb1a9` (md5 av titel+ingress+mall-body — samma underlag ger byte-identiskt utkast).\n- **Källor (läs-only):** data/portfolj-system/korstabell-grund.json (md5 33fe62a0c617e8339024851c6361bd6a, daterad 2026-09-03) · data/rapporter/vagvalidering-SENASTE.md (md5 b7194627c055d2ddb5503009a544cff8, daterad 2026-09-04) · data/varumarke.json (md5 9b906e4204a759db24c2c78b4b332e18).\n- **Dataurdrag (värde · datum · notering):**\n  - 100 bolag · 2026-09-03 · korstabellens universum (10 branscher × 10)\n  - teknik median 61 · 2026-09-03 · n=10 mätta; spridning 37–78\n  - konsument median 60,5 · 2026-09-03 · n=10 mätta; spridning 19–70\n  - industri median 60 · 2026-09-03 · n=10 mätta; spridning 51–85\n  - kommunikation median 60 · 2026-09-03 · n=10 mätta; spridning 39–68\n  - energi median 58 · 2026-09-03 · n=10 mätta; spridning 31–77\n  - hälsa median 56,5 · 2026-09-03 · n=10 mätta; spridning 46–66\n  - fastighet median 50 · 2026-09-03 · n=10 mätta; spridning 42–60\n  - tillväxt median 43 · 2026-09-03 · n=10 mätta; spridning 25–58\n  - material median 42 · 2026-09-03 · n=10 mätta; spridning 31–79\n  - finans median 41 · 2026-09-03 · n=10 mätta; spridning 30–80\n- **kontrolleraText-förkontroll (skript-sida, spegel av varumarke.ts, körd på mall-bodyn — det som blir kvar när kvittot tas bort):** FEL 0 · VARNINGAR 0 · struktur: 4 \"##\"-rubriker (krav ≥ 2), body ≥ 800 tecken uppfyllt, disclaimer sista rad ja.\n- **Status:** utkast i granskningskön — maskinen kan inte sätta \"granskad\" eller \"publicerad\" (statusbyte kräver människan via panelen; publicering endast via exportvägen).\n\n_Automatiskt utkast ur m9-fabrikens evergreen-serier; den fullständiga AK1A-analysen tillverkas manuellt. Pedagogisk forskning — aldrig investeringsrådgivning (lagen 2007:528)._"
+}

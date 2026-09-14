@@ -8045,9 +8045,22 @@ function v148SessionFranDb(db: V148Databas, sessionId: string): StudioHistorikPo
   return ut;
 }
 
+/**
+ * VÅG 148F u3 — mobilpayload-tak: långa agentrapporter (tiotusentals tecken)
+ * × 150-posters trådar sprängde GET-payloaden för mobila klienter (mätning
+ * 2026-09-14: 172 kB, största posten 8 917 tecken). Per post: db-lästa
+ * poster 1 500 tecken (v148Pusha), levande svans 3 000 (externLive — färsk
+ * läsning förtjänar mer). Fulltexten lever kvar i sessionens egna vy
+ * (historik-fältet) — endast tradHistorik-fältet trunkeras.
+ */
+function v148KapaText(text: string, tak: number): string {
+  if (text.length <= tak) return text;
+  return text.slice(0, tak) + "\n\n… (kapad för mobil — fulltext i sessionens egna vy)";
+}
+
 function v148Pusha(ut: StudioHistorikPost[], m: { roll: "user" | "assistant"; text: string[] }): void {
   const text = m.text.join("\n").trim();
-  if (text) ut.push({ roll: m.roll, text });
+  if (text) ut.push({ roll: m.roll, text: v148KapaText(text, 1500) });
 }
 
 // ── VÅG 150 — MÅL-PERMANENS PÅ DISK: mål-state dog med processminnet vid ────
@@ -8083,9 +8096,11 @@ function skrivMalStateTillDisk(mal: string): void {
 
 /**
  * HELA huvudtråden sammanslagen (äldst→nyst) ur databasen + levande svans.
- * bokSessioner kommer nyast-först (registreraHuvudtradSession) — reverseras
+ * bokSessioner kommer nyest-först (registreraHuvudtradSession) — reverseras
  * här. externLive = aktuell sessions LEVANDE historik (färskare än db:n under
- * pågående turn) ersätter den sessionens db-skiva.
+ * pågående turn) ersätter den sessionens db-skiva. VÅG 148F u3: per-post tak
+ * (db 1 500 / levande 3 000 tecken via v148KapaText) håller GET-payloaden
+ * mobilvänlig — fulltexten lever kvar i sessionens egna vy.
  */
 export function lasTradHistorik(
   bokSessioner: string[],
@@ -8098,12 +8113,62 @@ export function lasTradHistorik(
   for (const sid of kronologisk) {
     if (!sid.startsWith("sess_")) continue;
     if (externLive.historik.length > 0 && sid === externLive.sessionId) {
-      ut.push(...externLive.historik.slice(-120));
+      ut.push(...externLive.historik.slice(-120).map((p) => ({ ...p, text: v148KapaText(p.text, 3000) })));
       continue;
     }
     ut.push(...v148SessionFranDb(db, sid).slice(-120));
   }
   return ut.slice(-500);
+}
+
+// ── VÅG 148F u1 — SESSIONSLISTAN ur db.sqlite (desktop-Z:s sessionsvy) ──────
+// Klientens "Äldre sessioner" bygger på session/list via den LEVANDE
+// transporten — när den är tom/okänd finns ändå HELA historiken kvar i
+// zcode:s egna sessionsdatabas. Denna lista speglar samma källa som
+// desktop-Z:s sessionsvy: titel, tid, katalog + antal meddelanden.
+// Subagent-barn (prefix "sess_suba…") hålls borta — listan visar trådar.
+export interface DiskSessionPost {
+  sessionId: string;
+  title: string | null;
+  timeUpdated: number;
+  directory: string | null;
+  messageCount: number;
+}
+
+interface V148FRad {
+  sessionId: unknown;
+  title: unknown;
+  timeUpdated: unknown;
+  directory: unknown;
+  messageCount: unknown;
+}
+
+/** Sessionerna nyast-först (tak 50) ur ~/.zcode/cli/db/db.sqlite, readOnly. */
+export function lasSessionerFranDisk(): DiskSessionPost[] {
+  const db = v148OppnaDb();
+  if (!db) return [];
+  // substr-prefix i stället för LIKE — undviker jokerteckenfällan i 'sess_'.
+  const rader = db
+    .prepare(
+      "SELECT s.id AS sessionId, s.title AS title, s.time_updated AS timeUpdated, " +
+        "s.directory AS directory, COUNT(m.id) AS messageCount " +
+        "FROM session s LEFT JOIN message m ON m.session_id = s.id " +
+        "WHERE substr(s.id,1,5) = 'sess_' AND substr(s.id,1,9) <> 'sess_suba' " +
+        "GROUP BY s.id ORDER BY s.time_updated DESC LIMIT 50",
+    )
+    .all() as V148FRad[];
+  const ut: DiskSessionPost[] = [];
+  for (const rad of rader) {
+    if (typeof rad.sessionId !== "string") continue;
+    ut.push({
+      sessionId: rad.sessionId,
+      title: typeof rad.title === "string" ? rad.title : null,
+      timeUpdated: typeof rad.timeUpdated === "number" ? rad.timeUpdated : 0,
+      directory: typeof rad.directory === "string" ? rad.directory : null,
+      messageCount: typeof rad.messageCount === "number" ? rad.messageCount : 0,
+    });
+  }
+  return ut;
 }
 
 /**

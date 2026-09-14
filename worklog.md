@@ -10424,4 +10424,105 @@ sanningshierarkins skull (worklog = historik):
 stream/route.ts + src/components/ak1a/studio-chat.tsx (våg 141–145),
 verktyg/agentfabrik.mjs + evighetsmotor.mjs (146–147), pumpor-daemon.mjs.
 
+## VÅG 148 — TRÅDENS PERMANENS: "Z CODE 100 % SAMMA" (2026-09-14, KLAR OCH LIVE)
+
+Kundens mest återkommande smärta ("allt försvinner när jag uppdaterar,
+kan ej fortsätta där jag började") kuras I ROTTEN — tre rötter:
+
+1. **Hela huvudtråden ur zcode:s egna sessionsdatabas**: GET
+   /api/studio/stream svarar `tradHistorik` = HELA huvudtråden (143
+   meddelanden, hela kedjan äldst→nyast) läst ur
+   ~/.zcode/cli/db/db.sqlite — samma källa som desktop-Z läser vid
+   resume. Klientens poll ERSÄTTER aldrig vyn med en sessions korta
+   svans (det var mordvapnet i v144).
+2. **Målet föds om vid första anropet** efter omstart (mal=null ⇒
+   stående mål återarmas direkt i GET; bevis: målet var null 04:31,
+   aktivt iteration 2+ strax därefter).
+3. **Prod-synken synkar agentens arbetsyta autonomt** vid varje deploy
+   (pull --ff-only + färskt AGENTS.md) — agenten lever aldrig mer i
+   gammal kod (bevisat 2026-09-14: våg 140-hjärna vid våg 147-prod).
+
+**Fix 2 (01385080):** bundlern skrev om require-syntaken till en extern
+Url-referens den ej kan ladda (pm2-logg: "Unsupported external type Url
+for commonjs reference") — `createRequire(process.execPath)` är en ren
+funktionsref bundlern aldrig rör; db-läsaren fann databasen i prod igen
+(HOME saknas i pm2-env; fallback-kedja HOME→USERPROFILE→/home/ak1a).
+Merge d2dbc295 förenade molnagentens parallellaleveranser. tsc 0.
+
+**Bokförd av våg 149-sessionen 2026-09-14 ~08:00** (arbetsstationen
+levererade; worklog-rad skulldragen efteråt — sanningshierarkin kräver
+den). Fabriksmanifest `zcode-paritet-v148` (u1 sessionslista ur db,
+u2 trådvyn vid nerladdad agent, u3 mobilpayload-tak) dispatcherat till
+AGENTFABRIKEN — körs i omgång om 3, se statusfilen.
+
+## VÅG 149 — VAKTENS KALLSTARTSLARM KURAT + BOLAGSSIDORNA LEVERERADE (2026-09-14, KLAR)
+
+**Fix levererad + deployad (ee6a06a2, prod 05:50):** vakten larmade
+2026-09-14T0717 om /admin-timeout (>25 s domcontentloaded) i light/390
+— ENDA felfyndet av 123 kombinationer, träffade en 4 min gammal server
+(pm2-restart 07:14:58 efter deploy; alla efterföljande mätningar
+gröna = kallstartssignatur). Kur: `src/instrumentation.ts` gör servern
+SJÄLVVÄRMANDE vid varje start — [varm]-loggar för / /admin /studio
+/kurser /labb /blogg (loopback whitelistat). Ingen kund, studio eller
+vakt möter den kalla svansen efter omstart. tsc 0.
+
+**Huvudspår LEVERERAT (40f15763, prod-committen):** /bolag/{slug} — 100
+bolagssidor + register på befintlig data (SOKORDSINVENTERING-2026
+glapp 1: störst sökvolym-täckning per kodrad; "ABB nyckeltal"-
+longtail). Fabriksmanifestet zcode-paritet-v148 (u1-u3: sessionslista
+ur db, tråd utan agent, mobilpayload-tak) verifierat + mergat in före
+bygget (ba43e980) — ETT bygg per våg hölls.
+
+**KVD (slutled, hjärtslagssession 09:0x):** /bolag = 200 med 100 unika
+bolagslänkar · sitemap.xml = 100 /bolag/-URL:er · exempelssidorna
+/bolag/akrbp-ol + /bolag/cvx = 200 med korrekta SEO-titlar ("Aker BP
+ASA (AKRBP) nyckeltal — P/E 17,0x och branschjämförelse") ·
+https://lab.ak1nvestor.com/bolag = 200 · vakten GRÖN · motorer
+107/0/0. Vågen KLAR. Bokföringsskuld täcks samma session:
+SOKORDSINVENTERING-2026.md (våg 138-syntesen = våg 149:s underlag)
+committas nu — den låg otrackad sedan 2026-09-14 tidig morgon.
+
+## STYRELSEROND 20 (2026-09-14 13:45–14:00) — VÅG 150 RÄDDAD UR TYST DÖD [organ:Θ]
+
+**Fynd:** våg 150 var förberett 10:59 (manifest 14 KB, 6 uppgifter +
+kontraktsfil 247 rader) men dog vid förberedelsen: manifestet skrevs i
+agentarbetsytans ko/ — som är .gitignore:ad (data/vakten/) och ALDRIG
+når prod-trädet — och kontraktsfilen lämnades ocommittad. Prod:s ko/
+stod tom; fabriken ropade tom kärl varje :x5 sedan 11:05 (13 st
+LOCK.skrotad som fingeravtryck). Utan räddning hade sex barn kraschat
+på saknad import (kontraktet) i prod-trädet de arbetar i.
+
+**Beslut:** rädda i stället för omboka — våg 150 är köns största post
+(~150 URL:er /dataset/[bransch]/[aspekt]) och helt förberedd.
+
+**Verkställt:**
+1. Kontraktet src/lib/dataset-aspekter-kontrakt.ts committat + pushat
+   till prod (7ba25d68; kroken körde tsc = 0 fel, vilket även besvarade
+   rondens tappade tsc-svar).
+2. Manifestet cp:at till PROD:s ko/ via node-kanalen — sha256 källa=mål
+   verifierad, 6 uppgifter u1–u6 (studioskalets cp verkställde sig ej
+   på första försöket; verifiera-efter-häng-regeln räddade oss från en
+   blind omkopiering).
+3. PIPELINE-KO: våg 151 (granskningskön: 7 m9-utkast + 8 SEO-guider)
+   + våg 152 (kvartalsrapportseriens förberedelse) bokade —
+   evighetsmotorns ≥3-kommande-vågor-krav uppfyllt (28d02090).
+4. Hygien: sub-steg3/12-skript, sub-steg12-resultat + rond19-meddelande-
+   filen arkiverade till .zcode/; .tmp/ gitignore:ad (fabriksbarnens
+   KVD-engångsskript). Ytan ren.
+5. Ingen build denna rond: kontraktet importeras av ingen rutt ännu
+   (ligger utanför bygggrafen) — ETT bygg per våg vid slutledet
+   (våg 149-lärdomen).
+
+**Fabriken efteråt:** nästa rop plockar v150 → omgång 1 = u1+u2+u3
+(nyckeltal A + B + land), omgång 2 = u4+u5+u6-väntan (värderingshub +
+vit-test + fas A-rapport). Slutled (nästa rond/hjärtslag): modulregistret,
+rutten, sitemap + ETT bygg under flock.
+
+**Kanal-lärdom (permanent):** fabriksbeställningar skrivs DIREKT i
+PROD:s ko/ — arbetsytans ko/ är git-ignorerad och når aldrig fabriken;
+kodberoenden (kontraktet) MÅSTE vara pushade till prod FÖRE
+fabriksstart. Pulsvakten verifierad levande under ronden (lever=true,
+179 varv, 0 fel — rundens "kunde inte läsas" läste fel träd).
+
+
 

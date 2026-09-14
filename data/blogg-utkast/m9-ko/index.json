@@ -1,0 +1,78 @@
+{
+  "dumpad": "2026-09-14T13:10:36.991Z",
+  "kalla": "system_events type=blogg_utkast (read-only)",
+  "raderTotalt": 7,
+  "slugar": [
+    "boerspsykologi-fallstugor",
+    "branschmedianer-akm2",
+    "forskningslaget-grona-av-100",
+    "kassaflodesanalys-101",
+    "utdelningar-101",
+    "vagkartan-traffprocent"
+  ],
+  "allaRader": [
+    {
+      "id": "86eed916-3450-4f13-9183-8c547c5eb929",
+      "created_at": "2026-09-11T10:16:34.755304+00:00",
+      "slug": "boerspsykologi-fallstugor",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Börspsykologi: fallstudier september 2026 — när antaganden faller (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "bf893d89-1570-4a75-ad08-ee2cd1ddcbcb",
+      "created_at": "2026-09-11T10:16:34.708983+00:00",
+      "slug": "utdelningar-101",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Utdelningar 101 september 2026 — begreppen och utdelningsutrymmet (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "c0f67cd1-5605-4823-80c8-d1fc4f249fec",
+      "created_at": "2026-09-11T10:16:34.651002+00:00",
+      "slug": "kassaflodesanalys-101",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Kassaflödesanalys 101 september 2026 — fria kassaflöden och konverteringsgrad (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "4cb5cb0f-1f31-4f20-aabc-6883305fbee9",
+      "created_at": "2026-09-11T10:16:34.604876+00:00",
+      "slug": "branschmedianer-akm2",
+      "version": 2,
+      "status": "utkast",
+      "titel": "Branschmedianer september 2026 — varje branschs AKM2-profil (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "4c33851c-d311-4b9f-987c-c381af6106df",
+      "created_at": "2026-09-11T08:44:30.485169+00:00",
+      "slug": "vagkartan-traffprocent",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Vågkartan september 2026 — träffprocenten 52 % (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "d746f78e-5c07-494a-96e0-aebebf51a3df",
+      "created_at": "2026-09-11T08:44:30.442992+00:00",
+      "slug": "forskningslaget-grona-av-100",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Forskningsläget september 2026 — 7 gröna av 100 (utkast)",
+      "av": "m9-fabriken"
+    },
+    {
+      "id": "872995ea-36bf-4dc4-a911-e5af4d1aa26f",
+      "created_at": "2026-09-11T08:44:30.398277+00:00",
+      "slug": "branschmedianer-akm2",
+      "version": 1,
+      "status": "utkast",
+      "titel": "Branschmedianer september 2026 — varje branschs AKM2-profil (utkast)",
+      "av": "m9-fabriken"
+    }
+  ]
+}

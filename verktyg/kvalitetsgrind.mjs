@@ -1,9 +1,23 @@
 #!/usr/bin/env node
 /**
- * KVALITETSGRINDEN (våg 139) — mekanisk pre-commit-hook.
+ * KVALITETSGRINDEN (våg 139 · kuras våg 150: fail-CLOSED + referens-/värdeskiljande
+ * Supabas-mönster) — mekanisk pre-commit-hook.
  * =====================================================================
  * Kundens direktiv 2026-09-14: "KVALITETSGRINDEN är nu MEKANISK
  * (pre-commit: tsc 0 + R2-hemlighetsskydd; ALDRIG --no-verify)."
+ *
+ * KURAN 2026-09-14 (våg 150, bevisad live): två brister —
+ *   1) stagedFiler() fångade git-fel till "[]" ⇒ grinden skannade INGENTING
+ *      och passerade tyst när två git-processer raced (u8 kom igenom med en
+ *      fil grunden avslagit 60 s tidigare). Nu: fel ⇒ AVSLAG med "försök
+ *      igen"-meddelande (fail closed — ett race kostar en retry, aldrig en
+ *      tyst förbi-passering).
+ *   2) Supabas-mönstret träffade själva miljövariabelnamnet — varje legitim
+ *      process.env.SUPABASE_SERVICE_ROLE_KEY-referens (m9-fabrik.mjs,
+ *      m9-ko-dumpa.mjs, supabase-rest.ts-mönstret) blockerades, medan
+ *      riktiga värden-format saknades. Nu: referenser passerar; hårdkodade
+ *      tilldelningar (["']värde["'] ≥ 12), sb_secret_-tokens och service-
+ *      JWT-format avslås.
  *
  * Två grindar, i snabbhetsordning:
  *
@@ -11,7 +25,7 @@
  *      - förbjudna sökvägar (.env*, nyckel-/pem-filer, secrets-kataloger;
  *        *.example tillåts som dokumentation)
  *      - hemlighetsexponenter i staged innehåll (privata nycklar,
- *        Supabase service-nycklar, sk-…-API-nycklar, hårdkodade
+ *        Supabase service-nycklar som VÄRDEN, sk-…-API-nycklar, hårdkodade
  *        lösenord/nycklar/token med värde ≥ 12 tecken)
  *
  *   2. TSC 0 (endast när kod är staged — rena dataleveranser
@@ -32,19 +46,17 @@ import process from "node:process";
 
 const ROTE = process.cwd();
 
-/** Staged sökvägar (endast namn). */
+/** Staged sökvägar (endast namn). Git-fel ⇒ AVSLAG (fail closed, våg 150-kuran):
+ *  ett låst index vid samtidiga commits ger "försök igen", aldrig tyst förbi. */
 function stagedFiler() {
-  try {
-    return execFileSync("git", ["diff", "--cached", "--name-only", "--diff-filter=ACMR"], {
-      cwd: ROTE,
-      encoding: "utf8",
-    })
-      .split("\n")
-      .map((s) => s.trim())
-      .filter((s) => s.length > 0);
-  } catch {
-    return [];
-  }
+  const ut = execFileSync("git", ["diff", "--cached", "--name-only", "--diff-filter=ACMR"], {
+    cwd: ROTE,
+    encoding: "utf8",
+  });
+  return ut
+    .split("\n")
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
 }
 
 /** R2: sökvägar som ALDRIG får committas (exempelfiler tillåts). */
@@ -60,11 +72,16 @@ const FORBJUDNA_SOKVAGAR = [
 ];
 const TILLATEN_EXEMPEL = /\.example(\.|$)/i;
 
-/** R2: innehållsexponenter — [mönster, mänsklig förklaring]. */
+/** R2: innehållsexponenter — [mönster, mänsklig förklaring].
+ *  Referensen `process.env.SUPABASE_SERVICE_ROLE_KEY` är repo-konvention
+ *  (m9-fabrik.mjs, supabase-rest.ts) och träffas INTE — det är VÄRDET som
+ *  är hemligheten: tilldelning med citerat värde, sb_secret_-token eller
+ *  tvåsegments-JWT (Supabases service-/anon-nyckelformat). */
 const HEMLIGHETSMONSTER = [
   [/-----BEGIN [A-Z ]*PRIVATE KEY-----/, "privat nyckel"],
-  [/SUPABASE_(?:SERVICE|SERVICE_ROLE)_?(?:KEY|SECRET)/i, "Supabase service-nyckel"],
-  [/\bservice_role\b/i, "service_role-referens"],
+  [/SUPABASE_(?:SERVICE|SERVICE_ROLE)_?(?:KEY|SECRET)\s*[:=]\s*["'][^"']{12,}["']/i, "hårdkodad Supabase service-nyckel (tilldelat värde)"],
+  [/\bsb_secret_[A-Za-z0-9]{16,}/, "Supabase hemlig nyckel (sb_secret_-format)"],
+  [/\beyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{15,}\./, "JWT-format-nyckel (Supabase service-/anon-nyckel)"],
   [/\bsk-[A-Za-z0-9_-]{16,}/, "API-nyckel (sk-…)"],
   [/(?:api[-_]?nyckel|api[-_]?key|hemlighet|secret|token|lösenord|password)\s*[:=]\s*["'][^"']{12,}["']/i, "hårdkodad hemlighet"],
 ];
@@ -73,13 +90,23 @@ const HEMLIGHETSMONSTER = [
 const MAX_BYTE = 2 * 1024 * 1024;
 
 /** Grindens egen mönsterfil — detektorerna ligger som literals i källan och
- *  triggar på sig själva (bevisat vid våg 139:s första commit: "service_role"
- *  i mönsterregistret matchade mönstret). Innehållsskanningen hoppar över
- *  den; sökvägsgrindarna (1a) gäller den fortfarande. */
+ *  triggar på sig själva. Innehållsskanningen hoppar över den; sökvägs-
+ *  grindarna (1a) gäller den fortfarande. */
 const EXKLUDERADE_FRAN_INNEHALL = new Set(["verktyg/kvalitetsgrind.mjs"]);
 
 const fel = [];
-const staged = stagedFiler();
+
+let staged = [];
+try {
+  staged = stagedFiler();
+} catch (e) {
+  console.error("\n=== KVALITETSGRINDEN: KAN INTE LÄSA STAGED FILER — AVSLÅR (fail closed) ===");
+  console.error(`  ✗ git diff --cached misslyckades (${String(e.message).split("\n")[0]})`);
+  console.error("  Sannolikt låst index av en samtidig git-operation — vänta några sekunder");
+  console.error("  och commita igen. Grinden passerar ALDRIG tyst när den inte kan läsa.");
+  console.error("  --no-verify är FÖRBJUDET (AGENTS.md).\n");
+  process.exit(1);
+}
 
 // --- Grind 1a: förbjudna sökvägar ---
 for (const fil of staged) {
@@ -115,7 +142,7 @@ for (const fil of staged) {
 if (fel.length > 0) {
   console.error("\n=== KVALITETSGRINDEN: AVSLÅR COMMIT (R2-hemlighetsskydd) ===");
   for (const f of fel) console.error("  ✗ " + f);
-  console.error("Rätta filerna och commita igen. --no-verify är FÖRBJUDET (AGENTS.md).\n");
+  console.error("Rätta filerna och commita igen. --no-verify är FÖRBJUDET (AGENTS.md § KVALITETSGRINDEN).\n");
   process.exit(1);
 }
 

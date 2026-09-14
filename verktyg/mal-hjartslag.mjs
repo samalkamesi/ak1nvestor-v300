@@ -104,6 +104,7 @@ async function main() {
   if (!svar.ok) return logga(`STATUS-FEL ${svar.status}`);
   const status = await svar.json();
   const nu = Date.now();
+  const state = lasState();
 
   // VÅG 131 — FRUSNA TURNS: turn=true utan puls i 30+ min = hängd turn
   // (bevisat 2026-09-13: iteration fryst 2,5 h; zombie-kicken vägrar när
@@ -175,8 +176,6 @@ async function main() {
     }
     return logga("mål ej aktivt — tyst");
   }
-
-  const state = lasState();
 
   // 2) progress? (iteration ökad ELLER senasteEvent bytt ELLER turn pågår)
   const progress =

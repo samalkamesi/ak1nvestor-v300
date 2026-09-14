@@ -1,0 +1,126 @@
+{
+  "kurs": "v140-b3-gamlafaq",
+  "beskrivning": "Våg 140 B3: en/ar för befintliga FAQ-block (våg 137) på 3 multipelposter — P/B (p23-p30), PEG (p32-p39), P/S (p27-p34) — FAQ-rubrik + 3 frågor + 3 svar + ospårad disclaimer per post; ar-FAQ-rubrik kortform '## أسئلة شائعة' enligt A6:s längdkvotsfynd",
+  "poster": [
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p23",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p24",
+      "en": "**What is the P/B ratio?**",
+      "ar": "**ما هو معدل P/B؟**"
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p25",
+      "en": "The P/B ratio (Price-to-Book) is the share price divided by equity per share — equivalently, market capitalization divided by equity. It asks what the market pays per krona of book equity, and in the worked example the industrial company's share price of 50 kr and equity of 25.0 kr per share give P/B = 2.0.",
+      "ar": "معدل P/B (السعر إلى القيمة الدفترية) هو سعر السهم مقسومًا على حقوق الملكية لكل سهم — أو ما يعادلها: القيمة السوقية مقسومة على حقوق الملكية. يطرح هذا المعدل سؤالًا عمّا يدفعه السوق مقابل كل كرونة من حقوق الملكية الدفترية، وفي المثال المحسوب تعطي أسهم شركة التصنيع البالغة 50 كرونة وحقوق الملكية البالغة 25,0 كرونة لكل سهم معدل P/B = 2,0."
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p26",
+      "en": "**When is the P/B ratio useful?**",
+      "ar": "**متى يكون معدل P/B مفيدًا؟**"
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p27",
+      "en": "When the balance sheet credibly mirrors the business's real value: for banks, investment companies and capital-intensive industry, P/B is a natural standard measure. For knowledge and software companies the value sits in brand, code and employees — things that never enter the balance sheet — and there the measure is empty.",
+      "ar": "عندما تعكس الميزانية العمومية بطريقة موثوقة القيمة الحقيقية للنشاط التجاري: فبالنسبة للبنوك وشركات الاستثمار والصناعات كثيفة رأس المال يُعد معدل P/B مقياسًا معياريًا طبيعيًا. أما شركات المعرفة والبرمجيات فتكمن قيمتها في العلامة التجارية والبرمجيات والموظفين — وهي أشياء لا تدخل الميزانية العمومية أبدًا — وهناك يكون المقياس فارغًا من المعنى."
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p28",
+      "en": "**What does it mean when P/B is above or below 1?**",
+      "ar": "**ماذا يعني أن يكون معدل P/B أعلى من 1 أو أقل منه؟**"
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p29",
+      "en": "P/B above 1 is normal for a company that durably earns a return on its equity (ROE) above its cost of capital — in the example, ROE of 18 %, a cost of capital of 9 % and growth of 4 % justify a P/B of roughly 2.8. A P/B below 1.0 is not automatically cheap: the market may be pricing upcoming write-downs or a business model that destroys capital — so always read P/B together with ROE.",
+      "ar": "معدل P/B أعلى من 1 أمر طبيعي بالنسبة لشركة تحقق بشكل مستدام عائدًا على حقوق الملكية (ROE) يتجاوز تكلفة رأس المال — ففي المثال تبرر نسبة ROE البالغة 18 % وتكلفة رأس المال البالغة 9 % والنمو البالغ 4 % معدل P/B يقارب 2,8. ومعدل P/B الأقل من 1,0 لا يعني رخيصًا تلقائيًا: فقد يكون السوق يسعّر تخفيضات قيمية قادمة أو نموذج عمل يدمّر رأس المال — لذلك اقرأ دائمًا معدل P/B مع ROE."
+    },
+    {
+      "nyckel": "pb-tal-nar-jamfor-man-bokvarde-ratt:p30",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p32",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p33",
+      "en": "**What is the PEG ratio and how is it calculated?**",
+      "ar": "**ما هو معدل PEG وكيف يُحسب؟**"
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p34",
+      "en": "PEG is the P/E ratio divided by expected earnings growth, expressed in percentage points. A company with P/E 22 and expected growth of 20 percent gets PEG = 22 ÷ 20 = 1.1 — the rule of thumb says figures below 1 are considered low and those above 1 high.",
+      "ar": "معدل PEG هو معدل P/E مقسومًا على نمو الأرباح المتوقع، معبَّرًا عنه بالنقاط المئوية. فالشركة التي لديها معدل P/E قدره 22 ونمو متوقع بنسبة 20 بالمئة تحصل على PEG = 22 ÷ 20 = 1,1 — وتقول قاعدة الإبهام إن الأرقام الأقل من 1 تُعد منخفضة والأرقام الأعلى من 1 تُعد مرتفعة."
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p35",
+      "en": "**Why can a low PEG be misleading for cyclical companies?**",
+      "ar": "**لماذا قد يكون معدل PEG المنخفض مضللًا بالنسبة للشركات الدورية؟**"
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p36",
+      "en": "At cyclical peaks earnings are at record highs, which pushes both P/E and PEG down at the same time. An engineering company with P/E 8 and 35 percent growth out of a recession trough gets PEG 0.23 — low by the rule of thumb, but often a cycle top, since both earnings and growth turn downward the following year.",
+      "ar": "في قمم الدورة الاقتصادية تكون الأرباح في مستويات قياسية، وهو ما يضغط على معدلي P/E وPEG في آن واحد. فشركة الهندسة التي لديها معدل P/E قدره 8 ونمو 35 بالمئة من قاع ركود تحصل على PEG = 0,23 — وهو رقم منخفض وفق قاعدة الإبهام لكنه غالبًا ما يمثل قمة دورة، لأن الأرباح والنمو ينعكسان معًا نحو الانخفاض في السنة التالية."
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p37",
+      "en": "**When is P/E enough on its own?**",
+      "ar": "**متى يكفي معدل P/E وحده؟**"
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p38",
+      "en": "When you compare mature companies in the same sector with similar business models, or when you set the company's current P/E against its own 5-year historical multiple. If the growth assumptions are roughly the same for all candidates, the PEG division adds no further information.",
+      "ar": "عندما تقارن شركات ناضجة في القطاع نفسه ولديها نماذج عمل متشابهة، أو عندما تقارن معدل P/E الحالي للشركة بمضاعفها التاريخي الخاص على مدى 5 سنوات. وإذا كانت افتراضات النمو متشابهة تقريبًا لدى جميع الشركات المرشحة، فإن قسمة PEG لا تضيف أي معلومات إضافية."
+    },
+    {
+      "nyckel": "peg-multipeln-svagheter-2026:p39",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي وليس نصيحة استثمارية._"
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p27",
+      "en": "## FAQ",
+      "ar": "## أسئلة شائعة"
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p28",
+      "en": "**What is the P/S ratio?**",
+      "ar": "**ما هو معدل P/S؟**"
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p29",
+      "en": "The P/S ratio (Price-to-Sales) is the company's market capitalization divided by net sales — equivalently, the share price divided by sales per share. The question is what the market pays per earned krona of sales; a market cap of 6 000 Mkr against sales of 2 400 Mkr gives P/S = 2.5.",
+      "ar": "معدل P/S (السعر إلى المبيعات) هو القيمة السوقية للشركة مقسومة على صافي المبيعات — أو ما يعادلها: سعر السهم مقسومًا على المبيعات لكل سهم. والسؤال هو: كم يدفع السوق مقابل كل كرونة مبيعات محققة؟ فقيمة سوقية قدرها 6 000 مليون كرونة مقابل مبيعات قدرها 2 400 مليون كرونة تعطي P/S = 2,5."
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p30",
+      "en": "**When is the P/S ratio useful?**",
+      "ar": "**متى يكون معدل P/S مفيدًا؟**"
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p31",
+      "en": "When earnings are negative, small or temporarily distorted — that is, exactly where P/E has stopped working. That covers early-stage growth companies without profit, companies whose result has been knocked out for a year by one-off costs, and cyclical companies in the middle of a downturn where sales have fallen far less than earnings.",
+      "ar": "عندما تكون الأرباح سالبة أو صغيرة أو مشوهة مؤقتًا — أي تمامًا في الحالات التي يتوقف فيها معدل P/E عن العمل. ويشمل ذلك شركات النمو الناشئة التي لا تحقق ربحًا، والشركات التي أضعفت تكاليف عرضية نتائجها لمدة عام، والشركات الدورية في منتصف تراجع تكون فيه المبيعات قد هبطت أقل بكثير من الأرباح."
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p32",
+      "en": "**Why do software companies have a higher P/S than retail companies?**",
+      "ar": "**لماذا يبلغ معدل P/S لدى شركات البرمجيات أعلى منه لدى شركات التجارة؟**"
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p33",
+      "en": "A multiple per krona of sales can only be compared between companies whose kronor are worth roughly the same — the gross margin sets the price. In the post's example the cloud service keeps 80 öre of each sales krona against the retail chain's 25 öre, so P/S 2.5 versus 1.0 is no paradox; a low P/S without margin analysis is only half an analysis.",
+      "ar": "لا يمكن مقارنة المضاعف المحسوب على كل كرونة من المبيعات إلا بين الشركات المتقاربة في قيمة كروناتها — فهامش الربح الإجمالي هو من يحدد السعر. وفي مثال هذه التدوينة تحتفظ الخدمة السحابية بـ 80 öre من كل كرونة مبيعات مقابل 25 öre لسلسلة تجارة التجزئة، ولذلك فإن معدل P/S البالغ 2,5 مقابل 1,0 ليس مفارقة؛ فمعدل P/S المنخفض دون تحليل للهامش هو تحليل ناقص."
+    },
+    {
+      "nyckel": "ps-tal-nar-ar-det-anvandbart:p34",
+      "en": "_This is educational financial analysis, not investment advice._",
+      "ar": "_هذا تحليل مالي تعليمي وليس نصيحة استثمارية._"
+    }
+  ]
+}

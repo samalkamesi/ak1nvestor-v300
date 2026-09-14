@@ -147,14 +147,13 @@ Agent-anrop, 4+ via fabriksmanifest.
   15:21 under flock). TRÅDENS MINNE E2E-BEVIST: test 3 = MINNE LADDAT
   (60 meddelanden nådde sessionen; test 1–2 INGA MINNE före fix 2 =
   före/efter-bevis). Fas B (AKM-poäng-ytor) väntar A2-omprövning.
-- ▶ NÄSTA VÅG 151 (dispatchad 15:59): granskningskön — manifest
-  v151-granskningsko i PROD:s ko/ (14 uppgifter: m1–m6 = 6 m9-utkast,
-  branschmedianer v2 gäller, + g1–g8 = 8 SEO-guider) → rapport per slug
-  i data/blogg-utkast/granskning/ med bedömning FLYTTKLAR/EFTER
-  RÄTTNING/UNDERKÄND; publicering förblir kundens (R2). Fabrikskön:
-  studio-10x-fas1 (molnagentens 12-uppgiftersmanifest, plockas 16:05)
-  → v151 därefter (ETT manifest per rop). Spårrotation enligt
-  evighetskatalogen (149 SEO-sidor → 150 dataset → 151 granskning).
+- ✓ LEVERERAT våg 151 (2026-09-14 16:50, slutled rond 21): granskningskön
+  — fabriken körde 14/14 (m1–m6 månadsutkast + g1–g8 SEO-guider), samtliga
+  FLYTTKLAR (4 efter verkställd rättning). Rapporter per slug i
+  data/blogg-utkast/granskning/ + kund-sammanställning
+  SAMMANSTALLNING-2026-09-14.md. Publicering förblir kundens (R2).
+  Spårrotation enligt evighetskatalogen (149 SEO-sidor → 150 dataset →
+  151 granskning).
 - ▶ VÅG 152 (bokad rond 20): kvartalsrapportserien förbereds (Q3-
   rapporterna anländer oktober) — mallar + automationsunderlag; fas B
   av dataset-teman (AKM-poäng-ytor) väntar fortfarande A2-omprövning.

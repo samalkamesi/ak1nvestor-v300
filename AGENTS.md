@@ -227,6 +227,34 @@ Organismen FÅR ALDRIG stå utan nästa våg. Tre skydd:
 Vid vaktprompt: fortsätt pågående våg ELLER boka 3 nya ur katalogen —
 verkställ, bokför (worklog + beslutsminne), aldrig sysslolös.
 
+## KUNDUPPDRAGSPROTOKOLLET (våg 156 — kundens STÖRSTA mål: en order jobbas KLART)
+
+Kundens ordagrant största mål: "får den order då ska den jobba tills den
+är helt klar" — online och offline, oavsett om kunden är på sidan.
+ROTOREN (hederligt konstaterad efter dagar): en order i chatten var bara
+EN turn; mål-loopen fortsatte med stående målet — orden blev aldrig
+maskinens mål. KUREN är detta protokoll — FÖLJ DET EXAKT:
+
+1. **Vad är en ORDER?** Ett kundmeddelande som begär arbete/leverans
+   (bygg/fixa/fortsätt/färdigställ/undersök…) — inte en ren fråga eller
+   hälsning. Tvekar du: behandla som order (kunden vill ha slutförande).
+2. **REGISTRERA** när en order inleder arbete som kräver mer än en turn:
+   skriv `data/vakten/kunduppdrag.json` (Write-verktyget):
+   `{"mal":"<orderns måltext med tydlig definition-of-done>","order":"<kundens text>","ts":<epoch-ms>}`
+   — målhjärtat (:x1) låser den som sessionens MÅL inom 10 min; hela
+   mål-maskineriet (iterationer, hjärta, fabrik, evighetsmotor, minne)
+   arbetar då på KUNDENS order tills den är klar.
+3. **ARBETA TILLS HELT KLART** — definition-of-done uppfylld, KVD grön
+   (tsc 0, bygg, deploy, prod 200, bevis), INTE "nästan". Räcker en
+   iteration inte: nästa iteration fortsätter samma uppdrag.
+4. **MARKERA KLART**: när uppdraget är 100 % levererat — skriv
+   `data/vakten/uppdrag-klart.json` med
+   `{"sammanfattning":"<en mening>","bevis":"<commit/prod-bevis>","ts":<epoch-ms>}`
+   OCH avsluta ditt svar med raden `UPPDRAG KLART`. Hjärtat återställer
+   stående mål automatiskt och bokför i uppdragsloggen.
+5. **ALDRIG** avsluta en orderturn med löfte utan fortsättning — antingen
+   är den klar (markera) eller så fortsätter nästa iteration.
+
 ## TRÅDENS PERMANENS (våg 148 — kunddirektivet "z code 100% samma")
 
 Kundens mest återkommande smärta ("allt försvinner när jag uppdaterar,

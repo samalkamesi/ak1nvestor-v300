@@ -77,6 +77,10 @@ import {
   type FardighetPlugin,
   type FardighetSkill,
 } from "@/components/ak1a/studio-fardigheter-panel";
+import {
+  StudioForbrukningPanel,
+  type ForbrukningSvar,
+} from "@/components/ak1a/studio-forbrukning-panel";
 import { cn } from "@/lib/utils";
 
 /**
@@ -3713,6 +3717,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
       clearInterval(i);
     };
   }, []);
+
+  // ── 10X p9: FÖRBRUKNING (tokens/dag · modellfördelning) — sektionen under
+  //    Kontext i höger panelen. EN pollare här, presentationskomponenten
+  //    monteras i både desktop-panel + mobil-drawer. Routen memo-cachar
+  //    60 s — pollen matchar (våg 85 F3).
+  const [forbrukning, setForbrukning] = React.useState<ForbrukningSvar | null>(null);
+  const [forbrukningLaddar, setForbrukningLaddar] = React.useState(true);
+  const [forbrukningFel, setForbrukningFel] = React.useState("");
+  const hamtaForbrukning = React.useCallback(async () => {
+    setForbrukningLaddar(true);
+    try {
+      const res = await fetch(`/api/studio/anvandning?frisk=${Date.now()}`, { headers: adminHeaders() });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setForbrukning((await res.json()) as ForbrukningSvar);
+      setForbrukningFel("");
+    } catch (e) {
+      setForbrukningFel(e instanceof Error ? e.message : "okänt fel");
+    } finally {
+      setForbrukningLaddar(false);
+    }
+  }, []);
+  React.useEffect(() => {
+    void hamtaForbrukning();
+    const i = setInterval(() => void hamtaForbrukning(), 60_000);
+    return () => clearInterval(i);
+  }, [hamtaForbrukning]);
 
   /** VÅG 90 K4: senaste verktygskörningar — panelens TERMINAL-sektion. */
   const senasteVerktyg = React.useMemo(() => {
@@ -9136,6 +9166,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         </section>
 
+        {/* FÖRBRUKNING (10X p9) — tokens/dag + modellfördelning under Kontext. */}
+        <StudioForbrukningPanel
+          data={forbrukning}
+          laddar={forbrukningLaddar}
+          fel={forbrukningFel}
+          uppdatera={() => void hamtaForbrukning()}
+        />
+
         {/* TERMINAL — senaste verktygskörningar (mini-terminal). */}
         <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
@@ -9386,6 +9424,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   </button>
                 </div>
               </section>
+              {/* FÖRBRUKNING (10X p9) — samma sektion som desktop-panelen. */}
+              <StudioForbrukningPanel
+                data={forbrukning}
+                laddar={forbrukningLaddar}
+                fel={forbrukningFel}
+                uppdatera={() => void hamtaForbrukning()}
+              />
               <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
                 <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   <Terminal className="h-3.5 w-3.5 shrink-0" />

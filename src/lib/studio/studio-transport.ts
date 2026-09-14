@@ -2919,6 +2919,12 @@ class AppServerTransport implements StudioTransport {
    * Undefined = default-transporten (persistensfilens resume-or-create).
    */
   private readonly målSessionId: string | undefined;
+  /**
+   * VÅG 150A: true efter att huvudtrådens session fötts FRISK (skapa) —
+   * nästa utgående prompt prefixas med TRÅDMINNET (trådens samtalssvans)
+   * och flaggan konsumeras. Mål-sessioner (tabbar) föds utan.
+   */
+  private nyFoddTrad = false;
   // ── VÅG 85 F1: MÅL-LÄGET — autonom utvecklingsloop ──────────────────────────
   /** Måltexten (session/goal objective) — null = inget mål. */
   private malText: string | null = null;
@@ -3446,7 +3452,27 @@ class AppServerTransport implements StudioTransport {
     // VÅG 145: default-trådens nya session registreras i HUVUDTRÅDENS BOK
     // (tabbar/rondsessioner har målSessionId och registreras ej).
     if (!this.målSessionId) registreraHuvudtradSession(sid);
+    // VÅG 150A: huvudtrådens nyfödda session bär TRÅDMINNET — nästa utgående
+    // prompt prefixas med trådens samtalssvans (konsumeras en gång).
+    if (!this.målSessionId) this.nyFoddTrad = true;
     this.sparaPersistens(sid, modellId);
+  }
+
+  /**
+   * VÅG 150A — konsumera TRÅDMINNET: prefixar prompten EN gång efter en frisk
+   * sessionsfödelse (omstart/modellDöd/friskgång). Tråden fortsätter där den
+   * står — modellen föds aldrig mer tom på huvudtråden.
+   */
+  private konsumeraTradsminne(prompt: string): string {
+    if (!this.nyFoddTrad || !this.sid) return prompt;
+    this.nyFoddTrad = false;
+    try {
+      const prefix = byggTradsminnePrefix(this.sid);
+      if (!prefix) return prompt;
+      return `${prefix}\n\n───\n\n${prompt}`;
+    } catch {
+      return prompt; // minnet är stöd — ALDRIG fatal för sändningen
+    }
   }
 
   /** Persistens: {sessionId, modell?, lage?, tankeNiva?, sparad} — modellen används av create-fallback. */
@@ -5611,6 +5637,9 @@ class AppServerTransport implements StudioTransport {
       lyssnare({ typ: "fel", meddelande: "En prompt kör redan — vänta tills agenten är klar." });
       return;
     }
+    // VÅG 150A — TRÅDMINNET: första sändningen efter en FRISK sessionsfödelse
+    // bär trådens samtalssvans (flaggan sätts i skapa, konsumeras här).
+    prompt = this.konsumeraTradsminne(prompt);
 
     await new Promise<void>((losa) => {
       const aktiv: AktivPrompt = {
@@ -5750,6 +5779,8 @@ class AppServerTransport implements StudioTransport {
   ): Promise<void> {
     // VÅG 92 B1: PRIMÄR väg = v4/attachment-flödet per bild (SANA bilagor i
     // session/send). Sanering + 8-tak via byggPromptMedBilder (REN väg).
+    // VÅG 150A: TRÅDMINNET även på bildvägen (samma konsumtion som skicka).
+    prompt = this.konsumeraTradsminne(prompt);
     const { bilder } = byggPromptMedBilder(prompt, bildSokvagar);
     const bilagor: Record<string, unknown>[] = [];
     const viaSokvag: string[] = [];
@@ -8092,6 +8123,55 @@ function skrivMalStateTillDisk(mal: string): void {
   } catch {
     /* disk-målet är stöd — aldrig fatal */
   }
+}
+
+// ── VÅG 150A — TRÅDMINNET: varje NY huvudtrådssession föds med samtalet ─────
+// Kundbevis: kontextrad "~1 % av 1M" + "den kommer inte ihåg vad vi skrev
+// innan" — sessionsrotationer (omstart, modellDöd, friskgång) födde TOMA
+// sessioner; vyn visade hela tråden (v148) men MODELLEN började på noll.
+// Injektionen sitter VID FÖDELSEN (skapa()) — inte i ruttens POST-detektion,
+// som redan passerat när transporten roterar mitt i en sändning (bevisat
+// E2E 2026-09-14: kick svarade "INGA MINNE" då rotationen skedde i skicka).
+const TRADSMINNE_POSTER = 60;
+const TRADSMINNE_TAK_TKN = 100_000;
+
+function lasTradSvansFil(sokvag: string, antalRader: number): string {
+  try {
+    const rader = readFileSync(`${process.cwd()}/${sokvag}`, "utf8")
+      .split("\n")
+      .filter((r) => r.trim().length > 0);
+    return rader.slice(-antalRader).join("\n").slice(0, 2_500);
+  } catch {
+    return "";
+  }
+}
+
+/** Minnesprefix för en nyfödd huvudtrådssession ("" när tråden är tom). */
+export function byggTradsminnePrefix(uteslutSid: string | null): string {
+  const traden = lasTradHistorik(lasHuvudtradSessioner(), {
+    sessionId: uteslutSid,
+    historik: [],
+  });
+  const svans = traden.slice(-TRADSMINNE_POSTER);
+  if (svans.length === 0) return "";
+  const rader = svans.map((p) => `${p.roll === "user" ? "KUNDEN" : "AK1A"}: ${p.text}`);
+  let samtal = rader.join("\n\n───\n\n");
+  if (samtal.length > TRADSMINNE_TAK_TKN) {
+    samtal = samtal.slice(samtal.length - TRADSMINNE_TAK_TKN);
+    const bryt = samtal.indexOf("───");
+    if (bryt >= 0) samtal = samtal.slice(bryt + 3);
+  }
+  const worklog = lasTradSvansFil("worklog.md", 6);
+  const beslut = lasTradSvansFil("data/vakten/beslutsminne.jsonl", 3);
+  return [
+    `TRÅDENS MINNE (automatiskt injicerat — detta är FORTSÄTTNINGEN på vårt pågående samtal; du har arbetat med kunden före detta. ${svans.length} senaste meddelandena ur huvudtråden följer — fortsätt där tråden står, repetera ALDRIG klart arbete):`,
+    `SAMTALET HITILLS (äldst → nyast):\n${samtal}`,
+    worklog ? `SENASTE WORKLOG:\n${worklog}` : "",
+    beslut ? `SENASTE BESLUT (beslutsminnet):\n${beslut}` : "",
+    "Börja svaret med 'MINNE LADDAT' + EN rad om var tråden står; verkställ sedan uppdraget.",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
 }
 
 /**

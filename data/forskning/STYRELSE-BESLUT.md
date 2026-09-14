@@ -92,3 +92,27 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Lägg en säkerhetspost i rondens statusmatning: olåsta försök mot R2-ytor, misslyckade HTTPS-kontroller och oväntade pm2-omstarter larmar direkt.
   10. Kartlägg och minimera AI-organens åtkomst till personuppgifter (GDPR art 13, kakor LEK 2022:482) samt förbered en nyckelrotationsplan som läggs hos kunden för beslut (R2 — väntar kund).
 - **Mötes-id:** styrelse-mu098wjw-aieypn
+
+## 2026-09-14 22:57 — STYRELSESAMMANTRÄDE — MEGA-SYSTEMBESLUT (kundens direkta direktiv): Kunden kräver: (1) nya MEGA-system som organismen BEHÖVER, (2) styrelsen autonoma på Mega-sätt, (3) parallella agenter samtidigt. U…
+
+- **Status:** VÄNTAR KUND (existential=true)
+- **Beslut:** Styrelsen beslutar ett mega-beslut i tre spår, verkställt som ETT agentfabriksmanifest med omgångar om 3: (1) Godkännandeytan med inbyggd mekanisk juridikgrind som låser upp de 14 FLYTTKLAR-dokumenten via kundens egen publiceringsknapp (R2-vetorätten intakt), (2) Audit-megasystemet med revisionsprotokoll — append-only spårbarhet för alla autonoma aktörer som idag skriver i samma prod-träd, (3) Fabrik 2.0 som standardiserad parallellismkanal med rollbehörigheter och integritetsvakt.
+- **Motivering:** Organen konvergerar: godkännandeytan nämns av både teknik och tillväxt och förvandlar starkast dött kapital till levererat kundvärde; spårbarheten är förutsättningen för autonomi i skala (bevisat av .next-incidenten och rollback-kollisionen); Fabrik 2.0 gör kundens 'dagar ska ta timmar' mekaniskt säkert. Ingen åtgärd rörs en R2-yta — själva publiceringsbeslutet förblir alltid kundens knapptryckning.
+- **Roller:**
+  - ORDFORANDE: {"beslut": "Styrelsen beslutar ett mega-beslut i tre spår, verkställt som ETT agentfabriksmanifest med omgångar om 3: (1) Godkännandeytan med inbyggd mekanisk …
+  - TEKNIK: Kontinuitetsmotor, Fabrik 2.0 och godkännandeyta — kontextens hälsa är organismens tak; standardkanalen gör dagar till timmar.
+  - SAKERHET: MINNE LADDAT — tråden står vid våg 160 (komprimeringshälsan levererad, modell-död-arv kurat) och detta är styrelsens megasammanträde om nästa tre system.
+  - JURIDIK: Juridikgrind, GDPR-karta och revisionsprotokoll — autonomi MED mekaniska grindar är hållbar i obegränsad skala; publiceringen förblir kundens.
+  - TILLVAXT: MINNE LADDAT — tråden står vid styrelsens megasammanträde: våg 160 (komprimeringshälsan + modell-arvet) är landad, granskningskön håller 14 FLYTTKLAR väntandes…
+- **Åtgärder:**
+  1. Bygg godkännandeytan i studion: 'väntar på dig'-lista med förhandsgranskning per FLYTTKLAR-dokument + publiceringsknapp som kunden trycker själv (R2 intakt) + publiceringslogg
+  2. Bygg mekanisk juridikgrind (verktyg/juridikgrind-vakt.mjs): scan av alla utkast och kurser mot rådsförbudslistan innan FLYTTKLAR kan sättas; kör retroaktivt på de 14 R2-väntande och leverera utfallet som kundens granskningsunderlag
+  3. Bygg audit-megasystemet: append-only händelselogg (aktör, åtgärd, artefakt, tidsstämpel) för varje autonom skrivning mot prod; fabriksbarn hookas via fabriksprefixet; beslutsminnet berikas med underlag och beslutsgrund per våg
+  4. Standardisera Fabrik 2.0: manifestmallar per evighetsspår, automatisk vågkedjning när RAM frigörs, och rollbaserade behörigheter — barn deklarerar filägarskap + kanaler, push-rätt och .env-läsning nekas mekaniskt där onödigt
+  5. Utöka gränssnittsvakten till integritetsvakt: kontroll av BUILD_ID/app-paths-manifest-konsistens samt 500-frekvens per rutt, med larm FÖRE felet når kundens ögon
+  6. Verkställ alla tre systemen via ETT agentfabriksmanifest med exklusivt filägarskap per uppgift (v104-reglerna), omgångar om max 3 — ingen direkt Agent-tool-våg över taket
+  7. Kartlägg GDPR-datakarta (data/forskning/GDPR-DATAKARTA.md) som intern beredskap: art 13-informationsstatus, raderingsväg och kaksegregation per personuppgiftsflöde; ändringar av informeringar eller kakar väntar kund (R2)
+  8. Mekanisk kvalitetsgrind per fabriksuppgift: tsc 0, vakten 0 fynd och LEVERANS-kvitto innan vågen bokförs klar — Mimosa-skuldlistan täms per leverans, inte per löfte
+  9. Dokumentera beslutet: PIPELINE-KO med minst 3 kommande vågor, rond-protokoll i worklog samt beslutsminnesrad med åtgärdslista och ansvarigt organ
+  10. När godkännandeytan lever: mät köns genomströmning (FLYTTKLAR till publicerad) och mata nästa fabriksvåg med sökordsradar-manifest samt internlänk/strukturdatamodul
+- **Mötes-id:** styrelse-mu1ub91v-g3c8sx

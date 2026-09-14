@@ -9221,6 +9221,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     </span>
                   ))}
                 </p>
+                {/* VÅG 152 R1-UI — LEVANDE BARN: sessionens subagent-barn ur
+                    GET /api/studio/subagenter. Läser DELADE levandeSubagenter
+                    (s1:s 15 s-poll) — ingen egen hämtning, inga dubbla anrop. */}
+                <p
+                  className="mt-1.5 truncate font-mono text-[10px] leading-relaxed text-[#8B949E]"
+                  aria-label="Levande barn"
+                  title={barnTitelLista || undefined}
+                >
+                  Barn:{" "}
+                  {barnKör.length === 0 ? (
+                    <span className="text-[#6E7681]">
+                      inga lever just nu
+                      {levandeSubagenter.length > 0 ? ` (${levandeSubagenter.length} avslutade)` : ""}
+                    </span>
+                  ) : (
+                    <>
+                      <span className="font-bold text-[#3FB950]">{barnKör.length} lever</span>
+                      <span className="text-[#6E7681]"> — </span>
+                      {barnKör.map((b) => b.titel).join(" · ")}
+                    </>
+                  )}
+                </p>
                 <p className="mt-1.5 font-mono text-[10px] leading-relaxed text-[#8B949E]">
                   {organism.basta && `Bäst: ${organism.basta}`}
                   {organism.ekonomi?.tokensPerLeverans

@@ -4058,16 +4058,22 @@ class AppServerTransport implements StudioTransport {
       // körs komprimeringen OM en gång.
       if (arModellOtillganglig(text)) {
         const bytt = await this.lakSessionensModell();
+        console.warn(`[V160] compact -32031 → modelläkning ${bytt ? "OK" : "misslyckades"}`);
         if (bytt) {
           modellLakad = true;
-          svar = (await this.klient.protokollFraga(
-            "session/compact",
-            {
-              sessionId: this.sid,
-              ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
-            },
-            60_000,
-          )) as { compact?: { state?: string }; response?: string } | null;
+          try {
+            svar = (await this.klient!.protokollFraga(
+              "session/compact",
+              {
+                sessionId: this.sid,
+                ...(instruktioner && instruktioner.trim() ? { instructions: instruktioner.trim().slice(0, 500) } : {}),
+              },
+              60_000,
+            )) as { compact?: { state?: string }; response?: string } | null;
+          } catch (fel2) {
+            console.warn("[V160] compact-återförsök efter läkning misslyckades: " + String(fel2).slice(0, 140));
+            svar = null;
+          }
         }
       }
       if (!svar) {
@@ -4081,7 +4087,14 @@ class AppServerTransport implements StudioTransport {
     // VÅG 160 — MEGA-KUR 3: tidsgränsen är ÄRLIG — efter taket rapporteras
     // "pågår" i stället för låtsas-"klar".
     const fardigFranVakt = await this.vantaIdleEfterCompact();
-    const kontext = await this.lasKontext();
+    // VÅG 160: kontextläsning är LYX — om även den studsar på modellläget
+    // skall kompakteringsutfallet ändå rapporteras (ALDRIG rå feltext).
+    let kontext: StudioKontext | null = null;
+    try {
+      kontext = await this.lasKontext();
+    } catch {
+      kontext = null;
+    }
     if (!fardigFranVakt) {
       return {
         status: "pågår",

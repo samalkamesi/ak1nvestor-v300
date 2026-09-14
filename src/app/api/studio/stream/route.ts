@@ -1,3 +1,5 @@
+import { readFileSync, writeFileSync } from "node:fs";
+
 import { NextRequest } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
@@ -114,6 +116,14 @@ const STANDE_MAL_141 =
  *     Svaret sparas i sessionskartan (markeraSessionSlut körs i finally
  *     när rundan klart) och återges HELT vid GET (historik + återkoppling).
  *     Mål-status för återvändare: GET /api/studio/mal/status (A1b).
+ *
+ * R6 (fabriksverkställning 2026-09-14, ZCODE-INSIDE-OUT) — PREFLIGHT-GRIND
+ * I POST (tappa aldrig kundens text): varje prompt journalförs på DISK
+ * (data/vakten/prompt-journal.json) FÖRE första session/send, och varje
+ * avslag — validering, klient-abort under preflight, transportdöd före/
+ * under sändningen, köns tak — svarar/larmar med texten bevarad: avslag:
+ * true + HELA prompten i svaret, journalstatus med orsak på servern.
+ * Omsändning sker ALDRIG automatiskt (autoSend-mönstret) — se R6-blocket.
  *
  * SKYDD: requireAdmin på BÅDA metoderna (sessionscookie ak1a_admin eller
  * x-admin-password; dev-fallback endast i development; rate-limit 10 fel/min
@@ -346,12 +356,51 @@ export async function POST(req: NextRequest) {
     return jsonSvar({ fel: "Ogiltig JSON-kropp." }, 400);
   }
   prompt = prompt.trim();
-  if (!prompt) return jsonSvar({ fel: "Prompten är tom." }, 400);
+  // R6 (a)+(b): kroppsvalideringen ÄR preflight-grinden — den beslutar UTAN
+  // nät och varje avslag bär texten TILLBAKA + journalförs på disk ("avvisad"
+  // är terminal — omsänds ALDRIG automatiskt; kundens ord raderas aldrig).
+  if (!prompt) return avslagSvar("Prompten är tom.", { prompt, bilder });
   if (prompt.length > MAX_PROMPT_TEEKEN) {
-    return jsonSvar({ fel: `Prompten är för lång (max ${MAX_PROMPT_TEEKEN} tecken).` }, 400);
+    journalForPrompt({
+      id: crypto.randomUUID(),
+      tid: Date.now(),
+      // absurd stora kroppar trunkeras I JOURNALEN (ekot i svaret bär ändå
+      // hela texten tillbaka — journalen är sekundärt skydd)
+      prompt: prompt.slice(0, MAX_PROMPT_TEEKEN) + " …[trunkerad vid journalföring]",
+      sessionId,
+      nyckel,
+      bilder,
+      status: "avvisad",
+      fel: `för lång (${prompt.length} > ${MAX_PROMPT_TEEKEN} tecken)`,
+    });
+    return avslagSvar(`Prompten är för lång (max ${MAX_PROMPT_TEEKEN} tecken).`, { prompt, bilder });
   }
   if (bilder.length > 8) {
-    return jsonSvar({ fel: "Max 8 bilder per prompt." }, 400);
+    journalForPrompt({
+      id: crypto.randomUUID(),
+      tid: Date.now(),
+      prompt,
+      sessionId,
+      nyckel,
+      bilder,
+      status: "avvisad",
+      fel: `för många bilder (${bilder.length} > 8)`,
+    });
+    return avslagSvar("Max 8 bilder per prompt.", { prompt, bilder });
+  }
+
+  // R6 — JOURNAL FÖRE SÄNDNING ("förloras ALDRIG"): texten står på DISK innan
+  // någon transport börjar arbeta. Dör något mitt i (barnprocess, sessionens
+  // öppnande, köns tak) markeras posten nedan med status + orsak.
+  const journalId = crypto.randomUUID();
+  journalForPrompt({ id: journalId, tid: Date.now(), prompt, sessionId, nyckel, bilder, status: "skickas" });
+
+  // R6 (c) — race-skyddet isStopped(): hängde klienten på under valideringen
+  // (Esc/stängd flik under läsning av kroppen) skickas INGENTING — zcode-
+  // mönstret "gör inget, mata aldrig bort texten"; posten blir återhämtningsbar.
+  if (req.signal.aborted) {
+    journalUppdatera(journalId, "avbruten", "klienten avbröt under preflight");
+    return avslagSvar("Anropet avbröts innan sändning — din text är sparad och skickades ej.", { prompt, bilder });
   }
 
   // VÅG 84 B: sessionsval — per-session-transport (resume/ny tabb) eller
@@ -379,10 +428,11 @@ export async function POST(req: NextRequest) {
       sessionsId = transport.sessionId() ?? "";
     }
   } catch (fel) {
-    return jsonSvar(
-      { fel: fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas." },
-      502,
-    );
+    // R6: transporten dog FÖRE första session/send — prompten kom aldrig fram
+    // men FÖRLORAS inte: journalstatus "tappad" + avslag med hela texten.
+    const text = fel instanceof Error ? fel.message.slice(0, 300) : "Sessionen kunde ej öppnas.";
+    journalUppdatera(journalId, "tappad", text);
+    return avslagSvar(text, { prompt, bilder }, 502);
   }
 
   // VÅG 141+150 — MÅLET DÖR ALDRIG: mal=null (ej pausat) ⇒ DISK-målet först
@@ -448,6 +498,9 @@ export async function POST(req: NextRequest) {
           return; // studsen syns ej — prompt-kön tar över
         }
         if (event.typ === "klart" && typeof event.svar === "string") svaret = event.svar;
+        // R6: svaret LANDADE ⇒ journalposten löses (även efter klient-abort —
+        // v91:s autonomi: arbetet lever kvar och svaret sparas i historiken).
+        if (event.typ === "klart") journalUppdatera(journalId, "svarad");
         if (req.signal.aborted) return;
         skicka(event);
       };
@@ -480,6 +533,21 @@ export async function POST(req: NextRequest) {
             await new Promise((r) => setTimeout(r, 15_000));
           }
         } while (upptagenStuds && Date.now() - koStart < KO_TAK_MS);
+        // R6 — köns tak: agenten upptagen i 8 minuter ⇒ prompten kom ALDRIG
+        // fram. Tidigare tystnade strömmen helt (inget klart/fel). Nu: ett
+        // ÄRLIGT fel-event + journalstatus "tappad". Omsändning sker ALDRIG
+        // automatiskt (autoSend=av) — kunden trycker igen när agenten är ledig.
+        if (upptagenStuds) {
+          journalUppdatera(journalId, "tappad", "köns tak — agent upptagen hela 8 minuter");
+          skickaMedVakt({
+            typ: "fel",
+            meddelande:
+              "Agenten har varit upptagen längre än köns tak (8 minuter) — din prompt kom inte fram. " +
+              "Texten är sparad i prompt-journalen på servern (data/vakten) och omsänds aldrig automatiskt. " +
+              "Skicka igen om en liten stund.",
+          });
+          return; // finally städar hjärtat + stänger strömmen
+        }
         // VÅG 90 K1: polling BARA för en levande klient — efter abort ställer
         // servern inga fler protokollsfrågor (kontext/diff) i onödan.
         if (req.signal.aborted) return;
@@ -495,9 +563,14 @@ export async function POST(req: NextRequest) {
           // diff är lyx
         }
       } catch (fel) {
+        // R6: transporten dog MITT I sändningen — kundens text står kvar i
+        // journalen (status "tappad" + orsak) och fel-eventet SÄGER det:
+        // telefon-skrivna långa texter får aldrig försvinna i det tysta.
+        const text = fel instanceof Error ? fel.message.slice(0, 300) : "Okänt bryggfel.";
+        journalUppdatera(journalId, "tappad", text);
         skicka({
           typ: "fel",
-          meddelande: fel instanceof Error ? fel.message.slice(0, 300) : "Okänt bryggfel.",
+          meddelande: `${text} — din text är sparad i prompt-journalen på servern och förlorad ej; den omsänds inte automatiskt.`,
         });
       } finally {
         markeraSessionSlut(sessionsId, svaret);
@@ -519,4 +592,105 @@ export async function POST(req: NextRequest) {
       "X-Accel-Buffering": "no", // nginx: buffra inte SSE
     },
   });
+}
+
+// ── R6 — PREFLIGHT-GRIND I POST-GRENEN (tappa aldrig kundens text) ────────────
+// Kapitelverkställning: data/forskning/zcode-kallkod/R6-PREFLIGHT.md (Del A3
+// "preflightSubmission" — zcode-TUI:ns grind FÖRE varje prompt). Tre ben:
+//   (a) grind FÖRE session/send som kan avvisa UTAN nät — här: kroppsbegärens
+//       kontroller (tom/för lång/bilder) + klientens abort-status. Ingen
+//       transport kontaktas före beslutet. Medvetet INGEN hälsobaserad
+//       avvisning: ett givet upp barn (omstartForsok≥3) låser upp för MANUELL
+//       ensure vid nästa tryck (transporten stegOmstart) — en sådan grind
+//       skulle blockera just återupplivningen och därmed friska sändningar
+//       (samma snävhet som zcode:s missingCodingPlanKey: bara entydiga fel).
+//   (b) ett avslag äter ALDRIG texten: svaret bär avslag:true + HELA prompten
+//       (mottagaren kan lägga den tillbaka i inmatningsrutan) och journalen
+//       sparar den på disk med terminal status "avvisad" — servern omsänder
+//       ALDRIG automatiskt (autoSend-mönstret: kunden bestämmer).
+//   (c) race-skyddet isStopped(): hängde klienten på under valideringen
+//       skickas INGENTING — posten markeras "avbruten", texten överlever.
+// PROMPT-JOURNALEN (data/vakten/prompt-journal.json — gitignorerad runtime-
+// data, överlever pm2-omstart) är rot-garanteringen "förloras ALDRIG": varje
+// godkänd prompt journalförs FÖRE första session/send; dör transporten mitt
+// i (barnprocessdöd, sessionen kan ej öppnas, köns tak) markeras posten
+// "tappad" med orsak och texten står kvar på disk för återhämtning.
+const PROMPT_JOURNAL_SOKVAG = `${process.cwd()}/data/vakten/prompt-journal.json`;
+const PROMPT_JOURNAL_MAX = 50;
+
+type PromptJournalStatus = "skickas" | "svarad" | "tappad" | "avvisad" | "avbruten";
+
+interface PromptJournalPost {
+  id: string;
+  /** Journalföringstid (epoch ms). */
+  tid: number;
+  /** Kundens text ORDAGRANN — journalens hela syfte är att den överlever. */
+  prompt: string;
+  /** Målsession ("" = huvudtabben/default-transport). */
+  sessionId: string;
+  /** Tabnyckel (första meddelandet i ny session). */
+  nyckel: string;
+  /** Bilagda bildsökvägar (uploads/…). */
+  bilder: string[];
+  status: PromptJournalStatus;
+  /** Kort orsak vid tappad/avvisad/avbruten. */
+  fel?: string;
+}
+
+/** Läs journalen — fel ger tom lista; journalen är en bonus, aldrig ett hinder. */
+function lasPromptJournal(): PromptJournalPost[] {
+  try {
+    const pars = JSON.parse(readFileSync(PROMPT_JOURNAL_SOKVAG, "utf8")) as { poster?: unknown };
+    if (!Array.isArray(pars.poster)) return [];
+    return pars.poster.filter(
+      (p): p is PromptJournalPost =>
+        !!p && typeof (p as PromptJournalPost).id === "string" && typeof (p as PromptJournalPost).prompt === "string",
+    );
+  } catch {
+    return [];
+  }
+}
+
+/** Skriv journalen SYNKTONT (trumpen men sann — samma mönster som sessionskartan). */
+function skrivPromptJournal(poster: PromptJournalPost[]): void {
+  try {
+    writeFileSync(
+      PROMPT_JOURNAL_SOKVAG,
+      JSON.stringify({ version: 1, uppdaterad: Date.now(), poster: poster.slice(-PROMPT_JOURNAL_MAX) }, null, 2),
+      "utf8",
+    );
+  } catch {
+    // disken får ALDRIG döda en sändning — avslagsekot + klientens egen
+    // utkastlagning (localStorage per tabb) är kvarvarande skydd
+  }
+}
+
+/** Journalför en prompt (läggs sist; tak PROMPT_JOURNAL_MAX behålls). */
+function journalForPrompt(post: PromptJournalPost): void {
+  const poster = lasPromptJournal();
+  poster.push(post);
+  skrivPromptJournal(poster);
+}
+
+/** Uppdatera en posts status — läs-ändra-skriv är SYNKRON (ingen await
+ * emellan) ⇒ säker mot interleaving i nodens enda händelseloop. */
+function journalUppdatera(id: string, status: PromptJournalStatus, fel?: string): void {
+  const poster = lasPromptJournal();
+  const i = poster.findIndex((p) => p.id === id);
+  if (i < 0) return;
+  poster[i] = { ...poster[i], status, ...(fel ? { fel: fel.slice(0, 200) } : {}) };
+  skrivPromptJournal(poster);
+}
+
+/**
+ * R6 (b) — avslagssvaret: texten FÖLJER MED TILLBAKA (hela prompten + bilder)
+ * och `avslag:true` skiljer "avvisad utan sändning" från andra fel, så att
+ * en klient kan lägga texten i inmatningsrutan igen. Protokollets själva
+ * poäng (autoSend=av): mottagaren omsänder ALDRIG ett avslaget meddelande.
+ */
+function avslagSvar(fel: string, kropp: { prompt: string; bilder: string[] }, status = 400): Response {
+  return jsonSvar(
+    { fel, avslag: true, prompt: kropp.prompt, ...(kropp.bilder.length > 0 ? { bilder: kropp.bilder } : {}) },
+    status,
+  );
 }

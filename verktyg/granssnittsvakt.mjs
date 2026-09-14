@@ -52,9 +52,31 @@ const SKARMBILD = lasArg("skarmbild", "nej") === "ja";
 
 // Sidlista — VÅG 105: härleds ur sajtens EGEN sitemap (aldrig gissade
 // sökvägar — /labbet vs /labb-fällan gav 20 skenfynd i första serverkörningen).
-// Urval: roten + djup-0/1-sidor först, sedan maximalt UTTAG djupare sidor.
-const SIDOR_MAX = 16;
+// Urval — VÅG 157 (Θ): MÄTJOURNAL i data/vakten/vakt-sidjournal.json —
+// aldrig-mätta sidor (t.ex. 130 nya /dataset-aspektsidor) väljs FÖRST,
+// därefter äldst-mätt-först (round-robin över tiden). Före våg 157 togs
+// alltid samma topp-16 (grunda + kortaste djupa) — hundratals sidor mättes
+// aldrig. SIDOR_MAX 16→24 = fördubblad täckningstakt.
+const SIDOR_MAX = 24;
 const FALLBACK_SIDOR = ["/", "/kurser", "/labb", "/blogg", "/dataset", "/om-oss"];
+const JOURNAL_FIL = path.join(ROT, "data", "vakten", "vakt-sidjournal.json");
+
+function lasJournal() {
+  try { return JSON.parse(fs.readFileSync(JOURNAL_FIL, "utf8")); }
+  catch { return {}; }
+}
+
+// Basen mäts varje körning; övriga platser fylls med minst-nyligen-mätta.
+function urvalMedJournal(unika) {
+  const journal = lasJournal();
+  const bas = ["/", "/studio", "/admin"];
+  const ordnade = unika
+    .filter((p) => !bas.includes(p))
+    .sort((a, b) => (journal[a] ?? 0) - (journal[b] ?? 0) || a.localeCompare(b));
+  const urval = [...new Set([...bas, ...ordnade])].slice(0, SIDOR_MAX);
+  const aldrigMatte = unika.filter((p) => !journal[p]).length;
+  return { urval, aldrigMatte };
+}
 
 async function lasSidor(bas) {
   try {
@@ -71,15 +93,11 @@ async function lasSidor(bas) {
       }
     }).filter(Boolean);
     const unika = [...new Set(locs)];
-    // prioritera grunda sökvägar (färre "/"), fyll på med djupare
-    const grunda = unika.filter((p) => p.split("/").filter(Boolean).length <= 1);
-    const djupa = unika
-      .filter((p) => p.split("/").filter(Boolean).length > 1)
-      .sort((a, b) => a.length - b.length);
-    // VÅG 117 (Θ): studion + admin ALLTID i svepet — kundens primära ytor;
-    // inloggningsflödet (lösenordsfältet) fångar båda.
-    const urval = [...new Set(["/", "/studio", "/admin", ...grunda, ...djupa])].slice(0, SIDOR_MAX);
-    return { sidor: urval, kalla: `sitemap (${unika.length} url:ar)` };
+    // VÅG 117 (Θ): studion + admin ALLTID i svepet (urvalMedJournal läser
+    // basen först) — kundens primära ytor; inloggningsflödet fångar båda.
+    // VÅG 157: urvalet styrs av mätjournalen — se urvalMedJournal ovan.
+    const { urval, aldrigMatte } = urvalMedJournal(unika);
+    return { sidor: urval, kalla: `sitemap+journal (${unika.length} url:ar, ${aldrigMatte} aldrig mätta)` };
   } catch (fel) {
     return { sidor: FALLBACK_SIDOR, kalla: `fallback (${String(fel).slice(0, 60)})` };
   }
@@ -397,6 +415,8 @@ const browser = await puppeteer.launch({
 });
 
 let SIDOR_LISTA = [];
+// VÅG 157 (Θ): sidor med lyckad mätning (ok/admin-flik) journalförs efter svepet
+const matadeSidor = new Set();
 try {
   const { sidor, kalla } = SIDOR
     ? { sidor: SIDOR, kalla: "argument" }
@@ -546,6 +566,7 @@ try {
                 await new Promise((r) => setTimeout(r, 250));
               }
               // admin-ytan färdigmätt — hoppa vanlig mätning av inloggningsvyn
+              matadeSidor.add(sida); // VÅG 157: inloggade ytan räknas som mätt
               await new Promise((r) => setTimeout(r, 350));
               continue;
             }
@@ -576,6 +597,7 @@ try {
           (status === "ok" ? 0 : 1);
         rapport.fel += felAntal;
         rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal, konsolFel: konsolFel.slice(0, 5), matning });
+        if (status === "ok") matadeSidor.add(sida); // VÅG 157: journalförd vid ok-mätning
         const flagga = felAntal > 0 ? "⚑" : "·";
         console.log(
           `${flagga} [${tema}/${skarm.namn}] ${sida} — överflöd ${matning ? matning.overflod + "px" : "?"}${matning && matning.kontrast.length ? `, kontrast ${matning.kontrast.length}` : ""}${matning && matning.utanfor.length ? `, utanför ${matning.utanfor.length}` : ""}${konsolFel.length ? `, konsolfel ${konsolFel.length}` : ""}${status !== "ok" ? ", " + status : ""}`
@@ -591,6 +613,16 @@ try {
   await browser.close();
 }
 if (avbruten) rapport.status = "avbruten — deploy pågår";
+
+// VÅG 157 (Θ): journalför mätta sidor (endast cron-läge — riktade --sidor-
+// svep roterar inte journalen). Sidor som hann mätas före ett deploy-
+// avbrott journalförs också: de är faktiskt mätta.
+if (!SIDOR && matadeSidor.size) {
+  const journal = lasJournal();
+  const nu = Date.now();
+  for (const s of matadeSidor) journal[s] = nu;
+  fs.writeFileSync(JOURNAL_FIL, JSON.stringify(journal, null, 2));
+}
 
 // ── Rapport ──────────────────────────────────────────────────────────────────
 const katalog = path.join(ROT, "data", "vakten");

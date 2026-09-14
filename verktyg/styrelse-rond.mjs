@@ -173,7 +173,8 @@ HÅRT LEVERANSPROTOKOLL (strikt):
    — {"ts":"<iso>","rond":<n>,"beslut":"<vågens kärnbeslut i en mening>","landat":"<commit-hash ELLER 'nej'>"}.
    Organismens minne: varje beslut genom tiderna, sökbart. Avsluta alltid med detta.
 7. Kort rond-protokoll i worklog.md: beslut, dispatcherade agenter, landade commits.
-8. EVIGHETSMOTORN (våg 147 — kunddirektiv "bygga vidare så den aldrig slocknar igen"): kontrollera att PIPELINE-KO.md har MINST 3 KOMMANDE vågar bokade; om tunn/tom — fyll på ur data/infra/evighetskatalog.md (rotera spår, aldrig samma två ronder i rad; granskningskön = förstahandsval när aktuell) FÖRE du verkställer. Organismen får aldrig stå utan nästa våg.`;
+8. EVIGHETSMOTORN (våg 147 — kunddirektiv "bygga vidare så den aldrig slocknar igen"): kontrollera att PIPELINE-KO.md har MINST 3 KOMMANDE vågar bokade; om tunn/tom — fyll på ur data/infra/evighetskatalog.md (rotera spår, aldrig samma två ronder i rad; granskningskön = förstahandsval när aktuell) FÖRE du verkställer. Organismen får aldrig stå utan nästa våg.
+9. ALLVETANDE BESLUTSUNDERLAG (våg 159 — kunddirektiv "organen vet allt, deras beslut om allt"): före verkställning, läs och VÄG IN i rondens beslut: (a) data/forskning/zcode-kallkod/ — 13 kapitel om zcode:s inre; olästa §-rekommendationer = obeskattade beslut (körda: M4-minnesberedaren, M6-läge, m7-generateText, k1-k3; köade i agentfabrik/ko/: m-kapitel-verkstall v1-v3); (b) skuldlistan: Mimosa full-scan (scanner_enobufs noterad ×5), AI-Mentor-uppgradering på generateText (medlems-scopad + rate-limit — kostnadsbeslut), kundens granskningskö 14 FLYTTKLAR (R2: VÄNTAR KUND — påminn, publicera ALDRIG autonomt); (c) uppdragsloggen data/vakten/uppdragslogg.jsonl (aktuellt KUNDUPPDRAG?). Prioritera efter kundvärde — besluten är DINORGANISMENS, verkställ dem.`;
 
   // VÅG 133c — FETCH-RETRY: en transient app-server-blipp (deploy-omstart,
   // tillfällig belastning) ska ALDRIG kosta en hel 3-timmarsrond. Bevis:

@@ -56,9 +56,10 @@ export const dynamic = "force-dynamic";
  *   "lage" {lage:"build"|"plan"} → V83 B2: session/setMode (BEVISAT LIVE,
  *                kartan §1) → {lage, kontext} — läget bevaras till nyskapade
  *                sessioner (create-param mode).
- *   "tankestyrka" {niva:"nothink"|"high"|"max"} → V83 B2: session/
- *                setThoughtLevel (BEVISAT LIVE, nivåer ur kartan §1) →
- *                {niva, kontext}.
+ *   "tankestyrka" {niva:"nothink"|"low"|"medium"|"high"|"max"} → V83 B2:
+ *                session/setThoughtLevel (BEVISAT LIVE, nivåer ur
+ *                modellkatalogen — low/high/max är GLM-5.3-familjens)
+ *                → {niva, kontext}.
  *
  * SKYDD: requireAdmin på båda metoderna. Svaret bär ALDRIG hemligheter —
  * sessionId är en offentlig zcode-identifierare.
@@ -244,8 +245,8 @@ export async function POST(req: NextRequest) {
       return jsonSvar({ ...svar, kontext: await transport.lasKontext() });
     }
     if (action === "tankestyrka" || action === "tankeniva") {
-      if (!["nothink", "high", "max"].includes(niva)) {
-        return jsonSvar({ fel: 'Okänd tankestyrka — använd "nothink", "high" eller "max" (LIVE-nivåer, kartan §1).' }, 400);
+      if (!["nothink", "low", "medium", "high", "max"].includes(niva)) {
+        return jsonSvar({ fel: 'Okänd tankestyrka — använd "nothink", "low", "medium", "high" eller "max" (modellkatalogens nivåer).' }, 400);
       }
       const svar = await transport.sattTankeNiva(niva);
       return jsonSvar({ ...svar, kontext: await transport.lasKontext() });

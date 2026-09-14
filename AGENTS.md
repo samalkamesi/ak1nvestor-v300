@@ -135,18 +135,23 @@ disciplin — och (b) .env*/pem/key/rsa-filer (R2). Regler:
 3. Merge-committar passerar (grenarnas kod granskades); arbetsstationen
    kör tsc efter varje merge — 0 fel gäller hela vägen till prod.
 
-## SKAL-KVOTEN (våg 137 — bevisat av rond F-sessionen 2026-09-13)
+## SKAL-KVOTEN (våg 137+148 — bevisat av rond F-sessionen 2026-09-13 och våg 148 2026-09-14)
 
-Huvudagentens studio-skal har två kända svagheter (app-server 3.11.2-22):
+Huvudagentens studio-skal har kända svagheter (app-server 3.11.2-22):
 sammansatta bash-kommandon (flock/redirect/heredoc/långa rader) triggar
 ~30 s-häng i direktsändningen, och bakgrundskörningar startar EJ via
-studio-shellet. KUR (sessionen bevisade den själv under rond F):
-1. Sammansatta kommandon → Write skriptfil först + kort `bash <fil>`
-   (ALDRIG flock/redirekt/heredoc/långa rader direkt i huvud-shellet).
-2. Byggen och tunga körningar → DISPATCHA SUBAGENT — deras skal är
+studio-shallet. **Våg 148-fynd (2026-09-14): även `bash <skriptfil>` och
+`sh <skriptfil>` hänger; häng betyder INTE att kommandot avbröts — det
+kan ha körts fullt ut på servern med svaret förlorat (bevis: git rm
+"hängde" men verkställdes). KUR i prioriteringsordning:**
+1. `node <skriptfil.mjs>` — den BEVISAT pålitliga kanalen (våg 148 körde
+   merge, filstäd och sonder via node-wrappers utan ett enda fall).
+2. Enkla korta kommandon + Read/Write/Edit går alltid igenom direkt.
+3. Efter varje "häng": verifiera effekten (ls/git log) INTE om körningen —
+   kommandot kan ha verkställts; lita på verifiering, aldrig på svaret.
+4. Byggen och tunga körningar → DISPATCHA SUBAGENT — deras skal är
    felfria (dataagenterna körde alla kommandon utan problem).
-3. Långa commit-meddelanden → `git commit -F <fil>`-mönstret.
-4. Enkla korta kommandon + Read/Write/Edit går alltid igenom direkt.
+5. Långa commit-meddelanden → `git commit -F <fil>`-mönstret.
 
 ## GRÄNSSNITTSVAKTEN (våg 105 — kunddirektiv "aldrig igen nå kundens ögon")
 
@@ -221,6 +226,26 @@ Organismen FÅR ALDRIG stå utan nästa våg. Tre skydd:
    PIPELINE-KO.md innan verkställning.
 Vid vaktprompt: fortsätt pågående våg ELLER boka 3 nya ur katalogen —
 verkställ, bokför (worklog + beslutsminne), aldrig sysslolös.
+
+## TRÅDENS PERMANENS (våg 148 — kunddirektivet "z code 100% samma")
+
+Kundens mest återkommande smärta ("allt försvinner när jag uppdaterar,
+kan ej fortsätta där jag började") är KURAD I ROTTEN:
+- **Servern är trådens sanningsägare**: GET /api/studio/stream svarar
+  `tradHistorik` = HELA huvudtråden (bokens alla sessioner, äldst→nyast)
+  läst ur zcode:s EGENNA sessionsdatabas (~/.zcode/cli/db/db.sqlite —
+  samma källa som desktop-Z läser vid resume). Klienten renderar detta
+  ETT fält; ingen kedje-sysning, inga barnprocesser per länk.
+- **Tråden är helig**: klientens poll ERSÄTTER aldrig vyn med en enskild
+  sessions historik (det var mordvapnet: v144-pollen skrev över den
+  sammanslagna tråden med mål-sessionens korta svans).
+- **Målet föds om vid första anropet** efter omstart (mal=null ⇒ stående
+  mål återarmas direkt i GET; hjärtat + POST-grenen kvarstår som skydd).
+- **Din arbetsyta synkas autonomt**: varje deploy (prod-synken) kör
+  `git pull --ff-only /home/ak1a/AK1 develop` + färskt AGENTS.md här.
+  Håll trädet COMMITTAT — en smutsig yta larmar i prod-synk.loggen och
+  du lever i gammal kod (bevisat 2026-09-14: våg 140-hjärna vid våg
+  147-prod = omgjort klart arbete).
 
 ## HUVUDAGENT-RAPPORTER I STUDION (våg 132 — kunden ska se allt "exakt som i desktop-Z")
 

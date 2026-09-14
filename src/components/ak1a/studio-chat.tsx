@@ -2890,6 +2890,9 @@ function TjansteSektioner({
   avbryterId,
   webblasare,
   automation,
+  subagenter,
+  onAvbrytSubagent,
+  avbryterSubagentId,
 }: {
   tjanster: Record<TjansteNamn, TjansteTillstand>;
   onVaxla: (namn: TjansteNamn, oppenEfter: boolean) => void;
@@ -2897,6 +2900,10 @@ function TjansteSektioner({
   avbryterId: string | null;
   webblasare: TjansteWebblasareProps;
   automation: TjansteAutomationProps;
+  /** VÅG 152 R1: levande subagent-barn (GET /api/studio/subagenter). */
+  subagenter: SubagentPost[];
+  onAvbrytSubagent: (barnSessionId: string) => void;
+  avbryterSubagentId: string | null;
 }): React.JSX.Element | null {
   const synliga = TJANSTE_INFO.filter((t) => tjanster[t.namn].finns);
   if (synliga.length === 0) return null;
@@ -3007,6 +3014,62 @@ function TjansteSektioner({
                       ))}
                     </ul>
                   ))}
+
+                {/* ── VÅG 152 R1: LEVANDE SUBAGENTER (session/subagents) ──
+                    barn-processer som kör JUST NUPP: prick grön=running,
+                    gul=annat; Avbryt POSTar {taskId: barnSessionId}. */}
+                {t.namn === "bakgrund" && subagenter.length > 0 && (
+                  <div className="mt-2 border-t border-[#30363D] pt-2">
+                    <p className="mb-1.5 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#3FB950]" aria-hidden />
+                      Levande subagenter ({subagenter.length})
+                    </p>
+                    <ul className="space-y-1.5">
+                      {subagenter.map((a) => (
+                        <li
+                          key={a.barnSessionId}
+                          className="rounded-md border border-[#30363D] bg-[#161B22] px-2 py-1.5"
+                          title={`${a.barnSessionId} · ${a.status}`}
+                        >
+                          <div className="flex items-start gap-1.5">
+                            <span
+                              className={cn(
+                                "mt-1 h-2 w-2 shrink-0 rounded-full",
+                                a.status === "running" ? "bg-[#3FB950]" : "bg-[#D29922]",
+                              )}
+                              title={`Status: ${a.status}`}
+                            />
+                            <div className="min-w-0 flex-1">
+                              <p className="break-words font-mono text-[10px] leading-snug text-[#E6EDF3]/85">
+                                {a.titel || a.barnSessionId}
+                              </p>
+                              {a.typ && (
+                                <p className="mt-0.5 truncate font-mono text-[9px] text-[#484F58]">{a.typ}</p>
+                              )}
+                            </div>
+                            {tjansteKor(a.status) && (
+                              <button
+                                type="button"
+                                onClick={() => onAvbrytSubagent(a.barnSessionId)}
+                                disabled={avbryterSubagentId === a.barnSessionId}
+                                title="Avbryt subagenten (studio/subagenter)"
+                                aria-label="Avbryt subagenten"
+                                className="flex min-h-[52px] shrink-0 items-center gap-1 rounded-md border border-[#DA3633]/40 px-2 py-0.5 text-[9px] font-semibold text-[#F85149] transition-colors hover:bg-[#DA3633]/10 disabled:opacity-50 sm:min-h-0"
+                              >
+                                {avbryterSubagentId === a.barnSessionId ? (
+                                  <Loader2 className="h-3 w-3 animate-spin" />
+                                ) : (
+                                  <X className="h-3 w-3" />
+                                )}
+                                Avbryt
+                              </button>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* ── WEBBLÄSAR-PANEL (VÅG 92 B3): URL-fält → kort + sidor ── */}
                 {t.namn === "webblasare" && (
@@ -3462,6 +3525,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const tjansterRef = React.useRef(tjanster);
   const [avbryterJobb, setAvbryterJobb] = React.useState<string | null>(null);
 
+  /**
+   * VÅG 152 R1: LEVANDE SUBAGENTER — GET /api/studio/subagenter (15 s-poll).
+   * Renderas som egen delsektion i BAKGRUNDSJOBB-panelen; tom lista = dold.
+   */
+  const [levandeSubagenter, setLevandeSubagenter] = React.useState<SubagentPost[]>([]);
+  const [avbryterSubagent, setAvbryterSubagent] = React.useState<string | null>(null);
+
   /** VÅG 92 B3: WEBBLÄSAR-PANEL — URL-fält, kör-status, kort + öppna sidor. */
   const [webUrl, setWebUrl] = React.useState("");
   const [webKorPaga, setWebKorPaga] = React.useState(false);
@@ -3591,6 +3661,20 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const strömmarHuvud = huvudTabb?.strömmar ?? false;
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+
+  /** VÅG 152 R1-UI — Organismens "Levande barn"-rad: barn som lever just
+   *  nu (running/waiting/blocked) ur DELADE levandeSubagenter (s1:s 15
+   *  s-poll av GET /api/studio/subagenter — ingen egen fetch här). */
+  const barnKör = levandeSubagenter.filter(
+    (b) => b.status === "running" || b.status === "waiting" || b.status === "blocked",
+  );
+  /** Tooltip: full lista med status, körande (●) före avslutade (·). */
+  const barnTitelLista = [
+    ...barnKör.map((b) => `● ${b.titel} — ${agentStatusText(b.status)}`),
+    ...levandeSubagenter
+      .filter((b) => b.status !== "running" && b.status !== "waiting" && b.status !== "blocked")
+      .map((b) => `· ${b.titel} — ${agentStatusText(b.status)}`),
+  ].join("\n");
 
   /** VÅG 114 — ORGANISM-PANELEN (kunden bygger via studion ⇒ maskinens
    *  puls ska synas här): registret + pumparnas senaste rader ur
@@ -6366,6 +6450,64 @@ export function StudioChat({ hem }: { hem: () => void }) {
       }
     },
     [visaToast, lasTjanst],
+  );
+
+  /**
+   * VÅG 152 R1: Läs levande subagent-barn — GET /api/studio/subagenter
+   * (transportens lasSubagenter, session/subagents). Tyst vid fel — nästa
+   * poll (15 s) försöker igen.
+   */
+  const lasLevandeSubagenter = React.useCallback(async (): Promise<void> => {
+    try {
+      const res = await fetch("/api/studio/subagenter", { headers: adminHeaders() });
+      if (!res.ok) return;
+      const data = (await res.json().catch(() => ({}))) as { subagenter?: SubagentPost[] };
+      if (Array.isArray(data.subagenter)) setLevandeSubagenter(data.subagenter);
+    } catch {
+      // tyst — nästa poll försöker igen
+    }
+  }, []);
+
+  /** Poll 15 s — ENDAST när fliken syns; sektionen lever utan manuell öppning. */
+  React.useEffect(() => {
+    void lasLevandeSubagenter();
+    const tid = window.setInterval(() => {
+      if (document.visibilityState === "visible") void lasLevandeSubagenter();
+    }, 15_000);
+    return () => window.clearInterval(tid);
+  }, [lasLevandeSubagenter]);
+
+  /**
+   * Avbryt ett subagent-barn: POST /api/studio/subagenter {taskId:
+   * barnSessionId} → toast + listan uppdateras ur ett färskt GET-svar.
+   */
+  const avbrytLevandeSubagent = React.useCallback(
+    async (barnSessionId: string) => {
+      setAvbryterSubagent(barnSessionId);
+      try {
+        const res = await fetch("/api/studio/subagenter", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({ taskId: barnSessionId }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          avbrutet?: boolean;
+          meddelande?: string;
+          fel?: string;
+        };
+        if (res.ok && data.avbrutet === true) {
+          visaToast(data.meddelande || "Subagenten avbruten.");
+        } else {
+          visaToast(data.meddelande || data.fel || "Subagenten kunde ej avbrytas.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel — subagenten kunde ej avbrytas.", "fel");
+      } finally {
+        setAvbryterSubagent(null);
+        void lasLevandeSubagenter();
+      }
+    },
+    [visaToast, lasLevandeSubagenter],
   );
 
   // ── VÅG 92 B3: WEBBLÄSAR-PANEL — POST {url} → resultatkort + sidlista ──────
@@ -9226,6 +9368,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
           onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
           onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
           avbryterId={avbryterJobb}
+          subagenter={levandeSubagenter}
+          onAvbrytSubagent={(id) => void avbrytLevandeSubagent(id)}
+          avbryterSubagentId={avbryterSubagent}
           webblasare={{
             url: webUrl,
             setUrl: setWebUrl,
@@ -9476,6 +9621,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 onVaxla={(namn, oppenEfter) => vaxlaTjanste(namn, oppenEfter)}
                 onAvbryt={(id) => void avbrytBakgrundsjobb(id)}
                 avbryterId={avbryterJobb}
+                subagenter={levandeSubagenter}
+                onAvbrytSubagent={(id) => void avbrytLevandeSubagent(id)}
+                avbryterSubagentId={avbryterSubagent}
                 webblasare={{
                   url: webUrl,
                   setUrl: setWebUrl,

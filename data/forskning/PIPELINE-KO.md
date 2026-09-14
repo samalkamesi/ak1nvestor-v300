@@ -131,11 +131,15 @@ Agent-anrop, 4+ via fabriksmanifest.
   mal-återarming + autonom prod-synk; fix 2 = createRequire/bundler);
   VÅG 149-FIX LEVERERAD (ee6a06a2: självvärmande server via
   instrumentation.ts — vaktens kallstartslarm kuras i roten)
-- ▶ PÅGÅR våg 149: /bolag/{slug} — 100 bolagssidor på befintlig data
-  (SOKORDSINVENTERING-2026 glapp 1: störst sökvolym-täckning per kodrad;
-  "ABB nyckeltal"-longtail). KODVÅG — huvudagenten äger src/**, tsc 0,
-  ETT bygg. Parallellt: fabrikmanifest zcode-paritet-v148 (u1-u3) kör
-  i agentfabriken — verifieras + mergas in innan bygg.
+- ✓ LEVERERAT våg 149 (2026-09-14): /bolag/{slug} — 100 bolagssidor +
+  register livekodade (40f15763, prod-committen; fabrikmerge ba43e980).
+  KVD: /bolag 200 med 100 länkar · sitemap 100 URL:er · stickprov
+  akrbp-ol/cvx 200 med SEO-titlar · prod 200 · vakten GRÖN · motorer
+  107/0/0. Slutled + worklog bokat av hjärtslagssessionen 09:0x;
+  SOKORDSINVENTERING-2026.md committad (våg 138-syntesen).
+- ▶ NÄSTA VÅG 150 (störst i kön): programmatiska dataset-teman (S7) —
+  ~240–253 sidor, /dataset/[bransch]/[nyckeltal] m.fl.; storskaligt =
+  AGENTFABRIKSmanifest (omgångar om 3), huvudagenten äger ETT bygg.
 - · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)

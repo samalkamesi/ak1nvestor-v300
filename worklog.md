@@ -10455,7 +10455,7 @@ den). Fabriksmanifest `zcode-paritet-v148` (u1 sessionslista ur db,
 u2 trådvyn vid nerladdad agent, u3 mobilpayload-tak) dispatcherat till
 AGENTFABRIKEN — körs i omgång om 3, se statusfilen.
 
-## VÅG 149 — (PÅGÅENDE) GRÄNSSNITTSVAKTENS LARM + BOLAGSSIDORNA
+## VÅG 149 — VAKTENS KALLSTARTSLARM KURAT + BOLAGSSIDORNA LEVERERADE (2026-09-14, KLAR)
 
 **Fix levererad + deployad (ee6a06a2, prod 05:50):** vakten larmade
 2026-09-14T0717 om /admin-timeout (>25 s domcontentloaded) i light/390
@@ -10466,9 +10466,20 @@ SJÄLVVÄRMANDE vid varje start — [varm]-loggar för / /admin /studio
 /kurser /labb /blogg (loopback whitelistat). Ingen kund, studio eller
 vakt möter den kalla svansen efter omstart. tsc 0.
 
-**Huvudspår (påbörjat):** /bolag/{slug} — 100 bolagssidor på befintlig
-data (SOKORDSINVENTERING-2026 glapp 1: störst sökvolym-täckning per
-kodrad; "ABB nyckeltal"-longtail). KODVÅG — huvudagenten äger src/**,
-tsc 0, ETT bygg per våg.
+**Huvudspår LEVERERAT (40f15763, prod-committen):** /bolag/{slug} — 100
+bolagssidor + register på befintlig data (SOKORDSINVENTERING-2026
+glapp 1: störst sökvolym-täckning per kodrad; "ABB nyckeltal"-
+longtail). Fabriksmanifestet zcode-paritet-v148 (u1-u3: sessionslista
+ur db, tråd utan agent, mobilpayload-tak) verifierat + mergat in före
+bygget (ba43e980) — ETT bygg per våg hölls.
+
+**KVD (slutled, hjärtslagssession 09:0x):** /bolag = 200 med 100 unika
+bolagslänkar · sitemap.xml = 100 /bolag/-URL:er · exempelssidorna
+/bolag/akrbp-ol + /bolag/cvx = 200 med korrekta SEO-titlar ("Aker BP
+ASA (AKRBP) nyckeltal — P/E 17,0x och branschjämförelse") ·
+https://lab.ak1nvestor.com/bolag = 200 · vakten GRÖN · motorer
+107/0/0. Vågen KLAR. Bokföringsskuld täcks samma session:
+SOKORDSINVENTERING-2026.md (våg 138-syntesen = våg 149:s underlag)
+committas nu — den låg otrackad sedan 2026-09-14 tidig morgon.
 
 

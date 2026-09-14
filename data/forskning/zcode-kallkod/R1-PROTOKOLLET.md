@@ -61,7 +61,7 @@ setModel på levande session är dokumenterad reserv.
 | Metod | Parametrar → Retur | Källa | Studio |
 |---|---|---|---|
 | workspace/readState | `{workspace}` → `{mode, model, thoughtLevel, …}` | ST | ✅ |
-| workspace/generateText | `{workspace, prompt, …}` → text utan sessionskostnad | RT | ✅ |
+| workspace/generateText | `{workspace, prompt, …}` → text utan sessionskostnad | RT | ⚠️ FINNS (v91: transport.genereraText + /tjanster/generera) men LIVE-BLOCKERAD 2026-09-14: runtimen svarar `provider_not_found (zai)` trots korrekt modelRef — workspace-scopad generation kräver providern i WORKSPACE-REGISTRET; länkad kur = workspace/upsertModelProvider (schema ej exponerat i bundeln — expeditionsuppgift) |
 | workspace/cancelGenerateText | (avbryt pågående generateText) | RT | ❌ |
 | workspace/setDefaultMode | `{workspace, mode}` → persistent default | RT | ✅ |
 | workspace/setDefaultModel | `{workspace, model}` → persistent default | RT | ✅ |

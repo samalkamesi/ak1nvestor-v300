@@ -1,0 +1,1 @@
+studio: våg 149 — bokföringsskuld täckt: worklog VÅG 148 (trådens permanens, tre rötter + fix 2) + VÅG 149 (vaktens kallstartslarm kuras, ee6a06a2 deployad); beslutsminne + PIPELINE-KO uppdaterade. Fabriksmanifest zcode-paritet-v148 pågår — push+bygg väntar in det (ETT bygg/våg).

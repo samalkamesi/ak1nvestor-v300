@@ -10424,4 +10424,51 @@ sanningshierarkins skull (worklog = historik):
 stream/route.ts + src/components/ak1a/studio-chat.tsx (våg 141–145),
 verktyg/agentfabrik.mjs + evighetsmotor.mjs (146–147), pumpor-daemon.mjs.
 
+## VÅG 148 — TRÅDENS PERMANENS: "Z CODE 100 % SAMMA" (2026-09-14, KLAR OCH LIVE)
+
+Kundens mest återkommande smärta ("allt försvinner när jag uppdaterar,
+kan ej fortsätta där jag började") kuras I ROTTEN — tre rötter:
+
+1. **Hela huvudtråden ur zcode:s egna sessionsdatabas**: GET
+   /api/studio/stream svarar `tradHistorik` = HELA huvudtråden (143
+   meddelanden, hela kedjan äldst→nyast) läst ur
+   ~/.zcode/cli/db/db.sqlite — samma källa som desktop-Z läser vid
+   resume. Klientens poll ERSÄTTER aldrig vyn med en sessions korta
+   svans (det var mordvapnet i v144).
+2. **Målet föds om vid första anropet** efter omstart (mal=null ⇒
+   stående mål återarmas direkt i GET; bevis: målet var null 04:31,
+   aktivt iteration 2+ strax därefter).
+3. **Prod-synken synkar agentens arbetsyta autonomt** vid varje deploy
+   (pull --ff-only + färskt AGENTS.md) — agenten lever aldrig mer i
+   gammal kod (bevisat 2026-09-14: våg 140-hjärna vid våg 147-prod).
+
+**Fix 2 (01385080):** bundlern skrev om require-syntaken till en extern
+Url-referens den ej kan ladda (pm2-logg: "Unsupported external type Url
+for commonjs reference") — `createRequire(process.execPath)` är en ren
+funktionsref bundlern aldrig rör; db-läsaren fann databasen i prod igen
+(HOME saknas i pm2-env; fallback-kedja HOME→USERPROFILE→/home/ak1a).
+Merge d2dbc295 förenade molnagentens parallellaleveranser. tsc 0.
+
+**Bokförd av våg 149-sessionen 2026-09-14 ~08:00** (arbetsstationen
+levererade; worklog-rad skulldragen efteråt — sanningshierarkin kräver
+den). Fabriksmanifest `zcode-paritet-v148` (u1 sessionslista ur db,
+u2 trådvyn vid nerladdad agent, u3 mobilpayload-tak) dispatcherat till
+AGENTFABRIKEN — körs i omgång om 3, se statusfilen.
+
+## VÅG 149 — (PÅGÅENDE) GRÄNSSNITTSVAKTENS LARM + BOLAGSSIDORNA
+
+**Fix levererad + deployad (ee6a06a2, prod 05:50):** vakten larmade
+2026-09-14T0717 om /admin-timeout (>25 s domcontentloaded) i light/390
+— ENDA felfyndet av 123 kombinationer, träffade en 4 min gammal server
+(pm2-restart 07:14:58 efter deploy; alla efterföljande mätningar
+gröna = kallstartssignatur). Kur: `src/instrumentation.ts` gör servern
+SJÄLVVÄRMANDE vid varje start — [varm]-loggar för / /admin /studio
+/kurser /labb /blogg (loopback whitelistat). Ingen kund, studio eller
+vakt möter den kalla svansen efter omstart. tsc 0.
+
+**Huvudspår (påbörjat):** /bolag/{slug} — 100 bolagssidor på befintlig
+data (SOKORDSINVENTERING-2026 glapp 1: störst sökvolym-täckning per
+kodrad; "ABB nyckeltal"-longtail). KODVÅG — huvudagenten äger src/**,
+tsc 0, ETT bygg per våg.
+
 

@@ -3050,6 +3050,9 @@ class AppServerTransport implements StudioTransport {
           if (sid) {
             this.sid = sid;
             resumerad = true;
+            // VÅG 145: resumead huvudtråds-session finns kvar i boken
+            // (idempotent — omstart kan ha tappat den).
+            if (!this.målSessionId) registreraHuvudtradSession(sid);
           }
         } catch (fel) {
           if (this.målSessionId) {
@@ -3439,6 +3442,9 @@ class AppServerTransport implements StudioTransport {
     const sid = sessionUr(resultat);
     if (!sid) throw new Error("session/create svarade utan sessionId");
     this.sid = sid;
+    // VÅG 145: default-trådens nya session registreras i HUVUDTRÅDENS BOK
+    // (tabbar/rondsessioner har målSessionId och registreras ej).
+    if (!this.målSessionId) registreraHuvudtradSession(sid);
     this.sparaPersistens(sid, modellId);
   }
 
@@ -7913,6 +7919,40 @@ export async function lasAterkoppling(): Promise<{
 /** Filnamnssäker nyckel för per-session-persistensfilen. */
 function persistensFilnamn(sessionId: string): string {
   return `ak1a-studio-session-${sessionId.replace(/[^A-Za-z0-9._-]/g, "_").slice(0, 60)}.json`;
+}
+
+// ── VÅG 145 — HUVUDTRÅDENS BOK (data/vakten/huvudtrad.json) ─────────────────
+// Grunden: kundens tråd ska ha EN identitet som ÖVERLEVER sessioner, transporter
+// och omstarter. Varje session DEFAULT-transporten skapar/resumear registreras
+// här (senaste först, tak 12) — servern blir trådens sanningsägare och vyn
+// behöver aldrig gissa vilka sessioner som hör till tråden.
+const HUVUDTRAD_SOKVAG = `${process.cwd()}/data/vakten/huvudtrad.json`;
+
+export function registreraHuvudtradSession(sid: string): void {
+  try {
+    if (typeof sid !== "string" || !sid.startsWith("sess_")) return;
+    let lista: string[] = [];
+    try {
+      const pars = JSON.parse(readFileSync(HUVUDTRAD_SOKVAG, "utf8")) as { sessioner?: unknown };
+      if (Array.isArray(pars.sessioner)) lista = pars.sessioner.filter((s): s is string => typeof s === "string");
+    } catch {
+      /* ny bok */
+    }
+    const ny = [sid, ...lista.filter((s) => s !== sid)].slice(0, 12);
+    mkdirSync(path.dirname(HUVUDTRAD_SOKVAG), { recursive: true });
+    writeFileSync(HUVUDTRAD_SOKVAG, JSON.stringify({ sessioner: ny, uppdaterad: Date.now() }, null, 2));
+  } catch {
+    /* boken är stöd — aldrig fatal */
+  }
+}
+
+export function lasHuvudtradSessioner(): string[] {
+  try {
+    const pars = JSON.parse(readFileSync(HUVUDTRAD_SOKVAG, "utf8")) as { sessioner?: unknown };
+    return Array.isArray(pars.sessioner) ? pars.sessioner.filter((s): s is string => typeof s === "string") : [];
+  } catch {
+    return [];
+  }
 }
 
 /**

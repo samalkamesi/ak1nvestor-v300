@@ -4318,9 +4318,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
               sparad?.tabbar.find(
                 (t) => t.sessionId === kand || (t.kedja ?? []).includes(kand),
               ) ?? null;
-            const kedja = [...(trådTabb?.kedja ?? [])].filter(
-              (sid, i, alla) => alla.indexOf(sid) === i && sid !== kand,
-            );
+            // VÅG 145 — SERVERNS BOK: huvudtrådens sessionlista läses från
+            // data/vakten/huvudtrad.json via GET (servern = sanningsägare;
+            // klientens egna kedjor kompletterar). Tråden kan aldrig glömma
+            // vilka sessioner den vuxit igenom — omstarter inkluderade.
+            const serverBok = (data as { tradSessioner?: string[] }).tradSessioner ?? [];
+            const kedja = [...(trådTabb?.kedja ?? []), ...serverBok]
+              .filter(
+                (sid, i, alla) =>
+                  alla.indexOf(sid) === i && sid !== kand && sid.startsWith("sess_"),
+              );
             if (kedja.length > 0) {
               const delar = await Promise.all(
                 kedja.map(async (sid) => {

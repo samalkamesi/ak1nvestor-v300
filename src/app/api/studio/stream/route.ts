@@ -8,6 +8,7 @@ import {
   hamtaStudioTransport,
   lasAllaInteraktioner,
   lasAterkoppling,
+  lasHuvudtradSessioner,
   lasStudioSessionskarta,
   markeraSessionSlut,
   markeraSessionStart,
@@ -212,6 +213,20 @@ export async function GET(req: NextRequest) {
       transport.lasKontext(),
       lasAterkoppling(), // VÅG 87 H1: senast aktiva session + historik + mål
     ]);
+    // VÅG 145 — KÄLLFIX: aktivtMal lästes ur KART-transports (som dör vid
+    // omstarter) medan mål-loopen lever på DEFAULT-transporten — kundbevis:
+    // GET svarade aktivtMal=null samtidigt som /mal/status var grön, vilket
+    // dödade både tråd-preferensen och live-pollen. Sanningen läses nu från
+    // den LEVANDE transporten (bär sessionId sedan våg 139).
+    let aktivtMalSanning = aterkoppling.aktivtMal;
+    try {
+      const m = transport.malStatus();
+      if (m.mal !== null || m.aktiv) {
+        aktivtMalSanning = { ...m, sessionId: transport.sessionId() ?? undefined };
+      }
+    } catch {
+      /* kart-värdet kvarstår */
+    }
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
@@ -227,7 +242,10 @@ export async function GET(req: NextRequest) {
       // dess historik (levande transport > kartan/disk) + mål-snapshot.
       senastAktivSessionId: aterkoppling.senastAktivSessionId,
       senastAktivHistorik: aterkoppling.senastAktivHistorik,
-      aktivtMal: aterkoppling.aktivtMal,
+      // VÅG 145: mål-sanningen ur levande transport + HUVUDTRÅDENS BOK —
+      // serverns sanna sessionlista för tråden (klienten behöver inte gissa).
+      aktivtMal: aktivtMalSanning,
+      tradSessioner: lasHuvudtradSessioner(),
     });
   } catch (fel) {
     return jsonSvar({

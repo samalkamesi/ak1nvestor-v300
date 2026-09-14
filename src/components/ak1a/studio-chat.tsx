@@ -530,52 +530,73 @@ const MAX_TABB_MEDDELANDEN = 200;
 const MAX_TABB_TEXT = 20_000;
 
 function sparaTabbar(tabbar: Tabb[], aktivTabbId: string): void {
-  try {
-    sessionStorage.setItem(
-      TABB_LAGRING,
-      JSON.stringify({
-        version: 1,
-        sparad: Date.now(),
-        aktivTabbId,
-        tabbar: tabbar.map((t) => ({
-          ...t,
-          utkast: t.utkast.slice(0, 5_000),
-          strömmar: false,
-          status: "",
-          tankar: "",
-          meddelanden: t.meddelanden.slice(-MAX_TABB_MEDDELANDEN).map((m) => ({
-            ...m,
-            text: m.text.slice(0, MAX_TABB_TEXT),
-            // VÅG 97 E2: tankar överlever refresh (kollapsad, svans-budget).
-            ...(m.tankar !== undefined ? { tankar: m.tankar.slice(-8_000) } : {}),
-            tankarOppen: false,
-            verktygKort: m.verktygKort?.map((k) => ({
-              ...k,
-              argument: k.argument?.slice(0, 2_000),
-              resultat: k.resultat?.slice(0, 2_000),
-              fel: k.fel?.slice(0, 2_000),
-              liveInput: k.liveInput?.slice(-500),
-              öppen: false,
-            })),
-            ändringar: m.ändringar?.map((f) => ({
-              ...f,
-              rader: f.rader.slice(0, 50),
-              punkter: f.punkter?.slice(0, 20).map((p) => ({ ...p, rader: p.rader.slice(0, 40) })),
-              öppen: false,
-            })),
-          })),
+  // VÅG 150 — DUBBEL PERSISTENS: sessionStorage (samma flik) + localStorage
+  // (överlever flikåtervinning/hemskärmsgenväg — kundbevis: "text jag skriver
+  // så jag uppdaterar försvinner" när mobilen återvann fliken och session-
+  // storaget var tomt). localStorage håller ~5 MB — taken nedan håller måttet.
+  const kropp = JSON.stringify({
+    version: 1,
+    sparad: Date.now(),
+    aktivTabbId,
+    tabbar: tabbar.map((t) => ({
+      ...t,
+      utkast: t.utkast.slice(0, 5_000),
+      strömmar: false,
+      status: "",
+      tankar: "",
+      meddelanden: t.meddelanden.slice(-MAX_TABB_MEDDELANDEN).map((m) => ({
+        ...m,
+        text: m.text.slice(0, MAX_TABB_TEXT),
+        // VÅG 97 E2: tankar överlever refresh (kollapsad, svans-budget).
+        ...(m.tankar !== undefined ? { tankar: m.tankar.slice(-8_000) } : {}),
+        tankarOppen: false,
+        verktygKort: m.verktygKort?.map((k) => ({
+          ...k,
+          argument: k.argument?.slice(0, 2_000),
+          resultat: k.resultat?.slice(0, 2_000),
+          fel: k.fel?.slice(0, 2_000),
+          liveInput: k.liveInput?.slice(-500),
+          öppen: false,
         })),
-      }),
-    );
+        ändringar: m.ändringar?.map((f) => ({
+          ...f,
+          rader: f.rader.slice(0, 50),
+          punkter: f.punkter?.slice(0, 20).map((p) => ({ ...p, rader: p.rader.slice(0, 40) })),
+          öppen: false,
+        })),
+      })),
+    })),
+  });
+  try {
+    sessionStorage.setItem(TABB_LAGRING, kropp);
   } catch {
-    // quota/privat läge — tabbar lever i minnet
+    // quota/privat läge — localStorage nedan är huvudfallback
+  }
+  try {
+    window.localStorage.setItem(TABB_LAGRING, kropp);
+  } catch {
+    // båda fulla — tabbar lever i minnet
   }
 }
 
 function lasTabbar(): { aktivTabbId: string; tabbar: Tabb[] } | null {
+  // VÅG 150: sessionStorage först (samma flik), senast sparad av localStorage
+  // som fallback (återvunnen/ny flik — utkastet lever kvar).
+  let rå: string | null = null;
   try {
-    const rå = sessionStorage.getItem(TABB_LAGRING);
-    if (!rå) return null;
+    rå = sessionStorage.getItem(TABB_LAGRING);
+  } catch {
+    rå = null;
+  }
+  if (!rå) {
+    try {
+      rå = window.localStorage.getItem(TABB_LAGRING);
+    } catch {
+      rå = null;
+    }
+  }
+  if (!rå) return null;
+  try {
     const pars = JSON.parse(rå) as { version?: number; aktivTabbId?: string; tabbar?: Tabb[] };
     if (pars.version !== 1 || !Array.isArray(pars.tabbar) || pars.tabbar.length === 0) return null;
     const tabbar = pars.tabbar
@@ -3955,7 +3976,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
   React.useEffect(() => {
     const vidStang = () => sparaTabbar(tabbarRef.current.tabbar, tabbarRef.current.aktivTabbId);
     window.addEventListener("beforeunload", vidStang);
-    return () => window.removeEventListener("beforeunload", vidStang);
+    // VÅG 150 — MOBIL-SÄKER FLUSH: beforeunload eldar inte pålitligt i
+    // mobilwebbläsare; pagehide + synlig→dold täcker uppdatering och
+    // flikbyte — utkastet hinner alltid skrivas (nu även till localStorage).
+    window.addEventListener("pagehide", vidStang);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") vidStang();
+    });
+    return () => {
+      window.removeEventListener("beforeunload", vidStang);
+      window.removeEventListener("pagehide", vidStang);
+    };
   }, []);
 
   // Composer-utkastet följer den aktiva tabben (per-tabb draft).

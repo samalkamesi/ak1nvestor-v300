@@ -3918,6 +3918,9 @@ class AppServerTransport implements StudioTransport {
     // Räknaren började om vid mål-set — mål-lyssnaren (om strömmen redan
     // är öppen) får snapshot direkt; annars fångar MAL_BUFFERT events så
     // en senare öppnad ström aldrig missar iterationens start.
+    // VÅG 150: målet persistas till disk — nästa omstart återarmar DET
+    // målet (inte bara stående mål) via lasMalStateFranDisk.
+    skrivMalStateTillDisk(text);
     this.sändMalEvent({ typ: "mal_status", aktiv: true, pausad: false, iteration: this.malIteration, mal: text });
     return {
       mal: text,
@@ -4005,6 +4008,9 @@ class AppServerTransport implements StudioTransport {
     this.malSenasteEvent = null;
     this.malSenasteEventTid = null;
     this.malBuffert.length = 0;
+    // VÅG 150: disk-målet städas OCKSÅ — ett medvetet rensat mål ska
+    // ALDRIG återuppstå vid nästa omstart.
+    try { rmSync(MAL_STATE_SOKVAG, { force: true }); } catch { /* stöd */ }
     this.sändMalEvent({ typ: "mal_status", aktiv: false, pausad: false, iteration: 0, mal: null });
     return { mal: null, meddelande: "Målet rensat." };
   }
@@ -8042,6 +8048,37 @@ function v148SessionFranDb(db: V148Databas, sessionId: string): StudioHistorikPo
 function v148Pusha(ut: StudioHistorikPost[], m: { roll: "user" | "assistant"; text: string[] }): void {
   const text = m.text.join("\n").trim();
   if (text) ut.push({ roll: m.roll, text });
+}
+
+// ── VÅG 150 — MÅL-PERMANENS PÅ DISK: mål-state dog med processminnet vid ────
+// varje pm2-omstart (789+ omstarter; hjärtloggen visar cykeln "MÅL återställt"
+// → "mål borta" om och om igen). sattMal skriver nu målet till disk och
+// GET/POST återarmnar DISK-målet först (kundens eget mål > stående mål);
+// rensaMal städar filen (ett rensat mål ska ALDRIG återuppstå).
+const MAL_STATE_SOKVAG = `${process.cwd()}/data/vakten/mal-state.json`;
+
+export function lasMalStateFranDisk(): { mal: string; ts: number } | null {
+  try {
+    const pars = JSON.parse(readFileSync(MAL_STATE_SOKVAG, "utf8")) as {
+      mal?: unknown;
+      ts?: unknown;
+    };
+    if (typeof pars.mal === "string" && pars.mal.trim()) {
+      return { mal: pars.mal.trim(), ts: typeof pars.ts === "number" ? pars.ts : 0 };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function skrivMalStateTillDisk(mal: string): void {
+  try {
+    mkdirSync(path.dirname(MAL_STATE_SOKVAG), { recursive: true });
+    writeFileSync(MAL_STATE_SOKVAG, JSON.stringify({ mal, ts: Date.now() }, null, 2));
+  } catch {
+    /* disk-målet är stöd — aldrig fatal */
+  }
 }
 
 /**

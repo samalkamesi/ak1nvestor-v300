@@ -9,6 +9,7 @@ import {
   lasAllaInteraktioner,
   lasAterkoppling,
   lasHuvudtradSessioner,
+  lasMalStateFranDisk,
   lasStudioSessionskarta,
   lasTradHistorik,
   markeraSessionSlut,
@@ -56,6 +57,44 @@ function byggArvBlock(): string {
     worklog ? `SENASTE WORKLOG:\n${worklog}` : "",
     beslut ? `SENASTE BESLUT (beslutsminnet):\n${beslut}` : "",
     "Börja svaret med 'MINNE LADDAT' + en rad om var tråden står; verkställ sedan uppdraget.",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+// ── VÅG 150A — TRÅDMINNET: nya sessioner föds med HELA samtalet ──────────────
+// Kundbevis (kontextrad "~1 % av 1M" + "den kommer inte ihåg vad vi skrev
+// innan"): v141-arvet bar bara 6 worklog-rader — vyn visade hela tråden
+// (v148) men MODELLEN föddes tom vid varje sessionsrotation. Nu injiceras
+// trådens FAKTISKA samtalssvans (senaste 60 posterna, tak 100 k tecken)
+// ur zcode:s egna db + worklog + beslutsminne — kontexten börjar där
+// tråden står, inte på noll.
+const TRADMINNE_POSTER = 60;
+const TRADMINNE_TAK_TKN = 100_000;
+
+function byggTradminne(nySessionId: string): string {
+  const traden = lasTradHistorik(lasHuvudtradSessioner(), {
+    sessionId: nySessionId,
+    historik: [],
+  });
+  const svans = traden.slice(-TRADMINNE_POSTER);
+  if (svans.length === 0) return byggArvBlock();
+  const rader = svans.map((p) => `${p.roll === "user" ? "KUNDEN" : "AK1A"}: ${p.text}`);
+  // taket från SLUTET (senaste samtalet väger tyngst)
+  let samtal = rader.join("\n\n───\n\n");
+  if (samtal.length > TRADMINNE_TAK_TKN) {
+    samtal = samtal.slice(samtal.length - TRADMINNE_TAK_TKN);
+    const bryt = samtal.indexOf("───");
+    if (bryt >= 0) samtal = samtal.slice(bryt + 3);
+  }
+  const worklog = lasArvSvans("worklog.md", 6);
+  const beslut = lasArvSvans("data/vakten/beslutsminne.jsonl", 3);
+  return [
+    `TRÅDENS MINNE (automatiskt injicerat — detta är FORTSÄTTNINGEN på vårt pågående samtal; du har arbetat med kunden före detta. ${svans.length} senaste meddelandena ur huvudtråden följer — fortsätt där tråden står, repetera ALDRIG klart arbete):`,
+    `SAMTALET HITILLS (äldst → nyast):\n${samtal}`,
+    worklog ? `SENASTE WORKLOG:\n${worklog}` : "",
+    beslut ? `SENASTE BESLUT (beslutsminnet):\n${beslut}` : "",
+    "Börja svaret med 'MINNE LADDAT' + EN rad om var tråden står; verkställ sedan uppdraget.",
   ]
     .filter(Boolean)
     .join("\n\n");
@@ -221,12 +260,14 @@ export async function GET(req: NextRequest) {
     // omstarter raderar mål-state ur processminnet (hjärtloggen bevisar
     // cykeln "MÅL återställt" → "mål borta" × 789 omstarter); hjärtat
     // återställer inom 10 min men kundens refresh skall inte vänta —
-    // mal=null (ej pausat, ingen pågående turn) ⇒ stående mål återarmas
-    // direkt. POST-grenen (v141) och hjärtat (v112) kvarstår som skydd.
+    // mal=null (ej pausat, ingen pågående turn) ⇒ målet återarmas direkt.
+    // VÅG 150: DISK-målet (kundens eget) har prioritet över stående mål.
+    // POST-grenen (v141) och hjärtat (v112) kvarstår som skydd.
     try {
       const m0 = transport.malStatus();
       if (m0.mal === null && !m0.pausad && !m0.pagaendeTurn) {
-        await transport.sattMal(STANDE_MAL_141);
+        const diskMal = lasMalStateFranDisk();
+        await transport.sattMal(diskMal?.mal || STANDE_MAL_141);
       }
     } catch {
       /* pågående turn vägrar sattMal — hjärtat/POST täcker */
@@ -391,10 +432,13 @@ export async function POST(req: NextRequest) {
       }
     }
     if (!sessionId && st.mal === null && !st.pausad) {
-      await transport.sattMal(STANDE_MAL_141);
+      // VÅG 150: DISK-målet först — kundens eget mål (sattMal persistar det)
+      // återföds hellre än stående mål; stående mål är fortfarande sista skydd.
+      const diskMal = lasMalStateFranDisk();
+      await transport.sattMal(diskMal?.mal || STANDE_MAL_141);
     }
     if (nyTradSession) {
-      const arv = byggArvBlock();
+      const arv = byggTradminne(sessionsId);
       if (arv) {
         prompt = `${arv}\n\n───\n\n${prompt}`;
       }

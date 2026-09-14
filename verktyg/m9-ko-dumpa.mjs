@@ -27,11 +27,9 @@ for (const f of [".env", ".env.local"]) {
   }
 }
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-// Nyckelnamnet byggs av segment: kvalitetsgrindens R2-mönster träffar den
-// sammanhängande strängen (falsk positiv på själva variabelnamnet — värdet
-// läses ur ENV och loggas ALDRIG, exakt som m9-fabrik.mjs).
-const SERVICE_NYCKEL = ["SUPABASE", "SERVICE", "ROLE", "KEY"].join("_");
-const nyckel = process.env[SERVICE_NYCKEL] || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// Rak referens (repo-konvention som m9-fabrik.mjs): grunden träffar sedan
+// våg 150-kuran enbart VÄRDEN, aldrig variabelnamnet — join-bygget behövs ej.
+const nyckel = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 if (!url || !nyckel) {
   console.error("[FEL] Supabase ej konfigurerat (NEXT_PUBLIC_SUPABASE_URL/nyckel saknas i .env) — värden loggas aldrig.");
   process.exit(1);

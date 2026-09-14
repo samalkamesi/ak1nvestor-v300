@@ -157,6 +157,15 @@ Agent-anrop, 4+ via fabriksmanifest.
 - ▶ VÅG 152 (bokad rond 20): kvartalsrapportserien förbereds (Q3-
   rapporterna anländer oktober) — mallar + automationsunderlag; fas B
   av dataset-teman (AKM-poäng-ytor) väntar fortfarande A2-omprövning.
+- ▶ VÅG 157 (bokad rond 22, spår 8 kvalitet): gränssnittsvaktens sidlista
+  genereras ur sitemap.xml i stället för statisk lista — rotorsaksfix
+  (bevisat gap: 130 nya /dataset-aspektsidor mäts aldrig av cron-svepet);
+  bokför även rond-21-subagentens riktade aspektsvep om rapport finns i
+  data/vakten/. Bevis: svep som täcker aspektsidorna + 0 fynd (eller
+  fynd fixade till grön).
+- ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
+  (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
+  API-kostnad; regressionstest mot befintliga svar. R2-säker.
 - · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)

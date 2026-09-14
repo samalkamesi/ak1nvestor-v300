@@ -10615,5 +10615,23 @@ högprio-larm 17:27 (6 felkontroller → omstart 17 → självläkt 17:28)
 noterat; vaktrapport 17:29 var UPPSKJUTEN (deploy pågick) — nästa
 cron mäter.
 
+**Rond 22 (20:43–23:0x) — v151-slutled LANDAT + m7-kur [organ:Θ]:**
+Hälsoprov 0 RAD/0 GUL/12 GRÖN. Rond-21-bokföringen (som avbröts mitt i)
+landade som commit `0c798832` + push prod (prod HEAD verifierad =
+0c798832): SAMMANSTALLNING-2026-09-14.md (14/14 flyttklara, R2 väntar
+kund), PIPELINE-KO v151→LEVERERAT, worklog ronder 20–21, färskt AGENTS.md
+från prod-synk. **Fabriksfynd:** m7-manifestet (generateText-kuret, köat
+i 53a01792) FELADE vid 20:25-ropet — ogiltig JSON ("\x27"-escape är
+shell-syntax, inte JSON; fabrikens logg: SyntaxError pos 1181) ⇒ FEL-
+flyttat, fabriken stod därefter med TOM ko/ (evighetsmotorsbrott).
+KUR: manifestet ombyggt programmatiskt (JSON.stringify = escape-fel
+omöjliga) + sha-verifierad kopia till prod ko/ — fabriken plockar vid
+nästa :x5-rop. **Pipeline fördjupad (≥3 vågor):** 152 (kvartal) + NY våg
+157 (spår 8: vaktens sidlista ur sitemap — 130 aspektsidor aldrig
+cron-mätta) + NY våg 158 (spår 6: AI-Mentorn förhandsfrågor). Skal-
+läxa bekräftad: Write utanför arbetsytan (/tmp) verkställs INTE vid
+30 s-häng — allt via verktyg/_rond22-*.mjs i trädet + städning efter.
+Beslutsminne: rond 22.
+
 
 

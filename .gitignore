@@ -84,3 +84,5 @@ data/cache/*
 !.zcode/commands/
 !.zcode/skills/
 .tmp-*/
+# Våg 150: fabrikens barn skriver engångs-KVD-skript i .tmp/ (aldrig leverans)
+.tmp/

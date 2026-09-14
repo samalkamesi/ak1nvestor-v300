@@ -1,0 +1,255 @@
+{
+  "kurs": "v140-a5-faq",
+  "poster": [
+    {
+      "nyckel": "v06-ev-ebitda-analys:p18",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p19",
+      "en": "**What is EV/EBITDA and what does the multiple measure?**",
+      "ar": "**ما هو معدل EV/EBITDA وما الذي يقيسه هذا المضاعف؟**"
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p20",
+      "en": "EV/EBITDA relates the company’s enterprise value (EV) to its operating earnings (EBITDA). EV is the market value of the shares plus interest-bearing debt minus cash, and EBITDA is operating profit before interest, taxes and depreciation. The multiple answers the question: how many years of operating earnings is the buyer of the entire company, debts included, paying for? To practise step by step, see the course [EV/EBITDA (V06)](/kurser/v06-ev-ebitda).",
+      "ar": "يربط مُضاعِف EV/EBITDA بين القيمة المؤسسية للشركة (EV) وأرباحها التشغيلية (EBITDA). فالقيمة المؤسسية هي القيمة السوقية للأسهم مضافًا إليها الديون التي تحمل فوائد مطروحًا منها النقد، أما EBITDA فهي نتيجة العمليات قبل الفوائد والضرائب والإهلاك. ويجيب المضاعف على سؤال: كم سنة من الأرباح التشغيلية يدفعها من يشتري الشركة كاملة بديونها؟ ولممارسة الخطوات واحدة تلو الأخرى يمكنك الرجوع إلى دورة [EV/EBITDA (V06)](/kurser/v06-ev-ebitda)."
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p21",
+      "en": "**How do I calculate EV/EBITDA myself?**",
+      "ar": "**كيف أحسب معدل EV/EBITDA بنفسي؟**"
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p22",
+      "en": "Start with EV: share price times number of shares, plus interest-bearing debt, minus cash and short-term investments. Then calculate EBITDA as operating profit plus depreciation — you find the depreciation in the cash flow statement. Divide EV by EBITDA and you have the multiple expressed in years. The article above walks through the method using concrete lines from the annual report.",
+      "ar": "ابدأ بحساب القيمة المؤسسية: سعر السهم مضروبًا في عدد الأسهم، مضافًا إليه الديون التي تحمل فوائد، مطروحًا منه النقد والاستثمارات قصيرة الأجل. ثم احسب EBITDA كنتيجة للعمليات مضافًا إليها الإهلاك الذي تجده في قائمة التدفقات النقدية. اقسم القيمة المؤسسية على EBITDA فتحصل على المضاعف معبرًا عنه بالسنوات. وتستعرض المقالة أعلاه الطريقة بأسطر ملموسة من التقرير السنوي."
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p23",
+      "en": "**Why use EV/EBITDA instead of P/E?**",
+      "ar": "**لماذا نستخدم EV/EBITDA بدلًا من P/E؟**"
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p24",
+      "en": "P/E only looks at the shares and ignores debt — two companies with the same P/E can carry completely different debt burdens. EV/EBITDA compares companies regardless of capital structure, which is why the multiple is common in acquisitions and cross-industry comparisons. Remember that the multiple is a comparison measure for educational purposes, not a recommendation.",
+      "ar": "ينظر مضاعف السعر إلى الربح (P/E) إلى الأسهم فقط ويتجاهل الديون — فقد تحمل شركتان لهما المضاعف نفسه أعباء ديون مختلفة تمامًا. أما EV/EBITDA فيقارن الشركات بغض النظر عن هيكل رأس المال، ولهذا يُستخدم كثيرًا في عمليات الاستحواذ والمقارنات بين القطاعات. وتذكّر أن هذا المضاعف أداة مقارنة لأغراض تعليمية وليس توصية."
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p25",
+      "en": "**What misconceptions are common about EV/EBITDA?**",
+      "ar": "**ما المفاهيم الخاطئة الشائعة حول EV/EBITDA؟**"
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p26",
+      "en": "The most common one is believing that a low multiple is always cheap. For capital-intensive companies, EBITDA adds back depreciation that is a real cost — machines wear out and must be replaced — so the multiple can look low while free cash flow is weak. A low EV/EBITDA combined with high debt can also be a value trap, which is why AKM1 combines the variable with leverage measures.",
+      "ar": "أكثرها شيوعًا هو الاعتقاد بأن المضاعف المنخفض يعني دائمًا رخصًا. فبالنسبة للشركات كثيفة رأس المال، يعيد EBITDA إضافة الإهلاك وهو تكلفة حقيقية — فالآلات تَبلى ويجب استبدالها — لذا قد يبدو المضاعف منخفضًا في حين أن التدفق النقدي الحر ضعيف. كما أن معدل EV/EBITDA المنخفض مع ديون مرتفعة قد يكون فخ قيمة، ولهذا تجمع AKM1 هذا المتغير مع مقاييس المديونية."
+    },
+    {
+      "nyckel": "v06-ev-ebitda-analys:p27",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p18",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p19",
+      "en": "**What is gross margin?**",
+      "ar": "**ما هو هامش الربح الإجمالي؟**"
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p20",
+      "en": "Gross margin shows how much remains of every revenue krona after the company has paid for what it sold. The formula is (net sales − cost of goods sold) ÷ net sales. The margin is the first profitability line in the income statement and works as a diagnosis of the business model — software and pharmaceuticals often exceed 70 percent, while distribution and raw-material handling are far lower. The course [Bruttomarginal (V07)](/kurser/v07-bruttomarginal) practises the method chapter by chapter.",
+      "ar": "يُظهر هامش الربح الإجمالي كم يتبقى من كل كرونة إيرادات بعد أن تدفع الشركة ثمن ما باعته. والصيغة هي (صافي المبيعات − تكلفة البضائع المباعة) ÷ صافي المبيعات. وهذا الهامش هو أول سطر للربحية في قائمة الدخل ويعمل كأداة تشخيص لنموذج العمل — فالبرمجيات والأدوية تتجاوز غالبًا 70 في المئة، بينما التوزيع ومناولة المواد الخام أدنى بكثير. وتتدرب دورة [Bruttomarginal (V07)](/kurser/v07-bruttomarginal) على الطريقة فصلًا بعد فصل."
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p21",
+      "en": "**Where do I find the figures in the annual report?**",
+      "ar": "**أين أجد الأرقام في التقرير السنوي؟**"
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p22",
+      "en": "You need two lines: net sales (the first line of the income statement) and cost of goods sold, which may be called ‘Raw materials and consumables’ or ‘Costs for services delivered’. Some companies report gross profit directly — then it is enough to divide gross profit by net sales. The article above shows a worked example of how the calculation is done.",
+      "ar": "تحتاج إلى سطرين: صافي المبيعات (السطر الأول في قائمة الدخل) وتكلفة البضائع المباعة التي قد تُسمى «المواد الخام واللوازم» أو «تكاليف الخدمات المقدمة». وتفصح بعض الشركات عن مجمل الربح مباشرة — وعندئذ يكفي قسمة مجمل الربح على صافي المبيعات. وتعرض المقالة أعلاه مثالًا محسوبًا على كيفية إجراء الحساب."
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p23",
+      "en": "**What does it mean when gross margin falls?**",
+      "ar": "**ماذا يعني انخفاض هامش الربح الإجمالي؟**"
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p24",
+      "en": "A falling gross margin can stem from weaker pricing power or higher input costs, but also from one-off items such as inventory write-downs or currency effects. The method is to first find the cause: is the drop operational or an accounting effect? A stable or rising margin across a full business cycle, on the other hand, is considered a sign of a more durable competitive advantage.",
+      "ar": "قد ينبع انخفاض الهامش الإجمالي من ضعف القدرة على التسعير أو ارتفاع تكاليف المدخلات، لكنه قد ينبع أيضًا من بنود لمرة واحدة مثل تخفيض قيمة المخزون أو آثار العملة. والطريقة هي البحث عن السبب أولًا: هل الانخفاض تشغيلي أم أثر محاسبي؟ أما الهامش المستقر أو الصاعد عبر دورة اقتصادية كاملة فيُعد دليلًا على ميزة تنافسية أكثر دوامًا."
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p25",
+      "en": "**Can gross margin be compared across industries?**",
+      "ar": "**هل يمكن مقارنة هامش الربح الإجمالي بين قطاعات مختلفة؟**"
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p26",
+      "en": "No, not in absolute terms. A pharmaceutical company at 80 percent and a retailer at 20 percent have completely different business models — within their respective industries both levels can be strong. The method is to compare the company against its industry peers and against its own history over time; it is the relative levels and trends that carry the information.",
+      "ar": "لا، ليس بالقيم المطلقة. فشركة أدوية بهامش 80 في المئة وشركة تجزئة بهامش 20 في المئة لديهما نموذجا عمل مختلفان تمامًا — وضمن كل قطاع قد يكون المستويان قويين. والطريقة هي مقارنة الشركة بنظرائها في القطاع وبسجلها الخاص عبر الزمن؛ فالمستويات النسبية والاتجاهات هي ما يحمل المعلومة."
+    },
+    {
+      "nyckel": "v07-bruttomarginal-analys:p27",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p17",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p18",
+      "en": "**What is the EBITDA margin?**",
+      "ar": "**ما هو هامش EBITDA؟**"
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p19",
+      "en": "The EBITDA margin is EBITDA divided by revenue — the share of every revenue krona that becomes operating earnings before interest, taxes, depreciation and impairments. The measure isolates operating profitability from financing structure, tax jurisdiction and investment history, so that companies can be compared as if they were financed the same way. The course [EBITDA-marginal (V08)](/kurser/v08-ebitda-marginal) goes through this with exercises.",
+      "ar": "هامش EBITDA هو حاصل قسمة EBITDA على الإيرادات — أي نصيب كل كرونة إيرادات من نتيجة العمليات قبل الفوائد والضرائب والإهلاك وخسائر انخفاض القيمة. ويعزل هذا المقياس الربحية التشغيلية عن هيكل التمويل والولاية الضريبية وتاريخ الاستثمار، بحيث يمكن مقارنة الشركات وكأنها ممولة بالطريقة نفسها. وتستعرض دورة [EBITDA-marginal (V08)](/kurser/v08-ebitda-marginal) ذلك بتمارين تطبيقية."
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p20",
+      "en": "**How do I calculate EBITDA from an annual report?**",
+      "ar": "**كيف أحسب EBITDA من تقرير سنوي؟**"
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p21",
+      "en": "The most common way is bottom-up: EBITDA = operating profit + depreciation + impairment charges, where depreciation comes from the upper part of the cash flow statement. The alternative is top-down: net income + taxes + net interest + depreciation. Then divide EBITDA by revenue and multiply by 100 to get the margin in percent.",
+      "ar": "الطريقة الأكثر شيوعًا هي من الأسفل إلى الأعلى: EBITDA = نتيجة العمليات + الإهلاك + خسائر انخفاض القيمة، حيث يُؤخذ الإهلاك من الجزء العلوي لقائمة التدفقات النقدية. والبديل هو من الأعلى إلى الأسفل: صافي الربح + الضرائب + صافي الفوائد + الإهلاك. ثم اقسم EBITDA على الإيرادات واضرب في 100 لتحصل على الهامش بالنسبة المئوية."
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p22",
+      "en": "**Why is EBITDA so heavily criticised?**",
+      "ar": "**لماذا يتعرض EBITDA لانتقادات كثيرة؟**"
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p23",
+      "en": "The criticism — with Warren Buffett as perhaps its clearest voice — is that depreciation is a real cost: machines and equipment wear out and eventually have to be replaced. EBITDA can therefore paint a profitability that is not matched by actual cash flow, especially in capital-intensive industries. That is why the measure is often supplemented with free cash flow metrics in an educational context.",
+      "ar": "الانتقاد — ووارن بافيت ربما أوضح أصواته — هو أن الإهلاك تكلفة حقيقية: فالآلات والمعدات تَبلى ويجب استبدالها في نهاية المطاف. لذلك قد يرسم EBITDA ربحية لا يقابلها تدفق نقدي فعلي، لا سيما في الصناعات كثيفة رأس المال. ولهذا يُستكمل هذا المقياس غالبًا بمقاييس التدفق النقدي الحر في السياق التعليمي."
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p24",
+      "en": "**What is the difference from gross margin?**",
+      "ar": "**ما الفرق بينه وبين هامش الربح الإجمالي؟**"
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p25",
+      "en": "Gross margin only accounts for the cost of what was sold, while the EBITDA margin also includes other operating costs such as sales, administration and R&D. A company with a high gross margin but a low EBITDA margin is therefore leaking value in its operating costs — comparing the two margins is an educational way to see where in the income statement the money disappears.",
+      "ar": "يأخذ هامش الربح الإجمالي في الحسبان تكلفة البضائع المباعة فقط، بينما يشمل هامش EBITDA أيضًا بقية تكاليف التشغيل مثل البيع والإدارة والبحث والتطوير. فالشركة ذات الهامش الإجمالي المرتفع والهامش التشغيلي المنخفض تُسرّب قيمة في تكاليف تشغيلها — ومقارنة الهامشين طريقة تعليمية لرؤية أين تختفي النقود في قائمة الدخل."
+    },
+    {
+      "nyckel": "v08-ebitda-marginal-analys:p26",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "v09-roe-analys:p15",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "v09-roe-analys:p16",
+      "en": "**What is ROE?**",
+      "ar": "**ما هو العائد على حقوق الملكية (ROE)؟**"
+    },
+    {
+      "nyckel": "v09-roe-analys:p17",
+      "en": "ROE (Return on Equity) measures the return on equity — how much profit the company creates per krona the shareholders have invested. The formula is net income ÷ equity × 100. Because the measure captures operating profitability, capital efficiency and financial leverage at the same time, it is often called the most complete profitability indicator. The course [ROE (V09)](/kurser/v09-roe) explains the variable with calculation exercises.",
+      "ar": "يقيس العائد على حقوق الملكية (ROE) العائد على رأس المال المملوك — أي كم من الربح تولّده الشركة مقابل كل كرونة استثمرها المساهمون. والصيغة هي صافي الربح ÷ حقوق الملكية × 100. ولأن هذا المقياس يلتقط الربحية التشغيلية وكفاءة رأس المال والرفع المالي في وقت واحد، يُسمى غالبًا أشمل مؤشرات الربحية. وتشرح دورة [ROE (V09)](/kurser/v09-roe) هذا المتغير بتمارين حسابية."
+    },
+    {
+      "nyckel": "v09-roe-analys:p18",
+      "en": "**How do I calculate ROE in practice?**",
+      "ar": "**كيف أحسب ROE عمليًا؟**"
+    },
+    {
+      "nyckel": "v09-roe-analys:p19",
+      "en": "Take the year’s net income from the last line of the income statement and total equity (share capital, reserves and retained earnings) from the equity section of the balance sheet. Divide income by equity and multiply by 100. In the example above, net income of 14,943 MSEK and equity of 94,700 MSEK give an ROE of about 15.8 percent.",
+      "ar": "خذ صافي ربح السنة من السطر الأخير في قائمة الدخل، وإجمالي حقوق الملكية (رأس المال المدفوع والاحتياطيات والأرباح المحتجزة) من قسم حقوق الملكية في الميزانية العمومية. اقسم الربح على حقوق الملكية واضرب في 100. ففي المثال أعلاه، يعطي صافي ربح 14,943 مليون كرونة وحقوق ملكية 94,700 مليون كرونة عائدًا يقارب 15.8 في المئة."
+    },
+    {
+      "nyckel": "v09-roe-analys:p20",
+      "en": "**Can a high ROE be a warning sign?**",
+      "ar": "**هل يمكن أن يكون ROE المرتفع علامة تحذير؟**"
+    },
+    {
+      "nyckel": "v09-roe-analys:p21",
+      "en": "Yes — a high ROE can be created with leverage instead of operations. A company that lifts its ROE through heavy debt amplifies the return but also the risk, especially when interest rates rise. The DuPont formula (ROE = gross margin × capital turnover × debt leverage) shows where the return comes from, which is why V09 in AKM1 is combined with leverage variables.",
+      "ar": "نعم — فقد يتحقق ROE المرتفع بالرفع المالي بدلًا من التشغيل. فالشركة التي ترفع عائدها عبر مديونية كبيرة تضخّم العائد لكنها تضخّم المخاطرة أيضًا، لا سيما عند ارتفاع أسعار الفائدة. وتُظهر معادلة دوبونت (ROE = الهامش الإجمالي × معدل دوران رأس المال × الرفع المالي) من أين يأتي العائد، ولهذا يُجمع المتغير V09 في AKM1 مع متغيرات المديونية."
+    },
+    {
+      "nyckel": "v09-roe-analys:p22",
+      "en": "**What ROE level is considered good?**",
+      "ar": "**أي مستوى من ROE يُعد جيدًا؟**"
+    },
+    {
+      "nyckel": "v09-roe-analys:p23",
+      "en": "As an educational reference, Warren Buffett has mentioned companies with ROE above 15 percent for at least five years as a quality filter, and Benjamin Graham used above 10 percent as a baseline requirement. The level must always be seen in its industry context and against the company’s own trend, though. No single figure is a recommendation — it is an entry point for further analysis.",
+      "ar": "كمرجع تعليمي، ذكر وارن بافيت الشركات ذات عائد يتجاوز 15 في المئة لخمس سنوات على الأقل كأداة فرز للجودة، واستخدم بنيامين غراهام ما يتجاوز 10 في المئة كحد أدنى. لكن يجب دائمًا النظر إلى المستوى في سياق قطاعه ومقارنته باتجاه الشركة نفسها. فلا رقم منفرد توصية — بل نقطة انطلاق لمزيد من التحليل."
+    },
+    {
+      "nyckel": "v09-roe-analys:p24",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p26",
+      "en": "## FAQ",
+      "ar": "## الأسئلة الشائعة"
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p27",
+      "en": "**Which formula is used for ROE?**",
+      "ar": "**ما الصيغة المستخدمة لحساب ROE؟**"
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p28",
+      "en": "ROE = profit after tax ÷ equity. The key choice is which equity you use: the end-of-year value or the average of opening and closing equity. The average is often fairer, because equity grows during the year as profits are retained — institutional analysts use it frequently.",
+      "ar": "ROE = الربح بعد الضريبة ÷ حقوق الملكية. والاختيار الحاسم هو حقوق الملكية التي تستخدمها: قيمة نهاية السنة أم متوسط الافتتاحي والختامي. فالمتوسط غالبًا أعدل، لأن حقوق الملكية تنمو خلال السنة مع احتجاز الأرباح — والمحللون المؤسسيون يستخدمونه كثيرًا."
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p29",
+      "en": "**What is the DuPont breakdown?**",
+      "ar": "**ما هو تفكيك دوبونت؟**"
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p30",
+      "en": "The DuPont equation splits ROE into three parts: net margin × asset turnover × financial leverage. Two companies with an identical ROE of 15 percent can thus have completely different drivers — one high-margin with little debt, the other low-margin with high leverage. The breakdown shows where the return comes from and how sustainable it is.",
+      "ar": "تفكك معادلة دوبونت العائد على حقوق الملكية إلى ثلاثة أجزاء: هامش الربح الصافي × معدل دوران الأصول × الرفع المالي. وهكذا يمكن لشركتين لهما العائد نفسه البالغ 15 في المئة أن تكون دافعاتهما مختلفة تمامًا — إحداهما عالية الهامش قليلة الدين، والأخرى منخفضة الهامش عالية الرفع. ويُظهر التفكيك من أين يأتي العائد وإلى أي مدى يمكن استمراره."
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p31",
+      "en": "**Why does ROE differ between sectors?**",
+      "ar": "**لماذا يختلف ROE بين القطاعات؟**"
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p32",
+      "en": "Banks (often 12–15 percent), industrial companies (often 8–10 percent) and SaaS companies (sometimes negative during the growth phase) have different capital structures and different needs for balance-sheet capital. That is why ROE is compared within the sector, and preferably against the company’s own five-year history — comparing a bank with a software company rarely offers educational insight.",
+      "ar": "فالبنوك (غالبًا 12–15 في المئة) وشركات الصناعة (غالبًا 8–10 في المئة) وشركات البرمجيات كخدمة (وأحيانًا سالب في مرحلة النمو) لها هياكل رأس مال مختلفة واحتياجات مختلفة من رأس مال الميزانية. لهذا يُقارن ROE داخل القطاع نفسه، ويُفضل مقارنته بتاريخ الشركة الذاتي لخمس سنوات — فمقارنة بنك بشركة برمجيات نادرًا ما تعطي فائدة تعليمية."
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p33",
+      "en": "**Is a high ROE the same thing as a good share?**",
+      "ar": "**هل يعني ROE المرتفع أن السهم جيد؟**"
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p34",
+      "en": "No. ROE measures the company’s capital productivity, not the shareholder’s return. A company with a 20 percent ROE can still be an expensive share if the market price is far above book value, and an ROE driven by debt is risk rather than achievement. That is why AKM1 supplements ROE with valuation and debt measures before the analysis is complete.",
+      "ar": "لا. يقيس ROE إنتاجية رأس مال الشركة، لا عائد المساهم. فقد تكون شركة بعائد 20 في المئة سهمًا مكلفًا إذا كان سعر السوق أعلى بكثير من القيمة الدفترية، كما أن عائدًا مدفوعًا بالدين مخاطرة لا إنجاز. لهذا تستكمل AKM1 العائد بمقاييس التقييم والمديونية قبل اكتمال التحليل."
+    },
+    {
+      "nyckel": "v09-roe-avkastning-eget-kapital:p35",
+      "en": "This is educational financial analysis, not investment advice.",
+      "ar": "هذا تحليل مالي تعليمي، وليس نصيحة استثمارية."
+    }
+  ]
+}

@@ -9,7 +9,9 @@ export const dynamic = "force-dynamic";
 /**
  * /api/studio/tjanster/generera — HEADLESS TEXTGENERERING (VÅG 91 A1d).
  *
- * POST {prompt} → transport.genereraText → workspace/generateText
+ * POST {prompt} → transport.genereraText → workspace/upsertModelProvider
+ * (m7: kurerar providern i arbetsytans register, apiKey ur serverns
+ * ~/.zcode/cli/config.json) DÄREFTER workspace/generateText
  * {workspace, modelRef (ur sessionens kontext), prompt, querySource:
  * "ak1a-studio"} (kartan §2 — headless, Ingen turn/session) → {text}.
  * Modellväljaren (till skillnad från chatturner) kan INVÄNTA svaret:

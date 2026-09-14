@@ -191,6 +191,19 @@ import { cn } from "@/lib/utils";
  *     Endpoint 404/501/nätverksfel ⇒ befintligt beteende (graceful —
  *     replay är lyx, historik-vägen består ALWAYS).
  *
+ * M2 §8 (FORSKNING→KOD, 2026-09-14 — KONTROLLERAD AUTO-KOMPAKTERING):
+ *   · TRÖSKELMARKÖR: runtimens auto-tröskel beräknas LOKALT med
+ *     preflight-v1-formeln contextWindow − min(maxOut ?? 32k, 21k) − 13k
+ *     (protokollet rapporterar den som null) och visas som RÖD markör i
+ *     kontextmätaren + "auto-gräns ~83 %" i kontextraden (desktop + mobil).
+ *   · STUDIO-AUTO vid 80 % av contextWindow (FÖRE runtimens ~83 %): POST
+ *     /api/studio/session {action:"compact", instruktioner} med HÅRDA
+ *     begränsningar — ENDAST när agenten är idle (ej strömmande, ingen
+ *     öppen permission/fråga = pågående prompt), cooldown 30 min/session,
+ *     max en gång per våg (vakt återarmas när kontexten < 80 % igen),
+ *     ALDRIG under mål-loop. Toast + trådpost vid avfyrning; knappen
+ *     behålls manuell med ärlig tooltip (bevarar EJ senaste rundan).
+ *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
  *
@@ -259,6 +272,13 @@ interface Meddelande {
   tankar?: string;
   /** VÅG 97 E2: tankar-sektionens expanderade tillstånd (kollapsad default). */
   tankarOppen?: boolean;
+  /**
+   * M5 (b): serverns assistant-meddelande-ID för denna bubbla (sätts vid
+   * strömsslut via "meddelande_id"-eventet, eller ur historikens
+   * meddelandeId) — {kind:"message"}-forkens ankare (åldras ALDRIG ur
+   * serverns turnIndex-vy, rek 6).
+   */
+  serverId?: string;
 }
 
 interface Uppladdning {
@@ -277,6 +297,9 @@ interface HistorikPost {
   roll: "user" | "assistant";
   text: string;
   tankar?: string;
+  /** M5 (b): assistant-postens server-id (session/messages) — historikens
+   *  bubblor får {kind:"message"}-forkankare som live-strömmade. */
+  meddelandeId?: string;
 }
 
 // ── Multi-session-tabbar (våg 84 B) — renderas som sidebar-tasklista (våg 90) ─
@@ -310,12 +333,35 @@ interface Tabb {
   historikLasad: boolean;
   /** VÅG 90: senaste aktivitet (ms) — sidbarens relativa tidsstämpel. */
   uppdaterad: number;
+  /**
+   * M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades) ur schemat
+   * model.request.status. null = inget att visa; text:"" från completed =
+   * dölj (transportens kontrakt). Väntar-rester räknas ned i UI:t.
+   */
+  modellStatus: ModellStatusChip | null;
+}
+
+/** M3 §7.1 — chippets data (speglar transportens modell_status-event). */
+interface ModellStatusChip {
+  läge: "kör" | "väntar" | "misslyckades";
+  /** Kompakt människotext (M3 §6-tabellen) — "" = dölj raden. */
+  text: string;
+  /** VÄNTAR: ms till omförsöket vid event-ankomst. */
+  aterForsokOmMs?: number;
+  /** VÄNTAR: nästa försöksnummer (visas bara när >1). */
+  nastaForsok?: number;
+  /** MISSLYCKADES: leverantörens/protokollets felkod. */
+  felKod?: string;
+  /** MISSLYCKADES: protokollets anledning (reason). */
+  anledning?: string;
+  /** Event-ankomst (ms) — nedräkning: kvar = aterForsokOmMs − (nu − ts). */
+  ts: number;
 }
 
 /** Friska tabb-defaults (allt utom identiteten id/huvud/sessionId/titel). */
 function tabbGrund(): Pick<
   Tabb,
-  "meddelanden" | "utkast" | "strömmar" | "status" | "tankar" | "kontext" | "rundaTkn" | "ackumulerat" | "historikLasad" | "uppdaterad"
+  "meddelanden" | "utkast" | "strömmar" | "status" | "tankar" | "kontext" | "rundaTkn" | "ackumulerat" | "historikLasad" | "uppdaterad" | "modellStatus"
 > {
   return {
     meddelanden: [],
@@ -328,6 +374,7 @@ function tabbGrund(): Pick<
     ackumulerat: 0,
     historikLasad: false,
     uppdaterad: 0,
+    modellStatus: null,
   };
 }
 
@@ -974,7 +1021,9 @@ interface StreamEvent {
     | "ändringar"
     | "mal_status"
     | "mal_iteration"
-    | "mal_pausad";
+    | "mal_pausad"
+    | "modell_status"
+    | "meddelande_id";
   kanal?: "text" | "tankar";
   text?: string;
   namn?: string;
@@ -986,6 +1035,9 @@ interface StreamEvent {
   tokenCount?: number;
   kontext?: KontextInfo | null;
   id?: string;
+  /** M5 (b): senaste assistant-meddelandets server-id (vid strömsslut) —
+   *  {kind:"message"}-forkens ankare på bubblan (rek 6). */
+  meddelandeId?: string;
   steg?: "planerad" | "startar" | "kör" | "resultat" | "fel";
   argument?: string;
   beskrivning?: string;
@@ -1001,6 +1053,16 @@ interface StreamEvent {
   pausad?: boolean;
   iteration?: number;
   mal?: string | null;
+  // ── M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades) ────────────
+  läge?: "kör" | "väntar" | "misslyckades";
+  /** VÄNTAR: ms till omförsöket vid event-ankomst — nedräkningens bas. */
+  aterForsokOmMs?: number;
+  /** VÄNTAR: nästa försöksnummer (visas bara när >1). */
+  nastaForsok?: number;
+  /** MISSLYCKADES: leverantörens/protokollets felkod (t.ex. "1316"). */
+  felKod?: string;
+  /** MISSLYCKADES: protokollets anledning (reason, t.ex. "rate_limited"). */
+  anledning?: string;
   interaktion?:
     | ({
         typ: "permission";
@@ -1026,6 +1088,33 @@ interface StreamEvent {
 
 const KONTEXT_TAK_RESERV = 1_000_000;
 const KONTEXT_VARNING_PROCENT = 80;
+
+// ── M2 §8 (zcode-kallkod 2026-09-14): KONTROLLERAD AUTO-KOMPAKTERING ────────
+// Runtimens EGEN auto (strategi preflight-v1) komprimerar vid
+// contextWindow − min(maxOutputTokens ?? 32 000, 21 000) − 13 000 token
+// (GLM 200k/32k ⇒ 166 000 token = 83 %). Protokollet rapporterar tröskeln
+// som null i snapshot — studion BERÄKNAR den (nedan) och visar den som
+// markör i mätaren. Studio-auto avfyras LÄGRE (80 %) för kontrollerad
+// tidpunkt mellan vågor; runtimens auto + reaktiva spåret täcker fallet
+// "fönstret sprängs mitt i ett jobb".
+const AUTO_KOMPAKT_PROCENT = 80;
+const AUTO_KOMPAKT_COOLDOWN_MS = 30 * 60_000;
+/** §8.1:3 — kompakteringen skickar ALLTID instructions: kundens
+ *  standardfokus landar i sommarpromptens Additional Instructions-block. */
+const AUTO_KOMPAKT_INSTRUKTIONER =
+  "Bevara: aktuell våg + PIPELINE-KO-läge, filägarskap, pågående uppgifter, juridikregler (aldrig investeringsråd, lagen 2007:528). Svenska.";
+
+/** Runtimens auto-tröskel i token ur preflight-v1-formeln (M2 §3/§8.1).
+ *  maxOutputTokens ur modellkatalogen (ModellPost.maxSvar); reserv 32k,
+ *  tak 21k, buffer 13k. null = fönstret okänt ⇒ ingen markör, ingen auto. */
+function autoKompaktTroskel(contextWindow: number, maxOutputTokens?: number): number | null {
+  if (!Number.isFinite(contextWindow) || contextWindow <= 0) return null;
+  const reserv = Math.min(
+    typeof maxOutputTokens === "number" && maxOutputTokens > 0 ? maxOutputTokens : 32_000,
+    21_000,
+  );
+  return Math.max(0, contextWindow - reserv - 13_000);
+}
 
 /** 10X p3: det stående målet — mål-panelens envägskur mot dödläget
  *  (mal=null). Exakt samma text som styrelsens 24/7-standardläge. */
@@ -1975,6 +2064,95 @@ function StatusChipPill({ chip }: { chip: StatusChip }): React.JSX.Element {
       {klar && <span aria-hidden>✓</span>}
     </span>
   );
+}
+
+/**
+ * M3 §7.1 (zcode-kallkod) — MODELLSTATUS TRI-STATE: kompakt rad i
+ * Kontext-sektionen. kör (grön prick) / väntar (gul, pulserande + nedräkning
+ * ur delayMs) / misslyckades (röd + felkod + människotext ur kap. §6).
+ * Transportens kontrakt: text:"" (completed/cancelled) = dölj raden —
+ * modellanropet är då klart och verktygen/turnen fortsätter synas där.
+ * En misslyckades-rad står kvar efter turnens slut (förklarar VARFÖR)
+ * tills nästa prompt/iteration nollställer fältet.
+ */
+function ModellStatusRad({ status }: { status: ModellStatusChip | null }): React.JSX.Element | null {
+  const [nu, setNu] = React.useState(() => Date.now());
+  const raknaNer = status !== null && status.läge === "väntar" && typeof status.aterForsokOmMs === "number";
+  React.useEffect(() => {
+    if (!raknaNer) return;
+    const t = setInterval(() => setNu(Date.now()), 1_000);
+    return () => clearInterval(t);
+  }, [raknaNer, status?.aterForsokOmMs, status?.ts]);
+
+  if (status === null) return null;
+  const kör = status.läge === "kör";
+  const väntar = status.läge === "väntar";
+  const misslyckades = status.läge === "misslyckades";
+  if (!status.text && !misslyckades) return null; // completed-kontraktet
+
+  let detalj = status.text;
+  if (raknaNer) {
+    const kvarMs = (status.aterForsokOmMs ?? 0) - (nu - status.ts);
+    const försök = typeof status.nastaForsok === "number" ? ` ${status.nastaForsok}` : "";
+    if (kvarMs > 0) {
+      const s = Math.ceil(kvarMs / 1000);
+      const tidText = s >= 60 ? `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, "0")} s` : `${s} s`;
+      detalj = `omförsök${försök} om ${tidText}`;
+    } else {
+      detalj = `omförsök${försök} startar…`;
+    }
+  }
+
+  const titel = [
+    `Modellstatus: ${status.läge}`,
+    typeof status.felKod === "string" ? `felkod ${status.felKod}` : "",
+    typeof status.anledning === "string" ? `anledning ${status.anledning}` : "",
+    status.text,
+    "Källa: model.request.status (M3-FELYTA §7.1) — runtimen äger retry-policyn",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return (
+    <p
+      className={cn(
+        "mt-1.5 flex items-start gap-1.5 rounded-md border px-2 py-1.5 font-mono text-[10px] leading-snug",
+        kör && "border-[#238636]/40 bg-[#238636]/10 text-[#3FB950]",
+        väntar && "border-[#D29922]/40 bg-[#D29922]/10 text-[#D29922]",
+        misslyckades && "border-[#DA3633]/40 bg-[#DA3633]/10 text-[#F85149]",
+      )}
+      role="status"
+      title={titel}
+    >
+      <span
+        className={cn(
+          "mt-[3px] h-1.5 w-1.5 shrink-0 rounded-full",
+          kör && "bg-[#3FB950]",
+          väntar && "animate-pulse bg-[#D29922]",
+          misslyckades && "bg-[#F85149]",
+        )}
+        aria-hidden
+      />
+      <span className="min-w-0">
+        <span className="font-sans font-semibold">Modell: {status.läge}</span>
+        {detalj ? ` — ${detalj}` : ""}
+        {misslyckades && typeof status.felKod === "string" ? ` (kod ${status.felKod})` : ""}
+      </span>
+    </p>
+  );
+}
+
+/** M3 §7.1 — modell_status-eventet → tabbens chip-post (ts = nedräkningsbas). */
+function chipUrModellEvent(event: StreamEvent): ModellStatusChip {
+  return {
+    läge: event.läge ?? "kör",
+    text: event.text ?? "",
+    ...(typeof event.aterForsokOmMs === "number" ? { aterForsokOmMs: event.aterForsokOmMs } : {}),
+    ...(typeof event.nastaForsok === "number" ? { nastaForsok: event.nastaForsok } : {}),
+    ...(typeof event.felKod === "string" ? { felKod: event.felKod } : {}),
+    ...(typeof event.anledning === "string" ? { anledning: event.anledning } : {}),
+    ts: Date.now(),
+  };
 }
 
 // ── Webb-verktygens visualisering (våg 86 G4) ────────────────────────────────
@@ -3383,6 +3561,12 @@ function meddelandeUrHistorik(h: HistorikPost): Meddelande {
     ...(typeof h.tankar === "string" && h.tankar.trim() !== ""
       ? { tankar: h.tankar.slice(0, TANKAR_TAK) }
       : {}),
+    // M5 (b): serverns meddelande-id följer med — rewind-knappen på en
+    // historik-bubbla kan forka via {kind:"message"} (robustet på långa
+    // trådar där turnIndex åldrats ur serverns vy).
+    ...(h.roll === "assistant" && typeof h.meddelandeId === "string" && h.meddelandeId
+      ? { serverId: h.meddelandeId }
+      : {}),
   };
 }
 
@@ -3460,6 +3644,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const malBubblaRef = React.useRef<string | null>(null);
   const malAbortRef = React.useRef<AbortController | null>(null);
   const huvudTabbIdRef = React.useRef("tabb-huvud");
+
+  // ── M2 §8.2: AUTO-KOMPAKTERINGENS VAKTER ───────────────────────────────────
+  // senasteAutoKompaktRef: cooldown 30 min PER SESSION (sessionId → epoch-ms,
+  // bokförs vid varje avfyrning — även misslyckad). autoKompaktVagRef: max
+  // en auto per våg — återarmas när kontexten sjunker under 80 % igen.
+  const senasteAutoKompaktRef = React.useRef<Map<string, number>>(new Map());
+  const autoKompaktPagarRef = React.useRef(false);
+  const autoKompaktVagRef = React.useRef(false);
 
   // ── Filträd + förhandsgranskning (våg 83 B4) ───────────────────────────────
   const [visaFiler, setVisaFiler] = React.useState(false);
@@ -3656,6 +3848,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const strömmar = aktivTabb?.strömmar ?? false;
   const tankar = aktivTabb?.tankar ?? "";
   const kontext = aktivTabb?.kontext ?? null;
+  /** M3 §7.1: aktivt samtals modellstatus-tri-state (kontextradens chip). */
+  const modellStatus = aktivTabb?.modellStatus ?? null;
   const rundaTkn = aktivTabb?.rundaTkn ?? null;
   const ackumulerat = aktivTabb?.ackumulerat ?? 0;
   const strömmarHuvud = huvudTabb?.strömmar ?? false;
@@ -3848,6 +4042,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
     for (const m of meddelanden) {
       if (m.roll === "user") turn += 1;
       else karta.set(m.id, turn);
+    }
+    return karta;
+  }, [meddelanden]);
+
+  /**
+   * M5 (b): serverns meddelande-ID per agentbubbla — fork-target-kartans
+   * PRIMÄRA form {kind:"message", messageId} (rek 6): id:t åldras ALDRIG ur
+   * serverns vy (e8i), till skillnad från turnIndex som kan bli för gammalt
+   * på långa/komprimerade trådar. Bubblor utan id faller tillbaka på
+   * turnIndex-kartan ovan.
+   */
+  const serverIdKarta = React.useMemo(() => {
+    const karta = new Map<string, string>();
+    for (const m of meddelanden) {
+      if (m.roll === "assistant" && m.serverId) karta.set(m.id, m.serverId);
     }
     return karta;
   }, [meddelanden]);
@@ -5232,6 +5441,43 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }
   }, [sessionJobbar, strömmar, visaToast, lasSessioner, rörTabb, huvudTabb]);
 
+  // ── M5 (a): MÅL-KONTINUITET VID FORK — läs om målstatusen så det klonade
+  //    målet syns i nya tabben direkt. Bakgrund (M5-FORK §3+§9.5): RPC-forken
+  //    ärvr förälderns mål till barnet (inheritLatestTarget) och status kan
+  //    bli "active" trots "complete" i föräldern (Bmi) — panelen/badgen får
+  //    ALDRIG visa förälderns gamla sanning efter tabbytet.
+  const lasMalStatus = React.useCallback(async () => {
+    try {
+      const res = await fetch("/api/studio/mal/status", { headers: adminHeaders() });
+      if (!res.ok) return; // endpoint borta ⇒ tyst (20 s-pollen tar vid)
+      const data = (await res.json().catch(() => ({}))) as {
+        aktiv?: boolean;
+        pausad?: boolean;
+        iteration?: number;
+        mal?: string | null;
+      };
+      setAutonomiAktiv(data.aktiv === true);
+      if (typeof data.mal === "string" && data.mal) {
+        setMal(data.mal);
+        setMalStatus({
+          aktiv: data.aktiv === true,
+          pausad: data.pausad === true,
+          iteration: data.iteration ?? 0,
+        });
+        setMalIteration(data.iteration ?? 0);
+        setMalStrömOppen(true);
+      } else {
+        // Ärligt tomt läge — klonat mål saknas/rensat: panelen tigs, strömmen
+        // stängs (pollarna återöppnar om målet återkommer).
+        setMal(null);
+        setMalStatus(null);
+        setMalStrömOppen(false);
+      }
+    } catch {
+      // tyst — pollarna (20 s) tar vid
+    }
+  }, []);
+
   // ── CHECKPOINT/REWIND (våg 86 G5): "⟲ Gå tillbaka hit" ──────────────────────
   const gaTillbakaHit = React.useCallback(
     async (bubblaId: string) => {
@@ -5242,11 +5488,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
         return;
       }
       const turnIndex = turnIndexKarta.get(bubblaId) ?? -1;
-      if (turnIndex < 0) return;
+      // M5 (b): {kind:"message"}-ankaret VINNAR när bubblan bär sitt server-id
+      // (åldras aldrig ur serverns vy); turnIndex förblir fallback för bubblor
+      // utan id (äldre historik/klient-cachar).
+      const serverId = serverIdKarta.get(bubblaId);
+      if (turnIndex < 0 && !serverId) return;
       const iteration = turnIndex + 1;
+      const iterationText = turnIndex >= 0 ? `iteration ${iteration}` : "denna punkt";
       if (
         !window.confirm(
-          `Gå tillbaka till iteration ${iteration}?\n\nSessionen forkas vid denna punkt — den nya sessionen börjar från detta svar och nästa prompt fortsätter där. Den gamla sessionen finns kvar i samtalslistan.`,
+          `Gå tillbaka till ${iterationText}?\n\nSessionen forkas vid denna punkt — den nya sessionen börjar från detta svar och nästa prompt fortsätter där. Den gamla sessionen finns kvar i samtalslistan.`,
         )
       ) {
         return;
@@ -5259,7 +5510,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           headers: adminJsonHeaders(),
           body: JSON.stringify({
             action: "rewind",
-            turnIndex,
+            ...(serverId ? { meddelandeId: serverId } : { turnIndex }),
             ...(tabb.huvud ? {} : tabb.sessionId ? { sessionId: tabb.sessionId } : {}),
           }),
         });
@@ -5272,10 +5523,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
           fel?: string;
         };
         if (res.ok && data.sessionId) {
+          const etikett = data.iteration ?? (turnIndex >= 0 ? iteration : 0);
           rörTabb(tabb.id, (t) => ({
             ...t,
             sessionId: data.sessionId!,
-            titel: t.titel === "Ny tabb" ? `Fork ${data.iteration ?? iteration}` : t.titel,
+            titel: t.titel === "Ny tabb" ? (etikett > 0 ? `Fork ${etikett}` : "Fork") : t.titel,
             meddelanden: (data.historik ?? []).map(meddelandeUrHistorik),
             kontext: data.kontext ?? null,
             rundaTkn: null,
@@ -5284,9 +5536,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
             historikLasad: true,
             uppdaterad: Date.now(),
           }));
-          visaToast(`Sessionen har forkats från iteration ${data.iteration ?? iteration}`);
+          visaToast(
+            etikett > 0
+              ? `Sessionen har forkats från iteration ${etikett}`
+              : "Sessionen har forkats vid meddelandet",
+          );
           setStatusText("");
           void lasSessioner();
+          // M5 (a): barnet ärvde förälderns mål (inheritLatestTarget) — läs
+          // om målstatusen så badge/panel visar BARNETS sanning direkt (den
+          // kan vara "active" trots förälderns "complete", Bmi).
+          void lasMalStatus();
         } else {
           setStatusText("");
           visaToast(data.fel || "Rewinden misslyckades.", "fel");
@@ -5298,7 +5558,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setRewindJobbar(false);
       }
     },
-    [aktivTabb, rewindJobbar, turnIndexKarta, rörTabb, visaToast, lasSessioner],
+    [aktivTabb, rewindJobbar, turnIndexKarta, serverIdKarta, rörTabb, visaToast, lasSessioner, lasMalStatus],
   );
 
   const komprimera = React.useCallback(async () => {
@@ -5343,6 +5603,108 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
     }
   }, [sessionJobbar, strömmarHuvud, visaToast, live, rörTabb, huvudTabb]);
+
+  // ── M2 §8.2: AUTO-KOMPAKTERING — 80 % av fönstret, KONTROLLERAD ──────────
+  // Hårdbegränsningar enligt forskningsrapporten: ENDAST när agenten är
+  // idle (protokollet vägrar "while a prompt is running"), cooldown 30 min
+  // per session, max en gång per våg, ALDRIG under mål-loop (iterationer
+  // bygger på kontinuitet). Skickar alltid instructions (§8.1:3) — vågstatus
+  // + juridikregler överlever sammanfattningen.
+  const autoKompaktera = React.useCallback(
+    async (procent: number) => {
+      const sid = huvudTabb?.sessionId ?? null;
+      if (!sid || autoKompaktPagarRef.current || sessionJobbar) return;
+      autoKompaktPagarRef.current = true;
+      autoKompaktVagRef.current = true;
+      senasteAutoKompaktRef.current.set(sid, Date.now());
+      setSessionJobbar("compact");
+      setStatusText(`Komprimerar kontexten automatiskt (${Math.round(procent)} % av fönstret nått)…`);
+      try {
+        const res = await fetch("/api/studio/session", {
+          method: "POST",
+          headers: adminJsonHeaders(),
+          body: JSON.stringify({
+            action: "compact",
+            instruktioner: AUTO_KOMPAKT_INSTRUKTIONER,
+          }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          status?: "klar" | "redan_körs" | "tom";
+          meddelande?: string;
+          kontext?: KontextInfo | null;
+          fel?: string;
+        };
+        if (res.ok) {
+          if (data.kontext) {
+            rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+              ...t,
+              kontext: data.kontext ?? null,
+              ackumulerat: data.kontext?.totalTokenCount ?? 0,
+            }));
+          }
+          // §8.1:2 — tydlig post i tråden: kompakteringen ersätter det
+          //  äldre samtalet med en sammanfattning; kunden ska förstå varför.
+          const klockan = new Date().toLocaleTimeString("sv-SE", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          rörTabb(huvudTabb?.id ?? "tabb-huvud", (t) => ({
+            ...t,
+            uppdaterad: Date.now(),
+            meddelanden: [
+              ...t.meddelanden,
+              {
+                id: nyttId(),
+                roll: "assistant" as const,
+                text: `♻ Auto-komprimering ${klockan} — kontexten nådde ${Math.round(
+                  procent,
+                )} % av fönstret och det äldre samtalet sammanfattades. Pågående våg, filägarskap och juridikregler bevaras via komprimeringsinstruktionen; hela tråden finns kvar i serverns sessionsdatabas.`,
+              },
+            ],
+          }));
+          visaToast(`Kontexten komprimerades automatiskt (${Math.round(procent)} % av fönstret)`);
+        } else {
+          visaToast(data.fel || "Den automatiska komprimeringen misslyckades.", "fel");
+        }
+      } catch {
+        visaToast("Nätverksfel under den automatiska komprimeringen.", "fel");
+      } finally {
+        autoKompaktPagarRef.current = false;
+        setSessionJobbar("");
+        setStatusText(live === "demo" ? "Demo-läge (mock-transport)" : "Sessionen lever");
+      }
+    },
+    [sessionJobbar, huvudTabb, rörTabb, visaToast, live],
+  );
+
+  /** Triggaren: körs när huvudtabbens kontext förändras (ström/poll) —
+   *  alla vakter utvärderas vid VARJE förändring, avfyrning max en gång. */
+  React.useEffect(() => {
+    const huvudKontext = huvudTabb?.kontext ?? null;
+    const sid = huvudTabb?.sessionId ?? null;
+    const fonstret =
+      typeof huvudKontext?.contextWindow === "number" && huvudKontext.contextWindow > 0
+        ? huvudKontext.contextWindow
+        : null;
+    const anvant =
+      typeof huvudKontext?.contextUsed === "number" && huvudKontext.contextUsed > 0
+        ? huvudKontext.contextUsed
+        : null;
+    if (!sid || !fonstret || anvant === null) return;
+    const procent = (anvant / fonstret) * 100;
+    if (procent < AUTO_KOMPAKT_PROCENT) {
+      autoKompaktVagRef.current = false; // kontexten friad ⇒ nästa våg återarmeras
+      return;
+    }
+    if (autoKompaktVagRef.current) return; // max en auto-kompaktering per våg
+    if (autoKompaktPagarRef.current || sessionJobbar !== "" || strömmarHuvud) return; // ENDAST idle
+    if (permission || fraga) return; // öppen interaktion = pågående prompt
+    if (malStatusRef.current?.aktiv === true && malStatusRef.current.pausad !== true) return; // aldrig under mål-loop
+    const senaste = senasteAutoKompaktRef.current.get(sid) ?? 0;
+    if (Date.now() - senaste < AUTO_KOMPAKT_COOLDOWN_MS) return; // 30 min/session
+    if (live !== "live") return; // mock-transporten kan inte komprimera
+    void autoKompaktera(procent);
+  }, [huvudTabb, sessionJobbar, strömmarHuvud, permission, fraga, live, autoKompaktera]);
 
   /** Stäng session (session/close) — lever kvar i listan men svarar ej. */
   const stangSessionen = React.useCallback(
@@ -5615,6 +5977,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     ...t,
                     tankar: "",
                     status: `Autonom iteration ${iteration}…`,
+                    // M3 §7.1: ny iteration = färsk modellstatus.
+                    modellStatus: null,
                     uppdaterad: Date.now(),
                     meddelanden: [
                       ...t.meddelanden,
@@ -5643,6 +6007,33 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   malBubblaRef.current = null;
                 }
                 break;
+              case "meddelande_id": {
+                // M5 (b): iterationens server-id landar strax efter slut-pixeln
+                // (malBubblaRef är redan nollställd) — iterationnumret i eventet
+                // pekar ut rätt bubbla även om nästa iteration hunnit öppna;
+                // första id:t vinner (aldrig skriv över ett bevisat ankare).
+                const serverId = event.meddelandeId;
+                if (!serverId) break;
+                const malIt = event.iteration;
+                let satt = false;
+                rörTabb(huvudTabbIdRef.current, (t) => ({
+                  ...t,
+                  uppdaterad: Date.now(),
+                  meddelanden: t.meddelanden.map((m) => {
+                    if (
+                      satt ||
+                      m.serverId ||
+                      m.roll !== "assistant" ||
+                      (typeof malIt === "number" ? m.malIteration !== malIt : m.strömmande)
+                    ) {
+                      return m;
+                    }
+                    satt = true;
+                    return { ...m, serverId };
+                  }),
+                }));
+                break;
+              }
               case "delta":
                 if (event.kanal === "tankar") {
                   // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (bubblan) —
@@ -5692,6 +6083,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 rörTabb(huvudTabbIdRef.current, (t) => ({
                   ...t,
                   status: event.text || "Agenten utvecklar autonomt…",
+                }));
+                break;
+              case "modell_status":
+                // M3 §7.1 — tri-state-chippet även för den autonoma loopen.
+                rörTabb(huvudTabbIdRef.current, (t) => ({
+                  ...t,
+                  modellStatus: chipUrModellEvent(event),
                 }));
                 break;
               case "kontext":
@@ -6940,6 +7338,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
         ...t,
         tankar: "",
         status: "Skickar…",
+        // M3 §7.1: ny prompt = färsk modellstatus (gammal misslyckades-rad
+        // från förra turnen lämnar vyn).
+        modellStatus: null,
         strömmar: true,
         uppdaterad: Date.now(),
         titel: t.huvud ? t.titel : kortNamn(text),
@@ -7060,6 +7461,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             case "status":
               sattStatus(event.text || "Agenten arbetar…");
               break;
+            case "modell_status":
+              // M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades).
+              rörTabb(tabbId, (t) => ({ ...t, modellStatus: chipUrModellEvent(event) }));
+              break;
             case "delta":
               if (event.kanal === "tankar") {
                 // VÅG 97 E2: resonemanget samlas PER MEDDELANDE (agent-
@@ -7165,6 +7570,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 text: event.svar && event.svar.trim() ? event.svar : m.text || "(tomt svar)",
                 strömmande: false,
               }));
+              // M3 §7.1: lyckad turn tömmer kör/väntar-läget; en misslyckades-
+              // rad FÅR stå kvar efter klart (turn ≠ session — felet förklarar
+              // varför svaret ser ut som det gör) tills nästa prompt.
+              rörTabb(tabbId, (t) =>
+                t.modellStatus !== null && t.modellStatus.läge !== "misslyckades"
+                  ? { ...t, modellStatus: null }
+                  : t,
+              );
               if (typeof event.tokenCount === "number" && event.tokenCount > 0) {
                 turnTknRef.current = event.tokenCount;
                 rörTabb(tabbId, (t) => ({
@@ -7215,6 +7628,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
               }));
               loggaNotis(`Fel: ${event.meddelande || "okänt fel"}`.slice(0, 120), "fel");
               färdig = true;
+              break;
+            case "meddelande_id":
+              // M5 (b): strömsslut — serverns id på DENNA agent-bubbla
+              // ({kind:"message"}-forkens ankare). Anländer strax efter
+              // klart; första id:t vinner (aldrig skriv över ett bevisat).
+              if (event.meddelandeId) {
+                rörAgent((m) => (m.serverId ? m : { ...m, serverId: event.meddelandeId! }));
+              }
               break;
             case "ändringar":
               if (Array.isArray(event.filer)) {
@@ -7614,6 +8035,27 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const kontextProcent =
     Number.isFinite(kontextTak) && kontextTak > 0 && Number.isFinite(kontextAnvänt)
       ? Math.min(100, (Math.max(0, kontextAnvänt) / kontextTak) * 100)
+      : null;
+  // M2 §8.1: runtimens auto-tröskel (preflight-v1-formeln) — markör i
+  // mätaren. Beräknas ENDAST på ett ÄKLART fönster (reserv-tak 1M ⇒ ingen
+  // markör); maxOutputTokens ur modellkatalogens maxSvar för vald modell.
+  const riktigtFonster =
+    typeof kontext?.contextWindow === "number" && kontext.contextWindow > 0
+      ? kontext.contextWindow
+      : null;
+  const modellSvar = modeller.find((m) => m.id === (kontext?.modell ?? valdModell));
+  const autoTroskelToken =
+    riktigtFonster !== null
+      ? autoKompaktTroskel(
+          riktigtFonster,
+          typeof modellSvar?.maxSvar === "number" && modellSvar.maxSvar > 0
+            ? modellSvar.maxSvar
+            : undefined,
+        )
+      : null;
+  const autoTroskelProcent =
+    autoTroskelToken !== null && riktigtFonster !== null
+      ? Math.min(100, (autoTroskelToken / riktigtFonster) * 100)
       : null;
 
   // ── VÅG 90 K3: SIDEBAR-INNEHÅLL — delas av desktop-kolumnen + mobil-drawern.
@@ -8042,11 +8484,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </div>
         )}
 
-        {/* Kontext-varning (≥ 80 % av taket) — gul varningsrad. */}
+        {/* Kontext-varning (≥ 80 % av taket) — gul varningsrad. M2 §8: vid
+            ledig agent komprimerar studion automatiskt här (80 %) — banderollen
+            säger vad som händer i stället för att bara kräva ny session. */}
         {kontextProcent !== null && kontextProcent >= KONTEXT_VARNING_PROCENT && (
           <div className="z-10 border-b border-[#D29922]/30 bg-[#D29922]/10">
             <p className="mx-auto w-full max-w-3xl px-3 py-1.5 text-[11px] font-semibold text-[#D29922] sm:px-4">
-              ⚠ Överväg ny session — kontexten närmar sig taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)})
+              ⚠ Kontexten når taket ({kontextProcent.toFixed(0)} % av {tkn(kontextTak)}) — auto-komprimering
+              väntar på att agenten blir ledig{autoTroskelProcent !== null &&
+                `; runtimens egen gräns ~${kontextProcentText(autoTroskelProcent)} % är markerad i mätaren`}
             </p>
           </div>
         )}
@@ -9397,10 +9843,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
             <p className="truncate font-mono text-[11px] text-[#E6EDF3]" title={kontext?.modell ?? valdModell}>
               {kontext?.modell ?? (valdModell || "— ingen modell ännu")}
             </p>
+            {/* M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades). */}
+            <ModellStatusRad status={modellStatus} />
             <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
               {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
               {tkn(ackumulerat)} totalt
               {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
+              {autoTroskelProcent !== null &&
+                ` · auto-gräns ~${kontextProcentText(autoTroskelProcent)}%`}
             </p>
             {kontextProcent !== null && (
               <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>
@@ -9411,12 +9861,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   )}
                   style={{ width: `${Math.min(100, kontextProcent)}%` }}
                 />
+                {autoTroskelProcent !== null && autoTroskelToken !== null && (
+                  <span
+                    className="absolute inset-y-0 w-[2px] bg-[#F85149]"
+                    style={{ left: `calc(${Math.min(100, autoTroskelProcent)}% - 1px)` }}
+                    title={`Runtimens auto-gräns ~${kontextProcentText(
+                      autoTroskelProcent,
+                    )}% (${tkn(autoTroskelToken)} tkn) — där komprimerar agenten av sig själv; studion gör det tidigare (80 %) när agenten är ledig`}
+                  />
+                )}
               </span>
             )}
             <button
               onClick={() => void komprimera()}
               disabled={sessionJobbar !== "" || strömmarHuvud || !arHuvudAktiv}
-              title="Komprimera kontexten (session/compact — agenten sammanfattar och fönstret frias)"
+              title="Komprimera kontexten manuellt (session/compact — hela samtalet utom kontextprefixet sammanfattas). Bäst läge mellan vågor: till skillnad från agentens egen auto bevarar den manuella INTE senaste rundan ordagrant. Auto-komprimering sker från 80 % när agenten är ledig."
               className="mt-2 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md border border-[#238636]/50 px-3 text-[11px] font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50"
             >
               {sessionJobbar === "compact" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Shrink className="h-3.5 w-3.5" />}
@@ -9424,7 +9883,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </button>
             <p className="mt-1.5 text-[9px] leading-relaxed text-[#484F58]">
               {lage ? `Läge ${lage}` : "Läser läge…"}
-              {tanka ? ` · tanke ${tanka}` : ""} · komprimering gäller huvudsessionen.
+              {tanka ? ` · tanke ${tanka}` : ""} · komprimering gäller huvudsessionen · auto vid{" "}
+              {AUTO_KOMPAKT_PROCENT} % när agenten är ledig (max 1/våg, 30 min mellan).
             </p>
           </div>
         </section>
@@ -9669,10 +10129,14 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   <p className="truncate font-mono text-[11px] text-[#E6EDF3]">
                     {kontext?.modell ?? (valdModell || "— ingen modell ännu")}
                   </p>
+                  {/* M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades). */}
+                  <ModellStatusRad status={modellStatus} />
                   <p className="mt-1 font-mono text-[10px] tabular-nums leading-relaxed text-[#8B949E]">
                     {rundaTkn !== null ? `${tkn(rundaTkn)} tkn denna runda · ` : ""}
                     {tkn(ackumulerat)} totalt
                     {kontextProcent !== null && ` · ${kontextProcentText(kontextProcent)}% av ${tkn(kontextTak)}`}
+                    {autoTroskelProcent !== null &&
+                      ` · auto-gräns ~${kontextProcentText(autoTroskelProcent)}%`}
                   </p>
                   {kontextProcent !== null && (
                     <span className="relative mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#21262D]" aria-hidden>
@@ -9683,6 +10147,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         )}
                         style={{ width: `${Math.min(100, kontextProcent)}%` }}
                       />
+                      {autoTroskelProcent !== null && autoTroskelToken !== null && (
+                        <span
+                          className="absolute inset-y-0 w-[2px] bg-[#F85149]"
+                          style={{ left: `calc(${Math.min(100, autoTroskelProcent)}% - 1px)` }}
+                          title={`Runtimens auto-gräns ~${kontextProcentText(
+                            autoTroskelProcent,
+                          )}% (${tkn(autoTroskelToken)} tkn) — där komprimerar agenten av sig själv; studion gör det tidigare (80 %) när agenten är ledig`}
+                        />
+                      )}
                     </span>
                   )}
                   <button

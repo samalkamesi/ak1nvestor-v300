@@ -652,6 +652,41 @@ export type StudioEvent =
       typ: "mal_pausad";
       iteration: number;
     }
+  | {
+      /**
+       * M3 §7.1 (data/forskning/zcode-kallkod/M3-FELYTA.md) — modellstatus
+       * TRI-STATE ur schemat model.request.status: kör / väntar / misslyckades.
+       * Runtimen äger retry-policyn (11 försök, stream-recovery ×10) —
+       * studion prenumererar ENDAST och gissar aldrig om retry.
+       */
+      typ: "modell_status";
+      /** "kör" (request startad) | "väntar" (retry/stall) | "misslyckades" (final). */
+      läge: "kör" | "väntar" | "misslyckades";
+      /** Kompakt människotext (M3 §6-tabellen) — "" = dölj raden (completed). */
+      text: string;
+      /** VÄNTAR: ms till omförsöket (delayMs/retryAfterMs) — UI:ts nedräkningsbas. */
+      aterForsokOmMs?: number;
+      /** VÄNTAR: nästa försöksnummer (visas bara när >1). */
+      nastaForsok?: number;
+      /** MISSLYCKADES: leverantörens/protokollets felkod (t.ex. "1316"). */
+      felKod?: string;
+      /** MISSLYCKADES: protokollets anledning (reason, t.ex. "rate_limited"). */
+      anledning?: string;
+    }
+  | {
+      /**
+       * M5 (b) — senaste assistant-meddelandets SERVER-ID, sänds strax
+       * EFTER klart/mal_iteration(slut): klientens fork-karta bygger
+       * {kind:"message",messageId}-ankare som — till skillnad från turnIndex
+       * (e8i) — ALDRIG åldras ur serverns vy på långa trådar.
+       */
+      typ: "meddelande_id";
+      /** Protokollets messageId (session/messages) för senaste assistant-post. */
+      meddelandeId: string;
+      /** Mål-loopens iterationsnummer (mal-vägen) — rätt bubbla träffas även
+       *  om nästa iteration hunnit öppna innan eftersökningen landar. */
+      iteration?: number;
+    }
   | { typ: "fel"; meddelande: string };
 
 export type StudioLyssnare = (event: StudioEvent) => void;
@@ -660,6 +695,12 @@ export type StudioLyssnare = (event: StudioEvent) => void;
 export interface StudioHistorikPost {
   roll: "user" | "assistant";
   text: string;
+  /**
+   * M5 (b): assistant-postens server-id (session/messages messageId) —
+   * historikens bubblor får samma {kind:"message"}-forkankare som live-
+   * strömmade; undefined när källan saknar id (äldre klient-cache).
+   */
+  meddelandeId?: string;
 }
 
 /**
@@ -773,8 +814,12 @@ export interface StudioForkSvar {
 export interface StudioRewindSvar {
   /** Forked-sessionens id (session/fork → forkedSessionId). */
   sessionId: string;
-  /** 1-baserat iterationsnummer = turnIndex+1 (toastens sanning). */
-  iteration: number;
+  /**
+   * 1-baserat iterationsnummer = turnIndex+1 (toastens sanning). M5 (b):
+   * SAKNAS på {kind:"message"}-vägen (meddelandet bär ingen turnIndex) —
+   * klientens karta står för etiketten via sin turn-räkning.
+   */
+  iteration?: number;
   /** Chattens historik FRÅN BÖRJAN till fork-punkten (forked-sessionens). */
   historik: StudioHistorikPost[];
   /** Färsk kontext för forked-sessionen (kontextraden). */
@@ -1093,6 +1138,99 @@ function arSendFormAvvisad(text: string): boolean {
   return /-32602|unrecognized|unexpected key|invalid_params|ogiltig parameter/i.test(text);
 }
 
+// ── m7: provider-registrets kur (workspace/upsertModelProvider) ──────────────
+
+/** Serverns config.json-form för EN modell i ett provider-block (endast de fält vi läser). */
+interface ServerModell {
+  name?: string;
+  limit?: { context?: number; output?: number };
+  modalities?: { input?: string[] };
+}
+
+/**
+ * Serverns config.json-form för ett provider-block (endast de fält vi läser).
+ * Formen följer zcode:s egen config (config.example.json §provider): kind +
+ * options.baseURL/options.apiKey/options.apiKeyRequired + headers + models.
+ */
+interface ServerLeverantor {
+  kind: "anthropic" | "openai" | "openai-compatible";
+  name?: string;
+  baseURL?: string;
+  apiKey?: string;
+  apiKeyRequired?: boolean;
+  headers?: Record<string, string>;
+  models: Record<string, ServerModell | undefined>;
+}
+
+/**
+ * m7: läser ett provider-block ur serverns ~/.zcode/cli/config.json — samma
+ * källa som zcode själv använder (zai: kind anthropic, baseURL
+ * https://api.z.ai/api/anthropic). apiKey läses ENDAST här på servern och
+ * lämnar aldrig processen via logg, commit eller API-svar. Okänd form ⇒
+ * null — anroparen hopar då över uppsättningen tyst.
+ */
+function lasServerLeverantor(providerId: string): ServerLeverantor | null {
+  try {
+    const rå = readFileSync(path.join(os.homedir(), ".zcode", "cli", "config.json"), "utf8");
+    const pars = JSON.parse(rå) as { provider?: Record<string, unknown> };
+    const block = pars.provider?.[providerId];
+    if (!block || typeof block !== "object") return null;
+    const k = block as Record<string, unknown>;
+    const kind = typeof k.kind === "string" ? k.kind : "";
+    if (kind !== "anthropic" && kind !== "openai" && kind !== "openai-compatible") return null;
+    const options =
+      k.options && typeof k.options === "object" ? (k.options as Record<string, unknown>) : {};
+    const råModeller =
+      k.models && typeof k.models === "object" ? (k.models as Record<string, unknown>) : {};
+    const models: Record<string, ServerModell | undefined> = {};
+    for (const [id, m] of Object.entries(råModeller)) {
+      const mm = m && typeof m === "object" ? (m as Record<string, unknown>) : {};
+      const limit =
+        mm.limit && typeof mm.limit === "object" ? (mm.limit as Record<string, unknown>) : undefined;
+      const modaliteter =
+        mm.modalities && typeof mm.modalities === "object"
+          ? (mm.modalities as Record<string, unknown>)
+          : undefined;
+      const inMatning =
+        modaliteter && Array.isArray(modaliteter.input)
+          ? (modaliteter.input as unknown[]).filter((x): x is string => typeof x === "string")
+          : undefined;
+      models[id] = {
+        ...(typeof mm.name === "string" ? { name: mm.name } : {}),
+        ...(limit
+          ? {
+              limit: {
+                ...(typeof limit.context === "number" ? { context: limit.context } : {}),
+                ...(typeof limit.output === "number" ? { output: limit.output } : {}),
+              },
+            }
+          : {}),
+        ...(inMatning ? { modalities: { input: inMatning } } : {}),
+      };
+    }
+    const råHeaders =
+      k.headers && typeof k.headers === "object" ? (k.headers as Record<string, unknown>) : undefined;
+    const headers: Record<string, string> | undefined = råHeaders
+      ? Object.fromEntries(
+          Object.entries(råHeaders).filter(
+            (e): e is [string, string] => typeof e[1] === "string",
+          ),
+        )
+      : undefined;
+    return {
+      kind,
+      ...(typeof k.name === "string" ? { name: k.name } : {}),
+      ...(typeof options.baseURL === "string" ? { baseURL: options.baseURL } : {}),
+      ...(typeof options.apiKey === "string" && options.apiKey ? { apiKey: options.apiKey } : {}),
+      ...(options.apiKeyRequired === true ? { apiKeyRequired: true } : {}),
+      ...(headers ? { headers } : {}),
+      models,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ── VÅG 85 F2: skills/plugins/MCP (kartan §2 — panelens datakällor) ──────────
 
 /**
@@ -1254,6 +1392,14 @@ export interface StudioTransport {
    * session/list (Sessioner). Ogiltigt turnIndex ⇒ ärligt fel.
    */
   rewindTillTurn(turnIndex: number): Promise<StudioRewindSvar>;
+  /**
+   * M5 (rek 6): fork:a sessionen vid ett SPECIFIKT assistant-meddelande —
+   * protokoll-target {kind:"message", messageId} (RPC-schemats union, M5-FORK
+   * §1) åldras ALDRIG ur e8i:s turnIndex-vy och är den robusta vägen på långa
+   * trådar/komprimerade sessioner. Samma öppna-barn-flöde som rewindTillTurn;
+   * klientens meddelande_id-event per bubbla är bränslet (M5 b).
+   */
+  rewindTillMeddelande(meddelandeId: string): Promise<StudioRewindSvar>;
   /** session/goal action "show" (LIVE-bevisat: "No goal is set…" tomt). */
   lasMal(): Promise<StudioMalSvar>;
   /**
@@ -1451,7 +1597,10 @@ export interface StudioTransport {
   /**
    * workspace/generateText {workspace, modelRef, prompt, querySource} —
    * headless textgenerering UTAN turn/session (kartan §2). modelRef hämtas
-   * ur den aktiva sessionens kontext.
+   * ur den aktiva sessionens kontext. m7: providern kureras FÖRST in i
+   * arbetsytans register via workspace/upsertModelProvider (blocket ur
+   * serverns ~/.zcode/cli/config.json) — annars svarar generationen
+   * provider_not_found trots korrekt modelRef.
    */
   genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }>;
   // ── VÅG 93 C1 (kluster a+c+d): workspace-inställningar · plugins-drift ·
@@ -2059,6 +2208,29 @@ interface SessionEventParams {
     /** part.delta: field "input" = verktygsargument strömmas. */
     field?: string;
     partId?: string;
+    // ── M3 §7.1 — model.request.status-händelserna (fem + cancelled) ─────────
+    /** model_request_started: försöksnummer (visas endast när >1, M3 §1). */
+    attempt?: number;
+    /** model_request_started: true när stream-recovery startat omförsöket. */
+    streamRecovery?: boolean;
+    /** model_request_failed: true = automatiskt omförsök väntas (ej final). */
+    retryable?: boolean;
+    /** model_request_failed: leverantörens affärskod ("1316") el. protokollkoden. */
+    errorCode?: string;
+    /** model_request_failed: failure-reason (rate_limited, auth_failed, …). */
+    reason?: string;
+    /** model_request_failed: HTTP-status hos leverantören (429, 500, …). */
+    statusCode?: number;
+    /** model_retry_scheduled: ms till nästa försök — UI-nedräkningen. */
+    delayMs?: number;
+    /** model_retry_scheduled: nästa försöksnummer. */
+    nextAttempt?: number;
+    /** model_retry_scheduled: serverns retry-after (ms) när den styr delay. */
+    retryAfterMs?: number;
+    /** model_stream_stalled: strömmen tyst i (ms). */
+    idleMs?: number;
+    /** model_stream_stalled: vakthundens gräns (ms, default 600 000). */
+    timeoutMs?: number;
   };
 }
 
@@ -2119,6 +2291,131 @@ function sammanfattaInput(input: unknown): string {
     return truncat(JSON.stringify(input) ?? "(okänt)", 600);
   } catch {
     return truncat(String(input), 600);
+  }
+}
+
+// ── M3 §7.1 — MODELLSTATUS TRI-STATE (data/forskning/zcode-kallkod/M3-FELYTA.md)
+
+/**
+ * Människotext för ett FINALT modellfel ur M3 §6-tabellen (kod → betydelse →
+ * studio-åtgärd). Kvot- och auth-koderna markeras "kräver kundens åtgärd" —
+ * R2-ytor (fakturering/nycklar) som agenten aldrig rör själv.
+ */
+function modellFelText(errorCode?: string, reason?: string): string {
+  const kod = (errorCode ?? "").trim();
+  const lag = kod.toLowerCase();
+  // KVOT/SALDO SLUT (M3 §3: 1316–1321, 2056, 20097 + kvot-typnamnen).
+  if (
+    ["1316", "1317", "1318", "1319", "1320", "1321", "2056", "20097"].includes(kod) ||
+    ["insufficient_quota", "credit_balance_exhausted", "exceeded_current_quota_error", "usage_limit_exceeded"].includes(lag) ||
+    lag.endsWith("_spend")
+  ) {
+    return "kvot eller saldo slut — kräver kundens åtgärd (fakturering)";
+  }
+  // Auth (M3 §6: 1006/3007 — R2-yta).
+  if (kod === "1006" || kod === "3007" || reason === "auth_failed") {
+    return "nyckel- eller konfigurationsfel — kräver kundens åtgärd";
+  }
+  if (kod === "1261" || reason === "context_exceeded") {
+    return "kontexten full — komprimera eller ny tråd";
+  }
+  if (kod === "3006" || reason === "model_not_found") {
+    return "modellen finns inte — välj en annan modell";
+  }
+  if (kod === "3008" || kod === "3009" || kod === "3010") {
+    return "plan-modellen är upptagen — försök igen om en stund";
+  }
+  if (["1304", "1308", "1310", "1313"].includes(kod)) {
+    return "hård hastighetsgräns — vänta 5–15 minuter";
+  }
+  if (kod === "1005" || kod === "3001" || reason === "invalid_request") {
+    return "ogiltig modellförfrågan";
+  }
+  switch (reason) {
+    case "rate_limited":
+      return "hastighetsgräns hos modellen";
+    case "provider_overloaded":
+      return "modellen överbelastad";
+    case "network_error":
+      return "nätverksfel mot modellen";
+    case "server_error":
+      return "serverfel hos modellen";
+    case "timeout":
+      return "modellen svarade inte i tid";
+    case "stream_idle_timeout":
+      return "strömmen tystnade — återhämtningen är slut";
+    case "cancelled":
+      return "modellanropet avbröts";
+    default:
+      return "modellfel hos leverantören";
+  }
+}
+
+/**
+ * M3 §7.1 — tri-state-mappning av model.request.status-händelserna (kap.
+ * §1-tabell: started/completed/failed/cancelled + retry_scheduled +
+ * stream_stalled). Returnerar null när händelsen skall förbli TYST: enstaka
+ * retrybara försök skrivs ALDRIG om som fel för kunden (§6-raden
+ * "retryable:!0 = tyst" + §7.2 — VÄNTAR levereras istället av
+ * model_retry_scheduled som alltid följer efter i runtimens kedja).
+ */
+function lasModellStatusEvent(typ: string, payload: SessionEventParams["payload"]): StudioEvent | null {
+  switch (typ) {
+    case "model_request_started": {
+      const attempt = typeof payload?.attempt === "number" && payload.attempt > 0 ? payload.attempt : 1;
+      // §1: streamRecovery/attempt syns ENDAST vid omförsök (attempt > 1).
+      const text =
+        attempt > 1
+          ? `modellförsök ${attempt} körs${payload?.streamRecovery === true ? " (strömmen återhämtas)" : ""}`
+          : "modellanrop körs";
+      return { typ: "modell_status", läge: "kör", text };
+    }
+    case "model_request_completed":
+    case "model_request_cancelled":
+      // Anropet klart/avbrutet — raden döljs (text:""-kontraktet i UI:t).
+      return { typ: "modell_status", läge: "kör", text: "" };
+    case "model_request_failed": {
+      // Retrybart = runtimens automatik tar om det (§2: 11 försök) — att
+      // visa "misslyckades" här vore att skriva om ETT försök som fel (§7.2).
+      if (payload?.retryable === true) return null;
+      const felKod =
+        typeof payload?.errorCode === "string" && payload.errorCode ? payload.errorCode : undefined;
+      const anledning =
+        typeof payload?.reason === "string" && payload.reason ? payload.reason : undefined;
+      return {
+        typ: "modell_status",
+        läge: "misslyckades",
+        text: modellFelText(felKod, anledning),
+        ...(felKod !== undefined ? { felKod } : {}),
+        ...(anledning !== undefined ? { anledning } : {}),
+      };
+    }
+    case "model_retry_scheduled": {
+      // delayMs är primär; serverns retryAfterMs kan styra (M3 §2).
+      const delay =
+        typeof payload?.delayMs === "number" && payload.delayMs >= 0
+          ? payload.delayMs
+          : typeof payload?.retryAfterMs === "number" && payload.retryAfterMs >= 0
+            ? payload.retryAfterMs
+            : undefined;
+      const nastaForsok = typeof payload?.nextAttempt === "number" ? payload.nextAttempt : undefined;
+      return {
+        typ: "modell_status",
+        läge: "väntar",
+        text: "omförsök schemalagt — runtimen återkommer automatiskt",
+        ...(delay !== undefined ? { aterForsokOmMs: delay } : {}),
+        ...(nastaForsok !== undefined ? { nastaForsok } : {}),
+      };
+    }
+    case "model_stream_stalled":
+      // §6: "Svaret dröjer"-indikator — ingen åtgärd innan 10-min-gränsen.
+      return {
+        typ: "modell_status",
+        läge: "väntar",
+        text: "strömmen är tyst — vakthunden återhämtar automatiskt",
+      };
+    default:
+      return null;
   }
 }
 
@@ -2739,6 +3036,11 @@ export function beskrivMalEvent(event: StudioEvent): string {
       return "Agenten skriver verktygsargument…";
     case "runda":
       return event.fas === "start" ? "Turn startar" : "Turn slut";
+    case "modell_status":
+      // M3 §7.1 — statusrådets rad: "Modell: väntar (omförsök 3)".
+      return `Modell: ${event.läge}${event.nastaForsok ? ` (omförsök ${event.nastaForsok})` : ""}${
+        event.text ? ` — ${truncat(event.text, 90)}` : ""
+      }`;
     case "status":
       return truncat(event.text, 120);
     case "fel":
@@ -2925,6 +3227,8 @@ interface AktivPrompt {
   klar: () => void;
   senasteText: string;
   färdig: boolean;
+  /** M5 (b): klart-pixeln sändes (lyckad turn) — styr meddelande_id-utgiften. */
+  lyckat: boolean;
 }
 
 class AppServerTransport implements StudioTransport {
@@ -4028,6 +4332,58 @@ class AppServerTransport implements StudioTransport {
       historik: oppnad.historik,
       kontext: oppnad.kontext,
       meddelande: `Sessionen forkad vid iteration ${turnIndex + 1} — föräldern lever kvar i Sessioner.`,
+    };
+  }
+
+  // ── M5 (rek 6): fork vid Assistant-MEDDELANDE — {kind:"message"} ───────────
+
+  async rewindTillMeddelande(meddelandeId: string): Promise<StudioRewindSvar> {
+    // Meddelandets protokoll-id (session/messages messageId — M5-FORK §1:ns
+    // target-union) valideras hårt innan det går till app-servern; till skillnad
+    // från turnIndex (e8i) åldras id:t ALDRIG ur serverns vy.
+    const id = meddelandeId.trim();
+    if (!id || /\s/.test(id) || id.length > 200) {
+      throw new Error("Ogiltigt meddelande-id för rewind.");
+    }
+    await this.ensure();
+    if (!this.sid || !this.klient?.lever) throw new Error("session ej tillgänglig");
+    if (this.aktiv && !this.aktiv.färdig) {
+      throw new Error("En prompt kör — vänta tills agenten är klar.");
+    }
+    let forkedSessionId: string;
+    try {
+      const r = (await this.klient.protokollFraga(
+        "session/fork",
+        { sessionId: this.sid, target: { kind: "message", messageId: id } },
+        60_000,
+      )) as { forkedSessionId?: unknown } | null;
+      const sid = typeof r?.forkedSessionId === "string" && r.forkedSessionId ? r.forkedSessionId : "";
+      if (!sid) throw new Error("session/fork svarade utan forkedSessionId");
+      forkedSessionId = sid;
+    } catch (fel) {
+      const text = fel instanceof Error ? fel.message : String(fel);
+      // Ogiltigt/åldrat mål-meddelande (samma familj som -32004 på turn-formen;
+      // M5-FORK §12: -32603 kan även bära proto.staleTarget) — ärligt svar.
+      if (/resolve|not found|target_message_not_found|-32004|-32603|-32602/i.test(text)) {
+        throw new Error(
+          "Meddelandet finns ej längre i sessionen — öppna en tidigare iteration ur Sessioner i stället.",
+        );
+      }
+      // LIVE-BEVISAT (B3): -32010 "Cannot fork while a prompt is running".
+      if (/prompt is running|-32010/i.test(text)) {
+        throw new Error("En prompt eller aktivt mål kör i sessionen — vänta tills agenten är ledig.");
+      }
+      throw fel;
+    }
+    // Samma öppna-barn-flöde som rewindTillTurn: barnet blir transportens
+    // AKTIVA, föräldern lever kvar i session/list. iteration lämnas tom —
+    // meddelandet bär ingen turnIndex (klientens karta står för etiketten).
+    const oppnad = await this.oppnaSession(forkedSessionId);
+    return {
+      sessionId: oppnad.sessionId,
+      historik: oppnad.historik,
+      kontext: oppnad.kontext,
+      meddelande: "Sessionen forkad vid meddelandet — föräldern lever kvar i Sessioner.",
     };
   }
 
@@ -5532,6 +5888,26 @@ class AppServerTransport implements StudioTransport {
           tokenCount: typeof payload?.tokenCount === "number" ? payload.tokenCount : undefined,
           varaktighetMs: typeof payload?.duration === "number" ? payload.duration : undefined,
         });
+        // M5 (b): iterationsbubblans server-ID eftersöks EFTER slut-pixeln
+        // (meddelandet är persist vid turn.completed) och bärs med iterations-
+        // numret så klienten träffar rätt bubbla även om nästa iteration
+        // hunnit öppna; tyst vid miss — {kind:"turn"}-fallbacken lever kvar.
+        const malIterationNu = this.malIteration;
+        void this.lasSenasteAssistantMeddelandeId().then((id) => {
+          if (id) this.sändMalEvent({ typ: "meddelande_id", meddelandeId: id, iteration: malIterationNu });
+        });
+        return;
+      }
+      case "model_request_started":
+      case "model_request_completed":
+      case "model_request_cancelled":
+      case "model_request_failed":
+      case "model_retry_scheduled":
+      case "model_stream_stalled": {
+        // M3 §7.1 — tri-state-chippet gäller ÄVEN i den autonoma loopen
+        // (iterationerna drabbas av rate limits som chattade turner).
+        const e = lasModellStatusEvent(typ, payload);
+        if (e) this.sändMalEvent(e);
         return;
       }
       default: {
@@ -5693,6 +6069,7 @@ class AppServerTransport implements StudioTransport {
               meddelande: `Agentrundan avslutades utan lyckat resultat (${payload.resultType}).`,
             });
           } else {
+            aktiv.lyckat = true;
             aktiv.lyssnare({
               typ: "klart",
               svar:
@@ -5704,6 +6081,18 @@ class AppServerTransport implements StudioTransport {
             });
           }
           aktiv.klar();
+          return;
+        }
+        case "model_request_started":
+        case "model_request_completed":
+        case "model_request_cancelled":
+        case "model_request_failed":
+        case "model_retry_scheduled":
+        case "model_stream_stalled": {
+          // M3 §7.1 — modellstatus tri-state (kör/väntar/misslyckades);
+          // retrybara enstaka försök förblir tysta (se lasModellStatusEvent).
+          const e = lasModellStatusEvent(typ, payload);
+          if (e) aktiv.lyssnare(e);
           return;
         }
         default: {
@@ -5753,11 +6142,53 @@ class AppServerTransport implements StudioTransport {
         setTimeout(() => {
           if (this.aktiv === aktiv && !aktiv.färdig) {
             aktiv.färdig = true;
+            aktiv.lyckat = true; // M5 (b): idle-fallet fullbordar också turnen
             aktiv.lyssnare({ typ: "klart", svar: aktiv.senasteText });
             aktiv.klar();
           }
         }, 1_500);
       }
+    }
+  }
+
+  /**
+   * M5 (b): läs session/messages (liten limit — de SENASTE posterna,
+   * äldst→nyast enligt historik()) och plocka den sista assistant-postens
+   * server-id (R1 §1: fältet messageId; äldre former id/info.messageId
+   * täcks defensivt). Bränsle till {kind:"message"}-forken: messageId
+   * åldras ALDRIG ur e8i:s turnIndex-vy. Fel ⇒ null (tyst) — turn-formen
+   * förblir fallback för bubblor utan id.
+   */
+  private async lasSenasteAssistantMeddelandeId(): Promise<string | null> {
+    try {
+      if (!this.sid || !this.klient?.lever) return null;
+      const svar = await this.klient.protokollFraga(
+        "session/messages",
+        { sessionId: this.sid, limit: 6 },
+        15_000,
+      );
+      const meddelanden = (svar as { messages?: unknown[] } | null)?.messages;
+      if (!Array.isArray(meddelanden)) return null;
+      for (let i = meddelanden.length - 1; i >= 0; i--) {
+        const m = meddelanden[i] as {
+          messageId?: unknown;
+          id?: unknown;
+          info?: { role?: unknown; messageId?: unknown };
+        };
+        if (m?.info?.role !== "assistant") continue;
+        const id =
+          typeof m.messageId === "string" && m.messageId
+            ? m.messageId
+            : typeof m.id === "string" && m.id
+              ? m.id
+              : typeof m.info?.messageId === "string" && m.info.messageId
+                ? m.info.messageId
+                : "";
+        return id || null;
+      }
+      return null;
+    } catch {
+      return null; // id:t är lyx — aldrig ett fel för strömmen
     }
   }
 
@@ -5774,7 +6205,7 @@ class AppServerTransport implements StudioTransport {
       if (!Array.isArray(meddelanden)) return [];
       const ut: StudioHistorikPost[] = [];
       for (const m of meddelanden) {
-        const info = (m as { info?: { role?: unknown } }).info;
+        const info = (m as { info?: { role?: unknown; messageId?: unknown } }).info;
         const roll = info?.role;
         if (roll !== "user" && roll !== "assistant") continue;
         // BEVISAT form: parts[] med type "text" bär textfältet.
@@ -5784,7 +6215,20 @@ class AppServerTransport implements StudioTransport {
           .map((d) => d.text as string)
           .join("\n")
           .trim();
-        if (text) ut.push({ roll, text });
+        if (!text) continue;
+        // M5 (b): assistant-postens protokoll-id (messageId; äldre former
+        // id/info.messageId defensivt) — historikens bubblor får samma
+        // {kind:"message"}-forkankare som live-strömmade (robustet på
+        // långa trådar där turnIndex åldrats ur serverns vy).
+        const mId =
+          typeof (m as { messageId?: unknown }).messageId === "string" && (m as { messageId?: string }).messageId
+            ? (m as { messageId: string }).messageId
+            : typeof (m as { id?: unknown }).id === "string" && (m as { id?: string }).id
+              ? (m as { id: string }).id
+              : typeof info?.messageId === "string" && info.messageId
+                ? info.messageId
+                : "";
+        ut.push(roll === "assistant" && mId ? { roll, text, meddelandeId: mId } : { roll, text });
       }
       return ut.slice(-40);
     } catch {
@@ -5810,17 +6254,22 @@ class AppServerTransport implements StudioTransport {
     // bär trådens samtalssvans (flaggan sätts i skapa, konsumeras här).
     prompt = this.konsumeraTradsminne(prompt);
 
+    // M5 (b): referens som överlever promise-scopet — se meddelande_id-
+    // utgiften vid strömslutet nedan.
+    let aktivRef: AktivPrompt | null = null;
     await new Promise<void>((losa) => {
       const aktiv: AktivPrompt = {
         lyssnare,
         senasteText: "",
         färdig: false,
+        lyckat: false,
         klar: () => {
           städa();
           losa();
         },
       };
       this.aktiv = aktiv;
+      aktivRef = aktiv;
 
       // Hårt tak: 10 minuter räcker för långa agentrundor; client-abort
       // (req.signal) eldar session/stop och löser strömmen.
@@ -5940,6 +6389,16 @@ class AppServerTransport implements StudioTransport {
         losa();
       });
     });
+    // M5 (b): STRÖMSLUT — den färdiga assistant-postens server-ID ges till
+    // klientens fork-karta ({kind:"message"}-ankaret, rek 6). Endast efter
+    // LYCKAD turn och ej vid klient-abort; tyst vid miss (turn-fallbacken
+    // lever kvar för bubblor utan id). (Typvyn behövs: tilldelningen sker i
+    // promise-exekutorn — TS:s flödesanalys ser den inte vid läsningen.)
+    const aktivSlut = aktivRef as AktivPrompt | null;
+    if (aktivSlut?.lyckat && !signal?.aborted) {
+      const meddelandeId = await this.lasSenasteAssistantMeddelandeId();
+      if (meddelandeId) lyssnare({ typ: "meddelande_id", meddelandeId });
+    }
   }
 
   // ── VÅG 91 A1d + VÅG 92 B1: BILDER + TJÄNSTE-BRYGGOR ────────────────────────
@@ -6364,6 +6823,17 @@ class AppServerTransport implements StudioTransport {
     if (!providerId || !modelId) {
       throw new Error("Ingen modell känd för textgenerering — öppna sessionen först.");
     }
+    // m7: workspace-scopad generation kräver providern i arbetsytans register
+    // (live-fynd: provider_not_found, -32603, trots korrekt modelRef) —
+    // kurera registret FÖRST via upsertModelProvider. Ett mjukt upsert-fel
+    // avbryter inte: registret kan redan vara komplett, generateText avgör.
+    let upsertFel: unknown = null;
+    try {
+      await this.sakraLeverantor(providerId, modelId);
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/upsertModelProvider");
+      upsertFel = fel;
+    }
     let r: { text?: unknown } | null;
     try {
       r = (await this.klient!.protokollFraga(
@@ -6378,9 +6848,58 @@ class AppServerTransport implements StudioTransport {
       )) as { text?: unknown } | null;
     } catch (fel) {
       if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/generateText");
+      const meddelande = fel instanceof Error ? fel.message : String(fel);
+      if (upsertFel && /provider_not_found|provider_not_configured/i.test(meddelande)) {
+        const orsak = upsertFel instanceof Error ? upsertFel.message : String(upsertFel);
+        throw new Error(`Providern kunde ej kureras i registret: ${orsak.slice(0, 200)}`);
+      }
       throw fel;
     }
     return { text: typeof r?.text === "string" ? r.text : "", råSvar: r };
+  }
+
+  /**
+   * m7: säkra att providern finns i arbetsytans register —
+   * workspace/upsertModelProvider med blocket ur serverns
+   * ~/.zcode/cli/config.json (kind/baseURL/modeller; apiKey som "inline"
+   * session-secret som zcode förvarar per arbetsyta). Saknas blocket i
+   * config.json hopas uppsättningen över — generateText svarar då ärligt.
+   * Parameterns form: {workspace, provider{providerId, kind, label?,
+   * source "workspace", baseURL?, apiKey{source,value}?, apiKeyRequired?,
+   * headers?, models[{modelId, label?, contextWindow?, maxOutputTokens?,
+   * supportsImages?, supportsVideo?}] (min 1)}} — strict zod i vendor.
+   */
+  private async sakraLeverantor(providerId: string, modelId: string): Promise<void> {
+    const block = lasServerLeverantor(providerId);
+    if (!block) return;
+    const models = Object.entries(block.models).map(([id, m]) => ({
+      modelId: id,
+      ...(typeof m?.name === "string" ? { label: m.name } : {}),
+      ...(typeof m?.limit?.context === "number" ? { contextWindow: m.limit.context } : {}),
+      ...(typeof m?.limit?.output === "number" ? { maxOutputTokens: m.limit.output } : {}),
+      ...(m?.modalities?.input?.includes("image") ? { supportsImages: true } : {}),
+      ...(m?.modalities?.input?.includes("video") ? { supportsVideo: true } : {}),
+    }));
+    await this.klient!.protokollFraga(
+      "workspace/upsertModelProvider",
+      {
+        workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog },
+        provider: {
+          providerId,
+          kind: block.kind,
+          ...(block.name ? { label: block.name } : {}),
+          source: "workspace",
+          ...(block.baseURL ? { baseURL: block.baseURL } : {}),
+          ...(block.apiKey ? { apiKey: { source: "inline", value: block.apiKey } } : {}),
+          ...(typeof block.apiKeyRequired === "boolean"
+            ? { apiKeyRequired: block.apiKeyRequired }
+            : {}),
+          ...(block.headers ? { headers: block.headers } : {}),
+          models: models.length > 0 ? models : [{ modelId }],
+        },
+      },
+      30_000,
+    );
   }
 
   private lasSparadSession(): {
@@ -6792,6 +7311,64 @@ class MockTransport implements StudioTransport {
       historik: [...this.historikPoster],
       kontext: await this.lasKontext(),
       meddelande: `Mock: sessionen forkad vid iteration ${turnIndex + 1}.`,
+    };
+  }
+
+  /** M5 (b): mock-meddelande-id:n är deterministiska — "mock-msg-<n>" där n
+   *  är assistant-postens 1-baserade ordning i historiken (stansas i skicka). */
+  async rewindTillMeddelande(meddelandeId: string): Promise<StudioRewindSvar> {
+    await this.ensure();
+    const match = /^mock-msg-(\d+)$/.exec(meddelandeId.trim());
+    if (!match) {
+      throw new Error(
+        `Meddelandet ${meddelandeId.slice(0, 24)} finns ej i sessionen (mock) — välj en agentbubbla.`,
+      );
+    }
+    const n = Number.parseInt(match[1], 10);
+    // Klipp precis EFTER den n:te assistant-posten (turn-formens motstycke:
+    // nästa user-post stänger turnen).
+    let sett = 0;
+    let klipp = -1;
+    for (let i = 0; i < this.historikPoster.length; i++) {
+      if (this.historikPoster[i].roll !== "assistant") continue;
+      sett += 1;
+      if (sett === n) {
+        klipp = i + 1;
+        break;
+      }
+    }
+    if (klipp < 0) {
+      throw new Error(
+        `Meddelandet ${meddelandeId.slice(0, 24)} finns ej i sessionen (mock) — välj en agentbubbla.`,
+      );
+    }
+    if (this.mockSid) {
+      this.mockHistorik.set(this.mockSid, [...this.historikPoster]);
+      this.mockMeta.set(this.mockSid, { turns: this.mockTurns, tokens: this.mockTotalt });
+      if (!this.gamlaSessioner.some((s) => s.sessionId === this.mockSid)) {
+        this.gamlaSessioner.unshift({
+          sessionId: this.mockSid,
+          titel: this.historikPoster[0]?.text.slice(0, 60) || "Mock-session",
+          status: "idle",
+          modell: this.mockModell ? `mock/${this.mockModell}` : "mock/demo",
+          turns: this.mockTurns,
+          tokens: this.mockTotalt,
+          uppdaterad: new Date().toISOString(),
+        });
+      }
+    }
+    const forkedSessionId = `sess_mock_fork_${Date.now().toString(36)}`;
+    const historik = this.historikPoster.slice(0, klipp);
+    this.mockSid = forkedSessionId;
+    this.historikPoster.length = 0;
+    this.historikPoster.push(...historik.map((h) => ({ ...h })));
+    this.mockTurns = Math.max(1, this.historikPoster.filter((h) => h.roll === "user").length);
+    this.mockTotalt = Math.max(0, this.mockTotalt);
+    return {
+      sessionId: forkedSessionId,
+      historik: [...this.historikPoster],
+      kontext: await this.lasKontext(),
+      meddelande: `Mock: sessionen forkad vid meddelande ${meddelandeId.slice(0, 24)}.`,
     };
   }
 
@@ -7661,7 +8238,10 @@ class MockTransport implements StudioTransport {
       await sov(35);
     }
     this.historikPoster.push({ roll: "user", text: prompt });
-    this.historikPoster.push({ roll: "assistant", text: svar.trim() });
+    // M5 (b): deterministiskt mock-id på assistant-posten + utgift efter
+    // klart-pixeln — dev/demo-E2E bevisar hela {kind:"message"}-kedjan.
+    const mockMeddelandeId = `mock-msg-${this.historikPoster.filter((h) => h.roll === "assistant").length + 1}`;
+    this.historikPoster.push({ roll: "assistant", text: svar.trim(), meddelandeId: mockMeddelandeId });
     this.mockTotalt += 128;
     this.mockTurns += 1;
     lyssnare({
@@ -7673,6 +8253,7 @@ class MockTransport implements StudioTransport {
       tokenCount: 128,
     });
     lyssnare({ typ: "klart", svar: svar.trim(), tokenCount: 128, varaktighetMs: rader.length * 35 + 270 });
+    lyssnare({ typ: "meddelande_id", meddelandeId: mockMeddelandeId });
   }
 }
 

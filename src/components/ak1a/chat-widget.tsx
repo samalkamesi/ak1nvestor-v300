@@ -70,6 +70,11 @@ type Meddelande = {
   ikon?: string;
   motfraga?: MotfragaChip;
   fordjupa?: Fordjupa;
+  /** Källmärke (mentor 2.1): "AI-Mentorn modell" på modellsvar — renderas
+   *  som tydlig etikett + pedagogisk disclaimer under bubblan. */
+  kalla?: string;
+  /** Kvarvarande modellfrågor idag (visas i etiketten — ärlig kostnadssyn). */
+  kvarvarande?: number;
 };
 
 /** Alla sidtyper på sajten — detekteras från pathname. */
@@ -743,6 +748,65 @@ export function ChatWidget() {
 
     setBusy(true);
 
+    // ── MENTOR 2.1 (våg 159): modellsvar för INLOGGADE medlemmar ─────────────
+    // Kostnadssäker väg: rutten vaktar medlemskap (httpOnly-kakan verifieras
+    // server-side), 10 frågor/dag och token-tak — widgeten anropar den bara
+    // när eleven är inloggad OCH regel-motorn inte kunde svara. Alla fel ⇒
+    // fall igenom till regel-motorn (/api/chatbot): eleven får alltid svar.
+    if (ctx.inloggad) {
+      try {
+        const mRes = await fetch("/api/mentor/fraga", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fraga: q, kontext: senasteAmne ?? undefined }),
+        });
+        if (mRes.ok) {
+          const mData = await mRes.json();
+          const modellSvar = mData.svar as
+            | {
+                text: string;
+                amne?: string;
+                handlings?: Handling[];
+                motfraga?: MotfragaChip;
+                fordjupa?: Fordjupa;
+              }
+            | undefined;
+          if (modellSvar && typeof modellSvar.text === "string" && modellSvar.text.trim()) {
+            if (typeof modellSvar.amne === "string" && modellSvar.amne) setSenasteAmne(modellSvar.amne);
+            sparaChatTur(
+              "mentor",
+              modellSvar.motfraga
+                ? `${modellSvar.text}\n\n💬 Motfråga (${modellSvar.motfraga.kategori}): ${modellSvar.motfraga.text}`
+                : modellSvar.text
+            );
+            setMeddelanden((p) => [...p, {
+              fran: "ai",
+              text: modellSvar.text,
+              handlings: modellSvar.handlings,
+              motfraga: modellSvar.motfraga,
+              fordjupa: modellSvar.fordjupa,
+              kalla: typeof mData.kalla === "string" ? mData.kalla : "AI-Mentorn modell",
+              kvarvarande: typeof mData.kvarvarande === "number" ? mData.kvarvarande : undefined,
+            }]);
+            setBusy(false); // chattbot-flödets finally nås aldrig vid tidigt return
+            return; // modellsvar levererat — etiketterat i bubblan nedan
+          }
+        } else if (mRes.status === 429) {
+          // Dagens 10 modellfrågor är använda — ärlig info, sedan svarar
+          // regel-motorn nedan (källmärkt, 0 kr) precis som vanligt.
+          setMeddelanden((p) => [...p, {
+            fran: "ai",
+            ikon: "🎫",
+            text: "Dagens 10 modellfrågor är använda. Mentorn svarar fortsatt ur det pedagogiska biblioteket nedan — och imorgon fylls modellkvoten på nytt.",
+          }]);
+        }
+        // 401 (sessionen utgått), 503 (modellen otillgänglig) eller oväntad
+        // form: tyst fall igenom — regel-motorn tar frågan.
+      } catch {
+        // Nätverksfel mot modellrutterna ⇒ regel-motorn nedan
+      }
+    }
+
     try {
       const res = await fetch("/api/chatbot", {
         method: "POST",
@@ -1066,6 +1130,19 @@ export function ChatWidget() {
                 >
                   {m.text}
                 </div>
+                {/* Källmärke (mentor 2.1) — modellsvar ska vara TYDLIGT
+                    etiketterade + pedagogisk disclaimer (lagen 2007:528). */}
+                {m.kalla && (
+                  <div className="mt-1.5 flex max-w-[85%] flex-wrap items-center gap-1.5">
+                    <span className="rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold">
+                      🤖 {m.kalla}
+                      {typeof m.kvarvarande === "number" ? ` · ${m.kvarvarande} frågor kvar idag` : ""}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground">
+                      pedagogisk utbildning — inte investeringsråd
+                    </span>
+                  </div>
+                )}
                 {/* Mentorns motfråga — klickbart snabbföljd-chip (skickas som ny fråga) */}
                 {m.motfraga && (
                   <button

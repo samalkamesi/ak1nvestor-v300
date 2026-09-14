@@ -205,6 +205,10 @@ export async function POST(req: NextRequest) {
     if (action === "malSatt") {
       if (!mal.trim()) return jsonSvar({ fel: "Målet är tomt." }, 400);
       const svar = await transport.sattMal(mal);
+      // VÅG 155 — OFFLINE-MINNET: mål-återarmning på nyfödd session (t.ex.
+      // prod-synkens/hjärtats post-deploy-arm) internaliserar TRÅDMINNET i
+      // bakgrunden — iterationerna minns tråden även utan kund-prompter.
+      transport.injiceraTradminneIBakgrunden();
       return jsonSvar(svar);
     }
     if (action === "malRensa") {

@@ -244,6 +244,10 @@ export async function GET(req: NextRequest) {
     } catch {
       /* pågående turn vägrar sattMal — hjärtat/POST täcker */
     }
+    // VÅG 155 — OFFLINE-MINNET: nyfödd session (omstart) internaliserar
+    // TRÅDMINNET i bakgrunden — de autonoma iterationerna minns även utan
+    // att någon kund-prompt kommer (kunddirektivet: online OCH offline).
+    transport.injiceraTradminneIBakgrunden();
     const [historik, kontext, aterkoppling] = await Promise.all([
       transport.historik(),
       transport.lasKontext(),

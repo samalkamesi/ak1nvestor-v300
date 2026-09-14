@@ -1374,6 +1374,12 @@ export interface StudioTransport {
    */
   sattLage(lage: StudioLage): Promise<{ lage: string }>;
   /**
+   * VÅG 155 — OFFLINE-MINNET: internaliserar TRÅDMINNET på en nyfödd
+   * session i bakgrunden (fire-and-forget) så autonoma iterationer minns
+   * tråden utan kund-prompter. No-op när sessionen inte är nyfödd.
+   */
+  injiceraTradminneIBakgrunden(): void;
+  /**
    * session/setThoughtLevel {sessionId, thoughtLevel} (BEVISAT LIVE, kartan
    * §1 — nivåer: nothink|high|max). Tankestyrkan för resonemangsmodellen;
    * valet följer med till session/create + session/resume.
@@ -3506,6 +3512,39 @@ class AppServerTransport implements StudioTransport {
     } catch {
       return prompt; // minnet är stöd — ALDRIG fatal för sändningen
     }
+  }
+
+  /**
+   * VÅG 155 — OFFLINE-MINNET: den autonoma mål-loopen arbetar UTAN klient
+   * (kunddirektivet "jobba online och offline") — men v150:s injektion eldade
+   * bara via chatt-prompts, så post-omstarts-iterationer kunde förbli
+   * minnestomma i timmar utan kunden påkopplad. Denna bakgrundsmetod
+   * internaliserar TRÅDMINNET på en nyfödd session SJÄLV (fire-and-forget,
+   * tyst lyssnare, retry om mål-turnen höll sessionen upptagen).
+   */
+  injiceraTradminneIBakgrunden(): void {
+    if (!this.nyFoddTrad || !this.sid) return;
+    this.nyFoddTrad = false;
+    let prefix = "";
+    try {
+      prefix = byggTradsminnePrefix(this.sid);
+    } catch {
+      return;
+    }
+    if (!prefix) return;
+    const prompt = `${prefix}\n\n───\n\nMINNESINJEKTION (automatisk, kräver inget svar): internalisera TRÅDENS MINNE ovan — du fortsätter vår pågående tråd. Svara EN rad om var tråden står; fortsätt sedan målets arbete där tråden slutade.`;
+    const tystLyssnare: StudioLyssnare = () => undefined;
+    void (async () => {
+      for (let forsok = 0; forsok < 3; forsok += 1) {
+        try {
+          await this.skicka(prompt, tystLyssnare);
+          return;
+        } catch {
+          // mål-turn höll sessionen upptagen (-32010) — vänta och försök igen
+          await new Promise((sov) => setTimeout(sov, 30_000));
+        }
+      }
+    })();
   }
 
   /** Persistens: {sessionId, modell?, lage?, tankeNiva?, sparad} — modellen används av create-fallback. */
@@ -6515,6 +6554,10 @@ class MockTransport implements StudioTransport {
   async sattLage(lage: StudioLage): Promise<{ lage: string }> {
     this.mockLage = lage;
     return { lage };
+  }
+
+  injiceraTradminneIBakgrunden(): void {
+    // mock: inget trådsminne att bära
   }
 
   async sattTankeNiva(niva: string): Promise<{ niva: string }> {

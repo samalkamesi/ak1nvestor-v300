@@ -1133,6 +1133,99 @@ function arSendFormAvvisad(text: string): boolean {
   return /-32602|unrecognized|unexpected key|invalid_params|ogiltig parameter/i.test(text);
 }
 
+// ── m7: provider-registrets kur (workspace/upsertModelProvider) ──────────────
+
+/** Serverns config.json-form för EN modell i ett provider-block (endast de fält vi läser). */
+interface ServerModell {
+  name?: string;
+  limit?: { context?: number; output?: number };
+  modalities?: { input?: string[] };
+}
+
+/**
+ * Serverns config.json-form för ett provider-block (endast de fält vi läser).
+ * Formen följer zcode:s egen config (config.example.json §provider): kind +
+ * options.baseURL/options.apiKey/options.apiKeyRequired + headers + models.
+ */
+interface ServerLeverantor {
+  kind: "anthropic" | "openai" | "openai-compatible";
+  name?: string;
+  baseURL?: string;
+  apiKey?: string;
+  apiKeyRequired?: boolean;
+  headers?: Record<string, string>;
+  models: Record<string, ServerModell | undefined>;
+}
+
+/**
+ * m7: läser ett provider-block ur serverns ~/.zcode/cli/config.json — samma
+ * källa som zcode själv använder (zai: kind anthropic, baseURL
+ * https://api.z.ai/api/anthropic). apiKey läses ENDAST här på servern och
+ * lämnar aldrig processen via logg, commit eller API-svar. Okänd form ⇒
+ * null — anroparen hopar då över uppsättningen tyst.
+ */
+function lasServerLeverantor(providerId: string): ServerLeverantor | null {
+  try {
+    const rå = readFileSync(path.join(os.homedir(), ".zcode", "cli", "config.json"), "utf8");
+    const pars = JSON.parse(rå) as { provider?: Record<string, unknown> };
+    const block = pars.provider?.[providerId];
+    if (!block || typeof block !== "object") return null;
+    const k = block as Record<string, unknown>;
+    const kind = typeof k.kind === "string" ? k.kind : "";
+    if (kind !== "anthropic" && kind !== "openai" && kind !== "openai-compatible") return null;
+    const options =
+      k.options && typeof k.options === "object" ? (k.options as Record<string, unknown>) : {};
+    const råModeller =
+      k.models && typeof k.models === "object" ? (k.models as Record<string, unknown>) : {};
+    const models: Record<string, ServerModell | undefined> = {};
+    for (const [id, m] of Object.entries(råModeller)) {
+      const mm = m && typeof m === "object" ? (m as Record<string, unknown>) : {};
+      const limit =
+        mm.limit && typeof mm.limit === "object" ? (mm.limit as Record<string, unknown>) : undefined;
+      const modaliteter =
+        mm.modalities && typeof mm.modalities === "object"
+          ? (mm.modalities as Record<string, unknown>)
+          : undefined;
+      const inMatning =
+        modaliteter && Array.isArray(modaliteter.input)
+          ? (modaliteter.input as unknown[]).filter((x): x is string => typeof x === "string")
+          : undefined;
+      models[id] = {
+        ...(typeof mm.name === "string" ? { name: mm.name } : {}),
+        ...(limit
+          ? {
+              limit: {
+                ...(typeof limit.context === "number" ? { context: limit.context } : {}),
+                ...(typeof limit.output === "number" ? { output: limit.output } : {}),
+              },
+            }
+          : {}),
+        ...(inMatning ? { modalities: { input: inMatning } } : {}),
+      };
+    }
+    const råHeaders =
+      k.headers && typeof k.headers === "object" ? (k.headers as Record<string, unknown>) : undefined;
+    const headers: Record<string, string> | undefined = råHeaders
+      ? Object.fromEntries(
+          Object.entries(råHeaders).filter(
+            (e): e is [string, string] => typeof e[1] === "string",
+          ),
+        )
+      : undefined;
+    return {
+      kind,
+      ...(typeof k.name === "string" ? { name: k.name } : {}),
+      ...(typeof options.baseURL === "string" ? { baseURL: options.baseURL } : {}),
+      ...(typeof options.apiKey === "string" && options.apiKey ? { apiKey: options.apiKey } : {}),
+      ...(options.apiKeyRequired === true ? { apiKeyRequired: true } : {}),
+      ...(headers ? { headers } : {}),
+      models,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ── VÅG 85 F2: skills/plugins/MCP (kartan §2 — panelens datakällor) ──────────
 
 /**
@@ -1499,7 +1592,10 @@ export interface StudioTransport {
   /**
    * workspace/generateText {workspace, modelRef, prompt, querySource} —
    * headless textgenerering UTAN turn/session (kartan §2). modelRef hämtas
-   * ur den aktiva sessionens kontext.
+   * ur den aktiva sessionens kontext. m7: providern kureras FÖRST in i
+   * arbetsytans register via workspace/upsertModelProvider (blocket ur
+   * serverns ~/.zcode/cli/config.json) — annars svarar generationen
+   * provider_not_found trots korrekt modelRef.
    */
   genereraText(prompt: string): Promise<{ text: string; råSvar: unknown }>;
   // ── VÅG 93 C1 (kluster a+c+d): workspace-inställningar · plugins-drift ·
@@ -6643,6 +6739,17 @@ class AppServerTransport implements StudioTransport {
     if (!providerId || !modelId) {
       throw new Error("Ingen modell känd för textgenerering — öppna sessionen först.");
     }
+    // m7: workspace-scopad generation kräver providern i arbetsytans register
+    // (live-fynd: provider_not_found, -32603, trots korrekt modelRef) —
+    // kurera registret FÖRST via upsertModelProvider. Ett mjukt upsert-fel
+    // avbryter inte: registret kan redan vara komplett, generateText avgör.
+    let upsertFel: unknown = null;
+    try {
+      await this.sakraLeverantor(providerId, modelId);
+    } catch (fel) {
+      if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/upsertModelProvider");
+      upsertFel = fel;
+    }
     let r: { text?: unknown } | null;
     try {
       r = (await this.klient!.protokollFraga(
@@ -6657,9 +6764,58 @@ class AppServerTransport implements StudioTransport {
       )) as { text?: unknown } | null;
     } catch (fel) {
       if (arMetodSaknas(fel)) throw new StudioMetodSaknasError("workspace/generateText");
+      const meddelande = fel instanceof Error ? fel.message : String(fel);
+      if (upsertFel && /provider_not_found|provider_not_configured/i.test(meddelande)) {
+        const orsak = upsertFel instanceof Error ? upsertFel.message : String(upsertFel);
+        throw new Error(`Providern kunde ej kureras i registret: ${orsak.slice(0, 200)}`);
+      }
       throw fel;
     }
     return { text: typeof r?.text === "string" ? r.text : "", råSvar: r };
+  }
+
+  /**
+   * m7: säkra att providern finns i arbetsytans register —
+   * workspace/upsertModelProvider med blocket ur serverns
+   * ~/.zcode/cli/config.json (kind/baseURL/modeller; apiKey som "inline"
+   * session-secret som zcode förvarar per arbetsyta). Saknas blocket i
+   * config.json hopas uppsättningen över — generateText svarar då ärligt.
+   * Parameterns form: {workspace, provider{providerId, kind, label?,
+   * source "workspace", baseURL?, apiKey{source,value}?, apiKeyRequired?,
+   * headers?, models[{modelId, label?, contextWindow?, maxOutputTokens?,
+   * supportsImages?, supportsVideo?}] (min 1)}} — strict zod i vendor.
+   */
+  private async sakraLeverantor(providerId: string, modelId: string): Promise<void> {
+    const block = lasServerLeverantor(providerId);
+    if (!block) return;
+    const models = Object.entries(block.models).map(([id, m]) => ({
+      modelId: id,
+      ...(typeof m?.name === "string" ? { label: m.name } : {}),
+      ...(typeof m?.limit?.context === "number" ? { contextWindow: m.limit.context } : {}),
+      ...(typeof m?.limit?.output === "number" ? { maxOutputTokens: m.limit.output } : {}),
+      ...(m?.modalities?.input?.includes("image") ? { supportsImages: true } : {}),
+      ...(m?.modalities?.input?.includes("video") ? { supportsVideo: true } : {}),
+    }));
+    await this.klient!.protokollFraga(
+      "workspace/upsertModelProvider",
+      {
+        workspace: { workspaceKey: this.arbetskatalog, workspacePath: this.arbetskatalog },
+        provider: {
+          providerId,
+          kind: block.kind,
+          ...(block.name ? { label: block.name } : {}),
+          source: "workspace",
+          ...(block.baseURL ? { baseURL: block.baseURL } : {}),
+          ...(block.apiKey ? { apiKey: { source: "inline", value: block.apiKey } } : {}),
+          ...(typeof block.apiKeyRequired === "boolean"
+            ? { apiKeyRequired: block.apiKeyRequired }
+            : {}),
+          ...(block.headers ? { headers: block.headers } : {}),
+          models: models.length > 0 ? models : [{ modelId }],
+        },
+      },
+      30_000,
+    );
   }
 
   private lasSparadSession(): {

@@ -24,21 +24,20 @@
 | 7 | Isolerade subagent-events (3.11.2-21) | KONTROLL-DOM: STÄMD — tre oberoende lager (sessions-prenumeration, sessionId-vakt, tyst fallthrough); frivillig härdning: 5-nivå-sessionId | 3 | 2 | STÄNGD (KONTROLL-7-SUBAGENT-ISOLERING.md) | — |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
 | 9 | Diff-bläddring /diff med radnummer+CJK | Gutter (dual, absolut+relativ) + ordnivå-diff + /diff-bläddringsdialog | 4 | 2 | STÄNGD (v164-nav, byggagent; tsc 0 + 26/26; deploy df882dbf) | — |
-| 10 | Mermaid-förhandsvisning | 509-rad komponent (flowchart/sequence/pie + källkodsväxling) | 2 | 3 | STÄNGD (byggagent v168) | Rendera mermaid-block i chatt-svar (klientbibliotek) |
-| 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | STÄNGD (register2 r2e, fabrik; barnrader under iterationsraderna, klick → oppnaITabb; `barnPerIteration` ×3 i prod-träd, bygg 10:40 + prod 200) | — |
+| 10 | Mermaid-förhandsvisning | 509-rad komponent (flowchart/sequence/pie, tsc 0) | 2 | 3 | STÄNGD (byggagent v168) | Rendera mermaid-block i chatt-svar (klientbibliotek) |
+| 11 | Agentträd per iteration — barn syns + klickbara | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
 | 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
 | 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Ctrl+Shift+F öppnar sökpanel: `sokOppen/sokFras/sokIndex`, träffräkning, nästa/förra | 4 | 2 | STÄNGD (n1, 695f2703; bygg 10:40 + prod 200) | — |
-| 17 | Input-autocomplete @-filer (P2) | @-filuppslag: fuzzy-match, 52 px-rader, listbox/aria, debounce 200 ms, infogning med markör | 4 | 3 | STÄNGD (r2a, ebba4910; prodbygge 07:36) | — |
+| 17 | @-fil-autocomplete — fuzzy + piltangenter | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 18 | Turmarkörer + hopp mellan turer (P3) | `turPos`-state + hoppaTur + Alt+↑/↓ piltangenter | 3 | 1 | STÄNGD (n1, 695f2703) | — |
 | 19 | Hopp-till-slut-indikator (P4) | "↓ Hopp till slutet"-etikett (pi-tui 0.85.0-paritet) + räknarbadge, `hoppaNerChatt`, 44 px mobiltryckyta | 3 | 1 | STÄNGD (n2, df882dbf) | — |
 | 20 | Stora paste-markörer (P5) | `PASTE_RADER_GRANS` + `räknaRader` — kollapsar >N rader till expanderbar markör (×5 i prod-träd) | 3 | 1 | STÄNGD (n2, df882dbf) | — |
-| 21 | In-app toast-stack (P6) | Staplade självförsvinnande notiser, live-region, stäng-klick, mobil-safe-area | 3 | 1 | STÄNGD (r2b, 723b51d9; prodbygge 07:36) | — |
-| 22 | Keybinding-manager (P7) | `src/lib/studio/genvagar.ts` (203 rader) — remappbara genvägar + listning | 3 | 2 | STÄNGD (r2c, 8288eda0; bygg 10:40 + prod 200) | — |
-| 23 | LaTeX-formler i svar (P8) |
-| 24 | v4/conversation/usage + usage/stats (V4-LAGRET) | Saknas — triviala schemas | 8 | 2 | ÖPPEN | Gratis kostnadsobservabilitet |
+| 21 | Toast-stack — staplande, självförsvinnande | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
+| 22 | Genvägsmanager — remappbara + Inställningspanel | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
+| 23 | LaTeX — Unicode-approximation i svar | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | 8 | 2 | ÖPPEN | Gratis kostnadsobservabilitet |
 | 25 | v4/conversation/resync (V4-LAGRET) | Saknas — initialWires+commit | 9 | 3 | ÖPPEN | Hållbart fileChanges-spår |
 | 26 | sessions-index topic (V4-LAGRET) | Saknas — realtime-index | 7 | 3 | ÖPPEN | Tränger undan poll-lagret |
 | 27 | v4/command + commands/query (V4-LAGRET) | Saknas — inbox/kö | 10 | 6 | ÖPPEN (etapp 2) | Högst råvärde men komplex | LaTeX-approximation: renderInline-grenar + blockformel-extraktion (×5 i prod-trädet) | 2 | 2 | STÄNGD (r2d, 45f1a9d4) | — |

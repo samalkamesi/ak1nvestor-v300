@@ -98,7 +98,28 @@ datafilerna vid byggtillfället).
 
 ## Koordinering
 
-Inga syskon skrev i data/portfolj-system eller llms.txt vid mitt fönster
-(git status ren före start; senaste commits var spår 1-granskningar).
-Commit med `git commit -o <egna filer>` — kuren mot dagens tre dokumenterade
-add-kollisioner (640daa80, 6d7b299d, 37c1f25b).
+Trädet var rent vid start och under mitt skrivfönster (git status ren;
+senaste commits var spår 1-granskningar). **Commit-race vid leverans
+(fjärde fallet idag, jfr 640daa80/6d7b299d/37c1f25b):** mellan min
+read-modify-write av bolagsunivers.json och commit läggs ett syskons tre
+rader (VOLV-B.ST/industri, EQT.ST/finans, AXFO.ST/konsument — s2-u3:s
+"+3 bolag"-mönster omgång 4) i arbetskopian; min `git add` + `commit -o`
+tog arbetskopian av filen varför deras hela, orörda rader följde med i
+b51bb714 (HEAD: giltig JSON, 113 bolag — 110 med VNA + syskonens 3).
+Ägarskap och leveransbevis för VOLV-B/EQT/AXFO tillhör syskonet.
+Ingen revert/amend (historiken kan ha dragits av prod-synken).
+
+**Interimstatus i HEAD (väntar syskonets llms-omräkning):**
+bolagsunivers.json har 113 bolag men llms.txt:s dataset-block speglar
+110 (med VNA, utan syskonens tre) — mina llms-tal är korrekta för
+VNA-tillståndet (jiti-löpet räknade före syskonens skrivning);
+syskonets leveranskriterier inkluderar deras egen llms-omräkning, vilken
+harmoniserar blocket. Ytterligare ett syskon (+1/+2-mönstret, ROG.SW +
+NESN.SW) skrev aktivt i arbetsytan vid mitt commit-tillfälle — deras
+rader är ocommittade och deras ägo.
+
+Åtgärdad kur i denna leverans: `git commit -o <egna filer>` användes —
+den stoppade INTE delade-fil-kollisioner (arbetskopian är sanningen för
+-o) men håller ospårade/andra kataloger borta. För delade filer krävs
+index-lås eller syskonsekvensiering — körs vidare till huvudagenten
+(femte dokumenterade fallet).

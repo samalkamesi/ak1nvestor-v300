@@ -11070,3 +11070,18 @@ OBJEKT: lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json (senaste branschg
 
 ## SPÅR 2 s2-u1 (omgång 3) — 2026-09-15: Vonovia in i universumet — fastighet 10→11, totalmedian P/E 19,9→19,7 [fabrik]
 OBJEKT: spårets nästa icke-levererade — fastighet stod på minimum 10 bolag (9 SE + PLD, tungaste svenskexponeringen) efter syskonens utökningar (finans/kommunikation/energi/konsument/industri). Val med omdöme: VNA.DE Vonovia SE — Europas största bostadsfastighetsbolag, DAX-citeringsmagnet, branschens första centraleuropeiska ankare; VNA fri (0 träffar före start). LEVERANS: +1 bolagsrad i bolagsunivers.json (stockanalysis.com översikt+statistics+financials, S&P-underlag, sid-as-of 2026-09-15: P/E 4,21 forward 9,74, P/B 0,48, EV/EBIT 26,7, ROE 14,6 %, ROIC 3,1 %, EBIT 38,4 %, netto 64,8 % TTM, FCF-marginal 0,97 %, skuld/EK 1,35, golv 32,12 EUR = 44 % rabatt; serier 2022–2025 EUR: oms −6,9 % CAGR endpoint, resultat −643,8/−6 285/−896/+3 723 mdr — resultatCAGR OSATT negativt startvärde, peg OSATT negativ implicit tillväxt −56,8 % ur trailing/forward-P/E, engångsvinster 2025 noterade). llms.txt dataset-block omräknat via projektets EGEN lasBranschMedianer (jiti, färsk process — varken npx eller bygge): totalt median P/E 19,7 (n=101/110), fastighet P/E 11,4 kvartiler 10,1–22,1 (n=11) · P/B 0,8 · EBIT 63,1 % · FCF 30,9 % · tillväxt 4,8 %; 12 rader uppdaterade (intro + index + 10 branschklausuler + fastighetsrad); llms-full saknar dataset-sektion = orörd. KVD: kontraktstest GRÖNT 0 fel/161 sidkontroller (läckagevakt 0, via cachad tsx-CLI direkt — rak node/jiti dör på dynamiska extensionless-importer, SYSTEMKARTAN C17; npx EJ använt); prod 200 (/, /dataset, /dataset/fastighet); v98 väntar nästa byggande slag (byggen ägs av prod-synken); endast data/ + public/llms.txt = inget bygge, src/ orörd, R2 orörd. Protokoll: S2-U1-VONOVIA-FASTIGHET-UTOKNING-OMG3.md. Commit med -o (egna filer) = kuren mot dagens tre add-kollisioner. [fabrik]
+
+### SPÅR 2 s2-u1 tillägg — commit-race nr 4 dokumenterat (2026-09-15)
+Min commit b51bb714 innehöll utöver mina 4 filer även ett syskons tre hela,
+orörda bolagsrader (VOLV-B.ST/industri, EQT.ST/finans, AXFO.ST/konsument —
+s2-u3:s +3-mönster omgång 4): de skrevs i delad arbetskopia mellan min
+read-modify-write och git add; commit -o tar ARBETSKOPIAN av angivna filer,
+alltså följde rader som inte var mina med (HEAD = giltig JSON, 113 bolag;
+min VNA-rad + mina llms-12-rader intakta och korrekta för 110-tillståndet).
+Ägarskap VOLV-B/EQT/AXFO: syskonet s2-u3. INTERIM: llms.txt speglar 110 bolag
+mot universumets 113 — harmoniseras av syskonets egen llms-omräkning (deras
+leveranskriterium). Ytterligare syskon aktivt (+ROG.SW/+NESN.SW, ocommittat
+vid mitt fönster). Läxa (femte fallet): -o stoppar ej delade-fil-racer —
+kvarvarande kur åt huvudagenten: index-lås eller katalogsekvensiering för
+syskon med samtidig commit; jfr s1-u2:s notis. Protokollets koordinerings-
+sektion rättad i samma veva. [fabrik]

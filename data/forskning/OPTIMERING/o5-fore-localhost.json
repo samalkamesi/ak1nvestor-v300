@@ -1,0 +1,808 @@
+{
+  "genererad": "2026-09-15T08:12:07.732Z",
+  "bas": "http://localhost:3000",
+  "verktyg": "verktyg/prestanda-mat.mjs (CDP, mobil 390x844, kall cache, SW bypassad)",
+  "iterationer": 2,
+  "sidor": [
+    {
+      "url": "http://localhost:3000/",
+      "fcp": 1252,
+      "lcp": -1,
+      "dcl": 1193,
+      "load": 1341,
+      "domNoder": 482,
+      "resurser": 53,
+      "vaggtidMs": 5496,
+      "andorda": 53,
+      "byteTotal": 776081,
+      "byteJs": 465948,
+      "byteCss": 39823,
+      "byteImg": 2705,
+      "byteFont": 151788,
+      "byteDoc": 25642,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 701
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 51
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 62
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 54
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 781
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 834
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 709
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 579
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 312
+        },
+        {
+          "url": "http://localhost:3000/",
+          "typ": "Document",
+          "kB": 25,
+          "ms": 80
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "fcp": 276,
+      "lcp": -1,
+      "dcl": 296,
+      "load": 331,
+      "domNoder": 985,
+      "resurser": 55,
+      "vaggtidMs": 4460,
+      "andorda": 55,
+      "byteTotal": 834991,
+      "byteJs": 503932,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 52987,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 128
+        },
+        {
+          "url": "http://localhost:3000/kurser",
+          "typ": "Document",
+          "kB": 52,
+          "ms": 36
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 53
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 36
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 36
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 218
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 74
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 178
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 78
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 123
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "http://localhost:3000/blogg",
+      "fcp": 596,
+      "lcp": -1,
+      "dcl": 303,
+      "load": 613,
+      "domNoder": 709,
+      "resurser": 59,
+      "vaggtidMs": 4659,
+      "andorda": 59,
+      "byteTotal": 824835,
+      "byteJs": 495929,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 36542,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 82
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 19
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 12
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 32
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 210
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 102
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 109
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 45
+        },
+        {
+          "url": "http://localhost:3000/blogg",
+          "typ": "Document",
+          "kB": 36,
+          "ms": 27
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 114
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "http://localhost:3000/analyser",
+      "fcp": 276,
+      "lcp": -1,
+      "dcl": 260,
+      "load": 281,
+      "domNoder": 340,
+      "resurser": 58,
+      "vaggtidMs": 4384,
+      "andorda": 57,
+      "byteTotal": 749346,
+      "byteJs": 457939,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 21709,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 91
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 16
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 41
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 41
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 162
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 94
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 90
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 66
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 97
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2q166y916lqnm.js",
+          "typ": "Script",
+          "kB": 25,
+          "ms": 84
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "http://localhost:3000/bibliotek",
+      "fcp": 220,
+      "lcp": -1,
+      "dcl": 252,
+      "load": 272,
+      "domNoder": 2683,
+      "resurser": 56,
+      "vaggtidMs": 4373,
+      "andorda": 57,
+      "byteTotal": 815007,
+      "byteJs": 476321,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 67333,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 108
+        },
+        {
+          "url": "http://localhost:3000/bibliotek",
+          "typ": "Document",
+          "kB": 66,
+          "ms": 61
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 8
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 26
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 26
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 154
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 72
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 90
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 60
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 51
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "http://localhost:3000/",
+      "fcp": 372,
+      "lcp": -1,
+      "dcl": 272,
+      "load": 425,
+      "domNoder": 482,
+      "resurser": 50,
+      "vaggtidMs": 4538,
+      "andorda": 49,
+      "byteTotal": 773343,
+      "byteJs": 465948,
+      "byteCss": 39823,
+      "byteImg": 1596,
+      "byteFont": 151788,
+      "byteDoc": 25642,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 168
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 39
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 41
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 42
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 183
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 246
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 125
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 93
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 337
+        },
+        {
+          "url": "http://localhost:3000/",
+          "typ": "Document",
+          "kB": 25,
+          "ms": 22
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "fcp": 472,
+      "lcp": -1,
+      "dcl": 223,
+      "load": 459,
+      "domNoder": 1004,
+      "resurser": 55,
+      "vaggtidMs": 4540,
+      "andorda": 56,
+      "byteTotal": 835601,
+      "byteJs": 503932,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 52987,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 101
+        },
+        {
+          "url": "http://localhost:3000/kurser",
+          "typ": "Document",
+          "kB": 52,
+          "ms": 23
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 15
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 28
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 30
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 136
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 61
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 96
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 38
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 44
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "http://localhost:3000/blogg",
+      "fcp": 516,
+      "lcp": -1,
+      "dcl": 327,
+      "load": 333,
+      "domNoder": 709,
+      "resurser": 59,
+      "vaggtidMs": 4453,
+      "andorda": 58,
+      "byteTotal": 824226,
+      "byteJs": 495929,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 36542,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 104
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 47
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 57
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 59
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 175
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 137
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 100
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 61
+        },
+        {
+          "url": "http://localhost:3000/blogg",
+          "typ": "Document",
+          "kB": 36,
+          "ms": 29
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 148
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "http://localhost:3000/analyser",
+      "fcp": 208,
+      "lcp": -1,
+      "dcl": 143,
+      "load": 223,
+      "domNoder": 340,
+      "resurser": 56,
+      "vaggtidMs": 4252,
+      "andorda": 55,
+      "byteTotal": 747674,
+      "byteJs": 457939,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 21709,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 68
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 42
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 26
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 27
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 143
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 57
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 89
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 39
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 56
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2q166y916lqnm.js",
+          "typ": "Script",
+          "kB": 25,
+          "ms": 43
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "http://localhost:3000/bibliotek",
+      "fcp": 424,
+      "lcp": -1,
+      "dcl": 448,
+      "load": 547,
+      "domNoder": 2683,
+      "resurser": 56,
+      "vaggtidMs": 4625,
+      "andorda": 56,
+      "byteTotal": 813091,
+      "byteJs": 476321,
+      "byteCss": 39823,
+      "byteImg": 1107,
+      "byteFont": 151788,
+      "byteDoc": 67333,
+      "topp": [
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 261
+        },
+        {
+          "url": "http://localhost:3000/bibliotek",
+          "typ": "Document",
+          "kB": 66,
+          "ms": 51
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 34
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 89
+        },
+        {
+          "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 94
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 412
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 45
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 242
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 173
+        },
+        {
+          "url": "http://localhost:3000/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 94
+        }
+      ],
+      "iteration": 2
+    }
+  ]
+}

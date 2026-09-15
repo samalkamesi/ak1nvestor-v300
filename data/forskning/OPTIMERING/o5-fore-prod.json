@@ -1,0 +1,652 @@
+{
+  "genererad": "2026-09-15T08:15:10.426Z",
+  "bas": "https://lab.ak1nvestor.com",
+  "verktyg": "verktyg/prestanda-mat.mjs (CDP, mobil 390x844, kall cache, SW bypassad)",
+  "iterationer": 2,
+  "sidor": [
+    {
+      "url": "https://lab.ak1nvestor.com/",
+      "fcp": 920,
+      "lcp": -1,
+      "dcl": 766,
+      "load": 991,
+      "domNoder": 482,
+      "resurser": 51,
+      "vaggtidMs": 5046,
+      "andorda": 51,
+      "byteTotal": 768314,
+      "byteJs": 467789,
+      "byteCss": 39962,
+      "byteImg": 1604,
+      "byteFont": 151977,
+      "byteDoc": 25658,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 240
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 52
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 49
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 69
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 463
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 711
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 230
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 69
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 53
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/",
+          "typ": "Document",
+          "kB": 25,
+          "ms": 113
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/kurser",
+      "fcp": 888,
+      "lcp": -1,
+      "dcl": 260,
+      "load": 884,
+      "domNoder": 978,
+      "resurser": 41,
+      "vaggtidMs": 5015,
+      "andorda": 42,
+      "byteTotal": 638481,
+      "byteJs": 359219,
+      "byteCss": 39962,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 53011,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 119
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/kurser",
+          "typ": "Document",
+          "kB": 52,
+          "ms": 65
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 13
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 31
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 49
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 263
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 120
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 77
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 110
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3x2jb20oil3mv.js",
+          "typ": "Script",
+          "kB": 17,
+          "ms": 279
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/blogg",
+      "fcp": 104,
+      "lcp": -1,
+      "dcl": 65,
+      "load": 75,
+      "domNoder": 7,
+      "resurser": 1,
+      "vaggtidMs": 4174,
+      "andorda": 2,
+      "byteTotal": 688,
+      "byteJs": 0,
+      "byteCss": 0,
+      "byteImg": 0,
+      "byteFont": 0,
+      "byteDoc": 387,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/blogg",
+          "typ": "Document",
+          "kB": 0,
+          "ms": 25
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/favicon.ico",
+          "typ": "Other",
+          "kB": 0,
+          "ms": 8
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/analyser",
+      "fcp": 336,
+      "lcp": -1,
+      "dcl": 313,
+      "load": 418,
+      "domNoder": 335,
+      "resurser": 41,
+      "vaggtidMs": 4468,
+      "andorda": 41,
+      "byteTotal": 586067,
+      "byteJs": 349541,
+      "byteCss": 39962,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 21709,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 219
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 30
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 68
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 67
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 334
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 216
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 133
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 151
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/analyser",
+          "typ": "Document",
+          "kB": 21,
+          "ms": 47
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3x2jb20oil3mv.js",
+          "typ": "Script",
+          "kB": 17,
+          "ms": 332
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/bibliotek",
+      "fcp": 228,
+      "lcp": -1,
+      "dcl": 239,
+      "load": 317,
+      "domNoder": 2677,
+      "resurser": 36,
+      "vaggtidMs": 4373,
+      "andorda": 37,
+      "byteTotal": 631242,
+      "byteJs": 353431,
+      "byteCss": 39939,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 67373,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 101
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/bibliotek",
+          "typ": "Document",
+          "kB": 66,
+          "ms": 47
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 10
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 48
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 40
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 230
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 86
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 46
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 61
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3x2jb20oil3mv.js",
+          "typ": "Script",
+          "kB": 17,
+          "ms": 213
+        }
+      ],
+      "iteration": 1
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/",
+      "fcp": 76,
+      "lcp": -1,
+      "dcl": 40,
+      "load": 45,
+      "domNoder": 7,
+      "resurser": 0,
+      "vaggtidMs": 4143,
+      "andorda": 1,
+      "byteTotal": 387,
+      "byteJs": 0,
+      "byteCss": 0,
+      "byteImg": 0,
+      "byteFont": 0,
+      "byteDoc": 387,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/",
+          "typ": "Document",
+          "kB": 0,
+          "ms": 16
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/kurser",
+      "fcp": 160,
+      "lcp": -1,
+      "dcl": 172,
+      "load": 260,
+      "domNoder": 1001,
+      "resurser": 48,
+      "vaggtidMs": 4345,
+      "andorda": 49,
+      "byteTotal": 752298,
+      "byteJs": 467804,
+      "byteCss": 39962,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 53011,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 95
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/kurser",
+          "typ": "Document",
+          "kB": 52,
+          "ms": 27
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 19
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 23
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 26
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 198
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 154
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 93
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 54
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 116
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/blogg",
+      "fcp": 592,
+      "lcp": -1,
+      "dcl": 268,
+      "load": 372,
+      "domNoder": 701,
+      "resurser": 39,
+      "vaggtidMs": 4460,
+      "andorda": 40,
+      "byteTotal": 599962,
+      "byteJs": 349527,
+      "byteCss": 39962,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 36565,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 122
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 58
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 27
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 28
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 217
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 123
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 63
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/blogg",
+          "typ": "Document",
+          "kB": 36,
+          "ms": 41
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 40
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3x2jb20oil3mv.js",
+          "typ": "Script",
+          "kB": 17,
+          "ms": 204
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/analyser",
+      "fcp": 252,
+      "lcp": -1,
+      "dcl": 209,
+      "load": 212,
+      "domNoder": 7,
+      "resurser": 0,
+      "vaggtidMs": 4301,
+      "andorda": 1,
+      "byteTotal": 382,
+      "byteJs": 0,
+      "byteCss": 0,
+      "byteImg": 0,
+      "byteFont": 0,
+      "byteDoc": 382,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/analyser",
+          "typ": "Document",
+          "kB": 0,
+          "ms": 49
+        }
+      ],
+      "iteration": 2
+    },
+    {
+      "url": "https://lab.ak1nvestor.com/bibliotek",
+      "fcp": 316,
+      "lcp": -1,
+      "dcl": 309,
+      "load": 903,
+      "domNoder": 2683,
+      "resurser": 56,
+      "vaggtidMs": 5101,
+      "andorda": 57,
+      "byteTotal": 817729,
+      "byteJs": 478299,
+      "byteCss": 39962,
+      "byteImg": 1115,
+      "byteFont": 151977,
+      "byteDoc": 67358,
+      "topp": [
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3tc9l_yj-kftz.js",
+          "typ": "Script",
+          "kB": 70,
+          "ms": 120
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/bibliotek",
+          "typ": "Document",
+          "kB": 66,
+          "ms": 121
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/ea3421846039b7f3-s.23jyvdx2mwxjn.woff2",
+          "typ": "Font",
+          "kB": 51,
+          "ms": 22
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "typ": "Font",
+          "kB": 50,
+          "ms": 36
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "typ": "Font",
+          "kB": 48,
+          "ms": 37
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3o-an9dtd0lrc.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 342
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/2o3qsnlu5lq0c.js",
+          "typ": "Script",
+          "kB": 46,
+          "ms": 136
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/327cduvy_2_u9.js",
+          "typ": "Script",
+          "kB": 43,
+          "ms": 99
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/3f3-2mm-0iv-w.css",
+          "typ": "Stylesheet",
+          "kB": 37,
+          "ms": 35
+        },
+        {
+          "url": "https://lab.ak1nvestor.com/_next/static/chunks/44a4vsk2fqigy.js",
+          "typ": "Script",
+          "kB": 31,
+          "ms": 915
+        }
+      ],
+      "iteration": 2
+    }
+  ]
+}

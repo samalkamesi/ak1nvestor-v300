@@ -10732,3 +10732,6 @@ Leverans: bk-01-balansrakningen (BOKFÖRING & ÅRSREDOVISNING 12→13, nybörjar
 Register 333→337 (tillsammans med s5-u1:s bf-12): karta regenererad med u1:s golv-skript (295 gratis · Fas 2 18 · Fas 3 24 · V-spår 20/20), sökindex + speglar synkade via kor-verktygen, larvag-synk GRÖN 337=337=337 (bevis på disk — data/vakten gitignorad), siffror.json kurser 337, tsc 0.
 Front B: LÖNSAMHET och STABILITET får sina fjärde steg → kategori-fortsättningsregeln har nya kandidater; ln-01 på nivå 2 → nominerbar för nivå-steg (lästillstånd "växande").
 Kollisionsvärd: kursinnehållet landade i s5-u1:s commit b514fe67 (de addade hela ytan); provenansfilerna + denna rad är s5-u3:s egna commit.
+
+## SPÅR 7 s7-u1 — 2026-09-15: prestandavåg 1 — CPD-mätverktyg + FÖRE-baslinje [fabrik]
+Leverans: verktyg/prestanda-mat.mjs (headless-Chrome CDP, mobil 390x844, kall cache, 0 npm-paket) + baslinje 5 kärnsidor x2 iter mot localhost OCH prod. Fynd: JS 447-492 kB/sida dominerar, fonter 148 kB (3x woff2), bilder ~0 kB (bildobjektet redan avklarat), cache-headers GRÖNA, nginx saknar brotli (bokas till huvudagent/infra: est. -15-20 % JS vid kall load), sw.js v7 korrekt och orörd enl v78. Protokoll + kö med vinstestimat och agarkanal i o5-prestanda-s7.md. Prod 200 under matningen + curl. Inga src-andringar = inget bygge.

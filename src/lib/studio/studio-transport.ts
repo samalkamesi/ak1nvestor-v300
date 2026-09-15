@@ -3232,6 +3232,21 @@ interface AktivPrompt {
   lyckat: boolean;
 }
 
+// ── EVOLUTION E3 (GAP 5): MODELLKATALOG-CACHE + BAKGRUNDSSYNK ────────────────
+// Paritet med zcode app-server 3.11.2 #22 ("sync official model catalog in
+// the background without blocking startup"): katalogen hämtas vid transport-
+// init i en EJ AWAIT:AD bakgrundskörning (setTimeout 8 s) — starttiden
+// blockas ALDRIG. Cachen är process-gemensam (katalogen är arbetsytans,
+// samma för alla transporter) och synken körs MAX EN GÅNG per process.
+
+/** Intern cache: senaste synkade modellkatalogen ("provider/model"-rader). */
+let modellKatalogCache: string[] | null = null;
+
+/** Cachens läs-yta (null = bakgrundssynken har ej landat än). */
+export function lasModellKatalogCache(): string[] | null {
+  return modellKatalogCache;
+}
+
 class AppServerTransport implements StudioTransport {
   readonly namn = "appserver" as const;
   private klient: ProtokollKlient | null = null;
@@ -3343,6 +3358,49 @@ class AppServerTransport implements StudioTransport {
       typeof målSessionId === "string" && /^sess_[A-Za-z0-9._-]+$/.test(målSessionId)
         ? målSessionId
         : undefined;
+    // EVOLUTION E3 (gap 5): modellkatalog-synk vid init — bakgrunden betalar,
+    // ALDRIG starttiden (setTimeout 8 s, ej await:ad, timern unref:ad).
+    this.startaModellkatalogSynk();
+  }
+
+  /**
+   * EVOLUTION E3 (gap 5): schemalägg MODELLKATALOG-SYNKEN — en gång per
+   * process (globalThis-vakt, varmnings-mönstret våg 95), 8 s efter init så
+   * serverstarten/sessionsetableringen får gå först. ALDRIG await:ad från
+   * konstruktorn; heller inga zcode-barn under next build (warm-up-regeln).
+   */
+  private startaModellkatalogSynk(): void {
+    if (process.env.NEXT_PHASE === "phase-production-build") return; // ej i build
+    const vakt = globalThis as { __ak1aModellkatalogSynkStartad?: boolean };
+    if (vakt.__ak1aModellkatalogSynkStartad) return; // max en gång per process
+    vakt.__ak1aModellkatalogSynkStartad = true;
+    const synkTimer = setTimeout(() => {
+      void this.synkaModellkatalogIBakgrunden();
+    }, 8_000);
+    synkTimer.unref(); // synk-timern får ALDRIG hålla processen vid liv
+  }
+
+  /**
+   * EVOLUTION E3 (gap 5): själva bakgrundssynken — läs modellkatalogen ur
+   * workspace/readState (lasWorkspaceInstallningar → modellKatalog),
+   * uppdatera den interna cachen och kvittera till audit-loggen. Kastar
+   * ALDRIG (lyx-läsning); misslyckande loggas ärligt som detaljrad.
+   */
+  private async synkaModellkatalogIBakgrunden(): Promise<void> {
+    let detalj: string;
+    try {
+      const installningar = await this.lasWorkspaceInstallningar();
+      const katalog = installningar?.annan?.modellKatalog;
+      if (Array.isArray(katalog) && katalog.length > 0) {
+        modellKatalogCache = katalog;
+        detalj = `bakgrundssynk klar: ${katalog.length} modeller cachade`;
+      } else {
+        detalj = "bakgrundssynk klar: readState bar ingen modellista (cachen oförändrad)";
+      }
+    } catch (fel) {
+      detalj = `bakgrundssynk misslyckades: ${fel instanceof Error ? fel.message : String(fel)}`;
+    }
+    skrivAudit("transport", "modellkatalog-synk", "workspace/readState", detalj);
   }
 
   sessionId(): string | null {

@@ -36,6 +36,8 @@ export type LokaltSvar = {
   amne: string;
   /** Källmärke: kursslug och/eller läge i läroplanen — på varje svar. */
   kalla: LokalKalla;
+  /** Spår 6 (våg 158): samtliga källor, primärkällan först — flerkällskällmärkning. */
+  kallor?: LokalKalla[];
   handlings: LokalHandling[];
   motfraga: LokalMotfraga;
   fordjupa: { text: string; lank: string };
@@ -57,7 +59,7 @@ function normalisera(s: string): string {
  * "impulsvag" och "impulsvåg" ska jämföras som samma ord. NFD-sönderdelning
  * + strippning av kombinerande tecken (\p{M}) — standard, ingen miljöosa.
  */
-function diafri(s: string): string {
+export function diafri(s: string): string {
   return normalisera(s).normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
 }
 
@@ -86,7 +88,7 @@ function redigeringstavstand(a: string, b: string): number {
 }
 
 /** Träffar nyckelordet frågans ord? (våg 106 H2: redigeringstavstånd tillåtet) */
-function traff(fragaOrd: string[], fragaStr: string, nyckelord: string): boolean {
+export function traff(fragaOrd: string[], fragaStr: string, nyckelord: string): boolean {
   const nk = diafri(nyckelord);
   if (!nk) return false;
   if (nk.includes(" ")) return fragaStr.includes(nk); // flerordsfras
@@ -136,11 +138,11 @@ export function narmasteKurser(fraga: string, register: RegisterRad[], n = 3): R
 // ── Hjälpbyggare ────────────────────────────────────────────────────────────
 
 /** Källrad som avslutar varje svar — KÄLLMÄRKT (våg 106 H2-krav). */
-function kallrad(k: LokalKalla): string {
+export function kallrad(k: LokalKalla): string {
   return `\n\n📖 Källa: ${k.titel}${k.slug ? ` (${k.slug})` : ""} — ${k.lagrow}.`;
 }
 
-function kursKalla(register: RegisterRad[], slug: string, lagrow: string): LokalKalla {
+export function kursKalla(register: RegisterRad[], slug: string, lagrow: string): LokalKalla {
   const r = register.find((x) => x.slug === slug);
   return r
     ? { slug: r.slug, titel: r.titel, lagrow }
@@ -149,7 +151,7 @@ function kursKalla(register: RegisterRad[], slug: string, lagrow: string): Lokal
 
 // ── De 15 förhandsfrågorna ──────────────────────────────────────────────────
 
-type FragMonster = {
+export type FragMonster = {
   id: string;
   /** Kärnord: minst EN träff krävs för att mönstret ska vara kandidat. */
   karnord: string[];
@@ -466,6 +468,76 @@ const MONSTER: FragMonster[] = [
         ],
         motfraga: { text: "Vad är konfluens?", kategori: "ekosystem" },
         fordjupa: { text: k.titel, lank: "/kurser/ak1ts-vaglarans-hierarki" },
+      };
+    },
+  },
+  // ── s6-u2 (fabrik auto-s6): rapportläsning + nyckeltal/P-E ─────────────────
+  // Källmärkta ur kursregistret med registerdriven fakta: kapitel/quiz/minuter
+  // läses ur RegisterRad VID SVARSTID — inga hårdkodade siffror som kan bli
+  // lögn(er) när registret växer. Regressionstest: verktyg/testa-ai-mentor-u2.mjs
+  {
+    id: "rapport",
+    karnord: [
+      "kvartalsrapport", "kvartalsrapporten", "kvartalsrapporter", "delårsrapport",
+      "årsredovisning", "årsrapport", "bokslut", "resultaträkning", "balansräkning",
+      "rapportläsning", "läsa rapporter",
+    ],
+    starkord: ["läsa", "läser", "rapport", "tolka", "förstå", "siffror"],
+    bygga: (reg) => {
+      const huvud = reg.find((r) => r.slug === "km-006-kvartalsrapporten");
+      const kassa = reg.find((r) => r.slug === "km-003-kassaflodesanalysen");
+      const balans = reg.find((r) => r.slug === "bk-01-balansrakningen");
+      const ars = reg.find((r) => r.slug === "pf-12-arsrapportering");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.quiz} quizfrågor · ${r.minuter} min` : "kursregistret";
+      const k = kursKalla(reg, "km-006-kvartalsrapporten", "Läroplanen — bokföring & årsredovisning, kursen om rapporten");
+      return {
+        text:
+          `En rapport läses i tre steg — alltid i samma ordning, alltid som utbildning (aldrig som köp-signal):\n\n1️⃣ INTÄKTEN — växer försäljningen? Jämför med samma kvartal FÖRRA året (säsongen gör kvartalen olika — Q4 är inte Q2).\n2️⃣ MARGINALEN — vad blir kvar av varje intjänad krona? En försvinnande marginal äter en växande intäkt.\n3️⃣ KASSAFLÖDET — den ärligaste raden: vinst är en bedömning, kassaflöde är ett faktum. Här avslöjas bolag som rapporterar vinst men bränner pengar.\n\nI kursen Kvartalsrapporten går vi igenom detta kapitel för kapitel (${fa(huvud)}) — och kassaflödesanalysen har sin egen kurs (${fa(kassa)}).\n\nKom ihåg: en rapport beskriver det som HÄNT — din analysutbildning handlar om att förstå varför, inte att förutsäga nästa kvartal.` +
+          kallrad(k),
+        amne: "rapportläsning",
+        kalla: k,
+        handlings: [
+          { text: `Kursen: Kvartalsrapporten${huvud ? ` — ${huvud.minuter} min` : ""}`, lank: "/kurser/km-006-kvartalsrapporten", ikon: "📊", beskrivning: `${fa(huvud)} · nivå ${(huvud?.niva || "intermediär").toLowerCase()}` },
+          { text: `Kursen: Kassaflödesanalysen${kassa ? ` — ${kassa.minuter} min` : ""}`, lank: "/kurser/km-003-kassaflodesanalysen", ikon: "💰", beskrivning: "Den ärligaste raden på djupet" },
+          ...(balans
+            ? [{ text: "Kursen: Balansräkningen — bolagets karta", lank: `/kurser/${balans.slug}`, ikon: "🗺️", beskrivning: "Rapportens tredje del — nybörjarnivå" }]
+            : []),
+          ...(ars
+            ? [{ text: "Årsrapporten som portfölj-review", lank: `/kurser/${ars.slug}`, ikon: "🔁", beskrivning: "Årlig genomgång av det du äger — utbildningsupplägg" }]
+            : [{ text: "Se alla kurser om bokföring", lank: "/kurser", ikon: "📚", beskrivning: "Hela kategorin bokföring & årsredovisning" }]),
+        ],
+        motfraga: { text: "Vad är nyckeltal?", kategori: "värdering" },
+        fordjupa: { text: k.titel, lank: "/kurser/km-006-kvartalsrapporten" },
+      };
+    },
+  },
+  {
+    id: "nyckeltal",
+    karnord: [
+      "nyckeltal", "nyckeltalen", "nyckeltalet", "p/e", "pe tal", "pe talet",
+      "price to earnings", "värderingsmultiplikator",
+    ],
+    starkord: ["aktie", "aktier", "bolag", "värdera", "värdering"],
+    bygga: (reg) => {
+      const pe = reg.find((r) => r.slug === "km-009-pe");
+      const evebit = reg.find((r) => r.slug === "km-010-evebit");
+      const fa = (r: RegisterRad | undefined) =>
+        r ? `${r.kapitel} kapitel · ${r.quiz} quizfrågor · ${r.minuter} min` : "kursregistret";
+      const k = kursKalla(reg, "km-009-pe", "Läroplanen — värderingsmetoder, kursen om P/E");
+      return {
+        text:
+          `P/E (price-to-earnings) = aktiekursen ÷ vinst per aktie — alltså hur många kronor du betalar för varje intjänad krona. Ett P/E på 20 betyder: tjugo kronor pris per krona årsvinst. Det är en prismärkning på förväntningar: högt P/E = marknaden förväntar tillväxt, lågt = marknaden tvivlar.\n\nTre nybörjarregler:\n1️⃣ Lågt P/E är INTE automatiskt billigt — det kan vara en värdefälla (därför finns kursen om fällor i läroplanen).\n2️⃣ Jämför alltid inom branschen och mot bolagets egen historia — ett bygg-P/E och ett teknikkonsult-P/E lever i olika världar.\n3️⃣ EN siffra räcker ALDRIG — därför bygger AKM1 på tjugo variabler i stället för ett ensamt nyckeltal.\n\nRenare syskon: EV/EBIT (${fa(evebit)}) som tar hänsyn till skuld. P/E-djupdykningen är en hel kurs (${fa(pe)}).` +
+          kallrad(k),
+        amne: "nyckeltal",
+        kalla: k,
+        handlings: [
+          { text: `Kursen: P/E-djupdykningen${pe ? ` — ${pe.minuter} min` : ""}`, lank: "/kurser/km-009-pe", ikon: "⚖️", beskrivning: `${fa(pe)} · nivå ${(pe?.niva || "nybörjare").toLowerCase()}` },
+          { text: "Kursen: EV/EBIT — renare än P/E", lank: "/kurser/km-010-evebit", ikon: "🧮", beskrivning: "Nyckeltalet som räknar in skulden" },
+          { text: "Vad är AKM1?", lank: "fragor:" + encodeURIComponent("vad är AKM1?"), ikon: "🏛️", beskrivning: "Tjugo variabler — ett nyckeltal räcker aldrig" },
+        ],
+        motfraga: { text: "Hur läser jag en kvartalsrapport?", kategori: "rapport" },
+        fordjupa: { text: k.titel, lank: "/kurser/km-009-pe" },
       };
     },
   },

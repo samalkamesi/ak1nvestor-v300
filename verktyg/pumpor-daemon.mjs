@@ -58,7 +58,8 @@ function tick() {
   if (min % 10 === 5) korEnGang("agentfabrik", "node", ["verktyg/agentfabrik.mjs"]);
   if (min % 10 === 7) korEnGang("prod-synk", "node", ["verktyg/prod-synk.mjs"]);
   if (min % 10 === 8) korEnGang("evighetsmotor", "node", ["verktyg/evighetsmotor.mjs"]);
-  if (min % 10 === 9) korEnGang("konfigintegritet", "node", ["verktyg/konfigintegritet-vakt.mjs"]); // beslut 6: crontab + pm2 mot git-referens (data/infra/konfig-referens) — GRÖN/larm till data/vakten/konfig-larm.jsonl
+  if (min % 10 === 9) korEnGang("konfigintegritet", "node", ["verktyg/konfigintegritet-vakt.mjs"]); // v166: automation-motorn varje tick — mikrosekunder när inget förfaller
+  korEnGang("automation-motor", "node", ["verktyg/automation-motor.mjs"]); // beslut 6: crontab + pm2 mot git-referens (data/infra/konfig-referens) — GRÖN/larm till data/vakten/konfig-larm.jsonl
   if (min === 37) korEnGang("juridikgrind", "node", ["verktyg/juridikgrind-vakt.mjs"]); // rådsförbudsscan FÖRE FLYTTKLAR (mega g2) — körs alltid före rondens :43
   if (min === 43 && tim % 3 === 1) korEnGang("styrelserond", "node", ["verktyg/styrelse-rond.mjs"]);
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);

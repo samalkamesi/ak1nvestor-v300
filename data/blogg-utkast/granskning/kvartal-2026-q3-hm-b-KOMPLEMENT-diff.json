@@ -1,0 +1,28 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-hm-b-q3-2026.json",
+  "granskadAv": "agentfabrik s1-u2 (2026-09-15)",
+  "rapport": "kvartal-2026-q3-hm-b-KOMPLEMENT.md",
+  "anvandning": "Komplement till s1-u3:s diff (kvartal-2026-q3-hm-b-diff.json) — verkställs i SAMMA pass som dess sex poster. Söksträngarna är verifierade UNIKA i filen och kolliderar inte med s1-u3:s poster. D5 är villkoret för att exportvägens kontrolleraText-grind (0 FEL) alls ska släppa paketet igenom: den nuvarande slutraden triggar FORBJUDNA_FRASER-mönstret (köp|sälj)rekommendation som FEL även negerad (kodbevis i rapporten).",
+  "poster": [
+    {
+      "id": "D5",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "body",
+      "blockerande": true,
+      "gammalt": "_Detta är pedagogisk utbildning om hur man läser en kvartalsrapport — inte investeringsrådgivning (lagen 2007:528). Inga köp- eller säljrekommendationer lämnas. Utkast i granskningskön: publicering är kundens beslut._",
+      "nytt": "_Detta är pedagogisk utbildning om hur man läser en kvartalsrapport — inte investeringsrådgivning (lagen 2007:528). Inga rekommendationer om köp eller försäljning lämnas._",
+      "orsak": "Två skäl i ett byte: (1) 'Inga köp- eller säljrekommendationer lämnas' är negerad och juridiskt korrekt men triggar kontrolleraText-FEL via mönstret (köp|sälj)rekommendation — negationsundantaget finns bara i investeringsråd-regexen (src/lib/varumarke.ts:148-159) — och exporteraKlarPost kräver 0 FEL (src/lib/blogg-utkast.ts:520-528); ersättningen är testad mot mönstret: 0 träffar. (2) 'Utkast i granskningskön: publicering är kundens beslut' är kö-lägesmetadata som inte får följa med i publicerad body (K3). R2-informationen lever kvar i GRANSKNINGSKO-SAMMANSTALLNING.md och granskningsrapporterna — inte i kundsynlig text"
+    },
+    {
+      "id": "D6",
+      "typ": "byt",
+      "fil": "sa-laser-du-hm-b-q3-2026.json",
+      "falt": "description",
+      "blockerande": false,
+      "gammalt": "H&M rapporterar 24 september kl 08:00",
+      "nytt": "H&M rapporterar 24 september ca kl 08:00",
+      "orsak": "H&M:s finansiella kalender (hämtad 2026-09-15) anger inga klockslag på webbsidan; källraden i kalender-konsument.json skriver 'ca 08:00 CEST'. Bodyn har redan 'cirka kl 08:00' — description får samma försiktighetsmarkör (K2)"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "granskat": "data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+  "granskadAv": "agentfabrik s1-u1 (2026-09-15)",
+  "rapport": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.md",
+  "bedomning": "FLYTTKLART — 0 blockerande fynd; C-poster verkställs exakt (strängbyte), D-poster är förslag som kräver beslut",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "body",
+      "gammalt": "redovisar sina förvaltningsfastigheter till verkligt värde enligt IAS 40: varje fastighet prisas om löpande, och värdeförändringarna — upp som ned — går direkt genom resultaträkningen. Samma regel förbjuder avskrivningar på förvaltningsfastigheter.",
+      "nytt": "redovisar sina förvaltningsfastigheter enligt IAS 40:s värderingsmodell med verkligt värde — ett aktivt val (standarden medger även anskaffningsvärde, men hela den noterade sektorn väljer verkligt värde): varje fastighet prisas om löpande, och värdeförändringarna — upp som ned — går direkt genom resultaträkningen. I värderingsmodellen förekommer inga avskrivningar på förvaltningsfastigheter.",
+      "orsak": "Faktaprecision: IAS 40 medger två modeller — omprissättning via resultat och avsaknad av avskrivningar följer av det aktiva modellvalet, inte av lagen själv. Påståendet om svensk praktik är korrekt; formuleringen rättas för precision"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts, ORD_PER_MINUT=600): 1 179 ord (titel+ingress+body)/600 avrundat = 2. Exportvägen räknar om automatiskt — kosmetiskt men rättas enklast nu"
+    },
+    {
+      "id": "D1a",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- Riksbanken — historik över styrräntan 2021–2024 ([riksbanken.se](https://www.riksbanken.se))",
+      "nytt": "- Riksbanken — historik över styrräntan 2021–2024 ([riksbank.se — styrräntan](https://www.riksbank.se/sv/statistik/rantor-och-valutakurser/styrranta-in--och-utlaningsranta/))",
+      "orsak": "Djuplänk 200-verifierad 2026-09-15; riksbank.se är kanonisk domän (riksbanken.se redirectar) — stärker spårbarheten för textens tyngsta faktapåstående"
+    },
+    {
+      "id": "D1b",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- IAS 40 Investment Property — redovisning av förvaltningsfastigheter till verkligt värde ([ifrs.org](https://www.ifrs.org))",
+      "nytt": "- IAS 40 Investment Property — redovisning av förvaltningsfastigheter till verkligt värde ([ifrs.org — IAS 40](https://www.ifrs.org/issued-standards/list-of-standards/ias-40-investment-property/))",
+      "orsak": "Djuplänk till standardens egen sida, 200-verifierad 2026-09-15"
+    },
+    {
+      "id": "D1c",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- Nasdaq — indexutveckling för OMX Stockholm Fastigheter ([nasdaqomxnordic.com](https://www.nasdaqomxnordic.com))",
+      "nytt": "- Nasdaq — indexutveckling för OMX Stockholm Fastigheter ([indexes.nasdaqomx.com — SX35PI](https://indexes.nasdaqomx.com/Index/Overview/SX35PI))",
+      "orsak": "Direktlänk till indexets egen sida (SX35PI), 200-verifierad 2026-09-15; EPRA-roten (epra.com) behålls oförändrad — BPR-djupsökväg ej verifierad"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag.json",
+      "falt": "body",
+      "gammalt": "Kassaflödet från förvaltningen är oförändrat 400 miljoner",
+      "nytt": "Kassaflödet från förvaltningen står stilla på 400 miljoner",
+      "orsak": "'Oförändrat' förutsätter en jämförelsebas exemplet inte definierat — 'står stilla på' behåller kontrasten mot vinstens redovisningssvängningar"
+    }
+  ]
+}

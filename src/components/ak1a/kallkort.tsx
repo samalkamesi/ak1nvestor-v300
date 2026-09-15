@@ -29,7 +29,7 @@ export function Kallkort({ kurs }: { kurs: { category?: string; kalla?: Kalla; t
         </p>
         <Link
           href="/kallor"
-          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline"
+          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline max-md:inline-flex max-md:min-h-[52px] max-md:items-center"
         >
           Se alla källor →
         </Link>

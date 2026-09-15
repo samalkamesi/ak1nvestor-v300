@@ -394,10 +394,10 @@ export function KursSok({
           <span aria-hidden>🔒</span>
           <span className="font-bold text-gold">{t("ksok.fasFraga")}</span>
           <span>{t("ksok.fasInfo")}</span>
-          <Link href={`${lankPrefix}/fas2-ansok`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
+          <Link href={`${lankPrefix}/fas2-ansok`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground max-md:min-h-[52px]">
             {t("ksok.fas2Lank")}
           </Link>
-          <Link href={`${lankPrefix}/fas3`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground">
+          <Link href={`${lankPrefix}/fas3`} className="underline decoration-gold/50 underline-offset-2 hover:text-foreground max-md:min-h-[52px]">
             {t("ksok.fas3Lank")}
           </Link>
         </p>

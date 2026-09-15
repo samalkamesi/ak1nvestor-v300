@@ -171,7 +171,7 @@ export function ByggPortfoljKort({ rader: raderProp }: { rader?: KorstabbellRad[
                 type="button"
                 onClick={() => valjPoangbas(bas)}
                 aria-pressed={vald}
-                className={`min-h-[44px] px-5 py-2 text-sm font-semibold transition-colors ${
+                className={`min-h-[44px] px-5 py-2 text-sm font-semibold transition-colors max-md:min-h-[52px]! ${
                   vald
                     ? "bg-gold text-primary-foreground"
                     : "bg-transparent text-foreground hover:bg-gold/10"

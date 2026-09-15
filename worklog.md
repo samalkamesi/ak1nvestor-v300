@@ -10858,7 +10858,6 @@ feljägarkörning 15:44:46Z ALLT GRÖNT (F3 18/18 endpoints 200 — vid incident
 incidenten (15:01:56/15:32:53/15:40:51Z, alla prod 200) passerade grinden; ram-grind.logg tom
 = aldrig behövt ingripa. Lärdom (Lag 6): omlevererat larm ≠ nytt fel — tidsstämpelkolla
 fyndloggen FÖRE rot-analys. Bokfört i DRIFTSBOKEN (STÄNGD+VERIFIERAD rond 34). tsc 0 (data-only).
-<<<<<<< HEAD
 
 ## SPÅR 7 s7 våg 6 — 2026-09-15 18:05: cache-EFTER bokförd + portfolj-forskning årslås dött + EFTER rond 3 [fabrik]
 Vågens objekt (o10-köns två "nästa våg"-poster): (1) /portfolj-forskning revalidate=3600 — FÖRE-curl s-maxage=31536000 bokford, rad skriven + tsc 0; leveransvägen ärligt bokförd: syskonfabrikens git add slet med raden i 04303dd8 (kaskadkuren, 17:49:52) — innehåll verifierat i committens diff (3 rader). Deploy 1f5b165a 18:00:38 prod 200; EFTER-curl: s-maxage=3600 + swr på prod OCH localhost — spårets SISTA cache-GUL-post stängd. (2) o10 §1–2 EFTER-curl bokforda som LIVE BEVISADE (deep-courses.json 3600+swr-dag, / s-maxage 3600 — deploy 17:40:51). (3) o8:s utlovade EFTER rond 3-mätning körd mot levande bygget: 186→124 tryckmål under 52 (−33 %), knappklustren borta; kvar = textLÄNKAR (nytt rond 4-spår — länkar får ej globals-golvet), paginering-"1" 31×44 trots !-kur (gräv), 1 ny zoomfälla /kurser-select. Driftfynd: syskon-add-kollisioner är nu BELASTANDE (andra gången idag) — fabriksprompten borde förbjuda git add -A/globalt add när syskon lever samtidigt; bokas till fabrikförbättring. Tsc 0 (vågen körde node_modules/typescript/bin/tsc — npx tsc träffar fel binär på servern).
@@ -10870,12 +10869,6 @@ ROT: mal-hjartslag.mjs fyndkick filtrerade allvar men aldrig ts — kurade HÖG-
 i loggvansen re-alarmade var 30:e minut (3 bevisade omleveranser).
 KUR: tidsfilter — endast fynd <35 min får kicka. BEVIS: filtertest mot prodlogg
 1→0 (gamla filtret kickar på exakt 14:42-raden). tsc 0.
-=======
-<<<<<<< HEAD
-
-## SPÅR 7 s7 våg 6 — 2026-09-15 18:05: cache-EFTER bokförd + portfolj-forskning årslås dött + EFTER rond 3 [fabrik]
-Vågens objekt (o10-köns två "nästa våg"-poster): (1) /portfolj-forskning revalidate=3600 — FÖRE-curl s-maxage=31536000 bokford, rad skriven + tsc 0; leveransvägen ärligt bokförd: syskonfabrikens git add slet med raden i 04303dd8 (kaskadkuren, 17:49:52) — innehåll verifierat i committens diff (3 rader). Deploy 1f5b165a 18:00:38 prod 200; EFTER-curl: s-maxage=3600 + swr på prod OCH localhost — spårets SISTA cache-GUL-post stängd. (2) o10 §1–2 EFTER-curl bokforda som LIVE BEVISADE (deep-courses.json 3600+swr-dag, / s-maxage 3600 — deploy 17:40:51). (3) o8:s utlovade EFTER rond 3-mätning körd mot levande bygget: 186→124 tryckmål under 52 (−33 %), knappklustren borta; kvar = textLÄNKAR (nytt rond 4-spår — länkar får ej globals-golvet), paginering-"1" 31×44 trots !-kur (gräv), 1 ny zoomfälla /kurser-select. Driftfynd: syskon-add-kollisioner är nu BELASTANDE (andra gången idag) — fabriksprompten borde förbjuda git add -A/globalt add när syskon lever samtidigt; bokas till fabrikförbättring. Tsc 0 (vågen körde node_modules/typescript/bin/tsc — npx tsc träffar fel binär på servern).
-
 
 ## SPÅR 7 s7-u3 (våg 5) — 2026-09-15: läsbarhet rond 3 — kön tom + KASKADKURINGEN !-suffix [fabrik]
 OBJEKT: o8:s bokade rond 3-kö (4 poster) + LarvagKort-undantaget — /kurser filterchips+paginering, kakbanner 4 knappar, quiz-svarsknappar (8 223 quiz yta), relaterade-chips, verktygschips+Fas 2-textlänkar, LarvagKort-rader — 6 filer, enbart max-md (datorvy orörd), tsc 0.
@@ -10934,58 +10927,6 @@ juridikgrind testad (0 rådsfraser), registeräkthet 343 kurser fält-för-fält
 STUDIO-10X-PROGRAM.md bevittnar; raden släpade, våg 137-b). Fabriken kör
 auto-s8 (spår 8 kvalitet) — rundens bokföring kolliderar inte. Nästa i kön:
 våg 165 gap 10 Mermaid + gap 13 scenariotest (registrets sista öppna).
-=======
-
-## SPÅR 7 s7 våg 6 — 2026-09-15 18:05: cache-EFTER bokförd + portfolj-forskning årslås dött + EFTER rond 3 [fabrik]
-Vågens objekt (o10-köns två "nästa våg"-poster): (1) /portfolj-forskning revalidate=3600 — FÖRE-curl s-maxage=31536000 bokford, rad skriven + tsc 0; leveransvägen ärligt bokförd: syskonfabrikens git add slet med raden i 04303dd8 (kaskadkuren, 17:49:52) — innehåll verifierat i committens diff (3 rader). Deploy 1f5b165a 18:00:38 prod 200; EFTER-curl: s-maxage=3600 + swr på prod OCH localhost — spårets SISTA cache-GUL-post stängd. (2) o10 §1–2 EFTER-curl bokforda som LIVE BEVISADE (deep-courses.json 3600+swr-dag, / s-maxage 3600 — deploy 17:40:51). (3) o8:s utlovade EFTER rond 3-mätning körd mot levande bygget: 186→124 tryckmål under 52 (−33 %), knappklustren borta; kvar = textLÄNKAR (nytt rond 4-spår — länkar får ej globals-golvet), paginering-"1" 31×44 trots !-kur (gräv), 1 ny zoomfälla /kurser-select. Driftfynd: syskon-add-kollisioner är nu BELASTANDE (andra gången idag) — fabriksprompten borde förbjuda git add -A/globalt add när syskon lever samtidigt; bokas till fabrikförbättring. Tsc 0 (vågen körde node_modules/typescript/bin/tsc — npx tsc träffar fel binär på servern).
-
-
-## SPÅR 7 s7-u3 (våg 5) — 2026-09-15: läsbarhet rond 3 — kön tom + KASKADKURINGEN !-suffix [fabrik]
-OBJEKT: o8:s bokade rond 3-kö (4 poster) + LarvagKort-undantaget — /kurser filterchips+paginering, kakbanner 4 knappar, quiz-svarsknappar (8 223 quiz yta), relaterade-chips, verktygschips+Fas 2-textlänkar, LarvagKort-rader — 6 filer, enbart max-md (datorvy orörd), tsc 0.
-KASKADFYND (vågens kärna): första EFTER visade knapparna kvar 44 px trots deploy — CDP-sons bevisade varför: Tailwind-utilities lever i @layer utilities, globals.css:44px-golv är OLAGERAT, och olagerade regler slår ALLTID lager (CSS Cascade Layers) — vanlig min-h-klass på knapp kan ALDRIG vinna; länkar opåverkade (golvet riktar bara button). Syskonet u2 (ce9087be) hittade mekanismen oberoende. KUR: viktigt-suffix max-md:min-h-[52px]! (04303dd8) — deployad 1f5b165a 18:00:38, prod 200.
-DEFINITIV EFTER (prod, 18:05): 255 FÖRE → 186 rond 1 → 60 tryckmål (−76 %), zoomfällor 2→0; / 38→2, /kurser 55→5 (full om-mätning 136 interaktiva — helkörningens partial-pass dokumenterad), /blogg 9→1. Rättar våg 6:s localhost-tal (pre-bang-artefakter: paginering+select var redan botade). Knapparnas 52-standard UPPNÅDD på kärnytorna; rond 4-kö (textlänkytor: faslänkar, bokrader, korstabellrader, brödsmula) bokad i o8 §9.
-DRIFT: prod-synkens trädsynk rev 4 ostagade filer under vågen (s2-u2-mönstret) — om-aplicerade + commit per filgrupp; en av syskonets rader (portfolj-forskning revalidate) svepte med i 04303dd8 (add-kollision, ärligt bokförd, deras o10 dokumenterar). Bevis: o8 §8-9 + lasbarhet-efter-rond3-2026-09-15.json + commits 3d25e4f5/3b2aab63/04303dd8, deploys 15:32:53/15:40:51/16:00:38 alla prod 200.
-
-### 2026-09-15 rond 36 [organ:Φ] — omleverans #4: kuren nådde aldrig prod; våg 171 fullföljd
-F6 #4: fyndloggen oförändrad (sista F6 14:42:45Z), prod 200/200 ⇒ omleverans. ROT
-(Lag 2): rond 35:s tidsfilter (244166e8) pushades ALDRIG till prod — landningen bröts
-mitt i push-retryns merge-steg (UU worklog.md kvar); prods mal-hjartslag.mjs var
-filtretlös. KUR: worklog-merge löst (båda parter), merge 348dd042+539d0fff pushade
-(ccbadca7..539d0fff); filter bevisat i prods fil (rad 256: ts > nu − 35 min);
-filtertest mot loggvans: gamla 1 → nya 0. Daemonen kör mal-hjartslag som
-barnprocess per rop (min%10==1) — nästa slag laddar ny kod, ingen omstart krävs.
-Lärdom (Lag 6): leveransbeviset slutar i PROD-fil + beteendebevis — "commit i
-arbetsyta" är inte kur.
-## SPÅR 8 s8-u1 (omgång 2) — 2026-09-15: typkontrollens determinism — npx→projektbinär i 4 väktare + agent-status baslinje 34→0 [fabrik]
-OBJEKT (spårets "tsc-baslinjens överlevnad" — ej levererat förra omgången, som tog grindens blockeringsbevis/beroendevakt/döda länkar): typKONTROLLEN var icke-deterministisk — npx-cachen bär dummy-paketet tsc@2.0.4 (2016, ≠ projektets TS 5.9.3) och mitt i deploy (npm ci river .bin, senast 18:08) kan `npx tsc` träffa den; live-sett av s7 våg 6 ("npx tsc träffar fel binär"), fabriken härdade sin EGEN kedja 04:57 men lämnade övriga väktare. KUR (samma commit): verktyg/hooks/pre-commit (AKTIV), verktyg/kvalitetsgrind.mjs (fail-closed + "deploy pågår?"-diagnos), verktyg/agent-status.mjs och agentfabrikens promptregler kör `node node_modules/typescript/bin/tsc --noEmit` — deterministisk, tydligt fail-safe vid saknad binär. ROTORSAKSBUGG nr 2: agent-status TSC_BASLINJE=34 (pre-133, commit 436ad6f7) maskerade via `nya: max(0,n−34)` upp till 34 VERKLIGA fel som "nya: 0" — rättad till 0 (våg 133:s sanning). BEVIS: tsc exit 0 via nya kanalen; node --check ×3 + bash -n OK; commiten passerar sin egen härdade grind; dummy-paketet dokumenterat på disk. SIDOFYND bokfört: next 16.3.2 fortfarande INSTALLERAT (CRITICAL lever ~9 h) — installation ägs av prod-synken, larmnotis i data/rapporter/beroende-halsa-SENASTE.md: nästa deploy bör ta patchen 16.3.5. Protokoll: KVALITETS-GRINDEN-BEVIS-2026-09-15.md (tilläggssektion).
-
-## SPÅR 8 s8-u3 (omgång 2) — 2026-09-15: feljägarens F5-rotorsaksfix — återleverans död, granskningsbara bevis, obevakad logg funnen [fabrik]
-OBJEKT: ROND 33:s bokade observandum "F5-fyndens falskpositiv i feljägarens
-loggregex" — ROND 34 fick förlora en sonder på omlevererat larm; ingen duplikat
-(u1 omg 2 = tsc-determinism, u2 = beroendevakt, u3 omg 1 = döda länkar).
-ROTORSAKER (3+1, alla bevisade i data/vakten/feljakt-fynd.jsonl + levande loggar):
-(1) ÅTERLEVERANS — sista 5 raderna om-skannades var 15:e minut utan minne; 19
-historiska F5-poster, kraschvaktens KRASCHLOOP-rad 14:24 återlevererades tre
-kvart i rad medans loggen sa svarar=true. (2) BLINT BEVIS — svans.slice(-80)
-visade svansens slut, ej matchande raden (14:57-beviset visade FRISK text).
-(3) SKIFTLÄGES-FP — /FEL[: ]/i matchade "tsc 0 fel (" och "ej kodfel:";
-äkta markörer i loggarna är VERSALA (FEL:, FEL 502, STATUS-FEL, KRASCHLOOP).
-(4) DOLT FYND — F5 bevakade "evighetsmotor-logg" som ALDRIG existerat (verktyget
-skriver evighetsmotor.log) — en av fem loggar var spöke sedan våg 167.
-KUR (verktyg/feljagaren.mjs): positionsminne per fil (.feljakt-logg-positioner.json,
-atomär tmp+rename) — varje rad skannas exakt en gång, förstarundan/truncering =
-sista 5 en gång som förr; bevis = mönster → MATCHANDE raden (120 tkn); versalt
-/FEL[: ]/ + nytt /misslyckades/i (prod-synkens AGENTARBETSYTA-SYNK MISSLYCKADES —
-live-bevisad standing issue gamla mönster var blinda för); rätt filnamn; testkrok
---f5-test <katalog> (pumpornas argumentlösa anrop oberörda, daemon:82 verifierad).
-BONUS: F1:s tsc → projektbinär (syskonet u1-omg2 fixade 4 väktare; feljägaren
-var den 5:e — npx-dummyskat tsc@2.0.4 = falsk F1-grön i deployfönster).
-BEVIS: scenariotest 16/16 (återleverans dör, nytt fel larmar en gång med rätt
-bevisrad, FP-former tiger, versalform passerar, MISSLYCKADES fångas, truncering
-utan krasch, 12-radersväxt med fel på plats 3 fångas — tail-5:s falska negativ);
-LIVE: fynd = exakt 1 ÄKTA (smutsigt träd i agentarbetsytan, nu synlig), körning 2
-= 0 nya rader 0 fynd, alla 5 loggar i positionsminnet. Protokoll: o11-feljakt-f5-
-rotorsaksfix.md. tsc 0 (projektbinär), ingen bygge (verktyg+data), R2 orörd.
 
 
 ## SPÅR 8 s8-u2 (omgång 2) — 2026-09-15: vaktens 0-fynd-jakt — färsk GRÖN 176/0 på aktuell prod + 13:17-vaktkraschens rotorsaka [fabrik]
@@ -11194,3 +11135,6 @@ filterknappar (hemvist ej belägen detta fönster). Commit 84ba52ed exakt
 rond4-2026-09-15.json + data/vakten; protokoll o8 §10. EFTER-mätning körs av
 nästa våg när prod-synken byggt BÅDA halvorna (fabriksregler: inget bygge
 här). R2 orörd. [fabrik]
+
+## SPÅR 7 s7-u2 (omgång 2) — 2026-09-15 ~23:1x: läsbarhet rond 4 LÄNKHALVAN + AKM1/AK2-hemvist + worklog-konfliktlagen reparerad [fabrik]
+Vågen valde o8 §9:s rond 4-kö (textlänkytor) — duplikatkontroll: knapphalvan togs samtidigt av syskonet s7-u1 (84ba52ed, 6 filer, 0 överlapp), detta fönster levererar KOMPLEMENTÄRA länkytor. LEVERANS 1 (6 ytor, a-element ⇒ vanlig max-md:min-h-[52px] — länkar har inget globals-golv, inline-block/block fick även inline-flex items-center): brodkrumma (brödsmulan sv "🔹Startsidan" 328×32 + en "Courses" 52×20 — EN spegel-yta två språk), kurs-sok faslänkar (59×20), social-proof (Utforska kurserna 46 + Gå med gratis preventivt), kallkort "Se alla källor →" (89×16), forskningslage-kort ("Till korstabellen →" 136×34 + topp-3-bolagsrader 312×44), lås-raden /forskningsbiblioteket (310×44 — levererad via syskonet s7-u3:s b77699ba: delad fil, deras revalidate + min klass i samma diff, ärligt bokfört). LEVERANS 2: §10:s öppna gravning stängd — AKM1/AK2-poängbas-tabbar (80/96×44) hemvist BELAGEN i bygg-portfolj-kort.tsx:174, kurerad max-md:min-h-[52px]! (button ⇒ important, kaskadstandarden) — rundans sista kända knapppar. LEVERANS 3 (bokföringshygien): worklog.md:s COMMITTADE trasiga merge-konflikt reparerad (nästlade markörer 10861/10873/10874/10937, tre dubblettblock, ingen slutmarkör — rond 36 läkte innehåll men lämnade markörer): 3 kirurgiska Edits, 0 markörer, varje avsnitt exakt en gång, kronologi rond 34→våg 6→rond 35→s7-u3→rond 36→s8-u1→s8-u3→rond 37→s8-u2→s9-u3→ROND 38 verifierad (grep + dubblettcount 1/1/1). FÖRE-KORSVALIDERING: egen prod-mätning 34 tryckmål (2/6/1/18/2/5) per sida IDENTISK med syskonets localhost-tal — quiz-pre-restart-teorin håller; rådata lasbarhet-fore-rond4-prod-2026-09-15.json; CDP-sond bevisade dessutom footer-knappens klass-attribut på prod (44px-driftläget, "To the top"-rotorsakan). RÄTTELSE bokförd i o8 §11: §10:s "~29 sidfiler" = feltolkning (5 komponenter + 1 sidfil). Protokoll o8 §11. tsc 0 (projektbinär). EFTER-mätning bokad enligt §10 när prod-synken byggt båda halvorna (34 är jämförelsetalet). R2 orörd — inga priser/tier/publicering. [fabrik]

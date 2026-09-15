@@ -106,13 +106,17 @@ async function main() {
     resultat.push(["S4 AUDIT", false, String(e).slice(0, 60)]);
   }
 
-  // S5 — juridikgrinden senaste dom GRÖN (läser dess logg svans)
+  // S5 — juridikgrinden senaste dom GRÖN (läser dess statusfil juridik-larm.json)
   try {
-    const rader = fs.readFileSync(path.join(KATALOG, "juridikgrind.log"), "utf8").trim().split("\n");
-    const senast = [...rader].reverse().find((r) => r.includes("status GRÖN") || r.includes("status GUL") || r.includes("status RÖD")) || "";
-    resultat.push(["S5 JURIDIK", senast.includes("GRÖN"), senast.slice(-60) || "ingen dom rad"]);
+    const larm = JSON.parse(fs.readFileSync(path.join(KATALOG, "juridik-larm.json"), "utf8"));
+    const s = larm && larm.senasteKorning ? larm.senasteKorning : null;
+    resultat.push([
+      "S5 JURIDIK",
+      !!s && s.status === "GRÖN",
+      s ? `${s.status} @ ${(s.ts || "").slice(0, 16)}` : "ingen körning",
+    ]);
   } catch {
-    resultat.push(["S5 JURIDIK", false, "logg saknas"]);
+    resultat.push(["S5 JURIDIK", false, "juridik-larm.json saknas"]);
   }
 
   const fel = resultat.filter(([, ok]) => !ok);

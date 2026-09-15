@@ -23,7 +23,7 @@
 | 6 | Serialiserade permission-dialoger (3.11.2-24) | Kö finns (v7); granskning mot källan | 3 | 1 | KONTROLL | Verifiera köordning mot källans permission-request-queue |
 | 7 | Isolerade subagent-events (3.11.2-21) | Subagentvy finns; händelseisolering? | 3 | 2 | KONTROLL | Barn-events får inte läcka in i huvudtrådens flöde |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
-| 9 | Diff-bläddring /diff med radnummer+CJK | Diff-panel per turn finns | 4 | 2 | KONTROLL | Jämför mot turn-diff-store.ts; ev. radnummer-förbättring |
+| 9 | Diff-bläddring /diff med radnummer+CJK | KONTROLL-DOM (2026-09-15): CJK ✓ budget ✓ — GAP: radnummer-gutter, ordnivå-diff, /diff-bläddrare (skissa i KONTROLL-9-DIFF.md) | 4 | 2 | ÖPPEN (3 delgap) | Verkställ KONTROLL-9:s fix-skiss (AndringsPanel ~2838, DiffForhandsvisning ~2885 + nytt /diff-kommando) |
 | 10 | Mermaid-förhandsvisning | Saknas | 2 | 3 | ÖPPEN | Rendera mermaid-block i chatt-svar (klientbibliotek) |
 | 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | ÖPPEN | Trädvy per iteration (barn klickbara → öppna session) |
 | 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |

@@ -1825,6 +1825,128 @@ function raknaForekomster(text: string, fras: string): number {
   return text.toLowerCase().split(fras.toLowerCase()).length - 1;
 }
 
+// ── LaTeX-approximation (register2 post 23) ──────────────────────────────────
+
+/** Vanliga LaTeX-kommandon → Unicode; okända kommandon behåller namnet utan \. */
+const LATEX_SYMBOL: Record<string, string> = {
+  // grekiska
+  alpha: "α", beta: "β", gamma: "γ", delta: "δ", epsilon: "ε", varepsilon: "ε",
+  zeta: "ζ", eta: "η", theta: "θ", vartheta: "θ", iota: "ι", kappa: "κ",
+  lambda: "λ", mu: "μ", nu: "ν", xi: "ξ", pi: "π", rho: "ρ", sigma: "σ",
+  tau: "τ", upsilon: "υ", phi: "φ", varphi: "φ", chi: "χ", psi: "ψ", omega: "ω",
+  Gamma: "Γ", Delta: "Δ", Theta: "Θ", Lambda: "Λ", Xi: "Ξ", Pi: "Π",
+  Sigma: "Σ", Phi: "Φ", Psi: "Ψ", Omega: "Ω",
+  // operatorer + relationer
+  times: "×", cdot: "·", div: "÷", pm: "±", mp: "∓", leq: "≤", le: "≤",
+  geq: "≥", ge: "≥", neq: "≠", ne: "≠", approx: "≈", equiv: "≡", propto: "∝",
+  infty: "∞", sum: "∑", prod: "∏", int: "∫", partial: "∂", nabla: "∇",
+  in: "∈", notin: "∉", subset: "⊂", subseteq: "⊆", cup: "∪", cap: "∩",
+  emptyset: "∅", forall: "∀", exists: "∃", rightarrow: "→", to: "→",
+  leftarrow: "←", Rightarrow: "⇒", Leftarrow: "⇐", leftrightarrow: "↔",
+  Leftrightarrow: "⇔", ldots: "…", dots: "…", cdots: "⋯", therefore: "∴",
+  because: "∵", angle: "∠", perp: "⊥", parallel: "∥", degree: "°",
+  oplus: "⊕", otimes: "⊗", hbar: "ℏ", ell: "ℓ", surd: "√",
+  // parentes-hjälpar + mellanrum
+  left: "", right: "", quad: " ", qquad: "  ",
+};
+const LATEX_BLACKBOARD: Record<string, string> = {
+  E: "𝔼", R: "ℝ", N: "ℕ", Z: "ℤ", Q: "ℚ", C: "ℂ", P: "ℙ", H: "ℍ",
+};
+
+/** \frac-del: parentes runt sammansatta uttryck, enligt "frac som a/b". */
+function latexFracDel(d: string): string {
+  const t = d.trim();
+  if (t.length <= 1 || (t.startsWith("(") && t.endsWith(")"))) return t;
+  return /[+\-*/ ]/.test(t) ? `(${t})` : t;
+}
+
+/** LaTeX-sträng → Unicode-sträng (grekiska, \frac, \sqrt, \mathbb, accenter). */
+function latexErsatt(inm: string): string {
+  let s = inm;
+  for (let n = 0; n < 5 && /\\[dt]?frac\{/.test(s); n++) {
+    s = s.replace(
+      /\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g,
+      (_m: string, t: string, n2: string) => `${latexFracDel(t)}/${latexFracDel(n2)}`,
+    );
+  }
+  s = s.replace(/\\sqrt\{([^{}]*)\}/g, (_m: string, a: string) => `√(${a})`);
+  s = s.replace(/\\(?:text|mathrm|operatorname)\{([^{}]*)\}/g, "$1");
+  s = s.replace(/\\mathbb\{([^{}]*)\}/g, (_m: string, a: string) => LATEX_BLACKBOARD[a] ?? a);
+  s = s.replace(/\\(?:bar|overline)\{([^{}]*)\}/g, (_m: string, a: string) => a + "\u0304");
+  s = s.replace(/\\hat\{([^{}]*)\}/g, (_m: string, a: string) => a + "\u0302");
+  s = s.replace(/\\vec\{([^{}]*)\}/g, (_m: string, a: string) => a + "\u20D7");
+  s = s.replace(/\\dot\{([^{}]*)\}/g, (_m: string, a: string) => a + "\u0307");
+  s = s.replace(/\\tilde\{([^{}]*)\}/g, (_m: string, a: string) => a + "\u0303");
+  s = s.replace(/\\(?:begin|end)\{[^{}]*\}/g, "");
+  s = s.replace(/\\([a-zA-Z]+)/g, (_m: string, namn: string) => LATEX_SYMBOL[namn] ?? namn);
+  s = s.replace(/\\\\/g, "  ");
+  s = s.replace(/\\[,;:!]/g, " ").replace(/\\ /g, " ");
+  s = s.replace(/\\%/g, "%").replace(/\\\$/g, "$").replace(/\\&/g, "&");
+  s = s.replace(/\\\{/g, "{").replace(/\\\}/g, "}");
+  s = s.replace(/&/g, " ");
+  return s;
+}
+
+/** LaTeX → React-noder: Unicode-symboler + ^/_ som sup/sub (enkel approximation). */
+function latexTillNoder(latex: string, keyPrefix: string): React.ReactNode[] {
+  const cp = Array.from(latexErsatt(latex));
+  const ut: React.ReactNode[] = [];
+  let buffert = "";
+  let i = 0;
+  while (i < cp.length) {
+    const c = cp[i];
+    if (c === "^" || c === "_") {
+      let arg: string | null = null;
+      if (cp[i + 1] === "{") {
+        const slut = cp.indexOf("}", i + 2);
+        if (slut !== -1) {
+          arg = cp.slice(i + 2, slut).join("");
+          i = slut + 1;
+        }
+      } else if (i + 1 < cp.length) {
+        arg = cp[i + 1];
+        i += 2;
+      }
+      if (arg === null) {
+        buffert += c; // ensam ^ i slutet eller { utan } — visa tecknet rakt av
+        i++;
+      } else if (arg !== "") {
+        if (buffert) {
+          ut.push(buffert);
+          buffert = "";
+        }
+        const inre = latexTillNoder(arg, `${keyPrefix}-n${ut.length}`);
+        ut.push(
+          c === "^" ? (
+            <sup key={`${keyPrefix}-sup${ut.length}`}>{inre}</sup>
+          ) : (
+            <sub key={`${keyPrefix}-sub${ut.length}`}>{inre}</sub>
+          ),
+        );
+      }
+      continue;
+    }
+    buffert += c;
+    i++;
+  }
+  if (buffert) ut.push(buffert);
+  return ut;
+}
+
+/** $inre$ räknas som formel först med LaTeX-tecken (\ ^ _ {) och utan kantmellanslag. */
+function arLatexInne(inre: string): boolean {
+  return inre.length > 0 && /[\\^_{]/.test(inre) && !inre.startsWith(" ") && !inre.endsWith(" ");
+}
+
+/** $formel$-span: samma mörka tema som kod-chip men serif för matte. */
+function LatexSpan({ latex, nyckel }: { latex: string; nyckel: string }): React.JSX.Element {
+  return (
+    <span className="rounded-sm border border-[#30363D]/60 bg-[#161B22] px-1.5 py-0.5 font-serif text-[0.95em] text-[#E6EDF3]">
+      {latexTillNoder(latex, nyckel)}
+    </span>
+  );
+}
+
 // ── Markdown (Z Code-mörk tolkning + kodblock) ───────────────────────────────
 
 /** Inline-markdown → noder; länkar #58A6FF, kod i grå #30363D-chip. */
@@ -1832,14 +1954,23 @@ function renderInline(
   text: string,
   keyPrefix: string,
   sok?: { fras: string; aktiv: number; raknare: MarkRaknare },
+  latexBlock?: string[],
 ): React.ReactNode[] {
   const ut: React.ReactNode[] = [];
   const segments = text.split(
-    /(\[[^\]]+\]\([^)\s]+\)|\*\*[^*]+\*\*|`[^`]+`|_[^_]+_|\*[^*\n]+\*)/g,
+    /(\x00LX\d+\x00|\$\$[^$\n]+\$\$|\$[^$\n]+\$|\[[^\]]+\]\([^)\s]+\)|\*\*[^*]+\*\*|`[^`]+`|_[^_]+_|\*[^*\n]+\*)/g,
   );
   segments.forEach((seg, i) => {
     if (!seg) return;
-    if (seg.startsWith("[") && seg.includes("](")) {
+    if (seg.startsWith("\x00LX") && latexBlock) {
+      // Platshållare för $$blockformel$$ som låg mitt i en rad (post 23).
+      const nr = Number(seg.slice(3, -1));
+      ut.push(<LatexSpan key={`${keyPrefix}-lx${i}`} latex={latexBlock[nr] ?? ""} nyckel={`${keyPrefix}-lx${i}`} />);
+    } else if (seg.startsWith("$$") && seg.length > 4) {
+      ut.push(<LatexSpan key={`${keyPrefix}-L${i}`} latex={seg.slice(2, -2)} nyckel={`${keyPrefix}-L${i}`} />);
+    } else if (seg.startsWith("$") && seg.length > 2 && arLatexInne(seg.slice(1, -1))) {
+      ut.push(<LatexSpan key={`${keyPrefix}-l${i}`} latex={seg.slice(1, -1)} nyckel={`${keyPrefix}-l${i}`} />);
+    } else if (seg.startsWith("[") && seg.includes("](")) {
       const label = seg.slice(1, seg.indexOf("]"));
       const href = seg.slice(seg.indexOf("](") + 2, -1);
       const säker = /^(https?:\/\/|\/|#)/i.test(href);
@@ -1908,7 +2039,15 @@ function StudioMarkdown({
         );
         return;
       }
-      const rader = seg.split("\n");
+      // Post 23: $$blockformel$$ (även flerradig) plockas ut FÖRE rad-
+      // delningen till platshållare \x00LXn\x00 — kodblock ovan rördes inte,
+      // och shell-scriptens $$ (PID) ligger i udda segment.
+      const latexBlock: string[] = [];
+      const textMedLatex = seg.replace(/\$\$([\s\S]+?)\$\$/g, (_m: string, inre: string) => {
+        latexBlock.push(inre);
+        return `\x00LX${latexBlock.length - 1}\x00`;
+      });
+      const rader = textMedLatex.split("\n");
       let listBuffert: string[] = [];
       const spolaLista = (nyckel: string) => {
         if (listBuffert.length === 0) return;
@@ -1916,7 +2055,7 @@ function StudioMarkdown({
           <ul key={nyckel} className="mt-3 list-disc space-y-1 pl-5 marker:text-[#8B949E]">
             {listBuffert.map((l, j) => (
               <li key={j} className="leading-relaxed">
-                {renderInline(l, `${nyckel}-${j}`, sok)}
+                {renderInline(l, `${nyckel}-${j}`, sok, latexBlock)}
               </li>
             ))}
           </ul>,
@@ -1925,18 +2064,32 @@ function StudioMarkdown({
       };
       rader.forEach((rad, j) => {
         const ren = rad.trimEnd();
+        const lx = ren.trim().match(/^\x00LX(\d+)\x00$/);
+        if (lx) {
+          // Egen rad med bara en $$blockformel$$ → centrerat formelblock (post 23).
+          spolaLista(`l${i}-${j}`);
+          delar.push(
+            <div
+              key={`lx-${i}-${j}`}
+              className="mt-3 overflow-x-auto rounded-md border border-[#30363D] bg-[#0D1117] px-4 py-3 text-center font-serif text-[15px] leading-relaxed text-[#E6EDF3] [-webkit-overflow-scrolling:touch]"
+            >
+              {latexTillNoder(latexBlock[Number(lx[1])] ?? "", `lx${i}-${j}`)}
+            </div>,
+          );
+          return;
+        }
         if (ren.startsWith("## ")) {
           spolaLista(`l${i}-${j}`);
           delar.push(
             <h3 key={`h-${i}-${j}`} className="mt-4 text-base font-semibold tracking-tight text-[#E6EDF3]">
-              {renderInline(ren.slice(3), `h${i}-${j}`, sok)}
+              {renderInline(ren.slice(3), `h${i}-${j}`, sok, latexBlock)}
             </h3>,
           );
         } else if (ren.startsWith("### ")) {
           spolaLista(`l${i}-${j}`);
           delar.push(
             <h4 key={`h4-${i}-${j}`} className="mt-3 text-sm font-semibold tracking-tight text-[#E6EDF3]">
-              {renderInline(ren.slice(4), `h4${i}-${j}`, sok)}
+              {renderInline(ren.slice(4), `h4${i}-${j}`, sok, latexBlock)}
             </h4>,
           );
         } else if (/^[-*] /.test(ren)) {
@@ -1947,7 +2100,7 @@ function StudioMarkdown({
           spolaLista(`l${i}-${j}`);
           delar.push(
             <p key={`p-${i}-${j}`} className="mt-3 leading-relaxed first:mt-0">
-              {renderInline(ren, `p${i}-${j}`, sok)}
+              {renderInline(ren, `p${i}-${j}`, sok, latexBlock)}
             </p>,
           );
         }

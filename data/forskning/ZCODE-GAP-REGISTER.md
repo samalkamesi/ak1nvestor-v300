@@ -15,11 +15,11 @@
 
 | # | Gap (z code har) | Studio idag | V | A | Status | Evolutionärt steg |
 |---|---|---|---|---|---|---|
-| 1 | Helskärmsläge (3.10.1 "robust fullscreen") | Webb-fullscreen saknar dedikerat läge | 3 | 2 | ÖPPEN | Studio: helskärmsknapp (Fullscreen API) + dolda paneler + en-tangent |
-| 2 | Nummertangs-snabbval i val-dialoger (3.11.2-23) | Dialoger klickbara endast | 3 | 2 | ÖPPEN | Interaktionsdialoger: siffertangenter 1-9 = alternativ |
-| 3 | Ctrl+C rensar utkast (3.10.2-19) | Esc-fälla saknas | 3 | 1 | ÖPPEN | Esc/Ctrl+C rensar inmatningsfältet (utkastet är ändå persistat) |
+| 1 | Helskärmsläge (3.10.1) | Fullscreen API + panel-döljning | 3 | 2 | STÄNGD (732c870e, deploy 02:02) | Studio: helskärmsknapp (Fullscreen API) + dolda paneler + en-tangent |
+| 2 | Nummertangs-snabbval i dialoger (3.11.2-23) | Siffertangentar 1-9 | 3 | 2 | STÄNGD (732c870e) | Interaktionsdialoger: siffertangenter 1-9 = alternativ |
+| 3 | Ctrl+C rensar utkast (3.10.2-19) | Esc rensar fältet | 3 | 1 | STÄNGD (732c870e) | Esc/Ctrl+C rensar inmatningsfältet (utkastet är ändå persistat) |
 | 4 | Notiser vid tur-avslut (config: notifications unfocused) | Borta-banner finns; notis saknas | 4 | 2 | ÖPPEN | Web Notification API vid klart när fliken ej fokuserad |
-| 5 | Bakgrundssynk modellkatalog (3.11.2-22, ej blockande) | Modellkatalog hämtas på begäran | 3 | 2 | ÖPPEN | Bakgrundsuppdatering av /api/studio/modeller vid uppstart |
+| 5 | Bakgrundssynk modellkatalog (3.11.2-22) | 8 s efter init, ej blockande + auditrad | 3 | 2 | STÄNGD (d81bacfe) | Bakgrundsuppdatering av /api/studio/modeller vid uppstart |
 | 6 | Serialiserade permission-dialoger (3.11.2-24) | Kö finns (v7); granskning mot källan | 3 | 1 | KONTROLL | Verifiera köordning mot källans permission-request-queue |
 | 7 | Isolerade subagent-events (3.11.2-21) | Subagentvy finns; händelseisolering? | 3 | 2 | KONTROLL | Barn-events får inte läcka in i huvudtrådens flöde |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |

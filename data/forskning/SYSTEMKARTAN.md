@@ -71,6 +71,31 @@ E30 behöver revision av läge + gaplista; (b) gränssnittsvakten cron-GRÖN
 tabellen högt upp (2026-09-11: tsc 36 rader, vakten GUL) är HISTORIK —
 KVD-noten 2026-09-13 och denna sektion är det gällande läget.
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u3 — A1 + E27 + E29 diffade mot verkligheten)
+
+Fortsättning på s9-u1:dokvåg (E35): tre system till, varje rad MÄTT i
+arbetsytan 2026-09-15 — inte läst ur worklog.
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| Kurser (A1) | 333 kurser, 8 211 quiz, 82 110 XP | **337 kurser, 8 223 quiz, 82 230 XP** — `data/siffror.json` (regenererad 2026-09-15 av rakna-siffror; s5-vågens fyra kurser: balansräkning, DuPont, soliditet/räntetäckning + V-spår 20/20 i kurskartan) |
+| Trådens permanens (E27) | ej omnämnd | **kodad och på plats**: `src/app/api/studio/stream/route.ts:175-323` — lasTradHistorik(lasHuvudtradSessioner()) svarar HELA huvudtråden (äldst→nyast) ur zcode:s egna sessionsdatabas; målet återarmas vid GET efter omstart; klientens poll ersätter ALDRIG vyn (v144-mordvapnet bort) — våg 148 |
+| Autonomi-pipelinen (E29) | beslutsminnet "påbörjat 2026-09-13" | **25 poster i beslutsminnet, senast rond 30 (2026-09-15 08:49)** · pumpor-daemonen KÖR (ps-bevis: uppe sedan 07:37) · fabriksstatus **25 manifest "klar" + 1 "pågår"** (det pågående = auto-s9, denna dokvåg) · verktyg/{agentfabrik,evighetsmotor,pumpor-daemon,styrelse-rond}.mjs alla på disk |
+| Blogg-utkast (C15-sidofynd) | 8 utkast | **11 utkast** i data/blogg-utkast/ (55 publicerade oförändrade) — C15-revision bokförs som kö till nästa dokvåg |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A1 | 8 → **8** (tal rättade) | Kartans tal var fyra kurser gamla; register 333→337 med larvag-synk GRÖN 337=337=337 och siffror.json regenererad samma dag. GAP-listan oförändrad — ingen score-rörelse |
+| E27 | LEVER 9 → **LEVER 9** | Trådens permanens (v148) kurerar kundens mest återkommande smärta ("allt försvinner när jag uppdaterar") — i koden nu; skal-kvotens KUR-regler (node-wrappers först, verifiera effekt efter häng) tillagt i gaplistan. Score kvarstår 9: redan toppnoterat, nyheten är ett hållbarhetsbevis |
+| E29 | LEVER 7 → **LEVER 8** | Autonomi-pipelinen är nu MEKANISK och driftbevisad: agentfabriken (v146: RAM-vakt 1 500 MB, omgångar om 3, timeout 25 min, leveransbevis per uppgift — 25 klara manifest ÄR driftbeviset), evighetsmotorn (v147: aldrig utan nästa våg), kunduppdragsprotokollet (v156: order jobbas klart + UPPDRAG KLART-kvitto), beslutsminnet tätt (25 poster). Kvar: ingen egen testsvit för fabrikens delar, CRON_SECRET |
+
+Snittscore **7,4** (281 → 282 poäng / 38 system; E29 +1 vid denna dokvåg).
+
+Sidofixar utanför de tre systemen (motbevisade tal, inga scoreändringar):
+C18:s "333 kurser" och E32:s "333 / 8 211" rättade till 337 / 8 223 enligt
+siffror.json — i övrigt lämnas C15/C18/E32 till nästa dokvåg (u1 bokförde
+dessutom E30-revisionen: testa-b2b-grind körs grönt).
+
 ---
 
 
@@ -78,7 +103,7 @@ KVD-noten 2026-09-13 och denna sektion är det gällande läget.
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (333 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A1 | Kursplattformen (337 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
 | A2 | Lärvägen + läroplanen | Utbildning | PÅGÅR (H1) | 7 | Ingen egen testsvit; H1-statusrevision ej avslutad |
 | A3 | AI-Mentorn | Utbildning | PÅGÅR (H2) | 7 | H2 2.0 (dataset-grundning) overifierad; ingen test |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
@@ -105,9 +130,9 @@ KVD-noten 2026-09-13 och denna sektion är det gällande läget.
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | E-post/notiser utan tester; driftstatus overifierad |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester; pass.namn-API-texter svenska; gäst-flödet enklare |
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Spegling Supabase→fil manuell (synka-*); session-cookie framför lösenord = steg 5 |
-| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart |
+| E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Ordförandesvar ej JSON-tolkbart → tomma beslut (åtgärder "(inga)") |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 7 | Prompt-evolution + deploy-säkert register lever; beslutsminnet nytt (2026-09-13) |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (25 klara manifest, pumpor i ps); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 5 | Väntar jurist; testsvit testa-b2b-grind TRASIG |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Portalens sista trespråksgap stängt (våg 113); MÖS-kvalitetsaudit kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
@@ -117,18 +142,25 @@ KVD-noten 2026-09-13 och denna sektion är det gällande läget.
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 7 | Inga tester; sökindexet manuellt genererat; Min Sida-navet → se D38 |
 
-Snittscore: **7,4/10** (281 poäng / 38 system; E35 +1 vid dokvågen
-2026-09-15). Sämst: betalning (5), B2B (5). Bäst: AKM2, Studio, Dataset,
-SEO, Mediebibliotek (9).
+Snittscore: **7,4/10** (282 poäng / 38 system; E35 +1 och E29 +1 vid
+dokvågarna 2026-09-15). Sämst: betalning (5), B2B (5). Bäst: AKM2, Studio,
+Dataset, SEO, Mediebibliotek (9).
 
 ---
 
 # A. UTBILDNINGENS KÄRNA
 
-## A1. Kursplattformen — LEVER — 8/10
+## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-15)*
 
-- **Vad:** Plattformens ryggrad: 333 kurser × 3 språk (deep-courses.json,
-  103 bokmaster-kurser + egna), 8 211 quizfrågor (82 110 XP), 201 analyscase
+*Uppdatering 2026-09-15 (s9-u3): talen rättade mot guldkällan — 337 kurser,
+8 223 quizfrågor (82 230 XP), fas2 18 / fas3 24 (data/siffror.json,
+regenererad 2026-09-15 av rakna-siffror efter s5-vågens fyra kurser:
+balansräkning, DuPont, soliditet/räntetäckning + V-spåret 20/20 i
+kurskartan; larvag-synk GRÖN 337=337=337). Score oförändrat — samma
+kontraktsbrott kvarstår i gaplistan.*
+
+- **Vad:** Plattformens ryggrad: 337 kurser × 3 språk (deep-courses.json,
+  103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP), 201 analyscase
   (/labb), kurs-access i tre nivåer (gratis-Fas 1 för alltid, 18 Fas 2- och
   24 Fas 3-kurser bakom ansökan), XP/stjärnor per kurssteg.
 - **Nyckelfiler:** src/lib/content.ts (199 r), src/lib/kurs-access.ts (274 r,
@@ -441,7 +473,7 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
 ## C18. SEO/schema/llms.txt — LEVER — 9/10
 
 - **Vad:** pageMetadata-centrum (809 r), Course/FAQPage/BreadcrumbList-schema
-  på alla 333 kurser × 3 språk, Dataset-schema, llms.txt + llms-full-txt,
+  på alla 337 kurser × 3 språk, Dataset-schema, llms.txt + llms-full-txt,
   sitemap (inkl. tier-gating), robots (pro-stängning), hreflang-speglar,
   OG-generering vid deploy, sökindex.
 - **Nyckelfiler:** src/lib/seo.tsx (809 r), src/lib/schema-kurser.ts (192 r),
@@ -645,7 +677,18 @@ e-postverifieringsläge.*
   fail2ban-liknande skydd mot lösenordsmalming finns via rate-limit men
   ingen IP-block.
 
-## E27. Studio (Z-portalen i molnet) — LEVER — 9/10
+## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3): TRÅDENS PERMANENS (våg 148) kodad och
+verifierad i src/app/api/studio/stream/route.ts:175-323 — GET svarar
+tradHistorik = HELA huvudtråden (äldst→nyast) läst ur zcode:s EGNA
+sessionsdatabas, målet återarmas vid första anropet efter omstart, och
+klientens poll ersätter aldrig vyn med en enskild sessions korta svans
+(v144-mordvapnet avlägsnat) — kundens mest återkommande smärta ("allt
+försvinner när jag uppdaterar") kurerad i roten. Skal-kvoten (v137/148):
+studio-skalets sammansatta bash-kommandon kan hänga ~30 s (verkställt men
+svaret förlorat) — KUR-reglerna lever i AGENTS.md (node-wrappers först,
+verifiera effekt efter häng, tunga körningar till subagent).*
 
 - **Vad:** Kunden chattar med AK1A-agenten på /studio via zcode-app-cli-
   barnprocesser: streaming med verktygskort/diff/tankar-vy, multi-session-
@@ -672,7 +715,9 @@ e-postverifieringsläge.*
   (2) -32031 vid första meddelandet efter omstart (självläker på sekunder,
   engångskostnad — obevakad bugg); (3) äkta v4-attachment-väg implementerad
   men ej live-bevisad (referensvägen bär bilder idag); (4) usage/cost-panel
-  per dag (F3) tunn i UI.
+  per dag (F3) tunn i UI; (5) skal-kvotens ~30 s-häng är karaktäriserat men
+  EJ botat i binären — node-wrapper-disciplinen är en process-kur, ingen
+  teknisk kur (återkommer tills app-servern fixar det underliggande).
 
 ## E28. Styrelsemotorn (AI-styrelsen) — FLAGGA — 6/10
 
@@ -700,7 +745,20 @@ e-postverifieringsläge.*
   kräver åtgärder.length > 0 på en enkel fråga; (4) protokollens läsbarhet
   (markerade originalsvars-texter).
 
-## E29. Autonoma organet + cron-pipeline — LEVER — 7/10 *(uppdaterad 2026-09-13)*
+## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3): autonomi-pipelinen MEKANISK och
+driftbevisad. Agentfabriken (våg 146: verktyg/agentfabrik.mjs — RAM-vakt
+vägrar ny omgång under 1 500 MB tillgängligt, omgångar om 3 parallella
+barn, timeout 25 min/uppgift, döda barn loggas aldrig tyst död,
+leveransbevis per uppgift; status-katalogens 25 manifest "klar" är
+driftbeviset). Pumpor-daemonen ropar fabriken :x5 och evighetsmotorn :x8
+(ps-bevis: daemonen uppe; motorn kickar vid 20 min stillastående, tak
+1/25 min — kundens paus helig). Kunduppdragsprotokollet (v156): order ⇒
+data/vakten/kunduppdrag.json som sessionens MÅL ⇒ arbetas tills helt klar ⇒
+uppdrag-klart.json + "UPPDRAG KLART"-kvitto. Beslutsminnet tätt: 25
+poster, senast rond 30 (2026-09-15 08:49). Score 7→8: felhantering och
+leveransbevis bevisade i drift — kvar utan egen testsvit.*
 
 *Uppdatering 2026-09-13: våg 113–120 stärkt organet: prompt-evolution v1+v2
 (barnorgan ärver uppdrag + deterministisk mutation → organ-mutationer.json),
@@ -722,10 +780,12 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   42 motorer — 8 med cron, 3 med puls, 3 organ, **28 helt utan autonomi**;
   32/42 saknar test. CRON_SECRET vaktar endast OM satt — publika cron-
   endpoints annars (localhost-caller på Contabo + Vercel-header stöds).
-- **GAP:** (1) CRON_SECRET sätt i prod-env (en rad) eller bind crons till
-  localhost-only; (2) 28 motorer utan triggare — inventera vilka som SKA
-  vara autonoma (registeruppdatering!); (3) organrundornas resultat syns
-  ej i admin-utvecklingsradarn live.
+- **GAP:** (0) fabrikens delar (agentfabrik/evighetsmotor/pumpor) saknar
+  egen testsvit — RAM-vakt/timeout/lås är verifierade i drift men inte
+  regressions-testade; (1) CRON_SECRET sätt i prod-env (en rad) eller bind
+  crons till localhost-only; (2) 28 motorer utan triggare — inventera vilka
+  som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
+  syns ej i admin-utvecklingsradarn live.
 
 ## E30. B2B / AK1A PRO — INAKTIV — 5/10
 
@@ -781,7 +841,7 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
 
 - **Vad:** Pris- och tal-sanningen: priser.json (ALLA priser + fas-rabatt +
   B2B + onboarding) med Supabase-override senaste-vinner via variabler-
-  lagring; siffror.json (333 kurser, 8 211 quiz ...) genererad av rakna-
+  lagning; siffror.json (337 kurser, 8 223 quiz ...) genererad av rakna-
   siffror; siffror-live (live-räkning ur lagret).
 - **Nyckelfiler:** src/lib/variabler.ts (133 r, fil-default),
   src/lib/variabler-lagring.ts (362 r: lasGallande, modul-cache 5 min,

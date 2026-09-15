@@ -9248,5 +9248,260 @@
       "fcf": []
     },
     "notering": "pe/peg osatta: negativt TTM-resultat (nettomarginal −2,88 %, EPS −2,41 DKK); prognosTillvaxt osatt (ej härledbar ur multipler vid negativt resultat); fcfMarginal osatt (källan redovisar ej); fcfYield = negativt fritt kassaflöde/börsvärde; serier i DKK; CAGR över 4 räkenskapsår (2022-2025) med förlustår 2023-2024 i resultattserien"
+  },
+  {
+    "ticker": "SPOT",
+    "namn": "Spotify Technology S.A.",
+    "bransch": "kommunikation",
+    "land": "Sverige",
+    "valuta": "USD",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/stocks/spot/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-14): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 556.31,
+    "marknadsKapitalMdr": 114.37,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1359,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.0903,
+      "prognosTillvaxt": -0.1313
+    },
+    "lonksamhet": {
+      "roe": 0.4448,
+      "roic": 1.2453,
+      "bruttoMarginal": 0.3277,
+      "ebitMarginal": 0.1465,
+      "nettoMarginal": 0.1843,
+      "fcfMarginal": 0.1804
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.06,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 30.58,
+      "pb": 11.94,
+      "evEbit": 35.28,
+      "peg": null,
+      "fcfYield": 0.033,
+      "egenKapitalMultipl": 11.94
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        11727000000,
+        13247000000,
+        15673000000,
+        17186000000
+      ],
+      "resultat": [
+        -430000000,
+        -532000000,
+        1138000000,
+        2212000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "land=Sverige enligt universumets huvudortskonvention (Kambi-precedens; bolaget är registrerat i Luxemburg, noteringen NYSE i USD); serier i EUR (bolagets rapportvaluta — CAGR opåverkad av valuta, nivåer ej i USD); prognosTillvaxt härledd ur trailing/forward-P/E (30,58/35,20 ⇒ −13,1 % implicit EPS-tillväxt +1 år; TTM-vinsten ligger väsentligt över räkenskapsåret 2025 och forward-P/E över trailing speglar förväntad vinstnormalisering); resultatCAGR osatt (startåret 2022 negativt — teckenväxling ger ingen meningsfull CAGR); peg osatt vid negativ prognostillväxt (Ørsted-precedens); fcfYield = fritt kassaflöde/börsvärde; ROIC hög (124,5 %) tack vare liten investerad kapitalbas — källans tal redovisas ärligt"
+  },
+  {
+    "ticker": "SKA-B.ST",
+    "namn": "Skanska AB (publ)",
+    "bransch": "industri",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/sto/SKA.B/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-14): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 262.8,
+    "marknadsKapitalMdr": 108.61,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0268,
+      "resultatCAGR5ar": -0.116,
+      "omsattningTillvaxtTTM": -0.057,
+      "prognosTillvaxt": 0.1088
+    },
+    "lonksamhet": {
+      "roe": 0.1112,
+      "roic": 0.091,
+      "bruttoMarginal": 0.0888,
+      "ebitMarginal": 0.0394,
+      "nettoMarginal": 0.0381,
+      "fcfMarginal": 0.0487
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.25,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 16.41,
+      "pb": 1.76,
+      "evEbit": 13.77,
+      "peg": 1.51,
+      "fcfYield": 0.0781,
+      "egenKapitalMultipl": 1.76
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        163174000000,
+        167168000000,
+        176481000000,
+        176658000000
+      ],
+      "resultat": [
+        8256000000,
+        4998000000,
+        5552000000,
+        5702000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "allt i SEK (rapportvaluta = noteringsvaluta); prognosTillvaxt härledd ur trailing/forward-P/E (16,41/14,80 ⇒ +10,9 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent; fcfYield = fritt kassaflöde/börsvärde; låga brutto-/EBIT-marginaler (8,9/3,9 %) är branschnormala för byggkoncessioner med stor volym omsättning per krona resultat — jämförbarhetsnot till industri-medianen; fritt kassaflöde negativt 2022 (−1,7 mdr), positivt 2023–TTM; utdelning 8,50 SEK/aktie (direktavkastning 3,17 %) noted här då aterkop-fälten är null enligt plattformskonventionen"
+  },
+  {
+    "ticker": "EVO.ST",
+    "namn": "Evolution AB (publ)",
+    "bransch": "konsument",
+    "land": "Sverige",
+    "valuta": "SEK",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/sto/EVO/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-14): pris, börsvärde, P/E-P/B-EV/EBIT, marginaler, ROE/ROIC, skuld/EK, fritt kassaflöde, 4 räkenskapsår 2022-2025"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 890.6,
+    "marknadsKapitalMdr": 169.86,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1236,
+      "resultatCAGR5ar": 0.0799,
+      "omsattningTillvaxtTTM": -0.0221,
+      "prognosTillvaxt": 0.114
+    },
+    "lonksamhet": {
+      "roe": 0.2668,
+      "roic": 0.3119,
+      "bruttoMarginal": 1,
+      "ebitMarginal": 0.578,
+      "nettoMarginal": 0.5177,
+      "fcfMarginal": 0.5918
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.02,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 15.15,
+      "pb": 3.62,
+      "evEbit": 12.04,
+      "peg": 1.33,
+      "fcfYield": 0.0805,
+      "egenKapitalMultipl": 3.62
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1457000000,
+        1799000000,
+        2063000000,
+        2067000000
+      ],
+      "resultat": [
+        843360000,
+        1071000000,
+        1244000000,
+        1062000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "serier i EUR (rapportvaluta; Nasdaq Stockholm-notering i SEK — CAGR opåverkad, nivåer ej i SEK); bruttomarginal 100 % är källans konvention (intäkterna redovisas netto av spelrelaterade avgifter — ingen separat kostnad för sålda tjänster); prognosTillvaxt härledd ur trailing/forward-P/E (15,15/13,60 ⇒ +11,4 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent; fcfYield = fritt kassaflöde/börsvärde; augusti 2026: offentliggjort uppköpserbjudande (Candle Lake ~695 SEK/aktie) noterat som marknadskontext — inget värdeomdöme"
   }
 ]

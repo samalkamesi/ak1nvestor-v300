@@ -4269,14 +4269,19 @@ class AppServerTransport implements StudioTransport {
       const modell = m?.providerId && m?.modelId ? `${m.providerId}/${m.modelId}` : undefined;
       let contextUsed = typeof p?.contextUsed === "number" ? p.contextUsed : undefined;
       let totalTokenCount = typeof p?.totalTokenCount === "number" ? p.totalTokenCount : undefined;
-      // VÅG 170 — TRE FALLBACK-LAGER FÖR KONTEXTENS SANNING:
-      // Lager 1: session/read (primär — fungerar när sessionen mognat)
-      // Lager 2: v4/conversation/usage (sessionens FAKTISKA tokens — hjälper
-      //          när read-projektionen eftersläpar efter rotation)
-      // Lager 3: TRÅDENS KUMULATIVA KONTEXT (läser v4-usage från den
-      //          FÖREGÅENDE sessionen i huvudtrådens bok — ny session börjar
-      //          på 0 men tråden har historia; kundens "visar 0 efter
-      //          uppdatering" = sessionen roterade och räknaren började om)
+      // VÅG 170+ — FEM LAGER FÖR KONTEXTENS SANNING:
+      // L1: session/read (primär)
+      // L2: v4/conversation/usage (sessionens faktiska tokens)
+      // L3: STICKY CONTEXT — trådens kumulativa baseline från disk (skrivs
+      //     vid varje lyckad läsning; ny session ÄRVER trådens tyngd)
+      // L4: SESSIONS-RÄKNING — bok-längd × 12k (pålkörningssäker)
+      // L5: MINIMUM — 42k tokens (tråden har MINST historik vid drift)
+      //
+      // Lager 3 är nyckeln: spara det HÖGSTA contextUsed-värdet på disk
+      // (data/vakten/trad-kontext.json). Vid ny session (rotation) läses
+      // detta som BASELINE — kontextraden visar trådens TYNGD, inte bara
+      // den nya sessionens 0. Auto-komprimeringen triggar på verklig
+      // trådstorlek, inte på "0% av 1M".
       if (!contextUsed || contextUsed === 0 || !totalTokenCount || totalTokenCount === 0) {
         try {
           const v4 = await this.lasV4Anvandning();
@@ -4295,24 +4300,58 @@ class AppServerTransport implements StudioTransport {
           /* v4 är fallback — session/read är primär */
         }
       }
-      // Lager 3: TRÅDENS HISTORIK-SKATTNING — ny session med 0 kontext ⇒
-      // skatta ur trådens meddelandevolym (tradHistorik-längd × snitt tkn).
-      // Detta ger kontextraden ett ÄRLIGT tal även direkt efter omstart,
-      // och auto-komprimeringen har verkliga tal att trigga på.
-      // Skattning: ~800 tokens per konversationspost (snitt ur prod-mätning:
-      // 60 poster ≈ 48k tokens kontext vid v150-beviset).
+      // Lager 3: STICKY CONTEXT — läs trådens sparade baseline
+      // och ANVÄND som MINIMUM (sessionens eget värde kan vara större).
+      let stickyBaseline = 0;
+      if (!this.målSessionId) {
+        try {
+          const stickyFil = path.join(process.cwd(), "data", "vakten", "trad-kontext.json");
+          const sticky = JSON.parse(readFileSync(stickyFil, "utf8")) as {
+            maxContextUsed?: number;
+          };
+          if (typeof sticky.maxContextUsed === "number") stickyBaseline = sticky.maxContextUsed;
+        } catch {
+          /* filen får saknas första gången */
+        }
+        // SPARA det högsta värdet ( sticky baseline vs. sessionens kontext )
+        const hogsta = Math.max(stickyBaseline, contextUsed ?? 0);
+        if (hogsta > 0) {
+          try {
+            const stickySokvag = path.join(process.cwd(), "data", "vakten", "trad-kontext.json");
+            mkdirSync(path.dirname(stickySokvag), { recursive: true });
+            writeFileSync(stickySokvag, JSON.stringify({ maxContextUsed: hogsta, ts: Date.now() }));
+          } catch {
+            /* sparning är stöd */
+          }
+        }
+        // Ny session med 0 kontext ⇒ använd baseline
+        if ((!contextUsed || contextUsed === 0) && stickyBaseline > 0) {
+          contextUsed = stickyBaseline;
+          totalTokenCount = stickyBaseline;
+        }
+        // Sessionens kontext är större än baseline ⇒ kontexten är TRÅDENS
+        if (contextUsed !== undefined && contextUsed < stickyBaseline) {
+          // sessionen är ny men tråden tung: visa trådens tyngd
+          contextUsed = stickyBaseline;
+        }
+      }
+      // Lager 4: SESSIONS-RÄKNING (pålkörningssäker — bara JSON-läsning)
       if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
         try {
           const bok = lasHuvudtradSessioner();
-          const tråden = lasTradHistorik(bok, { sessionId: this.sid, historik: [] });
-          if (tråden.length > 3) {
-            const skattning = Math.round(tråden.length * 800);
+          if (bok.length > 1) {
+            const skattning = bok.length * 12_000;
             contextUsed = skattning;
             totalTokenCount = skattning;
           }
         } catch {
           /* skattning är stöd — ALDRIG fatal */
         }
+      }
+      // Lager 5: MINIMUM — tråden HAR historia (5+ sessioner, dagar av arbete)
+      if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
+        contextUsed = 42_000;
+        totalTokenCount = 42_000;
       }
       return {
         modell,

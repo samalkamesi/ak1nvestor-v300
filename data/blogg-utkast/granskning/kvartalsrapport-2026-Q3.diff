@@ -1,0 +1,37 @@
+--- a/data/blogg-utkast/kvartalsrapport-2026-Q3.md
++++ b/data/blogg-utkast/kvartalsrapport-2026-Q3.md
+@@ -22,7 +22,7 @@
+ 
+ Vågmotorn dömer sin egen vågklass mot faktiskt fundamental momentum, rond för rond. Under Q3 2026 redovisas **1 rond med domslut** (domdatum: 2026-09-04); de rullande räknarna startade 2026-09-04. Källans historik (historikV1) är ännu tom — tidigare körningar inom kvartalet kan därför inte räknas ihop ärligt.
+ 
+-Universumet omfattar 12 tickers (namnges aldrig här — det här är metodik, inte bolagsval). Senaste ronden mätte 12 tickers × 5 horisonter; **48 mätningar kunde dömas** och 20 % höll klassen osatt — osatt räknas i täckningsbråket, aldrig som fel. Total träffbild: **52 %** (n=48).
++Universumet omfattar 12 tickers (namnges aldrig här — det här är metodik, inte bolagsval). Senaste ronden mätte 12 tickers × 5 horisonter; **48 mätningar kunde dömas** och 20 % av mätningarna lämnades osatta — osatt räknas i täckningsbråket, aldrig som fel. Total träffbild: **52 %** (n=48).
+ 
+ ### Träffprocent per horisont och vågklass
+ 
+@@ -39,6 +39,7 @@
+ ### Träffbildens kvartiler — där datan bär
+ 
+ Över de 8 (horisont × klass)-celler som har dömt underlag ligger träffprocenten med **undre kvartilen 22,5 %**, **median 69 %** och **övre kvartilen 100 %**. Bilden är tvådelad: impulsvågscellerna ligger högt medan basbygge på medellång och mega horisont ligger på noll. Läs kvartilerna som en spridningsbild — underlaget per cell är 2–10 dömda mätningar, vilket är för litet för säkra skattningar.
++_Kvartilerna är beräknade med linjär interpolering (inkluderande metod — samma som Excels QUARTILE och NumPys standardläge "linear"); andra kvartildefinitioner ger andra undre och övre kvartiler._
+ 
+ Klassen **korrigering** har n = 0 i samtliga horisonter, och horisonten **lång** har n = 0 i samtliga klasser — för båda gäller: källan har ännu ingen data för perioden, så cellerna redovisas som streck med n = 0, aldrig som gissade procentsatser.
+ 
+@@ -72,7 +73,7 @@
+ 
+ Kalibreringscronen samlar in data för modellens fasvikter (Φ) utan att ändra dem — grinden är LÅST och **ΔΦ = 0**. Inom kvartalet fördes 1 mätning (senaste 2026-09-04, månad 2026-09).
+ 
+-Underlaget är ännu i uppbyggnadskede: **0 episoder** totalt och 0 domrader sedan clean-start 2026-09-04. Korrelationsparametern ρ̄ ligger på 0,45 med källangivelse _"fallback (för få par: 0)"_ — dvs. en dokumenterad default, inte en skattning. Diskonterat med den ρ̄ bär universumet cirka 2,2 effektiva observationer per dag — dagar räknas aldrig som observationer, bara episoder.
++Underlaget är ännu i uppbyggnadskede: **0 episoder** totalt och 0 domrader sedan clean-start 2026-09-04. Korrelationsparametern ρ̄ ligger på 0,45 med källangivelse _"fallback (för få par: 0)"_ — dvs. en dokumenterad default, inte en skattning. Diskonterat med den ρ̄ uppger källan cirka 2,2 effektiva observationer per dag (fältet effektivaPerDag) — men det är episoder som räknas som observationer, aldrig kalenderdagar i sig.
+ 
+ Fasstatus per senaste mätning: 6 faser vantar-grind. Ingen fas har nått handlingsgrindens krav (n_eff ≥ 20 episoder) — därför är samtliga Φ-förslag enbart framtida kandidater, aldrig genomförda ändringar.
+ 
+@@ -82,7 +83,7 @@
+ 
+ ## 5. Kvalitetsvakten
+ 
+-Kvalitetsvakten sveper sajten dagligen (cron 07:00 UTC) och skriver överskrivande rapport. Senaste rapporten är genererad 2026-09-11 — inom kvartalet. Status: **GRÖN** — 0 fel och 4 poster för manuell granskning. Motorvalideringen (100 %-väktaren) redovisar **107 PASS / 0 FAIL / 0 SKIP**.
++Kvalitetsvakten sveper sajten dagligen (cron 07:00 UTC) och skriver överskrivande rapport. Senaste rapporten är genererad 2026-09-10 — inom kvartalet. Status: **GRÖN** — 0 fel och 4 poster för manuell granskning. Motorvalideringen (100 %-väktaren) redovisar **107 PASS / 0 FAIL / 0 SKIP**.
+ 
+ För den här rapportens källor betyder det: de JSON-loggar kvartalsrapporten bygger på passerar vaktns giltighetskontroll, och motorerna bakom vågvalideringen håller 100 % i sin egen valideringsbild.
+ 

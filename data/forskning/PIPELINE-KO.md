@@ -159,19 +159,27 @@ Agent-anrop, 4+ via fabriksmanifest.
   SAMMANSTALLNING-2026-09-14.md. Publicering förblir kundens (R2).
   Spårrotation enligt evighetskatalogen (149 SEO-sidor → 150 dataset →
   151 granskning).
-- ◐ VÅG 152 (fas 1 klar, fas 2 DISPATCHAT 2026-09-15 ~01:20): kvartals-
-  rapportserien — kartan (194e463a) + fabriksmanifestet v152-fas2-kalender
-  i prod ko/ (10 branschuppgifter à 10 bolag = 100 bolag, verifierad
-  täckning; rappFÖNSTER endast, aldrig siffror/råd). Köas automatiskt
-  efter mega-manifestet (g1–g7). Fas 3 (läsårt-paket per rapportdag)
+- ✓ MEGA-MANIFESTET 7/7 KLART (2026-09-15, status/mega-beslut-styrelsen.json):
+  g1 godkännandeytan (56175326) · g2 juridikgrind (ca1e0ff4, :37-pumpa) ·
+  g3 audit-spårbarhet (f2589675) · g4 fabrik 2.0 (ef939240) · g5 integritets-
+  vakt (a1114594) · g6 GDPR + g7 kvalitetsgrind (fabriksmerges, bl.a. 46e8d61d).
+  Styrelsens mega-beslut fullverkställt — R2-ytor förblir kundens.
+- ✓ VÅG 152 FAS 2 LEVERERAT (2026-09-15, bokfört rond 28): 10/10 bransch-
+  kalendrar i data/blogg-utkast/kvartal/2026-q3/ — 100/100 bolag
+  maskinverifierade (rond 28-sond), juridikstickprov 0 rådsförbuds-mönster,
+  källor + hämtdatum per bolag; granskningsrond auto-s1 klar (fabriksbarn
+  s1-u1..u3: granskningsdokument i blogg-utkast/granskning/). Kalendrarna
+  väntar kundpublicering (R2 — godkännandeytan g1 lever, 401-skyddad rutt).
+  Fas 3 (läsårt-paket per rappdag, kartan 194e463a) redo att dispatchas.
   startar när fas 2-kalendern levererar.
-- ◐ VÅG 157 (kod LEVERERAD 73c4d6b3, driftbevis väntar): mätjournal i
-  granssnittsvakt.mjs — aldrig-mätta sidor väljs först, SIDOR_MAX 16→24;
-  koden lever i prod (JOURNAL_FIL-logiken verifierad i prod-trädet
-  2026-09-15). Återstående bevis: data/vakten/vakt-sidjournal.json skapas
-  vid nästa cron-vaktkörning (~03:01) + fulltäckande svep över 130
-  aspektsidor = 0 fynd (eller fixade). Stäng vågen först när journalen
-  bevisar aspekt-täckning.
+- ◐ VÅG 157 (mekanism BEVISAD, täckning ackumulerar): journalen lever
+  (vakt-sidjournal.json, 24 sidposter) men 0 /dataset/-sidor ännu —
+  urvalet (aldrig-mätta först, alfabetiskt sekundärt) arbetar sig igenom
+  /analyser-trädet före /dataset. Rond 28-rotfynd: vakt-cron-raden var
+  RADERAD ur crontab (sista rop 01:17 GRÖN) — återinstallerad + verifierad
+  (17 1,7,13,19) + catch-up-körning 06:37. ~6 körningar ≈ 36 h till full
+  130-sidors dataset-täckning. Stängs när journalen visar dataset-täckning
+  + 0 fynd.
 - ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
   (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
   API-kostnad; regressionstest mot befintliga svar. R2-säker.

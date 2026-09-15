@@ -26,6 +26,32 @@ function kortNamn(titel: string): string {
   return titel.split(" — ")[0] ?? titel;
 }
 
+/**
+ * Avvikelsemening bransch-mot-universum: deskriptiv relativ avvikelse i
+ * procent, en decimal, med >999 %-tak när universummedianen ligger nära
+ * noll (samma ärlighet som hubbens Δ-celler, våg 98 F2 — beskrivning,
+ * aldrig omdöme). ±2 % räknas som "i princip i nivå med".
+ */
+function universumAvvikelseMening(
+  bransch: number | null,
+  universum: number | null,
+  matt: string,
+  branschNamnStr: string,
+): string {
+  if (bransch === null || universum === null) {
+    return `${matt}-medianen inom ${branschNamnStr.toLowerCase()} eller universumets median är osatt — ingen avvikelse räknas.`;
+  }
+  if (universum === 0) {
+    return `Universumets median är 0 — relativ avvikelse går inte att räkna ärligt.`;
+  }
+  const d = (bransch / universum - 1) * 100;
+  if (Math.abs(d) < 2) {
+    return `${matt}-medianen inom ${branschNamnStr.toLowerCase()} ligger i princip i nivå med universumets median — branschen speglar marknadens samlade läge för det här måttet.`;
+  }
+  const tal = Math.abs(d) > 999 ? "mer än 999" : String(Math.abs(Math.round(d * 10) / 10)).replace(".", ",");
+  return `${matt}-medianen inom ${branschNamnStr.toLowerCase()} ligger ca ${tal} % ${d > 0 ? "över" : "under"} universumets median — en beskrivning av branschens läge i urvalet, inte ett omdöme om bransch eller bolag.`;
+}
+
 /** JSON-LD: schema.org Dataset — samma mönster som branschdetaljerna (våg 97). */
 function aspektJsonLd(sida: AspektSida, hamtat: string | null): object {
   return {
@@ -47,10 +73,13 @@ function aspektJsonLd(sida: AspektSida, hamtat: string | null): object {
 export function AspektVy({
   sida,
   hamtat,
+  antalBolag,
   syskon,
 }: {
   sida: AspektSida;
   hamtat: string | null;
+  /** Universumets aktuella bolagsantal (räknas av rutten — aldrig hardkodat). */
+  antalBolag?: number;
   /** Branschens andra publicerade aspekter (registret) — internlänkning. */
   syskon: { slug: string; titel: string }[];
 }) {
@@ -72,7 +101,8 @@ export function AspektVy({
 
       <h1 className="font-serif text-4xl font-bold">{sida.titel}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Tal ur 100-bolagsuniversumet · data hämtad {hamtat ?? "—"} · pedagogisk statistik
+        Tal ur {typeof antalBolag === "number" ? `${antalBolag}-bolagsuniversumet` : "universumet"} ·
+        data hämtad {hamtat ?? "—"} · pedagogisk statistik
       </p>
       <p className="mt-6 leading-relaxed text-muted-foreground">{sida.ingress}</p>
 
@@ -110,6 +140,57 @@ export function AspektVy({
           aldrig som noll, och under 5 mätta publiceras ingen sida alls.
         </p>
       </section>
+
+      {/* Universumjämförelse: samma mått sammanfattat över HELA universumet
+          (samtliga branscher) ställs mot branschraden — samma metod, samma
+          källmaterial; avvikelsen är beskrivning, aldrig omdöme. */}
+      {sida.universum && (
+        <section className="mt-8">
+          <h2 className="font-serif text-2xl font-bold">
+            {kortNamn(sida.titel)} — {namn.toLowerCase()} mot hela universumet
+          </h2>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="text-left text-foreground">
+                  <th className="py-1.5 pr-4 font-semibold">Grupp</th>
+                  <th className="py-1.5 pr-4 font-semibold">Median</th>
+                  <th className="py-1.5 pr-4 font-semibold">Kvartiler (P25–P75)</th>
+                  <th className="py-1.5 font-semibold">Underlag</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-gold/10">
+                  <td className="py-2 pr-4 font-semibold text-foreground">{namn}</td>
+                  <td className="py-2 pr-4 text-foreground">{fmt(sida.median)}</td>
+                  <td className="py-2 pr-4 text-foreground">
+                    {fmt(sida.p25)} – {fmt(sida.p75)}
+                  </td>
+                  <td className="py-2 text-muted-foreground">n = {sida.matta} bolag</td>
+                </tr>
+                <tr className="border-t border-gold/10">
+                  <td className="py-2 pr-4 font-semibold text-foreground">
+                    Hela universumet ({sida.universum.antalBolag} bolag)
+                  </td>
+                  <td className="py-2 pr-4 text-foreground">{fmt(sida.universum.median)}</td>
+                  <td className="py-2 pr-4 text-foreground">
+                    {fmt(sida.universum.p25)} – {fmt(sida.universum.p75)}
+                  </td>
+                  <td className="py-2 text-muted-foreground">n = {sida.universum.matta} mätta</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            {universumAvvikelseMening(sida.median, sida.universum.median, kortNamn(sida.titel), namn)}
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            Universumraden räknas med exakt samma metod på samma källmaterial som
+            branschraden — skillnaden beskriver branschens läge i urvalet (kapitalintensitet,
+            cyklicitet, tillväxt), inte vilket läge som är rätt.
+          </p>
+        </section>
+      )}
 
       {/* Flermätastabellen (hub-sidor: land + värdering). */}
       {Array.isArray(sida.matTabell) && sida.matTabell.length > 0 && (

@@ -504,3 +504,34 @@ Arvsregler (bryt ALDRIG): tråden är helig (del 2); TRÅDMINNET injiceras
 endast i transporten (del 3); fulltext trunkeras ENDAST i tradHistorik-
 fältet, aldrig i sessionens egna vy; disk-målet är stöd-lager — fel där
 får ALDRIG krascha sattMal/rensaMal.
+
+---
+
+## INCIDENT 2026-09-15 16:42 lokal — F6-larm "prod osvarar" (rot: RAM-svält)
+
+- **Symptom:** feljägarens sond dog ("TypeError: fetch failed" 16:42:45,
+  feljakt-fynd.jsonl) · pm2-omstart 16:40:20 · next-start stack-trace
+  16:47:21 · kraschvakt kooldown 16:54 (online, omstarter +0) · målet
+  återställt av hjärtslaget 16:51 · själväkt ~17:01 (prod-synk nytt bygg
+  + omstart, ISR-varm 16:59/17:01).
+- **Rot:** på 8 GB-servern (swap redan ~1,5 GB använd) sammanföll
+  fabrikens auto-s6-omgång (3 barn; s6-u3 ensam 58 min ≈ 0,8 GB) med
+  pm2-omstartar och bygg — next build (~2 GB peak) hade dessförinnan
+  dödats TYST av minnesvakten ("Killed", rond32-deploy.log 13:31), och
+  vid 16:42 svultgick hela servern kort. Verkligt osvarar-fönster ~5 min.
+- **Omedelbar kur:** ingen behövdes — organismen självläkte (kraschvakt,
+  hjärtslag, prod-synk); prod 200 från 17:01, bygg EFTER commit bevisat
+  (rond 33-sonder).
+- **VACCIN (våg 169):** `verktyg/ram-grind.mjs` + `prebuild` i
+  package.json — ALLA `npm run build` (deploy-skript, fabriksbarn,
+  prod-synk, manuella) väntar tills MemAvailable ≥ 1 600 MB (tak 15 min,
+  därefter PÅSKRIVET avbrott med loggrad — aldrig mer tyst "Killed").
+  Vaktwrappern fick egen grind 1 100 MB / 5 min → SKIPPAS med loggrad
+  (exit 75) om minnet är tomt; cron ropar igen om 6 h. Grinden aktiverar
+  ENDAST på Contabo (path-markör /home/ak1a/AK1) — kundens arbetsstation
+  och CI opåverkad. Logg: data/vakten/ram-grind.logg (gitignorad).
+- **Bevis:** båda grindgrenarna testade live (öppnad exit 0; stängd
+  loggad + exit 1); F6-tidslinjen bunden i rond 33 (feljakt-fynd.jsonl,
+  pm2-loggar, fabrikens statusfiler, /tmp-byggloggar). dmesg krävde
+  sudo och lämnades oläst — OOM-slutsatsen vilar på "Killed"-signaturen
+  + minnessiffrorna, antecknat ärligt.

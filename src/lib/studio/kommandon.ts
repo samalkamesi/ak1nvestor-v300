@@ -11,6 +11,12 @@
  * (modell/tankestyrka/läge + server-sparad standard; studio-chat.tsx äger
  * både drawern och standard-sparningen — kommandot är lokalt).
  *
+ * VÅG 164 (KONTROLL 9 c + GAP 14): /diff tillagt — öppnar diff-bläddringen
+ * över turnernas filändringar (studio-chat.tsx äger vyn; data via befintlig
+ * GET /api/studio/andringar + trådens egna ändringspaneler) och /sök tillagt
+ * — öppnar ⭐-panelens sökning med argumentet förifyllt (filtrerar
+ * promptbiblioteket + prompthistoriken; klick på träff infogar i fältet).
+ *
  * Kontrakt: ett kommando är en rad som BÖRJAR med "/" — allt annat är en
  * vanlig prompt till agenten och skickas aldrig hit. Kommandot parsas
  * LOKALT i UI:t FÖRE sändning (kunddirektiv B4 §3): kommandon med API-väg
@@ -25,6 +31,13 @@
 export interface StudioKommando {
   /** Kommandonamn utan skrå — "help", "ny", "modell", … */
   namn: string;
+  /**
+   * VÅG 164: alternativa stavningar (utan skrå) som också ska matcha i
+   * slash-autocomplete/paletten — "/sok" hittar kommandot "sök" (ASCII-
+   * tangentbord). parsarKommando behöver ej veta om dessa; UI:t matchar
+   * namn ELLER alias och skickar namnet till körningen.
+   */
+  alias?: readonly string[];
   /** Syntax som visas i /help — "/modell <id>". */
   syntax: string;
   /** Kort beskrivning (svenska, ingen jargong). */
@@ -72,6 +85,12 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     kalla: "lokal",
   },
   {
+    namn: "diff",
+    syntax: "/diff",
+    beskrivning: "Bläddra filändringarna — senaste turnen hämtas färskt + tidigare turns diffar ur tråden (radnummer + ordnivå)",
+    kalla: "lokal",
+  },
+  {
     namn: "fardigheter",
     syntax: "/fardigheter",
     beskrivning: "Öppna Färdigheter ⚡ — agentens skills, aktiva plugins och anslutna MCP-verktyg",
@@ -93,6 +112,13 @@ export const STUDIO_KOMMANDON: readonly StudioKommando[] = [
     namn: "sparad",
     syntax: "/sparad [text]",
     beskrivning: "Promptbiblioteket ⭐ — sparade prompts (utan argument: visa biblioteket, med text: spara den)",
+    kalla: "lokal",
+  },
+  {
+    namn: "sök",
+    alias: ["sok"],
+    syntax: "/sök <text>",
+    beskrivning: "Sök i promptbiblioteket + din prompthistorik (senaste 50) — klicka en träff för att infoga den i skrivfältet",
     kalla: "lokal",
   },
 ];

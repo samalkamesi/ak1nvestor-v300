@@ -209,7 +209,27 @@ import { cn } from "@/lib/utils";
  *     öppen permission/fråga = pågående prompt), cooldown 30 min/session,
  *     max en gång per våg (vakt återarmas när kontexten < 80 % igen),
  *     ALDRIG under mål-loop. Toast + trådpost vid avfyrning; knappen
- *     behålls manuell med ärlig tooltip (bevarar EJ senaste rundan).
+ *     behålls manuell med ärlig tooltip (bevarar Ej senaste rundan).
+ *
+ * VÅG 164 (KONTROLL 9 + GAP 14 — data/forskning/zcode-kallkod/KONTROLL-9-DIFF):
+ *   · RADNUMMER-GUTTER (9 a): diff-raderna i AndringsPanel + DiffFörhands-
+ *     visning får DUAL gutter (gammal | ny, tunn monospace #484F58) — absolut
+ *     rad ur v4-punkternas oldStart/newStart när de finns (räknare stegras
+ *     per markör genom hunkens unified-rader, som källans TUI-renderloop),
+ *     annars RELATIV numrering per −/+ par från 1 (källans previewEditDiff-
+ *     form — tooltipen skiljer ärligt på absolut/relativ).
+ *   · ORDNIVÅ-DIFF (9 b): ändrade ORD inom en rad highlightas (himmels-
+ *     bakgrund) — ren js-tokenisering (split med fångst: ord OCH mellanrums-
+ *     runor, så indragsändringar syns), −/+ block paras och token jämförs
+ *     som multiset; INGA npm-paket.
+ *   · /DIFF-BLÄDDRING (9 c): nytt lokalt kommando /diff (kommandon.ts) —
+ *     dialog med SENASTE turnens ändringar (GET /api/studio/andringar,
+ *     lasFilandringar-flödet) + tidigare turner ur tråden (prompt-rad +
+ *     ±N, omvänd ordning som källans diffBrowserSources); filer vecklas ut
+ *     till samma DiffRader-rendering (gutter + ordnivå).
+ *   · /SÖK (GAP 14): kommandot /sök (alias /sok) öppnar ⭐-panelens sökning
+ *     förifylld — filtrerar biblioteket + prompthistoriken (substring,
+ *     skiftlägesokänsligt), träffar klickbara → infogas i skrivfältet.
  *
  * SKYDD: sidan visar lås-vy; API-rutterna kräver admin — adminHeaders()
  * bär lösenordet i lösenordsläget. INGA hemligheter renderas.
@@ -2538,6 +2558,178 @@ function kodSprak(namn: string): string {
   return ande === "md" || ande === "markdown" ? "md" : "kod";
 }
 
+// ── KONTROLL 9 (v164): radnummer-gutter + ordnivå i diff-raderna ─────────────
+
+/** Diff-radens radnummer — null = raden finns ej i den filen / okänt. */
+interface DiffRadNummer {
+  /** Rad i GAMLA filen ("−"-rader; null på "+"-rader). */
+  gammal: number | null;
+  /** Rad i NYA filen ("+"-rader; null på "−"-rader). */
+  ny: number | null;
+}
+
+/** En renderbar diff-rad: markör + text + gutter-nummer + ordfragment. */
+interface DiffVisningRad {
+  typ: "+" | "-";
+  text: string;
+  nummer: DiffRadNummer;
+  /** Ordnivå-fragment — null när raden ej ingår i något −/+ par. */
+  ord: { text: string; andrad: boolean }[] | null;
+}
+
+/**
+ * KONTROLL 9 (a): diff-rader med radnummer. Med v4-punkter promeneras varje
+ * hunks unified-rader med gamla/nya räknare stegrade per markör (källans
+ * file-diff-view-renderloop): "+x" bär nya filens rad, "−x" gamla,
+ * kontextraden stegrar båda men renderas ej → ABSOLUTA nummer. Utan punkter
+ * (motor-diffen ur Write/Edit-fakta + permission-förhandsvisningen) finns
+ * ingen filposition — då numrereras varje −/+ par RELATIVT från 1 (källans
+ * previewEditDiff-form). `absolut` ärligt för gutter-tooltipen.
+ */
+function diffRaderUrFil(fil: Filandring): { rader: DiffVisningRad[]; absolut: boolean } {
+  const rader: DiffVisningRad[] = [];
+  if (fil.punkter && fil.punkter.length > 0) {
+    for (const p of fil.punkter) {
+      let gammal = p.oldStart;
+      let ny = p.newStart;
+      for (const linje of p.rader) {
+        if (linje.startsWith("+")) {
+          rader.push({ typ: "+", text: linje.slice(1), nummer: { gammal: null, ny }, ord: null });
+          ny += 1;
+        } else if (linje.startsWith("-")) {
+          rader.push({ typ: "-", text: linje.slice(1), nummer: { gammal, ny: null }, ord: null });
+          gammal += 1;
+        } else {
+          // Kontextrad — stegrar båda räknarna men renderas ej (källans modell).
+          gammal += 1;
+          ny += 1;
+        }
+      }
+    }
+    markeraOrd(rader);
+    return { rader, absolut: true };
+  }
+  let g = 0;
+  let n = 0;
+  for (const r of fil.rader) {
+    if (r.typ === "-") {
+      if (n > 0) g = 0; // nytt −-block efter ett stängt par börjar om
+      g += 1;
+      n = 0;
+      rader.push({ typ: "-", text: r.text, nummer: { gammal: g, ny: null }, ord: null });
+    } else {
+      n += 1;
+      rader.push({ typ: "+", text: r.text, nummer: { gammal: null, ny: n }, ord: null });
+    }
+  }
+  markeraOrd(rader);
+  return { rader, absolut: false };
+}
+
+/**
+ * KONTROLL 9 (b): ORDNIVÅ-diff — rent js, inga npm-paket (källan använder
+ * diffWordsWithSpace; vår budget 200 tkn/rad gör en egen delning både
+ * billigare och förutsägbar). Varje −-block paras med sitt FÖLJANDE +-block;
+ * token (ord OCH mellanrumsrunor — split med fångst, så indragsändringar
+ * syns) jämförs som multiset — token som finns på båda sidor renderas
+ * omarkerade, resten får himmelsbakgrund inuti den gröna/röda raden. Rader
+ * utan par (t.ex. rent Write-tillägg) lämnas helfärgade — HELRAD är
+ * signalen där.
+ */
+function markeraOrd(rader: DiffVisningRad[]): void {
+  const rakna = (start: number, slut: number): Map<string, number> => {
+    const m = new Map<string, number>();
+    for (let i = start; i < slut; i++) {
+      for (const t of rader[i].text.split(/(\s+)/)) {
+        if (t !== "") m.set(t, (m.get(t) ?? 0) + 1);
+      }
+    }
+    return m;
+  };
+  const fragmentera = (i: number, mot: Map<string, number>): void => {
+    const ut: { text: string; andrad: boolean }[] = [];
+    for (const del of rader[i].text.split(/(\s+)/)) {
+      if (del === "") continue;
+      const kvar = mot.get(del) ?? 0;
+      if (kvar > 0) {
+        mot.set(del, kvar - 1);
+        ut.push({ text: del, andrad: false });
+      } else {
+        ut.push({ text: del, andrad: true });
+      }
+    }
+    if (ut.length > 0) rader[i].ord = ut;
+  };
+  let i = 0;
+  while (i < rader.length) {
+    if (rader[i].typ !== "-") {
+      i += 1;
+      continue;
+    }
+    const minusStart = i;
+    while (i < rader.length && rader[i].typ === "-") i += 1;
+    const minusSlut = i;
+    while (i < rader.length && rader[i].typ === "+") i += 1;
+    const plusSlut = i;
+    if (minusSlut === plusSlut) continue; // rent borttag — helfärgad räcker
+    const nyOrd = rakna(minusSlut, plusSlut);
+    for (let k = minusStart; k < minusSlut; k++) fragmentera(k, nyOrd);
+    const gammalOrd = rakna(minusStart, minusSlut);
+    for (let k = minusSlut; k < plusSlut; k++) fragmentera(k, gammalOrd);
+  }
+}
+
+/**
+ * KONTROLL 9 (a+b): diff-raderna med DUAL radnummer-gutter (gammal | ny i
+ * tunn monospace #484F58, tabular-nums — källans TUI-gutter) + ordnivå-
+ * highlight. Delad av AndringsPanel (form "panel": skiljelinje + mörkare
+ * bakgrund) och permission-dialogens DiffForhandsvisning ("forhandsvisning").
+ */
+function DiffRader({ fil, form }: { fil: Filandring; form: "panel" | "forhandsvisning" }): React.JSX.Element | null {
+  const { rader, absolut } = React.useMemo(() => diffRaderUrFil(fil), [fil]);
+  if (rader.length === 0) return null;
+  const guttitel = absolut
+    ? "Radnummer: gammal fil | ny fil (position ur diff-punkterna)"
+    : "Relativa radnummer inom ändringen — absolut filposition bär bara v4-källan";
+  return (
+    <pre
+      className={cn(
+        "overflow-auto px-2.5 py-1.5 font-mono text-[10px] leading-relaxed",
+        form === "panel" ? "max-h-64 border-t border-[#21262D] bg-[#010409]" : "max-h-56",
+      )}
+    >
+      {rader.map((r, i) => (
+        <span
+          key={i}
+          className={cn(
+            "flex",
+            r.typ === "+" ? "bg-[#238636]/10 text-[#3FB950]" : "bg-[#DA3633]/10 text-[#F85149]",
+          )}
+        >
+          <span className="w-8 shrink-0 select-none text-right tabular-nums text-[#484F58]" title={guttitel}>
+            {r.nummer.gammal ?? ""}
+          </span>
+          <span className="w-8 shrink-0 select-none pr-1.5 text-right tabular-nums text-[#484F58]" title={guttitel}>
+            {r.nummer.ny ?? ""}
+          </span>
+          <span className="min-w-0 flex-1 whitespace-pre-wrap break-all">
+            {r.typ === "+" ? "+ " : "− "}
+            {(r.ord ?? [{ text: r.text, andrad: false }]).map((f, j) =>
+              f.andrad ? (
+                <span key={j} className="rounded-sm bg-sky-500/20">
+                  {f.text}
+                </span>
+              ) : (
+                <span key={j}>{f.text}</span>
+              ),
+            )}
+          </span>
+        </span>
+      ))}
+    </pre>
+  );
+}
+
 /**
  * EXPANDERAD KODVY för en fil i diff-panelen — hämtar filen via GET
  * /api/studio/filer?sokvag=…, syntaxmarkerar, markerar ändrade rader GULT,
@@ -2837,21 +3029,8 @@ function AndringsPanel({
             {f.öppen && (
               <>
                 <KodvyFil fil={f} arbetsyta={arbetsyta} planLage={planLage} />
-                {f.rader.length > 0 && (
-                  <pre className="max-h-64 overflow-auto border-t border-[#21262D] bg-[#010409] px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
-                    {f.rader.map((r, i) => (
-                      <span
-                        key={i}
-                        className={cn(
-                          "block whitespace-pre-wrap break-all",
-                          r.typ === "+" ? "bg-[#238636]/10 text-[#3FB950]" : "bg-[#DA3633]/10 text-[#F85149]",
-                        )}
-                      >
-                        {r.typ === "+" ? "+" : "−"} {r.text || " "}
-                      </span>
-                    ))}
-                  </pre>
-                )}
+                {/* KONTROLL 9 (a+b): radnummer-gutter + ordnivå (DiffRader). */}
+                <DiffRader fil={f} form="panel" />
               </>
             )}
           </li>
@@ -2884,19 +3063,163 @@ function DiffForhandsvisning({ diff }: { diff: Filandring }): React.JSX.Element 
           <span className="shrink-0 rounded-full bg-[#DA3633]/15 px-1.5 font-mono text-[10px] font-bold text-[#F85149]">−{diff.minus}</span>
         )}
       </div>
-      <pre className="max-h-56 overflow-auto px-2.5 py-1.5 font-mono text-[10px] leading-relaxed">
-        {diff.rader.map((r, i) => (
-          <span
-            key={i}
-            className={cn(
-              "block whitespace-pre-wrap break-all",
-              r.typ === "+" ? "bg-[#238636]/10 text-[#3FB950]" : "bg-[#DA3633]/10 text-[#F85149]",
-            )}
-          >
-            {r.typ === "+" ? "+" : "−"} {r.text || " "}
+      {/* KONTROLL 9 (a+b): radnummer-gutter + ordnivå (DiffRader). */}
+      <DiffRader fil={diff} form="forhandsvisning" />
+    </div>
+  );
+}
+
+// ── KONTROLL 9 (c): /DIFF-BLÄDDRINGEN — dialog över turnernas ändringar ───────
+
+/** En turn i bläddringen — prompten som orsakade ändringarna + filerna. */
+interface DiffTurn {
+  prompt: string;
+  filer: Filandring[];
+}
+
+/**
+ * KONTROLL 9 (c): DIFF-BLÄDDRINGEN (/diff) — "Nuvarande ändringar" överst
+ * (GET /api/studio/andringar, lasFilandringar-flödet — hämtas färskt vid
+ * varje öppning) följt av tidigare turner ur tråden i OMVÄND ordning med
+ * prompt-rad + ±N (källans diffBrowserSources-form). Filrader vecklas ut
+ * till DiffRader (radnummer-gutter + ordnivå); 52 px tryckyta på mobil.
+ */
+function DiffBladdringDialog({
+  nuFiler,
+  nuLaddar,
+  nuFel,
+  turner,
+  onStang,
+}: {
+  nuFiler: Filandring[] | null;
+  nuLaddar: boolean;
+  nuFel: string;
+  turner: DiffTurn[];
+  onStang: () => void;
+}): React.JSX.Element {
+  // Lokalt öppna-tillstånd per sektion+fil — dialogen muterar ALDRIG tråden.
+  const [oppna, setOppna] = React.useState<Set<string>>(new Set());
+  const vaxla = (nyckel: string) =>
+    setOppna((s) => {
+      const kopia = new Set(s);
+      if (kopia.has(nyckel)) kopia.delete(nyckel);
+      else kopia.add(nyckel);
+      return kopia;
+    });
+
+  const filRad = (prefix: string, f: Filandring, forsta: boolean): React.JSX.Element => {
+    const nyckel = `${prefix}:${f.sokvag}`;
+    const arOppen = oppna.has(nyckel);
+    return (
+      <li key={nyckel} className={cn("border-b border-[#21262D]", forsta && "border-t", "last:border-b-0")}>
+        <button
+          onClick={() => vaxla(nyckel)}
+          className="flex min-h-[52px] w-full items-center gap-1.5 px-3 py-1.5 text-left transition-colors hover:bg-[#161B22] sm:min-h-11"
+          title={f.sokvag}
+        >
+          {arOppen ? (
+            <ChevronDown className="h-3 w-3 shrink-0 text-[#8B949E]" />
+          ) : (
+            <ChevronRight className="h-3 w-3 shrink-0 text-[#8B949E]" />
+          )}
+          <FilePen className="h-3 w-3 shrink-0 text-[#8B949E]" />
+          <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-[#E6EDF3]/90">
+            {f.sokvag.split("/").slice(-2).join("/")}
           </span>
-        ))}
-      </pre>
+          {f.plus > 0 && (
+            <span className="shrink-0 rounded-full bg-[#238636]/15 px-1.5 font-mono text-[10px] font-bold text-[#3FB950]">
+              +{f.plus}
+            </span>
+          )}
+          {f.minus > 0 && (
+            <span className="shrink-0 rounded-full bg-[#DA3633]/15 px-1.5 font-mono text-[10px] font-bold text-[#F85149]">
+              −{f.minus}
+            </span>
+          )}
+        </button>
+        {arOppen && <DiffRader fil={f} form="panel" />}
+      </li>
+    );
+  };
+
+  const sektion = (prefix: string, rubrik: string, prompt: string, filer: Filandring[]): React.JSX.Element => {
+    const plus = filer.reduce((a, f) => a + f.plus, 0);
+    const minus = filer.reduce((a, f) => a + f.minus, 0);
+    return (
+      <section key={prefix} className="border-b border-[#21262D] last:border-b-0">
+        <p className="px-3 pb-1.5 pt-2.5 text-[10px] font-semibold uppercase tracking-wider text-[#8B949E]">
+          {rubrik}
+          {plus > 0 && (
+            <span className="ml-2 rounded-full bg-[#238636]/15 px-1.5 font-mono text-[10px] font-bold normal-case tracking-normal text-[#3FB950]">
+              +{plus}
+            </span>
+          )}
+          {minus > 0 && (
+            <span className="ml-1 rounded-full bg-[#DA3633]/15 px-1.5 font-mono text-[10px] font-bold normal-case tracking-normal text-[#F85149]">
+              −{minus}
+            </span>
+          )}
+        </p>
+        {prompt && (
+          <p className="line-clamp-1 px-3 pb-1.5 text-[11px] italic text-[#8B949E]" title={prompt}>
+            ”{prompt}”
+          </p>
+        )}
+        <ul>{filer.map((f, i) => filRad(prefix, f, i === 0))}</ul>
+      </section>
+    );
+  };
+
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-3" onClick={onStang}>
+      <div
+        role="dialog"
+        aria-label="Diff-bläddringen"
+        className="flex max-h-[88dvh] w-full max-w-2xl flex-col overflow-hidden rounded-md border border-[#30363D] bg-[#0D1117] shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center gap-2 border-b border-[#30363D] px-4 py-3">
+          <Diff className="h-5 w-5 shrink-0 text-[#58A6FF]" />
+          <div className="min-w-0 flex-1">
+            <h2 className="text-base font-semibold text-[#E6EDF3]">Diff-bläddring</h2>
+            <p className="truncate text-[11px] text-[#8B949E]">
+              filändringar per turn — klicka en fil för rad-diff med radnummer + ordnivå
+            </p>
+          </div>
+          <button
+            onClick={onStang}
+            title="Stäng (Esc)"
+            aria-label="Stäng diff-bläddringen"
+            className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="min-h-0 flex-1 overflow-y-auto">
+          {/* Senaste turnen — hämtas färskt via lasFilandringar-flödet. */}
+          {nuLaddar ? (
+            <p className="flex items-center gap-1.5 px-3 py-3 text-xs text-[#8B949E]">
+              <Loader2 className="h-3.5 w-3.5 animate-spin text-[#58A6FF]" /> Hämtar senaste turnens ändringar…
+            </p>
+          ) : nuFiler !== null && nuFiler.length > 0 ? (
+            sektion("nu", "Nuvarande ändringar (senaste turnen)", "", nuFiler)
+          ) : null}
+          {nuFel && (
+            <p className="px-3 py-2 text-[11px] leading-relaxed text-[#F85149]">{nuFel}</p>
+          )}
+
+          {/* Tidigare turner ur tråden — omvänd ordning, senaste först. */}
+          {turner.length === 0 ? (
+            <p className="px-3 py-3 text-xs leading-relaxed text-[#8B949E]">
+              Inga tidigare turner med filändringar i denna tråd — skriv något som ändrar filer
+              (eller kör agenten i redigeringsläge) så samlas diffarna här.
+            </p>
+          ) : (
+            turner.map((t, i) => sektion(`turn-${i}`, `Turn ${turner.length - i}`, t.prompt, t.filer))
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -3862,6 +4185,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** VÅG 90: 📎-menyn vid skrivfältet (Fil / Mapp-uppladdning). */
   const [uploadMenyOppen, setUploadMenyOppen] = React.useState(false);
 
+  // ── KONTROLL 9 (c): /DIFF-BLÄDDRINGEN — state för dialogen ─────────────────
+  /** Dialogen öppen + senaste turnens ändringar (färskt via /api/studio/andringar). */
+  const [diffBladdringOppen, setDiffBladdringOppen] = React.useState(false);
+  const [diffNuFiler, setDiffNuFiler] = React.useState<Filandring[] | null>(null);
+  const [diffNuLaddar, setDiffNuLaddar] = React.useState(false);
+  const [diffNuFel, setDiffNuFel] = React.useState("");
+
   const sokInputRef = React.useRef<HTMLInputElement | null>(null);
   const palettInputRef = React.useRef<HTMLInputElement | null>(null);
   const vidBottenRef = React.useRef(true);
@@ -3933,6 +4263,29 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const strömmarHuvud = huvudTabb?.strömmar ?? false;
   const nagotStrömmar = tabbar.some((t) => t.strömmar);
   const arHuvudAktiv = Boolean(aktivTabb?.huvud);
+
+  /**
+   * KONTROLL 9 (c): turner med ändringar ur AKTIVA tråden — senaste först
+   * (källans diffBrowserSources-ordning). Prompten = närmaste föregående
+   * user-meddelande; ändringarna lever redan på assistant-bubblorna
+   * ("ändringar"-eventet + GET /api/studio/andringar vid uppslaget).
+   */
+  const diffTurner = React.useMemo<DiffTurn[]>(() => {
+    const ut: DiffTurn[] = [];
+    for (let i = 0; i < meddelanden.length; i++) {
+      const m = meddelanden[i];
+      if (m.roll !== "assistant" || !m.ändringar || m.ändringar.length === 0) continue;
+      let prompt = "";
+      for (let j = i - 1; j >= 0; j--) {
+        if (meddelanden[j].roll === "user") {
+          prompt = meddelanden[j].text;
+          break;
+        }
+      }
+      ut.push({ prompt, filer: m.ändringar });
+    }
+    return ut.reverse();
+  }, [meddelanden]);
 
   /** VÅG 152 R1-UI — Organismens "Levande barn"-rad: barn som lever just
    *  nu (running/waiting/blocked) ur DELADE levandeSubagenter (s1:s 15
@@ -6881,6 +7234,32 @@ export function StudioChat({ hem }: { hem: () => void }) {
     setPrompterOppen(true);
   }, []);
 
+  /**
+   * KONTROLL 9 (c): öppna /diff-bläddringen — senaste turnens ändringar
+   * hämtas FÄRSKT via lasFilandringar-flödet (GET /api/studio/andringar);
+   * äldre turner kommer ur tråden (diffTurner). Diff är lyx: fel ⇒ info-rad,
+   * dialogen öppnas ändå.
+   */
+  const oppnaDiffBladdring = React.useCallback(() => {
+    setSlashStangd(true);
+    setDiffBladdringOppen(true);
+    setDiffNuLaddar(true);
+    setDiffNuFel("");
+    (async () => {
+      try {
+        const res = await fetch("/api/studio/andringar", { headers: adminHeaders() });
+        const data = (await res.json().catch(() => ({}))) as { filer?: Filandring[]; fel?: string };
+        setDiffNuFiler(Array.isArray(data.filer) ? data.filer : []);
+        if (data.fel) setDiffNuFel(data.fel);
+      } catch {
+        setDiffNuFiler([]);
+        setDiffNuFel("Senaste turnens ändringar kunde ej hämtas — trådens tidigare turner visas ändå.");
+      } finally {
+        setDiffNuLaddar(false);
+      }
+    })();
+  }, []);
+
   const pushaHistorik = React.useCallback((text: string) => {
     const t = text.trim();
     if (!t) return;
@@ -7378,6 +7757,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
           oppnaFiltrad();
           pushAssistant("Filträdet är öppet — klicka dig ner i arbetsytan och förhandsgranska filer.");
           return;
+        case "diff": {
+          // KONTROLL 9 (c): bläddra turnernas filändringar — senaste turnen
+          // hämtas färskt (lasFilandringar-flödet) + äldre ur tråden.
+          oppnaDiffBladdring();
+          pushAssistant(
+            "Diff-bläddringen är öppen — nuvarande ändringar hämtas färskt och tidigare turner listar filer med ±N. Klicka en fil för rad-diff med radnummer (gammal | ny) och word-highlight.",
+          );
+          return;
+        }
         case "fardigheter":
           oppnaFardigheter();
           pushAssistant(
@@ -7412,6 +7800,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
           );
           return;
         }
+        case "sok":
+        case "sök": {
+          // GAP 14 (v164): /sök öppnar ⭐-panelens sökning förifylld —
+          // filtrerar biblioteket + prompthistoriken (substring, skift-
+          // lägesokänsligt); träffar klickbara → infogas i skrivfältet.
+          // "/sok" är ASCII-alias (registrets alias-fält).
+          setPromptSok(argument);
+          oppnaPrompter();
+          pushAssistant(
+            argument
+              ? `Söker «${argument}» i ⭐-biblioteket + din prompthistorik — träffarna listas i panelen, klicka en rad för att infoga den i skrivfältet.`
+              : "Sök är öppet i ⭐-panelen — skriv i sökfältet; söker både biblioteket och din prompthistorik (senaste 50), klick på träff infogar i skrivfältet.",
+          );
+          return;
+        }
         case "modell": {
           const id = argument.split(/\s+/)[0] ?? "";
           const listaText =
@@ -7439,7 +7842,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           return;
       }
     },
-    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, oppnaAutomationPanel, oppnaInstallningar, sparaPrompt, oppnaPrompter, rörTabb],
+    [modeller, valdModell, startaNySession, komprimera, bytModell, oppnaFiltrad, oppnaFardigheter, oppnaStyrelseDialog, oppnaAutomationPanel, oppnaInstallningar, sparaPrompt, oppnaPrompter, oppnaDiffBladdring, rörTabb],
   );
 
   // ── Skicka (SSE över fetch) — PER TABB (våg 84 B) ──────────────────────────
@@ -7965,7 +8368,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       beskrivning: k.beskrivning,
       grupp: "Kommandon" as const,
       ikon: "kommando" as const,
-      sokbar: `${k.syntax} ${k.namn} ${k.beskrivning}`.toLowerCase(),
+      sokbar: `${k.syntax} ${k.namn} ${(k.alias ?? []).join(" ")} ${k.beskrivning}`.toLowerCase(),
       kor: () => void korKommando(k.namn),
     }));
     for (const m of modeller) {
@@ -8005,7 +8408,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
   }, [prompt]);
 
   const slashPoster = React.useMemo(
-    () => (slashFras === null ? [] : STUDIO_KOMMANDON.filter((k) => k.namn.startsWith(slashFras))),
+    () =>
+      slashFras === null
+        ? []
+        : // VÅG 164: alias matchar också — "/sok" hittar kommandot "sök".
+          STUDIO_KOMMANDON.filter(
+            (k) => k.namn.startsWith(slashFras) || (k.alias ?? []).some((a) => a.startsWith(slashFras)),
+          ),
     [slashFras],
   );
 
@@ -8103,6 +8512,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setInstallningarOppen(false);
         setMenyOppen(false);
         setStyrelseOppen(false); // VÅG 91 A3b: styrelse-dialogen stängs (mötet lever kvar)
+        setDiffBladdringOppen(false); // KONTROLL 9 (c): /diff-bläddringen stängs
         setMobilSidebar(false); // VÅG 90: mobil-drawers stängs
         setMobilPanel(false);
         return;
@@ -11656,6 +12066,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
             )}
           </div>
         </div>
+      )}
+
+      {/* KONTROLL 9 (c): DIFF-BLÄDDRINGEN (/diff) — nuvarande + tidigare turner. */}
+      {diffBladdringOppen && (
+        <DiffBladdringDialog
+          nuFiler={diffNuFiler}
+          nuLaddar={diffNuLaddar}
+          nuFel={diffNuFel}
+          turner={diffTurner}
+          onStang={() => setDiffBladdringOppen(false)}
+        />
       )}
 
       {/* GENVÄGSÖVERSIKT ("?"-tangenten). */}

@@ -47,6 +47,18 @@ function korEnGang(namn, kommando, args, cwd) {
   kör(kommando, args, cwd);
 }
 
+/** VÅG 166: minutprecis variant — automation-motorn FÅR ALDRIG missa en
+ *  cron-minut på grund av 2-min-dedupen (bevisat: E2E-sloten 12:30 föll
+ *  mellan 12:28:35 och 12:31:05). 55 s-dedup = en körning per minut. */
+function korMinutvis(namn, kommando, args, cwd) {
+  const nu = Date.now();
+  const sist = senasteKorning.get(namn) ?? 0;
+  if (nu - sist < 55_000) return;
+  senasteKorning.set(namn, nu);
+  logga(`▶ ${namn}`);
+  kör(kommando, args, cwd);
+}
+
 function tick() {
   const d = new Date();
   const min = d.getMinutes();
@@ -59,7 +71,7 @@ function tick() {
   if (min % 10 === 7) korEnGang("prod-synk", "node", ["verktyg/prod-synk.mjs"]);
   if (min % 10 === 8) korEnGang("evighetsmotor", "node", ["verktyg/evighetsmotor.mjs"]);
   if (min % 10 === 9) korEnGang("konfigintegritet", "node", ["verktyg/konfigintegritet-vakt.mjs"]); // v166: automation-motorn varje tick — mikrosekunder när inget förfaller
-  korEnGang("automation-motor", "node", ["verktyg/automation-motor.mjs"]); // beslut 6: crontab + pm2 mot git-referens (data/infra/konfig-referens) — GRÖN/larm till data/vakten/konfig-larm.jsonl
+  korMinutvis("automation-motor", "node", ["verktyg/automation-motor.mjs"]); // beslut 6: crontab + pm2 mot git-referens (data/infra/konfig-referens) — GRÖN/larm till data/vakten/konfig-larm.jsonl
   if (min === 37) korEnGang("juridikgrind", "node", ["verktyg/juridikgrind-vakt.mjs"]); // rådsförbudsscan FÖRE FLYTTKLAR (mega g2) — körs alltid före rondens :43
   if (min === 43 && tim % 3 === 1) korEnGang("styrelserond", "node", ["verktyg/styrelse-rond.mjs"]);
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);

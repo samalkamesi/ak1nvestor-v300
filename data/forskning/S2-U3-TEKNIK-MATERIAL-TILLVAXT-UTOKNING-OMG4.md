@@ -145,3 +145,13 @@ raden) — första universumsraden med brytdningsår, explicit förklarat.
   bolagsunivers.json (mina TSM/BHP/MELI + syskonets BAS.DE enligt
   Koordinering), public/llms.txt (min 119-harmonisering), worklog.md
   (append).
+
+## Tillägg efter commit (race 8 + harmonisering)
+
+Syskonet s2-u2:s commit 9839c530 (Amazon + BHP — de valde OCKSÅ BHP,
+öberoende dublettval) fångade mina tre rader via arbetskopian; min 43d6a4f3
+bar endast protokoll + llms + worklog. BHP-raden i HEAD är MIN (deras
+idempotenta append skrev aldrig över; verifierat: juli–juni-notering,
+FY2023–FY2026, PEG 0,71). llms.txt regenererad på 120-läget (efter deras
+AMZN, teknik 12 bolag) och kontraktstest omkört GRÖNT 0 fel — llms =
+universum = HEAD, kedjan hel.

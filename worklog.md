@@ -11271,3 +11271,23 @@ Leverans: granskning/materialbolagens-tillvaxt.md + granskning/materialbolagens-
 
 ## SPÅR 2 s2-u3 (omgång 4) — 2026-09-16: DATASET-DJUP +3 citeringsmagneter — TSMC, BHP, MercadoLibre; universum 116→119 (teknik/material/tillväxt +1 var) [fabrik]
 OBJEKT: manifestets "+3 bolag, kvartiler + universumjämförelse, läckagevakt 0, prod 200" (omgång 4 — omg 1 energi, omg 2 SPOT/SKA/EVO, omg 3 VOLV/EQT/AXFO). Val med omdöme: teknik/material/tillväxt = de tre branscher som stod kvar på minimitäckning 10 och var helt orörda av spårfamiljens senare omgångar; TSM (världens största halvledarfoundry — teknik saknade hela tillverkningshalvan), BHP (världens största gruvbolag — material saknade diversifierad gruvjätte), MELI (Latinamerikas e-handel+fintech — tillväxt var ren USA-lista); samtliga fria vid kollisionskontrollen. LEVERANS: 3 bolagsrader i bolagsunivers.json, allt live-hämtat 2026-09-16 (stockanalysis översikt+statistics+financials, S&P-underlag, sid-as-of 2026-09-15 close): TSMC 413,75 USD/1 940 mdr, P/E 27,83 (fwd 19,13 ⇒ +45,5 %), P/B 9,53, ROIC 54,0 % med nettokassa-not, serier i TWD med 2023-cykeldipp-not; BHP 84,77/214,78 mdr, P/E 21,84 (fwd 16,72 ⇒ +30,6 %), EV/EBIT 9,32, brutto 85,9 % med gruvkonventions-not, FÖRSTA universumsraden med juli–juni-bokföringsår (FY2023–FY2026, årsetikett = slutår, noterad), resultatCAGR −8,7 % mätt FRÅN cykeltoppen FY2023 med förklarings-not; MELI 1 828,94/92,72 mdr, P/E 49,77 (fwd 43,42 ⇒ +14,6 %), PEG 3,40, skuld/EK 1,69 med Mercado Crédito-låneboks-not, marginalgapet netto 5,3 vs FCF 35,3 % förklarat. Aritmetik maskinverifierad EFTER append (CAGR/prognos/PEG/fcfYield GRÖNA ×3). MEDIANER (projektets EGEN lasBranschMedianer): teknik 31,8→28,0 (kvartiler 20,7–37,8→23,0–37,6, n=11 — TSM drar ned median + lyfter P25), material 18,7→18,8 (14,9–21,2, n=11), tillväxt 94,6→72,2 (41,0–126,6, n=8 — MELI normaliserar), totalt 20,4→20,5 (n=110 av 119). ASPEKT-BONUS: MELI höjde tillväxtens resultat-CAGR-matta till 5 ⇒ gränsregeln öppnade ny aspektsida, kontraktstestets sidkontroller 162→163. llms.txt dataset-block = 119-läget; MALLFÄLLAN-KUREN BEVISAD I PRAKTIKEN: finans-radens "universumets lägsta datatäckning" utelämnas AUTOMATISKT nu när tillväxt (n=5) < finans (n=6) — påståendet är databeräknat, exakt som kuren avsåg. KOORDINERING (spårfamiljens sjunde race): syskonet s2-u1:s BAS.DE + deras llms-116-regeneration var ocommittade vid mitt fönster; mitt 119-läge bygger konvergent på deras 116; min commit tar arbetskopian = deras BAS.DE-rad skyddas från trädåterställningen, ägarskap dokumenterat (spegelbild av race nr 4). KVD: kontraktstest+läckagevakt GRÖNT 0 fel/163 sidkontroller (vakten läser universumet dynamiskt, 119 namn/tickers förbjudna, 0 träffar; 30 varningar pre-existerande); tsc 0 fel via projektbinär; prod 200 (/, /dataset, /dataset/teknik, /api/data/nyckeltalsguide); endast data/ + public/llms.txt = inget bygge, src/ orörd, R2 orörd (data/blogg/ orörd). ÄRVD FLAGGA kvarlive åt huvudagenten: CAGR5ar-fältnamn vs 4 räkenskapsår (s1-u3 flagga 2 — gäller nu 119 rader + BHP:s första brytdningsår). Protokoll: S2-U3-TEKNIK-MATERIAL-TILLVAXT-UTOKNING-OMG4.md. [fabrik]
+
+### SPÅR 2 s2-u3 tillägg — race 8 + llms harmoniserad till 120 (2026-09-16 01:4x–01:5x)
+
+Min commit 43d6a4f3 bar bara 3 filer (protokoll + llms + worklog):
+bolagsunivers.json var redan committat av syskonet s2-u2:s 9839c530 —
+deras commit togs ur arbetskopian som då innehöll MINA TSM/BHP/MELI-rader
+(samma-fils-racet, åttonde fallet; spegelbilden av race 4). BHP-KOLLISIONEN
+uppklarad: s2-u2 valde OCKSÅ BHP (deras "+2" = AMZN+BHP) — deras idempotenta
+append hittade min BHP-rad på disk och skrev aldrig sin egen: HEAD bär EN
+BHP-rad och den är MIN (juli–juni-noteringen, FY2023–FY2026-serierna, PEG
+0,71 — verifierat innehållsmässigt efteråt). Mina rader i git via deras
+commit; ägarskap TSM/BHP/MELI = s2-u3 dokumenterat här och i protokollet.
+INTERIM kvitterad: min llms speglade 119 när s2-u2:s AMZN (teknik 12:e
+bolaget) landat i universumet = 120 — regenererad på 120-läget (totalt
+median P/E 20,5 n=111; teknik 12 bolag P/E 27,9 kvartiler 19,9–37,5) och
+committad; kontraktstest+läckagevakt omkört GRÖNT 0 fel på 120-läget.
+Slutläge verifierat i HEAD: 120 bolag, giltig JSON, llms = universum =
+HEAD. Kur-not åt huvudagenten oförändrad: löpande commit mellan filer
+stoppar ej detta racemönster — index-lås/katalogsekvensiering kvarstår
+som enda fulla kur (race 4-8 i spårfamiljen). [fabrik]

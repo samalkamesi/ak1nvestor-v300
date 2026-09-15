@@ -10913,3 +10913,27 @@ utan krasch, 12-radersväxt med fel på plats 3 fångas — tail-5:s falska nega
 LIVE: fynd = exakt 1 ÄKTA (smutsigt träd i agentarbetsytan, nu synlig), körning 2
 = 0 nya rader 0 fynd, alla 5 loggar i positionsminnet. Protokoll: o11-feljakt-f5-
 rotorsaksfix.md. tsc 0 (projektbinär), ingen bygge (verktyg+data), R2 orörd.
+
+
+## SPÅR 8 s8-u2 (omgång 2) — 2026-09-15: vaktens 0-fynd-jakt — färsk GRÖN 176/0 på aktuell prod + 13:17-vaktkraschens rotorsaka [fabrik]
+OBJEKT: spårets fjärde kontextord "vakten 0-fynd-jakt" — generation 1 av samma
+manifest tog redan grind (u1), beroenden (u2), döda länkar (u3); duplikat kontrollerat
+mot worklog före start (tredje fallet av identiska manifestprompts → omgångsdubbelarbete,
+kuren kvarstår hos huvudagenten). LEVERANS 1: första HEL-gröna beviset på AKTUELL prod
+(ccbadca7) sedan 05:24 — fem src-deployer (läsbarhetsrond 2+3, kaskadkuring, koddelning)
+hade ingen efterföljande GRÖN förrän nu; full cron-kommando efter RAM-grind: 176
+kombinationer 0 fynd, oberoende omräkning ur JSON (88 ok + 88 admin-flik, 0 kontrast/
+utanför/klippt/konsol, max överflöd 2px samtliga /admin-flikar = under 6px-toleransen,
+publika sidor 0px), journal levande 18:27. LEVERANS 2 ROTORSAKA: cron 13:17 LARMAT =
+VAKTKRASCH — ERR_MODULE_NOT_FOUND puppeteer-core vid node-START: statisk toppimport
+körs FÖRE vantaPaFriskBas (deploy-låspoll), 13:17 sammanföll med deploys npm ci som
+tömmer node_modules → falskt kraschlarm + mätningen förlorad till 19:17. KUR
+(verktyg/granssnittsvakt.mjs): dynamisk await import EFTER deployvänt-logiken; importfel
+på frisk bas = tydlig VAKTFEL-rad med rot + reparationsväg + exit 2 (KRASCHAD-grenen
+orörd). BEVIS: A normalfall 12/12 GRÖN; B /tmp-kopia UTAN node_modules (npm ci-tillstånd)
+med låset hållet 75s = processen levde 90s, ingen startkrasch, låset respekterat; C
+samma kopia efter låssläpp = ren diagnos exit 2 — före kur hade B dött på 0,0s (13:17-
+symptomet). KVD: tsc 0 via PROJEKTBINÄR (syskonfyndet tillämpat), ingen src berörd =
+inget bygge, R2 orörd, testspår städade. Protokoll: OPTIMERING/o12-vakt-nollfynd-jakt.md
+(o11 var taget av syskonet u3 mitt i sessionen — namnseries konflikt löst). Not: prod-
+synken i VÄNTAR-RAM med ny kod väntande; 19:17-cronen mäter det bygget.

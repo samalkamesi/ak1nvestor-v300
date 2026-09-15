@@ -23,12 +23,12 @@
 | 6 | Serialiserade permission-dialoger (3.11.2-24) | KONTROLL-DOM: STÄMD — starkare än källan (30 s-timeout + fulla avvisningsvägar; serverside FIFO) | 3 | 1 | STÄNGD (KONTROLL-6-PERMISSION.md) | Kantnotering: klient-multi-pending — fix-skiss i domen |
 | 7 | Isolerade subagent-events (3.11.2-21) | KONTROLL-DOM: STÄMD — tre oberoende lager (sessions-prenumeration, sessionId-vakt, tyst fallthrough); frivillig härdning: 5-nivå-sessionId | 3 | 2 | STÄNGD (KONTROLL-7-SUBAGENT-ISOLERING.md) | — |
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
-| 9 | Diff-bläddring /diff med radnummer+CJK | KONTROLL-DOM (2026-09-15): CJK ✓ budget ✓ — GAP: radnummer-gutter, ordnivå-diff, /diff-bläddrare (skissa i KONTROLL-9-DIFF.md) | 4 | 2 | ÖPPEN (3 delgap) | Verkställ KONTROLL-9:s fix-skiss (AndringsPanel ~2838, DiffForhandsvisning ~2885 + nytt /diff-kommando) |
+| 9 | Diff-bläddring /diff med radnummer+CJK | Gutter (dual, absolut+relativ) + ordnivå-diff + /diff-bläddringsdialog | 4 | 2 | STÄNGD (v164-nav, byggagent; tsc 0 + 26/26; deploy df882dbf) | — |
 | 10 | Mermaid-förhandsvisning | Saknas | 2 | 3 | ÖPPEN | Rendera mermaid-block i chatt-svar (klientbibliotek) |
 | 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | ÖPPEN | Trädvy per iteration (barn klickbara → öppna session) |
 | 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
-| 14 | Prompt-historik-sökning (↑ + sök) | ↑ finns; sök i historiken saknas | 3 | 1 | ÖPPEN | Sök i promptbiblioteket/historiken |
+| 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
 | 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Saknas | 4 | 2 | ÖPPEN | Sökpanel i konversationen med nästa/förra + resultaträkning |
 | 17 | Input-autocomplete @-filer (P2) | Slash finns; @-filuppslag saknas | 4 | 3 | ÖPPEN | Fuzzy @-filreferenser i inmatningen |

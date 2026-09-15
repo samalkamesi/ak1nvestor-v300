@@ -83,6 +83,7 @@ import {
   StudioForbrukningPanel,
   type ForbrukningSvar,
 } from "@/components/ak1a/studio-forbrukning-panel";
+import { StudioGodkannandePanel } from "@/components/ak1a/studio-godkannande-panel";
 import { cn } from "@/lib/utils";
 
 /**
@@ -10076,6 +10077,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
           uppdatera={() => void hamtaForbrukning()}
         />
 
+        {/* GODKÄNNANDE (mega g1 — styrelsens beslut punkt 1): väntar-på-dig-
+            listan med kundens publiceringsknapp (R2). */}
+        <StudioGodkannandePanel />
+
         {/* TERMINAL — senaste verktygskörningar (mini-terminal). */}
         <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
@@ -10365,6 +10370,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 fel={forbrukningFel}
                 uppdatera={() => void hamtaForbrukning()}
               />
+              {/* GODKÄNNANDE (mega g1) — samma sektion som desktop-panelen. */}
+              <StudioGodkannandePanel />
               <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
                 <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   <Terminal className="h-3.5 w-3.5 shrink-0" />

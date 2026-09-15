@@ -354,6 +354,30 @@ EnvironmentFile med chmod 600).
 - Städning oberoende verifierad av u3: ak1a_dr_test borta, PG17 down, disk
   78 GB ledigt. Nästa kvartalsövning oförändrat: **senast 2026-12-15**.
 
+## S10-U1 — DUMP-SLUTMARKÖRSVAKTEN (2026-09-15, LEVERERAD)
+
+- Nytt verktyg `verktyg/kolla-dump-markorer.mjs`: bevisar att natt-dumparna
+  är KOMPLETTA, inte bara giltiga gzip-arkiv — kontraktet är pg_dump 17:s
+  `\restrict`/`\unrestrict`-tokenpar (start rad ~5, sista icke-tomma raden,
+  matchande token) + raden "-- PostgreSQL database dump complete" +
+  gzip-ström-integritet. Streaming, konstant minne, ~6 s/dump. Lägen:
+  baslinje (alla) / `--natt` (dagens, för cron) / `--fil`. Exit 0 endast
+  när alla domar GRÖNA.
+- BEVISAT: 3 sabotagefall (trunkerad gzip, avklippt slut med GILTIG gzip,
+  förfalskad token) = samtliga RÖD exit 1; baslinje 5/5 GRÖNA på dumparna
+  11–15 sep (1 207 625 → 1 267 803 rader, ~10–20 k raders tillväxt/dag).
+- **FYND säkerhet:** 02:30-cronen kör pg_dump med lösenordet i
+  KOMMANDORADEN — under ~2 min/natt syns det i serverns processlista.
+  Kur (huvudagenten): ~/.pgpass (chmod 600) + PGPASSFILE, inga hemligheter
+  i argument. Värdet återges aldrig i repo/loggar.
+- **Retention 30 dagar är REDAN mekaniserad** i samma cron-rad
+  (`find … -mtime +30 -delete`) — härmed dokumenterat; 5 dumpar 11–15 sep,
+  regeln tom ännu (korrekt).
+- VÄNTAR huvudagenten (1 radbyte i crontab, testat klart): lägg sist i
+  02:30-kedjan `&& node verktyg/kolla-dump-markorer.mjs --natt
+  >> /tmp/supabase-backup.log 2>&1` — röd natt blir då loggad RÖD.
+- Fullständig rapport: data/forskning/DUMP-MARKORKOLL-2026-09-15.md.
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

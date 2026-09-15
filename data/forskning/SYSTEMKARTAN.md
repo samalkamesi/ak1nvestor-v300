@@ -144,6 +144,42 @@ Sidofynd (förs till nästa dokvåg/dispatch): C18/E32-fullrevisioner kvarstår
 som kö från u3 (talen redan rättade där); demoklient-G1 + tmp_*-städning i
 PRO-sviterna bokförda av den parallella u2-sektionen.
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u3 omgång 2 — C18 + E32 + C17 diffade mot verkligheten)
+
+u3:s kö fullgjort: C15 togs under mätningen av u2:2 ovan (lämnas orött),
+C18 + E32 är köns rester — och C17 tillkom som tredje system när
+granskningsköns kvartalsmassa visade sig ostämt i kartan. Varje rad MÄTT i
+arbetsytan 2026-09-15 — inte läst ur worklog.
+
+| Mått | Kartan | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| Schema-kurser (C18) | 444/0 (kört 2026-09-11) | **444/0 KÖRT IDAG** — 18 sidor (6 kurser × 3 språk) mot localhost, GODKÄNT |
+| Sitemap (C18) | 1 684 URL:er (våg 78-not) | **1 998 URL:er** (mätt mot localhost:s sitemap.xml) — växer med kurser/speglar; dödlänksvakten 3 012 sökvägar / 0 fynd (s8-u3) |
+| Sökindex (C18) | "åldras mellan deploys" | **friskt**: public/sok-index.json genererad 2026-09-15, committad i b514fe67 (ren i git) — verktyget KÖRS vid kurstillägg, men kopplingen är manuell disciplin (ingen hook); gapet kvarstår i mjukare form |
+| llms + seo.tsx (C18) | llms-txt + llms-full-txt · 809 r | **200 + 200** mot localhost (mätt) · seo.tsx **841 r** (+32 sedan inventeringen) |
+| OG-deploy-steg (C18) | manuellt | **fortfarande manuellt** — deploya-contabo.sh saknar og-generate-koppling (grep: 0 träffar); gapet kvarstår |
+| siffror.json (E32) | 337/8 223/82 230 (rättat omgång 1) | bekräftad mätt; uppdaterad 2026-09-15 i b514fe67; bär även kanonSomKurs 96 |
+| priser.json (E32) | — | **orörd sedan 2026-09-07** (fbfb135f, våg 78) — registret stabilt, speglingsfönstret inte utlöst på 8 dagar |
+| siffror-live (E32) | "saknar konsistenskontroll" | kontraktet DOKUMENTERAT i filhuvudet (raknelogiken speglar rakna-siffror EXAKT, per-fält-fallback mot siffror.json, kastar aldrig, NEXT_PHASE-hermetik, 60 s modul-cache) — men ingen aktiv divergensmätning/larm: gapet kvarstår |
+| pris-inläsning (E32) | "saknar schema-validering" | Supabase-vägen normaliseras med typade guards (tolkaTal + strängkontroller) + tyst fallback till filvärdena; FIL-vägen (priser.json) fortfarande utan schema-kontroll — gapet kvarstår, nu med nyans |
+| Aspektsystemet (C17) | **saknas helt i kartan** | **i kod sedan v150**: /dataset/[bransch]/[aspekt]/page.tsx + dataset-aspekter-kontrakt.ts + 8 moduler (nyckeltal-a/b, pe-pb, omsattning-tillvaxt-ttm, vardering, universum, land) + dataset-aspekt-vy.tsx; /dataset och /dataset/energi svarar 200 (mätt) |
+| Kvartalsserien (C17) | "H3 icke-påbörjad" | **src påståendet sant** (0 kvartalsfiler i src, find mätt) — MEN data-pipelinen lever: V152-KVARTALSKARTA.md (4-fasers plan, 2026-09-14) + fas 2–3 LEVERERADE i granskningskön: 10 branschkalendrar + 3 bolagspaket (H&M/Ericsson/Volvo Car) i kvartal/2026-q3 |
+| Aspekt-testsviten (C17) | saknas i kartan | **TRASIG i rak node** — testa-dataset-aspekter.mjs dör: "OFÅNGAT FEL: ERR_MODULE_NOT_FOUND: src/lib/ordlista imported from dataset-medianer.ts" (ändelselös relativ import; importbro saknas — samma sjukdom som gamla testa-b2b-grind). Testtäckningen förföll tyst |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| C18 | 9 → **9** | 444/0 bevisat igen idag + llms 200/200 + sitemap 1 998 + sökindex friskt; G1-slutverifieringen (Google rich-results live) återstår — redan toppnoterat, ingen poängrörelse |
+| E32 | 8 → **8** | siffror.json färsk + priser.json stabil; konsistenskontroll och fil-schema-validering saknas fortfarande — inga nya bevis som flyttar poängen |
+| C17 | 9 → **9** | Två ytor tillkommit som kartan saknade (aspekter i kod, kvartalsdata i kö) MEN aspekt-testsviten är trasig — större yta, tyst testförfall: netto ingen score-rörelse |
+
+Snittscore **7,5** (284 poäng / 38 system — oförändrad av denna omgång; inga
+score-rörelser, endast läges- och yträttningar med egna mätbevis).
+
+Dispatch-kö från fynden: (1) **testa-dataset-aspekter.mjs-reparation**
+(importbro à la v82-kurs-metadata-bro — tills dess är aspektstatus okänd);
+(2) kvartals-H3-src (/kvartalsdata) har nu färdigt underlag: A4-kontraktet +
+V152-kartan + 13 Kön-filer.
+
 ---
 
 
@@ -167,7 +203,7 @@ PRO-sviterna bokförda av den parallella u2-sektionen.
 | B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | Inga tester; externa beroenden (MarketStack/Yahoo) utan fallback-test |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
 | C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 13 kvartalspaket); schemalagd re-run saknas |
-| C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Kvartalsrapport H3: kontrakt klart, src EJ PÅBÖRJAD |
+| C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Aspektsystemet (v150) i kod men saknat i kartan; kvartalsserien v152: kalendrar+bolagspaket i granskningskön, /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
 | D20 | Inloggning & konto (L1) | Medlem | LEVER | 7 | LOGIN-2.0 E2E-verifierad (specifika feltexter live); återställ lösenord + E2E-svit saknas |
@@ -191,7 +227,8 @@ PRO-sviterna bokförda av den parallella u2-sektionen.
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
 Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37 +1 vid
-dokvågarna 2026-09-15; C15+C16 reviderade utan scoreändring). Sämst:
+dokvågarna 2026-09-15; C15+C16 reviderade utan scoreändring; u3 omgång 2
+diffade C17/C18/E32 med egna mätbevis utan poängrörelser). Sämst:
 betalning (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 
 ---
@@ -514,44 +551,72 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
   (2) fabrikens serier styrs av hårdkodad serie-lista — ny serie
   kräver kod; (3) ingen schemalagd re-run (kvartalsvis serie-enligt-H3).
 
-## C17. Dataset-citeringsmagneterna — LEVER — 9/10
+## C17. Dataset-citeringsmagneterna — LEVER — 9/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3 omgång 2): två ytor kartan missade, båda
+mätta i arbetsytan — (1) ASPEKTSYSTEMET (v150) lever i kod:
+/dataset/[bransch]/[aspekt]-rutter + dataset-aspekter-kontrakt.ts + 8
+moduler i src/lib/dataset-aspekter/ + dataset-aspekt-vy.tsx; /dataset och
+/dataset/energi svarar 200. (2) KVARTALSSERIEN (v152) har fas 2–3
+LEVERERADE i data: 10 branschkalendrar + 3 bolagspaket (H&M/Ericsson/
+Volvo Car) i granskningskön data/blogg-utkast/kvartal/2026-q3 — men
+/kvartalsdata-src fortfarande ej påbörjad (find: 0 kvartalsfiler i src).
+NYTT GAP: aspekt-testsviten testa-dataset-aspekter.mjs är TRASIG i rak
+node (ERR_MODULE_NOT_FOUND: dataset-medianer.ts importerar './ordlista'
+ändelselöst — importbro saknas). Score 9 kvar: ytan växt men
+testtäckningen föll tyst — netto noll.*
 
 - **Vad:** Publika branschmedianer (P/E, direktavkastning, marginaler ...) +
   kvartilsspridning + bransch-mot-universum med delta-pilar, 10 branscher ×
-  3 språk = 33 URL:er med Dataset-JSON-LD, llms.txt-sektion, sortering,
-  kurslänkning. Kontrakt: endast medianer/aggregat — per-bolag ALDRIG.
+  3 språk = 33 URL:er med Dataset-JSON-Ld, llms.txt-sektion, sortering,
+  kurslänkning — sedаn v150 dessutom aspektsidor (nyckeltal per aspekt ×
+  bransch). Kontrakt: endast medianer/aggregat — per-bolag ALDRIG.
 - **Nyckelfiler:** src/lib/{dataset-medianer (314 r),dataset-nyckeltal
-  (393 r)}.ts, src/app/(huvud)/dataset/** + speglar, src/app/api/llms-txt,
-  verktyg/v98-dataset-vakt.mjs (permanent läckagevakt: 222 filer, 0 träffar),
-  data/forskning/A2-DATASET-KONTRAKT.md + A4-KVARTAL-KONTRAKT.md.
+  (393 r)}.ts, src/lib/dataset-aspekter-kontrakt.ts + dataset-aspekter/
+  (8 moduler), src/app/(huvud)/dataset/** (+ [bransch]/[aspekt]) + speglar,
+  src/app/api/llms-txt, verktyg/{v98-dataset-vakt (läckagevakt: 222 filer,
+  0 träffar),testa-dataset-aspekter (TRASIG — se gap 0)}.mjs,
+  data/forskning/{A2-DATASET-KONTRAKT,A4-KVARTAL-KONTRAKT,
+  V152-KVARTALSKARTA}.md.
 - **Observation:** KVD-mässigt exemplariskt: 33/33 URL:er 200, 0 bolags-
-  läckage programmatiskt bevisat, kontrakt i filhuvuden. **Men:** A4-kvartals-
-  rapporten (/kvartalsdata, frusna utgåvor med md5+CC-BY) har kontrakt men
-  INGEN src-kod — H3 är därmed ej "pågående i koden" utan icke-påbörjad.
-- **GAP:** (1) kvartalsrapport-H3: route /kvartalsdata/[kvartal] + index +
-  frysnings-pipeline (kontraktet A4 är färdigt underlag — en våg);
-  (2) tidsserie/jämförelse mot föregående utgåva saknas (kräver H3);
-  (3) datasetens uppdateringscadans dokumenteras på sidan (n-redovisat finns,
-  "nästa frysning" saknas).
+  läckage programmatiskt bevisat, kontrakt i filhuvuden. A4-kvartals-
+  rapporten (/kvartalsdata, frusna utgåvor med md5+CC-BY) har kontrakt +
+  V152-plan + producerat kömaterial men fortfarande INGEN src-kod.
+- **GAP:** (0) testa-dataset-aspekter.mjs repareras (importbro à la
+  v82-kurs-metadata-bro — annars okänd aspektstatus; mätt TRASIG
+  2026-09-15); (1) kvartalsrapport-H3: route /kvartalsdata/[kvartal] +
+  index + frysnings-pipeline (underlaget är nu KOMPLETT: A4-kontraktet +
+  V152-kartan + 13 Kön-filer — en våg); (2) tidsserie/jämförelse mot
+  föregående utgåva saknas (kräver H3); (3) datasetens uppdateringscadans
+  dokumenteras på sidan (n-redovisat finns, "nästa frysning" saknas).
 
-## C18. SEO/schema/llms.txt — LEVER — 9/10
+## C18. SEO/schema/llms.txt — LEVER — 9/10 *(uppdaterad 2026-09-15)*
 
-- **Vad:** pageMetadata-centrum (809 r), Course/FAQPage/BreadcrumbList-schema
+*Uppdatering 2026-09-15 (s9-u3 omgång 2): schema-kurser OMÄTT GRÖN igen —
+444 kontroller / 0 fel (18 sidor, 6 kurser × 3 språk mot localhost).
+llms-txt + llms-full-txt 200/200 (mätt). sitemap 1 684 → **1 998 URL:er**.
+sökindex FRYSKT: sok-index.json genererad 2026-09-15, committad i b514fe67 —
+men kopplingen förblir manuell disciplin. seo.tsx 809 → 841 r. OG-steget
+fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
+0 träffar). Kursantalet i G1-gapet rättat 333 → 337. Score 9 kvar.*
+
+- **Vad:** pageMetadata-centrum (841 r), Course/FAQPage/BreadcrumbList-schema
   på alla 337 kurser × 3 språk, Dataset-schema, llms.txt + llms-full-txt,
   sitemap (inkl. tier-gating), robots (pro-stängning), hreflang-speglar,
   OG-generering vid deploy, sökindex.
-- **Nyckelfiler:** src/lib/seo.tsx (809 r), src/lib/schema-kurser.ts (192 r),
+- **Nyckelfiler:** src/lib/seo.tsx (841 r), src/lib/schema-kurser.ts (192 r),
   src/app/{sitemap.ts,robots.ts}, src/app/api/{llms-txt,llms-full-txt},
   verktyg/{testa-schema-kurser,seo-generate,og-generate,kor-sokindex}.mjs,
   data/forskning/V84-METADATA-KARTA.md.
-- **Observation:** testad schema-kurser 444/0 grönt (18 sidor, körd nu);
-  G1:s FAQPage ur learn/why-innehåll (inga påhittade frågor) lever i kod.
-  Verktygskedja genererar OG + sökindex vid deploy.
-- **GAP:** (1) G1-slutverifiering: full 333×3-maskinell körning + Google
+- **Observation:** testad schema-kurser 444/0 grönt (18 sidor; körd 2026-09-11
+  och igen 2026-09-15); G1:s FAQPage ur learn/why-innehåll (inga påhittade
+  frågor) lever i kod. Verktygskedja genererar OG + sökindex vid deploy.
+- **GAP:** (1) G1-slutverifiering: full 337×3-maskinell körning + Google
   rich-results live-test (stickprov gjorda enligt våg 99-dok);
   (2) OG-genereringen är ett manuellt deploy-steg (kan glömmas — hook/
   deploy-skript-koppling); (3) sökindexet (data via kor-sokindex) åldras
-  mellan deploys.
+  mellan deploys — mjukare i praktiken: verktyget körs vid kurstillägg
+  (sok-index.json committad färsk 2026-09-15) men ingen mekanisk tvingan.
 
 ## C19. Trafik, spår & konvertering — LEVER — 7/10
 
@@ -912,7 +977,16 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   (data/sql/oversattningar.sql) körs av kund ELLER event-vägen fullt ut;
   (4) speglarnas täckning av NYA ytor (tier-sidor D23 saknar speglar).
 
-## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10
+## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u3 omgång 2): siffror.json bekräftad mot
+guldkällan (337/8 223/82 230 + kanonSomKurs 96; uppdaterad 2026-09-15 i
+b514fe67). priser.json ORÖRD sedan 2026-09-07 (fbfb135f) — registret
+stabilt, speglingsfönstret inte utlöst på 8 dagar. siffror-live bär nu ett
+dokumenterat kontrakt i filhuvudet (raknelogik speglar rakna-siffror
+EXAKT, per-fält-fallback, kastar aldrig, NEXT_PHASE-hermetik) men ingen
+aktiv divergensvakt; Supabase-vägens prisnormalisering har typade guards
+medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
 
 - **Vad:** Pris- och tal-sanningen: priser.json (ALLA priser + fas-rabatt +
   B2B + onboarding) med Supabase-override senaste-vinner via variabler-

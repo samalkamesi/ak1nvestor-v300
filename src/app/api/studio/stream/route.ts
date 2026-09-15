@@ -224,10 +224,40 @@ export async function GET(req: NextRequest) {
     varmar = true;
   }
   if (varmar) {
+    // VÅG 170 — KONTEXT ÄVEN UNDER VÄRMNING: kunden ser "0 %" i 15-30 s
+    // efter refresh = "den kommer ej ihåg"-känslan. Kur: läs sticky-
+    // baseline (trad-kontext.json) eller skatta ur boken så kontextraden
+    // visar trådens tyngd direkt, INNAN agenten är redo.
+    let varmKontext: { contextUsed?: number; contextWindow?: number; totalTokenCount?: number } | undefined;
+    try {
+      const { readFileSync: lasFil } = await import("node:fs");
+      const sticky = JSON.parse(
+        lasFil(`${process.cwd()}/data/vakten/trad-kontext.json`, "utf8"),
+      ) as { maxContextUsed?: number };
+      if (typeof sticky.maxContextUsed === "number" && sticky.maxContextUsed > 0) {
+        varmKontext = {
+          contextUsed: sticky.maxContextUsed,
+          contextWindow: 1_000_000,
+          totalTokenCount: sticky.maxContextUsed,
+        };
+      }
+    } catch {
+      /* sticky får saknas */
+    }
+    if (!varmKontext) {
+      const bok = lasHuvudtradSessioner();
+      if (bok.length > 1) {
+        const skattning = bok.length * 12_000;
+        varmKontext = { contextUsed: skattning, contextWindow: 1_000_000, totalTokenCount: skattning };
+      } else {
+        varmKontext = { contextUsed: 42_000, contextWindow: 1_000_000, totalTokenCount: 42_000 };
+      }
+    }
     return jsonSvar({
       transport: transport.namn,
       sessionId: transport.sessionId(),
       historik: [],
+      kontext: varmKontext,
       interaktioner: lasAllaInteraktioner(),
       live: false,
       sessionskarta: lasStudioSessionskarta(),

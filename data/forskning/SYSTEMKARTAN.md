@@ -247,12 +247,68 @@ Snittscore **7,5** (285 → 286 poäng / 38 system; E34 +1 vid denna dokvåg).
 
 Kö till huvudagenten från fynden: (1) s10-u1:s crontab-radbyten (markörvakts-
 append `&& node verktyg/kolla-dump-markorer.mjs --natt` + pgpass-kuren —
-crontab mätt: raden slutar fortfarande efter find-delete och bär
-db-lösenordet i klartext, värdet återges aldrig här); (2) composite-indexet
+crontab mätt: raden slutar fortfarande efter find-delete och bär db-lösenordet
+i klartext, värdet återges aldrig här); (2) composite-indexet
 nu mätt obehandlat — kör ALTER-system_events-composite.sql vid nästa
 DR-fönster (prestanda vid växande event-tabell); (3) E28 gap 1 (JSON-reparatur
 eller strukturell prompt) lever — styrelsens syntes faller fortfarande till
 fallback (senast 09-15 05:17).
+
+## UPPDATERING 2026-09-15 (dokvåg s9-u2 omgång 3 — E31 + E26 diffade mot verkligheten)
+
+Objektval mot duplikat EFTER kollisionskontroll (tre syskon diffade
+SYSTEMKARTAN under dagen: u1:4 tog A3, u3 omgång 3 tog E34+E33+E28 medan
+denna agent mätte — deras trädrättningar lästes och lämnas orörda). Fria
+system med mätbar drift valdes: E31 (kartans röda MÖS-motorfynd mot dagens
+verklighet) och E26 (mega-beslutets spår 1–2 — godkännandeytan + audit +
+mekanisk juridikgrind — saknas helt i kartan). Varje rad MÄTT i arbetsytan
+2026-09-15 (svitkörningar, vaktexekvering, ls/grep, node-läsning av JSON) —
+inte läst ur worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| MÖS i motorvalideringen (E31) | "FAILAR MÖS-kontrollen — ordgräns 5000/anropstak 400 … en av två röda som håller vakten GUL" | **107 PASS / 0 FAIL / 0 SKIP (10,8 s) — KÖRD I DENNA DOKVÅG**: MÖS-fasen passerar (termbankens garanti-kontrakt, termKonsistens, sifferIntegritet — deterministiska kärnor utan nät). Båda 09-11-röda (B11-determinism + MÖS) är borta sedan 09-13 — kartans fynd är historik |
+| Översättnings-fallback-kön (E31) | 320 poster | **320 oförändrat** (mätt) — men ACKUMULERANDE enligt u3 omgång 3:s E33-brytning (240 vantar-motor / 71 publicerad / 9 granskning): publicerade rensas ej ur filen |
+| I1-kvalitetsaudit (E31) | "PÅGÅR enligt rankningen" | **0 artefakter i data/forskning/** (ls mätt — ingen MÖS/I1/översättnings-audit-fil): auditen opåbörjad, PÅGÅR (I1) korrekt läge |
+| Tier-spegelgap (E31 gap 4) | "tier-sidor D23 saknar speglar" | **kvarstår** (ls mätt: src/app/en/portfolj-grund och src/app/ar/portfolj-grund existerar ej) |
+| Godkännandeytan (E26) | saknas helt i kartan | **BYGGD (mega-beslut spår 1)**: src/app/api/studio/godkannande/ (route + publicera) — requireAdmin på ALLA metoder, atomär val-fil (data/vakten/godkannande-val.json), endast "behåll"-val här; publicera-rutten = kundens R2-knapp med audit-rad (aktör "kund") + mekanisk juridikgrind kopplad (v168 integration-audit p4: kontrolleratextRad före publicering) |
+| Audit-megasystemet (E26) | saknas helt | **LEVERANDE**: src/lib/studio/audit-logg.ts + data/vakten/audit-logg.jsonl **68 677 byte aktiv** (mätt) — append-only spårbarhet för autonoma aktörer (mega-beslut spår 2) |
+| Mekanisk juridikgrind (E26) | saknas helt | **verktyg/juridikgrind-vakt.mjs KÖRD nu (exit 0)**: status GUL — 0 FEL / 8 VARNING, larmfil data/vakten/juridik-larm.json (senasteKörning 16:56); FLYTTKLAR-strängen i 21 utkastfiler (grep mätt; mega-beslutet räknade 14 — kön växer) |
+| GDPR-datakartan (E26) | saknas | **data/forskning/GDPR-DATAKARTA.md LEVER på disk** (mega-beslut åtgärd 7) |
+| Admin-paneler (E26) | "15 paneler" | **16 komponenter** i src/components/ak1a/admin/ (mätt; organ-panel tillkommen sedan inventeringen) |
+| Admin-sessionssviten (E26) | "14/14 (vid inventeringen)" | **14/14 KÖRD GRÖN nu** (mätt i denna dokvåg) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E31 | PÅGÅR 7 → **PÅGÅR 7** | Observationsrättning med eget mätbevis: motorvalideringens MÖS-röd är BORTA (107/0/0 mätt nu) — "en av två röda som håller vakten GUL" är historik från 09-11; kön 320 och tier-spegelgapet kvarstår, I1-auditen opåbörjad. Ingen score-rörelse — rättningen speglar en fix som levererades FÖRE dokvågen (09-13); kartan var inaktuell (samma precedens som C15/C16) |
+| E26 | LEVER 8 → **LEVER 8** | Yttillväxt utan poäng: godkännandeytan + audit-loggen + juridikgrind-vakten + GDPR-kartan lever (mätt i kod/disk/körning) men publicera-vägen är E2E-overifierad (R2-knappen är kundens — orörd av princip), juridikvakten ger 8 FP-VARNINGAR (ordlistan träffar meta-texter som CITERAR förbudsorden), gamla gapen (manuell spegling, Elliott-test, IP-block) kvarstår |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad av denna dokvåg; inga
+poängrörelser, endast läges- och yträttningar med egna mätbevis).
+
+E28-tilläggsfynd (syskonet u3 omgång 3 diffade E28 medan denna agent mätte —
+deras not håller FLAGGA 6 med lägesrättning; mina tre MÄTTA fynd saknas där
+och bokförs som kö, E28-blocket lämnas åt dem): (1) **testa-styrelse.mjs är
+RÖD mot härdad prod** — dör POST 401 "Admin-lösenord krävs
+(x-admin-password)" (0 PASS, mätt nu): rutten härdades efter våg 91:s
+mock-test, sviten följde inte med; (2) **styrelse-rond-cronen 2 av 4
+sändningar FEL idag** (11:43 + 14:43 fetch failed, 3 försök vardera,
+data/vakten/styrelse-rond.log) — sammanfaller med RAM-svält-fönstret
+13:17–14:42 och syns ENDAST i loggen (F6-larmvägen täcker mal-hjärtat, ej
+ronden); (3) **beslutsminnet 32 poster** (mätt; ronder 33–37 med landat-
+commits 6ea6acda…19a8e8e1) och parse-räntan **3 av 4 möten sedan 09-13**
+(mega-beslutet 09-14 parsat helt — verklig ORDFORANDE-JSON i protokollet).
+
+Bekräftelserad: u1:4:s A3-sektion (PÅGÅR 7 → LEVER 8) stämmer med egna
+oberoende körningar — de fyra våg-158-lagerna 83 PASS 0 FAIL + modellagret
+38 kontroller gröna (identiska tal; mätt innan deras commit upptäcktes).
+
+Dispatch-kö från fynden: (1) testa-styrelse.mjs anpassas till härdade
+rutters admin-session (motorstatus är idag driftbevisad, ej svitbevisad);
+(2) rond-cronens fetch-fel får larmväg; (3) juridikgrindens ordlista lär
+sig skilja meta-texter (citat av förbudsorden) från faktiska råd — 8
+FP-VARNINGAR idag; (4) E26 publicera-E2E bevisas vid kundens första
+knapptryckning (R2 — orgens ansvar är att audit-loggen fångar den).
 
 ---
 
@@ -287,12 +343,12 @@ fallback (senast 09-15 05:17).
 | D24 | Fas 2/3-access | Medlem | LEVER | 8 | Manuell admin-aktivering skalar inte |
 | D25 | Referral + e-post + notiser | Medlem | LEVER | 6 | E-post/notiser utan tester; driftstatus overifierad |
 | D38 | Medlemsnavet — Min Sida-portalen (AnalysNavet, KursNavet, PortfoljNavet, bevakning) | Medlem | LEVER | 8 | Inga egna E2E-tester; pass.namn-API-texter svenska; gäst-flödet enklare |
-| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Spegling Supabase→fil manuell (synka-*); session-cookie framför lösenord = steg 5 |
+| E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | Godkännandeyta + audit + mekanisk juridikgrind LEVER (mega-beslut spår 1–2, mätt 2026-09-15); kvar: manuell spegling, juridik-FP på meta-texter, publicera-E2E (R2-knapp orörd) |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Protokoll lever till 09-15 med åtgärder i innehåll (4 möten mätta — "tomma beslut" motbevisat); JSON-syntes-fallbacken lever i senaste mötet: gap 1 kvarstår |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (25 klara manifest, pumpor i ps); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
-| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Portalens sista trespråksgap stängt (våg 113); MÖS-kvalitetsaudit kvar |
+| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | MÖS-röden i motorvalideringen BORTA (107/0/0 mätt 2026-09-15 — gamla fyndet historik); I1-kvalitetsaudit + tier-spegel-gap kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Kvartals-DR bevisad 2× (17,7 s + 14,7 s replik, 09-15); dump-markörvakt GRÖN (egen mätning); retention mekaniserad i cron; kvar: cron-koppling + pgpass (huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
@@ -888,28 +944,56 @@ e-postverifieringsläge.*
 
 # E. STYRNING, VERKTYG & GRUND
 
-## E26. Admin-panelen — LEVER — 8/10
+## E26. Admin-panelen — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u2 omgång 3): MEGA-BESLUTETS SPÅR 1–2 SAKNADES I
+KARTAN och lever nu (allt mätt i arbetsytan): godkännandeytan
+src/app/api/studio/godkannande/ (requireAdmin på alla metoder, atomär
+val-fil, kundens R2-publiceringsknapp med mekanisk juridikgrind kopplad i
+publicera-rutten — våg 168 integration-audit p4), audit-megasystemet
+src/lib/studio/audit-logg.ts med AKTIV audit-logg.jsonl (68 677 byte),
+juridikgrind-vakt.mjs KÖRBAR (GUL: 0 FEL / 8 VARNING, larmfil lever) och
+GDPR-DATAKARTA.md. Admin-sessionssviten 14/14 GRÖN mätt nu; 16 panelkomponenter
+(förr 15). Score 8 kvar: publicera-vägen E2E-overifierad (R2-knappen är
+kundens), juridikvakten ger FP på meta-texter som citerar förbudsorden,
+gamla gapen kvarstår.*
 
 - **Vad:** "WordPress på långt håll": 15+ flikar (översikt, medlemmar,
   variabler, blogg-publicering, översättning/termbank, kurser-metadata,
   media, bokningar, analys-uppladdning med Elliott-redigerare, aktivitet,
   ekosystem, trafik/säkerhet, konvertering, utveckling, puls), rollerna
-  ADMIN + REDAKTÖR, HMAC-signerad session-cookie (8 h).
+  ADMIN + REDAKTÖR, HMAC-signerad session-cookie (8 h). Sedan
+  mega-beslutet (2026-09-14) dessutom: godkännandeytan ("väntar på dig"-
+  lista med förhandsgranskning + kundens publiceringsknapp, R2 intakt)
+  och audit-megasystemet (append-only händelselogg per autonom skrivning)
+  — byggda på samma admin-session.
 - **Nyckelfiler:** src/app/(huvud)/admin/page.tsx, src/components/ak1a/admin/
-  (15 paneler), src/lib/{admin-auth (245 r),admin-klient,medlem-admin}.ts,
-  src/app/api/admin/** (24 rutter), verktyg/testa-admin-session.mjs (14/14).
-- **Observation:** Alla fyra provade delsviter gröna (admin-session 14/14,
-  kurs-metadata 16/16, mediabibliotek 18/18, medlem-auth 17/17). Prod utan
-  ADMIN_PASSWORD ⇒ 500 på skrivytor (inget dev-fallback-läck). REDAKTOR_
-  PASSWORD satt + verifierad (våg 96). Variabelpanelen har vitlista +
-  gratis-lås + revisionslogghistorik.
+  (16 komponenter), src/lib/{admin-auth (245 r),admin-klient,medlem-admin}.ts,
+  src/app/api/admin/** (24 rutter), src/app/api/studio/godkannande/**
+  (route + publicera), src/lib/studio/audit-logg.ts,
+  verktyg/{testa-admin-session (14/14 mätt 2026-09-15),juridikgrind-vakt}.mjs,
+  data/vakten/{audit-logg.jsonl,godkannande-val.json,juridik-larm.json},
+  data/forskning/GDPR-DATAKARTA.md.
+- **Observation:** Alla fyra provade delsviter gröna (admin-session 14/14
+  MÄTT NU igen, kurs-metadata 16/16, mediabibliotek 18/18, medlem-auth
+  17/17). Prod utan ADMIN_PASSWORD ⇒ 500 på skrivytor (inget
+  dev-fallback-läck). REDAKTOR_PASSWORD satt + verifierad (våg 96).
+  Variabelpanelen har vitlista + gratis-lås + revisionslogghistorik.
+  Godkännande-rutterna bär requireAdmin + audit-rad per val, och
+  publicera-rutten kör kontrolleratext-grinden mekaniskt FÖR publicering
+  med audit-aktör "kund" — R2-knapptryckningen förblir kundens.
 - **GAP:** (1) commit-back-spegling (Supabase→priser.json/termbank) är
   MANUELL (synka-variabler/synka-termbank före pipelinerun) — steg 5-alt C
   automation återstår; (2) session-cookie-läget dokumenterat men sessionStorage-
   rester (x-admin-password) lever kvar som bootstrap; (3) analys-uppladdningens
   Elliott-redigerare saknar test; (4) admin-URL:en offentligt känd —
   fail2ban-liknande skydd mot lösenordsmalming finns via rate-limit men
-  ingen IP-block.
+  ingen IP-block; (5) NY: juridikgrind-vaktens ordlista ger 8 FP-VARNINGAR
+  på meta-texter som CITERAR förbudsorden (t.ex. gransknings-MD:er som
+  redovisar "0 träffar på köp/sälj-råd") — grinden lär sig skilja citat
+  från råd; (6) NY: publicera-vägen E2E-bevisas först vid kundens första
+  knapptryckning (R2 — tills dess är flödet kodbevisat, ej körbevisat).
+
 
 ## E27. Studio (Z-portalen i molnet) — LEVER — 9/10 *(uppdaterad 2026-09-15)*
 
@@ -1062,7 +1146,17 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   demoklient-G1 röd — demodatot saknar fullständigt AKM2Resultat; fixa
   fixture eller testkontrakt innan B2B-aktiveringspaketet hämtas fram.
 
-## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10
+## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u2 omgång 3): det KÖRTA FYNDET nedan är HISTORIK —
+motorvalideringen KÖRD I DENNA DOKVÅG: 107 PASS / 0 FAIL / 0 SKIP (10,8 s),
+MÖS-fasen passerar (termbankens garanti-kontrakt, termKonsistens,
+sifferIntegritet). Båda 09-11-röda (B11-determinism + MÖS) är borta sedan
+09-13 — "en av två röda som håller vakten GUL" stämmer inte längre.
+Fallback-kön fortfarande 320 poster (mätt; ackumulerande enligt E33-brytningen
+i dokvåg u3 omgång 3). I1-auditen opåbörjad (0 artefakter i data/forskning/),
+tier-spegelgapet kvarstår (en/ar portfolj-grund saknas, ls mätt). Läge PÅGÅR
+(I1) och score 7 korrekt kvar.*
 
 - **Vad:** Tre språk (sv/en/ar) över hela sajten: spegelträd (en)/(ar),
   översättningsmotor med leverantörskedja (DeepL → Google → MyMemory →
@@ -1079,18 +1173,22 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   termbank-tillagg.json}, verktyg/{kor-oversatt-batch,importera-oversattning,
   synka-termbank,v80a-*}.mjs.
 - **Observation:** ~100 % täckning (kurser, blogg, UI, dataset) men
-  "okvalitetsgranskad sen våg 80" (rankning #2 korrekt). **KÖRT FYND:**
-  motorvalideringen FAILAR MÖS-kontrollen — "ordgräns 5000 respekteras ej;
-  anropstak 400 respekteras ej" (MyMemory-kvoterna) — kvotbalansen är alltså
-  REGLERAD I KODEN men icke-fungerande/Testat-fel just nu. Fallback-kön
-  bär 320 poster (notering: "produktion kräver tabellen oversattningar" —
-  kund-SQL ej körd).
+  "okvalitetsgranskad sen våg 80" (rankning #2 korrekt). Historiskt fynd
+  2026-09-11: motorvalideringen failade MÖS-kontrollen ("ordgräns 5000 /
+  anropstak 400 respekteras ej") — MOTBEVISAT 2026-09-15: valideringen
+  kör 107/0/0 med MÖS-grönt (mätt; även 2026-09-13 grönt enligt KVD-noten).
+  Fallback-kön bär 320 poster (notering: "produktion kräver tabellen
+  oversattningar" — kund-SQL ej körd).
 - **GAP:** (1) I1-kvalitetsvåg: stickprovs-audit sv↔en↔ar (maskinella
   anomalier: ordlängd, okända tecken, ofullständiga, falska vänner) +
-  fixpaket — PÅGÅR enligt rankningen; (2) MÖS-kvots-kontrollen repareras
-  (en av två röda som håller vakten GUL); (3) tabellen oversattningar
+  fixpaket — OPÅBÖRJAD (0 artefakter, mätt 2026-09-15); (2) motorvalideringens
+  MÖS-kontroll är GRÖN igen (107/0/0, mätt) men den testar deterministiska
+  kärnor utan nät — kvotbalansen mot LEVANDE leverantör (MyMemory-fönstret)
+  bevakas ej; (3) tabellen oversattningar
   (data/sql/oversattningar.sql) körs av kund ELLER event-vägen fullt ut;
-  (4) speglarnas täckning av NYA ytor (tier-sidor D23 saknar speglar).
+  (4) speglarnas täckning av NYA ytor (tier-sidor D23 saknar speglar —
+  mätt kvarstående 2026-09-15).
+
 
 ## E32. Guldkällorna (variabler + siffror) — LEVER — 8/10 *(uppdaterad 2026-09-15)*
 

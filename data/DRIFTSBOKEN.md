@@ -555,3 +555,15 @@ får ALDRIG krascha sattMal/rensaMal.
 - **Lärdom (Lag 6):** omleverans av ett larm är INTE ett nytt fel —
   verifiera fyndloggens tidsstämpel mot nuet FÖRE rot-analys, annars
   kurar man ett spöke. Rutinregel från och med rond 34.
+
+## 2026-09-15 rond 35 — F6-omleverans #3: rot i LARMVÄGEN (våg 171)
+- SYMPTOM: tredje "FELJÄGAREN FYNN: prod osvarar" till sessionen. Fyndloggen: ingen
+  ny F6-rad efter 14:42:45Z (rond 33:s RAM-svält, kurad våg 169). Prod 200; grön
+  feljägarkörning 15:44:46Z (18/18 API).
+- ROT: mal-hjartslag.mjs fyndkick (våg 168 p5) läste sista 5 rader + filtrerade
+  HÖG/KRITISK — utan ts-koll. Kurade rader i svansen ⇒ re-alarm var 30:e minut.
+- KUR: våg 171 tidsfilter — endast fynd yngre än 35 min får kicka. Filterbevis mot
+  prodloggen: gamla filtret 1 (exakt 14:42:45-raden), nya 0.
+- VACCIN (klassen): en larmkanal utan tidsstämpelkoll re-alarmar kurade fel i all
+  evighet — alla fyndkickar måste kräva färsk ts. Persistens hos verkligt fel ger
+  NYA rader med färsk ts ⇒ alarmeras korrekt kvar.

@@ -10849,3 +10849,11 @@ feljägarkörning 15:44:46Z ALLT GRÖNT (F3 18/18 endpoints 200 — vid incident
 incidenten (15:01:56/15:32:53/15:40:51Z, alla prod 200) passerade grinden; ram-grind.logg tom
 = aldrig behövt ingripa. Lärdom (Lag 6): omlevererat larm ≠ nytt fel — tidsstämpelkolla
 fyndloggen FÖRE rot-analys. Bokfört i DRIFTSBOKEN (STÄNGD+VERIFIERAD rond 34). tsc 0 (data-only).
+
+### 2026-09-15 rond 35 [organ:Φ] — larmvägens omleveransrot kurad (våg 171)
+F6-omleverans #3 verifierad mot fyndloggen: sista "prod osvarar" alltjämt 14:42:45Z
+(rond 33:s RAM-svält, kurad våg 169), prod 200, grön feljägarkörning 15:44:46Z.
+ROT: mal-hjartslag.mjs fyndkick filtrerade allvar men aldrig ts — kurade HÖG-rader
+i loggvansen re-alarmade var 30:e minut (3 bevisade omleveranser).
+KUR: tidsfilter — endast fynd <35 min får kicka. BEVIS: filtertest mot prodlogg
+1→0 (gamla filtret kickar på exakt 14:42-raden). tsc 0.

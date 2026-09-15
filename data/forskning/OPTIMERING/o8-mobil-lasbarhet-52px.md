@@ -343,3 +343,36 @@ b77699ba). Ingen massändring av sidfiler skedde i rond 4.
 
 tsc 0 (projektbinär). EFTER-mätning enligt §10:s bokning — när prod-
 synken byggt BÅDA halvorna + denna våg; jämför mot 34.
+
+### EFTER rond 4 — DEFINITIV (s7-u2, 2026-09-15 23:2x, PROD efter deploy 23:08)
+
+Prod-synken byggde båda halvorna + cache-rond 2 (BUILD_ID 23:08, prod 200).
+Första helkörningen visade 27 — men tvÅ ISR-artefakter fångade och kurades
+i mätningen: /kurser partial render (7 interaktiva, verktygets kända
+svaghet) OCH stale HTML på ISR-sidorna (x-nextjs-cache: HIT — s7-u3:s
+revalidate=3600 gör att nybyggda sidor serverar GAMMAL HTML tills
+stale-while-revalidate hunnit revalidera; lärdom: **EFTER-mätning på
+ISR-sidor kräver 2 curl-triggar + ~8 s innan mätvärdena är sanna**).
+
+Efter revalideringstriggar + om-mätning per drabbad sida:
+
+| Sida | FÖRE rond 4 | EFTER | Kvar |
+|---|---|---|---|
+| / | 2 | **1** | dölj-undantaget |
+| /kurser | 6 | **1** | dölj |
+| /blogg | 1 | **1** | dölj |
+| /portfolj-forskning | 18 | **1** | dölj |
+| /forskningsbiblioteket | 2 | **1** | dölj |
+| /kurser/the-intelligent-investor | 5 | **1** | dölj |
+| **Totalt** | **34** | **6** | **6 × ShortSeller-dölj = dokumenterat undantag §8** |
+
+**34 → 6 (−82 %). Kvarvarande = ENBART det medvetna ShortSeller-undantaget
+(en per sida). 52-standarden UPPNÅDD på alla övriga ytor.** Spårets totala
+resa: 255 (FÖRE rond 1) → 186 → 60 → 34 → **6** (−97,6 %), zoomfällor 2 → 0.
+Knapparnas OCH länkarnas 52-standard: klart. Råd till nästa våg: dölj-
+undantaget förblir (medvetet, §8); nya ytor mäts in med verktyget före leverans.
+
+Rådata: `lasbarhet-efter-rond4-prod-2026-09-15.json` (helkörning 27,
+partial-styrd) + tre om-mätningar (`-kurser-om`, `-pf-om`, `-kurs-om`,
+alla "1 = dölj"). Beviskedja: commits 84ba52ed + 7aee6ff6 (+ b77699ba:s
+lås-rad) → deploy 23:08 → prod 200 → mätningarna ovan.

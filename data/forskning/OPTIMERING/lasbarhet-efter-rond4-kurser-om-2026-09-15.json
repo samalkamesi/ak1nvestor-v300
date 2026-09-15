@@ -1,0 +1,30 @@
+{
+  "verktyg": "verktyg/mobil-lasbarhet.mjs",
+  "datum": "2026-09-15T21:12:08.178Z",
+  "mal": "https://lab.ak1nvestor.com",
+  "visport": "390×844, DSF 2, iPhone-UA",
+  "target": "52 px tryckyta (husstandard våg 93 C3); input ≥16 px mot iOS-zoom",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "antalInteraktiva": 137,
+      "prosaLankarUndantagna": 6,
+      "tryckmalUnder52": 1,
+      "varsta": [
+        {
+          "tag": "button",
+          "rol": null,
+          "text": "Dölj Short-Seller-bubblan i 24 timmar",
+          "w": 44,
+          "h": 44,
+          "font": 12,
+          "typ": null,
+          "visning": "flex",
+          "min": 44
+        }
+      ],
+      "inputZoom": 0,
+      "inputZoomVarsta": []
+    }
+  ]
+}

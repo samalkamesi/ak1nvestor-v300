@@ -441,7 +441,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                 <li key={s.slug}>
                   <Link
                     href={`/kurser/${s.slug}`}
-                    className="inline-block rounded-full border border-gold/30 px-3 py-1 text-xs hover:bg-gold/10"
+                    className="inline-block rounded-full border border-gold/30 px-3 py-1 text-xs hover:bg-gold/10 max-md:inline-flex max-md:min-h-[52px] max-md:items-center max-md:py-0"
                   >
                     {s.title}
                   </Link>

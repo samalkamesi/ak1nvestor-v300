@@ -34,6 +34,11 @@ import { svaraLokaltMakro } from "@/lib/ai-mentor-makro-fragor";
 // investmentbolag/NAV, options) — prövas SIST och kan därför aldrig stjäla
 // en fråga från tidigare lager; källmärkta ur kursregistret
 import { svaraLokaltNasta } from "@/lib/ai-mentor-nasta-fragor";
+// Spår 6 omgång 4 (s6-u2): +2 förhandsfrågor (emission/utspädning,
+// goodwill/immateriella) — kapitalmekanik-lagret prövas SIST och kan
+// därför aldrig stjäla en fråga från tidigare lager; källmärkt ur
+// kursregistret med flerkällsrad (rk-02/v19/ks-01, km-022/bk-01/bokmaster)
+import { svaraLokaltKapitalmekanik } from "@/lib/ai-mentor-kapitalmekanik-fragor";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -737,7 +742,7 @@ export function ChatWidget() {
     // ligaste nybörjarfrågorna deterministiskt utan API-kostnad: ~15 förhands-
     // frågor + generiskt V01–V20-uppslag, alla källmärkta. Matchar den inte
     // (null) fortsätter flödet nedan till /api/chatbot precis som förr.
-    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER);
+    const lokalt = svaraLokaltMakro(q, KURSREGISTER) ?? svaraLokaltExtra(q, KURSREGISTER) ?? svaraLokalt(q, KURSREGISTER) ?? svaraLokaltNasta(q, KURSREGISTER) ?? svaraLokaltKapitalmekanik(q, KURSREGISTER);
     if (lokalt) {
       setSenasteAmne(lokalt.amne); // ämnet följer med som kontext för följdfrågor
       sparaChatTur(

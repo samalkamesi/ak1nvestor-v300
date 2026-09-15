@@ -1,0 +1,117 @@
+{
+  "bransch": "fastighet",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "metod": "Underlag för när bolagen brukar/planerar publicera sin Q3-rapport 2026. Endast rappfönster och kalenderfakta — inga rapportsiffror, ingen analys, inga råd. Där bolagets egen IR-kalender ännu inte visar datum vid hämttillfället anges tredjepartskalender som källa och osäkerheten markeras explicit; USA-bolagets publiceringstid är sedvanebaserad och markeras.",
+  "bolag": [
+    {
+      "ticker": "BALD-B.ST",
+      "namn": "Fastighets AB Balder (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-23",
+      "notera": "Kvartalsvis rytm: interimsrapporten jan–juni 2026 redovisades 2026-07-14 kl 08:00. Q3-datum 2026-10-23 enligt Inderes finansiella kalender; bokslutskommuniké 2026 anges där till 2027-02-12. Bekräfta mot bolagets egen IR-kalender före publicering.",
+      "kallor": [
+        { "namn": "Balder — IR-kalender (officiell)", "url": "https://www.balder.se/en/investor-relations/calendar", "hamtdatum": "2026-09-15" },
+        { "namn": "Inderes — finansiell kalender Balder", "url": "https://www.inderes.se/companies/Balder", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "CAST.ST",
+      "namn": "Castellum AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-22",
+      "notera": "Kvartalsvis. Bolagets IR-sida listar '22 October: Interim Report January-September 2026' som kommande event — officiellt bekräftat datum.",
+      "kallor": [
+        { "namn": "Castellum — investor relations (officiell)", "url": "https://www.castellum.com/investors/", "hamtdatum": "2026-09-15" },
+        { "namn": "Castellum — finansiell kalender (officiell)", "url": "https://www.castellum.com/investors/financial-calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "CATE.ST",
+      "namn": "Catena AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-23",
+      "notera": "Kvartalsvis: interimsrapporten jan–juni 2026 redovisades 2026-07-06. Q3-datum 2026-10-23 enligt MarketScreener; Q3 2025 rapporterades fredagen 2025-10-24 — samma veckodagsrytm (fredag). Bolaget för egen finansiell kalender på IR-sidan.",
+      "kallor": [
+        { "namn": "Catena — finansiell kalender (officiell)", "url": "https://www.catena.se/en/investors/financial-calendar", "hamtdatum": "2026-09-15" },
+        { "namn": "MarketScreener — Catena AB kalender", "url": "https://www.marketscreener.com/quote/stock/CATENA-AB-6498745/calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "DIOS.ST",
+      "namn": "Diös Fastigheter AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-23",
+      "notera": "Kvartalsvis: Q1 2026 redovisades 2026-04-29 och Q2 2026 (jan–juni) den 2026-07-06. Q3-datum 2026-10-23 enligt tredjepartskalender (Nordnet, sökträff) — exakt datum syntes ej på bolagets egen IR-sida vid hämttillfället; bekräfta före publicering. Bolaget brukar bjuda in till investerarpresentation samma dag.",
+      "kallor": [
+        { "namn": "Diös — IR/interimsrapporter (officiell, närmaste källa)", "url": "https://investors.dios.se/English/reports-and-presentations/interim-reports/default.aspx", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "FABG.ST",
+      "namn": "Fabege AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-21",
+      "notera": "Kvartalsvis: Q1 2026 redovisades 2026-04-23 kl 07:30 och Q2 2026 (jan–juni) den 2026-07-06 kl 07:30. Q3-datum 2026-10-21 enligt Inderes kalender; förra årets jan–sep-rapport publicerades också en 21 oktober. Bolaget för egen kalender på IR-sidan.",
+      "kallor": [
+        { "namn": "Fabege — finansiell kalender (officiell)", "url": "https://www.fabege.se/en/about-fabege/investors/calendar/", "hamtdatum": "2026-09-15" },
+        { "namn": "Fabege — rapporter och presentationer (officiell)", "url": "https://www.fabege.se/en/about-fabege/investors/reports-and-presentations/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "HUFV-A.ST",
+      "namn": "Hufvudstaden AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-11-05",
+      "notera": "Kvartalsvis. Halvårsrapporten 2026 kom 2026-08-20; interimsrapporten januari–september 2026 står i bolagets egen kalender torsdagen 2026-11-05 — officiellt bekräftat datum.",
+      "kallor": [
+        { "namn": "Hufvudstaden — finansiell kalender (officiell)", "url": "https://hufvudstaden.se/en/investor-relations/calendar/", "hamtdatum": "2026-09-15" },
+        { "namn": "MarketScreener — Hufvudstaden kalender", "url": "https://www.marketscreener.com/quote/stock/HUFVUDSTADEN-AB-16416017/calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "NP3.ST",
+      "namn": "NP3 Fastigheter AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-16",
+      "notera": "Kvartalsvis. Bolagets egen kalender listar '2026-10-16: Interim report January–September 2026' — officiellt bekräftat datum; nästa kalenderpost är 2027-02-05. Investerare brukar bjudas in till presentation/webcast i samband med publiceringen.",
+      "kallor": [
+        { "namn": "NP3 Fastigheter — kalender (officiell)", "url": "https://www.np3fastigheter.se/en/investors/calendar/", "hamtdatum": "2026-09-15" },
+        { "namn": "NP3 Fastigheter — rapporter och presentationer (officiell)", "url": "https://www.np3fastigheter.se/en/investors/reports-and-presentations/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "PLD",
+      "namn": "Prologis, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10-15 (konferenssamtal kl 09:00 PDT; resultat väntas före börsöppning samma dag)",
+      "notera": "Kvartalsvis (10-Q). IR-sidan bokar 'Prologis Q3 2026 Earnings Conference Call' till 15 oktober 2026 kl 09:00 PDT med webbcast-registrering; exakt publiceringstidpunkt (sedvanemässigt före börsöppning) bekräftas av bolaget via pressrelease närmare rapportdagen.",
+      "kallor": [
+        { "namn": "Prologis — investor relations (officiell)", "url": "https://ir.prologis.com/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "WALL-B.ST",
+      "namn": "Wallenstam AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-15",
+      "notera": "Kvartalsvis. Bolagets kalender (redovisad i rapportpaketet på Cision) anger 'Interim report Q3, 2026 – October 15, 2026'; bokslutsrapporten 2026 anges till 2027-02-04 och X-dag för utdelning till 2026-10-27. Tyst period gäller cirka 30 dagar före rapportdag.",
+      "kallor": [
+        { "namn": "Wallenstam — financial reports (officiell)", "url": "https://www.wallenstam.se/reports", "hamtdatum": "2026-09-15" },
+        { "namn": "Wallenstam — IR-kalender (officiell)", "url": "https://www.wallenstam.se/en/wallenstam/investor-relations/Calender/", "hamtdatum": "2026-09-15" },
+        { "namn": "MarketScreener — Wallenstam AB kalender", "url": "https://www.marketscreener.com/quote/stock/WALLENSTAM-AB-22304678/calendar/", "hamtdatum": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "WIHL.ST",
+      "namn": "Wihlborgs Fastigheter AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-20/21 (estimat enligt finansiella kalendrar — ej officiellt bekräftat)",
+      "notera": "Kvartalsvis: Q1 2026 redovisades 2026-04-21 och Q2 2026 (jan–juni) den 2026-07-06 kl 07:00 med webcast. Tredjepartskalendrar divergerar mellan 20 och 21 oktober 2026 för jan–sep-rapporten; exakt datum syntes ej på bolagets egen IR-kalender vid hämttillfället — bekräfta mot wihlborgs.se före publicering. Sedvanemässig publiceringstid är 07:00 med webcast kl 09:00 samma dag.",
+      "kallor": [
+        { "namn": "Wihlborgs — investor relations (officiell, närmaste källa)", "url": "https://www.wihlborgs.se/en/investor-relations/", "hamtdatum": "2026-09-15" },
+        { "namn": "Wihlborgs — rapportarkiv (officiell)", "url": "https://www.wihlborgs.se/en/investor-relations/reports/", "hamtdatum": "2026-09-15" }
+      ]
+    }
+  ]
+}

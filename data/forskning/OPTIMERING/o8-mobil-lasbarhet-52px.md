@@ -154,3 +154,33 @@ datorvy orörd):
    stor yta (343 kurser), mät först.
 3. Kakbanner-knapparna 44→52 (kakvakt-komponenten).
 4. Hero-länken "see the memberships" (spa-hem) 30 px.
+
+## 8. Rond 3 (s7 våg 5, 2026-09-15 17:30) — KÖN TOM: allt fyran ovan fixat
+
+Alla fyra köposter + LarvagKort-raderna (undantagslistan) i en våg —
+samtliga `max-md:`-kirurgi (mobil <768 px, datorvy orörd), tsc 0:
+
+| Fil | Vad |
+|---|---|
+| `kurs-sok.tsx` | hero-chips ("Alla (343)" + 8 kategorier), kategoriväggens ~30 chips, rensa-filter-knappen, pagineringens föregående/nästa + numrerade knappar (min-h 52; de numrerade även min-w 52) |
+| `cookie-consent.tsx` | bannerns 4 knappar (Godkänn alla / Spara mitt val / Inställningar / Endast nödvändiga) 44→52 |
+| `kurs-quiz.tsx` | quiz-svarsknapparna (fullbreddsrader) min-h 52 — stor yta: 8 223 quiz över 343 kurser |
+| `kurser/[slug]/page.tsx` | relaterade-kursers chips (inline-flex + min-h 52 + py-0) |
+| `sections/home-section.tsx` | verktygschipsen ("The AKM1 Calculator/Vave Foundation/Confluence Radar", 26 px) + Fas 2-textlänkarna "Bli certifierad"/"Se medlemskapen" (30 px — köpost 4) |
+| `larvag-kort.tsx` | kortraderna min-h 52 (syskonets undantagspost) |
+
+Noterat under vågen: de flesta 44 px-mätvärdena kommer av globals.css:529
+globala golvet `min-height: 44px` för knappar <640 px — golvet lämnas
+medvetet orört (ett lyft till 52 skulle förstora VARE knapp oglatt,
+inklusive ShortSeller-dölj-krysset som bara får 44 av samma golv);
+husstandarden nås kirurgiskt per komponent i stället.
+
+**Driftfynd (fabriksoperativ):** prod-synkens "AGENTARBETSYTA synkad"
+(15:33:10) återställer trädspårade filer till HEAD — under pågående
+våg revs 4 av 6 filers ostagade redigeringar (s2-u2:s strukturfynd i
+praxis igen). Kur: skriv → tsc → commit PER filgrupp i ett fönster;
+om-applikation från diff kosta 6 min. Del 1 (larvag-kort +
+home-section, 3d25e4f5) hann deployas 15:32:53 prod 200 före revningen;
+del 2 (3b2aab63) deployas av nästa poll.
+
+### EFTER rond 3 — mätning bokförd nedan efter del 2-deployen

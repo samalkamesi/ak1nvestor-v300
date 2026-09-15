@@ -7,17 +7,20 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * /api/studio/tjanster/resync-v4 — GAP-REGISTER POST 25 (V9/A3 — VÅG 172):
+ * /api/studio/tjanster/resync — GAP-REGISTER POST 25 (V9/A3 — VÅG 172):
  * gap-ÅTERHÄMTNING via v4-gateway:ns eget resync-anrop.
  *
- * GET → transport.lasV4Resync() — v4/conversation/resync på den LEVANDE
- * studio-sessionen (V4-LAGRET §2 #6: returnerar initialWires som postas
- * via response-outbox + commit). Svaret bär utford + mappningen wires ←
- * initialWires, commit, atSeq, logEpoch + det opaka svaret under "rått".
+ * GET → transport.lasV4Resync() — v4/conversation/resync {sessionId} på
+ * den LEVANDE studio-sessionen (V4-LAGRET §2 #6: returnerar initialWires
+ * som postas via response-outbox + commit). Svaret bär utford + mappningen
+ * wires ← initialWires, commit, atSeq, logEpoch + det opaka svaret under
+ * "rått". Ramarna i initialWires uppdaterar transportens v4Revision internt
+ * (state.updated-delta) — därmed hålls fileChanges-spåret vid liv efter
+ * gateway-omstart/missade ramar.
  *
  * Normal väg in är lasFilandringar() när SAMTLIGA baseRevision-kandidater
- * blivit stale (gateway-omstart/missade ramar) — denna rutt gör
- * återhämtningen observabel/utlösbar utanför diff-flödet (drift + tester).
+ * blivit stale — denna rutt gör återhämtningen observabel/utlösbar
+ * utanför diff-flödet (drift + tester).
  *
  * FEL-TOLERANT (200 med fel-fält): transportmetoden returnerar själv
  * {utford:false} vid fel — detta fångar det oväntade och svarar fortfarande

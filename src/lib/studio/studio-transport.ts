@@ -1683,6 +1683,39 @@ export interface StudioTransport {
     logEpoch?: string;
     rått?: unknown;
   }>;
+  /**
+   * GAP-REGISTER POST 26 (V7/A3 — V4-LAGRET §4, topp-3 gap #3):
+   * sessions-index/<filter> — REALTIME MULTI-SESSION-INDEX. Prenumeration på
+   * live-indexet över sessioner via den befintliga subscribe-mekanismen —
+   * multi-session-medvetande UTAN polling av sessionList (kan ersätta delar
+   * av R2-poll-lagret). Anropar protokollFraga("v4/subscribe", {topic:
+   * "sessions-index/<filter|*>"}, 15_000); filter "*" = alla sessioner.
+   * Fel-tolerant: {prenumererad:false} vid fel (ALDRIG kast — index-
+   * prenumeration är en förbättring, inte ett krav).
+   */
+  prenumereraSessionsIndex(filter?: string): Promise<{
+    prenumererad: boolean;
+    topic?: string;
+    rått?: unknown;
+  }>;
+  /**
+   * GAP-REGISTER POST 27 (V10/A6 — HÖGST råvärdet, V4-LAGRET §9 gap 4):
+   * v4/commands/query — LIVE-STATUS för inskickade kommandon ur inbox-kön
+   * (V4-LAGRET §2 #20, rad 66: {commands:[{commandId?, sessionId?}, …]} →
+   * {results[]}). Läsning med den LEVANDE sessionens id som kö-filter;
+   * skapar ALDRIG en session bara för att fråga (lasSessioner-mönstret).
+   * Fel-tolerant: {kommandon: []} vid fel (ALDRIG kast — köstatus är lyx).
+   */
+  lasV4Kommandon(): Promise<{ kommandon: unknown[] }>;
+  /**
+   * GAP-REGISTER POST 27 (forts): KOMMANDO-FAKTA. v4/command_fact är en
+   * INTERN DB-faktatyp (ej wire — V4-LAGRET §5, rad 91) så fakta ytas via
+   * den wire-legala vägen: v4/commands/query {commands:[{commandId}]}
+   * (commandId unikt ⇒ exakt en post; acks persistras som v4/command_fact,
+   * §1.3 rad 38). Utan commandId: senaste kommandot i sessionens kö.
+   * Fel-tolerant: {fakta: null} vid fel (ALDRIG kast).
+   */
+  lasV4KommandoFakta(commandId?: string): Promise<{ fakta: unknown | null; rått?: unknown }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5519,8 +5552,11 @@ class AppServerTransport implements StudioTransport {
    * initialWires som postas via response-outbox + commit. Anropas när
    * revision/logEpoch tappats (gateway-omstart, missade ramar): ramar i
    * svaret uppdaterar v4Revision via påNotis (state.updated-delta) och
-   * v4LogEpoch via ack-form om svaret bär det. Fel-tolerant: {utford:false}
-   * vid fel — ALDRIG kast (resync är en utväg, inte ett krav).
+   * v4LogEpoch via ack-form om svaret bär det. Anropar protokollFraga med
+   * {sessionId: this.sid} (§2-mönstret: session-scopade v4-frågor som
+   * rowsRange/usage bär sessionId) + 30 s tak (utväg, ej snurra). Fel-
+   * tolerant: {utford:false} vid fel — ALDRIG kast (resync är en utväg,
+   * inte ett krav).
    */
   async lasV4Resync(): Promise<{
     utford: boolean;
@@ -5535,13 +5571,8 @@ class AppServerTransport implements StudioTransport {
       const klient = this.klientForLasning();
       const svar = (await klient.protokollFraga(
         "v4/conversation/resync",
-        {
-          topic: `conversation/${this.sid}`,
-          connectionId: this.v4ConnectionId,
-          clientMode: "web-remote-replayable",
-          ...(this.v4LogEpoch ? { baseLogEpoch: this.v4LogEpoch } : {}),
-        },
-        20_000,
+        { sessionId: this.sid },
+        30_000,
       )) as {
         initialWires?: unknown;
         commit?: unknown;
@@ -5577,6 +5608,98 @@ class AppServerTransport implements StudioTransport {
       };
     } catch {
       return { utford: false }; // fel-tolerant — ALDRIG kast
+    }
+  }
+
+  // ── GAP-REGISTER POST 26 (V7/A3): sessions-index/<filter> — realtime ────
+  // multi-session-index (V4-LAGRET §4, topp-3 gap #3) ──────────────────────
+
+  /**
+   * sessions-index/<filter>-topic (V4-LAGRET §4): prenumeration på LIVE-
+   * indexet över sessioner — multi-session-medvetande UTAN polling av
+   * sessionList (samma subscribe-mekanism; filter "*" = alla sessioner).
+   * Skapar ALDRIG en session (lasSessioner-mönstret): klientForLasning
+   * startar högst protokollklienten. Fel-tolerant: {prenumererad:false} vid
+   * fel — ALDRIG kast (index-prenumeration är en förbättring, inte ett krav).
+   */
+  async prenumereraSessionsIndex(filter?: string): Promise<{
+    prenumererad: boolean;
+    topic?: string;
+    rått?: unknown;
+  }> {
+    const topic = "sessions-index/" + (filter || "*");
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga(
+        "v4/subscribe",
+        { topic: "sessions-index/" + (filter || "*") },
+        15_000,
+      )) as Record<string, unknown> | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) {
+        return { prenumererad: false, topic };
+      }
+      return { prenumererad: true, topic, rått: svar };
+    } catch {
+      return { prenumererad: false, topic }; // fel-tolerant — ALDRIG kast
+    }
+  }
+
+  // ── GAP-REGISTER POST 27 (V10/A6 — HÖGST råvärdet): v4/commands/query ────
+  // — inbox-köns live-status (V4-LAGRET §2 #20 + §9 gap 4; v4/command-
+  // inskickningen själv är strategisk etapp 2 enligt lagret rad 184)
+
+  /**
+   * v4/commands/query (V4-LAGRET §2 #20, rad 66): {commands:[{commandId?,
+   * sessionId?}, …]} → {results[]} — live-status för inskickade kommandon
+   * ur inbox-kön. Frågar med den LEVANDE sessionens id som kö-filter (sid
+   * är ETT tillåtet item-fält; skapar ALDRIG en session bara för att fråga
+   * — lasSessioner-mönstret). results är opak (statusfält ej dekompilerade
+   * i lagret) ⇒ passeras rå. Fel-tolerant: {kommandon: []} — ALDRIG kast.
+   */
+  async lasV4Kommandon(): Promise<{ kommandon: unknown[] }> {
+    if (!this.sid) return { kommandon: [] }; // ingen levande session ⇒ tom kö
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga(
+        "v4/commands/query",
+        { commands: [{ sessionId: this.sid }] },
+        15_000,
+      )) as { results?: unknown } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) return { kommandon: [] };
+      return { kommandon: Array.isArray(svar.results) ? svar.results : [] };
+    } catch {
+      return { kommandon: [] }; // fel-tolerant — ALDRIG kast
+    }
+  }
+
+  /**
+   * KOMMANDO-FAKTA via samma wire-metod: v4/command_fact är en INTERN
+   * DB-faktatyp (ej wire — V4-LAGRET §5, rad 91; id-sätts
+   * v4_command_fact:child:<parentSessionId>:<sourceCommandId> och ligger
+   * bakom fork-logiken) så fakta ytas med den wire-legala vägen
+   * v4/commands/query {commands:[{commandId}]} — acks persistras som
+   * command_fact (§1.3, rad 38) och query returnerar deras live-status.
+   * commandId unikt ⇒ exakt en post (results[0]); UTAN commandId ⇒ senaste
+   * kommandot i den levande sessionens kö (sista posten — inbox-ordning).
+   * Fel-tolerant: {fakta: null} — ALDRIG kast.
+   */
+  async lasV4KommandoFakta(commandId?: string): Promise<{ fakta: unknown | null; rått?: unknown }> {
+    const id = commandId?.trim();
+    const sok: Record<string, string> = {};
+    if (id) sok.commandId = id;
+    else if (this.sid) sok.sessionId = this.sid;
+    else return { fakta: null }; // varken commandId eller levande session
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga("v4/commands/query", { commands: [sok] }, 15_000)) as {
+        results?: unknown;
+      } | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) return { fakta: null };
+      const results = Array.isArray(svar.results) ? svar.results : [];
+      const fakta = id ? (results[0] ?? null) : (results.length > 0 ? results[results.length - 1] : null);
+      return { fakta, rått: svar };
+    } catch {
+      return { fakta: null }; // fel-tolerant — ALDRIG kast
     }
   }
 
@@ -8188,6 +8311,62 @@ class MockTransport implements StudioTransport {
       utford: false,
       rått: { sessionId: this.sessionId(), initialWires: [], commit: false, source: "mock" },
     };
+  }
+
+  // ── GAP 26 (V7/A3) (mock): sessions-index/<filter> — deterministisk. ────
+  // Mocken har ingen v4-gateway: prenumerationen äckas ärligt som begärd
+  // (protokollets äck-form i rått för dev-E2E-panelen; prod bär de ärliga).
+
+  async prenumereraSessionsIndex(filter?: string): Promise<{
+    prenumererad: boolean;
+    topic?: string;
+    rått?: unknown;
+  }> {
+    await this.ensure();
+    const topic = "sessions-index/" + (filter || "*");
+    return {
+      prenumererad: true,
+      topic,
+      rått: { topic, ack: true, source: "mock" },
+    };
+  }
+
+  // ── GAP 27 (V10/A6 — HÖGST råvärdet) (mock): v4/commands/query — ──────────
+  // deterministisk. Speglar protokollets svarform {results[]} (V4-LAGRET
+  // §2 #20) med tydligt mock-märkta kö-poster — dev-E2E utan barnprocess;
+  // prod bär de ärliga statusfälten (resultatens inre fält är opaka i
+  // lagret; mocken använder kö-semantikens dokumenterade namn).
+
+  async lasV4Kommandon(): Promise<{ kommandon: unknown[] }> {
+    await this.ensure();
+    return {
+      kommandon: [
+        {
+          commandId: "mock:cmd:001",
+          sessionId: this.sessionId(),
+          queueItemId: "mock:queue:001",
+          status: "completed",
+          source: "mock",
+        },
+        {
+          commandId: "mock:cmd:002",
+          sessionId: this.sessionId(),
+          queueItemId: "mock:queue:002",
+          status: "running",
+          source: "mock",
+        },
+      ],
+    };
+  }
+
+  async lasV4KommandoFakta(commandId?: string): Promise<{ fakta: unknown | null; rått?: unknown }> {
+    await this.ensure();
+    const { kommandon } = await this.lasV4Kommandon();
+    const id = commandId?.trim();
+    const fakta = id
+      ? (kommandon.find((k) => (k as { commandId?: unknown } | null)?.commandId === id) ?? null)
+      : (kommandon.length > 0 ? kommandon[kommandon.length - 1] : null);
+    return { fakta, rått: { results: kommandon, source: "mock" } };
   }
 
   // ── VÅG 85 F2: skills/plugins/MCP — deterministisk dev-simulering ────────

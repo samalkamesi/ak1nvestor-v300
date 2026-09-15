@@ -71,6 +71,16 @@ import {
 
 import { adminHeaders, adminJsonHeaders } from "@/lib/admin-klient";
 import { STUDIO_KOMMANDON, kommandoHjalp, parsaKommando, type StudioKommando } from "@/lib/studio/kommandon";
+import {
+  STUDIO_GENVAGAR,
+  arSkrivbarKombination,
+  lasGenvagar,
+  matcharTangent,
+  raknaAktiva,
+  sparGenvagar,
+  tangentTillKombination,
+  type GenvagsId,
+} from "@/lib/studio/genvagar";
 import { byggChatHtml } from "@/components/ak1a/studio-html-export";
 import { StudioMinnePanel } from "@/components/ak1a/studio-minne-panel";
 import { StudioAdminPanel } from "@/components/ak1a/studio-admin-panel";
@@ -181,6 +191,15 @@ import { cn } from "@/lib/utils";
  *     återställ + röd toast. GET utan plugins-fält ⇒ brytare dolda.
  *   · /installningar-kommandot (kommandon.ts) öppnar drawern — registret
  *     driver samtidigt slash-autocomplete + kommandopaletten.
+ *
+ * REGISTER 2 POST 22 (P7 — GENVÄGSMANAGER): tangenter lyder under registret
+ *   i lib/studio/genvagar (id + beskrivning + standardkombination) med
+ *   överskrivningar per webbläsare i localStorage "ak1a-genvagar".
+ *   Inställningar ⚙ → Genvägar listar alla och spelar in ny kombination
+ *   ("Ändra" → tryck tangentföljden, Esc avbryter); "?"-översikten,
+ *   knapp-titlar och skicka-tangenten visar de AKTIVA kombinationerna.
+ *   Skrivbara remappningar (bar bokstav/siffra) avbryter aldrig skrivfält;
+ *   slash-menyn är fast (drivs av promptens "/"-protokoll).
  *
  * VÅG 97 (STUDIO-UI, block E2 — STYRELSE-ADMIN-MEGA "VÅG 97"):
  *   · TANKAR-VY: agentens resonemang (ström-kanal "tankar", model.streaming
@@ -1892,6 +1911,16 @@ function StudioMarkdown({
 }
 
 // ── Inställningar-drawerns radioregel (52 px tryckyta) ───────────────────────
+
+/** Kortnamn per genväg (register 22) — krocksvarningar + aria-labels i panelen. */
+const GENVAG_KORTNAMN: Record<GenvagsId, string> = {
+  "sok-panel": "Sök",
+  kommandopalett: "Kommandopaletten",
+  "slash-meny": "Kommandomenyn",
+  "esc-stang": "Esc-stäng",
+  skicka: "Skicka",
+  genvagshjalp: "Genvägsöversikten",
+};
 
 function InstallningarRad({
   vald,
@@ -4167,6 +4196,59 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── Inställningar-drawern ⚙ (våg 88 I1; våg 90: temat är FAST mörkt) ───────
   const [installningarOppen, setInstallningarOppen] = React.useState(false);
+
+  // ── GENVÄGSREGISTER (register 2, post 22): namngivna tangentbords-
+  //    genvägar med per-webbläsar-överskrivningar (localStorage
+  //    "ak1a-genvagar"). Registret + parsningen bor i lib/studio/genvagar;
+  //    här: överskrivningskartan, aktiv kombination per id och inspelnings-
+  //    läget i Inställningar ("tryck ny tangentföljd").
+  const [genvagÖverskrivningar, setGenvagÖverskrivningar] = React.useState<Record<string, string>>({});
+  /** Id:t som just spelar in ny kombination — null = ingen inspelning. */
+  const [genvagInspelning, setGenvagInspelning] = React.useState<GenvagsId | null>(null);
+  React.useEffect(() => {
+    setGenvagÖverskrivningar(lasGenvagar());
+  }, []);
+  const aktivaGenvagar = React.useMemo(() => raknaAktiva(genvagÖverskrivningar), [genvagÖverskrivningar]);
+  /** Sätter/ersätter en överskrivning — standardvärde raderas (ingen dubblett i storage). */
+  const sattGenvag = React.useCallback((id: GenvagsId, kombination: string) => {
+    setGenvagÖverskrivningar((nuvarande) => {
+      const standard = STUDIO_GENVAGAR.find((g) => g.id === id)?.standard;
+      const ut = { ...nuvarande };
+      if (kombination === standard) delete ut[id];
+      else ut[id] = kombination;
+      sparGenvagar(ut);
+      return ut;
+    });
+  }, []);
+  /** Raderar en överskrivning (raden får tillbaka standardkombinationen). */
+  const aterstallGenvag = React.useCallback((id: GenvagsId) => {
+    setGenvagÖverskrivningar((nuvarande) => {
+      const ut = { ...nuvarande };
+      delete ut[id];
+      sparGenvagar(ut);
+      return ut;
+    });
+  }, []);
+  // Inspelningen äger tangentbordet helt (capture + stopPropagation) medan
+  // drawern är öppen: ingen annan genväg — global eller lokal — får snappa
+  // tangentföljden kunden försöker lära in. Esc avbryter inspelningen.
+  React.useEffect(() => {
+    if (!genvagInspelning || !installningarOppen) return;
+    const paInspelning = (e: KeyboardEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.key === "Escape") {
+        setGenvagInspelning(null);
+        return;
+      }
+      const kombination = tangentTillKombination(e);
+      if (!kombination) return; // enbart modifierare — vänta på huvudtangenten
+      sattGenvag(genvagInspelning, kombination);
+      setGenvagInspelning(null);
+    };
+    window.addEventListener("keydown", paInspelning, true);
+    return () => window.removeEventListener("keydown", paInspelning, true);
+  }, [genvagInspelning, installningarOppen, sattGenvag]);
 
   /**
    * VÅG 93 C3: serverns STANDARD för nya samtal (GET /api/studio/installningar).
@@ -8716,9 +8798,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
 
   // ── GLOBALA GENVÄGAR (våg 84 A): Ctrl/Cmd+K (palett), "?" (genvägar), Esc.
   //    (VÅG 90: T/tema är borttaget — temat är fast mörkt; se filhuvudet.)
+  //    REGISTER 22 (P7): kombinationerna läses ur genvägsregistret —
+  //    standard i lib/studio/genvagar, överskrivningar i localStorage
+  //    ("ak1a-genvagar") via Inställningar. Modifierare måste stämma exakt
+  //    (register 22-kontraktet). Skrivbara remappningar (enbart bokstav/
+  //    siffra utan systemtangent) avbryter ALDRIG skrivfält — bara
+  //    systemkombinationer och namngivna tangenter (Esc, F-tangenter) gör det.
   React.useEffect(() => {
     const paTangent = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      // Inspelning av ny genväg pågår: capture-lyssnaren äger tangenten.
+      if (genvagInspelning) return;
+      const mal = e.target as HTMLElement | null;
+      const iRedigerbart =
+        !!mal &&
+        (mal.tagName === "INPUT" ||
+          mal.tagName === "TEXTAREA" ||
+          mal.tagName === "SELECT" ||
+          mal.isContentEditable);
+      const farAvbrytaSkrivande = (komb: string) => !iRedigerbart || !arSkrivbarKombination(komb);
+      if (matcharTangent(e, aktivaGenvagar.kommandopalett) && farAvbrytaSkrivande(aktivaGenvagar.kommandopalett)) {
         e.preventDefault();
         setPalettOppen((v) => {
           if (v) return false;
@@ -8728,11 +8826,11 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         return;
       }
-      // P1 (register 16): Ctrl/Cmd+Shift+F — sök-/navigeringsraden i chatten.
-      // Toggle: öppen → stäng + nollställ; stängd → öppna (frasen får leva
-      // kvar — öppna igen fortsätter där kunden var). Grenen ligger FÖRE
-      // redigerbart-avbrottet så genvägen funkar även i skrivfältet.
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "f") {
+      // P1 (register 16): sök-/navigeringsraden i chatten. Toggle: öppen →
+      // stäng + nollställ; stängd → öppna (frasen får leva kvar — öppna igen
+      // fortsätter där kunden var). Grenen ligger FÖRE redigerbart-
+      // avbrottet så genvägen funkar även i skrivfältet.
+      if (matcharTangent(e, aktivaGenvagar["sok-panel"]) && farAvbrytaSkrivande(aktivaGenvagar["sok-panel"])) {
         e.preventDefault();
         setSokOppen((v) => {
           if (v) {
@@ -8745,7 +8843,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         return;
       }
-      if (e.key === "Escape") {
+      if (matcharTangent(e, aktivaGenvagar["esc-stang"]) && farAvbrytaSkrivande(aktivaGenvagar["esc-stang"])) {
         if (palettOppen) {
           setPalettOppen(false);
         } else if (sokOppen) {
@@ -8758,6 +8856,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setVisaGenvagar(false);
         setVisaNotiser(false);
         setInstallningarOppen(false);
+        setGenvagInspelning(null);
         setMenyOppen(false);
         setStyrelseOppen(false); // VÅG 91 A3b: styrelse-dialogen stängs (mötet lever kvar)
         setDiffBladdringOppen(false); // KONTROLL 9 (c): /diff-bläddringen stängs
@@ -8765,22 +8864,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
         setMobilPanel(false);
         return;
       }
-      const mal = e.target as HTMLElement | null;
-      const iRedigerbart =
-        !!mal &&
-        (mal.tagName === "INPUT" ||
-          mal.tagName === "TEXTAREA" ||
-          mal.tagName === "SELECT" ||
-          mal.isContentEditable);
       if (iRedigerbart || e.ctrlKey || e.metaKey || e.altKey) return;
-      if (e.key === "?") {
+      if (matcharTangent(e, aktivaGenvagar.genvagshjalp)) {
         e.preventDefault();
         setVisaGenvagar((v) => !v);
       }
     };
     window.addEventListener("keydown", paTangent);
     return () => window.removeEventListener("keydown", paTangent);
-  }, [palettOppen, sokOppen, prompterOppen]);
+  }, [palettOppen, sokOppen, prompterOppen, aktivaGenvagar, genvagInspelning]);
 
   // ── EVOLUTION E1 (gap 2): siffertangenter 1-9 = snabbval i interaktions-
   //    dialogerna (permission-alternativ / frågans val). Ignorerar tangenter
@@ -9227,7 +9319,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </button>
           <button
             onClick={() => setSokOppen(true)}
-            title="Sök i chatten + hopp mellan turer (Ctrl/Cmd+Shift+F)"
+            title={`Sök i chatten + hopp mellan turer (${aktivaGenvagar["sok-panel"]})`}
             aria-label="Sök i chatten"
             className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
@@ -9235,7 +9327,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </button>
           <button
             onClick={oppnaPalett}
-            title="Kommandopalett (Ctrl/Cmd+K)"
+            title={`Kommandopalett (${aktivaGenvagar.kommandopalett})`}
             aria-label="Kommandopalett"
             className="hidden h-8 w-8 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:flex"
           >
@@ -10634,14 +10726,18 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       if (blattraHistorik(-1)) e.preventDefault();
                       return;
                     }
-                    if (e.key === "Enter" && !e.shiftKey) {
+                    // REGISTER 22 (P7): skicka-tangenten lyder under
+                    // genvägsregistret (standard Enter, Skift+ = ny rad);
+                    // matcharTangent kräver exakta modifierare, så en
+                    // remappning till t.ex. Ctrl+Enter ger Enter = ny rad.
+                    if (matcharTangent(e, aktivaGenvagar.skicka)) {
                       e.preventDefault();
                       void skicka();
                     }
                   }}
                   rows={1}
                   placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
-                  title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten · Esc rensar fältet"
+                  title={`${aktivaGenvagar.skicka} skickar · ${aktivaGenvagar.skicka === "Enter" ? "Skift+Enter" : "Enter"} ny rad · / visar kommandon · ↑ återkallar senaste prompten · Esc rensar fältet`}
                   className="min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-11 sm:text-sm"
                 />
                 <button
@@ -10674,7 +10770,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     type="button"
                     onClick={() => void skicka()}
                     disabled={(!prompt.trim() && klistrade.length === 0) || live === "ned"}
-                    title="Skicka (Enter)"
+                    title={`Skicka (${aktivaGenvagar.skicka})`}
                     aria-label="Skicka"
                     className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40 sm:h-11 sm:w-12"
                   >
@@ -11967,7 +12063,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   setMenyOppen(false);
                   setSokOppen(true);
                 }}
-                title="Sök i chatten + hopp mellan turer (Ctrl/Cmd+Shift+F)"
+                title={`Sök i chatten + hopp mellan turer (${aktivaGenvagar["sok-panel"]})`}
                 className="flex min-h-14 w-full items-center gap-3.5 rounded-md px-3 py-2.5 text-left transition-colors hover:bg-[#161B22]"
               >
                 <Search className="h-5 w-5 shrink-0 text-[#8B949E]" />
@@ -11984,13 +12080,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   setMenyOppen(false);
                   oppnaPalett();
                 }}
-                title="Kommandopalett (Ctrl/Cmd+K)"
+                title={`Kommandopalett (${aktivaGenvagar.kommandopalett})`}
                 className="flex min-h-14 w-full items-center gap-3.5 rounded-md px-3 py-2.5 text-left transition-colors hover:bg-[#161B22]"
               >
                 <Command className="h-5 w-5 shrink-0 text-[#8B949E]" />
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-medium text-[#E6EDF3]">Kommandopalett</span>
-                  <span className="mt-0.5 block leading-snug text-[11px] text-[#8B949E]">Ctrl/Cmd+K — snabbkommandon</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#8B949E]">{aktivaGenvagar.kommandopalett} — snabbkommandon</span>
                 </span>
                 <ChevronRight className="h-4 w-4 shrink-0 text-[#484F58]" />
               </button>
@@ -12215,7 +12311,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     />
                   )}
                 </h2>
-                <p className="truncate text-[10px] text-[#8B949E]">modell · läge · tankestyrka</p>
+                <p className="truncate text-[10px] text-[#8B949E]">modell · läge · tankestyrka · genvägar</p>
               </div>
               <button
                 onClick={() => setInstallningarOppen(false)}
@@ -12353,6 +12449,100 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     ))}
                   </>
                 )}
+              </section>
+
+              {/* REGISTER 22 (P7): genvägsmanager — lista + remappning av
+                  kombinationer ("Ändra" → tryck tangentföljden). Överskriv-
+                  ningarna lever i localStorage "ak1a-genvagar" (per
+                  webbläsare). Slash-menyn är FAST: den drivs av promptens
+                  innehåll ("/"-protokollet) och kan inte byta tangent. */}
+              <section aria-label="Tangentbordsgenvägar" className="border-t border-[#21262D] pt-3">
+                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                  Genvägar
+                </p>
+                {STUDIO_GENVAGAR.map((g) => {
+                  const komb = aktivaGenvagar[g.id];
+                  const spelarIn = genvagInspelning === g.id;
+                  const overstyrd = genvagÖverskrivningar[g.id] !== undefined;
+                  const krockar = STUDIO_GENVAGAR.filter(
+                    (annan) => annan.id !== g.id && aktivaGenvagar[annan.id] === komb,
+                  );
+                  const fast = g.id === "slash-meny";
+                  return (
+                    <div
+                      key={g.id}
+                      className="flex min-h-[52px] items-center gap-2 rounded-md px-2 py-1.5 transition-colors hover:bg-[#161B22]/60"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs leading-snug text-[#E6EDF3]">{g.beskrivning}</p>
+                        {krockar.length > 0 && (
+                          <p className="mt-0.5 text-[10px] leading-snug text-[#D29922]">
+                            Samma kombination som {krockar.map((k) => GENVAG_KORTNAMN[k.id]).join(" + ")} — den
+                            som matchar först i lyssnarordningen vinner.
+                          </p>
+                        )}
+                      </div>
+                      <kbd
+                        className={`shrink-0 rounded border px-1.5 py-0.5 font-mono text-[10px] font-semibold ${
+                          spelarIn
+                            ? "animate-pulse border-[#58A6FF] bg-[#58A6FF]/10 text-[#58A6FF]"
+                            : "border-[#30363D] bg-[#161B22] text-[#E6EDF3]"
+                        }`}
+                        title={fast ? "Fast — styrs av promptens innehåll, inte en tangent" : `Standard: ${g.standard}`}
+                      >
+                        {spelarIn ? "Tryck …" : komb}
+                      </kbd>
+                      {fast ? (
+                        <span className="shrink-0 text-[10px] text-[#484F58]" title="Kommandomenyn öppnas alltid av / i skrivfältet — den är en del av chattens kommandoprotokoll.">
+                          fast
+                        </span>
+                      ) : (
+                        <>
+                          <button
+                            type="button"
+                            onClick={() => setGenvagInspelning(spelarIn ? null : g.id)}
+                            aria-label={spelarIn ? "Avbryt inspelningen" : `Ändra kombinationen för ${GENVAG_KORTNAMN[g.id]}`}
+                            className={`flex h-9 shrink-0 items-center rounded-md border px-2.5 text-[11px] font-medium transition-colors ${
+                              spelarIn
+                                ? "border-[#DA3633] text-[#F85149] hover:bg-[#DA3633]/10"
+                                : "border-[#30363D] text-[#8B949E] hover:border-[#58A6FF] hover:text-[#58A6FF]"
+                            }`}
+                          >
+                            {spelarIn ? "Avbryt" : "Ändra"}
+                          </button>
+                          {overstyrd && (
+                            <button
+                              type="button"
+                              onClick={() => aterstallGenvag(g.id)}
+                              aria-label={`Återställ ${GENVAG_KORTNAMN[g.id]} till ${g.standard}`}
+                              title={`Tillbaka till standard (${g.standard})`}
+                              className="flex h-9 shrink-0 items-center rounded-md border border-[#30363D] px-2.5 text-[11px] font-medium text-[#8B949E] transition-colors hover:border-[#D29922] hover:text-[#D29922]"
+                            >
+                              Återställ
+                            </button>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+                {Object.keys(genvagÖverskrivningar).length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setGenvagÖverskrivningar({});
+                      sparGenvagar({});
+                      setGenvagInspelning(null);
+                    }}
+                    className="mx-3 mt-2 flex min-h-[44px] w-[calc(100%-24px)] items-center justify-center rounded-md border border-[#30363D] text-[11px] font-medium text-[#8B949E] transition-colors hover:border-[#DA3633] hover:text-[#F85149]"
+                  >
+                    Återställ alla genvägar ({Object.keys(genvagÖverskrivningar).length} ändrade)
+                  </button>
+                )}
+                <p className="mt-2 px-3 text-[10px] leading-relaxed text-[#484F58]">
+                  Ändra = tryck den nya tangentföljden (Esc avbryter). Sparas i denna webbläsare
+                  (localStorage ”ak1a-genvagar”) — Ctrl gäller även Cmd på macOS.
+                </p>
               </section>
             </div>
           </aside>
@@ -12595,18 +12785,29 @@ export function StudioChat({ hem }: { hem: () => void }) {
               <tbody>
                 {(
                   [
-                    ["Enter", "Skicka prompten till agenten"],
-                    ["Skift+Enter", "Ny rad i skrivfältet (flerradsprompt)"],
-                    ["Ctrl/Cmd+K", "Kommandopaletten — sök kommandon och modellbyten"],
-                    ["Ctrl/Cmd+Shift+F", "Sök i chatten + hopp mellan turer (Esc stänger)"],
-                    ["/", "Kommandomenyn i skrivfältet (snabbkommandon med autocomplete)"],
+                    // REGISTER 22 (P7): raderna läser genvägsregistret —
+                    // remappade kombinationer (Inställningar ⚙) syns här.
+                    [aktivaGenvagar.skicka, "Skicka prompten till agenten"],
+                    [
+                      aktivaGenvagar.skicka === "Enter" ? "Skift+Enter" : "Enter",
+                      "Ny rad i skrivfältet (flerradsprompt)",
+                    ],
+                    [aktivaGenvagar.kommandopalett, "Kommandopaletten — sök kommandon och modellbyten"],
+                    [
+                      aktivaGenvagar["sok-panel"],
+                      `Sök i chatten + hopp mellan turer (${aktivaGenvagar["esc-stang"]} stänger)`,
+                    ],
+                    [
+                      aktivaGenvagar["slash-meny"],
+                      "Kommandomenyn i skrivfältet (snabbkommandon med autocomplete)",
+                    ],
                     ["↑", "Föregående prompt ur historiken (i tomt skrivfält); ↑/↓ navigerar även palett och sök"],
                     ["Alt+↑/↓", "Föregående/nästa TUR när sökraden är öppen"],
-                    ["?", "Denna genvägsöversikt"],
-                    ["Esc", "Stäng palett, sök, paneler och dialoger"],
-                  ] as const
+                    [aktivaGenvagar.genvagshjalp, "Denna genvägsöversikt"],
+                    [aktivaGenvagar["esc-stang"], "Stäng palett, sök, paneler och dialoger"],
+                  ] as [string, string][]
                 ).map(([tangent, beskrivning]) => (
-                  <tr key={tangent} className="border-b border-[#21262D]/60 last:border-b-0">
+                  <tr key={`${tangent}·${beskrivning}`} className="border-b border-[#21262D]/60 last:border-b-0">
                     <td className="whitespace-nowrap px-3.5 py-1.5">
                       <kbd className="rounded border border-[#30363D] bg-[#161B22] px-1.5 py-0.5 font-mono text-[10px] font-semibold text-[#E6EDF3]">
                         {tangent}
@@ -12618,7 +12819,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
               </tbody>
             </table>
             <p className="border-t border-[#21262D] px-3.5 py-1.5 text-[10px] text-[#8B949E]">
-              Tryck ? igen eller Esc för att stänga — musen fungerar förstås också.
+              Tryck {aktivaGenvagar.genvagshjalp} igen eller Esc för att stänga — musen fungerar
+              förstås också. Ctrl gäller även Cmd (macOS); egna kombinationer ändras i
+              Inställningar ⚙ → Genvägar.
             </p>
           </div>
         </div>

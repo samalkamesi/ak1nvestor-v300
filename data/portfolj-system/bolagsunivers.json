@@ -9503,5 +9503,90 @@
       "fcf": []
     },
     "notering": "serier i EUR (rapportvaluta; Nasdaq Stockholm-notering i SEK — CAGR opåverkad, nivåer ej i SEK); bruttomarginal 100 % är källans konvention (intäkterna redovisas netto av spelrelaterade avgifter — ingen separat kostnad för sålda tjänster); prognosTillvaxt härledd ur trailing/forward-P/E (15,15/13,60 ⇒ +11,4 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent; fcfYield = fritt kassaflöde/börsvärde; augusti 2026: offentliggjort uppköpserbjudande (Candle Lake ~695 SEK/aktie) noterat som marknadskontext — inget värdeomdöme"
+  },
+  {
+    "ticker": "HSBA.L",
+    "namn": "HSBC Holdings plc",
+    "bransch": "finans",
+    "land": "Storbritannien",
+    "valuta": "GBX",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-15",
+        "url": "https://stockanalysis.com/quote/lon/HSBA/",
+        "paranoid": "översikt + statistics + financials (underlag S&P Global Market Intelligence; sid-as-of 2026-09-15): pris 1 531,20 GBX, börsvärde 263,34 mdr GBP, P/E 16,60 trailing / 11,38 forward, P/B 1,77, ROE 13,11 %, nettomarginal 37,8 %, TTM-tillväxt +20,0 %, 4 räkenskapsår 2022–2025 (serier i USD)"
+      }
+    ],
+    "hamtat": "2026-09-15",
+    "pris": 1531.2,
+    "marknadsKapitalMdr": 263.34,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.109,
+      "resultatCAGR5ar": 0.1373,
+      "omsattningTillvaxtTTM": 0.2,
+      "prognosTillvaxt": 0.4587
+    },
+    "lonksamhet": {
+      "roe": 0.1311,
+      "roic": null,
+      "bruttoMarginal": null,
+      "ebitMarginal": null,
+      "nettoMarginal": 0.378,
+      "fcfMarginal": null
+    },
+    "stabilitet": {
+      "skuldEgenkapital": null,
+      "rantaTackning": null,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 16.6,
+      "pb": 1.77,
+      "evEbit": null,
+      "peg": 0.3619,
+      "fcfYield": null,
+      "egenKapitalMultipl": 1.77
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        46358000000,
+        56320000000,
+        61240000000,
+        63224000000
+      ],
+      "resultat": [
+        14346000000,
+        22432000000,
+        22917000000,
+        21102000000
+      ],
+      "egetKapital": [],
+      "fcf": []
+    },
+    "notering": "bankkonvention som GS/JPM-raderna: roic/skuld-EK/EV-EBIT ej meningsfullt jämförbart — null; fcfYield/fcfMarginal null (källans fritt kassaflöde −54,7 mdr USD = kundmedelsflöden, ej utdelningskapacitet); brutto-/EBIT-marginal n/a för bank hos källan — null; serier i USD (källan standardiserar LSE-noteringen till USD — CAGR opåverkad, nivåer ej i GBX); prognosTillväxt härledd ur trailing/forward-P/E (16,60/11,38 ⇒ +45,9 % implicit EPS-tillväxt +1 år); peg = P/E/prognostillväxt i procent (källans egen PEG 1,28 bygger på 3-årsprognos +10,79 % — TTE-konventionen används för universumets jämförbarhet); CAGR över 4 räkenskapsår (2022–2025, 3 perioder); utdelning 0,56 GBP/aktie = 3,65 % direktavkastning, utdelningskvot 60,4 % (aterkop-fält null: insiderdata saknas hos källan); ROE/nettomarginal ur källans statistics-sida; universumets första brittiska bolag (landstäckning 11 → 12 länder)"
   }
 ]

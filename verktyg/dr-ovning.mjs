@@ -25,7 +25,8 @@
 // Exit-kod: 0 = GRÖN övning (restore, mätning, protokoll, städning klart);
 //           1 = RÖD (dump underkänd, restore-fel eller okända fel — proto-
 //             koll skrivs ändå; misslyckade övningar SKALL protokollföras);
-//           3 = låset upptaget (annan agent äger DR-fönstret just nu).
+//           3 = låset upptaget (annan agent äger DR-fönstret just nu);
+//          75 = ram-/diskgrind stängd (incidenten 16:42:s läxa) — kör igen senare.
 
 import { spawnSync } from 'node:child_process';
 import {
@@ -92,6 +93,27 @@ function slappLas() {
   try { unlinkSync(LAS_VAG); } catch { /* redan borta */ }
 }
 
+// --- Grind: ram + disk FÖRE allt tungt (incidenten 2026-09-15 16:42 — en   ---
+// --- DR-övning får ALDRIG svälta prod på minne; mönster: verktyg/ram-grind) ---
+
+function grind() {
+  const mem = /MemAvailable:\s+(\d+) kB/.exec(readFileSync('/proc/meminfo', 'utf8'));
+  const mb = mem ? Math.round(Number(mem[1]) / 1024) : 0;
+  if (mb < 1000) {
+    console.error(`RAMGRIND: MemAvailable ${mb} MB < 1000 MB — övningen SKIPPAS (exit 75). Kör igen när minnet frigjorts.`);
+    return false;
+  }
+  const df = kor('df', ['-k', '/']);
+  const falt = ((df.stdout || '').split('\n')[1] || '').trim().split(/\s+/);
+  const gbLedigt = Number(falt[3] || 0) / 1024 / 1024;
+  if (gbLedigt < 5) {
+    console.error(`DISKGRIND: ${gbLedigt.toFixed(1)} GB ledigt < 5 GB — övningen SKIPPAS (exit 75).`);
+    return false;
+  }
+  console.log(`Grind OK: MemAvailable ${mb} MB · ${gbLedigt.toFixed(0)} GB ledigt på /`);
+  return true;
+}
+
 // --- Processhjälp -----------------------------------------------------------
 
 function kor(kommando, args, opts = {}) {
@@ -140,7 +162,7 @@ function forkontrollDump(dump) {
   console.log(r.stdout.split('\n').map((l) => `      ${l}`).join('\n'));
   if (r.stderr) console.log(r.stderr.split('\n').map((l) => `      ${l}`).join('\n'));
   if (r.status !== 0) {
-    console.error('DUMEN UNDERKÄND — återställning vägras (en ofullständig dump är ingen backup).');
+    console.error('DUMPEN UNDERKÄND — återställning vägras (en ofullständig dump är ingen backup).');
     return false;
   }
   return true;
@@ -357,6 +379,9 @@ function skrivProtokoll(dom) {
   const topp = dom.mat.topp.map(([t, n]) => `| ${t} | ${n.toLocaleString('sv-SE')} |`).join('\n');
   const gron = dom.restoreOk && dom.fel.okanda.length === 0 && dom.stadning.skrapDbBort
     && (dom.behall || dom.stadning.pgStoppad);
+  // Ärlighetskontrakt: avbrot FÖRE restore får aldrig rendera mätetal som ser
+  // ut att komma från en genomförd återställning (NaN s / 0 rader-lögner).
+  const foreRestore = Boolean(dom.avbrots) && dom.restoreOk !== true;
 
   const text = `# DR-PROV ${dom.datumIso} — AUTOMATISK kvartalsövning (${gron ? 'GODKÄNT' : 'UNDERKÄNT'})
 ${dom.avbrots ? `\n> **ÖVNINGEN AVBRÖTS:** ${dom.avbrots}\n` : ''}
@@ -374,16 +399,16 @@ u3:s låsfilskur implementerad.
 
 ## 1. Sammanfattning för kunden (5 rader)
 
-1. Vi återställde **hela databasen från en backup** i en avskild testdatabas
+1. ${foreRestore ? 'Övningen avbröts **före** återställningen (se banderollen) — inga återställningsmätetal framställdes; produktionen påverkades inte.' : `Vi återställde **hela databasen från en backup** i en avskild testdatabas
    på servern: **${dom.rto.sek.toFixed(1)} sekunder** — sedan raderade vi
-   testdatabasen igen. Produktionen påverkades inte.
-2. Kontrollen: **${dom.mat.public.tabeller} publika tabeller och
-   ${dom.mat.public.rader.toLocaleString('sv-SE')} rader** kom tillbaka${dom.mat.public.rader >= 1246728 ? ' — datat växer som väntat' : ''}.
+   testdatabasen igen. Produktionen påverkades inte.`}
+2. ${foreRestore ? 'Orsak och dom: banderollen + §2.' : `Kontrollen: **${dom.mat.public.tabeller} publika tabeller och
+   ${dom.mat.public.rader.toLocaleString('sv-SE')} rader** kom tillbaka${dom.mat.public.rader >= 1246728 ? ' — datat växer som väntat' : ''}.`}
 3. Nytt från den här övningen: hela provet körs nu av **ett enda verktyg**
    i stället för en handflödesövning — nästa kvartalsprov är ett rutinkommando,
    och ett lås ser till att bara en agent i taget får använda testdatabasen.
 4. Backupen kontrolleras först (är den komplett ända till sista raden?) —
-   ett underkännande stoppar provet innan något händer. ${dom.fel.okanda.length === 0 ? 'Inga okända fel uppstod.' : `OKÄNDA fel uppstod: ${dom.fel.okanda.length} — se §5, fynd att utreda.`}
+   ett underkännande stoppar provet innan något händer. ${dom.fel.okanda.length === 0 ? 'Inga okända fel uppstod.' : `OKÄNDA fel uppstod: ${dom.fel.okanda.length} — se §4, fynd att utreda.`}
 5. Nästa övning: **senast ${nastaOvning()}** — kör \`node verktyg/dr-ovning.mjs\`.
 
 ## 2. Genomförande (verktygets steg)
@@ -391,13 +416,13 @@ u3:s låsfilskur implementerad.
 | Steg | Resultat |
 |---|---|
 | 0. Lås ${LAS_VAG} | taget (pid ${process.pid}) — EN agent äger PG17-fönstret |
-| 1. Dumpkontroll | ${dom.dumpNamn} — GRÖN enligt markörkontraktet (s10-u1:s verktyg) |
-| 2. PG17 | ${dom.pgStartadesAvOss ? 'startad av verktyget (låg stoppad — korrekt viloläge)' : 'var REDAN uppe vid ankomst (oväntat — protokollfynd)'} |
-| 3. Skrap-DB | ${SKRAP_DB} skapad färsk |
-| 4. **Återställning (RTO)** | **${dom.rto.sek.toFixed(1)} s** (${(statSync(dom.dumpVag).size / 1048576).toFixed(1)} MB gz) · fellogg ${dom.fel.antalRader} rader → ${dom.rto.felFil} |
-| 5. Mätning | se §3 |
+| 1. Dumpkontroll | ${dom.dumpNamn} — ${dom.dumpGron ? 'GRÖN' : 'RÖD'} enligt markörkontraktet (s10-u1:s verktyg) |
+| 2. PG17 | ${dom.pgRordesEj ? 'rördes ej (avbrot före start)' : dom.pgStartadesAvOss ? 'startad av verktyget (låg stoppad — korrekt viloläge)' : 'var REDAN uppe vid ankomst (oväntat — protokollfynd)'} |
+| 3. Skrap-DB | ${foreRestore ? 'nåddes ej' : `${SKRAP_DB} skapad färsk`} |
+| 4. **Återställning (RTO)** | ${foreRestore ? 'nåddes ej' : `**${dom.rto.sek.toFixed(1)} s** (${(statSync(dom.dumpVag).size / 1048576).toFixed(1)} MB gz) · fellogg ${dom.fel.antalRader} rader → ${dom.rto.felFil}`} |
+| 5. Mätning | ${foreRestore ? 'nåddes ej' : 'se §3'} |
 | 6. Protokoll | denna fil |
-| 7. Städning | skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'EJ raderad'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad (redo)' : dom.behall ? 'lämnad uppe (--behall)' : 'EJ stoppad — FYND'} |
+| 7. Städning | ${foreRestore ? 'PG17/skrap-DB rördes ej (avbrot före start)' : `skrap-DB ${dom.stadning.skrapDbBort ? 'raderad' : 'EJ raderad'} · PG17 ${dom.stadning.pgStoppad ? 'stoppad (redo)' : dom.behall ? 'lämnad uppe (--behall)' : 'EJ stoppad — FYND'}`} |
 
 ## 3. Mätning (tre nivåer — u3:s kontrakt)
 
@@ -478,10 +503,12 @@ SLUT — maskinellt genererat av dr-ovning.mjs ${new Date().toISOString()}
 function main() {
   const opts = lasArgument();
   taLas();
+  if (!grind()) { slappLas(); process.exit(75); }
   const dom = {
     datumIso: new Date().toISOString().slice(0, 10),
     behall: opts.behall,
     pgStartadesAvOss: false,
+    pgRordesEj: false,
     stadning: { skrapDbBort: false, pgStoppad: false, meddelande: '' },
   };
   let gron = false;
@@ -491,10 +518,20 @@ function main() {
     dom.retention = raknaRetention();
     console.log(`DR-ÖVNING ${dom.datumIso} — dump: ${dom.dumpNamn}${opts.behall ? ' (--behall)' : ''}`);
 
-    if (!forkontrollDump(dom.dumpVag)) { slappLas(); process.exit(1); }
+    dom.dumpGron = forkontrollDump(dom.dumpVag);
+    if (!dom.dumpGron) {
+      // Kontraktet: misslyckade övningar SKALL protokollföras — även här,
+      // innan PG17 rörs (städningen redovsas sanningsenligt som orörd).
+      dom.avbrots = 'dumpen underkändes av slutmarkörskontrollen — återställning vägrades, PG17 rördes ej';
+      dom.pgRordesEj = true;
+      dom.stadning = { skrapDbBort: true, pgStoppad: true, meddelande: 'PG17/skrap-DB rördes ej (avbrot före start)' };
+      skrivProtokoll(dom);
+      slappLas();
+      process.exit(1);
+    }
     startaPg17(dom);
-    skapaSkrapDb();
     try {
+      skapaSkrapDb(); // inne i städnings-scope: ett createdb-fel får inte lämna PG17 uppe
       aterstall(dom.dumpVag, dom);
       matDatabas(dom);
       gron = true;

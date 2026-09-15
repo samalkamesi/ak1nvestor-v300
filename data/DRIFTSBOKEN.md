@@ -144,8 +144,14 @@ b) SERVER BORTA (Contabo död/förlorad): ny VPS (valfri apt-basad, Ubuntu
    `certbot --nginx -d lab.ak1nvestor.com`. Interim: Vercel-DNS-flipp.
 c) DATA FÖRLORAT (t.ex. Supabase-tabell raderad): Supabase är levande
    källa; valvets system-events-full-<datum>.json.gz = senaste snapshot
-   (max ett dygn gammal när datorn varit på). Återinläsning sker via
-   Supabase REST/API av main-agenten — dokumentera engångs-skript i worklog.
+   (max ett dygn gammal när datorn varit på). Återinläsning är MEKANISERAD
+   sedan 2026-09-15 (DR-PROV-2026-09-15-JSON-KEDJAN): verifiera + konvertera
+   med `node verktyg/aterstall-system-events.mjs --fil <arkiv> --jsonl-ut …`
+   (mappar type→event_type — namnbyte 09-10..15), REST-plan med
+   `--plan-supabase` (ALDRIG ignore-duplicates — tabellen saknar PK);
+   huvudagenten tillför enbart nycklarna. OBS: händelsehistorik före
+   2026-09-03 finns ENDAST i 09-08-arkivet (levande tabellen gallras) —
+   system-events-full-*.json.gz är arkivhandlingar, retention gäller ALDRIG.
 
 ## 5. INLOGGNING & NYCKLAR (platser, ALDRIG värden)
 
@@ -288,7 +294,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt) | data/forskning/DR-PROV-2026-09-15-AUTO.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt). KEDJA 2 (moln-JSON, system_events — saknas i SQL-dumpen): GRÖN samma dag, RTO 52–58 s / 146 727 rader, verktyg `aterstall-system-events.mjs` (strömmande, sabotagebevisat) — komplett DR = BÅDA kedjorna. Kedja 1-verktyget OBEROENDE GODKÄNNANDEPROVAT samma kväll av annan agent (femte RTO-punkten 23,9 s, radbild identisk; härdat: ram-/diskgrind exit 75, städningskontrakt slutet, RÖD väg protokollförs) | data/forskning/DR-PROV-2026-09-15-AUTO.md + DR-PROV-2026-09-15-JSON-KEDJAN.md + DR-VERKTYG-GODKANNANDE-2026-09-15.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -404,6 +410,71 @@ EnvironmentFile med chmod 600).
   (behöver fabriksbarnets sudo; `--fil` för annan dump, `--behall` lämnar
   skrap-DB+PG uppe för manuell undersökning — protokollet noterar brutet
   viloläge). Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15-AUTO.md.
+
+## S10-U3:2 — DR-ÖVNING KEDJA 2: MOLN-JSON system_events (2026-09-15, GODKÄNT)
+
+- **Sista obevisade restore-kedjan bevisad.** SQL-kedjan var mätt 4× (v98/u2/u3/
+  u4) men system_events (händelseloggen) saknas i SQL-dumpen — dess ENDA DR-väg
+  är moln-JSON-arkivet, som var integritetsbevisat men ALDRIG återställnings-
+  bevisat (scenario (c) sa "dokumentera engångs-skript i worklog" = improvisation
+  vid katastrofen). Nu: verktyg + mätt RTO + protokoll.
+- **Nytt verktyg `verktyg/aterstall-system-events.mjs`** — strömmande (KONSTANT
+  minne; arkivet 350 MB okomprimerat, full parse förbjuden på RAM-snål server),
+  domar GRÖN/RÖD med exit 0/1: gzip-ström + header-kontrakt + antal-eftal +
+  per-rad giltighet; lägen `--db` (psql COPY i skrap-PG), `--jsonl-ut` (REST-
+  inmatningsfiler med prod-kolumnnamn), `--plan-supabase` (katastrofplan; läser
+  ALDRIG nycklar). Sabotage 3/3 gripna (trunkerad gzip på två vägar, förfalskat
+  antal, truncerad-flagga).
+- **Mätt:** verify 26–37 s/arkiv; restore i skrap-PG17 **51,6 s resp 57,6 s**
+  väggklocka för 146 727 rader (~2 600–2 850 rader/s), oberoende PG-verifiering
+  identisk (9 typer, jsonb läsbar, tidsfönster sekundexakt). Total DR båda
+  kedjorna ≈ 70–80 s.
+- **FYND (6, alla i protokollet):** (1) schemadrift type→event_type mellan arkiv
+  09-09 och dump 09-15 — naiv import hade kört mot fel kolumn, verktyget mappar
+  båda; (2) tabellen saknar PK — 6 dubblett-id i 09-09-arkivet (09-08: 0), trolig
+  Range-pagineringsrace i exportören, planen förbjuder därför ignore-duplicates;
+  (3) **RPO-gap: inget nytt JSON-arkiv sedan 09-09** (hybrid-sync tyst — SQL-
+  cronen lever) OCH levande tabellen gallras: historik före 2026-09-03 finns
+  ENDAST i 09-08-arkivet ⇒ system-events-full-*.json.gz = arkivhandlingar,
+  retention ALDRIG; (4) tillväxt +104 rader/dag — 200k-taket årtionden bort;
+  (5) psql -q tystar COPY-taggen (egen bugg, gripen av egen dom, kurad);
+  (6) låsprotokoll-mismatch flock↔dr-ovning.mjs filprotokoll — utesluter inte
+  varandra, kur till huvudagenten: flock i dr-ovning.mjs på samma fil.
+- Städning: skrap-DB droppad ×2, PG17 down, sabotagefiler + flock-låsfil rensade,
+  disk 78 GB. Rollen `ak1a` skapad i LOKALA klustret 17 (ej Supabase).
+- **Kvartalsmallen är nu BÅDA kedjorna:** `node verktyg/dr-ovning.mjs` (kedja 1)
+  + `node verktyg/aterstall-system-events.mjs --fil <senaste> --db ak1a_dr_json`
+  (kedja 2; skrap-schema enligt protokollet). Fullständigt protokoll:
+  data/forskning/DR-PROV-2026-09-15-JSON-KEDJAN.md.
+
+## SPÅR 10 — DR-VERKTYGETS GODKÄNNANDEPROV + HÄRDNING (2026-09-15, GODKÄNT)
+
+- **Oberoende godkännandeprov av `verktyg/dr-ovning.mjs`** (u4:s leverans
+  55dc2ee2) av annan agent än författaren — granskning + härdning + egen
+  fullkörning. Dom: GODKÄNT.
+- **Härdning levererad i samma fil:** (H1) städningskontraktet slutet —
+  `skapaSkrapDb()` in i det inre try-scopet, ett createdb-fel kan inte längre
+  lämna PG17 uppe; (H2) ram-/diskgrind FÖRE allt tungt (MemAvailable ≥ 1 000 MB,
+  ≥ 5 GB ledigt; under gräns = exit 75, kör igen — 16:42-incidentens läxa);
+  (H3) RÖD dump skriver nu protokoll + verklig GRÖN/RÖD-dom i stegtabellen;
+  (H4) avbrottsfallet renderar "nåddes ej"/"rördes ej" — aldrig NaN/nollvärden
+  som ser ut som mätetal; (H5) DUMPEN-typo + §4-referens.
+- **Bevis:** låsvägran i VERKLIG trafik (exit 3 medan kedja-2-agenten höll
+  flock-fönstret 19:28 — PG orört av den nekade parten) · RÖD trunkerad dump →
+  protokoll UNDERKÄNT med PG17 orörd (DR-PROV-2026-09-15-AUTO-2.md) · GRÖN
+  fullkörning **23,9 s** = FEMTE oberoende RTO-punkten (20,0 · 17,7 · 14,7 ·
+  20,0 · 23,9 s — lastberoende spridning), radbild identisk för femte gången
+  (public 60/1 246 728 · public+storage 68/1 246 864 · alla 95/1 247 119 ·
+  fel 780/780 kända 0 okända), städning verifierad (DR-PROV-2026-09-15-AUTO-3.md).
+- **Flock-notisen:** bekräftar S10-U3:2:s kö till huvudagenten (flock-stöd i
+  dr-ovning.mjs); tills dess rekommendation: `flock -w 900 /tmp/ak1a-dr-prov.lock
+  -- node verktyg/dr-ovning.mjs` när väntan önskas. Flock lämnar en tom
+  låsfil efter sig — oskyldigt (kärnan släpper vid processdöd); städas fri.
+- **Fabrikskollision bevis nr 2** (identiska "välj själv"-uppdragstexter gav
+  två agenter samma objekt; noll förlorat arbete — Write-läshindret + kollisions-
+  kontroll hejdade): u3:s kur nr 1 (manifest-unika objekt) är fortfarande ej
+  mekaniserad hos huvudagenten.
+- Fullständigt protokoll: data/forskning/DR-VERKTYG-GODKANNANDE-2026-09-15.md.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

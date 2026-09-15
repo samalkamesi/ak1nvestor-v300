@@ -129,7 +129,7 @@ const pbText: MultiplText = {
     "P/B är substansnärt: multipel under 1x betyder att kursen ligger under det bokförda kapitalet — ett utfall att förstå (skepsis mot bokförda värden eller tillgångar som inte avkastar), aldrig en köpsignal i sig.",
     "Bokfört värde är en historik: gamla anläggningstillgångar, inköpta goodwillposter och olika avskrivningsprinciper gör det egna kapitalet olika jämförbart mellan bolag och länder.",
     "Mjukvarubolag har lite bokfört kapital och ofta höga P/B; fastighets- och finansbolag bär tunga balansräkningar och ofta låga — nivån är branschberoende, jämför därför inom branschen.",
-    "Återköp minskar det egna kapitalet och lyfter P/B utan att verksamheten förändrats — läs talet tillsammans med avkastningsmått som ROE.",
+    "Återköpsprogram minskar det egna kapitalet och lyfter P/B utan att verksamheten förändrats — läs talet tillsammans med avkastningsmått som ROE.",
     "Universumraden visar samma mått över alla tio branscher — en bred referens, inte ett normalvärde att sträva efter.",
   ],
   fellerAttUndvika: [

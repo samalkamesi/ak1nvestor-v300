@@ -199400,6 +199400,162 @@
     "grahamSection": "För Benjamin Graham var marginalen på balansräkningssidan en grundtrygghet: eget kapital i förhållande till skulder var en av hans mest pålitliga försiktighetsindikatorer. Räntetäckningsgraden hade han som egen rad i sitt analysramverk — hans klassiska kriterier inkluderade krav på att rörelsen täcker räntan med god marginal, ett arv som lever kvar i den svenska traditionen.",
     "ak1Section": "I AK1A:s metodik breddar soliditet och räntetäckningsgrad V-spårets stabilitetsfamilj från relationen mellan skuld och kapital till hela balansräkningens bärkraft och rörelsens motståndskraft mot ränta. Tillsammans med V10–V12 ger de fyra dimensioner av tålighet — och därmed en stabilare grund för hela den sammanvägda helhetsbilden."
   },
+  "st-02-kanslighetsanalys-och-stresstest": {
+    "slug": "st-02-kanslighetsanalys-och-stresstest",
+    "category": "STABILITET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Känslighetsanalys — stresstesta balansräkningen",
+    "summary": "Fortsetzungskursen i stabilitet: från statiska nyckeltal till scenarier — känslighetsmatrisen, räntebindningstrappan och stresstestet som visar hur länge ett bolag står emot fallande resultat och stigande ränta.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Flytta stabilitetsanalysen från ögonblicksbild till bana: vad händer med måtten när antaganden ändras · Bygga en känslighetsmatris — ett mått mot en variabel i taget — och läsa den som en terrängkarta över sårbarhet · Läsa räntebindningstrappan: när lånen löper ut, till vilka räntor och med vilken refinansieringsrisk · Konstruera ett stresstest: flera ogynnsamma antaganden samtidigt, räknat på verkliga siffror · Räkna vidare i kassaflödesvyn — räntan betalas i kontanter, inte i rörelseresultat — och uppskatta en överlevnadshorisont i nollresultat · Se de klassiska fällorna: falsk precision, medelfall förklädd till värsta fall och korrelerade chocker · Koppla stressvyn till V10–V12, soliditet och räntetäckning.",
+    "why": "Soliditeten och räntetäckningsgraden (st-01) svarar på hur bolaget står sig i dag — men stabilitet är inte ett läge, det är en bana. Frågan som kräver mer än statiska mått är den rörliga: vad händer om resultatet faller trettio procent och räntan stiger två procentenheter — samtidigt? Känslighetsanalysen och stresstestet är verktygen för den frågan, och de används av banker, kreditinstitut och bolagens egna finansfunktioner världen över — IFRS 7 kräver till och med att noterade bolagen redovisar känslighetsuppgifter för finansiella risker i sina årsredovisningar. För eleven är de samma gåva som nyckeltalen var på nybörjarnivå: ett strukturerat sätt att tänka på motvind innan den kommer. Kursen tränar de tre verktygen på konkreta räkneexempel — och visar hur stressvyn förändrar bilden av vilka balansräkningar som är trygga.",
+    "history": {
+      "origin": "Känslighetsanalysen föddes ur ingenjörsvetenskapens behov att veta hur en konstruktion reagerar på belastning — och lånades tidigt in i kreditvärderingen: bankens fråga var från början inte 'hur ser bolaget ut?' utan 'vad händer om det går sämre?'. Räntebindningstrappor fördes i långivarens bokföring lång innan de blev standard i bolagens egna rapporter — att veta när kapitalet måste förnyas, och till vilket pris, var långivarens skydd.",
+      "evolution": "De stora kriserna formade verktygen. Den svenska fastighets- och bankkrisen i början av 1990-talet — där högt belånade bolag med korta bindningstider ställdes om när räntan steg kraftigt — gjorde känslighets- och bindningsanalysen till en fast del av svensk kreditpraxis. Internationellt ledde bankkriser till Basel-regelverkens krav på stresstest av kapital och likviditet, och redovisningsstandardiseringen följde efter: IFRS 7 införde krav på att visa hur finansiella instrument påverkas av förändringar i marknadsriskfaktorer — känslighetstal blev en del av själva årsredovisningsspråket.",
+      "modern": "I dag är stresstest en institutionell rutin: banker genomför dem löpande under tillsyn, och noteringsexperter räknar scenario på bolagens balansräkningar vid varje rapport. Samtidigt har de snabba ränteskiftena under 2020-talet påmint om verktygens viktigaste läxa — att chocker sällan kommer en i taget: samma svaga konjunktur som pressar resultatet kan flytta kreditvillkor och valutor. Den moderna stressvyn tränar därför kombinatörisk ödmjukhet: flera ogynnsamma antaganden åt gången, även när exakt sannolikhet inte går att ange."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — från ögonblicksbild till bana",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Verktygslådan — matrisen, trappan och stresstestet",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — två bolag genom samma scenario",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Kassaflödesvyn — täckning i kontanter och överlevnadshorisont",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — stressvyn i AKM1",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — från ögonblicksbild till bana",
+        "intro": "Ett nyckeltal är en fotografi — ett scenario är en film. Stabilitetsanalysens andra steg är att byta media.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Soliditeten säger hur stor del av balansräkningen ägarna bär — i dag. Räntetäckningsgraden säger hur många gånger rörelsen täcker räntan — i dag. Båda är ögonblicksbilder av en balansräkning som ständigt rör sig: resultatet svänger med konjunkturen, räntan med penningpolitiken, lånen förfaller och förnyas. Det som gör en balansräkning trygg är inte att fotografierna ser bra ut, utan att banan håller: att bolaget klarar de svängningar som en normal framtid medför — och de som en ond framtid kan tänkas medföra.\n\nDärför börjar fortsättningskursen med ett perspektivbyte. I stället för att fråga 'vilket värde har måtten nu?' frågar vi 'hur förändras måtten när omvärlden förändras?'. Det är samma logik som ligger bakom känslighetsuppgifterna i årsredovisningarnas noter — bolagen visar själva hur exempelvis en ränteförändring slår mot resultat och eget kapital — och bakom bankernas interna stresstest. Skillnaden i metod är graden av kombinering: känslighetsanalysen flyttar en variabel i taget och visar var sårbarheten sitter; stresstestet flyttar flera samtidigt och visar hur det känns när det verkligen blåser. Båda tränar samma intellektuella muskel: att tänka på balansräkningen som något som utsätts för väder, inte som något som är."
+          },
+          {
+            "type": "definition",
+            "content": "Känslighetsanalys (balansräkning): beräkning av hur ett finansiellt mått — resultat, räntetäckning, eget kapital — förändras när en enskild antagandevariabel (ränta, valutakurs, volym) förändras, medan övriga hålls konstanta. Stresstest: samma beräkning med flera ogynnsamma förändringar samtidigt."
+          },
+          {
+            "type": "insight",
+            "content": "Nyckeltal mäter läget; scenarier mäter tålighet. Först när båda finns i bilden vet du om en fin balansräkning är stark eller bara nyligen fotograferad."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Verktygslådan — matrisen, trappan och stresstestet",
+        "intro": "Tre verktyg täcker det mesta av stressarbetet — var och en med sin fråga och sitt eget svar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det första verktyget är känslighetsmatrisen: en tabell där en rad variabler — räntan minus två, minus ett, plus ett, plus två procentenheter — ställs mot ett mått, till exempel räntetäckningsgraden. Matrisen visar med en enda överblick var känsligheten är störst och varifrån riskerna kommer: ett bolag vars täckning halveras vid en räntehöjning på en procentenhet är mer räntekänsligt än ett med samma utgångsläge men flackare kurva. Det andra verktyget är räntebindningstrappan: en lista över när lånen förfaller till förlängning och vilka räntor de sedan bär. Trappan löser det som ögonblicksmåtten inte kan — tidfrågan. Två bolag med identisk räntetäckning kan ha helt olika risk om det enas skulder löper om inom ett år och det andras är bundna i sju; det första möter det nya ränteläget omgående, det andra har tid att anpassa sig.\n\nDet tredje verktyget är stresstestet: kombinera flera ogynnsamma antaganden — resultatfall, räntechock, kassautflöde — och räkna igenom balansräkningen under det sammansatta scenariot. Poängen är just kombinationen: enskilda chocker är sällan det som fäller bolag, men chocker tenderar att anlända tillsammans, eftersom de ofta har samma rot i konjunkturen. Ett välbyggt stresstest har därför tre egenskaper: antagandena är beskrivna i vanliga ord (inte bara 'minus trettio procent' utan vad det betyder för verksamheten), alla storheter står att räkna efter med offentliga siffror — och resultatet redovisas som en bana, inte som en spådom: 'med dessa antaganden sjunker täckningen till detta', aldrig 'detta kommer att hända'."
+          },
+          {
+            "type": "insight",
+            "content": "Matrisen hittar sårbarheten, trappan talar om när den slår till — stresstestet visar hur det känns när allt händer på en gång. Tre verktyg, en fråga: hur mycket motvind klarar balansräkningen?"
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — två bolag genom samma scenario",
+        "intro": "Ta grundkursens två exempel-bolag igen — och kör dem genom samma oväder. Samma scenario, två mycket olika resor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Grundkursen (st-01) räknade på ett industriföretag med balansomslutning 20 miljarder, eget kapital 8 miljarder — soliditet 40 procent — rörelseresultat 1,5 miljarder och räntekostnad 250 miljoner: räntetäckning 6. Stresscenariot: rörelseresultatet faller 30 procent och räntan stiger två procentenheter. Resultatet blir 1,05 miljarder. Skulderna är omkring 12 miljarder, och en räntehöjning på två procentenheter flyttar räntekostnaden till ungefär 490 miljoner. Täckningen landar på 1,05 delat med 0,49 — drygt 2. Kräftgången är djup: från 6 till 2, men rörelsen täcker fortfarande räntan två gånger om, och soliditeten 40 procent ger dessutom ett resultatutrymme att bära förluster innan balansräkningen egentligen ansträngs.\n\nFastighetsbolaget från samma exempel — balansomslutning 50 miljarder, eget kapital 12,5 miljarder, soliditet 25 procent, rörelseresultat 2 miljarder, räntekostnad 1,2 miljarder, täckning 1,7 — går igenom samma oväder: resultatet blir 1,4 miljarder, och på skulder om 37,5 miljarder växer räntekostnaden till omkring 1,95 miljarder. Täckningen hamnar under 1: rörelsen täcker inte längre räntan, och skillnaden måste fyllas av kassan, ny skuld eller sålda tillgångar. Övningens lärdom är inte att fastighetsbolaget är 'dåligt' — inom sin bransch är 25 procents soliditet normalt — utan att samma oväder träffar olika balansräkningar olika hårt, och att avståndet syns först i scenariot, inte i utgångsläget. Frågan stressvyn tränar är just den: hur mycket av resultatfallet och räntehöjningen kan balansräkningen svälja innan valen blir få?"
+          },
+          {
+            "type": "insight",
+            "content": "Två bolag, samma scenario, olika destinationer — det är avståndet mellan täckning 2 och täckning 0,7 som avgör om ovädret är en svacka eller början på en ond cirkel."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Kassaflödesvyn — täckning i kontanter och överlevnadshorisont",
+        "intro": "Räntetäckningen räknas på rörelseresultat — men räntan betalas i kontanter. Stressvyns sista steg går via kassaflödet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rörelseresultatet är en redovisningsstorhet: den innehåller avskrivningar som inte är kontantutflöden, och den innehåller inte investeringar som är det. När ett stresscenario väl har pressat täckningen under 1 blir nästa fråga därför likvid: hur länge klarar bolaget att betala räntan — och amorteringarna — ur sin egen kassa? Svaret består av tre byggstenar. Den första är det operativa kassaflödet i det försvagade scenariot: resultatet justerat för avskrivningar, skatt och svängningarna i arbetande kapital — i motvind växer kundfordringar ofta just när inbetalningarna dröjer. Den andra är den förhalbara investeringen: underhåll och expansion kan skjutas upp ett tag, men inte förbi — ett bolag som sparar sig ur kris genom att underhålla sina maskiner har köpt tid på bekostnad av framtida kondition. Den tredje är likviditetsreserven: kassan plus obundna checkkreditutrymmen, redovisade i noterna.\n\nMed dessa tre kan en överlevnadshorisont räknas: hur många kvartal klarar bolaget i ett scenario där driftens kassaflöde inte täcker ränta och amortering, innan reserven tar slut? Här spelar också bindningstrappan in igen — amorteringar är inte jämnt fördelade över tiden, och en stor förfallopost just vid ett svagt år kan tvinga fram refinansiering på ogynnsamma villkor, det som brukar kallas refinansieringsrisk. Kassaflödesvyn ändrar därmed hela stressarbetets karaktär: frågan är inte längre bara 'klarar bolaget räntan?' utan 'hur mycket tid har det på sig att bli bättre?'. Tid är nämligen det som skiljer en övergående svacka från en ond cirkel — och det är tiden, inte måtten, som den som lär sig läsa balansräkningar i motvind slutligen läser efter."
+          },
+          {
+            "type": "insight",
+            "content": "Balansräkningens sista fråga i stress är alltid densamma: hur många kvartal återstår? Överlevnadshorisonten är stabilitetens riktiga valuta."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Stressverktygen ger en känsla av precision — och det är just där deras egna fällor gömmer sig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är falsk precision: att räkna scenariots utfall till tre decimaler och tro att siffran bär mer kunskap än antagandena den vilar på. Ett stresstest är en konditionalsats — 'om detta, då detta' — och dess värde ligger i jämförelsen mellan banor, inte i den enskilda utfallssiffran. Andra fällan är medelfallet förklädd till värsta fall: många 'stressscenarier' är i själva verket ganska ordinära svackor, eftersom den som konstruerar dem omedvetet backar ett steg från det verkligt obehagliga. En hjälp är att utgå från verkliga historiska kriser — vilka fall i resultat, vilka räntor och vilka valutaskiftningar inträffade då? — i stället för att hitta på 'tillräckigt dystert' från scratch. Tredje fällan är att stressa en variabel i taget: verkliga kriser är korrelerade, och den som bara räknar plus två procentenheter ränta och minus trettio procent resultat var för sig hamnar systematiskt för snällt, eftersom kombinationen — som kapitel 3 visade — är skarpare än summan av delarna.\n\nFjärde fällan är redovisningens gropar, igen och på djupet: IFRS 16 lyfter leasing in i balansräkningen, vilket kan både pressa soliditeten och dölja den verkliga räntekostnadens storlek i leasingavgifterna — i stressräkningen ska leasingavtalen alltså behandlas som den skuld de ekonomiskt utgör. Valutarisken hör hit: skulder i främmande valuta kan förändras kraftigt i kronor räknat, och den som räknar med svenska räntor men glömmer valutan har stresstestat fel karta. Femte fällan, slutligen, är att tro att ett grönt scenario är en garanti. Stressvyn köper inte säkerhet — den köper kännedom om var sårbarheten sitter, och därmed förmågan att inte bli överraskad. Det är ödmjukhetens redskap, inte profetians."
+          },
+          {
+            "type": "insight",
+            "content": "Ett stresstest svarar aldrig på 'kan det hända?' — det svarar på 'vad händer med balansräkningen om det gör det?'. Skillnaden är allt: den första är spådom, den andra är beredskap."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — stressvyn i AKM1",
+        "intro": "När stressvyerna läggs till stabilitetsfamiljen blir tålighetsbilden tredimensionell — här knyts kursen till spåret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Stabilitetsfamiljen i AKM1:s V-spår bygger, som grundkursen visade, en fyrdimensionell bild: V10 skuldsättningsgrad (relationen), V11 likviditet (den närmaste täckningen), V12 intäktsstabilitet (efterfrågens jämnhet) — och soliditet samt räntetäckningsgrad från st-01 (bärkraft och motståndskraft). Stressvyn är den axel som går genom alla fyra: den visar hur varje dimension rör sig när omvärlden gör det. Skuldsättningsgraden förändras när resultaten äter eget kapital; likviditeten när kassaflödet svänger; intäktsstabiliteten är själva ingångsantagandet i varje resultatscenario; och räntetäckningen är stressräkningens klassiska utfallsmått. I AKM2:s samlade bild vägs stabiliteten mot lönsamhet, tillväxt och moat — och vikten där blir mer eller mindre tvingande just efter hur balansräkningen ser ut i stress: ett bolag vars bana håller även i dystra scenarier behöver mindre riskpåslag i helhetsbilden än ett vars täckning försvinner under 1 vid en ordinär konjunkturnedgång.\n\nAvsluta med byggövningen: välj ett verkligt bolag, hämta balansräkning, räntekostnad och — om redovisad — känslighetsuppgiften ur noterna, och bygg tre saker: en känslighetsmatris för räntetäckningen, en bindningstrappa ur lånenotan och ett kombinerat stresscenario med egen överlevnadshorisont. Jämför därefter din matris med bolagets egen känslighetsuppgift — överensstämmer bilderna, och vad beror isåfall skillnaderna på? Den som gjort denna övning har inte bara räknat på ett bolag; den har trätt in i samma arbetsgång som kreditvärderare och finansfunktioner använder dagligen — och det är den rörelsen, från att läsa mått till att pröva dem, som är skillnaden mellan att känna till stabilitet och att förstå den. Som allt i spåret: utbildning i att läsa — aldrig ett omdöme om enskilda bolag."
+          },
+          {
+            "type": "insight",
+            "content": "Stabilitetsfamiljen ger måtten; stressvyn ger dem rörelse. Tillsammans svarar de på den fråga nyckeltal ensamma aldrig kan: inte hur bolaget står — utan hur länge det står."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade alltid till en titt i balansräkningen före storyn — stark finansiering ger ett bra bolag tid att bli upptäckt. Stressvyn är den idén fullbordad: det är inte stillastående styrka som köper tiden, utan styrkan som återstår när det blåser. Lynchs enkla fråga 'klarar bolaget en dålig period?' är i praktiken ett stresstest i en mening — och den som kan räkna scenariot kan svara med mer än ett hum.",
+    "grahamSection": "Benjamin Graham byggde hela sin trygghetsfilosofi på marginalen — avståndet mellan pris och värde, men i vidare mening mellan belastning och bärkraft. Ett stresstest är marginalen översatt till balansräkningens språk: hur mycket sämre kan det bli innan tryggheten tar slut? Grahams erfarenhet av depressionens balansräkningar gjorde honom till stresstänkare före termen: han visste att det som skiljer de som överlever kriser från de som inte gör det sällan är verksamheten — det är finansieringens uthållighet under de år då ingenting går som planerat.",
+    "ak1Section": "I AK1A:s metodik är den här kursen stabilitetsspårets fortsättningsblock: soliditet och räntetäckning (st-01) ger läget, känslighetsmatrisen, bindningstrappan och stresstestet ger banan — och tillsammans med V10–V12 formas en tålighetsbild som håller även i rörelse. I AKM2:s sammanvägning blir stabilitetsvikten ärligare av stressvyn: den speglar inte bara hur ett bolag mår i dag, utan hur mycket motvind dess balansräkning står emot — vilket är den fråga metodens riskdimension verkligen ställer."
+  },
   "tx-01-organisk-mot-forvarvad-tillvaxt": {
     "slug": "tx-01-organisk-mot-forvarvad-tillvaxt",
     "category": "TILLVÄXT",
@@ -200508,6 +200664,162 @@
     "grahamSection": "Benjamin Graham var försiktig med att betala för vackra berättelser om framtida fördelar — hans krav var påvisbar historik: stabila resultat över lång tid. Moat-tänkandet är i Grahams anda först när muren syns i siffrorna, inte bara i storyn; först då förtjänar den namnet trygghet.",
     "ak1Section": "I AK1A:s metodik är den här kursen MOAT-familjens grund: V13–V15 fördjupar immateriella tillgångar, varumärke och nätverkseffekter var för sig, och AKM2:s moat-dimension betygsätter hur länge fördelen håller. Med de fyra murarna på plats blir varje hög marginal en fråga om försvar i stället för tur — och varje värdering en fråga om hur länge kassaflödena skyddas."
   },
+  "mt-02-moat-erosion-och-vallgravstest": {
+    "slug": "mt-02-moat-erosion-och-vallgravstest",
+    "category": "MOAT",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Moat-erosion — när vallgraven grävs igen",
+    "summary": "Fortsetzungskursen om moats: hur varaktiga försvar nöts ner av teknik, reglering och ny konkurrens — och hur erosionen syns i marginaler, avkastning och försvarskostnader långt före katastrofen.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå moat-erosion som moat-analysens andra halva — att hitta muren är början, att övervaka dess nedbrytning är konsten · Känna igen varje murs specifika erosionsmekanismer: patent som löper ut, varumärken som slits, byteskostnader som rivs av öppna standarder, nätverk som vänder och kostnadsfördelar som äts av ny teknik · Läsa erosionsspåret i siffrorna: marginalkorridorer, avkastning på investerat kapital och marknadsandelar över en hel cykel · Arbeta med moat-trenden som begrepp — försämrad, stabil eller fördjupad — och med gapet mellan avkastning och kapitalkostnad · Skilja cyklisk svacka från strukturell erosion · Koppla erosionstänkandet till AKM1:s MOAT-familj (V13–V15) och AKM2:s moat-dimension.",
+    "why": "Grundkursen (mt-01) lär dig hitta moats — men marknadens historia är full av bolag vars murar såg breda ut ända till dagen de revs. Fördelar är inte permanenta tillstånd utan förråd som förbrukas eller förnyas: patent löper ut, kunder vänjer sig vid att byta, nätverk vänder, och teknik som en gång byggde muren bygger en ny åt någon annan. Erosionstänkandet är därför den verkliga fortsättningskursen: det flyttar frågan från 'finns en moat?' till 'i vilken takt håller den på att försvinna — och vad kostar det att underhålla den?'. Det är också frågan som skiljer en tillfälligt hög marginal från en värdefull verksamhet, och det är den fråga AKM2:s moat-dimension betygsätter år från år.",
+    "history": {
+      "origin": "Buffetts vallgravsmetafor innehöll från början en andra, mindre citerad tanke: vallgraven måste underhållas. Han beskrev hur bolagets uppgift är att bredda graven varje år — genom service, kvalitet, pris och produkt — och att slottet annars så småningom står oskyddat. Erosion var alltså inbyggd i bilden från början: en moat som inte förnyas är en moat på väg att försvinna.",
+      "evolution": "När Pat Dorsey systematiserade moat-tänkandet vid Morningstar på 2000-talet blev erosionen mätbar: bolagen fick moat-betyg efter bedömd uthållighet och en moat-trend — positiv, stabil eller negativ — som redovisades separat från nivån. Bruce Greenwalds Competition Demystified (2005) tillförde tidsdimensionen från annat håll: barriärer har en decay rate, en halveringstid, eftersom konkurrensen lär sig och kapital söker sig till goda avkastningar tills gapet pressas. Studier av bolag med hög avkastning visade mönstret tydligt: regressionskraften mot medel är stark — de flesta extrema avkastningar närmar sig normalen inom ett decennium.",
+      "modern": "I dag är erosionen snabbare än sin egen historia. Digitaliseringen har kortat avståndet mellan mur och motståndare: mjukvara kan efterapa en produktkärna på månader, plattformsskiften kan flytta hela kundbaser på ett par år, och artificiell intelligens pressar kostnadsfördelar som tidigare tog decennier att bygga. Den moderna moat-frågan har därför två klockor: hur snabbt kan en utmanare bygga en bro — och hur snabbt kan försvararen bretta graven? Skillnaden mellan svaren är erosionstakten, och den står att läsa i siffrorna."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — från att hitta muren till att bevaka den",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Erosionsmekanismerna — hur varje mur nöts",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — erosionsspåret i siffrorna",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — moat-trend och återinvesteringsgapet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — erosion i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — från att hitta muren till att bevaka den",
+        "intro": "Grundkursen slutade vid fyra murar — denna kurs börjar vid frågan som följer: hur snabbt grävs muren igen?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Moat-analysen har två halvor som kräver varandra. Den första — att identifiera försvararet — handlar om att se immateriella tillgångar, byteskostnader, nätverkseffekter och kostnadsfördelar i ett verkligt bolag. Den andra halvan, som den här kursen övar, handlar om tiden: varje försvar är utsatt för ett konstant tryck — konkurrenter som lär sig, kunder som vantas, teknik som skiftar, regler som ändras — och trycket förtär muren om inte bolaget förnyar den. Erosion är alltså inte ett öde som drabbar misslyckade bolag; det är grundtillståndet för alla moats, även de bredaste.\n\nDet ger fortsättningskursens arbetsmodell: en moat ska hanteras som ett lager, inte som ett monument. Lagret kan fyllas på — genom produktutveckling, varumärkesarbete, växande nätverk, fallande kostnadskurva — och det töms genom omsättning på kunder, patentlöptider och anfallen marknadsandel. Analysarbetet blir att läsa nettoförändringen: breddas graven eller smalnar den? Frågan är enkel att ställa men kräver träning att besvara ärligt, för svaret landar sällan i en enskild siffra — det landar i en riktning som siffrorna visar över år."
+          },
+          {
+            "type": "definition",
+            "content": "Moat-erosion: den gradvisa nedbrytningen av en varaktig konkurrensfördel — genom patent som löper ut, byteskostnader som faller, nätverk som vänder, kostnadsfördelar som jämnas ut eller varumärken som slits — synlig i marginaler, avkastning och marknadsandelar som sakta förlorar sin uthållighet."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga inte bara hur bred vallgraven är — fråga i vilken takt den grävs igen. Ett bredare försvar som smalnar snabbt är farligare än ett smalare som fördjupas."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Erosionsmekanismerna — hur varje mur nöts",
+        "intro": "Varje mur har sina egna fienden — att känna mekanismerna är att veta var man ska lyssna efter gnisslet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Immateriella tillgångar eroderar på klocka och på tro. Patent och exklusiva licenser har utlöpsdatum — efter dem öppnas fältet för generiska alternativ som ofta prissätter nedåt — och varumärken slits när kvaliteten sviker eller kulturen skiftar under dem: förtroende byggs i årtionden och kan förspillas på en säsong. Domänkunskap urholkas när en generation experter går i pension och branschens problem formuleras om.\n\nByteskostnader rivs av standardisering: när dataformat blir öppna, när migreringsverktyg blir billiga och när branschen enas kring gemensamma gränssnitt faller tröskeln att byta leverantör — kunden som en gång var fångad blir åter en köpare som kan pruta. Nätverkseffekter kan vända: en marknadsplats som tappar kritisk massa på säljsidan förlorar köparna i nästa steg, och flersidig användning — att kunderna håller till på flera plattformar samtidigt — urholkar exklusiviteten som gjorde nätverket till mur. Kostnadsfördelar slutligen jämnas ut av ny teknik, nya lokaler och nya lönelägen; en skalfördel är enbart varaktig om den växer med volymen snabbare än konkurrenternas möjlighet att hinna ikapp. Notera att teknikerna inte respekterar murityper: en och samma innovation kan riva både en kostnadsmur och en byteskostnad på en gång."
+          },
+          {
+            "type": "insight",
+            "content": "Varje mur nöts på sitt sätt: immateriella rättigheter på klocka, varumärken på förtroende, byteskostnader på standardisering, nätverk på kritisk massa, kostnadsfördelar på jämförbarhet. Diagnosen börjar med att veta vilken mur du står framför."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — erosionsspåret i siffrorna",
+        "intro": "Erosionen ropar sällan — men hon skriver. Spåret syns i marginalkorridorer och avkastning långt före katastrofen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Det mest pålitliga erosionsspåret är marginalkorridoren: rita bruttomarginal och rörelsemarginal för tio år och markera korridoren — de högsta och lägsta värdena under en hel konjunkturcykel. En moat i arbete håller korridoren bred och oförändrad; en eroderande moat visar en korridor som sakta sjunker eller trängs ihop från toppen: toppår som inte längre når de gamla höjderna är ofta det första tecknet, eftersom anfallen konkurrens märks i de bästa åren först. Detsamma gäller avkastningen på investerat kapital: en trend som varje cykel landar en aning lägre än den förra är regressionens signatur.\n\nAndra rader i spåret: marknadsandelar — en andel som holding är stilla i åratal och sedan börjar vandra är en mur som släpper — och prisgapet mot konkurrenterna: kan bolaget fortfarande ta ut sitt påslag, eller närmar sig prissättningen branschens? Till det kommer försvarskostnaden: en moat som kräver allt större andel av omsättningen i marknadsföring, utveckling och rabatter för att hålla kvar kunderna är en moat som betalar för sin egen existens. Övningen är att rita alla rader för samma bolag och fråga: pekar de åt samma håll? En enskild rad kan ha andra förklaringar — fasen i cykeln, ett stort enskilt avtal — men när marginal, avkastning, andel och försvarskostnad alla visar samma riktning är erosionen inte längre en hypotes."
+          },
+          {
+            "type": "insight",
+            "content": "Läs toppåren först: en moat som håller på att släppa syns i att de bästa åren inte längre når de gamla höjderna — långt innan bottenåret bevisar det."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — moat-trend och återinvesteringsgapet",
+        "intro": "Två mätredskap ger erosionen ett ram: moat-trenden som riktning och gapet mellan avkastning och kapitalkostnad som bränsle att förlora.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Morningstar tillämpar moat-trenden som en separat bedömning: är fördelen på väg att fördjupas, hålla sig stabil eller försvagas? Nyckeln är att trenden bedöms oberoende av nivån — ett bolag kan ha en enorm moat och negativ trend, och det är trenden som bär framtiden. I egen analys översätts trenden till konkreta frågor per mur: förfaller andelen löpande patent? Stiger kundbytet i nästa generation produkter? Växer nätverket fortfarande av egen kraft? Svaren blir en riktning — och riktningen är mätbar i marginalkorridorens lutning.\n\nDet andra redskapet är gapet mellan avkastningen på investerat kapital och kapitalets kostnad. Gapet är den ekonomiska vinst som muren skyddar — och konkurrensens hela kraft går ut på att pressa gapet mot noll. Frågan 'hur lång tid tar det innan gapet halverats?' ger erosionen en tidsaxel: ett gap som historiskt halverats på fyra–fem år beskriver ett snabbt förfallande försvar, ett gap som stått i tio år en äkta vallgrav. Greenwalds perspektiv kompletterar: barriärens höjd avgör hur svårt det är för ny kapital att ta sig in — men en gång in är det innestående gapets decay rate som styr hur länge festen varar. Båda måtten kan uppskattas med enkla medel ur offentliga rapporter — och de tvingar analysen att svara på den fråga som gör moat till värde: hur många år av skyddad vinst betalar jag för?"
+          },
+          {
+            "type": "insight",
+            "content": "Nivån talar om hur mycket vinst muren skyddar i dag; trenden och gapets halveringstid talar om hur länge skyddet räcker — och det är tiden som bär värdet."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Erosionstänkandet har sina egna fallgropar — de flesta bygger på att förväxla det tillfälliga med det strukturella, i båda riktningarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är moat-romantiken: berättelsen om hur muren såg ut för tio år sedan får stå oemotsagd medan nutiden skriver ett annat ting. Motgiftet är att alltid låta de senaste tre åren tala före de äldsta sju. Andra fällan är historikens trollkarl: tio år stabila marginaler bevisar bara att moaten höll förr — regressionskraften gäller även mogna försvar, och i synnerhet nätverk och tekniktäta branscher kan vandra på ett par år. Tredje fällan är att läsa en cyklisk svacka som erosion: en konjunkturemiss med fallande marginaler i ett hårt år är inte en riven mur — kännetecknet är att marginalerna återhämtar sig till korridoren när efterfrågan vänder. Erosion är korridorens förskjutning, inte ett enskilt bottenår.\n\nFjärde fällan är diversifieringens illusion: ett bolag som breddar sig in i nya verksamheter kan se totalmarginalen hålla medan kärnverksamhetens mur rivas — segmentredovisningen, inte koncernsammandraget, är där erosionen först syns. Femte fällan är att tro att försvaret är gratis: ett bolag som håller marginalen endast genom allt kraftigare rabatter, marknadsföring och kundbindung har inte en stabil moat utan en utmattande belägring — skillnaden syns i kassaflödet, där det senare läcker. Genomgående gäller samma disciplin som i grundkursen: murar syns i kundernas beteende och i siffror över tid — aldrig i ordalag om varumärket i en presentation."
+          },
+          {
+            "type": "insight",
+            "content": "Erosion förutsätter inte fallande marginaler i dag — den syns först i att det kostar allt mer att hålla dem. Följ försvarskostnaden, inte bara resultatet."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — erosion i AKM1:s metodik",
+        "intro": "I AK1A:s system är erosionstänkandet det som gör moat-betyget till en levande bedömning — här knyts kursen till spåret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "MOAT-familjen i AKM1:s V-spår fördjupar murarna var för sig — V13 immateriella tillgångar, V14 varumärke och kundlojalitet, V15 nätverkseffekter — och erosionstänkandet ger varje sådan kurs sin mörka spegling: V13 om löptider och patentklippor, V14 om slitage och generationsskiften, V15 om kritisk massa och flersidig användning. I AKM2 betygsätter moat-dimensionen hur länge fördelen håller — och betygets ärlighet hänger på trenden: samma nivå förtjänar olika betyg beroende på om korridoren breddas eller trängs. Därmed är erosionen inte ett sidospår utan betygsmaskineriets puls: en årligen omprövad bedömning, aldrig en siffra som får vila.\n\nAvsluta med helhetsövningen: välj ett bolag du lärt känna i tidigare kurser, rita dess marginalkorridor och avkastningstrend över tio år, och skriv den årliga vallgravsfrågan från grundkursen — håller muren fortfarande? — besvarad med tre rader ur rapporterna. Skriv därefter en mening om vad ett halverat gap mellan avkastning och kapitalkostnad skulle betyda för din bild av verksamheten. Det är hela konsten i miniatyr: att älska en moat utan att älska den blint — och att låta kalendern, inte hoppet, avgöra när bilden ska ritas om. Som all utbildning i detta spår: en metod att förstå bolag med, inte ett omdöme om dem."
+          },
+          {
+            "type": "insight",
+            "content": "En moat-betygsättning utan erosionstänkande är en fotografi som får stå för en film — betyget ska ritas om varje år, för muren gör det."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om att överge en berättelse när skälen till den försvinner — hans hållning till bolag vars fundament han följer är erosionstänkandet i praktik: kärnan är att veta varför man tror på ett bolag är att veta vad som skulle visa att man har fel. Lynch påminde också om att de värsta förlusterna ofta kommer inte från dåliga bolag utan från bra bolag som betalats för en moat som sedan revs — betala för försvaret, men fortsätt bevaka det.",
+    "grahamSection": "Benjamin Grahams marginal-tänkande (margin of safety) är erosionens äldsta motgift: eftersom framtiden är osäker — inklusive hur länge fördelar lever — köper tryggheten in ett avstånd mellan pris och värde som skyddar även när bilden försämras. Grahams krav på påvisad historik över lång tid var samtidigt en erosionsskärm: han ville se att fördelen burit genom hela cykler. Hans lärdom för moat-analysen: stabilitet förtjänar förtroende, men aldrig utan marginalen — för murar nöts, även äkta sådana.",
+    "ak1Section": "I AK1A:s metodik är den här kursen MOAT-familjens fortsättningsblock: V13–V15 fördjupar murarna, erosionstänkandet lär dem läsas över tid — och AKM2:s moat-dimension betygsätter hållbarheten med trenden som puls. En analys som väger hög avkastning med smalnande korridor och växande försvarskostnad ser inte bara vad bolaget tjänar i dag, utan hur länge det förtjänar det — och det är precis den sammansatta bedömning metodens viktningsmodell bygger vidare på."
+  },
   "kt-01-vad-ar-en-katalysator": {
     "slug": "kt-01-vad-ar-en-katalysator",
     "category": "KATALYSATOR",
@@ -200663,6 +200975,162 @@
     "lynchSection": "Peter Lynch betonade alltid att man ska veta varför man äger en aktie — berättelsen bakom — och att händelserna sedan är berättelsens bevis. Hans varning för story-bolag utan innehåll är katalysatorläran i ren form: en kommande händelse kan aldrig ersätta en verksamhet; den kan bara avslöja om verksamheten fanns där.",
     "grahamSection": "Benjamin Graham behövde ingen katalysator — och det är en läxa i sig. Med tillräcklig marginal of safety mellan pris och värde blir tålamodet självt realiseringsmekanismen: värdet behöver inte veta vilket datum som flyttar kursen. För Graham var marknaden kort sikt en röstmaskin och långsikt en viktmaskin — katalysatorerna är röstmaskinens tillfällen, och den som lär sig läsa dem lär sig också när rösten drivs av felinformation i stället för av fundamenten.",
     "ak1Section": "I AK1A:s metodik är den här kursen KATALYSATOR-familjens grund: V16–V18 fördjupar produktlanseringar, avtal och regulatoriska beslut var för sig, och AKM2:s tidshorisonter väger hur tungt händelser ska bära på varje horisont. Med förväntningsmekaniken på plats blir varje kommande rapport ett kalibreringstillfälle — och varje kursreaktion läsbar som information om vad marknaden trodde, inte bara om vad bolaget gjorde."
+  },
+  "kt-02-forvantningsanalys-och-kalibrering": {
+    "slug": "kt-02-forvantningsanalys-och-kalibrering",
+    "category": "KATALYSATOR",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Förväntningsanalys — vad står redan i kursen?",
+    "summary": "Fortsetzungskursen om katalysatorer: metoden att uppskatta vad marknaden redan prissatt — konsensus, implicita förväntningar i multipeln, förväntansträdet före händelsen och kalibreringen av det egna omdömet över tid.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Tolka priset som en samlad förväntan — och förväntningsanalysen som konsten att läsa vad som står i den · Känna konsensusets källor: analytikerkonsensus, bolagets egna vägledningar och de förväntningar som bärs implicit av värderingsmultipeln · Bygga ett förväntansträd före en händelse: normalfallet, överraskningsfallet och besvikelsefallet med ungefärliga sannolikheter · Förstå kalibrering — överensstämmelsen mellan angivna sannolikheter och faktiska utfall — och träna den med en utfallsdagbok · Känna igen fällorna: överkonfidens, eftersyn, konsensusanknytning och narrativets dragningskraft · Koppla förväntningsarbetet till AKM1:s KATALYSATOR-familj (V16–V18) och AKM2:s tidshorisonter.",
+    "why": "Grundkursen (kt-01) lärde mekaniken: kursen reagerar inte på nyheten utan på skillnaden mot förväntan. Men mekanik är inte metod. Nästa steg — och den verkliga fortsättningskursen — är att systematiskt uppskatta vad marknaden redan räknar med: vilka siffror som konsensus bär, vilken tillväxt och marginal som multipeln implicerar, och hur det egna omdömet förhåller sig till det. Det är denna övning som gör en kursreaktion läsbar — som information om förväntningar i stället för som dom om verksamheten — och som gör det egna bedömarna kalibrerbart: den som skriver ner sina sannolikheter före händelser och utvärderar dem efteråt får ett mått på sitt eget avstånd till marknadens. Det är ren utbildningsmekanik, och den tränar exakt det AKM2:s korta tidshorisonter kräver.",
+    "history": {
+      "origin": "Idén att priset bär förväntningar är äldre än termen: spekulanter har alltid talat om att 'ryktet är starkare än nyheten' och om kurser som 'räknat med' ett utfall. Den systematiska formen växte fram med den institutionella analysen på 1900-talet, när konsensusuppgifter — samlade analytikerkalkyler — blev en naturlig referenspunkt: överraskningen började mätas mot något, inte bara kännas.",
+      "evolution": "Vetenskapen föregick praktiken med metodiken: event studies — från Fama, Fisher, Jensen och Roll 1969 — lärde världen mäta kursrörelser kring händelser mot en förväntad normalavkastning, och den stora litteraturen om marknadens reaktion på oväntade komponenter i rapporter bevisade systematiken: det oförväntade som rör, inte det goda. Rappaport och Mauboussins Expectations Investing (2001) fullbordade vändningen: i stället för att räkna fram ett värde och jämföra med priset vänder metoden på uppgiften — läs ur priset vilka förväntningar som är inprisade, och bedöm om de är rimliga. Samma era formaliserade kalibreringsforskningen: psykologins arbete om överkonfidens och eftersyn visade varför den som inte skriver ner sina förväntningar före utfallet aldrig lär sig sitt eget bedömningsavstånd.",
+      "modern": "I dag lever förväntningsdata öppet: konsensusuppgifter sammanställs för noterade bolag, bolagens egna vägledningar är en standarddel av rapportkommunikationen, och optionsmarknadens priser läses ibland som mått på väntad rörelse kring stora händelser. Samtidigt har flödet av åsikter växt explosionsartat — forum, sociala medier, nyhetsbrev — vilket gör det lättare än någonsin att förväxla vad som sägs med vad som är prissatt. Den moderna förväntningsanalysen är därför en urskiljningskonst: hitta de förväntningar som faktiskt betalats för, och lär känna det egna omdömets systematiska snedsteg."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — från mekanik till metod",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Konsensus och dess källor — vad marknaden räknar med",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — förväntansträdet före händelsen",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Mätning — kalibrering av det egna omdömet",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — förväntningar i AKM1:s metodik",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — från mekanik till metod",
+        "intro": "Grundkursen lärde varför bra nyheter kan falla — denna kurs lär hur man i förväg kan resonera kring vad som krävs för att de ska stiga.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mekaniken från grundkursen i en mening: kursen före en händelse är inte neutral — den bär marknadens samlade förväntan, och det är utfallets avstånd till den förväntan som rör priset. Mekaniken förklarar det förflutna; metoden ska hjälpa till med det som återstår. Förväntningsanalysen är den metoden: det systematiska arbetet med att uppskatta vad som redan står i kursen — vilka resultatnivåer, vilken tillväxttak, vilka beslut — innan händelsen inträffar, och att jämföra det med ens egen bild av verksamheten.\n\nArbetet har alltså två sidor som gett kursen sitt namn. Den ena är marknadssidan: att läsa konsensus, vägledningar och implicita antaganden i värderingen. Den andra är egen sidan: att formulera sin egen bild med sannolikheter — inte som en spådom utan som en hypotes som kan prövas. Skillnaden mellan sidorna är analysens råmaterial: när din bild och marknadens bild skiljer sig åt har du något att lära av händelsen, vad än utfallet blir. När de sammanfaller är händelsen redan till stor del prissatt — och det är också en upptäckt värd."
+          },
+          {
+            "type": "definition",
+            "content": "Förväntningsanalys: det systematiska arbetet att uppskatta vilka framtidsbilder som redan är inprisade i en kurs — via konsensus, vägledningar och implicita antaganden i värderingen — och att ställa dem mot den egna, sannolikhetsformulerade bilden före en händelse."
+          },
+          {
+            "type": "insight",
+            "content": "Priset är en skriven förväntan — förväntningsanalysen är konsten att läsa den, inte att gissa nästa nyhet."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Konsensus och dess källor — vad marknaden räknar med",
+        "intro": "Förväntningarna har tre huvudkällor: analytikernas samlade uppskattningar, bolagets egna vägledningar — och multipeln själv.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Analytikerkonsensus är den mest citerade källan: insamlade vinstuppskattningar för kommande perioder, ofta redovisade som medeltal med en spridning kring sig. Medeltalet är referensen överraskningen mäts mot — men spridningen är minst lika värdefull: ett brett konsensus betyder att marknaden är oense, vilket ger utrymme för stora reaktioner åt båda hållen, medan ett trångt konsensus betyder att även små avvikelser kan rycka. Notera också att konsensus är en sammanvägning av människor med olika information och olika hastighet — det är en brygga mellan data och marknad, inte en sanning.\n\nDen andra källan är bolagets egen vägledning — de mål bolaget redovisar för omsättning, marginal eller resultat. Vägledningar förvaltas försiktigt av bolagen (kommunikationen regleras av marknadsmissbrukslagstiftning, som förbjuder selektiv spridning av kurspåverkande information), och marknaden vet det: ett bolag som slagit sin vägledning många kvartal i rad får en förväntan också på just det — att slå igen. Den tredje källan är den tystaste: värderingsmultipeln. Ett högt pris i förhållande till nuvarande resultat bär en berättelse om tillväxt; ett lågt bär en om stagnation eller risk. Att fråga 'vad måste hända i tio år för att dagens multipel ska vara rimlig?' vänder multipeln till en förväntningskarta — det är kärntanken i expectations investing, och den går att öva med enkel medel: en multipel, en penna och ett antagande om tillväxttak."
+          },
+          {
+            "type": "insight",
+            "content": "Tre källor, tre nackdelar: konsensus är en medeltalsmjuk väg, vägledningar är försiktigt ställda och multipeln talar bara i antaganden — tillsammans ger de ändå kursens innehåll, vilket ingen av dem gör ensam."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — förväntansträdet före händelsen",
+        "intro": "Verktyget som förvandlar en händelse från nyhetsflöde till övning: trädet med tre utfall, skrivet och daterat före.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Före en utvald händelse — en kvartalsrapport, ett myndighetsbeslut, en lansering — skriv du ner tre utfall. Normalfallet: vad marknadens bild säger, så som du läst den ur konsensus, vägledning och kurs. Överraskningsfallet: vad som skulle ligga över förväntan — och inte bara siffror, utan vad som skulle förändra bilden av verksamheten (en ny kundkategori, en marginal som håller i ett tummande läge, ett tidigare avgörande än väntat). Besvikelsefallet: spegeln — vad som skulle ligga under, och vad det skulle säga om tesen. Ge varje utfall en ungefärlig sannolikhetsandel, så att summorna blir hundra procent, och skriv en rad om hur du tror kursen kan reagera i varje fall — det är en förutsägelse om förväntningar, inte om värde.\n\nEfter händelsen är utvärderingen tre frågor lång. Vilket utfall inträffade — eller något fjärde, och varför kunde trädet inte rymma det? Var sannolikheterna rimligt fördelade, eller lät du hoppet bära överraskningsfallets vikt? Reagerade kursen som du trott — och om inte, vad säger det om vad som verkligen var prissatt? Själva poängen med trädet är denna: det omöjliggör det mjuka minnet, där man efteråt minns att man 'kände rätt'. Med skrivna utfall och sannolikheter blir varje händelse en datapunkt i ett längre mönster — och mönstret, inte minnet, är vad kalibrering växer ur."
+          },
+          {
+            "type": "insight",
+            "content": "Ett förväntansträd som inte innehåller ett besvikelsefallet med verklig vikt är inte ett träd — det är ett hopp med grenar."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Mätning — kalibrering av det egna omdömet",
+        "intro": "Kalibrering är överensstämmelsen mellan angivna sannolikheter och verkliga utfall — och den går att träna, som vilken färdighet som helst.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En person som säger 'åttio procent säker' och har rätt i åtta fall av tio är väl kalibrerad; har hon rätt i sex av tio är hon överkonfident. Det är hela mätet — men det förutsätter en samling av utsagor med sannolikheter och utfall, och där kommer utfallsdagboken in: för varje förväntansträd noteras sannolikheter och utfall, och efter tjugo–trettio händelser börjar mönstret synas. Gruppera utsagorna i band — säg 60–70, 70–80, 80–90 procent — och räkna träffprocenten per band. Band som slår för högt pekar på systematisk överkonfidens, och det har en känd orsak: vi minns träffar bättre än missar, och utan skriven dokumentation suddas missarna bort — eftersynen, som i efterhand får det som hände att framstå som närmare överraskningsfritt.\n\nForskningen om probability training — från väderinstitut till prognostävlingar — pekar på två enkla rörelser som förbättrar kalibreringen. Den första är just dokumentationen: skrivet före, jämfört efter. Den andra är referensklassen: innan du sätter en sannolikhet, fråga hur liknande fall har gått historiskt — starta från basfrekvensen, inte från fallets unika detaljer. Därtill kommer ödmjukhetens hjälpmedel: håll sannolikheterna borta från extremerna (hundra- och nollprocentiga utsagor lämnar inget utrymme för världen att förvåna), och använd spridning — flera små, skilda bedömningar är oftast bättre än en stor, säker. Kalibrering är därmed inte en talang utan en vana: den som mäter sitt omdöme lär känna dess systematiska lutning — och kan rätta för den."
+          },
+          {
+            "type": "insight",
+            "content": "Bra bedömningar behöver inte vara rätt — de behöver vara ärligt vägda. Kalibreringen mäter skillnaden mellan hur säker du var och hur rätt du var; utan måttet är säkerheten bara en känsla."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Förväntningsarbetets fällor bor i det mänskliga omdömet — och de flesta är systematiska nog att gå att träna bort.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan är överkonfidensen: det mest robusta fyndet i beslutsforskningen är att flertalet bedömare tror sig träffa medel rätt oftare än de gör — och ju mer detaljerad en berättelse är, desto säkrare känns den, utan att bli sannare. Andra fällan är eftersynen: i efterhand ter sig utfall som varit mer förutsägbara än de var, vilket gör att nästa träds sannolikheter ställs med för stor säkerhet — motgiftet är de daterade anteckningarna, som låter dig jämföra vad du visste då med vad du vet nu. Tredje fällan är konsensusanknytningen: att låta konsensus bära hela ens egen bild — konsensus är marknadens utgångsläge, inte ens analys, och den som bara talar om 'träffa konsensus' har ingen egen bild att kalibrera.\n\nFjärde fällan är narrativets dragningskraft: en sammanhängande historia om varför ett utfall måste ske väger lättare än en torr basfrekvens, men det är frekvensen som bär statistiken. Femte fällan är ryktesspåret — fördjupningen av grundkursens varning: åsiktskällor (forum, sociala medier, nyhetsbrev) är inte förväntningskällor förrän de visat sig prissatta; förväxlas de två blir trädet en spegling av det mest upprepade påståendet, inte av vad marknaden betalat för. Sjätte fällan, slutligen, är att tro att kalibreringen är målet: den är medlet — poängen är en ärligare bild av det egna bedömningens räckvidd, som gör att händelser blir lärrika i stället för bara rätt eller fel. Och som alltid i detta spår: övningen gäller omdömets hantverk, aldrig uppmaningar att handla."
+          },
+          {
+            "type": "insight",
+            "content": "Det farligaste i förväntningsarbete är inte att ha fel — det är att vara säker på ett sätt som inte går att skilja från att ha rätt förrän efteråt."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — förväntningar i AKM1:s metodik",
+        "intro": "I AK1A:s system är förväntningsanalysen bindväven mellan händelserna och fundamenten — här knyts kursen till spåret.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "KATALYSATOR-familjens fördjupningskurser V16–V18 behandlar händelsetyperna — lanseringar, avtal, regulatoriska beslut — och förväntningsanalysen är den gemensamma metoden som gör varje typ läsbar: en lansering prövar den tillväxtförväntan multipeln bär; ett avtal prövar intäktsbilden; ett myndighetsbeslut prövar det binära utfall som marknadens samlade prissättning kretsar kring. I AKM2:s fem tidshorisonter får metoden sin vikt: på korta horisonter är marknaden händelsernas och förväntningarnas — kursrörelser speglar omprövningar, inte substans; på långa horisonter vänder makten till fundamenten. Förväntningsgapet — avståndet mellan din bild och marknadens — är därför ett av metodens renaste studieobjekt: det talar om varifrån omprövningen kan komma, och i vilken riktning.\n\nAvsluta med den levande övningen: välj tre bolag med kommande händelser i kalendern, skriv ett förväntansträd för varje — tre utfall, sannolikheter, en rad om tänkbar reaktion — och datera det. Återkom efter händelserna och utvärdera mot de tre frågorna: utfall, sannolikheter, reaktion. Gör det till en vana över en rapportssäsong, och du har byggt kalibreringsloopen som denna kurs beskriver — mekaniken bakom varje mognare läsning av marknadens reaktioner. Det är utbildningens kärna: att lära sig skilja mellan vad som hände, vad som väntades och vad som betalades — tre saker som nyhetsflödet blandar ihop och som analysen håller isär."
+          },
+          {
+            "type": "insight",
+            "content": "Vad hände, vad väntades, vad var prissatt — när de tre frågorna kan besvaras var för sig har händelsen blivit en lektion i stället för en känsla."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade om att veta varför man äger en aktie — berättelsen — och hans varningar för story-bolag utan innehåll är i förväntningstermer en varning för berättelser som prissatts som sanningar. Lynch pläderade också för att bedöma bolagets verksamhet i stället för att jaga kortsiktiga kursrörelser; förväntningsanalysen är den disciplinens tekniska sida — den som gör det möjligt att läsa en reaktion utan att låta den diktera bilden.",
+    "grahamSection": "Benjamin Grahams röstmaskin och viktmaskin ger förväntningsanalysen dess äldsta ram: kort sikt drivs priset av röster — förväntningar, stämningar, reaktioner — och lång sikt av vikten, det fundamentala innehållet. Grahams marginal är också här en uttrycklig försiktighet: den som inte kan uppskatta vad som är prissatt med någon trygghet har extra skäl att kräva avstånd mellan pris och värde. Att läsa förväntningar är att förstå röstmaskinens humör — inte att tro på den.",
+    "ak1Section": "I AK1A:s metodik är den här kursen KATALYSATOR-familjens metodblock: V16–V18 fördjupar händelsetyperna, förväntningsanalysen ger dem det gemensamma hantverket — och AKM2:s tidshorisonter väger hur mycket förväntningarna ska bära på varje horisont. Med kalibreringsloopen på plats blir varje rapport ett mättillfälle för det egna omdömet, och varje kursreaktion läsbar som information om vad marknaden trodde — vilket är själva grundresonemanget i metodens korta horisonter."
   },
   "am-01-likviditet-och-spread": {
     "slug": "am-01-likviditet-och-spread",

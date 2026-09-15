@@ -1,0 +1,156 @@
+{
+  "slug": "st-02-kanslighetsanalys-och-stresstest",
+  "category": "STABILITET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Känslighetsanalys — stresstesta balansräkningen",
+  "summary": "Fortsetzungskursen i stabilitet: från statiska nyckeltal till scenarier — känslighetsmatrisen, räntebindningstrappan och stresstestet som visar hur länge ett bolag står emot fallande resultat och stigande ränta.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Flytta stabilitetsanalysen från ögonblicksbild till bana: vad händer med måtten när antaganden ändras · Bygga en känslighetsmatris — ett mått mot en variabel i taget — och läsa den som en terrängkarta över sårbarhet · Läsa räntebindningstrappan: när lånen löper ut, till vilka räntor och med vilken refinansieringsrisk · Konstruera ett stresstest: flera ogynnsamma antaganden samtidigt, räknat på verkliga siffror · Räkna vidare i kassaflödesvyn — räntan betalas i kontanter, inte i rörelseresultat — och uppskatta en överlevnadshorisont i nollresultat · Se de klassiska fällorna: falsk precision, medelfall förklädd till värsta fall och korrelerade chocker · Koppla stressvyn till V10–V12, soliditet och räntetäckning.",
+  "why": "Soliditeten och räntetäckningsgraden (st-01) svarar på hur bolaget står sig i dag — men stabilitet är inte ett läge, det är en bana. Frågan som kräver mer än statiska mått är den rörliga: vad händer om resultatet faller trettio procent och räntan stiger två procentenheter — samtidigt? Känslighetsanalysen och stresstestet är verktygen för den frågan, och de används av banker, kreditinstitut och bolagens egna finansfunktioner världen över — IFRS 7 kräver till och med att noterade bolagen redovisar känslighetsuppgifter för finansiella risker i sina årsredovisningar. För eleven är de samma gåva som nyckeltalen var på nybörjarnivå: ett strukturerat sätt att tänka på motvind innan den kommer. Kursen tränar de tre verktygen på konkreta räkneexempel — och visar hur stressvyn förändrar bilden av vilka balansräkningar som är trygga.",
+  "history": {
+    "origin": "Känslighetsanalysen föddes ur ingenjörsvetenskapens behov att veta hur en konstruktion reagerar på belastning — och lånades tidigt in i kreditvärderingen: bankens fråga var från början inte 'hur ser bolaget ut?' utan 'vad händer om det går sämre?'. Räntebindningstrappor fördes i långivarens bokföring lång innan de blev standard i bolagens egna rapporter — att veta när kapitalet måste förnyas, och till vilket pris, var långivarens skydd.",
+    "evolution": "De stora kriserna formade verktygen. Den svenska fastighets- och bankkrisen i början av 1990-talet — där högt belånade bolag med korta bindningstider ställdes om när räntan steg kraftigt — gjorde känslighets- och bindningsanalysen till en fast del av svensk kreditpraxis. Internationellt ledde bankkriser till Basel-regelverkens krav på stresstest av kapital och likviditet, och redovisningsstandardiseringen följde efter: IFRS 7 införde krav på att visa hur finansiella instrument påverkas av förändringar i marknadsriskfaktorer — känslighetstal blev en del av själva årsredovisningsspråket.",
+    "modern": "I dag är stresstest en institutionell rutin: banker genomför dem löpande under tillsyn, och noteringsexperter räknar scenario på bolagens balansräkningar vid varje rapport. Samtidigt har de snabba ränteskiftena under 2020-talet påmint om verktygens viktigaste läxa — att chocker sällan kommer en i taget: samma svaga konjunktur som pressar resultatet kan flytta kreditvillkor och valutor. Den moderna stressvyn tränar därför kombinatörisk ödmjukhet: flera ogynnsamma antaganden åt gången, även när exakt sannolikhet inte går att ange."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — från ögonblicksbild till bana",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Verktygslådan — matrisen, trappan och stresstestet",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — två bolag genom samma scenario",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Kassaflödesvyn — täckning i kontanter och överlevnadshorisont",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — stressvyn i AKM1",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — från ögonblicksbild till bana",
+      "intro": "Ett nyckeltal är en fotografi — ett scenario är en film. Stabilitetsanalysens andra steg är att byta media.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Soliditeten säger hur stor del av balansräkningen ägarna bär — i dag. Räntetäckningsgraden säger hur många gånger rörelsen täcker räntan — i dag. Båda är ögonblicksbilder av en balansräkning som ständigt rör sig: resultatet svänger med konjunkturen, räntan med penningpolitiken, lånen förfaller och förnyas. Det som gör en balansräkning trygg är inte att fotografierna ser bra ut, utan att banan håller: att bolaget klarar de svängningar som en normal framtid medför — och de som en ond framtid kan tänkas medföra.\n\nDärför börjar fortsättningskursen med ett perspektivbyte. I stället för att fråga 'vilket värde har måtten nu?' frågar vi 'hur förändras måtten när omvärlden förändras?'. Det är samma logik som ligger bakom känslighetsuppgifterna i årsredovisningarnas noter — bolagen visar själva hur exempelvis en ränteförändring slår mot resultat och eget kapital — och bakom bankernas interna stresstest. Skillnaden i metod är graden av kombinering: känslighetsanalysen flyttar en variabel i taget och visar var sårbarheten sitter; stresstestet flyttar flera samtidigt och visar hur det känns när det verkligen blåser. Båda tränar samma intellektuella muskel: att tänka på balansräkningen som något som utsätts för väder, inte som något som är."
+        },
+        {
+          "type": "definition",
+          "content": "Känslighetsanalys (balansräkning): beräkning av hur ett finansiellt mått — resultat, räntetäckning, eget kapital — förändras när en enskild antagandevariabel (ränta, valutakurs, volym) förändras, medan övriga hålls konstanta. Stresstest: samma beräkning med flera ogynnsamma förändringar samtidigt."
+        },
+        {
+          "type": "insight",
+          "content": "Nyckeltal mäter läget; scenarier mäter tålighet. Först när båda finns i bilden vet du om en fin balansräkning är stark eller bara nyligen fotograferad."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Verktygslådan — matrisen, trappan och stresstestet",
+      "intro": "Tre verktyg täcker det mesta av stressarbetet — var och en med sin fråga och sitt eget svar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det första verktyget är känslighetsmatrisen: en tabell där en rad variabler — räntan minus två, minus ett, plus ett, plus två procentenheter — ställs mot ett mått, till exempel räntetäckningsgraden. Matrisen visar med en enda överblick var känsligheten är störst och varifrån riskerna kommer: ett bolag vars täckning halveras vid en räntehöjning på en procentenhet är mer räntekänsligt än ett med samma utgångsläge men flackare kurva. Det andra verktyget är räntebindningstrappan: en lista över när lånen förfaller till förlängning och vilka räntor de sedan bär. Trappan löser det som ögonblicksmåtten inte kan — tidfrågan. Två bolag med identisk räntetäckning kan ha helt olika risk om det enas skulder löper om inom ett år och det andras är bundna i sju; det första möter det nya ränteläget omgående, det andra har tid att anpassa sig.\n\nDet tredje verktyget är stresstestet: kombinera flera ogynnsamma antaganden — resultatfall, räntechock, kassautflöde — och räkna igenom balansräkningen under det sammansatta scenariot. Poängen är just kombinationen: enskilda chocker är sällan det som fäller bolag, men chocker tenderar att anlända tillsammans, eftersom de ofta har samma rot i konjunkturen. Ett välbyggt stresstest har därför tre egenskaper: antagandena är beskrivna i vanliga ord (inte bara 'minus trettio procent' utan vad det betyder för verksamheten), alla storheter står att räkna efter med offentliga siffror — och resultatet redovisas som en bana, inte som en spådom: 'med dessa antaganden sjunker täckningen till detta', aldrig 'detta kommer att hända'."
+        },
+        {
+          "type": "insight",
+          "content": "Matrisen hittar sårbarheten, trappan talar om när den slår till — stresstestet visar hur det känns när allt händer på en gång. Tre verktyg, en fråga: hur mycket motvind klarar balansräkningen?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — två bolag genom samma scenario",
+      "intro": "Ta grundkursens två exempel-bolag igen — och kör dem genom samma oväder. Samma scenario, två mycket olika resor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundkursen (st-01) räknade på ett industriföretag med balansomslutning 20 miljarder, eget kapital 8 miljarder — soliditet 40 procent — rörelseresultat 1,5 miljarder och räntekostnad 250 miljoner: räntetäckning 6. Stresscenariot: rörelseresultatet faller 30 procent och räntan stiger två procentenheter. Resultatet blir 1,05 miljarder. Skulderna är omkring 12 miljarder, och en räntehöjning på två procentenheter flyttar räntekostnaden till ungefär 490 miljoner. Täckningen landar på 1,05 delat med 0,49 — drygt 2. Kräftgången är djup: från 6 till 2, men rörelsen täcker fortfarande räntan två gånger om, och soliditeten 40 procent ger dessutom ett resultatutrymme att bära förluster innan balansräkningen egentligen ansträngs.\n\nFastighetsbolaget från samma exempel — balansomslutning 50 miljarder, eget kapital 12,5 miljarder, soliditet 25 procent, rörelseresultat 2 miljarder, räntekostnad 1,2 miljarder, täckning 1,7 — går igenom samma oväder: resultatet blir 1,4 miljarder, och på skulder om 37,5 miljarder växer räntekostnaden till omkring 1,95 miljarder. Täckningen hamnar under 1: rörelsen täcker inte längre räntan, och skillnaden måste fyllas av kassan, ny skuld eller sålda tillgångar. Övningens lärdom är inte att fastighetsbolaget är 'dåligt' — inom sin bransch är 25 procents soliditet normalt — utan att samma oväder träffar olika balansräkningar olika hårt, och att avståndet syns först i scenariot, inte i utgångsläget. Frågan stressvyn tränar är just den: hur mycket av resultatfallet och räntehöjningen kan balansräkningen svälja innan valen blir få?"
+        },
+        {
+          "type": "insight",
+          "content": "Två bolag, samma scenario, olika destinationer — det är avståndet mellan täckning 2 och täckning 0,7 som avgör om ovädret är en svacka eller början på en ond cirkel."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Kassaflödesvyn — täckning i kontanter och överlevnadshorisont",
+      "intro": "Räntetäckningen räknas på rörelseresultat — men räntan betalas i kontanter. Stressvyns sista steg går via kassaflödet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rörelseresultatet är en redovisningsstorhet: den innehåller avskrivningar som inte är kontantutflöden, och den innehåller inte investeringar som är det. När ett stresscenario väl har pressat täckningen under 1 blir nästa fråga därför likvid: hur länge klarar bolaget att betala räntan — och amorteringarna — ur sin egen kassa? Svaret består av tre byggstenar. Den första är det operativa kassaflödet i det försvagade scenariot: resultatet justerat för avskrivningar, skatt och svängningarna i arbetande kapital — i motvind växer kundfordringar ofta just när inbetalningarna dröjer. Den andra är den förhalbara investeringen: underhåll och expansion kan skjutas upp ett tag, men inte förbi — ett bolag som sparar sig ur kris genom att underhålla sina maskiner har köpt tid på bekostnad av framtida kondition. Den tredje är likviditetsreserven: kassan plus obundna checkkreditutrymmen, redovisade i noterna.\n\nMed dessa tre kan en överlevnadshorisont räknas: hur många kvartal klarar bolaget i ett scenario där driftens kassaflöde inte täcker ränta och amortering, innan reserven tar slut? Här spelar också bindningstrappan in igen — amorteringar är inte jämnt fördelade över tiden, och en stor förfallopost just vid ett svagt år kan tvinga fram refinansiering på ogynnsamma villkor, det som brukar kallas refinansieringsrisk. Kassaflödesvyn ändrar därmed hela stressarbetets karaktär: frågan är inte längre bara 'klarar bolaget räntan?' utan 'hur mycket tid har det på sig att bli bättre?'. Tid är nämligen det som skiljer en övergående svacka från en ond cirkel — och det är tiden, inte måtten, som den som lär sig läsa balansräkningar i motvind slutligen läser efter."
+        },
+        {
+          "type": "insight",
+          "content": "Balansräkningens sista fråga i stress är alltid densamma: hur många kvartal återstår? Överlevnadshorisonten är stabilitetens riktiga valuta."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Stressverktygen ger en känsla av precision — och det är just där deras egna fällor gömmer sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan är falsk precision: att räkna scenariots utfall till tre decimaler och tro att siffran bär mer kunskap än antagandena den vilar på. Ett stresstest är en konditionalsats — 'om detta, då detta' — och dess värde ligger i jämförelsen mellan banor, inte i den enskilda utfallssiffran. Andra fällan är medelfallet förklädd till värsta fall: många 'stressscenarier' är i själva verket ganska ordinära svackor, eftersom den som konstruerar dem omedvetet backar ett steg från det verkligt obehagliga. En hjälp är att utgå från verkliga historiska kriser — vilka fall i resultat, vilka räntor och vilka valutaskiftningar inträffade då? — i stället för att hitta på 'tillräckigt dystert' från scratch. Tredje fällan är att stressa en variabel i taget: verkliga kriser är korrelerade, och den som bara räknar plus två procentenheter ränta och minus trettio procent resultat var för sig hamnar systematiskt för snällt, eftersom kombinationen — som kapitel 3 visade — är skarpare än summan av delarna.\n\nFjärde fällan är redovisningens gropar, igen och på djupet: IFRS 16 lyfter leasing in i balansräkningen, vilket kan både pressa soliditeten och dölja den verkliga räntekostnadens storlek i leasingavgifterna — i stressräkningen ska leasingavtalen alltså behandlas som den skuld de ekonomiskt utgör. Valutarisken hör hit: skulder i främmande valuta kan förändras kraftigt i kronor räknat, och den som räknar med svenska räntor men glömmer valutan har stresstestat fel karta. Femte fällan, slutligen, är att tro att ett grönt scenario är en garanti. Stressvyn köper inte säkerhet — den köper kännedom om var sårbarheten sitter, och därmed förmågan att inte bli överraskad. Det är ödmjukhetens redskap, inte profetians."
+        },
+        {
+          "type": "insight",
+          "content": "Ett stresstest svarar aldrig på 'kan det hända?' — det svarar på 'vad händer med balansräkningen om det gör det?'. Skillnaden är allt: den första är spådom, den andra är beredskap."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — stressvyn i AKM1",
+      "intro": "När stressvyerna läggs till stabilitetsfamiljen blir tålighetsbilden tredimensionell — här knyts kursen till spåret.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stabilitetsfamiljen i AKM1:s V-spår bygger, som grundkursen visade, en fyrdimensionell bild: V10 skuldsättningsgrad (relationen), V11 likviditet (den närmaste täckningen), V12 intäktsstabilitet (efterfrågens jämnhet) — och soliditet samt räntetäckningsgrad från st-01 (bärkraft och motståndskraft). Stressvyn är den axel som går genom alla fyra: den visar hur varje dimension rör sig när omvärlden gör det. Skuldsättningsgraden förändras när resultaten äter eget kapital; likviditeten när kassaflödet svänger; intäktsstabiliteten är själva ingångsantagandet i varje resultatscenario; och räntetäckningen är stressräkningens klassiska utfallsmått. I AKM2:s samlade bild vägs stabiliteten mot lönsamhet, tillväxt och moat — och vikten där blir mer eller mindre tvingande just efter hur balansräkningen ser ut i stress: ett bolag vars bana håller även i dystra scenarier behöver mindre riskpåslag i helhetsbilden än ett vars täckning försvinner under 1 vid en ordinär konjunkturnedgång.\n\nAvsluta med byggövningen: välj ett verkligt bolag, hämta balansräkning, räntekostnad och — om redovisad — känslighetsuppgiften ur noterna, och bygg tre saker: en känslighetsmatris för räntetäckningen, en bindningstrappa ur lånenotan och ett kombinerat stresscenario med egen överlevnadshorisont. Jämför därefter din matris med bolagets egen känslighetsuppgift — överensstämmer bilderna, och vad beror isåfall skillnaderna på? Den som gjort denna övning har inte bara räknat på ett bolag; den har trätt in i samma arbetsgång som kreditvärderare och finansfunktioner använder dagligen — och det är den rörelsen, från att läsa mått till att pröva dem, som är skillnaden mellan att känna till stabilitet och att förstå den. Som allt i spåret: utbildning i att läsa — aldrig ett omdöme om enskilda bolag."
+        },
+        {
+          "type": "insight",
+          "content": "Stabilitetsfamiljen ger måtten; stressvyn ger dem rörelse. Tillsammans svarar de på den fråga nyckeltal ensamma aldrig kan: inte hur bolaget står — utan hur länge det står."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch uppmanade alltid till en titt i balansräkningen före storyn — stark finansiering ger ett bra bolag tid att bli upptäckt. Stressvyn är den idén fullbordad: det är inte stillastående styrka som köper tiden, utan styrkan som återstår när det blåser. Lynchs enkla fråga 'klarar bolaget en dålig period?' är i praktiken ett stresstest i en mening — och den som kan räkna scenariot kan svara med mer än ett hum.",
+  "grahamSection": "Benjamin Graham byggde hela sin trygghetsfilosofi på marginalen — avståndet mellan pris och värde, men i vidare mening mellan belastning och bärkraft. Ett stresstest är marginalen översatt till balansräkningens språk: hur mycket sämre kan det bli innan tryggheten tar slut? Grahams erfarenhet av depressionens balansräkningar gjorde honom till stresstänkare före termen: han visste att det som skiljer de som överlever kriser från de som inte gör det sällan är verksamheten — det är finansieringens uthållighet under de år då ingenting går som planerat.",
+  "ak1Section": "I AK1A:s metodik är den här kursen stabilitetsspårets fortsättningsblock: soliditet och räntetäckning (st-01) ger läget, känslighetsmatrisen, bindningstrappan och stresstestet ger banan — och tillsammans med V10–V12 formas en tålighetsbild som håller även i rörelse. I AKM2:s sammanvägning blir stabilitetsvikten ärligare av stressvyn: den speglar inte bara hur ett bolag mår i dag, utan hur mycket motvind dess balansräkning står emot — vilket är den fråga metodens riskdimension verkligen ställer."
+}

@@ -11189,3 +11189,15 @@ rådata på disk (data/vakten/doda-lankar-externa-2026-09-15.json + insamling,
 otrackad enligt o9-mönstret). tsc 0 (projektbinär). Ingen src/ ändrad (imy-
 länken visade sig LEVANDE) = inget bygge. R2 orörd. Kö: cronifiering (bokad
 huvudagent), BLOCKERAD-uppföljning vid lugnare IP-läge. [fabrik]
+
+mx3 (fabrik): lärvägs-djup — 3 fortsättningskurser (nivå 2, Intermediär) för
+kategorier som endast hade nivå 1: mt-02 Moat-erosion (erosionsmekanismer per
+mur, marginalkorridor, moat-trend, återinvesteringsgap), kt-02 Förväntnings-
+analys (konsensus + implicita multipelförväntningar, förväntansträd, kalibre-
+ringsloop), st-02 Känslighetsanalys (känslighetsmatris, bindningstrappa,
+stresstest, överlevnadshorisont) — alla 6 kap/24 min, bygger vidare på
+respektive 01-kurs och knyter till AKM1-familjer/AKM2-dimensioner. Register
+349→352 via lagg-till-kurs (serieordning bevarad), larvag-karta + sökindex +
+speglar + siffror synkade, larvag-synk GRÖN 352=352=352 (0 fantomer).
+tsc 0 (deploylåset avvaktades — .next-validatorns transienta TS2307 försvann
+med deployns färdiga bygge). [fabrik]

@@ -256,3 +256,45 @@ källor-länk, korstabellrader) + till-toppen !-lyft + Utforska-kurserna
 46→52 + lås-raden på /forskningsbiblioteket. Inga knappkluster kvar
 förutom dokumenterade undantag — knapparnas 52-standard är UPPNÅDD på
 kärnytorna; delspåret går vidare på länkytor (rond 4).
+
+
+## 10. Rond 4 (s7-u1 omgång 3, 2026-09-15 ~21:4x) — FÖRE-mätning + knapphalvan (kaskadkuren)
+
+**FÖRE-mätning** (mobil-lasbarhet.mjs mot localhost = aktuellt prod-bygg,
+390×844, 0 zoomfällor): **34 tryckmål** kvar (efter rond 3:s bokförda 60):
+
+| Sida | rond 3 (§9, prod 18:05) | FÖRE rond 4 (aktuellt bygg) | Not |
+|---|---|---|---|
+| / | 2 | 2 | till-toppen 44 (KASKADFÄLLA, se nedan) + dölj-undantag |
+| /kurser | 5 | 6 | faslänkar ×2 (59×20), 🔹-fortsattrader ×2 (328×32), Utforska 46, dölj |
+| /blogg | 1 | 1 | dölj-undantag |
+| /portfolj-forskning | 18 | 18 | Till korstabellen 34, topp-3-rader 44, Forska-knapp 44, AKM1/AKM2-filter 44, branschgrupper ×10 (44), dölj |
+| /forskningsbiblioteket | 2 | 2 | lås-raden 44 + dölj |
+| /kurser/the-intelligent-investor | 32 | **5** | **quiz-knapparna mäter NU 52** — §9:s 18:05-tal bar pre-restart-artefakter (bygget/pm2-genomstart ej landat vid mättillfället); kvar: Se alla källor 16, Courses-brödsmula 20, markeraKlar 44, Unlock 44, dölj |
+
+Rådata: `lasbarhet-fore-rond4-2026-09-15.json` (denna mapp) +
+`data/vakten/lasbarhet-fore-rond4.json`.
+
+**KOLKLISION — delat objekt:** samtidigt syskon tog textlänkhalvan
+(brodkrumma, kallkort, kurs-sok-faslänkar, social-proof,
+forskningslage-kort topp-3 + "Till korstabellen" + ~29 sidfiler, vanlig
+`max-md:min-h-[52px]` på a-element = korrekt, länkar har inget golv).
+Denna våg levererade KOMPLETTERANDE knapphalva (commit 84ba52ed, exakt
+6 filer, 0 överlapp) — knappar behöver `!`-suffixet:
+
+| Fil | Yta | Kur |
+|---|---|---|
+| `footer.tsx` | "Till toppen" 99×44 | `max-md:min-h-[52px]!` — ROTORSAKA: rond 2:s vanliga klass förlor mot globals.css olagrade button-44-golv (04303dd8-mönstret, nu applicerat på sista kända golv-förloraren) |
+| `riskval-panel.tsx` | "Forska fram portfölj →" 171×44 | `max-md:min-h-[52px]!` (bar egen min-h-[44px]-utility) |
+| `korstabell.tsx` | branschgrupper ▸Teknik… (mobil kortvy, ×10) | `max-md:min-h-[52px]!` |
+| `kurs-gate.tsx` | "Unlock (member)" 162×44 + "Markera kursen klar" 328×44 | `max-md:min-h-[52px]!` ×2 |
+| `fortsatt-panel.tsx` | 🔹-fortsattrader 328×32 | `max-md:min-h-[52px]` (a flex, inget golv) |
+| `min-sida.tsx` | "Logga in gratis" + "Utforska kurserna" | `max-md:inline-flex max-md:min-h-[52px]! max-md:items-center` |
+
+**Kvar i kön efter båda halvorna** (mät om efter deploy): AKM1/AKM2-
+filterknapparna på /portfolj-forskning (80×44/96×44 — hemvist ej
+belägen i korstabell.tsx/page.tsx vid detta fönster, grävas), ev.
+rester av syskonets ytor som mäter <52 trots vanlig klass. tsc 0
+(projektbinär). EFTER-mätning: `node verktyg/mobil-lasbarhet.mjs
+http://localhost:3000 <utfil>` när prod-synken byggt BÅDA halvorna —
+jmför mot lasbarhet-fore-rond4 (samma sidordning).

@@ -52,7 +52,7 @@ export function LarvagKort({
           <li key={r.slug}>
             <Link
               href={`/kurser/${r.slug}`}
-              className="flex items-center gap-3 rounded-lg border border-gold/10 px-3 py-2.5 hover:bg-gold/10"
+              className="flex items-center gap-3 rounded-lg border border-gold/10 px-3 py-2.5 hover:bg-gold/10 max-md:min-h-[52px]"
             >
               <span className="text-xl" aria-hidden>
                 {r.ikon}

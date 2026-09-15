@@ -84,6 +84,7 @@ import {
   type ForbrukningSvar,
 } from "@/components/ak1a/studio-forbrukning-panel";
 import { StudioGodkannandePanel } from "@/components/ak1a/studio-godkannande-panel";
+import { StudioMaskinPanel } from "@/components/ak1a/studio-maskin-panel";
 import { cn } from "@/lib/utils";
 
 /**
@@ -10081,6 +10082,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
             listan med kundens publiceringsknapp (R2). */}
         <StudioGodkannandePanel />
 
+        {/* MASKINENS PULS (våg 164 — kundens "jobbar loopen? jag ser ej
+            sådant"): synlighetspanel för all bakgrundsaktivitet. */}
+        <StudioMaskinPanel />
+
         {/* TERMINAL — senaste verktygskörningar (mini-terminal). */}
         <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
           <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
@@ -10372,6 +10377,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               />
               {/* GODKÄNNANDE (mega g1) — samma sektion som desktop-panelen. */}
               <StudioGodkannandePanel />
+              <StudioMaskinPanel />
               <section aria-label="Terminal" className="flex min-h-0 flex-1 flex-col">
                 <p className="flex items-center gap-1.5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                   <Terminal className="h-3.5 w-3.5 shrink-0" />

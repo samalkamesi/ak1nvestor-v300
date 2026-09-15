@@ -1,0 +1,183 @@
+{
+  "bransch": "halso",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "beskrivning": "Utbildningsunderlag: när bolagen i branschen hälso brukar/publicerar sina rapporter under 2026 års Q3-rapportsäsong (oktober-november). Innehåller inga siffror från rapporterna — enda innehållet är tidpunkter och källor.",
+  "bolag": [
+    {
+      "ticker": "AZN.ST",
+      "namn": "AstraZeneca PLC",
+      "land": "Sverige",
+      "rapportfenster": "2026-11 enligt bolagets eventssida; kalenderkällor (Investing.com/MarketBeat/MarketScreener) anger 2026-10-30, ej bolagsbekräftat",
+      "notera": "Kvartalsrytm (Q1, Q2, Q3, helår). Exakt Q3-datum var ej publicerat på bolagssidan vid hämtdatumet — eventsidan anger november 2026.",
+      "kallor": [
+        {
+          "namn": "AstraZeneca IR — events",
+          "url": "https://www.astrazeneca.com/investor-relations/events.html",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Investing.com — AstraZeneca earnings-kalender",
+          "url": "https://www.investing.com/equities/astrazeneca-earnings",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "BSX",
+      "namn": "Boston Scientific Corporation",
+      "land": "USA",
+      "rapportfenster": "2026-10-28 (konferenssamtal 08:00 ET)",
+      "notera": "Kvartalsrytm. Datumet är utlagt på bolagets IR-eventsida; Zacks anger samma datum.",
+      "kallor": [
+        {
+          "namn": "Boston Scientific IR — events and presentations",
+          "url": "https://investors.bostonscientific.com/events-and-presentations",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "CEVI.ST",
+      "namn": "CellaVision AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-29",
+      "notera": "Kvartalsrytm. Bolagets finanskalender listar 'Quarterly Report 2026 - Q3' den 29 oktober; Q2 2026 redovisades 17 juli med presentation 11:00 CEST.",
+      "kallor": [
+        {
+          "namn": "CellaVision — finanskalender",
+          "url": "https://www.cellavision.com/investors/financial-calendar",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "CellaVision — investors",
+          "url": "https://www.cellavision.com/investors",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "COLO-B.CO",
+      "namn": "Coloplast A/S",
+      "land": "Danmark",
+      "rapportfenster": "2026-11-03: helårsrapport 2025/26 (datum flyttat från 2026-11-05)",
+      "notera": "Brutet räkenskapsår oktober-september: kalenderårets Q3 (jul-sep) avslutar räkenskapsåret, så höstrapporten är en helårsrapport — ingen separat kalender-Q3-rapport. 9M-rapporten 2025/26 kom 2026-08-17.",
+      "kallor": [
+        {
+          "namn": "Coloplast — financial calendar and events",
+          "url": "https://www.coloplast.com/investor-relations/events-calendar/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Yahoo Finance UK — Coloplast uppdaterade finanskalender (helårsrapport 3 nov 2026)",
+          "url": "https://uk.finance.yahoo.com/news/coloplast-updated-financial-calendar-2025-143600329.html",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "EKTA-B.ST",
+      "namn": "Elekta AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-11-25: Q2-rapport för maj-oktober 2026/27",
+      "notera": "Brutet räkenskapsår maj-april — kalenderkvartalen följer inte räkenskapsåret. Under 2026 års höstsäsong: delårsrapport maj-juli kom 2026-08-27, Q2-rapporten (maj-okt, inkluderar kalender-Q3) publiceras 2026-11-25; nästa Q3-rapport (nov-jan) ligger på 2027-02-25.",
+      "kallor": [
+        {
+          "namn": "Elekta IR — financial calendar",
+          "url": "https://ir.elekta.com/investors/ir-calendar/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Elekta IR — reports and presentations",
+          "url": "https://ir.elekta.com/investors/reports-presentations/",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "FRE.DE",
+      "namn": "Fresenius SE & Co. KGaA",
+      "land": "Tyskland",
+      "rapportfenster": "2026-11-04",
+      "notera": "Kvartalsrytm; resultat och konferenssamtal i Bad Homburg, kvartalsredovisningen (IFRS) publiceras i anslutning till datumet. Q2 2026 kom 2026-08-05.",
+      "kallor": [
+        {
+          "namn": "Fresenius SE — financial results",
+          "url": "https://www.fresenius.com/financial-results",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Fresenius SE — financial calendar",
+          "url": "https://www.fresenius.com/financial-calendar",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "GETI-B.ST",
+      "namn": "Getinge AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10: tredje tisdagen — 2026-10-20 enligt bolagets reports-sida, 2026-10-21 enligt finanskalendern i pre-close-briefen (MarketScreener anger 2026-10-21)",
+      "notera": "Kvartalsrytam. Q1 2026 kom 2026-04-21, Q2 2026-07-17; pre-close brief för Q3 hölls 2026-09-15. Mindre datumdiskrepans (20 vs 21 okt) mellan bolagets egna sidor — verifiera närmare datum.",
+      "kallor": [
+        {
+          "namn": "Getinge — investor reports and presentations",
+          "url": "https://www.getinge.com/us/company/investors/reports-presentations/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Getinge — investor calendar",
+          "url": "https://www.getinge.com/us/company/investors/calendar/",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "JNJ",
+      "namn": "Johnson &amp; Johnson",
+      "land": "USA",
+      "rapportfenster": "2026-10-13 (tisdag; siffror och webcast samma morgon, samtal cirka 08:30 ET)",
+      "notera": "Kvartalsrytm. Datumet är officiellt utlagt på bolagets IR-sida ('Third Quarter 2026 Earnings Call, Tuesday, October 13th, 2026').",
+      "kallor": [
+        {
+          "namn": "Johnson &amp; Johnson Investor Relations",
+          "url": "https://www.investor.jnj.com/",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "namn": "Eli Lilly and Company",
+      "land": "USA",
+      "rapportfenster": "2026-10-29 (Q3 2026 earnings call 10:00 ET)",
+      "notera": "Kvartalsrytm. Datumet listas på bolagets IR-sida; MarketBeat markerar det som ej formellt bekräftat i sin kalender. Q2 2026 redovisades 2026-08-05.",
+      "kallor": [
+        {
+          "namn": "Eli Lilly — Investors",
+          "url": "https://investor.lilly.com/",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "NOVO-B.CO",
+      "namn": "Novo Nordisk A/S",
+      "land": "Danmark",
+      "rapportfenster": "2026-11-04 (07:30 CEST)",
+      "notera": "Kvartalsrytm; Q3-rapporten omfattar första nio månaderna av 2026 och är bolagsbekräftad på finanskalendern.",
+      "kallor": [
+        {
+          "namn": "Novo Nordisk — financial results and events",
+          "url": "https://www.novonordisk.com/investors/financial-results.html",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Novo Nordisk — financial calendar",
+          "url": "https://www.novonordisk.com/investors/financial-calendar.html",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    }
+  ]
+}

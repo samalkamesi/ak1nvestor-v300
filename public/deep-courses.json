@@ -79451,6 +79451,350 @@
     "grahamSection": "Graham betonade 'margin of safety' just för att motverka effekter av kognitiva biaser. Han menade att investerare måste ha marginaler för att hantera att känna igen och motverka systematiska fel när det uppstår.",
     "ak1Section": "AKM1 identifierar kognitiva biaser som en riskfaktor i V09 (ROE-stabilitet) och V12 (intäktsstabilitet). Bolag vars investerare lider av att känna igen och motverka systematiska fel får högre riskpremie."
   },
+  "bf-12-prospektteori": {
+    "slug": "bf-12-prospektteori",
+    "category": "BETEENDEFINANS",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 18,
+    "title": "Prospektteori — Kahneman & Tversky",
+    "summary": "Teorin bakom dina beslutsimpulser: referenspunkter, förlustaversion och sannolikhetsvikning.",
+    "minutes": 18,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Förstå prospektteorins värdefunktion — varför vinst och förlust mäts mot en referenspunkt, varför förluster gör dubbelt så ont och hur sannolikhetsvikningen förvränger småbolagsbeslut.",
+    "why": "Prospektteorin är moder till nästan alla biaser du redan mött: förlustaversionen (km-018), disposition effect (km-037) och ankareffekten (km-020) följer ur Kahneman & Tverskys värdefunktion. För den svenska retail-investeraren är referenspunkten nästan alltid inköpskursen — och just därför sitter impulsen att \"vänta tills det går plus\" så djupt. Den här kursen ger dig teorins karta, så att du känner igen dina egna beslutsimpulser i den — och vet var motreglerna finns.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "1. Grunderna — varför detta spelar roll",
+        "minutes": 3
+      },
+      {
+        "num": 2,
+        "title": "2. Praktisk tillämpning",
+        "minutes": 3
+      },
+      {
+        "num": 3,
+        "title": "3. Vanliga fällor",
+        "minutes": 3
+      },
+      {
+        "num": 4,
+        "title": "4. AKM1 1.1 integration",
+        "minutes": 3
+      },
+      {
+        "num": 5,
+        "title": "5. Fallstudier",
+        "minutes": 3
+      },
+      {
+        "num": 6,
+        "title": "6. Mästerskap",
+        "minutes": 3
+      }
+    ],
+    "history": {
+      "origin": "Prospektteorin publicerades 1979 av Daniel Kahneman och Amos Tversky i tidskriften Econometrica ('Prospect Theory: An Analysis of Decision under Risk') som ett svar på förväntade nyttoteorins systematiska misslyckanden i experiment. Åratals av laboratorieexperiment visade att deltagare som valde mellan säkra och riskfyllda spel bröt mot varje rationell modell — men på ett förutsägbart sätt. Det förutsägbara var nyckeln: det fanns en struktur i det irrationella, och den strukturen kunde beskrivas matematiskt.",
+      "evolution": "1992 följde den kumulativa prospektteorin som behandlade sannolikhetsvikningen mer konsekvent. Richard Thaler byggde mental redovisning (1985) direkt på teorin, och samma år förklarade Shefrin & Statman dispositionseffekten — småsparares benägenhet att sälja vinnare och behålla förlorare — som en direkt konsekvens av värdefunktionens form. Daniel Kahneman belönades med Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne 2002 (Tversky avled 1996 och priset delas inte ut postumt).",
+      "modern": "Idag är prospektteorin grundvalen under beteendefinansen, nudge-policyn och förklaringarna bakom småsparares köp- och säljmönster i depåstatistik. För svenska retail-investerare fungerar den som ett praktiskt självkännedomverktyg: impulsen att 'vänta tills aktien går plus' är inte en strategi — den är värdefunktionens form, sedd inifrån. Skillnaden mellan att känna impulsen och att följa den är precis det som systematiska modeller som AKM1 tränar."
+    },
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 3,
+        "title": "1. Grunderna — varför detta spelar roll",
+        "intro": "Kapitel 1 introducerar prospektteorins kärna: att beslut mäts som vinst och förlust mot en referenspunkt — inte som slutlig förmögenhet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Innan 1979 antog nationalekonomin att människor maximerar förväntad nytta: vi väger ihop alla utfall med sina sannolikheter och väljer det högsta väntevärdet. Kahneman och Tversky visade med enkla experiment att vi inte gör det — och att vi avviker på ett systematiskt sätt. Tre observationer bar teorin:\n\n1. Referensberoende: vi bedömer inte hur rika vi blir, utan hur det går jämfört med en nollpunkt — referenspunkten.\n2. Förlustaversion: förluster gör ont på ett sätt som vinster aldrig gör gott. Känslomässigt är de inte spegelbilder.\n3. Diminishing känslighet: skillnaden mellan 0 och 1 000 kronor känns större än mellan 9 000 och 10 000 — på båda sidor nollstrecket.\n\nFör en aktiesparare är referenspunkten nästan alltid inköpskursen. Det är den som avgör om ett beslut känns som vinst eller förlust — inte om bolaget faktiskt utvecklas bättre eller sämre än då du köpte."
+          },
+          {
+            "type": "definition",
+            "content": "Prospektteori: En beskrivande teori (Kahneman & Tversky 1979) om beslut under risk — värde mäts som förändring relativt en referenspunkt, inte som slutlig förmögenhet, värdefunktionen är konkav för vinster och konvex för förluster, och förluster väger tyngre än lika stora vinster."
+          },
+          {
+            "type": "insight",
+            "content": "Förlustaversionens storleksordning: i Tversky & Kahnemans (1992) skattningar behöver en vinst vara ungefär 2–2,5 gånger större än en förlust för att känsmässigt väga jämnt. En nedgång på 10 procent i depån gör alltså typiskt dubbelt så ont som en uppgång på 10 procent gör gott."
+          },
+          {
+            "type": "text",
+            "content": "Värdefunktionen ser ut som en förvrängd S: brantare under nollstrecket (förluster), flackare över (vinster), kringdragen vid referenspunkten. Den formen — inte brist på intelligens — förklarar varför en annars klok person kan hålla kvar i en förlorande aktie i åratal medan vinnaren sålts för länge sedan.\n\nDetta är kursens viktigaste skytt: prospektteorin dömer inte. Den beskriver. Alla — nybörjare som professionella — bär värdefunktionen med sig. Skillnaden ligger i om man känner igen den när den talar."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad mäter värdefunktionen i prospektteorin?",
+            "alternativ": [
+              "Vinst och förlust relativt en referenspunkt",
+              "Den slutliga totala förmögenheten",
+              "Aktiens motiverade värde enligt DCF",
+              "Börsens genomsnittliga avkastning"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlets första punkt: referensberoende — nollpunkten är referenspunkten, inte din totala förmögenhet."
+          },
+          {
+            "q": "Vad är den vanligaste referenspunkten för en aktiesparare?",
+            "alternativ": [
+              "Inköpskursen",
+              "Bolagets bokvärde per aktie",
+              "Riksbankens styrränta",
+              "OMX Stockholms genomsnittskurs"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlet avslutar med att inköpskursen är den som avgör om ett beslut känns som vinst eller förlust."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 3,
+        "title": "2. Praktisk tillämpning",
+        "intro": "Kapitel 2 översätter värdefunktionen till depåbeslut: referenspunkten i praktiken och frågan som bryter dess grepp.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Värdefunktionens två grenar ger två olika beslutsimpulser — och tillsammans skapar de småspararens mest väl dokumenterade misstag:\n\n• Över nollstrecket (vinst): vi är riskaverta. En säker vinst känns värdefull, så impulsen är att ta den — sälja vinnaren för tidigt.\n• Under nollstrecket (förlust): vi söker risk. Att realisera förlusten känns som att göra den verklig, så impulsen är att 'vänta ut' — hålla förloraren för länge.\n\nDetta mönster har ett namn: dispositionseffekten (se km-037). Terrance Odeans klassiska studie från 1998, byggd på tusentals privatdepåer, fann att hushåll realiserade vinster ungefär 1,5 gånger oftare än förluster — och att de sålda vinnarna i genomsnitt fortsatte att överprestera de hållna förlorarna efteråt."
+          },
+          {
+            "type": "definition",
+            "content": "Referenspunkt: Nollläget som vinst och förlust mäts emot. Hos aktiesparare oftast inköpskursen — men även 52-veckorsnoteringen, ett satt målpris eller 'den högsta kursen jag sett' kan ta över som referens."
+          },
+          {
+            "type": "insight",
+            "content": "Referenspunkten är information om dig, inte om bolaget. Kursen du köpte till finns bara i ditt huvud och i din deklaration — bolagets kassaflöde, marginaler och skuldsättning bryr sig inte om den."
+          },
+          {
+            "type": "text",
+            "content": "Den praktiska motregeln är en enda fråga, ställd ärligt: 'Skulle jag köpa den här aktien idag, om jag inte ägde den?' Frågan tvingar fram en ny referenspunkt — dagens läge och pris — och gör därmed beslutet oberoende av din historik. Om svaret är ja är fortsatt ägande ett aktivt val. Om svaret är nej är 'vänta tills det går plus' inte en strategi utan värdefunktionens röst.\n\nNotera också referenspunktens rörlighet: den som såg aktien på 200 kronor och köpte på 140 upplever köpet som 'rabatt' — medan den som köpte på 80 upplever samma kurs som förlust. Samma bolag, samma dag, två helt olika känslolägen. Det är referensberoendet i ren form."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad fann Odean (1998) om privatpersoners försäljningar?",
+            "alternativ": [
+              "Att vinster realiserades ungefär 1,5 gånger oftare än förluster — och att de sålda vinnarna sedan överpresterade",
+              "Att förluster realiserades oftare än vinster",
+              "Att privatpersoner aldrig sålde under inköpskursen",
+              "Att köp- och säljbeslut följde bolagens fundamental utveckling"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlets första textblock: dispositionseffekten i siffror — vinnare säljs för tidigt, förlorare hålls för länge."
+          },
+          {
+            "q": "Vilken fråga är den praktiska motregeln mot referenspunktens grepp?",
+            "alternativ": [
+              "'Skulle jag köpa den här aktien idag, om jag inte ägde den?'",
+              "'Hur länge har jag ägt aktien?'",
+              "'Vad är min genomsnittskurs?'",
+              "'Hur mycket har börsen stigit i år?'"
+            ],
+            "ratt": 0,
+            "tips": "Frågan tvingar fram en ny referenspunkt — dagens läge — och gör beslutet oberoende av din historik."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 3,
+        "title": "3. Vanliga fällor",
+        "intro": "Kapitel 3 går igenom fyrfaldiga mönstret och sannolikhetsvikningen — de två mekanismer som förvränger riskbedömningen mest.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Prospektteorin förutsäger ett mönster som kallas det fyrfaldiga mönstret — hur riskbenägenheten vänder beroende på om du står i vinst eller förlust och hur sannolikt utfallet är:\n\n• Måttligt sannolik VINST: du blir riskavert — tar den säkra vinsten hellre än ett högre väntevärde. (Säljer vinnaren för tidigt.)\n• Måttligt sannolik FÖRLUST: du blir risksökande — hellre chansen att vrida förlusten till vinst än att ta den säkra, mindre förlusten. (Dubblar ner i förloraren.)\n• Liten sannolik, stor VINST: du blir risksökande — lotteriet känns attraktivt. (Spekulativa småbolag med 'tiofaldig potential'.)\n• Liten sannolik, stor FÖRLUST: du blir riskavert — försäkring känns värd sina pengar. (Säljer i botten på panikdagen.)\n\nMönstret är svårbemängt just för att det vänder: samma person som tar för lite risk i vinstläge tar för mycket risk i förlustläge."
+          },
+          {
+            "type": "text",
+            "content": "Den andra mekanismen är sannolikhetsvikningen: vi överviktar små sannolikheter (1-procentschansen känns som betydligt mer än en procent) och behandlar måttliga och höga sannolikheter som lägre än de är. Det är därför ett småbolag utan intäkter kan bära en känsla av 'nästa stora' — den lilla chansen till en enorm utkomst köper hela biljetten, medan den höga och tröga sannolikheten (att bolaget bara rullar vidare som innan) underskattas.\n\nPå svenska småbolagslistor syns detta i att värderingen sällan speglar väntevärdet av affärsplanen utan väntevärdet av berättelsen — just för att berättelsens lilla sannolikhet för en stor utkomst övervikas."
+          },
+          {
+            "type": "insight",
+            "content": "Fällorna hänger ihop i familj: ankareffekten (km-020, bf-05) sätter referenspunkten, sunk cost (bf-02) förankrar den djupare för varje år, och dispositionseffekten (km-037) är värdefunktionens rörelse kring den. Prospektteorin är samlingsnamnet på logiken bakom alla tre."
+          },
+          {
+            "type": "definition",
+            "content": "Sannolikhetsvikting: Prospektteorins beskrivning av att små sannolikheter överviktas (de känns större än de är) medan måttliga och höga sannolikheter undervikas (de känns mindre säkra än de är)."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Hur beter sig de flesta vid en måttligt sannolik FÖRLUST, enligt prospektteorin?",
+            "alternativ": [
+              "Risksökande — hellre chansen att vrida förlusten till vinst än att realisera den",
+              "Riskaverta — realiserar förlusten omedelbart",
+              "De följer väntevärdet exakt",
+              "De slutar tänka på positionen helt"
+            ],
+            "ratt": 0,
+            "tips": "Det fyrfaldiga mönstret: under nollstrecket vänder riskbenägenheten — förlustdomänen gör oss risksökande."
+          },
+          {
+            "q": "Vad innebär sannolikhetsvikningen?",
+            "alternativ": [
+              "Små sannolikheter överviktas och måttliga/höga undervikas",
+              "Alla sannolikheter bedöms korrekt",
+              "Stora sannolikheter överviktas konsekquent",
+              "Sannolikheter ersätts av känslor helt"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlets andra textblock: lotterieffekten för små chanser, tröghetseffekten för höga."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 3,
+        "title": "4. AKM1 1.1 integration",
+        "intro": "Kapitel 4 kopplar prospektteorin till AKM1:s systematik — varför en poängsättningsmodell är ett beteendevetenskapligt verktyg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "AKM1 poängsätter ett bolag på 20 variabler — försäljningstillväxt, marginaler, stabilitet, moat, risk och kapitalstruktur. Ingen av de 20 frågar vad du köpte aktien för. Det är modellens största beteendevetenskapliga värde: genom att tvinga referenspunkten från portföljen till bolagets fundamentals gör den samma bedömning för alla läsare — oavsett om de sitter på vinst eller förlust.\n\nSystematiken är alltså inte bara en analysmetod; den är en bias-motregler. Där impulsen frågar 'hur går det för mig?' frågar modellen 'hur går det för bolaget?'. De två frågorna kan ha samma svar — men bara en av dem är relevant för beslutet."
+          },
+          {
+            "type": "text",
+            "content": "Prospektteorin syns också i marknadsnivån, och där möter den AK1TS vågvalidering: när en stor grupp delägare sitter på förlust i samma aktie skapas ett kollektivt referenspunktsbeteende — försäljningstrycket avtar nära inköpskurser i storlek ('nollstrecket' blir ett motstånd av småsparares vilja att komma ut jämnt), och uppgångar över nollstrecket möter ny försäljning. Sådana mönster är utbildningsmässigt intressanta eftersom de visar att psykologin inte bara bor i ditt huvud — den aggregeras till kursernas form.\n\nI AKM2:s fyra dimensioner återkommer temot: en fundamental poäng (AKM1) som rör sig (AK1TS) — och en stor förklaringsdel av rörelsen är just massans värdefunktion."
+          },
+          {
+            "type": "definition",
+            "content": "Förlustaversion (λ): värdefunktionens brantare gren för förluster — i Tversky & Kahnemans (1992) kumulativa prospektteori skattad till omkring λ ≈ 2,25, det vill säga att förluster vägerdrygt dubbelt så tungt som lika stora vinster."
+          },
+          {
+            "type": "insight",
+            "content": "Modellens determinism är dess bias-skydd: samma 20 variabler, samma vikter, samma poäng — oavsett läsarens inköpskurs. Det som är svårt att göra med känsla (bedöma bolaget oberoende av egen position) blir enkelt med checklista."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Varför skyddar AKM1:s poängsättning mot referenspunktens fälla?",
+            "alternativ": [
+              "Den poängsätter bolagets variabler och frågar aldrig vad du köpte aktien för",
+              "Den viktar inköpskursen med 2,25",
+              "Den jämför alltid mot 52-veckorsnoteringen",
+              "Den justerar poängen efter din vinster/förlustläge"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlets första block: frågan flyttas från 'hur går det för mig?' till 'hur går det för bolaget?'."
+          },
+          {
+            "q": "Vad är den experimentella storleksordningen på förlustaversionen?",
+            "alternativ": [
+              "Ungefär 2–2,5 gånger starkare känsla för förluster än för lika stora vinster",
+              "Exakt lika stark — bara spegelvänd",
+              "Ungefär 10 gånger starkare",
+              "Förluster känns mindre än vinster"
+            ],
+            "ratt": 0,
+            "tips": "Definitionen i detta kapitel: λ ≈ 2,25 i den kumulativa prospektteorin (1992)."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 3,
+        "title": "5. Fallstudier",
+        "intro": "Kapitel 5 visar prospektteorin i svensk marknadshistoria — IT-bubblan och modeaktiernas svängningar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "IT-bubblan 2000 är den svenska börsens tydligaste prospektteori-fallstudie. Technik- och telekomaktier som Ericsson hade stigit år efter år, och referenspunkten för en hel generation småsparare sattes vid toppnoteringarna. När börsen vände föll OMX-aktierna djupt — Ericsson tappade större delen av sitt börsvärde på några år. Mönstret som följde i depåer och diskussionsforum var lärobokens: 'den kommer tillbaka', 'jag säljer när jag går jämnt ut', 'det är bara pappersförlust så länge jag inte säljer'. Värdefunktionens förlustgren sökte risk — och förlusten förvärrades av att den aldrig realiserades som beslut, bara som värde.\n\nLärdomen är inte att börsen var 'dum' — utan att referenspunkten från år 2000 inte bar någon information om bolagens framtida intäkter. Den bar bara information om när köpen gjordes."
+          },
+          {
+            "type": "text",
+            "content": "Ett modernare exempel är svenska konsumtionsbolag med kraftiga kursfall under svåra år — som H&M:s djupa nedgång 2018. Typiskt för sådana förlopp är att nyheten om försämrings­resultat slår ut en stor grupp ägare på förlust, varvid 'vänta till nollstrecket'-beteendet kan synas i hur aktien rör sig kring inköpsnivåer i storlek. Samma mönster rapporteras återkommande i svenska depåstatistik: genomsnittspararen realiserar vinster tidigt och sitter kvar i förlustpositioner betydligt längre — den råa dispositionseffekten, alltså prospektteorin i aktier, år efter år."
+          },
+          {
+            "type": "insight",
+            "content": "Fallstudiernas gemensamma nämnare: referenspunkten finns bara i investerarens huvud. När miljoner huvuden delar samma nollstreck kan det synas i kursen — men det förändrar inte ett enda bolags kassaflöde."
+          },
+          {
+            "type": "text",
+            "content": "Träna själv på fallen: ta en aktie du känner väl och beskriv (a) var din referenspunkt ligger, (b) hur den påverkat dina senaste beslut, (c) vad du hade bedömt med dagens läge som utgångspunkt. Övningen tar fem minuter och är kursens mest värdefulla — teorin förvandlas till självkännedom först när den får ett konkret case: ditt eget."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är den gemensamma nämnaren i fallstudierna?",
+            "alternativ": [
+              "Referenspunkten fanns bara i investerarens huvud — inte i bolagets grunder",
+              "Att börsen alltid återgår till tidigare toppnivåer",
+              "Att småsparare sålde för tidigt i alla fallen",
+              "Att bolagens intäkter följde aktiekurserna"
+            ],
+            "ratt": 0,
+            "tips": "Insight-blocket: nollstrecket kan synas i kursen när många delar det — men det ändrar inget kassaflöde."
+          },
+          {
+            "q": "Vad kännetecknar mönstret efter en djup nedgång för ägare som köpt på toppen?",
+            "alternativ": [
+              "'Vänta tills det går jämnt ut' — värdefunktionens risksökande förlustgren",
+              "Omedelbar realisering av förlusten",
+              "Att de slutar följa bolaget",
+              "Att de köper mera omedelbart vid varje uppgång"
+            ],
+            "ratt": 0,
+            "tips": "IT-bubblans efterföljd: 'pappersförlust så länge jag inte säljer' — förlustdomänens risksökande."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 3,
+        "title": "6. Mästerskap",
+        "intro": "Kapitel 6 samlar motreglerna till en repeterbar praxis — och pekar ut nästa steg i lärvägen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mästerskap i prospektteori är inte att bli av med värdefunktionen — den sitter där den sitter. Mästerskapet är tre konkreta vanor:\n\n1. Förhandskriterier: avgör INNAN köpet vad som ska gälla för vidgar ägandet — vilka variabler, vilka nivåer. Skrivet ner blir kriterierna referenspunkten, inte inköpskursen.\n2. Referenspunkt i journalen: notera vid varje beslut var ditt nollstreck ligger (inköp? toppen? målpris?). Bara att notera den halverar dess makt — det ser dig se den.\n3. Ombedömning från noll: ställ 'köpa idag?'-frågan vid varje granskningstillfälle — kvartalsvis räcker — och låt svaret fälla beslutet, inte känsloläget.\n\nDessa tre vanor är hela skillnaden mellan att känna till teorin och att använda den. De kostar några minuter per kvartal och ersätter års 'vänta tills det går plus'."
+          },
+          {
+            "type": "text",
+            "content": "Prospektteorin knyter också samman spåret: förlustaversionen (km-018) är dess känslomässiga kärna, ankareffekten (km-020, bf-05) dess referenspunktens fastnagling, sunk cost (bf-02) dess förstärkare, mental accounting (bf-03) dess bokföring och dispositionseffekten (km-037) dess slutförda mönster. Den som vill gå vidare läser Tänka snabbt och långsamt (BOKMASTER-kursen i registret) — Kahnemans egen sammanfattning av fyra decenniers forskning, där prospektteorin är en av två huvudpersoner.\n\nMed det är kartan komplett: du kan nu känna igen referensberoende, förlustaversion och sannolikhetsvikning — i dig själv och i marknaden."
+          },
+          {
+            "type": "insight",
+            "content": "Kahnemans egen slutsats i 'Tänka snabbt och långsamt': målet är inte att utplåna System 1 — det går inte — utan att lära känna dess mönster så väl att du hör dig själv tänka fel just när det händer."
+          },
+          {
+            "type": "definition",
+            "content": "Det fyrfaldiga mönstret: prospektteorins förutsägelse att riskbenägenheten vänder mellan vinst- och förlustdomänen — riskavert vid säkra/sannolika vinster, risksökande vid sannolika förluster, risksökande vid småchanser på storvinst, riskavert vid smårisker på katastrof."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken av dessa är EN av mästarvanorna från kapitlet?",
+            "alternativ": [
+              "Förhandskriterier skrivna före köpet — så blir kriterierna referenspunkten",
+              "Att aldrig sälja i förlustläge",
+              "Att fly referenspunkten varje vecka",
+              "Att bara äga aktier man köpt med rabatt"
+            ],
+            "ratt": 0,
+            "tips": "Vana 1: förhandskriterierna ersätter inköpskursen som nollstreck."
+          },
+          {
+            "q": "Vad är prospektteorins förhållande till de andra biaskurserna?",
+            "alternativ": [
+              "Den är moder till dem — förlustaversion, ankareffekt, sunk cost och dispositionseffekten följer ur värdefunktionen",
+              "Den är en motsats till dem",
+              "Den ersätter behovet av dem",
+              "Den handlar bara om portföljteori"
+            ],
+            "ratt": 0,
+            "tips": "Kapitlets andra block listar släktskapet: km-018, km-020/bf-05, bf-02, bf-03, km-037 — alla barn av värdefunktionen."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch fångade prospektteorin i praktiken med sin bild om att småsparare 'klipper blommorna och vattnar ogräset' — säljer vinnarna och behåller förlorarna. Prospektteorin förklarar varför: en säker vinst känns mer värd än sin chans, och en realiserad förlust känns värre än sin sannolikhet. Lynch-svar: äg bolaget, inte din egen nollstrecks-känsla.",
+    "grahamSection": "Grahams 'Mr. Market' är prospektteorin föregripen i praktiken: marknadens stämningsvallning — eufori över vinster, panik över förluster — är inte information om värdet utan om marknadens humör. Margin of safety blir det rationella svaret på en motpart vars värdefunktion slår runt varje dag.",
+    "ak1Section": "AKM1 poängsätter bolagets 20 variabler och frågar aldrig vad du köpte aktien för — modellen flyttar därmed referenspunkten från portföljen till bolaget, vilket är dess största beteendevetenskapliga värde. På marknadsnivån återkommer massans värdefunktion i AK1TS vågvalidering, där kollektiva nollstrecksbeteenden kan synas i kursmönster kring inköpsnivåer i storlek."
+  },
   "mk-11-kinaekonomin": {
     "slug": "mk-11-kinaekonomin",
     "category": "MAKROEKONOMI",
@@ -198579,5 +198923,481 @@
       "ar": 2013,
       "bk": "bk-097"
     }
+  },
+  "bk-01-balansrakningen": {
+    "slug": "bk-01-balansrakningen",
+    "category": "BOKFÖRING & ÅRSREDOVISNING",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Balansräkningen — bolagets karta",
+    "summary": "Tillgångar, skulder och eget kapital på ett ställe: hur du läser balansräkningen som en karta över vad bolaget äger, vad det är skyldigt och vad som blir kvar åt ägarna.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Läsa balansräkningens båda sidor och ekvationen tillgångar = skulder + eget kapital · Skilja på omsättningstillgångar och anläggningstillgångar · Sortera skulder i kortfristiga och långfristiga · Se hur eget kapital växer med vinst och krymper med utdelning · Förstå goodwill och immateriella posters plats på tillgångssidan · Koppla balansräkningen till nyckeltal som P/B (V05) och skuldsättningsgrad (V10).",
+    "why": "Att analysera ett bolag utan balansräkningen är som att navigera utan karta: resultaträkningen berättar hur året gick, men balansräkningen visar vad bolaget faktiskt består av — substansen, skulderna och bufferten. Kursen lär svenska aktieägare läsa just den kartan, post för post, eftersom nästan varje nyckeltal i stabilitets- och värderingsfamiljerna beräknas ur den: P/B, skuldsättningsgrad, soliditet och substansvärde börjar alla här.",
+    "history": {
+      "origin": "Dubbel bokföring — att varje transaktion syns på två ställen — spreds i Europa från de italienska handelsstäderna och sammanfattades av Luca Pacioli 1494. I Sverige växte redovisningskraven fram med aktiebolagens genombrott under sent 1800-tal, och 1944 års bokföringslag gav balansräkningen sin första moderna svenska lagrumskyddade form.",
+      "evolution": "Under 1900-talet blev koncernredovisningen normen för börsbolag: moderbolagets balansräkning byttes ofta ut mot en konsoliderad vy av hela koncernen. Från 2005 införde EU:s börsbolag IFRS-standarderna, vilket flyttade svenska balansräkningar närmare internationell praxis — till exempel genom att leasingavtal syns som tillgångar och skulder sedan IFRS 16.",
+      "modern": "I dag levererar alla svenska noterade bolag sin balansräkning digitalt i årsredovisningen, och nyckeltalsdatabaser gör posterna sökbara för vem som helst. Kartan är alltså tillgänglig — konsten att läsa den är fortfarande människans, och det är exakt den konsten kursen tränar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — ekvationen som håller ihop allt",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Tillgångssidan — från kassa till fabrik",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Skulder och eget kapital — spelet bakom",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk tillämpning — läs en svensk balansräkning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Vanliga fällor och misstag",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — från karta till nyckeltal",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — ekvationen som håller ihop allt",
+        "intro": "Balansräkningen är en stillbild av bolagets ekonomi på ett visst datum — och den styrs av en enda ekvation.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Balansräkningen visar två sidor av samma verklighet. Till vänster (eller överst) står tillgångarna: det bolaget äger och har att använda. Till höger (eller nederst) står skulderna och det egna kapitalet: hur tillgångarna har finansierats. Ekvationen lyder alltid tillgångar = skulder + eget kapital, och den håller ihop inte av tillfällighet utan av konstruktion — dubbel bokföring registrerar varje händelse på två ställen, så de två sidorna kan aldrig glida isär.\n\nDärför är balansräkningen ett fotografi snarare än en film: resultaträkningen fångar ett helt år av intäkter och kostnader, medan balansräkningen fryser ögonblicket vid räkenskapsårets slut. I den meningen kompletterar de varandra som karta och resedagbok — och för att förstå vart ett bolag är på väg behövs båda."
+          },
+          {
+            "type": "definition",
+            "content": "Balansräkning: Sammanställning vid en tidpunkt av bolagets tillgångar samt de skulder och det egna kapital som finansierar dem. Ekvationen är tillgångar = skulder + eget kapital."
+          },
+          {
+            "type": "insight",
+            "content": "Ekvationen kan läsas baklänges också: det egna kapitalet är resten som blir kvar åt ägarna när alla skulder betalats — därför kallas det ibland substansvärdet i sin enklaste form."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Tillgångssidan — från kassa till fabrik",
+        "intro": "Tillgångarna rangordnas efter hur snabbt de kan bli pengar — och ordningen avslöjar bolagets karaktär.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Omsättningstillgångarna är pengar på väg genom bolaget: kassa och bank, kundfordringar som ska betalas inom närmaste månaderna, och lager som ska säljas eller förbrukas. Anläggningstillgångarna är pengar som ligger still länge: maskiner, byggnader, patent och andra immateriella rättigheter — och goodwill, som bara uppstår när ett bolag köper ett annat dyrare än dess redovisade substans.\n\nFördelningen mellan de två grupperna berättar vad bolaget är för något. Ett handelsbolag lever med stora lager och snabba vändor; ett konsultbolag har nästan inga tillgångar alls utom kassa och kundfordringar; ett industriellt bolag har sin tyngd i maskiner och fabriker. När du öppnar en balansräkning är första ögonkastet värt mest: var sitter tyngden?"
+          },
+          {
+            "type": "insight",
+            "content": "En tillgångssida full av goodwill är en berättelse om förvärv, inte om substans — goodwill testas årligen för nedskrivning och kan försvinna i ett enda beslut."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Skulder och eget kapital — spelet bakom",
+        "intro": "Finansieringssidan visar vem som har rätt till vad — och i vilken ordning vid en kristid.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Skulderna delas in efter löptid. Kortfristiga skulder — leverantörsskulder, skatteskulder, kommande utdelning — ska betalas inom ett år. Långfristiga skulder — banklån och obligationer — får ligga kvar längre. Eget kapital står längst ner och har ingen förfallodag alls: det är ägarnas andel av tillgångarna, byggd av insatt aktiekapital och årens ackumulerade vinster efter utdelningar.\n\nSvensk aktiebolagsrätt (aktiebolagslagen 2005:551) skyddar borgenärerna genom krav på minimiaktiekapital och begränsningar mot utdelning när eget kapital är för litet. Därför är det egna kapitalet mer än en postsiffra — det är en juridisk buffert som avgör hur mycket bolaget får dela ut till ägarna."
+          },
+          {
+            "type": "definition",
+            "content": "Eget kapital: Aktiekapital plus balanserade vinster minus utdelningar och tidigare förluster — de medel aktieägarna har i bolaget utan krav på återbetalning."
+          },
+          {
+            "type": "insight",
+            "content": "Vinst ökar det egna kapitalet och utdelning minskar det — årets resultat är därför en bro mellan resultaträkningen och balansräkningen, och den som följer eget kapital år för år ser bolagets verkliga värdeskapande."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — läs en svensk balansräkning",
+        "intro": "Svenska årsredovisningar har en fast ordning — när du känner den hittar du rätt på minuter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Enligt årsredovisningslagen (1995:1554) presenteras balansräkningen i fastställda poster, från anläggningstillgångar över omsättningstillgångar till kort- och långfristiga skulder och eget kapital. Noterna bakom varje post är balansräkningens finstilta: där förklaras vad goodwill består av, när lån förfaller, hur leasingavtalen ser ut och vilka poster som gäller relaterade parter.\n\nVälj ut en årsredovisning från ett bolag du är nyfiken på — alla svenska noterade bolag publicerar den fritt — och öppna koncernbalansräkningen, inte moderbolagets. Koncernvyn samlar hela den ekonomi du faktiskt äger andel i. Gör sedan tre ögonkast: tyngden på tillgångssidan, andelen kortfristiga skulder, och hur eget kapital rört sig de senaste åren. Det är kartans tre viktigaste landmärken."
+          },
+          {
+            "type": "insight",
+            "content": "Koncernbalansräkningen och moderbolagsbalansräkningen kan se helt olika ut — analysen hör hemma i koncernen, där den verkliga verksamheten lever."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Vanliga fällor och misstag",
+        "intro": "Kartan kan ritas missvisande — här är de vanligaste sätten den lurar en otrogen läsare.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den första fällan är goodwill: ett bolag som byggt sin tillgångssida genom dyra förvärv visar stora tal som inte motsvaras av sålda produkter eller fabriker. Den andra är leasing, där IFRS 16 sedan 2019 lyfter leasingavtal in på balansräkningen — jämförs ett äldre tal med ett nyare kan skulderna se högre ut fast affären är oförändrad. Den tredje är lager, som värderas till lägsta av anskaffningsvärde och nettoförsäljningsvärde och därmed kan dölja både hopp och fall i efterfrågan.\n\nDen fjärde fällan är ensidighet: att läsa bara en balansräkning och tro att man förstår bolaget. Balansräkningen visar ett ögonblick — först i jämförelsen mellan år och mellan branschkollegor blir stillbilden till berättelse."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga alltid vad en post skulle vara värd i en stressig situation — lager och goodwill värderas annorlunda av marknaden än av årsredovisningen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — från karta till nyckeltal",
+        "intro": "När kartan sitter i huvudet blir nyckeltalen levande — var och en är bara en fråga till balansräkningen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "P/B (V05) frågar: vad betalar marknaden för varje krona av det egna kapitalet? Skuldsättningsgraden (V10) frågar: hur tungt lutar finansieringen mot lån? Soliditeten frågar: hur stor andel av hela balansen bärs av ägarna? Alla tre — och substansvärdesanalysen i sin helhet — räknas ur de poster du nu kan läsa.\n\nAvsluta med en övning: ta två bolag i samma bransch, skriv deras ekvation på varsin rad och jämför landmärkena — tyngd, kortfristiga skulder, eget kapital över tid. Vilket bolag vilar på substans och vilket på berättelse? Det är frågan balansräkningen är byggd för att besvara, och det är den fråga varje stabil analys börjar med."
+          },
+          {
+            "type": "insight",
+            "content": "Nyckeltal är komprimerade balansräkningar — när formlerna känns abstrakta, rulla upp dem till posterna de kommer från, så blir både styrkan och svagheten synlig."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch skulle ha beskrivit balansräkningen som bolagets ID-kort: den avslöjar direkt om ett bolag är en solid verksamhet med pengar i banken eller en skuldtung berättelse med vackra ord. Hans råd att förstå vad man äger börjar bokstavligt talat på tillgångssidan — och hans varning för bolag med mer goodwill än substans är en direkt läsning av kartan.",
+    "grahamSection": "Benjamin Graham byggde sin helhetssyn på just substansen: det egna kapitalet i förhållande till marknadsvärdet var kärnan i hans försök att köpa till under marknadsvärde. För Graham var balansräkningen säkerhetens hem — nettotillgångsmassa, buffert och på sikt utdelningskapacitet — och han misstrodde analyser som inte kunde härledas till konkreta poster.",
+    "ak1Section": "I AK1A:s metodik är balansräkningen förutsättningen för stabilitetsdimensionen: skuldsättningsgrad (V10), likviditet (V11) och intäktsstabilitet (V12) räknas alla ur dess poster. Utan kartläsning blir nyckeltalen magiska tal — med kartläsning blir de frågor man kan besvara, jämföra och väga in i en helhetsbild av bolagets tålighet."
+  },
+  "ln-01-dupont-analysen": {
+    "slug": "ln-01-dupont-analysen",
+    "category": "LÖNSAMHET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Du Pont-analysen — plocka isär ROE",
+    "summary": "ROE i tre bitar: vinstmarginal, kapitalomsättningshastighet och hävstång — och vad varje komponent avslöjar om bolagets affärsmodell.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Intermediär",
+    "learn": "Räkna ROE som produkten av vinstmarginal, kapitalomsättningshastighet och kapitalmultiplikator · Identifiera vilken typ av affärsmodell som driver avkastningen · Skilja äkta lönsamhet från hävstångseffekter · Jämföra bolag komponent för komponent inom en bransch · Upptäcka när återköp och engångsposter blåser upp ROE · Koppla komponenterna till AKM1:s V09-familj.",
+    "why": "ROE är V09:s nyckeltal — men siffran i sig döljer mer än den avslöjar. Är avkastningen skapad av en fet vinstmarginal, av kapital som snabbt roterar, eller bara av långa pengar som förstärker resultatet? Du Pont-analysen, standardverktyget i finansiell analys sedan förra seklet, plockar isär ROE i tre komponenter och gör skillnaden synlig. För den som byggt grund i lönsamhetsfamiljen är detta nästa naturliga steg: från att läsa en siffra till att förstå var den kommer ifrån.",
+    "history": {
+      "origin": "Du Pont-schemat föddes inom den amerikanska kemikoncernen Du Pont i början av 1910-talet, där ekonomen Donaldson Brown sökte ett sätt att hålla reda på avkastningen i en växande koncern. Genom att multiplicera vinstmarginal med kapitalomsättningshastighet fick han en enda siffra som förklarade hur effektivt kapitalet arbetade — ett system som spreds vidare till General Motors när Brown flyttade dit på 1920-talet.",
+      "evolution": "Under efterkrigstiden kompletterades schemat med den tredje komponenten, kapitalmultiplikatorn, vilket knöt hävstången till ROE-ekvationen. I Sverige blev Du Pont-analysen med tiden ett standardinslag i finans- och ekonomutbildningar samt bankernas bolagsutlåning — en gemensam grammatik för att tala om lönsamhet mellan bolag och kapitalgivare.",
+      "modern": "I dag delar många nyckeltalsdatabaser automatiskt upp ROE i sina komponenter, och med omfattande aktieåterköp — som krymper det egna kapitalet och därmed driver upp ROE utan att verksamheten förbättras — har konsten att plocka isär siffran blivit viktigare än på mycket länge."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — varför en ROE-siffra inte räcker",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "De tre komponenterna — marginal, hastighet, hävstång",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Praktisk tillämpning — två affärsmodeller sida vid sida",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Hävstångens dubbelverkning",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — ROE-kvalitet i AKM1:s V09-familj",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — varför en ROE-siffra inte räcker",
+        "intro": "Två bolag kan visa identisk ROE med helt olika verkligheter bakom — det är utgångspunkten för hela analysen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "ROE — avkastning på eget kapital — är en av de mest citerade siffrorna i en årsredovisning: resultatet i förhållande till det kapital ägarna lagt i bolaget. Men siffran är en produkt, och produkter kan ha många faktorer. Ett bolag kan nå 20 procents ROE med ytterst små marginaler och enorma volymer, ett annat med höga marginaler och långsamt roterande kapital, ett tredje genom att helt enkelt låna så mycket att det egna kapitalet blivit litet som andel av balansräkningen.\n\nDu Pont-analysens idé är att öppna produkten och titta på faktorerna var för sig. När tre olika vägar till samma ROE syns vid sidan av varandra blir frågan inte längre hur hög avkastningen är, utan av vilken kvalitet den är — och det är en helt annan och viktigare fråga."
+          },
+          {
+            "type": "insight",
+            "content": "ROE svarar på hur mycket; Du Pont-analysen svarar på hur — och i analysens värld är hur nästan alltid den mer avslöjande frågan."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "De tre komponenterna — marginal, hastighet, hävstång",
+        "intro": "Schemat i sig är en enda rad matematik — men varje faktor bär en egen berättelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Du Pont-schemat skriver ROE som tre multiplikationer. Vinstmarginalen — resultatet delat med omsättningen — visar hur mycket av varje säljkrona som blir vinst. Kapitalomsättningshastigheten — omsättningen delat med totala tillgångar — visar hur många gånger kapitalet arbetar per år. Kapitalmultiplikatorn — totala tillgångar delat med eget kapital — visar hur mycket av balansräkningen som finansierats med främmande kapital.\n\nVarje komponent har en naturlig hemvist. Marginalen avgörs av prissättning, kostnadskontroll och konkurrens. Hastigheten avgörs av affärsmodellen: hur länge kapital binds i lager, fordringar och maskiner. Multiplikatorn avgörs av finansieringsvalet. Tillsammans förklarar de hela ROE — och därför kan en förändring i ROE alltid spåras till en förändring i en av de tre."
+          },
+          {
+            "type": "definition",
+            "content": "Du Pont-schemat: ROE = vinstmarginal × kapitalomsättningshastighet × kapitalmultiplikator, det vill säga (resultat/omsättning) × (omsättning/tillgångar) × (tillgångar/eget kapital)."
+          },
+          {
+            "type": "insight",
+            "content": "Notera att omsättning och tillgångar förkortas bort i formeln — de tre komponenterna är ren redovisningslogik, inte ett trick: produkten är exakt ROE."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — två affärsmodeller sida vid sida",
+        "intro": "Schemat visar sin styrka först när två olika bolag ställs bredvid varandra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ta ett typiskt dagligvarubolag: marginalerna är tunna — kanske tre-fyra procent av omsättningen — men varor säljs och betalas snabbt, så kapitalomsättningshastigheten är hög. Ta sedan ett konsultbolag: marginalen kan vara femton procent, men fordringar och anställd kompetens binder kapital långsammare. Åtminstone på pappret kan båda leverera samma ROE — men med helt olika sårbarheter. Dagligvarubolaget lever på volym och rotation; rubbas omsättningshastigheten, till exempel genom byggda lager, sjunker ROE omedelbart. Konsultbolaget lever på marginal; pressas priset, gör samma sak.\n\nÖvningen är att hämta nyckeltalen för två faktiska bolag i samma bransch, räkna upp deras tre komponenter var för sig och jämföra rad för rad. Skillnaderna som försvinner i en ROE-siffra träder fram som tydliga profiler — och profilerna talar om varje bolags verkliga konkurrensfördel."
+          },
+          {
+            "type": "insight",
+            "content": "Inom en bransch säger avvikelser från komponentnormen mest: det bolag som når branschens ROE med lägre hävstång än konkurrenterna presterar det med säkrare medel."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Hävstångens dubbelverkning",
+        "intro": "Den tredje komponenten är den farligaste — den förstärker i båda riktningarna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kapitalmultiplikatorn skiljer sig från de andra två komponenterna på ett avgörande sätt: den kan höja ROE utan att verksamheten förändras en millimeter. Ett bolag som lånar och återköper aktier minskar sitt eget kapital, multiplikatorn stiger och ROE stiger med den — samma fabriker, samma kunder, samma marginaler. Det är hävstångens lockelse.\n\nMen hävstången har dubbelverkning. När resultatet sjunker förstärks fallet lika effektivt som vinsten en gång förstärktes, och räntekostnaden ligger fast medan rörelseresultatet svänger. Därför ska en hög multiplikator alltid läsas tillsammans med mått på skuldbörda och räntetäckning — hur tungt lånad balansräkningen är och hur många gånger rörelsen täcker räntan. Du Pont-analysen pekar med hela handen på frågan; svaret finns i stabilitetsfamiljen."
+          },
+          {
+            "type": "insight",
+            "content": "En ROE som drivs av marginal eller rotation kan därför kallas organisk — en ROE som drivs av multiplikatorn är köpt med skulder och ska prissättas därefter."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Tre klassiska sätt att feltolka schemat — och motgiften mot vart och ett.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första fällan: engångsposter i resultatet. En avyttrad tillgång som lyfter årets vinst ger en tillfälligt hög marginal — läs därför schemat på rörelseresultat och rätta vid behov bort exceptionella poster. Andra fällan: återköpsdrivet eget kapital. Omfattande återköp krymper nämnaren i ROE, och siffran stiger utan att lönsamheten egentligen förbättrats — jämför därför också avkastning på totalt kapital, där finansieringen är borträknad. Tredje fällan: jämförelser över branschgränser. En bank och en industri har fundamentalt olika balansräkningar, och deras komponenter lever i olika världar — schemat är meningsfullt mellan liknande verksamheter.\n\nMotgiften mot alla tre är detsamma: räkna om flera år i följd, på rörelsen, inom branschen. Du Pont-analysen är starkast som trendverktyg — en gång är en siffra, fem år är en berättelse."
+          },
+          {
+            "type": "insight",
+            "content": "Fråga alltid om komponenterna rör sig i takt eller i motsatt riktning — marginal som stiger samtidigt som hastigheten faller är en omprövning av hela affärsmodellen på väg."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — ROE-kvalitet i AKM1:s V09-familj",
+        "intro": "I AKM1:s lönsamhetsfamilj blir Du Pont-analysen kvalitetsstämpeln på ROE-talet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V09 mäter ROE — men AKM1:s metodik frågar alltid vidare: vilken lönsamhetens kvalitet bär siffran? Du Pont-analysen ger svaret i tre delar. En hög marginal knyter kursen till V07 och V08 (brutto- och EBITDA-marginal): den som förstår marginalkedjan ser var ROE börjar. En hög omsättningshastighet knyter an till kapitalstrukturens effektivitet. En hög multiplikator flaggar direkt för V10:s skuldsättningsgrad och kräver att stabilitetsfamiljen vägs in.\n\nAvsluta med helhetsövningen: välj ett bolag, beräkna ROE och dess tre komponenter för de senaste fem åren, och skriv en mening om varje komponents trend. Tre meningar — och du har en mer genomtänkt lönsamhetsbild än de flesta siffror som citeras om bolaget. Det är mästerskapet: inte att räkna rätt, utan att veta vad varje tal säger om verksamheten."
+          },
+          {
+            "type": "insight",
+            "content": "ROE-kvalitet betyder i slutänden hållbarhet: en avkastning som bärs av marginal och rotation tål motvind bättre än en som bara är hävstång."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch talade ofta om att förstå historien bakom ett bolags tillväxt — Du Pont-analysen är den finansiella versionen av samma idé: bakom varje ROE finns en berättelse om marginaler, rotation eller lånade pengar. Lynch skulle ha använt schemat för att skilja bolag som växer på ordning och effektivitet från bolag vars siffror bara är finansieringskonst.",
+    "grahamSection": "Benjamin Graham varnade för att döma bolag på en enda siffra, oavsett hur tilltalande den ser ut. För honom var frågan alltid vad som fanns bakom talet — substans, marginal och försiktighet. Du Pont-analysen ligger helt i den linjen: den demaskerar ROE-värden uppnådda genom hög skuldsättning och uppmärksammar istället stadig lönsamhet hos själva verksamheten.",
+    "ak1Section": "I AK1A:s metodik är Du Pont-analysen brobygget mellan lönsamhetsfamiljen (V07–V09) och stabilitetsfamiljen (V10–V12): den tredje komponenten pekar rakryggat på skuldsättningsgraden, och marginalkomponenten kopplar till brutto- och EBITDA-marginal. Ett V09-tal vägt med sin Du Pont-profil ger en kvalitetsgradad lönsamhetsbild — och det är just sådana helhetsvyer AKM1:s viktning bygger vidare på."
+  },
+  "st-01-soliditet-och-rantetackning": {
+    "slug": "st-01-soliditet-och-rantetackning",
+    "category": "STABILITET",
+    "weight": "—",
+    "chapterCount": 6,
+    "totalMinutes": 24,
+    "title": "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard",
+    "summary": "Två klassiska svenska nyckeltal sida vid sida: hur stor andel av balansräkningen som bärs av ägarna — och hur många gånger rörelseresultatet täcker räntekostnaden.",
+    "minutes": 24,
+    "xp": 50,
+    "level": "Nybörjare",
+    "learn": "Räkna soliditet som eget kapital delat med balansomslutning · Räkna räntetäckningsgrad som rörelseresultat delat med räntekostnad · Läsa de två måtten tillsammans som en tålighetsbild · Förstå varför banker och fastighetsbolag lever med andra soliditetsnormer än industribolag · Se hur ränteläge och upplåningsgrad samspelar i känslighetsanalysen · Koppla måtten till V10 skuldsättningsgrad och V11 likviditet.",
+    "why": "Skuldsättningsgraden (V10) sätter skulder i förhållande till eget kapital — men för att känna ett bolags verkliga tålighet behövs hela den svenska stabilitetstraditionen. Soliditeten fångar hur stor del av hela balansräkningen som ägarna själva bär, och räntetäckningsgraden visar hur många gånger rörelsen täcker räntan på lånen. Denna kurs sätter de två klassikerna i system med räkneexempel — och knyter dem till stabilitetsfamiljen i V-spåret, där varje mått belyser en egen sida av samma fråga: hur väl står bolaget emot en motvindsperiod?",
+    "history": {
+      "origin": "Soliditets- och täckningsmått har länge varit svenska bankers och kreditgivares arbetsspråk: innan ett lån beviljas vägs bolagets egen andel av balansräkningen och dess förmåga att bära räntekostnaden. Nyckeltalen växte alltså fram ur praktisk kreditbedömning, inte ur teori — de var verktyg för att överleva dåliga tider, formulerade i siffror.",
+      "evolution": "Den svenska fastighetskrisen i början av 1990-talet, där högt belånade bolag med svag räntetäckning ställdes om när räntan steg, gjorde tålighetsmåten till en fast del av svensk bolagsanalys. Samma period stärkte bankernas kapitalnormer internationellt genom Basel-regelverket från 1988 — soliditet blev ett överlevnadsvillkor för banker och ett nytänk för hela finansbranschen.",
+      "modern": "Efter år av låga räntor och därefter snabba räntehöjningar under 2022–2023 har frågan om räntekänslighet återigen hamnat i centrum. Nyckeltalsdatabaser redovisar i dag både soliditet och räntetäckning per bolag och bransch — men att tolka siffrorna mot rätt branschnorm förblir analytikerns uppgift, och det är den konsten kursen tränar."
+    },
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Grunderna — tålighetsfrågan bakom båda måtten",
+        "minutes": 4
+      },
+      {
+        "num": 2,
+        "title": "Soliditet — eget kapital i procent av balansräkningen",
+        "minutes": 4
+      },
+      {
+        "num": 3,
+        "title": "Räntetäckningsgrad — hur många gånger räntan täcks",
+        "minutes": 4
+      },
+      {
+        "num": 4,
+        "title": "Praktisk tillämpning — räkna på två bolag",
+        "minutes": 4
+      },
+      {
+        "num": 5,
+        "title": "Fällor och missvisningar",
+        "minutes": 4
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — stabilitetsfamiljen i AKM1",
+        "minutes": 4
+      }
+    ],
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 4,
+        "title": "Grunderna — tålighetsfrågan bakom båda måtten",
+        "intro": "Alla stabilitetsmått är varianter på en enda fråga: hur länge står sig bolaget om intäkterna faller?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Stabilitetsanalysen börjar i en obekväm tankeövning: antag att konjunkturen vänder, att intäkterna sjunker och att räntan stiger. Vem klarar det? Svaret avgörs av bolagets balansräkning — hur stora andel av den som är ägarnas eget, och hur stort utrymme rörelseresultatet lämnar för räntekostnader. Soliditeten och räntetäckningsgraden matar var sin sida av detta: soliditeten fångar bufferten mot förluster, räntetäckningsgraden fångar rörelsens förmåga att betala skuldens pris.\n\nTillsammans kompletterar de skuldsättningsgraden (V10), som sätter skulder mot eget kapital, och likviditeten (V11), som mäter täckningen av de kortfristiga utgifterna. Fyra mått, en enda fråga — och ju fler av dem som pekar åt samma håll, desto säkrare blir bilden."
+          },
+          {
+            "type": "insight",
+            "content": "Stabilitet handlar inte om att undvika risk — det handlar om att ha utrymme att överleva risken när den slår till."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 4,
+        "title": "Soliditet — eget kapital i procent av balansräkningen",
+        "intro": "Soliditeten är den mest svenska av alla stabilitetsmått: en enda andel som sammanfattar finansieringens trygghet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Soliditeten räknas som eget kapital delat med balansomslutning — balansomslutningen är hela balansräkningens totala summa, tillgångar lika med skulder plus eget kapital. Ett bolag med 40 miljarder i balansomslutning och 16 miljarder i eget kapital har 40 procents soliditet: ägarna bär fyra av tio kronor i verksamheten, långivarna de övriga sex.\n\nMåttet används ofta som en första snabbbild av finansiell trygghet, och det är lätt att kommunicera just för att det är en andel. Men siffran ska alltid läsas mot bransch. Ett industriföretag med 20 procents soliditet är tydligt lågfinansierat, medan ett fastighetsbolag med samma andel kan vara normalt finansierat — fastigheters långsiktiga, pantsatta karaktär gör att branschen historiskt lever med högre belåning. Nyckeltalets kraft ligger i jämförelsen: mot bolagets egen historia och mot branschens norm."
+          },
+          {
+            "type": "definition",
+            "content": "Soliditet: Eget kapital delat med balansomslutning, uttryckt i procent. Balansomslutning = totala tillgångar = skulder + eget kapital."
+          },
+          {
+            "type": "insight",
+            "content": "Soliditet som stiger år från år — utan nya emissioner — är en av de tydligaste signalerna på äkta värdeskapande i balansräkningen."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 4,
+        "title": "Räntetäckningsgrad — hur många gånger räntan täcks",
+        "intro": "Räntan är skuldens fasta pris — räntetäckningsgraden visar hur mycket luft som finns före taket.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Räntetäckningsgraden räknas som rörelseresultat — EBIT — delat med räntekostnaden för nettoskulden. Ett bolag med 2 miljarder i rörelseresultat och 200 miljoner i räntekostnad har en räntetäckningsgrad på 10: rörelsen täcker räntan tio gånger om. Ju högre tal, desto större fall i rörelseresultatet kan bolaget stå emot innan räntan börjar äta av kassan — eller av kapitalet.\n\nMåttets styrka är dess känslighet för ränteläget. Ett bolag med hög belåning men fasta räntebindningar kan under en period se ut att klara sig bra, och när bindningarna löper ut i ett högre ränteläge kan täckningen sjunka snabbt. Därför kompletteras måttet ofta med en känslighetsberäkning: vad händer med räntekostnaden om räntan stiger ett par procentenheter? Det är samma tankesätt som ligger bakom de känslighetsanalyser svenska årsredovisningar själva presenterar för finansiella instrument."
+          },
+          {
+            "type": "definition",
+            "content": "Räntetäckningsgrad: Rörelseresultat (EBIT) delat med räntekostnad. Visar hur många gånger rörelsens resultat täcker bolagets ränteutgift."
+          },
+          {
+            "type": "insight",
+            "content": "Räntetäckning under ungefär två gånger innebär att ett normalt resultatfall tar bolaget nära smärtgränsen — då blir varje ränterörelse en händelse värd att följa."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 4,
+        "title": "Praktisk tillämpning — räkna på två bolag",
+        "intro": "Ett räkneexempel i vardera riktning gör skillnaden mellan måtten påtaglig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tänk dig ett industriföretag: balansomslutning 20 miljarder, eget kapital 8 miljarder — soliditeten blir 40 procent. Rörelseresultatet är 1,5 miljarder och räntekostnaden 250 miljoner — räntetäckningen blir 6. Sammantaget: kraftigt ägarburen finansiering och god täckning, och bolaget står emot både ett resultatfall och en räntetopp.\n\nTänk dig sedan ett fastighetsbolag: balansomslutning 50 miljarder, eget kapital 12,5 miljarder — soliditeten 25 procent, vilket inom fastighetsbranschen är snarare normalt än alarmerande. Rörelseresultatet är 2 miljarder och räntekostnaden 1,2 miljarder — räntetäckningen blir knappt 1,7. Här är det inte soliditeten utan räntetäckningen som berättar var sårbarheten sitter: en räntehöjning eller ett vakant fastighetsbestånd slår omedelbart mot utrymmet. Övningen att räkna båda måtten på båda bolagen — och sedan fråga vilket som är 'säkrast' — visar nyckeln till konsten: säkerhet beror på bransch, inte på måttet ensamt."
+          },
+          {
+            "type": "insight",
+            "content": "Samma siffra kan vara trygghet i en bransch och varningsklocka i en annan — branschnormen är den tredje dimensionen i varje stabilitetsmått."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 4,
+        "title": "Fällor och missvisningar",
+        "intro": "Fyra vanliga sätt att missläsa de två klassikerna — och hur du går runt dem.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "För det första: att jämföra soliditet mellan branscher utan normjustering — banker och fastighetsbolag har andra balansräkningar än industribolag, och deras soliditet ska läsas mot sina egna branschnormer. För det andra: att glömma IFRS 16, som sedan 2019 lyfter leasingavtal in i balansräkningen och därmed kan pressa soliditeten hos bolag med stora hyresavtal utan att den ekonomiska riskbilden egentligen ändrats. För det tredje: att läsa räntetäckning utan att fråga efter räntebindningar och derivat — ett fast bolag kan vara mer sårbart vid förnyelse än det ser ut, och ett rörligt bolag kan omvänt ha heddat sin risk. För det fjärde: att se en engångspost i rörelseresultatet som täckning — räntan är återkommande, täckningen ska vara det med.\n\nMotgiften är alltid densamma: läs måtten över flera år, mot branschen, och med noterna öppna där lånen beskrivs. Stabilitetsmått är frågeställare — svaren står i noterna."
+          },
+          {
+            "type": "insight",
+            "content": "En plötslig förändring i soliditet eller räntetäckning är aldrig svaret i sig — den är frågan som talar om var i årsredovisningen nästa läsning bör börja."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 4,
+        "title": "Mästerskap — stabilitetsfamiljen i AKM1",
+        "intro": "När de båda klassikerna sätts in i V-spårets stabilitetsfamilj blir bilden hel.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V10 skuldsättningsgrad sätter skulder mot eget kapital — den snabba relationen. V11 likviditet mäter den allra närmaste täckningen av kortfristiga skulder. V12 intäktsstabilitet lyfter blicken mot efterfrågans jämnhet. Soliditet och räntetäckningsgrad kompletterar familjen: soliditeten ger andelen av HELA balansräkningen som ägarna bär, och räntetäckningen ger rörelsens motståndskraft mot skuldens pris. Tillsammans formar de en stabilhetsvy i fyra dimensioner — relation, likviditet, intäkter och tålighet.\n\nAvsluta med helhetsövningen: välj ett bolag, beräkna skuldsättningsgrad, soliditet och räntetäckning för de senaste tre åren, och skriv en mening om bolagets tålighet där alla tre syns. Den som behärskar den övningen har gått från att läsa enstaka nyckeltal till att teckna ett bolags finansiella hållbarhet — och det är det som är kärnan i AKM1:s stabilitetsdimension."
+          },
+          {
+            "type": "insight",
+            "content": "Stabilitetsfamiljens sanna värde visas först i motvind: den som redan vet var ett bolag är sårbart slår inte omkull när marknaden upptäcker det."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch uppmanade investerare att kika på bolagets balansräkning innan storyn — stark balansräkning är det som ger ett bra bolag tid att bli upptäckt. Lynch skulle ha uppskattat soliditetens enkelhet: en andel som vem som helst kan räkna och som omedelbart talar om hur mycket egen kraft bolaget har i en svacka.",
+    "grahamSection": "För Benjamin Graham var marginalen på balansräkningssidan en grundtrygghet: eget kapital i förhållande till skulder var en av hans mest pålitliga försiktighetsindikatorer. Räntetäckningsgraden hade han som egen rad i sitt analysramverk — hans klassiska kriterier inkluderade krav på att rörelsen täcker räntan med god marginal, ett arv som lever kvar i den svenska traditionen.",
+    "ak1Section": "I AK1A:s metodik breddar soliditet och räntetäckningsgrad V-spårets stabilitetsfamilj från relationen mellan skuld och kapital till hela balansräkningens bärkraft och rörelsens motståndskraft mot ränta. Tillsammans med V10–V12 ger de fyra dimensioner av tålighet — och därmed en stabilare grund för hela den sammanvägda helhetsbilden."
   }
 }

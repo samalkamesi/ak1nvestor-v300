@@ -1,0 +1,344 @@
+{
+  "slug": "bf-12-prospektteori",
+  "category": "BETEENDEFINANS",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 18,
+  "title": "Prospektteori — Kahneman & Tversky",
+  "summary": "Teorin bakom dina beslutsimpulser: referenspunkter, förlustaversion och sannolikhetsvikning.",
+  "minutes": 18,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Förstå prospektteorins värdefunktion — varför vinst och förlust mäts mot en referenspunkt, varför förluster gör dubbelt så ont och hur sannolikhetsvikningen förvränger småbolagsbeslut.",
+  "why": "Prospektteorin är moder till nästan alla biaser du redan mött: förlustaversionen (km-018), disposition effect (km-037) och ankareffekten (km-020) följer ur Kahneman & Tverskys värdefunktion. För den svenska retail-investeraren är referenspunkten nästan alltid inköpskursen — och just därför sitter impulsen att \"vänta tills det går plus\" så djupt. Den här kursen ger dig teorins karta, så att du känner igen dina egna beslutsimpulser i den — och vet var motreglerna finns.",
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "1. Grunderna — varför detta spelar roll",
+      "minutes": 3
+    },
+    {
+      "num": 2,
+      "title": "2. Praktisk tillämpning",
+      "minutes": 3
+    },
+    {
+      "num": 3,
+      "title": "3. Vanliga fällor",
+      "minutes": 3
+    },
+    {
+      "num": 4,
+      "title": "4. AKM1 1.1 integration",
+      "minutes": 3
+    },
+    {
+      "num": 5,
+      "title": "5. Fallstudier",
+      "minutes": 3
+    },
+    {
+      "num": 6,
+      "title": "6. Mästerskap",
+      "minutes": 3
+    }
+  ],
+  "history": {
+    "origin": "Prospektteorin publicerades 1979 av Daniel Kahneman och Amos Tversky i tidskriften Econometrica ('Prospect Theory: An Analysis of Decision under Risk') som ett svar på förväntade nyttoteorins systematiska misslyckanden i experiment. Åratals av laboratorieexperiment visade att deltagare som valde mellan säkra och riskfyllda spel bröt mot varje rationell modell — men på ett förutsägbart sätt. Det förutsägbara var nyckeln: det fanns en struktur i det irrationella, och den strukturen kunde beskrivas matematiskt.",
+    "evolution": "1992 följde den kumulativa prospektteorin som behandlade sannolikhetsvikningen mer konsekvent. Richard Thaler byggde mental redovisning (1985) direkt på teorin, och samma år förklarade Shefrin & Statman dispositionseffekten — småsparares benägenhet att sälja vinnare och behålla förlorare — som en direkt konsekvens av värdefunktionens form. Daniel Kahneman belönades med Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne 2002 (Tversky avled 1996 och priset delas inte ut postumt).",
+    "modern": "Idag är prospektteorin grundvalen under beteendefinansen, nudge-policyn och förklaringarna bakom småsparares köp- och säljmönster i depåstatistik. För svenska retail-investerare fungerar den som ett praktiskt självkännedomverktyg: impulsen att 'vänta tills aktien går plus' är inte en strategi — den är värdefunktionens form, sedd inifrån. Skillnaden mellan att känna impulsen och att följa den är precis det som systematiska modeller som AKM1 tränar."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 3,
+      "title": "1. Grunderna — varför detta spelar roll",
+      "intro": "Kapitel 1 introducerar prospektteorins kärna: att beslut mäts som vinst och förlust mot en referenspunkt — inte som slutlig förmögenhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Innan 1979 antog nationalekonomin att människor maximerar förväntad nytta: vi väger ihop alla utfall med sina sannolikheter och väljer det högsta väntevärdet. Kahneman och Tversky visade med enkla experiment att vi inte gör det — och att vi avviker på ett systematiskt sätt. Tre observationer bar teorin:\n\n1. Referensberoende: vi bedömer inte hur rika vi blir, utan hur det går jämfört med en nollpunkt — referenspunkten.\n2. Förlustaversion: förluster gör ont på ett sätt som vinster aldrig gör gott. Känslomässigt är de inte spegelbilder.\n3. Diminishing känslighet: skillnaden mellan 0 och 1 000 kronor känns större än mellan 9 000 och 10 000 — på båda sidor nollstrecket.\n\nFör en aktiesparare är referenspunkten nästan alltid inköpskursen. Det är den som avgör om ett beslut känns som vinst eller förlust — inte om bolaget faktiskt utvecklas bättre eller sämre än då du köpte."
+        },
+        {
+          "type": "definition",
+          "content": "Prospektteori: En beskrivande teori (Kahneman & Tversky 1979) om beslut under risk — värde mäts som förändring relativt en referenspunkt, inte som slutlig förmögenhet, värdefunktionen är konkav för vinster och konvex för förluster, och förluster väger tyngre än lika stora vinster."
+        },
+        {
+          "type": "insight",
+          "content": "Förlustaversionens storleksordning: i Tversky & Kahnemans (1992) skattningar behöver en vinst vara ungefär 2–2,5 gånger större än en förlust för att känsmässigt väga jämnt. En nedgång på 10 procent i depån gör alltså typiskt dubbelt så ont som en uppgång på 10 procent gör gott."
+        },
+        {
+          "type": "text",
+          "content": "Värdefunktionen ser ut som en förvrängd S: brantare under nollstrecket (förluster), flackare över (vinster), kringdragen vid referenspunkten. Den formen — inte brist på intelligens — förklarar varför en annars klok person kan hålla kvar i en förlorande aktie i åratal medan vinnaren sålts för länge sedan.\n\nDetta är kursens viktigaste skytt: prospektteorin dömer inte. Den beskriver. Alla — nybörjare som professionella — bär värdefunktionen med sig. Skillnaden ligger i om man känner igen den när den talar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäter värdefunktionen i prospektteorin?",
+          "alternativ": [
+            "Vinst och förlust relativt en referenspunkt",
+            "Den slutliga totala förmögenheten",
+            "Aktiens motiverade värde enligt DCF",
+            "Börsens genomsnittliga avkastning"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets första punkt: referensberoende — nollpunkten är referenspunkten, inte din totala förmögenhet."
+        },
+        {
+          "q": "Vad är den vanligaste referenspunkten för en aktiesparare?",
+          "alternativ": [
+            "Inköpskursen",
+            "Bolagets bokvärde per aktie",
+            "Riksbankens styrränta",
+            "OMX Stockholms genomsnittskurs"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlet avslutar med att inköpskursen är den som avgör om ett beslut känns som vinst eller förlust."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 3,
+      "title": "2. Praktisk tillämpning",
+      "intro": "Kapitel 2 översätter värdefunktionen till depåbeslut: referenspunkten i praktiken och frågan som bryter dess grepp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Värdefunktionens två grenar ger två olika beslutsimpulser — och tillsammans skapar de småspararens mest väl dokumenterade misstag:\n\n• Över nollstrecket (vinst): vi är riskaverta. En säker vinst känns värdefull, så impulsen är att ta den — sälja vinnaren för tidigt.\n• Under nollstrecket (förlust): vi söker risk. Att realisera förlusten känns som att göra den verklig, så impulsen är att 'vänta ut' — hålla förloraren för länge.\n\nDetta mönster har ett namn: dispositionseffekten (se km-037). Terrance Odeans klassiska studie från 1998, byggd på tusentals privatdepåer, fann att hushåll realiserade vinster ungefär 1,5 gånger oftare än förluster — och att de sålda vinnarna i genomsnitt fortsatte att överprestera de hållna förlorarna efteråt."
+        },
+        {
+          "type": "definition",
+          "content": "Referenspunkt: Nollläget som vinst och förlust mäts emot. Hos aktiesparare oftast inköpskursen — men även 52-veckorsnoteringen, ett satt målpris eller 'den högsta kursen jag sett' kan ta över som referens."
+        },
+        {
+          "type": "insight",
+          "content": "Referenspunkten är information om dig, inte om bolaget. Kursen du köpte till finns bara i ditt huvud och i din deklaration — bolagets kassaflöde, marginaler och skuldsättning bryr sig inte om den."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska motregeln är en enda fråga, ställd ärligt: 'Skulle jag köpa den här aktien idag, om jag inte ägde den?' Frågan tvingar fram en ny referenspunkt — dagens läge och pris — och gör därmed beslutet oberoende av din historik. Om svaret är ja är fortsatt ägande ett aktivt val. Om svaret är nej är 'vänta tills det går plus' inte en strategi utan värdefunktionens röst.\n\nNotera också referenspunktens rörlighet: den som såg aktien på 200 kronor och köpte på 140 upplever köpet som 'rabatt' — medan den som köpte på 80 upplever samma kurs som förlust. Samma bolag, samma dag, två helt olika känslolägen. Det är referensberoendet i ren form."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fann Odean (1998) om privatpersoners försäljningar?",
+          "alternativ": [
+            "Att vinster realiserades ungefär 1,5 gånger oftare än förluster — och att de sålda vinnarna sedan överpresterade",
+            "Att förluster realiserades oftare än vinster",
+            "Att privatpersoner aldrig sålde under inköpskursen",
+            "Att köp- och säljbeslut följde bolagens fundamental utveckling"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets första textblock: dispositionseffekten i siffror — vinnare säljs för tidigt, förlorare hålls för länge."
+        },
+        {
+          "q": "Vilken fråga är den praktiska motregeln mot referenspunktens grepp?",
+          "alternativ": [
+            "'Skulle jag köpa den här aktien idag, om jag inte ägde den?'",
+            "'Hur länge har jag ägt aktien?'",
+            "'Vad är min genomsnittskurs?'",
+            "'Hur mycket har börsen stigit i år?'"
+          ],
+          "ratt": 0,
+          "tips": "Frågan tvingar fram en ny referenspunkt — dagens läge — och gör beslutet oberoende av din historik."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 3,
+      "title": "3. Vanliga fällor",
+      "intro": "Kapitel 3 går igenom fyrfaldiga mönstret och sannolikhetsvikningen — de två mekanismer som förvränger riskbedömningen mest.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Prospektteorin förutsäger ett mönster som kallas det fyrfaldiga mönstret — hur riskbenägenheten vänder beroende på om du står i vinst eller förlust och hur sannolikt utfallet är:\n\n• Måttligt sannolik VINST: du blir riskavert — tar den säkra vinsten hellre än ett högre väntevärde. (Säljer vinnaren för tidigt.)\n• Måttligt sannolik FÖRLUST: du blir risksökande — hellre chansen att vrida förlusten till vinst än att ta den säkra, mindre förlusten. (Dubblar ner i förloraren.)\n• Liten sannolik, stor VINST: du blir risksökande — lotteriet känns attraktivt. (Spekulativa småbolag med 'tiofaldig potential'.)\n• Liten sannolik, stor FÖRLUST: du blir riskavert — försäkring känns värd sina pengar. (Säljer i botten på panikdagen.)\n\nMönstret är svårbemängt just för att det vänder: samma person som tar för lite risk i vinstläge tar för mycket risk i förlustläge."
+        },
+        {
+          "type": "text",
+          "content": "Den andra mekanismen är sannolikhetsvikningen: vi överviktar små sannolikheter (1-procentschansen känns som betydligt mer än en procent) och behandlar måttliga och höga sannolikheter som lägre än de är. Det är därför ett småbolag utan intäkter kan bära en känsla av 'nästa stora' — den lilla chansen till en enorm utkomst köper hela biljetten, medan den höga och tröga sannolikheten (att bolaget bara rullar vidare som innan) underskattas.\n\nPå svenska småbolagslistor syns detta i att värderingen sällan speglar väntevärdet av affärsplanen utan väntevärdet av berättelsen — just för att berättelsens lilla sannolikhet för en stor utkomst övervikas."
+        },
+        {
+          "type": "insight",
+          "content": "Fällorna hänger ihop i familj: ankareffekten (km-020, bf-05) sätter referenspunkten, sunk cost (bf-02) förankrar den djupare för varje år, och dispositionseffekten (km-037) är värdefunktionens rörelse kring den. Prospektteorin är samlingsnamnet på logiken bakom alla tre."
+        },
+        {
+          "type": "definition",
+          "content": "Sannolikhetsvikting: Prospektteorins beskrivning av att små sannolikheter överviktas (de känns större än de är) medan måttliga och höga sannolikheter undervikas (de känns mindre säkra än de är)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beter sig de flesta vid en måttligt sannolik FÖRLUST, enligt prospektteorin?",
+          "alternativ": [
+            "Risksökande — hellre chansen att vrida förlusten till vinst än att realisera den",
+            "Riskaverta — realiserar förlusten omedelbart",
+            "De följer väntevärdet exakt",
+            "De slutar tänka på positionen helt"
+          ],
+          "ratt": 0,
+          "tips": "Det fyrfaldiga mönstret: under nollstrecket vänder riskbenägenheten — förlustdomänen gör oss risksökande."
+        },
+        {
+          "q": "Vad innebär sannolikhetsvikningen?",
+          "alternativ": [
+            "Små sannolikheter överviktas och måttliga/höga undervikas",
+            "Alla sannolikheter bedöms korrekt",
+            "Stora sannolikheter överviktas konsekquent",
+            "Sannolikheter ersätts av känslor helt"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets andra textblock: lotterieffekten för små chanser, tröghetseffekten för höga."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 3,
+      "title": "4. AKM1 1.1 integration",
+      "intro": "Kapitel 4 kopplar prospektteorin till AKM1:s systematik — varför en poängsättningsmodell är ett beteendevetenskapligt verktyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1 poängsätter ett bolag på 20 variabler — försäljningstillväxt, marginaler, stabilitet, moat, risk och kapitalstruktur. Ingen av de 20 frågar vad du köpte aktien för. Det är modellens största beteendevetenskapliga värde: genom att tvinga referenspunkten från portföljen till bolagets fundamentals gör den samma bedömning för alla läsare — oavsett om de sitter på vinst eller förlust.\n\nSystematiken är alltså inte bara en analysmetod; den är en bias-motregler. Där impulsen frågar 'hur går det för mig?' frågar modellen 'hur går det för bolaget?'. De två frågorna kan ha samma svar — men bara en av dem är relevant för beslutet."
+        },
+        {
+          "type": "text",
+          "content": "Prospektteorin syns också i marknadsnivån, och där möter den AK1TS vågvalidering: när en stor grupp delägare sitter på förlust i samma aktie skapas ett kollektivt referenspunktsbeteende — försäljningstrycket avtar nära inköpskurser i storlek ('nollstrecket' blir ett motstånd av småsparares vilja att komma ut jämnt), och uppgångar över nollstrecket möter ny försäljning. Sådana mönster är utbildningsmässigt intressanta eftersom de visar att psykologin inte bara bor i ditt huvud — den aggregeras till kursernas form.\n\nI AKM2:s fyra dimensioner återkommer temot: en fundamental poäng (AKM1) som rör sig (AK1TS) — och en stor förklaringsdel av rörelsen är just massans värdefunktion."
+        },
+        {
+          "type": "definition",
+          "content": "Förlustaversion (λ): värdefunktionens brantare gren för förluster — i Tversky & Kahnemans (1992) kumulativa prospektteori skattad till omkring λ ≈ 2,25, det vill säga att förluster vägerdrygt dubbelt så tungt som lika stora vinster."
+        },
+        {
+          "type": "insight",
+          "content": "Modellens determinism är dess bias-skydd: samma 20 variabler, samma vikter, samma poäng — oavsett läsarens inköpskurs. Det som är svårt att göra med känsla (bedöma bolaget oberoende av egen position) blir enkelt med checklista."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför skyddar AKM1:s poängsättning mot referenspunktens fälla?",
+          "alternativ": [
+            "Den poängsätter bolagets variabler och frågar aldrig vad du köpte aktien för",
+            "Den viktar inköpskursen med 2,25",
+            "Den jämför alltid mot 52-veckorsnoteringen",
+            "Den justerar poängen efter din vinster/förlustläge"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets första block: frågan flyttas från 'hur går det för mig?' till 'hur går det för bolaget?'."
+        },
+        {
+          "q": "Vad är den experimentella storleksordningen på förlustaversionen?",
+          "alternativ": [
+            "Ungefär 2–2,5 gånger starkare känsla för förluster än för lika stora vinster",
+            "Exakt lika stark — bara spegelvänd",
+            "Ungefär 10 gånger starkare",
+            "Förluster känns mindre än vinster"
+          ],
+          "ratt": 0,
+          "tips": "Definitionen i detta kapitel: λ ≈ 2,25 i den kumulativa prospektteorin (1992)."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 3,
+      "title": "5. Fallstudier",
+      "intro": "Kapitel 5 visar prospektteorin i svensk marknadshistoria — IT-bubblan och modeaktiernas svängningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "IT-bubblan 2000 är den svenska börsens tydligaste prospektteori-fallstudie. Technik- och telekomaktier som Ericsson hade stigit år efter år, och referenspunkten för en hel generation småsparare sattes vid toppnoteringarna. När börsen vände föll OMX-aktierna djupt — Ericsson tappade större delen av sitt börsvärde på några år. Mönstret som följde i depåer och diskussionsforum var lärobokens: 'den kommer tillbaka', 'jag säljer när jag går jämnt ut', 'det är bara pappersförlust så länge jag inte säljer'. Värdefunktionens förlustgren sökte risk — och förlusten förvärrades av att den aldrig realiserades som beslut, bara som värde.\n\nLärdomen är inte att börsen var 'dum' — utan att referenspunkten från år 2000 inte bar någon information om bolagens framtida intäkter. Den bar bara information om när köpen gjordes."
+        },
+        {
+          "type": "text",
+          "content": "Ett modernare exempel är svenska konsumtionsbolag med kraftiga kursfall under svåra år — som H&M:s djupa nedgång 2018. Typiskt för sådana förlopp är att nyheten om försämrings­resultat slår ut en stor grupp ägare på förlust, varvid 'vänta till nollstrecket'-beteendet kan synas i hur aktien rör sig kring inköpsnivåer i storlek. Samma mönster rapporteras återkommande i svenska depåstatistik: genomsnittspararen realiserar vinster tidigt och sitter kvar i förlustpositioner betydligt längre — den råa dispositionseffekten, alltså prospektteorin i aktier, år efter år."
+        },
+        {
+          "type": "insight",
+          "content": "Fallstudiernas gemensamma nämnare: referenspunkten finns bara i investerarens huvud. När miljoner huvuden delar samma nollstreck kan det synas i kursen — men det förändrar inte ett enda bolags kassaflöde."
+        },
+        {
+          "type": "text",
+          "content": "Träna själv på fallen: ta en aktie du känner väl och beskriv (a) var din referenspunkt ligger, (b) hur den påverkat dina senaste beslut, (c) vad du hade bedömt med dagens läge som utgångspunkt. Övningen tar fem minuter och är kursens mest värdefulla — teorin förvandlas till självkännedom först när den får ett konkret case: ditt eget."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den gemensamma nämnaren i fallstudierna?",
+          "alternativ": [
+            "Referenspunkten fanns bara i investerarens huvud — inte i bolagets grunder",
+            "Att börsen alltid återgår till tidigare toppnivåer",
+            "Att småsparare sålde för tidigt i alla fallen",
+            "Att bolagens intäkter följde aktiekurserna"
+          ],
+          "ratt": 0,
+          "tips": "Insight-blocket: nollstrecket kan synas i kursen när många delar det — men det ändrar inget kassaflöde."
+        },
+        {
+          "q": "Vad kännetecknar mönstret efter en djup nedgång för ägare som köpt på toppen?",
+          "alternativ": [
+            "'Vänta tills det går jämnt ut' — värdefunktionens risksökande förlustgren",
+            "Omedelbar realisering av förlusten",
+            "Att de slutar följa bolaget",
+            "Att de köper mera omedelbart vid varje uppgång"
+          ],
+          "ratt": 0,
+          "tips": "IT-bubblans efterföljd: 'pappersförlust så länge jag inte säljer' — förlustdomänens risksökande."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 3,
+      "title": "6. Mästerskap",
+      "intro": "Kapitel 6 samlar motreglerna till en repeterbar praxis — och pekar ut nästa steg i lärvägen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mästerskap i prospektteori är inte att bli av med värdefunktionen — den sitter där den sitter. Mästerskapet är tre konkreta vanor:\n\n1. Förhandskriterier: avgör INNAN köpet vad som ska gälla för vidgar ägandet — vilka variabler, vilka nivåer. Skrivet ner blir kriterierna referenspunkten, inte inköpskursen.\n2. Referenspunkt i journalen: notera vid varje beslut var ditt nollstreck ligger (inköp? toppen? målpris?). Bara att notera den halverar dess makt — det ser dig se den.\n3. Ombedömning från noll: ställ 'köpa idag?'-frågan vid varje granskningstillfälle — kvartalsvis räcker — och låt svaret fälla beslutet, inte känsloläget.\n\nDessa tre vanor är hela skillnaden mellan att känna till teorin och att använda den. De kostar några minuter per kvartal och ersätter års 'vänta tills det går plus'."
+        },
+        {
+          "type": "text",
+          "content": "Prospektteorin knyter också samman spåret: förlustaversionen (km-018) är dess känslomässiga kärna, ankareffekten (km-020, bf-05) dess referenspunktens fastnagling, sunk cost (bf-02) dess förstärkare, mental accounting (bf-03) dess bokföring och dispositionseffekten (km-037) dess slutförda mönster. Den som vill gå vidare läser Tänka snabbt och långsamt (BOKMASTER-kursen i registret) — Kahnemans egen sammanfattning av fyra decenniers forskning, där prospektteorin är en av två huvudpersoner.\n\nMed det är kartan komplett: du kan nu känna igen referensberoende, förlustaversion och sannolikhetsvikning — i dig själv och i marknaden."
+        },
+        {
+          "type": "insight",
+          "content": "Kahnemans egen slutsats i 'Tänka snabbt och långsamt': målet är inte att utplåna System 1 — det går inte — utan att lära känna dess mönster så väl att du hör dig själv tänka fel just när det händer."
+        },
+        {
+          "type": "definition",
+          "content": "Det fyrfaldiga mönstret: prospektteorins förutsägelse att riskbenägenheten vänder mellan vinst- och förlustdomänen — riskavert vid säkra/sannolika vinster, risksökande vid sannolika förluster, risksökande vid småchanser på storvinst, riskavert vid smårisker på katastrof."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av dessa är EN av mästarvanorna från kapitlet?",
+          "alternativ": [
+            "Förhandskriterier skrivna före köpet — så blir kriterierna referenspunkten",
+            "Att aldrig sälja i förlustläge",
+            "Att fly referenspunkten varje vecka",
+            "Att bara äga aktier man köpt med rabatt"
+          ],
+          "ratt": 0,
+          "tips": "Vana 1: förhandskriterierna ersätter inköpskursen som nollstreck."
+        },
+        {
+          "q": "Vad är prospektteorins förhållande till de andra biaskurserna?",
+          "alternativ": [
+            "Den är moder till dem — förlustaversion, ankareffekt, sunk cost och dispositionseffekten följer ur värdefunktionen",
+            "Den är en motsats till dem",
+            "Den ersätter behovet av dem",
+            "Den handlar bara om portföljteori"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets andra block listar släktskapet: km-018, km-020/bf-05, bf-02, bf-03, km-037 — alla barn av värdefunktionen."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch fångade prospektteorin i praktiken med sin bild om att småsparare 'klipper blommorna och vattnar ogräset' — säljer vinnarna och behåller förlorarna. Prospektteorin förklarar varför: en säker vinst känns mer värd än sin chans, och en realiserad förlust känns värre än sin sannolikhet. Lynch-svar: äg bolaget, inte din egen nollstrecks-känsla.",
+  "grahamSection": "Grahams 'Mr. Market' är prospektteorin föregripen i praktiken: marknadens stämningsvallning — eufori över vinster, panik över förluster — är inte information om värdet utan om marknadens humör. Margin of safety blir det rationella svaret på en motpart vars värdefunktion slår runt varje dag.",
+  "ak1Section": "AKM1 poängsätter bolagets 20 variabler och frågar aldrig vad du köpte aktien för — modellen flyttar därmed referenspunkten från portföljen till bolaget, vilket är dess största beteendevetenskapliga värde. På marknadsnivån återkommer massans värdefunktion i AK1TS vågvalidering, där kollektiva nollstrecksbeteenden kan synas i kursmönster kring inköpsnivåer i storlek."
+}

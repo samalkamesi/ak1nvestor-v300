@@ -10,9 +10,16 @@
  *   kurstips.ts V-spårets ordning, -1 = utanför spåret) · minuter.
  *
  * PARITETSVAKTER (skriptet vägrar generera vid avvikelse):
- *   - exakt 333 kurser i deep-courses.json
+ *   - MINST 333 kurser i deep-courses.json (registret får växa, aldrig
+ *     krympa — en plötslig minskning är dataförlust och stoppar skriptet;
+ *     spår 5:s kurstillväxt 2026-09-15 ändrade exakt-333-vakten till golv)
  *   - V-spårets 20 slugs läses ur kurstips.ts KÄLLKOD (regex i ordning) —
  *     samma källa som raknaKurstips/raknaLarvag läser vid runtime
+ *   - FAS2/FAS3-mängderna läses ur kurs-access.ts KÄLLKOD (samma
+ *     källkodsparsning — node-typstrippning löser inte tilläggslösa
+ *     TS-importer, och .ts-import skulle bryta tsc utan
+ *     allowImportingTsExtensions; tidigare runtime-import togs bort
+ *     2026-09-15 av det skälet)
  *   - alla 20 V-slugs finns i kursdata
  *
  * Kör:     node scripts/bygg-larvag-karta.ts     (node ≥ 22.18, typstrippring)
@@ -23,14 +30,15 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { kraverFas } from "../src/lib/kurs-access";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KURSJSON = path.join(REPO, "public", "deep-courses.json");
 const KURSTIPS = path.join(REPO, "src", "lib", "kurstips.ts");
+const KURS_ACCESS = path.join(REPO, "src", "lib", "kurs-access.ts");
 const UTFIL = path.join(REPO, "src", "lib", "larvag-karta.ts");
 
-const VANTAT_ANTAL = 333;
+/** Paritetsgolv: registret får växa (spår 5), aldrig krympa (dataförlust). */
+const MIN_ANTAL = 333;
 
 /** Level-tolkning: 0 = allmän ("Alla"/tom/okänd), 1–3 = stigande nivå. */
 function tolkaNiva(rå: unknown): number {
@@ -55,6 +63,32 @@ function lasVSparSlugs(): string[] {
   return slugs;
 }
 
+/** FAS2/FAS3-slugs ur kurs-access.ts källkod — paritet med runtime-modulen
+ *  (kraverFas: FAS3 först, sedan FAS2 — samma prioritet som modulen). */
+function lasFasMangder(): { fas2: Set<string>; fas3: Set<string> } {
+  const kalla = readFileSync(KURS_ACCESS, "utf8");
+  const block = (namn: string): string => {
+    const start = kalla.indexOf(`export const ${namn}`);
+    const slut = kalla.indexOf("]);", start);
+    if (start < 0 || slut < 0) throw new Error(`Hittade inte ${namn}-blocket i kurs-access.ts`);
+    return kalla.slice(start, slut);
+  };
+  const slugs = (txt: string): string[] => [...txt.matchAll(/"([a-z0-9][a-z0-9-]*)"/g)].map((m) => m[1]);
+  const fas2 = new Set(slugs(block("FAS2_KURSER")));
+  const fas3 = new Set(slugs(block("FAS3_KURSER")));
+  if (fas2.size === 0 || fas3.size === 0) {
+    throw new Error("FAS-mängderna tomma — parsningen av kurs-access.ts misslyckades, vägrar generera.");
+  }
+  return { fas2, fas3 };
+}
+
+/** Samma semantik som kurs-access.ts kraverFas (FAS3 > FAS2 > gratis). */
+function kraverFas(slug: string, fas2: Set<string>, fas3: Set<string>): 0 | 2 | 3 {
+  if (fas3.has(slug)) return 3;
+  if (fas2.has(slug)) return 2;
+  return 0;
+}
+
 type Rad = {
   slug: string;
   titel: string;
@@ -71,8 +105,8 @@ function huvud() {
     { slug?: unknown; title?: unknown; category?: unknown; level?: unknown; totalMinutes?: unknown; minutes?: unknown }
   >;
   const slugs = Object.keys(kurser);
-  if (slugs.length !== VANTAT_ANTAL) {
-    throw new Error(`Väntade ${String(VANTAT_ANTAL)} kurser i deep-courses.json, fand ${String(slugs.length)}.`);
+  if (slugs.length < MIN_ANTAL) {
+    throw new Error(`Väntade minst ${String(MIN_ANTAL)} kurser i deep-courses.json, fand ${String(slugs.length)} — dataförlust? Vägrar generera.`);
   }
 
   const vSlugs = lasVSparSlugs();
@@ -80,6 +114,7 @@ function huvud() {
   for (const s of vSlugs) {
     if (!kurser[s]) throw new Error(`V-spårets ${s} saknas i deep-courses.json — pariteten bruten.`);
   }
+  const { fas2, fas3 } = lasFasMangder();
 
   const rader: Rad[] = slugs.map((slug) => {
     const k = kurser[slug];
@@ -96,7 +131,7 @@ function huvud() {
       titel,
       kategori,
       niva: tolkaNiva(k.level),
-      kraverFas: kraverFas(slug),
+      kraverFas: kraverFas(slug, fas2, fas3),
       vIndex: vIndex.get(slug) ?? -1,
       minuter,
     };

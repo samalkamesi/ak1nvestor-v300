@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (333 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (337 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 291 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 295 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -251,6 +251,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "pf-13-esgportfolj", titel: "ESG-portfölj", kategori: "PORTFÖLJHANTERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "pf-14-pensionssparande", titel: "Pensionssparande", kategori: "PORTFÖLJHANTERING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 20 },
   { slug: "bf-11-kognitiv-bias", titel: "Kognitiv bias — komplett lista", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "bf-12-prospektteori", titel: "Prospektteori — Kahneman & Tversky", kategori: "BETEENDEFINANS", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
   { slug: "mk-11-kinaekonomin", titel: "Kina-ekonomin", kategori: "MAKROEKONOMI", niva: 3, kraverFas: 0, vIndex: -1, minuter: 26 },
   { slug: "vm-11-waccfallor", titel: "WACC-fällor", kategori: "VÄRDERINGSMETODER", niva: 3, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "portfolj-ekosystemet", titel: "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken", kategori: "PRAKTISKA CASE", niva: 2, kraverFas: 0, vIndex: -1, minuter: 55 },
@@ -361,6 +362,9 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "principles-of-corporate-finance", titel: "Principles of Corporate Finance — Brealey, Myers & Allen: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 2, vIndex: -1, minuter: 215 },
   { slug: "shoe-dog", titel: "Shoe Dog — Phil Knight: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 0, vIndex: -1, minuter: 156 },
   { slug: "the-everything-store", titel: "The Everything Store — Brad Stone: KOMPLETT", kategori: "BOKMASTER", niva: 0, kraverFas: 0, vIndex: -1, minuter: 169 },
+  { slug: "bk-01-balansrakningen", titel: "Balansräkningen — bolagets karta", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "ln-01-dupont-analysen", titel: "Du Pont-analysen — plocka isär ROE", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "st-01-soliditet-och-rantetackning", titel: "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
 ];
 
 /** slug → index i LARVAG_KARTA (O(1)-uppslag; deterministisk brytningsnyckel). */
@@ -369,4 +373,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 333;
+export const LARVAG_ANTAL_KURSER = 337;

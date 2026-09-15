@@ -1,0 +1,120 @@
+{
+  "bransch": "tillvaxt",
+  "genererad": "2026-09-15",
+  "borjanSasong": "2026-Q3-rapportsäsongen",
+  "bolag": [
+    {
+      "ticker": "AMD",
+      "namn": "Advanced Micro Devices, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10: sista veckan till 2026-11: första veckan (tredjepartsestimat, ej officiellt)",
+      "notera": "Kalenderkvartalsrytm (Q3 = jul–sep 2026). Brukar rapportera i slutet av oktober eller början av november; förra årets Q3 presenterades 4 november. Officiellt datum meddelas vanligtvis via pressrelease 2–4 veckor före rapport.",
+      "kallor": [
+        { "namn": "AMD Investor Relations", "url": "https://ir.amd.com/", "hamtad": "2026-09-15" },
+        { "namn": "Yahoo Finance — earnings-kalender AMD", "url": "https://finance.yahoo.com/calendar/earnings?symbol=AMD", "hamtat": "2026-09-15" },
+        { "namn": "Public.com — AMD earnings (estimat 2026-11-03)", "url": "https://public.com/stocks/amd/earnings", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "KINV-B.ST",
+      "namn": "Kinnevik AB",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-15",
+      "notera": "Kvartalsrytm. Officiell IR-kalender: 'Interim Report 1 January – 30 September 2026' den 15 oktober 2026. Bolaget brukar publicera morgon (08:00 CET) med telefonkonferens samma förmiddag.",
+      "kallor": [
+        { "namn": "Kinnevik — finansiell kalender (IR)", "url": "https://www.kinnevik.com/investor-relations/calendar/", "hamtat": "2026-09-15" },
+        { "namn": "Kinnevik — pressrum/rapporter", "url": "https://www.kinnevik.com/investor-relations/press-releases/", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "namn": "NVIDIA Corporation",
+      "land": "USA",
+      "rapportfenster": "2026-11-17 (efter börsens stängning, enligt tredjepartskälla konfirmerat)",
+      "notera": "Brutet räkenskapsår: Q3 räkenskapsåret 2027 täcker ca augusti–oktober 2026. NVDA rapporterar normalt efter stängning en tisdag/on-dag i mitten av november; officiell kallelse kommer via pressrelease nära datumet.",
+      "kallor": [
+        { "namn": "NVIDIA Investor Relations — events", "url": "https://investor.nvidia.com/events-and-presentations", "hamtat": "2026-09-15" },
+        { "namn": "Wall Street Horizon — NVDA earnings calendar (2026-11-17 AMC)", "url": "https://www.wallstreethorizon.com/nvidia-earnings-calendar", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "PCELL.ST",
+      "namn": "PowerCell Sweden AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-10-22",
+      "notera": "Kvartalsrytm. Datum angivet i bolagets egen Q2 2026-rapport under 'kommande händelser': 'Interim report Q3 2026, October 22'. Q4/årsredovisning senare (ca februari 2027 enligt kalender).",
+      "kallor": [
+        { "namn": "PowerCell — rapporter och presentationer (IR)", "url": "https://www.powercellgroup.com/investors/reports-presentations/", "hamtat": "2026-09-15" },
+        { "namn": "Inderes — PowerCell finansiell kalender (22/10 2026)", "url": "https://www.inderes.se/kalenteri/yhtiot/powercell-sweden-ab", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "namn": "Palantir Technologies Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-11-02 (efter stängning; tredjepartsprojektion, ej officiellt bekräftat)",
+      "notera": "Kalenderkvartalsrytm. Flera kalendrar (Public.com, Zacks, Wall Street Horizon m.fl.) pekar på 2 november 2026 efter stängning, men bolaget har inte officiellt bekräftat datumet — verifiera mot IR-sidans events.",
+      "kallor": [
+        { "namn": "Palantir Investor Relations — events", "url": "https://investors.palantir.com/events", "hamtat": "2026-09-15" },
+        { "namn": "Public.com — PLTR earnings (2026-11-02 AMC)", "url": "https://public.com/stocks/pltr/earnings", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "PSNY",
+      "namn": "Polestar Automotive Holding UK PLC",
+      "land": "USA",
+      "rapportfenster": "2026-11-05 (bolagets eget förväntat publiceringsdatum)",
+      "notera": "Polestar meddelade i sin Q2/halvårsrapport (publicerad 2026-09-03) att bolaget förväntar sig att publicera 'Q3 2026 select financial results' den 5 november 2026, med ljudwebbsänd konferens. Separat: försäljningsvolymer (retail sales volumes) för Q3 väntas 2026-10-08. Obs: vissa kalendrar (Yahoo Finance) uppger 2026-11-12 som estimat — divergerande uppgift, bolagets eget datum väger tyngst.",
+      "kallor": [
+        { "namn": "Polestar Investor Relations", "url": "https://investors.polestar.com/investor-relations/", "hamtat": "2026-09-15" },
+        { "namn": "Polestar — Q2/H1 2026-meddelande (nämnt Q3-datum 2026-11-05)", "url": "https://investors.polestar.com/news-releases/news-release-details/polestar-reports-second-quarter-select-and-h1-2026-financial/", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "SE",
+      "namn": "Sea Limited",
+      "land": "USA",
+      "rapportfenster": "2026-11-10 (före USA-börsens öppning; tredjepartsestimat, ej officiellt)",
+      "notera": "Kalenderkvartalsrytm. Flerkalenderkonsensus (Quartr, Public.com, MarketBeat) pekar på 10 november 2026; Investing.com avviker med 2026-11-17 — divergerande estimat, officiellt datum bekräftas via Sea:s IR-sida.",
+      "kallor": [
+        { "namn": "Sea Limited Investor Relations", "url": "https://www.sea.com/investor/home", "hamtat": "2026-09-15" },
+        { "namn": "Public.com — SE earnings (2026-11-10)", "url": "https://public.com/stocks/se/earnings", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "SHOP",
+      "namn": "Shopify Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-11: första veckan — vanligaste estimatet 2026-11-03 (ej officiellt)",
+      "notera": "Kalenderkvartalsrytm. Kanadensiskt bolag noterat på NYSE; rapporterar i USD. Zacks/Public.com estimerar 3 november 2026, MarketChameleon-fönstret 5–10 november 2026. Officiellt datum bekräftas via Shopifys IR-eventsida nära rapporten.",
+      "kallor": [
+        { "namn": "Shopify — Investor Events (IR)", "url": "https://www.shopify.com/investors/events", "hamtat": "2026-09-15" },
+        { "namn": "Zacks — SHOP earnings calendar (2026-11-03)", "url": "https://www.zacks.com/stock/research/SHOP/earnings-calendar", "hamtat": "2026-09-15" },
+        { "namn": "MarketChameleon — SHOP earnings dates", "url": "https://marketchameleon.com/Overview/SHOP/Earnings/Earnings-Dates/", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "TRUE-B.ST",
+      "namn": "Truecaller AB (publ)",
+      "land": "Sverige",
+      "rapportfenster": "2026-11-03",
+      "notera": "Kvartalsrytm. Datum 'Interim report Q3 2026: 3 November 2026' står i bolagets egen finansiella kalender (angiven i Q1- och Q2-rapporterna 2026) och bekräftas av Inderes och Investing.com.",
+      "kallor": [
+        { "namn": "Truecaller — Financial Reports & Presentations (IR)", "url": "https://corporate.truecaller.com/investors/financial-reports-and-presentations", "hamtat": "2026-09-15" },
+        { "namn": "Inderes — Truecaller finansiell kalender (3.11.2026)", "url": "https://www.inderes.se/kalenteri/yhtiot/truecaller-ab", "hamtat": "2026-09-15" }
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "namn": "Tesla, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10-21 (efter stängning; tredjepartsprojektion, ej bekräftad)",
+      "notera": "Kalenderkvartalsrytm. Yahoo Finance och Wall Street Horizon projicerar 21 oktober 2026 efter stängning (UNCONFIRMED); MarketBeat estimerar alternativt 28 oktober 2026 — divergerande estimat. Tesla bekräftar datum via pressrelease ca 1–2 veckor före rapporten; 2026 års Q1/Q2 presenterades 22 april respektive 22 juli.",
+      "kallor": [
+        { "namn": "Tesla Investor Relations", "url": "https://ir.tesla.com/", "hamtat": "2026-09-15" },
+        { "namn": "Yahoo Finance — earnings-kalender TSLA (2026-10-21)", "url": "https://finance.yahoo.com/calendar/earnings?symbol=TSLA", "hamtat": "2026-09-15" },
+        { "namn": "Wall Street Horizon — TSLA earnings calendar", "url": "https://www.wallstreethorizon.com/tesla-earnings-calendar", "hamtat": "2026-09-15" }
+      ]
+    }
+  ]
+}

@@ -79,6 +79,7 @@ function tick() {
   if (min === 23 && tim % 6 === 4) korEnGang("minnesberedare", "node", ["verktyg/minnesberedare.mjs"]);
   if (tim === 3 && min === 10) korEnGang("ISR-värmare", "bash", ["data/infra/contabo/ak1a-varm.sh"]);
   if (tim === 4 && min === 44) korEnGang("scenariotest", "node", ["verktyg/testa-studio-scenarion.mjs"]);
+  if (min % 15 === 12) korEnGang("feljagaren", "node", ["verktyg/feljagaren.mjs"]);
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
 }
 

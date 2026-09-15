@@ -4295,31 +4295,23 @@ class AppServerTransport implements StudioTransport {
           /* v4 är fallback — session/read är primär */
         }
       }
-      // Lager 3: TRÅDENS KUMULATIVA — ny session med 0 kontext ⇒ läs
-      // föregående sessions v4-usage och LÄGG TILL som trådbar-last.
-      // Detta gör att kontextraden ALLTID visar trådens verkliga storlek
+      // Lager 3: TRÅDENS HISTORIK-SKATTNING — ny session med 0 kontext ⇒
+      // skatta ur trådens meddelandevolym (tradHistorik-längd × snitt tkn).
+      // Detta ger kontextraden ett ÄRLIGT tal även direkt efter omstart,
       // och auto-komprimeringen har verkliga tal att trigga på.
+      // Skattning: ~800 tokens per konversationspost (snitt ur prod-mätning:
+      // 60 poster ≈ 48k tokens kontext vid v150-beviset).
       if ((!contextUsed || contextUsed === 0) && !this.målSessionId) {
         try {
           const bok = lasHuvudtradSessioner();
-          const föregående = bok.find((s) => s.startsWith("sess_") && s !== this.sid);
-          if (föregående) {
-            const v4Förra = await this.klient!.protokollFraga(
-              "v4/conversation/usage",
-              { sessionId: föregående },
-              15_000,
-            ) as { inputTokens?: number; totalTokens?: number } | null;
-            if (v4Förra) {
-              const förraIn = typeof v4Förra.inputTokens === "number" ? v4Förra.inputTokens : 0;
-              const förraTotal = typeof v4Förra.totalTokens === "number" ? v4Förra.totalTokens : 0;
-              if (förraIn > 0) {
-                contextUsed = förraIn;
-                totalTokenCount = förraTotal || förraIn;
-              }
-            }
+          const tråden = lasTradHistorik(bok, { sessionId: this.sid, historik: [] });
+          if (tråden.length > 3) {
+            const skattning = Math.round(tråden.length * 800);
+            contextUsed = skattning;
+            totalTokenCount = skattning;
           }
         } catch {
-          /* trådens bar-last är stöd — ALDRIG fatal */
+          /* skattning är stöd — ALDRIG fatal */
         }
       }
       return {

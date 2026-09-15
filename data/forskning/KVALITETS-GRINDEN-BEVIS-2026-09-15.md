@@ -95,3 +95,47 @@ D2 passerar, D3 regressionssäker.
 - Commit: `studio: auto s8-u1 kvalitetsgrindens mekaniska bevis + R2-härdning`
   (hook + detta dokument + worklog-rad). Commiten passerar SIN EGEN härdade
   grind — slutbeviset.
+
+## Tillägg (s8 omgång 2, 2026-09-15 18:20): typkontrollens DETERMINISM — npx-fallgropen kurad i fyra väktare
+
+FYND: s8-u1 bevisade grinden blockerande — men själva typKONTROLLEN var
+icke-deterministisk. Fem väktare körde `npx tsc --noEmit`, och npx-cachen
+(`~/.npm/_npx/1d6e82a4126006c4`) bär dummy-paketet **tsc@2.0.4** (community-
+paketet "tsc", INTE TypeScript; projektets version är 5.9.3). När prod-synkens
+`npm ci` river `node_modules/.bin` (vid varje deploy — .bin/tsc:s mtime
+18:08 idag) kan npx resolva "tsc" till cache-träffen; npx kör cache-träffar
+utan prompt i non-tty. Utfall i deployfönster: TS-2.0.4 (från 2016) mot
+Next.js 16-kodbasen = tusentals vilseledande fel, eller npx-abrott med
+kryptiskt fel. Live-observationer: s7 våg 6 (18:05) "npx tsc träffar fel
+binär på servern"; agentfabriken härdade sin EGEN kedja 04:57 (kommentar
+rad ~215) men lämnade övriga väktare.
+
+KUR (samma commit — alla kör projektets egna binär
+`node node_modules/typescript/bin/tsc --noEmit`):
+1. `verktyg/hooks/pre-commit` — AKTIV via core.hooksPath. Saknad binär ⇒
+   node:s "Cannot find module" + blockering: tydligt fail-safe (regeln
+   "vänta 3 min vid upptaget deploylås" gäller redan).
+2. `verktyg/kvalitetsgrind.mjs` (sekundär node-hook) — samma binär +
+   explicit existsSync-avslag med "deploy pågår?"-diagnos.
+3. `verktyg/agent-status.mjs` — DJUP-mätningen + ROTORSAKSBUGG nr 2:
+   `TSC_BASLINJE = 34` (pre-våg-133-värdet, commit 436ad6f7) medan
+   sanningen sedan våg 133 är 0 — formeln `nya: max(0, n − 34)` kunde
+   maskera upp till 34 VERKLIGA fel som "nya: 0" i hälsorapporten.
+   Rättad till 0.
+4. `verktyg/agentfabrik.mjs` — KVD-kärnan var redan härdad (04:57);
+   promptreglerna till barnen (leveranskriterier + ALDRIG-raden) pekar
+   nu också på den deterministiska binären.
+
+BEVIS:
+- `node node_modules/typescript/bin/tsc --noEmit` = exit 0 (nya kanalen).
+- `node --check` × 3 (.mjs) + `bash -n` (hook) = OK — fabrikens nästa
+  rop laddar de härdade filerna fritt.
+- Commiten passerar SIN EGEN härdade grind (samma slutbevis som s8-u1).
+- Cachens dummy på disk: `_npx/1d6e82a4126006c4/node_modules/tsc`
+  package.json → name "tsc", version 2.0.4.
+
+FYND I SPE (bokförs, ej denna vågs objekt): next fortfarande 16.3.2
+installerat i prod-trädet (mätt 18:17) — CRITICAL (GHSA-2xp9-vwfh-vxw4,
+GHSA-p293-qw3h-jr36) lever ~9 h efter s8-u2:s upptäckt. Installation ägs
+av prod-synken under deploylåset (fabriksbarn förbjudet) — larmnotis i
+`data/rapporter/beroende-halsa-SENASTE.md`.

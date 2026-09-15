@@ -28,7 +28,12 @@ if git rev-parse -q --verify MERGE_HEAD >/dev/null 2>&1; then
   exit 0
 fi
 
-if ! npx tsc --noEmit; then
+# s8-determinism (2026-09-15): projektets EGEN tsc-binär, ALDRIG npx — mitt i
+# en deploy (npm ci river node_modules) kan npx lösa "tsc" till cachens
+# dummy-paket tsc@2.0.4 (bevisat 2026-09-15 04:57, deployfönster). Saknad
+# binär ⇒ node skriver "Cannot find module" och hoken blockerar TYDLIGT —
+# committa efter deployfönstret istället (AGENTS.md: aldrig bygga olåst).
+if ! node node_modules/typescript/bin/tsc --noEmit; then
   echo "" >&2
   echo "KVALITETSGRINDEN: tsc-fel ovan — typnollen (0 fel, våg 133) gäller mekaniskt. Fixa och committa igen." >&2
   exit 1

@@ -60,3 +60,14 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 - uuid: 11.1.1 → latest 14.0.2 (major)
 
 _Genererad av `verktyg/beroende-vakt.mjs` (spår 8). Stdut-slutraden RESULTAT_JSON är maskinläsbar; avslutskod 1 vid critical/high = cron-larm._
+
+---
+
+## UPPDATERING 2026-09-15 18:20 (s8-vaktpost — mätning, ej installation)
+
+**next är fortfarande 16.3.2 INSTALLERAT i prod-trädet** (node_modules/next
+mätt 18:17) — CRITICAL-advisorierna lever alltså ~9 h efter rapports
+mätning. Patchen (16.3.5, inom ^16.1.1, `npm install next
+eslint-config-next`) ägs av prod-synken under deploylåset — fabriksbarn är
+förbjudna installation. **LARM till huvudagenten: inkludera patchen i nästa
+deploy; beroende-vakten larmar (exit 1) tills dess.**

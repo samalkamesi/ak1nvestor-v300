@@ -55,7 +55,8 @@
  *       (default "studio:", manifest.commitPrefix kan överstyra) gjordes
  *       under körningsfönstret (git log <före>..HEAD), och (c) kod-
  *       valideringen ger 0 NYA fel — preferens verktyg/validera-kod.mjs
- *       (om den finns), annars tsc-baslinjen `npx tsc --noEmit` i
+ *       (om den finns), annars tsc-baslinjen — projektets egna binär
+ *       `node node_modules/typescript/bin/tsc --noEmit` i
  *       AK1-trädet; baslinjen är mekaniskt 0 (pre-commit-hook sedan våg
  *       138) ⇒ varje fel är ett NYTT fel. Tung tsc körs ENDAST om
  *       uppgiften rörde src/ — manifestets filer avgör (rorSrc).
@@ -401,7 +402,7 @@ function genereraAutoManifest(spår) {
         "Välj själv nästa INTE redan levererade objekt i spåret (kontrollera data/ och worklog.md",
         "före start) — duplikat är förlorat arbete. R2 gäller: ALDRIG priser/tier/publicering;",
         "utkast till data/blogg-utkast/, ALDRIG data/blogg/.",
-        "Leveranskriterier: konkreta filer, `npx tsc --noEmit` = 0 om kod berörs (ALDRIG bygge),",
+        "Leveranskriterier: konkreta filer, `node node_modules/typescript/bin/tsc --noEmit` = 0 om kod berörs (ALDRIG bygge),",
         `commit "studio: auto s${spår.nr}-u${i} <vad>", avsluta med LEVERANS:-rad.`,
       ].join("\n"),
     });
@@ -506,7 +507,8 @@ function prefix(titel, roll = "byggare") {
     // prod-synk/kraschvakt under deploylåset.
     "ALDRIG `npm ci`/`npm install`/`rm -rf node_modules`/`npm run build` —",
     "installation och byggen ägs ENDAV prod-synken/kraschvakten under",
-    "/tmp/ak1a-deploy.lock; typkoll = `npx tsc --noEmit` (läser, installerar ej).",
+    "/tmp/ak1a-deploy.lock; typkoll = `node node_modules/typescript/bin/tsc --noEmit`",
+    "(läser, installerar ej — ALDRIG npx tsc: i deployfönster kan npx lösa tsc till cachens dummy-paket).",
     "När du är klar: commit:a DINA filer (git add <dina filer>) och avsluta svaret",
     "med en rad 'LEVERANS: <fil1>, <fil2>, …' — fabriken läser den som kvitto.",
   ].join("\n");

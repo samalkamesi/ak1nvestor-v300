@@ -10754,3 +10754,17 @@ ROTORSAK: npm audit körs aldrig i rutin. KUR: verktyg/beroende-vakt.mjs (audit+
 
 ## SPÅR 8 s8-u1 — 2026-09-15: kvalitetsgrindens mekaniska bevis + R2-härdning [fabrik]
 OBJEKT (spårets första kontextord: tsc-baslinjens överlevnad): grinden (våg 138) var mekanisk på pappret men ALDRIG bevisad blockerande. Åtta isolerade exit-kodtester (git-historik orörd via GIT_INDEX_FILE-tmp-index för stegningstesten): typfel i src/ → exit 1 ✅, rent träd → 0 ✅, .pem stegad → 1 ✅ — MEN bevistest D hittade ett HÅL: .p12/.pfx/.jks/.kdbx/.htpasswd (hela filen = nyckel/valv/auth-hash) passerade R2-grinden okontrollerade. KUR (samma commit): regex utökat + meddelandetext; omtest D1 blockerar 1 ✅, D2 oskyldig .txt passerar 0 ✅ (ingen överblockering), D3 .pem-regression 1 ✅. Kända egenskaper protokollförda i rapporten: tsc mäter arbetsytan (striktare än stegat tillstånd — parallella barn kan kollidera i commit-fönstret), merge-skip är våg 138-design, ansvarsfördelning hook=filnamn/server vs Mimosa=innehåll/arbetsstation. Sond-notiser för kommande ronder: vakt-rapport 0600 "avbruten — deploy pågår" fel:21 = DESIGNAT avbrott (transienta 5xx under deploystart, ingen omkörning behövs; cron 0717 GRÖN 176 kombinationer är det gällande), 404-ytan levererad sedan våg 86 (global-not-found.js — duplikat undveket), syskonens objekt (döda länkar + beroendevakt) lämnades orörda. Bevis: data/forskning/KVALITETS-GRINDEN-BEVIS-2026-09-15.md + tsc 0 + commit som passerar sin EGEN härdade grind. tsc 0.
+
+## SPÅR 8 s8-u3 — 2026-09-15: döda länkar — dödlänksvakt + bevisad baslinje 0/3 012 [fabrik]
+Objekt: spårets "döda länkar" (evighetskatalogen) — aldrig systemmätet
+(tidigare "0 döda" var OG-punktkontroll ~v78). Leverans: verktyg/doda-lankar.mjs
+(sitemap-frö 1 998 URL:er + full länkgraf-crawl, 0 npm-beroenden, concurrency 6
+mot localhost, källor-per-mål i rapporten = rotorsaksadress) + protokoll
+data/forskning/OPTIMERING/o9-doda-lankar.md. BEVIS: 3 012 unika sökvägar
+(1 014 enbart via länkgraf), 0 döda länkar, 0 omdirigeringar; negativt
+kontrollfall /kurser/…→404 fångas av filtret — noll är mätresultat, ej
+parningsfel. Verktygets egna rotorsaker fixade under utveckling: sitemap-origin-
+normalisering (publik domän vs localhost) + fel exkludering av /logga-in.
+Ingen src ändrad = inget bygge; tsc 0 intakt via grinden. Kö: cronifiering
+(huvudagent/infra — crontab berörs ej autonomt), externa länkar som egen våg.
+Bevisfil: data/vakten/doda-lankar-2026-09-15.json (otrackad, på disk).

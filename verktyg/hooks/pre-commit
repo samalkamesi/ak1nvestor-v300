@@ -12,11 +12,15 @@
 #      efter första körningen, inte minuter.
 #   2) R2-HEMLIGHETSSKYDDET: .env*/pem/key/rsa-liknande filer kan ALDRIG
 #      committas — kunden äger nycklarna (styrelseregel R2).
+#      s8-u1-härdning (2026-09-15): bevistest D visade att .p12/.pfx/.jks/
+#      .kdbx/.htpasswd passera(de) okontrollerade — filformat där HELA
+#      filen är nyckelmaterial/valv/autentiseringshash hör hemma i samma
+#      hårda regel. (.gpg medvetet UTE: publika nycklar är legitimt innehåll.)
 # ALDRIG `git commit --no-verify` (AGENTS.md § KVALITETSGRINDEN).
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-if git diff --cached --name-only | grep -qE '(^|/)\.env|\.pem$|\.key$|id_rsa|id_ed25519|(^|/)secrets?\.'; then
-  echo "KVALITETSGRINDEN: hemlighet-liknande fil är stegad (.env*/pem/key/rsa) — commit BLOCKERAD (R2: nycklar ägs av kunden)" >&2
+if git diff --cached --name-only | grep -qE '(^|/)\.env|\.pem$|\.key$|id_rsa|id_ed25519|\.p12$|\.pfx$|\.jks$|\.kdbx$|\.htpasswd$|(^|/)secrets?\.'; then
+  echo "KVALITETSGRINDEN: hemlighet-liknande fil är stegad (.env*/pem/key/rsa/p12/pfx/jks/kdbx/htpasswd) — commit BLOCKERAD (R2: nycklar ägs av kunden)" >&2
   exit 1
 fi
 

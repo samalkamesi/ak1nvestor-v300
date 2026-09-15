@@ -7,6 +7,9 @@ import { StrukturData } from "@/components/seo/StrukturData";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
+// force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /ar/blogg + /ar/kurser.
+export const revalidate = 3600;
 
 /** أرقام عربية شرقية مع فاصل الآلاف العربي (ar-EG: ٨٬٢١١). */
 const num = (n: number) => n.toLocaleString("ar-EG");

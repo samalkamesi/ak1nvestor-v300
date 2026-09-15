@@ -8,6 +8,9 @@ import { getCourseList } from "@/lib/content";
 import { PRISER, kr } from "@/lib/variabler";
 
 export const dynamic = "force-static";
+// Prissida (PRISER.fas3EnGang SSR:as) — revalidate=300 som produktfamiljen
+// /fas2-ansok, /medlemskap, /prenumeration; årslåset (o10 §2) dör även här.
+export const revalidate = 300;
 
 export const metadata: Metadata = pageMetadata({
   path: "/fas3",

@@ -6,6 +6,10 @@ import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
 import { VagkurvaGraf, VAGKURVA_STANDARD_TICKERS } from "@/components/ak1a/vagkurva-graf";
 
+// Statisk per default ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /kurser sedan våg 82.
+export const revalidate = 3600;
+
 export const metadata: Metadata = pageMetadata({
   path: "/vagfundament",
   title: "Vågfundament — fundamentalvågorna per aktie | AK1A",

@@ -6,6 +6,10 @@ import { Portal } from "@/components/ak1a/portal";
 import { MigreraProgressBanner } from "@/components/ak1a/migrera-progress";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 
+// Statisk per default ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det (lasPriser-precedens: /portfolj-forskning, våg 6).
+export const revalidate = 3600;
+
 export const metadata: Metadata = pageMetadata({
   path: "/min-sida",
   title: "Min Sida — din utbildning på ett ställe | AK1A",

@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/sa-analyserar-du-bankaktier.json",
+  "granskadAv": "agentfabrik auto-s1-u2 (2026-09-15)",
+  "rapport": "sa-analyserar-du-bankaktier.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — 1 precisionsrättning (C1) + 3 förslag (D); siffror, juridik, länkar och externa referenser verifierade GRÖNA",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "sa-analyserar-du-bankaktier.json",
+      "falt": "body",
+      "gammalt": "- Nordea: ROE 15,3 procent, P/E 13,0 (P/B saknas i källdatan — talet utelämnas, det gissas inte)",
+      "nytt": "- Nordea: ROE 15,3 procent, P/E 13,0 (P/B-fältet i källdatan bär ett uppenbart felaktigt värde — talet utelämnas, det gissas inte)",
+      "orsak": "Sanningskravet mot källfilen: bolagsunivers.json HAR vardering.pb = 21,537 för Nordea (uppenbart källfel; övriga storbanker 1,6–2,1). Att utelämna talet är rätt beslut men 'saknas' är osant — en granskare som slår upp källan tror att texten ljuger. Se även flagga 1 i rapporten om källvärdatet"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-bankaktier.json",
+      "falt": "body",
+      "gammalt": "I universumets data syns det direkt: tre av fyra storbanker har fallande nettomarginaler från 2023 års topp",
+      "nytt": "I universumets seriedata (nettomarginal = resultat ÷ omsättning per år) syns det direkt: tre av fyra storbanker har fallande nettomarginaler från 2023 års topp",
+      "orsak": "Talen är exakta men härledda ur serier (2023: 46,8/47,5/42,0/46,8 → 2025: 41,8/40,4/41,2/47,7 %), inte ur fältet lonksamhet.nettoMarginal (TTM-värden). Redovisad härledning = nästa granskare slipper härleda metoden själv"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-bankaktier.json",
+      "falt": "body (Källor)",
+      "gammalt": "- Riksbanken — styrräntans utveckling 2021–2025 och forskning om den svenska bankkrisen på 1990-talet ([riksbanken.se](https://www.riksbanken.se))",
+      "nytt": "- Riksbanken — styrräntans utveckling 2021–2025 och forskning om den svenska bankkrisen på 1990-talet ([riksbank.se — styrräntan](https://www.riksbank.se/sv/statistik/rantor-och-valutakurser/styrranta-in--och-utlaningsranta/))",
+      "orsak": "Djuplänk 200-verifierad 2026-09-15 av denna granskning (samma länk som fastighetsguidens D1a); riksbank.se är kanonisk domän — stärker spårbarheten för textens tyngsta externa påstående (0 → 4 %)"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "sa-analyserar-du-bankaktier.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

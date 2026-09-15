@@ -1,0 +1,90 @@
+{
+  "granskat": "data/blogg-utkast/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+  "granskadAv": "agentfabrik s1-u3 (2026-09-15, omgång 2)",
+  "rapport": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.md",
+  "bedomning": "FLYTTKLART EFTER C-POSTER — 0 blockerande fynd; C2 är den väsentliga (faktapåstående mot citerad källa), C1+C3 kosmetiska; D-poster är förslag som kräver beslut",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen — verifierade med grep före leverans). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts, ORD_PER_MINUT=600): 1 220 ord (titel+ingress+body)/600 avrundat = 2. Exportvägen räknar om automatiskt — kosmetiskt men rättas enklast nu. Samma avvikelse som syskonutkasten fastighetsaktier (C2 där), ravarubolag och bankaktier-varianten — se rapportens flaggor"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body",
+      "gammalt": "och projektet i fas III med historisk träffsäkerhet på 70 procent ger ett riskjusterat värde på 20 × 0,7 = 14 miljarder",
+      "nytt": "och projektet i fas III med antagen godkännandesannolikhet på 70 procent ger ett riskjusterat värde på 20 × 0,7 = 14 miljarder",
+      "orsak": "Faktaprecision mot den egna källan: BIO Clinical Development Success Rates 2011–2020 ger sannolikheten från fas III till godkännande till 57,8 % (fas III-övergång) × 90,6 % (NDA/BLA-godkännande) ≈ 52 % — inte 70 %. Exemplet är påhittat och får gärna anta 70 %, men 'historisk träffsäkerhet' gör antagandet till ett faktapåstående som källan motsäger. Omformuleringen behåller räkneexemplet (20 × 0,7 = 14) och tar bort historiebruken. Alternativ (D6): byt siffran till 50 procent — 20 × 0,5 = 10 miljarder — om 'historisk' ska behållas"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body",
+      "gammalt": "Väntade data på tolv eller fler kvartal hade bolaget tvingats finansiera sig igen",
+      "nytt": "Väntade data om tolv eller fler kvartal hade bolaget tvingats finansiera sig igen",
+      "orsak": "Prepositionsfel: texten använder själv 'fas III-data väntas OM åtta kvartal' två meningar tidigare — 'på' bryter mönstret och läsningen. Språklig konsistens, ingen innehållsförändring"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- BIO — Clinical Development Success Rates and Contributing Factors ([bio.org](https://www.bio.org))",
+      "nytt": "- BIO — Clinical Development Success Rates and Contributing Factors ([bio.org — rapporten 2011–2020](https://www.bio.org/clinical-development-success-rates-and-contributing-factors-2011-2020))",
+      "orsak": "Djuplänk till rapportens egen sida, 200-verifierad 2026-09-15 — stärker spårbarheten för textens tyngsta tal (oddset ett av tio, fas III-siffrorna bakom C2)"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body (Källor)",
+      "gammalt": "- Patent- och registreringsverket — patenträttens grunder och skyddstid ([prv.se](https://www.prv.se))",
+      "nytt": "- Patent- och registreringsverket — patenträttens grunder och skyddstid ([prv.se](https://www.prv.se))\n- Wouters m.fl., JAMA 2020 — utvecklingskostnaden per nytt läkemedel ([pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/32267798/))",
+      "orsak": "Påståendet 'kostar i miljardklassen per godkänt läkemedel' saknar källa i listan — BIO mäter framgångstal, inte kostnader. Wouters m.fl. (JAMA 2020, 63 företag/354 läkemedel): median 985 miljoner–1 336 miljoner USD per godkänd produkt — belägger 'miljardklassen' exakt. PubMed-länken svarade 203 (lever, ej ren 200) vid kontroll 2026-09-15"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body",
+      "gammalt": "Därefter lämnas granskningsansökan in till myndigheten — i Europa EMA, i USA FDA.",
+      "nytt": "Därefter lämnas ansökan om godkännande in till myndigheten — i Europa EMA, i USA FDA.",
+      "orsak": "Terminologi: 'granskningsansökan' är ingen etablerad term — myndigheternas process heter ansökan om godkännande (EU: MAA; USA: NDA/BLA). Minimalt byte bevarar pedagogiken utan fackförkortningarna"
+    },
+    {
+      "id": "D4",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    },
+    {
+      "id": "D5",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body",
+      "gammalt": "fas I testar säkerhet på ett litet antal friska frivilliga",
+      "nytt": "fas I testar säkerhet på ett litet antal oftast friska frivilliga",
+      "orsak": "Precision: onkologiska fas I-studier rekryterar patienter, inte friska frivilliga — 'oftast' täcker undantaget utan att tynga texten"
+    },
+    {
+      "id": "D6",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag.json",
+      "falt": "body",
+      "gammalt": "med historisk träffsäkerhet på 70 procent ger ett riskjusterat värde på 20 × 0,7 = 14 miljarder",
+      "nytt": "med historisk träffsäkerhet på 50 procent ger ett riskjusterat värde på 20 × 0,5 = 10 miljarder",
+      "orsak": "ALTERNATIV till C2 om 'historisk' ska behållas: 50 procent ligger nära BIO:s ~52 % (57,8 % × 90,6 %) — men då ska även sammanfattningens '70 procent' och ev. andra referenser till exemplet synkas. C2 (omformulering) är det mindre ingreppet och rekommenderas"
+    }
+  ]
+}

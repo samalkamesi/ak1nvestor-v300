@@ -11031,3 +11031,25 @@ verktyg/scenariotest/ = fabriks-duglig). Fabrikskön var tom men agentfabriken f
 auto-s*-manifest själva ur evighetskatalogens spårrotation (genereraAutoManifest) — kö
 fylls vid nästa rop. Inga agenter dispatcherade (dokvågsrond). KVD: datafiler endast
 (src/ orörd) = inget bygge; tsc-grinden grön via pre-commit-hook.
+
+## SPÅR 1 s1-u2 — 2026-09-15: bankaktier-DUBBLETTEN granskad (m9-branschguide 2/3) — huvudguide flyttklar efter 1 rättning, komplement 3 [fabrik]
+OBJEKT: granskningsköns branschguider — "välj själv"-manifest (3 identiska prompts, känt
+kollisionsmönster); bankaktierdubletten vald med omdöme (registrerad huvudguide +
+oregistrerad dublett byggda 14:43/14:44 av två byggagenter; kollisionskontroll före start:
+lakemedel togs av syskon mitt under sessionen, bankaktier förblev fritt). LEVERANS:
+huvudguiden sa-analyserar-du-bankaktier FLYTTKLAR EFTER 1 RÄTTNING — C1 "Nordea P/B
+saknas i källdatan" är osant (källfilen HAR pb=21,537, uppenbart källfel; att utelämna
+är rätt, motivet fel — rättat i diff); 13 sifferkontroller gröna (storbanks­tabellen exakt,
+nettomarginalserien 2023→2025 härledd ur serier och verifierad cell för cell, identiteten
+2,07 ÷ 0,150 = 13,8 ✓); juridikgrind-vakten 0 fynd; 12 interna länkar 200; "911": 0 träffar;
+externa referenser (styrränta 0→4 % under två år, Nordbanken/Gota 1992, Swedbank 2019)
+historiskt korrekta. DUBBETTEN bankaktier-...-finansbolag (oregistrerad i sammanställningen):
+EJ flyttklar — C1a/C1b bevisat MEDIANFEL (universumets resultat-CAGR står som 1,4 %, korrekt
+är 2,2 % — nedre mittersta togs som median vid jämnt n=78), C2 "100-bolagsuniversum
+(10×10)" motsäger filens egna "elva bolag" (källan = 109 bolag), C3 readingMinutes 3→2
+(kontraktet); därefter KOMPLEMENTKLAR med unik vinkel (investmentbolagsfällan +
+finansmedianer 13,8/19,9 n=100 mätta + CIR-pedagogik) — H&M-KOMPLEMENT-mönstret;
+EN eller BÅDA = kundens R2. 10/10 diff-strängar maskinverifierade mot originalen.
+Flaggor: Nordeas pb=21,5 i bolagsunivers.json = källfel åt dataägaren; dubletten saknar
+rad i GRANSKNINGSKO-SAMMANSTALLNING.md åt dess ägare. Endast data/ = inget bygge, tsc
+orört (ingen kod berörd). [fabrik]

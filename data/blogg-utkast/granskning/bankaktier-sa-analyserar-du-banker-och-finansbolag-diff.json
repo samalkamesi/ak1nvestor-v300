@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+  "granskadAv": "agentfabrik auto-s1-u2 (2026-09-15)",
+  "rapport": "bankaktier-sa-analyserar-du-banker-och-finansbolag.md",
+  "bedomning": "EJ FLYTTKLAR — 3 rättningar (C1a/C1b medianfel, C2 universumsbeskrivning, C3 readingMinutes), därefter KOMPLEMENTKLAR; unik vinkel (investmentbolagsfällan + finansmedianer) som saknar motstycke i utkastmappen",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen). 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. Behålla-publicera är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1a",
+      "typ": "byt",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "body",
+      "gammalt": "— mot universumets 1,4 procent (n=78). Bankernas resultat har alltså växt snabbare än universumet som helhet under perioden.",
+      "nytt": "— mot universumets 2,2 procent (n=78). Bankernas resultat har alltså växt snabbare än universumet som helhet under perioden.",
+      "orsak": "Bevisat medianfel: 78 bolag med resultatCAGR5ar ⇒ jämnt antal ⇒ median = medel av mittersta (1,40 % + 3,07 %) / 2 = 2,2 %. Byggagenten tog det nedre mittersta värdet (1,40) som median. Slutsatsen (finans 10,4 > universumet) överlever"
+    },
+    {
+      "id": "C1b",
+      "typ": "byt",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "body (Sammanfattningen)",
+      "gammalt": "resultat-CAGR 10,4 procent mot universumets 1,4; svenska storbanker ROE 12,8–15,3 procent.",
+      "nytt": "resultat-CAGR 10,4 procent mot universumets 2,2; svenska storbanker ROE 12,8–15,3 procent.",
+      "orsak": "Samma medianfel som C1a, andra förekomsten (sammanfattningen)"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "body",
+      "gammalt": "AK1A:s 100-bolagsuniversum (10 branscher × 10 bolag, data hämtad 2026-09-03 ur offentliga marknadskällor Yahoo Finance och MarketStack) ger finansgruppen elva bolag",
+      "nytt": "AK1A:s universum (109 noterade bolag i tio branscher, data hämtad 2026-09-03 ur offentliga marknadskällor Yahoo Finance och MarketStack) ger finansgruppen elva bolag",
+      "orsak": "Källfilen bolagsunivers.json har 109 bolag i tio branscher med 10–13 per bransch — '(10 branscher × 10 bolag)' motsägs av samma styckes 'elva bolag' om finansgruppen. Ingen syskonguide använder 10×10-formuleringen"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts, ORD_PER_MINUT=600): 1 276 ord (titel+ingress+body) / 600 = 2,1 avrundat = 2. Exportvägen räknar om automatiskt — kosmetiskt men rättas enklast nu"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "body",
+      "gammalt": "— mot totaluniversumets 19,9 (n=100).",
+      "nytt": "— mot totaluniversumets 19,9 (n=100 mätta).",
+      "orsak": "Med C2:s '109 noterade bolag' behöver n=100 förklaras: exakt 100 av 109 bolag har mätt P/E — 'mätta' gör siffran begriplig utan att ändra talet (19,92 avrundat)"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "bankaktier-sa-analyserar-du-banker-och-finansbolag.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-15",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Exportvägen stämplar dagens datum automatiskt; vid manuell filflytt till data/blogg/ ska datumet sättas till publiceringsdagen (publicering = kundens beslut, R2)"
+    }
+  ]
+}

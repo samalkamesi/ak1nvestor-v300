@@ -550,6 +550,46 @@ EnvironmentFile med chmod 600).
   Kvartalsmallen hädanefter: `node verktyg/dr-ovning.mjs` +
   `node verktyg/dr-kedja2.mjs` — nästa senast **2026-12-15**.
 
+
+## S10-U3 (O3) — DR-ÖVNING KEDJA 3: SERVERFILS-ARKIVET (2026-09-16, GODKÄNT)
+
+- **Spårets sista obevisade kedja restore-testad — och den var delvis DÖD:**
+  server-repo-2026-09-09.tar.gz KORRUPT (bruten gzip, "invalid compressed
+  data", 681 poster vid listing) i 7 dygn OUPTÄCKT som "senaste" arkivet;
+  09-08 frisk (restore 3,2 s, 2 564 filer, HEAD 023e9f95 = dokumenterad
+  deploy-punkt, bevisad föregångare). Fullprotokoll:
+  data/forskning/DR-PROV-2026-09-16-KEDJA3.md.
+- **Tre rotorsaker, alla kurerade i `backup-server-filer.mjs` (commit
+  55ddba50):** (1) verktyget godtog ssh-exit 0 + storlek men verifierade
+  ALDRIG gzip-strömmen → ny strömmande `gzipIntakt()` FÖRE rename (trasig
+  ström raderas, blir ALDRIG arkiv); (2) namndrift hetzner_key↔contabo_key —
+  Contabo-flyttningen dödade tar+env-steget silent (bevis: hybrid-sync.log
+  09-09 "ssh-nyckel saknas… hoppar") → contabo_key; (3) exkluderingslistan
+  tog med .git (502 MB, arkivet passerade 500 MB-vakten: 595,9 MB mätt) +
+  tool-results + cache + data/backups (arkiv-i-arkiv) → alla exkluderade.
+- **Nya VERIFIERADE artefakter på servern (server-side tar = ingen
+  ssh-ström):** server-repo-2026-09-16.tar.gz 132 MB, gzip -t GRÖN, 8 436
+  poster, exkluderingskontrakt 0 brott, restore-test 3,9 s / 7 903 filer /
+  src 666 filer 200 991 rader, spot-diff 4/4 identisk · server-git-
+  2026-09-16.bundle 139 MB, `git bundle verify` "complete history", klon-
+  test 8,3 s / 1 067 commits / HEAD = dagens topp. **Total kedja-3-RTO
+  ~12,2 s.** Bundle FYND: 3,6× effektivare packning än .git → `git gc`-kö
+  till huvudagenten (ALDRIG under aktiv fabriksdrift).
+- **Sidokurer:** server-env-backup chmod 644→600 (doktrin; värden lästa
+  ALDRIG — nyckelnamn endast); konfig-snapshots parse-bar men 7 d gamla
+  (datorns hybrid-sync tyst sedan 09-09 — eskalering: kundens Schemaläggare,
+  se S10-U5). Moln-JSON-arkivet 160 928 rader delat med s10-u5 (min
+  exportör 00:49 + deras verify + S10-U1(O3):s omkörning = trippelverifyat;
+  min exportör orsakade deras falska RÖDA "unexpected end of file" — se
+  deras regel RÖT-mot-färskt-arkiv).
+- **Kö till huvudagenten:** `git gc` vid lugnt fönster · 200k-taket i
+  backup-fran-molnet.mjs nås ~2026-10-04 vid +2 185 rader/dag (91 %
+  översättning; verktyget markerar taket HEDERLIGT men kapaciteten räcker
+  ej) · cron för vecko-arkivering server-side · kundnotis datorns
+  hybrid-sync. KVD: tsc 0 via projektbinär, src/ orörd, inga byggen,
+  PG17 orörd HELA övningen (down före/efter), tmp städad, R2 orörd.
+
+
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 
 Kundens mest återkommande smärta — "allt försvinner när jag uppdaterar,

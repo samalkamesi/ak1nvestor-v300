@@ -11173,3 +11173,24 @@ KOLLISIONSBOKFÖRING: mina två chat-widget-rader landade i syskon-u3:s commit a
 **Vaccin (Lag 6, klassen):** verktyg/feljagaren.mjs F1-gren — (1) deploylås-probe före tsc: flock -n /tmp/ak1a-deploy.lock ⇒ upptaget = grön hopp-rad, ingen mätning under rivet node_modules, nästa jakt mäter igen (stamp orörd); (2) race-andra-chans: enbart TS2688/TS2307-fel (partiell-installationssignatur) ⇒ sleep 75 + ommätning en gång — kvarstår felet bokförs HÖG som vanligt, äkta typfel (TS2322 etc.) triggar ingen väntan.
 
 **Bevis:** _vaccin-test 6 PASS 0 FAIL (syntax, låsprobe ledig/upptag/efter släpp, regex matchar F1:ts faktiska d3-rader, regex triggar ej på äkta TS2322). Live-end-to-end: hela feljägaren 7/7 spår GRÖNA efter vaccinet (tsc 0 fel + stamp skriven, pm2 4/4, API 18/18, register 3/3, prod 200, security ren).
+
+
+## SPÅR 7 s7-u1 (omgång 3) — 2026-09-15 ~21:50: läsbarhet rond 4 — FÖRE-mätning + KNAPPHALVAN (kaskadkuren) [fabrik]
+
+OBJEKT: o8 §9:s rond 4-kö (textlänkytor + underslunkna knappar). FÖRE-mätning
+mot localhost (aktuellt prod-bygg): 34 tryckmål (60 bokförda i §9) — FYND:
+quiz-knapparna mäter NU 52; §9:s 18:05-prodtal (32 fynd på the-intelligent-
+investor) var pre-restart-artefakter (bygget ej landat vid mätningen) — sidan
+5 kvar. KOLLISION: samtidigt syskon tog textlänkhalvan (brodkrumma, kallkort,
+kurs-sok, social-proof, forsningslage-kort + ~29 sidfiler, vanlig min-h på
+a-element). MIN leverans = KOMPLETTERANDE knapphalva, 0 filöverlapp: footer
+till-toppen (ROTORSAKA: vanlig max-md-klass på button förlor mot globals.css
+olagrade 44-golv — 04303dd8-mönstret, sista kända golv-förloraren), riskval-
+panelens Forska-knapp (bar egen min-h-44), korstabellens branschgrupper ×10
+(mobil kortvy), kurs-gate Unlock + markeraKlar, fortsatt-panel 🔹-rader,
+min-sida CTA-par — allt max-md (datorvy orörd). Kvar att gräva: AKM1/AKM2-
+filterknappar (hemvist ej belägen detta fönster). Commit 84ba52ed exakt
+6 filer; tsc 0 (projektbinär); FÖRE-rådata i OPTIMERING/lasbarhet-fore-
+rond4-2026-09-15.json + data/vakten; protokoll o8 §10. EFTER-mätning körs av
+nästa våg när prod-synken byggt BÅDA halvorna (fabriksregler: inget bygge
+här). R2 orörd. [fabrik]

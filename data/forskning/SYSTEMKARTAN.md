@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-15)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-16)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -391,6 +391,68 @@ praktiken; (4) akm2-onsdemand-kommentaren om blockformen revideras
 live-mätningen); (5) datacache-kontraktet bör skilja "accelerator" (de fyra
 datacache-typerna) från "enda källan" (akm2-onsdemand steg 2+3, akm3) i text.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u2 2/3 — A6 + B14 diffade mot verkligheten)
+
+Elfte dokvågen (efter u1: E35 · u3: A1/E27/E29 · u2: E30/E37 · u2:2: C15/C16 ·
+u3 omg 2: C17/C18/E32 · u1:4: A3 · u3 omg 3: E34/E33/E28 · u2 omg 3: E31/E26 ·
+u3 omg 4: A2/B9/E36 · u1 omg 5: B7). Objektval mot duplikat EFTER kollisions-
+kontroll: denna agents första val (A2 + E36) togs av syskonet s9-u3 omgång 4
+medan mätningarna pågick (filens rader skiftade mitt i redigeringen — s10-u3:s
+kollisionskur tillämpad, se korsvalideringen nedan); A6 + B14 är FRIA system
+med färsk drift: mx2 fullbordade bibliotekets läspaketsserie 23:59 och B14
+delar cron-familjen med syskonets B9-fynd. Varje rad MÄTT i arbetsytan
+2026-09-16 (ls/node/grep, /etc/crontab-läsning, .env-NÄRVARO mätt utan värden,
+git log) — inte worklog:
+
+| Mått | Kartan | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Kvartalsläspaketen (A6/C16-vy) | "13 Kön-filer (10 kalendrar + 3 bolagspaket)" | **22 filer: 10 branschkalendrar + 12 bolagspaket** (ls mätt) — s4-vågen fyllde serien över hela analysbiblioteket, mx2 täppte de tre sista hålen (AZN/EVO/PREC 23:59): SAMTLIGA 11 bolag i data/analyses har paket (en-till-en mappat, node-mätning) + Nordea som tolfte paket UTAN AKM2-analys i data/analyses (lucknotis i paketet, ärligt redovisad) |
+| Ticker-täckning (A6 gap 2) | "forskningsbibliotekets täckning vs analysbanken synkas manuellt" | **nästan disjunkta universum** (mätt): forskningsbiblioteket 22 tickers (BSX … VZ, mest USA/multinationella) mot data/analyses 11 (svenska AKM2-bolag) — överlapp endast 2 efter normalisering (HM-B, INDU-C); gapet är en universum-fråga, inte en synk-fråga |
+| Verktygskedjan (A6 gap 1) | "integrera/fixa/lägg-till-källa" | alla tre på disk (mätt): integrera-bokmaster.mjs + fixa-tabeller.mjs + **lagg-till-kalla.mjs** (ÖVERSIKT-raden bar namnfelet "källa"); fortfarande manuell, ingen lint-dörr — gapet kvarstår |
+| A6-testsviter | (ej påstått i kartan) | **0 egna sviter** (grep mätt — testa-mediabibliotek hör till E36) |
+| Bokmaster/kanon | 103 / 102 | bekräftat via siffror.json (103 / 102 / kanonSomKurs 96, mätt) — oförändrat; upphovsrättsgranskningen lever på disk |
+| Nyhets-cronen (B14) | "daglig scan-cron 08:00" | **DUBBEL drivning mätt**: /etc/crontab (root) kör /api/cron/nyheter 08:00 LOKAL (= 06:00 UTC; serverns TZ = Europe/Berlin, mätt) + vercel.json /api/nyheter/scan 08:00 UTC (= 10:00 lokal) — två andetag per dag |
+| Cron-härdning (B14/E29) | "CRON_SECRET vaktar endast OM satt" | **EJ SATT** (närvaro mätt i .env*: 0 filer bär variabeln — värdena aldrig lästa): rutten är publik; Contabo-curl:en utan secret passerar |
+| Scan-kontraktet (B14) | (ej dokumenterat i kartan) | läst i koden: 12-tickers-universum hårdkodat (samma lista som vagscan/datacache), påverkans-tröskel 70, max 5 signaler per scan på signal-bussen + OrganEvent-rapport, maxDuration 60, "ALDRIG krascha" |
+| Nyhets-testsviter (B14 gap 1) | "ingen testsvit alls" | **bekräftad mätt** (0 nyhet*-verktyg i verktyg/) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A6 | LEVER 7 → **LEVER 7** | Yttillväxt med mätbevis (läspaketserien fullbordad 11/11 + Nordea tolfte) — men materialet lever i granskningskön (C16/C17:s publiceringsväg) och universum-preciseringen tillför kunskap utan att stänga gap: verktygskedjan förblir manuell, 0 egna sviter — ingen poängrörelse |
+| B14 | LEVER 6 → **LEVER 6** | Dubbel cron-drivning + CRON_SECRET-läge + scan-kontraktet mätta (kunskap tillförd, E33-precedensen) men inga gap stängda: 0 sviter kvarstår, fallback-vägarna förblir otestade |
+
+Snittscore **7,5** (285 poäng / 38 system — oförändrad av denna dokvåg;
+B7 −1 togs parallellt av syskonet s9-u1 omgång 5 samma natt).
+
+**Korsvalidering av syskonen (deras sektioner orörda, ärlig bokföring):**
+(1) s9-u3 omgång 4:s B9-fynd "Contabo-crontaben saknar vagscan" är MOTBEVISAT
+— /etc/crontab rad 5 kör cron/vagscan 06:30 lokal (= 04:30 UTC; mätt; ANVÄNDAR-
+crontab är tom, vilket troligen gav fel källa). Deras mätta tidsstämpel
+05:05:22Z förblir förklarlig: Vercel (05:00 UTC) överskrider Contabos 04:30 UTC
+en halvtimme senare — BÅDA drivarna kan leva. ÖVERSIKT-radens "ENBART
+Vercel-cron-driven" rättad här; deras kö-item lever dock för vagvalidering (den
+SAKNAS verkligen på Contabo — mätt: crontaben bär vagscan + nyheter +
+portfolj-uppfoljning + halsa, ingen vagvalidering). (2) deras E36-rad "OG-
+koppling manuellt kvar" NYANSERAS av denna agents samtidiga mätningar:
+GENERERINGEN är manuell (instämmer — deploy-skriptet bär 0 og-träffar), men
+KOPPLINGEN i kod är konventionsbaserad och automatisk — ogBildForPath-mönstret
+i seo.tsx + blogg-speglar.ts:308-318 väljer /og/blogg/{slug}.png med AUTOMATISK
+fallback /og/blogg.png; aktuell paritet 55/55 (alla 55 poster har PNG, 0
+saknade/0 extra, node-mätning) och nyaste postens OG serverar 200 på prod
+(24 856 byte, curl) — manus krävs för genereringen, inte för kopplingen.
+
+Sidofixar (motbevisade tal, inga poängändringar): kursantalet 343 → **352** i
+A1-detaljblockets Vad-rad (syskonet rättade ÖVERSIKT-raden men inte detaljen),
+E32:s siffror-rad och C18:s G1-formulering (352×3); kvartalsantalet 13 → 22 i
+C15/C16/C17 (ÖVERSIKT + detaljblock); rubrikens uppdateringsdatum → 2026-09-16.
+
+Kö från fynden: (1) Contabo-cronernas verkliga exekvering loggbevisas (curl
+till /dev/null + ingen request-loggning ⇒ körbarheten är crontab-bevisad, ej
+körbevisad — en loggrad i rutten eller pm2-spaning vid 04:30/06:00 UTC);
+(2) A6-universumfrågan till styrelsen: 22 mot 11 tickers med endast 2 gemensamma
+— medveten utbildningsbredd eller gap?; (3) NDA-SE-analys underbygger Nordea-
+paketet (12:e paketet utan analysunderlag).
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -400,17 +462,17 @@ datacache-typerna) från "enda källan" (akm2-onsdemand steg 2+3, akm3) i text.
 | A3 | AI-Mentorn (4 deterministiska svars­lager + modellager) | Utbildning | LEVER | 8 | 164/0-testbevis (v158, mätt); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
-| A6 | Biblioteken (bokmaster, bokkanon, forskningsbibliotek) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lägg-till-källa) |
+| A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lagg-till-kalla; ingen lint-dörr); läspaketserien fullbordad 11/11 + Nordea i granskningskön (mätt 09-16); universum 22 vs 11 tickers (2 gemensamma) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön (mätt 09-16); berika-pipelinen stillastående 12 d (0 cacher på disk), AKM3-ensemble 0/22 i prod, snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Kalibreringsloopen cron-driven men beslut delvis ouppfyllt |
-| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt) men ENBART Vercel-cron-driven — Contabo-crontab saknar rad; valideringsrapport 12 d gammal; träff-% osynlig publikt |
+| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt); DUBBEL cron-drivning (Vercel 05:00Z + /etc/crontab 06:30 lokal, mätt 09-16 — användar-crontab tom gav syskonet fel källa); valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinismfelet rättat (107/0/0, 2026-09-13); egen testsvit saknas |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
 | B13 | Portföljforskning (korstabell, risk, uppföljning, byggare) | Analys | LEVER | 8 | Månads-cron fast; peer-jämförelse ytlig |
-| B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | Inga tester; externa beroenden (MarketStack/Yahoo) utan fallback-test |
+| B14 | Nyheter + marknadsdata | Analys | LEVER | 6 | 0 sviter (mätt 09-16); DUBBEL cron-drivning (Contabo 08:00 lokal + Vercel 08:00 UTC); CRON_SECRET ej satt; fallback-vägar otestade |
 | C15 | Bloggen + publiceringsflödet | Innehåll | LEVER | 8 | Läge B STÄNGT (A består, beslut 2026-09-07); B2-publiceringsknapp lever (v82); kvar: B2-E2E, OG default tills deploy |
-| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 13 kvartalspaket); schemalagd re-run saknas |
+| C16 | M9-innehållsfabriken (granskningskön) | Innehåll | LEVER | 8 | B2-knapp finns (v82 — gamla "saknas" motbevisat); M9-kön ej kopplad + växer (11 JSON + 22 kvartalsfiler: 12 bolagspaket + 10 kalendrar, mätt 09-16); schemalagd re-run saknas |
 | C17 | Dataset-citeringsmagneter | Innehåll | LEVER | 9 | Aspektsystemet (v150) i kod men saknat i kartan; kvartalsserien v152: kalendrar+bolagspaket i granskningskön, /kvartalsdata-src kvarstår; aspekt-testsviten TRASIG |
 | C18 | SEO/schema/llms.txt | Innehåll | LEVER | 9 | G1-slutverifikation (Google rich-results live) återstår |
 | C19 | Trafik, spår & konvertering | Innehåll | LEVER | 7 | Inga tester; P6-spårregeln övervakas manuellt |
@@ -454,9 +516,9 @@ balansräkning, DuPont, soliditet/räntetäckning + V-spåret 20/20 i
 kurskartan; larvag-synk GRÖN 337=337=337). Score oförändrat — samma
 kontraktsbrott kvarstår i gaplistan. Senare samma dag (s9-u1:4-mätning):
 registerrebake 337 → **343 kurser** (siffror.json + commit 570c51ee +
-E01-äkthetstestet) — talen i Vad-raden gäller 343.*
+E01-äkthetstestet) — talen i Vad-raden gäller 343.* Ännu senare (s9-u2 2/3-mätning 2026-09-16): **352 kurser** (mx-vågorna kväll 09-15; quiz 8 223 oförändrad — nya kurser bär inga quiz).
 
-- **Vad:** Plattformens ryggrad: 343 kurser × 3 språk (deep-courses.json,
+- **Vad:** Plattformens ryggrad: 352 kurser × 3 språk (deep-courses.json,
   103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP), 201 analyscase
   (/labb), kurs-access i tre nivåer (gratis-Fas 1 för alltid, 18 Fas 2- och
   24 Fas 3-kurser bakom ansökan), XP/stjärnor per kurssteg.
@@ -583,7 +645,17 @@ upp i filen.*
   integritet (XP-manipulation via klient?) — progress-skrivning går via
   auth-vaktad rutt men granskas ej.
 
-## A6. Biblioteken — LEVER — 7/10
+## A6. Biblioteken — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 2/3): läspaketserien FULLBORDAD i
+granskningskön — samtliga 11 bolag i data/analyses har kvartalsläspaket (en-till-
+en mappat, node-mätt) + Nordea som tolfte paket utan AKM2-analysunderlag; totalt
+22 Kön-filer (12 paket + 10 branschkalendrar). Universumet preciserat: forsknings-
+biblioteket 22 tickers mot analysbanken 11 med endast 2 gemensamma (HM-B,
+INDU-C) — gap 2 är en universum-fråga, inte en synk-fråga. Verktygskedjan
+oförändrad manuell (lagg-till-KALLA är verktygets rätta namn). 0 egna sviter.
+Score 7 kvar — yttillväxt utan gap-stängning. Se diff-tabellen i UPPDATERING
+2026-09-16 högt upp i filen.*
 
 - **Vad:** Bokmastern (103 bokbaserade kurser), bokkanon (102 böcker),
   forskningsbiblioteket (per-ticker-analysunderlag), källor & upphovsrätt.
@@ -594,11 +666,14 @@ upp i filen.*
   upphovsrattsgranskning-2026-09-01.md.
 - **Observation:** Kvalitetsvakten PASSAR åäö-bortfall + kursdata-konsistens
   för bokmaster (0 fel). Upphovsrättsgranskning dokumenterad. Verktygskedjan
-  (validera→integrera→källa-attribution) existerar men är manuell.
+  (validera→integrera→källa-attribution via lagg-till-kalla) existerar men är manuell.
 - **GAP:** (1) verktygskedjan saknar ett enda kommando (lint-dörr) som
-  blockerar ogiltig bokmaster-JSON före commit; (2) forskningsbibliotekets
-  ticker-täckning vs analysbanken (B7) synkas manuellt; (3) källförteckning
-  per kurs maskinläsbar endast delvis.
+  blockerar ogiltig bokmaster-JSON före commit; (2) universum-fråga (mätt 2026-09-16): forskningsbiblioteket 22 tickers mot
+  analysbanken (B7:s data/analyses) 11 med endast 2 gemensamma (HM-B, INDU-C) —
+  synkningen är sekundär mot universumbeslutet; (3) källförteckning per kurs
+  maskinläsbar endast delvis; (4) NY 09-16: Nordea-läspaketet (12:e paketet)
+  saknar AKM2-analysunderlag (NDA-SE finns ej i data/analyses — lucknotis i
+  paketet).
 
 ---
 
@@ -774,10 +849,18 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
   (median, ej kvartiler —.dataset-mönstret återanvänds ej); (3) medlemmens
   portfölj (member/holding) saknar transaktionshistorik/valideringstest.
 
-## B14. Nyheter + marknadsdata — LEVER — 6/10
+## B14. Nyheter + marknadsdata — LEVER — 6/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u2 2/3): cron-bilden mätt — DUBBEL drivning
+(/etc/crontab: /api/cron/nyheter 08:00 lokal = 06:00 UTC + vercel.json:
+/api/nyheter/scan 08:00 UTC = 10:00 lokal; server-TZ Europe/Berlin); CRON_SECRET
+fortfarande EJ SATT (.env-närvaro mätt, värden olästa) = publika rutter;
+scan-kontraktet dokumenterat i koden (universum 12 tickers hårdkodat, tröskel
+påverkans ≥ 70, max 5 signaler/scan + OrganEvent, "ALDRIG krascha"). 0 sviter
+kvarstår (mätt). Score 6 orörd — kunskap tillförd, inga gap stängda.*
 
 - **Vad:** Nyhetsmotor (aktienyheter med källhänvisning), nyhetskanaler,
-  daglig scan-cron 08:00, stock-data/indikatorer-API:er mot externa
+  daglig scan-cron i dubbel drivning (Contabo /etc/crontab 08:00 lokal + Vercel 08:00 UTC, mätt 2026-09-16), stock-data/indikatorer-API:er mot externa
   leverantörer, shortseller-bank, morgonrond-data till PRO.
 - **Nyckelfiler:** src/lib/{nyhets-motor (844 r),nyhetskanaler,
   shortseller-bank}.ts, src/app/(huvud)/nyheter, src/app/api/{nyheter,
@@ -789,7 +872,10 @@ skannern lämnar inga röda till vakten. Kvar: egen testsvit, fast
 - **GAP:** (1) ingen testsvit alls; (2) rate-kvoter/fel från externa API:er
   bevakas ej (kan tyst bli tom nyhetslista); (3) nyheternas juridikgrind
   (rubrikformuleringar) körs via kontrolleraText endast vid publicering —
-  ej på leverantörens rubriker.
+  ej på leverantörens rubriker; (4) NY 09-16: Contabo-cronens exekvering är
+  crontab-bevisad men ej KÖRbevisad (curl till /dev/null, ingen logg —
+  pm2-spaning vid 06:00 UTC ger svaret) och CRON_SECRET är fortfarande
+  osatt (E29-gap 1 gäller även här).
 
 ---
 
@@ -818,7 +904,7 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
 - **Nyckelfiler:** src/lib/blogg-{utkast,speglar}.ts, src/app/(huvud)/blogg/
   **, src/app/{en|ar}/blogg/**, src/app/api/admin/blogg{,/publicera},
   src/components/ak1a/admin/blogg-panel.tsx, data/blogg/ (55) +
-  data/blogg-utkast/ (11 JSON + m9-ko/ 3 + kvartal/2026-q3/ 13 + granskning/),
+  data/blogg-utkast/ (11 JSON + m9-ko/ 3 + kvartal/2026-q3/ 22 = 12 bolagspaket + 10 kalendrar, mätt 09-16 + granskning/),
   src/lib/varumarke.ts (kontrolleraText).
 - **Observation:** Hård grindslogik dokumenterad + protokollförd (våg 80b);
   vakten bekräftar 55 poster i prod oförändrade efter utkast-separeringen
@@ -843,7 +929,7 @@ nu speglar det; B2-flödet saknar fortfarande E2E-bevis.*
 - **GAP:** (1) sidofix 2026-09-15: påståendet "publiceringsknapp i admin
   saknas" är MOTBEVISAT — B2-knappen (våg 82, se C15) skickar klara paket
   till agenten; kvar: M9-fabrikens utkast kopplas till knappflödet och kön
-  växer snabbare än granskningen (11 JSON + 13 kvartalspaket väntar);
+  växer snabbare än granskningen (11 JSON + 22 kvartalsfiler väntar — 12 bolagspaket + 10 kalendrar, mätt 09-16);
   (2) fabrikens serier styrs av hårdkodad serie-lista — ny serie
   kräver kod; (3) ingen schemalagd re-run (kvartalsvis serie-enligt-H3).
 
@@ -882,7 +968,7 @@ testtäckningen föll tyst — netto noll.*
   v82-kurs-metadata-bro — annars okänd aspektstatus; mätt TRASIG
   2026-09-15); (1) kvartalsrapport-H3: route /kvartalsdata/[kvartal] +
   index + frysnings-pipeline (underlaget är nu KOMPLETT: A4-kontraktet +
-  V152-kartan + 13 Kön-filer — en våg); (2) tidsserie/jämförelse mot
+  V152-kartan + 22 Kön-filer (12 bolagspaket + 10 kalendrar, mätt 09-16) — en våg); (2) tidsserie/jämförelse mot
   föregående utgåva saknas (kräver H3); (3) datasetens uppdateringscadans
   dokumenteras på sidan (n-redovisat finns, "nästa frysning" saknas).
 
@@ -907,7 +993,7 @@ fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
 - **Observation:** testad schema-kurser 444/0 grönt (18 sidor; körd 2026-09-11
   och igen 2026-09-15); G1:s FAQPage ur learn/why-innehåll (inga påhittade
   frågor) lever i kod. Verktygskedja genererar OG + sökindex vid deploy.
-- **GAP:** (1) G1-slutverifiering: full 343×3-maskinell körning + Google
+- **GAP:** (1) G1-slutverifiering: full 352×3-maskinell körning + Google
   rich-results live-test (stickprov gjorda enligt våg 99-dok);
   (2) OG-genereringen är ett manuellt deploy-steg (kan glömmas — hook/
   deploy-skript-koppling); (3) sökindexet (data via kor-sokindex) åldras
@@ -1338,7 +1424,7 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
 
 - **Vad:** Pris- och tal-sanningen: priser.json (ALLA priser + fas-rabatt +
   B2B + onboarding) med Supabase-override senaste-vinner via variabler-
-  lagning; siffror.json (343 kurser, 8 223 quiz ...) genererad av rakna-
+  lagning; siffror.json (352 kurser, 8 223 quiz ...) genererad av rakna-
   siffror; siffror-live (live-räkning ur lagret).
 - **Nyckelfiler:** src/lib/variabler.ts (133 r, fil-default),
   src/lib/variabler-lagring.ts (362 r: lasGallande, modul-cache 5 min,

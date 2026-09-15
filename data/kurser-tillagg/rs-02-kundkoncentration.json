@@ -1,0 +1,156 @@
+{
+  "slug": "rs-02-kundkoncentration",
+  "category": "RISK",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Kundkoncentration — när få kunder bär intäkterna",
+  "summary": "Risken som står i noterna, inte i resultaträkningen: hur stor del av omsättningen som bärs av en eller några kunder — och hur andelen läses, mäts och vägs som riskmått.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Läsa ut kundkoncentration ur årsredovisningens noter och segmentinformation · Mäta koncentration som största kunds andel, toppfem-andel och trappstegsprofil · Förstå varför koncentration uppstår i leverantörskedjor, upphandlingar och återförsäljarnät · Skilja strukturell koncentration från tillfälliga projekttoppar · Väga indirekt koncentration mot slutmarknad och bransch · Koppla koncentrationen till AKM1:s V03-, V12- och V19-familjer.",
+  "why": "Intäktsdiversifieringen (V03) visade hur bred omsättningen är — men bredden har en baksida som förtjänar egen kurs: koncentration. När en eller några kunder bär en stor del av intäkterna vilar lönsamheten på fundament som kan försvinna vid ett enda beslut i ett annat styrelserum. Risken syns sällan i resultaträkningen, som bara summerar — den står i noterna och i kundleden bakom dem. Kursen ger riskfamiljen sin första ingång på nybörjarnivå: från att läsa en omsättningssiffra till att se vem som faktiskt bär den.",
+  "history": {
+    "origin": "Koncentration som riskmått föddes i bankernas kreditprövning, långt före aktiemarknadens nyckeltalstabeller. En långivare som skulle finansiera ett tillverkande bolag ställde alltid frågan som avgjorde allt: vilka betalar fakturorna? I industrins leverantörskedjor — där ett mindre bolag ofta levererar till ett eller två större — blev kundkoncentration tidigt en standardpost i kreditutlåtanden, och ordspråket som sammanfattade regeln var lika gammalt som branschen: en kund är ingen kund.",
+    "evolution": "När segmentrapporten standardiserades i de noterade bolagens årsredovisningar blev underlaget bredare: intäkter per segment, geografi och kundkategori gav analytikerna ett systematiskt sätt att uppskatta koncentration även där ingen uttrycklig kundandel redovisades. Inom företagslåning växte mått som största kunds andel av omsättningen fram som formella kriterier i kreditmodellerna — en tradition som svenska och internationella affärsbanker fortfarande bär.",
+    "modern": "I dag har plattformsekonomin lyft frågan till nyckelposition: bolag vars hela affär är att leverera till ett fåtal dominanta teknikplattformar eller återförsäljarkedjor bär en koncentration som varje prospekt och analys diskuterar öppet. Samtidigt har offentliga upphandlingar och ramavtal gjort även den offentliga sektorn till en möjlig storkund — med egen logik om avtalsperioder och omprövning. Koncentrationen har alltså inte försvunnit med diversifieringens epok; den har bytt skepnad."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — vad koncentration egentligen mäter",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Läsningen — var uppgifterna står i årsredovisningen",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Mätningen — trappan från toppkund till hel profil",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Mekaniken — varför koncentration uppstår och rör sig",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor — fyra klassiska feltolkningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — koncentration i AKM1:s familjer",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — vad koncentration egentligen mäter",
+      "intro": "Två bolag med identisk omsättning och vinst kan bära helt olika risk — skillnaden sitter i kundleden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kundkoncentration mäter hur omsättningen fördelar sig över kunderna. Ett bolag där största kunden svarar för 60 procent av intäkterna och ett bolag där samma siffra är 6 procent kan visa samma vinstmarginal, samma tillväxt och samma skuldsättningsgrad — men de lever i olika världar. Det första bolagets framtid avgörs till stor del i ett enda främmande styrelserum; det andras avgörs av tusen små beslut utspridda över en marknad.\n\nDärför är koncentration ett riskmått, inte ett lönsamhetsmått. Det säger inget om hur mycket bolaget tjänar i dag — det säger något om hur stadigt underlaget under vinsten är. En hög koncentration innebär att en enskild händelse, som en förlorad upphandling, ett avslutat ramavtal eller en kund som flyttar produktion, kan ta bort en bit av intäktsbasen i ett slag."
+        },
+        {
+          "type": "insight",
+          "content": "Resultaträkningen summerar; koncentrationsmåttet visar fördelningen — och i riskens värld är fördelningen nästan alltid den mer avslöjande siffran."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Läsningen — var uppgifterna står i årsredovisningen",
+      "intro": "Kundandelar redovisas inte alltid rakt ut — men årsredovisningen bär spåren på flera ställen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den tydligaste källan, där den finns, är en not eller uppgift i förvaltningsberättelsen som anger största kunds andel av intäkterna eller andelen för de fem största kunderna. Alla bolag redovisar det inte — uppgiften är inte obligatorisk för alla — men den som söker har fler ställen att titta på. Segmentinformationen i noterna visar intäkter per segment, geografi och ibland kundtyp, vilket ger en bild av hur beroendet ser ut även utan uttryckliga kundandelar. Noter om intäkter och avkastningskrav per segment avslöjar vidare var i verksamheten marginalerna bärs.\n\nFör koncerner gäller att hålla isär nivåer: ett dotterbolag kan vara extremt koncentrerat mot en kund medan koncernen som helhet är det inte — och tvärtom, när flera dotterbolag alla levererar till samma slutkund. Därför ska läsningen alltid göras på den nivå där affären faktiskt lever."
+        },
+        {
+          "type": "definition",
+          "content": "Kundkoncentration: största kunds (eller de n största kundernas) andel av bolagets totala intäkter under en räkenskapsperiod — ett mått på hur ojämnt intäktsunderlaget fördelar sig, och därmed hur känsligt det är för enskilda kundbeslut."
+        },
+        {
+          "type": "insight",
+          "content": "Saknas uttryckliga kundandelar ger segmentnoten och kundkategorin en indirekt väg: ett bolag med två segment kan ändå vara enbolags beroende om allt i det större segmentet går till en och samma kedja."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Mätningen — trappan från toppkund till hel profil",
+      "intro": "En enda andel räcker sällan — koncentrationens bild byggs som en trappa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första trappsteget är största kunds andel av omsättningen. Det andra är de fem största kundernas sammanlagda andel. Tillsammans säger de något olika saker: ett bolag kan ha en måttlig toppkund men ändå en hög femtal-andel — många medelstora kunder, ingen dominerande — vilket är en helt annan riskbild än en ensam storkund.\n\nDen fulla profilen ritar trappan: kunderna i storleksordning, från störst till minst, och deras andelar. En brant trappa betyder få bär allt; en flack trappa betyder att intäktsbasen vilar på många axlar. Samma idé lever i konkurrensekonomins koncentrationsmått, där marknadsandelar kvadreras och summeras just för att ge stora aktörer tyngre vikt.\n\nÖvningen är konkret: hämta de senaste fem årens uppgifter för ett bolag, notera största kunds andel per år, och rita utvecklingen. En fallande andel betyder oftast att nya kunder växt fram bredvid de gamla — bolaget har breddat sig. En stigande andel betyder att verksamheten i ökande grad formats omkring en enda relation."
+        },
+        {
+          "type": "insight",
+          "content": "Fem år av koncentrationstrappor är en tillväxtberättelse i sig: breddas trappan eller smalnar den? Svaret säger minst lika mycket om hållbarheten som själva omsättningssiffran."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Mekaniken — varför koncentration uppstår och rör sig",
+      "intro": "Koncentration är sällan en slump — den växer ur affärsmodellens struktur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre mekanismer skapar koncentration igen och igen. Den första är leverantörskedjan: ett specialiserat komponent- eller tjänstebolag som passar en stor industriells inköpsorganisation kan komma att leva nästan helt inom den. Den andra är upphandling och ramavtal, särskilt mot offentlig sektor och större kedjor, där ett vunnet avtal kan definiera hela intäktsbasen tills det omprövas. Den tredje är återförsäljar- och plattformsstrukturen: bolagets kunder kan vara många till namnet, men volymen kan ändå rinna genom ett fåtal dominanta led.\n\nKoncentrationen rör sig också över tiden, och riktningen är avläsbar. När ett bolag expanderar in i nya kundgrupper eller geografier späds toppkunden ut — andelen faller. När ett bolag vinner en stor order eller en stor kund konsoliderar sin leverantörskedja stiger andelen. Avtalstider och uppsägningperioder avgör hastigheten: ju längre avtal, desto stadigare — men också desto tyngre förlorar när de löper ut."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga alltid vad som skulle hända vid avtalsförnyelsen: en koncentration som vilar på ett avtal som omprövas vart tredje år är mer riskabel än samma andel vuxen fram organiskt av leveranser och förtroende."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor — fyra klassiska feltolkningar",
+      "intro": "Koncentrationssiffran är enkel att läsa och lätt att feltolka — fyra fällor står för de flesta misstagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan: att läsa ramavtal som intäkter. Ett ramavtal är ett tak, inte ett golv — det ger rätten att beställa, inte skyldigheten. Koncentrationen ska mätas på fakturerade volymer, inte på avtalsvärden. Andra fällan: projekttoppar som ser ut som struktur. Ett stort engångsprojekt kan ge ett år med hög toppkundsandel som aldrig återkommer — läs därför koncentrationen över flera år, inte på en enskild räkenskapsperiod.\n\nTredje fällan: indirekt koncentration. Bolagets kunder kan vara hundra till antalet, men om de alla säljer till samma slutmarknad — en råvara, en byggcykel, en konsumenttrend — vilar intäkterna ändå på en enda efterfrågekälla. Kunden är många; risken är en. Fjärde fällan: att förväxla kundkoncentration med bransch- eller regionkoncentration. Ett bolag kan ha helt spridda kunder men vara hundra procent beroende av en bransch eller en valutaområde — båda är koncentration, men de mäts olika och kräver olika motåtgärder att förstå."
+        },
+        {
+          "type": "insight",
+          "content": "Räkneverktyget är detsamma för alla fyra fällorna: jämför andelen mellan år, mellan avtalsnivå och fakturanivå, och mellan kundled och slutmarknad — koncentration som håller över alla tre jämförelserna är strukturell."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — koncentration i AKM1:s familjer",
+      "intro": "I AKM1:s system blir kundkoncentrationen länken mellan tillväxtfamiljen och riskfamiljen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Koncentrationen läses bäst tillsammans med sina grannfamiljer. Mot V03, intäktsdiversifiering, är den baksidan av samma mynt: diversifieringen mäter bredden, koncentrationen mäter toppen. Mot V12, intäktsstabilitet, ger den förklaringen till varför intäkterna svänger — en hög koncentration gör varje kundbeslut till en potentiell svängning. Mot V19, kapitalförbränning och emissionsrisk, tillför den en tidig signal: bolag som mistar en dominerande kund hamnar ofta i just det läget. Och mot V14, varumärke och kundlojalitet, ena riktningen av närheten: en stark position hos ett fåtal kunder är en förhandlingsposition — som gäller båda parter.\n\nAvsluta med helhetsövningen: välj två verkliga bolag, uppskatta eller hitta deras koncentration, rita trapporna, och skriv en mening per bolag om vad trappan betyder för hur verksamheten ska läsas. Två meningar — och du har gjort något de flesta siffror aldrig gör: satt en ansiktslös omsättning i relation till de risker som faktiskt bär den."
+        },
+        {
+          "type": "insight",
+          "content": "Koncentration är till slut en fråga om bärighet: hur många axlar bär intäktsbasen, och hur stadigt står var och en av dem? Det är frågan en analytiker ställer — och som årsredovisningen svarar på i noterna."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynchs mest citerade råd till småsparare var att känna till det man äger — och kunskapen om kundleden är ett av de tydligaste exemplen: att veta vem som betalar fakturorna är en del av att känna bolaget. Lynch talade ofta om bolag vars affär han kunde förklara i en mening, och kundkoncentrationen är ofta just den meningen: bolaget som lever allt till en kedja, eller bolaget vars kunder är tusen små. Hans syn på diversifiering på bolagsnivå — bolag som växer inom det de behärskar — är samma läsning från andra hållet.",
+  "grahamSection": "Benjamin Grahams säkerhetsmarginal handlar om att beräkningar ska hålla även när antaganden faller. En värdering som vilar på en intäktsbas med hög kundkoncentration har en inbyggd sprängrisk: antagandet om fortsatta intäkter från huvudkunden är ett enda antagande med enorm vikt. Grahams försiktighet talar för att koncentrationen vägs in som en nedre justering av säkerhetsmarginalens storlek — inte som en anledning att kassera bolaget, utan som ett mått på hur mycket marginal som krävs.",
+  "ak1Section": "I AK1A:s metodik är kundkoncentrationen broarna mellan tillväxt- och riskfamiljen: den kvantifierar det kvalitativa i V03:s diversifieringsläsning, förklarar V12:s intäktssvängningar och fungerar som tidig varningsrad mot V19:s kapitalförbränningsläge. En V03-viktning som läses med sin koncentrationstrappa ger en dubbelsidig bild — bredd och topp i samma vy — och det är den typen av sammansatta bedömningar AKM1:s viktningsmodell bygger vidare på."
+}

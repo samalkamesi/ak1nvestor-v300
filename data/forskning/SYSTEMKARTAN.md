@@ -352,6 +352,45 @@ för träff-%:en (52 % är plattformens läromärke, osynligt idag); (3) A2:s
 regressionssvit (raknaLarvag-reglerna) — synken + front-B-bevisen är
 leveransbevis, inte regressionsvakt.
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u1 omgång 5 — B7 AKM2-analysmotorn diffad mot verkligheten)
+
+Femte u1-dokvågen (efter u1: E35 · u1:4: A3; syskonen tog resten — senast
+u3 omgång 4 med A2/B9/E36 = 21 av 38 system diffade på fyra dagar). B7 fritt
+vid kollisionskontrollen och valt med omdöme: S2-spåret växte bolagsuniversum
+till 115 och analysdatakedjan är motorns livnerv. Varje rad MÄTT i arbetsytan
+2026-09-16 (fyra svitkörningar + motorvalidering, live-fetch-svep mot
+localhost på samtliga 22 bibliotekssidor, node-läsning av JSON, ls/grep,
+git log) — inte läst ur worklog:
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-16 (mätning) |
+|---|---|---|
+| Egna testsviter | "dokumenterade och testade i fyra separata sviter" | **156 kontroller ALLA GRÖNA (egna körningar, exit 0)**: kärna 25/25 · dynamik 55/55 · moduler 64/64 · snapshot 12/12 — och motorvalideringen **107 PASS / 0 FAIL / 0 SKIP (6,0 s, egen körning, rapportfilen omskriven)** |
+| Snapshot-sviten | miljökänslighet okänd | **ENV-LÄCKANDE**: med ärvt Supabase-env failar kontroll 11 (11/12, **exit 1**); i ren env (`env -i`) 12/12 exit 0 — svitfel EJ kodfel (kontrollens "giltigt utan env ⇒ 'ej konfigurerat'" krockar med satt env); sviten rapporterar alltså rött i agentmiljö och grönt i ren miljö utan att skillnaden syns någonstans |
+| Berika-pipeline | "manuell pipeline — ingen autonom berikning" | **STILLASTÅENDE 12 DAGAR**: kor-akm2-berika senast körd 2026-09-04 (commit 4b98cd15 "100 akm2-cacher"); data/cache bär **0** akm1-/akm2-/fvag-/fundamental-cacher — våg 122 rensade 405 runtime-filer ur git 2026-09-13 och sedan dess har endast 7 sporadiska on-demand-filer återkommit (tidsstämplar 01:19–23:19; ingen 06:00-cronfyllning — datacache-cronen ropas ej från Contabo-crontaben, mätt) |
+| AKM2-dashboard live | "on-demand-beräkning" | **22/22 SYNS** (egen fetch-svep mot localhost, BUILD_ID 2026-09-15 23:58): analysfilernas akm2-block godtas av steg 1:s formguard (källa "analys-json", i git) — cache-tomheten syns EJ här; kodkommentaren "D2:s sammanfattande block har inte den formen" är MOTBEVISAD av live-beteendet |
+| AKM3-ensemble live | ej i B7-kartan | **0/22 SYNS** (samma svep): akm3-cacher 0 + fundamental-cacher 0 på disk ⇒ hamtaAkm3ForAnalys null ⇒ "ensemble-vyn renderas ej" på alla 22 bibliotekssidor — konsumentfynd som främst hör hemma i B8 |
+| Återfyllningsväg | okänd | fundamental-{TICKER}.json + akm3-cacher skrivs av cron/portfolj-uppfoljning (månadens 1:a, senaste 2026-09-01) — nästa automatiska återfyllning **2026-10-01**; akm2-cacherna har ENBART kor-akm2-berika (manuell = i praktiken aldrig) |
+| Analysbanken | "analyser per ticker + variabel" | **två skilda lager (mätta)**: data/analyses = 11 premiumanalyser (2026-09-10, aldrig fler i git-historien) · data/forskningsbiblioteket = 22 tickerunderlag (versionsdatum 2026-09-04) vars akm2-block är AKM2-livlinan — våg 56:s "22 analyser med akm2-block" avser dessa |
+| Snapshot-persistens | (09-13-not) | 100 skrivna + idempotenta 2026-09-09 (023e9f95) via system_events, tak 2 000 rader — E33:s fynd gäller fortfarande (SQL-dumpen bär ej händelseloggen; DR-vägen är moln-JSON-kedjan) |
+| Motorregistret | 2026-09-03 (gap 3) | **fortfarande oförändrat** (bekräftat av s9-u1-mätningen 2026-09-15) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| B7 | LEVER 9 → **LEVER 8** | Kärnan förblir kodbasens finaste (156 kontroller + 107/0/0, egna körningar) men DATAKEDJAN nåddes av verkligheten: berika-pipelinen stillastående 12 dagar, on-demand-kedjans steg 2+3 tomma på disk, datacache-kontraktets "accelerator, aldrig beroende" håller i prod ENBART tack vare analysfilernas git-trackade block (AKM3 hade ingen sådan livlina — 0/22), snapshot-sviten env-känslig. Driftgapet nådde konsumentytan = inte 9-läge |
+
+Snittscore **7,5** (286 → 285 poäng / 38 system; B7 −1 vid denna dokvåg).
+
+Kö till huvudagenten från fynden: (1) **AKM3-ensemble-vyn borta 22/22** —
+snabbaste kur: trigga cron/portfolj-uppfoljning manuellt (skriver
+fundamental- + akm3-cacher) eller kör kor-akm2-berika; annars självläker det
+2026-10-01 — B8-dokvåg verifierar; (2) snapshot-sviten bör köras med `env -i`
+i vakten ELLER kontroll 11 villkoras mot ärvt env; (3) berika-pipelinen
+behöver cadans-vakt/cron-koppling — "manuell" visade sig betyda "aldrig" i
+praktiken; (4) akm2-onsdemand-kommentaren om blockformen revideras
+(formguarden GODTAR sammanfattande block — dokumentationen motbevisad av
+live-mätningen); (5) datacache-kontraktet bör skilja "accelerator" (de fyra
+datacache-typerna) från "enda källan" (akm2-onsdemand steg 2+3, akm3) i text.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
@@ -362,7 +401,7 @@ leveransbevis, inte regressionsvakt.
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbibliotek) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lägg-till-källa) |
-| B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 9 | Berika-pipeline manuell; snapshot-cadans fast |
+| B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 8 | Kärnan 156 kontroller grön (mätt 09-16); berika-pipelinen stillastående 12 d (0 cacher på disk), AKM3-ensemble 0/22 i prod, snapshot-svit env-känslig |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Kalibreringsloopen cron-driven men beslut delvis ouppfyllt |
 | B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt) men ENBART Vercel-cron-driven — Contabo-crontab saknar rad; valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
@@ -395,10 +434,11 @@ leveransbevis, inte regressionsvakt.
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (286 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
-dokvågorna 2026-09-15; C15+C16 reviderade utan scoreändring; u3 omgång 2
+Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
+dokvågorna 2026-09-15, B7 −1 vid dokvågen 2026-09-16 — berika-pipelinen
+stillastående + AKM3-ensemble 0/22); C15+C16 reviderade utan scoreändring; u3 omgång 2
 diffade C17/C18/E32 och omgång 3 E33/E28 med egna mätbevis utan
-poängrörelser). Sämst: betalning (5). Bäst: AKM2, Studio, Dataset, SEO,
+poängrörelser). Sämst: betalning (5). Bäst: Studio, Dataset, SEO,
 Mediebibliotek, Drift/DR (9).
 
 ---
@@ -564,12 +604,28 @@ upp i filen.*
 
 # B. ANALYSMOTORERNA
 
-## B7. AKM2-analysmotorn + analysidorna — LEVER — 9/10
+## B7. AKM2-analysmotorn + analysidorna — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u1 omgång 5): score 9 → 8. Kärnan förblir
+kodbasens finaste — 156 kontroller gröna i egna körningar (kärna 25/25 ·
+dynamik 55/55 · moduler 64/64 · snapshot 12/12) + motorvalidering 107/0/0
+(6,0 s). Men DATAKEDJAN föll ifrån: kor-akm2-berika senast körd 2026-09-04
+(100 akm2-cacher då; 0 på disk sedan våg 122:s rensning 2026-09-13 — ingen
+cron återfyller akm2), AKM3-ensemble-vyn renderas ej på 22/22 biblioteks-
+sidor (akm3- + fundamental-cacher 0 på disk; självläker först vid månads-
+cronen 2026-10-01), snapshot-sviten env-läckande (11/12 med ärvt Supabase-
+env, 12/12 i ren env — mätt båda). AKM2-dashboarden överlevde ENDAST genom
+analysfilernas git-trackade akm2-block (steg 1 "analys-json", live-bevis
+22/22). Se diff-tabellen i UPPDATERING-sektionen.*
 
 - **Vad:** Plattformens vetenskapliga kärna: AKM1:s 20 fundamentalvariabler
   (V01–V20, 0–5 p med motivering), AKM2-lagersyntes (kärna + vikter +
   moduler + dynamik via injektion), förklaring per variabel med kurslänk,
-  analyser per ticker + variabel, on-demand-beräkning, snapshot-lagring.
+  analyser per ticker + variabel, on-demand-beräkning (3 steg: analys-json-
+  block → akm2-cache → fundamental-cache; null ⇒ sektion renderas ej),
+  snapshot-lagring (system_events, tak 2 000). Två analyslager: data/analyses
+  (11 premiumanalyser) + data/forskningsbiblioteket (22 tickerunderlag vars
+  akm2-block är AKM2-livlinan).
 - **Nyckelfiler:** src/lib/akm2/{karna.ts (914 r), dynamik.ts (869 r),
   vikter.ts, moduler/, typer.ts}, src/lib/analys-motor.ts (600 r),
   src/lib/akm2-onsdemand.ts, src/lib/akm2-snapshot-lagring.ts (402 r),
@@ -579,11 +635,18 @@ upp i filen.*
 - **Observation:** Högsta kvalitet i kodbasen: PROJEKTIONSINVARIANTEN
   (projiceraAKM1(raknaAKM2(k)) === raknaAKM1(k), byte-identisk) + ÄRLIG-
   HETSPRINCIPEN (null in ⇒ "osatt" ut, kärnan gissar aldrig) är dokumenterade
-  och testade i fyra separata sviter. Motorvalideringen PASSAR analysmotorn.
-- **GAP:** (1) kor-akm2-berika (AI-berikning) är manuell pipeline — ingen
-  autonom berikning; (2) snapshot-cadansen fast (ingen ombestämning vid
-  datakorrigering); (3) motorregistret (2026-09-03) listar akm2-modulerna som
-  "omonterade" i cron/autonomi-meningen — kopplingen till organ-pulsen saknas.
+  och testade i fyra separata sviter (156 kontroller, mätta 2026-09-16).
+  Motorvalideringen PASSAR analysmotorn (107/0/0, egen körning).
+- **GAP:** (1) kor-akm2-berika (AI-berikning) manuell OCH stillastående —
+  senaste körning 2026-09-04, 0 cacher på disk, ingen cadans-vakt/påminnelse;
+  behöver cron-koppling eller vakten ropar vid ålder; (2) snapshot-cadansen
+  fast (ingen ombestämning vid datakorrigering) + svitens env-hermetik
+  (kontroll 11 failar med ärvt Supabase-env); (3) motorregistret (2026-09-03)
+  listar akm2-modulerna som "omonterade" i cron/autonomi-meningen —
+  kopplingen till organ-pulsen saknas; (4) akm2-onsdemand steg 2+3 har ingen
+  git-trackad livlina och ingen nät-branch — "accelerator, aldrig beroende"
+  gäller bara datacache:s fyra typer; ett nytt cache-tömningstillfälle öppnar
+  samma AKM3-tomrum (0/22) även för AKM2 om blockformatet ändras.
 
 ## B8. AKM3 (regim, kalibrering, ensemble) — PÅGÅR — 7/10
 

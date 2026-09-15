@@ -240,6 +240,32 @@ async function main() {
     return logga("mål ej aktivt — tyst");
   }
 
+  // VÅG 168 (integration-audit p5): FELJÄGARENS FYND når målsessionen —
+  // [FELJÄGT HÖG/MEDEL] i feljakt-fynd.jsonl ⇒ en kort reparationsprompt
+  // (endast vid HÖG; MEDEL loggas för nästa rond). Tak: 1 feljakt-kick/30 min.
+  try {
+    const NYCKEL_NY = "\n";
+    const feljaktSvans = fs.readFileSync(path.join(KATALOG, "feljakt-fynd.jsonl"), "utf8").trim().split(NYCKEL_NY).slice(-5);
+    const aktuella = feljaktSvans.filter((r) => {
+      try {
+        const j = JSON.parse(r);
+        return j.allvar === "HÖG" || j.allvar === "KRITISK";
+      } catch { return false; }
+    });
+    const senasteFeljaktKick = state.senasteFeljaktKick || 0;
+    if (aktuella.length > 0 && nu - senasteFeljaktKick > 30 * 60_000) {
+      const sammanfattning = aktuella.map((r) => { try { const j = JSON.parse(r); return `${j.spår}: ${j.fynd}`; } catch { return "?"; } }).join("; ").slice(0, 200);
+      const fj = await fetch(`${BAS}/api/studio/stream`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-password": pass },
+        body: JSON.stringify({ prompt: `FELJÄGAREN FYNN: ${sammanfattning}. Verkställ rot-analys och kur — mekaniskt, med bevis (Lag 1+2+6 i NATURLAGAR.md).` }),
+      });
+      try { const l = fj.body?.getReader(); if (l) await l.cancel().catch(() => {}); } catch {}
+      skrivState({ ...state, senasteFeljaktKick: nu, restarts: p.restarts });
+      return logga(`FELJÄGT HÖG: reparationsprompt skickad — ${sammanfattning.slice(0, 80)}`);
+    }
+  } catch { /* feljakt-fynd får saknas */ }
+
   // 2) progress? (iteration ökad ELLER senasteEvent bytt ELLER turn pågår)
   const progress =
     status.pagaendeTurn ||

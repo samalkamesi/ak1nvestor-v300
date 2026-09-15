@@ -133,6 +133,12 @@ export async function GET(req: NextRequest) {
     | { senasteKorning?: unknown }
     | null;
   const synk = svans(path.join(VAKT, "prod-synk.log"), 2);
+  // VÅG 168 (integration-audit p7): tre pumpor var osynliga — nu synliga
+  const feljakt = svans(path.join(VAKT, "feljakt-fynd.jsonl"), 3, 200);
+  const konfiglarm = svans(path.join(VAKT, "konfig-larm.jsonl"), 2, 200);
+  const automationer = lasJson(path.join(VAKT, "automations.json")) as
+    | { automationer?: { namn?: string; aktiv?: boolean; senasteKorning?: string }[] }
+    | null;
   const scenario = svans(path.join(VAKT, "scenariotest.log"), 1);
 
   return new Response(
@@ -149,6 +155,10 @@ export async function GET(req: NextRequest) {
         scenario: scenario.length > 0 ? scenario[scenario.length - 1] : null,
       },
       synk,
+      // VÅG 168 (integration-audit p7): tre saknade pumpor
+      feljakt,
+      konfiglarm,
+      automationer: automationer?.automationer?.slice(0, 5) ?? [],
     }),
     {
       status: 200,

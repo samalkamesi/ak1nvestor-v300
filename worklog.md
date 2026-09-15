@@ -10711,3 +10711,9 @@ Leveranser: data/forskning/STYRELSE-MAL.md = styrelsens ÖVERSTA målchafter (7 
 Maskineriläge vid beslutet: mega-manifestet 4/7 klara (g2 juridikgrind, g3 audit, g4 fabrik 2.0, g5 integritetsvakt; g1 byggs, g6/g7 köade) · gap-registret 15 poster (e1/e3 kodlevererade, väntar live-bevis) · v157-driftbevis vid nästa journal-svep.
 Städning: 7 otrackade hjälpskript/bilder bort.
 Bevis: commit + push prod (dataleverans — appar läser från disk, inget bygge) · uppdrag-klart.json + "UPPDRAG KLART" i sessionen.
+
+## ROND 28 — 2026-09-15 06:40: vakt-cron läkt + v152 fas 2 bokförd LEVERERAT + mega 7/7 [organ:Φ]
+Fynd 1 (infra, rot): gränsnittsvaktens cron-rad var RADERAD ur crontab — endast supabase-backupen fanns kvar; sista vaktrappet 01:17 GRÖN, nästa rop 07:17 skulle ha uteblivit. Kur: raden återinstallerad 06:36 (17 1,7,13,19 * * *) + verifierad genom återläsning; catch-up-körning startad 06:37 (avlänkt pid, logg data/vakten/fangad-rond28.txt).
+Fynd 2 (bokföring): v152 fas 2 var levererat men odokumenterat — 10/10 kalendrar (data/blogg-utkast/kvartal/2026-q3/), 100/100 bolag maskinverifierade, juridikstickprov 0 mönster, granskningsrond auto-s1 klar. PIPELINE-KO uppdaterad + mega-manifestet 7/7 bokfört.
+v157: journalmekanismen lever men /dataset når mätning först efter ~6 vaktkörningar (alfabetisk kö bland aldrig-mätta) — vågen ligger kvar ◐ ärligt, stängs på journalbevis.
+Rond 27-eftersläp: gap 14 visade sig redan levererat (v164-nav + navigering n1, fil identisk arbetsyta/prod) — det förberedda landningsskriptet kasserades utan körning, dubbelbokföring undveks.

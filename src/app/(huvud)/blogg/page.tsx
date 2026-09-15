@@ -79,7 +79,7 @@ export default function BloggPage() {
               {kurs && (
                 <Link
                   href={`/kurser/${kurs.slug}`}
-                  className="mt-3 border-t border-gold/20 pt-3 text-xs text-muted-foreground hover:text-gold"
+                  className="mt-3 block border-t border-gold/20 pt-3 text-xs text-muted-foreground hover:text-gold max-md:min-h-[52px]"
                 >
                   Fortsätt djupare: kursen {kurs.title} — {kurs.category}
                 </Link>

@@ -104,7 +104,7 @@ export function InloggadKnapp({ stor = false }: { stor?: boolean }) {
         </Link>
         <button
           onClick={riktigLoggaUt}
-          className="rounded-md border border-gold/30 px-3 py-1.5 text-xs font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground"
+          className="rounded-md border border-gold/30 px-3 py-1.5 text-xs font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground max-md:min-h-[52px]"
         >
           {t("auth.loggaUt")}
         </button>
@@ -119,7 +119,7 @@ export function InloggadKnapp({ stor = false }: { stor?: boolean }) {
         className={
           stor
             ? "block w-full rounded-xl bg-gold px-4 py-3.5 text-center text-base font-bold text-primary-foreground shadow-xl hover:opacity-90"
-            : "rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90"
+            : "rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90 max-md:min-h-[52px]"
         }
       >
         {t("auth.loggaIn")}

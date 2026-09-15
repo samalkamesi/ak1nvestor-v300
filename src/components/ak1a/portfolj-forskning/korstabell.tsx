@@ -334,7 +334,7 @@ export function Korstabell({ rader }: { rader?: KorstabbellRad[] }) {
                   value={sok}
                   onChange={(e) => setSok(e.target.value)}
                   placeholder="Sök bolag, ticker eller bransch …"
-                  className="min-h-[44px] w-full rounded-lg border border-gold/30 bg-paper px-3 py-2 text-sm outline-none placeholder:text-muted-foreground/70 focus:border-gold focus:ring-2 focus:ring-gold/20"
+                  className="min-h-[44px] w-full rounded-lg border border-gold/30 bg-paper px-3 py-2 text-sm outline-none placeholder:text-muted-foreground/70 focus:border-gold focus:ring-2 focus:ring-gold/20 max-md:min-h-[52px] max-md:text-base"
                 />
               </label>
               <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-bold">

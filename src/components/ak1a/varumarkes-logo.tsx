@@ -99,7 +99,7 @@ export function VarumarkesLogo({
   );
 
   const gemensamKlass = cn(
-    "group flex items-center gap-2.5 select-none",
+    "group flex items-center gap-2.5 select-none max-md:min-h-[52px]",
     klass
   );
 

@@ -306,7 +306,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8"
+            className="h-8 w-8 max-md:h-[52px] max-md:w-[52px]"
             onClick={() => window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"))}
             aria-label={t("ui.sokGenvag")}
           >
@@ -336,7 +336,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8"
+            className="h-8 w-8 max-md:h-[52px] max-md:w-[52px]"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Byt tema"
           >
@@ -351,7 +351,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8"
+            className="h-8 w-8 max-md:h-[52px] max-md:w-[52px]"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Meny"
             aria-expanded={mobileOpen}
@@ -387,7 +387,7 @@ export function Header() {
                 type="button"
                 onClick={() => setMobileOpen(false)}
                 aria-label={t("ui.stangMenyn")}
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-gold/20 text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-gold/20 text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground max-md:h-[52px] max-md:w-[52px]"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -584,7 +584,7 @@ function MegaRad({
         href={punkt.lank}
         onClick={onStang}
         className={cn(
-          "flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 text-left last:border-b-0 hover:bg-gold/10",
+          "flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 text-left last:border-b-0 hover:bg-gold/10 max-md:min-h-[52px]",
           punkt.guldknapp && "bg-gold/10 hover:bg-gold/20"
         )}
       >

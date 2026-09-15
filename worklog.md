@@ -11153,3 +11153,32 @@ TILLÄGG s7-u2 (23:2x): EFTER MÄTT OCH BOKFÖRD — prod-synken byggde allt (BU
 
 ## SPÅR 8 s8-u3 (omgång 3) — 2026-09-15: Mimosa-fyndens rotorsaker — skannerns döda öga bevisat + server-paritet med GRÖN baslinje 671/0 [fabrik]
 OBJEKT (duplikatkontroll före start): spårets kontextord "Mimosa-fyndens rotorsaker" = enda ordet utan levererad våg (omg 1: grind/beroenden/döda länkar; omg 2: tsc-determinism/feljägare-F5/0-fynd-jakt; syskon omg 3 tog F7-härdningen). GRAVNING (.mimosa/ i reporoten — gitignorad spegling av arbetsstationens semgrep-hook, 133 run-filer 2026-08-10→09-10): ROTORSAKA 1 skannerns döda öga — de sista åtta körningarna (09-08→09-10) samtliga inconclusive med spawnSync C:\Program Files\nodejs\node.exe ETIMEDOUT = 0 skannade filer, sista körningen 09-10 10:49Z, sedan 5 dygn TOTAL TYSTNAD (olösligt från servern → kundnotis bokad). ROTORSAKA 2 fabriksträdet har ALDRIG skannats — Mimosas hook bor i arbetsstationens sessioner (hook_observed_diff), fabriksagenternas server-commits passerar den aldrig. ROTORSAKA 3 fynden upptäckts först vid arbetsstations-push (worklog våg 85: 3 försök, push blockerad ×4). FYNDKLASSER utvunna ur .mimosa/reports finding_events + worklog: path traversal (minne/route.ts:287-288 = senaste ÄKTA fyndet 09-09, reparerat samma kvart — reparationen verifierad I TRÄDET: namn-vitlista + inneslutningsvakt), skal-säkerhet (setup-prod.sh:7,20 → gpg-mönstret), SSRF-sträng/variabel-i-URL (5014/9075), child_process-interpolation (9586), lösenords-placeholder (9329). LEVERANS: verktyg/mimosa-paritet.mjs — deterministisk server-paritet för domänen src/ + data/infra/ (Mimosa:s bevisade fyndområden) med kontext-förmildran exakt enligt Mimosa-lärdomarna (getSupabaseRest i filen, kontroll-före-fetch, versalkonstant-host, same-origin-idiom, path-klasspecifika vitlista/prefix-vittnen); verktyg/testa-mimosa-paritet.mjs 16/16 PASS. METODFYND: första breda helkörningen 168 fynd varav ~97 % systematiska falska positiver (relativa /api-fetch, loopback, versalkonstanter, kataloger utanför domän) + en regelbugg där new URL(req.url) immuniserade routes mot PATH_API — kuren är KLASSSPECIFIKA vittneslistor (VITTNEN_FETCH vs VITTNEN_PATH): kontextvittnen måste vara målklasspecifika, annars blir standardidiom frikort. BEVIS: färsk baslinje 671 filer 0 FYND GRÖN (80 härdade SSRF-kontexter över 50 filer — stickprov verifierat, 1 PATH_API härdad = Mimosa:s sista äkta fynd, 5 fasta Yahoo-literaler info, 1 loopback-sond info); rådata OPTIMERING/mimosa-paritet-baslinje-2026-09-15.json; tsc 0 (projektbinär, src orörd); R2 orörd; .mimosa/ endast läst. Bokningar: kundnotis arbetsstationens Mimosa (ETIMEDOUT), verktygskatalogens 6 lågrisk-interpoleringar (interna värden, bokade som framtida härdning), KVD-integrering som styrelsebeslut efter tidsskördad 0-falskpositiv baslinje. Protokoll: OPTIMERING/o15-mimosa-paritet-s8.md (o14 togs av syskonet under fönstret). [fabrik]
+
+## SPÅR 8 s8-u2 (omgång 3) — 2026-09-15: externa döda länkar — vakt + IMY-HEAD-kur + baslinje 0 döda [fabrik]
+OBJEKT: o9 §5 kö-post 2 (bokad av spåret självt: "externa länkar — separat våg,
+head-only, långsam takt") — duplikatkontroll före start mot spårets sex tidigare
+objekt; inget syskon hade tagit den. LEVERANS: verktyg/doda-lankar-externa.mjs
+(0 npm-beroenden; sitemap+länkgraf-crawl som o9 men plockar externa href; fem
+domar OK/BLOCKERAD/DOD/SERVERFEL/OUPPNABAR; skonsamhetskontrakt: 1 förfrågan per
+domän i taget, 4 domäner parallellt, kropp aldrig läst, 15 s tak, 1 500
+URL-tak; mellanlager på disk FÖRE externa nätanrop = --validera-fran utan
+omcrawl; offline-självtest 6/6). MÄTNING: 2 050 sidor → 308 unika externa mål
+på 242 s. ROTORSAKSFIX (falsklarm): FÖRE-körningens ENDA fynd — imy.se 404 från
+/privacy-policy — var HEAD-lögn (GET = 200, bevisad även med webbläsar-UA);
+kuren: varje 4xx-dom på HEAD (utom 401/429) bekräftas med GET innan klass DOD
++ självtestfall med själva imy-mönstret. EFTER: DOD 0 · OUPPNÅBAR 0 ·
+SERVERFEL 0 · OK 104 · BLOCKERAD 204 — baslinjen 0 bevisat döda externa
+länkar. FYND: (1) länkgrafen länkar ut till ENDAST 5 domäner — adlibris/bokus/
+amazon 102 st var (dynamiska sök-URL:er ur kallkort.tsx:42 + kallor/page.tsx:82
+= rostar inte klassiskt), ak1nvestor.com 1, imy 1; data/:s 100-tals källdomäner
+renderas INTE som klickbara länkar; (2) BLOCKERAD 204 = samtliga 429 från
+adlibris+bokus sök-endpoints — diskriminerande tester (6 s mellanrum,
+webbläsar-UA, 30 s paus) ger fortfarande 429 = IP-skydd som inte kan kringås
+artigt, ärligt klassat; Amazon 200/102 motståndarbevisar metoden; (3) egen
+slarvfel troligt: fel källa i FÖRE-arkiveringen (intern rapport i stället för
+extern) + om-körning skrev över FÖRE — FÖRE-läget bevarat i körningsloggen,
+ingen dataförlust av substans. Protokoll: OPTIMERING/o14-doda-lankar-externa.md;
+rådata på disk (data/vakten/doda-lankar-externa-2026-09-15.json + insamling,
+otrackad enligt o9-mönstret). tsc 0 (projektbinär). Ingen src/ ändrad (imy-
+länken visade sig LEVANDE) = inget bygge. R2 orörd. Kö: cronifiering (bokad
+huvudagent), BLOCKERAD-uppföljning vid lugnare IP-läge. [fabrik]

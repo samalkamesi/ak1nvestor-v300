@@ -119,7 +119,9 @@ import { cn } from "@/lib/utils";
  * admin-verktyg, notiser + långkörningsvakt (E2 gap 4: "AK1A klar"-
  * notis vid varje tur-avslut när fliken ej syns/fokuseras, med svarets
  * första ~80 tecken som kropp + diskret "Aktivera notiser"-knapp i
- * panelen), sök, kommandopalett,
+ * panelen), sök (Ctrl/Cmd+Shift+F — fulltext i aktiva fliken + träffmarkering)
+ * med TUR-HOPP (P1+P3, register 16/18: chevron-knappar hoppar mellan
+ * assistant-svarens start, Alt+↑/↓, Esc stänger), kommandopalett,
  * slash-autocomplete, promptbibliotek + historik, rewind/fork, åter-
  * koppling (IndexedDB-cache + 15/30 s-poll), export md/HTML. Tema-
  * växlaren (våg 84 A) är MEDVETET borttagen — våg 90:s tema är FAST
@@ -8414,6 +8416,43 @@ export function StudioChat({ hem }: { hem: () => void }) {
     [sokTräffar.length],
   );
 
+  // ── TUR-HOPP (P3, register 18): assistant-meddelandena = turgränserna. ─────
+  //    pi-tui 0.84.0-paritet (OSC 133-analog): navigeringsradens chevron-knappar
+  //    hoppar mellan svarens START — block:start visar hela turen från toppen.
+  //    1-baserat; null = "senaste turen" (läget vid öppnad panel/botten).
+  const turIds = React.useMemo(
+    () => meddelanden.filter((m) => m.roll === "assistant").map((m) => m.id),
+    [meddelanden],
+  );
+  const turAntal = turIds.length;
+  const turVisad = turPos ?? turAntal; // null ⇒ räknas som senaste (position K)
+
+  // Fliken bytte underliggande meddelanden → positionen är meningslös här.
+  React.useEffect(() => {
+    setTurPos(null);
+  }, [aktivTabbId]);
+
+  // Krympte turnalen (turer åldras ur vid kompakt/lång tråd) → håll inom span.
+  React.useEffect(() => {
+    setTurPos((p) => (p === null || p <= turAntal ? p : turAntal === 0 ? null : turAntal));
+  }, [turAntal]);
+
+  const hoppaTur = React.useCallback(
+    (steg: 1 | -1) => {
+      if (turAntal === 0) return;
+      setTurPos((p) => Math.min(turAntal, Math.max(1, (p ?? turAntal) + steg)));
+    },
+    [turAntal],
+  );
+
+  // Scrollmalet: id-strängen (stabilt under strömning — nya turer APPENDERAS,
+  // så turPos-1 pekar fortfarande på samma tur-id och effekten inte återtriggas).
+  const turMalId = turPos === null ? null : (turIds[turPos - 1] ?? null);
+  React.useEffect(() => {
+    if (!turMalId) return;
+    meddelandeRefs.current.get(turMalId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [turMalId]);
+
   // ── KOMMANDOPALETTEN (våg 84 A2) — poster ur registret + modellbyten ───────
   const palettPoster = React.useMemo<PalettPost[]>(() => {
     const poster: PalettPost[] = STUDIO_KOMMANDON.map((k) => ({
@@ -8552,12 +8591,30 @@ export function StudioChat({ hem }: { hem: () => void }) {
         });
         return;
       }
+      // P1 (register 16): Ctrl/Cmd+Shift+F — sök-/navigeringsraden i chatten.
+      // Toggle: öppen → stäng + nollställ; stängd → öppna (frasen får leva
+      // kvar — öppna igen fortsätter där kunden var). Grenen ligger FÖRE
+      // redigerbart-avbrottet så genvägen funkar även i skrivfältet.
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "f") {
+        e.preventDefault();
+        setSokOppen((v) => {
+          if (v) {
+            setSokFras("");
+            setTurPos(null);
+            return false;
+          }
+          setSokIndex(0);
+          return true;
+        });
+        return;
+      }
       if (e.key === "Escape") {
         if (palettOppen) {
           setPalettOppen(false);
         } else if (sokOppen) {
           setSokOppen(false);
           setSokFras("");
+          setTurPos(null); // P3: tur-positionen hör till den öppna raden
         } else if (prompterOppen) {
           setPrompterOppen(false);
         }
@@ -9019,7 +9076,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </button>
           <button
             onClick={() => setSokOppen(true)}
-            title="Sök i chatten (highlight + pilnavigering)"
+            title="Sök i chatten + hopp mellan turer (Ctrl/Cmd+Shift+F)"
             aria-label="Sök i chatten"
             className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
@@ -9074,61 +9131,106 @@ export function StudioChat({ hem }: { hem: () => void }) {
           </button>
         </header>
 
-        {/* Sök-raden — visas ENDAST när sök är påslaget (Esc / X stänger). */}
+        {/* Sök- och navigeringsraden — visas ENDAST när sök är påslaget
+            (Ctrl/Cmd+Shift+F, headerns sökknapp; Esc / X stänger).
+            P3 (register 18): rad 2 = TUR-HOPP — chevronerna hoppar mellan
+            assistant-meddelandenas start (turgränserna) i AKTIVA fliken. */}
         {sokOppen && (
           <div className="z-10 border-b border-[#30363D] bg-[#0D1117]">
-            <div className="mx-auto flex w-full max-w-3xl items-center gap-1.5 px-3 py-2 sm:px-4">
-              <Search className="h-4 w-4 shrink-0 text-[#8B949E]" />
-              <input
-                ref={sokInputRef}
-                value={sokFras}
-                onChange={(e) => setSokFras(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    hoppaSok(e.shiftKey ? -1 : 1);
-                  }
-                }}
-                placeholder="Sök i chatten…"
-                maxLength={120}
-                className="min-h-9 min-w-0 flex-1 rounded-md border border-[#30363D] bg-[#161B22] px-3 py-1.5 text-sm text-[#E6EDF3] outline-none placeholder:text-[#484F58] focus:border-[#58A6FF]"
-              />
-              <span className="shrink-0 font-mono text-[11px] tabular-nums text-[#8B949E]" aria-live="polite">
-                {sokFras.trim()
-                  ? sokTräffar.length > 0
-                    ? `${Math.min(sokIndex, sokTräffar.length - 1) + 1}/${sokTräffar.length}`
-                    : "0 träffar"
-                  : ""}
-              </span>
-              <button
-                onClick={() => hoppaSok(-1)}
-                disabled={sokTräffar.length === 0}
-                title="Föregående träff (Skift+Enter)"
-                aria-label="Föregående träff"
-                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
-              >
-                <ArrowUp className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => hoppaSok(1)}
-                disabled={sokTräffar.length === 0}
-                title="Nästa träff (Enter)"
-                aria-label="Nästa träff"
-                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
-              >
-                <ArrowDown className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => {
-                  setSokOppen(false);
-                  setSokFras("");
-                }}
-                title="Stäng sök (Esc)"
-                aria-label="Stäng sök"
-                className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
-              >
-                <X className="h-4 w-4" />
-              </button>
+            <div className="mx-auto w-full max-w-3xl px-3 py-2 sm:px-4">
+              <div className="flex items-center gap-1.5">
+                <Search className="h-4 w-4 shrink-0 text-[#8B949E]" />
+                <input
+                  ref={sokInputRef}
+                  value={sokFras}
+                  onChange={(e) => setSokFras(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      hoppaSok(e.shiftKey ? -1 : 1);
+                    } else if (e.altKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+                      // P3: tur-hopp utan mus — Alt+↑/↓ medan raden är öppen.
+                      e.preventDefault();
+                      hoppaTur(e.key === "ArrowUp" ? -1 : 1);
+                    }
+                  }}
+                  placeholder="Sök i chatten…"
+                  maxLength={120}
+                  className="min-h-9 min-w-0 flex-1 rounded-md border border-[#30363D] bg-[#161B22] px-3 py-1.5 text-sm text-[#E6EDF3] outline-none placeholder:text-[#484F58] focus:border-[#58A6FF]"
+                />
+                <span className="shrink-0 font-mono text-[11px] tabular-nums text-[#8B949E]" aria-live="polite">
+                  {sokFras.trim()
+                    ? sokTräffar.length > 0
+                      ? `${Math.min(sokIndex, sokTräffar.length - 1) + 1}/${sokTräffar.length}`
+                      : "0 träffar"
+                    : ""}
+                </span>
+                <button
+                  onClick={() => hoppaSok(-1)}
+                  disabled={sokTräffar.length === 0}
+                  title="Föregående träff (Skift+Enter)"
+                  aria-label="Föregående träff"
+                  className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
+                >
+                  <ArrowUp className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => hoppaSok(1)}
+                  disabled={sokTräffar.length === 0}
+                  title="Nästa träff (Enter)"
+                  aria-label="Nästa träff"
+                  className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
+                >
+                  <ArrowDown className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => {
+                    setSokOppen(false);
+                    setSokFras("");
+                    setTurPos(null);
+                  }}
+                  title="Stäng sök och tur-navigering (Esc)"
+                  aria-label="Stäng sök"
+                  className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              {/* P3: tur-raden — hopp mellan turer (assistant-meddelandenas
+                  start). Chevroner ≠ pilarna ovan: träffar = finkornigt,
+                  turer = grövre navigation i långa transkript. */}
+              <div className="mt-1.5 flex items-center gap-1.5 border-t border-[#21262D] pt-1.5">
+                <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                  Turer
+                </span>
+                <span
+                  className="shrink-0 font-mono text-[11px] tabular-nums text-[#8B949E]"
+                  aria-live="polite"
+                  title={turAntal === 0 ? "Inga svar att hoppa mellan ännu" : `Tur ${turVisad} av ${turAntal} — hoppet landar vid svarets början`}
+                >
+                  {turAntal === 0 ? "0" : `${turVisad}/${turAntal}`}
+                </span>
+                <div className="ml-auto flex items-center gap-1.5">
+                  <button
+                    onClick={() => hoppaTur(-1)}
+                    disabled={turAntal === 0 || turVisad <= 1}
+                    title="Föregående tur — hoppa till föregående svar (Alt+↑)"
+                    aria-label="Föregående tur"
+                    className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
+                  >
+                    <ChevronUp className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => hoppaTur(1)}
+                    disabled={turAntal === 0 || turVisad >= turAntal}
+                    title="Nästa tur — hoppa till nästa svar (Alt+↓)"
+                    aria-label="Nästa tur"
+                    className="flex h-[52px] w-11 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-9 sm:w-9 disabled:opacity-40"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -11625,13 +11727,13 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   setMenyOppen(false);
                   setSokOppen(true);
                 }}
-                title="Sök i chatten (highlight + pilnavigering)"
+                title="Sök i chatten + hopp mellan turer (Ctrl/Cmd+Shift+F)"
                 className="flex min-h-14 w-full items-center gap-3.5 rounded-md px-3 py-2.5 text-left transition-colors hover:bg-[#161B22]"
               >
                 <Search className="h-5 w-5 shrink-0 text-[#8B949E]" />
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-medium text-[#E6EDF3]">Sök i chatten</span>
-                  <span className="mt-0.5 block leading-snug text-[11px] text-[#8B949E]">highlight + pilnavigering</span>
+                  <span className="mt-0.5 block leading-snug text-[11px] text-[#8B949E]">highlight + pilnavigering + tur-hopp</span>
                 </span>
                 <ChevronRight className="h-4 w-4 shrink-0 text-[#484F58]" />
               </button>
@@ -12256,8 +12358,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     ["Enter", "Skicka prompten till agenten"],
                     ["Skift+Enter", "Ny rad i skrivfältet (flerradsprompt)"],
                     ["Ctrl/Cmd+K", "Kommandopaletten — sök kommandon och modellbyten"],
+                    ["Ctrl/Cmd+Shift+F", "Sök i chatten + hopp mellan turer (Esc stänger)"],
                     ["/", "Kommandomenyn i skrivfältet (snabbkommandon med autocomplete)"],
                     ["↑", "Föregående prompt ur historiken (i tomt skrivfält); ↑/↓ navigerar även palett och sök"],
+                    ["Alt+↑/↓", "Föregående/nästa TUR när sökraden är öppen"],
                     ["?", "Denna genvägsöversikt"],
                     ["Esc", "Stäng palett, sök, paneler och dialoger"],
                   ] as const

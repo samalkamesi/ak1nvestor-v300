@@ -133,6 +133,8 @@ Contabo-disk; nätverksöverföring till ny VPS tillkommer i verklig katastrof).
 4. **Cron för server-side arkivering** (F8) — tills dess är manuell kur:
    se §4:s kommandon.
 
+**Kollision bevis nr 4 (dokumenterad i worklog):** ett syskons checkout/restore raderade verktygskurerna ur arbetsytan EFTER denna protokollsektions Edits men FÖRE commit — kurena omlevererades i EN Write och låstes i commit 55ddba50 (diff-mot-HEAD tom, node --check GRÖN).
+
 ## 7. KVD & STÄDNING
 
 - `node --check` på kurerat verktyg: GRÖN · `node node_modules/typescript/

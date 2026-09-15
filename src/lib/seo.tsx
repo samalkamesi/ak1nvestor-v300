@@ -781,16 +781,16 @@ export function buildLlmsTxt(): string {
   L.push("## Dataset — branschmedianer");
   L.push("");
   L.push(
-    `AK1A:s publika dataset: median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur det fasta 100-bolagsuniversumet (10 branscher × 10 bolag, rådata ${medianer.hamtat ?? "—"}). Observationsantal (n) redovisas per nyckeltal. Varje branschsida redovisar dessutom kvartilspridningen (P25–P75) per nyckeltal och jämför branschens medianer med hela universumets medianer. Pedagogisk referens — inte investeringsrådgivning.`
+    `AK1A:s publika dataset: median P/E, P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch, räknat ur det fasta universumet på ${medianer.totalt.nBolag} bolag i ${medianer.rader.length} branscher (rådata ${medianer.hamtat ?? "—"}). Observationsantal (n) redovisas per nyckeltal. Varje branschsida redovisar dessutom kvartilspridningen (P25–P75) per nyckeltal och jämför branschens medianer med hela universumets medianer. Under varje bransch finns dessutom aspektsidor — ett nyckeltal per sida (P/E, P/B, ROE, ROIC, EV/EBIT, PEG, marginaler, tillväxt m.fl.) — där varje sida redovisar median, kvartiler och spridning för branschen samt samma mått för hela universumet som jämförelserad. Pedagogisk referens — inte investeringsrådgivning.`
   );
   L.push("");
   L.push(
-    `- [Dataset — branschmedianer](${SITE_URL}/dataset): Median P/E per bransch i AK1A:s 100-bolagsuniversum (10 × 10, rådata ${medianer.hamtat ?? "—"}) — totalt median P/E ${svTal(medianer.totalt.medianPe)} (n=${medianer.totalt.nMedPe} av ${medianer.totalt.nBolag} bolag med mätt P/E). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch.`
+    `- [Dataset — branschmedianer](${SITE_URL}/dataset): Median P/E per bransch i AK1A:s universum (${medianer.totalt.nBolag} bolag i ${medianer.rader.length} branscher, rådata ${medianer.hamtat ?? "—"}) — totalt median P/E ${svTal(medianer.totalt.medianPe)} (n=${medianer.totalt.nMedPe} av ${medianer.totalt.nBolag} bolag med mätt P/E). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch.`
   );
   for (const r of medianer.rader) {
     const namn = branschNamn("sv", r.bransch);
     L.push(
-      `- [Dataset ${namn} — branschmedianer](${SITE_URL}/dataset/${r.bransch}): Medianerna för ${namn} i AK1A:s 100-bolagsuniversum (rådata ${medianer.hamtat ?? "—"}): P/E ${svTal(r.medianPe)} med kvartilspridning P25–P75 ${svTal(r.p25Pe)}–${svTal(r.p75Pe)} (n=${r.nPe}) · P/B ${svTal(r.medianPb)} · EBIT-marginal ${svTal(r.medianEbitMarginal)} % · FCF-marginal ${svTal(r.medianFcfMarginal)} % · omsättningstillväxt ${svTal(r.medianTillvaxt)} %. Jämförd med universumet: median P/E ${svTal(medianer.totalt.medianPe)} för samtliga ${medianer.totalt.nBolag} bolag.`
+      `- [Dataset ${namn} — branschmedianer](${SITE_URL}/dataset/${r.bransch}): Medianerna för ${namn} i AK1A:s universum (${r.antalBolag} bolag i branschen, rådata ${medianer.hamtat ?? "—"}): P/E ${svTal(r.medianPe)} med kvartilspridning P25–P75 ${svTal(r.p25Pe)}–${svTal(r.p75Pe)} (n=${r.nPe}) · P/B ${svTal(r.medianPb)} · EBIT-marginal ${svTal(r.medianEbitMarginal)} % · FCF-marginal ${svTal(r.medianFcfMarginal)} % · omsättningstillväxt ${svTal(r.medianTillvaxt)} %. Jämförd med universumet: median P/E ${svTal(medianer.totalt.medianPe)} för samtliga ${medianer.totalt.nBolag} bolag.`
     );
   }
   L.push("");

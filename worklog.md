@@ -11291,3 +11291,41 @@ Slutläge verifierat i HEAD: 120 bolag, giltig JSON, llms = universum =
 HEAD. Kur-not åt huvudagenten oförändrad: löpande commit mellan filer
 stoppar ej detta racemönster — index-lås/katalogsekvensiering kvarstår
 som enda fulla kur (race 4-8 i spårfamiljen). [fabrik]
+
+
+## SPÅR 2 s2-u2 (omgång 4) — 2026-09-16: DATASET-DJUP — Amazon + BHP: universumets två tunnaste branscher +2 citeringsmagneter; BHP-racet med s2-u3: identisk data, EN rad [fabrik]
+
+Leverans: data/forskning/S2-U2-AMAZON-BHP-UTOKNING-OMG4.md + 2 bolagsrader
+(AMZN teknik, BHP material) i bolagsunivers.json (commit 9839c530) +
+llms.txt dataset-block på 120-läget. Val: teknik + material = tunnaste
+branscherna (10 st); AMZN = en av världens mest citerade bolag, saknades
+helt; BHP = världens största gruvbolag. All data live-hämtad stockanalysis.com
+(översikt+statistics+financials, S&P-underlag, close 2026-09-15): AMZN
+248,42 USD/2 680 mdr, P/E 20,39 (fwd 27,37 ⇒ prognosTillväxt −25,5 % via
+TTE-konventionen — TTM-vinsten 135,3 mdr +91,6 % bär tillfälliga poster,
+forward normaliserar; källans 3-årsprognos +8,7 %), PEG NULL enligt
+negativ-regeln, resultatCAGR NULL (negativt startvärde 2022:
+Rivian-nedskrivningar, BAS.DE-precedensen), FCF −11,6 mdr (OCF 161,4 −
+capex 173,0 = AI-programmet) ⇒ negativa fcf-fält dokumenterade; BHP
+84,77 USD/214,78 mdr, P/E 21,84 (fwd 16,72 ⇒ +30,6 %), PEG 0,71
+spårkonvention, räkenskapsår juli–juni FY2023–FY2026 (FY2026 rapporterad
+2026-08-18), utdelning 4,02 % payout 89,9 % cykel-not. Derivat
+maskinberäknade i append-skriptet. MEDIANER (projektets EGEN
+raknaBranschMedianer, isolerat 115→117): teknik 31,8→28,0 (Amazon drar
+ned 3,8 p; kvartiler 20,7–37,8→19,4–37,6, n→11), material 18,5→18,7
+(BHP lyfter; 14,1–19,4→14,5–20,3, n→10), totalt 20,2→20,4 (n 106→108);
+disk-läget 120: teknik 27,9 n=12, material 18,8 n=11, totalt 20,5 n=111.
+KOORDINERING race 8 i spårfamiljen, fullständigt dokumenterat i
+protokollet: disk rörde sig 116→119 under mitt datafönster (syskonens
+BAS.DE/TSM/MELI ocommittade i arbetsytan) — min commit tog arbetskopian =
+5 nya rader varav 3 syskonägarda (precedens s2-u3 omg3); BHP DOBBELT-VALT
+av mig och s2-u3 omg4 — identisk källa/dag/tal (P/E 21,84, fwd 16,72,
+PEG 0,71, FY2023–2026) och idempotensguarderna gav EXAKT EN rad (raden bär
+mitt kallor-block; deras committext bär samma data) = de-facto-samarbete
+med oberoende dubbelverifiering; sekvens 9839c530 (min) → 43d6a4f3 (deras,
+llms 119) → min llms-regen ⇒ 120 = llms = universum = HEAD, kedjan
+själv-läker. KVD: kontraktstest GRÖNT 163 sidkontroller 0 fel (162→163 =
+MELI:s aspektsida, s2-u3:s notis); läckagevakt GRÖN 0 träffar 120
+tickers+namn i 1 426 utdatafiler; tsc 0 fel (projektbinär); prod 200 ×3
+(/ · /dataset · /api/data/nyckeltalsguide). Endast data/ + public/llms.txt
+= inget bygge; src/ orörd; R2 orörd; data/blogg/ orörd. [fabrik]

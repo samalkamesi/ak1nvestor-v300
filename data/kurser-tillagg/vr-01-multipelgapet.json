@@ -1,0 +1,156 @@
+{
+  "slug": "vr-01-multipelgapet",
+  "category": "VÄRDERING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Multipelgapet — varför lika bolag handlas olika",
+  "summary": "Den avancerade läsningen av multipler: vad som driver skillnaden mellan två till förnuget lika bolag — tillväxt, kapitalåterkomst, ränta och risk — och hur multiplens kretslopp vänds till analys.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Avancerad",
+  "learn": "Förstå multiplens tre huvuddrivkrafter: tillväxt, kapitalåterkomst och risk · Räkna på räntans inverkan på berättigade multipler — diskonteringsmekaniken bakom P/E och P/B · Jämföra multipler kontrollräknat: justera för tillväxt, skuldsättning och engångsposter · Förstå multiplens kretslopp: expansion och kompression, och medelvärdesåtergångens statistik · Känna fällorna: tvärbranschjämförelser och strukturellt fallande vinstbas · Läsa multiplen som förväntansmätare — broarna till reverse DCF (km-028) och PEG (km-027).",
+  "why": "Grundkurserna i värdering lär ut vad en multipel ÄR — denna kurs lär ut varför den står där den står. Två bolag med samma vinst per aktie kan handlas till 15 och 30 i P/E, och skillnaden är inte marknadens nyck — den är i högsta grad mätbar: tillväxttakten, kapitalåterkomsten, ränteläget och risken prissätts alla in i multipeln. Den som kan läsa multipelgapet kan skilja ett billigt bolag från ett bolag som är billigt av skäl; den som inte kan det jämför tal utan enheter. Detta är kategorins avancerade trappsteg — bryggan mellan multiplerna (v04–v06) och värderingsmetodernas djupare verktyg.",
+  "history": {
+    "origin": "Frågan varför lika tillgångar prissätts olika är så gammal som värderingslärnan själv — men dess moderna formulering kom med kapitalprisningsmodellerna: när Sharpe och andra på 1960-talet gav risken en prislapp blev det tydligt att multipler inte är estetik utan sammanvägda antaganden om framtida kassaflöden, deras tillväxt och deras osäkerhet.",
+    "evolution": "1980- och 90-talens diskonteringskulturer tog steget fullt ut: multiplerna omformulerades som förenklade DCF-uttryck — en P/E är i sin kärna en sammanfattning av en hel kassaflödesmodell i ett enda tal. Mauboussin-traditionen och Expectations Investing (Rappaport & Mauboussin, 2001) vände på steken: i stället för att räkna fram ett värde läste man MARKNADENS multipel baklänges till de förväntningar den innehåller — och frågade sig om de är rimliga. Multiplens kretslopp — expansion och kompression kring konjunktur och ränta — dokumenterades empiriskt i samma era.",
+    "modern": "I dag är multipelgapläsningen en rutindisciplin i institutionell analys: cross-sectional regressioner kontrollerar multipler för tillväxt, avkastning och skuldsättning — vad som återstår är avvikelsen att förklara. För den avancerade privatläsaren handlar det om samma hantverk i mindre skala: räkna om två multipler tills de jämförs på lika villkor, skilj struktur från konjunktur, och läs förändringen i en multipel över tid som en förändring i förväntningar — inte som en förändring i värde. Kursen fördjupar v04–v06 och banar väg för värderingsmetodernas reverse DCF (km-028)."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — multiplens tre drivkrafter",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Räntans roll — diskonteringsmekaniken",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — att jämföra kontrollräknat",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Multipelns kretslopp — expansion och kompression",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — multiplen som förväntansmätare",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — multiplens tre drivkrafter",
+      "intro": "En multipel är inte ett omdöme utan en sammanfattning — tre krafter står bakom varje siffra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Drivkraft ett är tillväxten: ett bolag vars vinst växer snabbare är värd mer per dagens vinstkrona — dess framtid innehåller fler och större kronor att dela ut eller återinvestera. Drivkraft två är kapitalåterkomsten: ett bolag som återinvesterar till hög avkastning kan växa värdeskapande — tillväxt finansierad av ROE över kapitalkostnaden är värdeskapande, samma tillväxt under kapitalkostnaden är värdeförstörande. DuPont-analysen (ln-01) och P/B-relationen (v05) fångar denna kraft: P/B och P/E hänger ihop via ROE — ett bolag som tjänar dubbelt så mycket på sitt bokförda kapital förtjänar i grunden en högre multipel på båda planen.\n\nDrivkraft tre är risken: osäkerheten i kassaflödena och balansräkningens robusthet. Två bolag med identiska tillväxtkurvor men olika skuldsättning förtjänar inte samma multipel — skulden förstärker utfallet åt båda håll och höjer kapitalkostnaden. Ur de tre krafterna följer kursens huvudtes: multipelgapet mellan två bolag är sällan godtycke — det är en prissättning av skillnader i tillväxt, återkomst och risk. Uppgiften för den avancerade läsaren är att räkna EFTER gapet: stämmer priset på skillnaden? Ett gap som förklarar en verklig skillnad är rationellt; ett gap utan förklaring är fråga värd att stava ut."
+        },
+        {
+          "type": "definition",
+          "content": "Multipelgap: Skillnaden i värderingsmultipel (t.ex. P/E eller EV/EBIT) mellan två bolag eller mot ett snitt — i grunden en sammanvägning av skillnader i förväntad tillväxt, kapitalåterkomst och risk. Kapitalåterkomst: Avkastningen bolaget skapar på återinvesterat kapital, relationen till kapitalkostnaden avgör om tillväxt skapar värde."
+        },
+        {
+          "type": "insight",
+          "content": "Frågan är aldrig om multipeln är hög eller låg — utan vad den prissätter. Gapet är en påståendesats; analysen är att pröva den."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Räntans roll — diskonteringsmekaniken",
+      "intro": "Räntan är multiplernas gemensamma tyngdlag — och dess verkan är störst hos de långsamt växande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Alla multipler är förenklade diskonteringsuttryck: nutiden av framtida kassaflöden. En enkel modell — Grahams förenklade divisionsform i släkt med Gordons tillväxtmodell — visar mekanismen i ren aritmetik. Antag ett bolag med utdelning som växer med 4 procent om året och kräver 6 procents avkastning: värdet per aktie blir utdelningen delat med skillnaden — 0,06 minus 0,04 — alltså femtio gånger utdelningen. Stiger kravet till 7 procent blir nämnaren 0,03 och värdet trettiotre gånger: en enda procents ränteförändring pressar den berättigade multipeln med en tredjedel, utan att bolaget förändrats en millimeter.\n\nTre lärdomar följer. Den första: multipelns räntkänslighet växer med längden på bolagets kassaflödesprofil — ju mer av värdet som ligger långt fram i tiden (tillväxtbolag, infrastruktur, varaktiga moats), desto hårdare slår ränteförändringar. Den andra: räntans nivå är en del av marknadens samlade multipelnivå — hela marknaden kan därför bli billigare och dyrare i multipel utan att ett enda bolag förändras. Den tredje, den viktigaste: jämförelser mellan multipeln idag och för tio år sedan är meningslösa utan räntekontexten — en multipel som var dyr vid nollränta kan vara rimlig vid hög ränta. WACC-kursen (km-008) bygger diskonteringsmekaniken i full längd; här används den som multiplernas förklaringsmotor."
+        },
+        {
+          "type": "insight",
+          "content": "Räntan är multiplernas gemensamma grundvatten — när den stiger sjunker alla bryggor, men de längst först."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — att jämföra kontrollräknat",
+      "intro": "Den hantverksmässiga kärnan: räkna om två multipler tills de jämförs på lika villkor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett arbetsexempel. Bolag A handlas till P/E 20, Bolag B till P/E 13 — B ser billigare ut. Kontrollräkningen börjar med tre justeringar. Först engångsposterna: innehåller B:s vinst en engångsvinst — en såld division, en skatteeffekt — är den underliggande multipeln högre än 13; justera basen tills den speglar löpande verksamhet. Sedan tillväxten: växer A:s vinst 12 procent om året och B:s 3 procent är A:s multipel delvis en tillväxtprissättning — PEG-logikens territorium (km-027): 20 delat med 12 är 1,7, 13 delat med 3 är 4,3 — och plötsligt är det A som ser billigare mot sin tillväxt. Till sist skulden: bär B högre nettoskuld bör EV-multiplerna (v06) räknas fram för båda — P/E straffar inte skuld, EV/EBIT gör det, så gapet kan vända tecken vid växling av mått.\n\nArbetsschemat blir en checklista: (1) rensa basen för engångsposter, (2) räkna samma multipel för båda, (3) räkna minst två multipler — en vinstbaserad och en kapitalbaserad — för att skulden ska synas, (4) notera tillväxt- och ROE-skillnaderna som förklaringskandidater. Först därefter återstår ett gap att förklara — och ofta är det då mindre än det såg ut. Institutionell analys löser samma uppgift med regressioner över hundratals bolag; privatläsaren gör den för hand med två — principen är densamma: jämförelse utan kontroll är inte analys utan intryck."
+        },
+        {
+          "type": "insight",
+          "content": "En multipeljämförelse utan justeringar är en åsikt med decimaler — kontrollräkningen är skillnaden mellan de två."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Multipelns kretslopp — expansion och kompression",
+      "intro": "Multipler andas med konjunktur och ränta — expansion och kompression följer varandra i mönster.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En multipels historia är sällan en rak linje — den rör sig i band mellan regioner. I optimismens perioder expanderar multiplerna: marknaden betalar mer per vinstkrona eftersom tillväxtförväntningarna stiger och riskpremierna sjunker. I misstroens perioder komprimeras de: samma vinstkrona prissätts lägre. Rörelsen har en statistisk grundval som är värd att känna — medelvärdesåtergång: extrema multiplernivåer har historiskt tenderat att återvända mot sina långsiktiga band, inte för att någon lag tvingar dem utan därför att extremerna kräver antaganden (evig supertillväxt, evig stagnation) som verkligheten sällan levererar.\n\nFör läsaren följer två konkreta verktyg. Det första är historiskt band: var handlas denna aktie, denna bransch, denna börs i multipel historiskt — P10 till P90 — och var står den idag? En multipel i absoluta toppen av bandet bär frågan: vilka antaganden gör att den förtjänar ligga där? Det andra är cykelskäljning: för cykliska bolag sjunker P/E när vinsten närmar sig cykeltoppen (basen är uppblåst) och stiger i botten — P/E-fällan som industri- och branschguiderna tar på allvar. Multipelns kretslopp är därmed inte en marknadstiming-apparat utan en kontextmaskin: den som vet var i bandet en multipel står vet också vilken fråga den bär — och multipelns förändring över tid blir läsbar som förändring i förväntningar, skilt från förändring i värde."
+        },
+        {
+          "type": "insight",
+          "content": "En multipel utan historiskt band är en siffra utan skala — bandet är det som gör dagens tal till en position."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Multipelläran har fyra klassiska fällor — var och en med sin motkur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fälla ett: tvärbranschjämförelsen. En bank och ett teknikkonglomerat kan båda visa P/E 14, men deras multipler mäter olika verkligheter — vinstens kvalitet, balansräkningens roll och cykelns fas skiljer sig så mycket att jämförelsen bär mer brus än signal. Motkuren: jämför inom bransch och justera därefter (kapitel tre), eller avstå. Fälla två: den fallande vinstbasen. Ett bolag vars vinst strukturellt eroderar kan se billigt ut på framtida multipler — låg P/E på en vinst som aldrig infaller är ingen rabatt. Motkuren: kontrollera vinstens bärighet — är basen cykel, engångshöjd eller trend? Kursen om resultattaktens kvalitet (tx-01) och stabilitetsfamiljen (v10–v12) bär frågan.\n\nFälla tre: att förväxla multipel med värde. Ett bolag kan gå från P/E 30 till P/E 20 utan att bli billigare — om vinsten samtidigt halverats är värderingen oförändrad eller dyrare. Motkuren: läs alltid multipel och bas tillsammans, helst över flera år. Fälla fyra, den subtilaste: att tro att medelvärdesåtergång är ett löfte. Multipler återvänder mot band i historien — men banden själva kan förflyttas av räntelägen, struktur och ägarbild. Den som agerar som om dagens band är en naturlag har bytt statistik mot tro. Kursens hållning genom alla fyra: multiplen är en början på en analys — aldrig dess slut."
+        },
+        {
+          "type": "insight",
+          "content": "Billig multipel och billigt bolag är två olika påståenden — det ena mäter priset mot en bas, det andra priset mot ett värde."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — multiplen som förväntansmätare",
+      "intro": "Det mogna slutsteget vänder på räkningen: vad säger marknadens multipel att den förväntar sig?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Traditionell värdering räknar fram ett värde och jämför med priset. Expectations-tänkandet — Rappaport och Mauboussins formulering — börjar i andra änden: marknadens multipel LÄSES baklänges till de antaganden den innehåller. Ett bolag till P/E 30 med 5 procents tillväxt bär en påståendesats: att tillväxten, kapitalåterkomsten eller båda kommer att överträffa det synliga — annars förtjänar inte multipeln sin nivå. Frågan blir då inte är multipeln hög? utan vilka antaganden krävs för att den ska vara rimlig — och anser jag att verkligheten levererar dem? Reverse DCF-kursen (km-028) är denna vändnings fullständiga verktyg.\n\nHär löper kursens trådar samman till kategorins avancerade slutpunkt: multiplerna (v04 P/S, v05 P/B, v06 EV/EBITDA) är råmått; kontrollräkningen (kapitel tre) gör dem jämförbara; kretsloppet (kapitel fyra) ger dem kontext; förväntningsläsningen ger dem riktning — från pris till antagande till bedömning. I AKM1:s ram lever denna läsning i värderingsdimensionen, där multipelgap mot branschmedian är en av modulerna: avvikelsen själv är information, och den som kan läsa den vet att marknadens fråga alltid står skriven i dess priser. Att svara på den — med arbete, inte med tycke — är värderingshantverkets kärna."
+        },
+        {
+          "type": "insight",
+          "content": "Marknadens multipel är en skriven påståendesats om framtiden — analystens uppgift är att läsa den, pröva den och avgöra om signaturen håller."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch varnade i One Up on Wall Street för att förväxla snabb växt med god växt — hans PEG-tänkande (pris mot tillväxt) var en tidig multipelgap-lära: multiplicen måste sättas i relation till tillväxttakten för att betyda något. Lynch-tänkandets poäng lever i denna kurs trappsteg: en multipel som ser dyr ut kan vara billig mot sin tillväxt, och omvänt — och den som jämför multipler utan att justera för det jämför inte värden utan klädstorlekar.",
+  "grahamSection": "Benjamin Graham formulerade i The Intelligent Investor sin berömda divisionsformel — värdet som ungefär tillväxt multiplicerat med en faktor, delat med räntan — redan som en medveten förenkling av diskonteringen, och hans varning var tydlig: formeln är ett tankeredskap, inte en sanningsmaskin. Grahams säkerhetsmarginal ställer sig på samma sätt till multiplerna: de är utgångspunkter för analys, aldrig dess ersättning. Att han själv föreslog att justera formeln efter räntans nivå — hans egen omräkning vid höga räntor — gör honom till en av multipelgapläsningens tidigaste lärare.",
+  "ak1Section": "I AK1A:s metodik är denna kurs VÄRDERING-kategorins avancerade trappsteg ovanpå v04 (P/S), v05 (P/B) och v06 (EV/EBITDA): multipelgapet mot branschmedian är en av AKM1:s värderingsmoduler, och broarna går till PEG (km-027), WACC (km-008) och reverse DCF (km-028) för den baklängesvända förväntningsläsningen. Cykel-, stabilitets- och tillväxtfamiljerna (v10–v12, tx-01) bär frågorna om vinstbasens bärighet som multiplarnas jämförelseunderlag."
+}

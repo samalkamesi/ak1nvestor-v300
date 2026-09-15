@@ -1651,6 +1651,21 @@ export interface StudioTransport {
    * framtida C-block (C2 events-action, C4 e2e).
    */
   lasEventsFranSeq(sessionId: string, franSeq?: number, tak?: number): Promise<StudioEventsSvar | null>;
+  /**
+   * GAP-REGISTER POST 24 (V8/A2 — högst V/K-kvot av de öppna):
+   * v4/conversation/usage {sessionId} (V4-LAGRET §2 #13) → per-session
+   * token-räkning — GRATIS kostnadsobservabilitet utan egna mätare.
+   * Mappning enligt lagrets schema: totalTokensIn ← inputTokens,
+   * totalTokensOut ← outputTokens, requestCount ← modelRequestCount;
+   * rått bär protokollets opaka svar. Fel-tolerant: TOMT objekt vid fel
+   * (ALDRIG kast — kostnadsobservabilitet är lyx, inte ett fel).
+   */
+  lasV4Anvandning(): Promise<{
+    totalTokensIn?: number;
+    totalTokensOut?: number;
+    requestCount?: number;
+    rått?: unknown;
+  }>;
 }
 
 // ── NDJSON-protokollklient (app-server) ──────────────────────────────────────
@@ -5338,6 +5353,48 @@ class AppServerTransport implements StudioTransport {
     };
   }
 
+  // ── GAP-REGISTER POST 24 (V8/A2): v4/conversation/usage — gratis
+  // kostnadsobservabilitet för den LEVANDE sessionen ──────────────────────
+
+  /**
+   * v4/conversation/usage {sessionId} (V4-LAGRET §2 #13) → per-session
+   * token-räkning {totalTokens, inputTokens, outputTokens, reasoningTokens,
+   * cacheCreationTokens, cacheReadTokens, modelRequestCount, …}. Anropar
+   * protokollFraga med DEN LEVANDE sessionens id (this.sid) — skapar ALDRIG
+   * en session bara för att läsa usage (lasUsage-mönstret): utan levande
+   * session ⇒ ärligt tomt objekt. Fel-tolerant: tomt objekt vid fel.
+   */
+  async lasV4Anvandning(): Promise<{
+    totalTokensIn?: number;
+    totalTokensOut?: number;
+    requestCount?: number;
+    rått?: unknown;
+  }> {
+    if (!this.sid) return {}; // ingen levande session ⇒ inget att rapportera
+    try {
+      const klient = this.klientForLasning();
+      const svar = (await klient.protokollFraga(
+        "v4/conversation/usage",
+        { sessionId: this.sid },
+        15_000,
+      )) as Record<string, unknown> | null;
+      if (!svar || typeof svar !== "object" || Array.isArray(svar)) return {};
+      const num = (v: unknown): number | undefined =>
+        typeof v === "number" && Number.isFinite(v) ? v : undefined;
+      const totalTokensIn = num(svar.inputTokens);
+      const totalTokensOut = num(svar.outputTokens);
+      const requestCount = num(svar.modelRequestCount);
+      return {
+        ...(totalTokensIn !== undefined ? { totalTokensIn } : {}),
+        ...(totalTokensOut !== undefined ? { totalTokensOut } : {}),
+        ...(requestCount !== undefined ? { requestCount } : {}),
+        rått: svar,
+      };
+    } catch {
+      return {}; // fel-tolerant: tomt objekt vid fel — ALDRIG kast
+    }
+  }
+
   // ── V83 MEGA B1: filändringar (diff-panelens datakälla) ─────────────────
 
   async lasFilandringar(): Promise<StudioFilandring[]> {
@@ -7860,6 +7917,36 @@ class MockTransport implements StudioTransport {
       modeller,
       totalTokens24h: idag,
       kalla24h: "dagsrad",
+    };
+  }
+
+  // ── GAP 24 (V8/A2) (mock): v4/conversation/usage — deterministisk ──────
+
+  async lasV4Anvandning(): Promise<{
+    totalTokensIn?: number;
+    totalTokensOut?: number;
+    requestCount?: number;
+    rått?: unknown;
+  }> {
+    await this.ensure();
+    // Speglar V4-LAGRET §2 #13:s svarform (inputTokens/outputTokens/
+    // modelRequestCount + cachingfält) med tydligt mock-märkt källa och
+    // fasta siffror >0 — dev-E2E utan barnprocess; prod bär de ärliga.
+    return {
+      totalTokensIn: 131_072,
+      totalTokensOut: 16_384,
+      requestCount: 42,
+      rått: {
+        sessionId: this.sessionId(),
+        totalTokens: 147_456,
+        inputTokens: 131_072,
+        outputTokens: 16_384,
+        reasoningTokens: 4_096,
+        cacheCreationTokens: 8_192,
+        cacheReadTokens: 65_536,
+        modelRequestCount: 42,
+        source: "mock",
+      },
     };
   }
 

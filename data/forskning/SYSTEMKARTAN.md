@@ -180,6 +180,37 @@ Dispatch-kö från fynden: (1) **testa-dataset-aspekter.mjs-reparation**
 (2) kvartals-H3-src (/kvartalsdata) har nu färdigt underlag: A4-kontraktet +
 V152-kartan + 13 Kön-filer.
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u1:4 — A3 AI-Mentorn diffad mot verkligheten)
+
+Fjärde dokvågen (efter u1: E35 · u3: A1/E27/E29 · u2: E30/E37 · u2:2: C15/C16
+· u3 omgång 2: C17/C18/E32). A3 valdes mot duplikat: ingen tidigare dokvåg har
+rört det, och våg 158 + spår 6:s fabriksomgångar byggde om mentorn grundligt
+samma dag. Varje rad MÄTT i arbetsytan 2026-09-15 (svitkörningar, grep, wc,
+git log) — inte läst ur worklog:
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| Tester | "ingen test" (gap 2) | **8 sviter, ALLA gröna (mätta nu, samtliga exit 0)**: svars­lagren 26+22+19+33+17+21+26 = **164 PASS / 0 FAIL** + modellagret **38 kontroller** (testa-mentor-modell.mjs: ruttlogik med mock-kakor, felväg 503, dagstak 429, rollback) — rond 37:s "83-testbevis" var mellanläget; tre sviter tillkom efteråt (u2 22, spar6 33, omg2 26, commit 07bc086e "svit 164/164") |
+| Frågenivå | 15 kanoniska förhandsfrågor | **31 deterministiska mönster i 4 lager** (bas 23 + extra 3 + makro 2 + nästa 3, grep-räknat i src/lib/ai-mentor-*.ts) — kedja `makro ?? extra ?? bas ?? nästa` i chat-widget.tsx:740; nya ämnen: DCF-inre värde, investmentbolags-NAV, options, ränta, inflation, kapitalstruktur, organisk vs förvärvad tillväxt, rapportläsning, nyckeltal m.fl. |
+| Kursregister | "läser ÄKTA data (getCourses)" | **ai-mentor-register.ts (492 r) med maskinbevisad äkthet**: E01 registeräkthet — 343 kurser FÄLT-FÖR-FÄLT identiska med getCourses()-källan (PASS, mätt); --baka-verktyget bakar om registret vid kurstillägg |
+| Juridikgrind | "kodad i rutten" (overifierad) | **MASKINTESTAD**: 0 rådsfraser i svars­lagren (G01- och I-tester PASS — ren utbildningsformulering, lagen 2007:528) |
+| Determinism | ej omnämnd | **bevisad**: 20 frågor × 2 körningar bitidentiska (D01 PASS); svars­lagren kostar 0 API-anrop |
+| Källmärkning | ej omnämnd | källrad + kurslänkar per svar, länkarna verifieras ÄKTA mot registret (F-tester PASS i tre sviter) |
+| chat-minne gap 3 | "retention/tömning dokumenteras ej" | **MOTBEVISAT**: filhuvudet dokumenterar MAX_TURER 60 + HISTORIK_FÖNSTER 12-bakåtfönster (mätt i src/lib/chat-minne.ts) |
+| H2 gap 1 | "dataset-medianer → mentorsvar overifierad" | **OMSCOPAT**: grundningen skedde via KURSREGISTRET (äkthetsbeviset ovan) + nya modellaget /api/mentor/fraga (143 r: medlemsvakt, generateText, dagstak, rollback); dataset-medianer är fortfarande OKOPPLADE (grep i route/svar/widget: 0 träffar) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A3 | PÅGÅR (H2) 7 → **LEVER 8** | Största gapet ("ingen test") är borta: 164/0 + 38 kontroller mätta nu; determinism, juridikgrind, registeräkthet och källmärkning maskinbevisade; 10X-pelare 9+10 stängda (STUDIO-10X-PROGRAM.md:52). Gamla gapen (2)+(3) motbevisade. Kvar: dataset-koppling, E2E mot levande medlems-API, assistent-panelens egna tester (0 sviter, mätt) |
+
+Sidofix (mätt): kursantalet 337 → **343** — siffror.json bär 343 kurser /
+8 223 quiz / 82 230 XP (uppdaterad 2026-09-15) + registerrebaken 570c51ee
+("337→343") + E01-äkthetstestet; A1/C18/E32:s tal rättade i ÖVERSIKT och
+detaljblocken (förmiddagens dokvågor rättade 333→337 — rebaken kom senare
+samma dag; quiz/XP oförändrade).
+
+Snittscore **7,5** (284 → 285 poäng / 38 system; A3 +1 vid denna dokvåg).
+
 ---
 
 
@@ -187,9 +218,9 @@ V152-kartan + 13 Kön-filer.
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (337 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A1 | Kursplattformen (343 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
 | A2 | Lärvägen + läroplanen | Utbildning | PÅGÅR (H1) | 7 | Ingen egen testsvit; H1-statusrevision ej avslutad |
-| A3 | AI-Mentorn | Utbildning | PÅGÅR (H2) | 7 | H2 2.0 (dataset-grundning) overifierad; ingen test |
+| A3 | AI-Mentorn (4 deterministiska svars­lager + modellager) | Utbildning | LEVER | 8 | 164/0-testbevis (v158, mätt); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbibliotek) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lägg-till-källa) |
@@ -226,8 +257,8 @@ V152-kartan + 13 Kön-filer.
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37 +1 vid
-dokvågarna 2026-09-15; C15+C16 reviderade utan scoreändring; u3 omgång 2
+Snittscore: **7,5/10** (285 poäng / 38 system; E35/E29/E30/E37/A3 +1 vid
+dokvågorna 2026-09-15; C15+C16 reviderade utan scoreändring; u3 omgång 2
 diffade C17/C18/E32 med egna mätbevis utan poängrörelser). Sämst:
 betalning (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 
@@ -242,9 +273,11 @@ betalning (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
 regenererad 2026-09-15 av rakna-siffror efter s5-vågens fyra kurser:
 balansräkning, DuPont, soliditet/räntetäckning + V-spåret 20/20 i
 kurskartan; larvag-synk GRÖN 337=337=337). Score oförändrat — samma
-kontraktsbrott kvarstår i gaplistan.*
+kontraktsbrott kvarstår i gaplistan. Senare samma dag (s9-u1:4-mätning):
+registerrebake 337 → **343 kurser** (siffror.json + commit 570c51ee +
+E01-äkthetstestet) — talen i Vad-raden gäller 343.*
 
-- **Vad:** Plattformens ryggrad: 337 kurser × 3 språk (deep-courses.json,
+- **Vad:** Plattformens ryggrad: 343 kurser × 3 språk (deep-courses.json,
   103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP), 201 analyscase
   (/labb), kurs-access i tre nivåer (gratis-Fas 1 för alltid, 18 Fas 2- och
   24 Fas 3-kurser bakom ansökan), XP/stjärnor per kurssteg.
@@ -281,23 +314,51 @@ kontraktsbrott kvarstår i gaplistan.*
   prioritet kan regressera tyst); (2) H1-statusrevisionen avslutas +
   dokumenteras; (3) lärvägens synlighet på min-sida bekräftas E2E.
 
-## A3. AI-Mentorn — PÅGÅR (H2) — 7/10
+## A3. AI-Mentorn — LEVER — 8/10 *(uppdaterad 2026-09-15)*
 
-- **Vad:** Publik chatt-widget som känner eleven (nivå, XP, platssammanhang),
+*Uppdatering 2026-09-15 (dokvåg s9-u1:4): H2 STÄNGT på maskinbevis — våg 158
++ spår 6:s fabriksomgångar byggde mentorn till FYRA deterministiska svars­lager
+(makro ?? extra ?? bas ?? nästa, chat-widget.tsx:740) + ett medlems-
+modellager. Mätta nu: 164 PASS / 0 FAIL i 7 svars­sviter + 38 kontroller i
+modellsviten (samtliga exit 0), determinism bitidentisk (20 frågor × 2),
+juridikgrind 0 rådsfraser, registeräkthet 343 kurser fält-för-fält, källrad +
+äkta kurslänkar per svar. Gamla gapen (2) och (3) är MOTBEVISADE (NLU-testerna
+körs i sviterna; chat-minnet dokumenterar retentionen i filhuvudet). Läge
+PÅGÅR → LEVER, score 7 → 8 — se diff-tabellen i UPPDATERING-sektionen högt
+upp i filen.*
+
+- **Vad:** Chatt-widget som känner eleven (nivå, XP, platssammanhang),
   redigerar behovet med klarliggande motfråga, ger handlingar och AKM1/
-  AK1TS-referenser — ALDRIG köp/sälj (rådgivningsgrind i kod).
-- **Nyckelfiler:** src/app/api/chatbot/route.ts, src/lib/chatbot-nlu.ts
-  (259 r), src/lib/chat-minne.ts, src/lib/assistent.ts,
-  src/components/ak1a/chat-widget.tsx, assistent-panel.tsx.
-- **Observation:** Rutten läser ÄKTA data (kursregistret via getCourses,
-  blogg, EKOSYSTEM, priser via lasPriserGallande) och har Z.ai-gren +
-  deterministic fallback. Rådgivningsgrind + disclaimer är kodad i rutten.
-  H2 2.0 (grundning i dataset-medianer med AK1A-röst) är delvis infriad —
-  dataset-medianer finns som lib men kopplingen till mentorns svarskällor är
-  ej E2E-verifierad i kod.
-- **GAP:** (1) H2-koppling dataset-medianer → mentorsvar verifieras E2E;
-  (2) ingen test av NLU-reglerna (normalisering, ämnesmatchning, följdfråga);
-  (3) chat-minnets retention/tömning dokumenteras ej.
+  AK1TS-referenser — ALDRIG köp/sälj (rådgivningsgrind kodad OCH
+  maskintestad). Sedan våg 158: 31 deterministiska svars­mönster i fyra lager
+  (makro/extra/bas/nästa — DCF-inre värde, investmentbolags-NAV, options,
+  ränta, inflation, kapitalstruktur, organisk vs förvärvad tillväxt,
+  rapportläsning, nyckeltal, utdelning, lärväg, beteende, skatt ...) +
+  medlemens modellager /api/mentor/fraga (generateText, dagstak 429, felväg
+  503 + fallback, rollback) + Z.ai GLM-läge i den publika rutten — svaren
+  källmärks med kurslänkar ur 343-kursregistret, utan API-kostnad.
+- **Nyckelfiler:** src/lib/ai-mentor-{register (492 r),svar (935 r),
+  extra-fragor (190 r),makro-fragor (208 r),nasta-fragor (263 r)}.ts,
+  src/lib/mentor-svar.ts (199 r), src/app/api/mentor/fraga/route.ts (143 r),
+  src/app/api/chatbot/route.ts (1 750 r, Z.ai-gren + pedagogik-promt),
+  src/lib/chatbot-nlu.ts (259 r), src/lib/chat-minne.ts, src/lib/assistent.ts,
+  src/components/ak1a/{chat-widget (1 269 r),assistent-panel}.tsx,
+  verktyg/testa-ai-mentor{,-u2,-extra,-spar6,-makro,-nasta,-s6u2-omg2}.mjs +
+  testa-mentor-modell.mjs (8 sviter).
+- **Observation:** Testtäckningen är nu bland de bredaste i kodbasen: 164
+  kontroller gröna över svars­lagren (kanoniska/felstavade/omatchade frågor,
+  determinism, registeräkthet, källmärkning, kursläkthet, antistöld mellan
+  lager via kärnordsdisjunktion mot 288 kärnord, juridikgrind) + modellagrets
+  38 kontroller. Registerrebaken vid kurstillägg har eget verktyg
+  (testa-ai-mentor.mjs --baka). Rutten läser ÄKTA data (getCourses, blogg,
+  EKOSYSTEM, lasPriserGallande) med Z.ai-gren + deterministisk fallback.
+- **GAP:** (1) dataset-medianer (H2:s ursprungsidé) förblir okopplade till
+  mentorns svarskällor (grep i route/svar/widget: 0 träffar) — grundningen
+  sker via kursregistret; besluta om kopplingen eller stäng idén; (2) E2E mot
+  LEVANDE medlems-API kräver riktig inloggning (modellsvitens mock-kakor
+  täcker logiken, inte nätverket); (3) felstavs-djupet är 5 kanoniska
+  varianter i bassviten — bredare fuzz saknas; (4) assistent-panelens egna
+  vägar (assistent.ts) har fortfarande 0 testsviter (mätt).
 
 ## A4. Daglig träning — LEVER — 7/10
 
@@ -601,7 +662,7 @@ fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
 0 träffar). Kursantalet i G1-gapet rättat 333 → 337. Score 9 kvar.*
 
 - **Vad:** pageMetadata-centrum (841 r), Course/FAQPage/BreadcrumbList-schema
-  på alla 337 kurser × 3 språk, Dataset-schema, llms.txt + llms-full-txt,
+  på alla 343 kurser × 3 språk, Dataset-schema, llms.txt + llms-full-txt,
   sitemap (inkl. tier-gating), robots (pro-stängning), hreflang-speglar,
   OG-generering vid deploy, sökindex.
 - **Nyckelfiler:** src/lib/seo.tsx (841 r), src/lib/schema-kurser.ts (192 r),
@@ -611,7 +672,7 @@ fortfarande manuellt: deploya-contabo.sh saknar og-generate-kopling (grep
 - **Observation:** testad schema-kurser 444/0 grönt (18 sidor; körd 2026-09-11
   och igen 2026-09-15); G1:s FAQPage ur learn/why-innehåll (inga påhittade
   frågor) lever i kod. Verktygskedja genererar OG + sökindex vid deploy.
-- **GAP:** (1) G1-slutverifiering: full 337×3-maskinell körning + Google
+- **GAP:** (1) G1-slutverifiering: full 343×3-maskinell körning + Google
   rich-results live-test (stickprov gjorda enligt våg 99-dok);
   (2) OG-genereringen är ett manuellt deploy-steg (kan glömmas — hook/
   deploy-skript-koppling); (3) sökindexet (data via kor-sokindex) åldras
@@ -990,7 +1051,7 @@ medan filvägen fortfarande saknar schema-kontroll. Score 8 kvar.*
 
 - **Vad:** Pris- och tal-sanningen: priser.json (ALLA priser + fas-rabatt +
   B2B + onboarding) med Supabase-override senaste-vinner via variabler-
-  lagning; siffror.json (337 kurser, 8 223 quiz ...) genererad av rakna-
+  lagning; siffror.json (343 kurser, 8 223 quiz ...) genererad av rakna-
   siffror; siffror-live (live-räkning ur lagret).
 - **Nyckelfiler:** src/lib/variabler.ts (133 r, fil-default),
   src/lib/variabler-lagring.ts (362 r: lasGallande, modul-cache 5 min,

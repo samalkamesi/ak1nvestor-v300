@@ -288,7 +288,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20 s / 60 tabeller / 1,19 M rader (våg 98 F3) | data/forskning/DR-PROV-2026-09-13.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 17,7 s / 68 tabeller / 1,25 M rader (2026-09-15, kvartalsövning — autonomsudo via agentfabriken) | data/forskning/DR-PROV-2026-09-15.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -311,6 +311,72 @@ EnvironmentFile med chmod 600).
 - F1 ISR-uppvärmare: cron 10 3 * * * bash data/infra/contabo/ak1a-varm.sh
   (versionerad i repot; logg /tmp/ak1a-varm.log; testkörning 12/44 —
   sökvägslistan finslipas).
+
+## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
+
+- Full återställning av natt-dumpen (30,8 MB gz) i lokal PG17-skrap-DB:
+  **17,7 sekunder · 68 publika tabeller · 1 246 728 rader**. Verifierat:
+  medlemmar 3/3, kurser 10, moduler 122, snapshots 1 157 484.
+- 780 "fel" = samma kända kategori som v98 F3 (saknade Supabase-roller/
+  extensions i vanilla-PG) — ofarliga.
+- **Sudo-lösningen**: agentfabrikens barn HAR sudo (studio-skalet har det
+  inte). DR-övningar körs hädanefter autonomt via agentfabriken — inget
+  kundfönster behövs.
+- **System_events-fyndet slutgiltigt utrett i återställd DB**: ingen tabell
+  eller vy i SQL-dumpen bär händelseloggen (tabellen tom, fel kolumnnamn,
+  kolumnen `type` finns bara i notifications/payouts/storage). Beständig
+  regel: komplett DR = SQL-nattdump (allt utom loggen) + moln-JSON-backup
+  (loggen, integritetsbevisad 2026-09-13).
+- Städning enligt mönster: skrap-DB raderad, PG17 stoppad (redo), 78 GB
+  ledigt. Retention: 5 dumpar (11–15 sep) — 30-dagarsregeln tom ännu.
+- Nästa övning per kvartal: **senast 2026-12-15**.
+- Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15.md.
+
+## S10-U3 — DR-REPLIK + FABRIKKOLLISIONSFYND (2026-09-15)
+
+- **Oberoende andra restore av samma natt-dump: 14,7 s** (u3) + u2:s 17,7 s =
+  RTO replikerbar, båda under v98 F3:s 20 s. Radtal identiskt: public
+  1 246 728; totalt **1 247 119 rader / 95 tabeller** (auth 135, realtime 82,
+  storage 136, migrations 38). Fel 780 = samma kategori (u3 bekräftar
+  oberoende). Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15-REPLIK.md.
+- **Instrumentdiff förklarad:** "68 publika tabeller" (ovan) = public 60 +
+  storage 8; public-schemat är exakt **60 = v98 F3:s 60** (oförändrat).
+  Nästa protokoll redovisar public / public+storage / alla scheman var för sig.
+- **FABRIKKOLLISION (rotorsak + kur):** manifestet gav 3 identiska
+  uppgiftstexter → två agenter körde DR-flödet samtidigt; journal-bevis:
+  syskonets mätfrågor mot samma skrap-DB 12:08:56, "fast shutdown" 12:09:14
+  (avbröt u3:s verifiering), skrap-DB droppad under pågående fönster. Noll
+  förlorad data. KUR: (1) fabriksmanifest ger ALDRIG två id samma
+  objekt-räckvidd; (2) **PG17 DR-fönstret ägs av EN agent i taget**
+  (låsfil /tmp/ak1a-dr-prov.lock, flock-mönstret) — till huvudagenten att
+  mekanisera; (3) DR-fönstret stängs alltid med dropdb + stop, oavsett vem
+  som öppnade.
+- Städning oberoende verifierad av u3: ak1a_dr_test borta, PG17 down, disk
+  78 GB ledigt. Nästa kvartalsövning oförändrat: **senast 2026-12-15**.
+
+## S10-U1 — DUMP-SLUTMARKÖRSVAKTEN (2026-09-15, LEVERERAD)
+
+- Nytt verktyg `verktyg/kolla-dump-markorer.mjs`: bevisar att natt-dumparna
+  är KOMPLETTA, inte bara giltiga gzip-arkiv — kontraktet är pg_dump 17:s
+  `\restrict`/`\unrestrict`-tokenpar (start rad ~5, sista icke-tomma raden,
+  matchande token) + raden "-- PostgreSQL database dump complete" +
+  gzip-ström-integritet. Streaming, konstant minne, ~6 s/dump. Lägen:
+  baslinje (alla) / `--natt` (dagens, för cron) / `--fil`. Exit 0 endast
+  när alla domar GRÖNA.
+- BEVISAT: 3 sabotagefall (trunkerad gzip, avklippt slut med GILTIG gzip,
+  förfalskad token) = samtliga RÖD exit 1; baslinje 5/5 GRÖNA på dumparna
+  11–15 sep (1 207 625 → 1 267 803 rader, ~10–20 k raders tillväxt/dag).
+- **FYND säkerhet:** 02:30-cronen kör pg_dump med lösenordet i
+  KOMMANDORADEN — under ~2 min/natt syns det i serverns processlista.
+  Kur (huvudagenten): ~/.pgpass (chmod 600) + PGPASSFILE, inga hemligheter
+  i argument. Värdet återges aldrig i repo/loggar.
+- **Retention 30 dagar är REDAN mekaniserad** i samma cron-rad
+  (`find … -mtime +30 -delete`) — härmed dokumenterat; 5 dumpar 11–15 sep,
+  regeln tom ännu (korrekt).
+- VÄNTAR huvudagenten (1 radbyte i crontab, testat klart): lägg sist i
+  02:30-kedjan `&& node verktyg/kolla-dump-markorer.mjs --natt
+  >> /tmp/supabase-backup.log 2>&1` — röd natt blir då loggad RÖD.
+- Fullständig rapport: data/forskning/DUMP-MARKORKOLL-2026-09-15.md.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

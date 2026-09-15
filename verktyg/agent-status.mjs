@@ -16,6 +16,7 @@
  */
 import { execFile } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
+import path from "node:path";
 import { promisify } from "node:util";
 
 const kör = promisify(execFile);
@@ -127,12 +128,19 @@ const kommandon = (() => {
 })();
 
 // ── 6. DJUP: tsc mot baslinjen ────────────────────────────────────────────
-// TSC_BASLINJE = exakt antal rader med "error TS" (2026-09-12 21:20 UTC,
-// commit 436ad6f7; räkna ALDRIG totalrader — 2 av dem är fortsättningsrader).
-const TSC_BASLINJE = 34;
+// TSC_BASLINJE = 0 sedan våg 133 (AGENTS.md: "hela repet typar grönt";
+// pre-commit sedan våg 138 blockerar varje commit med fel). FÖREGÅENDE värde
+// 34 (commit 436ad6f7, 2026-09-12) var PRE-133-läget och maskerade upp till
+// 34 verkliga fel som "nya: 0" — rättat 2026-09-15 (spår 8).
+const TSC_BASLINJE = 0;
 let tsc = null;
 if (DJUP) {
-  const ut = await skal("npx", ["tsc", "--noEmit"], 150_000);
+  // s8-determinism: projektets EGEN binär — npx kan mitt i deploy (npm ci
+  // river .bin) lösa "tsc" till cachens dummy-paket tsc@2.0.4.
+  const tscBin = path.join(ROT, "node_modules", "typescript", "bin", "tsc");
+  const ut = existsSync(tscBin)
+    ? await skal(process.execPath, [tscBin, "--noEmit"], 150_000)
+    : null;
   if (ut !== null) {
     const n = (ut.match(/error TS/g) || []).length;
     tsc = { fel: n, baslinje: TSC_BASLINJE, nya: Math.max(0, n - TSC_BASLINJE) };

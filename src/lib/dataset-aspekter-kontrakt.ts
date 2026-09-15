@@ -63,6 +63,7 @@ export type AspektUniversumRad = {
     omsattningCAGR5ar?: number | null;
     resultatCAGR5ar?: number | null;
     prognosTillvaxt?: number | null;
+    omsattningTillvaxtTTM?: number | null;
   } | null;
   stabilitet?: {
     skuldEgenkapital?: number | null;
@@ -118,6 +119,17 @@ export type AspektSida = {
    * färdig median per rad. Tom/undef för enkla nyckeltalssidor.
    */
   matTabell?: { etikett: string; median: number | null; matta: number; enhet: "procent" | "multipl" }[];
+  /**
+   * Universumjämförelse (fabrik s2-u2): SAMMA mått sammanfattat över HELA
+   * universumet (alla branscher) — samma sammanfatta, samma konvention.
+   * Ännu ett aggregat av publika nyckeltal (kontraktet §1: en kvartil av
+   * marknadstal bär ingen AKM-poäng). Valfritt: hubbar med flermätastabeller
+   * (land, värdering) bär det ej — deras jämförelse är land×bransch mot
+   * bransch. Eftersom branschens värden är en delmängd av universumets gäller
+   * alltid universum.matta >= matta när sidan publiceras (gränsregeln på
+   * sidnivå skyddar därmed också universumstatistiken).
+   */
+  universum?: AspektStat & { antalBolag: number };
 };
 
 /** En aspektmodul — varje fabrikens barn implementerar sina egna slugs. */
@@ -186,6 +198,21 @@ export function sammanfatta(
     min: rena.length > 0 ? omv(Math.min(...rena)) : null,
     max: rena.length > 0 ? omv(Math.max(...rena)) : null,
   };
+}
+
+/**
+ * Universumjämförelse (fabrik s2-u2): samma fältextractor + samma enhet som
+ * modulen använder för branschen, men sammanfattat över ALLA universumets
+ * rader — bransch- och universumtal kan aldrig skilja sig åt i metod (samma
+ * determinism-princip som lasAspektUniversum). antalBolag = universumets
+ * storlek (100) för vyns "av N bolag"-rad.
+ */
+export function sammanfattaUniversum(
+  hamtaVarde: (r: AspektUniversumRad) => number | null | undefined,
+  iProcent: boolean,
+): AspektStat & { antalBolag: number } {
+  const { rader } = lasAspektUniversum();
+  return { ...sammanfatta(rader.map(hamtaVarde), iProcent), antalBolag: rader.length };
 }
 
 // ── Internlänkar (tema 8) — llms-fragornas efterfrågan ───────────────────────

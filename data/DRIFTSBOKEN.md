@@ -288,7 +288,7 @@ tillgänglighet med planerat underhåll") har nu mätning + larm + självläknin
 | Extern vakt | Publik /api/overvaking/status (beroendefri leveransindikator) + /api/overvaking/larm (webhook, timing-safe token OVERVAKNING_TOKEN — död-säker 403 tills kunden sätter den). Bevakarkonto = kundens (R2), instruktion i data/forskning/EXTERN-OVERVAKNING.md | src/app/api/overvaking/ |
 | Sök server-side | /api/sok?q=&lang=sv\|en\|ar — alltid 200 JSON (reservlista inbakad), cache i minnet 1/h, åäö-normalisering; pulsvaktens sökkontrakt | src/app/api/sok/route.ts, src/lib/sok-server.ts, verktyg/testa-sok.mjs (19/19 PASS) |
 | Självstart-bevis | Cert (t.o.m. 2026-12-07), certbot.timer 2 ggr/dygn, nginx + pm2-ak1a + zcode-chat alla enabled; /studio följer med pm2 ak1a (barnprocesser) | data/forskning/HTTPS-SJALVSTART-PROV.md |
-| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 17,7 s / 68 tabeller / 1,25 M rader (2026-09-15, kvartalsövning — autonomsudo via agentfabriken) | data/forskning/DR-PROV-2026-09-15.md |
+| DR | Färsk backup + integritetsbevis dagligen möjligt; senast bevisade fulla restore: 20,0 s / 95 tabeller (60 public) / 1,25 M rader (2026-09-15, AUTOMATISK kvartalsövning `node verktyg/dr-ovning.mjs` — låsfilsskyddad, protokoll maskinellt) | data/forskning/DR-PROV-2026-09-15-AUTO.md |
 | Spårbarhet | BESLUTSLOGG.md — varje autonomt beslut/ändring loggas med juridikgrinds-kolumn; regelverk § 9 | data/forskning/BESLUTSLOGG.md |
 
 Väntar kund (sudo/R2): applicering av crontab-korrekt.txt, certbot
@@ -377,6 +377,33 @@ EnvironmentFile med chmod 600).
   02:30-kedjan `&& node verktyg/kolla-dump-markorer.mjs --natt
   >> /tmp/supabase-backup.log 2>&1` — röd natt blir då loggad RÖD.
 - Fullständig rapport: data/forskning/DUMP-MARKORKOLL-2026-09-15.md.
+
+## S10-U4 — DR-ÖVNINGEN MEKANISERAD: `verktyg/dr-ovning.mjs` (2026-09-15, LEVERERAD)
+
+- **Kvartalsövningen är nu ETT kommando**: `node verktyg/dr-ovning.mjs` kör
+  hela flödet — lås → dumpkontroll (s10-u1:s verktyg anropas som förkontroll)
+  → PG17-start → färsk skrap-DB → restore med RTO-mätning → tabell-/radmätning
+  på TRE nivåer (u3:s kontrakt: public / public+storage / alla scheman) →
+  protokoll i data/forskning/DR-PROV-<datum>-AUTO.md → GARANTERAD städning
+  (finally — även misslyckad övning lämnar aldrig skräp i PG17).
+- **u3:s låsfilskur IMPLEMENTERAD**: `/tmp/ak1a-dr-prov.lock` (atomär
+  skapande, pid + starttid; dött lås tas över efter 30 min). Upptaget lås =
+  exit 3 INNAN PG17 rörs — fabrikskollisionen från omgång 1 kan inte upprepas.
+- BEVISAT denna dag: låsvägran exit 3 (PG orörd) · trunkerad dump vägras av
+  förkontrollen exit 1 (PG orörd) · ÄKTA KÖRNING GRÖN exit 0 — RTO **20,0 s**,
+  public 60 tabeller / 1 246 728 rader, public+storage 68 / 1 246 864, alla
+  scheman 95 / 1 247 119 — fjärde oberoende mätpunkten (v98 20,0 · u2 17,7 ·
+  u3 14,7 · denna 20,0 s) och identisk radbild mot u2/u3. Felloggen 780
+  rader: samtliga kända (roller/scheman/extensions + 12 fortsättningsrader
+  HINT/DETAIL/LINE — psql:s flerlinjers fel; kategoriseringen breddades för
+  detta, okända ERROR-rader lyser fortfarande igenom och ger VARNING).
+- Städning oberoende verifierad: låsfil borta, skrap-DB raderad, PG17 down,
+  disk 77G ledigt oförändrat. Misslyckad övning protokollförs också (RÖD
+  dom + avbrottsorsak i protokollet) — vakten protokollför ALLT.
+- Nästa kvartalsövning: **senast 2026-12-15** — kör `node verktyg/dr-ovning.mjs`
+  (behöver fabriksbarnets sudo; `--fil` för annan dump, `--behall` lämnar
+  skrap-DB+PG uppe för manuell undersökning — protokollet noterar brutet
+  viloläge). Fullständigt protokoll: data/forskning/DR-PROV-2026-09-15-AUTO.md.
 
 ## VÅG 148–150 — TRÅDENS TRIO: VYN, MINNET, MÅLET, UTKASTET (2026-09-14)
 

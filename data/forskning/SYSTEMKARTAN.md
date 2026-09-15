@@ -96,6 +96,31 @@ C18:s "333 kurser" och E32:s "333 / 8 211" rättade till 337 / 8 223 enligt
 siffror.json — i övrigt lämnas C15/C18/E32 till nästa dokvåg (u1 bokförde
 dessutom E30-revisionen: testa-b2b-grind körs grönt).
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u2 — E37 + E30 diffade mot verkligheten)
+
+Fortsättning på s9-u1/s9-u3-dokvågorna (E35 + A1/E27/E29). Objektval mot
+duplikat: E30-revisionen var bokförd som kö av s9-u1 (sidofyndet
+"testa-b2b-grind KÖR GRÖNT"), och E37 bär prestandaspårets s7-leveranser
+som ingen dokvåg rört. Varje rad MÄTT i arbetsytan 2026-09-15 — inte
+läst ur worklog:
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| testa-b2b-grind (E30) | TRASIG (ERR_MODULE_NOT_FOUND) | **33 kontroller, 0 FAIL, exit 0** — mätt nu; flagg/robots/sitemap/noindex-grinden helgrön |
+| testa-pro-screening (E30) | okänd status | **26 PASS / 0 FAIL, exit 0** — mätt nu |
+| testa-demoklient-data (E30) | okänd status | **16 PASS / 1 FAIL, exit 1** — NYTT FYND: G1 ("minst ett fullständigt AKM2Resultat — 0 st") är RÖD; demoklientens data bär inget komplett AKM2Resultat (fixture/data-avvikelse, ej grindfel) |
+| SearchModal-koddelning (E37) | ej omnämnd | **i koden**: spa-hem.tsx:22-24 dynamic-import ssr:false + :145-146 LasyGlobal — overlays-paketet ur startsidans kritiska hydratisering |
+| CLS (E37) | ej mätt | **sv-locale 0,000 / 0 skift** (isolationssond — font-roten botad via font-display optional ×4); standardspråk (navigator en-US) ~0,11 kvar = språkresolvens, produktbeslut a/b/c bokat i o5-prestanda-s7.md |
+| Prod-prestanda (E37) | ej mätt | **CLS 0,125→0,000, LCP −0,4…−1,4 s, Lighthouse +7–10 poäng** (O5 komplett, bokförd commit 8bbe8215; rådata OPTIMERING/lighthouse/) |
+| Mobil läsbarhet (E37) | omätet | **verktyg/mobil-lasbarhet.mjs NY** (CDP, 0 npm): FÖRE 255 tryckmål + 2 zoomfällor på 6 sidor → 8 filer kirurgiskt fixade max-md (header/tema/språk/logga/inloggad/blogg ~30 länkar; zoomfällorna dödade 12/14→16 px); footerns 20 px-länkar m.fl. medvetet kvar (bokade rond 2) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E30 | INAKTIV 5 → **INAKTIV 6** | Testförfallet borta: grindsviten 33/0 + screening 26/0 körs grön (mätt nu) — läget fortsatt INAKTIV (väntar jurist, R2). Nytt gap: demoklient-G1 röd |
+| E37 | LEVER 7 → **LEVER 8** | Prestanda nu MÄTBEVISAT: CLS 0,000 (sv), LCP −0,4…−1,4 s, +7–10 poäng; SearchModal koddelad; läsbarhet 52 px mätt + fixad; ny verktygskedja (prestanda-mat/lighthouse/mobil-lasbarhet). Kvar: inga egna regressionstester, språkresolvens-CLS |
+
+Snittscore **7,5** (282 → 284 poäng / 38 system; E30 +1, E37 +1).
+
 ---
 
 
@@ -133,17 +158,17 @@ dessutom E30-revisionen: testa-b2b-grind körs grönt).
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | Paritetstak 39/91 (binär 3.11.2-22); -32031 efter omstart; skal-kvot-häng = process-kur i AGENTS.md |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 6 | Ordförandesvar ej JSON-tolkbart → tomma beslut (åtgärder "(inga)") |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | Fabrik+evighetsmotor+uppdragsprotokoll mekaniska (25 klara manifest, pumpor i ps); kvar: egen testsvit, CRON_SECRET, 28 motorer utan triggare |
-| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 5 | Väntar jurist; testsvit testa-b2b-grind TRASIG |
+| E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); grind- + screening-sviter gröna (33/0, 26/0, mätt 2026-09-15); demoklient-G1 röd (AKM2Resultat saknas i demodata) |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | Portalens sista trespråksgap stängt (våg 113); MÖS-kvalitetsaudit kvar |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system (progress/bevakning/portfölj); `oversattningar` kräver kund-SQL |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | Datorns hybrid-sync overifierad; main efter develop (reserv-slack) |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Grind blockerar varje commit (bevisad s8-u1); +3 vakter (beroende/döda länkar/konfig); kvar: motorregister 2026-09-03, testaggregator, deploy-blockad vid RÖD |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
-| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 7 | Inga tester; sökindexet manuellt genererat; Min Sida-navet → se D38 |
+| E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
-Snittscore: **7,4/10** (282 poäng / 38 system; E35 +1 och E29 +1 vid
-dokvågarna 2026-09-15). Sämst: betalning (5), B2B (5). Bäst: AKM2, Studio,
+Snittscore: **7,5/10** (284 poäng / 38 system; E35/E29/E30/E37 +1 vid
+dokvågarna 2026-09-15). Sämst: betalning (5). Bäst: AKM2, Studio,
 Dataset, SEO, Mediebibliotek (9).
 
 ---
@@ -787,7 +812,15 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
   syns ej i admin-utvecklingsradarn live.
 
-## E30. B2B / AK1A PRO — INAKTIV — 5/10
+## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u2, mätt i arbetsytan): testa-b2b-grind.mjs är
+REPARERAD och KÖR GRÖNT (33 kontroller, 0 FAIL, exit 0 — importbron lagad
+sedan inventeringen 2026-09-11); testa-pro-screening 26/0 grönt. NYTT FYND:
+testa-demoklient-data 16 PASS / 1 FAIL — G1 ("minst ett fullständigt
+AKM2Resultat — 0 st") röd: demoklientens data bär inget komplett
+AKM2Resultat (fixture/data-avvikelse, ej grindfel). Läget fortsatt
+INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
 
 - **Vad:** Pro-plattformen för analytiker/institutioner: klientportaler,
   pro-screening, morgonrond, mötespaket, DPA-mall, rapportverkstad,
@@ -799,13 +832,16 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   src/components/ak1a/pro/ (13 filer), verktyg/{testa-pro-screening,
   testa-b2b-grind,testa-demoklient-data}.mjs, data/forskning/B2B/ +
   V86-B2B-AKTIVERING.md.
-- **Observation:** Grindmönstret rent och komplett dokumenterat. MEN:
-  **testa-b2b-grind.mjs är TRASIG** (ERR_MODULE_NOT_FOUND: skriptet importerar
-  src/app/robots.ts vars `@/lib`-alias ej löses av rak node — importbron
-  saknas/är föråldrad) — testet förföll tyst. Väntar jurist (K-B2B) + kund.
-- **GAP:** (1) testa-b2b-grind repareras (importbro a la v82-kurs-metadata-
-  bro.ts) — annars okänd grindstatus; (2) juristbeslut (K-B2B avtal/DPA)
-  väntar; (3) tenant-isoleringens testtäckning (multi-kund-läckage) tunn.
+- **Observation (uppdaterad 2026-09-15):** Grindmönstret rent och komplett
+  dokumenterat; samtliga tre testsviter KÖRS nu (grind 33/0 + screening
+  26/0 gröna, demoklient 16/1 — se G1 nedan). Historik: grind-testet var
+  TRASIGT vid inventeringen 2026-09-11 (ERR_MODULE_NOT_FOUND via `@/lib`-
+  alias) och föll tyst — det är lagat. Väntar jurist (K-B2B) + kund.
+- **GAP (uppdaterat 2026-09-15):** (1) ✓ HÄVT — testa-b2b-grind reparerad
+  och helgrön (33/0, mätt); (2) juristbeslut (K-B2B avtal/DPA) väntar;
+  (3) tenant-isoleringens testtäckning (multi-kund-läckage) tunn; (4) NY:
+  demoklient-G1 röd — demodatot saknar fullständigt AKM2Resultat; fixa
+  fixture eller testkontrakt innan B2B-aktiveringspaketet hämtas fram.
 
 ## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10
 
@@ -959,7 +995,19 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   kvot/storleksbudget bevakas ej; (3) (2) audio/video-format stöds ej
   (medvetet? dokumentera).
 
-## E37. Navigering & app-yta — LEVER — 7/10
+## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (s9-u2): prestandaspåret s7 mätbevisat på prod —
+CLS 0,125→0,000 (font-display optional ×4 fonter; sv-locale-isolering
+0,000/0 skift; standardspråk ~0,11 kvar = språkresolvens med produktbeslut
+a/b/c bokat i o5-prestanda-s7.md), LCP −0,4…−1,4 s, Lighthouse +7–10
+poäng (O5 komplett; rådata OPTIMERING/lighthouse/). SearchModal koddelad
+(spa-hem.tsx:22-24 next/dynamic ssr:false + LasyGlobal :145). Mobil
+läsbarhet ≥52 px första mätningen: verktyg/mobil-lasbarhet.mjs (CDP,
+0 npm) — FÖRE 255 tryckmål + 2 zoomfällor på 6 sidor, 8 filer kirurgiskt
+fixade max-md, zoomfällorna dödade (12/14→16 px); footer-länkar m.fl.
+medvetet kvar (rond 2). Ny mätbeviskedja: prestanda-mat.mjs +
+lighthouse-mätaren + mobil-lasbarhet.mjs.*
 
 - **Vad:** Kommandopalett (⌘K), sökindex (404-förslag + palett), huvudmeny +
   mobilmeny + meny-register, PWA (manifest + registrerare), tema-växlare,
@@ -968,12 +1016,22 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   pwa-registrerare,tema-vaxlare,navigationsminne,sprak-vaxlare}.tsx,
   src/lib/{sokindex,meny-register,navigationsminne}.ts, src/app/(huvud)/
   manifest, verktyg/kor-sokindex.mjs.
-- **Observation:** Ren UI-logik i AK1A-DNA; sökindex genereras ur äkta data
-  (kor-sokindex destillerar); menyer centraliserade i register.
-- **GAP:** (1) sökindexet statiskt mellan deploys (nya kurser/poster osynliga
-  tills kor-sokindex + deploy); (2) PWA offline-beteende overifierat (service
-  worker endast registrerare?); (3) palettens täckning av pro/tier-ytor
-  följer flaggorna men testas ej.
+- **Observation (uppdaterad 2026-09-15):** Ren UI-logik i AK1A-DNA;
+  sökindex genereras ur äkta data (kor-sokindex destillerar); menyer
+  centraliserade i register. Nu dessutom MÄTBAR: CDP-prestandamätning,
+  Lighthouse FÖRE/EFTER-rådata och tryckyteaudit ger systemet en beviskedja
+  det saknade (alltid levererat "ignorant" — mätningarna fanns inte före
+  spår 7).
+- **GAP (uppdaterat 2026-09-15):** (1) sökindexet statiskt mellan deploys
+  (nya kurser/poster osynliga tills kor-sokindex + deploy); (2) PWA
+  offline-beteende overifierat (service worker endast registrerare?);
+  (3) palettens täckning av pro/tier-ytor följer flaggorna men testas ej;
+  (4) NY: språkresolvens-CLS — SSR sv → klient en vid navigator en-US
+  ger ~0,11 skift på standardspråket (sv-locale = 0,000); produktbeslut
+  a/b/c bokat; (5) fortfarande inga egna regressionstester (CDP/
+  Lighthouse är mätbevis, inte testsviter); (6) footer-tryckmål (20 px)
+  + AI-Mentor/ShortSeller-monteringsknappar (44 px) kvar till
+  läsbarhetsrond 2 (bokade, ej glömda).
 
 ---
 

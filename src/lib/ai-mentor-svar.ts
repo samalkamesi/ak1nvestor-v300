@@ -179,7 +179,10 @@ export type FragMonster = {
   bygga: (register: RegisterRad[]) => LokaltSvar;
 };
 
-const MONSTER: FragMonster[] = [
+// Exporterad sedan s6-u3 omgång 3: regressionstesternas fall K läser
+// kärnorden LIVE ur modulen (verktyg/testa-ai-mentor-nasta.mjs) så att
+// kärnordsdisjunktionen bevisas mot basen också — inte bara mot syskonlagren.
+export const MONSTER: FragMonster[] = [
   {
     id: "akm1",
     karnord: ["akm1", "akm 1", "20 variabler", "tjugo variabler", "fundamental modell", "kontroversiella modellen"],

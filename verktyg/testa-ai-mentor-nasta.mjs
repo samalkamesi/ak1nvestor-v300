@@ -205,10 +205,10 @@ const KEDJEFALL = [
   { fraga: "vad är P/E?", amne: "nyckeltal" },
   { fraga: "vad är AKM1?", amne: "akm1" },
   { fraga: "vad är V10?", amne: "variabel-V10" },
-  // OBS: syskon-u2:s pågående mönster (kapitalstruktur, tillväxt) testas
-  // medvetet INTE här — deras närvaro i basens MONSTER svänger under
-  // pågående arbete. Fall G vakar att de ALDRIG stjäls av detta lager,
-  // och fall K fångar deras kärnord live när de landar.
+  // Syskon-u2:s mönster är LANDADE i basens MONSTER (35cb179b) — sedan
+  // omgång 3 Körs de som ordinarie kedjefall: basen äger dem, aldrig vi.
+  { fraga: "vad är kapitalstruktur?", amne: "kapitalstruktur" },
+  { fraga: "vad är tillväxt?", amne: "tillväxt" },
 ];
 let kedjaFel = 0;
 for (const { fraga, amne } of KEDJEFALL) {

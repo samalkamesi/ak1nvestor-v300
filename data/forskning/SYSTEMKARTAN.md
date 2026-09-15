@@ -313,19 +313,58 @@ knapptryckning (R2 — orgens ansvar är att audit-loggen fångar den).
 ---
 
 
+## UPPDATERING 2026-09-16 (dokvåg s9-u3 omgång 4 — A2 + B9 + E36 diffade mot verkligheten)
+
+Fjärde dokvågen under s9-u3-uppdraget (duplikat undveks: 17 system redan
+diffade 2026-09-15 av dagens syskon — E35, A1, E27, E29, E30, E37, C15,
+C16, C17, C18, E32, A3, E34, E33, E28, E31, E26; tre FRIA system valdes).
+Mätt 2026-09-15 22:08 UTC — varje rad MÄTT i arbetsytan (svitkörningar,
+API-sonder mot localhost, node-läsning av JSON, grep, git log), inte läst
+ur worklog:
+
+| Mått | Kartan | Verkligheten (mätning) |
+|---|---|---|
+| H1-läge (A2) | "PÅGÅR (H1) … statusrevision ej avslutad" | **STÄNGT sedan våg 99** — STYRELSE-ADMIN-MEGA.md:949 "H1 LÄRVÄGS-SYSTEMET KLART (front B): statusrevision av B1-LARVAG + fullbordan … visas på min-sida" (2026-09-11); kartan speglade aldrig beslutet |
+| Lärvägs-register (A2) | 333 kurser (inventeringens tal) | **352 kurser** — siffror.json (mätt): s5-spåret + mx-vågorna byggde 19 kurser under 09-15, sista kvällen 343→352 (fortsättningskurser med FRONT B-bevis 3/3 + 5/5 GRÖNA mot riktiga motorn via importbro, commits 0fb0a5b8/02a35507); quiz 8 223 oförändrat — nya kurser bär inga quiz |
+| Lärvägs-paritet (A2 gap 1) | "ingen egen testsvit" | **larvag-synk.mjs GRÖN (egen körning, exit 0)**: register 352 = karta 352 = konstant 352, profiler 21 kurser, 0 fantomer — maskinell paritetsvakt; regressionssvit för raknaLarvag-reglerna saknas FORTFARANDE (mätt: 0 testa-larvag*) |
+| Min-sida-synlighet (A2 gap 3) | öppen ("bekräftas E2E") | **KODAD**: min-sida.tsx:22 importerar LarvagKort, :857 renderar `<LarvagKort antal={1} />`, :917 "Nästa kurs på vägen" — E2E med levande inloggning fortfarande overifierat |
+| Vågskanningen (B9) | "daglig autonom vågskanning av 12 tickers" | **FÄRSK men Vercel-driven**: senaste vågskans genererad 2026-09-15T05:05:22Z (/api/vagscan/senaste, mätt — matchar vercel-cron 0 5 * * *), universum exakt 12 tickers (listan mätt); FYND: Contabo-crontaben saknar vagscan — den dagliga skanningen drivs ENDAST av passiva backup-miljön |
+| Vagvalideringsrapporten (B9) | (kartan bär ingen ålder) | **SENASTE 12 dagar gammal**: domar 2026-09-04 (träff 52 %, nDomda 48, rullandeSedan 09-04), spegelfilens mtime 09-10 16:33; /api/data/vagstatistik lever (mätt) men serverar åldrad rapport — Vercel read-only fs kan inte förnya filen på disk |
+| Träff-% publikt (B9 gap 3) | "redovisas ej på publik utbildningssida" | **BEKRÄFTAT MÄTT**: 0 konsumenter i src/components + (huvud)-sidor (grep) — API-rutten lever men ingen sida visar talet |
+| Vågmotorssviten (B9) | "testsvit finns" | **57/57 PASS (egen körning, exit 0)** |
+| Mediebibliotekssviten (E36) | 18/18 (vid inventeringen) | **18/18 GRÖN (egen körning, exit 0)** + kontrakt A7 REN (SVG-förbud, 2 MB-tak, magic-byte, uuid-nyckel, hermetik) |
+| OG-koppling (E36 gap 1) | "manuellt; guide finns" | **fortfarande manuellt (mätt)**: deploya-contabo.sh 0 og-generate-träffar (grep); senaste manuella leverans 023e9f95 09-09 (8 OG-bloggbilder, md5-bevisade); 404 OG-filer committade i git (ls-files) |
+| Media-backup (E36) | nämns ej | data/backups/media-filer-2026-09-{08,09}.json — 2 tillfällen, ingen cron (bucket-förteckningen förnyas manuellt) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| A2 | PÅGÅR (H1) 7 → **LEVER 7** | H1 stängt sedan våg 99 (dokumentbevis) + registret vuxit 333→352 med front-B-bevis per kurs + paritetssynken GRÖN 0 fantomer + min-sida-visning kodad. Score 7 kvar: regressionssviten för rekommendationsreglerna (största gapet) saknas fortfarande |
+| B9 | LEVER 8 → **LEVER 8** | Skanningen lever dagligen (färsk tidsstämpel mätt) men två preciseringsfynd: driftberoendet av passiva Vercel-cron (nytt gap) + valideringsrapporten åldras (12 d) medan API:t serverar den — inga gap stängda, ingen score-rörelse |
+| E36 | LEVER 9 → **LEVER 9** | Säkerhetstätaste sviten fortfarande grön (18/18 mätt nu); OG förblir manuellt disciplinsteg (mätt, 09-09-leveransen bevisar att disciplinen hållit) — oförändrat toppscore, gap-listan kompletteras med backup-cadans |
+
+Snittscore **7,5** (286 poäng / 38 system — oförändrad; inga poängrörelser,
+endast lägesrättning A2 PÅGÅR→LEVER samt preciserade gap med egna mätbevis).
+
+Kö till huvudagenten: (1) vagscan + vagvalidering speglas till Contabo-cron
+(eller pumporna) — den dagliga vågskanningen dör tyst om Vercel-speglingen
+dör; (2) SENASTE-valideringsrapporten förnyas (domar 09-04) + publik yta
+för träff-%:en (52 % är plattformens läromärke, osynligt idag); (3) A2:s
+regressionssvit (raknaLarvag-reglerna) — synken + front-B-bevisen är
+leveransbevis, inte regressionsvakt.
+
 ## ÖVERSIKT — 38 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (343 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
-| A2 | Lärvägen + läroplanen | Utbildning | PÅGÅR (H1) | 7 | Ingen egen testsvit; H1-statusrevision ej avslutad |
+| A1 | Kursplattformen (352 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | Fullständigt kurs-CMS saknas; kurs-access utan egen testsvit |
+| A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | H1 stängt sedan v99 (kartan efter); 352 kurser, paritetssynk GRÖN, front-B-bevis; regressionssvit för rekommendationsreglerna saknas |
 | A3 | AI-Mentorn (4 deterministiska svars­lager + modellager) | Utbildning | LEVER | 8 | 164/0-testbevis (v158, mätt); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | Inga tester; streak-logik ej validerad |
 | A5 | Gamification (badges, certifikat, topplista) | Utbildning | LEVER | 7 | Inga tester |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbibliotek) | Utbildning | LEVER | 7 | Verktygskedjan manuell (integrera/fixa/lägg-till-källa) |
 | B7 | AKM2-analysmotorn + analysidorna | Analys | LEVER | 9 | Berika-pipeline manuell; snapshot-cadans fast |
 | B8 | AKM3 (regim, kalibrering, ensemble) | Analys | PÅGÅR | 7 | Kalibreringsloopen cron-driven men beslut delvis ouppfyllt |
-| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Fast 12-ticker-universum; träff-% publikt oklart |
+| B9 | Vågsystemet AK1TS (vagfundament, vagkon, vagscan) | Analys | LEVER | 8 | Skanning dagligen färsk (05:05Z mätt) men ENBART Vercel-cron-driven — Contabo-crontab saknar rad; valideringsrapport 12 d gammal; träff-% osynlig publikt |
 | B10 | Konfluensradarn | Analys | LEVER | 7 | Ingen egen testsvit (ingår i motorvalidering, PASS) |
 | B11 | Net-net-skannern | Analys | LEVER | 6 | Determinismfelet rättat (107/0/0, 2026-09-13); egen testsvit saknas |
 | B12 | Superanalysen + AKM1-kalkylatorn | Analys | LEVER | 7 | Inga tester |
@@ -353,7 +392,7 @@ knapptryckning (R2 — orgens ansvar är att audit-loggen fångar den).
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system; system_events 0 rader i SQL-dumpen (DR = SQL + moln-JSON, mätt); composite-index mätt EJ installerat; oversattningar kräver kund-SQL (320-kö ackumulerar) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | Kvartals-DR bevisad 2× (17,7 s + 14,7 s replik, 09-15); dump-markörvakt GRÖN (egen mätning); retention mekaniserad i cron; kvar: cron-koppling + pgpass (huvudagenten), hybrid-sync, ISR 12/44, Storage-restore |
 | E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Grind blockerar varje commit (bevisad s8-u1); +3 vakter (beroende/döda länkar/konfig); kvar: motorregister 2026-09-03, testaggregator, deploy-blockad vid RÖD |
-| E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
+| E36 | Mediebiblioteket | Grund | LEVER | 9 | 18/18 mätt igen (09-15); OG-koppling manuellt kvar (0 träffar i deploy-skriptet, mätt); media-backup utan cadans |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | CLS 0,000 (sv) + LCP −0,4…−1,4 s mätbevisat, läsbarhet 52 px mätt; kvar: inga egna tester, språkresolvens-CLS, sökindex-cadans |
 
 Snittscore: **7,5/10** (286 poäng / 38 system; E35/E29/E30/E37/A3/E34 +1 vid
@@ -397,7 +436,19 @@ E01-äkthetstestet) — talen i Vad-raden gäller 343.*
   quiz-frågornas kvalitet/entropi omätet (ingen dubblerings-/svårighetsgrads-
   analys); (4) /labb-casen (201 st) saknar uppdateringspipeline.
 
-## A2. Lärvägen + läroplanen — PÅGÅR (H1) — 7/10
+## A2. Lärvägen + läroplanen — LEVER — 7/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): H1 STÄNGT sedan våg 99 —
+STYRELSE-ADMIN-MEGA.md:949 "H1 LÄRVÄGS-SYSTEMET KLART (front B): status­
+revision av B1-LARVAG + fullbordan … visas på min-sida" (2026-09-11);kartans
+"PÅGÅR (H1)" speglade aldrig beslutet. Registret 333 → **352 kurser**
+(siffror.json mätt 2026-09-15: s5-spåret + mx-vågorna byggde 19 kurser under
+dagen, sista kvällen 343→352 — fortsättningskurser med FRONT B-bevis 3/3 +
+5/5 GRÖNA mot riktiga motorn via importbro-v82-mönstret); larvag-synk.mjs
+GRÖN (egen körning, exit 0): register 352 = karta 352 = konstant 352, 21
+profilkurser, 0 fantomer; min-sida-visning kodad (LarvagKort, min-sida.tsx:
+857). Läge PÅGÅR → LEVER, score 7 kvar — se diff-tabellen i
+UPPDATERING-sektionen.*
 
 - **Vad:** Personlig nästa-kurs-rekommendation med varför-rad ur medlemmens
   progress, kategori och anonyma quiz-svagheter; läroplansvy (/laroplan).
@@ -410,9 +461,12 @@ E01-äkthetstestet) — talen i Vad-raden gäller 343.*
   "polystrar aldrig fram någon elev"), varför-radar ur vinnande regler.
   H1 (våg 99) = statusrevision av B1-LARVAG — koden ser färdig ut sedan
   våg 88; dokumentationen hänger efter koden.
-- **GAP:** (1) ingen egen testsvit för raknaLarvag-reglerna (varför-radernas
-  prioritet kan regressera tyst); (2) H1-statusrevisionen avslutas +
-  dokumenteras; (3) lärvägens synlighet på min-sida bekräftas E2E.
+- **GAP:** (1) ingen egen REGRESSIONSSVIT för raknaLarvag-reglerna (varför-
+  radernas prioritet kan regressera tyst) — larvag-synk.mjs är paritetsvakt
+  (register↔karta↔profiler, GRÖN mätt) och front-B-sonderna är leveransbevis,
+  ingen av dem fångar regelregression; (2) ~~H1-statusrevisionen~~ STÄNGD
+  (våg 99, dokumentbevis); (3) lärvägens synlighet på min-sida KODAD
+  (LarvagKort renderad) men E2E med levande inloggning overifierad.
 
 ## A3. AI-Mentorn — LEVER — 8/10 *(uppdaterad 2026-09-15)*
 
@@ -549,7 +603,19 @@ upp i filen.*
   (/api/data/vagstatistik) saknar historisk trendvy; (3) ensemble-vikternas
   drift över tid bevakas ej.
 
-## B9. Vågsystemet AK1TS — LEVER — 8/10
+## B9. Vågsystemet AK1TS — LEVER — 8/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): skanningen lever DAGLIGEN —
+senaste vågskans genererad 2026-09-15T05:05:22Z (mätt via
+/api/vagscan/senaste; matchar vercel-cron 0 5 * * *), universum exakt
+12 tickers (listan mätt), vågmotorssviten 57/57 PASS (egen körning).
+TVÅ DRIFTFYND: (a) Contabo-crontaben saknar vagscan/vagvalidering — den
+dagliga skanningen drivs ENDAST av vercel-cron, dvs den passiva
+backup-miljön (dör tyst om Vercel-speglingen dör); (b) SENASTE-
+valideringsrapporten är 12 dagar gammal (domar 2026-09-04: träff 52 %,
+nDomda 48; spegelfilens mtime 09-10 16:33) och /api/data/vagstatistik
+serverar den åldrade rapporten — Vercel read-only fs kan inte förnya filen
+på disk. Score 8 kvar — inga gap stängda, se diff-tabellen.*
 
 - **Vad:** Vågfundamentmotorn (vågmätning i fundamentalindikatorer V01–V20 ×
   5 horisonter), vågkon (Elliott-vågklasser), daglig autonom vågskanning av
@@ -568,7 +634,13 @@ upp i filen.*
 - **GAP:** (1) universum fast 12 tickers — expansion mot Nordic/bolags-
   universum beslutad men ej kodad; (2) Yahoo/MarketStack-felvägars
   degraded-läge (stale vågkarta flaggas ej i UI); (3) vagstatistikens
-  träff-% redovisas inte på någon publika utbildningssida (lärdomen syns ej).
+  träff-% redovisas inte på någon publika utbildningssida (lärdomen syns
+  ej — mätt 2026-09-16: 0 konsumenter av /api/data/vagstatistik i
+  komponenter/sidor, API:t lever); (4) **cron-spegling**: vagscan +
+  vagvalidering körs enbart av vercel-cron (mätt: Contabo-crontaben saknar
+  raderna) — spegling till server-cron/pumpor krävs för Contabo-oberoende
+  drift; (5) SENASTE-rapportens förnyelse är bruten (domar 09-04, filen kan
+  bara förnyas av agent/manuell körning med skrivåtkomst till repot).
 
 ## B10. Konfluensradarn — LEVER — 7/10
 
@@ -1336,7 +1408,16 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   netnet+MÖS röda (2026-09-13, 107/0/0), testa-b2b-grind trasig (kör
   GRÖNT igen 2026-09-15 — se sidofynd E30-revision ovan).
 
-## E36. Mediebiblioteket — LEVER — 9/10
+## E36. Mediebiblioteket — LEVER — 9/10 *(uppdaterad 2026-09-16)*
+
+*Uppdatering 2026-09-16 (dokvåg s9-u3 omgång 4): sviten OMÄTT GRÖN igen —
+18/18 kontroller + kontrakt A7 REN (SVG-förbud, 2 MB-tak, magic-byte,
+uuid-nyckel, hermetik; egen körning, exit 0). OG-kopplingen förblir MANUELL
+(mätt: deploya-contabo.sh 0 og-generate-träffar; senaste manuella leverans
+023e9f95 2026-09-09 — 8 OG-bloggbilder md5-bevisade; 404 OG-filer
+committade i git). Bucket-förteckningen backas upp manuellt
+(data/backups/media-filer-2026-09-{08,09}.json — 2 tillfällen, ingen cron).
+Score 9 kvar; gap-listan kompletterad med backup-cadans.*
 
 - **Vad:** Supabase Storage-bucket (publik läsning) + admin-panel: ladda upp,
   lista, kopiera URL, radera; kopplat till seo.tsx pageMetadata.
@@ -1348,9 +1429,11 @@ korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
   uuidv4-nycklar (kundfilnamn når aldrig sökvägen — traversal dött vid
   födseln), SSRF-host-vitlista, bygg-hermetik, graceful vid ej konfigurerat.
 - **GAP:** (1) nya bloggposter kopplar biblioteks-URL i pageMetadata manuellt
-  (guide finns, validering av att OG verkligen finns saknas); (2) bucket-
+  (guide finns, validering av att OG verkligen finns saknas — deploy-skriptet
+  bär fortfarande 0 og-generate-koppling, mätt 2026-09-16); (2) bucket-
   kvot/storleksbudget bevakas ej; (3) (2) audio/video-format stöds ej
-  (medvetet? dokumentera).
+  (medvetet? dokumentera); (4) bucket-förteckningens backup är manuell
+  (media-filer-*.json, 2 tillfällen 09-08/09-09 — ingen cron).
 
 ## E37. Navigering & app-yta — LEVER — 8/10 *(uppdaterad 2026-09-15)*
 

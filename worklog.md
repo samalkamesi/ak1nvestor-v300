@@ -11201,3 +11201,37 @@ respektive 01-kurs och knyter till AKM1-familjer/AKM2-dimensioner. Register
 speglar + siffror synkade, larvag-synk GRÖN 352=352=352 (0 fantomer).
 tsc 0 (deploylåset avvaktades — .next-validatorns transienta TS2307 försvann
 med deployns färdiga bygge). [fabrik]
+
+
+## SPÅR 9 s9-u3 omgång 4 — 2026-09-16 00:1x: SYSTEMKARTAN dokvåg — A2 + B9 + E36 diffade mot verkligheten [fabrik]
+
+Leverans: fjärde dokvågen under uppdraget — duplikatkontroll före start (17
+system redan diffade 2026-09-15 av syskonen; tre FRIA valdes: A2, B9, E36).
+Allt MÄTT i arbetsytan (svitkörningar, localhost-API-sonder, node-läsning av
+JSON, grep, git log — aldrig worklog-läsning): A2 PÅGÅR (H1) → LEVER 7 — H1
+STÄNGT sedan våg 99 (STYRELSE-ADMIN-MEGA.md:949 "H1 LÄRVÄGS-SYSTEMET KLART
+(front B)" — kartan speglade aldrig beslutet); registret 333→352 kurser
+(siffror.json mätt; s5 + mx-vågorna byggde 19 kurser under dagen med FRONT
+B-bevis 3/3 + 5/5 GRÖNA mot riktiga motorn via importbro); larvag-synk GRÖN
+352=352=352, 21 profilkurser, 0 fantomer (egen körning exit 0); min-sida-
+visning kodad (LarvagKort renderad, min-sida.tsx:857); score 7 kvar —
+regressionssviten för raknaLarvag-reglerna saknas fortfarande (0 testa-
+larvag*). B9 LEVER 8 med två preciseringsfynd: vågskanningen lever DAGLIGEN
+(senaste genererad 2026-09-15T05:05:22Z mätt via /api/vagscan/senaste,
+universum exakt 12 tickers, vågmotorssviten 57/57 PASS) men drivs ENBART av
+vercel-cron — Contabo-crontaben saknar raden (skanningen dör tyst om
+Vercel-speglingen dör; nytt gap 4); SENASTE-valideringsrapporten 12 dagar
+gammal (domar 09-04: träff 52 %, nDomda 48; spegelfil mtime 09-10) och
+/api/data/vagstatistik serverar den åldrade rapporten — 0 publika
+konsumenter mätt (gap 3 bekräftat; nytt gap 5: förnyelse bruten, Vercel
+read-only fs kan inte skriva filen). E36 LEVER 9 kvar: 18/18 GRÖN (egen
+körning; kontrakt A7 REN — SVG-förbud, 2 MB-tak, magic-byte, uuid), OG
+fortfarande manuellt (deploy-skript 0 og-generate-träffar; senaste manuella
+leverans 023e9f95 09-09 = 8 bloggbilder md5-bevisade; 404 OG-filer i git),
+media-backup manuell (2 tillfällen 09-08/09-09, nytt gap 4: ingen cron).
+Sidofix: A1-översiktsradens kursantal 343→352 (siffror.json). Snitt 7,5 /
+286 / 38 oförändrat — inga poängrörelser, endast lägesrättning + preciserade
+gap. Kö till huvudagenten: (1) vagscan+vagvalidering speglas till
+Contabo-cron/pumpor; (2) rapportförnyelse + publik träff-%-yta (52 % är
+plattformens läromärke, osynligt); (3) A2-regressionssvit. Endast data/ +
+worklog = inget bygge; tsc 0 via grinden. [fabrik]

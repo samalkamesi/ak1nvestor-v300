@@ -37,10 +37,11 @@
 | 20 | Paste-markörer — navigationsrond n2 | 3-4 | 1-2 | STÄNGD (navigationsronden, fabrik) | — |
 | 21 | Toast-stack — staplande, självförsvinnande | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
 | 22 | Genvägsmanager — remappbara + Inställningspanel | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | — |
-| 23 | LaTeX — Unicode-approximation i svar | 2-4 | 1-3 | STÄNGD (register-2, fabrik) | 8 | 2 | ÖPPEN | Gratis kostnadsobservabilitet |
-| 25 | v4/conversation/resync (V4-LAGRET) | Saknas — initialWires+commit | 9 | 3 | ÖPPEN | Hållbart fileChanges-spår |
-| 26 | sessions-index topic (V4-LAGRET) | Saknas — realtime-index | 7 | 3 | ÖPPEN | Tränger undan poll-lagret |
-| 27 | v4/command + commands/query (V4-LAGRET) | Saknas — inbox/kö | 10 | 6 | ÖPPEN (etapp 2) | Högst råvärde men komplex | LaTeX-approximation: renderInline-grenar + blockformel-extraktion (×5 i prod-trädet) | 2 | 2 | STÄNGD (r2d, 45f1a9d4) | — |
+| 23 | LaTeX — Unicode-approximation i svar | Unicode-approx: renderInline-grenar + blockformel-extraktion (×5 i prod-trädet) | 2 | 2 | STÄNGD (r2d, 45f1a9d4) | — |
+| 24 | Usage-observabilitet — v4/conversation/usage + v4/usage/stats (V4-LAGRET §2 #12-13) | lasUsage() sedan våg 85 F3 + lasV4Anvandning() våg 169 (a77bb1a3); 3 UI-konsumenter | 8 | 2 | STÄNGD (våg 169 + 85 F3; live-bevis rond 38) | Kostnads-/tokenpanel utan egna mätare |
+| 25 | v4/conversation/resync (V4-LAGRET) | Saknas — initialWires+commit | 9 | 3 | ÖPPEN → VÅG 172 | Hållbart fileChanges-spår |
+| 26 | sessions-index topic (V4-LAGRET) | Saknas — realtime-index | 7 | 3 | ÖPPEN → VÅG 173 | Tränger undan poll-lagret |
+| 27 | v4/command + commands/query (V4-LAGRET) | Saknas — inbox/kö | 10 | 6 | ÖPPEN (etapp 2) | Högst råvärde men komplex |
 
 ## Redan stängda denna evolution (bevisade i prod)
 Trådspermanens (v148) · modellsminne (v150) · målpermanens (v152) · fyra lägen (v153)
@@ -48,7 +49,12 @@ Trådspermanens (v148) · modellsminne (v150) · målpermanens (v152) · fyra l�
 · juridikgrind GRÖN (g2) · integritetsvakt (g5) · generateText (m7) · Mentor 2.1 ·
 SessionStart-telemetri · puls 5 s · auto-compact 80 % · tri-state modellstatus ·
 agent-träd (11, r2e) · transkriptsök+tur-hopp (16+18, n1) · hopp-till-slut+paste (19+20, n2) ·
-keybinding (22, r2c) · LaTeX (23, r2d) — rond 30 stängde 7 gap; återstår ÖPPNA: 10 (Mermaid), 13 (scenariotest).
+keybinding (22, r2c) · LaTeX (23, r2d) — rond 30 stängde 7 gap; rond 38 stängde
+10 (Mermaid, våg 168 `48e14864`) + 24 (usage, våg 169 `a77bb1a3` på våg 85 F3:s
+stats-ground; live-bevis: 401-härdade rutter, bygg 17:29 efter commit, 3 UI-paneler)
+och reparerade registrets korrumperade tabellrader (23/24/27). Återstår ÖPPNA:
+25 (resync → våg 172) · 26 (sessions-index → våg 173) · 27 (v4/command, etapp 2) ·
+13 (scenariotest → våg 174).
 
 ## Evolutionära regler
 1. Ronden läser registret FÖRRE verkställning (styrelse-rond punkt 9) — högsta ÖPPNA V/A-kvot först.

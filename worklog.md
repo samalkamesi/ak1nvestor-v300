@@ -11007,3 +11007,21 @@ synken i VÄNTAR-RAM med ny kod väntande; 19:17-cronen mäter det bygget.
 
 ## SPÅR 9 s9-u3 omgång 3 — 2026-09-15: SYSTEMKARTAN dokvåg — E34 + E33 + E28 diffade mot verkligheten [fabrik]
 Leverans: tredje s9-u3-omgången (uppdragstexten var identisk med omgång 1:s — duplikat undveks genom kollisionskontroll: A3 togs av s9-u1:4 (abac0e0f) mitt under min mätning, filraderna skiftade; tre FRIA system valdes). Allt MÄTT i arbetsytan: E34 8→9 (kvartals-DR 2026-09-15 replikerbar 2×: 17,7 s + 14,7 s, 1 246 728 public-rader, medlemmar 3/3; dump-markörvakt EGEN körning GRÖN 29,4 MB/1 267 803 rader/6,7 s/exit 0; retention 30 d mekaniserad i cron-raden, 5 dumpar på disk; fabriks-sudo = autonoma DR-övningar; nästa senast 2026-12-15). E33 8 kvar men preciserat: system_events COPY 0 rader i SQL-dumpen (DR-väg = moln-JSON-kedjan — komplett DR = båda), composite-indexet MÄTT EJ INSTALLERAT (0 CREATE INDEX på public.system_events i dumpen, enda träff = RLS-policy p18 — gap 3 från oklart till bekräftat öppet), inventory 23 d gammal, översättningskö 320 ackumulerande (240/71/9). E28 FLAGGA 6 kvar men lägesrättat: protokollen lever till 09-15 07:55, FYRA nya möten (mega-beslut 09-14 + full delegation 09-15) med åtgärder i innehåll — "(inga)" bara 09-10; JSON-syntes-fallbacken lever dock i senaste mötet (gap 1 öppet). Snitt 285→286/38. Kö till huvudagenten: s10-u1:s crontab-radbyten (markörvakts-append + pgpass, lösenord i klartext lever — värdet återges aldrig) + ALTER-system_events-composite.sql vid nästa DR-fönster. Endast data/ = inget bygge; tsc 0 via grinden.
+
+## ROND 38 — 2026-09-15: gap-registret dokvåg — gap 10+24 STÄNGDA på live-bevis, korrumperade registerrader reparerade, våg 172-174 bokade [organ:Φ]
+Beslut: våg 165 (gap 10 Mermaid) var redan levererad av våg 168 (48e14864) — live-bevis
+rond 38: mermaid-visning.tsx (509 r) + renderingsgren studio-chat.tsx:2032 i PROD-trädet,
+prodbygget 17:29 lever. Gap 24 (usage-observabilitet) levererad av våg 169 (a77bb1a3:
+lasV4Anvandning + /api/studio/tjanster/usage-v4) på våg 85 F3:s stats-ground (lasUsage,
+0e7587b2) — live-bevis: båda rutterna 401-härdade på localhost (ej 404 = monterade i
+bygget), bygg 17:29 EFTER commit 15:23, tre UI-konsumenter (studio-forbrukning-panel,
+utveckling-panel, studio-chat). REGISTRET REPARERAT: tabellrader 23/24/27 hade sammanfogats
+vid tidigare editering — gap 24 var HELT osynlig i tabellen (dolt i LaTeX-raden); nu korrekta
+rader + footer. Verifierat att gap 25 (resync) genuint saknas (grep "resync" i prod-transport
+= 0 träffar) = korrekt nästa våg. PIPELINE: våg 165 stängd; bokade 172 (gap 25 resync,
+huvudagenten DIREKT — het fil studio-transport.ts, aldrig fabriksbarn), 173 (gap 26
+sessions-index, sekvenserad efter 172 — samma fil), 174 (gap 13 scenariotest, nya filer
+verktyg/scenariotest/ = fabriks-duglig). Fabrikskön var tom men agentfabriken föder
+auto-s*-manifest själva ur evighetskatalogens spårrotation (genereraAutoManifest) — kö
+fylls vid nästa rop. Inga agenter dispatcherade (dokvågsrond). KVD: datafiler endast
+(src/ orörd) = inget bygge; tsc-grinden grön via pre-commit-hook.

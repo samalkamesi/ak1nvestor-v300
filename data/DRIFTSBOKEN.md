@@ -535,3 +535,23 @@ får ALDRIG krascha sattMal/rensaMal.
   pm2-loggar, fabrikens statusfiler, /tmp-byggloggar). dmesg krävde
   sudo och lämnades oläst — OOM-slutsatsen vilar på "Killed"-signaturen
   + minnessiffrorna, antecknat ärligt.
+
+### STÄNGD+VERIFIERAD rond 34 (2026-09-15 17:45 lokal) — omlevererat larm, ingen ny incident
+
+- **Utlösare:** F6-larmet levererades OM till sessionen. Verifikat:
+  senaste "prod osvarar"-rad i feljakt-fynd.jsonl är **14:42:45Z** —
+  SAMMA incident som ovan; prod 200 på HTTPS+localhost vid sond.
+- **Ingen ny händelse (bevis):** pumpor-daemonen lever (rop
+  min%15==12); körningarna 15:27Z/15:42Z gav noll nya fyndrader;
+  manuell feljägarkörning 15:44:46Z = **ALLT GRÖNT** — F2 4/4 pm2
+  online, F3 **18/18 endpoints 200** (vid incidenten dog alla), F6
+  prod 200 · RAM 4 615 MB · disk 20 %, F5 fem loggar rena.
+- **Vaccinet LIVE i prod:** package.json bär `prebuild=node
+  verktyg/ram-grind.mjs --min 1600 --tak 900`; prod-synk.mjs bygger
+  via `npm ci && npm run build` → varje synk-deploy passerar
+  grinden; tre deploys efter incidenten (15:01:56Z, 15:32:53Z,
+  15:40:51Z — alla "prod 200"); ram-grind.logg TOM = grinden aldrig
+  behövt vänta/avbryta sedan vaccinet landat.
+- **Lärdom (Lag 6):** omleverans av ett larm är INTE ett nytt fel —
+  verifiera fyndloggens tidsstämpel mot nuet FÖRE rot-analys, annars
+  kurar man ett spöke. Rutinregel från och med rond 34.

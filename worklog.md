@@ -10838,3 +10838,14 @@ hero-länk. tsc 0. EFTER rond 2 mäts när prod-synken byggt commitn.
 
 ## SPÅR 7 s7-u2 omgång 2 — 2026-09-15: cache-headers + läsbarhetsluckor + mätbevis [fabrik]
 Kompletterar s7-u1:s rond 2 med kollisionsfritt urval utanför deras rond-3-kö. Cache-GUL-posterna (o8 §4) fixade i kod: /deep-courses.json (17,5 MB, max-age=0 — full omvaldering vid varje fallback-hämtning) får headers()-regel max-age=3600+swr-dag i next.config.ts; startsidan får revalidate=3600 (= /kurser-swrmönstret, dödar s-maxage-årslåset); portfolj-forskning bokad till nästa våg (filen ägdes av syskonets fönster). Läsbarhet: språkväxlarens 44px-BREDD-rotorsaka påvisad med beräknade stilar — globals.css:529 olagrad button{min-width:44px}-regel under 640px slår Tailwind v4-lagren (samma fyndklass som s7-u1:s .text-[11px]-override), kur = !-suffix; kunskaps-flode "Alla nyheter →" 42→52 + nyhets-chips 30→52 (py-[17px]! bevarar truncate på grid-items). Mätbevis: min prod-EFTER korsvaliderar s7-u1:s localhost-EFTER EXAKT (157 fem sidor + 29 portfolj-forskning = 186), /portfolj-forskning mätbar via localhost (29 fynd, 0 zoomfällor — rond 1:s korstabellfix bevisad; prod-CDP-timeouten är last-artefakt, ej sidregression), klass-sond med DOM-vägar bokad som rond-3-facit. Protokoll o10-prestanda-cache-s7.md; tsc 0; ingen bygga — prod-synken äger deploy, EFTER-curl för cache-reglerna bokas av nästa våg.
+
+## ROND 34 — 2026-09-15 17:45 lokal: F6-omleverans verifierad som stängd incident, vaccin live-bevisat [organ:Φ]
+Kunden mottog F6-larmet "prod osvarar" igen. Lag 1-sond: prod 200 (HTTPS+localhost), senaste
+"osvarar"-rad i feljakt-fynd.jsonl = 14:42:45Z = ROND 33:S INCIDENT, ingen ny händelse.
+Beviskedja: pumpor-daemon lever (min%15==12), körningar 15:27/15:42Z utan fynd, manuell
+feljägarkörning 15:44:46Z ALLT GRÖNT (F3 18/18 endpoints 200 — vid incidenten dog alla; RAM
+4 615 MB; disk 20 %; 4/4 pm2 online). Vaccinet live: prod package.json prebuild=ram-grind.mjs
+(--min 1600 --tak 900), prod-synk bygger via npm ci+npm run build → tre deploys efter
+incidenten (15:01:56/15:32:53/15:40:51Z, alla prod 200) passerade grinden; ram-grind.logg tom
+= aldrig behövt ingripa. Lärdom (Lag 6): omlevererat larm ≠ nytt fel — tidsstämpelkolla
+fyndloggen FÖRE rot-analys. Bokfört i DRIFTSBOKEN (STÄNGD+VERIFIERAD rond 34). tsc 0 (data-only).

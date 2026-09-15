@@ -1,0 +1,160 @@
+{
+  "slug": "st-01-soliditet-och-rantetackning",
+  "category": "STABILITET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Soliditet & räntetäckningsgrad — svensk stabilitetsstandard",
+  "summary": "Två klassiska svenska nyckeltal sida vid sida: hur stor andel av balansräkningen som bärs av ägarna — och hur många gånger rörelseresultatet täcker räntekostnaden.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Räkna soliditet som eget kapital delat med balansomslutning · Räkna räntetäckningsgrad som rörelseresultat delat med räntekostnad · Läsa de två måtten tillsammans som en tålighetsbild · Förstå varför banker och fastighetsbolag lever med andra soliditetsnormer än industribolag · Se hur ränteläge och upplåningsgrad samspelar i känslighetsanalysen · Koppla måtten till V10 skuldsättningsgrad och V11 likviditet.",
+  "why": "Skuldsättningsgraden (V10) sätter skulder i förhållande till eget kapital — men för att känna ett bolags verkliga tålighet behövs hela den svenska stabilitetstraditionen. Soliditeten fångar hur stor del av hela balansräkningen som ägarna själva bär, och räntetäckningsgraden visar hur många gånger rörelsen täcker räntan på lånen. Denna kurs sätter de två klassikerna i system med räkneexempel — och knyter dem till stabilitetsfamiljen i V-spåret, där varje mått belyser en egen sida av samma fråga: hur väl står bolaget emot en motvindsperiod?",
+  "history": {
+    "origin": "Soliditets- och täckningsmått har länge varit svenska bankers och kreditgivares arbetsspråk: innan ett lån beviljas vägs bolagets egen andel av balansräkningen och dess förmåga att bära räntekostnaden. Nyckeltalen växte alltså fram ur praktisk kreditbedömning, inte ur teori — de var verktyg för att överleva dåliga tider, formulerade i siffror.",
+    "evolution": "Den svenska fastighetskrisen i början av 1990-talet, där högt belånade bolag med svag räntetäckning ställdes om när räntan steg, gjorde tålighetsmåten till en fast del av svensk bolagsanalys. Samma period stärkte bankernas kapitalnormer internationellt genom Basel-regelverket från 1988 — soliditet blev ett överlevnadsvillkor för banker och ett nytänk för hela finansbranschen.",
+    "modern": "Efter år av låga räntor och därefter snabba räntehöjningar under 2022–2023 har frågan om räntekänslighet återigen hamnat i centrum. Nyckeltalsdatabaser redovisar i dag både soliditet och räntetäckning per bolag och bransch — men att tolka siffrorna mot rätt branschnorm förblir analytikerns uppgift, och det är den konsten kursen tränar."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — tålighetsfrågan bakom båda måtten",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Soliditet — eget kapital i procent av balansräkningen",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Räntetäckningsgrad — hur många gånger räntan täcks",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Praktisk tillämpning — räkna på två bolag",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — stabilitetsfamiljen i AKM1",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — tålighetsfrågan bakom båda måtten",
+      "intro": "Alla stabilitetsmått är varianter på en enda fråga: hur länge står sig bolaget om intäkterna faller?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stabilitetsanalysen börjar i en obekväm tankeövning: antag att konjunkturen vänder, att intäkterna sjunker och att räntan stiger. Vem klarar det? Svaret avgörs av bolagets balansräkning — hur stora andel av den som är ägarnas eget, och hur stort utrymme rörelseresultatet lämnar för räntekostnader. Soliditeten och räntetäckningsgraden matar var sin sida av detta: soliditeten fångar bufferten mot förluster, räntetäckningsgraden fångar rörelsens förmåga att betala skuldens pris.\n\nTillsammans kompletterar de skuldsättningsgraden (V10), som sätter skulder mot eget kapital, och likviditeten (V11), som mäter täckningen av de kortfristiga utgifterna. Fyra mått, en enda fråga — och ju fler av dem som pekar åt samma håll, desto säkrare blir bilden."
+        },
+        {
+          "type": "insight",
+          "content": "Stabilitet handlar inte om att undvika risk — det handlar om att ha utrymme att överleva risken när den slår till."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Soliditet — eget kapital i procent av balansräkningen",
+      "intro": "Soliditeten är den mest svenska av alla stabilitetsmått: en enda andel som sammanfattar finansieringens trygghet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Soliditeten räknas som eget kapital delat med balansomslutning — balansomslutningen är hela balansräkningens totala summa, tillgångar lika med skulder plus eget kapital. Ett bolag med 40 miljarder i balansomslutning och 16 miljarder i eget kapital har 40 procents soliditet: ägarna bär fyra av tio kronor i verksamheten, långivarna de övriga sex.\n\nMåttet används ofta som en första snabbbild av finansiell trygghet, och det är lätt att kommunicera just för att det är en andel. Men siffran ska alltid läsas mot bransch. Ett industriföretag med 20 procents soliditet är tydligt lågfinansierat, medan ett fastighetsbolag med samma andel kan vara normalt finansierat — fastigheters långsiktiga, pantsatta karaktär gör att branschen historiskt lever med högre belåning. Nyckeltalets kraft ligger i jämförelsen: mot bolagets egen historia och mot branschens norm."
+        },
+        {
+          "type": "definition",
+          "content": "Soliditet: Eget kapital delat med balansomslutning, uttryckt i procent. Balansomslutning = totala tillgångar = skulder + eget kapital."
+        },
+        {
+          "type": "insight",
+          "content": "Soliditet som stiger år från år — utan nya emissioner — är en av de tydligaste signalerna på äkta värdeskapande i balansräkningen."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Räntetäckningsgrad — hur många gånger räntan täcks",
+      "intro": "Räntan är skuldens fasta pris — räntetäckningsgraden visar hur mycket luft som finns före taket.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räntetäckningsgraden räknas som rörelseresultat — EBIT — delat med räntekostnaden för nettoskulden. Ett bolag med 2 miljarder i rörelseresultat och 200 miljoner i räntekostnad har en räntetäckningsgrad på 10: rörelsen täcker räntan tio gånger om. Ju högre tal, desto större fall i rörelseresultatet kan bolaget stå emot innan räntan börjar äta av kassan — eller av kapitalet.\n\nMåttets styrka är dess känslighet för ränteläget. Ett bolag med hög belåning men fasta räntebindningar kan under en period se ut att klara sig bra, och när bindningarna löper ut i ett högre ränteläge kan täckningen sjunka snabbt. Därför kompletteras måttet ofta med en känslighetsberäkning: vad händer med räntekostnaden om räntan stiger ett par procentenheter? Det är samma tankesätt som ligger bakom de känslighetsanalyser svenska årsredovisningar själva presenterar för finansiella instrument."
+        },
+        {
+          "type": "definition",
+          "content": "Räntetäckningsgrad: Rörelseresultat (EBIT) delat med räntekostnad. Visar hur många gånger rörelsens resultat täcker bolagets ränteutgift."
+        },
+        {
+          "type": "insight",
+          "content": "Räntetäckning under ungefär två gånger innebär att ett normalt resultatfall tar bolaget nära smärtgränsen — då blir varje ränterörelse en händelse värd att följa."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — räkna på två bolag",
+      "intro": "Ett räkneexempel i vardera riktning gör skillnaden mellan måtten påtaglig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tänk dig ett industriföretag: balansomslutning 20 miljarder, eget kapital 8 miljarder — soliditeten blir 40 procent. Rörelseresultatet är 1,5 miljarder och räntekostnaden 250 miljoner — räntetäckningen blir 6. Sammantaget: kraftigt ägarburen finansiering och god täckning, och bolaget står emot både ett resultatfall och en räntetopp.\n\nTänk dig sedan ett fastighetsbolag: balansomslutning 50 miljarder, eget kapital 12,5 miljarder — soliditeten 25 procent, vilket inom fastighetsbranschen är snarare normalt än alarmerande. Rörelseresultatet är 2 miljarder och räntekostnaden 1,2 miljarder — räntetäckningen blir knappt 1,7. Här är det inte soliditeten utan räntetäckningen som berättar var sårbarheten sitter: en räntehöjning eller ett vakant fastighetsbestånd slår omedelbart mot utrymmet. Övningen att räkna båda måtten på båda bolagen — och sedan fråga vilket som är 'säkrast' — visar nyckeln till konsten: säkerhet beror på bransch, inte på måttet ensamt."
+        },
+        {
+          "type": "insight",
+          "content": "Samma siffra kan vara trygghet i en bransch och varningsklocka i en annan — branschnormen är den tredje dimensionen i varje stabilitetsmått."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Fyra vanliga sätt att missläsa de två klassikerna — och hur du går runt dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "För det första: att jämföra soliditet mellan branscher utan normjustering — banker och fastighetsbolag har andra balansräkningar än industribolag, och deras soliditet ska läsas mot sina egna branschnormer. För det andra: att glömma IFRS 16, som sedan 2019 lyfter leasingavtal in i balansräkningen och därmed kan pressa soliditeten hos bolag med stora hyresavtal utan att den ekonomiska riskbilden egentligen ändrats. För det tredje: att läsa räntetäckning utan att fråga efter räntebindningar och derivat — ett fast bolag kan vara mer sårbart vid förnyelse än det ser ut, och ett rörligt bolag kan omvänt ha heddat sin risk. För det fjärde: att se en engångspost i rörelseresultatet som täckning — räntan är återkommande, täckningen ska vara det med.\n\nMotgiften är alltid densamma: läs måtten över flera år, mot branschen, och med noterna öppna där lånen beskrivs. Stabilitetsmått är frågeställare — svaren står i noterna."
+        },
+        {
+          "type": "insight",
+          "content": "En plötslig förändring i soliditet eller räntetäckning är aldrig svaret i sig — den är frågan som talar om var i årsredovisningen nästa läsning bör börja."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — stabilitetsfamiljen i AKM1",
+      "intro": "När de båda klassikerna sätts in i V-spårets stabilitetsfamilj blir bilden hel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V10 skuldsättningsgrad sätter skulder mot eget kapital — den snabba relationen. V11 likviditet mäter den allra närmaste täckningen av kortfristiga skulder. V12 intäktsstabilitet lyfter blicken mot efterfrågans jämnhet. Soliditet och räntetäckningsgrad kompletterar familjen: soliditeten ger andelen av HELA balansräkningen som ägarna bär, och räntetäckningen ger rörelsens motståndskraft mot skuldens pris. Tillsammans formar de en stabilhetsvy i fyra dimensioner — relation, likviditet, intäkter och tålighet.\n\nAvsluta med helhetsövningen: välj ett bolag, beräkna skuldsättningsgrad, soliditet och räntetäckning för de senaste tre åren, och skriv en mening om bolagets tålighet där alla tre syns. Den som behärskar den övningen har gått från att läsa enstaka nyckeltal till att teckna ett bolags finansiella hållbarhet — och det är det som är kärnan i AKM1:s stabilitetsdimension."
+        },
+        {
+          "type": "insight",
+          "content": "Stabilitetsfamiljens sanna värde visas först i motvind: den som redan vet var ett bolag är sårbart slår inte omkull när marknaden upptäcker det."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch uppmanade investerare att kika på bolagets balansräkning innan storyn — stark balansräkning är det som ger ett bra bolag tid att bli upptäckt. Lynch skulle ha uppskattat soliditetens enkelhet: en andel som vem som helst kan räkna och som omedelbart talar om hur mycket egen kraft bolaget har i en svacka.",
+  "grahamSection": "För Benjamin Graham var marginalen på balansräkningssidan en grundtrygghet: eget kapital i förhållande till skulder var en av hans mest pålitliga försiktighetsindikatorer. Räntetäckningsgraden hade han som egen rad i sitt analysramverk — hans klassiska kriterier inkluderade krav på att rörelsen täcker räntan med god marginal, ett arv som lever kvar i den svenska traditionen.",
+  "ak1Section": "I AK1A:s metodik breddar soliditet och räntetäckningsgrad V-spårets stabilitetsfamilj från relationen mellan skuld och kapital till hela balansräkningens bärkraft och rörelsens motståndskraft mot ränta. Tillsammans med V10–V12 ger de fyra dimensioner av tålighet — och därmed en stabilare grund för hela den sammanvägda helhetsbilden."
+}

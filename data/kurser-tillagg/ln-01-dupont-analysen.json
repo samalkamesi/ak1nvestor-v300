@@ -1,0 +1,156 @@
+{
+  "slug": "ln-01-dupont-analysen",
+  "category": "LÖNSAMHET",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Du Pont-analysen — plocka isär ROE",
+  "summary": "ROE i tre bitar: vinstmarginal, kapitalomsättningshastighet och hävstång — och vad varje komponent avslöjar om bolagets affärsmodell.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "learn": "Räkna ROE som produkten av vinstmarginal, kapitalomsättningshastighet och kapitalmultiplikator · Identifiera vilken typ av affärsmodell som driver avkastningen · Skilja äkta lönsamhet från hävstångseffekter · Jämföra bolag komponent för komponent inom en bransch · Upptäcka när återköp och engångsposter blåser upp ROE · Koppla komponenterna till AKM1:s V09-familj.",
+  "why": "ROE är V09:s nyckeltal — men siffran i sig döljer mer än den avslöjar. Är avkastningen skapad av en fet vinstmarginal, av kapital som snabbt roterar, eller bara av långa pengar som förstärker resultatet? Du Pont-analysen, standardverktyget i finansiell analys sedan förra seklet, plockar isär ROE i tre komponenter och gör skillnaden synlig. För den som byggt grund i lönsamhetsfamiljen är detta nästa naturliga steg: från att läsa en siffra till att förstå var den kommer ifrån.",
+  "history": {
+    "origin": "Du Pont-schemat föddes inom den amerikanska kemikoncernen Du Pont i början av 1910-talet, där ekonomen Donaldson Brown sökte ett sätt att hålla reda på avkastningen i en växande koncern. Genom att multiplicera vinstmarginal med kapitalomsättningshastighet fick han en enda siffra som förklarade hur effektivt kapitalet arbetade — ett system som spreds vidare till General Motors när Brown flyttade dit på 1920-talet.",
+    "evolution": "Under efterkrigstiden kompletterades schemat med den tredje komponenten, kapitalmultiplikatorn, vilket knöt hävstången till ROE-ekvationen. I Sverige blev Du Pont-analysen med tiden ett standardinslag i finans- och ekonomutbildningar samt bankernas bolagsutlåning — en gemensam grammatik för att tala om lönsamhet mellan bolag och kapitalgivare.",
+    "modern": "I dag delar många nyckeltalsdatabaser automatiskt upp ROE i sina komponenter, och med omfattande aktieåterköp — som krymper det egna kapitalet och därmed driver upp ROE utan att verksamheten förbättras — har konsten att plocka isär siffran blivit viktigare än på mycket länge."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — varför en ROE-siffra inte räcker",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "De tre komponenterna — marginal, hastighet, hävstång",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Praktisk tillämpning — två affärsmodeller sida vid sida",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Hävstångens dubbelverkning",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Fällor och missvisningar",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — ROE-kvalitet i AKM1:s V09-familj",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — varför en ROE-siffra inte räcker",
+      "intro": "Två bolag kan visa identisk ROE med helt olika verkligheter bakom — det är utgångspunkten för hela analysen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "ROE — avkastning på eget kapital — är en av de mest citerade siffrorna i en årsredovisning: resultatet i förhållande till det kapital ägarna lagt i bolaget. Men siffran är en produkt, och produkter kan ha många faktorer. Ett bolag kan nå 20 procents ROE med ytterst små marginaler och enorma volymer, ett annat med höga marginaler och långsamt roterande kapital, ett tredje genom att helt enkelt låna så mycket att det egna kapitalet blivit litet som andel av balansräkningen.\n\nDu Pont-analysens idé är att öppna produkten och titta på faktorerna var för sig. När tre olika vägar till samma ROE syns vid sidan av varandra blir frågan inte längre hur hög avkastningen är, utan av vilken kvalitet den är — och det är en helt annan och viktigare fråga."
+        },
+        {
+          "type": "insight",
+          "content": "ROE svarar på hur mycket; Du Pont-analysen svarar på hur — och i analysens värld är hur nästan alltid den mer avslöjande frågan."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "De tre komponenterna — marginal, hastighet, hävstång",
+      "intro": "Schemat i sig är en enda rad matematik — men varje faktor bär en egen berättelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Du Pont-schemat skriver ROE som tre multiplikationer. Vinstmarginalen — resultatet delat med omsättningen — visar hur mycket av varje säljkrona som blir vinst. Kapitalomsättningshastigheten — omsättningen delat med totala tillgångar — visar hur många gånger kapitalet arbetar per år. Kapitalmultiplikatorn — totala tillgångar delat med eget kapital — visar hur mycket av balansräkningen som finansierats med främmande kapital.\n\nVarje komponent har en naturlig hemvist. Marginalen avgörs av prissättning, kostnadskontroll och konkurrens. Hastigheten avgörs av affärsmodellen: hur länge kapital binds i lager, fordringar och maskiner. Multiplikatorn avgörs av finansieringsvalet. Tillsammans förklarar de hela ROE — och därför kan en förändring i ROE alltid spåras till en förändring i en av de tre."
+        },
+        {
+          "type": "definition",
+          "content": "Du Pont-schemat: ROE = vinstmarginal × kapitalomsättningshastighet × kapitalmultiplikator, det vill säga (resultat/omsättning) × (omsättning/tillgångar) × (tillgångar/eget kapital)."
+        },
+        {
+          "type": "insight",
+          "content": "Notera att omsättning och tillgångar förkortas bort i formeln — de tre komponenterna är ren redovisningslogik, inte ett trick: produkten är exakt ROE."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — två affärsmodeller sida vid sida",
+      "intro": "Schemat visar sin styrka först när två olika bolag ställs bredvid varandra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ta ett typiskt dagligvarubolag: marginalerna är tunna — kanske tre-fyra procent av omsättningen — men varor säljs och betalas snabbt, så kapitalomsättningshastigheten är hög. Ta sedan ett konsultbolag: marginalen kan vara femton procent, men fordringar och anställd kompetens binder kapital långsammare. Åtminstone på pappret kan båda leverera samma ROE — men med helt olika sårbarheter. Dagligvarubolaget lever på volym och rotation; rubbas omsättningshastigheten, till exempel genom byggda lager, sjunker ROE omedelbart. Konsultbolaget lever på marginal; pressas priset, gör samma sak.\n\nÖvningen är att hämta nyckeltalen för två faktiska bolag i samma bransch, räkna upp deras tre komponenter var för sig och jämföra rad för rad. Skillnaderna som försvinner i en ROE-siffra träder fram som tydliga profiler — och profilerna talar om varje bolags verkliga konkurrensfördel."
+        },
+        {
+          "type": "insight",
+          "content": "Inom en bransch säger avvikelser från komponentnormen mest: det bolag som når branschens ROE med lägre hävstång än konkurrenterna presterar det med säkrare medel."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Hävstångens dubbelverkning",
+      "intro": "Den tredje komponenten är den farligaste — den förstärker i båda riktningarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kapitalmultiplikatorn skiljer sig från de andra två komponenterna på ett avgörande sätt: den kan höja ROE utan att verksamheten förändras en millimeter. Ett bolag som lånar och återköper aktier minskar sitt eget kapital, multiplikatorn stiger och ROE stiger med den — samma fabriker, samma kunder, samma marginaler. Det är hävstångens lockelse.\n\nMen hävstången har dubbelverkning. När resultatet sjunker förstärks fallet lika effektivt som vinsten en gång förstärktes, och räntekostnaden ligger fast medan rörelseresultatet svänger. Därför ska en hög multiplikator alltid läsas tillsammans med mått på skuldbörda och räntetäckning — hur tungt lånad balansräkningen är och hur många gånger rörelsen täcker räntan. Du Pont-analysen pekar med hela handen på frågan; svaret finns i stabilitetsfamiljen."
+        },
+        {
+          "type": "insight",
+          "content": "En ROE som drivs av marginal eller rotation kan därför kallas organisk — en ROE som drivs av multiplikatorn är köpt med skulder och ska prissättas därefter."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällor och missvisningar",
+      "intro": "Tre klassiska sätt att feltolka schemat — och motgiften mot vart och ett.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fällan: engångsposter i resultatet. En avyttrad tillgång som lyfter årets vinst ger en tillfälligt hög marginal — läs därför schemat på rörelseresultat och rätta vid behov bort exceptionella poster. Andra fällan: återköpsdrivet eget kapital. Omfattande återköp krymper nämnaren i ROE, och siffran stiger utan att lönsamheten egentligen förbättrats — jämför därför också avkastning på totalt kapital, där finansieringen är borträknad. Tredje fällan: jämförelser över branschgränser. En bank och en industri har fundamentalt olika balansräkningar, och deras komponenter lever i olika världar — schemat är meningsfullt mellan liknande verksamheter.\n\nMotgiften mot alla tre är detsamma: räkna om flera år i följd, på rörelsen, inom branschen. Du Pont-analysen är starkast som trendverktyg — en gång är en siffra, fem år är en berättelse."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga alltid om komponenterna rör sig i takt eller i motsatt riktning — marginal som stiger samtidigt som hastigheten faller är en omprövning av hela affärsmodellen på väg."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — ROE-kvalitet i AKM1:s V09-familj",
+      "intro": "I AKM1:s lönsamhetsfamilj blir Du Pont-analysen kvalitetsstämpeln på ROE-talet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V09 mäter ROE — men AKM1:s metodik frågar alltid vidare: vilken lönsamhetens kvalitet bär siffran? Du Pont-analysen ger svaret i tre delar. En hög marginal knyter kursen till V07 och V08 (brutto- och EBITDA-marginal): den som förstår marginalkedjan ser var ROE börjar. En hög omsättningshastighet knyter an till kapitalstrukturens effektivitet. En hög multiplikator flaggar direkt för V10:s skuldsättningsgrad och kräver att stabilitetsfamiljen vägs in.\n\nAvsluta med helhetsövningen: välj ett bolag, beräkna ROE och dess tre komponenter för de senaste fem åren, och skriv en mening om varje komponents trend. Tre meningar — och du har en mer genomtänkt lönsamhetsbild än de flesta siffror som citeras om bolaget. Det är mästerskapet: inte att räkna rätt, utan att veta vad varje tal säger om verksamheten."
+        },
+        {
+          "type": "insight",
+          "content": "ROE-kvalitet betyder i slutänden hållbarhet: en avkastning som bärs av marginal och rotation tål motvind bättre än en som bara är hävstång."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch talade ofta om att förstå historien bakom ett bolags tillväxt — Du Pont-analysen är den finansiella versionen av samma idé: bakom varje ROE finns en berättelse om marginaler, rotation eller lånade pengar. Lynch skulle ha använt schemat för att skilja bolag som växer på ordning och effektivitet från bolag vars siffror bara är finansieringskonst.",
+  "grahamSection": "Benjamin Graham varnade för att döma bolag på en enda siffra, oavsett hur tilltalande den ser ut. För honom var frågan alltid vad som fanns bakom talet — substans, marginal och försiktighet. Du Pont-analysen ligger helt i den linjen: den demaskerar ROE-värden uppnådda genom hög skuldsättning och uppmärksammar istället stadig lönsamhet hos själva verksamheten.",
+  "ak1Section": "I AK1A:s metodik är Du Pont-analysen brobygget mellan lönsamhetsfamiljen (V07–V09) och stabilitetsfamiljen (V10–V12): den tredje komponenten pekar rakryggat på skuldsättningsgraden, och marginalkomponenten kopplar till brutto- och EBITDA-marginal. Ett V09-tal vägt med sin Du Pont-profil ger en kvalitetsgradad lönsamhetsbild — och det är just sådana helhetsvyer AKM1:s viktning bygger vidare på."
+}

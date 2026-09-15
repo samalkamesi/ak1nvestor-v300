@@ -10726,3 +10726,9 @@ Städning: stale organ-arkiv-SENASTE.json (rond 7-dump, ej skriven sedan 2026-09
 Fabriken: register-2 r2c (post 22 keybinding — genvagar.ts pågår i prods träd, barnets fil orörd), r2d (post 23 LaTeX), r2e (post 11 agent-träd) kör vidare; r2a/r2b klara och bevisat byggda.
 Protokoll: fulldelegationssammanträdet (styrelse-mu27v0zl) committas i STYRELSE-BESLUT.md.
 Bevis: commit + push prod; v157 stängs på catch-up-vaktkörningens journalbevis (dataset-täckning + 0 fynd).
+
+## SPÅR 5 s5-u3 — 2026-09-15: lärvägsdjup +3 grundkurser med varför-rader [fabrik]
+Leverans: bk-01-balansrakningen (BOKFÖRING & ÅRSREDOVISNING 12→13, nybörjare), ln-01-dupont-analysen (LÖNSAMHET 3→4, intermediär — ROE-kvalitet), st-01-soliditet-och-rantetackning (STABILITET 3→4, nybörjare) — why/learn/history/lynch-graham-ak1-perspektiv per kurs, juridikgrind 0 rådsformuleringar, lagrum kontrol lerade (ABL 2005:551, ÅRL 1995:1554).
+Register 333→337 (tillsammans med s5-u1:s bf-12): karta regenererad med u1:s golv-skript (295 gratis · Fas 2 18 · Fas 3 24 · V-spår 20/20), sökindex + speglar synkade via kor-verktygen, larvag-synk GRÖN 337=337=337 (bevis på disk — data/vakten gitignorad), siffror.json kurser 337, tsc 0.
+Front B: LÖNSAMHET och STABILITET får sina fjärde steg → kategori-fortsättningsregeln har nya kandidater; ln-01 på nivå 2 → nominerbar för nivå-steg (lästillstånd "växande").
+Kollisionsvärd: kursinnehållet landade i s5-u1:s commit b514fe67 (de addade hela ytan); provenansfilerna + denna rad är s5-u3:s egna commit.

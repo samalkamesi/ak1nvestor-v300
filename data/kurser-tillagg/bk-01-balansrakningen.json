@@ -1,0 +1,160 @@
+{
+  "slug": "bk-01-balansrakningen",
+  "category": "BOKFÖRING & ÅRSREDOVISNING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Balansräkningen — bolagets karta",
+  "summary": "Tillgångar, skulder och eget kapital på ett ställe: hur du läser balansräkningen som en karta över vad bolaget äger, vad det är skyldigt och vad som blir kvar åt ägarna.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Nybörjare",
+  "learn": "Läsa balansräkningens båda sidor och ekvationen tillgångar = skulder + eget kapital · Skilja på omsättningstillgångar och anläggningstillgångar · Sortera skulder i kortfristiga och långfristiga · Se hur eget kapital växer med vinst och krymper med utdelning · Förstå goodwill och immateriella posters plats på tillgångssidan · Koppla balansräkningen till nyckeltal som P/B (V05) och skuldsättningsgrad (V10).",
+  "why": "Att analysera ett bolag utan balansräkningen är som att navigera utan karta: resultaträkningen berättar hur året gick, men balansräkningen visar vad bolaget faktiskt består av — substansen, skulderna och bufferten. Kursen lär svenska aktieägare läsa just den kartan, post för post, eftersom nästan varje nyckeltal i stabilitets- och värderingsfamiljerna beräknas ur den: P/B, skuldsättningsgrad, soliditet och substansvärde börjar alla här.",
+  "history": {
+    "origin": "Dubbel bokföring — att varje transaktion syns på två ställen — spreds i Europa från de italienska handelsstäderna och sammanfattades av Luca Pacioli 1494. I Sverige växte redovisningskraven fram med aktiebolagens genombrott under sent 1800-tal, och 1944 års bokföringslag gav balansräkningen sin första moderna svenska lagrumskyddade form.",
+    "evolution": "Under 1900-talet blev koncernredovisningen normen för börsbolag: moderbolagets balansräkning byttes ofta ut mot en konsoliderad vy av hela koncernen. Från 2005 införde EU:s börsbolag IFRS-standarderna, vilket flyttade svenska balansräkningar närmare internationell praxis — till exempel genom att leasingavtal syns som tillgångar och skulder sedan IFRS 16.",
+    "modern": "I dag levererar alla svenska noterade bolag sin balansräkning digitalt i årsredovisningen, och nyckeltalsdatabaser gör posterna sökbara för vem som helst. Kartan är alltså tillgänglig — konsten att läsa den är fortfarande människans, och det är exakt den konsten kursen tränar."
+  },
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Grunderna — ekvationen som håller ihop allt",
+      "minutes": 4
+    },
+    {
+      "num": 2,
+      "title": "Tillgångssidan — från kassa till fabrik",
+      "minutes": 4
+    },
+    {
+      "num": 3,
+      "title": "Skulder och eget kapital — spelet bakom",
+      "minutes": 4
+    },
+    {
+      "num": 4,
+      "title": "Praktisk tillämpning — läs en svensk balansräkning",
+      "minutes": 4
+    },
+    {
+      "num": 5,
+      "title": "Vanliga fällor och misstag",
+      "minutes": 4
+    },
+    {
+      "num": 6,
+      "title": "Mästerskap — från karta till nyckeltal",
+      "minutes": 4
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Grunderna — ekvationen som håller ihop allt",
+      "intro": "Balansräkningen är en stillbild av bolagets ekonomi på ett visst datum — och den styrs av en enda ekvation.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Balansräkningen visar två sidor av samma verklighet. Till vänster (eller överst) står tillgångarna: det bolaget äger och har att använda. Till höger (eller nederst) står skulderna och det egna kapitalet: hur tillgångarna har finansierats. Ekvationen lyder alltid tillgångar = skulder + eget kapital, och den håller ihop inte av tillfällighet utan av konstruktion — dubbel bokföring registrerar varje händelse på två ställen, så de två sidorna kan aldrig glida isär.\n\nDärför är balansräkningen ett fotografi snarare än en film: resultaträkningen fångar ett helt år av intäkter och kostnader, medan balansräkningen fryser ögonblicket vid räkenskapsårets slut. I den meningen kompletterar de varandra som karta och resedagbok — och för att förstå vart ett bolag är på väg behövs båda."
+        },
+        {
+          "type": "definition",
+          "content": "Balansräkning: Sammanställning vid en tidpunkt av bolagets tillgångar samt de skulder och det egna kapital som finansierar dem. Ekvationen är tillgångar = skulder + eget kapital."
+        },
+        {
+          "type": "insight",
+          "content": "Ekvationen kan läsas baklänges också: det egna kapitalet är resten som blir kvar åt ägarna när alla skulder betalats — därför kallas det ibland substansvärdet i sin enklaste form."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tillgångssidan — från kassa till fabrik",
+      "intro": "Tillgångarna rangordnas efter hur snabbt de kan bli pengar — och ordningen avslöjar bolagets karaktär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Omsättningstillgångarna är pengar på väg genom bolaget: kassa och bank, kundfordringar som ska betalas inom närmaste månaderna, och lager som ska säljas eller förbrukas. Anläggningstillgångarna är pengar som ligger still länge: maskiner, byggnader, patent och andra immateriella rättigheter — och goodwill, som bara uppstår när ett bolag köper ett annat dyrare än dess redovisade substans.\n\nFördelningen mellan de två grupperna berättar vad bolaget är för något. Ett handelsbolag lever med stora lager och snabba vändor; ett konsultbolag har nästan inga tillgångar alls utom kassa och kundfordringar; ett industriellt bolag har sin tyngd i maskiner och fabriker. När du öppnar en balansräkning är första ögonkastet värt mest: var sitter tyngden?"
+        },
+        {
+          "type": "insight",
+          "content": "En tillgångssida full av goodwill är en berättelse om förvärv, inte om substans — goodwill testas årligen för nedskrivning och kan försvinna i ett enda beslut."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Skulder och eget kapital — spelet bakom",
+      "intro": "Finansieringssidan visar vem som har rätt till vad — och i vilken ordning vid en kristid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skulderna delas in efter löptid. Kortfristiga skulder — leverantörsskulder, skatteskulder, kommande utdelning — ska betalas inom ett år. Långfristiga skulder — banklån och obligationer — får ligga kvar längre. Eget kapital står längst ner och har ingen förfallodag alls: det är ägarnas andel av tillgångarna, byggd av insatt aktiekapital och årens ackumulerade vinster efter utdelningar.\n\nSvensk aktiebolagsrätt (aktiebolagslagen 2005:551) skyddar borgenärerna genom krav på minimiaktiekapital och begränsningar mot utdelning när eget kapital är för litet. Därför är det egna kapitalet mer än en postsiffra — det är en juridisk buffert som avgör hur mycket bolaget får dela ut till ägarna."
+        },
+        {
+          "type": "definition",
+          "content": "Eget kapital: Aktiekapital plus balanserade vinster minus utdelningar och tidigare förluster — de medel aktieägarna har i bolaget utan krav på återbetalning."
+        },
+        {
+          "type": "insight",
+          "content": "Vinst ökar det egna kapitalet och utdelning minskar det — årets resultat är därför en bro mellan resultaträkningen och balansräkningen, och den som följer eget kapital år för år ser bolagets verkliga värdeskapande."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Praktisk tillämpning — läs en svensk balansräkning",
+      "intro": "Svenska årsredovisningar har en fast ordning — när du känner den hittar du rätt på minuter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt årsredovisningslagen (1995:1554) presenteras balansräkningen i fastställda poster, från anläggningstillgångar över omsättningstillgångar till kort- och långfristiga skulder och eget kapital. Noterna bakom varje post är balansräkningens finstilta: där förklaras vad goodwill består av, när lån förfaller, hur leasingavtalen ser ut och vilka poster som gäller relaterade parter.\n\nVälj ut en årsredovisning från ett bolag du är nyfiken på — alla svenska noterade bolag publicerar den fritt — och öppna koncernbalansräkningen, inte moderbolagets. Koncernvyn samlar hela den ekonomi du faktiskt äger andel i. Gör sedan tre ögonkast: tyngden på tillgångssidan, andelen kortfristiga skulder, och hur eget kapital rört sig de senaste åren. Det är kartans tre viktigaste landmärken."
+        },
+        {
+          "type": "insight",
+          "content": "Koncernbalansräkningen och moderbolagsbalansräkningen kan se helt olika ut — analysen hör hemma i koncernen, där den verkliga verksamheten lever."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Vanliga fällor och misstag",
+      "intro": "Kartan kan ritas missvisande — här är de vanligaste sätten den lurar en otrogen läsare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första fällan är goodwill: ett bolag som byggt sin tillgångssida genom dyra förvärv visar stora tal som inte motsvaras av sålda produkter eller fabriker. Den andra är leasing, där IFRS 16 sedan 2019 lyfter leasingavtal in på balansräkningen — jämförs ett äldre tal med ett nyare kan skulderna se högre ut fast affären är oförändrad. Den tredje är lager, som värderas till lägsta av anskaffningsvärde och nettoförsäljningsvärde och därmed kan dölja både hopp och fall i efterfrågan.\n\nDen fjärde fällan är ensidighet: att läsa bara en balansräkning och tro att man förstår bolaget. Balansräkningen visar ett ögonblick — först i jämförelsen mellan år och mellan branschkollegor blir stillbilden till berättelse."
+        },
+        {
+          "type": "insight",
+          "content": "Fråga alltid vad en post skulle vara värd i en stressig situation — lager och goodwill värderas annorlunda av marknaden än av årsredovisningen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — från karta till nyckeltal",
+      "intro": "När kartan sitter i huvudet blir nyckeltalen levande — var och en är bara en fråga till balansräkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "P/B (V05) frågar: vad betalar marknaden för varje krona av det egna kapitalet? Skuldsättningsgraden (V10) frågar: hur tungt lutar finansieringen mot lån? Soliditeten frågar: hur stor andel av hela balansen bärs av ägarna? Alla tre — och substansvärdesanalysen i sin helhet — räknas ur de poster du nu kan läsa.\n\nAvsluta med en övning: ta två bolag i samma bransch, skriv deras ekvation på varsin rad och jämför landmärkena — tyngd, kortfristiga skulder, eget kapital över tid. Vilket bolag vilar på substans och vilket på berättelse? Det är frågan balansräkningen är byggd för att besvara, och det är den fråga varje stabil analys börjar med."
+        },
+        {
+          "type": "insight",
+          "content": "Nyckeltal är komprimerade balansräkningar — när formlerna känns abstrakta, rulla upp dem till posterna de kommer från, så blir både styrkan och svagheten synlig."
+        }
+      ]
+    }
+  ],
+  "lynchSection": "Peter Lynch skulle ha beskrivit balansräkningen som bolagets ID-kort: den avslöjar direkt om ett bolag är en solid verksamhet med pengar i banken eller en skuldtung berättelse med vackra ord. Hans råd att förstå vad man äger börjar bokstavligt talat på tillgångssidan — och hans varning för bolag med mer goodwill än substans är en direkt läsning av kartan.",
+  "grahamSection": "Benjamin Graham byggde sin helhetssyn på just substansen: det egna kapitalet i förhållande till marknadsvärdet var kärnan i hans försök att köpa till under marknadsvärde. För Graham var balansräkningen säkerhetens hem — nettotillgångsmassa, buffert och på sikt utdelningskapacitet — och han misstrodde analyser som inte kunde härledas till konkreta poster.",
+  "ak1Section": "I AK1A:s metodik är balansräkningen förutsättningen för stabilitetsdimensionen: skuldsättningsgrad (V10), likviditet (V11) och intäktsstabilitet (V12) räknas alla ur dess poster. Utan kartläsning blir nyckeltalen magiska tal — med kartläsning blir de frågor man kan besvara, jämföra och väga in i en helhetsbild av bolagets tålighet."
+}

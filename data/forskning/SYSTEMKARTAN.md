@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-13)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-15)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -49,6 +49,28 @@ puppeteer-core — annars ERR_MODULE_NOT_FOUND).
 Snittscore **7,4** (269 → 280 poäng / 38 system; B11 +1, D20 +1, E29 +1,
 D38 +8).
 
+## UPPDATERING 2026-09-15 (dokvåg s9-u1 — E35 kvalitetssystemet + diff mot verkligheten)
+
+E35 är systemet som rörts mest sedan 2026-09-13 (kvalitetsspåret våg
+133/138 + auto-s8). Varje rad nedan är MÄTT i arbetsytan 2026-09-15 under
+dokvågen — inte läst ur worklog:
+
+| Mått | Kartan 2026-09-13 | Verkligheten 2026-09-15 (mätning) |
+|---|---|---|
+| `npx tsc --noEmit` | baslinje 34 fel (36 rader) | **0 rader, exit 0** — baslinjen är NOLL sedan våg 133 och hålls mekaniskt av grinden |
+| Commit-grind | nämns ej | `verktyg/hooks/pre-commit` AKTIV (`core.hooksPath` verifierad): blockerar ALL commit med tsc-fel eller R2-fil; blockerande-bevisad med 8 isolerade exitkodstester + R2-härdning (.p12/.pfx/.jks/.kdbx/.htpasswd-hålet täppt) — s8-u1, bevis `data/forskning/KVALITETS-GRINDEN-BEVIS-2026-09-15.md` |
+| `validera-motorer.mjs` | 107/0/0 (KVD-not 09-13) | **107 PASS / 0 FAIL / 0 SKIP (6,3 s)** — omätten nu, oförändrat grönt |
+| Vaktverktyg | kvalitetsvakt + motorvalidering + agent-status | **+ beroende-vakt.mjs** (s8-u2: rotorsak "npm audit körs aldrig"; CRITICAL next 16.3.2 upptäckt, fix 16.3.5 inom intervall) · **+ doda-lankar.mjs** (s8-u3: 3 012 sökvägar, 0 döda, negativt kontrollfall validerar noll) · **+ konfigintegritet-vakt.mjs** (:x9 var 10:e min, E2E-bevisad i sandlåda) · + O5-bältet (prestanda-mat/-lighthouse/-skiftspar, mobil-lasbarhet) · + pumpor-daemon.mjs + agentfabrik.mjs (hör till E29:s värld) |
+| Testsviter | "37 st testa-*.mjs" | **33 st** — ingen svit raderad sedan 09-13 (git `--diff-filter=D` tomt), +3 AI-mentor-sviter tillkommit; K1:s "37" ej reproducerbart, korrigeras till mätbara 33 |
+| Motorregistret | 2026-09-03, föråldrat | **OFÖRÄNDRAT** — sista commit efff399c 2026-09-03 (git-bevis); gapet kvarstår |
+| testa-b2b-grind (E30-referens i E35:s gap) | TRASIG (ERR_MODULE_NOT_FOUND) | **KÖR GRÖNT** (exit 0, samtliga PASS, mätt nu) — importbridgan lagad efter 09-11; E30:s läges-text är inaktuell |
+
+Sidofynd utanför E35 (förs till nästa dokvåg): (a) testa-b2b-grind grönt ⇒
+E30 behöver revision av läge + gaplista; (b) gränssnittsvakten cron-GRÖN
+0717/176 kombinationer är gällande enligt s8-u1-sonden. Verifierings-
+tabellen högt upp (2026-09-11: tsc 36 rader, vakten GUL) är HISTORIK —
+KVD-noten 2026-09-13 och denna sektion är det gällande läget.
+
 ---
 
 
@@ -91,12 +113,13 @@ D38 +8).
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 320 poster i översättnings-fallback-kön; speglingsfönster manuell |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 8 | Mönstret bevisat i 3 system (progress/bevakning/portfölj); `oversattningar` kräver kund-SQL |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 8 | Datorns hybrid-sync overifierad; main efter develop (reserv-slack) |
-| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 7 | Motorer 107/0/0 + vakten cron-GRÖN; kvar: testtäckning 32/42, ingen CI |
+| E35 | Kvalitetssystemet (vakten, motorvalidering, verktygsbälte) | Grund | LEVER | 8 | Grind blockerar varje commit (bevisad s8-u1); +3 vakter (beroende/döda länkar/konfig); kvar: motorregister 2026-09-03, testaggregator, deploy-blockad vid RÖD |
 | E36 | Mediebiblioteket | Grund | LEVER | 9 | OG-kopplingen till nya poster = nästa deploy |
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 7 | Inga tester; sökindexet manuellt genererat; Min Sida-navet → se D38 |
 
-Snittscore: **7,4/10** (38 system efter D38, uppdaterad 2026-09-13). Sämst:
-betalning (5), B2B (5). Bäst: AKM2, Studio, Dataset, SEO, Mediebibliotek (9).
+Snittscore: **7,4/10** (281 poäng / 38 system; E35 +1 vid dokvågen
+2026-09-15). Sämst: betalning (5), B2B (5). Bäst: AKM2, Studio, Dataset,
+SEO, Mediebibliotek (9).
 
 ---
 
@@ -817,16 +840,32 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   täckning 12/44 → 44/44 (sökvägslista komplett); (4) backup-RESTORERINGS-
   prov av media-filer (Storage) ej gjort (endast databas provad).
 
-## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — FLAGGA — 7/10
+## E35. Kvalitetssystemet (vakten + motorvalidering + verktygsbälte) — LEVER — 8/10 *(uppdaterad 2026-09-15)*
+
+*Uppdatering 2026-09-15 (dokvåg s9-u1): FLAGGAN (105/2 GUL) är sedan
+2026-09-13 historia — motorvalideringen omätten nu: 107 PASS / 0 FAIL /
+0 SKIP (6,3 s). tsc-baslinjen är NOLL (våg 133) och pre-commit-grinden
+(våg 138, `core.hooksPath` = verktyg/hooks) blockerar mekaniskt ALL
+commit med tsc-fel eller R2-fil — blockerande bevisad med 8 isolerade
+exitkodstester + R2-härdning (s8-u1). Tre nya vakter i bältet:
+beroende-vakt (CRITICAL next 16.3.2 upptäckt, patch inom ^16.1.1-
+intervallet), dödlänsvakt (3 012 sökvägar / 0 fynd / negativt
+kontrollfall) och konfigintegritetsvakten (:x9). "37 testsviter"
+korrigerat till mätbara 33. Originaltexten nedan är K1-historik från
+2026-09-11; gällande skillnader se diff-tabellen i UPPDATERING
+2026-09-15 högt upp i filen.*
 
 - **Vad:** Kvalitetsvakten (10 kontroller över hela sajten: varumärke,
   JSON, länkar, kursdata, sitemap, motorer, åäö, siffror — skriver
   kvalitetsrapport-SENASTE.md + RESULTAT_JSON), motorvalidering (42 motorer,
-  determinism/kontraktskontroller), 37 testsviter i verktyg/, verktygsbältet
-  (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs), cron-kvalitet
-  07:00, DRIFTSBOKEN-koppling.
+  determinism/kontraktskontroller), 33 testsviter i verktyg/ (mätbart
+  2026-09-15), pre-commit-grinden (tsc-0 + R2-filblockad vid varje commit),
+  verktygsbältet (8 färdigheter + /status,/kvd,/deploy + agent-status.mjs),
+  cron-kvalitet 07:00, DRIFTSBOKEN-koppling.
 - **Nyckelfiler:** verktyg/{kvalitetsvakt,validera-motorer,agent-status}.mjs,
-  verktyg/testa-*.mjs (37 st), data/motorregister.json, data/rapporter/,
+  verktyg/hooks/pre-commit (grinden, våg 138+s8-u1),
+  verktyg/{beroende-vakt,doda-lankar,konfigintegritet-vakt}.mjs (2026-09-15),
+  verktyg/testa-*.mjs (33 st, mätbart), data/motorregister.json, data/rapporter/,
   .zcode/{skills,commands}/.
 - **Observation:** **KÖRT BEVIS (avvikelse):** just nu 105 PASS / 2 FAIL
   (netnet-determinism B11 + MÖS-kvoter E31) = **GUL**, medan AGENTS.md/
@@ -835,13 +874,14 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   från 2026-09-03 och delvis föråldrat (eko-koppling har numera konsumenter).
   32/42 motorer saknar test; testsviterna körs manuellt (ingen CI-aggregator
   utöver vakten).
-- **GAP (avgörbart):** (1) netnet + MÖS röda repareras ⇒ vakten GRÖN igen
-  och KVD-basen sann igen; (2) motorregistret regenereras (42 motorer,
-  autonomi-kolumner, testtäckning — flera fält inaktuella); (3) en
-  "kör-alla-tester"-aggregator (alla 37 sviter + PASS/FAIL-summa i
-  RESULTAT_JSON-mönstret) — idag provtagning; (4) testa-b2b-grind trasig
-  (E30); (5) CI-koppling: vakten körs av cron men ingen blockerar deploy
-  vid RÖD.
+- **GAP (kvarstående 2026-09-15, s8-u1-reviderad):** (1) motorregistret
+  regenereras (42 motorer, autonomi-kolumner, testtäckning — oförändrat
+  sedan 2026-09-03, git-bevis efff399c); (2) "kör-alla-tester"-
+  aggregator (33 sviter + PASS/FAIL-summa i RESULTAT_JSON-mönstret) —
+  fortfarande provtagning; (3) deploy-blockad vid RÖD vaktrapport —
+  grinden stoppar commit-nivån men ingen blockerar deploy; (4) STÄNGDA:
+  netnet+MÖS röda (2026-09-13, 107/0/0), testa-b2b-grind trasig (kör
+  GRÖNT igen 2026-09-15 — se sidofynd E30-revision ovan).
 
 ## E36. Mediebiblioteket — LEVER — 9/10
 

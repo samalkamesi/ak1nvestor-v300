@@ -178,9 +178,12 @@ Agent-anrop, 4+ via fabriksmanifest.
   /dataset/energi/* mättes direkt efter basen. Senaste vaktrapport (06:00)
   0 fynd. Aspekttäckningen ackumulerar vidare per rop (~21 platser/körning).
   Vakt-cron hel (17 1,7,13,19 — läkt rond 28, verifierad rond 30: 06:00-rapporten levererad).
-- ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
-  (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
-  API-kostnad; regressionstest mot befintliga svar. R2-säker.
+- ✓ VÅG 158 LEVERERAT+STÄNGT (2026-09-15, rond 37 [Φ] på maskinbevis): förhandsfrågor
+  15 → 30 via fabriksomgångar (u2 2 · extra u3 3 · makro 2 · nästa 3 — DCF/inre
+  värde, investmentbolag/NAV, options) med källmärkning + kurslänkar per svar,
+  ALLT deterministiskt utan API-kostnad. Regressionstester 83 PASS · 0 FAIL
+  (bas 26 · nästa 21 · extra 19 · makro 17) inkl. antistöld G01, kedja H01,
+  juridikgrind I/F01, registeräkthet E01 (343 kurser). R2-säker — stängd.
 - ▶ VÅG 165 (bokad rond 30 [Φ], evolutionärt): gap 10 Mermaid-rendering —
   rendera mermaid-block i chatt-svar med sanering (syskonmönster till
   stängda 23 LaTeX, `45f1a9d4`); KVD: tsc 0 + bygg + prod 200. Därefter
@@ -190,7 +193,7 @@ Agent-anrop, 4+ via fabriksmanifest.
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
 - · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)
 - ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt. ROND 30 (Φ): manifestet 5/5 klart (r2a 17 · r2b 21 · r2c 22 `8288eda0` · r2d 23 `45f1a9d4` · r2e 11) — SAMTLIGA sju registerposter STÄNGDA på live-bevis (signaturer i prod-träd + bygg 10:40 + prod 200 + /studio 200). Registret: endast 10 (Mermaid) + 13 (scenariotest) öppna.
-- [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200).
+- ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200). — STÄNGDA enligt fullmaktssamträdets punkt 2 med KVD-bevis (STUDIO-10X-PROGRAM.md §52); raden bockad rond 37 [Φ] (bokföringshygien, våg 137-b-lärdomen).
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Sessionen: /dataset-prioritering i vakturvalet, stäng v157 på journalbevis.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | R2-påminnelse: 11 FLYTTKLAR väntar kundens knapp i godkännandeytan — verkställs aldrig av organen.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Bokför per rond: worklog + beslutsminne + commit [organ:T] + push prod.

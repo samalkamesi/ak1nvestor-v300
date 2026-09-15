@@ -10913,3 +10913,14 @@ utan krasch, 12-radersväxt med fel på plats 3 fångas — tail-5:s falska nega
 LIVE: fynd = exakt 1 ÄKTA (smutsigt träd i agentarbetsytan, nu synlig), körning 2
 = 0 nya rader 0 fynd, alla 5 loggar i positionsminnet. Protokoll: o11-feljakt-f5-
 rotorsaksfix.md. tsc 0 (projektbinär), ingen bygge (verktyg+data), R2 orörd.
+
+### 2026-09-15 rond 37 [organ:Φ] — våg 158 AI-Mentorn STÄNGD på 83-testbevis + köhygien
+Maskinell stängning: samtliga fyra lager gröna (bas 26 · nästa 21 · extra 19 ·
+makro 17 = 83 PASS 0 FAIL) — frågenivå 15 → 30 (fabriksomgångar u2/u3/makro/
+nästa: DCF-inre värde, investmentbolag-NAV, options, ränta, inflation m.fl.),
+källmärkning + kurslänkar per svar, deterministiskt utan API-kostnad,
+juridikgrind testad (0 rådsfraser), registeräkthet 343 kurser fält-för-fält.
+10X-pelare 9+10 bockade i kön (stängda sedan fullmaktssamträdet punkt 2 —
+STUDIO-10X-PROGRAM.md bevittnar; raden släpade, våg 137-b). Fabriken kör
+auto-s8 (spår 8 kvalitet) — rundens bokföring kolliderar inte. Nästa i kön:
+våg 165 gap 10 Mermaid + gap 13 scenariotest (registrets sista öppna).

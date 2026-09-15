@@ -1,0 +1,506 @@
+{
+  "bas": "https://lab.ak1nvestor.com",
+  "matt": "2026-09-15T20:49:52.137Z",
+  "kombineradMed": "2026-09-15T20:48:57.206Z",
+  "antalVagar": 82,
+  "arslasSamman": [
+    "/analyser",
+    "/ansvar",
+    "/bibliotek",
+    "/blogg",
+    "/blogg/5-vanliga-nyborjarmisstag-svenska-aktier",
+    "/cookiepolicy",
+    "/fas3",
+    "/finansiell-policy",
+    "/forskningsbiblioteket",
+    "/kalkylator",
+    "/kallor",
+    "/konfluens",
+    "/labb",
+    "/manifest",
+    "/min-sida",
+    "/netnet",
+    "/nyheter",
+    "/om-oss",
+    "/portfoljbyggare",
+    "/privacy-policy",
+    "/pro",
+    "/rapporter",
+    "/studio",
+    "/superanalys",
+    "/topplista",
+    "/transparens",
+    "/upphovsratt",
+    "/vagfundament",
+    "/en",
+    "/ar"
+  ],
+  "rader": [
+    {
+      "vag": "/",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400",
+      "location": null
+    },
+    {
+      "vag": "/analyser",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/ansvar",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/bibliotek",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/blogg",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/blogg/5-vanliga-nyborjarmisstag-svenska-aktier",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/bolag/nda-se-st",
+      "status": 200,
+      "cacheControl": "s-maxage=86400, stale-while-revalidate=31449600",
+      "location": null
+    },
+    {
+      "vag": "/certifikat",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/cookiepolicy",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/dagens-pass",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/data",
+      "status": 404,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/dataset",
+      "status": 200,
+      "cacheControl": "s-maxage=86400, stale-while-revalidate=31449600",
+      "location": null
+    },
+    {
+      "vag": "/dataset/finans",
+      "status": 200,
+      "cacheControl": "s-maxage=86400, stale-while-revalidate=31449600",
+      "location": null
+    },
+    {
+      "vag": "/fas2-ansok",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
+      "location": null
+    },
+    {
+      "vag": "/fas3",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/finansiell-policy",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/forskningsbiblioteket",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/kalkylator",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/kallor",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/konfluens",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/kurser",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400",
+      "location": null
+    },
+    {
+      "vag": "/kurser/100-baggers",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400",
+      "location": null
+    },
+    {
+      "vag": "/labb",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/laroplan",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/logga-in",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/manifest",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/medlemskap",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
+      "location": null
+    },
+    {
+      "vag": "/min-portfolj",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "vag": "/min-sida",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/netnet",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000",
+      "location": null
+    },
+    {
+      "vag": "/nyheter",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/om-oss",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/portfolj-forskning",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/portfolj-grund",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/portfolj-hyra",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/portfolj-plus",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/portfoljbyggare",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/prenumeration",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/privacy-policy",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/pro",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/profil",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/rapporter",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/studio",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/superanalys",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/topplista",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/transparens",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/upphovsratt",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/vagfundament",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/villkor",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/en",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/en/blogg",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/en/kurser",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/en/dataset",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/ar",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/ar/blogg",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/ar/kurser",
+      "status": 429,
+      "cacheControl": "no-store",
+      "location": null
+    },
+    {
+      "vag": "/nyheter",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/om-oss",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/portfolj-forskning",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400"
+    },
+    {
+      "vag": "/portfolj-grund",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700"
+    },
+    {
+      "vag": "/portfolj-hyra",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700"
+    },
+    {
+      "vag": "/portfolj-plus",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700"
+    },
+    {
+      "vag": "/portfoljbyggare",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/prenumeration",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700"
+    },
+    {
+      "vag": "/privacy-policy",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/pro",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/profil",
+      "status": 200,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "vag": "/rapporter",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/studio",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/superanalys",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/topplista",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/transparens",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/upphovsratt",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/vagfundament",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/villkor",
+      "status": 200,
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700"
+    },
+    {
+      "vag": "/en",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/en/blogg",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400"
+    },
+    {
+      "vag": "/en/kurser",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400"
+    },
+    {
+      "vag": "/en/dataset",
+      "status": 200,
+      "cacheControl": "s-maxage=86400, stale-while-revalidate=31449600"
+    },
+    {
+      "vag": "/ar",
+      "status": 200,
+      "cacheControl": "s-maxage=31536000"
+    },
+    {
+      "vag": "/ar/blogg",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400"
+    },
+    {
+      "vag": "/ar/kurser",
+      "status": 200,
+      "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400"
+    }
+  ]
+}

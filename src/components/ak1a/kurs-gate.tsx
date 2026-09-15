@@ -121,7 +121,7 @@ export function KursGate({
               type="button"
               onClick={lasUpp}
               disabled={verifierar}
-              className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90 disabled:opacity-60"
+              className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90 disabled:opacity-60 max-md:min-h-[52px]!"
             >
               {verifierar ? t("gate.laserUpp") : t("gate.lasUppMedlem")}
             </button>
@@ -218,7 +218,7 @@ export function NivaBar({ slug }: { slug: string }) {
           }
         }}
         disabled={klar}
-        className="mt-3 w-full rounded-lg border border-gold/40 px-4 py-2 text-xs font-bold text-gold hover:bg-gold/10 disabled:opacity-50"
+        className="mt-3 w-full rounded-lg border border-gold/40 px-4 py-2 text-xs font-bold text-gold hover:bg-gold/10 disabled:opacity-50 max-md:min-h-[52px]!"
       >
         {klar ? t("nivabar.klarRedan") : t("nivabar.markeraKlar")}
       </button>

@@ -7,6 +7,9 @@ import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import { SIFFROR } from "@/lib/siffror";
 
 export const dynamic = "force-static";
+// force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
+// binder det, samma mönster som /en/blogg + /en/kurser.
+export const revalidate = 3600;
 
 /** English thousand grouping (en-US: 8,211). */
 const num = (n: number) => n.toLocaleString("en-US");

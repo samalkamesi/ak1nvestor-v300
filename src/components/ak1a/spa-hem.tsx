@@ -1,17 +1,28 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useAk1aStore, type SectionId } from "@/lib/ak1a-store";
 import { useAutoLogger } from "@/lib/ak1a/use-activity-logger";
 import { Header } from "@/components/ak1a/header";
 import { Footer } from "@/components/ak1a/footer";
-import { SearchModal } from "@/components/ak1a/overlays";
+import { LasyGlobal } from "@/components/ak1a/lasy-global";
 import { HomeSection } from "@/components/ak1a/sections/home-section";
 import { PrecSection } from "@/components/ak1a/sections/prec-section";
 import { AktierSection } from "@/components/ak1a/sections/aktier-section";
 import { VarumarkesLogo } from "@/components/ak1a/varumarkes-logo";
 import { PortalSection } from "@/components/ak1a/sections/portal-section";
 import { RefMottagare } from "@/components/ak1a/ref-mottagare";
+
+// VÅG s7 (prestandaspåret 2026-09-15): sökmodalen lämnar startsidans kritiska
+// hydratisering — egen chunk (radix-dialog + menyregistret-loopar), monteras
+// först vid idle/interaktion via LasyGlobal (våg 68-mönstret, samma kanal som
+// chat-widgeten och ⌘K-paletten). Interaktions-acceleratorn gör att modalen
+// redan är på plats när besökaren trycker sök; store:s searchOpen är som förut.
+const SearchModalLaddad = dynamic(
+  () => import("@/components/ak1a/overlays").then((m) => ({ default: m.SearchModal })),
+  { ssr: false },
+);
 
 // ── M3 SPA-avveckling (2026-09-02) ─────────────────────────────────────────
 // Dessa sektioner duplicerar riktiga routes — valet omdirigeras dit i stället
@@ -131,7 +142,9 @@ export function SpaHem() {
         )}
       </main>
       <Footer />
-      <SearchModal />
+      <LasyGlobal>
+        <SearchModalLaddad />
+      </LasyGlobal>
     </div>
   );
 }

@@ -83,3 +83,20 @@ borta), LCP −0,4 till −1,4 s, poäng +7–10 på / och /blogg.**
   (fore/efter/efter2/kurskontroll×2, 3 sidor × fulla rapporter)
 - `src/lib/typografi.ts` — font-display optional
 - `src/components/ak1a/kunskaps-flode.tsx` — NyhetsChips-grid
+
+## Tillägg våg 3 (s7, koddelning): CLS-variansen förklarad + isolation
+
+EFTER2-tabellens CLS 0,000 på / är reproducerbar vid SNABB hydration.
+Vid långsam (larmad server, load ~3,8 — fabrik + byggen+mätning samtidigt)
+landar hydratiseringen EFTER första paint och ett skift 0,110 syns
+(`lighthouse/start-efter.json`, runda 2). Skiftets källa är INTE fonten
+(botad): det är **språkresolvensen** — SSR sv, klienten resolverar
+`localStorage ⇒ navigator ⇒ sv`; headless-Chromes en-US gör att etiketter
+byter till engelska ("Become a member — free" syns i skiftets nodeLabel)
+och hero-knappraden (`div.mt-8 flex flex-wrap gap-3`) radbryts om.
+**Isoleringsbevis: `lighthouse/start-efter-svlocale.json` (`--lang=sv-SE`)
+= CLS 0,000, 0 skift.** Svenska besökare får aldrig bytet. Hantering =
+produktbeslut (auto-språk vid hydration), kö + alternativ i
+`o5-prestanda-s7.md`. Koddelningsfynd #1 ovan besvaras samma våg:
+SearchModal → idle-dynamic i spa-hem (övriga tunga ytor var redan lösta —
+se slutrapporten i o5-prestanda-s7.md).

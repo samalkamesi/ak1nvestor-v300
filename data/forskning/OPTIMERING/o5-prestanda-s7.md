@@ -69,8 +69,55 @@ Prod (giltiga pass): samma profil — FCP 272–920 ms, 572–799 kB,
 | Objekt | Est. vinst | Ägare | Kanal |
 |---|---|---|---|
 | Brotli i nginx | −15–20 % JS/CSS/HTML vid kall load | Huvudagent | sudo /etc/nginx + reload |
-| Koddelning tunga ytor | −100–200 kB JS på publika sidor | Byggvåg s7 | src + prod-bygg |
-| Font-audit (3×50 kB) | −50–100 kB | Byggvåg s7 | src + prod-bygg |
+| ~~Koddelning tunga ytor~~ | — | **AVSLUTAT s7 (se nedan)** | — |
+| ~~Font-audit~~ | — | **AVSLUTAT s7-u3** (display:optional, preload:false mono/kursiv, latin-subset = optimum för next/font) | — |
+
+### Koddelningen — ärlig slutrapport (s7-våg 3, 2026-09-15)
+
+Köposten "koddelning tunga ytor (⌘K, kalkylator, diagram)" granskades mot
+källträd och FÖRE-rapporter. Resultat: posten var till större delen redan
+löst när den bokades —
+
+- **⌘K-paletten**: redan lazy (våg 68) — PalettVakt laddar paletten vid
+  första öppningen/idle (`lasy-global.tsx`).
+- **Diagram**: recharts importeras ENBART av `src/components/ui/chart.tsx`,
+  som inga aktiva rutter importerar → aldrig i klientbunten.
+- **Kalkylatorn** (`akm1-calculator`): ligger bakom egen route (/kalkylator)
+  = egen chunk, laddas inte av /, /kurser, /blogg.
+- **Kvar att plocka (levererat denna våg)**: `SearchModal` (overlays.tsx —
+  radix-dialog + menyregister-loopar) monterades STATISKT av spa-hem på
+  startsidan trots att den bara syns vid sök. Fix: next/dynamic (ssr:false)
+  + LasyGlobal idle/interaktions-montering — exakt våg 68-mönstret. Söker
+  besökaren tidigt har interaktions-acceleratorn redan monterat modalen.
+- **Footer (265 rader "use client")** analyserades för serverkonvertering —
+  kräver useSprak (språkhook) på 20+ etiketter; avskrivet som kirurgi-
+  objekt (risk > vinst). Header behövs ovanför vecket.
+
+## EFTER-mätning runda 2 (2026-09-15, prod 6062e640 — font-display optional live)
+
+Standardmätning (Lighthouse headless, navigator en-US): **P58/P53/P48**,
+CLS / = **0,110** (var 0,125). TBT svänger ±700 ms mellan körningar
+(serverbelastning — mätbrus, bokfört i runda 1).
+
+**Isoleringsbevis (sv-locale, `--lang=sv-SE`): CLS / = 0,000 — 0 skift.**
+`start-efter-svlocale.json`. Font-roten (swap-skiftet i hero/sifferband)
+är alltså BOTAD. Det kvarvarande 0,110-skiftet i standardmätningen har en
+ANNAN rot: **språkresolvensen vid hydratisering** — SSR renderar svenska,
+klienten resolverar `localStorage ⇒ navigator ⇒ sv` (sprak-leverantor.tsx);
+headless-Chromes navigator.language=en-US ⇒ etiketter byter till engelska
+("Become a member — free", syns i skiftets nodeLabel) ⇒ knappraden
+(`div.mt-8 flex flex-wrap gap-3` i hero) radbryts annorlunda. Svenska
+besökare (navigator sv) får INGET byte = noll CLS. Skiftet träffar enbart
+besökare som får auto-språkbyte vid hydratisering.
+
+**Nytt kö-objekt (produktbeslut, ej kirurgi):** auto-språkbyte vid
+hydratisering orsakar CLS för icke-sv-språkade förstabesökare. Alternativ:
+(a) behåll som är (funktionalitet > 0,11 CLS för den gruppen), (b) resolvera
+språket i inline-head-skript FÖRE hydration (mindre flash, samma byte),
+(c) svensk SSR tills aktivt val. Ägare: huvudagent/styrelse — rör
+användarsynligt beteende, lämnas ej till barnagent.
+
+Rådata: `lighthouse/efter-sammanfattning.json` (runda 2), `lighthouse/start-efter-svlocale.json` (isolation). Runda 1 (P42/P47/P50, CLS 0,1246) bevarad i commit 7eb6f8ff.
 
 Rådata: `o5-fore-localhost.json`, `o5-fore-prod.json` (samma mapp).
 Prod 200 verifierad under mätningen (10 träffar) + curl 200.

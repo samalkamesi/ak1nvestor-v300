@@ -192,7 +192,7 @@ Agent-anrop, 4+ via fabriksmanifest.
   401-härdade på localhost (ej 404), prodbygget 17:29 EFTER committen,
   UI-konsumenter studio-forbrukning-panel + utveckling-panel + studio-chat.
   Gap-registret reparerat samma rond (korrumperade tabellrader 23/24/27).
-- ▶ VÅG 172 (bokad rond 38 [Φ], evolutionärt — registrets högsta öppna V9/A3):
+- ✓ VÅG 172 LEVERERAD rond 40 [Φ] (`2cf13fe5`, live-bevis i registrets footer):
   gap 25 v4/conversation/resync — gap-återhämtning (initialWires + commit)
   när revision tappas efter gateway-omstart/missade frames; idag faller
   lasFilandringarV4() då på Write/Edit-motorn. Filägarskap:
@@ -203,7 +203,7 @@ Agent-anrop, 4+ via fabriksmanifest.
   live-index över sessioner via befintlig subscribe-mekanism (samma
   connectionId/clientMode); tränger undan sessionList-poll. SEKVENSERAD
   EFTER våg 172 (samma fil — studio-transport.ts).
-- ▶ VÅG 174 (bokad rond 38 [Φ]): gap 13 scenariotest-suite — E2E-flöden i
+- ✓ VÅG 174 LEVERERAD rond 41 [Φ] (7/7 PASS, se registrets footer): E2E-flöden i
   studion (401-härdning, chatt-SSE, komprimerings-knapp, bilduppladdning)
   i NYA filer under verktyg/scenariotest/ — fabriks-dugligt (exklusivt
   filägarskap, inget src-rörande).

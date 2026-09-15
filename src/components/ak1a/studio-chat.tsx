@@ -1292,6 +1292,58 @@ function agentStatusText(status: string): string {
   return tabell[status] ?? status;
 }
 
+/** REGISTER 2 POST 11 (r2e): prick-färg per subagent-status — våg 90-palett. */
+function agentStatusPrick(status: string): string {
+  switch (status) {
+    case "running":
+      return "bg-[#3FB950]";
+    case "waiting":
+      return "bg-[#D29922]";
+    case "blocked":
+      return "bg-[#F85149]";
+    case "success":
+      return "bg-[#3FB950]/60";
+    case "failed":
+    case "lost":
+      return "bg-[#F85149]/60";
+    case "cancelled":
+      return "bg-[#8B949E]";
+    default:
+      return "bg-[#484F58]";
+  }
+}
+
+/**
+ * REGISTER 2 POST 11 (r2e): vilken mål-iteration föddes barnet i?
+ * starter = iteration → starttid (epoch ms). Sista (högsta) iteration vars
+ * start ≤ barnets startad äger barnet; null = startad före iteration 1
+ * eller utan läsbar tid → visas ej i checklistan (finns kvar i panelen
+ * Bakgrundsjobb). Barn utan läsbar startad som ÄNNU lever hamnar på den
+ * pågående iterationen (fallback) — ett levande barn hör alltid till nuet.
+ */
+function iterationForBarn(
+  barn: SubagentPost,
+  starter: Record<number, number>,
+  pagaendeFallback: number,
+): number | null {
+  const ts = barn.startad ? Date.parse(barn.startad) : NaN;
+  if (!Number.isNaN(ts)) {
+    const nummer = Object.keys(starter).map((n) => Number(n));
+    if (nummer.length > 0) {
+      let passning: number | null = null;
+      for (const n of nummer) {
+        const start = starter[n];
+        if (typeof start === "number" && start <= ts && (passning === null || n > passning)) {
+          passning = n;
+        }
+      }
+      return passning;
+    }
+  }
+  const lever = barn.status === "running" || barn.status === "waiting" || barn.status === "blocked";
+  return lever && pagaendeFallback > 0 ? pagaendeFallback : null;
+}
+
 // ── Filträd + förhandsgranskning (våg 83 B4) ─────────────────────────────────
 
 interface TradNod {
@@ -4144,6 +4196,15 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [levandeSubagenter, setLevandeSubagenter] = React.useState<SubagentPost[]>([]);
   const [avbryterSubagent, setAvbryterSubagent] = React.useState<string | null>(null);
 
+  /**
+   * REGISTER 2 POST 11 (r2e) — AGENTTRÄD PER ITERATION: iteration →
+   * starttid (epoch ms), matas av mål-strömmens mal_iteration-start-event.
+   * Starttiderna persisteras per måLTEXT (effekten vid lasLevandeSubagenter-
+   * pollen) så trädet överlever refresh — barnen (GET /api/studio/subagenter)
+   * placeras under rätt iterationsrad via sin startad-tidsstämpel.
+   */
+  const [iterationStarter, setIterationStarter] = React.useState<Record<number, number>>({});
+
   /** VÅG 92 B3: WEBBLÄSAR-PANEL — URL-fält, kör-status, kort + öppna sidor. */
   const [webUrl, setWebUrl] = React.useState("");
   const [webKorPaga, setWebKorPaga] = React.useState(false);
@@ -4419,6 +4480,30 @@ export function StudioChat({ hem }: { hem: () => void }) {
       .filter((b) => b.status !== "running" && b.status !== "waiting" && b.status !== "blocked")
       .map((b) => `· ${b.titel} — ${agentStatusText(b.status)}`),
   ].join("\n");
+
+  /**
+   * REGISTER 2 POST 11 (r2e): barn grupperade per iteration — små rader
+   * under checklistans iterationsrader i målvyn. Källan är DELADE
+   * levandeSubagenter (15 s-poll + mål-på-pollen); dubbletter (running ∪
+   * ended) deduperas på barnSessionId där sista förekomsten vinner =
+   * slutstatus. Raderna renderas bara där en iterationsrad FINNS.
+   */
+  const barnPerIteration = React.useMemo(() => {
+    const efterfall: Map<string, SubagentPost> = new Map();
+    for (const b of levandeSubagenter) efterfall.set(b.barnSessionId, b);
+    const ut: Record<number, SubagentPost[]> = {};
+    for (const b of efterfall.values()) {
+      const n = iterationForBarn(b, iterationStarter, malIteration);
+      if (n === null || n < 1) continue;
+      const hink = ut[n] ?? [];
+      hink.push(b);
+      ut[n] = hink;
+    }
+    for (const n of Object.keys(ut).map((x) => Number(x))) {
+      ut[n].sort((a, b) => (a.startad ?? "").localeCompare(b.startad ?? ""));
+    }
+    return ut;
+  }, [levandeSubagenter, iterationStarter, malIteration]);
 
   /** VÅG 114 — ORGANISM-PANELEN (kunden bygger via studion ⇒ maskinens
    *  puls ska synas här): registret + pumparnas senaste rader ur
@@ -6590,6 +6675,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 if (event.fas === "start") {
                   const iteration = event.iteration ?? 0;
                   setMalIteration(iteration);
+                  // POST 11 (r2e): iterationens starttid — barnen placeras
+                  // under rätt rad. Iteration 1 = nytt mål ⇒ kartan börjar
+                  // om (räknaren reste sig samma sekund på servern).
+                  setIterationStarter((karta) =>
+                    iteration === 1
+                      ? { 1: Date.now() }
+                      : typeof karta[iteration] === "number"
+                        ? karta
+                        : { ...karta, [iteration]: Date.now() },
+                  );
                   const id = nyttId();
                   malBubblaRef.current = id;
                   rörTabb(huvudTabbIdRef.current, (t) => ({
@@ -7619,6 +7714,60 @@ export function StudioChat({ hem }: { hem: () => void }) {
     }, 15_000);
     return () => window.clearInterval(tid);
   }, [lasLevandeSubagenter]);
+
+  /**
+   * POST 11 (r2e): hydrera iterationernas starttider ur localStorage när
+   * målet landat — den lagrade kartan gäller ENDAST samma måltext (annars
+   * börjar trädet om: en ny mål-loop får aldrig ärva gamla tider). mal ===
+   * null vid uppstart = GET:en ej landad än ⇒ rör ej.
+   */
+  React.useEffect(() => {
+    if (mal === null) return;
+    try {
+      const rå = window.localStorage.getItem("ak1a.mal.iterationstarter.v1");
+      if (!rå) return;
+      const lagrad = JSON.parse(rå) as { mal?: unknown; starter?: unknown };
+      if (
+        lagrad.mal === mal &&
+        lagrad.starter !== null &&
+        typeof lagrad.starter === "object" &&
+        !Array.isArray(lagrad.starter)
+      ) {
+        setIterationStarter(lagrad.starter as Record<number, number>);
+      } else {
+        setIterationStarter({});
+      }
+    } catch {
+      setIterationStarter({});
+    }
+  }, [mal]);
+
+  /** POST 11 (r2e): persistera kartan per måltext — en skrivning per
+   *  iterationstart (inget throttle-behov). */
+  React.useEffect(() => {
+    if (mal === null || Object.keys(iterationStarter).length === 0) return;
+    try {
+      window.localStorage.setItem(
+        "ak1a.mal.iterationstarter.v1",
+        JSON.stringify({ mal, starter: iterationStarter }),
+      );
+    } catch {
+      // privat läge/fullbelt — trädet lever i minnet denna session
+    }
+  }, [mal, iterationStarter]);
+
+  /**
+   * POST 11 (r2e): extra subagent-poll NÄR MÅLET KÖR — agentträdet under
+   * iterationerna hålls färskt (10 s; delar state med 15 s-pollen ovan).
+   */
+  React.useEffect(() => {
+    if (!malKör) return;
+    void lasLevandeSubagenter();
+    const tid = window.setInterval(() => {
+      if (document.visibilityState === "visible") void lasLevandeSubagenter();
+    }, 10_000);
+    return () => window.clearInterval(tid);
+  }, [malKör, lasLevandeSubagenter]);
 
   /**
    * Avbryt ett subagent-barn: POST /api/studio/subagenter {taskId:
@@ -10870,13 +11019,48 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 {/* Checklist: färdiga iterationer ☑ + pågående □ (äkta loop-data). */}
                 <ul className="mt-2 space-y-1">
                   {Array.from({ length: Math.min(malIteration, 12) }, (_, i) => i + 1).map((n) => (
-                    <li key={`klar-${n}`} className="flex items-center gap-2 text-[11px] text-[#8B949E]">
-                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[#238636] bg-[#238636] text-white" aria-hidden>
-                        <Check className="h-3 w-3" />
-                      </span>
-                      <span className="font-mono">Iteration {n}</span>
-                      <span className="ml-auto text-[9px] text-[#484F58]">klar</span>
-                    </li>
+                    <React.Fragment key={`klar-${n}`}>
+                      <li className="flex items-center gap-2 text-[11px] text-[#8B949E]">
+                        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[#238636] bg-[#238636] text-white" aria-hidden>
+                          <Check className="h-3 w-3" />
+                        </span>
+                        <span className="font-mono">Iteration {n}</span>
+                        <span className="ml-auto text-[9px] text-[#484F58]">klar</span>
+                      </li>
+                      {/* REGISTER 2 POST 11 (r2e): agentträdet — barn som föddes
+                          i denna iteration, prick = status (pulserar medan barnet
+                          kör); klick öppnar barnets session som tabb (resume). */}
+                      {(barnPerIteration[n]?.length ?? 0) > 0 && (
+                        <ul className="mb-0.5 ml-6 space-y-px">
+                          {barnPerIteration[n].map((b) => (
+                            <li key={b.barnSessionId}>
+                              <button
+                                type="button"
+                                onClick={() => oppnaITabb(b.barnSessionId, b.titel)}
+                                title={`${b.titel} — ${agentStatusText(b.status)} · öppna barnets session som tabb`}
+                                aria-label={`Öppna barnet ${b.titel} som tabb — status ${agentStatusText(b.status)}`}
+                                className="flex min-h-6 w-full items-center gap-1.5 rounded px-1 text-left transition-colors hover:bg-[#161B22]"
+                              >
+                                <span
+                                  className={cn(
+                                    "h-1.5 w-1.5 shrink-0 rounded-full",
+                                    agentStatusPrick(b.status),
+                                    b.status === "running" && "animate-pulse",
+                                  )}
+                                  aria-hidden
+                                />
+                                <span className="min-w-0 truncate font-mono text-[10px] text-[#8B949E]">
+                                  {b.titel || b.barnSessionId}
+                                </span>
+                                <span className="ml-auto shrink-0 font-mono text-[9px] text-[#484F58]">
+                                  {agentStatusText(b.status)}
+                                </span>
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </React.Fragment>
                   ))}
                   {malKör && (
                     <li className="flex items-center gap-2 text-[11px] text-[#D29922]">

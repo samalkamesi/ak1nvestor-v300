@@ -3856,6 +3856,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const [prompter, setPrompter] = React.useState<SparadPrompt[]>(() => lasPrompter());
   const [prompterOppen, setPrompterOppen] = React.useState(false);
   const [promptHistorik, setPromptHistorik] = React.useState<string[]>(() => lasPromptHistorik());
+  /** GAP 14 (rond 27): sök i promptbiblioteket + prompthistoriken. */
+  const [promptSok, setPromptSok] = React.useState("");
   /** VÅG 90: 📎-menyn vid skrivfältet (Fil / Mapp-uppladdning). */
   const [uploadMenyOppen, setUploadMenyOppen] = React.useState(false);
 
@@ -3868,6 +3870,39 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const slashRadRefs = React.useRef<Map<string, HTMLElement>>(new Map());
   const historikIndexRef = React.useRef<number | null>(null);
   const historikUtkastRef = React.useRef("");
+
+  // ── GAP 14 (rond 27): sökträffar över ⭐-biblioteket + prompthistoriken ─────
+  const promptSokInputRef = React.useRef<HTMLInputElement | null>(null);
+  const promptSokTraffar = React.useMemo<
+    { text: string; kalla: "bibliotek" | "historik"; skapad: number }[] | null
+  >(() => {
+    const q = promptSok.trim().toLowerCase();
+    if (!q) return null;
+    const traffar: { text: string; kalla: "bibliotek" | "historik"; skapad: number }[] = [];
+    const sedda = new Set<string>();
+    for (const p of prompter) {
+      if (p.text.toLowerCase().includes(q) && !sedda.has(p.text)) {
+        sedda.add(p.text);
+        traffar.push({ text: p.text, kalla: "bibliotek", skapad: p.skapad });
+      }
+    }
+    for (const t of promptHistorik) {
+      if (t.toLowerCase().includes(q) && !sedda.has(t)) {
+        sedda.add(t);
+        traffar.push({ text: t, kalla: "historik", skapad: 0 });
+      }
+    }
+    return traffar.slice(0, 30);
+  }, [promptSok, prompter, promptHistorik]);
+  // Sökningen börjar på nytt vid varje öppning; autotangentbord bara på dator.
+  React.useEffect(() => {
+    if (!prompterOppen) setPromptSok("");
+  }, [prompterOppen]);
+  React.useEffect(() => {
+    if (prompterOppen && typeof window !== "undefined" && window.matchMedia("(min-width: 640px)").matches) {
+      promptSokInputRef.current?.focus();
+    }
+  }, [prompterOppen]);
 
   const blattraRef = React.useRef<HTMLDivElement | null>(null);
   const ytaRef = React.useRef<HTMLTextAreaElement | null>(null);
@@ -9457,7 +9492,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </div>
               )}
 
-              {/* Promptbiblioteket ⭐ (våg 86 G2). */}
+              {/* Promptbiblioteket ⭐ (våg 86 G2) + sök (gap 14, rond 27). */}
               {prompterOppen && (
                 <>
                   <div className="fixed inset-0 z-10" aria-hidden onClick={() => setPrompterOppen(false)} />
@@ -9481,7 +9516,73 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         <X className="h-3.5 w-3.5" />
                       </button>
                     </div>
-                    {prompter.length === 0 ? (
+                    {/* Sökfält (gap 14): gäller ⭐-biblioteket + senaste historiken. */}
+                    <div className="flex items-center gap-2 border-b border-[#30363D] px-3 py-2">
+                      <Search className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />
+                      <input
+                        ref={promptSokInputRef}
+                        value={promptSok}
+                        onChange={(e) => setPromptSok(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Escape") {
+                            e.stopPropagation();
+                            if (promptSok) setPromptSok("");
+                            else setPrompterOppen(false);
+                          }
+                        }}
+                        placeholder="Sök i biblioteket + din historik…"
+                        aria-label="Sök bland sparade prompts och historik"
+                        className="min-w-0 flex-1 bg-transparent text-xs text-[#E6EDF3] outline-none placeholder:text-[#484F58]"
+                      />
+                      {promptSokTraffar ? (
+                        <span className="shrink-0 text-[10px] tabular-nums text-[#8B949E]">
+                          {promptSokTraffar.length} {promptSokTraffar.length === 1 ? "träff" : "träffar"}
+                        </span>
+                      ) : null}
+                    </div>
+                    {promptSokTraffar ? (
+                      promptSokTraffar.length === 0 ? (
+                        <p className="px-3 py-3 text-xs leading-relaxed text-[#8B949E]">
+                          Inga träffar på «{promptSok.trim()}» i biblioteket eller historiken.
+                        </p>
+                      ) : (
+                        <ul className="max-h-48 overflow-y-auto py-1">
+                          {promptSokTraffar.map((t, i) => (
+                            <li key={`${t.kalla}-${i}`} className="flex items-stretch">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  historikIndexRef.current = null;
+                                  setPrompt(t.text);
+                                  setPrompterOppen(false);
+                                  ytaRef.current?.focus();
+                                }}
+                                title={t.text}
+                                className="flex min-h-[52px] min-w-0 flex-1 items-center gap-2 px-3 py-2 text-left transition-colors hover:bg-[#0D1117] sm:min-h-[44px]"
+                              >
+                                <span className="line-clamp-2 min-w-0 flex-1 whitespace-pre-wrap break-words text-xs leading-snug text-[#E6EDF3]">
+                                  {t.text}
+                                </span>
+                                <span className="shrink-0 self-center rounded-full border border-[#30363D] px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#8B949E]">
+                                  {t.kalla === "bibliotek" ? "sparat" : "historik"}
+                                </span>
+                              </button>
+                              {t.kalla === "bibliotek" ? (
+                                <button
+                                  type="button"
+                                  onClick={() => tabortPrompt(t.skapad)}
+                                  title="Ta bort prompten ur biblioteket"
+                                  aria-label="Ta bort prompten"
+                                  className="flex w-11 shrink-0 items-center justify-center text-[#8B949E] transition-colors hover:bg-[#DA3633]/10 hover:text-[#F85149]"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </button>
+                              ) : null}
+                            </li>
+                          ))}
+                        </ul>
+                      )
+                    ) : prompter.length === 0 ? (
                       <p className="px-3 py-3 text-xs leading-relaxed text-[#8B949E]">
                         Inga sparade prompts än — skriv något i fältet och tryck ⭐ (eller kör{" "}
                         <span className="font-mono text-[#E6EDF3]">/sparad din text</span>) för att spara det här.
@@ -9519,7 +9620,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       </ul>
                     )}
                     <p className="border-t border-[#30363D] px-3 py-1.5 text-[10px] text-[#8B949E]">
-                      klicka = infoga i skrivfältet · papperskorg = ta bort — sista 10 visas
+                      {promptSokTraffar
+                        ? "söker i ⭐-biblioteket + din historik (senaste 50) · klicka = infoga i skrivfältet"
+                        : "klicka = infoga i skrivfältet · papperskorg = ta bort — sista 10 visas"}
                     </p>
                   </div>
                 </>

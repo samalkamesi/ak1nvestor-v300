@@ -172,21 +172,24 @@ Agent-anrop, 4+ via fabriksmanifest.
   väntar kundpublicering (R2 — godkännandeytan g1 lever, 401-skyddad rutt).
   Fas 3 (läsårt-paket per rappdag, kartan 194e463a) redo att dispatchas.
   startar när fas 2-kalendern levererar.
-- ◐ VÅG 157 (mekanism BEVISAD, /dataset-prioritering verkställd rond 29):
-  journalen lever (vakt-sidjournal.json) men 0 /dataset/-sidor ännu —
-  rond 29 (Φ) ändrade urvalet: PRIORITERADE_SEKTIONER=["/dataset"] mäts
-  FÖRST bland aldrig-mätta (verktyg/granssnittsvakt.mjs) — 130 aspekter
-  når mätning direkt (~21 platser/körning) i stället för efter hela
-  /analyser-trädet (~36 h). Vakt-cron läkt rond 28 (17 1,7,13,19).
-  Stängs när journalen visar dataset-täckning + 0 fynd.
+- ✓ VÅG 157 LEVERERAT (2026-09-15, stängt rond 30 [Φ] på journalbevis):
+  journalen (vakt-sidjournal.json) har 87 poster varav 21 /dataset-poster —
+  prioriteringen (rond 29, PRIORITERADE_SEKTIONER=["/dataset"]) bevisad live:
+  /dataset/energi/* mättes direkt efter basen. Senaste vaktrapport (06:00)
+  0 fynd. Aspekttäckningen ackumulerar vidare per rop (~21 platser/körning).
+  Vakt-cron hel (17 1,7,13,19 — läkt rond 28, verifierad rond 30: 06:00-rapporten levererad).
 - ▶ VÅG 158 (bokad rond 22, spår 6 AI-Mentorn): fler förhandsfrågor
   (15 → nästa nivå) med källmärkning + kurslänkar per svar — utan
   API-kostnad; regressionstest mot befintliga svar. R2-säker.
+- ▶ VÅG 165 (bokad rond 30 [Φ], evolutionärt): gap 10 Mermaid-rendering —
+  rendera mermaid-block i chatt-svar med sanering (syskonmönster till
+  stängda 23 LaTeX, `45f1a9d4`); KVD: tsc 0 + bygg + prod 200. Därefter
+  gap 13 scenariotest-suite (E2E-flöden i studion) — registrets sista öppna.
 - · Programmatiska dataset-teman (S7): ~240–253 sidor — /dataset/[bransch]/[nyckeltal] (tema 1 störst) + akm2/kategori/lagesbild/fcf/vardering/land-teman; gränsregeln <5 mätta MÅSTE med; PREC.ST recommendation/priceTarget ALDRIG syndikeras
 - · Evighetskatalogens spår (data/infra/evighetskatalog.md): granskningskön (7 m9-utkast + 8 SEO-guider) = fabriksspekt, dataset-djup, kvartalsrapportserien — välj där när denna kö tunnar
 - · Sökordsvolym-validering — LT-betyg är analytiska; Search Console-täckning kräver API-nyckel (R2: väntar kund)
 - · Bokföringshygien: SEO-A-O-rondloggen hålls i fas med levererad kod (våg 137-b-lärdomen: dokumentation släpar efter kod annars)
-- ◐ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt. ROND 29: r2a (17) + r2b (21) klara + bevisat byggda (prodbygge 07:36) — gap STÄNGDA i registret; r2c (22) / r2d (23) / r2e (11) pågår i fabriken.
+- ✓ [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Fabriksmanifest "register-2" med poster 17/21/22/23 (+11 som femte), exklusivt filägande, sekvensering vid filkonflikt. ROND 30 (Φ): manifestet 5/5 klart (r2a 17 · r2b 21 · r2c 22 `8288eda0` · r2d 23 `45f1a9d4` · r2e 11) — SAMTLIGA sju registerposter STÄNGDA på live-bevis (signaturer i prod-träd + bygg 10:40 + prod 200 + /studio 200). Registret: endast 10 (Mermaid) + 13 (scenariotest) öppna.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Direkta agenter (≤3): 10X-pelare 9+10 med KVD (tsc 0, flock-bygge, prod 200).
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | Sessionen: /dataset-prioritering i vakturvalet, stäng v157 på journalbevis.
 - [STYRELSEN] 2026-09-15T05:17:12.420Z | styrelse-mu27v0zl-lqp458 | R2-påminnelse: 11 FLYTTKLAR väntar kundens knapp i godkännandeytan — verkställs aldrig av organen.

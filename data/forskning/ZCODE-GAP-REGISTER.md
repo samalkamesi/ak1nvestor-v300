@@ -25,25 +25,27 @@
 | 8 | Kopiera-vid-markering (copy-on-select, 3.10.2-18) | Webb nativ ✓ | 4 | 1 | STÄNGD | — |
 | 9 | Diff-bläddring /diff med radnummer+CJK | Gutter (dual, absolut+relativ) + ordnivå-diff + /diff-bläddringsdialog | 4 | 2 | STÄNGD (v164-nav, byggagent; tsc 0 + 26/26; deploy df882dbf) | — |
 | 10 | Mermaid-förhandsvisning | Saknas | 2 | 3 | ÖPPEN | Rendera mermaid-block i chatt-svar (klientbibliotek) |
-| 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | ÖPPEN | Trädvy per iteration (barn klickbara → öppna session) |
+| 11 | Agent-träd förälder/barn med resume | Subagentlista+avbryt finns; TRÄD saknas | 4 | 3 | STÄNGD (register2 r2e, fabrik; barnrader under iterationsraderna, klick → oppnaITabb; `barnPerIteration` ×3 i prod-träd, bygg 10:40 + prod 200) | — |
 | 12 | session/fork äkta (M5) | rewindTillTurn = ÄKTA session/fork (transport rad ~196) | 4 | 2 | STÄNGD (verifierad mot kod 2026-09-15) |
 | 13 | TUI-scenariotest (deras testinfrastruktur) | E2E-skript finns | 2 | 3 | ÖPPEN | Scenariotest-suite för studions flöden (playwright?) |
 | 14 | Prompt-historik-sökning (↑ + sök) | /sök-kommando med alias sok — förifyller panelens filter (bibliotek+historik, klick infogar) | 3 | 1 | STÄNGD (v164-nav, byggagent) | — |
 | 15 | Teman (config theme) | Fast mörkt (v90-beslut) | 1 | 3 | STÄNGD (designbeslut: kunden valde mörkt) | — |
-| 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Saknas | 4 | 2 | ÖPPEN | Sökpanel i konversationen med nästa/förra + resultaträkning |
+| 16 | Transkriptsökning (pi-tui P1) — Ctrl+Shift+F-panel i svaren | Ctrl+Shift+F öppnar sökpanel: `sokOppen/sokFras/sokIndex`, träffräkning, nästa/förra | 4 | 2 | STÄNGD (n1, 695f2703; bygg 10:40 + prod 200) | — |
 | 17 | Input-autocomplete @-filer (P2) | @-filuppslag: fuzzy-match, 52 px-rader, listbox/aria, debounce 200 ms, infogning med markör | 4 | 3 | STÄNGD (r2a, ebba4910; prodbygge 07:36) | — |
-| 18 | Turmarkörer + hopp mellan turer (P3) | Saknas | 3 | 1 | ÖPPEN | Knapp/genväg föregående/nästa tur — para med #16 |
-| 19 | Hopp-till-slut-indikator (P4) | Saknas | 3 | 1 | ÖPPEN | Klickbar etikett vid uppscrollning |
-| 20 | Stora paste-markörer (P5) | Rå dump | 3 | 1 | ÖPPEN | Kollapsa >N rader till expanderbar markör |
+| 18 | Turmarkörer + hopp mellan turer (P3) | `turPos`-state + hoppaTur + Alt+↑/↓ piltangenter | 3 | 1 | STÄNGD (n1, 695f2703) | — |
+| 19 | Hopp-till-slut-indikator (P4) | "↓ Hopp till slutet"-etikett (pi-tui 0.85.0-paritet) + räknarbadge, `hoppaNerChatt`, 44 px mobiltryckyta | 3 | 1 | STÄNGD (n2, df882dbf) | — |
+| 20 | Stora paste-markörer (P5) | `PASTE_RADER_GRANS` + `räknaRader` — kollapsar >N rader till expanderbar markör (×5 i prod-träd) | 3 | 1 | STÄNGD (n2, df882dbf) | — |
 | 21 | In-app toast-stack (P6) | Staplade självförsvinnande notiser, live-region, stäng-klick, mobil-safe-area | 3 | 1 | STÄNGD (r2b, 723b51d9; prodbygge 07:36) | — |
-| 22 | Keybinding-manager (P7) | Hårdkodade genvägar | 3 | 2 | ÖPPEN | Remappbara genvägar med listning |
-| 23 | LaTeX-formler i svar (P8) | Saknas | 2 | 2 | ÖPPEN | Syskon till #10 — samma renderarrör |
+| 22 | Keybinding-manager (P7) | `src/lib/studio/genvagar.ts` (203 rader) — remappbara genvägar + listning | 3 | 2 | STÄNGD (r2c, 8288eda0; bygg 10:40 + prod 200) | — |
+| 23 | LaTeX-formler i svar (P8) | LaTeX-approximation: renderInline-grenar + blockformel-extraktion (×5 i prod-trädet) | 2 | 2 | STÄNGD (r2d, 45f1a9d4) | — |
 
 ## Redan stängda denna evolution (bevisade i prod)
 Trådspermanens (v148) · modellsminne (v150) · målpermanens (v152) · fyra lägen (v153)
 · varm-GET (v154) · uppdragsmotor (v156) · komprimering 3-tier (v160) · audit (g3)
 · juridikgrind GRÖN (g2) · integritetsvakt (g5) · generateText (m7) · Mentor 2.1 ·
-SessionStart-telemetri · puls 5 s · auto-compact 80 % · tri-state modellstatus.
+SessionStart-telemetri · puls 5 s · auto-compact 80 % · tri-state modellstatus ·
+agent-träd (11, r2e) · transkriptsök+tur-hopp (16+18, n1) · hopp-till-slut+paste (19+20, n2) ·
+keybinding (22, r2c) · LaTeX (23, r2d) — rond 30 stängde 7 gap; återstår ÖPPNA: 10 (Mermaid), 13 (scenariotest).
 
 ## Evolutionära regler
 1. Ronden läser registret FÖRRE verkställning (styrelse-rond punkt 9) — högsta ÖPPNA V/A-kvot först.

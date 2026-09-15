@@ -10735,3 +10735,10 @@ Kollisionsvärd: kursinnehållet landade i s5-u1:s commit b514fe67 (de addade he
 
 ## SPÅR 7 s7-u1 — 2026-09-15: prestandavåg 1 — CPD-mätverktyg + FÖRE-baslinje [fabrik]
 Leverans: verktyg/prestanda-mat.mjs (headless-Chrome CDP, mobil 390x844, kall cache, 0 npm-paket) + baslinje 5 kärnsidor x2 iter mot localhost OCH prod. Fynd: JS 447-492 kB/sida dominerar, fonter 148 kB (3x woff2), bilder ~0 kB (bildobjektet redan avklarat), cache-headers GRÖNA, nginx saknar brotli (bokas till huvudagent/infra: est. -15-20 % JS vid kall load), sw.js v7 korrekt och orörd enl v78. Protokoll + kö med vinstestimat och agarkanal i o5-prestanda-s7.md. Prod 200 under matningen + curl. Inga src-andringar = inget bygge.
+
+## STYRELSEROND 30 — 2026-09-15 [organ:Φ]
+Beslut: stängde 7 evolutionära gap på live-bevis + v157 på journalbevis.
+- Gap 11 agent-träd (r2e) · 16 transkriptsökning + 18 tur-hopp (n1, 695f2703) · 19 hopp-till-slut + 20 paste-markörer (n2, df882dbf) · 22 keybinding (r2c, 8288eda0) · 23 LaTeX (r2d, 45f1a9d4). Fabriksstatus register-2 5/5 + navigationsrond-p1p5 2/2, kod 0, underkända 0. Live-bevis: signaturer i prod-träd (barnPerIteration ×3, PASTE_RADER_GRANS ×5, LaTeX ×5, genvagar.ts 203 rader, sokOppen/sokFras/sokIndex + Ctrl+Shift+F, turPos + Alt+pilar, "↓ Hopp till slutet") · prodbygge 10:40 lokal > sista leverans-commit 08:26 · /studio 200 · prod 200.
+- v157 STÄNGD: vaktjournal 87 poster varav 21 /dataset + senaste vaktrapport (06:00) 0 fynd — rond 29:s /dataset-prioritering bevisad i drift.
+- Pipeline: våg 165 bokad (gap 10 Mermaid → gap 13 scenariotest = registrets sista öppna); fabriken kör auto-s7 (u1-u2 klara, CLS-rot + läsbarhetsvågor levererade).
+Dispatcherat: ingen ny agentvåg (fabriken upptagen med auto-s7; registret saknar hög-kvotgap tills våg 165). Städning: _rond29-* + _rond30-*.

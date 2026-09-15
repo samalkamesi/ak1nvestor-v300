@@ -65,14 +65,31 @@ function jagaKod() {
     srcAndrad = gitTopp !== senaste;
   } catch { srcAndrad = true; }
   if (!srcAndrad) { gron("F1-kod", "src/ oändrad sedan senaste tsc — hoppar"); return; }
+  // r39-vaccin (2026-09-15): mät ALDRIG tsc under deployfönstret — npm ci
+  // river node_modules partiellt och transitiva @types (recharts d3-paket)
+  // försvinner minutvis ⇒ falska TS2688 (bevis: F1 20:27:21Z, bygg slut
+  // 20:39:22Z, grönt vid ommätning). Alla byggvägar håller deploylåset.
+  try {
+    execSync("flock -n /tmp/ak1a-deploy.lock -c true", { timeout: 5_000, stdio: "pipe" });
+  } catch {
+    gron("F1-kod", "hoppar — deployfönster aktivt (npm ci river node_modules)");
+    return;
+  }
   try {
     // s8-determinism (2026-09-15, syskonmönstret ur pre-commit): projektets
     // EGEN tsc-binär, ALDRIG npx — mitt i ett deployfönster (npm ci river
     // node_modules) kan npx lösa "tsc" till cachens dummy tsc@2.0.4 som
     // alltid svarar grönt (falsk F1-grön). Saknad binär ⇒ "Cannot find
     // module" blir F1-fynd i stället för tystnad.
-    const tsc = execSync("node node_modules/typescript/bin/tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" });
-    const fel = tsc.trim();
+    const korTsc = () => execSync("node node_modules/typescript/bin/tsc --noEmit 2>&1 | head -5", { cwd: ROT, timeout: 300_000, encoding: "utf8" }).trim();
+    let fel = korTsc();
+    if (fel && !fel.includes("0") && /^error TS(2688|2307)/m.test(fel)) {
+      // TS2688/TS2307 = race-signatur för partiell node_modules (npm ci hann
+      // mitt i trots låsproben): en andra chans efter väntan — kvarstår
+      // felet är det äkta och bokförs HÖG nedan som vanligt.
+      execSync("sleep 75", { timeout: 90_000 });
+      fel = korTsc();
+    }
     if (fel && !fel.includes("0")) {
       bokfor("F1-kod", "HÖG", `tsc: ${fel.split("\n").length} fel`, fel.slice(0, 200));
     } else {

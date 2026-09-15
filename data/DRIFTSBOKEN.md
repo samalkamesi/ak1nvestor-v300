@@ -676,3 +676,5 @@ får ALDRIG krascha sattMal/rensaMal.
 - VACCIN (Lag 6): kur är leverad först när koden FINNS I PROD med beteendebevis —
   rundens verify-kedja slutar ALDRIG vid "commit i arbetsyta" (rond 26:lärdomen
   generaliserad från bygg till larmväg).
+
+- **2026-09-15 rond 39 (F1-falsklarm):** feljägarens tsc-mätning under pågående npm ci gav 5 × TS2688 (transitiva @types/d3-* rivna minutvis). Vaccin: deploylås-probe + TS2688/2307-andra-chans i feljagaren.mjs — mät aldrig kod under underhållsfönster. Familj nr 3 av "mätning under underhåll"-falsklarm (jfr F6-tidsfilter rond 35-36, RAM-grind rond 33).

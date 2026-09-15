@@ -36,8 +36,10 @@ import {
   Link2,
   ListChecks,
   Loader2,
+  Maximize,
   Menu,
   MessageCircleQuestion,
+  Minimize,
   MoreHorizontal,
   Paperclip,
   Pencil,
@@ -111,7 +113,10 @@ import { cn } from "@/lib/utils";
  * permission/fråge-dialoger + minnesregler + diff-förhandsvisning,
  * multi-session-tabbar (nu renderade som sidebar-tasklista), mål-läget
  * (autonom loop), uppladdning (drag/paste/mapp), minne, färdigheter,
- * admin-verktyg, notiser + långkörningsvakt, sök, kommandopalett,
+ * admin-verktyg, notiser + långkörningsvakt (E2 gap 4: "AK1A klar"-
+ * notis vid varje tur-avslut när fliken ej syns/fokuseras, med svarets
+ * första ~80 tecken som kropp + diskret "Aktivera notiser"-knapp i
+ * panelen), sök, kommandopalett,
  * slash-autocomplete, promptbibliotek + historik, rewind/fork, åter-
  * koppling (IndexedDB-cache + 15/30 s-poll), export md/HTML. Tema-
  * växlaren (våg 84 A) är MEDVETET borttagen — våg 90:s tema är FAST
@@ -808,6 +813,20 @@ function riskFarg(risk: string): string {
   }
 }
 
+/** EVOLUTION E1 (gap 2): synlig sifferetikett på dialogalternativ —
+ *  siffertangent 1-9 väljer alternativet (z code-paritet 3.11.2-23).
+ *  Neutral palett som läses på både solida och konturknappar. */
+function SifferEtikett({ n }: { n: number }) {
+  return (
+    <span
+      aria-hidden
+      className="mr-1.5 inline-flex h-4 min-w-4 items-center justify-center rounded border border-[#30363D] bg-[#010409] px-0.5 font-mono text-[9px] font-bold leading-none text-[#8B949E]"
+    >
+      {n}
+    </span>
+  );
+}
+
 // ── Interaktionsköns tidsgräns (10X p7) ─────────────────────────────────────
 
 /** 10X p7: en obesvarad dialog (permission/fråga) får en tidsgräns på 60 s.
@@ -1125,6 +1144,14 @@ function tkn(n: number): string {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".", ",")}M`;
   if (n >= 1_000) return `${Math.round(n / 1000)}k`;
   return String(n);
+}
+
+/** E2 (gap 4): notis-kropp = svarets första ~80 tecken med whitespace
+ *  plattat (radbrytningar blir mellanslag). Innehåller ALDRIG titel,
+ *  session eller nycklar — bara svarets egen början. */
+function notisForhandsvisning(text: string): string {
+  const platt = text.replace(/\s+/g, " ").trim();
+  return (platt.slice(0, 80) || "(tomt svar)") + (platt.length > 80 ? "…" : "");
 }
 
 /** Kontextprocent ärlig: Math.round över 1 %, minst en decimal under —
@@ -3608,6 +3635,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /** Mobil-drawer för höger panelen (PanelRight-knappen i headern). */
   const [mobilPanel, setMobilPanel] = React.useState(false);
 
+  // ── EVOLUTION E1 (gap 1): HELSKÄRMSLÄGE — Fullscreen API på rot-elementet.
+  //    Esc lämnar nativt (webbläsaren sköter avslutet); fullscreenchange håller
+  //    tillståndet sant oavsett väg in/ut (knapp, Esc, F11). Sidopanelerna
+  //    döljs i läget — chatten får hela skärmen (z code-paritet 3.10.1).
+  const [helskarm, setHelskarm] = React.useState(false);
+  React.useEffect(() => {
+    const paAndring = () => setHelskarm(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", paAndring);
+    return () => document.removeEventListener("fullscreenchange", paAndring);
+  }, []);
+
   // ── Modellval + kontext + sessioner (våg 82) ───────────────────────────────
   const [modeller, setModeller] = React.useState<ModellPost[]>([]);
   const [valdModell, setValdModell] = React.useState("");
@@ -3759,6 +3797,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const turnStartRef = React.useRef<number | null>(null);
   const turnNotiseradRef = React.useRef(false);
   const turnTknRef = React.useRef<number | null>(null);
+  // E2 (gap 4): tur-avslutets svarstext (kapad) — läs av vaktens cleanup
+  // när strömmen slutar; ger "AK1A klar"-notisen sin kropp.
+  const turnSvarRef = React.useRef<string | null>(null);
   const titleVaxlingRef = React.useRef<number | null>(null);
   const grundTitelRef = React.useRef<string | null>(null);
 
@@ -4093,6 +4134,23 @@ export function StudioChat({ hem }: { hem: () => void }) {
     window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 4_500);
   }, []);
 
+  /** EVOLUTION E1 (gap 1): växla helskärm — tillståndet synkas av
+   *  fullscreenchange-lyssnaren ovan (täcker även Esc/F11-avslut). */
+  const vaxlaHelskarm = React.useCallback(() => {
+    const rot = document.documentElement;
+    if (document.fullscreenElement) {
+      if (typeof document.exitFullscreen === "function") {
+        void document.exitFullscreen().catch(() => {});
+      }
+      return;
+    }
+    if (typeof rot.requestFullscreen !== "function") {
+      visaToast("Helskärm stöds ej i denna webbläsare.", "fel");
+      return;
+    }
+    void rot.requestFullscreen().catch(() => visaToast("Helskärm kunde ej startas.", "fel"));
+  }, [visaToast]);
+
   // ── Regler ur localStorage + notisrättighet + ref-synk (våg 84 C) ──────────
   React.useEffect(() => {
     const lista = lasReglerUrLagring();
@@ -4245,7 +4303,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       return;
     }
     if (Notification.permission === "granted") {
-      visaToast("Notiser är redan påslagna — långa rundor (>60 s) pingar dig.");
+      visaToast("Notiser är redan påslagna — du får besked när en tur är klar.");
       return;
     }
     if (Notification.permission === "denied") {
@@ -4257,7 +4315,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
       setNotisRattighet(svar);
       visaToast(
         svar === "granted"
-          ? "Notiser på — du får veta när agenten arbetat över 60 s och när den är klar."
+          ? "Notiser på — du får besked när agenten är klar, även när studion ligger i bakgrunden."
           : "Inga notiser — titelväxlingen fungerar ändå.",
       );
     } catch {
@@ -4268,12 +4326,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
   /**
    * LÅNGKÖRNINGSVAKT (våg 84 C): >60 s ⇒ Web Notification + titelväxling;
    * vid klart ⇒ "✓ Klar (N tkn)". Lyssnar på NÅGON tabb.
+   * E2 (gap 4): vid varje tur-avslut BÄRS svarets början (turnSvarRef) in i
+   * klar-notisen, och KORTA turer (<60 s, inget ping-lofte) pingar också —
+   * men endast när studion ej syns/fokuseras (desktop-Z: notifications
+   * condition:unfocused).
    */
   React.useEffect(() => {
     if (!nagotStrömmar) return;
     turnStartRef.current = Date.now();
     turnNotiseradRef.current = false;
     turnTknRef.current = null;
+    turnSvarRef.current = null;
     grundTitelRef.current = document.title;
     const vakt = window.setInterval(() => {
       const start = turnStartRef.current;
@@ -4311,14 +4374,41 @@ export function StudioChat({ hem }: { hem: () => void }) {
       if (grundTitelRef.current !== null) document.title = grundTitelRef.current;
       const antal = turnTknRef.current;
       const paminerad = turnNotiseradRef.current;
+      const svarPreview = turnSvarRef.current;
       turnNotiseradRef.current = false;
-      if (start !== null && paminerad && typeof Notification !== "undefined" && Notification.permission === "granted") {
+      turnSvarRef.current = null;
+      const notisBar = typeof Notification !== "undefined" && Notification.permission === "granted";
+      if (start !== null && paminerad && notisBar) {
         try {
           new Notification(`✓ Klar${typeof antal === "number" ? ` (${tkn(antal)} tkn)` : ""}`, {
-            body: "Agenten är klar — öppna studion för att läsa svaret.",
+            body:
+              svarPreview !== null
+                ? notisForhandsvisning(svarPreview)
+                : "Agenten är klar — öppna studion för att läsa svaret.",
             tag: "ak1a-studio-turn",
           });
           loggaNotis(`Klar${typeof antal === "number" ? ` (${tkn(antal)} tkn)` : ""}`, "klar");
+        } catch {
+          // tyst
+        }
+      } else if (
+        // E2 (gap 4): KORT tur (<60 s, inget ping-lofte) — meddela ändå när
+        // studion ej syns/fokuseras. svarPreview=null ⇒ avbruten tur: tyst.
+        start !== null &&
+        !paminerad &&
+        svarPreview !== null &&
+        notisBar &&
+        (document.visibilityState !== "visible" || !document.hasFocus())
+      ) {
+        try {
+          new Notification("AK1A klar", {
+            body: notisForhandsvisning(svarPreview),
+            tag: "ak1a-studio-turn",
+          });
+          loggaNotis(
+            `Klar i bakgrunden${typeof antal === "number" ? ` (${tkn(antal)} tkn)` : ""}`,
+            svarPreview.startsWith("Fel: ") ? "fel" : "klar",
+          );
         } catch {
           // tyst
         }
@@ -7414,6 +7504,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
       const avkodare = new TextDecoder();
       let buffert = "";
       let färdig = false;
+      // E2 (gap 4): svarets strömmade text (kapad) — klar-notisens kropp när
+      // klart-eventet saknar svarstext.
+      let strömmadText = "";
       while (!färdig) {
         const { done, value } = await läsare.read();
         if (done) break;
@@ -7472,6 +7565,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 rörTabb(tabbId, (t) => ({ ...t, tankar: (t.tankar + (event.text ?? "")).slice(-260) }));
                 rörAgent((m) => ({ ...m, tankar: ((m.tankar ?? "") + (event.text ?? "")).slice(-TANKAR_TAK) }));
               } else {
+                strömmadText = (strömmadText + (event.text ?? "")).slice(0, 200);
                 rörAgent((m) => ({ ...m, text: m.text + (event.text ?? "") }));
                 sattStatus("Svarar…");
               }
@@ -7578,6 +7672,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   ? { ...t, modellStatus: null }
                   : t,
               );
+              // E2 (gap 4): svarets början till tur-avslutets notis.
+              turnSvarRef.current = event.svar && event.svar.trim() ? event.svar : strömmadText;
               if (typeof event.tokenCount === "number" && event.tokenCount > 0) {
                 turnTknRef.current = event.tokenCount;
                 rörTabb(tabbId, (t) => ({
@@ -7627,6 +7723,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 text: m.text || event.meddelande || "Okänt fel.",
               }));
               loggaNotis(`Fel: ${event.meddelande || "okänt fel"}`.slice(0, 120), "fel");
+              // E2 (gap 4): felat tur-avslut pingar också — kunden slipper
+              // vänta i en tom flik.
+              turnSvarRef.current = `Fel: ${event.meddelande || "okänt fel"}`;
               färdig = true;
               break;
             case "meddelande_id":
@@ -7665,6 +7764,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
             fel: true,
             text: m.text || (fel instanceof Error ? fel.message : "Bryggfel."),
           }));
+          // E2 (gap 4): även bryggfel är ett tur-avslut — pinga (avbruten
+          // tur ovan pingar INTE: kunden avbröt själv).
+          turnSvarRef.current = `Fel: ${fel instanceof Error ? fel.message : "bryggfel"}`;
         } else {
           rörAgent((m) => ({ ...m, strömmande: false, text: m.text || "(avbruten)" }));
         }
@@ -7985,6 +8087,42 @@ export function StudioChat({ hem }: { hem: () => void }) {
     return () => window.removeEventListener("keydown", paTangent);
   }, [palettOppen, sokOppen, prompterOppen]);
 
+  // ── EVOLUTION E1 (gap 2): siffertangenter 1-9 = snabbval i interaktions-
+  //    dialogerna (permission-alternativ / frågans val). Ignorerar tangenter
+  //    skrivna i redigerbara fält — fri text vinner aldrig mot snabbvalet.
+  React.useEffect(() => {
+    const fragaVal = fraga?.val ?? [];
+    if (!permission && fragaVal.length === 0) return;
+    const paSiffra = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || svarJobbar) return;
+      if (!/^[1-9]$/.test(e.key)) return;
+      const mal = e.target as HTMLElement | null;
+      if (
+        !!mal &&
+        (mal.tagName === "INPUT" || mal.tagName === "TEXTAREA" || mal.tagName === "SELECT" || mal.isContentEditable)
+      ) {
+        return;
+      }
+      const n = Number(e.key);
+      if (permission) {
+        const a = permission.alternativ[n - 1];
+        if (a) {
+          e.preventDefault();
+          void svaraPermission(permission.requestId, a.optionId);
+        }
+        return;
+      }
+      if (!fraga) return;
+      const v = fragaVal[n - 1];
+      if (v) {
+        e.preventDefault();
+        void svaraFraga(fraga.requestId, v);
+      }
+    };
+    window.addEventListener("keydown", paSiffra);
+    return () => window.removeEventListener("keydown", paSiffra);
+  }, [permission, fraga, svarJobbar, svaraPermission, svaraFraga]);
+
   React.useEffect(() => {
     if (sokOppen) sokInputRef.current?.focus();
   }, [sokOppen]);
@@ -8288,7 +8426,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         aria-label="Samtalsmeny"
         className={cn(
           "hidden w-[260px] shrink-0 flex-col border-r border-[#30363D] bg-[#010409] md:flex",
-          !sidebarOppen && "md:hidden",
+          (!sidebarOppen || helskarm) && "md:hidden",
         )}
       >
         {sidebarInnehall}
@@ -8405,6 +8543,16 @@ export function StudioChat({ hem }: { hem: () => void }) {
             className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
           >
             <PanelRight className={cn("h-4 w-4", !panelOppen && "text-[#484F58]")} />
+          </button>
+          {/* EVOLUTION E1 (gap 1): helskärm — Esc lämnar nativt. */}
+          <button
+            onClick={vaxlaHelskarm}
+            title={helskarm ? "Lämna helskärm (Esc)" : "Helskärm — chatten får hela skärmen (Esc lämnar)"}
+            aria-label={helskarm ? "Lämna helskärm" : "Helskärm"}
+            aria-expanded={helskarm}
+            className="flex h-[52px] w-10 shrink-0 items-center justify-center rounded-md text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:h-8 sm:w-8"
+          >
+            {helskarm ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
           </button>
           <button
             onClick={oppnaInstallningar}
@@ -9011,12 +9159,12 @@ export function StudioChat({ hem }: { hem: () => void }) {
                       </pre>
                     )}
                     <div className="mt-3 flex flex-wrap gap-2">
-                      {permission.alternativ.map((a) => (
+                      {permission.alternativ.map((a, i) => (
                         <button
                           key={a.optionId}
                           onClick={() => void svaraPermission(permission.requestId, a.optionId)}
                           disabled={svarJobbar}
-                          title={a.beskrivning || a.namn}
+                          title={i < 9 ? `${a.beskrivning || a.namn} (tangent ${i + 1})` : a.beskrivning || a.namn}
                           className={cn(
                             "min-h-[52px] rounded-md px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50 sm:min-h-0",
                             a.optionId === "deny"
@@ -9026,6 +9174,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                                 : "bg-[#238636] text-white hover:bg-[#2EA043]",
                           )}
                         >
+                          {i < 9 && <SifferEtikett n={i + 1} />}
                           {PERMISSION_ETIKETT[a.optionId] ?? a.namn}
                         </button>
                       ))}
@@ -9048,6 +9197,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     </div>
                     <p className="mt-2 text-[10px] leading-relaxed text-[#484F58]">
                       Svar inom 30 s — annars eskaleras begäran automatiskt så agenten inte fastnar.
+                      {" "}Klicka eller tryck 1–9 för snabbval.
                       {" "}Regler gäller i denna webbläsare och hanteras under Minnesregler i Mer-menyn (⋯).
                     </p>
                     <InteraktionsVarning
@@ -9074,16 +9224,21 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-[#E6EDF3]">{fraga.fråga}</p>
                     {fraga.val && fraga.val.length > 0 ? (
                       <div className="mt-3 flex flex-wrap gap-2">
-                        {fraga.val.map((v) => (
+                        {fraga.val.map((v, i) => (
                           <button
                             key={v}
                             onClick={() => void svaraFraga(fraga.requestId, v)}
                             disabled={svarJobbar}
+                            title={i < 9 ? `${v} (tangent ${i + 1})` : v}
                             className="min-h-[52px] rounded-md border border-[#238636]/60 px-3 py-1.5 text-xs font-semibold text-[#3FB950] transition-colors hover:bg-[#238636]/10 disabled:opacity-50 sm:min-h-0"
                           >
+                            {i < 9 && <SifferEtikett n={i + 1} />}
                             {v}
                           </button>
                         ))}
+                        <p className="w-full text-[10px] leading-relaxed text-[#484F58]">
+                          Klicka eller tryck 1–9 för snabbval.
+                        </p>
                       </div>
                     ) : (
                       <div className="mt-3 flex items-end gap-2">
@@ -9463,6 +9618,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
                         return;
                       }
                     }
+                    if (e.key === "Escape" && prompt && !document.fullscreenElement) {
+                      // EVOLUTION E1 (gap 3): Esc med text i fältet = rensa.
+                      // Utkastet är ändå persistat per tabb (v150) — detta är
+                      // användarens aktiva rensning, z code-paritet 3.10.2-19.
+                      // I helskärm är Esc reserverat för att lämna läget.
+                      e.preventDefault();
+                      e.stopPropagation();
+                      historikIndexRef.current = null;
+                      setPrompt("");
+                      return;
+                    }
                     if (e.key === "ArrowUp" && !e.shiftKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
                       if (blattraHistorik(1)) e.preventDefault();
                       return;
@@ -9478,7 +9644,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                   }}
                   rows={1}
                   placeholder={SKRIV_PLACEHOLDERS[placeholderIx]}
-                  title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten"
+                  title="Enter skickar · Skift+Enter ny rad · / visar kommandon · ↑ återkallar senaste prompten · Esc rensar fältet"
                   className="min-h-[52px] flex-1 resize-none rounded-md border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-base leading-relaxed text-[#E6EDF3] outline-none transition-colors placeholder:text-[#484F58] focus:border-[#58A6FF] disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-11 sm:text-sm"
                 />
                 <button
@@ -9575,7 +9741,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
         aria-label="Mål, kontext och terminal"
         className={cn(
           "hidden w-[300px] shrink-0 flex-col border-l border-[#30363D] bg-[#0D1117] lg:flex",
-          !panelOppen && "lg:hidden",
+          (!panelOppen || helskarm) && "lg:hidden",
         )}
       >
         {/* MÅL — checklist (□/☑) + progress + kontroller. */}
@@ -9886,6 +10052,19 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {tanka ? ` · tanke ${tanka}` : ""} · komprimering gäller huvudsessionen · auto vid{" "}
               {AUTO_KOMPAKT_PROCENT} % när agenten är ledig (max 1/våg, 30 min mellan).
             </p>
+            {/* E2 (gap 4): diskret aktivering av notiser — syns ENDAST innan
+                webbläsarfrågan ställts (default); efter svaret (granted/denied)
+                försvinner knappen och frågan ställs aldrig igen. */}
+            {notisRattighet === "default" && (
+              <button
+                onClick={() => void begraNotisRattighet()}
+                title="Aktivera webbläsarnotiser — besked när agenten är klar, även när studion ligger i bakgrunden"
+                className="mt-1.5 flex min-h-9 w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-[11px] font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3]"
+              >
+                <Bell className="h-3.5 w-3.5" />
+                Aktivera notiser
+              </button>
+            )}
           </div>
         </section>
 
@@ -10166,6 +10345,17 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     {sessionJobbar === "compact" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Shrink className="h-4 w-4" />}
                     Komprimera
                   </button>
+                  {/* E2 (gap 4): notiser — diskret, endast före första frågan. */}
+                  {notisRattighet === "default" && (
+                    <button
+                      onClick={() => void begraNotisRattighet()}
+                      title="Aktivera webbläsarnotiser — besked när agenten är klar, även när studion ligger i bakgrunden"
+                      className="mt-1.5 flex min-h-[52px] w-full items-center justify-center gap-1.5 rounded-md border border-[#30363D] px-3 text-xs font-semibold text-[#8B949E] transition-colors hover:bg-[#161B22] hover:text-[#E6EDF3] sm:min-h-11"
+                    >
+                      <Bell className="h-4 w-4" />
+                      Aktivera notiser
+                    </button>
+                  )}
                 </div>
               </section>
               {/* FÖRBRUKNING (10X p9) — samma sektion som desktop-panelen. */}
@@ -10535,7 +10725,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {notisRattighet === "granted" ? (
                 <p className="flex items-center gap-1.5 text-[10px] leading-relaxed text-[#3FB950]/85">
                   <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
-                  Notiser på — rundor över 60 s pingar och ”✓ Klar (N tkn)” kommer när agenten är färdig.
+                  Notiser på — besked när en tur är klar (även när studion ligger i bakgrunden); rundor över 60 s pingar extra.
                 </p>
               ) : notisRattighet === "denied" ? (
                 <p className="flex items-center gap-1.5 text-[10px] leading-relaxed text-[#F85149]/85">
@@ -10548,9 +10738,9 @@ export function StudioChat({ hem }: { hem: () => void }) {
                 </p>
               ) : (
                 <div className="flex items-center gap-2">
-                  <p className="min-w-0 flex-1 text-[10px] leading-relaxed text-[#8B949E]">
-                    Slå på notiser — agentens långa rundor pingar när den är klar.
-                  </p>
+                      <p className="min-w-0 flex-1 text-[10px] leading-relaxed text-[#8B949E]">
+                        Slå på notiser — besked när agenten är klar, även i bakgrunden.
+                      </p>
                   <button
                     onClick={() => void begraNotisRattighet()}
                     className="shrink-0 rounded-md bg-[#238636] px-3 py-1 text-[10px] font-bold text-white transition-colors hover:bg-[#2EA043]"
@@ -10565,7 +10755,8 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {notiser.length === 0 ? (
                 <p className="px-2 py-3 text-[11px] leading-relaxed text-[#8B949E]">
                   Ingen historik än — varje Web Notification (⏳ rundor över 60 s, ✓ när agenten
-                  är klar, fel) loggas här och sparas i webbläsaren (sista 50).
+                  är klar — även korta turer i bakgrunden — och fel) loggas här och sparas i
+                  webbläsaren (sista 50).
                 </p>
               ) : (
                 <ul className="space-y-1">
